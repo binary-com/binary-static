@@ -1043,18 +1043,18 @@ var BetSell = function() {
                     } else if (duration.seconds() > 1 && count < 2) {
                         timestring += duration.seconds() + ' ' + input.second.text_plural;
                         count++;
-                    } else if (duration.seconds() === 0 && count < 2) {
+                    } else if (duration.seconds() == 0 && count < 1) {
                         timestring += duration.seconds() + ' ' + input.second.text;
                         count++;
                     }
 
                     if (count === 0) {
                         that.resubmit_sell_at_market();
-                    } else if (duration.seconds() !== 0) {
-                        selector.html(timestring);
-                    } else {
+                    } else if (full_count_days == 0 && duration.hours() == 0 && duration.minutes() == 0 && duration.seconds() == 0) {
                         selector.html(timestring);
                         that.basic_cleanup();
+                    } else {
+                        selector.html(timestring);
                     }
                     return anonymous;
             }(), Math.abs(interval) * 1000);
