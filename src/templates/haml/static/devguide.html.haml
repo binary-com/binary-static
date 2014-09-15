@@ -13,6 +13,8 @@
             %a(href=>'#implflow')= l('OAuth2 Authentication Using Implicit Flow')
         %li
             %a(href=>'#callserv')= l('Calling a Service')
+        %li
+            %a(href=>'#renewal')= l('OAuth2 Token Renewal')
     .dev-guide.grd-row-padding
       .section
         .section-content
@@ -99,3 +101,21 @@
             %li!= l('[_1] is any binary.com API service e.g. "/markets".', 'SERVICE')
             %li!= l('[_1] are the REST-style parameters to the service e.g. "/forex".', 'PARAMS')
           %p!= l('This call will return the same JSON structure that can be previewed from the API Console Facility.')
+      .section
+        .section-content
+          %h2(id=>'renewal')= l('OAuth2 Token Renewal')
+          %p
+            %em= l("The access-token retrieved earlier has a limited lifetime.  In the case of Auth-Code Flow only, it can be renewed.")
+          %p= l('The JSON structure which supplied the access_token also included a refresh_token.  Supply this in the following call:')
+          .code-sample!= 'POST https://PROXY_ENDPOINT/oauth/refresh_acesstoken'
+          %p= l('with this [_1] data:', 'POST')
+          %ul.bullet
+            %li= 'grant_type=refresh_token'
+            %li= 'refresh_token=REFRESH_TOKEN'
+          %p= l('and with this (same as before) HTTP header')
+          %ul.bullet
+            %li= l('Authorization: Basic [_1]', 'ENCODED')
+          %p= l('where')
+          %ul.bullet
+            %li!= l('[_1] was found in the same JSON structure which supplied the original access_token.', 'REFRESH_TOKEN')
+          %p!= l('The [_1] will return a JSON structure which includes a new access_token along with several other useful attributes relevant to the renewal.', 'POST')
