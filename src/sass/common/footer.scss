@@ -27,6 +27,10 @@
       text-align: justify;
       color: $BIN_WHITE;
       font-size: 64%;
+      a {
+        color: $BIN_WHITE;
+        text-decoration: underline;
+      }
     }
     #iom_icon_footer {
       max-width: 90px;
