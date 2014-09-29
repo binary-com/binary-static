@@ -180,75 +180,6 @@ var home_bomoverlay = {
     }
 };
 
-var get_random_download_symbols = function () {
-    var indices = $('#random_download_indices');
-    if (indices.size()) {
-        $.ajax({
-            crossDomain:true,
-            type: 'POST',
-            url: '//archive.binary.com/d/tick-data-downloads.cgi',
-            data: {action: 'get_symbols'},
-            async: true,
-            dataType: "json"
-        })
-        .done(function (data) {
-            for (var key in data) {
-                if (data.hasOwnProperty(key)) {
-                    indices.append($('<option>', {
-                        value: data[key].value,
-                        text: data[key].label,
-                    }));
-                }
-            }
-        });
-    }
-};
-
-var random_symbol_change = function () {
-    $('#section-5').on('change', '#random_download_indices', function () {
-        var that = this;
-        var week_select = $('#random_download_week');
-        if($(that).val() != 'default') {
-            $.ajax({
-                crossDomain:true,
-                type: 'POST',
-                url: '//archive.binary.com/d/tick-data-downloads.cgi',
-                data: {action: 'get_json', underlying: $(that).val()},
-                async: true,
-                dataType: "json"
-            })
-            .done(function (data) {
-                week_select.empty();
-                week_select.show();
-                for (var key in data) {
-                    if (data.hasOwnProperty(key)) {
-                        var timeepoch = parseInt(data[key].timestamp) * 1000;
-                        week_select.append($('<option>', {
-                            value: data[key].timestamp,
-                            text: text.localize('Week of') + ' ' + moment(new Date(timeepoch)).format('YYYY-MM-DD HH:mm'),
-                            link: data[key].link,
-                        }));
-                    }
-                }
-                $('#download_random_data').show();
-            });
-        } else {
-            week_select.empty();
-            week_select.hide();
-            $('#download_random_data').hide();
-        }
-    });
-};
-
-var random_download_data = function () {
-    $('#section-5').on('click', '#download_random_data', function () {
-        var href = $('#random_download_week').find(':selected').attr('link');
-        if(typeof href != 'undefined') {
-            $(this).attr('href', href);
-        }
-    });
-};
-
 pjax_config_page('/$|/home', function() {
     return {
         onLoad: function() {
@@ -324,16 +255,6 @@ pjax_config_page('/get-started', function() {
         },
         onUnload: function() {
             $(window).off('scroll');
-        },
-    };
-});
-
-pjax_config_page('/random-markets', function() {
-    return {
-        onLoad: function() {
-            get_random_download_symbols();
-            random_symbol_change();
-            random_download_data();
         },
     };
 });
