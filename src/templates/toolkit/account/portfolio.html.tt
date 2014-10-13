@@ -1,82 +1,83 @@
-<div class="grd-parent grd-grid-12 grd-row-padding">
-        <div class="grd-grid-6 grd-hide-mobile grd-hide-phablet left-aligned">
-        [% l("Account balance : [_1] [_2]", currency, to_monetary_number_format(balance)) %]
-        </div>
+<div class='grd-grid-12'>
+    <h1 class='portfolio-header-margin'>[% l('Portfolio') %]</h1>
+    <div class="grd-parent grd-row-padding">
+            <div class="grd-hide-mobile grd-hide-phablet">
+            [% l("Account balance : [_1] [_2]", currency, to_monetary_number_format(balance)) %]
 
-        [% IF balance == 0 %]
-        <div class="grd-grid-6 grd-hide-mobile grd-hide-phablet right-aligned">
-            <a href="[% deposit_url %]" class="button button_large by_client_type client_real with_login_cookies">
-            <span>[% l('Make a Deposit') %]</span>
-            </a>
-        </div>
-        [% END %]
+            [% IF balance <=  0 %]
+                <a href="[% deposit_url %]" class="button button_large by_client_type client_real with_login_cookies">
+                <span>[% l('Make a Deposit') %]</span>
+                </a>
+            [% END %]
+            </div>
 
+    </div>
+
+    [% IF open_bets.size == 0 %]
+        <div>
+            <p>[% l("No open positions.") %]</p>
+        </div>
+    [% ELSE %]
+        <div id="portfolio-table">
+            <div class="grd-parent grd-grid-12 table-header grd-row-padding ">
+                    <div class="grd-grid-2 grd-hide-mobile grd-grid-phablet-2">[% l('Ref.') %]</div>
+                    <div class="grd-grid-5 grd-grid-mobile-7 grd-grid-phablet-6">[% l('Contract Details') %]</div>
+                    <div class="grd-grid-5 grd-grid-mobile-5 grd-grid-phablet-4">
+                            <div class="grd-grid-4 grd-grid-mobile-12 grd-grid-phablet-12 right-aligned">[% l('Purchase') %]</div>
+                            <div class="grd-grid-4 grd-hide-mobile grd-hide-phablet right-aligned">[% l('Indicative') %]</div>
+                            <div class="grd-grid-4 grd-hide-mobile grd-hide-phablet"></div>
+                    </div>
+            </div>
+            [% total_in = 0; total_value_now = 0; %]
+            [% FOREACH open_bet IN open_bets %]
+                    [%
+                            contract_info = bet_info(open_bet, currency);
+                            total_in = total_in + open_bet.buy_price;
+                            total_value_now = total_value_now + contract_info.indicative_price;
+                    %]
+                    <div class="grd-parent grd-grid-12 grd-row-padding table-body table-body-lines">
+                            <div class="grd-grid-2 grd-hide-mobile grd-grid-phablet-2">[% open_bet.buy_id %]</div>
+                            <div class="grd-grid-5 grd-grid-mobile-7 grd-grid-phablet-6">[% contract_info.longcode %]</div>
+                            <div class="grd-grid-5 grd-grid-mobile-5 grd-grid-phablet-4">
+                                    <div class="grd-grid-4 grd-grid-mobile-12 grd-grid-phablet-12 right-aligned">
+                                            [% currency %] <strong>[% to_monetary_number_format(open_bet.buy_price) %]</strong>
+                                    </div>
+                                    <div class="grd-hide grd-show-mobile grd-grid-mobile-12 grd-show-phablet grd-grid-phablet-12">
+                                            <br />[% l('Indicative') %] :
+                                    </div>
+                                    [% IF contract_info.indicative_price.defined %]
+                                            <div class="grd-grid-4 grd-grid-mobile-12 grd-grid-phablet-12 right-aligned">
+                                                    [% currency %] [% to_monetary_number_format(contract_info.indicative_price) %]
+                                            </div>
+                                    [% ELSE %]
+                                            <div class="grd-grid-4 grd-grid-mobile-12 grd-grid-phablet-12 right-aligned">--</div>
+                                    [% END %]
+                                    <div class="grd-hide grd-show-mobile grd-grid-mobile-12 grd-show-phablet grd-grid-phablet-12"><br /></div>
+                                    <div class="grd-grid-4 grd-grid-mobile-12 grd-grid-phablet-12 center-aligned">[% contract_info.analyse_link %]</div>
+                            </div>
+                    </div>
+            [% END %]
+            <div class="grd-parent grd-grid-12 table-header grd-row-padding ">
+                    <div class="grd-grid-7 grd-hide-mobile grd-hide-phablet"></div>
+                    <div class="grd-grid-5 grd-grid-mobile-12 grd-grid-phablet-12">
+                            <div class="grd-hide grd-show-mobile grd-grid-mobile-12 grd-show-phablet grd-grid-phablet-12">
+                                    [% l("The cost of your open positions") %] :
+                            </div>
+                            <div class="grd-grid-4 grd-grid-mobile-12 grd-grid-phablet-12 right-aligned">
+                                    [% currency %] [% to_monetary_number_format(total_in) %]
+                            </div>
+                            <div class="grd-hide grd-show-mobile grd-grid-mobile-12 grd-show-phablet grd-grid-phablet-12">
+                                    <br />[% l("The value of your open positions") %] :
+                            </div>
+                            <div class="grd-grid-4 grd-grid-mobile-12 grd-grid-phablet-12 right-aligned">
+                                    [% currency %] [% to_monetary_number_format(total_value_now) %]
+                            </div>
+                    </div>
+            </div>
+        </div>
+    [% END %]
+
+    [% IF granter_loginids.size > 0 %]
+    <span class="invisible" id="all_approved_granter_loginids">[% granter_loginids.join("\n") %]</span>
+    [% END %]
 </div>
-
-[% IF open_bets.size == 0 %]
-    <div class="grd-grid-12">
-        <p>[% l("No open positions.") %]</p>
-    </div>
-[% ELSE %]
-    <div id="portfolio-table" class="grd-grid-12">
-        <div class="grd-parent grd-grid-12 table-header grd-row-padding ">
-                <div class="grd-grid-2 grd-hide-mobile grd-grid-phablet-2">[% l('Ref.') %]</div>
-                <div class="grd-grid-5 grd-grid-mobile-7 grd-grid-phablet-6">[% l('Contract Details') %]</div>
-                <div class="grd-grid-5 grd-grid-mobile-5 grd-grid-phablet-4">
-                        <div class="grd-grid-4 grd-grid-mobile-12 grd-grid-phablet-12 right-aligned">[% l('Purchase') %]</div>
-                        <div class="grd-grid-4 grd-hide-mobile grd-hide-phablet right-aligned">[% l('Indicative') %]</div>
-                        <div class="grd-grid-4 grd-hide-mobile grd-hide-phablet"></div>
-                </div>
-        </div>
-        [% total_in = 0; total_value_now = 0; %]
-        [% FOREACH open_bet IN open_bets %]
-                [%
-                        contract_info = bet_info(open_bet, currency);
-                        total_in = total_in + open_bet.buy_price;
-                        total_value_now = total_value_now + contract_info.indicative_price;
-                %]
-                <div class="grd-parent grd-grid-12 grd-row-padding table-body table-body-lines">
-                        <div class="grd-grid-2 grd-hide-mobile grd-grid-phablet-2">[% open_bet.buy_id %]</div>
-                        <div class="grd-grid-5 grd-grid-mobile-7 grd-grid-phablet-6">[% contract_info.longcode %]</div>
-                        <div class="grd-grid-5 grd-grid-mobile-5 grd-grid-phablet-4">
-                                <div class="grd-grid-4 grd-grid-mobile-12 grd-grid-phablet-12 right-aligned">
-                                        [% currency %] <strong>[% to_monetary_number_format(open_bet.buy_price) %]</strong>
-                                </div>
-                                <div class="grd-hide grd-show-mobile grd-grid-mobile-12 grd-show-phablet grd-grid-phablet-12">
-                                        <br />[% l('Indicative') %] :
-                                </div>
-                                [% IF contract_info.indicative_price.defined %]
-                                        <div class="grd-grid-4 grd-grid-mobile-12 grd-grid-phablet-12 right-aligned">
-                                                [% currency %] [% to_monetary_number_format(contract_info.indicative_price) %]
-                                        </div>
-                                [% ELSE %]
-                                        <div class="grd-grid-4 grd-grid-mobile-12 grd-grid-phablet-12 right-aligned">--</div>
-                                [% END %]
-                                <div class="grd-hide grd-show-mobile grd-grid-mobile-12 grd-show-phablet grd-grid-phablet-12"><br /></div>
-                                <div class="grd-grid-4 grd-grid-mobile-12 grd-grid-phablet-12 center-aligned">[% contract_info.analyse_link %]</div>
-                        </div>
-                </div>
-        [% END %]
-        <div class="grd-parent grd-grid-12 table-header grd-row-padding ">
-                <div class="grd-grid-7 grd-hide-mobile grd-hide-phablet"></div>
-                <div class="grd-grid-5 grd-grid-mobile-12 grd-grid-phablet-12">
-                        <div class="grd-hide grd-show-mobile grd-grid-mobile-12 grd-show-phablet grd-grid-phablet-12">
-                                [% l("The cost of your open positions") %] :
-                        </div>
-                        <div class="grd-grid-4 grd-grid-mobile-12 grd-grid-phablet-12 right-aligned">
-                                [% currency %] [% to_monetary_number_format(total_in) %]
-                        </div>
-                        <div class="grd-hide grd-show-mobile grd-grid-mobile-12 grd-show-phablet grd-grid-phablet-12">
-                                <br />[% l("The value of your open positions") %] :
-                        </div>
-                        <div class="grd-grid-4 grd-grid-mobile-12 grd-grid-phablet-12 right-aligned">
-                                [% currency %] [% to_monetary_number_format(total_value_now) %]
-                        </div>
-                </div>
-        </div>
-    </div>
-[% END %]
-
-[% IF granter_loginids.size > 0 %]
-<span class="invisible" id="all_approved_granter_loginids">[% granter_loginids.join("\n") %]</span>
-[% END %]

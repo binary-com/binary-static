@@ -1,0 +1,48 @@
+<div class='grd-parent grd-grid-8 grd-grid-tablet-10 grd-grid-mobile-12 grd-centered center-aligned'>
+    <form class="smallfont" action="[% request.url_for('intraday_prices.cgi') %]" method="post">
+        <div class="grd-grid-mobile-12">
+            <select name="underlying">
+                [% underlying_options %]
+            </select>
+        </div>
+        <div class="grd-grid-mobile-12">
+            <select name="date">
+                [% date_options %]
+            </select>
+        </div>
+        <div class="grd-grid-mobile-12">
+            <span class="button">
+                <button class="button" value="" type="submit">
+                    [% l('View') %]
+                </button>
+            </span>
+        </div>
+    </form>
+</div>
+[% IF is_daily %]
+    <p class="grd-grid-8 grd-centered">
+        [% l('Data will be available after market close.') %]
+    </p>
+[% ELSIF no_price %]
+    <p class="grd-grid-8 grd-centered">
+        [% l('There is no intraday data for [_1] on [_2].', underlying.translated_display_name, start_date.date) %]
+    </p>
+[% ELSIF underlying.feed_license != 'chartonly' %]
+    <div class="grd-parent grd-row-padding grd-grid-12 table-header center-aligned">
+        <div id="stockname" class="grd-grid-4">[% l('Time') %]</div>
+        <div id="open" class="grd-grid-4">[% l('Price') %]</div>
+        <div id="low" class="grd-grid-4">[% l('Change') %]</div>
+    </div>
+
+    [% FOREACH ticker IN ticker_data %]
+        [% IF ticker.price %]
+        <div class="grd-parent grd-row-padding grd-grid-12 table-body table-body-lines center-aligned">
+            <div class="grd-grid-4">[% ticker.time_start %]</div>
+            <div class="grd-grid-4">[% ticker.price %]</div>
+            <div class="grd-grid-4">
+                [% ticker.change_cell %]
+            </div>
+        </div>
+        [% END %]
+    [% END %]
+[% END %]
