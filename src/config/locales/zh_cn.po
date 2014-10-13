@@ -7,9 +7,10 @@ msgstr ""
 "Project-Id-Version: 1228\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2014-10-03 14:10+0200\n"
+"PO-Revision-Date: 2014-10-13 10:02+0200\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Simplified Chinese <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
+"Language-Team: Simplified Chinese "
+"<https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1394,7 +1395,6 @@ msgid "Barrier Step format error"
 msgstr "从格式错误的障碍步骤"
 
 #: lib/BOM/Product/Contract.pm:2563
-#, fuzzy
 #| msgid "Barrier outside acceptable range."
 msgid "Barrier is out of acceptable range."
 msgstr "输入的定界不在可接受范围内。"
@@ -4394,7 +4394,7 @@ msgstr "下方带 = 平均线 - 0.5 * 标准偏差"
 
 #: lib/BOM/Product/Contract.pm:2543
 msgid "Lower barrier is out of acceptable range. Please adjust the lower barrier."
-msgstr ""
+msgstr "价格下限不在可接受的范围内。请调整价格下限。"
 
 #: cgi/smartchart.cgi:30 cgi/subs/subs_graphs_chartdirector.pm:350
 #: lib/BOM/View/Charting.pm:439 lib/BOM/View/Charting.pm:639
