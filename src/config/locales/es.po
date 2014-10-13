@@ -8,9 +8,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2014-10-07 09:46+0200\n"
+"PO-Revision-Date: 2014-10-13 09:00+0200\n"
 "Last-Translator: olga borg <olga@binary.com>\n"
-"Language-Team: Spanish <https://hosted.weblate.org/projects/binary/static/es/>\n"
+"Language-Team: Spanish "
+"<https://hosted.weblate.org/projects/binary/static/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1393,7 +1394,6 @@ msgid "Barrier Step format error"
 msgstr "Error de formato del cambio de la barrera"
 
 #: lib/BOM/Product/Contract.pm:2563
-#, fuzzy
 #| msgid "Barrier outside acceptable range."
 msgid "Barrier is out of acceptable range."
 msgstr "La barrera se encuentra fuera del rango aceptable."
@@ -4395,6 +4395,8 @@ msgstr "Banda baja = Promedio - 0.5 * Desviación estándar"
 #: lib/BOM/Product/Contract.pm:2543
 msgid "Lower barrier is out of acceptable range. Please adjust the lower barrier."
 msgstr ""
+"La barrera inferior se encuentra fuera del rango aceptable. Por favor, "
+"cambie la barrera inferior."
 
 #: cgi/smartchart.cgi:30 cgi/subs/subs_graphs_chartdirector.pm:350
 #: lib/BOM/View/Charting.pm:439 lib/BOM/View/Charting.pm:639
