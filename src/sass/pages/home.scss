@@ -21,11 +21,10 @@
     height: 280px;
     padding-top:20px;
     a { display:block }
-    p { font-size: 90% }
   }
   #slide-1 {
     background: url("../images/pages/home/slide-1_1.png") no-repeat 18.5% 0.9375em;
-    h1 {
+    h2 {
       width: 14%;
     }
     p {
@@ -35,7 +34,7 @@
   }
   #slide-2 {
     background: url("../images/pages/home/slide-2_1.png") no-repeat 18.5% 0.9375em;
-    h1 {
+    h2 {
       width: 18%;
     }
     p {
@@ -44,7 +43,7 @@
   }
   #slide-3 {
     background: url("../images/pages/home/slide-3_1.png") no-repeat 16.5% 0.75em;
-    h1 {
+    h2 {
       width: 15%;
     }
     p {
@@ -53,7 +52,7 @@
   }
   #slide-4 {
     background: url("../images/pages/home/slide-4_1.png") no-repeat 15% 0.9375em;
-    h1 {
+    h2 {
       width: 15%;
     }
     p {
@@ -77,39 +76,39 @@
       list-style: none;
       margin: 0 5px;
       float: left;
-      background: $BIN_GRAY;
+      background: $COLOR_GRAY;
       a {
-	border-radius: 2px;
+	    border-radius: $BORDER_RADIUS;
         display: block;
         padding: 5px;
-	line-height:5px;
+	    line-height:5px;
         &:hover {
             text-decoration: none;
         }
       }
     }
     li.current a {
-      background: $BIN_ORANGE;
+      background: $COLOR_ORANGE;
     }
   }
   #open-account {
-    background: $BIN_ORANGE;
-    border-radius: 0 0 4px 4px;
+    background: $COLOR_ORANGE;
+    border-radius: 0 0 $BORDER_RADIUS $BORDER_RADIUS;
     color: #FFFFFF;
     text-align: center;
     padding: 0 0 10px;
     p {
       line-height: 2em;
       margin: 0;
-      background: $BIN_DARK_BLUE;
-      font-size: 72%;
+      background: $COLOR_DARK_BLUE;
+      font-size: $FONT_SIZE_S;
     }
     form {
-        font-size: 74%;
+        font-size: $FONT_SIZE_S;
     }
     #virtual-fields {
         input, select, textarea {
-            border-radius: 3px;
+            border-radius: $BORDER_RADIUS;
             width: 90%;
             padding: 0px;
         }
@@ -122,7 +121,7 @@
     }
     input[type=submit] {
       @include link-button;
-      background: $BIN_BLUE;
+      background: $COLOR_BLUE;
       padding: 9px 10.83333%;
       border: 0;
       white-space: normal;
@@ -130,10 +129,10 @@
   }
   #help {
         clearfix { clear:both; visibility:hidden; content:'.' }
-        background: $BIN_LIGHT_GRAY;
+        background: $COLOR_LIGHT_GRAY;
         #new-trader, #experienced-trader {
           background: url("../images/pages/home/stripe_1.png") repeat;
-          border-radius: 10px;
+          border-radius: $BORDER_RADIUS;
           img.responsive {
             width: 50%;
           }
@@ -158,17 +157,17 @@
         }
     }
   #ticker-container {
+      font-size: $FONT_SIZE_S;
       clear:both;
       #hometicker {
-        background: $BIN_GRAY;
-        height: 38px;
-        border-bottom: 1px solid $BIN_GRAY_SHADE;
-        border-top: 1px solid $BIN_GRAY_SHADE;
+        background: $COLOR_GRAY;
+        height: 40px;
+        border-bottom: 1px solid $COLOR_GRAY_SHADE;
+        border-top: 1px solid $COLOR_GRAY_SHADE;
         letter-spacing: 1px;
         white-space: nowrap;
         overflow: hidden;
         ul {
-          font-size: 90%;
           margin: 0;
           li {
             padding-top:11px;
@@ -177,28 +176,28 @@
             width: auto;
             line-height:1;
             a.ticker-link {
-                color: $BIN_BLACK;
+                color: $COLOR_BLACK;
             }
           }
         }
         span.fall {
-          color: $BIN_RED;
+          color: $COLOR_RED;
         }
         span.rise {
-          color: $BIN_GREEN;
+          color: $COLOR_GREEN;
         }
       }
   }
   #returns {
     margin:20px 0 0 0;
-    background: $BIN_WHITE;
+    background: $COLOR_WHITE;
     #prices {
         border-right:1px solid #DEDEDE;
     }
     #prices, #try-now {
       display:inline-block;
       text-align: center;
-      h1 { font-weight:100; color: $BIN_BLUE; padding:4px 0 4px 0; font-size:230%; }
+      h1 { font-weight:100; color: $COLOR_BLUE; padding:4px 0 4px 0; font-size:230%; }
     }
     #prices {
       padding-right:10px;

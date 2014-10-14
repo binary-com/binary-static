@@ -1,12 +1,12 @@
 @mixin chart-drop-down-content {
   margin-top:0;
-  border: 1px solid $BIN_GRAY_SHADE;
+  border: 1px solid $COLOR_GRAY_SHADE;
   .half-1, .half-2 {
     width: 47%;
     height: auto;
   }
   .half-1.with-separator {
-      border-right: 1px solid $BIN_GRAY_SHADE;
+      border-right: 1px solid $COLOR_GRAY_SHADE;
   }
   .tl, .tr, .bl, .br {
     display: none;
@@ -94,7 +94,6 @@
   float: right;
   margin: 0 20px 10px 0;
   width: 35%;
-  font-size: 100%;
   display: none;
 }
 
@@ -119,12 +118,10 @@
     padding-top: 2px;
   }
   select {
-    background: $BIN_WHITE;
-    border: 1px solid $BIN_GRAY;
     margin-right: 5px;
   }
   input[type="text"] {
-    border: 1px solid $BIN_GRAY;
+    border: 1px solid $COLOR_GRAY;
     margin-right: 5px;
     width: 105px;
   }
@@ -175,35 +172,44 @@
   position: relative;
   &#chart_compare_underlying, &#chart_period {
     background: none;
-    font-size: 0.9em;
     border: none;
     ul {
         li {
-            @include chart-day-selector;
+            float: left;
+            list-style-image: none;
+            list-style-position: inherit;
+            label.button {
+              width: auto;
+              span.button {
+                background: transparent;
+                border: none;
+                border-bottom: 2px solid $COLOR_GRAY_SHADE;
+                border-radius: 0;
+                color: $COLOR_BLACK;
+                font-weight: normal;
+                &.disabled {
+                  color: $COLOR_ORANGE;
+                  font-weight: bold;
+                  border-bottom: 4px solid $COLOR_ORANGE;
+                }
+              }
+            }
         }
     }
   }
 }
 
-#form_chart_director h5 {
-  padding: 8px;
-}
-
 #form_chart_director {
-    ul.tm-ul {
-      margin:0;
-        li.tm-li {
-            margin: 0;
-            margin-right: 0.2em;
-            font-size:85%;
-            padding: 0;
-            a.tm-a {
-                padding: 0 1em;
-                display: block;
-                span {
-                    display: inline-block;
-                    right: 0;
-                }
+    li.tm-li {
+        margin: 0;
+        margin-right: 0.2em;
+        padding: $CONTROL_PADDING;
+        a.tm-a {
+            padding: 0 1em;
+            display: block;
+            span {
+                display: inline-block;
+                right: 0;
             }
         }
     }
@@ -229,9 +235,9 @@
     .popupbox {
         .rbox.rbox-bg-alt {
             margin: 0;
-            border: 1px solid $BIN_DARK_GRAY;
-            .rbox-heading h4 {
-                background-color: $BIN_GRAY;
+            border: 1px solid $COLOR_DARK_GRAY;
+            .rbox-heading h3 {
+                background-color: $COLOR_GRAY;
             }
             ul.button-menu {
                 list-style: none;
@@ -269,6 +275,10 @@
   width: 20em;
 }
 
+#instrument-content, #settings-content, #band-content, #moving-average-content, #indicator-content {
+    font-size: $FONT_SIZE_S;
+}
+
 #intraday_interval {
     ul.not-li {
         margin: 0 0 0 1em;
@@ -288,7 +298,7 @@
   left: auto;
   top: 27px;
   position: absolute;
-  background-color: $BIN_WHITE;
+  background-color: $COLOR_WHITE;
   display: none;
   z-index: 999;
 }
@@ -306,9 +316,9 @@
 #intraday_interval {
   position: absolute;
   display: none;
-  background-color: $BIN_WHITE;
+  background-color: $COLOR_WHITE;
   padding: 0 0.7em 0.7em;
-  border: 1px solid $BIN_GRAY_SHADE;
+  border: 1px solid $COLOR_GRAY_SHADE;
   width: 8em;
   z-index: 2;
 }
@@ -321,7 +331,7 @@
 #chart_period {
   z-index: 2;
   li {
-    margin-right: 0px;
+    margin-left: 20px;
   }
 }
 
@@ -338,14 +348,14 @@
 
 .desc_box {
   padding: 8px;
-  background-color: $BIN_WHITE;
-  border: 1px solid $BIN_GRAY;
+  background-color: $COLOR_WHITE;
+  border: 1px solid $COLOR_GRAY;
 }
 
 #chart_compare_underlying li {
   background: url("../images/pages/light_chart/linechart_legends_1.png");
   background-repeat: no-repeat;
-  background-color: $BIN_WHITE;
+  background-color: $COLOR_WHITE;
   padding: 0 15px;
 }
 
@@ -405,9 +415,9 @@
 }
 
 #bet_details-table em {
-  font-size: 60%;
+  font-size: $FONT_SIZE_XS;
   font-weight: normal;
-  color: $BIN_BLACK;
+  color: $COLOR_BLACK;
 }
 
 #profit_loss,
@@ -427,19 +437,18 @@
 }
 
 .finder {
-  background-color: $BIN_WHITE;
+  background-color: $COLOR_WHITE;
   margin-bottom: 5px;
   position: relative;
   left: 1px;
 }
 
 h2.finder {
-  font-size: 1.0em;
   padding: .4em 50px .4em 0;
   margin-right: 3px;
   margin-left: 3px;
-  border-top: 1px solid $BIN_GRAY;
-  color: $BIN_BLUE;
+  border-top: 1px solid $COLOR_GRAY;
+  color: $COLOR_BLUE;
 }
 
 #desc {
@@ -464,11 +473,11 @@ h2.finder {
     padding-top: 2px;
   }
   input {
-    border: 1px solid $BIN_GRAY;
+    border: 1px solid $COLOR_GRAY;
   }
   select {
-    border: 1px solid $BIN_GRAY;
-    background: $BIN_WHITE;
+    border: 1px solid $COLOR_GRAY;
+    background: $COLOR_WHITE;
   }
 }
 
@@ -482,7 +491,7 @@ h2.finder {
 
 .smaller-font table td,
 .smaller-font table th {
-  font-size: 0.85em;
+  font-size: $FONT_SIZE_S;
 }
 
 .left-align table td,
@@ -511,12 +520,7 @@ label#from_expiry_label {
   width: auto;
 }
 
-.hasDatepicker {
-  width: 95px;
-}
-
 div#price_table_notes {
-  font-size: 0.92em;
   padding-top: 15px;
 }
 
@@ -553,9 +557,6 @@ form#rise_fall_form {
 #paymentagent_deposit {
     ul.recursive_list {
         margin-left: 1.5em;
-        li {
-            list-style-image: url("../images/pages/get-started/list-circle_1.png");
-        }
     }
     table.rbox-table.rbox-table-full {
         tr.rbox-table-heading th {
@@ -566,7 +567,6 @@ form#rise_fall_form {
 
 #payment-agent-registration ul.circles {
     margin-left: 60px;
-    list-style-image: url("../images/pages/get-started/list-circle_1.png");
 }
 
 #asset-index {
@@ -601,10 +601,7 @@ form#rise_fall_form {
 
 #content #settings_message {
     font-weight: bold;
-    color: $BIN_ORANGE;
-    .success_msg {
-        font-size: 100%;
-    }
+    color: $COLOR_ORANGE;
 }
 
 #content #client_message.errorbox {

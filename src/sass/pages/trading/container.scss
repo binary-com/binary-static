@@ -4,7 +4,7 @@
 }
 
 #popup {
-  background-color: $BIN_WHITE;
+  background-color: $COLOR_WHITE;
 }
 
 /*------------------------------------------------------------------------------------
@@ -15,11 +15,11 @@
 }
 
 .rbox-wrap {
-  background-color: $BIN_WHITE;
+  background-color: $COLOR_WHITE;
 }
 
 .rbox-bg-alt {
-  background-color: $BIN_WHITE;
+  background-color: $COLOR_WHITE;
 }
 
 .rbox-lowpad {
@@ -37,7 +37,6 @@
 
 .arrow-expand-collapse {
   position: absolute;
-  background-image: url("../images/common/old_sprite_1.png");
   background-repeat: no-repeat;
   width: 16px;
   height: 16px;
@@ -50,7 +49,7 @@
   width: 100px;
   position: relative;
   left: -105px;
-  color: $BIN_BLUE;
+  color: $COLOR_BLUE;
   text-align: right;
 }
 
@@ -115,7 +114,7 @@
 }
 
 .half-1.with-separator {
-  border-right: 1px solid $BIN_GRAY;
+  border-right: 1px solid $COLOR_GRAY;
 }
 
 table.half-1,
@@ -131,7 +130,7 @@ table.half-2 {
 
 #WhiteBoxMessage.errorbox {
   text-align: center;
-  border: 1px solid $BIN_GRAY_SHADE;
+  border: 1px solid $COLOR_GRAY_SHADE;
   background-image: none;
   .rbox-content {
     background: none;
@@ -167,11 +166,11 @@ table.half-2 {
 }
 
 .errorbox {
-  background-color: $BIN_YELLOW;
+  background-color: $COLOR_YELLOW;
 }
 
 .errorbox h3 {
-  color: $BIN_RED;
+  color: $COLOR_RED;
 }
 
 .errorbox h3 {
@@ -188,11 +187,11 @@ table.half-2 {
 }
 
 .rbox-wrap .rbox-wrap {
-  border: 1px solid $BIN_GRAY_SHADE !important;
+  border: 1px solid $COLOR_GRAY_SHADE !important;
 }
 
 .errorbox h3 {
-  color: $BIN_RED;
+  color: $COLOR_RED;
 }
 
 .popupbox {
@@ -213,18 +212,17 @@ table.half-2 {
   .rbox-shadow-popup-wrap {
     position: relative;
     left: -12em;  /* half the width of rbox-shadow-popup */
-    background-color: $BIN_WHITE;
+    background-color: $COLOR_WHITE;
     padding-bottom: 0.5em;
     .rbox-bg-alt {
       background: none;
     }
-    h4 {
-      background-color: $BIN_WHITE;
+    h3 {
+      background-color: $COLOR_WHITE;
       padding: 0.2em 0.5em;
     }
     p {
       padding: 0.5em;
-      font-size: 0.9em;
     }
     a.button {
       @include link-button;
@@ -245,14 +243,6 @@ table.half-2 {
     .rbox-heading {
       padding-top: 1px;
     }
-    .rbox-content {
-        p {
-            a {
-                text-decoration: none;
-                color: $BIN_GREEN;
-            }
-        }
-    }
     .form_button {
       margin-bottom: 0;
     }
@@ -263,7 +253,7 @@ table.half-2 {
       position: static;
       width: auto;
       background-color: transparent;
-      border-bottom: 1px solid $BIN_GRAY;
+      border-bottom: 1px solid $COLOR_GRAY;
       margin: 0 15px;
     }
   }
@@ -271,7 +261,7 @@ table.half-2 {
 
 #transparent-cover {
   position: fixed;
-  background-color: $BIN_BLACK;
+  background-color: $COLOR_BLACK;
   opacity: 0.30;
   filter: alpha(opacity = 30);
   width: 100%;

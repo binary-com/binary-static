@@ -4,7 +4,6 @@
 }
 #sell_popup_container {
     width: 90%;
-    font-size: 80%;
     max-width: 960px;
     margin: 0 auto;
     padding: 0;
@@ -53,9 +52,6 @@
                 }
             }
 
-            .extra-info {
-                font-size: 85%;
-            }
             .contract_barriers{
               width: auto;
               margin: 0 auto;
@@ -85,9 +81,7 @@
                 width: 100%;
                 height: 90%;
                 background-color: #fff;
-                filter:alpha(opacity=50);
                 opacity: 0.5;
-                -moz-opacity: 0.5;
                 z-index: 150000;
             }
         }
@@ -108,7 +102,6 @@
         }
 
         #confirmation_table {
-            font-size: 16px;
             border: none;
             margin: 0;
             padding-top: 0;

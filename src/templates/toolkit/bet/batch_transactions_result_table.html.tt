@@ -1,5 +1,5 @@
 <div class="bet_confirm_wrapper">
-<h4>[% l('Batch Transactions') %]</h4>
+<h3>[% l('Batch Transactions') %]</h3>
 [% IF comment %]<p class="comment">[% comment %]</p>[% END %]
 <p>[% l('You have purchased the following contract:') %]</p>
 <div class="bet_confirm_desc">[% bet_description %]</div>

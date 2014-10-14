@@ -1,527 +1,483 @@
-<div id='cashier-content'>
-    <div class="grd-grid-12">
-        <h1>[% l('Payment methods') %]</h1>
-        <p>
-            [% l('You can fund your account with a minimum of &#36;/&pound;/&euro; 5 via any of the methods.') %]
-        </p>
-        <div id="payment_method_suggestions grd-row-padding" class='center-aligned'>
-            <p>
-                <a href="[% request.url_for('linkto_acopening.cgi', {actype => "real"}) %]" class="button by_client_type client_logged_out pjaxload">
-                <span>[% l('Open An Account Now') %]</span>
-                </a>
-                <a href="[% request.url_for('linkto_acopening.cgi', {actype => real}) %]" class="button by_client_type client_virtual pjaxload">
-                <span>[% l('Open Real Account') %]</span>
-                </a>
-                <a href="[% deposit_url %]" class="button button_large by_client_type client_real with_login_cookies">
-                <span>[% l('Deposit') %]</span>
-                </a>
-                <a href="[% withdrawal_url %]" class="button by_client_type client_real with_login_cookies">
-                    <span>[% l('Withdraw') %]</span>
-                </a>
-            </p>
-        </div>
-    </div>
-
-    <div class="grd-row-padding grd-hide-mobile table-header">
-        <div class="grd-grid-1">
-            [% l('Method') %]
-        </div>
-
-        <div class="grd-grid-2">
-            [% l('Currencies') %]
-        </div>
-
-        <div class="grd-grid-3">
-            [% l('Min-Max Deposit') %]
-        </div>
-
-        <div class="grd-grid-3">
-            [% l('Min-Max Withdrawal') %]
-        </div>
-
-       <div class="grd-grid-3">
-            [% l('Processing Time') %]
-        </div>
-    </div>
-
-    <div class="grd-row-padding grd-hide-mobile table-body">
-
-        <div class="grd-grid-12">
-            <h3>[% l('Bank wire/Money transfer') %]</h3>
-        </div>
-
-        <div class="grd-grid-1">
-            <div id="int_bank_wire"></div>
-        </div>
-
-        <div class="grd-grid-2">
-            USD GBP
-            EUR AUD
-        </div>
-
-        <div class="grd-grid-3">
-            25 - 100,000
-        </div>
-
-        <div class="grd-grid-3">
-            25 - 100,000
-        </div>
-
-        <div class="grd-grid-3">
-                [% l('Deposit: [_1] working days', 5)%]<br>
-                [% l('Withdraw: [_1] working days', 5) %]
-        </div>
-    </div>
-
-    <div class="grd-row-padding grd-hide-mobile table-body">
-        <div class="grd-grid-1">
-            <div id="local_bank_transfer"></div>
-        </div>
-
-        <div class="grd-grid-2">
-            USD GBP
-            EUR AUD
-        </div>
-
-        <div class="grd-grid-3">
-            25 - 10,000
-        </div>
-
-        <div class="grd-grid-3">
-            25 - 10,000
-        </div>
-
-        <div class="grd-grid-3">
-                [% l('Deposit: [_1] working days', 5)%]<br>
-                [% l('Withdraw: [_1] working days', 5) %]
-        </div>
-    </div>
-
-    <div class="grd-row-padding grd-hide-mobile table-body">
-        <div class="grd-grid-1">
-            <div id="western_union"></div>
-        </div>
-
-        <div class="grd-grid-2">
-            USD GBP
-            EUR AUD
-        </div>
-
-        <div class="grd-grid-3">
-            10 - 3,000
-        </div>
-
-        <div class="grd-grid-3">
-            50 - 250
-        </div>
-
-        <div class="grd-grid-3">
-                [% l('Deposit: [_1] working days', 1)%]<br>
-                [% l('Withdraw: [_1] working days', 2) %]
-        </div>
-    </div>
-
-    <div class="grd-row-padding grd-hide-mobile table-body">
-        <div class="grd-grid-1">
-            <div id="citadel"></div>
-        </div>
-
-        <div class="grd-grid-2">
-            USD GBP
-            EUR AUD
-        </div>
-
-        <div class="grd-grid-3">
-            100 - 5,000
-        </div>
-
-        <div class="grd-grid-3">
-            100 - 5,000
-        </div>
-
-        <div class="grd-grid-3">
-            [% l('Deposit: [_1] working days', 5)%]<br>
-            [% l('Withdraw: [_1] working days', 5) %]
-        </div>
-    </div>
-
-    <div class="grd-row-padding grd-hide-mobile table-body">
-
-        <div class="grd-grid-12">
-            <h3>[% l('Credit/Debit Card') %]</h3>
-        </div>
-
-        <div class="grd-grid-1">
-            <div id="visa"></div>
-        </div>
-
-        <div class="grd-grid-2">
-            USD GBP
-            EUR AUD
-        </div>
-
-        <div class="grd-grid-3">
-            10 - 10,000
-        </div>
-
-        <div class="grd-grid-3">
-            10 - 10,000
-        </div>
-
-        <div class="grd-grid-3">
-                [% l('Instant') %]<br>[% l('Withdraw: [_1] working days', 3) %]
-        </div>
-    </div>
-
-    <div class="grd-row-padding grd-hide-mobile table-body">
-        <div class="grd-grid-1">
-            <div id="mastercard"></div>
-        </div>
-
-        <div class="grd-grid-2">
-            USD GBP
-            EUR AUD
-        </div>
-
-        <div class="grd-grid-3">
-            10 - 10,000
-        </div>
-
-        <div class="grd-grid-3">
-            10 - 10,000
-        </div>
-
-        <div class="grd-grid-3">
-            [% l('Deposit: Instant')%]<br>
-            [% l('Withdraw: [_1] working days', 3) %]
-        </div>
-    </div>
-
-    <div class="grd-row-padding grd-hide-mobile table-body">
-        <div class="grd-grid-1">
-            <div id="cuo-credit-card"></div>
-        </div>
-
-        <div class="grd-grid-2">
-            USD
-        </div>
-
-        <div class="grd-grid-3">
-            10 - 1,000
-        </div>
-
-        <div class="grd-grid-3">
-        </div>
-
-        <div class="grd-grid-3">
-            [% l('Deposit: Instant')%]<br>
-            [% l('Withdraw: Not applicable') %]
-        </div>
-    </div>
-
-    <div class="grd-row-padding grd-hide-mobile table-body">
-
-        <div class="grd-grid-12">
-            <h3>[% l('E-cash') %]</h3>
-        </div>
-
-        <div class="grd-grid-1">
-            <div id="okpay"></div>
-        </div>
-
-        <div class="grd-grid-2">
-            USD
-        </div>
-
-        <div class="grd-grid-3">
-            5 - 1,000
-        </div>
-
-        <div class="grd-grid-3">
-            5 - 1,000
-        </div>
-
-        <div class="grd-grid-3">
-            [% l('Deposit: Instant')%]<br>
-            [% l('Withdraw: [_1] working day', 1) %]
-        </div>
-    </div>
-
-    <div class="grd-row-padding grd-hide-mobile table-body">
-        <div class="grd-grid-1">
-            <div id="cashu"></div>
-        </div>
-
-        <div class="grd-grid-2">
-            USD
-        </div>
-
-        <div class="grd-grid-3">
-            5 - 1,000
-        </div>
-
-        <div class="grd-grid-3">
-        </div>
-
-        <div class="grd-grid-3">
-            [% l('Deposit: Instant')%]<br>
-        </div>
-    </div>
-
-    <div class="grd-row-padding grd-hide-mobile table-body">
-        <div class="grd-grid-1">
-            <div id="fastpay"></div>
-        </div>
-
-        <div class="grd-grid-2">
-            USD
-        </div>
-
-        <div class="grd-grid-3">
-            5 - 10,000
-        </div>
-
-        <div class="grd-grid-3">
-            5 - 10,000
-        </div>
-
-        <div class="grd-grid-3">
-            [% l('Deposit: Instant')%]<br>
-            [% l('Withdraw: [_1] working day', 1)%]<br>
-        </div>
-
-   </div>
-
-    <div class="grd-row-padding grd-hide-mobile table-body">
-        <div class="grd-grid-1">
-            <div id="perfect_money"></div>
-        </div>
-
-        <div class="grd-grid-2">
-            USD
-        </div>
-
-        <div class="grd-grid-3">
-            5 - 10,000
-        </div>
-
-        <div class="grd-grid-3">
-            5 - 10,000
-        </div>
-
-        <div class="grd-grid-3">
-            [% l('Deposit: Instant')%]<br>
-            [% l('Withdraw: [_1] working day', 1) %]
-        </div>
-    </div>
-
-    <div class="grd-row-padding grd-hide-mobile table-body">
-        <div class="grd-grid-1">
-            <div id="moneybrokers"></div>
-        </div>
-
-        <div class="grd-grid-2">
-            USD GBP
-            EUR AUD
-        </div>
-
-        <div class="grd-grid-3">
-            5 - 20,000
-        </div>
-
-        <div class="grd-grid-3">
-            5 - 20,000
-        </div>
-
-        <div class="grd-grid-3">
-            [% l('Deposit: Instant')%]<br>
-            [% l('Withdraw: [_1] working day', 1) %]
-        </div>
-    </div>
-
-    <div class="grd-row-padding grd-hide-mobile table-body">
-        <div class="grd-grid-1">
-            <div id="neteller"></div>
-        </div>
-
-        <div class="grd-grid-2">
-            USD GBP
-            EUR AUD
-        </div>
-
-        <div class="grd-grid-3">
-            5 - 20,000
-        </div>
-
-        <div class="grd-grid-3">
-            5 - 20,000
-        </div>
-
-        <div class="grd-grid-3">
-            [% l('Deposit: Instant')%]<br>
-            [% l('Withdraw: [_1] working day', 1) %]
-        </div>
-    </div>
-
-    <div class="grd-row-padding grd-hide-mobile table-body">
-        <div class="grd-grid-1">
-            <div id="moneta"></div>
-        </div>
-
-        <div class="grd-grid-2">
-            USD EUR
-        </div>
-
-        <div class="grd-grid-3">
-            5 - 20,000
-        </div>
-
-        <div class="grd-grid-3">
-            5 - 20,000
-        </div>
-
-        <div class="grd-grid-3">
-            [% l('Deposit: Instant')%]<br>
-            [% l('Withdraw: [_1] working day', 1) %]
-        </div>
-    </div>
-
-    <div class="grd-row-padding grd-hide-mobile table-body">
-        <div class="grd-grid-1">
-            <div id="webmoney"></div>
-        </div>
-
-        <div class="grd-grid-2">
-            USD EUR
-        </div>
-
-        <div class="grd-grid-3">
-            5 - 20,000
-        </div>
-
-        <div class="grd-grid-3">
-            5 - 20,000
-        </div>
-
-        <div class="grd-grid-3">
-            [% l('Deposit: Instant')%]<br>
-            [% l('Withdraw: [_1] working day', 1) %]
-        </div>
-    </div>
-
-    <div class="grd-row-padding grd-hide-mobile table-body">
-        <div class="grd-grid-1">
-            <div id="ukash"></div>
-        </div>
-
-        <div class="grd-grid-2">
-            USD GBP<br>
-            EUR AUD
-        </div>
-
-        <div class="grd-grid-3">
-            10 - 300 (USD)<br>
-            10 - 250 (EUR)<br>
-            10 - 200 (GBP)
-        </div>
-
-        <div class="grd-grid-3">
-            10 - 300 (USD)<br>
-            10 - 250 (EUR)<br>
-            10 - 200 (GBP)
-        </div>
-
-        <div class="grd-grid-3">
-            [% l('Deposit: Instant')%]<br>
-            [% l('Withdraw: [_1] working day', 1) %]
-        </div>
-    </div>
-
-    <div class="grd-row-padding grd-hide-mobile table-body">
-        <div class="grd-grid-1">
-            <div id="qiwi"></div>
-        </div>
-
-        <div class="grd-grid-2">
-            USD EUR
-        </div>
-
-        <div class="grd-grid-3">
-            5 - 450 (USD)<br>
-            5 - 325 (EUR)
-        </div>
-
-        <div class="grd-grid-3">
-            5 - 450 (USD)<br>
-            5 - 325 (EUR)
-        </div>
-
-        <div class="grd-grid-3">
-            [% l('Deposit: [_1] working day', 1) %]<br>
-            [% l('Withdraw: [_1] working day', 1) %]
-        </div>
-    </div>
-
-    <div class="grd-row-padding grd-hide-mobile table-body">
-        <div class="grd-grid-1">
-            <div id="yandex"></div>
-        </div>
-
-        <div class="grd-grid-2">
-            USD EUR
-        </div>
-
-        <div class="grd-grid-3">
-            25 - 640
-        </div>
-
-        <div class="grd-grid-3">
-        </div>
-
-        <div class="grd-grid-3">
-            [% l('Deposit: Instant') %]
-        </div>
-    </div>
-
-    <div class="grd-row-padding grd-hide-mobile table-body">
-        <div class="grd-grid-1">
-            <div id="paysafecard"></div>
-        </div>
-
-        <div class="grd-grid-2">
-            USD EUR
-        </div>
-
-        <div class="grd-grid-3">
-            5 - 1,000
-        </div>
-
-        <div class="grd-grid-3">
-        </div>
-
-       <div class="grd-grid-3">
-            [% l('Deposit: Instant') %]
-        </div>
-    </div>
-
-    <div class='grd-parent grd-grid-12 grd-row-padding'>
-        <div class="grd-grid-12 grd-row-padding">
-            <h1>[% l('Payment agents') %]</h1>
-            <p>
-                [% l('You can use an authorized payment agent to process deposits and withdrawals for e-cash methods or local currencies not supported by') %] [% website_name %].
-            </p>
-        </div>
-
-        <div class="grd-grid-12 center-aligned">
-            <a href="[% paymentagent_list_url %]" class="button pjaxload" id="deposit_to_payment_agent">
-                <span>[% l('Deposit to Payment Agent') %]</span>
-            </a>
-            <br class="grd-hide grd-show-mobile"/>
-            <br class="grd-hide grd-show-mobile"/>
-            <a href="[% paymentagent_withdraw_url %]" class="button pjaxload by_client_type client_real with_login_cookies" id="withdraw_to_payment_agent">
-                <span>[% l('Withdraw via Payment Agent') %]</span>
-            </a>
-        </div>
-
-   </div>
+<h1>[% l('Payment methods') %]</h1>
+
+<p>
+    [% l('You can fund your account with a minimum of &#36;/&pound;/&euro; 5 via any of the methods.') %]
+</p>
+<div id="payment_method_suggestions">
+    <p>
+        <a href="[% request.url_for('linkto_acopening.cgi', {actype => " real "}) %]" class="button by_client_type client_logged_out">
+            [% l('Open An Account Now') %]
+        </a>
+        <a href="[% request.url_for('linkto_acopening.cgi', {actype => real}) %]" class="button by_client_type client_virtual">
+            <span>[% l('Open Real Account') %]</span>
+        </a>
+        <a href="[% deposit_url %]" class="button button_large by_client_type client_real with_login_cookies">
+            <span>[% l('Deposit') %]</span>
+        </a>
+        <a href="[% withdrawal_url %]" class="button by_client_type client_real with_login_cookies">
+            <span>[% l('Withdraw') %]</span>
+        </a>
+    </p>
 </div>
+
+<h2>[% l('Bank wire/Money transfer') %]</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                [% l('Method') %]
+            </th>
+            <th>
+                [% l('Currencies') %]
+            </th>
+            <th>
+                [% l('Min-Max Deposit') %]
+            </th>
+            <th>
+                [% l('Min-Max Withdrawal') %]
+            </th>
+            <th>
+                [% l('Processing Time') %]
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>
+                <div id="int_bank_wire"></div>
+            </td>
+            <td>
+                USD GBP
+                <br> EUR AUD
+            </td>
+            <td>
+                25 - 100,000
+            </td>
+            <td>
+                25 - 100,000
+            </td>
+            <td>
+                [% l('Deposit: [_1] working days', 5)%]
+                <br> [% l('Withdraw: [_1] working days', 5) %]
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div id="local_bank_transfer"></div>
+            </td>
+            <td>
+                USD GBP
+                <br> EUR AUD
+            </td>
+            <td>
+                25 - 10,000
+            </td>
+            <td>
+                25 - 10,000
+            </td>
+            <td>
+                [% l('Deposit: [_1] working days', 5)%]
+                <br> [% l('Withdraw: [_1] working days', 5) %]
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div id="western_union"></div>
+            </td>
+            <td>
+                USD GBP
+                <br> EUR AUD
+            </td>
+            <td>
+                10 - 3,000
+            </td>
+            <td>
+                50 - 250
+            </td>
+            <td>
+                [% l('Deposit: [_1] working days', 1)%]
+                <br> [% l('Withdraw: [_1] working days', 2) %]
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div id="citadel"></div>
+            </td>
+            <td>
+                USD GBP
+                <br> EUR AUD
+            </td>
+            <td>
+                100 - 5,000
+            </td>
+            <td>
+                100 - 5,000
+            </td>
+            <td>
+                [% l('Deposit: [_1] working days', 5)%]
+                <br> [% l('Withdraw: [_1] working days', 5) %]
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>[% l('Credit/Debit Card') %]</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                [% l('Method') %]
+            </th>
+            <th>
+                [% l('Currencies') %]
+            </th>
+            <th>
+                [% l('Min-Max Deposit') %]
+            </th>
+            <th>
+                [% l('Min-Max Withdrawal') %]
+            </th>
+            <th>
+                [% l('Processing Time') %]
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>
+                <div id="visa"></div>
+            </td>
+            <td>
+                USD GBP
+                <br> EUR AUD
+            </td>
+            <td>
+                10 - 10,000
+            </td>
+            <td>
+                10 - 10,000
+            </td>
+            <td>
+                [% l('Instant') %]
+                <br>[% l('Withdraw: [_1] working days', 3) %]
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div id="mastercard"></div>
+            </td>
+            <td>
+                USD GBP
+                <br> EUR AUD
+            </td>
+            <td>
+                10 - 10,000
+            </td>
+            <td>
+                10 - 10,000
+            </td>
+            <td>
+                [% l('Deposit: Instant')%]
+                <br> [% l('Withdraw: [_1] working days', 3) %]
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div id="cuo-credit-card"></div>
+            </td>
+            <td>
+                USD
+            </td>
+            <td>
+                10 - 1,000
+            </td>
+            <td>
+                10 - 1,000
+            </td>
+            <td>
+                [% l('Deposit: Instant')%]
+                <br> [% l('Withdraw: Not applicable') %]
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+
+<h2>[% l('E-cash') %]</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                [% l('Method') %]
+            </th>
+            <th>
+                [% l('Currencies') %]
+            </th>
+            <th>
+                [% l('Min-Max Deposit') %]
+            </th>
+            <th>
+                [% l('Min-Max Withdrawal') %]
+            </th>
+            <th>
+                [% l('Processing Time') %]
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>
+                <div id="okpay"></div>
+            </td>
+            <td>
+                USD
+            </td>
+            <td>
+                5 - 1,000
+            </td>
+            <td>
+                5 - 1,000
+            </td>
+            <td>
+                [% l('Deposit: Instant')%]
+                <br> [% l('Withdraw: [_1] working day', 1) %]
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div id="cashu"></div>
+            </td>
+            <td>
+                USD
+            </td>
+            <td>
+                5 - 1,000
+            </td>
+            <td>
+            </td>
+            <td>
+                [% l('Deposit: Instant')%]
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div id="fastpay"></div>
+            </td>
+            <td>
+                USD
+            </td>
+            <td>
+                5 - 10,000
+            </td>
+            <td>
+                5 - 10,000
+            </td>
+            <td>
+                [% l('Deposit: Instant')%]
+                <br> [% l('Withdraw: [_1] working day', 1)%]
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div id="perfect_money"></div>
+            </td>
+            <td>
+                USD
+            </td>
+            <td>
+                5 - 10,000
+            </td>
+            <td>
+                5 - 10,000
+            </td>
+            <td>
+                [% l('Deposit: Instant')%]
+                <br> [% l('Withdraw: [_1] working day', 1) %]
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div id="moneybrokers"></div>
+            </td>
+            <td>
+                USD GBP
+                <br> EUR AUD
+            </td>
+            <td>
+                5 - 20,000
+            </td>
+            <td>
+                5 - 20,000
+            </td>
+            <td>
+                [% l('Deposit: Instant')%]
+                <br> [% l('Withdraw: [_1] working day', 1) %]
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div id="neteller"></div>
+            </td>
+            <td>
+                USD GBP
+                <br> EUR AUD
+            </td>
+            <td>
+                5 - 20,000
+            </td>
+            <td>
+                5 - 20,000
+            </td>
+            <td>
+                [% l('Deposit: Instant')%]
+                <br> [% l('Withdraw: [_1] working day', 1) %]
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div id="moneta"></div>
+            </td>
+            <td>
+                USD EUR
+            </td>
+            <td>
+                5 - 20,000
+            </td>
+            <td>
+                5 - 20,000
+            </td>
+            <td>
+                [% l('Deposit: Instant')%]
+                <br> [% l('Withdraw: [_1] working day', 1) %]
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div id="webmoney"></div>
+            </td>
+            <td>
+                USD EUR
+            </td>
+            <td>
+                5 - 20,000
+            </td>
+            <td>
+                5 - 20,000
+            </td>
+            <td>
+                [% l('Deposit: Instant')%]
+                <br> [% l('Withdraw: [_1] working day', 1) %]
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div id="ukash"></div>
+            </td>
+            <td>
+                USD GBP
+                <br> EUR AUD
+            </td>
+            <td>
+                10 - 300 (USD)
+                <br> 10 - 250 (EUR)
+                <br> 10 - 200 (GBP)
+            </td>
+            <td>
+                10 - 300 (USD)
+                <br> 10 - 250 (EUR)
+                <br> 10 - 200 (GBP)
+            </td>
+            <td>
+                [% l('Deposit: Instant')%]
+                <br> [% l('Withdraw: [_1] working day', 1) %]
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div id="qiwi"></div>
+            </td>
+            <td>
+                USD EUR
+            </td>
+            <td>
+                5 - 450 (USD)
+                <br> 5 - 325 (EUR)
+            </td>
+            <td>
+                5 - 450 (USD)
+                <br> 5 - 325 (EUR)
+            </td>
+            <td>
+                [% l('Deposit: [_1] working day', 1) %]
+                <br> [% l('Withdraw: [_1] working day', 1) %]
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div id="yandex"></div>
+            </td>
+            <td>
+                USD EUR
+            </td>
+            <td>
+                5 - 1,000
+            </td>
+            <td>
+            </td>
+            <td>
+                [% l('Deposit: Instant') %]
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div id="paysafecard"></div>
+            </td>
+            <td>
+                USD EUR
+            </td>
+            <td>
+                5 - 1,000
+            </td>
+            <td>
+            </td>
+            <td>
+                [% l('Deposit: Instant') %]
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>[% l('Payment agents') %]</h2>
+<p>
+    [% l('You can use an authorized payment agent to process deposits and withdrawals for e-cash methods or local currencies not supported by') %] [% website_name %].
+</p>
+
+<a href="[% paymentagent_list_url %]" class="button" id="deposit_to_payment_agent">
+    [% l('Deposit to Payment Agent') %]
+</a>
+
+<a href="[% paymentagent_withdraw_url %]" class="button by_client_type client_real with_login_cookies" id="withdraw_to_payment_agent">
+    <span>[% l('Withdraw via Payment Agent') %]</span>
+</a>

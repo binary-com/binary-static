@@ -27,9 +27,8 @@
             .daily_price_stats_head {
                 .table_heading{
                   text-align: center;
-                  background-color: $BIN_LIGHT_GRAY;
+                  background-color: $COLOR_LIGHT_GRAY;
                   font-weight: bold;
-                  font-size: 1.1em;
                 }
                 hr {
                   display: block;
@@ -61,7 +60,7 @@
       z-index: 10;
       margin: 0;
       .tab-content {
-         border: 1px solid $BIN_DARK_GRAY;
+         border: 1px solid $COLOR_GRAY;
          min-height: 369px;
       }
       .tab-content-wrapper, .tab-content {
@@ -73,11 +72,10 @@
           > li {
             padding: 0;
             .tm-ul-2 {
-              top: 27px;
-              margin-top: 0;
+              margin-top: 5px;
             }
             a.tm-a {
-              padding: 0 5px 0 5px;
+              padding: 5px 10px;
               width: auto;
               font-size: 85%;
             }
@@ -85,16 +83,13 @@
         }
       }
     }
-    .unicode-info-icon {
-        font-size: 14px;
-    }
     #bet_calculation_container {
       margin: 0;
       padding: 0;
       position: relative;
       #page_timeout_notice {
         padding: 10px;
-        background: $BIN_WHITE;
+        background: $COLOR_WHITE;
       }
       .rbox-content {
         padding: 0;
@@ -106,8 +101,8 @@
         margin-left: 20px;
         padding: 10px;
         width: 380px;
-        color: $BIN_BLACK;
-        background-color: $BIN_YELLOW;
+        color: $COLOR_BLACK;
+        background-color: $COLOR_YELLOW;
         p {
           margin: 0;
         }
@@ -120,14 +115,13 @@
           .bet-error-box {
               margin: 0;
               padding: 1em;
-              font-size: 0.8em;
+              font-size: $FONT_SIZE_S;
               width: auto;
           }
           .rbox-heading {
             background-color: transparent;
             margin-bottom: 0;
-            /*margin-bottom: 10px;*/
-            h4 {
+            h3 {
               padding: 0.7em 0 0.7em 4em;
               text-transform: capitalize;
             }
@@ -205,11 +199,11 @@
       }
     }
     #bet_cost_container {
-      font-size: 0.8em;
+      font-size: $FONT_SIZE_S;
       display: inline-block;
       background: white;
       .rbox-wrap {
-        border-bottom: 1px solid $BIN_GRAY_SHADE;
+        border-bottom: 1px solid $COLOR_GRAY_SHADE;
       }
       form {
         width: 40%;
@@ -225,20 +219,19 @@
           width: auto;
         }
         .odd {
-          background: $BIN_LIGHT_GRAY;
+          background: $COLOR_LIGHT_GRAY;
         }
         .rbox {
-          border: 1px solid $BIN_GRAY_SHADE;
+          border: 1px solid $COLOR_GRAY_SHADE;
           position: relative;
           margin-bottom: 3em;
         }
         .rbox-table-full {
-          border: 1px solid $BIN_LIGHT_GRAY;
-          font-size: 93%;
+          border: 1px solid $COLOR_LIGHT_GRAY;
           text-align:left;
           td {
             text-align:left;
-            border: 1px solid $BIN_LIGHT_GRAY;
+            border: 1px solid $COLOR_LIGHT_GRAY;
             border-width: 0 1px;
           }
         }
@@ -254,7 +247,7 @@
 
     .basicInputForm {
       .error {
-        background-color: $BIN_YELLOW;
+        background-color: $COLOR_YELLOW;
       }
       #no_bets {
         text-align: center;
@@ -295,30 +288,32 @@
 }
 
 .stylized_cents {
-  font-size: 65%;
+  font-size: $FONT_SIZE_S;
   vertical-align: text-top;
   margin-left: .02em;
   margin-right: 0.1em;
 }
 
 .stylized_currency {
-  font-size: 75%;
+  font-size: $FONT_SIZE_S;
   text-align: left;
 }
 
 .stylized_price {
   font-weight: bold;
-  font-size: 150%;
+  font-size: $FONT_SIZE_XL;
 }
 
 .price_moved_up {
-  background-color: $BIN_LIGHT_BLUE;
-  color: $BIN_WHITE;
+  background-color: $COLOR_LIGHT_BLUE;
+  color: $COLOR_WHITE;
+  border-radius: $BORDER_RADIUS;
 }
 
 .price_moved_down {
-  background-color: $BIN_RED;
-  color: $BIN_WHITE;
+  background-color: $COLOR_RED;
+  color: $COLOR_WHITE;
+  border-radius: $BORDER_RADIUS;
 }
 
 .bet_cost {
@@ -333,7 +328,7 @@
 }
 
 .bet_cost b {
-  font-size: 128%;
+  font-size: $FONT_SIZE_L;
 }
 
 .bet_description {
@@ -341,7 +336,7 @@
   float: right;
   padding: 0 3px 3px 0;
   strong:first-child {
-      font-size: 130%;
+      font-size: $FONT_SIZE_L;
   }
 }
 
@@ -350,9 +345,8 @@
   text-align: center;
   width: 100%;
   margin: auto;
-  background-color: $BIN_GRAY;
+  background-color: $COLOR_GRAY;
   line-height: 1.8em;
-  font-size: 0.7em;
   white-space: nowrap;
   bottom: 0;
 }
@@ -360,14 +354,14 @@
 .price_box {
   padding: 0;
   margin-top: 20;
-  border: 1px solid $BIN_DARK_GRAY;
+  border: 1px solid $COLOR_GRAY;
   a {
-    color: $BIN_BLUE;
+    color: $COLOR_BLUE;
   }
 }
 
 .price_box_first {
-  margin-top: 26px;
+  margin-top: 40px;
   margin-bottom: 20px;
 }
 
@@ -387,11 +381,7 @@
 #bet_bottom_content {
   padding-top: 2em;
   input {
-    border: 1px solid $BIN_GRAY;
-  }
-  select {
-    border: 1px solid $BIN_GRAY;
-    background: $BIN_WHITE;
+    border: 1px solid $COLOR_GRAY;
   }
   button {
     height: 1.5em;
@@ -402,8 +392,8 @@
           list-style-image: none;
       }
   }
-  h4 {
-    color: $BIN_BLUE;
+  h3 {
+    color: $COLOR_BLUE;
     font-weight: bold;
     margin: 10px 0;
   }
@@ -411,7 +401,7 @@
 
 /* added for the underlying highlight */
 .is_intraday {
-    background-color: $BIN_GRAY_SHADE;
+    background-color: $COLOR_GRAY_SHADE;
 }
 
 a.close {
@@ -421,12 +411,12 @@ a.close {
     margin-right: 0;
     padding: 10px 8px;
     cursor: pointer;
-    color: $BIN_WHITE;
-    border: solid 1px $BIN_ORANGE;
+    color: $COLOR_WHITE;
+    border: solid 1px $COLOR_ORANGE;
     border-radius: 0;
     border-bottom-left-radius: 4px;
-    background: $BIN_ORANGE;
-    font-size: 24px;
+    background: $COLOR_ORANGE;
+    font-size: $FONT_SIZE_L;
     font-weight: bold;
     line-height: 0px;
     &:hover {
@@ -439,20 +429,16 @@ a.close {
     margin: 0;
     padding: 0;
     text-align: center;
-    border: solid 1px $BIN_LIGHT_GRAY;
-    background: $BIN_LIGHT_GRAY;
+    border: solid 1px $COLOR_LIGHT_GRAY;
+    background: $COLOR_LIGHT_GRAY;
 }
 
 .bet_confirm_wrapper {
     padding: 0;
     margin: 0;
 
-    h2, h3, h4 {
+    h2, h3 {
         margin-top: 30px;
-    }
-
-    p, div {
-        font-size: 16px;
     }
 
     .bet_confirm_error_message {
@@ -469,8 +455,8 @@ a.close {
         margin: 0 10px;
         padding: 10px 5px;
         text-align: justify;
-        border: solid 2px $BIN_GRAY;
-        background: $BIN_WHITE;
+        border: solid 2px $COLOR_GRAY;
+        background: $COLOR_WHITE;
     }
 
     .account_balance {
@@ -478,8 +464,8 @@ a.close {
         width: 100%;
         padding: 0;
         margin: 0;
-        background: $BIN_ORANGE;
-        color: $BIN_WHITE;
+        background: $COLOR_ORANGE;
+        color: $COLOR_WHITE;
         position: absolute;
         bottom: 0;
         left: 0;
@@ -494,15 +480,14 @@ a.close {
     }
 
     table {
-        font-size: 14px;
+        font-size: $FONT_SIZE_S;
     }
 
     & table .even {
-        background: $BIN_LIGHT_GRAY;
+        background: $COLOR_LIGHT_GRAY;
     }
 
     #confirmation_table {
-        font-size: 16px;
         border: none;
         margin: 0;
 
@@ -525,8 +510,8 @@ a.close {
         }
 
         .success {
-            background: $BIN_ORANGE;
-            color:      $BIN_WHITE;
+            background: $COLOR_ORANGE;
+            color:      $COLOR_WHITE;
             padding-left: 1px;
             padding-right: 1px;
             margin-left: 8px;
@@ -538,24 +523,23 @@ a.close {
 .standout {
     font-weight: bold;
     .price {
-        color: $BIN_ORANGE;
+        color: $COLOR_ORANGE;
     }
 }
 .standin {
-    font-size: 100%;
     font-weight: normal;
 }
 .profit {
-    color: $BIN_GREEN;
+    color: $COLOR_GREEN;
 }
 .loss {
-    color: $BIN_RED;
+    color: $COLOR_RED;
 }
 .with_right_border {
-    border-right: solid 1px $BIN_BLACK;
+    border-right: solid 1px $COLOR_BLACK;
 }
 .with_left_border {
-    border-left: solid 1px $BIN_BLACK;
+    border-left: solid 1px $COLOR_BLACK;
 }
 #buy_confirm_container {
     position: absolute;
@@ -568,7 +552,7 @@ a.close {
     width: 100%;
 
     a.visualization {
-        font-size: 14px;
+        font-size: $FONT_SIZE_S;
         font-weight: normal;
         text-decoration: underline;
     }

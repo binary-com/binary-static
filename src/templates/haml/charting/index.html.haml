@@ -11,7 +11,7 @@
       %a.pjaxload{:href => url_for('chart_application.cgi')}
         %img.responsive.chart-type-icon{:src => url_for('images/pages/charting/interactive-charts.svg')}
     .grd-grid-12
-      %h4
+      %h3
         %a.pjaxload{:href => url_for('chart_application.cgi')}= l('Java Charts')
       %p= l('Try our downloadable charting application with an extensive range of indicators.')
   .grd-grid-6.grd-parent
@@ -19,7 +19,7 @@
       %a.pjaxload{:href => url_for('smartchart.cgi?market=forex&underlying_symbol=frxUSDJPY&chart_type=CANDLESTICK')}
         %img.responsive.chart-type-icon{:src => url_for('images/pages/charting/light-charts.svg')}
     .grd-grid-12
-      %h4
+      %h3
         %a.pjaxload{:href => url_for('smartchart.cgi?market=forex&underlying_symbol=frxUSDJPY&chart_type=CANDLESTICK')}= l('Light Charts')
       %p= l('You\'ll enjoy using this comprehensive charting tool with 27 technical indicators.')
 .grd-grid-6.grd-grid-mobile-12.grd-parent
@@ -28,6 +28,6 @@
       %a.pjaxload{:href => url_for('livechart.cgi')}
         %img.responsive.chart-type-icon{:src => url_for('images/pages/charting/popup-charts.svg')}
     .grd-grid-12
-      %h4
+      %h3
         %a.pjaxload{:href => url_for('livechart.cgi')}= l('Live Charts')
       %p= l('This is our \'next generation\' charting tool.')

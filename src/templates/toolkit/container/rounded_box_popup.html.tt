@@ -3,7 +3,7 @@
         <div class="rbox-shadow-left">
             <div class="rbox-shadow-right">
                 <div class="rbox-heading hover">
-                    <h4>[% heading %] <span class="close_button">&nbsp;</span></h4>
+                    <h3>[% heading %] <span class="close_button">&nbsp;</span></h3>
                 </div>
                 [% content %]
             </div>

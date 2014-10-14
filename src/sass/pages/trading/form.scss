@@ -1,16 +1,9 @@
 form#profit-table-form,
 form#tradingform {
-    fieldset {
-        border: 0;
-        background-color: $BIN_LIGHT_GRAY;
-        legend {
-            display: none;
-        }
-    }
     span {
         padding: 10px;
     }
-    div.row {
+    .row {
         clear: none;
         float: left;
         margin: -3px 8px 0 8px;
@@ -32,19 +25,13 @@ form#tradingform div.row {
 }
 
 form#forward_start {
-    font-size: 85%;
+    font-size: $FONT_SIZE_S;
     fieldset {
         padding-top: 1em;
         margin-bottom: 1em;
     }
     label {
         width: auto;
-    }
-}
-
-form#pricing_table_input {
-    select {
-        width: 90%;
     }
 }
 
@@ -69,12 +56,4 @@ input#duration_amount {
     position: absolute;
     left: 13px;
     bottom: -16px;
-}
-
-#submarket {
-    max-width: 90%;
-}
-
-#bet_underlying {
-    max-width: 90%;
 }

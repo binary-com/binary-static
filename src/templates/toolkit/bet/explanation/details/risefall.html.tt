@@ -1,4 +1,4 @@
-<h4>[% l("Entry spot") %]</h4>
+<h3>[% l("Entry spot") %]</h3>
 <ul>
     <li>[% l("If you select a <strong>start time</strong> of \"Now\", the <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter.") %]
     </li>
@@ -7,7 +7,7 @@
 </li>
 </ul>
 <br><br>
-<h4>[% l("Exit spot") %]</h4>
+<h3>[% l("Exit spot") %]</h3>
 <p>[% l("The <strong>exit spot</strong> is the spot at the <strong>end time</strong>.") %]</p>
 <ul>
     <li>

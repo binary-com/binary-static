@@ -67,7 +67,7 @@
 
     <div id="price_table_notes" class='grd-grid-12 grd-row-padding'>
       <span>[% l('Notes:') %]</span>
-      <ul>
+      <ul class="bulleted">
         <li>
           [% l('The Ask price represents the price at which the contract may be purchased at the present time.') %]
         </li>

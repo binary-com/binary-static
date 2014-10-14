@@ -1,21 +1,17 @@
 table
 {
     border-collapse: collapse;
-    font-size: 0.9em;
     line-height: 1.5em;
     width: 100%;
     .even {
-        background-color: $BIN_WHITE;
-    }
-    * {
-        font-size: 1em;
+        background-color: $COLOR_WHITE;
     }
     thead, th {
         line-height: 1.1em;
         font-weight: bold;
         padding: 3px 8px;
-        background: $BIN_LIGHT_GRAY;
-        border-bottom: 1px solid $BIN_DARK_GRAY;
+        background: $COLOR_LIGHT_GRAY;
+        border-bottom: 1px solid $COLOR_DARK_GRAY;
         vertical-align: middle;
         &#pf-bet-details {
             text-align: left;
@@ -31,7 +27,7 @@ table
         vertical-align: top;
         border-width: 0 1px;
         padding: 4px 4px;
-        border-bottom: 3px solid $BIN_LIGHT_GRAY;
+        border-bottom: 3px solid $COLOR_LIGHT_GRAY;
         &.num {
             text-align: center;
         }
@@ -43,20 +39,16 @@ table
             text-align: left;
         }
         a.button-analyse, a.button-analyse:visited {
-            color: $BIN_GREEN;
             background: none;
             display: inline;
             padding: 0;
             span {
                 font-weight: normal;
-                color: $BIN_GREEN;
                 background: none;
                 text-transform: capitalize;
                 padding: 0;
                 &:hover, &:active {
                     background: none;
-                    color: $BIN_GREEN;
-                    text-decoration: underline;
                 }
             }
         }
@@ -68,8 +60,8 @@ table
         }
     }
     .rbox-sub-header {
-        background-color: $BIN_WHITE;
-        font-size: 1.1em;
+        background-color: $COLOR_WHITE;
+        font-size: $FONT_SIZE_L;
         font-weight: bold;
         padding: 1.5em 0.2em 0.8em;
     }
@@ -93,7 +85,7 @@ table
         text-align: center;
     }
     .loss, .lower {
-        color: $BIN_RED;
+        color: $COLOR_RED;
     }
 }
 
@@ -102,9 +94,8 @@ table
     clear: both;
     overflow: auto;
     font-weight: bold;
-    font-size: 90%;
     border-bottom: 1px solid #808080;
-    background: none repeat scroll 0% 0% #F2F2F2;
+    background: none repeat scroll 0% 0% $COLOR_LIGHT_GRAY;
     [class*="grd-grid-"] {
         word-wrap: break-word;
         white-space: normal;
@@ -115,34 +106,26 @@ table
     clear: both;
     line-height: 1.5em;
     padding-top: 20px;
-    font-size: 90%;
     padding-bottom: 0px;
 
     .profit {
-        color: $BIN_GREEN;
+        color: $COLOR_GREEN;
     }
     .loss, .lower {
-        color: $BIN_RED;
+        color: $COLOR_RED;
     }
     a.button-analyse, a.button-analyse:visited {
-        color: $BIN_GREEN;
         background: none;
         display: inline;
         padding: 0;
         span {
             font-weight: normal;
-            color: $BIN_GREEN;
             background: none;
             text-transform: capitalize;
             padding: 0;
-            &:hover, &:active {
-                background: none;
-                color: $BIN_GREEN;
-                text-decoration: underline;
-            }
         }
     }
 }
 .table-body-lines {
-    border-bottom: 3px solid #F2F2F2;
+    border-bottom: 3px solid $COLOR_LIGHT_GRAY;
 }

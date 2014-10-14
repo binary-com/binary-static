@@ -29,10 +29,7 @@
                 <div class='grd-grid-3 grd-grid-mobile-2 grd-grid-phablet-1'>
                     <a id="logo" href="[% request.url_for('/') %]"[% target %]>
                         <div class='grd-grid-3 grd-grid-mobile-12 grd-grid-phablet-12 grd-no-gutter'>
-                            <img class='responsive' src="[% request.url_for('images/pages/binary-symbol-logo.svg') %]"/>
-                        </div>
-                        <div class='grd-grid-9 grd-hide-mobile grd-hide-phablet' id='binary-logo-text'>
-                            <img class='responsive' src="[% request.url_for('images/pages/binary-type-logo.svg') %]"/>
+                            <img src="[% request.url_for('images/common/binary-logo-full.svg') %]"/>
                         </div>
                     </a>
                 </div>
@@ -66,11 +63,7 @@
                             <input name="loginid" type="text" placeholder="[% l("Login ID") %]" />
                             <input name="password" type="password" placeholder="[% l("Password") %]" />
                             <input type="submit" value="[% l("Log in") %]" />
-                        </span>
-                        <span id="login-links">
-                            <a class="pjaxload" id="register" href="[% request.url_for('open_account.cgi') %]">[% l("Register") %]</a>
-                            <a class="pjaxload" id="lost-password" href="[% request.url_for('lost_password.cgi') %]">[% l("Lost password?") %]</a>
-                        </span>
+                        </span>                        
                     </form>
                 </div>
                 <div class='grd-grid-1 grd-hide grd-show-mobile grd-no-gutter-mobile grd-show-phablet'>

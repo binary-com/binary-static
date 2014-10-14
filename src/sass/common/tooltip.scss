@@ -1,12 +1,11 @@
 #tooltip
 {
-    font-family: proxima-nova, arial, sans-serif;
-    font-size: 14px;
+    font-size: $FONT_SIZE_S;
     line-height: 1.5;
     color: #000;
     background: #FFF1CF;
-    border-radius: 5px;
-    border: 1px solid $BIN_GRAY_SHADE;
+    border-radius: $BORDER_RADIUS;
+    border: 1px solid $COLOR_GRAY_SHADE;
     box-shadow: 0 3px 5px rgba( 0, 0, 0, .3 );
     position: absolute;
     z-index: 100;
@@ -18,7 +17,7 @@
     height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-top: 10px solid $BIN_GRAY_SHADE;
+    border-top: 10px solid $COLOR_GRAY_SHADE;
     border-top-color: #FFF1CF;
     content: '';
     position: absolute;
@@ -29,8 +28,8 @@
 #tooltip.top:after
 {
     border-top-color: transparent;
-    border-bottom: 10px solid $BIN_GRAY_SHADE;
-    border-bottom-color: $BIN_GRAY_SHADE;
+    border-bottom: 10px solid $COLOR_GRAY_SHADE;
+    border-bottom-color: $COLOR_GRAY_SHADE;
     top: -20px;
     bottom: auto;
 }
@@ -48,5 +47,5 @@
 
 //Required to display a dotted line at the bottom of abbr.
 abbr {
-  border-bottom: 1px dotted $BIN_BLACK;
+  border-bottom: 1px dotted $COLOR_BLACK;
 }

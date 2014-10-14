@@ -13,7 +13,7 @@
     text-align: center;
     .section {
       min-height: 210px;
-      background: $BIN_LIGHT_GRAY;
+      background: $COLOR_LIGHT_GRAY;
       margin:0 20px 20px 0;
     }
     .section-header {
@@ -24,20 +24,15 @@
       text-align: center;
       padding: 10px;
       min-height:50px;
-      font-size: 90%;
     }
     a {
       display: block;
-      color: $BIN_WHITE;
+      color: $COLOR_WHITE;
       font-weight: bold;
       padding-bottom: 0.5em;
       text-align: center;
-      background: $BIN_BLACK;
+      background: $COLOR_BLACK;
       text-decoration: none;
-      font-size: 90%;
-    }
-    a:hover {
-      background: $BIN_DARK_GREEN;
     }
     div {
       &#what-is-binary-trading {
@@ -80,7 +75,6 @@
   }
   .section-content {
     h2 {
-      color: $BIN_ORANGE;
       padding-top: 20px;
       &.center {
         width: 63.8297872%;
@@ -103,8 +97,8 @@
       padding: 0.4375em 3.19149%;
     }
     a.disabled {
-      color: $BIN_GRAY_SHADE;
-      background: $BIN_LIGHT_GRAY;
+      color: $COLOR_GRAY_SHADE;
+      background: $COLOR_LIGHT_GRAY;
       cursor: default;
     }
   }
@@ -125,7 +119,7 @@
   }
 
   .section-7 {
-    h4 {
+    h3 {
       font-weight: bold;
       margin-top: 1.875em;
     }

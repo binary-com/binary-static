@@ -6,10 +6,10 @@
         </select>
     </span>
     <span id="expiry_type_duration" class='grd-grid-7 grd-parent'>
-        <span class='grd-grid-4'>
+        <span class='grd-grid-3'>
             <input type="text" name="duration_amount" id="duration_amount" size="4" maxlength="5" value="[% selected_amount %]"/>
         </span>
-        <span class='grd-grid-5'>
+        <span class='grd-grid-6'>
             <select id="duration_units" name="duration_units" >
                 [% IF duration_options.spot %]
                     [% FOREACH duration_option IN duration_options.spot %]

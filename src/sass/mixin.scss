@@ -5,15 +5,12 @@
 }
 
 @mixin section-background {
-  background: -moz-linear-gradient(top, $BIN_WHITE 30%, $BIN_LIGHT_GRAY 90%);
-  background: -webkit-linear-gradient(top, $BIN_WHITE 30%, $BIN_LIGHT_GRAY 90%);
-  background: -ms-linear-gradient(top, $BIN_WHITE 30%, $BIN_LIGHT_GRAY 90%);
   border-bottom: 1px solid transparent;
 }
 
 @mixin section-separator {
     .section {
-        border-bottom: 1px solid $BIN_GRAY;
+        border-bottom: 1px solid $COLOR_GRAY;
     }
     .section:first-child {
         padding-bottom: 50px;
@@ -30,34 +27,31 @@
 @mixin menu-left-margin { margin-left:255px; }
 @mixin menu-left {
   ul {
-    font-size:90%;
     li {
       list-style-image: none;
       margin: 0;
-      background: $BIN_LIGHT_GRAY;
       line-height: 150%;
       border-bottom: 1px solid #FFFFFF;
       &:hover {
-        background: $BIN_GRAY;
+        background: $COLOR_GRAY;
       }
       a {
         text-decoration: none;
         display: block;
         padding: 5px 5px 5px 10px;
-        color: $BIN_BLUE;
+        color: $COLOR_BLUE;
       }
     }
     li.selected {
-      background: $BIN_BLUE;
+      background: $COLOR_BLUE;
+      border-radius: $BORDER_RADIUS;
       a {
-        color: $BIN_WHITE;
+        color: $COLOR_WHITE;
         text-decoration: none;
       }
     }
   }
   .open-account {
-    background: $BIN_LIGHT_GRAY;
-    padding: 20px;
     a {
       @include link-button;
       display: block;
@@ -68,8 +62,7 @@
 @mixin menu-right-margin { margin-right:255px; }
 @mixin menu-right {
   div {
-    background: $BIN_LIGHT_GRAY;
-    border-bottom: $BIN_GRAY;
+    border-bottom: $COLOR_GRAY;
     margin-bottom: 20px;
     padding: 20px;
     text-align: center;
@@ -91,77 +84,58 @@
 }
 
 @mixin link-button {
-  color: $BIN_WHITE;
+  color: $COLOR_WHITE;
   text-decoration: none;
   text-align: center;
   line-height:100%;
-  background: $BIN_GREEN;
-  border-radius: 4px;
+  background: $COLOR_BLUE;
+  border-radius: $BORDER_RADIUS;
   font-weight: bold;
   text-transform: uppercase;
   padding: 10px 15px 10px 15px;
   display: inline-block;
   &:visited {
-    color: $BIN_WHITE;
+    color: $COLOR_WHITE;
   }
   &:hover, &:active {
-    text-decoration: none;
-    background-color: #14602B;
-  }
-}
-
-@mixin chart-day-selector {
-  float: left;
-  list-style-image: none;
-  list-style-position: inherit;
-  label.button {
-    width: auto;
-    span.button {
-      background: transparent;
-      border: none;
-      border-bottom: 2px solid $BIN_GRAY_SHADE;
-      border-radius: 0;
-      color: $BIN_BLACK;
-      font-weight: normal;
-      &.disabled {
-        color: $BIN_ORANGE;
-        font-weight: bold;
-        border-bottom: 4px solid $BIN_ORANGE;
-      }
-    }
+    background-color: $COLOR_DARK_BLUE;
   }
 }
 
 @mixin tab-list {
     border: none;
-    border-radius: 0;
-    padding: 0;
-    margin-left: 0;
     background: none;
-    border-bottom: 1px solid $BIN_DARK_GRAY;
+    li:first-child {
+        border-top-left-radius: $BORDER_RADIUS;
+        border-bottom-left-radius: $BORDER_RADIUS;
+    }
+    li:last-child {
+        border-top-right-radius: $BORDER_RADIUS;
+        border-bottom-right-radius: $BORDER_RADIUS;
+        border-right: none;
+    }
     li {
       border: none;
-      list-style-image: none;
-      background: $BIN_LIGHT_GRAY;
-      border-radius: 4px 4px 0 0;
-      margin: 0 6px 0 0;
-      padding: 0 10px;
+      float: left;
+      border-right: 1px solid rgba(0,0,0,.05);
+      display: inline-block;
+      background: $COLOR_LIGHT_GRAY;
+
       a, a:visited {
-        padding: 0;
+        padding: 5px 10px;
+        line-height: 2;
         text-decoration: none;
-        color: $BIN_BLACK;
-        font-size: 90%;
+        color: $COLOR_BLUE;
         background: transparent;
       }
     }
     li.active, li.ui-tabs-active {
-      background: $BIN_BLUE;
-      color: $BIN_WHITE;
+      background: $COLOR_BLUE;
+      color: $COLOR_WHITE;
       a {
         background: none;
-        color: $BIN_WHITE;
+        color: $COLOR_WHITE;
         text-decoration: none;
-        padding: 0;
       }
       span.a-active {
           line-height: 2;
@@ -173,13 +147,12 @@
       li {
         background: none;
         a {
-          color: $BIN_BLACK;
-          padding-top: 0;
+          color: $COLOR_BLACK;
           text-decoration: none;
           width: auto;
         }
         a.a-active {
-          color: $BIN_ORANGE;
+          color: $COLOR_ORANGE;
         }
         a:hover {
           text-decoration: underline;

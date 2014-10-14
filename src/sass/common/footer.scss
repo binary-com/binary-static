@@ -1,61 +1,57 @@
-#footer {
-  #footer-menu {
-    background: $BIN_BLUE;
-    h1 {
-      font-size: 80%;
-      text-transform: uppercase;
+#footer-menu {
+    background: $COLOR_BLUE;
+    h3 {
+        font-size: $FONT_SIZE_N;
+        text-transform: uppercase;
     }
     a {
-      font-size: 74%;
-      color: $BIN_WHITE;
-    }
-    li {
-      line-height: 1;
+        font-size: $FONT_SIZE_S;
+        color: $COLOR_DARK_WHITE;
     }
     #accounts_links {
-      padding-bottom: 10px;
+        padding-bottom: 10px;
     }
-  }
+}
+#footer-regulatory {
+    background: $COLOR_DARK_BLUE;
+    a,
+    span {
+        display: inline-block;
+    }
 
-  #footer-regulatory {
-    background: $BIN_DARK_BLUE;
-    a, span {
-      display: inline-block;
-    }
-    #regulatory-text {
-      line-height: 1.2em;
-      text-align: justify;
-      color: $BIN_WHITE;
-      font-size: 64%;
-    }
-    #iom_icon_footer {
-      max-width: 90px;
-    }
-    #lga_icon_footer {
-      max-width: 140px;
-    }
-    #eighteen_plus {
-      max-width: 45px;
-    }
-    .social-network-icon {
-      width: 30px;
-      height: 30px;
-      padding-right: 5px;
-      padding-top: 10px;
-    }
-  }
+}
+#regulatory-text {
+    line-height: 1.2em;
+    text-align: justify;
+    color: #aaa;
+    font-size: $FONT_SIZE_XS;
+}
+#iom_icon_footer {
+    max-width: 90px;
+}
+#lga_icon_footer {
+    max-width: 140px;
+}
+#eighteen_plus {
+    max-width: 45px;
+}
+.social-network-icon {
+    width: 30px;
+    height: 30px;
+    padding-right: 5px;
+    padding-top: 10px;
 
-  #suspend-message {
+}
+#suspend-message {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: $BIN_YELLOW;
+    background-color: $COLOR_YELLOW;
     z-index: 999;
     text-align: center;
     .message {
-      margin: 12px;
-      font-style: italic;
-      color: $BIN_RED;
+        margin: 12px;
+        font-style: italic;
+        color: $COLOR_RED;
     }
-  }
 }

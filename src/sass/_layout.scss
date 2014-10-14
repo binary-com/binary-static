@@ -1,0 +1,182 @@
+body, .msgbar, .topbar, .header, .content, .sitemap,
+.msgbar-wrapper, .topbar-wrapper, .header-wrapper, .content-wrapper, .sitemap-wrapper, .footer-wrapper {
+    display: flex;
+}
+
+body {
+    flex-direction: column;
+}
+
+.sticky {
+    position: fixed;
+    width: 100%;
+}
+
+.content-wrapper {
+    padding-top: 80px;
+}
+
+.msgbar-wrapper, .topbar-wrapper, .header-wrapper, .content-wrapper, .sitemap-wrapper, .footer-wrapper {
+    justify-content: center;
+}
+
+.msgbar, .topbar, .header, .content, .sitemap, .footer {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.topbar {
+    padding: .25em $PAGE_PADDING;
+}
+
+.msgbar, .content, .sitemap, .footer {
+    padding: .5em $PAGE_PADDING;
+}
+
+.content {
+    padding: 2.5em $PAGE_PADDING;
+}
+
+.msgbar {
+    align-items: center;
+    justify-content: center
+}
+
+.msg, .gmt-clock {
+    padding: .5em .5em .5em 0;
+}
+
+.topbar {
+    justify-content: space-between;
+}
+
+.msgbar, .topbar {
+    font-size: $FONT_SIZE_S;
+}
+
+.msgbar, .topbar, .header, .sitemap {
+    flex-flow: row wrap;
+}
+
+.gmt-clock {
+    text-align: center;
+}
+
+.header nav {
+    display: flex;
+    flex: 1;
+}
+
+.header nav ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.header nav li {
+    cursor: pointer;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.nav1st {
+    flex: 1;
+}
+
+.nav1st li {
+    text-align: center;
+    height: $HEADER_HEIGHT;
+}
+
+.nav1st li div {
+    line-height: $HEADER_HEIGHT;
+}
+
+.nav2nd {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    flex-direction: column;
+    min-width: 200px;
+    transform: translateY(100px);
+}
+
+.nav2nd li {
+    text-align: center;
+    padding: 1em;
+}
+
+.nav1st li:hover > ul {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.login-embed {
+    display: flex;
+    flex: 2;
+    max-width: 480px;
+}
+
+.login-embed input {
+    flex: 2
+}
+
+.login-embed button {
+    flex: 1;
+}
+
+.login-embed input {
+    margin-right: 0.5em;
+}
+
+
+.header {
+    height: 3em;
+    padding: 0 $PAGE_PADDING;
+}
+
+.language-selector, .login-button {
+    height: 2.5em;
+    margin: .25em;
+}
+
+.logo {
+    height: 2.5em;
+    margin: .25em 1em .25em 0;
+    width: 195px;
+}
+
+.content {
+    flex: 1;
+    flex-direction: column;
+}
+
+.sitemap li {
+    flex: 1;
+}
+
+.sitemap li > * {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+}
+
+.social, .licenses {
+    flex: 1;
+    display: flex;
+}
+
+.regulatory {
+    flex: 4;
+}
+
+.social a {
+    width: 20%;
+}

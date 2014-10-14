@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<meta name='dcterms.rightsHolder' content='Binary.com'/>
+<meta name='dcterms.rights' content='Binary.com'/>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Page not found</title>
+<style type="text/css">
+    body {
+        padding: 0;
+        margin: 0;
+        font-size: 18px;
+        font-family: proxima-nova, arial;
+    }
+    a {
+        color: #2e8836;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    h1,h2,h3,h4,h5 {
+        color: #E98024;
+    }
+    h1 {
+        font-size: 34px;
+        font-weight: bold;
+    }
+    #topbar {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 23px;
+        background: #15212d;
+        color: #fff;
+    }
+    #header {
+        margin: 0;
+        padding: 0;
+        background: #2a3052;
+        border-top: 2px solid #394171;
+        border-bottom: 4px solid #e98024;
+    }
+    #header_content {
+        width: 70%;
+        height: 86px;
+        position: relative;
+        margin: 0 auto;
+        padding: 0;
+    }
+    #logo {
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        top: 16px;
+        left: 0px;
+        display: inline-block;
+        width:
+    }
+    #logo #symbol-logo {
+        background: url("https://static.binary.com/images/common/binary-logo-full.svg") no-repeat;
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+    }
+    #logo #type-logo {
+        background: url("https://static.binary.com/images/pages/binary-type-logo.svg") no-repeat;
+        width: 180px;
+        height: 50px;
+        display: inline-block;
+    }
+    #content {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #footer {
+        margin: 0;
+        margin-top: 150px;
+        padding: 0;
+        height: 80px;
+        background: #2a3052;
+    }
+    #footer_content {
+        margin: auto;
+        padding: 10px;
+        padding-top: 30px;
+        width: 70%;
+        color: #ffffff;
+        font-size: 14px;
+    }
+    @media screen and (max-width: 480px) {
+        #logo #type-logo {
+            display: none;
+        }
+    }
+</style>
+<script type="text/javascript">
+/**
+ * Reads server tiemstamp via AJAX and passes it to the callback
+ *
+ * @param function callback jQuery.ajax callback like on success, data is JSON with timestamp attr
+ * @param function errback jQeury.ajax errback like on failure
+ * @return XMLHttpRequest
+ */
+var get_server_timestamp = function (callback, errback) {
+    var _state_changed = function (xhr) {
+        if (!xhr || typeof xhr.readyState == 'undefined') {
+            return;
+        }
+        try {
+            if (xhr.readyState == 4) {
+                if (xhr.responseText) {
+                    data = JSON.parse(xhr.responseText);
+                    if (xhr.status == 200) {
+                        callback(data, xhr.statusText, xhr);
+                    } else {
+                        throw new Error('Server returned error status ' + xhr.status);
+                    }
+                }
+            } else if (xhr.readyState < 1) {
+                throw new Error('Failed to open request to read timestamp');
+            }
+        } catch (e) {
+            if (typeof errback == 'function') {
+                errback(xhr, xhr.statusText, e);
+            }
+        }
+    };
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () { _state_changed(xhr) };
+    xhr.timeout = 60;
+    xhr.open('GET', 'https://www.binary.com/timestamp', true);
+    xhr.send();
+    return xhr;
+}
+
+function display_clock(timestamp, container) {
+    var date_= new Date(timestamp * 1000);
+    var utc_year = date_.getUTCFullYear();
+    var utc_month = date_.getUTCMonth();
+    var utc_day = date_.getUTCDate();
+    var utc_hours = date_.getUTCHours();
+    var utc_minutes = date_.getUTCMinutes();
+
+    utc_month += 1;
+    utc_month = utc_month < 10 ? "0" + utc_month : utc_month;
+    utc_day = utc_day < 10 ? "0" + utc_day : utc_day;
+    utc_hours = utc_hours < 10 ? "0" + utc_hours : utc_hours;
+    utc_minutes = utc_minutes < 10 ? "0" + utc_minutes : utc_minutes;
+
+    var container = document.getElementById(container);
+    var display = document.createElement('p');
+    display.innerHTML = "GMT Time: " + utc_year + "-" + utc_month + "-" + utc_day + " " + utc_hours + ":" + utc_minutes;
+    container.parentNode.replaceChild(display, container);
+}
+</script>
+</head>
+<body>
+    <div id="topbar">&nbsp;</div>
+    <div id="header">
+        <div id="header_content">
+            <a id="logo" href="https://www.binary.com">
+                <span id='symbol-logo'></span>
+                <span id='type-logo'></span>
+            </a>
+        </div>
+    </div>
+    <div id="content-holder">
+      <div id="content">
+          <div style="margin-left: auto; margin-right: auto; margin-top: 50px; width: 60%;">
+              <h1 style="color: #E98024;">Page not found</h1>
+              <p>The page you requested does not exist on our server.</p>
+              <p>Please proceed to <a href="https://www.binary.com">main page</a> or contact <a href="https://www.binary.com/d/contact.cgi?l=EN">customer service</a>.</p>
+              <p style="display: hidden;" id="server_clock"></p>
+          </div>
+      </div>
+
+      <div style="margin-left: auto; margin-right: auto; width: 60%;">
+          <p>This page will redirect to our main page automatically in 30 seconds.</p>
+      </div>
+    </div>
+
+    <div id="footer">
+        <div id="footer_content">
+       © 2013 Binary.com. All Rights Reserved.
+        </div>
+    </div>
+    <script type="text/javascript">
+        get_server_timestamp(function(data) {display_clock(data.timestamp, 'server_clock');});
+        setTimeout(function() {window.location.href = "https://www.binary.com"}, 30000);
+    </script>
+</body>
+</html>

@@ -5,12 +5,14 @@
         [% END %]
     </select>
 </span>
-<span class='grd-grid-7'>
+<span class='grd-grid-6'>
     <select id="bet_underlying" name="underlying_symbol">
         [% FOREACH underlying IN underlying_options %]
             <option [% IF underlying.class %] class="[% underlying.class %]" [% END %] value="[% underlying.value %]" [% IF underlying.disabled %] disabled="disabled" [% END %] [% IF underlying.value == selected_underlying %] selected="selected" [% END %]>[% underlying.text %]</option>
         [% END %]
     </select>
+</span>
+<span class='grd-grid-1'>
     [% IF info_link == 'random' %]
     <a class="pjaxload unicode-info-icon" id="randomtip" href="[% request.url_for('/get-started/random-markets') %]">ⓘ</a>
     [% ELSIF info_link == 'smarties' %]

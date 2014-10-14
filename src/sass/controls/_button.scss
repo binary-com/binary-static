@@ -1,0 +1,19 @@
+button, input[type=button], input[type=submit], button.button, a.button {
+    color: $COLOR_BLUE;
+    text-decoration: none;
+    text-align: center;
+    line-height: 2;
+    background: $COLOR_WHITE;
+    border-radius: $BORDER_RADIUS;
+    border: 2px solid $COLOR_BLUE;
+    font-weight: normal;
+    text-transform: uppercase;
+    padding: 0 1em;
+    min-height: 2em;
+    display: inline-block;
+    cursor: pointer;
+    &:hover, &:active {
+        color: $COLOR_WHITE;
+        background-color: $COLOR_BLUE;
+    }
+}

@@ -42,9 +42,9 @@
                 </a>
             </div>
             <div class='grd-grid-12'>
-                <h4>
+                <h3>
                     <a href="[% request.url_for('portfolio.cgi') %]" class="pjaxload">[% l('Portfolio') %]</a>
-                </h4>
+                </h3>
                 <p>
                     [% l('View your open positions.') %]
                 </p>
@@ -57,9 +57,9 @@
                 </a>
             </div>
             <div class='grd-grid-12'>
-                <h4>
+                <h3>
                     <a href="[% request.url_for('profit_table.cgi') %]" class="pjaxload">[% l('Profit Table') %]</a>
-                </h4>
+                </h3>
                 <p>
                     [% l('View your trading profit/loss.') %]
                 </p>
@@ -74,9 +74,9 @@
                 </a>
             </div>
             <div class='grd-grid-12'>
-                <h4>
+                <h3>
                     <a href="[% request.url_for('statement.cgi') %]" class="pjaxload">[% l('Statement') %]</a>
-                </h4>
+                </h3>
                 <p>
                     [% l('View your historical transactions.') %]
                 </p>
@@ -91,9 +91,9 @@
                 </a>
             </div>
             <div class='grd-grid-12'>
-                <h4>
+                <h3>
                     <a href="[% request.url_for('available_payment_methods.cgi') %]" class="pjaxload">[% l('Cashier') %]</a>
-                </h4>
+                </h3>
                 <p>
                     [% l('Make a deposit or withdraw') %]
                 </p>

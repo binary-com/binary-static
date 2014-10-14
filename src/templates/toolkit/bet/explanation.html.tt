@@ -36,16 +36,16 @@
 
     [% IF show_winning && show_flash && flash.$form_name  %]
         <div class='grd-grid-8 grd-grid-mobile-12'>
-            <h4>
+            <h3>
                 [% l("Winning the contract") %]
-            </h4>
+            </h3>
             [% INCLUDE "$winning" %]
         </div>
     [% ELSIF show_winning %]
         <div class='grd-grid-12'>
-            <h4>
+            <h3>
                 [% l("Winning the contract") %]
-            </h4>
+            </h3>
             [% INCLUDE "$winning" %]
         </div>
     [% END %]

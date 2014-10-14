@@ -237,7 +237,7 @@ function listen_to_chart_element () {
                 overlays
                     .filter(':last').after(
                         '<li><a href="#">' +
-                        chart_overlay_or_new.find('h4').html() +
+                        chart_overlay_or_new.find('h3').html() +
                         '</a><input type="checkbox" checked="checked" value="'+previous_selected_radio[chart_overlay_or_new.data('related_input_name')]+'" name="overlay"></li>'
                     );
 
@@ -316,4 +316,3 @@ var draw_chart = function (callback_after_complete) {
 onLoad.queue_for_url(function() {
     listen_to_chart_element();
 }, 'smartchart');
-

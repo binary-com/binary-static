@@ -1,25 +1,13 @@
-<div id="chartApplicationContainer" class="grd-grid-12">
-    <h1>[% l('Java Charts') %]</h1>
-    <div class='grd-row-padding'>
-        <fieldset>
-            <legend>[% l('Downloadable application') %]</legend>
-            <div class="grd-grid-10 grd-centered">
-                <p>
-                    [% l('Download the Binary.com charting application with an extensive range of Indicators, Price Bands, Overlays, and your own customizable Workspace
-                    supporting different languages!') %]
-                </p>
-            </div>
-            <div id="screenshotContainer" class="grd-grid-6 grd-centered">
-                <img class='responsive' src="[% request.url_for('images/pages/charting/chart-screenshot.png') %]"/>
-            </div>
-            <div class="grd-with-padding grd-centered center">
-                <a id="download-app" class="button" href="https://downloads.binary.com/binary-charts.jnlp">
-                    <span>[% l('Download')%]</span>
-                </a>
-                <a id="install-java" class="button" href="http://java.com/en/download/" style="display: none">
-                    <span>[% l('Install Java')%]</span>
-                </a>
-            </div>
-        </fieldset>
-    </div>
+<h1>[% l('Java Charts') %]</h1>
+    <p>
+        [% l('Download the Binary.com charting application with an extensive range of Indicators, Price Bands, Overlays, and your own customizable Workspace
+        supporting different languages!') %]
+    </p>
+    <img src="[% request.url_for('images/pages/charting/chart-screenshot.png') %]"/>
+    <a id="download-app" class="button" href="https://downloads.binary.com/binary-charts.jnlp">
+        [% l('Download')%]
+    </a>
+    <a id="install-java" class="button" href="http://java.com/en/download/" style="display: none">
+        [% l('Install Java')%]
+    </a>
 </div>

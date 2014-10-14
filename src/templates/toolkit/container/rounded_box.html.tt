@@ -2,7 +2,7 @@
     <div class="rbox-wrap">
         [% IF heading %]
             <div class="rbox-heading">
-                <h4 class="[% IF class %][% class %][% END %]">[% heading %]</h4>
+                <h3 class="[% IF class %][% class %][% END %]">[% heading %]</h3>
             </div>
         [% END %]
         [% content %]

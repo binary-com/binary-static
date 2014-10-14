@@ -18,12 +18,12 @@
 
         [% WRAPPER 'container/drop_down_menu.html.tt' %]
             <li class="tm-li">
-                <a id="instrument" href="#" class="tm-a">[% l('Instruments') %] <span class="down-arrow-1"></span></a>
+                <a id="instrument" href="#" class="tm-a down-arrow">[% l('Instruments') %]</a>
                 [% WRAPPER 'container/rounded_box.html.tt' id='instrument-content' extra_class='drop-down-content' %]
                     <div class="rbox-content">
                         [% FOREACH underlying_input IN template_data.underlying_input %]
                             <div class="underlying_group">
-                                <h6 id="[% underlying_input.group_id %]">[% underlying_input.title %]</h6>
+                                <h3 id="[% underlying_input.group_id %]">[% underlying_input.title %]</h3>
                                 <ul id="opt_[% underlying_input.group_id %]" class="not-li[% IF underlying_input.selected %] selected[% END %]">
                                 [% FOREACH input IN underlying_input.inputs %]
                                     <li>[% input.input %] [% input.label %]</li>
@@ -36,7 +36,7 @@
                 [% END %]
             </li>
             <li class="tm-li">
-                <a id="settings" class="tm-a" href="#">[% l('Settings') %] <span class="down-arrow-1"></span></a>
+                <a id="settings" class="tm-a down-arrow" href="#">[% l('Settings') %]</a>
                 [% WRAPPER 'container/rounded_box.html.tt' id='settings-content' extra_class='drop-down-content' %]
                     <div class="rbox-content">
                         <ul class="half-1 with-separator not-li">
@@ -54,7 +54,7 @@
                 [% END %]
             </li>
             <li class="tm-li">
-                <a id="band" class="tm-a" href="#">[% l('Price Band') %] <span class="down-arrow-1"></span></a>
+                <a id="band" class="tm-a down-arrow" href="#">[% l('Price Band') %]</a>
                 [% WRAPPER 'container/rounded_box.html.tt' id='band-content' extra_class='drop-down-content' %]
                     <div class="rbox-content">
                         <ul class="not-li">
@@ -66,7 +66,7 @@
                 [% END %]
             </li>
             <li class="tm-li">
-                <a id="moving-average" class="tm-a" href="#">[% l('Moving Average') %] <span class="down-arrow-1"></span></a>
+                <a id="moving-average" class="tm-a down-arrow" href="#">[% l('Moving Average') %]</a>
                 [% WRAPPER 'container/rounded_box.html.tt' id='moving-average-content' extra_class='drop-down-content' %]
                     <div class="rbox-content">
                         <ul class="half-1 with-separator not-li">
@@ -84,7 +84,7 @@
                 [% END %]
             </li>
             <li class="tm-li">
-                <a id="indicator" class="tm-a" href="#">[% l('Indicator') %] <span class="down-arrow-1"></span></a>
+                <a id="indicator" class="tm-a down-arrow" href="#">[% l('Indicator') %]</a>
                 [% WRAPPER 'container/rounded_box.html.tt' id='indicator-content' extra_class='drop-down-content' %]
                     <div class="rbox-content">
                         <ul class="not-li">

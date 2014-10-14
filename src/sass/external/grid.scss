@@ -14,7 +14,7 @@ $gridle-class-prefix: "grd-";
 @include gridle_register_state("phablet", 481px, 767px);
 @include gridle_generate_classes();
 
-$gridle-container-max-width: 960px;
+$gridle-container-max-width: 1200px;
 $gridle-container-min-width: 320px;
 $gridle-gutter-height: 10px;
 

@@ -31,7 +31,7 @@
 
     <div class="form_button">
         [% IF fields.is_approved_attorney %]
-        <h5>Granter IDs:</h5>
+        <h3>Granter IDs:</h3>
         <textarea class="granter_loginids_input" name="granter_loginids" rows="5" cols="8">[% fields.granter_loginids %]</textarea>
         [% END %]
         <span class="button"><button name="btn_buybet_[% fields.display_id %]" class="button buy_bet_button" type="submit" value="[% fields.button_text %]">[% fields.button_text %]</button></span>

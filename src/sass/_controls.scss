@@ -1,0 +1,60 @@
+
+
+.errorrow, .errorfield {
+    color: $COLOR_RED;
+}
+
+.form_button {
+    text-align: center;
+}
+
+.form_button .errorfield {
+    margin: 0;
+}
+
+.non_input {
+    color: $COLOR_DARK_GRAY;
+    line-height: 1.7em;
+}
+
+.non_input label {
+    line-height: 1.6em;
+}
+
+.form_link {
+    display: block;
+    line-height: 0.8em;
+}
+
+.error-msg {
+    color: $COLOR_RED;
+    font-style: italic;
+}
+
+.notice-msg {
+    color: $COLOR_BLACK;
+    background-color: $COLOR_YELLOW;
+    padding: 10px;
+}
+
+button:focus, input:focus, a:focus, select:focus {
+    outline: none;
+}
+
+.login-button, #login-fields input[type=submit] {
+    background: inherit;
+    color: $COLOR_WHITE;
+    border: 2px solid;
+    &:hover {
+        color: $COLOR_BLUE;
+        background: $COLOR_WHITE;
+        border-color: $COLOR_WHITE;
+    }
+}
+
+.msg-button {
+    background: inherit;
+    &:hover {
+        background: $COLOR_BLUE;
+    }
+}

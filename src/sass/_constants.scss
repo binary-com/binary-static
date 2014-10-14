@@ -1,0 +1,52 @@
+/** IMPORTANT
+ *  Before modifying or removing any of these colors,
+ *  confirm it with design team and ask yourself do we need
+ *  any other color except these generic ones as addition
+ *  of new color may lead to inconsistent looking UI
+ */
+
+
+// Brand colors and derivatives
+
+$COLOR_ORANGE        : #E98024;
+$COLOR_LIGHT_BLUE    : #29ABE2;
+$COLOR_BLUE          : #2a3052;
+$COLOR_BLUE_SHADE    : #394171;
+$COLOR_DARK_BLUE     : #15212d;
+
+// Utility colors
+
+$COLOR_BLACK         : #000;
+$COLOR_LIGHT_BLACK   : #333;
+$COLOR_WHITE         : #fff;
+$COLOR_DARK_WHITE    : #ccc;
+
+// Colors used for secondary purposes. To be used sparingly
+
+$COLOR_RED           : #c03;
+$COLOR_YELLOW        : #FEF1CF;
+$COLOR_LIGHT_GRAY    : #f0f0f5;
+$COLOR_GRAY          : #DEDEDE;
+$COLOR_GRAY_SHADE    : #C2C2C2;
+$COLOR_DARK_GRAY     : gray;
+$COLOR_GREEN         : #2E8836;
+
+$BORDER_RADIUS: 3px;
+$CONTROL_PADDING: .25em .5em;
+$CONTROL_PADDING_L: .5em 1em;
+$PAGE_PADDING: .5em;
+$HEADER_HEIGHT: 3em;
+$BOX_SHADOW: 0 0 50px 0 rgba(0,0,0, .25);
+
+$FONT_BASE: 1rem;
+$FONT_SCALE: 1.333;
+
+
+// Use only these font sizes throughout the site
+
+$FONT_SIZE_XXL: $FONT_BASE * $FONT_SCALE * $FONT_SCALE * $FONT_SCALE;
+$FONT_SIZE_XL: $FONT_BASE * $FONT_SCALE * $FONT_SCALE;
+$FONT_SIZE_L: $FONT_BASE * $FONT_SCALE;
+$FONT_SIZE_N: $FONT_BASE;
+$FONT_SIZE_S: $FONT_BASE / $FONT_SCALE;
+$FONT_SIZE_XS: $FONT_BASE / $FONT_SCALE / $FONT_SCALE

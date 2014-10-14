@@ -379,7 +379,7 @@ function attach_inpage_popup(element) {
     return popups;
 }
 
-/** 
+/**
  * Calculate container width for chart as of now but can
  * be used to get current container width
  */
@@ -443,3 +443,9 @@ function attach_tabs(element) {
     });
     return targets;
 }
+
+$(function() {
+    $('nav.tabs a').on('click', function() {
+        console.log($(this).attr('href'))
+    });
+})

@@ -12,12 +12,12 @@
     cursor: pointer;
   }
   input {
-    border-radius: 4px;
+    border-radius: $BORDER_RADIUS;
   }
   input[type=button] {
     @include link-button;
     padding: 6px 15px 6px 15px;
-    font-size: 14px;
+    font-size: $FONT_SIZE_S;
   }
   #live_chart_options {
       display: block;
@@ -29,12 +29,12 @@
           min-width: 7%;
           span.button {
               margin: 0 5px;
-              color: $BIN_BLACK;
+              color: $COLOR_BLACK;
               font-weight: bold;
-              border-bottom: 2px solid $BIN_GRAY_SHADE;
+              border-bottom: 2px solid $COLOR_GRAY_SHADE;
               &.current {
-                color: $BIN_ORANGE;
-                border-bottom: 4px solid $BIN_ORANGE;
+                color: $COLOR_ORANGE;
+                border-bottom: 4px solid $COLOR_ORANGE;
               }
           }
         }
@@ -43,8 +43,8 @@
 }
 .chart-notice {
     text-align: left;
-    font-size: 80%;
-    color: $BIN_DARK_GRAY;
+    font-size: $FONT_SIZE_S;
+    color: $COLOR_DARK_GRAY;
     width: 90%;
     margin: 5px 0;
 }

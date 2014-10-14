@@ -1,0 +1,43 @@
+
+input, button, textarea, select, optgroup, option {
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+}
+
+input, textarea {
+    vertical-align: middle;
+}
+
+select, textarea, input:not([type=submit]), input:not([type=button])  {
+    border: 1px solid $COLOR_BLUE;
+    border-radius: $BORDER_RADIUS;
+    padding: $CONTROL_PADDING;
+}
+
+textarea {
+    height: 8em;
+    width: 25em;
+}
+
+select, #tradingdate, .date-picker, .hasDatepicker, .arrow-expand-collapse, .down-arrow-1 {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjEwMHB4IiBoZWlnaHQ9IjEwMHB4IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTAwIDEwMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxwYXRoIGZpbGw9IiMwMDAwMDAiIGQ9Ik01MC4xMTEgNzIuNjU5Yy0xLjA2MSAwLTIuMDc4LTAuNDIyLTIuODI5LTEuMTcyTDE3LjI3NSA0MS40NzRjLTEuNTYyLTEuNTYyLTEuNTYyLTQuMDk1IDAuMDAxLTUuNjU3IGMxLjU2My0xLjU2MiA0LjA5Ni0xLjU2MiA1LjcgMGwyNy4xNzggMjcuMTg1bDI3LjE3OC0yNy4xODVjMS41NjItMS41NjIgNC4wOTUtMS41NjIgNS43IDAgYzEuNTYyIDEuNiAxLjYgNC4xIDAgNS42NTdMNTIuOTQgNzEuNDg3QzUyLjE4OSA3Mi4yIDUxLjIgNzIuNyA1MC4xIDcyLjY1OXoiLz4KPC9zdmc+Cg==);
+}
+
+select, #tradingdate, .date-picker, .hasDatepicker, .down-arrow {
+    -webkit-appearance: none;
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: inherit;
+    padding-right: 2em;
+    cursor: pointer;
+}
+
+.error {
+    color: $COLOR_WHITE;
+    background: $COLOR_RED;
+    border-radius: $BORDER_RADIUS;
+    padding: .125em .5em;
+}

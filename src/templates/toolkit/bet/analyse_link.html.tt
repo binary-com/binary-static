@@ -13,7 +13,7 @@
         </a>
     [% END %]
     [% IF is_approved_attorney %]
-        <h5>Granter IDs:</h5>
+        <h3>Granter IDs:</h3>
         <textarea class='granter_loginids_input' name="granter_loginids" rows="5" cols="8">[% fields.granter_loginids %]</textarea>
         [% IF !fields.granter_loginids %]<a class="paste_all_granters" href="javascript:void(0);">paste all granters</a>[% END %]
     [% END %]

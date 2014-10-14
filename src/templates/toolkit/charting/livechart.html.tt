@@ -23,12 +23,12 @@
       <form>
         <span class='grd-grid 4 grd-grid-mobile-12'>
             [% l("From:") %]
-            <input type="text" size="11" id="live_charts_from_date" class="live_charts_date_time" />
+            <input type="text" size="13" id="live_charts_from_date" class="live_charts_date_time" />
             <input type="text" size="9" id="live_charts_from_time" class="live_charts_date_time" />
         </span>
         <span class='grd-grid 4 grd-grid-mobile-12'>
             [% l("To:") %]
-            <input type="text" size="11" id="live_charts_to_date" class="live_charts_date_time" />
+            <input type="text" size="13" id="live_charts_to_date" class="live_charts_date_time" />
             <input type="text" size="9" id="live_charts_to_time" class="live_charts_date_time" />
         </span>
         <span class='grd-grid 4 grd-grid-mobile-12'>
@@ -41,11 +41,11 @@
         <form>
             <span class='grd-grid 4 grd-grid-mobile-12'>
               [% l("High barrier") %]
-              <input type="text" size="11" id="live_charts_high_barrier" class="live_charts_clear_on_update" />
+              <input type="text" size="13" id="live_charts_high_barrier" class="live_charts_clear_on_update" />
             </span>
             <span class='grd-grid 4 grd-grid-mobile-12'>
               [% l("Low barrier") %]
-              <input type="text" size="11" id="live_charts_low_barrier" class="live_charts_clear_on_update" />
+              <input type="text" size="13" id="live_charts_low_barrier" class="live_charts_clear_on_update" />
             </span>
             <span class='grd-grid 4 grd-grid-mobile-12'>
               <a href="" id="live_charts_show_spot">[% l("Show last spot") %]</a>

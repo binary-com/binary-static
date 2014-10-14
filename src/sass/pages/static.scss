@@ -11,25 +11,16 @@
             #section-1, #section-2, #section-3, #section-4, #section-5, #section-6 {
                 .heading {
                     font-weight: bold;
-                    color: $BIN_BLUE;
+                    color: $COLOR_BLUE;
                 }
             }
         }
     }
     .sidebar-button {
-        background: $BIN_LIGHT_GRAY;
         padding: 20px;
         a {
             @include link-button;
             display: block;
         }
-    }
-    .code-sample {
-        background-color: $BIN_LIGHT_GRAY;
-        overflow-x: auto;
-        width: 90%;
-        font-family: monospace;
-        white-space: pre;
-        padding: 18px;
     }
 }

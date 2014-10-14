@@ -1,0 +1,23 @@
+nav[role=tabs] {
+}
+
+nav[role=tabs] a {
+    display: inline-block;
+    padding: $CONTROL_PADDING_L;
+    background: $COLOR_LIGHT_GRAY;
+    border-right: 1px solid rgba(0,0,0,.05);
+}
+nav[role=tabs] a:first-child {
+    border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS;
+}
+
+nav[role=tabs] a:last-child {
+    border-radius: 0 $BORDER_RADIUS $BORDER_RADIUS 0;
+    border-right: none;
+}
+
+nav[role=tabs] a.active, nav[role=tabs] a:hover {
+    text-decoration: none;
+    color: $COLOR_WHITE;
+    background-color: $COLOR_BLUE;
+}

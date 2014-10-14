@@ -1,0 +1,383 @@
+/* DO NOT include any rules for specific pages in this file. */
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+    transition: all 0.3;
+
+}
+html {
+    font-size: 18px;
+    // base font-size, used with rem for responsive typography
+
+}
+body {
+    background: $COLOR_WHITE;
+    color: $COLOR_LIGHT_BLACK;
+    font-size: $FONT_SIZE_N;
+    min-height: 100%;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    font-family: museo-sans, arial;
+
+}
+a,
+a:visited {
+    color: $COLOR_BLUE;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+a:hover,
+a:active {
+    text-decoration: underline;
+
+}
+p {
+    margin: 1.5em 0;
+    line-height: 1.3;
+
+}
+h1,
+h2,
+h3,
+h1 a,
+h2 a,
+h3 a,
+h1 a:visited,
+h2 a:visited,
+h3 a:visited,
+legend {
+    font-weight: bold;
+    color: $COLOR_BLUE;
+
+}
+h1 {
+    font-size: $FONT_SIZE_XXL;
+
+}
+h2 {
+    font-size: $FONT_SIZE_XL;
+
+}
+h3,
+legend {
+    font-size: $FONT_SIZE_L;
+
+}
+strong {
+    font-weight: bold;
+
+}
+em {
+    font-style: italic;
+
+}
+ol li {
+    list-style-type: decimal;
+    list-style-image: none;
+
+}
+img {
+    vertical-align: middle;
+    border: 0;
+
+}
+acronym,
+abbr {
+    cursor: help;
+
+}
+pre {
+    font-family: "Lucida Console", monospace;
+    border-left: 5px solid $COLOR_BLUE;
+    overflow: scroll;
+
+}
+.code-sample,
+code {
+    background-color: $COLOR_LIGHT_GRAY;
+    overflow-x: auto;
+    font-family: monospace;
+    white-space: pre;
+    line-height: 1.5;
+
+}
+pre {
+    padding: 0.5em 1em;
+    background-color: $COLOR_LIGHT_GRAY;
+
+}
+/* form styles */
+.extra_tooltip_container {
+    float: left;
+    text-align: right;
+    padding-right: 1em;
+    width: 40%;
+    line-height: 1.7em;
+
+}
+// used for form label in grid structure
+.form_label {
+    text-align: right;
+    line-height: 25px;
+
+}
+.extra_tooltip_container label {
+    padding: 0;
+    width: 94%;
+
+}
+#profit-table-form {
+    background: $COLOR_WHITE;
+    input {
+        border: 1px solid #e4e4e4;
+    }
+
+}
+.input {
+    width: 45%;
+
+}
+.row.focus input,
+.row.focus textarea {
+    background-color: $COLOR_YELLOW;
+
+}
+
+.errorrow,
+.errorfield {
+    color: $COLOR_RED;
+    font-style: italic;
+}
+.text-only {
+    color: $COLOR_DARK_GRAY;
+
+}
+.errorfield {
+    margin: 0;
+
+}
+.errorrow,
+.errorfield {
+    margin-top: 8px;
+
+}
+.last-row {
+    margin-bottom: 0;
+
+}
+.comment {
+    font-style: italic;
+
+}
+#popup {
+    width: 95%;
+    margin: 0 auto;
+
+}
+.clearfix {
+    clear: both;
+    visibility: hidden;
+    content: '.';
+
+}
+.hidden {
+    display: none;
+
+}
+.left {
+    float: left;
+
+}
+.right {
+    float: right;
+
+}
+.push {
+    clear: both;
+
+}
+.required_asterisk {
+    color: $COLOR_ORANGE;
+
+}
+.error-msg {
+    color: $COLOR_RED;
+    font-style: italic;
+
+}
+.notice-msg {
+    color: $COLOR_BLACK;
+    background-color: $COLOR_YELLOW;
+    padding: 10px;
+
+}
+/* using pixel as we need it to make footer sticky */
+.scrollbar-measure {
+    width: 100px;
+    height: 100px;
+    overflow: scroll;
+    position: absolute;
+    top: -9999px;
+}
+.indicate-loading {
+    opacity: 0.6;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+}
+ol {
+    margin: 1.25em 0 1.25em 1.25em;
+
+}
+.inpage_popup_container {
+    position: fixed;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    border: solid 1px $COLOR_ORANGE;
+    background: $COLOR_LIGHT_GRAY;
+    z-index: 1000;
+    max-width: 90%;
+    .drag-handle {
+        cursor: pointer;
+    }
+    a.close {
+        position: relative;
+        top: -10px;
+        right: -10px;
+    }
+    .inpage_popup_content {
+        margin: 30px 10px 10px;
+        padding: 0;
+    }
+    .inpage_popup_content_box {
+        padding: 0;
+        margin: 0;
+        background: $COLOR_WHITE;
+        border: solid 2px $COLOR_GRAY;
+        text-align: center;
+    }
+
+}
+.paging-navigation {
+    ul.paging-links {
+        li {
+            line-height: 1em;
+        }
+    }
+
+}
+ul.checked li,
+ul.bulleted li {
+    margin-bottom: 0.5em;
+    line-height: 1.3;
+
+}
+ul.checked li {
+    padding-left: 25px;
+    background-size: 20px;
+    background-position: 0 5px;
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNC4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDQzMzYzKSAgLS0+DQo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjI0cHgiIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAwIDI0IDIwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAyNCAyMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8Zz4NCgkJPGc+DQoJCQk8cG9seWdvbiBmaWxsPSIjRTk4MDI1IiBwb2ludHM9IjguNjIzLDE5LjU1NyAwLDEwLjkzNiAzLjczNiw3LjE5OCA4LjYyMywxMi4wODIgMjAuMjYyLDAuNDQzIDI0LDQuMTggOC42MjMsMTkuNTU3IAkJCSIvPg0KCQk8L2c+DQoJPC9nPg0KPC9nPg0KPC9zdmc+DQo=");
+    background-repeat: no-repeat;
+
+}
+ul.bulleted {
+    margin-left: 1em;
+}
+ul.bulleted li {
+    list-style: disc outside none;
+
+}
+.reset_ol {
+    counter-reset: item;
+    li {
+        display: block;
+    }
+    li:before {
+        content: counters(item, ".") ". ";
+        counter-increment: item;
+    }
+
+}
+.hint {
+    font-size: $FONT_SIZE_S;
+    color: #58595b;
+    margin-top: 3px;
+}
+#content {
+    margin-bottom: 20px;
+
+}
+.separator-line {
+    border-bottom: 1px solid $COLOR_GRAY;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+.language-selector {
+    width: 2.5em;
+    padding-left: 0.5em;
+    color: white;
+    border: none;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJHbHlwaHNfLV9XZWIiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDAgNDAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDQwIDQwIiB4bWw6c3BhY2U9InByZXNlcnZlIiBoZWlnaHQ9IjEwMHB4IiB3aWR0aD0iMTAwcHgiPgo8cGF0aCBmaWxsPSJ3aGl0ZSIgaWQ9IlRyYW5zbGF0ZV8xXyIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik05LDE1LjZjMCwwLjgsMC41LDEuMSwxLDFjMC43LDAsMS41LTAuNCwyLjItMSAgYy0wLjItMC44LTAuNC0xLjktMC40LTMuMkMxMC4yLDEzLjIsOSwxNC4zLDksMTUuNnogTTEyLjcsMTIuMmMwLDEuMSwwLjEsMiwwLjMsMi44YzAuOS0wLjgsMS42LTEuOSwyLjEtMy4xICBDMTQuOSwxMS45LDEzLjgsMTEuOSwxMi43LDEyLjJ6IE0yNSwyNC41aDNsMC42LDJIMzFsLTMuMS0xMEgyNWwtMywxMGgyLjNMMjUsMjQuNXogTTI1LjgsMjAuNGMwLjItMC42LDAuNC0xLjMsMC42LTEuOWgwICBjMC4yLDAuNiwwLjQsMS4zLDAuNywxLjlsMC44LDIuMWgtM0wyNS44LDIwLjR6IE0yMiwxMy41di05SDV2MTZoNXY2bDctNmgxdjloNmw2LDZ2LTZoNXYtMTZIMjJ6IE0xOCwxNy41ICBjLTAuOSwwLjUtMi4xLDAuOC0zLjYsMC45Yy0wLjEtMC4yLTAuMy0wLjYtMC40LTAuOGMxLjgtMC4yLDMuMS0wLjYsNC0xLjJWMTcuNXogTTE4LjYsMTMuNWMtMC40LTAuOC0xLjMtMS4zLTIuNS0xLjUgIGMtMC42LDEuNS0xLjcsMi45LTIuOSw0YzAuMSwwLjMsMC4yLDAuNSwwLjQsMC43bC0wLjksMC41Yy0wLjEtMC4yLTAuMi0wLjQtMC4zLTAuN2MtMS4yLDAuOC0yLjEsMS0yLjcsMWMtMS4yLDAtMS44LTAuOC0xLjgtMS44ICBjMC0xLjksMS42LTMuMywzLjctNC4xYzAtMC43LDAtMS41LDAtMi4zYy0yLjQsMC0yLjcsMC0zLjIsMGwwLTAuOWMwLjcsMCwyLDAsMy4yLDBjMC0wLjYsMC0xLjQsMC4xLTJsMS40LDAuMSAgYzAsMC4xLTAuMiwwLjItMC40LDAuM2MwLDAuNS0wLjEsMS4xLTAuMSwxLjZjMS42LDAsNC4zLTAuMiw1LjgtMC42bDAuMSwwLjljLTEuNSwwLjQtNC4zLDAuNS02LDAuNWMwLDAuNywwLDEuNCwwLDIgIGMxLTAuMywxLjktMC4zLDIuMi0wLjNjMC4yLDAsMC40LDAsMC42LDBjMC4xLTAuMiwwLjEtMC40LDAuMS0wLjZsMSwwLjJjMCwwLjItMC4xLDAuNC0wLjEsMC41YzEuOSwwLjMsMi45LDEuMiwzLjMsMi4zSDE4LjZ6ICAgTTMzLDI3LjVoLTV2M2wtMy4yLTNIMjB2LTEyaDEzVjI3LjV6Ii8+Cjwvc3ZnPgo=");
+
+}
+.header nav {
+    color: white;
+}
+.nav1st li.active div {
+    color: $COLOR_BLUE;
+    background: $COLOR_WHITE;
+}
+.nav1st li:hover,
+.language-selector:hover {
+    background-color: $COLOR_ORANGE;
+
+}
+.nav2nd {
+    color: $COLOR_BLUE;
+    background-color: $COLOR_WHITE;
+    box-shadow: $BOX_SHADOW;
+}
+
+.nav2nd li:hover {
+    color: $COLOR_WHITE;
+    background: $COLOR_BLUE;
+}
+
+.nav-trade,
+.nav-cashier,
+.nav-resources,
+.nav-charts,
+.nav-help {
+    background-repeat: no-repeat;
+    background-size: auto 70%;
+    background-position: center center;
+}
+.nav-trade {
+    font-weight: bold;
+}
+
+#dobdd {
+    border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS;
+}
+
+#dobmm {
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+#dobyy {
+    border-radius: 0 $BORDER_RADIUS $BORDER_RADIUS 0;
+}

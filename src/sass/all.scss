@@ -1,18 +1,24 @@
-@import "colors";
+@import "constants";
 
-/* common styles */
 @import "reset";
 @import "mixin";
 @import "common";
+@import "layout";
+@import "page";
+@import "readable";
+@import "compatibility";
 
-/* main style */
 @import "common/header";
 @import "common/footer";
 @import "common/nav";
 @import "common/exception";
 @import "common/tooltip";
 
-/* pages */
+@import "controls";
+@import "controls/form";
+@import "controls/button";
+@import "controls/tabs";
+
 @import "pages/home.scss";
 @import "pages/login.scss";
 @import "pages/get-started.scss";
@@ -30,15 +36,10 @@
 @import "pages/livechart.scss";
 @import "pages/timeline.scss";
 
-
-/* media queries */
 @import "media-queries";
 
-/* external stylesheets
- * ===================================== */
-/* date picker */
+@import "external/syntax-highlighting";
 @import "external/jquery.ui.timepicker.scss";
 
-/* Grid layout system */
 @import "external/grid";
 @import "external/mmenu/jquery.mmenu.all";

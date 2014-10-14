@@ -5,35 +5,37 @@
 - );
 - my $lang = stash->{language};
 
+#ticker-container
+    #hometicker
 #banner
   .grd-container
     .grd-grid-9.grd-row-padding.grd-hide-mobile.grd-hide-phablet
       #slider
         .slides-container
           #slide-1.slides.invisibleslides
-            %h1.dark= l('The premier platform for binary options trading')
+            %h2= l('The premier platform for binary options trading')
             %p= l('Discover the easiest way to get started in the financial markets.')
-            %h4
+            %h3
               %a.learn-more.pjaxload{:href => url_for('/why-us')}= l('Learn More')
           #slide-2.slides.invisibleslides
-            %h1.dark= l('Best-in-class pricing for binaries...')
+            %h2= l('Best-in-class pricing for binaries...')
             %p= l('Our exclusive pricing technology gives you the best possible opportunity to make your money work for you.')
-            %h4
+            %h3
               %a.learn-more.pjaxload{:href => url_for('/why-us')}= l('Learn More')
           #slide-3.slides.invisibleslides
-            %h1.dark= l('10 seconds to 365 days...')
+            %h2= l('10 seconds to 365 days...')
             %p= l('$1 to $100,000 payouts, low-risk to high-leverage, and much more. We offer limitless profit opportunities.')
-            %h4
+            %h3
               %a.learn-more.pjaxload{:href => url_for('/why-us')}= l('Learn More')
           #slide-4.slides.invisibleslides
-            %h1.dark= l('Technology leader with more than 10 years experience...')
+            %h2= l('Technology leader with more than 10 years experience...')
             %p= l('Trade with confidence with the industry pioneer.')
-            %h4
+            %h3
               %a.learn-more.pjaxload{:href => url_for('/why-us')}= l('Learn More')
           #slide-5.slides.invisibleslides
-            %h1.dark= l('Novice or Expert...')
+            %h2= l('Novice or Expert...')
             %p= l('With payouts from $1 to $100,000, we have you covered.')
-            %h4
+            %h3
               %a.learn-more.pjaxload{:href => url_for('/why-us')}= l('Learn More')
         %ul.slides-pagination
           %li.current
@@ -90,12 +92,12 @@
       #trader-types.grd-grid-2.grd-hide-phablet
         #new-trader.center-aligned
           %img.responsive{:src => url_for('images/pages/home/new-trader.svg')}
-          %h4= l('New To Trading?')
+          %h3= l('New To Trading?')
           %span
             %a.learn-more.pjaxload{:href => url_for('/get-started')}= l('Learn More')
         #experienced-trader.center-aligned
           %img.responsive{:src => url_for('images/pages/home/experienced-trader.svg')}
-          %h4= l('Experienced Traders')
+          %h3= l('Experienced Traders')
           %span
             %a.learn-more.pjaxload{:href => url_for('/why-us')}= l('Learn More')
       #trading-steps.grd-parent.grd-grid-10.grd-grid-phablet-12
@@ -116,10 +118,7 @@
               %p= l('Make your trade')
         #how-it-works-4.grd-grid-3.grd-grid-phablet-12.grd-centered-phablet
           %p= l('No risk, $10K virtual money account')
-          %a.pjaxload{:href => url_for('linkto_acopening.cgi?actype=virtual'), :class => 'button'}
-            %span= l('Try it now')
-#ticker-container
-    #hometicker
+          %a.pjaxload{:href => url_for('linkto_acopening.cgi?actype=virtual'), :class => 'button'}= l('Try it now')
 #returns
   .grd-container
     #prices.grd-grid-6.grd-grid-mobile-12.grd-parent
@@ -134,13 +133,11 @@
         %h1= l('[_1]', '1000%')
         = l('return on trades you make')
       .button.grd-grid-12.grd-with-padding
-        %a.pjaxload{:href => url_for('trade.cgi'), :class =>  'button'}
-          %span= l('View prices')
+        %a.pjaxload{:href => url_for('trade.cgi'), :class =>  'button'}= l('View prices')
     #try-now.grd-grid-6.grd-grid-mobile-12.grd-parent
       .figures.grd-grid-6
         != l('More than [_1] trades available', '<h1>1,000,000</h1>')
       .figureses.grd-grid-6
         != l('Under [_1] for market-leading returns', '<h1>$1</h1>')
       .button.grd-grid-12.grd-with-padding
-        %a.pjaxload{:href => url_for('open_account.cgi'), :class => 'button'}
-          %span= l('Create free account')
+        %a.pjaxload{:href => url_for('open_account.cgi'), :class => 'button'}= l('Create free account')

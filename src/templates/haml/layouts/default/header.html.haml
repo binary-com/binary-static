@@ -9,9 +9,7 @@
       .grd-grid-3.grd-grid-mobile-2.grd-grid-phablet-1
         %a#logo{:href=>url_for("/")}
           .grd-grid-3.grd-grid-mobile-12.grd-grid-phablet-12.grd-no-gutter
-            %img{:class => 'responsive grd-float-left', src => url_for('images/pages/binary-symbol-logo.svg')}
-          .grd-grid-9.grd-hide-mobile.grd-hide-phablet#binary-logo-text
-            %img{:class => 'responsive', src => url_for('images/pages/binary-type-logo.svg')}
+            %img{:src => url_for('images/common/binary-logo-full.svg')}
       .grd-grid-6.grd-hide-mobile.grd-hide-phablet
         = include('layouts/default/nav')
       .grd-grid-3.grd-grid-mobile-9.grd-grid-phablet-10.by_client_type.client_virtual.client_real#client-logged-in{ :style => 'display: none;'}
@@ -24,9 +22,6 @@
             %input{:name => 'loginid', :type => 'text', :placeholder => stash('loginholder')}
             %input{:name => 'password', :type => 'password', :placeholder => stash('pwdholder')}
             %input{:type => 'submit', :value => stash('logintext')}
-          %span#login-links
-            %a.pjaxload#register{:href=>url_for('open_account.cgi')}= l('Register')
-            %a.pjaxload#lost-password{:href=>url_for('lost_password.cgi')}= l('Lost password?')
       .grd-grid-1.grd-hide.grd-show-mobile.grd-no-gutter-mobile.grd-show-phablet
         #mobile-menu-icon-container
           %a{:href => '#mobile-menu', :id => 'mobile-menu-icon'}
