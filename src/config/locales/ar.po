@@ -7,14 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2014-10-10 00:48+0200\n"
+"PO-Revision-Date: 2014-10-15 15:35+0200\n"
 "Last-Translator: Ehab Gubil <egubil@gmail.com>\n"
-"Language-Team: Arabic <https://hosted.weblate.org/projects/binary/static/ar/>\n"
+"Language-Team: Arabic <https://hosted.weblate.org/projects/binary/static/ar/>"
+"\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 "X-Generator: Weblate 1.10-dev\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
@@ -1397,7 +1399,6 @@ msgid "Barrier Step format error"
 msgstr "خطأ فى صيغة حركة الحاجز"
 
 #: lib/BOM/Product/Contract.pm:2563
-#, fuzzy
 #| msgid "Barrier outside acceptable range."
 msgid "Barrier is out of acceptable range."
 msgstr "الحاجز لا يقع ضمن النطاق المقبول."
@@ -4397,7 +4398,7 @@ msgstr "الشريط السفلى= المتوسط - انحراف معيارى 0.
 
 #: lib/BOM/Product/Contract.pm:2543
 msgid "Lower barrier is out of acceptable range. Please adjust the lower barrier."
-msgstr ""
+msgstr "الحاجز السفلي لا يقع ضمن النطاق المقبول. يرجى ضبط الحاجز السفلي."
 
 #: cgi/smartchart.cgi:30 cgi/subs/subs_graphs_chartdirector.pm:350
 #: lib/BOM/View/Charting.pm:439 lib/BOM/View/Charting.pm:639
