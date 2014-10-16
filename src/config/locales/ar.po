@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2014-10-15 15:35+0200\n"
+"PO-Revision-Date: 2014-10-16 02:33+0200\n"
 "Last-Translator: Ehab Gubil <egubil@gmail.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/binary/static/ar/>"
 "\n"
@@ -2852,7 +2852,9 @@ msgstr "كل خيار ثنائى هو تنبؤ عن الحركة المستقب�
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/how_to_trade_binaries.html.haml:1
 msgid "Each binary trade is for a pre-determined payout amount. You win the payout if your prediction is correct."
-msgstr "كل تداول للخيارات الثنائية يعطى مردود محدد مسبقاً. تربح المردود إذا كان توقعك صحيحاً."
+msgstr ""
+"كل تداول للخيارات الثنائية له عائد محدد مسبقاً. تربح العائد إذا كان توقعك "
+"صحيحاً."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:91
 msgid "Each party to this Agreement represents and warrants to the other that it has, and will retain throughout the Term all right, title and authority to enter into this Agreement, to grant to the other party the rights and licences granted in this Agreement and to perform all of its obligations under this Agreement."
@@ -2940,7 +2942,7 @@ msgstr "سعر الدخول"
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/buy_success_ajax.html.tt:7
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/explanation/details/risefall.html.tt:1
 msgid "Entry spot"
-msgstr "السعر البدء"
+msgstr "سعر البدء"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/glossary.html.haml:1
 msgid "Entry spot price"
@@ -8517,7 +8519,7 @@ msgstr "الشبكة العمودية"
 #: cgi/intraday_prices.cgi:59 cgi/oop/Controller/Bet.pm:1259
 #: cgi/oop/Controller/Bet.pm:1275
 msgid "View"
-msgstr "اطلع على"
+msgstr "شاهد"
 
 #: /home/git/translations/binary-static/src/templates/haml/resources/index.html.haml:1
 msgid "View Rise/Fall contract prices across a range of markets."
@@ -9279,7 +9281,11 @@ msgstr "يمكنك أن تمول حسابك بحد أدنى 5 دولار أو ي
 #. (request.url_for("linkto_acopening.cgi", { 'actype' => 'real'  }))
 #: /home/git/translations/binary-static/src/templates/toolkit/account/open_account.html.tt:13
 msgid "You can open a <a class =\"pjaxload\" href=\"%1\">real money</a> account using dollars, pounds or euros. Simply make a deposit using your credit card, bank wire or e-cash. You can deposit between 5 and 150,000 USD, GBP, EUR and AUD."
-msgstr "يمكنك فتح <a class =\"pjaxload\" href=\"%1\">حساب حقيقي</a> بالدولار أو اليورو أو الجنيه الاسترليني. ببساطة قم بعمل إيداع باستخدام بطاقة ائتمان أو تحويل بنكى أو شيك أو أموال إلكترونية. يمكنك إيداع ما بين 5 و 150000 USD ،GBP ،AUD ويورو ."
+msgstr ""
+"يمكنك فتح <a class =\"pjaxload\" href=\"%1\">حساب حقيقي</a> بالدولار أو "
+"اليورو أو الجنيه الاسترليني. ببساطة قم بعمل إيداع باستخدام بطاقة ائتمان أو "
+"تحويل بنكى أو شيك أو أموال إلكترونية. يمكنك إيداع ما بين 5 و 150000 USD ،GBP "
+"،AUD و EUR."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/account/open_account.html.tt:3
 msgid "You can open two types of account: a real money account and a virtual money account."
@@ -9362,12 +9368,12 @@ msgstr "لقد سحبت بالفعل ما يعادل%1 EUR من المجموع �
 #. (withdrawal_since_inception_monetary)
 #: /home/git/translations/binary-static/src/templates/toolkit/account/trading_withdrawal_limit.html.tt:63
 msgid "You have already withdrawn the equivalent of EUR %1 in aggregate over the lifetime of your account."
-msgstr "لقد سحبت بالفعل ما يعادل%1 EUR على مدى تاريخ حسابك."
+msgstr "لقد سحبت بالفعل ما يعادل %1 EUR على مدى تاريخ حسابك."
 
 #. (withdrawal_since_inception_monetary)
 #: /home/git/translations/binary-static/src/templates/toolkit/account/trading_withdrawal_limit.html.tt:25
 msgid "You have already withdrawn the equivalent of EUR %1."
-msgstr "لقد سحبت بالفعل ما يعادل%1 EUR."
+msgstr "لقد سحبت بالفعل ما يعادل %1 EUR."
 
 #: cgi/subs/subs_homepage.pm:118
 msgid "You have bought contracts with a combined purchase price of five times the bonus amount."
@@ -9919,7 +9925,7 @@ msgstr "تفاصيل"
 
 #: lib/BOM/Product/Contract/Strike.pm:252
 msgid "entry spot"
-msgstr "السعر البدء"
+msgstr "سعر البدء"
 
 #. ($abs_diff)
 #: lib/BOM/Product/Contract/Strike.pm:249
@@ -11067,7 +11073,7 @@ msgstr "نفط/AUD"
 
 #: Underlying Symbol frxBROEUR
 msgid "Oil/EUR"
-msgstr "نفط/EUR"
+msgstr "Oil/EUR"
 
 #: Underlying Symbol frxBROGBP
 msgid "Oil/GBP"
@@ -11139,27 +11145,27 @@ msgstr "يورو/الكرون النرويجى"
 
 #: Underlying Symbol frxEURNZD
 msgid "EUR/NZD"
-msgstr "يورو/دولار نيوزيلندى"
+msgstr "EUR/NZD"
 
 #: Underlying Symbol frxEURPLN
 msgid "EUR/PLN"
-msgstr "يورو/زلوتى بولندى"
+msgstr "EUR/PLN"
 
 #: Underlying Symbol frxEURSEK
 msgid "EUR/SEK"
-msgstr "يورو/كورونا سويدية"
+msgstr "EUR/SEK"
 
 #: Underlying Symbol frxEURSGD
 msgid "EUR/SGD"
-msgstr "يورو/الدولار السنغافورى"
+msgstr "EUR/SGD"
 
 #: Underlying Symbol frxEURUSD
 msgid "EUR/USD"
-msgstr "يورو/دولار أمريكى"
+msgstr "EUR/USD"
 
 #: Underlying Symbol frxEURZAR
 msgid "EUR/ZAR"
-msgstr "اليورو/الراند الجنوب أفريقى"
+msgstr "EUR/ZAR"
 
 #: Underlying Symbol frxGBPAUD
 msgid "GBP/AUD"
@@ -11295,23 +11301,23 @@ msgstr "USD/MXN"
 
 #: Underlying Symbol frxUSDMYR
 msgid "USD/MYR"
-msgstr "دولار أمريكى/الرنجت الماليزية"
+msgstr "USD/MYR"
 
 #: Underlying Symbol frxUSDNOK
 msgid "USD/NOK"
-msgstr "دولار أمريكى/الكرون النرويجى"
+msgstr "USD/NOK"
 
 #: Underlying Symbol frxUSDPLN
 msgid "USD/PLN"
-msgstr "دولار أمريكى/الزلوتى البولندى"
+msgstr "USD/PLN"
 
 #: Underlying Symbol frxUSDSEK
 msgid "USD/SEK"
-msgstr "دولار أمريكى/الكورونا السويدية"
+msgstr "USD/SEK"
 
 #: Underlying Symbol frxUSDSGD
 msgid "USD/SGD"
-msgstr "دولار أمريكى/دولار سنغافورى"
+msgstr "USD/SGD"
 
 #: Underlying Symbol frxUSDZAR
 msgid "USDZAR"
@@ -11323,7 +11329,7 @@ msgstr "أوقية فضة/دولار أسترالى"
 
 #: Underlying Symbol frxXAGEUR
 msgid "XAG/EUR"
-msgstr "أوقية فضة/يورو"
+msgstr "XAG/EUR"
 
 #: Underlying Symbol frxXAGGBP
 msgid "XAG/GBP"
@@ -11331,7 +11337,7 @@ msgstr "أوقية فضة/جنية أسترلينى"
 
 #: Underlying Symbol frxXAGUSD
 msgid "Silver/USD"
-msgstr "فضة/دولار أمريكى"
+msgstr "Silver/USD"
 
 #: Underlying Symbol frxXAUAUD
 msgid "Gold/AUD"
@@ -11339,7 +11345,7 @@ msgstr "ذهب/دولار أسترالى"
 
 #: Underlying Symbol frxXAUEUR
 msgid "Gold/EUR"
-msgstr "ذهب/يورو"
+msgstr "Gold/EUR"
 
 #: Underlying Symbol frxXAUGBP
 msgid "Gold/GBP"
@@ -11347,7 +11353,7 @@ msgstr "ذهب/جنية أسترلينى"
 
 #: Underlying Symbol frxXAUUSD
 msgid "Gold/USD"
-msgstr "ذهب/دولار أمريكى"
+msgstr "Gold/USD"
 
 #: Underlying Symbol frxXPDAUD
 msgid "XPD/AUD"
@@ -11363,7 +11369,7 @@ msgstr "XPD/GBP"
 
 #: Underlying Symbol frxXPDUSD
 msgid "Palladium/USD"
-msgstr "بالاديوم/دولار أمريكى"
+msgstr "Palladium/USD"
 
 #: Underlying Symbol frxXPTAUD
 msgid "XPT/AUD"
@@ -11642,7 +11648,9 @@ msgstr "ينتهى بين"
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (EXPIRYRANGE - daily)
 msgid "%1 <strong>%2</strong> payout if %3 <strong>ends strictly between %7</strong> and <strong>%6</strong> at close on %5."
-msgstr "%1 <strong>%2</strong> يعطى مردود إذا كان  3% <strong>  ينتهى بالضبط بين  7%</strong> و <strong>%6</strong>  عند الإغلاق فى  5%."
+msgstr ""
+"%1 <strong>%2</strong> عائد إذا %3 <strong>انتهى بالضبط بين %7</strong> و "
+"<strong>%6</strong> عند الإغلاق فى  %5."
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -11653,7 +11661,9 @@ msgstr "%1 <strong>%2</strong> يعطى مردود إذا كان  3% <strong>  �
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (EXPIRYRANGE - intraday)
 msgid "%1 <strong>%2</strong> payout if %3 <strong>ends strictly between %7</strong> and <strong>%6</strong> at %5 after %4."
-msgstr "%1 <strong>%2</strong> يعطى مردود إذا كان 3% <strong> ينتهى بالضبط بين 7%</strong> و <strong>%6</strong>   فى  5% بعد4%."
+msgstr ""
+"%1 <strong>%2</strong> عائد إذا %3 <strong>انتهى بالضبط بين %7</strong> و "
+"<strong>%6</strong> عند %5 بعد %4."
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -11665,7 +11675,9 @@ msgstr "%1 <strong>%2</strong> يعطى مردود إذا كان 3% <strong> ي�
 #: Translation for contract type description (EXPIRYRANGE -
 #: intraday_fixed_expiry)
 msgid "%1 <strong>%2</strong> payout if %3 <strong>ends strictly between %7</strong> and <strong>%6</strong> at %5."
-msgstr "%1 <strong>%2</strong> يعطى مردود إذا كان %3 <strong>  ينتهى بالضبط بين %7</strong> و  <strong>%6</strong>  فى   %5."
+msgstr ""
+"%1 <strong>%2</strong> عائد إذا %3 <strong>انتهى بالضبط بين %7</strong> و "
+"<strong>%6</strong> عند %5."
 
 #: Translation for contract type "ASIAND"
 msgid "asian down"
@@ -11733,7 +11745,9 @@ msgstr "يهبط"
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (FLASHD - intraday)
 msgid "%1 <strong>%2</strong> payout if %3 is strictly <strong>lower</strong> than <strong>%6</strong> at %5 after %4."
-msgstr "%1 <strong>%2</strong> تحصل على العائد اذا كان %3 جليا <strong>أقل</strong> من <strong>%6</strong> عند %5 بعد %4."
+msgstr ""
+"%1 <strong>%2</strong> عائد اذا كان %3 بوضوح <strong>أقل</strong> من "
+"<strong>%6</strong> عند %5 بعد %4."
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -11744,7 +11758,9 @@ msgstr "%1 <strong>%2</strong> تحصل على العائد اذا كان %3 ج�
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (FLASHD - intraday_fixed_expiry)
 msgid "%1 <strong>%2</strong> payout if %3 is strictly <strong>lower</strong> than <strong>%6</strong> at %5."
-msgstr "%1 <strong>%2</strong>يعطى مردود إذا كان 3% أقل <strong>بالضبط</strong> من<strong>%6</strong> فى 5%."
+msgstr ""
+"%1 <strong>%2</strong> عائد إذا كان %3 بوضوح <strong>اقل</strong> من "
+"<strong>%6</strong> عند %5."
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -11818,7 +11834,9 @@ msgstr "أعلى من"
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (CALL - daily)
 msgid "%1 <strong>%2</strong> payout if %3 is strictly <strong>higher</strong> than <strong>%6</strong> at close on %5."
-msgstr "%1 <strong>%2</strong>يعطى مردود إذا كان 3% أعلى<strong>بالضبط</strong> من<strong>%6</strong>عند الإغلاق فى 5%."
+msgstr ""
+"%1 <strong>%2</strong> عائد إذا كان %3 بوضوح <strong>أعلى</strong> من "
+"<strong>%6</strong> عند الإغلاق في %5."
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -11829,7 +11847,9 @@ msgstr "%1 <strong>%2</strong>يعطى مردود إذا كان 3% أعلى<stro
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (CALL - intraday)
 msgid "%1 <strong>%2</strong> payout if %3 is strictly <strong>higher</strong> than <strong>%6</strong> at %5 after %4."
-msgstr "%1 <strong>%2</strong>يعطى مردود إذا كان 3% أعلى<strong> بالضبط</strong>من<strong>%6</strong>فى 5% بعد 4%."
+msgstr ""
+"%1 <strong>%2</strong> عائد إذا كان %3 بوضوح <strong>أعلى</strong> من "
+"<strong>%6</strong> عند %5 بعد %4."
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -11840,7 +11860,9 @@ msgstr "%1 <strong>%2</strong>يعطى مردود إذا كان 3% أعلى<stro
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (CALL - intraday_fixed_expiry)
 msgid "%1 <strong>%2</strong> payout if %3 is strictly <strong>higher</strong> than <strong>%6</strong> at %5."
-msgstr "%1 <strong>%2</strong>يعطى مردود إذا كان 3% أعلى<strong> بالضبط</strong>من<strong>%6</strong>فى 5%."
+msgstr ""
+"%1 <strong>%2</strong> عائد إذا كان %3 بوضوح <strong>أعلى</strong> من "
+"<strong>%6</strong> عند %5."
 
 #: Translation for contract type "EXPIRYMISS"
 msgid "ends outside"
