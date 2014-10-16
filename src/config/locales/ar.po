@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2014-10-16 02:41+0200\n"
+"PO-Revision-Date: 2014-10-17 00:11+0200\n"
 "Last-Translator: Ehab Gubil <egubil@gmail.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/binary/static/ar/>"
 "\n"
@@ -240,7 +240,9 @@ msgstr "تقدم %1 أسواق المال العالمية فى منصة تدا�
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/get_started/how_to_trade_binaries.html.haml:1
 msgid "%1 prices are benchmarked against the interbank options market, so you always get best-in-class prices for your trades."
-msgstr "يتم قياس أسعار 1% مقارنة بأسعار سوق الخيارات بين البنوك لذلك تأكد أنك تحصل دوما على أفضل الأسعار لتداولاتك."
+msgstr ""
+"يتم قياس أسعار %1 مقارنة بأسعار سوق الخيارات بين البنوك لذلك تأكد أنك تحصل "
+"دوما على أفضل الأسعار لتداولاتك."
 
 #. (request()
 #: cgi/subs/subs_forms_output.pm:244
@@ -416,7 +418,7 @@ msgstr "ثلاث دقائق"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/binary_options_basics.html.haml:1
 msgid "4. Choose your Payout"
-msgstr "4. اخنر المردود الخاص بك"
+msgstr "4. اخنر العائد"
 
 #: cgi/subs/subs_forms.pm:615
 msgid "5 - 25 characters and alphanumeric only."
@@ -599,7 +601,12 @@ msgstr "<strong>تنوية هام</strong> - ليس لـ %1 علاقة بأى م
 #. ($website->display_name)
 #: cgi/paymentagent_list.cgi:68
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the payment agents listed above. Each payment agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of payment agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and payment agents."
-msgstr "<strong>تنوية هام</strong>- شركة %1 ليس لها علاقة بأى من وكلاء الدفع المذكورين أعلاه. كل وكيل دفع يعمل كمزود خدمة مستقل وليس موافق عليه أو مضمون بأى شكل بواسطة 1%. يتعامل العملاء مع وكلاء الدفع على مسئوليتهم الخاصة. ننصح العملاء بالتحقق من أوراق اعتماد وكلاء الدفع قبل أن يرسلوا لهم أى أموال. 1% لا تتحمل مسئولية الصفقات بين العملاء ووكلاء الدفع فى أى ظرف."
+msgstr ""
+"<strong>تنوية هام</strong>- شركة %1 ليس لها علاقة بأى من وكلاء الدفع "
+"المذكورين أعلاه. كل وكيل دفع يعمل كمزود خدمة مستقل وليس موافق عليه أو مضمون "
+"بأى شكل من %1. يتعامل العملاء مع وكلاء الدفع على مسئوليتهم الخاصة. ننصح "
+"العملاء بالتحقق من أوراق اعتماد وكلاء الدفع قبل أن يرسلوا لهم أى أموال. %1 "
+"لا تتحمل مسئولية الصفقات بين العملاء ووكلاء الدفع تحت أى ظرف."
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/how_to_trade_binaries.html.haml:1
 msgid "<strong>In/Out</strong> - predict if the market will stay inside two price targets, or end between or outside them."
@@ -1268,11 +1275,11 @@ msgstr "أستراليا"
 #: cgi/f_onlineid.cgi:183 cgi/f_onlineid.cgi:187 cgi/subs/subs_forms.pm:3092
 #: lib/BOM/View/Menu.pm:113
 msgid "Authenticate"
-msgstr "وثق"
+msgstr "التوثيق"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/authenticate_to_withdraw.html.tt:1
 msgid "Authenticate to Withdraw"
-msgstr "وثق لتقوم بالسحب"
+msgstr "وثق لتتمكن من السحب"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/authenticate_to_withdraw.html.tt:5
 msgid "Authenticate your Account"
@@ -1419,7 +1426,7 @@ msgstr "حاجز تعويض"
 
 #: lib/BOM/Product/Pricing/Engine/IntradayHistorical.pm:166
 msgid "Barrier outside acceptable range."
-msgstr "الحاجز لا يقع ضمن النطاق المقبول."
+msgstr "الحاجز خارج النطاق المقبول."
 
 #: lib/BOM/Product/Helper/PricingTableParameters.pm:224
 msgid "Barrier terms"
@@ -1465,7 +1472,7 @@ msgstr "مع أطيب التحيات"
 
 #: /home/git/translations/binary-static/src/templates/haml/home/index.html.haml:1
 msgid "Best-in-class pricing for binaries..."
-msgstr "نقدم أفضل سعر الثنائيات بين منافسينا..."
+msgstr "نقدم أفضل سعر للثنائيات بين منافسينا..."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/group_history.html.haml:1
 msgid "BetOnMarkets goes live"
@@ -1734,7 +1741,7 @@ msgstr "الصراف"
 
 #: cgi/subs/subs_forms.pm:1651
 msgid "Cashier/Settings password"
-msgstr "كلمة مرور الصراف/ الإعدادات"
+msgstr "كلمة مرور الصراف/الإعدادات"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/betting_rules.html.tt:25
 msgid "Certain limits are imposed as to the acceptable levels for barrier/strike prices of contracts. Typically, the barrier/strike may not be too close nor too far from the current underlying market level."
@@ -1900,7 +1907,7 @@ msgstr "اختر وسيلة الدفع التي تود استخدامها."
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/how_to_trade_binaries.html.haml:1
 msgid "Choose the payout"
-msgstr "اخنر المردود"
+msgstr "اخنر العائد"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/how_to_trade_binaries.html.haml:1
 msgid "Choose the underlying market"
@@ -2142,7 +2149,7 @@ msgstr "انتهت صلاحية هذا العقد."
 
 #: lib/BOM/Product/Contract.pm:1816
 msgid "Contract market price is too close to final payout."
-msgstr "سعر السوق الخاص بالعقد قريب جداً من المردود النهائى."
+msgstr "سعر سوق العقد قريب جداً من العائد النهائى."
 
 #. ($eod_blackout_expiry->as_string)
 #: lib/BOM/Product/Contract.pm:2742
@@ -2238,7 +2245,7 @@ msgstr "التكاليف"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/tollfree_table.html.tt:4
 msgid "Country"
-msgstr "بلد"
+msgstr "الدولة"
 
 #: cgi/f_writepartics.cgi:220 cgi/subs/subs_forms.pm:1033
 #: cgi/subs/subs_forms.pm:426
@@ -2247,7 +2254,7 @@ msgstr "بلد الإقامة"
 
 #: /home/git/translations/binary-static/src/templates/haml/home/index.html.haml:1
 msgid "Country:"
-msgstr "بلد:"
+msgstr "الدولة:"
 
 #: /home/git/translations/binary-static/src/templates/haml/home/index.html.haml:1
 msgid "Create free account"
@@ -2920,12 +2927,15 @@ msgstr "بنتهى بين أو خارج"
 #. (site_url)
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:34
 msgid "Ensure that any historical trading records and performance figures presented to your referrals related to trading on the website %1 are accurate and not misleading."
-msgstr "تأكد من أن أى سجلات تجارية وأرقام الأداء الماضية المقدمة للأشخاص اللذين تم إحالتهم إليك والتى تتصل بالتداول على الموقع 1% دقيقة وليست مُضللة."
+msgstr ""
+"تأكد من أن بيانات التداول وأرقام الأداء السابقة المقدمة للمحالين عبرك والتى "
+"تتصل بالتداول على الموقع %1 دقيقة وليست مُضللة."
 
 #. (site_name)
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:36
 msgid "Ensure that you do not promote %1 with messages aimed at persons under the age of 18 years."
-msgstr "تأكد من أنك لن تروج 1% عن طريق رسائل موجهة لمن هم دون سن الثامنة عشر."
+msgstr ""
+"تأكد من أنك لن تروج لـ %1 عن طريق رسائل موجهة لمن هم دون سن الثامنة عشر."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/form/barrier.html.tt:3
 msgid "Enter the barrier in terms of the difference from the spot price. If you enter +0.005, then you will be purchasing a contract with a barrier 0.005 higher than the entry spot. The entry spot will be the next tick after your order has been received"
@@ -2962,7 +2972,7 @@ msgstr "خطأ: خانة كلمة المرور فارغة!"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/light_chart.html.tt:2
 msgid "Error with input field %1: should contain only digits."
-msgstr "خطأ فى خانة إدخال 1%: يجب أن تحتوى على أرقام فقط."
+msgstr "خطأ فى إدخال خانة %1: يجب أن تحتوى على أرقام فقط."
 
 #: lib/BOM/View/Telephone.pm:41
 msgid "Europe"
@@ -3110,7 +3120,7 @@ msgstr "فبراير"
 #. ($txns_id)
 #: lib/BOM/Platform/Model/Payment/PaymentFee.pm:168
 msgid "Fee for transaction %1"
-msgstr "مصروفات التداول 1%"
+msgstr "مصروفات لمعاملة %1"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/tour.html.haml:1
 msgid "Feel free to contact our friendly and helpful customer service experts. They're always available to answer your questions. You can contact us via live chat, email and telephone."
@@ -3188,7 +3198,10 @@ msgstr "إتبع دليل بسيط خطوة بخطوة للتداول الثنا
 #. (broker_name, affiliate_email)
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/main.html.tt:63
 msgid "For affiliates who offer a trading advisory service based on the %1 platform, we offer specialized payout structures. <a href=\"mailto:%2\">Contact our affiliate manager, Karen Yap for details</a>."
-msgstr "نقدم لشركاء العمل اللذين يقدمون خدمة استشارية مبنية على التداول على منصة 1% مردودات مصممة بشكل خاص. <a href=\"mailto:%2\">اتصل بمدير الشراكة الخاص بنا، كارين ياب للحصول على تفاصيل</a>."
+msgstr ""
+"نقدم لشركاء العمل الذين يقدمون خدمة استشارية مبنية على التداول على منصة %1، "
+"عوائد مخصصة. <a href=\"mailto:%2\">اتصل بمدير الشراكة، \"كارين ياب\" لمعرفة "
+"التفاصيل</a>."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/portfolio/contract_details.html.tt:42
 msgid "For contracts which expire at market close, we will use the official closing value of the market to settle your contract and update your results at settlement time."
@@ -3209,8 +3222,10 @@ msgid ""
 "\n"
 "%1"
 msgstr ""
-"لمزيد من المعلومات حول الأحكام والشروط التي تنطبق على المكافأة الخاصة بك، انتقل إلى: \n"
-"1%"
+"لمزيد من المعلومات حول الأحكام والشروط التي تنطبق على المكافأة الخاصة بك، "
+"انتقل إلى:\n"
+"\n"
+"%1"
 
 #: cgi/subs/subs_forms_output.pm:278
 msgid "For security reasons, please note that Payment Agent accounts will only be able to deposit via Bank Wire."
@@ -3240,7 +3255,7 @@ msgstr "هل نسيت معرف تسجيل الدخول / كلمة المرور؟
 #. ($underlying->market->translated_display_name)
 #: lib/BOM/Product/Model/ContractForm.pm:825
 msgid "Forward starting intraday and daily contracts are available on some %1"
-msgstr "العقود الآجلة متاحة فى خلال اليوم الواحد ومتاحة يومياً على بعض 1%"
+msgstr "التداول خلال اليوم والعقود اليومية متاحا على بعض %1"
 
 #: web/bin/GenerateStaticData.pm:125
 msgid "Fr"
@@ -4081,7 +4096,10 @@ msgstr "ليس من الضروري أن تتداول أو تقوم بالإيد�
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/glossary.html.haml:1
 msgid "It is sometimes possible to sell an option before the expiry of a trade, but only if a fair price can be determined. If this option is available, you will see a blue 'Sell' button next to your trade in the portfolio."
-msgstr "بيع خيار قبل أنتهاء معاملة تجارية متاح في بعض الأحيان، ولكن فقط إذا كان يمكن تحديد سعر عادل. سترى زر أزرق مكتوب عليه \"بيع\" بجوار معاملتك  في المحفظة إذا كان هذا الخيار متاحاً."
+msgstr ""
+"من الممكن أحيانا بيع عقد قبل انتهاء مدته، فقط اذا استطعنا تحديد سعر عادل "
+"لبيعه. سترى زر أزرق مكتوب عليه \"بيع\" بجوار معاملتك  في المحفظة إذا كان هذا "
+"الخيار متاحاً."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:7
 #: /home/git/translations/binary-static/src/templates/toolkit/legtrouble.html.tt:7
@@ -4665,7 +4683,7 @@ msgstr "شروط الربحية"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/why_us.html.haml:1
 msgid "Monitor your portfolio in real time."
-msgstr "قم برصد محفظتك فى وقت حقيقى."
+msgstr "قم بمراقبة محفظتك المالية فى الوقت الحقيقى."
 
 #: lib/BOM/View/Charting.pm:394 web/bin/GenerateStaticData.pm:48
 msgid "Month"
@@ -5154,7 +5172,7 @@ msgstr "قد تختلف البيانات الخاصة بنا فى بعض الأ�
 #. ($cs_email)
 #: cgi/subs/subs_clientdetails.pm:141
 msgid "Our email address is %1."
-msgstr "عنوان بريدنا الإلكترونى هو 1%."
+msgstr "عنوان بريدنا الإلكترونى هو %1."
 
 #: /home/git/translations/binary-static/src/templates/haml/home/index.html.haml:1
 msgid "Our exclusive pricing technology gives you the best possible opportunity to make your money work for you."
@@ -5320,26 +5338,26 @@ msgstr "المدفوعات"
 #: /home/git/translations/binary-static/src/templates/haml/get_started/glossary.html.haml:1
 #: lib/BOM/Product/Model/ContractForm.pm:648
 msgid "Payout"
-msgstr "المردود"
+msgstr "العائد"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/resources/pricing_table_form.html.tt:28
 #: /home/git/translations/binary-static/src/templates/toolkit/resources/rise_fall_table.html.tt:45
 msgid "Payout Currency"
-msgstr "عملة المردود"
+msgstr "عملة العائد"
 
 #. (to_monetary_number_format($transaction_parameters->{payout})
 #: cgi/oop/Controller/Bet.pm:1557
 msgid "Payout has moved in your favour from %1 to %2."
-msgstr "لقد تحرك المردود لصالحك من 1% إلى 2%."
+msgstr "لقد تحرك العائد لصالحك من %1 إلى %2."
 
 #: lib/BOM/Product/Contract.pm:2364
 msgid "Payout may not have more than two decimal places."
-msgstr "يجب أن لا يحتوى المردود على أكثر من رقمين عشريين."
+msgstr "يجب ألا يحتوى العائد على أكثر من رقمين عشريين."
 
 #. (to_monetary_number_format($payout_min, 1)
 #: lib/BOM/Product/Contract.pm:1828
 msgid "Payout must be between <strong>%1</strong> and <strong>%2</strong>."
-msgstr "يجب أن يكون المردود بين <strong>%1</strong> و <strong>%2</strong>."
+msgstr "يجب أن يكون العائد بين <strong>%1</strong> و <strong>%2</strong>."
 
 #. (qq{<span class="balance">$currency_label $promocode_amount</span>})
 #: cgi/subs/subs_homepage.pm:101
@@ -5605,7 +5623,7 @@ msgstr "يرجى الانتظار.<br />يتم معالجة طلبك."
 #: cgi/portfolio.cgi:21 cgi/portfolio.cgi:81 cgi/portfolio.cgi:83
 #: lib/BOM/View/Menu.pm:65
 msgid "Portfolio"
-msgstr "محفظة"
+msgstr "المحفظة"
 
 #: cgi/subs/subs_forms.pm:1178 cgi/subs/subs_forms.pm:367
 msgid "Postal Code / ZIP"
@@ -5637,7 +5655,9 @@ msgstr "القوة والبساطة"
 
 #: cgi/limits.cgi:42
 msgid "Presents the maximum aggregate payouts on outstanding contracts in your portfolio. If the maximum is attained, you may not purchase additional contracts without first closing out existing positions."
-msgstr "يمثل الحد الأقصى للمردودات الكلية على العقود المعلقة فى محفظتك. إذا تم الوصول للحد الأقصى لن يمكنك شراء عقود إضافية بدون قفل المعاملات الموجودة."
+msgstr ""
+"يمثل الحد الأقصى للعوائد الكلية على العقود المعلقة فى محفظتك. إذا تم الوصول "
+"للحد الأقصى لن يمكنك شراء عقود إضافية بدون قفل المعاملات الموجودة."
 
 #: cgi/analyse_contract.cgi:63
 msgid "Prevailing market price cannot be determined at this time."
@@ -5719,7 +5739,7 @@ msgstr "أرباح"
 #: /home/git/translations/binary-static/src/templates/toolkit/homepage/logged_in.html.tt:61
 #: cgi/profit_table.cgi:20 cgi/profit_table.cgi:84 lib/BOM/View/Menu.pm:73
 msgid "Profit Table"
-msgstr "جدول الربح"
+msgstr "جدول الأرباح"
 
 #: cgi/oop/Controller/Bet.pm:1462 cgi/oop/Controller/Bet.pm:1661
 #: cgi/oop/Controller/Bet.pm:1902 cgi/oop/Controller/Bet.pm:1941
@@ -6003,7 +6023,7 @@ msgstr "مؤشر القوة النسبية"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/session_expired.html.tt:12
 msgid "Reload Cashier"
-msgstr "إعادة تحميل الصراف"
+msgstr "أعد تحميل الصراف"
 
 #: cgi/subs/subs_plack.pm:268
 msgid "Reload page"
@@ -6019,7 +6039,10 @@ msgstr "يمثل الحد الأقصى لمقدار النقد الذى تستط
 
 #: cgi/limits.cgi:47
 msgid "Represents the maximum number of outstanding contracts in your portfolio. Each line in your portfolio counts for one open position. Once the maximum is reached, you will not be able to open new positions without closing an existing position first."
-msgstr "يمثل الحد الأقصى من العقود المعلقة فى محفظتك. كل سطر فى محفظتك يمثل معاملة مفتوحة. عندما يتم الوصول للحد الأقصى لن يعد بإمكانك أن تفتح معاملات جديدة بدون أن تغلق المعاملة الموجودة أولاً."
+msgstr ""
+"يمثل الحد الأقصى من العقود المعلقة فى محفظتك. كل سطر فى محفظتك يمثل معاملة "
+"مفتوحة. عندما يتم الوصول للحد الأقصى لن يعد بإمكانك أن تفتح معاملات جديدة "
+"دون أن تغلق معاملة موجودة أولاً."
 
 #: cgi/limits.cgi:39
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
@@ -6746,7 +6769,7 @@ msgstr "الولاية/المقاطعة"
 #: /home/git/translations/binary-static/src/templates/toolkit/homepage/logged_in.html.tt:78
 #: cgi/statement.cgi:20 cgi/statement.cgi:86 lib/BOM/View/Menu.pm:81
 msgid "Statement"
-msgstr "بيان"
+msgstr "كشف الحساب"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/partner_api.html.haml:1
 msgid "Statement and Portfolio Enquiries"
@@ -7514,7 +7537,7 @@ msgstr "براءة الإختراع تعني أن ريجنت ماركتس رائ
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/glossary.html.haml:1
 msgid "The payout is the amount paid to an options trader if their prediction is correct."
-msgstr "المردود هو المبلغ الذى يتقاضاه متداول الخيارات إذا صح توقعه."
+msgstr "العائد هو المبلغ الذى يتقاضاه متداول الخيارات إذا صح توقعه."
 
 #: cgi/subs/subs_graphs_chartdirector.pm:356
 #: cgi/subs/subs_graphs_chartdirector.pm:357
@@ -7614,7 +7637,7 @@ msgstr "يشير سعر إعادة البيع للسعر الحالى لعقد �
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/glossary.html.haml:1
 msgid "The return is the money realized when the contract expires (see 'Payout')."
-msgstr "العائد هو المال الذى يتحقق عند انتهاء العقد(أنظر المردود)."
+msgstr "العائد هو المال المحقق مع انتهاء العقد (أنظر \"العائد\")."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:107
 #: /home/git/translations/binary-static/src/templates/toolkit/legtrouble.html.tt:107
@@ -8419,7 +8442,7 @@ msgstr "خطأ غير معروف أثناء حفظ مساحة العمل '# 1'."
 
 #: cgi/subs/subs_forms.pm:1733
 msgid "Unlock Cashier/Settings sections"
-msgstr "فتح قسم الصراف أو الإعدادات"
+msgstr "فتح قسم الصراف/الإعدادات"
 
 #: lib/BOM/Product/Transaction.pm:352
 msgid "Unsupported bet class $bet_params->{bet_class}"
@@ -8531,7 +8554,7 @@ msgstr "اطلع على أوقات التداول"
 
 #: cgi/top_up_virtual.cgi:96 cgi/top_up_virtual.cgi:97
 msgid "View Updated Portfolio"
-msgstr "اطلع على محفظتك التى تم تحديثها"
+msgstr "اطلع على محفظتك المحدّثة"
 
 #: cgi/subs/subs_payments_withdrawals.pm:106
 msgid "View and increase your"
@@ -11005,7 +11028,7 @@ msgstr "AUD/CAD"
 
 #: Underlying Symbol frxAUDCHF
 msgid "AUD/CHF"
-msgstr "دولار أسترالى/فرنك سويسرى"
+msgstr "AUD/CHF"
 
 #: Underlying Symbol frxAUDCNY
 msgid "AUD/CNY"
@@ -11097,7 +11120,7 @@ msgstr "EUR/CAD"
 
 #: Underlying Symbol frxEURCHF
 msgid "EUR/CHF"
-msgstr "يورو/فرنك سويسرى"
+msgstr "EUR/CHF"
 
 #: Underlying Symbol frxEURCNY
 msgid "EUR/CNY"
@@ -11181,7 +11204,7 @@ msgstr "GBP/CAD"
 
 #: Underlying Symbol frxGBPCHF
 msgid "GBP/CHF"
-msgstr "جنية أسترلينى/فرنك سويسرى"
+msgstr "GBP/CHF"
 
 #: Underlying Symbol frxGBPCNY
 msgid "GBP/CNY"
@@ -11265,7 +11288,7 @@ msgstr "USD/CAD"
 
 #: Underlying Symbol frxUSDCHF
 msgid "USD/CHF"
-msgstr "دولار أمريكى/فرنك سويسرى"
+msgstr "USD/CHF"
 
 #: Underlying Symbol frxUSDCNY
 msgid "USD/CNY"
