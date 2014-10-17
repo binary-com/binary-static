@@ -9,8 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2014-10-14 08:29+0200\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
-"Language-Team: Indonesian "
-"<https://hosted.weblate.org/projects/binary/static/id/>\n"
+"Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 1.10-dev\n"
 
-#: cgi/top_up_virtual.cgi:85
+#: cgi/top_up_virtual.cgi:53
 msgid " has been credited to your Virtual money account"
 msgstr " telah dikreditkan kedalam akun uang virtual anda"
 
@@ -593,8 +592,8 @@ msgstr "<strong>Lebih Tinggi/Rendah</strong> - keuntungan dari market yang berak
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and Payment Agents."
 msgstr "<strong>SANGGAHAN PENTING</strong> - %1 tidak berafiliasi dengan Agen Pembayaran manapun. Setiap Agen Pembayaran beroperasi sendiri dan %1 tidak bertanggungjawab atas resiko penggunaannya. PELANGGAN BERURUSAN DENGAN AGEN PEMBAYARAN ATAS RESIKO SENDIRI. Pelanggan disarankan untuk mengecek kredibilitas dan eksistensi Agen Pembayaran bersangkutan sebelum bertransaksi dengan mereka."
 
-#. ($website->display_name)
-#: cgi/paymentagent_list.cgi:68
+#. (website)
+#: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_agent_list.html.tt:26
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the payment agents listed above. Each payment agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of payment agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and payment agents."
 msgstr "<strong>SANGGAHAN PENTING</strong> - %1 tidak berafiliasi dengan agen pembayaran manapun. Setiap agen pembayaran beroperasi sendiri dan %1 tidak bertanggungjawab atas resiko penggunaannya. PELANGGAN BERURUSAN DENGAN AGEN PEMBAYARAN ATAS RESIKO SENDIRI. Pelanggan disarankan untuk mengecek kredibilitas dan eksistensi agen pembayaran bersangkutan sebelum bertransaksi dengan mereka. %1 dengan apapun alasan tidak bertanggungjawab kepada transaksi yang dilakukan antara pelanggan dengan agen pembayaran."
 
@@ -935,7 +934,7 @@ msgstr "Pengelolaan Akun dan Pelacakan"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:121
 #: /home/git/translations/binary-static/src/templates/toolkit/legtrouble.html.tt:121
-#: cgi/create_account.cgi:198 cgi/create_account.cgi:292
+#: cgi/create_account.cgi:191 cgi/create_account.cgi:283
 #: cgi/open_account.cgi:13 cgi/subs/subs_forms_output.pm:24
 msgid "Account Opening"
 msgstr "Pendaftaran Akun"
@@ -945,7 +944,7 @@ msgid "Account Settings</a> accordingly. Thank you for your kind assistance"
 msgstr "Pengaturan Akun</a> dengan sesuai. Terimakasih untuk bantuan anda"
 
 #. (currency, to_monetary_number_format(balance))
-#: /home/git/translations/binary-static/src/templates/toolkit/account/portfolio.html.tt:3
+#: /home/git/translations/binary-static/src/templates/toolkit/account/portfolio.html.tt:5
 msgid "Account balance : %1 %2"
 msgstr "Saldo akun : %1 %2"
 
@@ -1145,8 +1144,8 @@ msgstr "Daftar akses"
 msgid "Apply to become Payment Agent"
 msgstr "Mendaftar sebagai Agen Pembayaran"
 
-#. ($website->display_name, $apply_payment_agent_url)
-#: cgi/paymentagent_list.cgi:63
+#. (website, apply_payment_agent_url)
+#: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_agent_list.html.tt:23
 msgid "Apply to become a %1 <a class=\"pjaxload\" href=\"%2\">payment agent</a>."
 msgstr "Mendaftar sebagai %1 <a class=\"pjaxload\" href=\"%2\">agen pembayaran</a>."
 
@@ -1228,7 +1227,7 @@ msgid "Ask"
 msgstr "Tanya"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/resources/rise_fall_list.html.tt:2
-#: /home/git/translations/binary-static/src/templates/toolkit/resources/trading_times.html.tt:18
+#: /home/git/translations/binary-static/src/templates/toolkit/resources/trading_times.html.tt:19
 msgid "Asset"
 msgstr "Aset"
 
@@ -1236,7 +1235,7 @@ msgstr "Aset"
 #: /home/git/translations/binary-static/src/templates/haml/resources/index.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/global/footer.html.tt:90
 #: cgi/asset_index.cgi:141 cgi/asset_index.cgi:28
-#: lib/BOM/Product/Contract.pm:2812 lib/BOM/Product/Contract.pm:2851
+#: lib/BOM/Product/Contract.pm:2823 lib/BOM/Product/Contract.pm:2862
 #: lib/BOM/Product/Pricing/Engine/Role/StandardMarkup.pm:177
 #: lib/BOM/View/Menu.pm:147
 msgid "Asset Index"
@@ -1291,15 +1290,15 @@ msgstr "Otorisasi: Basic %1"
 msgid "Authorization: Bearer %1"
 msgstr "Otorisasi: Pembawa %1"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:55
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:75
 msgid "Average"
 msgstr "Rata-rata"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:50
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:70
 msgid "Average Change"
 msgstr "Perubahan Rata-Rata"
 
-#: cgi/daily_prices.cgi:159
+#: cgi/daily_prices.cgi:136
 msgid "Average Change = Average Close - Average Open, for the period selected"
 msgstr "Perubahan Rata-Rata = Rata-Rata Penutupan - Rata-Rata Pembukaan, untuk periode yang dipilih"
 
@@ -1393,17 +1392,16 @@ msgstr "Batasan (%) diluar batas"
 msgid "Barrier Step format error"
 msgstr "Format langkah batasan salah"
 
-#: lib/BOM/Product/Contract.pm:2563
-#| msgid "Barrier outside acceptable range."
+#: lib/BOM/Product/Contract.pm:2574
 msgid "Barrier is out of acceptable range."
 msgstr "Batasan adalah diluar rentang yang diterima."
 
-#: lib/BOM/Product/Contract.pm:2553
+#: lib/BOM/Product/Contract.pm:2564
 msgid "Barrier may not be adjusted."
 msgstr "Batasan tidak dapat dirubah."
 
 #. ($min_pips . ' pips away from the spot.')
-#: lib/BOM/Product/Contract.pm:2509
+#: lib/BOM/Product/Contract.pm:2520
 msgid "Barrier must be at least "
 msgstr "Batasan setidaknya "
 
@@ -1412,7 +1410,7 @@ msgstr "Batasan setidaknya "
 msgid "Barrier offset"
 msgstr "Batasan offset"
 
-#: lib/BOM/Product/Pricing/Engine/IntradayHistorical.pm:166
+#: lib/BOM/Product/Pricing/Engine/Intraday/Forex.pm:128
 msgid "Barrier outside acceptable range."
 msgstr "Batasan diluar rentang yang diterima."
 
@@ -1424,7 +1422,7 @@ msgstr "Terma Batasan"
 msgid "Barrier(s)"
 msgstr "Batas"
 
-#: lib/BOM/Product/Contract.pm:2534
+#: lib/BOM/Product/Contract.pm:2545
 msgid "Barriers must be on either side of the spot."
 msgstr "Batasan harus berada di kedua sisi spot."
 
@@ -1750,14 +1748,14 @@ msgstr "Chaikin Oskilator"
 msgid "Chaikin Volatility"
 msgstr "Chaikin Volatility"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/bet/intraday_prices_table.html.tt:4
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:22
+#: /home/git/translations/binary-static/src/templates/toolkit/bet/intraday_prices.html.tt:34
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:42
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/legacy_chart_table.html.tt:16
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/ticker_data_table.html.tt:10
 msgid "Change"
 msgstr "Perubahan"
 
-#: cgi/daily_prices.cgi:158
+#: cgi/daily_prices.cgi:135
 msgid "Change = Close - Open, for the day"
 msgstr "Perubahan = Penutupan - Pembukaan, hari trading"
 
@@ -1817,7 +1815,7 @@ msgstr "Lihat laporan market harian yang ditulis oleh Dave Evans, Trader Profesi
 msgid "Check out some technical terms before you start."
 msgstr "Lihat beberapa terma teknis sebelum anda memulai."
 
-#: cgi/paymentagent_list.cgi:47
+#: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_agent_list.html.tt:7
 msgid "Check out the payment methods accepted by the payment agents in the list below."
 msgstr "Lihat metode pembayaran yang diterima oleh agen pembayaran pada daftar di bawah ini."
 
@@ -1889,7 +1887,7 @@ msgstr "Pilih market, target harga, periode waktu dan besar keuntungan yang anda
 msgid "Choose the market, the time period, and how much you wish to win."
 msgstr "Pilih market, periode waktu, besar keuntungan yang anda inginkan."
 
-#: cgi/paymentagent_list.cgi:48
+#: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_agent_list.html.tt:8
 msgid "Choose the payment method you'd like to use."
 msgstr "Pilih metode pembayaran yang ingin anda gunakan."
 
@@ -1934,10 +1932,18 @@ msgid "Clients must fill into the account opening form all requested details tha
 msgstr "Klien harus mengisi formulir pendaftaran akun sesuai dengan identitas mereka."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/complaints_disputes.html.tt:10
-msgid "Clients registered with Regent Markets (IOM) Ltd can raise their unresolved disputes with the Isle of Man Gambling Supervision Commission at"
-msgstr "Klien yang terdaftar pada Regent Markets (IOM) Ltd dapat meningkatkan sengketa yang belum terselesaikan dengan Komisi Pengawasan Trading Isle of Man di"
+#, fuzzy
+#| msgid "Clients registered with Regent Markets (Malta) Ltd can raise their unresolved disputes with the Lotteries and Gaming Authority at"
+msgid "Clients registered with Regent Markets (C.R.) S.A. can raise their unresolved disputes with management by submitting an email to complaints@binary.com."
+msgstr "Klien terdaftar Regent Markets (Malta) Ltd dapat meningkatkan sengketa yang belum terselesaikan dengan Lotteries dan Gaming Authority di"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/complaints_disputes.html.tt:13
+#, fuzzy
+#| msgid "Clients registered with Regent Markets (IOM) Ltd can raise their unresolved disputes with the Isle of Man Gambling Supervision Commission at"
+msgid "Clients registered with Regent Markets (IOM) Ltd can raise their unresolved disputes with the Isle of Man Gambling Supervision Commission at gaming@gov.im."
+msgstr "Klien yang terdaftar pada Regent Markets (IOM) Ltd dapat meningkatkan sengketa yang belum terselesaikan dengan Komisi Pengawasan Trading Isle of Man di"
+
+#: /home/git/translations/binary-static/src/templates/toolkit/legal/complaints_disputes.html.tt:16
 msgid "Clients registered with Regent Markets (Malta) Ltd can raise their unresolved disputes with the Lotteries and Gaming Authority at"
 msgstr "Klien terdaftar Regent Markets (Malta) Ltd dapat meningkatkan sengketa yang belum terselesaikan dengan Lotteries dan Gaming Authority di"
 
@@ -1954,8 +1960,8 @@ msgstr "Bagi Klien yang tidak ingin memperbarui pengecualian diri dan ingin bert
 msgid "Clients who wish to self-exclude should be aware that the self-exclusion period is a minimum of six months and are given the option to extend it to a total of at least five years, immediately without any cooling-off period. At the end of the self-exclusion period, the self-exclusion remains in place, unless positive action is taken by the client in order to trade again."
 msgstr "Klien yang ingin mengecualikan diri harus menyadari bahwa periode pengecualian diri adalah minimal enam bulan hingga lima tahun, secara langsung tanpa masa tenggang. Pada akhir periode pengecualian diri, pengecualian diri akan tetap berlaku kecuali jika klien melakukan permohonan untuk melakukan trading kembali."
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:20
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:48
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:40
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:68
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/legacy_chart_table.html.tt:15
 #: lib/BOM/View/Charting.pm:432 lib/BOM/View/Charting.pm:529
 msgid "Close"
@@ -1978,12 +1984,12 @@ msgstr "Penutupan Trading."
 msgid "Closed"
 msgstr "Tutup"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/resources/trading_times.html.tt:20
+#: /home/git/translations/binary-static/src/templates/toolkit/resources/trading_times.html.tt:21
 msgid "Closes"
 msgstr "Ditutup"
 
 #. ($exchange->closing_on($when)
-#: cgi/trading_times.cgi:132
+#: cgi/trading_times.cgi:130
 msgid "Closes early (at %1)"
 msgstr "Ditutup awal (pada %1)"
 
@@ -2078,7 +2084,7 @@ msgstr "Kontak"
 msgid "Contact Us"
 msgstr "Hubungi Kami"
 
-#: cgi/paymentagent_list.cgi:49
+#: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_agent_list.html.tt:9
 msgid "Contact the payment agent directly for more information on how to transfer money to them."
 msgstr "Hubungi agen pembayaran langsung untuk informasi lebih lanjut tentang bagaimana mentransfer dana."
 
@@ -2115,7 +2121,7 @@ msgid "Contract barrier must be positive."
 msgstr "Batasan kontrak harus bernilai positif."
 
 #. ($end_of_bo->date)
-#: lib/BOM/Product/Contract.pm:2926
+#: lib/BOM/Product/Contract.pm:2937
 msgid "Contract can not expire during the end-of-year holiday period. Select an expiry date after %1."
 msgstr "Kontrak tidak dapat berakhir pada periode liburan. Pilih waktu berakhir setelah %1."
 
@@ -2131,20 +2137,20 @@ msgstr "Penemuan kontrak dan harga"
 msgid "Contract expired"
 msgstr "Kontrak berakhir"
 
-#: lib/BOM/Product/Contract.pm:2703
+#: lib/BOM/Product/Contract.pm:2714
 msgid "Contract has already expired."
 msgstr "Kontrak telah berakhir."
 
-#: lib/BOM/Product/Contract.pm:1816
+#: lib/BOM/Product/Contract.pm:1827
 msgid "Contract market price is too close to final payout."
 msgstr "Harga kontrak berbeda tipis dengan hasil akhir."
 
 #. ($eod_blackout_expiry->as_string)
-#: lib/BOM/Product/Contract.pm:2742
+#: lib/BOM/Product/Contract.pm:2753
 msgid "Contract may not expire within the last %1 of trading."
 msgstr "Kontrak tidak dapat berakhir dalam %1 terakhir trading."
 
-#: lib/BOM/Product/Contract.pm:2712
+#: lib/BOM/Product/Contract.pm:2723
 msgid "Contract must expire during trading hours."
 msgstr "Kontrak hanya dapat berakhir selama waktu trading."
 
@@ -2184,12 +2190,12 @@ msgid "Contracts may not expire on a weekend; therefore the expiry date of a con
 msgstr "Kontrak tidak dapat berakhir pada akhir pekan, maka tanggal berakhir kontrak diundur kepada hari Senin berikutnya jika tanggal kontrak berakhir pada hari Sabtu atau Minggu."
 
 #. ($underlying->translated_display_name()
-#: cgi/trading_times.cgi:75
+#: cgi/trading_times.cgi:73
 msgid "Contracts on %1 which both start and end between %2 and %3 on the same day are not available."
 msgstr "Kontrak pada %1 yang dimulai dan berakhir antara %2 hingga %3 pada hari yang sama adalah tidak tersedia."
 
 #. ($underlying->translated_display_name()
-#: lib/BOM/Product/Contract.pm:2728
+#: lib/BOM/Product/Contract.pm:2739
 msgid "Contracts on %1 with durations under 24 hours must expire on the same trading day."
 msgstr "Kontrak pada %1 dengan durasi kurang dari 24 jam harus berakhir pada hari trading yang sama."
 
@@ -2208,15 +2214,6 @@ msgstr "Kontrak tidak dapat ditawarkan jika market berada pada intraday tinggi a
 #: /home/git/translations/binary-static/src/templates/haml/static/why_us.html.haml:1
 msgid "Controlled risk"
 msgstr "Resiko terkendali"
-
-#: /home/git/translations/binary-static/src/templates/toolkit/account/currency_converter.html.tt:13
-msgid "Convert"
-msgstr "Menukar"
-
-#: /home/git/translations/binary-static/src/templates/toolkit/account/currency_converter.html.tt:10
-#: /home/git/translations/binary-static/src/templates/toolkit/account/currency_converter.html.tt:6
-msgid "Convert between your currency segment accounts"
-msgstr "Menukar antara bagian mata uang rekening Anda"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/privacy.html.tt:23
 msgid "Cookies"
@@ -2287,7 +2284,7 @@ msgstr "Kutipan mata uang disederhanakan menjadi 5 digit dan semua kontrak yang 
 msgid "Current Spot"
 msgstr "Spot saat ini"
 
-#: lib/BOM/Product/Contract.pm:2406
+#: lib/BOM/Product/Contract.pm:2417
 msgid "Current market price is 0."
 msgstr "Harga terkini market adalah 0."
 
@@ -2322,7 +2319,7 @@ msgstr "Customer Support telah diberitahu mengenai permintaan lupa Login ID/Kata
 msgid "Daily"
 msgstr "Harian"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:11
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:31
 #: cgi/oop/Controller/Bet.pm:2166
 msgid "Daily Prices"
 msgstr "Harga Harian"
@@ -2347,12 +2344,14 @@ msgstr "Laporan harian"
 msgid "Data Feed"
 msgstr "Layanan Data"
 
-#: cgi/intraday_prices.cgi:70
-msgid "Data will be available after market close"
+#: /home/git/translations/binary-static/src/templates/toolkit/bet/intraday_prices.html.tt:24
+#, fuzzy
+#| msgid "Data will be available after market close"
+msgid "Data will be available after market close."
 msgstr "Data akan tersedia setelah market ditutup"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/account/statement.html.tt:124
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:16
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:36
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/legacy_chart_table.html.tt:10
 #: /home/git/translations/binary-static/src/templates/toolkit/resources/trading_times_header.html.tt:3
 msgid "Date"
@@ -2371,7 +2370,7 @@ msgstr "Hari"
 msgid "Day Bet"
 msgstr "Kontrak harian"
 
-#: cgi/daily_prices.cgi:62
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:15
 msgid "Days to display"
 msgstr "Tampilan harian"
 
@@ -2743,7 +2742,7 @@ msgstr "Apakah anda ingin melihat Binary.com dalam bahasa lain, atau anda dapat 
 msgid "Documents are required to verify your identity"
 msgstr "Dokumen yang diperlukan untuk memverifikasi identitas anda"
 
-#: lib/BOM/Product/Transaction.pm:870
+#: lib/BOM/Product/Transaction.pm:873
 msgid "Don't buy contract using master password!"
 msgstr "Jangan membeli kontrak menggunakan master password!"
 
@@ -2810,7 +2809,7 @@ msgstr "Gambar Grafik"
 msgid "Due to new gaming regulations recently promulgated in Malta, we are required to obtain your residential address details.  We would be grateful if you could update your"
 msgstr "Berhubung peraturan baru bertransaksi Malta, kami diminta untuk mendapatkan alamat lengkap anda. Kami sangat menghargai jika anda dapat memperbaharui"
 
-#: lib/BOM/Product/Transaction.pm:828
+#: lib/BOM/Product/Transaction.pm:831
 msgid "Due to regulatory requirements, you are required to authenticate your account in order to continue trading."
 msgstr "Sesuai dengan peraturan yang berlaku, Anda diminta untuk membuktikan kebenaran akun Anda sebelum melanjutkan trading."
 
@@ -2821,7 +2820,7 @@ msgid "Duration"
 msgstr "Durasi"
 
 #. ($shortest->as_string, $longest->as_string)
-#: lib/BOM/Product/Contract.pm:2818
+#: lib/BOM/Product/Contract.pm:2829
 msgid "Duration must be between %1 and %2."
 msgstr "Durasi harus antara %1 dan %2."
 
@@ -3382,7 +3381,7 @@ msgstr "Deposit Gift Certificate"
 msgid "Gift Certificate Withdrawal"
 msgstr "Pencairan Gift Certificate"
 
-#: cgi/top_up_virtual.cgi:18 cgi/top_up_virtual.cgi:21
+#: cgi/top_up_virtual.cgi:17 cgi/top_up_virtual.cgi:20
 msgid "Give Me More Money!"
 msgstr "Berikan saya uang lebih banyak lagi!"
 
@@ -3458,8 +3457,8 @@ msgstr "Bantuan"
 msgid "Hide last spot"
 msgstr "Tutup spot akhir"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:18
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:46
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:38
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:66
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/legacy_chart_table.html.tt:13
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/ticker_data_table.html.tt:7
 #: lib/BOM/View/Charting.pm:442
@@ -3585,8 +3584,10 @@ msgstr "Cara bertrading binary?"
 msgid "How to trade the random markets?"
 msgstr "Bagaimana cara bertrading market random?"
 
-#: cgi/paymentagent_list.cgi:41
-msgid "How to use a payment agent"
+#: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_agent_list.html.tt:2
+#, fuzzy
+#| msgid "How to use a payment agent"
+msgid "How to use a payment agent?"
 msgstr "Cara menggunakan agen pembayaran"
 
 #: cgi/subs/subs_clientdetails.pm:129
@@ -3761,7 +3762,7 @@ msgstr "Jika anda memilih <strong>waktu mulai</strong> \"Sekarang\", maka <stron
 msgid "If you select a specific <strong>end time</strong>, the <strong>end time</strong> is the selected time."
 msgstr "Jika anda memilih <strong>waktu berakhir</strong> tertentu, maka <strong>waktu berakhir</strong> adalah waktu yang dipilih."
 
-#: lib/BOM/Product/Transaction.pm:1126
+#: lib/BOM/Product/Transaction.pm:1129
 msgid "If you wish to raise these limits, please authenticate your account."
 msgstr "Jika anda ingin meningkatkan batasan ini, silahkan otentikasi akun anda."
 
@@ -3827,7 +3828,7 @@ msgstr "Dengan gaya klasik Silicon Valley, seorang manager pengelola dana berjiw
 msgid "In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro will rise in relation to the value of the US dollar."
 msgstr "Pada market valuta asing, para trader dapat membeli kontrak berdasarkan pertukaran harga dari satu mata uang ke mata uang lainnya. Sebagai conth jika trader memilih kontrak Naik pada market EUR/USD, hal ini berarti mereka menganalisa nilai mata uang Euro akan lebih tinggi dari harga mata uang dolar AS."
 
-#: lib/BOM/Product/Transaction.pm:892
+#: lib/BOM/Product/Transaction.pm:895
 msgid "In order for you to place contracts, we need to know your Residence (Country). Please update your settings."
 msgstr "Untuk melakukan pembelian kontrak, kami perlu mengetahui domisili (Negara) anda. Silahkan perbarui bagian pengaturan."
 
@@ -3984,7 +3985,7 @@ msgstr "Interpretasi"
 msgid "Intraday"
 msgstr "Intraday"
 
-#: lib/BOM/Product/Contract.pm:1584
+#: lib/BOM/Product/Contract.pm:1594
 msgid "Intraday contracts may not cross market open."
 msgstr "Kontrak intraday mungkin tidak melewati pembukaan market."
 
@@ -4017,7 +4018,7 @@ msgstr "Jumlah tidak berlaku"
 msgid "Invalid fax number."
 msgstr "Nomor fax tidak berlaku."
 
-#: lib/BOM/Product/Contract.pm:2342
+#: lib/BOM/Product/Contract.pm:2353
 msgid "Invalid payout currency."
 msgstr "Mata uang hasil tidak berlaku."
 
@@ -4025,7 +4026,7 @@ msgstr "Mata uang hasil tidak berlaku."
 msgid "Invalid period input! Please input the period between 0 and #1"
 msgstr "Data untuk periode salah! Tolong masukan data di antara 0 dan 1"
 
-#: lib/BOM/Product/Contract.pm:2391
+#: lib/BOM/Product/Contract.pm:2402
 msgid "Invalid stake"
 msgstr "Modal salah"
 
@@ -4068,7 +4069,7 @@ msgstr "Apakah ada biaya untuk mendaftar?"
 msgid "It is important that you read and understand the contents of these terms and conditions. By indicating your acceptance of these terms and conditions and continuing with your application to join our affiliate program, you are agreeing (subject to our approval of your application) to the terms and conditions below. If you do not agree with the terms and conditions (or are not authorised to do so) you should not continue with your application. You should be the owner of, or acting on behalf of the owner of the website, that is signing up for this affiliate program."
 msgstr "Adalah penting bagi anda untuk membaca dan memahami isi dari terma dan kondisi ini. Dengan menyatakan setuju pada terma dan kondisi dan melanjutkan permohonan anda sebagai afiliasi maka anda telah menyetujui terma dan kondisi berikut ini. Jika anda tidak menyetujui terma dan kondisi maka anda tidak perlu melanjutkan permohonan anda. Anda harus menjadi pemilik atau mewakili pemilik website yang diajukan menjadi afiliasi."
 
-#: /home/git/translations/binary-static/src/templates/toolkit/legal/complaints_disputes.html.tt:16
+#: /home/git/translations/binary-static/src/templates/toolkit/legal/complaints_disputes.html.tt:19
 msgid "It is important that you refer your disputes to the appropriate ADR for the claims to be valid."
 msgstr "Adalah penting bahwa anda merujuk perselisihan anda ke ADR yang sesuai untuk klaim untuk menjadi valid."
 
@@ -4219,7 +4220,7 @@ msgstr "Belajar trading online"
 msgid "Legacy Contract"
 msgstr "Kontrak Legacy"
 
-#: lib/BOM/Product/Contract.pm:950
+#: lib/BOM/Product/Contract.pm:958
 msgid "Legacy contract. No further information is available."
 msgstr "Kontrak Legacy. Tidak tersedia informasi lebih lanjut."
 
@@ -4359,8 +4360,8 @@ msgstr "Rugi"
 msgid "Lost password?"
 msgstr "Lupa kata sandi?"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:19
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:47
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:39
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:67
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/legacy_chart_table.html.tt:14
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/ticker_data_table.html.tt:8
 #: lib/BOM/View/Charting.pm:492
@@ -4387,19 +4388,17 @@ msgstr "Batasan rendah"
 msgid "Low barrier offset"
 msgstr "Batasan offset rendah"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:55
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:75
 msgid "Lower Band"
 msgstr "Garis Bawah"
 
-#: cgi/daily_prices.cgi:161
+#: cgi/daily_prices.cgi:138
 msgid "Lower Band = Average - 0.5 * Std Deviation"
 msgstr "Garis Bawah = Rata-rata - 0.5 Std Deviasi"
 
-#: lib/BOM/Product/Contract.pm:2543
+#: lib/BOM/Product/Contract.pm:2554
 msgid "Lower barrier is out of acceptable range. Please adjust the lower barrier."
-msgstr ""
-"Batasan bawah adalah diluar renyang yang dibenarkan. Silahkan rubah batasan "
-"bawah."
+msgstr "Batasan bawah adalah diluar renyang yang dibenarkan. Silahkan rubah batasan bawah."
 
 #: cgi/smartchart.cgi:30 cgi/subs/subs_graphs_chartdirector.pm:350
 #: lib/BOM/View/Charting.pm:439 lib/BOM/View/Charting.pm:639
@@ -4465,7 +4464,7 @@ msgid "Market exit price"
 msgstr "Harga akhir market"
 
 #. ($safer_expiry->date)
-#: lib/BOM/Product/Contract.pm:2878
+#: lib/BOM/Product/Contract.pm:2889
 msgid "Market holiday during the contract period. Select an expiry date after %1."
 msgstr "Terdapat hari libur selama periode kontrak. Pilih tanggal berakhir setelah %1."
 
@@ -4504,7 +4503,7 @@ msgstr "Bonus Kontrak Cocok"
 msgid "Max"
 msgstr "Maksimum"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:55
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:75
 msgid "Maximum"
 msgstr "Maksimal"
 
@@ -4601,7 +4600,7 @@ msgstr "Min-Mak Deposit"
 msgid "Min-Max Withdrawal"
 msgstr "Min-Mak Penarikan"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:55
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:75
 msgid "Minimum"
 msgstr "Minimal"
 
@@ -4609,15 +4608,15 @@ msgstr "Minimal"
 msgid "Miss"
 msgstr "Nona"
 
-#: lib/BOM/Product/Contract.pm:1545 lib/BOM/Product/Contract.pm:1598
+#: lib/BOM/Product/Contract.pm:1555 lib/BOM/Product/Contract.pm:1608
 msgid "Missing market data for contract period."
 msgstr "Gangguan data market selama periode kontrak."
 
-#: lib/BOM/Product/Contract.pm:1484
+#: lib/BOM/Product/Contract.pm:1494
 msgid "Missing market data for entry spot."
 msgstr "Gangguan data market pada spot awal."
 
-#: lib/BOM/Product/Contract.pm:1558 lib/BOM/Product/Contract.pm:1571
+#: lib/BOM/Product/Contract.pm:1568 lib/BOM/Product/Contract.pm:1581
 msgid "Missing market data for exit spot."
 msgstr "Gangguan data market pada spot akhir."
 
@@ -4868,10 +4867,6 @@ msgstr "Bebas resiko, $10K akun uang virtual"
 msgid "No. There's no cost to sign up to the %1 affiliate program."
 msgstr "Tidak. Pendaftaran program afiliasi %1 adalah gratis."
 
-#: /home/git/translations/binary-static/src/templates/toolkit/account/currency_converter.html.tt:15
-msgid "Note:"
-msgstr "Nota:"
-
 #: /home/git/translations/binary-static/src/templates/toolkit/portfolio/contract_details.html.tt:31
 msgid "Note: Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "Nota: Kontrak akan dijual pada harga terkini market ketika permintaan diterima oleh server kami. Harga ini mungkin berbeda dari harga yang diindikasikan."
@@ -4942,7 +4937,7 @@ msgid "Number of ticks"
 msgstr "Jumlah tik"
 
 #. ($min_tick, $max_tick)
-#: lib/BOM/Product/Contract.pm:2777
+#: lib/BOM/Product/Contract.pm:2788
 msgid "Number of ticks must be between %1 and %2"
 msgstr "Durasi harus antara %1 hingga %2"
 
@@ -5051,8 +5046,8 @@ msgstr "Hanya satu akun riil per orang. Anda tidak dibenarkan untuk melakukan pe
 msgid "Only properly tagged clients can be assigned to an affiliate. Should an affiliate tag be improperly inserted into the affiliate site or not properly received by the MyAffiliates server the resulting client registration and purchases will not be assigned to the affiliate. Therefore it is the responsibility of the affiliate to ensure that all links are properly tagged."
 msgstr "Hanya klien yang ditandai dengan benar akan menjadi afiliasi anda. Jika tanda afiliasi anda tidak ditandai dengan berar atau tidak diterima oleh server MyAffiliates menyebabkan pendaftaran atau pembelian tidak akan menjadi afiliasi anda. Maka merupakan tanggung jawab afiliasi untuk memastikan semua link adalah ditandai dengan benar."
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:17
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:45
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:37
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:65
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/ticker_data_table.html.tt:6
 #: lib/BOM/View/Charting.pm:420 lib/BOM/View/Charting.pm:500
 msgid "Open"
@@ -5097,12 +5092,12 @@ msgstr "Proyek Open Source"
 msgid "Opening an account"
 msgstr "Mendaftar akun"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/resources/trading_times.html.tt:19
+#: /home/git/translations/binary-static/src/templates/toolkit/resources/trading_times.html.tt:20
 msgid "Opens"
 msgstr "Dibuka"
 
 #. ($exchange->opening_on($when)
-#: cgi/trading_times.cgi:135
+#: cgi/trading_times.cgi:133
 msgid "Opens late (at %1)"
 msgstr "Dibuka lambat (pada %1)"
 
@@ -5272,7 +5267,7 @@ msgstr "Kata sandi:"
 msgid "Patents"
 msgstr "Paten"
 
-#: cgi/paymentagent_list.cgi:14
+#: cgi/paymentagent_list.cgi:15
 msgid "Payment Agent Deposit"
 msgstr "Deposit Agen Pembayaran"
 
@@ -5336,12 +5331,12 @@ msgstr "Mata uang hasil"
 msgid "Payout has moved in your favour from %1 to %2."
 msgstr "Harga telah berubah dari %1 ke %2."
 
-#: lib/BOM/Product/Contract.pm:2364
+#: lib/BOM/Product/Contract.pm:2375
 msgid "Payout may not have more than two decimal places."
 msgstr "Hasil tidak dapat lebih dari dua desimal."
 
 #. (to_monetary_number_format($payout_min, 1)
-#: lib/BOM/Product/Contract.pm:1828
+#: lib/BOM/Product/Contract.pm:1839
 msgid "Payout must be between <strong>%1</strong> and <strong>%2</strong>."
 msgstr "Hasil harus diantara <strong>%1</strong> hingga <strong>%2</strong>."
 
@@ -5426,7 +5421,6 @@ msgstr "Silakan masukkan password."
 msgid "Please enter a town or city."
 msgstr "Silakan masukkan nama kota atau daerah."
 
-#: /home/git/translations/binary-static/src/templates/toolkit/account/currency_converter.html.tt:11
 #: cgi/paymentagent_transfer.cgi:118 cgi/subs/subs_forms.pm:3880
 #: cgi/subs/subs_forms.pm:4079
 msgid "Please enter a valid amount."
@@ -5576,7 +5570,7 @@ msgid "Please send this email to %1."
 msgstr "Silahkan kirim email ini ke %1."
 
 #: cgi/subs/subs_forms.pm:1205 cgi/subs/subs_forms.pm:443
-#: cgi/subs/subs_presentation.pm:77
+#: cgi/subs/subs_presentation.pm:81
 msgid "Please specify your country."
 msgstr "Silahkan tentukan negara anda."
 
@@ -5605,9 +5599,9 @@ msgstr "Silahkan pergunakan huruf, spasi, tanda penghubung, titik atau tanda apo
 msgid "Please wait.<br />Your request is being processed."
 msgstr "Silahkan tunggu.<br />Permohonan anda sedang diproses."
 
+#: /home/git/translations/binary-static/src/templates/toolkit/account/portfolio.html.tt:2
 #: /home/git/translations/binary-static/src/templates/toolkit/homepage/logged_in.html.tt:46
-#: cgi/portfolio.cgi:21 cgi/portfolio.cgi:81 cgi/portfolio.cgi:83
-#: lib/BOM/View/Menu.pm:65
+#: cgi/portfolio.cgi:21 cgi/portfolio.cgi:65 lib/BOM/View/Menu.pm:65
 msgid "Portfolio"
 msgstr "Portopolio"
 
@@ -5647,7 +5641,7 @@ msgstr "Mewakili jumlah maksimum hasil kontrak pada portopolio Anda. Jika jumlah
 msgid "Prevailing market price cannot be determined at this time."
 msgstr "Harga market terkini tidak dapat ditentukan pada saat ini."
 
-#: lib/BOM/Product/Contract.pm:1497 lib/BOM/Product/Contract.pm:2952
+#: lib/BOM/Product/Contract.pm:1507 lib/BOM/Product/Contract.pm:2963
 msgid "Prevailing market price cannot be determined."
 msgstr "Harga terkini market tidak dapat ditentukan."
 
@@ -5657,7 +5651,7 @@ msgstr "Sebelumnya"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/batch_sell_success_ajax.html.tt:13
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/batch_transactions_result_table.html.tt:13
-#: /home/git/translations/binary-static/src/templates/toolkit/bet/intraday_prices_table.html.tt:3
+#: /home/git/translations/binary-static/src/templates/toolkit/bet/intraday_prices.html.tt:33
 msgid "Price"
 msgstr "Harga"
 
@@ -5757,7 +5751,7 @@ msgstr "Promosi"
 msgid "Proof of address"
 msgstr "Bukti alamat"
 
-#: lib/BOM/Product/Contract.pm:2526
+#: lib/BOM/Product/Contract.pm:2537
 msgid "Proper barriers could not be determined."
 msgstr "Batasan tepat tidak dapat ditentukan."
 
@@ -5794,7 +5788,7 @@ msgid "Purchase Time"
 msgstr "Waktu Beli"
 
 #. ($currency, $max_daily_turnover_limit)
-#: lib/BOM/Product/Transaction.pm:1124
+#: lib/BOM/Product/Transaction.pm:1127
 msgid "Purchase of this contract would cause you to exceed your daily turnover limit of %1%2."
 msgstr "Dengan membeli kontrak ini maka Anda akan melebihi batasan pembelian kontrak harian yaitu %1%2."
 
@@ -5992,8 +5986,8 @@ msgstr "Daftar"
 msgid "Registration"
 msgstr "Pendaftaran"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:24
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:52
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:44
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:72
 msgid "Rel Change"
 msgstr "Perubahan Rel"
 
@@ -6030,25 +6024,25 @@ msgstr "Mewakili jumlah maksimum pembelian kontrak dalam satu hari trading."
 msgid "Required"
 msgstr "Harus diisi"
 
-#: lib/BOM/Product/Contract.pm:2925
+#: lib/BOM/Product/Contract.pm:2936
 msgid "Resale of this contract is not offered due to end-of-year market holidays."
 msgstr "Penjualan kembali untuk kontrak ini tidak ditawarkan berhubung liburan market akhir tahun."
 
-#: lib/BOM/Product/Contract.pm:2877
+#: lib/BOM/Product/Contract.pm:2888
 msgid "Resale of this contract is not offered due to market holiday during contract period."
 msgstr "Penjualan kembali untuk kontrak ini tidak ditawarkan berhubung liburan market selama kontrak berlangsung."
 
-#: lib/BOM/Product/Contract.pm:2898
+#: lib/BOM/Product/Contract.pm:2909
 msgid "Resale of this contract is not offered due to market holidays during contract period."
 msgstr "Penjualan kembali untuk kontrak ini tidak ditawarkan berhubung liburan selama periode kontrak."
 
 #. ($shortest->as_string)
-#: lib/BOM/Product/Contract.pm:2808
+#: lib/BOM/Product/Contract.pm:2819
 msgid "Resale of this contract is not offered with less than %1 remaining."
 msgstr "Penjualan kembali untuk kontrak ini ditawarkan kurang dari %1 hari."
 
-#: lib/BOM/Product/Contract.pm:2305 lib/BOM/Product/Contract.pm:2802
-#: lib/BOM/Product/Contract.pm:2849
+#: lib/BOM/Product/Contract.pm:2316 lib/BOM/Product/Contract.pm:2813
+#: lib/BOM/Product/Contract.pm:2860
 #: lib/BOM/Product/Pricing/Engine/Role/StandardMarkup.pm:171
 msgid "Resale of this contract is not offered."
 msgstr "Penjualan kembali untuk kontrak ini tidak ditawarkan."
@@ -6303,8 +6297,10 @@ msgstr "Kirim"
 msgid "Send us a CV and a covering letter that describes your career interests."
 msgstr "Kirimkan surat penghantar dan lamaran yang menggambarkan keinginan karir anda."
 
-#: cgi/paymentagent_list.cgi:50
-msgid "Send your funds to the payment agent. The deposited funds, less the agent's commission, will show up in your %1 account."
+#: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_agent_list.html.tt:10
+#, fuzzy
+#| msgid "Send your funds to the payment agent. The deposited funds, less the agent's commission, will show up in your %1 account."
+msgid "Send your funds to the payment agent. The deposited funds, less the agent's commission, will show up in your account."
 msgstr "Kirim dana anda kepada agen pembayaran. Jumlah deposit berdasarkan nilai tukar yang berlaku dan akan dikreditkan kedalam akun %1 anda."
 
 #: cgi/subs/subs_forms.pm:208 cgi/subs/subs_forms.pm:2326
@@ -6345,7 +6341,7 @@ msgstr "Tentukan posisi anda"
 msgid "Settings"
 msgstr "Pengaturan"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/resources/trading_times.html.tt:21
+#: /home/git/translations/binary-static/src/templates/toolkit/resources/trading_times.html.tt:22
 msgid "Settles"
 msgstr "Diselesaikan"
 
@@ -6402,7 +6398,7 @@ msgstr "Tampilkan opsi diperpanjang"
 msgid "Show last spot"
 msgstr "Tampilkan spot terakhir"
 
-#: cgi/paymentagent_list.cgi:56
+#: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_agent_list.html.tt:15
 msgid "Show payment agents for:"
 msgstr "Lihat agen pembayaran untuk:"
 
@@ -6465,8 +6461,8 @@ msgstr "Maaf, $currency bukan mata uang asal untuk pelanggan "
 msgid "Sorry, $currency is not default currency for payment agent "
 msgstr "Maaf, $currency bukan merupakan mata uang untuk agen pembayaran"
 
-#. ($underlying_symbol)
-#: cgi/daily_prices.cgi:164 cgi/daily_prices.cgi:74
+#. (underlying.display_name)
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:27
 msgid "Sorry, OHLC is not available for %1."
 msgstr "Maaf, OHLC tidak tersedia untuk %1."
 
@@ -6513,7 +6509,7 @@ msgid "Sorry, only USD is allowed."
 msgstr "Maaf, hanya USD diperbolehkan."
 
 #. ($country)
-#: cgi/subs/subs_presentation.pm:71
+#: cgi/subs/subs_presentation.pm:75
 msgid "Sorry, our service is not available for residents of %1."
 msgstr "Maaf, layanan kami tidak tersedia untuk penduduk %1."
 
@@ -6553,7 +6549,7 @@ msgid "Sorry, the Payment Agent's currency "
 msgstr "Maaf, mata uang agen pembayaran"
 
 #. ($max_payout_limit, $currency, $client_agg_payouts, $payout)
-#: lib/BOM/Product/Transaction.pm:1045
+#: lib/BOM/Product/Transaction.pm:1048
 msgid "Sorry, the aggregate payouts of contracts on your account cannot exceed %2%1. The current aggregate payout of contracts on your account is %2%3 therefore you cannot buy a contract that would pay out an additional %2%4."
 msgstr "Maaf, jumlah rata-rata hasil kontrak pada akun anda tidak dapat melebihi %2%1. Jumlah rata-rata hasil kontrak pada akun anda saat ini adalah %2%3 maka anda tidak dapat membeli kontrak dengan hasil melebihi %2%4."
 
@@ -6573,7 +6569,7 @@ msgstr "Maaf, jumlah maksimum yang anda bisa konversikan adalah"
 msgid "Sorry, the page cannot be found."
 msgstr "Maaf, halaman tidak ditemukan."
 
-#: lib/BOM/Product/Transaction.pm:1011
+#: lib/BOM/Product/Transaction.pm:1014
 msgid "Sorry, the same contract cannot be purchased more than once. You already have an identical contract in your account."
 msgstr "Maaf, anda tidak dapat membeli kontrak yang sama. Anda telah membeli kontrak tersebut sebelumnya."
 
@@ -6585,7 +6581,7 @@ msgstr "Maaf, terlalu  banyak data yang ditampilkan, Silahkan pilih interval yan
 msgid "Sorry, there was a problem validating your personal information with our payment processor. Please contact our Customer Service."
 msgstr "Maaf, telah terjadi masalah pada saat mengesahkan data pribadi anda melalui prosesor pembayaran kami. Silakan hubungi Customer Service kami."
 
-#: cgi/top_up_virtual.cgi:28
+#: cgi/top_up_virtual.cgi:27
 msgid "Sorry, this feature is available to virtual accounts only"
 msgstr "Maaf, bentuk ini hanya tersedia untuk rekening virtual saja"
 
@@ -6602,7 +6598,7 @@ msgid "Sorry, you are too young to open an account."
 msgstr "Maaf, anda dibawah umur untuk mendaftar akun."
 
 #. ($max_open_positions_limit)
-#: lib/BOM/Product/Transaction.pm:1029
+#: lib/BOM/Product/Transaction.pm:1032
 msgid "Sorry, you cannot hold more than %1 contracts at a given time. Please sell some of your existing contracts before buying any more."
 msgstr "Maaf, anda tidak dapat memiliki lebih dari %1 kontrak dalam jangka waktu yang diberikan. Silahkan jual beberapa kontrak yang telah kadaluarsa sebelum membeli kontrak baru lagi."
 
@@ -6635,17 +6631,12 @@ msgstr "Maaf, Anda telah melebihi jumlah transfer maksimum yang diperbolehkan un
 msgid "Sorry, you have excluded yourself from the website until %1."
 msgstr "Maaf, anda telah mengecualikan diri dari website hingga %1."
 
-#: cgi/top_up_virtual.cgi:64
+#: cgi/top_up_virtual.cgi:33
 msgid "Sorry, you have open positions. Please close out all open positions before requesting additional funds."
 msgstr "Silahkan jual semua posisi terbuka anda sebelum meminta dana tambahan."
 
-#. ($min_with_currency)
-#: cgi/top_up_virtual.cgi:51
-msgid "Sorry, your account balance is more than %1. You may not claim extra funds until such time as your account balance drops under %1."
-msgstr "Maaf, sisa dana tunai anda lebih dari %1. Anda tidak dapat mengisi dana tambahan hingga saldo akun anda kurang dari %1."
-
 #. ("$currency$balance",                to_monetary_number_format($account_balance_limit, 1)
-#: lib/BOM/Product/Transaction.pm:953
+#: lib/BOM/Product/Transaction.pm:956
 msgid "Sorry, your account cash balance is too high (%1). <B>Your maximum account balance is %2 </b>. Please withdraw money from your account to bring down your cash balance under that amount. You may not trade until you do so."
 msgstr "Maaf, saldo Anda melebihi (%1). <B>Saldo maksimum Anda adalah %2 </b>. Silahkan lakukan penarikan untuk mengurangi saldo Anda. Anda tidak dapat melanjutkan trading sebelum melakukan hal tersebut."
 
@@ -6653,7 +6644,7 @@ msgstr "Maaf, saldo Anda melebihi (%1). <B>Saldo maksimum Anda adalah %2 </b>. S
 msgid "Sorry, your account has got stuck in a previous transaction that did not complete. If this error persists, please contact customer support."
 msgstr "Maaf, akun anda telah terperangkap berhubung transaksi sebelumnya tidak terselesaikan. Jika pesan error ini terus berlangsung, silahkan hubungi customer support."
 
-#: lib/BOM/Product/Transaction.pm:914
+#: lib/BOM/Product/Transaction.pm:917
 msgid "Sorry, your account is not authorised for any further contract purchases."
 msgstr "Maaf, akun anda tidak dapat membeli kontrak selanjutnya."
 
@@ -6696,7 +6687,7 @@ msgid "Stake"
 msgstr "Modal"
 
 #. (to_monetary_number_format($stake_min, 1)
-#: lib/BOM/Product/Contract.pm:1819
+#: lib/BOM/Product/Contract.pm:1830
 msgid "Stake must be between <strong>%1</strong> and <strong>%2</strong>."
 msgstr "Modal harus antara <strong>%1</strong> hingga <strong>%2</strong>."
 
@@ -6718,20 +6709,20 @@ msgstr "Mulai Trading"
 msgid "Start time"
 msgstr "Waktu mulai"
 
-#: lib/BOM/Product/Contract.pm:2612 lib/BOM/Product/Transaction.pm:365
+#: lib/BOM/Product/Contract.pm:2623 lib/BOM/Product/Transaction.pm:365
 msgid "Start time is in the past"
 msgstr "Waktu mulai adalah dimasa lalu"
 
-#: lib/BOM/Product/Contract.pm:2602
+#: lib/BOM/Product/Contract.pm:2613
 msgid "Start time is invalid."
 msgstr "Waktu mulai salah."
 
-#: lib/BOM/Product/Contract.pm:2592
+#: lib/BOM/Product/Contract.pm:2603
 msgid "Start time must be before expiry time."
 msgstr "Waktu mulai harus sebelum waktu berakhir."
 
 #. ($forward_starting_blackout->as_string)
-#: lib/BOM/Product/Contract.pm:2645
+#: lib/BOM/Product/Contract.pm:2656
 msgid "Start time on forward-starting contracts must be more than %1 from now."
 msgstr "Waktu mulai pada kontrak mendatang harus lebih dari %1 dari sekarang."
 
@@ -6757,7 +6748,7 @@ msgstr "Pertanyaan Pernyataan dan Portofolio"
 msgid "Static Content"
 msgstr "Konten Statik"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:44
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:64
 msgid "Statistic"
 msgstr "Statistik"
 
@@ -6863,7 +6854,7 @@ msgid "Such materials may be copied and distributed on a limited basis for nonco
 msgstr "Bahan tersebut dapat disalin dan didistribusikan secara terbatas untuk tujuan non-komersial saja, dengan ketentuan bahwa setiap materi yang disalin adalah utuh dan memberitahukan kalimat berikut dengan jelas: &ldquo;Hak Cipta Terpelihara Regent Markets Group 1999-2014.&rdquo;"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/available_payment_agents_list.html.tt:3
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:40
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:60
 msgid "Summary"
 msgstr "Ringkasan"
 
@@ -6895,7 +6886,7 @@ msgstr "Pindah ke mode normal"
 msgid "System Time"
 msgstr "Waktu Sistem"
 
-#: lib/BOM/Product/Contract.pm:518
+#: lib/BOM/Product/Contract.pm:519
 msgid "System problems prevent proper settlement at this time."
 msgstr "Masalah penerimaan data mencegah penyelesaian yang tepat saat ini."
 
@@ -7339,7 +7330,7 @@ msgstr "Batasan pada opsi binary adalah target harga pada market dasar yang anda
 msgid "The barrier(s) you choose defines your position and triggers your payout."
 msgstr "Batasan yang anda pilih akan menentukan posisi dan memicu hasil anda."
 
-#: lib/BOM/Product/Contract.pm:551 lib/BOM/Product/Contract.pm:559
+#: lib/BOM/Product/Contract.pm:552 lib/BOM/Product/Contract.pm:560
 msgid "The barriers are improperly entered for this contract."
 msgstr "Batasan tidak dimasukkan dengan benar untuk kontrak ini."
 
@@ -7388,7 +7379,7 @@ msgstr "Perusahaan berhak untuk mengenakan biaya tidak aktif sebesar USD/EUR/AUD
 msgid "The content on this website is subject to change at any time without notice and is provided for the sole purpose of assisting traders in making independent investment decisions.  %1 has taken reasonable measures to ensure the accuracy of the information on the website, however, the company does not guarantee its accuracy and will not accept liability for any loss or damage which may arise directly or indirectly from the content or your inability to access the website, for any delay in or failure of the transmission or the receipt of any instruction or notification sent through this website."
 msgstr "Isi dari website ini dapat dirubah sewaktu waktu tanpa pemberitahuan dan hanya disediakan untuk membantu para trader untuk mengambil keputusan melakukan investasi. %1 akan memastikan keakuratan informasi yang terdapat pada website namun demikian Perusahaan tidak menjamin keakuratan tersebut dan tidak akan menanggung kerugian atau kerusakan yang ditimbulkan oleh informasi tersebut atau jika anda mengalami masalah didalam mengakses website baik itu berhubung penundaan atau keterlambatan transmisi atau penerimaan berita atau instruksi yang dikirimkan melalui website ini."
 
-#: lib/BOM/Product/Transaction.pm:664
+#: lib/BOM/Product/Transaction.pm:667
 msgid "The contract has expired"
 msgstr "Kontrak telah berakhir"
 
@@ -7397,12 +7388,12 @@ msgstr "Kontrak telah berakhir"
 msgid "The contract is not available after %1 GMT."
 msgstr "Kontrak tidak tersedia setelah %1 GMT."
 
-#: lib/BOM/Product/Contract.pm:607
+#: lib/BOM/Product/Contract.pm:608
 msgid "The contract must expire on a trading day."
 msgstr "Kontrak harus berakhir pada hari trading."
 
 #. ($currency,                        to_monetary_number_format($amount)
-#: lib/BOM/Product/Transaction.pm:707
+#: lib/BOM/Product/Transaction.pm:710
 msgid "The contract payout has changed from %1%2 to %1%3."
 msgstr "Hasil kontrak telah berubah dari %1%2 ke %1%3."
 
@@ -7411,7 +7402,7 @@ msgid "The contract period is the timeframe of a trade. It is also called the du
 msgstr "Periode kontrak adalah jangka waktu trading. Yang juga disebut sebagai durasi."
 
 #. ($currency,                        to_monetary_number_format($amount)
-#: lib/BOM/Product/Transaction.pm:700
+#: lib/BOM/Product/Transaction.pm:703
 msgid "The contract price has changed from %1%2 to %1%3."
 msgstr "Harga kontrak telah berubah dari %1%2 ke %1%3."
 
@@ -7423,7 +7414,7 @@ msgstr "Jumlah biaya kontrak"
 msgid "The currency of your bonus will be the same as the currency of your first deposit."
 msgstr "Mata uang bonus anda akan sama dengan mata uang deposit pertama anda."
 
-#: lib/BOM/Product/Contract.pm:990
+#: lib/BOM/Product/Contract.pm:998
 msgid "The database is not yet updated with settlement data."
 msgstr "Database belum diperbarui dengan data penyelesaian."
 
@@ -7481,7 +7472,7 @@ msgstr "Tik awal adalah tik pertama setelah kontrak diproses oleh server kami."
 msgid "The market exit price is the price in effect at the end of the contract period."
 msgstr "Harga akhir market adalah harga pada akhir periode kontrak."
 
-#: lib/BOM/Product/Contract.pm:2618
+#: lib/BOM/Product/Contract.pm:2629
 msgid "The market must be open at the start time."
 msgstr "Market harus dibuka pada waktu mulai."
 
@@ -7655,7 +7646,7 @@ msgstr "Transaksi yang dilakukan di situs ini dan hubungan antara klien dan peru
 msgid "The two passwords that you entered do not match."
 msgstr "Kedua-dua password yang Anda masukkan tidak cocok."
 
-#: lib/BOM/Product/Transaction.pm:694
+#: lib/BOM/Product/Transaction.pm:697
 msgid "The underlying market has moved too much since you priced the contract. "
 msgstr "Market dasar telah bergerak terlalu banyak setelah anda menghitung harga. "
 
@@ -7700,8 +7691,8 @@ msgstr "Tidak terdapat transaksi selama periode ini"
 msgid "There are risks associated with utilizing an Internet-based deal execution trading system, including but not limited to the failure of hardware, software and Internet connection.  Since %1 does not control signal power, its reception or routing via Internet, configuration of your equipment or reliability of its connection, we cannot be responsible for communication failures, distortions or delays when trading via the Internet."
 msgstr "Terdapat beberapa resiko dalam penggunaan sistem pengeksekusian trading menggunakan internet, termasuk dan tidak terbatas kepada kegagalan hardware, software dan koneksi internet. Berhubung %1 tidak mengatur kekuatan signal, penerimaan atau routing melalui internet, konfigurasi peralatan anda atau reliabilitas koneksi maka kami tidak bertanggung jawab kepada kegagalan komunikasi, perubahan atau keterlambatan ketika melakukan trading melalui internet."
 
-#. ($underlying->translated_display_name()
-#: cgi/intraday_prices.cgi:78
+#. (underlying.translated_display_name, start_date.date)
+#: /home/git/translations/binary-static/src/templates/toolkit/bet/intraday_prices.html.tt:28
 msgid "There is no intraday data for %1 on %2."
 msgstr "Tidak tersedia data intraday untuk %1 pada %2."
 
@@ -7784,7 +7775,7 @@ msgstr "Dokumen ini"
 msgid "This Payment Agent cashier section is locked."
 msgstr "Bagian kasir Agen Pembayaran ini terkunci."
 
-#: cgi/subs/subs_forms.pm:3291 cgi/top_up_virtual.cgi:74
+#: cgi/subs/subs_forms.pm:3291 cgi/top_up_virtual.cgi:43
 msgid "This URL is invalid."
 msgstr "URL ini tidak berlaku."
 
@@ -7809,11 +7800,11 @@ msgstr "Panggilan ini akan memberi struktur JSON yang sama yang bisa dilihat pad
 msgid "This client cashier section is locked."
 msgstr "Bagian kasir akun ini dibatalkan."
 
-#: lib/BOM/Product/Transaction.pm:779
+#: lib/BOM/Product/Transaction.pm:782
 msgid "This contract cannot be properly validated at this time."
 msgstr "Kontrak tidak dapat divalidasi untuk saat ini."
 
-#: lib/BOM/Product/Contract.pm:1684
+#: lib/BOM/Product/Contract.pm:1694
 msgid "This contract has already expired."
 msgstr "Kontrak ini telah berakhir."
 
@@ -7830,15 +7821,15 @@ msgid "This contract has expired."
 msgstr "Kontrak berikut telah berakhir."
 
 #. (to_monetary_number_format($custom_limit)
-#: lib/BOM/Product/Transaction.pm:856
+#: lib/BOM/Product/Transaction.pm:859
 msgid "This contract is limited to "
 msgstr "Kontrak ini terbatas ke "
 
-#: lib/BOM/Product/Contract.pm:979
+#: lib/BOM/Product/Contract.pm:987
 msgid "This contract is no longer offered."
 msgstr "Kontrak ini sudah tidak ditawarkan."
 
-#: lib/BOM/Product/Transaction.pm:854
+#: lib/BOM/Product/Transaction.pm:857
 msgid "This contract is unavailable on this account."
 msgstr "Kontrak ini tidak tersedia pada akun ini."
 
@@ -7846,11 +7837,11 @@ msgstr "Kontrak ini tidak tersedia pada akun ini."
 msgid "This contract lost"
 msgstr "Kontrak ini rugi"
 
-#: lib/BOM/Product/Contract.pm:2406
+#: lib/BOM/Product/Contract.pm:2417
 msgid "This contract offers no return."
 msgstr "Kontrak ini tidak memberi hasil."
 
-#: lib/BOM/Product/Transaction.pm:1350
+#: lib/BOM/Product/Transaction.pm:1381
 msgid "This contract was not found among your open positions."
 msgstr "Kontrak tidak ditemukan pada posisi yang masih berjalan."
 
@@ -7916,7 +7907,7 @@ msgstr "Ini adalah untuk mengkonfirmasi bahwa alamat email Anda untuk %1 pada %2
 msgid "This market closes early today at"
 msgstr "Market ini ditutup awal pada"
 
-#: lib/BOM/Product/Contract.pm:2618
+#: lib/BOM/Product/Contract.pm:2629
 msgid "This market is presently closed."
 msgstr "Market ini sedang ditutup."
 
@@ -7946,7 +7937,7 @@ msgstr "Penawaran ini tidak dapat digunakan bersamaan pada penawaran lainnya."
 msgid "This promotion is only available to new Clients. Existing or former Clients do not qualify. It is only available once to each Client."
 msgstr "Promosi ini hanya berlaku untuk pembukaan akun baru. Dan hanya dapat diperoleh sekali saja untuk setiap Pelanggan."
 
-#: lib/BOM/Product/Contract.pm:2306
+#: lib/BOM/Product/Contract.pm:2317
 msgid "This trade is not offered."
 msgstr "Kontrak ini tidak ditawarkan."
 
@@ -7995,7 +7986,7 @@ msgstr "Tingkat"
 msgid "Tile"
 msgstr "Ubinan"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/bet/intraday_prices_table.html.tt:2
+#: /home/git/translations/binary-static/src/templates/toolkit/bet/intraday_prices.html.tt:32
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/ticker_data_table.html.tt:11
 msgid "Time"
 msgstr "Waktu"
@@ -8030,10 +8021,6 @@ msgstr ""
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/session_expired.html.tt:9
 msgid "To continue using our cashier system, please try accessing it again:"
 msgstr "Untuk terus menggunakan sistem kasir kami, silahkan coba untuk mengakses kembali:"
-
-#: /home/git/translations/binary-static/src/templates/toolkit/account/currency_converter.html.tt:9
-msgid "To convert money between the different currencies in your account, please use the form below."
-msgstr "Untuk menukar uang antara mata uang yang berbeda di dalam rekening Anda, silakan pergunakan formulir dibawah ini."
 
 #. (pjax_link_for(l('sign up as an affiliate')
 #: /home/git/translations/binary-static/src/templates/haml/static/white_labels.html.haml:1
@@ -8083,7 +8070,7 @@ msgid "Toll-Free number"
 msgstr "Nomor bebas pulsa"
 
 #. ($safer_expiry->date)
-#: lib/BOM/Product/Contract.pm:2899
+#: lib/BOM/Product/Contract.pm:2910
 msgid "Too many market holidays during the contract period. Select an expiry date after %1."
 msgstr "Terlalu banyak hari libur selama periode kontrak. Silahkan pilih waktu berakhir setelah %1."
 
@@ -8216,9 +8203,9 @@ msgstr "Rencana Trading"
 
 #: /home/git/translations/binary-static/src/templates/haml/resources/index.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/datafeed.html.tt:29
-#: cgi/trading_times.cgi:15 lib/BOM/Product/Contract.pm:2274
-#: lib/BOM/Product/Contract.pm:2664 lib/BOM/Product/Contract.pm:2679
-#: lib/BOM/Product/Contract.pm:2695 lib/BOM/Product/Contract.pm:2868
+#: cgi/trading_times.cgi:15 lib/BOM/Product/Contract.pm:2285
+#: lib/BOM/Product/Contract.pm:2675 lib/BOM/Product/Contract.pm:2690
+#: lib/BOM/Product/Contract.pm:2706 lib/BOM/Product/Contract.pm:2879
 #: lib/BOM/View/Menu.pm:154
 msgid "Trading Times"
 msgstr "Waktu Trading"
@@ -8236,43 +8223,47 @@ msgid "Trading financial contracts involves a high level of risk and may not be 
 msgstr "Kontrak trading finansial memiliki resiko tinggi dan mungkin tidak cocok bagi semua orang. Sebelum memutuskan untuk melakukan pembelian kontrak finansial, anda perlu mengetahui resiko yang akan anda alami. Anda harus mengetahui semua resiko yang terlibat pada trading finansial dan meminta saran pada penyedia konsultasi bebas jika anda memiliki keraguan."
 
 #. ($blackout_time)
-#: lib/BOM/Product/Contract.pm:2633
+#: lib/BOM/Product/Contract.pm:2644
 msgid "Trading is available after the first %1 of the session."
 msgstr "Trading hanya tersedia setelah %1 sesi pertama."
 
-#: lib/BOM/Product/Contract.pm:2850
+#: lib/BOM/Product/Contract.pm:2861
 msgid "Trading is not offered for this duration."
 msgstr "Trading tidak ditawarkan untuk durasi ini."
 
-#: cgi/oop/Controller/Bet.pm:676 lib/BOM/Product/Contract.pm:2227
-#: lib/BOM/Product/Contract.pm:2293
+#: cgi/oop/Controller/Bet.pm:676 lib/BOM/Product/Contract.pm:2238
+#: lib/BOM/Product/Contract.pm:2304
 msgid "Trading is suspended at the moment."
 msgstr "Trading dihentikan untuk sementara."
 
 #. ($translated_name)
 #. ($underlying->translated_display_name()
-#: cgi/analyse_contract.cgi:70 lib/BOM/Product/Contract.pm:2235
-#: lib/BOM/Product/Contract.pm:2244 lib/BOM/Product/Contract.pm:2272
+#: cgi/analyse_contract.cgi:70 lib/BOM/Product/Contract.pm:2246
+#: lib/BOM/Product/Contract.pm:2255 lib/BOM/Product/Contract.pm:2283
 msgid "Trading on %1 is suspended at the moment."
 msgstr "Trading pada %1 dihentikan untuk sementara."
 
 #. ($translated_name)
 #. ($self->underlying->translated_display_name()
 #. ($underlying->translated_display_name()
-#: lib/BOM/Product/Contract.pm:2255 lib/BOM/Product/Contract.pm:2262
-#: lib/BOM/Product/Contract.pm:2960
-#: lib/BOM/Product/Pricing/Engine/IntradayHistorical.pm:794
+#. ($bet->underlying->translated_display_name()
+#: lib/BOM/Product/Contract.pm:2266 lib/BOM/Product/Contract.pm:2273
+#: lib/BOM/Product/Contract.pm:2971
+#: lib/BOM/Product/Pricing/Engine/Intraday.pm:281
+#: lib/BOM/Product/Pricing/Engine/Intraday/Index.pm:78
 msgid "Trading on %1 is suspended due to missing market data."
 msgstr "Trading pada %1 dihentikan sementara berhubung gangguan data market."
 
 #. ($eod_blackout_start->as_string)
-#: lib/BOM/Product/Contract.pm:2662
+#: lib/BOM/Product/Contract.pm:2673
 msgid "Trading suspended for the last %1 of the session."
 msgstr "Trading dihentikan hingga sedi terakhir %1."
 
-#: lib/BOM/Product/Contract.pm:2677
-msgid "Trading suspended for the last 300s of the session."
-msgstr "Trading dihentikan untuk 300 sesi terakhir."
+#: lib/BOM/Product/Contract.pm:2688
+#, fuzzy
+#| msgid "Trading suspended for the last %1 of the session."
+msgid "Trading suspended for the last one hour of the session."
+msgstr "Trading dihentikan hingga sedi terakhir %1."
 
 #: cgi/subs/subs_forms_output.pm:331
 msgid "Trading the financial markets can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Limits will only be removed or altered after 7 days."
@@ -8377,7 +8368,7 @@ msgstr "Saham UK"
 msgid "UK and Manx residents will have their account opened with Regent Markets (IOM) Ltd."
 msgstr "Warga Inggris dan Manx akan memiliki akun mereka didaftar dengan Regent Markets (IOM) Ltd."
 
-#: /home/git/translations/binary-static/src/templates/toolkit/legal/complaints_disputes.html.tt:13
+#: /home/git/translations/binary-static/src/templates/toolkit/legal/complaints_disputes.html.tt:16
 msgid "UK clients registered with Regent Markets (Malta) Ltd can submit their dispute with the alternative dispute resolution entity which is the Independent Betting Adjudication Service Ltd (IBAS) by filling the adjudication form on the ADR entity’s"
 msgstr "Klien UK terdaftar pada Regent Markets (Malta) Ltd dapat mengajukan perselisihannya dengan entitas alternatif penyelesaian sengketa yang merupakan Independent Betting Adjudication Service Ltd (IBAS) dengan mengisi formulir ajudikasi pada entitas ADR"
 
@@ -8432,7 +8423,7 @@ msgstr "Jenis trading yang tidak tersedia $bet_params->{bet_class}"
 msgid "Up to"
 msgstr "Hingga"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/resources/trading_times.html.tt:22
+#: /home/git/translations/binary-static/src/templates/toolkit/resources/trading_times.html.tt:23
 msgid "Upcoming Events"
 msgstr "Acara Mendatang"
 
@@ -8454,11 +8445,11 @@ msgstr "Upgrade ke akun uang riil"
 msgid "Upon appointment of a Trading Agent, the Client acknowledges and understands that the Company is hereby giving authorisation to follow the instructions of the authorised Trading Agent in every respect with regards to the Client's financial trading account with the Company, EXCEPT for the withdrawal of any funds from the Client's account. The Company will not in any way be liable or responsible for any buy or sell trading actions done on the Client's behalf by the Trading Agent, or for any losses incurred by the Trading Agent for the Client's Account. Furthermore, the Company does not endorse the Trading Agent nor does it vouch for the background, or experience of the Trading Agent, nor does the Company endorse any operating methods used by the Trading Agent, including when trading for the Client's account."
 msgstr "Setelah memilih Agen Trading, Pelanggan mengetahui dan memahami bahwa Perusahaan akan memberikan kekuasaan sepenuhnya pada Agen Trading yang dibenarkan untuk melakukan trading pada akun pelanggan bersangkutan pada Perusahaan KECUALI penarikan dana. Perusahaan tidak akan menanggung atau bertanggung jawab pada transaksi apapun yang dilakukan oleh Agen Trading. Disamping itu, Perusahaan tidak mengabsahkan Agen Trading baik itu dari segi latar belakang, pengalaman atau metode pengoperasian yang digunakan oleh Agen Trading termasuk ketika melakukan trading pada account Pelanggan."
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:55
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:75
 msgid "Upper Band"
 msgstr "Garis Atas"
 
-#: cgi/daily_prices.cgi:160
+#: cgi/daily_prices.cgi:137
 msgid "Upper Band = Average + 0.5 * Std Deviation"
 msgstr "Batasan Atas = Rata-rata + 0.5 * Std Deviasi"
 
@@ -8518,9 +8509,13 @@ msgstr "Vertikal"
 msgid "Vertical Grid"
 msgstr "Garis Vertical"
 
-#: cgi/daily_prices.cgi:66 cgi/daily_prices.cgi:68 cgi/intraday_prices.cgi:57
-#: cgi/intraday_prices.cgi:59 cgi/oop/Controller/Bet.pm:1259
-#: cgi/oop/Controller/Bet.pm:1275
+#: cgi/subs/subs_presentation.pm:53 cgi/subs/subs_presentation.pm:54
+msgid "Viber"
+msgstr ""
+
+#: /home/git/translations/binary-static/src/templates/toolkit/bet/intraday_prices.html.tt:16
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:21
+#: cgi/oop/Controller/Bet.pm:1259 cgi/oop/Controller/Bet.pm:1275
 msgid "View"
 msgstr "Lihat"
 
@@ -8528,11 +8523,11 @@ msgstr "Lihat"
 msgid "View Rise/Fall contract prices across a range of markets."
 msgstr "Lihat harga kontrak Naik/Turun pada berbagai pilihan market."
 
-#: lib/BOM/Product/Contract.pm:2625 lib/BOM/Product/Contract.pm:2635
+#: lib/BOM/Product/Contract.pm:2636 lib/BOM/Product/Contract.pm:2646
 msgid "View Trading Times"
 msgstr "Lihat Waktu Trading"
 
-#: cgi/top_up_virtual.cgi:96 cgi/top_up_virtual.cgi:97
+#: cgi/top_up_virtual.cgi:64 cgi/top_up_virtual.cgi:65
 msgid "View Updated Portfolio"
 msgstr "Lihat portopolio terbaru"
 
@@ -8658,7 +8653,7 @@ msgstr "Saat ini kami tidak menerima pembukaan account dari penduduk negara beri
 msgid "We could not authenticate your account online. please proceed to the <a href=\"%1\">manual authentication section</a>. If you would like to register additional credit cards, please contact <a class=\"pjaxload\" href=\"%2\">customer support</a>."
 msgstr "Kami tidak dapat membuktikan kebenaran akun anda secara online. Silakan lanjutkan ke bagian <a href=\"%1\">pembuktian manual</a>. Jika anda ingin mendaftarkan kartu kredit baru, silakan hubungi <a class=\"pjaxload\" href=\"%2\">customer support</a>."
 
-#: lib/BOM/Product/Contract.pm:500
+#: lib/BOM/Product/Contract.pm:501
 msgid "We could not process this contract at this time."
 msgstr "Kami tidak dapat memproses kontrak saat ini."
 
@@ -9321,8 +9316,8 @@ msgstr "Anda dapat mencoba <a href=\"%1\">metode pembayaran</a> lainnya atau unt
 msgid "You can use an authorized payment agent to process deposits and withdrawals for e-cash methods or local currencies not supported by"
 msgstr "Anda dapat menggunakan agen pembayaran untuk mendeposit dan menarik dana menggunakan transfer bank lokal atau e-cash yang tidak disediakan oleh"
 
-#. ($website->display_name)
-#: cgi/paymentagent_list.cgi:45
+#. (website)
+#: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_agent_list.html.tt:4
 msgid "You can use an authorized payment agent to process deposits and withdrawals for payment methods or local currencies not supported by %1. It's easy to do."
 msgstr "Anda dapat menggunakan agen pembayaran untuk mendeposit dan menarik dana menggunakan transfer bank lokal atau e-cash yang tidak disediakan oleh %1. Sangat mudah."
 
@@ -9390,9 +9385,9 @@ msgstr "Alamat IP yang anda masukkan salah."
 msgid "You have entered an invalid login ID"
 msgstr "Anda telah memasukkan login ID yang salah"
 
-#: lib/BOM/Product/Transaction.pm:1099 lib/BOM/Product/Transaction.pm:1231
-#: lib/BOM/Product/Transaction.pm:1259 lib/BOM/Product/Transaction.pm:1287
-#: lib/BOM/Product/Transaction.pm:1321
+#: lib/BOM/Product/Transaction.pm:1102 lib/BOM/Product/Transaction.pm:1234
+#: lib/BOM/Product/Transaction.pm:1262 lib/BOM/Product/Transaction.pm:1290
+#: lib/BOM/Product/Transaction.pm:1318 lib/BOM/Product/Transaction.pm:1352
 msgid "You have exceeded the daily limit for contracts of this type."
 msgstr "Anda telah melebihi batasan harian kontrak untuk jenis ini."
 
@@ -9432,10 +9427,6 @@ msgstr "Anda hanya dapat mendaftar akun di situs ini dengan syarat bahwa:"
 #: /home/git/translations/binary-static/src/templates/toolkit/account/open_account.html.tt:26
 msgid "You may prefer to open a <a class=\"pjaxload\" href=\"%1\">virtual money</a> account to practice trading. It's free, and will give you experience and confidence in trading strategies."
 msgstr "Anda mungkin lebih memilih untuk mendaftar akun <a class=\"pjaxload\" href=\"%1\">uang virtual</a> untuk berlatih trading terlebihdahulu. Gratis dan akan memberi rasa kepercayaan didalam menguji strategi trading anda."
-
-#: /home/git/translations/binary-static/src/templates/toolkit/account/currency_converter.html.tt:8
-msgid "You may purchase contracts in any of these currencies."
-msgstr "Anda hanya dapat membeli kontrak pada jenis mata uang berikut."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/promocode.html.tt:25
 msgid "You may withdraw the Y deposited to claim the bonus and any winnings generated by the bonus at any time."
@@ -9590,7 +9581,7 @@ msgid "Your account balance"
 msgstr "Saldo akun Anda"
 
 #. ($currency,                to_monetary_number_format($balance)
-#: lib/BOM/Product/Transaction.pm:964
+#: lib/BOM/Product/Transaction.pm:967
 msgid "Your account balance (%1%2) is insufficient to buy this contract (%1%3)."
 msgstr "Saldo anda (%1%2) tidak mencukupi untuk membeli kontrak (%1%3) ini."
 
@@ -9598,7 +9589,7 @@ msgstr "Saldo anda (%1%2) tidak mencukupi untuk membeli kontrak (%1%3) ini."
 msgid "Your account does not require authentication at this time."
 msgstr "Akun Anda tidak memerlukan otentikasi untuk saat ini."
 
-#: lib/BOM/Product/Transaction.pm:1203
+#: lib/BOM/Product/Transaction.pm:1206
 msgid "Your account has exceeded the trading limit with free promo code, please deposit if you wish to continue trading."
 msgstr "Akun anda telah melebihi batasan trading menggunakan kode bonus, silakan mendeposit untuk melanjutkan trading."
 
@@ -9632,10 +9623,6 @@ msgstr "Akun Anda terdaftar sebagai Agen Pembayaran."
 #: cgi/cashier_forward.cgi:33
 msgid "Your account is restricted to withdrawals only."
 msgstr "Akun Anda hanya dapat melakukan penarikan saja."
-
-#: /home/git/translations/binary-static/src/templates/toolkit/account/currency_converter.html.tt:8
-msgid "Your account may hold the following currencies"
-msgstr "Anda dapat menggunakan jenis mata uang berikut ini"
 
 #: cgi/oop/Validation/Transaction/Payment/Deposit.pm:45
 msgid "Your balance is over your allowed limit."
@@ -9887,7 +9874,7 @@ msgstr "contohnya Perusahaan mungkin menderita kerugian berupa uang, fiskal atau
 msgid "any restriction to its Clients from purchasing any contracts during certain hours."
 msgstr "batasan manapun pada klien dari membeli kontrak selama jam-jam tertentu."
 
-#: lib/BOM/Product/Contract.pm:2206
+#: lib/BOM/Product/Contract.pm:2217
 msgid "barrier"
 msgstr "batasan"
 
@@ -9968,7 +9955,7 @@ msgstr "untuk instruksi lengkap coding."
 msgid "here"
 msgstr "di sini"
 
-#: lib/BOM/Product/Contract.pm:2206
+#: lib/BOM/Product/Contract.pm:2217
 msgid "high barrier"
 msgstr "batasan tinggi"
 
@@ -9992,7 +9979,7 @@ msgstr "kurang"
 msgid "loading..."
 msgstr "pemuatan..."
 
-#: lib/BOM/Product/Contract.pm:2206
+#: lib/BOM/Product/Contract.pm:2217
 msgid "low barrier"
 msgstr "batasan rendah"
 
@@ -10016,7 +10003,7 @@ msgstr "durasi minimal yang tersedia"
 msgid "minimum is"
 msgstr "minimum adalah"
 
-#: lib/BOM/Product/Contract.pm:2203
+#: lib/BOM/Product/Contract.pm:2214
 msgid "minus"
 msgstr "berkurang"
 
@@ -10066,7 +10053,7 @@ msgstr "atau silahkan coba peta situs berikut"
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "halaman untuk waktu tepat penyelesaian seluruh kontrak. Website lain mungkin menggunakan konvensi berbeda (sebagai contoh beberapa website menggunakan jam 4 waktu New York atau jam 5 waktu London). Hal ini menyebabkan harga open, high, low dan close pada website kami akan mengalami perbedaan dengan website lainnya berhubung konvensi waktu penutupan market."
 
-#: lib/BOM/Product/Contract.pm:2203
+#: lib/BOM/Product/Contract.pm:2214
 msgid "plus"
 msgstr "ditambah"
 
@@ -10130,7 +10117,7 @@ msgstr "tick"
 msgid "to state the limits you wish to set via live chat, email or phone. Available limits are:"
 msgstr "untuk menginformasikan batasan yang Anda inginkan melalui chat, email atau telepon. Limit yang tersedia adalah:"
 
-#: cgi/trading_times.cgi:149
+#: cgi/trading_times.cgi:147
 msgid "today"
 msgstr "hari ini"
 
@@ -10142,7 +10129,7 @@ msgstr "menyentuh/tidak"
 msgid "trades"
 msgstr "target harga"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/legal/complaints_disputes.html.tt:13
+#: /home/git/translations/binary-static/src/templates/toolkit/legal/complaints_disputes.html.tt:16
 msgid "website"
 msgstr "situs web"
 
@@ -10551,16 +10538,28 @@ msgstr "US S&P 100"
 msgid "Swedish Index"
 msgstr "Swedish Index"
 
+#: Underlying Symbol OPIDAXAEX
+#, fuzzy
+#| msgid "German Futures Index"
+msgid "German vs Dutch Index"
+msgstr "German Futures Index"
+
+#: Underlying Symbol OPIDAXFCHI
+#, fuzzy
+#| msgid "German Futures Index"
+msgid "German vs French Index"
+msgstr "German Futures Index"
+
 #: Underlying Symbol OPIDAXFTSE
-msgid "German vs UK"
+#, fuzzy
+#| msgid "German vs UK"
+msgid "German vs UK Index"
 msgstr "Jerman vs Inggris"
 
-#: Underlying Symbol OPIDAXMIB
-msgid "Italian vs German"
-msgstr "Italia vs Jerman"
-
 #: Underlying Symbol OPIDAXSMI
-msgid "German vs Swiss"
+#, fuzzy
+#| msgid "German vs Swiss"
+msgid "German vs Swiss Index"
 msgstr "Jerman vs Swiss"
 
 #: Underlying Symbol PSI20
@@ -12078,6 +12077,33 @@ msgstr "Maaf, pengaksesan menggunakan alamat IP jaringan ini telah dibatalkan."
 #: Message for API Error 'LOGIN_TOO_MANY_FAILED_ATTEMPTS'
 msgid "Sorry, you have already had too many unsuccessful attempts. Please try again in 5 minutes."
 msgstr "Maaf, Anda telah gagal mengakses beberapa kali. Silakan coba kembali dalam waktu 5 menit lagi."
+
+#~ msgid "Convert"
+#~ msgstr "Menukar"
+
+#~ msgid "Convert between your currency segment accounts"
+#~ msgstr "Menukar antara bagian mata uang rekening Anda"
+
+#~ msgid "Note:"
+#~ msgstr "Nota:"
+
+#~ msgid "Sorry, your account balance is more than %1. You may not claim extra funds until such time as your account balance drops under %1."
+#~ msgstr "Maaf, sisa dana tunai anda lebih dari %1. Anda tidak dapat mengisi dana tambahan hingga saldo akun anda kurang dari %1."
+
+#~ msgid "To convert money between the different currencies in your account, please use the form below."
+#~ msgstr "Untuk menukar uang antara mata uang yang berbeda di dalam rekening Anda, silakan pergunakan formulir dibawah ini."
+
+#~ msgid "Trading suspended for the last 300s of the session."
+#~ msgstr "Trading dihentikan untuk 300 sesi terakhir."
+
+#~ msgid "You may purchase contracts in any of these currencies."
+#~ msgstr "Anda hanya dapat membeli kontrak pada jenis mata uang berikut."
+
+#~ msgid "Your account may hold the following currencies"
+#~ msgstr "Anda dapat menggunakan jenis mata uang berikut ini"
+
+#~ msgid "Italian vs German"
+#~ msgstr "Italia vs Jerman"
 
 #~ msgid "$value %1"
 #~ msgstr "$value %1"
@@ -16089,9 +16115,6 @@ msgstr "Maaf, Anda telah gagal mengakses beberapa kali. Silakan coba kembali dal
 
 #~ msgid "UK Futures Index"
 #~ msgstr "UK Futures Index"
-
-#~ msgid "German Futures Index"
-#~ msgstr "German Futures Index"
 
 #~ msgid "Hong Kong Futures Index"
 #~ msgstr "Hong Kong Futures Index"

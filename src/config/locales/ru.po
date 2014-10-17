@@ -9,17 +9,15 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2014-10-14 07:48+0200\n"
 "Last-Translator: olga borg <olga@binary.com>\n"
-"Language-Team: Russian "
-"<https://hosted.weblate.org/projects/binary/static/ru/>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 1.10-dev\n"
 
-#: cgi/top_up_virtual.cgi:85
+#: cgi/top_up_virtual.cgi:53
 msgid " has been credited to your Virtual money account"
 msgstr " было зачислено на Ваш Виртуальный счет"
 
@@ -597,8 +595,8 @@ msgstr "<strong>Выше/Ниже</strong> - где вы можете получ
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and Payment Agents."
 msgstr "<strong>ВАЖНАЯ ИНФОРМАЦИЯ</strong> - %1 не является представителем никакого из указанных Платежных Агентов. Каждый Платежный Агент функционирует как независимый предприниматель, и %1 не поддерживает, не несет поручительства за и не гарантирует надежности любого из Платежных Агентов. КЛИЕНТЫ ОБЩАЮТСЯ С ПЛАТЕЖНЫМИ АГЕНТАМИ НА СВОЙ СТРАХ И РИСК. Мы рекомендуем клиентам заранее проверить информацию о Платежных Агентах, прежде чем высылать им денежные средства.  %1 не несет никакой ответственности за транзакции между Клиентом и Платежным Агентом."
 
-#. ($website->display_name)
-#: cgi/paymentagent_list.cgi:68
+#. (website)
+#: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_agent_list.html.tt:26
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the payment agents listed above. Each payment agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of payment agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and payment agents."
 msgstr "<strong>ВАЖНАЯ ИНФОРМАЦИЯ</strong> - %1 не является представителем никакого из указанных платежных агентов. Каждый платежный агент функционирует как независимый предприниматель, и %1 не поддерживает, не несет поручительства за и не гарантирует надежности любого из платежных агентов. КЛИЕНТЫ ОБЩАЮТСЯ С ПЛАТЕЖНЫМИ АГЕНТАМИ НА СВОЙ СТРАХ И РИСК. Мы рекомендуем клиентам заранее проверить информацию о платежных агентах, прежде чем высылать им денежные средства.  %1 не несет никакой ответственности за транзакции между клиентом и платежным агентом."
 
@@ -939,7 +937,7 @@ msgstr "Управлением счетом и контроль"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:121
 #: /home/git/translations/binary-static/src/templates/toolkit/legtrouble.html.tt:121
-#: cgi/create_account.cgi:198 cgi/create_account.cgi:292
+#: cgi/create_account.cgi:191 cgi/create_account.cgi:283
 #: cgi/open_account.cgi:13 cgi/subs/subs_forms_output.pm:24
 msgid "Account Opening"
 msgstr "Открытие счета"
@@ -949,7 +947,7 @@ msgid "Account Settings</a> accordingly. Thank you for your kind assistance"
 msgstr "Установки</a> на Вашем счету. Спасибо за содействие"
 
 #. (currency, to_monetary_number_format(balance))
-#: /home/git/translations/binary-static/src/templates/toolkit/account/portfolio.html.tt:3
+#: /home/git/translations/binary-static/src/templates/toolkit/account/portfolio.html.tt:5
 msgid "Account balance : %1 %2"
 msgstr "Баланс счета : %1 %2"
 
@@ -1149,8 +1147,8 @@ msgstr "Запросите доступ"
 msgid "Apply to become Payment Agent"
 msgstr "Подать заявку Платежного Агента"
 
-#. ($website->display_name, $apply_payment_agent_url)
-#: cgi/paymentagent_list.cgi:63
+#. (website, apply_payment_agent_url)
+#: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_agent_list.html.tt:23
 msgid "Apply to become a %1 <a class=\"pjaxload\" href=\"%2\">payment agent</a>."
 msgstr "Подать заявку на получение статуса %1 <a class=\"pjaxload\" href=\"%2\">платежного агента</a>."
 
@@ -1232,7 +1230,7 @@ msgid "Ask"
 msgstr "Спрос"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/resources/rise_fall_list.html.tt:2
-#: /home/git/translations/binary-static/src/templates/toolkit/resources/trading_times.html.tt:18
+#: /home/git/translations/binary-static/src/templates/toolkit/resources/trading_times.html.tt:19
 msgid "Asset"
 msgstr "Актив"
 
@@ -1240,7 +1238,7 @@ msgstr "Актив"
 #: /home/git/translations/binary-static/src/templates/haml/resources/index.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/global/footer.html.tt:90
 #: cgi/asset_index.cgi:141 cgi/asset_index.cgi:28
-#: lib/BOM/Product/Contract.pm:2812 lib/BOM/Product/Contract.pm:2851
+#: lib/BOM/Product/Contract.pm:2823 lib/BOM/Product/Contract.pm:2862
 #: lib/BOM/Product/Pricing/Engine/Role/StandardMarkup.pm:177
 #: lib/BOM/View/Menu.pm:147
 msgid "Asset Index"
@@ -1295,15 +1293,15 @@ msgstr "Авторизация: Basic %1"
 msgid "Authorization: Bearer %1"
 msgstr "Авторизация: Bearer %1"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:55
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:75
 msgid "Average"
 msgstr "Среднее"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:50
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:70
 msgid "Average Change"
 msgstr "Среднее изменение"
 
-#: cgi/daily_prices.cgi:159
+#: cgi/daily_prices.cgi:136
 msgid "Average Change = Average Close - Average Open, for the period selected"
 msgstr "Среднее изменение = Среднее закрытие - Среднее открытие, на выбранный период"
 
@@ -1397,17 +1395,16 @@ msgstr "Изменение барьера (%) за пределами лимит
 msgid "Barrier Step format error"
 msgstr "Ошибка формата изменения барьера"
 
-#: lib/BOM/Product/Contract.pm:2563
-#| msgid "Barrier outside acceptable range."
+#: lib/BOM/Product/Contract.pm:2574
 msgid "Barrier is out of acceptable range."
 msgstr "Барьер находится вне приемлемых рамок."
 
-#: lib/BOM/Product/Contract.pm:2553
+#: lib/BOM/Product/Contract.pm:2564
 msgid "Barrier may not be adjusted."
 msgstr "Барьер не может быть изменен."
 
 #. ($min_pips . ' pips away from the spot.')
-#: lib/BOM/Product/Contract.pm:2509
+#: lib/BOM/Product/Contract.pm:2520
 msgid "Barrier must be at least "
 msgstr "Барьер должен быть по меньшей мере "
 
@@ -1416,7 +1413,7 @@ msgstr "Барьер должен быть по меньшей мере "
 msgid "Barrier offset"
 msgstr "Изменение барьера"
 
-#: lib/BOM/Product/Pricing/Engine/IntradayHistorical.pm:166
+#: lib/BOM/Product/Pricing/Engine/Intraday/Forex.pm:128
 msgid "Barrier outside acceptable range."
 msgstr "Барьер не соответствует приемлемым рамкам."
 
@@ -1428,7 +1425,7 @@ msgstr "Условия барьеров"
 msgid "Barrier(s)"
 msgstr "Барьер(ы)"
 
-#: lib/BOM/Product/Contract.pm:2534
+#: lib/BOM/Product/Contract.pm:2545
 msgid "Barriers must be on either side of the spot."
 msgstr "Барьеры должны быть выше или ниже рыночной цены."
 
@@ -1754,14 +1751,14 @@ msgstr "Осциллятор Чайкина"
 msgid "Chaikin Volatility"
 msgstr "Осциллятор Чайкина"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/bet/intraday_prices_table.html.tt:4
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:22
+#: /home/git/translations/binary-static/src/templates/toolkit/bet/intraday_prices.html.tt:34
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:42
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/legacy_chart_table.html.tt:16
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/ticker_data_table.html.tt:10
 msgid "Change"
 msgstr "Изменение"
 
-#: cgi/daily_prices.cgi:158
+#: cgi/daily_prices.cgi:135
 msgid "Change = Close - Open, for the day"
 msgstr "Изменение = Закрытие - Открытие, на этот день"
 
@@ -1821,7 +1818,7 @@ msgstr "Смотрите наш ежедневный анализ рынка о�
 msgid "Check out some technical terms before you start."
 msgstr "Ознакомьтесь с некоторыми техническими терминами, прежде чем начать работу."
 
-#: cgi/paymentagent_list.cgi:47
+#: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_agent_list.html.tt:7
 msgid "Check out the payment methods accepted by the payment agents in the list below."
 msgstr "Ниже проверьте список платежных способов, принимаемых платежным агентом."
 
@@ -1893,7 +1890,7 @@ msgstr "Выберите рынок, ценовой барьер, период �
 msgid "Choose the market, the time period, and how much you wish to win."
 msgstr "Выберите рынок, период и желаемую выплату."
 
-#: cgi/paymentagent_list.cgi:48
+#: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_agent_list.html.tt:8
 msgid "Choose the payment method you'd like to use."
 msgstr "Выберите способ оплаты, которым Вы хотели бы воспользоваться."
 
@@ -1938,10 +1935,18 @@ msgid "Clients must fill into the account opening form all requested details tha
 msgstr "Клиенты при открытии счета должны указать все запрашиваемые личные данные."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/complaints_disputes.html.tt:10
-msgid "Clients registered with Regent Markets (IOM) Ltd can raise their unresolved disputes with the Isle of Man Gambling Supervision Commission at"
-msgstr "Клиенты, зарегистрированные под юрисдикцией Regent Markets (IOM) Ltd, могут возбудить дела по нерешенным спорам в Комиссии по надзору за азартными играми Острова Мэн (Isle of Man Gambling Supervision Commission) по"
+#, fuzzy
+#| msgid "Clients registered with Regent Markets (Malta) Ltd can raise their unresolved disputes with the Lotteries and Gaming Authority at"
+msgid "Clients registered with Regent Markets (C.R.) S.A. can raise their unresolved disputes with management by submitting an email to complaints@binary.com."
+msgstr "Клиенты, зарегистрированные под юрисдикцией Regent Markets (Malta) Ltd, могут возбудить дела по нерешенным спорам, с органом Lotteries and Gaming Authority по"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/complaints_disputes.html.tt:13
+#, fuzzy
+#| msgid "Clients registered with Regent Markets (IOM) Ltd can raise their unresolved disputes with the Isle of Man Gambling Supervision Commission at"
+msgid "Clients registered with Regent Markets (IOM) Ltd can raise their unresolved disputes with the Isle of Man Gambling Supervision Commission at gaming@gov.im."
+msgstr "Клиенты, зарегистрированные под юрисдикцией Regent Markets (IOM) Ltd, могут возбудить дела по нерешенным спорам в Комиссии по надзору за азартными играми Острова Мэн (Isle of Man Gambling Supervision Commission) по"
+
+#: /home/git/translations/binary-static/src/templates/toolkit/legal/complaints_disputes.html.tt:16
 msgid "Clients registered with Regent Markets (Malta) Ltd can raise their unresolved disputes with the Lotteries and Gaming Authority at"
 msgstr "Клиенты, зарегистрированные под юрисдикцией Regent Markets (Malta) Ltd, могут возбудить дела по нерешенным спорам, с органом Lotteries and Gaming Authority по"
 
@@ -1958,8 +1963,8 @@ msgstr "Клиентам, которые не желают возобновля�
 msgid "Clients who wish to self-exclude should be aware that the self-exclusion period is a minimum of six months and are given the option to extend it to a total of at least five years, immediately without any cooling-off period. At the end of the self-exclusion period, the self-exclusion remains in place, unless positive action is taken by the client in order to trade again."
 msgstr "Клиенты, которые желают запросить самоисключение с сайта, должны иметь в виду, что период самоисключения составляет минимум шесть месяцев и может быть продлен в общей сложности до пяти лет, немедленно, без периода на обдумывания. По истечении периода самоисключения, самоисключение остается в силе, если клиентом не предпринимается действие к возобновлению торговли."
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:20
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:48
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:40
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:68
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/legacy_chart_table.html.tt:15
 #: lib/BOM/View/Charting.pm:432 lib/BOM/View/Charting.pm:529
 msgid "Close"
@@ -1982,12 +1987,12 @@ msgstr "Закрытие торгового дня."
 msgid "Closed"
 msgstr "Закрыть"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/resources/trading_times.html.tt:20
+#: /home/git/translations/binary-static/src/templates/toolkit/resources/trading_times.html.tt:21
 msgid "Closes"
 msgstr "закрывается"
 
 #. ($exchange->closing_on($when)
-#: cgi/trading_times.cgi:132
+#: cgi/trading_times.cgi:130
 msgid "Closes early (at %1)"
 msgstr "Закрывается рано (в %1)"
 
@@ -2082,7 +2087,7 @@ msgstr "Контакт"
 msgid "Contact Us"
 msgstr "Контакты"
 
-#: cgi/paymentagent_list.cgi:49
+#: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_agent_list.html.tt:9
 msgid "Contact the payment agent directly for more information on how to transfer money to them."
 msgstr "Свяжитесь с платежным агентом напрямую для дальнейшей информации относительно перевода денег."
 
@@ -2119,7 +2124,7 @@ msgid "Contract barrier must be positive."
 msgstr "Барьер контракта должен быть положительным значением."
 
 #. ($end_of_bo->date)
-#: lib/BOM/Product/Contract.pm:2926
+#: lib/BOM/Product/Contract.pm:2937
 msgid "Contract can not expire during the end-of-year holiday period. Select an expiry date after %1."
 msgstr "Контракты не могут заканчиваться в период праздничных дней в конце года. Пожалуйста, выберите дату окончания после %1."
 
@@ -2135,21 +2140,21 @@ msgstr "Контракты и цены"
 msgid "Contract expired"
 msgstr "Контракт закончился"
 
-#: lib/BOM/Product/Contract.pm:2703
+#: lib/BOM/Product/Contract.pm:2714
 msgid "Contract has already expired."
 msgstr "Контракт уже закончил свое действие."
 
 # 100%
-#: lib/BOM/Product/Contract.pm:1816
+#: lib/BOM/Product/Contract.pm:1827
 msgid "Contract market price is too close to final payout."
 msgstr "Значение рыночной цены слишком близко к значению желаемой выплаты."
 
 #. ($eod_blackout_expiry->as_string)
-#: lib/BOM/Product/Contract.pm:2742
+#: lib/BOM/Product/Contract.pm:2753
 msgid "Contract may not expire within the last %1 of trading."
 msgstr "Контракт не может заканчиваться в последний(ие) %1 торгового дня."
 
-#: lib/BOM/Product/Contract.pm:2712
+#: lib/BOM/Product/Contract.pm:2723
 msgid "Contract must expire during trading hours."
 msgstr "Контракт должен заканчиваться в торговые часы."
 
@@ -2189,12 +2194,12 @@ msgid "Contracts may not expire on a weekend; therefore the expiry date of a con
 msgstr "Контракты не могут заканчиваться в выходные дни; в связи с этим возможная дата окончания контракта может выпадать на следующий понедельник или рабочий день после праздников, если первоначальная дата окончания выпадала на субботу или воскресенье."
 
 #. ($underlying->translated_display_name()
-#: cgi/trading_times.cgi:75
+#: cgi/trading_times.cgi:73
 msgid "Contracts on %1 which both start and end between %2 and %3 on the same day are not available."
 msgstr "Контракты на %1, которые начинаются и заканчиваются между %2 и %3 в тот же день, недоступны для покупки."
 
 #. ($underlying->translated_display_name()
-#: lib/BOM/Product/Contract.pm:2728
+#: lib/BOM/Product/Contract.pm:2739
 msgid "Contracts on %1 with durations under 24 hours must expire on the same trading day."
 msgstr "Контракты на %1 со сроком менее 24 часов должны заканчиваться в тот же торговый день."
 
@@ -2213,15 +2218,6 @@ msgstr "Обычно контракты не предлагаются, когд�
 #: /home/git/translations/binary-static/src/templates/haml/static/why_us.html.haml:1
 msgid "Controlled risk"
 msgstr "Контролируемый риск"
-
-#: /home/git/translations/binary-static/src/templates/toolkit/account/currency_converter.html.tt:13
-msgid "Convert"
-msgstr "Конвертировать"
-
-#: /home/git/translations/binary-static/src/templates/toolkit/account/currency_converter.html.tt:10
-#: /home/git/translations/binary-static/src/templates/toolkit/account/currency_converter.html.tt:6
-msgid "Convert between your currency segment accounts"
-msgstr "Конвертация между валютными сегментами счёта"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/privacy.html.tt:23
 msgid "Cookies"
@@ -2292,7 +2288,7 @@ msgstr "Котировки на валютах ограничены 5 знака
 msgid "Current Spot"
 msgstr "Настоящая спот-цена"
 
-#: lib/BOM/Product/Contract.pm:2406
+#: lib/BOM/Product/Contract.pm:2417
 msgid "Current market price is 0."
 msgstr "Текущая цена - 0."
 
@@ -2327,7 +2323,7 @@ msgstr "Служба поддержки была информирована о �
 msgid "Daily"
 msgstr "Днев."
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:11
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:31
 #: cgi/oop/Controller/Bet.pm:2166
 msgid "Daily Prices"
 msgstr "Дневные цены"
@@ -2352,12 +2348,14 @@ msgstr "Анализ рынка"
 msgid "Data Feed"
 msgstr "Вещание котировок"
 
-#: cgi/intraday_prices.cgi:70
-msgid "Data will be available after market close"
+#: /home/git/translations/binary-static/src/templates/toolkit/bet/intraday_prices.html.tt:24
+#, fuzzy
+#| msgid "Data will be available after market close"
+msgid "Data will be available after market close."
 msgstr "Данные будут доступны после закрытия рынка"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/account/statement.html.tt:124
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:16
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:36
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/legacy_chart_table.html.tt:10
 #: /home/git/translations/binary-static/src/templates/toolkit/resources/trading_times_header.html.tt:3
 msgid "Date"
@@ -2376,7 +2374,7 @@ msgstr "День"
 msgid "Day Bet"
 msgstr "Дневной опцион"
 
-#: cgi/daily_prices.cgi:62
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:15
 msgid "Days to display"
 msgstr "Количество дней для просмотра"
 
@@ -2745,7 +2743,7 @@ msgstr "Вы желаете видеть Binary.com на других языка
 msgid "Documents are required to verify your identity"
 msgstr "Документы для верификации личности"
 
-#: lib/BOM/Product/Transaction.pm:870
+#: lib/BOM/Product/Transaction.pm:873
 msgid "Don't buy contract using master password!"
 msgstr "Не покупайте контракт, используя внутренний пароль-ключ!"
 
@@ -2810,7 +2808,7 @@ msgstr "Нарисовать график"
 msgid "Due to new gaming regulations recently promulgated in Malta, we are required to obtain your residential address details.  We would be grateful if you could update your"
 msgstr "Согласно законам, регулиющим игорный бизнес на Мальте, в юрисдикции которой зарегистрирован Ваш счет, нами клиенты обязаны заполнять поля для адреса проживания на своих счетах. Пожалуйста, укажите Ваш домашний адрес в разделе"
 
-#: lib/BOM/Product/Transaction.pm:828
+#: lib/BOM/Product/Transaction.pm:831
 msgid "Due to regulatory requirements, you are required to authenticate your account in order to continue trading."
 msgstr "В связи с требованием закона, Вам необходимо авторизовать свой счет, чтобы продолжить работу."
 
@@ -2821,7 +2819,7 @@ msgid "Duration"
 msgstr "Продолжительность"
 
 #. ($shortest->as_string, $longest->as_string)
-#: lib/BOM/Product/Contract.pm:2818
+#: lib/BOM/Product/Contract.pm:2829
 msgid "Duration must be between %1 and %2."
 msgstr "Продолжительность должна быть от %1 до %2."
 
@@ -3382,7 +3380,7 @@ msgstr "Депозит Подарочным сертификатом"
 msgid "Gift Certificate Withdrawal"
 msgstr "Снятие Подарочным сертификатом"
 
-#: cgi/top_up_virtual.cgi:18 cgi/top_up_virtual.cgi:21
+#: cgi/top_up_virtual.cgi:17 cgi/top_up_virtual.cgi:20
 msgid "Give Me More Money!"
 msgstr "Дайте еще денег!"
 
@@ -3458,8 +3456,8 @@ msgstr "Помощь"
 msgid "Hide last spot"
 msgstr "Спрятать последнюю спот-котировку"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:18
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:46
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:38
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:66
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/legacy_chart_table.html.tt:13
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/ticker_data_table.html.tt:7
 #: lib/BOM/View/Charting.pm:442
@@ -3583,8 +3581,10 @@ msgstr "Как работать с бинарными опционами?"
 msgid "How to trade the random markets?"
 msgstr "Как работать на рынках Random?"
 
-#: cgi/paymentagent_list.cgi:41
-msgid "How to use a payment agent"
+#: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_agent_list.html.tt:2
+#, fuzzy
+#| msgid "How to use a payment agent"
+msgid "How to use a payment agent?"
 msgstr "Как оплачивать через платежного агента"
 
 #: cgi/subs/subs_clientdetails.pm:129
@@ -3759,7 +3759,7 @@ msgstr "Если вы выбираете <strong>время начала</strong
 msgid "If you select a specific <strong>end time</strong>, the <strong>end time</strong> is the selected time."
 msgstr "Если Вы выбираете определенное <strong>время окончания</strong>, <strong>временем окончания</strong> контракта будет выбранное Вами время."
 
-#: lib/BOM/Product/Transaction.pm:1126
+#: lib/BOM/Product/Transaction.pm:1129
 msgid "If you wish to raise these limits, please authenticate your account."
 msgstr "Если Вы желаете повысить данные лимиты, пожалуйста, авторизуйте свой счет."
 
@@ -3825,7 +3825,7 @@ msgstr "В классическом стиле Силиконовой Долин
 msgid "In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro will rise in relation to the value of the US dollar."
 msgstr "На рынке Forex трейдеры могут работать, основываясь на цене одной валюты по отношению к другой. Например, если трейдер выбирает контракт \"Повышение\" на EUR/USD, он делает прогноз, что ценность евро поднимется по отношению к американскому доллару."
 
-#: lib/BOM/Product/Transaction.pm:892
+#: lib/BOM/Product/Transaction.pm:895
 msgid "In order for you to place contracts, we need to know your Residence (Country). Please update your settings."
 msgstr "Для того, чтобы Вы могли приобретать контракты, нам необходимо знать Вашу страну проживания. Пожалуйста, обновите свои установки."
 
@@ -3982,7 +3982,7 @@ msgstr "Интерпретация"
 msgid "Intraday"
 msgstr "Внутридневный"
 
-#: lib/BOM/Product/Contract.pm:1584
+#: lib/BOM/Product/Contract.pm:1594
 msgid "Intraday contracts may not cross market open."
 msgstr "Внутридневные контракты не могут переходить на следующий рабочий день."
 
@@ -4015,7 +4015,7 @@ msgstr "Вы ввели неверную сумму"
 msgid "Invalid fax number."
 msgstr "Неверно введен факс."
 
-#: lib/BOM/Product/Contract.pm:2342
+#: lib/BOM/Product/Contract.pm:2353
 msgid "Invalid payout currency."
 msgstr "Недействительная валюта."
 
@@ -4023,7 +4023,7 @@ msgstr "Недействительная валюта."
 msgid "Invalid period input! Please input the period between 0 and #1"
 msgstr "Неверно указан период. Введите период между 0 и #1"
 
-#: lib/BOM/Product/Contract.pm:2391
+#: lib/BOM/Product/Contract.pm:2402
 msgid "Invalid stake"
 msgstr "Недействительная ставка"
 
@@ -4066,7 +4066,7 @@ msgstr "Есть ли вступительный взнос?"
 msgid "It is important that you read and understand the contents of these terms and conditions. By indicating your acceptance of these terms and conditions and continuing with your application to join our affiliate program, you are agreeing (subject to our approval of your application) to the terms and conditions below. If you do not agree with the terms and conditions (or are not authorised to do so) you should not continue with your application. You should be the owner of, or acting on behalf of the owner of the website, that is signing up for this affiliate program."
 msgstr "Примите во внимание, что важно прочитать и понять условия партнерской программы. Выразив Ваше согласие и продолжив регистрацию для участия в партнерской программе, Вы соглашаетесь (при условии, что мы одобрим Вашу заявку) с условиями, описанными ниже. Если Вы не согласны с условиями (или не имеете авторизацию для такого действия), просим не продолжать с подачей заявки. Вы должны быть владельцем сайта, от имени которого подаете заявку на участие в программе, или действовать от имени владельца сайта."
 
-#: /home/git/translations/binary-static/src/templates/toolkit/legal/complaints_disputes.html.tt:16
+#: /home/git/translations/binary-static/src/templates/toolkit/legal/complaints_disputes.html.tt:19
 msgid "It is important that you refer your disputes to the appropriate ADR for the claims to be valid."
 msgstr "Важно направить свою жалобу в соответствующий орган альтернативного урегулирования споров, чтобы она была рассмотрена."
 
@@ -4217,7 +4217,7 @@ msgstr "Научиться работе на рынках онлайн"
 msgid "Legacy Contract"
 msgstr "Традиционный контракт"
 
-#: lib/BOM/Product/Contract.pm:950
+#: lib/BOM/Product/Contract.pm:958
 msgid "Legacy contract. No further information is available."
 msgstr "Нет дальнейшей информации."
 
@@ -4357,8 +4357,8 @@ msgstr "Потери"
 msgid "Lost password?"
 msgstr "Забыли пароль?"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:19
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:47
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:39
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:67
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/legacy_chart_table.html.tt:14
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/ticker_data_table.html.tt:8
 #: lib/BOM/View/Charting.pm:492
@@ -4385,15 +4385,15 @@ msgstr "Нижний барьер"
 msgid "Low barrier offset"
 msgstr "Изменение нижнего барьера"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:55
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:75
 msgid "Lower Band"
 msgstr "Нижняя полоса"
 
-#: cgi/daily_prices.cgi:161
+#: cgi/daily_prices.cgi:138
 msgid "Lower Band = Average - 0.5 * Std Deviation"
 msgstr "Нижняя полоса = средняя - 0.5 * стандартного отклонения"
 
-#: lib/BOM/Product/Contract.pm:2543
+#: lib/BOM/Product/Contract.pm:2554
 msgid "Lower barrier is out of acceptable range. Please adjust the lower barrier."
 msgstr "Нижний барьер вне приемлемых рамок. Пожалуйста, измените нижний барьер."
 
@@ -4462,7 +4462,7 @@ msgstr "Выходная цена рынка"
 # 83%
 # 100%
 #. ($safer_expiry->date)
-#: lib/BOM/Product/Contract.pm:2878
+#: lib/BOM/Product/Contract.pm:2889
 msgid "Market holiday during the contract period. Select an expiry date after %1."
 msgstr "Во время действия контракта ожидаются праздничные дни. Выберите время окончания после %1."
 
@@ -4501,7 +4501,7 @@ msgstr "Бонус на получение эквивалента депозит
 msgid "Max"
 msgstr "Макс."
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:55
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:75
 msgid "Maximum"
 msgstr "Максимум"
 
@@ -4599,7 +4599,7 @@ msgstr "Мин.-макс. пополнение"
 msgid "Min-Max Withdrawal"
 msgstr "Мин.-макс. вывод"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:55
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:75
 msgid "Minimum"
 msgstr "Минимум"
 
@@ -4609,15 +4609,15 @@ msgstr "Мисс"
 
 # 83%
 # 100%
-#: lib/BOM/Product/Contract.pm:1545 lib/BOM/Product/Contract.pm:1598
+#: lib/BOM/Product/Contract.pm:1555 lib/BOM/Product/Contract.pm:1608
 msgid "Missing market data for contract period."
 msgstr "Отсутствие рыночных данных для периода действия контракта."
 
-#: lib/BOM/Product/Contract.pm:1484
+#: lib/BOM/Product/Contract.pm:1494
 msgid "Missing market data for entry spot."
 msgstr "Отсутствие рыночных данных для входной цены."
 
-#: lib/BOM/Product/Contract.pm:1558 lib/BOM/Product/Contract.pm:1571
+#: lib/BOM/Product/Contract.pm:1568 lib/BOM/Product/Contract.pm:1581
 msgid "Missing market data for exit spot."
 msgstr "Отсутствие рыночных данных для выходной цены."
 
@@ -4869,10 +4869,6 @@ msgstr "Без риска, виртуальные 10000$"
 msgid "No. There's no cost to sign up to the %1 affiliate program."
 msgstr "Нет. Участие в партнерской программе %1 бесплатно."
 
-#: /home/git/translations/binary-static/src/templates/toolkit/account/currency_converter.html.tt:15
-msgid "Note:"
-msgstr "Примечание:"
-
 #: /home/git/translations/binary-static/src/templates/toolkit/portfolio/contract_details.html.tt:31
 msgid "Note: Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "Внимание: контракт будет продан по цене, действительной на момент получения запроса нашими серверами. Эта цена может отличаться от указанной в настояшее время."
@@ -4943,7 +4939,7 @@ msgid "Number of ticks"
 msgstr "Кол-во котировок"
 
 #. ($min_tick, $max_tick)
-#: lib/BOM/Product/Contract.pm:2777
+#: lib/BOM/Product/Contract.pm:2788
 msgid "Number of ticks must be between %1 and %2"
 msgstr "Количество тиков должно быть от %1 до %2"
 
@@ -5052,8 +5048,8 @@ msgstr "Разрешается только один счет на челове�
 msgid "Only properly tagged clients can be assigned to an affiliate. Should an affiliate tag be improperly inserted into the affiliate site or not properly received by the MyAffiliates server the resulting client registration and purchases will not be assigned to the affiliate. Therefore it is the responsibility of the affiliate to ensure that all links are properly tagged."
 msgstr "Только клиенты, зарегистрировавшиеся по правильной ссылке, могут быть прикреплены к определенному партнеру. Если партнерская ссылка была неправильно указана партнером или не было установлено соединение с сервером платформы MyAffiliates, регистрация клиента и его деятельность могут не быть прикреплены к партнеру. Обязанностью партнера является убедиться, что все ссылки работают."
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:17
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:45
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:37
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:65
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/ticker_data_table.html.tt:6
 #: lib/BOM/View/Charting.pm:420 lib/BOM/View/Charting.pm:500
 msgid "Open"
@@ -5098,12 +5094,12 @@ msgstr "Проекты с открытым кодом"
 msgid "Opening an account"
 msgstr "Открытие счета"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/resources/trading_times.html.tt:19
+#: /home/git/translations/binary-static/src/templates/toolkit/resources/trading_times.html.tt:20
 msgid "Opens"
 msgstr "Открывается"
 
 #. ($exchange->opening_on($when)
-#: cgi/trading_times.cgi:135
+#: cgi/trading_times.cgi:133
 msgid "Opens late (at %1)"
 msgstr "Открывается поздно (в %1  GMT)"
 
@@ -5273,7 +5269,7 @@ msgstr "Пароль:"
 msgid "Patents"
 msgstr "Патенты"
 
-#: cgi/paymentagent_list.cgi:14
+#: cgi/paymentagent_list.cgi:15
 msgid "Payment Agent Deposit"
 msgstr "Депозит платежным агентом"
 
@@ -5337,12 +5333,12 @@ msgstr "Валюта выплаты"
 msgid "Payout has moved in your favour from %1 to %2."
 msgstr "Выплата изменилась в выгодную для Вас сторону с %1 до %2."
 
-#: lib/BOM/Product/Contract.pm:2364
+#: lib/BOM/Product/Contract.pm:2375
 msgid "Payout may not have more than two decimal places."
 msgstr "Выплата не может иметь более двух десятичных."
 
 #. (to_monetary_number_format($payout_min, 1)
-#: lib/BOM/Product/Contract.pm:1828
+#: lib/BOM/Product/Contract.pm:1839
 msgid "Payout must be between <strong>%1</strong> and <strong>%2</strong>."
 msgstr "Выплата должна быть между <strong>%1</strong> и <strong>%2</strong>."
 
@@ -5427,7 +5423,6 @@ msgstr "Пожалуйста, введите пароль."
 msgid "Please enter a town or city."
 msgstr "Введите город."
 
-#: /home/git/translations/binary-static/src/templates/toolkit/account/currency_converter.html.tt:11
 #: cgi/paymentagent_transfer.cgi:118 cgi/subs/subs_forms.pm:3880
 #: cgi/subs/subs_forms.pm:4079
 msgid "Please enter a valid amount."
@@ -5577,7 +5572,7 @@ msgid "Please send this email to %1."
 msgstr "Пожалуйста, вышлите нам эл.сообщение на %1."
 
 #: cgi/subs/subs_forms.pm:1205 cgi/subs/subs_forms.pm:443
-#: cgi/subs/subs_presentation.pm:77
+#: cgi/subs/subs_presentation.pm:81
 msgid "Please specify your country."
 msgstr "Вы забыли указать Ваше гражданство."
 
@@ -5606,9 +5601,9 @@ msgstr "Пожалуйста, используйте только латинск
 msgid "Please wait.<br />Your request is being processed."
 msgstr "Пожалуйста, подождите.<br/>Запрос в обработке."
 
+#: /home/git/translations/binary-static/src/templates/toolkit/account/portfolio.html.tt:2
 #: /home/git/translations/binary-static/src/templates/toolkit/homepage/logged_in.html.tt:46
-#: cgi/portfolio.cgi:21 cgi/portfolio.cgi:81 cgi/portfolio.cgi:83
-#: lib/BOM/View/Menu.pm:65
+#: cgi/portfolio.cgi:21 cgi/portfolio.cgi:65 lib/BOM/View/Menu.pm:65
 msgid "Portfolio"
 msgstr "Портфолио"
 
@@ -5648,7 +5643,7 @@ msgstr "Представляет общую максимальную сумму 
 msgid "Prevailing market price cannot be determined at this time."
 msgstr "Действующая рыночная цена не может быть определена в настоящее время."
 
-#: lib/BOM/Product/Contract.pm:1497 lib/BOM/Product/Contract.pm:2952
+#: lib/BOM/Product/Contract.pm:1507 lib/BOM/Product/Contract.pm:2963
 msgid "Prevailing market price cannot be determined."
 msgstr "Настоящая рыночная цена не может быть установлена."
 
@@ -5658,7 +5653,7 @@ msgstr "Предыдущ."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/batch_sell_success_ajax.html.tt:13
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/batch_transactions_result_table.html.tt:13
-#: /home/git/translations/binary-static/src/templates/toolkit/bet/intraday_prices_table.html.tt:3
+#: /home/git/translations/binary-static/src/templates/toolkit/bet/intraday_prices.html.tt:33
 msgid "Price"
 msgstr "Цена"
 
@@ -5759,7 +5754,7 @@ msgstr "Дополнительно"
 msgid "Proof of address"
 msgstr "Подтверждение адреса"
 
-#: lib/BOM/Product/Contract.pm:2526
+#: lib/BOM/Product/Contract.pm:2537
 msgid "Proper barriers could not be determined."
 msgstr "Барьеры не могут быть определены."
 
@@ -5796,7 +5791,7 @@ msgid "Purchase Time"
 msgstr "Время покупки"
 
 #. ($currency, $max_daily_turnover_limit)
-#: lib/BOM/Product/Transaction.pm:1124
+#: lib/BOM/Product/Transaction.pm:1127
 msgid "Purchase of this contract would cause you to exceed your daily turnover limit of %1%2."
 msgstr "Покупка данного контракта приведет к первышению дневного торгового лимита %1%2."
 
@@ -5994,8 +5989,8 @@ msgstr "Откройте счет"
 msgid "Registration"
 msgstr "Регистрация"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:24
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:52
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:44
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:72
 msgid "Rel Change"
 msgstr "Изменение цены"
 
@@ -6032,29 +6027,29 @@ msgstr "Представляет собой максимальную сумму,
 msgid "Required"
 msgstr "Обязательно"
 
-#: lib/BOM/Product/Contract.pm:2925
+#: lib/BOM/Product/Contract.pm:2936
 msgid "Resale of this contract is not offered due to end-of-year market holidays."
 msgstr "Продажа этого контракта не предлагается в настоящее время в связи с праздничными днями в конце года."
 
 # 83%
 # 100%
-#: lib/BOM/Product/Contract.pm:2877
+#: lib/BOM/Product/Contract.pm:2888
 msgid "Resale of this contract is not offered due to market holiday during contract period."
 msgstr "Продажа этого контракта не предлагается в настоящее время в связи с праздничными днями на рынках."
 
 # 83%
 # 100%
-#: lib/BOM/Product/Contract.pm:2898
+#: lib/BOM/Product/Contract.pm:2909
 msgid "Resale of this contract is not offered due to market holidays during contract period."
 msgstr "Продажа этого контракта не предлагается в настоящее время в связи с праздничными днями на рынках в период действия контракта."
 
 #. ($shortest->as_string)
-#: lib/BOM/Product/Contract.pm:2808
+#: lib/BOM/Product/Contract.pm:2819
 msgid "Resale of this contract is not offered with less than %1 remaining."
 msgstr "Продажа контрактов с оставшейся продолжительностью менее, чем %1, не предлагается."
 
-#: lib/BOM/Product/Contract.pm:2305 lib/BOM/Product/Contract.pm:2802
-#: lib/BOM/Product/Contract.pm:2849
+#: lib/BOM/Product/Contract.pm:2316 lib/BOM/Product/Contract.pm:2813
+#: lib/BOM/Product/Contract.pm:2860
 #: lib/BOM/Product/Pricing/Engine/Role/StandardMarkup.pm:171
 msgid "Resale of this contract is not offered."
 msgstr "Продажа данного контракта не предлагается."
@@ -6309,8 +6304,10 @@ msgstr "Отправить"
 msgid "Send us a CV and a covering letter that describes your career interests."
 msgstr "Пошлите свое резюме и сопроводительное письмо с описанием Ваших карьерных стремлений."
 
-#: cgi/paymentagent_list.cgi:50
-msgid "Send your funds to the payment agent. The deposited funds, less the agent's commission, will show up in your %1 account."
+#: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_agent_list.html.tt:10
+#, fuzzy
+#| msgid "Send your funds to the payment agent. The deposited funds, less the agent's commission, will show up in your %1 account."
+msgid "Send your funds to the payment agent. The deposited funds, less the agent's commission, will show up in your account."
 msgstr "Переведите средства платежному агенту. Сумма депозита, минус агентская комиссия, покажется на Вашем счету на %1."
 
 #: cgi/subs/subs_forms.pm:208 cgi/subs/subs_forms.pm:2326
@@ -6351,7 +6348,7 @@ msgstr "Определите позицию"
 msgid "Settings"
 msgstr "Установки"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/resources/trading_times.html.tt:21
+#: /home/git/translations/binary-static/src/templates/toolkit/resources/trading_times.html.tt:22
 msgid "Settles"
 msgstr "заканчивается"
 
@@ -6408,7 +6405,7 @@ msgstr "Показать расширенные опции"
 msgid "Show last spot"
 msgstr "Показать последнюю спот-котировку"
 
-#: cgi/paymentagent_list.cgi:56
+#: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_agent_list.html.tt:15
 msgid "Show payment agents for:"
 msgstr "Показать платежных агентов для:"
 
@@ -6471,8 +6468,8 @@ msgstr "Извините, $currency не является валютой нас�
 msgid "Sorry, $currency is not default currency for payment agent "
 msgstr "Извините, $currency не является валютой настоящего платежного агента по умолчанию "
 
-#. ($underlying_symbol)
-#: cgi/daily_prices.cgi:164 cgi/daily_prices.cgi:74
+#. (underlying.display_name)
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:27
 msgid "Sorry, OHLC is not available for %1."
 msgstr "Извините, данные OHLC (Открытие/Высшее/Низшее/Закрытие) недоступны для %1."
 
@@ -6519,7 +6516,7 @@ msgid "Sorry, only USD is allowed."
 msgstr "Извините, только в USD."
 
 #. ($country)
-#: cgi/subs/subs_presentation.pm:71
+#: cgi/subs/subs_presentation.pm:75
 msgid "Sorry, our service is not available for residents of %1."
 msgstr "Извините, мы не принимаем к регистрации резидентов %1."
 
@@ -6559,7 +6556,7 @@ msgid "Sorry, the Payment Agent's currency "
 msgstr "К сожалению, валюта данного платежного агента "
 
 #. ($max_payout_limit, $currency, $client_agg_payouts, $payout)
-#: lib/BOM/Product/Transaction.pm:1045
+#: lib/BOM/Product/Transaction.pm:1048
 msgid "Sorry, the aggregate payouts of contracts on your account cannot exceed %2%1. The current aggregate payout of contracts on your account is %2%3 therefore you cannot buy a contract that would pay out an additional %2%4."
 msgstr "Извините, общая потенциальная выплата на Вашем счету не может превышать %2%1.  Настоящая общая потенциальная выплата на Вашем счету составляет %2%3, поэтому Вы не  сможете приобрести ставку, которая составляет дополнительную выплату %2%4."
 
@@ -6580,7 +6577,7 @@ msgstr "Извините, но максимальная сумма для кон
 msgid "Sorry, the page cannot be found."
 msgstr "Извините, эта страница не может быть найдена."
 
-#: lib/BOM/Product/Transaction.pm:1011
+#: lib/BOM/Product/Transaction.pm:1014
 msgid "Sorry, the same contract cannot be purchased more than once. You already have an identical contract in your account."
 msgstr "Извините, один и тот же контракт не может быть приобретен дважды.  У Вас уже есть идентичный контракт на счету."
 
@@ -6592,7 +6589,7 @@ msgstr "Слишком много данных. Пожалуйста, выбер
 msgid "Sorry, there was a problem validating your personal information with our payment processor. Please contact our Customer Service."
 msgstr "Извините, возникла проблема с валидацией Вашей личной информации в нашей системе оплат. Просим связаться с нашей службой поддержки."
 
-#: cgi/top_up_virtual.cgi:28
+#: cgi/top_up_virtual.cgi:27
 msgid "Sorry, this feature is available to virtual accounts only"
 msgstr "Извините, эта опция доступна только для виртуальных счетов"
 
@@ -6609,7 +6606,7 @@ msgid "Sorry, you are too young to open an account."
 msgstr "Извините, но Ваш возраст не позволяет Вам открыть счет."
 
 #. ($max_open_positions_limit)
-#: lib/BOM/Product/Transaction.pm:1029
+#: lib/BOM/Product/Transaction.pm:1032
 msgid "Sorry, you cannot hold more than %1 contracts at a given time. Please sell some of your existing contracts before buying any more."
 msgstr "Извините, у Вас не может быть более открыто %1 контрактов одновременно. Пожалуйста, продайте открытые контракты на Вашем счету, прежде, чем купить новые."
 
@@ -6642,17 +6639,12 @@ msgstr "Извините, Вы превысили сумму перевода н
 msgid "Sorry, you have excluded yourself from the website until %1."
 msgstr "Извините, Вы ограничили свой доступ на сайт до %1."
 
-#: cgi/top_up_virtual.cgi:64
+#: cgi/top_up_virtual.cgi:33
 msgid "Sorry, you have open positions. Please close out all open positions before requesting additional funds."
 msgstr "Пожалуйста, закройте все открытые позиции до заказа дополнительных средств для счета."
 
-#. ($min_with_currency)
-#: cgi/top_up_virtual.cgi:51
-msgid "Sorry, your account balance is more than %1. You may not claim extra funds until such time as your account balance drops under %1."
-msgstr "Извините, баланс Вашего счета выше %1. Вы не можете увеличить баланс до тех пор, пока он не опустится ниже %1."
-
 #. ("$currency$balance",                to_monetary_number_format($account_balance_limit, 1)
-#: lib/BOM/Product/Transaction.pm:953
+#: lib/BOM/Product/Transaction.pm:956
 msgid "Sorry, your account cash balance is too high (%1). <B>Your maximum account balance is %2 </b>. Please withdraw money from your account to bring down your cash balance under that amount. You may not trade until you do so."
 msgstr "Извините, Ваш баланс на счету слишком высокий (%1). <B>Ваш максимальный баланс - %2 </b>. Пожалуйста, выведите часть средств. Вы не сможете совершать операции, пока баланс не будет понижен."
 
@@ -6660,7 +6652,7 @@ msgstr "Извините, Ваш баланс на счету слишком в�
 msgid "Sorry, your account has got stuck in a previous transaction that did not complete. If this error persists, please contact customer support."
 msgstr "Извините, Ваш счет завис на предыдущей транзакции, которая не была завершена. Если эта ошибка повторится, пожалуйста, свяжитесь со службой поддержки."
 
-#: lib/BOM/Product/Transaction.pm:914
+#: lib/BOM/Product/Transaction.pm:917
 msgid "Sorry, your account is not authorised for any further contract purchases."
 msgstr "Извините, Ваш счет не авторизован для дальнейшей покупки контрактов."
 
@@ -6703,7 +6695,7 @@ msgid "Stake"
 msgstr "Ставка"
 
 #. (to_monetary_number_format($stake_min, 1)
-#: lib/BOM/Product/Contract.pm:1819
+#: lib/BOM/Product/Contract.pm:1830
 msgid "Stake must be between <strong>%1</strong> and <strong>%2</strong>."
 msgstr "Ставка должна быть между <strong>%1</strong> и <strong>%2</strong>."
 
@@ -6725,22 +6717,22 @@ msgstr "Начать работу"
 msgid "Start time"
 msgstr "Время начала"
 
-#: lib/BOM/Product/Contract.pm:2612 lib/BOM/Product/Transaction.pm:365
+#: lib/BOM/Product/Contract.pm:2623 lib/BOM/Product/Transaction.pm:365
 msgid "Start time is in the past"
 msgstr "Время начала прошло"
 
-#: lib/BOM/Product/Contract.pm:2602
+#: lib/BOM/Product/Contract.pm:2613
 msgid "Start time is invalid."
 msgstr "Время начала недействительно."
 
 # 86%
 # 100%
-#: lib/BOM/Product/Contract.pm:2592
+#: lib/BOM/Product/Contract.pm:2603
 msgid "Start time must be before expiry time."
 msgstr "Время начала должно быть раньше времени окончания."
 
 #. ($forward_starting_blackout->as_string)
-#: lib/BOM/Product/Contract.pm:2645
+#: lib/BOM/Product/Contract.pm:2656
 msgid "Start time on forward-starting contracts must be more than %1 from now."
 msgstr "Отложенные контракты должны начинаться позднее, чем через %1, от настоящего момента."
 
@@ -6766,7 +6758,7 @@ msgstr "Запросы по истории счета и портфолио"
 msgid "Static Content"
 msgstr "Статическое содержание"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:44
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:64
 msgid "Statistic"
 msgstr "Статистика"
 
@@ -6872,7 +6864,7 @@ msgid "Such materials may be copied and distributed on a limited basis for nonco
 msgstr "Такие материалы могут копироваться и распространяться на ограниченной основе и только для некоммерческих целей, при условии, что любой скопированный материал останется без изменений и что все копии включают внятное сообщение на хорошо видном месте: &ldquo;Copyright 1999-2014 Regent Markets Group. Все права защищены.&rdquo;"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/available_payment_agents_list.html.tt:3
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:40
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:60
 msgid "Summary"
 msgstr "Детали"
 
@@ -6904,7 +6896,7 @@ msgstr "Переключиться на обычный режим"
 msgid "System Time"
 msgstr "Системное время"
 
-#: lib/BOM/Product/Contract.pm:518
+#: lib/BOM/Product/Contract.pm:519
 msgid "System problems prevent proper settlement at this time."
 msgstr "Проблемы системы не позволяют точно рассчитать цену окончания контракта в настоящее время."
 
@@ -7350,7 +7342,7 @@ msgstr "Барьер бинарного опциона - это ценовой �
 msgid "The barrier(s) you choose defines your position and triggers your payout."
 msgstr "Выбранный барьер определяет уровень, задевание которого приведет к выигрышу и выплате."
 
-#: lib/BOM/Product/Contract.pm:551 lib/BOM/Product/Contract.pm:559
+#: lib/BOM/Product/Contract.pm:552 lib/BOM/Product/Contract.pm:560
 msgid "The barriers are improperly entered for this contract."
 msgstr "Неправильно внесены барьеры на данный контракт."
 
@@ -7399,7 +7391,7 @@ msgstr "Компания оставляет за собой право взим�
 msgid "The content on this website is subject to change at any time without notice and is provided for the sole purpose of assisting traders in making independent investment decisions.  %1 has taken reasonable measures to ensure the accuracy of the information on the website, however, the company does not guarantee its accuracy and will not accept liability for any loss or damage which may arise directly or indirectly from the content or your inability to access the website, for any delay in or failure of the transmission or the receipt of any instruction or notification sent through this website."
 msgstr "Содержание данного сайта может изменяться в любое время без уведомления и является лишь вспомогательным средством для принятия клиентами независимых решений. %1 предпринимает меры для обеспечения точности информации, но компания не может гарантировать абсолютную точность и не несет ответственность за любые потери или убытки, понесенные в связи с использованием этой информации, в связи с нарушением доступа к сайту, в связи с задержкой или нарушением доставки или получения любых сообщений или уведомлений, отправленных в рамках данного сайта."
 
-#: lib/BOM/Product/Transaction.pm:664
+#: lib/BOM/Product/Transaction.pm:667
 msgid "The contract has expired"
 msgstr "Контракт закончился"
 
@@ -7408,12 +7400,12 @@ msgstr "Контракт закончился"
 msgid "The contract is not available after %1 GMT."
 msgstr "Контракт недоступен после %1 GMT."
 
-#: lib/BOM/Product/Contract.pm:607
+#: lib/BOM/Product/Contract.pm:608
 msgid "The contract must expire on a trading day."
 msgstr "Контракт должен заканчиваться в рабочий торговый день."
 
 #. ($currency,                        to_monetary_number_format($amount)
-#: lib/BOM/Product/Transaction.pm:707
+#: lib/BOM/Product/Transaction.pm:710
 msgid "The contract payout has changed from %1%2 to %1%3."
 msgstr "Выплата по контракту изменилась с %1%2 на %1%3."
 
@@ -7422,7 +7414,7 @@ msgid "The contract period is the timeframe of a trade. It is also called the du
 msgstr "Период контракта - это временные рамки контракта. Также он называется продолжительностью."
 
 #. ($currency,                        to_monetary_number_format($amount)
-#: lib/BOM/Product/Transaction.pm:700
+#: lib/BOM/Product/Transaction.pm:703
 msgid "The contract price has changed from %1%2 to %1%3."
 msgstr "Цены на контракт изменилась с %1%2 на %1%3."
 
@@ -7434,7 +7426,7 @@ msgstr "Стоимость открытых контрактов"
 msgid "The currency of your bonus will be the same as the currency of your first deposit."
 msgstr "Валюта Вашего бонуса будет той же, что валюта Вашего первого депозита."
 
-#: lib/BOM/Product/Contract.pm:990
+#: lib/BOM/Product/Contract.pm:998
 msgid "The database is not yet updated with settlement data."
 msgstr "База данных еще не обновлена."
 
@@ -7492,7 +7484,7 @@ msgstr "Первой котировкой считается первая кот
 msgid "The market exit price is the price in effect at the end of the contract period."
 msgstr "Выходная цена рынка - это действительная на момент окончания контракта котировка."
 
-#: lib/BOM/Product/Contract.pm:2618
+#: lib/BOM/Product/Contract.pm:2629
 msgid "The market must be open at the start time."
 msgstr "Рынок должен быть открыт на момент начала."
 
@@ -7666,7 +7658,7 @@ msgstr "Транзакции, производимые на данном сай�
 msgid "The two passwords that you entered do not match."
 msgstr "Введенные пароли не совпадают."
 
-#: lib/BOM/Product/Transaction.pm:694
+#: lib/BOM/Product/Transaction.pm:697
 msgid "The underlying market has moved too much since you priced the contract. "
 msgstr "Значение рыночных котировок изменилось с того момента, как Вы рассчитали стоимость контракта. "
 
@@ -7713,8 +7705,8 @@ msgstr "Информация по данному периоду отсутств
 msgid "There are risks associated with utilizing an Internet-based deal execution trading system, including but not limited to the failure of hardware, software and Internet connection.  Since %1 does not control signal power, its reception or routing via Internet, configuration of your equipment or reliability of its connection, we cannot be responsible for communication failures, distortions or delays when trading via the Internet."
 msgstr "Существуют риски, связанные с использованием трейдинговой системы в сети Интернет в реальном времени, включая (но не ограничиваясь) неполадки в оборудовании, программном обеспечении или интернетном соединении. %1 не контролирует такие факторы, как поставка электроэнергии, получение интернет-сигнала, конфигурация Вашего оборудования или надежность Вашего соединения, поэтому мы не можем нести ответственность за проблемы со связью, за прекращение или задержку Ваших действий при торговле в интернете."
 
-#. ($underlying->translated_display_name()
-#: cgi/intraday_prices.cgi:78
+#. (underlying.translated_display_name, start_date.date)
+#: /home/git/translations/binary-static/src/templates/toolkit/bet/intraday_prices.html.tt:28
 msgid "There is no intraday data for %1 on %2."
 msgstr "Нет почасовых данных по %1 от %2."
 
@@ -7797,7 +7789,7 @@ msgstr "Данный документ"
 msgid "This Payment Agent cashier section is locked."
 msgstr "Секция КАССА данного платежного агента недоступна."
 
-#: cgi/subs/subs_forms.pm:3291 cgi/top_up_virtual.cgi:74
+#: cgi/subs/subs_forms.pm:3291 cgi/top_up_virtual.cgi:43
 msgid "This URL is invalid."
 msgstr "Неверный URL."
 
@@ -7822,11 +7814,11 @@ msgstr "Этот вызов вернется с той же структурой
 msgid "This client cashier section is locked."
 msgstr "Секция Касса данного клиента недоступна."
 
-#: lib/BOM/Product/Transaction.pm:779
+#: lib/BOM/Product/Transaction.pm:782
 msgid "This contract cannot be properly validated at this time."
 msgstr "Покупка контракта не может быть завершена в настоящее время. Попробуйте снова."
 
-#: lib/BOM/Product/Contract.pm:1684
+#: lib/BOM/Product/Contract.pm:1694
 msgid "This contract has already expired."
 msgstr "Этот контракт уже закончил свое действие."
 
@@ -7843,15 +7835,15 @@ msgid "This contract has expired."
 msgstr "Контракт закончился."
 
 #. (to_monetary_number_format($custom_limit)
-#: lib/BOM/Product/Transaction.pm:856
+#: lib/BOM/Product/Transaction.pm:859
 msgid "This contract is limited to "
 msgstr "Контракт ограничен для "
 
-#: lib/BOM/Product/Contract.pm:979
+#: lib/BOM/Product/Contract.pm:987
 msgid "This contract is no longer offered."
 msgstr "Контракт уже не предлагается."
 
-#: lib/BOM/Product/Transaction.pm:854
+#: lib/BOM/Product/Transaction.pm:857
 msgid "This contract is unavailable on this account."
 msgstr "Данный контракт недоступен для этого счета."
 
@@ -7859,11 +7851,11 @@ msgstr "Данный контракт недоступен для этого с�
 msgid "This contract lost"
 msgstr "Контракт проиграл"
 
-#: lib/BOM/Product/Contract.pm:2406
+#: lib/BOM/Product/Contract.pm:2417
 msgid "This contract offers no return."
 msgstr "На данный контракт не может быть предложен выигрыш."
 
-#: lib/BOM/Product/Transaction.pm:1350
+#: lib/BOM/Product/Transaction.pm:1381
 msgid "This contract was not found among your open positions."
 msgstr "Данный контракт не был найден среди Ваших открытых позиций."
 
@@ -7929,7 +7921,7 @@ msgstr "Подтверждаем, что Ваш электронный адре�
 msgid "This market closes early today at"
 msgstr "Данный рынок сегодня закрывается рано в"
 
-#: lib/BOM/Product/Contract.pm:2618
+#: lib/BOM/Product/Contract.pm:2629
 msgid "This market is presently closed."
 msgstr "Данный рынок сейчас закрыт."
 
@@ -7959,7 +7951,7 @@ msgstr "Это предложение не может быть использо�
 msgid "This promotion is only available to new Clients. Existing or former Clients do not qualify. It is only available once to each Client."
 msgstr "Данное предложение распространяется только на новых клиентов. Настоящие или бывшие клиенты не могут ей воспользоваться. Предложением можно воспользоваться только один раз."
 
-#: lib/BOM/Product/Contract.pm:2306
+#: lib/BOM/Product/Contract.pm:2317
 msgid "This trade is not offered."
 msgstr "Контракт не предлагается."
 
@@ -8008,7 +8000,7 @@ msgstr "Уровень"
 msgid "Tile"
 msgstr "Плитка"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/bet/intraday_prices_table.html.tt:2
+#: /home/git/translations/binary-static/src/templates/toolkit/bet/intraday_prices.html.tt:32
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/ticker_data_table.html.tt:11
 msgid "Time"
 msgstr "Время"
@@ -8041,10 +8033,6 @@ msgstr "Чтобы изменить имя, дату рождения или с�
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/session_expired.html.tt:9
 msgid "To continue using our cashier system, please try accessing it again:"
 msgstr "Чтобы продолжить пользоваться секцией КАССА, зайдите в нее снова:"
-
-#: /home/git/translations/binary-static/src/templates/toolkit/account/currency_converter.html.tt:9
-msgid "To convert money between the different currencies in your account, please use the form below."
-msgstr "Чтобы произвести конвертацию между валютами, пожалуйста, используйте нижеприведенную форму."
 
 #. (pjax_link_for(l('sign up as an affiliate')
 #: /home/git/translations/binary-static/src/templates/haml/static/white_labels.html.haml:1
@@ -8096,7 +8084,7 @@ msgstr "Бесплатные номера"
 # 83%
 # 100%
 #. ($safer_expiry->date)
-#: lib/BOM/Product/Contract.pm:2899
+#: lib/BOM/Product/Contract.pm:2910
 msgid "Too many market holidays during the contract period. Select an expiry date after %1."
 msgstr "Во время действия данного контракта ожидается несколько праздничных дней. Выберите время окончания после %1."
 
@@ -8229,9 +8217,9 @@ msgstr "Правила торговли"
 
 #: /home/git/translations/binary-static/src/templates/haml/resources/index.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/datafeed.html.tt:29
-#: cgi/trading_times.cgi:15 lib/BOM/Product/Contract.pm:2274
-#: lib/BOM/Product/Contract.pm:2664 lib/BOM/Product/Contract.pm:2679
-#: lib/BOM/Product/Contract.pm:2695 lib/BOM/Product/Contract.pm:2868
+#: cgi/trading_times.cgi:15 lib/BOM/Product/Contract.pm:2285
+#: lib/BOM/Product/Contract.pm:2675 lib/BOM/Product/Contract.pm:2690
+#: lib/BOM/Product/Contract.pm:2706 lib/BOM/Product/Contract.pm:2879
 #: lib/BOM/View/Menu.pm:154
 msgid "Trading Times"
 msgstr "Время открытия рынков"
@@ -8249,43 +8237,47 @@ msgid "Trading financial contracts involves a high level of risk and may not be 
 msgstr "Торговля на финансовых рынках подразумевает высокий уровень риска и может не подходить определенным лицам. Преждем чем решиться на торговлю на финансовых рынках, Вам необходимо тщательно рассмотреть Ваши цели, уровень опыта и склонность к риску. Вы должны быть в курсе рисков, ассоциируемых с покупкой контрактов и в случае любых сомнений обратиться за консультацией к специалисту."
 
 #. ($blackout_time)
-#: lib/BOM/Product/Contract.pm:2633
+#: lib/BOM/Product/Contract.pm:2644
 msgid "Trading is available after the first %1 of the session."
 msgstr "Покупка контрактов доступна после первых %1 торговой сессии."
 
-#: lib/BOM/Product/Contract.pm:2850
+#: lib/BOM/Product/Contract.pm:2861
 msgid "Trading is not offered for this duration."
 msgstr "Контракты не предлагаются на данный период."
 
-#: cgi/oop/Controller/Bet.pm:676 lib/BOM/Product/Contract.pm:2227
-#: lib/BOM/Product/Contract.pm:2293
+#: cgi/oop/Controller/Bet.pm:676 lib/BOM/Product/Contract.pm:2238
+#: lib/BOM/Product/Contract.pm:2304
 msgid "Trading is suspended at the moment."
 msgstr "В данный момент торги приостановлены."
 
 #. ($translated_name)
 #. ($underlying->translated_display_name()
-#: cgi/analyse_contract.cgi:70 lib/BOM/Product/Contract.pm:2235
-#: lib/BOM/Product/Contract.pm:2244 lib/BOM/Product/Contract.pm:2272
+#: cgi/analyse_contract.cgi:70 lib/BOM/Product/Contract.pm:2246
+#: lib/BOM/Product/Contract.pm:2255 lib/BOM/Product/Contract.pm:2283
 msgid "Trading on %1 is suspended at the moment."
 msgstr "В данный момент торги на %1 приостановлены."
 
 #. ($translated_name)
 #. ($self->underlying->translated_display_name()
 #. ($underlying->translated_display_name()
-#: lib/BOM/Product/Contract.pm:2255 lib/BOM/Product/Contract.pm:2262
-#: lib/BOM/Product/Contract.pm:2960
-#: lib/BOM/Product/Pricing/Engine/IntradayHistorical.pm:794
+#. ($bet->underlying->translated_display_name()
+#: lib/BOM/Product/Contract.pm:2266 lib/BOM/Product/Contract.pm:2273
+#: lib/BOM/Product/Contract.pm:2971
+#: lib/BOM/Product/Pricing/Engine/Intraday.pm:281
+#: lib/BOM/Product/Pricing/Engine/Intraday/Index.pm:78
 msgid "Trading on %1 is suspended due to missing market data."
 msgstr "Торговля на %1 приостановлена из-за отсутствия рыночных данных."
 
 #. ($eod_blackout_start->as_string)
-#: lib/BOM/Product/Contract.pm:2662
+#: lib/BOM/Product/Contract.pm:2673
 msgid "Trading suspended for the last %1 of the session."
 msgstr "Торги приостановлены для последних %1 торговой сессии."
 
-#: lib/BOM/Product/Contract.pm:2677
-msgid "Trading suspended for the last 300s of the session."
-msgstr "Торги приостановлены для последних 300с. торговой сессии."
+#: lib/BOM/Product/Contract.pm:2688
+#, fuzzy
+#| msgid "Trading suspended for the last %1 of the session."
+msgid "Trading suspended for the last one hour of the session."
+msgstr "Торги приостановлены для последних %1 торговой сессии."
 
 #: cgi/subs/subs_forms_output.pm:331
 msgid "Trading the financial markets can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Limits will only be removed or altered after 7 days."
@@ -8390,7 +8382,7 @@ msgstr "Британские ценные бумаги"
 msgid "UK and Manx residents will have their account opened with Regent Markets (IOM) Ltd."
 msgstr "Для резидентов Великобритании и острова Мэн счета будут открыты под юрисдикцией Regent Markets (IOM) Ltd."
 
-#: /home/git/translations/binary-static/src/templates/toolkit/legal/complaints_disputes.html.tt:13
+#: /home/git/translations/binary-static/src/templates/toolkit/legal/complaints_disputes.html.tt:16
 msgid "UK clients registered with Regent Markets (Malta) Ltd can submit their dispute with the alternative dispute resolution entity which is the Independent Betting Adjudication Service Ltd (IBAS) by filling the adjudication form on the ADR entity’s"
 msgstr "Клиенты из Великобритании, зарегистрированные под юрисдикцией Regent Markets (Malta) Ltd, могут направить свою жалобу в орган альтернативного урегулирования споров, которым является Independent Betting Adjudication Service Ltd (IBAS), заполнив форму судебного решения на сайте данного органа"
 
@@ -8445,7 +8437,7 @@ msgstr "Неподдерживаемый вид ставки $bet_params->{bet_c
 msgid "Up to"
 msgstr "До"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/resources/trading_times.html.tt:22
+#: /home/git/translations/binary-static/src/templates/toolkit/resources/trading_times.html.tt:23
 msgid "Upcoming Events"
 msgstr "Приближающиеся события"
 
@@ -8467,11 +8459,11 @@ msgstr "Открыть реальный счет"
 msgid "Upon appointment of a Trading Agent, the Client acknowledges and understands that the Company is hereby giving authorisation to follow the instructions of the authorised Trading Agent in every respect with regards to the Client's financial trading account with the Company, EXCEPT for the withdrawal of any funds from the Client's account. The Company will not in any way be liable or responsible for any buy or sell trading actions done on the Client's behalf by the Trading Agent, or for any losses incurred by the Trading Agent for the Client's Account. Furthermore, the Company does not endorse the Trading Agent nor does it vouch for the background, or experience of the Trading Agent, nor does the Company endorse any operating methods used by the Trading Agent, including when trading for the Client's account."
 msgstr "Назначая Торгового Агента, Клиент признает и понимает, что Компания дает свою авторизацию для следования инструкциям, которые Торговый Агент может применять в счету Клиента для покупки контрактов (\"действие\") на счету в Компании, КРОМЕ вывода любых средств со счета Клиента. Компания не несет ответственности за действия покупки или продажи, совершенные от имени Клиента Торговым Агентом, а также за потери, к которым могут привести действия Торгового Агента на счету Клиента. Кроме того, Компания не выступает поручителем Торговго Агента, ни ручается за опыт и профессиональность Торгового Агента, а также Компания не ручается ни за какие методы, используемые Торговым Агентом."
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:55
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:75
 msgid "Upper Band"
 msgstr "Верхняя полоса"
 
-#: cgi/daily_prices.cgi:160
+#: cgi/daily_prices.cgi:137
 msgid "Upper Band = Average + 0.5 * Std Deviation"
 msgstr "Верхняя полоса = средняя + 0.5 * стандартного отклонения"
 
@@ -8531,9 +8523,13 @@ msgstr "Вертик."
 msgid "Vertical Grid"
 msgstr "Вертикальная сетка"
 
-#: cgi/daily_prices.cgi:66 cgi/daily_prices.cgi:68 cgi/intraday_prices.cgi:57
-#: cgi/intraday_prices.cgi:59 cgi/oop/Controller/Bet.pm:1259
-#: cgi/oop/Controller/Bet.pm:1275
+#: cgi/subs/subs_presentation.pm:53 cgi/subs/subs_presentation.pm:54
+msgid "Viber"
+msgstr ""
+
+#: /home/git/translations/binary-static/src/templates/toolkit/bet/intraday_prices.html.tt:16
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:21
+#: cgi/oop/Controller/Bet.pm:1259 cgi/oop/Controller/Bet.pm:1275
 msgid "View"
 msgstr "Просмотр"
 
@@ -8541,11 +8537,11 @@ msgstr "Просмотр"
 msgid "View Rise/Fall contract prices across a range of markets."
 msgstr "Посмотреть цены на контракты Првышение/Падение на все предлагаемые рынки."
 
-#: lib/BOM/Product/Contract.pm:2625 lib/BOM/Product/Contract.pm:2635
+#: lib/BOM/Product/Contract.pm:2636 lib/BOM/Product/Contract.pm:2646
 msgid "View Trading Times"
 msgstr "Время открытия рынков"
 
-#: cgi/top_up_virtual.cgi:96 cgi/top_up_virtual.cgi:97
+#: cgi/top_up_virtual.cgi:64 cgi/top_up_virtual.cgi:65
 msgid "View Updated Portfolio"
 msgstr "Обновленное портфолио"
 
@@ -8671,7 +8667,7 @@ msgstr "В настоящее время мы не открываем счета
 msgid "We could not authenticate your account online. please proceed to the <a href=\"%1\">manual authentication section</a>. If you would like to register additional credit cards, please contact <a class=\"pjaxload\" href=\"%2\">customer support</a>."
 msgstr "Мы не смогли авторизовать Ваш счет. Просим пройти в секцию для <a href=\"%1\">авторизации по документам</a>. Если Вы желаете зарегистрировать дополнительные карты, просим Вас связаться с <a class='pjaxload' href=\"%2\">нашей службой поддержки</a>."
 
-#: lib/BOM/Product/Contract.pm:500
+#: lib/BOM/Product/Contract.pm:501
 msgid "We could not process this contract at this time."
 msgstr "Мы не смогли обработать данный контракт в настоящее время."
 
@@ -9329,8 +9325,8 @@ msgstr "Вы можете выбрать другой <a href=\"%1\">спосо�
 msgid "You can use an authorized payment agent to process deposits and withdrawals for e-cash methods or local currencies not supported by"
 msgstr "Вы можете воспользоваться платженым агентом для пополнения и вывода через электронные кошельки или в местных валютах, не предлагаемых на"
 
-#. ($website->display_name)
-#: cgi/paymentagent_list.cgi:45
+#. (website)
+#: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_agent_list.html.tt:4
 msgid "You can use an authorized payment agent to process deposits and withdrawals for payment methods or local currencies not supported by %1. It's easy to do."
 msgstr "Вы можете воспользоваться платежным агентом для пополнения и вывода средств платежными способами или в валютах, не предлагаемых на %1. Это просто."
 
@@ -9398,9 +9394,9 @@ msgstr "Вы ввели неверный IP-адрес."
 msgid "You have entered an invalid login ID"
 msgstr "Вы ввели неправильный логин"
 
-#: lib/BOM/Product/Transaction.pm:1099 lib/BOM/Product/Transaction.pm:1231
-#: lib/BOM/Product/Transaction.pm:1259 lib/BOM/Product/Transaction.pm:1287
-#: lib/BOM/Product/Transaction.pm:1321
+#: lib/BOM/Product/Transaction.pm:1102 lib/BOM/Product/Transaction.pm:1234
+#: lib/BOM/Product/Transaction.pm:1262 lib/BOM/Product/Transaction.pm:1290
+#: lib/BOM/Product/Transaction.pm:1318 lib/BOM/Product/Transaction.pm:1352
 msgid "You have exceeded the daily limit for contracts of this type."
 msgstr "ВЫ превысили дневной лимит на покупку ставок этого типа."
 
@@ -9440,10 +9436,6 @@ msgstr "Вы можете открыть счет на этом сайте пр�
 #: /home/git/translations/binary-static/src/templates/toolkit/account/open_account.html.tt:26
 msgid "You may prefer to open a <a class=\"pjaxload\" href=\"%1\">virtual money</a> account to practice trading. It's free, and will give you experience and confidence in trading strategies."
 msgstr "Вы можете сначала открыть <a class=\"pjaxload\" href=\"%1\">виртуальный счет</a> для практики. Он бесплатный, и таким образом Вы сможете накопить необходимый опыт и уверенность в своих силах."
-
-#: /home/git/translations/binary-static/src/templates/toolkit/account/currency_converter.html.tt:8
-msgid "You may purchase contracts in any of these currencies."
-msgstr "Вы можете покупать контракты в любой из этих валют."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/promocode.html.tt:25
 msgid "You may withdraw the Y deposited to claim the bonus and any winnings generated by the bonus at any time."
@@ -9598,7 +9590,7 @@ msgid "Your account balance"
 msgstr "Баланс вашего счета"
 
 #. ($currency,                to_monetary_number_format($balance)
-#: lib/BOM/Product/Transaction.pm:964
+#: lib/BOM/Product/Transaction.pm:967
 msgid "Your account balance (%1%2) is insufficient to buy this contract (%1%3)."
 msgstr "Баланс Вашего счета (%1%2) недостаточен для покупки данного контракта (%1%3)."
 
@@ -9606,7 +9598,7 @@ msgstr "Баланс Вашего счета (%1%2) недостаточен д�
 msgid "Your account does not require authentication at this time."
 msgstr "Ваш счет не требует верификации на настоящий момент."
 
-#: lib/BOM/Product/Transaction.pm:1203
+#: lib/BOM/Product/Transaction.pm:1206
 msgid "Your account has exceeded the trading limit with free promo code, please deposit if you wish to continue trading."
 msgstr "Ваш счет превысил лимит торговли от бесплатного бонуса. Пожалуйста, пополните счет, если Вы желаете продолжить торговать на нем."
 
@@ -9640,10 +9632,6 @@ msgstr "Ваш счет зарегистрирован под %1."
 #: cgi/cashier_forward.cgi:33
 msgid "Your account is restricted to withdrawals only."
 msgstr "На Вашем счету можно производить только вывод средств."
-
-#: /home/git/translations/binary-static/src/templates/toolkit/account/currency_converter.html.tt:8
-msgid "Your account may hold the following currencies"
-msgstr "счет может быть конвертирован в следующие валюты"
 
 #: cgi/oop/Validation/Transaction/Payment/Deposit.pm:45
 msgid "Your balance is over your allowed limit."
@@ -9895,7 +9883,7 @@ msgstr "любой инцидент, в котором Компания може
 msgid "any restriction to its Clients from purchasing any contracts during certain hours."
 msgstr "какие-либо ограничения для Клиентов в приобретении контрактов в определенные часы."
 
-#: lib/BOM/Product/Contract.pm:2206
+#: lib/BOM/Product/Contract.pm:2217
 msgid "barrier"
 msgstr "значение"
 
@@ -9976,7 +9964,7 @@ msgstr "для подробных инструкций к кодированию
 msgid "here"
 msgstr "здесь"
 
-#: lib/BOM/Product/Contract.pm:2206
+#: lib/BOM/Product/Contract.pm:2217
 msgid "high barrier"
 msgstr "высший барьер"
 
@@ -10000,7 +9988,7 @@ msgstr "меньше"
 msgid "loading..."
 msgstr "загружается..."
 
-#: lib/BOM/Product/Contract.pm:2206
+#: lib/BOM/Product/Contract.pm:2217
 msgid "low barrier"
 msgstr "нижний барьер"
 
@@ -10024,7 +10012,7 @@ msgstr "мин. доступный период"
 msgid "minimum is"
 msgstr "минимум составляет"
 
-#: lib/BOM/Product/Contract.pm:2203
+#: lib/BOM/Product/Contract.pm:2214
 msgid "minus"
 msgstr "минус"
 
@@ -10074,7 +10062,7 @@ msgstr "или попробуйте поиск по карте сайта вни
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "стр. для точного времени окончания всех контрактов. Другие сайты могут принимать другую политику (например, некоторые сайты выбирают 4 часа по нью-йоркскому времени или 5 часов по лондонскому). В результате цены открытия, закрытия, а также самая высокая и низкая цены, показываемые на нашем сайте, могут отличаться от других сайтов в связи с политикой по тому, какое время считать временем закрытия рынков."
 
-#: lib/BOM/Product/Contract.pm:2203
+#: lib/BOM/Product/Contract.pm:2214
 msgid "plus"
 msgstr "плюс"
 
@@ -10138,7 +10126,7 @@ msgstr "тиков"
 msgid "to state the limits you wish to set via live chat, email or phone. Available limits are:"
 msgstr "и установить лимиты, которые Вы сами пожелаете, через чат, по эл.почте или по телефону. Доступные лимиты:"
 
-#: cgi/trading_times.cgi:149
+#: cgi/trading_times.cgi:147
 msgid "today"
 msgstr "сегодня"
 
@@ -10150,7 +10138,7 @@ msgstr "касание/нет касания"
 msgid "trades"
 msgstr "."
 
-#: /home/git/translations/binary-static/src/templates/toolkit/legal/complaints_disputes.html.tt:13
+#: /home/git/translations/binary-static/src/templates/toolkit/legal/complaints_disputes.html.tt:16
 msgid "website"
 msgstr "вебсайт"
 
@@ -10561,16 +10549,28 @@ msgstr "US S&P 100"
 msgid "Swedish Index"
 msgstr "Шведский индекс"
 
+#: Underlying Symbol OPIDAXAEX
+#, fuzzy
+#| msgid "German Futures Index"
+msgid "German vs Dutch Index"
+msgstr "German Futures Index"
+
+#: Underlying Symbol OPIDAXFCHI
+#, fuzzy
+#| msgid "German Futures Index"
+msgid "German vs French Index"
+msgstr "German Futures Index"
+
 #: Underlying Symbol OPIDAXFTSE
-msgid "German vs UK"
+#, fuzzy
+#| msgid "German vs UK"
+msgid "German vs UK Index"
 msgstr "Немецкие vs британских"
 
-#: Underlying Symbol OPIDAXMIB
-msgid "Italian vs German"
-msgstr "Итальянские vs немецких"
-
 #: Underlying Symbol OPIDAXSMI
-msgid "German vs Swiss"
+#, fuzzy
+#| msgid "German vs Swiss"
+msgid "German vs Swiss Index"
 msgstr "Немецкие vs швейцарских"
 
 #: Underlying Symbol PSI20
@@ -12090,6 +12090,33 @@ msgstr "Извините, вход с этого ip-адреса был запр
 #: Message for API Error 'LOGIN_TOO_MANY_FAILED_ATTEMPTS'
 msgid "Sorry, you have already had too many unsuccessful attempts. Please try again in 5 minutes."
 msgstr "Извините, у Вас уже было слишком много неудачных попыток. Попробуйте через пять минут."
+
+#~ msgid "Convert"
+#~ msgstr "Конвертировать"
+
+#~ msgid "Convert between your currency segment accounts"
+#~ msgstr "Конвертация между валютными сегментами счёта"
+
+#~ msgid "Note:"
+#~ msgstr "Примечание:"
+
+#~ msgid "Sorry, your account balance is more than %1. You may not claim extra funds until such time as your account balance drops under %1."
+#~ msgstr "Извините, баланс Вашего счета выше %1. Вы не можете увеличить баланс до тех пор, пока он не опустится ниже %1."
+
+#~ msgid "To convert money between the different currencies in your account, please use the form below."
+#~ msgstr "Чтобы произвести конвертацию между валютами, пожалуйста, используйте нижеприведенную форму."
+
+#~ msgid "Trading suspended for the last 300s of the session."
+#~ msgstr "Торги приостановлены для последних 300с. торговой сессии."
+
+#~ msgid "You may purchase contracts in any of these currencies."
+#~ msgstr "Вы можете покупать контракты в любой из этих валют."
+
+#~ msgid "Your account may hold the following currencies"
+#~ msgstr "счет может быть конвертирован в следующие валюты"
+
+#~ msgid "Italian vs German"
+#~ msgstr "Итальянские vs немецких"
 
 #~ msgid "$value %1"
 #~ msgstr "$value %1"
@@ -16037,9 +16064,6 @@ msgstr "Извините, у Вас уже было слишком много н
 
 #~ msgid "UK Futures Index"
 #~ msgstr "UK Futures Index"
-
-#~ msgid "German Futures Index"
-#~ msgstr "German Futures Index"
 
 #~ msgid "Hong Kong Futures Index"
 #~ msgstr "Hong Kong Futures Index"
