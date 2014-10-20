@@ -9,6 +9,8 @@
             %a{:href => "#what-are-the-smart-indices"}= l('What are the Smart Indices?')
           %li#sidebar-link-section-2
             %a{:href => "#world-fx-indices"}= l('World FX indices')
+          %li#sidebar-link-section-3
+            %a{:href => "#out-performance-indices"}= l('Outperformance Indices')
         .sidebar-button
           %a.pjaxload{:href => url_for('trade.cgi?market=smarties')}= l('Trade the Smart Indices')
     .grd-grid-9.grd-grid-mobile-12.grd-parent
@@ -41,4 +43,22 @@
               %p= l('The EUR Index is a weighted Index, measuring the Euro’s value against a basket of 5 global currencies (USD, AUD, GBP, JPY, CAD), each weighted by 20%.')
             .grd-grid-12
               %p= l('The GBP Index is a weighted Index, measuring the British Pound’s value against a basket of 5 global currencies (USD, EUR, AUD, JPY, CAD), each weighted by 20%.')
-            .clearfix
+      .section
+        %a#out-performance-indices
+        .section-content
+          #section-3
+            .grd-grid-12
+              %h1= l('Outperformance Indices')
+              %p= l('[_1]’s Outperformance Indices are Smart Indices that track the performance of one index against another. These indices are the ratios of the respective market spots multiplied by 1000 .', stash->{website_name})
+            .grd-grid-4
+              %p= ' '
+              %img.responsive{:src => url_for('images/pages/smart-indices/smart-indices-3.svg')}
+            .grd-grid-8
+              %p= l('The German vs UK Index measures the performance of the German Index relative to the UK Index. This outperformance index rises if the German Index performs better than the UK Index, and decreases if the UK Index performs better than the German Index.')
+            .grd-grid-12
+              %p= l('The German vs Swiss Index measures the performance of the German Index relative to the Swiss Index. This outperformance index rises if the German Index performs better than the Swiss Index, and decreases if the Swiss Index performs better than the German Index.')
+            .grd-grid-12
+              %p= l('The German vs French Index measures the performance of the German Index relative to the French Index. This outperformance index rises if the German Index performs better than the French Index, and decreases if the French Index performs better than the German Index.')
+            .grd-grid-12
+              %p= l('The German vs Dutch Index measures the performance of the German Index relative to the Dutch Index. This outperformance index rises if the German Index performs better than the Dutch Index, and decreases if the Dutch Index performs better than the German Index.')
+           .clearfix
