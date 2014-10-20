@@ -46,15 +46,26 @@
                     </div>
 
                     <div class="grd-grid-[% balance %]">
+                        [% prev_column_order = 0 %]
                         [% FOREACH column IN [0..number_of_cat] -%]
                             [% category = underlying.contract_categories.$column %]
+                            [% IF category.obj.code == 'asian' or category.obj.code ==  'digits' %]
+                                [% column_grid_size = 1 %]
+                            [% ELSE %]
+                                [% column_grid_size = 2 %]
+                            [% END %]
                             [% IF category %]
                                 [% column_order = column + 1%]
-
-                                [% IF category.obj.display_order != column_order%]
-                                        <div [% IF market_name == 'Randoms' %] style="font-size:80%" [% END %] [% IF column > 4 %]class="grd-grid-1"[% ELSE %]class="grd-grid-2"[% END %]></div>
+                                [% IF prev_column_order >= column_order %]
+                                    [% column_order = prev_column_order + 1 %]
                                 [% END %]
-                                <div [% IF market_name == 'Randoms' %] style="font-size:80%" [% END %] [% IF column > 4 %]class="grd-grid-1"[% ELSE %]class="grd-grid-2"[% END %]>
+                                [% IF category.obj.display_order > column_order%]
+                                    [% WHILE column_order < category.obj.display_order %]
+                                        <div [% IF market_name == 'Randoms' %] style="font-size:80%" [% END %] class="grd-grid-2"></div>
+                                        [% column_order = column_order + 1 %]
+                                    [% END %]
+                                [% END %]
+                                <div [% IF market_name == 'Randoms' %] style="font-size:80%" [% END %] class="grd-grid-[% column_grid_size %]">
                                 [%- IF category.expiries.formatted -%]
                                     <a class="pjaxload" href="[% request.url_for(category.link_page, category.link_params) %]">
                                         [% category.expiries.formatted %]
@@ -67,6 +78,7 @@
                                 [% ELSE %]
                                 [%- END %]
                                 </div>
+                                [% prev_column_order = column_order %]
                             [% END %]
                         [% END %]
                     </div>
