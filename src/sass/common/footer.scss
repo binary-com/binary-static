@@ -22,6 +22,10 @@
     a, span {
       display: inline-block;
     }
+    a {
+      color: $BIN_WHITE;
+      text-decoration: underline;
+    }
     #regulatory-text {
       line-height: 1.2em;
       text-align: justify;
