@@ -4,7 +4,9 @@
 -   createacc => l('Create free account'),
 - );
 - my $lang = stash->{language};
-%style='.static_full .section:first-child{padding-bottom:16px;}'
+:css
+  .static_full .section:first-child{padding-bottom:16px;}
+  .static_full .section:not(:first-child){padding:16px 0;}
 #banner
   .grd-container{:style=>'padding:60px 0 120px'}
     .grd-grid-12.grd-row-padding
