@@ -7,9 +7,10 @@
 :css
   .static_full .section:first-child{padding-bottom:0;}
   .static_full .section:not(:first-child){padding:0 0;}
-  .static_full .section:nth-child(2){background-color:#f2f2f2}
   .section h1{margin-top:60px;}
   .section:last-child h1{margin-top:10px;}
+  .acc-input label{margin-top:4px;}
+  .acc-input input{font-size:2em;}
 #banner
   .grd-container{:style=>'padding:60px 0 120px'}
     .grd-grid-12.grd-row-padding
@@ -32,7 +33,7 @@
               %label.grd-grid-5{:for => 'Email'}= l('Your Email:')
               %span.grd-grid-7.grd-no-gutter
                 %input{:name => 'Email', :id => 'Email', :type => 'email', :required => true}
-            %span.acc-input
+            -#%span.acc-input
               %label.grd-grid-5{:for => 'residence'}= l('Country:')
               %span.grd-grid-7.grd-no-gutter
                 %select#residence{:name => 'residence'}
@@ -45,7 +46,7 @@
                       %option{:value => $country_code}= $country_name
                     - }
                   - }
-            %span.acc-input
+            -#%span.acc-input
               %label.grd-grid-5{:for => 'chooseapassword'}= l('Password:')
               %span.grd-grid-7.grd-no-gutter
                 %input#chooseapassword{:name => 'chooseapassword', :type => 'password', :maxlength => '25', :required => true}
