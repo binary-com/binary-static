@@ -71,6 +71,7 @@ sub haml {
     my %url_map = (
         '/' => ['home/index', 'full_width', '', 1],
         'home' => ['home/index', 'full_width', '', 1],
+        'home1' => ['home1/index', 'full_width_cro', '', 1],
         'ticker' => ['home/ticker', ''],
 
         'why-us' => ['static/why_us', 'full_width'],
