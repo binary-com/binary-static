@@ -13,7 +13,7 @@
   .acc-input input{font-size:2em;}
   .acc-input input.button{font-size:1.4em;}
 #banner
-  .grd-container{:style=>'padding:60px 0 120px'}
+  .grd-container{:style=>'padding:60px 0 100px'}
     .grd-grid-12.grd-row-padding
       %h1.dark{:style=>'font-size:52px;color:#2a3052;margin-bottom:40px;text-align:center;'}= l('The premier platform for binary options trading')
     .grd-grid-7
@@ -31,8 +31,8 @@
         %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
           %span#virtual-fields
             %span.acc-input
-              %label.grd-grid-5{:for => 'Email'}= l('Your Email:')
-              %span.grd-grid-7.grd-no-gutter
+              %label.grd-grid-4{:for => 'Email'}= l('Your Email:')
+              %span.grd-grid-8.grd-no-gutter
                 %input{:name => 'Email', :id => 'Email', :type => 'email', :required => true}
             -#%span.acc-input
               %label.grd-grid-5{:for => 'residence'}= l('Country:')
