@@ -7,7 +7,10 @@
 :scss
   .static_full .section:first-child{padding-bottom:4px;}
   .static_full .section:not(:first-child){padding:4px 0;}
-  .section h1{margin-top:40px;}
+  .section{
+     &:last-child h1{margin-top:0px;}
+     h1{margin-top:40px;}
+   }
 #banner
   .grd-container{:style=>'padding:60px 0 120px'}
     .grd-grid-12.grd-row-padding
