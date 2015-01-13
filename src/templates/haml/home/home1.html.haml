@@ -9,7 +9,7 @@
   .static_full .section:not(:first-child){padding:0 0;}
   .section h1{margin-top:60px;}
   .section:last-child h1{margin-top:10px;}
-  .acc-input label{margin-top:4px;}
+  .acc-input label{margin-top:14px;}
   .acc-input input{font-size:1.6em;}
   .home-content #open-account #virtual-fields .acc-input {margin:20px 0;}
   #virtual-acc-form input.button{font-size:1.4em;}
@@ -130,15 +130,14 @@
               %h1= l('Novice or Expert...')
               %p= l('With payouts from $1 to $100,000, we have you covered.');
               -#replace open-account with class name
-              #open-account.grd-grid-9.grd-centered{:style=>'padding:20px;border-radius:4px;'}
-                %p= l('Get your free $10k virtual money account')
+              #open-account.grd-grid-12{:style=>'padding:10px;border-radius:4px;'}
                 %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
                   %span#virtual-fields
                     %span.acc-input
-                      %label.grd-grid-5{:for => 'Email'}= l('Your Email:')
-                      %span.grd-grid-7.grd-no-gutter
-                        %input{:name => 'Email', :id => 'Email', :type => 'email', :required => true}
-                    %span.acc-input
+                      %label.grd-grid-4{:for => 'Email'}= l('Your Email:')
+                      %span.grd-grid-8.grd-no-gutter
+                        %input{:name => 'Email', :id => 'Email', :type => 'email', :required => true, :placeholder=>'your best email here'}
+                    -#%span.acc-input
                       %label.grd-grid-5{:for => 'residence'}= l('Country:')
                       %span.grd-grid-7.grd-no-gutter
                         %select#residence{:name => 'residence'}
@@ -151,13 +150,14 @@
                               %option{:value => $country_code}= $country_name
                             - }
                           - }
-                    %span.acc-input
+                    -#%span.acc-input
                       %label.grd-grid-5{:for => 'chooseapassword'}= l('Password:')
                       %span.grd-grid-7.grd-no-gutter
                         %input#chooseapassword{:name => 'chooseapassword', :type => 'password', :maxlength => '25', :required => true}
                   %input#actype{:type => 'hidden', :name => 'actype', :value => 'virtual'}
                   %input{:type => 'hidden', :name => 'l', :value => $lang}
                   %input.button{:id => 'btn_registration',:type => 'submit', :value => stash('createacc')}
+                %p= l('Get your free $10k virtual money account')
 
 #returns{:style=>'margin-top:100px;'}
   .grd-container
