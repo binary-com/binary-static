@@ -26,10 +26,10 @@
         .grd-with-padding.grd-grid-6.grd-hide-mobile.grd-hide-phablet
           %img.responsive{:src => url_for('images/pages/why-us/why-us-GBAF-award-2012.svg'),:style=>'max-width:160px'}
       .grd-container
-        %p{style=>'color:#e98024;'}= l('Discover the easiest way to get started in the financial markets.')
+        %p{style=>'color:#e98024;text-align:center'}= l('Discover the easiest way to get started in the financial markets.')
 
     .grd-grid-5.grd-grid-mobile-12.grd-grid-phablet-12.grd-parent
-      #open-account.grd-grid-12{:style=>'padding:20px;border-radius:4px;'}
+      #open-account.grd-grid-12{:style=>'padding:10px;border-radius:4px;'}
         %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
           %span#virtual-fields
             %span.acc-input
