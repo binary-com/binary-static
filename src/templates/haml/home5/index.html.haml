@@ -67,6 +67,8 @@
             %input{:type => 'hidden', :name => 'l', :value => $lang}
             %input.button{:id => 'btn_registration',:type => 'submit', :value => stash('createacc')}
           %p= l('Get your free $10k virtual money account')
+          %p
+            %a{:href=>'#'}= l('NO, I want to learn first')
   .seen-on
     .grd-container
       .grd-grid-12.grd-row-padding
