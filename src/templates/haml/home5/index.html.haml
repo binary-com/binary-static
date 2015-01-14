@@ -11,12 +11,13 @@
   .section:last-child h1{margin-top:10px;}
   .acc-input label{margin-top:14px;}
   .acc-input input{font-size:1.6em;}
-  .home-content #open-account #virtual-fields .acc-input {margin:20px 0;}
+  .home-content #open-account #virtual-fields .acc-input {margin:10px 0;}
   #virtual-acc-form input.button{font-size:1.4em;width:100%;}
   .home-content #open-account p{background-color:inherit;color:#fff;}
   .home-content #open-account #virtual-fields input, .home-content #open-account #virtual-fields select, .home-content #open-account #virtual-fields textarea{padding:10px;}
   .home-content #open-account input[type=submit]{padding:18px;}
-  .acc-input-security{opacity:0.6;}
+  .home-content #open-account .acc-input-security p{font-size: 0.8em;}
+  .acc-input-security-icon{opacity:0.6;margin:10;}
 #banner
   .grd-container{:style=>'padding:60px 0 80px'}
     .grd-grid-12.grd-row-padding
@@ -57,7 +58,7 @@
                 %input#chooseapassword{:name => 'chooseapassword', :type => 'password', :maxlength => '25', :required => true}
             %span.acc-input-security
               %p
-                %img{:src=>url_for('images/pages/home5/security.svg')}
+                %img.acc-input-security-icon{:src=>url_for('images/pages/home5/security.svg')}
                 = l('we use highest security and privacy measures')
           %input#actype{:type => 'hidden', :name => 'actype', :value => 'virtual'}
           %input{:type => 'hidden', :name => 'l', :value => $lang}
