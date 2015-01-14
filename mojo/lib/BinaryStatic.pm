@@ -67,7 +67,7 @@ sub startup {
     $r->get('/devguide')->to('page#haml');
 
     #CRO
-    $r->get('/home1')->to('page#haml');
+    $r->get('/home5')->to('page#haml');
 
 
     # Routing for this rather than adding the file to public/ as everything
