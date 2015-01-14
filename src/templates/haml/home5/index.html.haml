@@ -16,6 +16,7 @@
   .home-content #open-account p{background-color:inherit;color:#fff;}
   .home-content #open-account #virtual-fields input, .home-content #open-account #virtual-fields select, .home-content #open-account #virtual-fields textarea{padding:10px;}
   .home-content #open-account input[type=submit]{padding:18px;}
+  .acc-input-security{opacity:0.6;}
 #banner
   .grd-container{:style=>'padding:60px 0 80px'}
     .grd-grid-12.grd-row-padding
@@ -55,8 +56,9 @@
               %span.grd-grid-7.grd-no-gutter
                 %input#chooseapassword{:name => 'chooseapassword', :type => 'password', :maxlength => '25', :required => true}
             %span.acc-input-security
-              %img{:src=>url_for('images/pages/home5/security.svg')}
-              %p= l('we use highest security and privacy measures')
+              %p
+                %img{:src=>url_for('images/pages/home5/security.svg')}
+                = l('we use highest security and privacy measures')
           %input#actype{:type => 'hidden', :name => 'actype', :value => 'virtual'}
           %input{:type => 'hidden', :name => 'l', :value => $lang}
           %input.button{:id => 'btn_registration',:type => 'submit', :value => stash('createacc')}
