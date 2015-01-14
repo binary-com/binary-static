@@ -17,6 +17,7 @@
   .home-content #open-account #virtual-fields input, .home-content #open-account #virtual-fields select, .home-content #open-account #virtual-fields textarea{padding:10px;}
   .home-content #open-account input[type=submit]{padding:18px;}
   .home-content #open-account .acc-input-security p{font-size: 0.8em;color:#2a3052;}
+  .home-content #open-account .learn-first{font-size: 1.2em;color:#2a3052;text-decoration:underline;}
   .acc-input-security-icon{opacity:0.5;margin:10px;}
   .seen-on{background-color:#f2f2f2;border-bottom: 1px solid #c2c2c2;border-top: 1px solid #c2c2c2;}
   .seen-on .light-text{text-align:center;color:#888;margin:0;}
@@ -68,7 +69,7 @@
             %input.button{:id => 'btn_registration',:type => 'submit', :value => stash('createacc')}
           %p= l('Get your free $10k virtual money account')
           %p
-            %a{:href=>'#'}= l('NO, I want to learn first')
+            %a.learn-first{:href=>'#'}= l('NO, I want to learn first')
   .seen-on
     .grd-container
       .grd-grid-12.grd-row-padding
