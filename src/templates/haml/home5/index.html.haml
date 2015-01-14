@@ -18,7 +18,8 @@
   .home-content #open-account input[type=submit]{padding:18px;}
   .home-content #open-account .acc-input-security p{font-size: 0.8em;}
   .acc-input-security-icon{opacity:0.5;margin:10px;}
-  #seen-on{background-color:#dedede;border-bottom: 1px solid #c2c2c2;border-top: 1px solid #c2c2c2;}
+  .seen-on{background-color:#f2f2f2;border-bottom: 1px solid #c2c2c2;border-top: 1px solid #c2c2c2;}
+  .seen-on .light-text{text-align:center;color:#888;}
 .home-content
   #banner
     .grd-container{:style=>'padding:60px 0 80px'}
@@ -66,10 +67,10 @@
             %input{:type => 'hidden', :name => 'l', :value => $lang}
             %input.button{:id => 'btn_registration',:type => 'submit', :value => stash('createacc')}
           %p= l('Get your free $10k virtual money account')
-  #seen-on
+  .seen-on
     .grd-container
       .grd-grid-12.grd-row-padding
-        %p{:style=>'text-align:center;'}= l('As seen on')
+        %p.light-text= l('As seen on')
         .grd-container
           .grd-with-padding.grd-grid-3.grd-grid-mobile-6
             %img.responsive{:src=>url_for('images/pages/home5/BestBinary300x100-bw.png')}
