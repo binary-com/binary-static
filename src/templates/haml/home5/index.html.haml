@@ -17,7 +17,7 @@
   .home-content #open-account #virtual-fields input, .home-content #open-account #virtual-fields select, .home-content #open-account #virtual-fields textarea{padding:10px;}
   .home-content #open-account input[type=submit]{padding:18px;}
   .home-content #open-account .acc-input-security p{font-size: 0.8em;}
-  .acc-input-security-icon{opacity:0.6;margin:10;}
+  .acc-input-security-icon{opacity:0.5;margin:10px;}
 #banner
   .grd-container{:style=>'padding:60px 0 80px'}
     .grd-grid-12.grd-row-padding
@@ -64,7 +64,15 @@
           %input{:type => 'hidden', :name => 'l', :value => $lang}
           %input.button{:id => 'btn_registration',:type => 'submit', :value => stash('createacc')}
         %p= l('Get your free $10k virtual money account')
-
+    .grd-grid-12.grd-row-padding
+      %p = l('As seen on')
+      .grd-container
+        .grd-with-padding.grd-grid-3
+          %img.responsive{:src=>url_for('images/pages/home5/BestBinary300x100.png')}
+        .grd-with-padding.grd-grid-3
+          %img.responsive{:src=>url_for('images/pages/home5/FBO-logo.png')}
+        .grd-with-padding.grd-grid-3
+          %img.responsive{:src=>url_for('images/pages/home5/BestBinary300x100.png')}
 #help{:style=>'padding:30px;'}
   .grd-container.grd-hide-mobile
     .grd-row-padding
