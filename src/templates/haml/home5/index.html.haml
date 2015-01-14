@@ -56,7 +56,7 @@
                 %input#chooseapassword{:name => 'chooseapassword', :type => 'password', :maxlength => '25', :required => true}
             %span.acc-input-security
               %img{:src=>url_for('images/pages/home5/security.svg')}
-              %p=l('we use highest security and privacy measures')
+              %p= l('we use highest security and privacy measures')
           %input#actype{:type => 'hidden', :name => 'actype', :value => 'virtual'}
           %input{:type => 'hidden', :name => 'l', :value => $lang}
           %input.button{:id => 'btn_registration',:type => 'submit', :value => stash('createacc')}
