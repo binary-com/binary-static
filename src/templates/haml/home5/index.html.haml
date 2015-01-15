@@ -23,14 +23,15 @@
   .seen-on .light-text{text-align:center;color:#888;margin:0;}
   #help{padding:30px;border-bottom: 1px solid #c2c2c2;}
   .accent-color1{color:#e98024;}
+  .text-center{text-align:center;}
 .home-content
   #banner
     .grd-container{:style=>'padding:60px 0 80px'}
-      .grd-grid-12.grd-row-padding
-        %h1.dark{:style=>'font-size:52px;color:#2a3052;margin-bottom:40px;text-align:center;'}= l('The premier platform for binary options trading')
+      .grd-grid-12.grd-row-padding.text-center
+        %h1.dark{:style=>'font-size:52px;color:#2a3052;margin-bottom:40px;'}= l('The premier platform for binary options trading')
         %p.accent-color1= l('The most exciting way to experience financial markets.')
         %p= l('Take a minute and get started.')
-      .grd-grid-7{style=>'text-align:center'}
+      .grd-grid-7.text-center
         .grd-container
           .grd-grid-12
             %p.accent-color1= l('You can trade')
