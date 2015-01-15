@@ -24,6 +24,8 @@
   #help{padding:30px;border-bottom: 1px solid #c2c2c2;}
   .accent-color1{color:#e98024;}
   .text-center{text-align:center;}
+  .referral-box{display:relative;text-align: left;font-size: 0.8em;color: #999;background-color: #fef;padding: 20px;}
+  .comm{position:absolute;top:0;left:-20px;font-size:7em;color:#fff}
 .home-content
   #banner
     .grd-container{:style=>'padding:60px 0 80px'}
@@ -37,9 +39,11 @@
           .grd-grid-12
             %p.accent-color1= l('You can trade')
         .grd-container
-          .referral
+          .referral-box
+            .comm
+              =('"')
             %p= ('For me personally Binary.com is by far the best place to trade binary online. Not only are they well established and a trusted source, I find their pricing super competitive across the wide range of markets.')
-            %p.right= ('Vinod G., UK')
+              %span.signature.right= ('Vinod G., UK')
         -#.grd-container
           .grd-with-padding.grd-grid-3.grd-hide-mobile.grd-hide-phablet
             %img.responsive{:src => url_for('images/pages/home5/gold.png'),:style=>'max-width:160px'}
