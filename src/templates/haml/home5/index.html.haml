@@ -22,15 +22,16 @@
   .seen-on{padding:30px;background-color:#f2f2f2;border-top: 1px solid #c2c2c2;}
   .seen-on .light-text{text-align:center;color:#888;margin:0;}
   #help{padding:30px;border-bottom: 1px solid #c2c2c2;}
+  .accent-color1{color:#e98024;}
 .home-content
   #banner
     .grd-container{:style=>'padding:60px 0 80px'}
       .grd-grid-12.grd-row-padding
         %h1.dark{:style=>'font-size:52px;color:#2a3052;margin-bottom:40px;text-align:center;'}= l('The premier platform for binary options trading')
-      .grd-grid-7{style=>'color:#e98024;text-align:center'}
+      .grd-grid-7{style=>'text-align:center'}
         .grd-container
           .grd-grid-12
-            %p= l('You can trade')
+            %p.accent-color1= l('You can trade')
         .grd-container
           .grd-with-padding.grd-grid-3.grd-hide-mobile.grd-hide-phablet
             %img.responsive{:src => url_for('images/pages/home5/gold.png'),:style=>'max-width:160px'}
@@ -40,12 +41,14 @@
             %p= l('stocks')
           .grd-with-padding.grd-grid-3.grd-hide-mobile.grd-hide-phablet
             %img.responsive{:src => url_for('images/pages/home5/index.png'),:style=>'max-width:160px'}
-            %p= l('indexes')
+            %p= l('indices')
           .grd-with-padding.grd-grid-3.grd-hide-mobile.grd-hide-phablet
             %img.responsive{:src => url_for('images/pages/home5/currency.png'),:style=>'max-width:160px'}
             %p= l('currencies')
         .grd-container
-          %p= l('Discover the easiest way to get started in the financial markets.')
+          -#%p.accent-color1= l('Discover the easiest way to get started in the financial markets.')
+          %p.accent-color1= l('The most exciting way to experience financial markets.')
+          %p= l('Take a minute and get started.')
 
       .grd-grid-5.grd-grid-mobile-12.grd-grid-phablet-12.grd-parent
         #open-account.grd-grid-12{:style=>'padding:10px;border-radius:4px;'}
