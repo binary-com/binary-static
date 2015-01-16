@@ -41,8 +41,8 @@
                     border-radius: 4px 4px 0 0;      }
   .box-wrap .title{color:#fefefe;}
   .box-wrap .padding{padding:12px;}
-  .box-wrap .body p{padding-top:0;margin-top:0}
-  .box-wrap .body{margin-bottom:30px}
+  .box-wrap .body p{padding-top:30px;padding-bottom:30px;}
+  .box-wrap .body{padding-bottom:30px}
   .box-wrap .body-bg{background-color:#b8bddb;}
 
   .tri-down {
@@ -207,8 +207,8 @@
       .grd-grid-12.grd-parent
         %section.grd-grid-4.grd-grid-mobile-12.grd-row-padding
           .box-wrap
-            %header.padding
-              %h3.title= l('Best-in-class pricing for binaries')
+            %header
+              %h3.title.padding= l('Best-in-class pricing for binaries')
               .tri-down
             .body
               .padding
