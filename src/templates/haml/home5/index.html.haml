@@ -37,17 +37,17 @@
       border-radius: 4px;
   }
   .box-wrap header{ width: 100%;
-                    background-color: #999;
+                    background-color: #2a3052;
                     border-radius: 4px 4px 0 0;      }
-  .box-wrap .title{padding:12px;}
+  .box-wrap .title{padding:12px;color:#fefefe;}
 
   .tri-down {
 
       /* Styling block element, not required */
       position: relative;
       margin-bottom: 2em;
-      padding: 1em;
-      border-bottom: 1px solid #999;
+      padding: 0em;
+      border-bottom: 0px solid #999;
       background: #f3f3f3;
     }
 
@@ -74,10 +74,10 @@
 
     /* Fill */
     .tri-down:after {
-      bottom: -15px;
-      left: 22px;
-      border-top-color: #f3f3f3;
-      border-width: 15px;
+      bottom: -20px;
+      left: 41%;
+      border-top-color: #2a3052;
+      border-width: 20px;
     }
 
 .home-content
@@ -214,27 +214,31 @@
           .box-wrap
             %header.tri-down
               %h3.title= l('Best-in-class pricing for binaries')
+              .tri-down
             .body
               %img.responsive#new-trader-icon{:src => url_for('images/pages/home/slide-1_1.png')}
               %p= l('Our exclusive pricing technology gives you the best possible opportunity to make your money work for you.');
         %section.grd-grid-4.grd-grid-mobile-12.grd-row-padding
           .box-wrap
-            %header.tri-down
+            %header
               %h3.title= l('Best-in-class pricing for binaries')
+              .tri-down
             .body
               %img.responsive#new-trader-icon{:src => url_for('images/pages/home/slide-1_1.png')}
               %p= l('Our exclusive pricing technology gives you the best possible opportunity to make your money work for you.');
         %section.grd-grid-4.grd-grid-mobile-12.grd-row-padding
           .box-wrap
-            %header.tri-down
+            %header
               %h3.title= l('Best-in-class pricing for binaries')
+              .tri-down
             .body
               %img.responsive#new-trader-icon{:src => url_for('images/pages/home/slide-1_1.png')}
               %p= l('Our exclusive pricing technology gives you the best possible opportunity to make your money work for you.');
         %section.grd-grid-4.grd-grid-mobile-12.grd-row-padding
           .box-wrap
-            %header.tri-down
+            %header
               %h3.title= l('Best-in-class pricing for binaries')
+              .tri-down
             .body
               %img.responsive#new-trader-icon{:src => url_for('images/pages/home/slide-1_1.png')}
               %p= l('Our exclusive pricing technology gives you the best possible opportunity to make your money work for you.');
