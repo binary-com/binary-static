@@ -30,6 +30,15 @@
   .comm{position:absolute;font-size:23em;color:#EBEDF4;}
   .open-comm{top: -61px;left: -23px;}
   .close-comm{top: 19px;right: -21px;}
+  .box-wrap{
+      background: rgba(255,255,255,0.3);
+      padding: 12px;
+      box-shadow: 0 0 8px 0 rgba(0,0,0,0.2),   inset 0 0 1px 0 rgba(255,255,255,1);
+      margin:  20px auto;
+      border-radius: 4px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+
+  }
 
 .home-content
   #banner
@@ -160,6 +169,13 @@
               %span= l('Try it now')
   #benefits
     .grd-container
+
+      %section.box-wrap
+        %header
+          %h3= l('Best-in-class pricing for binaries')
+        .body
+          %img.responsive#new-trader-icon{:src => url_for('images/pages/home/slide-1_1.png')}
+          %p= l('Our exclusive pricing technology gives you the best possible opportunity to make your money work for you.');
       .static_full.grd-grid-mobile-12.grd-parent
         .section
           .section-content
