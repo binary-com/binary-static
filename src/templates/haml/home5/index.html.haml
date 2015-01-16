@@ -39,7 +39,9 @@
   .box-wrap header{ width: 100%;
                     background-color: #2a3052;
                     border-radius: 4px 4px 0 0;      }
-  .box-wrap .title{padding:12px;color:#fefefe;}
+  .box-wrap .title{color:#fefefe;}
+  .box-wrap .padding{padding:12px;}
+  .box-wrap .body-bg{background-color:#B8BCCD;}
 
   .tri-down {
 
@@ -62,11 +64,11 @@
       border-bottom: 0;
     }
 
-   
+
     /* Fill */
     .tri-down:after {
       bottom: -20px;
-      left: 41%;
+      left: 43%;
       border-top-color: #2a3052;
       border-width: 20px;
     }
@@ -203,12 +205,13 @@
       .grd-grid-12.grd-parent
         %section.grd-grid-4.grd-grid-mobile-12.grd-row-padding
           .box-wrap
-            %header.tri-down
+            %header.padding
               %h3.title= l('Best-in-class pricing for binaries')
               .tri-down
             .body
-              %img.responsive#new-trader-icon{:src => url_for('images/pages/home/slide-1_1.png')}
-              %p= l('Our exclusive pricing technology gives you the best possible opportunity to make your money work for you.');
+              %img.padding.responsive#new-trader-icon{:src => url_for('images/pages/home/slide-1_1.png')}
+              .body-bg
+                %p.padding= l('Our exclusive pricing technology gives you the best possible opportunity to make your money work for you.');
         %section.grd-grid-4.grd-grid-mobile-12.grd-row-padding
           .box-wrap
             %header
