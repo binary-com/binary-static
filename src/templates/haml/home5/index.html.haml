@@ -31,6 +31,7 @@
   .open-comm{top: -61px;left: -23px;}
   .close-comm{top: 19px;right: -21px;}
   .box-wrap{
+      min-height:614px;
       background: rgba(255,255,255,0.3);
       box-shadow: 0 0 8px 0 rgba(0,0,0,0.2),   inset 0 0 1px 0 rgba(255,255,255,1);
       margin:  20px auto;
@@ -238,7 +239,7 @@
         %section.grd-grid-4.grd-grid-mobile-12.grd-row-padding
           .box-wrap
             %header
-              %h3.title.padding.text-center= l('Best-in-class pricing for binaries')
+              %h3.title.padding.text-center= l('Get help and support when you need it')
               .tri-down
             .body
               .padding
@@ -248,10 +249,10 @@
         %section.grd-grid-4.grd-grid-mobile-12.grd-row-padding
           .box-wrap
             %header
-              %h3.title.padding.text-center= l('Best-in-class pricing for binaries')
+              %h3.title.padding.text-center= l('Excitement starts here')
               .tri-down
             .body
-              #open-account.grd-grid-12{:style=>'padding:10px;border-radius:4px;'}
+              #open-account.grd-grid-12{:style=>'padding:10px;border-radius:0px;margin-top:60px;'}
                 %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
                   %span#virtual-fields
                     %span.acc-input
@@ -285,6 +286,16 @@
                 %p= l('Get your free $10k virtual money account')
                 %p
                   %a.learn-first{:href=>'#'}= l('NO, I want to learn first')
+        %section.grd-grid-4.grd-grid-mobile-12.grd-row-padding
+          .box-wrap
+            %header
+              %h3.title.padding.text-center= l('Charting tools like nowhere else')
+              .tri-down
+            .body
+              .padding
+                %img.responsive#new-trader-icon{:src => url_for('images/pages/home/slide-1_1.png')}
+              .body-bg
+                %p.padding= l('Our exclusive pricing technology gives you the best possible opportunity to make your money work for you.');
       -#.static_full.grd-grid-mobile-12.grd-parent
         .section
           .section-content
