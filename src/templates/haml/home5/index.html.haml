@@ -45,9 +45,7 @@
   .box-wrap .body p{color:#454a63;}
   .box-wrap .body{padding-bottom:43px}
   .box-wrap .body-bg{min-height:184px;background-color:#A1E2DA;border-top: solid #ccc 2px;border-bottom: solid #ccc 2px;}
-
   .tri-down {
-
       /* Styling block element, not required */
       position: relative;
       margin-bottom: 2em;
@@ -55,7 +53,6 @@
       border-bottom: 0px solid #999;
       background: #f3f3f3;
     }
-
     /* Required for Down Triangle */
     .tri-down:before, .tri-down:after {
       content: "";
@@ -66,8 +63,6 @@
       border-color: transparent;
       border-bottom: 0;
     }
-
-
     /* Fill */
     .tri-down:after {
       bottom: -20px;
@@ -75,7 +70,6 @@
       border-top-color: #379CA8;
       border-width: 20px;
     }
-
 .home-content
   #banner
     .grd-container{:style=>'padding:60px 0 80px'}
@@ -83,7 +77,6 @@
         %h1.dark{:style=>'font-size:52px;color:#2a3052;margin-bottom:20px;'}= l('The premier platform for binary options trading')
         %p.accent-color1{:style=>'margin-top:0px;margin-bottom:30px;font-style: italic;'}
           = l('The most simple and exciting way to experience financial markets.')
-
       .grd-grid-6.text-center
         -#.grd-container
           .grd-grid-12
@@ -114,7 +107,6 @@
           %p{:style=>'margin-top:0px;'}
             -#!= l('Easy and secure with over 800.000 accounts created.<br/>Take a minute and get started.')
             != l('One of 800.000 accounts created on our easy and secure platform.<br/>Take a minute and get started now.')
-
       .grd-grid-5.grd-push-1.grd-grid-mobile-12.grd-grid-phablet-12.grd-parent
         #open-account.grd-grid-12{:style=>'padding:10px;border-radius:4px;'}
           %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
@@ -364,7 +356,7 @@
                   %p= l('Get your free $10k virtual money account')
                   %p
                     %a.learn-first{:href=>'#'}= l('NO, I want to learn first')
-  #returns{:style=>'margin-top:100px;'}
+  #returns.grd-grid-12{:style=>'margin-top:100px;'}
     .grd-container
       #prices.grd-grid-6.grd-grid-mobile-12.grd-parent
         .figures.grd-grid-6
