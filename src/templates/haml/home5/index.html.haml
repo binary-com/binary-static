@@ -218,13 +218,23 @@
         %section.grd-grid-4.grd-grid-mobile-12.grd-row-padding
           .box-wrap
             %header
-              %h3.title.padding.text-center= l('Best-in-class pricing for binaries')
+              %h3.title.padding.text-center= l('10 seconds to 365 days...')
               .tri-down
             .body
               .padding
                 %img.responsive#new-trader-icon{:src => url_for('images/pages/home/slide-1_1.png')}
               .body-bg
-                %p.padding= l('Our exclusive pricing technology gives you the best possible opportunity to make your money work for you.');
+                %p.padding= l('$1 to $100,000 payouts, low-risk to high-leverage, and much more. We offer limitless profit opportunities.');
+        %section.grd-grid-4.grd-grid-mobile-12.grd-row-padding
+          .box-wrap
+            %header
+              %h3.title.padding.text-center= l('Technology leader with more than 10 years experience...')
+              .tri-down
+            .body
+              .padding
+                %img.responsive#new-trader-icon{:src => url_for('images/pages/home/slide-1_1.png')}
+              .body-bg
+                %p.padding= l('Trade with confidence with the industry pioneer.');
         %section.grd-grid-4.grd-grid-mobile-12.grd-row-padding
           .box-wrap
             %header
@@ -241,20 +251,40 @@
               %h3.title.padding.text-center= l('Best-in-class pricing for binaries')
               .tri-down
             .body
-              .padding
-                %img.responsive#new-trader-icon{:src => url_for('images/pages/home/slide-1_1.png')}
-              .body-bg
-                %p.padding= l('Our exclusive pricing technology gives you the best possible opportunity to make your money work for you.');
-        %section.grd-grid-4.grd-grid-mobile-12.grd-row-padding
-          .box-wrap
-            %header
-              %h3.title.padding.text-center= l('Best-in-class pricing for binaries')
-              .tri-down
-            .body
-              .padding
-                %img.responsive#new-trader-icon{:src => url_for('images/pages/home/slide-1_1.png')}
-              .body-bg
-                %p.padding= l('Our exclusive pricing technology gives you the best possible opportunity to make your money work for you.');
+              #open-account.grd-grid-12{:style=>'padding:10px;border-radius:4px;'}
+                %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
+                  %span#virtual-fields
+                    %span.acc-input
+                      %label.grd-grid-4{:for => 'Email'}= l('Your Email:')
+                      %span.grd-grid-8.grd-no-gutter
+                        %input{:name => 'Email', :id => 'Email', :type => 'email', :required => true, :placeholder=>'your email here'}
+                    -#%span.acc-input
+                      %label.grd-grid-5{:for => 'residence'}= l('Country:')
+                      %span.grd-grid-7.grd-no-gutter
+                        %select#residence{:name => 'residence'}
+                          %option{:value=>'default'}= l('Select Country')
+                          - foreach my $country (countries_options()) {
+                            - my ($country_code, $country_name) = ($country->{code}, $country->{name});
+                            - if($country->{restricted}) {
+                              %option{:value => $country_code, :disabled => 1}= $country_name
+                            - } else {
+                              %option{:value => $country_code}= $country_name
+                            - }
+                          - }
+                    %span.acc-input
+                      %label.grd-grid-4{:for => 'chooseapassword'}= l('Password:')
+                      %span.grd-grid-8.grd-no-gutter
+                        %input#chooseapassword{:name => 'chooseapassword', :type => 'password', :maxlength => '25', :required => true}
+                    %span.acc-input-security
+                      %p
+                        %img.acc-input-security-icon{:src=>url_for('images/pages/home5/security.svg')}
+                        = l('we use highest security and privacy measures')
+                  %input#actype{:type => 'hidden', :name => 'actype', :value => 'virtual'}
+                  %input{:type => 'hidden', :name => 'l', :value => $lang}
+                  %input.button{:id => 'btn_registration',:type => 'submit', :value => stash('createacc')}
+                %p= l('Get your free $10k virtual money account')
+                %p
+                  %a.learn-first{:href=>'#'}= l('NO, I want to learn first')
       -#.static_full.grd-grid-mobile-12.grd-parent
         .section
           .section-content
