@@ -77,7 +77,7 @@
         %h1.dark{:style=>'font-size:52px;color:#2a3052;margin-bottom:20px;'}= l('The premier platform for binary options trading')
         %p.accent-color1{:style=>'margin-top:0px;margin-bottom:30px;font-style: italic;'}
           = l('The most simple and exciting way to experience financial markets.')
-      .grd-grid-6.text-center
+      .text-center.grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-12.grd-parent
         -#.grd-container
           .grd-grid-12
             %p.accent-color1= l('You can trade')
@@ -107,7 +107,7 @@
           %p{:style=>'margin-top:0px;'}
             -#!= l('Easy and secure with over 800.000 accounts created.<br/>Take a minute and get started.')
             != l('One of 800.000 accounts created on our easy and secure platform.<br/>Take a minute and get started now.')
-      .grd-grid-5.grd-push-1.grd-grid-mobile-12.grd-grid-phablet-12.grd-parent
+      .grd-grid-5.grd-push-1.grd-grid-mobile-11.grd-grid-phablet-11.grd-parent
         #open-account.grd-grid-12{:style=>'padding:10px;border-radius:4px;'}
           %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
             %span#virtual-fields
