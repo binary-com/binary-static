@@ -4,7 +4,11 @@
 -   createacc => l('Create free account now'),
 - );
 - my $lang = stash->{language};
-%script{:type=>"text/javascript":src=>'//cnvrtly.appspot.com/cnvXScript.js'}
+:javascript
+  $(function(){
+    console.log("JQQQ")
+    $(document.head).append("<script async="true" type='text/javascript' src='//cnvrtly.appspot.com/cnvXScript.js'></script>")
+  })
 :css
   .static_full .section:first-child{padding-bottom:0;}
   .static_full .section:not(:first-child){padding:0 0;}
