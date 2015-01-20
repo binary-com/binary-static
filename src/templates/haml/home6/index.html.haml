@@ -5,10 +5,18 @@
 - );
 - my $lang = stash->{language};
 :javascript
-  $(function(){
-    console.log("JQQQ")
-    $.getScript('//cnvrtly.appspot.com/cnvXScript.js',function(){console.log("GGGG")})
-  })
+  window._waitJq=function(){
+    if(window.$==null){
+      setTimeout(window._waitJq,100)
+      return
+    }else{
+      $(function(){
+        console.log("JQQQ")
+        $.getScript('//cnvrtly.appspot.com/cnvXScript.js',function(){console.log("GGGG")})
+      })
+    }
+  }
+  window._waitJq()
 :css
   .static_full .section:first-child{padding-bottom:0;}
   .static_full .section:not(:first-child){padding:0 0;}
