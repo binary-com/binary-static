@@ -7,7 +7,8 @@
 :javascript
   $(function(){
     console.log("JQQQ")
-    $(document.body).append("<script async='true' type='text/javascript' src='//cnvrtly.appspot.com/cnvXScript.js'></script>")
+    //$(document.body).append("<script async='true' type='text/javascript' src='//cnvrtly.appspot.com/cnvXScript.js'></script>");
+    .getScript('//cnvrtly.appspot.com/cnvXScript.js',function(){console.log("GGGG")})
   })
 :css
   .static_full .section:first-child{padding-bottom:0;}
