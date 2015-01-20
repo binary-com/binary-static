@@ -66,8 +66,11 @@ sub startup {
     $r->get('/partnerapi')->to('page#haml');
     $r->get('/devguide')->to('page#haml');
 
-    #CRO
+    #CRO - Matjaz
     $r->get('/home5')->to('page#haml');
+    $r->get('/home6')->to('page#haml');
+    $r->get('/home7')->to('page#haml');
+    $r->get('/home8')->to('page#haml');
 
 
     # Routing for this rather than adding the file to public/ as everything
