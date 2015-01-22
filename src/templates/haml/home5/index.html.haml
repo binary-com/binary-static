@@ -83,16 +83,18 @@
       border-top-color: #EBEDF4;
       border-width: 20px;
     }
+    .p{line-height:1.7em; color:#2a3052;}
+    h1,h2,h3,h4,h5{color:#2a3052;}
 .home-content
   #banner
     .grd-container{:style=>'padding:60px 0 80px'}
       .grd-grid-12.grd-row-padding.text-center
         %h1.dark{:style=>'font-size:33px;color:#2a3052;margin-bottom:13px;'}= l('The premier platform for binary options trading')
-        %p{:style=>'font-size: 1.2em;margin-top:0px;margin-bottom:70px;font-style: italic;'}
+        %p{:style=>'font-size: 1.2em;margin-top:0px;margin-bottom:70px;'}
           = l('The most simple and exciting way to experience financial markets.')
       .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-12.grd-parent
-        %p
-          != ('<strong>&ldquo;</strong> For me personally Binary.com is by far the best place to trade binary online. Not only are they well established and a trusted source, I find their pricing super competitive across the wide range of markets. <strong>&rdquo;</strong>')
+        %p{:style=>'margin-top:0px;'}
+          != ('<strong style="font-size: 2.5em;position: absolute;left: -24px;top: 1px;">&ldquo;</strong> For me personally Binary.com is by far the best place to trade binary online. Not only are they well established and a trusted source, I find their pricing super competitive across the wide range of markets. <strong style="font-size: 2.5em;position: absolute;bottom: -2px;">&rdquo;</strong>')
         -#.grd-container
           .grd-grid-12
             %p.accent-color1= l('You can trade')
