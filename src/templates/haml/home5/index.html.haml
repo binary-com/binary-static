@@ -23,7 +23,7 @@
   .seen-on{background-color:#fff;border-top: 1px solid #c2c2c2;}
   .seen-on .light-text{text-align:center;color:#888;margin:0;}
   #help{padding:30px;border-bottom: 1px solid #c2c2c2;}
-  .accent-color1{color:#e98024;}
+  .accent-color-1{color:#e98024;}
   .text-center{text-align:center;}
   .referral-box{ position: relative; margin: 40px 0; text-align: left; font-size: 0.8em; color: #3A5167; background-color: rgba(42, 48, 82, 0.15); padding: 27px; border-radius: 4px; }
   .referral-box p, .signature{position:relative;margin:0}
@@ -86,6 +86,7 @@
     p, body{line-height:1.7em; color:#2a3052;}
     p{line-height:1.7em;}
     h1,h2,h3,h4,h5{color:#2a3052;}
+    .small{font-size:0.7em;}
 .home-content
   #banner
     .grd-container{:style=>'padding:60px 0 80px'}
@@ -98,7 +99,7 @@
           != ('<strong style="font-size: 2.5em;position: absolute;left: -24px;top: 1px;">&ldquo;</strong> For me personally Binary.com is by far the best place to trade binary online. Not only are they well established and a trusted source, I find their pricing super competitive across the wide range of markets. <strong style="font-size: 2.5em;position: absolute;bottom: -2px;">&rdquo;</strong>')
         -#.grd-container
           .grd-grid-12
-            %p.accent-color1= l('You can trade')
+            %p.accent-color-1= l('You can trade')
         -#.grd-container
           .referral-box
             .comm.open-comm
@@ -130,7 +131,7 @@
           %h4.text-center{:style=>'margin-top:85px;'}
             -#!= l('Easy and secure with over 800.000 accounts created.<br/>Take a minute and get started.')
             != l('Over 800.000 accounts created on our easy and secure platform.')
-          %p.accent-color-1.small{:style=>'font-style:italic;'}= l('Take a minute and get started now.')
+          %p.accent-color-1.small.text-center{:style=>'font-style:italic;'}= l('Take a minute and get started now.')
       .grd-grid-5.grd-push-1.grd-grid-mobile-11.grd-grid-phablet-11.grd-parent
         #open-account.grd-grid-12{:style=>'padding:10px;border-radius:4px;'}
           %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
