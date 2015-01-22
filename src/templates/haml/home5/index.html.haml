@@ -219,98 +219,98 @@
           .grd-with-padding.grd-grid-3.grd-grid-mobile-6
             %img.responsive{:style=>'margin-top:20px;':src=>url_for('images/pages/home5/binary-options.net-db.jpg')}
   #benefits
-  .grd-container.section-padding
-    .grd-grid-12.grd-parent
-      %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4
-        .box-wrap
-          %header
-            %h3.title.padding.text-center= l('Best-in-class pricing for binaries')
-            .tri-down
-          .body
-            .img-w.text-center
-              %img.responsive#new-trader-icon{:style=>'max-width:150px;',:src => url_for('images/pages/home5/prices-icon.svg')}
-            .body-bg
-              %p.padding= l('Our exclusive pricing technology gives you the best possible opportunity to make your money work for you.');
-      %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4
-        .box-wrap
-          %header
-            %h3.title.padding.text-center= l('10 seconds to 365 days...')
-            .tri-down
-          .body
-            .img-w.text-center
-              %img.responsive#new-trader-icon{:style=>'max-width:150px;',:src => url_for('images/pages/home5/binary-product-selection.svg')}
-            .body-bg
-              %p.padding= l('$1 to $100,000 payouts, low-risk to high-leverage, and much more. We offer limitless profit opportunities.');
-      %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4
-        .box-wrap
-          %header
-            %h3.title.padding.text-center= l('Technology leader with more than 10 years experience...')
-            .tri-down
-          .body
-            .img-w.text-center
-              %img.responsive#new-trader-icon{:style=>'max-width:150px;',:src => url_for('images/pages/home5/first-icon.svg')}
-            .body-bg
-              %p.padding= l('Trade with confidence with the industry pioneer.');
-      %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4
-        .box-wrap
-          %header
-            %h3.title.padding.text-center= l('Get help and support when you need it')
-            .tri-down
-          .body
-            .img-w
-              %img.responsive#new-trader-icon{:style=>'max-width:150px;',:src => url_for('images/pages/home5/support-icon.svg')}
-            .body-bg
-              %p.padding= l('Our exclusive pricing technology gives you the best possible opportunity to make your money work for you.');
-      %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4
-        .box-wrap.signup
-          %header
-            %h3.title.padding.text-center= l('Excitement starts here')
-            .tri-down
-          .body
-            #open-account.grd-grid-12{:style=>'padding:10px;border-radius:0px;margin-top:0px;'}
-              %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
-                %span#virtual-fields
-                  %span.acc-input
-                    %label.grd-grid-4.grd-grid-phablet-12.grd-grid-tablet-4.grd-grid-mobile-12{:for => 'Email'}= l('Your Email:')
-                    %span.grd-grid-8.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-8.grd-grid-mobile-12
-                      %input{:name => 'Email', :id => 'Email', :type => 'email', :required => true, :placeholder=>'your email here'}
-                  -#%span.acc-input
-                    %label.grd-grid-5{:for => 'residence'}= l('Country:')
-                    %span.grd-grid-7.grd-no-gutter
-                      %select#residence{:name => 'residence'}
-                        %option{:value=>'default'}= l('Select Country')
-                        - foreach my $country (countries_options()) {
-                          - my ($country_code, $country_name) = ($country->{code}, $country->{name});
-                          - if($country->{restricted}) {
-                            %option{:value => $country_code, :disabled => 1}= $country_name
-                          - } else {
-                            %option{:value => $country_code}= $country_name
+    .grd-container.section-padding
+      .grd-grid-12.grd-parent
+        %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4
+          .box-wrap
+            %header
+              %h3.title.padding.text-center= l('Best-in-class pricing for binaries')
+              .tri-down
+            .body
+              .img-w.text-center
+                %img.responsive#new-trader-icon{:style=>'max-width:150px;',:src => url_for('images/pages/home5/prices-icon.svg')}
+              .body-bg
+                %p.padding= l('Our exclusive pricing technology gives you the best possible opportunity to make your money work for you.');
+        %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4
+          .box-wrap
+            %header
+              %h3.title.padding.text-center= l('10 seconds to 365 days...')
+              .tri-down
+            .body
+              .img-w.text-center
+                %img.responsive#new-trader-icon{:style=>'max-width:150px;',:src => url_for('images/pages/home5/binary-product-selection.svg')}
+              .body-bg
+                %p.padding= l('$1 to $100,000 payouts, low-risk to high-leverage, and much more. We offer limitless profit opportunities.');
+        %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4
+          .box-wrap
+            %header
+              %h3.title.padding.text-center= l('Technology leader with more than 10 years experience...')
+              .tri-down
+            .body
+              .img-w.text-center
+                %img.responsive#new-trader-icon{:style=>'max-width:150px;',:src => url_for('images/pages/home5/first-icon.svg')}
+              .body-bg
+                %p.padding= l('Trade with confidence with the industry pioneer.');
+        %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4
+          .box-wrap
+            %header
+              %h3.title.padding.text-center= l('Get help and support when you need it')
+              .tri-down
+            .body
+              .img-w
+                %img.responsive#new-trader-icon{:style=>'max-width:150px;',:src => url_for('images/pages/home5/support-icon.svg')}
+              .body-bg
+                %p.padding= l('Our exclusive pricing technology gives you the best possible opportunity to make your money work for you.');
+        %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4
+          .box-wrap.signup
+            %header
+              %h3.title.padding.text-center= l('Excitement starts here')
+              .tri-down
+            .body
+              #open-account.grd-grid-12{:style=>'padding:10px;border-radius:0px;margin-top:0px;'}
+                %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
+                  %span#virtual-fields
+                    %span.acc-input
+                      %label.grd-grid-4.grd-grid-phablet-12.grd-grid-tablet-4.grd-grid-mobile-12{:for => 'Email'}= l('Your Email:')
+                      %span.grd-grid-8.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-8.grd-grid-mobile-12
+                        %input{:name => 'Email', :id => 'Email', :type => 'email', :required => true, :placeholder=>'your email here'}
+                    -#%span.acc-input
+                      %label.grd-grid-5{:for => 'residence'}= l('Country:')
+                      %span.grd-grid-7.grd-no-gutter
+                        %select#residence{:name => 'residence'}
+                          %option{:value=>'default'}= l('Select Country')
+                          - foreach my $country (countries_options()) {
+                            - my ($country_code, $country_name) = ($country->{code}, $country->{name});
+                            - if($country->{restricted}) {
+                              %option{:value => $country_code, :disabled => 1}= $country_name
+                            - } else {
+                              %option{:value => $country_code}= $country_name
+                            - }
                           - }
-                        - }
-                  %span.acc-input
-                    %label.grd-grid-4.grd-grid-phablet-12.grd-grid-tablet-4.grd-grid-mobile-12{:for => 'chooseapassword'}= l('Password:')
-                    %span.grd-grid-8.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-8.grd-grid-mobile-12
-                      %input#chooseapassword{:name => 'chooseapassword', :type => 'password', :maxlength => '25', :required => true}
-                  %span.acc-input-security
-                    %p
-                      %img.acc-input-security-icon{:src=>url_for('images/pages/home5/security.svg')}
-                      = l('we use highest security and privacy measures')
-                %input#actype{:type => 'hidden', :name => 'actype', :value => 'virtual'}
-                %input{:type => 'hidden', :name => 'l', :value => $lang}
-                %input.button{:id => 'btn_registration',:type => 'submit', :value => stash('createacc')}
-              %p= l('Get your free $10k virtual money account')
-              %p
-                %a.learn-first{:href=>'#'}= l('NO, I want to learn first')
-      %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4
-        .box-wrap
-          %header
-            %h3.title.padding.text-center= l('Charting tools like nowhere else')
-            .tri-down
-          .body
-            .img-w
-              %img.responsive#new-trader-icon{:style=>'max-width:150px;',:src => url_for('images/pages/home5/charting-icon.svg')}
-            .body-bg
-              %p.padding= l('Our exclusive pricing technology gives you the best possible opportunity to make your money work for you.');
+                    %span.acc-input
+                      %label.grd-grid-4.grd-grid-phablet-12.grd-grid-tablet-4.grd-grid-mobile-12{:for => 'chooseapassword'}= l('Password:')
+                      %span.grd-grid-8.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-8.grd-grid-mobile-12
+                        %input#chooseapassword{:name => 'chooseapassword', :type => 'password', :maxlength => '25', :required => true}
+                    %span.acc-input-security
+                      %p
+                        %img.acc-input-security-icon{:src=>url_for('images/pages/home5/security.svg')}
+                        = l('we use highest security and privacy measures')
+                  %input#actype{:type => 'hidden', :name => 'actype', :value => 'virtual'}
+                  %input{:type => 'hidden', :name => 'l', :value => $lang}
+                  %input.button{:id => 'btn_registration',:type => 'submit', :value => stash('createacc')}
+                %p= l('Get your free $10k virtual money account')
+                %p
+                  %a.learn-first{:href=>'#'}= l('NO, I want to learn first')
+        %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4
+          .box-wrap
+            %header
+              %h3.title.padding.text-center= l('Charting tools like nowhere else')
+              .tri-down
+            .body
+              .img-w
+                %img.responsive#new-trader-icon{:style=>'max-width:150px;',:src => url_for('images/pages/home5/charting-icon.svg')}
+              .body-bg
+                %p.padding= l('Our exclusive pricing technology gives you the best possible opportunity to make your money work for you.');
       -#.static_full.grd-grid-mobile-12.grd-parent
         .section
           .section-content
