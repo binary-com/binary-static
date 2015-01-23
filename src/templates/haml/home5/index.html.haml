@@ -87,6 +87,7 @@
     h1,h2,h3,h4,h5{color:#2a3052;line-height:1em;}
     .small{font-size:0.7em;}
     #benefits{background-color:#f2f2f2;}
+    .acc-input{margin:0}
 .home-content
   #banner{:style=>'background-position-y: 34%;'}
     .grd-container{:style=>'padding:60px 0 80px'}
@@ -267,7 +268,7 @@
               %h3.title.padding.text-center= l('Excitement starts here')
               .tri-down
             .body
-              #open-account.grd-grid-12{:style=>'padding:10px;border-radius:0px;margin-top:0px;'}
+              #open-account.grd-grid-12{:style=>'padding:10px;border-radius:0px;margin-top:0px;padding-top:0px;'}
                 %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
                   %span#virtual-fields
                     %span.acc-input
@@ -292,7 +293,7 @@
                       %span.grd-grid-12.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12
                         %input#chooseapassword{:name => 'chooseapassword', :type => 'password', :maxlength => '25', :required => true}
                     %span.acc-input-security
-                      %p
+                      %p{:style=>'margin-bottom:0px;padding-bottom:0px;line-height:0.4'}
                         %img.acc-input-security-icon{:src=>url_for('images/pages/home5/security.svg')}
                         = l('we use highest security and privacy measures')
                   %input#actype{:type => 'hidden', :name => 'actype', :value => 'virtual'}
