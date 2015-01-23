@@ -181,46 +181,6 @@
               .body-bg
                 %p.padding= l('Our exclusive pricing technology gives you the best possible opportunity to make your money work for you.');
         %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4
-          .box-wrap.signup
-            %header
-              %h3.title.padding.text-center= l('Excitement starts here')
-              .tri-down
-            .body
-              #open-account.grd-grid-12{:style=>'padding:10px;border-radius:0px;margin-top:0px;padding-top:0px;'}
-                %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
-                  %span#virtual-fields
-                    %span.acc-input
-                      %label.grd-grid-12.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12{:for => 'Email',:style=>'font-size: 1.1em;margin-top: 0;'}= l('Your Email:')
-                      %span.grd-grid-12.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12
-                        %input{:name => 'Email', :id => 'Email', :type => 'email', :required => true, :placeholder=>'your email here'}
-                    -#%span.acc-input
-                      %label.grd-grid-5{:for => 'residence'}= l('Country:')
-                      %span.grd-grid-7.grd-no-gutter
-                        %select#residence{:name => 'residence'}
-                          %option{:value=>'default'}= l('Select Country')
-                          - foreach my $country (countries_options()) {
-                            - my ($country_code, $country_name) = ($country->{code}, $country->{name});
-                            - if($country->{restricted}) {
-                              %option{:value => $country_code, :disabled => 1}= $country_name
-                            - } else {
-                              %option{:value => $country_code}= $country_name
-                            - }
-                          - }
-                    %span.acc-input
-                      %label.grd-grid-12.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12{:for => 'chooseapassword',:style=>'font-size: 1.1em;margin-top: 0;'}= l('Password:')
-                      %span.grd-grid-12.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12
-                        %input#chooseapassword{:name => 'chooseapassword', :type => 'password', :maxlength => '25', :required => true}
-                    %span.acc-input-security
-                      %p{:style=>'margin-bottom:9px;padding-bottom:0px;line-height:0.4'}
-                        %img.acc-input-security-icon{:src=>url_for('images/pages/home5/security.svg')}
-                        = l('we use highest security and privacy measures')
-                  %input#actype{:type => 'hidden', :name => 'actype', :value => 'virtual'}
-                  %input{:type => 'hidden', :name => 'l', :value => $lang}
-                  %input.button{:id => 'btn_registration',:type => 'submit', :value => stash('createacc')}
-                %p{:style=>'padding:0px;'}= l('Get your free $10k virtual money account')
-                %p
-                  %a.learn-first{:href=>'#'}= l('NO, I want to learn first')
-        %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4
           .box-wrap
             %header
               %h3.title.padding.text-center= l('Excitement starts here')
