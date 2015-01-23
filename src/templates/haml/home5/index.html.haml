@@ -11,7 +11,7 @@
   .section:last-child h1{margin-top:10px;}
   .acc-input label{margin-top:14px;font-size:1.2em;}
   .acc-input input{font-size:1.2em;}
-  .home-content #open-account #virtual-fields .acc-input {margin:10px 0;}
+  .home-content #open-account #virtual-fields .acc-input {margin:3px 0;}
   #virtual-acc-form input.button{font-size:1.4em;width:100%;}
   .home-content #open-account p{background-color:inherit;color:#fff;}
   .home-content #open-account #virtual-fields input, .home-content #open-account #virtual-fields select, .home-content #open-account #virtual-fields textarea{padding:10px;}
@@ -97,7 +97,7 @@
         %p{:style=>'font-size: 1.2em;margin-top:0px;margin-bottom:70px;'}
           = l('The most simple and exciting way to experience financial markets.')
       .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-12.grd-parent
-        %p{:style=>'margin-top:-10px;position:relative;'}
+        %p{:style=>'margin-top:-8px;position:relative;'}
           != ('<strong style="font-size: 2.5em;position: absolute;left: -24px;top: 1px;font-family:serif;">&ldquo;</strong> For me personally Binary.com is by far the best place to trade binary online. Not only are they well established and a trusted source, I find their pricing super competitive across the wide range of markets. <strong style="font-size: 2.5em;position: absolute;bottom: -2px;font-family:serif;">&rdquo;</strong>')
         .grd-container
           .wrap
@@ -105,7 +105,7 @@
             %h4.text-center{:style=>'display:inline-block;margin-left:30px;'}
               = l('Vinod G., UK')
         .grd-container
-          %h3.text-center{:style=>'margin-top:124px;line-height:1.7em;'}
+          %h3.text-center{:style=>'margin-top:178px;line-height:1.7em;'}
             -#!= l('Easy and secure with over 800.000 accounts created.<br/>Take a minute and get started.')
             != l("World's 1<sup>st</sup> easy and secure binary options platform with over 800.000 accounts")
           %p.accent-color-1.small.text-center{:style=>'font-style:italic;margin:0;'}= l('Take a minute and get started now')
@@ -240,13 +240,13 @@
                       %span.grd-grid-12.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12
                         %input#chooseapassword{:name => 'chooseapassword', :type => 'password', :maxlength => '25', :required => true}
                     %span.acc-input-security
-                      %p{:style=>'margin-bottom:0px;padding-bottom:0px;line-height:0.4'}
+                      %p{:style=>'margin-bottom:9px;padding-bottom:0px;line-height:0.4'}
                         %img.acc-input-security-icon{:src=>url_for('images/pages/home5/security.svg')}
                         = l('we use highest security and privacy measures')
                   %input#actype{:type => 'hidden', :name => 'actype', :value => 'virtual'}
                   %input{:type => 'hidden', :name => 'l', :value => $lang}
                   %input.button{:id => 'btn_registration',:type => 'submit', :value => stash('createacc')}
-                %p= l('Get your free $10k virtual money account')
+                %p{:style=>'padding:0px;}= l('Get your free $10k virtual money account')
                 %p
                   %a.learn-first{:href=>'#'}= l('NO, I want to learn first')
         %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4
