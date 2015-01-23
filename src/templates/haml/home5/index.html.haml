@@ -104,9 +104,12 @@
             %img.responsive#new-trader-icon{:style=>'margin-left: 22px;width: 50px;',:src => url_for('images/pages/home5/user-icon.svg')}
             %h4.text-center{:style=>'display:inline-block;margin-left:30px;'}
               = l('Vinod G., UK')
-        .grd-container
+        .grd-container.grd-hide.grd-show-phablet.grd-show-mobile.grd-show-tablet
+          %h3.text-center{:style=>'margin-top:38px;line-height:1.7em;padding: 0 30px;'}
+            != l("World's 1<sup>st</sup> easy and secure binary options platform with over 800.000 accounts")
+          %p.accent-color-1.small.text-center{:style=>'font-style:italic;margin:0;'}= l('Take a minute and get started now')
+        .grd-container.grd-hide-phablet.grd-hide-mobile.grd-hide-tablet
           %h3.text-center{:style=>'margin-top:148px;line-height:1.7em;padding: 0 30px;'}
-            -#!= l('Easy and secure with over 800.000 accounts created.<br/>Take a minute and get started.')
             != l("World's 1<sup>st</sup> easy and secure binary options platform with over 800.000 accounts")
           %p.accent-color-1.small.text-center{:style=>'font-style:italic;margin:0;'}= l('Take a minute and get started now')
       .grd-grid-5.grd-grid-mobile-12.grd-grid-phablet-10.grd-parent.grd-centered-phablet.grd-centered-mobile
@@ -122,19 +125,6 @@
                     %label.grd-grid-4.grd-grid-phablet-12.grd-grid-tablet-4.grd-grid-mobile-12{:for => 'Email'}= l('Your Email:')
                     %span.grd-grid-8.grd-no-gutter.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-8.grd-grid-mobile-12
                       %input{:name => 'Email', :id => 'Email', :type => 'email', :required => true, :placeholder=>'your email here'}
-                  -#%span.acc-input
-                    %label.grd-grid-5{:for => 'residence'}= l('Country:')
-                    %span.grd-grid-7.grd-no-gutter
-                      %select#residence{:name => 'residence'}
-                        %option{:value=>'default'}= l('Select Country')
-                        - foreach my $country (countries_options()) {
-                          - my ($country_code, $country_name) = ($country->{code}, $country->{name});
-                          - if($country->{restricted}) {
-                            %option{:value => $country_code, :disabled => 1}= $country_name
-                          - } else {
-                            %option{:value => $country_code}= $country_name
-                          - }
-                        - }
                   %span.acc-input
                     %label.grd-grid-4.grd-grid-phablet-12.grd-grid-tablet-4.grd-grid-mobile-12{:for => 'chooseapassword'}= l('Password:')
                     %span.grd-grid-8.grd-no-gutter.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-8.grd-grid-mobile-12
