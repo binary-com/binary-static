@@ -98,31 +98,6 @@
       .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-12.grd-parent
         %p{:style=>'margin-top:-10px;position:relative;'}
           != ('<strong style="font-size: 2.5em;position: absolute;left: -24px;top: 1px;font-family:serif;">&ldquo;</strong> For me personally Binary.com is by far the best place to trade binary online. Not only are they well established and a trusted source, I find their pricing super competitive across the wide range of markets. <strong style="font-size: 2.5em;position: absolute;bottom: -2px;font-family:serif;">&rdquo;</strong>')
-        -#.grd-container
-          .grd-grid-12
-            %p.accent-color-1= l('You can trade')
-        -#.grd-container
-          .referral-box
-            .comm.open-comm
-              != ('&ldquo;')
-            .comm.close-comm
-              != ('&rdquo;')
-            %p
-              = ('For me personally Binary.com is by far the best place to trade binary online. Not only are they well established and a trusted source, I find their pricing super competitive across the wide range of markets.')
-              .signature= ('Vinod G., UK')
-        -#.grd-container
-          .grd-with-padding.grd-grid-3.grd-hide-mobile.grd-hide-phablet
-            %img.responsive{:src => url_for('images/pages/home5/gold.png'),:style=>'max-width:160px'}
-            %p= l('gold')
-          .grd-with-padding.grd-grid-3.grd-hide-mobile.grd-hide-phablet
-            %img.responsive{:src => url_for('images/pages/home5/stock.png'),:style=>'max-width:160px'}
-            %p= l('stocks')
-          .grd-with-padding.grd-grid-3.grd-hide-mobile.grd-hide-phablet
-            %img.responsive{:src => url_for('images/pages/home5/index.png'),:style=>'max-width:160px'}
-            %p= l('indices')
-          .grd-with-padding.grd-grid-3.grd-hide-mobile.grd-hide-phablet
-            %img.responsive{:src => url_for('images/pages/home5/currency.png'),:style=>'max-width:160px'}
-            %p= l('currencies')
         .grd-container
           .wrap
             %img.responsive#new-trader-icon{:style=>'margin-left: -27px;width: 50px;',:src => url_for('images/pages/home5/user-icon.svg')}
@@ -173,40 +148,6 @@
             %a.learn-first{:href=>'#'}= l('NO, I want to learn first')
   #ticker-container
     #hometicker
-    -##help
-      .grd-container.grd-hide-mobile
-        .grd-row-padding
-          #trader-types.grd-grid-2.grd-hide-phablet
-            #new-trader.center-aligned
-              %img.responsive{:src => url_for('images/pages/home/new-trader.svg')}
-              %h4= l('New To Trading?')
-              %span
-                %a.learn-more.pjaxload{:href => url_for('/get-started')}= l('Learn More')
-            #experienced-trader.center-aligned
-              %img.responsive{:src => url_for('images/pages/home/experienced-trader.svg')}
-              %h4= l('Experienced Traders')
-              %span
-                %a.learn-more.pjaxload{:href => url_for('/why-us')}= l('Learn More')
-          #trading-steps.grd-parent.grd-grid-10.grd-grid-phablet-12
-            .grd-parent.grd-grid-9.grd-grid-phablet-12
-              .grd-grid-12.grd-parent
-                #how-it-works-1.grd-grid-4.grd-no-gutter-right
-                  %img.responsive{:src => url_for('images/pages/home/step-1.svg')}
-                #how-it-works-2.grd-grid-4.grd-no-gutter-right
-                  %img.responsive{:src => url_for('images/pages/home/step-2.svg')}
-                #how-it-works-3.grd-grid-4.grd-no-gutter-right
-                  %img.responsive{:src => url_for('images/pages/home/step-3.svg')}
-              .grd-grid-12.grd-parent
-                .grd-grid-4.grd-no-gutter-right
-                  %p= l('Set your position')
-                .grd-grid-4.grd-no-gutter-right
-                  %p= l('Get your price')
-                .grd-grid-4.grd-no-gutter-right
-                  %p= l('Make your trade')
-            #how-it-works-4.grd-grid-3.grd-grid-phablet-12.grd-centered-phablet
-              %p= l('No risk, $10K virtual money account')
-              %a.pjaxload{:href => url_for('linkto_acopening.cgi?actype=virtual'), :class => 'button'}
-                %span= l('Try it now')
   .seen-on.section-padding
     .grd-container
       .grd-grid-12.grd-row-padding
