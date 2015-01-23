@@ -114,7 +114,12 @@
             .tri-down
           #open-account.body{:style=>'background:none;'}
             .form-w{:style=>'padding:0 10px;'}
-              %form#virtual-acc-form{ }
+              %form#virtual-acc-form{  }
+                %span#virtual-fields
+                  %span.acc-input-security
+                    %p
+                      %img.acc-input-security-icon{:src=>url_for('images/pages/home5/security.svg')}
+                      = l('we use highest security and privacy measures')
                 %input.button{:id => 'btn_registration',:type => 'submit', :value => stash('createacc')}
             %p{:style=>'margin:0px;'}= l('Get your free $10k virtual money account')
             %p
