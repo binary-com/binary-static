@@ -135,8 +135,8 @@
           -#%p.accent-color-1.small.text-center{:style=>'font-style:italic;margin:0;'}= l('Take a minute and get started now')
       .grd-grid-5.grd-push-1.grd-grid-mobile-11.grd-grid-phablet-11.grd-parent
         #open-account.grd-grid-12{:style=>'padding:10px;border-radius:4px;'}
-          %p= l('Take a minute and get started now')
           %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
+            %p= l('Take a minute and get started now')
             %span#virtual-fields
               %span.acc-input
                 %label.grd-grid-4.grd-grid-phablet-12.grd-grid-tablet-4.grd-grid-mobile-12{:for => 'Email'}= l('Your Email:')
