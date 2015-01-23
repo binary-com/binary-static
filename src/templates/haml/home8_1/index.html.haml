@@ -89,17 +89,20 @@
     .small{font-size:0.7em;}
     #benefits{background-color:#f2f2f2;}
     #benefits .acc-input{margin:0}
+    a.cta-button{color: #2e8836;text-decoration: none;}
+    a.cta-button span{font-weight: 700;border-radius: 0;padding: 20px;}
 .home-content
   #banner{:style=>'background-position-y: 34%;background-size: contain;'}
     .grd-container{:style=>'padding:60px 0 30px'}
       .grd-grid-12.grd-row-padding.text-center
         %h1.dark{:style=>'font-size:33px;color:#2a3052;margin-bottom:13px;'}= l('The premier platform for binary options trading')
-        %p{:style=>'font-size: 1.2em;margin-top:0px;margin-bottom:70px;'}
+        %p{:style=>'font-size: 1.2em;margin-top:0px;margin-bottom:20px;'}
           = l('The most simple and exciting way to experience financial markets.')
       .grd-grid-12.grd-parent.text-center
         %h3= l('Open free account and start now')
         .cta-section
-          %a= l('START FREE BINARY OPTIONS TRADING')
+          %a.cta-button.button{:href=>'#'}
+            %span= l('START FREE BINARY OPTIONS TRADING')
       .grd-grid-12.grd-grid-mobile-12.grd-grid-phablet-12.grd-parent
         %p{:style=>'padding:0 0px; margin-top:-8px;position:relative;'}
           %img.responsive{:src=>url_for('images/pages/home6/trade-tutorial_1.svg')}
