@@ -221,6 +221,30 @@
                 %p
                   %a.learn-first{:href=>'#'}= l('NO, I want to learn first')
         %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4
+          .box-wrap.signup
+            %header
+              %h3.title.padding.text-center= l('Excitement starts here')
+              .tri-down
+            .body
+              .img-w
+                %img.responsive#new-trader-icon{:style=>'max-width:150px;',:src => url_for('images/pages/home5/charting-icon.svg')}
+              .body-bg
+                #open-account.padding{:style=>'padding:10px;border-radius:0px;margin-top:0px;padding-top:0px;'}
+                  %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
+                    %span#virtual-fields
+                      %span.acc-input
+
+                      %span.acc-input-security
+                        %p{:style=>'margin-bottom:9px;padding-bottom:0px;line-height:0.4'}
+                          %img.acc-input-security-icon{:src=>url_for('images/pages/home5/security.svg')}
+                          = l('we use highest security and privacy measures')
+                    %input#actype{:type => 'hidden', :name => 'actype', :value => 'virtual'}
+                    %input{:type => 'hidden', :name => 'l', :value => $lang}
+                    %input.button{:id => 'btn_registration',:type => 'submit', :value => stash('createacc')}
+                  %p{:style=>'padding:0px;'}= l('Get your free $10k virtual money account')
+                  %p
+                    %a.learn-first{:href=>'#'}= l('NO, I want to learn first')
+        %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4
           .box-wrap
             %header
               %h3.title.padding.text-center= l('Charting tools like nowhere else')
