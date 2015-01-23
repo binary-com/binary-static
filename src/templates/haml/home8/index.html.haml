@@ -212,7 +212,7 @@
                           = l('we use highest security and privacy measures')
                     %input#actype{:type => 'hidden', :name => 'actype', :value => 'virtual'}
                     %input{:type => 'hidden', :name => 'l', :value => $lang}
-                    %input.button{:href=>"http://binary-static-index1.herokuapp.com.cnvrtly.appspot.com/cb/register-1",:cnv-x-popup=>'',:value => stash('createacc')}
+                    %input.button{:id => 'btn_registration',:type => 'submit',:href=>"http://binary-static-index1.herokuapp.com.cnvrtly.appspot.com/cb/register-1",:cnv-x-popup=>'',:value => stash('createacc')}
                   %p{:style=>'padding:0px;'}= l('Get your free $10k virtual money account')
                   %p
                     %a.learn-first{:href=>"http://binary-static-index1.herokuapp.com.cnvrtly.appspot.com/pp/training-1",:cnv-x-popup=>''}= l('NO, I want to learn first')
