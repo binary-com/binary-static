@@ -114,22 +114,7 @@
             .tri-down
           #open-account.body{:style=>'background:none;'}
             .form-w{:style=>'padding:0 10px;'}
-              %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
-                %span#virtual-fields
-                  %span.acc-input
-                    %label.grd-grid-4.grd-grid-phablet-12.grd-grid-tablet-4.grd-grid-mobile-12{:for => 'Email'}= l('Your Email:')
-                    %span.grd-grid-8.grd-no-gutter.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-8.grd-grid-mobile-12
-                      %input{:name => 'Email', :id => 'Email', :type => 'email', :required => true, :placeholder=>'your email here'}
-                  %span.acc-input
-                    %label.grd-grid-4.grd-grid-phablet-12.grd-grid-tablet-4.grd-grid-mobile-12{:for => 'chooseapassword'}= l('Password:')
-                    %span.grd-grid-8.grd-no-gutter.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-8.grd-grid-mobile-12
-                      %input#chooseapassword{:name => 'chooseapassword', :type => 'password', :maxlength => '25', :required => true}
-                  %span.acc-input-security
-                    %p
-                      %img.acc-input-security-icon{:src=>url_for('images/pages/home5/security.svg')}
-                      = l('we use highest security and privacy measures')
-                %input#actype{:type => 'hidden', :name => 'actype', :value => 'virtual'}
-                %input{:type => 'hidden', :name => 'l', :value => $lang}
+              %form#virtual-acc-form{ }
                 %input.button{:id => 'btn_registration',:type => 'submit', :value => stash('createacc')}
             %p{:style=>'margin:0px;'}= l('Get your free $10k virtual money account')
             %p
