@@ -271,7 +271,7 @@
                 %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
                   %span#virtual-fields
                     %span.acc-input
-                      %label.grd-grid-12.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12{:for => 'Email'}= l('Your Email:')
+                      %label.grd-grid-12.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12{:for => 'Email',:style=>'font-size: 1.1em;margin-top: 0;'}= l('Your Email:')
                       %span.grd-grid-12.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12
                         %input{:name => 'Email', :id => 'Email', :type => 'email', :required => true, :placeholder=>'your email here'}
                     -#%span.acc-input
@@ -288,7 +288,7 @@
                             - }
                           - }
                     %span.acc-input
-                      %label.grd-grid-12.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12{:for => 'chooseapassword'}= l('Password:')
+                      %label.grd-grid-12.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12{:for => 'chooseapassword',:style=>'font-size: 1.1em;margin-top: 0;'}= l('Password:')
                       %span.grd-grid-12.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12
                         %input#chooseapassword{:name => 'chooseapassword', :type => 'password', :maxlength => '25', :required => true}
                     %span.acc-input-security
