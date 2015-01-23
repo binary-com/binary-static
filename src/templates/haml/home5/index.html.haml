@@ -4,6 +4,7 @@
 -   createacc => l('Create free account now'),
 - );
 - my $lang = stash->{language};
+.home-content
 :css
   .static_full .section:first-child{padding-bottom:0;}
   .static_full .section:not(:first-child){padding:0 0;}
@@ -52,6 +53,9 @@
   .box-wrap .img-w{margin-top:-27px;text-align:center;}
   .box-wrap .img-w img{width:115px;padding:12px;max-width:100%;}
   .box-wrap.signup{overflow:auto;background-color:#e98024;}
+  .box-wrap.signup.transparent{overflow:auto;background-color:rgba(233, 128, 36, 0.85);}
+  .box-wrap.signup.transparent header{background-color:rgba(233, 128, 36, 0.85);}
+  .box-wrap.signup.transparent #open-account{background-color:rgba(233, 128, 36, 0.85);}
   .box-wrap.signup header{background-color:#e98024;}
   .box-wrap.signup header h3{margin-top: 31px;margin-bottom: -8px;padding:0px;}
   .box-wrap.signup header .title{color:#fff;}
@@ -89,7 +93,6 @@
     .small{font-size:0.7em;}
     #benefits{background-color:#f2f2f2;}
     #benefits .acc-input{margin:0}
-.home-content
   #banner{:style=>'background-position-y: 34%;'}
     .grd-container{:style=>'padding:60px 0 80px'}
       .grd-grid-12.grd-row-padding.text-center
@@ -109,8 +112,8 @@
             -#!= l('Easy and secure with over 800.000 accounts created.<br/>Take a minute and get started.')
             != l("World's 1<sup>st</sup> easy and secure binary options platform with over 800.000 accounts")
           %p.accent-color-1.small.text-center{:style=>'font-style:italic;margin:0;'}= l('Take a minute and get started now')
-      .grd-grid-5.grd-push-1.grd-grid-mobile-11.grd-grid-phablet-11.grd-parent{:style=>"background-image:url(#{url_for('images/pages/home5/security.svg')})"}
-        .box-wrap.signup
+      .grd-grid-5.grd-push-1.grd-grid-mobile-11.grd-grid-phablet-11.grd-parent{:style=>"background-image:url(#{url_for('images/pages/home5/stock-illustration-4075992-money-pattern-a.jpg')})"}
+        .box-wrap.signup.transparent
           %header
             %h3.title.padding.text-center= l('Start trading binary options')
             .tri-down
