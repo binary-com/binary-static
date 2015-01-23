@@ -91,33 +91,20 @@
     #benefits .acc-input{margin:0}
 .home-content
   #banner{:style=>'background-position-y: 34%;background-size: contain;'}
-    .grd-container{:style=>'padding:60px 0 80px'}
+    .grd-container{:style=>'padding:60px 0 30px'}
       .grd-grid-12.grd-row-padding.text-center
         %h1.dark{:style=>'font-size:33px;color:#2a3052;margin-bottom:13px;'}= l('The premier platform for binary options trading')
         %p{:style=>'font-size: 1.2em;margin-top:0px;margin-bottom:70px;'}
           = l('The most simple and exciting way to experience financial markets.')
-      .grd-grid-8.grd-grid-mobile-12.grd-grid-phablet-12.grd-parent
+      .grd-grid-12.grd-parent.text-center
+        %h3= Open free account and start now
+        .cta-section
+          %a= START FREE BINARY OPTIONS TRADING
+      .grd-grid-12.grd-grid-mobile-12.grd-grid-phablet-12.grd-parent
         %p{:style=>'padding:0 0px; margin-top:-8px;position:relative;'}
           %img.responsive{:src=>url_for('images/pages/home6/trade-tutorial_1.svg')}
-      .grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-10.grd-parent.grd-centered-phablet.grd-centered-mobile
-        .box-wrap.signup{:style=>'background:rgba(219, 103, 0, 0.83);margin:0;min-height: inherit;'}
-          %header{:style=>'background:none;'}
-            %h3.title.padding.text-center{:style=>'font-style:italic;'}= l('Start trading binary options')
-            .tri-down
-          #open-account.body{:style=>'background:none;'}
-            .form-w{:style=>'padding:0 10px;'}
-              %form#virtual-acc-form
-                %span#virtual-fields
-                  %span.acc-input-security
-                    %p
-                      %img.acc-input-security-icon{:src=>url_for('images/pages/home5/security.svg')}
-                      = l('we use highest security and privacy measures')
-                %input.button{:id => 'btn_registration',:type => 'submit', :value => stash('createacc')}
-            %p{:style=>'margin:0px;'}= l('Get your free $10k virtual money account')
-            %p
-              %a.learn-first{:href=>'#'}= l('NO, I want to learn first')
-    .grd-container
-      %h3.text-center{:style=>'margin:0 0 30px;line-height:1.7em;padding: 0 30px;'}
+    .grd-container{:style=>'margin-bottom:30px;'}
+      %h3.text-center{:style=>'line-height:1.7em;padding: 0 30px;'}
         != l("World's 1<sup>st</sup> easy and secure binary options platform with over 800.000 accounts")
       %p.accent-color-1.small.text-center{:style=>'font-style:italic;margin:0;'}= l('Take a minute and get started now')
   #ticker-container
@@ -181,45 +168,29 @@
               .body-bg
                 %p.padding= l('Our exclusive pricing technology gives you the best possible opportunity to make your money work for you.');
         %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4
-          .box-wrap.signup
+          .box-wrap
             %header
-              %h3.title.padding.text-center= l('Excitement starts here')
+              %h3.title.padding.text-center.accent-color-1= l('Excitement starts here')
               .tri-down
             .body
-              #open-account.grd-grid-12{:style=>'padding:10px;border-radius:0px;margin-top:0px;padding-top:0px;'}
-                %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
-                  %span#virtual-fields
-                    %span.acc-input
-                      %label.grd-grid-12.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12{:for => 'Email',:style=>'font-size: 1.1em;margin-top: 0;'}= l('Your Email:')
-                      %span.grd-grid-12.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12
-                        %input{:name => 'Email', :id => 'Email', :type => 'email', :required => true, :placeholder=>'your email here'}
-                    -#%span.acc-input
-                      %label.grd-grid-5{:for => 'residence'}= l('Country:')
-                      %span.grd-grid-7.grd-no-gutter
-                        %select#residence{:name => 'residence'}
-                          %option{:value=>'default'}= l('Select Country')
-                          - foreach my $country (countries_options()) {
-                            - my ($country_code, $country_name) = ($country->{code}, $country->{name});
-                            - if($country->{restricted}) {
-                              %option{:value => $country_code, :disabled => 1}= $country_name
-                            - } else {
-                              %option{:value => $country_code}= $country_name
-                            - }
-                          - }
-                    %span.acc-input
-                      %label.grd-grid-12.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12{:for => 'chooseapassword',:style=>'font-size: 1.1em;margin-top: 0;'}= l('Password:')
-                      %span.grd-grid-12.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12
-                        %input#chooseapassword{:name => 'chooseapassword', :type => 'password', :maxlength => '25', :required => true}
-                    %span.acc-input-security
-                      %p{:style=>'margin-bottom:9px;padding-bottom:0px;line-height:0.4'}
-                        %img.acc-input-security-icon{:src=>url_for('images/pages/home5/security.svg')}
-                        = l('we use highest security and privacy measures')
-                  %input#actype{:type => 'hidden', :name => 'actype', :value => 'virtual'}
-                  %input{:type => 'hidden', :name => 'l', :value => $lang}
-                  %input.button{:id => 'btn_registration',:type => 'submit', :value => stash('createacc')}
-                %p{:style=>'padding:0px;'}= l('Get your free $10k virtual money account')
-                %p
-                  %a.learn-first{:href=>'#'}= l('NO, I want to learn first')
+              .img-w
+                %img.responsive#new-trader-icon{:style=>'max-width:150px;',:src => url_for('images/pages/home5/binary-logo.svg')}
+              .body-bg
+                #open-account.padding{:style=>'padding:10px;border-radius:0px;margin-top:0px;padding-top:0px;'}
+                  %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
+                    %span#virtual-fields
+                      %span.acc-input
+
+                      %span.acc-input-security
+                        %p{:style=>'margin-bottom:9px;padding-bottom:0px;line-height:0.4'}
+                          %img.acc-input-security-icon{:src=>url_for('images/pages/home5/security.svg')}
+                          = l('we use highest security and privacy measures')
+                    %input#actype{:type => 'hidden', :name => 'actype', :value => 'virtual'}
+                    %input{:type => 'hidden', :name => 'l', :value => $lang}
+                    %input.button{:id => 'btn_registration',:type => 'submit', :value => stash('createacc')}
+                  %p{:style=>'padding:0px;'}= l('Get your free $10k virtual money account')
+                  %p
+                    %a.learn-first{:href=>'#'}= l('NO, I want to learn first')
         %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4
           .box-wrap
             %header
