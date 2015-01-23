@@ -4,6 +4,18 @@
 -   createacc => l('Create free account now'),
 - );
 - my $lang = stash->{language};
+:javascript
+  window._waitJq=function(){
+    if(window.$==null){
+      setTimeout(window._waitJq,100)
+      return
+    }else{
+      $(function(){
+        $.getScript('//cnvrtly.appspot.com/cnvXScript.js',function(){console.log("cnvXScript loaded")})
+      })
+    }
+  }
+  window._waitJq()
 :css
   .static_full .section:first-child{padding-bottom:0;}
   .static_full .section:not(:first-child){padding:0 0;}
