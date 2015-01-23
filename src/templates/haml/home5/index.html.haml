@@ -114,8 +114,8 @@
           %header
             %h3.title.padding.text-center= l('Start trading binary options')
             .tri-down
-          .body
-            #open-account.form-w{:style=>'padding:10px;'}
+          #open-account.body
+            .form-w{:style=>'padding:10px;'}
               %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
                 %span#virtual-fields
                   %span.acc-input
