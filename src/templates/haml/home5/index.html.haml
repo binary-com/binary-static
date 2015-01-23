@@ -10,7 +10,7 @@
   .section h1{margin-top:60px;}
   .section:last-child h1{margin-top:10px;}
   .acc-input label{margin-top:14px;font-size:1.2em;}
-  .acc-input input{font-size:1.5em;}
+  .acc-input input{font-size:1.2em;}
   .home-content #open-account #virtual-fields .acc-input {margin:10px 0;}
   #virtual-acc-form input.button{font-size:1.4em;width:100%;}
   .home-content #open-account p{background-color:inherit;color:#fff;}
@@ -135,37 +135,39 @@
           %p.accent-color-1.small.text-center{:style=>'font-style:italic;margin:0;'}= l('Take a minute and get started now')
       .grd-grid-5.grd-push-1.grd-grid-mobile-11.grd-grid-phablet-11.grd-parent
         #open-account.grd-grid-12{:style=>'padding:10px;border-radius:4px;'}
-          %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
-            %p= l('Take a minute and get started now')
-            %span#virtual-fields
-              %span.acc-input
-                %label.grd-grid-4.grd-grid-phablet-12.grd-grid-tablet-4.grd-grid-mobile-12{:for => 'Email'}= l('Your Email:')
-                %span.grd-grid-8.grd-no-gutter.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-8.grd-grid-mobile-12
-                  %input{:name => 'Email', :id => 'Email', :type => 'email', :required => true, :placeholder=>'your email here'}
-              -#%span.acc-input
-                %label.grd-grid-5{:for => 'residence'}= l('Country:')
-                %span.grd-grid-7.grd-no-gutter
-                  %select#residence{:name => 'residence'}
-                    %option{:value=>'default'}= l('Select Country')
-                    - foreach my $country (countries_options()) {
-                      - my ($country_code, $country_name) = ($country->{code}, $country->{name});
-                      - if($country->{restricted}) {
-                        %option{:value => $country_code, :disabled => 1}= $country_name
-                      - } else {
-                        %option{:value => $country_code}= $country_name
+        #open-account.grd-grid-12{:style=>'border-radius:4px;'}
+          %p= l('Take a minute and get started')
+          .form-w{:style=>'padding:10px;'}
+            %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
+              %span#virtual-fields
+                %span.acc-input
+                  %label.grd-grid-4.grd-grid-phablet-12.grd-grid-tablet-4.grd-grid-mobile-12{:for => 'Email'}= l('Your Email:')
+                  %span.grd-grid-8.grd-no-gutter.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-8.grd-grid-mobile-12
+                    %input{:name => 'Email', :id => 'Email', :type => 'email', :required => true, :placeholder=>'your email here'}
+                -#%span.acc-input
+                  %label.grd-grid-5{:for => 'residence'}= l('Country:')
+                  %span.grd-grid-7.grd-no-gutter
+                    %select#residence{:name => 'residence'}
+                      %option{:value=>'default'}= l('Select Country')
+                      - foreach my $country (countries_options()) {
+                        - my ($country_code, $country_name) = ($country->{code}, $country->{name});
+                        - if($country->{restricted}) {
+                          %option{:value => $country_code, :disabled => 1}= $country_name
+                        - } else {
+                          %option{:value => $country_code}= $country_name
+                        - }
                       - }
-                    - }
-              %span.acc-input
-                %label.grd-grid-4.grd-grid-phablet-12.grd-grid-tablet-4.grd-grid-mobile-12{:for => 'chooseapassword'}= l('Password:')
-                %span.grd-grid-8.grd-no-gutter.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-8.grd-grid-mobile-12
-                  %input#chooseapassword{:name => 'chooseapassword', :type => 'password', :maxlength => '25', :required => true}
-              %span.acc-input-security
-                %p
-                  %img.acc-input-security-icon{:src=>url_for('images/pages/home5/security.svg')}
-                  = l('we use highest security and privacy measures')
-            %input#actype{:type => 'hidden', :name => 'actype', :value => 'virtual'}
-            %input{:type => 'hidden', :name => 'l', :value => $lang}
-            %input.button{:id => 'btn_registration',:type => 'submit', :value => stash('createacc')}
+                %span.acc-input
+                  %label.grd-grid-4.grd-grid-phablet-12.grd-grid-tablet-4.grd-grid-mobile-12{:for => 'chooseapassword'}= l('Password:')
+                  %span.grd-grid-8.grd-no-gutter.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-8.grd-grid-mobile-12
+                    %input#chooseapassword{:name => 'chooseapassword', :type => 'password', :maxlength => '25', :required => true}
+                %span.acc-input-security
+                  %p
+                    %img.acc-input-security-icon{:src=>url_for('images/pages/home5/security.svg')}
+                    = l('we use highest security and privacy measures')
+              %input#actype{:type => 'hidden', :name => 'actype', :value => 'virtual'}
+              %input{:type => 'hidden', :name => 'l', :value => $lang}
+              %input.button{:id => 'btn_registration',:type => 'submit', :value => stash('createacc')}
           %p= l('Get your free $10k virtual money account')
           %p
             %a.learn-first{:href=>'#'}= l('NO, I want to learn first')
