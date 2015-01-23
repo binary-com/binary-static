@@ -128,7 +128,7 @@
             %h4.text-center{:style=>'display:inline-block;margin-left:30px;'}
               = l('Vinod G., UK')
         .grd-container
-          %h3.text-center{:style=>'margin-top:110px;line-height:1.7em;'}
+          %h3.text-center{:style=>'margin-top:124px;line-height:1.7em;'}
             -#!= l('Easy and secure with over 800.000 accounts created.<br/>Take a minute and get started.')
             != l("World's 1<sup>st</sup> easy and secure binary options platform with over 800.000 accounts")
           %p.accent-color-1.small.text-center{:style=>'font-style:italic;margin:0;'}= l('Take a minute and get started now')
@@ -271,8 +271,8 @@
                 %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
                   %span#virtual-fields
                     %span.acc-input
-                      %label.grd-grid-4.grd-grid-phablet-12.grd-grid-tablet-4.grd-grid-mobile-12{:for => 'Email'}= l('Your Email:')
-                      %span.grd-grid-8.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-8.grd-grid-mobile-12
+                      %label.grd-grid-12.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12{:for => 'Email'}= l('Your Email:')
+                      %span.grd-grid-12.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12
                         %input{:name => 'Email', :id => 'Email', :type => 'email', :required => true, :placeholder=>'your email here'}
                     -#%span.acc-input
                       %label.grd-grid-5{:for => 'residence'}= l('Country:')
@@ -288,8 +288,8 @@
                             - }
                           - }
                     %span.acc-input
-                      %label.grd-grid-4.grd-grid-phablet-12.grd-grid-tablet-4.grd-grid-mobile-12{:for => 'chooseapassword'}= l('Password:')
-                      %span.grd-grid-8.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-8.grd-grid-mobile-12
+                      %label.grd-grid-12.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12{:for => 'chooseapassword'}= l('Password:')
+                      %span.grd-grid-12.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12
                         %input#chooseapassword{:name => 'chooseapassword', :type => 'password', :maxlength => '25', :required => true}
                     %span.acc-input-security
                       %p
