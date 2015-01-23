@@ -71,6 +71,10 @@ sub startup {
     $r->get('/home6')->to('page#haml');
     $r->get('/home7')->to('page#haml');
     $r->get('/home8')->to('page#haml');
+    $r->get('/home5_1')->to('page#haml');
+    $r->get('/home6_1')->to('page#haml');
+    $r->get('/home7_1')->to('page#haml');
+    $r->get('/home8_1')->to('page#haml');
 
 
     # Routing for this rather than adding the file to public/ as everything
