@@ -104,17 +104,17 @@
             %img.responsive#new-trader-icon{:style=>'margin-left: -27px;width: 50px;',:src => url_for('images/pages/home5/user-icon.svg')}
             %h4.text-center{:style=>'display:inline-block;margin-left:30px;'}
               = l('Vinod G., UK')
-        .grd-container{:style=>"background-image:url(#{url_for('images/pages/home5/stock-illustration-4075992-money-pattern-a.jpg')})"}
+        .grd-container
           %h3.text-center{:style=>'margin-top:124px;line-height:1.7em;'}
             -#!= l('Easy and secure with over 800.000 accounts created.<br/>Take a minute and get started.')
             != l("World's 1<sup>st</sup> easy and secure binary options platform with over 800.000 accounts")
           %p.accent-color-1.small.text-center{:style=>'font-style:italic;margin:0;'}= l('Take a minute and get started now')
       .grd-grid-5.grd-push-1.grd-grid-mobile-11.grd-grid-phablet-11.grd-parent
-        .box-wrap.signup
-          %header
+        .box-wrap.signup{:style=>'background:rgba(219, 103, 0, 0.83);margin:0'}
+          %header{:style=>'background:none;'}
             %h3.title.padding.text-center= l('Start trading binary options')
             .tri-down
-          #open-account.body
+          #open-account.body{:style=>'background:none;'}
             .form-w{:style=>'padding:10px;'}
               %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
                 %span#virtual-fields
