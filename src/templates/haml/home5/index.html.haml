@@ -18,7 +18,8 @@
   .home-content #open-account input[type=submit]{padding:18px;}
   .home-content #open-account .acc-input-security p{font-size: 1em;color:#754012;}
   .home-content #open-account .learn-first{font-size: 1.2em;color:#2a3052;text-decoration:underline;}
-  .acc-input-security-icon{opacity:0.5;margin:10px;}
+  .form-title{color: #2a3052;font-size: 1em;border-bottom: solid 1px #ccc;padding: 10px;font-style: italic;}
+  .acc-input-security-icon{opacity:0.5;margin-right:10px;}
   .section-padding{padding:30px;}
   .seen-on{background-color:#fff;border-top: 1px solid #c2c2c2;}
   .seen-on .light-text{text-align:center;color:#888;margin:0;}
@@ -111,7 +112,7 @@
       .grd-grid-5.grd-push-1.grd-grid-mobile-11.grd-grid-phablet-11.grd-parent
         #open-account.grd-grid-12{:style=>'padding:0 10px 10px 10px;border-radius:4px;'}
         #open-account.grd-grid-12{:style=>'border-radius:4px;'}
-          %p= l('Start trading binary options')
+          %h4.form-title= l('Start trading binary options')
           .form-w{:style=>'padding:10px;'}
             %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
               %span#virtual-fields
