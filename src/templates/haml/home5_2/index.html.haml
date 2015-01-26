@@ -4,7 +4,7 @@
 -   createacc => l('Create free account now'),
 - );
 - my $lang = stash->{language};
-%script{:src=>{'//use.typekit.net/bfu3ywb.js'}}
+%script{:src=>'//use.typekit.net/bfu3ywb.js'}
 :javascript
   (function(){
   var resetH=function(elems){
@@ -17,23 +17,20 @@
     var maxH=Math.max.apply(this,hArr)
     elems.height(maxH)
   }
-
   window._waitJq=function(){
-      if(window.$==null){
-        setTimeout(window._waitJq,100)
-        return
-      }else{
-        $(function(){
-          var elems=$(".box-wrap")
-          resetH(elems)
-          $(window).resize(function(){resetH(elems)})
-        })
-      }
+    if(window.$==null){
+      setTimeout(window._waitJq,100)
+      return
+    }else{
+      $(function(){
+        var elems=$(".box-wrap")
+        resetH(elems)
+        $(window).resize(function(){resetH(elems)})
+      })
     }
-    window._waitJq()
-
-
-        try{Typekit.load();}catch(e){console.log("TTTTErr")}
+  }
+  window._waitJq()
+  try{Typekit.load();}catch(e){console.log("TTTTErr")}
   }())
 
 :css
