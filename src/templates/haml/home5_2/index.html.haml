@@ -14,10 +14,20 @@
     elems.height(maxH)
     console.log("HHH!")
   }
-  $(function(){
-    var elems=$(".box-wrap")
-    $(window).resize(function(){resetH(elems)})
-  })
+
+  window._waitJq=function(){
+      if(window.$==null){
+        setTimeout(window._waitJq,100)
+        return
+      }else{
+        $(function(){
+          var elems=$(".box-wrap")
+          $(window).resize(function(){resetH(elems)})
+        })
+      }
+    }
+    window._waitJq()
+
 :css
   .static_full .section:first-child{padding-bottom:0;}
   .static_full .section:not(:first-child){padding:0 0;}
