@@ -10,7 +10,7 @@
   var resetH=function(elems){
     var hArr=[]
     elems.height('')
-    if($(window).width()<400)return
+    if($(window).width()<400){return console.log("WWWWW",$(window).width())}
     elems.each(function(i,el){
       hArr.push($(el).height())
     })
