@@ -22,12 +22,11 @@
   var resetH=function(elems){
     var hArr=[]
     elems.height('')
-    if($(window).width()<400){return console.log("WWWWW",$(window).width())}
+    if($(window).width()<400){return }
     elems.each(function(i,el){
       hArr.push($(el).height())
     })
     var maxH=Math.max.apply(this,hArr)
-    console.log("mmmm",maxH,hArr)
     elems.height(maxH)
   }
   window._waitJq=function(){
@@ -38,7 +37,7 @@
       $(function(){
         var elems=$("#benefits .box-wrap")
         resetH(elems)
-        $(window).resize(throttle(resetH,))
+        $(window).resize(throttle(resetH,200))
       })
     }
   }
