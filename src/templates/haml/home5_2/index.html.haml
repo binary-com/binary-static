@@ -14,9 +14,9 @@
     elems.height(maxH)
     console.log("HHH!")
   }
-  var elems=$(.box-wrap)
   $(function(){
-    $(window).resize(function(){resetH()})
+    var elems=$(".box-wrap")
+    $(window).resize(function(){resetH(elems)})
   })
 :css
   .static_full .section:first-child{padding-bottom:0;}
