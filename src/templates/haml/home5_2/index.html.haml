@@ -4,6 +4,7 @@
 -   createacc => l('Create free account now'),
 - );
 - my $lang = stash->{language};
+%script{:src=>{'//use.typekit.net/bfu3ywb.js'}}
 :javascript
   (function(){
   var resetH=function(elems){
@@ -29,6 +30,9 @@
       }
     }
     window._waitJq()
+
+
+        try{Typekit.load();}catch(e){console.log("TTTTErr")}
   }())
 
 :css
