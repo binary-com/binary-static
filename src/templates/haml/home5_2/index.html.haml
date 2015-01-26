@@ -15,6 +15,7 @@
       hArr.push($(el).height())
     })
     var maxH=Math.max.apply(this,hArr)
+    console.log("mmmm",maxH)
     elems.height(maxH)
   }
   window._waitJq=function(){
