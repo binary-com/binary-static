@@ -191,7 +191,7 @@
         %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4
           .box-wrap.signup
             %header
-              %h3.title.padding.text-center= l('Excitement starts here')
+              %h3.title.padding.text-center{min-height:inherit;}= l('Excitement starts here')
             .body
               #open-account.grd-grid-12{:style=>'padding:10px;border-radius:0px;margin-top:0px;padding-top:0px;'}
                 %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
