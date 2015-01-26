@@ -4,6 +4,20 @@
 -   createacc => l('Create free account now'),
 - );
 - my $lang = stash->{language};
+:javascript
+  var resetH=function(elems){
+    var hArr=[]
+    elems.each(function(i,el){
+      hArr.push($(el).height())
+    })
+    var maxH=Math.max(hArr)
+    elems.height(maxH)
+    console.log("HHH!")
+  }
+  var elems=$(.box-wrap)
+  $(function(){
+    $(window).resize(function(){resetH()})
+  })
 :css
   .static_full .section:first-child{padding-bottom:0;}
   .static_full .section:not(:first-child){padding:0 0;}
