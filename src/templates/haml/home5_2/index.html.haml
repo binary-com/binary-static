@@ -51,7 +51,7 @@
   .box-wrap.signup header{background-color:#e98024;}
   .box-wrap.signup header h3{margin: 25px 0}
   .box-wrap.signup header .title{color:#fff;margin: 0 0 10px;min-height: inherit;}
-  .box-wrap.signup header .tri-down {border-bottom:solid 1px #fff; margin-bottom:1em}
+  .box-wrap.signup header .tri-down {border-bottom:solid 1px #fff; }
   .box-wrap.signup header .tri-down:after {
                                 border-top-color: #fff;
                               }
@@ -192,9 +192,9 @@
           .box-wrap.signup
             %header
               %h3.title.padding.text-center{:style=>'min-height:inherit;'}= l('Start here')
-              .tri-down
+              .tri-down{style=>'margin-bottom: 1em;'}
             .body
-              #open-account.grd-grid-12{:style=>'padding:10px;border-radius:0px;margin-top:0px;padding-top:0px;'}
+              #open-account.grd-grid-12{:style=>'padding:0px;border-radius:0px;margin-top:0px;padding-top:0px;'}
                 %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
                   %span#virtual-fields
                     %span.acc-input
