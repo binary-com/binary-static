@@ -7,8 +7,9 @@
 :javascript
   var resetH=function(elems){
     var hArr=[]
+    elems.height('')
     elems.each(function(i,el){
-      elems.height('')
+
       hArr.push($(el).height())
     })
     var maxH=Math.max.apply(this,hArr)
