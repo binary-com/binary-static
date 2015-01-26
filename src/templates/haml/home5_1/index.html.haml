@@ -55,6 +55,31 @@
   .box-wrap.signup header .tri-down:after {
                                 border-top-color: #fff;
                               }
+  .tri-down {
+      /* Styling block element, not required */
+      position: relative;
+      margin-bottom: 2em;
+      padding: 0em;
+      border-bottom: 0px solid #999;
+      background: #f3f3f3;
+    }
+    /* Required for Down Triangle */
+    .tri-down:before, .tri-down:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-color: transparent;
+      border-bottom: 0;
+    }
+    /* Fill */
+    .tri-down:after {
+      bottom: -20px;
+      left: 44%;
+      border-top-color: #fff;
+      border-width: 20px;
+    }
     p, body{line-height:1.7em; color:#2a3052;}
     h1,h2,h3,h4,h5{color:#2a3052;line-height:1em;}
     .small{font-size:0.7em;}
