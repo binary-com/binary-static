@@ -192,6 +192,7 @@
           .box-wrap.signup
             %header
               %h3.title.padding.text-center{:style=>'min-height:inherit;'}= l('Excitement starts here')
+              .tri-down
             .body
               #open-account.grd-grid-12{:style=>'padding:10px;border-radius:0px;margin-top:0px;padding-top:0px;'}
                 %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
