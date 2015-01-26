@@ -19,8 +19,9 @@
           }
       }
   }
+    var elems=null
   var resetH=function(){
-    var elems=[]
+    if(!elems)return
     var hArr=[]
     elems.height('')
     if($(window).width()<400){return }
