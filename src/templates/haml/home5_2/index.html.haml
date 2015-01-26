@@ -5,16 +5,15 @@
 - );
 - my $lang = stash->{language};
 :javascript
+  (function(){
   var resetH=function(elems){
     var hArr=[]
     elems.height('')
     elems.each(function(i,el){
-
       hArr.push($(el).height())
     })
     var maxH=Math.max.apply(this,hArr)
     elems.height(maxH)
-    console.log("HHH!",maxH, hArr)
   }
 
   window._waitJq=function(){
@@ -24,11 +23,13 @@
       }else{
         $(function(){
           var elems=$(".box-wrap")
+          resetH(elems)
           $(window).resize(function(){resetH(elems)})
         })
       }
     }
     window._waitJq()
+  }())
 
 :css
   .static_full .section:first-child{padding-bottom:0;}
@@ -215,6 +216,14 @@
             .body
               %p.padding= l('Our exclusive pricing technology gives you the best possible opportunity to make your money work for you.');
         %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4
+          .box-wrap
+            %header
+              .img-w
+                %img.responsive#new-trader-icon{:style=>'max-width:150px;',:src => url_for('images/pages/home5/charting-icon.svg')}
+              %h3.title.padding.text-center= l('Charting tools like nowhere else')
+            .body
+              %p.padding= l('Our exclusive pricing technology gives you the best possible opportunity to make your money work for you.');
+        %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4
           .box-wrap.signup
             %header
               %h3.title.padding.text-center{:style=>'min-height:inherit;'}= l('Start here')
@@ -253,14 +262,6 @@
                   %input.button{:id => 'btn_registration',:type => 'submit', :value => stash('createacc'),:style=>'font-size:1em;'}
                 %p
                   %a.learn-first{:href=>'#'}= l('NO, I want to learn first')
-        %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4
-          .box-wrap
-            %header
-              .img-w
-                %img.responsive#new-trader-icon{:style=>'max-width:150px;',:src => url_for('images/pages/home5/charting-icon.svg')}
-              %h3.title.padding.text-center= l('Charting tools like nowhere else')
-            .body
-              %p.padding= l('Our exclusive pricing technology gives you the best possible opportunity to make your money work for you.');
   #returns.grd-grid-12{:style=>'margin-top:40px;'}
     .grd-container
       #prices.grd-grid-6.grd-grid-mobile-12.grd-parent
