@@ -19,7 +19,8 @@
           }
       }
   }
-  var resetH=function(elems){
+  var resetH=function(){
+    var elems=[]
     var hArr=[]
     elems.height('')
     if($(window).width()<400){return }
@@ -35,7 +36,7 @@
       return
     }else{
       $(function(){
-        var elems=$("#benefits .box-wrap")
+        elems=$("#benefits .box-wrap")
         resetH(elems)
         $(window).resize(throttle(resetH,200))
       })
