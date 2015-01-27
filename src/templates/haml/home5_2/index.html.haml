@@ -24,6 +24,7 @@
     if(!elems)return
     var hArr=[]
     elems.height('')
+    console.log("rrrrrrrrrrr")
     if($(window).width()<400){return }
     elems.each(function(i,el){
       hArr.push($(el).height())
@@ -39,7 +40,7 @@
       $(function(){
         elems=$("#benefits .box-wrap")
         resetH(elems)
-        $(window).resize(throttle(resetH,200))
+        $(window).resize(throttle(resetH,500))
       })
     }
   }
@@ -91,7 +92,7 @@
   .box-wrap .body p{color:#454a63;text-align:center;margin-top:20px;}
   .box-wrap .img-w{text-align:center;}
   .box-wrap .img-w img{width:90px;max-width:100%;}
-  .box-wrap.signup{overflow:auto;background-color:#e98024;}
+  .box-wrap.signup{overflow:visible;background-color:#e98024;}
   .box-wrap.signup header{background-color:#e98024;}
   .box-wrap.signup header h3{margin: 25px 0}
   .box-wrap.signup header .title{color:#fff;margin: 0 0 10px;min-height: inherit;}
