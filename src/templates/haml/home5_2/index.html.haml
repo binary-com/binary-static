@@ -24,7 +24,6 @@
     if(!elems)return
     var hArr=[]
     elems.height('')
-    console.log("rrrrrrrrrrr")
     if($(window).width()<400){return }
     elems.each(function(i,el){
       hArr.push($(el).height())
@@ -45,8 +44,7 @@
     }
   }
   window._waitJq()
-  Typekit.load();
-  //try{Typekit.load();}catch(e){console.log("TTTTErr")}
+  try{Typekit.load();}catch(e){console.log("Typekit load error=",e)}
   }())
 
 :css
@@ -128,12 +126,12 @@
     p, body{line-height:1.7em; color:#2a3052;}
     h1,h2,h3,h4,h5{color:#2a3052;line-height:1em;}
     .small{font-size:0.7em;}
-    #benefits{background-color:#f2f2f2; margin-top:40px;}
+    #benefits{background-color:#f2f2f2; margin-top:0px;}
     #benefits .acc-input{margin:0}
     .home-content #open-account input[type=submit]{border-radius:0}
 .home-content
   #banner{:style=>'background-position-y: 34%;background-size: contain;'}
-    .grd-container{:style=>'padding:60px 0 80px'}
+    .grd-container{:style=>'padding:60px 0 40px'}
       .grd-grid-12.grd-row-padding.text-center
         %h1.dark{:style=>'font-size:33px;color:#2a3052;margin-bottom:13px;'}= l('The premier platform for binary options trading')
         %p{:style=>'font-size: 1.2em;margin-top:0px;margin-bottom:70px;'}
