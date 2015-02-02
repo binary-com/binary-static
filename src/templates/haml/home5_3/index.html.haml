@@ -243,10 +243,10 @@
             .body
               %p.padding= l('Our exclusive pricing technology gives you the best possible opportunity to make your money work for you.');
         %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4
-          .box-wrap.section-margin.signup
-            %header
+          .box-wrap.section-margin.signup{:style=>'padding:0;display:relative;'}
+            %header{:style=>'padding:20px;'}
               %h3.title.padding.text-center{:style=>'min-height:inherit;'}= l('Start here')
-            .body
+            .body{:style=>'padding:20px;'}
               #open-account.grd-grid-12{:style=>'padding:0px;border-radius:0px;margin-top:0px;padding-top:0px;'}
                 .form-w{:style=>'padding:0 0px;'}
                   %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
