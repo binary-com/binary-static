@@ -243,8 +243,8 @@
             .body
               %p.padding= l('Our exclusive pricing technology gives you the best possible opportunity to make your money work for you.');
         %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4
-          .box-wrap.section-margin.signup{:style=>'padding:0;display:relative;'}
-            %header{:style=>'padding:20px;'}
+          .box-wrap.section-margin.signup{:style=>'padding:0;position:relative;'}
+            %header{:style=>'padding-top:20px;'}
               %h3.title.padding.text-center{:style=>'min-height:inherit;'}= l('Start here')
             .body{:style=>'padding:20px;'}
               #open-account.grd-grid-12{:style=>'padding:0px;border-radius:0px;margin-top:0px;padding-top:0px;'}
@@ -263,7 +263,7 @@
                     %input{:type => 'hidden', :name => 'l', :value => $lang}
                     %input.button{:id => 'btn_registration',:type => 'submit', :value => stash('createacc'),:style=>'margin-top:0px'}
                   %p{:style=>'margin:0px;padding:0px;'}= l('Get your free $10k virtual money account')
-            .bottom-dark-box.grd-container.acc-input-security{:style=>'margin:0 0 0 -9px;padding:0;background:#15212d;font-size: 72%;max-width:100%;text-align:center;color:#fff'}
+            .bottom-dark-box.grd-container.acc-input-security{:style=>'margin:0;overflow:hidden;position:absolute;bottom:0;padding:0;background:#15212d;font-size: 72%;width:100%;text-align:center;color:#fff'}
               %img.acc-input-security-icon{:src=>url_for('images/pages/home5/security-w.svg'),:style=>'margin:0;max-width:13px;'}
               = l('we use highest security and privacy measures')
   #returns.grd-grid-12{:style=>'margin-top:31px;margin-bottom:10px;'}
