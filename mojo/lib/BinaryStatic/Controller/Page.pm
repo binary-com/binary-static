@@ -74,6 +74,7 @@ sub haml {
         'home5' => ['home5/index', 'full_width', '', 1],
         'home5_1' => ['home5_1/index', 'full_width', '', 1],
         'home5_2' => ['home5_2/index', 'full_width', '', 1],
+        'home5_3' => ['home5_3/index', 'full_width', '', 1],
         'home6' => ['home6/index', 'full_width', '', 1],
         'home6_1' => ['home6_1/index', 'full_width', '', 1],
         'home7' => ['home7/index', 'full_width', '', 1],

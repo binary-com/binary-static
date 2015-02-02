@@ -70,6 +70,7 @@ sub startup {
     $r->get('/home5')->to('page#haml');
     $r->get('/home5_1')->to('page#haml');
     $r->get('/home5_2')->to('page#haml');
+    $r->get('/home5_3')->to('page#haml');
     $r->get('/home6')->to('page#haml');
     $r->get('/home6_1')->to('page#haml');
     $r->get('/home7')->to('page#haml');
