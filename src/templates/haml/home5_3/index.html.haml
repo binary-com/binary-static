@@ -27,11 +27,11 @@
     elems.height('')
     if($(window).width()<400){return }
     elems.each(function(i,el){
-      hArr.push($(el).outerHeight())
+      hArr.push($(el).height())
     })
     console.log("height",hArr)
     var maxH=Math.max.apply(this,hArr)
-    elems.outerHeight(maxH)
+    elems.height(maxH)
   }
   window._waitJq=function(){
     if(window.$==null){
