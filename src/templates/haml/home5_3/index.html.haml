@@ -176,13 +176,13 @@
               %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
                 %span#virtual-fields
                   %span.acc-input{:style=>'margin:9px 0 0 0'}
-                    %label.grd-grid-4.grd-grid-phablet-12.grd-grid-tablet-4.grd-grid-mobile-12{:for => 'Email',:style=>'padding:0;margin-top:8px'}= l('Your Email:')
+                    %label.grd-grid-4.grd-grid-phablet-12.grd-grid-tablet-4.grd-grid-mobile-12{:for => 'Email',:style=>'padding:0;margin-top:8px;text-align: right;padding-right: 3px;'}= l('Your Email:')
                     %span.grd-grid-8.grd-no-gutter.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-8.grd-grid-mobile-12
-                      %input{:name => 'Email', :id => 'Email', :type => 'email', :required => true, :placeholder=>'your email here':style=>'width:88%;text-align: right;padding-right: 3px;'}
+                      %input{:name => 'Email', :id => 'Email', :type => 'email', :required => true, :placeholder=>'your email here':style=>'width:88%;'}
                   %span.acc-input{:style=>'margin-top:12px'}
-                    %label.grd-grid-4.grd-grid-phablet-12.grd-grid-tablet-4.grd-grid-mobile-12{:for => 'chooseapassword',:style=>'padding:0;margin:9px 0 0 0;'}= l('Password:')
+                    %label.grd-grid-4.grd-grid-phablet-12.grd-grid-tablet-4.grd-grid-mobile-12{:for => 'chooseapassword',:style=>'padding:0;margin:9px 0 0 0;text-align: right;padding-right: 3px;'}= l('Password:')
                     %span.grd-grid-8.grd-no-gutter.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-8.grd-grid-mobile-12
-                      %input#chooseapassword{:name => 'chooseapassword', :type => 'password', :maxlength => '25', :required => true,:style=>'width:88%;text-align: right;padding-right: 3px;'}
+                      %input#chooseapassword{:name => 'chooseapassword', :type => 'password', :maxlength => '25', :required => true,:style=>'width:88%;'}
                 %input#actype{:type => 'hidden', :name => 'actype', :value => 'virtual'}
                 %input{:type => 'hidden', :name => 'l', :value => $lang}
                 %input.button{:id => 'btn_registration',:type => 'submit', :value => stash('createacc'),:style=>'margin-top:10px'}
@@ -273,13 +273,13 @@
                     %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
                       %span#virtual-fields
                         %span.acc-input{:style=>'margin:9px 0 0 0'}
-                          %label.grd-grid-4.grd-grid-phablet-12.grd-grid-tablet-4.grd-grid-mobile-12{:for => 'Email',:style=>'padding:0;margin-top:8px'}= l('Your Email:')
+                          %label.grd-grid-4.grd-grid-phablet-12.grd-grid-tablet-4.grd-grid-mobile-12{:for => 'Email',:style=>'padding:0;margin-top:8px;text-align: right;padding-right: 3px;'}= l('Your Email:')
                           %span.grd-grid-8.grd-no-gutter.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-8.grd-grid-mobile-12
-                            %input{:name => 'Email', :id => 'Email', :type => 'email', :required => true, :placeholder=>'your email here':style=>'width:88%;text-align: right;padding-right: 3px;'}
+                            %input{:name => 'Email', :id => 'Email', :type => 'email', :required => true, :placeholder=>'your email here':style=>'width:88%;'}
                         %span.acc-input{:style=>'margin-top:12px'}
-                          %label.grd-grid-4.grd-grid-phablet-12.grd-grid-tablet-4.grd-grid-mobile-12{:for => 'chooseapassword',:style=>'padding:0;margin:9px 0 0 0;'}= l('Password:')
+                          %label.grd-grid-4.grd-grid-phablet-12.grd-grid-tablet-4.grd-grid-mobile-12{:for => 'chooseapassword',:style=>'padding:0;margin:9px 0 0 0;text-align: right;padding-right: 3px;'}= l('Password:')
                           %span.grd-grid-8.grd-no-gutter.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-8.grd-grid-mobile-12
-                            %input#chooseapassword{:name => 'chooseapassword', :type => 'password', :maxlength => '25', :required => true,:style=>'width:88%;text-align: right;padding-right: 3px;'}
+                            %input#chooseapassword{:name => 'chooseapassword', :type => 'password', :maxlength => '25', :required => true,:style=>'width:88%;'}
                       %input#actype{:type => 'hidden', :name => 'actype', :value => 'virtual'}
                       %input{:type => 'hidden', :name => 'l', :value => $lang}
                       %input.button{:id => 'btn_registration',:type => 'submit', :value => stash('createacc'),:style=>'margin-top:0px'}
