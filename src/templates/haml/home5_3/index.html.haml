@@ -29,6 +29,7 @@
     elems.each(function(i,el){
       hArr.push($(el).height())
     })
+    console.log("height",hArr)
     var maxH=Math.max.apply(this,hArr)
     elems.height(maxH)
   }
