@@ -20,7 +20,7 @@
           }
       }
   }
-    //var elems=null
+  var elems=null
   var resetH=function(elems){
     if(!elems)return
     var hArr=[]
@@ -72,8 +72,8 @@
       return
     }else{
       $(function(){
-        var elems=$("#benefits .box-wrap")
-        resetH(elems)
+        elems=$("#benefits .box-wrap")
+        resetH()
         $(window).resize(throttle(resetH,500))
       })
     }
