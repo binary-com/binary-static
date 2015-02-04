@@ -26,8 +26,17 @@
     var hArr=[]
     elems.height('')
     if($(window).width()<400){return }
+    var gridSignupBox=$('#grid-signup-box')
+    var gsbH=0
+    gridSignupBox.children().each(function(i,obj){
+      gsbH+=$(obj).outerHeight()
+    })
+    var oh=$($("#benefits .box-wrap.signup").children()[0]).outerHeight()+$($("#benefits .box-wrap.signup").children()[1]).outerHeight()
+    $("#benefits .box-wrap.signup").outerHeight(oh)
     elems.each(function(i,el){
-      hArr.push($(el).height())
+      var h=$(el).height()
+      if(el==gridSignupBox)h=gsbH
+      hArr.push(h)
     })
     console.log("height",hArr)
     var maxH=Math.max.apply(this,hArr)
@@ -263,7 +272,7 @@
             .body
               %p.padding= l('Our exclusive pricing technology gives you the best possible opportunity to make your money work for you.');
         %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4
-          .box-wrap.section-margin.signup{:style=>'padding:0;position:relative;'}
+          .box-wrap.section-margin.signup#grid-signup-box{:style=>'padding:0;position:relative;'}
             %div
               %header{:style=>'padding-top:20px;'}
                 %h3.title.padding.text-center{:style=>'min-height:inherit;'}= l('Start here')
