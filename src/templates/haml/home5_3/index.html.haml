@@ -35,7 +35,7 @@
 
     var resizeRow=function(rowObj,nextElIdx,elArr){
       if(rowObj.rowElArr.length<2 && rowObj.rowElArr[0][0]!=$gridSignupBox[0]){
-      console.log("rrrrr")
+      processRow(elArr,nextElIdx)
       return
       }
            var maxH=Math.max.apply(this,rowObj.h)
