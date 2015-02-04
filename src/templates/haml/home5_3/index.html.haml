@@ -30,7 +30,7 @@
     //if($(window).width()<400){return }
     var gsbH=0
     var $gridSignupBox=$('.grid-signup-box:visible','#benefits')
-    console.log("GSB",$gridSignupBox)
+    console.log("GSB",$gridSignupBox.length)
     $gridSignupBox.children().each(function(i,obj){
       gsbH+=$(obj).outerHeight()
     })
