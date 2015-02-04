@@ -196,9 +196,10 @@
                 %input{:type => 'hidden', :name => 'l', :value => $lang}
                 %input.button{:id => 'btn_registration',:type => 'submit', :value => stash('createacc'),:style=>'margin-top:10px'}
               %p{:style=>'margin:0px;padding:0px;'}= l('Get your free $10k virtual money account')
-        .bottom-dark-box.acc-input-security{:style=>'margin:0 0 0 -9px;padding:5px 0;background:#15212d;font-size: 72%;max-width:100%;text-align:center;color:#fff'}
-          %img.acc-input-security-icon{:src=>url_for('images/pages/home5/security-w.svg'),:style=>'margin: -6px 5px 0;max-width:13px;'}
-          = l('we use highest security and privacy measures')
+        .bottom-dark-box.acc-input-security{:style=>'margin:0;overflow:hidden;position:absolute;bottom:0;padding: 0px 0;background:#15212d;font-size: 72%;width:100%;text-align:center;color:#fff'}
+          %p{style=>'color:inherit; padding: 5px 8px;line-height: 1.1em;font-size: 0.9em;'}
+            %img.acc-input-security-icon{:src=>url_for('images/pages/home5/security-w.svg'),:style=>'margin: -6px 5px 0;max-width:13px;'}
+            = l('we use highest security and privacy measures')
   .seen-on.section-margin{:style=>''}
     .grd-container
       .grd-grid-6{:style=>'padding-top:8px'}
@@ -295,7 +296,7 @@
                     %p{:style=>'margin:0px;padding:0px;line-height: 1.5em;font-weight: bold;'}= l('Get your free $10k virtual money account')
                 .clearfix
             .bottom-dark-box.acc-input-security{:style=>'margin:0;overflow:hidden;position:absolute;bottom:0;padding: 0px 0;background:#15212d;font-size: 72%;width:100%;text-align:center;color:#fff'}
-              %p{style=>'color:inherit; padding: 14px 8px;line-height: 1.1em;font-size: 0.9em;'}
+              %p{style=>'color:inherit; padding: 5px 8px;line-height: 1.1em;font-size: 0.9em;'}
                 %img.acc-input-security-icon{:src=>url_for('images/pages/home5/security-w.svg'),:style=>'margin: -6px 5px 0;max-width:13px;'}
                 = l('we use highest security and privacy measures')
   #returns.grd-grid-12{:style=>'margin-top:31px;margin-bottom:10px;'}
