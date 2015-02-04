@@ -76,7 +76,8 @@
     }else{
       $(function(){
         elems=$("#benefits .box-wrap")
-        resetH()
+
+        $(window).load(resetH())
         $(window).resize(throttle(resetH,500))
       })
     }
