@@ -33,21 +33,22 @@
       gsbH+=$(obj).outerHeight()
     })
 
-    var layoutRow=function(rowObj,nextElIdx,elArr){
+    var resizeRow=function(rowObj,nextElIdx,elArr){
+      if(rowObj.el.length<2 && rowObj.el[0]!=$gridSignupBox[0])return
            var maxH=Math.max.apply(this,rowObj.h)
             for(var i=0;i<rowObj.el.length;i++){
               rowObj.el[i].outerHeight(maxH)
             }
-            if(nextElIdx>-1)collectRow(elArr,nextElIdx)
+            if(nextElIdx>-1)processRow(elArr,nextElIdx)
     }
 
-    var collectRow=function(elArr,fromElIdx){
+    var processRow=function(elArr,fromElIdx){
       var $el,top,prevRowTop,currRowObj
       for(var i=fromElIdx;i<elArr.length;i++){
         $el=$(elArr[i])
         top=$el.offset().top.toString()
-        if(prevRowTop!=null && top!=prevRowTop){
-          layoutRow(currRowObj,i,elArr)
+        if(prevRowTop!=null && top!=prevRowTop ){
+          resizeRow(currRowObj,i,elArr)
           return
         }
         prevRowTop=top
@@ -59,10 +60,10 @@
         currRowObj.h.push(h)
         currRowObj.el.push($el)
         var isLast=i+1==elArr.length
-        if(isLast)layoutRow(currRowObj,-1,elArr)
+        if(isLast)resizeRow(currRowObj,-1,elArr)
       }
     }
-    collectRow(elems,0)
+    processRow(elems,0)
   }
   window._waitJq=function(){
     if(window.$==null){
