@@ -209,9 +209,10 @@
             %h4.text-center{:style=>'display:inline-block;margin-left:21px;'}
               = l('Vinod G., UK')
       .grd-grid-4.grd-parent.section-margin.grd-hide-phablet.grd-hide-mobile.grd-push-1
+        -#desktop version
         .box-wrap.signup{:style=>'margin:0 9px 0 -9px;min-height: inherit;padding-bottom:0'}
           %header{:style=>'background:none;'}
-            %h3.title.padding.text-center{:style=>'min-height: inherit;margin: 0 0 20px 0;'}= l('Start trading binary options BBB')
+            %h3.title.padding.text-center{:style=>'min-height: inherit;margin: 0 0 20px 0;'}= l('Start trading binary options')
           #open-account.body{:style=>'background:none;'}
             .form-w{:style=>'padding:0 0px;'}
               %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
@@ -233,20 +234,21 @@
             %img.acc-input-security-icon{:src=>url_for('images/pages/home5/security-w.svg'),:style=>'margin: -6px 5px 0;max-width:13px;'}
             = l('we use highest security and privacy measures')
       .grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-parent.grd-centered-phablet.grd-centered-mobile.section-margin.grd-hide-tablet.grd-hide
+        -#tablet- version
         .box-wrap.signup{:style=>'margin:0 9px 0 -9px;min-height: inherit;padding-bottom:0'}
           %header{:style=>'background:none;'}
-            %h3.title.padding.text-center{:style=>'min-height: inherit;margin: 0 0 20px 0;'}= l('Start trading binary options MMM')
+            %h3.title.padding.text-center{:style=>'min-height: inherit;margin: 0 0 20px 0;'}= l('Start trading binary options')
           #open-account.body{:style=>'background:none;'}
             .form-w{:style=>'padding:0 0px;'}
               %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
                 %span#virtual-fields
                   %span.acc-input{:style=>'margin:9px 0 0 0'}
-                    %label.grd-grid-4.grd-grid-phablet-12.grd-grid-tablet-4.grd-grid-mobile-12{:for => 'Email',:style=>'padding:0;margin-top:8px;text-align: right;padding-right: 3px;'}= l('Your Email:')
-                    %span.grd-grid-8.grd-no-gutter.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-8.grd-grid-mobile-12
+                    %label.grd-grid-4.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12{:for => 'Email',:style=>'padding:0;margin-top:8px;text-align: right;padding-right: 3px;'}= l('Your Email:')
+                    %span.grd-grid-8.grd-no-gutter.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12
                       %input{:name => 'Email', :id => 'Email', :type => 'email', :required => true, :placeholder=>'your email here':style=>'width:88%;text-align: left;'}
                   %span.acc-input{:style=>'margin-top:12px'}
-                    %label.grd-grid-4.grd-grid-phablet-12.grd-grid-tablet-4.grd-grid-mobile-12{:for => 'chooseapassword',:style=>'padding:0;margin:9px 0 0 0;text-align: right;padding-right: 3px;'}= l('Password:')
-                    %span.grd-grid-8.grd-no-gutter.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-8.grd-grid-mobile-12
+                    %label.grd-grid-4.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12{:for => 'chooseapassword',:style=>'padding:0;margin:9px 0 0 0;text-align: right;padding-right: 3px;'}= l('Password:')
+                    %span.grd-grid-8.grd-no-gutter.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12
                       %input#chooseapassword{:name => 'chooseapassword', :type => 'password', :maxlength => '25', :required => true,:style=>'width:88%;'}
                 %input#actype{:type => 'hidden', :name => 'actype', :value => 'virtual'}
                 %input{:type => 'hidden', :name => 'l', :value => $lang}
