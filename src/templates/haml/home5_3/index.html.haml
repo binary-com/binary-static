@@ -77,7 +77,7 @@
       $(function(){
         elems=$("#benefits .box-wrap")
 
-        $(window).load(console.log("LLL");resetH())
+        $(window).load(function(){console.log("LLL");resetH()})
         $(window).resize(throttle(resetH,500))
       })
     }
