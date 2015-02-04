@@ -73,7 +73,7 @@
       return
     }else{
       $(function(){
-        elems=$("#benefits .box-wrap")
+        var elems=$("#benefits .box-wrap")
         resetH(elems)
         $(window).resize(throttle(resetH,500))
       })
