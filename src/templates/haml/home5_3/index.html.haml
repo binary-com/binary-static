@@ -46,6 +46,7 @@
     //console.log("height",hArr)
     for(var row in rows){
       var maxH=Math.max.apply(this,rows[row].h)
+      console.log("RR",row)
       for(var i=0;i<rows[row].el.length;i++){
         rows[row].el[i].outerHeight(maxH)
       }
