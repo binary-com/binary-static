@@ -21,7 +21,7 @@
       }
   }
   var elems=null
-  var $gridSignupBox=$('#grid-signup-box')
+  var $gridSignupBox
 
   var resetH=function(){
     if(!elems)return
@@ -71,6 +71,7 @@
     }else{
       $(function(){
         elems=$("#benefits .box-wrap")
+        $gridSignupBox=$('#grid-signup-box')
         resetH()
         $(window).load(function(){resetH()})
         $(window).resize(resetH)
