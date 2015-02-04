@@ -34,7 +34,10 @@
     })
 
     var resizeRow=function(rowObj,nextElIdx,elArr){
-      if(rowObj.rowElArr.length<2 && rowObj.rowElArr[0][0]!=$gridSignupBox[0])return
+      if(rowObj.rowElArr.length<2 && rowObj.rowElArr[0][0]!=$gridSignupBox[0]){
+      console.log("rrrrr")
+      return
+      }
            var maxH=Math.max.apply(this,rowObj.h)
             for(var i=0;i<rowObj.rowElArr.length;i++){
               rowObj.rowElArr[i].outerHeight(maxH)
