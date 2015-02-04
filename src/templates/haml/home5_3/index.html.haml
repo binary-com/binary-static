@@ -36,16 +36,23 @@
     elems.each(function(i,el){
       $el=$(el)
       top=$el.offset().top
-      if(!rows[top])rows[top]=[]
+      if(!rows[top])rows[top]={el:[],h:[]}
       h=$el.outerHeight()
       if(el==gridSignupBox)h=gsbH
-      rows[top].push(h)
+      rows[top].h.push(h)
+      rows[top].el.push($el)
       //hArr.push(h)
     })
     //console.log("height",hArr)
-    for(var i=0;i<)
-    var maxH=Math.max.apply(this,hArr)
-    elems.outerHeight(maxH)
+    for(var row in rows){
+      var maxH=Math.max.apply(this,rows[row].h)
+      for(var i=0;i<rows[row].el.length;i++){
+        rows[row].el[i].outerHeight(maxH)
+      }
+    }
+
+    //var maxH=Math.max.apply(this,hArr)
+    //elems.outerHeight(maxH)
   }
   window._waitJq=function(){
     if(window.$==null){
