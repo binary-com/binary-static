@@ -34,13 +34,13 @@
     var oh=$($("#benefits .box-wrap.signup").children()[0]).outerHeight()+$($("#benefits .box-wrap.signup").children()[1]).outerHeight()
     $("#benefits .box-wrap.signup").outerHeight(oh)
     elems.each(function(i,el){
-      var h=$(el).height()
+      var h=$(el).outerHeight()
       if(el==gridSignupBox)h=gsbH
       hArr.push(h)
     })
     console.log("height",hArr)
     var maxH=Math.max.apply(this,hArr)
-    elems.height(maxH)
+    elems.outerHeight(maxH)
   }
   window._waitJq=function(){
     if(window.$==null){
