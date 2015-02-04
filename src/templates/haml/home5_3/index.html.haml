@@ -20,8 +20,8 @@
           }
       }
   }
-    var elems=null
-  var resetH=function(){
+    //var elems=null
+  var resetH=function(elems){
     if(!elems)return
     var hArr=[]
     elems.height('')
@@ -31,27 +31,38 @@
     gridSignupBox.children().each(function(i,obj){
       gsbH+=$(obj).outerHeight()
     })
-    var rows={}
-    var $el,top,h
-    elems.each(function(i,el){
-      $el=$(el)
-      top=$el.offset().top.toString()
-      if(!rows[top])rows[top]={el:[],h:[]}
-      h=$el.outerHeight()
-      if(el==gridSignupBox)h=gsbH
-      rows[top].h.push(h)
-      rows[top].el.push($el)
-      //hArr.push(h)
-    })
-    console.log("ALLLL",rows)
-    for(var row in rows){
-      var maxH=Math.max.apply(this,rows[row].h)
-      console.log("RR",row,rows[row].el)
-      console.log("RR",row)
-      for(var i=0;i<rows[row].el.length;i++){
-        rows[row].el[i].outerHeight(maxH)
+
+    var layoutRow=function(rowObj,nextElIdx,elArr){
+           var maxH=Math.max.apply(this,rowObj.h)
+            console.log("RR",row,rowObj.el)
+            console.log("RR",row)
+            for(var i=0;i<rowObj.el.length;i++){
+              rowObj.el[i].outerHeight(maxH)
+            }
+            if(nextElIdx>-1)collectRow(elArr,nextElIdx)
+    }
+
+    var collectRow=function(elArr,fromElIdx){
+      var $el,top,prevRowTop,currRowObj
+      for(var i=fromElIdx;i<elArr.length;i++){
+        $el=$(elArr[i])
+        top=$el.offset().top.toString()
+        if(prevRowTop!=null && top!=prevRowTop){
+          layoutRow(currRowObj,i,elArr)
+          return
+        }
+        prevRowTop=top
+        if(!currRowObj)currRowObj={el:[],h:[]}
+        h=$el.outerHeight()
+        if(el==gridSignupBox)h=gsbH
+        currRowObj.h.push(h)
+        currRowObj.el.push($el)
+        var isLast=i+1==elArr.length
+        if(isLast)layoutRow(currRowObj,-1,elArr)
       }
     }
+    collectRow(elems,0)
+
 
     //var maxH=Math.max.apply(this,hArr)
     //elems.outerHeight(maxH)
