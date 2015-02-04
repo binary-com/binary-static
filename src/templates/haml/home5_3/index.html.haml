@@ -29,7 +29,7 @@
     elems.height('')
     //if($(window).width()<400){return }
     var gsbH=0
-    var $gridSignupBox=$('#grid-signup-box')
+    var $gridSignupBox=$('.grid-signup-box','#benefits')
     $gridSignupBox.children().each(function(i,obj){
       gsbH+=$(obj).outerHeight()
     })
@@ -375,7 +375,7 @@
               %p= l('Our exclusive pricing technology gives you the best possible opportunity to make your money work for you.');
         %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4.grd-hide-phablet.grd-hide-tablet.grd-hide-mobile
           -#desktop
-          .box-wrap.section-margin.signup#grid-signup-box{:style=>'padding:0;position:relative;'}
+          .box-wrap.section-margin.signup.grid-signup-box{:style=>'padding:0;position:relative;'}
             %div
               %header{:style=>'padding:15px 0;'}
                 %h3.title.padding.text-center{:style=>'min-height:inherit;margin:0;'}= l('Start here')
@@ -403,7 +403,7 @@
                 = l('we use highest security and privacy measures')
         %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4.grd-hide.grd-show-phablet.grd-show-tablet.grd-show-mobile
           -#tablet-
-          .box-wrap.section-margin.signup#grid-signup-box{:style=>'padding:0;position:relative;'}
+          .box-wrap.section-margin.signup.grid-signup-box{:style=>'padding:0;position:relative;'}
             %div
               %header{:style=>'padding:15px 0;'}
                 %h3.title.padding.text-center{:style=>'min-height:inherit;margin:0;'}= l('Start hereMM')
