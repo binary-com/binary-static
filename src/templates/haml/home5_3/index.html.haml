@@ -21,7 +21,6 @@
       }
   }
   var elems=null
-  var $gridSignupBox
 
   var resetH=function(){
     if(!elems)return
@@ -29,6 +28,7 @@
     elems.height('')
     //if($(window).width()<400){return }
     var gsbH=0
+    var $gridSignupBox=$('#grid-signup-box')
     $gridSignupBox.children().each(function(i,obj){
       gsbH+=$(obj).outerHeight()
     })
@@ -75,7 +75,7 @@
     }else{
       $(function(){
         elems=$("#benefits .box-wrap")
-        $gridSignupBox=$('#grid-signup-box')
+
         resetH()
         $(window).load(function(){resetH()})
         $(window).resize(resetH)
