@@ -26,7 +26,7 @@
     var hArr=[]
     elems.height('')
     //if($(window).width()<400){return }
-    var gridSignupBox=$($('#grid-signup-box')[0])
+    var gridSignupBox=$('#grid-signup-box')
     var gsbH=0
     gridSignupBox.children().each(function(i,obj){
       gsbH+=$(obj).outerHeight()
@@ -53,7 +53,7 @@
         prevRowTop=top
         if(!currRowObj)currRowObj={el:[],h:[]}
         h=$el.outerHeight()
-        if($el==gridSignupBox){
+        if($el[0]==gridSignupBox[0]){
         console.log('ZZZZZZZ')
         h=gsbH
         }
