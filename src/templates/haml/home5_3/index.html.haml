@@ -31,14 +31,19 @@
     gridSignupBox.children().each(function(i,obj){
       gsbH+=$(obj).outerHeight()
     })
-    var oh=$($("#benefits .box-wrap.signup").children()[0]).outerHeight()+$($("#benefits .box-wrap.signup").children()[1]).outerHeight()
-    $("#benefits .box-wrap.signup").outerHeight(oh)
+    var rows={}
+    var $el,top,h
     elems.each(function(i,el){
-      var h=$(el).outerHeight()
+      $el=$(el)
+      top=$el.offset().top
+      if(!rows[top])rows[top]=[]
+      h=$el.outerHeight()
       if(el==gridSignupBox)h=gsbH
-      hArr.push(h)
+      rows[top].push(h)
+      //hArr.push(h)
     })
     //console.log("height",hArr)
+    for(var i=0;i<)
     var maxH=Math.max.apply(this,hArr)
     elems.outerHeight(maxH)
   }
