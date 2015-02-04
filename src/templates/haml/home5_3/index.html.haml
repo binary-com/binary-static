@@ -47,6 +47,7 @@
     }
 
     var processRow=function(elArr,fromElIdx){
+    if(fromElIdx<0)return
       var $el,top,prevRowTop,currRowObj
       for(var i=fromElIdx;i<elArr.length;i++){
         $el=$(elArr[i])
