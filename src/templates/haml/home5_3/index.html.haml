@@ -20,9 +20,10 @@
           }
       }
   }
-  var elems=null
+  //var elems=null
 
   var resetH=function(){
+    var elems=$("#benefits .box-wrap")
     if(!elems)return
     var hArr=[]
     elems.height('')
@@ -74,7 +75,7 @@
       return
     }else{
       $(function(){
-        elems=$("#benefits .box-wrap")
+        //elems=$("#benefits .box-wrap")
 
         resetH()
         $(window).load(function(){resetH()})
