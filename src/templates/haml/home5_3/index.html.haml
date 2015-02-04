@@ -35,7 +35,7 @@
     var $el,top,h
     elems.each(function(i,el){
       $el=$(el)
-      top=$el.offset().top
+      top=$el.offset().top.toString()
       if(!rows[top])rows[top]={el:[],h:[]}
       h=$el.outerHeight()
       if(el==gridSignupBox)h=gsbH
@@ -43,7 +43,7 @@
       rows[top].el.push($el)
       //hArr.push(h)
     })
-    //console.log("height",hArr)
+    console.log("ALLLL",rows)
     for(var row in rows){
       var maxH=Math.max.apply(this,rows[row].h)
       console.log("RR",row,rows[row].el)
