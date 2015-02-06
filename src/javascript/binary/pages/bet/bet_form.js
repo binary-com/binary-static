@@ -383,7 +383,6 @@ var BetForm = function () {
                     }
 
                     this.show_spot(spot);
-                    $('#spot_spark').sparkline(spots, this.spark_line_config);
 
                     $(this).trigger('change', [ spot ]);
                 },
@@ -402,27 +401,11 @@ var BetForm = function () {
                     spot_container.html(spot);
                 },
                 clear: function() {
-                    this.clear_sparkline();
                     this.show_spot('');
-                },
-                clear_sparkline: function () {
-                    spots = [];
-                    $('#spot_spark').sparkline(spots, this.spark_line_config);
                 },
                 value: function() {
                     return parseFloat(spots[spots.length - 1]);
-                },
-                spark_line_config: {
-                    type: 'line',
-                    lineColor: '#606060',
-                    fillColor: false,
-                    spotColor: '#00f000',
-                    minSpotColor: '#f00000',
-                    maxSpotColor: '#0000f0',
-                    highlightSpotColor: '#ffff00',
-                    highlightLineColor: '#000000',
-                    spotRadius: 1.25
-                },
+                }
             };
         }(),
         underlying_drop_down: function() {

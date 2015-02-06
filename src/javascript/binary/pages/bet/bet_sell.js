@@ -117,7 +117,6 @@ var BetSell = function() {
         },
         basic_cleanup: function () {
             this.clear_timers();
-            this.sparkline.clear();
             this.streaming.stop();
             this.streaming.url(null);
         },
@@ -296,7 +295,6 @@ var BetSell = function() {
                 var price_field = $('input[name="price"]', price_con);
                 prev_price = price_field.val();
                 price_field.val(price);
-                BetSell.sparkline.update(price);
                 if (!prev_price) {
                     return;
                 }
@@ -527,7 +525,6 @@ var BetSell = function() {
                         }
                     }
                     if (con.find($('#sell_price_container')).length > 0) {
-                        that.sparkline.init(55);
                         con.on('click', '#sell_at_market', function (e) { e.preventDefault(); that.on_sell_button_click(e.target, element); return false; });
                     }
                     that.update_high_low(true);
@@ -766,7 +763,6 @@ var BetSell = function() {
             var _url = null;
             return {
                 start: function(url) {
-                    BetSell.sparkline.clear();
                     this.stop();
                     if (url) {
                         this._url = url;
@@ -784,7 +780,6 @@ var BetSell = function() {
                     } else {
                         var err_msg = "We are not able to stream live prices at the moment. To enjoy live streaming of prices try refreshing the page, if you get this issue after repeated attempts try a different browser";
                         BetSell.show_warning(err_msg);
-                        $('#spot_spark').html('<span title="' + err_msg + '">No Live price update</span>"');
                         return false;
                     }
                 },
@@ -832,48 +827,6 @@ var BetSell = function() {
                 },
             };
         }(), // streaming
-        sparkline: function() {
-            var _values = [];
-            var _length = 30;
-            return {
-                init:   function(length) {
-                    _values = [];
-                    if (length) {
-                        _length = length;
-                    }
-                    var container = $(BetSell.container().find('#sell_price_container')[0]);
-                    $('#sell_price_sparkline').remove();
-                    var spark = $('<div id="sell_price_sparkline"></div>');
-                    container.append(spark);
-                    spark.show();
-                    $('#sell_price_container').on('mouseover', '#sell_price_sparkline canvas', function () { $('#jqstooltip').css('z-index', get_highest_zindex() + 100); });
-                },
-                update: function(val) {
-                    var that = this;
-                    _values.push(val);
-                    if (_values.length >= _length) {
-                        _values.shift();
-                    }
-                    $('#sell_price_sparkline').sparkline(_values, that._config);
-                },
-                clear: function() {
-                    var that = this;
-                    _values = [];
-                    $('#sell_price_sparkline').sparkline(_values, that._config);
-                },
-                _config: {
-                    type: 'line',
-                    lineColor: '#606060',
-                    fillColor: false,
-                    spotColor: '#00f000',
-                    minSpotColor: '#f00000',
-                    maxSpotColor: '#0000f0',
-                    highlightSpotColor: '#ffff00',
-                    highlightLineColor: '#000000',
-                    spotRadius: 1.25
-                },
-            };
-        }(), // sparkline
         create_timer: function (selector, input) { // input in form of obj have year : { value: 0, text: 'text', interval: 1}
             var duration_obj = {};
             var interval = 1;
@@ -1063,7 +1016,7 @@ var BetSell = function() {
                 if (liveChartConfig.has_indicator('entry_spot_time')) {
                     live_chart.remove_indicator('entry_spot_time');
                 }
-                
+
                 if (start_time && entry_spot_time < start_time) {
                     indicator = new LiveChartIndicator.Barrier({ name: "entry_spot_time", label: 'Entry Spot', value: that.get_date_from_seconds(parseInt(entry_spot_time)), color: '#e98024', axis: 'x'});
                 } else {
