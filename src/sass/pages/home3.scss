@@ -1,0 +1,240 @@
+/* HOME PAGE 3 RULES */
+
+#zbacktop{
+    background-color:#2A3052;
+
+}
+.zbanner1 {
+    background: url("../images/pages/home3/banner1.jpg") center bottom no-repeat;
+    background-size: cover;
+}
+.zhead {
+    padding-top: 50px;
+    text-align: center;
+}
+.zhead span {
+    color: #2e8836;
+    font-weight: bold;
+}
+.zhead h1 {
+    font-size: 40px;
+    color: #fff;
+    padding-bottom: 30px;
+}
+.zhead p {
+    font-size: 24px;
+    color: #fff;
+    padding-top: 30px;
+    padding-bottom: 70px;
+    text-align: center;
+}
+.zreal span {
+    padding: 30px 80px;
+    font-size: 28px;
+    /*background:#e98024*/
+}
+.zcta {
+    text-align: center;
+    padding-bottom: 50px;
+}
+#zsection1 {
+    padding: 30px 0;
+    display: inline-block;
+}
+#zsection1 ul li {
+    padding-left: 10px;
+    margin: 1em 0 0;
+}
+#zsection1 ul li span {
+    color: #2e8836;
+    font-weight: 700;
+}
+#zsection1 ul li i {
+    color: #e98024;
+}
+.zheader {
+    font-size: 34px;
+    text-align: center;
+}
+.zbackground {
+    background: #273051;
+}
+.zwhite {
+    color: #fff;
+}
+#zsection2 {
+    padding: 30px 0;
+    display: inline-block;
+}
+#zsection2 ul li i, #zsection2 ul li p {
+    color: #fff;
+}
+#zsection2 ul li i span {
+    color: #E98024;
+    font-weight: 700;
+}
+#zsection3 {
+    padding: 30px 0;
+    display: inline-block;
+}
+.zquote {
+    background-color: #f2f2f2;
+    padding: 10px 40px;
+}
+.zbubble-left {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 25px 10px 0 5px;
+    border-color: #f2f2f2 transparent transparent;
+    position: relative;
+    left: 10%;
+}
+.zquoter-left {
+    text-align: left;
+    color: #2e8836;
+}
+.zbubble-right {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 25px 5px 0 10px;
+    border-color: #f2f2f2 transparent transparent;
+    position: relative;
+    left: 80%;
+}
+.zquoter-right {
+    text-align: right;
+    color: #2e8836;
+}
+.zquoter-left p span, .zquoter-right p span {
+    font-size: 12px;
+    font-style: italic;
+}
+#zsection3 .fa-lock:before, #zsection2 .fa-lock:before {
+    margin-right: 10px;
+}
+.zquotation {
+    font-size: 30px;
+    font-weight: 700;
+}
+.signu_form {
+    background-color: #e98024;
+}
+.zemail {
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    min-width: 250px;
+    font-size: 16px;
+    border-radius: 4px;
+}
+.zpass {
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    min-width: 250px;
+    font-size: 16px;
+    border-radius: 4px;
+}
+.overlay {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, .85);
+}
+.overlay {
+    opacity: 1;
+    transition: opacity .3s, height 0;
+}
+.overlay.hidden {
+    opacity: 0;
+    transition: opacity .3s, height 0 .2s;
+    height: 0;
+}
+.dialog {
+    margin: auto;
+    background: #E98024;
+    max-width: 400px;
+}
+.login-button {
+    display: inline-block;
+}
+.submit-button {
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    line-height: 100%;
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    background: #2a3052;
+    padding: 9px 10.83333%;
+    border: 0;
+    white-space: normal;
+}
+.zvirtual-money {
+    font-size: 100%;
+    line-height: 2em;
+    margin: 0;
+    padding: 5px 0;
+    background: #2A3052;
+    text-align: center;
+    color: #fff;
+}
+.zreal-money {
+    text-align: center;
+    font-size: 14px;
+    float: left;
+    width: 100%;
+    margin-top: 1.2em;
+    color: #fff;
+}
+.zreal-money a {
+    color: #fff;
+    text-decoration: underline;
+}
+.zprivacy {
+    color: #e98024;
+}
+.zmargin {
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+.zprivacy span {
+    color: #000;
+    font-size: 12px;
+    margin-right: 20px;
+}
+.zhead .fa-line-chart {
+    color: white;
+    font-size: 10em;
+}
+@media screen and (max-width: 480px) {
+    .zbanner1 {
+        background: #2A3052;
+    }
+    .zhead p {
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+    .zreal span {
+        padding: 20px 30px;
+        font-size: 18px;
+    }
+    #zsection1, #zsection2, #zsection3 {
+        padding: 10px 0;
+    }
+    .zprivacy {
+        margin-bottom: 20px;
+    }
+}

@@ -1,0 +1,128 @@
+- stash(
+-   title => l('[_1]: Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices',stash('broker_name')),
+-   next_link => '/why-us',
+-   createacc => l('Create free account'),
+- );
+- my $lang = stash->{language};
+%link{:href => "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css", :rel => "stylesheet"}
+#zbacktop
+  .zbanner1
+    .grd-container
+      .grd-grid-12.grd-parent
+        .zhead
+          %h1 The Premier Platform for Binary Options Trading
+          .grd-grid-4.grd-grid-mobile-12.grd-parent
+            %i.fa.fa-line-chart
+          .grd-grid-4.grd-grid-mobile-12.grd-parent
+            %p!= "Up to <span> 100% </span> Return <br> on Rise/Fall Trades"
+          .grd-grid-4.grd-grid-mobile-12.grd-parent
+            %p!= "Up to <span> 1000% </span> Return <br> on Trades you Make"
+        .zcta
+          .button.pjaxload.zreal.pjaxload-focus.login-button
+            %span OPEN FREE ACCOUNT NOW
+.grd-container
+  #zsection1
+    .grd-grid-12.grd-parent
+      %p.zheader.center The Easiest Way to Get Started in the Financial Markets
+      %p.center{:style => "font-size: 24px;"} Trade in the world's financial markets in a simple, user-friendly platform.
+      .grd-grid-7.grd-grid-mobile-12.grd-parent
+        %img.responsive{:alt => "", :src => url_for("images/pages/home3/trade-tutorial_1.svg")}/
+      .grd-grid-5.grd-grid-mobile-12.grd-parent
+        %ul
+          %li
+            %i.fa.fa-check-square
+            %span All markets
+            \- currencies, stock indices, and commodities.
+          %li
+            %i.fa.fa-check-square
+            %span All market conditions
+            \- up/down, touch/no-touch, stays in/goes out.
+          %li
+            %i.fa.fa-check-square
+            %span All durations
+            \- from 10 seconds to 365 days.
+          %li
+            %i.fa.fa-check-square
+            %span All payouts
+            \- from $1 to $100,000.
+        .center{:style => "margin-top:40px;"}
+          %a#signbox.button.pjaxload.pjaxload-focus{:href => "https://www.binary.com/c/linkto_acopening.cgi?actype=real&l=EN"}
+            %span OPEN A REAL MONEY ACCOUNT
+.zbackground
+  .grd-container
+    #zsection2
+      %p.zheader.center.zwhite Why 1,000,000 People Around the World Trust us
+      .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-12
+        %ul
+          %li
+            %i.fa.fa-check-square-o
+              %span Sharp prices
+              %p Binary.com's patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market.
+          %li
+            %i.fa.fa-check-square-o
+              %span Your funds are safe
+              %p With Binary.com, your money is secure. We segregate and hold client funds in secure AAA-rated banks.
+      .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-12
+        %ul
+          %li
+            %i.fa.fa-check-square-o
+              %span Trade your way
+              %p Don't limit yourself! Whatever your market view, Binary.com allows you to put your strategy to work and profit from your predictions.
+          %li
+            %i.fa.fa-check-square-o
+              %span Go with the leader
+              %p Binary.com is the award-winning industry pioneer in online options trading.
+      .grd-grid-12.grd-parent
+        .center{:style => "margin-top:40px;"}
+          .button.pjaxload.pjaxload-focus.login-button
+            %span Start Trading Now
+        .center{:style => "margin-top:20px;"}
+          %i.fa.fa-lock{:style => "color:#e98024"}
+            %span{:style => "color:#fff;font-size:12px;margin-right:20px;"} We value your privacy and never share your information with anyone.
+.grd-container
+  #zsection3
+    .grd-grid-12.grd-grid-mobile-12.grd-grid-phablet-6
+      %p.zheader.center What our Clients are Saying
+      .zquote
+        %p
+          %span.zquotation> “
+          Binary.com is one of the oldest and trustworthy partners we ever had. We have worked together for many years.
+          %span.zquotation ”
+      .zbubble-right
+      .zquoter-right
+        %p
+          Andrei Asavei
+          %span Top Binary Options Brokers
+    .grd-grid-12.grd-grid-mobile-12.grd-grid-phablet-6
+      .zquote
+        %p
+          %span.zquotation> “
+          We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide
+          %span.zquotation ”
+      .zbubble-left
+      .zquoter-left
+        %p
+          Joshua Cavallaro
+          %span Markets And You Trader.
+    .grd-grid-12.grd-grid-mobile-12.grd-grid-phablet-12
+      .center.zmargin
+        %i.fa.fa-lock.zprivacy
+          %span We value your privacy and never share your information with anyone.
+        .button.pjaxload.pjaxload-focus.login-button
+          %span Create Free Account Now
+.overlay.shown.hidden
+  .dialog
+    %p.zvirtual-money Get Your Free $10k Virtual Money Account
+    %form#virtual-acc-form{:action => "https://www.binary.com/d/create_account.cgi?l=EN", :method => "post", :name => "oppAccForm"}
+      %span#virtual-fields
+        %span.grd-grid-12.grd-no-gutter.center
+          %input#Email.zemail{:name => "Email", :placeholder => "Enter Your Email", :required => "required", :type => "email"}
+        %span.grd-grid-12.grd-no-gutter.center
+          %input#chooseapassword.zpass{:maxlength => "25", :name => "chooseapassword", :placeholder => "Choose a Password", :required => "required", :type => "password"}
+            %input#actype{:name => "actype", :type => "hidden", :value => "virtual"}
+              %input{:name => "l", :type => "hidden", :value => "EN"}
+        %span.grd-grid-12.grd-no-gutter.center
+          %input#btn_registration.button.submit-button{:type => "submit", :value => "Create free account"}
+    %p.zreal-money
+      Or
+      %a{:href => "https://www.binary.com/c/linkto_acopening.cgi?actype=real&l=EN"} Create a Real Money Account

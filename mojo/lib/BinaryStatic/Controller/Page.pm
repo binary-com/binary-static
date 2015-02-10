@@ -66,7 +66,7 @@ sub haml {
 
     $curr_path = '/' if $curr_path eq '';
 
-    # template, layout, code, renderSkin
+    # template, layout, code
     my %url_map = (
         '/' => ['home/index', 'full_width', '', 1],
         'home' => ['home/index', 'full_width', '', 1],
@@ -114,23 +114,13 @@ sub haml {
         push @extra_stash, (loginid => $c->param('loginid')) if $c->param('loginid');
     }
 
-    if ($m->[3]) {
-        $c->renderSkin(
-            template => $m->[0],
-            handler => 'haml',
-            defined $m->[1] ? (layout => $m->[1] ? $c->layout($m->[1]) : '') : (),
-            $m->[2] ? (status => $m->[2]) : (),
-            @extra_stash
-        );
-    } else {
-        $c->render(
-            template => $m->[0],
-            handler => 'haml',
-            defined $m->[1] ? (layout => $m->[1] ? $c->layout($m->[1]) : '') : (),
-            $m->[2] ? (status => $m->[2]) : (),
-            @extra_stash
-        );
-    }
+    $c->render(
+        template => $m->[0],
+        handler => 'haml',
+        defined $m->[1] ? (layout => $m->[1] ? $c->layout($m->[1]) : '') : (),
+        $m->[2] ? (status => $m->[2]) : (),
+        @extra_stash
+    );
 }
 
 sub timestamp {
