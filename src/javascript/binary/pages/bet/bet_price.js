@@ -327,7 +327,6 @@ var BetPrice = function() {
             var update_from_stream = false;
             return {
                 start: function() {
-                    BetForm.spot.clear_sparkline();
                     this.stop();
                     update_from_stream = true;
                     var url = this.url();
@@ -338,8 +337,6 @@ var BetPrice = function() {
                             that.process_message(e.data);
                         };
                         price_stream.addEventListener("ping", function(e) { return true; });
-                    } else {
-                        $('#spot_spark').html("<span title=\"" + text.localize("We are not able to stream live prices at the moment. To enjoy live streaming of prices try refreshing the page, if you get this issue after repeated attempts try a different browser") + "\">" + text.localize("No Live price update") + "</span>");
                     }
                 },
                 stop: function() {
@@ -412,7 +409,7 @@ var BetPrice = function() {
                     return prices;
                 },
                 prices_from_form: function () {
-                    
+
                     var prices = [],
                         order_forms = $('.orderform'),
                         order_forms_count = order_forms ? order_forms.length : 0,
@@ -420,7 +417,7 @@ var BetPrice = function() {
                         id,
                         prob,
                         error;
-                    
+
                     if (order_forms_count > 0 ) {
                         for (i = 0; i < order_forms_count; i++) {
                             id = $('input[name="display_id"]', form).val();
