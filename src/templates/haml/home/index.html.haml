@@ -1,133 +1,88 @@
 - stash(
--   title => l('Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices'),
+-   title => l('[_1]: Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices',stash('broker_name')),
 -   next_link => '/why-us',
 -   createacc => l('Create free account'),
+-   emailtext   => l('Enter your email'),
+-   passwordstext   => l('Choose a password'),
 - );
 - my $lang = stash->{language};
-
 #banner
   .grd-container
-    .grd-grid-9.grd-row-padding.grd-hide-mobile.grd-hide-phablet
-      #slider
-        .slides-container
-          #slide-1.slides.invisibleslides
-            %h1.dark= l('The premier platform for binary options trading')
-            %p= l('Discover the easiest way to get started in the financial markets.')
-            %h4
-              %a.learn-more.pjaxload{:href => url_for('/why-us')}= l('Learn More')
-          #slide-2.slides.invisibleslides
-            %h1.dark= l('Best-in-class pricing for binaries...')
-            %p= l('Our exclusive pricing technology gives you the best possible opportunity to make your money work for you.')
-            %h4
-              %a.learn-more.pjaxload{:href => url_for('/why-us')}= l('Learn More')
-          #slide-3.slides.invisibleslides
-            %h1.dark= l('10 seconds to 365 days...')
-            %p= l('$1 to $100,000 payouts, low-risk to high-leverage, and much more. We offer limitless profit opportunities.')
-            %h4
-              %a.learn-more.pjaxload{:href => url_for('/why-us')}= l('Learn More')
-          #slide-4.slides.invisibleslides
-            %h1.dark= l('Technology leader with more than 10 years experience...')
-            %p= l('Trade with confidence with the industry pioneer.')
-            %h4
-              %a.learn-more.pjaxload{:href => url_for('/why-us')}= l('Learn More')
-          #slide-5.slides.invisibleslides
-            %h1.dark= l('Novice or Expert...')
-            %p= l('With payouts from $1 to $100,000, we have you covered.')
-            %h4
-              %a.learn-more.pjaxload{:href => url_for('/why-us')}= l('Learn More')
-        %ul.slides-pagination
-          %li.current
-            %a{:href => "#0"}
-              != "&nbsp;"
-          %li
-            %a{:href => "#1"}
-              != "&nbsp;"
-          %li
-            %a{:href => "#2"}
-              != "&nbsp;"
-          %li
-            %a{:href => "#3"}
-              != "&nbsp;"
-          %li
-            %a{:href => "#4"}
-              != "&nbsp;"
-    .grd-grid-3.grd-grid-mobile-12.grd-grid-phablet-12.grd-parent
-      #open-account.grd-grid-12
+    .grd-grid-12.grd-row-padding
+      #xtop
+        %h1.dark= l('The Premier Platform for Binary Options Trading')
+        %p= l('Trade 24/7, even on weekends. Customize your trades to meet your needs')
+    .grd-grid-12.grd-grid-mobile-12.grd-grid-phablet-12.grd-parent
+      .grd-grid-2.grd-hide-mobile.grd-hide-phablet
+      #open-account.grd-grid-8.grd-grid-mobile-12.grd-grid-phablet-12
         %p= l('Get your free $10k virtual money account')
-        %form#virtual-acc-form.grd-row-padding{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
+        %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
           %span#virtual-fields
-            %span.acc-input
-              %label.grd-grid-5{:for => 'Email'}= l('Your Email:')
-              %span.grd-grid-7.grd-no-gutter
-                %input{:name => 'Email', :id => 'Email', :type => 'email', :required => true}
-            %span.acc-input
-              %label.grd-grid-5{:for => 'chooseapassword'}= l('Password:')
-              %span.grd-grid-7.grd-no-gutter
-                %input#chooseapassword{:name => 'chooseapassword', :type => 'password', :maxlength => '25', :required => true}
-          %input#actype{:type => 'hidden', :name => 'actype', :value => 'virtual'}
-          %input{:type => 'hidden', :name => 'l', :value => $lang}
-          %input.button{:id => 'btn_registration',:type => 'submit', :value => stash('createacc')}
-      .grd-with-padding.grd-grid-6.grd-hide-mobile.grd-hide-phablet
-        %img.responsive{:src => url_for('images/pages/why-us/why-us-proven-record_1.svg')}
-      .grd-with-padding.grd-grid-6.grd-hide-mobile.grd-hide-phablet
-        %img.responsive{:src => url_for('images/pages/why-us/why-us-GBAF-award-2012.svg')}
-#help
-  .grd-container.grd-hide-mobile
-    .grd-row-padding
-      #trader-types.grd-grid-2.grd-hide-phablet
-        #new-trader.center-aligned
-          %img.responsive{:src => url_for('images/pages/home/new-trader.svg')}
-          %h4= l('New To Trading?')
-          %span
-            %a.learn-more.pjaxload{:href => url_for('/get-started')}= l('Learn More')
-        #experienced-trader.center-aligned
-          %img.responsive{:src => url_for('images/pages/home/experienced-trader.svg')}
-          %h4= l('Experienced Traders')
-          %span
-            %a.learn-more.pjaxload{:href => url_for('/why-us')}= l('Learn More')
-      #trading-steps.grd-parent.grd-grid-10.grd-grid-phablet-12
-        .grd-parent.grd-grid-9.grd-grid-phablet-12
-          .grd-grid-12.grd-parent
-            #how-it-works-1.grd-grid-4.grd-no-gutter-right
-              %img.responsive{:src => url_for('images/pages/home/step-1.svg')}
-            #how-it-works-2.grd-grid-4.grd-no-gutter-right
-              %img.responsive{:src => url_for('images/pages/home/step-2.svg')}
-            #how-it-works-3.grd-grid-4.grd-no-gutter-right
-              %img.responsive{:src => url_for('images/pages/home/step-3.svg')}
-          .grd-grid-12.grd-parent
-            .grd-grid-4.grd-no-gutter-right
-              %p= l('Set your position')
-            .grd-grid-4.grd-no-gutter-right
-              %p= l('Get your price')
-            .grd-grid-4.grd-no-gutter-right
-              %p= l('Make your trade')
-        #how-it-works-4.grd-grid-3.grd-grid-phablet-12.grd-centered-phablet
-          %p= l('No risk, $10K virtual money account')
-          %a.pjaxload{:href => url_for('linkto_acopening.cgi?actype=virtual'), :class => 'button'}
-            %span= l('Try it now')
-#ticker-container
-    #hometicker
-#returns
-  .grd-container
-    #prices.grd-grid-6.grd-grid-mobile-12.grd-parent
-      .figures.grd-grid-6
-        = l('Up to')
-        %h1= l('[_1]', '100%')
-        = l('return on')
-        %a.pjaxload{:href => url_for('trade.cgi?market=forex&focus=risefall')}= l('rise/fall')
-        = l('trades')
-      .figures.grd-grid-6
-        = l('Up to')
-        %h1= l('[_1]', '1000%')
-        = l('return on trades you make')
-      .button.grd-grid-12.grd-with-padding
-        %a.pjaxload{:href => url_for('trade.cgi'), :class =>  'button'}
-          %span= l('View prices')
-    #try-now.grd-grid-6.grd-grid-mobile-12.grd-parent
-      .figures.grd-grid-6
-        != l('More than [_1] trades available', '<h1>1,000,000</h1>')
-      .figureses.grd-grid-6
-        != l('Under [_1] for market-leading returns', '<h1>$1</h1>')
-      .button.grd-grid-12.grd-with-padding
-        %a.pjaxload{:href => url_for('open_account.cgi'), :class => 'button'}
-          %span= l('Create free account')
+            %span.grd-grid-12.grd-no-gutter
+              %input.xemail{:name => 'Email', :id => 'Email', :type => 'email', :required => true, :placeholder => stash('emailtext')}
+              %input#chooseapassword.xpass{:name => 'chooseapassword', :type => 'password', :maxlength => '25', :required => true, :placeholder => stash('passwordstext')}
+              %input#actype{:type => 'hidden', :name => 'actype', :value => 'virtual'}
+              %input{:type => 'hidden', :name => 'l', :value => $lang}
+            %span.grd-grid-12.grd-no-gutter
+              %input.button.xtopcta{:id => 'btn_registration',:type => 'submit', :value => stash('createacc')}
+      .grd-grid-2.grd-hide-mobile.grd-hide-phablet
+  #xcta
+    #xreason
+      .grd-container
+        .grd-row-padding
+          %h1.center-aligned.xhead= l('Why 1,000,000 people around the world trust us')
+          .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-12
+            %ul 
+              %li.xlist1 
+                %h3= l('Sharp prices')
+                %p= l('Binary.com\'s patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market.')
+              %li.xlist2
+                %h3= l('Your funds are safe')
+                %p= l('With Binary.com, your money is secure. We segregate and hold client funds in secure AAA-rated banks.')
+          .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-12
+            %ul
+              %li.xlist3 
+                %h3= l('Trade your way')
+                %p= l('Don\'t limit yourself! Whatever your market view, Binary.com allows you to put your strategy to work and profit from your predictions.')
+              %li.xlist4
+                %h3= l('Go with the leader')
+                %p= l('Binary.com is the award-winning industry pioneer in online options trading.')
+    .xcta
+      %a.pjaxload.xreal{:href => url_for('linkto_acopening.cgi?actype=real'), :class => 'button'}
+        %span= l('Open real account')
+      %a.pjaxload.xvirtual{:href => url_for('linkto_acopening.cgi?actype=virtual'), :class => 'button'}
+        %span= l('Open virtual account')
+  #xtestimonial
+    .grd-container
+      .grd-row-padding
+        %h1.center-aligned.xhead2= l('What our clients are saying')
+        .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-6
+          .xquote
+            %p!= l('&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide&#8221;')
+          .xbubble-left
+          .xquoter-left
+            %p!= l('Joshua Cavallaro <span> Markets And You Trader.</span>')
+        .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-6
+          .xquote 
+            %p!= l('&#8220;Binary.com is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;')
+          .xbubble-right
+          .xquoter-right
+            %p!= l('Andrei Asavei <span>Top Binary Options Brokers</span>')
+  #xpayment.center-aligned
+    .grd-container
+      .grd-row-padding
+        %h1.center-aligned.xhead2= l('Payment methods')
+        .grd-grid-12
+          #visa.inlined
+          #mastercard.inlined
+          #int_bank_wire.inlined
+          #local_bank_transfer.inlined
+          #western_union.inlined
+          #citadel.inlined
+          #cuo-credit-card.inlined
+          #okpay.inlined
+          #cashu.inlined
+          #fastpay.inlined
+          #perfect_money.inlined
+          #moneybrokers.inlined
+          %p= l('Hundreds of deposit and withdrawal options')

@@ -25,9 +25,9 @@
           .grd-grid-12.center
             .ycta
               .button.pjaxload.yvirtual.pjaxload-focus.login-button
-                %span DAFTAR AKUN DEMO SEKARANG
+                %span Daftar akun demo sekarang
               .button#xscroll.pjaxload.ylearn.pjaxload-focus
-                %span Pelajari Lebih Lanjut
+                %span Pelajari lebih lanjut
 #section2
   .ycontent2
     .grd-container
@@ -50,11 +50,11 @@
               %i.fa.fa-check-square>
               Pilih Strategi Anda sendiri.
         .grd-grid-7.grd-grid-mobile-12
-          %img.responsive{:alt => "", :src => url_for('images/pages/home4/trade-tutorial_1.svg')}/
+          %img.responsive{:alt => "", :src => url_for('images/pages/home4/trade-tutorial1.svg')}/
       .grd-grid-12
         .ystart
           .button.pjaxload.pjaxload-focus.login-button
-            %span Mulai Trading
+            %span Mulai trading
 #section3
   .ycontent3
     .grd-container
@@ -88,9 +88,9 @@
       .grd-grid-12
         .ystart
           .button.pjaxload.pjaxload-focus.login-button
-            %span Daftar Akun Demo
+            %span= l('Daftar akun demo')
           %a.pjaxload.yreal{:href => "https://www.binary.com/c/linkto_acopening.cgi?actype=real&l=ID", :class => 'button'}
-            %span Daftar Akun Uang Riil
+            %span= l('Daftar akun uang riil')
         .center
           %i.fa.fa-lock{:style => "color:#e98024"}
             %span{:style => "color:#000;font-size:12px;"} Kami Menghormati Privasi Anda dan Tidak Akan Membagikan informasi data Anda dengan siapapun.
@@ -124,7 +124,7 @@
         .ypayment
           %img.responsive{:alt => "", :src => url_for('images/pages/home4/payment-agent-icons.png')}/
         %p.ymore
-          %a{:href => "https://www.binary.com/c/available_payment_methods.cgi?l=ID", :target => "_blank"} Dan Banyak Lagi
+          %a{:href => "https://www.binary.com/c/available_payment_methods.cgi?l=ID"} Dan Banyak Lagi
       .grd-grid-12.center
         %h2 Agen Pembayaran
         %p Anda dapat menggunakan agen pembayaran resmi Binary.com untuk deposit dan penarikan dana menggunakan berbagai pilihan bank lokal atau metode e-cash yang tidak disediakan oleh Binary.com.
@@ -142,7 +142,7 @@
         %span.grd-grid-12.grd-no-gutter.center
           %input#chooseapassword.ypass{:maxlength => "25", :name => "chooseapassword", :placeholder => "Pilih Kata Sandi", :required => "required", :type => "password"}
             %input#actype{:name => "actype", :type => "hidden", :value => "virtual"}
-              %input{:name => "l", :type => "hidden", :value => "EN"}
+              %input{:name => "l", :type => "hidden", :value => $lang}
         %span.grd-grid-12.grd-no-gutter.center
           %input#btn_registration.button.submit-button{:type => "submit", :value => "Daftar Akun Gratis"}
     %p.yreal-money

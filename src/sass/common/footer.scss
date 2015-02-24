@@ -3,7 +3,7 @@
     background: $COLOR_BLUE;
     h1 {
       font-size: 80%;
-      text-transform: uppercase;
+      // text-transform: uppercase;
     }
     a {
       font-size: 74%;
@@ -42,10 +42,21 @@
       max-width: 45px;
     }
     .social-network-icon {
-      width: 30px;
-      height: 30px;
-      padding-right: 5px;
-      padding-top: 10px;
+        width: 30px;
+        height: 30px;
+        padding-right: 5px;
+        padding-top: 10px;
+    }
+    .fb-gplus-follow{
+      margin-top:10px;
+      .fb-like{
+        margin-right: 5px;
+      }
+      .gplus{
+        position:relative;
+        display: inline-block;
+        top: 3px;
+      }
     }
     #appcache-reload-message {
       display: none;

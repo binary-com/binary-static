@@ -1,5 +1,5 @@
 <div class="grd-grid-12">
-    <h1>[% l("Rise / Fall Table") %]</h1>
+    <h1>[% l("Rise / Fall table") %]</h1>
     <form name="rise_fall" id="rise_fall_form" method="post" action="[%= request.url_for('rise_fall_table.cgi') %]">
         <fieldset>
             <div class="grd-parent grd-grid-4 grd-grid-mobile-12" >

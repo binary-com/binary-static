@@ -2,14 +2,16 @@
 -   title => l('[_1]: Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices',stash('broker_name')),
 -   next_link => '/why-us',
 -   createacc => l('Create free account'),
+-   emailtext   => l('Enter your email'),
+-   passwordstext   => l('Choose a password'),
 - );
 - my $lang = stash->{language};
 #banner
   .grd-container
     .grd-grid-12.grd-row-padding
       #xtop
-        %h1.dark The Premier Platform for Binary Options Trading
-        %p= l('Discover the easiest way to get started in the financial markets.')
+        %h1.dark= l('The Premier Platform for Binary Options Trading')
+        %p= l('Trade 24/7, even on weekends. Customize your trades to meet your needs')
     .grd-grid-12.grd-grid-mobile-12.grd-grid-phablet-12.grd-parent
       .grd-grid-2.grd-hide-mobile.grd-hide-phablet
       #open-account.grd-grid-8.grd-grid-mobile-12.grd-grid-phablet-12
@@ -17,8 +19,8 @@
         %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
           %span#virtual-fields
             %span.grd-grid-12.grd-no-gutter
-              %input.xemail{:name => 'Email', :id => 'Email', :type => 'email', :required => true, :placeholder => 'Enter Your Email'}
-              %input#chooseapassword.xpass{:name => 'chooseapassword', :type => 'password', :maxlength => '25', :required => true, :placeholder => 'Choose a Password'}
+              %input.xemail{:name => 'Email', :id => 'Email', :type => 'email', :required => true, :placeholder => stash('emailtext')}
+              %input#chooseapassword.xpass{:name => 'chooseapassword', :type => 'password', :maxlength => '25', :required => true, :placeholder => stash('passwordstext')}
               %input#actype{:type => 'hidden', :name => 'actype', :value => 'virtual'}
               %input{:type => 'hidden', :name => 'l', :value => $lang}
             %span.grd-grid-12.grd-no-gutter
@@ -31,48 +33,48 @@
     #xreason
       .grd-container
         .grd-row-padding
-          %h1.center-aligned.xhead Reasons to Choose Binary.com
+          %h1.center-aligned.xhead= l('Why 1,000,000 people around the world trust us')
           .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-12
             %ul 
               %li.xlist1 
-                %h3 Sharp prices
-                %p Binary.com's patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market.
+                %h3= l('Sharp prices')
+                %p= l('Binary.com\'s patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market.')
               %li.xlist2
-                %h3 Your funds are safe
-                %p With Binary.com, your money is secure. We segregate and hold client funds in secure AAA-rated banks.
+                %h3= l('Your funds are safe')
+                %p= l('With Binary.com, your money is secure. We segregate and hold client funds in secure AAA-rated banks.')
           .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-12
             %ul
               %li.xlist3 
-                %h3 Trade your way
-                %p Don't limit yourself! Whatever your market view, Binary.com allows you to put your strategy to work and profit from your predictions.
+                %h3= l('Trade your way')
+                %p= l('Don\'t limit yourself! Whatever your market view, Binary.com allows you to put your strategy to work and profit from your predictions.')
               %li.xlist4
-                %h3 Go with the leader
-                %p Binary.com is the award-winning industry pioneer in online options trading.
+                %h3= l('Go with the leader')
+                %p= l('Binary.com is the award-winning industry pioneer in online options trading.')
     .xcta
-      %a.pjaxload.xreal{:href => url_for('linkto_acopening.cgi?actype=real&l=EN'), :class => 'button'}
-        %span= l('OPEN REAL ACCOUNT')
-      %a.pjaxload.xvirtual{:href => url_for('linkto_acopening.cgi?actype=virtual&l=EN'), :class => 'button'}
-        %span= l('OPEN VIRTUAL ACCOUNT')
+      %a.pjaxload.xreal{:href => url_for('linkto_acopening.cgi?actype=real'), :class => 'button'}
+        %span= l('Open real account')
+      %a.pjaxload.xvirtual{:href => url_for('linkto_acopening.cgi?actype=virtual'), :class => 'button'}
+        %span= l('Open virtual account')
   #xtestimonial
     .grd-container
       .grd-row-padding
-        %h1.center-aligned.xhead2 What our Clients are Saying
+        %h1.center-aligned.xhead2= l('What our clients are saying')
         .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-6
           .xquote
-            %p!= "&#8220;I have been using binary.com for 4 years. It is easier than most platforms and the returns are amazing. I highly recommend binary.com&#8221;"
+            %p!= l('&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide&#8221;')
           .xbubble-left
           .xquoter-left
-            %p!= "Rob Panozo <span> Markets And You Trader.</span>"
+            %p!= l('Joshua Cavallaro <span> Markets And You Trader.</span>')
         .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-6
           .xquote 
-            %p!= '&#8220;Binary.com is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;'
+            %p!= l('&#8220;Binary.com is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;')
           .xbubble-right
           .xquoter-right
-            %p!= "Andrei Asavei <span>Top Binary Options Brokers</span>"
+            %p!= l('Andrei Asavei <span>Top Binary Options Brokers</span>')
   #xpayment.center-aligned
     .grd-container
       .grd-row-padding
-        %h1.center-aligned.xhead2 Payment Methods
+        %h1.center-aligned.xhead2= l('Payment methods')
         .grd-grid-12
           #visa.inlined
           #mastercard.inlined
@@ -86,4 +88,4 @@
           #fastpay.inlined
           #perfect_money.inlined
           #moneybrokers.inlined
-          %p and more.
+          %p= l('Hundreds of deposit and withdrawal options')

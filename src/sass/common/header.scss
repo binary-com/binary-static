@@ -153,9 +153,9 @@
         color: $COLOR_WHITE;
         text-decoration: none;
         letter-spacing: 0;
-        text-transform: uppercase;
-        font-size: 100%;
-        padding: 0px 5px;
+        text-transform: capitalize;
+        font-size: 110%;
+        padding: 0px 10px;
         word-wrap: break-word;
       }
     }

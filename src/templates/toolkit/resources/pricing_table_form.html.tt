@@ -1,5 +1,5 @@
 <div class='grd-grid-12'>
-    <h1>[% l('Pricing Table') %]</h1>
+    <h1>[% l('Pricing table') %]</h1>
     <div id="pricing_table_form_div" class='grd-row-padding'>
         <form id="pricing_table_input" name="pricing_table_input" method="GET" action=[% form_url %]>
             <fieldset>

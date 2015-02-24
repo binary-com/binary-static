@@ -174,13 +174,15 @@
     text-align: center;
     line-height: 100%;
     border-radius: 4px;
-    font-weight: 700;
-    text-transform: uppercase;
     display: inline-block;
     background: #2a3052;
     padding: 9px 10.83333%;
     border: 0;
     white-space: normal;
+}
+.submit-button:hover{
+    background-color:#14602B;
+    text-decoration: none;
 }
 .zvirtual-money {
     font-size: 100%;

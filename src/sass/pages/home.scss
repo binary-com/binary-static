@@ -6,107 +6,20 @@
    #banner {
     background: url("../images/pages/home/banner-background_1.png") no-repeat 0 0;
    }
-  #slider {
-    .invisibleslides {
-        display: none;
-    }
-    .slides-container {
-        .slides_control {
-            max-width: 2010px;
-        }
-    }
-  }
-  div.slides {
-    width: 100%;
-    height: 280px;
-    padding-top:20px;
-    a { display:block }
-    p { font-size: 90% }
-  }
-  #slide-1 {
-    background: url("../images/pages/home/slide-1_1.png") no-repeat 18.5% 0.9375em;
-    h1 {
-      width: 14%;
-    }
-    p {
-      width: 15%;
-    }
-    a.learn-more { padding-top:10px; }
-  }
-  #slide-2 {
-    background: url("../images/pages/home/slide-2_1.png") no-repeat 18.5% 0.9375em;
-    h1 {
-      width: 18%;
-    }
-    p {
-      width: 15%;
-    }
-  }
-  #slide-3 {
-    background: url("../images/pages/home/slide-3_1.png") no-repeat 16.5% 0.75em;
-    h1 {
-      width: 15%;
-    }
-    p {
-      width: 15%;
-    }
-  }
-  #slide-4 {
-    background: url("../images/pages/home/slide-4_1.png") no-repeat 15% 0.9375em;
-    h1 {
-      width: 15%;
-    }
-    p {
-      width: 10%;
-    }
-  }
-  #slide-5 {
-    background: url("../images/pages/home/slide-5_1.png") no-repeat 16% 0.9375em;
-    h2 {
-      margin-bottom: 0.5em;
-    }
-    p {
-      width: 15%;
-    }
-  }
-
-  .slides-pagination {
-    margin-top: 0;
-    li {
-      display: block;
-      list-style: none;
-      margin: 0 5px;
-      float: left;
-      background: $COLOR_GRAY;
-      a {
-	border-radius: 2px;
-        display: block;
-        padding: 5px;
-	line-height:5px;
-        &:hover {
-            text-decoration: none;
-        }
-      }
-    }
-    li.current a {
-      background: $COLOR_ORANGE;
-    }
-  }
   #open-account {
     background: $COLOR_ORANGE;
-    border-radius: 0 0 4px 4px;
-    color: #FFFFFF;
+    color: $COLOR_WHITE;
     text-align: center;
-    padding: 0 0 10px;
+    border-radius: 0;
+    margin-top: 10px;
+    text-align: center;
+    padding: 0 0 0;
     p {
       line-height: 2em;
       margin: 0;
-      padding: 5px 0;
+      padding: 5px 5px;
       background: $COLOR_DARK_BLUE;
-      font-size: 72%;
-    }
-    form {
-        font-size: 74%;
+      font-size: 100%;
     }
     #virtual-fields {
         input, select, textarea {
@@ -115,11 +28,6 @@
             padding: 0px;
         }
         margin: 4px 0;
-        .acc-input {
-            margin: 10px 0;
-            width: 100%;
-            display: inline-block;
-        }
     }
     input[type=submit] {
       @include link-button;
@@ -127,82 +35,200 @@
       padding: 9px 10.83333%;
       border: 0;
       white-space: normal;
-    }
-  }
-  #help {
-        clearfix { clear:both; visibility:hidden; content:'.' }
-        background: $COLOR_LIGHT_GRAY;
-        #new-trader, #experienced-trader {
-          background: url("../images/pages/home/stripe_1.png") repeat;
-          border-radius: 10px;
-          img.responsive {
-            width: 50%;
-          }
-        }
-        #experienced-trader {
-            margin-top: 20px;
-        }
-        #trading-steps {
-          img.responsive {
-              max-width: 85%;
-          }
-          p {
-              text-align: center;
-          }
-        }
-        #how-it-works-4 {
-          text-align: center;
-          p {
-            margin-top: 20px;
-            margin-bottom: 1em;
-          }
-        }
-    }
-  #ticker-container {
-      clear:both;
-      #hometicker {
-        background: $COLOR_GRAY;
-        height: 38px;
-        border-bottom: 1px solid $COLOR_GRAY_SHADE;
-        border-top: 1px solid $COLOR_GRAY_SHADE;
-        letter-spacing: 1px;
-        white-space: nowrap;
-        overflow: hidden;
-        ul {
-          font-size: 90%;
-          margin: 0;
-          li {
-            padding-top:11px;
-            margin-right:30px;
-            display: inline;
-            width: auto;
-            line-height:1;
-            a.ticker-link {
-                color: $COLOR_BLACK;
+      font-size:18px;
+      &:hover {
+                text-decoration: none;
+                background-color: $COLOR_DARK_GREEN;
             }
-          }
-        }
-        span.fall {
-          color: $COLOR_RED;
-        }
-        span.rise {
-          color: $COLOR_GREEN;
-        }
-      }
-  }
-  #returns {
-    margin:20px 0 0 0;
-    background: $COLOR_WHITE;
-    #prices {
-        border-right:1px solid #DEDEDE;
     }
-    #prices, #try-now {
-      display:inline-block;
-      text-align: center;
-      h1 { font-weight:100; color: $COLOR_BLUE; padding:4px 0 4px 0; font-size:230%; }
-    }
-    #prices {
-      padding-right:10px;
+    form {
+        font-size: 100%;
     }
   }
+#xreason {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: $COLOR_LIGHT_GRAY;
+    padding-bottom: 40px;
+}
+#xtop {
+    padding-top: 50px;
+    text-align: center;
+    h1 {
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
+}
+#xbadges {
+    img {
+        text-align: center;
+        max-width: 100px;
+        position: relative;
+        top: 50px;
+        margin-right: 20px;
+    }
+    text-align: center;
+}
+.xhead {
+    margin-bottom: 20px;
+    margin-top: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $COLOR_GRAY;
+}
+.inlined {
+    display: inline-block;
+}
+.xhead2 {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $COLOR_GRAY;
+}
+.xlist1 {
+    background: url(../images/pages/home/xicon-1.png) no-repeat;
+    padding-left: 50px;
+    min-height: 24px;
+    background-size: 30px;
+}
+.xlist2 {
+    background: url(../images/pages/home/xicon-2.png) no-repeat;
+    padding-left: 50px;
+    min-height: 24px;
+    background-size: 30px;
+}
+.xlist3 {
+    background: url(../images/pages/home/xicon-3.png) no-repeat;
+    padding-left: 50px;
+    min-height: 24px;
+    background-size: 30px;
+}
+.xlist4 {
+    background: url(../images/pages/home/xicon-4.png) no-repeat;
+    padding-left: 50px;
+    min-height: 24px;
+    background-size: 30px;
+}
+.xcta {
+    position: relative;
+    bottom: 30px;
+    text-align: center;
+    .xreal {
+        margin-right: 10px;
+        span {
+            border-radius: 0;
+            padding: 20px 20px;
+        }
+    }
+    .xvirtual span {
+        background-color: $COLOR_BLUE;
+        border-radius: 0;
+        padding: 20px 20px;
+        &:hover {
+            text-decoration: none;
+            background-color: $COLOR_DARK_GREEN;
+        }
+    }
+}
+.xquote {
+    background-color: $COLOR_LIGHT_GRAY;
+    padding: 20px 40px;
+    p {
+        font-style: italic;
+    }
+}
+.xbubble-right {
+    content: '';
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 25px 5px 0 10px;
+    border-color: $COLOR_LIGHT_GRAY  transparent transparent transparent;
+    position: relative;
+    left: 80%;
+}
+.xbubble-left {
+    content: '';
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 25px 10px 0 5px;
+    border-color: $COLOR_LIGHT_GRAY  transparent transparent transparent;
+    position: relative;
+    left: 10%;
+}
+.xquoter-left {
+    text-align: left;
+}
+.xquoter-right {
+    text-align: right;
+}
+.xemail, .xpass {
+    width: 35% !important;
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 10px !important;
+    font-size: 16px;
+}
+.xemail {
+    margin-right: 20px;
+}
+.xpass {
+    margin-left: 20px;
+}
+.xtopcta {
+    display: inline-block;
+    width: 50% !important;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 20px !important;
+    border-radius: 0 !important;
+}
+.xquoter-left p span, .xquoter-right p span {
+    font-size: 12px;
+    font-style: italic;
+}
+}
+
+@media screen and (max-width: 480px) {
+    #xtop {
+        padding-top: 30px;
+    }
+    .xhead2 {
+        margin-top: 30px;
+    }
+    .xemail {
+        width: 80% !important;
+        margin-right: 0;
+    }
+    .xpass {
+        width: 80% !important;
+        margin-left: 0;
+    }
+    .xtopcta {
+        width: 80%;
+    }
+    .xtestimonial h1, .xhead {
+        padding: 10px;
+    }
+    .xcta {
+        position: initial;
+        .xreal {
+            margin-right: 0px;
+            span {
+                font-weight: 700;
+                border-radius: 0;
+                padding: 20px 20px;
+                width: 60%;
+                margin: 10px 0;
+            }
+        }
+        .xvirtual span {
+            background-color: $COLOR_BLUE;
+            font-weight: 700;
+            border-radius: 0;
+            padding: 20px 20px;
+            width: 60%;
+        }
+    }
 }
