@@ -1,13 +1,20 @@
 #footer {
+    background: $COLOR_LIGHT_GRAY;
+    border-top: 1px solid $COLOR_GRAY;
+    padding: 10px;
+}
+
+#footer, #footer a {
+    color: $COLOR_DARK_GRAY;
+}
+
   #footer-menu {
-    background: $COLOR_BLUE;
     h1 {
       font-size: 80%;
       text-transform: uppercase;
     }
     a {
       font-size: 74%;
-      color: $COLOR_WHITE;
     }
     li {
       line-height: 1;
@@ -18,19 +25,18 @@
   }
 
   #footer-regulatory {
-    background: $COLOR_DARK_BLUE;
+    background: $COLOR_LIGHT_GRAY;
     a, span {
       display: inline-block;
     }
     a {
-      color: $COLOR_WHITE;
       text-decoration: underline;
     }
     #regulatory-text {
       line-height: 1.2em;
       text-align: justify;
-      color: $COLOR_WHITE;
-      font-size: 64%;
+      font-size: 55%;
+      opacity: .75;
     }
     #iom_icon_footer {
       max-width: 90px;
@@ -79,4 +85,3 @@
       color: $COLOR_RED;
     }
   }
-}
