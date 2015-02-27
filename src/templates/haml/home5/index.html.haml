@@ -1,0 +1,610 @@
+- stash(
+-   title => l('Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices'),
+-   next_link => '/why-us',
+-   createacc => l('Create free account now'),
+- );
+- my $lang = stash->{language};
+:css
+  .static_full .section:first-child{padding-bottom:0;}
+  .static_full .section:not(:first-child){padding:0 0;}
+  .section h1{margin-top:60px;}
+  .section:last-child h1{margin-top:10px;}
+  .acc-input label{margin-top:14px;font-size:1.2em;}
+  .acc-input input{font-size:1.2em;}
+  .home-content #open-account #virtual-fields .acc-input {margin:3px 0;}
+  #virtual-acc-form input.button{font-size:1.4em;width:100%;}
+  .home-content #open-account p{background-color:inherit;color:#fff;}
+  .home-content #open-account #virtual-fields input, .home-content #open-account #virtual-fields select, .home-content #open-account #virtual-fields textarea{padding:10px;}
+  .home-content #open-account input[type=submit]{padding:18px;}
+  .home-content #open-account .acc-input-security p{font-size: 1em;color:#754012;}
+  .home-content #open-account .learn-first{font-size: 1.2em;color:#2a3052;text-decoration:underline;}
+  .form-title{color: #2a3052;font-size: 1em;border-bottom: solid 1px #ccc;padding: 10px;}
+  .acc-input-security-icon{opacity:1;margin-right:10px;}
+  .section-padding{padding:30px 0px;}
+  .section-margin{margin-top:30px;}
+  .seen-on{background-color:#fff;}
+  .seen-on .light-text{text-align:center;color:#888;margin:0;}
+  #help{padding:30px;border-bottom: 1px solid #c2c2c2;}
+  .accent-color-1{color:#e98024;}
+  .text-center{text-align:center;}
+  .text-left{text-align:left;}
+  .text-right{text-align:right;}
+  .max-100{max-width:100%}
+  .referral-box{ position: relative; margin: 40px 0; text-align: left; font-size: 0.8em; color: #3A5167; background-color: rgba(42, 48, 82, 0.15); padding: 27px; border-radius: 4px; }
+  .referral-box p, .signature{position:relative;margin:0}
+  .referral-box .signature{font-style:italic;color:#8E96A4;position: absolute;right: 24px;}
+  .comm{position:absolute;font-size:23em;color:#EBEDF4;}
+  .open-comm{top: -61px;left: -23px;}
+  .close-comm{top: 19px;right: -21px;}
+  .box-wrap{
+      background: rgba(255,255,255,1);
+      border-radius: 0px;
+      padding:20px;
+  }
+  .box-wrap header{ width: 100%;
+                    background-color: #fff;
+                    padding:inherit 20px;
+                    }
+  .box-wrap .title{color:#2a3052;min-height:60px;margin:30px 0 0;line-height: 1.3em;}
+  .box-wrap .body p{color:#454a63;text-align:center;margin:0px 0 0 0;line-height: 1.3em;}
+  .box-wrap .img-w{text-align:center;}
+  .box-wrap .img-w img{width:90px;max-width:100%;}
+  .box-wrap.signup{overflow:visible;background-color:#e98024;}
+  .box-wrap.signup header{background-color:#e98024;}
+  .box-wrap.signup header h3{margin: 25px 0}
+  .box-wrap.signup header .title{color:#fff;margin: 0 0 10px;min-height: inherit;}
+
+    .paragraph-style{line-height:1.7em; color:#2a3052;}
+    .title{color:#2a3052;line-height:1em;}
+    .small{font-size:0.7em;}
+    #benefits{background-color:#f2f2f2; margin-top:0px;}
+    #benefits .acc-input{margin:0}
+    .home-content #open-account input[type=submit]{border-radius:0}
+    .talk-bubble:before{
+    content: "";
+    position: absolute;
+    bottom: -31px;
+    right: 70%;
+    border-width: 0 0 31px 74px;
+    border-style: solid;
+    border-color: transparent #f2f2f2;
+    display: block;
+    }
+    .talk-bubble:after{
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    right: 77%;
+    border-width: 0 0 30px 41px;
+    border-style: solid;
+    border-color: transparent #fff;
+    display: block;
+    width: 0;
+    }
+    .home-content #open-account .input-button {
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    line-height: 100%;
+    border-radius: 0px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    background: #2a3052;
+    padding: 18px;
+    border: 0;
+    white-space: normal;
+    font-size: 1.4em;
+    width: 100%;
+    cursor:pointer
+    }
+    .home-content #open-account #virtual-fields input, .home-content #open-account #virtual-fields select, .home-content #open-account #virtual-fields textarea{
+      border-radius:0px;
+    }
+    .home-content #open-account .input-button:hover {
+      background: #2a3052;
+      border: solid 2px #fff;
+      margin-top: -2px !important;
+      margin-bottom: -2px !important;
+    }
+.home-content.paragraph-style
+  #banner.section-margin{:style=>'background-position-y: 68%;background-position-x: -272px;'}
+    .grd-container{:style=>''}
+      .grd-grid-12.text-center{:style=>'padding-top:0px'}
+        %h1.dark.title{:style=>'font-size:33px;color:#2a3052;margin-bottom:13px;margin-top:-4px;'}= l('The premier platform for binary options trading')
+        %p.paragraph-style{:style=>'font-size: 1.2em;margin:0px;'}
+          = l('The most simple and exciting way to experience financial markets.')
+      .grd-grid-7.grd-grid-mobile-12.grd-grid-phablet-12.grd-parent.section-margin
+        %p.paragraph-style.grd-hide-phablet.grd-hide-mobile.talk-bubble{:style=>'padding:25px 22px 20px 44px; margin-top:0px;position:relative;font-size:1.3em;line-height:1.3em;background:#f2f2f2'}
+          != ('<strong style="font-size: 1.8em;position: absolute;left: 16px;top: 25px;font-family:serif;">&ldquo;</strong> For me personally Binary.com is by far the best place to trade binaries online. Not only are they well established and a trusted source, I find their pricing super competitive across the wide range of markets. <strong style="font-size: 1.8em;position: absolute;bottom: 20px;font-family:serif;">&rdquo;</strong>')
+        .grd-container.grd-hide-phablet.grd-hide-mobile{:style=>'margin-top:40px'}
+          .wrap
+            %img.responsive#new-trader-icon{:style=>'margin-left: 8px;width: 42px;',:src => url_for('images/pages/home5/user-icon.svg')}
+            %h4.title.text-center{:style=>'display:inline-block;margin-left:21px;'}
+              = l('Vinod G., UK')
+        .grd-container
+          .grd-grid-4.grd-hide-tablet.grd-hide-phablet.grd-hide-mobile{:style=>'padding-top:8px'}
+            %p.text-center.title{:style=>'margin:10px 0 0 0;line-height:1.7em;padding: 0 0px;'}= '1st in the market and trusted by over 1 Million users'
+          .grd-hide-phablet.grd-hide-mobile.grd-show-tablet.grd-grid-tablet-12.grd-hide.text-center{:style=>'padding-top:30px'}
+            %p.text-center.title{:style=>'margin:-10px 0 12px;line-height:1.7em;padding: 0 0px;'}= '1st in the market and trusted by over 1 Million users'
+          .grd-grid-8.grd-hide-phablet.grd-hide-mobile.grd-grid-tablet-12{:style=>'padding-top:8px'}
+            .grd-container.grd-show-mobile.grd-hide
+              -#mobile
+              .grd-with-padding.grd-grid-4.grd-grid-mobile-12.text-center{:style=>'padding-top:0px;'}
+                %img.responsive{:style=>'width:auto;':src=>url_for('images/pages/home5/regulated-icon-1.png')}
+              .grd-with-padding.grd-grid-4.grd-grid-mobile-6.text-center{:style=>'padding-top:0px'}
+                %img.responsive{:style=>'width:auto;',:src=>url_for('images/pages/home5/regulated-icon-2.png')}
+              .grd-with-padding.grd-grid-4.grd-grid-mobile-6.text-center{:style=>'padding-top:0px'}
+                %img.responsive{:style=>'width:auto;',:src=>url_for('images/pages/home5/mga-icon.svg')}
+            .grd-container.grd-show-phablet.grd-show-tablet.grd-hide
+              -#phablet,tablet
+              .grd-with-padding.grd-grid-4.grd-grid-mobile-12{:style=>'padding-top:0px;text-align:right;'}
+                %img{:style=>'width:105px;',:src=>url_for('images/pages/home5/regulated-icon-2.png')}
+              .grd-with-padding.grd-grid-4.grd-grid-mobile-6.text-center{:style=>'padding-top:0px'}
+                %img{:style=>'width:105px;':src=>url_for('images/pages/home5/regulated-icon-1.png')}
+              .grd-with-padding.grd-grid-4.grd-grid-mobile-6{:style=>'padding-top:0px'}
+                %img{:style=>'width:105px;',:src=>url_for('images/pages/home5/mga-icon.svg')}
+            .grd-container.grd-hide-tablet.grd-hide-phablet.grd-hide-mobile.grd-show{:style=>'text-align: right;margin-right: -10px;'}
+              -#desktop
+              %img{:style=>'width:105px;margin-right: 18px;',:src=>url_for('images/pages/home5/regulated-icon-2.png')}
+              %img{:style=>'width:105px;margin-right: 18px;':src=>url_for('images/pages/home5/regulated-icon-1.png')}
+              %img{:style=>'width:105px;',:src=>url_for('images/pages/home5/mga-icon.svg')}
+      .grd-grid-4.grd-grid-tablet-4.grd-parent.section-margin.grd-show-tablet.grd-hide-phablet.grd-hide-mobile.grd-push-1
+        -#tablet version
+        .box-wrap.signup{:style=>'margin:0 9px 0 -9px;min-height: inherit;padding-bottom:0'}
+          %header{:style=>'background:none;'}
+            %h3.title.padding.text-center{:style=>'min-height: inherit;margin: 0 0 20px 0;'}= l('Start trading binary options')
+          #open-account.body{:style=>'background:none;'}
+            .form-w{:style=>'padding:0 0px;'}
+              %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
+                %span#virtual-fields
+                  %span.acc-input{:style=>'margin:0px 0 0 0'}
+                    %label.grd-grid-12.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12{:for => 'Email',:style=>'padding:0;margin-top:0px;text-align: center;padding-right: 0px;'}= l('Your Email:')
+                    %span.grd-grid-12.grd-no-gutter.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12{:style=>'height:40px;overflow:hidden;'}
+                      %input.import-fb-email-field.grd-grid-10{:name => 'Email', :id => 'Email', :type => 'email', :required => true, :placeholder=>'your email here':style=>'width:83.33333%;text-align: left;'}
+                      .import-fb-email-btn.grd-grid-2{:title=>'Import Your Email From Facebook',:style=>'cursor:pointer; background:#3b5998;height:100%;'}
+                        %img{:src=>url_for('images/pages/home5/facebook-letter.svg'),:style=>'max-height: 100%;max-width: 100%;margin-top: 3px;'}
+                  %span.acc-input{:style=>'margin-top:-9px'}
+                    %label.grd-grid-12.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12{:for => 'chooseapassword',:style=>'padding:0;margin:0px 0 0 0;text-align: center;padding-right: 0px;'}= l('Password:')
+                    %span.grd-grid-12.grd-no-gutter.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12
+                      %input#chooseapassword{:name => 'chooseapassword', :type => 'password', :maxlength => '25', :required => true,:style=>'width: 91%;'}
+                  %span.acc-input{:style=>'margin-top:9px'}
+                    .grd-grid-12{:style=>'margin:0px;padding:0px'}
+                      %button{:id => 'no_btn_registration',:style=>'margin:0px',:class=>'input-button button'}
+                        != l('Create free<br/>account now')
+                %input#actype{:type => 'hidden', :name => 'actype', :value => 'virtual'}
+                %input{:type => 'hidden', :name => 'l', :value => $lang}
+              %p.paragraph-style{:style=>'margin:0px;padding:0px;line-height: 1.5em;font-weight: bold;'}= l('Get your free $10k virtual money account')
+        .bottom-dark-box.acc-input-security{:style=>'margin:0 0 0 -9px;overflow:hidden;bottom:0;padding: 0px 0;background:#15212d;font-size: 72%;width:100%;text-align:center;color:#fff'}
+          %p.paragraph-style{style=>'color:inherit; padding: 1px 8px;line-height: 1.3em;font-size: 0.9em;'}
+            %img.acc-input-security-icon{:src=>url_for('images/pages/home5/security-w.svg'),:style=>'margin: -6px 5px 0;max-width:13px;'}
+            = l('we use highest security and privacy measures')
+      .grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4.grd-parent.grd-centered-phablet.grd-centered-mobile.section-margin.grd-hide
+        -#phablet- version
+        .box-wrap.signup{:style=>'margin:0;min-height: inherit;padding-bottom:0'}
+          %header{:style=>'background:none;'}
+            %h3.title.padding.text-center{:style=>'min-height: inherit;margin: 0 0 20px 0;'}= l('Start trading binary options')
+          #open-account.body{:style=>'background:none;'}
+            .form-w{:style=>'padding:0 0px;'}
+              %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
+                %span#virtual-fields
+                  %span.acc-input{:style=>'margin:0px 0 0 0'}
+                    %label.grd-grid-4.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12{:for => 'Email',:style=>'padding:0;margin-top:0px;text-align: center;padding-right: 0px;'}= l('Your Email:')
+                    %span.grd-grid-8.grd-no-gutter.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12{:style=>'height:40px;overflow:hidden;'}
+                      %input.import-fb-email-field.grd-grid-10{:name => 'Email', :id => 'Email', :type => 'email', :required => true, :placeholder=>'your email here':style=>'width:83.33333%;text-align: left;'}
+                      .import-fb-email-btn.grd-grid-2{:title=>'Import Your Email From Facebook',:style=>'cursor:pointer; background:#3b5998;height:100%;'}
+                        %img{:src=>url_for('images/pages/home5/facebook-letter.svg'),:style=>'max-height: 100%;max-width: 100%;margin-top: 3px;'}
+                  %span.acc-input{:style=>'margin-top:-9px'}
+                    %label.grd-grid-4.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12{:for => 'chooseapassword',:style=>'padding:0;margin:0px 0 0 0;text-align: center;padding-right: 0px;'}= l('Password:')
+                    %span.grd-grid-8.grd-no-gutter.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12
+                      %input#chooseapassword{:name => 'chooseapassword', :type => 'password', :maxlength => '25', :required => true,:style=>''}
+                  %span.acc-input{:style=>'margin-top:9px'}
+                    .grd-grid-12{:style=>'margin:0px;padding:0px'}
+                      %button{:id => 'no_btn_registration',:style=>'margin:0px',:class=>'input-button button'}
+                        != l('Create free<br/>account now')
+                %input#actype{:type => 'hidden', :name => 'actype', :value => 'virtual'}
+                %input{:type => 'hidden', :name => 'l', :value => $lang}
+              %p.paragraph-style{:style=>'margin:0px;padding:0px;line-height: 1.5em;font-weight: bold;'}= l('Get your free $10k virtual money account')
+        .bottom-dark-box.acc-input-security{:style=>'margin:0;overflow:hidden;bottom:0;padding: 0px 0;background:#15212d;font-size: 72%;width:100%;text-align:center;color:#fff'}
+          %p.paragraph-style{style=>'color:inherit; padding: 1px 8px;line-height: 1.3em;font-size: 0.9em;'}
+            %img.acc-input-security-icon{:src=>url_for('images/pages/home5/security-w.svg'),:style=>'margin: -6px 5px 0;max-width:13px;'}
+            = l('we use highest security and privacy measures')
+  .seen-on.section-margin.grd-show-mobile.grd-show-phablet.grd-hide
+    .grd-container
+      .grd-show-mobile.grd-show-phablet.grd-hide-tablet.grd-grid-mobile-12.grd-grid-phablet-12.grd-hide.text-center{:style=>'padding-top:10px'}
+        %h4.title.text-center{:style=>'margin:0;line-height:1.7em;padding: 0 0px;'}= '1st in the market and trusted by over 1 Million users'
+      .grd-grid-mobile-12.grd-grid-phablet-12{:style=>'padding-top:8px'}
+        .grd-container.grd-show-mobile.grd-hide
+          -#mobile
+          .grd-with-padding.grd-grid-4.grd-grid-mobile-12.text-center{:style=>'padding-top:0px;'}
+            %img.responsive{:style=>'width:105px;':src=>url_for('images/pages/home5/regulated-icon-1.png')}
+          .grd-with-padding.grd-grid-4.grd-grid-mobile-6.text-center{:style=>'padding-top:0px'}
+            %img.responsive{:style=>'width:105px;',:src=>url_for('images/pages/home5/regulated-icon-2.png')}
+          .grd-with-padding.grd-grid-4.grd-grid-mobile-6.text-center{:style=>'padding-top:0px'}
+            %img.responsive{:style=>'width:105px;',:src=>url_for('images/pages/home5/mga-icon.svg')}
+        .grd-container.grd-show-phablet.grd-hide
+          -#phablet,tablet
+          .grd-with-padding.grd-grid-4.grd-grid-mobile-12{:style=>'padding-top:0px;text-align:right;'}
+            %img.responsive{:style=>'width:105px;',:src=>url_for('images/pages/home5/regulated-icon-2.png')}
+          .grd-with-padding.grd-grid-4.grd-grid-mobile-6.text-center{:style=>'padding-top:0px'}
+            %img.responsive{:style=>'width:105px;':src=>url_for('images/pages/home5/regulated-icon-1.png')}
+          .grd-with-padding.grd-grid-4.grd-grid-mobile-6{:style=>'padding-top:0px'}
+            %img.responsive{:style=>'width:105px;',:src=>url_for('images/pages/home5/mga-icon.svg')}
+  #ticker-container.section-margin
+    #hometicker
+  .seen-on.section-margin{:style=>''}
+    .grd-container
+      .grd-grid-12{:style=>'padding:10px 0'}
+        %h3.title.text-center= l('As Seen On')
+        .grd-container
+          .grd-with-padding.grd-grid-3.grd-grid-mobile-4.text-center{:style=>'padding-top:14px'}
+            %img.responsive{:style=>'margin-top:32px;':src=>url_for('images/pages/home5/binaryoptions.net.au-db.jpg')}
+          .grd-with-padding.grd-grid-2.grd-grid-mobile-4.text-center{:style=>'padding-top:14px'}
+            %img.responsive{:style=>'margin-top:16px;max-width:56px':src=>url_for('images/pages/home5/forexpeacearmy-logo-db.png')}
+          .grd-with-padding.grd-grid-2.grd-grid-mobile-4.text-center{:style=>'padding-top:14px'}
+            %img.responsive{:style=>'margin-top:16px;max-width:188px':src=>url_for('images/pages/home5/BestBinary300x100-db-big.png')}
+          .grd-with-padding.grd-grid-2.grd-grid-mobile-6.text-center{:style=>'padding-top:14px'}
+            %img.responsive{:style=>'margin-top:17px;max-width:87px':src=>url_for('images/pages/home5/money-logo-v-db.png')}
+          .grd-with-padding.grd-grid-3.grd-grid-mobile-6.text-center{:style=>'padding-top:14px'}
+            %img.responsive{:style=>'margin-top:31px;':src=>url_for('images/pages/home5/binary-options.net-db.jpg')}
+  #benefits.section-margin{:style=>'padding-bottom:30px;'}
+    .grd-container
+      .grd-grid-12.grd-parent
+        %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4
+          .box-wrap.section-margin
+            %header
+              .img-w.text-center
+                %img.responsive#new-trader-icon{:style=>'max-width:150px;',:src => url_for('images/pages/home5/prices-icon.svg')}
+              %h4.title.padding.text-center= l('Best-in-class pricing for binaries')
+            .body
+              %p.paragraph-style= l('Our exclusive pricing technology gives you the best possible opportunity to make your money work for you.');
+        %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4
+          .box-wrap.section-margin
+            %header
+              .img-w.text-center
+                %img.responsive#new-trader-icon{:style=>'max-width:150px;',:src => url_for('images/pages/home5/binary-product-selection.svg')}
+              %h4.title.padding.text-center= l('Choose From 10 Seconds To 365 Days')
+            .body
+              %p.paragraph-style= l('$1 to $100,000 payouts, low-risk to high-leverage, and much more. We offer limitless profit opportunities.');
+        %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4
+          .box-wrap.section-margin
+            %header
+              .img-w.text-center
+                %img.responsive#new-trader-icon{:style=>'max-width:150px;',:src => url_for('images/pages/home5/first-icon.svg')}
+              %h4.title.padding.text-center= l('Technology leader with more than 10 years experience')
+            .body
+              %p.paragraph-style= l('Trade with confidence with the industry pioneer.');
+        %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4
+          .box-wrap.section-margin
+            %header
+              .img-w
+                %img.responsive#new-trader-icon{:style=>'max-width:150px;',:src => url_for('images/pages/home5/support-icon.svg')}
+              %h4.title.padding.text-center= l('Get help and support when you need it')
+            .body
+              %p.paragraph-style= l('Our exclusive pricing technology gives you the best possible opportunity to make your money work for you.');
+        %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4
+          .box-wrap.section-margin
+            %header
+              .img-w
+                %img.responsive#new-trader-icon{:style=>'max-width:150px;',:src => url_for('images/pages/home5/charting-icon.svg')}
+              %h4.title.padding.text-center= l('Charting tools like nowhere else')
+            .body
+              %p.paragraph-style= l('Our exclusive pricing technology gives you the best possible opportunity to make your money work for you.');
+        %section.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4
+          .box-wrap.section-margin.signup.grid-signup-box{:style=>'padding:0;position:relative;'}
+            %div
+              %header{:style=>'padding:15px 0;'}
+                %h3.title.padding.text-center{:style=>'min-height:inherit;padding:0 20px;'}= l('Start trading binary options')
+              .body{:style=>'padding:0px 20px 10px 20px;'}
+                #open-account.grd-grid-12{:style=>'padding:0px;border-radius:0px;margin-top:0px;padding-top:0px;'}
+                  .form-w{:style=>'padding:0 0px;'}
+                    %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
+                      %span#virtual-fields
+                        %span.acc-input{:style=>'margin:0px 0 0 0'}
+                          %label.grd-grid-12.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12{:for => 'Email',:style=>'padding:0;margin-top:0px;text-align: center;padding-right: 0px;'}= l('Your Email:')
+                          %span.grd-grid-12.grd-no-gutter.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12{:style=>'height:40px;overflow:hidden;'}
+                            %input.import-fb-email-field.grd-grid-10{:name => 'Email', :id => 'Email', :type => 'email', :required => true, :placeholder=>'your email here':style=>'width:83.33333%;text-align: left;'}
+                            .import-fb-email-btn.grd-grid-2{:title=>'Import Your Email From Facebook',:style=>'cursor:pointer; background:#3b5998;height:100%;'}
+                              %img{:src=>url_for('images/pages/home5/facebook-letter.svg'),:style=>'max-height: 100%;max-width: 100%;margin-top: 3px;'}
+                        %span.acc-input{:style=>'margin-top:-9px'}
+                          %label.grd-grid-12.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12{:for => 'chooseapassword',:style=>'padding:0;margin:0px 0 0 0;text-align: center;padding-right: 0px;'}= l('Password:')
+                          %span.grd-grid-12.grd-no-gutter.grd-no-gutter.grd-grid-phablet-12.grd-grid-tablet-12.grd-grid-mobile-12
+                            %input#chooseapassword{:name => 'chooseapassword', :type => 'password', :maxlength => '25', :required => true,:style=>''}
+                        %span.acc-input{:style=>'margin-top:9px'}
+                          .grd-grid-12{:style=>'margin:0px;padding:0px'}
+                            %button{:id => 'no_btn_registration',:style=>'margin:0px',:class=>'input-button button'}
+                              != l('Create free<br/>account now')
+                      %input#actype{:type => 'hidden', :name => 'actype', :value => 'virtual'}
+                      %input{:type => 'hidden', :name => 'l', :value => $lang}
+                    %p.paragraph-style{:style=>'margin:0px;padding:0px;line-height: 1.5em;font-weight: bold;'}= l('Get your free $10k virtual money account')
+                .clearfix
+            .bottom-dark-box.acc-input-security{:style=>'margin:0;overflow:hidden;position:absolute;bottom:0;padding: 0px 0;background:#15212d;font-size: 72%;width:100%;text-align:center;color:#fff'}
+              %p.paragraph-style{style=>'color:inherit; padding: 1px 10px;line-height: 1.3em;font-size: 0.9em;'}
+                %img.acc-input-security-icon{:src=>url_for('images/pages/home5/security-w.svg'),:style=>'margin: -6px 5px 0;max-width:13px;'}
+                = l('we use highest security and privacy measures')
+  #quickstart.section-margin{:style=>'padding-bottom:0px;'}
+    .grd-container
+      .grd-grid-4.grd-parent.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4.grd-centered-phablet{:style=>'margin-bottom:20px;'}
+        .box-wrap.section-margin{:style=>'margin-top: 0;padding: 0 9px;'}
+          .dark-background{:style=>'padding: 20px;border:solid 2px #F5F5F5'}
+            %header{:style=>'background-color:inherit;'}
+              .img-w
+                %img.responsive#new-trader-icon{:style=>'max-width:100%;width:144px;',:src => url_for('images/pages/home5/step-1.svg')}
+              %h4.title.padding.text-center{:style=>'font-weight:400;'}= l('1) Register for free account')
+      .grd-grid-4.grd-parent.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4{:style=>'margin-bottom:20px;'}
+        .box-wrap.section-margin{:style=>'margin-top: 0;padding: 0 9px;'}
+          .dark-background{:style=>'padding: 20px;border:solid 2px #F5F5F5'}
+            %header{:style=>'background-color:inherit;'}
+              .img-w
+                %img.responsive#new-trader-icon{:style=>'max-width:100%;width:144px;',:src => url_for('images/pages/home5/step-2.svg')}
+              %h4.title.padding.text-center{:style=>'font-weight:400;'}= l('2) Pick your position and get current price')
+      .grd-grid-4.grd-parent.grd-grid-mobile-12.grd-grid-phablet-6.grd-grid-tablet-4{:style=>'margin-bottom:30px;'}
+        .box-wrap.section-margin{:style=>'margin-top: 0;padding: 0 9px;'}
+          .dark-background{:style=>'padding: 20px;border:solid 2px #F5F5F5'}
+            %header{:style=>'background-color:inherit;'}
+              .img-w
+                %img.responsive#new-trader-icon{:style=>'max-width:100%;width:144px;',:src => url_for('images/pages/home5/step-3.svg')}
+              %h4.title.padding.text-center{:style=>'font-weight:400;'}= l('3) Watch markets and get result real-time')
+  #returns.grd-grid-12{:style=>'margin-top:0px;margin-bottom:10px;'}
+    .grd-container
+      #prices.grd-grid-6.grd-grid-mobile-12.grd-parent
+        .figures.grd-grid-6
+          = l('Up to')
+          %h1.title= l('[_1]', '100%')
+          = l('return on')
+          %a.pjaxload{:href => url_for('trade.cgi?market=forex&focus=risefall')}= l('rise/fall')
+          = l('trades')
+        .figures.grd-grid-6
+          = l('Up to')
+          %h1.title= l('[_1]', '1000%')
+          = l('return on trades you make')
+      #try-now.grd-grid-6.grd-grid-mobile-12.grd-parent
+        .figures.grd-grid-6
+          != l('More than [_1] trades available', '<h1>1,000,000</h1>')
+        .figureses.grd-grid-6
+          != l('Under [_1] for market-leading returns', '<h1>$1</h1>')
+:javascript
+  (function(){
+  var throttle =function (callback, limit) {
+      var wait = false;                 // Initially, we're not waiting
+      return function () {              // We return a throttled function
+          if (!wait) {                  // If we're not waiting
+              callback.call();          // Execute users function
+              wait = true;              // Prevent future invocations
+              setTimeout(function () {  // After a period of time
+                  wait = false;         // And allow future invocations
+              }, limit);
+          }
+      }
+  }
+  //var elems=null
+  var resetH=function(){
+    var elems=$("#benefits .box-wrap:visible")
+    if(!elems)return
+    var hArr=[]
+    elems.height('')
+    //if($(window).width()<400){return }
+    var gsbH=0
+    var $gridSignupBox=$('.grid-signup-box:visible','#benefits')
+    $gridSignupBox.children().each(function(i,obj){
+      gsbH+=$(obj).outerHeight()
+    })
+    var resizeRow=function(rowObj,nextElIdx,elArr){
+      if(rowObj.rowElArr.length<2 && rowObj.rowElArr[0][0]!=$gridSignupBox[0]){
+      processRow(elArr,nextElIdx)
+      return
+      }
+           var maxH=Math.max.apply(this,rowObj.h)
+            for(var i=0;i<rowObj.rowElArr.length;i++){
+              rowObj.rowElArr[i].outerHeight(maxH)
+            }
+            if(nextElIdx>-1)processRow(elArr,nextElIdx)
+    }
+
+    var processRow=function(elArr,fromElIdx){
+    if(fromElIdx<0)return
+      var $el,top,prevRowTop,currRowObj
+      for(var i=fromElIdx;i<elArr.length;i++){
+        $el=$(elArr[i])
+        top=$el.offset().top.toString()
+        if(prevRowTop!=null && top!=prevRowTop ){
+          resizeRow(currRowObj,i,elArr)
+          return
+        }
+        prevRowTop=top
+        if(!currRowObj)currRowObj={rowElArr:[],h:[]}
+        h=$el.outerHeight()
+        if($el[0]==$gridSignupBox[0]){
+          h=gsbH
+        }
+        currRowObj.h.push(h)
+        currRowObj.rowElArr.push($el)
+        var isLast=i+1==elArr.length
+        if(isLast)resizeRow(currRowObj,-1,elArr)
+      }
+    }
+    processRow(elems,0)
+  }
+  var resetFBImportBtn=function(){
+      $(".import-fb-email-field:visible").each(function(ind,el){
+        var $emailInput=$(el)
+        var $fbImpBtn=$emailInput.next()
+        $fbImpBtn.css({width:$emailInput.outerHeight(),height:$emailInput.outerHeight()})
+        var totW=$emailInput.closest("form").outerWidth()
+        $emailInput.outerWidth(totW-$fbImpBtn.outerWidth()-1)
+        var emailWrap=$emailInput.closest(".acc-input")
+        //TODO fix this width in css
+        emailWrap.siblings().find("[name='chooseapassword']").outerWidth(totW)
+      })
+    }
+
+  window._waitJq=function(){
+    if(window.$==null){
+      setTimeout(window._waitJq,100)
+      return
+    }else{
+      $(function(){
+        //elems=$("#benefits .box-wrap")
+
+        resetH()
+        resetFBImportBtn()
+        $(window).load(function(){resetH();resetFBImportBtn()})
+        $(window).resize(function(){resetH();resetFBImportBtn()})
+        //$(window).resize(throttle(resetH,500))
+
+
+        var fbImportScr=(function($,globalPropName){
+          if(globalPropName==null){console.log("ERROR global prop not defined=");return}
+          if(window[globalPropName]!=null){console.log("global prop already defined=",globalPropName);return}
+
+
+          var CnvXFbEmail= function(fbImportButtonClassName,emailInputClassName,appId,holdInit){
+          var self=this
+          //var $element=$(element)
+          var $fbIdInputFields=null
+          var $fbImportEmailButtons=$('.'+fbImportButtonClassName)
+          var $emailFields=$('.'+emailInputClassName)
+          var fbAppId=appId
+          var appIdCheck=true
+          var delayInit=holdInit
+          var inited=false
+          try {
+            if ((!fbAppId ) && window.cnvXFbEmailAppId )fbAppId = window.cnvXFbEmailAppId
+            if ((!fbAppId ) && window.fbAppId )fbAppId = window.fbAppId
+          } catch (e) {
+          }
+
+          var initFBForm=function( callbackFn) {
+              //var fbAppId = attrs.cnvFbSubscribeForm
+            if (fbAppId) {
+              if (window.fbAsyncInit == null) {
+                window.fbAsyncInit = function () {
+                  FB.init({
+                    appId: fbAppId,
+                    xfbml: false,
+                    version: 'v2.0',
+                    status:true
+                  });
+                  window[globalPropName].onInitFbForm()//callbackFn()//self.onFbInit()
+                };
+                (function (d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) {
+                      return;
+                  }
+                  js = d.createElement(s);
+                  js.id = id;
+                  js.src = "//connect.facebook.net/en_US/sdk.js";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+              }
+                  window[globalPropName].addOnInitFbFormCallback(callbackFn)//self.onFbInit()
+
+                }
+            }
+
+            window[globalPropName].addOnInitFbFormCallback=function(listenerFunction){
+              if(window[globalPropName].onInitFbFormComplete){
+                listenerFunction()
+                return
+              }
+              if(window[globalPropName].asyncInitListeners==null)window[globalPropName].asyncInitListeners=[]
+              window[globalPropName].asyncInitListeners.push(listenerFunction)
+            }
+
+
+            window[globalPropName].onInitFbForm=function(){
+              window[globalPropName].onInitFbFormComplete=true
+            for(var i=0;i<window[globalPropName].asyncInitListeners.length;i++){
+              window[globalPropName].asyncInitListeners[i]()
+            }
+              window[globalPropName].asyncInitListeners=[]
+            }
+
+            var onFbInit=function(callbackFn){
+            if(window.FB==null)return
+              FB.getLoginStatus(function (response) {
+                if (response.status === 'connected') {
+                  var uid = response.authResponse.userID;
+                  var accessToken = response.authResponse.accessToken;
+                  callbackFn()//self.showFBEmailBtn()//getFBDetails()
+                } else if (response.status === 'not_authorized') {
+                  callbackFn()//self.showFBEmailBtn()
+                } else {
+                  callbackFn()//self.showFBEmailBtn()
+                }
+              });
+            }
+
+            var showFBEmailBtn=function(clickHandler){
+              $fbImportEmailButtons.click(function(){
+                clickHandler()
+              })
+            }
+
+            var getFBEmail=function(){
+              FB.login(function(response) {
+                if (response.status === 'connected') {
+                  getFBDetails()
+                } else if (response.status === 'not_authorized') {
+                } else {
+                }
+              },{scope:'email'});
+            }
+
+            var getFBDetails=function(){
+              FB.api('/me', {fields: ['email', 'name']}, function(details) {
+                if(details.email!=null && details.email.length>0) {
+                  $emailFields.val(details.email)
+                  $emailFields.change()
+                  if($fbIdInputFields)$fbIdInputFields.val(details.id)
+                  /*if($element.find('input, textarea, select').length==1) {
+                    if(details.id&&details.id.length>0&& $element.find('input[name="_fbid"]').length==0)$("<input type='hidden' name='_fbid'/>").insertAfter($emailFields).val(details.id)
+                        //self.$broadcast('event:directive:cnvConversionEmailForm:submit')
+                  }else{
+                    if(details.id&&details.id.length>0 && $element.find('input[name="_fbid"]').length==0)$("<input type='hidden' name='_fbid'/>").insertAfter($emailFields).val(details.id)
+                    //scope.$apply()
+                  }*/
+                }
+              })
+            }
+
+            this.init=function(checkId,appId, showFbEmailBtn){
+              if(inited)return
+              inited=true
+              if(checkId!=null)appIdCheck=checkId
+              if(appId)fbAppId=appId
+              if(fbAppId && !appIdCheck){
+                  showFBEmailBtn(function(){
+                      initFBForm(function(){
+                          onFbInit(function(){
+                              getFBEmail()
+                          })
+                      })
+                  })
+              }else{
+                initFBForm(function(){
+                    onFbInit(function(){
+                        showFBEmailBtn(function(){getFBEmail()})
+                    })
+                })
+            }
+            }
+            if(!delayInit)this.init()
+
+            $(document).on("cnv:CnvXFbEmail:init",function(ev,checkId,appId){
+                self.init(checkId,appId)
+            })
+
+          }
+          window[globalPropName]=CnvXFbEmail
+          return CnvXFbEmail
+        }($,'CnvXFbEmail'))
+
+  var fbImport=new CnvXFbEmail('import-fb-email-btn','import-fb-email-field',1564466687104018)
+
+  })
+  }
+  }
+  window._waitJq()
+  }());

@@ -66,6 +66,9 @@ sub startup {
     $r->get('/partnerapi')->to('page#haml');
     $r->get('/devguide')->to('page#haml');
 
+    #CRO - Matjaz
+    $r->get('/home5')->to('page#haml');
+    
     # Routing for this rather than adding the file to public/ as everything
     # in public/ will be served by our CDN. We want this served by Mojo.
     $r->get('/robots.txt')->to('page#robots_txt');
@@ -112,6 +115,7 @@ sub startup {
 
     $r->route('/exception')->to('page#exception');
     $r->route('/*')->to('page#not_found');
+
 }
 
 1;
