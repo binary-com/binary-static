@@ -13,11 +13,11 @@
                 <img class='responsive' src="[% request.url_for('images/pages/charting/chart-screenshot.png') %]"/>
             </div>
             <div class="grd-with-padding grd-centered center">
-                <a id="download-app" class="button" href="https://download.binary.com/binary-charts.jnlp">
-                    <span>[% l('Download')%]</span>
+                <a id="download-app" class="button important" href="https://download.binary.com/binary-charts.jnlp">
+                    [% l('Download')%]
                 </a>
-                <a id="install-java" class="button" href="http://java.com/en/download/" style="display: none">
-                    <span>[% l('Install Java')%]</span>
+                <a id="install-java" class="button important" href="http://java.com/en/download/" style="display: none">
+                    [% l('Install Java')%]
                 </a>
             </div>
         </fieldset>

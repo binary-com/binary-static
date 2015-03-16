@@ -29,7 +29,7 @@
     [% END %]
 
     <div class="form_button">
-        <span class="button"><button name="btn_buybet_[% fields.display_id %]" class="button buy_bet_button" type="submit" value="[% fields.button_text %]">[% fields.button_text %]</button></span>
+        <button name="btn_buybet_[% fields.display_id %]" class="button buy_bet_button" type="submit" value="[% fields.button_text %]">[% fields.button_text %]</button>
     </div>
 </form>
 </div>

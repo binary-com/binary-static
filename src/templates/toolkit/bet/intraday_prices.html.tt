@@ -11,11 +11,9 @@
             </select>
         </div>
         <div class="grd-grid-mobile-12">
-            <span class="button">
-                <button class="button" value="" type="submit">
-                    [% l('View') %]
-                </button>
-            </span>
+            <button class="button" value="" type="submit">
+                [% l('View') %]
+            </button>
         </div>
     </form>
 </div>

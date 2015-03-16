@@ -8,10 +8,10 @@
 - my $lang = stash->{language};
 #banner
   .grd-container
-      .grd-grid-12.grd-row-padding
-        #q-top
-          %h1.dark= l('The Premier Platform for Binary Options Trading')
-          %p= l('Trade 24/7, even on weekends. Customize your trades to meet your needs.')
+    .grd-grid-12.grd-row-padding
+      #q-top
+        %h1.dark= l('The Premier Platform for Binary Options Trading')
+        %p= l('Trade 24/7, even on weekends. Customize your trades to meet your needs.')
       .grd-grid-12.grd-grid-mobile-12.grd-grid-phablet-12.grd-parent
   #open-account
     %p= l('Get your free $10k virtual money account')
@@ -36,16 +36,16 @@
           %li!= l('<span>All durations:</span> from 10 seconds to 365 days.')
           %li!= l('<span>All payouts:</span> from $1 to $100,000.')
         .center{:style => "margin-top:40px;"}
-          %a#signbox.button.pjaxload.pjaxload-focus{:href => url_for('linkto_acopening.cgi?actype=real')}
-            %span= l('Open a Real Money Account')
+          %a#signbox.button.important.pjaxload.pjaxload-focus{:href => url_for('linkto_acopening.cgi?actype=real')}
+            != l('Open a Real Money Account')
 #q-cta
   #q-reason
     .grd-container
       .grd-row-padding
         %h1.center-aligned.q-head= l('Why 1,000,000 people around the world trust us')
         .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-12
-          %ul 
-            %li.q-list1 
+          %ul
+            %li.q-list1
               %h3= l('Sharp prices')
               %p= l('Binary.com\'s patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market.')
             %li.q-list2
@@ -53,17 +53,17 @@
               %p= l('With Binary.com, your money is secure. We segregate and hold client funds in secure AAA-rated banks.')
         .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-12
           %ul
-            %li.q-list3 
+            %li.q-list3
               %h3= l('Trade your way')
               %p= l('Don\'t limit yourself! Whatever your market view, Binary.com allows you to put your strategy to work and profit from your predictions.')
             %li.q-list4
               %h3= l('Go with the leader')
               %p= l('Binary.com is the award-winning industry pioneer in online options trading.')
   .q-cta
-    %a.pjaxload.q-real{:href => url_for('linkto_acopening.cgi?actype=real'), :class => 'button'}
-      %span= l('Open real account')
-    %a.pjaxload.q-virtual{:href => url_for('linkto_acopening.cgi?actype=virtual'), :class => 'button'}
-      %span= l('Open virtual account')
+    %a.button.important.pjaxload.q-real{:href => url_for('linkto_acopening.cgi?actype=real')}
+      != l('Open real account')
+    %a.button.pjaxload.q-virtual{:href => url_for('linkto_acopening.cgi?actype=virtual')}
+      != l('Open virtual account')
 #xtestimonial
   .grd-container
     .grd-row-padding
@@ -75,7 +75,7 @@
         .q-quoter-left
           %p!= l('Joshua Cavallaro <span> Markets And You Trader.</span>')
       .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-6
-        .q-quote 
+        .q-quote
           %p!= l('&#8220;Binary.com is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;')
         .q-bubble-right
         .q-quoter-right

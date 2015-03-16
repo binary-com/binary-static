@@ -106,7 +106,7 @@
             <ul class="button-menu not-li">
                 [% IF template_data.intraday_interval_input %]
                     <li class="interval first">
-                        <input type="radio" value="1" id="pr_1" name="period"><label class="button button-small" for="pr_1"><span class="button button-small">[% l('Intraday') %]</span></label>
+                        <input type="radio" value="1" id="pr_1" name="period"><label class="button button-small" for="pr_1"><span class="button-small">[% l('Intraday') %]</span></label>
                         <div id="intraday_interval">
                             <ul class="not-li">
                                 [% FOREACH period IN template_data.intraday_interval_input %]

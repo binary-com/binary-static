@@ -6,19 +6,19 @@
       .grd-grid-12
         %h1= l('First, define your position...')
         %p= l('When you start trading with Binary.com, you’ll be directed to the trading screen, where you set your trading parameters, and choose what you want to trade, how and when.')
-        %a.pjaxload.button{:href => url_for('trade.cgi')}
+        %a.pjaxload{:href => url_for('trade.cgi')}
           %img.responsive#new-trader-icon{:src => url_for('images/pages/tour/trade-tutorial_1.svg')}
- 
+
   .section
     .section-content
       .grd-grid-12
         %h1= l('2-way pricing')
         %p= l('Simply change any of your parameters and the trade price instantly changes, giving you real-time knowledge of your stake. [_1] ensures fair and transparent pricing by showing you both sides of the trade.', stash->{website_name})
       .grd-grid-6.grd-grid-mobile-12
-        %a.pjaxload.button{:href => url_for('trade.cgi')}
+        %a.pjaxload{:href => url_for('trade.cgi')}
           %img.responsive#new-trader-icon{:src => url_for('images/pages/tour/tour-live-trade.svg')}
       .grd-grid-6.grd-grid-mobile-12
-        %a.pjaxload.button{:href => url_for('trade.cgi')}
+        %a.pjaxload{:href => url_for('trade.cgi')}
           %img.responsive#new-trader-icon{:src => url_for('images/pages/tour/tour-opposite-trade.svg')}
   .section
     .section-content
@@ -40,7 +40,7 @@
         %a.pjaxload.button{:href => url_for('available_payment_methods.cgi')}
           %span= l('View payment methods')
         %p= l('Trade with ease with [_1]\'s wide range of deposit and withdrawal methods. Your funds will be segregated and held in AAA-rated banks.', stash->{website_name})
-        %a.pjaxload.button{:href => url_for('available_payment_methods.cgi')}
+        %a.pjaxload{:href => url_for('available_payment_methods.cgi')}
           %img.responsive{:src => url_for('images/pages/tour/tour-flexible-banking.png')}
 
   .section
@@ -48,7 +48,7 @@
       .grd-grid-12
         %h1= l('Study our live charts')
         %p= l('Frame your trading strategy using [_1]\'s powerful live charts. Instantly view the trading patterns of forex, indices, commodities and stocks.', stash->{website_name})
-        %a.pjaxload.button{:href => url_for('livechart.cgi')}
+        %a.pjaxload{:href => url_for('livechart.cgi')}
           %img.responsive#new-trader-icon{:src => url_for('images/pages/tour/live-chart-snapshot.svg')}
 
   .section
@@ -57,7 +57,7 @@
         %h1= l('Learn from us')
         %p= l('Stay informed. [_1] offers daily market reports and market research, as well as frequent trading webinars.', stash->{website_name})
         %span#edu-research-tool
-        %a.pjaxload.button{:href => url_for('/resources')}
+        %a.pjaxload{:href => url_for('/resources')}
           %img.responsive#new-trader-icon{:src => url_for('images/pages/tour/tour-tools-education.svg')}
 
   .section
@@ -66,5 +66,5 @@
         %h1= l('Talk to us')
         %p= l('Feel free to contact our friendly and helpful customer service experts. They\'re always available to answer your questions. You can contact us via live chat, email and telephone.')
       .grd-grid-4.grd-grid-mobile-8.grd-centered
-        %a.pjaxload.button{:href => url_for('contact')}
+        %a.pjaxload{:href => url_for('contact')}
           %img.responsive{:src => url_for('images/pages/tour/tour-customer-support.png')}

@@ -23,7 +23,7 @@
             </div>
             <div class='grd-row-padding'>
                 [% INCLUDE "$winning" %]
-                <a class="button" href="[% bet_type_demo.bet_url %]"><span>[% l("Start trading") %]</span></a>
+                <a class="button important" href="[% bet_type_demo.bet_url %]">[% l("Start trading") %]</a>
             </div>
         </div>
     [% END %]

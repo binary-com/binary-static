@@ -37,16 +37,11 @@
         margin: 4px 0;
     }
     input[type=submit] {
-      @include link-button;
       background: $COLOR_BLUE;
       padding: 9px 10.83333%;
       border: 0;
       white-space: normal;
-      font-size:18px;
-      &:hover {
-                text-decoration: none;
-                background-color: $COLOR_DARK_GREEN;
-            }
+      font-size:18px;    
     }
     form {
         font-size: 100%;
@@ -263,7 +258,3 @@
         }
     }
 }
-
-
-
-

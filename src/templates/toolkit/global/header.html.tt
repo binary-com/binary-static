@@ -57,7 +57,7 @@
                 <div id="client-logged-in" class="grd-grid-3 grd-grid-mobile-9 grd-grid-phablet-10 by_client_type client_real client_virtual" style="display: none">
                   <div id="logout">
                       <a id="client_loginid" class="pjaxload" href="[% request.url_for('my_account.cgi') %]"[% target %]></a>
-                      <a id="btn_logout" class="logout" href="[% request.url_for('logout') %]"[% target %]>[% l('LOG OUT') %]</a>
+                      <a id="btn_logout" class="logout important" href="[% request.url_for('logout') %]"[% target %]>[% l('LOG OUT') %]</a>
                   </div>
                 </div>
                 <div id="client-logged-out" class="grd-grid-3 grd-grid-mobile-9 grd-grid-phablet-10 grd-no-gutter-left by_client_type client_logged_out">
@@ -65,7 +65,7 @@
                         <span id="login-fields">
                             <input name="loginid" type="text" placeholder="[% l("Login ID") %]" />
                             <input name="password" type="password" placeholder="[% l("Password") %]" />
-                            <input type="submit" value="[% l("Log in") %]" />
+                            <input type="submit" class="important" value="[% l("Log in") %]" />
                         </span>
                         <span id="login-links">
                             <a class="pjaxload" id="register" href="[% request.url_for('open_account.cgi') %]">[% l("Register") %]</a>

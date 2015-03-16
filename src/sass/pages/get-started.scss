@@ -92,10 +92,6 @@
     text-align: center;
     margin-top: 20px;
     padding-top: 10px;
-    a {
-      @include link-button;
-      padding: 0.4375em 3.19149%;
-    }
     a.disabled {
       color: $COLOR_GRAY_SHADE;
       background: $COLOR_LIGHT_GRAY;

@@ -134,7 +134,7 @@ hr {
 acronym, abbr {
     cursor: help;
 }
-span.button.button-disabled button.button-disabled {
+.button.button-disabled button.button-disabled {
     color: $COLOR_GRAY_SHADE;
     background: $COLOR_LIGHT_GRAY;
     cursor: default;
@@ -274,42 +274,6 @@ fieldset .error-msg {
 }
 .required_asterisk {
     color: $COLOR_ORANGE;
-}
-.button {
-    cursor: pointer;
-    margin-bottom: 0.5em;
-    &:hover {
-        color: $COLOR_WHITE;
-        text-decoration: none;
-    }
-    span, button {
-        @include link-button;
-        overflow: visible;
-        border: 0;
-    }
-}
-.button-disabled {
-    cursor: pointer;
-    margin-bottom: 0.5em;
-    &:hover {
-        color: $COLOR_GRAY_SHADE;
-        background: $COLOR_LIGHT_GRAY;
-        text-decoration: none;
-    }
-    span, button {
-        @include link-button;
-        overflow: visible;
-        white-space: nowrap;
-        border: 0;
-        font-weight: bold;
-        color: $COLOR_GRAY_SHADE;
-        background: $COLOR_LIGHT_GRAY;
-        cursor: default;
-        &:hover, &:active {
-            color: $COLOR_GRAY_SHADE;
-            background: $COLOR_LIGHT_GRAY;
-        }
-    }
 }
 .error-msg {
     color: $COLOR_RED;

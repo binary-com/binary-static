@@ -21,12 +21,10 @@
     [% END %]
         <tr>
             <td colspan="3">
-                <span class="button">
-                    <button class="button" name="register" value="Register" type="submit">[% my_app ? l('Update') : l('Register') %]</button>
+                <button class="button" name="register" value="Register" type="submit">[% my_app ? l('Update') : l('Register') %]</button>
                 [% IF my_app %]
                     <button class="button" name="cancel" value="Cancel" type="submit">[%l('Cancel Registration')%]</button>
                 [% END %]
-                </span>
             </td>
         </tr>
     </table>

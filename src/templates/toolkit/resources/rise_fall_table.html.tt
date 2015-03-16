@@ -55,10 +55,8 @@
             <input type="hidden" name="table_action" value="price"></input>
 
             <div id="submit" class="form_button grd-grid-12 grd-with-padding">
-                <span class="button">
-                    <button id="rise_fall_calculate" class="button" value="calculate" type="submit">[% l('Calculate') %]</button>
-                    <button style="display:none;" id="rise_fall_calculating" class="button" value="calculating" type="submit">[% l('Calculating') %]</button>
-                </span>
+                <button id="rise_fall_calculate" class="button important" value="calculate" type="submit">[% l('Calculate') %]</button>
+                <button style="display:none;" id="rise_fall_calculating" class="button" value="calculating" type="submit">[% l('Calculating') %]</button>
             </div>
         </fieldset>
     </form>

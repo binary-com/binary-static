@@ -41,16 +41,16 @@
           %li!= l('<span>All durations:</span> from 10 seconds to 365 days.')
           %li!= l('<span>All payouts:</span> from $1 to $100,000.')
         .center{:style => "margin-top:40px;"}
-          %a#signbox.button.pjaxload.pjaxload-focus{:href => url_for('linkto_acopening.cgi?actype=real')}
-            %span= l('Open a Real Money Account')
+          %a#signbox.button.important.pjaxload.pjaxload-focus{:href => url_for('linkto_acopening.cgi?actype=real')}
+            != l('Open a Real Money Account')
 #xcta
   #xreason
     .grd-container
       .grd-row-padding
         %h1.center-aligned.xhead= l('Why 1,000,000 people around the world trust us')
         .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-12
-          %ul 
-            %li.xlist1 
+          %ul
+            %li.xlist1
               %h3= l('Sharp prices')
               %p= l('Binary.com\'s patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market.')
             %li.xlist2
@@ -58,17 +58,17 @@
               %p= l('With Binary.com, your money is secure. We segregate and hold client funds in secure AAA-rated banks.')
         .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-12
           %ul
-            %li.xlist3 
+            %li.xlist3
               %h3= l('Trade your way')
               %p= l('Don\'t limit yourself! Whatever your market view, Binary.com allows you to put your strategy to work and profit from your predictions.')
             %li.xlist4
               %h3= l('Go with the leader')
               %p= l('Binary.com is the award-winning industry pioneer in online options trading.')
   .xcta
-    %a.pjaxload.xreal{:href => url_for('linkto_acopening.cgi?actype=real'), :class => 'button'}
-      %span= l('Open real account')
-    %a.pjaxload.xvirtual{:href => url_for('linkto_acopening.cgi?actype=virtual'), :class => 'button'}
-      %span= l('Open virtual account')
+    %a.button.important.pjaxload.xreal{:href => url_for('linkto_acopening.cgi?actype=real')}
+      != l('Open real account')
+    %a.button.pjaxload.xvirtual{:href => url_for('linkto_acopening.cgi?actype=virtual')}
+      != l('Open virtual account')
 #xtestimonial
   .grd-container
     .grd-row-padding
@@ -80,7 +80,7 @@
         .xquoter-left
           %p!= l('Joshua Cavallaro <span> Markets And You Trader.</span>')
       .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-6
-        .xquote 
+        .xquote
           %p!= l('&#8220;Binary.com is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;')
         .xbubble-right
         .xquoter-right

@@ -1,14 +1,10 @@
 .sidebar-right
   .open-account.by_client_type.client_logged_out.client_virtual
     %p= l('Get started with just $5')
-    %a.pjaxload{:href => url_for('open_account.cgi')}= l('Open a Free account')
+    %a.button.important.pjaxload{:href => url_for('open_account.cgi')}= l('Open a Free account')
   .by_client_type.client_logged_out
-    %p
-      %a.pjaxload{:href => url_for('linkto_acopening.cgi?actype=virtual')}= l('Try it now')
-      %br
-      = l('No risk, $10K virtual money account')
+    %p= l('No risk, $10K virtual money account')
+    %a.button.pjaxload{:href => url_for('linkto_acopening.cgi?actype=virtual')}= l('Try it now')
   %div
-    %p
-      = l('Want to learn more?')
-      %br
-      %a.pjaxload{:href => url_for('/tour')}= l('View the Tour')
+    %p= l('Want to learn more?')
+    %a.button.pjaxload{:href => url_for('/tour')}= l('View the Tour')

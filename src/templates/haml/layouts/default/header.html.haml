@@ -17,13 +17,13 @@
       .grd-grid-3.grd-grid-mobile-9.grd-grid-phablet-10.by_client_type.client_virtual.client_real#client-logged-in{ :style => 'display: none;'}
         #logout
           %a.pjaxload#client_loginid{:href => url_for('my_account.cgi')}
-          %a.logout{:href => url_for('/logout')}= l('Log out')
+          %a.logout.important{:href => url_for('/logout')}= l('Log out')
       .grd-grid-3.grd-grid-mobile-9.grd-grid-phablet-10.grd-no-gutter-left.by_client_type.client_logged_out#client-logged-out
         %form#login-form{:action => url_for('/login'), :method => 'post'}
           %span#login-fields
             %input{:name => 'loginid', :type => 'text', :placeholder => stash('loginholder')}
             %input{:name => 'password', :type => 'password', :placeholder => stash('pwdholder')}
-            %input{:type => 'submit', :value => stash('logintext')}
+            %input.important{:type => 'submit', :value => stash('logintext')}
           %span#login-links
             %a.pjaxload#register{:href=>url_for('open_account.cgi')}= l('Register')
             %a.pjaxload#lost-password{:href=>url_for('lost_password.cgi')}= l('Lost password?')

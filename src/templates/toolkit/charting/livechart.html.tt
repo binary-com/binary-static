@@ -32,7 +32,7 @@
             <input type="text" size="9" id="live_charts_to_time" class="live_charts_date_time" />
         </span>
         <span class='grd-grid 4 grd-grid-mobile-12'>
-            <input type="button" name="show" value="[% l("Show") %]" id="live_charts_show_interval" title="[% l("Show chart for the given dates") %]">
+            <button id="live_charts_show_interval" class="important" title="[% l("Show chart for the given dates") %]">[% l("Show") %]</button>
         </span>
       </form>
   </div>

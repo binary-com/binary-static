@@ -7,10 +7,6 @@
     font-size: 1.6em;
     margin: 10% 0 5% 0;
   }
-  a {
-    @include link-button;
-    display: inline;
-  }
   table.code {
       margin-left: 50px;
       font-size: 12px;

@@ -17,7 +17,6 @@
   #virtualupgrade {
     padding-top: 3px;
     a {
-      @include link-button;
       border-radius: 2px;
       font-size: 90%;
       padding: 2px 4px 2px 4px;
@@ -95,10 +94,9 @@
       padding: 4px;
     }
     input[type=submit] {
-      @include link-button;
       border: 0;
       text-transform: uppercase;
-      padding: 5px 3px;
+      padding: 5px;
       word-break: break-all;
       white-space: pre-wrap;
       max-width: 60px;
@@ -117,15 +115,10 @@
     font-size: 70%;
     margin-top: 10px;
     a, a:visited {
-      &:hover, &:active {
-        text-decoration: underline;
-      }
       &.logout {
-        @include link-button;
         background-position: 104.6% 0.3%;
         background-repeat: no-repeat;
-        padding: 6px;
-        font-weight: normal;
+        padding: 5px;
         margin-left: 0.4em;
       }
     }

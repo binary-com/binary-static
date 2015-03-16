@@ -105,7 +105,7 @@ var BetAnalysis = function () {
             var daily_prices_url = changeUrlToSameDomain(form.action);
             var daily_prices_params = $(form).serialize()+'&id='+Math.floor(Math.random()*83720);
 
-            var go_button = div.find('span.button');
+            var go_button = div.find('.button');
             go_button.addClass('invisible');
             go_button.after(getImageLink());
 

@@ -18,7 +18,7 @@ unchanged
             <input type='text' size='3' value="[% days_to_display %]" name='days_to_display' id='days_to_display_input'/>
         </div>
         <div class="grd-grid-mobile-12">
-            <span class="button"><button class="button" value="[% l('View') %]" type="submit">[% l('View') %]</button></span>
+            <button class="button" value="[% l('View') %]" type="submit">[% l('View') %]</button>
         </div>
     </form>
 </div>

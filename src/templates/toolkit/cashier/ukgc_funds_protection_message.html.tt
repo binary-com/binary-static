@@ -15,9 +15,7 @@
             <input name="act" value="[% action %]" type="hidden"/>
             <input name="currency" value="[% currency %]" type="hidden"/>
             <div class='grd-grid-3 grd-grid-mobile-6 grd-centered'>
-                <span class="button">
-                    <button name="ukgc_funds_protection" class="button" value="ok" type="submit">[% l('Proceed') %]</button>
-                </span>
+                <button name="ukgc_funds_protection" class="button" value="ok" type="submit">[% l('Proceed') %]</button>
             </div>
         </form>
     </div>

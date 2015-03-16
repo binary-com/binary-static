@@ -19,10 +19,6 @@
     .sidebar-button {
         background: $COLOR_LIGHT_GRAY;
         padding: 20px;
-        a {
-            @include link-button;
-            display: block;
-        }
     }
     .code-sample {
         background-color: $COLOR_LIGHT_GRAY;

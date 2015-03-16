@@ -21,9 +21,7 @@
 
                 <span id="sell_info">
                     <div class="form_button" id='sell_contract_form'>
-                        <span class="button">
-                            <button id="sell_at_market" class="button">[% l('Sell at market') %]</button>
-                        </span>
+                        <button id="sell_at_market" class="button">[% l('Sell at market') %]</button>
                     </div>
                 </span>
 
@@ -56,15 +54,10 @@
     <div style="display:none;" id='reload_sell_container'>
         [% IF not_started %]
             <p class="comment"> [% l('Contract started') %]</p>
-            <span class="button">
-                <button id="reload_sell" class="button">[% l('View progress') %]</button>
-            </span>
+            <button id="reload_sell" class="button">[% l('View progress') %]</button>
         [% ELSE %]
             <p class="comment"> [% l('Contract expired') %]</p>
-            <span class="button">
-                <button id="reload_sell" class="button">[% l('View result') %]</button>
-            </span>
+            <button id="reload_sell" class="button">[% l('View result') %]</button>
         [% END %]
     </div>
 </div> <!-- sell_content_wrapper -->
-
