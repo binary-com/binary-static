@@ -17,13 +17,10 @@
     color: $COLOR_WHITE;
     text-align: center;
     border-radius: 0;
-    padding: 5px 0;
-    margin-top: 10px;
+    padding: 5px;
+    margin:5px 30px;
     text-align: center;
-    width:100%;
-    background-color: rgba(165, 165, 165, 0.20);
-    border-top:1px solid $COLOR_GRAY;
-    border-bottom:1px solid $COLOR_GRAY;
+    background-color: rgba(233, 128, 36, 1);
    p {
       line-height: 2em;
       margin: 0;
@@ -32,11 +29,11 @@
     }
     #virtual-fields {
         display:block;
-        margin:10px;
+        margin:5px;
         input, select, textarea {
             border-radius: 3px;
-            margin-right: 20px;
-            margin-left:20px;   
+            margin-right: 10px;
+            margin-left:10px;   
         }
     }
     input[type=submit] {
@@ -44,7 +41,7 @@
       background: $COLOR_BLUE;
       border: 0;
       white-space: normal;
-      font-size:18px;
+      font-size:16px;
       display:inline;
         padding:10px;
         margin-bottom: 0;
@@ -79,7 +76,10 @@
     margin-top:20px;
   }
 }
-
+.q-cta-text{
+    text-align: center;
+  font-size: 110%;
+}
 #q-reason {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -194,9 +194,8 @@
     text-align: right;
 }
 .q-email, .q-pass {
-    display: inline-block;
     padding: 10px !important;
-    width: 15%;
+    width: 20%;
     font-size:12px;
     display:inline;
     margin-left: 20px;
@@ -204,7 +203,7 @@
 }
 .q-topcta {
     display: inline-block;
-    width: 25%!important;
+    width: 30%!important;
 }
 .q-quoter-left p span, .q-quoter-right p span {
     font-size: 12px;
@@ -214,7 +213,6 @@
   text-decoration: none;
 }
 }
-
 @media screen and (max-width: 480px) {
     .home2-content{
         #open-account{

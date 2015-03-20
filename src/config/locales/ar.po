@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-03-11 13:21+0200\n"
+"PO-Revision-Date: 2015-03-12 21:01+0200\n"
 "Last-Translator: Ehab Gubil <egubil@gmail.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/binary/static/ar/>\n"
 "Language: ar\n"
@@ -7168,10 +7168,8 @@ msgstr "The %1 will return a JSON structure which includes access_token along wi
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/about/index.html.haml:1
-#, fuzzy
-#| msgid "The <span itemprop=\"brand\">%1</span> service (formerly known as BetOnMarkets.com) is owned and operated by the Binary Ltd. Fully licensed and regulated, %1 has been providing financial trading to a worldwide audience of over 1,000,000 clients since <span itemprop=\"foundingdate\">1999</span>"
 msgid "The <span itemprop=\"brand\">%1</span> service (formerly known as BetOnMarkets.com) is owned and operated by Binary Ltd. Fully licensed and regulated, %1 has been providing financial trading to a worldwide audience of over 1,000,000 clients since <span itemprop=\"foundingdate\">1999</span>"
-msgstr "شركة <span itemprop=\"brand\">%1</span> (المعروفة سابقاً باسم BetOnMarkets.com) تملكها وتديرها بيناري المحدودة. %1 المرخصة بالكامل تقدم التداول المالى لجمهور يقدر بأكثر من مليون عميل منذ <span itemprop=\"foundingdate\">1999</span>"
+msgstr "شركة <span itemprop=\"brand\">%1</span> (المعروفة سابقاً باسم BetOnMarkets.com) تملكها وتديرها بيناري المحدودة. وهي شركة مرخصة بالكامل، كما تقدم %1 التداول المالى لجمهور يقدر بأكثر من مليون عميل منذ <span itemprop=\"foundingdate\">1999</span>"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/explanation/details/staysinout.html.tt:3
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/explanation/details/touchnotouch.html.tt:4
@@ -9160,11 +9158,6 @@ msgstr "الذين يحبون العمل مع أناس من مختلف الثق�
 msgid "Why 1,000,000 People Around the World Trust us"
 msgstr "لم يثق بنا مليون شخص حول العالم"
 
-#: /home/git/translations/binary-static/src/templates/haml/home/index.html.haml:1
-#: /home/git/translations/binary-static/src/templates/haml/home2/index.html.haml:1
-msgid "Why 1,000,000 people around the world trust us"
-msgstr "لم يثق بنا مليون شخص حول العالم"
-
 #: /home/git/translations/binary-static/src/templates/haml/get_started/what_is_binary_trading.html.haml:1
 msgid "Why Choose Binary Trading?"
 msgstr "لم تختار تداول الثنائيات؟"
@@ -9187,6 +9180,13 @@ msgstr "لم تصبح شريك عمل لـ %1؟"
 #: /home/git/translations/binary-static/src/templates/haml/layouts/get_started/nav.html.haml:1
 msgid "Why choose binary trading?"
 msgstr "لم تختار تداول الثنائيات؟"
+
+#: /home/git/translations/binary-static/src/templates/haml/home/index.html.haml:1
+#: /home/git/translations/binary-static/src/templates/haml/home2/index.html.haml:1
+#, fuzzy
+#| msgid "Why us?"
+msgid "Why choose us"
+msgstr "لماذا نحن؟"
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/why_us.html.haml:1
@@ -10442,25 +10442,25 @@ msgstr "AUD/SGD"
 msgid "EUR/INR"
 msgstr "يورو/الروبية الهندية"
 
-#: Underlying Symbol frxAUDBRL
-msgid "AUD/BRL"
-msgstr "دولار أسترالى/ريال برازيلى"
-
 #: Underlying Symbol frxGBPCNY
 msgid "GBP/CNY"
 msgstr "GBP/CNY"
+
+#: Underlying Symbol frxAUDBRL
+msgid "AUD/BRL"
+msgstr "دولار أسترالى/ريال برازيلى"
 
 #: Underlying Symbol frxUSDJPY
 msgid "USD/JPY"
 msgstr "USD/JPY"
 
-#: Underlying Symbol frxGBPBRL
-msgid "GBP/BRL"
-msgstr "GBP/BRL"
-
 #: Underlying Symbol frxUSDSGD
 msgid "USD/SGD"
 msgstr "USD/SGD"
+
+#: Underlying Symbol frxGBPBRL
+msgid "GBP/BRL"
+msgstr "GBP/BRL"
 
 #: Underlying Symbol frxAUDNOK
 msgid "AUD/NOK"
@@ -10506,13 +10506,13 @@ msgstr "يورو/يوان صينى"
 msgid "EUR/BRL"
 msgstr "يورو/ ريال برازيلى"
 
-#: Underlying Symbol frxNZDUSD
-msgid "NZD/USD"
-msgstr "NZD/USD"
-
 #: Underlying Symbol frxUSDDKK
 msgid "USD/DKK"
 msgstr "USD/DKK"
+
+#: Underlying Symbol frxNZDUSD
+msgid "NZD/USD"
+msgstr "NZD/USD"
 
 #: Underlying Symbol frxAUDNZD
 msgid "AUD/NZD"
@@ -10590,13 +10590,13 @@ msgstr "GBP/HKD"
 msgid "GBP/NZD"
 msgstr "GBP/NZD"
 
-#: Underlying Symbol frxNZDJPY
-msgid "NZD/JPY"
-msgstr "NZD/JPY"
-
 #: Underlying Symbol frxUSDPLN
 msgid "USD/PLN"
 msgstr "USD/PLN"
+
+#: Underlying Symbol frxNZDJPY
+msgid "NZD/JPY"
+msgstr "NZD/JPY"
 
 #: Underlying Symbol frxAUDSEK
 msgid "AUD/SEK"
@@ -10614,13 +10614,13 @@ msgstr "GBP/DKK"
 msgid "EUR/HKD"
 msgstr "يورو/دولار هونج كونج"
 
-#: Underlying Symbol frxGBPAUD
-msgid "GBP/AUD"
-msgstr "GBP/AUD"
-
 #: Underlying Symbol frxGBPPLN
 msgid "GBP/PLN"
 msgstr "GBP/PLN"
+
+#: Underlying Symbol frxGBPAUD
+msgid "GBP/AUD"
+msgstr "GBP/AUD"
 
 #: Underlying Symbol frxUSDSEK
 msgid "USD/SEK"
@@ -11574,6 +11574,9 @@ msgstr "%1 <strong>%2</strong> عائد إذا كانت <strong>آخر حركة<
 #: Translation for contract type "PUT"
 msgid "lower"
 msgstr "أدنى"
+
+#~ msgid "Why 1,000,000 people around the world trust us"
+#~ msgstr "لم يثق بنا مليون شخص حول العالم"
 
 #~ msgid "Are you sure you want to revoke this Power of Attorney?"
 #~ msgstr "هل أنت متأكد أنك تريد إلغاء هذا التوكيل؟"
