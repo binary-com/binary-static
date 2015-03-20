@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-03-12 07:04+0200\n"
-"Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
+"PO-Revision-Date: 2015-03-13 04:12+0200\n"
+"Last-Translator: Khalik Pratama <khalik@regentmarkets.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
@@ -7168,10 +7168,8 @@ msgstr "%1 akan memberi struktur JSON yang memiliki akses_token bersamaan dengan
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/about/index.html.haml:1
-#, fuzzy
-#| msgid "The <span itemprop=\"brand\">%1</span> service (formerly known as BetOnMarkets.com) is owned and operated by the Binary Ltd. Fully licensed and regulated, %1 has been providing financial trading to a worldwide audience of over 1,000,000 clients since <span itemprop=\"foundingdate\">1999</span>"
 msgid "The <span itemprop=\"brand\">%1</span> service (formerly known as BetOnMarkets.com) is owned and operated by Binary Ltd. Fully licensed and regulated, %1 has been providing financial trading to a worldwide audience of over 1,000,000 clients since <span itemprop=\"foundingdate\">1999</span>"
-msgstr "Layanan <span itemprop=\"brand\">%1</span> (sebelumnya dikenal sebagai BetOnMarkets.com) dimiliki dan dioperasikan oleh perusahaan Binary Ltd yang memegang izin registrasi sah dan terdaftar. %1 menyediakan platform trading kepada lebih dari 1.000.000 pelanggan di seluruh dunia sejak tahun <span itemprop=\"foundingdate\">1999</span>"
+msgstr "Layanan <span itemprop=\"brand\">%1</span> (sebelumnya dikenal sebagai BetOnMarkets.com) dimiliki dan dioperasikan Binary Ltd yang memegang izin registrasi sah dan terdaftar. %1 menyediakan platform trading kepada lebih dari 1.000.000 pelanggan di seluruh dunia sejak tahun <span itemprop=\"foundingdate\">1999</span>"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/explanation/details/staysinout.html.tt:3
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/explanation/details/touchnotouch.html.tt:4
@@ -9162,11 +9160,6 @@ msgstr "Yang suka bekerja dengan berbagai jenis orang dengan latar belakang buda
 msgid "Why 1,000,000 People Around the World Trust us"
 msgstr "Mengapa Sejuta Orang Di Dunia Mempercayai kami"
 
-#: /home/git/translations/binary-static/src/templates/haml/home/index.html.haml:1
-#: /home/git/translations/binary-static/src/templates/haml/home2/index.html.haml:1
-msgid "Why 1,000,000 people around the world trust us"
-msgstr "Mengapa 1.000.000 orang mempercayai kami"
-
 #: /home/git/translations/binary-static/src/templates/haml/get_started/what_is_binary_trading.html.haml:1
 msgid "Why Choose Binary Trading?"
 msgstr "Mengapa Memilih Trading Binary?"
@@ -9189,6 +9182,13 @@ msgstr "Mengapa menjadi Afiliasi %1?"
 #: /home/git/translations/binary-static/src/templates/haml/layouts/get_started/nav.html.haml:1
 msgid "Why choose binary trading?"
 msgstr "Mengapa memilih trading binary?"
+
+#: /home/git/translations/binary-static/src/templates/haml/home/index.html.haml:1
+#: /home/git/translations/binary-static/src/templates/haml/home2/index.html.haml:1
+#, fuzzy
+#| msgid "Why us?"
+msgid "Why choose us"
+msgstr "Mengapa kami?"
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/why_us.html.haml:1
@@ -10444,25 +10444,25 @@ msgstr "AUD/SGD"
 msgid "EUR/INR"
 msgstr "EUR/INR"
 
-#: Underlying Symbol frxAUDBRL
-msgid "AUD/BRL"
-msgstr "AUD/BRL"
-
 #: Underlying Symbol frxGBPCNY
 msgid "GBP/CNY"
 msgstr "GBP/CNY"
+
+#: Underlying Symbol frxAUDBRL
+msgid "AUD/BRL"
+msgstr "AUD/BRL"
 
 #: Underlying Symbol frxUSDJPY
 msgid "USD/JPY"
 msgstr "USD/JPY"
 
-#: Underlying Symbol frxGBPBRL
-msgid "GBP/BRL"
-msgstr "GBP/BRL"
-
 #: Underlying Symbol frxUSDSGD
 msgid "USD/SGD"
 msgstr "USD/SGD"
+
+#: Underlying Symbol frxGBPBRL
+msgid "GBP/BRL"
+msgstr "GBP/BRL"
 
 #: Underlying Symbol frxAUDNOK
 msgid "AUD/NOK"
@@ -10508,13 +10508,13 @@ msgstr "EUR/CNY"
 msgid "EUR/BRL"
 msgstr "EUR/BRL"
 
-#: Underlying Symbol frxNZDUSD
-msgid "NZD/USD"
-msgstr "NZD/USD"
-
 #: Underlying Symbol frxUSDDKK
 msgid "USD/DKK"
 msgstr "USD/DKK"
+
+#: Underlying Symbol frxNZDUSD
+msgid "NZD/USD"
+msgstr "NZD/USD"
 
 #: Underlying Symbol frxAUDNZD
 msgid "AUD/NZD"
@@ -10592,13 +10592,13 @@ msgstr "GBP/HKD"
 msgid "GBP/NZD"
 msgstr "GBP/NZD"
 
-#: Underlying Symbol frxNZDJPY
-msgid "NZD/JPY"
-msgstr "NZD/JPY"
-
 #: Underlying Symbol frxUSDPLN
 msgid "USD/PLN"
 msgstr "USD/PLN"
+
+#: Underlying Symbol frxNZDJPY
+msgid "NZD/JPY"
+msgstr "NZD/JPY"
 
 #: Underlying Symbol frxAUDSEK
 msgid "AUD/SEK"
@@ -10616,13 +10616,13 @@ msgstr "GBP/DKK"
 msgid "EUR/HKD"
 msgstr "EUR/HKD"
 
-#: Underlying Symbol frxGBPAUD
-msgid "GBP/AUD"
-msgstr "GBP/AUD"
-
 #: Underlying Symbol frxGBPPLN
 msgid "GBP/PLN"
 msgstr "GBP/PLN"
+
+#: Underlying Symbol frxGBPAUD
+msgid "GBP/AUD"
+msgstr "GBP/AUD"
 
 #: Underlying Symbol frxUSDSEK
 msgid "USD/SEK"
@@ -11575,6 +11575,9 @@ msgstr "Hasil %1 <strong>%2</strong> jika <strong>tik terakhir</strong> dari %3 
 #: Translation for contract type "PUT"
 msgid "lower"
 msgstr "lebih rendah"
+
+#~ msgid "Why 1,000,000 people around the world trust us"
+#~ msgstr "Mengapa 1.000.000 orang mempercayai kami"
 
 #~ msgid "Are you sure you want to revoke this Power of Attorney?"
 #~ msgstr "Apakah anda yakin ingin membatalkan surat kuasa?"

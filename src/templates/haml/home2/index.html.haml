@@ -13,15 +13,17 @@
           %h1.dark= l('The Premier Platform for Binary Options Trading')
           %p= l('Trade 24/7, even on weekends. Customize your trades to meet your needs.')
       .grd-grid-12.grd-grid-mobile-12.grd-grid-phablet-12.grd-parent
-  #open-account
-    %p= l('Get your free $10k virtual money account')
-    %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
-      %span#virtual-fields
-        %input.q-email{:name => 'Email', :id => 'Email', :type => 'email', :required => true, :placeholder => stash('emailtext')}
-        %input#chooseapassword.q-pass{:name => 'chooseapassword', :type => 'password', :maxlength => '25', :required => true, :placeholder => stash('passwordstext')}
-        %input#actype{:type => 'hidden', :name => 'actype', :value => 'virtual'}
-        %input{:type => 'hidden', :name => 'l', :value => $lang}
-        %input.button.q-topcta{:id => 'btn_registration',:type => 'submit', :value => stash('createacc')}
+  .grd-container
+    .grd-grid-12.grd-grid-mobile-12.grd-grid-phablet-12.grd-parent
+      %p.q-cta-text= l('Get your free $10k virtual money account')
+      #open-account
+        %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
+          %span#virtual-fields
+            %input.q-email{:name => 'Email', :id => 'Email', :type => 'email', :required => true, :placeholder => stash('emailtext')}
+            %input#chooseapassword.q-pass{:name => 'chooseapassword', :type => 'password', :maxlength => '25', :required => true, :placeholder => stash('passwordstext')}
+            %input#actype{:type => 'hidden', :name => 'actype', :value => 'virtual'}
+            %input{:type => 'hidden', :name => 'l', :value => $lang}
+            %input.button.q-topcta{:id => 'btn_registration',:type => 'submit', :value => stash('createacc')}
 .grd-container
   #q-section1
     .grd-grid-12.grd-parent
@@ -42,7 +44,7 @@
   #q-reason
     .grd-container
       .grd-row-padding
-        %h1.center-aligned.q-head= l('Why 1,000,000 people around the world trust us')
+        %h1.center-aligned.q-head= l('Why choose us')
         .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-12
           %ul
             %li.q-list1
