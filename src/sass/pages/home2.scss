@@ -4,7 +4,7 @@
 }
 .home2-content {
    #banner {
-    background: url("../images/pages/home2/map.png") repeat 0px 0px;   
+    background: url("../images/pages/home2/map.png") repeat 0px 0px;
     background-size: contain;
    }
    .q-topseparator{
@@ -36,7 +36,7 @@
         input, select, textarea {
             border-radius: 3px;
             margin-right: 20px;
-            margin-left:20px;   
+            margin-left:20px;
         }
     }
     input[type=submit] {
@@ -91,6 +91,9 @@
     text-align: center;
     p{
       font-size:110%;
+    }
+    h1 {
+        color: black;
     }
 }
 #q-badges {
@@ -268,7 +271,3 @@
         }
     }
 }
-
-
-
-

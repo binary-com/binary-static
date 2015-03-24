@@ -1,27 +1,12 @@
-/* DO NOT include any rules for specific pages in this file. */
-
-/* theme elements */
- html {
+html {
     height: 100%;
+    font-size: 18px;
+    text-rendering: geometricPrecision;
 }
 body {
     background: #FFFFFF;
     color: #000000;
-    font-size:18px;
-    min-height: 100%;
-    position: relative;
-    background-position: bottom;
-    background-repeat: repeat-x;
-    padding:0px;
-    margin:0px;
-    .ui-widget {
-        font-size: 0.9em;
-    }
     font-family: proxima-nova, arial;
-}
-html, body { width:100%;  overflow-x:hidden; }
-h1, h2, h3, h4, li, p, a, span {
-    text-rendering: optimizelegibility;
 }
 a, a:visited {
     color: $COLOR_BLUE;
@@ -29,13 +14,6 @@ a, a:visited {
     font-weight: bold;
     &:hover, &:active {
         text-decoration: underline;
-    }
-    .learn-more {
-        font-weight: bold;
-        font-size: 0.8125em;
-        padding-right: 15px;
-        margin-top: 15px;
-        background: url("pages/home/learn-more-arrow_1.png") no-repeat right;
     }
 }
 p {
@@ -51,12 +29,6 @@ h1 {
     color: $COLOR_ORANGE;
     a {
         color: $COLOR_ORANGE !important;
-    }
-}
-h1.dark {
-    color: $COLOR_BLACK;
-    a {
-        color: $COLOR_BLACK !important;
     }
 }
 h2 {
@@ -92,9 +64,6 @@ select, input, button, textarea {
     border: 1px solid $COLOR_GRAY;
     padding: 2px 3px 2px 3px;
 }
-button {
-    vertical-align: top;
-}
 input, button, textarea, select, optgroup, option {
     font-family: inherit;
     font-size: inherit;
@@ -103,12 +72,6 @@ input, button, textarea, select, optgroup, option {
 }
 input, textarea {
     vertical-align: middle;
-}
-strong {
-    font-weight: bold;
-}
-em {
-    font-style: italic;
 }
 ul, ol {
     margin: 0;
@@ -127,9 +90,6 @@ ol li {
 img {
     vertical-align: middle;
     border: 0px;
-}
-hr {
-    display: none;
 }
 acronym, abbr {
     cursor: help;
