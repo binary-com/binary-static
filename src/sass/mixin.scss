@@ -97,7 +97,7 @@
   text-align: center;
   line-height:100%;
   background: $COLOR_GREEN;
-  border-radius: 4px;
+  border-radius: $BORDER_RADIUS;
   font-weight: bold;
   text-transform: capitalize;
   padding: 10px 25px 10px 25px;
@@ -145,7 +145,7 @@
       border: none;
       list-style-image: none;
       background: $COLOR_LIGHT_GRAY;
-      border-radius: 4px 4px 0 0;
+      border-radius: $BORDER_RADIUS $BORDER_RADIUS 0 0;
       margin: 0 6px 0 0;
       padding: 0 10px;
       a, a:visited {

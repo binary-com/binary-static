@@ -5,6 +5,7 @@
 @import "mixin";
 @import "common";
 @import "animations";
+@import "form";
 
 /* main style */
 @import "common/header";
@@ -27,7 +28,6 @@
 @import "pages/tabs.scss";
 @import "pages/trading/common.scss";
 @import "pages/trading/container.scss";
-@import "pages/trading/form.scss";
 @import "pages/trading/pages.scss";
 @import "pages/trading/table.scss";
 @import "pages/cashier.scss";

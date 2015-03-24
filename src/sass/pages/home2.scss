@@ -4,7 +4,7 @@
 }
 .home2-content {
    #banner {
-    background: url("../images/pages/home2/map.png") repeat 0px 0px;   
+    background: url("../images/pages/home2/map.png") repeat 0px 0px;
     background-size: contain;
    }
    .q-topseparator{
@@ -34,9 +34,9 @@
         display:block;
         margin:10px;
         input, select, textarea {
-            border-radius: 3px;
+            border-radius: $BORDER_RADIUS;
             margin-right: 20px;
-            margin-left:20px;   
+            margin-left:20px;
         }
     }
     input[type=submit] {
@@ -268,7 +268,3 @@
         }
     }
 }
-
-
-
-

@@ -87,22 +87,8 @@ h4 {
     }
     font-size: 18px;
 }
-select, input, button, textarea {
-    background: $COLOR_WHITE;
-    border: 1px solid $COLOR_GRAY;
-    padding: 2px 3px 2px 3px;
-}
 button {
     vertical-align: top;
-}
-input, button, textarea, select, optgroup, option {
-    font-family: inherit;
-    font-size: inherit;
-    font-style: inherit;
-    font-weight: inherit;
-}
-input, textarea {
-    vertical-align: middle;
 }
 strong {
     font-weight: bold;
@@ -143,32 +129,7 @@ form {
     margin: 0;
     padding:0;
 }
-fieldset {
-    position: relative;
-    border: 1px solid #E5E5E5;
-    padding: 5px;
-    @include section-background;
-    &#formlayout {
-        background:none;
-        border: 0;
-        .errorfield {
-            margin-left: 0;
-        }
-    }
-    legend {
-        color:#444444;
-        padding: 0 0.8em 0 0.8em;
-        font-weight: bold;
-        text-transform: capitalize;
-    }
-}
-textarea {
-    height: 8em;
-    width: 25em;
-}
-select.input {
-    width: 46.2%;
-}
+
 /* form styles */
 .extra_tooltip_container {
     float: left;
@@ -191,12 +152,6 @@ label {
 }
 #profit-table-form {
     background: $COLOR_WHITE;
-    input {
-        border: 1px solid #e4e4e4;
-    }
-}
-.input {
-    width: 45%;
 }
 .row.focus input, .row.focus textarea {
     background-color: $COLOR_YELLOW;
@@ -243,10 +198,7 @@ label {
     font-size: 76%;
     line-height: 0.8em;
 }
-fieldset .error-msg {
-    width: 100%;
-    text-align: center;
-}
+
 /* global styles */
 * {
     margin: 0;

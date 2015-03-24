@@ -1,0 +1,163 @@
+input, button, textarea, select, optgroup, option {
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+}
+
+textarea {
+    height: 8em;
+    width: 25em;
+}
+
+input[type=text], input[type=email], input[type=password], input[type=tel], input[type=number], input[type=date] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+input[type=date]::-webkit-inner-spin-button,
+input[type=date]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+select, textarea, input[type=text], input[type=email], input[type=password], input[type=tel], input[type=number], input[type=date], input[type=datepicker] {
+    padding: $CONTROL_PADDING;
+    height: 1.75em;
+    box-sizing: border-box;
+}
+
+select, textarea, input[type=text], input[type=email], input[type=password], input[type=tel], input[type=number], input[type=date], input[type=datepicker], .dob  {
+    border: 1px solid $COLOR_CONTROL_BORDER;
+    border-radius: $BORDER_RADIUS;
+    vertical-align: bottom;
+
+    &:hover {
+        border-color: $COLOR_ORANGE !important;
+        box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    }
+    &:focus {
+        border-color: $COLOR_ORANGE !important;
+        box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+        outline: none;
+    }
+}
+
+textarea {
+    height: 8em;
+    width: 25em;
+}
+
+select, #tradingdate, .date-picker, .hasDatepicker, .arrow-expand-collapse, .down-arrow-1 {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjEwMHB4IiBoZWlnaHQ9IjEwMHB4IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTAwIDEwMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cGF0aCBmaWxsPSIjY2NjIiBkPSJNNTAuMTExIDcyLjY1OWMtMS4wNjEgMC0yLjA3OC0wLjQyMi0yLjgyOS0xLjE3MkwxNy4yNzUgNDEuNDc0Yy0xLjU2Mi0xLjU2Mi0xLjU2Mi00LjA5NSAwLjAwMS01LjY1NyBjMS41NjMtMS41NjIgNC4wOTYtMS41NjIgNS43IDBsMjcuMTc4IDI3LjE4NWwyNy4xNzgtMjcuMTg1YzEuNTYyLTEuNTYyIDQuMDk1LTEuNTYyIDUuNyAwIGMxLjU2MiAxLjYgMS42IDQuMSAwIDUuNjU3TDUyLjk0IDcxLjQ4N0M1Mi4xODkgNzIuMiA1MS4yIDcyLjcgNTAuMSA3Mi42NTl6Ii8+DQo8L3N2Zz4NCg==);
+}
+
+select::-ms-expand {
+    display: none;
+}
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+select, #tradingdate, .date-picker, .hasDatepicker, .down-arrow {
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: 1.25em;
+    padding-right: 1em;
+    cursor: pointer;
+}
+
+label {
+    text-align: left;
+    line-height: 2em;
+}
+
+.thin-form {
+    max-width: 320px;
+    margin: auto;
+}
+
+.thin-form input, .thin-form select {
+    width: 100%;
+}
+
+.dob {
+    display: flex;
+}
+
+.dob select {
+    border: none;
+    flex: 1;
+}
+
+.thin-form, .wide-form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.wide-form p, .thin-form p {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    text-align: center;
+}
+
+.wide-form p > *, .thin-form p > * {
+    flex: 1;
+}
+
+.wide-form p > * {
+    margin: 0 .5em .5em 0;
+}
+
+.thin-form p > * {
+    margin: 0 0 .5em 0;
+}
+
+.wide-form p > label {
+    margin: 0;
+}
+
+.wide-form p > button, .thin-form p > button {
+    margin-top: 1em;
+    margin-bottom: 0;
+}
+
+.wide-form h3, .thin-form h3 {
+    margin-bottom: 1em;
+}
+
+.wide-form p > :last-child {
+    margin-right: 0;
+}
+
+#mrms {
+    flex: initial;
+}
+
+legend {
+    padding: 1em;
+    margin-bottom: 1em;
+    font-weight: bold;
+    text-transform: capitalize;
+    border-bottom: 1px solid $COLOR_BLUE;
+    width: 100%;
+}
+
+fieldset .error-msg {
+    width: 100%;
+    text-align: center;
+}
+
+#dobdd {
+    border-radius: $BORDER-RADIUS 0 0 $BORDER-RADIUS;
+}
+
+#dobmm {
+    border-radius: 0;
+}
+
+#dobyy {
+    border-radius: 0 $BORDER-RADIUS $BORDER-RADIUS 0;
+}

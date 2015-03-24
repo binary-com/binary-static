@@ -78,9 +78,8 @@
   background-image: url("../images/pages/contract_guide/in-out.svg");
 }
 
-/* Fixed width to match datepicker */
-#duration_amount {
-  width: 95px;
+#duration_amount, #strike_type, #amount, #expiry_step, #from_expiry, #pricingtable_bet_type {
+    width: 100%;
 }
 /* Content of boxes is longer on Bet Guide page */
 #content #bet_guide_content {
@@ -506,7 +505,7 @@ label#from_expiry_label {
 }
 
 .hasDatepicker {
-  width: 95px;
+  width: 8em;
 }
 
 div#price_table_notes {

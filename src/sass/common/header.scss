@@ -18,7 +18,6 @@
     padding-top: 3px;
     a {
       @include link-button;
-      border-radius: 2px;
       font-size: 90%;
       padding: 2px 4px 2px 4px;
       margin: 0 0 0 10px;
@@ -27,7 +26,8 @@
 
   #language_select {
       select {
-          padding: 0px;
+          padding: 0;
+          height: 1.6em;
       }
   }
   a {
@@ -41,7 +41,7 @@
     position: absolute;
     display: none;
     background: $COLOR_DARK_BLUE;
-    border-radius: 0 0 5px 5px;
+    border-radius: 0 0 $BORDER_RADIUS $BORDER_RADIUS;
     margin: 1px 0 0 0;
     padding: 5px 10px 10px 10px;
     li {
@@ -52,7 +52,7 @@
       border-radius: 0;
       padding: 2px 5px 2px 5px;
       display: block;
-      border-radius: 2px;
+      border-radius: $BORDER_RADIUS;
       line-height: 1.5;
       &:active > ul, &:focus, &:hover {
         cursor: pointer;
@@ -83,14 +83,13 @@
     }
     input {
       display: inline;
-      border-radius: 4px;
       font-size: 11px;
       margin: 0 0 0 5px;
     }
     input[type=text], input[type=password] {
       background: #FEFEFE;
       border: 0;
-      width: 50px;
+      width: 6em;
       color: #000000;
       padding: 4px;
     }
