@@ -24,7 +24,7 @@
               %h1= l('How to trade the random markets?')
               %p= l('[_1] has created random indices that you can trade 24/7. You can trade randoms on all types of contract:', stash->{website_name});
             .grd-grid-7.grd-grid-mobile-12
-              %ul.checked
+              %ul.bullet
                 %li
                   %a.pjaxload{:href=>url_for("trade.cgi?market=random&form_name=risefall")}= l('Rise/Fall')
                 %li

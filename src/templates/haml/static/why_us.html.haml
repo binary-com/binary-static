@@ -28,7 +28,7 @@
               %h1= l('Why pay more?')
               %p= l('[_1]\'s patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market.', stash->{website_name});
             .grd-grid-7.grd-grid-mobile-12
-              %ul.checked
+              %ul.bullet
                 %li= l('Real-time prices, benchmarked against interbank options markets.')
                 %li
                   != l("Returns above 100% on simple <a href='[_1]' class='pjaxload'>rise/fall</a> contracts.", url_for('trade.cgi?market=forex&form_name=risefall'))
@@ -47,7 +47,7 @@
             .grd-grid-12
               %img.responsive#new-trader-icon{:src => url_for('images/pages/tour/trade-tutorial_1.svg')}
             .grd-grid-12
-              %ul.checked
+              %ul.bullet
                 %li= l('Choose a payout from $1 to $100,000.')
                 %li= l('Trade all major currencies, indices, stocks, and commodities.')
                 %li= l('Choose a duration from 10 seconds to 365 days.')
@@ -61,7 +61,7 @@
               %h1= l('You won\'t lose your shirt')
             .grd-grid-7.grd-grid-mobile-12
               %p= l('With [_1], you\'re in control. Simply fix your upside and your downside before every trade.', stash->{website_name})
-              %ul.checked
+              %ul.bullet
                 %li= l('You risk only your initial stake, and your stake never increases, even in gapping markets.')
                 %li= l("You will have no 'margin calls', no 'stops', and no surprises.")
                 %li= l('You can close your trade before expiry to lock in profits.')
@@ -84,7 +84,7 @@
                 .grd-grid-12.grd-with-padding
                   %img.responsive{:src => url_for('images/pages/why-us/trade-opposite-value.svg')}
             .grd-grid-4.grd-grid-mobile-12
-              %ul.checked
+              %ul.bullet
                 %li= l('Find the right trade for every market condition.')
                 %li= l('Execute your trade in seconds.')
                 %li= l('Monitor your portfolio in real time.')
@@ -97,7 +97,7 @@
               %h1= l('Your funds are safe')
             .grd-grid-8.grd-grid-mobile-12
               %p= l('With [_1], your money is secure.', stash->{website_name})
-              %ul.checked
+              %ul.bullet
                 %li= l('We segregate and hold client funds in secure AAA-rated banks.')
                 %li= l('We are fully licensed in the British Isles and Malta.')
                 %li= l('We have a proven track record since starting in 2000.')
@@ -120,7 +120,7 @@
                 %img.responsive{:src => url_for('images/pages/why-us/why-us-GBAF-award-2012.svg')}
             .grd-grid-9.grd-grid-mobile-12
               %p= l('[_1] is the award-winning industry pioneer in online options trading. We boast:', stash->{website_name})
-              %ul.checked
+              %ul.bullet
                 %li= l('Over two billion dollars in trades to date.')
                 %li= l('First-class client service.')
                 %li= l('Multi award-winning trading platform.')
