@@ -45,7 +45,6 @@
         text-decoration: none;
         display: block;
         padding: 5px 5px 5px 10px;
-        color: $COLOR_BLUE;
       }
     }
     li.selected {
@@ -123,7 +122,7 @@
       border: none;
       border-bottom: 2px solid $COLOR_GRAY_SHADE;
       border-radius: 0;
-      color: $COLOR_BLACK;
+      color: $COLOR_TEXT;
       font-weight: normal;
       &.disabled {
         color: $COLOR_ORANGE;
@@ -152,7 +151,7 @@
         padding: 0;
         font-weight: normal;
         text-decoration: none;
-        color: $COLOR_BLACK;
+        color: $COLOR_TEXT;
         font-size: 90%;
         background: transparent;
       }
@@ -177,7 +176,7 @@
       li {
         background: none;
         a {
-          color: $COLOR_BLACK;
+          color: $COLOR_TEXT;
           padding-top: 0;
           font-weight: normal;
           text-decoration: none;

@@ -29,9 +29,9 @@
           min-width: 7%;
           span.button {
               margin: 0 5px;
-              color: $COLOR_BLACK;
+              color: $COLOR_TEXT;
               font-weight: bold;
-              border-bottom: 2px solid $COLOR_GRAY_SHADE;
+              border-bottom: 2px solid $COLOR_TEXT;
               &.current {
                 color: $COLOR_ORANGE;
                 border-bottom: 4px solid $COLOR_ORANGE;
@@ -44,7 +44,7 @@
 .chart-notice {
     text-align: left;
     font-size: 80%;
-    color: $COLOR_DARK_GRAY;
+    color: $COLOR_TEXT;
     width: 90%;
     margin: 5px 0;
 }

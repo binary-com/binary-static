@@ -6,7 +6,6 @@
 }
 body {
     background: #FFFFFF;
-    color: #000000;
     font-size:18px;
     min-height: 100%;
     position: relative;
@@ -18,6 +17,9 @@ body {
         font-size: 0.9em;
     }
     font-family: proxima-nova, arial;
+}
+body {
+    color: $COLOR_TEXT;
 }
 html, body { width:100%;  overflow-x:hidden; }
 h1, h2, h3, h4, li, p, a, span {
@@ -53,12 +55,6 @@ h1 {
         color: $COLOR_ORANGE !important;
     }
 }
-h1.dark {
-    color: $COLOR_BLACK;
-    a {
-        color: $COLOR_BLACK !important;
-    }
-}
 h2 {
     font-size: 22px;
     color: $COLOR_BLUE;
@@ -91,6 +87,7 @@ select, input, button, textarea {
     background: $COLOR_WHITE;
     border: 1px solid $COLOR_GRAY;
     padding: 2px 3px 2px 3px;
+    color: $COLOR_TEXT;
 }
 button {
     vertical-align: top;
@@ -156,7 +153,6 @@ fieldset {
         }
     }
     legend {
-        color:#444444;
         padding: 0 0.8em 0 0.8em;
         font-weight: bold;
         text-transform: capitalize;
@@ -205,7 +201,7 @@ label {
     color: $COLOR_RED;
 }
 .text-only {
-    color: $COLOR_DARK_GRAY;
+    color: $COLOR_TEXT;
 }
 .errorfield {
     margin: 0 0 0 0%;
@@ -229,7 +225,7 @@ label {
     font-style: italic;
 }
 .non_input {
-    color: $COLOR_DARK_GRAY;
+    color: $COLOR_TEXT;
     line-height: 1.7em;
 }
 .non_input label {
@@ -317,7 +313,7 @@ fieldset .error-msg {
     font-size: 93%;
 }
 .notice-msg {
-    color: $COLOR_BLACK;
+    color: $COLOR_TEXT;
     background-color: $COLOR_YELLOW;
     padding: 10px;
 }

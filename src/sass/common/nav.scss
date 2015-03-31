@@ -19,7 +19,7 @@
       display: inline-block;
       a {
         font-weight: normal;
-        color: $COLOR_BLACK;
+        color: $COLOR_TEXT;
         line-height: 2;
         top: 1px;
         text-decoration: none;
@@ -61,7 +61,7 @@
           a, span {
             top:auto;
             border: 0;
-            color: $COLOR_DARK_GRAY;
+            color: $COLOR_TEXT;
             display: inline-block;
           }
           a.a-active, span.a-active {
@@ -145,7 +145,7 @@
         ul.tm-ul-2 {
           li.active {
             a.tm-a-2 {
-              color: $COLOR_DARK_GRAY;
+              color: $COLOR_TEXT;
               background: none;
             }
             a.a-active {
