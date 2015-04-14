@@ -69,7 +69,7 @@
                         </span>
                         <span id="login-links">
                             <a class="pjaxload" id="register" href="[% request.url_for('/user/open_account') %]">[% l("Register") %]</a>
-                            <a class="pjaxload" id="lost-password" href="[% request.url_for('lost_password.cgi') %]">[% l("Lost password?") %]</a>
+                            <a class="pjaxload" id="lost-password" href="[% request.url_for('/user/lost_password') %]">[% l("Lost password?") %]</a>
                         </span>
                     </form>
                 </div>
