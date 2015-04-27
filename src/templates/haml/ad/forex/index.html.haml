@@ -1,0 +1,108 @@
+- stash(
+-   title => l('[_1]: Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices',stash('broker_name')),
+-   next_link => '/why-us',
+-   createacc => l('Create free account'),
+-   emailtext   => l('Enter your email'),
+-   passwordstext   => l('Choose a password'),
+- );
+- my $lang = stash->{language};
+#banner
+  .grd-container
+      .grd-grid-12.grd-row-padding
+        #xtop
+          %h1.dark= l('The Premier FOREX Trading Platform')
+          %p!= l('Trade major FX pairs like AUD/USD, USD/JPY from just $1')
+      .grd-grid-12.grd-grid-mobile-12.grd-grid-phablet-12.grd-parent
+      .grd-grid-2.grd-hide-mobile.grd-hide-phablet
+      #open-account.grd-grid-8.grd-grid-mobile-12.grd-grid-phablet-12
+        %p= l('Get your free $10k virtual money account')
+        %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('create_account.cgi'), :method => 'post' }
+          %span#virtual-fields
+            %span.grd-grid-12.grd-no-gutter
+              %input.xemail{:name => 'Email', :id => 'Email', :type => 'email', :required => true, :placeholder => stash('emailtext')}
+              %input#chooseapassword.xpass{:name => 'chooseapassword', :type => 'password', :maxlength => '25', :required => true, :placeholder => stash('passwordstext')}
+              %input#actype{:type => 'hidden', :name => 'actype', :value => 'virtual'}
+              %input{:type => 'hidden', :name => 'l', :value => $lang}
+            %span.grd-grid-12.grd-no-gutter
+              %input.button.xtopcta{:id => 'btn_registration',:type => 'submit', :value => stash('createacc')}
+      .grd-grid-2.grd-hide-mobile.grd-hide-phablet
+.grd-container
+  %hr.xtopseparator
+  #xsection1
+    .grd-grid-12.grd-parent
+      %h1.center= l('The easiest way to get started in the forex markets')
+      %p.center= l('Trade in forex markets in a simple, user-friendly platform.')
+      .grd-grid-5.grd-grid-mobile-12.grd-parent
+        %ul.checked
+          %li!= l('Trade all major currency pairs')
+          %li!= l('Returns above 100% on simple rise/fall contracts.')
+          %li!= l('Returns above 1000% on higher/lower and touch/no-touch trades.')
+          %li!= l('No hidden fees or commissions.')
+          %li!= l('Choose a payout from $1 to $100,000.')
+      .grd-grid-7.grd-grid-mobile-12.grd-parent
+        %img.responsive{:alt => "", :src => url_for("images/pages/ad/forex.png")}
+    .grd-grid-12.grd-parent
+      .center{:style => "margin-top:40px;"}
+        %a#signbox.button.pjaxload.pjaxload-focus{:href => url_for('linkto_acopening.cgi?actype=real')}
+          %span= l('Open a Real Money Account')
+#xcta
+  #xreason
+    .grd-container
+      .grd-row-padding
+        %h1.center-aligned.xhead= l('Why choose us')
+        .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-12
+          %ul
+            %li.xlist1
+              %h3= l('Sharp prices')
+              %p= l('Binary.com\'s patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market.')
+            %li.xlist2
+              %h3= l('Your funds are safe')
+              %p= l('With Binary.com, your money is secure. We segregate and hold client funds in secure AAA-rated banks.')
+        .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-12
+          %ul
+            %li.xlist3
+              %h3= l('Trade your way')
+              %p= l('Don\'t limit yourself! Whatever your market view, Binary.com allows you to put your strategy to work and profit from your predictions.')
+            %li.xlist4
+              %h3= l('Go with the leader')
+              %p= l('Binary.com is the award-winning industry pioneer in online options trading.')
+  .xcta
+    %a.pjaxload.xreal{:href => url_for('linkto_acopening.cgi?actype=real'), :class => 'button'}
+      %span= l('Open real account')
+    %a.pjaxload.xvirtual{:href => url_for('linkto_acopening.cgi?actype=virtual'), :class => 'button'}
+      %span= l('Open virtual account')
+#xtestimonial
+  .grd-container
+    .grd-row-padding
+      %h1.center-aligned.xhead2= l('What our clients are saying')
+      .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-6
+        .xquote
+          %p!= l('&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide&#8221;')
+        .xbubble-left
+        .xquoter-left
+          %p!= l('Joshua Cavallaro <span> Markets And You Trader.</span>')
+      .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-6
+        .xquote
+          %p!= l('&#8220;Binary.com is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;')
+        .xbubble-right
+        .xquoter-right
+          %p!= l('Andrei Asavei <span>Top Binary Options Brokers</span>')
+#xpayment.center-aligned
+  .grd-container
+    .grd-row-padding
+      %h1.center-aligned.xhead2= l('Payment methods')
+      .grd-grid-12
+        %a.pjaxload{:href => url_for('/cashier/available_payment_methods')}
+          #visa.inlined
+          #mastercard.inlined
+          #int_bank_wire.inlined
+          #local_bank_transfer.inlined
+          #western_union.inlined
+          #citadel.inlined
+          #cuo-credit-card.inlined
+          #okpay.inlined
+          #cashu.inlined
+          #fastpay.inlined
+          #perfect_money.inlined
+          #moneybrokers.inlined
+        %p= l('Hundreds of deposit and withdrawal options.')

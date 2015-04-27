@@ -4,251 +4,249 @@
 }
 .home2-content {
    #banner {
-    background: url("../images/pages/home2/map.png") repeat 0px 0px;   
+    background: url("../images/pages/home2/map.png") repeat 0 0;
     background-size: contain;
    }
-   .q-topseparator{
-    height: 32px;
-    border: 0px none;
-    box-shadow: 0px 32px 32px -32px rgba(120, 120, 120, 0.5) inset;
+   .xtopseparator{
+    border: 0;
+    height: 2px;
+    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(68,72,76,0.5), rgba(0,0,0,0));
+    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(68,72,76,0.5), rgba(0,0,0,0));
+    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(68,72,76,0.5), rgba(0,0,0,0));
+    background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(68,72,76,0.5), rgba(0,0,0,0));
     display: block!important;
    }
   #open-account {
+    background: $COLOR_ORANGE;
     color: $COLOR_WHITE;
     text-align: center;
     border-radius: 0;
-    padding: 5px;
-    margin: 5px 30px;
+    margin-top: 10px;
     text-align: center;
-    background-color: rgba(233, 128, 36, 1);
+    padding: 0 0 0;
     p {
       line-height: 2em;
       margin: 0;
+      background: $COLOR_DARK_BLUE;
       font-size: 100%;
-      color:$COLOR_BLACK;
     }
     #virtual-fields {
-        display:block;
-        margin:5px;
         input, select, textarea {
             border-radius: 3px;
-            margin-right: 10px;
-            margin-left: 10px;
+            padding: 0px;
         }
+        margin: 4px 0;
     }
     input[type=submit] {
       @include link-button;
       background: $COLOR_BLUE;
+      padding: 9px 10.83333%;
       border: 0;
       white-space: normal;
-      font-size:16px;
-      display:inline;
-      padding:10px;
-      margin-bottom: 0;
+      font-size:18px;
       &:hover {
-        text-decoration: none;
-        background-color: $COLOR_DARK_GREEN;
-      }
+                text-decoration: none;
+                background-color: $COLOR_DARK_GREEN;
+            }
     }
     form {
         font-size: 100%;
-        display:inline;
     }
   }
-  #q-section1 {
-    padding: 30px 0;
-    display: inline-block;
-    p{
-      font-size:110%
+#xsection1 {
+  padding: 30px 0;
+  display: inline-block;
+  p{
+    font-size:110%
+  }
+  ul li {
+    padding-left: 10px;
+    margin: 1em 0 0;
+    span {
+      color: $COLOR_GREEN;
+      font-weight: 700;
     }
-    ul li {
-      padding-left: 10px;
-      margin: 1em 0 0;
-      span {
-        color: $COLOR_GREEN;
-        font-weight: 700;
-      }
-      i {
-        color: $COLOR_ORANGE;
-      }
-    }
-    h1 {
-      margin-top:20px;
+    i {
+      color: $COLOR_ORANGE;
     }
   }
-  .q-cta-text {
-    text-align: center;
-    font-size: 100%;
-  }
-  #q-reason {
-      padding-top: 20px;
-      padding-bottom: 20px;
-      background-color: $COLOR_LIGHT_GRAY;
-      padding-bottom: 40px;
-  }
-  #q-top {
-      padding-top: 50px;
-      text-align: center;
-      p{
-        font-size:110%;
-      }
-  }
-  #q-badges {
-      img {
-          text-align: center;
-          max-width: 100px;
-          position: relative;
-          top: 50px;
-          margin-right: 20px;
-      }
-      text-align: center;
-  }
-  .q-head {
-      margin-bottom: 20px;
-      margin-top: 30px;
-      padding-bottom: 15px;
-      border-bottom: 1px solid $COLOR_GRAY;
-  }
-  .inlined {
-      display: inline-block;
-  }
-  .q-head2 {
-      margin-top: 0px;
-      margin-bottom: 20px;
-      padding-bottom: 15px;
-      border-bottom: 1px solid $COLOR_GRAY;
-  }
-  .q-list1 {
-      background: url(../images/pages/home/xicon-1.png) no-repeat;
-      padding-left: 50px;
-      min-height: 24px;
-      background-size: 30px;
-  }
-  .q-list2 {
-      background: url(../images/pages/home/xicon-2.png) no-repeat;
-      padding-left: 50px;
-      min-height: 24px;
-      background-size: 30px;
-  }
-  .q-list3 {
-      background: url(../images/pages/home/xicon-3.png) no-repeat;
-      padding-left: 50px;
-      min-height: 24px;
-      background-size: 30px;
-  }
-  .q-list4 {
-      background: url(../images/pages/home/xicon-4.png) no-repeat;
-      padding-left: 50px;
-      min-height: 24px;
-      background-size: 30px;
-  }
-  .q-cta {
-      position: relative;
-      bottom: 30px;
-      text-align: center;
-      .q-real {
-          margin-right: 10px;
-          span {
-              padding: 10px 25px;
-          }
-      }
-      .q-virtual span {
-          background-color: $COLOR_BLUE;
-          &:hover {
-              text-decoration: none;
-              background-color: $COLOR_DARK_GREEN;
-          }
-      }
-  }
-  .q-quote {
-      background-color: $COLOR_LIGHT_GRAY;
-      padding: 20px 40px;
-      p {
-          font-style: italic;
-      }
-  }
-  .q-bubble-right {
-      content: '';
-      width: 0px;
-      height: 0px;
-      border-style: solid;
-      border-width: 25px 5px 0 10px;
-      border-color: $COLOR_LIGHT_GRAY  transparent transparent transparent;
-      position: relative;
-      left: 80%;
-  }
-  .q-bubble-left {
-      content: '';
-      width: 0px;
-      height: 0px;
-      border-style: solid;
-      border-width: 25px 10px 0 5px;
-      border-color: $COLOR_LIGHT_GRAY  transparent transparent transparent;
-      position: relative;
-      left: 10%;
-  }
-  .q-quoter-left {
-      text-align: left;
-  }
-  .q-quoter-right {
-      text-align: right;
-  }
-  .q-email, .q-pass {
-      padding: 10px !important;
-      width: 20%;
-      font-size:12px;
-      display:inline;
-      margin-left: 20px;
-      margin-right: 20px;
-  }
-  .q-topcta {
-      display: inline-block;
-      width: 30%!important;
-  }
-  .q-quoter-left p span, .q-quoter-right p span {
-      font-size: 12px;
-      font-style: italic;
-  }
-  #q-payment a:hover{
-    text-decoration: none;
+  h1 {
+    margin-top:20px;
   }
 }
+
+#xreason {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: $COLOR_LIGHT_GRAY;
+    padding-bottom: 40px;
+}
+#xtop {
+    padding-top: 50px;
+    text-align: center;
+    p{
+      font-size:110%;
+    }
+}
+#xbadges {
+    img {
+        text-align: center;
+        max-width: 100px;
+        position: relative;
+        top: 50px;
+        margin-right: 20px;
+    }
+    text-align: center;
+}
+.xhead {
+    margin-bottom: 20px;
+    margin-top: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $COLOR_GRAY;
+}
+.inlined {
+    display: inline-block;
+}
+.xhead2 {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $COLOR_GRAY;
+}
+.xlist1 {
+    background: url(../images/pages/home/xicon-1.png) no-repeat;
+    padding-left: 50px;
+    min-height: 24px;
+    background-size: 30px;
+}
+.xlist2 {
+    background: url(../images/pages/home/xicon-2.png) no-repeat;
+    padding-left: 50px;
+    min-height: 24px;
+    background-size: 30px;
+}
+.xlist3 {
+    background: url(../images/pages/home/xicon-3.png) no-repeat;
+    padding-left: 50px;
+    min-height: 24px;
+    background-size: 30px;
+}
+.xlist4 {
+    background: url(../images/pages/home/xicon-4.png) no-repeat;
+    padding-left: 50px;
+    min-height: 24px;
+    background-size: 30px;
+}
+.xcta {
+    position: relative;
+    bottom: 30px;
+    text-align: center;
+    .xreal {
+        margin-right: 10px;
+        span {
+            padding: 10px 25px;
+        }
+    }
+    .xvirtual span {
+        background-color: $COLOR_BLUE;
+        padding: 10px 25px;
+        &:hover {
+            text-decoration: none;
+            background-color: $COLOR_DARK_GREEN;
+        }
+    }
+}
+.xquote {
+    background-color: $COLOR_LIGHT_GRAY;
+    padding: 20px 40px;
+    p {
+        font-style: italic;
+    }
+}
+.xbubble-right {
+    content: '';
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 25px 5px 0 10px;
+    border-color: $COLOR_LIGHT_GRAY  transparent transparent transparent;
+    position: relative;
+    left: 80%;
+}
+.xbubble-left {
+    content: '';
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 25px 10px 0 5px;
+    border-color: $COLOR_LIGHT_GRAY  transparent transparent transparent;
+    position: relative;
+    left: 10%;
+}
+.xquoter-left {
+    text-align: left;
+}
+.xquoter-right {
+    text-align: right;
+}
+.xemail, .xpass {
+    width: 35%;
+    display: inline-block;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    padding: 10px !important;
+    font-size: 14px;
+}
+.xemail {
+    margin-right: 20px;
+}
+.xpass {
+    margin-left: 20px;
+}
+.xtopcta {
+    display: inline-block;
+    width: 35%;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding: 15px!important;
+}
+.xquoter-left p span, .xquoter-right p span {
+    font-size: 12px;
+    font-style: italic;
+}
+#xpayment a:hover{
+  text-decoration: none;
+}
+}
+
 @media screen and (max-width: 480px) {
     .home2-content{
-        #open-account{
-            #virtual-fields{
-                input{
-                    margin:10px;
-                }
-            }
-        }
-        #q-top {
+        #xtop {
             padding-top: 30px;
         }
-        .q-head2 {
+        .xhead2 {
             margin-top: 30px;
         }
-        .q-email {
+        .xemail {
             width: 80% !important;
             margin-right: 0;
         }
-        .q-pass {
+        .xpass {
             width: 80% !important;
             margin-left: 0;
-            margin-right: 20px;
         }
-        .q-topcta {
-            width: 80%!important;
+        .xtopcta {
+            width: 80%;
         }
-        .q-testimonial h1, .q-head {
+        .xtestimonial h1, .xhead {
             padding: 10px;
         }
-        #q-section1 {
+        #xsection1 {
             padding: 10px 0;
         }
-        .q-cta {
+        .xcta {
             position: initial;
-            .q-real {
+            .xreal {
                 margin-right: 0px;
                 span {
                     font-weight: 700;
@@ -257,7 +255,7 @@
                     margin: 10px 0;
                 }
             }
-            .q-virtual span {
+            .xvirtual span {
                 background-color: $COLOR_BLUE;
                 font-weight: 700;
                 padding: 20px 20px;
