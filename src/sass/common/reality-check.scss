@@ -1,4 +1,4 @@
-#reality-check {
+.lightbox {
     display:          table;
     position:         fixed;
     top:              0;
@@ -8,11 +8,11 @@
     background-color: rgba(0,0,0,.7);
     z-index:          2000000000;
 }
-#reality-check > div {
+.lightbox > div {
     display:        table-cell;
     vertical-align: middle;
 }
-#reality-check > div > div {
+.lightbox > div > div {
     margin-left:      auto;
     margin-right:     auto;
     padding:          .5em .5em;
@@ -21,7 +21,7 @@
     background-color: #fff;
     border-radius:    .3em;
 }
-#reality-check > div > div > div:first-child {
+.lightbox > div > div > div:first-child {
     padding:    0;
     text-align: left;
     tr, td {
@@ -32,7 +32,7 @@
         width:   10em;
     }
 }
-#reality-check > div > div > div:nth-child(2) {
+.lightbox > div > div > div:nth-child(2) {
     margin-top: 1em;
     span:nth-child(2) {
         display: inline-block;

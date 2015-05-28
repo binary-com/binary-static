@@ -68,7 +68,7 @@ RealityCheck = (function ($) {
         outer = $('#reality-check');
         if (outer) outer.remove();
 
-        outer = $("<div id='reality-check'></div>").appendTo('body');
+        outer = $("<div id='reality-check' class='lightbox'></div>").appendTo('body');
         middle = $('<div />').appendTo(outer);
         $('<div>' + data + '</div>').appendTo(middle);
 
