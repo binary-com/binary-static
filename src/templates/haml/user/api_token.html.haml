@@ -1,0 +1,7 @@
+- stash(title => l('API Token'));
+.grd-grid-12
+  %h1= stash->{title}
+  %p= l('[_1] provides Application Programming Interface (API) facilities to third-party developers.', stash->{website_name})
+  %p= l('To provide access to your account to a third-party application, you may use the following API token:')
+  %span!= "<span class='notice-msg'>$token</span>"
+  %p= l('Notice: please only share your API token with third-parties which you trust.')

@@ -1,10 +1,6 @@
 <div class="grd-grid-12">
 <h1>[% l('Authentication') %]</h1>
 
-[% IF NOT client.client_fully_authenticated %]
-<p>[% l('View your <a href="[_1]">withdrawal limits</a>.', request.url_for('/cashier/limits')) %]</p>
-[% END %]
-
 [% IF hide_authentication %]
 <p class="success_msg">
 [% l('Your account is fully authenticated. You can view your <a href="[_1]">trading limits here</a>.', request.url_for('/cashier/limits')) %]</p>

@@ -4,4 +4,8 @@
         #client_message_content.rbox-content
             = stash->{client_message}
 - }
+- if (stash->{success_message}) {
+    %p.success-msg
+      = stash->{success_message}
+- }
 != $form->build()
