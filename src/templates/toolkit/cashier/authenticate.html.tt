@@ -4,7 +4,7 @@
     <p>
         [% l('Your account is fully authenticated. You can view your <a href="[_1]">trading limits here</a>.', request.url_for('/cashier/limits')) %]
     </p>
-[% ELSIF client.residence == 'gb' AND NOT client.client_fully_authenticated AND NOT manual AND ((NOT has_done_192_proveid_request AND NOT is_uploaded_id_doc AND NOT is_uploaded_addr_doc) OR request.is_logged_into_bo) %]
+[% ELSIF client.residence == 'gb' AND NOT client.client_fully_authenticated AND NOT manual AND (NOT has_done_192_proveid_request AND NOT is_uploaded_id_doc AND NOT is_uploaded_addr_doc) %]
     [% id_auth_form.build() %]
 [% ELSIF country == 'Isle of Man' || country == 'Malta' %]
     <p>
