@@ -35,14 +35,6 @@
           - }
         %span#display_cs_telephone.grd-grid-7.grd-prefix-4.grd-no-gutter.grd-grid-mobile-12.grd-prefix-mobile-0.grd-row-padding
           = $default_number
-      .grd-grid-12.grd-parent.grd-row-padding
-        %label.grd-grid-4.grd-grid-mobile-12.grd-no-gutter= l('Skype:')
-        .grd-grid-2.grd-no-gutter
-          - my $skype_helpline = customer_support_skype_helpline();
-          - my $helpline = $skype_helpline->{$selected_language} || $skype_helpline->{'EN'};
-          - $helpline = "skype:" . $helpline . "?call";
-          %a{:href => $helpline}
-            %img.responsive{:src => url_for('images/pages/contact/skype-icon.svg')}
       #live-chat-container.grd-grid-12.grd-parent.grd-row-padding
         %label.grd-grid-4.grd-grid-mobile-12.grd-no-gutter= l('Live chat:')
         .grd-grid-2.grd-no-gutter
