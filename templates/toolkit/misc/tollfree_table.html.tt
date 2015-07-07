@@ -1,0 +1,32 @@
+<div itemscope itemtype="http://schema.org/Organization" class="grd-parent grd-grid-12">
+
+    <div class="grd-parent grd-grid-12 grd-row-padding table-header">
+        <div class="grd-grid-2 grd-grid-mobile-4">[% l('Country') %]</div>
+        <div class="grd-grid-3 grd-grid-mobile-5">[% l('Toll-Free number') %]</div>
+        <div class="grd-grid-4 grd-hide-mobile">[% l('Office where call is handled') %]</div>
+        <div class="grd-grid-3">[% l('Support Times') %]  [% l('(Monday to Friday)') %] </div>
+    </div>
+
+    [% FOREACH country IN tollfree_numbers.keys %]
+        <div class="grd-parent grd-grid-12 grd-row-padding table-body table-body-lines">
+            <div class="[% tollfree_numbers.$country.html_class %] grd-grid-2 grd-grid-mobile-4">[% tollfree_numbers.$country.country %]</div>
+            <div class="grd-grid-3 grd-grid-mobile-5">[% tollfree_numbers.$country.number %]</div>
+            <div class="grd-grid-4 grd-hide-mobile">[% tollfree_numbers.$country.office %]</div>
+            <div class="grd-grid-3">[% tollfree_numbers.$country.support_times %]</div>
+        </div>
+    [% END %]
+
+    [% IF other_numbers %]
+        <div class="grd-grid-12 grd-row-padding table-header">
+            [% l('Other contact numbers') %]
+        </div>
+        [% FOREACH type IN other_numbers.keys.sort %]
+        <div class="grd-parent grd-grid-12 grd-row-padding table-body table-body-lines">
+            <div class="grd-grid-3">[% type %]</div>
+            <div itemprop="[% other_numbers.$type.itemprop %]" class="grd-grid-9">
+                [% other_numbers.$type.number %]
+            </div>
+        </div>
+        [% END %]
+    [% END %]
+</div>

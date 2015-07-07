@@ -1,16 +1,14 @@
-#topbar.dark-blue
+#topbar
   .grd-container
     .grd-parent
-      .grd-grid-6.grd-grid-mobile-12.by_client_type.client_virtual{ :class => 'upgrademessage', :style => 'display: none;'}
+      .grd-grid-6.grd-grid-mobile-12.by_client_type.client_virtual{ :id => 'virtualupgrade', :style => 'display: none;'}
         %span.grd-hide-mobile
-          %span#virtual-text= l("You're using a Virtual Account.")
-        %a.virtual-upgrade-link.pjaxload.with_login_cookies.pulser{:href =>url_for("/user/upgrade") }= l('Upgrade to a Real Account')
-      .grd-grid-6.grd-grid-mobile-12.by_client_type.client_real.upgrademessage{:style => 'display: none;'}
-        %a#financial-upgrade-link.invisible.pjaxload.with_login_cookies.pulser{:href =>url_for("/user/upgrade/financial") }= l('Open a Financial Account')
+          %span= l('You\'re using a virtual money account.')
+        %a.pjaxload.with_login_cookies{:href =>url_for("linkto_acopening.cgi?actype=real") }= l('Upgrade to a real money account')
       .grd-grid-6.grd-grid-mobile-12.grd-parent#topbar-info
         .grd-grid-5.grd-grid-mobile-7#gmt-clock
         .grd-grid-3.grd-hide-mobile#contact-us
-          %a.pjaxload.with_login_cookies{:href=>url_for("contact")}= l('Contact Us')
+          %a.pjaxload.with_login_cookies{:href=>url_for("contact.cgi")}= l('Contact Us')
           - my $languages = available_languages();
           - my $sel_code = stash->{language};
           - my $sel_name = $languages->{$sel_code};

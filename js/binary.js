@@ -5,10 +5,6 @@ if (window.applicationCache) {
                     window.applicationCache.swapCache();
                     var appcache_reload_message = $('#appcache-reload-message');
                     appcache_reload_message.css('display', 'block');
-                    appcache_reload_message.on('click', '#appcache-refresh-link', function () {
-                        window.location.reload();
-                        return false;
-                    });
                 } catch (err) {}
             }
         }, false);
@@ -575,45 +571,6 @@ var gtm_data_layer_info = function() {
     return gtm_data_layer_info;
 };
 
-var User = function() {
-    this.email =  $.cookie('email');
-    var loginid_list = $.cookie('loginid_list');
-
-    if(this.email === null || typeof this.email === "undefined") {
-        this.is_logged_in = false;
-    } else {
-        this.is_logged_in = true;
-
-        if(loginid_list !== null && typeof loginid_list !== "undefined") {
-            var loginid_array = [];
-            var loginids = loginid_list.split('+').sort();
-
-            for (var i = 0; i < loginids.length; i++) {
-                var real = false;
-                var disabled = false;
-                var items = loginids[i].split(':');
-                if (items[1] == 'R') {
-                    real = true;
-                }
-                if (items[2] == 'D') {
-                    disabled = true;
-                }
-
-                var id_obj = { 'id':items[0], 'real':real, 'disabled':disabled };
-                if (/MLT/.test(items[0])) {
-                    id_obj['non_financial']= true;
-                }
-                if (/MF/.test(items[0])) {
-                    id_obj['financial']= true;
-                }
-                loginid_array.push(id_obj);
-            }
-
-            this.loginid_array = loginid_array;
-        }
-    }
-};
-
 var Client = function() {
     this.loginid =  $.cookie('loginid');
     this.is_logged_in = false;
@@ -661,7 +618,7 @@ var URL = function (url) { // jshint ignore:line
     } else {
         this.location = window.location;
     }
-};
+}; 
 
 URL.prototype = {
     url_for: function(path, params, type) {
@@ -787,7 +744,7 @@ Menu.prototype = {
                 this.show_main_menu();
             }
         } else {
-            var is_mojo_page = /^\/$|\/login|\/home|\/smart-indices|\/ad|\/open-source-projects|\/white-labels|\/partnerapi$/.test(window.location.pathname);
+            var is_mojo_page = /\/$|\/login|\/home|\/smart-indices|\/open-source-projects|\/white-labels|\/partnerapi$/.test(window.location.pathname);
             if(!is_mojo_page) {
                 trading.addClass('active');
                 this.show_main_menu();
@@ -818,23 +775,6 @@ Menu.prototype = {
         }
 
         this.on_mouse_hover(active.item);
-
-        // enable only allowed markets
-        var allowed_markets = $.cookie('allowed_markets');
-        if(allowed_markets) {
-            var markets_array = allowed_markets.split(',');
-            var sub_items = $('li#topMenuStartBetting ul.sub_items');
-            sub_items.find('li').each(function () {
-                var link_id = $(this).attr('id').split('_')[1];
-                if(markets_array.indexOf(link_id) < 0) {
-                    var link = $(this).find('a');
-                    if(markets_array.indexOf(link.attr('id')) < 0) {
-                        link.addClass('disabled-link');
-                        link.removeAttr('href');
-                    }
-                }
-            });
-        }
     },
     reset: function() {
         $("#main-menu .item").unbind();
@@ -881,28 +821,17 @@ Menu.prototype = {
         });
 
         $("#main-menu .sub_items a").each(function(){
-            var link_href = $(this).attr('href');
-            if (link_href) {
-                var url = new URL(link_href);
-                if(url.is_in(that.page_url)) {
-                    item = $(this).closest('.item');
-                    subitem = $(this);
-                }
+            var url = new URL($(this).attr('href'));
+            if(url.is_in(that.page_url)) {
+                item = $(this).closest('.item');
+                subitem = $(this);
             }
         });
 
         return { item: item, subitem: subitem };
     },
     register_dynamic_links: function() {
-        var stored_market = page.url.param('market') || LocalStore.get('bet_page.market') || 'forex';
-        var allowed_markets = $.cookie('allowed_markets');
-        if(allowed_markets) {
-            var markets_array = allowed_markets.split(',');
-            if(markets_array.indexOf(stored_market) < 0) {
-                stored_market = markets_array[0];
-                LocalStore.set('bet_page.market', stored_market);
-            }
-        }
+        var stored_market = page.url.param('market') || LocalStore.get('bet_page.market');
         var start_trading = $('#topMenuStartBetting a:first');
         var trade_url = start_trading.attr("href");
         if(stored_market) {
@@ -914,7 +843,6 @@ Menu.prototype = {
             start_trading.attr("href", trade_url);
 
             $('#menu-top li:eq(3) a').attr('href', trade_url);
-            $('#mobile-menu #topMenuStartBetting a.trading_link').attr('href', trade_url);
         }
 
         start_trading.on('click', function(event) {
@@ -930,8 +858,7 @@ Menu.prototype = {
     }
 };
 
-var Header = function(params) {
-    this.user = params['user'];
+var Header = function(params) { 
     this.client = params['client'];
     this.settings = params['settings'];
     this.menu = new Menu(params['url']);
@@ -949,35 +876,8 @@ Header.prototype = {
         this.menu.reset();
     },
     show_or_hide_login_form: function() {
-        if (this.user.is_logged_in && this.client.is_logged_in) {
-            var loginid_select = '';
-            var loginid_array = this.user.loginid_array;
-            for (var i=0;i<loginid_array.length;i++) {
-                if (loginid_array[i].disabled) continue;
-
-                var curr_loginid = loginid_array[i].id;
-                var real = loginid_array[i].real;
-                var selected = '';
-                if (curr_loginid == this.client.loginid) {
-                    selected = ' selected="selected" ';
-                }
-
-                var loginid_text;
-                if (real) {
-                    if(loginid_array[i].financial){
-                        loginid_text = text.localize('Investment Account') + ' (' + curr_loginid + ')';
-                    } else if(loginid_array[i].non_financial) {
-                        loginid_text = text.localize('Gaming Account') + ' (' + curr_loginid + ')';
-                    } else {
-                        loginid_text = text.localize('Real Account') + ' (' + curr_loginid + ')';
-                    }
-                } else {
-                    loginid_text = text.localize('Virtual Account') + ' (' + curr_loginid + ')';
-                }
-
-                loginid_select += '<option value="' + curr_loginid + '" ' + selected + '>' + loginid_text +  '</option>';
-            }
-            $("#client_loginid").html(loginid_select);
+        if (this.client.is_logged_in) {
+            $("#client_loginid").html(this.client.loginid);
         }
     },
     simulate_input_placeholder_for_ie: function() {
@@ -1002,7 +902,7 @@ Header.prototype = {
     register_dynamic_links: function() {
         var logged_in_url = page.url.url_for('');
         if(this.client.is_logged_in) {
-            logged_in_url = page.url.url_for('user/my_account');
+            logged_in_url = page.url.url_for('my_account.cgi');
         }
 
         $('#logo').attr('href', logged_in_url).on('click', function(event) {
@@ -1051,7 +951,7 @@ Header.prototype = {
         sync();
         setInterval(function() {
             sync();
-        }, 900000);
+        }, 300000);
 
         this.clock_started = true;
         return;
@@ -1162,16 +1062,14 @@ ToolTip.prototype = {
     },
 };
 
-var Contents = function(client, user) {
+var Contents = function(client) {
     this.client = client;
-    this.user = user;
     this.tooltip = new ToolTip();
 };
 
 Contents.prototype = {
     on_load: function() {
         this.activate_by_client_type();
-        this.topbar_message_visibility();
         this.update_body_id();
         this.update_content_class();
         this.tooltip.attach();
@@ -1189,38 +1087,13 @@ Contents.prototype = {
             if(this.client.is_real) {
                 $('.by_client_type.client_real').removeClass('invisible');
                 $('.by_client_type.client_real').show();
-
-                $('#topbar').addClass('dark-blue');
-                $('#topbar').removeClass('orange');
-
-                if (!/^Q?CR/.test(this.client.loginid)) {
-                    $('#payment-agent-section').addClass('invisible');
-                    $('#payment-agent-section').hide();
-                }
-
-                if (!/^Q?MF|MLT/.test(this.client.loginid)) {
-                    $('#account-transfer-section').addClass('invisible');
-                    $('#account-transfer-section').hide();
-                }
             } else {
                 $('.by_client_type.client_virtual').removeClass('invisible');
                 $('.by_client_type.client_virtual').show();
-
-                $('#topbar').addClass('orange');
-                $('#topbar').removeClass('dark-blue');
-
-                $('#account-transfer-section').addClass('invisible');
-                $('#account-transfer-section').hide();
             }
         } else {
             $('.by_client_type.client_logged_out').removeClass('invisible');
             $('.by_client_type.client_logged_out').show();
-
-            $('#topbar').removeClass('orange');
-            $('#topbar').addClass('dark-blue');
-
-            $('#account-transfer-section').addClass('invisible');
-            $('#account-transfer-section').hide();
         }
     },
     update_body_id: function() {
@@ -1236,60 +1109,62 @@ Contents.prototype = {
     init_draggable: function() {
         $('.draggable').draggable();
     },
-    topbar_message_visibility: function() {
-        if(this.client.is_logged_in) {
-            var loginid_array = this.user.loginid_array;
-            var has_real = false;
+};
 
-            var has_financial = false;
-            var check_financial = false;
-            if (/MLT/.test(this.client.loginid)) {
-                check_financial = true;
-            }
+var Footer = function() { };
 
-            for (var i=0;i<loginid_array.length;i++) {
-                var loginid = loginid_array[i].id;
-                var real = loginid_array[i].real;
+Footer.prototype = {
+    on_load: function() {
+        var that = this;
+        var footer = $('#footer');
+        this.make_sticky();
+        $(window).resize(function() {
+            footer.css({'margin-top': 0});
+            that.make_sticky();
+        });
+        $(window).bind('hashchange', function() {
+            that.make_sticky();
+        });
+    },
+    make_sticky: function() {
+        var docHeight = $(window).height();
+        var footer = $('#footer');
+        if (footer.length > 0) {
+            var footerHeight = footer.height();
+            var footerTop = footer.offset().top + footerHeight;
 
-                if (real) {
-                    has_real = true;
-                    if (!check_financial) {
-                        break;
-                    }
-                    if (loginid_array[i].financial) {
-                        has_financial = true;
-                        break;
-                    }
-                }
-            }
-            if (has_real) {
-                $('.virtual-upgrade-link').addClass('invisible');
-                $('.virtual-upgrade-link').hide();
-
-                if (check_financial && !has_financial) {
-                    $('#financial-upgrade-link').removeClass('invisible');
-                    if ($('#investment_message').length > 0) {
-                        $('#investment_message').removeClass('invisible');
-                    }
-                } else {
-                    $('#financial-upgrade-link').addClass('invisible');
-                    if ($('#investment_message').length > 0) {
-                        $('#investment_message').addClass('invisible');
+            if (footerTop < docHeight) {
+                var margintop = $('body').prop('scrollHeight') - footer.offset().top - footer.height();
+                if (margintop > 0) {
+                    // Create the measurement node
+                    var scrollDiv = document.createElement("div");
+                    scrollDiv.className = "scrollbar-measure";
+                    document.body.appendChild(scrollDiv);
+                    // Get the scrollbar width
+                    var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
+                    // Delete the DIV
+                    document.body.removeChild(scrollDiv);
+                    // hack for browser other than firefox
+                    if (navigator.userAgent.indexOf("Firefox") > -1) {
+                        footer.css({'margin-top': margintop + 'px'});
+                    } else {
+                        margintop += scrollbarWidth - 1;
+                        footer.css({'margin-top': margintop + 'px'});
                     }
                 }
             }
         }
-    },
+    }
 };
 
-var Page = function(config) {
+var Page = function(config) { 
     config = typeof config !== 'undefined' ? config : {};
-    this.user = new User();
     this.client = new Client();
     this.url = new URL();
     this.settings = new InScriptStore(config['settings']);
-    this.header = new Header({ user: this.user, client: this.client, settings: this.settings, url: this.url});
-    this.contents = new Contents(this.client, this.user);
+    this.header = new Header({ client: this.client, settings: this.settings, url: this.url});
+    this.contents = new Contents(this.client);
+    this.footer = new Footer();
 };
 
 Page.prototype = {
@@ -1304,16 +1179,12 @@ Page.prototype = {
     },
     on_load: function() {
         this.url.reset();
-        this.localize_for(this.language());
         this.header.on_load();
+        this.localize_for(this.language());
         this.on_change_language();
-        this.on_change_loginid();
         this.record_affiliate_exposure();
         this.contents.on_load();
-        this.on_click_signup();
-        this.on_input_password();
-        this.on_click_acc_transfer();
-        this.on_click_view_balances();
+        this.footer.on_load();
         $('#current_width').val(get_container_width());//This should probably not be here.
     },
     on_unload: function() {
@@ -1327,90 +1198,9 @@ Page.prototype = {
             document.location = that.url_for_language(language);
         });
     },
-    on_change_loginid: function() {
-        var that = this;
-        $('#client_loginid').on('change', function() {
-            $('#loginid-switch-form').submit();
-        });
-    },
-    on_input_password: function() {
-        $('#chooseapassword').on('input', function() {
-            $('#reenter-password').removeClass('invisible');
-            $('#reenter-password').show();
-        });
-    },
-    on_click_signup: function() {
-        $('#btn_registration').on('click', function() {
-            var pwd = $('#chooseapassword').val();
-            var pwd_2 = $('#chooseapassword_2').val();
-            var email = $('#Email').val();
-
-            if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email)) {
-                $('#signup_error').text(text.localize('Invalid email address'));
-                $('#signup_error').removeClass('invisible');
-                $('#signup_error').show();
-                return false;
-            }
-            if (pwd.length === 0 || pwd_2.length === 0 || !client_form.compare_new_password(pwd, pwd_2)) {
-                $('#signup_error').text(text.localize('The two passwords that you entered do not match.'));
-                $('#signup_error').removeClass('invisible');
-                $('#signup_error').show();
-                return false;
-            }
-            // email != password
-            if (email == pwd) {
-                $('#signup_error').text(text.localize('Your password cannot be the same as your email'));
-                $('#signup_error').removeClass('invisible');
-                $('#signup_error').show();
-                return false;
-            }
-
-            $('#virtual-acc-form').submit();
-        });
-    },
-    on_click_acc_transfer: function() {
-        $('#acc_transfer_submit').on('click', function() {
-            var amount = $('#acc_transfer_amount').val();
-            if (!/^[0-9]+\.?[0-9]{0,2}$/.test(amount) || amount < 0.1) {
-                $('#invalid_amount').removeClass('invisible');
-                $('#invalid_amount').show();
-                return false;
-            }
-            $('#acc_transfer_submit').submit();
-        });
-    },
-    on_click_view_balances: function() {
-        $('#view-balances').on('click', function(event) {
-            event.preventDefault();
-            if ($(this).hasClass("disabled")) {
-                return false;
-            }
-            $(this).addClass("disabled");
-
-            $.ajax({
-                url: page.url.url_for('user/balance'),
-                dataType: 'text',
-                success: function (data) {
-                    var outer = $('#client-balances');
-                    if (outer) outer.remove();
-
-                    outer = $("<div id='client-balances' class='lightbox'></div>").appendTo('body');
-                    middle = $('<div />').appendTo(outer);
-                    $('<div>' + data + '</div>').appendTo(middle);
-
-                    $('#client-balances [bcont=1]').on('click', function () {
-                        $('#client-balances').remove();
-                    });
-                },
-            }).always(function() {
-                $('#view-balances').removeClass("disabled");
-            });
-        });
-    },
-
     localize_for: function(language) {
         text = texts[language];
-        moment.locale(language.toLowerCase());
+        moment.lang(language.toLowerCase());
     },
     url_for_language: function(lang) {
         lang = lang.trim().toUpperCase();
@@ -1500,6 +1290,7 @@ var PjaxExecQueue = function () {
     this.url_exec_queue = [];
     this.id_exec_queue = [];
     this.fired = false;
+    this.indicating_loading = false;
     this.content = $('#content');
 };
 
@@ -1514,6 +1305,10 @@ PjaxExecQueue.prototype = {
         this.id_exec_queue.unshift(new IDPjaxQueueElement(exec_function, id));
     },
     fire: function () {
+        if(this.indicating_loading) {
+            this.content.removeClass("indicate-loading");
+            this.indicating_loading = false;
+        }
         if(!this.fired) {
             var match_loc = window.location.pathname;
             var i = this.url_exec_queue.length;
@@ -1532,6 +1327,8 @@ PjaxExecQueue.prototype = {
         this.fired = false;
     },
     loading: function () {
+        this.content.addClass("indicate-loading");
+        this.indicating_loading = true;
         this.reset();
     },
     count: function () {
@@ -1771,7 +1568,7 @@ Localizable.prototype = {
 //http://stackoverflow.com/questions/11487216/cors-with-jquery-and-xdomainrequest-in-ie8-9
 //
 $(document).ajaxSuccess(function () {
-    var contents = new Contents(page.client, page.user);
+    var contents = new Contents(page.client);
     contents.on_load();
 });
 
@@ -2237,52 +2034,6 @@ TimePicker.prototype = {
         return config;
     },
 };
-;window._trackJs = {
-    onError: function(payload, error) {
-
-        function itemExistInList(item, list) {
-            for (var i = 0; i < list.length; i++) {
-                if (item.indexOf(list[i]) > -1) {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        var ignorableErrors = [
-            // General script error, not actionable
-            "[object Event]",
-            // General script error, not actionable
-            "Script error.",
-            // error when user  interrupts script loading, nothing to fix
-            "Error loading script",
-            // an error caused by DealPly (http://www.dealply.com/) chrome extension
-            "DealPly",
-            // this error is reported when a post request returns error, i.e. html body
-            // the details provided in this case are completely useless, thus discarded
-            "Unexpected token <"
-        ];
-
-        if (itemExistInList(payload.message, ignorableErrors)) {
-            return false;
-        }
-
-        payload.network = payload.network.filter(function(item) {
-
-            // ignore random errors from Intercom
-            if (item.statusCode === 403 && payload.message.indexOf("intercom") > -1) {
-                return false;
-            }
-
-            return true;
-        });
-
-        return true;
-    }
-};
-
-// if Track:js is already loaded, we need to initialize it
-if (typeof trackJs !== 'undefined') trackJs.configure(window._trackJs);
 ;//
 //
 //
@@ -2363,13 +2114,13 @@ function updateLiveChart(config) {
 var LiveChart = function(config) {
     //Required for inheritence.
     if (!config) return;
-
+    
     this.config = config;
     this.shift = false;
     if (!config.trade_visualization) {
         this.on_duration_change();
         this.highlight_duration();
-    }
+    }    
 };
 
 LiveChart.prototype = {
@@ -2385,9 +2136,7 @@ LiveChart.prototype = {
         }
 
         if (!chart_closed && live_chart) {
-            if (this.chart) {
-                this.chart.destroy();
-            }
+            this.chart.destroy();
             chart_closed = true;
             live_chart = null;
         }
@@ -2509,10 +2258,7 @@ LiveChart.prototype = {
                 min: this.config.from * 1000,
             },
             yAxis: {
-                opposite: false,
                 labels: {
-                    align: 'left',
-                    x: 0,
                     formatter: function() { return this.value; }
                 },
                 title: {
@@ -2621,10 +2367,6 @@ LiveChartTick.prototype.process_data = function(point) {
             epoch: parseInt(point[1]),
             quote: parseFloat(point[2])
         };
-
-        if (!this.chart) return;
-        if (!this.chart.series) return;
-
         this.chart.series[0].addPoint(
             [tick.epoch * 1000, tick.quote], false, this.shift, false
         );
@@ -2698,8 +2440,6 @@ LiveChartOHLC.prototype.process_corp_action = function(action) {
 
 LiveChartOHLC.prototype.process_ohlc = function(ohlc) {
     var epoch = parseInt(ohlc[0]);
-    if (!this.chart) return;
-    if (!this.chart.series) return;
     var ohlc_pt = {
         x:     epoch * 1000,
         open:  parseFloat(ohlc[1]),
@@ -2721,8 +2461,9 @@ LiveChartOHLC.prototype.process_tick = function(tickInput) {
     };
     this.spot = tick.quote;
 
-    if (!this.chart) return;
-    if (!this.chart.series) return;
+    if (!this.chart.series) {
+        return; 
+    }
 
     var data = this.chart.series[0].options.data;
     if (data.length > 0 && data[data.length - 1].x > (tick.epoch - this.candlestick.period)) {
@@ -2758,7 +2499,6 @@ LiveChartOHLC.prototype.process_tick = function(tickInput) {
     this.with_trades = typeof params['with_trades'] !== 'undefined' ? params['with_trades'] : 1;
     this.streaming_server = page.settings.get('streaming_server');
     this.with_marker = typeof params['with_marker'] !== 'undefined' ? params['with_marker'] : 0;
-    this.force_tick = typeof params['force_tick'] !== 'undefined' ? params['force_tick'] : 0;
 
     this.indicators = [];
     this.resolutions = {
@@ -2906,14 +2646,8 @@ LiveChartConfig.prototype = {
         if(opts.with_markers) {
             this.with_markers = opts.with_markers;
         }
-        if(opts.force_tick) {
-            this.force_tick = opts.force_tick;
-        }
     },
     best_resolution: function(from, to) {
-        if(this.force_tick) {
-            return 'tick';
-        }
         var length = parseInt(to - from);
         for(var resolution in this.resolutions) {
             if (this.resolutions[resolution].interval >= length) {
@@ -3067,18 +2801,9 @@ LiveChartIndicator['Barrier'] = function(params) {
 
 LiveChartIndicator['Barrier'].prototype = {
     remove: function(that) {
-        if(!that.chart){
-            return;
-        }
         if (this.axis == 'y') {
-            if(!that.chart.yAxis){
-                return;
-            }
             that.chart.yAxis[0].removePlotLine(this.id);
         } else {
-            if(!that.chart.xAxis){
-                return;
-            }
             that.chart.xAxis[0].removePlotLine(this.id);
         }
     },
@@ -3113,18 +2838,9 @@ LiveChartIndicator['Barrier'].prototype = {
                 plot_option.label = {text: text.localize(this.label), align: 'center'};
             }
         }
-        if (!that.chart) {
-            return;
-        }
         if (this.axis == 'y') {
-            if (!that.chart.yAxis) {
-                return;
-            }
             that.chart.yAxis[0].addPlotLine(plot_option);
         } else {
-            if (!that.chart.xAxis) {
-                return;
-            }
             that.chart.xAxis[0].addPlotLine(plot_option);
         }
         this.painted = true;
@@ -3174,7 +2890,7 @@ var trading_times_init = function() {
      onSelect: function( dateText, picker ){
          trading_times.tabs( "destroy" );
          showLoadingImage(trading_times);
-         url = page.url.url_for('resources/trading_times', 'date=' + dateText, 'cached');
+         url = page.url.url_for('trading_times.cgi', 'date=' + dateText, 'cached');
          $.ajax({
                   url: url,
                   data:  { 'ajax_only': 1 },
@@ -3199,6 +2915,11 @@ var asset_index_init = function() {
 };
 
 function confirm_popup_action() {
+    SpotLight.attach_click_event('a.tm-a-2', function (e){
+        e.preventDefault();
+        $(this).parents('#bom-confirm-popup').find('a.tm-a-2').removeClass('a-active').end().end().addClass('a-active');
+        $('#'+this.id+'-content').siblings('div.rbox-content').addClass('invisible').end().removeClass('invisible');
+    });
 
     $('.bom_confirm_popup_link').on('click', function (e){
         e.preventDefault();
@@ -3239,7 +2960,7 @@ onLoad.queue_for_url(contract_guide_popup, 'contract_guide');
 onLoad.queue_for_url(trading_times_init, 'trading_times');
 onLoad.queue_for_url(asset_index_init, 'asset_index');
 onLoad.queue_for_url(confirm_popup_action, 'my_account|confirm_popup');
-onLoad.queue_for_url(hide_payment_agents, 'cashier');
+onLoad.queue_for_url(hide_payment_agents, 'available_payment_methods');
 
 onLoad.queue_for_url(function() {
     $('div.further-info')
@@ -3351,7 +3072,7 @@ pjax_config_page('rise_fall_table', function() {
                 $(this).hide();
                 $('#rise_fall_calculating').show();
                 var form = $('form[name=rise_fall]').get(0);
-                var url = page.url.url_for('resources/rise_fall_table', getFormParams(form));
+                var url = page.url.url_for('rise_fall_table.cgi', getFormParams(form));
                 $('#rise_fall_prices_div').html('');
                 $.ajax({
                     url: url,
@@ -3658,7 +3379,7 @@ pjax_config_page('chart_application', function () {
     this.chart_config = {
         chart: {
                 renderTo:'last_digit_histo',
-                defaultSeriesType:'column',
+                defaultSeriesType:'column',                
                 backgroundColor:'#eee',
                 borderWidth:1,
                 borderColor:'#ccc',
@@ -3719,10 +3440,7 @@ pjax_config_page('chart_application', function () {
             tickColor:'#ccc',
             lineColor:'#ccc',
             endOnTick:true,
-            opposite: false,
             labels: {
-                align: 'left',
-                x: 0,
                 enabled: false,
                 formatter: function() {
                     var total = $("select[name='tick_count']").val();
@@ -4025,6 +3743,7 @@ BetAnalysis.tab_last_digit = new BetAnalysis.DigitInfo();
             return moment.utc(page.header.time_now);
         },
         error_message: function () {
+            $('#betInputBox').removeClass("indicate-loading");
             BetPrice.error_handler();
         },
         actions: function() {
@@ -4115,6 +3834,7 @@ BetAnalysis.tab_last_digit = new BetAnalysis.DigitInfo();
                     }
 
                     var that = this;
+                    $('#betInputBox').addClass("indicate-loading");
                     betform_request = $.ajax({
                             url     : this.form_url(form_name),
                             success : function (data) {
@@ -4135,6 +3855,7 @@ BetAnalysis.tab_last_digit = new BetAnalysis.DigitInfo();
                     }
 
                     var that = this;
+                    $('#betInputBox').addClass("indicate-loading");
                     betform_request = $.ajax({
                         url     : this.form_url('', underlying),
                         success : function (data) {
@@ -4166,6 +3887,7 @@ BetAnalysis.tab_last_digit = new BetAnalysis.DigitInfo();
                     this.on_amount_type_change();
                     this.on_other_input_change();
 
+                    $('#betInputBox').removeClass("indicate-loading");
                     $('#bet_calculate').focus(); //Focus on the Get Prices button.
                     this.hide_sub_trade();
 
@@ -4199,7 +3921,6 @@ BetAnalysis.tab_last_digit = new BetAnalysis.DigitInfo();
                         BetForm.underlying_drop_down.update_for_submarket(this.value);
                         //If Underlying Changed because of submarket
                         if (BetForm.attributes.model.underlying() != BetForm.attributes.underlying()) {
-                            BetForm.attributes.model.underlying(BetForm.attributes.underlying());
                             that.update_for_underlying(BetForm.attributes.underlying());
                         }
                     }).addClass('unbind_later');
@@ -4716,7 +4437,7 @@ BetAnalysis.tab_last_digit = new BetAnalysis.DigitInfo();
             model: function() {
                 return {
                     form_name: function(form_name) {
-                        var fallback = 'bets_tab_callput';
+                        var fallback = 'bets_tab_risefall';
                         if(form_name) {
                             LocalStore.set('bet_page.form_name', form_name);
                         }
@@ -5163,18 +4884,8 @@ BetForm.Time.prototype = {
         this.trading_time.init();
         this.duration.init();
         this.end_time.init();
+        $('#expiry_type').val(this.model.expiry_type);
         this.register();
-        if (BetForm.attributes.model.form_name() == "digits" || BetForm.attributes.model.form_name() == "asian") {
-            var expiry_val = 'duration';
-            $('#expiry_type').val(expiry_val);
-            page.url.invalidate();
-            LocalStore.set('bet_page.expiry_type', expiry_val);
-            BetForm.attributes.model.expiry_type(expiry_val);
-            this.model.expiry_type = expiry_val;
-            $('#duration_amount').val(this.trading_time.min_unit().min);
-        } else {
-            $('#expiry_type').val(this.model.expiry_type);
-        }
         this.update_ui();
     },
     register: function() {
@@ -5361,7 +5072,7 @@ BetForm.TradingTime.prototype = {
     },
     min_unit: function() {
         var units = this.configured_units_by_start_time();
-        var order = ['d', 'h', 'm', 's' ,'t'];
+        var order = [ 'd', 'h', 'm', 's' ,'t'];
         var checking = order.length;
         while(checking > 0) {
             checking--;
@@ -5372,7 +5083,7 @@ BetForm.TradingTime.prototype = {
     },
     max_unit: function() {
         var units = this.configured_units_by_start_time();
-        var order = ['t', 's', 'm', 'h', 'd'];
+        var order = [ 's', 'm', 'h', 'd', 't'];
         var checking = order.length;
         while(checking > 0) {
             checking--;
@@ -5391,26 +5102,27 @@ BetForm.TradingTime.prototype = {
         var units;
         var amount;
         var start_time = BetForm.attributes.start_time_moment();
+        
         var time = moment.utc(parseInt(inputTime) * 1000);
 
         var diff = time.valueOf() - start_time.valueOf();
         var min_unit = this.min_unit();
-        var min_expiration_time = BetForm.attributes.start_time_moment().add(min_unit.min, min_unit.units);
+        var min_expiration_time = BetForm.attributes.start_time_moment().add(min_unit.units, min_unit.min);
         if(time.isBefore(min_expiration_time)) {
             units = min_unit.units;
             amount = min_unit.min;
-        } else if(diff / 1000 < 60) {
-            units = 's';
-            amount = Math.ceil(diff / 1000);
-        } else if (diff / (60 * 1000) < 60) {
-            units = 'm';
-            amount = Math.ceil(diff / (60 * 1000));
-        } else if (diff / (3600 * 1000) < 24) {
-            units = 'h';
-            amount = Math.ceil(diff / (3600 * 1000));
-        } else {
+        } else if (start_time.utc().date() != time.utc().date()) {
             units = 'd';
             amount = time.diff(start_time, 'day');
+        } else if(diff % (60 * 60) === 0) {
+            units = 'h';
+            amount = Math.ceil(diff / (60 * 60 * 1000));
+        } else if(diff % 60 === 0) {
+            units = 'm';
+            amount = Math.ceil(diff / (60 * 1000));
+        } else  {
+            units = 's';
+            amount = Math.ceil(diff / 1000);
         }
 
         return {
@@ -5420,7 +5132,7 @@ BetForm.TradingTime.prototype = {
     },
     convert_to_end_time: function(duration_amount, duration_units) {
         var ms = BetForm.attributes.start_time_moment();
-        ms.add(duration_amount, duration_units);
+        ms.add(duration_units, duration_amount);
         if(duration_units == "d") {
             var trading_times = this.get_trading_times(ms.format("YYYY-MM-DD"));
             ms = trading_times.closing;
@@ -5532,17 +5244,13 @@ BetForm.TradingTime.prototype = {
         return trading_dates;
     },
     get_trading_days: function() {
-        var underlying_symbol = BetForm.attributes.underlying();
-        var barrier = BetForm.attributes.barrier_1();
+        var underlying_symbol = this.underlying();
         if (typeof this.trading_info[underlying_symbol] === 'undefined') {
             var that = this;
             $.ajax({
                 url: page.url.url_for('trade_get.cgi'),
                 data: { controller_action: 'trading_days',
-                        underlying_symbol: underlying_symbol,
-                        form_name: BetForm.attributes.form_name(),
-                        date_start: BetForm.attributes.start_time(),
-                        barrier: barrier,
+                        underlying_symbol: underlying_symbol
                     },
                 dataType:'json',
                 async: false
@@ -5682,7 +5390,7 @@ BetForm.Time.Duration.prototype = {
                 min_span.removeClass('error');
             } else {
                 $(this).addClass('error');
-                min_span.addClass('error');
+                min_span.addClass('error').effect('pulsate', {times: 2});
             }
         };
 
@@ -5860,7 +5568,7 @@ BetForm.Time.EndTime.prototype = {
             }
         },
         error_handler: function() {
-            this.container().find('div.rbox-lowpad:first').html(text.localize("There was a problem accessing the server."));
+            this.container().find('div.rbox-lowpad:first').html("There was a problem accessing the server.");
             this.streaming.stop();
         },
         price_update: function(data) {
@@ -5892,11 +5600,9 @@ BetForm.Time.EndTime.prototype = {
         buy_bet: function (form) {
             var that = this;
             var timeout = 60000;
-            BetPrice.order_form.disable_buy_buttons();
-            that.hide_buy_buttons();
+            that.disable_buy_buttons();
 
-            if(!$.cookie('login')) {
-                page.client.is_logged_in = false;
+            if(!page.client.is_logged_in) {
                 window.location.href = page.url.url_for('login');
                 return;
             }
@@ -5934,13 +5640,11 @@ BetForm.Time.EndTime.prototype = {
                 this.display_buy_error(data.error);
             } else if (data.display) {
                 this.display_buy_results(data);
-                BetSell.register();
             } else {
                 throw new Error("Invalid server response: " + data);
             }
             $('.price_box').fadeTo(0, 1);
-            BetPrice.order_form.enable_buy_buttons();
-            this.display_buy_buttons();
+            this.enable_buy_buttons();
         },
         on_buy_bet_error: function (form, jqXHR, resp_status, exp) {
             var details = '' + exp;
@@ -5949,13 +5653,12 @@ BetForm.Time.EndTime.prototype = {
             } else if (document.location.href.match(/^http:/) && (!details || details.match(/access/i))) {
                 details += '<ul>Please <a href="' + document.location.href.replace('http://', 'https://') + '">continue browsing using HTTPS secure protocol</a></ul>';
             } else {
-                details += text.localize('There was a problem accessing the server during purchase.');
+                details += 'There was a problem accessing the server during purchase.';
             }
             var width = this.container().width(); // since the error message could be any size, set the continer size to a good value
-            this.display_buy_error('<div style="width: ' + width + 'px;"><h3>Error</h3><p>' + details + ' </p></div>', 1);
+            this.display_buy_error('<div style="width: ' + width + 'px;"><h3>Error</h3><p>' + details + ' </p></div>');
             $('.price_box').fadeTo(0, 1);
-            BetPrice.order_form.enable_buy_buttons();
-            this.display_buy_buttons();
+            this.enable_buy_buttons();
         },
         buy_response_container: function () {
             if (!_buy_response_container) {
@@ -5985,7 +5688,6 @@ BetForm.Time.EndTime.prototype = {
             }
 
             con.show();
-            // push_data_layer();
             var _clear_results = function () { that.clear_buy_results(); };
             con.find('a.close').on('click', _clear_results).css('cursor', 'pointer').addClass('unbind_later');
         },
@@ -5997,7 +5699,6 @@ BetForm.Time.EndTime.prototype = {
                     $self.ev.close();
                     $self.digit_tick_count = 0;
                     $self.applicable_ticks = [];
-                    $self.info_for_display = [];
                 },
                 process: function(start_moment) {
                     var $self = this;
@@ -6007,8 +5708,9 @@ BetForm.Time.EndTime.prototype = {
                     $self.info_for_display = [];
                     var symbol = BetForm.attributes.underlying();
                     var how_many_ticks = $('#tick-count').data('count');
+                    var end = start_moment.clone().add('minutes',3);
                     var stream_url = window.location.protocol + '//' + page.settings.get('streaming_server');
-                    stream_url += "/stream/ticks/" + symbol + "/" + start_moment.unix();
+                    stream_url += "/stream/ticks/" + symbol + "/" + start_moment.unix() + "/" + end.unix();
                     $self.ev = new EventSource(stream_url, { withCredentials: true });
 
                     $self.ev.onmessage = function(msg) {
@@ -6040,7 +5742,6 @@ BetForm.Time.EndTime.prototype = {
                                         if ($self.applicable_ticks.length === how_many_ticks) {
                                             $self.evaluate_digit_outcome();
                                             $self.reset();
-                                            break; // need to break the loop else it will keep on processing the extra tick
                                         }
                                     }
                                 }
@@ -6105,14 +5806,10 @@ BetForm.Time.EndTime.prototype = {
                 },
             };
         }(),
-        display_buy_error: function (data, extra_info) {
+        display_buy_error: function (data) {
             var that = this;
             var con = this.buy_response_container();
             con.addClass('bet_confirm_error');
-            if (extra_info) {
-                data += '<p>' + text.localize('Please confirm the trade on your statement before proceeding.') + '</p>';
-            }
-            data = '<p>' + data + '</p>';
             con.children('div').first().html(data);
             con.show();
             var _clear_results = function () { that.clear_buy_results(); };
@@ -6130,11 +5827,11 @@ BetForm.Time.EndTime.prototype = {
             con.hide().remove();
             _buy_response_container = null;
         },
-        hide_buy_buttons: function() {
+        disable_buy_buttons: function() {
             this.deregister();
             this.order_form.hide_buy_button();
         },
-        display_buy_buttons: function() {
+        enable_buy_buttons: function() {
             this.on_buy();
             this.order_form.show_buy_button();
         },
@@ -6210,12 +5907,6 @@ BetForm.Time.EndTime.prototype = {
                 show_buy_button: function() {
                     return $('button[name^="btn_buybet"]').parent().show();
                 },
-                disable_buy_buttons: function() {
-                    $('button[name^="btn_buybet"]').attr('disabled','disabled');
-                },
-                enable_buy_buttons: function() {
-                    $('button[name^="btn_buybet"]').removeAttr('disabled');
-                },
                 update_from_stream: function(stream) {
                     var prices = this.prices_from_stream(stream);
                     this.update(prices);
@@ -6259,7 +5950,7 @@ BetForm.Time.EndTime.prototype = {
                             if (error_box_html.length > 0 &&
                                 error_box_html != BetForm.amount.payout_err &&
                                 error_box_html != BetForm.amount.stake_err) {
-                                error = error_box_html;
+                                error = error_box.html();
                             }
                             prices.push(this.calculate_price(id, prob, error));
                         }
@@ -6287,8 +5978,6 @@ BetForm.Time.EndTime.prototype = {
                     var amount = BetForm.amount.calculation_value;
                     var price;
                     var payout;
-                    var profit;
-                    var roi;
                     if(BetForm.attributes.is_amount_stake()) {
                         payout = this.virgule_amount(Math.round((amount / prob) * 100));
                         price = this.virgule_amount(amount * 100);
@@ -6297,19 +5986,10 @@ BetForm.Time.EndTime.prototype = {
                         payout = this.virgule_amount(amount * 100);
                     }
 
-                    var prev_price = $('input[name="price"]', form).length ? parseFloat($('input[name="price"]', form).val()) : 0;
-                    var prev_payout = $('input[name="payout"]', form).length ? parseFloat($('input[name="payout"]', form).val()) : 0;
-
-                    if (payout && price) {
-                        profit =  this.virgule_amount(payout.raw - price.raw);
-                        roi = Math.round(profit.raw / price.raw * 100);
-                    } else {
-                        profit = this.virgule_amount(0);
-                        roi = this.virgule_amount(0);
-                    }
-
-                    payout = payout ? payout : this.virgule_amount(0);
-                    price = price ? price : this.virgule_amount(0);
+                    var prev_price = parseFloat($('input[name="price"]', form).val());
+                    var prev_payout = parseFloat($('input[name="payout"]', form).val());
+                    var profit =  this.virgule_amount(payout.raw - price.raw);
+                    var roi = Math.round(profit.raw / price.raw * 100);
 
                     return {
                         id: id,
@@ -6639,7 +6319,6 @@ BetForm.Time.EndTime.prototype = {
             con.css('position', 'fixed').css('z-index', get_highest_zindex() + 100);
             body.append(con);
             con.show();
-            // push_data_layer();
             if ($('#sell_bet_desc', con).length > 0) {
                 con.draggable({
                     handle: '#sell_bet_desc'
@@ -6872,12 +6551,6 @@ BetForm.Time.EndTime.prototype = {
                                    var display_marker = false;
                                    if(time_obj['to_time'] - time_obj['from_time'] <= _diff_end_start_time) {
                                        display_marker = true;
-                                   }
-
-                                   if(time_obj['force_tick']) {
-                                       liveChartConfig.update({
-                                           force_tick: true,
-                                       });
                                    }
 
                                    liveChartConfig.update({
@@ -7431,11 +7104,7 @@ BetForm.Time.EndTime.prototype = {
                         // check if end date is more than 1 hours and now time - start time is less than 1 hours
                         // in this case we switch back to tick chart rather than ohlc
                         time_obj['from_time'] = parseInt(start_time);
-                        time_obj['to_time'] = parseInt(start_time) + 3595;
-                    } else if ((parseInt(end_time) - parseInt(start_time)) === 3600) {
-                        time_obj['from_time'] = parseInt(start_time);
-                        time_obj['to_time'] = parseInt(end_time);
-                        time_obj['force_tick'] = 1;
+                        time_obj['to_time'] = parseInt(start_time) + 3600;
                     } else {
                         time_obj['from_time'] = parseInt(start_time);
                         time_obj['to_time'] = parseInt(end_time);
@@ -7520,6 +7189,7 @@ BetForm.Time.EndTime.prototype = {
             if(this.popup().length > 0) {
                 this.on_open_debug_link();
                 this.on_close();
+                this.on_historic_vol();
             }
         },
         on_open_debug_link: function() {
@@ -7531,6 +7201,10 @@ BetForm.Time.EndTime.prototype = {
 
                 $('#' + popup.children(':first').attr('id')).tabs();
 
+                $('a.vcal_tab', popup).on('click', function() {
+                    that.vcal_datepicker_handler.init();
+                }).addClass('unbind_later');
+
                 event.preventDefault();
             }).addClass('unbind_later');
         },
@@ -7541,9 +7215,82 @@ BetForm.Time.EndTime.prototype = {
                 event.preventDefault();
             }).addClass('unbind_later');
         },
+        on_historic_vol: function() {
+            var that = this;
+            $('a[class^="hvol_tab_"]').on('click', function(event) {
+                event.preventDefault();
+                that.get_historic_vol();
+            }).addClass('unbind_later');
+        },
         popup: function() {
             return $('#pricing_details_popup');
-        }
+        },
+        get_historic_vol: function() {
+            $.post(
+                    page.url.url_for('trade_get.cgi'),
+                    {
+                        controller_action : 'historical_vol',
+            underlying        : $('#bet_underlying').val()
+                    },
+                    function(data) {
+                        $('#hvol').html(data);
+                    },
+                    "html"
+                  );
+        },
+        vcal_datepicker_handler: function() {
+            var that = {};
+            var cache = {};
+
+            var getWeight = function(date) {
+                var year = date.getFullYear();
+                var underlying_symbol = $('#bet_underlying').val();
+
+                var cache_key = underlying_symbol + '-' + year;
+                var lookup = year + '-' + (date.getMonth()+1) + '-' + date.getDate();
+
+                if (typeof cache[cache_key] === 'undefined') {
+                    $.ajax({
+                        url: page.url.url_for('trade_get.cgi'),
+                        data: { controller_action: 'vcal_weights',
+                            underlying_symbol: underlying_symbol,
+                        year: year,
+                        },
+                        success: function(vcal_weights) {
+                            cache[cache_key] = vcal_weights;
+                        },
+                        dataType:'json',
+                        async: false
+                    });
+                }
+
+                return cache[cache_key][lookup];
+            };
+
+            var beforeShowDay = function(date) {
+                window.setTimeout(
+                        function() {
+                            var tds = $("div.vcal").find("td").filter(function() { return $(this).attr("class").match(/weight/); });
+
+                            tds.find('a').html( function() {
+                                var td = $(this).parent('td');
+                                var weight = td.attr("class").match('\\d\\.?\\d?\\d?')[0];
+                                return weight;
+                            });
+                        },
+                        0);
+                return [true, "weight" + getWeight(date), date.getDate()];
+            };
+
+            that.init = function() {
+                $(".vcal").datepicker({
+                    numberOfMonths: 2,
+                    beforeShowDay: beforeShowDay
+                });
+            };
+
+            return that;
+        }()
     };
 }();
 ;var TickDisplay = function() {
@@ -7564,10 +7311,11 @@ BetForm.Time.EndTime.prototype = {
             $self.symbol = data.symbol;
             $self.display_symbol = data.display_symbol;
             $self.contract_start_ms = parseInt(data.contract_start * 1000);
-            $self.contract_category = data.contract_category;
-            $self.set_barrier = ($self.contract_category.match('digits')) ? false : true;
+            $self.contract_type = data.contract_type;
+            $self.set_barrier = ($self.contract_type.match('DIGIT')) ? false : true;
             $self.display_decimal = 0;
-            var tick_frequency = 5;
+            var submarket = data.submarket;
+            var tick_frequency = submarket === 'smart_opi' ? 3 : 2;
 
             if (typeof data.decimal !== 'undefined') {
                 $self.number_of_decimal = parseInt(data.decimal) + 1; //calculated barrier is rounded to one more decimal place
@@ -7593,7 +7341,7 @@ BetForm.Time.EndTime.prototype = {
             var $self = this;
 
             var exit_tick_index = $self.number_of_ticks - 1;
-            if ($self.contract_category.match('asian')) {
+            if ($self.contract_type.match('ASIAN')) {
                 $self.ticks_needed = $self.number_of_ticks;
                 $self.x_indicators = {
                     '_0': { label: 'Tick 1', id: 'start_tick'},
@@ -7602,7 +7350,7 @@ BetForm.Time.EndTime.prototype = {
                     label: 'Exit Spot',
                     id: 'exit_tick',
                 };
-            } else if ($self.contract_category.match('callput')) {
+            } else if ($self.contract_type.match('FLASH')) {
                 $self.ticks_needed = $self.number_of_ticks + 1;
                 $self.x_indicators = {
                     '_0': { label: 'Entry Spot', id: 'entry_tick'},
@@ -7611,7 +7359,7 @@ BetForm.Time.EndTime.prototype = {
                     label: 'Exit Spot',
                     id: 'exit_tick',
                 };
-            } else if ($self.contract_category.match('digits')) {
+            } else if ($self.contract_type.match('DIGIT')) {
                 $self.ticks_needed = $self.number_of_ticks;
                 $self.x_indicators = {
                     '_0': { label: 'Tick 1', id: 'start_tick'},
@@ -7645,23 +7393,18 @@ BetForm.Time.EndTime.prototype = {
                         var decimal_places = Math.max( $self.display_decimal, new_decimal);
                         $self.display_decimal = decimal_places;
                         var new_y = that.y.toFixed(decimal_places);
-                        var mom = moment.utc($self.applicable_ticks[that.x].epoch*1000).format("dddd, MMM D, HH:mm:ss");
+                        var mom = moment.utc(that.x).format("dddd, MMM D, HH:mm:ss");
                         return mom + "<br/>" + $self.display_symbol + " " + new_y;
                     },
                 },
                 xAxis: {
-                    type: 'linear',
-                    min: 0,
-                    max: $self.number_of_ticks + 1,
+                    type: 'datetime',
+                    min: parseInt(config['plot_from']),
+                    max: parseInt(config['plot_to']),
                     labels: { enabled: false, }
                 },
                 yAxis: {
-                    opposite: false,
-                    labels: {
-                        align: 'left',
-                        x: 0,
-                    },
-                    title: ''
+                    title: '',
                 },
                 series: [{
                     data: [],
@@ -7677,7 +7420,6 @@ BetForm.Time.EndTime.prototype = {
             var plot_from_moment = moment(plot_from).utc();
             var plot_to_moment = moment(plot_to).utc();
             var contract_start_moment = moment($self.contract_start_ms).utc();
-            $self.counter = 0;
             $self.applicable_ticks = [];
 
             var symbol = $self.symbol;
@@ -7693,40 +7435,41 @@ BetForm.Time.EndTime.prototype = {
                 }
 
                 var data = JSON.parse(msg.data);
-                if (data && !(data[0] instanceof Array)) {
+                if (!(data[0] instanceof Array)) {
                     data = [ data ];
                 }
-                if (data) {
-                    for (var i = 0; i < data.length; i++) {
-                        if (data[i][0] === 'tick') {
-                            var tick = {
-                                epoch: parseInt(data[i][1]),
-                                quote: parseFloat(data[i][2])
-                            };
+                for (var i = 0; i < data.length; i++) {
+                    if (data[i][0] === 'tick') {
+                        var tick = {
+                            epoch: parseInt(data[i][1]),
+                            quote: parseFloat(data[i][2])
+                        };
 
-                            if (tick.epoch > contract_start_moment.unix()) {
-                                if ($self.applicable_ticks.length >= $self.ticks_needed) {
-                                    $self.ev.close();
-                                    $self.evaluate_contract_outcome();
-                                    return;
-                                } else {
-                                    if (!$self.chart) return;
-                                    if (!$self.chart.series) return;
-                                    $self.chart.series[0].addPoint([$self.counter, tick.quote], true, false);
-                                    $self.applicable_ticks.push(tick);
-                                    var indicator_key = '_' + $self.counter;
-                                    if (typeof $self.x_indicators[indicator_key] !== 'undefined') {
-                                        $self.x_indicators[indicator_key]['index'] = $self.counter;
-                                        $self.add($self.x_indicators[indicator_key]);
-                                    }
-
-                                    $self.add_barrier();
-                                    $self.apply_chart_background_color(tick);
-                                    $self.counter++;
-                                }
-                            }
-
+                        if ($self.applicable_ticks.length < $self.ticks_needed) {
+                            $self.chart.series[0].addPoint([tick.epoch*1000, tick.quote], true, false);
                         }
+
+                        if (tick.epoch > contract_start_moment.unix()) {
+                            if ($self.applicable_ticks.length >= $self.ticks_needed) {
+                                $self.ev.close();
+                                $self.evaluate_contract_outcome();
+                                return;
+                            } else {
+                                $self.applicable_ticks.push(tick);
+
+                                var tick_index = $self.applicable_ticks.length - 1;
+                                var indicator_key = '_' + tick_index;
+
+                                if (typeof $self.x_indicators[indicator_key] !== 'undefined') {
+                                    $self.x_indicators[indicator_key]['index'] = tick_index;
+                                    $self.add($self.x_indicators[indicator_key]);
+                                }
+
+                                $self.add_barrier();
+                                $self.apply_chart_background_color(tick);
+                            }
+                        }
+
                     }
                 }
             };
@@ -7757,7 +7500,7 @@ BetForm.Time.EndTime.prototype = {
                 return;
             }
 
-            var barrier_type = $self.contract_category.match('asian') ? 'asian' : 'static';
+            var barrier_type = $self.contract_type.match('ASIAN') ? 'asian' : 'static';
 
             if (barrier_type === 'static') {
                 var barrier_tick = $self.applicable_ticks[0];
@@ -7798,7 +7541,7 @@ BetForm.Time.EndTime.prototype = {
             var $self = this;
 
             $self.chart.xAxis[0].addPlotLine({
-               value: indicator.index,
+               value: $self.applicable_ticks[indicator.index].epoch * 1000,
                id: indicator.id,
                label: {text: indicator.label},
                color: '#e98024',
@@ -8119,10 +7862,9 @@ function listen_to_chart_element () {
 }
 
 var draw_chart = function (callback_after_complete) {
-
-    var chart_director_imageholder = document.getElementById('chart_director_imageholder');
-
-    if (chart_director_imageholder === null) return;
+    if($("#chart_director_imageholder").length === 0){
+        return;
+    }
 
     var all_li = $('#chart_compare_underlying').find('li');
     if (all_li.length == 1) {
@@ -8181,6 +7923,7 @@ var draw_chart = function (callback_after_complete) {
 onLoad.queue_for_url(function() {
     listen_to_chart_element();
 }, 'smartchart');
+
 ;var load_chart_app = function () {
     var isMac = /Mac/i.test(navigator.platform),
         isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent),
@@ -8204,68 +7947,43 @@ onLoad.queue_for_url(function() {
         }
     });
 };
-;var client_form;
+;//// togglePromoCodeTnC ////////////////////////////////////////////
+//
+// triggered when the promocode field on the account opening form
+// loses focus. If a promocode is entered, additional T&C will be
+// shown, and the Client will have to agree to them when opening
+// the account.
+//
+////////////////////////////////////////////////////////////////////
+var togglePromoCodeTnC = function(event)
+{
+    var o = $(event.target);
+
+    if (o.val() !== '')
+    {
+        $('#formlayout').find('#comment').find('span').removeClass('invisible');
+    }
+    else
+    {
+        $('#formlayout').find('#comment').find('span').addClass('invisible');
+    }
+};
+
+var client_form;
 onLoad.queue(function() {
         client_form = new ClientForm({restricted_countries: page.settings.get('restricted_countries'), valid_loginids: page.settings.get('valid_loginids')});
 });
 
-pjax_config_page('user/upgrade', function() {
-    return {
-        onLoad: function() {
-            client_form.on_residence_change();
-            select_user_country();
-            if(page.client.is_logged_in) {
-                client_form.set_virtual_email_id(page.client.email);
-            }
+$(function() {
+    onLoad.queue_if_id_present(function () {
+        $('#promotionalcode').blur(togglePromoCodeTnC);
+        client_form.on_residence_change();
+        select_user_country();
+        if(page.client.is_logged_in) {
+            client_form.set_virtual_login_id(page.client.loginid);
+            client_form.set_virtual_email_id(page.client.email);
         }
-    };
-});
-
-var upgrade_investment_disabled_field = function () {
-    var fields = ['mrms', 'fname', 'lname', 'dobdd', 'dobmm', 'dobyy', 'residence', 'secretquestion', 'secretanswer'];
-    fields.forEach(function (element, index, array) {
-        var obj = $('#'+element);
-        if (obj.length > 0) {
-            $('#'+element).attr('disabled', true);
-        }
-    });
-};
-
-var enable_fields_form_submit = function () {
-    var fields = ['mrms', 'fname', 'lname', 'dobdd', 'dobmm', 'dobyy', 'residence', 'secretquestion', 'secretanswer'];
-    $('form#openAccForm').submit(function (event) {
-        fields.forEach(function (element, index, array) {
-            var obj = $('#'+element);
-            if (obj.length > 0) {
-                obj.removeAttr('disabled');
-            }
-        });
-    });
-};
-
-var hide_account_opening_for_risk_disclaimer = function () {
-    var risk_section = $('#risk_disclaimer_section');
-    if (risk_section.length > 0) {
-        $('.formObject fieldset').not("#risk_disclaimer_section").hide();
-    }
-};
-
-pjax_config_page('user/upgrade/financial|create_account', function() {
-    return {
-        onLoad: function() {
-            upgrade_investment_disabled_field();
-            enable_fields_form_submit();
-            hide_account_opening_for_risk_disclaimer();
-        }
-    };
-});
-
-pjax_config_page('user/assessment', function() {
-    return {
-        onLoad: function() {
-            hide_account_opening_for_risk_disclaimer();
-        }
-    };
+    },'openAccForm');
 });
 ;var ClientForm = function(init_params) {
     this.restricted_countries = new RegExp(init_params['restricted_countries']);
@@ -8294,6 +8012,27 @@ ClientForm.prototype = {
             return true;
         }
     },
+    validate_promo_code_expiry: function() {
+        var has_expired = $('#promo_code_expired').val();
+        if(has_expired == "true") {
+            return false;
+        }
+
+        return true;
+    },
+    validate_promo_code_country: function() {
+        var country_list = $('#promo_code_countries').val();
+        if(country_list.indexOf('ALL') >= 0) {
+                return true;
+        } else {
+            var residence = $('#residence').val();
+            if(country_list.indexOf(residence) >= 0) {
+                return true;
+            }
+        }
+
+        return false;
+    },
     compare_new_password: function(new_password1, new_password2) {
         if (new_password1.length > 0 && new_password2.length > 0)
             {
@@ -8320,6 +8059,18 @@ ClientForm.prototype = {
                     if (input_tnc.checked === false)
                     {
                             error_tnc.innerHTML = text.localize('You must accept the terms and conditions to open an account.');
+                            return false;
+                    }
+            }
+            return true;
+    },
+    only_real_affirmed: function (bValid) {
+            var input_only = document.getElementById('only-real');
+            var error_only = clearInputErrorField('erroronly-real');
+            if (input_only && error_only) {
+                    if (input_tnc.checked === false)
+                    {
+                            error_only.innerHTML = text.localize('Please affirm that you have no other real currency accounts.');
                             return false;
                     }
             }
@@ -8355,48 +8106,55 @@ ClientForm.prototype = {
 
         return true;
     },
+    custom_check_file_format: function() {
+            var file_name = $('#Screenshot').attr('value');
+            if (file_name && file_name.length > 0) {
+                    if (!file_name.match(/(?:jpg|jpeg|png|gif)/i)) {
+                            return false;
+                    }
+            }
+            return true;
+    },
     self_exclusion: function() {
         return {
-            has_something_to_save: function(init) {
-                var el, i;
-                var names = ['MAXCASHBAL', 'MAXOPENPOS',
-                             'DAILYTURNOVERLIMIT', 'DAILYLOSSLIMIT',
-                             '7DAYTURNOVERLIMIT', '7DAYLOSSLIMIT',
-                             'SESSIONDURATION', 'EXCLUDEUNTIL'];
-                for (i=0; i<names.length; i++) {
-                    el = document.getElementById(names[i]);
-                    if (el) {
-                        el.value = el.value.replace(/^\s*/, '').replace(/\s*$/, '');
-                        if (el.value == (init[names[i]]===undefined ? '' : init[names[i]])) continue;
-                        return true;
+            has_something_to_save: function() {
+                    var MAXCASHBAL = document.getElementById('MAXCASHBAL');
+                    var DAILYTURNOVERLIMIT = document.getElementById('DAILYTURNOVERLIMIT');
+                    var MAXOPENPOS = document.getElementById('MAXOPENPOS');
+                    var SESSIONDURATION = document.getElementById('SESSIONDURATION');
+                    var EXCLUDEUNTIL = document.getElementById('EXCLUDEUNTIL');
+                    var input_length = 0;
+
+                    if (MAXCASHBAL) { input_length += MAXCASHBAL.value.length; }
+
+                    if (DAILYTURNOVERLIMIT) { input_length += DAILYTURNOVERLIMIT.value.length; }
+
+                    if (MAXOPENPOS) { input_length += MAXOPENPOS.value.length; }
+
+                    if (SESSIONDURATION) { input_length += SESSIONDURATION.value.length; }
+
+                    if (EXCLUDEUNTIL) { input_length += EXCLUDEUNTIL.value.length; }
+
+                    if (input_length > 0)
+                    {
+                            return true;
                     }
-                }
-                return false;
+                    else
+                    {
+                            return false;
+                    }
             },
             validate_exclusion_date: function() {
                 var exclusion_date = $('#EXCLUDEUNTIL').val();
+                exclusion_date = new Date(exclusion_date);
 
-                if (exclusion_date) {
-                    var error_element_errorEXCLUDEUNTIL = clearInputErrorField('errorEXCLUDEUNTIL');
+                // self exclusion date must >= 6 month from now
+                var six_month_date = new Date();
+                six_month_date.setMonth(six_month_date.getMonth() + 6);
 
-                    exclusion_date = new Date(exclusion_date);
-                    // self exclusion date must >= 6 month from now
-                    var six_month_date = new Date();
-                    six_month_date.setMonth(six_month_date.getMonth() + 6);
-
-                    if (exclusion_date < six_month_date) {
-                        error_element_errorEXCLUDEUNTIL.innerHTML = text.localize("Please enter a date that is at least 6 months from now.");
-                        return false ;
-                    }
-
-                    if (confirm(text.localize("When you click 'Ok' you will be excluded from trading on the site until the selected date.")) === true) {
-                        return true;
-                    } else {
-                        return false;
-                    }
-
+                if (exclusion_date < six_month_date) {
+                    return false;
                 }
-
                 return true;
             },
         };
@@ -8412,8 +8170,6 @@ ClientForm.prototype = {
         var that = this;
         $('#residence').on('change', function() {
             that.set_idd_for_residence($(this).val());
-            var address_state = $('#AddressState');
-            var current_state = address_state.length > 0 ? address_state.val() : '';
 
             var postcodeLabel = $('label[for=AddressPostcode]');
             if ($(this).val() == 'GB') {
@@ -8425,34 +8181,233 @@ ClientForm.prototype = {
             if(that.is_allowed_opening_account_country($(this).val())) {
                 $.ajax({
                     crossDomain:true,
-                    url: page.url.url_for('states_list'),
+                    url: page.url.url_for('states_list.cgi'),
                     data: {"c":$('#residence').get(0).value,"l": page.language()},
                     async: true,
                     dataType: "html"
                 }).done(function(response) {
                     $('#AddressState').html(response);
-                    that.hide_state_list_if_empty(current_state);
+                    that.hide_state_list_if_empty();
                 });
             } else {
                 $("#AddressState").parents(".row").first().hide(); //Hide States list.
             }
         });
     },
-    hide_state_list_if_empty: function(current_state) {
+    hide_state_list_if_empty: function() {
         var addr_state = $("#AddressState");
         if (addr_state.children().size() > 2) {
             addr_state.parents(".row").first().show();
-            addr_state.val(current_state);
         } else {
             addr_state.parents(".row").first().hide();
         }
+    },
+    set_virtual_login_id: function(loginid) {
+        $('#virtual_loginid').val(loginid);
     },
     set_virtual_email_id: function(email) {
         $('#Email').val(email);
         $('#Email').disableSelection();
     }
 };
-;var sidebar_scroll = function(elm_selector) {
+;var cs_is_available =  function() {
+    var date = new Date();
+
+    //More accurate sync'd time, when available
+    if(page.header.time_now) {
+        date = new Date(page.header.time_now);
+    }
+
+    //Is it weekend? Sunday = 0 and Saturday  = 6
+    if(date.getUTCDay() === 0 || date.getUTCDay() === 6) {
+        return false;
+    }
+
+    var available = false;
+    var cs_times = page.settings.get('cs_times');
+    var cs_time = cs_times.length;
+    while(cs_time--) {
+        var start_hour = parseInt(cs_times[cs_time]['start']);
+        var end_hour = parseInt(cs_times[cs_time]['end']);
+        if(date.getUTCHours() >= start_hour && date.getUTCHours() <= end_hour) { 
+            available = true;
+        }
+    }
+    return available;
+};
+
+var change_chat_icon = function () {
+  // desk.com change icon - crude way
+  var len = $('#live-help-button').length;
+  if( len > 0 ) {
+      var timer = null;
+      var updateIcon =  function () {
+          var image_link = page.settings.get('image_link');
+          var desk_widget = $('.a-desk-widget');
+          var image_str = desk_widget.css('background-image');
+          if(image_str) {
+              desk_widget.css({
+                  'background-image': 'url("' + image_link['livechaticon'] + '")',
+                  'width': 146,
+                  'height' : 26
+              });
+              desk_widget.hover(function() {
+                  $(this).css({
+                      'background': 'url("' + image_link['livechaticon'] + '") no-repeat scroll 0 0'
+                  });
+              });
+
+              if(image_str.match(/live-chat-icon/g)){
+                  clearInterval(timer);
+              }
+          }
+      };
+      timer = setInterval(updateIcon, 500);
+  }
+};
+
+var render_desk_widget = function() {
+       new DESK.Widget({ 
+                version: 1, 
+                site: 'binary.desk.com', 
+                port: '80', 
+                type: 'chat', 
+                id: 'live-help-button',
+                displayMode: 0,  //0 for popup, 1 for lightbox
+                features: {  
+                        offerAlways: true, 
+                        offerAgentsOnline: false, 
+                        offerRoutingAgentsAvailable: false,  
+                        offerEmailIfChatUnavailable: false 
+                },  
+                fields: { 
+                        ticket: { 
+                                // desc: &#x27;&#x27;,
+                // labels_new: &#x27;&#x27;,
+                // priority: &#x27;&#x27;,
+                // subject: &#x27;&#x27;,
+                // custom_loginid: &#x27;&#x27;
+                        }, 
+                        interaction: { 
+                                // email: &#x27;&#x27;,
+                // name: &#x27;&#x27;
+                        }, 
+                        chat: { 
+                                //subject: '' 
+                        }, 
+                        customer: { 
+                                // company: &#x27;&#x27;,
+                // desc: &#x27;&#x27;,
+                // first_name: &#x27;&#x27;,
+                // last_name: &#x27;&#x27;,
+                // locale_code: &#x27;&#x27;,
+                // title: &#x27;&#x27;,
+                // custom_loginid: &#x27;&#x27;
+                        } 
+                } 
+        }).render();
+};
+
+var add_qq = function() {
+    $('#live-help-button').html('<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2597352559&site=qq&menu=yes" id="qq_chat_icon"><span>Live Chat</span></a>');
+};
+
+var show_live_chat_icon = function() {
+    if(typeof DESK === 'undefined') {
+        loadCSS("https://d3jyn100am7dxp.cloudfront.net/assets/widget_embed_191.cssgz?1367387331");
+        loadJS("https://d3jyn100am7dxp.cloudfront.net/assets/widget_embed_libraries_191.jsgz?1367387332");
+    }
+
+
+    var desk_load = setInterval(function() {
+        if(typeof DESK !== "undefined") {
+            render_desk_widget();
+            change_chat_icon();
+            clearInterval(desk_load);
+        }
+    }, 80);
+};
+
+var fill_contact_us = function(country) {
+    var loginid = page.client.loginid;
+    if(loginid) {
+        $('#login_id').val(loginid);
+    }
+
+    var name = page.client.name;
+    if(name) {
+        $('#Name2').val(name);
+    }
+
+    var email = page.client.email;
+    if(email) {
+        $('#Email2').val(email);
+    }
+
+    $('#country').on('change', function() {
+        var tel = $('#phone');
+        if (!tel.val() || tel.val().length < 6) {
+            var country = $(this).val();
+            var idd_code = idd_codes[country];
+            tel.val(idd_code ? '+' + idd_code : '');
+        }
+    });
+
+    var idd_code = idd_codes[country];
+    $('#country').val(country).change();
+
+    var phone = page.client.phone;
+    if(phone) {
+        $('#phone').val(phone);
+    } else {
+        $('#country').change();
+    }
+};
+
+
+pjax_config_page('contact', function() {
+    return {
+        onLoad: function() {
+            get_user_country(function() {
+                    var restricted_countries = new RegExp(page.settings.get('restricted_countries'));
+                    if(cs_is_available() && !restricted_countries.test(this.country)) {
+                        $('.live-help').removeClass('invisible');
+                        $('#telephone_callback').removeClass('invisible');
+                    }
+
+                    fill_contact_us(this.country);
+            });
+        },
+    };
+});
+
+onLoad.queue_if_id_present(function() {
+    if (cs_is_available()) {
+        show_live_chat_icon();
+    }
+}, 'live-help-button');
+;var slider = function() {
+    var slider = $('#slider');
+    if (slider.size()) {
+        $('.invisibleslides').show();
+        slider.slides({
+            container: 'slides-container',
+            paginationClass: 'slides-pagination',
+            generatePagination: false,
+            generateNextPrev: false,
+            start: 1,
+            preload: true,
+            play: 10000,
+            slideSpeed: 800,
+        });
+        if ($('.slides_control').height() < 300) {
+            $('.slides_control').css('min-height', '300px');
+        }
+    }
+};
+
+
+var sidebar_scroll = function(elm_selector) {
     elm_selector.on('click', '#sidebar-nav li', function() {
         var clicked_li = $(this);
         $.scrollTo($('.section:eq(' + clicked_li.index() + ')'), 500);
@@ -8577,11 +8532,10 @@ var select_user_country = function() {
     if($('#residence').length > 0) {
         get_user_country(function() {
             var restricted_countries = new RegExp(page.settings.get('restricted_countries'));
-            var current_selected = $('#residence').val() || this.country;
-            if(restricted_countries.test(current_selected)) {
+            if(restricted_countries.test(this.country)) {
                 $('#residence').val('default').change();
             } else {
-                $('#residence').val(current_selected).change();
+                $('#residence').val(this.country).change();
             }
         });
     }
@@ -8614,116 +8568,79 @@ var home_bomoverlay = {
     }
 };
 
-var email_rot13 = function(str) {
-    return str.replace(/[a-zA-Z]/g, function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});
-};
-
-var display_cs_contacts = function () {
-    $('.contact-content').on("change", '#cs_telephone_number', function () {
-        var val = $(this).val();
-        $('#display_cs_telephone').text(val);
-    });
-    $('#cs_contact_eaddress').html(email_rot13("<n uers=\"znvygb:fhccbeg@ovanel.pbz\" ery=\"absbyybj\">fhccbeg@ovanel.pbz</n>"));
-};
-
-var change_chat_icon = function () {
-  // desk.com change icon - crude way
-  var len = $('#live-chat-icon').length;
-  if( len > 0 ) {
-      var timer = null;
-      var updateIcon =  function () {
-          var image_link = page.settings.get('image_link');
-          var desk_widget = $('.a-desk-widget');
-          var image_str = desk_widget.css('background-image');
-          if(image_str) {
-              desk_widget.css({
-                  'background-image': 'url("' + image_link['livechaticon'] + '")',
-                  'background-size': 'contain',
-                  'min-width': 50,
-                  'min-height': 50,
-                  'width': 'auto'
-              });
-              desk_widget.hover(function() {
-                  $(this).css({
-                      'background': 'url("' + image_link['livechaticon'] + '") no-repeat scroll 0 0',
-                      'background-size': 'contain',
-                  });
-              });
-
-              if(image_str.match(/live-chat-icon/g)){
-                  clearInterval(timer);
-              }
-          }
-      };
-      timer = setInterval(updateIcon, 500);
-  }
-};
-
-var render_desk_widget = function() {
-       new DESK.Widget({
-                version: 1,
-                site: 'binary.desk.com',
-                port: '80',
-                type: 'chat',
-                id: 'live-chat-icon',
-                displayMode: 0,  //0 for popup, 1 for lightbox
-                features: {
-                        offerAlways: true,
-                        offerAgentsOnline: false,
-                        offerRoutingAgentsAvailable: false,
-                        offerEmailIfChatUnavailable: false
-                },
-                fields: {
-                        ticket: {
-                                // desc: &#x27;&#x27;,
-                // labels_new: &#x27;&#x27;,
-                // priority: &#x27;&#x27;,
-                // subject: &#x27;&#x27;,
-                // custom_loginid: &#x27;&#x27;
-                        },
-                        interaction: {
-                                // email: &#x27;&#x27;,
-                // name: &#x27;&#x27;
-                        },
-                        chat: {
-                                //subject: ''
-                        },
-                        customer: {
-                                // company: &#x27;&#x27;,
-                // desc: &#x27;&#x27;,
-                // first_name: &#x27;&#x27;,
-                // last_name: &#x27;&#x27;,
-                // locale_code: &#x27;&#x27;,
-                // title: &#x27;&#x27;,
-                // custom_loginid: &#x27;&#x27;
-                        }
+var get_random_download_symbols = function () {
+    var indices = $('#random_download_indices');
+    if (indices.size()) {
+        $.ajax({
+            crossDomain:true,
+            type: 'POST',
+            url: '//archive.binary.com/d/tick-data-downloads.cgi',
+            data: {action: 'get_symbols'},
+            async: true,
+            dataType: "json"
+        })
+        .done(function (data) {
+            for (var key in data) {
+                if (data.hasOwnProperty(key)) {
+                    indices.append($('<option>', {
+                        value: data[key].value,
+                        text: data[key].label,
+                    }));
                 }
-        }).render();
-};
-
-var show_live_chat_icon = function() {
-    if(typeof DESK === 'undefined') {
-        loadCSS("https://d3jyn100am7dxp.cloudfront.net/assets/widget_embed_191.cssgz?1367387331");
-        loadJS("https://d3jyn100am7dxp.cloudfront.net/assets/widget_embed_libraries_191.jsgz?1367387332");
+            }
+        });
     }
-
-
-    var desk_load = setInterval(function() {
-        if(typeof DESK !== "undefined") {
-            render_desk_widget();
-            change_chat_icon();
-            clearInterval(desk_load);
-        }
-    }, 80);
 };
 
-var display_career_email = function() {
-    $("#hr_contact_eaddress").html(email_rot13("<n uers=\"znvygb:ue@ovanel.pbz\" ery=\"absbyybj\">ue@ovanel.pbz</n>"));
+var random_symbol_change = function () {
+    $('#section-5').on('change', '#random_download_indices', function () {
+        var that = this;
+        var week_select = $('#random_download_week');
+        if($(that).val() != 'default') {
+            $.ajax({
+                crossDomain:true,
+                type: 'POST',
+                url: '//archive.binary.com/d/tick-data-downloads.cgi',
+                data: {action: 'get_json', underlying: $(that).val()},
+                async: true,
+                dataType: "json"
+            })
+            .done(function (data) {
+                week_select.empty();
+                week_select.show();
+                for (var key in data) {
+                    if (data.hasOwnProperty(key)) {
+                        var timeepoch = parseInt(data[key].timestamp) * 1000;
+                        week_select.append($('<option>', {
+                            value: data[key].timestamp,
+                            text: text.localize('Week of') + ' ' + moment(new Date(timeepoch)).format('YYYY-MM-DD HH:mm'),
+                            link: data[key].link,
+                        }));
+                    }
+                }
+                $('#download_random_data').show();
+            });
+        } else {
+            week_select.empty();
+            week_select.hide();
+            $('#download_random_data').hide();
+        }
+    });
+};
+
+var random_download_data = function () {
+    $('#section-5').on('click', '#download_random_data', function () {
+        var href = $('#random_download_week').find(':selected').attr('link');
+        if(typeof href != 'undefined') {
+            $(this).attr('href', href);
+        }
+    });
 };
 
 pjax_config_page('/$|/home', function() {
     return {
         onLoad: function() {
+            slider();
             select_user_country();
             get_ticker();
             home_bomoverlay.init();
@@ -8799,19 +8716,12 @@ pjax_config_page('/get-started', function() {
     };
 });
 
-pjax_config_page('/contact', function() {
+pjax_config_page('/random-markets', function() {
     return {
         onLoad: function() {
-            display_cs_contacts();
-            show_live_chat_icon();
-        },
-    };
-});
-
-pjax_config_page('/careers', function() {
-    return {
-        onLoad: function() {
-            display_career_email();
+            get_random_download_symbols();
+            random_symbol_change();
+            random_download_data();
         },
     };
 });
@@ -9034,6 +8944,16 @@ function checkCurrencyAmountFormat(input_value)
     return false;
 }
 
+function activate_copy_granters() {
+    $('#portfolio-table').on('click', '.paste_all_granters', function () {
+            $(this).prev('textarea.granter_loginids_input').val(document.getElementById('all_approved_granter_loginids').innerHTML);
+            $(this).siblings('span.button').children('.open_contract_details').attr('granter_loginids', document.getElementById('all_approved_granter_loginids').innerHTML);
+    });
+    $('#portfolio-table').on('change', '.granter_loginids_input', function () {
+            $(this).siblings('span.button').children('.open_contract_details').attr('granter_loginids', $(this).val());
+    });
+}
+
 var Portfolio = function () {
     var _price_request = null;
     var elements = $('button.open_contract_details');
@@ -9130,6 +9050,7 @@ pjax_config_page('portfolio', function() {
     return {
         onLoad: function() {
             $('#portfolio-table .hourglass').hide();
+            activate_copy_granters();
             $('#currencyfrom').change(function(event) { currencyConvertorCalculator(event.target); });
             $('#currencyfrom').keyup(function(event) { currencyConvertorCalculator(event.target); });
             $('#currencyfromvalue').change(function(event) { checkCurrencyAmountFormat(event.target); });
@@ -9142,7 +9063,7 @@ pjax_config_page('portfolio', function() {
     $('#pricingtable_calculate').on('click', function(e) {
         e.preventDefault();
         var form = $('form[name=pricing_table_input]').get(0);
-        var url = page.url.url_for('resources/pricing_table', getFormParams(form));
+        var url = page.url.url_for('pricing_table.cgi', getFormParams(form));
         $('#pricingtable_calculate').hide();
         $('#pricingtable_calculating').show();
         $('#pricing_table_prices_div').html('');
@@ -9187,7 +9108,7 @@ var bet_type_select = function() {
         var prev_underlying = $("#pricingtable_underlying").val();
 
         // change underlying option list
-        var ajax_url = page.url.url_for('resources/pricing_table');
+        var ajax_url = page.url.url_for('pricing_table.cgi');
         $.post(
             ajax_url,
             {
@@ -9214,7 +9135,7 @@ var select_underlying_change = function() {
     $("#pricingtable_underlying").on("change", function() {
         var underlying = $(this).val();
         // change lower strike
-        var ajax_url = page.url.url_for('resources/pricing_table');
+        var ajax_url = page.url.url_for('pricing_table.cgi');
         $.post(
             ajax_url,
             {
@@ -9299,134 +9220,22 @@ var self_exclusion_date_picker = function () {
     });
 };
 
-var self_exclusion_validate_date = function () {
-    $('#selfExclusion').on('click', '#self_exclusion_submit', function () {
-        return client_form.self_exclusion.validate_exclusion_date();
-    });
-};
-
 onLoad.queue_for_url(function () {
 // date picker for self exclusion
     self_exclusion_date_picker();
-    self_exclusion_validate_date();
 }, 'self_exclusion');
 ;onLoad.queue_for_url(function() {
+    $('#portfolio-table')
+        .on('click', '.paste_all_granters', function () {
+            $(this).prev('textarea[name=granter_loginids]').val(document.getElementById('all_approved_granter_loginids').innerHTML);
+        });
+}, 'portfolio|statement|f_manager_history|f_manager_statement|f_manager_confodeposit');
+
+onLoad.queue_for_url(function() {
     $('#statement-date').on('change', function() {
         $('#submit-date').removeClass('invisible');
     });
 }, 'statement');
-;RealityCheck = (function ($) {
-    "use strict";
-
-    var reality_check_url = page.url.url_for('user/reality_check');
-
-    function RealityCheck(cookieName, persistentStore, logoutLocation) {
-        var val;
-        
-        this.cookieName = cookieName;
-        this.storage = persistentStore;
-
-        val = ($.cookie(this.cookieName)||'').split(',');
-        val[0] = parseInt(val[0]);
-        if (isNaN(val[0]) || val[0]<=0) return;  // no or invalid cookie
-
-        if (val[1] && val[1] != persistentStore.get('reality_check.srvtime')) {
-            persistentStore.set('reality_check.srvtime', val[1]);
-            persistentStore.set('reality_check.basetime', (new Date()).getTime());
-            persistentStore.set('reality_check.ack', 1);
-        }
-
-        this.logoutLocation = logoutLocation;
-        if (!this.logoutLocation) return; // not logged in?
-
-        this.interval = parseInt(val) * 60 * 1000; // convert minutes to millisec
-
-        this.basetime = persistentStore.get('reality_check.basetime');
-
-        return this.setAlarm();
-    }
-
-    RealityCheck.prototype.setAlarm = function () {
-        var that = this;
-        var alrm = this.interval - ((new Date()).getTime() - this.basetime) % this.interval;
-
-        // console.log('interval = '+this.interval+', next alarm in '+alrm+' ms');
-        // console.log('alrm at '+(new Date((new Date()).getTime()+alrm)).toUTCString());
-
-        if (this.tmout) window.clearTimeout(this.tmout);
-
-        this.tmout = window.setTimeout(function () {
-            // console.log('fire at '+(new Date()).toUTCString());
-            that.fire();
-        }, alrm);
-    };
-
-    RealityCheck.prototype.fire = function () {
-        var that = this;
-
-        $.ajax({
-            url: reality_check_url,
-            dataType: 'text',
-            success: function (data) {
-                that.display(data);
-            },
-            error: function (xhr) {
-                if (xhr.status === 404) return; // no MF loginid
-                window.setTimeout(function () {
-                    that.fire();
-                }, 5000);
-            },
-        });
-    };
-
-    RealityCheck.prototype.display = function (data) {
-        var that = this, outer, middle, storage_handler; 
-
-        outer = $('#reality-check');
-        if (outer) outer.remove();
-
-        outer = $("<div id='reality-check' class='lightbox'></div>").appendTo('body');
-        middle = $('<div />').appendTo(outer);
-        $('<div>' + data + '</div>').appendTo(middle);
-
-        storage_handler = function (jq_event) {
-            var ack;
-
-            if (jq_event.originalEvent.key !== 'reality_check.ack') return;
-            ack = parseInt(jq_event.originalEvent.newValue || 1);
-            if (ack > that.lastAck) {
-                $(window).off('storage', storage_handler);
-                that.setAlarm();
-                $('#reality-check').remove();
-            }
-        };
-
-        // in case the client works with multiple windows, check if he has acknowleged
-        // it in another window.
-        $(window).on('storage', storage_handler);
-
-        this.lastAck = parseInt(this.storage.get('reality_check.ack') || 1);
-        $('#reality-check [bcont=1]').on('click', function () {
-            that.storage.set('reality_check.ack', that.lastAck+1);
-            $(window).off('storage', storage_handler);
-            that.setAlarm();
-            $('#reality-check').remove();
-        });
-
-        $('#reality-check .blogout').on('click', function () {
-            window.location.href = that.logoutLocation;
-        });
-    };
-
-    return RealityCheck;
-}(jQuery));
-
-onLoad.queue(function () {
-    var logoutBtn = $('#btn_logout')[0];
-    if (!logoutBtn) return;
-    if (window.reality_check_object) return;
-    window.reality_check_object = new RealityCheck('reality_check', LocalStore, logoutBtn.getAttribute('href'));
-});
 ;//////////////////////////////////////////////////////////////////
 // Purpose: Write loading image to a container for ajax request
 // Parameters:

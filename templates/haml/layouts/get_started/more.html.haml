@@ -1,7 +1,10 @@
 .sidebar-right
+  .open-account.by_client_type.client_logged_out.client_virtual
+    %p= l('Get started with just $5')
+    %a.pjaxload{:href => url_for('open_account.cgi')}= l('Open a Free account')
   .by_client_type.client_logged_out
     %p
-      %a.pjaxload{:href => url_for('/')}= l('Try it now')
+      %a.pjaxload{:href => url_for('linkto_acopening.cgi?actype=virtual')}= l('Try it now')
       %br
       = l('No risk, $10K virtual money account')
   %div

@@ -8,11 +8,13 @@
           %li#sidebar-link-section-1.selected
             %a{:href => "#what-are-random-markets"}= l('How to trade the random markets?')
           %li#sidebar-link-section-2
-            %a{:href => "#random-indices"}= l('Random Indices')
+            %a{:href => "#random-indices"}= l('Random indices')
           %li#sidebar-link-section-3
-            %a{:href => "#random-quotidians"}= l('Random Quotidians')
+            %a{:href => "#random-quotidians"}= l('Random quotidians')
           %li#sidebar-link-section-4
-            %a{:href => "#random-nocturnes"}= l('Random Nocturnes')
+            %a{:href => "#random-nocturnes"}= l('Random nocturnes')
+          %li#sidebar-link-section-5
+            %a{:href => "#random-download"}= l('Download data')
         .sidebar-button
           %a.pjaxload{:href => url_for('trade.cgi?market=random')}= l('Place a random trade')
     .grd-grid-9.grd-grid-mobile-12.grd-parent
@@ -59,7 +61,7 @@
         .section-content
           #section-3
             .grd-grid-12
-              %h1= l('Random Quotidians')
+              %h1= l('Random quotidians')
               %p.heading= l('Don’t be put off by the name. Quotidian just means something that happens everyday.')
               %p
                 != l('[_1] are markets that reset back to a price of 1000 at the start of each trading day (00:00:00 GMT), and all trades settle before the end of the trading day (23:59:59 GMT).', pjax_link_for(l('Random Quotidians'), url_for('trade.cgi?market=random&form_name=risefall&underlying_symbol=RDBEAR')))
@@ -82,7 +84,7 @@
         .section-content
           #section-4
             .grd-grid-12
-              %h1= l('Random Nocturnes')
+              %h1= l('Random nocturnes')
               %p
                 != l('Like [_2], [_1] reset back to a price of 1000 each day. The difference is that [_1] reset at 12PM GMT, ([_2] reset at 00:00:00 GMT).', pjax_link_for(l('Random Nocturnes'), url_for('trade.cgi?market=random&form_name=risefall&underlying_symbol=RDYANG')), pjax_link_for(l('Random Quotidians'), url_for('trade.cgi?market=random&form_name=risefall&underlying_symbol=RDBEAR')))
                 != l('If you\'re in Asia, you may find [_1] more attractive because they reset around the time Asian markets close.', pjax_link_for(l("Random Nocturnes"), url_for('trade.cgi?market=random&form_name=risefall&underlying_symbol=RDYANG')))
@@ -98,4 +100,20 @@
               .grd-grid-12
                 %p
                   != l('The [_1] simulates a market that is active during the day (but becomes less volatile at night). The [_2] simulates a market that is quiet during the day (but becomes more volatile at night).', pjax_link_for(l('Random Mars'), url_for('trade.cgi?market=random&form_name=risefall&underlying_symbol=RDMARS')), pjax_link_for(l('Random Venus'), url_for('trade.cgi?market=random&form_name=risefall&underlying_symbol=RDVENUS')));
+            .clearfix
+      .section
+        %a#random_download
+        .section-content
+          #section-5
+            .grd-grid-12.grd-row-padding
+              %h1= l('Raw tick data')
+              %p
+                != l('To promote transparency and third-party analysis of our [_1] time series, [_2] provides access to tick-by-tick data for all the [_1].', pjax_link_for(l('Random Markets'), url_for('trade.cgi?market=random&form_name=risefall')), stash->{website_name});
+              %p= l('Download the Random Markets raw tick data here.')
+              %select#random_download_indices
+                %option{:value => 'default'}= l('Select indices')
+              %select#random_download_week{:style => 'display: none'}
+              %a{:class => 'button', :href => 'javascript:void(0)', :id => 'download_random_data', :style =>'display: none'}
+                %span= l('Download')
+            .grd-grid-12.grd-row-padding
             .clearfix

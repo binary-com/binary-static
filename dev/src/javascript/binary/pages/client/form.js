@@ -25,6 +25,27 @@ ClientForm.prototype = {
             return true;
         }
     },
+    validate_promo_code_expiry: function() {
+        var has_expired = $('#promo_code_expired').val();
+        if(has_expired == "true") {
+            return false;
+        }
+
+        return true;
+    },
+    validate_promo_code_country: function() {
+        var country_list = $('#promo_code_countries').val();
+        if(country_list.indexOf('ALL') >= 0) {
+                return true;
+        } else {
+            var residence = $('#residence').val();
+            if(country_list.indexOf(residence) >= 0) {
+                return true;
+            }
+        }
+
+        return false;
+    },
     compare_new_password: function(new_password1, new_password2) {
         if (new_password1.length > 0 && new_password2.length > 0)
             {
@@ -51,6 +72,18 @@ ClientForm.prototype = {
                     if (input_tnc.checked === false)
                     {
                             error_tnc.innerHTML = text.localize('You must accept the terms and conditions to open an account.');
+                            return false;
+                    }
+            }
+            return true;
+    },
+    only_real_affirmed: function (bValid) {
+            var input_only = document.getElementById('only-real');
+            var error_only = clearInputErrorField('erroronly-real');
+            if (input_only && error_only) {
+                    if (input_tnc.checked === false)
+                    {
+                            error_only.innerHTML = text.localize('Please affirm that you have no other real currency accounts.');
                             return false;
                     }
             }
@@ -86,48 +119,55 @@ ClientForm.prototype = {
 
         return true;
     },
+    custom_check_file_format: function() {
+            var file_name = $('#Screenshot').attr('value');
+            if (file_name && file_name.length > 0) {
+                    if (!file_name.match(/(?:jpg|jpeg|png|gif)/i)) {
+                            return false;
+                    }
+            }
+            return true;
+    },
     self_exclusion: function() {
         return {
-            has_something_to_save: function(init) {
-                var el, i;
-                var names = ['MAXCASHBAL', 'MAXOPENPOS',
-                             'DAILYTURNOVERLIMIT', 'DAILYLOSSLIMIT',
-                             '7DAYTURNOVERLIMIT', '7DAYLOSSLIMIT',
-                             'SESSIONDURATION', 'EXCLUDEUNTIL'];
-                for (i=0; i<names.length; i++) {
-                    el = document.getElementById(names[i]);
-                    if (el) {
-                        el.value = el.value.replace(/^\s*/, '').replace(/\s*$/, '');
-                        if (el.value == (init[names[i]]===undefined ? '' : init[names[i]])) continue;
-                        return true;
+            has_something_to_save: function() {
+                    var MAXCASHBAL = document.getElementById('MAXCASHBAL');
+                    var DAILYTURNOVERLIMIT = document.getElementById('DAILYTURNOVERLIMIT');
+                    var MAXOPENPOS = document.getElementById('MAXOPENPOS');
+                    var SESSIONDURATION = document.getElementById('SESSIONDURATION');
+                    var EXCLUDEUNTIL = document.getElementById('EXCLUDEUNTIL');
+                    var input_length = 0;
+
+                    if (MAXCASHBAL) { input_length += MAXCASHBAL.value.length; }
+
+                    if (DAILYTURNOVERLIMIT) { input_length += DAILYTURNOVERLIMIT.value.length; }
+
+                    if (MAXOPENPOS) { input_length += MAXOPENPOS.value.length; }
+
+                    if (SESSIONDURATION) { input_length += SESSIONDURATION.value.length; }
+
+                    if (EXCLUDEUNTIL) { input_length += EXCLUDEUNTIL.value.length; }
+
+                    if (input_length > 0)
+                    {
+                            return true;
                     }
-                }
-                return false;
+                    else
+                    {
+                            return false;
+                    }
             },
             validate_exclusion_date: function() {
                 var exclusion_date = $('#EXCLUDEUNTIL').val();
+                exclusion_date = new Date(exclusion_date);
 
-                if (exclusion_date) {
-                    var error_element_errorEXCLUDEUNTIL = clearInputErrorField('errorEXCLUDEUNTIL');
+                // self exclusion date must >= 6 month from now
+                var six_month_date = new Date();
+                six_month_date.setMonth(six_month_date.getMonth() + 6);
 
-                    exclusion_date = new Date(exclusion_date);
-                    // self exclusion date must >= 6 month from now
-                    var six_month_date = new Date();
-                    six_month_date.setMonth(six_month_date.getMonth() + 6);
-
-                    if (exclusion_date < six_month_date) {
-                        error_element_errorEXCLUDEUNTIL.innerHTML = text.localize("Please enter a date that is at least 6 months from now.");
-                        return false ;
-                    }
-
-                    if (confirm(text.localize("When you click 'Ok' you will be excluded from trading on the site until the selected date.")) === true) {
-                        return true;
-                    } else {
-                        return false;
-                    }
-
+                if (exclusion_date < six_month_date) {
+                    return false;
                 }
-
                 return true;
             },
         };
@@ -143,8 +183,6 @@ ClientForm.prototype = {
         var that = this;
         $('#residence').on('change', function() {
             that.set_idd_for_residence($(this).val());
-            var address_state = $('#AddressState');
-            var current_state = address_state.length > 0 ? address_state.val() : '';
 
             var postcodeLabel = $('label[for=AddressPostcode]');
             if ($(this).val() == 'GB') {
@@ -156,27 +194,29 @@ ClientForm.prototype = {
             if(that.is_allowed_opening_account_country($(this).val())) {
                 $.ajax({
                     crossDomain:true,
-                    url: page.url.url_for('states_list'),
+                    url: page.url.url_for('states_list.cgi'),
                     data: {"c":$('#residence').get(0).value,"l": page.language()},
                     async: true,
                     dataType: "html"
                 }).done(function(response) {
                     $('#AddressState').html(response);
-                    that.hide_state_list_if_empty(current_state);
+                    that.hide_state_list_if_empty();
                 });
             } else {
                 $("#AddressState").parents(".row").first().hide(); //Hide States list.
             }
         });
     },
-    hide_state_list_if_empty: function(current_state) {
+    hide_state_list_if_empty: function() {
         var addr_state = $("#AddressState");
         if (addr_state.children().size() > 2) {
             addr_state.parents(".row").first().show();
-            addr_state.val(current_state);
         } else {
             addr_state.parents(".row").first().hide();
         }
+    },
+    set_virtual_login_id: function(loginid) {
+        $('#virtual_loginid').val(loginid);
     },
     set_virtual_email_id: function(email) {
         $('#Email').val(email);

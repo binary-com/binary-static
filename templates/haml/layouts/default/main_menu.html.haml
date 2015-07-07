@@ -3,21 +3,19 @@
     %ul{:class=>'items'}
       - foreach my $item (@{ menu()->main_menu }) {
       - my ($id, $url, $text) = @{$item}{'id', 'url', 'text'};
-      - my $class = $item->{'class'} ? $item->{'class'} . " item" : "item";
-      - my $link_class = $item->{'link_class'} ? $item->{'link_class'} . " link" : "link";
-      - my $link_target = $item->{'target'} ? $item->{'target'} : "";
+      - my $class = $item->{'class'} || ' ';
+      - my $link_class = $item->{'link_class'} || ' ';
       - my $sub_items = $item->{sub_items} || '';
-      %li{:id=>"#{$id}", :class => $class}
-        %a{:href => "#{$url}", :class => $link_class, :target => $link_target}= $text
+      %li{:id=>"#{$id}", :class=>"item #{$class}"}
+        %a{:class=>"link #{$link_class}", :href=>"#{$url}"}= $text
         - if ($sub_items) {
           %ul{:class=>"sub_items"}
             - foreach my $sub_item (@{ $sub_items }) {
             - my ($sub_id, $sub_url, $sub_text) = @{$sub_item}{'id', 'url', 'text'};
-            - my $sub_class = $sub_item->{'class'} ? $sub_item->{'class'} . " sub_item" : "sub_item";
-            - my $link_sub_class = $sub_item->{'link_class'} ? $sub_item->{'link_class'} . " link" : "link";
-            - my $link_sub_target = $sub_item->{'target'} ? $sub_item->{'target'} : "";
-              %li{:id =>"#{$sub_id}", :class => $sub_class}
-                %a{:href=>"#{$sub_url}", :class => $link_sub_class, :target => $link_sub_target}= $sub_text
+            - my $sub_class = $sub_item->{'class'} || ' ';
+            - my $link_sub_class = $sub_item->{'link_class'} || ' ';
+              %li{:id =>"#{$sub_id}", :class=>"sub_item #{$sub_class}"}
+                %a{:class=>"link #{$link_sub_class}", :href=>"#{$sub_url}"}= $sub_text
             - }
         - }
       - }

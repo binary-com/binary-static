@@ -4,7 +4,8 @@
     %h1= stash->{title}
     %p= l('Whatever your market view or strategy, [_1] provides you with the right trade to profit from your prediction. Choose from five ways to trade:', stash->{website_name})
     %ul.bullet
-      %li= l('Up/Down trades')
+      %li= l('Rise/fall trades')
+      %li= l('Higher/lower trades')
       %li= l('Touch/no touch trades')
       %li= l('In/out trades')
       %li= l('Asians')
@@ -13,11 +14,19 @@
   .subsection
     .grd-grid-12
       %h2
-        %a.pjaxload{:href => url_for('trade.cgi?market=forex&form_name=risefall')}= l('Up / Down')
+        %a.pjaxload{:href => url_for('trade.cgi?market=forex&form_name=risefall')}= l('Rise / Fall')
       %p= l('Choose Rise/Fall when you want to profit from the market rising or falling from its current level.')
-      %p= l('Choose Higher/Lower when you want to profit from the market ending higher or lower than a price target.')
       %ol
         %li= l('Choose the market, the time period, and how much you wish to win.')
+        %li= l('Price the trade.')
+        %li= l('Win 80-100% on your stake if you are correct.')
+  .subsection
+    .grd-grid-12
+      %h2
+        %a.pjaxload{:href => url_for('trade.cgi?market=forex&form_name=higherlower')}= l('Higher / Lower')
+      %p= l('Choose Higher/Lower when you want to profit from the market ending higher or lower than a price target.')
+      %ol
+        %li= l('Choose the market, the price target, the time period, and how much you wish to win.')
         %li= l('Price the trade.')
         %li= l('Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a price target farther away from the current price.')
   .subsection

@@ -25,6 +25,7 @@ var BetForm = function () {
             return moment.utc(page.header.time_now);
         },
         error_message: function () {
+            $('#betInputBox').removeClass("indicate-loading");
             BetPrice.error_handler();
         },
         actions: function() {
@@ -115,6 +116,7 @@ var BetForm = function () {
                     }
 
                     var that = this;
+                    $('#betInputBox').addClass("indicate-loading");
                     betform_request = $.ajax({
                             url     : this.form_url(form_name),
                             success : function (data) {
@@ -135,6 +137,7 @@ var BetForm = function () {
                     }
 
                     var that = this;
+                    $('#betInputBox').addClass("indicate-loading");
                     betform_request = $.ajax({
                         url     : this.form_url('', underlying),
                         success : function (data) {
@@ -166,6 +169,7 @@ var BetForm = function () {
                     this.on_amount_type_change();
                     this.on_other_input_change();
 
+                    $('#betInputBox').removeClass("indicate-loading");
                     $('#bet_calculate').focus(); //Focus on the Get Prices button.
                     this.hide_sub_trade();
 
@@ -199,7 +203,6 @@ var BetForm = function () {
                         BetForm.underlying_drop_down.update_for_submarket(this.value);
                         //If Underlying Changed because of submarket
                         if (BetForm.attributes.model.underlying() != BetForm.attributes.underlying()) {
-                            BetForm.attributes.model.underlying(BetForm.attributes.underlying());
                             that.update_for_underlying(BetForm.attributes.underlying());
                         }
                     }).addClass('unbind_later');

@@ -14,18 +14,8 @@ BetForm.Time.prototype = {
         this.trading_time.init();
         this.duration.init();
         this.end_time.init();
+        $('#expiry_type').val(this.model.expiry_type);
         this.register();
-        if (BetForm.attributes.model.form_name() == "digits" || BetForm.attributes.model.form_name() == "asian") {
-            var expiry_val = 'duration';
-            $('#expiry_type').val(expiry_val);
-            page.url.invalidate();
-            LocalStore.set('bet_page.expiry_type', expiry_val);
-            BetForm.attributes.model.expiry_type(expiry_val);
-            this.model.expiry_type = expiry_val;
-            $('#duration_amount').val(this.trading_time.min_unit().min);
-        } else {
-            $('#expiry_type').val(this.model.expiry_type);
-        }
         this.update_ui();
     },
     register: function() {
@@ -212,7 +202,7 @@ BetForm.TradingTime.prototype = {
     },
     min_unit: function() {
         var units = this.configured_units_by_start_time();
-        var order = ['d', 'h', 'm', 's' ,'t'];
+        var order = [ 'd', 'h', 'm', 's' ,'t'];
         var checking = order.length;
         while(checking > 0) {
             checking--;
@@ -223,7 +213,7 @@ BetForm.TradingTime.prototype = {
     },
     max_unit: function() {
         var units = this.configured_units_by_start_time();
-        var order = ['t', 's', 'm', 'h', 'd'];
+        var order = [ 's', 'm', 'h', 'd', 't'];
         var checking = order.length;
         while(checking > 0) {
             checking--;
@@ -242,26 +232,27 @@ BetForm.TradingTime.prototype = {
         var units;
         var amount;
         var start_time = BetForm.attributes.start_time_moment();
+        
         var time = moment.utc(parseInt(inputTime) * 1000);
 
         var diff = time.valueOf() - start_time.valueOf();
         var min_unit = this.min_unit();
-        var min_expiration_time = BetForm.attributes.start_time_moment().add(min_unit.min, min_unit.units);
+        var min_expiration_time = BetForm.attributes.start_time_moment().add(min_unit.units, min_unit.min);
         if(time.isBefore(min_expiration_time)) {
             units = min_unit.units;
             amount = min_unit.min;
-        } else if(diff / 1000 < 60) {
-            units = 's';
-            amount = Math.ceil(diff / 1000);
-        } else if (diff / (60 * 1000) < 60) {
-            units = 'm';
-            amount = Math.ceil(diff / (60 * 1000));
-        } else if (diff / (3600 * 1000) < 24) {
-            units = 'h';
-            amount = Math.ceil(diff / (3600 * 1000));
-        } else {
+        } else if (start_time.utc().date() != time.utc().date()) {
             units = 'd';
             amount = time.diff(start_time, 'day');
+        } else if(diff % (60 * 60) === 0) {
+            units = 'h';
+            amount = Math.ceil(diff / (60 * 60 * 1000));
+        } else if(diff % 60 === 0) {
+            units = 'm';
+            amount = Math.ceil(diff / (60 * 1000));
+        } else  {
+            units = 's';
+            amount = Math.ceil(diff / 1000);
         }
 
         return {
@@ -271,7 +262,7 @@ BetForm.TradingTime.prototype = {
     },
     convert_to_end_time: function(duration_amount, duration_units) {
         var ms = BetForm.attributes.start_time_moment();
-        ms.add(duration_amount, duration_units);
+        ms.add(duration_units, duration_amount);
         if(duration_units == "d") {
             var trading_times = this.get_trading_times(ms.format("YYYY-MM-DD"));
             ms = trading_times.closing;
@@ -383,17 +374,13 @@ BetForm.TradingTime.prototype = {
         return trading_dates;
     },
     get_trading_days: function() {
-        var underlying_symbol = BetForm.attributes.underlying();
-        var barrier = BetForm.attributes.barrier_1();
+        var underlying_symbol = this.underlying();
         if (typeof this.trading_info[underlying_symbol] === 'undefined') {
             var that = this;
             $.ajax({
                 url: page.url.url_for('trade_get.cgi'),
                 data: { controller_action: 'trading_days',
-                        underlying_symbol: underlying_symbol,
-                        form_name: BetForm.attributes.form_name(),
-                        date_start: BetForm.attributes.start_time(),
-                        barrier: barrier,
+                        underlying_symbol: underlying_symbol
                     },
                 dataType:'json',
                 async: false
@@ -533,7 +520,7 @@ BetForm.Time.Duration.prototype = {
                 min_span.removeClass('error');
             } else {
                 $(this).addClass('error');
-                min_span.addClass('error');
+                min_span.addClass('error').effect('pulsate', {times: 2});
             }
         };
 

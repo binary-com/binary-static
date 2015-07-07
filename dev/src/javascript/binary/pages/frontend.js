@@ -1,3 +1,24 @@
+var slider = function() {
+    var slider = $('#slider');
+    if (slider.size()) {
+        $('.invisibleslides').show();
+        slider.slides({
+            container: 'slides-container',
+            paginationClass: 'slides-pagination',
+            generatePagination: false,
+            generateNextPrev: false,
+            start: 1,
+            preload: true,
+            play: 10000,
+            slideSpeed: 800,
+        });
+        if ($('.slides_control').height() < 300) {
+            $('.slides_control').css('min-height', '300px');
+        }
+    }
+};
+
+
 var sidebar_scroll = function(elm_selector) {
     elm_selector.on('click', '#sidebar-nav li', function() {
         var clicked_li = $(this);
@@ -123,11 +144,10 @@ var select_user_country = function() {
     if($('#residence').length > 0) {
         get_user_country(function() {
             var restricted_countries = new RegExp(page.settings.get('restricted_countries'));
-            var current_selected = $('#residence').val() || this.country;
-            if(restricted_countries.test(current_selected)) {
+            if(restricted_countries.test(this.country)) {
                 $('#residence').val('default').change();
             } else {
-                $('#residence').val(current_selected).change();
+                $('#residence').val(this.country).change();
             }
         });
     }
@@ -160,116 +180,79 @@ var home_bomoverlay = {
     }
 };
 
-var email_rot13 = function(str) {
-    return str.replace(/[a-zA-Z]/g, function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});
-};
-
-var display_cs_contacts = function () {
-    $('.contact-content').on("change", '#cs_telephone_number', function () {
-        var val = $(this).val();
-        $('#display_cs_telephone').text(val);
-    });
-    $('#cs_contact_eaddress').html(email_rot13("<n uers=\"znvygb:fhccbeg@ovanel.pbz\" ery=\"absbyybj\">fhccbeg@ovanel.pbz</n>"));
-};
-
-var change_chat_icon = function () {
-  // desk.com change icon - crude way
-  var len = $('#live-chat-icon').length;
-  if( len > 0 ) {
-      var timer = null;
-      var updateIcon =  function () {
-          var image_link = page.settings.get('image_link');
-          var desk_widget = $('.a-desk-widget');
-          var image_str = desk_widget.css('background-image');
-          if(image_str) {
-              desk_widget.css({
-                  'background-image': 'url("' + image_link['livechaticon'] + '")',
-                  'background-size': 'contain',
-                  'min-width': 50,
-                  'min-height': 50,
-                  'width': 'auto'
-              });
-              desk_widget.hover(function() {
-                  $(this).css({
-                      'background': 'url("' + image_link['livechaticon'] + '") no-repeat scroll 0 0',
-                      'background-size': 'contain',
-                  });
-              });
-
-              if(image_str.match(/live-chat-icon/g)){
-                  clearInterval(timer);
-              }
-          }
-      };
-      timer = setInterval(updateIcon, 500);
-  }
-};
-
-var render_desk_widget = function() {
-       new DESK.Widget({
-                version: 1,
-                site: 'binary.desk.com',
-                port: '80',
-                type: 'chat',
-                id: 'live-chat-icon',
-                displayMode: 0,  //0 for popup, 1 for lightbox
-                features: {
-                        offerAlways: true,
-                        offerAgentsOnline: false,
-                        offerRoutingAgentsAvailable: false,
-                        offerEmailIfChatUnavailable: false
-                },
-                fields: {
-                        ticket: {
-                                // desc: &#x27;&#x27;,
-                // labels_new: &#x27;&#x27;,
-                // priority: &#x27;&#x27;,
-                // subject: &#x27;&#x27;,
-                // custom_loginid: &#x27;&#x27;
-                        },
-                        interaction: {
-                                // email: &#x27;&#x27;,
-                // name: &#x27;&#x27;
-                        },
-                        chat: {
-                                //subject: ''
-                        },
-                        customer: {
-                                // company: &#x27;&#x27;,
-                // desc: &#x27;&#x27;,
-                // first_name: &#x27;&#x27;,
-                // last_name: &#x27;&#x27;,
-                // locale_code: &#x27;&#x27;,
-                // title: &#x27;&#x27;,
-                // custom_loginid: &#x27;&#x27;
-                        }
+var get_random_download_symbols = function () {
+    var indices = $('#random_download_indices');
+    if (indices.size()) {
+        $.ajax({
+            crossDomain:true,
+            type: 'POST',
+            url: '//archive.binary.com/d/tick-data-downloads.cgi',
+            data: {action: 'get_symbols'},
+            async: true,
+            dataType: "json"
+        })
+        .done(function (data) {
+            for (var key in data) {
+                if (data.hasOwnProperty(key)) {
+                    indices.append($('<option>', {
+                        value: data[key].value,
+                        text: data[key].label,
+                    }));
                 }
-        }).render();
-};
-
-var show_live_chat_icon = function() {
-    if(typeof DESK === 'undefined') {
-        loadCSS("https://d3jyn100am7dxp.cloudfront.net/assets/widget_embed_191.cssgz?1367387331");
-        loadJS("https://d3jyn100am7dxp.cloudfront.net/assets/widget_embed_libraries_191.jsgz?1367387332");
+            }
+        });
     }
-
-
-    var desk_load = setInterval(function() {
-        if(typeof DESK !== "undefined") {
-            render_desk_widget();
-            change_chat_icon();
-            clearInterval(desk_load);
-        }
-    }, 80);
 };
 
-var display_career_email = function() {
-    $("#hr_contact_eaddress").html(email_rot13("<n uers=\"znvygb:ue@ovanel.pbz\" ery=\"absbyybj\">ue@ovanel.pbz</n>"));
+var random_symbol_change = function () {
+    $('#section-5').on('change', '#random_download_indices', function () {
+        var that = this;
+        var week_select = $('#random_download_week');
+        if($(that).val() != 'default') {
+            $.ajax({
+                crossDomain:true,
+                type: 'POST',
+                url: '//archive.binary.com/d/tick-data-downloads.cgi',
+                data: {action: 'get_json', underlying: $(that).val()},
+                async: true,
+                dataType: "json"
+            })
+            .done(function (data) {
+                week_select.empty();
+                week_select.show();
+                for (var key in data) {
+                    if (data.hasOwnProperty(key)) {
+                        var timeepoch = parseInt(data[key].timestamp) * 1000;
+                        week_select.append($('<option>', {
+                            value: data[key].timestamp,
+                            text: text.localize('Week of') + ' ' + moment(new Date(timeepoch)).format('YYYY-MM-DD HH:mm'),
+                            link: data[key].link,
+                        }));
+                    }
+                }
+                $('#download_random_data').show();
+            });
+        } else {
+            week_select.empty();
+            week_select.hide();
+            $('#download_random_data').hide();
+        }
+    });
+};
+
+var random_download_data = function () {
+    $('#section-5').on('click', '#download_random_data', function () {
+        var href = $('#random_download_week').find(':selected').attr('link');
+        if(typeof href != 'undefined') {
+            $(this).attr('href', href);
+        }
+    });
 };
 
 pjax_config_page('/$|/home', function() {
     return {
         onLoad: function() {
+            slider();
             select_user_country();
             get_ticker();
             home_bomoverlay.init();
@@ -345,19 +328,12 @@ pjax_config_page('/get-started', function() {
     };
 });
 
-pjax_config_page('/contact', function() {
+pjax_config_page('/random-markets', function() {
     return {
         onLoad: function() {
-            display_cs_contacts();
-            show_live_chat_icon();
-        },
-    };
-});
-
-pjax_config_page('/careers', function() {
-    return {
-        onLoad: function() {
-            display_career_email();
+            get_random_download_symbols();
+            random_symbol_change();
+            random_download_data();
         },
     };
 });

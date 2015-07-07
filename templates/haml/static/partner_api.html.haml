@@ -1,128 +1,71 @@
 - stash(title => l('API'));
 
-:css
- table.api ul.checked     { margin: 0 auto; width: 20px }
- table.api td             { text-align: center }
- table.api td:first-child { text-align: left }
-
 .grd-container.grd-default-container
   .partner-api.static_full
     .grd-grid-3.grd-hide-mobile
       .sidebar
           %ul#sidebar-nav
-            %li#sidebar-link-section-0.selected
-              %a{:href => "#api-intro"}= l('The Binary.com APIs')
-            %li#sidebar-link-section-1
-              %a{:href => "#api-rest"}= l('REST API')
+            %li#sidebar-link-section-1.selected
+              %a{:href => "#the-api"}= l('The [_1] API', stash->{website_name})
             %li#sidebar-link-section-2
-              %a{:href => "#api-wsok"}= l('WebSocket API')
+              %a{:href => "#api-rest"}= l('REST')
             %li#sidebar-link-section-3
-              %a{:href => "#api-security"}= l('API Security')
+              %a{:href => "#api-security"}= l('Security')
             %li#sidebar-link-section-4
-              %a{:href => "#api-console"}= l('REST API Console Facility')
+              %a{:href => "#api-console"}= l('Console Facility')
+            %li#sidebar-link-section-5
+              %a{:href => "#dev-guide"}= l('Developer\'s Guide')
           .sidebar-button
             %a{:href => 'http://trade.binary.com/api_en_binary/', :target => '_blank'}= l('Apply for access')
     .grd-grid-9.grd-grid-mobile-12.grd-parent
       .section
-        %a#api-intro
-        .section-content
-          #section-0
-            .grd-grid-12
-              %h1= l('The Binary.com APIs')
-              %p= l('Binary.com provides business partners with two application programming interfaces (APIs).')
-              %p= l('These are')
-              %ul.checked
-                %li  Binary.com REST API
-                %li  Binary.com Websockets API
-              %p
-                = l('Together, these provide most of the functionality available at the Binary.com website.')
-                = l('Each API currently has specific capabilities as follows.')
-                = l('Hover over any functionality for more information.')
-              %table.api
-                - my %can_do = (-1=>'soon', 0=>'', 1=>'<ul class="checked"><li/></ul>');
-                - my @functionalities = (
-                -#                       can-do flags: REST? WS?
-                - [l('Market Discovery'),                  1, 1, l('Get latest details about available markets, tradeable symbols, contract types, and contract durations and limits')],
-                - [l('Contract Pricing'),                  1, 1, l('Propose specific contracts; receive validation and real-time pricing as determined by current market conditions')],
-                - [l('Contract Purchase'),                 1, 1, l('Purchase a proposed contract; receive transaction number and relevant contract-start parameters')],
-                - [l('Bulk Purchasing'),                   1, 0, l('Purchase a proposed contract on behalf of a community of Binary.com accounts; receive all individual transaction numbers or error conditions')],
-                - [l('Account Profile Review / Update'),   1, 0, l('Inspect and Update account profile information')],
-                - [l('Account Creation (Virtual)'),        1, 0, l('Create a new virtual account ready for trading')],
-                - [l('Account Upgrade (Virtual to Real)'),-1, 0, l('Supply identity and address information to upgrade a Virtual Account to a Real trading account')],
-                - [l('Portfolio'),                         1, 1, l('Receive current open contract positions, get relevant detail on each open position, and see an indicative sell-back price (if available)')],
-                - [l('Sell Contract from Portfolio'),      1, 1, l('Sell (ahead of contract expiry) one of the currently open positions from the Portfolio')],
-                - [l('Account Statement'),                 1, 0, l('Query historical account transactions by month or by advanced search criteria')],
-                - [l('Live-Stream Spot Prices'),           0, 1, l('Receive real-time stream of spot prices for a given symbol')],
-                - [l('Live-Stream Contract Prices'),       0, 1, l('Receive real-time stream of contract prices for a given contract proposal')],
-                - [l('More..'),                            0, 0, l('Both APIs are being continually upgraded')],
-                - );
-                %tr
-                  %th= l('Functionality')
-                  %th REST API
-                  %th Websockets API
-                - for my $f (@functionalities) {
-                -    my @f = @$f;
-                %tr
-                  %td{:rel=>'tooltip',:title=>'#{$f[3]}'}= $f[0]
-                  %td
-                    != $can_do{$f[1]}
-                  %td
-                    != $can_do{$f[2]}
-                - }
-      .section
-        %a#api-rest
+        %a#the-api
         .section-content
           #section-1
             .grd-grid-12
-              %h1= l('REST API')
-              %p.heading= l("[_1]'s REST API conforms to the Representational State Transfer (REST) model.", stash->{website_name})
+              %h1= l('The [_1] API', stash->{website_name})
+              %p= l('[_1] provides approved business partners with a REST-style application programming interface (API) over the internet. The API provides the following functionality:', stash->{website_name});
+            .grd-grid-8.grd-grid-mobile-12
+              %ul.checked
+                %li= l('Contract discovery and pricing')
+                %li= l('Contract purchase (approved applications only)')
+                %li= l('Basic Account review/update facilities')
+                %li= l('Statement and Portfolio Enquiries')
+            .grd-grid-4.grd-grid-mobile-12
+                %img.responsive{:src => url_for('images/pages/partnerapi/api.svg')}
+      .section
+        %a#api-rest
+        .section-content
+          #section-2
+            .grd-grid-12
+              %h1= l('REST')
+              %p.heading= l("[_1]'s API conforms to the Representational State Transfer (REST) model.", stash->{website_name})
             .grd-grid-8.grd-grid-mobile-12
               %div#rest-main
-                %p
-                  %div= l('Calls which invoke the API are simple, recognizable and can be negotiated from all popular web programming technologies in use today.')
-                %p
-                  %div= l('For example, to get a list of "marketplaces" currently available at [_1]:',  stash->{website_name})
-                  %div= 'GET /markets'
-                %p
-                  %div= l('To get a summary of currently tradeable market symbols in the "forex" market:')
-                  %div= 'GET /markets/forex'
+                %p= l('Calls which invoke the API are simple, recognizable and can be negotiated from all popular web programming technologies in use today. For example, to get a list of "marketplaces" currently available at [_1]:',  stash->{website_name})
             .grd-grid-4.grd-grid-mobile-12
               %img.responsive{:src => url_for('images/pages/partnerapi/rest.svg')}
             .grd-grid-12
-              = l('To get started with the REST API, please review the')
-              %a{:href => url_for('/devguide')}= l('Developer\'s Guide')
-              = l('first, then consult the')
-              %a{:href=>'https://apigee.com/rmg/resources/binary1'}= l('Binary.com REST API Resource Summary')
-            .grd-grid-12
-              %p!= l('The REST API interface is hosted by an API Proxy management provider, namely <a href="http://apigee.com" target="_blank">Apigee</a>. This service applies several services of benefit both to the application developer and to the API provider.')
-      .section
-        %a#api-wsok
-        .section-content
-          #section-2
-            .grd-grid-12.grd-with-padding
-              %h1= l('Websockets API')
-            .grd-grid-4.grd-grid-mobile-12
-              %img.responsive{:src => url_for('images/pages/partnerapi/api.svg')}
-            .grd-grid-8.grd-grid-mobile-12
-                %p= l('The Websockets API uses the state-of-the-art Websockets protocol to allow fast, two-way messaging between client programs and Binary.com trading services.')
-                %p
-                  = l('To get started with the Websockets API, please review the')
-                  %a{:href => url_for('/devguide')}= l('Developer\'s Guide')
-                  = l('first, then consult the')
-                  %a{:href=>'https://github.com/binary-com/websockets-api/wiki'}= l('the Binary.com WebSocket API Reference pages')
+              %ul
+                %li GET /markets
+              %p= l('To get a summary of currently tradeable market symbols in the "forex" market:')
+              %ul
+                %li GET /markets/forex
       .section
         %a#api-security
         .section-content
           #section-3
             .grd-grid-12
               %h1= l('Security')
-              %p.heading= l('The [_1] APIs use the OAuth2.0 scheme for authenticating users.', stash->{website_name})
+              %p.heading= l('The [_1] API uses the OAuth2.0 scheme for authenticating users.', stash->{website_name})
             .grd-grid-7.grd-grid-mobile-12
               %div#security-main
                 %p!= l('OAuth2.0 is the emerging internet standard for this purpose. See <a href="http://oauth.net/2" target="_blank">http://oauth.net/2</a> for a formal definition, although we will guide you through the steps relevant to your platform.')
                 %p= l('The most important benefit of using OAuth2.0 is that the end-users, who already have valid logins at [_1], are able to leverage new applications to execute various trading activities, without these applications needing to know or "see" the end-users security credentials.', stash->{website_name})
             .grd-grid-5.grd-grid-mobile-12
               %img.responsive{:src => url_for('images/pages/partnerapi/security.svg')}
+            .grd-grid-12
+              %p!= l('Further to this, the API interface is hosted by an API Proxy management provider, namely <a href="http://apigee.com" target="_blank">Apigee</a>. This service applies several services of benefit both to the application developer and to the API provider.')
       .section
         %a#api-console
         .section-content
@@ -134,7 +77,9 @@
             .grd-grid-8.grd-grid-mobile-12
               %ul#console-main
                 %li.image
-                %li!= l('The REST API can be inspected "live" using Apigee\'s <a href="http://apigee.com/rmg/console/binary1" target="_blank">Console-to-go</a> facility. This facility applies the full OAuth2 validation process, hence you will need to opt for the "OAuth2" Authentication option offered here and you will then need a valid [_1] login to proceed.', stash->{website_name} )
+                %li!= l('The "raw" API can be inspected "live" using Apigee\'s <a href="http://apigee.com/rmg/console/binary1" target="_blank">Console-to-go</a> facility. This facility aplies the full OAuth2 validation process, hence you will need to opt for the "OAuth2" Authentication option offered here and you will then need a valid [_1] login to proceed.', stash->{website_name} )
+            .grd-grid-12
+              %p!= l('An automatically generated <a href="https://apigee.com/rmg/resources/binary1" target="_blank">Resource Summary</a> is also available.')
       .section
         %a#dev-guide
         .section-content

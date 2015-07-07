@@ -11,13 +11,13 @@
                 <a class="pjaxload" href="[% request.url_for('tour') %]"[% target %]>[% l("Tour") %]</a>
             </li>
             [%= FOREACH item IN menu.main_menu=%]
-            <li id="[%= item.id =%]" class="item[% IF item.class %] [%= item.class =%][% END %]">
+            <li id="[%= item.id =%]" class="item [%= item.class =%]">
                 <a class="pjaxload link [% item.link_class %]" href="[%= item.url =%]">[%= item.text =%]</a>
                 [% IF item.sub_items %]
                     <ul class="sub_items">
                     [%= FOREACH sub_item IN item.sub_items =%]
-                        <li id="[%= sub_item.id =%]" class="sub_item[% IF sub_item.class %] [%= sub_item.class %][% END %]">
-                            <a class="pjaxload link[% IF sub_item.link_class %] [% sub_item.link_class %][% END %]" href="[%= sub_item.url =%]">[%= sub_item.text =%]</a>
+                        <li id="[%= sub_item.id =%]" class="sub_item [%= sub_item.class %]">
+                            <a class="pjaxload link [% sub_item.link_class %]" href="[%= sub_item.url =%]">[%= sub_item.text =%]</a>
                         </li>
                     [%= END =%]
                     </ul>

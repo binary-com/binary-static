@@ -2,12 +2,12 @@
 <div class="grd-grid-12 grd-row-padding">
         <div class="grd-grid-2 grd-grid-mobile-6 grd-grid-phablet-6 left-aligned">
                 [% IF has_newer %]
-                <a class="pjaxload button" href="[% request.url_for('/user/statement', { after => transactions.first.transaction_time, currency => currency }) %]"><span>&laquo;[% l('Newer') %]</span></a>
+                <a class="pjaxload button" href="[% request.url_for('statement.cgi', { after => transactions.first.transaction_time, currency => currency }) %]"><span>&laquo;[% l('Newer') %]</span></a>
                 [% END %]
         </div>
 
         <span class="grd-grid-8 grd-hide-mobile grd-hide-phablet center-aligned" [% IF position != 'top' %] style="visibility:hidden" [% END %]>
-            <form action="[% request.url_for('/user/statement') %]">
+            <form action="[% request.url_for('statement.cgi') %]">
                 <div class="grd-row-padding grd-parent grd-grid-7 right-aligned">
                     <label for='before' class='left-aligned'>[% l('Jump to') %]</label>
                     <input id='statement-date' class='has-date-picker' name='before' value='[% before %]'/>
@@ -21,7 +21,7 @@
 
         <div class="grd-grid-2 grd-grid-mobile-6 grd-grid-phablet-6 right-aligned">
                 [% IF has_older %]
-                <a class="pjaxload button" href="[% request.url_for('/user/statement', { before => transactions.last.transaction_time, currency => currency }) %]"><span>[% l('Older') %]&raquo;</span></a>
+                <a class="pjaxload button" href="[% request.url_for('statement.cgi', { before => transactions.last.transaction_time, currency => currency }) %]"><span>[% l('Older') %]&raquo;</span></a>
                 [% END %]
         </div>
 </div>

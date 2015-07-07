@@ -100,7 +100,7 @@ pjax_config_page('rise_fall_table', function() {
                 $(this).hide();
                 $('#rise_fall_calculating').show();
                 var form = $('form[name=rise_fall]').get(0);
-                var url = page.url.url_for('resources/rise_fall_table', getFormParams(form));
+                var url = page.url.url_for('rise_fall_table.cgi', getFormParams(form));
                 $('#rise_fall_prices_div').html('');
                 $.ajax({
                     url: url,

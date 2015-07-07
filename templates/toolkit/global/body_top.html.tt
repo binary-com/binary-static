@@ -5,7 +5,7 @@
       [% INCLUDE global/mobile_menu.html.tt %]
       <!-- FlushHead -->
 [% END %]
-      <div id="content"[% IF h.current_route +%] class="[% h.current_route %]-content"[% END %]>
+      <div id="content">
           [% google_tag_tracking_code %]
           [% google_tag_declaration_code %]
           <div id="page_info" style="display:none;">

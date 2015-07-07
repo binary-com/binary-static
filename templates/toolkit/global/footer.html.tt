@@ -9,24 +9,43 @@
         <div class="grd-container grd-default-container">
             <div class="grd-grid-6 grd-grid-mobile-12 grd-parent">
                 <div class="grd-grid-4">
-                    <h1>[% l('Partners') %]</h1>
-                    <ul>
-                        <li class="affiliate">
-                            <a class="pjaxload" href="[% request.url_for('/affiliate/signup') %]"[% IF target %]
-                            target="[% target %]"[% END %]>[% l('Affiliate Program') %]</a>
-                        </li>
-                        <li>
-                            <a href="[% request.url_for('white-labels') %]" class="pjaxload">[% l('White Labels') %]</a>
-                        </li>
-                        <li>
-                            <a class="pjaxload" href="[% request.url_for('partnerapi') %]"[% IF target %] target="[%
-                            target
-                            %]"[% END %]>[% l('Partner API') %]</a>
-                        </li>
-                        <li>
-                            <a href="[% request.url_for('open-source-projects') %]" class="pjaxload">[% l('Open Source') %]</a>
-                        </li>
-                    </ul>
+                    <div id="accounts_links" class="by_client_type client_logged_out client_virtual">
+                        <h1>[% l('Accounts') %]</h1>
+                        <ul>
+                            <li>
+                                <a class="by_client_type client_logged_out client_virtual pjaxload"
+                                   href="[% request.url_for('linkto_acopening.cgi', {actype => 'real'}) %]"[% IF target %]
+                                target="[% target %]"[% END %]>[% l('Trading Account') %]</a>
+                            </li>
+                            <li>
+                                <a class="by_client_type client_logged_out pjaxload"
+                                   href="[% request.url_for('linkto_acopening.cgi', { actype => 'virtual'}) %]"[% IF target
+                                %]
+                                target="[% target %]"[% END %]>[% l('Virtual Account') %]</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h1>[% l('Partners') %]</h1>
+                        <ul>
+                            <li class="affiliate">
+                                <a class="pjaxload" href="[% request.url_for('affiliate_signup.cgi') %]"[% IF target %]
+                                target="[% target %]"[% END %]>[% l('Affiliate Program') %]</a>
+                            </li>
+                            <li>
+                                <a href="[% request.url_for('white-labels') %]" class="pjaxload">[% l('White Labels') %]</a>
+                            </li>
+                            <li>
+                                <a class="pjaxload" href="[% request.url_for('partnerapi') %]"[% IF target %] target="[%
+                                target
+                                %]"[% END %]>[% l('Partner API') %]</a>
+                            </li>
+                            <li>
+                                <a href="[% request.url_for('open-source-projects') %]" class="pjaxload">[% l('Open Source') %]</a>
+                            </li>
+                        </ul>
+                    </div>
+
                 </div>
                 <div class="grd-grid-4">
                     <h1>[% l('Education') %]</h1>
@@ -49,7 +68,7 @@
                             <a href="http://www.gamcare.org.uk/" target="_blank">[% l('GamCare') %]</a>
                         </li>
                         <li>
-                            <a href="http://blog.binary.com/en/webinar/" target="_blank">[% l('Webinars') %]</a>
+                            <a href="http://blog.binary.com/webinar.html" target="_blank">[% l('Webinars') %]</a>
                         </li>
                     </ul>
                 </div>
@@ -57,74 +76,69 @@
                     <h1>[% l('Trading') %]</h1>
                     <ul>
                         <li>
-                            <a class="pjaxload" href="[% request.url_for('/resources/pricing_table') %]"[% IF target %]
+                            <a class="pjaxload" href="[% request.url_for('pricing_table.cgi') %]"[% IF target %]
                             target="[%
                             target %]"[% END %]>[% l('Pricing Table') %]</a>
                         </li>
                         <li>
-                            <a class="pjaxload" href="[% request.url_for('/resources/rise_fall_table') %]"[% IF target %]
+                            <a class="pjaxload" href="[% request.url_for('rise_fall_table.cgi') %]"[% IF target %]
                             target="[% target %]"[% END %]>[% l('Rise/Fall Table') %]</a>
                         </li>
                         <li>
-                            <a class="pjaxload" href="[% request.url_for('/resources/asset_index') %]"[% IF target %]
+                            <a class="pjaxload" href="[% request.url_for('asset_index.cgi') %]"[% IF target %]
                             target="[%
                             target %]"[% END %]>[% l('Asset Index') %]</a>
                         </li>
                     </ul>
-                    <div class='grd-row-padding'>
-                        <h1>[% l('Banking') %]</h1>
-                        <ul>
-                            <li>
-                                <a class="pjaxload" href="[% request.url_for('/cashier') %]"[% IF
-                                target %]
-                                target="[% target %]"[% END %]>[% l('Cashier') %]</a>
-                            </li>
-                            <li>
-                                <a class="pjaxload" href="[% request.url_for('/cashier/payment_methods') %]"[% IF
-                                target %]
-                                target="[% target %]"[% END %]>[% l('Payment Methods') %]</a>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </div>
             <div class="grd-grid-6 grd-grid-mobile-12 grd-parent">
                  <div class="grd-grid-4">
-                    <h1>[% l('Terms') %]</h1>
+                    <h1>[% l('Banking') %]</h1>
                     <ul>
                         <li>
-                            <a class="pjaxload" href="[% request.url_for('/terms-and-conditions', {filecode => 'legal'}) %]"[%
-                            IF
-                            target %] target="[% target %]"[% END %]>[% l('Terms and Conditions') %]</a>
-                        </li>
-                        <li>
-                            <a class="pjaxload"
-                               href="[% request.url_for('/terms-and-conditions') %]#privacy-tab"[% IF
-                            target
-                            %] target="[% target %]"[% END %]>[% l('Security and Privacy') %]</a>
-                        </li>
-                        <li>
-                            <a class="pjaxload" href="[% request.url_for('responsible-trading') %]"[% IF target %]
-                            target="[% target %]"[% END %]>[% l('Responsible Trading') %]</a>
-                        </li>
-                        <li>
-                        <a class="pjaxload" href="[% request.url_for('/terms-and-conditions', {selected_tab => 'complaints-disputes-tac-tab'}) %]"[% IF target %]
-                            target="[% target %]"[% END %]>[% l('Complaints and Disputes') %]</a>
+                            <a class="pjaxload" href="[% request.url_for('available_payment_methods.cgi') %]"[% IF
+                            target %]
+                            target="[% target %]"[% END %]>[% l('Payment Methods') %]</a>
                         </li>
                     </ul>
+                    <div class='grd-row-padding'>
+                        <h1>[% l('Terms') %]</h1>
+                        <ul>
+                            <li>
+                                <a class="pjaxload" href="[% request.url_for('c_template.cgi', {filecode => 'legal'}) %]"[%
+                                IF
+                                target %] target="[% target %]"[% END %]>[% l('Terms and Conditions') %]</a>
+                            </li>
+                            <li>
+                                <a class="pjaxload"
+                                   href="[% request.url_for('c_template.cgi', {filecode => 'legal'}) %]#privacy-tab"[% IF
+                                target
+                                %] target="[% target %]"[% END %]>[% l('Security and Privacy') %]</a>
+                            </li>
+                            <li>
+                                <a class="pjaxload" href="[% request.url_for('responsible-trading') %]"[% IF target %]
+                                target="[% target %]"[% END %]>[% l('Responsible Trading') %]</a>
+                            </li>
+                            <li>
+                            <a class="pjaxload" href="[% request.url_for('c_template.cgi', {filecode => 'legal', selected_tab => 'complaints-disputes-tac-tab'}) %]"[% IF target %]
+                                target="[% target %]"[% END %]>[% l('Complaints and Disputes') %]</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="grd-grid-4">
                     <h1>[% l('Market Data') %]</h1>
                     <ul>
                         <li>
-                            <a class="pjaxload" href="[% request.url_for('/charting/application') %]"[% IF target %] target="[% target %]"[% END %]>[% l('Chart Application') %]</a>
+                            <a class="pjaxload" href="[% request.url_for('chart_application.cgi') %]"[% IF target %] target="[% target %]"[% END %]>[% l('Chart Application') %]</a>
                         </li>
                         <li>
-                            <a class="pjaxload" href="//highcharts.binary.com"[% IF target %] target="[%
-                            target %]"[% END %]>[% l('HighCharts') %]</a>
+                            <a class="pjaxload" href="[% request.url_for('smartchart.cgi') %]"[% IF target %] target="[%
+                            target %]"[% END %]>[% l('Light Charts') %]</a>
                         </li>
                         <li>
-                            <a class="pjaxload" href="[% request.url_for('/charting/livechart') %]"[% IF target %] target="[%
+                            <a class="pjaxload" href="[% request.url_for('livechart.cgi') %]"[% IF target %] target="[%
                             target %]"[% END %]>[% l('Live Charts') %]</a>
                         </li>
                     </ul>
@@ -143,7 +157,7 @@
                             %]"[% END %]>[% l('Group History') %]</a>
                         </li>
                         <li>
-                            <a href="[% request.url_for('/legal/us_patents') %]" class="us_patent_link pjaxload">[% l('Patents') %]</a>
+                            <a href="[% request.url_for('us_patents.cgi') %]" class="us_patent_link pjaxload">[% l('Patents') %]</a>
                         </li>
                         <li>
                             <a class="pjaxload" href="[% request.url_for('careers') %]">[% l('Careers') %]</a>
@@ -155,7 +169,7 @@
                             <a href="http://binarycom.statuspage.io" target="_blank">[% l('Network Status') %]</a>
                         </li>
                         <li>
-                            <a class="pjaxload" href="[% request.url_for('contact') %]"[% IF target %] target="[%
+                            <a class="pjaxload" href="[% request.url_for('contact.cgi') %]"[% IF target %] target="[%
                             target
                             %]"[% END %]>[% l('Contact Us') %]</a>
                         </li>
@@ -166,50 +180,33 @@
     </div>
     <div id="footer-regulatory">
         <div class="grd-container grd-default-container">
-            <div class="grd-parent grd-grid-12">
-                <div class="grd-grid-2 center">
+            <div class="grd-grid-3 grd-grid-mobile-12 grd-grid-phablet-3 grd-parent">
+                <div class="grd-grid-5 grd-grid-phablet-12">
                     <a href="http://www.gov.im/gambling/" target="_blank">
                         <img id="iom_icon_footer" class="responsive" src="[% request.url_for('images/pages/footer/isle-of-man.png') %]"/>
                     </a>
                 </div>
-                <div class="grd-grid-2 center">
-                    <a href="https://www.authorisation.mga.org.mt/verification.aspx?lang=en&company=a5fd1edc-d072-4c26-b0cd-ab3fa0f0cc40" target="_blank">
-                        <img id="lga_icon_footer" class="responsive" src="[% request.url_for('images/pages/footer/mga-logo-footer.svg') %]"/>
-                    </a>
-                </div>
-                <div class="grd-grid-6 center">
-                    <a href="http://mfsa.com.mt/" target="_blank">
-                        <img id="mfsa_logo" class="responsive" src="[% request.url_for('images/pages/footer/mfsa-logo.svg') %]"/>
-                    </a>
-                </div>
-                <div class="grd-grid-2 center">
-                    <a href="http://mfsa.com.mt/" target="_blank">
-                        <img id="mifid_logo" class="responsive" src="[% request.url_for('images/pages/footer/mifid-logo.svg') %]"/>
+                <div class="grd-grid-7 grd-grid-phablet-12">
+                    <a href="http://www.lga.org.mt/lga/home.aspx" target="_blank">
+                        <img id="lga_icon_footer" class="responsive" src="[% request.url_for('images/pages/footer/authority-malta-licensed.png') %]"/>
                     </a>
                 </div>
             </div>
-            <div class="grd-parent grd-grid-12">
-                <div id="regulatory-text" class="grd-grid-9 grd-grid-mobile-12 grd-grid-phablet-7">
-                    [% l("This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='[_1]' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='[_2]' target='_blank'>view license</a>. This website's services are not made available in the USA, Japan or Hong Kong, or to persons under age 18.", "https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172", "https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495") %]
+            <div class="grd-grid-7 grd-grid-mobile-12 grd-grid-phablet-7">
+                <div id="regulatory-text">
+                    [% l("This website is marketed in the UK and Isle of Man by Regent Markets (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='[_1]' target='_blank'>view license</a>. This website is marketed in the rest of the EU by Regent Markets (Malta) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Lotteries and Gaming Authority in Malta, licence no LGA/CL2/118/2000, 26th May 2010 and for UK clients by (2) the UK Gambling Commission - <a href='[_2]' target='_blank'>view license</a>. This website's services are not made available in the USA, Japan or Hong Kong, or to persons under age 18.", "https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172", "https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495") %]
                 </div>
-                <div class="grd-grid-3 grd-grid-mobile-12 grd-centered-mobile" id="social-networks">
+            </div>
+            <div class="grd-grid-2 grd-grid-mobile-12 grd-centered-mobile">
+                <div id="social-networks">
                     [% INCLUDE global/social.html.tt %]
                 </div>
             </div>
         </div>
-        <div id="appcache-reload-message">
-            <div class="message">
-                [% l('A new version of the interface is available. Please <a href="#" id="appcache-refresh-link">refresh</a> this page to try again.') %]
-            </div>
-        </div>
     </div>
-    <div id="footer-last">
-        <div class="grd-container grd-default-container">
-            <div class="grd-grid-12">
-                <p class="gambling">
-                    [% l('Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about <a href="[_1]" class="pjaxload">Responsible Trading</a>.', request.url_for('responsible-trading')) %]
-                </p>
-            </div>
+    <div id="appcache-reload-message">
+        <div class="message">
+            [% l('A new version of the interface is available. Please refresh this page to try again.') %]
         </div>
     </div>
 </div>[% #closes div#page-wrapper %]

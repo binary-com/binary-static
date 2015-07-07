@@ -33,6 +33,7 @@ var PjaxExecQueue = function () {
     this.url_exec_queue = [];
     this.id_exec_queue = [];
     this.fired = false;
+    this.indicating_loading = false;
     this.content = $('#content');
 };
 
@@ -47,6 +48,10 @@ PjaxExecQueue.prototype = {
         this.id_exec_queue.unshift(new IDPjaxQueueElement(exec_function, id));
     },
     fire: function () {
+        if(this.indicating_loading) {
+            this.content.removeClass("indicate-loading");
+            this.indicating_loading = false;
+        }
         if(!this.fired) {
             var match_loc = window.location.pathname;
             var i = this.url_exec_queue.length;
@@ -65,6 +70,8 @@ PjaxExecQueue.prototype = {
         this.fired = false;
     },
     loading: function () {
+        this.content.addClass("indicate-loading");
+        this.indicating_loading = true;
         this.reset();
     },
     count: function () {

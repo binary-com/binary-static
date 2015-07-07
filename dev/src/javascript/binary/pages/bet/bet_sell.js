@@ -225,7 +225,6 @@ var BetSell = function() {
             con.css('position', 'fixed').css('z-index', get_highest_zindex() + 100);
             body.append(con);
             con.show();
-            // push_data_layer();
             if ($('#sell_bet_desc', con).length > 0) {
                 con.draggable({
                     handle: '#sell_bet_desc'
@@ -458,12 +457,6 @@ var BetSell = function() {
                                    var display_marker = false;
                                    if(time_obj['to_time'] - time_obj['from_time'] <= _diff_end_start_time) {
                                        display_marker = true;
-                                   }
-
-                                   if(time_obj['force_tick']) {
-                                       liveChartConfig.update({
-                                           force_tick: true,
-                                       });
                                    }
 
                                    liveChartConfig.update({
@@ -1017,11 +1010,7 @@ var BetSell = function() {
                         // check if end date is more than 1 hours and now time - start time is less than 1 hours
                         // in this case we switch back to tick chart rather than ohlc
                         time_obj['from_time'] = parseInt(start_time);
-                        time_obj['to_time'] = parseInt(start_time) + 3595;
-                    } else if ((parseInt(end_time) - parseInt(start_time)) === 3600) {
-                        time_obj['from_time'] = parseInt(start_time);
-                        time_obj['to_time'] = parseInt(end_time);
-                        time_obj['force_tick'] = 1;
+                        time_obj['to_time'] = parseInt(start_time) + 3600;
                     } else {
                         time_obj['from_time'] = parseInt(start_time);
                         time_obj['to_time'] = parseInt(end_time);

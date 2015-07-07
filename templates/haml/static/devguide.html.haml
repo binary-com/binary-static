@@ -1,11 +1,5 @@
 - stash(title => l('API Developer Guide'));
 
-:css
- .devguide-content              { font-size: smaller }
- .devguide-content p            { line-height: 1.1em }
- .devguide-content .code-sample { background-color: #000; color: #ff0; font-size: smaller }
- .devguide-content li           { line-height: 1.0em }
-
 .static_full.grd-container
   .grd-grid-12
     .grd-row-padding
@@ -18,11 +12,7 @@
         %li
             %a(href=>'#implflow')= l('OAuth2 Authentication Using Implicit Flow')
         %li
-            %a(href=>'#call_rest_serv')= l('Calling a Service from the REST API')
-        %li
-            %a(href=>'#call_wsok_serv')= l('Calling a Service from the WebSocket API')
-        %li
-            %a(href=>'#usertoken')= l('Using User Tokens')
+            %a(href=>'#callserv')= l('Calling a Service')
         %li
             %a(href=>'#renewal')= l('OAuth2 Token Renewal')
     .dev-guide.grd-row-padding
@@ -30,14 +20,14 @@
         .section-content
           %h2(id=>'registration')= l('Registration')
           %p
-            = l('You must already have a valid account with Binary.com.')
+            = l('You must already have a valid "Real money account" with Binary.com.')
             = l('It is not necessary to actually trade or to deposit funds to your account.')
             = l('You can open your account')
-            %a{:href=>url_for('/')}= l('here')
+            %a{:href=>url_for('/linkto_acopening.cgi?actype=real')}= l('here')
             = '.'
           %p
             = l('After logging into binary.com, you can register as an API Developer')
-            %a{:href=>url_for('/developer/register-api')}= l('here')
+            %a{:href=>url_for('/register-api.cgi')}= l('here')
             = '.'
             = l('There may be a delay of up to 24 hours before your registration becomes valid.')
       .section
@@ -74,9 +64,7 @@
           %ul.bullet
             %li!= l('[_1] is a Base64-encoding of [_2].', 'ENCODED', 'CLIENT_ID:CLIENT_SECRET')
             %li!= l('[_1] will be provided to you on registration.', 'CLIENT_SECRET')
-          %p
-            = l('The [_1] will return a JSON structure which includes access_token along with several other useful attributes.', 'POST')
-            = l('This structure will also include a field named [_1] which is the User Token that can be used in Websocket calls.', 'bom_token')
+          %p!= l('The [_1] will return a JSON structure which includes access_token along with several other useful attributes.', 'POST')
       .section
         .section-content
           %h2(id=>'implflow')= l('OAuth2 Authentication Using Implicit Flow')
@@ -91,18 +79,17 @@
             %li= l('[_1] is the page in your application that will handle the return step.  This URL must be registered with us in advance.  For mobile apps, this could for example use a custom URI scheme.', 'CALLBACK_URL')
             %li= l('[_1] is for your own internal reference; optional.', 'STATE')
           %p!= l('After the user authenticates to [_1]; their browser will be re-directed to your callback handler with a call like this:', stash->{website_name})
-          .code-sample!= 'GET https://CALLBACK_URL?state=STATE&scope=SCOPE&expires_in=EXPIRES&access_token=ACCESSTOKEN&api_token=API_TOKEN'
+          .code-sample!= 'GET https://CALLBACK_URL?state=STATE&scope=SCOPE&expires_in=EXPIRES&access_token=ACCESSTOKEN'
           %p= l('where')
           %ul.bullet
             %li= l('[_1] is a new OAuth2 access token.', 'ACCESSTOKEN');
             %li= l('[_1] is the lifetime in seconds of the new access token.', 'EXPIRES');
             %li= l('[_1] is the scope level that was granted.', 'SCOPE');
-            %li= l('[_1] is not required for further REST calls. It is a User Token that can be used in Websocket calls.', 'API_TOKEN');
           %p= l('You must now strip ACCESSTOKEN from the redirection URL as described in the literature for Implicit Grants.')
       .section
         .section-content
-          %h2(id=>'call_rest_serv')= l('Calling a REST Service')
-          %p!= l('With a current access_token it is now possible to make calls to the REST API.  Such a call looks like this: ')
+          %h2(id=>'callserv')= l('Calling a Service')
+          %p!= l('With a current access_token it is now possible to make calls to an API Service.  Such a call looks like this: ')
           .code-sample!= 'GET https://PROXY_ENDPOINT/SERVICE/PARAMS'
           %p= l('with this HTTP header')
           %ul.bullet
@@ -113,54 +100,14 @@
             %li!= l('[_1] was returned by the authentication procedure.', 'ACCESS_TOKEN')
             %li!= l('[_1] is any binary.com API service e.g. "/markets".', 'SERVICE')
             %li!= l('[_1] are the REST-style parameters to the service e.g. "/forex".', 'PARAMS')
-          %p
-            = l('The call will return a JSON structure.')
-            = l('To see all such available calls, and to preview any such call and its output, use ')
-            %a{:href=>'https://apigee.com/rmg/console/binary1'}= l('REST API Console Facility')
-      .section
-        .section-content
-          %h2(id=>'call_wsok_serv')= l('Calling a WebSocket Service')
-          %p
-            = l('To authenticate to the WebSocket service, after opening the socket, an API Token must be passed using the [_1] message.', 'authorize')
-            = l('Subsequent calls will act on behalf of the owner of that API Token.')
-          %p
-            = l('For more information about calling Websocket services see')
-            %a{:href=>'https://github.com/binary-com/websockets-api/wiki'}= l('the Binary.com WebSocket API Reference pages')
-      .section
-        .section-content
-          %h2(id=>'usertoken')= l('User Tokens')
-          %p= l('Some call types accept a User Token.  This allows the call to act on behalf of the owner of that token.')
-          %p= l('There are two ways to obtain an API Token:')
-          %ol
-            %li
-              = l('Users can retrieve their individial API Token from')
-              %a{:href=>url_for('/user/settings')}= l('the "Settings" page')
-              = l('and can then pass the token externally to a client application.')
-            %li
-              = l('An client application already has an API Token in hand as a result of the 3-legged auth procedure described above.')
-              = l('Note: this is the "bom-token" not the "access-token".')
-          %p
-            = l('In the following REST calls, the call can optionally include one or more headers of name "bom-token-acting-for".  The value of each token is a full user-token.  If this is supplied, the call will be executed multiple times, once on behalf of each account.')
-            = l('This provides a "Bulk Trading" capability.')
-          %ul.bullet
-            %li
-              %a{:href=>'https://apigee.com/rmg/console/binary1#binary1#13'}= l('REST API: Contract Purchase')
-            %li
-              %a{:href=>'https://apigee.com/rmg/console/binary1#binary1#16'}= l('REST API: Contract Sale')
-          %p
-            = l('In the following WebSocket call, the request must include a User Token value.  More details in')
-            %a{:href=>'https://github.com/binary-com/websockets-api/wiki'}= l('the WebSocket API Reference pages')
-            = '.'
-          %ul.bullet
-            %li
-              %a{:href=>'https://github.com/binary-com/websockets-api/wiki/Authorize'}= l('WebSocket API: Authorization')
+          %p!= l('This call will return the same JSON structure that can be previewed from the API Console Facility.')
       .section
         .section-content
           %h2(id=>'renewal')= l('OAuth2 Token Renewal')
           %p
             %em= l("The access-token retrieved earlier has a limited lifetime.  In the case of Auth-Code Flow only, it can be renewed.")
           %p= l('The JSON structure which supplied the access_token also included a refresh_token.  Supply this in the following call:')
-          .code-sample!= 'POST https://PROXY_ENDPOINT/oauth/refresh_accesstoken'
+          .code-sample!= 'POST https://PROXY_ENDPOINT/oauth/refresh_acesstoken'
           %p= l('with this [_1] data:', 'POST')
           %ul.bullet
             %li= 'grant_type=refresh_token'

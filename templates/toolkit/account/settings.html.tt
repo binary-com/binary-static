@@ -3,7 +3,7 @@
     <div id="settings_message">
         [% IF success_msg %]<p class="success_msg" >[% success_msg %]</p>[% END %]
         [% IF error_msg %]
-            <div id='error_msg' class='notice-msg'>[% error_msg %]</div>
+            <div id='error_msg'>[% error_msg %]</div>
         [% END %]
     </div>
 </div>
@@ -12,15 +12,6 @@
     [% menu_content %]
 
     [% IF show_self_exclusion %]
-        <p>
-        [% l('[_1] provides <a href="[_2]" class="pjaxload">Self Exclusion</a> facilities which allow you to set limits on your account.', website, request.url_for('/user/self_exclusion')) %]
-        </p>
+        <p>[% loadstring.fpartics_selfexclusionlimitsdescription %]</p>
     [% END %]
-    [% IF display_financial_assessment %]
-        <p>
-        [% l('<a href="[_1]" class="pjaxload">View your Financial Assessment</a>', request.url_for('/user/assessment')) %]
-        </p>
-    [% END %]
-
-    <p>[% l('Your API Token is: ')%] <span class="notice-msg">[% request.session_cookie.token %]</span></p>
 </div>

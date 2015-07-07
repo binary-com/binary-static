@@ -12,14 +12,14 @@
           %li#sidebar-link-section-3
             %a{:href => "#costs"}= l('Costs')
         .sidebar-button
-          %a.pjaxload{:href => url_for('contact')}= l('Contact Us')
+          %a.pjaxload{:href => url_for('contact.cgi')}= l('Contact Us')
     .grd-grid-9.grd-grid-mobile-12.grd-parent
       .section
         %a#white-labels
         .section-content
           #section-1
             .grd-grid-12
-              %h1= l('White labels')
+              %h1= l('White Labels')
             .grd-grid-9.grd-grid-mobile-12
               %p
                 != l('The Binary.com White Label program allows affiliates to create their own branded versions of the Binary.com platform.')
@@ -34,9 +34,9 @@
               %h1= l('How does it work?')
             .grd-grid-12.grd-parent
               .grd-grid-9.grd-grid-mobile-12
-                %p!= l('To create a White Label, first <a href="[_1]">sign up as an affiliate</a>. This will allow you to earn commissions from clients of your White Label.', url_for('/affiliate/signup'))
+                %p!= l('To create a White Label, first [_1]. This will allow you to earn commissions from clients of your White Label.', pjax_link_for(l('sign up as an affiliate'), url_for('affiliate_signup.cgi')))
               .grd-grid-3.grd-grid-mobile-10.grd-centered-mobile
-                %a.pjaxload{:href => url_for('/affiliate/signup')}
+                %a.pjaxload{:href => url_for('affiliate_signup.cgi')}
                   %img.responsive{:src => url_for('images/pages/white-label/how-does-it-work-1.svg')}
             .grd-grid-12.grd-parent
               .grd-grid-4.grd-grid-mobile-10.grd-centered-mobile

@@ -47,6 +47,16 @@ function checkCurrencyAmountFormat(input_value)
     return false;
 }
 
+function activate_copy_granters() {
+    $('#portfolio-table').on('click', '.paste_all_granters', function () {
+            $(this).prev('textarea.granter_loginids_input').val(document.getElementById('all_approved_granter_loginids').innerHTML);
+            $(this).siblings('span.button').children('.open_contract_details').attr('granter_loginids', document.getElementById('all_approved_granter_loginids').innerHTML);
+    });
+    $('#portfolio-table').on('change', '.granter_loginids_input', function () {
+            $(this).siblings('span.button').children('.open_contract_details').attr('granter_loginids', $(this).val());
+    });
+}
+
 var Portfolio = function () {
     var _price_request = null;
     var elements = $('button.open_contract_details');
@@ -143,6 +153,7 @@ pjax_config_page('portfolio', function() {
     return {
         onLoad: function() {
             $('#portfolio-table .hourglass').hide();
+            activate_copy_granters();
             $('#currencyfrom').change(function(event) { currencyConvertorCalculator(event.target); });
             $('#currencyfrom').keyup(function(event) { currencyConvertorCalculator(event.target); });
             $('#currencyfromvalue').change(function(event) { checkCurrencyAmountFormat(event.target); });
