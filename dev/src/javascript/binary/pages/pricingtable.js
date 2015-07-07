@@ -2,7 +2,7 @@ var calculate_button_event = function() {
     $('#pricingtable_calculate').on('click', function(e) {
         e.preventDefault();
         var form = $('form[name=pricing_table_input]').get(0);
-        var url = page.url.url_for('resources/pricing_table', getFormParams(form));
+        var url = page.url.url_for('pricing_table.cgi', getFormParams(form));
         $('#pricingtable_calculate').hide();
         $('#pricingtable_calculating').show();
         $('#pricing_table_prices_div').html('');
@@ -47,7 +47,7 @@ var bet_type_select = function() {
         var prev_underlying = $("#pricingtable_underlying").val();
 
         // change underlying option list
-        var ajax_url = page.url.url_for('resources/pricing_table');
+        var ajax_url = page.url.url_for('pricing_table.cgi');
         $.post(
             ajax_url,
             {
@@ -74,7 +74,7 @@ var select_underlying_change = function() {
     $("#pricingtable_underlying").on("change", function() {
         var underlying = $(this).val();
         // change lower strike
-        var ajax_url = page.url.url_for('resources/pricing_table');
+        var ajax_url = page.url.url_for('pricing_table.cgi');
         $.post(
             ajax_url,
             {

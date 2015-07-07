@@ -10,21 +10,19 @@
       - }
       - foreach my $trade_item (@{ menu()->main_menu }) {
         - my ($id, $url, $text) = @{$trade_item}{'id', 'url', 'text'};
-        - my $trade_class = $trade_item->{'class'} ? "item " . $trade_item->{'class'} : "item";
-        - my $trade_link_class = $trade_item->{'link_class'} ? "link " . $trade_item->{'link_class'} : "link";
-        - my $trade_link_target = $trade_item->{'target'} ? $trade_item->{'target'} : "";
+        - my $trade_class = $trade_item->{'class'} || ' ';
+        - my $trade_link_class = $trade_item->{'link_class'} || ' ';
         - my $trade_sub_items = $trade_item->{sub_items} || '';
-        %li{:id=>"#{$id}", :class => $trade_class}
-          %a{:class => $trade_link_class, :href=>"#{$url}", :target=>$trade_link_target}= $text
+        %li{:id=>"#{$id}", :class=>"item #{$trade_class}"}
+          %a{:class=>"pjaxload link #{$trade_link_class}", :href=>"#{$url}"}= $text
           - if ($trade_sub_items) {
             %ul{:class=>"sub_items"}
               - foreach my $trade_sub_item (@{ $trade_sub_items }) {
               - my ($sub_id, $sub_url, $sub_text) = @{$trade_sub_item}{'id', 'url', 'text'};
-              - my $trade_sub_class = $trade_sub_item->{'class'} ? "sub_item " . $trade_sub_item->{'class'} : "sub_item";
-              - my $trade_sub_target = $trade_sub_item->{'target'} ? $trade_sub_item->{'target'} : "";
-              - my $link_sub_class = $trade_sub_item->{'link_class'} ? "link " . $trade_sub_item->{'link_class'} : "link";
-                %li{:id =>"#{$sub_id}", :class => $trade_sub_class}
-                  %a{:class => $link_sub_class, :href=>"#{$sub_url}", :target=>$trade_sub_target}= $sub_text
+              - my $trade_sub_class = $trade_sub_item->{'class'} || ' ';
+              - my $link_sub_class = $trade_sub_item->{'link_class'} || ' ';
+                %li{:id =>"#{$sub_id}", :class=>"sub_item #{$trade_sub_class}"}
+                  %a{:class=>"pjaxload link #{$link_sub_class}", :href=>"#{$sub_url}"}= $sub_text
               - }
           - }
         - }

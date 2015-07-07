@@ -48,7 +48,7 @@ var BetPrice = function() {
             }
         },
         error_handler: function() {
-            this.container().find('div.rbox-lowpad:first').html(text.localize("There was a problem accessing the server."));
+            this.container().find('div.rbox-lowpad:first').html("There was a problem accessing the server.");
             this.streaming.stop();
         },
         price_update: function(data) {
@@ -80,11 +80,9 @@ var BetPrice = function() {
         buy_bet: function (form) {
             var that = this;
             var timeout = 60000;
-            BetPrice.order_form.disable_buy_buttons();
-            that.hide_buy_buttons();
+            that.disable_buy_buttons();
 
-            if(!$.cookie('login')) {
-                page.client.is_logged_in = false;
+            if(!page.client.is_logged_in) {
                 window.location.href = page.url.url_for('login');
                 return;
             }
@@ -122,13 +120,11 @@ var BetPrice = function() {
                 this.display_buy_error(data.error);
             } else if (data.display) {
                 this.display_buy_results(data);
-                BetSell.register();
             } else {
                 throw new Error("Invalid server response: " + data);
             }
             $('.price_box').fadeTo(0, 1);
-            BetPrice.order_form.enable_buy_buttons();
-            this.display_buy_buttons();
+            this.enable_buy_buttons();
         },
         on_buy_bet_error: function (form, jqXHR, resp_status, exp) {
             var details = '' + exp;
@@ -137,13 +133,12 @@ var BetPrice = function() {
             } else if (document.location.href.match(/^http:/) && (!details || details.match(/access/i))) {
                 details += '<ul>Please <a href="' + document.location.href.replace('http://', 'https://') + '">continue browsing using HTTPS secure protocol</a></ul>';
             } else {
-                details += text.localize('There was a problem accessing the server during purchase.');
+                details += 'There was a problem accessing the server during purchase.';
             }
             var width = this.container().width(); // since the error message could be any size, set the continer size to a good value
-            this.display_buy_error('<div style="width: ' + width + 'px;"><h3>Error</h3><p>' + details + ' </p></div>', 1);
+            this.display_buy_error('<div style="width: ' + width + 'px;"><h3>Error</h3><p>' + details + ' </p></div>');
             $('.price_box').fadeTo(0, 1);
-            BetPrice.order_form.enable_buy_buttons();
-            this.display_buy_buttons();
+            this.enable_buy_buttons();
         },
         buy_response_container: function () {
             if (!_buy_response_container) {
@@ -173,7 +168,6 @@ var BetPrice = function() {
             }
 
             con.show();
-            // push_data_layer();
             var _clear_results = function () { that.clear_buy_results(); };
             con.find('a.close').on('click', _clear_results).css('cursor', 'pointer').addClass('unbind_later');
         },
@@ -185,7 +179,6 @@ var BetPrice = function() {
                     $self.ev.close();
                     $self.digit_tick_count = 0;
                     $self.applicable_ticks = [];
-                    $self.info_for_display = [];
                 },
                 process: function(start_moment) {
                     var $self = this;
@@ -195,8 +188,9 @@ var BetPrice = function() {
                     $self.info_for_display = [];
                     var symbol = BetForm.attributes.underlying();
                     var how_many_ticks = $('#tick-count').data('count');
+                    var end = start_moment.clone().add('minutes',3);
                     var stream_url = window.location.protocol + '//' + page.settings.get('streaming_server');
-                    stream_url += "/stream/ticks/" + symbol + "/" + start_moment.unix();
+                    stream_url += "/stream/ticks/" + symbol + "/" + start_moment.unix() + "/" + end.unix();
                     $self.ev = new EventSource(stream_url, { withCredentials: true });
 
                     $self.ev.onmessage = function(msg) {
@@ -228,7 +222,6 @@ var BetPrice = function() {
                                         if ($self.applicable_ticks.length === how_many_ticks) {
                                             $self.evaluate_digit_outcome();
                                             $self.reset();
-                                            break; // need to break the loop else it will keep on processing the extra tick
                                         }
                                     }
                                 }
@@ -293,14 +286,10 @@ var BetPrice = function() {
                 },
             };
         }(),
-        display_buy_error: function (data, extra_info) {
+        display_buy_error: function (data) {
             var that = this;
             var con = this.buy_response_container();
             con.addClass('bet_confirm_error');
-            if (extra_info) {
-                data += '<p>' + text.localize('Please confirm the trade on your statement before proceeding.') + '</p>';
-            }
-            data = '<p>' + data + '</p>';
             con.children('div').first().html(data);
             con.show();
             var _clear_results = function () { that.clear_buy_results(); };
@@ -318,11 +307,11 @@ var BetPrice = function() {
             con.hide().remove();
             _buy_response_container = null;
         },
-        hide_buy_buttons: function() {
+        disable_buy_buttons: function() {
             this.deregister();
             this.order_form.hide_buy_button();
         },
-        display_buy_buttons: function() {
+        enable_buy_buttons: function() {
             this.on_buy();
             this.order_form.show_buy_button();
         },
@@ -398,12 +387,6 @@ var BetPrice = function() {
                 show_buy_button: function() {
                     return $('button[name^="btn_buybet"]').parent().show();
                 },
-                disable_buy_buttons: function() {
-                    $('button[name^="btn_buybet"]').attr('disabled','disabled');
-                },
-                enable_buy_buttons: function() {
-                    $('button[name^="btn_buybet"]').removeAttr('disabled');
-                },
                 update_from_stream: function(stream) {
                     var prices = this.prices_from_stream(stream);
                     this.update(prices);
@@ -447,7 +430,7 @@ var BetPrice = function() {
                             if (error_box_html.length > 0 &&
                                 error_box_html != BetForm.amount.payout_err &&
                                 error_box_html != BetForm.amount.stake_err) {
-                                error = error_box_html;
+                                error = error_box.html();
                             }
                             prices.push(this.calculate_price(id, prob, error));
                         }
@@ -475,8 +458,6 @@ var BetPrice = function() {
                     var amount = BetForm.amount.calculation_value;
                     var price;
                     var payout;
-                    var profit;
-                    var roi;
                     if(BetForm.attributes.is_amount_stake()) {
                         payout = this.virgule_amount(Math.round((amount / prob) * 100));
                         price = this.virgule_amount(amount * 100);
@@ -485,19 +466,10 @@ var BetPrice = function() {
                         payout = this.virgule_amount(amount * 100);
                     }
 
-                    var prev_price = $('input[name="price"]', form).length ? parseFloat($('input[name="price"]', form).val()) : 0;
-                    var prev_payout = $('input[name="payout"]', form).length ? parseFloat($('input[name="payout"]', form).val()) : 0;
-
-                    if (payout && price) {
-                        profit =  this.virgule_amount(payout.raw - price.raw);
-                        roi = Math.round(profit.raw / price.raw * 100);
-                    } else {
-                        profit = this.virgule_amount(0);
-                        roi = this.virgule_amount(0);
-                    }
-
-                    payout = payout ? payout : this.virgule_amount(0);
-                    price = price ? price : this.virgule_amount(0);
+                    var prev_price = parseFloat($('input[name="price"]', form).val());
+                    var prev_payout = parseFloat($('input[name="payout"]', form).val());
+                    var profit =  this.virgule_amount(payout.raw - price.raw);
+                    var roi = Math.round(profit.raw / price.raw * 100);
 
                     return {
                         id: id,

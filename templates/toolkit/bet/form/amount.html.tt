@@ -4,7 +4,7 @@
     </select>
 </span>
 <span class='grd-grid-7 grd-parent'>
-    <span class='grd-grid-3 grd-grid-mobile-12 grd-grid-phablet-12'>
+    <span class='grd-grid-3'>
         [%- IF currencies.size > 1 -%]
           <select id="bet_currency" name="currency">
               [%- FOREACH currency IN currencies -%] 
@@ -15,7 +15,7 @@
           [% currencies.first %] <input type="hidden" name="currency" value="[%- currencies.first -%]" />
         [%- END -%]
     </span>
-    <span class='grd-grid-9 grd-grid-mobile-12 grd-grid-phablet-12'>
+    <span class='grd-grid-9'>
         <input id="amount" name="amount" size=7 value="[%- amount -%]">
     </span>
 </span>

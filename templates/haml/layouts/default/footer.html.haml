@@ -3,16 +3,24 @@
     .grd-container.grd-default-container
       .grd-grid-6.grd-grid-mobile-12.grd-parent
         .grd-grid-4
-          %h1= l('Partners')
-          %ul
-            %li.affiliate
-              %a.pjaxload{:href=>url_for("/affiliate/signup")}= l('Affiliate Program')
-            %li
-              %a.pjaxload{:href=>url_for("white-labels")}= l('White Labels')
-            %li
-              %a.pjaxload{:href=>url_for("partnerapi")}= l('Partner API')
-            %li
-              %a.pjaxload{:href=>url_for("open-source-projects")}= l('Open Source')
+          #accounts_links.by_client_type.client_logged_out.client_virtual
+            %h1= l('Accounts')
+            %ul
+              %li.by_client_type.client_logged_out.client_virtual
+                %a.pjaxload{:href=>url_for("linkto_acopening.cgi?actype=real")}= l('Trading Account')
+              %li.by_client_type.client_logged_out
+                %a.pjaxload{:href=>url_for("linkto_acopening.cgi?actype=virtual")}= l('Virtual Account')
+          %div
+            %h1= l('Partners')
+              %ul
+                %li.affiliate
+                  %a.pjaxload{:href=>url_for("affiliate_signup.cgi")}= l('Affiliate Program')
+                %li
+                  %a.pjaxload{:href=>url_for("white-labels")}= l('White Labels')
+                %li
+                  %a.pjaxload{:href=>url_for("partnerapi")}= l('Partner API')
+                %li
+                  %a.pjaxload{:href=>url_for("open-source-projects")}= l('Open Source')
         .grd-grid-4
           %h1= l('Education')
           %ul
@@ -25,44 +33,42 @@
             %li
               %a{:href=>"http://www.gamcare.org.uk/", :target => "_blank"}= l('GamCare')
             %li
-              %a{:href=>"http://blog.binary.com/en/webinar/", :target => "_blank"}= l('Webinars')
+              %a{:href=>"http://blog.binary.com/webinar.html", :target => "_blank"}= l('Webinars')
         .grd-grid-4
           %h1= l('Trading')
           %ul
             %li
-              %a.pjaxload{:href=>url_for("/resources/pricing_table")}= l('Pricing Table')
+              %a.pjaxload{:href=>url_for("pricing_table.cgi")}= l('Pricing Table')
             %li
-              %a.pjaxload{:href=>url_for("/resources/rise_fall_table")}= l('Rise/Fall Table')
+              %a.pjaxload{:href=>url_for("rise_fall_table.cgi")}= l('Rise/Fall Table')
             %li
-              %a.pjaxload{:href=>url_for("/resources/asset_index")}= l('Asset Index')
-          .grd-row-padding
-            %h1= l('Banking')
-            %ul
-              %li
-                %a.pjaxload{:href=>url_for("/cashier")}= l('Cashier')
-              %li
-                %a.pjaxload{:href=>url_for("/cashier/payment_methods")}= l('Payment Methods')
+              %a.pjaxload{:href=>url_for("asset_index.cgi")}= l('Asset Index')
       .grd-grid-6.grd-grid-mobile-12.grd-parent
         .grd-grid-4
+          %h1= l('Banking')
+          %ul
+            %li
+              %a.pjaxload{:href=>url_for("available_payment_methods.cgi")}= l('Payment Methods')
+          .grd-row-padding
             %h1= l('Terms')
               %ul
                 %li
-                  %a.pjaxload{:href=>url_for("/terms-and-conditions")}= l('Terms and Conditions')
+                  %a.pjaxload{:href=>url_for("c_template.cgi?filecode=legal")}= l('Terms and Conditions')
                 %li
-                  %a.pjaxload{:href=>url_for("/terms-and-conditions#privacy-tab")}= l('Security and Privacy')
+                  %a.pjaxload{:href=>url_for("c_template.cgi?filecode=legal#privacy-tab")}= l('Security and Privacy')
                 %li
-                  %a.pjaxload{:href=>url_for("responsible-trading")}= l('Responsible Trading')
+                  %a.pjaxload{:href=>url_for("responsible-trading"), :class => 'pjaxload'}= l('Responsible Trading')
                 %li
-                  %a.pjaxload{:href=>url_for("/terms-and-conditions?selected_tab=complaints-disputes-tac-tab")}= l('Complaints and Disputes')
+                  %a.pjaxload{:href=>url_for("c_template.cgi?filecode=legal&selected_tab=complaints-disputes-tac-tab")}= l('Complaints and Disputes')
         .grd-grid-4
           %h1= l('Market Data')
           %ul
             %li
-              %a.pjaxload{:href=>url_for("/charting/application")}= l('Chart Application')
+              %a.pjaxload{:href=>url_for("chart_application.cgi")}= l('Chart Application')
             %li
-              %a.pjaxload{:href=>url_for("/charting/livechart")}= l('Live Charts')
+              %a.pjaxload{:href=>url_for("smartchart.cgi")}= l('Light Charts')
             %li
-              %a.pjaxload{:href => '//highcharts.binary.com'}= l('HighCharts')              
+              %a.pjaxload{:href=>url_for("livechart.cgi")}= l('Live Charts')
         .grd-grid-4
           %h1= l('About Us')
           %ul
@@ -71,7 +77,7 @@
             %li
               %a.pjaxload{:href=>url_for("group-history"), :class => 'pjaxload'}= l('Group History')
             %li
-              %a.pjaxload{:href=>url_for("/legal/us_patents"), :class=>"us_patent_link"}= l('Patents')
+              %a.pjaxload{:href=>url_for("us_patents.cgi"), :class=>"us_patent_link"}= l('Patents')
             %li
               %a.pjaxload{:href=>url_for("careers")}= l('Careers')
             %li.blog
@@ -79,31 +85,21 @@
             %li
               %a{:href=>"http://binarycom.statuspage.io", :target => "_blank"}= l('Network Status')
             %li
-              %a.pjaxload{:href=>url_for("contact")}= l('Contact Us')
+              %a.pjaxload{:href=>url_for("contact.cgi")}= l('Contact Us')
 
   #footer-regulatory
     .grd-container.grd-default-container
-      .grd-parent.grd-grid-12
-        .grd-grid-2.center
+      .grd-parent.grd-grid-3.grd-grid-phablet-3.grd-grid-mobile-12
+        .grd-grid-5.grd-grid-phablet-12
           %a{:href => "http://www.gov.im/gambling/", :target => "_blank"}
             %img.responsive#iom_icon_footer{:src => url_for('images/pages/footer/isle-of-man.png')}
-        .grd-grid-2.center
-          %a{:href => "https://www.authorisation.mga.org.mt/verification.aspx?lang=en&company=a5fd1edc-d072-4c26-b0cd-ab3fa0f0cc40", :target => "_blank"}
-            %img.responsive#lga_icon_footer{:src => url_for('images/pages/footer/mga-logo-footer.svg')}
-        .grd-grid-6.center
-          %a{:href => "http://mfsa.com.mt/", :target => "_blank"}
-            %img.responsive#mfsa_logo{:src => url_for('images/pages/footer/mfsa-logo.svg')}
-        .grd-grid-2.center
-          %a{:href => "http://mfsa.com.mt/", :target => "_blank"}
-            %img.responsive#mifid_logo{:src => url_for('images/pages/footer/mifid-logo.svg')}
-      .grd-parent.grd-grid-12
-        #regulatory-text.grd-grid-9.grd-grid-phablet-7.grd-grid-mobile-12!= l("This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='[_1]' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='[_2]' target='_blank'>view license</a>. This website's services are not made available in the USA, Japan or Hong Kong, or to persons under age 18.", "https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172", "https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495")
-        #social-networks.grd-grid-3.grd-grid-mobile-12.grd-centered-mobile
+        .grd-grid-7.grd-grid-phablet-12
+          %a{:href => "http://www.lga.org.mt/lga/home.aspx", :target => "_blank"}
+            %img.responsive#lga_icon_footer{:src => url_for('images/pages/footer/authority-malta-licensed.png')}
+      .grd-grid-7.grd-grid-phablet-7.grd-grid-mobile-12
+        #regulatory-text!= l("This website is marketed in the UK and Isle of Man by Regent Markets (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='[_1]' target='_blank'>view license</a>. This website is marketed in the rest of the EU by Regent Markets (Malta) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Lotteries and Gaming Authority in Malta, licence no LGA/CL2/118/2000, 26th May 2010 and for UK clients by (2) the UK Gambling Commission - <a href='[_2]' target='_blank'>view license</a>. This website's services are not made available in the USA, Japan or Hong Kong, or to persons under age 18.", "https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172", "https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495")
+      .grd-grid-2.grd-grid-mobile-12.grd-centered-mobile
+        #social-networks
           = include('layouts/default/social')
     #appcache-reload-message
-      .message
-        != l("A new version of the interface is available. Please <a href='#' id='appcache-refresh-link'>refresh</a> this page to try again.")
-  #footer-last
-    .grd-container.grd-default-container
-      .grd-grid-12
-        %p.gambling!= l('Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about <a href="[_1]" class="pjaxload">Responsible Trading</a>.', url_for('responsible-trading'))
+      .message= l("A new version of the interface is available. Please refresh this page to try again.")

@@ -6,28 +6,28 @@
       .sidebar
         %ul#sidebar-nav
           %li#sidebar-link-section-1.selected
-            %a{:href => "#open-source-projects-section"}= l('open-Source projects')
+            %a{:href => "#open-source-projects-section"}= l('Open-Source Projects')
           %li#sidebar-link-section-2
-            %a{:href => "#extjs-frontend-section"}= l('ExtJS front-end')
+            %a{:href => "#extjs-frontend-section"}= l('ExtJS Front-End')
           %li#sidebar-link-section-3
-            %a{:href => "#static-content"}= l('Static content')
+            %a{:href => "#static-content"}= l('Static Content')
           %li#sidebar-link-section-4
-            %a{:href => "#perl-modules"}= l('Perl modules')
+            %a{:href => "#perl-modules"}= l('Perl Modules')
           %li#sidebar-link-section-5
             %a{:href => "#translations"}= l('Translations')
           %li#sidebar-link-section-6
             %a{:href => "#mobile-application"}= l('Mobile application')
           %li#sidebar-link-section-7
-            %a{:href => "#octal-futures"}= l('Octal futures')
+            %a{:href => "#octal-futures"}= l('Octal Futures')
         .sidebar-button
-          %a.pjaxload{:href => url_for('contact')}= l('Contact us')
+          %a.pjaxload{:href => url_for('contact.cgi')}= l('Contact us')
     .grd-grid-9.grd-grid-mobile-12.grd-parent
       .section
         %a#open-source-projects-section
         .section-content
           #section-1
             .grd-grid-12
-              %h1= l('Binary.com open-source projects')
+              %h1= l('Binary.com Open-Source Projects')
             .grd-grid-12.grd-row-padding
             .grd-grid-4.grd-hide.grd-show-mobile.grd-centered-mobile.grd-row-padding
               %img.responsive{:src => url_for('images/pages/open-source-projects/open-source-projects-1.svg')}
@@ -41,7 +41,7 @@
         .section-content
           #section-2
             .grd-grid-12
-              %h1= l('ExtJS front-end')
+              %h1= l('ExtJS Front-End')
             .grd-grid-12.grd-row-padding
             .grd-grid-12
               %h4= l('A next-generation front-end interface with Sencha ExtJS-5')
@@ -57,7 +57,7 @@
         .section-content
           #section-3
             .grd-grid-12
-              %h1= l('Static content')
+              %h1= l('Static Content')
             .grd-grid-12
               %h4= l('Improve Binary.com’s front-end content')
             .grd-grid-4.grd-parent.grd-hide-mobile
@@ -71,7 +71,7 @@
         .section-content
           #section-4
             .grd-grid-12
-              %h1= l('Perl modules')
+              %h1= l('Perl Modules')
             .grd-grid-12
               %h4= l('Binary.com’s CPAN contributions')
             .grd-grid-12.grd-row-padding
@@ -96,7 +96,7 @@
             .grd-grid-8.grd-grid-mobile-12.grd-parent
               .grd-grid-12
                 %p= l('Do you want to see Binary.com in other languages, or can you suggest improvements to our current translations?')
-                %a.pjaxload.button{:href => url_for('contact')}
+                %a.pjaxload.button{:href => url_for('contact.cgi')}
                   %span= l('Contact us')
       .section
         %a#mobile-application
@@ -120,7 +120,7 @@
         .section-content
           #section-7
             .grd-grid-12
-              %h1= l('Octal futures')
+              %h1= l('Octal Futures')
             .grd-grid-12
               %h4= l('A Web Application using the Binary.com API')
             .grd-grid-12.grd-row-padding

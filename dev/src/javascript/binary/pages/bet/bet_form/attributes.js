@@ -158,7 +158,7 @@ BetForm.attributes = function() {
             model: function() {
                 return {
                     form_name: function(form_name) {
-                        var fallback = 'bets_tab_callput';
+                        var fallback = 'bets_tab_risefall';
                         if(form_name) {
                             LocalStore.set('bet_page.form_name', form_name);
                         }

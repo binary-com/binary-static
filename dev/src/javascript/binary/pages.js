@@ -23,7 +23,7 @@ var trading_times_init = function() {
      onSelect: function( dateText, picker ){
          trading_times.tabs( "destroy" );
          showLoadingImage(trading_times);
-         url = page.url.url_for('resources/trading_times', 'date=' + dateText, 'cached');
+         url = page.url.url_for('trading_times.cgi', 'date=' + dateText, 'cached');
          $.ajax({
                   url: url,
                   data:  { 'ajax_only': 1 },
@@ -48,6 +48,11 @@ var asset_index_init = function() {
 };
 
 function confirm_popup_action() {
+    SpotLight.attach_click_event('a.tm-a-2', function (e){
+        e.preventDefault();
+        $(this).parents('#bom-confirm-popup').find('a.tm-a-2').removeClass('a-active').end().end().addClass('a-active');
+        $('#'+this.id+'-content').siblings('div.rbox-content').addClass('invisible').end().removeClass('invisible');
+    });
 
     $('.bom_confirm_popup_link').on('click', function (e){
         e.preventDefault();
@@ -88,7 +93,7 @@ onLoad.queue_for_url(contract_guide_popup, 'contract_guide');
 onLoad.queue_for_url(trading_times_init, 'trading_times');
 onLoad.queue_for_url(asset_index_init, 'asset_index');
 onLoad.queue_for_url(confirm_popup_action, 'my_account|confirm_popup');
-onLoad.queue_for_url(hide_payment_agents, 'cashier');
+onLoad.queue_for_url(hide_payment_agents, 'available_payment_methods');
 
 onLoad.queue_for_url(function() {
     $('div.further-info')

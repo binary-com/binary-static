@@ -6,8 +6,8 @@
 %html
   - }
   = include('layouts/default/head')
-  - my $lang2 = stash->{language};
-  %body.$lang2
+  - my $lang = stash->{language};
+  %body.$lang
     #page-wrapper
       = include('layouts/default/topbar')
       = include('layouts/default/header')

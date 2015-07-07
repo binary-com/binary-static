@@ -2,7 +2,7 @@ BetAnalysis.DigitInfo = function() {
     this.chart_config = {
         chart: {
                 renderTo:'last_digit_histo',
-                defaultSeriesType:'column',
+                defaultSeriesType:'column',                
                 backgroundColor:'#eee',
                 borderWidth:1,
                 borderColor:'#ccc',
@@ -63,10 +63,7 @@ BetAnalysis.DigitInfo = function() {
             tickColor:'#ccc',
             lineColor:'#ccc',
             endOnTick:true,
-            opposite: false,
             labels: {
-                align: 'left',
-                x: 0,
                 enabled: false,
                 formatter: function() {
                     var total = $("select[name='tick_count']").val();

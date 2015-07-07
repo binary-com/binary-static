@@ -6,7 +6,6 @@ var LiveChartConfig = function(params) {
     this.with_trades = typeof params['with_trades'] !== 'undefined' ? params['with_trades'] : 1;
     this.streaming_server = page.settings.get('streaming_server');
     this.with_marker = typeof params['with_marker'] !== 'undefined' ? params['with_marker'] : 0;
-    this.force_tick = typeof params['force_tick'] !== 'undefined' ? params['force_tick'] : 0;
 
     this.indicators = [];
     this.resolutions = {
@@ -154,14 +153,8 @@ LiveChartConfig.prototype = {
         if(opts.with_markers) {
             this.with_markers = opts.with_markers;
         }
-        if(opts.force_tick) {
-            this.force_tick = opts.force_tick;
-        }
     },
     best_resolution: function(from, to) {
-        if(this.force_tick) {
-            return 'tick';
-        }
         var length = parseInt(to - from);
         for(var resolution in this.resolutions) {
             if (this.resolutions[resolution].interval >= length) {

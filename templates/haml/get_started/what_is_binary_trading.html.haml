@@ -19,7 +19,8 @@
   .grd-grid-12.grd-row-padding
     %h2= l('Binary trading is ideal for both individuals and market professionals.')
   .grd-grid-12.grd-row-padding
+    %img{:src => url_for('images/pages/get-started/who-trade_1.png'), :width => "156", :height => "110"}
     %h3= l('Individual Traders')
-    %p!= l('If you’re an individual trader, you’ll appreciate the simplicity, flexibility, and limited risk of binary trading. With [_1]’s low minimum stakes, you’ll soon learn how to trade with skill and confidence. And if you have any questions, you’re free to access <a class="pjaxload" href="[_2]">our helpful support desk</a>.', stash->{website_name}, url_for('contact'))
+    %p!= l('If you’re an individual trader, you’ll appreciate the simplicity, flexibility, and limited risk of binary trading. With [_1]’s low minimum stakes, you’ll soon learn how to trade with skill and confidence. And if you have any questions, you’re free to access <a class="pjaxload" href="[_2]">our helpful support desk</a>.', stash->{website_name}, url_for('contact.cgi'))
     %h3= l('Market Professionals')
     %p= l('Banks, hedge funds and professional investors routinely trade binary options in over-the-counter derivatives markets. Many market professionals use and trust the [_1] platform for high-volume flexible trades.', stash->{website_name})

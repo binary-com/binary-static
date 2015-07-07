@@ -24,7 +24,7 @@
     <p>Seasoned traders can use the [_1] platform for the full advantage of the wide range of trading and analysis tools we have on offer.</p>", broker_name) %]
     <br>
     <h3>[% l("Why should I become a binary options trading affiliate?") %]</h3>
-    [% l("<p>In only a short space of time since their inception, binary options are fast becoming a popular trading product. The numerous binary options trading platforms subsequently being created support this growing trend. By becoming an affiliate now you can profit from the fast growth of interest in this new industry.</p>
+    [% l("<p>In only a short space of time since their inception, binary options are fast becoming a popular trading product. The numerous binary options trading platforms subsequently being created support this growing trend. By becoming an affiliate now you can profit from the fast growth of interest in this new industry.</p> 
     <p>Binary options trading is a high profit market where there's a place for everyone ~[including you~] to take a cut of the pie!</p>") %]
     <br>
     <h3>[% l("Why should I become a [_1] affiliate?", broker_name) %]</h3>
@@ -54,7 +54,7 @@
     <br>
     <h3>[% l("What commission plan do you offer?") %]</h3>
     <p>[% l("[_1] offers the commission plan below:", broker_name) %]</p>
-    [% INCLUDE affiliates/commission_table.html.tt %]
+    [% commission_rate_table %]
     <br>
     <h3>[% l("How do I change my payment method?") %]</h3>
     <p>[% l("Log-in to your [_1] affiliate account and click on: Finances &rarr; Payment instructions.", broker_name) %]</p>

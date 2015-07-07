@@ -12,7 +12,7 @@
     "src/javascript/lib/jquery-ui-timepicker/jquery.ui.timepicker.js",
     "src/javascript/lib/jquery-ui.js",
     "src/javascript/lib/jquery.cookie.js",
-    "src/javascript/lib/jquery.sparkline.js",
+    "src/javascript/lib/jquery.sparkline.min.js",
     "src/javascript/lib/jquery_color_animation.js",
     "src/javascript/lib/loadCSS.js",
     "src/javascript/lib/loadJS.js",
@@ -43,7 +43,6 @@
     "src/javascript/binary/components/date_picker.js",
     "src/javascript/binary/components/date_picker/selected_dates.js",
     "src/javascript/binary/components/time_picker.js",
-    "src/javascript/binary/components/trackjs_onerror.js",
     "src/javascript/binary/form_validation.js",
     "src/javascript/binary/gtm.js",
     "src/javascript/binary/livechart.js",
@@ -69,6 +68,7 @@
     "src/javascript/binary/pages/chartapp.js",
     "src/javascript/binary/pages/client.js",
     "src/javascript/binary/pages/client/form.js",
+    "src/javascript/binary/pages/contact.js",
     "src/javascript/binary/pages/frontend.js",
     "src/javascript/binary/pages/livechart.js",
     "src/javascript/binary/pages/portfolio.js",
@@ -76,6 +76,5 @@
     "src/javascript/binary/pages/profit_table.js",
     "src/javascript/binary/pages/selfexclusion.js",
     "src/javascript/binary/pages/statement.js",
-    "src/javascript/binary/reality-check.js",
     "src/javascript/binary/utility.js"
 ]

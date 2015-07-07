@@ -1,5 +1,5 @@
 <div id="chartApplicationContainer" class="grd-grid-12">
-    <h1>[% l('Java charts') %]</h1>
+    <h1>[% l('Java Charts') %]</h1>
     <div class='grd-row-padding'>
         <fieldset>
             <legend>[% l('Downloadable application') %]</legend>
@@ -21,10 +21,5 @@
                 </a>
             </div>
         </fieldset>
-    </div>
-    <div class='grd-row-padding'>
-        <p>
-        [% l('Click <a href="[_1]" target="_blank">here</a> to try the beta-release of the application. Kindly report issues found to <a href="mailto:[_2]">[_2]</a>.', "https://download.binary.com/binary-charts-beta.jnlp", "arnab@binary.com") %]
-        </p>
     </div>
 </div>

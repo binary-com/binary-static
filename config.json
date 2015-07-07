@@ -2,36 +2,17 @@
 	"website_name": "Binary.com",
 	"display_languages": "EN,ID,RU,ES,FR,PT,DE,ZH_CN,PL,AR",
 	"static": {
-		"url": "https://static.binary.com/",
-		"version": "3.7.1"
+		"url": "https://einhverfr.github.io/binary-static/",
+		"version": "3.2.7"
 	},
 	"marketing": {
-		"google_tag_manager": "GTM-MZWFF7"
+		"google_tag_manager": "GTM-236F"
 	},
 	"customer_support": {
-		"email": "helpdesk@binary.com",
-		"telephone": {
-			"United Kingdom": "+44 13 6278 8044",
-			"Canada": "+1 587 800 3547"
-		},
-		"tollfree_number": {
-			"Australia": "1800 093570",
-			"Indonesia": "0018030113641",
-			"Ireland": "1800931084",
-			"Russia": "8 10 8002 8553011",
-			"United Kingdom": "+44 80 0802 1214"
-		},
-		"default_telephone": {
-			"country": "United Kingdom"
-		},
-		"skype_helpline": {
-			"EN": "binaryhelpline",
-			"ID": "binaryhelplineid",
-			"RU": "binaryhelplineru"
-		}
+		"email": "helpdesk@binary.com"
 	},
-	"binary_js_hash": "0dc9e2e35200af5feb7032d431d9a376",
-	"binary_lib_hash": "43520ea37583c17cb46d7c7456bbe917",
-	"binary_data_hash": "84fd7df833b86d30cff72b3e983681f1",
-	"binary_css_hash": "15503561d04aa6b90072e7a5c06c7bb4"
+	"binary_js_hash": "27bd1e37b1889cebb189f9bcf28c5965",
+	"binary_lib_hash": "49361769d8014eac04816ddce5abe2dd",
+	"binary_data_hash": "37609d7277b9e542d70bd4411ccd068f",
+	"binary_css_hash": "843c6d0a338ee718171ad08ec05198a6"
 }

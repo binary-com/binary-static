@@ -16,10 +16,11 @@ var TickDisplay = function() {
             $self.symbol = data.symbol;
             $self.display_symbol = data.display_symbol;
             $self.contract_start_ms = parseInt(data.contract_start * 1000);
-            $self.contract_category = data.contract_category;
-            $self.set_barrier = ($self.contract_category.match('digits')) ? false : true;
+            $self.contract_type = data.contract_type;
+            $self.set_barrier = ($self.contract_type.match('DIGIT')) ? false : true;
             $self.display_decimal = 0;
-            var tick_frequency = 5;
+            var submarket = data.submarket;
+            var tick_frequency = submarket === 'smart_opi' ? 3 : 2;
 
             if (typeof data.decimal !== 'undefined') {
                 $self.number_of_decimal = parseInt(data.decimal) + 1; //calculated barrier is rounded to one more decimal place
@@ -45,7 +46,7 @@ var TickDisplay = function() {
             var $self = this;
 
             var exit_tick_index = $self.number_of_ticks - 1;
-            if ($self.contract_category.match('asian')) {
+            if ($self.contract_type.match('ASIAN')) {
                 $self.ticks_needed = $self.number_of_ticks;
                 $self.x_indicators = {
                     '_0': { label: 'Tick 1', id: 'start_tick'},
@@ -54,7 +55,7 @@ var TickDisplay = function() {
                     label: 'Exit Spot',
                     id: 'exit_tick',
                 };
-            } else if ($self.contract_category.match('callput')) {
+            } else if ($self.contract_type.match('FLASH')) {
                 $self.ticks_needed = $self.number_of_ticks + 1;
                 $self.x_indicators = {
                     '_0': { label: 'Entry Spot', id: 'entry_tick'},
@@ -63,7 +64,7 @@ var TickDisplay = function() {
                     label: 'Exit Spot',
                     id: 'exit_tick',
                 };
-            } else if ($self.contract_category.match('digits')) {
+            } else if ($self.contract_type.match('DIGIT')) {
                 $self.ticks_needed = $self.number_of_ticks;
                 $self.x_indicators = {
                     '_0': { label: 'Tick 1', id: 'start_tick'},
@@ -97,23 +98,18 @@ var TickDisplay = function() {
                         var decimal_places = Math.max( $self.display_decimal, new_decimal);
                         $self.display_decimal = decimal_places;
                         var new_y = that.y.toFixed(decimal_places);
-                        var mom = moment.utc($self.applicable_ticks[that.x].epoch*1000).format("dddd, MMM D, HH:mm:ss");
+                        var mom = moment.utc(that.x).format("dddd, MMM D, HH:mm:ss");
                         return mom + "<br/>" + $self.display_symbol + " " + new_y;
                     },
                 },
                 xAxis: {
-                    type: 'linear',
-                    min: 0,
-                    max: $self.number_of_ticks + 1,
+                    type: 'datetime',
+                    min: parseInt(config['plot_from']),
+                    max: parseInt(config['plot_to']),
                     labels: { enabled: false, }
                 },
                 yAxis: {
-                    opposite: false,
-                    labels: {
-                        align: 'left',
-                        x: 0,
-                    },
-                    title: ''
+                    title: '',
                 },
                 series: [{
                     data: [],
@@ -129,7 +125,6 @@ var TickDisplay = function() {
             var plot_from_moment = moment(plot_from).utc();
             var plot_to_moment = moment(plot_to).utc();
             var contract_start_moment = moment($self.contract_start_ms).utc();
-            $self.counter = 0;
             $self.applicable_ticks = [];
 
             var symbol = $self.symbol;
@@ -145,40 +140,41 @@ var TickDisplay = function() {
                 }
 
                 var data = JSON.parse(msg.data);
-                if (data && !(data[0] instanceof Array)) {
+                if (!(data[0] instanceof Array)) {
                     data = [ data ];
                 }
-                if (data) {
-                    for (var i = 0; i < data.length; i++) {
-                        if (data[i][0] === 'tick') {
-                            var tick = {
-                                epoch: parseInt(data[i][1]),
-                                quote: parseFloat(data[i][2])
-                            };
+                for (var i = 0; i < data.length; i++) {
+                    if (data[i][0] === 'tick') {
+                        var tick = {
+                            epoch: parseInt(data[i][1]),
+                            quote: parseFloat(data[i][2])
+                        };
 
-                            if (tick.epoch > contract_start_moment.unix()) {
-                                if ($self.applicable_ticks.length >= $self.ticks_needed) {
-                                    $self.ev.close();
-                                    $self.evaluate_contract_outcome();
-                                    return;
-                                } else {
-                                    if (!$self.chart) return;
-                                    if (!$self.chart.series) return;
-                                    $self.chart.series[0].addPoint([$self.counter, tick.quote], true, false);
-                                    $self.applicable_ticks.push(tick);
-                                    var indicator_key = '_' + $self.counter;
-                                    if (typeof $self.x_indicators[indicator_key] !== 'undefined') {
-                                        $self.x_indicators[indicator_key]['index'] = $self.counter;
-                                        $self.add($self.x_indicators[indicator_key]);
-                                    }
-
-                                    $self.add_barrier();
-                                    $self.apply_chart_background_color(tick);
-                                    $self.counter++;
-                                }
-                            }
-
+                        if ($self.applicable_ticks.length < $self.ticks_needed) {
+                            $self.chart.series[0].addPoint([tick.epoch*1000, tick.quote], true, false);
                         }
+
+                        if (tick.epoch > contract_start_moment.unix()) {
+                            if ($self.applicable_ticks.length >= $self.ticks_needed) {
+                                $self.ev.close();
+                                $self.evaluate_contract_outcome();
+                                return;
+                            } else {
+                                $self.applicable_ticks.push(tick);
+
+                                var tick_index = $self.applicable_ticks.length - 1;
+                                var indicator_key = '_' + tick_index;
+
+                                if (typeof $self.x_indicators[indicator_key] !== 'undefined') {
+                                    $self.x_indicators[indicator_key]['index'] = tick_index;
+                                    $self.add($self.x_indicators[indicator_key]);
+                                }
+
+                                $self.add_barrier();
+                                $self.apply_chart_background_color(tick);
+                            }
+                        }
+
                     }
                 }
             };
@@ -209,7 +205,7 @@ var TickDisplay = function() {
                 return;
             }
 
-            var barrier_type = $self.contract_category.match('asian') ? 'asian' : 'static';
+            var barrier_type = $self.contract_type.match('ASIAN') ? 'asian' : 'static';
 
             if (barrier_type === 'static') {
                 var barrier_tick = $self.applicable_ticks[0];
@@ -250,7 +246,7 @@ var TickDisplay = function() {
             var $self = this;
 
             $self.chart.xAxis[0].addPlotLine({
-               value: indicator.index,
+               value: $self.applicable_ticks[indicator.index].epoch * 1000,
                id: indicator.id,
                label: {text: indicator.label},
                color: '#e98024',

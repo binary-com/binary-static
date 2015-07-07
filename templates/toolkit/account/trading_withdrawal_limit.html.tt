@@ -8,7 +8,7 @@
     <h2>[% client.loginid %] - [% l('Withdrawal limits') %]</h2>
 [% IF client.client_fully_authenticated %]
     <p>
-        [% l('Your account is fully authenticated and your withdrawal limits have been lifted.') %]
+        [% l('Your account is fully authenticated and your withdrawal limit of EUR [_1] has been lifted.', original_num_of_days_limit_monetary) %]
     </p>
 [% ELSE %]
     [% IF num_of_days_limit == lifetime_limit %]

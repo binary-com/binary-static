@@ -255,10 +255,9 @@ function listen_to_chart_element () {
 }
 
 var draw_chart = function (callback_after_complete) {
-
-    var chart_director_imageholder = document.getElementById('chart_director_imageholder');
-
-    if (chart_director_imageholder === null) return;
+    if($("#chart_director_imageholder").length === 0){
+        return;
+    }
 
     var all_li = $('#chart_compare_underlying').find('li');
     if (all_li.length == 1) {
@@ -317,3 +316,4 @@ var draw_chart = function (callback_after_complete) {
 onLoad.queue_for_url(function() {
     listen_to_chart_element();
 }, 'smartchart');
+

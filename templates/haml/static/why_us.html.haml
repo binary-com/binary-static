@@ -18,7 +18,7 @@
           %li#sidebar-link-section-6
             %a{:href => "#trust"}= l('Trust')
         .open-account{:class => 'by_client_type client_logged_out client_virtual'}
-          %a.pjaxload{:href => url_for('/')}= l('Open a free account')
+          %a.pjaxload{:href => url_for('open_account.cgi')}= l('Open a Free account')
     .grd-grid-9.grd-grid-mobile-12.grd-parent
       .section
         %a#sharp-prices
@@ -31,9 +31,9 @@
               %ul.checked
                 %li= l('Real-time prices, benchmarked against interbank options markets.')
                 %li
-                  != l("Returns above 100% on simple <a href='[_1]' class='pjaxload'>rise/fall</a> contracts.", url_for('trade.cgi?market=forex&form_name=risefall'))
+                  != l("Returns above 100% on simple [_1] contracts.", pjax_link_for(l('rise/fall'), url_for('trade.cgi?market=forex&form_name=risefall')))
                 %li
-                  != l("Returns above 1000% on <a href='[_1]' class='pjaxload'>higher/lower</a> and <a href='[_2]' class='pjaxload'>touch/no-touch</a> trades.", url_for('trade.cgi?market=forex&form_name=higherlower'), url_for('trade.cgi?market=forex&form_name=touchnotouch'))
+                  != l("Returns above 1000% on [_1] and [_2] trades.", pjax_link_for(l('higher/lower'), url_for('trade.cgi?market=forex&form_name=higherlower')), pjax_link_for(l('touch/no-touch'), url_for('trade.cgi?market=forex&form_name=touchnotouch')))
                 %li= l('No hidden fees or commissions.')
             .grd-grid-5.grd-grid-mobile-10.grd-centered-mobile
               %img.responsive#new-trader-icon{:src => url_for('images/pages/why-us/why-us-sharp-prices.png')}
@@ -103,7 +103,7 @@
                 %li= l('We have a proven track record since starting in 2000.')
             .grd-grid-4.grd-grid-mobile-12.grd-parent
               .grd-grid-11.grd-grid-mobile-8.grd-with-padding.grd-centered
-                %img.responsive{:src => url_for('images/pages/why-us/mga-logo.svg')}
+                %img.responsive{:src => url_for('images/pages/why-us/why-us-authority-malta-gray.svg')}
               .grd-parent.grd-grid-12.grd-grid-mobile-8.grd-centered
                 .grd-grid-6.grd-with-padding
                   %img.responsive{:src => url_for('images/pages/why-us/why-us-proven-record_1.svg')}
@@ -121,7 +121,7 @@
             .grd-grid-9.grd-grid-mobile-12
               %p= l('[_1] is the award-winning industry pioneer in online options trading. We boast:', stash->{website_name})
               %ul.checked
-                %li= l('Over two billion dollars in trades to date.')
+                %li= l('Over one billion dollars in trades to date.')
                 %li= l('First-class client service.')
                 %li= l('Multi award-winning trading platform.')
                 %li= l('Exclusive binary trading technology.')

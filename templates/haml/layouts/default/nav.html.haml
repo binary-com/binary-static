@@ -1,7 +1,7 @@
 #main-navigation
   %ul#menu-top
-    - my @nav = ({route => '/why-us',      text => l('Why us?')},
-    -            {route => '/get-started', text => l('Get started')},
+    - my @nav = ({route => '/why-us',      text => l('Why Us?')},
+    -            {route => '/get-started', text => l('Get Started')},
     -            {route => '/tour',        text => l('Tour')});
     - foreach my $item (@nav) {
       - my ($route, $text) = ($item->{route}, $item->{text});
@@ -10,4 +10,4 @@
         %a{:href=>url_for($route), :class => 'pjaxload'}= $text
     - }
     %li
-      %a{:href=>url_for('trade.cgi'), :class => 'pjaxload'}= l('Trade')
+      %a{:href=>url_for('trade.cgi')}= l('Trade')

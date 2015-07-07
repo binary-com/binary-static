@@ -1,6 +1,4 @@
-<div id="fb-root">
-</div>
-<div class="social-icons">
+<div class="center-aligned">
     <a href="http://www.youtube.com/user/BinaryTradingVideos" target="_blank">
         <img class="responsive social-network-icon" src="[% request.url_for('images/pages/footer/youtube.svg') %]"/>
     </a>
@@ -17,10 +15,4 @@
     <a href="http://www.linkedin.com/groups/Binarycom-5137612" target="_blank">
         <img class="responsive social-network-icon" src="[% request.url_for('images/pages/footer/linkedin.svg') %]"/>
     </a>
-</div>
-<div class="fb-gplus-follow">
-    <div class="gplus">
-        <div class="g-follow" data-annotation="none" data-height="20" data-href="https://plus.google.com/106251151552682209951" data-rel="publisher">
-        </div>
-    </div>
 </div>

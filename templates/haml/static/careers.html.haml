@@ -23,8 +23,6 @@
       %p= l('Imagine a workplace that often doesn’t feel like work.')
       %p= l('If you’re looking to build a career, and not a resume, talk to us, Binary.com. We’re one of the IT world’s most vibrant and progressive workplaces.')
       %p= l('Who love working with people from different cultures, and are keen to contribute to a dynamic and unique workplace, and not merely pass on through.')
-    .grd-grid-12
-      .center-aligned!= l('<a href="[_1]" target="_blank">Learn more about our corporate culture.</a>', 'http://blog.wobb.my/project/binary/')
     .grd-grid-12.grd-hide-mobile
       .separator-line
   .grd-grid-12.grd-parent
@@ -64,4 +62,4 @@
     %p= l('If we’re happy with your results, we’ll contact you for an interview and then do background and reference checks.')
     %p= l('If all that sounds a bit daunting, you’re right. But it’s how we make sure we get the best people for our team.')
   .grd-grid-12
-    %p.center-aligned!= l('To apply, please submit your CV and a cover letter to <span id="hr_contact_eaddress"></span>.')
+    %p.center-aligned!= l('To apply, please submit your CV and a cover letter via our <a href="[_1]">Contact us</a> page.', url_for("contact.cgi"))

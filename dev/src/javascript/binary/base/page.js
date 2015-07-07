@@ -30,45 +30,6 @@ var gtm_data_layer_info = function() {
     return gtm_data_layer_info;
 };
 
-var User = function() {
-    this.email =  $.cookie('email');
-    var loginid_list = $.cookie('loginid_list');
-
-    if(this.email === null || typeof this.email === "undefined") {
-        this.is_logged_in = false;
-    } else {
-        this.is_logged_in = true;
-
-        if(loginid_list !== null && typeof loginid_list !== "undefined") {
-            var loginid_array = [];
-            var loginids = loginid_list.split('+').sort();
-
-            for (var i = 0; i < loginids.length; i++) {
-                var real = false;
-                var disabled = false;
-                var items = loginids[i].split(':');
-                if (items[1] == 'R') {
-                    real = true;
-                }
-                if (items[2] == 'D') {
-                    disabled = true;
-                }
-
-                var id_obj = { 'id':items[0], 'real':real, 'disabled':disabled };
-                if (/MLT/.test(items[0])) {
-                    id_obj['non_financial']= true;
-                }
-                if (/MF/.test(items[0])) {
-                    id_obj['financial']= true;
-                }
-                loginid_array.push(id_obj);
-            }
-
-            this.loginid_array = loginid_array;
-        }
-    }
-};
-
 var Client = function() {
     this.loginid =  $.cookie('loginid');
     this.is_logged_in = false;
@@ -116,7 +77,7 @@ var URL = function (url) { // jshint ignore:line
     } else {
         this.location = window.location;
     }
-};
+}; 
 
 URL.prototype = {
     url_for: function(path, params, type) {
@@ -242,7 +203,7 @@ Menu.prototype = {
                 this.show_main_menu();
             }
         } else {
-            var is_mojo_page = /^\/$|\/login|\/home|\/smart-indices|\/ad|\/open-source-projects|\/white-labels|\/partnerapi$/.test(window.location.pathname);
+            var is_mojo_page = /\/$|\/login|\/home|\/smart-indices|\/open-source-projects|\/white-labels|\/partnerapi$/.test(window.location.pathname);
             if(!is_mojo_page) {
                 trading.addClass('active');
                 this.show_main_menu();
@@ -273,23 +234,6 @@ Menu.prototype = {
         }
 
         this.on_mouse_hover(active.item);
-
-        // enable only allowed markets
-        var allowed_markets = $.cookie('allowed_markets');
-        if(allowed_markets) {
-            var markets_array = allowed_markets.split(',');
-            var sub_items = $('li#topMenuStartBetting ul.sub_items');
-            sub_items.find('li').each(function () {
-                var link_id = $(this).attr('id').split('_')[1];
-                if(markets_array.indexOf(link_id) < 0) {
-                    var link = $(this).find('a');
-                    if(markets_array.indexOf(link.attr('id')) < 0) {
-                        link.addClass('disabled-link');
-                        link.removeAttr('href');
-                    }
-                }
-            });
-        }
     },
     reset: function() {
         $("#main-menu .item").unbind();
@@ -336,28 +280,17 @@ Menu.prototype = {
         });
 
         $("#main-menu .sub_items a").each(function(){
-            var link_href = $(this).attr('href');
-            if (link_href) {
-                var url = new URL(link_href);
-                if(url.is_in(that.page_url)) {
-                    item = $(this).closest('.item');
-                    subitem = $(this);
-                }
+            var url = new URL($(this).attr('href'));
+            if(url.is_in(that.page_url)) {
+                item = $(this).closest('.item');
+                subitem = $(this);
             }
         });
 
         return { item: item, subitem: subitem };
     },
     register_dynamic_links: function() {
-        var stored_market = page.url.param('market') || LocalStore.get('bet_page.market') || 'forex';
-        var allowed_markets = $.cookie('allowed_markets');
-        if(allowed_markets) {
-            var markets_array = allowed_markets.split(',');
-            if(markets_array.indexOf(stored_market) < 0) {
-                stored_market = markets_array[0];
-                LocalStore.set('bet_page.market', stored_market);
-            }
-        }
+        var stored_market = page.url.param('market') || LocalStore.get('bet_page.market');
         var start_trading = $('#topMenuStartBetting a:first');
         var trade_url = start_trading.attr("href");
         if(stored_market) {
@@ -369,7 +302,6 @@ Menu.prototype = {
             start_trading.attr("href", trade_url);
 
             $('#menu-top li:eq(3) a').attr('href', trade_url);
-            $('#mobile-menu #topMenuStartBetting a.trading_link').attr('href', trade_url);
         }
 
         start_trading.on('click', function(event) {
@@ -385,8 +317,7 @@ Menu.prototype = {
     }
 };
 
-var Header = function(params) {
-    this.user = params['user'];
+var Header = function(params) { 
     this.client = params['client'];
     this.settings = params['settings'];
     this.menu = new Menu(params['url']);
@@ -404,35 +335,8 @@ Header.prototype = {
         this.menu.reset();
     },
     show_or_hide_login_form: function() {
-        if (this.user.is_logged_in && this.client.is_logged_in) {
-            var loginid_select = '';
-            var loginid_array = this.user.loginid_array;
-            for (var i=0;i<loginid_array.length;i++) {
-                if (loginid_array[i].disabled) continue;
-
-                var curr_loginid = loginid_array[i].id;
-                var real = loginid_array[i].real;
-                var selected = '';
-                if (curr_loginid == this.client.loginid) {
-                    selected = ' selected="selected" ';
-                }
-
-                var loginid_text;
-                if (real) {
-                    if(loginid_array[i].financial){
-                        loginid_text = text.localize('Investment Account') + ' (' + curr_loginid + ')';
-                    } else if(loginid_array[i].non_financial) {
-                        loginid_text = text.localize('Gaming Account') + ' (' + curr_loginid + ')';
-                    } else {
-                        loginid_text = text.localize('Real Account') + ' (' + curr_loginid + ')';
-                    }
-                } else {
-                    loginid_text = text.localize('Virtual Account') + ' (' + curr_loginid + ')';
-                }
-
-                loginid_select += '<option value="' + curr_loginid + '" ' + selected + '>' + loginid_text +  '</option>';
-            }
-            $("#client_loginid").html(loginid_select);
+        if (this.client.is_logged_in) {
+            $("#client_loginid").html(this.client.loginid);
         }
     },
     simulate_input_placeholder_for_ie: function() {
@@ -457,7 +361,7 @@ Header.prototype = {
     register_dynamic_links: function() {
         var logged_in_url = page.url.url_for('');
         if(this.client.is_logged_in) {
-            logged_in_url = page.url.url_for('user/my_account');
+            logged_in_url = page.url.url_for('my_account.cgi');
         }
 
         $('#logo').attr('href', logged_in_url).on('click', function(event) {
@@ -506,7 +410,7 @@ Header.prototype = {
         sync();
         setInterval(function() {
             sync();
-        }, 900000);
+        }, 300000);
 
         this.clock_started = true;
         return;
@@ -617,16 +521,14 @@ ToolTip.prototype = {
     },
 };
 
-var Contents = function(client, user) {
+var Contents = function(client) {
     this.client = client;
-    this.user = user;
     this.tooltip = new ToolTip();
 };
 
 Contents.prototype = {
     on_load: function() {
         this.activate_by_client_type();
-        this.topbar_message_visibility();
         this.update_body_id();
         this.update_content_class();
         this.tooltip.attach();
@@ -644,38 +546,13 @@ Contents.prototype = {
             if(this.client.is_real) {
                 $('.by_client_type.client_real').removeClass('invisible');
                 $('.by_client_type.client_real').show();
-
-                $('#topbar').addClass('dark-blue');
-                $('#topbar').removeClass('orange');
-
-                if (!/^Q?CR/.test(this.client.loginid)) {
-                    $('#payment-agent-section').addClass('invisible');
-                    $('#payment-agent-section').hide();
-                }
-
-                if (!/^Q?MF|MLT/.test(this.client.loginid)) {
-                    $('#account-transfer-section').addClass('invisible');
-                    $('#account-transfer-section').hide();
-                }
             } else {
                 $('.by_client_type.client_virtual').removeClass('invisible');
                 $('.by_client_type.client_virtual').show();
-
-                $('#topbar').addClass('orange');
-                $('#topbar').removeClass('dark-blue');
-
-                $('#account-transfer-section').addClass('invisible');
-                $('#account-transfer-section').hide();
             }
         } else {
             $('.by_client_type.client_logged_out').removeClass('invisible');
             $('.by_client_type.client_logged_out').show();
-
-            $('#topbar').removeClass('orange');
-            $('#topbar').addClass('dark-blue');
-
-            $('#account-transfer-section').addClass('invisible');
-            $('#account-transfer-section').hide();
         }
     },
     update_body_id: function() {
@@ -691,60 +568,62 @@ Contents.prototype = {
     init_draggable: function() {
         $('.draggable').draggable();
     },
-    topbar_message_visibility: function() {
-        if(this.client.is_logged_in) {
-            var loginid_array = this.user.loginid_array;
-            var has_real = false;
+};
 
-            var has_financial = false;
-            var check_financial = false;
-            if (/MLT/.test(this.client.loginid)) {
-                check_financial = true;
-            }
+var Footer = function() { };
 
-            for (var i=0;i<loginid_array.length;i++) {
-                var loginid = loginid_array[i].id;
-                var real = loginid_array[i].real;
+Footer.prototype = {
+    on_load: function() {
+        var that = this;
+        var footer = $('#footer');
+        this.make_sticky();
+        $(window).resize(function() {
+            footer.css({'margin-top': 0});
+            that.make_sticky();
+        });
+        $(window).bind('hashchange', function() {
+            that.make_sticky();
+        });
+    },
+    make_sticky: function() {
+        var docHeight = $(window).height();
+        var footer = $('#footer');
+        if (footer.length > 0) {
+            var footerHeight = footer.height();
+            var footerTop = footer.offset().top + footerHeight;
 
-                if (real) {
-                    has_real = true;
-                    if (!check_financial) {
-                        break;
-                    }
-                    if (loginid_array[i].financial) {
-                        has_financial = true;
-                        break;
-                    }
-                }
-            }
-            if (has_real) {
-                $('.virtual-upgrade-link').addClass('invisible');
-                $('.virtual-upgrade-link').hide();
-
-                if (check_financial && !has_financial) {
-                    $('#financial-upgrade-link').removeClass('invisible');
-                    if ($('#investment_message').length > 0) {
-                        $('#investment_message').removeClass('invisible');
-                    }
-                } else {
-                    $('#financial-upgrade-link').addClass('invisible');
-                    if ($('#investment_message').length > 0) {
-                        $('#investment_message').addClass('invisible');
+            if (footerTop < docHeight) {
+                var margintop = $('body').prop('scrollHeight') - footer.offset().top - footer.height();
+                if (margintop > 0) {
+                    // Create the measurement node
+                    var scrollDiv = document.createElement("div");
+                    scrollDiv.className = "scrollbar-measure";
+                    document.body.appendChild(scrollDiv);
+                    // Get the scrollbar width
+                    var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
+                    // Delete the DIV
+                    document.body.removeChild(scrollDiv);
+                    // hack for browser other than firefox
+                    if (navigator.userAgent.indexOf("Firefox") > -1) {
+                        footer.css({'margin-top': margintop + 'px'});
+                    } else {
+                        margintop += scrollbarWidth - 1;
+                        footer.css({'margin-top': margintop + 'px'});
                     }
                 }
             }
         }
-    },
+    }
 };
 
-var Page = function(config) {
+var Page = function(config) { 
     config = typeof config !== 'undefined' ? config : {};
-    this.user = new User();
     this.client = new Client();
     this.url = new URL();
     this.settings = new InScriptStore(config['settings']);
-    this.header = new Header({ user: this.user, client: this.client, settings: this.settings, url: this.url});
-    this.contents = new Contents(this.client, this.user);
+    this.header = new Header({ client: this.client, settings: this.settings, url: this.url});
+    this.contents = new Contents(this.client);
+    this.footer = new Footer();
 };
 
 Page.prototype = {
@@ -759,16 +638,12 @@ Page.prototype = {
     },
     on_load: function() {
         this.url.reset();
-        this.localize_for(this.language());
         this.header.on_load();
+        this.localize_for(this.language());
         this.on_change_language();
-        this.on_change_loginid();
         this.record_affiliate_exposure();
         this.contents.on_load();
-        this.on_click_signup();
-        this.on_input_password();
-        this.on_click_acc_transfer();
-        this.on_click_view_balances();
+        this.footer.on_load();
         $('#current_width').val(get_container_width());//This should probably not be here.
     },
     on_unload: function() {
@@ -782,90 +657,9 @@ Page.prototype = {
             document.location = that.url_for_language(language);
         });
     },
-    on_change_loginid: function() {
-        var that = this;
-        $('#client_loginid').on('change', function() {
-            $('#loginid-switch-form').submit();
-        });
-    },
-    on_input_password: function() {
-        $('#chooseapassword').on('input', function() {
-            $('#reenter-password').removeClass('invisible');
-            $('#reenter-password').show();
-        });
-    },
-    on_click_signup: function() {
-        $('#btn_registration').on('click', function() {
-            var pwd = $('#chooseapassword').val();
-            var pwd_2 = $('#chooseapassword_2').val();
-            var email = $('#Email').val();
-
-            if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email)) {
-                $('#signup_error').text(text.localize('Invalid email address'));
-                $('#signup_error').removeClass('invisible');
-                $('#signup_error').show();
-                return false;
-            }
-            if (pwd.length === 0 || pwd_2.length === 0 || !client_form.compare_new_password(pwd, pwd_2)) {
-                $('#signup_error').text(text.localize('The two passwords that you entered do not match.'));
-                $('#signup_error').removeClass('invisible');
-                $('#signup_error').show();
-                return false;
-            }
-            // email != password
-            if (email == pwd) {
-                $('#signup_error').text(text.localize('Your password cannot be the same as your email'));
-                $('#signup_error').removeClass('invisible');
-                $('#signup_error').show();
-                return false;
-            }
-
-            $('#virtual-acc-form').submit();
-        });
-    },
-    on_click_acc_transfer: function() {
-        $('#acc_transfer_submit').on('click', function() {
-            var amount = $('#acc_transfer_amount').val();
-            if (!/^[0-9]+\.?[0-9]{0,2}$/.test(amount) || amount < 0.1) {
-                $('#invalid_amount').removeClass('invisible');
-                $('#invalid_amount').show();
-                return false;
-            }
-            $('#acc_transfer_submit').submit();
-        });
-    },
-    on_click_view_balances: function() {
-        $('#view-balances').on('click', function(event) {
-            event.preventDefault();
-            if ($(this).hasClass("disabled")) {
-                return false;
-            }
-            $(this).addClass("disabled");
-
-            $.ajax({
-                url: page.url.url_for('user/balance'),
-                dataType: 'text',
-                success: function (data) {
-                    var outer = $('#client-balances');
-                    if (outer) outer.remove();
-
-                    outer = $("<div id='client-balances' class='lightbox'></div>").appendTo('body');
-                    middle = $('<div />').appendTo(outer);
-                    $('<div>' + data + '</div>').appendTo(middle);
-
-                    $('#client-balances [bcont=1]').on('click', function () {
-                        $('#client-balances').remove();
-                    });
-                },
-            }).always(function() {
-                $('#view-balances').removeClass("disabled");
-            });
-        });
-    },
-
     localize_for: function(language) {
         text = texts[language];
-        moment.locale(language.toLowerCase());
+        moment.lang(language.toLowerCase());
     },
     url_for_language: function(lang) {
         lang = lang.trim().toUpperCase();

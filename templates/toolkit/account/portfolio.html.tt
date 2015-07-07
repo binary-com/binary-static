@@ -78,4 +78,8 @@
             </div>
         </div>
     [% END %]
+
+    [% IF granter_loginids.size > 0 %]
+    <span class="invisible" id="all_approved_granter_loginids">[% granter_loginids.join("\n") %]</span>
+    [% END %]
 </div>

@@ -38,8 +38,6 @@
 
             [% ELSIF missing_data %]
                 <p class="comment">[% l('There was a market data disruption during the contract period. For real-money accounts we will attempt to correct this and settle the contract properly, otherwise the contract will be cancelled and refunded. Virtual-money contracts will be cancelled and refunded.') %]</p>
-            [% ELSIF corporate_action %]
-                <p class="comment">[% l('* This contract was affected by a corporate action event. Please find details in the corporate action tab.') %]</p>
             [% ELSIF settle_later %]
                 <p class="comment">[% l('For contracts which expire at market close, we will use the official closing value of the market to settle your contract and update your results at settlement time.') %]</p>
             [% ELSIF is_sold %]
