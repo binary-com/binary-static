@@ -21,6 +21,7 @@
     <input type="hidden" name="id" value="[% fields.id %]" />
     <input type="hidden" name="l" value="[% fields.l %]" />
     <input type="hidden" name="expiry_type" value="[% fields.expiry_type %]" />
+    <input type="hidden" name="loginid" value="[% fields.loginid %]" />
     [% IF fields.expiry_date %]
     <input type="hidden" name="expiry_date" value="[% fields.expiry_date %]" />
     [% END %]
