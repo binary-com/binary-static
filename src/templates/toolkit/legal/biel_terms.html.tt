@@ -76,7 +76,13 @@
     <p>
         [% l('The Financial Products that we offer to deal in are contracts entered into between you and us. Under these contracts and subject to the specific terms of the relevant contact, in consideration for the premium or price that you pay us, we promise to pay you a certain amount if the reference assets or measurements perform in a particular manner. These contracts accordingly are not instruments that we hold on your behalf or otherwise benefit from clients assets protections in the event of our insolvency. Similarly the premium or price that you pay to take out a trade is not held as clients’ money but as consideration for our undertaking to pay.') %]
     </p>
-
+    <h2>[% l("Investor Compensation Scheme") %]</h2>
+    <p>
+        [% l("BIEL forms part of <a href='[_1]' target='_blank'>the Investor Compensation Scheme</a> (the \"Scheme\") which is a rescue fund for investors that are clients of failed investment firms licensed by the MFSA. The Scheme covers 90% of the Company's net liability to a client in respect of investments which qualify for compensation under the Investment Services Act subject to a maximum payment to any one person of €20,000. The Scheme is based on EC Directive 97/9.", 'http://www.compensationschemes.org.mt') %]
+    </p>
+    <p>
+        [% ("Cover is made available on the basis of the depositor rather than on the basis of the number of deposits, meaning that if an individual has multiple accounts he will only be covered as to €20,000 on the global amount. Any other amount exceeding such threshold is not protected and will thus have to be borne by the investor.") %]
+    </p>
     <h2>[% l("Conflicts of Interest") %]</h2>
     <p>
         [% l('It is understood that we or any of our directors, officers or employees thereof may have an interest, relationship or arrangement that is material in relation to any trade effected on behalf of you and it is agreed that any person so interested shall be entitled to retain any benefit or profit received and shall not be liable to account therefore to you by reason only of such conflict.') %]
