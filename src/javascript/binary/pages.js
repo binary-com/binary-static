@@ -81,7 +81,7 @@ function get_login_page_url() {
     } catch (e) {
         console.log("error while getting page language. " + e);
     }
-    return 'https://' + page.settings.get('domains')['private'] + '/login' + params;
+    return 'https://' + page.settings.get('domains')['private'] + '/signin' + params;
 }
 
 onLoad.queue_for_url(contract_guide_popup, 'contract_guide');

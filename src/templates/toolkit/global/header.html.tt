@@ -70,7 +70,7 @@
                   </div>
                 </div>
                 <div id="client-logged-out" class="grd-grid-3 grd-grid-mobile-9 grd-grid-phablet-10 grd-no-gutter-left by_client_type client_logged_out">
-                    <form id="login-form" action="[% request.url_for('login') %]" method="post">
+                    <form id="login-form" action="[% request.url_for('signin') %]" method="post">
                         <span id="login-fields">
                             <input name="email" type="text" placeholder="[% l("Email") %]" />
                             <input name="password" type="password" placeholder="[% l("Password") %]" />
