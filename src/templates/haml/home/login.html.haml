@@ -2,7 +2,7 @@
 .grd-row-padding
 %h1= stash->{title}
 %br
-%form{:action => url_for('/login'), :method => 'POST'}
+%form{:action => url_for('/signin'), :method => 'POST'}
   %fieldset
     %legend= l('Your details')
     .grd-parent.grd-grid-12.grd-row-padding

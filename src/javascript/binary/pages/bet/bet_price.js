@@ -97,7 +97,7 @@ var BetPrice = function() {
 
             if(!$.cookie('login')) {
                 page.client.is_logged_in = false;
-                window.location.href = page.url.url_for('login');
+                window.location.href = page.url.url_for('signin');
                 return;
             }
 

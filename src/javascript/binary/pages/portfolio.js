@@ -53,7 +53,7 @@ var Portfolio = function () {
     return {
         update_indicative_prices: function() {
             if(!page.client.is_logged_in) {
-                window.location.href = page.url.url_for('login');
+                window.location.href = page.url.url_for('signin');
                 return;
             }
 
