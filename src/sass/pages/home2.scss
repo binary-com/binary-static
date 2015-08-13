@@ -4,8 +4,7 @@
 }
 .home2-content {
    #banner {
-    background: url("../images/pages/home2/map.png") repeat 0 0;
-    background-size: contain;
+    background: url("../images/pages/home/banner-background_1.png") no-repeat 0 0;
    }
    .xtopseparator{
     border: 0;
@@ -21,29 +20,30 @@
     color: $COLOR_WHITE;
     text-align: center;
     border-radius: 0;
-    margin-top: 10px;
+    margin-top: -15px;
     text-align: center;
     padding: 0 0 0;
-    p {
-      line-height: 2em;
-      margin: 0;
-      background: $COLOR_DARK_BLUE;
-      font-size: 100%;
+    h3 {
+      color: $COLOR_DARK_BLUE;
+      padding: 15px 10px 0 10px;
     }
     #virtual-fields {
         input, select, textarea {
             border-radius: 3px;
+            margin-top:10px;
             padding: 0px;
         }
-        margin: 4px 0;
     }
     input[type=submit] {
       @include link-button;
+      width: 88%;
       background: $COLOR_BLUE;
       padding: 9px 10.83333%;
+      margin-top: 0;
+      margin-bottom: 15px;
       border: 0;
       white-space: normal;
-      font-size:18px;
+      font-size: 18px;
       &:hover {
                 text-decoration: none;
                 background-color: $COLOR_DARK_GREEN;
@@ -51,14 +51,17 @@
     }
     form {
         font-size: 100%;
+        margin: 5px 20px;
+    }
+    #signup_error {
+        background: $COLOR_ORANGE;
+        color: $COLOR_WHITE;
+        font-size: 85%;
     }
   }
 #xsection1 {
   padding: 30px 0;
   display: inline-block;
-  p{
-    font-size:110%
-  }
   ul li {
     padding-left: 10px;
     margin: 1em 0 0;
@@ -82,11 +85,26 @@
     padding-bottom: 40px;
 }
 #xtop {
-    padding-top: 50px;
+    padding-top: 30px;
+    padding-left: 10px;
     text-align: center;
-    p{
-      font-size:110%;
+    line-height: 1.5;
+    p {
+      font-size: 110%;
     }
+    ul li {
+      display: inline;
+      margin-left: 10px;
+    }
+}
+.break {
+    margin-top: 30px;
+}
+.no-break {
+    margin-top: 10px;
+}
+.boldtop {
+    font-size: 170%;
 }
 #xbadges {
     img {
@@ -189,23 +207,27 @@
 .xquoter-right {
     text-align: right;
 }
-.xemail, .xpass {
-    width: 35%;
-    display: inline-block;
-    margin-top: 15px;
-    margin-bottom: 10px;
-    padding: 10px !important;
-    font-size: 14px;
+
+#virtual-acc-form {
+    input, select {
+        width: 80%;
+        display: inline-block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 10px !important;
+        font-size: 14px;
+    }
+    #residence {
+        height: 39px;
+        line-height: 39px;
+        width: 88%;
+        vertical-align: middle;
+    }
 }
-.xemail {
-    margin-right: 20px;
-}
-.xpass {
-    margin-left: 20px;
-}
+
 .xtopcta {
     display: inline-block;
-    width: 35%;
+    width: 50%;
     margin-top: 5px;
     margin-bottom: 15px;
     padding: 15px!important;
@@ -219,21 +241,48 @@
 }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 767px) {
     .home2-content{
         #xtop {
             padding-top: 30px;
+            padding-left: 0;
+            line-height: 1;
+            ul li {
+              margin-left: 5px;
+            }
+        }
+        .break {
+          margin-top: 20px;
+          margin-bottom: 5px;
+        }
+        .no-break {
+          margin-top: 0px;
         }
         .xhead2 {
             margin-top: 30px;
         }
-        .xemail {
+        #open-account {
+            margin-left: 0;
+            margin-top: 20px;
+            h3 {
+                background: $COLOR_DARK_BLUE;
+                color: $COLOR_WHITE;
+                padding: 10px;
+            }
+            input[type=submit] {
+                width: 86% !important;
+            }
+            form {
+                margin: 5px 5px;
+            }
+        }
+        .virtual-acc-left {
             width: 80% !important;
             margin-right: 0;
         }
-        .xpass {
-            width: 80% !important;
-            margin-left: 0;
+        #residence {
+            width: 86% !important;
+            margin: 0;
         }
         .xtopcta {
             width: 80%;
@@ -249,7 +298,7 @@
             .xreal {
                 margin-right: 0px;
                 span {
-                    font-weight: 700;
+                    font-weight: 300;
                     padding: 20px 20px;
                     width: 60%;
                     margin: 10px 0;
@@ -257,14 +306,10 @@
             }
             .xvirtual span {
                 background-color: $COLOR_BLUE;
-                font-weight: 700;
+                font-weight: 300;
                 padding: 20px 20px;
                 width: 60%;
             }
         }
     }
 }
-
-
-
-
