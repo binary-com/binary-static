@@ -45,7 +45,8 @@
               %h1= l('Trade your way')
               %p= l('Why limit yourself? Whatever your market view, [_1] allows you to put your strategy to work and profit from your predictions.', stash->{website_name})
             .grd-grid-12
-              %img.responsive#new-trader-icon{:src => url_for('images/pages/tour/trade-tutorial_1.svg')}
+              %img.responsive#new-trader-icon.ja-hide{:src => url_for('images/pages/tour/trade-tutorial_1.svg')}
+              %img.responsive#new-trader-icon.hidden.ja-show{:src => url_for('images/pages/tour/tour-jp.svg')}
             .grd-grid-12
               %ul.checked
                 %li= l('Choose a payout from $1 to $100,000.')

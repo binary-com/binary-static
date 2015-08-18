@@ -30,7 +30,11 @@ var trading_times_init = function() {
                   success: function(html){
                             trading_times.replaceWith(html);
                             trading_times = $("#trading-tabs");
-                            trading_times.tabs();
+			    if (page.language() === 'JA') {	
+                                trading_times.tabs("disable");
+			    } else {
+				trading_times.tabs();
+			    }
                             page.url.update(url);
                          },
                   error: function(xhr, textStatus, errorThrown){

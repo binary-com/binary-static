@@ -7,7 +7,7 @@
       - my ($route, $text) = ($item->{route}, $item->{text});
       - my $class = (index(url_for, $route) != -1) ? 'active' : '';
       %li.$class
-        %a{:href=>url_for($route), :class => 'pjaxload'}= $text
+        %a.smaller-font{:href=>url_for($route), :class => 'pjaxload'}= $text
     - }
     %li
-      %a{:href=>url_for('trade.cgi'), :class => 'pjaxload'}= l('Trade')
+      %a.smaller-font{:href=>url_for('trade.cgi'), :class => 'pjaxload'}= l('Trade')

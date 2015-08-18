@@ -7,8 +7,9 @@
     %p= l('The barrier of a binary option trade is the price target you set for the underlying. You can choose trades that stay below or go above a price target, or stay between two targets.')
     %h2= l('Binary option')
     %p= l('A binary option is a contract purchased by a trader, which pays a pre-determined amount if their prediction is correct.')
-    %h2= l('Commodities')
-    %p= l('Commodities are resources that are grown or extracted from the ground, such as silver, gold and oil. On [_1], they are priced in US dollars.', stash->{website_name})
+    .ja-hide
+      %h2= l('Commodities')
+      %p= l('Commodities are resources that are grown or extracted from the ground, such as silver, gold and oil. On [_1], they are priced in US dollars.', stash->{website_name})
     %h2= l('Contract period')
     %p= l('The contract period is the timeframe of a trade. It is also called the duration.')
     %h2= l('Derivative')
@@ -43,8 +44,9 @@
     %p= l('Pip stands for ‘percentage in point’ which is generally the fourth decimal place (i.e. 0.0001).')
     %h2= l('Profit')
     %p= l('The profit is the difference between the purchase price (the stake) and the payout on a winning trade.')
-    %h2= l('Random Indices')
-    %p= l('The random index is a stock index whose price is simulated using random numbers. Unlike real market stock indices whose prices depend on the prices of the individual stocks listed on an Exchange, the random stock index only relies on factors like volatility, previous index price (previous simulated price) and a random number to determine the price of the index. Due to the use of random numbers, the price (or direction) of the index cannot be predicted with certainty and thus behaves like a real market index. When the index is appended with a number, the number is the percentage volatility used in calculating the index price. For instance, the Random Index 25 uses a volatility of 25% in the calculation of the index price. The index started at 1000 on 16 May 2004.')
+    .ja-hide
+      %h2= l('Random Indices')
+      %p= l('The random index is a stock index whose price is simulated using random numbers. Unlike real market stock indices whose prices depend on the prices of the individual stocks listed on an Exchange, the random stock index only relies on factors like volatility, previous index price (previous simulated price) and a random number to determine the price of the index. Due to the use of random numbers, the price (or direction) of the index cannot be predicted with certainty and thus behaves like a real market index. When the index is appended with a number, the number is the percentage volatility used in calculating the index price. For instance, the Random Index 25 uses a volatility of 25% in the calculation of the index price. The index started at 1000 on 16 May 2004.')
     %h2= l('Resale price')
     %p= l('The resale price indicates a contract\'s current market price. Resale prices are on a best-efforts basis and may not be available at all times after purchase. See \'Sell option\' for more details on selling contracts before expiry.')
     %h2= l('Return')

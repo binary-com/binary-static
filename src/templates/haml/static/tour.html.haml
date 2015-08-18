@@ -7,7 +7,8 @@
         %h1= l('First, define your position...')
         %p= l('When you start trading with Binary.com, you’ll be directed to the trading screen, where you set your trading parameters, and choose what you want to trade, how and when.')
         %a.pjaxload.button.ja-hide{:href => url_for('trade.cgi')}
-          %img.responsive#new-trader-icon{:src => url_for('images/pages/tour/trade-tutorial_1.svg')}
+          %img.responsive#new-trader-icon.ja-hide{:src => url_for('images/pages/tour/trade-tutorial_1.svg')}
+        %img.responsive#new-trader-icon.hidden.ja-show{:src => url_for('images/pages/tour/tour-jp.svg')}
 
   .section
     .section-content
@@ -49,7 +50,7 @@
         %h1= l('Study our live charts')
         %p= l('Frame your trading strategy using [_1]\'s powerful live charts. Instantly view the trading patterns of forex, indices, commodities and stocks.', stash->{website_name})
         %a.pjaxload.button{:href => url_for('/charting/livechart')}
-          %img.responsive#new-trader-icon{:src => url_for('images/pages/tour/live-chart-snapshot.svg')}
+          %img.responsive#new-trader-icon{:src => url_for('images/pages/tour/live-chart-jp-small.png')}
 
   .section
     .section-content
