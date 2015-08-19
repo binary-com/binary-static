@@ -71,6 +71,7 @@ var User = function() {
 
 var Client = function() {
     this.loginid =  $.cookie('loginid');
+    this.residence =  $.cookie('residence');
     this.is_logged_in = false;
     this.is_real = false;
     if(this.loginid === null || typeof this.loginid === "undefined") {
@@ -88,7 +89,10 @@ var Client = function() {
     if(dl_info.length > 0) {
         for (var i=0;i<dl_info.length;i++) {
             if(dl_info[i].event == 'log_in') {
-                SessionStore.set('client_info', this.loginid + ':' + dl_info[i].params.bom_firstname + ':'  + dl_info[i].params.bom_lastname + ':' + dl_info[i].params.bom_email + ':' + dl_info[i].params.bom_phone);
+                SessionStore.set('client_info',
+                    this.loginid + ':' + dl_info[i].params.bom_firstname + ':'  + dl_info[i].params.bom_lastname +
+                    ':' + dl_info[i].params.bom_email + ':' + dl_info[i].params.bom_phone
+                );
             }
         }
     }
@@ -648,12 +652,12 @@ Contents.prototype = {
                 $('#topbar').addClass('dark-blue');
                 $('#topbar').removeClass('orange');
 
-                if (!/^Q?CR/.test(this.client.loginid)) {
+                if (!/^CR/.test(this.client.loginid)) {
                     $('#payment-agent-section').addClass('invisible');
                     $('#payment-agent-section').hide();
                 }
 
-                if (!/^Q?MF|MLT/.test(this.client.loginid)) {
+                if (!/^MF|MLT/.test(this.client.loginid)) {
                     $('#account-transfer-section').addClass('invisible');
                     $('#account-transfer-section').hide();
                 }
@@ -696,10 +700,26 @@ Contents.prototype = {
             var loginid_array = this.user.loginid_array;
 
             if (!this.client.is_real) {
+                var show_upgrade = true;
                 for (var i=0;i<loginid_array.length;i++) {
                     if (loginid_array[i].real) {
-                        $('#virtual-upgrade-link').addClass('invisible');
+                        show_upgrade = false;
                         break;
+                    }
+                }
+                if (!show_upgrade) {
+                    $('#virtual-upgrade-link').addClass('invisible');
+                    $('#vr-financial-upgrade-link').addClass('invisible');
+                } else {
+                    var residence = this.client.residence;
+                    var EU_random_restricted_countries = new RegExp(page.settings.get('EU_random_restricted_countries'));
+
+                    if (residence.length > 0 && EU_random_restricted_countries.test(residence)) {
+                        $('#virtual-upgrade-link').addClass('invisible');
+                        $('#vr-financial-upgrade-link').removeClass('invisible');
+                    } else {
+                        $('#virtual-upgrade-link').removeClass('invisible');
+                        $('#vr-financial-upgrade-link').addClass('invisible');
                     }
                 }
             } else {
