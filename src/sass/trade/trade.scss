@@ -167,13 +167,6 @@ ul[role=segmented] {
     left: 45%;
 }
 
-@keyframes spin
-{
-    from { transform: rotate(0deg); opacity: 0.2; }
-    50%  { transform: rotate(180deg); opacity: 1; }
-    to   { transform: rotate(360deg); opacity: 0.2; }
-}
-
 @media all and (max-width: 640px) {
     ul[role=segmented] {
         flex-direction: column;
