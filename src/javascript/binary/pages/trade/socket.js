@@ -14,7 +14,8 @@ var TradeSocket = (function () {
     'use strict';
 
     var tradeSocket,
-        socketUrl = "wss://ws.binary.com/websockets/contracts",
+        // socketUrl = "wss://ws.binary.com/websockets/contracts",
+        socketUrl = "wss://www.binaryqa09.com/websockets/contracts",
         bufferedSends = [];
 
     var status = function () {
@@ -78,10 +79,22 @@ var TradeSocket = (function () {
         }
     };
 
+    var getContracts = function(underlying){
+        var params = { contracts_for: { symbol: underlying } }
+        send(params);
+    }
+
+    var getOfferings = function(){
+        var params = {offerings: {contracts: 0}}
+        send(params);
+    }
+
     return {
         init: init,
         send: send,
         close: close,
+        getContracts: getContracts,
+        getOfferings: getOfferings,
         socket: function () { return tradeSocket; }
     };
 

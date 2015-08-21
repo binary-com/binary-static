@@ -61,7 +61,7 @@ var contractFormEventChange = function (formName) {
     sessionStorage.setItem('underlying', underlying);
 
     // get the contract details based on underlying as formName has changed
-    TradeSocket.send({ contracts_for: underlying });
+    TradeSocket.getContracts(underlying);
 };
 
 /*
@@ -79,7 +79,7 @@ if (underlyingElement) {
 
 var underlyingEventChange = function (underlying) {
     'use strict';
-    TradeSocket.send({ contracts_for: underlying });
+    TradeSocket.getContracts(underlying);
 };
 
 /*
