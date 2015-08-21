@@ -2,12 +2,7 @@
     from {transform: rotate(0deg);}
     to {transform: rotate(360deg);}
 }
-@-webkit-keyframes spinning {
-    from {transform: rotate(0deg);}
-    to {transform: rotate(360deg);}
-}
 .spinner {
-    -webkit-animation: spinning .2s * 5 infinite linear;
     animation: spinning .2s * 5 infinite linear;
 }
 
