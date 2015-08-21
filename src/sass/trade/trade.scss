@@ -32,7 +32,6 @@
 ul[role=segmented] {
     box-shadow: inset 0px 0px 0px 1px rgba($COLOR_BLUE, 0.2);
     background-color: $COLOR_LIGHT_GRAY;
-    border-radius: $BORDER_RADIUS;
     color: $COLOR_BLUE;
     display: flex;
     overflow: hidden;
@@ -40,13 +39,12 @@ ul[role=segmented] {
     width: 100%;
     li {
         flex: 1;
-        text-align: center;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         cursor: pointer;
         margin: 0;
         text-transform: capitalize;
+        padding: 4px 0 4px 5px;
         &.active {
             color: white;
             background-color: $COLOR_BLUE;
@@ -170,6 +168,16 @@ ul[role=segmented] {
 @media all and (max-width: 640px) {
     ul[role=segmented] {
         flex-direction: column;
+        li:not(.active) {
+            display: none;
+        }
+        li.active:after {
+            content: '\25BC';
+            font-size: 50%;
+            position: absolute;
+            right: 0;
+            margin-right: 10px;
+        }
     }
     #contract_container.row {
         flex-direction: column;
