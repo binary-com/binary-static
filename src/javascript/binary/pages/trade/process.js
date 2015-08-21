@@ -14,7 +14,11 @@ var processMarketOfferings = function () {
 
     // display markets, submarket, underlyings corresponding to market selected
     displayListElements('contract_market_nav', Offerings.markets().sort(compareMarkets), market);
+    // change the market placeholder content as per current market (used for mobile menu)
+    setMarketPlaceholderContent(market);
     displayListElements('contract_form_name_nav', Object.keys(Offerings.contractForms()).sort(compareContractCategory), formname);
+    // change the form placeholder content as per current form (used for mobile menu)
+    setFormPlaceholderContent(formname);
     displayOptions('submarket',Offerings.submarkets());
     displayUnderlyings();
 
