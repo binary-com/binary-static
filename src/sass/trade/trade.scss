@@ -2,12 +2,7 @@
     from {transform: rotate(0deg);}
     to {transform: rotate(360deg);}
 }
-@-webkit-keyframes spinning {
-    from {transform: rotate(0deg);}
-    to {transform: rotate(360deg);}
-}
 .spinner {
-    -webkit-animation: spinning .2s * 5 infinite linear;
     animation: spinning .2s * 5 infinite linear;
 }
 
@@ -170,13 +165,6 @@ ul[role=segmented] {
     position: absolute;
     top: 45%;
     left: 45%;
-}
-
-@keyframes spin
-{
-    from { transform: rotate(0deg); opacity: 0.2; }
-    50%  { transform: rotate(180deg); opacity: 1; }
-    to   { transform: rotate(360deg); opacity: 0.2; }
 }
 
 @media all and (max-width: 640px) {
