@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/binary-com/binary-static",
   "devDependencies": {
+    "autoprefixer-core": "^5.2.1",
     "grunt": "^0.4.5",
     "grunt-bump": "^0.0.16",
     "grunt-cachebuster": "^0.1.5",
@@ -36,6 +37,7 @@
     "grunt-gh-pages": "^0.9.1",
     "grunt-json-merge": "^0.2.2",
     "grunt-notify": "^0.3.1",
+    "grunt-postcss": "^0.5.5",
     "grunt-shell": "^0.7.0",
     "grunt-uncss": "^0.3.5",
     "load-grunt-config": "^0.13.1",
