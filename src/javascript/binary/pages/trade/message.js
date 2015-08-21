@@ -17,11 +17,11 @@ var Message = (function () {
                 processMarketOfferings();
             } else if (type === 'contracts_for') {
                 processContractFormOfferings(response);
-                hideOverlayContainer();
             } else if (type === 'payout_currencies') {
                 sessionStorage.setItem('currencies', msg.data);
                 displayCurrencies();
             } else if (type === 'proposal') {
+                hideOverlayContainer();
                 Price.display(response, Contract.contractType()[Offerings.form()]);
                 hidePriceLoadingIcon();
             } else if (type === 'open_receipt') {
