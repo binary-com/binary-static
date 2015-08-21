@@ -29,6 +29,37 @@
     flex-direction: column;
 }
 
+.nav_placeholder {
+    display: none;
+    overflow: hidden;
+    width: 100%;
+    background-color: $COLOR_BLUE;
+    padding: 3px 0 3px 10px;
+    margin: 10px 0;
+    color: $COLOR_WHITE;
+    text-transform: capitalize;
+}
+
+.nav_placeholder:after {
+    content: '\25BC';
+    font-size: 50%;
+    right: 0;
+    position:absolute;
+    margin-right: 10px;
+}
+
+input[type=checkbox].show_menu {
+    display: none;
+}
+
+input[type=checkbox]#market_show_menu:checked ~ #contract_market_nav {
+    display: flex;
+}
+
+input[type=checkbox]#contract_form_show_menu:checked ~ #contract_form_name_nav {
+    display: flex;
+}
+
 ul[role=segmented] {
     box-shadow: inset 0px 0px 0px 1px rgba($COLOR_BLUE, 0.2);
     background-color: $COLOR_LIGHT_GRAY;
@@ -44,7 +75,8 @@ ul[role=segmented] {
         cursor: pointer;
         margin: 0;
         text-transform: capitalize;
-        padding: 4px 0 4px 5px;
+        padding: 3px 0;
+        text-align: center;
         &.active {
             color: white;
             background-color: $COLOR_BLUE;
@@ -168,16 +200,10 @@ ul[role=segmented] {
 @media all and (max-width: 640px) {
     ul[role=segmented] {
         flex-direction: column;
-        li:not(.active) {
-            display: none;
-        }
-        li.active:after {
-            content: '\25BC';
-            font-size: 50%;
-            position: absolute;
-            right: 0;
-            margin-right: 10px;
-        }
+        display: none;
+    }
+    .nav_placeholder {
+        display: flex;
     }
     #contract_container.row {
         flex-direction: column;
