@@ -261,3 +261,38 @@ var displayPriceMovement = function (element, oldValue, currentValue) {
         element.classList.add('price_moved_down');
     }
 };
+
+/*
+ * function to toggle active class of menu
+ */
+var toggleMobileNavMenu = function (nav, eventElement) {
+    var liElements = nav.getElementsByTagName("li");
+    var classes = eventElement.classList;
+
+    if (!classes.contains('active')) {
+        for (var i = 0, len = liElements.length; i < len; i++){
+            liElements[i].classList.remove('active');
+        }
+        classes.add('active')
+    }
+};
+
+/*
+ * function to set placeholder text based on current market, used for mobile menu
+ */
+var setMarketPlaceholderContent = function (name) {
+    var marketPlaceholder = document.getElementById('market_nav_placeholder');
+    if (marketPlaceholder) {
+        marketPlaceholder.textContent = name || sessionStorage.getItem('market');
+    }
+};
+
+/*
+ * function to set placeholder text based on current form, used for mobile menu
+ */
+var setFormPlaceholderContent = function (name) {
+    var formPlaceholder = document.getElementById('contract_form_nav_placeholder');
+    if (formPlaceholder) {
+        formPlaceholder.textContent = name || sessionStorage.getItem('formname');
+    }
+};
