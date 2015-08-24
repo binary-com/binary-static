@@ -29,8 +29,8 @@ var processMarketOfferings = function () {
     var underlying = document.getElementById('underlying').value;
     sessionStorage.setItem('underlying', underlying);
 
-    // get the contract details based on underlying as market has changed
-    TradeSocket.send({ contracts_for: underlying });
+    // get the contract details based on underlying as market has changed   
+    TradeSocket.getContracts(underlying);
 };
 
 /*
