@@ -30,7 +30,7 @@ var processMarketOfferings = function () {
     sessionStorage.setItem('underlying', underlying);
 
     // get the contract details based on underlying as market has changed
-    TradeSocket.send({ contracts_for: underlying });
+    Contract.getContracts(underlying);
 };
 
 /*

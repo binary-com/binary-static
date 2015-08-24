@@ -25,6 +25,14 @@
                     </select>
                 </div>
             </div>
+            <div class="row" id="period_row">
+                <div class="col form_label">
+                    <label for="period" id="period_label">Contract period:</label>
+                </div>
+                <div class="big-col">
+                    <select id="period"></select>
+                </div>
+            </div>
             <div class="row" id="date_start_row">
                 <div class="col form_label">
                     Start time:
@@ -33,7 +41,7 @@
                     <select id="date_start"></select>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" id="duration_row">
                 <div class="col form_label">
                     <select id="expiry_type"></select>
                 </div>
@@ -68,6 +76,14 @@
                     <span id="spot"></span>
                 </div>
             </div>
+            <div class="row barrier_class" id="jbarrier_row">
+                <div class="col form_label">
+                    <label for="jbarrier" id="jbarrier_label">Exercise price:</label>
+                </div>
+                <div class="big-col">
+                    <select id="jbarrier" name="H"></select>
+                </div>
+            </div>
             <div class="row barrier_class" id="barrier_row">
                 <div class="col form_label">
                     <label for="H" id="barrier_label">Barrier:</label>
@@ -76,12 +92,28 @@
                     <input id="barrier" type="text" name="H"/>
                 </div>
             </div>
+            <div class="row barrier_class" id="jhigh_barrier_row">
+                <div class="col form_label">
+                    <label for="jbarrier_high" id="jbarrier_high_label">High barrier:</label>
+                </div>
+                <div class="big-col">
+                    <select id="jbarrier_high" type="text" name="H"></select>
+                </div>
+            </div>
             <div class="row barrier_class" id="high_barrier_row">
                 <div class="col form_label">
                     <label for="H" id="barrier_high_label">High barrier:</label>
                 </div>
                 <div class="big-col">
                     <input id="barrier_high" type="text" name="H"/>
+                </div>
+            </div>
+            <div class="row barrier_class" id="jlow_barrier_row">
+                <div class="col form_label">
+                    <label for="jbarrier_low" id="jbarrier_low_label">Low barrier:</label>
+                </div>
+                <div class="big-col">
+                    <select id="jbarrier_low" type="text" name="H"></select>
                 </div>
             </div>
             <div class="row barrier_class" id="low_barrier_row">

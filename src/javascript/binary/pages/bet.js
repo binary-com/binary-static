@@ -145,7 +145,7 @@ pjax_config_page('trading', function () {
             if (sessionStorage.getItem('offerings')) {
                 processMarketOfferings();
             } else {
-                TradeSocket.send({offerings: {contracts: 0}});
+                Offerings.getOfferings();
             }
         },
         onUnload: function() {

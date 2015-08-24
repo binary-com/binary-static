@@ -10,8 +10,13 @@
 var displayDurations = function (startType) {
     'use strict';
 
+    var durations = Contract.durations();
+    if(durations===false){
+        document.getElementById('duration_row').style.display = 'none';        
+        return false;
+    }
+
     var target= document.getElementById('duration_units'),
-        durations = Contract.durations(),
         formName = Offerings.form(),
         barrierCategory = Offerings.barrier(),
         fragment =  document.createDocumentFragment(), durationContainer = {};
