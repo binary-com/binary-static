@@ -38,7 +38,8 @@
       %h1.center= l('The easiest way to get started in the financial markets')
       %p.center= l('Trade in the world\'s financial markets in a simple, user-friendly platform.')
       .grd-grid-7.grd-grid-mobile-12.grd-parent
-        %img.responsive{:alt => "", :src => url_for("images/pages/tour/trade-tutorial_1.svg")}
+        %img.responsive.ja-hide{:alt => "", :src => url_for("images/pages/tour/trade-tutorial_1.svg")}
+        %img.responsive.hidden.ja-show{:alt => "", :src => url_for("images/pages/tour/tour-jp.svg")}
       .grd-grid-5.grd-grid-mobile-12.grd-parent
         %ul
           %li!= l('<span>All markets:</span> currencies, stock indices, and commodities.')

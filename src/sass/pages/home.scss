@@ -43,6 +43,7 @@
       border: 0;
       white-space: normal;
       font-size:18px;
+      -webkit-appearance:none;
       &:hover {
                 text-decoration: none;
                 background-color: $COLOR_DARK_GREEN;

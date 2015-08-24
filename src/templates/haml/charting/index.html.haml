@@ -6,7 +6,7 @@
   %h1= l('Charting')
   %p= l('[_1] provides a variety of charts to help you determine what markets to trade on. Try them out.',stash->{website_name})
 .grd-grid-6.grd-grid-mobile-12.grd-parent
-  .grd-grid-6.grd-parent
+  .grd-grid-6.grd-parent.ja-hide
     .grd-grid-8.grd-with-padding
       %a.pjaxload{:href => url_for('/charting/application')}
         %img.responsive.chart-type-icon{:src => url_for('images/pages/charting/interactive-charts.svg')}
@@ -22,7 +22,7 @@
       %h4
         %a.pjaxload{:href => url_for('/charting/livechart')}= l('Live Charts')
       %p= l('This is our \'next generation\' charting tool.')
-.grd-grid-6.grd-grid-mobile-12.grd-parent
+.grd-grid-6.grd-grid-mobile-12.grd-parent.ja-hide
   .grd-grid-6.grd-parent
     .grd-grid-8.grd-with-padding
       %a.pjaxload{:href => '//highcharts.binary.com', :target => '_blank'}

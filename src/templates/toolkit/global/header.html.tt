@@ -41,18 +41,18 @@
                 </div>
                 <div class='grd-grid-6 grd-hide-mobile grd-hide-phablet'>
                     <div id='main-navigation'>
-                        <ul id="menu-top">
+                        <ul class="smaller-font" id="menu-top">
                             <li>
-                                <a class="pjaxload" href="[% request.url_for('why-us') %]"[% target %]>[% l("Why Us?") %]</a>
+                                <a class="smaller-font pjaxload" href="[% request.url_for('why-us') %]"[% target %]>[% l("Why Us?") %]</a>
                             </li>
                             <li>
-                                <a class="pjaxload" href="[% request.url_for('get-started') %]"[% target %]>[% l("Get Started") %]</a>
+                                <a class="smaller-font pjaxload" href="[% request.url_for('get-started') %]"[% target %]>[% l("Get Started") %]</a>
                             </li>
                             <li>
-                                <a class="pjaxload" href="[% request.url_for('tour') %]"[% target %]>[% l("Tour") %]</a>
+                                <a class="smaller-font pjaxload" href="[% request.url_for('tour') %]"[% target %]>[% l("Tour") %]</a>
                             </li>
                             <li>
-                                <a class="pjaxload" href="[% request.url_for('trade.cgi') %]"[% target %]>[% l("Trade") %]</a>
+                                <a class="smaller-font pjaxload" href="[% request.url_for('trade.cgi') %]"[% target %]>[% l("Trade") %]</a>
                             </li>
                         </ul>
                     </div>

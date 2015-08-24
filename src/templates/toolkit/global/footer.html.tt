@@ -128,22 +128,22 @@
                 <div class="grd-grid-4">
                     <h1>[% l('Market Data') %]</h1>
                     <ul>
-                        <li>
+                        <li class="ja-hide">
                             <a class="pjaxload" href="[% request.url_for('/charting/application') %]"[% IF target %] target="[% target %]"[% END %]>[% l('Chart Application') %]</a>
-                        </li>
-                        <li>
-                            <a class="pjaxload" href="//highcharts.binary.com"[% IF target %] target="[%
-                            target %]"[% END %]>[% l('HighCharts') %]</a>
                         </li>
                         <li>
                             <a class="pjaxload" href="[% request.url_for('/charting/livechart') %]"[% IF target %] target="[%
                             target %]"[% END %]>[% l('Live Charts') %]</a>
                         </li>
+                        <li class="ja-hide">
+                            <a class="pjaxload" href="//highcharts.binary.com"[% IF target %] target="[%
+                            target %]"[% END %]>[% l('HighCharts') %]</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="grd-grid-4">
-                    <h1>[% l('Partner With Us') %]</h1>
-                    <ul class="partner">
+                    <h1 class="ja-hide">[% l('Partner With Us') %]</h1>
+                    <ul class="ja-hide partner">
                         <li>
                             <a class="pjaxload" href="[% request.url_for('/partners') %]"[% IF target %] target="[% target %]"[% END %]><img id="iom_icon_footer" class="responsive" src="[% request.url_for('images/pages/footer/partner-icon.svg') %]"/></a>
                         </li>
@@ -179,7 +179,7 @@
                 <div id="regulatory-text" class="grd-grid-9 grd-grid-mobile-12 grd-grid-phablet-7">
                     [% l("This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='[_1]' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='[_2]' target='_blank'>view license</a>. This website's services are not made available in the USA, Japan or Hong Kong, or to persons under age 18.", "https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172", "https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495") %]
                 </div>
-                <div class="grd-grid-3 grd-grid-mobile-12 grd-centered-mobile" id="social-networks">
+                <div class="ja-hide grd-grid-3 grd-grid-mobile-12 grd-centered-mobile" id="social-networks">
                     [% INCLUDE global/social.html.tt %]
                 </div>
             </div>
@@ -194,7 +194,7 @@
         <div class="grd-container grd-default-container">
             <div class="grd-grid-12">
                 <p class="gambling">
-                    [% l('Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about <a href="[_1]" class="pjaxload">Responsible Trading</a>.', request.url_for('responsible-trading')) %]
+                    [% l('Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. <span class="ja-hide">Read about <a href="[_1]" class="pjaxload">Responsible Trading</a>.</span>', request.url_for('responsible-trading')) %]
                 </p>
             </div>
         </div>

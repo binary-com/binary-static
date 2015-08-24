@@ -35,7 +35,7 @@ var remove_highlight_chart_duration = function () {
 var build_markets_select = function() {
     var market_select = $("#market_select");
     markets.each(function() {
-        market_select.append("<option id='opt_" + this.name + "' value='" + this.name + "'>" + this.translated_display_name() + "</option>");
+        market_select.append("<option class='ja-hide' id='opt_" + this.name + "' value='" + this.name + "'>" + this.translated_display_name() + "</option>");
     });
 
     $("#market_select").val(liveChartConfig.market.name);

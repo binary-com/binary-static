@@ -5,7 +5,7 @@
 <div id="asset-tabs" class='has-tabs'>
     <ul>
         [% FOREACH market IN fullinfo %]
-        <li>
+        <li class="ja-hide">
             <a href="#[% market.tabid %]">[% market.name %]</a>
         </li>
         [% END %]

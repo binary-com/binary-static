@@ -22,13 +22,13 @@
           = l('How to trade binaries?')
       .section-info
         = l('Follow a simple step-by-step guide to binary trading.')
-    .section
-      %a.pjaxload{:href => url_for('/get-started/beginners-faq')}
-        %div{:id => 'beginners-faq'}
+    .section.ja-hide
+      %a.pjaxload{:href => url_for('/get-started/random-markets')}
+        %div{:id => 'random-trades'}
         .section-header
-          = l("FAQ")
+          = l('How to trade the random markets?')
       .section-info
-        = l('Read the answers to some common questions.')
+        = l('Discover our indices generated from random numbers.')
     .section
       %a.pjaxload{:href => url_for('/get-started/glossary')}
         %div{:id => 'glossary'}
@@ -51,13 +51,13 @@
           = l('Benefits of trading binaries')
       .section-info
         = l('Learn about the simplicity, transparency and flexibility of binary trading.')
-    .section.ja-hide
-      %a.pjaxload{:href => url_for('/get-started/random-markets')}
-        %div{:id => 'random-trades'}
+    .section
+      %a.pjaxload{:href => url_for('/get-started/beginners-faq')}
+        %div{:id => 'beginners-faq'}
         .section-header
-          = l('How to trade the random markets?')
+          = l("FAQ")
       .section-info
-        = l('Discover our indices generated from random numbers.')
+        = l('Read the answers to some common questions.')
     .section.ja-hide
       %a.pjaxload{:href => url_for('/smart-indices')}
         %div{:id => 'smart-indices'}
