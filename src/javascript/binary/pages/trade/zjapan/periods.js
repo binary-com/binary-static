@@ -46,13 +46,13 @@ var Periods = (function(){
 			var period = periods[p];
 			var option, content, text;
 			if(period.duration.match(/^\d+h$/)){
-				var start = new Date(period.date_start.epoch*1000)
-				var expiry = new Date(period.date_expiry.epoch*1000)
-				var s_hours = start.getHours() < 10 ? '0'+start.getHours() : start.getHours();
-				var s_min = start.getMinutes() < 10 ? '0'+start.getMinutes() : start.getMinutes();
+				var match1 = period.date_start.date.match(/^\d{4}-\d{2}-\d{2}\s+(\d{2}):(\d{2}):\d{2}$/)
+				var s_hours = match1[1];
+				var s_min = match1[2];
 
-				var e_hours = expiry.getHours() < 10 ? '0'+expiry.getHours() : expiry.getHours();
-				var e_min = expiry.getMinutes() < 10 ? '0'+expiry.getMinutes() : expiry.getMinutes();
+				var match2 = period.date_expiry.date.match(/^\d{4}-\d{2}-\d{2}\s+(\d{2}):(\d{2}):\d{2}$/)
+				var e_hours = match2[1];
+				var e_min = match2[2];
 
 				text = s_hours+":"+s_min+' - '+e_hours+":"+e_min+' ('+period.duration+')'
 			}
