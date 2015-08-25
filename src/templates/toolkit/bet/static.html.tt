@@ -1,11 +1,17 @@
-<div class="row" id="contract_market_container">
+<div id="contract_market_container">
+    <label for="market_show_menu" class="nav_placeholder" id="market_nav_placeholder"></label>
+    <input type="checkbox" class="show_menu" id="market_show_menu" role="button">
     <ul class="nav" id="contract_market_nav" role="segmented">
     </ul>
 </div>
-<div class="row" id="contract_market_form_container">
+
+<div id="contract_market_form_container">
+    <label for="contract_form_show_menu" class="nav_placeholder" id="contract_form_nav_placeholder"></label>
+    <input type="checkbox" class="show_menu" id="contract_form_show_menu" role="button">
     <ul class="nav" id="contract_form_name_nav" role="segmented">
     </ul>
 </div>
+
 <div class="row" id="contract_container">
     <div id="contract_form_container" class="big-col">
         <div id="contract_form_content">
@@ -117,7 +123,7 @@
             <div class="col price_container" id="price_container_top">
                 <div class="description_container" id="description_container_top">
                 </div>
-                <div class="contract_purchase center-aligned" id="contract_purchase_top">
+                <div class="contract_purchase" id="contract_purchase_top">
                     <span class="button">
                         <button class="purchase_button" id="purchase_button_top" value="purchase">Purchase</button>
                     </span>
@@ -126,7 +132,7 @@
             <div class="col price_container" id="price_container_bottom">
                 <div class="description_container" id="description_container_bottom">
                 </div>
-                <div class="contract_purchase center-aligned" id="contract_purchase_bottom">
+                <div class="contract_purchase" id="contract_purchase_bottom">
                     <span class="button">
                         <button class="purchase_button" id="purchase_button_bottom" value="purchase">Purchase</button>
                     </span>

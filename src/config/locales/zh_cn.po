@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: 1228\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-08-19 08:16+0200\n"
-"Last-Translator: Xiaojing <cai.cxj@gmail.com>\n"
+"PO-Revision-Date: 2015-08-24 06:09+0200\n"
+"Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
 "MIME-Version: 1.0\n"
@@ -30,19 +30,19 @@ msgstr "“二元”或“数字”期权是支付已预定和固定金额的期
 msgid "\"I work with a number of affiliate companies, and it is by far, the friendliest and most helpful that I've found. They go out of their way to provide their affiliates with all the tools, advice and support they need in order to succeed. To top it all off, they offer some of the most handsome rebates in the industry.\" - <strong>Vinod Gorasia, Marketing Manager, Agora Lifestyles</strong>."
 msgstr "“我与多家联盟公司合作，迄今为止，它是我所发现的最友好最有帮助的联盟网站。他们竭力为联盟提供成功所需的所有工具、建议和支持。最重要的是，他们提供业内最佳的回扣。”- <strong>Agora Lifestyles 公司市场经理 Vinod Gorasia </strong>表示。"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3644
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3639
 msgid "$100,000 - $250,000"
 msgstr "$100,000 - $250,000"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3626
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3621
 msgid "$100,000 - $500,000"
 msgstr "$100,000 - $500,000"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3622
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3617
 msgid "$25,000 - $100,000"
 msgstr "$25,000 - $100,000"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3648
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3643
 msgid "$250,000 - $1,000,000"
 msgstr "$250,000 - $1,000,000"
 
@@ -186,7 +186,7 @@ msgstr "通过 %1，您可以在网站上 self-exclude 或 <a href=\"%2\">为自
 
 #. ($currency)
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:118
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1023
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1030
 msgid "%1 transactions may not be performed with this account."
 msgstr "此账户可能无法执行%1交易。"
 
@@ -288,15 +288,15 @@ msgstr "水电煤账单或银行月结单扫描件（日期不得超过3个月�
 msgid "- A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth."
 msgstr "显示您名字和出生日期的护照、驾照（临时或永久）或身份证的扫描件。"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3508
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3503
 msgid "0-1 year"
 msgstr "0-1 年"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3526
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3521
 msgid "0-5 transactions in the past 12 months"
 msgstr "过去12个月内0-5次交易"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3512
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3507
 msgid "1-2 years"
 msgstr "1-2 年"
 
@@ -360,7 +360,7 @@ msgstr "3个月"
 msgid "4. Choose your Payout"
 msgstr "4. 选择赔付额"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3534
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3529
 msgid "40 transactions or more in the past 12 months"
 msgstr "过去12个月内40次交易或以上"
 
@@ -369,11 +369,11 @@ msgid "5d"
 msgstr "5天"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1137
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3802
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3797
 msgid "6 - 25 characters."
 msgstr "6 - 25 个字符。"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3530
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3525
 msgid "6-10 transactions in the past 12 months"
 msgstr "过去12个月内6-10次交易"
 
@@ -408,6 +408,11 @@ msgstr "<a href=\"%1\" target=\"_blank\">查看关于我们企业文化的详情
 #: /home/git/translations/binary-static/src/templates/haml/static/bulk_trader_facility.html.haml:1
 msgid "<a href='#account-manager-guide'>Account managers</a> can now place trades for their clients with %1’s bulk trader facility."
 msgstr "<a href='#account-manager-guide'>账户管理员</a>如今可以通过 %1 的批量交易者设施替其客户进行交易。"
+
+#. (url_for('contact')
+#: /home/git/translations/binary-static/src/templates/haml/user/lost_password_email_sent.html.haml:1
+msgid "<a href='%1' class='pjaxload'>Contact us</a> should you need further assistance."
+msgstr "若需进一步帮助，请<a href='%1' class='pjaxload'>联系我们</a>。"
 
 #: /home/git/regentmarkets/bom-backoffice/subs/subs_backoffice_clientdetails.pm:46
 msgid "<option value=\"\"></option><option value=\"01\">Jan</option><option value=\"02\">Feb</option><option value=\"03\">Mar</option><option value=\"04\">Apr</option><option value=\"05\">May</option><option value=\"06\">Jun</option><option value=\"07\">Jul</option><option value=\"08\">Aug</option><option value=\"09\">Sep</option><option value=\"10\">Oct</option><option value=\"11\">Nov</option><option value=\"12\">Dec</option>"
@@ -774,8 +779,8 @@ msgstr "Binary 集团公司和伙伴、所述公司（“我们”）的股东�
 msgid "A derivative is a financial instrument whose value is determined by reference to an underlying market. Derivatives are commonly traded in the inter-bank market, and binaries are one of the simplest forms of derivatives."
 msgstr "衍生品是一种通过参照基础市场来定价的金融工具，通常在银行间市场交易，而二元期权是衍生工具中最为普通的一种产品形式。"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:547
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:674
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:550
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:679
 msgid "A general error has occurred."
 msgstr "出了一般性差错。"
 
@@ -1085,7 +1090,7 @@ msgid "An oscillator used to identify overbought and oversold readings in RSI (R
 msgstr "摆动指标用于识别相对强弱指数（RSI）的超买或超卖。由于 RSI 可在延长后的期限内不出现超买（高于 70）或超卖（低于 30）, 因此随机 RSI 提供了识别这些极端情况的替代方法。"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/main.html.tt:52
-msgid "And dedicated affiliate team to provide you with the best service possible"
+msgid "And a dedicated affiliate team to provide you with the best service possible"
 msgstr "和专门的联盟团队为您提供最佳服务"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/careers.html.haml:1
@@ -1100,7 +1105,7 @@ msgstr "Andrei Asavei <span>顶尖二元期权代理</span>"
 msgid "Another major award. This time we’re nominated by the online readers of Global Banking and Finance Review and judged by a panel of industry experts and analysts who recognise our 13 years of platform reliability, range of trades, pricing, customer service and extensive knowledge."
 msgstr "这是我们赢得的另一大奖项。该奖项由《Global Banking and Finance Review》杂志的在线读者提名，并由行业专家和分析师评审团评选得出。这是对我们13年来的平台可靠性、交易品种范围、定价、客户服务和专业程度的认可。"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4459
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4454
 msgid "Answer to secret question"
 msgstr "密码提示问题的答案"
 
@@ -1147,7 +1152,7 @@ msgstr "合适性测试"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:77
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1677
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4140
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4135
 msgid "Apr"
 msgstr "四月"
 
@@ -1226,7 +1231,7 @@ msgstr "资产指数"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:81
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1693
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4156
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4151
 msgid "Aug"
 msgstr "八月"
 
@@ -1674,7 +1679,7 @@ msgstr "奖金代码"
 msgid "Both the deposit and the bonus amounts are clearly displayed when this type of promotion is available. E.g. Get $25 when you deposit $100. By way of example, if you choose to participate in a \"Get $25 when you deposit $100\" promotion, we will add an additional $25 to your account when you deposit $100 AND when you have purchased at least $125 worth of trades ($25 * 5= $125). The bonus will only be credited to your account when both of these conditions are met."
 msgstr "开展此类促销活动时，存款和奖金数额都会清楚显示，例如“存 100 奖25”活动。举例来说，如果您选择参加“存 100 奖25”促销活动，当您存入 100 美元并且至少执行 125 美元的交易后（25 *5 = 125美元），您将获得25 美元的奖励。只有同时满足这两个条件，奖金才会记入您的账户。"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4432
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4427
 msgid "Brand of first car"
 msgstr "第一辆车的品牌"
 
@@ -2143,7 +2148,7 @@ msgstr "投诉与纠纷"
 msgid "Confirm"
 msgstr "确认"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3991
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3986
 msgid "Confirm Your Email"
 msgstr "请确定您的电子邮件"
 
@@ -2159,7 +2164,7 @@ msgstr "利益冲突"
 msgid "Connection failure. Please try again later."
 msgstr "连接失败。请稍后重试。"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3544
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3539
 msgid "Construction"
 msgstr "建筑"
 
@@ -2352,8 +2357,8 @@ msgstr "成本"
 msgid "Costs and Charges"
 msgstr "成本和费用"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4231
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4525
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4226
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4520
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1175
 msgid "Country of Residence"
 msgstr "居住国"
@@ -2487,7 +2492,7 @@ msgid "Date"
 msgstr "日期"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1724
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4186
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4181
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:856
 msgid "Date of birth"
 msgstr "出生日期"
@@ -2635,7 +2640,7 @@ msgstr ""
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:85
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1709
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4172
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4167
 msgid "Dec"
 msgstr "十二月"
 
@@ -2705,7 +2710,7 @@ msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash
 msgstr "通过银行电汇、信用卡或电子现金钱包存款进入您的账户或提款。"
 
 #. (1)
-#: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_methods.html.tt:435
+#: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_methods.html.tt:407
 msgid "Deposit: %1 working day"
 msgstr "存款：%1工作日内"
 
@@ -2727,9 +2732,8 @@ msgstr "存款：%1个工作日内"
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_methods.html.tt:336
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_methods.html.tt:359
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_methods.html.tt:382
-#: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_methods.html.tt:410
-#: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_methods.html.tt:457
-#: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_methods.html.tt:478
+#: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_methods.html.tt:429
+#: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_methods.html.tt:450
 msgid "Deposit: Instant"
 msgstr "存款：实时"
 
@@ -2895,7 +2899,7 @@ msgstr "博士"
 msgid "Due to changes in regulation within the European Union, binary options on financial indices are now considered to be an investment activity."
 msgstr "由于欧盟内部规则有所改变，金融指数的二元期权如今已被视为一种投资活动。"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1261
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1268
 msgid "Due to regulatory requirements, you are required to authenticate your account in order to continue trading."
 msgstr "根据监管要求，必须验证账户后您才能继续交易。"
 
@@ -2968,7 +2972,7 @@ msgstr "赚取免税交易利润*？"
 msgid "Ease of Movement"
 msgstr "简易波动指标"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3548
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3543
 #: /home/git/translations/binary-static/src/templates/haml/layouts/default/footer.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/global/footer.html.tt:41
 msgid "Education"
@@ -3003,8 +3007,8 @@ msgstr "电子邮件"
 msgid "Email Verification"
 msgstr "电子邮件验证"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3731
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4540
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3726
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4535
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1174
 #: /home/git/translations/binary-static/src/templates/haml/user/lost_password.html.haml:1
 msgid "Email address"
@@ -3188,7 +3192,7 @@ msgstr "下跌合约收益"
 msgid "Fall Contract Return (%)"
 msgstr "下跌合约收益(%)"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4085
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4080
 msgid "Family Name"
 msgstr "姓"
 
@@ -3196,17 +3200,17 @@ msgstr "姓"
 msgid "Fast Stochastic"
 msgstr "快速随机"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4432
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4427
 msgid "Favourite artist"
 msgstr "最喜欢的艺术家"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4432
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4427
 msgid "Favourite dish"
 msgstr "最喜欢的菜肴"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:75
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1669
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4132
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4127
 msgid "Feb"
 msgstr "二月"
 
@@ -3243,7 +3247,7 @@ msgstr "过滤离散价位"
 msgid "Final Price"
 msgstr "最终价格"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3552
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3547
 msgid "Finance"
 msgstr "金融"
 
@@ -3272,11 +3276,11 @@ msgstr "财务方面的优势"
 msgid "Find the right trade for every market condition."
 msgstr "寻找各种市况之下的最佳交易机会。"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4054
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4049
 msgid "First Name"
 msgstr "名"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4268
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4263
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:870
 msgid "First line of home address"
 msgstr "家庭地址第一行"
@@ -3582,7 +3586,7 @@ msgstr "集团信息"
 msgid "Have a question? Need Help?"
 msgstr "有问题吗？需要帮助？"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3556
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3551
 msgid "Health"
 msgstr "健康"
 
@@ -3739,7 +3743,7 @@ msgid "I forgot my password, what should I do?"
 msgstr "我忘记了密码，该怎么办？"
 
 #. (request()
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4490
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4485
 msgid "I have read and agree to the <a target=\"_blank\" href=\"%1\">terms and conditions</a> of the site."
 msgstr "我已阅读并同意本网站的<a target=\"_blank\" href=\"%1\">条款和条件</a>。"
 
@@ -3787,6 +3791,9 @@ msgstr "如您选择与我们共同修订合同，重要的是您必须完全了
 msgid "If you do, no worries. With Binary.com, you can sell your trades before expiry to lock in profits. There’s no need to wait until the end time."
 msgstr "如果是，请别担心。在 Binary.com 平台，您可在到期之前卖出交易以锁定利润。不需要等合约到期再操作。"
 
+#: /home/git/translations/binary-static/src/templates/haml/cashier/withdrawal_request.html.haml:1
+#: /home/git/translations/binary-static/src/templates/haml/user/lost_password.html.haml:1
+#: /home/git/translations/binary-static/src/templates/haml/user/lost_password_email_sent.html.haml:1
 #: /home/git/translations/binary-static/src/templates/haml/user/verification_email_sent.html.haml:1
 msgid "If you don't receive the email within the next few minutes, please check your junk/spam mail folder."
 msgstr "如果在几分钟内您未收到电子邮件，请检查您的垃圾/广告邮件夹。"
@@ -3907,7 +3914,7 @@ msgstr "如果您选择具体的<strong>结束时间</strong>，交易<strong>�
 msgid "If you want to profit from this high demand product then your best option is to partner with the market leader. %1 has been in the business for over 15 years, and has been successful ever since."
 msgstr "如要通过这个极受欢迎的产品获利，您的最佳选择为跟市场领先者合作。%1已经从事此行业超过15年，一直以来都很成功。"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:754
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:761
 msgid "If you wish to raise these limits, please authenticate your account."
 msgstr "如果您想提高这些限额，请验证您的账户。"
 
@@ -3986,7 +3993,7 @@ msgstr "Regent Markets的创始人Jean-Yves Sireau是香港的一名对冲基金
 msgid "In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro will rise in relation to the value of the US dollar."
 msgstr "在外汇市场中，交易者可以根据一种货币对另一种货币的价格变动交易合约。例如，如果交易者选择欧元/美元“上涨”期权，即预测欧元的价值相对美元的价值将会上涨。"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1345
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1352
 msgid "In order for you to place contracts, we need to know your Residence (Country). Please update your settings."
 msgstr "为了让您能够交易期权合约，我们需要知道您的居住地（国）。请更新您的设置。"
 
@@ -4236,25 +4243,25 @@ msgstr "无效请求"
 msgid "Invalid stake"
 msgstr "无效投注金额"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4577
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4572
 msgid "Invalid telephone number"
 msgstr "无效电话号码"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1015
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2108
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4418
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4413
 msgid "Invalid telephone number (too long)."
 msgstr "无效电话号码（过长）。"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1010
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2101
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4413
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4408
 msgid "Invalid telephone number (too short)."
 msgstr "无效电话号码（过短）。"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1020
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2113
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4423
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4418
 msgid "Invalid telephone number."
 msgstr "无效电话号码。"
 
@@ -4279,7 +4286,7 @@ msgstr "投资账户"
 msgid "Investment Products to EEA Residents are provided by Binary Investments (Europe) Ltd (\"BIEL\") which is authorised and regulated by the Malta Financial Services Authority under the Malta Investment Services Act to deal on own account in Investment Products."
 msgstr "想要进行产品投资的EEA居民由Binary 投资 (欧洲) 有限公司 (\"BIEL\") 提供服务，其受马耳他金融服务机构根据马耳他投资服务法授予许可证及监管，用户可通过自己的账户进行产品投资。"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3600
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3595
 msgid "Investments & Dividends"
 msgstr "投资与分红"
 
@@ -4350,7 +4357,7 @@ msgstr "J. Welles Wilder 提出使用平均趋向指数（ADX）评估趋势强�
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:74
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1665
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4128
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4123
 msgid "Jan"
 msgstr "一月"
 
@@ -4377,7 +4384,7 @@ msgstr "Joshua Cavallaro <span> 让您在交易市场得心应手。</span>"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:80
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1689
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4152
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4147
 msgid "Jul"
 msgstr "七月"
 
@@ -4392,7 +4399,7 @@ msgstr "跳至"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:79
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1685
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4148
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4143
 msgid "Jun"
 msgstr "六月"
 
@@ -4484,11 +4491,11 @@ msgstr "遗留合约"
 msgid "Legacy contract. No further information is available."
 msgstr "遗留合约，无其他信息。"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3640
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3635
 msgid "Less than $100,000"
 msgstr "少于$100,000"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3618
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3613
 msgid "Less than $25,000"
 msgstr "少于$25,000"
 
@@ -4740,7 +4747,7 @@ msgstr "对您的账户访问和安全保障设置进行管理。"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:76
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1673
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4136
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4131
 msgid "Mar"
 msgstr "三月"
 
@@ -4862,15 +4869,15 @@ msgstr "通过所有其他方式的最大取款金额："
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:78
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:90
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1681
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4144
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4139
 msgid "May"
 msgstr "五月"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4432
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4427
 msgid "Memorable date"
 msgstr "难忘的日子"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4431
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4426
 msgid "Memorable town/city"
 msgstr "难忘的城镇/城市"
 
@@ -4990,7 +4997,7 @@ msgstr "更多福利"
 msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with ‘best execution’. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
 msgstr "说得更具体就是，当我们和您进行二元期权交易时（双方有了“合同”），我们有责任向您提供“最佳执行方案”。最佳执行方案的意思就是当我们执行您的订单时，我们必须采取合理的措施来为您获取最大的效益。此文件是我们最佳执行方案政策的总结。"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4431
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4426
 msgid "Mother's maiden name"
 msgstr "母亲婚前的姓氏"
 
@@ -5042,11 +5049,11 @@ msgstr "我的账户"
 msgid "Name"
 msgstr "姓名"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4431
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4426
 msgid "Name of first love"
 msgstr "初恋情人姓名"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4431
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4426
 msgid "Name of your pet"
 msgstr "您宠物的名字"
 
@@ -5099,7 +5106,7 @@ msgid "Next"
 msgstr "下一页"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:416
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3498
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3493
 msgid "No"
 msgstr "无"
 
@@ -5195,7 +5202,7 @@ msgstr "变动通知"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:84
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1705
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4168
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4163
 msgid "Nov"
 msgstr "十一月"
 
@@ -5240,7 +5247,7 @@ msgstr "水电煤账单原件（最近 3 个月内）；或"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:83
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1701
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4164
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4159
 msgid "Oct"
 msgstr "十月"
 
@@ -5328,7 +5335,7 @@ msgstr "作为联盟会员，只有适当添加标签的客户方可分配给您
 msgid "Open"
 msgstr "开盘"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3681
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3676
 msgid "Open Account"
 msgstr "开户"
 
@@ -5378,8 +5385,8 @@ msgstr "执行订单"
 msgid "Oscillator calculated from the daily readings of the Accumulation Distribution Line. The CMF is unlike a momentum oscillator in that it is not influenced by the daily price change. Instead, the indicator focuses on the location of the close relative to the range for the period (daily or weekly)."
 msgstr "摆动指标根据累积分配线的每日读数计算。CMF 不同于动能摆动指标，它不受每日价格变动影响。相反，该指标侧重相对于期间范围的（每日或每周）收盘位置。"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3564
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3608
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3559
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3603
 msgid "Other"
 msgstr "其它"
 
@@ -5470,15 +5477,15 @@ msgstr "我们所提供的服务仅限于执行而已。我们并不提供与我
 msgid "Our site can be filtered using a number of filtering systems available on the market which could be used to restrict one’s access to our site."
 msgstr "我们的网站可以使用市场上多个过滤系统进行过滤，以限制用户对网站的访问。"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3652
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3647
 msgid "Over $1,000,000"
 msgstr "大于$1,000,000"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3630
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3625
 msgid "Over $500,001"
 msgstr "大于$500,001"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3516
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3511
 msgid "Over 3 years"
 msgstr "3年以上"
 
@@ -5530,7 +5537,7 @@ msgid "Partners"
 msgstr "合作伙伴"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:91
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3786
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3781
 #: /home/git/translations/binary-static/src/templates/haml/home/login.html.haml:1
 #: /home/git/translations/binary-static/src/templates/haml/layouts/default/header.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/global/header.html.tt:76
@@ -5631,7 +5638,7 @@ msgstr "赔付额必须介于 <strong>%1</strong> 和 <strong>%2</strong>之间�
 msgid "Pending Bonus: %1"
 msgstr "待定奖金：%1"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3604
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3599
 msgid "Pension"
 msgstr "养老金"
 
@@ -5737,12 +5744,12 @@ msgstr "请输入0和%1之间的数字。"
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1306
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1353
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1479
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3704
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3763
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3699
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3758
 msgid "Please enter a password."
 msgstr "请输入密码。"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4323
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4318
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:905
 msgid "Please enter a town or city."
 msgstr "请输入城镇或城市。"
@@ -5780,22 +5787,22 @@ msgstr "请输入登录 ID 以便进行转账。"
 msgid "Please enter the country where you want to offer your service"
 msgstr "请输入要提供服务的国家"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4262
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4257
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:865
 msgid "Please enter the first line of your home address."
 msgstr "请输入您家庭地址的第一行。"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2070
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3747
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3742
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:688
 msgid "Please enter your email address."
 msgstr "请输入您的电邮地址。"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4070
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4065
 msgid "Please enter your first name."
 msgstr "请输入您的名。"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4106
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4101
 msgid "Please enter your last name."
 msgstr "请输入您的姓。"
 
@@ -5812,10 +5819,10 @@ msgstr "请在下表中填写登录 ID 以及您希望转给您客户的金额�
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1737
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1743
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1749
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4199
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4205
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4194
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4200
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4206
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4211
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4216
 msgid "Please input a valid date."
 msgstr "请输入有效日期。"
 
@@ -5879,14 +5886,14 @@ msgstr "请参考下列佣金计划。"
 msgid "Please remember at all times that trading binary options can be an exciting activity, but we have a moral duty to remind you of the risks you may run. Options trading can become a real addiction, as can any other activity pushed to its limits. We kindly ask you to engage in a careful self-analysis to check if you are at risk. To avoid the danger of such an addiction, it is important that you follow some basic principles and guidelines."
 msgstr "请记住，二元期权交易不论在什么时候都会是一项令人兴奋的活动，但我们在道义上有责任提醒您可能会遇到的风险。期权交易可能会使人上瘾，就像任何其他推展到了极限的活动一样。我们恳请您参与认真的自我剖析，评估自身是否已经上瘾。为了避免上瘾，请您遵循一些基本的原则和指导方针，这是很重要的。"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3490
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3504
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3522
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3540
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3570
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3588
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3614
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3636
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3485
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3499
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3517
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3535
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3565
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3583
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3609
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3631
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:40
 msgid "Please select"
 msgstr "请选择"
@@ -5933,16 +5940,16 @@ msgid "Please select a value."
 msgstr "请选择一个数值。"
 
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client.pm:159
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4247
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4242
 msgid "Please specify your country."
 msgstr "请指定您的国家。"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1363
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1370
 msgid "Please switch accounts to trade this contract."
 msgstr "请换一个账户进行此合同交易。"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:940
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1353
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1360
 msgid "Please switch accounts to trade this market."
 msgstr "请换一个账户在此市场交易。"
 
@@ -5963,8 +5970,8 @@ msgstr "请在以下字段输入您设置的密码两次："
 msgid "Please use only alphanumeric characters or spaces."
 msgstr "请仅使用字母或空格。"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4075
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4101
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4070
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4096
 msgid "Please use only letters, spaces, hyphens, full-stops or apostrophes."
 msgstr "请仅使用字母、空格、连字符、句号或省略号。"
 
@@ -5979,7 +5986,7 @@ msgstr "请稍候。<br />您的请求正在处理中。"
 msgid "Portfolio"
 msgstr "投资组合"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4367
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4362
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:949
 msgid "Postal Code / ZIP"
 msgstr "邮编"
@@ -5990,11 +5997,11 @@ msgid "Postcode is invalid."
 msgstr "邮编无效。"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:176
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4388
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4383
 msgid "Postcode is required for UK residents."
 msgstr "英国居民需提供邮政编码。"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4383
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4378
 msgid "Postcode must be less than 20 characters long and may not contain \"+\"."
 msgstr "邮编号码长度必须少于 20 个字符且不能含有“+”。"
 
@@ -6058,7 +6065,7 @@ msgstr "价格表"
 msgid "Pricing table"
 msgstr "价格表"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3574
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3569
 msgid "Primary"
 msgstr "主要"
 
@@ -6075,7 +6082,7 @@ msgstr "打印图表"
 msgid "Privacy & Security"
 msgstr "隐私和安全"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4000
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3995
 #: /home/git/translations/binary-static/src/templates/haml/user/email_verified.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/ukgc_funds_protection_message.html.tt:19
 msgid "Proceed"
@@ -6174,17 +6181,17 @@ msgstr "买入现价"
 msgid "Purchase Time"
 msgstr "买入时间"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:849
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:856
 msgid "Purchase of this contract would cause you to exceed our payout limit for open contracts of this type. To continue please consider to sell a few contracts at the market or trade in different contract types."
 msgstr "您购买此合约将超出我们对于此类未平仓合约的赔付额。请考虑先卖出一些合约，或是改换合约类型，继续交易。"
 
 #. ($currency, $limit)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:949
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:956
 msgid "Purchase of this contract would cause you to exceed your 7-day turnover limit of %1%2."
 msgstr "买入此合约将导致您超出%1%2的7天期交易限额。"
 
 #. ($currency, $limit)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:752
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:759
 msgid "Purchase of this contract would cause you to exceed your daily turnover limit of %1%2."
 msgstr "买入此合约将导致您超出%1%2的每日交易限额。"
 
@@ -6376,11 +6383,6 @@ msgstr "重新加载收银台"
 msgid "Reload page"
 msgstr "重新加载页面"
 
-#. (url_for('contact')
-#: /home/git/translations/binary-static/src/templates/haml/user/lost_password_email_sent.html.haml:1
-msgid "Remember, if you don't receive an email from us in the next few minutes, please check your junk/spam mail folder or <a href='%1' class='pjaxload'>contact us</a> should you need further assistance."
-msgstr "记住，接下来数分钟内如果您没有收到我们发出的电子邮件，请查看您的垃圾邮件箱，或<a href='%1' class='pjaxload'>联系我们</a>获取进一步帮助。"
-
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:487
 msgid "Remove Overlay"
 msgstr "删除覆盖"
@@ -6530,7 +6532,7 @@ msgstr "产品投资风险"
 msgid "Sa"
 msgstr "星期六"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3592
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3587
 msgid "Salaried Employee"
 msgstr "支薪员工"
 
@@ -6578,16 +6580,16 @@ msgstr "以SVG格式保存"
 msgid "Seasoned traders can use the %1 platform for the full advantage of the wide range of trading and analysis tools we have on offer."
 msgstr "经验丰富的交易员可充分利用%1平台广泛交易类型和我们所提供的分析工具。"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4288
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4283
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:890
 msgid "Second line of home address"
 msgstr "家庭地址第二行"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3578
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3573
 msgid "Secondary"
 msgstr "次要"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4439
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4434
 msgid "Secret question"
 msgstr "密码提示问题"
 
@@ -6615,7 +6617,7 @@ msgstr "查看演示"
 msgid "Select Configure Bulk Clients at the top of the page."
 msgstr "选择页面上方的“设置批量客户”。"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3382
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3377
 #: /home/git/translations/binary-static/src/templates/haml/static/contact.html.haml:1
 msgid "Select Country"
 msgstr "选择国家"
@@ -6636,7 +6638,7 @@ msgstr "选择您要购入的的合同。等价格详细显示出来，点击“
 msgid "Self Exclusion"
 msgstr "自我禁止"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3596
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3591
 msgid "Self-Employed"
 msgstr "个体经营"
 
@@ -6689,7 +6691,7 @@ msgstr "将资金存入支付代理。存入资金减去代理佣金的金额将
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:82
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1697
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4160
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4155
 msgid "Sep"
 msgstr "九月"
 
@@ -6895,7 +6897,7 @@ msgstr "对不起，在处理您的账户时出错。"
 msgid "Sorry, an error occurred. Please contact customer support if this problem persists."
 msgstr "对不起，出错了。如果问题持续出现，请联系客户支持人员。"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1376
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1383
 msgid "Sorry, contracts on Random Indices are not available in your country of residence"
 msgstr "对不起，您的居住国无法使用随机指数合同"
 
@@ -6944,7 +6946,7 @@ msgid "Sorry, the Payment Agent's currency "
 msgstr "对不起，支付代理的货币 "
 
 #. ($limit, $currency)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:900
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:907
 msgid "Sorry, the aggregate payouts of contracts on your account cannot exceed %2%1."
 msgstr "对不起，您账户的累计赔付额不能大于 %2%1 。"
 
@@ -6976,7 +6978,7 @@ msgstr "对不起，此功能仅适用虚拟账户"
 msgid "Sorry, this feature is not available."
 msgstr "对不起，此功能不可用。"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1549
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1586
 msgid "Sorry, this page cannot be refreshed."
 msgstr "对不起，此页不能刷新。"
 
@@ -6985,7 +6987,7 @@ msgid "Sorry, you are too young to open an account!"
 msgstr "对不起，您的年龄太小，不能开户！"
 
 #. ($limit,                request()
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:783
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:790
 msgid "Sorry, you cannot hold more than %1 contracts at a given time. Please visit the <a href=\"%2\" class=\"pjaxload\">statement</a> page to automatically sell your expired contracts."
 msgstr "对不起，在给定时间内您不可持有超过 %1 的合约。请访问 <a href=\"%2\" class=\"pjaxload\">报表</a>页面自动卖出您的到期合约。"
 
@@ -7003,8 +7005,8 @@ msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "对不起，您输入的收银台密码不正确"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2075
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3698
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3752
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3693
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3747
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:692
 msgid "Sorry, you have entered an incorrect email address."
 msgstr "对不起，您输入的电邮地址不正确。"
@@ -7035,11 +7037,11 @@ msgid "Sorry, you seem to already have a real money account with us. Perhaps you
 msgstr "对不起，您好像已经有了真实账户。可能是您在注册时使用了不同的电子邮箱号。由于法律因素，我们不能允许一个人同时开立多个真实账户。如果您忘记了您的账户详细，请<a href=\"%1\">联系我们</a>。"
 
 #. ("$currency$balance",                $limit)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:874
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:881
 msgid "Sorry, your account cash balance is too high (%1). <B>Your maximum account balance is %2 </b>. Please withdraw money from your account to bring down your cash balance under that amount. You may not trade until you do so."
 msgstr "对不起，您的账户现金余额过高 (%1)。<B>您账户最大余额是%2</b>。请从您的账户中取款以使现金余额降至该金额以下。在此之前您不能交易。"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1400
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1407
 msgid "Sorry, your account is not authorised for any further contract purchases."
 msgstr "对不起，您的账户未授权进一步买入任何合约。"
 
@@ -7112,7 +7114,7 @@ msgid "Start time"
 msgstr "开始时间"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1988
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:399
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:400
 msgid "Start time is in the past"
 msgstr "开始时间是在过去"
 
@@ -7133,7 +7135,7 @@ msgstr "远期起点合约的开始时间必须距离现在超过 %1。"
 msgid "Start trading"
 msgstr "开始交易"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4339
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4334
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:974
 msgid "State/Province"
 msgstr "州/省"
@@ -7246,7 +7248,7 @@ msgid "Stop Loss Level"
 msgstr "止损价位"
 
 #. ($min, $max, $unit)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Spread.pm:399
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Spread.pm:407
 msgid "Stop Loss must be between %1 and %2 %3"
 msgstr "止损须在%1 与 %2 %3之间"
 
@@ -7255,7 +7257,7 @@ msgid "Stop Profit Level"
 msgstr "止盈价位"
 
 #. ($min, $max, $unit)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Spread.pm:420
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Spread.pm:428
 msgid "Stop Profit must be between %1 and %2 %3"
 msgstr "止盈须在%1 与 %2 %3之间"
 
@@ -7359,7 +7361,7 @@ msgstr "技术指标由阿隆上升线减去阿隆下行线得出。阿隆上升
 msgid "Tel"
 msgstr "电话"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4397
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4392
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:992
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1185
 msgid "Telephone"
@@ -7394,7 +7396,7 @@ msgstr "条款"
 msgid "Terms and Conditions"
 msgstr "条款和条件"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3582
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3577
 msgid "Tertiary"
 msgstr "三级"
 
@@ -7843,11 +7845,11 @@ msgid "The content on this website is subject to change at any time without noti
 msgstr "网站上的内容可在不发出通知的情况下随时修改，提供这些内容的唯一目的是帮助交易者做出独立投资决策。%1 已采取合理措施确保网站信息的准确性，但是我们并不对其准确性进行担保，也不对因网站内容或您无法登录网站导致的任何直接或间接损失或损害或延迟或未能通过网站传输或收到任何指示和通知而承担责任。"
 
 #. ($currency,                to_monetary_number_format($amount)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1121
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1128
 msgid "The contract %4 has changed from %1%2 to %1%3."
 msgstr "合约 %4 已从 %1%2 变为 %1%3。"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1109
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1116
 msgid "The contract has expired"
 msgstr "合约已到期"
 
@@ -7992,12 +7994,12 @@ msgid "The profit of USD 294 is the difference between the exit and entry level 
 msgstr "294美元盈利是以退出和进场价位的相差额乘以每一点的金额算出。"
 
 #. ($currency)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1015
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1022
 msgid "The provided currency %1 is invalid."
 msgstr "所提供的货币 %1无效。"
 
 #. ($currency)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1007
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1014
 msgid "The provided currency %1 is not the default currency"
 msgstr "所提供的货币 %1不是预设货币"
 
@@ -8066,7 +8068,7 @@ msgstr "通过本网站完成的交易以及客户和本公司之间的关系由
 msgid "The two passwords that you entered do not match."
 msgstr "两次输入的密码不一致。"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1117
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1124
 msgid "The underlying market has moved too much since you priced the contract. "
 msgstr "自从您为交易定价后，标的市场已发生太大变化。 "
 
@@ -8245,7 +8247,7 @@ msgstr "该奖金将被处理，并记入客户的账户中，一旦："
 msgid "This client cashier section is locked."
 msgstr "此客户的收银台部分已锁定。"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1211
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1218
 msgid "This contract cannot be properly validated at this time."
 msgstr "目前该交易无法正确验证。"
 
@@ -8266,11 +8268,11 @@ msgid "This contract is affected by corporate action."
 msgstr "该合约已受共同行为所影响。"
 
 #. (to_monetary_number_format($custom_limit)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1319
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1326
 msgid "This contract is limited to "
 msgstr "此合约只限于 "
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1317
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1324
 msgid "This contract is unavailable on this account."
 msgstr "此账户不可交易该合约。"
 
@@ -8282,7 +8284,7 @@ msgstr "此合约亏损"
 msgid "This contract offers no return."
 msgstr "该合约不提供回报。"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:680
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:687
 msgid "This contract was not found among your open positions."
 msgstr "在您的未平仓头寸中未找到该合约。"
 
@@ -8291,7 +8293,7 @@ msgid "This contract won"
 msgstr "此合约获利"
 
 #. ($currency,                to_monetary_number_format($contract->ask_price)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1288
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1295
 msgid "This contract's price is %1%2. Contracts purchased from %3 must have a purchase price above %1%4. Please accordingly increase the contract amount to meet this minimum stake."
 msgstr "此合同价格为%1%2。向%3购入之合同购入价必须高于%1%4。请相应增加合同金额以达到此最低交易金额。"
 
@@ -8361,7 +8363,7 @@ msgstr "此市场今日在下列时间提前收市"
 msgid "This market is presently closed."
 msgstr "此市场目前已收市。"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Spread.pm:384
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Spread.pm:392
 msgid "This market is presently closed. Try out the Random Indices which are always open."
 msgstr "此市场当前已经关闭。 尝试总是开放的随机指数。"
 
@@ -8444,7 +8446,7 @@ msgstr "时代在变。我们增加了赔付金额，以便我们的客户可以
 msgid "Tip:"
 msgstr "提示："
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4035
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4030
 msgid "Title"
 msgstr "职务"
 
@@ -8542,11 +8544,11 @@ msgstr "“触及/未触及”交易"
 msgid "Tour"
 msgstr "指南"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3560
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3555
 msgid "Tourism"
 msgstr "旅游"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4307
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4302
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:911
 msgid "Town/City"
 msgstr "城镇/城市"
@@ -8688,7 +8690,7 @@ msgid "Trading is suspended at the moment."
 msgstr "当前交易暂停。"
 
 #. ($self->underlying->translated_display_name)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Spread.pm:375
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Spread.pm:383
 msgid "Trading on %1 is not offered for this contract type."
 msgstr "此类合约不在%1提供交易。"
 
@@ -8710,9 +8712,9 @@ msgstr "%1 的当前交易暂停。"
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1766
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1776
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2377
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Spread.pm:167
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Spread.pm:208
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Spread.pm:359
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Spread.pm:175
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Spread.pm:216
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Spread.pm:367
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Pricing/Engine/Intraday/Index.pm:85
 msgid "Trading on %1 is suspended due to missing market data."
 msgstr "由于市场数据丢失，%1 交易暂停。"
@@ -8868,7 +8870,7 @@ msgstr "除非另行通知，我们将视您为零售客户。您也可通过书
 msgid "Unlock Cashier"
 msgstr "解锁收银台"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:457
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:458
 msgid "Unsupported bet class $bet_params->{bet_class}"
 msgstr "不支持的投注类型$bet_params->{bet_class}"
 
@@ -8884,7 +8886,7 @@ msgstr "“上涨/下跌”交易"
 msgid "Upcoming Events"
 msgstr "未来事件"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4554
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4549
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1523
 msgid "Update"
 msgstr "更新"
@@ -9127,7 +9129,7 @@ msgid "We are not able to stream live prices at the moment. To enjoy live stream
 msgstr "当前我们不能够串流实时价格。要获得价格的实时串流请尝试刷新页面，如果经过反复尝试还是存在此问题，请换一个浏览器"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:56
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4252
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4247
 msgid "We are not accepting accounts from residents of this country at the present time."
 msgstr "目前不接受来自该国居民的账户。"
 
@@ -9265,8 +9267,8 @@ msgid "We would like to inform you that your %1 has been processed."
 msgstr "我们特此通知您，您的%1已处理。"
 
 #: /home/git/translations/binary-static/src/templates/haml/user/lost_password.html.haml:1
-msgid "We'll then send you an e-mail asking you to verify your identity. If you don't receive the e-mail within a few minutes, please check your junk/spam mail folder."
-msgstr "我们将发送一封电子邮件给您，要求您验证身份。如果在几分钟内您未收到此电子邮件，请检查您的垃圾/广告邮件夹。"
+msgid "We'll then send you an e-mail asking you to verify your identity."
+msgstr "然后我们将会通过电子邮件要求您确认您的身份。"
 
 #: /home/git/regentmarkets/bom-backoffice/f_setting_selfexclusion.cgi:24
 msgid "We're sorry but the Self Exclusion facility is not available for Virtual Accounts."
@@ -9635,8 +9637,7 @@ msgstr "通过支付代理取款"
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_methods.html.tt:337
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_methods.html.tt:360
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_methods.html.tt:383
-#: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_methods.html.tt:411
-#: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_methods.html.tt:436
+#: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_methods.html.tt:408
 msgid "Withdraw: %1 working day"
 msgstr "取款：%1 个工作日"
 
@@ -9698,7 +9699,7 @@ msgid "Year"
 msgstr "年"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:478
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3494
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3489
 msgid "Yes"
 msgstr "是"
 
@@ -9841,21 +9842,21 @@ msgstr "您已买入总买价为奖励金额五倍的合约。"
 msgid "You have entered an invalid login ID"
 msgstr "您输入的登录 ID 无效"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:820
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:825
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:830
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:920
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:979
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:827
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:832
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:837
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:927
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:986
 msgid "You have exceeded the daily limit for contracts of this type."
 msgstr "您已超出此类合约的每日限额。"
 
 #. ($currency, $limit)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:965
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:972
 msgid "You have exceeded your 7-day limit on losses of %1%2."
 msgstr "您已超出 %1%2的7天期损失限额。"
 
 #. ($currency, $limit)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:931
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:938
 msgid "You have exceeded your daily limit on losses of %1%2."
 msgstr "您已超出%1%2的每日损失限额。"
 
@@ -10038,11 +10039,11 @@ msgid "Your account balance"
 msgstr "您的账户余额"
 
 #. ($currency,                to_monetary_number_format($balance)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:815
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:822
 msgid "Your account balance (%1%2) is insufficient to buy this contract (%1%3)."
 msgstr "您的账户余额(%1%2)不足以买入该合约 (%1%3)。"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:907
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:914
 msgid "Your account has exceeded the trading limit with free promo code, please deposit if you wish to continue trading."
 msgstr "您的账户已超过免费推广代码的交易限额，如果要继续交易，请存入资金。"
 
@@ -10156,7 +10157,7 @@ msgid "Your identity documents have passed their expiration date. Kindly send a 
 msgstr "您的识别文件已过期。请发送有效的身份识别扫描件到<a href=\"mailto:%1\">%1</a>以开锁收银台。"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:211
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4500
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4495
 msgid "Your information is incomplete or incorrect. Please correct the fields highlighted above."
 msgstr "您的资料不完整或不正确。请更正上面的高亮字段。"
 
@@ -10189,8 +10190,8 @@ msgstr "您的密码不可与电子邮件相同"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1311
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1358
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3706
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3768
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3701
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3763
 msgid "Your password contains invalid characters."
 msgstr "您的密码含无效字符。"
 
@@ -10214,8 +10215,8 @@ msgstr "您的密码至少应为 5 个字符。"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1365
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1491
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3708
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3773
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3703
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3768
 msgid "Your password should be at least 6 characters."
 msgstr "您的密码至少应为 6 个字符。"
 
@@ -10226,8 +10227,8 @@ msgstr "您的密码应只包含字符和数字。"
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1325
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1372
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1498
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3710
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3778
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3705
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3773
 msgid "Your password should not be more then 25 characters."
 msgstr "您的密码最多不超过 25 个字符。"
 
@@ -10253,7 +10254,7 @@ msgstr "您从 %3 账户提取 %1 %2 到支付代理 %4账户的请求已成功�
 msgid "Your risks are known"
 msgstr "您的风险是已知的"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4475
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4470
 msgid "Your secret answer is too short.  Please enter at least 4 characters."
 msgstr "您的密码保护问题答案过短。请输入至少 4 个字符。"
 
@@ -10374,7 +10375,7 @@ msgstr "天"
 msgid "days"
 msgstr "天"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4517
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:4512
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:75
 msgid "details"
 msgstr "详情"
@@ -11132,23 +11133,23 @@ msgstr "联合利华公司"
 
 #: Underlying Symbol INICICIBC
 msgid "ICICI Bank Ltd"
-msgstr "印度工業信貸投資銀行（ICICI)"
+msgstr "印度工业信贷投资银行"
 
 #: Underlying Symbol BBABI
 msgid "AB Inbev"
-msgstr "安海斯-布希英博（AB Inbev）"
+msgstr "安海斯-布希英博"
 
 #: Underlying Symbol INHDFC
 msgid "HDFC Bank Ltd"
-msgstr "印度HDFC 銀行"
+msgstr "印度HDFC银行"
 
 #: Underlying Symbol ESITX
 msgid "Inditex SA"
-msgstr "印地紡集團"
+msgstr "印地纺集团"
 
 #: Underlying Symbol FPSAF
 msgid "Safran"
-msgstr "赛峰(Safran)"
+msgstr "赛峰"
 
 #: Underlying Symbol INRIL
 msgid "Reliance Industries Ltd"
@@ -11168,7 +11169,7 @@ msgstr "丰田汽车"
 
 #: Underlying Symbol NAHEIA
 msgid "Heineken"
-msgstr "喜力(Heineken)"
+msgstr "喜力"
 
 #: Underlying Symbol BBKBC
 msgid "KBC Groep"
@@ -11180,7 +11181,7 @@ msgstr "英国天然气集团公司"
 
 #: Underlying Symbol FPAI
 msgid "Air Liquide"
-msgstr "液化空气集团(Air Liquide)"
+msgstr "液化空气集团"
 
 #: Underlying Symbol NOYAR
 msgid "Yara International"
@@ -11188,7 +11189,7 @@ msgstr "雅苒国际"
 
 #: Underlying Symbol UKIAG
 msgid "ICAG (British Airways)"
-msgstr "ICAG （英国航空公司）"
+msgstr "英国航空公司"
 
 #: Underlying Symbol DEALV
 msgid "Allianz SE"
@@ -11196,7 +11197,7 @@ msgstr "安联 SE"
 
 #: Underlying Symbol AUCBA
 msgid "Commbank (Australia)"
-msgstr "Commbank （澳大利亚）"
+msgstr "联邦银行（澳大利亚）"
 
 #: Underlying Symbol USJNJ
 msgid "Johnson & Johnson"
@@ -12195,6 +12196,12 @@ msgstr "如果%3一直到%5时<strong>处于%7</strong>至<strong>%6</strong>之
 #: Translation for contract type description (UPORDOWN - intraday)
 msgid "%1 <strong>%2</strong> payout if %3 <strong>goes outside %7</strong> and <strong>%6</strong> through %5 after %4."
 msgstr "如果%3<strong>在%4过后一直到%5时处于%7</strong>与<strong>%6</strong>之外，将获得%1<strong>%2</strong>的赔付额。"
+
+#~ msgid "Remember, if you don't receive an email from us in the next few minutes, please check your junk/spam mail folder or <a href='%1' class='pjaxload'>contact us</a> should you need further assistance."
+#~ msgstr "记住，接下来数分钟内如果您没有收到我们发出的电子邮件，请查看您的垃圾邮件箱，或<a href='%1' class='pjaxload'>联系我们</a>获取进一步帮助。"
+
+#~ msgid "We'll then send you an e-mail asking you to verify your identity. If you don't receive the e-mail within a few minutes, please check your junk/spam mail folder."
+#~ msgstr "我们将发送一封电子邮件给您，要求您验证身份。如果在几分钟内您未收到此电子邮件，请检查您的垃圾/广告邮件夹。"
 
 #~ msgid "View Trading Times"
 #~ msgstr "查看交易时间"
@@ -14923,9 +14930,6 @@ msgstr "如果%3<strong>在%4过后一直到%5时处于%7</strong>与<strong>%6<
 
 #~ msgid "The minimum deposit is ($/&pound;/&euro;) 5 and the maximum account is ($/&pound;/&euro;) 150,000."
 #~ msgstr "最低存款金额为 5 （美元/英磅/欧元），最大金额为  150,000（美元/英磅/欧元）。"
-
-#~ msgid "Your account is important to us. Please <a class=\"pjaxload\" href=\"%1\">contact us</a> should you need further assistance."
-#~ msgstr "您的帐户对我们很重要。若需进一步帮助，请 <a class=\"pjaxload\" href=\"%1\">联系我们</a>。"
 
 #~ msgid "%1 was converted to %2."
 #~ msgstr "%1 转换成%2。"

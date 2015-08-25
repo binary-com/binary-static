@@ -23,13 +23,13 @@ var Tick = (function () {
         errorMessage = '';
 
     var details = function (data) {
-        var tick = data['tick'] || '';
-        errorMessage = '';
+        var errorMessage = '';
 
-        if (tick) {
-            if (tick['error']) {
-                errorMessage = tick['error']['message'];
+        if (data) {
+            if (data['error']) {
+                errorMessage = data['error']['message'];
             } else {
+                var tick = data['tick'];
                 quote = tick['quote'];
                 id = tick['id'];
                 epoch = tick['epoch'];

@@ -6,39 +6,51 @@ var marketNavElement = document.getElementById('contract_market_nav');
 if (marketNavElement) {
     marketNavElement.addEventListener('click', function(e) {
         if (e.target && e.target.nodeName === 'LI') {
-            sessionStorage.setItem('market', e.target.id);
+            var clickedMarket = e.target;
+            var isMarketActive = clickedMarket.classList.contains('active');
+            sessionStorage.setItem('market', clickedMarket.id);
+
+            setMarketPlaceholderContent();
+
             // as different markets have different forms so remove from sessionStorage
             // it will default to proper one
             sessionStorage.removeItem('formname');
-            marketChangeEvent();
+            toggleMobileNavMenu(marketNavElement, clickedMarket);
+            // if market is already active then no need to send same request again
+            if (!isMarketActive) {
+                processMarketOfferings();
+            }
+            var marketFormCheckbox = document.getElementById('market_show_menu');
+            if (marketFormCheckbox) {
+                marketFormCheckbox.checked = false;
+            }
         }
     });
 }
-
-var marketChangeEvent = function () {
-    'use strict';
-    processMarketOfferings();
-};
 
 /*
  * attach event to form list, so when client click on different form we need to update form
  * and request for new Contract details to populate the form and request price accordingly
  */
 var formNavElement = document.getElementById('contract_form_name_nav');
-var removeActiveFormNav = function () {
-    var liElements = formNavElement.getElementsByTagName("li");
-    for (var i = 0, len = liElements.length; i < len; i++){
-        liElements[i].classList.remove('active');
-    }
-};
-
 if (formNavElement) {
     formNavElement.addEventListener('click', function(e) {
         if (e.target && e.target.nodeName === 'LI') {
-            removeActiveFormNav();
-            sessionStorage.setItem('formname', e.target.id);
-            e.target.classList.add('active');
-            contractFormEventChange(e.target.id);
+            var clickedForm = e.target;
+            var isFormActive = clickedForm.classList.contains('active');
+            sessionStorage.setItem('formname', clickedForm.id);
+
+            setFormPlaceholderContent();
+            // if form is already active then no need to send same request again
+            toggleMobileNavMenu(formNavElement, clickedForm);
+
+            if (!isFormActive) {
+                contractFormEventChange(clickedForm.id);
+            }
+            var contractFormCheckbox = document.getElementById('contract_form_show_menu');
+            if (contractFormCheckbox) {
+                contractFormCheckbox.checked = false;
+            }
         }
     });
 }

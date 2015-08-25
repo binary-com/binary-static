@@ -2,12 +2,7 @@
     from {transform: rotate(0deg);}
     to {transform: rotate(360deg);}
 }
-@-webkit-keyframes spinning {
-    from {transform: rotate(0deg);}
-    to {transform: rotate(360deg);}
-}
 .spinner {
-    -webkit-animation: spinning .2s * 5 infinite linear;
     animation: spinning .2s * 5 infinite linear;
 }
 
@@ -34,10 +29,40 @@
     flex-direction: column;
 }
 
+.nav_placeholder {
+    display: none;
+    overflow: hidden;
+    width: 100%;
+    background-color: $COLOR_BLUE;
+    padding: 3px 0 3px 10px;
+    margin: 10px 0;
+    color: $COLOR_WHITE;
+    text-transform: capitalize;
+}
+
+.nav_placeholder:after {
+    content: '\25BC';
+    font-size: 50%;
+    right: 0;
+    position:absolute;
+    margin-right: 10px;
+}
+
+input[type=checkbox].show_menu {
+    display: none;
+}
+
+input[type=checkbox]#market_show_menu:checked ~ #contract_market_nav {
+    display: flex;
+}
+
+input[type=checkbox]#contract_form_show_menu:checked ~ #contract_form_name_nav {
+    display: flex;
+}
+
 ul[role=segmented] {
     box-shadow: inset 0px 0px 0px 1px rgba($COLOR_BLUE, 0.2);
     background-color: $COLOR_LIGHT_GRAY;
-    border-radius: $BORDER_RADIUS;
     color: $COLOR_BLUE;
     display: flex;
     overflow: hidden;
@@ -45,13 +70,13 @@ ul[role=segmented] {
     width: 100%;
     li {
         flex: 1;
-        text-align: center;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         cursor: pointer;
         margin: 0;
         text-transform: capitalize;
+        padding: 3px 0;
+        text-align: center;
         &.active {
             color: white;
             background-color: $COLOR_BLUE;
@@ -87,15 +112,16 @@ ul[role=segmented] {
         border: 1px solid $COLOR_GRAY;
     }
     #contract_prices_container {
-        margin-left: 1em;
+        margin-left: 1rem;
         position: relative;
         .price_container {
             border: 1px solid $COLOR_GRAY;
             &#price_container_top {
-                margin-bottom: 15px;
+                margin-bottom: 1rem;
             }
             .contract_purchase {
                 margin-bottom: 5px;
+                padding-left: 6px;
             }
         }
         .description_container {
@@ -103,46 +129,46 @@ ul[role=segmented] {
                 text-transform: capitalize;
                 padding: .7em 0 .7em 4em;
                 &.asian_up {
-                  background: url("../images/pages/trade/asian-u_1.svg") no-repeat 5% 75%;
+                  background: url("../images/pages/trade/asian-u_1.svg") no-repeat 2% 75%;
                 }
                 &.asian_down {
-                  background: url("../images/pages/trade/asian-d_1.svg") no-repeat 5% 75%;
+                  background: url("../images/pages/trade/asian-d_1.svg") no-repeat 2% 75%;
                 }
                 &.differs {
-                  background: url("../images/pages/trade/differs_1.svg") no-repeat 5% 75%;
+                  background: url("../images/pages/trade/differs_1.svg") no-repeat 2% 75%;
                 }
                 &.matches {
-                  background: url("../images/pages/trade/matches_1.svg") no-repeat 5% 75%;
+                  background: url("../images/pages/trade/matches_1.svg") no-repeat 2% 75%;
                 }
                 &.rises {
-                  background: url("../images/pages/trade/rise_1.png") no-repeat 5% 75%;
+                  background: url("../images/pages/trade/rise_1.png") no-repeat 2% 75%;
                 }
                 &.falls {
-                  background: url("../images/pages/trade/fall_1.png") no-repeat 5% 75%;
+                  background: url("../images/pages/trade/fall_1.png") no-repeat 2% 75%;
                 }
                 &.higher {
-                  background: url("../images/pages/trade/higher_1.png") no-repeat 5% 75%;
+                  background: url("../images/pages/trade/higher_1.png") no-repeat 2% 75%;
                 }
                 &.lower {
-                  background: url("../images/pages/trade/lower_1.png") no-repeat 5% 75%;
+                  background: url("../images/pages/trade/lower_1.png") no-repeat 2% 75%;
                 }
                 &.touches {
-                  background: url("../images/pages/trade/touch_1.png") no-repeat 5% 75%;
+                  background: url("../images/pages/trade/touch_1.png") no-repeat 2% 75%;
                 }
                 &.does_not_touch {
-                  background: url("../images/pages/trade/no-touch_1.png") no-repeat 5% 75%;
+                  background: url("../images/pages/trade/no-touch_1.png") no-repeat 2% 75%;
                 }
                 &.stays_between {
-                  background: url("../images/pages/trade/stay-in-between_1.png") no-repeat 5% 75%;
+                  background: url("../images/pages/trade/stay-in-between_1.png") no-repeat 2% 75%;
                 }
                 &.goes_outside {
-                  background: url("../images/pages/trade/stay-out_1.png") no-repeat 5% 75%;
+                  background: url("../images/pages/trade/stay-out_1.png") no-repeat 2% 75%;
                 }
                 &.ends_between {
-                  background: url("../images/pages/trade/ends-between_1.png") no-repeat 5% 75%;
+                  background: url("../images/pages/trade/ends-between_1.png") no-repeat 2% 75%;
                 }
                 &.ends_outside {
-                  background: url("../images/pages/trade/ends-outside_1.png") no-repeat 5% 75%;
+                  background: url("../images/pages/trade/ends-outside_1.png") no-repeat 2% 75%;
                 }
             }
             .contract_amount, .contract_description {
@@ -172,16 +198,13 @@ ul[role=segmented] {
     left: 45%;
 }
 
-@keyframes spin
-{
-    from { transform: rotate(0deg); opacity: 0.2; }
-    50%  { transform: rotate(180deg); opacity: 1; }
-    to   { transform: rotate(360deg); opacity: 0.2; }
-}
-
 @media all and (max-width: 640px) {
     ul[role=segmented] {
         flex-direction: column;
+        display: none;
+    }
+    .nav_placeholder {
+        display: flex;
     }
     #contract_container.row {
         flex-direction: column;

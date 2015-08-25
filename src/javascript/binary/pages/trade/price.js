@@ -76,8 +76,8 @@ var Price = (function () {
     };
 
     var display = function (details, contractType) {
-        var proposal = details['proposal'],
-            params = details['echo_req'],
+        var proposal = details['proposal'] || details['error'];
+        var params = details['echo_req'],
             type = params['contract_type'] || typeDisplayIdMapping[proposal['id']],
             h4 = document.createElement('h4'),
             row = document.createElement('div'),
