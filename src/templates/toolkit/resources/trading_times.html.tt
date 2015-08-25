@@ -6,7 +6,7 @@
         <ul>
             [% FOREACH market IN fullinfo %]
             
-            <li class="ja-hide"><a href="#[% market.tabid %]">[% market.name %]</a></li>
+            <li class="ja-hide"><a id='outline' href="#[% market.tabid %]">[% market.name %]</a></li>
 
             [% END %]
         </ul>
