@@ -1,5 +1,5 @@
 [% USE String %]
-<h4>[% l("Contract period") %]</h4>
+<h3>[% l("Contract period") %]</h3>
 <p>
 [% l("The <strong>contract period</strong> is the period between the <strong>next tick</strong> after the <strong>start time</strong> and the <strong>end time</strong>.") %]
 </p>
