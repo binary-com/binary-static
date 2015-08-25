@@ -71,6 +71,7 @@ var User = function() {
 
 var Client = function() {
     this.loginid =  $.cookie('loginid');
+    this.residence =  $.cookie('residence');
     this.is_logged_in = false;
     this.is_real = false;
     if(this.loginid === null || typeof this.loginid === "undefined") {
@@ -648,12 +649,12 @@ Contents.prototype = {
                 $('#topbar').addClass('dark-blue');
                 $('#topbar').removeClass('orange');
 
-                if (!/^Q?CR/.test(this.client.loginid)) {
+                if (!/^CR/.test(this.client.loginid)) {
                     $('#payment-agent-section').addClass('invisible');
                     $('#payment-agent-section').hide();
                 }
 
-                if (!/^Q?MF|MLT/.test(this.client.loginid)) {
+                if (!/^MF|MLT/.test(this.client.loginid)) {
                     $('#account-transfer-section').addClass('invisible');
                     $('#account-transfer-section').hide();
                 }
@@ -694,17 +695,30 @@ Contents.prototype = {
     topbar_message_visibility: function() {
         if(this.client.is_logged_in) {
             var loginid_array = this.user.loginid_array;
+            var c_config = page.settings.get('countries_list')[this.client.residence];
 
             if (!this.client.is_real) {
+                var show_upgrade = true;
                 for (var i=0;i<loginid_array.length;i++) {
                     if (loginid_array[i].real) {
                         $('#virtual-upgrade-link').addClass('invisible');
+                        $('#vr-financial-upgrade-link').addClass('invisible');
+                        show_upgrade = false;
                         break;
+                    }
+                }
+                if (show_upgrade) {
+                    if (c_config && c_config['gaming_company'] == 'none' && c_config['financial_company'] == 'maltainvest') {
+                        $('#virtual-upgrade-link').addClass('invisible');
+                        $('#vr-financial-upgrade-link').removeClass('invisible');
+                    } else {
+                        $('#virtual-upgrade-link').removeClass('invisible');
+                        $('#vr-financial-upgrade-link').addClass('invisible');
                     }
                 }
             } else {
                 var show_financial = false;
-                if (/MLT/.test(this.client.loginid)) {
+                if (c_config && c_config['financial_company'] == 'maltainvest') {
                     show_financial = true;
                     for (var j=0;j<loginid_array.length;j++) {
                         if (loginid_array[j].financial) {

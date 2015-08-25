@@ -107,7 +107,6 @@ sub register {
                     calendar_icon => $c->url_for('/images/common/calendar_icon_1.png')->to_string,
                 },
                 broker               => 'CR',
-                restricted_countries => 'cr|hk|ir|my|mt|us|vi|um|jp|bs|je|gg',
                 valid_loginids       => "MX|VRTC|MLT|CR|FOG|BFT|VRTM|VRTU|WS'",
                 streaming_server => 'stream.binary.com',
                 arr_all_currencies => ["USD","EUR","GBP","AUD"],
