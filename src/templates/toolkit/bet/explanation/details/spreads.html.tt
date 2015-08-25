@@ -1,4 +1,4 @@
-<h4>[% l("Entry Level") %]</h4>
+<h3>[% l("Entry Level") %]</h3>
 <p>
     [% l("For long contracts, the entry level is the spot plus half spread and the exit level is spot minus half spread. For short contracts, the entry level is spot minus half spread and the exit level is spot plus half spread.") %]
 </p>
