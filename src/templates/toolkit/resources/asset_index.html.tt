@@ -6,7 +6,7 @@
     <ul>
         [% FOREACH market IN fullinfo %]
         <li>
-            <a href="#[% market.tabid %]">[% market.name %]</a>
+            <a id='outline' href="#[% market.tabid %]">[% market.name %]</a>
         </li>
         [% END %]
     </ul>

@@ -8,10 +8,18 @@
     font-weight: bold;
 }
 
-
 #betpage #content-holder #content {
     form {
         fieldset { background:none; }
+    }
+    img {
+      padding-top: 20px;
+    }
+    .padding-top {
+      padding-top: 23px;
+    }
+    #explanation-content{
+      padding-top: 10px;
     }
     width: 100%;
     > .content-tab-container {

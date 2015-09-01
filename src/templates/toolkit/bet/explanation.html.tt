@@ -8,61 +8,35 @@
 [%
     static_url = String.new(text => static_url)
 
-    flash.risefall        = static_url.copy.append("flash/betguide-risefall.swf")
-    flash.higherlower     = static_url.copy.append("flash/betguide-higherlower.swf")
-    flash.touchnotouch    = static_url.copy.append("flash/betguide-touchnotouch.swf")
-    flash.staysinout      = static_url.copy.append("flash/betguide-staysinout.swf")
-    flash.endsinout       = static_url.copy.append("flash/betguide-endsinout.swf")
-    flash.updown          = static_url.copy.append("flash/betguide-updown.swf")
-    image.spreads          = [ request.url_for('images/pages/get-started/spreadbet-long.png'),request.url_for('images/pages/get-started/spreadbet-short.png') ]
+    image.risefall        = [ request.url_for('images/pages/trade-explanation/rise-fall-1.svg'),request.url_for('images/pages/trade-explanation/rise-fall-2.svg') ]
+    image.higherlower     = [ request.url_for('images/pages/trade-explanation/higher-lower-1.svg'),request.url_for('images/pages/trade-explanation/higher-lower-2.svg') ]
+    image.touchnotouch    = [ request.url_for('images/pages/trade-explanation/touch-notouch-1.svg'),request.url_for('images/pages/trade-explanation/touch-notouch-2.svg') ]
+    image.endsinout       = [ request.url_for('images/pages/trade-explanation/in-out-1.svg'),request.url_for('images/pages/trade-explanation/in-out-2.svg') ]
+    image.staysinout      = [ request.url_for('images/pages/trade-explanation/in-out-3.svg'),request.url_for('images/pages/trade-explanation/in-out-4.svg') ]
+    image.updown          = [ request.url_for('images/pages/trade-explanation/up-down-1.svg'),request.url_for('images/pages/trade-explanation/up-down-2.svg') ]
+    image.spreads          = [ request.url_for('images/pages/get-started/spreadbet-long.png'),request.url_for('images/pages/get-started/spreadbet-long.png') ]
 %]
 
 <div class='grd-grid-12 grd-parent'>
 
-    [% IF show_flash %]
-        [% IF flash.$form_name %]
-        <div class='grd-grid-4 grd-grid-mobile-12'>
-            <div id="bet-guide-demo">
-                <object width="245" height="160" type="application/x-shockwave-flash" data="[% flash.$form_name %]">
-                    <param name="movie" value="[% flash.$form_name %]" />
-                    <param name="menu" value="false" />
-                    <param name="quality" value="high" />
-                    <param name="bgcolor" value="#FFFFFF" />
-                    <param name="wMode" value="transparent" />
-                </object>
-            </div>
-        </div>
+    <div class='[% IF show_image && image.$form_name %]grd-grid-9[% ELSE %]grd-grid-12[% END %]'>
+        [% IF show_winning %]
+            <h3>
+                [% l("Winning the contract") %]
+            </h3>
+            [% INCLUDE "$winning" %]
         [% END %]
-    [% END %]
-
-    [% IF show_image %]
-        <div class='grd-grid-4'>
+        [% IF show_explain %]
+            <div id='explanation-content'>
+                [% INCLUDE "$explanation" %]
+            </div>
+        [% END %]
+    </div>
+    [% IF show_image && image.$form_name %]
+        <div class='padding-top grd-grid-3'>
             [% FOREACH img_url IN image.$form_name %]
             <img class="responsive" src="[% img_url %]"/>
             [% END %]
         </div>
-    [% END %]
-
-    [% IF show_winning && show_flash && flash.$form_name  %]
-        <div class='grd-grid-8 grd-grid-mobile-12'>
-            <h4>
-                [% l("Winning the contract") %]
-            </h4>
-            [% INCLUDE "$winning" %]
-        </div>
-    [% ELSIF show_winning %]
-        <div class="[% IF show_image %]grd-grid-8[% ELSE %]grd-grid-12[% END %]">
-            <h4>
-                [% l("Winning the contract") %]
-            </h4>
-            [% INCLUDE "$winning" %]
-        </div>
-    [% END %]
-    [% IF show_explain %]
-    <div class='grd-grid-12'>
-        <div id='explanation-content'>
-            [% INCLUDE "$explanation" %]
-        </div>
-    </div>
     [% END %]
 </div><!-- grd-parent closes -->

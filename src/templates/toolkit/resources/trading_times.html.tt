@@ -5,7 +5,7 @@
     <div id="trading-tabs" class="grd-parent grd-grid-12 has-tabs">
         <ul>
             [% FOREACH market IN fullinfo %]
-            <li><a href="#[% market.tabid %]">[% market.name %]</a></li>
+            <li><a id='outline' href="#[% market.tabid %]">[% market.name %]</a></li>
             [% END %]
         </ul>
         <div class='grd-row-padding'></div>
