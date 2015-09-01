@@ -52,8 +52,10 @@
         .grd-grid-4
             %h1= l('Terms')
               %ul
-                %li
+                %li.ja-hide
                   %a.pjaxload{:href=>url_for("/terms-and-conditions")}= l('Terms and Conditions')
+                %li.hidden.ja-show-block
+                  %a.pjaxload{:href=>url_for("/terms-and-conditions-jp")}= l('Terms and Conditions')
                 %li
                   %a.pjaxload{:href=>url_for("/terms-and-conditions#privacy-tab")}= l('Security and Privacy')
                 %li.ja-hide

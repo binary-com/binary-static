@@ -104,8 +104,13 @@
                  <div class="grd-grid-4">
                     <h1>[% l('Terms') %]</h1>
                     <ul>
-                        <li>
+                        <li class='ja-hide'>
                             <a class="pjaxload" href="[% request.url_for('/terms-and-conditions', {filecode => 'legal'}) %]"[%
+                            IF
+                            target %] target="[% target %]"[% END %]>[% l('Terms and Conditions') %]</a>
+                        </li>
+                        <li class='hidden ja-show-block'>
+                            <a class="pjaxload" href="[% request.url_for('/terms-and-conditions-jp', {filecode => 'legal_jp'}) %]"[%
                             IF
                             target %] target="[% target %]"[% END %]>[% l('Terms and Conditions') %]</a>
                         </li>
