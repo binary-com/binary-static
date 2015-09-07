@@ -95,8 +95,13 @@ if (underlyingElement) {
  */
 var durationAmountElement = document.getElementById('duration_amount');
 if (durationAmountElement) {
-    durationAmountElement.addEventListener('input', debounce (function (e) {
+    durationAmountElement.addEventListener('input', debounce (function (e) {      
         processPriceRequest();
+        var durationAmountForm = document.getElementById('duration_amount_form');
+        durationAmountForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+        });
+        durationAmountForm.submit();
     }));
 }
 
