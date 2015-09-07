@@ -1,4 +1,8 @@
 <div id="trading_socket_container">
+    <div id="loading_container" class="overlay_container">
+        <div id="loading_icon" class="progress"></div>
+    </div>
+
     <div id="contract_market_container">
         <label for="market_show_menu" class="nav_placeholder" id="market_nav_placeholder"></label>
         <input type="checkbox" class="show_menu" id="market_show_menu" role="button">
@@ -29,8 +33,7 @@
                             </div>
                         </div>
                         <div class="row" id="date_start_row">
-                            <div class="col form_label">
-                                Start time:
+                            <div class="col form_label" id="start_time_label">
                             </div>
                             <div class="big-col">
                                 <select id="date_start"></select>
@@ -47,10 +50,10 @@
                                     </div>
                                     <div class="col-inner">
                                         <select id="duration_units" class="col"></select>
-                                    </div>
-                                    <div class="col-inner">
-                                        <abbr rel="tooltip" title="minimum available duration" id="duration_tooltip">min:</abbr>
-                                        <span id="duration_minimum"></span>
+                                        <span>
+                                            <abbr rel="tooltip" id="duration_tooltip"></abbr>
+                                            <span id="duration_minimum"></span>
+                                        </span>
                                     </div>
                                 </div>
                                 <div id="expiry_type_endtime" class="row-inner">
@@ -67,7 +70,7 @@
                     <div class="col">
                         <div class="row">
                             <div class="col form_label">
-                                <label for="spot" id="spot_label">Spot:</label>
+                                <label for="spot" id="spot_label"></label>
                             </div>
                             <div class="big-col">
                                 <span id="spot"></span>
@@ -75,7 +78,10 @@
                         </div>
                         <div class="row barrier_class" id="barrier_row">
                             <div class="col form_label">
-                                <label for="H" id="barrier_label">Barrier:</label>
+                                <label for="H" id="barrier_label">
+                                    <abbr rel="tooltip" id="barrier_tooltip"></abbr>
+                                    <span id="barrier_span"></abbr>
+                                </label>
                             </div>
                             <div class="big-col">
                                 <input id="barrier" type="text" name="H"/>
@@ -83,7 +89,10 @@
                         </div>
                         <div class="row barrier_class" id="high_barrier_row">
                             <div class="col form_label">
-                                <label for="H" id="barrier_high_label">High barrier:</label>
+                                <label for="H" id="barrier_high_label">
+                                    <abbr rel="tooltip" id="barrier_high_tooltip"></abbr>
+                                    <span id="barrier_high_span"></abbr>
+                                </label>
                             </div>
                             <div class="big-col">
                                 <input id="barrier_high" type="text" name="H"/>
@@ -91,7 +100,10 @@
                         </div>
                         <div class="row barrier_class" id="low_barrier_row">
                             <div class="col form_label">
-                                <label for="L" id="barrier_low_label">Low barrier:</label>
+                                <label for="L" id="barrier_low_label">
+                                    <abbr rel="tooltip" id="barrier_low_tooltip"></abbr>
+                                    <span id="barrier_low_span"></abbr>
+                                </label>
                             </div>
                             <div class="big-col">
                                 <input id="barrier_low" type="text" name="L"/>
@@ -100,8 +112,8 @@
                         <div class="row">
                             <div class="col form_label">
                                 <select id="amount_type">
-                                    <option value="payout">Payout</option>
-                                    <option value="stake">Stake</option>
+                                    <option value="payout" id="payout_option"></option>
+                                    <option value="stake" id="stake_option"></option>
                                 </select>
                             </div>
                             <div class="row-inner big-col">
@@ -118,9 +130,6 @@
             </div>
         </div>
         <div id="contract_prices_container">
-            <div id="loading_container" class="overlay_container">
-                <div id="loading_icon" class="progress"></div>
-            </div>
             <div id="contract_confirmation_container" class="overlay_container">
                 <a class="close" id="close_confirmation_container">x</a>
                 <div id="confirmation_message_container"></div>
@@ -128,24 +137,32 @@
             </div>
             <div class="row">
                 <div class="col vertical-row price_container" id="price_container_top">
-                    <div class="description_container" id="description_container_top">
+                    <div class="col" id="price_description_top">
+                        <div class="description_container" id="description_container_top">
+                        </div>
+                        <div class="contract_purchase center-aligned" id="contract_purchase_top">
+                            <span class="button">
+                                <button class="purchase_button" id="purchase_button_top" value="purchase"></button>
+                            </span>
+                        </div>
                     </div>
-                    <div class="contract_purchase center-aligned" id="contract_purchase_top">
-                        <span class="button">
-                            <button class="purchase_button" id="purchase_button_top" value="purchase">Purchase</button>
-                        </span>
+                    <div>
+                        <div class="center-aligned price_comment" id="price_comment_top"></div>
                     </div>
-                    <div class="center-aligned" id="price_comment_top"></div>
                 </div>
                 <div class="col vertical-row price_container" id="price_container_bottom">
-                    <div class="description_container" id="description_container_bottom">
+                    <div class="col" id="price_description_bottom">
+                        <div class="description_container" id="description_container_bottom">
+                        </div>
+                        <div class="contract_purchase center-aligned" id="contract_purchase_bottom">
+                            <span class="button">
+                                <button class="purchase_button" id="purchase_button_bottom" value="purchase"></button>
+                            </span>
+                        </div>
                     </div>
-                    <div class="contract_purchase center-aligned" id="contract_purchase_bottom">
-                        <span class="button">
-                            <button class="purchase_button" id="purchase_button_bottom" value="purchase">Purchase</button>
-                        </span>
+                    <div>
+                        <div class="center-aligned price_comment" id="price_comment_bottom"></div>
                     </div>
-                    <div class="center-aligned" id="price_comment_bottom"></div>
                 </div>
             </div>
         </div>

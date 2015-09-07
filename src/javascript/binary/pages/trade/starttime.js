@@ -24,7 +24,7 @@ function displayStartDates() {
         var target= document.getElementById('date_start'),
             fragment =  document.createDocumentFragment(),
             option = document.createElement('option'),
-            content = document.createTextNode('Now');
+            content = document.createTextNode(Content.localize().textNow);
 
         while (target && target.firstChild) {
             target.removeChild(target.firstChild);

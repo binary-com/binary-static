@@ -2,7 +2,7 @@
     [% FOREACH group = underlyings %]
         <optgroup label="[% group.group %]">
         [% FOREACH underlying = group.underlyings %]
-            <option class="[% underlying.class %]" value="[% underlying.value %]" [% IF underlying.value == selected_underlying %] selected="selected" [% END %] [% IF underlying.disabled == 1 %] disabled="disabled" [% END %]>
+            <option class="[% underlying.class %]" value="[% underlying.value %]" [% re = 'frx'; %][% IF underlying.group.match(re) %][% ELSE %] class='ja-hide' [% END %] [% IF underlying.value == selected_underlying %] selected="selected" [% END %] [% IF underlying.disabled == 1 %] disabled="disabled" [% END %]>
                 [% underlying.name %]
             </option>
         [% END %]

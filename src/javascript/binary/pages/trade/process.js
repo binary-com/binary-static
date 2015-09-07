@@ -5,9 +5,12 @@
 function processMarketOfferings() {
     'use strict';
 
-    var market = sessionStorage.getItem('market') || 'forex',
+    var market = getDefaultMarket(),
         formname = sessionStorage.getItem('formname') || 'risefall',
         offerings = sessionStorage.getItem('offerings');
+
+    // store the market
+    sessionStorage.setItem('market', market);
 
     // populate the Offerings object
     Offerings.details(JSON.parse(offerings), market.charAt(0).toUpperCase() + market.substring(1), formname);
@@ -60,10 +63,16 @@ function processContractFormOfferings(contracts) {
  */
 function processForgetPriceIds() {
     'use strict';
-
-    Object.keys(Price.idDisplayMapping()).forEach(function (key) {
-        TradeSocket.send({ forget: key });
-    });
+    if (Price) {
+        var priceIds = Price.bufferedIds();
+        for (var id in priceIds) {
+            if (priceIds.hasOwnProperty(id)) {
+                TradeSocket.send({ forget: id });
+                delete priceIds[id];
+            }
+        }
+        Price.clearMapping();
+    }
 }
 
 /*
@@ -75,7 +84,6 @@ function processPriceRequest() {
 
     showPriceLoadingIcon();
     processForgetPriceIds();
-    Price.clearMapping();
     for (var typeOfContract in Contract.contractType()[Offerings.form()]) {
         if(Contract.contractType()[Offerings.form()].hasOwnProperty(typeOfContract)) {
             TradeSocket.send(Price.proposal(typeOfContract));
@@ -89,9 +97,14 @@ function processPriceRequest() {
  */
 function processForgetTickId() {
     'use strict';
-
-    if (Tick && Tick.id()) {
-        TradeSocket.send({ forget: Tick.id() });
+    if (Tick) {
+        var tickIds = Tick.bufferedIds();
+        for (var id in tickIds) {
+            if (tickIds.hasOwnProperty(id)) {
+                TradeSocket.send({ forget: id });
+                delete tickIds[id];
+            }
+        }
     }
 }
 
@@ -100,7 +113,10 @@ function processForgetTickId() {
  */
 function processTick(tick) {
     'use strict';
-
     Tick.details(tick);
     Tick.display();
+    if (!Barriers.isBarrierUpdated()) {
+        Barriers.display();
+        Barriers.setBarrierUpdate(true);
+    }
 }

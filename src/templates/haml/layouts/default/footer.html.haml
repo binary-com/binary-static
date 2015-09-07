@@ -28,9 +28,9 @@
               %a.pjaxload{:href=>url_for("/tour"), :class => 'pjaxload'}= l('Platform Tour')
             %li.ja-hide
               %a{:href=>"http://www.gamcare.org.uk/", :target => "_blank"}= l('GamCare')
-            %li.blog
+            %li.blog.ja-hide
               %a{:href=>"http://blog.binary.com", :target => '_blank'}= l('Blog')
-            %li
+            %li.ja-hide
               %a{:href=>"http://blog.binary.com/en/webinar/", :target => "_blank"}= l('Webinars')
         .grd-grid-4
           %h1= l('Trading')
@@ -38,7 +38,7 @@
             %li
               %a.pjaxload{:href=>url_for("/resources/pricing_table")}= l('Pricing Table')
             %li
-              %a.pjaxload{:href=>url_for("/resources/rise_fall_table")}= l('Rise/Fall Table')
+              %a.ja-hide.pjaxload{:href=>url_for("/resources/rise_fall_table")}= l('Rise/Fall Table')
             %li
               %a.pjaxload{:href=>url_for("/resources/asset_index")}= l('Asset Index')
           .grd-row-padding
@@ -52,8 +52,10 @@
         .grd-grid-4
             %h1= l('Terms')
               %ul
-                %li
+                %li.ja-hide
                   %a.pjaxload{:href=>url_for("/terms-and-conditions")}= l('Terms and Conditions')
+                %li.hidden.ja-show-block
+                  %a.pjaxload{:href=>url_for("/terms-and-conditions-jp")}= l('Terms and Conditions')
                 %li
                   %a.pjaxload{:href=>url_for("/terms-and-conditions#privacy-tab")}= l('Security and Privacy')
                 %li.ja-hide

@@ -4,7 +4,7 @@
  */
 var marketNavElement = document.getElementById('contract_market_nav');
 if (marketNavElement) {
-    marketNavElement.addEventListener('click', function(e) {
+    marketNavElement.addEventListener('click', debounce (function(e) {
         if (e.target && e.target.nodeName === 'LI') {
             var clickedMarket = e.target;
             var isMarketActive = clickedMarket.classList.contains('active');
@@ -25,13 +25,34 @@ if (marketNavElement) {
                 marketFormCheckbox.checked = false;
             }
         }
-    });
+    }, 200 ));
 }
 
 /*
  * attach event to form list, so when client click on different form we need to update form
  * and request for new Contract details to populate the form and request price accordingly
  */
+var contractFormEventChange =  function (formName) {
+    'use strict';
+
+    var market = sessionStorage.getItem('market') || 'Forex';
+    market = market.charAt(0).toUpperCase() + market.substring(1);
+
+    // pass the original offerings as we don't want to request offerings again and again
+    Offerings.details(Offerings.offerings(), market, formName);
+
+    // change only submarkets and underlyings as per formName change
+    displayOptions('submarket',Offerings.submarkets());
+    displayUnderlyings();
+
+    var underlying = document.getElementById('underlying').value;
+    sessionStorage.setItem('underlying', underlying);
+
+    requestTradeAnalysis();
+    // get the contract details based on underlying as formName has changed
+    TradeSocket.send({ contracts_for: underlying });
+};
+
 var formNavElement = document.getElementById('contract_form_name_nav');
 if (formNavElement) {
     formNavElement.addEventListener('click', function(e) {
@@ -55,28 +76,6 @@ if (formNavElement) {
     });
 }
 
-function contractFormEventChange(formName) {
-    'use strict';
-
-    var market = sessionStorage.getItem('market') || 'Forex';
-
-    market = market.charAt(0).toUpperCase() + market.substring(1);
-
-    // pass the original offerings as we don't want to request offerings again and again
-    Offerings.details(Offerings.offerings(), market, formName);
-
-    // change only submarkets and underlyings as per formName change
-    displayOptions('submarket',Offerings.submarkets());
-    displayUnderlyings();
-
-    var underlying = document.getElementById('underlying').value;
-    sessionStorage.setItem('underlying', underlying);
-
-    requestTradeAnalysis();
-    // get the contract details based on underlying as formName has changed
-    TradeSocket.send({ contracts_for: underlying });
-}
-
 /*
  * attach event to underlying change, event need to request new contract details and price
  */
@@ -96,9 +95,9 @@ if (underlyingElement) {
  */
 var durationAmountElement = document.getElementById('duration_amount');
 if (durationAmountElement) {
-    durationAmountElement.addEventListener('input', function (e) {
+    durationAmountElement.addEventListener('input', debounce (function (e) {
         processPriceRequest();
-    });
+    }));
 }
 
 /*
@@ -151,10 +150,10 @@ if (endTimeElement) {
  */
 var amountElement = document.getElementById('amount');
 if (amountElement) {
-    amountElement.addEventListener('input', function(e) {
+    amountElement.addEventListener('input', debounce( function(e) {
         sessionStorage.setItem('amount', e.target.value);
         processPriceRequest();
-    });
+    }));
 }
 
 /*
@@ -228,6 +227,7 @@ if (currencyElement) {
 /*
  * attach event to purchase buttons to buy the current contract
  */
+// using function expression form here as it used inside for loop
 var purchaseContractEvent = function () {
     var id = this.getAttribute('data-purchase-id'),
         askPrice = this.getAttribute('data-ask-price');
@@ -264,9 +264,9 @@ if (closeContainerElement) {
  */
 var barrierElement = document.getElementById('barrier');
 if (barrierElement) {
-    barrierElement.addEventListener('change', function (e) {
+    barrierElement.addEventListener('input', debounce( function (e) {
         processPriceRequest();
-    });
+    }));
 }
 
 /*
@@ -274,9 +274,9 @@ if (barrierElement) {
  */
 var lowBarrierElement = document.getElementById('barrier_low');
 if (lowBarrierElement) {
-    lowBarrierElement.addEventListener('change', function (e) {
+    lowBarrierElement.addEventListener('input', debounce( function (e) {
         processPriceRequest();
-    });
+    }));
 }
 
 /*
@@ -284,7 +284,7 @@ if (lowBarrierElement) {
  */
 var highBarrierElement = document.getElementById('barrier_high');
 if (highBarrierElement) {
-    highBarrierElement.addEventListener('change', function (e) {
+    highBarrierElement.addEventListener('input', debounce( function (e) {
         processPriceRequest();
-    });
+    }));
 }

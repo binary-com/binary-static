@@ -2,6 +2,7 @@
     from {transform: rotate(0deg);}
     to {transform: rotate(360deg);}
 }
+
 .spinner {
     animation: spinning .2s * 5 infinite linear;
 }
@@ -12,52 +13,6 @@
     background-size: contain;
     width: 4rem;
     height: 4rem;
-}
-
-.row, .row-inner {
-    flex-direction: row;
-    display: flex;
-    justify-content: space-around;
-}
-
-.col, .col-inner {
-    flex: 1;
-}
-
-.vertical-row {
-    flex-direction: column;
-    display: flex;
-}
-
-.nav_placeholder {
-    display: none;
-    overflow: hidden;
-    width: 100%;
-    background-color: $COLOR_BLUE;
-    padding: 3px 0 3px 10px;
-    margin: 10px 0;
-    color: $COLOR_WHITE;
-    text-transform: capitalize;
-}
-
-.nav_placeholder:after {
-    content: '\25BC';
-    font-size: 50%;
-    right: 0;
-    position:absolute;
-    margin-right: 10px;
-}
-
-input[type=checkbox].show_menu {
-    display: none;
-}
-
-input[type=checkbox]#market_show_menu:checked ~ #contract_market_nav {
-    display: flex;
-}
-
-input[type=checkbox]#contract_form_show_menu:checked ~ #contract_form_name_nav {
-    display: flex;
 }
 
 @mixin ul_segmented_navigation {
@@ -84,26 +39,84 @@ input[type=checkbox]#contract_form_show_menu:checked ~ #contract_form_name_nav {
     }
 }
 
-ul[role=segmented] {
-    @include ul_segmented_navigation;
-    li {
-        @include li_segmented_element;
-        &#risefall, &#higherlower, &#touchnotouch {
-            background-image: none;
-        }
-    }
-    a {
-        text-decoration: none;
-        font-weight: normal;
-        padding: .5rem .25rem;
-        &:hover {
-            text-decoration: none;
-        }
-    }
-}
-
 #trading_socket_container {
     font-size: 1rem;
+    position: relative;
+
+    .row, .row-inner {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .col, .col-inner {
+        flex: 1;
+    }
+
+    .row {
+        flex-direction: row;
+    }
+
+    .row-inner {
+        flex-direction: column;
+        .col-inner {
+            margin-bottom: 5px;
+        }
+    }
+
+    .vertical-row {
+        flex-direction: column;
+        display: flex;
+    }
+
+    .nav_placeholder {
+        display: none;
+        overflow: hidden;
+        width: 100%;
+        background-color: $COLOR_BLUE;
+        padding: 3px 0 3px 10px;
+        margin: 10px 0;
+        color: $COLOR_WHITE;
+        text-transform: capitalize;
+    }
+
+    .nav_placeholder:after {
+        content: '\25BC';
+        font-size: 50%;
+        right: 0;
+        position:absolute;
+        margin-right: 10px;
+    }
+
+    ul[role=segmented] {
+        @include ul_segmented_navigation;
+        li {
+            @include li_segmented_element;
+            &#risefall, &#higherlower, &#touchnotouch {
+                background-image: none;
+            }
+        }
+        a {
+            text-decoration: none;
+            font-weight: normal;
+            padding: .5rem .25rem;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    input[type=checkbox].show_menu {
+        display: none;
+    }
+
+    input[type=checkbox]#market_show_menu:checked ~ #contract_market_nav {
+        display: flex;
+    }
+
+    input[type=checkbox]#contract_form_show_menu:checked ~ #contract_form_name_nav {
+        display: flex;
+    }
+
     #contract_container {
         .row {
             padding: 10px 0;
@@ -194,71 +207,72 @@ ul[role=segmented] {
             }
         }
     }
-}
 
-.overlay_container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    display: none;
-    background: rgba($COLOR_LIGHT_GRAY, 0.5);
-}
-
-#contract_confirmation_container {
-    background-color: $COLOR_LIGHT_GRAY;
-    text-align: center;
-}
-
-#loading_icon {
-    position: absolute;
-    top: 27%;
-    left: 47%;
-}
-
-@media all and (max-width: 640px) {
-    ul[role=segmented] {
-        flex-direction: column;
+    .overlay_container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
         display: none;
-    }
-    .nav_placeholder {
-        display: flex;
+        background: rgba($COLOR_LIGHT_GRAY, 0.5);
+        z-index: 1;
     }
 
-    #contract_container {
-        .row-inner {
+    #contract_confirmation_container {
+        background-color: $COLOR_LIGHT_GRAY;
+        text-align: center;
+        #confirmation_message_container {
+            margin-top: 15px;
+        }
+    }
+
+    #loading_icon {
+        position: absolute;
+        top: 35%;
+        left: 46%;
+    }
+
+    @media all and (max-width: 640px) {
+        ul[role=segmented] {
             flex-direction: column;
-            .col-inner {
-                margin-bottom: 5px;
+            display: none;
+        }
+        .nav_placeholder {
+            display: flex;
+        }
+
+        #contract_container {
+            #contract_prices_container {
+                #price_container_top {
+                    margin-right: 0 !important;
+                }
+                .row {
+                    flex-direction: column;
+                    .col {
+                        margin-bottom: 5px;
+                    }
+                }
             }
         }
-        #contract_prices_container {
-            #price_container_top {
-                margin-right: 0 !important;
-            }
-            .row {
-                flex-direction: column;
-                .col {
-                    margin-bottom: 5px;
+    }
+
+    @media all and (max-width: 768px) {
+        #contract_container {
+            #contract_form_container {
+                #contract_form_content > .row {
+                    flex-direction: column;
                 }
             }
         }
     }
 }
 
-@media all and (max-width: 768px) {
-    #contract_container {
-        #contract_form_container {
-            #contract_form_content > .row {
-                flex-direction: column;
-            }
-        }
-    }
-}
-
-/* these styles are for trade analysis and will be removed */
-
+/*
+ * these styles are for trade analysis and will be removed
+ *
+ * DO NOT ADD ANY COMMON STYLING BELOW THIS. ALL OTHER STYLING GO ABOVE THIS
+ */
 #trading_bottom_content {
     margin-top: 15px;
     font-size: 1rem;
@@ -290,3 +304,13 @@ ul[role=segmented] {
         }
     }
 }
+@media all and (max-width: 640px) {
+    #trading_bottom_content {
+        ul#betsBottomPage {
+            flex-direction: column;
+        }
+    }
+}
+/*
+ * DO NOT ADD ANY COMMON STYLING BELOW THIS. ALL OTHER STYLING GO ABOVE THIS
+ */

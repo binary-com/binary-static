@@ -12,7 +12,7 @@
         %img#payment_methods_icon.responsive.charting-page-icon{:src => url_for('images/pages/cashier/payment-methods.svg')}
   .grd-grid-5.grd-grid-mobile-12
     %p= l('Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet.')
-    %a.pjaxload#view_payment_methods{:href=>url_for('cashier/payment_methods')}= l('View available payment methods')
+    %a.pjaxload.ja-hide#view_payment_methods{:href=>url_for('cashier/payment_methods')}= l('View available payment methods')
   .grd-grid-5.grd-grid-mobile-12
     .grd-row-padding
       %a.pjaxload.button.button_large.by_client_type.client_real.with_login_cookies{ :href => stash('deposit_url') }

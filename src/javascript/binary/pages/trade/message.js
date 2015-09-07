@@ -24,7 +24,7 @@ var Message = (function () {
                 hideOverlayContainer();
                 Price.display(response, Contract.contractType()[Offerings.form()]);
                 hidePriceLoadingIcon();
-            } else if (type === 'open_receipt') {
+            } else if (type === 'buy') {
                 Purchase.display(response);
             } else if (type === 'tick') {
                 processTick(response);
