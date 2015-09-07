@@ -3,29 +3,29 @@
     <p>
     	<ul class='bullet'>
     		<li>
-    			Japan website General Risk Warning List item 1
+    			[% l("Japan website General Risk Warning List item 1") %]
     		</li>
     		<br />
     		<li>
-    			Japan website General Risk Warning List item 2
+    			[% l("Japan website General Risk Warning List item 2") %]
     		</li>
     		<br />
     		<li>
-    			Japan website General Risk Warning List item 3
+    			[% l("Japan website General Risk Warning List item 3") %]
     		</li>
     		<br />
     		<li>
-    			Japan website General Risk Warning List item 4
+    			[% l("Japan website General Risk Warning List item 4") %]
     		</li>
     	</ul>
     	<p>
-    		Japan website General Risk Warning Paragraph 1
+    		[% l("Japan website General Risk Warning Paragraph 1") %]
     	</p>
     	<p>
-    		Japan website General Risk Warning Paragraph 2
+    		[% l("Japan website General Risk Warning Paragraph 2") %]
     	</p>
     	<p>
-    		Japan website General Risk Warning Paragraph 3
+    		[% l("Japan website General Risk Warning Paragraph 3") %]
     	</p>
     </p>
 </div>
