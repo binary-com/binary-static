@@ -440,3 +440,24 @@ function getDefaultMarket() {
    }
    return mkt;
 }
+
+/*
+ * this is invoked when submit button is clicked and prevents reloading of page
+ */
+function addEventListenerForm(){
+    document.getElementById('websocket_form').addEventListener("submit", function(evt){
+        evt.preventDefault();
+        return false;
+    }, false);
+}
+
+/*
+ * this creates a button, clicks it, and destroys it to invoke the listener
+ */
+function submitForm(form) {
+    var button = form.ownerDocument.createElement('input');
+    button.style.display = 'none';
+    button.type = 'submit';
+    form.appendChild(button).click();
+    form.removeChild(button);
+}

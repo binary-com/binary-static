@@ -95,8 +95,9 @@ if (underlyingElement) {
  */
 var durationAmountElement = document.getElementById('duration_amount');
 if (durationAmountElement) {
-    durationAmountElement.addEventListener('input', debounce (function (e) {
+    durationAmountElement.addEventListener('input', debounce (function (e) {      
         processPriceRequest();
+        submitForm(document.getElementById('websocket_form'));
     }));
 }
 
