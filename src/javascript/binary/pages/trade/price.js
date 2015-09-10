@@ -137,7 +137,7 @@ var Price = (function () {
             row.appendChild(amount);
         }
 
-        if (details['error']) {
+        if (details['error'] || !document.getElementById('websocket_form').checkValidity()) {
             if (purchase) {
                 purchase.style.display = 'none';
             }
