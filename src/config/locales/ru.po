@@ -1243,8 +1243,8 @@ msgstr "Актив"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:151
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Resources.pm:127
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2244
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2291
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2366
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2413
 #: /home/git/translations/binary-static/src/templates/haml/layouts/default/footer.html.haml:1
 #: /home/git/translations/binary-static/src/templates/haml/resources/index.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/global/footer.html.tt:83
@@ -1411,14 +1411,14 @@ msgstr "Изменение барьера (%) за пределами лимит
 msgid "Barrier Step format error"
 msgstr "Ошибка формата изменения барьера"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Role/SingleBarrier.pm:52
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Role/SingleBarrier.pm:59
 msgid "Barrier is out of acceptable range."
 msgstr "Барьер находится вне приемлемых рамок."
 
 #. ($min_allowed . ' pips away from the spot.')
 #. ($self->minimum_allowable_move . ' pips away from the spot.')
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Role/DoubleBarrier.pm:128
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Role/SingleBarrier.pm:63
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Role/SingleBarrier.pm:70
 msgid "Barrier must be at least "
 msgstr "Барьер должен быть по меньшей мере "
 
@@ -1884,7 +1884,7 @@ msgid "Change in account settings"
 msgstr "Изменение настроек счета"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:2032
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:671
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:670
 msgid "Chart"
 msgstr "График"
 
@@ -2296,11 +2296,11 @@ msgid "Contract barrier must be positive."
 msgstr "Барьер контракта должен быть положительным значением."
 
 #. ($end_of_bo->date)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2371
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2493
 msgid "Contract can not expire during the end-of-year holiday period. Select an expiry date after %1."
 msgstr "Контракты не могут заканчиваться в период праздничных дней в конце года. Пожалуйста, выберите дату окончания после %1."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:719
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:718
 msgid "Contract cannot be sold at this time."
 msgstr "Контракт не может быть продан в настоящее время."
 
@@ -2308,7 +2308,7 @@ msgstr "Контракт не может быть продан в настоящ
 msgid "Contract expired"
 msgstr "Контракт закончился"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2093
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2215
 msgid "Contract has already expired."
 msgstr "Контракт уже закончил свое действие."
 
@@ -2318,16 +2318,16 @@ msgid "Contract market price is too close to final payout."
 msgstr "Значение рыночной цены слишком близко к значению желаемой выплаты."
 
 #. ($eod_blackout_expiry->as_string)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2134
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2256
 msgid "Contract may not expire within the last %1 of trading."
 msgstr "Контракт не может заканчиваться в последний(ие) %1 торгового дня."
 
 #. ($minimum_hold->as_string)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1968
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2090
 msgid "Contract must be held for %1 before resale is offered."
 msgstr "Контракт должен продлиться, по меньшей мере %1, прежде чем он будет доступен для досрочной продажи."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2102
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2224
 msgid "Contract must expire during trading hours."
 msgstr "Контракт должен заканчиваться в торговые часы."
 
@@ -2368,12 +2368,12 @@ msgid "Contracts on %1 which both start and end between %2 and %3 on the same da
 msgstr "Контракты на %1, которые начинаются и заканчиваются между %2 и %3 в тот же день, недоступны для покупки."
 
 #. ($underlying->translated_display_name()
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2150
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2272
 msgid "Contracts on %1 with duration more than 24 hours must expire at the end of a trading day."
 msgstr "Контракты на %1 со сроком более 24 часов должны заканчиваться в конце торгового дня."
 
 #. ($underlying->translated_display_name()
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2120
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2242
 msgid "Contracts on %1 with durations under 24 hours must expire on the same trading day."
 msgstr "Контракты на %1 со сроком менее 24 часов должны заканчиваться в тот же торговый день."
 
@@ -2411,7 +2411,7 @@ msgstr "Куки"
 msgid "Copyright"
 msgstr "Авторское право"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:701
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:700
 msgid "Corporate Actions"
 msgstr "Корпоративные действия"
 
@@ -2475,11 +2475,11 @@ msgstr "Котировки на валютах ограничены 5 знака
 msgid "Current Level"
 msgstr "Текущий уровень"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:591
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:590
 msgid "Current Spot"
 msgstr "Текущая спот-цена"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1918
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2040
 msgid "Current market price is 0."
 msgstr "Текущая цена - 0."
 
@@ -2988,7 +2988,7 @@ msgid "Duration"
 msgstr "Продолжительность"
 
 #. ($shortest->as_string, $longest->as_string)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2255
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2377
 msgid "Duration must be between %1 and %2."
 msgstr "Продолжительность должна быть от %1 до %2."
 
@@ -3106,7 +3106,7 @@ msgid "Email: <span id='cs_contact_eaddress'></span>"
 msgstr "Email: <span id='cs_contact_eaddress'></span>"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:156
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:507
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:506
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/form/duration.html.tt:5
 msgid "End Time"
 msgstr "Окончание"
@@ -3220,7 +3220,7 @@ msgstr "Период контракта"
 msgid "Exit Level"
 msgstr "Уровень окончания"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:500
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:499
 msgid "Exit Spot"
 msgstr "Выходная котировка"
 
@@ -3236,15 +3236,15 @@ msgstr "Выходная котировка"
 msgid "Expiry"
 msgstr "Окончание действия"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:566
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:565
 msgid "Expiry Price"
 msgstr "Цена при окончании"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:562
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:561
 msgid "Expiry Spot"
 msgstr "Котировка окончания"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:554
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:553
 msgid "Expiry Time"
 msgstr "Время окончания"
 
@@ -3252,7 +3252,7 @@ msgstr "Время окончания"
 msgid "Expiry price"
 msgstr "Цена при окончании"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:688
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:687
 msgid "Explanation"
 msgstr "Объяснение"
 
@@ -3338,7 +3338,7 @@ msgstr "Контроль фильтрации"
 msgid "Filtering Stray Ticks"
 msgstr "Фильтрация случайных котировок"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:519
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:518
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/buy_success_ajax.html.tt:38
 msgid "Final Price"
 msgstr "Цена продажи"
@@ -3752,7 +3752,7 @@ msgstr "Высший Барьер"
 msgid "High barrier"
 msgstr "Высший барьер"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Role/DoubleBarrier.pm:145
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Role/DoubleBarrier.pm:149
 msgid "High barrier is out of acceptable range. Please adjust the high barrier."
 msgstr "Высший барьер вне приемлемых рамок. Пожалуйста, измените высший барьер."
 
@@ -4213,7 +4213,7 @@ msgstr "Возмещение убытков и ответственность"
 msgid "Indicative"
 msgstr "Временная цена"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:595
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:594
 msgid "Indicative Price"
 msgstr "Временная цена"
 
@@ -4320,7 +4320,7 @@ msgstr "О риске"
 msgid "Interpretation"
 msgstr "Интерпретация"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Role/ExpireAtEnd.pm:120
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1805
 msgid "Intraday contracts may not cross market open."
 msgstr "Внутридневные контракты не могут переходить на следующий рабочий день."
 
@@ -4366,7 +4366,7 @@ msgstr "Недействительный e-mail"
 msgid "Invalid email and password combination."
 msgstr "Неверная комбинация эл.адреса и пароля."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1844
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1966
 msgid "Invalid payout currency."
 msgstr "Недействительная валюта."
 
@@ -4379,7 +4379,7 @@ msgstr "Неверно указан период. Введите период м
 msgid "Invalid request"
 msgstr "Недействительный запрос"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1898
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2020
 msgid "Invalid stake"
 msgstr "Недействительная ставка"
 
@@ -5502,7 +5502,7 @@ msgstr "Значение низшего барьера может быть то�
 msgid "Low barrier"
 msgstr "Нижний барьер"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Role/DoubleBarrier.pm:137
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Role/DoubleBarrier.pm:148
 msgid "Low barrier is out of acceptable range. Please adjust the low barrier."
 msgstr "Нижний барьер вне приемлемых рамок. Пожалуйста, измените нижний барьер."
 
@@ -5592,7 +5592,7 @@ msgstr "Выходная цена рынка"
 # 83%
 # 100%
 #. ($safer_expiry->date)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2319
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2441
 msgid "Market holiday during the contract period. Select an expiry date after %1."
 msgstr "Во время действия контракта ожидаются праздничные дни. Выберите время окончания после %1."
 
@@ -5743,9 +5743,9 @@ msgstr "Отсутствуют рыночные данные для период
 
 # 83%
 # 100%
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2202
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Role/ExpireAtEnd.pm:135
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Role/ExpireAtEnd.pm:76
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1761
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1820
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2324
 msgid "Missing market data for contract period."
 msgstr "Отсутствие рыночных данных для периода действия контракта."
 
@@ -5753,8 +5753,8 @@ msgstr "Отсутствие рыночных данных для периода
 msgid "Missing market data for entry spot."
 msgstr "Отсутствие рыночных данных для входной цены."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Role/ExpireAtEnd.pm:107
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Role/ExpireAtEnd.pm:93
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1778
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1792
 msgid "Missing market data for exit spot."
 msgstr "Отсутствие рыночных данных для выходной цены."
 
@@ -6053,7 +6053,7 @@ msgstr "Начинающие трейдеры могут использоват�
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:167
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/ContractForm.pm:631
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:583
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:582
 msgid "Now"
 msgstr "Сейчас"
 
@@ -6067,7 +6067,7 @@ msgid "Number of ticks"
 msgstr "Кол-во котировок"
 
 #. ($min_tick, $max_tick)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2188
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2310
 msgid "Number of ticks must be between %1 and %2"
 msgstr "Количество тиков должно быть от %1 до %2"
 
@@ -6471,7 +6471,7 @@ msgstr "Валюта выплаты"
 msgid "Payout has moved in your favour from %1 to %2."
 msgstr "Выплата изменилась в выгодную для Вас сторону с %1 до %2."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1871
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1993
 msgid "Payout may not have more than two decimal places."
 msgstr "Выплата не может иметь более двух десятичных."
 
@@ -6883,7 +6883,7 @@ msgid "Prevailing market price cannot be determined at this time."
 msgstr "Действующая рыночная цена не может быть определена в настоящее время."
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1174
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2399
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2521
 msgid "Prevailing market price cannot be determined."
 msgstr "Настоящая рыночная цена не может быть установлена."
 
@@ -7030,18 +7030,18 @@ msgid "Purchase Date"
 msgstr "Дата покупки"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:491
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:618
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:617
 #: /home/git/translations/binary-static/src/templates/toolkit/account/profit_table.html.tt:55
 #: /home/git/translations/binary-static/src/templates/toolkit/account/profit_table.html.tt:92
 msgid "Purchase Price"
 msgstr "Цена покупки"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:614
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:613
 msgid "Purchase Spot"
 msgstr "Спот-цена при покупке"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:107
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:610
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:609
 msgid "Purchase Time"
 msgstr "Время покупки"
 
@@ -7271,30 +7271,30 @@ msgstr "Представляет собой максимальное колич�
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "Представляет собой максимальную сумму, на которую Вы можете купить контракты в течение любого торгового дня."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2370
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2492
 msgid "Resale of this contract is not offered due to end-of-year market holidays."
 msgstr "Продажа этого контракта не предлагается в настоящее время, в связи с праздничными днями в конце года."
 
 # 83%
 # 100%
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2318
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2440
 msgid "Resale of this contract is not offered due to market holiday during contract period."
 msgstr "Продажа этого контракта не предлагается в настоящее время, в связи с праздничными днями на рынках."
 
 # 83%
 # 100%
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2339
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2461
 msgid "Resale of this contract is not offered due to market holidays during contract period."
 msgstr "Продажа этого контракта не предлагается в настоящее время, в связи с праздничными днями на рынках в период действия контракта."
 
 #. ($shortest->as_string)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2240
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2362
 msgid "Resale of this contract is not offered with less than %1 remaining."
 msgstr "Продажа контрактов с оставшейся продолжительностью менее, чем %1, не предлагается."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1807
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2234
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2289
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1929
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2356
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2411
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Pricing/Engine/Role/StandardMarkup.pm:173
 msgid "Resale of this contract is not offered."
 msgstr "Продажа данного контракта не предлагается."
@@ -7542,15 +7542,15 @@ msgstr "Услуги по само-ограничению"
 msgid "Sell"
 msgstr "Продажа"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:566
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:565
 msgid "Sell Price"
 msgstr "Цена прод."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:562
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:561
 msgid "Sell Spot"
 msgstr "Котировка продажи"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:554
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:553
 msgid "Sell Time"
 msgstr "Время продажи"
 
@@ -7869,7 +7869,7 @@ msgstr "Извините, эта опция доступна только для
 msgid "Sorry, this feature is not available."
 msgstr "Извините, данная функция недоступна."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1608
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1612
 msgid "Sorry, this page cannot be refreshed."
 msgstr "Извините, эта страница не может быть обновлена."
 
@@ -8012,23 +8012,23 @@ msgstr "Начните обучение"
 msgid "Start time"
 msgstr "Время начала"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2000
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2122
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:411
 msgid "Start time is in the past"
 msgstr "Время начала прошло"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1990
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2112
 msgid "Start time is invalid."
 msgstr "Время начала недействительно."
 
 # 86%
 # 100%
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1980
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2102
 msgid "Start time must be before expiry time."
 msgstr "Время начала должно быть раньше времени окончания."
 
 #. ($forward_starting_blackout->as_string)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2028
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2150
 msgid "Start time on forward-starting contracts must be more than %1 from now."
 msgstr "Отложенные контракты должны начинаться позднее, чем через %1, от настоящего момента."
 
@@ -8242,7 +8242,7 @@ msgstr "Проблемы системы не позволяют точно ра�
 msgid "TRIX"
 msgstr "TRIX"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:659
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:658
 msgid "Table"
 msgstr "Таблица"
 
@@ -8853,7 +8853,7 @@ msgstr "Убытки в размере 306 USD являются разницей
 msgid "The market exit price is the price in effect at the end of the contract period."
 msgstr "Выходная цена рынка - это действительная на момент окончания контракта котировка."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2006
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2128
 msgid "The market must be open at the start time."
 msgstr "Рынок должен быть открыт на момент начала."
 
@@ -9182,7 +9182,7 @@ msgstr "Данный контракт недоступен для этого с�
 msgid "This contract lost"
 msgstr "Контракт проиграл"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1918
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2040
 msgid "This contract offers no return."
 msgstr "На данный контракт не может быть предложен выигрыш."
 
@@ -9263,7 +9263,7 @@ msgstr "Это может быть интересным вариантом дл�
 msgid "This market closes early today at"
 msgstr "Данный рынок сегодня закрывается рано в"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2006
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2128
 msgid "This market is presently closed."
 msgstr "Данный рынок сейчас закрыт."
 
@@ -9297,7 +9297,7 @@ msgstr "Данная страница недоступна."
 msgid "This promotion is only available to new Clients. Existing or former Clients do not qualify. It is only available once to each Client."
 msgstr "Данное предложение распространяется только на новых клиентов. Настоящие или бывшие клиенты не могут ей воспользоваться. Предложением можно воспользоваться только один раз."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1808
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1930
 msgid "This trade is not offered."
 msgstr "Контракт не предлагается."
 
@@ -9411,7 +9411,7 @@ msgstr "Сегодняшняя ставка"
 # 83%
 # 100%
 #. ($safer_expiry->date)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2340
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2462
 msgid "Too many market holidays during the contract period. Select an expiry date after %1."
 msgstr "Во время действия данного контракта ожидается несколько праздничных дней. Выберите время окончания после %1."
 
@@ -9543,11 +9543,11 @@ msgstr "Правила торговли"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:158
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Resources.pm:489
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1781
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2054
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2069
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2085
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2309
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1903
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2176
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2191
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2207
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2431
 #: /home/git/translations/binary-static/src/templates/haml/resources/index.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/datafeed.html.tt:29
 msgid "Trading Times"
@@ -9578,16 +9578,16 @@ msgid "Trading is Suspended"
 msgstr "Торги приостановлены"
 
 #. ($blackout_time)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2018
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2140
 msgid "Trading is available after the first %1 of the session."
 msgstr "Покупка контрактов доступна после первых %1 торговой сессии."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2290
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2412
 msgid "Trading is not offered for this duration."
 msgstr "Контракты не предлагаются на данный период."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1731
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1800
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1853
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1922
 msgid "Trading is suspended at the moment."
 msgstr "В данный момент торги приостановлены."
 
@@ -9599,9 +9599,9 @@ msgstr "Торговля на %1 недоступна для данного ти
 #. ($underlying->translated_display_name()
 #. ($translated_name)
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:449
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1739
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1748
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1779
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1861
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1870
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1901
 msgid "Trading on %1 is suspended at the moment."
 msgstr "В данный момент торги на %1 приостановлены."
 
@@ -9611,9 +9611,9 @@ msgstr "В данный момент торги на %1 приостановле
 #. ($bet->underlying->translated_display_name()
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1254
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:140
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1759
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1769
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2405
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1881
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1891
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2527
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Spread.pm:194
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Spread.pm:235
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Spread.pm:428
@@ -9621,12 +9621,12 @@ msgstr "В данный момент торги на %1 приостановле
 msgid "Trading on %1 is suspended due to missing market data."
 msgstr "Торговля на %1 приостановлена из-за отсутствия рыночных данных."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2067
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2189
 msgid "Trading on this contract type is suspended for the last one hour of the session."
 msgstr "Торги для данного типа контракта приостановлены для последнего часа торговой сессии."
 
 #. ($localized_eod_blackout_start->as_string)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2052
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2174
 msgid "Trading suspended for the last %1 of the session."
 msgstr "Торги приостановлены для последних %1 торговой сессии."
 
@@ -9694,8 +9694,8 @@ msgstr "Попробовать"
 msgid "Try our downloadable charting application with an extensive range of indicators."
 msgstr "Скачайте наше приложение с графиками с большим выбором индикаторов."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2011
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2019
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2133
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2141
 msgid "Try out the Random Indices which are always open."
 msgstr "Попробуйте индексы Random, торговля на которых открыта всегда."
 
@@ -11666,25 +11666,25 @@ msgstr "AUD/SGD"
 msgid "EUR/INR"
 msgstr "EUR/INR"
 
-#: Underlying Symbol frxGBPCNY
-msgid "GBP/CNY"
-msgstr "GBP/CNY"
-
 #: Underlying Symbol frxAUDBRL
 msgid "AUD/BRL"
 msgstr "AUD/BRL"
+
+#: Underlying Symbol frxGBPCNY
+msgid "GBP/CNY"
+msgstr "GBP/CNY"
 
 #: Underlying Symbol frxUSDJPY
 msgid "USD/JPY"
 msgstr "USD/JPY"
 
-#: Underlying Symbol frxUSDSGD
-msgid "USD/SGD"
-msgstr "USD/SGD"
-
 #: Underlying Symbol frxGBPBRL
 msgid "GBP/BRL"
 msgstr "GBP/BRL"
+
+#: Underlying Symbol frxUSDSGD
+msgid "USD/SGD"
+msgstr "USD/SGD"
 
 #: Underlying Symbol frxAUDNOK
 msgid "AUD/NOK"
@@ -11734,13 +11734,13 @@ msgstr "EUR/CNY"
 msgid "EUR/BRL"
 msgstr "EUR/BRL"
 
-#: Underlying Symbol frxUSDDKK
-msgid "USD/DKK"
-msgstr "USD/DKK"
-
 #: Underlying Symbol frxNZDUSD
 msgid "NZD/USD"
 msgstr "NZD/USD"
+
+#: Underlying Symbol frxUSDDKK
+msgid "USD/DKK"
+msgstr "USD/DKK"
 
 #: Underlying Symbol WLDUSD
 msgid "USD Index"
@@ -11830,13 +11830,13 @@ msgstr "GBP индекс"
 msgid "GBP/NZD"
 msgstr "GBP/NZD"
 
-#: Underlying Symbol frxUSDPLN
-msgid "USD/PLN"
-msgstr "USD/PLN"
-
 #: Underlying Symbol frxNZDJPY
 msgid "NZD/JPY"
 msgstr "NZD/JPY"
+
+#: Underlying Symbol frxUSDPLN
+msgid "USD/PLN"
+msgstr "USD/PLN"
 
 #: Underlying Symbol frxAUDSEK
 msgid "AUD/SEK"
@@ -11854,13 +11854,13 @@ msgstr "GBP/DKK"
 msgid "EUR/HKD"
 msgstr "EUR/HKD"
 
-#: Underlying Symbol frxGBPPLN
-msgid "GBP/PLN"
-msgstr "GBP/PLN"
-
 #: Underlying Symbol frxGBPAUD
 msgid "GBP/AUD"
 msgstr "GBP/AUD"
+
+#: Underlying Symbol frxGBPPLN
+msgid "GBP/PLN"
+msgstr "GBP/PLN"
 
 #: Underlying Symbol frxUSDSEK
 msgid "USD/SEK"
@@ -11958,13 +11958,13 @@ msgstr "Австралийский индекс"
 msgid "Euro 50 Smart Index"
 msgstr "Euro 50 Smart индекс"
 
-#: Underlying Symbol STI
-msgid "Singapore Index"
-msgstr "Сингапурский индекс"
-
 #: Underlying Symbol SYNDJI
 msgid "Wall Street Smart Index"
 msgstr "Wall Street Smart индекс"
+
+#: Underlying Symbol STI
+msgid "Singapore Index"
+msgstr "Сингапурский индекс"
 
 #: Underlying Symbol SYNPSI20
 msgid "Portuguese Smart Index"
@@ -12078,13 +12078,13 @@ msgstr "Safran"
 msgid "Reliance Industries Ltd"
 msgstr "Reliance Industries Ltd"
 
-#: Underlying Symbol JPTE
-msgid "Tokyo Electric Power Co. Inc"
-msgstr "Tokyo Electric Power Co. Inc"
-
 #: Underlying Symbol AUBHP
 msgid "BHP Billiton Ltd"
 msgstr "BHP Billiton Ltd"
+
+#: Underlying Symbol JPTE
+msgid "Tokyo Electric Power Co. Inc"
+msgstr "Tokyo Electric Power Co. Inc"
 
 #: Underlying Symbol JPTM
 msgid "Toyota Motor"
@@ -12106,13 +12106,13 @@ msgstr "BG Group plc"
 msgid "Air Liquide"
 msgstr "Air Liquide"
 
-#: Underlying Symbol UKIAG
-msgid "ICAG (British Airways)"
-msgstr "ICAG (British Airways)"
-
 #: Underlying Symbol NOYAR
 msgid "Yara International"
 msgstr "Yara International"
+
+#: Underlying Symbol UKIAG
+msgid "ICAG (British Airways)"
+msgstr "ICAG (British Airways)"
 
 #: Underlying Symbol DEALV
 msgid "Allianz SE"
@@ -12166,13 +12166,13 @@ msgstr "DNB"
 msgid "SoftBank Co."
 msgstr "SoftBank Co."
 
-#: Underlying Symbol FPDG
-msgid "Vinci"
-msgstr "Vinci"
-
 #: Underlying Symbol FPEDF
 msgid "Electricite de France"
 msgstr "Electricite de France"
+
+#: Underlying Symbol FPDG
+msgid "Vinci"
+msgstr "Vinci"
 
 #: Underlying Symbol NOSTL
 msgid "Statoil"
@@ -12274,13 +12274,13 @@ msgstr "ANZ Banking Group Ltd"
 msgid "ASML Holding"
 msgstr "ASML Holding"
 
-#: Underlying Symbol FPKER
-msgid "Kering"
-msgstr "Kering"
-
 #: Underlying Symbol KRSFG
 msgid "Shinhan Financial"
 msgstr "Shinhan Financial"
+
+#: Underlying Symbol FPKER
+msgid "Kering"
+msgstr "Kering"
 
 #: Underlying Symbol UKBARC
 msgid "Barclays plc"
@@ -12318,13 +12318,13 @@ msgstr "Schneider Electric"
 msgid "Vodafone"
 msgstr "Vodafone"
 
-#: Underlying Symbol JPHT
-msgid "Hitachi Ltd"
-msgstr "Hitachi Ltd"
-
 #: Underlying Symbol KRSS
 msgid "Samsung Electronics"
 msgstr "Samsung Electronics"
+
+#: Underlying Symbol JPHT
+msgid "Hitachi Ltd"
+msgstr "Hitachi Ltd"
 
 #: Underlying Symbol USXOM
 msgid "ExxonMobil"
@@ -12370,13 +12370,13 @@ msgstr "TOTAL"
 msgid "AXA"
 msgstr "AXA"
 
-#: Underlying Symbol NOTEL
-msgid "Telenor"
-msgstr "Telenor"
-
 #: Underlying Symbol USKO
 msgid "The Coca-Cola Company"
 msgstr "The Coca-Cola Company"
+
+#: Underlying Symbol NOTEL
+msgid "Telenor"
+msgstr "Telenor"
 
 #: Underlying Symbol BBUCB
 msgid "UCB"
@@ -12390,13 +12390,13 @@ msgstr "GlaxoSmithKline plc"
 msgid "Glencore Xstrat"
 msgstr "Glencore Xstrat"
 
-#: Underlying Symbol KRSKH
-msgid "SK Hynix Inc."
-msgstr "SK Hynix Inc."
-
 #: Underlying Symbol UKDGE
 msgid "Diageo plc"
 msgstr "Diageo plc"
+
+#: Underlying Symbol KRSKH
+msgid "SK Hynix Inc."
+msgstr "SK Hynix Inc."
 
 #: Underlying Symbol FPRI
 msgid "Pernod Ricard"

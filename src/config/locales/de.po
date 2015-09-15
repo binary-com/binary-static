@@ -13,8 +13,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2015-09-14 14:23+0200\n"
 "Last-Translator: Sittie Hadjirah Sevilla <sittiebaser@gmail.com>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/binary/static/de/>"
-"\n"
+"Language-Team: German <https://hosted.weblate.org/projects/binary/static/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1248,8 +1247,8 @@ msgstr "Kapital"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:151
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Resources.pm:127
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2244
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2291
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2366
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2413
 #: /home/git/translations/binary-static/src/templates/haml/layouts/default/footer.html.haml:1
 #: /home/git/translations/binary-static/src/templates/haml/resources/index.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/global/footer.html.tt:83
@@ -1416,14 +1415,14 @@ msgstr "Schwellenstufe (%) außerhalb des Limits"
 msgid "Barrier Step format error"
 msgstr "Schwellenschritt Formatfehler"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Role/SingleBarrier.pm:52
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Role/SingleBarrier.pm:59
 msgid "Barrier is out of acceptable range."
 msgstr "Schwelle liegt außerhalb des akzeptablen Bereichs."
 
 #. ($min_allowed . ' pips away from the spot.')
 #. ($self->minimum_allowable_move . ' pips away from the spot.')
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Role/DoubleBarrier.pm:128
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Role/SingleBarrier.pm:63
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Role/SingleBarrier.pm:70
 msgid "Barrier must be at least "
 msgstr "Schwelle muss mindestens sein "
 
@@ -1889,7 +1888,7 @@ msgid "Change in account settings"
 msgstr "Änderung der Kontoeinstellungen"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:2032
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:671
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:670
 msgid "Chart"
 msgstr "Diagramm"
 
@@ -2303,11 +2302,11 @@ msgid "Contract barrier must be positive."
 msgstr "Kontraktschwelle muss positiv sein."
 
 #. ($end_of_bo->date)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2371
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2493
 msgid "Contract can not expire during the end-of-year holiday period. Select an expiry date after %1."
 msgstr "Kontrakte können nicht während Feiertage am Jahresende auslaufen. Wählen Sie ein Verfalldatum nach dem %1 aus."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:719
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:718
 msgid "Contract cannot be sold at this time."
 msgstr "Der Kontrakt kann nicht zu diesem Zeitpunkt verkauft werden."
 
@@ -2315,7 +2314,7 @@ msgstr "Der Kontrakt kann nicht zu diesem Zeitpunkt verkauft werden."
 msgid "Contract expired"
 msgstr "Kontrakt abgelaufen"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2093
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2215
 msgid "Contract has already expired."
 msgstr "Kontrakt ist bereits abgelaufen."
 
@@ -2324,16 +2323,16 @@ msgid "Contract market price is too close to final payout."
 msgstr "Der Marktkurs des Kontrakts liegt zu nahe an der Endauszahlung."
 
 #. ($eod_blackout_expiry->as_string)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2134
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2256
 msgid "Contract may not expire within the last %1 of trading."
 msgstr "Der Kontrakt darf nicht innerhalb des letzten %1 des Handels ablaufen."
 
 #. ($minimum_hold->as_string)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1968
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2090
 msgid "Contract must be held for %1 before resale is offered."
 msgstr "Der Kontrakt muss für %1 bevor der Wiederverkauf angeboten wird."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2102
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2224
 msgid "Contract must expire during trading hours."
 msgstr "Der Kontrakt muss während der Börsenöffnungszeiten ablaufen."
 
@@ -2374,12 +2373,12 @@ msgid "Contracts on %1 which both start and end between %2 and %3 on the same da
 msgstr "Auf  % sind keine Kontrakte vorhanden, die zwischen %2 und $3 am gleichen Tag beginnen und enden."
 
 #. ($underlying->translated_display_name()
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2150
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2272
 msgid "Contracts on %1 with duration more than 24 hours must expire at the end of a trading day."
 msgstr "Verträge für %1 mit Laufzeiten von mehr als 24 Stunden müssen zum Ende des Börsenhandelstag ablaufen."
 
 #. ($underlying->translated_display_name()
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2120
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2242
 msgid "Contracts on %1 with durations under 24 hours must expire on the same trading day."
 msgstr "Verträge für %1 mit Laufzeiten von unter 24 Stunden müssen an dem gleichen Börsenhandelstag ablaufen."
 
@@ -2417,7 +2416,7 @@ msgstr "Cookies"
 msgid "Copyright"
 msgstr "Copyright"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:701
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:700
 msgid "Corporate Actions"
 msgstr "Unternehmenshandlungen"
 
@@ -2481,11 +2480,11 @@ msgstr "Die Wechselkursesind auf fünf Stellen gekürzt und alle Verträge werde
 msgid "Current Level"
 msgstr "Aktuelle Höhe"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:591
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:590
 msgid "Current Spot"
 msgstr "Aktueller Kassakurs"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1918
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2040
 msgid "Current market price is 0."
 msgstr "Aktueller Marktpreis ist 0."
 
@@ -3000,7 +2999,7 @@ msgid "Duration"
 msgstr "Laufzeit"
 
 #. ($shortest->as_string, $longest->as_string)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2255
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2377
 msgid "Duration must be between %1 and %2."
 msgstr "Die Laufzeit muss zwischen %1 und %2 betragen."
 
@@ -3118,7 +3117,7 @@ msgid "Email: <span id='cs_contact_eaddress'></span>"
 msgstr "E-Mail: <span id='cs_contact_eaddress'></span>"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:156
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:507
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:506
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/form/duration.html.tt:5
 msgid "End Time"
 msgstr "Endzeit"
@@ -3232,7 +3231,7 @@ msgstr "Kontraktzeitraum"
 msgid "Exit Level"
 msgstr "Ausstiegshöhe"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:500
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:499
 msgid "Exit Spot"
 msgstr "Schlusskurs"
 
@@ -3248,15 +3247,15 @@ msgstr "Schlusskurs"
 msgid "Expiry"
 msgstr "Ablauf"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:566
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:565
 msgid "Expiry Price"
 msgstr "Ablaufkurs"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:562
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:561
 msgid "Expiry Spot"
 msgstr "Ablaufdatum"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:554
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:553
 msgid "Expiry Time"
 msgstr "Ablaufzeit"
 
@@ -3264,7 +3263,7 @@ msgstr "Ablaufzeit"
 msgid "Expiry price"
 msgstr "Ablaufkurs"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:688
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:687
 msgid "Explanation"
 msgstr "Erläuterung"
 
@@ -3350,7 +3349,7 @@ msgstr "Filtersteuerungen"
 msgid "Filtering Stray Ticks"
 msgstr "Tick-Irrläufer filtern"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:519
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:518
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/buy_success_ajax.html.tt:38
 msgid "Final Price"
 msgstr "Schlusskurs"
@@ -3764,7 +3763,7 @@ msgstr "Hohe Schwelle"
 msgid "High barrier"
 msgstr "Hohe Schwelle"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Role/DoubleBarrier.pm:145
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Role/DoubleBarrier.pm:149
 msgid "High barrier is out of acceptable range. Please adjust the high barrier."
 msgstr "Die obere Barriereliegt ausserhalb des erlaubten Bereichs. Bitte passen Sie die obere Barriere an."
 
@@ -4225,7 +4224,7 @@ msgstr "Entschädigung und Haftung"
 msgid "Indicative"
 msgstr "Indikativ"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:595
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:594
 msgid "Indicative Price"
 msgstr "Indikativer Kurs"
 
@@ -4332,7 +4331,7 @@ msgstr "Handelsrisiken im Internet"
 msgid "Interpretation"
 msgstr "Interpretation"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Role/ExpireAtEnd.pm:120
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1805
 msgid "Intraday contracts may not cross market open."
 msgstr "Intraday Verträge dürfen die Börsenöffnungszeiten nicht überschreiten."
 
@@ -4378,7 +4377,7 @@ msgstr "Falsche E-Mail Adresse"
 msgid "Invalid email and password combination."
 msgstr "Ungültige E-Mail und Passwort Kombination."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1844
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1966
 msgid "Invalid payout currency."
 msgstr "Ungültige Auszahlungswährung."
 
@@ -4391,7 +4390,7 @@ msgstr "Ungültige Zeitraumeingabe! Bitte geben Sie einen Zeitraum zwischen 0 un
 msgid "Invalid request"
 msgstr "Ungültige Anforderung"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1898
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2020
 msgid "Invalid stake"
 msgstr "Ungültiger Einsatz"
 
@@ -4678,222 +4677,178 @@ msgid "Japan website Exclusion of Liability List item 1.10"
 msgstr "Japan website Exclusion of Liability List item 1.10"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/liability_exclusion.html.tt:50
-#| msgid "Client's Liability"
 msgid "Japan website Exclusion of Liability List item 1.11"
 msgstr "Japan website Exclusion of Liability List item 1.11"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/liability_exclusion.html.tt:54
-#| msgid "Client's Liability"
 msgid "Japan website Exclusion of Liability List item 1.12"
 msgstr "Japan website Exclusion of Liability List item 1.12"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/liability_exclusion.html.tt:58
-#| msgid "Client's Liability"
 msgid "Japan website Exclusion of Liability List item 1.13"
 msgstr "Japan website Exclusion of Liability List item 1.13"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/liability_exclusion.html.tt:14
-#| msgid "Client's Liability"
 msgid "Japan website Exclusion of Liability List item 1.2"
 msgstr "Japan website Exclusion of Liability List item 1.2"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/liability_exclusion.html.tt:18
-#| msgid "Client's Liability"
 msgid "Japan website Exclusion of Liability List item 1.3"
 msgstr "Japan website Exclusion of Liability List item 1.3"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/liability_exclusion.html.tt:22
-#| msgid "Client's Liability"
 msgid "Japan website Exclusion of Liability List item 1.4"
 msgstr "Japan website Exclusion of Liability List item 1.4"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/liability_exclusion.html.tt:26
-#| msgid "Client's Liability"
 msgid "Japan website Exclusion of Liability List item 1.5"
 msgstr "Japan website Exclusion of Liability List item 1.5"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/liability_exclusion.html.tt:30
-#| msgid "Client's Liability"
 msgid "Japan website Exclusion of Liability List item 1.6"
 msgstr "Japan website Exclusion of Liability List item 1.6"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/liability_exclusion.html.tt:34
-#| msgid "Client's Liability"
 msgid "Japan website Exclusion of Liability List item 1.7"
 msgstr "Japan website Exclusion of Liability List item 1.7"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/liability_exclusion.html.tt:38
-#| msgid "Client's Liability"
 msgid "Japan website Exclusion of Liability List item 1.8"
 msgstr "Japan website Exclusion of Liability List item 1.8"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/liability_exclusion.html.tt:42
-#| msgid "Client's Liability"
 msgid "Japan website Exclusion of Liability List item 1.9"
 msgstr "Japan website Exclusion of Liability List item 1.9"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/liability_exclusion.html.tt:64
-#| msgid "Client's Liability"
 msgid "Japan website Exclusion of Liability List item 2"
 msgstr "Japan website Exclusion of Liability List item 2"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/liability_exclusion.html.tt:68
-#| msgid "Client's Liability"
 msgid "Japan website Exclusion of Liability List item 2.1"
 msgstr "Japan website Exclusion of Liability List item 2.1"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/liability_exclusion.html.tt:72
-#| msgid "Client's Liability"
 msgid "Japan website Exclusion of Liability List item 2.2"
 msgstr "Japan website Exclusion of Liability List item 2.2"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/risk_warning.html.tt:6
-#| msgid "General Risks"
 msgid "Japan website General Risk Warning List item 1"
 msgstr "Japan website General Risk Warning List item 1"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/risk_warning.html.tt:10
-#| msgid "General Risks"
 msgid "Japan website General Risk Warning List item 2"
 msgstr "Japan website General Risk Warning List item 2"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/risk_warning.html.tt:14
-#| msgid "General Risks"
 msgid "Japan website General Risk Warning List item 3"
 msgstr "Japan website General Risk Warning List item 3"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/risk_warning.html.tt:18
-#| msgid "General Risks"
 msgid "Japan website General Risk Warning List item 4"
 msgstr "Japan website General Risk Warning List item 4"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/risk_warning.html.tt:22
-#| msgid "General Risks"
 msgid "Japan website General Risk Warning Paragraph 1"
 msgstr "Japan website General Risk Warning Paragraph 1"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/risk_warning.html.tt:25
-#| msgid "General Risks"
 msgid "Japan website General Risk Warning Paragraph 2"
 msgstr "Japan website General Risk Warning Paragraph 2"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/risk_warning.html.tt:28
-#| msgid "General Risks"
 msgid "Japan website General Risk Warning Paragraph 3"
 msgstr "Japan website General Risk Warning Paragraph 3"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/solicitation.html.tt:9
-#| msgid "Best Execution Policy"
 msgid "Japan website Investment Solicitation Policy Bold list item 1"
 msgstr "Japan website Investment Solicitation Policy Bold list item 1"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/solicitation.html.tt:63
-#| msgid "Best Execution Policy"
 msgid "Japan website Investment Solicitation Policy Bold list item 10"
 msgstr "Japan website Investment Solicitation Policy Bold list item 10"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/solicitation.html.tt:69
-#| msgid "Best Execution Policy"
 msgid "Japan website Investment Solicitation Policy Bold list item 11"
 msgstr "Japan website Investment Solicitation Policy Bold list item 11"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/solicitation.html.tt:15
-#| msgid "Best Execution Policy"
 msgid "Japan website Investment Solicitation Policy Bold list item 2"
 msgstr "Japan website Investment Solicitation Policy Bold list item 2"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/solicitation.html.tt:21
-#| msgid "Best Execution Policy"
 msgid "Japan website Investment Solicitation Policy Bold list item 3"
 msgstr "Japan website Investment Solicitation Policy Bold list item 3"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/solicitation.html.tt:27
-#| msgid "Best Execution Policy"
 msgid "Japan website Investment Solicitation Policy Bold list item 4"
 msgstr "Japan website Investment Solicitation Policy Bold list item 4"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/solicitation.html.tt:33
-#| msgid "Best Execution Policy"
 msgid "Japan website Investment Solicitation Policy Bold list item 5"
 msgstr "Japan website Investment Solicitation Policy Bold list item 5"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/solicitation.html.tt:39
-#| msgid "Best Execution Policy"
 msgid "Japan website Investment Solicitation Policy Bold list item 6"
 msgstr "Japan website Investment Solicitation Policy Bold list item 6"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/solicitation.html.tt:45
-#| msgid "Best Execution Policy"
 msgid "Japan website Investment Solicitation Policy Bold list item 7"
 msgstr "Japan website Investment Solicitation Policy Bold list item 7"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/solicitation.html.tt:51
-#| msgid "Best Execution Policy"
 msgid "Japan website Investment Solicitation Policy Bold list item 8"
 msgstr "Japan website Investment Solicitation Policy Bold list item 8"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/solicitation.html.tt:57
-#| msgid "Best Execution Policy"
 msgid "Japan website Investment Solicitation Policy Bold list item 9"
 msgstr "Japan website Investment Solicitation Policy Bold list item 9"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/solicitation.html.tt:11
-#| msgid "Best Execution Policy"
 msgid "Japan website Investment Solicitation Policy Explanation of item 1"
 msgstr "Japan website Investment Solicitation Policy Explanation of item 1"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/solicitation.html.tt:65
-#| msgid "Best Execution Policy"
 msgid "Japan website Investment Solicitation Policy Explanation of item 10"
 msgstr "Japan website Investment Solicitation Policy Explanation of item 10"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/solicitation.html.tt:71
-#| msgid "Best Execution Policy"
 msgid "Japan website Investment Solicitation Policy Explanation of item 11"
 msgstr "Japan website Investment Solicitation Policy Explanation of item 11"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/solicitation.html.tt:17
-#| msgid "Best Execution Policy"
 msgid "Japan website Investment Solicitation Policy Explanation of item 2"
 msgstr "Japan website Investment Solicitation Policy Explanation of item 2"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/solicitation.html.tt:23
-#| msgid "Best Execution Policy"
 msgid "Japan website Investment Solicitation Policy Explanation of item 3"
 msgstr "Japan website Investment Solicitation Policy Explanation of item 3"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/solicitation.html.tt:29
-#| msgid "Best Execution Policy"
 msgid "Japan website Investment Solicitation Policy Explanation of item 4"
 msgstr "Japan website Investment Solicitation Policy Explanation of item 4"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/solicitation.html.tt:35
-#| msgid "Best Execution Policy"
 msgid "Japan website Investment Solicitation Policy Explanation of item 5"
 msgstr "Japan website Investment Solicitation Policy Explanation of item 5"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/solicitation.html.tt:41
-#| msgid "Best Execution Policy"
 msgid "Japan website Investment Solicitation Policy Explanation of item 6"
 msgstr "Japan website Investment Solicitation Policy Explanation of item 6"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/solicitation.html.tt:47
-#| msgid "Best Execution Policy"
 msgid "Japan website Investment Solicitation Policy Explanation of item 7"
 msgstr "Japan website Investment Solicitation Policy Explanation of item 7"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/solicitation.html.tt:53
-#| msgid "Best Execution Policy"
 msgid "Japan website Investment Solicitation Policy Explanation of item 8"
 msgstr "Japan website Investment Solicitation Policy Explanation of item 8"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/solicitation.html.tt:59
-#| msgid "Best Execution Policy"
 msgid "Japan website Investment Solicitation Policy Explanation of item 9"
 msgstr "Japan website Investment Solicitation Policy Explanation of item 9"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/solicitation.html.tt:4
-#| msgid "Best Execution Policy"
 msgid "Japan website Investment Solicitation Policy Paragraph 1"
 msgstr "Japan website Investment Solicitation Policy Paragraph 1"
 
@@ -4907,15 +4862,13 @@ msgstr "Japan website No Connections With Antisocial Forces List item 2"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/antisocial_connection.html.tt:15
 msgid "Japan website No Connections With Antisocial Forces List item 2 Paragraph 1"
-msgstr ""
-"Japan website No Connections With Antisocial Forces List item 2 Paragraph 1"
+msgstr "Japan website No Connections With Antisocial Forces List item 2 Paragraph 1"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/antisocial_connection.html.tt:4
 msgid "Japan website No Connections With Antisocial Forces Paragraph 1"
 msgstr "Japan website No Connections With Antisocial Forces Paragraph 1"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/contract.html.tt:4
-#| msgid "Free Contract Bonus"
 msgid "Japan website Pre-contract Document Paragraph 1"
 msgstr "Japan website Pre-contract Document Paragraph 1"
 
@@ -5088,112 +5041,90 @@ msgid "Japan website Privacy Policy list item 12 Paragraph 1.5"
 msgstr "Japan website Privacy Policy list item 12 Paragraph 1.5"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/risk.html.tt:16
-#| msgid "General Risks"
 msgid "Japan website Risk For Binary Option Trading List item 1"
 msgstr "Japan website Risk For Binary Option Trading List item 1"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/risk.html.tt:52
-#| msgid "General Risks"
 msgid "Japan website Risk For Binary Option Trading List item 10"
 msgstr "Japan website Risk For Binary Option Trading List item 10"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/risk.html.tt:56
-#| msgid "General Risks"
 msgid "Japan website Risk For Binary Option Trading List item 11"
 msgstr "Japan website Risk For Binary Option Trading List item 11"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/risk.html.tt:60
-#| msgid "General Risks"
 msgid "Japan website Risk For Binary Option Trading List item 12"
 msgstr "Japan website Risk For Binary Option Trading List item 12"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/risk.html.tt:62
-#| msgid "General Risks"
 msgid "Japan website Risk For Binary Option Trading List item 12 Paragraph 1"
 msgstr "Japan website Risk For Binary Option Trading List item 12 Paragraph 1"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/risk.html.tt:65
-#| msgid "General Risks"
 msgid "Japan website Risk For Binary Option Trading List item 12 Paragraph 2"
 msgstr "Japan website Risk For Binary Option Trading List item 12 Paragraph 2"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/risk.html.tt:68
-#| msgid "General Risks"
 msgid "Japan website Risk For Binary Option Trading List item 12 Paragraph 3"
 msgstr "Japan website Risk For Binary Option Trading List item 12 Paragraph 3"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/risk.html.tt:73
-#| msgid "General Risks"
 msgid "Japan website Risk For Binary Option Trading List item 13"
 msgstr "Japan website Risk For Binary Option Trading List item 13"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/risk.html.tt:20
-#| msgid "General Risks"
 msgid "Japan website Risk For Binary Option Trading List item 2"
 msgstr "Japan website Risk For Binary Option Trading List item 2"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/risk.html.tt:24
-#| msgid "General Risks"
 msgid "Japan website Risk For Binary Option Trading List item 3"
 msgstr "Japan website Risk For Binary Option Trading List item 3"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/risk.html.tt:28
-#| msgid "General Risks"
 msgid "Japan website Risk For Binary Option Trading List item 4"
 msgstr "Japan website Risk For Binary Option Trading List item 4"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/risk.html.tt:32
-#| msgid "General Risks"
 msgid "Japan website Risk For Binary Option Trading List item 5"
 msgstr "Japan website Risk For Binary Option Trading List item 5"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/risk.html.tt:36
-#| msgid "General Risks"
 msgid "Japan website Risk For Binary Option Trading List item 6"
 msgstr "Japan website Risk For Binary Option Trading List item 6"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/risk.html.tt:40
-#| msgid "General Risks"
 msgid "Japan website Risk For Binary Option Trading List item 7"
 msgstr "Japan website Risk For Binary Option Trading List item 7"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/risk.html.tt:44
-#| msgid "General Risks"
 msgid "Japan website Risk For Binary Option Trading List item 8"
 msgstr "Japan website Risk For Binary Option Trading List item 8"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/risk.html.tt:48
-#| msgid "General Risks"
 msgid "Japan website Risk For Binary Option Trading List item 9"
 msgstr "Japan website Risk For Binary Option Trading List item 9"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/risk.html.tt:4
-#| msgid "General Risks"
 msgid "Japan website Risk For Binary Option Trading Paragraph 1.1"
 msgstr "Japan website Risk For Binary Option Trading Paragraph 1.1"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/risk.html.tt:6
-#| msgid "General Risks"
 msgid "Japan website Risk For Binary Option Trading Paragraph 1.2"
 msgstr "Japan website Risk For Binary Option Trading Paragraph 1.2"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/risk.html.tt:8
-#| msgid "General Risks"
 msgid "Japan website Risk For Binary Option Trading Paragraph 1.3"
 msgstr "Japan website Risk For Binary Option Trading Paragraph 1.3"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/risk.html.tt:10
-#| msgid "General Risks"
 msgid "Japan website Risk For Binary Option Trading Paragraph 1.4"
 msgstr "Japan website Risk For Binary Option Trading Paragraph 1.4"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/risk.html.tt:13
-#| msgid "General Risks"
 msgid "Japan website Risk For Binary Option Trading Paragraph 2"
 msgstr "Japan website Risk For Binary Option Trading Paragraph 2"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/terms_and_conditions.html.tt:4
-#| msgid "Terms and Conditions"
 msgid "Japan website Terms and Conditions Paragraph 1"
 msgstr "Japan website Terms and Conditions Paragraph 1"
 
@@ -5527,7 +5458,7 @@ msgstr "Die untere Schwelle darf nur aus Zahlen bestehen"
 msgid "Low barrier"
 msgstr "Untere Schwelle"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Role/DoubleBarrier.pm:137
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Role/DoubleBarrier.pm:148
 msgid "Low barrier is out of acceptable range. Please adjust the low barrier."
 msgstr "Die untere Barriere liegt ausserhalb des erlaubten Bereichs. Bitte passen Sie die untere Schwelle an."
 
@@ -5615,7 +5546,7 @@ msgid "Market exit price"
 msgstr "Kurs zum Vertragsende"
 
 #. ($safer_expiry->date)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2319
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2441
 msgid "Market holiday during the contract period. Select an expiry date after %1."
 msgstr "Börsenfeiertag während der Vertragslaufzeit. Wählen Sie ein Ablaufdatum nach dem %1."
 
@@ -5761,9 +5692,9 @@ msgstr "Verpasst"
 msgid "Missing market data for contract duration"
 msgstr "Fehlende Marktdaten für die Kontraktlaufzeit"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2202
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Role/ExpireAtEnd.pm:135
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Role/ExpireAtEnd.pm:76
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1761
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1820
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2324
 msgid "Missing market data for contract period."
 msgstr "Fehlende Marktdaten für den Kontraktzeitraum."
 
@@ -5771,8 +5702,8 @@ msgstr "Fehlende Marktdaten für den Kontraktzeitraum."
 msgid "Missing market data for entry spot."
 msgstr "Fehlende Marktdaten für den Anfangskurs."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Role/ExpireAtEnd.pm:107
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Role/ExpireAtEnd.pm:93
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1778
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1792
 msgid "Missing market data for exit spot."
 msgstr "Fehlende Marktdaten für den Schlusskurs."
 
@@ -6069,7 +6000,7 @@ msgstr "Anfänger im Handel können unsere intuitive visuelle Plattform verwende
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:167
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/ContractForm.pm:631
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:583
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:582
 msgid "Now"
 msgstr "Jetzt"
 
@@ -6083,7 +6014,7 @@ msgid "Number of ticks"
 msgstr "Anzahl der Ticks"
 
 #. ($min_tick, $max_tick)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2188
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2310
 msgid "Number of ticks must be between %1 and %2"
 msgstr "Die Anzahl der Ticks muss zwischen %1 und %2 liegen"
 
@@ -6487,7 +6418,7 @@ msgstr "Auszahlungswährung"
 msgid "Payout has moved in your favour from %1 to %2."
 msgstr "Auszahlung hat sich zu Ihren Gunsten von %1 auf %2 verbessert."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1871
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1993
 msgid "Payout may not have more than two decimal places."
 msgstr "Die Auszahlung darf nicht mehr als zwei Dezimalstellen enthalten."
 
@@ -6887,7 +6818,6 @@ msgstr "Stärke & Bescheidenheit"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/contract.html.tt:2
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/tacjp.html.tt:10
-#| msgid "Free Contract Bonus"
 msgid "Pre-contract Document"
 msgstr "Pre-contract Document"
 
@@ -6900,7 +6830,7 @@ msgid "Prevailing market price cannot be determined at this time."
 msgstr "Zu diesem Zeitpunkt kann kein geltender Marktkurs ermittelt werden."
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1174
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2399
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2521
 msgid "Prevailing market price cannot be determined."
 msgstr "Der geltende Marktkurs kann nicht festgelegt werden."
 
@@ -6958,7 +6888,6 @@ msgstr "Datenschutz & Sicherheit"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/privacy.html.tt:2
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/tacjp.html.tt:17
-#| msgid "Our Policy"
 msgid "Privacy Policy"
 msgstr "Privacy Policy"
 
@@ -7048,18 +6977,18 @@ msgid "Purchase Date"
 msgstr "Kaufdatum"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:491
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:618
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:617
 #: /home/git/translations/binary-static/src/templates/toolkit/account/profit_table.html.tt:55
 #: /home/git/translations/binary-static/src/templates/toolkit/account/profit_table.html.tt:92
 msgid "Purchase Price"
 msgstr "Kaufpreis"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:614
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:613
 msgid "Purchase Spot"
 msgstr "Kassakauf"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:107
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:610
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:609
 msgid "Purchase Time"
 msgstr "Kaufuhrzeit"
 
@@ -7289,26 +7218,26 @@ msgstr "Stellt die maximale Anzahl an ausstehenden Verträgen Ihres Portfolios d
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "Stellt das maximale Volumen an Kontrakten dar, die Sie an einem einzelnen Börsentag erwerben können."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2370
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2492
 msgid "Resale of this contract is not offered due to end-of-year market holidays."
 msgstr "Ein Wiederverkauf dieses Vertrags wird aufgrund der Feiertage zum Ende des Börsenjahrs nicht angeboten."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2318
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2440
 msgid "Resale of this contract is not offered due to market holiday during contract period."
 msgstr "Ein Wiederverkauf dieses Kontrakts wird wegen der Börsenfeiertage während der Kontraktlaufzeit nicht angeboten."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2339
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2461
 msgid "Resale of this contract is not offered due to market holidays during contract period."
 msgstr "Ein Wiederverkauf dieses Vertrags wird wegen der Börsenfeiertage während des Kontraktzeitraums nicht angeboten."
 
 #. ($shortest->as_string)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2240
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2362
 msgid "Resale of this contract is not offered with less than %1 remaining."
 msgstr "Ein Wiederverkauf dieses Vertrags mit einem Rest von weniger als %1 wird nicht angeboten."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1807
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2234
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2289
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1929
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2356
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2411
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Pricing/Engine/Role/StandardMarkup.pm:173
 msgid "Resale of this contract is not offered."
 msgstr "Ein Wiederverkauf dieses Kontrakts wird nicht angeboten."
@@ -7420,12 +7349,10 @@ msgid "Risk Disclaimer"
 msgstr "Risikohinweise"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/risk.html.tt:2
-#| msgid "The Premier Platform for Binary Options Trading"
 msgid "Risk For Binary Option Trading"
 msgstr "Risk For Binary Option Trading"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/tacjp.html.tt:19
-#| msgid "The Premier Platform for Binary Options Trading"
 msgid "Risk for Binary Option Trading"
 msgstr "Risk for Binary Option Trading"
 
@@ -7556,15 +7483,15 @@ msgstr "Selbstausschluss Hilfen"
 msgid "Sell"
 msgstr "Verkaufen"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:566
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:565
 msgid "Sell Price"
 msgstr "Verkaufspreis"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:562
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:561
 msgid "Sell Spot"
 msgstr "Verkaufsschlusskurs"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:554
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:553
 msgid "Sell Time"
 msgstr "Verkaufszeit"
 
@@ -7882,7 +7809,7 @@ msgstr "Leider steht diese Funktion nur für virtuelle Konten zur Verfügung"
 msgid "Sorry, this feature is not available."
 msgstr "Leider ist diese Funktion ist nicht vorhanden."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1608
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1612
 msgid "Sorry, this page cannot be refreshed."
 msgstr "Es tut uns leid, aber diese Seite kann nicht erneut geladen werden."
 
@@ -8025,21 +7952,21 @@ msgstr "Mit dem Lernen beginnen"
 msgid "Start time"
 msgstr "Startzeit"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2000
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2122
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:411
 msgid "Start time is in the past"
 msgstr "Die Startzeit liegt in der Vergangenheit"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1990
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2112
 msgid "Start time is invalid."
 msgstr "Ungültige Startzeit."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1980
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2102
 msgid "Start time must be before expiry time."
 msgstr "Die Startzeit muss vor der Ablaufzeit liegen."
 
 #. ($forward_starting_blackout->as_string)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2028
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2150
 msgid "Start time on forward-starting contracts must be more than %1 from now."
 msgstr "Die Startzeit der Forward Verträge muss ab jetzt mehr als %1 betragen."
 
@@ -8251,7 +8178,7 @@ msgstr "Derzeit verhindern Systemprobleme eine einwandfreie Abrechnung."
 msgid "TRIX"
 msgstr "TRIX"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:659
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:658
 msgid "Table"
 msgstr "Tabelle"
 
@@ -8860,7 +8787,7 @@ msgstr "Der Verlust von 306 USD ist der Unterschied zwischen der Einstiegs- und 
 msgid "The market exit price is the price in effect at the end of the contract period."
 msgstr "Der Schlusskurs ist der Kurs, der zum Ablauf der Kontraktlaufzeit gilt."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2006
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2128
 msgid "The market must be open at the start time."
 msgstr "Die Börse muss zur Startzeit geöffnet sein."
 
@@ -9187,7 +9114,7 @@ msgstr "Dieser Vertrag ist in diesem Konto nicht vorhanden."
 msgid "This contract lost"
 msgstr "Dieser Kontrakt verlor"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1918
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2040
 msgid "This contract offers no return."
 msgstr "Dieser Kontrakt bietet keine Rendite."
 
@@ -9268,7 +9195,7 @@ msgstr "Dies ist für <a href='#client-guide'>clients</a> sehr hilfreich, die ni
 msgid "This market closes early today at"
 msgstr "Diese Börse schließt heute früher, um"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2006
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2128
 msgid "This market is presently closed."
 msgstr "Diese Börse ist zur Zeit geschlossen."
 
@@ -9302,7 +9229,7 @@ msgstr "Diese Seite ist nicht vorhanden."
 msgid "This promotion is only available to new Clients. Existing or former Clients do not qualify. It is only available once to each Client."
 msgstr "Diese Werbeaktion steht nur neuen Kunden zur Verfügung. Bereits vorhandene oder ehemalige Kunden sind nicht berechtigt. Sie ist nur einmal pro Kunde gültig."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1808
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1930
 msgid "This trade is not offered."
 msgstr "Dieser Kontrakt wird nicht angeboten."
 
@@ -9414,7 +9341,7 @@ msgid "Today's Bet"
 msgstr "Heutige Wette"
 
 #. ($safer_expiry->date)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2340
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2462
 msgid "Too many market holidays during the contract period. Select an expiry date after %1."
 msgstr "Zu viele Börsenfeiertage während des Vertragszeitraums. Wählen Sie ein Ablaufdatum nach dem %1."
 
@@ -9546,11 +9473,11 @@ msgstr "Handelsregeln"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:158
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Resources.pm:489
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1781
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2054
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2069
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2085
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2309
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1903
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2176
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2191
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2207
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2431
 #: /home/git/translations/binary-static/src/templates/haml/resources/index.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/datafeed.html.tt:29
 msgid "Trading Times"
@@ -9581,16 +9508,16 @@ msgid "Trading is Suspended"
 msgstr "Der Handel ist ausgesetzt"
 
 #. ($blackout_time)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2018
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2140
 msgid "Trading is available after the first %1 of the session."
 msgstr "Sie können erst nach den ersten %1 der Sitzung mit dem Handeln beginnen."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2290
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2412
 msgid "Trading is not offered for this duration."
 msgstr "Für diese Laufzeit wird kein Geschäft angeboten."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1731
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1800
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1853
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1922
 msgid "Trading is suspended at the moment."
 msgstr "Der Handel ist derzeit ausgesetzt."
 
@@ -9602,9 +9529,9 @@ msgstr "Der Handel dieser Kontraktart wird auf %1 nicht angeboten."
 #. ($underlying->translated_display_name()
 #. ($translated_name)
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:449
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1739
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1748
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1779
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1861
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1870
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1901
 msgid "Trading on %1 is suspended at the moment."
 msgstr "Der Handel auf %1 ist derzeit ausgesetzt."
 
@@ -9614,9 +9541,9 @@ msgstr "Der Handel auf %1 ist derzeit ausgesetzt."
 #. ($bet->underlying->translated_display_name()
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1254
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:140
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1759
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1769
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2405
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1881
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1891
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2527
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Spread.pm:194
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Spread.pm:235
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Spread.pm:428
@@ -9624,12 +9551,12 @@ msgstr "Der Handel auf %1 ist derzeit ausgesetzt."
 msgid "Trading on %1 is suspended due to missing market data."
 msgstr "Das Handeln auf %1 ist aufgrund fehlender Kursdaten ausgesetzt."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2067
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2189
 msgid "Trading on this contract type is suspended for the last one hour of the session."
 msgstr "Der Handel für diese Kontraktart ist für mindestens eine Stunde der Sitzung ausgesetzt."
 
 #. ($localized_eod_blackout_start->as_string)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2052
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2174
 msgid "Trading suspended for the last %1 of the session."
 msgstr "Der Handel ist für das letzte %1 der Sitzung ausgesetzt."
 
@@ -9697,8 +9624,8 @@ msgstr "Versuchen Sie es jetzt"
 msgid "Try our downloadable charting application with an extensive range of indicators."
 msgstr "Probieren Sie unsere herunterladbare Charting Anwendung mit einer großen Auswahl an Indikatoren aus."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2011
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2019
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2133
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2141
 msgid "Try out the Random Indices which are always open."
 msgstr "Probieren Sie die Random Indizes, die immer offen sind."
 
@@ -11667,25 +11594,25 @@ msgstr "AUD/SGD"
 msgid "EUR/INR"
 msgstr "EUR/INR"
 
-#: Underlying Symbol frxGBPCNY
-msgid "GBP/CNY"
-msgstr "GBP/CNY"
-
 #: Underlying Symbol frxAUDBRL
 msgid "AUD/BRL"
 msgstr "AUD/BRL"
+
+#: Underlying Symbol frxGBPCNY
+msgid "GBP/CNY"
+msgstr "GBP/CNY"
 
 #: Underlying Symbol frxUSDJPY
 msgid "USD/JPY"
 msgstr "USD/JPY"
 
-#: Underlying Symbol frxUSDSGD
-msgid "USD/SGD"
-msgstr "USD/SGD"
-
 #: Underlying Symbol frxGBPBRL
 msgid "GBP/BRL"
 msgstr "GBP/BRL"
+
+#: Underlying Symbol frxUSDSGD
+msgid "USD/SGD"
+msgstr "USD/SGD"
 
 #: Underlying Symbol frxAUDNOK
 msgid "AUD/NOK"
@@ -11735,13 +11662,13 @@ msgstr "EUR/CNY"
 msgid "EUR/BRL"
 msgstr "EUR/BRL"
 
-#: Underlying Symbol frxUSDDKK
-msgid "USD/DKK"
-msgstr "USD/DKK"
-
 #: Underlying Symbol frxNZDUSD
 msgid "NZD/USD"
 msgstr "NZD/USD"
+
+#: Underlying Symbol frxUSDDKK
+msgid "USD/DKK"
+msgstr "USD/DKK"
 
 #: Underlying Symbol WLDUSD
 msgid "USD Index"
@@ -11831,13 +11758,13 @@ msgstr "GBP Index"
 msgid "GBP/NZD"
 msgstr "GBP/NZD"
 
-#: Underlying Symbol frxUSDPLN
-msgid "USD/PLN"
-msgstr "USD/PLN"
-
 #: Underlying Symbol frxNZDJPY
 msgid "NZD/JPY"
 msgstr "NZD/JPY"
+
+#: Underlying Symbol frxUSDPLN
+msgid "USD/PLN"
+msgstr "USD/PLN"
 
 #: Underlying Symbol frxAUDSEK
 msgid "AUD/SEK"
@@ -11855,13 +11782,13 @@ msgstr "GBP/DKK"
 msgid "EUR/HKD"
 msgstr "EUR/HKD"
 
-#: Underlying Symbol frxGBPPLN
-msgid "GBP/PLN"
-msgstr "GBP/PLN"
-
 #: Underlying Symbol frxGBPAUD
 msgid "GBP/AUD"
 msgstr "GBP/AUD"
+
+#: Underlying Symbol frxGBPPLN
+msgid "GBP/PLN"
+msgstr "GBP/PLN"
 
 #: Underlying Symbol frxUSDSEK
 msgid "USD/SEK"
@@ -11955,13 +11882,13 @@ msgstr "Australischer Index"
 msgid "Euro 50 Smart Index"
 msgstr "Euro 50 Smart Index"
 
-#: Underlying Symbol STI
-msgid "Singapore Index"
-msgstr "Singapur Index"
-
 #: Underlying Symbol SYNDJI
 msgid "Wall Street Smart Index"
 msgstr "Wall Street Smart Index"
+
+#: Underlying Symbol STI
+msgid "Singapore Index"
+msgstr "Singapur Index"
 
 #: Underlying Symbol SYNPSI20
 msgid "Portuguese Smart Index"
@@ -12077,13 +12004,13 @@ msgstr "Safran"
 msgid "Reliance Industries Ltd"
 msgstr "Reliance Industries Ltd"
 
-#: Underlying Symbol JPTE
-msgid "Tokyo Electric Power Co. Inc"
-msgstr "Tokyo Electric Power Co. Inc"
-
 #: Underlying Symbol AUBHP
 msgid "BHP Billiton Ltd"
 msgstr "BHP Billiton Ltd"
+
+#: Underlying Symbol JPTE
+msgid "Tokyo Electric Power Co. Inc"
+msgstr "Tokyo Electric Power Co. Inc"
 
 #: Underlying Symbol JPTM
 msgid "Toyota Motor"
@@ -12105,13 +12032,13 @@ msgstr "BG Group plc"
 msgid "Air Liquide"
 msgstr "Air Liquide"
 
-#: Underlying Symbol UKIAG
-msgid "ICAG (British Airways)"
-msgstr "ICAG (British Airways)"
-
 #: Underlying Symbol NOYAR
 msgid "Yara International"
 msgstr "Yara International"
+
+#: Underlying Symbol UKIAG
+msgid "ICAG (British Airways)"
+msgstr "ICAG (British Airways)"
 
 #: Underlying Symbol DEALV
 msgid "Allianz SE"
@@ -12165,13 +12092,13 @@ msgstr "DNB"
 msgid "SoftBank Co."
 msgstr "SoftBank Co."
 
-#: Underlying Symbol FPDG
-msgid "Vinci"
-msgstr "Vinci"
-
 #: Underlying Symbol FPEDF
 msgid "Electricite de France"
 msgstr "Electricite de France"
+
+#: Underlying Symbol FPDG
+msgid "Vinci"
+msgstr "Vinci"
 
 #: Underlying Symbol NOSTL
 msgid "Statoil"
@@ -12273,13 +12200,13 @@ msgstr "ANZ Banking Group Ltd"
 msgid "ASML Holding"
 msgstr "ASML Holding"
 
-#: Underlying Symbol FPKER
-msgid "Kering"
-msgstr "Kering"
-
 #: Underlying Symbol KRSFG
 msgid "Shinhan Financial"
 msgstr "Shinhan Financial"
+
+#: Underlying Symbol FPKER
+msgid "Kering"
+msgstr "Kering"
 
 #: Underlying Symbol UKBARC
 msgid "Barclays plc"
@@ -12317,13 +12244,13 @@ msgstr "Schneider Electric"
 msgid "Vodafone"
 msgstr "Vodafone"
 
-#: Underlying Symbol JPHT
-msgid "Hitachi Ltd"
-msgstr "Hitachi Ltd"
-
 #: Underlying Symbol KRSS
 msgid "Samsung Electronics"
 msgstr "Samsung Electronics"
+
+#: Underlying Symbol JPHT
+msgid "Hitachi Ltd"
+msgstr "Hitachi Ltd"
 
 #: Underlying Symbol USXOM
 msgid "ExxonMobil"
@@ -12369,13 +12296,13 @@ msgstr "TOTAL"
 msgid "AXA"
 msgstr "AXA"
 
-#: Underlying Symbol NOTEL
-msgid "Telenor"
-msgstr "Telenor"
-
 #: Underlying Symbol USKO
 msgid "The Coca-Cola Company"
 msgstr "The Coca-Cola Company"
+
+#: Underlying Symbol NOTEL
+msgid "Telenor"
+msgstr "Telenor"
 
 #: Underlying Symbol BBUCB
 msgid "UCB"
@@ -12389,13 +12316,13 @@ msgstr "GlaxoSmithKline plc"
 msgid "Glencore Xstrat"
 msgstr "Glencore Xstrat"
 
-#: Underlying Symbol KRSKH
-msgid "SK Hynix Inc."
-msgstr "SK Hynix Inc."
-
 #: Underlying Symbol UKDGE
 msgid "Diageo plc"
 msgstr "Diageo plc"
+
+#: Underlying Symbol KRSKH
+msgid "SK Hynix Inc."
+msgstr "SK Hynix Inc."
 
 #: Underlying Symbol FPRI
 msgid "Pernod Ricard"
