@@ -41,7 +41,7 @@
             <div class="grd-grid-10 grd-grid-mobile-12">
                 [% l('Due to changes in regulation within the European Union, binary options on financial indices are now considered to be an investment activity.') %]
                 <p>
-                [% l('Accordingly, to continue trading binary options on forex/stock indices/commodities, please <a href="[_1]" class="pjaxload">open an account with Binary Investments (Europe) Ltd</a>., which is regulated by the Malta Financial Services Authority.', request.url_for('new_financial')) %]
+                [% l('Accordingly, to continue trading binary options on forex/stock indices/commodities, please <a href="[_1]" class="pjaxload">open an account with Binary Investments (Europe) Ltd</a>., which is regulated by the Malta Financial Services Authority.', request.url_for('new_account/maltainvest')) %]
                 </p>
             </div>
         </div>

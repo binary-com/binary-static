@@ -51,7 +51,7 @@ var enable_residence_form_submit = function () {
     });
 };
 
-pjax_config_page('new_real', function() {
+pjax_config_page('new_account/real', function() {
     return {
         onLoad: function() {
             client_form.on_residence_change();
@@ -113,7 +113,7 @@ var hide_account_opening_for_risk_disclaimer = function () {
     }
 };
 
-pjax_config_page('new_financial', function() {
+pjax_config_page('new_account/maltainvest', function() {
     return {
         onLoad: function() {
             if (!page.client.is_real) {
