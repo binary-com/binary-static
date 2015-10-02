@@ -47,7 +47,7 @@
                         </div>
                         <div class="big-col">
                            <div id="expiry_type_duration">
-                              <input id="duration_amount" type="text" pattern="^([1-9]|[1-9][0-9]|[1-2][0-9][0-9]|[1-3][0-6][0-6])$" title="5-366 ticks, 15-366 seconds, 1-366 days" /><label></label>
+                              <input id="duration_amount" type="text" pattern="^([1-9]|[1-9][0-9]|[1-2][0-9][0-9]|[1-3][0-6][0-6])$" title="minimum 1, maximum 366" /><label></label>
                               <select id="duration_units"></select>
                               <span id="duration_tooltip_wrapper">
                               <abbr rel="tooltip" id="duration_tooltip"></abbr>
@@ -117,6 +117,25 @@
                            <input id="barrier_low" type="text" name="L" pattern="^\-\d+(\.\d{1,3})?|\d+(\.\d{1,3})?$" title="0.001 format" /><label></label>
                         </div>
                      </div>
+                     <div class="row" id="prediction_row">
+                        <div class="col form_label">
+                           <label for="prediction" id="prediction_label"></label>
+                        </div>
+                        <div class="big-col">
+                           <select id="prediction">
+                              <option value="0">0</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              <option value="9">9</option>
+                           </select>
+                        </div>
+                     </div>
                      <div class="row">
                         <div class="col form_label">
                            <select id="amount_type">
@@ -127,7 +146,7 @@
                         <div class="row-inner big-col">
                            <div class="col-inner">
                               <select id="currency"></select>
-                              <input id="amount" type="text" value="10" pattern="^([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9]|[1-9][0-9][0-9][0-9][0-9]|[1][0][0][0][0][0])$" title="1 minimum, 100,000 maximum"/><label></label>
+                              <input id="amount" type="text" value="10" pattern="^([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9]|[1-9][0-9][0-9][0-9][0-9]|[1][0][0][0][0][0])$" title="100,000 maximum"/><label></label>
                            </div>
                         </div>
                      </div>
@@ -136,13 +155,29 @@
             </div>
          </div>
       </div>
-      <div id="contract_prices_container" class="col">
-         <div id="contract_confirmation_container" class="overlay_container">
+      <div id="contract_prices_container" class="col row-inner">
+         <div id="contract_confirmation_container" class="overlay_container col">
             <a class="close" id="close_confirmation_container">x</a>
-            <div id="confirmation_message_container"></div>
+            <div id="confirmation_message_container">
+               <div id="confirmation_message">
+                  <h3 id="contract_purchase_heading"></h3>
+                  <div id="contract_purchase_descr"></div>
+                  <div class="row" id="contract_purchase_profit_list">
+                     <div class="col" id="contract_purchase_payout"></div>
+                     <div class="col" id="contract_purchase_cost"></div>
+                     <div class="col" id="contract_purchase_profit"></div>
+                  </div>
+                  <div id="contract_purchase_reference"></div>
+                  <div id="contract_purchase_spots"></div>
+                  <div id="tick_chart"></div>
+                  <div id="contract_purchase_balance"></div>
+               </div>
+               <div id="confirmation_error">
+               </div>
+            </div>
             <div id="confirmation_message_endelement"></div>
          </div>
-         <div class="row-inner">
+         <div class="row-inner" id="contracts_list">
             <div class="col price_container row-inner" id="price_container_top">
                <div class="col row">
                   <div class="price_wrapper row">

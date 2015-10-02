@@ -221,8 +221,18 @@ var purchaseContractEvent = function () {
     var id = this.getAttribute('data-purchase-id'),
         askPrice = this.getAttribute('data-ask-price');
 
+    var params = {buy: id, price: askPrice, form_data:{}};
+    for(var attr in this.attributes){
+        if(this.attributes[attr].name){
+            var m = this.attributes[attr].name.match(/data\-(.+)/);
+
+            if(m && m[1] && m[1]!=="purchase-id"){
+                params.form_data[m[1]] = this.attributes[attr].value;
+            }
+        }
+    }
     if (id && askPrice) {
-        TradeSocket.send({buy: id, price: askPrice});
+        TradeSocket.send(params);
         processForgetPriceIds();
     }
 };
@@ -243,6 +253,7 @@ if (closeContainerElement) {
         if (e.target) {
             e.preventDefault();
             document.getElementById('contract_confirmation_container').style.display = 'none';
+            document.getElementById('contracts_list').style.display = 'flex';
             processPriceRequest();
         }
     });
@@ -276,6 +287,14 @@ if (lowBarrierElement) {
 var highBarrierElement = document.getElementById('barrier_high');
 if (highBarrierElement) {
     highBarrierElement.addEventListener('input', debounce( function (e) {
+        processPriceRequest();
+        submitForm(document.getElementById('websocket_form'));
+    }));
+}
+
+var predictionElement = document.getElementById('prediction');
+if (predictionElement) {
+    predictionElement.addEventListener('input', debounce( function (e) {
         processPriceRequest();
         submitForm(document.getElementById('websocket_form'));
     }));

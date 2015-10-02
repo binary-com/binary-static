@@ -36,8 +36,8 @@ function processMarket(flag) {
     var symbol = sessionStorage.getItem('underlying');
     var update_page = Symbols.need_page_update() || flag;
 
-    if(!update_page && market && symbol && !Symbols.underlyings()[market][symbol].is_active){
-        onMarketChange('random');
+    if(!update_page && market && symbol && (!Symbols.underlyings()[market] || !Symbols.underlyings()[market][symbol] || !Symbols.underlyings()[market][symbol].is_active)){
+        onMarketChange(Object.keys(Symbols.underlyings())[0]);
         return false;
     }
     
@@ -110,7 +110,19 @@ function processContractForm() {
 
     displayDurations();
 
+    displayPrediction();
+
     processPriceRequest();
+}
+
+function displayPrediction(){
+    var predictionElement = document.getElementById('prediction_row');
+    if(sessionStorage.getItem('formname') === 'digits'){
+        predictionElement.show();
+    }
+    else{
+        predictionElement.hide();
+    }
 }
 
 /*
@@ -170,6 +182,8 @@ function processTick(tick) {
     'use strict';
     Tick.details(tick);
     Tick.display();
+    TickDisplay.updateChart(tick);
+    Purchase.update_spot_list(tick);
     if (!Barriers.isBarrierUpdated()) {
         Barriers.display();
         Barriers.setBarrierUpdate(true);

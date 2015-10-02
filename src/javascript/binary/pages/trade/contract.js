@@ -77,20 +77,22 @@ var Contract = (function () {
                 }
 
                 var barrierObj = {};
-                if (currentObj.barriers === 1) {
-                    if (!barriers.hasOwnProperty(contractCategory)) {
-                        barrierObj['count'] = 1;
-                        barrierObj['barrier'] = currentObj['barrier'];
-                        barrierObj['barrier_category'] = currentObj['barrier_category'];
-                        barriers[formName] = barrierObj;
-                    }
-                } else if (currentObj.barriers === 2) {
-                    if (!barriers.hasOwnProperty(contractCategory)) {
-                        barrierObj['count'] = 2;
-                        barrierObj['barrier'] = currentObj['high_barrier'];
-                        barrierObj['barrier1'] = currentObj['low_barrier'];
-                        barrierObj['barrier_category'] = currentObj['barrier_category'];
-                        barriers[formName] = barrierObj;
+                if(currentObj.barrier_category && currentObj.barrier_category !== "non_financial"){
+                    if (currentObj.barriers === 1) {
+                        if (!barriers.hasOwnProperty(contractCategory)) {
+                            barrierObj['count'] = 1;
+                            barrierObj['barrier'] = currentObj['barrier'];
+                            barrierObj['barrier_category'] = currentObj['barrier_category'];
+                            barriers[formName] = barrierObj;
+                        }
+                    } else if (currentObj.barriers === 2) {
+                        if (!barriers.hasOwnProperty(contractCategory)) {
+                            barrierObj['count'] = 2;
+                            barrierObj['barrier'] = currentObj['high_barrier'];
+                            barrierObj['barrier1'] = currentObj['low_barrier'];
+                            barrierObj['barrier_category'] = currentObj['barrier_category'];
+                            barriers[formName] = barrierObj;
+                        }
                     }
                 }
 

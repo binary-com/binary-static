@@ -15,7 +15,8 @@ var Price = (function () {
     'use strict';
 
     var typeDisplayIdMapping = {},
-        bufferedIds = {};
+        bufferedIds = {},
+        bufferRequests = {};
 
     var createProposal = function (typeOfContract) {
         var proposal = {proposal: 1}, underlying = document.getElementById('underlying'),
@@ -32,7 +33,8 @@ var Price = (function () {
             endTime = document.getElementById('expiry_time'),
             barrier = document.getElementById('barrier'),
             highBarrier = document.getElementById('barrier_high'),
-            lowBarrier = document.getElementById('barrier_low');
+            lowBarrier = document.getElementById('barrier_low'),
+            prediction = document.getElementById('prediction');
 
         if (payout && payout.value) {
             proposal['amount_val'] = payout.value;
@@ -73,6 +75,9 @@ var Price = (function () {
             proposal['barrier2'] = lowBarrier.value;
         }
 
+        if(prediction && isVisible(prediction)){
+            proposal['barrier'] = prediction.value;
+        }
         return proposal;
     };
 
@@ -87,6 +92,10 @@ var Price = (function () {
 
             if (!bufferedIds.hasOwnProperty(id)) {
                 bufferedIds[id] = moment().utc().unix();
+            }
+
+            if (!bufferRequests.hasOwnProperty(id)) {
+                bufferRequests[id] = params;
             }
         }
 
@@ -111,7 +120,8 @@ var Price = (function () {
         }
 
         if (proposal['longcode']) {
-            description.textContent = proposal['longcode'];
+            proposal['longcode'] = proposal['longcode'].replace(/\d+\.\d\d/,function(x){return '<b>'+x+'</b>';});
+            description.innerHTML = proposal['longcode'];
         }
 
         if (details['error']){
@@ -131,6 +141,12 @@ var Price = (function () {
             }
             purchase.setAttribute('data-purchase-id', id);
             purchase.setAttribute('data-ask-price', proposal['ask_price']);
+            purchase.setAttribute('data-symbol', id);
+            for(var key in bufferRequests[id]){
+                if(key && key !== 'proposal'){
+                    purchase.setAttribute('data-'+key, bufferRequests[id][key]);
+                }
+            }
         }
     };
 

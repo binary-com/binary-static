@@ -30,6 +30,12 @@
     box-sizing: border-box;
     height: 28px;
   }
+  b{
+    font-weight: bold;
+  }
+  label{
+    line-height: 28px;
+  }
   .submitted input:invalid + label::after {
     content: 'invalid input';
     padding-left: 10px;
@@ -136,20 +142,67 @@
     }
   }
   #contract_form_content {
-    // padding: 20px 10px 10px 10px;
     padding: 0 10px;
   }
   #contract_prices_container {
+    #confirmation_error{
+      padding: 20px;
+      font-style: italic;
+      vertical-align: middle;
+    }
     .price_container#price_container_top {
       margin-bottom: 1rem;
     }
-    .price_comment,.contract_error{
+    .price_comment,.contract_error,#contract_purchase_balance{
       background-color: $COLOR_GRAY;
       line-height: 1.5rem;
       font-size: 0.8rem;
       flex: 1;
       padding: 5px;
       text-align: center;
+      flex: 0 0 auto
+    }
+    #contract_purchase_balance{
+      position: absolute;
+      bottom: 0;
+      color: $COLOR_WHITE;
+      box-sizing: border-box;
+      display: block;
+      background-color: $COLOR_ORANGE;
+      width: 100%;
+    }
+    #confirmation_message{
+      padding-bottom: 34px;
+    }
+    #contract_purchase_descr{
+      background-color: #FFF;
+      border: 2px solid #dedede;
+      margin: 0 10px;
+      padding: 10px 5px;
+      text-align: justify;
+    }
+    #contract_purchase_profit_list,
+    #contract_purchase_spots .row{
+      flex-direction: row !important;
+    }
+    #contract_purchase_spots{
+      max-height: 180px;
+      overflow: hidden;
+      &.won{
+        background-color: rgba(46, 136, 54, 0.196078);
+      }
+      &.lost{
+        background-color: rgba(204, 0, 0, 0.0980392);
+      }
+    }
+    #contract_purchase_heading{
+      padding-bottom: 10px;
+    }
+    #contract_purchase_payout{
+      border-right: 1px solid #dedede;
+    }
+    #contract_purchase_profit{
+      border-left: 1px solid #dedede;
     }
     .contract_error {
       background-color: $COLOR_YELLOW;
@@ -217,13 +270,8 @@
     flex-wrap: wrap;
   }
   .overlay_container {
-    position: absolute;
     width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
     display: none;
-    // background: rgba($COLOR_LIGHT_GRAY, 0.5);
     background: transparent;
     z-index: 9999;
   }
@@ -231,7 +279,7 @@
     background-color: $COLOR_LIGHT_GRAY;
     text-align: center;
     #confirmation_message_container {
-      margin-top: 15px;
+      padding-top: 15px;
     }
   }
   #contract_prices_container .price_container .price_wrapper {
@@ -268,7 +316,7 @@
     line-height: 28px;
     white-space: nowrap;
   }
-  #duration_amount,#currency{
+  #duration_amount,#currency,#prediction{
     width: 70px;
   }
   #currency{
@@ -308,6 +356,9 @@
 
 @media all and (max-width: 640px) {
   #trading_socket_container {
+    #contract_purchase_spots{
+      max-height: 205px;
+    }
     #expiry_time{
       width: 175px;
     }

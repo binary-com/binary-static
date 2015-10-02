@@ -17,7 +17,7 @@
 var Symbols = (function () {
     'use strict';
 
-    var tradeMarkets = {}, tradeUnderlyings = {}, current = '', need_page_update = 1;
+    var tradeMarkets = {}, tradeUnderlyings = {}, current = '', need_page_update = 1, names = {};
 
     var details = function (data) {
         var allSymbols = data['active_symbols'];
@@ -58,6 +58,8 @@ var Symbols = (function () {
                     display: element['display_name']
                 };
             }
+
+            names[currentUnderlying]=element['display_name'];
         });
     };
 
@@ -73,6 +75,7 @@ var Symbols = (function () {
         getSymbols: getSymbols,
         markets: function () { return tradeMarkets; },
         underlyings: function () { return tradeUnderlyings; },
+        getName: function(symbol){ return names[symbol]; },
         need_page_update: function () { return need_page_update; }
     };
 

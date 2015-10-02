@@ -38,7 +38,11 @@ var Content = (function () {
             textFormUpDown: text.localize('Up/Down'),
             textFormInOut: text.localize('In/Out'),
             textContractPeriod: text.localize('Contract period'),
-            textExercisePeriod: text.localize('Exercise price')
+            textExercisePeriod: text.localize('Exercise price'),
+            predictionLabel: text.localize('Last Digit Prediction'),
+            textContractConfirmationPayout: text.localize('Potential Payout'),
+            textContractConfirmationCost: text.localize('Total Cost'),
+            textContractConfirmationProfit: text.localize('Potential Profit')
         };
 
         var starTime = document.getElementById('start_time_label');
@@ -86,6 +90,11 @@ var Content = (function () {
         var barrierLowSpan = document.getElementById('barrier_low_span');
         if (barrierLowSpan) {
             barrierLowSpan.textContent = localize.textLowBarrier;
+        }
+
+        var predictionLabel = document.getElementById('prediction_label');
+        if(predictionLabel){
+            predictionLabel.textContent = localize.predictionLabel;
         }
 
         var payoutOption = document.getElementById('payout_option');
