@@ -18,8 +18,6 @@
    <div class="row" id="contract_form_content_wrapper">
       <div class="col row-inner">
          <div id="contract_market_form_container">
-            <!-- <label for="contract_form_show_menu" class="nav_placeholder" id="contract_form_nav_placeholder"></label>
-               <input type="checkbox" class="show_menu" id="contract_form_show_menu" role="button"> -->
             <ul class="nav tm-ul" id="contract_form_name_nav"></ul>
          </div>
          <div id="contract_container" class="col row">
@@ -156,7 +154,6 @@
          </div>
       </div>
       <div id="contract_prices_container" class="col row-inner">
-         <div id="loading_container2" class="overlay_container"></div>
          <div id="contract_confirmation_container" class="overlay_container col">
             <a class="close" id="close_confirmation_container">x</a>
             <div id="confirmation_message_container">
@@ -169,11 +166,11 @@
                      <div class="col" id="contract_purchase_profit"></div>
                   </div>
                   <div id="contract_purchase_reference"></div>
-                  <div id="contract_purchase_spots"></div>
-                  <div id="tick_chart"></div>
                   <div class="button">
                      <button class="open_contract_details" id="contract_purchase_button">View</button>
                   </div>
+                  <div id="contract_purchase_spots"></div>
+                  <div id="tick_chart"></div>
                   <div id="contract_purchase_balance"></div>
                </div>
                <div id="confirmation_error">
@@ -182,6 +179,7 @@
             <div id="confirmation_message_endelement"></div>
          </div>
          <div class="row-inner" id="contracts_list">
+            <div id="loading_container2" class="overlay_container"></div>
             <div class="col price_container row-inner" id="price_container_top">
                <div class="col row">
                   <div class="price_wrapper row">

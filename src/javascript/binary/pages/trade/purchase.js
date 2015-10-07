@@ -7,6 +7,7 @@ var Purchase = (function () {
     'use strict';
 
     var purchase_data = {};
+    BetSell.register();
 
     var display = function (details) {
         purchase_data = details;
@@ -89,7 +90,8 @@ var Purchase = (function () {
                 purchase_price: cost_value,
                 purchase_time: (purchase_date.getUTCFullYear()+'-'+(purchase_date.getUTCMonth()+1)+'-'+purchase_date.getUTCDate()+' '+purchase_date.getUTCHours()+':'+purchase_date.getUTCMinutes()+':'+purchase_date.getUTCSeconds()),
                 qty:1,
-                url:'https://www.binary.com/trade/analyse_contract?l=EN'
+                shortcode:receipt['shortcode'],
+                url:'https://'+window.location.host+'/trade/analyse_contract?l=EN'
             };
             for(var k in button_attrs){
                 if(k){

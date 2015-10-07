@@ -130,11 +130,12 @@ function displayPrediction(){
 function processForgetPriceIds() {
     'use strict';
     if (Price) {
+        showPriceOverlay();
         var priceIds = Price.bufferedIds();
         for (var id in priceIds) {
-            if (priceIds.hasOwnProperty(id)) {
+            if (priceIds.hasOwnProperty(id) && priceIds[id]!==-1) {
                 TradeSocket.send({ forget: id });
-                delete priceIds[id];
+                priceIds[id] = -1;
             }
         }
         Price.clearMapping();
@@ -186,5 +187,15 @@ function processTick(tick) {
     if (!Barriers.isBarrierUpdated()) {
         Barriers.display();
         Barriers.setBarrierUpdate(true);
+    }
+}
+
+function processProposal(response){
+    'use strict';
+    var price_ids = Price.bufferedIds();
+    if(price_ids[response.proposal.id]!==-1){
+        hideOverlayContainer();
+        Price.display(response, Contract.contractType()[Contract.form()]);
+        hidePriceOverlay();
     }
 }

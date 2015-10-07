@@ -19,16 +19,15 @@ var Message = (function () {
                 sessionStorage.setItem('currencies', msg.data);
                 displayCurrencies();
             } else if (type === 'proposal') {
-                hideOverlayContainer();
-                Price.display(response, Contract.contractType()[Contract.form()]);
-                hidePriceOverlay();
+                processProposal(response);
             } else if (type === 'buy') {
                 Purchase.display(response);
             } else if (type === 'tick') {
                 processTick(response);
             }
 
-            if(type !== 'tick' && type !== 'proposal'){
+            // if(type !== 'tick' && type !== 'proposal'){
+            if(type !== 'tick'){
                 console.log(response);
             }
         } else {
