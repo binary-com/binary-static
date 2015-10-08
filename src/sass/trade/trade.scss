@@ -39,14 +39,14 @@
 
 #trading_init_progress {
     @extend .spinner;
-    background-image: url('../images/pages/binary-symbol-logo.svg');
+    background-image: url('../images/pages/binary-symbol-logo-grey.svg');
     background-size: contain;
-    width: 12rem;
-    height: 12rem;
+    width: 10rem;
+    height: 10rem;
     position: absolute;
     left: 50%;
     top: 250px;
-    margin-left: -6rem;
+    margin-left: -5rem;
 }
 
 #trading_socket_container {
