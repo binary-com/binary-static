@@ -9,7 +9,7 @@
     -            {route => '/smart-indices',                            text => l('Smart Markets'), classname => 'ja-hide'},
     -            {route => '/get-started/beginners-faq',                text => l("FAQ")},
     -            {route => '/get-started/glossary',                     text => l('Glossary')},
-    -            {route => '/get-started/spread-bets',                  text => l('Spreads'), classname => 'ja-hide'});
+    -            {route => '/get-started/spread',                  text => l('Spreads'), classname => 'ja-hide'});
     - foreach my $item (@nav) {
       - my ($route, $text, $classname) = ($item->{route}, $item->{text}, $item->{classname});
       - my $class = ($route eq current_route) ? ($classname ? $classname . ' selected' : 'selected') : ($classname ? $classname  : '');

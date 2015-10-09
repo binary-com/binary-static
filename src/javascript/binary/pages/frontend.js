@@ -341,6 +341,17 @@ pjax_config_page('/white-labels', function() {
     };
 });
 
+pjax_config_page('/payment-agent', function() {
+    return {
+        onLoad: function() {
+            sidebar_scroll($('.payment-agent'));
+        },
+        onUnload: function() {
+            $(window).off('scroll');
+        }
+    };
+});
+
 pjax_config_page('/get-started', function() {
     return {
         onLoad: function() {

@@ -1,0 +1,103 @@
+- stash(
+-  title => l('Payment Agents'),
+- );
+.grd-container.grd-default-container
+  .payment-agent.static_full
+    .grd-grid-3.grd-hide-mobile
+      .sidebar
+        %ul#sidebar-nav
+          %li#sidebar-link-section-1.selected
+            %a{:href => "#payment-agents"}= l('Payment Agents')
+          %li#sidebar-link-section-1
+            %a{:href => "#why-choose-payment-agents"}= l('Why do Clients choose to use Payment Agents?')
+          %li#sidebar-link-section-2
+            %a{:href => "#who-can-apply-payment-agent"}= l("Who can apply to be a Payment Agent?")
+          %li#sidebar-link-section-3
+            %a{:href => "#benefits-of-payment-agent"}= l("Benefits of being a Payment Agent")
+          %li#sidebar-link-section-4
+            %a{:href => "#next-steps"}= l('How does it work?')
+        .sidebar-button
+          %a.pjaxload{:href => 'mailto:affiliates@binary.com'}= l('Contact Us')
+    .grd-grid-9.grd-grid-mobile-12.grd-parent
+      .section
+        %a#why-choose-payment-agents
+        .section-content
+          #section-1
+            .grd-grid-12
+              %h1= stash->{title}
+              %p= l("Are you a Payment Agent, or interested in acting as one?")
+              %p= l("[_1] would like to team up with potential payment agents worldwide so we can offer local payment processing services to our clients in their respective regions.", stash->{website_name})
+            .grd-grid-8.grd-grid-mobile-12
+              %p= l("A Payment Agent acts like an exchange between the Client (that is, our customer) and [_1]. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by [_1]. The transfer fees are borne by the Client.", stash->{website_name})
+            .grd-grid-hide.grd-grid-mobile-2
+            .grd-grid-4.grd-grid-mobile-8
+              %img.responsive{:src => url_for('images/pages/payment_agent/payment_agents.svg')}
+            .grd-grid-12
+              %p.faded= l("Note: Payment Agent transfers are only available for accounts registered with Binary (CR) SA. Transactions are accepted only in US dollars.")
+            .clearfix
+      .section
+        %a#why-choose-payment-agents
+        .section-content
+          #section-2
+            .grd-grid-12
+              %h1= l("Why do Clients choose to use Payment Agents?")
+              %ul.checked
+                %li= l('Allow Clients to use e-wallets, which are not available directly on [_1]', stash->{website_name})
+                %li= l('Accept local bank wires')
+                %li= l('Avoid the need to have an e-wallet')
+                %li= l('Allow Clients to deposit with lower amounts (via local currency)')
+            .clearfix
+      .section
+        %a#who-can-apply-payment-agent
+        .section-content
+          #section-3
+            .grd-grid-12
+              %h1= l("Who can apply to be a Payment Agent?")
+            .grd-grid-hide.grd-grid-mobile-2
+            .grd-grid-4.grd-grid-mobile-8
+              %img.responsive{:src => url_for('images/pages/payment_agent/who_payment_agents.svg')}
+            .grd-grid-8.grd-grid-mobile-12
+              %ul.checked
+                %li= l('Online currency exchangers ')
+                %li= l('[_1] affiliate partners who wish to support a big group of Clients', stash->{website_name})
+                %li= l('Anyone who has potential to grow or increase traffic to [_1]', stash->{website_name})
+            .clearfix
+      .section
+        %a#benefits-of-payment-agent
+        .section-content
+          #section-4
+            .grd-grid-12
+              %h1= l('Benefits of being a Payment Agent')
+              %ul.checked
+                %li!= l('<strong>Additional business exposure:</strong> You will increase awareness of your services and generate new business.')
+                %li!= l('<strong>Commissions:</strong> You will charge a commission to process the transactions.')
+                %li!= l('<strong>Extra revenue stream:</strong> You will have the potential to earn another level of income from our affiliate program.')
+                %li!= l('<strong>Long-term partnership:</strong> Your partnership with [_1] could be a means to promote your product or services for FREE to our 1,000,000+ registered clients, worldwide.', stash->{website_name})
+            .clearfix
+      .section
+        %a#next-steps
+        .section-content.grd-parent.grd-grid-12
+          #section-5
+            .grd-grid-12
+              %h1= l('How does it work?')
+              %p!= l("Interested, so what’s next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by [_1], and you have a good track record in the market, then we would love to <a href='mailto:affiliates\@binary.com'>hear from you!</a>", stash->{website_name})
+              %p= l('As a first step, please send us an application with:')
+              %ul.checked
+                %li= l('Your name, email address and contact number')
+                %li= l('Your website URL (if you have one)')
+                %li= l('A list of payment methods you will accept from Clients')
+                %li= l('The commission you will charge Clients on deposits and withdrawals')
+              %p!= l("Please submit the above information to <a href='mailto:affiliates\@binary.com'>affiliates\@binary.com</a>.")
+              %p= l('Once we receive your application, one of our affiliate managers will contact you to follow up with the next steps in the application process (this will include asking you to submit several documents).')
+              %p!= l("Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='[_1]'>payment agent</a> list.", url_for('/cashier/payment_agent_list'))
+            .clearfix
+      .section
+        %a#need-more-information
+        .section-content.grd-parent.grd-grid-12
+          #section-6
+            .grd-grid-12
+              %h1= l('Need more information?')
+              %p!= l("If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:affiliates\@binary.com'>affiliates\@binary.com</a>")
+              %p= l('We look forward to hearing from you.')
+            .clearfix
+              

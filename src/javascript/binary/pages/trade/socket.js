@@ -57,6 +57,10 @@ var TradeSocket = (function () {
         };
 
         tradeSocket.onclose = function (e) {
+            // clear buffer ids of price and ticks as connection is closed
+            Price.clearMapping();
+            Price.clearBufferIds();
+            Tick.clearBufferIds();
             console.log('socket closed', e);
         };
 

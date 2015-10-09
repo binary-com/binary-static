@@ -10,6 +10,8 @@ if(typeof is_japan === 'function'){
 	    if(Periods){
 	    	Periods.displayPeriods();
 	    }
+
+	    displayPrediction();
 	    
 	    processPriceRequest();
 	};

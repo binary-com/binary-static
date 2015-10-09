@@ -39,7 +39,6 @@ function processMarket(flag) {
     if(update_page && (!symbol || !Symbols.underlyings()[market][symbol] || !Symbols.underlyings()[market][symbol].is_active)){
         symbol = undefined;
     }
-    
     displayUnderlyings('underlying', Symbols.underlyings()[market], symbol);
 
     if(update_page){
@@ -74,7 +73,7 @@ function processContract(contracts) {
 
     Contract.setContracts(contracts);
 
-    var contract_categories = getAllowedContractCategory(Contract.contractForms());
+    var contract_categories = Contract.contractForms();
     var formname;
     if(sessionStorage.getItem('formname') && contract_categories[sessionStorage.getItem('formname')]){
         formname = sessionStorage.getItem('formname');
@@ -90,7 +89,7 @@ function processContract(contracts) {
             }
         }
     }
-    
+
     // set form to session storage
     sessionStorage.setItem('formname', formname);
 
@@ -111,16 +110,45 @@ function processContractForm() {
 
     displayPrediction();
 
+    displaySpreads();
+
     processPriceRequest();
 }
 
-function displayPrediction(){
+function displayPrediction() {
     var predictionElement = document.getElementById('prediction_row');
     if(sessionStorage.getItem('formname') === 'digits'){
         predictionElement.show();
     }
     else{
         predictionElement.hide();
+    }
+}
+
+function displaySpreads() {
+    var amountType = document.getElementById('amount_type'),
+        amountPerPointLabel = document.getElementById('amount_per_point_label'),
+        amount = document.getElementById('amount'),
+        amountPerPoint = document.getElementById('amount_per_point'),
+        spreadContainer = document.getElementById('spread_element_container'),
+        stopTypeDollarLabel = document.getElementById('stop_type_dollar_label'),
+        expiryTypeRow = document.getElementById('expiry_row');
+
+    if(sessionStorage.getItem('formname') === 'spreads'){
+        amountType.hide();
+        amount.hide();
+        expiryTypeRow.hide();
+        amountPerPointLabel.show();
+        amountPerPoint.show();
+        spreadContainer.show();
+        stopTypeDollarLabel.textContent = document.getElementById('currency').value;
+    } else {
+        amountPerPointLabel.hide();
+        amountPerPoint.hide();
+        spreadContainer.hide();
+        expiryTypeRow.show();
+        amountType.show();
+        amount.show();
     }
 }
 
@@ -131,13 +159,18 @@ function processForgetPriceIds() {
     'use strict';
     if (Price) {
         showPriceOverlay();
-        var priceIds = Price.bufferedIds();
-        for (var id in priceIds) {
-            if (priceIds.hasOwnProperty(id) && priceIds[id]!==-1) {
+        var price_data = Price.bufferRequests();
+        var form_id = Price.getFormId();
+        var price_id = Price.bufferedIds();
+
+        for (var id in price_data) {
+            if(price_data[id] && price_data[id].passthrough.form_id!==form_id){
                 TradeSocket.send({ forget: id });
-                priceIds[id] = -1;
+                delete price_data[id];
+                delete price_id[id];
             }
         }
+
         Price.clearMapping();
     }
 }
@@ -149,8 +182,9 @@ function processForgetPriceIds() {
 function processPriceRequest() {
     'use strict';
 
+    Price.incrFormId();
     processForgetPriceIds();
-    showPriceOverlay();
+    showPriceOverlay(); 
     for (var typeOfContract in Contract.contractType()[Contract.form()]) {
         if(Contract.contractType()[Contract.form()].hasOwnProperty(typeOfContract)) {
             TradeSocket.send(Price.proposal(typeOfContract));
@@ -192,10 +226,16 @@ function processTick(tick) {
 
 function processProposal(response){
     'use strict';
-    var price_ids = Price.bufferedIds();
-    if(price_ids[response.proposal.id]!==-1){
+    var price_data = Price.bufferRequests();
+    var form_id = Price.getFormId();
+    // This is crazy condition but there is no way
+    if((!price_data[response.proposal.id] && response.echo_req.passthrough && response.echo_req.passthrough.form_id === form_id) || price_data[response.proposal.id].passthrough.form_id === Price.form_id){
         hideOverlayContainer();
         Price.display(response, Contract.contractType()[Contract.form()]);
         hidePriceOverlay();
+        if(form_id===1){
+            document.getElementById('trading_socket_container').classList.add('show');
+            document.getElementById('trading_init_progress').style.display = 'none';
+        }
     }
 }

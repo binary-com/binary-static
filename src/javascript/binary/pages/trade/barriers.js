@@ -17,8 +17,12 @@ var Barriers = (function () {
         if (barriers && formName) {
             var barrier = barriers[formName];
             if(barrier) {
-                var unit = document.getElementById('duration_units');
-                var currentTick = Tick.quote();
+                var unit = document.getElementById('duration_units'),
+                    currentTick = Tick.quote(),
+                    indicativeBarrierTooltip = document.getElementById('indicative_barrier_tooltip'),
+                    indicativeHighBarrierTooltip = document.getElementById('indicative_high_barrier_tooltip'),
+                    indicativeLowBarrierTooltip = document.getElementById('indicative_low_barrier_tooltip');
+
                 if (barrier.count === 1) {
                     document.getElementById('high_barrier_row').style.display = 'none';
                     document.getElementById('low_barrier_row').style.display = 'none';
@@ -29,14 +33,17 @@ var Barriers = (function () {
                         span = document.getElementById('barrier_span');
                     if (unit && unit.value === 'd' && currentTick) {
                         elm.value = (parseFloat(currentTick) + parseFloat(barrier['barrier'])).toFixed(3);
-                        elm.textContent = parseFloat(currentTick) + parseFloat(barrier['barrier']).toFixed(3);
+                        elm.textContent = (parseFloat(currentTick) + parseFloat(barrier['barrier'])).toFixed(3);
                         tooltip.style.display = 'none';
                         span.style.display = 'inherit';
+                        // no need to display indicative barrier in case of absolute barrier
+                        indicativeBarrierTooltip.textContent = '';
                     } else {
                         elm.value = barrier['barrier'];
                         elm.textContent = barrier['barrier'];
                         span.style.display = 'none';
                         tooltip.style.display = 'inherit';
+                        indicativeBarrierTooltip.textContent = (parseFloat(currentTick) + parseFloat(barrier['barrier'])).toFixed(3);
                     }
                     return;
                 } else if (barrier.count === 2) {
@@ -62,6 +69,9 @@ var Barriers = (function () {
                         high_span.style.display = 'inherit';
                         low_tooltip.style.display = 'none';
                         low_span.style.display = 'inherit';
+
+                        indicativeHighBarrierTooltip.textContent = '';
+                        indicativeLowBarrierTooltip.textContent = '';
                     } else {
                         high_elm.value = barrier['barrier'];
                         high_elm.textContent = barrier['barrier'];
@@ -73,6 +83,9 @@ var Barriers = (function () {
                         high_tooltip.style.display = 'inherit';
                         low_span.style.display = 'none';
                         low_tooltip.style.display = 'inherit';
+
+                        indicativeHighBarrierTooltip.textContent = (parseFloat(currentTick) + parseFloat(barrier['barrier'])).toFixed(3);
+                        indicativeLowBarrierTooltip.textContent = (parseFloat(currentTick) + parseFloat(barrier['barrier1'])).toFixed(3);
                     }
                     return;
                 }

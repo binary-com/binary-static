@@ -28,13 +28,14 @@ var Symbols = (function () {
                 currentUnderlying = element['symbol'];
 
             var is_active = !element['is_trading_suspended'] && element['exchange_is_open'];
- 
+
             if(!tradeMarkets[currentMarket]){
-                tradeMarkets[currentMarket] = {name:'',is_active:0,submarkets:{}};
+                tradeMarkets[currentMarket] = {name:element['market_display_name'],is_active:0,submarkets:{}};
             }
-            tradeMarkets[currentMarket]['name'] = element['market_display_name'];
-            tradeMarkets[currentMarket]['submarkets'][currentSubMarket] = {name: element['submarket_display_name']};
-            
+            if(!tradeMarkets[currentMarket]['submarkets'][currentSubMarket]){
+                tradeMarkets[currentMarket]['submarkets'][currentSubMarket] = {name: element['submarket_display_name'],is_active:0};
+            }
+
             if(is_active){
                 tradeMarkets[currentMarket]['is_active'] = 1;
                 tradeMarkets[currentMarket]['submarkets'][currentSubMarket]['is_active'] = 1;

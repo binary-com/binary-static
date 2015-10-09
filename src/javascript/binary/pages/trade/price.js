@@ -16,7 +16,8 @@ var Price = (function () {
 
     var typeDisplayIdMapping = {},
         bufferedIds = {},
-        bufferRequests = {};
+        bufferRequests = {},
+        form_id = 0;
 
     var createProposal = function (typeOfContract) {
         var proposal = {proposal: 1}, underlying = document.getElementById('underlying'),
@@ -34,20 +35,28 @@ var Price = (function () {
             barrier = document.getElementById('barrier'),
             highBarrier = document.getElementById('barrier_high'),
             lowBarrier = document.getElementById('barrier_low'),
-            prediction = document.getElementById('prediction');
+            prediction = document.getElementById('prediction'),
+            amountPerPoint = document.getElementById('amount_per_point'),
+            stopType = document.querySelector('input[name="stop_type"]:checked'),
+            stopLoss = document.getElementById('stop_loss'),
+            stopProfit = document.getElementById('stop_profit');
 
-        if (payout && payout.value) {
-            proposal['amount_val'] = parseFloat(payout.value);
+        if (payout && isVisible(payout) && payout.value) {
+            proposal['amount'] = parseFloat(payout.value);
         }
-        if (amountType && amountType.value) {
+
+        if (amountType && isVisible(amountType) && amountType.value) {
             proposal['basis'] = amountType.value;
         }
+
         if (contractType) {
             proposal['contract_type'] = typeOfContract;
         }
+
         if (currency && currency.value) {
             proposal['currency'] = currency.value;
         }
+
         if (underlying && underlying.value) {
             proposal['symbol'] = underlying.value;
         }
@@ -56,28 +65,56 @@ var Price = (function () {
             proposal['date_start'] = startTime.value;
         }
 
-        if (expiryType && expiryType.value === 'duration') {
+        if (expiryType && isVisible(expiryType) && expiryType.value === 'duration') {
             proposal['duration'] = parseInt(duration.value);
             proposal['duration_unit'] = durationUnit.value;
-        } else if (expiryType && expiryType.value === 'endtime') {
-            proposal['date_expiry'] = moment.utc(endDate.value + " " + endTime.value).unix();
+        } else if (expiryType && isVisible(expiryType) && expiryType.value === 'endtime') {
+            var endDate2 = endDate.value;
+            var endTime2 = endTime.value;
+            if(!isVisible(endTime)){
+                endTime2="23:59:59";
+            }
+            proposal['date_expiry'] = moment.utc(endDate2 + " " + endTime2).unix();
         }
 
         if (barrier && isVisible(barrier) && barrier.value) {
-            proposal['barrier'] = parseFloat(barrier.value);
+            proposal['barrier'] = barrier.value;
         }
 
         if (highBarrier && isVisible(highBarrier) && highBarrier.value) {
-            proposal['barrier'] = parseFloat(highBarrier.value);
+            proposal['barrier'] = highBarrier.value;
         }
 
         if (lowBarrier && isVisible(lowBarrier) && lowBarrier.value) {
-            proposal['barrier2'] = parseFloat(lowBarrier.value);
+            proposal['barrier2'] = lowBarrier.value;
         }
 
         if(prediction && isVisible(prediction)){
             proposal['barrier'] = parseInt(prediction.value);
         }
+
+        if (amountPerPoint && isVisible(amountPerPoint)) {
+            proposal['amount_per_point'] = parseFloat(amountPerPoint.value);
+        }
+
+        if (stopType && isVisible(stopType)) {
+            proposal['stop_type'] = stopType.value;
+        }
+
+        if (stopLoss && isVisible(stopLoss)) {
+            proposal['stop_loss'] = parseFloat(stopLoss.value);
+        }
+
+        if (stopProfit && isVisible(stopProfit)) {
+            proposal['stop_profit'] = parseFloat(stopProfit.value);
+        }
+
+        if (contractType) {
+            proposal['contract_type'] = typeOfContract;
+        }
+
+        proposal['passthrough'] = {form_id:form_id};
+
         return proposal;
     };
 
@@ -154,12 +191,21 @@ var Price = (function () {
         typeDisplayIdMapping = {};
     };
 
+    var clearBuffer = function () {
+        bufferedIds = {};
+        form_id = 0;
+    };
+
     return {
         proposal: createProposal,
         display: display,
         clearMapping: clearMapping,
         idDisplayMapping: function () { return typeDisplayIdMapping; },
-        bufferedIds: function () { return bufferedIds; }
+        bufferedIds: function () { return bufferedIds; },
+        bufferRequests: function () { return bufferRequests; },
+        getFormId: function(){ return form_id; },
+        incrFormId: function(){ form_id++; },
+        clearBufferIds: clearBuffer
     };
 
 })();

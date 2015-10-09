@@ -32,7 +32,7 @@ var Content = (function () {
             textNow: text.localize('Now'),
             textContractConfirmationHeading: text.localize('Contract Confirmation'),
             textContractConfirmationReference: text.localize('Your transaction reference is'),
-            textContractConfirmationBalance: text.localize('Your current balance is'),
+            textContractConfirmationBalance: text.localize('Account balance:'),
             textFormRiseFall: text.localize('Rise/Fall'),
             textFormHigherLower: text.localize('Higher/Lower'),
             textFormUpDown: text.localize('Up/Down'),
@@ -43,7 +43,13 @@ var Content = (function () {
             textContractConfirmationPayout: text.localize('Potential Payout'),
             textContractConfirmationCost: text.localize('Total Cost'),
             textContractConfirmationProfit: text.localize('Potential Profit'),
-            textContractConfirmationButton: text.localize('View')
+            textAmountPerPoint: text.localize('Amount per point'),
+            textStopLoss: text.localize('Stop-loss'),
+            textStopProfit: text.localize('Stop-profit'),
+            textStopType: text.localize('Stop-type'),
+            textStopTypePoints: text.localize('Points'),
+            textContractConfirmationButton: text.localize('View'),
+            textIndicativeBarrierTooltip: text.localize('This is an indicative barrier. Actual barrier will be the entry spot plus the barrier offset.')
         };
 
         var starTime = document.getElementById('start_time_label');
@@ -121,6 +127,46 @@ var Content = (function () {
         var period_label = document.getElementById('period_label');
         if (period_label) {
             period_label.textContent = localize.textContractPeriod;
+        }
+
+        var amount_per_point_label = document.getElementById('amount_per_point_label');
+        if (amount_per_point_label) {
+            amount_per_point_label.textContent = localize.textAmountPerPoint;
+        }
+
+        var stop_loss_label = document.getElementById('stop_loss_label');
+        if (stop_loss_label) {
+            stop_loss_label.textContent = localize.textStopLoss;
+        }
+
+        var stop_profit_label = document.getElementById('stop_profit_label');
+        if (stop_profit_label) {
+            stop_profit_label.textContent = localize.textStopProfit;
+        }
+
+        var stop_type_label = document.getElementById('stop_type_label');
+        if (stop_type_label) {
+            stop_type_label.textContent = localize.textStopType;
+        }
+
+        var stop_type_points = document.getElementById('stop_type_points_label');
+        if (stop_type_points) {
+            stop_type_points.textContent = localize.textStopTypePoints;
+        }
+
+        var indicative_barrier_tooltip = document.getElementById('indicative_barrier_tooltip');
+        if (indicative_barrier_tooltip) {
+            indicative_barrier_tooltip.setAttribute('title', localize.textIndicativeBarrierTooltip);
+        }
+
+        var indicative_high_barrier_tooltip = document.getElementById('indicative_high_barrier_tooltip');
+        if (indicative_high_barrier_tooltip) {
+            indicative_high_barrier_tooltip.setAttribute('title', localize.textIndicativeBarrierTooltip);
+        }
+
+        var indicative_low_barrier_tooltip = document.getElementById('indicative_low_barrier_tooltip');
+        if (indicative_low_barrier_tooltip) {
+            indicative_low_barrier_tooltip.setAttribute('title', localize.textIndicativeBarrierTooltip);
         }
 
         var jpbarrier_label = document.getElementById('jbarrier_label');

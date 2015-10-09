@@ -55,6 +55,7 @@ function displayDurations(startType) {
         }
     }
 
+    var duration_list = {};
     for (var duration in durationContainer) {
         if(durationContainer.hasOwnProperty(duration)) {
             var min = durationContainer[duration]['min_contract_duration'],
@@ -69,20 +70,20 @@ function displayDurations(startType) {
                         option.setAttribute('value', textMapping['value']);
                         option.setAttribute('data-minimum', textMapping['min']);
                         option.appendChild(content);
-                        fragment.appendChild(option);
+                        duration_list[textMapping['value']]=option;
                         option = document.createElement('option');
                         content = document.createTextNode(Content.localize().textDurationMinutes);
                         option.setAttribute('value', 'm');
                         option.setAttribute('data-minimum', 1);
                         option.setAttribute('selected', 'selected');
                         option.appendChild(content);
-                        fragment.appendChild(option);
+                        duration_list['m']=option;
                         option = document.createElement('option');
                         content = document.createTextNode(Content.localize().textDurationHours);
                         option.setAttribute('value', 'h');
                         option.setAttribute('data-minimum', 1);
                         option.appendChild(content);
-                        fragment.appendChild(option);
+                        duration_list['h']=option;
                         break;
                     case 'm':
                         option = document.createElement('option');
@@ -91,13 +92,13 @@ function displayDurations(startType) {
                         option.setAttribute('data-minimum', textMapping['min']);
                         option.setAttribute('selected', 'selected');
                         option.appendChild(content);
-                        fragment.appendChild(option);
+                        duration_list[textMapping['value']]=option;
                         option = document.createElement('option');
                         content = document.createTextNode(Content.localize().textDurationHours);
                         option.setAttribute('value', 'h');
                         option.setAttribute('data-minimum', 1);
                         option.appendChild(content);
-                        fragment.appendChild(option);
+                        duration_list['h']=option;
                         break;
                     case 'h':
                         option = document.createElement('option');
@@ -105,7 +106,7 @@ function displayDurations(startType) {
                         option.setAttribute('value', textMapping['value']);
                         option.setAttribute('data-minimum', textMapping['min']);
                         option.appendChild(content);
-                        fragment.appendChild(option);
+                        duration_list[textMapping['value']]=option;
                         break;
                     default :
                         option = document.createElement('option');
@@ -113,7 +114,7 @@ function displayDurations(startType) {
                         option.setAttribute('value', textMapping['value']);
                         option.setAttribute('data-minimum', textMapping['min']);
                         option.appendChild(content);
-                        fragment.appendChild(option);
+                        duration_list[textMapping['value']]=option;
                         break;
                 }
             } else if (duration === 'daily') {
@@ -122,18 +123,33 @@ function displayDurations(startType) {
                 option.setAttribute('value', textMapping['value']);
                 option.setAttribute('data-minimum', textMapping['min']);
                 option.appendChild(content);
-                fragment.appendChild(option);
+                duration_list[textMapping['value']]=option;
             } else if (duration === 'tick') {
                 option = document.createElement('option');
                 content = document.createTextNode(textMapping['text']);
                 option.setAttribute('value', textMapping['value']);
                 option.setAttribute('data-minimum', textMapping['min']);
                 option.appendChild(content);
-                fragment.appendChild(option);
+                duration_list[textMapping['value']]=option;
             }
-            target.appendChild(fragment);
+            
         }
     }
+    var list = Object.keys(duration_list).sort(function(a,b){
+        if(durationOrder(a)>durationOrder(b)){
+            return 1;
+        }
+        else{
+            return -1;
+        }
+    });
+    for(var k=0; k<list.length; k++){
+        var d = list[k];
+        if(duration_list.hasOwnProperty(d)){
+            target.appendChild(duration_list[d]);
+        }
+    }
+
     durationPopulate();
 }
 
