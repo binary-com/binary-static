@@ -25,11 +25,8 @@ var Message = (function () {
                 Purchase.display(response);
             } else if (type === 'tick') {
                 processTick(response);
-            }
-
-            // if(type !== 'tick' && type !== 'proposal'){
-            if(type !== 'tick'){
-                console.log(response);
+            } else if (type === 'trading_times'){
+                processTradingTimes(response);
             }
         } else {
             console.log('some error occured');

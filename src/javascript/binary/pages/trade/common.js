@@ -360,6 +360,7 @@ function hideOverlayContainer() {
  * function to assign sorting to market list
  */
 function compareMarkets(a, b) {
+    'use strict';
     var sortedMarkets = {
         'forex': 0,
         'indices': 1,
@@ -378,6 +379,7 @@ function compareMarkets(a, b) {
 }
 
 function getContractCategoryTree(elements){
+    'use strict';
 
     var tree = [
         ['updown',
@@ -418,6 +420,7 @@ function getContractCategoryTree(elements){
  * function to get cookie javascript way (use if you don't want to use jquery)
  */
 function getCookieItem(sKey) {
+    'use strict';
     if (!sKey) { return null; }
     return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
 }
@@ -426,6 +429,7 @@ function getCookieItem(sKey) {
  * Display price/spot movement variation to depict price moved up or down
  */
 function displayPriceMovement(element, oldValue, currentValue) {
+    'use strict';
     element.classList.remove('price_moved_down');
     element.classList.remove('price_moved_up');
     if (parseFloat(currentValue) > parseFloat(oldValue)) {
@@ -441,6 +445,7 @@ function displayPriceMovement(element, oldValue, currentValue) {
  * function to toggle active class of menu
  */
 function toggleActiveNavMenuElement(nav, eventElement) {
+    'use strict';
     var liElements = nav.getElementsByTagName("li");
     var classes = eventElement.classList;
 
@@ -453,6 +458,7 @@ function toggleActiveNavMenuElement(nav, eventElement) {
 }
 
 function toggleActiveCatMenuElement(nav, eventElementId) {
+    'use strict';
     var eventElement = document.getElementById(eventElementId);
     var liElements = nav.querySelectorAll('.active, .a-active');
     var classes = eventElement.classList;
@@ -480,6 +486,7 @@ function toggleActiveCatMenuElement(nav, eventElementId) {
  * function to set placeholder text based on current form, used for mobile menu
  */
 function setFormPlaceholderContent(name) {
+    'use strict';
     var formPlaceholder = document.getElementById('contract_form_nav_placeholder');
     if (formPlaceholder) {
         name = name || sessionStorage.getItem('formname');
@@ -488,7 +495,7 @@ function setFormPlaceholderContent(name) {
 }
 
 /*
- * function to display the profit and return of bet under each trade container
+ * function to display the profit and return of bet under each trade container except spreads
  */
 function displayCommentPrice(node, currency, type, payout) {
     'use strict';
@@ -508,6 +515,31 @@ function displayCommentPrice(node, currency, type, payout) {
 }
 
 /*
+ * function to display comment for spreads
+ */
+function displayCommentSpreads(node, currency, point) {
+    'use strict';
+
+    if (node && point) {
+        var amountPerPoint = document.getElementById('amount_per_point').value,
+            stopType = document.querySelector('input[name="stop_type"]:checked').value,
+            stopLoss = document.getElementById('stop_loss').value,
+            displayAmount = 0;
+
+        if (isNaN(stopLoss) || isNaN(amountPerPoint)) {
+            node.hide();
+        } else {
+            if (stopType === 'point') {
+                displayAmount = parseFloat(parseFloat(amountPerPoint) * parseFloat(stopLoss));
+            } else {
+                displayAmount = parseFloat(stopLoss);
+            }
+            node.textContent = Content.localize().textSpreadDepositComment + " " + currency + " " + displayAmount + " " + Content.localize().textSpreadRequiredComment + ": " + point + " " + Content.localize().textSpreadPointsComment;
+        }
+    }
+}
+
+/*
  * This function is used in case where we have input and we don't want to fire
  * event on every change while user is typing for example in case of amount if
  * we want to change 10 to 1000 i.e. two zeros so two input events will be fired
@@ -517,6 +549,7 @@ function displayCommentPrice(node, currency, type, payout) {
  * http://davidwalsh.name/javascript-debounce-function
  */
 function debounce(func, wait, immediate) {
+    'use strict';
     var timeout;
     var delay = wait || 500;
     return function() {
@@ -536,6 +569,7 @@ function debounce(func, wait, immediate) {
  * function to check if selected market is allowed for current user
  */
 function getDefaultMarket() {
+    'use strict';
    var mkt = sessionStorage.getItem('market');
    var markets = Symbols.markets(1);
    if(!mkt ||  !markets[mkt]){
@@ -548,6 +582,7 @@ function getDefaultMarket() {
  * this is invoked when submit button is clicked and prevents reloading of page
  */
 function addEventListenerForm(){
+    'use strict';
     document.getElementById('websocket_form').addEventListener("submit", function(evt){
         evt.currentTarget.classList.add('submitted');
         evt.preventDefault();
@@ -559,6 +594,7 @@ function addEventListenerForm(){
  * this creates a button, clicks it, and destroys it to invoke the listener
  */
 function submitForm(form) {
+    'use strict';
     // var button = form.ownerDocument.createElement('input');
     // button.style.display = 'none';
     // button.type = 'submit';
@@ -570,6 +606,7 @@ function submitForm(form) {
  * function to display indicative barrier
  */
 function displayIndicativeBarrier() {
+    'use strict';
     var unit = document.getElementById('duration_units'),
         currentTick = Tick.quote(),
         indicativeBarrierTooltip = document.getElementById('indicative_barrier_tooltip'),
@@ -602,6 +639,7 @@ function displayIndicativeBarrier() {
  * function to sort the duration in ascending order
  */
 function durationOrder(duration){
+    'use strict';
     var order = {
         t:1,
         s:2,
@@ -610,4 +648,20 @@ function durationOrder(duration){
         d:5
     };
     return order[duration];
+}
+
+function displayTooltip(market, symbol){
+    'use strict';
+    var tip = document.getElementById('symbol_tip');
+    if(market.match(/^random/)){
+        tip.show();
+        tip.setAttribute('href','https://www.binary.com/get-started/random-markets');
+    }
+    else if(symbol.match(/^SYN/)){
+        tip.show();
+        tip.setAttribute('href','https://www.binary.com/smart-indices');
+    }
+    else{
+        tip.hide();
+    }
 }

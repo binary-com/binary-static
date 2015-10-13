@@ -5,7 +5,7 @@ if(typeof is_japan === 'function'){
 
 	    displayStartDates();
 
-	    displayDurations();
+	    Durations.display();
 	    
 	    if(Periods){
 	    	Periods.displayPeriods();

@@ -34,10 +34,11 @@
 
 
 .spinner {
-    animation: spinning .2s * 5 infinite linear;
+    animation: spinning .1s * 5 infinite linear;
 }
 
 #trading_init_progress {
+    cursor: pointer;
     @extend .spinner;
     background-image: url('../images/pages/binary-symbol-logo.svg');
     background-size: contain;
@@ -54,6 +55,9 @@
   font-size: 1rem;
   position: relative;
   opacity: 0;
+  abbr{
+    text-decoration: none;
+  }
   &.show{
     animation: fade 1s;
     animation-fill-mode: forwards;
@@ -298,6 +302,14 @@
       &.ends_outside {
         background: url("../images/pages/trade/ends-outside_1.png") no-repeat top center;
       }
+      &.spread_up {
+        background: url("../images/pages/trade/spreads.svg") no-repeat top center;
+        background-size: 40%;
+      }
+      &.spread_down {
+        background: url("../images/pages/trade/spreads.svg") no-repeat top center;
+        background-size: 40%;
+      }
     }
     .contract_amount, .contract_description {
       padding: 10px 10px 10px 5px;
@@ -404,6 +416,10 @@
   #underlying{
     margin-right: 10px;
     margin-bottom: 5px;
+  }
+  #symbol_tip{
+    padding-right: 8px;
+    padding-bottom: 5px;
   }
   #spot_label{
     display: none;

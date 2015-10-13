@@ -49,7 +49,12 @@ var Content = (function () {
             textStopType: text.localize('Stop-type'),
             textStopTypePoints: text.localize('Points'),
             textContractConfirmationButton: text.localize('View'),
-            textIndicativeBarrierTooltip: text.localize('This is an indicative barrier. Actual barrier will be the entry spot plus the barrier offset.')
+            textIndicativeBarrierTooltip: text.localize('This is an indicative barrier. Actual barrier will be the entry spot plus the barrier offset.'),
+            textSpreadTypeLong: text.localize('Long'),
+            textSpreadTypeShort: text.localize('Short'),
+            textSpreadDepositComment: text.localize('Deposit of'),
+            textSpreadRequiredComment: text.localize('is required. Current spread'),
+            textSpreadPointsComment: text.localize('points')
         };
 
         var starTime = document.getElementById('start_time_label');

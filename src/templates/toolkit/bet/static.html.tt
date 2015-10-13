@@ -11,6 +11,7 @@
       </div>
       <div >
          <select id="underlying"></select>
+         <a class="pjaxload unicode-info-icon" id="symbol_tip" href="">&#9432;</a>
          <label for="spot" id="spot_label"></label>
          <span id="spot"></span>
       </div>
