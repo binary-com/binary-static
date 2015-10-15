@@ -34,13 +34,14 @@
 
 
 .spinner {
-    animation: spinning .1s * 5 infinite linear;
+    animation: spinning .2s * 5 infinite linear;
 }
 
 #trading_init_progress {
     cursor: pointer;
     @extend .spinner;
-    background-image: url('../images/pages/binary-symbol-logo.svg');
+    background-image: url('../images/pages/binary-symbol-logo.png');
+    background-image: url('../images/pages/binary-symbol-logo.svg'), none;
     background-size: contain;
     width: 10rem;
     height: 10rem;
@@ -72,6 +73,9 @@
   }
   label{
     line-height: 28px;
+  }
+  #contract_market_form_container{
+    height: 28px;
   }
   .button button{
     cursor: pointer;

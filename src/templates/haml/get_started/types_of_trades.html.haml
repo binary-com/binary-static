@@ -42,16 +42,17 @@
   .subsection.ja-hide
     .grd-grid-12
       %h2
+        %a.pjaxload{:href => url_for('trade.cgi?market=random&form_name=asian')}= l('Asians')
+      %p= l('Choose Asian Rise/Fall when you want to profit from the market ending higher or lower than the average price.')
+      %ol
+        %li= l('“Asian Rise” – You win when the last tick is higher than the average of the ticks during the trade.')
+        %li= l('“Asian Fall” – You win when the last tick is lower than the average of the ticks during the trade.')
+  .subsection.ja-hide
+    .grd-grid-12
+      %h2
         %a.pjaxload{:href => url_for('trade.cgi?market=random&form_name=digits')}= l('Digits')
       %p= l('Choose digit if you want to profit from predicting the last decimal digit of the spot.')
       %ol
         %li= l('“Matches” – You win when the last digit of the last tick matches your prediction.')
         %li= l('“Differs” – You win when the last digit of the last tick does not match your prediction.')
-  .subsection.ja-hide
-    .grd-grid-12
-      %h2
-        %a.pjaxload{:href => url_for('trade.cgi?market=random&form_name=digits')}= l('Asians')
-      %p= l('Choose Asian Rise/Fall when you want to profit from the market ending higher or lower than the average price.')
-      %ol
-        %li= l('“Asian Rise” – You win when the last tick is higher than the average of the ticks during the trade.')
-        %li= l('“Asian Fall” – You win when the last tick is lower than the average of the ticks during the trade.')
+  

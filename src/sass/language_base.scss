@@ -89,3 +89,16 @@ body.ID{
 	}
 }
 
+/*Italian Language */
+body.IT{
+	#legal-tab li.tm-li-2 {
+		margin-right: 0px!important;
+		padding: 0 8px!important;
+	}
+	a, button, .button, span, input {
+		text-transform: initial!important;
+	}
+	h1, h2, h3, h4, h5, h6 {
+		text-transform: initial!important;
+	}
+}

@@ -38,7 +38,7 @@
                             [% ELSE %]
                                 [% cat_name = categories.$market_name.item(category) %]
                             [% END %]
-                            <div [% IF market_name == 'random' %] style="font-size:80%" [% END %] [% IF category > 4 %]class="grd-grid-1"[% ELSE %]class="grd-grid-2"[% END %]>[% cat_name %]</div>
+                            <div [% IF market_name == 'random' %] style="font-size:80%" [% END %] [% IF category > 3 %]class="grd-grid-1"[% ELSE %]class="grd-grid-2"[% END %]>[% cat_name %]</div>
                         [%- END %]
                     </div>
                 </div>
@@ -71,7 +71,17 @@
                                     [% END %]
                                 [% END %]
                                 <div [% IF market_name == 'random' %] style="font-size:80%" [% END %] class="grd-grid-[% column_grid_size %]">
-                                [%- IF category.expiries.formatted -%]
+                                [%- IF category.obj.code == 'spreads'-%]
+                                    [%
+                                        category.link_params.amount_per_point = 1
+                                        category.link_params.stop_loss = 10
+                                        category.link_params.stop_profit = 10
+                                        category.link_params.stop_type = 'point'
+                                    %]
+                                    <a class="pjaxload" href="[% request.url_for(category.link_page, category.link_params) %]">
+                                        &#10004;
+                                    </a>
+                                [%- ELSIF category.expiries.formatted -%]
                                     <a class="pjaxload" href="[% request.url_for(category.link_page, category.link_params) %]">
                                         [% category.expiries.formatted %]
                                     </a>

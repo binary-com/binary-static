@@ -9,7 +9,7 @@
         <a itemprop="name" href="[% bet_type.url %]" id="[% bet_type.id %]" class="li-boxes-content-icon">[% bet_type.title %]</a>
         <div class="li-2-boxes-content">
             <h2><a href="[% bet_type.url %]">[% bet_type.title %]</a></h2>
-            <p>[% bet_type.explanation %] <a class="bet_demo_link" href="[%= request.url_for('/resources/contract_demo', { bet_type =>  bet_type.default}) =%]">[% l('See demo') %]</a></p>
+            <p>[% bet_type.explanation %]</p>
         </div>
     </div>
     [% END %]

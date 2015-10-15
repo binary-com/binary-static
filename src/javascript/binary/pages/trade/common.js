@@ -595,11 +595,11 @@ function addEventListenerForm(){
  */
 function submitForm(form) {
     'use strict';
-    // var button = form.ownerDocument.createElement('input');
-    // button.style.display = 'none';
-    // button.type = 'submit';
-    // form.appendChild(button).click();
-    // form.removeChild(button);
+    var button = form.ownerDocument.createElement('input');
+    button.style.display = 'none';
+    button.type = 'submit';
+    form.appendChild(button).click();
+    form.removeChild(button);
 }
 
 /*
@@ -616,17 +616,18 @@ function displayIndicativeBarrier() {
         highBarrierElement = document.getElementById('barrier_high'),
         lowBarrierElement = document.getElementById('barrier_low');
 
-    if (unit && unit.value !== 'd' && currentTick) {
+    if (unit && unit.value !== 'd' && currentTick && !isNaN(currentTick)) {
+        var decimalPlaces = countDecimalPlaces(currentTick);
         if (indicativeBarrierTooltip && isVisible(indicativeBarrierTooltip)) {
-            indicativeBarrierTooltip.textContent = (parseFloat(currentTick) + parseFloat(barrierElement.value)).toFixed(3);
+            indicativeBarrierTooltip.textContent = (parseFloat(currentTick) + parseFloat(barrierElement.value)).toFixed(decimalPlaces);
         }
 
         if (indicativeHighBarrierTooltip && isVisible(indicativeHighBarrierTooltip)) {
-            indicativeHighBarrierTooltip.textContent = (parseFloat(currentTick) + parseFloat(highBarrierElement.value)).toFixed(3);
+            indicativeHighBarrierTooltip.textContent = (parseFloat(currentTick) + parseFloat(highBarrierElement.value)).toFixed(decimalPlaces);
         }
 
         if (indicativeLowBarrierTooltip && isVisible(indicativeLowBarrierTooltip)) {
-            indicativeLowBarrierTooltip.textContent = (parseFloat(currentTick) + parseFloat(lowBarrierElement.value)).toFixed(3);
+            indicativeLowBarrierTooltip.textContent = (parseFloat(currentTick) + parseFloat(lowBarrierElement.value)).toFixed(decimalPlaces);
         }
     } else {
         indicativeBarrierTooltip.textContent = '';
@@ -655,13 +656,28 @@ function displayTooltip(market, symbol){
     var tip = document.getElementById('symbol_tip');
     if(market.match(/^random/)){
         tip.show();
-        tip.setAttribute('href','https://www.binary.com/get-started/random-markets');
+        tip.setAttribute('target','/get-started/random-markets');
     }
     else if(symbol.match(/^SYN/)){
         tip.show();
-        tip.setAttribute('href','https://www.binary.com/smart-indices');
+        tip.setAttribute('target','/smart-indices');
     }
     else{
         tip.hide();
+    }
+}
+
+/*
+ * count number of decimal places in spot so that we can make barrier to same decimal places
+ */
+function countDecimalPlaces(num) {
+    'use strict';
+    if (!isNaN(num)) {
+        var str = num.toString();
+        if (str.indexOf('.') !== -1) {
+            return str.split('.')[1].length;
+        } else {
+            return 0;
+        }
     }
 }

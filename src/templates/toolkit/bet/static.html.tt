@@ -11,7 +11,7 @@
       </div>
       <div >
          <select id="underlying"></select>
-         <a class="pjaxload unicode-info-icon" id="symbol_tip" href="">&#9432;</a>
+         <a class="unicode-info-icon" id="symbol_tip" target="" href="">&#9432;</a>
          <label for="spot" id="spot_label"></label>
          <span id="spot"></span>
       </div>
@@ -46,7 +46,7 @@
                         </div>
                         <div class="big-col">
                            <div id="expiry_type_duration">
-                              <input id="duration_amount" type="text" class="small_width_input" pattern="^([1-9]|[1-9][0-9]|[1-2][0-9][0-9]|[1-3][0-6][0-6])$" title="minimum 1, maximum 366" /><label></label>
+                              <input id="duration_amount" type="text" class="small_width_input" pattern="^([1-9]|[1-9][0-9]|[1-2][0-9][0-9]|[1-3][0-6][0-6])$" title="Minimum as indicated, maximum 366" /><label></label>
                               <select id="duration_units" class="medium_width_input"></select>
                               <span id="duration_tooltip_wrapper">
                               <abbr rel="tooltip" id="duration_tooltip"></abbr>

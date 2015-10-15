@@ -399,6 +399,14 @@ var TradingEvents = (function () {
                 location.reload();
             }));
         }
+
+        var tip = document.getElementById('symbol_tip');
+        if(init_logo){
+            tip.addEventListener('click', debounce( function (e) {
+                var url = e.target.getAttribute('target');
+                load_with_pjax(url);
+            }));
+        }
     };
 
     return {
