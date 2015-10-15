@@ -26,7 +26,7 @@
     </table>
 
     <script charset="utf-8">
-      $('#instruments').val($('#underlying').val());
+      document.getElementById('instruments').value = document.getElementById('underlying').value;
       /*
         Attaching change event to the drop downs
       */
