@@ -3,8 +3,7 @@
       <tr>
         <td align="right" width="25%">Instruments : </td>
         <td align="left" width="25%">
-          <select id="instruments">
-          </select>
+          <label></label>
         </td>
         <td align="right" width="25%">Time period : </td>
         <td align="left" width="25%">
@@ -30,8 +29,8 @@
       /*
         Attaching change event to the drop downs
       */
-      $("#instruments, #timePeriod").change(function() {
-        var instrumentCode = $("#instruments").val();
+      $("#underlying, #timePeriod").change(function() {
+        var instrumentCode = $("#underlying").val();
         var timePeriod = $("#timePeriod").val();
         if (instrumentCode && timePeriod) {
           $("#chartFrame").attr('src', 'highcharts.binary.com?affiliates=true&instrument=' + instrumentCode + '&timePeriod=' + timePeriod);
