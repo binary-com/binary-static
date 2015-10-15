@@ -26,34 +26,7 @@
     </table>
 
     <script charset="utf-8">
-      var ws = new ReconnectingWebSocket("wss://www.binary.com/websockets/v2");
-      ws.debug = false;
-      ws.timeoutInterval = 5400;
-      ws.onopen = function(event) {
-        var now = new Date();
-        ws.send(JSON.stringify({"trading_times": now.getYear() + "-" + now.getMonth() + "-" + now.getDate()}));
-      };
-      ws.onmessage = function(event) {
-        var data = JSON.parse( event.data );
-        switch( data.msg_type ) {
-          case "trading_times":
-            for (var marketIndex in data.trading_times.markets) {
-              var marketFromResponse = data.trading_times.markets[marketIndex];
-              for (var submarketIndxx in marketFromResponse.submarkets) {
-                var submarket = marketFromResponse.submarkets[submarketIndxx];
-                for (var eachSymbolIndx in submarket.symbols) {
-                  var eachSymbol = submarket.symbols[eachSymbolIndx];
-                  $("<option>").append(eachSymbol.name)
-                               .attr('value', eachSymbol.symbol)
-                               .appendTo( $('#instruments') );
-                }
-              }
-            }
-            $('#instruments').val('R_25').change();
-            ws.close();
-          break;
-        }
-      }
+      $('#instruments').val($('#underlying').val());
       /*
         Attaching change event to the drop downs
       */
@@ -61,7 +34,7 @@
         var instrumentCode = $("#instruments").val();
         var timePeriod = $("#timePeriod").val();
         if (instrumentCode && timePeriod) {
-          $("#chartFrame").attr('src', '/index.html?affiliates=true&instrument=' + instrumentCode + '&timePeriod=' + timePeriod);
+          $("#chartFrame").attr('src', 'highcharts.binary.com?affiliates=true&instrument=' + instrumentCode + '&timePeriod=' + timePeriod);
         }
       });
     </script>
