@@ -85,7 +85,28 @@ body.ID{
 		display: none !important;
 	}
 	#regulatory-text {
-		margin-top:20px;
+		margin-top: 10px;
+   		margin-bottom: 10px;
+	}
+	#footer #social-networks {
+		padding-top: 0px;
+	}
+	.id-hide {
+		display: none!important;
+	}
+	.empty-space {
+	    margin-top: 0px;
+	}
+	.extra-space {
+	    margin-top: 127px;
+	}
+	@media screen and (max-width: 480px) {
+		.empty-space {
+		    margin-top: 0!important;
+		}
+		.extra-space {
+		    margin-top: 0!important;
+		}
 	}
 }
 

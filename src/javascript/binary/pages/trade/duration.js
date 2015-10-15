@@ -9,13 +9,12 @@
  */
 
 var Durations = (function(){
-    
+    'use strict';
+
     var trading_times = {};
     var expiry_time = '';
 
     var displayDurations = function(startType) {
-        'use strict';
-
         var durations = Contract.durations();
         if (durations === false) {
             document.getElementById('expiry_row').style.display = 'none';
@@ -138,7 +137,6 @@ var Durations = (function(){
                     option.appendChild(content);
                     duration_list[textMapping['value']]=option;
                 }
-                
             }
         }
         var list = Object.keys(duration_list).sort(function(a,b){
@@ -160,7 +158,6 @@ var Durations = (function(){
     };
 
     var durationTextValueMappings = function(str) {
-        'use strict';
         var mapping = {
             s : Content.localize().textDurationSeconds,
             m : Content.localize().textDurationMinutes,
@@ -186,8 +183,6 @@ var Durations = (function(){
     };
 
     var durationPopulate = function() {
-        'use strict';
-
         var unit = document.getElementById('duration_units');
         if (isVisible(unit)) {
             var unitValue = unit.options[unit.selectedIndex].getAttribute('data-minimum');
@@ -198,13 +193,27 @@ var Durations = (function(){
             displayExpiryType();
         }
 
+        // jquery for datepicker
+        var amountElement = $('#duration_amount');
+        if (unit.value === 'd') {
+            amountElement.datepicker({
+                onSelect: function() {
+                    var date = $(this).datepicker('getDate');
+                    var today = new Date();
+                    var dayDiff = Math.ceil((date - today) / (1000 * 60 * 60 * 24));
+                    amountElement.val(dayDiff);
+                    amountElement.trigger('change');
+                }
+            });
+        } else {
+            amountElement.datepicker("destroy");
+        }
+
         // we need to call it here as for days we need to show absolute barriers
         Barriers.display();
     };
 
     var displayExpiryType = function(unit) {
-        'use strict';
-
         var target = document.getElementById('expiry_type'),
             fragment = document.createDocumentFragment();
 

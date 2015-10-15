@@ -6,28 +6,18 @@
   .grd-grid-12.grd-parent
     .grd-grid-2.grd-grid-mobile-8.grd-centered-mobile
       %img.responsive{:src => url_for('images/pages/about/logo-blue.svg')}
-    .grd-grid-9.grd-grid-mobile-12.grd-push-1
+    .grd-grid-9.grd-grid-mobile-12
       %h1= l('Group Information')
       %p
         != l('The <span itemprop="brand">[_1]</span> service (formerly known as BetOnMarkets.com) is owned and operated by Binary Ltd. Fully licensed and regulated, [_1] has been providing financial trading to a worldwide audience of over 1,000,000 clients since <span itemprop="foundingdate">1999</span>', stash->{website_name}) . "."
   .grd-grid-12.grd-parent
     .grd-grid-6.grd-grid-mobile-12.grd-parent.grd-row-padding
-      .grd-grid-12.grd-centered.grd-row-padding
-      .grd-grid-12.grd-centered.grd-row-padding
-      .grd-grid-12.grd-centered.grd-row-padding
-      .grd-grid-12.grd-centered.grd-row-padding
-      .grd-grid-12.grd-centered.grd-row-padding
-      .grd-grid-12.grd-centered.grd-with-top-padding
-      .grd-grid-12.grd-centered.grd-with-top-padding
-      .grd-grid-12.grd-centered.grd-with-top-padding
-      .grd-grid-12.grd-centered.grd-with-top-padding
-      .grd-grid-12.grd-centered.grd-with-top-padding
       .grd-grid-12.grd-row-padding
-        %h2{:itemprop=>'legalname'}= 'Binary Ltd'
+        %h2.empty-space{:itemprop=>'legalname'}= 'Binary Ltd'
         %p
           != l("Binary Ltd, with registered office address situated at <span itemprop='location'>47 Esplanade, St. Helier, Jersey, JE 0BD Channel Islands</span>, is the holding company for the Binary group.")
     .grd-grid-6.grd-grid-mobile-12.grd-parent.grd-row-padding
-      .grd-grid-4.grd-grid-mobile-6.grd-centered.grd-row-padding
+      .grd-grid-4.grd-grid-mobile-6.grd-centered.grd-row-padding.id-hide
         %a(href='http://www.gov.im/gambling/' target="_blank" )
           %img.responsive{:src => url_for('images/pages/footer/isle-of-man.png')}
       .grd-grid-12.grd-row-padding
@@ -36,11 +26,11 @@
           %p= l('UK and Manx residents will have their account opened with Binary (IOM) Ltd.')
   .grd-grid-12.grd-parent
     .grd-grid-6.grd-grid-mobile-12
-      .grd-grid-8.grd-grid-mobile-12.grd-centered.grd-row-padding
+      .grd-grid-8.grd-grid-mobile-12.grd-centered.grd-row-padding.id-hide
         %a(href='http://www.mga.org.mt/' target="_blank" )
           %img.responsive{:src => url_for('images/pages/why-us/mga-logo.svg')}
         %p.grd-with-top-padding
-      .grd-grid-12.grd-row-padding
+      .grd-grid-12.grd-row-padding.extra-space
         %h2= 'Binary (Europe) Ltd'
         %p!= l('Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licenced and regulated (for gambling products only) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - <a href="[_1]" target="_blank\">view license</a>.', ('https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495'))
         %p= l('European Union residents with the exception of the UK, who wish to trade gambling products, will have their account opened with Binary (Europe) Ltd.')

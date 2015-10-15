@@ -28,6 +28,10 @@
       text-align: center;
     }
   }
+
+  .empty-space {
+    margin-top: 90px;
+  }
 }
 
 @media screen and (max-width: 640px) {
@@ -58,4 +62,10 @@
         margin-top: 0px !important;
         background: #fff;
     }
+}
+
+@media screen and (max-width: 480px) {
+  .empty-space {
+    margin-top: 0;
+  }
 }

@@ -92,7 +92,8 @@ var TradingEvents = (function () {
          */
         var durationAmountElement = document.getElementById('duration_amount');
         if (durationAmountElement) {
-            durationAmountElement.addEventListener('input', debounce (function (e) {
+            // jquery needed for datepicker
+            $('#duration_amount').on('change', debounce(function (e) {
                 processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));
@@ -132,7 +133,9 @@ var TradingEvents = (function () {
          */
         var endDateElement = document.getElementById('expiry_date');
         if (endDateElement) {
-            endDateElement.addEventListener('change', function () {
+            // need to use jquery as datepicker is used, if we switch to some other
+            // datepicker we can move back to javascript
+            $('#expiry_date').on('change', function () {
                 var input = this.value;
                 var match = input.match(/^(\d{4})-(\d{2})-(\d{2})$/);
                 if(match){
@@ -159,7 +162,7 @@ var TradingEvents = (function () {
 
         var endTimeElement = document.getElementById('expiry_time');
         if (endTimeElement) {
-            endTimeElement.addEventListener('change', function () {
+            $('#expiry_time').on('change', function () {
                 Durations.setTime(endTimeElement.value);
                 processPriceRequest();
             });
@@ -407,6 +410,15 @@ var TradingEvents = (function () {
                 load_with_pjax(url);
             }));
         }
+
+        /*
+         * attach datepicker and timepicker to end time durations
+         * have to use jquery
+         */
+        $(".pickadate").datepicker({
+            dateFormat: "yy-mm-dd"
+        });
+        $(".pickatime" ).timepicker();
     };
 
     return {

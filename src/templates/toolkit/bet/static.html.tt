@@ -54,8 +54,8 @@
                               </span>
                            </div>
                            <div id="expiry_type_endtime">
-                              <input id="expiry_date" type="date" />
-                              <input id="expiry_time" type="time" />
+                              <input id="expiry_date" type="text" class="pickadate"/>
+                              <input id="expiry_time" type="text" class="pickatime"/>
                            </div>
                         </div>
                      </div>
