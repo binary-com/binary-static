@@ -1,0 +1,25 @@
+{
+  "name": "binary-static",
+  "version": "3.8.0",
+  "homepage": "https://github.com/binary-com/binary-static.git",
+  "authors": [
+    "qingwei <qingwei@binary.com>"
+  ],
+  "description": "Binary.com static content",
+  "main": "",
+  "moduleType": [
+    "es6"
+  ],
+  "license": "Apache License 2.0",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jasmine-jquery": "~2.1.1"
+  }
+}

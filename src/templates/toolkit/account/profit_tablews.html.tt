@@ -1,0 +1,38 @@
+<div id="profit-table-ws-container">
+    <div class="page-title" id="profit-table-title">
+        <h1>Profit Table</h1>
+        <br>
+    </div>
+
+    <label for="date-picker">Jump To</label>
+    <input id="profit-table-date" class="has-date-picker" name="date-picker"/>
+    <button class="button invisible" id="submit-date">Go</button>
+    <div id="profit-table-container">
+        <table id="profit-table" class="flex-table scrollable">
+            <thead>
+                <tr id="profit-table-header" class="flex-table-row">
+                    <th class="flex-table-row-item">Purchase Date</th>
+                    <th class="flex-table-row-item">Ref.</th>
+                    <th class="flex-table-row-item">Contract</th>
+                    <th class="flex-table-row-item">Purchase Price</th>
+                    <th class="flex-table-row-item">Sale Date</th>
+                    <th class="flex-table-row-item">Sale Price</th>
+                    <th class="flex-table-row-item">Profit/Loss</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr id="profit-table-footer" class="flex-table-row">
+                    <td class="flex-table-row-item purchase-date-col-item"></td>
+                    <td class="flex-table-row-item ref-col-item"></td>
+                    <td class="flex-table-row-item contract-col-item"></td>
+                    <td class="flex-table-row-item purchase-price-col-item"></td>
+                    <td class="flex-table-row-item sale-date-col-item"></td>
+                    <td class="flex-table-row-item sale-price-col-item"></td>
+                    <td class="flex-table-row-item profit-loss-col-item"></td>
+                </tr>
+            </tfoot>
+            <tbody id="profit-table-body">
+            </tbody>
+        </table>
+    </div>
+</div>

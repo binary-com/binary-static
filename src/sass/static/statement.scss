@@ -1,0 +1,72 @@
+
+#statement-ws-container {
+    min-width: 100px;
+    overflow-x: auto;
+    th {
+        text-align: left !important;
+        border-bottom: none !important;
+    }
+
+    .flex-table {
+        min-width: 700px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .breakline {
+        white-space: pre-line;
+    }
+
+    .flex-table-row {
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1 1 100px;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: stretch;
+    }
+
+    #date-nav-panel {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .flex-table-row-item {
+        flex: 1 1 50px;
+    }
+
+    td.flex-table-row-item {
+        padding-left: 12px;
+    }
+
+    .flex-table-row-item.desc-col-item {
+        flex: 2 1 100px;
+        padding-right: 20px;
+    }
+
+    .flex-table-row-item.action-col-item {
+        flex: 0.8 1 35px;
+    }
+
+    .button {
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+        line-height: 100%;
+        background: #2e8836;
+        border-radius: 4px;
+        text-transform: capitalize;
+        padding: 10px 25px;
+        display: inline-block;
+        letter-spacing: .75px;
+        overflow: visible;
+        border: 0;
+    }
+
+    label[for="date-picker"] {
+        left: 30%;
+    }
+}
