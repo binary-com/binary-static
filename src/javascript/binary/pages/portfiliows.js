@@ -14,9 +14,13 @@ var PortfolioWS =  (function() {
     var pageLanguage = page.language();
     if(!pageLanguage) pageLanguage = "EN";
 
+    var init = function() {
+        TradeSocket.init({"thendo":"updateBalance"});
+    };
+
     
     var updateBallance = function(data) {
-        $("span[data-id='balance']").text(data.authorize.balance).removeClass("loading");
+        $("span[data-id='balance']").text(fixCurrency(data.authorize.balance, data.authorize.currency).removeClass("loading");
         if(0 === parseFloat(data.authorize.balance, 10)) {
             $("#if-balance-zero").removeClass("dynamic");
         } else {
@@ -75,7 +79,7 @@ var PortfolioWS =  (function() {
         $("#portfolio-dynamic").replaceWith(trans(contracts));
 
         // update footer area data
-        $("#cost-of-open-positions").replaceWith( currency + fixCurrency(sumPurchase));
+        $("#cost-of-open-positions").replaceWith( fixCurrency(sumPurchase, currency));
         $("#value-of-open-positions").replaceWith(currency + '0.00'); // Fix this once API returns a value for indicative amount
 
         // ready to show portfolio table
@@ -120,38 +124,37 @@ var PortfolioWS =  (function() {
      * In case we have an integer, like 73, we want to display a decimal
      * with two fractions, i.e. 73:00
      * This function does that.
+     * Adapted from http://stackoverflow.com/a/14428340
+     * Kudos to: [VisioN](http://stackoverflow.com/users/1249581)
     **/
-    var fixCurrency = function(a) {
-        if("string" !== typeof a) {
-            a = "" + a;
+    var fixCurrency = function(n, currency) {
+        if("number" !== typeof n) n = parseFloat(n);
+        var snum = n + "", dec;
+        if(-1 === snum.indexOf(".")) {
+            dec = 2;
+        } else {
+            dec = snum.split(".")[1].length;
         }
-        if(-1 === a.indexOf(".")) return a + ".00";
-        if(1 === a.split(".")[1].length) return a + "0";
-        return a;
+        if("string" === typeof currency) {
+            currency += " ";
+        } else {
+            var currency = "";
+        }
+        return currency + " " + n.toFixed(dec).replace(/(\d)(?=(\d{3})+\.)/g, "$1,");
     };
  
-    /**
-     * Are we on the portfolio page?
-     * Since we don't have page-specific javascript and all js loads with every page
-     * we need this function to check if we are on the portfolio page.
-    **/
-    var isPortfolioPage = function() {
-        return 1 === $("div#portfolio").length;
-    };
-
-
-    /**
-     * If we are on the portfolio page, get the data and parse
-    **/
-    if(isPortfolioPage()) {
-        window.setTimeout(function(){
-            TradeSocket.init({"thendo":"updateBalance"});
-        }, 3000);
-    }
-
     return {
+        init: init,
         updateBallance: updateBallance,
         updatePortfolio: updatePortfolio
     };
 
 })();
+
+pjax_config_page('portfoliows', function() {
+    return {
+        onLoad: function() {
+            PortfolioWS.init();
+        }
+    };
+});
