@@ -107,7 +107,7 @@ var PortfolioWS =  (function() {
      * For instance, in portfolio table, we have a 'View' button
      * for each contract.
     **/
-    var trans: function(str) {
+    var trans = function(str) {
         $.each(uiTexts[pageLanguage], function(k, t) {
             if(-1 === str.indexOf(":"+k+":")) return true;
             str = str.split(":"+k+":").join(t);
@@ -121,7 +121,7 @@ var PortfolioWS =  (function() {
      * with two fractions, i.e. 73:00
      * This function does that.
     **/
-    var fixCurrency: function(a) {
+    var fixCurrency = function(a) {
         if("string" !== typeof a) {
             a = "" + a;
         }
