@@ -5,7 +5,7 @@
 
 		<div class="grd-parent grd-row-padding">
 			<div class="grd-hide-mobile grd-hide-phablet">
-				[% l("Account balance : " %]
+				[% l("Account balance") %]  : 
 				<span class="loading" data-id="balance"></span>
 
 				<!-- If the account ballance is zero we show the following button, otherwise we remove it -->
