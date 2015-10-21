@@ -9,10 +9,15 @@
         <div class="grd-container grd-default-container">
             <div class="grd-grid-6 grd-grid-mobile-12 grd-parent">
                 <div class="grd-grid-4">
-                    <h1>[% l('About Us') %]</h1>
+                    <h1>[% l('Our Company') %]</h1>
                     <ul>
                         <li>
                             <a class="pjaxload" href="[% request.url_for('about-us') %]"[% IF target %] target="[%
+                            target
+                            %]"[% END %]>[% l('About Us') %]</a>
+                        </li>
+                        <li>
+                            <a class="pjaxload id-hide ar-hide" href="[% request.url_for('group-information') %]"[% IF target %] target="[%
                             target
                             %]"[% END %]>[% l('Group Information') %]</a>
                         </li>
@@ -20,9 +25,6 @@
                             <a class="pjaxload" href="[% request.url_for('group-history') %]"[% IF target %] target="[%
                             target
                             %]"[% END %]>[% l('Group History') %]</a>
-                        </li>
-                        <li class="ja-hide">
-                            <a href="[% request.url_for('/legal/us_patents') %]" class="us_patent_link pjaxload">[% l('Patents') %]</a>
                         </li>
                         <li class="ja-hide">
                             <a class="pjaxload" href="[% request.url_for('careers') %]">[% l('Careers') %]</a>
@@ -133,6 +135,9 @@
                         <li class="ja-hide">
                         <a class="pjaxload" href="[% request.url_for('/terms-and-conditions', {selected_tab => 'complaints-disputes-tac-tab'}) %]"[% IF target %]
                             target="[% target %]"[% END %]>[% l('Complaints and Disputes') %]</a>
+                        </li>
+                        <li class="ja-hide">
+                            <a href="[% request.url_for('/legal/us_patents') %]" class="us_patent_link pjaxload">[% l('Patents') %]</a>
                         </li>
                     </ul>
                 </div>

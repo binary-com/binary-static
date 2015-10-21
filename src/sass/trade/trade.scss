@@ -80,10 +80,6 @@
   .button button{
     cursor: pointer;
   }
-  .submitted input:invalid + label::after {
-    content: 'invalid input';
-    padding-left: 10px;
-  }
   .row, .row-inner {
     display: flex;
     justify-content: space-around;
@@ -235,10 +231,11 @@
     }
     #contract_purchase_profit_list,
     #contract_purchase_spots .row{
+      padding: 3px 0;
       flex-direction: row !important;
     }
     #contract_purchase_spots{
-      max-height: 180px;
+      height: 110px;
       overflow: hidden;
       &.won{
         background-color: rgba(46, 136, 54, 0.196078);
@@ -439,9 +436,6 @@
     #contract_market_form_container{
       height: auto;
     }
-    #contract_purchase_spots{
-      max-height: 205px;
-    }
     #expiry_time{
       width: 175px;
     }
@@ -468,6 +462,9 @@
       }
     }
     #contract_prices_container {
+      #contract_purchase_spots{
+        height: auto;
+      }
       #price_container_top {
         margin-right: 0 !important;
       }

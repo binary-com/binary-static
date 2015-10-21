@@ -7,9 +7,10 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-10-09 15:14+0200\n"
-"Last-Translator: Sittie Hadjirah Sevilla <sittiebaser@gmail.com>\n"
-"Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
+"PO-Revision-Date: 2015-10-15 12:15+0200\n"
+"Last-Translator: Karen <karen@binary.com>\n"
+"Language-Team: Indonesian "
+"<https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -63,7 +64,7 @@ msgstr "Syarat dan Ketentuan Program Affiliasi %1"
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "%1 affiliate partners who wish to support a big group of Clients"
-msgstr ""
+msgstr "Mitra Afiliasi %1 yang ingin mendukung grup besar Pelanggan"
 
 #. ('<a target="_blank" href="http://www.gambleaware.co.uk/">GambleAware</a>')
 #: /home/git/translations/binary-static/src/templates/haml/static/responsible_trading.html.haml:1
@@ -203,6 +204,9 @@ msgstr "Transaksi %1 tidak dapat dilakukan pada akun ini."
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "%1 would like to team up with potential payment agents worldwide so we can offer local payment processing services to our clients in their respective regions."
 msgstr ""
+"%1 ingin bekerjasama dengan agen pembayaran yang memiliki potensi di seluruh "
+"dunia untuk menyediakan layanan metode pembayaran lokal kepada pelanggan di "
+"berbagai negara."
 
 #. (stash->{website_name}, pjax_link_for(l('Random 25 Index')
 #: /home/git/translations/binary-static/src/templates/haml/get_started/random_markets.html.haml:1
@@ -528,6 +532,8 @@ msgstr "<strong>harga 2-arah</strong> - %1 selalu memperlihatkan harga lawan ara
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "<strong>Additional business exposure:</strong> You will increase awareness of your services and generate new business."
 msgstr ""
+"<strong>Paparan bisnis tambahan:</strong> Anda akan memperjelas layanan Anda "
+"dan menghasilkan peluang bisnis baru."
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/what_is_binary_trading.html.haml:1
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
@@ -566,6 +572,8 @@ msgstr "<strong>Harga eksekusi lebih baik!</strong><br /> Harga telah bergerak d
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "<strong>Commissions:</strong> You will charge a commission to process the transactions."
 msgstr ""
+"<strong>Komisi:</strong> Anda akan mengenakan komisi untuk memproses "
+"transaksi."
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/benefits_of_trading_binaries.html.haml:1
 #: /home/git/translations/binary-static/src/templates/haml/get_started/how_to_trade_binaries.html.haml:1
@@ -587,6 +595,8 @@ msgstr "<strong>Risiko Nilai Tukar</strong>: Nilai tukar antara mata uang asing 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "<strong>Extra revenue stream:</strong> You will have the potential to earn another level of income from our affiliate program."
 msgstr ""
+"<strong>Aliran pendapatan tambahan:</strong> Anda akan memiliki potensi "
+"untuk mendapatkan tingkat lain pendapatan dari program afiliasi kami."
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/benefits_of_trading_binaries.html.haml:1
 msgid "<strong>Falling markets</strong> - choose the falls trade, lower trade, one-touch trade with a low barrier, or no-touch trade with a high barrier."
@@ -638,6 +648,9 @@ msgstr "<strong>Aksi jangka panjang</strong> - pilih kontrak dengan durasi hingg
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "<strong>Long-term partnership:</strong> Your partnership with %1 could be a means to promote your product or services for FREE to our 1,000,000+ registered clients, worldwide."
 msgstr ""
+"<strong>Kemitraan jangka panjang:</strong> Kemitraan Anda dengan %1 dapat "
+"menjadi sarana untuk mempromosikan produk atau jasa GRATIS kepada 1,000,000+ "
+"pelanggan yang terdaftar, di seluruh dunia."
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/benefits_of_trading_binaries.html.haml:1
 msgid "<strong>Low minimum stakes</strong> - start trading with as little as $5."
@@ -794,10 +807,13 @@ msgstr "== Bebas Pulsa =="
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "A Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash methods or local currencies not offered by default on %1."
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by %1. The transfer fees are borne by the Client."
-msgstr "Agen Pembayaran memproses deposit dan penarikan bagi klien yang ingin menggunakan metode pembayaran khusus yang tidak ditawarkan oleh %1."
+msgstr ""
+"Agen Pembayaran bertindak sebagai penukar antara Klien (Pelanggan kami) dan %"
+"1. Agen Pembayaran memproses deposit dan penarikan untuk Klien yang ingin "
+"menggunakan metode pembayaran tertentu atau mata uang lokal yang tidak "
+"ditawarkan oleh %1. Biaya transfer akan ditanggung oleh Klien."
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:653
 msgid "A Simple moving average line can be enhanced by putting a percentage envelope on either side of it. Our lines are displayed 20% above and 10% below the moving average line."
@@ -842,7 +858,7 @@ msgstr "Error telah terjadi."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "A list of payment methods you will accept from Clients"
-msgstr ""
+msgstr "Daftar metode pembayaran yang Anda terima dari Klien"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:577
 msgid "A momentum indicator showing the percent rate-of-change of a triple exponentially smoothed moving average. Like other oscillators, TRIX oscillates around a zero line."
@@ -935,10 +951,9 @@ msgid "Accept"
 msgstr "Menerima"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "Deposit via bank wire"
 msgid "Accept local bank wires"
-msgstr "Deposit via transfer bank"
+msgstr "Menerima transfer bank lokal"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:15
 msgid "Acceptance"
@@ -1099,11 +1114,12 @@ msgstr "Yang perlu Anda lakukan adalah mengikuti petunjuk pada email yang baru s
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr ""
+"Memberi Klien untuk mendeposit dengan jumlah lebih rendah (mata uang lokal)"
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Allow Clients to use e-wallets, which are not available directly on %1"
-msgstr ""
+msgstr "Memberi Klien menggunakan metode e-wallet yang tidak di sediakan di %1"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:142
 msgid "Although the Company has and retains all rights to refuse or to close a Client’s account, the Company does warrant that all contractual obligations already made, shall be honoured."
@@ -1213,6 +1229,7 @@ msgstr "Siapa saja yang berumur dari 18 tahun keatas [dan sudah membaca dan meny
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Anyone who has potential to grow or increase traffic to %1"
 msgstr ""
+"Siapapun yang memiliki potensi atau ingin meningkatkan lalu lintas ke %1"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1170
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/paymentagent_application.html.tt:1
@@ -1225,16 +1242,14 @@ msgid "Apply to become a %1 <a class=\"pjaxload\" href=\"%2\">payment agent</a>.
 msgstr "Jika anda menjalankan bisnis exchanger, daftar sebagai <a class=\"pjaxload\" href=\"%2\">agen pembayaran</a>  %1."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/partners.html.haml:1
-#, fuzzy
 #| msgid "Apply to become Payment Agent"
 msgid "Apply to become a Payment Agent"
 msgstr "Mendaftar sebagai Agen Pembayaran"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/partners.html.haml:1
-#, fuzzy
 #| msgid "Apply to become a %1"
 msgid "Apply to become a contributor"
-msgstr "Mendaftar sebagai %1"
+msgstr "Mendaftar sebagai kontributor"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/risk_disclaimer.html.tt:24
 msgid "Appropriateness"
@@ -1260,7 +1275,7 @@ msgstr "Apa ada biaya?"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Are you a Payment Agent, or interested in acting as one?"
-msgstr ""
+msgstr "Apakah Anda Agen Pembayaran, atau berminat untuk menjadi?"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/main.html.tt:3
 msgid "Are you an Investment professional?"
@@ -1292,7 +1307,7 @@ msgstr "AroonOsc"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "As a first step, please send us an application with:"
-msgstr ""
+msgstr "Langkah pertama, silahkan kirim pendaftaran Anda bersama:"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/tour.html.haml:1
 msgid "As soon as you click on the ‘PURCHASE’ button, your trade registers in your account. The price of your trade continues to update in real time."
@@ -1394,7 +1409,7 @@ msgstr "Jarak Rata-Rata"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Avoid the need to have an e-wallet"
-msgstr ""
+msgstr "Menghindari kebutuhan untuk memiliki e-wallet"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/main.html.tt:53
 msgid "Award-winning, patented financial trading platform"
@@ -1539,10 +1554,9 @@ msgid "Before you proceed..."
 msgstr "Sebelum Anda melanjutkan..."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "Benefits of binary trading"
 msgid "Benefits of being a Payment Agent"
-msgstr "Manfaat Trading Binary"
+msgstr "Manfaat menjadi Agen Pembayaran"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/benefits_of_trading_binaries.html.haml:1
 #: /home/git/translations/binary-static/src/templates/haml/layouts/get_started/nav.html.haml:1
@@ -1609,7 +1623,9 @@ msgstr "RMG Technology (M) Sdn Bhd, C-2-01 SME Technopreneur Center 2, 63000 Cyb
 #. (('https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495')
 #: /home/git/translations/binary-static/src/templates/haml/about/index.html.haml:1
 msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licenced and regulated (for gambling products only) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - <a href=\"%1\" target=\"_blank\\\">view license</a>."
-msgstr "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Berlisensi dan diatur oleh Malta Gaming Authority di Malta (nomor izin MGA/CL2/118/2000) dan untuk Pelanggan Inggris oleh UK Gambling Commission - <a href=\"%1\" target=\"_blank\\\">lihat lisensi</a>."
+msgstr ""
+"Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, "
+"Malta. Berlisensi dan diatur."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/contact.html.haml:1
 msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
@@ -1618,7 +1634,9 @@ msgstr "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas,
 #. (('https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172')
 #: /home/git/translations/binary-static/src/templates/haml/about/index.html.haml:1
 msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licenced and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2012) and for UK clients by the UK Gambling Commission - <a href=\"%1\" target=\"_blank\">view license</a>."
-msgstr "Binary (IOM) Ltd, Lantai Satu, Millenium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Berlisensi dan diatur oleh Gambling Supervision Commission di negara Isle of Man. (Izin online gambling diberikan pada tanggal 31 Agustus 2012) dan untuk Pelanggan Inggris oleh UK Gambling Commission - <a href=\"%1\" target=\"_blank\\\">lihat lisensi</a>."
+msgstr ""
+"Binary (IOM) Ltd, Lantai Satu, Millenium House, Victoria Road, Douglas, Isle "
+"of Man, IM2 4RW. Berlisensi dan diatur di negara Isle of Man."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/contact.html.haml:1
 msgid "Binary Group Services Sdn Bhd, C-2-01 SME Technopreneur Center 2, 63000 Cyberjaya, Selangor Darul Ehsan"
@@ -2137,7 +2155,9 @@ msgstr "Pelanggan yang terdaftar dibawah Binary (C.R.) S.A. dapat melanjutkan se
 #. ("<a href=\"http://www.mga.org.mt/\" target=\"_blank\">(www.mga.org.mt)</a>")
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/complaints_disputes.html.tt:16
 msgid "Clients registered with Binary (Europe) Ltd can raise their unresolved disputes with the Malta Gaming Authority %1 at"
-msgstr "Klien terdaftar pada Binary (Europe) Ltd dapat melanjutkan sengketa dengan Malta Gaming Authority %1 di"
+msgstr ""
+"Klien terdaftar pada Binary (Europe) Ltd dapat melanjutkan sengketa dengan "
+"MGA %1 di"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/complaints_disputes.html.tt:13
 msgid "Clients registered with Binary (IOM) Ltd can raise their unresolved disputes with the Isle of Man Gambling Supervision Commission at gaming@gov.im."
@@ -2475,10 +2495,9 @@ msgid "Contribute to %1's open-source projects."
 msgstr "Kontribusi ke proyek open source %1."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/partners.html.haml:1
-#, fuzzy
 #| msgid "Contracts"
 msgid "Contributors"
-msgstr "Kontrak"
+msgstr "Kontributor"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/why_us.html.haml:1
 msgid "Controlled risk"
@@ -3323,10 +3342,9 @@ msgid "Expiry price"
 msgstr "Harga akhir"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2185
-#, fuzzy
 #| msgid "Start time is in the past"
 msgid "Expiry time cannot be in the past."
-msgstr "Waktu mulai adalah dimasa lalu"
+msgstr "Waktu berakhir tidak bisa di masa lalu."
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:685
 msgid "Explanation"
@@ -4126,10 +4144,12 @@ msgid "If you wish to raise these limits, please authenticate your account."
 msgstr "Jika Anda ingin meningkatkan batasan ini, silahkan buktikan akun Anda."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "If you have clients who would like to authorize you to place trades on their behalf, feel free to contact our affiliate managers via <a href='mailto:affiliates@binary.com'>affiliates@binary.com</a> to ask questions or set things up."
 msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:affiliates@binary.com'>affiliates@binary.com</a>"
-msgstr "Jika Anda memiliki klien yang memberi wewenang untuk melakukan trading atas nama mereka, silahkan hubungi manajer afiliasi kami di <a href='mailto:affiliates@binary.com'>affiliates@binary.com</a> untuk bantuan lebih lanjut."
+msgstr ""
+"Jika Anda ingin informasi lebih lanjut mengenai Agen Pembayaran, silahkan "
+"hubungi kami di <a "
+"href='mailto:affiliates@binary.com'>affiliates@binary.com</a>"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/complaints_disputes.html.tt:4
 msgid "If you would like to file a complaint with regards to our service, kindly contact us providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will normally provide a final response within 2 months from receipt of all relevant details."
@@ -4385,6 +4405,10 @@ msgstr "Instrument"
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Interested, so what’s next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:affiliates@binary.com'>hear from you!</a>"
 msgstr ""
+"Tertarik, langkah selanjutnya? Jika Anda dapat menawarkan Klien kami metode "
+"tunai atau pembayaran lokal yang belum disediakan oleh %1, dan Anda memiliki "
+"track record yang baik, maka kami ingin <a "
+"href='mailto:affiliates@binary.com'>mendengar Anda!</a>"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/how_to_trade_binaries.html.haml:1
 msgid "Interested? Why not try a virtual account"
@@ -5892,10 +5916,9 @@ msgid "Name of your pet"
 msgstr "Nama binatang peliharaan"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "Use of Information"
 msgid "Need more information?"
-msgstr "Penggunaan informasi"
+msgstr "Perlu informasi lebih lanjut?"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/risk_disclaimer.html.tt:34
 msgid "Need to Monitor Positions"
@@ -6031,6 +6054,8 @@ msgstr "Nota: Selama musim panas, GMT adalah satu jam lebih lambat dari BST (Bri
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Note: Payment Agent transfers are only available for accounts registered with Binary (CR) SA. Transactions are accepted only in US dollars."
 msgstr ""
+"Catatan: Transfer Agen Pembayaran hanya tersedia untuk akun terdaftar di "
+"Binary (CR) SA. Transaksi diterima hanya dalam dolar AS."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/main.html.tt:76
 msgid "Note: The company reserves the right to cancel affiliate commissions that remain unclaimed for more than 2 years. Please also read our affiliate terms and conditions."
@@ -6152,6 +6177,9 @@ msgstr "Sekali batasan tercapai, Anda tidak dapat melakukan deposit selanjutnya.
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Once we receive your application, one of our affiliate managers will contact you to follow up with the next steps in the application process (this will include asking you to submit several documents)."
 msgstr ""
+"Setelah kami menerima aplikasi Anda, salah satu manajer afiliasi kami akan "
+"menghubungi Anda untuk menindaklanjuti dengan langkah-langkah berikutnya ("
+"ini termasuk meminta Anda untuk mengirimkan beberapa dokumen)."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/white_labels.html.haml:1
 msgid "Once you are satisfied with the design of your white label, your IT developer should submit a pull-request of his fork."
@@ -6180,7 +6208,7 @@ msgstr "Platform Trading Online untuk opsi binary pada Forex, Indeks, Komoditas 
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Online currency exchangers "
-msgstr ""
+msgstr "Penukar mata uang online"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/group_history.html.haml:1
 msgid "Only five years after inception, we pick up this major award for our online trading services. The award recognises BetOnMarkets.com’s reliable, fast and secure online trading for novice and expert traders. At this time, our website has received over 15 million trades."
@@ -6437,10 +6465,9 @@ msgid "Patents"
 msgstr "Paten"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/partners.html.haml:1
-#, fuzzy
 #| msgid "Payment Agent Deposit"
 msgid "Payment Agent"
-msgstr "Deposit Agen Pembayaran"
+msgstr "Agen Pembayaran"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1102
 msgid "Payment Agent Deposit"
@@ -6465,10 +6492,9 @@ msgid "Payment Agent transfer"
 msgstr "Transfer Agen Pembayaran"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "Payment Agent Deposit"
 msgid "Payment Agents"
-msgstr "Deposit Agen Pembayaran"
+msgstr "Agen Pembayaran"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1173
 msgid "Payment Agents are not available for your account."
@@ -6499,10 +6525,9 @@ msgid "Payments"
 msgstr "Pembayaran"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "Payment Agent Deposit"
 msgid "Payment Agents"
-msgstr "Deposit Agen Pembayaran"
+msgstr "Agen Pembayaran"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:152
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/ContractForm.pm:749
@@ -6842,6 +6867,8 @@ msgstr "Silahkan tentukan negara Anda."
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Please submit the above information to <a href='mailto:affiliates@binary.com'>affiliates@binary.com</a>."
 msgstr ""
+"Silahkan kirim informasi diatas ke <a "
+"href='mailto:affiliates@binary.com'>affiliates@binary.com</a>."
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1372
 msgid "Please switch accounts to trade this contract."
@@ -8433,7 +8460,11 @@ msgstr "Website %1 dilindungi oleh hak cipta."
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/about/index.html.haml:1
 msgid "The <span itemprop=\"brand\">%1</span> service (formerly known as BetOnMarkets.com) is owned and operated by Binary Ltd. Fully licensed and regulated, %1 has been providing financial trading to a worldwide audience of over 1,000,000 clients since <span itemprop=\"foundingdate\">1999</span>"
-msgstr "Layanan <span itemprop=\"brand\">%1</span> (sebelumnya dikenal sebagai BetOnMarkets.com) dimiliki dan dioperasikan perusahaan Binary Ltd yang memegang izin registrasi sah dan terdaftar. %1 menyediakan platform trading kepada lebih dari 1.000.000 pelanggan di seluruh dunia sejak tahun <span itemprop=\"foundingdate\">1999</span>"
+msgstr ""
+"Layanan <span itemprop=\"brand\">%1</span> dimiliki dan dioperasikan oleh "
+"perusahaan Binary Ltd. Berlisensi penuh dan diatur. %1 telah menyediakan "
+"platform trading kepada lebih dari 1.000.000 pelanggan di seluruh dunia "
+"sejak tahun <span itemprop=\"foundingdate\">1999</span>"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/explanation/details/staysinout.html.tt:3
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/explanation/details/touchnotouch.html.tt:4
@@ -8773,10 +8804,9 @@ msgid "The client has reached a turnover that is 5 times the bonus amount"
 msgstr "Pelanggan telah mencapai total pembelian kontrak sebesar 5 kali jumlah bonus"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "Commission (%) you want to take on withdrawals"
 msgid "The commission you will charge Clients on deposits and withdrawals"
-msgstr "Komisi (%), yang ingin Anda kenakan pada penarikan"
+msgstr "Komisi yang akan Anda kenakan pada deposit dan penarikan"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/betting_rules.html.tt:34
 msgid "The company does not guarantee the ability to sell a contract prior to its expiration time."
@@ -8802,7 +8832,14 @@ msgstr "Perusahaan berhak melarang/membatalkan penggunaan promosi ini tanpa pemb
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:155
 msgid "The company reserves the right to charge a dormant fee of up to USD/EUR/AUD/GBP25 every 6 months for every Client account that has had no transaction recorded for over 12 months. If a Client's account is with Binary (Europe) Ltd., and his account has had no activity for a period of thirty months, and the Client cannot be located or contacted, the Company shall remit the balance of the account to the Malta Gaming Authority. Clients need to contact our helpdesk to recover funds from inactive, closed, blocked or excluded accounts."
-msgstr "Perusahaan berhak untuk membebankan biaya pada akun yang tidak aktif hingga USD/EUR/AUD/GBP25 setiap 6 bulan bagi setiap akun Klien yang tidak memiliki transaksi yang tercatat selama lebih dari 12 bulan. Jika akun Klien didaftarkan pada Binary (Europe) Ltd. dan akun tidak memiliki aktifitas selama tiga puluh bulan, dan tidak dapat dihubungi, Perusahaan dapat melakukan pemindahan saldo kepada Malta Gaming Authority. Klien perlu menghubungi helpdesk kami untuk mengaktifkan, menutup atau memblokir dan mengecualikan akun mereka."
+msgstr ""
+"Perusahaan berhak untuk membebankan biaya pada akun yang tidak aktif hingga "
+"USD/EUR/AUD/GBP25 setiap 6 bulan bagi setiap akun Klien yang tidak memiliki "
+"transaksi yang tercatat selama lebih dari 12 bulan. Jika akun Klien "
+"didaftarkan pada Binary (Europe) Ltd. dan akun tidak memiliki aktifitas "
+"selama tiga puluh bulan, dan tidak dapat dihubungi, Perusahaan dapat "
+"melakukan pemindahan saldo kepada MGA. Klien perlu menghubungi helpdesk kami "
+"untuk mengaktifkan, menutup atau memblokir dan mengecualikan akun mereka."
 
 #. (website)
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/risk_disclaimer.html.tt:92
@@ -9006,7 +9043,17 @@ msgstr "Sistem tidak dapat memberikan informasi harga. Silahkan coba kembali seb
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:11
 msgid "The term \"the Company\" shall denote either Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licensed and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission; Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated by (1) the Malta Gaming Authority in Malta for the Gaming products, licence no MGA/CL2/118/2000 dated 26th May 2010 and for UK clients by (2) the UK Gambling Commission; Binary Investments (Europe) Ltd Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, regulated by the Malta Financial Services Authority for Investment products, holder of a Category 3 Investment Services licence no IS/ 70156; or Binary (CR) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About Us section of the website."
-msgstr "Istilah \"Perusahaan\" akan menunjukkan baik itu Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, memiliki izin dan diatur oleh (1) Gambling Supervision Commission di Isle of Man, British Isles, izin online gambling terkini dikeluarkan pada 31 Agustus 2012, dan untuk Klien Inggris oleh (2) UK Gambling Commission; Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, memiliki izin dan diatur oleh (1) Malta Gaming Authority di Malta untuk Produk Gaming, izin no MGA/CL2/118/2000 tertanggal 26 Mei 2010 dan untuk Klien Inggris oleh (2) UK Gambling Commission; Binary Investments (Europe) Ltd Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, berizin oleh Malta Financial Services Authority untuk Produk Investasi, pemegang izin Category 3 Investment Services no IS/ 70156; atau Binary (CR) S.A., tergantung pada yurisdiksi dimana akun klien didaftarkan sesuai dengan prosedur pada situs web dan sesuai dengan keterangan lengkap pada bagian Tentang Kami dari situs web."
+msgstr ""
+"Istilah \"Perusahaan\" akan menunjukkan baik itu Binary (IOM) Ltd., First "
+"Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, "
+"British Isles, memiliki izin dan diatur. Binary (Europe) Ltd., Mompalao "
+"Building, Suite 2, Tower Road, Msida MSD1825, Malta, memiliki izin dan "
+"diatur. Binary Investments (Europe) Ltd Mompalao Building, Suite 2, Tower "
+"Road, Msida MSD1825, Malta, berizin oleh Malta Financial Services Authority "
+"untuk Produk Investasi, pemegang izin Category 3 Investment Services no IS/ "
+"70156; atau Binary (CR) S.A., tergantung pada yurisdiksi dimana akun klien "
+"didaftarkan sesuai dengan prosedur pada situs web dan sesuai dengan "
+"keterangan lengkap pada bagian Tentang Kami dari situs web."
 
 #. (time_now, time_zone, underlying)
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/explanation/errors/closed.html.tt:4
@@ -10158,10 +10205,9 @@ msgid "We have in place adequate internal procedures to ensure that you are in a
 msgstr "Kami memiliki prosedur internal yang memadai untuk memastikan Anda berada dalam semua kasus diperlakukan secara adil dan bahwa risiko kerusakan pada kepentingan klien akan dikurangi."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "If you are, we’d love to hear from you."
 msgid "We look forward to hearing from you."
-msgstr "Jika Anda sudah bersedia, hubungi kami segera."
+msgstr "Kami menunggu berita baik Anda."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/privacy.html.tt:24
 msgid "We maintain customer balances in cash or cash equivalent. We ensure that 100% of each customer's balance is available for immediate withdrawal, subject to verification."
@@ -10461,10 +10507,9 @@ msgid "White labels"
 msgstr "White label"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "Apply to become Payment Agent"
 msgid "Who can apply to be a Payment Agent?"
-msgstr "Mendaftar sebagai Agen Pembayaran"
+msgstr "Siapa yang bisa mendaftar sebagai Agen Pembayaran?"
 
 #. (broker_name)
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/faq.html.tt:13
@@ -10502,10 +10547,9 @@ msgid "Why choose us"
 msgstr "Mengapa memilih kami"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "Apply to become Payment Agent"
 msgid "Why do Clients choose to use Payment Agents?"
-msgstr "Mendaftar sebagai Agen Pembayaran"
+msgstr "Mengapa Klien memilih untuk menggunakan Agen Pembayaran?"
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/why_us.html.haml:1
@@ -11065,6 +11109,9 @@ msgstr "Akun Anda tidak boleh digunakan sebagai fasilitas perbankan dan deposito
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='%1'>payment agent</a> list."
 msgstr ""
+"Permohonan Anda akan ditinjau oleh departemen compliance dan marketing kami. "
+"Setelah disetujui, kami akan mengaktifkan Anda di dalam daftar <a href='%1'>"
+"agen pembayaran</a>."
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1035
 msgid "Your balance is higher than the permitted amount."
@@ -11158,7 +11205,7 @@ msgstr "Dana Anda selalu aman bersama %1. Setiap saat, disimpan pada beberapa ba
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Your name, email address and contact number"
-msgstr ""
+msgstr "Nama Anda, alamat email dan nomor kontak"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1349
 msgid "Your name/company"
@@ -11289,10 +11336,9 @@ msgid "Your website URL"
 msgstr "URL situsweb Anda"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "Your website URL"
 msgid "Your website URL (if you have one)"
-msgstr "URL situsweb Anda"
+msgstr "URL situsweb Anda (jika ada)"
 
 #. (lifetime_limit_monetary, lifetime_limit_equivalent)
 #: /home/git/translations/binary-static/src/templates/toolkit/account/trading_withdrawal_limit.html.tt:55
@@ -12010,10 +12056,9 @@ msgid "US S&P 100"
 msgstr "US S&P 100"
 
 #: Underlying Symbol DFMGI
-#, fuzzy
 #| msgid "Dutch Index"
 msgid "Dubai Index"
-msgstr "Indeks Belanda"
+msgstr "Indeks Dubai"
 
 #: Underlying Symbol N150
 msgid "Euro 150 Index"
@@ -12036,10 +12081,9 @@ msgid "UK Smart Index"
 msgstr "Indeks Smart Inggris"
 
 #: Underlying Symbol EGX30
-#, fuzzy
 #| msgid "EUR Index"
 msgid "Egypt Index"
-msgstr "Indeks EUR"
+msgstr "Indeks Egypt"
 
 #: Underlying Symbol PSI20
 msgid "Portuguese Index"
@@ -12050,10 +12094,9 @@ msgid "Wall Street Index"
 msgstr "Indeks Wall Street"
 
 #: Underlying Symbol SASEIDX
-#, fuzzy
 #| msgid "South African Index"
 msgid "Saudi Arabic Index"
-msgstr "Indeks Afrika Selatan"
+msgstr "Indeks Saudi Arabic"
 
 #: Underlying Symbol SPC
 msgid "US Index"
@@ -12144,10 +12187,9 @@ msgid "Euro 100 Index"
 msgstr "Indeks Euro 100"
 
 #: Underlying Symbol ADSMI
-#, fuzzy
 #| msgid "AUD Index"
 msgid "Abu Dhabi Index"
-msgstr "Indeks AUD"
+msgstr "Indeks Abu Dhabi"
 
 #: Underlying Symbol SYNSPC
 msgid "US Smart Index"
@@ -12702,10 +12744,9 @@ msgid "Dutch Stocks"
 msgstr "Saham Belanda"
 
 #: Translation for sub market name
-#, fuzzy
 #| msgid "Fast Indices"
 msgid "Middle East Indices"
-msgstr "Indeks Fast"
+msgstr "Indeks Middle East"
 
 #: Translation for sub market name
 msgid "Synthetic Index"

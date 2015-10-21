@@ -45,7 +45,7 @@
             </tbody>
         </table>
     </div>
-
+    <div id="sell_extra_info_data" style="display:none;" sell_channel="[% sell_channel %]"></div>
     <div id='error_box' [% IF !error_message %]style="display:none"[% END %]>
         <p class="notice-msg">[% error_message %]</p>
     </div>

@@ -1,54 +1,70 @@
 - stash(
--   title => l('About us'),
+-   title => l('About Us'),
 - );
-
-%div{:itemscope :itemtype=>'http://schema.org/Organization'}
-  .grd-grid-12.grd-parent
-    .grd-grid-2.grd-grid-mobile-8.grd-centered-mobile
-      %img.responsive{:src => url_for('images/pages/about/logo-blue.svg')}
-    .grd-grid-9.grd-grid-mobile-12
-      %h1= l('Group Information')
-      %p
-        != l('The <span itemprop="brand">[_1]</span> service (formerly known as BetOnMarkets.com) is owned and operated by Binary Ltd. Fully licensed and regulated, [_1] has been providing financial trading to a worldwide audience of over 1,000,000 clients since <span itemprop="foundingdate">1999</span>', stash->{website_name}) . "."
-  .grd-grid-12.grd-parent
-    .grd-grid-6.grd-grid-mobile-12.grd-parent.grd-row-padding
-      .grd-grid-12.grd-row-padding
-        %h2.empty-space{:itemprop=>'legalname'}= 'Binary Ltd'
+.about-us
+  .grd-container
+    .grd-grid-12.grd-parent
+      %h1.center= l('The premier platform for trading binary options in the world’s financial markets')
+      .grd-grid-7.grd-grid-mobile-12
+        %img.mac.responsive{:src => url_for('images/pages/about/imac.svg')}
+      .grd-grid-5.grd-grid-mobile-12
         %p
-          != l("Binary Ltd, with registered office address situated at <span itemprop='location'>47 Esplanade, St. Helier, Jersey, JE 0BD Channel Islands</span>, is the holding company for the Binary group.")
-    .grd-grid-6.grd-grid-mobile-12
-      .grd-grid-9.grd-grid-mobile-6.grd-centered.grd-row-padding
-        %a{:href => "http://mfsa.com.mt/", :target => "_blank"}
-          %img.responsive{:src => url_for('images/pages/about/mfsa-logo.svg')}
-      .grd-grid-12.grd-row-padding
-      .grd-grid-12.grd-row-padding
-      .grd-grid-12.grd-row-padding
-        %h2= 'Binary Investments (Europe) Ltd.'
-        %p= l('Binary Investments (Europe) Ltd, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156).')
-        %p= l('European Union residents with the exception of the UK, who wish to trade investment products, will have their account opened with Binary Investments (Europe) Ltd.')
-    .grd-grid-6.grd-grid-mobile-12
-      .grd-grid-4.grd-grid-mobile-6.grd-centered.grd-row-padding
-        %img.responsive{:src => url_for('images/pages/about/costa-rica.png')}
-      .grd-grid-12.grd-row-padding
-        %h2= 'Binary (C.R.) S.A.'
-        %p= l('Binary (C.R.) S.A., registered in Costa Rica.')
-        %p= l('Clients from the rest of the world will have their account opened with Binary (C.R.) S.A.')
-    .grd-grid-6.grd-grid-mobile-12.grd-parent.grd-row-padding
-      .grd-grid-4.grd-grid-mobile-6.grd-centered.grd-row-padding.id-hide
-        %a(href='http://www.gov.im/gambling/' target="_blank" )
-          %img.responsive{:src => url_for('images/pages/footer/isle-of-man.png')}
-      .grd-grid-12.grd-row-padding.id-hide
-        %h2.small-margin= 'Binary (IOM) Ltd'
-        %p!= l('Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licenced and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2012) and for UK clients by the UK Gambling Commission - <a href="[_1]" target="_blank">view license</a>.', ('https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172'))
-          %p= l('UK and Manx residents will have their account opened with Binary (IOM) Ltd.')
-  .grd-grid-12.grd-parent
-    .grd-grid-6.grd-grid-mobile-12
-      .grd-grid-8.grd-grid-mobile-12.grd-centered.grd-row-padding.id-hide
-        %a(href='http://www.mga.org.mt/' target="_blank" )
-          %img.responsive{:src => url_for('images/pages/why-us/mga-logo.svg')}
-        %p.grd-with-top-padding
-      .grd-grid-12.grd-row-padding.id-hide
-        %h2= 'Binary (Europe) Ltd'
-        %p!= l('Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licenced and regulated (for gambling products only) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - <a href="[_1]" target="_blank\">view license</a>.', ('https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495'))
-        %p= l('European Union residents with the exception of the UK, who wish to trade gambling products, will have their account opened with Binary (Europe) Ltd.')
-      .grd-grid-12.grd-parent
+          != l('[_1] is one of the oldest and most respected names in online binary trading.', stash->{website_name})
+        %p
+          = l('Using our website, customers can trade currencies, indices, stocks and commodities 24/7. We have the most flexible pricing and the most comprehensive suite of products available.')
+        %p
+          != l('[_1] has earned an enviable reputation for our commitment to high ethical standards and the quality of the trading experience we provide.', stash->{website_name})
+        %p
+          != l('When you trade with [_1], you can be assured that your deposits are held in a separate trust account and are not used for any other purpose.', stash->{website_name})
+  %div.blue-fill
+    .grd-container
+      .grd-grid-12.grd-parent.facts
+        %h1.center.margin-top= l('Key facts')
+          .grd-grid-12.grd-parent.border-bottom
+            .grd-grid-6.grd-grid-mobile-12
+              .grd-grid-6.center.border-right-top
+                %a.pjaxload{:href => url_for('/group-history')}
+                  %img.responsive{:src => url_for('images/pages/about/founded.svg')}
+                %p
+                  != l('<a href="[_1]">Founded</a> October 1999', url_for('/group-history'))
+              .grd-grid-6.center.border-right-top
+                %img.responsive{:src => url_for('images/pages/about/debt-free.svg')}
+                %p
+                  = l('Debt-free')
+            .grd-grid-6.grd-grid-mobile-12
+              .grd-grid-6.center.border-right-top
+                %a.pjaxload{:href => url_for('/careers')}
+                  %img.responsive{:src => url_for('images/pages/about/staff.svg')}
+                %p
+                  != l('Over 90 <a href="[_1]">staff</a> and contractors worldwide', url_for('/careers'))
+              .grd-grid-6.center
+                %img.responsive{:src => url_for('images/pages/about/1mil.svg')}
+                %p
+                  = l('Over 1 million registered accounts worldwide')
+          .grd-grid-12.grd-parent
+            .grd-grid-6.grd-grid-mobile-12
+              .grd-grid-6.center.border-right-bottom
+                %a.pjaxload{:href => "http://binarycom.statuspage.io/", :target => '_blank'}
+                  %img.responsive{:src => url_for('images/pages/about/transacts.svg')}
+                %p
+                  != l('Binary’s platform transacts on average 15 <a href="http://binarycom.statuspage.io/" target="_blank">transactions</a> per second, 24/7')
+              .grd-grid-6.center.border-right-bottom
+                %a.pjaxload{:href => url_for('/contact')}
+                  %img.responsive{:src => url_for('images/pages/about/locations.svg')}
+                %p
+                  != l('<a href="[_1]">Offices</a> in Malta, Malaysia and Japan', url_for('/contact'))
+            .grd-grid-6.grd-grid-mobile-12
+              .grd-grid-6.center.border-right-bottom
+                %img.responsive{:src => url_for('images/pages/about/license.svg')}
+                %p
+                  = l('Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland')
+              .grd-grid-6.center.align
+                %img.responsive{:src => url_for('images/pages/about/languages.svg')}
+                %p
+                  = l('Published in English, Japanese, Chinese, Arabic, Polish, German, French, Spanish, Portuguese, Italian and Russian')
+  .grd-container
+    .grd-grid-12.grd-parent
+      %p
+        != l('[_1] is owned and operated by the Binary Ltd. group of companies. For more information, <a href="[_2]">visit our history page</a>.', stash->{website_name}, url_for('/group-history'))
+      %p
+        = l('In the UK and Isle of Man, our clients trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A.')
