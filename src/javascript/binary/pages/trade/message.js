@@ -72,9 +72,10 @@ var Message = (function () {
 
             case 'portfolio':
                 PortfolioWS.updatePortfolio(response);
+                break;
 
             default:
-                throw new Error("No method exits to handle api message of type ", response.msg_type);
+                throw new Error("No method exits to handle api message of type '" + msg_type + "'.");
 
         }
 

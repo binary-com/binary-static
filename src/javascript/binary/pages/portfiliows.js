@@ -127,7 +127,8 @@ var PortfolioWS =  (function() {
      * Adapted from http://stackoverflow.com/a/14428340
      * Kudos to: [VisioN](http://stackoverflow.com/users/1249581)
     **/
-    var fixCurrency = function(n, currency) {
+    var fixCurrency = function(n, c) {
+        var currency = ""; 
         if("number" !== typeof n) n = parseFloat(n);
         var snum = n + "", dec;
         if(-1 === snum.indexOf(".")) {
@@ -135,10 +136,8 @@ var PortfolioWS =  (function() {
         } else {
             dec = snum.split(".")[1].length;
         }
-        if("string" === typeof currency) {
-            currency += " ";
-        } else {
-            var currency = "";
+        if("string" === typeof c) {
+            currency = c + " ";
         }
         return currency + " " + n.toFixed(dec).replace(/(\d)(?=(\d{3})+\.)/g, "$1,");
     };
