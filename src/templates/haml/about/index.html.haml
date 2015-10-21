@@ -23,18 +23,20 @@
           .grd-grid-12.grd-parent.border-bottom
             .grd-grid-6.grd-grid-mobile-12
               .grd-grid-6.center.border-right-top
-                %img.responsive{:src => url_for('images/pages/about/founded.svg')}
+                %a.pjaxload{:href => url_for('/group-history')}
+                  %img.responsive{:src => url_for('images/pages/about/founded.svg')}
                 %p
-                  = l('Founded October 1999')
+                  != l('<a href="[_1]">Founded</a> October 1999', url_for('/group-history'))
               .grd-grid-6.center.border-right-top
                 %img.responsive{:src => url_for('images/pages/about/debt-free.svg')}
                 %p
                   = l('Debt-free')
             .grd-grid-6.grd-grid-mobile-12
               .grd-grid-6.center.border-right-top
-                %img.responsive{:src => url_for('images/pages/about/staff.svg')}
+                %a.pjaxload{:href => url_for('/careers')}
+                  %img.responsive{:src => url_for('images/pages/about/staff.svg')}
                 %p
-                  = l('Over 90 staff and contractors worldwide')
+                  != l('Over 90 <a href="[_1]">staff</a> and contractors worldwide', url_for('/careers'))
               .grd-grid-6.center
                 %img.responsive{:src => url_for('images/pages/about/1mil.svg')}
                 %p
@@ -42,11 +44,13 @@
           .grd-grid-12.grd-parent
             .grd-grid-6.grd-grid-mobile-12
               .grd-grid-6.center.border-right-bottom
-                %img.responsive{:src => url_for('images/pages/about/transacts.svg')}
+                %a.pjaxload{:href => "http://binarycom.statuspage.io/", :target => '_blank'}
+                  %img.responsive{:src => url_for('images/pages/about/transacts.svg')}
                 %p
-                  != l('Binary’s platform transacts on average 15 <a href="http://binarycom.statuspage.io/">transactions</a> per second, 24/7')
+                  != l('Binary’s platform transacts on average 15 <a href="http://binarycom.statuspage.io/" target="_blank">transactions</a> per second, 24/7')
               .grd-grid-6.center.border-right-bottom
-                %img.responsive{:src => url_for('images/pages/about/locations.svg')}
+                %a.pjaxload{:href => url_for('/contact')}
+                  %img.responsive{:src => url_for('images/pages/about/locations.svg')}
                 %p
                   != l('<a href="[_1]">Offices</a> in Malta, Malaysia and Japan', url_for('/contact'))
             .grd-grid-6.grd-grid-mobile-12
