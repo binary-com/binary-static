@@ -76,7 +76,10 @@ body.FR{
 /*Arabic Language */
 body.AR{
 	.regulatory-logo{
-		display: none !important;
+		display: none!important;
+	}
+	.ar-hide{
+		display: none;
 	}
 }
 /*Indonesian Language */

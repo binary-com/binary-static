@@ -7,9 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: I 18N\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-10-13 03:01+0200\n"
-"Last-Translator: Sittie Hadjirah Sevilla <sittiebaser@gmail.com>\n"
-"Language-Team: Vietnamese <https://hosted.weblate.org/projects/binary/static/vi/>\n"
+"PO-Revision-Date: 2015-10-19 06:11+0200\n"
+"Last-Translator: Linguavista <saritar@lingua-vista.com>\n"
+"Language-Team: Vietnamese "
+"<https://hosted.weblate.org/projects/binary/static/vi/>\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -63,7 +64,7 @@ msgstr "Điều kiện và điều khoản chương trình Liên kết %1"
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "%1 affiliate partners who wish to support a big group of Clients"
-msgstr ""
+msgstr "Đối tác liên kết %1 muốn hỗ trợ nhóm Khách hàng lớn"
 
 #. ('<a target="_blank" href="http://www.gambleaware.co.uk/">GambleAware</a>')
 #: /home/git/translations/binary-static/src/templates/haml/static/responsible_trading.html.haml:1
@@ -156,7 +157,10 @@ msgstr "%1 có thể tiếp cận được thông tin mà bạn không ti�
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/get_started/beginners_faq.html.haml:1
 msgid "%1 offers a range of common deposit and withdrawal methods, from credit and debit cards to bank wires, e-cash and e-wallets."
-msgstr "%1 mang đến thật nhiều phương án ký quỹ thông dụng và phương pháp rút tiền, từ thẻ tín dụng, thẻ ghi nợ, hay điện chuyển khoản ngân hàng, e-cash và e-wallet."
+msgstr ""
+"%1 cung cấp nhiều phương thức rút tiền và gửi tiền phổ biến, từ "
+"thẻ tín dụng, thẻ ghi nợ, tới điện chuyển khoản ngân hàng, thẻ điện tử "
+"và ví điện tử."
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/get_started/binary_options_basics.html.haml:1
@@ -203,6 +207,9 @@ msgstr "Giao dịch %1 có thể không hoạt động với tài khoản này."
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "%1 would like to team up with potential payment agents worldwide so we can offer local payment processing services to our clients in their respective regions."
 msgstr ""
+"%1 muốn hợp tác với các đại lý thanh toán tiềm năng trên toàn thế "
+"giới để chúng tôi có thể cung cấp những dịch vụ thanh toán cho nhữ"
+"ng khách hàng tại địa phương tại khu vực họ đang sống."
 
 #. (stash->{website_name}, pjax_link_for(l('Random 25 Index')
 #: /home/git/translations/binary-static/src/templates/haml/get_started/random_markets.html.haml:1
@@ -527,6 +534,8 @@ msgstr "<strong>định giá 2 chiều</strong> - %1 cho phép giao dịch và g
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "<strong>Additional business exposure:</strong> You will increase awareness of your services and generate new business."
 msgstr ""
+"<strong>Phát sinh giao dịch:</strong> Bạn sẽ hiểu biết thêm về dịch "
+"vụ của mình và có thể tạo thêm được giao dịch mới."
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/what_is_binary_trading.html.haml:1
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
@@ -565,6 +574,8 @@ msgstr "<strong>Giá thực hiện hiệu quả hơn!</strong><br />  Giá vừa
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "<strong>Commissions:</strong> You will charge a commission to process the transactions."
 msgstr ""
+"<strong>Hoa hồng:</strong> Bạn sẽ tính tiền hoa hồng để xử lý các "
+"giao dịch."
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/benefits_of_trading_binaries.html.haml:1
 #: /home/git/translations/binary-static/src/templates/haml/get_started/how_to_trade_binaries.html.haml:1
@@ -586,6 +597,8 @@ msgstr "<strong>Rủi ro Tỉ giá Hối đoán</strong>: Tỉ giá hối �
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "<strong>Extra revenue stream:</strong> You will have the potential to earn another level of income from our affiliate program."
 msgstr ""
+"<strong>Nguồn thu nhập thêm:</strong> Bạn sẽ có khả năng kiếm thêm thu nhập "
+"khác từ chương trình liên kết của chúng tôi."
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/benefits_of_trading_binaries.html.haml:1
 msgid "<strong>Falling markets</strong> - choose the falls trade, lower trade, one-touch trade with a low barrier, or no-touch trade with a high barrier."
@@ -637,6 +650,9 @@ msgstr "<strong>Thao tác lâu dài</strong> - chọn giao dịch với thời h
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "<strong>Long-term partnership:</strong> Your partnership with %1 could be a means to promote your product or services for FREE to our 1,000,000+ registered clients, worldwide."
 msgstr ""
+"<strong>Hợp tác lâu dài:</strong> Hợp tác với %1 có thể là phương "
+"tiện để quảng bá sản phẩm hoặc dịch vụ của bạn MIỄN PHÍ tới "
+"1,000,000+ khách hàng đã đăng kí với chúng tôi trên toàn thế giới."
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/benefits_of_trading_binaries.html.haml:1
 msgid "<strong>Low minimum stakes</strong> - start trading with as little as $5."
@@ -662,7 +678,10 @@ msgstr "<strong>Công nghệ đã được cấp bằng sáng chế</strong> - %
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/get_started/benefits_of_trading_binaries.html.haml:1
 msgid "<strong>Payment options</strong> - %1 offers many payment methods, such as credit/debit cards, bank wires, e-cash and e-wallets."
-msgstr "<strong>Cách thức thanh toán</strong> - %1 hỗ trợ nhiều cách thức thanh toán, ví dụ như thẻ tín dụng/ghi nợ, điện chuyển khoản ngân hàng, e-cash và e-wallets."
+msgstr ""
+"<strong>Phương thức thanh toán</strong> - %1 cung cấp nhiều phương thức "
+"thanh toán, ví dụ như thẻ tín dụng/ghi nợ, điện chuyển khoản ngân hàng, thẻ "
+"điện tử và ví điện tử."
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/benefits_of_trading_binaries.html.haml:1
 msgid "<strong>Quiet markets</strong> - choose the no-touch trade, the stays-between trade, or the ends-between trade."
@@ -795,6 +814,12 @@ msgstr "== Điện thoại miễn phí =="
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by %1. The transfer fees are borne by the Client."
 msgstr ""
+"Đại lý Thanh toán làm việc giống như hoạt động trao đổi giữa các "
+"Khách hàng (đó là khách hàng của chúng tôi) và %1. Đại lý Thanh "
+"toán tiến hành thực hiện hoạt động rút tiền và gửi tiền cho Khá"
+"ch hàng muốn sử dụng phương thức thanh toán thẻ điện tử hoặc bằng "
+"tiền nội tệ mà không được %1 cung cấp. Phí giao dịch Khách hàng sẽ"
+" chịu."
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:653
 msgid "A Simple moving average line can be enhanced by putting a percentage envelope on either side of it. Our lines are displayed 20% above and 10% below the moving average line."
@@ -840,6 +865,8 @@ msgstr "Đã có lỗi phổ biến xảy ra."
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "A list of payment methods you will accept from Clients"
 msgstr ""
+"Một danh sách các phương thức thanh toán bạn sẽ chấp nhận từ Khá"
+"ch hàng"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:577
 msgid "A momentum indicator showing the percent rate-of-change of a triple exponentially smoothed moving average. Like other oscillators, TRIX oscillates around a zero line."
@@ -933,7 +960,7 @@ msgstr "Chấp nhận"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Accept local bank wires"
-msgstr ""
+msgstr "Chấp nhận hình thức điện chuyển khoản ngân hàng địa phương"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:15
 msgid "Acceptance"
@@ -1094,11 +1121,15 @@ msgstr "Tất cả những gì bạn cần là làm theo hướng dẫn trong em
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr ""
+"Cho phép Khách hàng gửi tiền với số lượng ít hơn (bằng tiền nội "
+"tệ)"
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Allow Clients to use e-wallets, which are not available directly on %1"
 msgstr ""
+"Cho phép Khách hàng sử dụng ví điện tử, mà không có trực tiếp "
+"trên %1"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:142
 msgid "Although the Company has and retains all rights to refuse or to close a Client’s account, the Company does warrant that all contractual obligations already made, shall be honoured."
@@ -1208,6 +1239,8 @@ msgstr "Bất kỳ ai trên 18 tuổi [đã đọc và đồng ý với những
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Anyone who has potential to grow or increase traffic to %1"
 msgstr ""
+"Bất kì ai cũng có tiềm năng lớn mạnh và phát triển mạng lưới vớ"
+"i %1"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1170
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/paymentagent_application.html.tt:1
@@ -1220,16 +1253,14 @@ msgid "Apply to become a %1 <a class=\"pjaxload\" href=\"%2\">payment agent</a>.
 msgstr "Đăng ký để trở thành đại lý thanh toán <a class=\"pjaxload\" href=\"%2\">của %1</a>."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/partners.html.haml:1
-#, fuzzy
 #| msgid "Apply to become Payment Agent"
 msgid "Apply to become a Payment Agent"
 msgstr "Đăng ký trở thành Đại lý Thanh toán"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/partners.html.haml:1
-#, fuzzy
 #| msgid "Apply to become Payment Agent"
 msgid "Apply to become a contributor"
-msgstr "Đăng ký trở thành Đại lý Thanh toán"
+msgstr "Đăng ký trở thành cộng tác viên"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/risk_disclaimer.html.tt:24
 msgid "Appropriateness"
@@ -1256,6 +1287,8 @@ msgstr "Có phải trả phí không?"
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Are you a Payment Agent, or interested in acting as one?"
 msgstr ""
+"Bạn là Đại lý Thanh toán, hay bạn thích hoạt động như một đại lý "
+"thanh toán?"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/main.html.tt:3
 msgid "Are you an Investment professional?"
@@ -1288,6 +1321,7 @@ msgstr "Chỉ số Aroon"
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "As a first step, please send us an application with:"
 msgstr ""
+"Bước đầu tiên, vui lòng gửi cho chúng tôi hồ sơ đăng kí bao gồm:"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/tour.html.haml:1
 msgid "As soon as you click on the ‘PURCHASE’ button, your trade registers in your account. The price of your trade continues to update in real time."
@@ -1389,7 +1423,7 @@ msgstr "Khoảng dao động trung bình"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Avoid the need to have an e-wallet"
-msgstr ""
+msgstr "Không cần thiết phải có ví điện tử"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/main.html.tt:53
 msgid "Award-winning, patented financial trading platform"
@@ -1534,10 +1568,9 @@ msgid "Before you proceed..."
 msgstr "Trước khi bạn xử lý..."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "Benefits of binary trading"
 msgid "Benefits of being a Payment Agent"
-msgstr "Lợi ích của giao dịch nhị phân"
+msgstr "Lợi ích khi là một Đại lý Thanh toán"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/benefits_of_trading_binaries.html.haml:1
 #: /home/git/translations/binary-static/src/templates/haml/layouts/get_started/nav.html.haml:1
@@ -2470,10 +2503,9 @@ msgid "Contribute to %1's open-source projects."
 msgstr "Đóng góp vào các dự án nguồn mở của %1."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/partners.html.haml:1
-#, fuzzy
 #| msgid "Contracts"
 msgid "Contributors"
-msgstr "Hợp đồng"
+msgstr "Cộng tác viên"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/why_us.html.haml:1
 msgid "Controlled risk"
@@ -2859,7 +2891,9 @@ msgstr "Tiền gửi của %1 %2 được yêu cầu. Giá chênh lệch h
 
 #: /home/git/translations/binary-static/src/templates/haml/cashier/index.html.haml:1
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
-msgstr "Gửi hay rút tiền từ tài khoản qua ngân hàng, thẻ tín dụng hay ví e-cash."
+msgstr ""
+"Gửi hay rút tiền qua tài khoản của bạn bằng điện chuyển khoản ngân "
+"hàng, thẻ tín dụng hay ví thẻ điện tử."
 
 #. (1)
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_methods.html.tt:407
@@ -3319,10 +3353,9 @@ msgid "Expiry price"
 msgstr "Giá hết hạn"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2185
-#, fuzzy
 #| msgid "Start time is in the past"
 msgid "Expiry time cannot be in the past."
-msgstr "Thời gian bắt đầu trong quá khứ"
+msgstr "Thời gian hết hạn không thể ở quá khứ."
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:685
 msgid "Explanation"
@@ -4119,10 +4152,12 @@ msgid "If you wish to raise these limits, please authenticate your account."
 msgstr "Nếu bạn muốn mở rộng những giới hạn này, vui lòng xác minh tài khoản của bạn."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "If you have clients who would like to authorize you to place trades on their behalf, feel free to contact our affiliate managers via <a href='mailto:affiliates@binary.com'>affiliates@binary.com</a> to ask questions or set things up."
 msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:affiliates@binary.com'>affiliates@binary.com</a>"
-msgstr "Nếu bạn có khách hàng cho bạn quyền thay mặt đặt giao dịch, hãy liên hệ với người quản lý liên kết của chúng tôi thông qua <a href='mailto:affiliates@binary.com'>affiliates@binary.com</a> để đưa ra câu hỏi hoặc cài đặt một số thứ."
+msgstr ""
+"Nếu bạn muốn biết thêm thông tin để trở thành Đại lý Thanh toán, "
+"vui lòng liên hệ với chúng tôi theo địa chỉ <a "
+"href='mailto:affiliates@binary.com'>affiliates@binary.com</a>"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/complaints_disputes.html.tt:4
 msgid "If you would like to file a complaint with regards to our service, kindly contact us providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will normally provide a final response within 2 months from receipt of all relevant details."
@@ -4378,6 +4413,12 @@ msgstr "Công cụ"
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Interested, so what’s next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:affiliates@binary.com'>hear from you!</a>"
 msgstr ""
+"Bạn đã thấy hứng thú, vậy điều gì tiếp theo? Nếu bạn có thể "
+"cung cấp cho Khách hàng của chúng tôi sử dụng phương thức thẻ điện "
+"tử hoặc phương thức thanh toán nội tệ mà chưa được %1 cung cấp, và "
+"bạn có có hồ sơ ghi nhận theo dõi tốt trên thị trường, chúng tôi "
+"muốn <a href='mailto:affiliates@binary.com'>nhận được thông tin từ "
+"bạn!</a>"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/how_to_trade_binaries.html.haml:1
 msgid "Interested? Why not try a virtual account"
@@ -5884,10 +5925,9 @@ msgid "Name of your pet"
 msgstr "Tên thú cưng của bạn"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "Use of Information"
 msgid "Need more information?"
-msgstr "Sử dụng thông tin"
+msgstr "Cần thêm thông tin?"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/risk_disclaimer.html.tt:34
 msgid "Need to Monitor Positions"
@@ -6022,6 +6062,9 @@ msgstr "Lưu ý: Trong suốt mùa hè (tiết kiệm ánh sáng ban nga
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Note: Payment Agent transfers are only available for accounts registered with Binary (CR) SA. Transactions are accepted only in US dollars."
 msgstr ""
+"Chú ý: Chuyển tiền qua Đại lý Thanh toán chỉ có cho các tài khoả"
+"n đã được đăng kí với Binary (CR) SA. Giao dịch chỉ được chấp nhận "
+"bằng tiền Đô la Mỹ."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/main.html.tt:76
 msgid "Note: The company reserves the right to cancel affiliate commissions that remain unclaimed for more than 2 years. Please also read our affiliate terms and conditions."
@@ -6143,6 +6186,10 @@ msgstr "Khi chạm phải giới hạn này, bạn sẽ không phải gửi t
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Once we receive your application, one of our affiliate managers will contact you to follow up with the next steps in the application process (this will include asking you to submit several documents)."
 msgstr ""
+"Khi chúng tôi nhận được đơn của bạn, một trong những quản lý liên "
+"kết của chúng tôi sẽ liên hệ với bạn để hướng dẫn bạn những bướ"
+"c tiếp theo trong quá trình đăng kí (điều này sẽ bao gồm cả việc "
+"yêu cầu bạn gửi một số tài liệu)."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/white_labels.html.haml:1
 msgid "Once you are satisfied with the design of your white label, your IT developer should submit a pull-request of his fork."
@@ -6171,7 +6218,7 @@ msgstr "Sàn Giao dịch Trực tuyến cho hợp đồng quyền chọn n
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Online currency exchangers "
-msgstr ""
+msgstr "Trao đổi tiền tệ trực tuyến "
 
 #: /home/git/translations/binary-static/src/templates/haml/static/group_history.html.haml:1
 msgid "Only five years after inception, we pick up this major award for our online trading services. The award recognises BetOnMarkets.com’s reliable, fast and secure online trading for novice and expert traders. At this time, our website has received over 15 million trades."
@@ -6428,10 +6475,9 @@ msgid "Patents"
 msgstr "Bằng sáng chế"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/partners.html.haml:1
-#, fuzzy
 #| msgid "Payment Agent Deposit"
 msgid "Payment Agent"
-msgstr "Gửi tiền cho Đại lý Thanh toán"
+msgstr "Đại lý Thanh toán"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1102
 msgid "Payment Agent Deposit"
@@ -6456,10 +6502,9 @@ msgid "Payment Agent transfer"
 msgstr "Chuyển tiền cho Đại lý thanh toán"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "Payment Agent Deposit"
 msgid "Payment Agents"
-msgstr "Gửi tiền cho Đại lý Thanh toán"
+msgstr "Đại lý Thanh toán"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1173
 msgid "Payment Agents are not available for your account."
@@ -6490,10 +6535,9 @@ msgid "Payments"
 msgstr "Thanh toán"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "Payment Agent Deposit"
 msgid "Payment Agents"
-msgstr "Gửi tiền cho Đại lý Thanh toán"
+msgstr "Đại lý Thanh toán"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:152
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/ContractForm.pm:749
@@ -6833,6 +6877,8 @@ msgstr "Vui lòng điền tên quốc gia của bạn."
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Please submit the above information to <a href='mailto:affiliates@binary.com'>affiliates@binary.com</a>."
 msgstr ""
+"Vui lòng gửi thông tin trên tới <a "
+"href='mailto:affiliates@binary.com'>affiliates@binary.com</a>."
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1372
 msgid "Please switch accounts to trade this contract."
@@ -8763,10 +8809,10 @@ msgid "The client has reached a turnover that is 5 times the bonus amount"
 msgstr "Khách hàng đã đạt được doanh thu 5 lần tiền thưởng"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "Commission (%) you want to take on withdrawals"
 msgid "The commission you will charge Clients on deposits and withdrawals"
-msgstr "Hoa hồng (%) mà bạn muốn rút tiền"
+msgstr ""
+"Hoa hồng bạn sẽ tính tiền Khách hàng qua tiền rút và tiền gửi"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/betting_rules.html.tt:34
 msgid "The company does not guarantee the ability to sell a contract prior to its expiration time."
@@ -10148,10 +10194,9 @@ msgid "We have in place adequate internal procedures to ensure that you are in a
 msgstr "Chúng tôi luôn sắp xếp quy trình nội bộ thích hợp để bảo đảm rằng tất cả các trường hợp được đối xử công bằng và nguy cơ gây thiệt hại đến lợi ích của khách hàng sẽ được giảm thiểu."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "If you are, we’d love to hear from you."
 msgid "We look forward to hearing from you."
-msgstr "Nếu như bạn có, chúng tôi muốn nhận tin từ bạn."
+msgstr "Chúng tôi mong nhận được tin từ bạn."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/privacy.html.tt:24
 msgid "We maintain customer balances in cash or cash equivalent. We ensure that 100% of each customer's balance is available for immediate withdrawal, subject to verification."
@@ -10451,10 +10496,9 @@ msgid "White labels"
 msgstr "Nhãn trắng"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "Apply to become Payment Agent"
 msgid "Who can apply to be a Payment Agent?"
-msgstr "Đăng ký trở thành Đại lý Thanh toán"
+msgstr "Ai có thể nộp đơn để trở thành Đại lý Thanh toán?"
 
 #. (broker_name)
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/faq.html.tt:13
@@ -10476,7 +10520,7 @@ msgstr "Tài sao lại chọn Giao dịch Nhị phân?"
 #: /home/git/translations/binary-static/src/templates/toolkit/global/header.html.tt:47
 #: /home/git/translations/binary-static/src/templates/toolkit/global/mobile_menu.html.tt:5
 msgid "Why Us?"
-msgstr "Chọn Chúng tôi?"
+msgstr "Lý do?"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/main.html.tt:43
 msgid "Why become an Affiliate?"
@@ -10492,10 +10536,9 @@ msgid "Why choose us"
 msgstr "Tại sao lại chọn chúng tôi"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "Apply to become Payment Agent"
 msgid "Why do Clients choose to use Payment Agents?"
-msgstr "Đăng ký trở thành Đại lý Thanh toán"
+msgstr "Tại sao khách hàng lại chọn sử dụng Đại lý Thanh toán?"
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/why_us.html.haml:1
@@ -10517,7 +10560,7 @@ msgstr "Tại sao tôi nên trở thành một liên kết với %1?"
 
 #: /home/git/translations/binary-static/src/templates/haml/layouts/default/nav.html.haml:1
 msgid "Why us?"
-msgstr "Chọn chúng tôi?"
+msgstr "Lý do?"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/beginners_faq.html.haml:1
 msgid "Will I need to install any software?"
@@ -11055,6 +11098,9 @@ msgstr "Tài khoản của bạn không nên được sử dụng như một th
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='%1'>payment agent</a> list."
 msgstr ""
+"Hồ sơ đăng kí của bạn sẽ được xem xét bởi phòng tuân thủ và "
+"marketing. Khi đã được duyệt, chúng tôi sẽ xếp bạn vào danh sách <a "
+"href='%1'>đại lý thanh toán</a> của chúng tôi."
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1035
 msgid "Your balance is higher than the permitted amount."
@@ -11148,7 +11194,7 @@ msgstr "Tiền của bạn luôn an toàn với %1. Lúc này, nó đươ�
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Your name, email address and contact number"
-msgstr ""
+msgstr "Tên, địa chỉ email và số điện thoại liên lạc của bạn"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1349
 msgid "Your name/company"
@@ -11279,10 +11325,9 @@ msgid "Your website URL"
 msgstr "URL trang web của bạn"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "Your website URL"
 msgid "Your website URL (if you have one)"
-msgstr "URL trang web của bạn"
+msgstr "URL trang web của bạn (nếu bạn có)"
 
 #. (lifetime_limit_monetary, lifetime_limit_equivalent)
 #: /home/git/translations/binary-static/src/templates/toolkit/account/trading_withdrawal_limit.html.tt:55
@@ -12001,10 +12046,9 @@ msgid "US S&P 100"
 msgstr "Chỉ số chứng khoán Hoa Kỳ S&P 100"
 
 #: Underlying Symbol DFMGI
-#, fuzzy
 #| msgid "Dutch Index"
 msgid "Dubai Index"
-msgstr "Chỉ số Hà Lan"
+msgstr "Chỉ số Dubai"
 
 #: Underlying Symbol N150
 msgid "Euro 150 Index"
@@ -12027,10 +12071,9 @@ msgid "UK Smart Index"
 msgstr "Chỉ số thông minh Anh"
 
 #: Underlying Symbol EGX30
-#, fuzzy
 #| msgid "EUR Index"
 msgid "Egypt Index"
-msgstr "Chỉ số EUR"
+msgstr "Chỉ số Ai Cập"
 
 #: Underlying Symbol PSI20
 msgid "Portuguese Index"
@@ -12041,10 +12084,9 @@ msgid "Wall Street Index"
 msgstr "Chỉ số phố Wall"
 
 #: Underlying Symbol SASEIDX
-#, fuzzy
 #| msgid "South African Index"
 msgid "Saudi Arabic Index"
-msgstr "Chỉ số chứng khoán Nam Phi"
+msgstr "Chỉ số Ả Rập"
 
 #: Underlying Symbol SPC
 msgid "US Index"
@@ -12135,10 +12177,9 @@ msgid "Euro 100 Index"
 msgstr "Chỉ số 100 Euro"
 
 #: Underlying Symbol ADSMI
-#, fuzzy
 #| msgid "AUD Index"
 msgid "Abu Dhabi Index"
-msgstr "Chỉ số AUD"
+msgstr "Chỉ số Abu Dhabi"
 
 #: Underlying Symbol SYNSPC
 msgid "US Smart Index"
@@ -12693,10 +12734,9 @@ msgid "Dutch Stocks"
 msgstr "Chứng khoán Hà Lan"
 
 #: Translation for sub market name
-#, fuzzy
 #| msgid "Fast Indices"
 msgid "Middle East Indices"
-msgstr "Những chỉ số nhanh"
+msgstr "Chỉ số Trung Đông"
 
 #: Translation for sub market name
 msgid "Synthetic Index"

@@ -7,9 +7,10 @@ msgstr ""
 "Project-Id-Version: 1228\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-10-08 14:50+0200\n"
+"PO-Revision-Date: 2015-10-13 10:11+0200\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
+"Language-Team: Chinese (China) "
+"<https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -64,7 +65,7 @@ msgstr "%1联盟计划的条款和条件"
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "%1 affiliate partners who wish to support a big group of Clients"
-msgstr ""
+msgstr "想要为大批客户集团提供支持服务的%1联盟成员"
 
 #. ('<a target="_blank" href="http://www.gambleaware.co.uk/">GambleAware</a>')
 #: /home/git/translations/binary-static/src/templates/haml/static/responsible_trading.html.haml:1
@@ -203,7 +204,7 @@ msgstr "此账户可能无法执行%1交易。"
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "%1 would like to team up with potential payment agents worldwide so we can offer local payment processing services to our clients in their respective regions."
-msgstr ""
+msgstr "%1 希望与世界各地的潜在支付代理合作，以便我们可为各区域客户提供当地支付处理服务。"
 
 #. (stash->{website_name}, pjax_link_for(l('Random 25 Index')
 #: /home/git/translations/binary-static/src/templates/haml/get_started/random_markets.html.haml:1
@@ -528,7 +529,7 @@ msgstr "<strong>双边报价</strong> - %1 提供交易与反向交易的报价�
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "<strong>Additional business exposure:</strong> You will increase awareness of your services and generate new business."
-msgstr ""
+msgstr "<strong>额外业务推展:</strong> 您的服务将受推广，生意蒸蒸日上。"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/what_is_binary_trading.html.haml:1
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
@@ -566,7 +567,7 @@ msgstr "<strong>更好的成交价！</strong><br />  该价格变动对您有�
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "<strong>Commissions:</strong> You will charge a commission to process the transactions."
-msgstr ""
+msgstr "<strong>佣金:</strong> 您将可收取交易处理的佣金费。"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/benefits_of_trading_binaries.html.haml:1
 #: /home/git/translations/binary-static/src/templates/haml/get_started/how_to_trade_binaries.html.haml:1
@@ -587,7 +588,7 @@ msgstr "<strong>兑换率风险</strong>:外汇兑换率可能会因为广泛的
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "<strong>Extra revenue stream:</strong> You will have the potential to earn another level of income from our affiliate program."
-msgstr ""
+msgstr "<strong>额外收入源流:</strong> 您将从我们的联盟计划受惠，开辟另一潜在收入源流。"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/benefits_of_trading_binaries.html.haml:1
 msgid "<strong>Falling markets</strong> - choose the falls trade, lower trade, one-touch trade with a low barrier, or no-touch trade with a high barrier."
@@ -638,7 +639,7 @@ msgstr "<strong>长线交易</strong> - 可选择最长为 365 天的交易期�
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "<strong>Long-term partnership:</strong> Your partnership with %1 could be a means to promote your product or services for FREE to our 1,000,000+ registered clients, worldwide."
-msgstr ""
+msgstr "<strong>长期合作关系:</strong> 您和 %1 合伙即可免费向我们全世界 1,000,000+ 位注册客户推销您的产品或服务。"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/benefits_of_trading_binaries.html.haml:1
 msgid "<strong>Low minimum stakes</strong> - start trading with as little as $5."
@@ -795,10 +796,11 @@ msgstr "== 免费电话 =="
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "A Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash methods or local currencies not offered by default on %1."
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by %1. The transfer fees are borne by the Client."
-msgstr "付款代理人负责为希望使用某一特定电子货币方法或默认以%1提供之本地货币的客户处理充值和提款事宜。"
+msgstr ""
+"付款代理人扮演客户（即我们的顾客）和 "
+"%1之间的兑换员。付款代理人负责为希望使用某一特定电子货币方法或%1并不提供之本地货币的客户处理充值和提款事宜。汇款费用由客户支付。"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:653
 msgid "A Simple moving average line can be enhanced by putting a percentage envelope on either side of it. Our lines are displayed 20% above and 10% below the moving average line."
@@ -843,7 +845,7 @@ msgstr "出了一般性差错。"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "A list of payment methods you will accept from Clients"
-msgstr ""
+msgstr "您可接受之客户付款方式列表"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:577
 msgid "A momentum indicator showing the percent rate-of-change of a triple exponentially smoothed moving average. Like other oscillators, TRIX oscillates around a zero line."
@@ -936,10 +938,9 @@ msgid "Accept"
 msgstr "接受"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "Deposit via bank wire"
 msgid "Accept local bank wires"
-msgstr "通过银行电汇的存款"
+msgstr "接受本地银行电汇"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:15
 msgid "Acceptance"
@@ -1099,12 +1100,12 @@ msgstr "您只需要依照我们刚给您送出的邮件指示去做即可。电
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
-msgstr ""
+msgstr "允许客户以较少金额（通过本地货币）充值"
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Allow Clients to use e-wallets, which are not available directly on %1"
-msgstr ""
+msgstr "允许客户使用 %1并不直接提供之电子货币"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:142
 msgid "Although the Company has and retains all rights to refuse or to close a Client’s account, the Company does warrant that all contractual obligations already made, shall be honoured."
@@ -1213,7 +1214,7 @@ msgstr "任何年满18 岁 [已阅读并同意 %1 条款和条件]，且非居�
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Anyone who has potential to grow or increase traffic to %1"
-msgstr ""
+msgstr "可让 %1 潜在增长或提高流量之任何人士"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1170
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/paymentagent_application.html.tt:1
@@ -1226,16 +1227,14 @@ msgid "Apply to become a %1 <a class=\"pjaxload\" href=\"%2\">payment agent</a>.
 msgstr "申请成为 %1<a class=\"pjaxload\" href=\"%2\">支付代理</a>。"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/partners.html.haml:1
-#, fuzzy
 #| msgid "Apply to become Payment Agent"
 msgid "Apply to become a Payment Agent"
-msgstr "申请成为支付代理"
+msgstr "申请成为付款代理"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/partners.html.haml:1
-#, fuzzy
 #| msgid "Apply to become a %1"
 msgid "Apply to become a contributor"
-msgstr "申请成为%1"
+msgstr "申请成为捐助人"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/risk_disclaimer.html.tt:24
 msgid "Appropriateness"
@@ -1261,7 +1260,7 @@ msgstr "是否有任何费用？"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Are you a Payment Agent, or interested in acting as one?"
-msgstr ""
+msgstr "您是否付款代理，或有意当付款代理？"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/main.html.tt:3
 msgid "Are you an Investment professional?"
@@ -1293,7 +1292,7 @@ msgstr "阿隆摆动指标"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "As a first step, please send us an application with:"
-msgstr ""
+msgstr "首先，请向我们提出申请，并附上："
 
 #: /home/git/translations/binary-static/src/templates/haml/static/tour.html.haml:1
 msgid "As soon as you click on the ‘PURCHASE’ button, your trade registers in your account. The price of your trade continues to update in real time."
@@ -1395,7 +1394,7 @@ msgstr "平均真实波幅"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Avoid the need to have an e-wallet"
-msgstr ""
+msgstr "避免使用电子钱包"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/main.html.tt:53
 msgid "Award-winning, patented financial trading platform"
@@ -1540,10 +1539,9 @@ msgid "Before you proceed..."
 msgstr "在继续操作前..."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "Benefits of binary trading"
 msgid "Benefits of being a Payment Agent"
-msgstr "二元期权交易的优点"
+msgstr "成为付款代理的好处"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/benefits_of_trading_binaries.html.haml:1
 #: /home/git/translations/binary-static/src/templates/haml/layouts/get_started/nav.html.haml:1
@@ -2478,10 +2476,9 @@ msgid "Contribute to %1's open-source projects."
 msgstr "为%1的开源项目作出贡献。"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/partners.html.haml:1
-#, fuzzy
 #| msgid "Contracts"
 msgid "Contributors"
-msgstr "合约"
+msgstr "捐助人"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/why_us.html.haml:1
 msgid "Controlled risk"
@@ -3326,10 +3323,9 @@ msgid "Expiry price"
 msgstr "到期价格"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2185
-#, fuzzy
 #| msgid "Start time is in the past"
 msgid "Expiry time cannot be in the past."
-msgstr "开始时间是在过去"
+msgstr "到期时间不可为过去式。"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:685
 msgid "Explanation"
@@ -4127,10 +4123,11 @@ msgid "If you wish to raise these limits, please authenticate your account."
 msgstr "如果您想提高这些限额，请验证您的账户。"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "If you have clients who would like to authorize you to place trades on their behalf, feel free to contact our affiliate managers via <a href='mailto:affiliates@binary.com'>affiliates@binary.com</a> to ask questions or set things up."
 msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:affiliates@binary.com'>affiliates@binary.com</a>"
-msgstr "如您有客户要授权予您代替进行交易，请随时通过 <a href='mailto:affiliates@binary.com'>affiliates@binary.com</a>联系我们的联盟管理员提出问题或安排一切。"
+msgstr ""
+"如您希望获取成为付款代理的更多详情，请随时通过 <a "
+"href='mailto:affiliates@binary.com'>affiliates@binary.com</a> 联系我们"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/complaints_disputes.html.tt:4
 msgid "If you would like to file a complaint with regards to our service, kindly contact us providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will normally provide a final response within 2 months from receipt of all relevant details."
@@ -4386,6 +4383,8 @@ msgstr "工具"
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Interested, so what’s next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:affiliates@binary.com'>hear from you!</a>"
 msgstr ""
+"感兴趣，接下来该怎么做？如您可向我们的客户提供特别电子货币支付方式或 %1目前还未提供之本地付款选项，且您在市场上有良好的记录，那么我们非常乐意通过<a "
+"href='mailto:affiliates@binary.com'>收到您的联系!</a>"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/how_to_trade_binaries.html.haml:1
 msgid "Interested? Why not try a virtual account"
@@ -5892,10 +5891,9 @@ msgid "Name of your pet"
 msgstr "您宠物的名字"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "Use of Information"
 msgid "Need more information?"
-msgstr "信息使用"
+msgstr "想获取更多信息?"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/risk_disclaimer.html.tt:34
 msgid "Need to Monitor Positions"
@@ -6031,7 +6029,7 @@ msgstr "注：在夏季（夏令时），格林威治标准时间 （GMT） 比�
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Note: Payment Agent transfers are only available for accounts registered with Binary (CR) SA. Transactions are accepted only in US dollars."
-msgstr ""
+msgstr "注意：仅在Binary (CR) SA注册的账户才能通过付款代理汇款。仅接受以美元进行所有交易。"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/main.html.tt:76
 msgid "Note: The company reserves the right to cancel affiliate commissions that remain unclaimed for more than 2 years. Please also read our affiliate terms and conditions."
@@ -6152,7 +6150,7 @@ msgstr "达到此限额后，您不能再存款。"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Once we receive your application, one of our affiliate managers will contact you to follow up with the next steps in the application process (this will include asking you to submit several documents)."
-msgstr ""
+msgstr "一旦收到您的申请，我们的联盟经理会与您联系，以跟进申请程序的下一步骤（包括要求您提交一些文件）。"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/white_labels.html.haml:1
 msgid "Once you are satisfied with the design of your white label, your IT developer should submit a pull-request of his fork."
@@ -6181,7 +6179,7 @@ msgstr "可交易外汇、指数、大宗商品及智能指数的二元期权在
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Online currency exchangers "
-msgstr ""
+msgstr "在线货币兑换 "
 
 #: /home/git/translations/binary-static/src/templates/haml/static/group_history.html.haml:1
 msgid "Only five years after inception, we pick up this major award for our online trading services. The award recognises BetOnMarkets.com’s reliable, fast and secure online trading for novice and expert traders. At this time, our website has received over 15 million trades."
@@ -6438,10 +6436,9 @@ msgid "Patents"
 msgstr "专利"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/partners.html.haml:1
-#, fuzzy
 #| msgid "Payment Agent Deposit"
 msgid "Payment Agent"
-msgstr "支付代理存款"
+msgstr "付款代理"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1102
 msgid "Payment Agent Deposit"
@@ -6466,10 +6463,9 @@ msgid "Payment Agent transfer"
 msgstr "支付代理转账"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "Payment Agent Deposit"
 msgid "Payment Agents"
-msgstr "支付代理存款"
+msgstr "付款代理"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1173
 msgid "Payment Agents are not available for your account."
@@ -6500,10 +6496,9 @@ msgid "Payments"
 msgstr "支付"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "Payment Agent Deposit"
 msgid "Payment Agents"
-msgstr "支付代理存款"
+msgstr "付款代理"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:152
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/ContractForm.pm:749
@@ -6843,6 +6838,7 @@ msgstr "请指定您的国家。"
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Please submit the above information to <a href='mailto:affiliates@binary.com'>affiliates@binary.com</a>."
 msgstr ""
+"请将以上信息传到 <a href='mailto:affiliates@binary.com'>affiliates@binary.com</a>。"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1372
 msgid "Please switch accounts to trade this contract."
@@ -8775,10 +8771,9 @@ msgid "The client has reached a turnover that is 5 times the bonus amount"
 msgstr "客户的成交量已达到了奖金额的 5 倍"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "Commission (%) you want to take on withdrawals"
 msgid "The commission you will charge Clients on deposits and withdrawals"
-msgstr "您要从取款抽取的佣金百分比"
+msgstr "您要向客户收取的充值提款佣金"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/betting_rules.html.tt:34
 msgid "The company does not guarantee the ability to sell a contract prior to its expiration time."
@@ -10160,10 +10155,9 @@ msgid "We have in place adequate internal procedures to ensure that you are in a
 msgstr "我们拥有足够的内部程序，能确保您会完全得到公平对待以及将客户利益亏损的风险减至最低。"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "If you are, we’d love to hear from you."
 msgid "We look forward to hearing from you."
-msgstr "如果您已准备好，欢迎联系我们。"
+msgstr "欢迎联系我们。"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/privacy.html.tt:24
 msgid "We maintain customer balances in cash or cash equivalent. We ensure that 100% of each customer's balance is available for immediate withdrawal, subject to verification."
@@ -10463,10 +10457,9 @@ msgid "White labels"
 msgstr "白标"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "Apply to become Payment Agent"
 msgid "Who can apply to be a Payment Agent?"
-msgstr "申请成为支付代理"
+msgstr "谁能申请成为付款代理？"
 
 #. (broker_name)
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/faq.html.tt:13
@@ -10504,10 +10497,9 @@ msgid "Why choose us"
 msgstr "为何选择我们"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "Apply to become Payment Agent"
 msgid "Why do Clients choose to use Payment Agents?"
-msgstr "申请成为支付代理"
+msgstr "为何客户选择采用付款代理？"
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/why_us.html.haml:1
@@ -11068,7 +11060,7 @@ msgstr "您的账户不应该被用来作为银行信贷，而存款应该视为
 #. (url_for('/cashier/payment_agent_list')
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='%1'>payment agent</a> list."
-msgstr ""
+msgstr "然后我们的审核和营销部门将审查您的申请。一旦批准，我们将会把您列入 <a href='%1'>付款代理</a>列表。"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1035
 msgid "Your balance is higher than the permitted amount."
@@ -11161,10 +11153,9 @@ msgid "Your money is always safe with %1. At all times, it is held in segregated
 msgstr "在%1，您的资金永远安全。客户资金始终由3A级银行托管是我们获取交易牌照的一个条件。"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "Your Moneta.ru email address or Account number."
 msgid "Your name, email address and contact number"
-msgstr "您的 Moneta.ru 电子邮件地址或帐号。"
+msgstr "您的名字、 电子邮件地址或电话号"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1349
 msgid "Your name/company"
@@ -11295,10 +11286,9 @@ msgid "Your website URL"
 msgstr "您的网站 URL"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "Your website URL"
 msgid "Your website URL (if you have one)"
-msgstr "您的网站 URL"
+msgstr "您的网站 URL（如有）"
 
 #. (lifetime_limit_monetary, lifetime_limit_equivalent)
 #: /home/git/translations/binary-static/src/templates/toolkit/account/trading_withdrawal_limit.html.tt:55
@@ -12017,10 +12007,9 @@ msgid "US S&P 100"
 msgstr "美国标普 100 指数"
 
 #: Underlying Symbol DFMGI
-#, fuzzy
 #| msgid "Dutch Index"
 msgid "Dubai Index"
-msgstr "荷兰指数"
+msgstr "迪拜指数"
 
 #: Underlying Symbol N150
 msgid "Euro 150 Index"
@@ -12043,10 +12032,9 @@ msgid "UK Smart Index"
 msgstr "英国智能指数"
 
 #: Underlying Symbol EGX30
-#, fuzzy
 #| msgid "EUR Index"
 msgid "Egypt Index"
-msgstr "欧元指数"
+msgstr "埃及指数"
 
 #: Underlying Symbol PSI20
 msgid "Portuguese Index"
@@ -12057,10 +12045,9 @@ msgid "Wall Street Index"
 msgstr "华尔街指数"
 
 #: Underlying Symbol SASEIDX
-#, fuzzy
 #| msgid "South African Index"
 msgid "Saudi Arabic Index"
-msgstr "南非指数"
+msgstr "沙特阿拉伯指数"
 
 #: Underlying Symbol SPC
 msgid "US Index"
@@ -12151,10 +12138,9 @@ msgid "Euro 100 Index"
 msgstr "欧洲100指数"
 
 #: Underlying Symbol ADSMI
-#, fuzzy
 #| msgid "AUD Index"
 msgid "Abu Dhabi Index"
-msgstr "澳元指数"
+msgstr "阿布达比指数"
 
 #: Underlying Symbol SYNSPC
 msgid "US Smart Index"
@@ -12709,10 +12695,9 @@ msgid "Dutch Stocks"
 msgstr "荷兰股票"
 
 #: Translation for sub market name
-#, fuzzy
 #| msgid "Fast Indices"
 msgid "Middle East Indices"
-msgstr "快速指数"
+msgstr "中东指数"
 
 #: Translation for sub market name
 msgid "Synthetic Index"

@@ -3,14 +3,14 @@
     .grd-container.grd-default-container
       .grd-grid-6.grd-grid-mobile-12.grd-parent
         .grd-grid-4
-          %h1= l('About Us')
+          %h1= l('Our Company')
           %ul
             %li
-              %a.pjaxload{:href=>url_for("about-us"), :class => 'pjaxload'}= l('Group Information')
+              %a.pjaxload{:href=>url_for("about-us"), :class => 'pjaxload'}= l('About Us')
+            %li
+              %a.id-hide.ar-hide.pjaxload{:href=>url_for("group-information"), :class => 'pjaxload'}= l('Group Information')
             %li
               %a.pjaxload{:href=>url_for("group-history"), :class => 'pjaxload'}= l('Group History')
-            %li.ja-hide
-              %a.pjaxload{:href=>url_for("/legal/us_patents"), :class=>"us_patent_link"}= l('Patents')
             %li.ja-hide
               %a.pjaxload{:href=>url_for("careers")}= l('Careers')
             %li.ja-hide
@@ -64,6 +64,8 @@
                   %a.pjaxload{:href=>url_for("responsible-trading")}= l('Responsible Trading')
                 %li.ja-hide
                   %a.pjaxload{:href=>url_for("/terms-and-conditions?selected_tab=complaints-disputes-tac-tab")}= l('Complaints and Disputes')
+                %li.ja-hide
+                  %a.pjaxload{:href=>url_for("/legal/us_patents"), :class=>"us_patent_link"}= l('Patents')
         .grd-grid-4
           %h1= l('Market Data')
           %ul

@@ -46,7 +46,7 @@
                         </div>
                         <div class="big-col">
                            <div id="expiry_type_duration">
-                              <input id="duration_amount" type="text" class="small_width_input" pattern="^([1-9]|[1-9][0-9]|[1-2][0-9][0-9]|[1-3][0-6][0-6])$" title="Minimum as indicated, maximum 366" /><label></label>
+                              <input id="duration_amount" type="number" min="1" max="366" class="small_width_input" /><label></label>
                               <select id="duration_units" class="medium_width_input"></select>
                               <span id="duration_tooltip_wrapper">
                               <abbr rel="tooltip" id="duration_tooltip"></abbr>
@@ -75,7 +75,7 @@
                            </label>
                         </div>
                         <div class="big-col">
-                           <input id="barrier" type="text" name="H" pattern="^\+\d+(\.\d{1,3})?|\d+(\.\d{1,3})?$" title="0.001 format" />
+                           <input id="barrier" type="text" name="H" pattern="^\+\d+(\.\d{1,4})?|\d+(\.\d{1,4})?$" title="maximum of 4 decimal points allowed" />
                            <abbr rel="tooltip" id="indicative_barrier_tooltip"></abbr>
                         </div>
                      </div>
@@ -95,7 +95,7 @@
                            </label>
                         </div>
                         <div class="big-col">
-                           <input id="barrier_high" type="text" name="H" pattern="^\+\d+(\.\d{1,3})?|\d+(\.\d{1,3})?$" title="0.001 format" />
+                           <input id="barrier_high" type="text" name="H" pattern="^\+\d+(\.\d{1,4})?|\d+(\.\d{1,4})?$" title="maximum of 4 decimal points allowed" />
                            <abbr rel="tooltip" id="indicative_high_barrier_tooltip"></abbr>
                         </div>
                      </div>
@@ -115,7 +115,7 @@
                            </label>
                         </div>
                         <div class="big-col">
-                           <input id="barrier_low" type="text" name="L" pattern="^\-\d+(\.\d{1,3})?|\d+(\.\d{1,3})?$" title="0.001 format" />
+                           <input id="barrier_low" type="text" name="L" pattern="^\-\d+(\.\d{1,4})?|\d+(\.\d{1,4})?$" title="maximum of 4 decimal points allowed" />
                            <abbr rel="tooltip" id="indicative_low_barrier_tooltip"></abbr>
                         </div>
                      </div>
@@ -149,8 +149,8 @@
                         <div class="row-inner big-col">
                            <div class="col-inner">
                               <select id="currency" class="small_width_input"></select>
-                              <input id="amount" type="text" value="10" class="medium_width_input" pattern="^([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9]|[1-9][0-9][0-9][0-9][0-9]|[1][0][0][0][0][0])$" title="100,000 maximum"/>
-                              <input id="amount_per_point" type="text" value="1" class="medium_width_input" pattern="^([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9]|[1-9][0-9][0-9][0-9][0-9]|[1][0][0][0][0][0])$" title="100,000 maximum"/>
+                              <input id="amount" type="number" step="any" value="10" class="medium_width_input" min="1" max="100000"/>
+                              <input id="amount_per_point" type="number" step="any" value="1" class="medium_width_input" min="1" max="100000"/>
                            </div>
                         </div>
                      </div>
@@ -169,7 +169,7 @@
                                 <label for="stop_loss" id="stop_loss_label"></label>
                             </div>
                             <div class="big-col">
-                                <input id="stop_loss" type="text" value="10" pattern="^([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9]|[1-9][0-9][0-9][0-9][0-9]|[1][0][0][0][0][0])$" title="100,000 maximum"/><label></label>
+                                <input id="stop_loss" type="number" step="any" value="10" min="1" max="100000"/><label></label>
                             </div>
                         </div>
                         <div class="row">
@@ -177,7 +177,7 @@
                                 <label for="stop_profit" id="stop_profit_label"></label>
                             </div>
                             <div class="big-col">
-                                <input id="stop_profit" type="text" value="10" pattern="^([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9]|[1-9][0-9][0-9][0-9][0-9]|[1][0][0][0][0][0])$" title="100,000 maximum"/><label></label>
+                                <input id="stop_profit" type="number" step="any" value="10" min="1" max="100000"/><label></label>
                             </div>
                         </div>
                      </div>
