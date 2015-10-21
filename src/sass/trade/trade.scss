@@ -424,6 +424,7 @@
   #symbol_tip{
     padding-right: 8px;
     padding-bottom: 5px;
+    cursor: pointer;
   }
   #spot_label{
     display: none;
@@ -435,6 +436,9 @@
 
 @media all and (max-width: 640px) {
   #trading_socket_container {
+    #contract_market_form_container{
+      height: auto;
+    }
     #contract_purchase_spots{
       max-height: 205px;
     }
@@ -583,6 +587,10 @@
                 }
             }
         }
+    }
+    #last_digit_histo_form {
+        overflow: hidden;
+        margin-bottom: 20px;
     }
 }
 @media all and (max-width: 640px) {

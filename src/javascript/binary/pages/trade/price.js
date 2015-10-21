@@ -165,11 +165,11 @@ var Price = (function () {
             }
         }
 
-        if (proposal['ask_price']) {
+        if (proposal['display_value']) {
             if (is_spread) {
-                amount.textContent = proposal['ask_price'];
+                amount.textContent = proposal['display_value'];
             } else {
-                amount.textContent = currency.value + ' ' + proposal['ask_price'];
+                amount.textContent = currency.value + ' ' + proposal['display_value'];
             }
         }
 
@@ -209,12 +209,13 @@ var Price = (function () {
             } else {
                 displayCommentPrice(comment, currency.value, proposal['ask_price'], proposal['payout']);
             }
-            var oldprice = purchase.getAttribute('data-ask-price');
+            var oldprice = purchase.getAttribute('data-display_value');
             if (oldprice) {
-                displayPriceMovement(amount, oldprice, proposal['ask_price']);
+                displayPriceMovement(amount, oldprice, proposal['display_value']);
             }
             purchase.setAttribute('data-purchase-id', id);
             purchase.setAttribute('data-ask-price', proposal['ask_price']);
+            purchase.setAttribute('data-display_value', proposal['display_value']);
             purchase.setAttribute('data-symbol', id);
             for(var key in bufferRequests[id]){
                 if(key && key !== 'proposal'){

@@ -411,6 +411,14 @@ var TradingEvents = (function () {
             }));
         }
 
+        var view_button = document.getElementById('contract_purchase_button');
+        if(view_button){
+            tip.addEventListener('click', debounce( function (e) {
+                BetSell.sell_at_market($(e.traget)[0]);
+            }));
+        }
+
+
         /*
          * attach datepicker and timepicker to end time durations
          * have to use jquery

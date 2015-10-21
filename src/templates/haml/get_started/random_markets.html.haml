@@ -33,9 +33,9 @@
                   %a.pjaxload{:href=>url_for("trade.cgi?market=random&form_name=touchnotouch")}= l('Touch/No Touch')
                 %li!= l('In/Out (<a href="[_1]">ends between/outside</a> and <a href="[_2]">stays between/goes outside</a>)', url_for("trade.cgi?market=random&form_name=endsinout"), url_for("trade.cgi?market=random&form_name=staysinout"))
                 %li
-                  %a.pjaxload{:href=>url_for("trade.cgi?market=random&expiry_type=duration&form_name=digits&underlying_symbol=R_100&time=5t")}= l('Digits')
+                  %a.pjaxload{:href=>url_for("trade.cgi?market=random&expiry_type=duration&form_name=asian&underlying_symbol=R_100&time=5t")}= l('Asians')
                 %li
-                  %a.pjaxload{:href=>url_for("trade.cgi?market=random&expiry_type=duration&form_name=asian&underlying_symbol=R_100&time=5t")}= l('Asian')
+                  %a.pjaxload{:href=>url_for("trade.cgi?market=random&expiry_type=duration&form_name=digits&underlying_symbol=R_100&time=5t")}= l('Digits')
             .grd-grid-5.grd-grid-mobile-12
               %img.responsive{:src => url_for('images/pages/get-started/get-started-random-markets.svg')}
             .clearfix

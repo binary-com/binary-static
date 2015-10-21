@@ -23,23 +23,6 @@
       %p= l('Imagine a workplace that often doesn’t feel like work.')
       %p= l('If you’re looking to build a career, and not a resume, talk to us, Binary.com. We’re one of the IT world’s most vibrant and progressive workplaces.')
       %p= l('Who love working with people from different cultures, and are keen to contribute to a dynamic and unique workplace, and not merely pass on through.')
-    .grd-grid-12.grd-hide-mobile
-      .separator-line
-  .grd-grid-12
-    .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-6
-      %div.xquote
-        %div
-          %div.picture
-            %img.responsive{:src => url_for('images/pages/careers/corporate-culture.svg')}
-          %div.text
-            %a{:href => 'http://blog.wobb.my/project/binary/', :target => '_blank'}= l('Learn more about our corporate culture')
-    .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-6
-      %div.xquote
-        %div
-          %div.picture
-            %img.responsive{:src => url_for('images/pages/careers/handbook.svg')}
-          %div.text
-            %a{:href => url_for('/templates/haml/static/download/binary-employee-handbook.pdf'), :download => true, :target => '_blank'}= l('Employee handbook')
   .grd-grid-12.grd-hide-mobile
     .separator-line
   .grd-grid-12.grd-parent
@@ -70,6 +53,23 @@
     .grd-grid-6.grd-grid-mobile-12.grd-row-padding
       %img.responsive{:src => url_for('images/pages/careers/careers-4.png')}
       .hint.right-aligned= l('Company trip to Phuket, Thailand')
+  .grd-grid-12.grd-hide-mobile
+      .separator-line
+  .grd-grid-12
+    .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-6
+      %div.xquote
+        %div
+          %div.picture
+            %img.responsive{:src => url_for('images/pages/careers/corporate-culture.svg')}
+          %div.text
+            %a{:href => 'http://www.wobb.my/users/companies/7e437e6d-f45a-486f-87e5-1ca53d403b08', :target => '_blank'}= l('Learn more about our corporate culture')
+    .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-6
+      %div.xquote
+        %div
+          %div.picture
+            %img.responsive{:src => url_for('images/pages/careers/handbook.svg')}
+          %div.text
+            %a{:href => url_for('/templates/haml/static/download/binary-employee-handbook.pdf'), :download => true, :target => '_blank'}= l('Employee handbook')
   .grd-grid-12.grd-row-padding
     .separator-line
     %h1= l('Open positions')

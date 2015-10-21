@@ -11,7 +11,7 @@
       </div>
       <div >
          <select id="underlying"></select>
-         <a class="unicode-info-icon" id="symbol_tip" target="" href="">&#9432;</a>
+         <span class="unicode-info-icon" id="symbol_tip" target="">&#9432;</span>
          <label for="spot" id="spot_label"></label>
          <span id="spot"></span>
       </div>

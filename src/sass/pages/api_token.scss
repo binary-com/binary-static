@@ -1,0 +1,25 @@
+.api_token {
+    table td {
+		text-align: center!important;
+        vertical-align: middle!important;
+	}
+	fieldset {
+		border-bottom: 1px solid #E5E5E5;
+		margin: 20px 0;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.api_token {
+	    table td, table th {
+			font-size: 80%;
+		}
+		table button {
+			font-size: 80%;
+			padding: 10px 15px;
+		}
+		.errorfield {
+			font-size: 80%!important;
+		}
+	}
+}

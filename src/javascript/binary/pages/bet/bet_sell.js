@@ -153,6 +153,7 @@ var BetSell = function() {
                     sessionStorage.setItem('error_message', field.attr('error_message'));
                     data['error_message'] = field.attr('error_message');
                 }
+                data['sell_channel'] = field.attr('sell_channel');
                 data['barrier'] = field.attr('barrier');
                 data['barrier2'] = field.attr('barrier2');
                 data['is_immediate'] = field.attr('is_immediate');
@@ -423,12 +424,19 @@ var BetSell = function() {
             this.cancel_previous_analyse_request();
             var attr = this.data_attr(element);
             var params = this.get_params(element);
+            var $loading = $('#trading_init_progress');
+            if($loading){
+                $loading.show();
+            }
             _analyse_request = $.ajax(ajax_loggedin({
                 url     : attr.url(),
                 type    : 'POST',
                 async   : true,
                 data    : params,
                 success : function (data) {
+                    if($loading){
+                        $loading.hide();
+                    }
                     var con = that.show_sell_at_market(data);
                     var server_data = that.server_data();
                     $('.tab_menu_container').tabs({
@@ -510,7 +518,7 @@ var BetSell = function() {
                     that.clear_warnings();
                     var now_time_con = con.find('#now_time_container');
                     if (now_time_con.length > 0 ) {
-                        var stream_url = server_data.stream_url + '/' + attr.model.sell_channel();
+                        var stream_url = server_data.stream_url + '/' + server_data.sell_channel;
                         that.streaming.start(stream_url);
                         that.start_now_timer(con, 'now_time_container', 'trade_date_now'); // now timer
                         that.create_date_timer(con.find('#trade_details_now_date'));

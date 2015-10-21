@@ -85,7 +85,12 @@ function loadAnalysisTab() {
                 bindSubmitForIntradayPrices();
             } else if (currentTab === 'tab_ohlc') {
                 bindSubmitForDailyPrices();
+            } else if (currentTab == 'tab_last_digit') {
+                var digitInfo = new BetAnalysis.DigitInfo();
+                digitInfo.on_latest();
+                digitInfo.show_chart(sessionStorage.getItem('underlying'));
             }
+
         });
     }
 

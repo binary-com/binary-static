@@ -30,7 +30,7 @@ var Purchase = (function () {
             button = document.getElementById('contract_purchase_button');
 
         var error = details['error'];
-        var show_chart = !error && passthrough['duration']<=10 && passthrough['duration_unit']==='t' && (sessionStorage.formname === 'risefall' || sessionStorage.formname === 'higherlower');
+        var show_chart = !error && passthrough['duration']<=10 && passthrough['duration_unit']==='t' && (sessionStorage.formname === 'risefall' || sessionStorage.formname === 'higherlower' || sessionStorage.formname === 'asian');
 
         container.style.display = 'block';
         contracts_list.style.display = 'none';
@@ -60,10 +60,23 @@ var Purchase = (function () {
             }
             profit_value = Math.round((payout_value - cost_value)*100)/100;
 
-            payout.innerHTML = Content.localize().textContractConfirmationPayout + ' <p>' + payout_value + '</p>';
-            cost.innerHTML = Content.localize().textContractConfirmationCost + ' <p>' + cost_value + '</p>';
-            profit.innerHTML = Content.localize().textContractConfirmationProfit + ' <p>' + profit_value + '</p>';
+            if(sessionStorage.getItem('formname')==='spreads'){
+                payout.hide();
+                cost.hide();
+                profit.hide();
 
+                // payout.innerHTML = Content.localize().textStopLoss + ' <p>' + payout_value + '</p>';
+                // cost.innerHTML = Content.localize().textAmountPerPoint + ' <p>' + cost_value + '</p>';
+                // profit.innerHTML = Content.localize().textStopProfit + ' <p>' + profit_value + '</p>';
+            }
+            else {
+                payout.show();
+                cost.show();
+                profit.show();
+                payout.innerHTML = Content.localize().textContractConfirmationPayout + ' <p>' + payout_value + '</p>';
+                cost.innerHTML = Content.localize().textContractConfirmationCost + ' <p>' + cost_value + '</p>';
+                profit.innerHTML = Content.localize().textContractConfirmationProfit + ' <p>' + profit_value + '</p>';
+            }
 
             balance.textContent = Content.localize().textContractConfirmationBalance + ' ' + User.get().currency + ' ' + Math.round(receipt['balance_after']*100)/100;
 
@@ -82,27 +95,40 @@ var Purchase = (function () {
                 spots.hide();
             }
 
-            button.textContent = Content.localize().textContractConfirmationButton;
-            var purchase_date = new Date(receipt['purchase_time']*1000);
-            var button_attrs = {
-                contract_id: receipt['fmb_id'],
-                controller_action: 'sell',
-                currency: document.getElementById('currency').value,
-                payout: payout_value,
-                purchase_price: cost_value,
-                purchase_time: (purchase_date.getUTCFullYear()+'-'+(purchase_date.getUTCMonth()+1)+'-'+purchase_date.getUTCDate()+' '+purchase_date.getUTCHours()+':'+purchase_date.getUTCMinutes()+':'+purchase_date.getUTCSeconds()),
-                qty:1,
-                shortcode:receipt['shortcode'],
-                url:'https://'+window.location.host+'/trade/analyse_contract?l=EN'
-            };
-            for(var k in button_attrs){
-                if(k){
-                    button.setAttribute(k,button_attrs[k]);
+            if(sessionStorage.formname !== 'digits' && !show_chart){
+                button.show();
+                button.textContent = Content.localize().textContractConfirmationButton;
+                var purchase_date = new Date(receipt['purchase_time']*1000);
+                var button_attrs = {
+                    contract_id: receipt['fmb_id'],
+                    controller_action: 'sell',
+                    currency: document.getElementById('currency').value,
+                    payout: payout_value,
+                    purchase_price: cost_value,
+                    purchase_time: (purchase_date.getUTCFullYear()+'-'+(purchase_date.getUTCMonth()+1)+'-'+purchase_date.getUTCDate()+' '+purchase_date.getUTCHours()+':'+purchase_date.getUTCMinutes()+':'+purchase_date.getUTCSeconds()),
+                    qty:1,
+                    shortcode:receipt['shortcode'],
+                    url:'https://'+window.location.host+'/trade/analyse_contract?l=EN'
+                };
+                for(var k in button_attrs){
+                    if(k){
+                        button.setAttribute(k,button_attrs[k]);
+                    }
                 }
+            }
+            else{
+                button.hide();
             }
         }
 
         if(show_chart){
+            var contract_sentiment;
+            if(passthrough['contract_type']==='CALL' || passthrough['contract_type']==='ASIANU'){
+                contract_sentiment = 'up';
+            }
+            else{
+                contract_sentiment = 'down';
+            }
             WSTickDisplay.initialize({
                 "symbol":passthrough.symbol,
                 "number_of_ticks":passthrough.duration,
@@ -112,7 +138,7 @@ var Purchase = (function () {
                 "display_symbol":Symbols.getName(passthrough.symbol),
                 "contract_start":receipt['start_time'],
                 "decimal":3,
-                "contract_sentiment":(passthrough['contract_type']==='CALL' ? 'up' : 'down'),
+                "contract_sentiment":contract_sentiment,
                 "price":passthrough['ask-price'],
                 "payout":passthrough['amount'],
                 "show_contract_result":1

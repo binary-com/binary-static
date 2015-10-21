@@ -99,7 +99,7 @@ BetAnalysis.DigitInfo.prototype = {
     },
     on_latest: function() {
         var that = this;
-        var tab = $('#' + this.id + "-content");
+        var tab = $('#tab_last_digit-content');
         var form = tab.find('form:first');
         form.on('submit', function(event) {
             event.preventDefault();
