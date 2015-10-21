@@ -80,10 +80,6 @@
   .button button{
     cursor: pointer;
   }
-  .submitted input:invalid + label::after {
-    content: 'invalid input';
-    padding-left: 10px;
-  }
   .row, .row-inner {
     display: flex;
     justify-content: space-around;
