@@ -20,7 +20,7 @@ var PortfolioWS =  (function() {
 
     
     var updateBallance = function(data) {
-        $("span[data-id='balance']").text(fixCurrency(data.authorize.balance, data.authorize.currency).removeClass("loading");
+        $("span[data-id='balance']").text(fixCurrency(data.authorize.balance, data.authorize.currency)).removeClass("loading");
         if(0 === parseFloat(data.authorize.balance, 10)) {
             $("#if-balance-zero").removeClass("dynamic");
         } else {
