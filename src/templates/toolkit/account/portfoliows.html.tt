@@ -1,0 +1,63 @@
+<div id="portfolio">
+	<div class="grd-grid-12">
+
+		<h1 class="portfolio-header-margin">[% l('Portfolio') %]</h1>
+
+		<div class="grd-parent grd-row-padding">
+			<div class="grd-hide-mobile grd-hide-phablet">
+				[% l("Account balance : " %]
+				<span class="loading" data-id="balance"></span>
+
+				<!-- If the account ballance is zero we show the following button, otherwise we remove it -->
+				<a href="[% deposit_url %]" data-id="if-balance-zero" class="dynamic button button_large by_client_type client_real with_login_cookies">
+                <span>[% l('Make a Deposit') %]</span>
+                </a>
+
+			</div>
+		</div>
+
+		<div id="portfolio-no-contract" class="dynamic">
+			<p>[% l("No open positions.") %]</p>
+		</div>
+		
+		<div id="portfolio-table" class="dynamic">
+
+			<!-- Heading -->
+			<div class="grd-parent grd-grid-12 table-header grd-row-padding ">
+				<div class="grd-grid-2 grd-hide-mobile grd-grid-phablet-2">[% l('Ref.') %]</div>
+				<div class="grd-grid-5 grd-grid-mobile-7 grd-grid-phablet-6">[% l('Contract Details') %]</div>
+				<div class="grd-grid-5 grd-grid-mobile-5 grd-grid-phablet-4">
+					<div class="grd-grid-4 grd-grid-mobile-12 grd-grid-phablet-12 right-aligned">[% l('Purchase') %]</div>
+					<div class="grd-grid-4 grd-hide-mobile grd-hide-phablet right-aligned">[% l('Indicative') %]</div>
+					<div class="grd-grid-4 grd-hide-mobile grd-hide-phablet"></div>
+				</div>
+			</div>
+
+			<!-- Dynamic content. Will be replaced with parsed HTML by javascript -->
+			<div id="portfolio-dynamic"></div>
+
+			<!-- Table footer -->
+			<div class="grd-parent grd-grid-12 table-header grd-row-padding ">
+                <div class="grd-grid-7 grd-hide-mobile grd-hide-phablet"></div>
+                <div class="grd-grid-5 grd-grid-mobile-12 grd-grid-phablet-12">
+                    <div class="grd-hide grd-show-mobile grd-grid-mobile-12 grd-show-phablet grd-grid-phablet-12">
+                        [% l("The cost of your open positions") %] :
+                    </div>
+                    <div class="grd-grid-4 grd-grid-mobile-12 grd-grid-phablet-12 right-aligned">
+                    	<!-- Placeholder -->
+                        <span id="cost-of-open-positions"></span>
+                     </div>
+                    <div class="grd-hide grd-show-mobile grd-grid-mobile-12 grd-show-phablet grd-grid-phablet-12">
+                        <br />[% l("The value of your open positions") %] :
+                    </div>
+                    <div class="grd-grid-4 grd-grid-mobile-12 grd-grid-phablet-12 right-aligned">
+                    	<!-- Placeholder -->
+                        <span id="value-of-open-positions"></span>
+                    </div>
+                </div>
+            </div>
+
+		</div><!-- portfolio-table ends -->
+
+	</div>
+</div><!-- div#portfolio ends -->

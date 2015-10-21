@@ -6,31 +6,78 @@ var Message = (function () {
     'use strict';
 
     var process = function (msg) {
-        var response = JSON.parse(msg.data);
-        if (response) {
-            var type = response.msg_type;
-            if (type === 'authorize') {
-                User.set(response.authorize);
-                TradeSocket.send({ payout_currencies: 1 });
-            } else if (type === 'active_symbols') {
+
+        var response;
+
+        try {
+            response  = JSON.parse(msg.data);
+            if('object' !== typeof response || !("msg_type" in response)) {
+                throw new Error("Response from WS API is not well formatted.");
+            }
+        } catch(e) {
+            throw new Error("Response from WS API is not well formatted.");
+        }
+
+        var msg_type = response.msg_type;
+        
+        switch(msg_type) {
+
+            case 'authorize':
+
+                var thendo = "unknown";
+                if("passthrough" in response.echo_req && "thendo" in response.echo_req.passthrough) {
+                    thendo = response.echo_req.passthrough.thendo;
+                }
+
+                switch(thendo) {
+                    case "updateBalance":
+                        PortfolioWS.updateBallance(response);
+                        TradeSocket.send({"portfolio": 1}); // It seems the spawn property has been removed from the API (it is still in the Playground but even there it results in an error)
+                        break;
+
+                    default:
+                        User.set(response.authorize);
+                        TradeSocket.send({ payout_currencies: 1 });
+                }
+                break;
+
+            case 'active_symbols':
                 processActiveSymbols(response);
-            } else if (type === 'contracts_for') {
+                break;
+
+            case 'contracts_for':
                 processContract(response);
-            } else if (type === 'payout_currencies') {
+                break;
+
+            case 'payout_currencies':
                 sessionStorage.setItem('currencies', msg.data);
                 displayCurrencies();
-            } else if (type === 'proposal') {
+                break;
+
+            case 'proposal':
                 processProposal(response);
-            } else if (type === 'buy') {
+                break;
+
+            case 'buy':
                 Purchase.display(response);
-            } else if (type === 'tick') {
+                break;
+
+            case 'tick':
                 processTick(response);
-            } else if (type === 'trading_times'){
+                break;
+
+            case 'trading_times':
                 processTradingTimes(response);
-            }
-        } else {
-            console.log('some error occured');
+                break;
+
+            case 'portfolio':
+                PortfolioWS.updatePortfolio(response);
+
+            default:
+                throw new Error("No method exits to handle api message of type ", response.msg_type);
+
         }
+
     };
 
     return {

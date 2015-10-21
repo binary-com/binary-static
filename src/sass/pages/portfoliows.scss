@@ -1,0 +1,9 @@
+a.dynamic, span.dynamic, div.dynamic, p.dynamic, button.dynamic {
+	display: none!important;
+}
+
+span.loading:before {
+  content: "Loading ...";
+  color: tomato;
+  font-size: 0.7em;
+}

@@ -147,7 +147,7 @@ pjax_config_page('portfolio', function() {
             $('#currencyfrom').keyup(function(event) { currencyConvertorCalculator(event.target); });
             $('#currencyfromvalue').change(function(event) { checkCurrencyAmountFormat(event.target); });
             $('#currencyfromvalue').keyup(function(event) { checkCurrencyAmountFormat(event.target); });
-            Portfolio.update_indicative_prices();
+            //Portfolio.update_indicative_prices();
         }
     };
 });

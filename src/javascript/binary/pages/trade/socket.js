@@ -39,13 +39,21 @@ var TradeSocket = (function () {
         }
     };
 
-    var init = function () {
+    var init = function (passthrough) {
         tradeSocket = new WebSocket(socketUrl);
 
         tradeSocket.onopen = function (){
             var loginToken = getCookieItem('login');
             if(loginToken) {
-                tradeSocket.send(JSON.stringify({authorize: loginToken}));
+                if("object" === typeof passthrough) {
+                    var j = {
+                        authorize: loginToken,
+                        passthrough: passthrough
+                    };
+                    tradeSocket.send(JSON.stringify(j));
+                } else {
+                    tradeSocket.send(JSON.stringify({authorize: loginToken}));
+                }
             } else {
                 tradeSocket.send(JSON.stringify({ payout_currencies: 1 }));
             }
