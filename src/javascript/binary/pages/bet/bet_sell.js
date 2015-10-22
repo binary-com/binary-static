@@ -748,7 +748,9 @@ var BetSell = function() {
                     var con = that.show_spread_popup(data);
                     var contract_status = con.find('#status').text();
                     if (contract_status === 'Open') {
-                        BetPrice.spread.stream(attr.model.sell_channel());
+                        var field = $('#sell_extra_info_data');
+                        var sell_channel = field.attr('sell_channel');
+                        BetPrice.spread.stream(attr.model.sell_channel() ? attr.model.sell_channel() : sell_channel);
                     }
                },
             })).always(function () {
