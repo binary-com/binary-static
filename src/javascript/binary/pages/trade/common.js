@@ -681,3 +681,28 @@ function countDecimalPlaces(num) {
         }
     }
 }
+
+function setUnderlyingTime() {
+    console.log('huhu');
+    var instrumentCode = document.getElementById('underlying').value;
+    var timePeriodElement = document.getElementById('timePeriod');
+    var timePeriod = "1m";
+    
+    if (timePeriodElement && timePeriodElement.value !== '1m') {
+        timePeriod = document.getElementById('timePeriod').value;
+    }
+
+    var chartFrameElement = document.getElementById('chartFrame');
+    if(chartFrameElement) {
+        chartFrameElement.src = 'https://highcharts.binary.com/v1.3.3/affiliates.html?affiliates=true&instrument=' + instrumentCode + '&timePeriod=' + timePeriod;
+        document.getElementById('timePeriod').addEventListener("change", function(){
+            setUnderlyingTime();
+        });
+        document.getElementById('underlying').addEventListener("change", function(){
+            setUnderlyingTime();
+        });
+        document.getElementById('contract_markets').addEventListener("change", function(){
+            setUnderlyingTime();
+        });
+    }
+}

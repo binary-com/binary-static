@@ -71,8 +71,14 @@ function loadAnalysisTab() {
     toggleActiveAnalysisTabs();
 
     if (currentTab === 'tab_graph') {
-        BetAnalysis.tab_live_chart.reset();
-        BetAnalysis.tab_live_chart.render(true);
+        $.ajax(ajax_loggedin({
+                url     : '/d/trade_livechart.cgi?l=' + page.language(),
+                dataType: 'html',
+                success : function (data) {
+                            document.getElementById('trade_live_chart').innerHTML = data;
+                            setUnderlyingTime();
+                          },
+            }));
     } else {
         var url = currentLink.getAttribute('href');
         $.ajax({
