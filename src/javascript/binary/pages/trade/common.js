@@ -684,24 +684,29 @@ function countDecimalPlaces(num) {
 
 function setUnderlyingTime() {
     console.log('huhu');
-    var instrumentCode = document.getElementById('underlying').value;
+    var instrumentCode = document.getElementById('underlying');
+    var contractMarkets = document.getElementById('bet_underlying');
     var timePeriodElement = document.getElementById('timePeriod');
     var timePeriod = "1m";
     
     if (timePeriodElement && timePeriodElement.value !== '1m') {
-        timePeriod = document.getElementById('timePeriod').value;
+        timePeriod = timePeriodElement.value;
     }
 
-    var chartFrameElement = document.getElementById('chartFrame');
+    var chartFrameElement = document.getElementById('chart_frame');
     if(chartFrameElement) {
-        chartFrameElement.src = 'https://highcharts.binary.com/v1.3.3/affiliates.html?affiliates=true&instrument=' + instrumentCode + '&timePeriod=' + timePeriod;
-        document.getElementById('timePeriod').addEventListener("change", function(){
-            setUnderlyingTime();
-        });
-        document.getElementById('underlying').addEventListener("change", function(){
-            setUnderlyingTime();
-        });
-        document.getElementById('contract_markets').addEventListener("change", function(){
+        if (instrumentCode) {
+            chartFrameElement.src = 'https://highcharts.binary.com/v1.3.3/affiliates.html?affiliates=true&instrument=' + instrumentCode.value + '&timePeriod=' + timePeriod;
+            instrumentCode.addEventListener("change", function(){
+                setUnderlyingTime();
+            });
+        } else if (contractMarkets) {
+            chartFrameElement.src = 'https://highcharts.binary.com/v1.3.3/affiliates.html?affiliates=true&instrument=' + contractMarkets.value + '&timePeriod=' + timePeriod;
+            contractMarkets.addEventListener("change", function(){
+                setUnderlyingTime();
+            });
+        }
+        timePeriodElement.addEventListener("change", function(){
             setUnderlyingTime();
         });
     }
