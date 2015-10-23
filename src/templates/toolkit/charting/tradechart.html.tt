@@ -1,15 +1,15 @@
-<div id="live_chart_form_wrapper" class='grd-grid-12'>
+<div class='grd-grid-12'>
     <table width="600px" align="center">
       <tr>
-        <td align="right" width="25%">Time period : </td>
+        <td align="right" width="25%">Duration: </td>
+        <td align="left" width="5%">
+          <input type="number" id="time_amount" class="small_width_input" min="" max=""></input>
+        </td>
         <td align="left" width="25%">
-          <select id="timePeriod">
-            <option value="1m">1 minute</option>
-            <option value="5m">5 minutes</option>
-            <option value="15m">15 minutes</option>
-            <option value="1h">1 hour</option>
-            <option value="4h">4 hours</option>
-            <option value="1d">1 day</option>
+          <select id="time_period">
+            <option value="m">minutes</option>
+            <option value="h">hours</option>
+            <option value="d">days</option>
           </select>
         </td>
       </tr>

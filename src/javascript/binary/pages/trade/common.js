@@ -682,31 +682,62 @@ function countDecimalPlaces(num) {
     }
 }
 
+function setMinMaxTime(){
+    if (!document.getElementById('time_amount').value) {
+        document.getElementById('time_amount').value = 1;
+    }
+    var time = document.getElementById('time_amount');
+    var period = document.getElementById('time_period').value;
+    if (period === 'm') {
+        time.setAttribute('min', 1);
+        time.setAttribute('max', 59);
+        if (time.value > 59) {
+            document.getElementById('time_amount').value = 1;
+        }
+    } else if (period === 'h') {
+        time.setAttribute('min', 1);
+        time.setAttribute('max', 23);
+        if (time.value > 23) {
+            document.getElementById('time_amount').value = 1;
+        }
+    } else if (period === 'd') {
+        time.setAttribute('min', 1);
+        time.setAttribute('max', 3);
+        if (time.value > 3) {
+            document.getElementById('time_amount').value = 1;
+        }
+    }
+}
+
 function setUnderlyingTime() {
-    console.log('huhu');
     var instrumentCode = document.getElementById('underlying');
     var contractMarkets = document.getElementById('bet_underlying');
-    var timePeriodElement = document.getElementById('timePeriod');
-    var timePeriod = "1m";
-    
-    if (timePeriodElement && timePeriodElement.value !== '1m') {
-        timePeriod = timePeriodElement.value;
-    }
+    setMinMaxTime();
+    var timeAmount = document.getElementById('time_amount');
+    var timePeriod = document.getElementById('time_period');
+    var time =  timeAmount.value + timePeriod.value;
 
     var chartFrameElement = document.getElementById('chart_frame');
     if(chartFrameElement) {
         if (instrumentCode) {
-            chartFrameElement.src = 'https://highcharts.binary.com/v1.3.3/affiliates.html?affiliates=true&instrument=' + instrumentCode.value + '&timePeriod=' + timePeriod;
+            chartFrameElement.src = 'https://highcharts.binary.com?affiliates=true&instrument=' + instrumentCode.value + '&timePeriod=' + time;
             instrumentCode.addEventListener("change", function(){
                 setUnderlyingTime();
             });
         } else if (contractMarkets) {
-            chartFrameElement.src = 'https://highcharts.binary.com/v1.3.3/affiliates.html?affiliates=true&instrument=' + contractMarkets.value + '&timePeriod=' + timePeriod;
+            chartFrameElement.src = 'https://highcharts.binary.com?affiliates=true&instrument=' + contractMarkets.value + '&timePeriod=' + time;
             contractMarkets.addEventListener("change", function(){
                 setUnderlyingTime();
             });
+            document.getElementById('submarket').addEventListener("change", function(){
+                setUnderlyingTime();
+            });
         }
-        timePeriodElement.addEventListener("change", function(){
+        timePeriod.addEventListener("change", function(){
+            setMinMaxTime();
+            setUnderlyingTime();
+        });
+        timeAmount.addEventListener("change", function(){
             setUnderlyingTime();
         });
     }

@@ -174,6 +174,10 @@ var BetForm = function () {
                         BetPrice.get_price();
                     }
                     BetAnalysis.restore();
+                    var currentTab = getActiveTab();
+                    if (currentTab === 'tab_graph') {
+                        setUnderlyingTime();
+                    }
                 },
                 hide_sub_trade: function () {
                     var sub_trade_menu = $('#betsTab').children().find('.tm-ul-2');
