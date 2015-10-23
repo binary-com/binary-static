@@ -149,6 +149,8 @@ var Price = (function () {
             description = container.getElementsByClassName('contract_description')[0],
             comment = container.getElementsByClassName('price_comment')[0],
             error = container.getElementsByClassName('contract_error')[0],
+            amount_wrapper = container.getElementsByClassName('amount_wrapper')[0],
+            price_wrapper = container.getElementsByClassName('price_wrapper')[0],
             currency = document.getElementById('currency');
 
         var display = type ? (contractType ? contractType[type] : '') : '';
@@ -175,7 +177,7 @@ var Price = (function () {
 
         if (proposal['longcode']) {
             proposal['longcode'] = proposal['longcode'].replace(/[\d\,]+\.\d\d/,function(x){return '<b>'+x+'</b>';});
-            description.innerHTML = proposal['longcode'];
+            description.innerHTML = '<div>'+proposal['longcode']+'</div>';
         }
 
         if (document.getElementById('websocket_form')) {
@@ -197,12 +199,16 @@ var Price = (function () {
         if (details['error']){
             purchase.hide();
             comment.hide();
+            amount_wrapper.hide();
+            price_wrapper.classList.add('small');
             error.show();
             error.textContent = details['error'].message;
         }
         else{
             purchase.show();
             comment.show();
+            amount_wrapper.show();
+            price_wrapper.classList.remove('small');
             error.hide();
             if (is_spread) {
                 displayCommentSpreads(comment, currency.value, proposal['spread']);

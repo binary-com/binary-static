@@ -317,6 +317,9 @@
       line-height: 1.5;
       font-size: 90%;
       flex: 1 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .contract_amount {
       font-weight: bold;
@@ -355,6 +358,10 @@
     text-align: center;
     align-items: center;
     width: 230px;
+
+    &.small{
+      width: 95px;
+    }
 
     div {
       padding: 0 5px;
@@ -470,6 +477,9 @@
       }
       .price_wrapper {
         flex-direction: row !important;
+         &.small{
+          width: auto;
+        }
       }
       .row {
         flex-direction: column;
@@ -491,6 +501,9 @@
   }
   #trading_socket_container #contract_prices_container .price_container .price_wrapper {
     width: 100%;
+     &.small{
+      width: auto;
+    }
   }
 }
 
