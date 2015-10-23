@@ -1,42 +1,119 @@
+/**
+ * Notice
+ * Some comments are used as a temporary reminder and will be removed before
+ * PR being ready.
+**/
+var PasswordWS = (function(){
 
-var PasswrdWS = (function(){
 
-
+	var $form   = $("#change-password > form");
+	var $result = $("#change-password > div[data-id='success-result']");
 	var validateForm = function() {
 
-		var errors = [];
-		var inputs = ['old', 'new', 'repeat'];
-		var $form = $("#changePasswordForm");
+		var isValid 	= true
+		,	
+		,	old_pass 	= $form.find("input.old-password").val()
+		,	new_pass 	= $form.find("input.new-password").val()
+		,	repeat_pass = $form.find("input.repeat-password").val();
 
-		inputs.forEach(function(i){
-			value = $form.find("input."+i).val();
+		/**
+		 * Validation for new-password
+		**/
 
-			// Password too short
-			if(value.length < 5) {
-				
-			}
+		// New password cannot be the same as the old password
+		// https://github.com/regentmarkets/bom-websocket-api/blob/c1bfcfcf78e7ac3bfd7a8ff587e62f313bf9ac81/lib/BOM/WebSocketAPI/v3/Accounts.pm#L190
+		if(new_pass.length > 0 && new_pass === old_pass) {
 
-			// Password too long
-			console.log(i);
+		}
+
+		// Min length
+		if(new_pass.length < 6) {
+			$form.find("p[data-error='too-short']").addClass("show");
+			isValid = false;
+		} else {
+			$form.find("p[data-error='too-short']").removeClass("show");
+		}
+
+		// Max length
+		if(new_pass.length > 25) {
+			$form.find("p[data-error='too-long']").addClass("show");
+			isValid = false;
+		} else {
+			$form.find("p[data-error='too-long']").removeClass("show");
+		}
+
+
+		// New and Repeat should be the same
+		if(new_pass !== repeat_pass) {
+			$form.find("p[data-error='not-the-same']").addClass("show");
+			isValid = false;
+		} else {
+			$form.find("p[data-error='not-the-same']").removeClass("show");
+		}
+
+		if(isValid) return {
+			old_pass: old_pass,
+			new_pass: new_pass
+		};
+
+		return false;
+
+	};
+
+	var sendRequest = function() {
+
+		var passwords = validateForm();
+		if(false === passwords) return false;
+
+		TradeSocket.send({
+		    "change_password": "1", // or 1 ?
+		    "old_password": passwords.old_pass,
+		    "new_password": passwords.new_pass
 		});
 
-
-		var rules = {
-			minLength: {
-
-			}
-		};
 	};
 
-	var minLength = function(str) {
+	var apiResponse = function(resp) {
 
-	}
+		/** 
+		 * Failed
+		**/
+		if("error" in resp) {
+
+			/**
+			 * The following have been extracted from https://github.com/regentmarkets/bom-websocket-api/blob/c1bfcfcf78e7ac3bfd7a8ff587e62f313bf9ac81/lib/BOM/WebSocketAPI/v3/Accounts.pm#L171
+			**/
+
+			// ChangePasswordError
+			//  /Old password is wrong/
+
+			// InputValidationFailed
+
+			// ChangePasswordError
+			// /New password is same as old password/
+
+			return false;
+		}
+
+		$form.addClass('hidden');
+		$result.removeClass('hidden');
+		setInterval(function() { window.location.hostname + "/login"; }, 5000);
+
+		return true;
+
+	};
 
 	return {
-		validateForm: validateForm,
-		sendRequest: sendRequest
+		sendRequest: sendRequest,
+		apiResponse: apiResponse
 	};
+
 })();
+
+/*******************************************************************************
+
+Old onsubmit handler code. Will later be removed. For now, kept for easy lookup
+
 
 function () { 
 	var bResult = true; 
@@ -127,4 +204,6 @@ function () {
 		}
 		if (bInputResult && !client_form.compare_new_password(input_element_npassword.value, input_element_npassword2.value)){
 			error_element_errornpassword2.innerHTML = decodeURIComponent('The two passwords that you entered do not match.');bInputResult = false;}if (!bInputResult){bResult = bInputResult;}};  return bResult; })();
-		
+
+End of old code
+*******************************************************************************/	
