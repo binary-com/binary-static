@@ -414,7 +414,7 @@ var TradingEvents = (function () {
         var view_button = document.getElementById('contract_purchase_button');
         if(view_button){
             view_button.addEventListener('click', debounce( function (e) {
-                BetSell.sell_at_market($(e.traget)[0]);
+                BetSell.sell_at_market(e.target);
             }));
         }
 

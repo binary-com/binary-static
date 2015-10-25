@@ -2,7 +2,7 @@
   selected_tab = request.param('selected_tab');
   IF NOT selected_tab; selected_tab = 'legal-tab'; END;
 %]
-<div class="content-tab-container">
+<div class="content-tab-container static_full">
   <div class="tab-menu">
     <div class="tab-menu-wrap grd-container">
       <ul id="legal-menu" class="tm-ul">
