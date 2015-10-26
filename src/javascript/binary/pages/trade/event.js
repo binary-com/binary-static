@@ -417,6 +417,7 @@ var TradingEvents = (function () {
                 BetSell.sell_at_market($(e.traget)[0]);
             }));
         }
+        
 
         /*
          * attach datepicker and timepicker to end time durations
