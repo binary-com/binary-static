@@ -106,7 +106,7 @@ function processContract(contracts) {
 function processContractForm() {
     Contract.details(sessionStorage.getItem('formname'));
 
-    displayStartDates();
+    StartDates.display();
 
     Durations.display();
 
