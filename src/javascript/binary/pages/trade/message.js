@@ -74,7 +74,7 @@ var Message = (function () {
                 PortfolioWS.updatePortfolio(response);
                 break;
 
-            case: "change_password":
+            case "change_password":
                 PasswordWS.apiResponse(response);
                 break;
 

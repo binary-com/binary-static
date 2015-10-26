@@ -8,10 +8,10 @@ var PasswordWS = (function(){
 
 	var $form   = $("#change-password > form");
 	var $result = $("#change-password > div[data-id='success-result']");
+	
 	var validateForm = function() {
 
 		var isValid 	= true
-		,	
 		,	old_pass 	= $form.find("input.old-password").val()
 		,	new_pass 	= $form.find("input.new-password").val()
 		,	repeat_pass = $form.find("input.repeat-password").val();
