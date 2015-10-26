@@ -444,7 +444,7 @@ var BetSell = function() {
                            var load_live_chart = ui.tab.find(".ui-tabs-anchor").attr('load_live_chart');
                            if (load_live_chart && load_live_chart == 1) {
                                var symbol = ui.tab.find(".ui-tabs-anchor").attr('underlying_symbol');
-                               setUnderlyingTime();
+                               chartFrameSource(symbol);
                            }
                         }
                     });

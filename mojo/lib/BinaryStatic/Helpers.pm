@@ -376,14 +376,6 @@ sub _main_menu_charting {
         link_class => 'pjaxload',
     };
 
-    # live charts
-    my $live_charts_ref = {
-        id         => 'topMenuLiveCharts',
-        url        => $self->c->url_for('/charting/livechart'),
-        text       => $self->c->l('Live Charts'),
-        link_class => 'pjaxload',
-    };
-
     # high charts
     my $highcharts_ref = {
         id         => 'topMenuLiveCharts',
@@ -392,7 +384,7 @@ sub _main_menu_charting {
         link_class => 'pjaxload',
     };
 
-    $charting_items_ref->{'sub_items'} = [$live_charts_ref, $highcharts_ref];
+    $charting_items_ref->{'sub_items'} = [$highcharts_ref];
 
     return $charting_items_ref;
 }

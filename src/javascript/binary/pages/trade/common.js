@@ -712,6 +712,14 @@ function setMinMaxTime(){
 function setUnderlyingTime() {
     var instrumentCode = document.getElementById('underlying');
     var contractMarkets = document.getElementById('bet_underlying');
+    if (instrumentCode) {
+        chartFrameSource(instrumentCode.value);
+    } else if (contractMarkets) {
+        chartFrameSource(contractMarkets.value);
+    }
+}
+
+function chartFrameSource(underlying){
     setMinMaxTime();
     var timeAmount = document.getElementById('time_amount');
     var timePeriod = document.getElementById('time_period');
@@ -719,13 +727,15 @@ function setUnderlyingTime() {
 
     var chartFrameElement = document.getElementById('chart_frame');
     if(chartFrameElement) {
-        if (instrumentCode) {
-            chartFrameElement.src = 'https://highcharts.binary.com?affiliates=true&instrument=' + instrumentCode.value + '&timePeriod=' + time;
+        chartFrameElement.src = 'https://highcharts.binary.com?affiliates=true&instrument=' + underlying + '&timePeriod=' + time;
+        
+        if (document.getElementById('underlying')) {
+            var instrumentCode = document.getElementById('underlying');
             instrumentCode.addEventListener("change", function(){
                 setUnderlyingTime();
             });
-        } else if (contractMarkets) {
-            chartFrameElement.src = 'https://highcharts.binary.com?affiliates=true&instrument=' + contractMarkets.value + '&timePeriod=' + time;
+        } else if (document.getElementById('bet_underlying')) {
+            var contractMarkets = document.getElementById('bet_underlying');
             contractMarkets.addEventListener("change", function(){
                 setUnderlyingTime();
             });
@@ -733,11 +743,15 @@ function setUnderlyingTime() {
                 setUnderlyingTime();
             });
         }
+        
         timePeriod.addEventListener("change", function(){
             setMinMaxTime();
             setUnderlyingTime();
         });
         timeAmount.addEventListener("change", function(){
+            setUnderlyingTime();
+        });
+        timeAmount.addEventListener("keyup", function(){
             setUnderlyingTime();
         });
     }

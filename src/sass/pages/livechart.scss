@@ -48,3 +48,16 @@
     width: 90%;
     margin: 5px 0;
 }
+
+.chartMenuHamburgerMenu span::after {
+    height: 100%;
+    top: 8px;
+}
+.chartMenuHamburgerMenu span::before {
+    height: 100%;
+    top: 16px;
+}
+.chartMenuHamburgerMenu span {
+    width: 50%;
+    height: 15%;
+}
