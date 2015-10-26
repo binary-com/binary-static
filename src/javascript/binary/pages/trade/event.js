@@ -414,7 +414,12 @@ var TradingEvents = (function () {
         var view_button = document.getElementById('contract_purchase_button');
         if(view_button){
             view_button.addEventListener('click', debounce( function (e) {
-                BetSell.sell_at_market(e.target);
+                if(sessionStorage.getItem('formname')==='spreads'){
+                    BetSell.show_buy_sell(e.target);
+                }
+                else{
+                    BetSell.sell_at_market(e.target);           
+                }
             }));
         }
 
