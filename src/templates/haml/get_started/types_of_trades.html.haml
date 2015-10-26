@@ -5,15 +5,15 @@
     %p= l('Whatever your market view or strategy, [_1] provides you with the right trade to profit from your prediction. Choose from five ways to trade:', stash->{website_name})
     %ul.bullet
       %li= l('Up/Down trades')
-      %li= l('Touch/no touch trades')
-      %li= l('In/out trades')
+      %li= l('Touch/No touch trades')
+      %li= l('In/Out trades')
       %li.ja-hide= l('Asians')
       %li.ja-hide= l('Digits')
 
   .subsection
     .grd-grid-12
       %h2
-        %a.pjaxload{:href => url_for('trade.cgi?market=forex&form_name=risefall')}= l('Up / Down')
+        %a.pjaxload{:href => url_for('trade.cgi?market=forex&form_name=risefall')}= l('Up/Down')
       %p.ja-hide= l('Choose Rise/Fall when you want to profit from the market rising or falling from its current level.')
       %p= l('Choose Higher/Lower when you want to profit from the market ending higher or lower than a price target.')
       %ol
@@ -23,7 +23,7 @@
   .subsection
     .grd-grid-12
       %h2
-        %a.pjaxload{:href => url_for('trade.cgi?market=forex&form_name=touchnotouch')}= l('Touch / No Touch')
+        %a.pjaxload{:href => url_for('trade.cgi?market=forex&form_name=touchnotouch')}= l('Touch/No Touch')
       %p= l('Choose Touch / No Touch when you want to profit from the market touching or not touching a target any time during the contract period.')
       %ol
         %li= l('Choose the market, the price target, the time period, and how much you wish to win.')
@@ -32,7 +32,7 @@
   .subsection
     .grd-grid-12
       %h2
-        %a.pjaxload{:href => url_for('trade.cgi?market=forex&form_name=staysinout')}= l('In / Out')
+        %a.pjaxload{:href => url_for('trade.cgi?market=forex&form_name=staysinout')}= l('In/Out')
       %p= l('Choose Stays In/Out to profit from the market staying inside or going outside two price targets any time during the contract period.')
       %p= l('Choose Ends In/Out to profit from the market stopping inside or outside two price targets at the end of the time period.')
       %ol
