@@ -196,7 +196,11 @@ var Durations = (function(){
         // jquery for datepicker
         var amountElement = $('#duration_amount');
         if (unit.value === 'd') {
+            var tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+
             amountElement.datepicker({
+                minDate: tomorrow,
                 onSelect: function() {
                     var date = $(this).datepicker('getDate');
                     var today = new Date();
