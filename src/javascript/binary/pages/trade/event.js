@@ -150,6 +150,7 @@ var TradingEvents = (function () {
                     expiry_time.show();
                     processPriceRequest();
                 }
+                Barriers.display();
             });
         }
 
