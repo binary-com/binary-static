@@ -26,7 +26,7 @@ var Price = (function () {
             amountType = document.getElementById('amount_type'),
             currency = document.getElementById('currency'),
             payout = document.getElementById('amount'),
-            startTime = document.getElementById('date_start'),
+            startTime = StartDates.node(),
             expiryType = document.getElementById('expiry_type'),
             duration = document.getElementById('duration_amount'),
             durationUnit = document.getElementById('duration_units'),
@@ -141,7 +141,6 @@ var Price = (function () {
 
         var position = contractTypeDisplayMapping(type);
         var container = document.getElementById('price_container_'+position);
-        var box = document.getElementById('price_container_' + position);
 
         var h4 = container.getElementsByClassName('contract_heading')[0],
             amount = container.getElementsByClassName('contract_amount')[0],
@@ -178,22 +177,6 @@ var Price = (function () {
         if (proposal['longcode']) {
             proposal['longcode'] = proposal['longcode'].replace(/[\d\,]+\.\d\d/,function(x){return '<b>'+x+'</b>';});
             description.innerHTML = '<div>'+proposal['longcode']+'</div>';
-        }
-
-        if (document.getElementById('websocket_form')) {
-
-            if (!document.getElementById('websocket_form').checkValidity()) {
-                if (box) {
-                    box.style.display = 'none';
-                }
-                processForgetPriceIds();
-            }
-
-            else if (document.getElementById('websocket_form').checkValidity()) {
-                if (box) {
-                    box.style.display = 'block';
-                }
-            }
         }
 
         if (details['error']){
