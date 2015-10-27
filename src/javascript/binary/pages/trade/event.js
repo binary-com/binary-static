@@ -425,7 +425,8 @@ var TradingEvents = (function () {
             minDate: new Date(),
             dateFormat: "yy-mm-dd"
         });
-        $(".pickatime" ).timepicker();
+        var date = new Date();
+        $(".pickatime" ).timepicker({minTime:{hour: date.getUTCHours(), minute: date.getUTCMinutes()}});
     };
 
     return {
