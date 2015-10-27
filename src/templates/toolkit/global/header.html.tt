@@ -52,9 +52,6 @@
                             <li>
                                 <a class="smaller-font pjaxload" href="[% request.url_for('tour') %]"[% target %]>[% l("Tour") %]</a>
                             </li>
-                            <li class="fr-hide">
-                                <a class="smaller-font pjaxload" href="[% request.url_for('trade.cgi') %]"[% target %]>[% l("Trade") %]</a>
-                            </li>
                             <li class="fr-show">
                                 <a class="smaller-font pjaxload" href="[% request.url_for('trading') %]"[% target %]>[% l("Trade") %]</a>
                             </li>
