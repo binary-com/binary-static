@@ -415,7 +415,7 @@ var TradingEvents = (function () {
                 }
             }));
         }
-        
+
 
         /*
          * attach datepicker and timepicker to end time durations

@@ -33,7 +33,7 @@ pjax_config_page('/trade.cgi', function() {
                     document.addEventListener("visibilitychange", toggleStreaming);
                 }
             }
-            
+
         },
         onUnload: function() {
             BetForm.unregister_actions();
