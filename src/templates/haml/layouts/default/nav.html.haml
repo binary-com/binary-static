@@ -12,8 +12,8 @@
     - }
     - if ($lang eq 'FR') {
       %li
-        %a.smaller-font{:href=>url_for('trading'), :class => 'pjaxload'}= l('Trade')
+        %a.smaller-font{:href=>url_for('trading'), :class => 'fr-show pjaxload'}= l('Trade')
     - } else {
       %li
-        %a.smaller-font{:href=>url_for('trade.cgi'), :class => 'pjaxload'}= l('Trade')
+        %a.smaller-font{:href=>url_for('trade.cgi'), :class => 'fr-hide pjaxload'}= l('Trade')
     - }
