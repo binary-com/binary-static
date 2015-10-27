@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-10-24 14:06+0200\n"
+"PO-Revision-Date: 2015-10-26 07:45+0200\n"
 "Last-Translator: Ehab Gubil <egubil@gmail.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/binary/static/ar/>\n"
 "Language: ar\n"
@@ -392,16 +392,12 @@ msgid "3. Choose how you want to Trade the Market"
 msgstr "3. اختر كيف تريد أن تتداول فى السوق"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1946
-#, fuzzy
-#| msgid "7-day limit on losses"
 msgid "30-day limit on losses"
-msgstr "الحد الأقصى على الخسائر لمدة 7-أيام"
+msgstr "الحد الأقصى على الخسائر لمدة 30 يوم"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1911
-#, fuzzy
-#| msgid "7-day turnover limit"
 msgid "30-day turnover limit"
-msgstr "حد دورة رأس المال لـ 7-أيام"
+msgstr "حد دورة رأس المال لـ 30 يوم"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/livechart_duration.html.tt:34
 msgid "3m"
@@ -2362,6 +2358,7 @@ msgstr "استمر"
 
 #: /home/git/translations/binary-static/src/templates/haml/user/balance.html.haml:1
 #: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
 msgid "Continue Trading"
 msgstr "مواصلة التداول"
 
@@ -4414,7 +4411,7 @@ msgstr "أدوات مالية"
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Interested, so what’s next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:affiliates@binary.com'>hear from you!</a>"
-msgstr "مهتم، فما هي الخطوة التالية؟ إذا كان بامكتنك أن تقدم لعملائنا طريقة نقدية إلكترونية معينة أو خيار الدفع بعملة محلية غير مقدمة بالفعل من %1، وكان لديك سجل جيد في السوق، إذن نود أن <a href='mailto:affiliates@binary.com'>نسمع منك!</a>"
+msgstr "مهتم، فما هي الخطوة التالية؟ إذا كان بامكانك أن تقدم لعملائنا طريقة نقدية إلكترونية معينة أو خيار الدفع بعملة محلية غير مقدمة بالفعل من %1، وكان لديك سجل جيد في السوق، إذن نود أن <a href='mailto:affiliates@binary.com'>نسمع منك!</a>"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/how_to_trade_binaries.html.haml:1
 msgid "Interested? Why not try a virtual account"
@@ -5712,10 +5709,8 @@ msgid "Maximum account cash balance is currently set to <strong>%1 %2</strong>"
 msgstr "الحد الأقصى لرصيد الحساب النقدي مضبوط على <strong>%1 %2</strong>"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1932
-#, fuzzy
-#| msgid "Maximum aggregate contract purchases over a 7-day period."
 msgid "Maximum aggregate contract purchases over a 30-day period."
-msgstr "الحد الأقصى لإجمالي مشتريات العقد على مدى 7 أيام."
+msgstr "الحد الأقصى لإجمالي مشتريات العقود على مدى 30 يوم."
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1862
 msgid "Maximum aggregate contract purchases over a 7-day period."
@@ -5726,10 +5721,8 @@ msgid "Maximum aggregate contract purchases per day."
 msgstr "الحد الأقصى لإجمالي مشتريات العقد في اليوم الواحد."
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1967
-#, fuzzy
-#| msgid "Maximum aggregate loss over a 7-day period."
 msgid "Maximum aggregate loss over a 30-day period."
-msgstr "الحد الأقصى لإجمالي الخسارة على مدى 7 أيام.."
+msgstr "الحد الأقصى لإجمالي الخسارة على مدى 30 يوم."
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1897
 msgid "Maximum aggregate loss over a 7-day period."
@@ -6314,6 +6307,10 @@ msgstr "يفتح"
 msgid "Opens late (at %1)"
 msgstr "يفتح متأخرا (فى %1)"
 
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
+msgid "Options trading can become a real addiction, as can any other activity pushed to its limits. To avoid the danger of such an addiction, we provide a reality-check that gives you a summary of your trades and accounts on a regular basis."
+msgstr ""
+
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/tac.html.tt:30
 msgid "Order Execution"
 msgstr "تنفيذ الأمر"
@@ -6717,6 +6714,13 @@ msgstr "رجاء إدخال تاريخ بعد الآن بستة أشهر على 
 msgid "Please enter a number between 0 and %1."
 msgstr "يرجى إدخال رقم بين 0 و %1."
 
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
+#, fuzzy
+#| msgid "Please enter a number between 0 and %1."
+msgid "Please enter a number greater than 0"
+msgstr "يرجى إدخال رقم بين 0 و %1."
+
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3025
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3082
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:686
@@ -6902,6 +6906,12 @@ msgstr "يرجى تحديد البلد الذي تقيم فيه"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3443
 msgid "Please specify your country."
+msgstr "يرجى تحديد بلدك."
+
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
+#, fuzzy
+#| msgid "Please specify your country."
+msgid "Please specify your preferred reality-check interval"
 msgstr "يرجى تحديد بلدك."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
@@ -7183,10 +7193,8 @@ msgstr "أن شراء هذا العقد يؤدي لتجاوزك حد العوا�
 
 #. ($currency, $limit)
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1009
-#, fuzzy
-#| msgid "Purchase of this contract would cause you to exceed your 7-day turnover limit of %1%2."
 msgid "Purchase of this contract would cause you to exceed your 30-day turnover limit of %1%2."
-msgstr "شراء هذا العقد سيتسبب فى تجاوزك لحد حجم تداول الـ 7 أيام البالغ  %1%2."
+msgstr "شراء هذا العقد سيتسبب فى تجاوزك لحد حجم تداول الـ 30 يوم البالغ  %1%2."
 
 #. ($currency, $limit)
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:966
@@ -7300,7 +7308,14 @@ msgid "Real-time prices, benchmarked against interbank options markets."
 msgstr "أسعار حقيقية يتم قياسها مقارنة بسوق الخيارات بين البنوك."
 
 #: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
 msgid "Reality Check"
+msgstr "التحقق من الواقع"
+
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
+#, fuzzy
+#| msgid "Reality Check"
+msgid "Reality Check Interval:"
 msgstr "التحقق من الواقع"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/portfolio/contract_table.html.tt:52
@@ -7727,10 +7742,8 @@ msgstr "ملخص الخدمة"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2032
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2182
-#, fuzzy
-#| msgid "Session duration limit cannot be more than 1440 minutes."
 msgid "Session duration limit cannot be more than 6 weeks."
-msgstr "الحد الأقصى لمدة الجلسة لا يمكن أن يتجاوز 1440 دقيقة."
+msgstr "الحد الأقصى لمدة الدورة لا يمكن أن يتجاوز 6 أسابيع."
 
 #. ($self_exclusion->session_duration_limit)
 #: /home/git/regentmarkets/bom-backoffice/f_setting_selfexclusion.cgi:78
@@ -8065,7 +8078,7 @@ msgstr "عفواً، لديك معاملات مفتوحة. يرجى إقفال �
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:2175
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Hooks.pm:176
 msgid "Sorry, you have reached your session duration limit of %plural(%1,%d minute,%d minutes)."
-msgstr ""
+msgstr "عفوا، لقد وصلت لحد مدة الدورة البالغ %plural(%1,%d دقيقة،%d دقائق)."
 
 #. (request()
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Account.pm:150
@@ -10924,10 +10937,8 @@ msgstr "لقد تجاوزت الحد اليومي من هذا النوع من ا
 
 #. ($currency, $limit)
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1025
-#, fuzzy
-#| msgid "You have exceeded your 7-day limit on losses of %1%2."
 msgid "You have exceeded your 30-day limit on losses of %1%2."
-msgstr "لقد تجاوزت حد الـ 7 أيام من الخسائر %1%2."
+msgstr "لقد تجاوزت حد الـ 30 يوم من الخسائر %1%2."
 
 #. ($currency, $limit)
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:982
@@ -11568,6 +11579,12 @@ msgstr "ساعة"
 msgid "hours"
 msgstr "ساعات"
 
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
+#, fuzzy
+#| msgid "minutes"
+msgid "in minutes"
+msgstr "دقائق"
+
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/faq.html.tt:38
 msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Arabic, Polish, Russian and Indonesian."
 msgstr "مع رواج كبير على الصعيد الدولي، مع واجهة باللغة الإنجليزية والإسبانية والفرنسية والألمانية والبرتغالية والصينية والعربية والبولندية والروسية والإندونيسية."
@@ -11619,6 +11636,7 @@ msgstr "دقيقة"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:161
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:521
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
 msgid "minutes"
 msgstr "دقائق"
 

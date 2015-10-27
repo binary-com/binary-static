@@ -2361,6 +2361,7 @@ msgstr "Lanjutkan"
 
 #: /home/git/translations/binary-static/src/templates/haml/user/balance.html.haml:1
 #: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
 msgid "Continue Trading"
 msgstr "Lanjutkan Trading"
 
@@ -6317,6 +6318,10 @@ msgstr "Dibuka"
 msgid "Opens late (at %1)"
 msgstr "Dibuka lambat (pada %1)"
 
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
+msgid "Options trading can become a real addiction, as can any other activity pushed to its limits. To avoid the danger of such an addiction, we provide a reality-check that gives you a summary of your trades and accounts on a regular basis."
+msgstr ""
+
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/tac.html.tt:30
 msgid "Order Execution"
 msgstr "Eksekusi Order"
@@ -6720,6 +6725,13 @@ msgstr "Masukkan tanggal setidaknya 6 bulan dari sekarang."
 msgid "Please enter a number between 0 and %1."
 msgstr "Silakan masukkan nomor antara 0 dan 1%."
 
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
+#, fuzzy
+#| msgid "Please enter a number between 0 and %1."
+msgid "Please enter a number greater than 0"
+msgstr "Silakan masukkan nomor antara 0 dan 1%."
+
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3025
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3082
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:686
@@ -6906,6 +6918,12 @@ msgstr "Silakan pilih negara domisili Anda"
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3443
 msgid "Please specify your country."
 msgstr "Silahkan tentukan negara Anda."
+
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
+#, fuzzy
+#| msgid "Please specify your bank name."
+msgid "Please specify your preferred reality-check interval"
+msgstr "Silakan pastikan nama bank anda."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Please submit the above information to <a href='mailto:affiliates@binary.com'>affiliates@binary.com</a>."
@@ -7303,7 +7321,14 @@ msgid "Real-time prices, benchmarked against interbank options markets."
 msgstr "Harga tepat waktu, menggunakan nilai standar berdasarkan pasar interbank."
 
 #: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
 msgid "Reality Check"
+msgstr "Pemeriksaan Realitas"
+
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
+#, fuzzy
+#| msgid "Reality Check"
+msgid "Reality Check Interval:"
 msgstr "Pemeriksaan Realitas"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/portfolio/contract_table.html.tt:52
@@ -11569,6 +11594,12 @@ msgstr "jam"
 msgid "hours"
 msgstr "jam"
 
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
+#, fuzzy
+#| msgid "minutes"
+msgid "in minutes"
+msgstr "menit"
+
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/faq.html.tt:38
 msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Arabic, Polish, Russian and Indonesian."
 msgstr "memiliki daya tarik yang luas secara internasional, dengan antar muka dalam bahasa Inggris, Spanyol, Perancis, Jerman, Portugis, Cina, Arab, Polandia, Rusia dan Indonesia."
@@ -11620,6 +11651,7 @@ msgstr "menit"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:161
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:521
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
 msgid "minutes"
 msgstr "menit"
 
@@ -21517,9 +21549,6 @@ msgstr "Hasil %1 %2 jika %3 bergerak diluar %7 dan %6 melewati %5 setelah %4."
 
 #~ msgid "Please specify your bank address."
 #~ msgstr "Mohon pastikan alamat bank anda."
-
-#~ msgid "Please specify your bank name."
-#~ msgstr "Silakan pastikan nama bank anda."
 
 #~ msgid "Please state whether or not the given number is ex-directory."
 #~ msgstr "Silahkan informasikan apakah nomor yang diberikan adalah petunjuk sebelumnya."

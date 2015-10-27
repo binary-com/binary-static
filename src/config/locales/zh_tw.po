@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-10-23 10:54+0200\n"
+"PO-Revision-Date: 2015-10-26 04:16+0200\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) <https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
 "Language: zh_TW\n"
@@ -391,16 +391,12 @@ msgid "3. Choose how you want to Trade the Market"
 msgstr "3.選擇如何進行市場交易"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1946
-#, fuzzy
-#| msgid "7-day limit on losses"
 msgid "30-day limit on losses"
-msgstr "7天期損失限額"
+msgstr "30天期損失限額"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1911
-#, fuzzy
-#| msgid "7-day turnover limit"
 msgid "30-day turnover limit"
-msgstr "7天期交易限額"
+msgstr "30天期交易限額"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/livechart_duration.html.tt:34
 msgid "3m"
@@ -2361,6 +2357,7 @@ msgstr "繼續"
 
 #: /home/git/translations/binary-static/src/templates/haml/user/balance.html.haml:1
 #: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
 msgid "Continue Trading"
 msgstr "繼續交易"
 
@@ -5712,10 +5709,8 @@ msgid "Maximum account cash balance is currently set to <strong>%1 %2</strong>"
 msgstr "最大帳戶現金餘額當前設定為<strong>%1 %2</strong>"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1932
-#, fuzzy
-#| msgid "Maximum aggregate contract purchases over a 7-day period."
 msgid "Maximum aggregate contract purchases over a 30-day period."
-msgstr "7天期最大累計合約買入量。"
+msgstr "30天期最大累計合約買入量。"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1862
 msgid "Maximum aggregate contract purchases over a 7-day period."
@@ -5726,10 +5721,8 @@ msgid "Maximum aggregate contract purchases per day."
 msgstr "每日最大累計合約買入量。"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1967
-#, fuzzy
-#| msgid "Maximum aggregate loss over a 7-day period."
 msgid "Maximum aggregate loss over a 30-day period."
-msgstr "7天期最大累計損失量。"
+msgstr "30天期最大累計損失量。"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1897
 msgid "Maximum aggregate loss over a 7-day period."
@@ -6314,6 +6307,10 @@ msgstr "開盤"
 msgid "Opens late (at %1)"
 msgstr "開盤延遲（至%1）"
 
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
+msgid "Options trading can become a real addiction, as can any other activity pushed to its limits. To avoid the danger of such an addiction, we provide a reality-check that gives you a summary of your trades and accounts on a regular basis."
+msgstr ""
+
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/tac.html.tt:30
 msgid "Order Execution"
 msgstr "執行訂單"
@@ -6717,6 +6714,13 @@ msgstr "請輸入至少6個月後的日期。"
 msgid "Please enter a number between 0 and %1."
 msgstr "請輸入0和%1之間的數字。"
 
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
+#, fuzzy
+#| msgid "Please enter a number between 0 and %1."
+msgid "Please enter a number greater than 0"
+msgstr "請輸入0和%1之間的數字。"
+
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3025
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3082
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:686
@@ -6902,6 +6906,12 @@ msgstr "請選擇您的居住國"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3443
 msgid "Please specify your country."
+msgstr "請指定您的國家。"
+
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
+#, fuzzy
+#| msgid "Please specify your country."
+msgid "Please specify your preferred reality-check interval"
 msgstr "請指定您的國家。"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
@@ -7183,10 +7193,8 @@ msgstr "您購買此合約將超出我們對於此類未平倉合約的賠付額
 
 #. ($currency, $limit)
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1009
-#, fuzzy
-#| msgid "Purchase of this contract would cause you to exceed your 7-day turnover limit of %1%2."
 msgid "Purchase of this contract would cause you to exceed your 30-day turnover limit of %1%2."
-msgstr "買入此合約將導致您超出%1%2的7天期交易限額。"
+msgstr "買入此合約將導致您超出%1%2的30天期交易限額。"
 
 #. ($currency, $limit)
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:966
@@ -7300,7 +7308,14 @@ msgid "Real-time prices, benchmarked against interbank options markets."
 msgstr "即時報價，我們的報價立基於銀行間期權市場。"
 
 #: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
 msgid "Reality Check"
+msgstr "真實情況檢查"
+
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
+#, fuzzy
+#| msgid "Reality Check"
+msgid "Reality Check Interval:"
 msgstr "真實情況檢查"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/portfolio/contract_table.html.tt:52
@@ -7727,10 +7742,8 @@ msgstr "服務摘要"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2032
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2182
-#, fuzzy
-#| msgid "Session duration limit cannot be more than 1440 minutes."
 msgid "Session duration limit cannot be more than 6 weeks."
-msgstr "交易期持續時間限制不能大於1440 分鐘。"
+msgstr "交易期持續時間限制不能大於6週。"
 
 #. ($self_exclusion->session_duration_limit)
 #: /home/git/regentmarkets/bom-backoffice/f_setting_selfexclusion.cgi:78
@@ -8065,7 +8078,7 @@ msgstr "對不起，您還有未平倉的頭寸。在請求額外資金前，請
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:2175
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Hooks.pm:176
 msgid "Sorry, you have reached your session duration limit of %plural(%1,%d minute,%d minutes)."
-msgstr ""
+msgstr "對不起，您已超過交易期持續時間限制 %複數(%1,%d 分鐘,%d 分鐘)。"
 
 #. (request()
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Account.pm:150
@@ -10921,10 +10934,8 @@ msgstr "您已超出此類合約的每日限額。"
 
 #. ($currency, $limit)
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1025
-#, fuzzy
-#| msgid "You have exceeded your 7-day limit on losses of %1%2."
 msgid "You have exceeded your 30-day limit on losses of %1%2."
-msgstr "您已超出 %1%2的7天期損失限額。"
+msgstr "您已超出 %1%2的30天期損失限額。"
 
 #. ($currency, $limit)
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:982
@@ -11565,6 +11576,12 @@ msgstr "小時"
 msgid "hours"
 msgstr "小時"
 
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
+#, fuzzy
+#| msgid "minutes"
+msgid "in minutes"
+msgstr "分鐘"
+
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/faq.html.tt:38
 msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Arabic, Polish, Russian and Indonesian."
 msgstr "它提供國際化界面，支援的語言包括英語、西班牙語、法語、德語、葡萄牙語、中文、阿拉伯語、波蘭語、俄語和印尼語。"
@@ -11616,6 +11633,7 @@ msgstr "分鐘"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:161
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:521
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
 msgid "minutes"
 msgstr "分鐘"
 

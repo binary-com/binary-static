@@ -2225,7 +2225,7 @@ msgstr ""
 msgid "Continue"
 msgstr ""
 
-#: /home/git/translations/binary-static/src/templates/haml/user/balance.html.haml:1 /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
+#: /home/git/translations/binary-static/src/templates/haml/user/balance.html.haml:1 /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1 /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
 msgid "Continue Trading"
 msgstr ""
 
@@ -5902,6 +5902,10 @@ msgstr ""
 msgid "Opens late (at %1)"
 msgstr ""
 
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
+msgid "Options trading can become a real addiction, as can any other activity pushed to its limits. To avoid the danger of such an addiction, we provide a reality-check that gives you a summary of your trades and accounts on a regular basis."
+msgstr ""
+
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/tac.html.tt:30
 msgid "Order Execution"
 msgstr ""
@@ -6245,6 +6249,10 @@ msgstr ""
 msgid "Please enter a number between 0 and %1."
 msgstr ""
 
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1 /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
+msgid "Please enter a number greater than 0"
+msgstr ""
+
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3025 /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3082 /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:686 /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:733 /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:865
 msgid "Please enter a password."
 msgstr ""
@@ -6378,6 +6386,10 @@ msgstr ""
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3443
 msgid "Please specify your country."
+msgstr ""
+
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
+msgid "Please specify your preferred reality-check interval"
 msgstr ""
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
@@ -6734,8 +6746,12 @@ msgstr ""
 msgid "Real-time prices, benchmarked against interbank options markets."
 msgstr ""
 
-#: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1 /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
 msgid "Reality Check"
+msgstr ""
+
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
+msgid "Reality Check Interval:"
 msgstr ""
 
 #: /home/git/translations/binary-static/src/templates/toolkit/portfolio/contract_table.html.tt:52
@@ -10746,6 +10762,10 @@ msgstr ""
 msgid "hours"
 msgstr ""
 
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
+msgid "in minutes"
+msgstr ""
+
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/faq.html.tt:38
 msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Arabic, Polish, Russian and Indonesian."
 msgstr ""
@@ -10786,7 +10806,7 @@ msgstr ""
 msgid "minute"
 msgstr ""
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:161 /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:521
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:161 /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:521 /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
 msgid "minutes"
 msgstr ""
 
