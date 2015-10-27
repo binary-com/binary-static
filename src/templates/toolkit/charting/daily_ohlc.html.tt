@@ -11,15 +11,9 @@ unchanged
     <form class="smallfont" action="[% request.url_for('/trade/daily_prices') %]" method="post" id="analysis_daily_prices_form">
         <input type="hidden" name="underlying_symbol" value="[% underlying.symbol %]"/>
         <input type="hidden" name="type" value="[% contract_type_inp %]"/>
-        <div class="grd-grid-mobile-12 grd-grid-4">
-            [% l('Days to display') %]
-        </div>
-        <div class="grd-grid-mobile-12 grd-grid-4">
+            <label>[% l('Days to display') %]</label>
             <input type='text' size='3' value="[% days_to_display %]" name='days_to_display' id='days_to_display_input'/>
-        </div>
-        <div class="grd-grid-mobile-12 grd-grid-4">
             <span class="button"><button class="button" value="[% l('View') %]" type="submit" id="daily_prices_submit">[% l('View') %]</button></span>
-        </div>
     </form>
 </div>
 [% IF underlying.feed_license == 'chartonly' || !ohlc_table %]

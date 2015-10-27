@@ -9,8 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2015-10-26 11:01+0200\n"
 "Last-Translator: Linguavista <saritar@lingua-vista.com>\n"
-"Language-Team: Vietnamese "
-"<https://hosted.weblate.org/projects/binary/static/vi/>\n"
+"Language-Team: Vietnamese <https://hosted.weblate.org/projects/binary/static/vi/>\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -392,12 +391,10 @@ msgid "3. Choose how you want to Trade the Market"
 msgstr "3. Chọn cách thức bạn muốn giao dịch Thị trường"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1946
-#| msgid "7-day limit on losses"
 msgid "30-day limit on losses"
 msgstr "Giới hạn 30 ngày thua lỗ"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1911
-#| msgid "7-day turnover limit"
 msgid "30-day turnover limit"
 msgstr "Giới hạn doanh thu 30 ngày"
 
@@ -877,9 +874,7 @@ msgstr "Đã có phiên bản giao diện mới. Vui lòng <a href=\"#\" id=\"ap
 
 #: /home/git/translations/binary-static/src/templates/haml/layouts/default/footer.html.haml:1
 msgid "A new version of the interface is available. Please <a href='#' id='appcache-refresh-link'>refresh</a> this page to try again."
-msgstr ""
-"Đã có phiên bản giao diện mới. Vui lòng <a href='#' id='appcache-refresh-"
-"link'>làm mới</a> trang này để thử lại."
+msgstr "Đã có phiên bản giao diện mới. Vui lòng <a href='#' id='appcache-refresh-link'>làm mới</a> trang này để thử lại."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/group_history.html.haml:1
 msgid "A panel featuring industry leaders awards BetOnMarkets.com ‘Financial Betting Operator of the Year’ over two other finalists. It’s a major victory for our brand and further recognition of our world-beating service. Ten years on, and going from strength to strength."
@@ -906,17 +901,11 @@ msgstr "Bản scan hộ chiếu hoặc bằng lái xe."
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:614
 msgid "A technical indicator which measures overbought/oversold levels in a very similar way to that of an Oscillator indicator, except that %R is plotted upside-down 0% to -100%. Readings in the range of 80 to 100% indicate that the security is oversold while readings in the 0 to 20% range suggest that it is overbought."
-msgstr ""
-"Chỉ số kỹ thuật đo lường mức mua quá mức/bán quá mức, tương tự như công "
-"dụng chỉ số Oscillator, ngoại trừ %R đảo ngược lại từ 0% xuống -100%. Chỉ số "
-"trong khoảng từ 80 đến 100% cho thấy mức độ an toàn đã bán quá mức, còn chỉ "
-"số từ 0 đến 20% cho thấy đã mua quá mức."
+msgstr "Chỉ số kỹ thuật đo lường mức mua quá mức/bán quá mức, tương tự như công dụng chỉ số Oscillator, ngoại trừ %R đảo ngược lại từ 0% xuống -100%. Chỉ số trong khoảng từ 80 đến 100% cho thấy mức độ an toàn đã bán quá mức, còn chỉ số từ 0 đến 20% cho thấy đã mua quá mức."
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/glossary.html.haml:1
 msgid "A tick is the minimum upward or downward movement in the price of a market."
-msgstr ""
-"Một điểm là chuyển động nhỏ nhất lên trên hoặc xuống dưới trong giá của "
-"thị trường."
+msgstr "Một điểm là chuyển động nhỏ nhất lên trên hoặc xuống dưới trong giá của thị trường."
 
 #. ($email)
 #: /home/git/translations/binary-static/src/templates/haml/user/verification_email_sent.html.haml:1
@@ -938,8 +927,7 @@ msgstr "Mã API token cho ứng dụng của bên thứ ba."
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1614
 msgid "AUTHORISED PAYMENT AGENT? (this field visible from office only)"
-msgstr ""
-"ĐẠI LÝ THANH TOÁN ĐÃ ĐƯỢC ỦY QUYỀN? (phần này chỉ văn phòng có thể thấy)"
+msgstr "ĐẠI LÝ THANH TOÁN ĐÃ ĐƯỢC ỦY QUYỀN? (phần này chỉ văn phòng có thể thấy)"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:520
 msgid "About"
@@ -981,19 +969,12 @@ msgstr "Truy cập vào Dữ liệu Cá nhân"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/privacy.html.tt:15
 msgid "Access to your personal data is strictly prohibited with the exception of key personnel of the Company and only as needed in the performance of their duties."
-msgstr ""
-"Việc truy cập vào dữ liệu cá nhân của bạn bi cấm nghiêm ngặt, chỉ "
-"có nhân sự chủ chốt của công ty có thể truy cập và chỉ trong những trường "
-"hợp thật sự cần thiết."
+msgstr "Việc truy cập vào dữ liệu cá nhân của bạn bi cấm nghiêm ngặt, chỉ có nhân sự chủ chốt của công ty có thể truy cập và chỉ trong những trường hợp thật sự cần thiết."
 
 #. (request.url_for("new_account/maltainvest"))
 #: /home/git/translations/binary-static/src/templates/toolkit/homepage/logged_in.html.tt:44
 msgid "Accordingly, to continue trading binary options on forex/stock indices/commodities, please <a href=\"%1\" class=\"pjaxload\">open an account with Binary Investments (Europe) Ltd</a>., which is regulated by the Malta Financial Services Authority."
-msgstr ""
-"Theo đó, để tiếp tục giao dịch quyền chọn nhị phân với ngoại "
-"hối/chứng khoán chỉ số/hàng hóa, vui lòng <a href=\"%1\" class=\""
-"pjaxload\">mở một tài khoản với công ty Binary Investments (Europe) "
-"Ltd</a>., được quy định bởi Ủy ban Dịch vụ Tài chính Malta."
+msgstr "Theo đó, để tiếp tục giao dịch quyền chọn nhị phân với ngoại hối/chứng khoán chỉ số/hàng hóa, vui lòng <a href=\"%1\" class=\"pjaxload\">mở một tài khoản với công ty Binary Investments (Europe) Ltd</a>., được quy định bởi Ủy ban Dịch vụ Tài chính Malta."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:186
 msgid "Account Closure"
@@ -1060,11 +1041,7 @@ msgstr "Xác nhận Yêu cầu Rút tiền"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:57
 msgid "Acquisition of financial contracts through this site must be effected in accordance with the terms and conditions presented on the pages of this site. Acquisition of a financial contract is completed when the financial contract has been customised, the premium (or the payout, as the case may be) has been calculated and payment has been verified."
-msgstr ""
-"Lãi của hợp đồng tài chính trên trang này phải phù hợp điều kiện của điều "
-"khoản được thể hiện trên trang web này. Lãi của hợp đồng tài chính "
-"được xác nhận khi hợp đồng được thông qua, lãi (hoặc tiền thưởng tùy trường "
-"hợp) đã được tính và thanh toán cũng đã được xác minh."
+msgstr "Lãi của hợp đồng tài chính trên trang này phải phù hợp điều kiện của điều khoản được thể hiện trên trang web này. Lãi của hợp đồng tài chính được xác nhận khi hợp đồng được thông qua, lãi (hoặc tiền thưởng tùy trường hợp) đã được tính và thanh toán cũng đã được xác minh."
 
 #: /home/git/translations/binary-static/src/templates/haml/user/api_token.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/account/statement.html.tt:128
@@ -1120,19 +1097,12 @@ msgstr "Tất cả"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/privacy.html.tt:25
 msgid "All credit card details are submitted directly to the Visa/Mastercard network using the latest SSL encryption technology, in accordance with bank policies."
-msgstr ""
-"Mọi chi tiết thẻ tín dụng được chuyển trực tiếp đến hệ thống thẻ Visa/Master "
-"sử dụng công nghệ giải mã SSL mới nhất, tuân theo qui định của ngân hàng."
+msgstr "Mọi chi tiết thẻ tín dụng được chuyển trực tiếp đến hệ thống thẻ Visa/Master sử dụng công nghệ giải mã SSL mới nhất, tuân theo qui định của ngân hàng."
 
 #. (website)
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/risk_disclaimer.html.tt:84
 msgid "All opinions, news, research, analysis, prices or other information contained on this website are provided as general market commentary and do not constitute investment advice. %1 will not accept liability for any loss or damage, including but without limitation to, any loss of profit that may arise directly or indirectly from use of or reliance on such information."
-msgstr ""
-"Mọi quan điểm, tin tức, nghiên cứu, phân tích, giá hoặc thông tin khác trên "
-"trang này đều được cung cấp dưới dạng thông tin thị trường phổ biến đều "
-"không phải lời khuyên hay gợi ý giao dịch. %1 sẽ không chịu trách nhiệm với "
-"bấy kỳ thua lỗ, mất mát nào phát sinh trực tiếp hoặc gián tiếp từ việc sử "
-"dụng những thông tin này."
+msgstr "Mọi quan điểm, tin tức, nghiên cứu, phân tích, giá hoặc thông tin khác trên trang này đều được cung cấp dưới dạng thông tin thị trường phổ biến đều không phải lời khuyên hay gợi ý giao dịch. %1 sẽ không chịu trách nhiệm với bấy kỳ thua lỗ, mất mát nào phát sinh trực tiếp hoặc gián tiếp từ việc sử dụng những thông tin này."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/resources/trading_times_header.html.tt:4
 msgid "All times are in GMT (Greenwich Mean Time)."
@@ -1140,9 +1110,7 @@ msgstr "Thời gian đều tính theo GMT (Giờ trung bình tại Greenwich)."
 
 #: /home/git/translations/binary-static/src/templates/haml/user/lost_password_email_sent.html.haml:1
 msgid "All you need to do is follow the instructions in the email we just sent you. The e-mail subject-line reads, <strong>New Password Request</strong>."
-msgstr ""
-"Tất cả những gì bạn cần là làm theo hướng dẫn trong email chúng tôi vừa gửi "
-"cho bạn. Tiêu đề email là,  <strong>Yêu cầu Mật khẩu Mới</strong>."
+msgstr "Tất cả những gì bạn cần là làm theo hướng dẫn trong email chúng tôi vừa gửi cho bạn. Tiêu đề email là,  <strong>Yêu cầu Mật khẩu Mới</strong>."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
@@ -1155,10 +1123,7 @@ msgstr "Cho phép Khách hàng sử dụng ví điện tử, mà không 
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:142
 msgid "Although the Company has and retains all rights to refuse or to close a Client’s account, the Company does warrant that all contractual obligations already made, shall be honoured."
-msgstr ""
-"Mặc dù Công ty có quyền từ chối hoặc đóng tài khoản của Khách hàng, Công "
-"ty vẫn đảm bảo rằng những hợp đồng nào tuân thủ quy định hợp đồng sẽ "
-"được tôn trọng."
+msgstr "Mặc dù Công ty có quyền từ chối hoặc đóng tài khoản của Khách hàng, Công ty vẫn đảm bảo rằng những hợp đồng nào tuân thủ quy định hợp đồng sẽ được tôn trọng."
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2445
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2585
@@ -1187,11 +1152,7 @@ msgstr "Số tiền trên điểm"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/glossary.html.haml:1
 msgid "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target."
-msgstr ""
-"Giao dịch Kết thúc ở giữa có tiền thưởng nếu giá thoát thị trường cao hơn "
-"so với giá mục tiêu thấp VÀ thấp hơn so với giá mục tiêu cao . Nhị phân Kết "
-"thúc bên ngoàicó tiền thưởng nếu giá thoát thị trường cao hơn so với giá  "
-"mục tiêu cao HOẶC thấp hơn so với giá mục tiêu thấp."
+msgstr "Giao dịch Kết thúc ở giữa có tiền thưởng nếu giá thoát thị trường cao hơn so với giá mục tiêu thấp VÀ thấp hơn so với giá mục tiêu cao . Nhị phân Kết thúc bên ngoàicó tiền thưởng nếu giá thoát thị trường cao hơn so với giá  mục tiêu cao HOẶC thấp hơn so với giá mục tiêu thấp."
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:555
 msgid "An additional password can be used to restrict access to the cashier."
@@ -1203,67 +1164,39 @@ msgstr "Mật khẩu phụ có thể dùng để hạn chế truy cập vào k
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1690
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:341
 msgid "An error occurred while processing request. If this error persists, please contact customer support"
-msgstr ""
-"Đã xảy ra lỗi khi xử lý yêu cầu. Nếu lỗi vẫn lặp lại, vui lòng liên hệ dịch "
-"vụ hỗ trợ khách hàng"
+msgstr "Đã xảy ra lỗi khi xử lý yêu cầu. Nếu lỗi vẫn lặp lại, vui lòng liên hệ dịch vụ hỗ trợ khách hàng"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:641
 msgid "An indicator based on the difference between two moving averages expressed as a percentage. The PPO is found by subtracting the longer moving average from the shorter moving average and then dividing the difference by the longer moving average."
-msgstr ""
-"Chỉ số dựa trên sự chênh lệch giữa 2 trung bình động dưới dạng phần trăm. "
-"PPO được tính bằng cách lấy trung bình động dài hơn trừ trung bình động "
-"ngắn hơn, sau đó chia hiệu này cho trung bình động dài hơn."
+msgstr "Chỉ số dựa trên sự chênh lệch giữa 2 trung bình động dưới dạng phần trăm. PPO được tính bằng cách lấy trung bình động dài hơn trừ trung bình động ngắn hơn, sau đó chia hiệu này cho trung bình động dài hơn."
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:552
 msgid "An indicator that measures a security's volatility. High ATR values indicate high volatility and may be an indication of panic selling or panic buying. Low ATR readings indicate sideways movement by the stock."
-msgstr ""
-"Chỉ số đo lường biến động của an toàn. Giá trị ATR cao cho thấy biến độ"
-"ng cao và có thể cho thấy việc bán đổ bán tháo hoặc mua vào ồ ạt. Chỉ số ATR "
-"thấp thể hiện những chuyển động bên rìa của cổ phiếu."
+msgstr "Chỉ số đo lường biến động của an toàn. Giá trị ATR cao cho thấy biến động cao và có thể cho thấy việc bán đổ bán tháo hoặc mua vào ồ ạt. Chỉ số ATR thấp thể hiện những chuyển động bên rìa của cổ phiếu."
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:656
 msgid "An oscillator that attempts to combine information for several different time periods into one number. Three different time periods are used, typically a 7-day period, a 14-day period, and a 28-day period. The resulting oscillator is \"bounded\" in that it moves between 0 and 100 with 50 as the centre line. 70 and 30 are used as overbought/oversold levels."
-msgstr ""
-"Chỉ số dao động sẽ thu nhặt thông tin ở nhiều thời điểm khác nhau vào thành "
-"một con số. Ba thời điểm khác nhau được dùng để gộp, thường là mức 7 ngày, "
-"14 ngày, và 28 ngày. Biến số dao động thường biến thiên giữa 0 và 100 với 50 "
-"là đường trung gian. 70 và 30 được sử dụng dạng mức mua quá mức/bán quá mức."
+msgstr "Chỉ số dao động sẽ thu nhặt thông tin ở nhiều thời điểm khác nhau vào thành một con số. Ba thời điểm khác nhau được dùng để gộp, thường là mức 7 ngày, 14 ngày, và 28 ngày. Biến số dao động thường biến thiên giữa 0 và 100 với 50 là đường trung gian. 70 và 30 được sử dụng dạng mức mua quá mức/bán quá mức."
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:574
 msgid "An oscillator that measures the rate of price change (as opposed to the actual levels themselves). It is calculated by taking price differences for a fixed time interval. This positive or negative value is plotted around a zero line."
-msgstr ""
-"Chỉ số giao động đo lường tỷ lệ thay đổi giá (khác với mức giá thực củ"
-"a chúng). Chỉ số này được tính bằng cách lấy mức chênh lệch về cho bộ đế"
-"m thời gian cố định. Giá trị dương hoặc âm này dao động xung quanh đường "
-"số 0."
+msgstr "Chỉ số giao động đo lường tỷ lệ thay đổi giá (khác với mức giá thực của chúng). Chỉ số này được tính bằng cách lấy mức chênh lệch về cho bộ đếm thời gian cố định. Giá trị dương hoặc âm này dao động xung quanh đường số 0."
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:611
 msgid "An oscillator used to identify overbought and oversold readings in RSI (Relative Strength Index). Because RSI can go for extended periods without becoming overbought (above 70) or oversold (below 30), StochRSI provides an alternative means to identify these extremities."
-msgstr ""
-"Chỉ số giao động được dùng để nhận dạng dư mua và dư bán trong RSI ("
-"Chỉ số sức mạnh tương đối) . Bởi vì RSI có thể dùng trong thời hạn mở rộng "
-"mà không bị dư mua (trên 70) hoặc dư bán (dưới 30), cổ phiếu RSI cung cấp "
-"phương tiện thay thế để nhận dạng những mức giới hạn này."
+msgstr "Chỉ số giao động được dùng để nhận dạng dư mua và dư bán trong RSI (Chỉ số sức mạnh tương đối) . Bởi vì RSI có thể dùng trong thời hạn mở rộng mà không bị dư mua (trên 70) hoặc dư bán (dưới 30), cổ phiếu RSI cung cấp phương tiện thay thế để nhận dạng những mức giới hạn này."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/careers.html.haml:1
 msgid "And your weekends can take you to some of the world’s most exotic and beautiful places."
-msgstr ""
-"Và những ngày cuối tuần có thể đưa bạn đến những nơi xa xôi với phong cảnh "
-"đẹp và đầy hấp dẫn trên thế giới."
+msgstr "Và những ngày cuối tuần có thể đưa bạn đến những nơi xa xôi với phong cảnh đẹp và đầy hấp dẫn trên thế giới."
 
 #: /home/git/translations/binary-static/src/templates/haml/home/index.html.haml:1
 msgid "Andrei Asavei <span>Top Binary Options Brokers</span>"
-msgstr ""
-"Andrei Asavei <span>Nhà Môi giới Quyền chọn Nhị phân Hàng đầu</span>"
+msgstr "Andrei Asavei <span>Nhà Môi giới Quyền chọn Nhị phân Hàng đầu</span>"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/group_history.html.haml:1
 msgid "Another major award. This time we’re nominated by the online readers of Global Banking and Finance Review and judged by a panel of industry experts and analysts who recognise our 13 years of platform reliability, range of trades, pricing, customer service and extensive knowledge."
-msgstr ""
-"Một giải thưởng lớn khác. Lần này chúng tôi được đề cử bởi các khách hàng "
-"trên trang Đánh giá Tài chính và Ngân hàng Toàn cầu và được chấm điểm bởi "
-"những chuyên gia và nhà phân tích trong ngành những người này đã ghi nhận sự "
-"tin cậy dành cho chúng tôi trong suốt 13 năm về loại giao dịch phong phú, "
-"giá, dịch vụ khách hàng và kiến thức chuyên sâu."
+msgstr "Một giải thưởng lớn khác. Lần này chúng tôi được đề cử bởi các khách hàng trên trang Đánh giá Tài chính và Ngân hàng Toàn cầu và được chấm điểm bởi những chuyên gia và nhà phân tích trong ngành những người này đã ghi nhận sự tin cậy dành cho chúng tôi trong suốt 13 năm về loại giao dịch phong phú, giá, dịch vụ khách hàng và kiến thức chuyên sâu."
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3655
 msgid "Answer to secret question"
@@ -1271,56 +1204,31 @@ msgstr "Trả lời câu hỏi bí mật"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/privacy.html.tt:35
 msgid "Any changes in our privacy policy or security statement will be posted onto this website. In the event of material changes that directly affect the economic use of your personal information, we will request your prior authorisation in writing before effecting such change on your account."
-msgstr ""
-"Bất cứ thay đổi nào về chính sách riêng tư hoặc bảo mật sẽ được đăng trên "
-"trang web của chúng tôi. Trong trường hợp thay đổi ảnh hưởng trực tiếp đến "
-"kinh tế khi sử dụng thông tin cá nhân của bạn, chúng tôi sẽ yêu cầu văn "
-"bản ủy quyền của bạn trước khi áp dụng thay đổi này vào tài khoản của bạn."
+msgstr "Bất cứ thay đổi nào về chính sách riêng tư hoặc bảo mật sẽ được đăng trên trang web của chúng tôi. Trong trường hợp thay đổi ảnh hưởng trực tiếp đến kinh tế khi sử dụng thông tin cá nhân của bạn, chúng tôi sẽ yêu cầu văn bản ủy quyền của bạn trước khi áp dụng thay đổi này vào tài khoản của bạn."
 
 #. (website)
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:58
 msgid "Any form of Spam will result in your account being placed under review and all funds due being withheld pending an investigation into your account. You need to be aware that %1 is liable to incur expenses in dealing with Spam generated mail and these same expenses will be deducted from your account. In this instance the amount determined will be fair and deemed final and acceptable based on good faith and such amount will be collectable by law and deemed to have been accepted by yourself as fair and reasonable and as agreed to by registration as an affiliate of %1."
-msgstr ""
-"Bất cứ dạng thư rác nào đều dẫn tới tài khoản của bạn bị đánh dấu Cần xem "
-"xét và tất cả tiền sẽ bị hoãn lại nếu bạn muốn rút để chúng tôi điều tra "
-"tài khoản của bạn. Bạn cần nhớ rằng %1 chịu trách nhiệm cho những chi phí "
-"phát sinh do thư rác và những chi phí này cũng sẽ khấu trừ vào tài khoản của "
-"bạn. Theo đó mức tiền sẽ được xác định một cách công bằng và có thể chấp "
-"nhận được dựa trên niềm tin sẵn có ngoài ra mức tiền này sẽ được pháp luật "
-"thu và sẽ thông qua sự chấp thuận của bạn như những thỏa thuận ban đầu khi "
-"bạn đăng ký làm liên kết của %1."
+msgstr "Bất cứ dạng thư rác nào đều dẫn tới tài khoản của bạn bị đánh dấu Cần xem xét và tất cả tiền sẽ bị hoãn lại nếu bạn muốn rút để chúng tôi điều tra tài khoản của bạn. Bạn cần nhớ rằng %1 chịu trách nhiệm cho những chi phí phát sinh do thư rác và những chi phí này cũng sẽ khấu trừ vào tài khoản của bạn. Theo đó mức tiền sẽ được xác định một cách công bằng và có thể chấp nhận được dựa trên niềm tin sẵn có ngoài ra mức tiền này sẽ được pháp luật thu và sẽ thông qua sự chấp thuận của bạn như những thỏa thuận ban đầu khi bạn đăng ký làm liên kết của %1."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:148
 msgid "Any information given on these pages and/or emails or newsletters sent by the company related thereto, is not intended as financial or investment advice and the Company will not accept any liability in this respect, nor will the Company accept any responsibility for the accuracy or comprehensiveness of the information provided on this site."
-msgstr ""
-"Bất cứ thông tin nào trong những trang này và/hoặc email hoặc thư tin tức "
-"gửi từ công ty hoặc những đối tượng liên quan khác, không được xem như lời "
-"khuyên đầu tư và tài chính và Công ty sẽ có bất kì bổn phận và trách "
-"nhiệm nào cho mức độ chính xác hay độ bao hàm của thông tin trên trang này."
+msgstr "Bất cứ thông tin nào trong những trang này và/hoặc email hoặc thư tin tức gửi từ công ty hoặc những đối tượng liên quan khác, không được xem như lời khuyên đầu tư và tài chính và Công ty sẽ có bất kì bổn phận và trách nhiệm nào cho mức độ chính xác hay độ bao hàm của thông tin trên trang này."
 
 #. (affiliate_email)
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:128
 msgid "Any notice given or made under this Agreement to the Company shall be by email to %1. The Company shall send you any notices given or made under this Agreement to the email address supplied on your application form or such other email address as notified by you to the Company."
-msgstr ""
-"Bất cứ thông báo nào được đưa ra theo Thỏa thuận này gửi đến Công ty sẽ "
-"được email tới %1. Công ty sẽ gửi cho bạn những thông báo được đưa ra theo "
-"Thỏa thuận này thông qua địa chỉ email bạn cung cấp trên mẫu đăng ký hoặc "
-"địa chỉ email khác do bạn thông báo với Công ty."
+msgstr "Bất cứ thông báo nào được đưa ra theo Thỏa thuận này gửi đến Công ty sẽ được email tới %1. Công ty sẽ gửi cho bạn những thông báo được đưa ra theo Thỏa thuận này thông qua địa chỉ email bạn cung cấp trên mẫu đăng ký hoặc địa chỉ email khác do bạn thông báo với Công ty."
 
 #. (broker_name)
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/faq.html.tt:14
 msgid "Anyone over the age of 18 [who has read and agreed to the %1 terms and conditions], and who is not resident in one of the 'closed countries' can trade on the %1 platform."
-msgstr ""
-"Bất kỳ ai trên 18 tuổi [đã đọc và đồng ý với những điều kiện và điều khoản "
-"%1], và những ai không cư ngụ tại một trong những 'quốc gia bị đóng cửa' "
-"đều có thể giao dịch trên sàn giao dịch %1."
+msgstr "Bất kỳ ai trên 18 tuổi [đã đọc và đồng ý với những điều kiện và điều khoản %1], và những ai không cư ngụ tại một trong những 'quốc gia bị đóng cửa' đều có thể giao dịch trên sàn giao dịch %1."
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Anyone who has potential to grow or increase traffic to %1"
-msgstr ""
-"Bất kì ai người mà có tiềm năng lớn mạnh và phát triển mạng lướ"
-"i với %1"
+msgstr "Bất kì ai người mà có tiềm năng lớn mạnh và phát triển mạng lưới với %1"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1171
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/paymentagent_application.html.tt:1
@@ -1330,9 +1238,7 @@ msgstr "Đăng ký trở thành Đại lý Thanh toán"
 #. (website, apply_payment_agent_url)
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_agent_list.html.tt:29
 msgid "Apply to become a %1 <a class=\"pjaxload\" href=\"%2\">payment agent</a>."
-msgstr ""
-"Đăng ký để trở thành %1 <a class=\"pjaxload\" href=\"%2\">đại lý thanh "
-"toán</a>."
+msgstr "Đăng ký để trở thành %1 <a class=\"pjaxload\" href=\"%2\">đại lý thanh toán</a>."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/partners.html.haml:1
 msgid "Apply to become a Payment Agent"
@@ -1402,15 +1308,11 @@ msgstr "Bước đầu tiên, vui lòng gửi cho chúng tôi hồ sơ đ�
 
 #: /home/git/translations/binary-static/src/templates/haml/static/tour.html.haml:1
 msgid "As soon as you click on the ‘PURCHASE’ button, your trade registers in your account. The price of your trade continues to update in real time."
-msgstr ""
-"Ngay khi bạn nhấn vào nút \"MUA\", giao dịch của bạn sẽ đăng ký vào tài "
-"khoản. Giá giao dịch sẽ tiếp tục cập nhật theo thời gian thực."
+msgstr "Ngay khi bạn nhấn vào nút \"MUA\", giao dịch của bạn sẽ đăng ký vào tài khoản. Giá giao dịch sẽ tiếp tục cập nhật theo thời gian thực."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/explanation/winning/asian.html.tt:1
 msgid "Asian options settle by comparing the <strong>last tick</strong> with the average spot over the period."
-msgstr ""
-"Quyền chọn châu Á ổn định bằng cách so sánh <strong>điểm chuyển động "
-"cuối cùng</strong> với điểm trung bình trên một chu kì."
+msgstr "Quyền chọn châu Á ổn định bằng cách so sánh <strong>điểm chuyển động cuối cùng</strong> với điểm trung bình trên một chu kì."
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/random_markets.html.haml:1
 #: /home/git/translations/binary-static/src/templates/haml/get_started/types_of_trades.html.haml:1
@@ -1472,9 +1374,7 @@ msgstr "Xác thực"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/authenticate.html.tt:39
 msgid "Authentication of your account is not required at this time.  We will notify you by email if authentication is required."
-msgstr ""
-"Xác thực tài khoản của bạn không bắt buộc lúc này. Chúng tôi sẽ "
-"thông báo cho bạn qua email nếu có yêu cầu xác thực."
+msgstr "Xác thực tài khoản của bạn không bắt buộc lúc này. Chúng tôi sẽ thông báo cho bạn qua email nếu có yêu cầu xác thực."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_methods.html.tt:3
 msgid "Available payment methods"
@@ -1490,9 +1390,7 @@ msgstr "Thay đổi Bình quân"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:159
 msgid "Average Change = Average Close - Average Open, for the period selected"
-msgstr ""
-"Thay đổi Bình quân = Đóng Bình quân - Mở Bình quân, cho chu kì được "
-"chọn"
+msgstr "Thay đổi Bình quân = Đóng Bình quân - Mở Bình quân, cho chu kì được chọn"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:643
 msgid "Avg Directional Index"
@@ -1558,9 +1456,7 @@ msgstr "Giao dịch Ngân hàng theo cách của bạn"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/paymentagent_application.html.tt:35
 msgid "Bank/Credit Union/Building Society/Credit/Debit Card statement or passbook (within last 3 months)."
-msgstr ""
-"Bảng lược kê của Ngân hàng/Hiệp hội tín dụng/Hội xây dựng/Thẻ tín dụng/Ghi "
-"nợ hoặc hộ chiếu (trong vòng 3 tháng gần nhất)."
+msgstr "Bảng lược kê của Ngân hàng/Hiệp hội tín dụng/Hội xây dựng/Thẻ tín dụng/Ghi nợ hoặc hộ chiếu (trong vòng 3 tháng gần nhất)."
 
 #: /home/git/translations/binary-static/src/templates/haml/layouts/default/footer.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/global/footer.html.tt:89
@@ -1641,22 +1537,11 @@ msgstr "Rào cản phải nằm trên một cạnh của giá giao ngay."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:31
 msgid "Be responsible for abiding by the same advertising laws, rules and regulations that the Company adheres to."
-msgstr ""
-"Chịu trách nhiệm tuân thủ luật, quy tắc và quy định quảng cáo "
-"tương tự mà Công ty tuân thủ."
+msgstr "Chịu trách nhiệm tuân thủ luật, quy tắc và quy định quảng cáo tương tự mà Công ty tuân thủ."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/risk_disclaimer.html.tt:29
 msgid "Before we open an account for you to trade or invest in Investment Products with BIEL, we are required to make an assessment of whether the Investment Products or services you have chosen are appropriate for you, and to warn you if, on the basis of the information you provide to us, any such product or service is not appropriate. Any decision to open an account and to use our products or services is yours. It is your responsibility to understand the risks involved with our products or services."
-msgstr ""
-"Trước khi chúng tôi mở một tài khoản cho bạn giao dịch hoặc đầu tư "
-"trong mục Sản phẩm Đầu tư với BIEL, chúng tôi bắt buộc làm một bả"
-"n đánh giá Sản phẩm Đầu tư hoặc dịch vụ mà bạn đã chọn xem có "
-"thích hợp với bạn không dựa trên cơ sở thông tin mà bạn cung cấp "
-"cho chúng tôi, chúng tôi sẽ cảnh báo cho bạn nếu như có bất kì sả"
-"n phẩm hoặc dịch vụ nào trong số đó không thích hợp với bạn. Và "
-"việc quyết định sử dụng dịch vụ hoặc sản phẩm nào là do bạn. Bạ"
-"n phải có trách nhiệm hiểu được các rủi ro có liên quan tới những "
-"dịch vụ và sản phẩm của chúng tôi."
+msgstr "Trước khi chúng tôi mở một tài khoản cho bạn giao dịch hoặc đầu tư trong mục Sản phẩm Đầu tư với BIEL, chúng tôi bắt buộc làm một bản đánh giá Sản phẩm Đầu tư hoặc dịch vụ mà bạn đã chọn xem có thích hợp với bạn không dựa trên cơ sở thông tin mà bạn cung cấp cho chúng tôi, chúng tôi sẽ cảnh báo cho bạn nếu như có bất kì sản phẩm hoặc dịch vụ nào trong số đó không thích hợp với bạn. Và việc quyết định sử dụng dịch vụ hoặc sản phẩm nào là do bạn. Bạn phải có trách nhiệm hiểu được các rủi ro có liên quan tới những dịch vụ và sản phẩm của chúng tôi."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/doughflow_currency_choice.html.tt:2
 msgid "Before you proceed..."
@@ -1693,10 +1578,7 @@ msgstr "BetOnMarkets đã có mặt"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/group_history.html.haml:1
 msgid "BetOnMarkets.com has over 400,000 clients in its database and reach the US$1 billion milestone in only our 13th year, making us one of the leading fixed-odds trading providers."
-msgstr ""
-"BetOnMarkets.com có hơn 400,000 khách hàng trong kho dữ liệu và đạt cột "
-"mốc 1 tỷ đô la Mỹ chỉ trong năm thứ 13, khiến cho chúng tôi trở thành một "
-"trong những nhà cung cấp giao dịch cá cược cố định hàng đầu."
+msgstr "BetOnMarkets.com có hơn 400,000 khách hàng trong kho dữ liệu và đạt cột mốc 1 tỷ đô la Mỹ chỉ trong năm thứ 13, khiến cho chúng tôi trở thành một trong những nhà cung cấp giao dịch cá cược cố định hàng đầu."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/group_history.html.haml:1
 msgid "BetOnMarkets.com increases payouts to 100,000 USD, EUR, GBP and AUD"
@@ -1734,13 +1616,7 @@ msgstr "Công ty TNHH Binary (châu Âu), Tòa nhà Mompalao, Khu 2, ĐườngTo
 #. (('https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495')
 #: /home/git/translations/binary-static/src/templates/haml/about/group-information.html.haml:1
 msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licenced and regulated (for gambling products only) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - <a href=\"%1\" target=\"_blank\\\">view license</a>."
-msgstr ""
-"Công ty TNHH Binary (châu Âu), Tòa nhà Mompalao, Khu 2, Đường Tower, Msida "
-"MSD1825, Malta. Được cấp giấy phép và quy định (chỉ đối với các sản "
-"phẩm cá cược) bởi Ủy ban Cá cược Malta tại Malta (giấy phép số "
-"MGA/CL2/118/2000) và đối với khách hàng Anh được quy định và cấp "
-"phép bởi Ủy ban Cá cược Anh - <a href=\"%1\" target=\"_blank\\\">xem "
-"giấy phép</a>."
+msgstr "Công ty TNHH Binary (châu Âu), Tòa nhà Mompalao, Khu 2, Đường Tower, Msida MSD1825, Malta. Được cấp giấy phép và quy định (chỉ đối với các sản phẩm cá cược) bởi Ủy ban Cá cược Malta tại Malta (giấy phép số MGA/CL2/118/2000) và đối với khách hàng Anh được quy định và cấp phép bởi Ủy ban Cá cược Anh - <a href=\"%1\" target=\"_blank\\\">xem giấy phép</a>."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/contact.html.haml:1
 msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
@@ -1749,28 +1625,16 @@ msgstr "Công ty TNHH Binary (IOM), Tầng 1, Nhà Millennium, Đường Victori
 #. (('https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172')
 #: /home/git/translations/binary-static/src/templates/haml/about/group-information.html.haml:1
 msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licenced and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2012) and for UK clients by the UK Gambling Commission - <a href=\"%1\" target=\"_blank\">view license</a>."
-msgstr ""
-"Công ty TNHH Binary (IOM), Tầng 1, Nhà Millennium, Đường Victoria, Douglas, "
-"Isle of Man, IM2 4RW. Được cấp giấy phép và quy định bởi Ủy ban giám sát "
-"Cá cược tại Đảo Man. Giấy phép cá cược trực tuyến hiện hành được câp "
-"ngày 31 tháng 8 năm 2012) và đối với khách hàng Anh được cấp phép và"
-" quy định bởi Ủy ban Cá cược Anh - <a href=\"%1\" target=\"_blank\">xem "
-"giấy phép</a>."
+msgstr "Công ty TNHH Binary (IOM), Tầng 1, Nhà Millennium, Đường Victoria, Douglas, Isle of Man, IM2 4RW. Được cấp giấy phép và quy định bởi Ủy ban giám sát Cá cược tại Đảo Man. Giấy phép cá cược trực tuyến hiện hành được câp ngày 31 tháng 8 năm 2012) và đối với khách hàng Anh được cấp phép và quy định bởi Ủy ban Cá cược Anh - <a href=\"%1\" target=\"_blank\">xem giấy phép</a>."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/contact.html.haml:1
 msgid "Binary Group Services Sdn Bhd, C-2-01 SME Technopreneur Center 2, 63000 Cyberjaya, Selangor Darul Ehsan"
-msgstr ""
-"Binary Group Services Sdn Bhd, SME Technopreneur Center 2, 63000 Cyberjaya, "
-"Selangor Darul Ehsan"
+msgstr "Binary Group Services Sdn Bhd, SME Technopreneur Center 2, 63000 Cyberjaya, Selangor Darul Ehsan"
 
 #. (website)
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/risk_disclaimer.html.tt:7
 msgid "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, Binary (CR) SA and all other Binary Group members are sometimes referred to collectively as \"%1\", \"us\" or \"we\"."
-msgstr ""
-"Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, "
-"Binary (CR) SA và tất cả các thành viên khác trong Tập đoàn Binary "
-"đôi lúc được dùng với danh từ tập hợp như \"\"%1\", \"chúng tôi\" "
-"hoặc \"chúng tôi\"."
+msgstr "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, Binary (CR) SA và tất cả các thành viên khác trong Tập đoàn Binary đôi lúc được dùng với danh từ tập hợp như \"\"%1\", \"chúng tôi\" hoặc \"chúng tôi\"."
 
 #: /home/git/translations/binary-static/src/templates/haml/about/group-information.html.haml:1
 msgid "Binary Investments (Europe) Ltd, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156)."
@@ -1806,10 +1670,7 @@ msgstr "Quyền chọn nhị phân"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/binary_options_basics.html.haml:1
 msgid "Binary options are easy to understand. They’re called ‘binary’ because there can be only two outcomes – win or lose. If your prediction is correct, you receive a payout that is determined at the start of the trade. If not, you just lose your initial stake."
-msgstr ""
-"Quyền chọn nhị phân rất dễ hiểu. Gọi là ‘nhị phân’ là vì sẽ chỉ có 2 kết "
-"quả – thắng hoặc thua. Nếu bạn đoán đúng, bạn sẽ nhận được tiền thưởng thỏa "
-"thuận vào lúc bắt đầu giao dịch. Nếu không, bạn sẽ chỉ thua phần đã cá cược."
+msgstr "Quyền chọn nhị phân rất dễ hiểu. Gọi là ‘nhị phân’ là vì sẽ chỉ có 2 kết quả – thắng hoặc thua. Nếu bạn đoán đúng, bạn sẽ nhận được tiền thưởng thỏa thuận vào lúc bắt đầu giao dịch. Nếu không, bạn sẽ chỉ thua phần đã cá cược."
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/index.html.haml:1
 #: /home/git/translations/binary-static/src/templates/haml/layouts/get_started/nav.html.haml:1
@@ -1838,9 +1699,7 @@ msgstr "Giao dịch nhị phân rất đơn giản."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/group_history.html.haml:1
 msgid "Binary's Japanese subsidiary Binary KK opens an office in Tokyo and starts the process of applying for relevant licenses."
-msgstr ""
-"Binary KK công ty con Nhật của Binary mở một văn phòng ở Tokyo và bắ"
-"t đầu quá trình xin các giấy phép liên quan."
+msgstr "Binary KK công ty con Nhật của Binary mở một văn phòng ở Tokyo và bắt đầu quá trình xin các giấy phép liên quan."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/group_history.html.haml:1
 msgid "Binary's Maltese subsidiary Binary Investments (Europe) Ltd. is granted a Category 3 Investment Services license by the Malta Financial Services Authority."
@@ -1864,10 +1723,7 @@ msgstr "Binary.com tiếp tục lớn mạnh và đổi mới"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/group_history.html.haml:1
 msgid "Binary.com has over 800,000 clients in its database and reaches the US$2 billion milestone in our 15th year, making us one of the leading binary options providers."
-msgstr ""
-"Binary.com có hơn 800,000 khách trong cơ sở dữ liệu và đạt cột mốc 2 tỷ "
-"đô la Mỹ trong năm thứ 15, giúp chúng tôi trở thành một trong những nhà cung "
-"cấp quyền chọn nhị phân hàng đầu trong ngành."
+msgstr "Binary.com có hơn 800,000 khách trong cơ sở dữ liệu và đạt cột mốc 2 tỷ đô la Mỹ trong năm thứ 15, giúp chúng tôi trở thành một trong những nhà cung cấp quyền chọn nhị phân hàng đầu trong ngành."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/group_history.html.haml:1
 msgid "Binary.com hits 1 million users, reaching a historic milestone. The company continues to see exponential growth and this reconfirms its position as an industry leader."
@@ -1875,10 +1731,7 @@ msgstr "Binary.com đạt 1 triệu người dùng, chạm mốc lịch sử. 
 
 #: /home/git/translations/binary-static/src/templates/haml/static/careers.html.haml:1
 msgid "Binary.com is a flexible place. As well as our offices, we have staff who choose to telecommute from their home offices in countries around the world. If that suits you, we’re open to it."
-msgstr ""
-"Binary.com là một nơi rất linh hoạt. Cũng như các văn phòng, chúng tôi có "
-"đội ngũ nhân viên lựa chọn làm việc tại nhà trên toàn thế giới. Nếu điều này "
-"thích hợp với bạn, chúng tôi rất sẵn lòng."
+msgstr "Binary.com là một nơi rất linh hoạt. Cũng như các văn phòng, chúng tôi có đội ngũ nhân viên lựa chọn làm việc tại nhà trên toàn thế giới. Nếu điều này thích hợp với bạn, chúng tôi rất sẵn lòng."
 
 #. ('http://search.cpan.org/~binary/', 'https://github.com/binary-com')
 #: /home/git/translations/binary-static/src/templates/haml/static/open_source_projects.html.haml:1
@@ -1887,22 +1740,15 @@ msgstr "Binary.com là thành viên năng động trong cộng đồng Perl và 
 
 #: /home/git/translations/binary-static/src/templates/haml/static/open_source_projects.html.haml:1
 msgid "Binary.com is an active proponent of the open-source movement and is in the process of open-sourcing a number of components of its codebase."
-msgstr ""
-"Binary.com là người đề xướng trong phong trào nguồn-mở và đang trong quá "
-"trình mở nguồn hàng loạt thành phần và nền cơ sở mã của mình."
+msgstr "Binary.com là người đề xướng trong phong trào nguồn-mở và đang trong quá trình mở nguồn hàng loạt thành phần và nền cơ sở mã của mình."
 
 #: /home/git/translations/binary-static/src/templates/haml/home/index.html.haml:1
 msgid "Binary.com is the award-winning industry pioneer in online options trading."
-msgstr ""
-"Binary.com là cánh chim đầu đàn đạt giải thưởng trong ngành giao dịch quyền "
-"chọn trực tuyến."
+msgstr "Binary.com là cánh chim đầu đàn đạt giải thưởng trong ngành giao dịch quyền chọn trực tuyến."
 
 #: /home/git/translations/binary-static/src/templates/haml/home/login.html.haml:1
 msgid "Binary.com now requires your email and password to log in. If you have both a real-money and a virtual-money account, please use the password from your real-money account."
-msgstr ""
-"Binary.com hiện tại yêu cầu bạn cung cấp email và mật khẩu khi đăng "
-"nhập. Nếu bạn có cả hai loại tài khoản tiền thật và tài khoản tiền ảo, vui "
-"lòng dùng mật khẩu từ tài khoản tiền thật."
+msgstr "Binary.com hiện tại yêu cầu bạn cung cấp email và mật khẩu khi đăng nhập. Nếu bạn có cả hai loại tài khoản tiền thật và tài khoản tiền ảo, vui lòng dùng mật khẩu từ tài khoản tiền thật."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/group_history.html.haml:1
 msgid "Binary.com offers new ways to trade"
@@ -1926,10 +1772,7 @@ msgstr "Binary.com hỗ trợ <a target=\"_blank\" href=\"http://www.responsible
 
 #: /home/git/translations/binary-static/src/templates/haml/home/index.html.haml:1
 msgid "Binary.com's patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market."
-msgstr ""
-"Công nghệ định giá đã có bằng sáng chế của Binary.com cho phép bạn kiếm lời "
-"từ cùng một tỷ suất lợi nhuận như những nhà giao dịch trên thị trường "
-"liên ngân hàng."
+msgstr "Công nghệ định giá đã có bằng sáng chế của Binary.com cho phép bạn kiếm lời từ cùng một tỷ suất lợi nhuận như những nhà giao dịch trên thị trường liên ngân hàng."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/open_source_projects.html.haml:1
 msgid "Binary.com’s CPAN contributions"
@@ -1937,11 +1780,7 @@ msgstr "Những đóng góp CPAN của Binary.com"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/careers.html.haml:1
 msgid "Binary.com’s headquarters are in Malta, a favoured tourist destination with a warm climate, beautiful recreational areas and World Heritage sites. We also have an Operational Headquarters office in Cyberjaya, a high-tech precinct south of Kuala Lumpur, the capital of Malaysia, an equally exciting destination at the heart of Asia."
-msgstr ""
-"Trụ sở chính Binary.com tại Malta, đây là điểm đến du lịch nổi tiếng với khí "
-"hậu ấm áp, phong cảnh đẹp và nhiều di sản thế giới.Chúng tôi còn có trụ sở "
-"ở Cyberjaya, một khu công nghệ cao ở miền Nam Kuala Lumpur, thủ đô Malaysia, "
-"một điểm đến được xem là trái tim của châu Á."
+msgstr "Trụ sở chính Binary.com tại Malta, đây là điểm đến du lịch nổi tiếng với khí hậu ấm áp, phong cảnh đẹp và nhiều di sản thế giới.Chúng tôi còn có trụ sở ở Cyberjaya, một khu công nghệ cao ở miền Nam Kuala Lumpur, thủ đô Malaysia, một điểm đến được xem là trái tim của châu Á."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/group_history.html.haml:1
 msgid "Binary.com’s remarkable history"
@@ -1978,14 +1817,7 @@ msgstr "Dải Bollinger Cao"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:659
 msgid "Bollinger Bands are lines displayed around a simple moving average line (default set to 20 periods). The upper line is displayed 2 standard deviations above the moving average, and the lower line is displayed 2 standard deviations below the moving average.By definition prices are high at the upper band and low at the lower band. This definition can aid in rigorous pattern recognition and is useful in comparing price action to the action of indicators to arrive at systematic trading decisions."
-msgstr ""
-"Dải Bollinger là những đường được hiển thị xung quanh đường trung bình "
-"động (cài đặt mặc định đến 20 kì). Dòng trên hiển thị 2 độ lệch tiêu "
-"chuẩn trên đường trung bình động, và đường thấp hơn hiển thị 2 độ lệch "
-"tiêu chuẩn dưới đường trung bình động. Theo định nghĩa giá cao ở phần dải "
-"trên và thấp ở dải dưới. Định nghĩa này có thể hỗ trợ những phần khắt khe "
-"và hữu dụng khi so sánh động thái giá với động thái của chỉ số nhằm đưa "
-"ra những quyết định giao dịch một cách có hệ thống."
+msgstr "Dải Bollinger là những đường được hiển thị xung quanh đường trung bình động (cài đặt mặc định đến 20 kì). Dòng trên hiển thị 2 độ lệch tiêu chuẩn trên đường trung bình động, và đường thấp hơn hiển thị 2 độ lệch tiêu chuẩn dưới đường trung bình động. Theo định nghĩa giá cao ở phần dải trên và thấp ở dải dưới. Định nghĩa này có thể hỗ trợ những phần khắt khe và hữu dụng khi so sánh động thái giá với động thái của chỉ số nhằm đưa ra những quyết định giao dịch một cách có hệ thống."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/tac.html.tt:16
 msgid "Bonus Code"
@@ -2025,9 +1857,7 @@ msgstr "Phát triển Kinh doanh"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/how_to_trade_binaries.html.haml:1
 msgid "But there's no need to wait until expiry. You can sell back long-term trades at any time to profit from changing market conditions."
-msgstr ""
-"Nhưng không cần phải đợi đến khi hết hạn. Bạn có thể bán lại những giao dịch "
-"dài hạn bất kỳ lúc nào để kiếm lời từ các điều kiện thị trường đang thay đổi."
+msgstr "Nhưng không cần phải đợi đến khi hết hạn. Bạn có thể bán lại những giao dịch dài hạn bất kỳ lúc nào để kiếm lời từ các điều kiện thị trường đang thay đổi."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/careers.html.haml:1
 msgid "But we’re picky. We only select people with special qualities: serious professionals, who have high moral standards, and thrive in an honest, collaborative environment."
@@ -2526,6 +2356,7 @@ msgstr "Tiếp tục"
 
 #: /home/git/translations/binary-static/src/templates/haml/user/balance.html.haml:1
 #: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
 msgid "Continue Trading"
 msgstr "Tiếp tục Giao dịch"
 
@@ -5876,7 +5707,6 @@ msgid "Maximum account cash balance is currently set to <strong>%1 %2</strong>"
 msgstr "Số dư tài khoản tối đa hiện đang được thiết lập tới<strong>%1 %2</strong>"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1932
-#| msgid "Maximum aggregate contract purchases over a 7-day period."
 msgid "Maximum aggregate contract purchases over a 30-day period."
 msgstr "Hợp đồng tối đa được mua với kì hạn 30 ngày."
 
@@ -5889,7 +5719,6 @@ msgid "Maximum aggregate contract purchases per day."
 msgstr "Tập hợp các hợp đồng mua tối đa trên một ngày."
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1967
-#| msgid "Maximum aggregate loss over a 7-day period."
 msgid "Maximum aggregate loss over a 30-day period."
 msgstr "Thua lỗ tối đa với kì hạn 30 ngày."
 
@@ -6476,6 +6305,10 @@ msgstr "Mở"
 msgid "Opens late (at %1)"
 msgstr "Mở muộn (vào lúc  %1)"
 
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
+msgid "Options trading can become a real addiction, as can any other activity pushed to its limits. To avoid the danger of such an addiction, we provide a reality-check that gives you a summary of your trades and accounts on a regular basis."
+msgstr ""
+
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/tac.html.tt:30
 msgid "Order Execution"
 msgstr "Lệnh thực hiện"
@@ -6879,6 +6712,13 @@ msgstr "Vui lòng nhập ngày ít nhất là 6 tháng kể từ bây g
 msgid "Please enter a number between 0 and %1."
 msgstr "Vui lòng nhập một số giữa 0 và %1."
 
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
+#, fuzzy
+#| msgid "Please enter a number between 0 and %1."
+msgid "Please enter a number greater than 0"
+msgstr "Vui lòng nhập một số giữa 0 và %1."
+
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3025
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3082
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:686
@@ -7064,6 +6904,12 @@ msgstr "Vui lòng chọn tên quốc gia cư trú của bạn"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3443
 msgid "Please specify your country."
+msgstr "Vui lòng điền tên quốc gia của bạn."
+
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
+#, fuzzy
+#| msgid "Please specify your country."
+msgid "Please specify your preferred reality-check interval"
 msgstr "Vui lòng điền tên quốc gia của bạn."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
@@ -7345,11 +7191,8 @@ msgstr "Mua hợp đồng này sẽ dẫn đến tình trạng vượt qu
 
 #. ($currency, $limit)
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1009
-#| msgid "Purchase of this contract would cause you to exceed your 7-day turnover limit of %1%2."
 msgid "Purchase of this contract would cause you to exceed your 30-day turnover limit of %1%2."
-msgstr ""
-"Mua hợp đồng này sẽ dẫn đến tình trạng vượt quá giới hạn doanh "
-"thu 30 ngày của %1%2."
+msgstr "Mua hợp đồng này sẽ dẫn đến tình trạng vượt quá giới hạn doanh thu 30 ngày của %1%2."
 
 #. ($currency, $limit)
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:966
@@ -7463,7 +7306,14 @@ msgid "Real-time prices, benchmarked against interbank options markets."
 msgstr "Giá trong thời gian Thực, chuẩn so với thị trường quyền chọn liên ngân hàng."
 
 #: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
 msgid "Reality Check"
+msgstr "Kiểm tra tính Xác thực"
+
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
+#, fuzzy
+#| msgid "Reality Check"
+msgid "Reality Check Interval:"
 msgstr "Kiểm tra tính Xác thực"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/portfolio/contract_table.html.tt:52
@@ -7890,7 +7740,6 @@ msgstr "Tóm tắt dịch vụ"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2032
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2182
-#| msgid "Session duration limit cannot be more than 1440 minutes."
 msgid "Session duration limit cannot be more than 6 weeks."
 msgstr "Giới hạn thời hạn phiên không thể nhiều hơn 6 tuần."
 
@@ -8227,9 +8076,7 @@ msgstr "Xin lỗi, bạn đã có vị thế mở. Vui lòng đóng tấ
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:2175
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Hooks.pm:176
 msgid "Sorry, you have reached your session duration limit of %plural(%1,%d minute,%d minutes)."
-msgstr ""
-"Rất tiếc, bạn đã đạt tới mức giới hạn thời hạn phiên của %số "
-"nhiều (%1, %d phút, %d nhiều phút)."
+msgstr "Rất tiếc, bạn đã đạt tới mức giới hạn thời hạn phiên của %số nhiều (%1, %d phút, %d nhiều phút)."
 
 #. (request()
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Account.pm:150
@@ -11085,7 +10932,6 @@ msgstr "Bạn đã vượt quá giới hạn số hợp đồng trong nga
 
 #. ($currency, $limit)
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1025
-#| msgid "You have exceeded your 7-day limit on losses of %1%2."
 msgid "You have exceeded your 30-day limit on losses of %1%2."
 msgstr "Bạn đã vượt quá hạn mức thua lỗ 30 ngày của %1%2."
 
@@ -11728,6 +11574,12 @@ msgstr "giờ"
 msgid "hours"
 msgstr "giờ"
 
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
+#, fuzzy
+#| msgid "minutes"
+msgid "in minutes"
+msgstr "phút"
+
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/faq.html.tt:38
 msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Arabic, Polish, Russian and Indonesian."
 msgstr "Sàn giao dịch có một sức hấp dẫn quốc tế rộng, với giao diện bằng tiếng Anh, tiếng Tây Ban Nha, Pháp, Đức, Bồ Đào Nha, Trung Quốc, Ả Rập, Ba Lan, Nga và Indonesia."
@@ -11779,6 +11631,7 @@ msgstr "phút"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:161
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:521
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
 msgid "minutes"
 msgstr "phút"
 

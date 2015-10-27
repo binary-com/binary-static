@@ -9,8 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2015-10-26 04:22+0200\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (China) "
-"<https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
+"Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -393,12 +392,10 @@ msgid "3. Choose how you want to Trade the Market"
 msgstr "3.选择如何进行市场交易"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1946
-#| msgid "7-day limit on losses"
 msgid "30-day limit on losses"
 msgstr "30天期损失限额"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1911
-#| msgid "7-day turnover limit"
 msgid "30-day turnover limit"
 msgstr "30天期交易限额"
 
@@ -2363,6 +2360,7 @@ msgstr "继续"
 
 #: /home/git/translations/binary-static/src/templates/haml/user/balance.html.haml:1
 #: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
 msgid "Continue Trading"
 msgstr "继续交易"
 
@@ -5713,7 +5711,6 @@ msgid "Maximum account cash balance is currently set to <strong>%1 %2</strong>"
 msgstr "最大账户现金余额当前设置为  <strong>%1 %2</strong>"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1932
-#| msgid "Maximum aggregate contract purchases over a 7-day period."
 msgid "Maximum aggregate contract purchases over a 30-day period."
 msgstr "30天期最大累计合约买入量。"
 
@@ -5726,7 +5723,6 @@ msgid "Maximum aggregate contract purchases per day."
 msgstr "每日最大累计合约买入量。"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1967
-#| msgid "Maximum aggregate loss over a 7-day period."
 msgid "Maximum aggregate loss over a 30-day period."
 msgstr "30天期最大累计损失量。"
 
@@ -6315,6 +6311,10 @@ msgstr "开盘"
 msgid "Opens late (at %1)"
 msgstr "开盘推迟（至%1）"
 
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
+msgid "Options trading can become a real addiction, as can any other activity pushed to its limits. To avoid the danger of such an addiction, we provide a reality-check that gives you a summary of your trades and accounts on a regular basis."
+msgstr ""
+
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/tac.html.tt:30
 msgid "Order Execution"
 msgstr "执行订单"
@@ -6718,6 +6718,13 @@ msgstr "请输入至少6个月后的日期。"
 msgid "Please enter a number between 0 and %1."
 msgstr "请输入0和%1之间的数字。"
 
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
+#, fuzzy
+#| msgid "Please enter a number between 0 and %1."
+msgid "Please enter a number greater than 0"
+msgstr "请输入0和%1之间的数字。"
+
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3025
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3082
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:686
@@ -6904,6 +6911,12 @@ msgstr "请选择您的居住国"
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3443
 msgid "Please specify your country."
 msgstr "请指定您的国家。"
+
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
+#, fuzzy
+#| msgid "Please specify your bank name."
+msgid "Please specify your preferred reality-check interval"
+msgstr "请指定您的银行名称。"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Please submit the above information to <a href='mailto:affiliates@binary.com'>affiliates@binary.com</a>."
@@ -7184,7 +7197,6 @@ msgstr "您购买此合约将超出我们对于此类未平仓合约的赔付额
 
 #. ($currency, $limit)
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1009
-#| msgid "Purchase of this contract would cause you to exceed your 7-day turnover limit of %1%2."
 msgid "Purchase of this contract would cause you to exceed your 30-day turnover limit of %1%2."
 msgstr "买入此合约将导致您超出%1%2的30天期交易限额。"
 
@@ -7300,7 +7312,14 @@ msgid "Real-time prices, benchmarked against interbank options markets."
 msgstr "实时报价，我们的报价立基于银行间期权市场。"
 
 #: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
 msgid "Reality Check"
+msgstr "真实情况检查"
+
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
+#, fuzzy
+#| msgid "Reality Check"
+msgid "Reality Check Interval:"
 msgstr "真实情况检查"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/portfolio/contract_table.html.tt:52
@@ -7727,7 +7746,6 @@ msgstr "服务摘要"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2032
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2182
-#| msgid "Session duration limit cannot be more than 1440 minutes."
 msgid "Session duration limit cannot be more than 6 weeks."
 msgstr "交易期持续时间限制不能大于 6周。"
 
@@ -10924,7 +10942,6 @@ msgstr "您已超出此类合约的每日限额。"
 
 #. ($currency, $limit)
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1025
-#| msgid "You have exceeded your 7-day limit on losses of %1%2."
 msgid "You have exceeded your 30-day limit on losses of %1%2."
 msgstr "您已超出 %1%2的30天期损失限额。"
 
@@ -11567,6 +11584,12 @@ msgstr "小时"
 msgid "hours"
 msgstr "小时"
 
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
+#, fuzzy
+#| msgid "minutes"
+msgid "in minutes"
+msgstr "分钟"
+
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/faq.html.tt:38
 msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Arabic, Polish, Russian and Indonesian."
 msgstr "它提供国际化界面，支援的语言包括英语、西班牙语、法语、德语、葡萄牙语、中文、阿拉伯语、波兰语、俄语和印尼语。"
@@ -11618,6 +11641,7 @@ msgstr "分钟"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:161
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:521
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
 msgid "minutes"
 msgstr "分钟"
 
@@ -21269,9 +21293,6 @@ msgstr "如果%3在%4过后一直到%5时处于%7与%6之外，将获得%1%2的�
 
 #~ msgid "Please specify your bank address."
 #~ msgstr "请指定您的银行地址。"
-
-#~ msgid "Please specify your bank name."
-#~ msgstr "请指定您的银行名称。"
 
 #~ msgid "Please state whether or not the given number is ex-directory."
 #~ msgstr "请说明所给号码是否为电话号码簿上未登记的号码。"

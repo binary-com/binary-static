@@ -9,14 +9,12 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2015-10-26 19:35+0200\n"
 "Last-Translator: Anna Płochocka <plochocka.anna@gmail.com>\n"
-"Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>"
-"\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.5-dev\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
@@ -394,12 +392,10 @@ msgid "3. Choose how you want to Trade the Market"
 msgstr "3. Wybierz sposób handlowania"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1946
-#| msgid "7-day limit on losses"
 msgid "30-day limit on losses"
 msgstr "30-dniowy limit strat"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1911
-#| msgid "7-day turnover limit"
 msgid "30-day turnover limit"
 msgstr "30-dniowy maksymalny obrót"
 
@@ -2362,6 +2358,7 @@ msgstr "Dalej"
 
 #: /home/git/translations/binary-static/src/templates/haml/user/balance.html.haml:1
 #: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
 msgid "Continue Trading"
 msgstr "Kontynuuj handel"
 
@@ -4424,12 +4421,7 @@ msgstr "Audyt wewnętrzny"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:21
 msgid "International currency, stock index or commodity prices are highly volatile and very difficult to predict. Due to such volatility, plus the bias in the pricing system favouring the website (as described in more detail below), no financial contract purchased in our system (whether or not the payout exceeds the premium amount) can be considered a safe contract"
-msgstr ""
-"Waluty międzynarodowe, indeksy giełdowe oraz ceny towarów są bardzo zmienne "
-"i trudne do przewidzenia. Z powodu tej zmienności oraz czynników w systemie "
-"wyceny faworyzujących portal (szczegóły poniżej), żaden kontrakt finansowy "
-"zakupiony w naszym systemie (niezależnie od tego czy wysokość wypłaty "
-"przekracza kwotę premii czy nie) nie może być uznany za bezpieczny kontrakt."
+msgstr "Waluty międzynarodowe, indeksy giełdowe oraz ceny towarów są bardzo zmienne i trudne do przewidzenia. Z powodu tej zmienności oraz czynników w systemie wyceny faworyzujących portal (szczegóły poniżej), żaden kontrakt finansowy zakupiony w naszym systemie (niezależnie od tego czy wysokość wypłaty przekracza kwotę premii czy nie) nie może być uznany za bezpieczny kontrakt."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/risk_disclaimer.html.tt:86
 msgid "Internet Trading Risks"
@@ -4535,11 +4527,7 @@ msgstr "Nieprawidłowa nazwa obszaru roboczego. Można używać tylko znaków A-
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/risk_disclaimer.html.tt:74
 msgid "Investing or trading in Contracts exposes you to the performance of the underlying or reference instrument or asset to which the Binary Contract refers including foreign exchange, indices, stocks and commodities each of which have their own features and risks."
-msgstr ""
-"Inwestowanie w Kontrakty i handlowanie nimi naraża Cię na ryzyko związane z "
-"wydajnością instrumentu bazowego lub aktywów bazowych, na których oparty "
-"jest dany Kontrakt binarny, takich jak waluty obce, wskaźniki, akcje i "
-"towary, z których każdy ma swoje właściwości i wiąże się z innym ryzykiem."
+msgstr "Inwestowanie w Kontrakty i handlowanie nimi naraża Cię na ryzyko związane z wydajnością instrumentu bazowego lub aktywów bazowych, na których oparty jest dany Kontrakt binarny, takich jak waluty obce, wskaźniki, akcje i towary, z których każdy ma swoje właściwości i wiąże się z innym ryzykiem."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:137
 msgid "Investment Account"
@@ -4547,12 +4535,7 @@ msgstr "Konto inwestycyjne"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/risk_disclaimer.html.tt:26
 msgid "Investment Products to EEA Residents are provided by Binary Investments (Europe) Ltd (\"BIEL\") which is authorised and regulated by the Malta Financial Services Authority under the Malta Investment Services Act to deal on own account in Investment Products."
-msgstr ""
-"Produkty inwestycyjne dla mieszkańców EOG dostarcza Binary Investments "
-"(Europe) Ltd („BIEL”). Na mocy ustawy Malta Financial Services Act za nadzór "
-"nad tą firmą odpowiada Urząd ds. Usług Finansowych na Malcie: Malta "
-"Financial Services Authority, który zezwolił jej na oferowanie produktów "
-"inwestycyjnych na własny rachunek."
+msgstr "Produkty inwestycyjne dla mieszkańców EOG dostarcza Binary Investments (Europe) Ltd („BIEL”). Na mocy ustawy Malta Financial Services Act za nadzór nad tą firmą odpowiada Urząd ds. Usług Finansowych na Malcie: Malta Financial Services Authority, który zezwolił jej na oferowanie produktów inwestycyjnych na własny rachunek."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/solicitation.html.tt:2
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/tacjp.html.tt:31
@@ -4581,10 +4564,7 @@ msgstr "Są połączeniem najlepszych funkcji naszych wykresów Java i lekkich w
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/risk_disclaimer.html.tt:36
 msgid "It is important that you monitor all of your positions closely. It is your responsibility to monitor your positions and during the period that you have any open Contracts, you should always have the ability to access your Accounts."
-msgstr ""
-"Istotną kwestią jest dokładne śledzenie wszystkich swoich pozycji. Twoim "
-"obowiązkiem jest monitorowanie swoich pozycji. W okresie posiadania "
-"otwartego Kontraktu należy mieć zawsze możliwość dostępu do swoich Kont."
+msgstr "Istotną kwestią jest dokładne śledzenie wszystkich swoich pozycji. Twoim obowiązkiem jest monitorowanie swoich pozycji. W okresie posiadania otwartego Kontraktu należy mieć zawsze możliwość dostępu do swoich Kont."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:5
 msgid "It is important that you read and understand the contents of these terms and conditions. By indicating your acceptance of these terms and conditions and continuing with your application to join our affiliate program, you are agreeing (subject to our approval of your application) to the terms and conditions below. If you do not agree with the terms and conditions (or are not authorised to do so) you should not continue with your application. You should be the owner of, or acting on behalf of the owner of the website, that is signing up for this affiliate program."
@@ -5727,7 +5707,6 @@ msgid "Maximum account cash balance is currently set to <strong>%1 %2</strong>"
 msgstr "Maksymalne saldo gotówki na koncie jest obecnie ustalone na poziomie <strong>%2 %1</strong>"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1932
-#| msgid "Maximum aggregate contract purchases over a 7-day period."
 msgid "Maximum aggregate contract purchases over a 30-day period."
 msgstr "Maksymalne łączne zakupy kontraktów w okresie 30 dni."
 
@@ -5740,7 +5719,6 @@ msgid "Maximum aggregate contract purchases per day."
 msgstr "Maksymalne dzienne zagregowane zakupy kontraktów."
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1967
-#| msgid "Maximum aggregate loss over a 7-day period."
 msgid "Maximum aggregate loss over a 30-day period."
 msgstr "Maksymalna łączna strata dozwolona w okresie 30-dni."
 
@@ -6327,6 +6305,10 @@ msgstr "Otwarcie"
 msgid "Opens late (at %1)"
 msgstr "Otwarte późno (o %1)"
 
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
+msgid "Options trading can become a real addiction, as can any other activity pushed to its limits. To avoid the danger of such an addiction, we provide a reality-check that gives you a summary of your trades and accounts on a regular basis."
+msgstr ""
+
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/tac.html.tt:30
 msgid "Order Execution"
 msgstr "Wykonanie zlecenia"
@@ -6730,6 +6712,13 @@ msgstr "Wpisz datę co najmniej 6 miesięcy od dnia dzisiejszego."
 msgid "Please enter a number between 0 and %1."
 msgstr "Proszę wpisać liczbę od 0 do %1."
 
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
+#, fuzzy
+#| msgid "Please enter a number between 0 and %1."
+msgid "Please enter a number greater than 0"
+msgstr "Proszę wpisać liczbę od 0 do %1."
+
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3025
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3082
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:686
@@ -6915,6 +6904,12 @@ msgstr "Proszę wybrać kraj zamieszkania"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3443
 msgid "Please specify your country."
+msgstr "Podaj swój kraj."
+
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
+#, fuzzy
+#| msgid "Please specify your country."
+msgid "Please specify your preferred reality-check interval"
 msgstr "Podaj swój kraj."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
@@ -7196,11 +7191,8 @@ msgstr "Zakup tego kontaktu spowoduje przekroczenie naszego limitu wypłat dla o
 
 #. ($currency, $limit)
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1009
-#| msgid "Purchase of this contract would cause you to exceed your 7-day turnover limit of %1%2."
 msgid "Purchase of this contract would cause you to exceed your 30-day turnover limit of %1%2."
-msgstr ""
-"Zakup tego kontraktu spowoduje przekroczenie 30-dniowego limitu obrotów w "
-"wysokości %2 %1."
+msgstr "Zakup tego kontraktu spowoduje przekroczenie 30-dniowego limitu obrotów w wysokości %2 %1."
 
 #. ($currency, $limit)
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:966
@@ -7314,7 +7306,14 @@ msgid "Real-time prices, benchmarked against interbank options markets."
 msgstr "Ceny uaktualniane w czasie rzeczywistym w oparciu o rynki opcji międzybankowych."
 
 #: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
 msgid "Reality Check"
+msgstr "Sprawdzenie realności danych"
+
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
+#, fuzzy
+#| msgid "Reality Check"
+msgid "Reality Check Interval:"
 msgstr "Sprawdzenie realności danych"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/portfolio/contract_table.html.tt:52
@@ -7741,7 +7740,6 @@ msgstr "Podsumowanie usług"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2032
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2182
-#| msgid "Session duration limit cannot be more than 1440 minutes."
 msgid "Session duration limit cannot be more than 6 weeks."
 msgstr "Limit czasu sesji nie może przekroczyć 6 tygodni."
 
@@ -8078,9 +8076,7 @@ msgstr "Niestety masz jeszcze otwarte pozycje. Zamknij wszystkie otwarte pozycje
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:2175
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Hooks.pm:176
 msgid "Sorry, you have reached your session duration limit of %plural(%1,%d minute,%d minutes)."
-msgstr ""
-"Przepraszamy, zakończył się dozwolony czas trwania sesji: %plural(%1,%d "
-"minuta,%d minut(y))."
+msgstr "Przepraszamy, zakończył się dozwolony czas trwania sesji: %plural(%1,%d minuta,%d minut(y))."
 
 #. (request()
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Account.pm:150
@@ -10936,7 +10932,6 @@ msgstr "Przekroczono dzienny limit dla tego typu kontraktów."
 
 #. ($currency, $limit)
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1025
-#| msgid "You have exceeded your 7-day limit on losses of %1%2."
 msgid "You have exceeded your 30-day limit on losses of %1%2."
 msgstr "Przekroczono 30-dniowy limit straty: %2 %1."
 
@@ -11579,6 +11574,12 @@ msgstr "godzina"
 msgid "hours"
 msgstr "godziny"
 
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
+#, fuzzy
+#| msgid "minutes"
+msgid "in minutes"
+msgstr "min"
+
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/faq.html.tt:38
 msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Arabic, Polish, Russian and Indonesian."
 msgstr "jest dostępna na całym świecie i posiada interfejs w języku angielskim, hiszpańskim, francuskim, niemieckim, portugalskim, chińskim, arabskim, polskim, rosyjskim i indonezyjskim."
@@ -11630,6 +11631,7 @@ msgstr "min"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:161
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:521
+#: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
 msgid "minutes"
 msgstr "min"
 

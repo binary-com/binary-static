@@ -1,6 +1,11 @@
 /* Specific rules for languages */
 
 /*Japan Language */
+body{
+	#newTopMenuBetaInterface{
+	display : none;
+	}
+}
 body.JA{
 	.ja-hide{
 		display: none!important;
@@ -70,6 +75,12 @@ body.FR{
 	}
 	h1, h2, h3, h4, h5, h6 {
 		text-transform: initial!important;
+	}
+	.fr-hide{
+		display: none!important;
+	}
+	.fr-show{
+	display: inline !important;
 	}
 }
 
