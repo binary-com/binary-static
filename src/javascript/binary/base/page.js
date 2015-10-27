@@ -361,7 +361,7 @@ Menu.prototype = {
         }
         var start_trading = $('#topMenuStartBetting a:first');
         var trade_url = start_trading.attr("href");
-        if(stored_market) {
+        if(stored_market && !/\/trading/.test(trade_url)) {
             if(/market=/.test(trade_url)) {
                 trade_url = trade_url.replace(/market=\w+/, 'market=' + stored_market);
             } else {

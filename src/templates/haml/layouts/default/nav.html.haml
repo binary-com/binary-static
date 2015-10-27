@@ -9,5 +9,7 @@
       %li.$class
         %a.smaller-font{:href=>url_for($route), :class => 'pjaxload'}= $text
     - }
-    %li
+    %li.fr-hide
       %a.smaller-font{:href=>url_for('trade.cgi'), :class => 'pjaxload'}= l('Trade')
+    %li.fr-show
+      %a.smaller-font{:href=>url_for('trading'), :class => 'pjaxload'}= l('Trade')
