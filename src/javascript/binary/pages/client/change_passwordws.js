@@ -75,6 +75,8 @@ var PasswordWS = (function(){
 
 	var apiResponse = function(resp) {
 
+		console.log("apiResponse:", resp);
+
 		/** 
 		 * Failed
 		**/
