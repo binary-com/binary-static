@@ -45,7 +45,7 @@ var Purchase = (function () {
 
             heading.textContent = Content.localize().textContractConfirmationHeading;
             descr.textContent = receipt['longcode'];
-            reference.textContent = Content.localize().textContractConfirmationReference + ' ' + receipt['contract_id'];
+            reference.textContent = Content.localize().textContractConfirmationReference + ' ' + receipt['transaction_id'];
 
             var payout_value, cost_value, profit_value;
 
@@ -71,7 +71,7 @@ var Purchase = (function () {
                 profit.innerHTML = Content.localize().textContractConfirmationProfit + ' <p>' + profit_value + '</p>';
             }
 
-            balance.textContent = Content.localize().textContractConfirmationBalance + ' ' + User.get().currency + ' ' + Math.round(receipt['balance_after']*100)/100;
+            balance.textContent = Content.localize().textContractConfirmationBalance + ' ' + TUser.get().currency + ' ' + Math.round(receipt['balance_after']*100)/100;
 
             if(show_chart){
                 chart.show();

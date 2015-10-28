@@ -16,7 +16,6 @@ var Price = (function () {
 
     var typeDisplayIdMapping = {},
         bufferedIds = {},
-        bufferRequests = {},
         form_id = 0;
 
     var createProposal = function (typeOfContract) {
@@ -133,10 +132,6 @@ var Price = (function () {
             if (!bufferedIds.hasOwnProperty(id)) {
                 bufferedIds[id] = moment().utc().unix();
             }
-
-            if (!bufferRequests.hasOwnProperty(id)) {
-                bufferRequests[id] = params;
-            }
         }
 
         var position = contractTypeDisplayMapping(type);
@@ -206,9 +201,9 @@ var Price = (function () {
             purchase.setAttribute('data-ask-price', proposal['ask_price']);
             purchase.setAttribute('data-display_value', proposal['display_value']);
             purchase.setAttribute('data-symbol', id);
-            for(var key in bufferRequests[id]){
+            for(var key in params){
                 if(key && key !== 'proposal'){
-                    purchase.setAttribute('data-'+key, bufferRequests[id][key]);
+                    purchase.setAttribute('data-'+key, params[key]);
                 }
             }
         }
@@ -229,7 +224,6 @@ var Price = (function () {
         clearMapping: clearMapping,
         idDisplayMapping: function () { return typeDisplayIdMapping; },
         bufferedIds: function () { return bufferedIds; },
-        bufferRequests: function () { return bufferRequests; },
         getFormId: function(){ return form_id; },
         incrFormId: function(){ form_id++; },
         clearBufferIds: clearBuffer

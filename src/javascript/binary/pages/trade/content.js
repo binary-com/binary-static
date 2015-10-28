@@ -190,9 +190,29 @@ var Content = (function () {
         }
     };
 
+    function localizeTextContentById(id){
+        var element = document.getElementById(id);
+        var textContent = element.textContent;
+        element.textContent = text.localize(textContent);
+    }
+
+    var statementTranslation = function(){
+        var titleElement = document.getElementById("statement-title").firstElementChild;
+        var title = titleElement.textContent;
+        titleElement.textContent = text.localize(title);
+
+        localizeTextContentById("err");
+        localizeTextContentById("newer-date");
+        localizeTextContentById("older-date");
+        localizeTextContentById("date-label");
+        localizeTextContentById("submit-date");
+        localizeTextContentById("end-of-table");
+    };
+
     return {
         localize: function () { return localize; },
-        populate: populate
+        populate: populate,
+        statementTranslation: statementTranslation
     };
 
 })();

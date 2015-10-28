@@ -84,7 +84,7 @@
             .grd-grid-12
               %h1= l('Random Nocturnes')
               %p
-                != l('Like [_2], [_1] reset back to a price of 1000 each day. The difference is that [_1] reset at 12PM GMT, ([_2] reset at 00:00:00 GMT).', pjax_link_for(l('Random Nocturnes'), url_for('trade.cgi?market=random&form_name=risefall&underlying_symbol=RDYANG')), pjax_link_for(l('Random Quotidians'), url_for('trade.cgi?market=random&form_name=risefall&underlying_symbol=RDBEAR')))
+                != l('Like [_2], [_1] reset back to a price of 1000 each day. The difference is that [_1] reset at 12:00:00 GMT, ([_2] reset at 00:00:00 GMT).', pjax_link_for(l('Random Nocturnes'), url_for('trade.cgi?market=random&form_name=risefall&underlying_symbol=RDYANG')), pjax_link_for(l('Random Quotidians'), url_for('trade.cgi?market=random&form_name=risefall&underlying_symbol=RDBEAR')))
                 != l('If you\'re in Asia, you may find [_1] more attractive because they reset around the time Asian markets close.', pjax_link_for(l("Random Nocturnes"), url_for('trade.cgi?market=random&form_name=risefall&underlying_symbol=RDYANG')))
             .grd-grid-6.grd-grid-mobile-12.grd-parent
               .grd-grid-6.grd-centered

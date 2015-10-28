@@ -14,7 +14,7 @@ var Durations = (function(){
     var trading_times = {};
     var expiry_time = '';
 
-    var displayDurations = function(startType) {
+    var displayDurations = function(startType, expiry_type, duration_amount, duration_units, expiry_time) {
         var durations = Contract.durations();
         if (durations === false) {
             document.getElementById('expiry_row').style.display = 'none';

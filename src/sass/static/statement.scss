@@ -1,0 +1,63 @@
+
+#statement-ws-container {
+
+    #overlay_background {
+        position: absolute;
+        display: none;
+        z-index: 10;
+        width: 100%;
+        min-height: 50%;
+        background-color: white;
+    }
+
+    #loading_in_progress {
+        cursor: pointer;
+        @extend .spinner;
+        background-image: url('../images/pages/binary-symbol-logo.png');
+        background-image: url('../images/pages/binary-symbol-logo.svg'), none;
+        background-size: contain;
+        width: 10rem;
+        height: 10rem;
+        position: absolute;
+        left: 50%;
+        top: 350px;
+        margin-left: -5rem;
+        display: none;
+        z-index: 11;
+    }
+
+    #date-nav-panel {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .desc {
+        flex: 2 1 100px;
+        padding-right: 20px;
+    }
+
+    .act {
+        flex: 0.8 1 35px;
+    }
+
+    .button {
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+        line-height: 100%;
+        background: #2e8836;
+        border-radius: 4px;
+        text-transform: capitalize;
+        padding: 10px 25px;
+        display: inline-block;
+        letter-spacing: .75px;
+        overflow: visible;
+        border: 0;
+    }
+
+    label[for="date-picker"] {
+        left: 30%;
+    }
+}
