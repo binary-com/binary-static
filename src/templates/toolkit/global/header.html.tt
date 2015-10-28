@@ -52,6 +52,17 @@
                             <li>
                                 <a class="smaller-font pjaxload" href="[% request.url_for('tour') %]"[% target %]>[% l("Tour") %]</a>
                             </li>
+                            [% IF (stash->{language} eq 'FR') %]
+                            <li>
+                             <a class="smaller-font pjaxload" href="[% request.url_for('tour') %]"[% target %]>[% l("Tour") %]</a>
+                            </li>
+                            [%END%]
+                            [% ELSE %]
+                            <li>
+                             <a class="smaller-font pjaxload" href="[% request.url_for('trade.cgi') %]"[% target %]>[% l("Trade") %]</a>
+                             </li>
+                            [%END%]
+                           
                         </ul>
                     </div>
                 </div>
