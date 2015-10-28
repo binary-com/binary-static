@@ -692,19 +692,19 @@ function setMinMaxTime(){
         time.setAttribute('min', 1);
         time.setAttribute('max', 59);
         if (time.value > 59) {
-            document.getElementById('time_amount').value = 1;
+            time.value = 1;
         }
     } else if (period === 'h') {
         time.setAttribute('min', 1);
         time.setAttribute('max', 23);
         if (time.value > 23) {
-            document.getElementById('time_amount').value = 1;
+            time.value = 1;
         }
     } else if (period === 'd') {
         time.setAttribute('min', 1);
         time.setAttribute('max', 3);
         if (time.value > 3) {
-            document.getElementById('time_amount').value = 1;
+            time.value = 1;
         }
     }
 }
@@ -727,8 +727,6 @@ function chartFrameSource(underlying){
 
     var chartFrameElement = document.getElementById('chart_frame');
     if(chartFrameElement) {
-        chartFrameElement.src = 'https://highcharts.binary.com?affiliates=true&instrument=' + underlying + '&timePeriod=' + time;
-        
         if (document.getElementById('underlying')) {
             var instrumentCode = document.getElementById('underlying');
             instrumentCode.addEventListener("change", function(){
@@ -754,5 +752,6 @@ function chartFrameSource(underlying){
         timeAmount.addEventListener("keyup", function(){
             setUnderlyingTime();
         });
+        chartFrameElement.src = 'https://highcharts.binary.com?affiliates=true&instrument=' + underlying + '&timePeriod=' + time;
     }
 }
