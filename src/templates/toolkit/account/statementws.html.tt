@@ -7,7 +7,7 @@
 
     <div id="date-nav-panel">
         <div>
-            <button class="button" id="newer-date">Next Day</button>
+            <button class="button" id="older-date">Previous Day</button>
         </div>
         <div id="date-picker-container" class="center">
             <label for="date-picker" class="left_aligned" id="date-label">Jump To</label>
@@ -15,7 +15,7 @@
             <button class="button invisible" id="submit-date">Go</button>
         </div>
         <div>
-            <button class="button" id="older-date">Previous Day</button>
+            <button class="button" id="newer-date">Next Day</button>
         </div>
     </div>
 

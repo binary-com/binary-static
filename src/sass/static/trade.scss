@@ -261,53 +261,47 @@
       font-weight: bold;
       padding-top: 2.4em;
       text-align: center;
-      &.asian_up {
+      &.ASIANU {
         background: url("../images/pages/trade/asian-u_1.svg") no-repeat top center;
       }
-      &.asian_down {
+      &.ASIAND {
         background: url("../images/pages/trade/asian-d_1.svg") no-repeat top center;
       }
-      &.differs {
+      &.DIGITDIFF {
         background: url("../images/pages/trade/differs_1.svg") no-repeat top center;
       }
-      &.matches {
+      &.DIGITMATCH {
         background: url("../images/pages/trade/matches_1.svg") no-repeat top center;
       }
-      &.rises {
+      &.CALL {
         background: url("../images/pages/trade/rise_1.png") no-repeat top center;
       }
-      &.falls {
+      &.PUT {
         background: url("../images/pages/trade/fall_1.png") no-repeat top center;
       }
-      &.higher {
-        background: url("../images/pages/trade/higher_1.png") no-repeat top center;
-      }
-      &.lower {
-        background: url("../images/pages/trade/lower_1.png") no-repeat top center;
-      }
-      &.touches {
+      &.ONETOUCH {
         background: url("../images/pages/trade/touch_1.png") no-repeat top center;
       }
-      &.does_not_touch {
+      &.NOTOUCH {
         background: url("../images/pages/trade/no-touch_1.png") no-repeat top center;
       }
-      &.stays_between {
+      &.RANGE {
         background: url("../images/pages/trade/stay-in-between_1.png") no-repeat top center;
       }
-      &.goes_outside {
+      &.UPORDOWN {
         background: url("../images/pages/trade/stay-out_1.png") no-repeat top center;
       }
-      &.ends_between {
+      &.EXPIRYRANGE {
         background: url("../images/pages/trade/ends-between_1.png") no-repeat top center;
       }
-      &.ends_outside {
+      &.EXPIRYMISS {
         background: url("../images/pages/trade/ends-outside_1.png") no-repeat top center;
       }
-      &.spread_up {
+      &.SPREADU {
         background: url("../images/pages/trade/spreads.svg") no-repeat top center;
         background-size: 40%;
       }
-      &.spread_down {
+      &.SPREADD {
         background: url("../images/pages/trade/spreads.svg") no-repeat top center;
         background-size: 40%;
       }

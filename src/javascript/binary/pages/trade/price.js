@@ -149,7 +149,7 @@ var Price = (function () {
 
         var display = type ? (contractType ? contractType[type] : '') : '';
         if (display) {
-            h4.setAttribute('class', 'contract_heading ' + display.toLowerCase().replace(/ /g, '_'));
+            h4.setAttribute('class', 'contract_heading ' + type);
             if (is_spread) {
                 if (position === "top") {
                     h4.textContent = Content.localize().textSpreadTypeLong;

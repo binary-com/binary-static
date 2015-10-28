@@ -215,7 +215,7 @@ function displayUnderlyings(id, elements, selected) {
         });
         keys.forEach(function (key) {
             if (elements.hasOwnProperty(key)){
-                var option = document.createElement('option'), content = document.createTextNode(elements[key]['display']);
+                var option = document.createElement('option'), content = document.createTextNode(text.localize(elements[key]['display']));
                 option.setAttribute('value', key);
                 if (elements[key]['is_active'] !== 1) {
                     option.setAttribute('disabled', true);

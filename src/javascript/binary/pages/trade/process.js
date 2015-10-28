@@ -187,7 +187,7 @@ function processPriceRequest() {
 
     Price.incrFormId();
     processForgetPriceIds();
-    showPriceOverlay(); 
+    showPriceOverlay();
     for (var typeOfContract in Contract.contractType()[Contract.form()]) {
         if(Contract.contractType()[Contract.form()].hasOwnProperty(typeOfContract)) {
             TradeSocket.send(Price.proposal(typeOfContract));

@@ -62,7 +62,7 @@ var StatementWS = (function(){
         var fromEpoch = fromDate.unix();
         var tillEpoch = tillDate.unix();
 
-        StatementData.getStatement({dt_to: tillEpoch, dt_fm: fromEpoch});
+        StatementData.getStatement({date_to: tillEpoch, date_from: fromEpoch});
     }
 
     function getNextChunkStatement(){

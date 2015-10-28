@@ -24,7 +24,7 @@ var StatementUI = (function(){
     }
 
     function createEmptyStatementTable(){
-        var currency = User.get().currency;
+        var currency = TUser.get().currency;
         var header = ["Date", "Ref.", "Action", "Description", "Credit/Debit", "Balance("+ currency +")"];
         header = header.map(function(t){ return text.localize(t); });
         var footer = ["", "", "", "", "", ""];
