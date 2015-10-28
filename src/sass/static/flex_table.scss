@@ -1,0 +1,41 @@
+.flex-table-container {
+  min-width: 100px;
+  overflow-x: auto;
+
+  th {
+    text-align: left !important;
+    border-bottom: none !important;
+  }
+
+  td {
+    text-align: left !important;
+    padding-left: 10px;
+  }
+
+  .break-line {
+    white-space: pre-line;
+  }
+
+  .flex-table {
+    min-width: 700px;
+    display: flex;
+    flex-direction: column;
+
+    .flex-tr {
+      display: flex;
+      flex-wrap: wrap;
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 100px;
+      flex-direction: row;
+      align-items: stretch;
+
+      .flex-tr-child {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 50px;
+      }
+    }
+  }
+}
+

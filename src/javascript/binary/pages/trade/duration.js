@@ -14,7 +14,7 @@ var Durations = (function(){
     var trading_times = {};
     var expiry_time = '';
 
-    var displayDurations = function(startType) {
+    var displayDurations = function(startType, expiry_type, duration_amount, duration_units, expiry_time) {
         var durations = Contract.durations();
         if (durations === false) {
             document.getElementById('expiry_row').style.display = 'none';
@@ -196,7 +196,11 @@ var Durations = (function(){
         // jquery for datepicker
         var amountElement = $('#duration_amount');
         if (unit.value === 'd') {
+            var tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+
             amountElement.datepicker({
+                minDate: tomorrow,
                 onSelect: function() {
                     var date = $(this).datepicker('getDate');
                     var today = new Date();

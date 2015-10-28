@@ -442,6 +442,7 @@ a.spread_250, a.spread_260, a.spread_buy, a.spread_sell {
   padding-top: 2em;
   input {
     border: 1px solid $COLOR_GRAY;
+    border-radius: 4px;
   }
   select {
     border: 1px solid $COLOR_GRAY;

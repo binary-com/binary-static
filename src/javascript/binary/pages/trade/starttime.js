@@ -6,66 +6,96 @@
  * box
  */
 
-function compareStartDate(a,b) {
-    'use strict';
-    if (a.date < b.date)
-        return -1;
-    if (a.date > b.date)
-        return 1;
-    return 0;
-}
-
-function displayStartDates() {
+var StartDates = (function(){
     'use strict';
 
-    var startDates = Contract.startDates();
+    var hasNow = 0;
 
-    if (startDates && startDates.list.length) {
+    var compareStartDate = function(a,b) {
+        if (a.date < b.date)
+            return -1;
+        if (a.date > b.date)
+            return 1;
+        return 0;
+    };
 
-        var target= document.getElementById('date_start'),
-            fragment =  document.createDocumentFragment(),
-            row = document.getElementById('date_start_row');
+    var getElement = function(){
+        return document.getElementById('date_start');
+    };
 
-        row.style.display = 'flex';
+    var displayStartDates = function(select) {
 
-        while (target && target.firstChild) {
-            target.removeChild(target.firstChild);
-        }
+        var startDates = Contract.startDates();
 
-        if(startDates.has_spot){
-            var option = document.createElement('option');
-            var content = document.createTextNode(Content.localize().textNow);
-            option.setAttribute('value', 'now');
-            option.appendChild(content);
-            fragment.appendChild(option);
-        }
+        if (startDates && startDates.list.length) {
 
-        startDates.list.sort(compareStartDate);
+            var target= getElement(),
+                fragment =  document.createDocumentFragment(),
+                row = document.getElementById('date_start_row');
 
-        startDates.list.forEach(function (start_date) {
-            var a = moment.unix(start_date.open).utc();
-            var b = moment.unix(start_date.close).utc();
+            row.style.display = 'flex';
 
-            var ROUNDING = 5 * 60 * 1000;
-            var start = moment();
-
-            if(moment(start).isAfter(moment(a))){
-                a = start;
+            while (target && target.firstChild) {
+                target.removeChild(target.firstChild);
             }
 
-            a = moment(Math.ceil((+a) / ROUNDING) * ROUNDING).utc();
-
-            while(a.isBefore(b)) {
-                option = document.createElement('option');
-                option.setAttribute('value', a.utc().unix());
-                content = document.createTextNode(a.format('HH:mm ddd'));
+            if(startDates.has_spot){
+                var option = document.createElement('option');
+                var content = document.createTextNode(Content.localize().textNow);
+                option.setAttribute('value', 'now');
                 option.appendChild(content);
                 fragment.appendChild(option);
-                a.add(5, 'minutes');
+                hasNow = 1;
             }
-        });
-        target.appendChild(fragment);
-    } else {
-        document.getElementById('date_start_row').style.display = 'none';
-    }
-}
+            else{
+                hasNow = 0;
+            }
+
+            startDates.list.sort(compareStartDate);
+
+            startDates.list.forEach(function (start_date) {
+                var a = moment.unix(start_date.open).utc();
+                var b = moment.unix(start_date.close).utc();
+
+                var ROUNDING = 5 * 60 * 1000;
+                var start = moment();
+
+                if(moment(start).isAfter(moment(a))){
+                    a = start;
+                }
+
+                a = moment(Math.ceil((+a) / ROUNDING) * ROUNDING).utc();
+
+                while(a.isBefore(b)) {
+                    option = document.createElement('option');
+                    var value = a.utc().unix();
+                    option.setAttribute('value', value);
+                    if(value==select){
+                        option.setAttribute('selected', 'selected');
+                    }
+                    content = document.createTextNode(a.format('HH:mm ddd'));
+                    option.appendChild(content);
+                    fragment.appendChild(option);
+                    a.add(5, 'minutes');
+                }
+            });
+            target.appendChild(fragment);
+        } else {
+            document.getElementById('date_start_row').style.display = 'none';
+        }
+    };
+
+    var setNow = function(){
+        if(hasNow){
+            var element = getElement();
+            element.value = 'now';
+        }
+    } ;
+
+    return {
+        display: displayStartDates,
+        node: getElement,
+        setNow: setNow
+    };
+
+})();

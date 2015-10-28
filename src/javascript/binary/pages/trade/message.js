@@ -3,7 +3,7 @@
  * events based on type of response
  */
 var Message = (function () {
-    'use strict';
+    "use strict";
 
     var process = function (msg) {
 
@@ -11,7 +11,7 @@ var Message = (function () {
 
         try {
             response  = JSON.parse(msg.data);
-            if('object' !== typeof response || !("msg_type" in response)) {
+            if("object" !== typeof response || !("msg_type" in response)) {
                 throw new Error("Response from WS API is not well formatted.");
             }
         } catch(e) {
@@ -22,7 +22,11 @@ var Message = (function () {
         
         switch(msg_type) {
 
-            case 'authorize':
+            case "error":
+                $(".error-msg").text(response.error.message);
+                break;
+
+            case "authorize":
 
                 var thendo = "unknown";
                 if("passthrough" in response.echo_req && "thendo" in response.echo_req.passthrough) {
@@ -36,41 +40,62 @@ var Message = (function () {
                         break;
 
                     default:
-                        User.set(response.authorize);
+                        TUser.set(response.authorize);
                         TradeSocket.send({ payout_currencies: 1 });
                 }
                 break;
 
-            case 'active_symbols':
+            case "active_symbols":
                 processActiveSymbols(response);
                 break;
 
-            case 'contracts_for':
+            case "contracts_for":
                 processContract(response);
                 break;
 
-            case 'payout_currencies':
-                sessionStorage.setItem('currencies', msg.data);
+            case "payout_currencies":
+                sessionStorage.setItem("currencies", msg.data);
                 displayCurrencies();
                 break;
 
-            case 'proposal':
+            case "proposal":
                 processProposal(response);
                 break;
 
-            case 'buy':
+            case "buy":
                 Purchase.display(response);
                 break;
 
-            case 'tick':
+            case "tick":
                 processTick(response);
                 break;
 
-            case 'trading_times':
+            case "trading_times":
                 processTradingTimes(response);
                 break;
 
-            case 'portfolio':
+            case "statement":
+                StatementWS.statementHandler(response);
+                break;
+
+            case "balance":
+                var passthroughObj = response.echo_req.passthrough;
+                if (passthroughObj){
+                    switch (passthroughObj.purpose) {
+                        case "statement_footer":
+                            var bal = response.balance[0].balance;
+                            $("#statement-table > tfoot > tr").
+                                first().
+                                children(".bal").
+                                text(Number(parseFloat(bal)).toFixed(2));
+                            break;
+                        default :
+                            //do nothing
+                    }
+                }
+                break;
+
+            case "portfolio":
                 PortfolioWS.updatePortfolio(response);
                 break;
 

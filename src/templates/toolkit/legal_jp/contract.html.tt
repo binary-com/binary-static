@@ -3,5 +3,5 @@
     <p>
     	[% l("Japan website Pre-contract Document Paragraph 1") %]
     </p>
-    <a href="[% request.url_for('/templates/toolkit/legal_jp/download/Pre-contractDocs(20150831).pdf') %]" download>[% l("Japan website Download Text for Pre-contract Document") %]</a>
+    <a href="[% request.url_for('/download/japan/Pre-contractDocs(20150831).pdf') %]" download>[% l("Japan website Download Text for Pre-contract Document") %]</a>
 </div>

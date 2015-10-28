@@ -31,11 +31,17 @@
 @import "pages/cashier.scss";
 @import "pages/static.scss";
 @import "pages/livechart.scss";
+@import "pages/payment_agent.scss";
 @import "pages/timeline.scss";
-@import "trade/trade.scss";
 @import "pages/api_token.scss";
 @import "pages/careers.scss";
 @import "pages/about_us.scss";
+
+/* static pages */
+@import "static/trade.scss";
+@import "static/statement.scss";
+@import "static/flex_table.scss";
+
 
 /* Language based rules */
 @import "language_base.scss";

@@ -189,14 +189,33 @@ onLoad.queue(function () {
     attach_tabs('.has-tabs');
 });
 
-// this event is fired when there is change in localStorage
-// that looks for active_loginid key change, this was needed for
-// scenario where client has multiple tab/window open and switch
-// account on one tab then we need to load all the open tab/window
-$(window).on('storage', function (jq_event) {
-    if (jq_event.originalEvent.key !== 'active_loginid') return;
-    // wait for 2 seconds as cookie is being set else it will show login screen
-    window.setTimeout(function () {
-        location.href = page.url.url_for('user/my_account?loginid=' + LocalStore.get('active_loginid'));
-    }, 2000);
+// LocalStorage can be used as a means of communication among
+// different windows. The problem that is solved here is what
+// happens if the user logs out or switches loginid in one
+// window while keeping another window or tab open. This can
+// lead to unintended trades. The solution is to load the
+// account page in all windows after switching loginid or
+// the home page after logout.
+
+// onLoad.queue does not work on the home page.
+// jQuery's ready function works always.
+$(document).ready(function () {
+    // $.cookie is not always available.
+    // So, fall back to a more basic solution.
+    var match = document.cookie.match(/\bloginid=(\w+)/);
+    match = match ? match[1] : '';
+
+    $(window).on('storage', function (jq_event) {
+        if (jq_event.originalEvent.key !== 'active_loginid') return;
+        if (jq_event.originalEvent.newValue === match) return;
+        if (jq_event.originalEvent.newValue === '') {
+            // logged out
+            location.href = page.url.url_for('home');
+        } else {
+            // loginid switch
+            location.href = page.url.url_for('user/my_account?loginid=' + jq_event.originalEvent.newValue);
+        }
+    });
+
+    LocalStore.set('active_loginid', match);
 });

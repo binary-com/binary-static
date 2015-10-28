@@ -16,7 +16,6 @@ var Price = (function () {
 
     var typeDisplayIdMapping = {},
         bufferedIds = {},
-        bufferRequests = {},
         form_id = 0;
 
     var createProposal = function (typeOfContract) {
@@ -26,7 +25,7 @@ var Price = (function () {
             amountType = document.getElementById('amount_type'),
             currency = document.getElementById('currency'),
             payout = document.getElementById('amount'),
-            startTime = document.getElementById('date_start'),
+            startTime = StartDates.node(),
             expiryType = document.getElementById('expiry_type'),
             duration = document.getElementById('duration_amount'),
             durationUnit = document.getElementById('duration_units'),
@@ -133,15 +132,10 @@ var Price = (function () {
             if (!bufferedIds.hasOwnProperty(id)) {
                 bufferedIds[id] = moment().utc().unix();
             }
-
-            if (!bufferRequests.hasOwnProperty(id)) {
-                bufferRequests[id] = params;
-            }
         }
 
         var position = contractTypeDisplayMapping(type);
         var container = document.getElementById('price_container_'+position);
-        var box = document.getElementById('price_container_' + position);
 
         var h4 = container.getElementsByClassName('contract_heading')[0],
             amount = container.getElementsByClassName('contract_amount')[0],
@@ -180,22 +174,6 @@ var Price = (function () {
             description.innerHTML = '<div>'+proposal['longcode']+'</div>';
         }
 
-        if (document.getElementById('websocket_form')) {
-
-            if (!document.getElementById('websocket_form').checkValidity()) {
-                if (box) {
-                    box.style.display = 'none';
-                }
-                processForgetPriceIds();
-            }
-
-            else if (document.getElementById('websocket_form').checkValidity()) {
-                if (box) {
-                    box.style.display = 'block';
-                }
-            }
-        }
-
         if (details['error']){
             purchase.hide();
             comment.hide();
@@ -223,9 +201,9 @@ var Price = (function () {
             purchase.setAttribute('data-ask-price', proposal['ask_price']);
             purchase.setAttribute('data-display_value', proposal['display_value']);
             purchase.setAttribute('data-symbol', id);
-            for(var key in bufferRequests[id]){
+            for(var key in params){
                 if(key && key !== 'proposal'){
-                    purchase.setAttribute('data-'+key, bufferRequests[id][key]);
+                    purchase.setAttribute('data-'+key, params[key]);
                 }
             }
         }
@@ -246,7 +224,6 @@ var Price = (function () {
         clearMapping: clearMapping,
         idDisplayMapping: function () { return typeDisplayIdMapping; },
         bufferedIds: function () { return bufferedIds; },
-        bufferRequests: function () { return bufferRequests; },
         getFormId: function(){ return form_id; },
         incrFormId: function(){ form_id++; },
         clearBufferIds: clearBuffer
