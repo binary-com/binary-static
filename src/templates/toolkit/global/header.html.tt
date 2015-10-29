@@ -54,7 +54,7 @@
                             </li>
                             [%IF language == 'FR'%]
                             <li>
-                             <a class="smaller-font pjaxload" href="[% request.url_for('trading') %]"[% target %]>[% l("trading") %]</a>
+                             <a class="smaller-font pjaxload" href="[% request.url_for('trading') %]"[% target %]>[% l("Trade") %]</a>
                             </li>
                             [% ELSE %]
                             <li>
