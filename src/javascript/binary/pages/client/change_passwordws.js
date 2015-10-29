@@ -14,10 +14,10 @@ var PasswordWS = (function(){
 	
 	var validateForm = function() {
 
-		var isValid 	= true
-		,	old_pass 	= $form.find("input[name='oldpassword']").val()
-		,	new_pass 	= $form.find("input[name='new-password']").val()
-		,	repeat_pass = $form.find("input[name='repeat-password']").val();
+		var isValid 	= true,
+			old_pass 	= $form.find("input[name='oldpassword']").val(),
+			new_pass 	= $form.find("input[name='new-password']").val(),
+			repeat_pass = $form.find("input[name='repeat-password']").val();
 
 		/**
 		 * Validation for new-password
