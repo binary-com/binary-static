@@ -333,8 +333,6 @@ Menu.prototype = {
             var url = new URL($(this).attr('href'));
             if(url.is_in(that.page_url) && page.language() === 'EN' && /\/trading/.test(url)){
                   item = $("https://www.binaryqa33.com/d/trade.cgi?l=EN&market=forex").closest('.item');
-                }
-
             }
             else{
                 if(url.is_in(that.page_url)) {
