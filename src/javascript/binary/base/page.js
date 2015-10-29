@@ -372,6 +372,14 @@ Menu.prototype = {
             $('#menu-top li:eq(3) a').attr('href', trade_url);
             $('#mobile-menu #topMenuStartBetting a.trading_link').attr('href', trade_url);
         }
+        else{
+            start_trading.attr("href", trade_url);
+
+            $('#menu-top li:eq(3) a').attr('href', trade_url);
+            $('#mobile-menu #topMenuStartBetting a.trading_link').attr('href', trade_url);
+        
+
+        }
 
         start_trading.on('click', function(event) {
             event.preventDefault();
