@@ -268,7 +268,7 @@ Menu.prototype = {
             active.subitem.addClass('a-active');
         }
 
-        if(page.language() === 'EN' && /\/trading/.test(active.item))
+      //  if(page.language() === 'EN' && /\/trading/.test(active.item))
 
         if(active.item) {
             if(page.language() === 'EN' && /\/trading/.test(active.item)){
