@@ -52,7 +52,7 @@
                             <li>
                                 <a class="smaller-font pjaxload" href="[% request.url_for('tour') %]"[% target %]>[% l("Tour") %]</a>
                             </li>
-                            [%IF language eq 'FR')%]
+                            [%IF language eq 'FR'%]
                             <li>
                              <a class="smaller-font pjaxload" href="[% request.url_for('tour') %]"[% target %]>[% l("trading") %]</a>
                             </li>la
