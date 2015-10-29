@@ -264,14 +264,34 @@ Menu.prototype = {
         $("#main-menu li.sub_item a").removeClass('a-active');
 
         var active = this.active_main_menu();
+        var elementid = document.getElementById("topMenuStartBetting");
         if(active.subitem) {
             active.subitem.addClass('a-active');
         }
 
+        if(page.language() === 'FR' && /\/trading/.test(active.item))
+        {
+            if(active.item) {
+                elementid.addClass('active');
+                elementid.addClass('hover');
+            }
+
+        }
+        else
+        {
+            if(active.item) {
+                active.item.addClass('active');
+                active.item.addClass('hover');
+            }
+
+        }
+
+        /*
         if(active.item) {
             active.item.addClass('active');
             active.item.addClass('hover');
         }
+        */
 
         this.on_mouse_hover(active.item);
 
