@@ -268,9 +268,17 @@ Menu.prototype = {
             active.subitem.addClass('a-active');
         }
 
+        if(page.language() === 'EN' && /\/trading/.test(active.item))
+
         if(active.item) {
-            active.item.addClass('active');
-            active.item.addClass('hover');
+            if(page.language() === 'EN' && /\/trading/.test(active.item)){
+                document.getElementById("topMenuStartBetting").addClass('active');
+                document.getElementById("topMenuStartBetting").addClass('hover');
+            }
+            else{
+                active.item.addClass('active');
+                active.item.addClass('hover');
+            }
         }
 
         this.on_mouse_hover(active.item);
@@ -331,19 +339,9 @@ Menu.prototype = {
         //Is something selected in main items list
         $("#main-menu .items a").each(function () {
             var url = new URL($(this).attr('href'));
-            if(url.is_in(that.page_url) && page.language() === 'EN' && /\/trading/.test(url)){
-                  item = $("https://www.binaryqa33.com/d/trade.cgi?l=EN&market=forex").closest('.item');
-            }
-            else{
-                if(url.is_in(that.page_url)) {
-                    item = $(this).closest('.item');
-                }
-
-            }
-            /*
             if(url.is_in(that.page_url)) {
                 item = $(this).closest('.item');
-            }*/
+            }
         });
 
         $("#main-menu .sub_items a").each(function(){
