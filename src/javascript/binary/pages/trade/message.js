@@ -22,23 +22,6 @@ var Message = (function () {
         
         switch(msg_type) {
 
-            /**
-             * With the present implementation and JSON Schema, error dispatching will be ugly.
-             * Some error responces are stateless: 
-             *    When we receive a response and trigger the process function we do not know what
-             *    part of the code the request originated from (what API method was called). 
-             *    For non-error responses we look at the `msg_type` sub-key 
-             *    to dispatch the data to the right handler.
-             *    However, in case of an error, `msg_type` itself becomes `error` and our
-             *    only clue is lost. We cannot assume that for all API methods we could use
-             *    the same error handler. Each method should be able to decide how to react
-             *    to errors.
-             * This could be solved with two approaches.
-             *    - Switching to live-api, where the method calls are thenable
-             *    - Having API return the method name when an error occures
-             * For now though, we have to do it as done here.
-             *
-            **/
             case "error":
 
                 // change_password
