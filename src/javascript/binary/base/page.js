@@ -332,8 +332,8 @@ Menu.prototype = {
         $("#main-menu .items a").each(function () {
             var url = new URL($(this).attr('href'));
             if(url.is_in(that.page_url) && page.language() === 'EN' && /\/trading/.test(url)){
-                item = "https://www.binaryqa33.com/d/trade.cgi?l=EN&market=forex";
-            }
+                  item = $("https://www.binaryqa33.com/d/trade.cgi?l=EN&market=forex").closest('.item');
+                }
 
             }
             else{
