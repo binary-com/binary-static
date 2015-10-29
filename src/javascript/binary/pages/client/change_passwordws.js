@@ -1,10 +1,10 @@
 var PasswordWS = (function(){
 
-
-	var $form   = $("#change-password > form");
-	var $result = $("#change-password > div[data-id='success-result']");
+	var $form, $result;
 
 	var init = function() {
+		$form   = $("#change-password > form");
+		$result = $("#change-password > div[data-id='success-result']");
 		$form.find("button").on("click", function(e){
 			e.preventDefault();
 			e.stopPropagation();
@@ -15,13 +15,21 @@ var PasswordWS = (function(){
 	var validateForm = function() {
 
 		var isValid 	= true
-		,	old_pass 	= $form.find("input.old-password").val()
-		,	new_pass 	= $form.find("input.new-password").val()
-		,	repeat_pass = $form.find("input.repeat-password").val();
+		,	old_pass 	= $form.find("input[name='oldpassword']").val()
+		,	new_pass 	= $form.find("input[name='new-password']").val()
+		,	repeat_pass = $form.find("input[name='repeat-password']").val();
 
 		/**
 		 * Validation for new-password
 		**/
+
+		// Old passwrod cannot be blank. We leave the actual matching to backend
+		if(0 === old_pass.length) {
+			$form.find("p[data-error='old-blank']").removeClass("hidden");
+			isValid = false;
+		} else {
+			$form.find("p[data-error='old-blank']").addClass("hidden");
+		}		
 
 		// New password cannot be the same as the old password
 		if(new_pass.length > 0 && new_pass === old_pass) {
@@ -49,7 +57,7 @@ var PasswordWS = (function(){
 
 		// Invalid characters
 		var regexp = new RegExp('^[ -~]+$');
-		if(!regexp.test(new_pass)){
+		if(new_pass.length && !regexp.test(new_pass)){
 			$form.find("p[data-error='bad-chars']").removeClass("hidden");
 			isValid = false;
 		} else {
@@ -76,11 +84,13 @@ var PasswordWS = (function(){
 
 	var sendRequest = function() {
 
+		$form.find("p[data-error='server-sent-error']").addClass("hidden");
+
 		var passwords = validateForm();
 		if(false === passwords) return false;
 
 		TradeSocket.send({
-		    "change_password": "1", // or 1 ?
+		    "change_password": "1",
 		    "old_password": passwords.old_pass,
 		    "new_password": passwords.new_pass
 		});
@@ -95,23 +105,23 @@ var PasswordWS = (function(){
 		 * Failed
 		**/
 		if("error" in resp) {
-
 			var errorMsg = text.localize("Changing password failed.");
-
 			if("message" in resp.error) {
 				errorMsg = resp.error.message;
 			}
-
 			$form.find("p[data-error='server-sent-error']").text(errorMsg).removeClass("hidden");
-
 			return false;
-		} else {
-			$form.find("p[data-error='server-sent-error']").text(errorMsg).addClass("hidden");
 		}
 
+		/**
+		 * Succeeded
+		**/
 		$form.addClass("hidden");
 		$result.removeClass("hidden");
-		setInterval(function() { window.location.hostname + "/login"; }, 5000);
+		window.setTimeout(function() {
+			// When the user changes her password, server does not destroy her session, so we logout here
+			window.location = window.location.protocol + "//" + window.location.hostname + "/logout" + window.location.search;
+		}, 5000);
 
 		return true;
 
