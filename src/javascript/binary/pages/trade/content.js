@@ -54,7 +54,10 @@ var Content = (function () {
             textSpreadTypeShort: text.localize('Short'),
             textSpreadDepositComment: text.localize('Deposit of'),
             textSpreadRequiredComment: text.localize('is required. Current spread'),
-            textSpreadPointsComment: text.localize('points')
+            textSpreadPointsComment: text.localize('points'),
+            textContractStatusWon: text.localize('This contract won'),
+            textContractStatusLost: text.localize('This contract lost'),
+            textTickResultLabel: text.localize('Tick')
         };
 
         var starTime = document.getElementById('start_time_label');
@@ -190,9 +193,24 @@ var Content = (function () {
         }
     };
 
+    function localizeTextContentById(id){
+        var element = document.getElementById(id);
+        var textContent = element.textContent;
+        element.textContent = text.localize(textContent);
+    }
+
+    var statementTranslation = function(){
+        var titleElement = document.getElementById("statement-title").firstElementChild;
+        var title = titleElement.textContent;
+        titleElement.textContent = text.localize(title);
+
+        localizeTextContentById("err");
+    };
+
     return {
         localize: function () { return localize; },
-        populate: populate
+        populate: populate,
+        statementTranslation: statementTranslation
     };
 
 })();

@@ -11,6 +11,10 @@ function displayCurrencies(selected) {
         fragment =  document.createDocumentFragment(),
         currencies = JSON.parse(sessionStorage.getItem('currencies'))['payout_currencies'];
 
+    if (!target) {
+        return;
+    }
+
     while (target && target.firstChild) {
         target.removeChild(target.firstChild);
     }

@@ -45,7 +45,7 @@ var Purchase = (function () {
 
             heading.textContent = Content.localize().textContractConfirmationHeading;
             descr.textContent = receipt['longcode'];
-            reference.textContent = Content.localize().textContractConfirmationReference + ' ' + receipt['contract_id'];
+            reference.textContent = Content.localize().textContractConfirmationReference + ' ' + receipt['transaction_id'];
 
             var payout_value, cost_value, profit_value;
 
@@ -71,7 +71,7 @@ var Purchase = (function () {
                 profit.innerHTML = Content.localize().textContractConfirmationProfit + ' <p>' + profit_value + '</p>';
             }
 
-            balance.textContent = Content.localize().textContractConfirmationBalance + ' ' + User.get().currency + ' ' + Math.round(receipt['balance_after']*100)/100;
+            balance.textContent = Content.localize().textContractConfirmationBalance + ' ' + TUser.get().currency + ' ' + Math.round(receipt['balance_after']*100)/100;
 
             if(show_chart){
                 chart.show();
@@ -158,7 +158,7 @@ var Purchase = (function () {
 
             var el1 = document.createElement('div');
             el1.classList.add('col');
-            el1.textContent = 'Tick '+ (spots.getElementsByClassName('row').length+1);
+            el1.textContent = Content.localize().textTickResultLabel + " " + (spots.getElementsByClassName('row').length+1);
             fragment.appendChild(el1);
 
             var el2 = document.createElement('div');
@@ -185,13 +185,13 @@ var Purchase = (function () {
 
                 if  (  purchase_data.echo_req.passthrough.contract_type==="DIGITMATCH" && d1==purchase_data.echo_req.passthrough.barrier || purchase_data.echo_req.passthrough.contract_type==="DIGITDIFF" && d1!=purchase_data.echo_req.passthrough.barrier){
                     spots.className = 'won';
-                    contract_status = 'This contract won';
+                    contract_status = Content.localize().textContractStatusWon;
                 }
                 else{
                     spots.className = 'lost';
-                    contract_status = 'This contract lost';
+                    contract_status = Content.localize().textContractStatusLost;
                 }
-                document.getElementById('contract_purchase_heading').textContent = text.localize(contract_status);
+                document.getElementById('contract_purchase_heading').textContent = contract_status;
             }
 
             purchase_data.echo_req.passthrough['duration']--;

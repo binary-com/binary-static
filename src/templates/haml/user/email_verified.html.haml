@@ -9,7 +9,7 @@
     - } else {
         %h1= l('Verification Successful')
         %p= l("Thank you for verifying your email.")
-        - if ($is_real) {
+        - if (not $upgrade_url) {
             %p.center-aligned
               %a.button.pjaxload{:href => url_for("/user/my_account")}
                 %span= l('Proceed')
