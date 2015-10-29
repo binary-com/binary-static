@@ -269,7 +269,7 @@ Menu.prototype = {
         }
 
       //  if(page.language() === 'EN' && /\/trading/.test(active.item))
-
+console.log("Active item is ", active.item);
         if(active.item) {
             if(page.language() === 'EN' && /\/trading/.test(active.item)){
                 document.getElementById("topMenuStartBetting").addClass('active');
@@ -277,7 +277,7 @@ Menu.prototype = {
             }
             else{
                 active.item.addClass('active');
-                active.item.addClass('hover');
+                active.item.addClass('hover'); 
             }
         }
 
