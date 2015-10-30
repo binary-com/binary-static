@@ -378,7 +378,7 @@ sub _main_menu_charting {
 
     # high charts
     my $highcharts_ref = {
-        id         => 'topMenuLiveCharts',
+        id         => 'topMenuHighCharts',
         url        => '//highcharts.binary.com',
         text       => $self->c->l('HighCharts'),
         link_class => 'pjaxload',

@@ -75,7 +75,7 @@ function loadAnalysisTab() {
                 url     : '/d/trade_chart.cgi?l=' + page.language(),
                 dataType: 'html',
                 success : function (data) {
-                            document.getElementById('trade_live_chart').innerHTML = data;
+                            document.getElementById('trade_chart').innerHTML = data;
                             setUnderlyingTime();
                           },
             }));

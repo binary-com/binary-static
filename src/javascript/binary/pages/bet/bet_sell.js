@@ -123,8 +123,8 @@ var BetSell = function() {
         },
         close_container: function () {
             this.basic_cleanup();
-            if (live_chart && typeof live_chart !== "undefined") {
-                live_chart.close_chart();
+            if (chart && typeof chart !== "undefined") {
+                chart.close_chart();
             }
             if (this._container) {
                 this._container.hide().remove();
@@ -1032,7 +1032,7 @@ var BetSell = function() {
             }
             return time_obj;
         },
-        add_time_indicators: function(liveChartConfig) {
+        add_time_indicators: function(chartConfig) {
             var that = this,
                 indicator;
             var start_time = $('#trade_details_start_date').attr('epoch_time');
@@ -1041,49 +1041,49 @@ var BetSell = function() {
             var end_time = $('#trade_details_end_date').attr('epoch_time');
             var entry_spot_time = $('#trade_details_entry_spot_time').attr('epoch_time');
             if(purchase_time) {
-                if (liveChartConfig.has_indicator('purchase_time')) {
-                    live_chart.remove_indicator('purchase_time');
+                if (chartConfig.has_indicator('purchase_time')) {
+                    chart.remove_indicator('purchase_time');
                 }
-                indicator = new LiveChartIndicator.Barrier({ name: "purchase_time", label: 'Purchase Time', value: that.get_date_from_seconds(parseInt(purchase_time)), color: '#e98024', axis: 'x'});
-                live_chart.add_indicator(indicator);
+                indicator = new ChartIndicator.Barrier({ name: "purchase_time", label: 'Purchase Time', value: that.get_date_from_seconds(parseInt(purchase_time)), color: '#e98024', axis: 'x'});
+                chart.add_indicator(indicator);
             }
 
             if(start_time) {
-                if (liveChartConfig.has_indicator('start_time')) {
-                    live_chart.remove_indicator('start_time');
+                if (chartConfig.has_indicator('start_time')) {
+                    chart.remove_indicator('start_time');
                 }
-                indicator = new LiveChartIndicator.Barrier({ name: "start_time", label: 'Start Time', value: that.get_date_from_seconds(parseInt(start_time)), color: '#e98024', axis: 'x'});
-                live_chart.add_indicator(indicator);
+                indicator = new ChartIndicator.Barrier({ name: "start_time", label: 'Start Time', value: that.get_date_from_seconds(parseInt(start_time)), color: '#e98024', axis: 'x'});
+                chart.add_indicator(indicator);
             }
 
             if(entry_spot_time && entry_spot_time != start_time) {
-                if (liveChartConfig.has_indicator('entry_spot_time')) {
-                    live_chart.remove_indicator('entry_spot_time');
+                if (chartConfig.has_indicator('entry_spot_time')) {
+                    chart.remove_indicator('entry_spot_time');
                 }
                 
                 if (start_time && entry_spot_time < start_time) {
-                    indicator = new LiveChartIndicator.Barrier({ name: "entry_spot_time", label: 'Entry Spot', value: that.get_date_from_seconds(parseInt(entry_spot_time)), color: '#e98024', axis: 'x'});
+                    indicator = new ChartIndicator.Barrier({ name: "entry_spot_time", label: 'Entry Spot', value: that.get_date_from_seconds(parseInt(entry_spot_time)), color: '#e98024', axis: 'x'});
                 } else {
-                    indicator = new LiveChartIndicator.Barrier({ name: "entry_spot_time", label: 'Entry Spot', value: that.get_date_from_seconds(parseInt(entry_spot_time)), color: '#e98024', axis: 'x', nomargin: true});
+                    indicator = new ChartIndicator.Barrier({ name: "entry_spot_time", label: 'Entry Spot', value: that.get_date_from_seconds(parseInt(entry_spot_time)), color: '#e98024', axis: 'x', nomargin: true});
                 }
-                live_chart.add_indicator(indicator);
+                chart.add_indicator(indicator);
             }
 
             if(end_time) {
-                if (liveChartConfig.has_indicator('end_time')) {
-                    live_chart.remove_indicator('end_time');
+                if (chartConfig.has_indicator('end_time')) {
+                    chart.remove_indicator('end_time');
                 }
 
-                indicator = new LiveChartIndicator.Barrier({ name: "end_time", label: 'End Time', value: that.get_date_from_seconds(parseInt(end_time)), color: '#e98024', axis: 'x'});
-                live_chart.add_indicator(indicator);
+                indicator = new ChartIndicator.Barrier({ name: "end_time", label: 'End Time', value: that.get_date_from_seconds(parseInt(end_time)), color: '#e98024', axis: 'x'});
+                chart.add_indicator(indicator);
             }
             if(sold_time) {
-                if (liveChartConfig.has_indicator('sold_time')) {
-                    live_chart.remove_indicator('sold_time');
+                if (chartConfig.has_indicator('sold_time')) {
+                    chart.remove_indicator('sold_time');
                 }
 
-                indicator = new LiveChartIndicator.Barrier({ name: "sold_time", label: 'Sell Time', value: that.get_date_from_seconds(parseInt(sold_time)), color: '#e98024', axis: 'x'});
-                live_chart.add_indicator(indicator);
+                indicator = new ChartIndicator.Barrier({ name: "sold_time", label: 'Sell Time', value: that.get_date_from_seconds(parseInt(sold_time)), color: '#e98024', axis: 'x'});
+                chart.add_indicator(indicator);
             }
 
         },

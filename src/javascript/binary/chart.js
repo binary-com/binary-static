@@ -1,55 +1,33 @@
-var live_chart;
+var chart;
 var chart_closed;
 var ticks_array = [];
 
-
-function updateLiveChart(config) {
-    if (live_chart) {
-        if (!chart_closed) {
-            live_chart.close_chart();
-        }
-        live_chart = null;
-    }
-
-    if (config.resolution == 'tick') {
-        live_chart = new LiveChartTick(config);
-    } else {
-        live_chart = new LiveChartOHLC(config);
-    }
-    live_chart.show_chart();
-    chart_closed = false;
-}
-
-var LiveChart = function(config) {
+var Chart = function(config) {
     //Required for inheritence.
     if (!config) return;
 
     this.config = config;
     this.shift = false;
-    if (!config.trade_visualization) {
-        this.on_duration_change();
-        this.highlight_duration();
-    }
 };
 
-LiveChart.prototype = {
+Chart.prototype = {
     show_chart: function() {
         $('.notice').hide();
         this.chart = new Highcharts.StockChart(this.chart_params());
         this.chart.showLoading();
     },
     close_chart: function() {
-        $(".live_charts_stream_button").off('click');
+        $(".charts_stream_button").off('click');
         if (this.ev) {
             this.ev.close();
         }
 
-        if (!chart_closed && live_chart) {
+        if (!chart_closed && chart) {
             if (this.chart) {
                 this.chart.destroy();
             }
             chart_closed = true;
-            live_chart = null;
+            chart = null;
         }
     },
     add_indicator: function(indicator) {
@@ -228,36 +206,16 @@ LiveChart.prototype = {
             this.shift = this.config.shift == 1 ? true : false;
         }
     },
-    highlight_duration: function() {
-        $('#live_chart_duration').find('.live_charts_stream_button').each( function () {
-            $(this).find('span').removeClass('current');
-        });
-
-         $('#live_chart_duration li[data-live=' + this.config.live + '] span').addClass('current');
-    },
-    on_duration_change: function() {
-        var that = this;
-        $(".live_charts_stream_button").on('click', function() {
-            that.config.update({
-                live: $(this).data("live"),
-                update_url: 1
-            });
-            that.highlight_duration();
-            updateLiveChart(that.config); //Will cause this object to unload.
-            var duration_changed = jQuery.Event( "duration_change", { target: this, config: that.config } );
-            $('#live_chart_duration').trigger(duration_changed);
-        });
-    }
 };
 
-function LiveChartTick(params) {
-    LiveChart.call(this, params);
+function ChartTick(params) {
+    Chart.call(this, params);
 }
 
-LiveChartTick.prototype = new LiveChart();
+ChartTick.prototype = new Chart();
 
-LiveChartTick.prototype.constructor = LiveChartTick;
-LiveChartTick.prototype.configure_series = function(chart_params) {
+ChartTick.prototype.constructor = ChartTick;
+ChartTick.prototype.configure_series = function(chart_params) {
         chart_params.chart.type = 'line';
 
         chart_params.xAxis.labels = { format: "{value:%H:%M:%S}" };
@@ -275,7 +233,7 @@ LiveChartTick.prototype.configure_series = function(chart_params) {
         }];
 };
 
-LiveChartTick.prototype.process_data = function(point) {
+ChartTick.prototype.process_data = function(point) {
     if (point[0] == 'tick') {
         var tick = {
             epoch: parseInt(point[1]),
@@ -299,16 +257,16 @@ LiveChartTick.prototype.process_data = function(point) {
 };
 
 
-function LiveChartOHLC(params) {
-    LiveChart.call(this, params);
+function ChartOHLC(params) {
+    Chart.call(this, params);
     this.candlestick = {};
     this.candlestick.period = this.config.resolution_seconds() * 1000;
 }
 
-LiveChartOHLC.prototype = new LiveChart();
-LiveChartOHLC.prototype.constructor = LiveChartOHLC;
+ChartOHLC.prototype = new Chart();
+ChartOHLC.prototype.constructor = ChartOHLC;
 
-LiveChartOHLC.prototype.configure_series = function(chart_params) {
+ChartOHLC.prototype.configure_series = function(chart_params) {
     chart_params.chart.type = 'candlestick';
     chart_params.series = [{
         name: this.config.symbol.translated_display_name(),
@@ -320,7 +278,7 @@ LiveChartOHLC.prototype.configure_series = function(chart_params) {
     }];
 };
 
-LiveChartOHLC.prototype.process_data = function(point) {
+ChartOHLC.prototype.process_data = function(point) {
     var type = point.shift();
     if (type == 'ohlc') {
         this.process_ohlc(point);
@@ -335,7 +293,7 @@ LiveChartOHLC.prototype.process_data = function(point) {
     }
 };
 
-LiveChartOHLC.prototype.process_corp_action = function(action) {
+ChartOHLC.prototype.process_corp_action = function(action) {
     if (!this.flagSeries) {
         this.flagSeries = this.chart.addSeries({
             name: "Events",
@@ -356,7 +314,7 @@ LiveChartOHLC.prototype.process_corp_action = function(action) {
     this.flagSeries.addPoint(point, false, false, false);
 };
 
-LiveChartOHLC.prototype.process_ohlc = function(ohlc) {
+ChartOHLC.prototype.process_ohlc = function(ohlc) {
     var epoch = parseInt(ohlc[0]);
     if (!this.chart) return;
     if (!this.chart.series) return;
@@ -373,7 +331,7 @@ LiveChartOHLC.prototype.process_ohlc = function(ohlc) {
     this.accept_ticks = true;
 };
 
-LiveChartOHLC.prototype.process_tick = function(tickInput) {
+ChartOHLC.prototype.process_tick = function(tickInput) {
     var tick = {
         epoch: parseInt(tickInput[0]) * 1000,
         quote: parseFloat(tickInput[1]),

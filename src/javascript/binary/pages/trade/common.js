@@ -754,6 +754,7 @@ function chartFrameSource(underlying){
         });
         chartFrameElement.src = 'https://highcharts.binary.com?affiliates=true&instrument=' + underlying + '&timePeriod=' + time;
     }
+}
 
 function selectOption(option, select){
     var options = select.getElementsByTagName('option');

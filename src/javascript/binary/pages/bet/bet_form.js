@@ -40,7 +40,7 @@ var BetForm = function () {
                     });
 
                     $(BetForm.time).on('change', function(event, time) {
-                        SessionStore.remove('live_chart_duration');
+                        SessionStore.remove('chart_duration');
                         BetForm.barriers.time_changed(time);
                         BetPrice.container().hide();
                     });
