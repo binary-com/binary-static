@@ -3,33 +3,97 @@
  * events based on type of response
  */
 var Message = (function () {
-    'use strict';
+    "use strict";
 
     var process = function (msg) {
-        var response = JSON.parse(msg.data);
-        if (response) {
-            var type = response.msg_type;
-            if (type === 'authorize') {
-                TUser.set(response.authorize);
-                TradeSocket.send({ payout_currencies: 1 });
-            } else if (type === 'active_symbols') {
+
+        var response;
+
+        try {
+            response  = JSON.parse(msg.data);
+            if("object" !== typeof response || !("msg_type" in response)) {
+                throw new Error("Response from WS API is not well formatted.");
+            }
+        } catch(e) {
+            throw new Error("Response from WS API is not well formatted.");
+        }
+
+        var msg_type = response.msg_type;
+        
+        switch(msg_type) {
+
+            case "error":
+
+                // change_password
+                if("change_password" in response.echo_req) {
+                    // e.g.: {"echo_req":{"old_password":"1111","new_password":"zzzzzzzz","change_password":"1"},"version":3,"error":{"code":"InputValidationFailed","message":"Input validation failed  - $.old_password: does not match the regex pattern ^.{5,25}$"},"msg_type":"error"}
+                    PasswordWS.apiResponse(response);
+                    break;
+                }
+
+                // code from old error case, please identify the called method
+                if(true) {
+                    $(".error-msg").text(response.error.message);
+                    break;
+                }
+
+                // still unknown?
+                console.log("An error occured.", response);
+                break;
+
+            case "authorize":
+
+                var thendo = "unknown";
+                if("passthrough" in response.echo_req && "thendo" in response.echo_req.passthrough) {
+                    thendo = response.echo_req.passthrough.thendo;
+                }
+
+                switch(thendo) {
+                    case "updateBalance":
+                        PortfolioWS.updateBallance(response);
+                        TradeSocket.send({"portfolio": 1});
+                        break;
+
+                    default:
+                        TUser.set(response.authorize);
+                        TradeSocket.send({ payout_currencies: 1 });
+                }
+                break;
+
+            case "active_symbols":
                 processActiveSymbols(response);
-            } else if (type === 'contracts_for') {
+                break;
+
+            case "contracts_for":
                 processContract(response);
-            } else if (type === 'payout_currencies') {
-                sessionStorage.setItem('currencies', msg.data);
+                break;
+
+            case "payout_currencies":
+                sessionStorage.setItem("currencies", msg.data);
                 displayCurrencies();
-            } else if (type === 'proposal') {
+                break;
+
+            case "proposal":
                 processProposal(response);
-            } else if (type === 'buy') {
+                break;
+
+            case "buy":
                 Purchase.display(response);
-            } else if (type === 'tick') {
+                break;
+
+            case "tick":
                 processTick(response);
-            } else if (type === 'trading_times'){
+                break;
+
+            case "trading_times":
                 processTradingTimes(response);
-            } else if (type === 'statement'){
+                break;
+
+            case "statement":
                 StatementWS.statementHandler(response);
-            } else if (type === 'balance'){
+                break;
+
+            case "balance":
                 var passthroughObj = response.echo_req.passthrough;
                 if (passthroughObj){
                     switch (passthroughObj.purpose) {
@@ -44,13 +108,21 @@ var Message = (function () {
                             //do nothing
                     }
                 }
-            } else if (type === 'error') {
-                $(".error-msg").text(response.error.message);
-            }
-        } else {
+                break;
 
-            console.log('some error occured');
+            case "portfolio":
+                PortfolioWS.updatePortfolio(response);
+                break;
+
+            case "change_password":
+                PasswordWS.apiResponse(response);
+                break;
+
+            default:
+                throw new Error("No method exits to handle api message of type '" + msg_type + "'.");
+
         }
+
     };
 
     return {
