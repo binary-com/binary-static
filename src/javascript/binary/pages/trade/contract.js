@@ -70,7 +70,7 @@ var Contract = (function () {
                 }
 
                 if (currentObj.forward_starting_options && currentObj['start_type'] === 'forward' && sessionStorage.formname !== 'higherlower') {
-                    startDates.list = currentObj.forward_starting_options;                   
+                    startDates.list = currentObj.forward_starting_options;
                 }
                 else if(currentObj.start_type==='spot'){
                     startDates.has_spot = 1;
@@ -101,7 +101,7 @@ var Contract = (function () {
                 }
 
                 if (!contractType[contractCategory].hasOwnProperty(currentObj['contract_type'])) {
-                    contractType[contractCategory][currentObj['contract_type']] = currentObj['contract_display'];
+                    contractType[contractCategory][currentObj['contract_type']] = text.localize(currentObj['contract_display']);
                 }
             }
         });
@@ -131,7 +131,7 @@ var Contract = (function () {
                         tradeContractForms['higherlower'] = Content.localize().textFormHigherLower;
                     }
                 } else {
-                    tradeContractForms[contractCategory] = currentObj['contract_category_display'];
+                    tradeContractForms[contractCategory] = text.localize(currentObj['contract_category_display']);
                 }
             }
         });

@@ -1,5 +1,5 @@
-BetAnalysis.tab_live_chart = function () {
-    var live_chart_initialized = false;
+BetAnalysis.tab_chart = function () {
+    var chart_initialized = false;
     var invoked_for_websocket  = false;
     return {
         reset: function() {
@@ -12,15 +12,15 @@ BetAnalysis.tab_live_chart = function () {
         },
         render: function(calledForWebsocketTrading) {
             invoked_for_websocket = calledForWebsocketTrading || false;
-            if (live_chart_initialized && $('#live_chart_div').length > 0) {
-                this.update_live_chart();
+            if (chart_initialized && $('#chart_div').length > 0) {
+                this.update_chart();
             } else {
-                this.get_live_chart();
+                this.get_chart();
             }
         },
-        get_live_chart: function() {
+        get_chart: function() {
             $.ajax(ajax_loggedin({
-                url     : '/d/trade_livechart.cgi?l=' + page.language(),
+                url     : '/d/trade_chart.cgi?l=' + page.language(),
                 dataType: 'html',
                 success : function (data) {
                             document.getElementById('trade_live_chart').innerHTML = data;
@@ -39,14 +39,14 @@ BetAnalysis.tab_live_chart = function () {
             this.load_timer = setInterval(function(){
                 if(typeof Highcharts !== "undefined") {
                     configure_livechart();
-                    that.update_live_chart();
-                    live_chart_initialized = true;
+                    that.update_chart();
+                    chart_initialized = true;
                     clearInterval(that.load_timer);
                     that.load_timer = undefined;
                 }
             }, 80); //Its scientifically proven that humans cannot visualize what they see before 80ms.
         },
-        update_live_chart: function () {
+        update_chart: function () {
             if(this.update_chart_config()) {
                 updateLiveChart(this.live_chart_config);
             }

@@ -2,78 +2,54 @@ var StatementUI = (function(){
     "use strict";
     var tableID = "statement-table";
     var columns = ["date", "ref", "act", "desc", "credit", "bal"];
-
-    function datepickerDefault(date){
-        var utcMoment = moment.utc(date).locale("en").format("YYYY-MM-DD").toString();
-
-        if (!Modernizr.inputtypes.date) {
-            var utcDate = Date.parse(utcMoment);
-            $("#statement-date").
-                datepicker({maxDate: 0, dateFormat: 'yy-mm-dd'}).
-                datepicker("setDate", utcDate);
-            return;
-        }
-
-        $("#statement-date").val(utcMoment);
-        $("#statement-date").attr("max", utcMoment);
-    }
-    function showButtonOnDateChange(){
-        $("#statement-date").on("change", function() {
-            $("#submit-date").removeClass("invisible");
-        });
-    }
+    var header = ["Date", "Ref.", "Action", "Description", "Credit/Debit", "Balance"];
+    var footer = ["", "", "", "", "", ""];
 
     function createEmptyStatementTable(){
-        var currency = TUser.get().currency;
-        var header = ["Date", "Ref.", "Action", "Description", "Credit/Debit", "Balance("+ currency +")"];
-        header = header.map(function(t){ return text.localize(t); });
-        var footer = ["", "", "", "", "", ""];
+        var localizedHeader = header.map(function(t){ return text.localize(t); });
+        localizedHeader[5] = localizedHeader[5] + "(" + TUser.get().currency + ")";
+
         var metadata = {
             id: tableID,
             cols: columns
         };
         var data = [];
-        var $tableContainer = DomTable.createFlexTable(data, metadata, header, footer);
-
+        var $tableContainer = Table.createFlexTable(data, metadata, localizedHeader, footer);
         return $tableContainer;
     }
 
-    function clearTableContent(){
-        var $tbody = $("#" + tableID + "> tbody");
-        $tbody.children("tr").remove();
-    }
-
     function updateStatementTable(transactions){
-        var $tbody = $("#"+ tableID + "> tbody");
-
-        var $docFrag = $(document.createDocumentFragment());
-
-        transactions.map(function(transaction){
-            var $newRow = createStatementRow(transaction);
-            $newRow.appendTo($docFrag);
-        });
-
-        $tbody.append($docFrag);
-
+        Table.appendTableBody(tableID, transactions, createStatementRow);
         updateStatementFooter(transactions);
+        $("#" + tableID +">tfoot").show();
     }
+
+    function clearTableContent(){
+        Table.clearTableBody(tableID);
+        $("#" + tableID +">tfoot").hide();
+    }
+
 
     function updateStatementFooter(transactions){
-        var allCredit = [].slice.call(document.querySelectorAll("td.credit"));
-        allCredit = allCredit.map(function(node){return node.textContent;});
-
-        var totalCredit = allCredit.reduce(function(p, c){return p + parseFloat(c);}, 0);
-
         TradeSocket.send({balance: 1, passthrough: {purpose: "statement_footer"}});
+        var accCredit = document.querySelector("#statement-table > tfoot > tr > .credit").textContent;
+        accCredit = parseFloat(accCredit);
+        if (isNaN(accCredit)) {
+            accCredit = 0;
+        }
 
+        var newCredits = transactions.reduce(function(p, c){ return p + parseFloat(c.amount); }, 0);
+
+        var totalCredit = accCredit + newCredits;
         totalCredit = Number(totalCredit).toFixed(2);
 
-        var $footerRow = $("#" + tableID + " > tfoot").children("tr").first();
-        $footerRow.children(".credit").text(totalCredit);
-
+        var $footerRow = $("#" + tableID + " > tfoot > tr").first();
+        var creditCell = $footerRow.children(".credit");
         var creditType = (totalCredit >= 0) ? "profit" : "loss";
-        $footerRow.children(".credit").removeClass("profit").removeClass("loss");
-        $footerRow.children(".credit").addClass(creditType);
+
+        creditCell.text(totalCredit);
+        creditCell.removeClass("profit").removeClass("loss");
+        creditCell.addClass(creditType);
     }
 
     function createStatementRow(transaction){
@@ -91,17 +67,15 @@ var StatementUI = (function(){
 
         var creditDebitType = (parseInt(amount) >= 0) ? "profit" : "loss";
 
-        var $statementRow = DomTable.createFlexTableRow([date, ref, action, desc, amount, balance], columns, "data");
+        var $statementRow = Table.createFlexTableRow([date, ref, action, desc, amount, balance], columns, "data");
         $statementRow.children(".credit").addClass(creditDebitType);
         $statementRow.children(".date").addClass("break-line");
 
-        return $statementRow;
+        return $statementRow[0];        //return DOM instead of jquery object
     }
     
     return {
         clearTableContent: clearTableContent,
-        setDatePickerDefault: datepickerDefault,
-        showButtonOnDateChange: showButtonOnDateChange,
         createEmptyStatementTable: createEmptyStatementTable,
         updateStatementTable: updateStatementTable
     };

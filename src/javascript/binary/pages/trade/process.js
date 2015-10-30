@@ -60,6 +60,10 @@ function processMarketUnderlying() {
     // get ticks for current underlying
     TradeSocket.send({ ticks : underlying });
 
+    Tick.clean();
+    
+    updateWarmChart();
+
     Contract.getContracts(underlying);
 
     displayTooltip(sessionStorage.getItem('market'),underlying);
@@ -106,7 +110,7 @@ function processContract(contracts) {
 function processContractForm() {
     Contract.details(sessionStorage.getItem('formname'));
 
-    StartDates.display(sessionStorage.getItem('date_start'));
+    StartDates.display();
 
     Durations.display();
 
@@ -187,7 +191,7 @@ function processPriceRequest() {
 
     Price.incrFormId();
     processForgetPriceIds();
-    showPriceOverlay(); 
+    showPriceOverlay();
     for (var typeOfContract in Contract.contractType()[Contract.form()]) {
         if(Contract.contractType()[Contract.form()].hasOwnProperty(typeOfContract)) {
             TradeSocket.send(Price.proposal(typeOfContract));
@@ -217,13 +221,16 @@ function processForgetTickId() {
  */
 function processTick(tick) {
     'use strict';
-    Tick.details(tick);
-    Tick.display();
-    WSTickDisplay.updateChart(tick);
-    Purchase.update_spot_list(tick);
-    if (!Barriers.isBarrierUpdated()) {
-        Barriers.display();
-        Barriers.setBarrierUpdate(true);
+    if(tick.echo_req.ticks === sessionStorage.getItem('underlying')){
+        Tick.details(tick);
+        Tick.display();
+        WSTickDisplay.updateChart(tick);
+        Purchase.update_spot_list(tick);
+        if (!Barriers.isBarrierUpdated()) {
+            Barriers.display();
+            Barriers.setBarrierUpdate(true);
+        }
+        updateWarmChart();
     }
 }
 

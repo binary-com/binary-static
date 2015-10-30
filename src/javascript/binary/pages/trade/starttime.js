@@ -23,7 +23,7 @@ var StartDates = (function(){
         return document.getElementById('date_start');
     };
 
-    var displayStartDates = function(select) {
+    var displayStartDates = function() {
 
         var startDates = Contract.startDates();
 
@@ -68,11 +68,7 @@ var StartDates = (function(){
 
                 while(a.isBefore(b)) {
                     option = document.createElement('option');
-                    var value = a.utc().unix();
-                    option.setAttribute('value', value);
-                    if(value==select){
-                        option.setAttribute('selected', 'selected');
-                    }
+                    option.setAttribute('value', a.utc().unix());
                     content = document.createTextNode(a.format('HH:mm ddd'));
                     option.appendChild(content);
                     fragment.appendChild(option);

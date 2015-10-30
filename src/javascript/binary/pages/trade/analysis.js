@@ -72,7 +72,7 @@ function loadAnalysisTab() {
 
     if (currentTab === 'tab_graph') {
         $.ajax(ajax_loggedin({
-                url     : '/d/trade_livechart.cgi?l=' + page.language(),
+                url     : '/d/trade_chart.cgi?l=' + page.language(),
                 dataType: 'html',
                 success : function (data) {
                             document.getElementById('trade_live_chart').innerHTML = data;

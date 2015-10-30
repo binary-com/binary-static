@@ -441,8 +441,8 @@ var BetSell = function() {
                     var server_data = that.server_data();
                     $('.tab_menu_container').tabs({
                         load: function(event, ui){
-                           var load_live_chart = ui.tab.find(".ui-tabs-anchor").attr('load_live_chart');
-                           if (load_live_chart && load_live_chart == 1) {
+                           var load_chart = ui.tab.find(".ui-tabs-anchor").attr('load_chart');
+                           if (load_chart && load_chart == 1) {
                                var symbol = ui.tab.find(".ui-tabs-anchor").attr('underlying_symbol');
                                chartFrameSource(symbol);
                            }

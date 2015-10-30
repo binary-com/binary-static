@@ -12,9 +12,11 @@ var Durations = (function(){
     'use strict';
 
     var trading_times = {};
+    var selected_duration = {};
     var expiry_time = '';
+    var has_end_date = 0;
 
-    var displayDurations = function(startType, expiry_type, duration_amount, duration_units, expiry_time) {
+    var displayDurations = function(startType) {
         var durations = Contract.durations();
         if (durations === false) {
             document.getElementById('expiry_row').style.display = 'none';
@@ -147,10 +149,20 @@ var Durations = (function(){
                 return -1;
             }
         });
+        has_end_date = 0;
         for(var k=0; k<list.length; k++){
             var d = list[k];
+            if(d!=='t'){
+                has_end_date = 1;
+            }
             if(duration_list.hasOwnProperty(d)){
                 target.appendChild(duration_list[d]);
+            }
+        }
+
+        if(selected_duration.unit){
+            if(!selectOption(selected_duration.unit,target)){
+                selected_duration = {};
             }
         }
 
@@ -186,8 +198,11 @@ var Durations = (function(){
         var unit = document.getElementById('duration_units');
         if (isVisible(unit)) {
             var unitValue = unit.options[unit.selectedIndex].getAttribute('data-minimum');
-            document.getElementById('duration_amount').value = unitValue;
             document.getElementById('duration_minimum').textContent = unitValue;
+            if(selected_duration.amount && selected_duration.unit > unitValue){
+                unitValue = selected_duration.amount;
+            }
+            document.getElementById('duration_amount').value = unitValue;
             displayExpiryType(unit.value);
         } else {
             displayExpiryType();
@@ -249,7 +264,7 @@ var Durations = (function(){
         option.appendChild(content);
         fragment.appendChild(option);
 
-        if (unit !== 't') {
+        if (has_end_date) {
             option = document.createElement('option');
             content = document.createTextNode(Content.localize().textEndTime);
             option.setAttribute('value', 'endtime');
@@ -290,7 +305,9 @@ var Durations = (function(){
         setTime: function(time){ expiry_time = time; },
         getTime: function(){ return expiry_time; },
         processTradingTimesAnswer: processTradingTimesAnswer,
-        trading_times: function(){ return trading_times; }
+        trading_times: function(){ return trading_times; },
+        select_amount: function(a){ selected_duration.amount = a; },
+        select_unit: function(u){ selected_duration.unit = u; }        
     };
 })();
 

@@ -1,5 +1,5 @@
 
-var DomTable = (function(){
+var Table = (function(){
     "use strict";
     /***
      *
@@ -90,8 +90,47 @@ var DomTable = (function(){
         return $tr;
     }
 
+
+    function clearTableBody(id){
+        var tbody = document.querySelector("#" + id +">tbody");
+        while (tbody.firstElementChild){
+            tbody.removeChild(tbody.firstElementChild);
+        }
+    }
+
+    /***
+     *
+     * @param {String} id table id
+     * @param {Object[]} data array of data to be transform to row
+     * @param {Function} rowGenerator takes in one arg, and convert it into row to be append to table body
+     */
+    function appendTableBody(id, data, rowGenerator){
+        var tbody = document.querySelector("#" + id +">tbody");
+        var docFrag = document.createDocumentFragment();
+        data.map(function(ele){
+            var row = rowGenerator(ele);
+            docFrag.appendChild(row);
+        });
+
+        tbody.appendChild(docFrag);
+    }
+
+    /***
+     *
+     * @param {String} id table id
+     * @param {Object[]} data array of data to be transform to row
+     * @param {Function} rowGenerator takes in one arg, and convert it into row to be append to table body
+     */
+    function overwriteTableBody(id, data, rowGenerator){
+        clearTableBody(id);
+        appendTableBody(id, data, rowGenerator);
+    }
+
     return {
         createFlexTable: createFlexTable,
-        createFlexTableRow: createFlexTableRow
+        createFlexTableRow: createFlexTableRow,
+        overwriteTableBody: overwriteTableBody,
+        clearTableBody: clearTableBody,
+        appendTableBody: appendTableBody
     };
 }());

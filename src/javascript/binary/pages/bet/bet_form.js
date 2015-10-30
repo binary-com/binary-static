@@ -48,7 +48,7 @@ var BetForm = function () {
 
                     $(BetForm.barriers).on('change', function(event, barrier) {
                         BetPrice.container().hide();
-                        BetAnalysis.tab_live_chart.render();
+                        BetAnalysis.tab_chart.render();
                     });
 
 
