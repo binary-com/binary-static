@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-10-27 05:59+0200\n"
+"PO-Revision-Date: 2015-10-29 01:14+0200\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
@@ -269,12 +269,12 @@ msgstr "%2 menyediakan akun uang virtual yang dapat Anda gunakan untuk berlatih 
 msgid "%ctx(If you look in the sky)You will see %plural(%1,one star, %d stars)."
 msgstr "%ctx(If you look in the sky)Anda akan melihat %1 bintang."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:157
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:161
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(durasi minimal, contoh minimal 15 detik)min"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:166
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:523
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:170
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:524
 msgid "%ctx(the return of investment of a contract)Return"
 msgstr "%ctx(keuntungan investasi kontrak)Keuntungan"
 
@@ -294,7 +294,7 @@ msgstr "Kontrak '<strong>Panjang</strong>' memberi keuntungan jika indeks naik d
 msgid "'<strong>Short</strong>' contracts generate losses when the index rises and profits when it falls."
 msgstr "Kontrak '<strong>Pendek</strong>' memberi kerugian jika indeks naik dan keuntungan ketika turun."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:54
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:58
 msgid "(Bejing/CST -8 hours)"
 msgstr "(Bejing/CST -8 jam)"
 
@@ -390,11 +390,11 @@ msgstr "2minggu"
 msgid "3. Choose how you want to Trade the Market"
 msgstr "3. Pilih Analisa Pergerakan Pasar"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1946
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1923
 msgid "30-day limit on losses"
 msgstr "Batas kerugian dalam 30 hari"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1911
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1888
 msgid "30-day turnover limit"
 msgstr "Batas pembelian kontrak dalam 30 hari"
 
@@ -414,8 +414,8 @@ msgstr "40 transaksi atau lebih pada 12 bulan terakhir"
 msgid "5d"
 msgstr "5hari"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3140
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:507
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3084
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:484
 msgid "6 - 25 characters."
 msgstr "6 - 25 karakter."
 
@@ -437,11 +437,11 @@ msgstr "Batas 7-Hari kerugian saat ini adalah <strong>%1 %2</strong>"
 msgid "7-Day turnover limit is currently set to <strong>%1 %2</strong>"
 msgstr "Batas 7-Hari total pembelian kontrak saat ini adalah <strong>%1 %2</strong>"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1876
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1853
 msgid "7-day limit on losses"
 msgstr "Batas 7-hari pada kerugian"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1841
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1818
 msgid "7-day turnover limit"
 msgstr "Batas 7-hari total pembelian kontrak"
 
@@ -465,7 +465,7 @@ msgstr "<a href='#account-manager-guide'>Manajer Akun</a> dapat membeli kontrak 
 msgid "<a href='%1' class='pjaxload'>Contact us</a> should you need further assistance."
 msgstr "<a href='%1' class='pjaxload'>Hubungi Kami</a> untuk bantuan lebih lanjut."
 
-#: /home/git/regentmarkets/bom-backoffice/subs/subs_backoffice_clientdetails.pm:46
+#: /home/git/regentmarkets/bom-backoffice/subs/subs_backoffice_clientdetails.pm:47
 msgid "<option value=\"\"></option><option value=\"01\">Jan</option><option value=\"02\">Feb</option><option value=\"03\">Mar</option><option value=\"04\">Apr</option><option value=\"05\">May</option><option value=\"06\">Jun</option><option value=\"07\">Jul</option><option value=\"08\">Aug</option><option value=\"09\">Sep</option><option value=\"10\">Oct</option><option value=\"11\">Nov</option><option value=\"12\">Dec</option>"
 msgstr "<option value=\"\"></option><option value=\"01\">Jan</option><option value=\"02\">Feb</option><option value=\"03\">Mar</option><option value=\"04\">Apr</option><option value=\"05\">Mei</option><option value=\"06\">Jun</option><option value=\"07\">Jul</option><option value=\"08\">Ags</option><option value=\"09\">Sep</option><option value=\"10\">Okt</option><option value=\"11\">Nop</option><option value=\"12\">Des</option>"
 
@@ -582,7 +582,7 @@ msgid "<strong>Benchmarked prices</strong> - %1 benchmarks its prices daily agai
 msgstr "<strong>Harga acuan</strong> - %1 harga acuan harian sesuai dengan pasar derivatif antar bank."
 
 #. (to_monetary_number_format($limit_price)
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:1999
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:2000
 msgid "<strong>Better execution price!</strong><br />  The price has moved in your favour from %1 to %2."
 msgstr "<strong>Harga eksekusi lebih baik!</strong><br /> Harga telah bergerak dari %1 ke %2."
 
@@ -926,7 +926,7 @@ msgstr "Token API"
 msgid "API token for third party applications."
 msgstr "Token API bagi aplikasi pihak ketiga."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1614
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1591
 msgid "AUTHORISED PAYMENT AGENT? (this field visible from office only)"
 msgstr "AGEN PEMBAYARAN SAH? (kolom ini hanya terlihat dari kantor saja)"
 
@@ -981,7 +981,7 @@ msgstr "Oleh karena itu, untuk melanjutkan trading opsi binary pada forex/saham/
 msgid "Account Closure"
 msgstr "Penutupan Akun"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1597
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1590
 msgid "Account Details"
 msgstr "Keterangan rekening"
 
@@ -1044,6 +1044,7 @@ msgstr "Pemberitahuan Permohonan Penarikan Dana"
 msgid "Acquisition of financial contracts through this site must be effected in accordance with the terms and conditions presented on the pages of this site. Acquisition of a financial contract is completed when the financial contract has been customised, the premium (or the payout, as the case may be) has been calculated and payment has been verified."
 msgstr "Akusisi kontrak trading keuangan pada situs ini harus disesuaikan dengan terma dan kondisi yang dinyatakan pada halaman situs ini. Akusisi kontrak trading keuangan adalah lengkap jika kontrak trading keuangan telah disesuaikan, modal (atau hasil) telah dihitung dan pembayaran telah diverifikasi."
 
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:197
 #: /home/git/translations/binary-static/src/templates/haml/user/api_token.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/account/statement.html.tt:128
 #: /home/git/translations/binary-static/src/templates/toolkit/portfolio/tradecorporate_action.html.tt:10
@@ -1058,9 +1059,9 @@ msgstr "Tambahkan baris"
 msgid "Add Overlay"
 msgstr "Tambah Arsiran"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:113
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:434
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1259
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:411
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:90
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1254
 msgid "Address"
 msgstr "Alamat"
 
@@ -1081,7 +1082,7 @@ msgid "Advanced charting platform with a wide range of technical indicators."
 msgstr "Platform penggrafikan canggih dengan berbagai indikator teknis."
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:113
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:49
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:51
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/signup.html.tt:2
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/signup.html.tt:8
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/tac.html.tt:17
@@ -1126,8 +1127,8 @@ msgstr "Memberi Klien menggunakan metode e-wallet yang tidak di sediakan di %1"
 msgid "Although the Company has and retains all rights to refuse or to close a Client’s account, the Company does warrant that all contractual obligations already made, shall be honoured."
 msgstr "Meskipun Perusahaan memiliki dan menguasai semua hak untuk menolak atau menutup akun Pelanggan, Perusahaan menjamin bahwa semua kewajiban telah dilaksanakan."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2445
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2604
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2422
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2581
 #: /home/git/translations/binary-static/src/templates/haml/cashier/account_transfer.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/paymentagent_withdraw.html.tt:8
 msgid "Amount"
@@ -1146,7 +1147,7 @@ msgstr "Jumlah Per Poin harus antara %1 dan %2 %3."
 msgid "Amount must be a positive number."
 msgstr "Jumlah harus angka positif."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:180
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:184
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/form/amount_per_point.html.tt:2
 msgid "Amount per point"
 msgstr "Jumlah per poin"
@@ -1155,7 +1156,7 @@ msgstr "Jumlah per poin"
 msgid "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target."
 msgstr "Kontrak Berakhir Antara akan memberi hasil jika harga akhir pasar harus lebih tinggi dari target harga rendah DAN harus lebih rendah dari target harga tinggi. Kontrak Berakhir Diluar akan memberi hasil jika harga akhir pasar SALAH SATU yaitu harus lebih tinggi dari target harga tinggi ATAU harus lebih rendah dari target harga rendah."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:555
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:532
 msgid "An additional password can be used to restrict access to the cashier."
 msgstr "Kata sandi tambahan dapat digunakan untuk membatasi akses ke kasir."
 
@@ -1199,7 +1200,7 @@ msgstr "Andrei Asavei <span>Broker Top Opsi Binary</span>"
 msgid "Another major award. This time we’re nominated by the online readers of Global Banking and Finance Review and judged by a panel of industry experts and analysts who recognise our 13 years of platform reliability, range of trades, pricing, customer service and extensive knowledge."
 msgstr "Anugerah terbaik lainnya. Kali ini kami dinominasikan oleh pembaca online dari Global Banking and Finance Review dan dinilai oleh panel juri ahli yang mengakui kehandalan, pilihan trading, harga, pelayanan dan pengetahuan kami selama 13 tahun."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3674
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3618
 msgid "Answer to secret question"
 msgstr "Jawaban Pertanyaan Rahasia"
 
@@ -1257,13 +1258,13 @@ msgstr "Kelayakan"
 msgid "Appropriateness Test"
 msgstr "Ketepatan Uji"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:77
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1044
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3352
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:81
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1021
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3296
 msgid "Apr"
 msgstr "Apr"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:89
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:93
 msgid "April"
 msgstr "April"
 
@@ -1341,18 +1342,18 @@ msgstr "Aset"
 msgid "Asset Index"
 msgstr "Indeks Aset"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:81
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1060
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3368
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:85
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1037
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3312
 msgid "Aug"
 msgstr "Agustus"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:93
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:97
 msgid "August"
 msgstr "Agustus"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:120
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1318
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1295
 msgid "Authenticate"
 msgstr "Pembuktian"
 
@@ -1381,11 +1382,11 @@ msgstr "Pembuktian akun Anda tidak diharuskan untuk saat ini. Kami akan menginfo
 msgid "Available payment methods"
 msgstr "Metode pembayaran yang tersedia"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:69
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:64
 msgid "Average"
 msgstr "Rata-rata"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:64
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:59
 msgid "Average Change"
 msgstr "Perubahan Rata-Rata"
 
@@ -1436,6 +1437,7 @@ msgstr "Lembar kerja grafik BOM"
 msgid "Back"
 msgstr "Kembali"
 
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:202
 #: /home/git/translations/binary-static/src/templates/haml/user/balance.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/account/statement.html.tt:133
 #: /home/git/translations/binary-static/src/templates/toolkit/account/statement.html.tt:78
@@ -1477,7 +1479,7 @@ msgstr "Grafik Bar HLC"
 msgid "Bar OHLC Chart"
 msgstr "Chart Bar OHLC"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:146
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:150
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/form/barrier.html.tt:18
 #: /home/git/translations/binary-static/src/templates/toolkit/portfolio/tradecorporate_action.html.tt:35
 #: /home/git/translations/binary-static/src/templates/toolkit/resources/pricing_table_form.html.tt:59
@@ -1515,7 +1517,7 @@ msgstr "Batasan adalah diluar rentang yang diterima."
 msgid "Barrier must be at least "
 msgstr "Batasan setidaknya "
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:147
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:151
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/form/barrier.html.tt:15
 msgid "Barrier offset"
 msgstr "Diluar Batasan"
@@ -1828,7 +1830,7 @@ msgstr "Kode Bonus"
 msgid "Both the deposit and the bonus amounts are clearly displayed when this type of promotion is available. E.g. Get $25 when you deposit $100. By way of example, if you choose to participate in a \"Get $25 when you deposit $100\" promotion, we will add an additional $25 to your account when you deposit $100 AND when you have purchased at least $125 worth of trades ($25 * 5= $125). The bonus will only be credited to your account when both of these conditions are met."
 msgstr "Jumlah deposit dan bonus ditampilkan dengan jelas ketika promosi ini tersedia. Sebagai contoh, dapatkan $25 jika Anda mendeposit $100. Hal tersebut berarti jika Anda memilih promosi \"Dapat $25 ketika mendeposit $100\", kami akan menambahkan bonus sebesar $25 kedalam akun Anda ketika Anda mendeposit minimal $100 DAN ketika Anda melakukan pembelian minimal $125 ($25*5=$125). Bonus hanya akan dikreditkan kedalam akun Anda setelah syarat tersebut dipenuhi."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3647
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3591
 msgid "Brand of first car"
 msgstr "Merek mobil"
 
@@ -1836,7 +1838,7 @@ msgstr "Merek mobil"
 msgid "Browse"
 msgstr "Layari"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1291
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1268
 msgid "Building Number"
 msgstr "Nomor Bangunan"
 
@@ -1864,6 +1866,7 @@ msgstr "Namun Anda tidak perlu menunggu hingga kontrak berakhir. Anda dapat menj
 msgid "But we’re picky. We only select people with special qualities: serious professionals, who have high moral standards, and thrive in an honest, collaborative environment."
 msgstr "Namun kami agak memilih. Kami hanya memilih orang-orang yang berkualitas: profesional, memiliki standar moral tinggi, jujur dan memberi lingkungan bersahabat."
 
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:199
 #: /home/git/translations/binary-static/src/templates/toolkit/account/statement.html.tt:55
 msgid "Buy"
 msgstr "Beli"
@@ -1940,8 +1943,8 @@ msgstr "Dividen Tunai"
 msgid "Cashier"
 msgstr "Kasir"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:488
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:613
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:465
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:590
 msgid "Cashier password"
 msgstr "Kata sandi Kasir"
 
@@ -1962,7 +1965,7 @@ msgid "Chaikin Volatility"
 msgstr "Chaikin Volatility"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/intraday_prices.html.tt:34
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:36
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:31
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/legacy_chart_table.html.tt:16
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/ticker_data_table.html.tt:10
 msgid "Change"
@@ -1972,17 +1975,17 @@ msgstr "Perubahan"
 msgid "Change = Close - Open, for the day"
 msgstr "Perubahan = Penutupan - Pembukaan, hari trading"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:818
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:960
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:301
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:795
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:937
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:303
 msgid "Change Password"
 msgstr "Perubahan Kata Sandi"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1284
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1279
 msgid "Change in account settings"
 msgstr "Perubahan pengaturan akun"
 
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:2032
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:2033
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:669
 msgid "Chart"
 msgstr "Grafik"
@@ -2182,8 +2185,8 @@ msgstr "Dana Klien"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:443
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:540
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:34
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:62
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:29
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:57
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/legacy_chart_table.html.tt:15
 msgid "Close"
 msgstr "Tutup"
@@ -2214,15 +2217,15 @@ msgid "Closes early (at %1)"
 msgstr "Ditutup awal (pada %1)"
 
 #. (2000)
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1574
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1551
 msgid "Comment must not exceed %1 characters. Please resubmit."
 msgstr "Komentar tidak boleh melebihi %1 karakter. Silahkan isi ulang."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1518
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1495
 msgid "Commission (%) you want to take on deposits"
 msgstr "Komisi (%), yang ingin Anda kenakan pada deposit"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1535
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1512
 msgid "Commission (%) you want to take on withdrawals"
 msgstr "Komisi (%), yang ingin Anda kenakan pada penarikan"
 
@@ -2300,7 +2303,7 @@ msgstr "Sistem trading komputer untuk menawarkan spekulasi pasar finansial terte
 msgid "Confirm"
 msgstr "Lanjutkan"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3164
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3108
 msgid "Confirm Your Email"
 msgstr "Konfirmasi Email Anda"
 
@@ -2350,8 +2353,8 @@ msgstr "Hubungi agen pembayaran langsung untuk informasi lebih lanjut tentang ba
 msgid "Contact us"
 msgstr "Hubungi kami"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1161
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1207
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1138
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1184
 msgid "Continue"
 msgstr "Lanjutkan"
 
@@ -2365,7 +2368,7 @@ msgstr "Lanjutkan Trading"
 msgid "Contract"
 msgstr "Kontrak"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:168
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:172
 msgid "Contract Confirmation"
 msgstr "Konfirmasi Kontrak"
 
@@ -2428,7 +2431,7 @@ msgstr "Kontrak hanya dapat berakhir selama waktu trading."
 msgid "Contract payouts shall be determined by the Company by reference to the daily high/low/close values reported on this website relevant to the underlying index(ices) of the contract(s) or from the interbank trading data received by the Company for forex quotes or commodities prices as displayed on the website, subject that the Company shall have the right to make corrections to such data in the event of mis-priced or typographically incorrect data. Clients should note that the different markets may close at different times during the day due to local trading hours and time zones."
 msgstr "Hasil kontrak akan ditentukan oleh Perusahaan dengan mengacu pada nilai tinggi/rendah/ penutupan harian yang dilaporkan pada website ini sesuai dengan indeks yang mendasari kontrak atau dari data perdagangan antar bank yang diterima oleh Perusahaan untuk forex atau harga komoditas seperti terlihat pada website dimana Perusahaan berhak untuk mengkoreksi data seperti dalam hal salah harga atau salah tampilan data. Klien harus mengetahui bahwa pasar yang berbeda mungkin akan ditutup pada waktu yang berbeda juga sesuai dengan jam perdagangan lokal dan zona waktu tertentu."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:173
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:177
 #: /home/git/translations/binary-static/src/templates/haml/get_started/glossary.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/explanation/details/staysinout.html.tt:1
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/explanation/details/touchnotouch.html.tt:2
@@ -2520,9 +2523,9 @@ msgstr "Biaya"
 msgid "Costs and Charges"
 msgstr "Berbagai Biaya"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3446
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3740
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1257
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3390
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3684
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1252
 msgid "Country of Residence"
 msgstr "Negara Domisili"
 
@@ -2550,6 +2553,12 @@ msgstr "Ciptakan sendiri white-label platform %1 Anda."
 #: /home/git/translations/binary-static/src/templates/toolkit/account/statement.html.tt:132
 msgid "Credit/<wbr/>Debit"
 msgstr "Kredit/<wbr/>Debit"
+
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:201
+#, fuzzy
+#| msgid "Credit/Debit Card"
+msgid "Credit/Debit"
+msgstr "Kartu Kredit/Debit"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_methods.html.tt:147
 msgid "Credit/Debit Card"
@@ -2584,7 +2593,7 @@ msgstr "Spot saat ini"
 msgid "Current market price is 0."
 msgstr "Harga pasar terkini adalah 0."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:712
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:689
 msgid "Current password"
 msgstr "Kata sandi saat ini"
 
@@ -2622,8 +2631,8 @@ msgstr "Sesuaikan gaya trading untuk kebutuhan Anda."
 msgid "Daily"
 msgstr "Harian"
 
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:2055
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:25
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:2056
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:20
 msgid "Daily Prices"
 msgstr "Harga Harian"
 
@@ -2631,7 +2640,7 @@ msgstr "Harga Harian"
 msgid "Daily Report"
 msgstr "Laporan Harian"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2356
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2333
 msgid "Daily limit on losses"
 msgstr "Batas harian kerugian"
 
@@ -2640,7 +2649,7 @@ msgstr "Batas harian kerugian"
 msgid "Daily limit on losses is currently set to <strong>%1 %2</strong>"
 msgstr "Batas harian kerugian saat ini diatur ke <strong>%1 %2</strong>"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1801
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1778
 msgid "Daily turnover limit"
 msgstr "Batasan pembelian kontrak harian"
 
@@ -2658,21 +2667,22 @@ msgstr "Layanan Data"
 msgid "Data will be available after market close."
 msgstr "Data akan tersedia setelah pasar ditutup."
 
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:195
 #: /home/git/translations/binary-static/src/templates/toolkit/account/statement.html.tt:124
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:30
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:25
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/legacy_chart_table.html.tt:10
 #: /home/git/translations/binary-static/src/templates/toolkit/portfolio/tradecorporate_action.html.tt:5
 #: /home/git/translations/binary-static/src/templates/toolkit/resources/trading_times_header.html.tt:3
 msgid "Date"
 msgstr "Tanggal"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1091
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:232
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3398
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1068
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:209
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3342
 msgid "Date of birth"
 msgstr "Tanggal lahir"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:47
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:51
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:495
 msgid "Day"
 msgstr "Hari"
@@ -2691,10 +2701,10 @@ msgstr "Yth."
 
 #. ($client_to->salutation, $client_to->first_name, $client_to->last_name,)
 #. ($pa_client->salutation, $pa_client->first_name, $pa_client->last_name)
-#. (BOM::View::Language::translate_salutation($client->salutation)
+#. (BOM::Platform::Locale::translate_salutation($client->salutation)
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1490
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1798
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1249
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1243
 msgid "Dear %1 %2 %3,"
 msgstr "Kepada Yth. %1 %2 %3,"
 
@@ -2817,13 +2827,13 @@ msgstr ""
 msgid "Debt-free"
 msgstr "Bebas hutang"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:85
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1076
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3384
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:89
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1053
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3328
 msgid "Dec"
 msgstr "Des"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:97
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:101
 msgid "December"
 msgstr "Desember"
 
@@ -2877,7 +2887,7 @@ msgid "Deposit To Payment Agent"
 msgstr "Deposit Via Agen Pembayaran"
 
 #. ($bet->currency, to_monetary_number_format($bet->ask_price)
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:477
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:478
 msgid "Deposit of %1 %2 is required. Current spread: %3 points"
 msgstr "Diperlukan deposit sebesar %1 %2. Spread terkini: %3 poin"
 
@@ -2926,6 +2936,7 @@ msgstr "Derivatif"
 msgid "Derivative investment instruments such as Binary Options and related markets can be highly volatile. The prices of the underlying instrument which a Binary Options refers to may fluctuate rapidly and over wide ranges and may reflect unforeseeable events or changes in conditions, none of which can be controlled by you or %1."
 msgstr "Instrumen investasi derivatif seperti Opsi Binary dan pasar terkait memiliki tingkat volatilitas tinggi. Harga dasar pasar instrumen yang digunakan pada Opsi Binary dapat berfluktuasi dengan cepat dan pantas dan dapat dipengaruhi oleh berbagai perubahan kondisi, tidak ada yang bisa mengontrol baik Anda atau %1."
 
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:200
 #: /home/git/translations/binary-static/src/templates/toolkit/account/statement.html.tt:129
 msgid "Description"
 msgstr "Deskripsi"
@@ -3055,7 +3066,7 @@ msgstr "Akun Dormant dan Tidak Aktif"
 msgid "Dot Chart"
 msgstr "Diagram titik"
 
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Language.pm:33
+#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Locale.pm:35
 msgid "Dr"
 msgstr "Dr"
 
@@ -3071,7 +3082,7 @@ msgstr "Sesuai dengan peraturan yang berlaku, Anda diminta untuk membuktikan keb
 msgid "Due to the corporate action, the contract's barrier had been adjusted as follow:"
 msgstr "Berhubung aksi korporasi, batasan kontrak telah mengalami perubahan:"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:155
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:159
 #: /home/git/translations/binary-static/src/templates/haml/get_started/glossary.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/form/duration.html.tt:4
 #: /home/git/translations/binary-static/src/templates/toolkit/resources/rise_fall_table.html.tt:19
@@ -3177,9 +3188,9 @@ msgstr "Email"
 msgid "Email Verification"
 msgstr "Verifikasi email"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3069
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3755
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1256
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3013
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3699
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1251
 #: /home/git/translations/binary-static/src/templates/haml/user/lost_password.html.haml:1
 msgid "Email address"
 msgstr "Alamat email"
@@ -3200,11 +3211,17 @@ msgstr "Email: <span id='cs_contact_eaddress'></span>"
 msgid "Employee handbook"
 msgstr "Buku pedoman karyawan"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:156
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:160
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:505
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/form/duration.html.tt:5
 msgid "End Time"
 msgstr "Waktu berakhir"
+
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:203
+#, fuzzy
+#| msgid "Enabled"
+msgid "End of table"
+msgstr "Aktif"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/glossary.html.haml:1
 msgid "Ends Between/Ends Outside trades"
@@ -3228,7 +3245,7 @@ msgstr "Pastikan bahwa setiap catatan sejarah trading dan angka kinerja yang dis
 msgid "Ensure that you do not promote %1 with messages aimed at persons under the age of 18 years."
 msgstr "Pastikan Anda tidak mempromosikan %1 kepada pihak dibawah umur 18 tahun."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:159
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:163
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/form/barrier.html.tt:3
 msgid "Enter the barrier in terms of the difference from the spot price. If you enter +0.005, then you will be purchasing a contract with a barrier 0.005 higher than the entry spot. The entry spot will be the next tick after your order has been received"
 msgstr "Masukan batasan yang merupakan selisih harga spot. Jika Anda memasukan +0.005, maka Anda akan membeli kontrak dengan batasan 0.005 lebih tinggi dari spot masuk. Spot masuk adalah tik setelah kontrak Anda diproses"
@@ -3242,7 +3259,7 @@ msgstr "Masukkan email Anda"
 msgid "Entry Level"
 msgstr "Entry Level"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:109
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:113
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:484
 msgid "Entry Spot"
 msgstr "Spot entri"
@@ -3276,19 +3293,19 @@ msgstr "Warga Uni Eropa kecuali Inggris yang ingin bertrading pada produk invest
 msgid "Example:"
 msgstr "Contoh:"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2055
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2032
 msgid "Exclude me from the website until"
 msgstr "Kecualikan saya dari situs web hingga"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2334
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2311
 msgid "Exclude time cannot be for more than five years."
 msgstr "Waktu pengecualian tidak dapat melebihi lima tahun."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2329
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2306
 msgid "Exclude time cannot be less than 6 months."
 msgstr "Waktu pengecualian tidak boleh kurang dari 6 bulan."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2324
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2301
 msgid "Exclude time must be after today."
 msgstr "Waktu pengecualian harus setelah hari ini."
 
@@ -3305,8 +3322,8 @@ msgstr "Teknologi eksklusif trading binary."
 msgid "Execute your trade in seconds."
 msgstr "Mengeksekusi trading dalam detik."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:174
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:179
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:178
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:183
 msgid "Exercise period"
 msgstr "Periode latihan"
 
@@ -3370,7 +3387,7 @@ msgstr "Pertanyaan Umum"
 msgid "Facility that allows you to set limits on your account."
 msgstr "Fasilitas yang memungkinkan Anda untuk menetapkan batasan akun."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:52
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:56
 msgid "Failed to update trade description."
 msgstr "Gagal memperbarui deskripsi kontrak."
 
@@ -3386,7 +3403,7 @@ msgstr "Laba Kontrak Turun"
 msgid "Fall Contract Return (%)"
 msgstr "Laba Kontrak Turun (%)"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3297
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3241
 msgid "Family Name"
 msgstr "Nama Belakang"
 
@@ -3394,21 +3411,21 @@ msgstr "Nama Belakang"
 msgid "Fast Stochastic"
 msgstr "Stochastic Cepat"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3647
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3591
 msgid "Favourite artist"
 msgstr "Artis favorit"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3647
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3591
 msgid "Favourite dish"
 msgstr "Makanan favorit"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:75
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1036
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3344
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:79
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1013
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3288
 msgid "Feb"
 msgstr "Peb"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:87
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:91
 msgid "February"
 msgstr "Pebruari"
 
@@ -3445,7 +3462,7 @@ msgstr "Harga Akhir"
 msgid "Finance"
 msgstr "Keuangan"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1668
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1661
 #: /home/git/translations/binary-static/src/templates/haml/user/settings.html.haml:1
 msgid "Financial Assessment"
 msgstr "Penilaian Keuangan"
@@ -3466,12 +3483,12 @@ msgstr "Penghargaan Finansial"
 msgid "Find the right trade for every market condition."
 msgstr "Temukan trading yang tepat bagi setiap kondisi pasar."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3266
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3210
 msgid "First Name"
 msgstr "Nama Depan"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:246
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3483
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:223
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3427
 msgid "First line of home address"
 msgstr "Alamat Rumah"
 
@@ -3565,7 +3582,7 @@ msgstr "Lupa Login ID atau Kata Sandi?"
 msgid "Forward starting intraday and daily contracts are available on some %1"
 msgstr "Intraday dengan waktu mulai di hadapan tersedia pada beberapa %1"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:119
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:123
 msgid "Fr"
 msgstr "Jum"
 
@@ -3582,7 +3599,7 @@ msgstr "Penipuan dan Pencucian Uang"
 msgid "Free Bonus"
 msgstr "Bonus Gratis"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:292
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:294
 msgid "Free Contract Bonus"
 msgstr "Bonus Gratis Kontrak"
 
@@ -3602,11 +3619,11 @@ msgstr "Gratis grafik trading"
 msgid "Free webinars"
 msgstr "Gratis webinar"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:72
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:76
 msgid "Friday"
 msgstr "Jum'at"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:64
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:68
 #: /home/git/translations/binary-static/src/templates/toolkit/resources/pricing_table_form.html.tt:103
 #: /home/git/translations/binary-static/src/templates/toolkit/resources/pricing_table_form.html.tt:79
 #: /home/git/translations/binary-static/src/templates/toolkit/resources/pricing_table_form.html.tt:80
@@ -3633,7 +3650,7 @@ msgstr "Dari:"
 msgid "Front-End (Javascript) Development"
 msgstr "Pengembangan Bagian Depan (Javascript)"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2639
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2616
 msgid "Further Instructions"
 msgstr "Instruksi Tambahan"
 
@@ -3643,7 +3660,7 @@ msgstr "Informasi selanjutnya"
 
 #. (300)
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1638
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2662
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2639
 msgid "Further instructions must not exceed %1 characters."
 msgstr "Instruksi Tambahan tidak boleh melebihi %1 perkataan."
 
@@ -3669,7 +3686,7 @@ msgstr "GMT adalah singkatan dari Greenwich Mean Time, waktu resmi digunakan di 
 msgid "GamCare"
 msgstr "GamCare"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:138
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:142
 msgid "Gaming Account"
 msgstr "Akun Trading"
 
@@ -3697,11 +3714,11 @@ msgid "Generous Commission Structure"
 msgstr "Struktur Persentasi Komisi"
 
 #. ($promocode_currency . $promocode_amount, $promocode_currency . $min_deposit)
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:272
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:274
 msgid "Get %1 when you deposit %2."
 msgstr "Dapat %1 jika Anda mendeposit %2."
 
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:1179
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:1180
 msgid "Get Prices"
 msgstr "Dapatkan Harga"
 
@@ -3825,19 +3842,19 @@ msgid "Hide last spot"
 msgstr "Tutup spot akhir"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:453
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:32
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:60
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:27
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:55
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/legacy_chart_table.html.tt:13
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/ticker_data_table.html.tt:7
 #: /home/git/translations/binary-static/src/templates/toolkit/portfolio/tradecorporate_action.html.tt:7
 msgid "High"
 msgstr "Tinggi"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:111
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:115
 msgid "High Barrier"
 msgstr "Batasan Tinggi"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:148
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:152
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/form/barrier.html.tt:18
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/livechart.html.tt:43
 #: /home/git/translations/binary-static/src/templates/toolkit/resources/pricing_table_form.html.tt:60
@@ -3848,7 +3865,7 @@ msgstr "Batasan Tinggi"
 msgid "High barrier is out of acceptable range. Please adjust the high barrier."
 msgstr "Batasan atas adalah diluar rentang yang dibenarkan. Silahkan sesuaikan batasan atas."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:149
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:153
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/form/barrier.html.tt:15
 msgid "High barrier offset"
 msgstr "Batasan offset tinggi"
@@ -3874,7 +3891,7 @@ msgstr "Tinggi/Rendah"
 msgid "HighCharts"
 msgstr "Chart Tinggi"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:172
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:176
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Resources.pm:520
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Resources.pm:588
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Resources.pm:589
@@ -3970,7 +3987,7 @@ msgid "I forgot my password, what should I do?"
 msgstr "Saya lupa kata sandi, apa yang harus saya lakukan?"
 
 #. (request()
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3705
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3649
 msgid "I have read and agree to the <a target=\"_blank\" href=\"%1\">terms and conditions</a> of the site."
 msgstr "Saya telah membaca dan menyetujui <a target=\"_blank\" href=\"%1\">syarat dan kondisi</a> situs ini."
 
@@ -4276,10 +4293,11 @@ msgstr "Dalam proses pelayanan yang kami berikan, kami perlu melakukan uji kelay
 msgid "In the unlikely event of BIEL suffering an investment default and not being able to meet its obligations, BIEL is a member of the Malta Investor Compensation Scheme which covers the first €20,000 of any claim. Whether you are able to claim depends on the type of business and your personal circumstances."
 msgstr "Dalam hal dimana BIEL mengalami kelalaian investasi dan tidak mampu memenuhi kewajibannya, BIEL adalah anggota Malta Investor Compensation Scheme (Skema Kompensasi Investor Malta) yang menjamin klaim manapun bagi €20,000 pertama. Apakah Anda dapat mengklaim tergantung kepada jenis usaha dan keadaan pribadi Anda."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1385
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1362
 msgid "In what country do you want to offer your service"
 msgstr "Pada negara mana anda ingin menawarkan layanan anda"
 
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:190
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Resources.pm:547
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Resources.pm:617
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Resources.pm:630
@@ -4434,7 +4452,7 @@ msgstr "Harga-harga Intraday"
 msgid "Introduction"
 msgstr "Pendahuluan"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1307
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1284
 msgid "Invalid Building No./Name"
 msgstr "Nomor/Nama Bangunan salah"
 
@@ -4442,10 +4460,10 @@ msgstr "Nomor/Nama Bangunan salah"
 msgid "Invalid Input"
 msgstr "Input tidak valid"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2467
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2473
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2626
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2632
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2444
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2450
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2603
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2609
 msgid "Invalid amount"
 msgstr "Jumlah tidak berlaku"
 
@@ -4459,7 +4477,7 @@ msgstr "Jumlah salah. Minimum transfer adalah 0.10 hingga 2 angka desimal."
 msgid "Invalid currency."
 msgstr "Mata uang salah."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:140
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:144
 msgid "Invalid email address"
 msgstr "Invalid alamat email"
 
@@ -4476,8 +4494,8 @@ msgstr "Mata uang hasil tidak berlaku."
 msgid "Invalid period input! Please input the period between 0 and #1"
 msgstr "Data untuk periode salah! Tolong masukan data di antara 0 dan 1"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:818
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:844
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:820
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:846
 msgid "Invalid request"
 msgstr "Permintaan tidak tersedia"
 
@@ -4485,25 +4503,25 @@ msgstr "Permintaan tidak tersedia"
 msgid "Invalid stake"
 msgstr "Modal salah"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3792
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3736
 msgid "Invalid telephone number"
 msgstr "Nomor telepon salah"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1478
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3633
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:391
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1455
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3577
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:368
 msgid "Invalid telephone number (too long)."
 msgstr "Nomor telepon salah (terlalu panjang)."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1471
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3628
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:386
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1448
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3572
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:363
 msgid "Invalid telephone number (too short)."
 msgstr "Nomor telepon salah (terlalu pendek)."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1483
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3638
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:396
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1460
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3582
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:373
 msgid "Invalid telephone number."
 msgstr "Nomor telepon salah."
 
@@ -4520,7 +4538,7 @@ msgstr "Nama area kerja tidak berlaku. Silakan gunakan hanya huruf (A-Z,a-z,0-9,
 msgid "Investing or trading in Contracts exposes you to the performance of the underlying or reference instrument or asset to which the Binary Contract refers including foreign exchange, indices, stocks and commodities each of which have their own features and risks."
 msgstr "Investasi atau trading pada Kontrak akan menghadapkan Anda pada prestasi instrumen dasar atau aset dimana Kontrak Binary ditradingkan termasuk pertukaran mata uang asing, indeks, saham dan komoditas setiap fitur dan risiko mereka sendiri."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:137
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:141
 msgid "Investment Account"
 msgstr "Akun Investasi"
 
@@ -4602,13 +4620,13 @@ msgstr "Sudah saatnya untuk memperluas. Kami mendirikan pusat pemrograman di Cyb
 msgid "J. Welles Wilder has developed the Average Directional Index - ADX to define trend force, whether the trend will develop further or will gradually weaken. The indicator allows to analyse tendencies of the market and to make trading decisions in the market forex."
 msgstr "J. Welles Wilder telah mengembangkan Average Directional Index - ADX untuk mendefinisikan paksaan trend, apakah tren akan berkembang lebih lanjut atau akan berangsur-angsur melemah. Indikator ini dapat menganalisa kecenderungan pasar dan membuat keputusan trading pada pasar forex."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:74
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1032
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3340
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:78
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1009
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3284
 msgid "Jan"
 msgstr "Jan"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:86
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:90
 msgid "January"
 msgstr "Januari"
 
@@ -5220,28 +5238,34 @@ msgstr "Ikuti analis kami secara LIVE dua kali seminggu untuk memperoleh analisa
 msgid "Joshua Cavallaro <span> Markets And You Trader.</span>"
 msgstr "Joshua Cavallaro<span> Trader Markets And You.</span>"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:80
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1056
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3364
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:84
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1033
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3308
 msgid "Jul"
 msgstr "Jul"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:92
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:96
 msgid "July"
 msgstr "Juli"
+
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:194
+#, fuzzy
+#| msgid "Jump to"
+msgid "Jump To"
+msgstr "Langsung ke"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/account/profit_table.html.tt:12
 #: /home/git/translations/binary-static/src/templates/toolkit/account/statement.html.tt:12
 msgid "Jump to"
 msgstr "Langsung ke"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:79
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1052
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3360
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:83
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1029
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3304
 msgid "Jun"
 msgstr "Juni"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:91
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:95
 msgid "June"
 msgstr "Juni"
 
@@ -5279,7 +5303,7 @@ msgstr "Bahasa"
 msgid "Last"
 msgstr "Akhir"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:175
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:179
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/form/last_digit.html.tt:4
 msgid "Last Digit Prediction"
 msgstr "Analisa Digit Terakhir"
@@ -5376,10 +5400,8 @@ msgstr "Berlisensi dan diatur di Malta, Inggris, Isle of Man, dan Irlandia"
 
 #. (pjax_link_for(l('Random Nocturnes')
 #: /home/git/translations/binary-static/src/templates/haml/get_started/random_markets.html.haml:1
-#, fuzzy
-#| msgid "Like %2, %1 reset back to a price of 1000 each day. The difference is that %1 reset at 12PM GMT, (%2 reset at 00:00:00 GMT)."
 msgid "Like %2, %1 reset back to a price of 1000 each day. The difference is that %1 reset at 12:00:00 GMT, (%2 reset at 00:00:00 GMT)."
-msgstr "Seperti %2, %1 direset ulang ke harga 1000 setiap hari. Bedanya adalah %1 direset pada jam 12SIANG GMT, (%2 direset pada 00:00:00 GMT)."
+msgstr "Seperti %2, %1 direset ulang ke harga 1000 setiap hari. Bedanya adalah %1 direset pada jam 12:00:00 GMT, (%2 direset pada 00:00:00 GMT)."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/betting_limits.html.tt:8
 msgid "Limit"
@@ -5410,7 +5432,7 @@ msgid "Links"
 msgstr "Berbagai Link"
 
 #. (BOM::Platform::Runtime->instance->countries->localized_code2country($client->residence, request()
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2568
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2545
 msgid "Listing only Payment Agents in %1."
 msgstr "Daftar Agen Pembayaran di %1."
 
@@ -5433,7 +5455,7 @@ msgstr "Grafik live"
 msgid "Live chat:"
 msgstr "Komunikasi langsung:"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:554
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:531
 msgid "Lock Cashier"
 msgstr "Kunci Kasir"
 
@@ -5515,7 +5537,7 @@ msgstr "Masalah Login"
 msgid "Logout"
 msgstr "Keluar"
 
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:1428
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:1429
 msgid "Long"
 msgstr "Panjang"
 
@@ -5523,7 +5545,7 @@ msgstr "Panjang"
 msgid "Long-term partnership with the leading financial trading service"
 msgstr "Kemitraan jangka panjang bersama penyedia layanan trading finansial terkemuka"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:123
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:127
 msgid "Loss"
 msgstr "Rugi"
 
@@ -5533,15 +5555,15 @@ msgid "Lost password?"
 msgstr "Lupa kata sandi?"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:503
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:33
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:61
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:28
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:56
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/legacy_chart_table.html.tt:14
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/ticker_data_table.html.tt:8
 #: /home/git/translations/binary-static/src/templates/toolkit/portfolio/tradecorporate_action.html.tt:8
 msgid "Low"
 msgstr "Rendah"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:110
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:114
 msgid "Low Barrier"
 msgstr "Batasan Rendah"
 
@@ -5549,7 +5571,7 @@ msgstr "Batasan Rendah"
 msgid "Low Barrier should be number only"
 msgstr "Batasan rendah hanya terdiri dari angka"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:150
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:154
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/form/barrier.html.tt:37
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/livechart.html.tt:47
 #: /home/git/translations/binary-static/src/templates/toolkit/resources/pricing_table_form.html.tt:46
@@ -5560,12 +5582,12 @@ msgstr "Batasan rendah"
 msgid "Low barrier is out of acceptable range. Please adjust the low barrier."
 msgstr "Batasan bawah adalah diluar rentang yang dibenarkan. Silahkan rubah batasan bawah."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:151
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:155
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/form/barrier.html.tt:34
 msgid "Low barrier offset"
 msgstr "Batasan offset rendah"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:69
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:64
 msgid "Lower Band"
 msgstr "Garis Bawah"
 
@@ -5612,13 +5634,13 @@ msgstr "Malta"
 msgid "Manage your account access and security settings."
 msgstr "Mengelola akses akun Anda dan pengaturan keamanan."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:76
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1040
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3348
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:80
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1017
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3292
 msgid "Mar"
 msgstr "Mar"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:88
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:92
 msgid "March"
 msgstr "Maret"
 
@@ -5674,23 +5696,23 @@ msgstr "Berbagai Pasar"
 msgid "Mass Index"
 msgstr "Indeks Massa"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:281
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:283
 msgid "Matched Contract Bonus"
 msgstr "Bonus Kontrak Cocok"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2600
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2577
 msgid "Max"
 msgstr "Maksimum"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1748
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1741
 msgid "Max 30 tokens are allowed."
 msgstr "Max 30 token diperbolehkan."
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:69
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:64
 msgid "Maximum"
 msgstr "Maksimal"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1766
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1743
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/betting_limits.html.tt:15
 msgid "Maximum account cash balance"
 msgstr "Maksimum saldo tunai"
@@ -5700,27 +5722,27 @@ msgstr "Maksimum saldo tunai"
 msgid "Maximum account cash balance is currently set to <strong>%1 %2</strong>"
 msgstr "Saldo tunai maksimal saat ini adalah <strong>%1 %2</strong>"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1932
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1909
 msgid "Maximum aggregate contract purchases over a 30-day period."
 msgstr "Jumlah rata-rata pembelian kontrak maksimal dalam periode 30 hari."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1862
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1839
 msgid "Maximum aggregate contract purchases over a 7-day period."
 msgstr "Jumlah maksimum rata-rata pembelian kontrak selama periode 7-hari."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1822
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1799
 msgid "Maximum aggregate contract purchases per day."
 msgstr "Jumlah maksimum pembelian kontrak per hari."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1967
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1944
 msgid "Maximum aggregate loss over a 30-day period."
 msgstr "Jumlah maksimum rata-rata kerugian dalam periode 30 hari."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1897
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1874
 msgid "Maximum aggregate loss over a 7-day period."
 msgstr "Jumlah maksimum rata-rata kerugian dalam periode 7-hari."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2377
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2354
 msgid "Maximum aggregate loss per day."
 msgstr "Maksimum rata-rata kerugian per hari."
 
@@ -5733,11 +5755,11 @@ msgid "Maximum daily turnover"
 msgstr "Maksimum turnover harian"
 
 #. ($email)
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:757
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:759
 msgid "Maximum number of attempts exceeded. Please try again after 10 minutes."
 msgstr "Jumlah maksimum akses tercapai. Silakan coba kembali setelah 10 menit."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1981
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1958
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/betting_limits.html.tt:11
 msgid "Maximum number of open positions"
 msgstr "Maksimal jumlah posisi terbuka"
@@ -5751,18 +5773,18 @@ msgstr "Maksimum jumlah kontrak yang ditampilkan pada portofolio adalah <strong>
 msgid "Maximum withdrawal by all other means:"
 msgstr "Maksimum jumlah penarikan:"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:78
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:90
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1048
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3356
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:82
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:94
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1025
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3300
 msgid "May"
 msgstr "Mei"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3647
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3591
 msgid "Memorable date"
 msgstr "Tanggal bersejarah"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3646
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3590
 msgid "Memorable town/city"
 msgstr "Kota bersejarah"
 
@@ -5779,7 +5801,7 @@ msgstr "Metode"
 msgid "Mid"
 msgstr "Mid"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2600
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2577
 msgid "Min"
 msgstr "Minimum"
 
@@ -5792,15 +5814,15 @@ msgid "Min-Max Withdrawal"
 msgstr "Min-Mak Penarikan"
 
 #. ($min_amount, $max_amount)
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2441
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2418
 msgid "Min: %1 Max: %2"
 msgstr "Min: %1 Mak: %2"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:69
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:64
 msgid "Minimum"
 msgstr "Minimal"
 
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Language.pm:31
+#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Locale.pm:33
 msgid "Miss"
 msgstr "Nona"
 
@@ -5827,7 +5849,7 @@ msgstr "Gangguan data pasar pada spot akhir."
 msgid "Missing market data."
 msgstr "Data pasar menghilang."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:115
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:119
 msgid "Mo"
 msgstr "Sen"
 
@@ -5836,7 +5858,7 @@ msgstr "Sen"
 msgid "Momentum"
 msgstr "Momentum"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:68
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:72
 msgid "Monday"
 msgstr "Senin"
 
@@ -5860,7 +5882,7 @@ msgstr "Monitor portofolio Anda tepat waktu."
 msgid "Monitoring and review of this Policy"
 msgstr "Pemantauan dan meninjau Kebijakan ini"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:48
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:52
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:405
 msgid "Month"
 msgstr "Bulan"
@@ -5886,7 +5908,7 @@ msgstr "Manfaat lainnya"
 msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with ‘best execution’. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
 msgstr "Lebih khususnya, ketika kami bertrading Opsi Binary dengan Anda (untuk setiap \"Kontrak\"), kami memiliki kewajiban untuk menyediakan 'eksekusi terbaik'. Eksekusi terbaik berarti kami harus mengambil langkah yang wajar untuk mendapatkan hasil terbaik ketika menjalankan order Anda. Dokumen ini memberikan ringkasan kebijakan eksekusi terbaik."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3646
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3590
 msgid "Mother's maiden name"
 msgstr "Nama Ibu"
 
@@ -5906,15 +5928,15 @@ msgstr "Moving average berfungsi untuk menentukan tren yang akan terjadi dengan 
 msgid "Moving averages provide an objective measure of trend direction by smoothing out short-term price fluctuations.In a Weighted Moving Average, the previous periods have less weight for periods further away in the past. In an n-day WMA the latest day has weight n, the second latest n-1, etc, down to zero.Shorter length moving averages are more sensitive and signals trends much faster than longer length MAs, but also give more false signals. A longer length MA is more reliable but only picks up the big trend."
 msgstr "Moving average berfungsi untuk menentukan tren yang akan terjadi dengan memuluskan harga fluktuasi jangka pendek.Dalam Weighted Moving Average, periode sebelumnya lebih ringan dibandingkan dengan periode jauh sebelumnya. Dalam sebuah n-hari WMA hari terkini memiliki berat n, kedua terkini adalah n-1, dan seterusnya hingga menurun pada nol.Moving average pendek lebih sensitif dan tren sinyalnya lebih cepat dibandingkan MA panjang tapi juga sering memberikan sinyal palsu. MA dengan ukuran lebih panjang adalah dapat dipercayai namun hanya dicapai pada tren besar."
 
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Language.pm:34
+#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Locale.pm:36
 msgid "Mr"
 msgstr "Bapak"
 
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Language.pm:32
+#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Locale.pm:34
 msgid "Mrs"
 msgstr "Ibu"
 
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Language.pm:30
+#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Locale.pm:32
 msgid "Ms"
 msgstr "Sdri."
 
@@ -5927,29 +5949,27 @@ msgid "Multi-lingual and multi-currency support"
 msgstr "Memiliki pilihan bahasa dan mata uang"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:59
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:175
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:229
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:177
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:231
 msgid "My Account"
 msgstr "Akun Saya"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:224
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:201
 #: /home/git/translations/binary-static/src/templates/haml/user/api_token.html.haml:1
 msgid "Name"
 msgstr "Nama"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3646
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3590
 msgid "Name of first love"
 msgstr "Nama pacar pertama"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3646
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3590
 msgid "Name of your pet"
 msgstr "Nama binatang peliharaan"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/available_payment_agents_list.html.tt:8
-#, fuzzy
-#| msgid "Name"
 msgid "Name:"
-msgstr "Nama"
+msgstr "Nama:"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Need more information?"
@@ -5967,7 +5987,7 @@ msgstr "Anda atau anggota keluarga bisa membuka akun namun Anda tidak berhak ata
 msgid "Net Annual Income"
 msgstr "Penghasilan Bersih Tahunan"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:165
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:169
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/cost_return.html.tt:2
 msgid "Net profit"
 msgstr "Laba bersih"
@@ -5986,17 +6006,17 @@ msgstr "Tidak pernah dipakai"
 msgid "New"
 msgstr "Baru"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:759
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:893
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:736
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:870
 msgid "New Password"
 msgstr "Kata Sandi Baru"
 
 #: /home/git/regentmarkets/bom-backoffice/f_clientloginid_newpassword.cgi:64
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:790
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:792
 msgid "New Password Request"
 msgstr "Permohonan Kata Sandi Baru"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:332
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:334
 msgid "New password is same as old password."
 msgstr "Kata sandi baru sama dengan kata sandi lama."
 
@@ -6005,14 +6025,20 @@ msgstr "Kata sandi baru sama dengan kata sandi lama."
 msgid "Newer"
 msgstr "Terbaru"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:112
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:116
 #: /home/git/translations/binary-static/src/templates/haml/get_started/benefits_of_trading_binaries.html.haml:1
 #: /home/git/translations/binary-static/src/templates/haml/get_started/how_to_trade_binaries.html.haml:1
 msgid "Next"
 msgstr "Lanjutkan"
 
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:192
+#, fuzzy
+#| msgid "Next Page"
+msgid "Next Day"
+msgstr "Halaman Berikutnya"
+
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:416
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2992
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2936
 msgid "No"
 msgstr "Tidak"
 
@@ -6028,7 +6054,7 @@ msgstr "No Connections With Antisocial Forces"
 msgid "No Connections with Antisocial Forces"
 msgstr "No Connections with Antisocial Forces"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:129
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:133
 msgid "No Live price update"
 msgstr "Tidak tersedia harga Live"
 
@@ -6086,7 +6112,7 @@ msgstr "Tidak mempublikasikan materi iklan tanpa persetujuan perusahaan. Setiap 
 msgid "Note: Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "Nota: Kontrak akan dijual pada harga pasar terkini ketika permintaan diterima oleh server kami. Harga ini mungkin berbeda dari harga yang diindikasikan."
 
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:1146
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:1147
 msgid "Note: During summer time (daylight saving), GMT is one hour behind BST (British Summer Time)"
 msgstr "Nota: Selama musim panas, GMT adalah satu jam lebih lambat dari BST (British Summer Time)"
 
@@ -6114,13 +6140,13 @@ msgstr "Catatan:"
 msgid "Notification of Changes"
 msgstr "Pemberitahuan Perubahan"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:84
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1072
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3380
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:88
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1049
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3324
 msgid "Nov"
 msgstr "Nop"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:96
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:100
 msgid "November"
 msgstr "Nopember"
 
@@ -6128,7 +6154,7 @@ msgstr "Nopember"
 msgid "Novice traders can use our intuitive visual platform to learn about trading, practice trading and gain trading experience."
 msgstr "Trader pemula dapat menggunakan platform visual kami yang intuitif untuk belajar dan memperoleh pengalaman trading."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:167
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:171
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/ContractForm.pm:631
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:581
 msgid "Now"
@@ -6156,13 +6182,13 @@ msgstr "Kartu Keluarga/Tagihan/Rekening Koran yang mencantumkan nama dan alamat 
 msgid "ORIGINAL Utility bill (within last 3 months) ; or"
 msgstr "Tagihan utilitas ASLI (dalam tempo 3 bulan) atau"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:83
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1068
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3376
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:87
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1045
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3320
 msgid "Oct"
 msgstr "Oktober"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:95
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:99
 msgid "October"
 msgstr "Oktober"
 
@@ -6170,7 +6196,7 @@ msgstr "Oktober"
 msgid "Ok"
 msgstr "Ok"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:330
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:332
 msgid "Old password is wrong."
 msgstr "Kata sandi lama salah."
 
@@ -6199,7 +6225,7 @@ msgstr "Setelah bonus dikreditkan kedalam akun Anda, Anda dapat menarik dana bon
 msgid "Once the white-label is live, you will earn standard affiliate commissions on clients trading via the white-label."
 msgstr "Setelah program white label Anda aktif, perhitungan komisi adalah berdasarkan program affiliasi."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1787
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1764
 msgid "Once this limit is reached, you may no longer deposit."
 msgstr "Sekali batasan tercapai, Anda tidak dapat melakukan deposit selanjutnya."
 
@@ -6250,15 +6276,15 @@ msgstr "Hanya klien yang ditandai dengan benar akan menjadi anggota afiliasi And
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:431
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:511
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:31
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:59
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:26
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:54
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/ticker_data_table.html.tt:6
 #: /home/git/translations/binary-static/src/templates/toolkit/portfolio/analyse_spread_contract.html.tt:11
 #: /home/git/translations/binary-static/src/templates/toolkit/portfolio/tradecorporate_action.html.tt:6
 msgid "Open"
 msgstr "Awal"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3021
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2965
 msgid "Open Account"
 msgstr "Daftar Akun"
 
@@ -6306,7 +6332,7 @@ msgstr "Dibuka lambat (pada %1)"
 
 #: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
 msgid "Options trading can become a real addiction, as can any other activity pushed to its limits. To avoid the danger of such an addiction, we provide a reality-check that gives you a summary of your trades and accounts on a regular basis."
-msgstr ""
+msgstr "Trading opsi dapat menyebabkan ketagihan, sebagaimana kegiatan lain yang dilakukan di luar batas. Untuk menghidari bahaya ketagihan tersebut, kami menyediakan pengecekan yang memberikan ringkasan trading Anda secara teratur."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/tac.html.tt:30
 msgid "Order Execution"
@@ -6455,8 +6481,8 @@ msgstr "Kepemilikan dan isi situs %1 akan tetap menjadi milik kami dan tidak dap
 msgid "Ownership, content and liability for affiliate sites are the sole responsibility of the affiliate. You will be solely responsible for the development, operation, and maintenance of your site and for all materials that appear on your site. You will indemnify and hold us harmless from all claims, damages, and expenses (including, without limitation to, attorneys' fees) relating to the development, operation, maintenance, and contents of your site."
 msgstr "Kepemilikan, konten dan kewajiban untuk situs afiliasi merupakan tanggung jawab dari afiliasi. Anda akan bertanggung jawab untuk pengembangan, operasi, dan pemeliharaan situs Anda dan untuk semua materi yang muncul pada situs Anda. Anda akan menanggung kerugian apapun dan mengecualikan kami dari semua tuduhan, kerusakan, dan biaya (termasuk, tidak terbatas pada, biaya pengacara) yang berkaitan dengan pengembangan, operasi, pemeliharaan, dan isi situs Anda."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:192
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:195
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:169
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:172
 msgid "P.O. Box is not accepted"
 msgstr "Tidak menerima P.O. Box"
 
@@ -6482,7 +6508,7 @@ msgid "Partners"
 msgstr "Mitra"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:94
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3124
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3068
 #: /home/git/translations/binary-static/src/templates/haml/home/login.html.haml:1
 #: /home/git/translations/binary-static/src/templates/haml/layouts/default/header.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/global/header.html.tt:77
@@ -6493,10 +6519,10 @@ msgstr "Kata Sandi"
 msgid "Password not given."
 msgstr "Kata sandi tidak diberikan."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1014
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:902
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:938
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:966
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1016
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:904
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:940
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:968
 #: /home/git/translations/binary-static/src/templates/haml/user/lost_password.html.haml:1
 #: /home/git/translations/binary-static/src/templates/haml/user/lost_password_email_sent.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/account/reset_password.html.tt:2
@@ -6570,7 +6596,7 @@ msgstr "Pembayaran"
 msgid "Payment Agents"
 msgstr "Agen Pembayaran"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:152
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:156
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/ContractForm.pm:749
 #: /home/git/translations/binary-static/src/templates/haml/get_started/glossary.html.haml:1
 msgid "Payout"
@@ -6582,7 +6608,7 @@ msgid "Payout Currency"
 msgstr "Mata uang hasil"
 
 #. (to_monetary_number_format($transaction_parameters->{payout})
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:1644
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:1645
 msgid "Payout has moved in your favour from %1 to %2."
 msgstr "Harga telah berubah dari %1 ke %2."
 
@@ -6596,7 +6622,7 @@ msgid "Payout must be between %1 and %2."
 msgstr "Hasil harus antara %1 dan %2."
 
 #. (qq{<span class="balance">$currency_label $promocode_amount</span>})
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:267
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:269
 msgid "Pending Bonus: %1"
 msgstr "Bonus Belum Disetujui: %1"
 
@@ -6616,7 +6642,7 @@ msgstr "Masa"
 msgid "Perl modules"
 msgstr "Modul perl"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1294
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1289
 #: /home/git/translations/binary-static/src/templates/haml/user/settings.html.haml:1
 msgid "Personal Details"
 msgstr "Data Pribadi"
@@ -6654,7 +6680,7 @@ msgstr "Silakan setuju untuk menerima risiko sebelum melanjutkan."
 msgid "Please choose which currency you would like to transact in."
 msgstr "Silahkan pilih mata uang mana yang ingin Anda depositkan."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:132
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:136
 msgid "Please confirm the trade on your statement before proceeding."
 msgstr "Mohon konfirmasikan kontrak pada bagian pernyataan sebelum melanjutkan."
 
@@ -6668,7 +6694,7 @@ msgstr "Pastikan Anda telah memilih Agen Pembayaran yang benar, salah transfer a
 msgid "Please contact us with whatever is on your mind at <a href=\"mailto:%1\">%1</a>. We’d be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us."
 msgstr "Silahkan hubungi kami kapan saja di <a href=\"mailto:%1\">%1</a>. Kami dengan senang hati akan membantu Anda. Jadi, jangan ragu untuk berbagi ide dan saran dengan kami."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:130
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:134
 msgid "Please enter a date that is at least 6 months from now."
 msgstr "Masukkan tanggal setidaknya 6 bulan dari sekarang."
 
@@ -6681,107 +6707,105 @@ msgstr "Masukkan tanggal setidaknya 6 bulan dari sekarang."
 #. ($limit_open_position)
 #. ($limit_session_duration)
 #. ($limit_daily_losses)
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1794
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1829
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1869
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1904
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1939
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1974
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2006
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2048
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2194
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2198
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2208
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2212
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2222
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2226
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2236
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2240
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2250
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2254
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2264
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2268
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2278
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2282
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2292
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2296
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2306
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2310
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2384
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1771
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1806
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1846
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1881
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1916
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1951
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1983
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2025
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2171
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2175
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2185
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2189
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2199
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2203
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2213
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2217
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2227
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2231
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2241
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2245
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2255
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2259
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2269
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2273
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2283
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2287
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2361
 msgid "Please enter a number between 0 and %1."
 msgstr "Silakan masukkan nomor antara 0 dan 1%."
 
 #: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
 #: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
-#, fuzzy
-#| msgid "Please enter a number between 0 and %1."
 msgid "Please enter a number greater than 0"
-msgstr "Silakan masukkan nomor antara 0 dan 1%."
+msgstr "Masukkan nomor lebih besar dari 0"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3044
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3101
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:686
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:733
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:865
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2988
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3045
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:663
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:710
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:842
 msgid "Please enter a password."
 msgstr "Silakan masukkan password."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:281
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3538
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:258
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3482
 msgid "Please enter a town or city."
 msgstr "Silakan masukkan nama kota atau daerah."
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1387
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2461
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2620
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2438
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2597
 msgid "Please enter a valid amount."
 msgstr "Tolong masukan jumlah yang benar."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1368
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1345
 msgid "Please enter a valid name."
 msgstr "Silahkan masukkan nama yang berlaku."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1778
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1813
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1853
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1888
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1923
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1958
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1993
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2025
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2368
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1755
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1790
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1830
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1865
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1900
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1935
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1970
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2002
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2345
 msgid "Please enter an integer value."
 msgstr "Silahkan masukan nilai penuh."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2067
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2076
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2044
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2053
 msgid "Please enter date in the format YYYY-MM-DD."
 msgstr "Silakan masukkan tanggal dalam format YYY-MM-DD."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2412
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2389
 msgid "Please enter the Login ID to transfer funds."
 msgstr "Silahkan masukkan Login ID untuk mentransfer dana."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1400
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1377
 msgid "Please enter the country where you want to offer your service"
 msgstr "Silakan masukkan negara dimana Anda ingin menawarkan layanan Anda"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:241
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3477
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:218
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3421
 msgid "Please enter the first line of your home address."
 msgstr "Silahkan masukkan alamat rumah Anda."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1440
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3085
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:741
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1417
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3029
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:743
 msgid "Please enter your email address."
 msgstr "Silahkan masukan alamat email Anda."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3282
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3226
 msgid "Please enter your first name."
 msgstr "Silahkan masukkan nama depan Anda."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3318
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3262
 msgid "Please enter your last name."
 msgstr "Silahkan masukkan nama akhir Anda."
 
@@ -6789,14 +6813,14 @@ msgstr "Silahkan masukkan nama akhir Anda."
 msgid "Please fill in the Login ID and Amount you wish to transfer to your Client in the form below:"
 msgstr "Silahkan isi Login ID dan jumlah yang ingin Anda transfer ke klien Anda dalam formulir di bawah ini:"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1104
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1110
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1116
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3411
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3417
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3423
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3429
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3434
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1081
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1087
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1093
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3355
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3361
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3367
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3373
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3378
 msgid "Please input a valid date."
 msgstr "Anda belum meMasukkan Tanggal lahir Anda."
 
@@ -6827,7 +6851,7 @@ msgstr "Mohon diketahui bahwa kutipan akhir pekan adalah tidak dipertimbangkan d
 msgid "Please note that you may update your personal information at any time by logging into the \"Settings\" section of your account. It is your responsibility to ensure that %1 is promptly and continually informed of any change in your personal information."
 msgstr "Anda dapat melakukan perbaikan data dengan mengakses bagian \"Pengaturan\" pada akun Anda. Merupakan tanggung jawab Anda untuk memastikan %1 mengetahui tentang perubahan yang Anda lakukan pada data pribadi Anda."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1251
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1246
 msgid "Please note that your settings have been updated as follows:"
 msgstr "Mohon diketahui bahwa pengaturan Anda telah diperbarui sebagai berikut:"
 
@@ -6835,12 +6859,12 @@ msgstr "Mohon diketahui bahwa pengaturan Anda telah diperbarui sebagai berikut:"
 msgid "Please post the documents to:"
 msgstr "Silakan hantar melalui pos dokumen tersebut ke:"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2105
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2342
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2082
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2319
 msgid "Please provide at least one self-exclusion setting."
 msgstr "Silakan sediakan setidaknya satu susunan pengecualian diri."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1552
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1529
 msgid "Please provide some information about yourself and your proposed services"
 msgstr "Silahkan sediakan beberapa informasi tentang diri Anda dan layanan yang akan Anda berikan"
 
@@ -6860,8 +6884,8 @@ msgstr "Silakan lihat rencana komisi berikut ini."
 msgid "Please remember at all times that trading binary options can be an exciting activity, but we have a moral duty to remind you of the risks you may run. Options trading can become a real addiction, as can any other activity pushed to its limits. We kindly ask you to engage in a careful self-analysis to check if you are at risk. To avoid the danger of such an addiction, it is important that you follow some basic principles and guidelines."
 msgstr "Mohon diingat setiap waktu bahwa trading opsi binary dapat menjadi aktifitas yang menyenangkan, tetapi kami memiliki kewajiban moral untuk mengingatkan Anda mengenai risiko yang mungkin Anda hadapi. Trading opsi dapat menyebabkan ketagihan sama seperti aktifitas lain yang dilakukan melebihi batas. Kami menyarankan Anda untuk melakukan pengecekan jika berisiko untuk menghindari ketagihan dimana penting untuk mengikuti panduan dan prinsip dasar."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2984
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:41
+#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Locale.pm:135
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2928
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form/maltainvest.pm:593
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form/maltainvest.pm:611
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form/maltainvest.pm:629
@@ -6876,17 +6900,13 @@ msgstr "Tolong pilih"
 msgid "Please select \"Payout\" or \"Stake\" option."
 msgstr "Pilih \"Hasil\" atau \"Modal\"."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2554
-#, fuzzy
-#| msgid "Please select your employment status."
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2531
 msgid "Please select a payment agent"
-msgstr "Silahkan pilih status pekerjaan."
+msgstr "Silahkan pilih agen pembayaran"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2581
-#, fuzzy
-#| msgid "Please select a value."
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2558
 msgid "Please select a valid payment agent."
-msgstr "Silahkan pilih nilai."
+msgstr "Silakan pilih agen pembayaran."
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form/maltainvest.pm:116
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form/maltainvest.pm:142
@@ -6909,19 +6929,17 @@ msgstr "Silahkan pilih nilai."
 msgid "Please select a value."
 msgstr "Silahkan pilih nilai."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3205
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3149
 msgid "Please select your country of residence"
 msgstr "Silakan pilih negara domisili Anda"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3462
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3406
 msgid "Please specify your country."
 msgstr "Silahkan tentukan negara Anda."
 
 #: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
-#, fuzzy
-#| msgid "Please specify your bank name."
 msgid "Please specify your preferred reality-check interval"
-msgstr "Silakan pastikan nama bank anda."
+msgstr "Silakan pilihan interval pengecekan yang Anda inginkan"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Please submit the above information to <a href='mailto:affiliates@binary.com'>affiliates@binary.com</a>."
@@ -6931,7 +6949,7 @@ msgstr "Silahkan kirim informasi diatas ke <a href='mailto:affiliates@binary.com
 msgid "Please switch accounts to trade this contract."
 msgstr "Silakan pindah akun untuk trading pada kontrak ini."
 
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:940
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:941
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1392
 msgid "Please switch accounts to trade this market."
 msgstr "Silakan pindah akun untuk trading pada pasar ini."
@@ -6940,7 +6958,7 @@ msgstr "Silakan pindah akun untuk trading pada pasar ini."
 msgid "Please take a moment to verify your identity by providing us with your date of birth, below."
 msgstr "Silakan verifikasi identitas Anda dengan menyediakan tanggal lahir Anda, di bawah ini."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:53
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:57
 msgid "Please try again."
 msgstr "Silahkan coba kembali."
 
@@ -6949,20 +6967,20 @@ msgstr "Silahkan coba kembali."
 msgid "Please type your chosen password twice into the fields below:"
 msgstr "Silakan ketik password pilihan Anda dua kali kedalam kolom berikut:"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:319
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:296
 msgid "Please use only alphanumeric characters or spaces."
 msgstr "Silakan hanya pergunakan gabungan angka dan huruf atau spasi."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3287
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3313
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3231
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3257
 msgid "Please use only letters, spaces, hyphens, full-stops or apostrophes."
 msgstr "Silahkan pergunakan huruf, spasi, tanda penghubung, titik atau tanda kutip."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:50
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:54
 msgid "Please wait.<br />Your request is being processed."
 msgstr "Silahkan tunggu.<br />Permohonan Anda sedang diproses."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:183
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:187
 msgid "Points"
 msgstr "Poin"
 
@@ -6971,36 +6989,36 @@ msgid "Policies and Exclusion of Liability"
 msgstr "Policies and Exclusion of Liability"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:70
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:412
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:414
 #: /home/git/translations/binary-static/src/templates/toolkit/account/portfolio.html.tt:2
 #: /home/git/translations/binary-static/src/templates/toolkit/homepage/logged_in.html.tt:74
 msgid "Portfolio"
 msgstr "Portopolio"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:325
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3582
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:302
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3526
 msgid "Postal Code / ZIP"
 msgstr "Kode Pos"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:309
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:314
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:286
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:291
 msgid "Postcode is invalid."
 msgstr "Kode pos salah."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:187
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3603
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:164
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3547
 msgid "Postcode is required for UK residents."
 msgstr "Kode pos diharuskan untuk warga negara Inggris."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3598
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3542
 msgid "Postcode must be less than 20 characters long and may not contain \"+\"."
 msgstr "Kode pos harus kurang dari 20 kata dan tidak memiliki \"+\"."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:176
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:180
 msgid "Potential Payout"
 msgstr "Potensi Hasil"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:178
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:182
 msgid "Potential Profit"
 msgstr "Potensi Hasil"
 
@@ -7034,8 +7052,14 @@ msgstr "Harga pasar terkini tidak dapat ditentukan pada saat ini."
 msgid "Prevailing market price cannot be determined."
 msgstr "Harga pasar terkini tidak dapat ditentukan."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:113
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:117
 msgid "Previous"
+msgstr "Sebelumnya"
+
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:193
+#, fuzzy
+#| msgid "Previous"
+msgid "Previous Day"
 msgstr "Sebelumnya"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/intraday_prices.html.tt:33
@@ -7048,7 +7072,7 @@ msgid "Price Oscillator"
 msgstr "Price Oscillator"
 
 #. (to_monetary_number_format($transaction_parameters->{price})
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:1639
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:1640
 msgid "Price has moved in your favour from %1 to %2."
 msgstr "Harga telah bergerak dari %1 ke %2."
 
@@ -7077,7 +7101,7 @@ msgstr "Primer"
 msgid "Print"
 msgstr "Cetak"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:58
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:62
 msgid "Print chart"
 msgstr "Cetak grafik"
 
@@ -7091,8 +7115,8 @@ msgstr "Keamanan & Privasi"
 msgid "Privacy Policy"
 msgstr "Privacy Policy"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3173
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3220
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3117
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3164
 #: /home/git/translations/binary-static/src/templates/haml/user/email_verified.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/ukgc_funds_protection_message.html.tt:19
 msgid "Proceed"
@@ -7102,7 +7126,7 @@ msgstr "Lanjutkan"
 msgid "Processing Time"
 msgstr "Waktu Proses"
 
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Language.pm:35
+#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Locale.pm:37
 msgid "Prof"
 msgstr "Prof"
 
@@ -7110,7 +7134,7 @@ msgstr "Prof"
 msgid "Professional Clients"
 msgstr "Klien Profesional"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:124
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:128
 #: /home/git/translations/binary-static/src/templates/haml/get_started/glossary.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/buy_success_ajax.html.tt:42
 msgid "Profit"
@@ -7121,7 +7145,7 @@ msgid "Profit / Loss"
 msgstr "Untung/Rugi"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:78
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:495
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:497
 #: /home/git/translations/binary-static/src/templates/toolkit/account/profit_table.html.tt:78
 #: /home/git/translations/binary-static/src/templates/toolkit/homepage/logged_in.html.tt:91
 msgid "Profit Table"
@@ -7169,8 +7193,8 @@ msgstr "Berikan kami dokumentasi berikut:"
 msgid "Published in English, Japanese, Chinese, Arabic, Polish, German, French, Spanish, Portuguese, Italian and Russian"
 msgstr "Diterbitkan dalam bahasa Inggris, Jepang, Cina, Arab, Polandia, Jerman, Perancis, Spanyol, Portugis, Italia dan Rusia"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:154
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:1515
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:158
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:1516
 #: /home/git/translations/binary-static/src/templates/toolkit/account/portfolio.html.tt:26
 msgid "Purchase"
 msgstr "Beli"
@@ -7191,7 +7215,7 @@ msgstr "Harga Beli"
 msgid "Purchase Spot"
 msgstr "Spot Beli"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:107
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:111
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:608
 msgid "Purchase Time"
 msgstr "Waktu Beli"
@@ -7227,6 +7251,7 @@ msgstr "Analitik Kuantitatif"
 msgid "Quote"
 msgstr "Kuota"
 
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:189
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:415
 msgid "Random"
 msgstr "Secara Acak"
@@ -7285,7 +7310,7 @@ msgstr "Random Yang"
 msgid "Rate of Change"
 msgstr "Perubahan harga"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:521
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:498
 #: /home/git/translations/binary-static/src/templates/haml/home/index.html.haml:1
 msgid "Re-enter your password"
 msgstr "Masukkan kembali sandi Anda"
@@ -7299,7 +7324,7 @@ msgstr "Baca tentang lima jenis kontrak yang ditawarkan %1."
 msgid "Read the answers to some common questions."
 msgstr "Baca berbagai jawaban dari pertanyaan umum."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:136
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:140
 msgid "Real Account"
 msgstr "Akun Riil"
 
@@ -7322,10 +7347,8 @@ msgid "Reality Check"
 msgstr "Pemeriksaan Realitas"
 
 #: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
-#, fuzzy
-#| msgid "Reality Check"
 msgid "Reality Check Interval:"
-msgstr "Pemeriksaan Realitas"
+msgstr "Pemeriksaan Realitas:"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/portfolio/contract_table.html.tt:52
 msgid "Realtime data is not available for this underlying"
@@ -7335,6 +7358,7 @@ msgstr "Data realtime tidak tersedia untuk pasar ini"
 msgid "Reap the rewards of trading binaries, knowing your funds are always safe."
 msgstr "Dapatkan imbalan dari trading binary, dana Anda akan selalu aman."
 
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:196
 #: /home/git/translations/binary-static/src/templates/toolkit/account/portfolio.html.tt:23
 #: /home/git/translations/binary-static/src/templates/toolkit/account/profit_table.html.tt:88
 #: /home/git/translations/binary-static/src/templates/toolkit/account/statement.html.tt:125
@@ -7401,8 +7425,8 @@ msgstr "Transaksi Regent Pacific"
 msgid "Register"
 msgstr "Daftar"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:38
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:66
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:33
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:61
 msgid "Rel Change"
 msgstr "Perubahan Rel"
 
@@ -7539,7 +7563,7 @@ msgstr "Laba Kontrak Naik"
 msgid "Rise Contract Return (%)"
 msgstr "Laba Kontrak Naik (%)"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:171
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:175
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Resources.pm:507
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Resources.pm:575
 #: /home/git/translations/binary-static/src/templates/haml/get_started/random_markets.html.haml:1
@@ -7577,7 +7601,7 @@ msgstr "Risk for Binary Option Trading"
 msgid "Risks of Investment Products"
 msgstr "Risiko Produk Investasi"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:120
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:124
 msgid "Sa"
 msgstr "Sab"
 
@@ -7596,7 +7620,7 @@ msgstr "Tanggal Jual"
 msgid "Sale Price"
 msgstr "Harga Jual"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:73
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:77
 msgid "Saturday"
 msgstr "Sabtu"
 
@@ -7604,23 +7628,23 @@ msgstr "Sabtu"
 msgid "Save"
 msgstr "Simpan"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:63
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:67
 msgid "Save as CSV"
 msgstr "Simpan dalam CSV"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:59
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:63
 msgid "Save as JPEG"
 msgstr "Simpan dalam JPEG"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:62
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:66
 msgid "Save as PDF"
 msgstr "Simpan dalam PDF"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:60
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:64
 msgid "Save as PNG"
 msgstr "Simpan dalam PNG"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:61
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:65
 msgid "Save as SVG"
 msgstr "Simpan dalam SVG"
 
@@ -7629,8 +7653,8 @@ msgstr "Simpan dalam SVG"
 msgid "Seasoned traders can use the %1 platform for the full advantage of the wide range of trading and analysis tools we have on offer."
 msgstr "Trader berpengalaman dapat menggunakan platform %1 untuk keuntungan maksimal dari berbagai pilihan trading dan alat analisis yang kami tawarkan."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:266
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3503
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:243
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3447
 msgid "Second line of home address"
 msgstr "R.T/R.W"
 
@@ -7638,12 +7662,12 @@ msgstr "R.T/R.W"
 msgid "Secondary"
 msgstr "Sekunder"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3654
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3598
 msgid "Secret question"
 msgstr "Pertanyaan rahasia"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:131
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1453
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:108
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1446
 #: /home/git/translations/binary-static/src/templates/haml/static/why_us.html.haml:1
 #: /home/git/translations/binary-static/src/templates/haml/user/settings.html.haml:1
 msgid "Security"
@@ -7663,7 +7687,7 @@ msgstr "Keamanan dan Privasi"
 msgid "Select Configure Bulk Clients at the top of the page."
 msgstr "Pilih Konfigurasi Klien Bulk pada bagian atas halaman."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2881
+#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Locale.pm:92
 #: /home/git/translations/binary-static/src/templates/haml/static/contact.html.haml:1
 msgid "Select Country"
 msgstr "Pilih Negara"
@@ -7693,6 +7717,7 @@ msgstr "Wirausaha"
 msgid "Self-Exclusion Facilities"
 msgstr "Fasilitas Pengecualian Diri"
 
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:198
 #: /home/git/translations/binary-static/src/templates/toolkit/account/statement.html.tt:53
 msgid "Sell"
 msgstr "Jual"
@@ -7735,18 +7760,18 @@ msgstr "Kirimkan surat penghantar dan lamaran yang menggambarkan keinginan karir
 msgid "Send your funds to the payment agent. The deposited funds, less the agent's commission, will show up in your account."
 msgstr "Kirim dana Anda kepada agen pembayaran. Jumlah deposit berdasarkan nilai tukar yang berlaku dan akan dikreditkan kedalam akun Anda."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:82
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1064
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3372
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:86
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1041
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3316
 msgid "Sep"
 msgstr "Sep"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:94
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:98
 msgid "September"
 msgstr "September"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2032
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2182
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2009
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2159
 msgid "Session duration limit cannot be more than 6 weeks."
 msgstr "Batas durasi sesi tidak dapat lebih dari 6 minggu."
 
@@ -7755,7 +7780,7 @@ msgstr "Batas durasi sesi tidak dapat lebih dari 6 minggu."
 msgid "Session duration limit is currently set to <strong>%1 minutes.</strong>"
 msgstr "Batas durasi per trading adalah <strong>%1 menit.</strong>"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2013
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1990
 msgid "Session duration limit, in minutes"
 msgstr "Batasan waktu berlangsung, dalam menit"
 
@@ -7772,9 +7797,11 @@ msgstr "Pengaturan"
 msgid "Settles"
 msgstr "Diselesaikan"
 
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:819
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:921
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:820
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:922
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/ErrorMessage.pm:28
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:741
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:751
 msgid "Sharp Prices. Smart Trading."
 msgstr "Harga Tajam. Trading Pintar."
 
@@ -7783,11 +7810,11 @@ msgstr "Harga Tajam. Trading Pintar."
 msgid "Sharp prices"
 msgstr "Harga tajam"
 
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:1430
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:1431
 msgid "Short"
 msgstr "Pendek"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1406
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1383
 msgid "Short summary of your Payment Agent service"
 msgstr "Ringkasan pendek dari layanan Agen Pembayaran Anda"
 
@@ -7910,11 +7937,6 @@ msgstr "Maaf, $currency bukan mata uang asal untuk pelanggan "
 msgid "Sorry, $currency is not default currency for payment agent "
 msgstr "Maaf, $currency bukan merupakan mata uang untuk agen pembayaran "
 
-#. (underlying.display_name)
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:21
-msgid "Sorry, OHLC is not available for %1."
-msgstr "Maaf, OHLC tidak tersedia untuk %1."
-
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1309
 msgid "Sorry, Payment Agent Transfer is temporarily disabled due to system maintenance. Please try again in 30 minutes."
 msgstr "Maaf, Transfer Agen Pembayaran dihentikan untuk sementara berhubung perbaikan sistem. Silahkan coba 30 menit lagi."
@@ -7923,7 +7945,7 @@ msgstr "Maaf, Transfer Agen Pembayaran dihentikan untuk sementara berhubung perb
 msgid "Sorry, account opening is unavailable."
 msgstr "Maaf, pembukaan akun tidak tersedia."
 
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:794
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:795
 msgid "Sorry, an error occured with this trade.  Please try again in a few minutes.  If the problem persists, please contact customer support."
 msgstr "Maaf, telah terjadi error pada trading ini. Silahkan coba kembali beberapa menit lagi. Jika masalah ini masih berlangsung, silahkan hubungi customer support."
 
@@ -7936,15 +7958,15 @@ msgstr "Maaf, telah terjadi error"
 msgid "Sorry, an error occurred while loading the form. Please contact customer support if this problem persists"
 msgstr "Maaf, error terjadi pada saat meloading formulir. Silakan hubungi Customer Support jika masalah ini masih terjadi"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1218
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1370
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1427
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1211
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1363
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1420
 msgid "Sorry, an error occurred while processing your account."
 msgstr "Maaf, error terjadi ketika memproses rekening Anda."
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:151
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1093
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1364
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1094
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1357
 msgid "Sorry, an error occurred. Please contact customer support if this problem persists."
 msgstr "Terjadi error. Silahkan hubungi customer support jika masalah ini masih berlangsung."
 
@@ -7960,13 +7982,13 @@ msgstr "Maaf, hanya warga negara UK saja dapat membuktikan identitas mereka seca
 msgid "Sorry, only USD is allowed."
 msgstr "Maaf, hanya USD diperbolehkan."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:182
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3057
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:159
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3001
 msgid "Sorry, our service is not available for your country of residence"
 msgstr "Maaf, layanan kami tidak tersedia untuk negara domisili Anda"
 
 #. ($transfer_form->get_field_value('transfer_to')
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2534
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2511
 msgid "Sorry, the Login ID (%1) does not exist."
 msgstr "Maaf, Login ID (%1) tidak ada."
 
@@ -8042,14 +8064,14 @@ msgstr "Maaf, Anda tidak dapat mencairkan."
 msgid "Sorry, you have already had too many unsuccessful attempts. Please try again in 5 minutes."
 msgstr "Maaf, Anda telah gagal mengakses beberapa kali. Silakan coba kembali dalam waktu 5 menit lagi."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:669
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:646
 msgid "Sorry, you have entered an incorrect cashier password"
 msgstr "Maaf, kata sandi yang Anda masukkan salah"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1445
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3038
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3090
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:745
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1422
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2982
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3034
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:747
 msgid "Sorry, you have entered an incorrect email address."
 msgstr "Maaf, Anda telah memasukkan alamat email yang salah."
 
@@ -8069,8 +8091,8 @@ msgstr "Maaf, Anda telah melebihi jumlah transfer maksimum yang diperbolehkan un
 
 #. ($lim)
 #. ($limit_excludeuntil)
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:2170
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Hooks.pm:170
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:2174
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Hooks.pm:174
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1460
 msgid "Sorry, you have excluded yourself from the website until %1."
 msgstr "Maaf, Anda telah mengecualikan diri dari website hingga %1."
@@ -8080,8 +8102,8 @@ msgid "Sorry, you have open positions. Please close out all open positions befor
 msgstr "Silahkan jual semua posisi terbuka Anda sebelum meminta dana tambahan."
 
 #. ($lim)
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:2175
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Hooks.pm:176
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:2179
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Hooks.pm:180
 msgid "Sorry, you have reached your session duration limit of %plural(%1,%d minute,%d minutes)."
 msgstr "Maaf, Anda telah mencapai batas durasi sesi %plural(%1,%d minute,%d minutes)."
 
@@ -8116,7 +8138,7 @@ msgstr "Spam - Kami tidak mentolerir Spam"
 msgid "Specific Instructions"
 msgstr "Instruksi khusus"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:145
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:149
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/form/spot.html.tt:3
 msgid "Spot"
 msgstr "Posisi"
@@ -8138,7 +8160,7 @@ msgstr "Hasil kontrak spread berdasarkan pada pergerakan indeks relatif terhadap
 msgid "Spreads"
 msgstr "Spread"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:153
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:157
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/ContractForm.pm:753
 #: /home/git/translations/binary-static/src/templates/haml/get_started/glossary.html.haml:1
 msgid "Stake"
@@ -8153,7 +8175,7 @@ msgstr "Modal harus antara %1 dan %2."
 msgid "Standard expiry"
 msgstr "Standar berakhir"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:108
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:112
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:478
 msgid "Start Time"
 msgstr "Waktu Mulai"
@@ -8166,7 +8188,7 @@ msgstr "Mulai Trading"
 msgid "Start learning"
 msgstr "Mulai Belajar"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:144
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:148
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/form/start_time.html.tt:4
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/form/start_time.html.tt:8
 #: /home/git/translations/binary-static/src/templates/toolkit/resources/rise_fall_table.html.tt:7
@@ -8187,13 +8209,14 @@ msgstr "Waktu mulai salah."
 msgid "Start time on forward-starting contracts must be more than %1 from now."
 msgstr "Waktu mulai pada kontrak mendatang harus lebih dari %1 dari sekarang."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:350
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3554
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:327
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3498
 msgid "State/Province"
 msgstr "Provinsi"
 
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:191
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:86
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:588
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:590
 #: /home/git/translations/binary-static/src/templates/toolkit/account/statement.html.tt:107
 #: /home/git/translations/binary-static/src/templates/toolkit/homepage/logged_in.html.tt:106
 msgid "Statement"
@@ -8203,7 +8226,7 @@ msgstr "Pernyataan"
 msgid "Static content"
 msgstr "Konten statik"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:58
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:53
 msgid "Statistic"
 msgstr "Statistik"
 
@@ -8312,7 +8335,7 @@ msgstr "Tingkat Stop Profit"
 msgid "Stop Profit must be between %1 and %2 %3"
 msgstr "Stop Profit harus antara %1 dan %2 %3"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:181
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:185
 msgid "Stop-loss"
 msgstr "Stop-loss"
 
@@ -8324,7 +8347,7 @@ msgstr "Stop-loss:"
 msgid "Stop-profit:"
 msgstr "Stop-profit:"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:182
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:186
 msgid "Stop-type"
 msgstr "Stop-type"
 
@@ -8332,7 +8355,7 @@ msgstr "Stop-type"
 msgid "Study our live charts"
 msgstr "Pelajari grafik live kami"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:114
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:118
 msgid "Su"
 msgstr "Mgg"
 
@@ -8345,9 +8368,9 @@ msgstr "Tunduk pada instruksi khusus yang dapat Anda berikan, ketika menjalankan
 msgid "Subject to your complying with the Company's instructions, with regards to tracking Clients accessing %1 via the Links on your Site or by quoting your affiliate IDs during signup, the Company shall use all reasonable endeavours to ensure that whenever a Client links to %1 through these Links or affiliate IDs and they subsequently place a contract or otherwise transact with the Company, the relevant Client is identified as originating from you or your Site. However, the Company shall not be liable to you in any way if the Company is unable to identify a Client as originating from you or your Site."
 msgstr "Sesuai dengan ketertiban Anda mengikuti arahan perusahaan dalam hal menjejaki klien yang mengakses %1 melalui link pada situs Anda atau dengan menginformasikan ID affiliasi Anda pada saat mendaftar, perusahaan akan menggunakan cara terbaik untuk memastikan bahwa setiap kali klient berhubungan dengan %1 melalui link atau ID afiliasi dan mereka melakukan pembelian kontrak atau bertransaksi dengan perusahaan maka klien tersebut akan diidentifikasi sebagai berasal dari Anda atau situs Anda. Namun demikian, perusahaan tidak bertanggung jawab jika tidak dapat mengidentifikasi atau membuktikan klien tersebut berasal dari Anda atau situs Anda."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1646
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2484
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2673
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1623
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2461
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2650
 msgid "Submit"
 msgstr "Mengajukan"
 
@@ -8355,7 +8378,7 @@ msgstr "Mengajukan"
 msgid "Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remains intact and that all copies include the following notice in a clearly visible position: &ldquo;Copyright 1999-2015 Binary Ltd. All rights reserved.&rdquo;"
 msgstr "Bahan tersebut dapat disalin dan didistribusikan secara terbatas untuk tujuan non-komersial saja, dengan ketentuan bahwa setiap materi yang disalin adalah utuh dan memberitahukan kalimat berikut dengan jelas: &ldquo;Hak Cipta Terpelihara Binary Ltd 1999-2015.&rdquo;"
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:54
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:49
 msgid "Summary"
 msgstr "Ringkasan"
 
@@ -8364,12 +8387,10 @@ msgid "Summary Order Execution Policy"
 msgstr "Ringkasan Orde Kebijakan Eksekusi"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/available_payment_agents_list.html.tt:12
-#, fuzzy
-#| msgid "Summary"
 msgid "Summary:"
-msgstr "Ringkasan"
+msgstr "Ringkasan:"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:67
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:71
 msgid "Sunday"
 msgstr "Minggu"
 
@@ -8377,11 +8398,11 @@ msgstr "Minggu"
 msgid "Supplementary Terms and Conditions for Financial Products offered by Binary Investments (Europe) Ltd."
 msgstr "Syarat dan Ketentuan Tambahan untuk Produk Keuangan yang ditawarkan oleh Binary Investments (Europe) Ltd."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1585
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1562
 msgid "Supported banks (this field visible from office only) **"
 msgstr "Bank yang tersedia (fasilitas ini hanya tersedia dari kantor saja) **"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1601
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1578
 msgid "Supported banks list is invalid"
 msgstr "Daftar bank yang digunakan salah"
 
@@ -8425,9 +8446,9 @@ msgstr "Teknikal Indikator diperoleh pada penyaringan Aroon Down dari Aroon Up. 
 msgid "Tel"
 msgstr "Tel"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3612
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:368
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1267
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:345
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3556
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1262
 msgid "Telephone"
 msgstr "Telepon"
 
@@ -8473,7 +8494,7 @@ msgstr "Tersier"
 msgid "Test-run %1, and sharpen your trading skills, with a no-risk, no-commitment, virtual account."
 msgstr "Coba %1, dan asah keterampilan trading Anda, tanpa risiko, tanpa komitmen, akun virtual."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:118
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:122
 msgid "Th"
 msgstr "Kam"
 
@@ -8525,7 +8546,7 @@ msgstr "%1 mensimulasikan pasar yang aktif pada siang hari (namun kurang aktif p
 #. ($website->display_name)
 #. ($r->website->display_name)
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1809
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1279
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1274
 msgid "The %1 team."
 msgstr "Tim %1."
 
@@ -8583,7 +8604,7 @@ msgstr "Agen akan mengirimkan jumlah penarikan (dikurangi komisi) melalui metode
 msgid "The Ask price represents the price at which the contract may be purchased at the present time."
 msgstr "Harga Ask merupakan harga di mana kontrak dapat dibeli saat ini."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1273
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1250
 msgid "The Authentication process verifies the information you have provided us during account registration. It will increase your trading limits and enable you to register more than one credit card.<br/><br/>In order to facilitate the process, please confirm your building no./name before clicking \"Authenticate\".<br/>"
 msgstr "Proses pembuktian adalah untuk memastikan kebenaran data yang anda informasikan pada saat melakukan pendaftaran. Disamping itu juga bertujuan untuk meningkatkan batasan trading anda.<br/><br/>Untuk melanjutkan proses, konfirmasikan nomor/nama gedung sebelum mengklik tombol \"Pembuktian\".<br/>"
 
@@ -8937,7 +8958,7 @@ msgstr "Periode kontrak adalah jangka waktu trading. Yang juga disebut sebagai d
 msgid "The cost of your open positions"
 msgstr "Jumlah biaya kontrak"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:289
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:291
 msgid "The currency of your bonus will be the same as the currency of your first deposit."
 msgstr "Mata uang bonus anda akan sama dengan mata uang deposit pertama anda."
 
@@ -9031,7 +9052,7 @@ msgstr "Seluruh materi yang digunakan pada situs %1 (termasuk artikel, teks, gam
 msgid "The maximum loss that may be incurred by any Client is the amount of money paid by oneself to the Company."
 msgstr "Kerugian maksimal yang mungkin ditanggung oleh klien adalah sejumlah dana yang dibayarkan kepada Perusahaan."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1741
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1734
 msgid "The name is taken."
 msgstr "Nama sudah diambil."
 
@@ -9040,7 +9061,7 @@ msgid "The page has timed out. This may be due to a slow Internet connection, or
 msgstr "Halaman memiliki batas waktu. Hal ini mungkin disebabkan oleh koneksi internet yang sangat lambat, atau kelebihan muatan pada server kami.  Silahkan coba beberapa saat lagi."
 
 #. ($r->email,                            $r->client_ip)
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:357
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:359
 msgid "The password for your account %1 has been changed. This request originated from IP address %2. If this request was not performed by you, please immediately contact Customer Support."
 msgstr "Kata sandi akun %1 Anda telah dirubah. Permohonan ini berasal dari alamat IP %2. Jika permohonan ini bukan dari Anda, silahkan hubungi Customer Support dengan segera."
 
@@ -9110,7 +9131,7 @@ msgstr "Modal adalah jumlah yang dibayarkan oleh trader pada saat membeli kontra
 msgid "The stop-loss and stop-profit are guaranteed. The loss and profit are limited to the stop-loss and stop-profit respectively.  When the exit level touches either the stop-loss or stop-profit, the contract will be closed at the stop-loss or stop-profit level."
 msgstr "Stop-loss dan stop-profit adalah terjamin. Kerugian dan keuntungan terbatas pada masing-masing stop loss dan stop profit. Ketika tingkat keluar menyentuh salah satu stop-loss atau stop-profit, kontrak akan ditutup pada tingkatan stop-loss atau stop-profit."
 
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:792
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:793
 msgid "The system is missing critical pricing information. Please try again in a few minutes, or try a different market."
 msgstr "Sistem tidak dapat memberikan informasi harga. Silahkan coba kembali sebentar lagi atau coba pasar lain."
 
@@ -9127,13 +9148,13 @@ msgstr "Waktu saat ini menunjukkan %1 %2 dan waktu pembukaan pasar (untuk %3) ad
 msgid "The transactions performed on this site and the relationship between Clients and the Company are to be governed by and construed in accordance with the laws of the country of incorporation of the Company (the \"Jurisdiction\"), which shall be either of the Isle of Man, Malta, or Costa Rica. You agree that the Jurisdiction's courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, you irrevocably submit to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and you agree that any claim you might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company’s Complaints and Disputes section."
 msgstr "Transaksi yang dilakukan di situs ini dan hubungan antara klien dan perusahaan adalah diatur dan ditafsirkan sesuai dengan hukum negara pendirian perusahaan (\"Yurisdiksi\"), yaitu di Isle of Man , Malta, atau Costa Rica. Anda bersetuju bahwa pengadilan yurisdiksi akan memiliki kewenangan tunggal untuk menyelesaikan perselisihan yang mungkin timbul dalam kaitan tersebut. Untuk tujuan tersebut, Anda tidak dapat ditarik kembali tunduk kepada yurisdiksi pengadilan dari yurisdiksi berkaitan dengan masalah tersebut dan Anda setuju bahwa setiap klaim yang mungkin Anda miliki terhadap perusahaan hanya akan dibawa ke pengadilan dari yurisdiksi. Untuk informasi lebih lanjut tentang keluhan dan perselisihan, silakan lihat bagian keluhan dan perselisihan perusahaan."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:139
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:516
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:585
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:787
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:849
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:921
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:989
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:143
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:493
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:562
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:764
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:826
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:898
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:966
 msgid "The two passwords that you entered do not match."
 msgstr "Kedua-dua password yang Anda masukkan tidak cocok."
 
@@ -9186,11 +9207,11 @@ msgstr "Tidak tersedia data intraday untuk %1 pada %2."
 msgid "There was a market data disruption during the contract period. For real-money accounts we will attempt to correct this and settle the contract properly, otherwise the contract will be cancelled and refunded. Virtual-money contracts will be cancelled and refunded."
 msgstr "Terdapat gangguan data pada periode kontrak berikut. Bagi akun uang riil, kami akan melakukan perbaikan dan akan menyelesaikan kontrak berdasarkan hasil yang sesuai. Untuk akun virtual akan kami batalkan dan melakukan pengembalian harga kontrak."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:134
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:138
 msgid "There was a problem accessing the server during purchase."
 msgstr "Terjadi masalah mengakses server saat pembelian berlangsung."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:133
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:137
 msgid "There was a problem accessing the server."
 msgstr "Terjadi masalah pada saat mengakses server."
 
@@ -9292,13 +9313,13 @@ msgid "This Payment Agent cashier section is locked."
 msgstr "Bagian kasir Agen Pembayaran ini terkunci."
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1049
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1507
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1484
 msgid "This URL is invalid."
 msgstr "URL ini tidak berlaku."
 
 #. ($r->url_for("contact")
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:2163
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Hooks.pm:161
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:2167
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Hooks.pm:165
 msgid "This account is unavailable. For any questions please contact <a href=\"%1\">Customer Support</a>."
 msgstr "Akun ini untuk sementara dibatalkan, silahkan hubungi <a href=\"%1\">Customer Support</a>."
 
@@ -9348,7 +9369,7 @@ msgstr "Kontrak ini terbatas ke "
 msgid "This contract is unavailable on this account."
 msgstr "Kontrak ini tidak tersedia untuk akun ini."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:122
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:126
 msgid "This contract lost"
 msgstr "Kontrak ini rugi"
 
@@ -9360,7 +9381,7 @@ msgstr "Kontrak ini tidak memberikan hasil."
 msgid "This contract was not found among your open positions."
 msgstr "Kontrak tidak ditemukan pada posisi yang masih berjalan."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:121
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:125
 msgid "This contract won"
 msgstr "Kontrak ini untung"
 
@@ -9384,13 +9405,13 @@ msgstr "Ini adalah akun uang virtual. Silahkan pindah ke akun uang riil dan mend
 
 #. ($client->loginid,                                        $r->client_ip)
 #. ($client->loginid,                                    $r->client_ip)
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1381
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1438
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1374
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1431
 msgid "This is an automated message to alert you that a change was made to your cashier settings section of your account %1 from IP address %2. If you did not perform this update please login to your account and update settings."
 msgstr "Ini adalah pesan otomatis untuk memberitahukan Anda bahwa telah terjadi perubahan pada bagian pengaturan kasir akun Anda %1 dari alamat IP %2. Jika Anda tidak melakukan perubahan ini silahkan login kedalam akun dan ubah kembali bagian pengaturan."
 
 #. ($client->loginid,                                    $r->client_ip)
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1404
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1397
 msgid "This is an automated message to alert you to the fact that there was a failed attempt to unlock the Cashier/Settings section of your account %1 from IP address %2"
 msgstr "Ini adalah pesan otomatis untuk mengingatkan Anda bahwa telah terjadi kegagalan pada pengaksesan bagian Kasir/Pengaturan akun Anda %1 dari alamat IP %2"
 
@@ -9457,7 +9478,7 @@ msgstr "Pemberitahuan ini memberi Anda informasi tentang risiko yang berhubungan
 msgid "This offer cannot be used in conjunction with any other offer."
 msgstr "Penawaran ini tidak dapat digunakan bersamaan pada penawaran lainnya."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:326
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:328
 msgid "This page is unavailable."
 msgstr "Halaman tidak tersedia."
 
@@ -9481,16 +9502,17 @@ msgstr "Website ini tidak mengumpulkan informasi identitas pribadi mengenai Anda
 #: /home/git/translations/binary-static/src/templates/haml/layouts/default/footer.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/global/footer.html.tt:193
 msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>. This website's services are not made available in the USA, Japan or Hong Kong, or to persons under age 18."
-msgstr "Website ini dipasarkan di negara Inggris dan Isle of Man melalui Binary (IOM) Ltd. Untuk Uni Eropa (kecuali Inggris) melalui Binary (Europe) Ltd dan Binary Investments (Europe) Ltd. Sedangkan untuk negara lain di seluruh dunia melalui Binary (C.R.) S.A."
+msgstr "Website ini dipasarkan di negara Inggris dan Isle of Man melalui Binary (IOM) Ltd. Untuk Uni Eropa (kecuali Inggris) melalui Binary (Europe) Ltd dan Binary Investments (Europe) Ltd. Sedangkan untuk negara lain di seluruh dunia melalui Binary (C.R.) S.A. Layanan website ini tidak tersedia untuk di bawah usia 18."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:29
 msgid "Throughout the term of this Agreement, you shall:"
 msgstr "Sepanjang jangka waktu Perjanjian ini, Anda harus:"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:71
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:75
 msgid "Thursday"
 msgstr "Kamis"
 
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:205
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:421
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:460
 #: /home/git/translations/binary-static/src/templates/haml/get_started/glossary.html.haml:1
@@ -9518,11 +9540,11 @@ msgstr "Dengan perubahan waktu. Kami meningkatkan hasil sehingga klien kami dapa
 msgid "Tip:"
 msgstr "Tip:"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3247
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3191
 msgid "Title"
 msgstr "Gelar"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:65
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:69
 msgid "To"
 msgstr "Kepada"
 
@@ -9539,7 +9561,7 @@ msgstr "Untuk mengajukan surat lamaran, kirimkan lamaran Anda ke <span id=\"hr_c
 msgid "To authenticate your account, kindly email the following to %1"
 msgstr "Untuk membuktikan identitas Anda, silakan email hal berikut ini ke %1"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:475
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:452
 msgid "To change your name, date of birth, country of residence, or email, please contact Customer Support."
 msgstr "Untuk merubah nama, tanggal lahir dan negara domisili Anda atau email, silahkan hubungi Customer Support."
 
@@ -9585,7 +9607,7 @@ msgstr "Token"
 msgid "Too many market holidays during the contract period. Select an expiry date after %1."
 msgstr "Terlalu banyak hari libur pasar selama periode kontrak. Silahkan pilih waktu berakhir setelah %1."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:177
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:181
 msgid "Total Cost"
 msgstr "Total Biaya"
 
@@ -9606,10 +9628,8 @@ msgid "Touch/No Touch"
 msgstr "Menyentuh/Tidak"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/types_of_trades.html.haml:1
-#, fuzzy
-#| msgid "Touch/no touch trades"
 msgid "Touch/No touch trades"
-msgstr "Kontrak Menyentuh/tidak"
+msgstr "Kontrak Touch/No touch"
 
 #: /home/git/translations/binary-static/src/templates/haml/layouts/default/mobile_menu.html.haml:1
 #: /home/git/translations/binary-static/src/templates/haml/layouts/default/nav.html.haml:1
@@ -9623,8 +9643,8 @@ msgstr "Panduan"
 msgid "Tourism"
 msgstr "Pariwisata"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:287
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3522
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:264
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3466
 msgid "Town/City"
 msgstr "Kota"
 
@@ -9746,7 +9766,7 @@ msgstr "Trading opsi Binary memiliki resiko tinggi dan mungkin tidak cocok untuk
 msgid "Trading in Binary Options is speculative and involves a high degree of risk that can result in the loss of your entire investment. Therefore, trading in Binary Options is appropriate only for persons that understand and are willing to assume the economic, legal and other risks involved in such transactions. You should be satisfied that Binary Options trading is suitable for you in light of your investment circumstances and attitude towards risk before trading. You should not engage in speculative Binary Options trading unless you understand the basic aspects of such trading and its risks. If you are in any doubt as to whether Binary Option trading is appropriate and suitable for you, please seek independent advice from a investment consulting professional. %1 does not provide such advice. It is your responsibility, taking into account your personal circumstances and investment resources, to take particular care and make careful considerations independently, both prior to applying to engage in Binary Options with %1, as well as prior to making any individual order. Where you do not understand the risks involved in applying for a trading account with %1 or in making any individual order, you should seek advice and consultation from an independent investment advisor. If you continue to not understand the risks involved in trading in Binary Options, you should not trade at all."
 msgstr "Trading pada Opsi Binary merupakan spekulasi dan melibatkan tingkat risiko tinggi yang dapat menyebabkan kerugian bagi seluruh investasi Anda. Maka, trading di Opsi Binary hanya cocok bagi orang yang memahami dan bersedia menanggung risiko ekonomi, hukum dan risiko lainnya pada transaksi tersebut. Anda puas dengan trading Opsi Binary yang cocok bagi Anda dalam menerangkan keadaan investasi dan sikap terhadap risiko sebelum bertrading. Anda sebaiknya tidak melibatkan diri dalam spekulasi Opsi Binary kecuali jika Anda memahami aspek dasar trading tersebut dan risikonya. Jika Anda masih belum yakin apakah trading Opsi Binary cocok untuk Anda, dapatkan saran indipenden dari seorang profesional konsultasi investasi. %1 tidak menyediakan saran tersebut. Merupakan tanggung jawab Anda untuk mempertimbangkan keadaan dan sumber investasi, untuk berhati hati dan mempertimbangkan untuk bertrading Opsi Binary bersama %1, termasuk pada saat melakukan pembelian kontrak. Ketika Anda tidak memahami tentang risiko yang terlibat pada saat mendaftar trading akun %1 atau membuat pembelian kontrak, maka Anda perlu memperoleh saran dan melakukan konsultasi dari penasihat investasi independen. Jika Anda berkelanjutan tidak memahami risiko yang terlibat pada trading Opsi Binary, maka Anda tidak perlu bertrading sama sekali."
 
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:769
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:770
 msgid "Trading is Suspended"
 msgstr "Trading dihentikan sementara"
 
@@ -9813,7 +9833,7 @@ msgstr "Trading pada pasar finansial dapat menyebabkan kecanduan. Isikan formuli
 msgid "TradingView"
 msgstr "TradingView"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1190
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1167
 msgid "Transact in"
 msgstr "Bertransaksi di"
 
@@ -9830,11 +9850,11 @@ msgstr "Transfer antara akun gaming dan akun finansial Anda."
 msgid "Transfer to"
 msgstr "Kirim ke"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2396
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2373
 msgid "Transfer to Login ID"
 msgstr "Transfer ke Login ID"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2558
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2535
 msgid "Transfer to Payment Agent"
 msgstr "Penarikan Agen Pembayaran"
 
@@ -9869,11 +9889,11 @@ msgstr "Coba sekarang"
 msgid "Try out the Random Indices which are always open."
 msgstr "Coba Indeks Random yang selalu tersedia."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:116
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:120
 msgid "Tu"
 msgstr "Kam"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:69
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:73
 msgid "Tuesday"
 msgstr "Selasa"
 
@@ -9937,8 +9957,8 @@ msgstr "Error tidak dikenal saat menyimpan workspace '#1'."
 msgid "Unless otherwise advised, we shall treat you as a Retail Client. You may also request, in writing, us to change the category in which you have been classified and this may have an effect on the level of protection afforded to you. We reserve the right to accept or refuse any such request for change in classification."
 msgstr "Kecuali disarankan, kami memperlakukan Anda sebagai Klien Ritel. Anda juga dapat meminta secara tertulis untuk mengubah kategori di mana Anda telah diklasifikasikan dan ini mungkin memiliki efek pada tingkat perlindungan yang diberikan kepada Anda. Kami berhak untuk menerima atau menolak permintaan tersebut untuk perubahan klasifikasi."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:639
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:655
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:616
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:632
 msgid "Unlock Cashier"
 msgstr "Buka Kasir"
 
@@ -9958,12 +9978,12 @@ msgstr "Kontrak Atas/Bawah"
 msgid "Upcoming Events"
 msgstr "Acara Mendatang"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3769
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1707
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3713
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1700
 msgid "Update"
 msgstr "Memperbarui"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2115
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2092
 msgid "Update Settings"
 msgstr "Perbaru Pengaturan"
 
@@ -9981,7 +10001,7 @@ msgstr "Upgrade ke Akun Riil"
 msgid "Upon appointment of a Trading Agent, the Client acknowledges and understands that the Company is hereby giving authorisation to follow the instructions of the authorised Trading Agent in every respect with regards to the Client's financial trading account with the Company, EXCEPT for the withdrawal of any funds from the Client's account. The Company will not in any way be liable or responsible for any buy or sell trading actions done on the Client's behalf by the Trading Agent, or for any losses incurred by the Trading Agent for the Client's Account. Furthermore, the Company does not endorse the Trading Agent nor does it vouch for the background, or experience of the Trading Agent, nor does the Company endorse any operating methods used by the Trading Agent, including when trading for the Client's account."
 msgstr "Setelah memilih Agen Trading, Pelanggan mengetahui dan memahami bahwa Perusahaan akan memberikan kekuasaan sepenuhnya pada Agen Trading yang dibenarkan untuk melakukan trading pada akun pelanggan bersangkutan pada Perusahaan KECUALI penarikan dana. Perusahaan tidak akan menanggung atau bertanggung jawab pada transaksi apapun yang dilakukan oleh Agen Trading. Disamping itu, Perusahaan tidak mengabsahkan Agen Trading baik itu dari segi latar belakang, pengalaman atau metode pengoperasian yang digunakan oleh Agen Trading termasuk ketika melakukan trading pada account Pelanggan."
 
-#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:69
+#: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:64
 msgid "Upper Band"
 msgstr "Garis Atas"
 
@@ -10025,15 +10045,15 @@ msgstr "Verifikasi Sukses"
 msgid "Verification of identity"
 msgstr "Pembuktian identitas"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:792
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:926
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:769
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:903
 msgid "Verify new password"
 msgstr "Verifikasi kata sandi baru"
 
 #. ($c->stash('website_name')
 #. (request()
-#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Account/Virtual.pm:98
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1071
+#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Account/Virtual.pm:102
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1073
 msgid "Verify your email address - %1"
 msgstr "Verifikasi alamat email Anda - %1"
 
@@ -10050,8 +10070,8 @@ msgstr "Versi 38. Diubah terakhir 10-09-2015."
 msgid "Vertical"
 msgstr "Vertikal"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:184
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:1303
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:188
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:1304
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/intraday_prices.html.tt:16
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/daily_ohlc.html.tt:16
 msgid "View"
@@ -10140,7 +10160,7 @@ msgstr "Lihat batas trading dan penarikan Anda."
 msgid "View your trading profit/loss."
 msgstr "Lihat keuntungan/kerugian trading Anda."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:135
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:139
 msgid "Virtual Account"
 msgstr "Akun Virtual"
 
@@ -10173,7 +10193,7 @@ msgstr "Jaminan"
 msgid "Watch,earn and learn for FREE! Binary.com teams up with professional traders on a monthly basis to show you how to identify trading opportunities using various trading techniques and strategies."
 msgstr "Tonton, dapatkan dan belajar GRATIS! Tim Binary.com bekerjasama dengan trader profesional setiap bulan untuk memperlihatkan kepada Anda peluang trading menggunakan berbagai teknik dan strategi."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:117
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:121
 msgid "We"
 msgstr "Kami"
 
@@ -10206,12 +10226,12 @@ msgstr "Kami berhak di bawah Aturan untuk mengandalkan informasi yang Anda berik
 msgid "We are fully licensed in the British Isles and Malta."
 msgstr "Kami sepenuhnya memiliki ijin dari British Isles dan Malta."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:127
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:131
 msgid "We are not able to stream live prices at the moment. To enjoy live streaming of prices try refreshing the page, if you get this issue after repeated attempts try a different browser"
 msgstr "Kami tidak dapat memberikan striming harga live untuk saat ini. Untuk menikmati striming harga live silahkan coba merefresh halaman, atau coba browser lain"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:56
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3467
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:60
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3411
 msgid "We are not accepting accounts from residents of this country at the present time."
 msgstr "Saat ini kami tidak menerima pembukaan akun dari penduduk negara berikut."
 
@@ -10312,7 +10332,7 @@ msgid "We use identity verification services and real-time fraud detection measu
 msgstr "Kami menggunakan pembuktian identitas dan mendeteksi tindakan penyalahgunaan secara langsung untuk membantu kami menjaga keamanan akun Anda dari akses yang tidak dibenarkan. Kami juga selalu memantau aktifitas penyalahgunaan dan bekerjasama dengan pihak berwajib untuk mengatasi masalah penipuan."
 
 #. ($forgot_pass_url, $contact_url)
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:859
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:861
 msgid "We were unable to recover your Login ID or Password with the provided information. <a href=\"%1\">Return to Password Recovery</a>, or <a href=\"%2\"><strong>contact us</strong></a> should you need further assistance."
 msgstr "Kami tidak dapat memulihkan Login ID atau kata sandi menggunakan informasi yang Anda berikan. <a href=\"%1\">Kembali ke Pemulihan Kata Sandi</a>, atau <a href=\"%2\"><strong>hubungi kami</strong></a> jika Anda memerlukan bantuan lebih lanjut."
 
@@ -10382,7 +10402,7 @@ msgstr "Situs web"
 msgid "Website exclusion is currently set to <strong>%1.</strong>"
 msgstr "Pengecualian website saat ini adalah <strong>%1.</strong>"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:70
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:74
 msgid "Wednesday"
 msgstr "Rabu"
 
@@ -10390,7 +10410,7 @@ msgstr "Rabu"
 msgid "Week"
 msgstr "Minggu"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:98
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:102
 msgid "Week of"
 msgstr "Minggu ke"
 
@@ -10489,7 +10509,7 @@ msgstr "Ketika kami memberikan Kontrak, kami akan mengambil semua tanggung jawab
 msgid "When you are satisfied with the trade price, instantly execute your trade."
 msgstr "Setelah Anda menyetujui harga kontrak, langsung beli kontrak Anda."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:131
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:135
 msgid "When you click 'Ok' you will be excluded from trading on the site until the selected date."
 msgstr "Setelah mengklik 'Ok' Anda akan dikecualikan dari trading hingga tanggal yang dipilih."
 
@@ -10786,12 +10806,12 @@ msgstr "Bursa Saham Dunia"
 msgid "Written limits and self-exclusion"
 msgstr "Batas tertulis dan pengecualian diri"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:49
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:53
 msgid "Year"
 msgstr "Tahun"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:478
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2988
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2932
 msgid "Yes"
 msgstr "Ya"
 
@@ -10817,7 +10837,7 @@ msgstr "Anda dan kami merupakan kontraktor bebas dan tidak terdapat dalam perjan
 msgid "You are advised that the Binary Options offered by %1 are not traded under the rules of any recognised, designated or regulated exchange. Consequently, engaging in Binary Options trading may expose you to substantially greater risks than investments which are so traded."
 msgstr "Anda disarankan bahwa Opsi Binary yang ditawarkan oleh %1 adalah tidak ditradingkan dibawah aturan pertukaran yang diakui, ditunjuk atau diatur. Hal ini menyebabkan, melakukan trading Opsi Binary akan menghasilkan risiko besar dibandingkan dengan investasi trading."
 
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:2002
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:2003
 msgid "You are being given the better price."
 msgstr "Anda diberikan harga yang lebih baik."
 
@@ -10926,11 +10946,11 @@ msgstr "Anda telah melakukan penarikan dana sejumlah EUR %1 akumulasi sepanjang 
 msgid "You have already withdrawn the equivalent of EUR %1."
 msgstr "Anda telah melakukan penarikan sebesar EUR %1."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:278
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:280
 msgid "You have bought contracts with a combined purchase price of five times the bonus amount."
 msgstr "Anda telah membeli kontrak dengan harga total lima kali jumlah bonus."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2422
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2399
 msgid "You have entered an invalid login ID"
 msgstr "Anda telah memasukkan login ID yang salah"
 
@@ -11002,7 +11022,7 @@ msgstr "Anda hanya dapat mendaftar akun di situs ini dengan syarat bahwa:"
 msgid "You may withdraw the bonus amount once you have exceeded an account turnover of 25 times the bonus amount value."
 msgstr "Bonus hanya dapat dicairkan jika Anda telah melebihi total pembelian kontrak sebesar 25 kali jumlah bonus."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:55
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:59
 msgid "You must accept the terms and conditions to open an account."
 msgstr "Anda harus menyetujui syarat dan ketentuan untuk mendaftar akun."
 
@@ -11059,7 +11079,7 @@ msgstr "Anda perlu mengingat bahwa kewajiban kami untuk menyediakan eksekusi ter
 msgid "You should read these ST&Cs carefully as well as the Summary Order Execution Policy and Summary Conflicts Policy, the applicable Contract Details together with the Risk Disclosure Notice and any other documents that we have supplied or in the future do supply to you."
 msgstr "Anda perlu membaca Ketentuan Lanjutan secara berhati hati termasuk Ringkasan Kebijakan Orde Eksekusi dan Ringkasan Konflik Kebijakan, Keterangan Kontrak yang berlaku bersamaan dengan Pemberitahuan Penyingkapan Risiko dan dokumen lain yang kami terima atau yang akan kami terima."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2041
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2018
 msgid "You will be automatically logged out after such time."
 msgstr "Anda akan secara otomatis keluar setelah waktu tersebut."
 
@@ -11094,11 +11114,11 @@ msgid "You'll find answers to most of your questions on the <a href='%1' target=
 msgstr "Anda akan menemukan jawaban pada halaman <a href='%1' target='_blank'>Pertanyaan Umum</a>."
 
 #. ($landing_company->name)
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:199
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:201
 msgid "You're currently logged in to your real money account with %1"
 msgstr "Saat ini Anda sedang mengakses akun uang riil pada %1"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:196
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:198
 msgid "You're currently logged in to your virtual money account"
 msgstr "Saat ini Anda sedang mengakses akun uang virtual"
 
@@ -11113,7 +11133,7 @@ msgid "Your %1 day withdrawal limit is currently <strong>EUR %2</strong> (or %3 
 msgstr "Batas penarikan %1 hari anda adalah <strong>EUR %2</strong> (atau %3 pada mata uang lainnya)."
 
 #. ($currency_label, $min_deposit)
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:277
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:279
 msgid "Your <strong>first</strong> deposit is equal to or more than %1%2, and"
 msgstr "Deposit <strong>pertama</strong> Anda adalah senilai atau lebih dari %1%2 dan"
 
@@ -11130,7 +11150,7 @@ msgstr "ID Anda akan disimpan di dalam cookie dan diidentifikasi setiap waktu ke
 msgid "Your Login ID"
 msgstr "Login ID Anda"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2417
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2394
 msgid "Your Login ID should not contain spaces."
 msgstr "Login ID tidak boleh mengandungi spasi."
 
@@ -11200,15 +11220,15 @@ msgstr "Saldo Anda lebih tinggi dari jumlah yang dibenarkan."
 msgid "Your bonus request - %1"
 msgstr "Permohonan bonus Anda - %1"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:275
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:277
 msgid "Your bonus will be credited to your account within 3 working days after the following conditions have been met:"
 msgstr "Bonus Anda akan dikreditkan ke account Anda dalam waktu 3 hari kerja setelah kondisi berikut telah terpenuhi:"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:285
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:287
 msgid "Your bonus will be credited to your account within 3 working days after you have bought contracts with a combined purchase price equal to or greater than the bonus amount."
 msgstr "Anda akan segera menerima email konfirmasi mengenai bonus setelah pembelian kontrak setara atau lebih besar dengan jumlah bonus Anda."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:293
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:295
 msgid "Your bonus will be credited to your account within 3 working days."
 msgstr "Anda akan segera menerima email konfirmasi mengenai bonus Anda."
 
@@ -11223,7 +11243,7 @@ msgstr "Kasir Anda telah terkunci"
 msgid "Your cashier is locked as per your request - to unlock it, please <a href=\"%1\">click here</a>."
 msgstr "Kasir Anda telah terkunci sesuai permintaan Anda - untuk membuka kunci, silahkan <a href=\"%1\">klik disini</a>."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:656
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:633
 msgid "Your cashier is locked as per your request - to unlock it, please enter the password."
 msgstr "Kasir Anda terkunci sesuai permintaan Anda - untuk membuka kunci, masukkan kata sandi."
 
@@ -11240,7 +11260,7 @@ msgstr "Sesi kasir Anda telah berakhir"
 msgid "Your clients will love the %1 trading platform because we offer a complete trading experience tailored to the needs of an exceptionally wide range of traders."
 msgstr "Klien Anda akan menyukai platform trading %1 karena kami menawarkan pengalaman trading yang lengkap untuk memenuhi keperluan berbagai jenis trader."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:170
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:174
 msgid "Your current balance is"
 msgstr "Saldo Anda saat ini"
 
@@ -11248,11 +11268,11 @@ msgstr "Saldo Anda saat ini"
 msgid "Your details"
 msgstr "Data Anda"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1658
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1651
 msgid "Your details have been updated."
 msgstr "Rincian Anda telah diperbarui."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1424
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1401
 msgid "Your email address"
 msgstr "Alamat email Anda"
 
@@ -11274,8 +11294,8 @@ msgstr "Dana Anda aman"
 msgid "Your identity documents have passed their expiration date. Kindly send a scan of a valid ID to <a href=\"mailto:%1\">%1</a> to unlock your cashier."
 msgstr "Dokumen identitas Anda telah melewati tanggal kedaluwarsa. Mohon kirimkan scan ID yang masih berlaku ke <a href=\"mailto:%1\">%1</a>."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3715
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:83
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3659
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:60
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form/maltainvest.pm:57
 msgid "Your information is incomplete or incorrect. Please correct the fields highlighted above."
 msgstr "Informasi Anda tidak benar atau tidak lengkap. Silakan koreksi kolom yang ditebalkan diatas."
@@ -11289,16 +11309,16 @@ msgstr "Dana Anda selalu aman bersama %1. Setiap saat, disimpan pada beberapa ba
 msgid "Your name, email address and contact number"
 msgstr "Nama Anda, alamat email dan nomor kontak"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1349
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1326
 msgid "Your name/company"
 msgstr "Nama Anda/perusahaan"
 
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:1951
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:1952
 msgid "Your new account balance is %s %s"
 msgstr "Saldo akun Anda adalah %s %s"
 
 #. ($reference_number, $executed_price)
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:2007
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:2008
 msgid "Your order (Reference # <span id=\"reference_no\">%1</span>) has been executed at %2."
 msgstr "Order Anda (referensi # <span id=\"reference_no\">%1</span>) telah terproses pada %2."
 
@@ -11307,19 +11327,19 @@ msgstr "Order Anda (referensi # <span id=\"reference_no\">%1</span>) telah terpr
 msgid "Your password and login ID are unique and passwords are hashed so that not even %1 staff can read them. This is the reason why we cannot retrieve your password and have to issue you with a new one to your email address if you cannot recall it."
 msgstr "Kata sandi dan login ID Anda adalah unik dan kata sandi dalam bentuk potongan dimana pegawai %1pun tidak dapat mengetahui kata sandi Anda. Hal ini mengapa kami tidak dapat memberikan kata sandi asli dan harus memberikan link baru ke alamat email Anda."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:141
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:145
 msgid "Your password cannot be the same as your email"
 msgstr "Kata sandi tidak boleh sama dengan alamat email"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3046
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3106
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:691
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:738
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2990
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3050
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:668
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:715
 msgid "Your password contains invalid characters."
 msgstr "Kata sandi Anda mengandung karakter yang tidak dibenarkan."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:351
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:364
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:353
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:366
 msgid "Your password has been changed."
 msgstr "Password telah diubah."
 
@@ -11328,30 +11348,30 @@ msgid "Your password has been successfully reset. Please log into your account u
 msgstr "Kata sandi Anda sudah berhasil dibuat ulang. Silahkan akes akun Anda menggunakan kata sandi baru."
 
 #. ($forgot_pass_url, $contact_url)
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:863
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:865
 msgid "Your password recovery token has expired. Please click <a href=\"%1\"><strong>here</strong></a> to restart the password recovery process. Your account is important to us. If you require further assistance, please contact our <a href=\"%2\"><strong>Customer Support</strong></a>"
 msgstr "Token permohonan sandi telah berakhir. Silakan klik <a href=\"%1\"><strong>di sini</strong></a> untuk mengulang proses pembuatan sandi baru. Akun Anda adalah penting bagi kami. Jika Anda memerlukan bantuan selanjutnya, silakan hubungi <a href=\"%2\"><strong>Customer Support</strong></a>"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:698
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:675
 msgid "Your password should be at least 5 characters."
 msgstr "Kata sandi Anda harus minimum 5 karakter."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3048
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3111
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:745
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:877
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2992
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3055
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:722
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:854
 msgid "Your password should be at least 6 characters."
 msgstr "Kata sandi Anda harus minimum 6 karakter."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:870
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:847
 msgid "Your password should contain only characters and digits."
 msgstr "Kata sandi Anda harus terdiri dari kombinasi huruf dan angka saja."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3050
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3116
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:705
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:752
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:884
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2994
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3060
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:682
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:729
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:861
 msgid "Your password should not be more then 25 characters."
 msgstr "Kata sandi Anda seharusnya tidak lebih dari 25 karakter."
 
@@ -11359,7 +11379,7 @@ msgstr "Kata sandi Anda seharusnya tidak lebih dari 25 karakter."
 msgid "Your personal information is used primarily as a way of authenticating you as the proper owner of your account and as the person to whom withdrawal payments may be made, and to process trades. We collect personal data relating to you directly from you when you fill in the account opening form. In the event of any doubt as to the authenticity of your account details or of any withdrawal request, the company reserves the right to request further authentication information as may be deemed appropriate under the circumstances."
 msgstr "Data pribadi Anda digunakan untuk membuktikan bahwa Anda adalah pemilik akun yang asli dan Andalah yang melakukan penarikan dana dari akun tersebut dan memproses trading. Kami memperoleh data pribadi Anda dari formulir pendaftaran yang Anda isi. Jika Perusahaan meragukan kebenaran data Anda maka Perusahaan berhak untuk memperoleh pembuktian lebih lanjut untuk memenuhi tujuan pembuktian tersebut."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1452
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1429
 msgid "Your phone number"
 msgstr "Nomor telepon Anda"
 
@@ -11382,13 +11402,13 @@ msgstr "Permohonan penarikan Anda %1 %2 dari account %3 ke Agen Pembayaran %4 te
 msgid "Your risks are known"
 msgstr "Risiko Anda jelas"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3690
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3634
 msgid "Your secret answer is too short.  Please enter at least 4 characters."
 msgstr "Jawaban rahasia Anda terlalu pendek. Masukkan minimal 4 karakter."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1288
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1389
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1445
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1283
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1382
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1438
 msgid "Your settings have been updated successfully."
 msgstr "Pengaturan Anda telah sukses diperbarui."
 
@@ -11397,23 +11417,23 @@ msgstr "Pengaturan Anda telah sukses diperbarui."
 msgid "Your trading statistics "
 msgstr "Statistik trading Anda "
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:169
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:173
 msgid "Your transaction reference is"
 msgstr "Referensi transaksi Anda adalah"
 
 #. ($tradeRef)
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:1596
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:1967
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:1597
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:1968
 msgid "Your transaction reference number is %1"
 msgstr "Nomor referensi transaksi Anda adalah %1"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:160
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1100
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1114
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1101
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1109
 msgid "Your verification link has expired. Please click below to re-send a verification email."
 msgstr "Link verifikasi Anda telah berakhir. Klik di bawah ini untuk mengirim ulang email verifikasi."
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1491
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1468
 msgid "Your website URL"
 msgstr "URL situsweb Anda"
 
@@ -11435,7 +11455,7 @@ msgstr "Batas penarikan Anda <strong>EUR %1</strong> (atau %2 pada mata uang lai
 msgid "You’ll be surprised by the returns you can make."
 msgstr "Anda akan terkejut dengan laba yang dapat Anda hasilkan."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:66
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:70
 msgid "Zoom"
 msgstr "Zoom"
 
@@ -11455,7 +11475,7 @@ msgstr "batas jumlah yang dapat Anda tradingkan dalam periode waktu tertentu;"
 msgid "a limit on the losses you may incur within a specified period of time;"
 msgstr "batas kerugian yang mungkin akan Anda alami dalam periode waktu tertentu,"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1744
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1737
 msgid "alphanumeric with space and dash, 2-32 characters"
 msgstr "alfanumerik dengan spasi dan garis, 2-32 karakter"
 
@@ -11484,7 +11504,7 @@ msgstr "batasan manapun pada klien dari membeli kontrak selama jam-jam tertentu.
 msgid "barrier"
 msgstr "batasan"
 
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:1649
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:1650
 msgid "better trade"
 msgstr "kontrak lebih baik"
 
@@ -11506,17 +11526,17 @@ msgstr "konflik Kebijakan"
 msgid "contract start time"
 msgstr "waktu mulai kontrak"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:103
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:107
 msgid "day"
 msgstr "hari"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:163
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:167
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:472
 msgid "days"
 msgstr "hari"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3732
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:95
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3676
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:72
 msgid "details"
 msgstr "perincian"
 
@@ -11550,7 +11570,7 @@ msgstr "spot masuk ditambah %1 pip"
 msgid "equivalent"
 msgstr "setara"
 
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:2043
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:2044
 msgid "explanation"
 msgstr "penjelasan"
 
@@ -11576,21 +11596,19 @@ msgstr "batasan tinggi"
 msgid "homepage"
 msgstr "homepage"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:104
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:108
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:445
 msgid "hour"
 msgstr "jam"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:162
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:166
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:535
 msgid "hours"
 msgstr "jam"
 
 #: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
-#, fuzzy
-#| msgid "minutes"
 msgid "in minutes"
-msgstr "menit"
+msgstr "dalam menit"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/faq.html.tt:38
 msgid "it has an internationally wide appeal, with an interface in English, Spanish, French, German, Portuguese, Chinese, Arabic, Polish, Russian and Indonesian."
@@ -11600,7 +11618,7 @@ msgstr "memiliki daya tarik yang luas secara internasional, dengan antar muka da
 msgid "it is the leading binary option trading platform."
 msgstr "merupakan platform trading opsi binary terkemuka."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:51
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:55
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:422
 msgid "loading..."
 msgstr "pemuatan..."
@@ -11609,8 +11627,8 @@ msgstr "pemuatan..."
 msgid "low barrier"
 msgstr "batasan rendah"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2473
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2632
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2450
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2609
 msgid "maximum is"
 msgstr "maksimum adalah"
 
@@ -11620,15 +11638,15 @@ msgstr "maksimum adalah"
 msgid "min"
 msgstr "min"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:158
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:162
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/form/duration.html.tt:28
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/form/duration.html.tt:31
 #: /home/git/translations/binary-static/src/templates/toolkit/resources/rise_fall_table.html.tt:37
 msgid "minimum available duration"
 msgstr "durasi minimal yang tersedia"
 
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2467
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2626
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2444
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2603
 msgid "minimum is"
 msgstr "minimum adalah"
 
@@ -11636,22 +11654,22 @@ msgstr "minimum adalah"
 msgid "minus"
 msgstr "berkurang"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:105
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:109
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:527
 msgid "minute"
 msgstr "menit"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:161
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:165
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:521
 #: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
 msgid "minutes"
 msgstr "menit"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:101
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:105
 msgid "month"
 msgstr "bulan"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:102
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:106
 msgid "months"
 msgstr "bulan"
 
@@ -11684,6 +11702,7 @@ msgstr "halaman untuk waktu tepat penyelesaian seluruh kontrak. Website lain mun
 msgid "plus"
 msgstr "ditambah"
 
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:204
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/form/stop_loss.html.tt:10
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/form/stop_profit.html.tt:10
 msgid "points"
@@ -11701,11 +11720,11 @@ msgstr "laba"
 msgid "running"
 msgstr "berjalan"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:106
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:110
 msgid "second"
 msgstr "detik"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:160
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:164
 msgid "seconds"
 msgstr "detik"
 
@@ -11726,7 +11745,7 @@ msgstr "platform adalah 100% berasaskan web yang membuat mudah tersedia bagi kli
 msgid "the platform is user friendly and accessible to all levels of traders."
 msgstr "platform sangat mudah digunakan dan diakses bagi semua tingkatan trader."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:164
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:168
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/ContractForm.pm:783
 msgid "ticks"
 msgstr "tik"
@@ -11743,11 +11762,11 @@ msgstr "situs web"
 msgid "withdrawal limits"
 msgstr "pencairan terkini Anda"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:99
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:103
 msgid "year"
 msgstr "tahun"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:100
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:104
 msgid "years"
 msgstr "tahun"
 
@@ -11895,25 +11914,25 @@ msgstr "AUD/SGD"
 msgid "EUR/INR"
 msgstr "EUR/INR"
 
-#: Underlying Symbol frxAUDBRL
-msgid "AUD/BRL"
-msgstr "AUD/BRL"
-
 #: Underlying Symbol frxGBPCNY
 msgid "GBP/CNY"
 msgstr "GBP/CNY"
+
+#: Underlying Symbol frxAUDBRL
+msgid "AUD/BRL"
+msgstr "AUD/BRL"
 
 #: Underlying Symbol frxUSDJPY
 msgid "USD/JPY"
 msgstr "USD/JPY"
 
-#: Underlying Symbol frxGBPBRL
-msgid "GBP/BRL"
-msgstr "GBP/BRL"
-
 #: Underlying Symbol frxUSDSGD
 msgid "USD/SGD"
 msgstr "USD/SGD"
+
+#: Underlying Symbol frxGBPBRL
+msgid "GBP/BRL"
+msgstr "GBP/BRL"
 
 #: Underlying Symbol frxAUDNOK
 msgid "AUD/NOK"
@@ -11963,13 +11982,13 @@ msgstr "EUR/CNY"
 msgid "EUR/BRL"
 msgstr "EUR/BRL"
 
-#: Underlying Symbol frxNZDUSD
-msgid "NZD/USD"
-msgstr "NZD/USD"
-
 #: Underlying Symbol frxUSDDKK
 msgid "USD/DKK"
 msgstr "USD/DKK"
+
+#: Underlying Symbol frxNZDUSD
+msgid "NZD/USD"
+msgstr "NZD/USD"
 
 #: Underlying Symbol WLDUSD
 msgid "USD Index"
@@ -11995,13 +12014,13 @@ msgstr "EUR/DKK"
 msgid "AUD/CHF"
 msgstr "AUD/CHF"
 
-#: Underlying Symbol frxGBPCAD
-msgid "GBP/CAD"
-msgstr "GBP/CAD"
-
 #: Underlying Symbol frxUSDCHF
 msgid "USD/CHF"
 msgstr "USD/CHF"
+
+#: Underlying Symbol frxGBPCAD
+msgid "GBP/CAD"
+msgstr "GBP/CAD"
 
 #: Underlying Symbol frxGBPNOK
 msgid "GBP/NOK"
@@ -12067,13 +12086,13 @@ msgstr "Indeks GBP"
 msgid "GBP/NZD"
 msgstr "GBP/NZD"
 
-#: Underlying Symbol frxNZDJPY
-msgid "NZD/JPY"
-msgstr "NZD/JPY"
-
 #: Underlying Symbol frxUSDPLN
 msgid "USD/PLN"
 msgstr "USD/PLN"
+
+#: Underlying Symbol frxNZDJPY
+msgid "NZD/JPY"
+msgstr "NZD/JPY"
 
 #: Underlying Symbol frxAUDSEK
 msgid "AUD/SEK"
@@ -12091,13 +12110,13 @@ msgstr "GBP/DKK"
 msgid "EUR/HKD"
 msgstr "EUR/HKD"
 
-#: Underlying Symbol frxGBPAUD
-msgid "GBP/AUD"
-msgstr "GBP/AUD"
-
 #: Underlying Symbol frxGBPPLN
 msgid "GBP/PLN"
 msgstr "GBP/PLN"
+
+#: Underlying Symbol frxGBPAUD
+msgid "GBP/AUD"
+msgstr "GBP/AUD"
 
 #: Underlying Symbol frxUSDSEK
 msgid "USD/SEK"
@@ -12203,13 +12222,13 @@ msgstr "Indeks Australia"
 msgid "Euro 50 Smart Index"
 msgstr "Indeks Smart Euro 50"
 
-#: Underlying Symbol SYNDJI
-msgid "Wall Street Smart Index"
-msgstr "Indeks Smart Wall Street"
-
 #: Underlying Symbol STI
 msgid "Singapore Index"
 msgstr "Indeks Singapura"
+
+#: Underlying Symbol SYNDJI
+msgid "Wall Street Smart Index"
+msgstr "Indeks Smart Wall Street"
 
 #: Underlying Symbol SYNPSI20
 msgid "Portuguese Smart Index"
@@ -12327,13 +12346,13 @@ msgstr "Safran"
 msgid "Reliance Industries Ltd"
 msgstr "Reliance Industries Ltd"
 
-#: Underlying Symbol AUBHP
-msgid "BHP Billiton Ltd"
-msgstr "BHP Billiton Ltd"
-
 #: Underlying Symbol JPTE
 msgid "Tokyo Electric Power Co. Inc"
 msgstr "Tokyo Electric Power Co. Inc"
+
+#: Underlying Symbol AUBHP
+msgid "BHP Billiton Ltd"
+msgstr "BHP Billiton Ltd"
 
 #: Underlying Symbol JPTM
 msgid "Toyota Motor"
@@ -12355,13 +12374,13 @@ msgstr "BG Group plc"
 msgid "Air Liquide"
 msgstr "Air Liquide"
 
-#: Underlying Symbol NOYAR
-msgid "Yara International"
-msgstr "Yara International"
-
 #: Underlying Symbol UKIAG
 msgid "ICAG (British Airways)"
 msgstr "ICAG (British Airways)"
+
+#: Underlying Symbol NOYAR
+msgid "Yara International"
+msgstr "Yara International"
 
 #: Underlying Symbol DEALV
 msgid "Allianz SE"
@@ -12415,13 +12434,13 @@ msgstr "DNB"
 msgid "SoftBank Co."
 msgstr "SoftBank Co."
 
-#: Underlying Symbol FPEDF
-msgid "Electricite de France"
-msgstr "Electricite de France"
-
 #: Underlying Symbol FPDG
 msgid "Vinci"
 msgstr "Vinci"
+
+#: Underlying Symbol FPEDF
+msgid "Electricite de France"
+msgstr "Electricite de France"
 
 #: Underlying Symbol NOSTL
 msgid "Statoil"
@@ -12523,13 +12542,13 @@ msgstr "ANZ Banking Group Ltd"
 msgid "ASML Holding"
 msgstr "ASML Holding"
 
-#: Underlying Symbol KRSFG
-msgid "Shinhan Financial"
-msgstr "Shinhan Financial"
-
 #: Underlying Symbol FPKER
 msgid "Kering"
 msgstr "Kering"
+
+#: Underlying Symbol KRSFG
+msgid "Shinhan Financial"
+msgstr "Shinhan Financial"
 
 #: Underlying Symbol UKBARC
 msgid "Barclays plc"
@@ -12567,13 +12586,13 @@ msgstr "Schneider Electric"
 msgid "Vodafone"
 msgstr "Vodafone"
 
-#: Underlying Symbol KRSS
-msgid "Samsung Electronics"
-msgstr "Samsung Electronics"
-
 #: Underlying Symbol JPHT
 msgid "Hitachi Ltd"
 msgstr "Hitachi Ltd"
+
+#: Underlying Symbol KRSS
+msgid "Samsung Electronics"
+msgstr "Samsung Electronics"
 
 #: Underlying Symbol USXOM
 msgid "ExxonMobil"
@@ -12619,13 +12638,13 @@ msgstr "TOTAL"
 msgid "AXA"
 msgstr "AXA"
 
-#: Underlying Symbol NOTEL
-msgid "Telenor"
-msgstr "Telenor"
-
 #: Underlying Symbol USKO
 msgid "The Coca-Cola Company"
 msgstr "The Coca-Cola Company"
+
+#: Underlying Symbol NOTEL
+msgid "Telenor"
+msgstr "Telenor"
 
 #: Underlying Symbol BBUCB
 msgid "UCB"
@@ -12639,13 +12658,13 @@ msgstr "GlaxoSmithKline plc"
 msgid "Glencore Xstrat"
 msgstr "Glencore Xstrat"
 
-#: Underlying Symbol UKDGE
-msgid "Diageo plc"
-msgstr "Diageo plc"
-
 #: Underlying Symbol KRSKH
 msgid "SK Hynix Inc."
 msgstr "SK Hynix Inc."
+
+#: Underlying Symbol UKDGE
+msgid "Diageo plc"
+msgstr "Diageo plc"
 
 #: Underlying Symbol FPRI
 msgid "Pernod Ricard"
@@ -13047,7 +13066,9 @@ msgstr "asian turun"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (ASIAND - tick)
-msgid "%1 %2 payout if the last tick of %3 is strictly lower than the average of the [plural,_5,%d tick,%d ticks]."
+#, fuzzy
+#| msgid "%1 %2 payout if the last tick of %3 is strictly lower than the average of the [plural,_5,%d tick,%d ticks]."
+msgid "%1 %2 payout if the last tick of %3 is strictly lower than the average of the %plural(%5,%d tick,%d ticks)."
 msgstr "Hasil %1 %2 jika tik terakhir %3 pasti akan lebih rendah dari rata-rata [plural,_5,%d tick,%d ticks]."
 
 #: Translation for contract type "ASIANU"
@@ -13062,7 +13083,9 @@ msgstr "asian naik"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (ASIANU - tick)
-msgid "%1 %2 payout if the last tick of %3 is strictly higher than the average of the [plural,_5,%d tick,%d ticks]."
+#, fuzzy
+#| msgid "%1 %2 payout if the last tick of %3 is strictly higher than the average of the [plural,_5,%d tick,%d ticks]."
+msgid "%1 %2 payout if the last tick of %3 is strictly higher than the average of the %plural(%5,%d tick,%d ticks)."
 msgstr "Hasil %1 %2 jika tik terakhir %3 pasti akan lebih tinggi dari rata-rata [plural,_5,%d tick,%d ticks]."
 
 #: Translation for contract type "CALL"
@@ -13099,7 +13122,9 @@ msgstr "Hasil %1 %2 jika %3 pasti akan lebih tinggi dari %6 pada %5 setelah %4."
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (CALL - tick)
-msgid "%1 %2 payout if %3 after [plural,_5,%d tick,%d ticks] is strictly higher than %6."
+#, fuzzy
+#| msgid "%1 %2 payout if %3 after [plural,_5,%d tick,%d ticks] is strictly higher than %6."
+msgid "%1 %2 payout if %3 after %plural(%5,%d tick,%d ticks) is strictly higher than %6."
 msgstr "Hasil %1 %2 jika %3 setelah [plural,_5,%d tick,%d ticks] pasti lebih tinggi dari %6."
 
 #: Translation for contract type "DIGITDIFF"
@@ -13114,7 +13139,9 @@ msgstr "berbeda"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (DIGITDIFF - tick)
-msgid "%1 %2 payout if the last digit of %3 is not %6 after [plural,_5,%d tick,%d ticks]."
+#, fuzzy
+#| msgid "%1 %2 payout if the last digit of %3 is not %6 after [plural,_5,%d tick,%d ticks]."
+msgid "%1 %2 payout if the last digit of %3 is not %6 after %plural(%5,%d tick,%d ticks)."
 msgstr "Hasil %1 %2 jika digit terakhir %3 bukan %6 setelah [plural,_5,%d tick,%d ticks]."
 
 #: Translation for contract type "DIGITMATCH"
@@ -13129,7 +13156,9 @@ msgstr "cocok"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (DIGITMATCH - tick)
-msgid "%1 %2 payout if the last digit of %3 is %6 after [plural,_5,%d tick,%d ticks]."
+#, fuzzy
+#| msgid "%1 %2 payout if the last digit of %3 is %6 after [plural,_5,%d tick,%d ticks]."
+msgid "%1 %2 payout if the last digit of %3 is %6 after %plural(%5,%d tick,%d ticks)."
 msgstr "Hasil %1 %2 jika digit terakhir %3 adalah %6 setelah [plural,_5,%d tick,%d ticks]."
 
 #: Translation for contract type "EXPIRYMISS"
@@ -13270,7 +13299,9 @@ msgstr "Hasil %1 %2 jika %3 pasti lebih rendah dari %6 pada %5 setelah %4."
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (PUT - tick)
-msgid "%1 %2 payout if %3 after [plural,_5,%d tick,%d ticks] is strictly lower than %6."
+#, fuzzy
+#| msgid "%1 %2 payout if %3 after [plural,_5,%d tick,%d ticks] is strictly lower than %6."
+msgid "%1 %2 payout if %3 after %plural(%5,%d tick,%d ticks) is strictly lower than %6."
 msgstr "Hasil %1 %2 jika %3 setelah [plural,_5,%d tick,%d ticks] pasti lebih rendah dari %6."
 
 #: Translation for contract type "RANGE"
@@ -13376,6 +13407,9 @@ msgstr "Hasil %1 %2 jika %3 bergerak diluar %7 hingga %6 melewati %5."
 #: Translation for contract type description (UPORDOWN - intraday)
 msgid "%1 %2 payout if %3 goes outside %7 and %6 through %5 after %4."
 msgstr "Hasil %1 %2 jika %3 bergerak diluar %7 dan %6 melewati %5 setelah %4."
+
+#~ msgid "Sorry, OHLC is not available for %1."
+#~ msgstr "Maaf, OHLC tidak tersedia untuk %1."
 
 #~ msgid "Depo./With. commission"
 #~ msgstr "Depo./Dengan. komisi"
@@ -15833,9 +15867,6 @@ msgstr "Hasil %1 %2 jika %3 bergerak diluar %7 dan %6 melewati %5 setelah %4."
 #~ msgid "Market entry price"
 #~ msgstr "Harga awal market"
 
-#~ msgid "Next Page"
-#~ msgstr "Halaman Berikutnya"
-
 #~ msgid "No data"
 #~ msgstr "Data tidak tersedia"
 
@@ -18058,9 +18089,6 @@ msgstr "Hasil %1 %2 jika %3 bergerak diluar %7 dan %6 melewati %5 setelah %4."
 
 #~ msgid "Download SVG"
 #~ msgstr "Download SVG"
-
-#~ msgid "Enabled"
-#~ msgstr "Aktif"
 
 #~ msgid "Forgot password?"
 #~ msgstr "Lupa password?"
