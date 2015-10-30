@@ -267,23 +267,10 @@ Menu.prototype = {
         if(active.subitem) {
             active.subitem.addClass('a-active');
         }
-
-      //  if(page.language() === 'EN' && /\/trading/.test(active.item))
-console.log("Active item is ", active.item);
-console.log("Language is ", page.language());
-console.log("The real id", active.item.baseURI);
-//var patt = new RegExp("topMenuBetaInterface");
-//console.log("The indexof ,)
-//if(patt.test(active.item.id)){
-var $pat = active.item.get(0).outerHTML;
-console.log("new active item is", $pat);
-
-console.log("The active.item" , active.item);
+        var $elementid = active.item.get(0).id;
 
         if(active.item) {
-            var patt = new RegExp("topMenuBetaInterface");
-            if(page.language() === 'FR' && /topMenuBetaInterface/i.test($active.item.get(0).outerHTML)){
-                console.log("The real Menu is here");
+            if(page.language() === 'FR' && /topMenuBetaInterface/i.test($elementid)){
                 $("#topMenuBetaInterface").removeClass('active');
                 $("#topMenuBetaInterface").removeClass('hover');
                 $("#topMenuStartBetting").addClass('active');
@@ -396,10 +383,6 @@ console.log("The active.item" , active.item);
         }
         else{
             start_trading.attr("href", trade_url);
-
-          //  $('#menu-top li:eq(3) a').attr('href', trade_url);
-            //$('#mobile-menu #topMenuStartBetting a.trading_link').attr('href', trade_url);
-
         }
 
         start_trading.on('click', function(event) {
@@ -816,7 +799,15 @@ Page.prototype = {
         var that = this;
         $('#language_select').on('change', 'select', function() {
             var language = $(this).find('option:selected').attr('class');
-            document.location = that.url_for_language(language);
+            var loc = document.location; // quick access
+            var url = loc.protocol + '//' + loc.host + '/trading?l=' + language;
+            if(language === 'FR' && /trade.cgi/i.test(loc.pathname)){
+                window.location = url;
+            }
+            else{
+                document.location = that.url_for_language(language);
+            }
+            
         });
     },
     on_change_loginid: function() {
