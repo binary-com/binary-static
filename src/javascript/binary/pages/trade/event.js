@@ -77,6 +77,10 @@ var TradingEvents = (function () {
                     sessionStorage.setItem('underlying', underlying);
                     requestTradeAnalysis();
 
+                    Tick.clean();
+                    
+                    updateWarmChart();
+
                     Contract.getContracts(underlying);
 
                     // forget the old tick id i.e. close the old tick stream
@@ -94,6 +98,7 @@ var TradingEvents = (function () {
         if (durationAmountElement) {
             // jquery needed for datepicker
             $('#duration_amount').on('change', debounce(function (e) {
+                Durations.select_amount(e.target.value);
                 processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));
@@ -122,7 +127,8 @@ var TradingEvents = (function () {
          */
         var durationUnitElement = document.getElementById('duration_units');
         if (durationUnitElement) {
-            durationUnitElement.addEventListener('change', function () {
+            durationUnitElement.addEventListener('change', function (e) {
+                Durations.select_unit(e.target.value);
                 Durations.populate();
                 processPriceRequest();
             });
@@ -137,26 +143,20 @@ var TradingEvents = (function () {
             // datepicker we can move back to javascript
             $('#expiry_date').on('change', function () {
                 var input = this.value;
-                var match = input.match(/^(\d{4})-(\d{2})-(\d{2})$/);
-                if(match){
-                    var date1 = new Date();
-                    date1.setUTCFullYear(match[1]);
-                    date1.setUTCMonth(match[2]-1);
-                    date1.setUTCDate(match[3]);
+                if(moment(input).isAfter(moment(),'day')){
+                    Durations.setTime('');
+                    StartDates.setNow();
+                    expiry_time.hide();
+                    var date_start = StartDates.node();
 
-                    var date2 = new Date();
-                    var diff = date1.getTime() - date2.getTime();
-                    var expiry_time = document.getElementById('expiry_time');
-                    if(diff > 24*60*60*1000){
-                        Durations.setTime('');
-                        expiry_time.hide();
-                    }
-                    else{
-                        Durations.setTime(expiry_time.value);
-                        expiry_time.show();
-                    }
                     processTradingTimesRequest(input);
                 }
+                else{
+                    Durations.setTime(expiry_time.value);
+                    expiry_time.show();
+                    processPriceRequest();
+                }
+                Barriers.display();
             });
         }
 
@@ -185,7 +185,7 @@ var TradingEvents = (function () {
          * whether start time is forward starting or not and request
          * new price
          */
-        var dateStartElement = document.getElementById('date_start');
+        var dateStartElement = StartDates.node();
         if (dateStartElement) {
             dateStartElement.addEventListener('change', function (e) {
                 if (e.target && e.target.value === 'now') {
@@ -414,7 +414,12 @@ var TradingEvents = (function () {
         var view_button = document.getElementById('contract_purchase_button');
         if(view_button){
             view_button.addEventListener('click', debounce( function (e) {
-                BetSell.sell_at_market($(e.traget)[0]);
+                if(sessionStorage.getItem('formname')==='spreads'){
+                    BetSell.show_buy_sell(e.target);
+                }
+                else{
+                    BetSell.sell_at_market(e.target);           
+                }
             }));
         }
 
@@ -424,9 +429,11 @@ var TradingEvents = (function () {
          * have to use jquery
          */
         $(".pickadate").datepicker({
+            minDate: new Date(),
             dateFormat: "yy-mm-dd"
         });
-        $(".pickatime" ).timepicker();
+        var date = new Date();
+        $(".pickatime" ).timepicker({minTime:{hour: date.getUTCHours(), minute: date.getUTCMinutes()}});
     };
 
     return {

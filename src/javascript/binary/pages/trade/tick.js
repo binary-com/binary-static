@@ -21,7 +21,9 @@ var Tick = (function () {
         id = '',
         epoch = '',
         errorMessage = '',
-        bufferedIds = {};
+        bufferedIds = {},
+        spots = [],
+        keep_number = 20;
 
     var details = function (data) {
         errorMessage = '';
@@ -34,6 +36,11 @@ var Tick = (function () {
                 quote = tick['quote'];
                 id = tick['id'];
                 epoch = tick['epoch'];
+
+                if(spots.length === keep_number){
+                    spots.shift();
+                }
+                spots.push(quote);
 
                 if (!bufferedIds.hasOwnProperty(id)) {
                     bufferedIds[id] = moment().utc().unix();
@@ -74,6 +81,8 @@ var Tick = (function () {
         epoch: function () { return epoch; },
         errorMessage: function () { return errorMessage; },
         bufferedIds: function () { return bufferedIds; },
-        clearBufferIds: clearBuffer
+        clean: function(){ spots = [];},
+        clearBufferIds: clearBuffer,
+        spots: function(){ return spots;}
     };
 })();

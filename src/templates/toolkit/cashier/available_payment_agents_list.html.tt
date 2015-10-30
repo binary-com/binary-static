@@ -1,17 +1,50 @@
-<div class="grd-parent grd-grid-12 grd-row-padding table-header">
-    <div class="grd-grid-3">[% l('Name') %]</div>
-    <div class="grd-grid-2">[% l('Summary') %]</div>
-    <div class="grd-grid-2">[% l('Depo./With. commission') %]</div>
-    <div class="grd-grid-5">[% l('Further information') %]</div>
-</div>
-[% FOREACH payment_agent IN payment_agent_table_row %]
-<div class="grd-parent grd-grid-12 grd-row-padding table-body table-body-lines">
-    <div class="grd-grid-3">[% payment_agent.name %]</div>
-    <div class="grd-grid-2">[% payment_agent.summary %]</div>
-    <div class="grd-grid-2">[% payment_agent.commission %]</div>
-    <div class="grd-grid-5 further-info">
-        <a href="#">[% l('Further information') %]</a>
-        [% INCLUDE 'cashier/payment_agent_further_info.html.tt' %]
+<div id="accordion">
+    [% FOREACH payment_agent IN payment_agent_table_row %]
+    <h3>[% payment_agent.name %]</h3>
+    <div>
+        <p>
+            <table>
+                <tr>
+                    <td colspan="1">[% l('Name:') %]</td>
+                    <td colspan="3">[% payment_agent.name %]</td>
+                </tr>
+                <tr>
+                    <td colspan="1">[% l('Summary:') %]</td>
+                    <td colspan="3">[% payment_agent.summary %]</td>
+                </tr>
+                <tr>
+                    <td colspan="1">[% l('Commission on deposits') %]:</td>
+                    <td colspan="3">[% payment_agent.deposit_commission%]%</td>
+                </tr>
+                <tr>
+                    <td colspan="1">[% l('Commission on withdrawals') %]:</td>
+                    <td colspan="3">[% payment_agent.withdrawal_commission%]%</td>
+                </tr>
+                <tr>
+                    <td colspan="1">[% l('Website') %]:</label>
+                    <td colspan="3"><a href='[% payment_agent.url %]' target="_blank">[% payment_agent.url %]</a></td>
+                </tr>
+                <tr>
+                    <td colspan="1">[% l('Email') %]:</td>
+                    <td colspan="3"><a href="mailto:[% payment_agent.email %]" target="_blank">[% payment_agent.email %]</a></td>
+                </tr>
+                <tr>
+                    <td colspan="1">[% l('Tel') %]:</td>
+                    <td colspan="3">[% payment_agent.telephone%]</td>
+                </tr>
+                <tr>
+                    <td colspan="1">[% l('Further information') %]:</td>
+                    <td colspan="3">[% payment_agent.further_information.replace("'", "\\'") %]</td>
+                </tr>
+            </table>
+            <div id="supported_banks">
+                [% FOREACH bank IN payment_agent.supported_banks.split(',') %]
+                    [% IF payment_agent_banks.$bank %]
+                <a href="[% payment_agent_banks.$bank.url %]" rel="external"><img src="[% request.url_for(payment_agent_banks.$bank.image) %]" width="72" height="57" alt="[% payment_agent_banks.$bank.name %]" title="[% payment_agent_banks.$bank.name %]" /></a>
+                    [% END %]
+                [% END %]
+            </div>
+        </p>
     </div>
- </div>
-[% END %]
+    [% END %]
+</div>

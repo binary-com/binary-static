@@ -14,6 +14,7 @@
          <span class="unicode-info-icon" id="symbol_tip" target="">&#9432;</span>
          <label for="spot" id="spot_label"></label>
          <span id="spot"></span>
+         <span id="trading_worm_chart"></span>
       </div>
    </div>
    <div class="row" id="contract_form_content_wrapper">
@@ -75,7 +76,7 @@
                            </label>
                         </div>
                         <div class="big-col">
-                           <input id="barrier" type="text" name="H" pattern="^\+\d+(\.\d{1,4})?|\d+(\.\d{1,4})?$" title="maximum of 4 decimal points allowed" />
+                           <input id="barrier" type="text" name="H" pattern="^\+\d+(\.\d{1,5})?|\d+(\.\d{1,5})?$" title="maximum of 5 decimal points allowed" />
                            <abbr rel="tooltip" id="indicative_barrier_tooltip"></abbr>
                         </div>
                      </div>
@@ -95,7 +96,7 @@
                            </label>
                         </div>
                         <div class="big-col">
-                           <input id="barrier_high" type="text" name="H" pattern="^\+\d+(\.\d{1,4})?|\d+(\.\d{1,4})?$" title="maximum of 4 decimal points allowed" />
+                           <input id="barrier_high" type="text" name="H" pattern="^\+\d+(\.\d{1,5})?|\d+(\.\d{1,5})?$" title="maximum of 5 decimal points allowed" />
                            <abbr rel="tooltip" id="indicative_high_barrier_tooltip"></abbr>
                         </div>
                      </div>
@@ -115,7 +116,7 @@
                            </label>
                         </div>
                         <div class="big-col">
-                           <input id="barrier_low" type="text" name="L" pattern="^\-\d+(\.\d{1,4})?|\d+(\.\d{1,4})?$" title="maximum of 4 decimal points allowed" />
+                           <input id="barrier_low" type="text" name="L" pattern="^\-\d+(\.\d{1,5})?|\d+(\.\d{1,5})?$" title="maximum of 5 decimal points allowed" />
                            <abbr rel="tooltip" id="indicative_low_barrier_tooltip"></abbr>
                         </div>
                      </div>
@@ -200,7 +201,7 @@
                   </div>
                   <div id="contract_purchase_reference"></div>
                   <div class="button">
-                     <button class="open_contract_details" id="contract_purchase_button">View</button>
+                     <button id="contract_purchase_button">View</button>
                   </div>
                   <div id="contract_purchase_spots"></div>
                   <div id="tick_chart"></div>

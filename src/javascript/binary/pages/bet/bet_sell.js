@@ -717,7 +717,7 @@ var BetSell = function() {
         },
         register: function () {
             var that = this;
-            $('#profit-table, #portfolio-table, #bet_container, #statement-table, #trading_socket_container').on('click', '.open_contract_details', function (e) {
+            $('#profit-table, #portfolio-table, #bet_container, #statement-table').on('click', '.open_contract_details', function (e) {
                 var $this = $(this);
                 e.preventDefault();
                 _previous_button_clicked = this;

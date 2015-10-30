@@ -14,7 +14,7 @@ var TradeSocket = (function () {
     'use strict';
 
     var tradeSocket,
-        socketUrl = "wss://"+window.location.host+"/websockets/v2",
+        socketUrl = "wss://"+window.location.host+"/websockets/v3",
         bufferedSends = [];
 
     if (page.language()) {

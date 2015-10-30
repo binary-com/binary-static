@@ -41,6 +41,11 @@
           %td= $to_monetary_number_format->($el->{pot_profit})
       - }
     - }
+  %p
+    %label= l('Reality Check Interval:')
+    %input{:type => 'text' :interval => 1 :size => '6'}
+    %span= l('minutes')
+  %p.msg{:style => 'display:none; color:red;'}= l('Please enter a number greater than 0');
 %div#reality-check-nav
   %span.button
     %button.button{:bcont => 1}= l('Continue Trading')

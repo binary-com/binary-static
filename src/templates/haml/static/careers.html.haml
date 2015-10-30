@@ -3,7 +3,7 @@
 - );
 
 .career.grd-container
-  .grd-grid-12.grd-parent
+  .grd-grid-12.grd-parent.static_full
     .grd-grid-12
       %h1= l('Imagine')
     .grd-grid-6.grd-grid-mobile-12
@@ -69,7 +69,7 @@
           %div.picture
             %img.responsive{:src => url_for('images/pages/careers/handbook.svg')}
           %div.text
-            %a{:href => url_for('/templates/haml/static/download/binary-employee-handbook.pdf'), :download => true, :target => '_blank'}= l('Employee handbook')
+            %a{:href => url_for('/download/binary-employee-handbook.pdf'), :download => true, :target => '_blank'}= l('Employee handbook')
   .grd-grid-12.grd-row-padding
     .separator-line
     %h1= l('Open positions')

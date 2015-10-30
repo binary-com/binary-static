@@ -6,6 +6,7 @@ var Message = (function () {
     'use strict';
 
     var process = function (msg) {
+<<<<<<< HEAD
 
         var response;
 
@@ -42,6 +43,15 @@ var Message = (function () {
                 break;
 
             case 'active_symbols':
+=======
+        var response = JSON.parse(msg.data);
+        if (response) {
+            var type = response.msg_type;
+            if (type === 'authorize') {
+                TUser.set(response.authorize);
+                TradeSocket.send({ payout_currencies: 1 });
+            } else if (type === 'active_symbols') {
+>>>>>>> upstream/master
                 processActiveSymbols(response);
                 break;
 
@@ -68,6 +78,7 @@ var Message = (function () {
 
             case 'trading_times':
                 processTradingTimes(response);
+<<<<<<< HEAD
                 break;
 
             case 'portfolio':
@@ -77,12 +88,37 @@ var Message = (function () {
             default:
                 throw new Error("No method exits to handle api message of type '" + msg_type + "'.");
 
+=======
+            } else if (type === 'statement'){
+                StatementWS.statementHandler(response);
+            } else if (type === 'balance'){
+                var passthroughObj = response.echo_req.passthrough;
+                if (passthroughObj){
+                    switch (passthroughObj.purpose) {
+                        case "statement_footer":
+                            var bal = response.balance[0].balance;
+                            $("#statement-table > tfoot > tr").
+                                first().
+                                children(".bal").
+                                text(Number(parseFloat(bal)).toFixed(2));
+                            break;
+                        default :
+                            //do nothing
+                    }
+                }
+            } else if (type === 'error') {
+                $(".error-msg").text(response.error.message);
+            }
+        } else {
+
+            console.log('some error occured');
+>>>>>>> upstream/master
         }
 
     };
 
     return {
-        process: process,
+        process: process
     };
 
 })();
