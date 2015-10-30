@@ -47,10 +47,10 @@
   .section
     .section-content
       .grd-grid-12
-        %h1= l('Study our live charts')
-        %p= l('Frame your trading strategy using [_1]\'s powerful live charts. Instantly view the trading patterns of forex, indices, commodities and stocks.', stash->{website_name})
-        %a.pjaxload.button{:href => url_for('/charting/livechart')}
-          %img.responsive#new-trader-icon{:src => url_for('images/pages/tour/live-chart-snapshot.svg')}
+        %h1= l('Study our highcharts')
+        %p= l('Frame your trading strategy using [_1]\'s powerful highcharts. Instantly view the trading patterns of forex, indices, commodities and stocks.', stash->{website_name})
+        %a.pjaxload.button{:href => '//highcharts.binary.com'}
+          %img.responsive#new-trader-icon{:src => url_for('images/pages/tour/chart-snapshot.svg')}
 
   .section
     .section-content
