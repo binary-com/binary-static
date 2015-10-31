@@ -3,16 +3,15 @@
  * events based on type of response
  */
 var Message = (function () {
-    'use strict';
+    "use strict";
 
     var process = function (msg) {
-<<<<<<< HEAD
 
         var response;
 
         try {
             response  = JSON.parse(msg.data);
-            if('object' !== typeof response || !("msg_type" in response)) {
+            if("object" !== typeof response || !("msg_type" in response)) {
                 throw new Error("Response from WS API is not well formatted.");
             }
         } catch(e) {
@@ -23,7 +22,11 @@ var Message = (function () {
         
         switch(msg_type) {
 
-            case 'authorize':
+            case "error":
+                $(".error-msg").text(response.error.message);
+                break;
+
+            case "authorize":
 
                 var thendo = "unknown";
                 if("passthrough" in response.echo_req && "thendo" in response.echo_req.passthrough) {
@@ -33,65 +36,49 @@ var Message = (function () {
                 switch(thendo) {
                     case "updateBalance":
                         PortfolioWS.updateBallance(response);
-                        TradeSocket.send({"portfolio": 1}); // It seems the spawn property has been removed from the API (it is still in the Playground but even there it results in an error)
+                        TradeSocket.send({"portfolio": 1});
                         break;
 
                     default:
-                        User.set(response.authorize);
+                        TUser.set(response.authorize);
                         TradeSocket.send({ payout_currencies: 1 });
                 }
                 break;
 
-            case 'active_symbols':
-=======
-        var response = JSON.parse(msg.data);
-        if (response) {
-            var type = response.msg_type;
-            if (type === 'authorize') {
-                TUser.set(response.authorize);
-                TradeSocket.send({ payout_currencies: 1 });
-            } else if (type === 'active_symbols') {
->>>>>>> upstream/master
+            case "active_symbols":
                 processActiveSymbols(response);
                 break;
 
-            case 'contracts_for':
+            case "contracts_for":
                 processContract(response);
                 break;
 
-            case 'payout_currencies':
-                sessionStorage.setItem('currencies', msg.data);
+            case "payout_currencies":
+                sessionStorage.setItem("currencies", msg.data);
                 displayCurrencies();
                 break;
 
-            case 'proposal':
+            case "proposal":
                 processProposal(response);
                 break;
 
-            case 'buy':
+            case "buy":
                 Purchase.display(response);
                 break;
 
-            case 'tick':
+            case "tick":
                 processTick(response);
                 break;
 
-            case 'trading_times':
+            case "trading_times":
                 processTradingTimes(response);
-<<<<<<< HEAD
                 break;
 
-            case 'portfolio':
-                PortfolioWS.updatePortfolio(response);
-                break;
-
-            default:
-                throw new Error("No method exits to handle api message of type '" + msg_type + "'.");
-
-=======
-            } else if (type === 'statement'){
+            case "statement":
                 StatementWS.statementHandler(response);
-            } else if (type === 'balance'){
+                break;
+
+            case "balance":
                 var passthroughObj = response.echo_req.passthrough;
                 if (passthroughObj){
                     switch (passthroughObj.purpose) {
@@ -106,13 +93,19 @@ var Message = (function () {
                             //do nothing
                     }
                 }
-            } else if (type === 'error') {
-                $(".error-msg").text(response.error.message);
-            }
-        } else {
+                break;
 
-            console.log('some error occured');
->>>>>>> upstream/master
+            case "portfolio":
+                PortfolioWS.updatePortfolio(response);
+                break;
+
+            case "change_password":
+                PasswordWS.apiResponse(response);
+                break;
+
+            default:
+                throw new Error("No method exits to handle api message of type '" + msg_type + "'.");
+
         }
 
     };
