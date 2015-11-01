@@ -150,6 +150,7 @@ pjax_config_page('trading', function () {
             }
         },
         onUnload: function() {
+            TradeSocket.setClosedFlag(true);
             TradeSocket.close();
         }
     };

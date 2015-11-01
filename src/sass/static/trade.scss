@@ -49,6 +49,7 @@
     left: 50%;
     top: 250px;
     margin-left: -5rem;
+    z-index: 9999;
 }
 
 #trading_socket_container {
@@ -76,6 +77,9 @@
   }
   #contract_market_form_container{
     height: 28px;
+    .tm-li{
+      height: 28px;
+    }
   }
   .button button{
     cursor: pointer;
@@ -550,6 +554,7 @@
     padding: 0 5px;
     width: auto;
     font-size: 85%;
+    line-height: 28px;
   }
   .tm-ul-2 {
     top: 29px;

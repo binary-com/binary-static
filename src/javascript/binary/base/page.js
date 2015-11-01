@@ -702,6 +702,7 @@ Contents.prototype = {
                 for (var i=0;i<loginid_array.length;i++) {
                     if (loginid_array[i].real) {
                         $('#virtual-upgrade-link').addClass('invisible');
+                        $('#vr-japan-upgrade-link').addClass('invisible');
                         $('#vr-financial-upgrade-link').addClass('invisible');
                         show_upgrade = false;
                         break;
@@ -709,10 +710,16 @@ Contents.prototype = {
                 }
                 if (show_upgrade) {
                     if (c_config && c_config['gaming_company'] == 'none' && c_config['financial_company'] == 'maltainvest') {
-                        $('#virtual-upgrade-link').addClass('invisible');
                         $('#vr-financial-upgrade-link').removeClass('invisible');
+                        $('#virtual-upgrade-link').addClass('invisible');
+                        $('#vr-japan-upgrade-link').addClass('invisible');
+                    } else if (c_config && c_config['gaming_company'] == 'none' && c_config['financial_company'] == 'japan') {
+                        $('#vr-japan-upgrade-link').removeClass('invisible');
+                        $('#virtual-upgrade-link').addClass('invisible');
+                        $('#vr-financial-upgrade-link').addClass('invisible');
                     } else {
                         $('#virtual-upgrade-link').removeClass('invisible');
+                        $('#vr-japan-upgrade-link').addClass('invisible');
                         $('#vr-financial-upgrade-link').addClass('invisible');
                     }
                 }

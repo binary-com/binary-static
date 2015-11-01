@@ -83,16 +83,16 @@ var Message = (function () {
                 if (passthroughObj){
                     switch (passthroughObj.purpose) {
                         case "statement_footer":
-                            var bal = response.balance[0].balance;
-                            $("#statement-table > tfoot > tr").
-                                first().
-                                children(".bal").
-                                text(Number(parseFloat(bal)).toFixed(2));
+                            StatementUI.updateStatementFooterBalance(response.balance);
                             break;
                         default :
                             //do nothing
                     }
                 }
+                break;
+
+            case 'profit_table':
+                ProfitTableWS.profitTableHandler(response);
                 break;
 
             case "portfolio":

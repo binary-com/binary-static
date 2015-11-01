@@ -55,8 +55,8 @@ var Purchase = (function () {
             }
             else{
                 cost_value = passthrough['amount'];
-                var match = receipt['longcode'].match(/\d+\.\d\d/);
-                payout_value = match[0];
+                var match = receipt['longcode'].match(/[\d\,]+\.\d\d/);
+                payout_value = match[0].replace(',','');
             }
             profit_value = Math.round((payout_value - cost_value)*100)/100;
 
@@ -111,7 +111,8 @@ var Purchase = (function () {
                     purchase_time: (purchase_date.getUTCFullYear()+'-'+(purchase_date.getUTCMonth()+1)+'-'+purchase_date.getUTCDate()+' '+purchase_date.getUTCHours()+':'+purchase_date.getUTCMinutes()+':'+purchase_date.getUTCSeconds()),
                     shortcode:receipt['shortcode'],
                     spread_bet:spread_bet,
-                    language:page.language(),
+                    l:page.language(),
+                    payout:payout_value,
                     url:url
                 };
                 for(var k in button_attrs){

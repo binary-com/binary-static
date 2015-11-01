@@ -61,6 +61,9 @@ body.VI{
 			font-size: 57%!important;
 		}
 	}
+	#trading_socket_container #contract_form_name_nav{
+	  font-size: 80%;
+	}
 }
 
 /*French Language */
@@ -70,6 +73,9 @@ body.FR{
 	}
 	h1, h2, h3, h4, h5, h6 {
 		text-transform: initial!important;
+	}
+	#trading_socket_container #contract_form_name_nav{
+	  font-size: 80%;
 	}
 }
 
@@ -121,5 +127,17 @@ body.IT{
 	}
 	h1, h2, h3, h4, h5, h6 {
 		text-transform: initial!important;
+	}
+}
+
+body.ES{
+	#trading_socket_container #contract_form_name_nav{
+	  font-size: 80%;
+	}
+}
+
+body.RU{
+	#trading_socket_container #contract_form_name_nav{
+	  font-size: 80%;
 	}
 }
