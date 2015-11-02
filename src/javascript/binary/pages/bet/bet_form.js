@@ -174,10 +174,6 @@ var BetForm = function () {
                         BetPrice.get_price();
                     }
                     BetAnalysis.restore();
-                    var currentTab = TradingAnalysis.getActiveTab();
-                    if (currentTab === 'tab_graph') {
-                        setUnderlyingTime();
-                    }
                 },
                 hide_sub_trade: function () {
                     var sub_trade_menu = $('#betsTab').children().find('.tm-ul-2');
@@ -191,6 +187,7 @@ var BetForm = function () {
                 },
                 on_underlying_change: function () {
                     var that = this;
+                    setUnderlyingTime();
                     $('#bet_underlying').on('change', function (event) {
                         BetForm.attributes.model.underlying($(this).val());
                         that.update_for_underlying($(this).val());
