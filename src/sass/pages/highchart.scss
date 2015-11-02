@@ -1,0 +1,9 @@
+.time_amount {
+  width: 80%;
+}
+
+iframe#chart_frame, iframe#view_frame {
+  width: 1px;
+  min-width: 100%;
+  *width: 100%;
+}
