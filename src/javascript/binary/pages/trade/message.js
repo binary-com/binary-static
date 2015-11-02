@@ -29,16 +29,14 @@ var Message = (function () {
                 processTradingTimes(response);
             } else if (type === 'statement'){
                 StatementWS.statementHandler(response);
+            } else if (type === 'profit_table'){
+                ProfitTableWS.profitTableHandler(response);
             } else if (type === 'balance'){
                 var passthroughObj = response.echo_req.passthrough;
                 if (passthroughObj){
                     switch (passthroughObj.purpose) {
                         case "statement_footer":
-                            var bal = response.balance[0].balance;
-                            $("#statement-table > tfoot > tr").
-                                first().
-                                children(".bal").
-                                text(Number(parseFloat(bal)).toFixed(2));
+                            StatementUI.updateStatementFooterBalance(response.balance);
                             break;
                         default :
                             //do nothing
