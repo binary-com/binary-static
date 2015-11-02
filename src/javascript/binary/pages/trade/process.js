@@ -111,12 +111,24 @@ function processContractForm() {
     Contract.details(sessionStorage.getItem('formname'));
 
     StartDates.display();
-
+  
     Durations.display();
+    if(sessionStorage.getItem('expiry_type')==='endtime'){
+        var is_selected = selectOption('endtime', document.getElementById('expiry_type'));
+        Durations.displayEndTime();
+    }
 
     displayPrediction();
 
-    displaySpreads();
+    displaySpreads();  
+ 
+    if(sessionStorage.getItem('amount')){
+        document.getElementById('amount').value = sessionStorage.getItem('amount');       
+    }
+
+    if(sessionStorage.getItem('amount_type')){
+        selectOption(sessionStorage.getItem('amount_type'), document.getElementById('amount_type'));
+    }
 
     processPriceRequest();
 }
@@ -125,6 +137,9 @@ function displayPrediction() {
     var predictionElement = document.getElementById('prediction_row');
     if(sessionStorage.getItem('formname') === 'digits'){
         predictionElement.show();
+        if(sessionStorage.getItem('prediction')){
+            selectOption(sessionStorage.getItem('prediction'),document.getElementById('prediction'));
+        }
     }
     else{
         predictionElement.hide();
@@ -155,6 +170,22 @@ function displaySpreads() {
         expiryTypeRow.show();
         amountType.show();
         amount.show();
+    }
+    if(sessionStorage.getItem('stop_type')){
+       var el = document.querySelectorAll('input[name="stop_type"][value="'+sessionStorage.getItem('stop_type')+'"]');
+       if(el){
+            console.log(el);
+            el[0].setAttribute('checked','checked');
+       }
+    }
+    if(sessionStorage.getItem('amount_per_point')){
+        document.getElementById('amount_per_point').value = sessionStorage.getItem('amount_per_point');
+    }
+    if(sessionStorage.getItem('stop_loss')){
+        document.getElementById('stop_loss').value = sessionStorage.getItem('stop_loss');
+    }
+    if(sessionStorage.getItem('stop_profit')){
+        document.getElementById('stop_profit').value = sessionStorage.getItem('stop_profit');
     }
 }
 

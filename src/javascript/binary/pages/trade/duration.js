@@ -169,6 +169,15 @@ var Durations = (function(){
         durationPopulate();
     };
 
+    var displayEndTime = function(){
+        var current_moment = moment().add(5, 'minutes').utc();
+        document.getElementById('expiry_date').value = current_moment.format('YYYY-MM-DD');
+        document.getElementById('expiry_time').value = current_moment.format('HH:mm');
+        Durations.setTime(current_moment.format('HH:mm'));
+
+        durationPopulate();
+    };
+
     var durationTextValueMappings = function(str) {
         var mapping = {
             s : Content.localize().textDurationSeconds,
@@ -301,6 +310,7 @@ var Durations = (function(){
 
     return {
         display: displayDurations,
+        displayEndTime: displayEndTime,
         populate: durationPopulate,
         setTime: function(time){ expiry_time = time; },
         getTime: function(){ return expiry_time; },

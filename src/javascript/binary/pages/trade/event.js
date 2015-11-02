@@ -111,13 +111,8 @@ var TradingEvents = (function () {
         var expiryTypeElement = document.getElementById('expiry_type');
         if (expiryTypeElement) {
             expiryTypeElement.addEventListener('change', function(e) {
-                Durations.populate();
-                if(e.target && e.target.value === 'endtime') {
-                    var current_moment = moment().add(5, 'minutes').utc();
-                    document.getElementById('expiry_date').value = current_moment.format('YYYY-MM-DD');
-                    document.getElementById('expiry_time').value = current_moment.format('HH:mm');
-                    Durations.setTime(current_moment.format('HH:mm'));
-                }
+                sessionStorage.setItem('expiry_type',e.target.value);
+                Durations.displayEndTime();
                 processPriceRequest();
             });
         }
@@ -341,6 +336,7 @@ var TradingEvents = (function () {
         var predictionElement = document.getElementById('prediction');
         if (predictionElement) {
             predictionElement.addEventListener('input', debounce( function (e) {
+                sessionStorage.setItem('prediction',e.target.value);
                 processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));
@@ -352,6 +348,7 @@ var TradingEvents = (function () {
         var amountPerPointElement = document.getElementById('amount_per_point');
         if (amountPerPointElement) {
             amountPerPointElement.addEventListener('input', debounce( function (e) {
+                sessionStorage.setItem('amount_per_point',e.target.value);
                 processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));
@@ -360,7 +357,8 @@ var TradingEvents = (function () {
         /*
          * attach an event to change in stop type for spreads
          */
-        var stopTypeEvent = function () {
+        var stopTypeEvent = function (e) {
+            sessionStorage.setItem('stop_type',e.target.value);
             processPriceRequest();
         };
 
@@ -377,6 +375,7 @@ var TradingEvents = (function () {
         var stopLossElement = document.getElementById('stop_loss');
         if (stopLossElement) {
             stopLossElement.addEventListener('input', debounce( function (e) {
+                sessionStorage.setItem('stop_loss',e.target.value);
                 processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));
@@ -388,6 +387,7 @@ var TradingEvents = (function () {
         var stopProfitElement = document.getElementById('stop_profit');
         if (stopProfitElement) {
             stopProfitElement.addEventListener('input', debounce( function (e) {
+                sessionStorage.setItem('stop_profit',e.target.value);
                 processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));
@@ -399,6 +399,17 @@ var TradingEvents = (function () {
                 sessionStorage.removeItem('market');
                 sessionStorage.removeItem('formname');
                 sessionStorage.removeItem('underlying');
+
+                sessionStorage.removeItem('expiry_type');
+                sessionStorage.removeItem('stop_loss');
+                sessionStorage.removeItem('stop_type');
+                sessionStorage.removeItem('stop_profit');
+                sessionStorage.removeItem('amount_per_point');
+                sessionStorage.removeItem('prediction');
+                sessionStorage.removeItem('amount');
+                sessionStorage.removeItem('amount_type');
+                sessionStorage.removeItem('currency');
+
                 location.reload();
             }));
         }
