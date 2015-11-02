@@ -39,7 +39,7 @@ var TradingEvents = (function () {
          */
         var contractFormEventChange = function () {
             processContractForm();
-            requestTradeAnalysis();
+            TradingAnalysis.request();
         };
 
         var formNavElement = document.getElementById('contract_form_name_nav');
@@ -75,7 +75,7 @@ var TradingEvents = (function () {
                     showPriceOverlay();
                     var underlying = e.target.value;
                     sessionStorage.setItem('underlying', underlying);
-                    requestTradeAnalysis();
+                    TradingAnalysis.request();
 
                     Tick.clean();
                     
@@ -414,6 +414,7 @@ var TradingEvents = (function () {
         var view_button = document.getElementById('contract_purchase_button');
         if(view_button){
             view_button.addEventListener('click', debounce( function (e) {
+                BetSell.change_prev_button(e.target);
                 if(sessionStorage.getItem('formname')==='spreads'){
                     BetSell.show_buy_sell(e.target);
                 }

@@ -84,10 +84,13 @@ var StatementWS = (function(){
 
     function initTable(){
         pending = false;
-        currentBatch = [];
-        transactionsReceived = 0;
         noMoreData = false;
+
+        currentBatch = [];
+
+        transactionsReceived = 0;
         transactionsConsumed = 0;
+
         $(".error-msg").text("");
 
         StatementUI.clearTableContent();

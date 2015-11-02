@@ -67,8 +67,6 @@ function processMarketUnderlying() {
     Contract.getContracts(underlying);
 
     displayTooltip(sessionStorage.getItem('market'),underlying);
-
-    requestTradeAnalysis();
 }
 
 /*
@@ -105,6 +103,8 @@ function processContract(contracts) {
     displayContractForms('contract_form_name_nav', contract_categories, formname);
 
     processContractForm();
+
+    TradingAnalysis.request();
 }
 
 function processContractForm() {
@@ -221,9 +221,14 @@ function processForgetTickId() {
  */
 function processTick(tick) {
     'use strict';
-    if(tick.echo_req.ticks === sessionStorage.getItem('underlying')){
+    var symbol = sessionStorage.getItem('underlying');
+    if(tick.echo_req.ticks === symbol){
         Tick.details(tick);
         Tick.display();
+        var digit_info = TradingAnalysis.digit_info();
+        if(digit_info && tick.tick){
+            digit_info.update(symbol,tick.tick.quote);
+        }
         WSTickDisplay.updateChart(tick);
         Purchase.update_spot_list(tick);
         if (!Barriers.isBarrierUpdated()) {
