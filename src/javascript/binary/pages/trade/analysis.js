@@ -206,7 +206,8 @@ var TradingAnalysis = (function(){
 
     return {
         request:requestTradeAnalysis,
-        digit_info: function(){return trading_digit_info;}
+        digit_info: function(){return trading_digit_info;},
+        getActiveTab:getActiveTab
     };
 
 })();

@@ -174,7 +174,7 @@ var BetForm = function () {
                         BetPrice.get_price();
                     }
                     BetAnalysis.restore();
-                    var currentTab = getActiveTab();
+                    var currentTab = TradingAnalysis.getActiveTab();
                     if (currentTab === 'tab_graph') {
                         setUnderlyingTime();
                     }
