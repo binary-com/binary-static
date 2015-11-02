@@ -688,34 +688,35 @@ function setMinMaxTime(){
         time_amount[1].id = 'time_view';
         var time_period = document.getElementsByClassName('time_period');
         time_period[1].id = 'period_view';
-        var time = document.getElementById('time_view');
-        var period = document.getElementById('period_view').value;
+        var duration = document.getElementById('time_view');
+        var period = document.getElementById('period_view');
     } else {
-        var time = document.getElementById('time_amount');
-        var period = document.getElementById('time_period').value;
+        var duration = document.getElementById('time_amount');
+        var period = document.getElementById('time_period');
     }
-    if (!time.value) {
-        time.value = 1;
+    if (!duration.value) {
+        duration.value = 1;
     }
-    if (period === 'm') {
-        time.setAttribute('min', 1);
-        time.setAttribute('max', 59);
-        if (time.value > 59) {
-            time.value = 1;
+    if (period.value === 'm') {
+        duration.setAttribute('min', 1);
+        duration.setAttribute('max', 59);
+        if (duration.value > 59) {
+            duration.value = 1;
         }
-    } else if (period === 'h') {
-        time.setAttribute('min', 1);
-        time.setAttribute('max', 23);
-        if (time.value > 23) {
-            time.value = 1;
+    } else if (period.value === 'h') {
+        duration.setAttribute('min', 1);
+        duration.setAttribute('max', 23);
+        if (duration.value > 23) {
+            duration.value = 1;
         }
-    } else if (period === 'd') {
-        time.setAttribute('min', 1);
-        time.setAttribute('max', 3);
-        if (time.value > 3) {
-            time.value = 1;
+    } else if (period.value === 'd') {
+        duration.setAttribute('min', 1);
+        duration.setAttribute('max', 3);
+        if (duration.value > 3) {
+            duration.value = 1;
         }
     }
+    return [duration, period];
 }
 
 function setUnderlyingTime() {
@@ -731,8 +732,8 @@ function setUnderlyingTime() {
 
 function chartFrameSource(underlying, id){
     setMinMaxTime();
-    var timeAmount = document.getElementById('time_amount');
-    var timePeriod = document.getElementById('time_period');
+    var timeAmount = setMinMaxTime()[0];
+    var timePeriod = setMinMaxTime()[1];
     var time =  timeAmount.value + timePeriod.value;
 
     if (document.getElementById('underlying')) {
@@ -749,17 +750,17 @@ function chartFrameSource(underlying, id){
             setUnderlyingTime();
         });
     }
-    
+
     timePeriod.addEventListener("change", function(){
-        setMinMaxTime();
-        setUnderlyingTime();
+        chartFrameSource(underlying, id);
     });
     timeAmount.addEventListener("change", function(){
-        setUnderlyingTime();
+        chartFrameSource(underlying, id);
     });
     timeAmount.addEventListener("keyup", function(){
-        setUnderlyingTime();
+        chartFrameSource(underlying, id);
     });
+
     document.getElementById(id).src = 'https://highcharts.binary.com?affiliates=true&instrument=' + underlying + '&timePeriod=' + time;
 }
 
