@@ -3,10 +3,10 @@
       <tr>
         <td align="right" width="25%">Duration: </td>
         <td align="left" width="5%">
-          <input type="number" id="time_amount" class="small_width_input" min="" max=""></input>
+          <input type="number" id="time_amount" class="small_width_input time_amount" min="" max=""></input>
         </td>
         <td align="left" width="25%">
-          <select id="time_period">
+          <select id="time_period" class="time_period">
             <option value="m">minutes</option>
             <option value="h">hours</option>
             <option value="d">days</option>

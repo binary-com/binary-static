@@ -683,11 +683,20 @@ function countDecimalPlaces(num) {
 }
 
 function setMinMaxTime(){
-    if (!document.getElementById('time_amount').value) {
-        document.getElementById('time_amount').value = 1;
+    var time_amount = document.getElementsByClassName('time_amount');
+    if (time_amount[1]) {
+        time_amount[1].id = 'time_view';
+        var time_period = document.getElementsByClassName('time_period');
+        time_period[1].id = 'period_view';
+        var time = document.getElementById('time_view');
+        var period = document.getElementById('period_view').value;
+    } else {
+        var time = document.getElementById('time_amount');
+        var period = document.getElementById('time_period').value;
     }
-    var time = document.getElementById('time_amount');
-    var period = document.getElementById('time_period').value;
+    if (!time.value) {
+        time.value = 1;
+    }
     if (period === 'm') {
         time.setAttribute('min', 1);
         time.setAttribute('max', 59);
@@ -712,48 +721,46 @@ function setMinMaxTime(){
 function setUnderlyingTime() {
     var instrumentCode = document.getElementById('underlying');
     var contractMarkets = document.getElementById('bet_underlying');
+    var id = document.getElementsByTagName('iframe')[0].id;
     if (instrumentCode) {
-        chartFrameSource(instrumentCode.value);
+        chartFrameSource(instrumentCode.value, id);
     } else if (contractMarkets) {
-        chartFrameSource(contractMarkets.value);
+        chartFrameSource(contractMarkets.value, id);
     }
 }
 
-function chartFrameSource(underlying){
+function chartFrameSource(underlying, id){
     setMinMaxTime();
     var timeAmount = document.getElementById('time_amount');
     var timePeriod = document.getElementById('time_period');
     var time =  timeAmount.value + timePeriod.value;
 
-    var chartFrameElement = document.getElementById('chart_frame');
-    if(chartFrameElement) {
-        if (document.getElementById('underlying')) {
-            var instrumentCode = document.getElementById('underlying');
-            instrumentCode.addEventListener("change", function(){
-                setUnderlyingTime();
-            });
-        } else if (document.getElementById('bet_underlying')) {
-            var contractMarkets = document.getElementById('bet_underlying');
-            contractMarkets.addEventListener("change", function(){
-                setUnderlyingTime();
-            });
-            document.getElementById('submarket').addEventListener("change", function(){
-                setUnderlyingTime();
-            });
-        }
-        
-        timePeriod.addEventListener("change", function(){
-            setMinMaxTime();
+    if (document.getElementById('underlying')) {
+        var instrumentCode = document.getElementById('underlying');
+        instrumentCode.addEventListener("change", function(){
             setUnderlyingTime();
         });
-        timeAmount.addEventListener("change", function(){
+    } else if (document.getElementById('bet_underlying')) {
+        var contractMarkets = document.getElementById('bet_underlying');
+        contractMarkets.addEventListener("change", function(){
             setUnderlyingTime();
         });
-        timeAmount.addEventListener("keyup", function(){
+        document.getElementById('submarket').addEventListener("change", function(){
             setUnderlyingTime();
         });
-        chartFrameElement.src = 'https://highcharts.binary.com?affiliates=true&instrument=' + underlying + '&timePeriod=' + time;
     }
+    
+    timePeriod.addEventListener("change", function(){
+        setMinMaxTime();
+        setUnderlyingTime();
+    });
+    timeAmount.addEventListener("change", function(){
+        setUnderlyingTime();
+    });
+    timeAmount.addEventListener("keyup", function(){
+        setUnderlyingTime();
+    });
+    document.getElementById(id).src = 'https://highcharts.binary.com?affiliates=true&instrument=' + underlying + '&timePeriod=' + time;
 }
 
 function selectOption(option, select){
