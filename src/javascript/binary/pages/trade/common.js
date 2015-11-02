@@ -684,15 +684,16 @@ function countDecimalPlaces(num) {
 
 function setMinMaxTime(){
     var time_amount = document.getElementsByClassName('time_amount');
+    var duration, period;
     if (time_amount[1]) {
         time_amount[1].id = 'time_view';
         var time_period = document.getElementsByClassName('time_period');
         time_period[1].id = 'period_view';
-        var duration = document.getElementById('time_view');
-        var period = document.getElementById('period_view');
+        duration = document.getElementById('time_view');
+        period = document.getElementById('period_view');
     } else {
-        var duration = document.getElementById('time_amount');
-        var period = document.getElementById('time_period');
+        duration = document.getElementById('time_amount');
+        period = document.getElementById('time_period');
     }
     if (!duration.value) {
         duration.value = 1;
