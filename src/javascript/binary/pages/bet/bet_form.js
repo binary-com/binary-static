@@ -187,7 +187,9 @@ var BetForm = function () {
                 },
                 on_underlying_change: function () {
                     var that = this;
-                    setUnderlyingTime();
+                    if (MenuContent.is_tab_selected($('#tab_graph'))) {
+                        setUnderlyingTime();
+                    }
                     $('#bet_underlying').on('change', function (event) {
                         BetForm.attributes.model.underlying($(this).val());
                         that.update_for_underlying($(this).val());
