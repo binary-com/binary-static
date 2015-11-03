@@ -35,7 +35,7 @@ var Message = (function () {
 
                 switch(thendo) {
                     case "updateBalance":
-                        PortfolioWS.updateBallance(response);
+                        PortfolioWS.updateBalance(response);
                         TradeSocket.send({"portfolio": 1});
                         break;
 
@@ -99,8 +99,17 @@ var Message = (function () {
                 PortfolioWS.updatePortfolio(response);
                 break;
 
+            case "proposal_open_contract":
+                PortfolioWS.updateIndicative(response);
+                break;
+
             case "change_password":
                 PasswordWS.apiResponse(response);
+                break;
+
+            case "forget":
+            case "forget_all":
+                // no action needed
                 break;
 
             default:

@@ -6,21 +6,19 @@ var PortfolioWS =  (function() {
     if(!pageLanguage) pageLanguage = "EN";
 
     var rowTemplate;
+    var retry;
 
     var init = function() {
         // get the row template and then discard the node as it has served its purpose
-        rowTemplate = $("#portfolio-dynamic tr:first").html(); 
+        rowTemplate = $("#portfolio-dynamic tr:first")[0].outerHTML;
         $("#portfolio-dynamic tr:first").remove();
-        
         TradeSocket.init({"thendo":"updateBalance"});
     };
 
     
     var updateBalance = function(data) {
-        $("span[data-id='balance']").text(fixCurrency(data.authorize.balance, data.authorize.currency)).removeClass("loading");
-        if(0 === parseFloat(data.authorize.balance, 10)) {
-            $("#if-balance-zero").removeClass("dynamic");
-        } else {
+        $("span[data-id='balance']").text(fixCurrency(data.authorize.balance, data.authorize.currency));
+        if(parseFloat(data.authorize.balance, 10) > 0) {
             $("#if-balance-zero").remove();
         }
     };
@@ -58,13 +56,10 @@ var PortfolioWS =  (function() {
             sumPurchase += parseFloat(c.buy_price, 10);
             currency = c.currency;
             contracts += rowTemplate
-            .split("!ref-number!").join(c.fmb_id)
+            .split("!transaction_id!").join(c.transaction_id)
+            .split("!contract_id!").join(c.contract_id)
             .split("!longcode!").join(c.longcode)
             .split("!currency!").join(c.currency)
-            .split("!lang-code!").join(pageLanguage)
-            .split("!payout!").join(c.payout)
-            .split("!contract_type!").join(c.contract_type)
-            .split("!symbol!").join(c.symbol.toUpperCase())
             .split("!buy_price!").join(fixCurrency(c.buy_price));
         });
 
@@ -72,15 +67,55 @@ var PortfolioWS =  (function() {
         $("#portfolio-dynamic").replaceWith(trans(contracts));
 
         // update footer area data
-        $("#cost-of-open-positions").replaceWith( fixCurrency(sumPurchase, currency));
-        $("#value-of-open-positions").replaceWith(currency + '0.00'); // Fix this once API returns a value for indicative amount
+        sumPurchase = sumPurchase.toFixed(2);
+        $("#cost-of-open-positions").text( fixCurrency(sumPurchase, currency));
+
+        // request "proposal_open_contract"
+        TradeSocket.send({"proposal_open_contract":1});
 
         // ready to show portfolio table
-        $("#portfolio-table").removeClass("dynamic");
+        $("#trading_init_progress").remove();
+        $("#portfolio-content").removeClass("dynamic");
 
     };
 
-    var updateIndicative = function() {
+    var updateIndicative = function(data) {
+
+        if("error" in data) {
+            // if api returns a response like the one below. 
+            // we assume the indicative to be 0 if this happens
+            /*
+            {
+              "echo_req": {
+                "proposal_open_contract": 1
+              },
+              "error": {
+                "code": "ContractSellValidationError",
+                "message": "Resale of this contract is not offered."
+              },
+              "proposal_open_contract": {
+                "id": "c4f8b5176928a7823ff09f8f44a51528"
+              },
+              "msg_type": "proposal_open_contract"
+            }
+            */
+            return false;
+        }
+
+        $("tr[data-contract_id='"+data.proposal_open_contract.contract_id+"'] strong.indicative_price").text(data.proposal_open_contract.ask_price);
+
+        var indicative_sum = 0, indicative_price = 0;
+        $("strong.indicative_price").each(function() {
+            indicative_price = $(this).text();
+            indicative_price = parseFloat(indicative_price, 2);
+            if(!isNaN(indicative_price)) {
+                indicative_sum += indicative_price;
+            }
+        });
+
+        indicative_sum = indicative_sum.toFixed(2);
+
+        $("#value-of-open-positions").text(fixCurrency(indicative_sum, "USD"));
 
     };
 
@@ -131,7 +166,8 @@ var PortfolioWS =  (function() {
     return {
         init: init,
         updateBalance: updateBalance,
-        updatePortfolio: updatePortfolio
+        updatePortfolio: updatePortfolio,
+        updateIndicative: updateIndicative
     };
 
 })();

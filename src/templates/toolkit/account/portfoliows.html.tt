@@ -1,5 +1,6 @@
 <div id="portfolio">
-	<div class="grd-grid-12">
+	<div id="trading_init_progress"></div>
+	<div id="portfolio-content" class="grd-grid-12 dynamic">
 
 		<h1 class="portfolio-header-margin">[% l('Portfolio') %]</h1>
 
@@ -16,11 +17,11 @@
 			</div>
 		</div>
 
-		<div id="portfolio-no-contract" class="dynamic">
+		<div id="portfolio-no-contract">
 			<p>[% l("No open positions.") %]</p>
 		</div>
 
-		<table class="flex-table dynamic" id="statement-table">
+		<table class="flex-table" id="portfolio-table">
 
 			<thead>				
 				<tr class="flex-tr">
@@ -35,19 +36,19 @@
 			<!-- Dynamic content. Will be replaced with parsed HTML by javascript -->
 			<tbody id="portfolio-dynamic">
 				<tr class="flex-tr" data-contract_id="!contract_id!">
-					<td class="ref flex-tr-child">!ref-number!</td>
+					<td class="ref flex-tr-child">!transaction_id!</td>
 					<td class="details flex-tr-child">!longcode!</td>
 					<td class="purchase flex-tr-child">!currency! <strong>!buy_price!</strong></td>
 					<td class="indicative flex-tr-child">!currency! <strong class="indicative_price"></strong></td>
-					<td class="button flex-tr-child"><span class="button"><button class="button open_contract_details" data-contract_id="!contract_id!">:view:</button></td>
+					<td class="button flex-tr-child"><button class="button open_contract_details" data-contract_id="!contract_id!">:view:</button></td>
 				</tr>
 			</tbody>
 
 			<tfoot>
 				<tr class="flex-tr">
-					<th class="cost flex-tr-child" colspan="4" id="cost-of-open-positions"></th>
-					<th class="value flex-tr-child" id="value-of-open-positions"></th>
-					<th class="button">&nbsp;</th>
+					<th class="ref flex-tr-child" colspan="2">&nbsp;</th>
+					<th class="cost flex-tr-child" id="cost-of-open-positions"></th>
+					<th class="value flex-tr-child" id="value-of-open-positions" colspan="2"></th>
 				</tr>
 			</tfoot>
 
