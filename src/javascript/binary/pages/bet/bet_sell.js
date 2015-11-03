@@ -1,4 +1,5 @@
 var BetSell = function() {
+    var chart;
     var _sell_request = null;
     var _analyse_request = null;
     var _container = null;
