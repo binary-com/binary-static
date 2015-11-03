@@ -111,11 +111,9 @@ function processContractForm() {
     Contract.details(sessionStorage.getItem('formname'));
 
     StartDates.display();
-  
-    Durations.display();
-    if(sessionStorage.getItem('expiry_type')==='endtime'){
-        var is_selected = selectOption('endtime', document.getElementById('expiry_type'));
-        Durations.displayEndTime();
+
+    if(sessionStorage.getItem('date_start') && moment(sessionStorage.getItem('date_start')*1000).isAfter(moment(),'minutes')){
+        selectOption(sessionStorage.getItem('date_start'), document.getElementById('date_start'));
     }
 
     displayPrediction();
@@ -130,7 +128,33 @@ function processContractForm() {
         selectOption(sessionStorage.getItem('amount_type'), document.getElementById('amount_type'));
     }
 
-    processPriceRequest();
+    Durations.display();
+    var no_price_request;
+    if(sessionStorage.getItem('expiry_type')==='endtime'){
+        var is_selected = selectOption('endtime', document.getElementById('expiry_type'));
+        if(is_selected){
+            Durations.displayEndTime();
+            if(sessionStorage.getItem('end_date') && moment(sessionStorage.getItem('end_date')).isAfter(moment())){
+                $( "#expiry_date" ).datepicker( "setDate", sessionStorage.getItem('end_date') );
+                Durations.selectEndDate(sessionStorage.getItem('end_date'));
+
+                no_price_request = 1;
+            }
+        }
+    }
+    else{
+        if(sessionStorage.getItem('duration_units')){
+            selectOption(sessionStorage.getItem('duration_units'), document.getElementById('duration_units'));
+        }
+        Durations.populate();
+        if(sessionStorage.getItem('duration_amount')){
+            document.getElementById('duration_amount').value = sessionStorage.getItem('duration_amount');       
+        }
+    }
+
+    if(!no_price_request){
+        processPriceRequest();
+    }
 }
 
 function displayPrediction() {

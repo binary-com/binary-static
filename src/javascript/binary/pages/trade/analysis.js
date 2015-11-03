@@ -15,16 +15,6 @@ var TradingAnalysis = (function(){
     
     var requestTradeAnalysis = function() {
         'use strict';
-        console.log({
-            method: 'POST',
-            url: page.url.url_for('trade/trading_analysis'),
-            data: {
-                underlying: sessionStorage.getItem('underlying'),
-                formname: sessionStorage.getItem('formname'),
-                contract_category: Contract.form(),
-                barrier: Contract.barrier()
-            }
-        });
         $.ajax({
             method: 'POST',
             url: page.url.url_for('trade/trading_analysis'),

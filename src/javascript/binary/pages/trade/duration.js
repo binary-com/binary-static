@@ -225,8 +225,8 @@ var Durations = (function(){
 
             amountElement.datepicker({
                 minDate: tomorrow,
-                onSelect: function() {
-                    var date = $(this).datepicker('getDate');
+                onSelect: function(value) {
+                    var date = new Date(value);
                     var today = new Date();
                     var dayDiff = Math.ceil((date - today) / (1000 * 60 * 60 * 24));
                     amountElement.val(dayDiff);
@@ -308,6 +308,25 @@ var Durations = (function(){
         }
     };
 
+    var selectEndDate = function(end_date){
+        var expiry_time = document.getElementById('expiry_time');
+        if(moment(end_date).isAfter(moment(),'day')){
+            Durations.setTime('');
+            StartDates.setNow();
+            expiry_time.hide();
+            var date_start = StartDates.node();
+
+            processTradingTimesRequest(end_date);
+        }
+        else{
+            Durations.setTime(expiry_time.value);
+            expiry_time.show();
+            processPriceRequest();
+        }
+        sessionStorage.setItem('end_date',end_date);
+        Barriers.display();
+    };
+
     return {
         display: displayDurations,
         displayEndTime: displayEndTime,
@@ -317,7 +336,8 @@ var Durations = (function(){
         processTradingTimesAnswer: processTradingTimesAnswer,
         trading_times: function(){ return trading_times; },
         select_amount: function(a){ selected_duration.amount = a; },
-        select_unit: function(u){ selected_duration.unit = u; }        
+        select_unit: function(u){ selected_duration.unit = u; } ,
+        selectEndDate: selectEndDate       
     };
 })();
 
