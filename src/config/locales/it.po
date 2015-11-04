@@ -1097,7 +1097,7 @@ msgstr "Aggiungi overlay"
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:421
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:93
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1254
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:397
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:434
 msgid "Address"
 msgstr "Indirizzo"
 
@@ -1976,7 +1976,7 @@ msgstr "Cancella"
 msgid "Candlestick Chart"
 msgstr "Grafico a candele"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:299
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:305
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/PortfolioManagement.pm:33
 #, fuzzy
 #| msgid "Winning the contract"
@@ -1987,7 +1987,7 @@ msgstr "Vincere il contratto"
 msgid "Cannot create sell contract"
 msgstr ""
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:318
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:324
 #, fuzzy
 #| msgid "Winning the contract"
 msgid "Cannot validate contract"
@@ -2055,7 +2055,7 @@ msgid "Change Password"
 msgstr "Modifica Password"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1279
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:422
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:459
 msgid "Change in account settings"
 msgstr "Modifica nelle impostazioni dell'account"
 
@@ -2614,7 +2614,7 @@ msgstr "Costi e Oneri"
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3400
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3694
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1252
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:395
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:432
 msgid "Country of Residence"
 msgstr "Paese di residenza"
 
@@ -2792,7 +2792,7 @@ msgstr "Gentile"
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1490
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1798
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1243
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:387
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:424
 msgid "Dear %1 %2 %3,"
 msgstr "Gentile %1 %2 %3,"
 
@@ -3293,7 +3293,7 @@ msgstr "Email di verifica"
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3023
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3709
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1251
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:394
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:431
 #: /home/git/translations/binary-static/src/templates/haml/user/lost_password.html.haml:1
 msgid "Email address"
 msgstr "Indirizzo email"
@@ -4108,7 +4108,9 @@ msgid "Hundreds of deposit and withdrawal options."
 msgstr "Centinaia di opzioni di deposito e di prelievo."
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form/japan.pm:182
-msgid "I agree that I will trade OTC binary options using my own judgment and and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
+#, fuzzy
+#| msgid "I agree that I will trade OTC binary options using my own judgment and and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
+msgid "I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets."
 msgstr "Accetto che i trade effettuati in opzioni binarie OTC, saranno frutto del mio giudizio, che mi assumo la responsabilità per qualsiasi perdita eventualmente provocata dalla transazione, e che è all'interno di un intervallo accettabile in merito al valore complessivo del mio patrimonio finanziario."
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form/japan.pm:161
@@ -4552,8 +4554,8 @@ msgstr "Le informazioni sulle performance precedenti di un qualsiasi strumento o
 msgid "Input error."
 msgstr "Errore di input."
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:164
-msgid "Input validation failed:"
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:160
+msgid "Input validation failed: "
 msgstr ""
 
 #: /home/git/translations/binary-static/src/templates/haml/static/bulk_trader_facility.html.haml:1
@@ -4633,13 +4635,13 @@ msgstr "Importo non valido"
 msgid "Invalid amount. Minimum transfer amount is 0.10, and up to 2 decimal places."
 msgstr "Importo non valido. Il trasferimento minimo è pari a 0,10 e fino a 2 cifre decimali."
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:196
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:228
 #, fuzzy
 #| msgid "Invalid request"
 msgid "Invalid candles request"
 msgstr "Richiesta non valida"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:173
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:170
 #, fuzzy
 #| msgid "Invalid amount"
 msgid "Invalid client account."
@@ -5832,12 +5834,9 @@ msgstr "Mar"
 msgid "March"
 msgstr "Marzo"
 
+#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form/japan.pm:272
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form/japan.pm:99
 msgid "Margin FX"
-msgstr "Margine FX"
-
-#: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form/japan.pm:272
-msgid "Margix FX"
 msgstr "Margine FX"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/resources/pricing_table_form.html.tt:19
@@ -6212,7 +6211,7 @@ msgstr "Richiesta nuova password"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:334
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v2/Accounts.pm:188
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:277
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:314
 msgid "New password is same as old password."
 msgstr "La nuova password è identica a quella vecchia."
 
@@ -6416,7 +6415,7 @@ msgstr "Ok"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:332
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v2/Accounts.pm:190
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:279
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:316
 msgid "Old password is wrong."
 msgstr "La password vecchia è errata."
 
@@ -6664,8 +6663,8 @@ msgstr "I nostri servizi sono forniti solo sulla base dell'esecuzione. Non forni
 msgid "Our site can be filtered using a number of filtering systems available on the market which could be used to restrict one’s access to our site."
 msgstr "Il nostro sito può essere filtrato utilizzando vari sistemi di filtraggio disponibili sul mercato che possono essere utilizzati per limitare l'accesso al nostro sito."
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:204
-msgid "Output validation failed:"
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:201
+msgid "Output validation failed: "
 msgstr ""
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form/maltainvest.pm:744
@@ -6731,7 +6730,7 @@ msgstr "Pagina non trovata"
 msgid "Parabolic SAR"
 msgstr "SAR parabolico"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:236
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:234
 msgid "Parameters sanity check failed."
 msgstr ""
 
@@ -6883,8 +6882,8 @@ msgstr "Periodo"
 msgid "Perl modules"
 msgstr "Moduli Perl"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:265
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:344
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:302
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:381
 msgid "Permission denied."
 msgstr ""
 
@@ -7078,7 +7077,7 @@ msgstr "Inserisci l'ID di accesso e l'Importo che desideri trasferire al tuo Cli
 msgid "Please input a valid date."
 msgstr "Inserisci una data valida."
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:183
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:180
 #, fuzzy
 #| msgid "Please try again."
 msgid "Please log in."
@@ -7112,7 +7111,7 @@ msgid "Please note that you may update your personal information at any time by 
 msgstr "Puoi aggiornare in qualsiasi momento le tue informazioni personali entrando nella sezione \"Impostazioni\" del tuo account. È tua responsabilità quella di garantire che %1 venga prontamente e continuativamente informato di qualsiasi modifica nei tuoi dati personali."
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1246
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:389
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:426
 msgid "Please note that your settings have been updated as follows:"
 msgstr "Si prega di notare che le tue impostazioni sono state aggiornate come segue:"
 
@@ -7637,7 +7636,7 @@ msgstr "Intervallo di verifica della realtà:"
 msgid "Realtime data is not available for this underlying"
 msgstr "Per questo strumento non sono disponibili dati in tempo reale"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:217
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:194
 #, fuzzy
 #| msgid "Realtime data is not available for this underlying"
 msgid "Realtime quotes not available"
@@ -7789,7 +7788,7 @@ msgstr "Ripristina password"
 msgid "Resources"
 msgstr "Risorse"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:91
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:78
 msgid "Response too large."
 msgstr ""
 
@@ -8266,7 +8265,7 @@ msgstr "Siamo spiacenti, si è verificato un errore durante il caricamento del m
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1211
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1363
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1420
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:379
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:416
 msgid "Sorry, an error occurred while processing your account."
 msgstr "Siamo spiacenti, si è verificato un errore durante l'elaborazione del tuo account."
 
@@ -8666,7 +8665,7 @@ msgid "Study our live charts"
 msgstr "Studia i nostri grafici live"
 
 #. ($style)
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:199
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:231
 #, fuzzy
 #| msgid "Start time is invalid."
 msgid "Style %1 invalid"
@@ -8732,7 +8731,8 @@ msgid "Switch to normal mode"
 msgstr "Passa alla modalità normale"
 
 #. ($symbol)
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:173
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:176
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:205
 msgid "Symbol %1 invalid"
 msgstr ""
 
@@ -8779,7 +8779,7 @@ msgstr "Tel"
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:355
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3566
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1262
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:405
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:442
 msgid "Telephone"
 msgstr "Telefono"
 
@@ -8882,7 +8882,7 @@ msgstr "%1 simula un mercato attivo durante il giorno (ma meno volatile durante 
 #. ($r->website->display_name)
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1809
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1274
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:417
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:454
 msgid "The %1 team."
 msgstr "Il team di %1."
 
@@ -9191,7 +9191,7 @@ msgstr "L'importo della perdita/profitto per punto di rialzo/ribasso viene molti
 msgid "The anti-money laundering processes have the following effects on Clients:"
 msgstr "Le procedure di anti riciclaggio di denaro hanno i seguenti effetti sui Clienti:"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:84
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:71
 msgid "The application sent an invalid request."
 msgstr ""
 
@@ -9408,7 +9408,7 @@ msgstr "La pagina è scaduta. Questo può essere dovuto a una connessione intern
 #. ($client_obj->email,                    $r->client_ip)
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:359
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v2/Accounts.pm:213
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:302
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:339
 msgid "The password for your account %1 has been changed. This request originated from IP address %2. If this request was not performed by you, please immediately contact Customer Support."
 msgstr "La password per il tuo account %1 è stata modificata. Questa richiesta è stata generata dall'indirizzo IP %2. Se tale richiesta non è stata effettuata da parte tua, si prega di contattare immediatamente l'Assistenza Clienti."
 
@@ -9676,7 +9676,7 @@ msgstr "La sezione della cassa dell'Agente di pagamento è bloccata."
 msgid "This URL is invalid."
 msgstr "Questo URL non è valido."
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:174
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:171
 #, fuzzy
 #| msgid "This page is unavailable."
 msgid "This account is unavailable."
@@ -10365,7 +10365,7 @@ msgstr "Se non consigliato diversamente, ti tratteremo come un Cliente Retail. P
 msgid "Unlock Cashier"
 msgstr "Sblocca Cassa"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:211
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:208
 #, fuzzy
 #| msgid "Invalid request"
 msgid "Unrecognised request."
@@ -11764,7 +11764,7 @@ msgstr "La tua password contiene caratteri non validi."
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:353
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:366
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v2/Accounts.pm:207
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:296
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:333
 msgid "Your password has been changed."
 msgstr "La tua password è stata modificata."
 
@@ -13828,6 +13828,9 @@ msgstr "Payout di %1 %2 se %3 esce fuori da %7 a %6 entro le %5."
 #: Translation for contract type description (UPORDOWN - intraday)
 msgid "%1 %2 payout if %3 goes outside %7 and %6 through %5 after %4."
 msgstr "Payout di %1 %2 se %3 esce fuori da %7 e %6 dalle %4 alle %5."
+
+#~ msgid "Margix FX"
+#~ msgstr "Margine FX"
 
 #~ msgid "Korean Index"
 #~ msgstr "Indice della Corea"
