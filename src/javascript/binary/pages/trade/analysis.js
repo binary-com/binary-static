@@ -75,8 +75,14 @@ var TradingAnalysis = (function(){
         toggleActiveAnalysisTabs();
 
         if (currentTab === 'tab_graph') {
-            BetAnalysis.tab_live_chart.reset();
-            BetAnalysis.tab_live_chart.render(true);
+            $.ajax(ajax_loggedin({
+                url     : '/d/trade_chart.cgi?l=' + page.language(),
+                dataType: 'html',
+                success : function (data) {
+                            document.getElementById('trade_chart').innerHTML = data;
+                            setUnderlyingTime();
+                          },
+            }));
         } else {
             var url = currentLink.getAttribute('href');
             $.ajax({
@@ -190,7 +196,8 @@ var TradingAnalysis = (function(){
 
     return {
         request:requestTradeAnalysis,
-        digit_info: function(){return trading_digit_info;}
+        digit_info: function(){return trading_digit_info;},
+        getActiveTab:getActiveTab
     };
 
 })();

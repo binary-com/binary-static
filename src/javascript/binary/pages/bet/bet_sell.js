@@ -1,4 +1,5 @@
 var BetSell = function() {
+    var chart;
     var _sell_request = null;
     var _analyse_request = null;
     var _container = null;
@@ -124,8 +125,8 @@ var BetSell = function() {
         },
         close_container: function () {
             this.basic_cleanup();
-            if (live_chart && typeof live_chart !== "undefined") {
-                live_chart.close_chart();
+            if (chart && typeof chart !== "undefined") {
+                chart.close_chart();
             }
             if (this._container) {
                 this._container.hide().remove();
@@ -442,73 +443,17 @@ var BetSell = function() {
                     var server_data = that.server_data();
                     $('.tab_menu_container').tabs({
                         load: function(event, ui){
-                           var load_live_chart = ui.tab.find(".ui-tabs-anchor").attr('load_live_chart');
-                           if (load_live_chart && load_live_chart == 1) {
-                               var symbol = ui.tab.find(".ui-tabs-anchor").attr('underlying_symbol');
-                               var liveChartConfig = new LiveChartConfig({ renderTo: 'analysis_live_chart', symbol: symbol, with_trades: 0, shift: 0});
-                               var time_obj = that.get_time_interval();
-                               if(time_obj['is_live'] && time_obj['is_live'] === 1) {
-                                    liveChartConfig.update( {
-                                        live: '10min'
-                                    });
-                               } else {
-                                   var from_date, to_date;
-                                   if (server_data.is_forward_starting > 0) {
-                                       if(server_data.trade_feed_delay > 0) {
-                                           from_date = that.get_date_from_seconds(time_obj['from_time'] - parseInt(server_data.trade_feed_delay));
-                                           to_date = that.get_date_from_seconds(time_obj['to_time'] + parseInt(server_data.trade_feed_delay));
-                                       }
-                                   } else {
-                                       from_date = that.get_date_from_seconds(time_obj['from_time'] - 5);
-                                       to_date = that.get_date_from_seconds(time_obj['to_time']);
-                                   }
-
-                                   var display_marker = false;
-                                   if(time_obj['to_time'] - time_obj['from_time'] <= _diff_end_start_time) {
-                                       display_marker = true;
-                                   }
-
-                                   if(time_obj['force_tick']) {
-                                       liveChartConfig.update({
-                                           force_tick: true,
-                                       });
-                                   }
-
-                                   liveChartConfig.update({
-                                       interval: {
-                                           from: from_date,
-                                           to: to_date
-                                       },
-                                       with_markers: display_marker,
-                                   });
-                               }
-                               configure_livechart();
-                               updateLiveChart(liveChartConfig);
-                               var barrier,
-                                   purchase_time = $('#trade_details_purchase_date').attr('epoch_time');
-                               if (!purchase_time) { // dont add barrier if its forward starting
-                                   if(server_data.barrier && server_data.barrier2) {
-                                       if (liveChartConfig.has_indicator('high')) {
-                                           live_chart.remove_indicator('high');
-                                       }
-                                       barrier = new LiveChartIndicator.Barrier({ name: "high", value: server_data.barrier, color: 'green', label: text.localize('High Barrier')});
-                                       live_chart.add_indicator(barrier);
-
-                                       if (liveChartConfig.has_indicator('low')) {
-                                           live_chart.remove_indicator('low');
-                                       }
-                                       barrier = new LiveChartIndicator.Barrier({ name: "low", value: server_data.barrier2, color: 'red', label: text.localize('Low Barrier')});
-                                       live_chart.add_indicator(barrier);
-
-                                   } else {
-                                       if (liveChartConfig.has_indicator('barrier')) {
-                                           live_chart.remove_indicator('barrier');
-                                       }
-                                       barrier = new LiveChartIndicator.Barrier({ name: "barrier", value: server_data.barrier, color: 'green', label: text.localize('Barrier')});
-                                       live_chart.add_indicator(barrier);
-                                   }
-                               }
-                               that.add_time_indicators(liveChartConfig);
+                            var load_chart = ui.tab.find(".ui-tabs-anchor").attr('load_chart');
+                            if (load_chart && load_chart == 1) {
+                                var symbol = ui.tab.find(".ui-tabs-anchor").attr('underlying_symbol');
+                                var element = document.getElementsByTagName('iframe');
+                                var id = 'view_frame';
+                                if (element[1]) {
+                                    element[1].id = id;
+                                } else {
+                                    element[0].id = id;
+                                }
+                                chartFrameSource(symbol, id);
                            }
                         }
                     });
@@ -1104,7 +1049,7 @@ var BetSell = function() {
             }
             return time_obj;
         },
-        add_time_indicators: function(liveChartConfig) {
+        add_time_indicators: function(chartConfig) {
             var that = this,
                 indicator;
             var start_time = $('#trade_details_start_date').attr('epoch_time');
@@ -1113,49 +1058,49 @@ var BetSell = function() {
             var end_time = $('#trade_details_end_date').attr('epoch_time');
             var entry_spot_time = $('#trade_details_entry_spot_time').attr('epoch_time');
             if(purchase_time) {
-                if (liveChartConfig.has_indicator('purchase_time')) {
-                    live_chart.remove_indicator('purchase_time');
+                if (chartConfig.has_indicator('purchase_time')) {
+                    chart.remove_indicator('purchase_time');
                 }
-                indicator = new LiveChartIndicator.Barrier({ name: "purchase_time", label: 'Purchase Time', value: that.get_date_from_seconds(parseInt(purchase_time)), color: '#e98024', axis: 'x'});
-                live_chart.add_indicator(indicator);
+                indicator = new ChartIndicator.Barrier({ name: "purchase_time", label: 'Purchase Time', value: that.get_date_from_seconds(parseInt(purchase_time)), color: '#e98024', axis: 'x'});
+                chart.add_indicator(indicator);
             }
 
             if(start_time) {
-                if (liveChartConfig.has_indicator('start_time')) {
-                    live_chart.remove_indicator('start_time');
+                if (chartConfig.has_indicator('start_time')) {
+                    chart.remove_indicator('start_time');
                 }
-                indicator = new LiveChartIndicator.Barrier({ name: "start_time", label: 'Start Time', value: that.get_date_from_seconds(parseInt(start_time)), color: '#e98024', axis: 'x'});
-                live_chart.add_indicator(indicator);
+                indicator = new ChartIndicator.Barrier({ name: "start_time", label: 'Start Time', value: that.get_date_from_seconds(parseInt(start_time)), color: '#e98024', axis: 'x'});
+                chart.add_indicator(indicator);
             }
 
             if(entry_spot_time && entry_spot_time != start_time) {
-                if (liveChartConfig.has_indicator('entry_spot_time')) {
-                    live_chart.remove_indicator('entry_spot_time');
+                if (chartConfig.has_indicator('entry_spot_time')) {
+                    chart.remove_indicator('entry_spot_time');
                 }
                 
                 if (start_time && entry_spot_time < start_time) {
-                    indicator = new LiveChartIndicator.Barrier({ name: "entry_spot_time", label: 'Entry Spot', value: that.get_date_from_seconds(parseInt(entry_spot_time)), color: '#e98024', axis: 'x'});
+                    indicator = new ChartIndicator.Barrier({ name: "entry_spot_time", label: 'Entry Spot', value: that.get_date_from_seconds(parseInt(entry_spot_time)), color: '#e98024', axis: 'x'});
                 } else {
-                    indicator = new LiveChartIndicator.Barrier({ name: "entry_spot_time", label: 'Entry Spot', value: that.get_date_from_seconds(parseInt(entry_spot_time)), color: '#e98024', axis: 'x', nomargin: true});
+                    indicator = new ChartIndicator.Barrier({ name: "entry_spot_time", label: 'Entry Spot', value: that.get_date_from_seconds(parseInt(entry_spot_time)), color: '#e98024', axis: 'x', nomargin: true});
                 }
-                live_chart.add_indicator(indicator);
+                chart.add_indicator(indicator);
             }
 
             if(end_time) {
-                if (liveChartConfig.has_indicator('end_time')) {
-                    live_chart.remove_indicator('end_time');
+                if (chartConfig.has_indicator('end_time')) {
+                    chart.remove_indicator('end_time');
                 }
 
-                indicator = new LiveChartIndicator.Barrier({ name: "end_time", label: 'End Time', value: that.get_date_from_seconds(parseInt(end_time)), color: '#e98024', axis: 'x'});
-                live_chart.add_indicator(indicator);
+                indicator = new ChartIndicator.Barrier({ name: "end_time", label: 'End Time', value: that.get_date_from_seconds(parseInt(end_time)), color: '#e98024', axis: 'x'});
+                chart.add_indicator(indicator);
             }
             if(sold_time) {
-                if (liveChartConfig.has_indicator('sold_time')) {
-                    live_chart.remove_indicator('sold_time');
+                if (chartConfig.has_indicator('sold_time')) {
+                    chart.remove_indicator('sold_time');
                 }
 
-                indicator = new LiveChartIndicator.Barrier({ name: "sold_time", label: 'Sell Time', value: that.get_date_from_seconds(parseInt(sold_time)), color: '#e98024', axis: 'x'});
-                live_chart.add_indicator(indicator);
+                indicator = new ChartIndicator.Barrier({ name: "sold_time", label: 'Sell Time', value: that.get_date_from_seconds(parseInt(sold_time)), color: '#e98024', axis: 'x'});
+                chart.add_indicator(indicator);
             }
 
         },
