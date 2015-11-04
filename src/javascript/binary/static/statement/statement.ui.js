@@ -36,17 +36,15 @@ var StatementUI = (function(){
     }
 
 
-    function updateStatementFooterBalance(balances){
-        var accDropDown = document.getElementById("client_loginid");
-        var acc = accDropDown.options[accDropDown.selectedIndex].value;
-        var bal = balances.filter(function(element){
-            return element.loginid === acc;
-        });
+    function updateStatementFooterBalance(balance){
+        if (!document.getElementById("statement-table")){
+            return;
+        }
 
         $("#statement-table > tfoot > tr").
             first().
             children(".bal").
-            text(Number(parseFloat(bal[0].balance)).toFixed(2));
+            text(Number(parseFloat(balance.balance)).toFixed(2));
     }
 
     function updateStatementFooter(transactions){

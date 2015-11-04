@@ -219,7 +219,7 @@ var BetPrice = function() {
                             e.preventDefault();
                         }
                         var target = $(e.target);
-                        BetSell.model.reload_page_on_close(true);
+                        BetSell.model.reload_page_on_close($('trading_socket_container') ? false : true);
                         that.spread_con().find('#sell_level').parent().hide();
                         that.sell_bet(target);
                         return false;

@@ -21,7 +21,6 @@ var Tick = (function () {
         id = '',
         epoch = '',
         errorMessage = '',
-        bufferedIds = {},
         spots = [],
         keep_number = 20;
 
@@ -41,10 +40,6 @@ var Tick = (function () {
                     spots.shift();
                 }
                 spots.push(quote);
-
-                if (!bufferedIds.hasOwnProperty(id)) {
-                    bufferedIds[id] = moment().utc().unix();
-                }
             }
         }
     };
@@ -69,10 +64,6 @@ var Tick = (function () {
         spotElement.textContent = message;
     };
 
-    var clearBuffer = function () {
-        bufferedIds = {};
-    };
-
     return {
         details: details,
         display: display,
@@ -80,9 +71,7 @@ var Tick = (function () {
         id: function () { return id; },
         epoch: function () { return epoch; },
         errorMessage: function () { return errorMessage; },
-        bufferedIds: function () { return bufferedIds; },
         clean: function(){ spots = [];},
-        clearBufferIds: clearBuffer,
         spots: function(){ return spots;}
     };
 })();
