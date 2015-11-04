@@ -84,7 +84,7 @@ var TradingEvents = (function () {
                     Contract.getContracts(underlying);
 
                     // forget the old tick id i.e. close the old tick stream
-                    processForgetTickId();
+                    processForgetTicks();
                     // get ticks for current underlying
                     TradeSocket.send({ ticks : underlying });
                 }
@@ -247,22 +247,19 @@ var TradingEvents = (function () {
                 askPrice = this.getAttribute('data-ask-price');
 
             var params = {buy: id, price: askPrice, passthrough:{}};
-            var ids = Price.bufferedIds();
-            if(ids[id]){
-                for(var attr in this.attributes){
-                    if(attr && this.attributes[attr] && this.attributes[attr].name){
-                        var m = this.attributes[attr].name.match(/data\-(.+)/);
+            for(var attr in this.attributes){
+                if(attr && this.attributes[attr] && this.attributes[attr].name){
+                    var m = this.attributes[attr].name.match(/data\-(.+)/);
 
-                        if(m && m[1] && m[1]!=="purchase-id" && m[1]!=="passthrough"){
-                            params.passthrough[m[1]] = this.attributes[attr].value;
-                        }
+                    if(m && m[1] && m[1]!=="purchase-id" && m[1]!=="passthrough"){
+                        params.passthrough[m[1]] = this.attributes[attr].value;
                     }
                 }
-                if (id && askPrice) {
-                    TradeSocket.send(params);
-                    Price.incrFormId();
-                    processForgetPriceIds();
-                }
+            }
+            if (id && askPrice) {
+                TradeSocket.send(params);
+                Price.incrFormId();
+                processForgetProposals();
             }
         };
 

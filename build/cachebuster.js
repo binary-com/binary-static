@@ -26,7 +26,7 @@ module.exports = {
             }
         },
         files: {
-            'dist/hashed.json': ['dist/js/binary.min.js', 'dist/js/lib.min.js', 'dist/js/data.min.js', 'dist/css/binary.min.css'],
+            'dist/hashed.json': ['dist/js/binary.min.js', 'dist/css/binary.min.css'],
         },
     }
 };
