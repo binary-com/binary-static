@@ -74,6 +74,12 @@ body.FR{
 	h1, h2, h3, h4, h5, h6 {
 		text-transform: initial!important;
 	}
+	.fr-hide{
+		display: none!important;
+	}
+	.fr-show{
+	display: inline !important;
+	}
 	#trading_socket_container #contract_form_name_nav{
 	  font-size: 80%;
 	}

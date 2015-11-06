@@ -9,5 +9,10 @@
       %li.$class
         %a.smaller-font{:href=>url_for($route), :class => 'pjaxload'}= $text
     - }
-    %li
-      %a.smaller-font{:href=>url_for('trade.cgi'), :class => 'pjaxload'}= l('Trade')
+    - if (stash->{language} eq 'FR') {
+      %li
+        %a.smaller-font{:href=>url_for('trading'), :class => 'pjaxload'}= l('Trade')
+    - } else {
+      %li
+        %a.smaller-font{:href=>url_for('trade.cgi'), :class => 'pjaxload'}= l('Trade')
+    - }
