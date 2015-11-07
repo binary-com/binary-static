@@ -30,5 +30,3 @@ External tools
 **Automated code review**: [![Code Climate](https://codeclimate.com/github/binary-com/binary-static.png)](https://codeclimate.com/github/binary-com/binary-static)
 
 **Translations** [![Translation status](https://hosted.weblate.org/widgets/binary/-/88x31-grey.png)](https://hosted.weblate.org/engage/binary/?utm_source=widget)
-
-**Heroku Deploy** [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)

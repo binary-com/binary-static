@@ -232,9 +232,12 @@ RealityCheck = (function ($) {
     return RealityCheck;
 }(jQuery));
 
-$(document).ready(function () {
-    // console.log('About to create reality-check object');
+if (!/backoffice/.test(document.URL)) { // exclude BO
+    $(document).ready(function () {
+        // console.log('About to create reality-check object');
 
-    if (window.reality_check_object) return;
-    window.reality_check_object = new RealityCheck('reality_check', LocalStore);
-});
+        if (window.reality_check_object) return;
+        window.reality_check_object = new RealityCheck('reality_check',
+                                                       LocalStore);
+    });
+}

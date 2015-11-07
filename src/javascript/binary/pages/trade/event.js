@@ -39,7 +39,7 @@ var TradingEvents = (function () {
          */
         var contractFormEventChange = function () {
             processContractForm();
-            requestTradeAnalysis();
+            TradingAnalysis.request();
         };
 
         var formNavElement = document.getElementById('contract_form_name_nav');
@@ -75,7 +75,7 @@ var TradingEvents = (function () {
                     showPriceOverlay();
                     var underlying = e.target.value;
                     sessionStorage.setItem('underlying', underlying);
-                    requestTradeAnalysis();
+                    TradingAnalysis.request();
 
                     Tick.clean();
                     
@@ -84,7 +84,7 @@ var TradingEvents = (function () {
                     Contract.getContracts(underlying);
 
                     // forget the old tick id i.e. close the old tick stream
-                    processForgetTickId();
+                    processForgetTicks();
                     // get ticks for current underlying
                     TradeSocket.send({ ticks : underlying });
                 }
@@ -98,6 +98,7 @@ var TradingEvents = (function () {
         if (durationAmountElement) {
             // jquery needed for datepicker
             $('#duration_amount').on('change', debounce(function (e) {
+                sessionStorage.setItem('duration_amount',e.target.value);
                 Durations.select_amount(e.target.value);
                 processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
@@ -111,13 +112,8 @@ var TradingEvents = (function () {
         var expiryTypeElement = document.getElementById('expiry_type');
         if (expiryTypeElement) {
             expiryTypeElement.addEventListener('change', function(e) {
-                Durations.populate();
-                if(e.target && e.target.value === 'endtime') {
-                    var current_moment = moment().add(5, 'minutes').utc();
-                    document.getElementById('expiry_date').value = current_moment.format('YYYY-MM-DD');
-                    document.getElementById('expiry_time').value = current_moment.format('HH:mm');
-                    Durations.setTime(current_moment.format('HH:mm'));
-                }
+                sessionStorage.setItem('expiry_type',e.target.value);
+                Durations.displayEndTime();
                 processPriceRequest();
             });
         }
@@ -128,9 +124,11 @@ var TradingEvents = (function () {
         var durationUnitElement = document.getElementById('duration_units');
         if (durationUnitElement) {
             durationUnitElement.addEventListener('change', function (e) {
+                sessionStorage.setItem('duration_units',e.target.value);
                 Durations.select_unit(e.target.value);
                 Durations.populate();
                 processPriceRequest();
+                sessionStorage.setItem('duration_amount',document.getElementById('duration_amount').value);
             });
         }
 
@@ -142,21 +140,7 @@ var TradingEvents = (function () {
             // need to use jquery as datepicker is used, if we switch to some other
             // datepicker we can move back to javascript
             $('#expiry_date').on('change', function () {
-                var input = this.value;
-                if(moment(input).isAfter(moment(),'day')){
-                    Durations.setTime('');
-                    StartDates.setNow();
-                    expiry_time.hide();
-                    var date_start = StartDates.node();
-
-                    processTradingTimesRequest(input);
-                }
-                else{
-                    Durations.setTime(expiry_time.value);
-                    expiry_time.show();
-                    processPriceRequest();
-                }
-                Barriers.display();
+                Durations.selectEndDate(this.value);
             });
         }
 
@@ -174,6 +158,9 @@ var TradingEvents = (function () {
         var amountElement = document.getElementById('amount');
         if (amountElement) {
             amountElement.addEventListener('input', debounce( function(e) {
+                if (e.target.value % 1 !== 0 ) {
+                    e.target.value = parseFloat(e.target.value).toFixed(2);
+                }
                 sessionStorage.setItem('amount', e.target.value);
                 processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
@@ -192,6 +179,7 @@ var TradingEvents = (function () {
                     Durations.display('spot');
                 } else {
                     Durations.display('forward');
+                    sessionStorage.setItem('date_start', e.target.value);
                 }
                 processPriceRequest();
             });
@@ -261,22 +249,19 @@ var TradingEvents = (function () {
                 askPrice = this.getAttribute('data-ask-price');
 
             var params = {buy: id, price: askPrice, passthrough:{}};
-            var ids = Price.bufferedIds();
-            if(ids[id]){
-                for(var attr in this.attributes){
-                    if(attr && this.attributes[attr] && this.attributes[attr].name){
-                        var m = this.attributes[attr].name.match(/data\-(.+)/);
+            for(var attr in this.attributes){
+                if(attr && this.attributes[attr] && this.attributes[attr].name){
+                    var m = this.attributes[attr].name.match(/data\-(.+)/);
 
-                        if(m && m[1] && m[1]!=="purchase-id" && m[1]!=="passthrough"){
-                            params.passthrough[m[1]] = this.attributes[attr].value;
-                        }
+                    if(m && m[1] && m[1]!=="purchase-id" && m[1]!=="passthrough"){
+                        params.passthrough[m[1]] = this.attributes[attr].value;
                     }
                 }
-                if (id && askPrice) {
-                    TradeSocket.send(params);
-                    Price.incrFormId();
-                    processForgetPriceIds();
-                }
+            }
+            if (id && askPrice) {
+                TradeSocket.send(params);
+                Price.incrFormId();
+                processForgetProposals();
             }
         };
 
@@ -340,7 +325,9 @@ var TradingEvents = (function () {
          */
         var predictionElement = document.getElementById('prediction');
         if (predictionElement) {
-            predictionElement.addEventListener('input', debounce( function (e) {
+
+            predictionElement.addEventListener('change', debounce( function (e) {
+                sessionStorage.setItem('prediction',e.target.value);
                 processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));
@@ -352,6 +339,10 @@ var TradingEvents = (function () {
         var amountPerPointElement = document.getElementById('amount_per_point');
         if (amountPerPointElement) {
             amountPerPointElement.addEventListener('input', debounce( function (e) {
+                if (e.target.value % 1 !== 0 ) {
+                    e.target.value = parseFloat(e.target.value).toFixed(2);
+                }
+                sessionStorage.setItem('amount_per_point',e.target.value);
                 processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));
@@ -360,7 +351,8 @@ var TradingEvents = (function () {
         /*
          * attach an event to change in stop type for spreads
          */
-        var stopTypeEvent = function () {
+        var stopTypeEvent = function (e) {
+            sessionStorage.setItem('stop_type',e.target.value);
             processPriceRequest();
         };
 
@@ -377,6 +369,10 @@ var TradingEvents = (function () {
         var stopLossElement = document.getElementById('stop_loss');
         if (stopLossElement) {
             stopLossElement.addEventListener('input', debounce( function (e) {
+                if (e.target.value % 1 !== 0 ) {
+                    e.target.value = parseFloat(e.target.value).toFixed(2);
+                }
+                sessionStorage.setItem('stop_loss',e.target.value);
                 processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));
@@ -388,6 +384,10 @@ var TradingEvents = (function () {
         var stopProfitElement = document.getElementById('stop_profit');
         if (stopProfitElement) {
             stopProfitElement.addEventListener('input', debounce( function (e) {
+                if (e.target.value % 1 !== 0 ) {
+                    e.target.value = parseFloat(e.target.value).toFixed(2);
+                }
+                sessionStorage.setItem('stop_profit',e.target.value);
                 processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));
@@ -399,6 +399,20 @@ var TradingEvents = (function () {
                 sessionStorage.removeItem('market');
                 sessionStorage.removeItem('formname');
                 sessionStorage.removeItem('underlying');
+
+                sessionStorage.removeItem('expiry_type');
+                sessionStorage.removeItem('stop_loss');
+                sessionStorage.removeItem('stop_type');
+                sessionStorage.removeItem('stop_profit');
+                sessionStorage.removeItem('amount_per_point');
+                sessionStorage.removeItem('prediction');
+                sessionStorage.removeItem('amount');
+                sessionStorage.removeItem('amount_type');
+                sessionStorage.removeItem('currency');
+                sessionStorage.removeItem('duration_units');
+                sessionStorage.removeItem('diration_value');
+                sessionStorage.removeItem('date_start');
+
                 location.reload();
             }));
         }
@@ -410,19 +424,6 @@ var TradingEvents = (function () {
                 load_with_pjax(url);
             }));
         }
-
-        var view_button = document.getElementById('contract_purchase_button');
-        if(view_button){
-            view_button.addEventListener('click', debounce( function (e) {
-                if(sessionStorage.getItem('formname')==='spreads'){
-                    BetSell.show_buy_sell(e.target);
-                }
-                else{
-                    BetSell.sell_at_market(e.target);           
-                }
-            }));
-        }
-
 
         /*
          * attach datepicker and timepicker to end time durations

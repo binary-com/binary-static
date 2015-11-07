@@ -36,7 +36,7 @@
 [%- END -%]
 
 [%- MACRO describe_contract(transaction) BLOCK;
-    contract_info = bet_info(transaction, currency, request.broker.code);
+    contract_info = bet_info(transaction, currency, '', 1);
     IF transaction.action_type == 'sell';
         contract_info.description;
     ELSE;

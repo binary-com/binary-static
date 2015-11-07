@@ -1,9 +1,0 @@
-{
-  "name": "Binary Static",
-  "description": "binary static mojo example server",
-  "logo": "https://static.binary.com/images/pages/binary-symbol-logo.svg",
-  "keywords": ["binary.com", "static"],
-  "env": {
-    "BUILDPACK_URL": "https://github.com/miyagawa/heroku-buildpack-perl"
-  }
-}

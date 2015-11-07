@@ -134,7 +134,6 @@ var BetPrice = function() {
                 this.display_buy_error(data.error);
             } else if (data.display) {
                 this.display_buy_results(data);
-                BetSell.register();
             } else {
                 throw new Error("Invalid server response: " + data);
             }
@@ -219,7 +218,7 @@ var BetPrice = function() {
                             e.preventDefault();
                         }
                         var target = $(e.target);
-                        BetSell.model.reload_page_on_close(true);
+                        BetSell.model.reload_page_on_close($('trading_socket_container') ? false : true);
                         that.spread_con().find('#sell_level').parent().hide();
                         that.sell_bet(target);
                         return false;
