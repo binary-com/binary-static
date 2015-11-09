@@ -1,0 +1,58 @@
+<div id="portfolio">
+	<div id="trading_init_progress"></div>
+	<div id="portfolio-content" class="grd-grid-12 dynamic">
+
+		<h1 class="portfolio-header-margin">[% l('Portfolio') %]</h1>
+
+		<div class="grd-parent grd-row-padding">
+			<div class="grd-hide-mobile grd-hide-phablet">
+				[% l("Account balance : [_1] [_2]", '', '') %] 
+				<span class="loading" data-id="balance"></span>
+
+				<!-- If the account ballance is zero we show the following button, otherwise we remove it -->
+				<a href="[% deposit_url %]" data-id="if-balance-zero" class="dynamic button button_large by_client_type client_real with_login_cookies">
+                <span>[% l('Make a Deposit') %]</span>
+                </a>
+
+			</div>
+		</div>
+
+		<div id="portfolio-no-contract">
+			<p>[% l("No open positions.") %]</p>
+		</div>
+
+		<table class="flex-table" id="portfolio-table">
+
+			<thead>				
+				<tr class="flex-tr">
+					<th class="ref flex-tr-child">[% l('Ref.') %]</th>
+					<th class="details flex-tr-child">[% l('Contract Details') %]</th>
+					<th class="purchase flex-tr-child">[% l('Purchase') %]</th>
+					<th class="indicative flex-tr-child">[% l('Indicative') %]</th>
+					<th class="button">&nbsp;</th>
+				</tr>
+			</thead>
+		
+			<!-- Dynamic content. Will be replaced with parsed HTML by javascript -->
+			<tbody id="portfolio-dynamic">
+				<tr class="flex-tr" data-contract_id="!contract_id!">
+					<td class="ref flex-tr-child">!transaction_id!</td>
+					<td class="details flex-tr-child">!longcode!</td>
+					<td class="purchase flex-tr-child">!currency! <strong>!buy_price!</strong></td>
+					<td class="indicative flex-tr-child">!currency! <strong class="indicative_price"></strong></td>
+					<td class="button flex-tr-child"><button class="button open_contract_details" contract_id="!contract_id!">:view:</button></td>
+				</tr>
+			</tbody>
+
+			<tfoot>
+				<tr class="flex-tr">
+					<th class="ref flex-tr-child" colspan="2">&nbsp;</th>
+					<th class="cost flex-tr-child" id="cost-of-open-positions"></th>
+					<th class="value flex-tr-child" id="value-of-open-positions" colspan="2"></th>
+				</tr>
+			</tfoot>
+
+		</table><!-- portfolio-table ends -->
+
+	</div>
+</div><!-- div#portfolio ends -->
