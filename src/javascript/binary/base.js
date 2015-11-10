@@ -222,3 +222,13 @@ if (!/backoffice/.test(document.URL)) { // exclude BO
         LocalStore.set('active_loginid', match);
     });
 }
+
+
+//this method is to prevent caching on sensitive data
+pjax_config_page("new_account/real", function(){
+    return {
+        onLoad: function(){
+            $("#secretanswer").attr("autocomplete", "off")
+        }
+    };
+});
