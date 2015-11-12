@@ -31,17 +31,6 @@ var Message = (function () {
                 StatementWS.statementHandler(response);
             } else if (type === 'profit_table'){
                 ProfitTableWS.profitTableHandler(response);
-            } else if (type === 'balance'){
-                var passthroughObj = response.echo_req.passthrough;
-                if (passthroughObj){
-                    switch (passthroughObj.purpose) {
-                        case "statement_footer":
-                            StatementUI.updateStatementFooterBalance(response.balance);
-                            break;
-                        default :
-                            //do nothing
-                    }
-                }
             } else if (type === 'error') {
                 $(".error-msg").text(response.error.message);
             }

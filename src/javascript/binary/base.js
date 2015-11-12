@@ -1,11 +1,12 @@
 // for IE (before 10) we use a jquery plugin called jQuery.XDomainRequest. Explained here,
 //http://stackoverflow.com/questions/11487216/cors-with-jquery-and-xdomainrequest-in-ie8-9
 //
-$(document).ajaxSuccess(function () {
-    var contents = new Contents(page.client, page.user);
-    contents.on_load();
+$(function(){
+    $(document).ajaxSuccess(function () {
+        var contents = new Contents(page.client, page.user);
+        contents.on_load();
+    });
 });
-
 
 var onLoad = new PjaxExecQueue();
 var onUnload = new PjaxExecQueue();
@@ -199,23 +200,25 @@ onLoad.queue(function () {
 
 // onLoad.queue does not work on the home page.
 // jQuery's ready function works always.
-$(document).ready(function () {
-    // $.cookie is not always available.
-    // So, fall back to a more basic solution.
-    var match = document.cookie.match(/\bloginid=(\w+)/);
-    match = match ? match[1] : '';
+if (!/backoffice/.test(document.URL)) { // exclude BO
+    $(document).ready(function () {
+        // $.cookie is not always available.
+        // So, fall back to a more basic solution.
+        var match = document.cookie.match(/\bloginid=(\w+)/);
+        match = match ? match[1] : '';
 
-    $(window).on('storage', function (jq_event) {
-        if (jq_event.originalEvent.key !== 'active_loginid') return;
-        if (jq_event.originalEvent.newValue === match) return;
-        if (jq_event.originalEvent.newValue === '') {
-            // logged out
-            location.href = page.url.url_for('home');
-        } else {
-            // loginid switch
-            location.href = page.url.url_for('user/my_account?loginid=' + jq_event.originalEvent.newValue);
-        }
+        $(window).on('storage', function (jq_event) {
+            if (jq_event.originalEvent.key !== 'active_loginid') return;
+            if (jq_event.originalEvent.newValue === match) return;
+            if (jq_event.originalEvent.newValue === '') {
+                // logged out
+                location.href = page.url.url_for('home');
+            } else {
+                // loginid switch
+                location.href = page.url.url_for('user/my_account?loginid=' + jq_event.originalEvent.newValue);
+            }
+        });
+
+        LocalStore.set('active_loginid', match);
     });
-
-    LocalStore.set('active_loginid', match);
-});
+}

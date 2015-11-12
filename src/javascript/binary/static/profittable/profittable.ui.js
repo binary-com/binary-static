@@ -83,6 +83,19 @@ var ProfitTableUI = (function(){
         $row.children(".buy-date").addClass("break-line");
         $row.children(".pl").addClass(plType);
 
+        //create view button and append
+        var $viewButtonSpan = Button.createBinaryStyledButton();
+        var $viewButton = $viewButtonSpan.children(".button").first();
+        $viewButton.text(text.localize("View"));
+        $viewButton.addClass("open_contract_details");
+        $viewButton.attr("contract_id", transaction["contract_id"]);
+
+        $row.
+            children(".contract").
+            first().
+            append("<br>").
+            append($viewButtonSpan);
+
         return $row[0];
     }
 

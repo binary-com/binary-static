@@ -41,6 +41,10 @@ var TradeSocket = (function () {
     };
 
     var init = function () {
+        if(!isClose()){
+            return;
+        }
+
         tradeSocket = new WebSocket(socketUrl);
 
         tradeSocket.onopen = function (){
@@ -60,14 +64,21 @@ var TradeSocket = (function () {
         tradeSocket.onclose = function (e) {
             // clear buffer ids of price and ticks as connection is closed
             Price.clearMapping();
-            Price.clearBufferIds();
-            Tick.clearBufferIds();
+            Price.clearFormId();
+
+            if(e===1){
+                isClosedOnNavigation = true;
+            }
             // if not closed on navigation start it again as server may have closed it
-            if (!isClosedOnNavigation) {
+            else if(!isClosedOnNavigation){
                 processMarketUnderlying();
             }
             // set it again to false as it class variables
-            isClosedOnNavigation = false;
+            else{
+                isClosedOnNavigation = false;
+            }
+
+            init();
         };
 
         tradeSocket.onerror = function (error) {

@@ -1,4 +1,5 @@
 <div id='sell_content_wrapper'>
+    <div id="is_spread_contract"></div> <!-- need this to distinguish it form normal contract as both return html -->
     <div id="spread_table">
         <table>
             <thead>

@@ -49,7 +49,7 @@
             </div>
             <div class="grd-hide grd-show-phablet grd-grid-phablet-12">[% contract.sale_date.datetime %]</div>
         </div>
-        <div class="grd-grid-3 grd-grid-mobile-8 grd-grid-phablet-6">[% bet_info(contract, currency, request.broker.code).description %]</div>
+        <div class="grd-grid-3 grd-grid-mobile-8 grd-grid-phablet-6">[% bet_info(contract, currency).description %]</div>
         <div class="grd-grid-5 grd-grid-mobile-4 grd-grid-phablet-3">
             <div class="grd-hide grd-show-mobile grd-grid-mobile-12 grd-show-phablet grd-grid-phablet-12">
                     [% l('Purchase Price') %]:

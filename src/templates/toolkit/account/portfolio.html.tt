@@ -31,7 +31,7 @@
             [% total_in = 0; total_value_now = 0; %]
             [% FOREACH open_bet IN open_bets %]
                     [%
-                            contract_info = bet_info(open_bet, currency, request.broker.code);
+                            contract_info = bet_info(open_bet, currency);
                             total_in = total_in + open_bet.buy_price;
                             IF contract_info.indicative_price.defined;
                                 total_value_now = total_value_now + contract_info.indicative_price;

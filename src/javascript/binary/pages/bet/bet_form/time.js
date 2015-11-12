@@ -419,7 +419,7 @@ BetForm.TradingTime.prototype = {
         }
 
         var that = this;
-        if(typeof this.trading_info[underlying_symbol][date] === "undefined") {
+        if(typeof this.trading_info[underlying_symbol] === 'undefined' || typeof this.trading_info[underlying_symbol][date] === "undefined") {
             this.trading_info[underlying_symbol][date] = { trading: 0 };
         }
 

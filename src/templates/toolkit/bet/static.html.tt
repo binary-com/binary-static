@@ -201,7 +201,7 @@
                   </div>
                   <div id="contract_purchase_reference"></div>
                   <div class="button">
-                     <button id="contract_purchase_button">View</button>
+                     <button id="contract_purchase_button" class="open_contract_details"></button>
                   </div>
                   <div id="contract_purchase_spots"></div>
                   <div id="tick_chart"></div>

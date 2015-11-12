@@ -15,7 +15,6 @@ var Price = (function () {
     'use strict';
 
     var typeDisplayIdMapping = {},
-        bufferedIds = {},
         form_id = 0;
 
     var createProposal = function (typeOfContract) {
@@ -128,10 +127,6 @@ var Price = (function () {
 
         if (params && Object.getOwnPropertyNames(params).length > 0) {
             typeDisplayIdMapping[id] = type;
-
-            if (!bufferedIds.hasOwnProperty(id)) {
-                bufferedIds[id] = moment().utc().unix();
-            }
         }
 
         var position = contractTypeDisplayMapping(type);
@@ -213,8 +208,7 @@ var Price = (function () {
         typeDisplayIdMapping = {};
     };
 
-    var clearBuffer = function () {
-        bufferedIds = {};
+    var clearFormId = function () {
         form_id = 0;
     };
 
@@ -223,10 +217,9 @@ var Price = (function () {
         display: display,
         clearMapping: clearMapping,
         idDisplayMapping: function () { return typeDisplayIdMapping; },
-        bufferedIds: function () { return bufferedIds; },
         getFormId: function(){ return form_id; },
         incrFormId: function(){ form_id++; },
-        clearBufferIds: clearBuffer
+        clearFormId: clearFormId
     };
 
 })();

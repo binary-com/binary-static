@@ -7,7 +7,6 @@ var Purchase = (function () {
     'use strict';
 
     var purchase_data = {};
-    BetSell.register();
 
     var display = function (details) {
         purchase_data = details;
@@ -90,36 +89,9 @@ var Purchase = (function () {
             }
 
             if(sessionStorage.formname !== 'digits' && !show_chart){
-                button.show();
                 button.textContent = Content.localize().textContractConfirmationButton;
-                var purchase_date = new Date(receipt['purchase_time']*1000);
-
-                var url,spread_bet;
-                if(sessionStorage.getItem('formname')==='spreads'){
-                    url = 'https://'+window.location.host+'/trade/analyse_spread_contract';
-                    spread_bet = 1;
-                    cost_value = passthrough.stop_loss;
-                }
-                else{
-                    url = 'https://'+window.location.host+'/trade/analyse_contract';
-                    spread_bet = 0;
-                }
-                var button_attrs = {
-                    contract_id: receipt['contract_id'],
-                    currency: document.getElementById('currency').value,
-                    purchase_price: cost_value,
-                    purchase_time: (purchase_date.getUTCFullYear()+'-'+(purchase_date.getUTCMonth()+1)+'-'+purchase_date.getUTCDate()+' '+purchase_date.getUTCHours()+':'+purchase_date.getUTCMinutes()+':'+purchase_date.getUTCSeconds()),
-                    shortcode:receipt['shortcode'],
-                    spread_bet:spread_bet,
-                    l:page.language(),
-                    payout:payout_value,
-                    url:url
-                };
-                for(var k in button_attrs){
-                    if(k){
-                        button.setAttribute(k,button_attrs[k]);
-                    }
-                }
+                button.setAttribute('contract_id', receipt['contract_id']);
+                button.show();
             }
             else{
                 button.hide();

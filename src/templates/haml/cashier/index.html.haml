@@ -6,8 +6,10 @@
   %h1= l('Cashier')
 
 .grd-row-padding.table-body
+  .grd-grid-12.grd-row-padding
+    %h3= l('Bank-wire, credit card, e-cash wallet')
   .grd-grid-2.grd-grid-mobile-4
-    .grd-grid-12
+    .grd-grid-12.no_side_padding
       %a.pjaxload{:href => stash('deposit_url'), :id => 'payment_methods'}
         %img#payment_methods_icon.responsive.charting-page-icon{:src => url_for('images/pages/cashier/payment-methods.svg')}
   .grd-grid-5.grd-grid-mobile-12
@@ -24,20 +26,23 @@
 .grd-row-padding
   %span
 
-#payment-agent-section.grd-row-padding.table-body.ja-hide
+#payment-agent-section.grd-row-padding.table-body.ja-hide.payment-agent
+  .grd-grid-12.grd-row-padding
+    %h3= l('Payment Agent')
   .grd-grid-2.grd-grid-mobile-4
-    .grd-grid-12
-      %a.pjaxload{:href => url_for('/cashier/payment_agent_list'), :id => 'payment_agent'}
+    .grd-grid-12.no_side_padding
+      %a{:href => url_for('/cashier/payment_agent_list'), :id => 'payment_agent'}
         %img#payment_agent_icon.responsive.charting-page-icon{:src => url_for('images/pages/cashier/payment-agents.svg')}
   .grd-grid-5.grd-grid-mobile-12
-    %p= l('You can use an authorized payment agent to process deposits and withdrawals for e-cash methods or local currencies not supported by [_1].', stash->{website_name})
+    %p= l('For e-cash methods or local currencies not supported by [_1].', stash->{website_name})
+    %p.faded= l('Note: Withdrawal via payment agent is available only if you deposit exclusively via payment agent')
   .grd-grid-5.grd-grid-mobile-12
     .grd-row-padding
-      %a.pjaxload.button.button_large.by_client_type.client_real.with_login_cookies{:href => url_for('/cashier/payment_agent_list')}
-        %span= l('Deposit To Payment Agent')
+      %a.button.button_large.by_client_type.client_real.with_login_cookies{:href => url_for('/cashier/payment_agent_list')}
+        %span= l('Deposit')
     .grd-row-padding
       %a.pjaxload.button.button_large.by_client_type.client_real.with_login_cookies{:href => url_for('/paymentagent/withdraw')}
-        %span= l('Withdraw Via Payment Agent')
+        %span= l('Withdraw')
 
 #account-transfer-section.grd-row-padding.table-body.ja-hide
   .grd-grid-2.grd-grid-mobile-4

@@ -1,15 +1,7 @@
 <div>
-    [% IF is_button %]
     <span class="button">
-        <button class="button open_contract_details" onclick="return false;" [% FOREACH param IN fields %] [% param.key %] = "[% param.value %]" [% END %]>
-        [% button_text %]
+        <button class="button open_contract_details" contract_id="[% contract_id %]" [% IF bo_client %]bo_client="[% bo_client %]"[% END %]>
+        [% l("View") %]
         </button>
     </span>
-    [% ELSE %]
-        <a class="button button-analyse" href="" onclick="return false;">
-            <span class="button open_contract_details" [% FOREACH param IN fields %] [% param.key %] = "[% param.value %]" [% END %]>
-                [% button_text %]
-            </span>
-        </a>
-    [% END %]
 </div>

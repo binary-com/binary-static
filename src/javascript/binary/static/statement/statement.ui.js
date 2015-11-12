@@ -12,7 +12,7 @@ var StatementUI = (function(){
             Content.localize().textCreditDebit,
             Content.localize().textBalance
         ];
-        var footer = ["", "", "", "", "", ""];
+
         header[5] = header[5] + "(" + TUser.get().currency + ")";
 
         var metadata = {
@@ -20,55 +20,17 @@ var StatementUI = (function(){
             cols: columns
         };
         var data = [];
-        var $tableContainer = Table.createFlexTable(data, metadata, header, footer);
+        var $tableContainer = Table.createFlexTable(data, metadata, header);
         return $tableContainer;
     }
 
     function updateStatementTable(transactions){
         Table.appendTableBody(tableID, transactions, createStatementRow);
-        updateStatementFooter(transactions);
-        $("#" + tableID +">tfoot").show();
     }
 
     function clearTableContent(){
         Table.clearTableBody(tableID);
         $("#" + tableID +">tfoot").hide();
-    }
-
-
-    function updateStatementFooterBalance(balances){
-        var accDropDown = document.getElementById("client_loginid");
-        var acc = accDropDown.options[accDropDown.selectedIndex].value;
-        var bal = balances.filter(function(element){
-            return element.loginid === acc;
-        });
-
-        $("#statement-table > tfoot > tr").
-            first().
-            children(".bal").
-            text(Number(parseFloat(bal[0].balance)).toFixed(2));
-    }
-
-    function updateStatementFooter(transactions){
-        TradeSocket.send({balance: 1, passthrough: {purpose: "statement_footer"}});
-        var accCredit = document.querySelector("#statement-table > tfoot > tr > .credit").textContent;
-        accCredit = parseFloat(accCredit);
-        if (isNaN(accCredit)) {
-            accCredit = 0;
-        }
-
-        var newCredits = transactions.reduce(function(p, c){ return p + parseFloat(c.amount); }, 0);
-
-        var totalCredit = accCredit + newCredits;
-        totalCredit = Number(totalCredit).toFixed(2);
-
-        var $footerRow = $("#" + tableID + " > tfoot > tr").first();
-        var creditCell = $footerRow.children(".credit");
-        var creditType = (totalCredit >= 0) ? "profit" : "loss";
-
-        creditCell.text(totalCredit);
-        creditCell.removeClass("profit").removeClass("loss");
-        creditCell.addClass(creditType);
     }
 
     function createStatementRow(transaction){
@@ -90,13 +52,27 @@ var StatementUI = (function(){
         $statementRow.children(".credit").addClass(creditDebitType);
         $statementRow.children(".date").addClass("break-line");
 
+        //create view button and append
+        if (action === "Sell" || action === "Buy") {
+            var $viewButtonSpan = Button.createBinaryStyledButton();
+            var $viewButton = $viewButtonSpan.children(".button").first();
+            $viewButton.text(text.localize("View"));
+            $viewButton.addClass("open_contract_details");
+            $viewButton.attr("contract_id", transaction["contract_id"]);
+
+            $statementRow.
+                children(".desc").
+                first().
+                append("<br>").
+                append($viewButtonSpan);    
+        }
+
         return $statementRow[0];        //return DOM instead of jquery object
     }
     
     return {
         clearTableContent: clearTableContent,
         createEmptyStatementTable: createEmptyStatementTable,
-        updateStatementTable: updateStatementTable,
-        updateStatementFooterBalance: updateStatementFooterBalance
+        updateStatementTable: updateStatementTable
     };
 }());
