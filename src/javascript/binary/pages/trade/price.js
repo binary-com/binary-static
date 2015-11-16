@@ -178,7 +178,12 @@ var Price = (function () {
             error.textContent = details['error'].message;
         }
         else{
+            if(BinarySocket.isAuthorized()){
             purchase.show();
+            }
+            else{
+                purchase.hide();
+            }
             comment.show();
             amount_wrapper.show();
             price_wrapper.classList.remove('small');
@@ -200,7 +205,7 @@ var Price = (function () {
                 if(key && key !== 'proposal'){
                     purchase.setAttribute('data-'+key, params[key]);
                 }
-            }
+            }      
         }
     };
 
