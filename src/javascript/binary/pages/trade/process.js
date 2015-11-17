@@ -82,6 +82,11 @@ function processContract(contracts) {
 
     Contract.setContracts(contracts);
 
+    if(typeof contracts.contracts_for !== 'undefined'){
+        Tick.setQuote(contracts.contracts_for.spot);
+        Tick.display(contracts.contracts_for.spot);
+    }
+
     var contract_categories = Contract.contractForms();
     var formname;
     if(sessionStorage.getItem('formname') && contract_categories[sessionStorage.getItem('formname')]){
@@ -110,6 +115,8 @@ function processContract(contracts) {
     processContractForm();
 
     TradingAnalysis.request();
+
+    hideFormOverlay();
 }
 
 function processContractForm() {

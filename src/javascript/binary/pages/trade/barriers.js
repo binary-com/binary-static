@@ -11,7 +11,7 @@ var Barriers = (function () {
     var isBarrierUpdated = false;
 
     var display = function (barrierCategory) {
-        var barriers = Contract.barriers(),
+        var barriers = Contract.barriers()[sessionStorage.getItem('underlying')],
             formName = Contract.form();
 
         if (barriers && formName) {

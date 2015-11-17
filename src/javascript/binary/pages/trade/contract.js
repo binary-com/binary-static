@@ -76,23 +76,24 @@ var Contract = (function () {
                     startDates.has_spot = 1;
                 }
 
-                var barrierObj = {};
+                var symbol = currentObj['underlying_symbol'];
                 if(currentObj.barrier_category && currentObj.barrier_category !== "non_financial"){
+                    if(!barriers.hasOwnProperty(symbol)){
+                        barriers[symbol] = {};
+                    }
                     if (currentObj.barriers === 1) {
-                        if (!barriers.hasOwnProperty(contractCategory)) {
-                            barrierObj['count'] = 1;
-                            barrierObj['barrier'] = currentObj['barrier'];
-                            barrierObj['barrier_category'] = currentObj['barrier_category'];
-                            barriers[formName] = barrierObj;
-                        }
+                        barriers[symbol][contractCategory] = {
+                            count: 1,
+                            barrier: currentObj['barrier'],
+                            barrier_category: currentObj['barrier_category']
+                        };
                     } else if (currentObj.barriers === 2) {
-                        if (!barriers.hasOwnProperty(contractCategory)) {
-                            barrierObj['count'] = 2;
-                            barrierObj['barrier'] = currentObj['high_barrier'];
-                            barrierObj['barrier1'] = currentObj['low_barrier'];
-                            barrierObj['barrier_category'] = currentObj['barrier_category'];
-                            barriers[formName] = barrierObj;
-                        }
+                        barriers[symbol][contractCategory] = {
+                            count: 2,
+                            barrier: currentObj['high_barrier'],
+                            barrier1: currentObj['low_barrier'],
+                            barrier_category: currentObj['barrier_category']
+                        };
                     }
                 }
 
