@@ -153,7 +153,7 @@ var TickDisplay = function() {
                         if (data[i][0] === 'tick') {
                             var tick = {
                                 epoch: parseInt(data[i][1]),
-                                quote: parseFloat(data[i][2])
+                                quote: parseFloat(data[i][2]).toFixed(data[i][2].split('.')[1].length)
                             };
 
                             if (tick.epoch > contract_start_moment.unix()) {
