@@ -806,7 +806,7 @@ Page.prototype = {
                     if (outer) outer.remove();
 
                     outer = $("<div id='client-balances' class='lightbox'></div>").appendTo('body');
-                    middle = $('</div>').appendTo(outer);
+                    middle = $('<div></div>').appendTo(outer);
                     $('<div>' + data + '</div>').appendTo(middle);
 
                     $('#client-balances [bcont=1]').on('click', function () {
