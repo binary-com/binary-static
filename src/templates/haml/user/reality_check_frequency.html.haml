@@ -7,7 +7,7 @@
 
   %p
     %label= l('in minutes')
-    %input{:type => 'text' :interval => 1 :size => '6'}
+    %input{:type => 'text' :interval => 1 :size => '6' :id => 'realityDuration'}
 
   %p.msg{:style => 'display:none; color:red;'}= l('Please enter a number greater than 0');
 
