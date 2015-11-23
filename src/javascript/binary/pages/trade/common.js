@@ -837,3 +837,10 @@ function reloadPage(){
 
     location.reload();
 }
+
+function addComma(num){
+    if (num % 1 !== 0) {
+        num = num.toFixed(2);
+    }
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}

@@ -72,6 +72,30 @@ var Content = (function () {
             textSalePrice: text.localize('Sale Price'),
             textProfitLoss: text.localize('Profit/Loss'),
             textTotalProfitLoss: text.localize('Total Profit/Loss'),
+            textLimits: text.localize('Trading and Withdrawal Limits'),
+            textItem: text.localize('Item'),
+            textLimit: text.localize('Limit'),
+            textMaxOpenPosition: text.localize('Maximum number of open positions'),
+            textMaxOpenPositionTooltip: text.localize('Represents the maximum number of outstanding contracts in your portfolio. Each line in your portfolio counts for one open position. Once the maximum is reached, you will not be able to open new positions without closing an existing position first.'),
+            textMaxAccBalance: text.localize('Maximum account cash balance'),
+            textMaxAccBalanceTooltip: text.localize('Represents the maximum amount of cash that you may hold in your account.  If the maximum is reached, you will be asked to withdraw funds.'),
+            textMaxDailyTurnover: text.localize('Maximum daily turnover'),
+            textMaxDailyTurnoverTooltip: text.localize('Represents the maximum volume of contracts that you may purchase in any given trading day.'),
+            textMaxAggregate: text.localize('Maximum aggregate payouts on open positions'),
+            textMaxAggregateTooltip: text.localize('Presents the maximum aggregate payouts on outstanding contracts in your portfolio. If the maximum is attained, you may not purchase additional contracts without first closing out existing positions.'),
+            textTradingLimits: text.localize('Trading Limits'),
+            textWithdrawalTitle: text.localize('Withdrawal Limits'),
+            textWithdrawalLimits: text.localize('Your withdrawal limit is EUR'),
+            textCurrencyEquivalent: text.localize('or equivalent in other currency'),
+            textWithrawalAmount: text.localize('You have already withdrawn the equivalent of EUR'),
+            textYour: text.localize('Your'),
+            textDayWithdrawalLimit: text.localize('day withdrawal limit is currently EUR'),
+            textAuthenticatedWithdrawal: text.localize('Your account is fully authenticated and your withdrawal limits have been lifted.'),
+            textAggregateOverLast: text.localize('in aggregate over the last'),
+            textWithdrawalForEntireDuration: text.localize('Your withdrawal limit for the entire duration of the account is currently: EUR'),
+            textInAggregateOverLifetime: text.localize('in aggregate over the lifetime of your account.'),
+            textNotAllowedToWithdraw: text.localize('Therefore you may not withdraw any additional funds.'),
+            textCurrentMaxWithdrawal: text.localize('Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is EUR'),
             textBuyPrice: text.localize('Buy price'),
             textFinalPrice: text.localize('Final price'),
             textLoss: text.localize('Loss'),
@@ -224,11 +248,23 @@ var Content = (function () {
         titleElement.textContent = localize.textProfitTable;
     };
 
+    var limitsTranslation = function(){
+        var titleElement = document.getElementById("limits-title").firstElementChild;
+        titleElement.textContent = localize.textLimits;
+        
+        var tradingLimits = document.getElementById("trading-limits");
+        tradingLimits.textContent = TUser.get().loginid + " - " + localize.textTradingLimits;
+        
+        var withdrawalTitle = document.getElementById("withdrawal-title");
+        withdrawalTitle.textContent = TUser.get().loginid + " - " + localize.textWithdrawalTitle;
+    };
+
     return {
         localize: function () { return localize; },
         populate: populate,
         statementTranslation: statementTranslation,
-        profitTableTranslation: profitTableTranslation
+        profitTableTranslation: profitTableTranslation,
+        limitsTranslation: limitsTranslation
     };
 
 })();
