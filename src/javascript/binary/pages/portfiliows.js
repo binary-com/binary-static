@@ -187,7 +187,7 @@ pjax_config_page("user/portfoliows", function() {
                             break;
 
                         default:
-                            throw new Error("No method exits to handle api message of type '" + msg_type + "'.");
+                            // msg_type is not what PortfolioWS handles, so ignore it.
 
                     }
 
