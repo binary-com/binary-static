@@ -9,6 +9,76 @@
 var TradingEvents = (function () {
     'use strict';
 
+
+    var onStartDateChange = function(value){
+
+        if(!value || !$('#date_start').find('option[value='+value+']').length){
+            return 0;
+        }
+        $('#date_start').val(value);
+
+        var make_price_request = 1;
+        if (value === 'now') {
+            Durations.display('spot');
+            sessionStorage.removeItem('date_start');
+        } else {
+            make_price_request = -1;
+            var end_time = moment(value*1000).utc().add(15,'minutes');
+            Durations.setTime(end_time.format("hh:mm"));
+            Durations.selectEndDate(end_time.format("YYYY-MM-DD"));
+
+            Durations.display('forward');
+            sessionStorage.setItem('date_start', value);
+        }
+
+        return make_price_request;
+    };
+
+    var onExpiryTypeChange = function(value){
+        
+        if(!value || !$('#expiry_type').find('option[value='+value+']').length){
+            value = 'duration';
+        }
+
+        $('#expiry_type').val(value);
+
+        sessionStorage.setItem('expiry_type',value);
+        var make_price_request = 0;
+        if(value === 'endtime'){
+            Durations.displayEndTime();
+            if(sessionStorage.getItem('end_date')){
+                Durations.selectEndDate(sessionStorage.getItem('end_date'));
+                make_price_request = -1;
+            }
+        }
+        else{
+            Durations.display();
+            if(sessionStorage.getItem('duration_units')){
+                TradingEvents.onDurationUnitChange(sessionStorage.getItem('duration_units'));
+            }
+            if(sessionStorage.getItem('duration_amount') && sessionStorage.getItem('duration_amount') > $('#duration_minimum').text()){
+                $('#duration_amount').val(sessionStorage.getItem('duration_amount'));
+            }
+            make_price_request = 1;
+        }
+
+        return make_price_request;
+    };
+
+    var onDurationUnitChange = function(value){
+
+        if(!value || !$('#duration_units').find('option[value='+value+']').length){
+            return 0;
+        }
+        $('#duration_units').val(value);
+
+        sessionStorage.setItem('duration_units',value);
+        Durations.select_unit(value);
+        Durations.populate();
+
+        return 1;
+    };
+
     var initiate = function () {
         /*
          * attach event to market list, so when client change market we need to update undelryings
@@ -116,8 +186,7 @@ var TradingEvents = (function () {
         var expiryTypeElement = document.getElementById('expiry_type');
         if (expiryTypeElement) {
             expiryTypeElement.addEventListener('change', function(e) {
-                sessionStorage.setItem('expiry_type',e.target.value);
-                Durations.displayEndTime();
+                onExpiryTypeChange(e.target.value);
                 processPriceRequest();
             });
         }
@@ -128,11 +197,8 @@ var TradingEvents = (function () {
         var durationUnitElement = document.getElementById('duration_units');
         if (durationUnitElement) {
             durationUnitElement.addEventListener('change', function (e) {
-                sessionStorage.setItem('duration_units',e.target.value);
-                Durations.select_unit(e.target.value);
-                Durations.populate();
+                onDurationUnitChange(e.target.value);
                 processPriceRequest();
-                sessionStorage.setItem('duration_amount',document.getElementById('duration_amount').value);
             });
         }
 
@@ -179,13 +245,10 @@ var TradingEvents = (function () {
         var dateStartElement = StartDates.node();
         if (dateStartElement) {
             dateStartElement.addEventListener('change', function (e) {
-                if (e.target && e.target.value === 'now') {
-                    Durations.display('spot');
-                } else {
-                    Durations.display('forward');
-                    sessionStorage.setItem('date_start', e.target.value);
+                var r = onStartDateChange(e.target.value);
+                if(r>=0){
+                    processPriceRequest();
                 }
-                processPriceRequest();
             });
         }
 
@@ -484,7 +547,10 @@ var TradingEvents = (function () {
     };
 
     return {
-        init: initiate
+        init: initiate,
+        onStartDateChange: onStartDateChange,
+        onExpiryTypeChange: onExpiryTypeChange,
+        onDurationUnitChange: onDurationUnitChange
     };
 })();
 

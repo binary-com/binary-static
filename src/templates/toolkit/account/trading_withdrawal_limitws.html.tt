@@ -1,0 +1,60 @@
+<div id="limits-ws-container">
+    <div class="page-title" id="limits-title">
+        <h1></h1>
+        <br>
+        <h2 id="trading-limits"></h2>
+        <p class="error-msg" id="err"></p>
+        <table class="flex-table" id="client-limits">
+        	<thead>
+        		<tr class="flex-tr">
+        			<th class="flex-tr-child" id="item"></th>
+        			<th class="flex-tr-child" id="limit"></th>
+        		</tr>
+        	</thead>
+        	<tbody>
+        		<tr class="flex-tr">
+        			<td class="flex-tr-child" id="max-open-position">
+        				<a href="#" id="max-open-position-tooltip" rel="tooltip" title="">
+        					<img src="https://static.binary.com/images/common/question_1.png">
+        				</a>
+        			</td>
+        			<td class="flex-tr-child" id="open-positions"></td>
+        		</tr>
+        		<tr class="flex-tr">
+        			<td class="flex-tr-child" id="max-acc-balance">
+        				<a href="#" id="max-acc-balance-tooltip" rel="tooltip" title="">
+        					<img src="https://static.binary.com/images/common/question_1.png">
+        				</a>
+        			</td>
+        			<td class="flex-tr-child" id="account-balance"></td>
+        		</tr>
+        		<tr class="flex-tr">
+        			<td class="flex-tr-child" id="max-daily-turnover">
+        				<a href="#" id="max-daily-turnover-tooltip" rel="tooltip" title="">
+        					<img src="https://static.binary.com/images/common/question_1.png">
+        				</a>
+        			</td>
+        			<td class="flex-tr-child" id="daily-turnover"></td>
+        		</tr>
+        		<tr class="flex-tr">
+        			<td class="flex-tr-child" id="max-aggregate">
+        				<a href="#" id="max-aggregate-tooltip" rel="tooltip" title="">
+        					<img src="https://static.binary.com/images/common/question_1.png">
+        				</a>
+        			</td>
+        			<td class="flex-tr-child" id="payout"></td>
+        		</tr>
+        	</tbody>
+        </table>
+    </div>
+</div>
+<br>
+<div>
+	<h2 id="withdrawal-title"></h2>
+	<div id="auth-message">
+		<p id="withdrawal-limit"></p>
+		<p id="already-withdraw"></p>
+		<p id="withdrawal-limit-aggregate"></p>
+		<p id="already-withdraw-aggregate"></p>
+	</div>
+</div>
