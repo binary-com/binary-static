@@ -45,6 +45,18 @@ var ProfitTableWS = (function () {
         if (!tableExist()) {
             ProfitTableUI.createEmptyTable().appendTo("#profit-table-ws-container");
             ProfitTableUI.updateProfitTable(getNextChunk());
+
+            // Show a message when the table is empty
+            if($('#profit-table tbody tr').length === 0) {
+                $('#profit-table tbody')
+                    .append($('<tr/>', {class: "flex-tr"})
+                        .append($('<td/>', {colspan: 7}) 
+                            .append($('<p/>', {class: "notice-msg center", text: text.localize("Your account has no trading activity.")})
+                            )
+                        )
+                    );
+            }
+
             Content.profitTableTranslation();
         }
     }

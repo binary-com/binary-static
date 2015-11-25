@@ -131,8 +131,14 @@ var Contract = (function () {
                     } else {
                         tradeContractForms['higherlower'] = Content.localize().textFormHigherLower;
                     }
-                } else {
+                } 
+                else {
                     tradeContractForms[contractCategory] = text.localize(currentObj['contract_category_display']);
+                    if (contractCategory === 'digits') {
+                        tradeContractForms['matchdiff'] = Content.localize().textFormMatchesDiffers;
+                        // tradeContractForms['evenodd'] = Content.localize().textFormEvenOdd;
+                        // tradeContractForms['overunder'] = Content.localize().textFormOverUnder;
+                    } 
                 }
             }
         });

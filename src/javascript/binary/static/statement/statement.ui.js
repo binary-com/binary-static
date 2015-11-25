@@ -13,7 +13,7 @@ var StatementUI = (function(){
             Content.localize().textBalance
         ];
 
-        header[5] = header[5] + "(" + TUser.get().currency + ")";
+        header[5] = header[5] + (TUser.get().currency ? "(" + TUser.get().currency + ")" : "");
 
         var metadata = {
             id: tableID,
@@ -50,6 +50,7 @@ var StatementUI = (function(){
 
         var $statementRow = Table.createFlexTableRow([date, ref, action, desc, amount, balance], columns, "data");
         $statementRow.children(".credit").addClass(creditDebitType);
+        $statementRow.children(".date").addClass("pre");
 
         //create view button and append
         if (action === "Sell" || action === "Buy") {

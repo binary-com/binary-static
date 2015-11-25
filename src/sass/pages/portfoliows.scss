@@ -1,0 +1,33 @@
+a.dynamic, span.dynamic, div.dynamic, p.dynamic, button.dynamic, table.dynamic {
+	display: none!important;
+}
+
+#portfolio {
+    min-height: 300px;
+
+    td {
+    	padding: 10px 30px;
+    }
+
+    td.indicative, td.purchase {
+        white-space: nowrap;
+    }
+
+    td.indicative.no_resale {
+        color: lightgray;
+        span {
+            font-size: 8px;
+            display: block;
+            margin-top: -11px;
+        }
+    }
+
+    th {
+		padding: 10px 30px;
+    	text-align: left;    
+    }
+
+    th.details {
+    	width: 45%;
+	}
+}

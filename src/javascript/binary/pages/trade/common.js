@@ -80,6 +80,7 @@
                      a.setAttribute('menuitem',first);
                      ul.appendChild(fragment2);
                      ul.setAttribute('class', 'tm-ul-2');
+                     ul.setAttribute('id', el1[0]+'-submenu');
 
                      if(flag){
                         li.classList.add('active');
@@ -260,6 +261,9 @@ function getFormNameBarrierCategory(displayFormName) {
         } else if (displayFormName === 'callput'){
             obj['formName'] = displayFormName;
             obj['barrierCategory'] = 'euro_atm';
+        } else if (displayFormName === 'overunder' || displayFormName === 'evenodd' || displayFormName === 'matchdiff'){
+            obj['formName'] = 'digits';
+            obj['barrierCategory'] = '';
         } else {
             obj['formName'] = displayFormName;
             obj['barrierCategory'] = '';
@@ -287,6 +291,10 @@ function contractTypeDisplayMapping(type) {
         ASIAND: "bottom",
         DIGITMATCH: "top",
         DIGITDIFF: "bottom",
+        DIGITEVEN: "top",
+        DIGITODD: "bottom",
+        DIGITOVER: "top",
+        DIGITUNDER: "bottom",
         EXPIRYRANGE: "top",
         EXPIRYMISS: "bottom",
         RANGE: "top",
@@ -418,7 +426,11 @@ function getContractCategoryTree(elements){
             'staysinout']
         ],
         'asian',
-        'digits',
+        ['digits',
+            ['matchdiff',
+            'evenodd',
+            'overunder']
+        ],
         'spreads'
     ];
 
@@ -764,6 +776,22 @@ function selectOption(option, select){
     }
 }
 
+function updatePurchaseStatus(final_price, pnl, contract_status){
+    $('#contract_purchase_heading').text(text.localize(contract_status));
+    $payout = $('#contract_purchase_payout');
+    $cost = $('#contract_purchase_cost');
+    $profit = $('#contract_purchase_profit');
+
+    $payout.html(Content.localize().textBuyPrice + '<p>'+Math.abs(pnl)+'</p>');
+    $cost.html(Content.localize().textFinalPrice + '<p>'+final_price+'</p>');
+    if(!final_price){
+        $profit.html(Content.localize().textLoss + '<p>'+pnl+'</p>');
+    }
+    else{
+        $profit.html(Content.localize().textProfit + '<p>'+(Math.round((final_price-pnl)*100)/100)+'</p>');        
+    }
+}
+
 function updateWarmChart(){
     var $chart = $('#trading_worm_chart');
     var spots = Tick.spots();
@@ -787,4 +815,32 @@ function updateWarmChart(){
             $chart.hide();
         }  
     }  
+}
+
+function reloadPage(){
+    sessionStorage.removeItem('market');
+    sessionStorage.removeItem('formname');
+    sessionStorage.removeItem('underlying');
+
+    sessionStorage.removeItem('expiry_type');
+    sessionStorage.removeItem('stop_loss');
+    sessionStorage.removeItem('stop_type');
+    sessionStorage.removeItem('stop_profit');
+    sessionStorage.removeItem('amount_per_point');
+    sessionStorage.removeItem('prediction');
+    sessionStorage.removeItem('amount');
+    sessionStorage.removeItem('amount_type');
+    sessionStorage.removeItem('currency');
+    sessionStorage.removeItem('duration_units');
+    sessionStorage.removeItem('diration_value');
+    sessionStorage.removeItem('date_start');
+
+    location.reload();
+}
+
+function addComma(num){
+    if (num % 1 !== 0) {
+        num = num.toFixed(2);
+    }
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }

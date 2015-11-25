@@ -34,7 +34,7 @@ var Barriers = (function () {
                         tooltip = document.getElementById('barrier_tooltip'),
                         span = document.getElementById('barrier_span');
                     if ((unit && unit.value === 'd') || (end_time && moment(end_time.value).isAfter(moment(),'day'))) {
-                        if (currentTick && !isNaN(currentTick)) {
+                        if (currentTick && !isNaN(currentTick) && barrier['barrier'].match(/^[+-]/)) {
                             elm.value = (parseFloat(currentTick) + parseFloat(barrier['barrier'])).toFixed(decimalPlaces);
                             elm.textContent = (parseFloat(currentTick) + parseFloat(barrier['barrier'])).toFixed(decimalPlaces);
                         } else {
@@ -70,7 +70,7 @@ var Barriers = (function () {
                         low_span = document.getElementById('barrier_low_span');
 
                     if (unit && unit.value === 'd') {
-                        if (currentTick && !isNaN(currentTick)) {
+                        if (currentTick && !isNaN(currentTick) && barrier['barrier'].match(/^[+-]/)) {
                             high_elm.value = (parseFloat(currentTick) + parseFloat(barrier['barrier'])).toFixed(decimalPlaces);
                             high_elm.textContent = (parseFloat(currentTick) + parseFloat(barrier['barrier'])).toFixed(decimalPlaces);
 

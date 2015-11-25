@@ -12,6 +12,9 @@
     overflow:hidden;
 
   }
+  .pre{
+    white-space: pre;
+  }
   @media(max-width: $md){
     td{
       padding-left : 5px !important;
