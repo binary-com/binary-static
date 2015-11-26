@@ -7,14 +7,16 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-11-19 14:36+0000\n"
-"Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
+"PO-Revision-Date: 2015-11-24 08:52+0000\n"
+"Last-Translator: olga borg <olga@binary.com>\n"
+"Language-Team: Russian "
+"<https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.5-dev\n"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1071
@@ -1166,7 +1168,10 @@ msgstr "Позволяют клиентам использовать элект�
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:142
 msgid "Although the Company has and retains all rights to refuse or to close a Client’s account, the Company does warrant that all contractual obligations already made, shall be honoured."
-msgstr "Хотя Компания сохраняет за собой право отказать или закрыть счет Клиента, Компания  гарантирует, что все договорные обязательства, уже принятые Компанией, будут выполнены."
+msgstr ""
+"Хотя Компания сохраняет за собой право отказать или закрыть счет Клиента, "
+"она гарантирует исполнение всех договорных обязательств, уже принятых "
+"Компанией."
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2390
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2549
@@ -1264,7 +1269,12 @@ msgstr "Любая форма спама приведет к проверке с
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:148
 msgid "Any information given on these pages and/or emails or newsletters sent by the company related thereto, is not intended as financial or investment advice and the Company will not accept any liability in this respect, nor will the Company accept any responsibility for the accuracy or comprehensiveness of the information provided on this site."
-msgstr "Любая информация, предоставленная на этих страницах, и/или посредством электронной почты или информационной рассылки, высылаемой Компанией, не служит финансовым или инвестиционным советом, и Компания не несет ответственность в данном отношении, а также не несет ответственность за точность и полноту информации, предоставленной на данном сайте."
+msgstr ""
+"Любая информация, предоставленная на этих страницах, посредством электронной "
+"почты или информационной рассылки, высылаемой Компанией, не служит "
+"финансовым или инвестиционным советом. Компания не несет ответственности в "
+"данном отношении, а также не несет ответственности за точность и полноту "
+"информации, предоставленной на данном сайте."
 
 #. (affiliate_email)
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:128
@@ -2905,6 +2915,16 @@ msgid ""
 "For security reasons and an improved user experience, we encourage you to deposit and withdraw using the same payment method.\n"
 "\n"
 msgstr ""
+"Уважаемый Клиент,\n"
+"\n"
+"Чтобы подтвердить Ваш запрос на вывод средств, пожалуйста, нажмите на "
+"следующую ссылку:\n"
+"\n"
+"%1\n"
+"\n"
+"Из соображений безопасности и с целью улучшить Ваш пользовательский опыт, мы "
+"рекомендуем Вам пополнять счёт и выводить средства через один и тот же метод "
+"оплаты.\n"
 
 #. (link)
 #: /home/git/translations/binary-static/src/templates/toolkit/email/resend_verification.html.tt:1
@@ -3799,7 +3819,11 @@ msgstr "Дальнейшие инструкции не могут превыша
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:139
 msgid "Further, the Company, under the above circumstances, or any other, reserves the right to adjust a client’s account should any trade result in a disruption, miscarry or aborted trade."
-msgstr "Кроме того, Компания, при указанных выше обстоятельствах или любых других, оставляет за собой право корректировать учетную запись клиента в случае, если его контракты закончатся срывом, прерыванием или другими неожиданным приостановлением сделки."
+msgstr ""
+"Кроме того, Компания, при указанных выше или любых других обстоятельствах "
+"оставляет за собой право корректировать учетную запись клиента в случае, "
+"если его контракты закончатся срывом, прерыванием или другими неожиданным "
+"приостановлением сделки."
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:413
 msgid "Futures"
@@ -3845,7 +3869,11 @@ msgstr "Общий риск"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:43
 msgid "Generally we will communicate with you through this website or by email to the email address used when opening your account. We will communicate with you in English or, if you select another preferred language when opening your account, in that language."
-msgstr "Как правило, мы будем общаться с Вами через данный сайт, по электронной почте или по электронному адресу, который Вы указали при открытии счета. Мы будем общаться с Вами на английском или на другом языке, указанном Вами при открытии счета."
+msgstr ""
+"Как правило, мы будем общаться с Вами через данный сайт, по электронной "
+"почте или по электронному адресу, который Вы указали при открытии счета. "
+"Общение с Вами будет проходить на английском или на другом языке, указанном "
+"Вами при открытии счета."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/main.html.tt:59
 msgid "Generous Commission Structure"
@@ -4784,7 +4812,10 @@ msgstr "Иногда бывает доступна кнопка досрочно
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:7
 msgid "It is the responsibility of each Client to read and understand this legal notice and the terms and conditions pursuant to which an acquisition of financial contracts via this site is governed."
-msgstr "Ответственностью каждого Клиента является чтение и понимание данного юридического соглашения, Правил и условий, в соответствии с которыми совершается приобретение финансовых контрактов на этом сайте."
+msgstr ""
+"Каждый Клиент обязуется прочитать и понять данное юридическое соглашение, а "
+"также Правила и условия, в соответствии с которыми совершается приобретение "
+"финансовых контрактов на этом сайте."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/biel_terms.html.tt:88
 msgid "It is understood that we or any of our directors, officers or employees thereof may have an interest, relationship or arrangement that is material in relation to any trade effected on behalf of you and it is agreed that any person so interested shall be entitled to retain any benefit or profit received and shall not be liable to account therefore to you by reason only of such conflict."
@@ -6514,7 +6545,10 @@ msgstr "Уже через пять лет после создания сайта
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:101
 msgid "Only one account is allowed per person. No winnings and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person."
-msgstr "Разрешается только один счет на человека. Выигрыш или компенсация не может начисляться на счета, открытые на вымышленное имя, или на множественные счета, открытые одним и тем же лицом."
+msgstr ""
+"Разрешается иметь только один счет на человека. Выигрыш или компенсация не "
+"может начисляться на счета, открытые на вымышленное имя, или на "
+"множественные счета, открытые одним и тем же лицом."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:50
 msgid "Only properly tagged clients can be assigned to you as an affiliate. Should an affiliate tag be improperly inserted into your site or not properly received by the MyAffiliates server the resulting client registration and purchases will not be assigned to you. Therefore, it is your responsibility to ensure that all links are properly tagged."
@@ -6796,16 +6830,16 @@ msgid "Password reset"
 msgstr "Пароль изменен"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/account/change_passwordws.html.tt:34
-#, fuzzy
 #| msgid "Your password should be at least 6 characters."
 msgid "Password should be at least 6 characters long."
-msgstr "Пароль должен содержать хотя бы 6 знаков."
+msgstr "Пароль должен содержать минимум 6 знаков."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/account/change_passwordws.html.tt:36
-#, fuzzy
 #| msgid "Your password should be at least 5 characters."
 msgid "Password should be maximum 25 characters long."
-msgstr "Пароль должен содержать хотя бы 5 знаков. Просим убедиться, что клавиатура переключена на латиницу."
+msgstr ""
+"Пароль должен содержать максимум 25 знаков. Просим убедиться, что клавиатура "
+"переключена на латиницу."
 
 #: /home/git/translations/binary-static/src/templates/haml/layouts/default/footer.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/global/footer.html.tt:140
@@ -7090,10 +7124,9 @@ msgid "Please enter the first line of your home address."
 msgstr "Пожалуйста, введите первую строку Вашего домашнего адреса."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/account/change_passwordws.html.tt:17
-#, fuzzy
 #| msgid "Please enter your secret answer"
 msgid "Please enter your current password."
-msgstr "Внесите ответ на Ваш контрольный вопрос"
+msgstr "Пожалуйста, введите текущий пароль."
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1385
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2882
@@ -7689,10 +7722,9 @@ msgstr "Котировки в режиме реального времени н�
 
 #. ($symbol)
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:183
-#, fuzzy
 #| msgid "Realtime quotes not available"
 msgid "Realtime quotes not available for %1"
-msgstr "Котировки в режиме реального времени недоступны"
+msgstr "Котировки в режиме реального времени недоступны для %1"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/benefits_of_trading_binaries.html.haml:1
 msgid "Reap the rewards of trading binaries, knowing your funds are always safe."
@@ -8468,10 +8500,9 @@ msgstr "Извините, Вы ограничили свой доступ на �
 
 #. ($lim)
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:215
-#, fuzzy
 #| msgid "Sorry, you have excluded yourself from the website until %1."
 msgid "Sorry, you have excluded yourself until %1."
-msgstr "Извините, Вы ограничили свой доступ на сайт до %1."
+msgstr "Извините, Вы ограничили свой доступ до %1."
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1053
 msgid "Sorry, you have open positions. Please close out all open positions before requesting additional funds."
@@ -9094,7 +9125,11 @@ msgstr "Время от времени, по своему усмотрению �
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:27
 msgid "The Company reserves the right in its sole discretion to refuse and/or cancel services, charge deposit and/or withdrawal fees to anyone for any reasons including, but not limited to:"
-msgstr "Компания оставляет за собой право по своему усмотрению отказывать в услугах и/или отменять услуги, взимать комиссию за пополнение и/или вывод применительно к любому Клиенту по любой причине, включая, но не ограничиваясь:"
+msgstr ""
+"Компания оставляет за собой право по своему усмотрению отказывать в услугах "
+"и/или отменять услуги, взимать комиссию за пополнение и/или вывод "
+"применительно к любому Клиенту по любой причине, включая (но не "
+"ограничиваясь):"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:11
 msgid "The Company reserves the right to change any part of this Agreement at any time. Notice of any changes will be sent to your email address 7 days in advance of any such changes, but it is ultimately your responsibility to check these terms and conditions regularly. Your continued participation in our affiliate program after we have posted the changes will constitute binding acceptance of such changes."
@@ -9123,7 +9158,19 @@ msgstr "Компания предоставляет Вам данные, дос�
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:159
 msgid "The Company will not be liable in any way to any persons in the event of force majeure, or for the act of any Government or legal authority or for the failure of or damage or destruction to, its computer systems, data or records or any part thereof, or for delays, losses, errors or omissions resulting from the failure or mismanagement of any telecommunications or computer equipment or software. The Company shall not be responsible for any damages or losses deemed or alleged to have resulted from or been caused by this site or its content. This includes any client's use or misuse of its content, the inability of any client to connect with or use the site, delay in operations or transmission, failure of communication lines, or any errors or omissions in content."
-msgstr "Компания не несет никакой ответственности перед любыми лицами в случае возникновения форс-мажорных обстоятельств, действий правительства или правоохранительных органов, срывов, повреждения или уничтожения компьютерных систем или их данных и записей, или любой их части; задержки, потери, ошибки или упущения в результате неисполнения или неэффективного использования какого-либо средства связи, компьютерного оборудования или программного обеспечения. Компания не несет ответственности за любой ущерб или убытки, реальные или предполагаемые, которые являются результатом или были вызваны содержанием этого сайта. Это включает в себя использование или неправильное использование клиентом его содержания, неспособность клиента подключиться с или пользоваться сайтом, задержки в операциях или связи, выход из строя линий связи или любые ошибки или упущения в содержании."
+msgstr ""
+"Компания не несет никакой ответственности перед любыми лицами в случае "
+"возникновения форс-мажорных обстоятельств, действий правительства или "
+"правоохранительных органов, срывов, повреждения или уничтожения компьютерных "
+"систем, их данных и записей или любой их части; задержки, потери, ошибки или "
+"упущения в результате неисполнения или неэффективного использования какого-"
+"либо средства связи, компьютерного оборудования или программного "
+"обеспечения. Компания не несет ответственности за любой ущерб, реальные или "
+"предполагаемые убытки, которые являются результатом или были вызваны "
+"содержанием этого сайта. Это включает в себя использование или неправильное "
+"использование клиентом его содержания, неспособность клиента подключиться "
+"или пользоваться сайтом, задержки в операциях или связи, выход из строя "
+"линий связи, а также любые ошибки или упущения в содержании."
 
 #. (website)
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:19
@@ -9321,7 +9368,11 @@ msgstr "Компания не гарантирует возможность пр
 #. (request.url_for("cashier/payment_methods"))
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:74
 msgid "The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='%1' class='pjaxload'>here:</a>"
-msgstr "Компания предлагает различные методы для пополнения, каждый со своим собственным сроком обработки, некоторые из которых могут не быть доступны для вывода. Полная информация о доступных способах пополнения и вывода, включая время обработки, <a href='%1' class='pjaxload'>здесь:</a>"
+msgstr ""
+"Компания предлагает различные методы для пополнения, каждый со своим "
+"собственным сроком обработки, некоторые из которых могут не быть доступны "
+"для вывода. Полная информация о доступных способах пополнения и вывода, "
+"включая время обработки, находится <a href='%1' class='pjaxload'>здесь:</a>"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/ukgc_funds_protection_message.html.tt:13
 msgid "The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission’s requirements for the segregation of customer funds at the level: <strong>medium protection</strong>."
@@ -9329,16 +9380,32 @@ msgstr "Компания держит средства клиентов на о�
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:71
 msgid "The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission’s requirements for the segregation of customer funds at the level: medium protection."
-msgstr "Компания держит средства клиентов на отдельных от рабочих счетов банковских счетах , которые в случае неплатежеспособности Компании не считаются входящими в состав ее активов. Это отвечает требованиям Комиссии по азартным играм по сегрегации средств клиентов на следующем уровне: средняя защита."
+msgstr ""
+"Компания держит средства клиентов на отдельных от рабочих счетов банковских "
+"счетах, которые в случае неплатежеспособности Компании не войдут в состав ее "
+"активов. Это отвечает требованиям Комиссии по азартным играм по сегрегации "
+"средств клиентов на следующем уровне: средняя защита."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/promocode.html.tt:35
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/promocode.html.tt:61
 msgid "The company reserves the right to cancel/prohibit the use of this promotion at its own discretion at any time."
-msgstr "Компания удерживает за собой право отменить использование данного предложения в любой момент по своему усмотрению."
+msgstr ""
+"Компания сохраняет за собой право отменить использование данного предложения "
+"в любой момент по своему усмотрению."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:155
 msgid "The company reserves the right to charge a dormant fee of up to USD/EUR/AUD/GBP25 every 6 months for every Client account that has had no transaction recorded for over 12 months. If a Client's account is with Binary (Europe) Ltd., and his account has had no activity for a period of thirty months, and the Client cannot be located or contacted, the Company shall remit the balance of the account to the Malta Gaming Authority. Clients need to contact our helpdesk to recover funds from inactive, closed, blocked or excluded accounts."
-msgstr "Компания оставляет за собой право взимать комиссию за неиспользование счета до 25USD/EUR/AUD/GBP каждые 6 месяцев для каждой учетной записи Клиента, который не имел ни одной сделки, записанной на протяжении последних 12 месяцев. Если счет Клиента - на Binary (Europe) Ltd., и на нем не было никакой активности в течение периода тридцати месяцев, и Клиент не может быть локализован или с ним невозможно связаться, Компания перечисляет остаток счета Клиента регулирующему органу на Мальте, Malta Gaming Authority. Клиенты должны связаться со службой поддержки для восстановления средств на неактивных, закрытых, заблокированных или исключенных счетах."
+msgstr ""
+"Компания оставляет за собой право взимать комиссию за неиспользование счета "
+"до 25USD/EUR/AUD/GBP каждые 6 месяцев для каждой учетной записи Клиента, "
+"который не имел ни одной сделки, зафиксированной на протяжении последних 12 "
+"месяцев. Если счет Клиента - на Binary (Europe) Ltd., и на нем не было "
+"никакой активности в течение периода тридцати месяцев, а сам Клиент не может "
+"быть локализован или с ним невозможно связаться, Компания перечисляет "
+"остаток счета Клиента Управлению по азартным играм Мальты (Malta Gaming "
+"Authority). Для восстановления средств на неактивных, закрытых, "
+"заблокированных или исключенных счетах Клиенты должны связаться со службой "
+"поддержки."
 
 #. (website)
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/risk_disclaimer.html.tt:92
@@ -9561,7 +9628,25 @@ msgstr "Система не смогла оценить контракт. Про
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:11
 msgid "The term \"the Company\" shall denote either Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licensed and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission; Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated by (1) the Malta Gaming Authority in Malta for the Gaming products, licence no MGA/CL2/118/2000 dated 26th May 2010 and for UK clients by (2) the UK Gambling Commission; Binary Investments (Europe) Ltd Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, regulated by the Malta Financial Services Authority for Investment products, holder of a Category 3 Investment Services licence no IS/ 70156; or Binary (CR) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About Us section of the website."
-msgstr "Термин \"Компания\" будет использоваться для обозначения либо Binary (IOM) Ltd. [расположенной по адресу: First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles], лицензируемой и контролируемой (1) Комиссией по надзору за азартными играми острова Мэн, Британские острова, настоящая лицензия выдана 31 августа 2012, и для британских клиентов – (2) Комиссией по азартным играм Великобритании; либо Binary (Europe) Ltd., [расположенной по адресу: Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta], лицензируемой и контролируемой (1) Управлением по азартным играм Мальты, лицензия номер MGA/CL2/118/2000 от 26 мая 2010, и для британский клиентов – (2) Комиссией по азартным играм Великобритании; либо Binary Investments (Europe) Ltd [расположенной по адресу: Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta], регулируемой Мальтийским управлением финансовых услуг, для инвестиционных продуктов, с лицензией на инвестиционные услуги категории 3 (Investment Services license) под номером IS/ 70156; либо Binary (CR) S.A., в зависимости от юрисдикции, к которой относится клиентский счет, в соответствии с процедурой открытия счета на сайте и подробным описанием в секции \"О нас\" на сайте."
+msgstr ""
+"Термин \"Компания\" будет использоваться для обозначения либо Binary (IOM) "
+"Ltd. [расположенной по адресу: First Floor, Millennium House, Victoria Road, "
+"Douglas, IM2 4RW, Isle of Man, British Isles], лицензируемой и "
+"контролируемой (1) Комиссией по надзору за азартными играми острова Мэн, "
+"Британские острова, настоящая лицензия выдана 31 августа 2012, и для "
+"британских клиентов – (2) Комиссией по азартным играм Великобритании; либо "
+"Binary (Europe) Ltd., [расположенной по адресу: Mompalao Building, Suite 2, "
+"Tower Road, Msida MSD1825, Malta], лицензируемой и контролируемой (1) "
+"Управлением по азартным играм Мальты, лицензия номер MGA/CL2/118/2000 от 26 "
+"мая 2010, и для британских клиентов – (2) Комиссией по азартным играм "
+"Великобритании; либо Binary Investments (Europe) Ltd [расположенной по "
+"адресу: Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta], "
+"регулируемой Мальтийским управлением финансовых услуг, для инвестиционных "
+"продуктов, с лицензией на инвестиционные услуги категории 3 (Investment "
+"Services license) под номером IS/ 70156; либо Binary (CR) S.A., в "
+"зависимости от юрисдикции, к которой относится клиентский счет, в "
+"соответствии с процедурой открытия счета на сайте и подробным описанием в "
+"секции \"О нас\" на сайте."
 
 #. (time_now, time_zone, underlying)
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/explanation/errors/closed.html.tt:4
@@ -9574,7 +9659,17 @@ msgstr "Токен недействителен."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:50
 msgid "The transactions performed on this site and the relationship between Clients and the Company are to be governed by and construed in accordance with the laws of the country of incorporation of the Company (the \"Jurisdiction\"), which shall be either of the Isle of Man, Malta, or Costa Rica. You agree that the Jurisdiction's courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, you irrevocably submit to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and you agree that any claim you might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company’s Complaints and Disputes section."
-msgstr "Транзакции, производимые на данном сайте, и отношения между Клиентами и Компанией регулируются и толкуются в соответствии с законодательством страны регистрации Компании (\"Юрисдикции\"), которой является Остров Мэн, Мальта или Коста Рика. Вы соглашаетесь, что суды данных стран будут единственными инстанциями, которые имеют право урегулировать любые споры и несогласия, которые могут возникнуть между сторонами. С этой целью, Вы безоговорочно подчиняетесь юрисдикции суда определенной Юрисдикции относительного любого иска и соглашаетесь, что любая претензия, которую Вы можете иметь к Компании, будет решаться в суде Юрисдикции. Для дальнейшей информации по жалобам и искам смотрите секцию Компании \"Жалобы\"."
+msgstr ""
+"Транзакции, производимые на данном сайте, а также отношения между Клиентами "
+"и Компанией регулируются и толкуются в соответствии с законодательством "
+"страны регистрации Компании (\"Юрисдикции\"), которой является остров Мэн, "
+"Мальта или Коста-Рика. Вы соглашаетесь, что суды данных стран будут "
+"единственными инстанциями, которые имеют право регулировать любые споры и "
+"несогласия, которые могут возникнуть между сторонами. С этой целью Вы "
+"обязуетесь безоговорочно подчиняться решению суда определенной Юрисдикции "
+"относительного любого иска и соглашаетесь, что любая претензия, которую Вы "
+"можете иметь к Компании, будет решаться в суде Юрисдикции. Для дальнейшей "
+"информации по жалобам и искам смотрите секцию Компании \"Жалобы и иски\"."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:143
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:461
@@ -9693,7 +9788,13 @@ msgstr "Данные Правила и условия могут периоди�
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:37
 msgid "These Terms and Conditions, for the convenience of our Clients are provided in several different languages; however, these translations do reflect the same principles. We attempt, as much as possible to provide a faithful translation in English of the prevailing language. In the event of any differences between the English version of the website and any other language, the English version shall prevail."
-msgstr "Настоящие Правила и Условия для удобства наших Клиентов предоставляются на разных языках. Однако, эти переводы отражают одни и те же принципы. Мы стараемся обеспечить как можно более точный перевод с английского на конкретные языки. В случае каких-либо расхождений между английской версии веб-сайта и на любом другом языке, английская версия имеет преимущественную силу."
+msgstr ""
+"Для удобства наших Клиентов настоящие Правила и условия предоставляются на "
+"разных языках. Хотя переводы отражают одни и те же принципы, мы стараемся "
+"обеспечить как можно более точный перевод с английского на конкретные языки. "
+"В случае каких-либо расхождений между английской версией веб-сайта и "
+"Правилами на любом другом языке, английская версия имеет преимущественную "
+"силу."
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/glossary.html.haml:1
 msgid "These are trades where the trader predicts if a market will finish higher or lower than a specified price target."
@@ -10728,7 +10829,10 @@ msgstr "В настоящее время мы не открываем счета
 #. ("http://www.gamblingcommission.gov.uk/Consumers/Protection-of-customer-funds.aspx")
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:68
 msgid "We are required by our licence to inform you about what happens to funds which we hold on account for you, and the extent to which funds are protected in the event of insolvency <a href='%1' target='_blank'>%1</a>."
-msgstr "Наша лицензия требует от нас, чтобы мы информировали Вас о состоянии средств, которые мы держим на Вашем счету, и о степени защиты средств в случае неплатежеспособности <a href='%1' target='_blank'>%1</a>."
+msgstr ""
+"Наша лицензия требует от нас, чтобы мы информировали Вас о состоянии "
+"средств, которые мы держим на Вашем счету, и о степени защиты средств в "
+"случае неплатежеспособности  <a href='%1' target='_blank'>%1</a>."
 
 #. ("http://www.gamblingcommission.gov.uk/Consumers/Protection-of-customer-funds.aspx")
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/ukgc_funds_protection_message.html.tt:10
@@ -10994,7 +11098,10 @@ msgstr "Когда Компания открывает счет для клие�
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:122
 msgid "When there is a breakdown in the means of communication normally employed in determining the price or value of any of the financial contracts or where the price or value of any of the financial contracts cannot be promptly or accurately ascertained."
-msgstr "Когда происходит кризис в средствах связи, обычно используемых при расчете цены или стоимости какой-либо из финансовых контрактов, или когда цена или стоимость любого финансового контракта не может быть быстро и точно установлена."
+msgstr ""
+"В случае сбоев в средствах связи, обычно используемых при расчете цены или "
+"стоимости какого-либо из финансовых контрактов, когда цена или стоимость "
+"любого финансового контракта не может быть быстро и точно установлена."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/order_execution.html.tt:14
 msgid "When we enter into Contracts with you, we will take all reasonable steps to achieve the best possible result for you by executing those Contracts according to our order execution policy and subject to any specific instructions received from you. Our order execution policy comprises a set of procedures that are designed to obtain the best possible execution result for you subject to and taking into account: (a) the nature of your Contracts, (b) the priorities you have identified to us in relation to entering into those Contracts, and (c) the practices relating to the market in question, with the aim of producing a result which provides, in our view, the best balance across a range of sometimes conflicting factors. Our policy cannot provide a guarantee, however, that when entering into Contracts with you, the price will always be better than one which is or might have been available elsewhere."
@@ -11028,7 +11135,13 @@ msgstr "Торгуя на %1, Вы можете быть абсолютно ув
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:119
 msgid "When, as a result of political, economic, military or monetary events (including unusual market volatility or illiquidity) or any circumstances outside the control, responsibility and power of the Company, the continued operation of this site is not reasonably practicable without materially and adversely affecting and prejudicing the interests of Clients or the Company, or if, in the opinion of the Company, a price cannot be calculated for financial contracts."
-msgstr "Когда в результате политических, экономических, военных или рыночных событий (в том числе необычной волатильности рынка или неликвидности) или других обстоятельствах вне контроля, ответственности и власти Компании, продолжение работы этого сайта может быть практически необоснованно без влияния на и причинения ущерба, материального или другого, клиентам Компании, или если, по мнению Компании, цена на контракты не может быть рассчитана."
+msgstr ""
+"В случае политических, экономических, военных или рыночных событий (в том "
+"числе необычной волатильности рынка и неликвидности) или при других "
+"обстоятельствах, находящихся вне контроля, ответственности и власти "
+"Компании, когда продолжение работы этого сайта неминуемо влечет причинение "
+"материального или другого ущерба Клиентам, Компании, а также в тех случаях, "
+"когда, по мнению Компании, цена на контракты не может быть рассчитана."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/promocode.html.tt:58
 msgid "Where an account is funded solely by means of a bonus code, the bonus amount plus any winnings can not be withdrawn until you have exceeded an account turnover of 25 times the bonus amount value. The maximum amount of winnings allowed on such accounts shall be 25 times the amount of such bonus amount."
@@ -11194,7 +11307,13 @@ msgstr "Условия выигрыша контракта"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:90
 msgid "Winnings may only be paid to the initiator of an account. When a Client maintains an account by means of telegraphic deposits, winnings are only paid to the holder of the originating bank account, and it is the onus of the Client to ensure that account number and name accompany all transfers to the Company. When a Client maintains an account by means of credit/debit card deposits, winnings are only paid back to the same card."
-msgstr "Прибыль может выплачиваться только на владельца счета. Если Клиент вносит средства на счет с помощью банковского перевода, прибыль выплачивается только владельцу данного банковского счета, и обязанностью Клиента является обеспечение правильности номера счета и имени всех переводов в Компанию. Если Клиент пополняет счет с помощью кредитной/дебетовой карты, прибыль выплачивается только на ту же карту."
+msgstr ""
+"Прибыль может выплачиваться только на имя владельца счета. Если Клиент "
+"вносит средства на счет с помощью банковского перевода, прибыль "
+"выплачивается только владельцу данного банковского счета. Клиент обязуется "
+"предоставить правильный номер счета и правильно указать своё имя для всех "
+"денежных переводов Компании. Если Клиент пополняет счет с помощью кредитной/"
+"дебетовой карты, прибыль выплачивается только на ту же карту."
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/get_started/what_is_binary_trading.html.haml:1
@@ -11314,7 +11433,12 @@ msgstr "Да. Пожалуйста, напишите нам на <a href=\"mailt
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:107
 msgid "You agree that we may use Personal information provided by you in order to conduct appropriate anti-fraud checks. Personal Information that you provide may be disclosed to a credit reference or fraud prevention agency, which may keep a record of that information."
-msgstr "Вы соглашаетесь, что мы можем использовать личную информацию, предоставленную Вами, для соответстующих анти-мошеннических проверок. Личная информация, которую Вы предоставляете, может быть передана компетентным организациям или органам по борьбе мошенничеством, которым такая информация может быть необходима."
+msgstr ""
+"Вы соглашаетесь, что мы можем использовать личную информацию, "
+"предоставленную Вами, для соответствующих анти-мошеннических проверок. "
+"Личная информация, которую Вы предоставляете, может быть передана "
+"компетентным организациям или органам по борьбе с мошенничеством, которым "
+"может быть необходима такая информация."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/privacy.html.tt:37
 msgid "You also have the right to request from us to inform you about the personal data that we process about you and to request its correction where necessary. This request must be made in writing to us and signed by you as the data subject."
@@ -11333,7 +11457,7 @@ msgstr "Уведомляем Вас, что торговля бинарными 
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:191
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:246
 msgid "You are already subscribed to %1"
-msgstr ""
+msgstr "Вы уже подписаны на %1"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:1957
 msgid "You are being given the better price."
@@ -11509,7 +11633,7 @@ msgstr "Вы не можете приобретать или регистрир�
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:167
 msgid "You may only open an account at this site on condition that:"
-msgstr "Вы можете открыть счет на этом сайте при условии:"
+msgstr "Вы можете открыть счет на этом сайте при следующих условиях:"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/promocode.html.tt:55
 msgid "You may withdraw the bonus amount once you have exceeded an account turnover of 25 times the bonus amount value."
@@ -11701,7 +11825,14 @@ msgstr "На Вашем счету можно производить тольк�
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:77
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
-msgstr "Ваш рабочий счет не должен использоваться в качестве банковского хранилища, и депозиты должны производиться только с целью использования средств для приобретения контрактов. Компания не является финансовым органом. Клиенты не получают проценты на свои депозиты. Если Вы совершаете повторные пополнения и вывод денег без приобретения контрактов, мы оставляем за собой право применения к Вашим счетам, без предварительного уведомления, любых банковских сборов, которые мы можем понести до закрытия счетов."
+msgstr ""
+"Ваш рабочий счет не должен использоваться в качестве банковского хранилища, "
+"и пополнение счета должно производиться только с целью использования средств "
+"для приобретения контрактов. Компания не является финансовым органом, а "
+"Клиенты не получают проценты на свои депозиты. Если Вы совершаете повторные "
+"пополнения и вывод денег без приобретения контрактов, мы оставляем за собой "
+"право применения к Вашим счетам, без предварительного уведомления, любых "
+"банковских сборов, которые мы можем понести до закрытия счетов."
 
 #. (url_for('/cashier/payment_agent_list')
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
@@ -11930,10 +12061,12 @@ msgstr "Настройки успешно обновлены."
 
 #. ($c->stash('request')
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:842
-#, fuzzy
 #| msgid "If this error persists, please contact <a href=\"%1\">Customer Support</a>."
 msgid "Your token has expired. If you require further assistance, please contact our <a href=\"%1\"><strong>Customer Support</strong></a>."
-msgstr "Если эта ошибка повторится, пожалуйста, свяжитесь со <a href=\"%1\">службой поддержки</a>."
+msgstr ""
+"Срок действия Вашего токена истёк. Если Вам нужна дополнительная помощь, "
+"пожалуйста, свяжитесь со <a href=\"%1\"><strong>службой "
+"поддержки</strong></a>."
 
 #. (($mode eq 'login' ? 'since login' : 'for the recent 48 hours')
 #: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1

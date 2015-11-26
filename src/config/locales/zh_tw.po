@@ -7,9 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-11-19 10:41+0000\n"
+"PO-Revision-Date: 2015-11-25 16:47+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (Taiwan) <https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
+"Language-Team: Chinese (Taiwan) "
+"<https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2906,6 +2907,13 @@ msgid ""
 "For security reasons and an improved user experience, we encourage you to deposit and withdraw using the same payment method.\n"
 "\n"
 msgstr ""
+"尊敬的客戶，\n"
+"\n"
+"請點選以下連結，以便驗證您的取款請求:\n"
+"\n"
+"%1\n"
+"\n"
+"為了安全和改良使用者體驗，我們建議您使用相同的支付方式進行存款和提款。\n"
 
 #. (link)
 #: /home/git/translations/binary-static/src/templates/toolkit/email/resend_verification.html.tt:1
@@ -6789,16 +6797,14 @@ msgid "Password reset"
 msgstr "重設密碼"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/account/change_passwordws.html.tt:34
-#, fuzzy
 #| msgid "Your password should be at least 6 characters."
 msgid "Password should be at least 6 characters long."
-msgstr "您的密碼至少應為 6 個字元。"
+msgstr "密碼長度至少應為 6 個字元。"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/account/change_passwordws.html.tt:36
-#, fuzzy
 #| msgid "Your password should be at least 5 characters."
 msgid "Password should be maximum 25 characters long."
-msgstr "您的密碼至少應為 5 個字元。"
+msgstr "密碼最大長度為 25 個字元。"
 
 #: /home/git/translations/binary-static/src/templates/haml/layouts/default/footer.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/global/footer.html.tt:140
@@ -7083,10 +7089,9 @@ msgid "Please enter the first line of your home address."
 msgstr "請輸入您家庭地址的第一行。"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/account/change_passwordws.html.tt:17
-#, fuzzy
 #| msgid "Please enter your secret answer"
 msgid "Please enter your current password."
-msgstr "請輸入您的密碼保護問題答案"
+msgstr "請輸入您目前密碼。"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1385
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2882
@@ -7682,10 +7687,9 @@ msgstr "即時報價不可用"
 
 #. ($symbol)
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:183
-#, fuzzy
 #| msgid "Realtime quotes not available"
 msgid "Realtime quotes not available for %1"
-msgstr "即時報價不可用"
+msgstr "即時報價不可用於%1"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/benefits_of_trading_binaries.html.haml:1
 msgid "Reap the rewards of trading binaries, knowing your funds are always safe."
@@ -8456,10 +8460,9 @@ msgstr "對不起，您已禁止自己存取本網站，直到%1。"
 
 #. ($lim)
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:215
-#, fuzzy
 #| msgid "Sorry, you have excluded yourself from the website until %1."
 msgid "Sorry, you have excluded yourself until %1."
-msgstr "對不起，您已禁止自己存取本網站，直到%1。"
+msgstr "對不起，您已禁止自己，直到%1。"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1053
 msgid "Sorry, you have open positions. Please close out all open positions before requesting additional funds."
@@ -11311,7 +11314,7 @@ msgstr "我們僅此通知您，%1 所提供的二元期權交易並不受任何
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:191
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:246
 msgid "You are already subscribed to %1"
-msgstr ""
+msgstr "您已訂閱%1"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:1957
 msgid "You are being given the better price."
@@ -11908,10 +11911,9 @@ msgstr "您的設定已成功更新。"
 
 #. ($c->stash('request')
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:842
-#, fuzzy
 #| msgid "Your password recovery token has expired. Please click <a href=\"%1\"><strong>here</strong></a> to restart the password recovery process. Your account is important to us. If you require further assistance, please contact our <a href=\"%2\"><strong>Customer Support</strong></a>"
 msgid "Your token has expired. If you require further assistance, please contact our <a href=\"%1\"><strong>Customer Support</strong></a>."
-msgstr "您的密碼復原權杖已經過期，請點選<a href=\"%1\"><strong>這裡</strong></a>重新開始密碼復原程序。您的帳戶對我們很重要，如需更多幫助，請聯繫我們的<a href=\"%2\"><strong>客服人員</strong></a>"
+msgstr "您的權杖已經過期。如需要更多幫助，請聯繫我們的<a href=\"%1\"><strong>客服人員</strong></a>。"
 
 #. (($mode eq 'login' ? 'since login' : 'for the recent 48 hours')
 #: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1

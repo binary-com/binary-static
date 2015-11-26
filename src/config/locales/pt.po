@@ -7,9 +7,10 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-11-20 16:50+0000\n"
-"Last-Translator: Alcino Jorge <alcino@binary.com>\n"
-"Language-Team: Portuguese <https://hosted.weblate.org/projects/binary/static/pt/>\n"
+"PO-Revision-Date: 2015-11-24 20:01+0000\n"
+"Last-Translator: Gabriela Balieiro Moreira <eusouagabi@gmail.com>\n"
+"Language-Team: Portuguese "
+"<https://hosted.weblate.org/projects/binary/static/pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -232,7 +233,9 @@ msgstr "Os contratos de spread da %1 exigem um \"limite de perdas\" que limita a
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/why_us.html.haml:1
 msgid "%1's patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market."
-msgstr "A tecnologia de preços patenteada da %1 permite que você se beneficiem das mesmas taxas de retorno do mercado interbancário."
+msgstr ""
+"A tecnologia de preços patenteada da %1 permite que você aproveita as mesmas "
+"taxas de retorno do mercado interbancário."
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/group_history.html.haml:1
@@ -247,12 +250,21 @@ msgstr "%1: Plataforma de negociação online para opções binárias sobre Índ
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/smart_indices.html.haml:1
 msgid "%1’s Smart FX are smart markets that measure the value of a currency against a basket of major currencies."
-msgstr "Os Índices Inteligentes FX da %1 são mercados inteligentes que medem o valor de uma moeda em relação a um cabaz de moedas principais."
+msgstr ""
+"Os Índices Inteligentes FX da %1 são mercados inteligentes que medem o valor "
+"de uma moeda em relação a uma cesta de moedas principais."
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/smart_indices.html.haml:1
 msgid "%1’s Smart Indices are created using the relevant market data and %1’s proprietary algorithms to represent the equities market movement for a country. These instruments are designed to tick at higher frequency and have extended market hours. With real time quotes and live charts, availability of short term contracts and extended hours, they provide more exciting opportunities to trade on financial markets."
-msgstr "Os índice inteligentes da %1 são criados usando dados de mercado relevantes e os algoritmos proprietários da %1 para representar o movimento do mercado de ações de um país. Estes instrumentos foram projetados para relatar preços com uma maior frequência e possuem horários de mercado alargados. Com cotações e gráficos em tempo real, a disponibilidade de contratos de curto prazo e horários alargados, os instrumentos proporcionam mais oportunidades emociantes para negociar em mercados financeiros."
+msgstr ""
+"Os índice inteligentes da %1 são criados usando dados de mercado relevantes "
+"e os algoritmos proprietários da %1 para representar o movimento do mercado "
+"de ações de um país. Estes instrumentos foram projetados para relatar preços "
+"com uma maior frequência e possuem horários de mercado alargados. Com "
+"cotações e gráficos em tempo real, a disponibilidade de contratos de curto "
+"prazo e horários estendidos, os instrumentos proporcionam mais oportunidades "
+"empolgantes para negociar em mercados financeiros."
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/smart_indices.html.haml:1
@@ -283,11 +295,15 @@ msgstr "&#8220;Binary.com é um dos parceiros mais antigos e confiáveis que nó
 
 #: /home/git/translations/binary-static/src/templates/haml/home/index.html.haml:1
 msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide&#8221;"
-msgstr "&#8220;Nós temos usado a www.binary.com  nos ultimos 8 anos e recomendamos a binary para todos os nossos membros no mundo todo&#8221;"
+msgstr ""
+"&#8220;Nós temos usado a www.binary.com nos ultimos 8 anos e recomendamos a "
+"binary para todos os nossos membros no mundo inteiro&#8221;"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/explanation/winning/spreads.html.tt:2
 msgid "'<strong>Long</strong>' contracts generate profits when the index rises and loses when it falls."
-msgstr "Contratos de <strong>compra</strong> geram lucros quando um índice sobe e perdas quando ele desce."
+msgstr ""
+"Contratos de <strong>compra</strong> geram lucros quando um índice sobe, e "
+"perdas quando ele desce."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/explanation/winning/spreads.html.tt:3
 msgid "'<strong>Short</strong>' contracts generate losses when the index rises and profits when it falls."
@@ -311,7 +327,9 @@ msgstr "* Livre de Impostos: Em muitos países, os ganhos com negociações são
 
 #: /home/git/translations/binary-static/src/templates/toolkit/portfolio/contract_details.html.tt:42
 msgid "* This contract was affected by a corporate action event. Please find details in the corporate action tab."
-msgstr "* Este contrato foi afetado por um evento de ação corporativa. Saiba mais no separador de ações corporativas."
+msgstr ""
+"* Este contrato foi afetado por um evento de ação corporativa. Saiba mais na "
+"aba de ações corporativas."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/authenticate.html.tt:20
 msgid "- A scanned copy of a utility bill or bank statement (no more than 3 months old)."
@@ -339,11 +357,11 @@ msgstr "1-2 anos"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form/japan.pm:509
 msgid "1-3 million JPY"
-msgstr "1 a 3 milhões de JPY"
+msgstr "1-3 million JPY"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form/japan.pm:364
 msgid "1-3 years"
-msgstr "1 a 3 anos"
+msgstr "1-3 years"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/binary_options_basics.html.haml:1
 msgid "1. Choose the Underlying"
@@ -351,7 +369,7 @@ msgstr "1. Escolha o ativo"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form/japan.pm:521
 msgid "10-30 million JPY"
-msgstr "10 a 30 milhões de JPY"
+msgstr "10-30 million JPY"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/livechart_duration.html.tt:4
 msgid "10min"
@@ -371,7 +389,7 @@ msgstr "1 hora"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/livechart_duration.html.tt:31
 msgid "1m"
-msgstr "1 minuto"
+msgstr "1 mês"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/livechart_duration.html.tt:25
 msgid "1w"
@@ -399,11 +417,11 @@ msgstr "2 semanas"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form/japan.pm:513
 msgid "3-5 million JPY"
-msgstr "3 a 5 milhões de JPY"
+msgstr "3-5 million JPY"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form/japan.pm:368
 msgid "3-5 years"
-msgstr "3 a 5 anos"
+msgstr "3-5 years"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/binary_options_basics.html.haml:1
 msgid "3. Choose how you want to Trade the Market"
@@ -411,7 +429,7 @@ msgstr "3. Escolha como você quer Negociar no Mercado"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form/japan.pm:525
 msgid "30-50 million JPY"
-msgstr "30 a 50 milhões de JPY"
+msgstr "30-50 million JPY"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1891
 msgid "30-day limit on losses"
@@ -435,11 +453,11 @@ msgstr "40 transações ou mais nos últimos 12 meses"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form/japan.pm:517
 msgid "5-10 million JPY"
-msgstr "5 a 10 milhões de JPY"
+msgstr "5-10 million JPY"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form/japan.pm:529
 msgid "50-100 million JPY"
-msgstr "50 a 100 milhões de JPY"
+msgstr "50-100 million JPY"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/livechart_duration.html.tt:22
 msgid "5d"
@@ -452,7 +470,7 @@ msgstr "6 - 25 caracteres."
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form/japan.pm:360
 msgid "6 months to 1 year"
-msgstr "6 meses a 1 ano"
+msgstr "6 months to 1 year"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form/maltainvest.pm:622
 msgid "6-10 transactions in the past 12 months"
@@ -527,9 +545,11 @@ msgid ""
 "        <li>Are over 18.</li>\n"
 "    </ul>"
 msgstr ""
-"<p>Um cliente é alguém que foi referenciado através de uma das suas ferramentas de marketing e que depositou dinheiro na sua respectiva conta da %1. Ele deve cumprir os seguintes critérios:</p>\n"
+"<p>Um cliente é alguém que foi referenciado através de uma das suas "
+"ferramentas de marketing e que depositou dinheiro na sua respectiva conta da "
+"%1. Ele deve cumprir os seguintes critérios:</p>\n"
 "  <ul class='checked'>\n"
-"        <li>Não ter sido anteriormente cliente da %1.</li>\n"
+"        <li>Não ter sido cliente da %1 anteriormente.</li>\n"
 "        <li>Ter realizado o depósito mínimo.</li>\n"
 "        <li>Ter mais de 18 anos.</li>\n"
 "   </ul>"
@@ -537,7 +557,9 @@ msgstr ""
 #. ($r->url_for('/cashier/forward')
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:284
 msgid "<p>Sorry, an error has occurred. Please <a href=\"%1\">try accessing our Cashier</a> again.</p>"
-msgstr "<p>Lamentamos, ocorreu um erro. <a href=\"%1\">Experimente aceder ao Caixa</a> novamente.</p>"
+msgstr ""
+"<p>Lamentamos, ocorreu um erro. <a href=\"%1\">Experimente acessar o "
+"Caixa</a> novamente.</p>"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/faq.html.tt:89
 msgid ""
@@ -565,7 +587,7 @@ msgstr ""
 
 #: /home/git/translations/binary-static/src/templates/haml/home/index.html.haml:1
 msgid "<span>All durations:</span> from 10 seconds to 365 days."
-msgstr "<span>Todas as durações:</span> desde 10 segundos até 365 dias."
+msgstr "<span>Todas as durações:</span> de 10 segundos até 365 dias."
 
 #: /home/git/translations/binary-static/src/templates/haml/home/index.html.haml:1
 msgid "<span>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
@@ -577,7 +599,7 @@ msgstr "<span>Todos os mercados:</span> moedas, índices de ações e matérias-
 
 #: /home/git/translations/binary-static/src/templates/haml/home/index.html.haml:1
 msgid "<span>All payouts:</span> from $1 to $100,000."
-msgstr "<span>Todos os pagamentos:</span> desde $1 até $100.000."
+msgstr "<span>Todos os pagamentos:</span> de $1 até $100.000."
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/get_started/benefits_of_trading_binaries.html.haml:1
@@ -586,11 +608,13 @@ msgstr "<strong>Preços nos dois sentidos</strong> - a %1 indica o preço de uma
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "<strong>Additional business exposure:</strong> You will increase awareness of your services and generate new business."
-msgstr "<strong>Exposição adicional de negócio:</strong> Você aumentará a notoriedade dos seus serviços e gerar novas oportunidades de negócio."
+msgstr ""
+"<strong>Exposição adicional de negócio:</strong> Você aumentará o "
+"reconhecimento dos seus serviços e gerará novas oportunidades de negócio."
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/what_is_binary_trading.html.haml:1
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
-msgstr "<strong>Todas as durações</strong> - desde 10 segundos até 365 dias."
+msgstr "<strong>Todas as durações</strong> - de 10 segundos até 365 dias."
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/what_is_binary_trading.html.haml:1
 msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
@@ -606,7 +630,7 @@ msgstr "<strong>Todos os mercados</strong> - moedas, índices de ações e maté
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/what_is_binary_trading.html.haml:1
 msgid "<strong>All payouts</strong> - from $1 to $100,000."
-msgstr "<strong>Todos os pagamentos</strong> - desde $1 até $100.000."
+msgstr "<strong>Todos os pagamentos</strong> - de $1 até $100.000."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/register/risk_disclaimer_message.html.tt:2
 msgid "<strong>Appropriateness Test: WARNING:</strong> In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved)."
@@ -629,7 +653,9 @@ msgstr "<strong>Comissões:</strong> Você irá cobrar uma comissão para proces
 #: /home/git/translations/binary-static/src/templates/haml/get_started/benefits_of_trading_binaries.html.haml:1
 #: /home/git/translations/binary-static/src/templates/haml/get_started/how_to_trade_binaries.html.haml:1
 msgid "<strong>Commodities</strong> - trade major commodities such as gold and oil."
-msgstr "<strong>Matérias-primas</strong> - negocie matérias-primas de alta importância, tais como o ouro e o petróleo."
+msgstr ""
+"<strong>Matérias-primas</strong> - negocie matérias-primas de grande "
+"importância, tais como o ouro e o petróleo."
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/benefits_of_trading_binaries.html.haml:1
 msgid "<strong>Currencies</strong> - trade all major FX pairs, around the clock."
@@ -2908,6 +2934,16 @@ msgid ""
 "For security reasons and an improved user experience, we encourage you to deposit and withdraw using the same payment method.\n"
 "\n"
 msgstr ""
+"Prezado Cliente,\n"
+"\n"
+"A fim de verificar a sua solicitação de retirada, clique no seguinte link :\n"
+"\n"
+"%1\n"
+"\n"
+"Por motivos de segurança e para uma experiência do usuário melhorada, "
+"recomendamos que você efetue depósitos e retiradas através do mesmo método "
+"de pagamento.\n"
+"\n"
 
 #. (link)
 #: /home/git/translations/binary-static/src/templates/toolkit/email/resend_verification.html.tt:1
@@ -6790,16 +6826,14 @@ msgid "Password reset"
 msgstr "Redefinição de senha"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/account/change_passwordws.html.tt:34
-#, fuzzy
 #| msgid "Your password should be at least 6 characters."
 msgid "Password should be at least 6 characters long."
-msgstr "A sua senha deve conter pelo menos 6 caracteres."
+msgstr "A senha deve conter pelo menos 6 caracteres."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/account/change_passwordws.html.tt:36
-#, fuzzy
 #| msgid "Your password should be at least 5 characters."
 msgid "Password should be maximum 25 characters long."
-msgstr "A sua senha deve ter pelo menos 5 caracteres."
+msgstr "A senha deve conter no máximo 25 caracteres."
 
 #: /home/git/translations/binary-static/src/templates/haml/layouts/default/footer.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/global/footer.html.tt:140
@@ -7084,10 +7118,9 @@ msgid "Please enter the first line of your home address."
 msgstr "Introduza a primeira linha do seu endereço residencial."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/account/change_passwordws.html.tt:17
-#, fuzzy
 #| msgid "Please enter your secret answer"
 msgid "Please enter your current password."
-msgstr "Introduza a sua resposta secreta"
+msgstr "Insira a sua senha atual."
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1385
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2882
@@ -7683,10 +7716,9 @@ msgstr "Cotações em tempo real não disponíveis"
 
 #. ($symbol)
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:183
-#, fuzzy
 #| msgid "Realtime quotes not available"
 msgid "Realtime quotes not available for %1"
-msgstr "Cotações em tempo real não disponíveis"
+msgstr "Cotações em tempo real não disponíveis para %1"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/benefits_of_trading_binaries.html.haml:1
 msgid "Reap the rewards of trading binaries, knowing your funds are always safe."
@@ -8457,10 +8489,9 @@ msgstr "Lamentamos, você auto excluiu-se da página Web até %1."
 
 #. ($lim)
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:215
-#, fuzzy
 #| msgid "Sorry, you have excluded yourself from the website until %1."
 msgid "Sorry, you have excluded yourself until %1."
-msgstr "Lamentamos, você auto excluiu-se da página Web até %1."
+msgstr "Lamentamos, você excluiu-se até %1."
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1053
 msgid "Sorry, you have open positions. Please close out all open positions before requesting additional funds."
@@ -11312,7 +11343,7 @@ msgstr "Lembramos você que as opções binárias disponibilizadas pela %1 não 
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:191
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:246
 msgid "You are already subscribed to %1"
-msgstr ""
+msgstr "Você já subscreveu a %1"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:1957
 msgid "You are being given the better price."
@@ -11909,10 +11940,11 @@ msgstr "As suas definições foram atualizadas com sucesso."
 
 #. ($c->stash('request')
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:842
-#, fuzzy
 #| msgid "If this error persists, please contact <a href=\"%1\">Customer Support</a>."
 msgid "Your token has expired. If you require further assistance, please contact our <a href=\"%1\"><strong>Customer Support</strong></a>."
-msgstr "Se este erro persistir, contate o <a href=\"%1\">Atendimento ao Cliente</a>."
+msgstr ""
+"O seu token já expirou. Se necessita de assistência adicional, contate o "
+"nosso <a href=\"%1\"><strong>Apoio ao cliente</strong></a>."
 
 #. (($mode eq 'login' ? 'since login' : 'for the recent 48 hours')
 #: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1

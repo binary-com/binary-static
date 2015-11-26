@@ -11,9 +11,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-11-19 15:09+0000\n"
-"Last-Translator: Robert Grundler <grundlertex@gmail.com>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/binary/static/de/>\n"
+"PO-Revision-Date: 2015-11-24 07:20+0000\n"
+"Last-Translator: Karin Graf <karin_graf@hotmail.com>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/binary/static/de/>"
+"\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2911,6 +2912,16 @@ msgid ""
 "For security reasons and an improved user experience, we encourage you to deposit and withdraw using the same payment method.\n"
 "\n"
 msgstr ""
+"Sehr geehrter Kunde,\n"
+"\n"
+"Damit wir Ihren Abhebeauftrag verfizieren können, klicken Sie bitte auf den "
+"folgenden Link:\n"
+"\n"
+"%1\n"
+"\n"
+"Aus Sicherheitsgründen und zum besseren Kundenerlebnis bitten wir Sie, immer "
+"mit der selben Zahlungsmethode einzuzahlen und abzuheben.\n"
+"\n"
 
 #. (link)
 #: /home/git/translations/binary-static/src/templates/toolkit/email/resend_verification.html.tt:1
@@ -6795,16 +6806,14 @@ msgid "Password reset"
 msgstr "Passwort zurücksetzen"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/account/change_passwordws.html.tt:34
-#, fuzzy
 #| msgid "Your password should be at least 6 characters."
 msgid "Password should be at least 6 characters long."
-msgstr "Ihr Passwort muss aus mindestens 6 Zeichen bestehen."
+msgstr "Da Passwort muss aus mindestens 6 Zeichen lang sein."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/account/change_passwordws.html.tt:36
-#, fuzzy
 #| msgid "Your password should be at least 5 characters."
 msgid "Password should be maximum 25 characters long."
-msgstr "Ihr Passwort muss aus mindestens 5 Zeichen bestehen."
+msgstr "Das Passwort muss aus darf höchstens 25 Zeichen lang sein."
 
 #: /home/git/translations/binary-static/src/templates/haml/layouts/default/footer.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/global/footer.html.tt:140
@@ -7089,10 +7098,9 @@ msgid "Please enter the first line of your home address."
 msgstr "Bitte geben Sie die erste Privatadresszeile ein."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/account/change_passwordws.html.tt:17
-#, fuzzy
 #| msgid "Please enter your secret answer"
 msgid "Please enter your current password."
-msgstr "Bitte geben Sie die Antwort auf Ihre Geheimfrage ein"
+msgstr "Bitte geben Sie Ihr aktuelles Passwort ein."
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1385
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2882
@@ -7688,10 +7696,9 @@ msgstr "Keine Echtzeit-Notierungen vorhanden"
 
 #. ($symbol)
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:183
-#, fuzzy
 #| msgid "Realtime quotes not available"
 msgid "Realtime quotes not available for %1"
-msgstr "Keine Echtzeit-Notierungen vorhanden"
+msgstr "Für %1 sind keine Echtzeit-Notierungen vorhanden"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/benefits_of_trading_binaries.html.haml:1
 msgid "Reap the rewards of trading binaries, knowing your funds are always safe."
@@ -8462,10 +8469,9 @@ msgstr "Es tut uns leid, aber Sie haben sich selbst bis zum %1 von der Website a
 
 #. ($lim)
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:215
-#, fuzzy
 #| msgid "Sorry, you have excluded yourself from the website until %1."
 msgid "Sorry, you have excluded yourself until %1."
-msgstr "Es tut uns leid, aber Sie haben sich selbst bis zum %1 von der Website ausgeschlossen."
+msgstr "Es tut uns leid, aber Sie haben sich selbst bis zum %1 ausgeschlossen."
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1053
 msgid "Sorry, you have open positions. Please close out all open positions before requesting additional funds."
@@ -10403,7 +10409,12 @@ msgstr "Leider zeigen die von Ihnen zuvor angegebenen Antworten, dass Sie nicht 
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/beginners_faq.html.haml:1
 msgid "Unfortunately, no – funds initially deposited through one payment method must be withdrawn through the same system; funds cannot be transferred to an alternate system for withdrawal. We do offer a wide variety of payment methods, to suit your specific needs and preferences."
-msgstr "Leider nein - Guthaben, das mit einer Zahlungsmethode eingezahlt wurde, muss auch über das selbe System abgehoben werden. Guthaben kann nicht über ein alternatives System abgehoben werden. Wir bieten Ihnen eine große Auswahl an Zahlungsmethoden, um Ihren besonderen Bedürfnissen oder Vorlieben nachzukommen"
+msgstr ""
+"Leider nein - Guthaben, das mit einer Zahlungsmethode eingezahlt wurde, muss "
+"auch über das selbe System abgehoben werden. Guthaben kann nicht über ein "
+"alternatives System abgehoben werden. Wir bieten Ihnen eine große Auswahl an "
+"Zahlungsmethoden, um Ihren besonderen Bedürfnissen oder Vorlieben "
+"nachzukommen."
 
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/PortfolioManagement.pm:25
 msgid "Unknown contract proposal"
@@ -11323,7 +11334,7 @@ msgstr "Sie wurden darüber in Kenntnis gesetzt, dass die von %1 angebotenen Bin
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:191
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:246
 msgid "You are already subscribed to %1"
-msgstr ""
+msgstr "Sie haben sich schon bei %1 angemeldet"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:1957
 msgid "You are being given the better price."
@@ -11920,10 +11931,12 @@ msgstr "Ihre Einstellungen wurden erfolgreich aktualisiert."
 
 #. ($c->stash('request')
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:842
-#, fuzzy
 #| msgid "If this error persists, please contact <a href=\"%1\">Customer Support</a>."
 msgid "Your token has expired. If you require further assistance, please contact our <a href=\"%1\"><strong>Customer Support</strong></a>."
-msgstr "Wenn dieser Fehler bestehen bleibt, kontaktieren Sie bitte die <a href=\"%1\">Kundenbetreuung</a>."
+msgstr ""
+"Ihr Token ist abgelaufen. Wenn Sie weitere Unterstützung benötigen, setzen "
+"Sie sich bitte mit unserer <a href=\"%1\""
+"><strong>Kundenunterstützung</strong></a> in Verbindung."
 
 #. (($mode eq 'login' ? 'since login' : 'for the recent 48 hours')
 #: /home/git/translations/binary-static/src/templates/haml/user/reality_check.html.haml:1
