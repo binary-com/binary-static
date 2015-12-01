@@ -52,7 +52,7 @@
                 </p>
             [% END %]
         </div><!-- sell_bottom_content -->
-        <div id="sell_extra_info_data" style="display:none;" sell_channel="[% sell_channel %]" stream_url="[% stream_url %]" error_message="[% error_message %]" submit_url="[% submit_url %]" barrier="[% barrier %]" barrier2="[% barrier2 %]" path_dependent="[% path_dependent %]" is_immediate="[% is_immediate %]" is_negative="[% is_negative %]" is_forward_starting="[% is_forward_starting %]" trade_feed_delay="[% trade_feed_delay %]"></div>
+        <div id="sell_extra_info_data" style="display:none;" sell_channel="[% sell_channel %]" stream_url="[% stream_url %]" error_message="[% error_message %]" submit_url="[% submit_url %]" barrier="[% barrier %]" barrier2="[% barrier2 %]" path_dependent="[% path_dependent %]" is_immediate="[% is_immediate %]" is_negative="[% is_negative %]" is_forward_starting="[% is_forward_starting %]" trade_feed_delay="[% trade_feed_delay %]" purchase_price="[% purchase_price %]" shortcode="[% shortcode %]" payout="[% payout %]" currency="[% currency %]" contract_id="[% contract_id %]"></div>
         <div id="overlay-wrapper" style="display: none;"></div>
     </div><!-- sell_content_container !-->
     <div style="display:none;" id='reload_sell_container'>

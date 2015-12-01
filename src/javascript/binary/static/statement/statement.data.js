@@ -8,7 +8,7 @@ var StatementData = (function(){
             $.extend(true, req, opts);    
         }
 
-        TradeSocket.send(req);
+        BinarySocket.send(req);
     }
 
     return {

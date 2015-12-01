@@ -7,18 +7,20 @@ var Message = (function () {
 
     var process = function (msg) {
         var response = JSON.parse(msg.data);
+        if(!TradePage.is_trading_page()){
+            forgetTradingStreams();
+            return;
+        }
         if (response) {
             var type = response.msg_type;
-            if (type === 'authorize') {
-                TUser.set(response.authorize);
-                TradeSocket.send({ payout_currencies: 1 });
-            } else if (type === 'active_symbols') {
+            if (type === 'active_symbols') {
                 processActiveSymbols(response);
             } else if (type === 'contracts_for') {
                 processContract(response);
             } else if (type === 'payout_currencies') {
                 sessionStorage.setItem('currencies', msg.data);
                 displayCurrencies();
+                Symbols.getSymbols(1);
             } else if (type === 'proposal') {
                 processProposal(response);
             } else if (type === 'buy') {
@@ -31,17 +33,6 @@ var Message = (function () {
                 StatementWS.statementHandler(response);
             } else if (type === 'profit_table'){
                 ProfitTableWS.profitTableHandler(response);
-            } else if (type === 'balance'){
-                var passthroughObj = response.echo_req.passthrough;
-                if (passthroughObj){
-                    switch (passthroughObj.purpose) {
-                        case "statement_footer":
-                            StatementUI.updateStatementFooterBalance(response.balance);
-                            break;
-                        default :
-                            //do nothing
-                    }
-                }
             } else if (type === 'error') {
                 $(".error-msg").text(response.error.message);
             }

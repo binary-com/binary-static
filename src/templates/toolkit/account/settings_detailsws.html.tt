@@ -1,0 +1,134 @@
+<div class="grd-grid-12">
+
+    <h1>[% l('Personal Details') %]</h1>
+    
+    <form class="form form grd-row-padding hidden" id="frmPersonalDetails">
+
+        <fieldset>
+            <legend>[% l('Details') %]</legend>
+
+            <div class="grd-row-padding row clear hidden RealAcc">
+                <div class="grd-grid-4 form_label">
+                    <label><em class="required_asterisk">**</em> [% l('Name') %]</label>
+                </div>
+                <div class="grd-grid-8">
+                    <span id="inputheading">
+                        <strong id="lblName"></strong>
+                    </span>
+                </div>
+            </div>
+
+            <div class="grd-row-padding row clear rowBirthDate hidden RealAcc">
+                <div class="grd-grid-4 form_label">
+                    <label><em class="required_asterisk">**</em> [% l('Date of birth') %]</label>
+                </div>
+                <div class="grd-grid-8">
+                    <span id="inputheading">
+                        <strong id="lblBirthDate"></strong>
+                    </span>
+                </div>
+            </div>
+
+            <div class="grd-row-padding row clear">
+                <div class="grd-grid-4 form_label">
+                    <label><em class="required_asterisk">**</em> [% l('Country of Residence') %]</label>
+                </div>
+                <div class="grd-grid-8">
+                    <span id="inputheading">
+                        <strong id="lblCountry"></strong>
+                    </span>
+                </div>
+            </div>
+
+            <div class="grd-row-padding row clear">
+                <div class="grd-grid-4 form_label">
+                    <label><em class="required_asterisk">**</em> [% l('Email address') %]</label>
+                </div>
+                <div class="grd-grid-8">
+                    <span id="inputheading">
+                        <strong id="lblEmail"></strong>
+                    </span>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="hidden RealAcc">
+            <legend>[% l('Address') %]</legend>
+
+            <div class="grd-row-padding row clear">
+                <div class="grd-grid-4 form_label">
+                    <label for="Address1">[% l('First line of home address') %]</label>
+                </div>
+                <div class="grd-grid-8">
+                    <input type="text" id="Address1" maxlength="70" />
+                </div>
+            </div>
+
+            <div class="grd-row-padding row clear">
+                <div class="grd-grid-4 form_label">
+                    <label for="Address2">[% l('Second line of home address') %]</label>
+                </div>
+                <div class="grd-grid-8">
+                    <input type="text" id="Address2" maxlength="70" />
+                </div>
+            </div>
+
+            <div class="grd-row-padding row clear">
+                <div class="grd-grid-4 form_label">
+                    <label for="City">[% l('Town/City') %]</label>
+                </div>
+                <div class="grd-grid-8">
+                    <input type="text" id="City" maxlength="35" />
+                </div>
+            </div>
+
+            <div class="grd-row-padding row clear">
+                <div class="grd-grid-4 form_label">
+                    <label for="State">[% l('State/Province') %]</label>
+                </div>
+                <div class="grd-grid-8">
+                    <select id="State"></select>
+                </div>
+            </div>
+
+            <div class="grd-row-padding row clear">
+                <div class="grd-grid-4 form_label">
+                    <label for="Postcode">[% l('Postal Code / ZIP') %]</label>
+                </div>
+                <div class="grd-grid-8">
+                    <input type="text" id="Postcode" maxlength="20" />
+                </div>
+            </div>
+
+            <div class="grd-row-padding row clear">
+                <div class="grd-grid-4 form_label">
+                    <label for="Phone">[% l('Telephone') %]</label>
+                </div>
+                <div class="grd-grid-8">
+                    <input type="text" id="Phone" maxlength="35" />
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="formlayout settings sticky hidden RealAcc" id="formlayout">
+            <div class="grd-row-padding">
+                <div class="grd-grid-4"></div>
+                <div class="grd-grid-8">
+                    <div id="formMessage"></div>
+                </div>
+            </div>
+            <div class="grd-row-padding">
+                <div class="grd-grid-4"></div>
+                <div class="grd-grid-8">
+                    <span class="button">
+                        <button class="button">[% l('Update') %]</button>
+                    </span>
+                </div>
+            </div>
+        </fieldset>
+
+    </form>
+
+    <p class="required hidden RealAcc"><em class="required_asterisk">**</em> [% l('To change your name, date of birth, country of residence, or email, please contact <a href="[_1]">Customer Support</a>.', request.url_for('contact')) %]</p>
+
+</div>

@@ -71,9 +71,11 @@ var Price = (function () {
             var endTime2 = Durations.getTime();
             if(!endTime2){
                 var trading_times = Durations.trading_times();
-                if(trading_times.hasOwnProperty(endDate2))
-                endTime2 = trading_times[endDate2][underlying.value];
+                if(trading_times.hasOwnProperty(endDate2) && typeof trading_times[endDate2][underlying.value] === 'object' && trading_times[endDate2][underlying.value].length  && trading_times[endDate2][underlying.value][0]!=='--'){
+                    endTime2 = trading_times[endDate2][underlying.value];
+                }
             }
+
             proposal['date_expiry'] = moment.utc(endDate2 + " " + endTime2).unix();
         }
 
@@ -130,7 +132,15 @@ var Price = (function () {
         }
 
         var position = contractTypeDisplayMapping(type);
+
+        if(!position){
+            return;
+        }
+        
         var container = document.getElementById('price_container_'+position);
+        if(!$(container).is(":visible")){
+            $(container).fadeIn(200);
+        }
 
         var h4 = container.getElementsByClassName('contract_heading')[0],
             amount = container.getElementsByClassName('contract_amount')[0],

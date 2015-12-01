@@ -16,7 +16,16 @@ var Durations = (function(){
     var expiry_time = '';
     var has_end_date = 0;
 
-    var displayDurations = function(startType) {
+    var displayDurations = function() {
+
+        var startType;
+        if(sessionStorage.getItem('date_start') && StartDates.displayed() && moment(sessionStorage.getItem('date_start')*1000).isAfter(moment()) ){
+            startType = 'forward';
+        }
+        else {
+            startType = 'spot';
+        }
+
         var durations = Contract.durations();
         if (durations === false) {
             document.getElementById('expiry_row').style.display = 'none';
@@ -226,9 +235,15 @@ var Durations = (function(){
             amountElement.datepicker({
                 minDate: tomorrow,
                 onSelect: function(value) {
-                    var date = new Date(value);
-                    var today = new Date();
-                    var dayDiff = Math.ceil((date - today) / (1000 * 60 * 60 * 24));
+                    var dayDiff;
+                    if($('#duration_amount').val()){
+                        dayDiff = $('#duration_amount').val();
+                    }
+                    else{
+                        var date = new Date(value);
+                        var today = new Date();
+                        dayDiff = Math.ceil((date - today) / (1000 * 60 * 60 * 24));
+                    }                    
                     amountElement.val(dayDiff);
                     amountElement.trigger('change');
                 }
@@ -310,12 +325,12 @@ var Durations = (function(){
 
     var selectEndDate = function(end_date){
         var expiry_time = document.getElementById('expiry_time');
+        $('#expiry_date').val(end_date);
         if(moment(end_date).isAfter(moment(),'day')){
             Durations.setTime('');
             StartDates.setNow();
             expiry_time.hide();
             var date_start = StartDates.node();
-
             processTradingTimesRequest(end_date);
         }
         else{
@@ -323,6 +338,7 @@ var Durations = (function(){
             expiry_time.show();
             processPriceRequest();
         }
+
         sessionStorage.setItem('end_date',end_date);
         Barriers.display();
     };
@@ -331,7 +347,7 @@ var Durations = (function(){
         display: displayDurations,
         displayEndTime: displayEndTime,
         populate: durationPopulate,
-        setTime: function(time){ expiry_time = time; },
+        setTime: function(time){ $('#expiry_time').val(time); expiry_time = time; },
         getTime: function(){ return expiry_time; },
         processTradingTimesAnswer: processTradingTimesAnswer,
         trading_times: function(){ return trading_times; },

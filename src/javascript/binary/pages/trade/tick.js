@@ -45,6 +45,7 @@ var Tick = (function () {
     };
 
     var display = function () {
+        $('#spot').fadeIn(200);
         var spotElement = document.getElementById('spot');
         var message = '';
         if (errorMessage) {
@@ -71,7 +72,12 @@ var Tick = (function () {
         id: function () { return id; },
         epoch: function () { return epoch; },
         errorMessage: function () { return errorMessage; },
-        clean: function(){ spots = [];},
-        spots: function(){ return spots;}
+        clean: function(){ 
+            spots = []; 
+            quote = '';
+            $('#spot').fadeOut(200);
+        },
+        spots: function(){ return spots;},
+        setQuote: function(q){ quote = q; }
     };
 })();

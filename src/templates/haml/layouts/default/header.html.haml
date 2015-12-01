@@ -19,7 +19,7 @@
           %form#loginid-switch-form{:action => url_for('loginid_switch'), :method => 'post'}
             #login-fields
               %select{:name => 'client_loginid', :id => 'client_loginid'}
-            %a#view-balances{:href => url_for('/user/balance')}= l('View balances')
+            %div#balance
             %a.logout{:href => url_for('/logout')}= l('Log out')
       .grd-grid-3.grd-grid-mobile-9.grd-grid-phablet-10.grd-no-gutter-left.by_client_type.client_logged_out#client-logged-out
         %form#login-form{:action => url_for('/login'), :method => 'post'}

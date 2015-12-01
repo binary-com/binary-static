@@ -80,6 +80,7 @@
                      a.setAttribute('menuitem',first);
                      ul.appendChild(fragment2);
                      ul.setAttribute('class', 'tm-ul-2');
+                     ul.setAttribute('id', el1[0]+'-submenu');
 
                      if(flag){
                         li.classList.add('active');
@@ -131,35 +132,35 @@
          target.removeChild(target.firstChild);
      }
 
-     for (var key in elements) {
-         if (elements.hasOwnProperty(key)){
-             var option = document.createElement('option'), content = document.createTextNode(elements[key].name);
-             option.setAttribute('value', key);
-             if (selected && selected === key) {
-                 option.setAttribute('selected', 'selected');
-             }
-             if(!elements[key].is_active){
-                option.setAttribute('disabled', '');
-             }
-             option.appendChild(content);
-             fragment.appendChild(option);
+     var keys1 = Object.keys(elements).sort(marketSort);
+     for (var i=0; i<keys1.length; i++) {
+         var key = keys1[i]; 
+         var option = document.createElement('option'), content = document.createTextNode(elements[key].name);
+         option.setAttribute('value', key);
+         if (selected && selected === key) {
+             option.setAttribute('selected', 'selected');
+         }
+         if(!elements[key].is_active){
+            option.setAttribute('disabled', '');
+         }
+         option.appendChild(content);
+         fragment.appendChild(option);
 
-             if(elements[key].submarkets && Object.keys(elements[key].submarkets).length){
-                for(var key2 in elements[key].submarkets){
-                    if(key2){
-                        option = document.createElement('option');
-                        option.setAttribute('value', key2);
-                        if (selected && selected === key2) {
-                            option.setAttribute('selected', 'selected');
-                        }
-                        if(!elements[key].submarkets[key2].is_active){
-                           option.setAttribute('disabled', '');
-                        }
-                        option.textContent = '\xA0\xA0\xA0\xA0'+elements[key].submarkets[key2].name;
-                        fragment.appendChild(option);
-                    }
+         if(elements[key].submarkets && Object.keys(elements[key].submarkets).length){
+            var keys2 = Object.keys(elements[key].submarkets).sort(marketSort);
+            for (var j=0; j<keys2.length; j++) {
+                var key2 = keys2[j]; 
+                option = document.createElement('option');
+                option.setAttribute('value', key2);
+                if (selected && selected === key2) {
+                    option.setAttribute('selected', 'selected');
                 }
-             }
+                if(!elements[key].submarkets[key2].is_active){
+                   option.setAttribute('disabled', '');
+                }
+                option.textContent = '\xA0\xA0\xA0\xA0'+elements[key].submarkets[key2].name;
+                fragment.appendChild(option);
+            }
          }
      }
      if (target) {
@@ -213,8 +214,17 @@ function displayUnderlyings(id, elements, selected) {
         var keys = Object.keys(elements).sort(function(a, b) {
             return elements[a]['display'].localeCompare(elements[b]['display']);
         });
-        keys.forEach(function (key) {
-            if (elements.hasOwnProperty(key)){
+        var submarkets = {};
+        for(var i=0; i<keys.length; i++){
+            if(!submarkets.hasOwnProperty(elements[keys[i]].submarket)){
+                submarkets[elements[keys[i]].submarket] = [];
+            }
+            submarkets[elements[keys[i]].submarket].push(keys[i]);
+        }
+        var keys2 = Object.keys(submarkets).sort(marketSort);
+        for(var j=0; j<keys2.length; j++){
+            for(var k=0; k<submarkets[keys2[j]].length; k++){
+                var key = submarkets[keys2[j]][k];
                 var option = document.createElement('option'), content = document.createTextNode(text.localize(elements[key]['display']));
                 option.setAttribute('value', key);
                 if (elements[key]['is_active'] !== 1) {
@@ -226,7 +236,7 @@ function displayUnderlyings(id, elements, selected) {
                 option.appendChild(content);
                 fragment.appendChild(option);
             }
-        });
+        }
     }
     if (target) {
         target.appendChild(fragment);
@@ -251,6 +261,9 @@ function getFormNameBarrierCategory(displayFormName) {
         } else if (displayFormName === 'callput'){
             obj['formName'] = displayFormName;
             obj['barrierCategory'] = 'euro_atm';
+        } else if (displayFormName === 'overunder' || displayFormName === 'evenodd' || displayFormName === 'matchdiff'){
+            obj['formName'] = 'digits';
+            obj['barrierCategory'] = '';
         } else {
             obj['formName'] = displayFormName;
             obj['barrierCategory'] = '';
@@ -278,6 +291,10 @@ function contractTypeDisplayMapping(type) {
         ASIAND: "bottom",
         DIGITMATCH: "top",
         DIGITDIFF: "bottom",
+        DIGITEVEN: "top",
+        DIGITODD: "bottom",
+        DIGITOVER: "top",
+        DIGITUNDER: "bottom",
         EXPIRYRANGE: "top",
         EXPIRYMISS: "bottom",
         RANGE: "top",
@@ -339,6 +356,23 @@ function hidePriceOverlay() {
     if (elm) {
         elm.style.display = 'none';
     }
+    
+}
+
+function hideFormOverlay(){
+    'use strict';
+    var elm = document.getElementById('loading_container3');
+    if (elm) {
+        elm.style.display = 'none';
+    }
+}
+
+function showFormOverlay(){
+    'use strict';
+    var elm = document.getElementById('loading_container3');
+    if (elm) {
+        elm.style.display = 'block';
+    }
 }
 
 /*
@@ -391,8 +425,12 @@ function getContractCategoryTree(elements){
             ['endsinout',
             'staysinout']
         ],
-        'asian',
-        'digits',
+        // 'asian',
+        ['digits',
+            ['matchdiff',
+            'evenodd',
+            'overunder']
+        ],
         'spreads'
     ];
 
@@ -534,7 +572,7 @@ function displayCommentSpreads(node, currency, point) {
             } else {
                 displayAmount = parseFloat(stopLoss);
             }
-            node.textContent = Content.localize().textSpreadDepositComment + " " + currency + " " + displayAmount + " " + Content.localize().textSpreadRequiredComment + ": " + point + " " + Content.localize().textSpreadPointsComment;
+            node.textContent = Content.localize().textSpreadDepositComment + " " + currency + " " + displayAmount.toFixed(2) + " " + Content.localize().textSpreadRequiredComment + ": " + point + " " + Content.localize().textSpreadPointsComment;
         }
     }
 }
@@ -649,6 +687,44 @@ function durationOrder(duration){
         d:5
     };
     return order[duration];
+}
+
+function marketOrder(market){
+    'use strict';
+    var order = {
+        forex: 0,
+        major_pairs: 1,
+        minor_pairs: 2,
+        smart_fx: 3,
+        indices: 4,
+        asia_oceania: 5,
+        europe_africa: 6,
+        americas: 7,
+        stocks: 8,
+        france: 9,
+        belgium: 10,
+        amsterdam: 11,
+        commodities: 12,
+        metals: 13,
+        energy: 14,
+        random: 15,
+        random_index: 16,
+        random_daily: 17,
+        random_nightly: 18
+    };
+    return order[market];
+}
+
+function marketSort(a,b){
+    if(marketOrder(a) > marketOrder(b)){
+        return 1;
+    }
+    else if(marketOrder(a) < marketOrder(b)){
+        return -1;
+    }
+    else{
+        return 0;
+    }
 }
 
 function displayTooltip(market, symbol){
@@ -783,6 +859,22 @@ function selectOption(option, select){
     }
 }
 
+function updatePurchaseStatus(final_price, pnl, contract_status){
+    $('#contract_purchase_heading').text(text.localize(contract_status));
+    $payout = $('#contract_purchase_payout');
+    $cost = $('#contract_purchase_cost');
+    $profit = $('#contract_purchase_profit');
+
+    $payout.html(Content.localize().textBuyPrice + '<p>'+Math.abs(pnl)+'</p>');
+    $cost.html(Content.localize().textFinalPrice + '<p>'+final_price+'</p>');
+    if(!final_price){
+        $profit.html(Content.localize().textLoss + '<p>'+pnl+'</p>');
+    }
+    else{
+        $profit.html(Content.localize().textProfit + '<p>'+(Math.round((final_price-pnl)*100)/100)+'</p>');        
+    }
+}
+
 function updateWarmChart(){
     var $chart = $('#trading_worm_chart');
     var spots = Tick.spots();
@@ -806,4 +898,32 @@ function updateWarmChart(){
             $chart.hide();
         }  
     }  
+}
+
+function reloadPage(){
+    sessionStorage.removeItem('market');
+    sessionStorage.removeItem('formname');
+    sessionStorage.removeItem('underlying');
+
+    sessionStorage.removeItem('expiry_type');
+    sessionStorage.removeItem('stop_loss');
+    sessionStorage.removeItem('stop_type');
+    sessionStorage.removeItem('stop_profit');
+    sessionStorage.removeItem('amount_per_point');
+    sessionStorage.removeItem('prediction');
+    sessionStorage.removeItem('amount');
+    sessionStorage.removeItem('amount_type');
+    sessionStorage.removeItem('currency');
+    sessionStorage.removeItem('duration_units');
+    sessionStorage.removeItem('diration_value');
+    sessionStorage.removeItem('date_start');
+
+    location.reload();
+}
+
+function addComma(num){
+    if (num % 1 !== 0) {
+        num = num.toFixed(2);
+    }
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }

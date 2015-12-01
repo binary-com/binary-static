@@ -31,7 +31,7 @@
                 <abbr rel='tooltip' title="[% IF not_started %][% l('starting in') %][% ELSE %][% l('running') %] [% END %]"><span id="trade_date_now" class='extra-info'>[% item.interval.display_string %]</span></abbr>
             [% ELSIF item.is_end %]
                 <span style="display: none;" id="end_time_container" [% FOREACH interval IN item.interval %] [% interval.key %] = "[% interval.value %]" [% END %]></span>
-                    [% IF !is_expired && !not_started && !is_sold && !is_past_expiry %]
+                    [% IF !is_expired && !not_started && !is_past_expiry %]
                         <abbr rel='tooltip' title="[% l('remaining') %]"><span id="trade_date_end" class='extra-info'>&nbsp;</span></abbr>
                     [% ELSE %]
                         &nbsp;

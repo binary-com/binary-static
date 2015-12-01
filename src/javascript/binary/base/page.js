@@ -783,7 +783,9 @@ Page.prototype = {
         this.record_affiliate_exposure();
         this.contents.on_load();
         this.on_click_acc_transfer();
-        this.on_click_view_balances();
+        if(getCookieItem('login')){
+            ViewBalance.init();
+        }
         $('#current_width').val(get_container_width());//This should probably not be here.
     },
     on_unload: function() {
@@ -812,34 +814,6 @@ Page.prototype = {
                 return false;
             }
             $('#acc_transfer_submit').submit();
-        });
-    },
-    on_click_view_balances: function() {
-        $('#view-balances').on('click', function(event) {
-            event.preventDefault();
-            if ($(this).hasClass("disabled")) {
-                return false;
-            }
-            $(this).addClass("disabled");
-
-            $.ajax({
-                url: page.url.url_for('user/balance'),
-                dataType: 'text',
-                success: function (data) {
-                    var outer = $('#client-balances');
-                    if (outer) outer.remove();
-
-                    outer = $("<div id='client-balances' class='lightbox'></div>").appendTo('body');
-                    middle = $('<div />').appendTo(outer);
-                    $('<div>' + data + '</div>').appendTo(middle);
-
-                    $('#client-balances [bcont=1]').on('click', function () {
-                        $('#client-balances').remove();
-                    });
-                },
-            }).always(function() {
-                $('#view-balances').removeClass("disabled");
-            });
         });
     },
 

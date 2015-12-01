@@ -1,39 +1,50 @@
 .flex-table-container {
-  min-width: 100px;
-  overflow-x: auto;
+  $md: 600px;
 
   th {
     text-align: left !important;
     border-bottom: none !important;
+    overflow:hidden;
   }
-
   td {
     text-align: left !important;
     padding-left: 10px;
+    overflow:hidden;
+
   }
-
-  .break-line {
-    white-space: pre-line;
+  .pre{
+    white-space: pre;
   }
+  @media(max-width: $md){
+    td{
+      padding-left : 5px !important;
+      padding-right : 5px !important
+    }
+    th{
+      padding-left : 5px !important;
+      padding-right : 5px !important;
+    }
+  }
+  #statement-table{
+    .flex-tr {     
+      @media (max-width : $md){
+        & > th:nth-child(4){ display : none !important; }
+        & > td:nth-child(4){ display : none !important; }
+        .flex-tr-child {
+          font-size : 12px;
+        }
+      }
+    }
+  }
+  #profit-table{
 
-  .flex-table {
-    min-width: 700px;
-    display: flex;
-    flex-direction: column;
-
-    .flex-tr {
-      display: flex;
-      flex-wrap: wrap;
-      flex-grow: 1;
-      flex-shrink: 1;
-      flex-basis: 100px;
-      flex-direction: row;
-      align-items: stretch;
-
-      .flex-tr-child {
-        flex-grow: 1;
-        flex-shrink: 1;
-        flex-basis: 50px;
+    .flex-tr {     
+      @media (max-width : $md){
+        & > th:nth-child(3){ display : none !important; }
+        & > td:nth-child(3){ display : none !important; }
+        .flex-tr-child {
+          font-size : 12px;
+        }
       }
     }
   }

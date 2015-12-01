@@ -90,10 +90,9 @@ var Table = (function(){
         return $tr;
     }
 
-
     function clearTableBody(id){
         var tbody = document.querySelector("#" + id +">tbody");
-        while (tbody.firstElementChild){
+        while (tbody && tbody.firstElementChild){
             tbody.removeChild(tbody.firstElementChild);
         }
     }

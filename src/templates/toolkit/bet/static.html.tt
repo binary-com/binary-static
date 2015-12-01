@@ -23,6 +23,7 @@
             <ul class="nav tm-ul" id="contract_form_name_nav"></ul>
          </div>
          <div id="contract_container" class="col row">
+            <div id="loading_container3" class="overlay_container"></div>
             <div id="contract_form_container" class="col">
                <div id="contract_form_content">
                   <form id='websocket_form'>
@@ -201,7 +202,7 @@
                   </div>
                   <div id="contract_purchase_reference"></div>
                   <div class="button">
-                     <button id="contract_purchase_button">View</button>
+                     <button id="contract_purchase_button" class="open_contract_details"></button>
                   </div>
                   <div id="contract_purchase_spots"></div>
                   <div id="tick_chart"></div>

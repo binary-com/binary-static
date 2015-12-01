@@ -10,6 +10,7 @@ var StartDates = (function(){
     'use strict';
 
     var hasNow = 0;
+    var displayed = 0;
 
     var compareStartDate = function(a,b) {
         if (a.date < b.date)
@@ -58,7 +59,7 @@ var StartDates = (function(){
                 var b = moment.unix(start_date.close).utc();
 
                 var ROUNDING = 5 * 60 * 1000;
-                var start = moment();
+                var start = moment.utc();
 
                 if(moment(start).isAfter(moment(a))){
                     a = start;
@@ -67,16 +68,20 @@ var StartDates = (function(){
                 a = moment(Math.ceil((+a) / ROUNDING) * ROUNDING).utc();
 
                 while(a.isBefore(b)) {
-                    option = document.createElement('option');
-                    option.setAttribute('value', a.utc().unix());
-                    content = document.createTextNode(a.format('HH:mm ddd'));
-                    option.appendChild(content);
-                    fragment.appendChild(option);
+                    if(a.unix()-start.unix()>5*60){
+                        option = document.createElement('option');
+                        option.setAttribute('value', a.utc().unix());
+                        content = document.createTextNode(a.format('HH:mm ddd'));
+                        option.appendChild(content);
+                        fragment.appendChild(option);
+                    } 
                     a.add(5, 'minutes');
                 }
             });
             target.appendChild(fragment);
+            displayed = 1;
         } else {
+            displayed = 0;
             document.getElementById('date_start_row').style.display = 'none';
         }
     };
@@ -91,7 +96,8 @@ var StartDates = (function(){
     return {
         display: displayStartDates,
         node: getElement,
-        setNow: setNow
+        setNow: setNow,
+        displayed: function(){ return displayed; }
     };
 
 })();

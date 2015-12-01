@@ -105,3 +105,10 @@
     width: 111px;
     height: 38px;
 }
+.no_side_padding {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+#payment_agent {
+    outline: none;
+}

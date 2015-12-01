@@ -60,7 +60,7 @@ if(typeof is_japan === 'function'){
         };
 
         var getContracts = function(underlying) {
-            TradeSocket.send({ contracts_for: underlying, region: 'japan' });
+            BinarySocket.send({ contracts_for: underlying, region: 'japan' });
         };
 
         var getContractForms = function() {
@@ -77,10 +77,18 @@ if(typeof is_japan === 'function'){
                             tradeContractForms['higherlower'] = Content.localize().textFormHigherLower;
                         }
                     } else {
-                        tradeContractForms[contractCategory] = currentObj['contract_category_display'];
+                        tradeContractForms[contractCategory] = text.localize(currentObj['contract_category_display']);
                     }
                 }
             });
+
+            if(tradeContractForms.risefall){
+                tradeContractForms['updown'] = Content.localize().textFormUpDown;
+            }
+
+            if(tradeContractForms.endsinout || tradeContractForms.staysinout){
+                tradeContractForms['inout'] = Content.localize().textFormInOut;
+            }
 
             return tradeContractForms;
         };

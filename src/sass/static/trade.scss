@@ -158,8 +158,23 @@
   #contract_container {
     align-items: center;
     padding-top: 25px;
+    position: relative;
     #contract_form_container .col {
       margin-right: 1rem;
+    }
+    .overlay_container {
+    width: 100%;
+    display: none;
+    background: transparent;
+    z-index: 9999;
+    &#loading_container3{
+        background: $COLOR_LIGHT_GRAY;
+        opacity: 0.5;
+        display: block;
+        position: absolute;
+        height: 100%;
+        margin-top: -25px;
+      }
     }
     border: 1px solid $COLOR_GRAY;
     flex: 1 0 auto;
@@ -173,6 +188,7 @@
       align-items: stretch;
       padding: 0;
       flex: 1 0 auto;
+      display: none;
       >.col.row{
         flex: 1 0 auto;
       }
@@ -306,7 +322,7 @@
         background-size: 40%;
       }
       &.SPREADD {
-        background: url("../images/pages/trade/spreads.svg") no-repeat top center;
+        background: url("../images/pages/trade/spreads_1.svg") no-repeat top center;
         background-size: 40%;
       }
     }
@@ -558,7 +574,8 @@
   }
   .tm-ul-2 {
     top: 29px;
-    margin-top: 0;
+    margin-top: -1px;
+    border-top: 1px solid $COLOR_GRAY;
   }
 }
 

@@ -55,14 +55,18 @@ var Symbols = (function () {
             if (!tradeUnderlyings[currentMarket].hasOwnProperty(currentUnderlying)) {
                 tradeUnderlyings[currentMarket][currentUnderlying] = {
                     is_active: is_active,
-                    display: element['display_name']
+                    display: element['display_name'],
+                    market: currentMarket,
+                    submarket: currentSubMarket
                 };
             }
 
             if (!tradeUnderlyings[currentSubMarket].hasOwnProperty(currentUnderlying)) {
                 tradeUnderlyings[currentSubMarket][currentUnderlying] = {
                     is_active: is_active,
-                    display: element['display_name']
+                    display: element['display_name'],
+                    market: currentMarket,
+                    submarket: currentSubMarket
                 };
             }
 
@@ -71,7 +75,7 @@ var Symbols = (function () {
     };
 
     var getSymbols = function (update) {
-        TradeSocket.send({
+        BinarySocket.send({
             active_symbols: "brief"
         });
         need_page_update = update;

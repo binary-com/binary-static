@@ -9,6 +9,75 @@
 var TradingEvents = (function () {
     'use strict';
 
+
+    var onStartDateChange = function(value){
+
+        if(!value || !$('#date_start').find('option[value='+value+']').length){
+            return 0;
+        }
+        $('#date_start').val(value);
+
+        var make_price_request = 1;
+        if (value === 'now') {
+            sessionStorage.removeItem('date_start');
+        } else {
+            make_price_request = -1;
+            var end_time = moment(value*1000).utc().add(15,'minutes');
+            Durations.setTime(end_time.format("hh:mm"));
+            Durations.selectEndDate(end_time.format("YYYY-MM-DD"));
+            sessionStorage.setItem('date_start', value);
+        }
+
+        Durations.display();
+
+        return make_price_request;
+    };
+
+    var onExpiryTypeChange = function(value){
+        
+        if(!value || !$('#expiry_type').find('option[value='+value+']').length){
+            value = 'duration';
+        }
+
+        $('#expiry_type').val(value);
+
+        sessionStorage.setItem('expiry_type',value);
+        var make_price_request = 0;
+        if(value === 'endtime'){
+            Durations.displayEndTime();
+            if(sessionStorage.getItem('end_date')){
+                Durations.selectEndDate(sessionStorage.getItem('end_date'));
+                make_price_request = -1;
+            }
+        }
+        else{
+            Durations.display();
+            if(sessionStorage.getItem('duration_units')){
+                TradingEvents.onDurationUnitChange(sessionStorage.getItem('duration_units'));
+            }
+            if(sessionStorage.getItem('duration_amount') && sessionStorage.getItem('duration_amount') > $('#duration_minimum').text()){
+                $('#duration_amount').val(sessionStorage.getItem('duration_amount'));
+            }
+            make_price_request = 1;
+        }
+
+        return make_price_request;
+    };
+
+    var onDurationUnitChange = function(value){
+
+        if(!value || !$('#duration_units').find('option[value='+value+']').length){
+            return 0;
+        }
+        $('#duration_units').val(value);
+
+        sessionStorage.setItem('duration_units',value);
+        Durations.select_unit(value);
+        Durations.populate();
+
+        return 1;
+    };
+
     var initiate = function () {
         /*
          * attach event to market list, so when client change market we need to update undelryings
@@ -72,6 +141,7 @@ var TradingEvents = (function () {
         if (underlyingElement) {
             underlyingElement.addEventListener('change', function(e) {
                 if (e.target) {
+                    showFormOverlay();
                     showPriceOverlay();
                     var underlying = e.target.value;
                     sessionStorage.setItem('underlying', underlying);
@@ -86,7 +156,7 @@ var TradingEvents = (function () {
                     // forget the old tick id i.e. close the old tick stream
                     processForgetTicks();
                     // get ticks for current underlying
-                    TradeSocket.send({ ticks : underlying });
+                    BinarySocket.send({ ticks : underlying });
                 }
             });
         }
@@ -98,6 +168,9 @@ var TradingEvents = (function () {
         if (durationAmountElement) {
             // jquery needed for datepicker
             $('#duration_amount').on('change', debounce(function (e) {
+                if (e.target.value % 1 !== 0 ) {
+                    e.target.value = Math.floor(e.target.value);
+                }
                 sessionStorage.setItem('duration_amount',e.target.value);
                 Durations.select_amount(e.target.value);
                 processPriceRequest();
@@ -112,8 +185,7 @@ var TradingEvents = (function () {
         var expiryTypeElement = document.getElementById('expiry_type');
         if (expiryTypeElement) {
             expiryTypeElement.addEventListener('change', function(e) {
-                sessionStorage.setItem('expiry_type',e.target.value);
-                Durations.displayEndTime();
+                onExpiryTypeChange(e.target.value);
                 processPriceRequest();
             });
         }
@@ -124,11 +196,8 @@ var TradingEvents = (function () {
         var durationUnitElement = document.getElementById('duration_units');
         if (durationUnitElement) {
             durationUnitElement.addEventListener('change', function (e) {
-                sessionStorage.setItem('duration_units',e.target.value);
-                Durations.select_unit(e.target.value);
-                Durations.populate();
+                onDurationUnitChange(e.target.value);
                 processPriceRequest();
-                sessionStorage.setItem('duration_amount',document.getElementById('duration_amount').value);
             });
         }
 
@@ -158,7 +227,9 @@ var TradingEvents = (function () {
         var amountElement = document.getElementById('amount');
         if (amountElement) {
             amountElement.addEventListener('input', debounce( function(e) {
-                e.target.value = parseFloat(e.target.value).toFixed(2);
+                if (e.target.value % 1 !== 0 ) {
+                    e.target.value = parseFloat(e.target.value).toFixed(2);
+                }
                 sessionStorage.setItem('amount', e.target.value);
                 processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
@@ -173,13 +244,10 @@ var TradingEvents = (function () {
         var dateStartElement = StartDates.node();
         if (dateStartElement) {
             dateStartElement.addEventListener('change', function (e) {
-                if (e.target && e.target.value === 'now') {
-                    Durations.display('spot');
-                } else {
-                    Durations.display('forward');
-                    sessionStorage.setItem('date_start', e.target.value);
+                var r = onStartDateChange(e.target.value);
+                if(r>=0){
+                    processPriceRequest();
                 }
-                processPriceRequest();
             });
         }
 
@@ -257,7 +325,7 @@ var TradingEvents = (function () {
                 }
             }
             if (id && askPrice) {
-                TradeSocket.send(params);
+                BinarySocket.send(params);
                 Price.incrFormId();
                 processForgetProposals();
             }
@@ -337,6 +405,9 @@ var TradingEvents = (function () {
         var amountPerPointElement = document.getElementById('amount_per_point');
         if (amountPerPointElement) {
             amountPerPointElement.addEventListener('input', debounce( function (e) {
+                if (e.target.value % 1 !== 0 ) {
+                    e.target.value = parseFloat(e.target.value).toFixed(2);
+                }
                 sessionStorage.setItem('amount_per_point',e.target.value);
                 processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
@@ -364,7 +435,9 @@ var TradingEvents = (function () {
         var stopLossElement = document.getElementById('stop_loss');
         if (stopLossElement) {
             stopLossElement.addEventListener('input', debounce( function (e) {
-                e.target.value = parseFloat(e.target.value).toFixed(2);
+                if (e.target.value % 1 !== 0 ) {
+                    e.target.value = parseFloat(e.target.value).toFixed(2);
+                }
                 sessionStorage.setItem('stop_loss',e.target.value);
                 processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
@@ -377,34 +450,78 @@ var TradingEvents = (function () {
         var stopProfitElement = document.getElementById('stop_profit');
         if (stopProfitElement) {
             stopProfitElement.addEventListener('input', debounce( function (e) {
-                e.target.value = parseFloat(e.target.value).toFixed(2);
+                if (e.target.value % 1 !== 0 ) {
+                    e.target.value = parseFloat(e.target.value).toFixed(2);
+                }
                 sessionStorage.setItem('stop_profit',e.target.value);
                 processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));
         }
 
+        var jhighBarrierElement = document.getElementById('jbarrier_high');
+        if (jhighBarrierElement) {
+            jhighBarrierElement.addEventListener('change', function (e) {
+                processPriceRequest();
+            });
+        }
+
+
+        var jlowBarrierElement = document.getElementById('jbarrier_low');
+        if (jlowBarrierElement) {
+            jlowBarrierElement.addEventListener('change', function (e) {
+                var options = jhighBarrierElement.getElementsByTagName('option');
+                var f = 0;
+                if(jhighBarrierElement.value > jlowBarrierElement.value){
+                    f = 1;
+                }
+                for(var i=0; i<options.length; i++){
+                    option = options[i];
+
+                    if(option.value <= jlowBarrierElement.value){
+                        option.setAttribute('disabled', true);
+                    }
+                else{
+                    if(!f){
+                        jhighBarrierElement.value = option.value;
+                        f=1;
+                    }
+                    option.removeAttribute('disabled');
+                }
+                }
+                processPriceRequest();
+            });
+        }
+
+        var jbarrierElement = document.getElementById('jbarrier');
+        if (jbarrierElement) {
+            jbarrierElement.addEventListener('change', function (e) {
+                processPriceRequest();
+            });
+        }
+
+        var period = document.getElementById('period');
+        if(period){
+            period.addEventListener('change', function (e) {
+                Periods.displayBarriers();
+                processPriceRequest();
+            });
+        }
+
+        if(typeof is_japan === 'function'){
+            var amount_type = document.getElementById('amount_type');
+            var options = amount_type.getElementsByTagName('option');
+            for(var d=0; d<options.length; d++){
+                if(options[d].value!='payout'){
+                    options[d].setAttribute('disabled', true);
+                }
+            }
+        }
+
         var init_logo = document.getElementById('trading_init_progress');
         if(init_logo){
             init_logo.addEventListener('click', debounce( function (e) {
-                sessionStorage.removeItem('market');
-                sessionStorage.removeItem('formname');
-                sessionStorage.removeItem('underlying');
-
-                sessionStorage.removeItem('expiry_type');
-                sessionStorage.removeItem('stop_loss');
-                sessionStorage.removeItem('stop_type');
-                sessionStorage.removeItem('stop_profit');
-                sessionStorage.removeItem('amount_per_point');
-                sessionStorage.removeItem('prediction');
-                sessionStorage.removeItem('amount');
-                sessionStorage.removeItem('amount_type');
-                sessionStorage.removeItem('currency');
-                sessionStorage.removeItem('duration_units');
-                sessionStorage.removeItem('diration_value');
-                sessionStorage.removeItem('date_start');
-
-                location.reload();
+                reloadPage();
             }));
         }
 
@@ -415,20 +532,6 @@ var TradingEvents = (function () {
                 load_with_pjax(url);
             }));
         }
-
-        var view_button = document.getElementById('contract_purchase_button');
-        if(view_button){
-            view_button.addEventListener('click', debounce( function (e) {
-                BetSell.change_prev_button(e.target);
-                if(sessionStorage.getItem('formname')==='spreads'){
-                    BetSell.show_buy_sell(e.target);
-                }
-                else{
-                    BetSell.sell_at_market(e.target);           
-                }
-            }));
-        }
-
 
         /*
          * attach datepicker and timepicker to end time durations
@@ -443,7 +546,10 @@ var TradingEvents = (function () {
     };
 
     return {
-        init: initiate
+        init: initiate,
+        onStartDateChange: onStartDateChange,
+        onExpiryTypeChange: onExpiryTypeChange,
+        onDurationUnitChange: onDurationUnitChange
     };
 })();
 

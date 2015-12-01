@@ -80,8 +80,22 @@ var ProfitTableUI = (function(){
         var data = [buyDate, ref, contract, buyPrice, sellDate, sellPrice, pl];
         var $row = Table.createFlexTableRow(data, cols, "data");
 
-        $row.children(".buy-date").addClass("break-line");
+        $row.children(".buy-date").addClass("pre");
         $row.children(".pl").addClass(plType);
+        $row.children(".sell-date").addClass("pre");
+
+        //create view button and append
+        var $viewButtonSpan = Button.createBinaryStyledButton();
+        var $viewButton = $viewButtonSpan.children(".button").first();
+        $viewButton.text(text.localize("View"));
+        $viewButton.addClass("open_contract_details");
+        $viewButton.attr("contract_id", transaction["contract_id"]);
+
+        $row.
+            children(".contract").
+            first().
+            append("<br>").
+            append($viewButtonSpan);
 
         return $row[0];
     }

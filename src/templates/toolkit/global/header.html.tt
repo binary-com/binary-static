@@ -66,7 +66,7 @@
                             <select id="client_loginid" name="client_loginid">
                             </select>
                         </div>
-                        <a id="view-balances" href="[% request.url_for('user/balance') %]">[% l('View balances') %]</a>
+                        <div id="balance"></div>
                         <a id="btn_logout" class="logout" href="[% request.url_for('logout') %]"[% target %]>[% l('LOG OUT') %]</a>
                     </form>
                   </div>

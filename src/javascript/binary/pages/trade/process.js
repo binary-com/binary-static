@@ -16,8 +16,7 @@ function processActiveSymbols(data) {
     displayMarkets('contract_markets', Symbols.markets(), market);
     processMarket();
     setTimeout(function(){
-        if(TradeSocket.socket().readyState === 1){
-            var underlying = document.getElementById('underlying').value;
+        if(document.getElementById('underlying')){
             Symbols.getSymbols(0);
         }
     }, 60*1000);
@@ -52,18 +51,26 @@ function processMarket(flag) {
 function processMarketUnderlying() {
     'use strict';
 
+    if (!document.getElementById('underlying')) {
+        return;
+    }
+
     var underlying = document.getElementById('underlying').value;
     sessionStorage.setItem('underlying', underlying);
+
+    showFormOverlay();
 
     // forget the old tick id i.e. close the old tick stream
     processForgetTicks();
     // get ticks for current underlying
-    TradeSocket.send({ ticks : underlying });
+    BinarySocket.send({ ticks : underlying });
 
     Tick.clean();
     
     updateWarmChart();
 
+    BinarySocket.clearTimeouts();
+    
     Contract.getContracts(underlying);
 
     displayTooltip(sessionStorage.getItem('market'),underlying);
@@ -75,7 +82,15 @@ function processMarketUnderlying() {
 function processContract(contracts) {
     'use strict';
 
+    document.getElementById('trading_socket_container').classList.add('show');
+    document.getElementById('trading_init_progress').style.display = 'none';
+
     Contract.setContracts(contracts);
+
+    if(typeof contracts.contracts_for !== 'undefined'){
+        Tick.setQuote(contracts.contracts_for.spot);
+        Tick.display(contracts.contracts_for.spot);
+    }
 
     var contract_categories = Contract.contractForms();
     var formname;
@@ -105,60 +120,44 @@ function processContract(contracts) {
     processContractForm();
 
     TradingAnalysis.request();
+
+    hideFormOverlay();
 }
 
 function processContractForm() {
+    
     Contract.details(sessionStorage.getItem('formname'));
 
     StartDates.display();
 
-    if(sessionStorage.getItem('date_start') && moment(sessionStorage.getItem('date_start')*1000).isAfter(moment(),'minutes')){
-        selectOption(sessionStorage.getItem('date_start'), document.getElementById('date_start'));
-    }
-
     displayPrediction();
 
-    displaySpreads();  
- 
-    if(sessionStorage.getItem('amount')){
-        document.getElementById('amount').value = sessionStorage.getItem('amount');       
-    }
+    displaySpreads(); 
 
-    if(sessionStorage.getItem('amount_type')){
-        selectOption(sessionStorage.getItem('amount_type'), document.getElementById('amount_type'));
+    var r1;
+    if(StartDates.displayed() && sessionStorage.getItem('date_start')){
+        r1 = TradingEvents.onStartDateChange(sessionStorage.getItem('date_start'));
+        if(!r1) Durations.display();
     }
+    else{
+        Durations.display();
+    } 
 
-    Durations.display();
-    var no_price_request;
-    if(sessionStorage.getItem('expiry_type')==='endtime'){
-        var is_selected = selectOption('endtime', document.getElementById('expiry_type'));
-        if(is_selected){
-            Durations.displayEndTime();
-            if(sessionStorage.getItem('end_date') && moment(sessionStorage.getItem('end_date')).isAfter(moment())){
-                $( "#expiry_date" ).datepicker( "setDate", sessionStorage.getItem('end_date') );
-                Durations.selectEndDate(sessionStorage.getItem('end_date'));
-                no_price_request = 1;
-            }
-        }
-    }
-    if(!no_price_request){
-        if(sessionStorage.getItem('duration_units')){
-            selectOption(sessionStorage.getItem('duration_units'), document.getElementById('duration_units'));
-        }
-        Durations.populate();
-        if(sessionStorage.getItem('duration_amount')){
-            document.getElementById('duration_amount').value = sessionStorage.getItem('duration_amount');       
-        }
-    }
+    var expiry_type = sessionStorage.getItem('expiry_type') ? sessionStorage.getItem('expiry_type') : 'duration';
+    var make_price_request = TradingEvents.onExpiryTypeChange(expiry_type);
 
-    if(!no_price_request){
+    if(sessionStorage.getItem('amount')) $('#amount').val(sessionStorage.getItem('amount'));
+    if(sessionStorage.getItem('amount_type')) selectOption(sessionStorage.getItem('amount_type'),document.getElementById('amount_type'));
+    if(sessionStorage.getItem('currency')) selectOption(sessionStorage.getItem('currency'),document.getElementById('currency'));
+
+    if(make_price_request >= 0){
         processPriceRequest();
     }
 }
 
 function displayPrediction() {
     var predictionElement = document.getElementById('prediction_row');
-    if(sessionStorage.getItem('formname') === 'digits'){
+    if(Contract.form() === 'digits' && sessionStorage.getItem('formname')!=='evenodd'){
         predictionElement.show();
         if(sessionStorage.getItem('prediction')){
             selectOption(sessionStorage.getItem('prediction'),document.getElementById('prediction'));
@@ -212,14 +211,18 @@ function displaySpreads() {
     }
 }
 
+function forgetTradingStreams(){
+    processForgetProposals();
+    processForgetTicks();
+}
 /*
  * Function to request for cancelling the current price proposal
  */
 function processForgetProposals() {
     'use strict';
     showPriceOverlay();
-    TradeSocket.send({forget_all: "proposal"});
-    Price.clearMapping();   
+    BinarySocket.send({forget_all: "proposal"});
+    Price.clearMapping(); 
 }
 
 /*
@@ -232,9 +235,22 @@ function processPriceRequest() {
     Price.incrFormId();
     processForgetProposals();
     showPriceOverlay();
-    for (var typeOfContract in Contract.contractType()[Contract.form()]) {
-        if(Contract.contractType()[Contract.form()].hasOwnProperty(typeOfContract)) {
-            TradeSocket.send(Price.proposal(typeOfContract));
+    var types = Contract.contractType()[Contract.form()];
+    if(Contract.form()==='digits'){
+        switch(sessionStorage.getItem('formname')) {
+            case 'matchdiff':
+                types = {'DIGITMATCH':1, 'DIGITDIFF':1};
+                break;
+            case 'evenodd':
+                types = {'DIGITEVEN':1, 'DIGITODD':1};
+                break;
+            case 'overunder':
+                types = {'DIGITOVER':1, 'DIGITUNDER':1};
+        }
+    }
+    for (var typeOfContract in types) {
+        if(types.hasOwnProperty(typeOfContract)) {
+            BinarySocket.send(Price.proposal(typeOfContract));
         }
     }
 }
@@ -245,7 +261,7 @@ function processPriceRequest() {
  */
 function processForgetTicks() {
     'use strict';
-    TradeSocket.send({ forget_all: 'ticks' });
+    BinarySocket.send({ forget_all: 'ticks' });
 }
 
 /*
@@ -278,10 +294,6 @@ function processProposal(response){
         hideOverlayContainer();
         Price.display(response, Contract.contractType()[Contract.form()]);
         hidePriceOverlay();
-        if(form_id===1){
-            document.getElementById('trading_socket_container').classList.add('show');
-            document.getElementById('trading_init_progress').style.display = 'none';
-        }
     }
 }
 
@@ -292,12 +304,12 @@ function processTradingTimesRequest(date){
     }
     else{
         showPriceOverlay();
-        TradeSocket.send({ trading_times: date });
+        BinarySocket.send({ trading_times: date });
     }
 }
 
 function processTradingTimes(response){
-    var trading_times = Durations.trading_times();
     Durations.processTradingTimesAnswer(response);
+
     processPriceRequest();
 }
