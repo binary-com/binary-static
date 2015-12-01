@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: 1228\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-11-23 07:15+0000\n"
-"Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
+"PO-Revision-Date: 2015-11-26 14:31+0000\n"
+"Last-Translator: Xiaojing <cai.cxj@gmail.com>\n"
 "Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
 "MIME-Version: 1.0\n"
@@ -24,11 +24,11 @@ msgstr " 已记入您的虚拟资金账户"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/risk_disclaimer.html.tt:47
 msgid "\"Binary\" or \"digital\" options are options that pay a pre-determined, fixed amount, depending on whether or not an event occurs at the time the Binary Option expires. Binary Options can have only one of two possible outcomes and allow you to take a simple \"Yes or No\" approach. Like traditional options, Binary Options are based on an underlying asset such as currencies, commodities, indexes or stocks, however one of the most significant differences from traditional options, among others, is that there can be only two outcomes for the option, either the client is paid the return upon the occurrence of the event, or the client loses the investment amount as determined in each option."
-msgstr "“二元”或“数字”期权是支付已预定和固定金额的期权，支付与否是根据二元期权到期时某事件发生或否而定。二元期权只能在两个可能中出现一个最后结果，并让您简单地挑选“是”或“否”。就像传统期权一样，二元期权也是根据如货币、大宗商品、指数或股票等标的资产。但是跟传统期权不同的其中最重要的一點就是只会有两种结果。要就是事件发生，客户因此获得回报，不然就是客户损失每项期权已预定的投资金额。"
+msgstr "“二元”或“数字”期权是支付已预定和固定金额的期权，支付与否根据二元期权到期时某事件发生与否而定。二元期权只能在两个可能性中产生一个最后结果，并让您简单地挑选“是”或“否”。像传统期权一样，二元期权也是根据如货币、大宗商品、指数或股票等标的资产。但是跟传统期权最大的不同点，就是二元期权只会有两种结果。要么就是事件发生，客户因此获得回报，不然就是客户损失每项期权已预定的投资金额。"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/main.html.tt:44
 msgid "\"I work with a number of affiliate companies, and it is by far, the friendliest and most helpful that I've found. They go out of their way to provide their affiliates with all the tools, advice and support they need in order to succeed. To top it all off, they offer some of the most handsome rebates in the industry.\" - <strong>Vinod Gorasia, Marketing Manager, Agora Lifestyles</strong>."
-msgstr "“我与多家联盟公司合作，迄今为止，它是我所发现的最友好最有帮助的联盟网站。他们竭力为联盟提供成功所需的所有工具、建议和支持。最重要的是，他们提供业内最佳的回扣。”- <strong>Agora Lifestyles 公司市场经理 Vinod Gorasia </strong>表示。"
+msgstr "“我与多家联盟公司合作，迄今为止，它是我发现的最友好、最有帮助的联盟网站。他们竭力为联盟的成功提供所需的工具、建议和支持。最重要的是，他们提供业内最佳的回扣。”- <strong>Agora Lifestyles 公司市场经理 Vinod Gorasia </strong>表示。"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form/maltainvest.pm:736
 msgid "$100,000 - $250,000"
@@ -102,7 +102,7 @@ msgstr "%1不收取任何转账费用。"
 #: /home/git/translations/binary-static/src/templates/haml/layouts/default/head.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/global/head.html.tt:11
 msgid "%1 gives everyone an easy and exciting way to participate in the financial markets. Trade with as little as $1 USD on major currencies, indices and commodities."
-msgstr "%1让每个人都能轻松、愉快参与金融市场。可交易各主要货币、指数和大宗商品，投资门槛低至1美元。"
+msgstr "%1让每个人都能轻松、愉快地参与金融市场。您可交易各主要货币、指数和大宗商品，投资门槛低至1美元。"
 
 #. (broker_name)
 #: /home/git/translations/binary-static/src/templates/toolkit/resources/contract_guide.html.tt:3
@@ -117,7 +117,7 @@ msgstr "%1 已经创建可让您全天候交易的随机指数。您可通过所
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/about/index.html.haml:1
 msgid "%1 has earned an enviable reputation for our commitment to high ethical standards and the quality of the trading experience we provide."
-msgstr "%1 竭诚达到符合极高之道德标准以及提供优质交易体验，享有令人欣羡之声誉。"
+msgstr "%1 竭诚达到极高的道德标准和优质的交易体验，因此获得了令人羡慕的声誉。"
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/get_started/beginners_faq.html.haml:1
@@ -127,7 +127,7 @@ msgstr "%1在任一时间内均有数千名客户交易各类金融产品，该�
 #. (landing_company, tnc_page_url)
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_conditions_approval_message.html.tt:11
 msgid "%1 has updated its <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>."
-msgstr "%1已经更新了其<a class=\"pjaxload\" href=\"%2\">条款和条件</a>。通过点击 OK键，您确定已经阅读和接受此更新<a class=\"pjaxload\" href=\"%2\">条款和条件</a>。"
+msgstr "%1已经更新了<a class=\"pjaxload\" href=\"%2\">条款和条件</a>。通过点击OK键，您确认已经阅读并接受更新的<a class=\"pjaxload\" href=\"%2\">条款和条件</a>。"
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/careers.html.haml:1
@@ -142,7 +142,7 @@ msgstr "%1 完全基于网络，无需安装任何软件即可交易。"
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/about/index.html.haml:1
 msgid "%1 is one of the oldest and most respected names in online binary trading."
-msgstr "%1 是在线二元交易行业中历史最悠久、享有最高声誉之佼佼者之一。"
+msgstr "%1 是在线二元交易行业中历史最悠久、声誉最好的佼佼者之一。"
 
 #. (stash->{website_name}, url_for('/group-history')
 #: /home/git/translations/binary-static/src/templates/haml/about/index.html.haml:1
@@ -167,7 +167,7 @@ msgstr "%1 努力让二元期权所提交的每个标的资产报价与市场现
 #. (website)
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/risk_disclaimer.html.tt:65
 msgid "%1 may have access to information that is not available to you, may have acquired trading positions at prices that are not available to you, and may have interests different from your interests. %1 does not undertake any obligation to provide you with market or other information we possess, nor to alter or refrain from our own trading."
-msgstr "%1 可能有权限获取您所无法得到的信息，或有可能以您无法得到的低价获取交易头寸，及可能跟您的利益有所不同。%1 没有义务为您提供我们所拥有的市场或其他信息，也不会对我们自己的交易做出任何变更或节制。"
+msgstr "%1 可能有权限获取您所无法得到的信息，也可能以您无法得到的低价获取交易头寸，并可能跟您的利益有所不同。%1 没有义务为您提供我们所拥有的市场或其他信息，也不会对我们自己的交易做出任何变更或限制。"
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/get_started/beginners_faq.html.haml:1
@@ -223,7 +223,7 @@ msgstr "%1 的随机指数包括 %2、%3、%4 和 %5，分别对应25%、50%、7
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/get_started/spread_bets.html.haml:1
 msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements.  Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
-msgstr "%1 的价差合约为杠杆型衍生合约，其价值直接与基础市场走势挂钩。  以比实时市场较低之投资对上涨市场购入“长仓”合同（及对下降市场购入“短仓”合同）的客户从以上价格走势中获利。"
+msgstr "%1 的价差合约为杠杆型衍生合约，其价值直接与基础市场走势挂钩。  以低于实时市场的投资在上涨市场购入“长仓”合同（及在下降市场购入“短仓”合同）的客户可从以上价格走势中获利。"
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/get_started/spread_bets.html.haml:1
@@ -263,7 +263,7 @@ msgstr "%1 的独家智能市场侧重全球市场的某个特定子集。智能
 #. (url_for('/')
 #: /home/git/translations/binary-static/src/templates/haml/get_started/beginners_faq.html.haml:1
 msgid "%2 offers a virtual-money account so you can get the hang of trading binaries. Why not <a class=\"pjaxload\" href=\"%1\">open a free $10k fully-functional virtual-money account</a>, and start learning how to trade."
-msgstr "%2提供虚拟资金账户，以便投资者掌握二元期权交易的技巧。何不 <a class=\"pjaxload\" href=\"%1\">免费开立一个1万美元功能齐全的虚拟资金账户</a>，并开始学习如何交易呢。"
+msgstr "%2提供虚拟资金账户，以便投资者掌握二元期权交易的技巧。何不 <a class=\"pjaxload\" href=\"%1\">免费开立一个1万美元、功能齐全的虚拟资金账户</a>，并开始学习如何交易呢？"
 
 #. ($num)
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Context/I18N/Base.pm:82
@@ -280,7 +280,7 @@ msgstr "%ctx(the return of investment of a contract)回报"
 
 #: /home/git/translations/binary-static/src/templates/haml/home/index.html.haml:1
 msgid "&#8220;Binary.com is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
-msgstr "&#8220;Binary.com一向都是我们最长久和最伩赖的合作伙伴。我们已经有很多年的合作关系。&#8221;"
+msgstr "&#8220;Binary.com是我们最长久、最信赖的合作伙伴。我们已经有很多年的合作关系。&#8221;"
 
 #: /home/git/translations/binary-static/src/templates/haml/home/index.html.haml:1
 msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide&#8221;"
@@ -293,6 +293,10 @@ msgstr "'<strong>长仓</strong>' 合同当指数上涨则获利，当指数下�
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/explanation/winning/spreads.html.tt:3
 msgid "'<strong>Short</strong>' contracts generate losses when the index rises and profits when it falls."
 msgstr "'<strong>短仓</strong>' 合同当指数上涨则亏损，当指数下降则获利。"
+
+#: /home/git/translations/binary-static/src/templates/haml/static/group_history.html.haml:1
+msgid "'EGR Operator Award for Financial Betting Operator'"
+msgstr ""
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:58
 msgid "(Bejing/CST -8 hours)"
@@ -332,7 +336,7 @@ msgstr "过去12个月内0-5次交易"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/group_history.html.haml:1
 msgid "1 million transactions/day"
-msgstr "1百万笔交易/天"
+msgstr "一百万笔交易/天"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form/maltainvest.pm:604
 msgid "1-2 years"
@@ -416,11 +420,11 @@ msgstr "30-50 million JPY"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1891
 msgid "30-day limit on losses"
-msgstr "30天期损失限额"
+msgstr "30天损失限额"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1856
 msgid "30-day turnover limit"
-msgstr "30天期交易限额"
+msgstr "30天交易限额"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/livechart_duration.html.tt:34
 msgid "3m"
@@ -1072,12 +1076,12 @@ msgid "Accuracy of Information"
 msgstr "信息的准确性"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1524
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:322
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:316
 msgid "Acknowledgement of Money Transfer"
 msgstr "确认转账"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1836
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:555
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:540
 msgid "Acknowledgement of Withdrawal Request"
 msgstr "确认提款请求"
 
@@ -1103,7 +1107,7 @@ msgstr "添加覆盖"
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:385
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:93
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1256
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:404
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:371
 #: /home/git/translations/binary-static/src/templates/toolkit/account/settings_detailsws.html.tt:56
 msgid "Address"
 msgstr "地址"
@@ -1217,10 +1221,11 @@ msgstr "可使用额外密码来限制对收银台的访问。"
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1707
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1713
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:354
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:232
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:240
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:441
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:448
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:228
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:236
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:429
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:436
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:686
 msgid "An error occurred while processing request. If this error persists, please contact customer support"
 msgstr "处理请求时发生错误。如果问题持续出现，请联系客户支持人员"
 
@@ -1393,8 +1398,8 @@ msgstr "资产"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:155
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Resources.pm:126
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2601
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2648
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2610
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2657
 #: /home/git/translations/binary-static/src/templates/haml/layouts/default/footer.html.haml:1
 #: /home/git/translations/binary-static/src/templates/haml/resources/index.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/global/footer.html.tt:85
@@ -1773,10 +1778,8 @@ msgid "Binary's Maltese subsidiary Binary Investments (Europe) Ltd. is granted a
 msgstr "Binary 的马耳他附属公司 Binary Investments (Europe) Ltd. 由 Malta Financial Services Authority 授予3级投资服务牌照。"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/resources/trading_timesws.html.tt:2
-#, fuzzy
-#| msgid "Binary Trading."
 msgid "Binary.com - Trading Times"
-msgstr "二元期权交易。"
+msgstr "Binary.com - 交易时间"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/open_source_projects.html.haml:1
 msgid "Binary.com Open-Source Projects"
@@ -1846,6 +1849,10 @@ msgstr "Binary.com 注册用户已达1百万人"
 #: /home/git/translations/binary-static/src/templates/haml/static/responsible_trading.html.haml:1
 msgid "Binary.com supports the <a target=\"_blank\" href=\"http://www.responsiblegamblingtrust.org.uk/\">Responsible Gambling Trust</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
 msgstr "Binary.com 支持 <a target=\"_blank\" href=\"http://www.responsiblegamblingtrust.org.uk/\">负责任博采信托基金</a> (RGT) 。这是英国一家领先的慈善机构，致力于消除跟赌博有关的危害。该机构拨款资助教育活动、疾病预防和治疗服务以及委托进行各种协助人们进一步了解跟赌博危害有关的研究项目。它也创立了一个全国性电话服务专线，向寻求帮助的赌徒提供机密性咨询和情绪上的支持。"
+
+#: /home/git/translations/binary-static/src/templates/haml/static/group_history.html.haml:1
+msgid "Binary.com took home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London. This distinction – which attracts the world's leading online gaming firms – was bestowed based on an evaluation of our growth, innovation, and overall product offering during the past 12 months."
+msgstr ""
 
 #: /home/git/translations/binary-static/src/templates/haml/home/index.html.haml:1
 msgid "Binary.com's patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market."
@@ -2000,14 +2007,14 @@ msgstr "K线图"
 
 # 87%
 # 100%
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:389
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/PortfolioManagement.pm:31
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:368
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/PortfolioManagement.pm:33
 msgid "Cannot create contract"
 msgstr "无法创建合约"
 
 # 87%
 # 100%
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:407
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:386
 msgid "Cannot validate contract"
 msgstr "无法验证合约"
 
@@ -2076,7 +2083,7 @@ msgid "Change Password"
 msgstr "更改密码"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1281
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:429
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:396
 msgid "Change in account settings"
 msgstr "账户设置更改"
 
@@ -2505,7 +2512,7 @@ msgid "Contract barrier must be positive."
 msgstr "合约障碍必须为正数。"
 
 #. ($end_of_bo->date)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2728
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2737
 msgid "Contract can not expire during the end-of-year holiday period. Select an expiry date after %1."
 msgstr "合约的到期日不能设置在年末节日期间。选择 %1 之后的一个到期日。"
 
@@ -2517,7 +2524,7 @@ msgstr "目前合约无法卖出。"
 msgid "Contract expired"
 msgstr "合约已到期"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2450
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2459
 msgid "Contract has already expired."
 msgstr "合约已经到期。"
 
@@ -2526,16 +2533,16 @@ msgid "Contract market price is too close to final payout."
 msgstr "合约市场价格离最终赔付额太近。"
 
 #. ($eod_blackout_expiry->as_string)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2491
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2500
 msgid "Contract may not expire within the last %1 of trading."
 msgstr "合约不能在交易的最后%1内到期。"
 
 #. ($minimum_hold->as_string)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2325
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2334
 msgid "Contract must be held for %1 before resale is offered."
 msgstr "合同在提供转售前必须保留%1。"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2459
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2468
 msgid "Contract must expire during trading hours."
 msgstr "合约必须在交易时段内到期。"
 
@@ -2576,12 +2583,12 @@ msgid "Contracts on %1 which both start and end between %2 and %3 on the same da
 msgstr "%1在同一天始于及结束于 %2 和 %3 之间的合约不可用。"
 
 #. ($underlying->translated_display_name()
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2507
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2516
 msgid "Contracts on %1 with duration more than 24 hours must expire at the end of a trading day."
 msgstr "期限超过24小时的%1合约必须在同一交易日到期。"
 
 #. ($underlying->translated_display_name()
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2477
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2486
 msgid "Contracts on %1 with durations under 24 hours must expire on the same trading day."
 msgstr "期限小于24小时的%1合约必须在同一交易日到期。"
 
@@ -2638,7 +2645,7 @@ msgstr "成本和费用"
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3241
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3533
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1254
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:402
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:369
 #: /home/git/translations/binary-static/src/templates/toolkit/account/settings_detailsws.html.tt:34
 msgid "Country of Residence"
 msgstr "居住国"
@@ -2677,7 +2684,7 @@ msgid "Credit/Debit Card"
 msgstr "信用卡/借记卡"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1393
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:197
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:198
 msgid "Cross-company payment agent transfers are not allowed."
 msgstr "不允许跨公司支付代理转账。"
 
@@ -2702,7 +2709,7 @@ msgstr "当前价位"
 msgid "Current Spot"
 msgstr "当前现货价格"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2275
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2284
 msgid "Current market price is 0."
 msgstr "当前市场价格是 0。"
 
@@ -2821,9 +2828,9 @@ msgstr "尊敬的"
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1512
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1820
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1245
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:394
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:309
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:539
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:360
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:304
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:524
 msgid "Dear %1 %2 %3,"
 msgstr "尊敬的 %1 %2 %3,"
 
@@ -3082,8 +3089,6 @@ msgid "Description"
 msgstr "说明"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/account/settings_detailsws.html.tt:8
-#, fuzzy
-#| msgid "details"
 msgid "Details"
 msgstr "详情"
 
@@ -3245,7 +3250,7 @@ msgid "Duration"
 msgstr "期限"
 
 #. ($shortest->as_string, $longest->as_string)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2612
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2621
 msgid "Duration must be between %1 and %2."
 msgstr "期限须在%1 与 %2之间。"
 
@@ -3350,7 +3355,7 @@ msgstr "电子邮件验证"
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2866
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3548
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1253
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:401
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:368
 #: /home/git/translations/binary-static/src/templates/haml/user/lost_password.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/account/settings_detailsws.html.tt:45
 msgid "Email address"
@@ -3457,17 +3462,17 @@ msgid "Exclude me from the website until"
 msgstr "禁止我访问本网站直到"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2279
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:541
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:504
 msgid "Exclude time cannot be for more than five years."
 msgstr "禁止时间不能超过五年。"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2274
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:536
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:499
 msgid "Exclude time cannot be less than 6 months."
 msgstr "禁止时间不能少于6个月。"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2269
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:531
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:494
 msgid "Exclude time must be after today."
 msgstr "禁止时间必须在今日之后。"
 
@@ -3525,7 +3530,7 @@ msgstr "到期时间"
 msgid "Expiry price"
 msgstr "到期价格"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2337
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2346
 msgid "Expiry time cannot be in the past."
 msgstr "到期时间不可为过去式。"
 
@@ -3842,7 +3847,7 @@ msgstr "更多信息"
 #. (300)
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1660
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2607
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:423
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:411
 msgid "Further instructions must not exceed %1 characters."
 msgstr "详细说明不能超过 %1 个字符。"
 
@@ -4620,7 +4625,7 @@ msgstr "任何标的工具或资产前次的表现信息不可用于保证其当
 msgid "Input error."
 msgstr "输入错误。"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:199
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:203
 msgid "Input validation failed: "
 msgstr "输入验证失败： "
 
@@ -4669,7 +4674,7 @@ msgstr "网上交易风险"
 msgid "Interpretation"
 msgstr "释义"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2040
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2049
 msgid "Intraday contracts may not cross market open."
 msgstr "日内合约不能跨越开市。"
 
@@ -4697,20 +4702,21 @@ msgid "Invalid amount"
 msgstr "无效金额"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:406
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:644
 #: /home/git/translations/binary-static/src/templates/haml/cashier/account_transfer.html.haml:1
 msgid "Invalid amount. Minimum transfer amount is 0.10, and up to 2 decimal places."
 msgstr "无效金额。最小转账金额为0.10，最多2个小数位。"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:184
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:390
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:185
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:383
 msgid "Invalid amount. minimum is 10, maximum is 2000."
-msgstr ""
+msgstr "无效金额。最小金额是10，最大是2000。"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:234
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:212
 msgid "Invalid candles request"
 msgstr "无效K线图请求"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:209
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:213
 msgid "Invalid client account."
 msgstr "无效客户账户。"
 
@@ -4728,7 +4734,7 @@ msgstr "无效的电子邮件地址"
 msgid "Invalid email and password combination."
 msgstr "无效的电子邮件地址和密码组合。"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2201
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2210
 msgid "Invalid payout currency."
 msgstr "无效赔付币种。"
 
@@ -4741,7 +4747,7 @@ msgstr "无效期限输入！请输入在 0 和 #1 之间的期限"
 msgid "Invalid request"
 msgstr "无效请求"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2255
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2264
 msgid "Invalid stake"
 msgstr "无效投注金额"
 
@@ -5527,7 +5533,7 @@ msgid "Kind Regards"
 msgstr "谨致问候"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1829
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:548
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:533
 msgid "Kind Regards,"
 msgstr "谨致问候，"
 
@@ -5763,7 +5769,7 @@ msgstr "登录 ID"
 
 #. ($loginid_to)
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1377
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:189
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:190
 msgid "Login ID (%1) does not exist."
 msgstr "登录 ID (%1) 不存在。"
 
@@ -5933,7 +5939,7 @@ msgid "Market exit price"
 msgstr "平仓价"
 
 #. ($safer_expiry->date)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2676
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2685
 msgid "Market holiday during the contract period. Select an expiry date after %1."
 msgstr "该合约期限内的市场假日。在 %1之后选择到期日。"
 
@@ -6100,9 +6106,9 @@ msgstr "遗漏"
 msgid "Missing market data for contract duration"
 msgstr "合约期间的遗漏市场数据"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1996
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2055
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2559
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2005
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2064
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2568
 msgid "Missing market data for contract period."
 msgstr "合约期间的遗漏市场数据。"
 
@@ -6110,8 +6116,8 @@ msgstr "合约期间的遗漏市场数据。"
 msgid "Missing market data for entry spot."
 msgstr "入市现价的遗漏市场数据。"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2013
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2027
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2022
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2036
 msgid "Missing market data for exit spot."
 msgstr "退出现价的遗漏市场数据。"
 
@@ -6291,7 +6297,7 @@ msgstr "新密码请求"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:334
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v2/Accounts.pm:191
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:283
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:256
 #: /home/git/translations/binary-static/src/templates/toolkit/account/change_passwordws.html.tt:32
 msgid "New password is same as old password."
 msgstr "新密码与旧密码相同。"
@@ -6417,7 +6423,7 @@ msgstr "注意：您必须完全通过付款代理存款才可使用付款代理
 
 #. ($currency,            $withdrawal_limits->{'frozen_free_gift'},            $withdrawal_limits->{'free_gift_turnover_limit'})
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1975
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:627
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:612
 msgid "Note: You will be able to withdraw your bonus of %1%2 only once your aggregate volume of trades exceeds %1%3. This restriction applies only to the bonus and profits derived therefrom.  All other deposits and profits derived therefrom can be withdrawn at any time."
 msgstr "注：仅当您的交易总额超过 %1%3时，您才能够提取您的奖金  %1%2。此限制仅适用于由此产生的奖金和收益。由此产生的所有其他存款和收益可随时提取。"
 
@@ -6458,7 +6464,7 @@ msgid "Number of ticks"
 msgstr "跳动点数目"
 
 #. ($min_tick, $max_tick)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2545
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2554
 msgid "Number of ticks must be between %1 and %2"
 msgstr "跳动点数目须在%1 与 %2之间"
 
@@ -6502,7 +6508,7 @@ msgstr "确定"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:332
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v2/Accounts.pm:193
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:285
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:258
 msgid "Old password is wrong."
 msgstr "旧密码不正确。"
 
@@ -6750,7 +6756,7 @@ msgstr "我们所提供的服务仅限于执行而已。我们并不提供与我
 msgid "Our site can be filtered using a number of filtering systems available on the market which could be used to restrict one’s access to our site."
 msgstr "我们的网站可以使用市场上多个过滤系统进行过滤，以限制用户对网站的访问。"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:246
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:250
 msgid "Output validation failed: "
 msgstr "输出验证失败： "
 
@@ -6816,7 +6822,7 @@ msgstr "无法找到页面"
 msgid "Parabolic SAR"
 msgstr "抛物线状止损和反转指标"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:288
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:292
 msgid "Parameters sanity check failed."
 msgstr "参数完整性检查失败。"
 
@@ -6883,7 +6889,7 @@ msgid "Payment Agent Withdrawal"
 msgstr "支付代理取款"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1337
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:173
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:174
 msgid "Payment Agent activity not currently authorized"
 msgstr "支付代理活动目前未经授权"
 
@@ -6906,8 +6912,8 @@ msgstr "您的账户无可用支付代理。"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1333
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1563
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:169
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:370
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:170
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:363
 msgid "Payment Agents are not available on this site."
 msgstr "本网站无可用支付代理。"
 
@@ -6950,7 +6956,7 @@ msgstr "赔付货币"
 msgid "Payout has moved in your favour from %1 to %2."
 msgstr "赔付变得对您有利，从 %1 变为 %2。"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2228
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2237
 msgid "Payout may not have more than two decimal places."
 msgstr "赔付额的小数点后不超过两位数。"
 
@@ -6980,8 +6986,9 @@ msgstr "周期"
 msgid "Perl modules"
 msgstr "Perl 模块"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:271
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:351
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:243
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:315
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:447
 msgid "Permission denied."
 msgstr "权限不足。"
 
@@ -7083,7 +7090,7 @@ msgstr "请输入至少6个月后的日期。"
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2251
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2255
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2329
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:513
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:476
 msgid "Please enter a number between 0 and %1."
 msgstr "请输入0和%1之间的数字。"
 
@@ -7182,7 +7189,7 @@ msgstr "请在下表中填写登录 ID 以及您希望转给您客户的金额�
 msgid "Please input a valid date."
 msgstr "请输入有效日期。"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:225
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:229
 msgid "Please log in."
 msgstr "请登陆。"
 
@@ -7214,7 +7221,7 @@ msgid "Please note that you may update your personal information at any time by 
 msgstr "请注意，您可以随时登录账户的“设置”部分更新您的个人信息。您应确保始终及时向%1告知您个人信息的任何变化。"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1248
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:396
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:363
 msgid "Please note that your settings have been updated as follows:"
 msgstr "请注意，您的设置已进行以下更新："
 
@@ -7224,7 +7231,7 @@ msgstr "请将文件邮寄至："
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2050
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2287
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:602
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:566
 msgid "Please provide at least one self-exclusion setting."
 msgstr "请提供至少一个自我禁止设置。"
 
@@ -7421,7 +7428,7 @@ msgid "Prevailing market price cannot be determined at this time."
 msgstr "现行市价目前无法确定。"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1272
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2756
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2765
 msgid "Prevailing market price cannot be determined."
 msgstr "现行市价无法确定。"
 
@@ -7746,12 +7753,12 @@ msgstr "真实情况检查时间间隔："
 msgid "Realtime data is not available for this underlying"
 msgstr "此标的资产的实时数据不可用"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:241
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:219
 msgid "Realtime quotes not available"
 msgstr "实时报价不可用"
 
 #. ($symbol)
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:183
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:161
 msgid "Realtime quotes not available for %1"
 msgstr "实时报价不可用于%1"
 
@@ -7864,27 +7871,27 @@ msgstr "表示您的投资组合中未平仓合约的最大数量。您投资组
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "表示任一给定交易日您可以买入的最大合约数量。"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2727
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2736
 msgid "Resale of this contract is not offered due to end-of-year market holidays."
 msgstr "因为年底市场休假，该合约不能转售。"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2675
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2684
 msgid "Resale of this contract is not offered due to market holiday during contract period."
 msgstr "因为合约期限内存在市场假日，该合约不能转售。"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2696
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2705
 msgid "Resale of this contract is not offered due to market holidays during contract period."
 msgstr "因为合约期限内存在市场假日，该合约不能转售。"
 
 #. ($shortest->as_string)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2597
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2606
 msgid "Resale of this contract is not offered with less than %1 remaining."
 msgstr "不允许转售少于%1的合约。"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2164
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2591
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2646
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2872
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2173
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2600
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2655
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2881
 msgid "Resale of this contract is not offered."
 msgstr "该合约不能转售。"
 
@@ -7905,7 +7912,7 @@ msgstr "重置密码"
 msgid "Resources"
 msgstr "资源"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:109
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:112
 msgid "Response too large."
 msgstr "反应太大。"
 
@@ -8193,7 +8200,7 @@ msgstr "九月"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:1977
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:2127
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:519
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:482
 msgid "Session duration limit cannot be more than 6 weeks."
 msgstr "交易期持续时间限制不能大于 6周。"
 
@@ -8361,21 +8368,17 @@ msgid "Sorry, $currency is not default currency for payment agent "
 msgstr "抱歉，$货币不是支付代理的预设货币 "
 
 #. ($currency, $client_to->loginid)
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:211
-#, fuzzy
-#| msgid "Sorry, $currency is not default currency for client "
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:210
 msgid "Sorry, %1 is not default currency for client %2"
-msgstr "很抱歉，$货币不是客户的预设货币 "
+msgstr "很抱歉，%1不是客户%2的预设货币"
 
 #. ($currency, $client_fm->loginid)
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:207
-#, fuzzy
-#| msgid "Sorry, $currency is not default currency for payment agent "
 msgid "Sorry, %1 is not default currency for payment agent %2"
-msgstr "抱歉，$货币不是支付代理的预设货币 "
+msgstr "抱歉，%1不是支付代理%2的预设货币"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1331
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:167
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:168
 msgid "Sorry, Payment Agent Transfer is temporarily disabled due to system maintenance. Please try again in 30 minutes."
 msgstr "对不起，由于系统维护，支付代理转账暂停使用。请 30 分钟后重试。"
 
@@ -8399,7 +8402,7 @@ msgstr "对不起，在加载表格时出错了。如果问题持续出现，请
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1213
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1365
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1422
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:386
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:351
 msgid "Sorry, an error occurred while processing your account."
 msgstr "对不起，在处理您的账户时出错。"
 
@@ -8420,7 +8423,7 @@ msgid "Sorry, only UK residents can authenticate their identity online."
 msgstr "对不起，仅英国居民可在线验证身份。"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1398
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:202
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:203
 msgid "Sorry, only USD is allowed."
 msgstr "对不起，只允许美元。"
 
@@ -8438,17 +8441,17 @@ msgid "Sorry, the Login ID (%1) does not exist."
 msgstr "对不起，登录 ID (%1) 不存在。"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1561
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:368
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:361
 msgid "Sorry, the Payment Agent Withdrawal is temporarily disabled due to system maintenance. Please try again in 30 minutes."
 msgstr "对不起，由于系统维护，支付代理取款暂时不可用。请 30 分钟后重试。"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1614
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:394
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:387
 msgid "Sorry, the Payment Agent does not exist."
 msgstr "对不起，支付代理不存在。"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1618
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:397
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:390
 msgid "Sorry, the Payment Agent is unavailable for your region."
 msgstr "对不起，支付代理在您的区域不可用。"
 
@@ -8458,11 +8461,9 @@ msgid "Sorry, the Payment Agent's currency "
 msgstr "对不起，支付代理的货币 "
 
 #. ($pa_client->currency)
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:413
-#, fuzzy
-#| msgid "Sorry, the Payment Agent is unavailable for your region."
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:401
 msgid "Sorry, the Payment Agent's currency %1 is unavailable for Payment Agent Withdrawal"
-msgstr "对不起，支付代理在您的区域不可用。"
+msgstr "对不起，支付代理提款不可用支付代理的货币%1"
 
 #. ($limit, $currency)
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:922
@@ -8470,7 +8471,7 @@ msgid "Sorry, the aggregate payouts of contracts on your account cannot exceed %
 msgstr "对不起，您账户的累计赔付额不能大于 %2%1 。"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1397
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:201
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:202
 msgid "Sorry, the currency format is incorrect."
 msgstr "对不起，货币格式不正确。"
 
@@ -8495,7 +8496,7 @@ msgid "Sorry, this feature is available to virtual accounts only"
 msgstr "对不起，此功能仅适用虚拟账户"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:939
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:34
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:36
 msgid "Sorry, this feature is not available."
 msgstr "对不起，此功能不可用。"
 
@@ -8518,11 +8519,9 @@ msgid "Sorry, you cannot withdraw."
 msgstr "对不起，您不能取款。"
 
 #. ($currency, $balance)
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:612
-#, fuzzy
-#| msgid "Sorry, your account cash balance is too high (%1). Your maximum account balance is %2."
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:597
 msgid "Sorry, you cannot withdraw. Your account balance is %1 %2."
-msgstr "对不起，您的账户现金余额太高(%1)。最大允许余额为%2。"
+msgstr "对不起，您不能提款。您的账户余额为%1 %2。"
 
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/User.pm:72
 msgid "Sorry, you have already had too many unsuccessful attempts. Please try again in 5 minutes."
@@ -8541,19 +8540,19 @@ msgstr "对不起，您输入的电邮地址不正确。"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1475
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1787
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:282
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:510
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:278
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:495
 msgid "Sorry, you have exceeded the maximum allowable transactions for today."
 msgstr "对不起，您已超过今日允许的最大交易数。"
 
 #. ($currency . $daily_limit)
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1758
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:491
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:476
 msgid "Sorry, you have exceeded the maximum allowable transfer amount %1 for today."
 msgstr "对不起，您已超过今日允许的最大转账金额%1。"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1467
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:274
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:270
 msgid "Sorry, you have exceeded the maximum allowable transfer amount for today."
 msgstr "对不起，您已超过今日允许的最大转账金额。"
 
@@ -8566,7 +8565,7 @@ msgid "Sorry, you have excluded yourself from the website until %1."
 msgstr "对不起，您已禁止自己访问本网站，直到%1。"
 
 #. ($lim)
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:220
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:224
 msgid "Sorry, you have excluded yourself until %1."
 msgstr "对不起，您已禁止自己，直到%1。"
 
@@ -8600,11 +8599,9 @@ msgid "Sorry, your currency of "
 msgstr "对不起，您的货币 "
 
 #. ($client->currency)
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:405
-#, fuzzy
-#| msgid "Sorry, $currency is not default currency for payment agent "
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:397
 msgid "Sorry, your currency of %1 is unavailable for Payment Agent Withdrawal"
-msgstr "抱歉，$货币不是支付代理的预设货币 "
+msgstr "抱歉，支付代理提款不可使用您的%1货币"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1875
 msgid "Sorry, your payment could not be processed at this time."
@@ -8675,17 +8672,17 @@ msgstr "开始学习"
 msgid "Start time"
 msgstr "开始时间"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2357
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2366
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:421
 msgid "Start time is in the past"
 msgstr "开始时间是在过去"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2347
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2356
 msgid "Start time is invalid."
 msgstr "开始时间无效。"
 
 #. ($forward_starting_blackout->as_string)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2385
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2394
 msgid "Start time on forward-starting contracts must be more than %1 from now."
 msgstr "远期起点合约的开始时间必须距离现在超过 %1。"
 
@@ -8843,7 +8840,7 @@ msgid "Study our live charts"
 msgstr "查看我们的实时图表"
 
 #. ($style)
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:237
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:215
 msgid "Style %1 invalid"
 msgstr "%1类型无效"
 
@@ -8908,9 +8905,9 @@ msgstr "切换到普通模式"
 
 #. ($symbol)
 #. ($args->{symbol})
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:178
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:207
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:345
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:156
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:185
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:323
 msgid "Symbol %1 invalid"
 msgstr "%1 符号无效"
 
@@ -8957,7 +8954,7 @@ msgstr "电话"
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:319
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:3407
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1264
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:412
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:379
 #: /home/git/translations/binary-static/src/templates/toolkit/account/settings_detailsws.html.tt:105
 msgid "Telephone"
 msgstr "电话"
@@ -9061,8 +9058,8 @@ msgstr "%1 所模拟的市场白天很活跃（但在晚间较稳定）。 %2 �
 #. ($r->website->display_name)
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1831
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1276
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:424
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:550
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:391
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:535
 msgid "The %1 team."
 msgstr "%1 团队。"
 
@@ -9291,7 +9288,7 @@ msgid "The Moving Average Convergence/Divergence (MACD) indicator is a trend fol
 msgstr "指数平滑异动移动平均线（MACD)指数是一个趋势跟踪指数，用于判断趋势变化。MACD是一个摆动指标，以一个股票价格的两条价格指数平均线为基础，一共显示三条线。MACD线计算的是两个移动平均线之间的差（通常是12日和26日平均线）。而\"信号\"线则是标准MACD线的9日平滑平均线，有时候也被称为\"缓慢\" MACD线。"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1592
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:385
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:378
 msgid "The Payment Agent facility is currently not available in your country."
 msgstr "您的国家无可用支付代理设施。"
 
@@ -9346,12 +9343,20 @@ msgstr "%1账户不可转账。"
 msgid "The account transfer is unavailable for %1 and %2 accounts with different default currency."
 msgstr "%1和%2账户不可用不同的预设货币转账。"
 
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:672
+#, fuzzy
+#| msgid "The account transfer is unavailable for %1 and %2 accounts with different default currency."
+msgid "The account transfer is unavailable for accounts with different default currency."
+msgstr "%1和%2账户不可用不同的预设货币转账。"
+
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:601
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:663
 msgid "The account transfer is unavailable for your account."
 msgstr "您的账户不可转账。"
 
 #. ($client->loginid)
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:567
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:635
 msgid "The account transfer is unavailable for your account: %1."
 msgstr "您的账户不可转账：%1。"
 
@@ -9372,7 +9377,7 @@ msgstr "每上涨/下降一点之盈利/亏损额乘以每一点之金额。  �
 msgid "The anti-money laundering processes have the following effects on Clients:"
 msgstr "反洗黑钱程序对客户有以下影响："
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:102
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:105
 msgid "The application sent an invalid request."
 msgstr "应用程序发送的请求无效。"
 
@@ -9463,7 +9468,7 @@ msgid "The contract has expired"
 msgstr "合约已到期"
 
 #. ($ny_1600->time_hhmm)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2873
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2882
 msgid "The contract is not available after %1 GMT."
 msgstr "该合约在格林威治标准时间 %1 过后失效。"
 
@@ -9560,7 +9565,7 @@ msgstr "306美元亏损是以退出和进场价位的相差额乘以每一点的
 msgid "The market exit price is the price in effect at the end of the contract period."
 msgstr "市场平仓价为合约期限到期时的有效价格。"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2363
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2372
 msgid "The market must be open at the start time."
 msgstr "市场必须在开始时间已经开市。"
 
@@ -9583,9 +9588,10 @@ msgstr "页面超时，这可能是由于互联网连接速度慢或者我们的
 
 #. ($r->email,                            $r->client_ip)
 #. ($client_obj->email,                    $r->client_ip)
+#. ($client->email,                    $ip)
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:359
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v2/Accounts.pm:216
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:308
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:280
 msgid "The password for your account %1 has been changed. This request originated from IP address %2. If this request was not performed by you, please immediately contact Customer Support."
 msgstr "您的账户%1密码已更改。此请求源自IP地址%2。如您并没执行此项请求，请立刻联系客户支持人员。"
 
@@ -9761,10 +9767,10 @@ msgstr "出现错误，我们无法处理您的请求。"
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1421
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1645
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1675
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:220
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:225
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:418
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:428
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:218
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:222
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:406
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:416
 msgid "There was an error processing the request."
 msgstr "处理请求时出错。"
 
@@ -9774,10 +9780,8 @@ msgid "Therefore you may not withdraw any additional funds."
 msgstr "所以您可能不能提取任何额外资金。"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:242
-#, fuzzy
-#| msgid "Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is"
 msgid "Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is EUR"
-msgstr "因此，您当前可即时提取的最大金额为（前提是您的帐户有足够资金）"
+msgstr "因此，您当前可即时提取的最大金额为（前提是您的帐户有足够资金）欧元"
 
 #. (remainder_monetary, equivalent_remainder)
 #: /home/git/translations/binary-static/src/templates/toolkit/account/trading_withdrawal_limit.html.tt:77
@@ -9853,7 +9857,7 @@ msgid "This Document"
 msgstr "本文档"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1688
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:431
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:419
 msgid "This Payment Agent cashier section is locked."
 msgstr "此支付代理的收银台部分已锁定。"
 
@@ -9862,7 +9866,7 @@ msgstr "此支付代理的收银台部分已锁定。"
 msgid "This URL is invalid."
 msgstr "此 URL 无效。"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:210
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:214
 msgid "This account is unavailable."
 msgstr "此账户不可用。"
 
@@ -9886,7 +9890,7 @@ msgid "This bonus will be processed and credited to a client's account when:"
 msgstr "该奖金将被处理，并记入客户的账户中，一旦："
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1417
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:221
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:218
 msgid "This client cashier section is locked."
 msgstr "此客户的收银台部分已锁定。"
 
@@ -9923,7 +9927,7 @@ msgstr "此账户不可交易该合约。"
 msgid "This contract lost"
 msgstr "此合约亏损"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2275
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2284
 msgid "This contract offers no return."
 msgstr "该合约不提供回报。"
 
@@ -10002,7 +10006,7 @@ msgstr "对太忙碌，没时间或专门知识不足以跟进市场走势的<a 
 msgid "This market closes early today at"
 msgstr "此市场今日在下列时间提前收市"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2363
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2372
 msgid "This market is presently closed."
 msgstr "此市场目前已收市。"
 
@@ -10036,7 +10040,7 @@ msgstr "此页不可用。"
 msgid "This promotion is only available to new Clients. Existing or former Clients do not qualify. It is only available once to each Client."
 msgstr "本促销活动仅适用于新客户。现有或以往客户不符合条件。每一客户仅能获得一次。"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2165
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2174
 msgid "This trade is not offered."
 msgstr "不提供此交易。"
 
@@ -10117,10 +10121,8 @@ msgstr "To begin Binary option trading, you will first need to read all these do
 
 #. (request.url_for("contact"))
 #: /home/git/translations/binary-static/src/templates/toolkit/account/settings_detailsws.html.tt:132
-#, fuzzy
-#| msgid "To change your name, date of birth, country of residence, or email, please contact Customer Support."
 msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
-msgstr "如需更改姓名、生日、居住国或电子邮件地址，请与客户支持人员联系。"
+msgstr "如需更改姓名、生日、居住国或电子邮件地址，请与<a href=\"%1\">客户支持人员</a>联系。"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Form.pm:420
 msgid "To change your name, date of birth, country of residence, or email, please contact Customer Support."
@@ -10168,15 +10170,13 @@ msgid "Token"
 msgstr "令牌"
 
 #. ($safer_expiry->date)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2697
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2706
 msgid "Too many market holidays during the contract period. Select an expiry date after %1."
 msgstr "该合约期限内有太多市场假日，请在 %1之后选择到期日。"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1291
-#, fuzzy
-#| msgid "Connection failure. Please try again later."
 msgid "Too many recent attempts.  Try again later."
-msgstr "连接失败。请稍后重试。"
+msgstr "新近尝试次数过多。 请稍后重试。"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:181
 msgid "Total Cost"
@@ -10315,11 +10315,11 @@ msgstr "交易规则"
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:162
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Resources.pm:488
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Resources.pm:658
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2138
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2411
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2426
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2442
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2666
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2147
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2420
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2435
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2451
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2675
 #: /home/git/translations/binary-static/src/templates/haml/resources/index.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/datafeed.html.tt:29
 msgid "Trading Times"
@@ -10351,16 +10351,16 @@ msgid "Trading is Suspended"
 msgstr "交易暂停"
 
 #. ($blackout_time)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2375
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2384
 msgid "Trading is available after the first %1 of the session."
 msgstr "交易在交易时段第一个 %1 后可用。"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2647
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2656
 msgid "Trading is not offered for this duration."
 msgstr "不在此段期间提供交易。"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2088
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2157
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2097
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2166
 msgid "Trading is suspended at the moment."
 msgstr "当前交易暂停。"
 
@@ -10376,9 +10376,9 @@ msgstr "此类合约不在%1提供交易。"
 #. ($underlying->translated_display_name()
 #. ($translated_name)
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:416
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2096
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2105
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2136
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2114
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2145
 msgid "Trading on %1 is suspended at the moment."
 msgstr "%1 的当前交易暂停。"
 
@@ -10388,9 +10388,9 @@ msgstr "%1 的当前交易暂停。"
 #. ($bet->underlying->translated_display_name()
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1354
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:144
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2116
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2126
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2762
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2125
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2135
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2771
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Spread.pm:200
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Spread.pm:241
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Spread.pm:434
@@ -10398,12 +10398,12 @@ msgstr "%1 的当前交易暂停。"
 msgid "Trading on %1 is suspended due to missing market data."
 msgstr "由于市场数据丢失，%1 交易暂停。"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2424
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2433
 msgid "Trading on this contract type is suspended for the last one hour of the session."
 msgstr "此种合约交易时段最后一小时暂停交易。"
 
 #. ($localized_eod_blackout_start->as_string)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2409
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2418
 msgid "Trading suspended for the last %1 of the session."
 msgstr "交易时段最后 %1 暂停交易。"
 
@@ -10468,8 +10468,8 @@ msgstr "信任"
 msgid "Try it now"
 msgstr "立即体验"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2368
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2376
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2377
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2385
 msgid "Try out the Random Indices which are always open."
 msgstr "尝试总是开放的随机指数。"
 
@@ -10545,11 +10545,11 @@ msgstr "很遗憾，您的回答显示您缺乏足够的财务资源或交易经
 msgid "Unfortunately, no – funds initially deposited through one payment method must be withdrawn through the same system; funds cannot be transferred to an alternate system for withdrawal. We do offer a wide variety of payment methods, to suit your specific needs and preferences."
 msgstr "很遗憾，不行。必须使用原存款方式提款。提款时不可先将资金转移到别的系统。为配合您的特别需求和喜好，我们提供各种各样的付款方式。"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/PortfolioManagement.pm:25
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/PortfolioManagement.pm:27
 msgid "Unknown contract proposal"
 msgstr "未知合约建议"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/PortfolioManagement.pm:85
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/PortfolioManagement.pm:87
 msgid "Unknown contract sell proposal"
 msgstr "未知合约出售建议"
 
@@ -10557,8 +10557,8 @@ msgstr "未知合约出售建议"
 msgid "Unknown error while saving workspace '#1'."
 msgstr "保存工作区“#1”时出现未知错误。"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:33
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:62
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:37
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:64
 msgid "Unknown landing company."
 msgstr "未知着陆公司。"
 
@@ -10571,7 +10571,7 @@ msgstr "除非另行通知，我们将视您为零售客户。您也可通过书
 msgid "Unlock Cashier"
 msgstr "解锁收银台"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:253
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:257
 msgid "Unrecognised request."
 msgstr "无法辨识之请求。"
 
@@ -10671,7 +10671,7 @@ msgstr "验证新密码"
 #. ($website->display_name)
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Account/Virtual.pm:105
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:1072
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/NewAccount.pm:67
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/NewAccount.pm:65
 msgid "Verify your email address - %1"
 msgstr "验证您的电子邮件地址 - %1"
 
@@ -10695,7 +10695,7 @@ msgstr "垂直的"
 msgid "View"
 msgstr "查看"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2879
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2888
 msgid "View Asset Index"
 msgstr "查看资产指数"
 
@@ -10980,15 +10980,7 @@ msgstr ""
 "  %4团队。"
 
 #. ($currency, $amount, $payment_agent->payment_agent_name, $website->display_name)
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:312
-#, fuzzy
-#| msgid ""
-#| "We would like to inform you that the transfer of %1 %2 via %3 has been processed.\n"
-#| "    The funds have been credited into your account.\n"
-#| "\n"
-#| "    Kind Regards,\n"
-#| "\n"
-#| "    The %4 team."
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:306
 msgid ""
 "We would like to inform you that the transfer of %1 %2 via %3 has been processed.\n"
 "The funds have been credited into your account.\n"
@@ -10998,15 +10990,15 @@ msgid ""
 "The %4 team."
 msgstr ""
 "我们特此通知您，通过%3转账的%1%2资金已经处理。\n"
-"  资金已经到账。\n"
+"资金已经到账。\n"
 "\n"
-"  谨此问候，\n"
+"谨此问候，\n"
 "\n"
-"  %4团队。"
+"%4团队。"
 
 #. ($currency, $amount, $client_name, $client_loginid, $paymentagent_loginid, $website->display_name)
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1825
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:544
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:529
 msgid "We would like to inform you that the withdrawal request of %1%2 by %3 %4 has been processed. The funds have been credited into your account %5 at %6."
 msgstr "我们特此通知您，由%3%4作出的%1%2取款请求已经处理。资金已经计入您在%6的%5账户。"
 
@@ -11415,8 +11407,6 @@ msgid "Withdrawal"
 msgstr "提款"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:231
-#, fuzzy
-#| msgid "Withdrawal limits"
 msgid "Withdrawal Limits"
 msgstr "取款限额"
 
@@ -11481,8 +11471,8 @@ msgid "You are advised that the Binary Options offered by %1 are not traded unde
 msgstr "我们仅此通知您，%1 所提供的二元期权交易并不受任何认可、指定或受监管的交易所规则所管制。其后果是，进行二元期权交易活动可能会使您承担比您所投入的交易金额更高的风险。"
 
 #. ($symbol)
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:191
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:246
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:169
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/MarketDiscovery.pm:224
 msgid "You are already subscribed to %1"
 msgstr "您已订阅%1"
 
@@ -11491,7 +11481,7 @@ msgid "You are being given the better price."
 msgstr "正在为您获取更好的价格。"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1335
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:171
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:172
 msgid "You are not a Payment Agent"
 msgstr "您不是支付代理"
 
@@ -11500,7 +11490,7 @@ msgid "You are not allowed to rebate any part commission payment onto your refer
 msgstr "您不能用部分佣金对您的推荐人作为折扣，否则在公司发现后您的账户将立即撤销。"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1571
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:373
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:366
 msgid "You are not authorized for withdrawal via payment agent."
 msgstr "您未经授权通过付款代理进行取款。"
 
@@ -11554,7 +11544,7 @@ msgstr "对于不受 %1 支持的支付方式或本地货币， 您可通过使�
 
 #. ($loginid_to)
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1413
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:216
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:214
 msgid "You cannot transfer to account %1, as their account is currently disabled."
 msgstr "您不能转账至账户 %1，因为此账户目前已禁用。"
 
@@ -11579,10 +11569,8 @@ msgid "You have already claimed a bonus in the past."
 msgstr "您此前已领取奖金。"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:234
-#, fuzzy
-#| msgid "You have already withdrawn the equivalent of EUR %1."
 msgid "You have already withdrawn the equivalent of EUR"
-msgstr "您已累计提取 EUR %1。"
+msgstr "您已累计提取 EUR"
 
 #. (withdrawal_for_x_days_monetary, num_of_days)
 #: /home/git/translations/binary-static/src/templates/toolkit/account/trading_withdrawal_limit.html.tt:45
@@ -11826,11 +11814,9 @@ msgid "Your account balance (%1%2) is insufficient to buy this contract (%1%3)."
 msgstr "您的账户余额(%1%2)不足以买入该合约 (%1%3)。"
 
 #. ($currency, $balance, $withdrawal_limits->{'max_withdrawal'})
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:619
-#, fuzzy
-#| msgid "Maximum withdrawal by all other means:"
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:604
 msgid "Your account balance is %1 %2. Maximum withdrawal by all other means is %1 %3."
-msgstr "通过所有其他方式的最大取款金额："
+msgstr "您的账户余额是 %1 %2。通过所有其他方式的最大取款金额是%1 %3。"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:929
 msgid "Your account has exceeded the trading limit with free promo code, please deposit if you wish to continue trading."
@@ -11905,11 +11891,9 @@ msgstr "您的奖金将在3个工作日内计入您的账户。"
 msgid "Your cashier is locked"
 msgstr "您的收银台已被锁定"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:175
-#, fuzzy
-#| msgid "Your cashier is locked by password."
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:176
 msgid "Your cashier is locked as per your request"
-msgstr "您的收银台已被密码锁定。"
+msgstr "您的收银台已依照您的请求被密码锁定"
 
 #. ($r->url_for('/user/settings/security')
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:118
@@ -11922,14 +11906,12 @@ msgstr "根据您的请求，您的收银台已被锁定 - 如需解除锁定，
 msgid "Your cashier is locked as per your request - to unlock it, please enter the password."
 msgstr "根据您的请求，您的收银台已被锁定 - 如需解除锁定，请输入密码。"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:375
-#, fuzzy
-#| msgid "Your cashier is locked by password."
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:368
 msgid "Your cashier is locked as per your request."
-msgstr "您的收银台已被密码锁定。"
+msgstr "您的收银台已依照您的请求被密码锁定。"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Cashier.pm:1421
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:226
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Cashier.pm:222
 msgid "Your cashier section is locked."
 msgstr "您的收银台部分已被锁定。"
 
@@ -11967,7 +11949,7 @@ msgid "Your email address is unverified."
 msgstr "您的电子邮件地址未经验证。"
 
 #. ($code)
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/NewAccount.pm:68
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/NewAccount.pm:66
 msgid "Your email address verification code is: "
 msgstr "您的电子邮件地址验证码是： "
 
@@ -12039,7 +12021,7 @@ msgstr "您的密码含无效字符。"
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:353
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/User.pm:366
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v2/Accounts.pm:210
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:302
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Accounts.pm:274
 #: /home/git/translations/binary-static/src/templates/toolkit/account/change_passwordws.html.tt:72
 msgid "Your password has been changed."
 msgstr "您的密码已更改。"
@@ -12153,10 +12135,8 @@ msgid "Your withdrawal limit for the entire duration of the account is currently
 msgstr "在整个账户存续期内您的取款限额目前为：<b>EUR %1</b> (或其他货币为 %2 。)"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:239
-#, fuzzy
-#| msgid "Your withdrawal limit for the entire duration of the account is currently: <b>EUR %1</b> (or %2 in other currency.)"
 msgid "Your withdrawal limit for the entire duration of the account is currently: EUR"
-msgstr "在整个账户存续期内您的取款限额目前为：<b>EUR %1</b> (或其他货币为 %2 。)"
+msgstr "在整个账户存续期内您的取款限额目前为：EUR"
 
 #. (num_of_days_limit_monetary, num_of_days_limit_equivalent)
 #: /home/git/translations/binary-static/src/templates/toolkit/account/trading_withdrawal_limit.html.tt:17
@@ -12164,10 +12144,8 @@ msgid "Your withdrawal limit is <strong>EUR %1</strong> (or %2 in other currency
 msgstr "您的取款限额为 <strong>EUR %1</strong> (其他货币为 %2 ）。"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:232
-#, fuzzy
-#| msgid "withdrawal limits"
 msgid "Your withdrawal limit is EUR"
-msgstr "取款限额"
+msgstr "您的取款限额是EUR"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/benefits_of_trading_binaries.html.haml:1
 msgid "You’ll be surprised by the returns you can make."
@@ -12218,7 +12196,7 @@ msgstr "由于该人士的本网站活动导致本公司遭受任何金钱、财
 msgid "any restriction to its Clients from purchasing any contracts during certain hours."
 msgstr "对客户在特定时段买入任何合约的限制。"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1945
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1954
 msgid "barrier"
 msgstr "障碍"
 
@@ -12249,10 +12227,8 @@ msgid "day"
 msgstr "天"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:236
-#, fuzzy
-#| msgid "and your withdrawal limits are:"
 msgid "day withdrawal limit is currently EUR"
-msgstr "您的提款限额为："
+msgstr "您的当前日提款限额为EUR"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:167
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:472
@@ -12313,7 +12289,7 @@ msgstr "自金融账户(%1)至博彩账户(%2)"
 msgid "from gaming account (%1) to financial account (%2)"
 msgstr "自博彩账户(%1)至金融账户(%2)"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1945
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1954
 msgid "high barrier"
 msgstr "高障碍"
 
@@ -12332,16 +12308,12 @@ msgid "hours"
 msgstr "小时"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:238
-#, fuzzy
-#| msgid "in aggregate over the lifetime of your account"
 msgid "in aggregate over the last"
-msgstr "您的帐户有效期内的总额"
+msgstr "上期内的总额"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:240
-#, fuzzy
-#| msgid "in aggregate over the lifetime of your account"
 msgid "in aggregate over the lifetime of your account."
-msgstr "您的帐户有效期内的总额"
+msgstr "您的帐户有效期内的总额。"
 
 #: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequency.html.haml:1
 msgid "in minutes"
@@ -12364,7 +12336,7 @@ msgstr "领先的二元期权交易平台。"
 msgid "loading..."
 msgstr "加载中……"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1945
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1954
 msgid "low barrier"
 msgstr "低障碍"
 
@@ -12391,7 +12363,7 @@ msgstr "最短可用期限"
 msgid "minimum is"
 msgstr "最小为"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1942
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1951
 msgid "minus"
 msgstr "减去"
 
@@ -12432,10 +12404,8 @@ msgid "or Email us at"
 msgstr "或发送电子邮件至"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:233
-#, fuzzy
-#| msgid "in other currency"
 msgid "or equivalent in other currency"
-msgstr "其它货币"
+msgstr "或等值的其它货币"
 
 #: /home/git/translations/binary-static/src/templates/haml/not_found.html.haml:1
 msgid "or please try the site map below"
@@ -12446,7 +12416,7 @@ msgstr "或请尝试下面的网站地图"
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "所有合约准确结算时间的页面。其他网站可能会有不同的惯例（比如一些网站采用纽约时间4点或伦敦时间5点）。由于不同的收盘时间惯例，在本网站上显示的开盘、高、低或收盘价可能跟其他网站不一致。"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1942
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1951
 msgid "plus"
 msgstr "加"
 
@@ -12612,9 +12582,21 @@ msgstr "英镑/新加坡元"
 msgid "EUR/NZD"
 msgstr "欧元/新西兰元"
 
+#: Underlying Symbol frxEURAED
+#, fuzzy
+#| msgid "EUR/AUD"
+msgid "EUR/AED"
+msgstr "欧元/澳元"
+
 #: Underlying Symbol frxEURNOK
 msgid "EUR/NOK"
 msgstr "欧元/挪威克朗"
+
+#: Underlying Symbol frxGBPAED
+#, fuzzy
+#| msgid "GBP/AUD"
+msgid "GBP/AED"
+msgstr "英镑/澳元"
 
 #: Underlying Symbol frxEURCHF
 msgid "EUR/CHF"
@@ -12647,6 +12629,12 @@ msgstr "英镑/美元"
 #: Underlying Symbol frxUSDCNY
 msgid "USD/CNY"
 msgstr "美元/人民币"
+
+#: Underlying Symbol frxAUDAED
+#, fuzzy
+#| msgid "AUD/CAD"
+msgid "AUD/AED"
+msgstr "澳元/加元"
 
 #: Underlying Symbol frxEURHUF
 msgid "EUR/HUF"
@@ -12708,6 +12696,20 @@ msgstr "英镑/墨西哥比索"
 msgid "AUDZAR"
 msgstr "澳元兑南非兰特"
 
+#: Underlying Symbol frxAUDSAR
+#, fuzzy
+#| msgid "AUD/SGD"
+msgid "AUD/SAR"
+msgstr "澳元/新加坡元"
+
+#: Underlying Symbol frxEURSEK
+msgid "EUR/SEK"
+msgstr "欧元/瑞典克朗"
+
+#: Underlying Symbol frxUSDCZK
+msgid "USD/CZK"
+msgstr "美元/捷克克朗"
+
 #: Underlying Symbol frxEURZAR
 msgid "EUR/ZAR"
 msgstr "欧元/南非兰特"
@@ -12716,9 +12718,27 @@ msgstr "欧元/南非兰特"
 msgid "AUD/CNY"
 msgstr "澳元/人民币"
 
+#: Underlying Symbol frxGBPSAR
+#, fuzzy
+#| msgid "GBP/ZAR"
+msgid "GBP/SAR"
+msgstr "英镑/南非兰特"
+
 #: Underlying Symbol frxUSDINR
 msgid "USD/INR"
 msgstr "美元/印度卢比"
+
+#: Underlying Symbol frxUSDAED
+#, fuzzy
+#| msgid "USD/CAD"
+msgid "USD/AED"
+msgstr "美元/加元"
+
+#: Underlying Symbol frxEURSAR
+#, fuzzy
+#| msgid "EUR/ZAR"
+msgid "EUR/SAR"
+msgstr "欧元/南非兰特"
 
 #: Underlying Symbol WLDEUR
 msgid "EUR Index"
@@ -12752,6 +12772,10 @@ msgstr "美元指数"
 msgid "AUD/NZD"
 msgstr "澳元/新西兰元"
 
+#: Underlying Symbol frxGBPSEK
+msgid "GBP/SEK"
+msgstr "英镑/瑞典克朗"
+
 #: Underlying Symbol frxAUDMXN
 msgid "AUD/MXN"
 msgstr "澳元/墨西哥比索"
@@ -12759,6 +12783,12 @@ msgstr "澳元/墨西哥比索"
 #: Underlying Symbol frxAUDHKD
 msgid "AUD/HKD"
 msgstr "澳元/港币"
+
+#: Underlying Symbol frxAUDIDR
+#, fuzzy
+#| msgid "AUD/INR"
+msgid "AUD/IDR"
+msgstr "澳元/印度卢比"
 
 #: Underlying Symbol frxEURDKK
 msgid "EUR/DKK"
@@ -12776,9 +12806,19 @@ msgstr "英镑/加元"
 msgid "USD/CHF"
 msgstr "美元/瑞士法郎"
 
+#: Underlying Symbol frxEURIDR
+#, fuzzy
+#| msgid "EUR/INR"
+msgid "EUR/IDR"
+msgstr "欧元/印度卢比"
+
 #: Underlying Symbol frxGBPNOK
 msgid "GBP/NOK"
 msgstr "英镑/挪威克朗"
+
+#: Underlying Symbol frxGBPCZK
+msgid "GBP/CZK"
+msgstr "英镑/捷克克朗"
 
 #: Underlying Symbol frxAUDUSD
 msgid "AUD/USD"
@@ -12832,6 +12872,12 @@ msgstr "英镑/日元"
 msgid "GBP/HKD"
 msgstr "英镑/港币"
 
+#: Underlying Symbol frxUSDSAR
+#, fuzzy
+#| msgid "USD/SGD"
+msgid "USD/SAR"
+msgstr "美元/新加坡元"
+
 #: Underlying Symbol WLDGBP
 msgid "GBP Index"
 msgstr "英镑指数"
@@ -12872,6 +12918,12 @@ msgstr "英镑/澳元"
 msgid "GBP/PLN"
 msgstr "英镑/波兰兹罗提"
 
+#: Underlying Symbol frxGBPIDR
+#, fuzzy
+#| msgid "GBP/INR"
+msgid "GBP/IDR"
+msgstr "英镑/印度卢比"
+
 #: Underlying Symbol frxUSDSEK
 msgid "USD/SEK"
 msgstr "美元/瑞典克朗"
@@ -12879,6 +12931,12 @@ msgstr "美元/瑞典克朗"
 #: Underlying Symbol frxUSDMXN
 msgid "USD/MXN"
 msgstr "美元/墨西哥比索"
+
+#: Underlying Symbol frxUSDIDR
+#, fuzzy
+#| msgid "USD/INR"
+msgid "USD/IDR"
+msgstr "美元/印度卢比"
 
 #: Underlying Symbol frxAUDKRW
 msgid "AUD/KRW"
@@ -12904,9 +12962,17 @@ msgstr "德国指数"
 msgid "AP Ordinary"
 msgstr "AP 普通股票指数"
 
+#: Underlying Symbol SYNFCHI
+msgid "French Smart Index"
+msgstr "法国智能指数"
+
 #: Underlying Symbol JCI
 msgid "Jakarta Index"
 msgstr "雅加达指数"
+
+#: Underlying Symbol IXIC
+msgid "US Tech Composite Index"
+msgstr "美国技术综合指数"
 
 #: Underlying Symbol OEX
 msgid "US S&P 100"
@@ -12932,6 +12998,10 @@ msgstr "上海指数"
 msgid "French Index"
 msgstr "法国指数"
 
+#: Underlying Symbol SYNFTSE
+msgid "UK Smart Index"
+msgstr "英国智能指数"
+
 #: Underlying Symbol EGX30
 msgid "Egypt Index"
 msgstr "埃及指数"
@@ -12945,7 +13015,9 @@ msgid "Wall Street Index"
 msgstr "华尔街指数"
 
 #: Underlying Symbol SASEIDX
-msgid "Saudi Arabic Index"
+#, fuzzy
+#| msgid "Saudi Arabic Index"
+msgid "Saudi Arabia Index"
 msgstr "沙特阿拉伯指数"
 
 #: Underlying Symbol SPC
@@ -12956,9 +13028,25 @@ msgstr "美国指数"
 msgid "Euro 50 Index"
 msgstr "欧洲 50 指数"
 
+#: Underlying Symbol NDX
+msgid "US Tech 100 Index"
+msgstr "美国科技100指数"
+
 #: Underlying Symbol AS51
 msgid "Australian Index"
 msgstr "澳大利亚指数"
+
+#: Underlying Symbol OMXS30
+msgid "Swedish Index"
+msgstr "瑞典指数"
+
+#: Underlying Symbol SYNSX5E
+msgid "Euro 50 Smart Index"
+msgstr "欧洲 50 智能指数"
+
+#: Underlying Symbol SYNDJI
+msgid "Wall Street Smart Index"
+msgstr "华尔街智能指数"
 
 #: Underlying Symbol STI
 msgid "Singapore Index"
@@ -12972,9 +13060,17 @@ msgstr "葡萄牙智能指数"
 msgid "Norwegian Index"
 msgstr "挪威指数"
 
+#: Underlying Symbol NIFTY
+msgid "Indian 50 Index"
+msgstr "印度50指数"
+
 #: Underlying Symbol N225
 msgid "Japanese Index"
 msgstr "日本指数"
+
+#: Underlying Symbol SYNAEX
+msgid "Dutch Smart Index"
+msgstr "荷兰智能指数"
 
 #: Underlying Symbol SSMI
 msgid "Swiss Index"
@@ -12987,6 +13083,10 @@ msgstr "香港指数"
 #: Underlying Symbol AEX
 msgid "Dutch Index"
 msgstr "荷兰指数"
+
+#: Underlying Symbol SYNGDAXI
+msgid "German Smart Index"
+msgstr "德国智能指数"
 
 #: Underlying Symbol MIB30
 msgid "Italian 30 Index"
@@ -13047,6 +13147,10 @@ msgstr "印地纺集团"
 #: Underlying Symbol FPSAF
 msgid "Safran"
 msgstr "赛峰"
+
+#: Underlying Symbol ITENEL
+msgid "ENEL"
+msgstr "ENEL"
 
 #: Underlying Symbol INRIL
 msgid "Reliance Industries Ltd"
@@ -13128,6 +13232,10 @@ msgstr "赛诺菲"
 msgid "Cie de Saint-Gobain"
 msgstr "圣戈班公司"
 
+#: Underlying Symbol ITFIAT
+msgid "Fiat"
+msgstr "菲亚特"
+
 #: Underlying Symbol USPG
 msgid "Procter & Gamble Co."
 msgstr "宝洁公司"
@@ -13155,6 +13263,10 @@ msgstr "挪威国家石油公司"
 #: Underlying Symbol FPBN
 msgid "Danone"
 msgstr "达能集团"
+
+#: Underlying Symbol USQCOM
+msgid "QUALCOMM"
+msgstr "高通公司"
 
 #: Underlying Symbol JPHM
 msgid "Honda Motor Co. Ltd"
@@ -13248,6 +13360,10 @@ msgstr "澳新银行集团有限公司"
 msgid "ASML Holding"
 msgstr "阿斯麦公司"
 
+#: Underlying Symbol USORCL
+msgid "Oracle"
+msgstr "甲骨文公司"
+
 #: Underlying Symbol KRSFG
 msgid "Shinhan Financial"
 msgstr "新韩金融"
@@ -13267,6 +13383,10 @@ msgstr "蓝博特布鲁塞尔集团"
 #: Underlying Symbol NAUNA
 msgid "Unilever"
 msgstr "联合利华公司"
+
+#: Underlying Symbol ITAGS
+msgid "Assicurazioni Generali SpA"
+msgstr "忠利保险有限公司"
 
 #: Underlying Symbol USWFC
 msgid "Wells Fargo & Company"
@@ -13311,6 +13431,10 @@ msgstr "移动比利时"
 #: Underlying Symbol FPGSZ
 msgid "GDF Suez"
 msgstr "苏伊士环能集团"
+
+#: Underlying Symbol USQQQQ
+msgid "PowerShares QQQ"
+msgstr "PowerShares纳斯达克100指数ETF"
 
 #: Underlying Symbol UKSTAN
 msgid "Standard Chartered plc"
@@ -13360,9 +13484,17 @@ msgstr "比利时联合化工集团"
 msgid "GlaxoSmithKline plc"
 msgstr "葛兰素史克公司"
 
+#: Underlying Symbol ITENI
+msgid "ENI SpA"
+msgstr "意大利埃尼集团"
+
 #: Underlying Symbol UKGLEN
 msgid "Glencore Xstrat"
 msgstr "嘉能可超达"
+
+#: Underlying Symbol ITISP
+msgid "Intesa Sanpaolo"
+msgstr "联合圣保罗银行"
 
 #: Underlying Symbol UKDGE
 msgid "Diageo plc"
@@ -13396,13 +13528,29 @@ msgstr "法国兴业银行"
 msgid "General Electric Company"
 msgstr "通用电气公司"
 
+#: Underlying Symbol USMSFT
+msgid "Microsoft"
+msgstr "微软"
+
 #: Underlying Symbol UKRIO
 msgid "Rio Tinto plc"
 msgstr "力拓"
 
+#: Underlying Symbol USINTC
+msgid "Intel"
+msgstr "英特尔公司"
+
+#: Underlying Symbol USGOOG
+msgid "Google Inc."
+msgstr "谷歌公司。"
+
 #: Underlying Symbol USWMT
 msgid "Wal-Mart Stores Inc."
 msgstr "沃尔玛百货有限公司"
+
+#: Underlying Symbol USAAPL
+msgid "Apple Inc."
+msgstr "苹果公司。"
 
 #: Underlying Symbol frxXPTAUD
 msgid "XPT/AUD"
@@ -13484,22 +13632,6 @@ msgstr "铂价盎司/欧元"
 msgid "XPT/GBP"
 msgstr "铂价盎司/英镑"
 
-#: Underlying Symbol RDBULL
-msgid "Random Bull"
-msgstr "随机牛市"
-
-#: Underlying Symbol RDYIN
-msgid "Random Yin"
-msgstr "随机阴市"
-
-#: Underlying Symbol RDMARS
-msgid "Random Mars"
-msgstr "随机火星"
-
-#: Underlying Symbol RDSUN
-msgid "Random Sun"
-msgstr "随机日市"
-
 #: Translation for market name
 msgid "Synthetic"
 msgstr "综合"
@@ -13557,7 +13689,9 @@ msgid "Dutch Stocks"
 msgstr "荷兰股票"
 
 #: Translation for sub market name
-msgid "Middle East Indices"
+#, fuzzy
+#| msgid "Middle East Indices"
+msgid "Middle East"
 msgstr "中东指数"
 
 #: Translation for sub market name
@@ -13789,6 +13923,43 @@ msgstr "亚洲上涨"
 #: Translation for contract type description (ASIANU - tick)
 msgid "%1 %2 payout if the last tick of %3 is strictly higher than the average of the %plural(%5,%d tick,%d ticks)."
 msgstr "如果%3的最新跳动点严格高于%plural(%5,%d 跳动点,%d 跳动点) 的平均价格，将获得%1%2的赔付额。"
+
+#: Translation for contract type "CALL"
+msgid "higher"
+msgstr "高于"
+
+#. %1 - Payout Currency (example USD)
+#. %2 - Payout value (example 100)
+#. %3 - Underlying name (example USD/JPY)
+#. %4 - Starting datetime (may be 'contract start')
+#. %5 - Expiration datetime
+#. %6 - High (or single) barrier
+#. %7 - Low barrier (when present)
+#: Translation for contract type description (CALL - daily)
+msgid "%1 %2 payout if %3 is strictly higher than %6 at %5."
+msgstr "如果%3在%5时严格高于%6，将获得%1%2的赔付额。"
+
+#. %1 - Payout Currency (example USD)
+#. %2 - Payout value (example 100)
+#. %3 - Underlying name (example USD/JPY)
+#. %4 - Starting datetime (may be 'contract start')
+#. %5 - Expiration datetime
+#. %6 - High (or single) barrier
+#. %7 - Low barrier (when present)
+#: Translation for contract type description (CALL - intraday)
+msgid "%1 %2 payout if %3 is strictly higher than %6 at %5 after %4."
+msgstr "如果%3在%4之后到%5时严格高于%6，将获得%1%2的赔付额。"
+
+#. %1 - Payout Currency (example USD)
+#. %2 - Payout value (example 100)
+#. %3 - Underlying name (example USD/JPY)
+#. %4 - Starting datetime (may be 'contract start')
+#. %5 - Expiration datetime
+#. %6 - High (or single) barrier
+#. %7 - Low barrier (when present)
+#: Translation for contract type description (CALL - tick)
+msgid "%1 %2 payout if %3 after %plural(%5,%d tick,%d ticks) is strictly higher than %6."
+msgstr "如果%3在%plural(%5,%d 跳动点,%d 跳动点) 之后严格高于%6，将获得%1%2的赔付额。"
 
 #: Translation for contract type "DIGITDIFF"
 msgid "differs"
@@ -14125,6 +14296,18 @@ msgstr "如果%3一直到%5时处于%7至%6之外，将获得%1%2的赔付额。
 msgid "%1 %2 payout if %3 goes outside %7 and %6 through %5 after %4."
 msgstr "如果%3在%4过后一直到%5时处于%7与%6之外，将获得%1%2的赔付额。"
 
+#~ msgid "Random Bull"
+#~ msgstr "随机牛市"
+
+#~ msgid "Random Yin"
+#~ msgstr "随机阴市"
+
+#~ msgid "Random Mars"
+#~ msgstr "随机火星"
+
+#~ msgid "Random Sun"
+#~ msgstr "随机日市"
+
 #~ msgid "The database is not yet updated with settlement data."
 #~ msgstr "数据库未进行结算数据更新。"
 
@@ -14136,18 +14319,6 @@ msgstr "如果%3在%4过后一直到%5时处于%7与%6之外，将获得%1%2的�
 
 #~ msgid "We could not price this contract now, please try again later."
 #~ msgstr "目前我们无法处理该合约，请稍候重试。"
-
-#~ msgid "higher"
-#~ msgstr "高于"
-
-#~ msgid "%1 %2 payout if %3 is strictly higher than %6 at %5."
-#~ msgstr "如果%3在%5时严格高于%6，将获得%1%2的赔付额。"
-
-#~ msgid "%1 %2 payout if %3 is strictly higher than %6 at %5 after %4."
-#~ msgstr "如果%3在%4之后到%5时严格高于%6，将获得%1%2的赔付额。"
-
-#~ msgid "%1 %2 payout if %3 after %plural(%5,%d tick,%d ticks) is strictly higher than %6."
-#~ msgstr "如果%3在%plural(%5,%d 跳动点,%d 跳动点) 之后严格高于%6，将获得%1%2的赔付额。"
 
 #~ msgid "Cannot create sell contract"
 #~ msgstr "无法创建出售合约"
@@ -14176,29 +14347,11 @@ msgstr "如果%3在%4过后一直到%5时处于%7与%6之外，将获得%1%2的�
 #~ msgid "You can use an authorized payment agent to process deposits and withdrawals for e-cash methods or local currencies not supported by %1."
 #~ msgstr "对于不受 %1 支持的电子现金或本地货币， 您可通过使用授权支付代理处理存款和取款。"
 
-#~ msgid "French Smart Index"
-#~ msgstr "法国智能指数"
-
 #~ msgid "Japanese Smart Index"
 #~ msgstr "日本智能指数"
 
-#~ msgid "UK Smart Index"
-#~ msgstr "英国智能指数"
-
-#~ msgid "Euro 50 Smart Index"
-#~ msgstr "欧洲 50 智能指数"
-
-#~ msgid "Wall Street Smart Index"
-#~ msgstr "华尔街智能指数"
-
-#~ msgid "Dutch Smart Index"
-#~ msgstr "荷兰智能指数"
-
 #~ msgid "Canadian Index"
 #~ msgstr "加拿大指数"
-
-#~ msgid "German Smart Index"
-#~ msgstr "德国智能指数"
 
 #~ msgid "Swiss Smart Index"
 #~ msgstr "瑞士智能指数"
@@ -14312,44 +14465,11 @@ msgstr "如果%3在%4过后一直到%5时处于%7与%6之外，将获得%1%2的�
 #~ msgid "Sorry, payments agents are unavailable at the weekend (UTC timezone)."
 #~ msgstr "对不起，支付代理周末(国际协调时间UTC时区)不提供服务。"
 
-#~ msgid "EUR/SEK"
-#~ msgstr "欧元/瑞典克朗"
-
-#~ msgid "USD/CZK"
-#~ msgstr "美元/捷克克朗"
-
-#~ msgid "GBP/SEK"
-#~ msgstr "英镑/瑞典克朗"
-
-#~ msgid "GBP/CZK"
-#~ msgstr "英镑/捷克克朗"
-
-#~ msgid "US Tech Composite Index"
-#~ msgstr "美国技术综合指数"
-
 #~ msgid "UK Index"
 #~ msgstr "英国指数"
 
-#~ msgid "US Tech 100 Index"
-#~ msgstr "美国科技100指数"
-
-#~ msgid "Swedish Index"
-#~ msgstr "瑞典指数"
-
-#~ msgid "Indian 50 Index"
-#~ msgstr "印度50指数"
-
 #~ msgid "Spanish Index"
 #~ msgstr "西班牙指数"
-
-#~ msgid "ENEL"
-#~ msgstr "ENEL"
-
-#~ msgid "Fiat"
-#~ msgstr "菲亚特"
-
-#~ msgid "QUALCOMM"
-#~ msgstr "高通公司"
 
 #~ msgid "Deutsche Bank AG"
 #~ msgstr "德意志银行"
@@ -14366,41 +14486,14 @@ msgstr "如果%3在%4过后一直到%5时处于%7与%6之外，将获得%1%2的�
 #~ msgid "Deutsche Lufthansa"
 #~ msgstr "德国汉莎航空公司"
 
-#~ msgid "Oracle"
-#~ msgstr "甲骨文公司"
-
-#~ msgid "Assicurazioni Generali SpA"
-#~ msgstr "忠利保险有限公司"
-
-#~ msgid "PowerShares QQQ"
-#~ msgstr "PowerShares纳斯达克100指数ETF"
-
 #~ msgid "ADIDAS AG"
 #~ msgstr "ADIDAS AG"
 
 #~ msgid "BP plc"
 #~ msgstr "英国石油公司"
 
-#~ msgid "ENI SpA"
-#~ msgstr "意大利埃尼集团"
-
-#~ msgid "Intesa Sanpaolo"
-#~ msgstr "联合圣保罗银行"
-
 #~ msgid "Tesco plc"
 #~ msgstr "乐购公司"
-
-#~ msgid "Microsoft"
-#~ msgstr "微软"
-
-#~ msgid "Intel"
-#~ msgstr "英特尔公司"
-
-#~ msgid "Google Inc."
-#~ msgstr "谷歌公司。"
-
-#~ msgid "Apple Inc."
-#~ msgstr "苹果公司。"
 
 #~ msgid "Japan website No Connections With Antisocial Forces List item 10"
 #~ msgstr "Japan website No Connections With Antisocial Forces List item 10"
