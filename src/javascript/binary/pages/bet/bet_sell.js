@@ -425,41 +425,23 @@ var BetSell = function() {
         },
         sell_at_market: function (data) {
             var that = this;
-            var dom_element = $(element);
-            this.cancel_previous_analyse_request();
-            var attr = this.data_attr(element);
-            var params = this.get_params(element);
-            var $loading = $('#trading_init_progress');
-            if($loading){
-                $loading.show();
-            }
-            _analyse_request = $.ajax(ajax_loggedin({
-                url     : attr.url(),
-                type    : 'POST',
-                async   : true,
-                data    : params,
-                success : function (data) {
-                    if($loading){
-                        $loading.hide();
-                    }
-                    var con = that.show_sell_at_market(data);
-                    var server_data = that.server_data();
-                    $('.tab_menu_container').tabs({
-                        load: function(event, ui){
-                            var load_chart = ui.tab.find(".ui-tabs-anchor").attr('load_chart');
-                            if (load_chart && load_chart == 1) {
-                                var symbol = ui.tab.find(".ui-tabs-anchor").attr('underlying_symbol');
-                                var element = document.getElementsByTagName('iframe');
-                                var id = 'view_frame';
-                                if (element[1]) {
-                                    element[1].id = id;
-                                } else {
-                                    element[0].id = id;
-                                }
-                                chartFrameSource(symbol, id);
-                           }
+            var con = that.show_sell_at_market(data);
+            var server_data = that.server_data();
+
+            $('.tab_menu_container').tabs({
+                load: function(event, ui){
+                    var load_chart = ui.tab.find(".ui-tabs-anchor").attr('load_chart');
+                    if (load_chart && load_chart == 1) {
+                        var symbol = ui.tab.find(".ui-tabs-anchor").attr('underlying_symbol');
+                        var element = document.getElementsByTagName('iframe');
+                        var id = 'view_frame';
+                        if (element[1]) {
+                            element[1].id = id;
+                        } else {
+                            element[0].id = id;
                         }
-                    });
+                        chartFrameSource(symbol, id);
+                    }
                 }
             });
             that.model.currency(server_data.currency);
