@@ -8,20 +8,23 @@
       %ul
         %li.year.first.center-aligned= 2015
         %li.event.left
+          .header= l("EGR Operator Award ")
+          .event-body= l("Binary.com took home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London.")
+        %li.event.right
           .header= l('1 million transactions/day')
-          .event-body= l("[_1]'s systems are now processing in excess of 1 million transactions/day (including virtual accounts).", stash->{website_name})
+          .event-body= l("[_1]'s systems are now processing in excess of 1 million transactions/day (including virtual accounts).", stash->{website_name})  
+        %li.event.left.featured
+          .header= l('Binary granted Investment Services license')
+          .event-body= l('Binary\'s Maltese subsidiary Binary Investments (Europe) Ltd. is granted a Category 3 Investment Services license by the Malta Financial Services Authority.')  
         %li.event.right
           .header= l('Binary opens Japan office')
           .event-body= l("Binary's Japanese subsidiary Binary KK opens an office in Tokyo and starts the process of applying for relevant licenses.")
-        %li.event.featured
-          .header= l('Binary granted Investment Services license')
-          .event-body= l('Binary\'s Maltese subsidiary Binary Investments (Europe) Ltd. is granted a Category 3 Investment Services license by the Malta Financial Services Authority.')
-        %li.event.right.featured
-          .header= l('Regent Pacific transaction')
-          .event-body!= l('Regent Pacific Group Ltd., the Hong Kong-listed founding shareholder of Binary.com, <a href="[_1]" target="_blank">disposes of its stake</a> at a valuation of US$ 50.5 million.', ('http://www.regentpac.com/ICMServlet/download/13-1907-3066/EAnnt-ThirdPartiesSale(04Mar2015).pdf'))
         %li.event
           .header= l('Binary.com reaches 1 million registered users')
           .event-body= l('Binary.com hits 1 million users, reaching a historic milestone. The company continues to see exponential growth and this reconfirms its position as an industry leader.')
+        %li.event.right.featured
+          .header= l('Regent Pacific transaction')
+          .event-body!= l('Regent Pacific Group Ltd., the Hong Kong-listed founding shareholder of Binary.com, <a href="[_1]" target="_blank">disposes of its stake</a> at a valuation of US$ 50.5 million.', ('http://www.regentpac.com/ICMServlet/download/13-1907-3066/EAnnt-ThirdPartiesSale(04Mar2015).pdf'))
         %li.year.center-aligned= 2014
         %li.event.right.featured
           .header= l('Binary.com reaches $2 billion turnover since starting in 1999')
