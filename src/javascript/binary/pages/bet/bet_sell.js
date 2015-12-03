@@ -433,13 +433,8 @@ var BetSell = function() {
                     var load_chart = ui.tab.find(".ui-tabs-anchor").attr('load_chart');
                     if (load_chart && load_chart == 1) {
                         var symbol = ui.tab.find(".ui-tabs-anchor").attr('underlying_symbol');
-                        var element = document.getElementsByTagName('iframe');
-                        var id = 'view_frame';
-                        if (element[1]) {
-                            element[1].id = id;
-                        } else {
-                            element[0].id = id;
-                        }
+                        var id = checkIframeId();
+
                         chartFrameSource(symbol, id);
                     }
                 }

@@ -773,12 +773,13 @@ function setMinMaxTime(){
     }
     if (!duration.value) {
         duration.value = 1;
+        period.value = 'd';
     }
     if (period.value === 'm') {
         duration.setAttribute('min', 1);
         duration.setAttribute('max', 59);
         if (duration.value > 59) {
-            duration.value = 1;
+            duration.value = 15;
         }
     } else if (period.value === 'h') {
         duration.setAttribute('min', 1);
@@ -799,11 +800,28 @@ function setMinMaxTime(){
 function setUnderlyingTime() {
     var instrumentCode = document.getElementById('underlying');
     var contractMarkets = document.getElementById('bet_underlying');
-    var id = document.getElementsByTagName('iframe')[0].id;
+    var id = checkIframeId();
     if (instrumentCode) {
         chartFrameSource(instrumentCode.value, id);
     } else if (contractMarkets) {
         chartFrameSource(contractMarkets.value, id);
+    }
+}
+
+function checkIframeId() {
+    var element = document.getElementsByClassName('chart_frame');
+    
+    if (document.getElementById('sell_content_container')) {
+        if (element[1]) {
+            element[1].id = 'view_frame';
+            return element[1].id;
+        } else {
+            element[0].id = 'view_frame';
+            return element[0].id;
+        }
+    } else {
+        element[0].id = 'chart_frame';
+        return element[0].id;
     }
 }
 
@@ -838,7 +856,7 @@ function chartFrameSource(underlying, id){
         chartFrameSource(underlying, id);
     });
 
-    document.getElementById(id).src = 'https://highcharts.binary.com?affiliates=true&instrument=' + underlying + '&timePeriod=' + time;
+    document.getElementById(id).src = 'https://highcharts.binary.com?affiliates=true&instrument=' + underlying + '&timePeriod=' + time + '&gtm=0';
 }
 
 function selectOption(option, select){
