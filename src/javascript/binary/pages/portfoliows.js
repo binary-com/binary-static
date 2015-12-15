@@ -40,11 +40,12 @@ var PortfolioWS =  (function() {
         }
 
         /**
-         * no contracts
+         * no open contracts
         **/
         if(0 === data.portfolio.contracts.length) {
-            $("#portfolio-table").remove();
-            $("#portfolio-no-contract").removeClass("dynamic");
+            $("#portfolio-table").addClass("dynamic");
+            $("#portfolio-content").removeClass("dynamic");
+            $("#trading_init_progress").hide();
             return true;
         }
 
