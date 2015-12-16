@@ -65,13 +65,13 @@
     </div>
     <div class='grd-grid-6 grd-parent'>
         <div class='grd-grid-8 grd-with-padding'>
-            <a href="[% request.url_for('/user/portfolio') %]" class="pjaxload">
+            <a href="[% request.url_for('/user/portfoliows') %]" class="pjaxload">
                 <img class='responsive' src="[% request.url_for('images/pages/my_account/portfolio-icon.svg') %]"/>
             </a>
         </div>
         <div class='grd-grid-12'>
             <h4>
-                <a href="[% request.url_for('/user/portfolio') %]" class="pjaxload">[% l('Portfolio') %]</a>
+                <a href="[% request.url_for('/user/portfoliows') %]" class="pjaxload">[% l('Portfolio') %]</a>
             </h4>
             <p>
                 [% l('View your open positions.') %]
