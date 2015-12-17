@@ -825,38 +825,43 @@ function checkIframeId() {
     }
 }
 
-function chartFrameSource(underlying, id){
-    setMinMaxTime();
-    var timeAmount = setMinMaxTime()[0];
-    var timePeriod = setMinMaxTime()[1];
-    var time =  timeAmount.value + timePeriod.value;
+function chartFrameSource(underlying, id, startTime, entrySpot, endTime, barrier){
+    if (startTime && entrySpot && endTime && barrier) {
+        document.getElementById('highchart_duration').setAttribute('style', 'display:none');
+        document.getElementById(id).src = 'https://highcharts.binary.com?' + 'startTime=' + startTime + '&entrySpotTime=' + entrySpot + '&endTime=' + endTime + '&barrierPrice=' + barrier + '&instrument=' + underlying + '&timePeriod=1t&affiliates=true&gtm=0';
+    } else {
+        setMinMaxTime();
+        var timeAmount = setMinMaxTime()[0];
+        var timePeriod = setMinMaxTime()[1];
+        var time =  timeAmount.value + timePeriod.value;
 
-    if (document.getElementById('underlying')) {
-        var instrumentCode = document.getElementById('underlying');
-        instrumentCode.addEventListener("change", function(){
-            setUnderlyingTime();
+        if (document.getElementById('underlying')) {
+            var instrumentCode = document.getElementById('underlying');
+            instrumentCode.addEventListener("change", function(){
+                setUnderlyingTime();
+            });
+        } else if (document.getElementById('bet_underlying')) {
+            var contractMarkets = document.getElementById('bet_underlying');
+            contractMarkets.addEventListener("change", function(){
+                setUnderlyingTime();
+            });
+            document.getElementById('submarket').addEventListener("change", function(){
+                setUnderlyingTime();
+            });
+        }
+
+        timePeriod.addEventListener("change", function(){
+            chartFrameSource(underlying, id);
         });
-    } else if (document.getElementById('bet_underlying')) {
-        var contractMarkets = document.getElementById('bet_underlying');
-        contractMarkets.addEventListener("change", function(){
-            setUnderlyingTime();
+        timeAmount.addEventListener("change", function(){
+            chartFrameSource(underlying, id);
         });
-        document.getElementById('submarket').addEventListener("change", function(){
-            setUnderlyingTime();
+        timeAmount.addEventListener("keyup", function(){
+            chartFrameSource(underlying, id);
         });
+
+        document.getElementById(id).src = 'https://highcharts.binary.com?affiliates=true&instrument=' + underlying + '&timePeriod=' + time + '&gtm=0';
     }
-
-    timePeriod.addEventListener("change", function(){
-        chartFrameSource(underlying, id);
-    });
-    timeAmount.addEventListener("change", function(){
-        chartFrameSource(underlying, id);
-    });
-    timeAmount.addEventListener("keyup", function(){
-        chartFrameSource(underlying, id);
-    });
-
-    document.getElementById(id).src = 'https://highcharts.binary.com?affiliates=true&instrument=' + underlying + '&timePeriod=' + time + '&gtm=0';
 }
 
 function selectOption(option, select){

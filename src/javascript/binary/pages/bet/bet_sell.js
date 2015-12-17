@@ -531,9 +531,13 @@ var BetSell = function() {
                     var load_chart = ui.tab.find(".ui-tabs-anchor").attr('load_chart');
                     if (load_chart && load_chart == 1) {
                         var symbol = ui.tab.find(".ui-tabs-anchor").attr('underlying_symbol');
+                        var start_time = $('#trade_details_start_date').attr('epoch_time');
+                        var end_time = $('#trade_details_end_date').attr('epoch_time');
+                        var entry_spot_time = $('#trade_details_entry_spot_time').attr('epoch_time');
+                        var barrier = Number($('#trade_details_entry_spot [rel="tooltip"]').text());
                         var id = checkIframeId();
 
-                        chartFrameSource(symbol, id);
+                        chartFrameSource(symbol, id, start_time, entry_spot_time, end_time, barrier);
                     }
                 }
             });
@@ -1045,132 +1049,9 @@ var BetSell = function() {
                     return anonymous;
             }(), Math.abs(interval) * 1000);
         },
-        create_date_timer: function(selector) {
-            var interval = 1;
-            var that = this;
-            var epoch_time = parseInt(selector.attr('epoch_time')) + 1;
-            _timer_interval_obj[Object.keys(_timer_interval_obj).length] = setInterval(function anonymous() {
-                epoch_time += interval;
-                var date = that.get_date_from_seconds(epoch_time);
-                var mom = moment.utc(date).format('YYYY-MM-DD HH:mm:ss');
-                selector.attr('epoch_time', epoch_time);
-                selector.html(mom);
-                return anonymous;
-            },  Math.abs(interval) * 1000);
-        },
-        seconds_to_time: function(seconds) {
-            var duration = moment.duration(Math.abs(parseInt(seconds)), 'seconds');
-            var days, months;
-            // as we dont use month in our date format
-            if (duration.asDays() > 365) {
-                days = duration.days();
-                months = duration.months();
-            } else {
-                days = Math.floor(duration.asDays());
-                months = 0;
-            }
-            var obj = {
-                year: duration.years(),
-                month: months,
-                day: days,
-                hour: duration.hours(),
-                minute: duration.minutes(),
-                second: duration.seconds(),
-            };
-            obj['is_negative'] = parseInt(seconds) < 0 ? 1 : 0;
-            return obj;
-        },
         get_date_from_seconds: function(seconds) {
             var date = new Date(seconds*1000);
             return date;
-        },
-        get_time_interval: function() {
-            var time_obj = {};
-            var start_time = $('#trade_details_start_date').attr('epoch_time');
-            var purchase_time = $('#trade_details_purchase_date').attr('epoch_time');
-            var now_time = $('#trade_details_now_date').attr('epoch_time');
-            var end_time = $('#trade_details_end_date').attr('epoch_time');
-            if(purchase_time) { // forward starting
-                time_obj['from_time'] = parseInt(purchase_time);
-                time_obj['to_time'] = parseInt(start_time);
-            } else if(start_time && now_time) {
-                if (now_time > start_time) {
-                    if (((parseInt(end_time) - parseInt(start_time)) > 3600) && ((parseInt(now_time) - parseInt(start_time)) < 3600)) {
-                        // check if end date is more than 1 hours and now time - start time is less than 1 hours
-                        // in this case we switch back to tick chart rather than ohlc
-                        time_obj['from_time'] = parseInt(start_time);
-                        time_obj['to_time'] = parseInt(start_time) + 3595;
-                    } else if ((parseInt(end_time) - parseInt(start_time)) === 3600) {
-                        time_obj['from_time'] = parseInt(start_time);
-                        time_obj['to_time'] = parseInt(end_time);
-                        time_obj['force_tick'] = 1;
-                    } else {
-                        time_obj['from_time'] = parseInt(start_time);
-                        time_obj['to_time'] = parseInt(end_time);
-                    }
-                }
-            } else if (!now_time && start_time && end_time) { // bet has expired
-                time_obj['from_time'] = parseInt(start_time);
-                time_obj['to_time'] = parseInt(end_time);
-            } else {
-                time_obj['is_live'] = 1;
-            }
-            return time_obj;
-        },
-        add_time_indicators: function(chartConfig) {
-            var that = this,
-                indicator;
-            var start_time = $('#trade_details_start_date').attr('epoch_time');
-            var purchase_time = $('#trade_details_purchase_date').attr('epoch_time');
-            var sold_time = $('#trade_details_sold_date').attr('epoch_time');
-            var end_time = $('#trade_details_end_date').attr('epoch_time');
-            var entry_spot_time = $('#trade_details_entry_spot_time').attr('epoch_time');
-            if(purchase_time) {
-                if (chartConfig.has_indicator('purchase_time')) {
-                    chart.remove_indicator('purchase_time');
-                }
-                indicator = new ChartIndicator.Barrier({ name: "purchase_time", label: 'Purchase Time', value: that.get_date_from_seconds(parseInt(purchase_time)), color: '#e98024', axis: 'x'});
-                chart.add_indicator(indicator);
-            }
-
-            if(start_time) {
-                if (chartConfig.has_indicator('start_time')) {
-                    chart.remove_indicator('start_time');
-                }
-                indicator = new ChartIndicator.Barrier({ name: "start_time", label: 'Start Time', value: that.get_date_from_seconds(parseInt(start_time)), color: '#e98024', axis: 'x'});
-                chart.add_indicator(indicator);
-            }
-
-            if(entry_spot_time && entry_spot_time != start_time) {
-                if (chartConfig.has_indicator('entry_spot_time')) {
-                    chart.remove_indicator('entry_spot_time');
-                }
-                
-                if (start_time && entry_spot_time < start_time) {
-                    indicator = new ChartIndicator.Barrier({ name: "entry_spot_time", label: 'Entry Spot', value: that.get_date_from_seconds(parseInt(entry_spot_time)), color: '#e98024', axis: 'x'});
-                } else {
-                    indicator = new ChartIndicator.Barrier({ name: "entry_spot_time", label: 'Entry Spot', value: that.get_date_from_seconds(parseInt(entry_spot_time)), color: '#e98024', axis: 'x', nomargin: true});
-                }
-                chart.add_indicator(indicator);
-            }
-
-            if(end_time) {
-                if (chartConfig.has_indicator('end_time')) {
-                    chart.remove_indicator('end_time');
-                }
-
-                indicator = new ChartIndicator.Barrier({ name: "end_time", label: 'End Time', value: that.get_date_from_seconds(parseInt(end_time)), color: '#e98024', axis: 'x'});
-                chart.add_indicator(indicator);
-            }
-            if(sold_time) {
-                if (chartConfig.has_indicator('sold_time')) {
-                    chart.remove_indicator('sold_time');
-                }
-
-                indicator = new ChartIndicator.Barrier({ name: "sold_time", label: 'Sell Time', value: that.get_date_from_seconds(parseInt(sold_time)), color: '#e98024', axis: 'x'});
-                chart.add_indicator(indicator);
-            }
-
         },
         add_overlay: function() {
             var overlay = $('#overlay-wrapper');

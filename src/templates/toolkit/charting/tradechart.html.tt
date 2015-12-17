@@ -1,6 +1,6 @@
 <div class='grd-grid-12 chart_div'>
     <table width="600px" align="center">
-      <tr>
+      <tr id="highchart_duration">
         <td align="right" width="25%">Duration: </td>
         <td align="left" width="5%">
           <input type="number" id="time_amount" class="small_width_input time_amount" min="" max=""></input>
