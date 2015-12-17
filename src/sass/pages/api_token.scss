@@ -1,11 +1,30 @@
 .api_token {
-    table td {
-		text-align: center!important;
-        vertical-align: middle!important;
+	table {
+		td, th.flex-tr-child {
+			text-align: center!important;
+			vertical-align: middle!important;
+			line-height: 30px;
+
+			.button {
+				margin: 3px 0px;
+			}
+		}
+		tr {
+			&.deleting {
+				background-color: lightgray;
+			}
+			&.new {
+				background-color: #EDFFEE;
+			}
+		}
 	}
 	fieldset {
 		border-bottom: 1px solid #E5E5E5;
 		margin: 20px 0;
+
+		#formMessage {
+			margin-bottom: 10px;
+		}
 	}
 }
 

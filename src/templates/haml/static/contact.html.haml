@@ -4,50 +4,75 @@
   .grd-grid-12.grd-parent.static_full
     .grd-grid-2.grd-hide-mobile
       %img.responsive{:src => url_for('images/pages/contact/contact-us-icon.svg')}
-    .grd-grid-4.grd-grid-mobile-12
-      %h1= l("Contact us")
-      - my $selected_language = stash->{language};
+    .grd-grid-5.grd-grid-mobile-12
       .grd-row-padding
+        %h1= l("Contact us")
+      - my $selected_language = stash->{language};
       - my $faq_url = "https://binary.desk.com/customer/" . lc($selected_language) . "/portal/articles";
       .grd-row-padding
-        %p.no-para-margin!= l("You'll find answers to most of your questions on the <a href='[_1]' target='_blank'>FAQ</a> page.", $faq_url)
-        %p!= l("Email: <span id='cs_contact_eaddress'></span>")
-      .grd-grid-12.grd-parent.grd-row-padding
-        %label.grd-grid-4.grd-grid-mobile-12.grd-no-gutter= l('Telephone:')
-        - my $contact_number = customer_support_telephone();
-        - my $tollfree_number = customer_support_tollfree();
-        - my $default_country = customer_support_default_telephone();
-        - my $default_number = $contact_number->{$default_country};
-        %select.grd-grid-7.grd-grid-mobile-12.grd-no-gutter{:id => 'cs_telephone_number'}
-          %option{:disabled => true}= l('Select Country')
-          - foreach (sort keys %{ $contact_number }) {
-            - my $number = $contact_number->{$_};
-            - if ($_ eq $default_country) {
-              %option{:value => $number, :selected => true}= $_
-            - } else {
+        %span.no-para-margin!= l("You'll find answers to most of your questions on the <a href='[_1]' target='_blank'>FAQ</a> page.", $faq_url)
+      .grd-row-padding.grd-hide-mobile 
+      .grd-row-padding
+        %span.no-para-margin.contactus_time= l('Our Customer service opening hours are:')
+      .grd-row-padding.grd-hide-mobile 
+      .grd-row-padding
+        %span.no-para-margin.opening_hours= l('Monday – Friday: 24 Hours')
+    .grd-grid-5.grd-grid-mobile-12
+      .grd-row-padding.grd-hide-mobile
+        %h1
+      .grd-row-padding.grd-hide-mobile
+      .grd-row-padding.grd-hide-mobile
+      .grd-row-padding
+        %span.no-para-margin
+          %span.grd-grid-4.grd-no-gutter= l('Email: ')
+          %span#cs_contact_eaddress.grd-grid-7.grd-no-gutter
+      .grd-row-padding
+        %span.no-para-margin
+          %label.grd-grid-4.grd-grid-mobile-12.grd-no-gutter= l('Telephone:')
+          - my $contact_number = customer_support_telephone();
+          - my $tollfree_number = customer_support_tollfree();
+          - my $default_country = customer_support_default_telephone();
+          - my $default_number = $contact_number->{$default_country};
+          %select.grd-grid-7.grd-grid-mobile-12.grd-no-gutter{:id => 'cs_telephone_number'}
+            %option{:disabled => true}= l('Select Country')
+            - foreach (sort keys %{ $contact_number }) {
+              - my $number = $contact_number->{$_};
+              - if ($_ eq $default_country) {
+                %option{:value => $number, :selected => true}= $_
+              - } else {
               %option{:value => $number}= $_
+              - }
             - }
-          - }
-          %option{:disabled => true}= l('== Toll Free ==')
-          - foreach (sort keys %{ $tollfree_number }) {
-            - my $tollfree = $tollfree_number->{$_};
-            %option{:value => $tollfree}= $_
-          - }
-        %span#display_cs_telephone.grd-grid-7.grd-prefix-4.grd-no-gutter.grd-grid-mobile-12.grd-prefix-mobile-0.grd-row-padding
-          = $default_number
+            %option{:disabled => true}= l('== Toll Free ==')
+            - foreach (sort keys %{ $tollfree_number }) {
+              - my $tollfree = $tollfree_number->{$_};
+              %option{:value => $tollfree}= $_
+            - }
+        %span#display_cs_telephone.grd-grid-7.grd-prefix-4.grd-no-gutter.grd-grid-mobile-12.grd-prefix-mobile-0.grd-row-padding.grd-grid-mobile-12
+            = $default_number
+      %span.no-para-margin.calls_recording.grd-grid-mobile-12= l('All calls are recorded for training and monitoring purposes')
       #live-chat-container.grd-grid-12.grd-parent.grd-row-padding.ja-hide
         %label.grd-grid-4.grd-grid-mobile-12.grd-no-gutter= l('Live chat:')
         .grd-grid-2.grd-no-gutter
           %span{:id => "live-chat-icon"}
-    .grd-grid-5.grd-grid-mobile-12
-      %h1= l("Company addresses")
+    .grd-grid-2.grd-hide-mobile
+    .grd-grid-10.grd-grid-mobile-12
       .grd-row-padding
+        .hr-line
+    .grd-grid-2.grd-hide-mobile
+    .grd-grid-10.grd-grid-mobile-12
+      .grd-row-padding
+        %h1= l("Company addresses")
+    .grd-grid-2.grd-hide-mobile
+    .grd-grid-5.grd-grid-mobile-12
       .grd-row-padding
         %p.no-para-margin.address-heading= l('Malta')
-        %p.no-para-margin= l('Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825')
+            %p.no-para-margin= l('Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825')
+      .grd-row-padding.grd-hide-mobile
       .grd-row-padding
         %p.no-para-margin.address-heading= l('Isle of Man')
         %p.no-para-margin= l('Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW')
+    .grd-grid-5.grd-grid-mobile-12
       .grd-row-padding
         %p.no-para-margin.address-heading= l('Malaysia')
         %p.no-para-margin= l('Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan')

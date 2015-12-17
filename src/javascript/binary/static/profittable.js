@@ -1,6 +1,6 @@
 
 
-pjax_config_page("profit_table", function(){
+pjax_config_page("user/profit_table", function(){
     return {
         onLoad: function() {
             if (!getCookieItem('login')) {

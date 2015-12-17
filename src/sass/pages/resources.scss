@@ -1,4 +1,4 @@
-#trading-times {
+#trading-times, #asset-index {
     th {
         &.flex-tr-child {
             line-height: 30px;
@@ -21,6 +21,20 @@
     td {
         &.asset {
             font-weight: 700;
+        }
+    }
+}
+
+#asset-index {
+    th, .asset {
+        width: 12%;
+    }
+    th.flex-tr-child {
+        &:nth-child(2):nth-last-child(1) {
+            width: 24%;
+        }
+        &:nth-child(2):nth-last-child(2), &:nth-child(3):nth-last-child(1) {
+            width: 18%;
         }
     }
 }

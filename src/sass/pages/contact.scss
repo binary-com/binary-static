@@ -7,4 +7,21 @@
     p.no-para-margin {
         margin: 0;
     }
+    .hr-line{
+    	border-bottom: 1px solid #dedede
+    }
+    @media screen and (max-width: 480px){
+        .grd-grid-2{
+            .grd-hide-mobile{
+                display:none!important;
+            }
+        }
+        .grd-hide-mobile{
+            display:none!important;
+        }
+        .grd-grid-mobile-12
+        {
+            width: 100%;
+        }
+    }
 }

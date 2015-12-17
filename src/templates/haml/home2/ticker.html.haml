@@ -1,0 +1,15 @@
+%ul
+  - foreach my $row (@{stash->{rows}}) {
+  %li
+    %a{:href => $row->[1], :class => 'ticker-link'}
+      \#{ $row->[0] } 10-min
+      %span= l('Rise').':'
+      %span.rise #{ $row->[2] }
+      %span= l('Return')
+  %li
+    %a{:href => $row->[1], :class => 'ticker-link'}
+      \#{ $row->[0] } 10-min
+      %span= l('Fall').':'
+      %span.fall #{ $row->[3] }
+      %span= l('Return')
+  - }

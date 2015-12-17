@@ -1,5 +1,5 @@
 var text;
-
+var clock_started = false;
 var gtm_data_layer_info = function() {
     var gtm_data_layer_info = [];
     $('.gtm_data_layer').each(function() {
@@ -391,14 +391,12 @@ var Header = function(params) {
     this.client = params['client'];
     this.settings = params['settings'];
     this.menu = new Menu(params['url']);
-    this.clock_started = false;
 };
 
 Header.prototype = {
     on_load: function() {
         this.show_or_hide_login_form();
         this.register_dynamic_links();
-        if (!this.clock_started) this.start_clock();
         this.simulate_input_placeholder_for_ie();
     },
     on_unload: function() {
@@ -468,49 +466,45 @@ Header.prototype = {
 
         this.menu.register_dynamic_links();
     },
-    start_clock: function() {
-        var clock = $('#gmt-clock');
-        if (clock.length === 0) {
-            return;
-        }
+    start_clock_ws : function(){
+        var that = this;
 
+        function init(){
+            clock_started = true;
+            BinarySocket.send({ "time": 1,"passthrough":{"client_time" :  moment().valueOf()}});
+        }
+        that.run = function(){
+            setInterval(init, 900000);
+        };
+        
+        init();
+        that.run();
+
+        return;
+    },
+    time_counter : function(response){
         var that = this;
         var clock_handle;
-        var sync = function() {
-            var query_start_time = (new Date().getTime());
-            $.ajax({crossDomain: true, url: page.url.url_for('timestamp'), async: true, dataType: "json"}).done(function(response) {
-                var start_timestamp = response.timestamp;
+        var clock = $('#gmt-clock');
+        var start_timestamp = response.time;
+        var pass = response.echo_req.passthrough.client_time;
 
-                //time now is timestamp from server + ping time.
-                //ping time = roundtrip time / 2
-                //roundtrip time = time at start of request - time after response.
-                that.time_now = (start_timestamp * 1000) + (((new Date().getTime()) - query_start_time)/2);
-                var increase_time_by = function(interval) {
-                    that.time_now += interval;
-                };
-
-                var update_time = function() {
-                    clock.html(moment(that.time_now).utc().format("YYYY-MM-DD HH:mm") + " GMT");
-                };
-
-                update_time();
-
-                clearInterval(clock_handle);
-
-                clock_handle = setInterval(function() {
-                    increase_time_by(1000);
-                    update_time();
-                }, 1000);
-            });
+        that.time_now = ((start_timestamp * 1000) + (moment().valueOf() - pass));
+         
+        var increase_time_by = function(interval) {
+            that.time_now += interval;
         };
+        var update_time = function() {
+             clock.html(moment(that.time_now).utc().format("YYYY-MM-DD HH:mm") + " GMT");
+        };
+        update_time();
 
-        sync();
-        setInterval(function() {
-            sync();
-        }, 900000);
+        clearInterval(clock_handle);
 
-        this.clock_started = true;
-        return;
+        clock_handle = setInterval(function() {
+            increase_time_by(1000);
+            update_time();
+        }, 1000);
     },
 };
 

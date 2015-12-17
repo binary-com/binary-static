@@ -1,4 +1,4 @@
-pjax_config_page("statement", function(){
+pjax_config_page("user/statement", function(){
     return {
         onLoad: function() {
             if (!getCookieItem('login')) {

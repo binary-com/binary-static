@@ -188,7 +188,7 @@ var SettingsDetailsWS = (function() {
         var isError = response.set_settings !== 1;
         $('#formMessage').css('display', '')
             .attr('class', isError ? 'errorfield' : 'success-msg')
-            .html(text.localize(isError ? 'Sorry, an error occurred while processing your account.' : '<ul class="checked"><li>Your settings have been updated successfully.</li></ul>'))
+            .html(isError ? text.localize('Sorry, an error occurred while processing your account.') : '<ul class="checked"><li>' + text.localize('Your settings have been updated successfully.') + '</li></ul>')
             .delay(3000)
             .fadeOut(1000);
     };

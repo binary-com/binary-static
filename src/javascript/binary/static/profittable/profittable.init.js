@@ -47,7 +47,7 @@ var ProfitTableWS = (function () {
             ProfitTableUI.updateProfitTable(getNextChunk());
 
             // Show a message when the table is empty
-            if($('#profit-table tbody tr').length === 0) {
+            if((transactionsReceived === 0) && (currentBatch.length === 0)) {
                 $('#profit-table tbody')
                     .append($('<tr/>', {class: "flex-tr"})
                         .append($('<td/>', {colspan: 7}) 

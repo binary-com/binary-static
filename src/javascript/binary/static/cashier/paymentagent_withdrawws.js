@@ -1,27 +1,39 @@
 var PaymentAgentWithdrawWS = (function() {
     "use strict";
 
-    var containerID = '#paymentagent_withdrawal';
-    var $views      = $(containerID + ' .viewItem');
-    var errorClass = 'errorfield';
-    var viewIDs = {
-        error   : '#viewError',
-        success : '#viewSuccess',
-        confirm : '#viewConfirm',
-        form    : '#viewForm'
-    };
-    var fieldIDs = {
-        ddlAgents : '#ddlAgents',
-        txtAmount : '#txtAmount',
-        txtDesc   : '#txtDescription'
-    };
-    var formData, isValid;
-    var withdrawCurrency = 'USD',
-        minAmount = 10,
-        maxAmount = 2000;
+    var containerID,
+        viewIDs,
+        fieldIDs,
+        errorClass,
+        $views;
+
+    var formData,
+        isValid;
+
+    var withdrawCurrency,
+        minAmount,
+        maxAmount;
 
 
     var init = function() {
+        containerID = '#paymentagent_withdrawal';
+        $views      = $(containerID + ' .viewItem');
+        errorClass  = 'errorfield';
+        viewIDs = {
+            error   : '#viewError',
+            success : '#viewSuccess',
+            confirm : '#viewConfirm',
+            form    : '#viewForm'
+        };
+        fieldIDs = {
+            ddlAgents : '#ddlAgents',
+            txtAmount : '#txtAmount',
+            txtDesc   : '#txtDescription'
+        };
+        withdrawCurrency = 'USD';
+        minAmount = 10;
+        maxAmount = 2000;
+
         $views.addClass('hidden');
 
         if((/VRT/).test($.cookie('loginid'))) { // Virtual Account

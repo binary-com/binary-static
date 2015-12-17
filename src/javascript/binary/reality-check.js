@@ -168,6 +168,21 @@ RealityCheck = (function ($) {
         $('#reality-check .blogout').on('click', function () {
             window.location.href = logout_url;
         });
+        
+        var obj = document.getElementById('realityDuration');
+        this.isNumericValue(obj);
+    };
+    //
+    //limit textBox to Numeric Only
+    //
+    RealityCheck.prototype.isNumericValue = function(obj){
+
+        if (obj.hasOwnProperty('oninput') || ('oninput' in obj)) 
+        {
+            $('#realityDuration').on('input', function (event) { 
+                 this.value = this.value.replace(/[^0-9]/g, '');
+            });
+        }
     };
 
     // On session start we need to ask for the reality-check interval.
@@ -227,6 +242,10 @@ RealityCheck = (function ($) {
         };
         $('#reality-check [bcont=1]').on('click', click_handler);
         $('#reality-check [interval=1]').on('change', click_handler);
+
+
+        var obj = document.getElementById('realityDuration');
+        this.isNumericValue(obj);
     };
 
     return RealityCheck;

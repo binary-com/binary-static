@@ -1,0 +1,156 @@
+<h1>[% l('Self-Exclusion Facilities') %]</h1>
+
+<p>[% l('Trading the financial markets can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or alter your limits, please contact <a href="[_1]">customer support</a>.', request.url_for('contact')) %]</p>
+
+<form class="formObject" id="selfExclusion">
+	<div class="rbox form">
+		<div class="rbox-wrap">
+			<fieldset class="">
+				<div class="grd-row-padding row clear">
+					<div class="grd-grid-4  form_label">
+						<label for="MAXCASHBAL">[% l('Maximum account cash balance') %]</label>
+					</div>
+					<div class="grd-grid-8">
+						<input class="text" id="MAXCASHBAL" name="MAXCASHBAL" type="text">
+					    <br>
+					    <p class="hint">[% l('Once this limit is reached, you may no longer deposit.') %]</p>
+					    <p class="errorfield" id="errorMAXCASHBAL"></p>
+					</div>
+	        	</div>
+
+	        	<div class="grd-row-padding row clear">
+					<div class="grd-grid-4  form_label">
+						<label for="DAILYTURNOVERLIMIT">[% l('Daily turnover limit') %]</label>
+					</div>
+					<div class="grd-grid-8">
+						<input class=" text" id="DAILYTURNOVERLIMIT" name="DAILYTURNOVERLIMIT"type="text"><br>
+				   	  	<p class="hint">[% l('Maximum aggregate contract purchases per day.') %]</p>
+				   	  	<p class="errorfield" id="errorDAILYTURNOVERLIMIT"></p>
+				   	</div>
+				    <div class="grd-row-padding row clear">
+				    	<div class="grd-grid-4  form_label">
+				    		<label for="DAILYLOSSLIMIT">[% l('Daily limit on losses') %]</label>
+						</div>
+					<div class="grd-grid-8">
+						<input class=" text" id="DAILYLOSSLIMIT" name="DAILYLOSSLIMIT" type="text">
+						<br>
+					  	<p class="hint">[% l('Maximum aggregate loss per day.') %]</p>
+					  	<p class="errorfield" id="errorDAILYLOSSLIMIT">
+				   	  	</p>
+					</div>
+				</div>
+
+				<div class="grd-row-padding row clear">
+					<div class="grd-grid-4  form_label">
+						<label for="7DAYTURNOVERLIMIT">[% l('7-day turnover limit') %]</label>
+	 			  	</div>
+				  	<div class="grd-grid-8">
+				  		<input class=" text" id="7DAYTURNOVERLIMIT" name="7DAYTURNOVERLIMIT" type="text"><br>
+				  		<p class="hint">[% l('Maximum aggregate contract purchases over a 7-day period.') %]</p>
+				 	    <p class="errorfield" id="error7DAYTURNOVERLIMIT"></p>
+				    </div>
+
+				</div>
+
+				<div class="grd-row-padding row clear">
+		    		<div class="grd-grid-4  form_label">
+	  					<label for="7DAYLOSSLIMIT">[% l('7-day limit on losses') %] </label>
+	  			    </div>
+				    <div class="grd-grid-8">
+				    	<input class=" text" id="7DAYLOSSLIMIT" name="7DAYLOSSLIMIT" type="text"><br>
+				     	<p class="hint">[% l('Maximum aggregate loss over a 7-day period.') %]</p>
+				     	<p class="errorfield" id="error7DAYLOSSLIMIT"></p>
+				    </div>
+				    <div class="grd-row-padding row clear">
+				    <div class="grd-grid-4  form_label">
+				    	<label for="30DAYTURNOVERLIMIT">[% l('30-day turnover limit ') %]</label>
+				    </div>
+				    <div class="grd-grid-8">
+				   		<input class=" text" id="30DAYTURNOVERLIMIT" name="30DAYTURNOVERLIMIT" type="text">
+				        <br>
+				    	<p class="hint">[% l('Maximum aggregate contract purchases over a 30-day period.') %]</p>
+				  	    <p class="errorfield" id="error30DAYTURNOVERLIMIT"></p>
+				    </div>
+	            </div>
+
+
+	            <div class="grd-row-padding row clear">
+	  				<div class="grd-grid-4  form_label">
+	  					<label for="30DAYLOSSLIMIT">[% l('30-day limit on losses') %]</label>
+	  				</div>
+					<div class="grd-grid-8">
+						<input class=" text" id="30DAYLOSSLIMIT" name="30DAYLOSSLIMIT" type="text"><br>
+					    <p class="hint">[% l('Maximum aggregate loss over a 30-day period.') %]</p>
+					    <p class="errorfield" id="error30DAYLOSSLIMIT"></p>
+					</div>
+	  			</div>
+
+	            <div class="grd-row-padding row clear">
+	            	<div class="grd-grid-4  form_label">
+				  		<label for="MAXOPENPOS">[% l('Maximum number of open positions') %]</label>
+				 	</div>
+					<div class="grd-grid-8">
+						<input class=" text" id="MAXOPENPOS" name="MAXOPENPOS" type="text">
+				    	<p class="errorfield" id="errorMAXOPENPOS">
+				    	</p>
+				 	</div>
+	            </div>
+
+	            <div class="grd-row-padding row clear">
+	            	<div class="grd-grid-4  form_label">
+	            		<label for="SESSIONDURATION">[% l('Session duration limit, in minutes') %]</label>
+	             	</div>
+			    	<div class="grd-grid-8">
+			    		<input class=" text" id="SESSIONDURATION" name="SESSIONDURATION" type="text"><br>
+			     		<p class="hint">[% l('You will be automatically logged out after such time.') %]</p>
+			     		<p class="errorfield" id="errorSESSIONDURATION"></p>
+	           		</div>
+	            </div>
+
+
+
+			    <div class="grd-row-padding row clear">
+					<div class="grd-grid-4  form_label">
+				   		<label for="EXCLUDEUNTIL">[% l('Exclude me from the website until') %]</label>
+					</div>
+			    	<div class="grd-grid-8">
+			      		<input class=" text" id="EXCLUDEUNTIL" name="EXCLUDEUNTIL" type="text"><br>
+			      		<p class="hint">[% l('Please enter date in the format YYYY-MM-DD.') %]
+			      		</p>
+			      		<p class="errorfield" id="errorEXCLUDEUNTIL"></p>
+			    	</div>
+			    </div>
+
+			    <div class="grd-row-padding row clear">
+			   		<div class="grd-grid-8">
+			      	 	<input id="l" name="l" type="hidden">
+			     		<input id="loginid" name="loginid" type="hidden">
+			      		<input id="action" name="action" type="hidden">
+			   		</div>
+			    </div>
+
+
+				<div class="grd-row-padding row clear">
+					<div class="grd-grid-4 grd-hide-mobile form_label">
+				  		<label></label>
+					</div>
+		        	<div class="grd-grid-8">
+		        		<span class="button">
+		        			<button class="button" id="self_exclusion_submit" name="submit" type="submit" value="[% l('Update Settings') %]">[% l('Update Settings') %]</button>
+		        		</span>
+		      		    <p class="errorfield" id="invalidinputfound">
+		       			</p>
+	       			</div>
+	      		</div>  
+
+			</fieldset>
+
+			<span class="tl" stlye="height:50px">&nbsp;</span>
+			<span class="tr">&nbsp;</span>
+			<span class="bl">&nbsp;</span>
+			<span class="br">&nbsp;</span>
+
+		 
+		</div>
+	  </div>
+</form>

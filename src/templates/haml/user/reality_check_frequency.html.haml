@@ -3,11 +3,9 @@
 
   %p= l('Options trading can become a real addiction, as can any other activity pushed to its limits. To avoid the danger of such an addiction, we provide a reality-check that gives you a summary of your trades and accounts on a regular basis.')
 
-  %p= l('Please specify your preferred reality-check interval')
-
   %p
-    %label= l('in minutes')
-    %input{:type => 'text' :interval => 1 :size => '6'}
+    = l('Please specify your preferred reality-check interval in minutes ')
+    %input{:type => 'text' :interval => 1 :size => '6' :id => 'realityDuration'}
 
   %p.msg{:style => 'display:none; color:red;'}= l('Please enter a number greater than 0');
 

@@ -129,6 +129,7 @@ function initialize_pricing_table() {
     select_underlying_change();
     select_strike_type();
     expiry_date_picker();
+    $("#from_expiry").keydown(false);
 }
 
 onLoad.queue_for_url(initialize_pricing_table, 'pricing_table');

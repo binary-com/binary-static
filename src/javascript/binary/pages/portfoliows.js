@@ -9,6 +9,7 @@ var PortfolioWS =  (function() {
     var retry;
 
     var init = function() {
+        showLoadingImage($("#portfolio-loading"));
         // get the row template and then discard the node as it has served its purpose
         rowTemplate = $("#portfolio-dynamic tr:first")[0].outerHTML;
         $("#portfolio-dynamic tr:first").remove();
@@ -40,11 +41,12 @@ var PortfolioWS =  (function() {
         }
 
         /**
-         * no contracts
+         * no open contracts
         **/
         if(0 === data.portfolio.contracts.length) {
-            $("#portfolio-table").remove();
-            $("#portfolio-no-contract").removeClass("dynamic");
+            $("#portfolio-table").addClass("dynamic");
+            $("#portfolio-content").removeClass("dynamic");
+            $("#portfolio-loading").hide();
             return true;
         }
 
@@ -78,7 +80,7 @@ var PortfolioWS =  (function() {
         BinarySocket.send({"proposal_open_contract":1});
 
         // ready to show portfolio table
-        $("#trading_init_progress").remove();
+        $("#portfolio-loading").remove();
         $("#portfolio-content").removeClass("dynamic");
 
     };

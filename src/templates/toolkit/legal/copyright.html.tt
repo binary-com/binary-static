@@ -3,7 +3,7 @@
         [% l("Copyright") %]
     </h2>
     <p>
-        [% l("The [_1] website is protected by certain copyrights.", SITENAME) %]
+        [% l("The [_1] website is protected by certain copyrights.", website) %]
     </p>
     <p>
         [% l("The materials comprising the [_1] website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2015 Binary Group of companies. All rights reserved.", SITENAME) %]

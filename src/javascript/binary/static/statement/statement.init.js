@@ -38,7 +38,7 @@ var StatementWS = (function(){
             StatementUI.updateStatementTable(getNextChunkStatement());
 
             // Show a message when the table is empty
-            if($('#statement-table tbody tr').length === 0) {
+            if ((transactionsReceived === 0) && (currentBatch.length === 0)) {
                 $('#statement-table tbody')
                     .append($('<tr/>', {class: "flex-tr"})
                         .append($('<td/>', {colspan: 6})

@@ -362,6 +362,104 @@ var BetSell = function() {
                 }
             }
         },
+        update_time: function(epoch_time){
+            var that = this;
+
+            var date = that.get_date_from_seconds(epoch_time);
+            var mom = moment.utc(date).format('YYYY-MM-DD HH:mm:ss');
+            
+            var con = this._container;
+            var selector = con.find('#trade_details_now_date');
+
+            selector.attr('epoch_time', epoch_time);
+            selector.html(mom);
+        },
+        update_timer: function (con, container_id, duration) {
+            var that = this;
+            var container = con.find('#'+container_id);
+
+            if(container.length>0){
+                var text_year = text.localize('year');
+                var text_years = text.localize('years');
+                var text_month = text.localize('month');
+                var text_months = text.localize('months');
+                var text_day = text.localize('day');
+                var text_days = text.localize('days');
+                var text_hour = text.localize('hour');
+                var text_hours = text.localize('hours');
+                var text_minute = text.localize('minute');
+                var text_minutes = text.localize('minutes');
+                var text_second = text.localize('second');
+                var text_seconds = text.localize('seconds');
+
+                var duration_m = moment.duration(duration*1000); 
+                var text_arr = [];
+
+                var months = duration_m.months();
+                var days = duration_m.days();
+                var hours = duration_m.hours();
+                var minutes = duration_m.minutes();
+                var seconds = duration_m.seconds();
+
+                if(months > 0){
+                    text_arr.push(months);
+                    if(months > 1){
+                        text_arr.push(text_months);
+                    }
+                    else{
+                        text_arr.push(text_month);
+                    }
+                }
+
+                if(days > 0){
+                    text_arr.push(days);
+                    if(days > 1){
+                        text_arr.push(text_days);
+                    }
+                    else{
+                        text_arr.push(text_day);
+                    }
+                }
+
+                if(hours > 0){
+                    text_arr.push(hours);
+                    if(hours > 1){
+                        text_arr.push(text_hours);
+                    }
+                    else{
+                        text_arr.push(text_hour);
+                    }
+                }
+
+                if(minutes > 0){
+                    text_arr.push(minutes);
+                    if(minutes > 1){
+                        text_arr.push(text_minutes);
+                    }
+                    else{
+                        text_arr.push(text_minute);
+                    }
+                }
+
+                if(seconds > 0){
+                    text_arr.push(seconds);
+                    if(seconds > 1){
+                        text_arr.push(text_seconds);
+                    }
+                    else{
+                        text_arr.push(text_second);
+                    }
+                }
+
+                var final = [text_arr[0],text_arr[1]];
+                if(typeof text_arr[2] !== 'undefined'){
+                    final.push(text_arr[2]);
+                    final.push(text_arr[3]);
+                }
+
+                container.text(final.join(' '));
+            }
+        },
         update_barriers: function (barriers) {
             var that = this;
             var con = $('#live_barriers');
@@ -448,18 +546,18 @@ var BetSell = function() {
             if (now_time_con.length > 0 ) {
                 var stream_url = server_data.stream_url + '/' + server_data.sell_channel;
                 that.streaming.start(stream_url);
-                that.start_now_timer(con, 'now_time_container', 'trade_date_now'); // now timer
-                that.create_date_timer(con.find('#trade_details_now_date'));
+                // that.start_now_timer(con, 'now_time_container', 'trade_date_now'); // now timer
+                // that.create_date_timer(con.find('#trade_details_now_date'));
 
-                var duration = now_time_con.attr('duration'); // need now duration to subtract from end duration
-                if(parseInt(duration) > 0) { // if now duration is positive then start the timer for end date
-                    if(con.find('#end_time_container').attr('duration') !== '') {
-                        duration = parseInt(con.find('#end_time_container').attr('duration')) - parseInt(duration);
-                        if (duration > 0) {
-                            that.start_end_timer(con, 'end_time_container', 'now_time_container', 'trade_date_end', duration); // end timer
-                        }
-                    }
-                }
+                // var duration = now_time_con.attr('duration'); // need now duration to subtract from end duration
+                // if(parseInt(duration) > 0) { // if now duration is positive then start the timer for end date
+                //     if(con.find('#end_time_container').attr('duration') !== '') {
+                //         duration = parseInt(con.find('#end_time_container').attr('duration')) - parseInt(duration);
+                //         if (duration > 0) {
+                //             that.start_end_timer(con, 'end_time_container', 'now_time_container', 'trade_date_end', duration); // end timer
+                //         }
+                //     }
+                // }
             }
             if (con.find($('#sell_price_container')).length > 0) {
                 that.sparkline.init(55);
@@ -725,6 +823,7 @@ var BetSell = function() {
             var _stream = null;
             var _update_from_stream = false;
             var _url = null;
+            var timer;
             return {
                 start: function(url) {
                     BetSell.sparkline.clear();
@@ -765,25 +864,46 @@ var BetSell = function() {
                         this.update_price(bet);
                     }
                 }, // process_message
+
                 update_price: function(bet) {
                     var prices = bet.prices;
                     var spot = bet.spot;
-                    for (var i = 0; i < prices.length; i++) {
-                        if (!prices[i] || prices[i].id != 'sell') {
-                            continue;
+                    var epoch = bet.epoch;
+
+                    var con = BetSell.container();
+                    var start_epoch_el =  con.find('#trade_details_start_date');
+                    var end_epoch_el = con.find('#trade_details_end_date');
+
+                    if(start_epoch_el.length && end_epoch_el.length && start_epoch_el.attr('epoch_time') && end_epoch_el.attr('epoch_time')){
+                        var start_epoch = start_epoch_el.attr('epoch_time');
+                        var end_epoch = end_epoch_el.attr('epoch_time');
+
+                        if(epoch > end_epoch){
+                            epoch = end_epoch; 
+                            this.stop();
                         }
-                        if (prices[i].err) {
-                            BetSell.show_warning(prices[i].err, true);
-                            BetSell.disable_sell_button('#sell_at_market', true);
-                            no_error = false;
-                        } else {
-                            BetSell.clear_warnings();
-                            BetSell.enable_sell_button();
+                        else{
+                            BetSell.update_spot(spot);
+                            for (var i = 0; i < prices.length; i++) {
+                                if (!prices[i] || prices[i].id != 'sell') {
+                                    continue;
+                                }
+                                if (prices[i].err) {
+                                    BetSell.show_warning(prices[i].err, true);
+                                    BetSell.disable_sell_button('#sell_at_market', true);
+                                    no_error = false;
+                                } else {
+                                    BetSell.clear_warnings();
+                                    BetSell.enable_sell_button();
+                                }
+                                BetSell.update_price(prices[i]);
+                                BetSell.update_barriers(bet.barriers);
+                            } // for    
                         }
-                        BetSell.update_price(prices[i]);
-                        BetSell.update_barriers(bet.barriers);
-                    } // for
-                    BetSell.update_spot(spot);
+                        BetSell.update_time(epoch);
+                        BetSell.update_timer(con,'trade_date_now', epoch-start_epoch);
+                        BetSell.update_timer(con,'trade_date_end', end_epoch-epoch);                 
+                    }
                 },
                 url: function(val) {
                     if (val !== undefined) {

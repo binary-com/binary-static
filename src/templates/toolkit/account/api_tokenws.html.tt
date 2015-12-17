@@ -1,0 +1,48 @@
+<div id="api_token" class="api_token grd-grid-12">
+    <h1>[% l('API Token') %]</h1>
+
+    <p>[% l('To access a third party application, such as a mobile app, you are required to generate an API Token and to copy and paste it into your app. Click on “Create” to generate your API token.') %]</p>
+    <p>[% l('Should you not need any of the API tokens that you’ve already generated, you may simply delete them from the list.') %]</p>
+    <p>[% l('Label your API tokens so as to recognise them easily at a later time.') %]</p>
+
+    <div id="tokens_list" class="grd-grid-12 grd-parent grd-row-padding">
+    </div>
+
+    <div id="token_message" class="grd-grid-12 grd-row-padding center dynamic">
+        <p></p>
+    </div>
+
+    <div id="token_form" class="grd-grid-12 grd-row-padding">
+        <form class="form rbox grd-row-padding" id="frmNewToken">
+            <fieldset>
+                <legend>[% l('Create New Token') %]</legend>
+
+                <div class="grd-grid-12 grd-parent grd-row-padding">
+                    <div class="grd-grid-4 form_label">
+                        <label for="txtName">[% l('Choose a Name:') %]</label>
+                    </div>
+                    <div class="grd-grid-8">
+                        <input id="txtName" type="text" maxlength="32" />
+                    </div>
+                </div>
+
+                <div class="grd-grid-12 grd-parent">
+                    <div class="grd-grid-4"></div>
+                    <div class="grd-grid-8">
+                        <div id="formMessage"></div>
+                    </div>
+                </div>
+
+                <div class="grd-grid-12 grd-parent">
+                    <div class="grd-grid-4"></div>
+                    <div class="grd-grid-8">
+                        <span class="button">
+                            <button class="button" id="btnCreate">[% l('Create') %]</button>
+                        </span>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+</div>

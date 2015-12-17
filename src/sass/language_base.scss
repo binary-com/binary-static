@@ -1,6 +1,31 @@
 /* Specific rules for languages */
 
-/*Japan Language */
+body{
+	.calls_recording{
+		display: none;
+		font-style: italic;
+	}
+	.contactus_time{
+		display : none;
+		font-style: italic;
+	}
+	.opening_hours{
+		display:none;
+        font-weight: bold;
+    }
+}
+body.EN{
+	.calls_recording{
+		display: inline !important;;
+	}
+	.contactus_time{
+		display : inline !important;
+	}
+	.opening_hours{
+		display : inline !important;
+	}
+	
+}
 body.JA{
 	.ja-hide{
 		display: none!important;
@@ -90,6 +115,15 @@ body.AR{
 }
 /*Indonesian Language */
 body.ID{
+	.calls_recording{
+		display: inline !important;
+	}
+	.contactus_time{
+		display : inline !important;
+	}
+	.opening_hours{
+		display : inline !important;
+	}
 	.regulatory-logo{
 		display: none !important;
 	}
@@ -116,8 +150,7 @@ body.ID{
 	}
 }
 
-/*Italian Language */
-body.IT{
+body.IT, body.DE{
 	#legal-tab li.tm-li-2 {
 		margin-right: 0px!important;
 		padding: 0 8px!important;
@@ -145,13 +178,20 @@ body.RU{
 		font-size: 95%;
 		padding-top: 2.7em;
 	}
+
+	.calls_recording{
+		display: inline !important;
+	}
+	.contactus_time{
+		display : inline !important;
+	}
+	.opening_hours{
+		display : inline !important;
+	}
+	
 }
 
-body.DE{
-	#legal-tab li.tm-li-2 {
-		margin-right: 0px!important;
-		padding: 0 8px!important;
-	}
+body.PT {
 	a, button, .button, span, input {
 		text-transform: initial!important;
 	}

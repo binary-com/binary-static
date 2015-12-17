@@ -9,7 +9,7 @@
     <p>[% l("Your personal information is used primarily as a way of authenticating you as the proper owner of your account and as the person to whom withdrawal payments may be made, and to process trades. We collect personal data relating to you directly from you when you fill in the account opening form. In the event of any doubt as to the authenticity of your account details or of any withdrawal request, the company reserves the right to request further authentication information as may be deemed appropriate under the circumstances.") %]</p>
     <p>[% l("The above personal data that we collect will be held by us and processed for any purpose as may be allowed by law or required by any law. We may also transfer such personal data to any company within the Binary Group of companies, any of our business associates or payment providers, whether in or outside of the EEA including in countries which might not offer an equivalent level of protection of personal data.") %]</p>
     <p>[% l("Please note that our website generates log files that record the IP addresses of accesses to your account. This information is gathered with the sole purpose of assisting in the unlikely event of a need to investigate accesses to your account by unauthorised users. Additionally we may verify certain of the information you supply in the account opening form, or otherwise, with third-party information providers.") %]</p>
-    <p>[% l("Please note that you may update your personal information at any time by logging into the \"Settings\" section of your account. It is your responsibility to ensure that [_1] is promptly and continually informed of any change in your personal information.", SITENAME) %]</p>
+    <p>[% l("Please note that you may update your personal information at any time by logging into the \"Settings\" section of your account. It is your responsibility to ensure that [_1] is promptly and continually informed of any change in your personal information.", website) %]</p>
     <h2>[% l("Access to Personal Data") %]</h2>
     <p>
         [% l("Access to your personal data is strictly prohibited with the exception of key personnel of the Company and only as needed in the performance of their duties.") %]
@@ -20,7 +20,7 @@
     <h2>[% l("Security Statement") %]</h2>
     <p>[% l("We are committed to making sure your personal data and transactions are secure:") %]</p>
     <ol>
-    <li>[% l("Your password and login ID are unique and passwords are hashed so that not even [_1] staff can read them. This is the reason why we cannot retrieve your password and have to issue you with a new one to your email address if you cannot recall it.", SITENAME) %]</li>
+    <li>[% l("Your password and login ID are unique and passwords are hashed so that not even [_1] staff can read them. This is the reason why we cannot retrieve your password and have to issue you with a new one to your email address if you cannot recall it.", website) %]</li>
     <li>[% l("We maintain customer balances in cash or cash equivalent. We ensure that 100% of each customer\'s balance is available for immediate withdrawal, subject to verification.") %]</li>
     <li>[% l("All credit card details are submitted directly to the Visa/Mastercard network using the latest SSL encryption technology, in accordance with bank policies.") %]</li>
     <li>[% l("Our information security policies are based on industry best practices in access control and business continuity.") %]</li>
