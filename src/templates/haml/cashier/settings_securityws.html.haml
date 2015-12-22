@@ -1,0 +1,37 @@
+.grd-grid-12
+  %h1= l('Security')
+  %div{:class => "errorbox rbox", :id => "client_message"}
+    .rbox-wrap
+      .rbox-content#client_message_content
+  %p#SecuritySuccessMsg
+  %form{:class => "formObject grd-row-padding",:id => "changeCashierLock" }
+    .rbox.form
+      .rbox-wrap
+        %fieldset#lockcashiersection
+          %legend= l('Lock Cashier')
+          .grd-grid-12
+            %p#lockInfo= l('An additional password can be used to restrict access to the cashier.')
+
+          %div{:class =>"grd-row-padding row clear", :id =>"passwordrow"}
+            .grd-grid-4.form_label
+              %label{:for => "cashierlockpassword1" }= l('Cashier password')
+            .grd-grid-8
+              %input{:autocomplete =>"off" , :class =>" text",:id =>"cashierlockpassword1", :maxlength =>"25" ,:name =>"cashierlockpassword1" ,:type =>"password" }
+              %p.hint= l('6 - 25 characters.')
+              %p.errorfield#errorcashierlockpassword1
+
+          %div{:class =>"grd-row-padding row clear", :id =>"repasswordrow"}
+            %div{:class => "grd-grid-4  form_label"}
+              %label{:for => "cashierlockpassword2" }= l('Re-enter your password')
+            .grd-grid-8
+              %input{:autocomplete =>"off" ,class =>"text", :id =>"cashierlockpassword2",:maxlength =>"25" ,:name =>"cashierlockpassword2", :type =>"password"}
+              %p.errorfield#errorcashierlockpassword2
+
+    %fieldset{:class =>"formlayout settings sticky" , :id =>"formlayout"}
+      .grd-row-padding.row.clear
+        %div{:class => "grd-grid-4 grd-hide-mobile form_label"}
+          %label
+        .grd-grid-8
+          %span.button
+            %button{:class =>" button",:id =>"submit",:name =>"submit",:type =>"submit",:value =>"Update"}= l('Update')
+          %p.errorfield#invalidinputfound

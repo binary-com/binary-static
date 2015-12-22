@@ -398,6 +398,7 @@ Header.prototype = {
         this.show_or_hide_login_form();
         this.register_dynamic_links();
         this.simulate_input_placeholder_for_ie();
+        this.logout_handler();
     },
     on_unload: function() {
         this.menu.reset();
@@ -474,9 +475,9 @@ Header.prototype = {
             BinarySocket.send({ "time": 1,"passthrough":{"client_time" :  moment().valueOf()}});
         }
         that.run = function(){
-            setInterval(init, 900000);
+            setInterval(init, 30000);
         };
-        
+
         init();
         that.run();
 
@@ -490,21 +491,31 @@ Header.prototype = {
         var pass = response.echo_req.passthrough.client_time;
 
         that.time_now = ((start_timestamp * 1000) + (moment().valueOf() - pass));
-         
-        var increase_time_by = function(interval) {
-            that.time_now += interval;
-        };
         var update_time = function() {
-             clock.html(moment(that.time_now).utc().format("YYYY-MM-DD HH:mm") + " GMT");
+            that.time_now += (moment().valueOf() - that.time_now);
+            clock.html(moment(that.time_now).utc().format("YYYY-MM-DD HH:mm") + " GMT");
         };
         update_time();
 
         clearInterval(clock_handle);
 
-        clock_handle = setInterval(function() {
-            increase_time_by(1000);
-            update_time();
-        }, 1000);
+        clock_handle = setInterval(update_time, 1000);
+    },
+    logout_handler : function(){
+        $('a.logout').unbind('click').click(function(){
+            BinarySocket.send({"logout": "1"});
+        });
+    },
+    do_logout : function(response){
+        if("logout" in response && response.logout === 1){
+            var cookies = ['login', 'loginid', 'loginid_list', 'email', 'settings', 'reality_check'];
+            var current_domain = window.location.hostname.replace('www', '');
+            cookies.map(function(c){
+                $.removeCookie(c, {path: '/', domain: current_domain});
+            });
+            
+            window.location.href = page.url.url_for(''); //redirect to homepage
+        }
     },
 };
 

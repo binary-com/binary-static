@@ -126,7 +126,8 @@ var Content = (function () {
             textCloses: text.localize('Closes'),
             textSettles: text.localize('Settles'),
             textUpcomingEvents: text.localize('Upcoming Events'),
-            textEmailSent: text.localize('Please check your Email for the next step.')
+            textEmailSent: text.localize('Please check your Email for the next step.'),
+            textFeatureUnavailable: text.localize('Sorry, this feature is not available.')
         };
 
         var starTime = document.getElementById('start_time_label');
@@ -276,11 +277,15 @@ var Content = (function () {
         var titleElement = document.getElementById("limits-title").firstElementChild;
         titleElement.textContent = localize.textLimits;
         
-        var tradingLimits = document.getElementById("trading-limits");
-        tradingLimits.textContent = TUser.get().loginid + " - " + localize.textTradingLimits;
-        
-        var withdrawalTitle = document.getElementById("withdrawal-title");
-        withdrawalTitle.textContent = TUser.get().loginid + " - " + localize.textWithdrawalTitle;
+        if(TUser.get().loginid){
+            var loginId = TUser.get().loginid;
+
+            var tradingLimits = document.getElementById("trading-limits");
+            tradingLimits.textContent = loginId + " - " + localize.textTradingLimits;
+            
+            var withdrawalTitle = document.getElementById("withdrawal-title");
+            withdrawalTitle.textContent = loginId + " - " + localize.textWithdrawalTitle;
+        }
     };
 
     var errorMessage = function(messageType, param){

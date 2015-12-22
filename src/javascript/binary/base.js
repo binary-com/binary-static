@@ -95,7 +95,6 @@ function formEffects() {
 function add_click_effect_to_button() {
     var prefix = function (class_name) {
         var class_names = class_name.split(/\s+/);
-        
         var _prefix = 'button';
         var cn = class_names.shift();
 
@@ -206,7 +205,6 @@ if (!/backoffice/.test(document.URL)) { // exclude BO
         // So, fall back to a more basic solution.
         var match = document.cookie.match(/\bloginid=(\w+)/);
         match = match ? match[1] : '';
-        
         $(window).on('storage', function (jq_event) {
             if (jq_event.originalEvent.key !== 'active_loginid') return;
             if (jq_event.originalEvent.newValue === match) return;
@@ -220,16 +218,16 @@ if (!/backoffice/.test(document.URL)) { // exclude BO
         });
 
         LocalStore.set('active_loginid', match);
-        
         var start_time;
         var tabChanged = function() {
-
-            if (document.hidden || document.webkitHidden) {
-                start_time = moment().valueOf();
-                time_now = page.header.time_now;
-            }else {
-                time_now = (time_now + (moment().valueOf() - start_time));
-                page.header.time_now = time_now;
+            if(clock_started === true){
+                if (document.hidden || document.webkitHidden) {
+                    start_time = moment().valueOf();
+                    time_now = page.header.time_now;
+                }else {
+                    time_now = (time_now + (moment().valueOf() - start_time));
+                    page.header.time_now = time_now;
+                }
             }
         };
 

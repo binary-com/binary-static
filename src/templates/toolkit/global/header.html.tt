@@ -67,7 +67,7 @@
                             </select>
                         </div>
                         <div id="balance"></div>
-                        <a id="btn_logout" class="logout" href="[% request.url_for('logout') %]"[% target %]>[% l('LOG OUT') %]</a>
+                        <a id="btn_logout" class="logout" href="javascript:;">[% l('LOG OUT') %]</a>
                     </form>
                   </div>
                 </div>

@@ -3,7 +3,6 @@
         <h1></h1>
         <br>
         <h2 id="trading-limits"></h2>
-        <p class="error-msg" id="err"></p>
         <table class="flex-table" id="client-limits">
         	<thead>
         		<tr class="flex-tr">
@@ -46,6 +45,12 @@
         		</tr>
         	</tbody>
         </table>
+    </div>
+    <div class="errorbox rbox" id="client_message">
+        <div class="rbox-wrap">
+            <div class="grd-grid-12 rbox-content" id="client_message_content">
+            <p class="center notice-msg"></p>
+        </div>
     </div>
 </div>
 <br>

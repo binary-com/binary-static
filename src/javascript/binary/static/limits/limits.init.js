@@ -33,18 +33,20 @@ var LimitsWS = (function(){
         }
     }
 
-    function initTable(){
-        $(".error-msg").text("");
-        LimitsUI.clearTableContent();
+    function limitsError(){
+        document.getElementById('limits-title').setAttribute('style', 'display:none');
+        document.getElementsByClassName('notice-msg')[0].innerHTML = Content.localize().textFeatureUnavailable;
+        document.getElementById('client_message').setAttribute('style', 'display:block');
     }
 
-    function initPage(){
-        LimitsData.getLimits();
+    function initTable(){
+        document.getElementById('client_message').setAttribute('style', 'display:none');
+        LimitsUI.clearTableContent();
     }
 
     return {
         limitsHandler: limitsHandler,
-        clean: initTable,
-        init: initPage
+        limitsError: limitsError,
+        clean: initTable
     };
 }());

@@ -20,7 +20,7 @@
             #login-fields
               %select{:name => 'client_loginid', :id => 'client_loginid'}
             %div#balance
-            %a.logout{:href => url_for('/logout')}= l('Log out')
+            %a.logout{:href => 'javascript:;'}= l('Log out')
       .grd-grid-3.grd-grid-mobile-9.grd-grid-phablet-10.grd-no-gutter-left.by_client_type.client_logged_out#client-logged-out
         %form#login-form{:action => url_for('/login'), :method => 'post'}
           %span#login-fields

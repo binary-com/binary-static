@@ -56,7 +56,7 @@ var PasswordWS = (function(){
 		}
 
 		// Invalid characters
-		var regexp = new RegExp('^[\\s.A-Za-z0-9@_:+-\/=]*$');
+		var regexp = new RegExp('^[ -~]+$');
 		if(new_pass.length && !regexp.test(new_pass)){
 			$form.find("p[data-error='bad-chars']").removeClass("hidden");
 			isValid = false;

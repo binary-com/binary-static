@@ -34,7 +34,7 @@ var LimitsUI = (function(){
     }
 
     function clearTableContent(){
-        Table.clearTableBody(tableID);
+        Table.clearTableBody('client-limits');
         $("#limits-title>tfoot").hide();
     }
 
