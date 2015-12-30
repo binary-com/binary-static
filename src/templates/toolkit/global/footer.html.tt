@@ -141,16 +141,16 @@
                         </li>
                     </ul>
                 </div>
-                <div class="grd-grid-4">
+                <div class="grd-grid-4 ja-hide">
                     <h1>[% l('Market Data') %]</h1>
                     <ul>
                         <li>
-                            <a class="pjaxload" href="[% request.url_for('/charting/livechart') %]"[% IF target %] target="[%
-                            target %]"[% END %]>[% l('Live Charts') %]</a>
-                        </li>
-                        <li class="ja-hide">
                             <a class="pjaxload" href="//highcharts.binary.com"[% IF target %] target="[%
                             target %]"[% END %]>[% l('HighCharts') %]</a>
+                        </li>
+                        <li>
+                            <a class="pjaxload" href="//tradingview.binary.com"[% IF target %] target="[%
+                            target %]"[% END %]>[% l('TradingView') %]</a>
                         </li>
                     </ul>
                 </div>

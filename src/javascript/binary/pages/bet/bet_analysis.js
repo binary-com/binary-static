@@ -4,7 +4,7 @@ var BetAnalysis = function () {
     return {
         reset: function(){
             restored = false;
-            this.tab_live_chart.reset();
+            this.tab_chart.reset();
         },
         register_actions: function () {
             var that = this;
@@ -32,7 +32,7 @@ var BetAnalysis = function () {
                         that.tab_last_digit.render(tab);
                         shown_some_tab = true;
                     } else if(id == 'tab_graph') {
-                        that.tab_live_chart.render();
+                        that.tab_chart.render();
                         shown_some_tab = true;
                     } else if(id == 'tab_pricing_table') {
                         that.tab_pricing_table.render(tab);

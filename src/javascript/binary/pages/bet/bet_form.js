@@ -40,7 +40,7 @@ var BetForm = function () {
                     });
 
                     $(BetForm.time).on('change', function(event, time) {
-                        SessionStore.remove('live_chart_duration');
+                        SessionStore.remove('chart_duration');
                         BetForm.barriers.time_changed(time);
                         BetPrice.container().hide();
                     });
@@ -48,7 +48,7 @@ var BetForm = function () {
 
                     $(BetForm.barriers).on('change', function(event, barrier) {
                         BetPrice.container().hide();
-                        BetAnalysis.tab_live_chart.render();
+                        BetAnalysis.tab_chart.render();
                     });
 
 
@@ -187,6 +187,9 @@ var BetForm = function () {
                 },
                 on_underlying_change: function () {
                     var that = this;
+                    if (MenuContent.is_tab_selected($('#tab_graph'))) {
+                        setUnderlyingTime();
+                    }
                     $('#bet_underlying').on('change', function (event) {
                         BetForm.attributes.model.underlying($(this).val());
                         that.update_for_underlying($(this).val());
