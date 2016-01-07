@@ -1,143 +1,125 @@
 var PasswordWS = (function(){
 
-	var $form, $result;
+  var $form, $result;
 
-	var init = function() {
-		$form   = $("#change-password > form");
-		$result = $("#change-password > div[data-id='success-result']");
-		$form.find("button").on("click", function(e){
-			e.preventDefault();
-			e.stopPropagation();
-			PasswordWS.sendRequest();
-		});
-	};
-	
-	var validateForm = function() {
+  var init = function() {
+    $form   = $("#change-password > form");
+    $result = $("#change-password > div[data-id='success-result']");
+    $form.find("button").on("click", function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      PasswordWS.sendRequest();
+    });
+  };
 
-		var isValid 	= true,
-			old_pass 	= $form.find("input[name='oldpassword']").val(),
-			new_pass 	= $form.find("input[name='new-password']").val(),
-			repeat_pass = $form.find("input[name='repeat-password']").val();
+  var validateForm = function() {
 
-		/**
-		 * Validation for new-password
-		**/
+    var isValid 	= true,
+      old_pass 	= $form.find("input[name='oldpassword']").val(),
+      new_pass 	= $form.find("input[name='new-password']").val(),
+      repeat_pass = $form.find("input[name='repeat-password']").val();
 
-		// Old passwrod cannot be blank. We leave the actual matching to backend
-		if(0 === old_pass.length) {
-			$form.find("p[data-error='old-blank']").removeClass("hidden");
-			isValid = false;
-		} else {
-			$form.find("p[data-error='old-blank']").addClass("hidden");
-		}		
+    /**
+     * Validation for new-password
+    **/
 
-		// New password cannot be the same as the old password
-		if(new_pass.length > 0 && new_pass === old_pass) {
-			$form.find("p[data-error='same-as-old']").removeClass("hidden");
-			isValid = false;
-		} else {
-			$form.find("p[data-error='same-as-old']").addClass("hidden");
-		}
+    // Old passwrod cannot be blank. We leave the actual matching to backend
+    if(0 === old_pass.length) {
+      $form.find("p[data-error='old-blank']").removeClass("hidden");
+      isValid = false;
+    } else {
+      $form.find("p[data-error='old-blank']").addClass("hidden");
+    }
 
-		// Min length
-		if(new_pass.length < 6) {
-			$form.find("p[data-error='too-short']").removeClass("hidden");
-			isValid = false;
-		} else {
-			$form.find("p[data-error='too-short']").addClass("hidden");
-		}
+    // New password cannot be the same as the old password
+    if(new_pass.length > 0 && new_pass === old_pass) {
+      $form.find("p[data-error='same-as-old']").removeClass("hidden");
+      isValid = false;
+    } else {
+      $form.find("p[data-error='same-as-old']").addClass("hidden");
+    }
 
-		// Max length
-		if(new_pass.length > 25) {
-			$form.find("p[data-error='too-long']").removeClass("hidden");
-			isValid = false;
-		} else {
-			$form.find("p[data-error='too-long']").addClass("hidden");
-		}
+    if (!Validate.errorMessagePassword(document.getElementById('password').value, document.getElementById('repeat-password').value, document.getElementById('error-password'), document.getElementById('error-repeat-password'))){
+      isValid = false;
+    }
 
-		// Invalid characters
-		var regexp = new RegExp('^[ -~]+$');
-		if(new_pass.length && !regexp.test(new_pass)){
-			$form.find("p[data-error='bad-chars']").removeClass("hidden");
-			isValid = false;
-		} else {
-			$form.find("p[data-error='bad-chars']").addClass("hidden");
-		}
+    // New and Repeat should be the same
+    if(new_pass !== repeat_pass) {
+      $form.find("p[data-error='not-the-same']").removeClass("hidden");
+      isValid = false;
+    } else {
+      $form.find("p[data-error='not-the-same']").addClass("hidden");
+    }
 
+    if(isValid) return {
+      old_pass: old_pass,
+      new_pass: new_pass
+    };
 
-		// New and Repeat should be the same
-		if(new_pass !== repeat_pass) {
-			$form.find("p[data-error='not-the-same']").removeClass("hidden");
-			isValid = false;
-		} else {
-			$form.find("p[data-error='not-the-same']").addClass("hidden");
-		}
+    return false;
 
-		if(isValid) return {
-			old_pass: old_pass,
-			new_pass: new_pass
-		};
+  };
 
-		return false;
+  var sendRequest = function() {
 
-	};
+    $form.find("p[data-error='server-sent-error']").addClass("hidden");
 
-	var sendRequest = function() {
+    var passwords = validateForm();
+    if(false === passwords) return false;
 
-		$form.find("p[data-error='server-sent-error']").addClass("hidden");
+    BinarySocket.send({
+        "change_password": "1",
+        "old_password": passwords.old_pass,
+        "new_password": passwords.new_pass
+    });
 
-		var passwords = validateForm();
-		if(false === passwords) return false;
+  };
 
-		BinarySocket.send({
-		    "change_password": "1",
-		    "old_password": passwords.old_pass,
-		    "new_password": passwords.new_pass
-		});
+  var apiResponse = function(resp) {
 
-	};
+    console.log("apiResponse:", resp);
 
-	var apiResponse = function(resp) {
+    /**
+     * Failed
+    **/
+    if("error" in resp) {
+      var errorMsg = text.localize("Old password is wrong.");
+      if("message" in resp.error) {
+        errorMsg = resp.error.message;
+      }
+      $form.find("p[data-error='server-sent-error']").text(errorMsg).removeClass("hidden");
+      return false;
+    }
 
-		console.log("apiResponse:", resp);
+    /**
+     * Succeeded
+    **/
+    $form.addClass("hidden");
+    $result.removeClass("hidden");
+    return true;
 
-		/** 
-		 * Failed
-		**/
-		if("error" in resp) {
-			var errorMsg = text.localize("Old password is wrong.");
-			if("message" in resp.error) {
-				errorMsg = resp.error.message;
-			}
-			$form.find("p[data-error='server-sent-error']").text(errorMsg).removeClass("hidden");
-			return false;
-		}
+  };
 
-		/**
-		 * Succeeded
-		**/
-		$form.addClass("hidden");
-		$result.removeClass("hidden");
-		return true;
-
-	};
-
-	return {
-		init: init,
-		sendRequest: sendRequest,
-		apiResponse: apiResponse
-	};
+  return {
+    init: init,
+    sendRequest: sendRequest,
+    apiResponse: apiResponse
+  };
 
 })();
 
 pjax_config_page("user/change_password", function() {
     return {
         onLoad: function() {
-        	if (!getCookieItem('login')) {
+          Content.populate();
+          $('#password').on('input', function() {
+            $('#password-meter').attr('value', testPassword($('#password').val())[0]);
+          });
+          if (!getCookieItem('login')) {
                 window.location.href = page.url.url_for('login');
                 return;
             }
-        	BinarySocket.init({
+          BinarySocket.init({
                 onmessage: function(msg){
                     var response = JSON.parse(msg.data);
                     if (response) {
@@ -147,7 +129,7 @@ pjax_config_page("user/change_password", function() {
                         }
                     }
                 }
-            });		 
+            });
             PasswordWS.init();
         }
     };

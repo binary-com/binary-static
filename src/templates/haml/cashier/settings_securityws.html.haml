@@ -16,15 +16,26 @@
             .grd-grid-4.form_label
               %label{:for => "cashierlockpassword1" }= l('Cashier password')
             .grd-grid-8
-              %input{:autocomplete =>"off" , :class =>" text",:id =>"cashierlockpassword1", :maxlength =>"25" ,:name =>"cashierlockpassword1" ,:type =>"password" }
-              %p.hint= l('6 - 25 characters.')
+              %input{:autocomplete =>"off" , :class =>" text",:id =>"cashierlockpassword1" ,:name =>"cashierlockpassword1" ,:type =>"password" }
+              %div#password-meter-div{:style => 'display:none'}
+                %p{:style => "margin:0px;height:0.5em;"}
+                  %meter#password-meter{:high => "33", :low => "20", :max => "50", :min => "0", :optimum => "50", :value => ""}
+                %div.hint
+                  %span= l('Requirements:')
+                  %ul.disc
+                    %li= l('At least 6 characters')
+                %div.hint{:style => "margin-top:15px;"}
+                  %span= l('Tips:')
+                  %ul.disc
+                    %li= l('Use lower and upper case, numbers, and special characters.')
               %p.errorfield#errorcashierlockpassword1
+                %abbr#tooltip-password{:rel => "tooltip", :title => ""}
 
           %div{:class =>"grd-row-padding row clear", :id =>"repasswordrow"}
             %div{:class => "grd-grid-4  form_label"}
               %label{:for => "cashierlockpassword2" }= l('Re-enter your password')
             .grd-grid-8
-              %input{:autocomplete =>"off" ,class =>"text", :id =>"cashierlockpassword2",:maxlength =>"25" ,:name =>"cashierlockpassword2", :type =>"password"}
+              %input{:autocomplete =>"off" ,class =>"text", :id =>"cashierlockpassword2",:name =>"cashierlockpassword2", :type =>"password"}
               %p.errorfield#errorcashierlockpassword2
 
     %fieldset{:class =>"formlayout settings sticky" , :id =>"formlayout"}
