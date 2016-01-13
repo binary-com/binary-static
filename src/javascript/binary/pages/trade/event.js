@@ -20,11 +20,13 @@ var TradingEvents = (function () {
         var make_price_request = 1;
         if (value === 'now') {
             sessionStorage.removeItem('date_start');
-        } else if($('expiry_type').val() === 'endtime'){
-            make_price_request = -1;
-            var end_time = moment(value*1000).utc().add(15,'minutes');
-            Durations.setTime(end_time.format("hh:mm"));
-            Durations.selectEndDate(end_time.format("YYYY-MM-DD"));
+        } else {
+            if ($('expiry_type').val() === 'endtime'){
+                make_price_request = -1;
+                var end_time = moment(value*1000).utc().add(15,'minutes');
+                Durations.setTime(end_time.format("hh:mm"));
+                Durations.selectEndDate(end_time.format("YYYY-MM-DD"));
+            }
             sessionStorage.setItem('date_start', value);
         }
 
@@ -170,7 +172,7 @@ var TradingEvents = (function () {
         var durationAmountElement = document.getElementById('duration_amount');
         if (durationAmountElement) {
             // jquery needed for datepicker
-            $('#duration_amount').on('change', debounce(function (e) {
+            $('#duration_amount').on('input', debounce(function (e) {
                 if (e.target.value % 1 !== 0 ) {
                     e.target.value = Math.floor(e.target.value);
                 }

@@ -86,59 +86,6 @@ ClientForm.prototype = {
 
         return true;
     },
-    self_exclusion: function() {
-        return {
-            has_something_to_save: function(init) {
-                var el, i;
-                var names = ['MAXCASHBAL', 'MAXOPENPOS',
-                             'DAILYTURNOVERLIMIT', 'DAILYLOSSLIMIT',
-                             '7DAYTURNOVERLIMIT', '7DAYLOSSLIMIT',
-                             '30DAYTURNOVERLIMIT', '30DAYLOSSLIMIT',
-                             'SESSIONDURATION', 'EXCLUDEUNTIL'];
-                for (i=0; i<names.length; i++) {
-                    el = document.getElementById(names[i]);
-                    if (el) {
-                        el.value = el.value.replace(/^\s*/, '').replace(/\s*$/, '');
-                        if (el.value == (init[names[i]]===undefined ? '' : init[names[i]])) continue;
-                        return true;
-                    }
-                }
-                return false;
-            },
-            validate_exclusion_date: function() {
-                var exclusion_date = $('#EXCLUDEUNTIL').val();
-                var date_regex = /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/;
-                var error_element_errorEXCLUDEUNTIL = clearInputErrorField('errorEXCLUDEUNTIL');
-
-                if (exclusion_date) {
-
-                    if(date_regex.test($('#EXCLUDEUNTIL').val()) === false){
-                        error_element_errorEXCLUDEUNTIL.innerHTML = text.localize("Please select a valid date");
-                        return false;
-                    }
-            
-                    exclusion_date = new Date(exclusion_date);
-                    // self exclusion date must >= 6 month from now
-                    var six_month_date = new Date();
-                    six_month_date.setMonth(six_month_date.getMonth() + 6);
-
-                    if (exclusion_date < six_month_date) {
-                        error_element_errorEXCLUDEUNTIL.innerHTML = text.localize("Please enter a date that is at least 6 months from now.");
-                        return false ;
-                    }
-
-                    if (confirm(text.localize("When you click 'Ok' you will be excluded from trading on the site until the selected date.")) === true) {
-                        return true;
-                    } else {
-                        return false;
-                    }
-
-                }
-
-                return true;
-            },
-        };
-    }(),
     set_idd_for_residence: function(residence) {
         var tel = $('#Tel');
         if (!tel.val() || tel.val().length < 6) {
