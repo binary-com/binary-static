@@ -806,9 +806,6 @@ Page.prototype = {
         this.record_affiliate_exposure();
         this.contents.on_load();
         this.on_click_acc_transfer();
-        if(getCookieItem('login')){
-            ViewBalance.init();
-        }
         $('#current_width').val(get_container_width());//This should probably not be here.
     },
     on_unload: function() {
