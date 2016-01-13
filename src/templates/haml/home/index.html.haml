@@ -1,7 +1,7 @@
 - stash(
 -   title => l('[_1]: Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices',stash('broker_name')),
 -   next_link => '/why-us',
--   createacc => l('Create free account'),
+-   createacc => l('Create Free Account'),
 -   emailtext   => l('Enter your email'),
 -   passwordstext   => l('Choose a password'),
 -   reenter_password => l('Re-enter your password'),
@@ -9,34 +9,17 @@
 #banner
   .grd-container
     .grd-grid-12.grd-row-padding
-      .grd-grid-7.grd-grid-mobile-12.grd-grid-phablet-12#stretch
+      .grd-grid-12.grd-grid-mobile-12.grd-grid-phablet-12
         #xtop
-          %h1.dark= l('The Premier Platform for Binary Options Trading')
-          %ul.checked.break
-            %li!= l('Real-time Prices')
-            %li!= l('Returns above 100%')
-          %p.break= l('Trade 24/7, even on weekends.')
-          %p.no-break= l('Customize your trades to meet your needs.')
-      .grd-grid-1.grd-hide-mobile.grd-grid-phablet-2
-      #open-account.grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-8
-        %h3= l('Get started now')
-        %form#virtual-acc-form{ :name => 'oppAccForm', :action => url_for('new_account/virtual'), :method => 'post' }
-          %span#virtual-fields
-            .grd-parent
-              %span.grd-grid-12.grd-no-gutter
-                %select.virtual-acc-left{:name => 'residence', :id => 'residence', :required => true}
-              %span.grd-grid-12.grd-no-gutter
-                %input.virtual-acc-left{:name => 'Email', :id => 'Email', :type => 'email', :required => true, :placeholder => stash('emailtext')}
-              %span.grd-grid-12.grd-no-gutter
-                %input.virtual-acc-left{:name => 'chooseapassword', :id => 'chooseapassword', :pattern => '.{6,25}', :'required title' => 'Password length should be between 6 and 25 characters', :type => 'password', :maxlength => '25', :required => true, :placeholder => stash('passwordstext')}
-              %span.grd-grid-12.grd-no-gutter
-                %input.virtual-acc-left{:name => 'chooseapassword_2', :id => 'chooseapassword_2', :pattern => '.{6,25}', :'required title' => 'Password length should be between 6 and 25 characters', :type => 'password', :maxlength => '25', :required => true, :placeholder => stash('reenter_password')}
-              %span.grd-grid-12.grd-no-gutter
-                %p#signup_error.errorfield.invisible
-                %input{:type => 'hidden', :name => 'l', :value => stash('language')}
-            %span.grd-grid-12.grd-no-gutter
-              %input.button.xtopcta{:id => 'btn_registration', :type => 'submit', :value => stash('createacc'), :disabled => 'disabled'}
-      .grd-grid-0.grd-hide-mobile.grd-grid-phablet-2
+          %h1.dark!= l('The <strong>Premier Platform</strong> for Binary Options Trading')
+          %p.break!= l('Trade <strong>24/7</strong>, even on weekends.')
+          %form#verify-email-form
+            %span.grd-grid-2.grd-hide-mobile
+            %div#open-account.grd-parent.grd-grid-8.grd-grid-mobile-12
+              %input.grd-grid-9{:id => 'email', :placeholder => stash('emailtext')}
+              %input.grd-grid-3.button{:id => 'btn-verify-email', :type => 'submit', :value => stash('createacc')}
+              %p.grd-grid-12.error-message#signup_error{:style => 'display:none'}
+            %span.grd-grid-2.grd-hide-mobile
 .grd-container
   %hr.xtopseparator
   #xsection1
@@ -56,22 +39,24 @@
     .grd-container
       .grd-row-padding
         %h1.center-aligned.xhead= l('Why choose us')
-        .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-12
-          %ul
-            %li.xlist1
-              %h3= l('Sharp prices')
-              %p= l("Binary.com's patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market.")
-            %li.xlist2
-              %h3= l('Your funds are safe')
-              %p= l('With Binary.com, your money is secure. We segregate and hold client funds in secure AAA-rated banks.')
-        .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-12
-          %ul
-            %li.xlist3
-              %h3= l('Trade your way')
-              %p= l("Don't limit yourself! Whatever your market view, Binary.com allows you to put your strategy to work and profit from your predictions.")
-            %li.xlist4
-              %h3= l('Go with the leader')
-              %p= l('Binary.com is the award-winning industry pioneer in online options trading.')
+        .grd-grid-12.grd-grid-mobile-12.grd-grid-phablet-12.center-aligned
+          %p= l('Binary.com is the award-winning industry pioneer in online options trading.')
+          %div
+            %img.small-image{:alt => "", :src => url_for("images/pages/home/awards-t2w.png")}
+            %img.small-image{:alt => "", :src => url_for("images/pages/why-us/why-us-GBAF-award-2012.svg")}
+            %img.small-image{:alt => "", :src => url_for("images/pages/home/awards-egr.png")}
+          %div#xtop
+            %ul
+              %span.grd-grid-12
+                %span.grd-grid-1.grd-grid-phablet-2
+                %span.grd-grid-10.grd-grid-phablet-8
+                  %li.xlist1
+                    %h3= l('Sharp prices')
+                  %li.xlist3
+                    %h3= l('Trade your way')
+                  %li.xlist2
+                    %h3= l('Your funds are safe')
+                %span.grd-grid-1.grd-grid-phablet-2
 #xacademy.ja-hide
   .grd-container
     .grd-row-padding

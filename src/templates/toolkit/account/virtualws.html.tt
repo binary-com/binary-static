@@ -1,60 +1,71 @@
 <div class='grd-grid-12'>
-    <h1>[% l('Create New Account') %]</h1>
-    <div class="grd-parent grd-row-padding">
-    	
-        <div class="rbox form">
-            <div class="rbox-wrap">
-
-                <form id="virtual-form">
-                    <fieldset>
-                        <legend id="details"></legend>
-                        <div class="grd-row-padding row clear">
-                            <div class="grd-grid-4  form_label">
-                                <label for="email"></label>
-                            </div>
-                            <div class="grd-grid-8">
-                                <input type="email" id="email" name="email" required></input>
-                                <p class="errorfield" id="error-email" style="display:none"></p>
-                            </div>
-                        </div>
-                        <div class="grd-row-padding row clear">
-                            <div class="grd-grid-4  form_label">
-                                <label for="password"></label>
-                            </div>
-                            <div class="grd-grid-8">
-                                <input type="password" id="password" name="password" required></input>
-                                <p class="errorfield" id="error-password" style="display:none"></p>
-                            </div>
-                        </div>
-                        <div class="grd-row-padding row clear">
-                            <div class="grd-grid-4  form_label">
-                                <label for="r-password"></label>
-                            </div>
-                            <div class="grd-grid-8">
-                                <input type="password" id="r-password" name="r-password" required></input>
-                                <p class="errorfield" id="error-r-password" style="display:none"></p>
-                            </div>
-                        </div>
-                        <div class="grd-row-padding row clear">
-                            <div class="grd-grid-4  form_label">
-                                <label for="residence"></label>
-                            </div>
-                            <div class="grd-grid-8">
-                                <select name="residence" id="residence" required></select>
-                                <p class="errorfield" id="error-residence" style="display:none"></p>
-                            </div>
-                        </div>
-                    </fieldset>
-                        
-                    <fieldset class="center-aligned" id="formlayout">
-                        <span class="button button-focus">
-                            <input type="hidden" name="account" value="new virtual account"></input>
-                            <button class="button button-focus" id="btn_submit" type="submit"></button>
-                        </span>
-                    </fieldset>
-                </form>
-                
+  <h1>[% l('Create New Account') %]</h1>
+  <div class="grd-parent grd-row-padding">
+    <div class="rbox form">
+      <div class="rbox-wrap">
+        <form id="virtual-form">
+          <fieldset>
+            <legend id="details">[% l('Details') %]</legend>
+            <div class="grd-row-padding row clear">
+              <div class="grd-grid-4  form_label">
+                <label for="email">[% l('Email Address') %]</label>
+              </div>
+              <div class="grd-grid-8">
+                <input type="email" id="email" name="email"></input>
+                <p class="errorfield" id="error-email" style="display:none"></p>
+              </div>
             </div>
-        </div>
+            <div class="grd-row-padding row clear">
+              <div class="grd-grid-4  form_label">
+                <label for="password">[% l('Password') %]</label>
+              </div>
+              <div class="grd-grid-8">
+                <input type="password" id="password" name="password"></input>
+                <p style="margin:0px;height:0.5em;">
+                  <meter id="password-meter" value="" max="50" min="0" high="33" low="20" optimum="50"></meter>
+                </p>
+                <div class="hint">[% l('Requirements') %]:
+                  <ul class="disc">
+                    <li>[% l('At least 6 characters') %]</li>
+                  </ul>
+                </div>
+                <div class="hint" style="margin-top:15px;">[% l('Tips') %]:
+                  <ul class="disc">
+                    <li>[% l('Use lower and upper case, numbers, and special characters.') %]</li>
+                  </ul>
+                </div>
+                <p class="errorfield" id="error-password" style="display:none">
+                  <abbr rel="tooltip" title="" id="tooltip-password"></abbr>
+                </p>
+              </div>
+            </div>
+            <div class="grd-row-padding row clear">
+              <div class="grd-grid-4  form_label">
+                <label for="r-password">[% l('Re-enter Password') %]</label>
+              </div>
+              <div class="grd-grid-8">
+                <input type="password" id="r-password" name="r-password"></input>
+                <p class="errorfield" id="error-r-password" style="display:none"></p>
+              </div>
+            </div>
+            <div class="grd-row-padding row clear">
+              <div class="grd-grid-4  form_label">
+                <label for="residence">[% l('Country of Residence') %]</label>
+              </div>
+              <div class="grd-grid-8">
+                <select name="residence" id="residence"></select>
+                <p class="errorfield" id="error-residence" style="display:none"></p>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset class="center-aligned" id="formlayout">
+            <span class="button button-focus">
+              <input type="hidden" name="account" value="new virtual account"></input>
+              <button class="button button-focus" id="btn_submit" type="submit">[% l('Create New Account') %]</button>
+            </span>
+          </fieldset>
+        </form>
+      </div>
     </div>
+  </div>
 </div>

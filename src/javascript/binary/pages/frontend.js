@@ -287,8 +287,8 @@ var on_click_signup = function() {
 
 function check_login_hide_signup() {
     if (page.client.is_logged_in) {
-        $('#open-account').remove();
-        $('#stretch').removeClass('grd-grid-7 grd-grid-mobile-12 grd-grid-phablet-12');
+        $('#verify-email-form').remove();
+        $('.break').attr('style', 'margin-bottom:1em')
     }
 }
 

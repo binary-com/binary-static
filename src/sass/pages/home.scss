@@ -4,7 +4,8 @@
 }
 .home-content {
    #banner {
-    background: url("../images/pages/home/banner-background_1.png") no-repeat 0 0;
+    background: url("../images/pages/home/banner-background_1.png") no-repeat;
+    background-size: 100% 108%;
    }
    .xtopseparator{
     border: 0;
@@ -15,35 +16,31 @@
     background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(68,72,76,0.5), rgba(0,0,0,0));
     display: block!important;
    }
-  #open-account {
-    background: $COLOR_ORANGE;
-    color: $COLOR_WHITE;
-    text-align: center;
-    border-radius: 0;
-    margin-top: -15px;
-    text-align: center;
-    padding: 10px 0;
-    h3 {
-      color: $COLOR_DARK_BLUE;
-      padding: 15px 10px 0 10px;
+  #verify-email-form {
+    #open-account {
+      background: $COLOR_ORANGE;
     }
-    #virtual-fields {
-        input, select, textarea {
-            border-radius: 3px;
-            margin-top:10px;
-            padding: 0px;
+    input {
+        border-radius: 3px;
+        display: inline-block;
+        margin: 1em;
+        padding: 8px!important;
+        font-size: 14px;
+        &#email{
+          height: 3em;
+          width: 55%;
         }
     }
     input[type=submit] {
       @include link-button;
-      width: 88%;
       background: $COLOR_BLUE;
       padding: 9px 10.83333%;
-      margin-top: 0;
-      margin-bottom: 15px;
+      margin: 0.7em 0;
       border: 0;
       white-space: normal;
       font-size: 18px;
+      height: 2.4em;
+      width: 38%;
       &:hover {
                 text-decoration: none;
                 background-color: $COLOR_DARK_GREEN;
@@ -57,10 +54,16 @@
         background: $COLOR_ORANGE;
         color: $COLOR_WHITE;
         font-size: 85%;
+        margin-bottom: 1em;
+    }
+    .error-message {
+        font-style: italic;
+        margin: 0;
+        margin-top: 8px;
     }
   }
 #xsection1 {
-  padding: 30px 0;
+  padding: 0 0;
   display: inline-block;
   ul li {
     padding-left: 10px;
@@ -92,34 +95,25 @@
     line-height: 1.5;
     p {
       font-size: 110%;
+      strong {
+        color: $COLOR_BLUE;
+      }
     }
     ul li {
-      display: inline;
-      margin-left: 10px;
+      display: inline-block;
+    }
+    h1 {
+      color: $COLOR_BLUE;
     }
 }
 .break {
-    margin-top: 30px;
-}
-.no-break {
-    margin-top: 10px;
+  margin-top: 1em;
+  margin-bottom: 2em;
 }
 .boldtop {
     font-size: 170%;
 }
-#xbadges {
-    img {
-        text-align: center;
-        max-width: 100px;
-        position: relative;
-        top: 50px;
-        margin-right: 20px;
-    }
-    text-align: center;
-}
 .xhead {
-    margin-bottom: 20px;
-    margin-top: 30px;
     padding-bottom: 15px;
     border-bottom: 1px solid $COLOR_GRAY;
 }
@@ -128,46 +122,35 @@
 }
 .xlist1 {
     background: url(../images/pages/home/xicon-1.png) no-repeat;
-    padding-left: 50px;
+    padding-left: 40px;
     min-height: 24px;
     background-size: 30px;
 }
 .xlist2 {
     background: url(../images/pages/home/xicon-2.png) no-repeat;
-    padding-left: 50px;
+    padding-left: 40px;
     min-height: 24px;
     background-size: 30px;
 }
 .xlist3 {
     background: url(../images/pages/home/xicon-3.png) no-repeat;
-    padding-left: 50px;
+    padding-left: 40px;
     min-height: 24px;
     background-size: 30px;
 }
-.xlist4 {
-    background: url(../images/pages/home/xicon-4.png) no-repeat;
-    padding-left: 50px;
-    min-height: 24px;
-    background-size: 30px;
+.xlist1, .xlist2, .xlist3{
+  margin-left: 50px!important;
+  padding-bottom: 1em;
+  text-align: left;
+}
+.small-image {
+  width: 10%;
+  margin: 0 1em;
 }
 .xcta {
     position: relative;
     bottom: 30px;
     text-align: center;
-    .xreal {
-        margin-right: 10px;
-        span {
-            padding: 10px 25px;
-        }
-    }
-    .xvirtual span {
-        background-color: $COLOR_BLUE;
-        padding: 10px 25px;
-        &:hover {
-            text-decoration: none;
-            background-color: $COLOR_DARK_GREEN;
-        }
-    }
 }
 .xquote {
     background-color: $COLOR_LIGHT_GRAY;
@@ -202,29 +185,11 @@
 .xquoter-right {
     text-align: right;
 }
-
-#virtual-acc-form {
-    input, select {
-        width: 80%;
-        display: inline-block;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        padding: 8px !important;
-        font-size: 14px;
-    }
-    #residence {
-        height: 35px;
-        line-height: 35px;
-        width: 87%;
-        vertical-align: middle;
-    }
-}
 #xacademy{
     .head-academy{
         margin-bottom: 10px;
-        margin-top: 20px;
         padding-bottom: 15px;
-        border-bottom: 1px solid #dedede; 
+        border-bottom: 1px solid #dedede;
     }
     ul{
         margin-top: 20px;
@@ -239,13 +204,6 @@
     }
 }
 
-.xtopcta {
-    display: inline-block;
-    width: 50%;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    padding: 15px!important;
-}
 .xquoter-left p span, .xquoter-right p span {
     font-size: 12px;
     font-style: italic;
@@ -255,7 +213,7 @@
 }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
     .home-content{
         #xtop {
             padding-top: 30px;
@@ -265,65 +223,37 @@
               margin-left: 5px;
             }
         }
-        .break {
-          margin-top: 20px;
-          margin-bottom: 5px;
-        }
-        .no-break {
-          margin-top: 0px;
-        }
-        .xhead2 {
-            margin-top: 30px;
-        }
-        #open-account {
-            margin-left: 0;
-            margin-top: 20px;
-            padding:0;
-            h3 {
-                background: $COLOR_DARK_BLUE;
-                color: $COLOR_WHITE;
-                padding: 10px;
-            }
-            input[type=submit] {
-                width: 86% !important;
-            }
-            form {
-                margin: 5px 5px;
-            }
-        }
-        #residence {
-        width: 86% !important;
-        }
-        .virtual-acc-left {
-            width: 80% !important;
-            margin-right: 0;
-        }
-        .xtopcta {
-            width: 80%;
-        }
         .xtestimonial h1, .xhead {
             padding: 10px;
         }
-        #xsection1 {
-            padding: 10px 0;
-        }
         .xcta {
             position: initial;
-            .xreal {
-                margin-right: 0px;
-                span {
-                    font-weight: 300;
-                    padding: 20px 20px;
-                    width: 60%;
-                    margin: 10px 0;
-                }
+        }
+        .xlist1, .xlist2, .xlist3{
+          text-align: center;
+        }
+        #verify-email-form {
+          input {
+            &#email{
+              width: 92%;
             }
-            .xvirtual span {
-                background-color: $COLOR_BLUE;
-                font-weight: 300;
-                padding: 20px 20px;
-                width: 60%;
+            &[type=submit]{
+              width: 70%!important;
+              margin-left: 15%;
+              margin-top: 0;
             }
+          }
+          #open-account {
+            margin-top: 0.5em;
+          }
         }
     }
+}
+
+@media screen and (max-width: 480px) {
+  .home-content {
+    .small-image {
+      width: 30%;
+    }
+  }
 }

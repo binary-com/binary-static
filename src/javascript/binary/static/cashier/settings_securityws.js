@@ -5,8 +5,6 @@ var securityws = (function(){
 
     var clearErrors = function(){
         $("#SecuritySuccessMsg").text('');
-        $("#errorcashierlockpassword1").text('');
-        $("#errorcashierlockpassword2").text('');
         $("#client_message_content").text('');
         $("#client_message_content").hide();
 
@@ -35,50 +33,25 @@ var securityws = (function(){
         });
         BinarySocket.send({"authorize": $.cookie('login'), "passthrough": {"value": "is_locked"}});
     };
-    
+
     var validateForm = function(){
         var isValid = true;
         var regexp = new RegExp('^[ -~]+$');
 
         clearErrors();
 
-        var pwd1 = $("#cashierlockpassword1").val();
-        var pwd2 = $("#cashierlockpassword2").val();
-        var isVisible = $("#repasswordrow").is(':visible');
+        var pwd1 = document.getElementById("cashierlockpassword1").value,
+            pwd2 = document.getElementById("cashierlockpassword2").value,
+            errorPassword = document.getElementById('errorcashierlockpassword1'),
+            errorRPassword = document.getElementById('errorcashierlockpassword2'),
+            isVisible = $("#repasswordrow").is(':visible');
 
-        if(pwd1.length <= 0 ){
-            $("#errorcashierlockpassword1").text(text.localize("Please enter a password."));
-            isValid = false;
-        }
-        else if(pwd1.length > 25){
-            $("#errorcashierlockpassword1").text(text.localize("password can't be longer than 25."));
-            isValid = false;
-        }else if(pwd1.length < 6 ){
-            $("#errorcashierlockpassword1").text(text.localize("Your password should be at least 6 characters."));
-            isValid = false;
-        }else if(!regexp.test(pwd1)){
-            $("#errorcashierlockpassword1").text(text.localize("Your password contains invalid characters."));
-            isValid = false;
-        }
-        
         if(isVisible === true){
-            
-            if(pwd2.length <= 0 ){
-                $("#errorcashierlockpassword2").text(text.localize("Please enter a password."));
-                isValid = false;
-            }
-            else if(pwd2.length > 25){
-                $("#errorcashierlockpassword2").text(text.localize("password can't be longer than 25."));
-                isValid = false;
-            }else if(pwd2.length < 6 ){
-                $("#errorcashierlockpassword2").text(text.localize("Your password should be at least 6 characters."));
-                isValid = false;
-            }else if(pwd1 !== pwd2 ){
-                $("#errorcashierlockpassword2").text(text.localize("The two passwords that you entered do not match."));
-                isValid = false;
-            }
+          if (!Validate.errorMessagePassword(pwd1, pwd2, errorPassword, errorRPassword)){
+            isValid = false;
+          }
         }
-                
+
         return isValid;
     };
     var isAuthorized =  function(response){
@@ -88,30 +61,30 @@ var securityws = (function(){
 
             switch(option){
                 case   "lock_password" :
-                        BinarySocket.send({ 
+                        BinarySocket.send({
                             "cashier_password": "1",
                             "lock_password": pwd
                         });
                         break;
                 case   "unlock_password" :
-                        BinarySocket.send({ 
+                        BinarySocket.send({
                             "cashier_password": "1",
                             "unlock_password": pwd
                         });
-                        break; 
+                        break;
                 case   "is_locked" :
-                        BinarySocket.send({ 
+                        BinarySocket.send({
                             "cashier_password": "1",
                             "passthrough" : {"value" : "lock_status"}
                         });
-                        break ;                          
+                        break ;
             }
         }
     };
     var responseMessage = function(response){
 
        var resvalue;
-       
+
        if(response.echo_req.passthrough && (response.echo_req.passthrough.value === "lock_status") ){
             var passthrough = response.echo_req.passthrough.value;
             resvalue = response.cashier_password;
@@ -129,6 +102,11 @@ var securityws = (function(){
                 $("#lockInfo").text(text.localize("An additional password can be used to restrict access to the cashier."));
                 $form.find("button").attr("value","Update");
                 $form.find("button").html(text.localize("Update"));
+                $('#password-meter-div').attr('style', 'display:block');
+                $('#cashierlockpassword1').attr('style', 'border-bottom:none;');
+                $('#cashierlockpassword1').on('input', function() {
+                  $('#password-meter').attr('value', testPassword($('#cashierlockpassword1').val())[0]);
+                });
             }
 
         }
@@ -151,7 +129,7 @@ var securityws = (function(){
                 else{
                     $("#client_message_content").show();
                     $("#client_message_content").text(text.localize('Sorry, an error occurred while processing your account.'));
-                    
+
                     return false;
                 }
             }
@@ -178,23 +156,25 @@ var securityws = (function(){
 pjax_config_page("user/settings/securityws", function() {
     return {
         onLoad: function() {
-        	if (!getCookieItem('login')) {
-                window.location.href = page.url.url_for('login');
-                return;
-            }
-            if((/VRT/.test($.cookie('loginid')))){
-                window.location.href = ("/");
-            }
+          if (!getCookieItem('login')) {
+              window.location.href = page.url.url_for('login');
+              return;
+          }
+          if((/VRT/.test($.cookie('loginid')))){
+              window.location.href = ("/");
+          }
 
-        	BinarySocket.init({
+          Content.populate();
+
+          BinarySocket.init({
                 onmessage: function(msg){
                     var response = JSON.parse(msg.data);
                     if (response) {
                         securityws.SecurityApiResponse(response);
-                          
+
                     }
                 }
-            });	
+            });
 
             securityws.init();
         }

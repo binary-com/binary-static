@@ -63,7 +63,7 @@ var BinarySocket = (function () {
             bufferedSends.push(data);
             init(1);
         } else if (isReady()) {
-            if(!data.hasOwnProperty('passthrough')){
+            if(!data.hasOwnProperty('passthrough') && !data.hasOwnProperty('verify_email')){
                 data.passthrough = {};
             }
             // temporary check
