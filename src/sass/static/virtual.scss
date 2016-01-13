@@ -1,0 +1,37 @@
+#virtual-form, #change-password, .usersettingssecurityws-content{
+  input, select {
+    outline: none;
+  }
+  #tooltip-password {
+    text-decoration: none;
+  }
+  meter#password-meter {
+      width: 10.9em;
+      height: .5em;
+      -webkit-appearance: none;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      vertical-align: top;
+      display: block;
+  }
+  meter#password-meter::-webkit-meter-bar {
+      background: #f5f5f5;
+      box-shadow: 0 5px 5px -5px #333 inset;
+  }
+  div.hint {
+    margin-top: 10px;
+    font-size: 15px;
+    ul.disc {
+      margin-top: 10px;
+      margin-bottom: 0;
+      list-style-type: disc;
+      li {
+        font-size: 14px;
+        margin: .5em 0 0 1em;
+      }
+    }
+  }
+  p.error-message-password {
+    margin: 0.5em 0;
+  }
+}
