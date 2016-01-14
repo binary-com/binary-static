@@ -1,5 +1,7 @@
 BetAnalysis.JapanInfo = function() {
 
+    this.show = function(){};
+    this.hide = function(){};
 
     if (typeof is_japan === 'function' && $('#all_prices').length) {
         $('#tab_japan_info').removeClass('invisible');
