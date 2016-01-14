@@ -1,0 +1,38 @@
+.job-descriptions{
+  .grd-grid-4:not(:first-child) {
+    border: 1px dashed #d9d9d9;
+    border-width: 0 0 0 1px;
+  }
+  .grd-grid-12:nth-child(2) {
+    margin-top: 20px;
+  }
+  .grd-grid-3 {
+    text-align:center;
+  }
+  .grd-grid-9, .grd-grid-3, .grd-row-padding {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  img.responsive {
+    margin-top: .4em;
+    width: 70%;
+  }
+  h2 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .job-descriptions{
+    .grd-grid-mobile-12:not(:first-child) {
+      padding-top: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    img.responsive {
+      width: 40%;
+    }
+  }
+}
