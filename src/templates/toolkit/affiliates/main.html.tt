@@ -1,95 +1,85 @@
 <div class="grd-grid-12">
+    <p>
+     <h2>[% l('Searching for the Best Binary Options Affiliate Program?') %]</h2>
+    </p>
+     <p>
+        <h3>[% l('Look No Further.') %]</h3>
+     </p>
+    <p>
+        [% l('Start earning up to 35% of the net revenue for every client that you introduce to Binary.com, for as long as they trade on our platform.') %]
 
-    <p>[% l('Are you an Investment professional?') %]</p>
-    <p>[% l('Do you run a website?') %]</p>
-    <p>[% l('Do you own a newsletter or a mailing list?') %]</p>
-    <p>[% l('Earn money by becoming an Affiliate. You will receive commission on each account through your referrals.') %]</p>
+       
+        <div class="center-aligned grd-row-padding">
+            <a class="button" href="https://login.binary.com/signup.php">
+                <span>[% l('APPLY NOW') %]</span>
+            </a>
+        </div>
+    </p>
+    
+     
 
-    <div class="rbox-heading">
-        <h4>[% l('Register') %]</h4>
-    </div>
+    <h2>[% l('Why Join Our Affiliate Program?') %]</h2>
+    <p>[% l('Simply put, Binary.com is your best ally in the binary options trading industry – as a fully licensed, regulated, trustworthy company that you can partner with to earn extra income.') %]
+    </p>
 
-    <div class="center-aligned grd-row-padding">
-       <a class="button" href="https://login.binary.com/signup.php">
-            <span>[% l('Sign me up') %]</span>
-        </a>
-    </div>
+    <p>[% l('For more than 15 years, our award-winning platform has enabled 300,000 traders worldwide to purchase contracts for Forex currencies, stocks, indices, commodities, and more – with as little as $1 required per purchase.') %]</p>
 
-    <br>
+    <p>[% l('To date, we’ve hosted over $2 billion in trades across the globe. Share in our success, by working closely with our team to promote our product. ') %] 
 
-    <h2>[% l('Are your site visitors interested in:') %]</h2>
-    <ul class="checked">
-        <li>[% l('Learning to trade online?') %]</li>
-        <li>[% l('Discovering an easy, low-risk, flexible and, award-winning platform?') %]</li>
-        <li>[% l('Participating in the forex, stocks or commodities markets?') %]</li>
-        <li>[% l('Earning a second income in their spare time?') %]</li>
-        <li>[% l('Earning tax free trading profits*?') %]</li>
-    </ul>
-    <p>[% l('We will provide you with all the tools you need to turn your traffic into a lucrative revenue stream') %]</p>
-    <p><em>[% l('* Tax Free: Profits from trading are tax free in many countries but you should always consult a qualified tax advisor.') %]</em></p>
+        <div class="center-aligned grd-row-padding">
+            <a class="button" href="https://login.binary.com/signup.php">
+                <span>[% l('APPLY NOW') %]</span>
+            </a>
+        </div>
+    </p>
 
-    <div class="rbox-heading">
-        <h4>[% l('Register') %]</h4>
-    </div>
+    <h2>[% l('Benefit from Our Affiliate Program') %]</h2>
+    <p>
+        [% l('Apply to join us as an affiliate today. Benefits include:') %]
 
-    <div class="center-aligned grd-row-padding">
-        <a class="button" href="https://login.binary.com/signup.php">
-            <span>[% l('Sign me up') %]</span>
-        </a>
-    </div>
+        <ul class="checked">
+            <li><a href="#commision">[% l('Generous commission,') %]</a>[% l(' awarding up to 35% of the net revenue for all trades purchased by your referred clients ') %] </li>
+            <li><strong>[% l('On-time payments,') %]</strong>[% l(' without a single exception since our program’s official launch in March 2004, reliably credited to your account by the 15th of each month') %] </li>
+            <li><strong>[% l('Dedicated international support,') %] </strong>[% l(' including an attentive multilingual team and multi-currency payment methods ') %]</li>
+            <li><strong>[% l('Robust reporting and marketing tools,') %] </strong> [% l(' offering everything you need to promote our product and track your earnings') %]</li>
+            <li><strong>[% l('High conversion rates and client retention,')%]</strong>[% l(' based on the strength of our flexible, secure trading platform ') %]</li>
+            <li><strong>[% l('Additional opportunities to earn revenue through') %] </strong>[% l(' our:') %]</li>
 
-    <br>
+        </ul>
+        <span class="grd-grid-1"></span>
+        <span class="grd-grid-11">
+            <ul class="bullet">
+                <li><a href="[% request.url_for('payment-agent') %] ">[% l('Payment agent program') %]</a></li>
+                <li><a href="https://developers.binary.com/">API</a></li>
+                <li><a href="[% request.url_for('white-labels') %]">[% l('White-label offerings') %]</a></li>
+                <li><a href="[% request.url_for('partners') %] ">[% l('And more') %]</a></li>
+            </ul>
+        </span>
 
-    <h2>[% l('Why become an Affiliate?') %]</h2>
-    <p><em>[% l('"I work with a number of affiliate companies, and it is by far, the friendliest and most helpful that I\'ve found. They go out of their way to provide their affiliates with all the tools, advice and support they need in order to succeed. To top it all off, they offer some of the most handsome rebates in the industry." - <strong>Vinod Gorasia, Marketing Manager, Agora Lifestyles</strong>.') %]</em></p>
+     </p>
 
-    <ul class="checked">
-        <li>[% l("Long-term partnership with the leading financial trading service") %]</li>
-        <li>[% l('Great pay-outs. Earn up to 35%') %]</li>
-        <li>[% l('High conversions and customer value') %]</li>
-        <li>[% l('Multi-lingual and multi-currency support') %]</li>
-        <li>[% l('The best promotional tools and robust online reporting') %]</li>
-        <li>[% l('A dedicated affiliate team to provide you with the best service possible') %]</li>
-        <li>[% l('Award-winning, patented financial trading platform') %]</li>
-        <li>[% l('You will be provided with all the tools, to turn your traffic into a lucrative revenue stream') %]</li>
-    </ul>
+    <h2>[% l('Start Earning as an Affiliate') %]</h2>
+    <p>
+        [% l('Check out the commission rates for our affiliate program below – paid on time, every time, by the 15th of each month.') %]
 
-    <br>
+            <p>
+                [% INCLUDE affiliates/commission_table.html.tt %]
 
-    <h2>[% l('Generous Commission Structure') %]</h2>
-    <p>[% l('You may earn up to 35% commission on the net revenue generated by clients whom you introduce to our trading platform.') %]</p>
+            </p>
+    </p>
 
-    <p>[% l('Check out our commission rates below:') %]</p>
-    [% INCLUDE affiliates/commission_table.html.tt %]
+    <p>[% l('Don’t wait – register to join our binary options affiliate program today!') %]
 
-    <p><em>[% l('We also offer specialized pay-out structures to affiliates who offer a trading advice in connection with, and in relation to our commodities. <a href="mailto:[_1]">Contact our affiliate manager, Karen Yap for details</a>.', affiliate_email) %]</em></p>
+        <div class="center-aligned grd-row-padding">
+            <a class="button" href="https://login.binary.com/signup.php">
+                <span>[% l('APPLY NOW') %]</span>
+            </a>
+        </div>
+    </p> 
 
-    <br>
+   <p><em>[% l('"I work with a number of affiliate companies, and it is by far, the friendliest and most helpful that I\'ve found. They go out of their way to provide their affiliates with all the tools, advice and support they need in order to succeed. To top it all off, they offer some of the most handsome rebates in the industry."<p> - <strong>Vinod Gorasia, Marketing Manager, Agora Lifestyles</strong>.') %]</p></em></p>
+ 
+ 
 
-    <h2>[% l('Best Tracking with "Forever Cookies"') %]</h2>
-    <p>[% l('Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on [_1] and in that event, opens an account with us.', broker_name) %]</p>
-    <br>
-
-    <h2>[% l('On-time Payments Every Time') %]</h2>
-    <p>[% l("The Affiliate Program has been delivering payments on time and, every time, since our official launch in March, 2004. Your commission will be credited to your affiliate account within fifteen days after the close of a calendar month.") %] </p>
-
-    <p>[% l("Note: The company reserves the right to cancel affiliate commissions that remain unclaimed for more than 2 years. Please also read our affiliate terms and conditions.") %] </p>
-
-    <br>
-
-    <h2>[% l("A True Partnership") %]</h2>
-    <p>[% l("We employ an extensive team of writers, designers, market analysts and programmers, who are particularly dedicated to producing accessible, educational and sales material for our affiliates. We go way beyond banners to offer an informative and entertaining way on how to advertise online; including text ads, customer landing pages and promotions, free content as also gifts for your site visitors.") %]</p>
-    <p>[% l("If you introduce our website to potential clients, you will eventually start earning passive income, just as soon as one of them opens a real account with [_1]. And you will continue making money for as long as the client uses our services. Simply put, you will start earning a commission which in actual fact, requires very little effort to maintain.", broker_name) %]</p>
-    <p>[% l("When you get approved as an affiliate, you will be provided with everything necessary for you to start right away.") %]</p>
-    <p>[% l("So what are you waiting for? Join us as an affiliate today.") %]</p>
-
-    <div class="rbox-heading">
-        <h4>[% l('Register') %]</h4>
-    </div>
-
-    <div class="center-aligned grd-row-padding">
-        <a class="button" href="https://login.binary.com/signup.php">
-            <span>[% l('Sign me up') %]</span>
-        </a>
-    </div>
+     
 </div>
