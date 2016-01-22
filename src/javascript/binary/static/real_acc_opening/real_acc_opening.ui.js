@@ -1,27 +1,17 @@
 var RealAccOpeningUI = (function(){
   "use strict";
 
-  function setValues(dobdd, dobmm, dobyy, state, question, tel, residenceValue){
+  function setValues(residenceValue){
+    var dobdd    = document.getElementById('dobdd'),
+        dobmm    = document.getElementById('dobmm'),
+        dobyy    = document.getElementById('dobyy'),
+        tel      = document.getElementById('tel'),
+        state    = document.getElementById('address-state');
+
     handle_residence_state_ws();
     generateBirthDate(dobdd, dobmm, dobyy);
     setResidenceWs(tel, residenceValue);
     generateState(state);
-
-    var secretQuestions = [
-        "Mother's maiden name",
-        "Name of your pet",
-        "Name of first love",
-        "Memorable town/city",
-        "Memorable date",
-        "Favourite dish",
-        "Brand of first car",
-        "Favourite artist"
-    ];
-
-    for (i = 0; i < secretQuestions.length; i++) {
-        appendTextValueChild(question, secretQuestions[i], secretQuestions[i]);
-    }
-
   }
 
   function showError(opt){
@@ -37,7 +27,7 @@ var RealAccOpeningUI = (function(){
 
   function hideAllErrors(allErrors) {
     for (i = 0; i < allErrors.length; i++) {
-      Validate.hideErrorMessage(allErrors[i]);
+      allErrors[i].setAttribute('style', 'display:none');
     }
   }
 
@@ -70,18 +60,18 @@ var RealAccOpeningUI = (function(){
 
     var arr = [
                 title.value,
-                fname.value,
-                lname.value,
+                Trim(fname.value),
+                Trim(lname.value),
                 dobyy.value + '-' + dobmm.value + '-' + dobdd.value,
                 $.cookie('residence'),
-                address1.value,
-                address2.value,
-                town.value,
-                state.value,
-                postcode.value,
-                tel.value,
+                Trim(address1.value),
+                Trim(address2.value),
+                Trim(town.value),
+                Trim(state.value),
+                Trim(postcode.value),
+                Trim(tel.value),
                 question.value,
-                answer.value
+                Trim(answer.value)
             ];
 
     var errorTitle     = document.getElementById('error-title'),
@@ -118,13 +108,21 @@ var RealAccOpeningUI = (function(){
 
     hideAllErrors(allErrors);
 
-    if (!/^[a-zA-Z]+([\s\-|\.|\'|a-zA-Z]*)*$/.test(fname.value)){
+    if (Trim(fname.value).length < 2) {
+      errorFname.innerHTML = Content.errorMessage('min', '2');
+      Validate.displayErrorMessage(errorFname);
+      errorCounter++;
+    } else if (!/^[a-zA-Z\s-.']+$/.test(fname.value)){
       errorFname.innerHTML = Content.errorMessage('reg', [letters, space, hyphen, period, apost, ' ']);
       Validate.displayErrorMessage(errorFname);
       errorCounter++;
     }
 
-    if (!/^[a-zA-Z]+([\s\-|\.|\'|a-zA-Z]*)*$/.test(lname.value)){
+    if (Trim(lname.value).length < 2) {
+      errorLname.innerHTML = Content.errorMessage('min', '2');
+      Validate.displayErrorMessage(errorLname);
+      errorCounter++;
+    } else if (!/^[a-zA-Z\s-.']+$/.test(lname.value)){
       errorLname.innerHTML = Content.errorMessage('reg', [letters, space, hyphen, period, apost, ' ']);
       Validate.displayErrorMessage(errorLname);
       errorCounter++;
@@ -136,14 +134,22 @@ var RealAccOpeningUI = (function(){
       errorCounter++;
     }
 
-    if (!/^[a-zA-Z|\d]+(\s|-|.|'[a-zA-Z]*)*$/.test(address1.value)){
+    if (!/^[a-zA-Z\d\s-.']+$/.test(address1.value)){
       errorAddress1.innerHTML = Content.errorMessage('reg', [letters, numbers, space, hyphen, period, apost, ' ']);
       Validate.displayErrorMessage(errorAddress1);
       errorCounter++;
     }
 
-    if (!/^[a-zA-Z]+(\s|-|.[a-zA-Z]*)*$/.test(town.value)){
-      errorTown.innerHTML = Content.errorMessage('reg', [letters, space, hyphen, period, ' ']);
+    if (address2.value !== ""){
+      if (!/^[a-zA-Z\d\s-.']+$/.test(address2.value)){
+        errorAddress2.innerHTML = Content.errorMessage('reg', [letters, numbers, space, hyphen, period, apost, ' ']);
+        Validate.displayErrorMessage(errorAddress2);
+        errorCounter++;
+      }
+    }
+
+    if (!/^[a-zA-Z\s-.']+$/.test(town.value)){
+      errorTown.innerHTML = Content.errorMessage('reg', [letters, space, hyphen, period, apost, ' ']);
       Validate.displayErrorMessage(errorTown);
       errorCounter++;
     }
@@ -154,28 +160,30 @@ var RealAccOpeningUI = (function(){
       errorCounter++;
     }
 
-    if (!/^\d+(-|\d]*)*$/.test(postcode.value)){
+    if (postcode.value !== '' && !/^[\d-]+$/.test(postcode.value)){
       errorPostcode.innerHTML = Content.errorMessage('reg', [numbers, hyphen, ' ']);
       Validate.displayErrorMessage(errorPostcode);
       errorCounter++;
     }
 
-    if (tel.value.length < 6) {
+    if (residence.value === 'gb' && /^$/.test(Trim(postcode.value))){
+      errorPostcode.innerHTML = Content.errorMessage('req');
+      Validate.displayErrorMessage(errorPostcode);
+      errorCounter++;
+    }
+
+    if (tel.value.replace(/\+| /g,'').length < 6) {
       errorTel.innerHTML = Content.errorMessage('min', 6);
       Validate.displayErrorMessage(errorTel);
       errorCounter++;
-    } else if (!/^\+?\d{6,35}$/.test(tel.value)){
-      errorTel.innerHTML = Content.errorMessage('reg', [numbers, hyphen, ' ']);
+    } else if (!/^\+?[\d-\s]+$/.test(tel.value)){
+      errorTel.innerHTML = Content.errorMessage('reg', [numbers, space, hyphen, ' ']);
       Validate.displayErrorMessage(errorTel);
       errorCounter++;
     }
 
     if (answer.value.length < 4) {
       errorAnswer.innerHTML = Content.errorMessage('min', 4);
-      Validate.displayErrorMessage(errorAnswer);
-      errorCounter++;
-    } else if (!/^[a-zA-Z0-9]*(\s|-|.[a-zA-Z0-9]*){4,60}$/.test(answer.value)){
-      errorAnswer.innerHTML = Content.errorMessage('reg', [numbers, hyphen, ' ']);
       Validate.displayErrorMessage(errorAnswer);
       errorCounter++;
     }
@@ -187,7 +195,7 @@ var RealAccOpeningUI = (function(){
     }
 
     for (i = 0; i < arr.length; i++){
-      if (/^$/.test(arr[i]) && i !== 6 && i !== 8){
+      if (/^$/.test(Trim(arr[i])) && i !== 6 && i !== 8 && i !== 9){
         allErrors[i].innerHTML = Content.errorMessage('req');
         Validate.displayErrorMessage(allErrors[i]);
         errorCounter++;

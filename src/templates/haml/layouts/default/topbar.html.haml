@@ -4,7 +4,7 @@
       .grd-grid-6.grd-grid-mobile-12.by_client_type.client_virtual{ :class => 'upgrademessage', :style => 'display: none;'}
         %span.grd-hide-mobile
           %span#virtual-text= l("You're using a Virtual Account.")
-        %a#virtual-upgrade-link.pjaxload.with_login_cookies.pulser{:href =>url_for("new_account/real") }= l('Upgrade to a Real Account')
+        %a#virtual-upgrade-link.pjaxload.with_login_cookies.pulser{:href =>url_for("new_account/realws") }= l('Upgrade to a Real Account')
         %a#vr-japan-upgrade-link.invisible.pjaxload.with_login_cookies.pulser{:href =>url_for("new_account/japan") }= l('Upgrade to a Real Account')
         %a#vr-financial-upgrade-link.invisible.pjaxload.with_login_cookies.pulser{:href =>url_for("new_account/maltainvest") }= l('Upgrade to a Financial Account')
       .grd-grid-6.grd-grid-mobile-12.by_client_type.client_real.upgrademessage{:style => 'display: none;'}

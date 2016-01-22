@@ -16,8 +16,12 @@ if(document.getElementById('btn-verify-email')) {
 
                 if (response) {
                     var type = response.msg_type;
-                    if (type === 'verify_email'){
+                    var wsError = response.error;
+                    if (type === 'verify_email' && !wsError){
                         VerifyEmailWS.emailHandler(error);
+                    } else if (wsError && wsError.message) {
+                      error.innerHTML = wsError.message;
+                      error.setAttribute('style', 'display:block');
                     }
                 }
             }

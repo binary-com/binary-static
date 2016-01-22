@@ -303,16 +303,6 @@ function appendTextValueChild(element, text, value){
     element.appendChild(option);
 }
 
-// populate drop down list of Titles, pass in select element
-function setTitles(select){
-    appendTextValueChild(select, Content.localize().textMr, 'Mr');
-    appendTextValueChild(select, Content.localize().textMrs, 'Mrs');
-    appendTextValueChild(select, Content.localize().textMs, 'Ms');
-    appendTextValueChild(select, Content.localize().textMiss, 'Miss');
-    appendTextValueChild(select, Content.localize().textDr, 'Dr');
-    appendTextValueChild(select, Content.localize().textProf, 'Prof');
-}
-
 // append numbers to a drop down menu, eg 1-30
 function dropDownNumbers(select, startNum, endNum) {
     select.appendChild(document.createElement("option"));
@@ -388,10 +378,9 @@ function handle_residence_state_ws(){
             }
             select.parentNode.parentNode.setAttribute('style', 'display:block');
           }
-        }
-        if (type === 'residence_list'){
-          select = document.getElementById('residence-disabled');
-          var phoneElement = document.getElementById('tel'),
+        } else if (type === 'residence_list'){
+          select = document.getElementById('residence-disabled') || document.getElementById('residence');
+          var phoneElement   = document.getElementById('tel'),
               residenceValue = $.cookie('residence'),
               residence_list = response.residence_list;
           if (residence_list.length > 0){
@@ -401,7 +390,9 @@ function handle_residence_state_ws(){
                 phoneElement.value = '+' + residence_list[i].phone_idd;
               }
             }
-            select.parentNode.parentNode.setAttribute('style', 'display:block');
+            if (residenceValue){
+                select.value = residenceValue;
+            }
           }
         }
       }
@@ -440,10 +431,16 @@ if (page.language() === 'JA' && !$.cookie('MyJACookie')) {
   window.location = window.location.pathname + str;
 }
 
-
 // returns true if internet explorer browser
 function isIE() {
   return /(msie|trident|edge)/i.test(window.navigator.userAgent) && !window.opera;
+}
+
+// trim leading and trailing white space
+function Trim(str){
+  while(str.charAt(0) == (" ") ){str = str.substring(1);}
+  while(str.charAt(str.length-1) ==" " ){str = str.substring(0,str.length-1);}
+  return str;
 }
 
 //remove wrong json affiliate_tracking
@@ -583,6 +580,16 @@ pjax_config_page('/terms-and-condition', function() {
             var year = document.getElementsByClassName('currentYear');
             for (i = 0; i < year.length; i++){
               year[i].innerHTML = new Date().getFullYear();
+            }
+        },
+    };
+});
+
+pjax_config_page('/my_account', function() {
+    return {
+        onLoad: function() {
+            if ($('#client_loginid option[value="hidden"]')){
+              $('#client_loginid option[value="hidden"]').remove();
             }
         },
     };

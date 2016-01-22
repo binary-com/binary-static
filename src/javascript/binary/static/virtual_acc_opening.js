@@ -5,7 +5,8 @@ pjax_config_page("new_account/virtualws", function(){
           window.location.href = page.url.url_for('user/my_account');
           return;
       }
-      get_residence_list();
+      handle_residence_state_ws();
+      setResidenceWs();
       Content.populate();
       var form = document.getElementById('virtual-form');
       var errorEmail = document.getElementById('error-email'),
@@ -57,8 +58,8 @@ pjax_config_page("new_account/virtualws", function(){
                       if (/required/.test(error.details.verification_code)){
                         errorEmail.textContent = Content.localize().textTokenMissing;
                       }
-                    } else {
-                      errorEmail.textContent = Content.errorMessage('valid', Content.localize().textEmailAddress);
+                    } else if (error.message) {
+                      errorEmail.textContent = error.message;
                     }
                     Validate.displayErrorMessage(errorEmail);
                   }
