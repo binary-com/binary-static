@@ -157,6 +157,17 @@ function BinarySocketClass() {
                                 window.location.reload();
                             });
                     }
+                } else if(response.hasOwnProperty('error')) {
+                  if (response.error && response.error.code === "DisabledClient") {
+                    var container = document.getElementById('contract_confirmation_container'),
+                        message_container = document.getElementById('confirmation_message'),
+                        confirmation_error = document.getElementById('confirmation_error');
+
+                    container.style.display = 'block';
+                    message_container.hide();
+                    confirmation_error.show();
+                    confirmation_error.textContent = response.error.message;
+                  }
                 }
 
                 if(typeof events.onmessage === 'function'){

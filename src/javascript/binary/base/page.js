@@ -425,7 +425,6 @@ Header.prototype = {
             var loginid_select = '';
             var loginid_array = this.user.loginid_array;
             for (var i=0;i<loginid_array.length;i++) {
-                if (loginid_array[i].disabled) continue;
 
                 var curr_loginid = loginid_array[i].id;
                 var real = loginid_array[i].real;
@@ -523,16 +522,16 @@ Header.prototype = {
             BinarySocket.send({"logout": "1"});
         });
     },
-    
+
     validate_cookies: function(){
         if (getCookieItem('login') && getCookieItem('loginid_list')){
             var accIds = $.cookie("loginid_list").split("+");
             var loginid = $.cookie("loginid");
-                                    
+
             if(!client_form.is_loginid_valid(loginid)){
                 BinarySocket.send({"logout": "1"});
             }
-            
+
             for(var i=0;i<accIds.length;i++){
                 if(!client_form.is_loginid_valid(accIds[i].split(":")[0])){
                     BinarySocket.send({"logout": "1"});
@@ -834,6 +833,7 @@ Page.prototype = {
             ViewBalance.init();
         }
         $('#current_width').val(get_container_width());//This should probably not be here.
+        this.show_error_disabled();
     },
     on_unload: function() {
         this.header.on_unload();
@@ -919,5 +919,20 @@ Page.prototype = {
             path: '/',
             domain: '.' + location.hostname.split('.').slice(-2).join('.')
         });
+    },
+    show_error_disabled: function() {
+      //check if user is disabled
+      if (this.user.is_logged_in === true) {
+        for (i = 0; i < this.user.loginid_array.length; i++) {
+          if (this.user.loginid_array[i].disabled === true && this.client.loginid === this.user.loginid_array[i].id) {
+            $('#main-menu').remove();
+            $('#content').empty();
+            $('#content').attr('style', 'margin:50px');
+            var errorMsg = text.localize('This account is unavailable. For any questions please contact <a href="%1">Customer Support</a>.');
+            errorMsg.replace('%1', this.url.url_for('contact'));
+            $('#content').html('<div class="grd-container">' + errorMsg + '</div>');
+          }
+        }
+      }
     }
 };
