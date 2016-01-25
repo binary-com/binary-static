@@ -1,5 +1,5 @@
 var ClientForm = function(init_params) {
-    this.valid_loginids = new RegExp(init_params['valid_loginids']);
+    this.valid_loginids =  new RegExp("^(" + init_params['valid_loginids'] + ")[0-9]+$", "i");
 };
 
 ClientForm.prototype = {
