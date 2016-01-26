@@ -474,7 +474,7 @@ Header.prototype = {
     register_dynamic_links: function() {
         var logged_in_url = page.url.url_for('');
         if(this.client.is_logged_in) {
-            logged_in_url = page.url.url_for('user/my_account');
+            logged_in_url = page.url.url_for('user/my_accountws');
         }
 
         $('#logo').attr('href', logged_in_url).on('click', function(event) {
@@ -523,16 +523,16 @@ Header.prototype = {
             BinarySocket.send({"logout": "1"});
         });
     },
-    
+
     validate_cookies: function(){
         if (getCookieItem('login') && getCookieItem('loginid_list')){
             var accIds = $.cookie("loginid_list").split("+");
             var loginid = $.cookie("loginid");
-                                    
+
             if(!client_form.is_loginid_valid(loginid)){
                 BinarySocket.send({"logout": "1"});
             }
-            
+
             for(var i=0;i<accIds.length;i++){
                 if(!client_form.is_loginid_valid(accIds[i].split(":")[0])){
                     BinarySocket.send({"logout": "1"});
