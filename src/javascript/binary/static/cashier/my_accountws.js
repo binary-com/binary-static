@@ -39,9 +39,10 @@ var my_accountws = (function(){
     	    		    	$("#VRT_topup_link").show();
     	    		    	$("#VRT_topup_link a").text(text.localize(str).replace("%1",currType + " 10000 "));
 	    			    }
+	    			    BinarySocket.send({"get_settings": 1, "req_id":3});
 	    			}
 	    			else{
-	    			   BinarySocket.send({"get_settings": 1, "req_id":3});
+	    			   BinarySocket.send({"get_settings": 1, "req_id":4});
 	    			}
 	    			BinarySocket.send({"get_account_status": 1, "req_id":2});
 	    		}
@@ -118,6 +119,52 @@ var my_accountws = (function(){
             $("#investment_message").removeClass("invisible");
         }
     };
+    
+    var addGTMDataLayer = function(response){
+        if("error" in response){
+            if("message" in response.error) {
+	            console.log(response.error.message);
+	        }
+            return false;
+        }
+        else{
+            if(page.url.param('login') || page.url.param('newaccounttype')){
+                var oldUrl = window.location.href;
+                var newUrl = oldUrl.replace(/(login=true&|newaccounttype=real&|newaccounttype=virtual&)/gi, "");
+                var title = document.title;
+                var age = parseInt((moment(str).unix()-response.get_settings.date_of_birth)/31557600);
+                var name = TUser.get().fullname.split(' ');
+                var data = {};
+                data['bom_balance'] = TUser.get().balance;
+                data['bom_country'] = response.get_settings.country;
+                data['bom_email'] = TUser.get().email;
+                data['language'] = page.url.param("l");
+                data['pageTitle'] = title;
+                data['url'] = oldUrl;
+                data['visitorID'] = TUser.get().loginid;
+                
+                if(response.req_id === 4){
+                    data['bom_age'] = age;
+                    data['bom_firstname'] = name[1];
+                    data['bom_lastname'] = name[2];
+                    data['bom_phone'] = response.get_settings.phone;
+                    data['bom_pl'] = '';
+                    data['bom_withdrawals'] = '';
+                    data['bom_date_joined'] = '';
+                    data['bom_deposits'] = '';
+                    data['bom_gender'] = '';
+                }
+                
+                if(page.url.param('newaccounttype'))
+                    data['event'] = 'new_account';
+                else
+                    data['event'] = 'log_in';
+                
+                dataLayer.push(data);
+                window.history.replaceState("My Account", title, newUrl);
+            }
+        }
+    };
 
     var apiResponse = function(response){
     	var type = response.msg_type;
@@ -128,14 +175,18 @@ var my_accountws = (function(){
         if(type === "get_account_status" || (type === "error" && "get_account_status" in response.echo_req)){
             showAuthenticate(response);
         }
-        if(type === "get_settings" || (type === "error" && "get_settings" in response.echo_req)){
+        if(type === "get_settings" && response.req_id === 3 || (type === "error" && "get_settings" in response.echo_req)){
+            addGTMDataLayer(response);
+        }
+        if(type === "get_settings" && response.req_id === 4 || (type === "error" && "get_settings" in response.echo_req)){
             getLandingCompany(response);
+            addGTMDataLayer(response);
         }
         if(type === "landing_company" || (type === "error" && "landing_company" in response.echo_req)){
             showWelcomeText(response);
         }
     };
-
+    
     return {
     	init : init,
     	apiResponse : apiResponse
@@ -146,7 +197,7 @@ var my_accountws = (function(){
 
 
 
-pjax_config_page("user/my_accountws", function() {
+pjax_config_page("user/my_account", function() {
     return {
         onLoad: function() {
         	if (!getCookieItem('login')) {

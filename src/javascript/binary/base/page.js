@@ -741,6 +741,11 @@ Contents.prototype = {
     topbar_message_visibility: function() {
         if(this.client.is_logged_in) {
             var loginid_array = this.user.loginid_array;
+            for (i = 0; i < loginid_array.length; i++) {
+                if (loginid_array[i].disabled === true && this.client.loginid === loginid_array[i].id) {
+                  return 0;
+                }
+            }
             var c_config = page.settings.get('countries_list')[this.client.residence];
 
             if (!this.client.is_real) {
@@ -833,7 +838,6 @@ Page.prototype = {
             ViewBalance.init();
         }
         $('#current_width').val(get_container_width());//This should probably not be here.
-        this.show_error_disabled();
     },
     on_unload: function() {
         this.header.on_unload();
@@ -919,20 +923,5 @@ Page.prototype = {
             path: '/',
             domain: '.' + location.hostname.split('.').slice(-2).join('.')
         });
-    },
-    show_error_disabled: function() {
-      //check if user is disabled
-      if (this.user.is_logged_in === true) {
-        for (i = 0; i < this.user.loginid_array.length; i++) {
-          if ((page.url.location.pathname).match(/contact/) === null && this.user.loginid_array[i].disabled === true && this.client.loginid === this.user.loginid_array[i].id) {
-            $('#main-menu').remove();
-            $('#content').empty();
-            $('#content').attr('style', 'margin:50px');
-            var errorMsg = text.localize('This account is unavailable. For any questions please contact <a href="%1">Customer Support</a>.');
-            errorMsg = errorMsg.replace('%1', this.url.url_for('contact'));
-            $('#content').html('<div class="grd-container">' + errorMsg + '</div>');
-          }
-        }
-      }
     }
 };
