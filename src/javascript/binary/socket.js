@@ -130,7 +130,7 @@ function BinarySocketClass() {
                     delete timeouts[response.echo_req.passthrough.req_number];
                 }
                 var type = response.msg_type;
-                if (response.error && response.error.code && (response.error.code === "DisabledClient" || response.error.code === "CallError")) {
+                if (response.error && response.error.code && (response.error.code === "DisabledClient")) {
                   if ((page.url.location.pathname).match(/contact/) === null) {
                     forgetTradingStreams();
                     $('#main-menu').remove();
