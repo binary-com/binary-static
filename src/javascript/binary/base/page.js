@@ -924,12 +924,12 @@ Page.prototype = {
       //check if user is disabled
       if (this.user.is_logged_in === true) {
         for (i = 0; i < this.user.loginid_array.length; i++) {
-          if (this.user.loginid_array[i].disabled === true && this.client.loginid === this.user.loginid_array[i].id) {
+          if ((page.url.location.pathname).match(/contact/) === null && this.user.loginid_array[i].disabled === true && this.client.loginid === this.user.loginid_array[i].id) {
             $('#main-menu').remove();
             $('#content').empty();
             $('#content').attr('style', 'margin:50px');
             var errorMsg = text.localize('This account is unavailable. For any questions please contact <a href="%1">Customer Support</a>.');
-            errorMsg.replace('%1', this.url.url_for('contact'));
+            errorMsg = errorMsg.replace('%1', this.url.url_for('contact'));
             $('#content').html('<div class="grd-container">' + errorMsg + '</div>');
           }
         }
