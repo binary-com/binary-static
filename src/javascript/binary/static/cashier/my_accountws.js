@@ -135,7 +135,10 @@ var my_accountws = (function(){
                 var age = parseInt((moment(str).unix()-response.get_settings.date_of_birth)/31557600);
                 var name = TUser.get().fullname.split(' ');
                 var data = {};
-                data['bom_balance'] = TUser.get().balance;
+                var affiliateToken = $.cookie('affiliate_tracking');
+                if (affiliateToken) {
+                    dataLayer.push({'bom_affiliate_token': affiliateToken});
+                }
                 data['bom_country'] = response.get_settings.country;
                 data['bom_email'] = TUser.get().email;
                 data['language'] = page.url.param("l");
@@ -149,11 +152,6 @@ var my_accountws = (function(){
                     data['bom_firstname'] = name[1];
                     data['bom_lastname'] = name[2];
                     data['bom_phone'] = response.get_settings.phone;
-                    data['bom_pl'] = '';
-                    data['bom_withdrawals'] = '';
-                    data['bom_date_joined'] = '';
-                    data['bom_deposits'] = '';
-                    data['bom_gender'] = '';
                 }
 
                 if(page.url.param('newaccounttype'))
