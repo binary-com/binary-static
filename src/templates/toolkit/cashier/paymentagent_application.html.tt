@@ -5,7 +5,7 @@
 <p>[% l('Thank you. Your application has been submitted and will be examined by our team as soon as possible. You will receive a reply by email within 72 hours.') %]</p>
 
 <div class="centerText">
-    <a href="[% request.url_for('/user/my_account') %]" class="button"><span class="button">[% l('Home') %]</span></a>
+    <a href="[% request.url_for('/user/myaccount') %]" class="button"><span class="button">[% l('Home') %]</span></a>
 </div>
 
 [% ELSE %]

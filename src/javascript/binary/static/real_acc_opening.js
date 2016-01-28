@@ -9,12 +9,12 @@ pjax_config_page("new_account/realws", function(){
           return;
       }
       if (page.client.type !== 'virtual') {
-        window.location.href = page.url.url_for('user/my_account');
+        window.location.href = page.url.url_for('user/myaccount');
         return;
       }
       for (i = 0; i < page.user.loginid_array.length; i++){
         if (page.user.loginid_array[i].real === true){
-          window.location.href = page.url.url_for('user/my_account');
+          window.location.href = page.url.url_for('user/myaccount');
           return;
         }
       }

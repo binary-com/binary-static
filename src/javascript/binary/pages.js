@@ -38,7 +38,7 @@ function get_login_page_url() {
     return 'https://' + page.settings.get('domains')['private'] + '/login' + params;
 }
 
-onLoad.queue_for_url(confirm_popup_action, 'my_account|confirm_popup');
+onLoad.queue_for_url(confirm_popup_action, 'myaccount|confirm_popup');
 onLoad.queue_for_url(hide_payment_agents, 'cashier');
 
 onLoad.queue_for_url(function() {

@@ -213,7 +213,7 @@ if (!/backoffice/.test(document.URL)) { // exclude BO
                 location.href = page.url.url_for('home');
             } else {
                 // loginid switch
-                location.href = page.url.url_for('user/my_account?loginid=' + jq_event.originalEvent.newValue);
+                location.href = page.url.url_for('user/myaccount?loginid=' + jq_event.originalEvent.newValue);
             }
         });
 

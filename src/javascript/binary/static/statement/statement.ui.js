@@ -34,14 +34,19 @@ var StatementUI = (function(){
     }
 
     function createStatementRow(transaction){
+        var action = transaction["action_type"];
         var dateObj = new Date(transaction["transaction_time"] * 1000);
+        if (action === 'sell') {
+            dateObj = new Date(transaction["purchase_time"] * 1000);
+        }
+        action = StringUtil.toTitleCase(action);
+
         var momentObj = moment.utc(dateObj);
         var dateStr = momentObj.format("YYYY-MM-DD");
         var timeStr = momentObj.format("HH:mm:ss");
 
         var date = dateStr + "\n" + timeStr;
         var ref = transaction["transaction_id"];
-        var action = StringUtil.toTitleCase(transaction["action_type"]);
         var desc = transaction["longcode"];
         var amount = Number(parseFloat(transaction["amount"])).toFixed(2);
         var balance = Number(parseFloat(transaction["balance_after"])).toFixed(2);

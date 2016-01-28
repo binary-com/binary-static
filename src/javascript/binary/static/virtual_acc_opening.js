@@ -2,7 +2,7 @@ pjax_config_page("new_account/virtualws", function(){
   return {
     onLoad: function() {
       if (getCookieItem('login')) {
-          window.location.href = page.url.url_for('user/my_account');
+          window.location.href = page.url.url_for('user/myaccount');
           return;
       }
       handle_residence_state_ws();
