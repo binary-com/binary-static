@@ -16,7 +16,7 @@
           %form#verify-email-form
             %span.grd-grid-2.grd-hide-mobile
             %div#open-account.grd-parent.grd-grid-8.grd-grid-mobile-12
-              %input.grd-grid-9{:id => 'email', :placeholder => stash('emailtext')}
+              %input.grd-grid-9{:id => 'email', :placeholder => stash('emailtext'), :maxlength => 50}
               %input.grd-grid-3.button{:id => 'btn-verify-email', :type => 'submit', :value => stash('createacc')}
               %p.grd-grid-12.error-message#signup_error{:style => 'display:none'}
             %span.grd-grid-2.grd-hide-mobile

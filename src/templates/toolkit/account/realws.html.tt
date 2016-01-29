@@ -157,7 +157,7 @@
                         <div class="grd-grid-12">
                             <p>
                                 <input type="checkbox" name="tnc" id="tnc">
-                                    <span onclick="document.getElementById('tnc').checked=!document.getElementById('tnc').checked">[% l('I have read and agree to the') %] <a target="_blank" href="https://www.binaryqa17.com/terms-and-conditions?l=EN">[% l('terms and conditions') %]</a> [% l('of the site.') %]</span>
+                                    <span onclick="document.getElementById('tnc').checked=!document.getElementById('tnc').checked">[% l('I have read and agree to the') %] <a target="_blank" href="[% request.url_for('/terms-and-conditions') %]">[% l('terms and conditions') %]</a> [% l('of the site.') %]</span>
                                     <p class="errorfield" id="error-tnc" style="display:none"></p>
                                 </input>
                             </p>

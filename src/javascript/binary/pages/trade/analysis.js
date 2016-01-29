@@ -15,6 +15,10 @@ var TradingAnalysis = (function() {
 
     var requestTradeAnalysis = function() {
         var contentId = document.getElementById('trading_bottom_content');
+        var formName = $('#contract_form_name_nav').find('.a-active').attr('id');
+        if (formName === 'matchdiff') {
+          formName = 'digits';
+        }
         contentId.innerHTML =
           '<div class="content-tab-container page-section">' +
             '<div class="tab-menu">' +
@@ -24,13 +28,9 @@ var TradingAnalysis = (function() {
                     '<a href="#tab_graph" class="tm-a first">' + text.localize('Chart') + '</a>' +
                   '</li>' +
                   '<li id="tab_explanation" class="tm-li active">' +
-                    '<a href="' + page.url.url_for('trade/bet_explanation?underlying_symbol=' + $('#underlying').val() +
-                    '&form_name=' + $('#contract_form_name_nav').find('.a-active').attr('id')) +
+                    '<a href="' + page.url.url_for('trade/bet_explanation') + '&underlying_symbol=' + $('#underlying').val() +
+                    '&form_name=' + formName +
                     '" class="tm-a">' + text.localize('Explanation') + '</a>' +
-                  '</li>' +
-                  '<li id="tab_pricing_table" class="invisible tm-li">' +
-                    '<a href="' + page.url.url_for('d/pricing_table_ajax.cgi') + '" class="tm-a">' +
-                    text.localize('Pricing Table') + '</a>' +
                   '</li>' +
                   '<li id="tab_last_digit" class="invisible tm-li">' +
                     '<a href="' + page.url.url_for('trade/last_digit_info?underlying=' + $('#underlying').val() +
