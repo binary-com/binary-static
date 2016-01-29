@@ -6,7 +6,7 @@
                     <span class='grd-hide-mobile'>
                         <span id='virtual-text'>[% l("You're using a Virtual Account.") %]</span>
                     </span>
-                    <a id="virtual-upgrade-link" class="pjaxload with_login_cookies pulser" href="[% request.url_for('new_account/real') %]">[% l("Upgrade to a Real Account") %]</a>
+                    <a id="virtual-upgrade-link" class="pjaxload with_login_cookies pulser" href="[% request.url_for('new_account/realws') %]">[% l("Upgrade to a Real Account") %]</a>
                     <a id="vr-japan-upgrade-link" class="pjaxload with_login_cookies pulser" href="[% request.url_for('new_account/japan') %]">[% l("Upgrade to a Real Account") %]</a>
                     <a id="vr-financial-upgrade-link" class="invisible pjaxload with_login_cookies pulser" href="[% request.url_for('new_account/maltainvest') %]">[% l("Upgrade to a Financial Account") %]</a>
                 </div>

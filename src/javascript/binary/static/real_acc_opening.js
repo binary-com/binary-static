@@ -3,8 +3,7 @@ pjax_config_page("new_account/realws", function(){
   return {
     onLoad: function() {
       Content.populate();
-      var residenceValue = $.cookie('residence');
-      if (!$.cookie('login') || !residenceValue) {
+      if (!$.cookie('login')) {
           window.location.href = page.url.url_for('login');
           return;
       }
@@ -18,11 +17,9 @@ pjax_config_page("new_account/realws", function(){
           return;
         }
       }
-      if (page.client.is_logged_in) {
-          client_form.set_virtual_email_id(page.client.email);
-      }
-      RealAccOpeningUI.setValues(residenceValue);
-
+      handle_residence_state_ws();
+      getSettings();
+      setResidenceWs();
       $('#real-form').submit(function(evt) {
         evt.preventDefault();
         if (RealAccOpeningUI.checkValidity()){
@@ -51,7 +48,7 @@ pjax_config_page("new_account/realws", function(){
                     'visitorID': loginid,
                     'bom_age': age,
                     'bom_country': $('#residence-disabled option[value="' + residenceValue + '"]').html(),
-                    'bom_date_joined': Math.floor(Date.now() / 1000),
+                    'bom_today': Math.floor(Date.now() / 1000),
                     'bom_email': page.user.email,
                     'bom_firstname': document.getElementById('fname').value,
                     'bom_lastname': document.getElementById('lname').value,

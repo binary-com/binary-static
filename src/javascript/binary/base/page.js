@@ -425,7 +425,6 @@ Header.prototype = {
             var loginid_select = '';
             var loginid_array = this.user.loginid_array;
             for (var i=0;i<loginid_array.length;i++) {
-                if (loginid_array[i].disabled) continue;
 
                 var curr_loginid = loginid_array[i].id;
                 var real = loginid_array[i].real;
@@ -742,6 +741,11 @@ Contents.prototype = {
     topbar_message_visibility: function() {
         if(this.client.is_logged_in) {
             var loginid_array = this.user.loginid_array;
+            for (i = 0; i < loginid_array.length; i++) {
+                if (loginid_array[i].disabled === true && this.client.loginid === loginid_array[i].id) {
+                  return 0;
+                }
+            }
             var c_config = page.settings.get('countries_list')[this.client.residence];
 
             if (!this.client.is_real) {

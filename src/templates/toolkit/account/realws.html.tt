@@ -4,7 +4,25 @@
 
         <div class="rbox form">
             <div class="rbox-wrap">
-
+                <form id="residence-form" style="display:none">
+                  <fieldset id="select-residence">
+                    <legend>[% l('Please select your country of residence') %]</legend>
+                    <div class="grd-row-padding row clear">
+                        <div class="grd-grid-4  form_label">
+                            <label for="residence-disabled">[% l('Country of residence') %]</label>
+                        </div>
+                        <div class="grd-grid-8">
+                          <span id="move-residence-here"></span>
+                        </div>
+                    </div>
+                    <div class="center-aligned">
+                      <span class="button button-focus">
+                          <button class="button button-focus" id="residence_submit" type="submit">[% l('Proceed') %]</button>
+                      </span>
+                    </div>
+                  </fieldset>
+                </form>
+                </fieldset>
                 <form id="real-form">
                     <fieldset>
                         <legend id="details">[% l('Details') %]</legend>
@@ -58,6 +76,7 @@
                                 <label for="residence-disabled">[% l('Country of residence') %]</label>
                             </div>
                             <div class="grd-grid-8">
+                                <span id="move-residence-back"></span>
                                 <select name="residence-disabled" id="residence-disabled" disabled></select>
                                 <p class="errorfield" id="error-residence" style="display:none"></p>
                             </div>

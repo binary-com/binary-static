@@ -51,7 +51,7 @@ var enable_residence_form_submit = function () {
     });
 };
 
-pjax_config_page('new_account/real', function() {
+/*pjax_config_page('new_account/real', function() {
     return {
         onLoad: function() {
             client_form.on_residence_change();
@@ -63,7 +63,7 @@ pjax_config_page('new_account/real', function() {
             }
         }
     };
-});
+});*/
 
 var upgrade_investment_disabled_field = function () {
     if (page.client.is_real) {
