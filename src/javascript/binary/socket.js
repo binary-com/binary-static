@@ -130,37 +130,49 @@ function BinarySocketClass() {
                     delete timeouts[response.echo_req.passthrough.req_number];
                 }
                 var type = response.msg_type;
-                if (type === 'authorize') {
-                    if(response.hasOwnProperty('error')) {
-                       send({'logout': '1', passthrough: {'redirect': 'login'}});
-                    }
-                   else {
-                       authorized = true;
-                       TUser.set(response.authorize);
-                       if(typeof events.onauth === 'function'){
-                           events.onauth();
-                       }
-                       send({balance:1, subscribe: 1});
-                       sendBufferedSends();
-                   }
-                } else if (type === 'balance') {
-                   ViewBalanceUI.updateBalances(response);
-                } else if (type === 'time') {
-                   page.header.time_counter(response);
-                } else if (type === 'logout') {
-                   page.header.do_logout(response);
-                }
-                if (response.hasOwnProperty('error')) {
-                    if(response.error && response.error.code && response.error.code === 'RateLimit') {
-                        $('#ratelimit-error-message')
-                            .css('display', 'block')
-                            .on('click', '#ratelimit-refresh-link', function () {
-                                window.location.reload();
-                            });
-                    }
-                }
-                if(typeof events.onmessage === 'function'){
-                    events.onmessage(msg);
+                if (response.error && response.error.code && (response.error.code === "DisabledClient")) {
+                  if ((page.url.location.pathname).match(/contact/) === null) {
+                    forgetTradingStreams();
+                    $('#main-menu').remove();
+                    $('#content').empty();
+                    $('#content').attr('style', 'margin:50px');
+                    var errorMsg = text.localize('This account is unavailable. For any questions please contact <a href="%1">Customer Support</a>.');
+                    errorMsg = errorMsg.replace('%1', page.url.url_for('contact'));
+                    $('#content').html('<div class="grd-container">' + errorMsg + '</div>');
+                  }
+                } else {
+                  if (type === 'authorize') {
+                      if(response.hasOwnProperty('error')) {
+                         send({'logout': '1', passthrough: {'redirect': 'login'}});
+                      }
+                     else {
+                         authorized = true;
+                         TUser.set(response.authorize);
+                         if(typeof events.onauth === 'function'){
+                             events.onauth();
+                         }
+                         send({balance:1, subscribe: 1});
+                         sendBufferedSends();
+                     }
+                  } else if (type === 'balance') {
+                     ViewBalanceUI.updateBalances(response);
+                  } else if (type === 'time') {
+                     page.header.time_counter(response);
+                  } else if (type === 'logout') {
+                     page.header.do_logout(response);
+                  }
+                  if (response.hasOwnProperty('error')) {
+                      if(response.error && response.error.code && response.error.code === 'RateLimit') {
+                          $('#ratelimit-error-message')
+                              .css('display', 'block')
+                              .on('click', '#ratelimit-refresh-link', function () {
+                                  window.location.reload();
+                              });
+                      }
+                  }
+                  if(typeof events.onmessage === 'function'){
+                      events.onmessage(msg);
+                  }
                 }
             }
         };
