@@ -523,7 +523,6 @@ Header.prototype = {
             BinarySocket.send({"logout": "1"});
         });
     },
-
     validate_cookies: function(){
         if (getCookieItem('login') && getCookieItem('loginid_list')){
             var accIds = $.cookie("loginid_list").split("+");
