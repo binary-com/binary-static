@@ -39,8 +39,9 @@ var SettingsDetailsWS = (function() {
             $(RealAccElements).remove();
         } 
         else { // Real Account
-            BinarySocket.send({"authorize": $.cookie('login')});
-            $('#lblBirthDate').text(moment.utc(new Date(data.date_of_birth * 1000)).format("YYYY-MM-DD"));
+            $('#lblName').text((data.salutation || '') + ' ' + (data.first_name || '') + ' ' + (data.last_name || ''));
+            var birthDate = data.date_of_birth ? moment.utc(new Date(data.date_of_birth * 1000)).format("YYYY-MM-DD") : '';
+            $('#lblBirthDate').text(birthDate);
             $(fieldIDs.address1).val(data.address_line_1);
             $(fieldIDs.address2).val(data.address_line_2);
             $(fieldIDs.city).val(data.address_city);
@@ -62,10 +63,6 @@ var SettingsDetailsWS = (function() {
         }
 
         $(formID).removeClass('hidden');
-    };
-
-    var setFullName = function(response) {
-        $('#lblName').text(response.authorize.fullname);
     };
 
     var populateStates = function(response) {
@@ -205,7 +202,6 @@ var SettingsDetailsWS = (function() {
         getDetails: getDetails,
         setDetails: setDetails,
         setDetailsResponse: setDetailsResponse,
-        setFullName: setFullName,
         populateStates: populateStates
     };
 }());
@@ -231,9 +227,6 @@ pjax_config_page("settings/detailsws", function() {
                                 break;
                             case "set_settings":
                                 SettingsDetailsWS.setDetailsResponse(response);
-                                break;
-                            case "authorize":
-                                SettingsDetailsWS.setFullName(response);
                                 break;
                             case "states_list":
                                 SettingsDetailsWS.populateStates(response);

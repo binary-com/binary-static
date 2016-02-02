@@ -81,6 +81,8 @@ var Price = (function() {
             }
 
             proposal['date_expiry'] = moment.utc(endDate2 + " " + endTime2).unix();
+            // For stopping tick trade behaviour
+            proposal['duration_unit'] = "m";
         }
 
         if (barrier && isVisible(barrier) && barrier.value) {

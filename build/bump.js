@@ -1,10 +1,10 @@
 module.exports = {
     options: {
-        files: ['package.json', 'config.json'],
+        files: ['package.json'],
         updateConfigs: [],
         commit: true,
         commitMessage: 'Release v%VERSION%',
-        commitFiles: ['package.json', 'config.json'],
+        commitFiles: ['package.json'],
         createTag: false,
         push: false
     }

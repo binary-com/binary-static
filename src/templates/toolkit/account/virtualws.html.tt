@@ -11,7 +11,7 @@
                 <label for="email">[% l('Please re-enter your email') %]</label>
               </div>
               <div class="grd-grid-8">
-                <input type="email" id="email" name="email" maxlength="30"></input>
+                <input type="email" id="email" name="email" maxlength="50"></input>
                 <p class="errorfield" id="error-email" style="display:none"></p>
               </div>
             </div>

@@ -7,6 +7,7 @@
    <div id="loading_container" class="overlay_container">
    </div>
    <div id="guideBtn"></div>
+   <a href="https://goo.gl/5KmSsU" target="_blank" id="androidApp"></a>
    <div class="row" id="contract_symbol_container">
       <div id="contract_markets_container">
          <select id="contract_markets"></select>
@@ -153,7 +154,7 @@
                         <div class="row-inner big-col">
                            <div class="col-inner">
                               <select id="currency" class="small_width_input"></select>
-                              <input id="amount" type="number" step="any" value="10" class="medium_width_input" />
+                              <input id="amount" type="text" step="any" maxlength="10" value="10" class="medium_width_input" />
                               <input id="amount_per_point" type="number" step="any" value="1" class="medium_width_input"/>
                            </div>
                         </div>

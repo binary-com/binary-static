@@ -19,27 +19,22 @@
       .grd-row-padding
         %span.no-para-margin
           %label.grd-grid-4.grd-grid-tablet-12.grd-no-gutter= l('Telephone:')
-          - my $contact_number = customer_support_telephone();
-          - my $tollfree_number = customer_support_tollfree();
-          - my $default_country = customer_support_default_telephone();
-          - my $default_number = $contact_number->{$default_country};
           %select.grd-grid-7.grd-grid-tablet-12.grd-no-gutter{:id => 'cs_telephone_number'}
             %option{:disabled => true}= l('Select Country')
-            - foreach (sort keys %{ $contact_number }) {
-              - my $number = $contact_number->{$_};
-              - if ($_ eq $default_country) {
-                %option{:value => $number, :selected => true}= $_
-              - } else {
-              %option{:value => $number}= $_
-              - }
-            - }
+            %option{:value => "+61 (02) 8294 5448"}= l('Australia')
+            %option{:value => "+1 (450) 823 1002"}= l('Canada')
+            %option{:value => "+49 0221 98259000"}= l('Germany')
+            %option{:value => "+353 (0) 76 888 7500"}= l('Ireland')
+            %option{:value => "+48 58 881 00 02"}= l('Poland')
+            %option{:value => "+44 (0) 1666 800042", :selected => true}= l('United Kingdom')
             %option{:disabled => true}= l('== Toll Free ==')
-            - foreach (sort keys %{ $tollfree_number }) {
-              - my $tollfree = $tollfree_number->{$_};
-              %option{:value => $tollfree}= $_
-            - }
+            %option{:value => "1800 093570"}= l('Australia')
+            %option{:value => "0018030113641"}= l('Indonesia')
+            %option{:value => "1800931084"}= l('Ireland')
+            %option{:value => "8 10 8002 8553011"}= l('Russia')
+            %option{:value => "0800 011 9847"}= l('United Kingdom')
         %span#display_cs_telephone.grd-grid-7.grd-prefix-4.grd-no-gutter.grd-grid-tablet-12.grd-prefix-tablet-0.grd-row-padding.grd-grid-mobile-12
-            = $default_number
+            = "+44 (0) 1666 800042"
       .grd-row-padding
         %span.no-para-margin.calls_recording.grd-grid-mobile-12= l('All calls are recorded for training and monitoring purposes')
       .grd-row-padding

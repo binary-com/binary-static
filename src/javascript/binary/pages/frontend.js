@@ -295,11 +295,13 @@ function hide_if_logged_in() {
 
 // use function to generate elements and append them
 // e.g. element is select and element to append is option
-function appendTextValueChild(element, text, value){
+function appendTextValueChild(element, text, value, disabled){
     var option = document.createElement("option");
-
     option.text = text;
     option.value = value;
+    if (disabled === 'disabled') {
+      option.setAttribute('disabled', disabled);
+    }
     element.appendChild(option);
 }
 
@@ -385,7 +387,11 @@ function handle_residence_state_ws(){
               residence_list = response.residence_list;
           if (residence_list.length > 0){
             for (i = 0; i < residence_list.length; i++) {
-              appendTextValueChild(select, residence_list[i].text, residence_list[i].value);
+              if (residence_list[i].disabled) {
+                appendTextValueChild(select, residence_list[i].text, residence_list[i].value, 'disabled');
+              } else {
+                appendTextValueChild(select, residence_list[i].text, residence_list[i].value);
+              }
               if (phoneElement && residence_list[i].phone_idd && residenceValue === residence_list[i].value){
                 phoneElement.value = '+' + residence_list[i].phone_idd;
               }

@@ -438,7 +438,7 @@ function getContractCategoryTree(elements){
             ['endsinout',
             'staysinout']
         ],
-        // 'asian',
+        'asian',
         ['digits',
             ['matchdiff',
             'evenodd',
@@ -758,7 +758,9 @@ function marketSort(a,b){
 
 function displayTooltip(market, symbol){
     'use strict';
-    var tip = document.getElementById('symbol_tip');
+    var tip = document.getElementById('symbol_tip'),
+        guide = document.getElementById('guideBtn'),
+        app = document.getElementById('androidApp');
     if (market.match(/^random_index/)){
         tip.show();
         tip.setAttribute('target','/get-started/random-markets#random-indices');
@@ -776,7 +778,17 @@ function displayTooltip(market, symbol){
         tip.show();
         tip.setAttribute('target','/smart-indices#world-fx-indices');
     }
+    if (market.match(/^random/)) {
+      if (guide) {
+        guide.hide();
+      }
+      app.show();
+    }
     else{
+        if (guide) {
+          guide.show();
+        }
+        app.hide();
         tip.hide();
     }
 }

@@ -1,7 +1,6 @@
 module.exports = {
     all: {
         files: [
-            { expand: true, src: ['config.json'], dest: 'dist' },
             { expand: true, src: ['javascript.json'], dest: 'dist' },
             { expand: true, src: ['index.html'], dest: 'dist' },
             { expand: true, cwd: 'src/config/', src: ['**'], dest: 'dist/config/' },
