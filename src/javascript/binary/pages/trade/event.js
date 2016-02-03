@@ -101,6 +101,7 @@ var TradingEvents = (function () {
             marketNavElement.addEventListener('change', function(e) {
                 var clickedMarket = e.target;
                 onMarketChange(clickedMarket.value);
+                addDatePicker(clickedMarket.value);
             });
         }
 
@@ -553,16 +554,33 @@ var TradingEvents = (function () {
 
         /*
          * attach datepicker and timepicker to end time durations
-         * have to use jquery
+         * have to use jquery.
+         * Remove weekends from datepicker for markets except randoms
          */
-        $(".pickadate").datepicker({
-            minDate: new Date(),
-            dateFormat: "yy-mm-dd"
-        });
+        function addDatePicker(contract_markets){
+            $('.pickadate').datepicker("destroy");
+            if(contract_markets.split('_')[0]==='random'){
+                $(".pickadate").datepicker({
+                    minDate: new Date(),
+                    dateFormat: "yy-mm-dd",
+                    beforeShowDay: null
+                });
+            }
+            else{
+                $(".pickadate").datepicker({
+                    minDate: new Date(),
+                    dateFormat: "yy-mm-dd",
+                    beforeShowDay: $.datepicker.noWeekends
+                });
+            }
+        }
+        //For adding datepicker on page load.
+        $(document).ready(addDatePicker(sessionStorage.getItem('market')));
+        
         var date = new Date();
         $(".pickatime" ).timepicker({minTime:{hour: date.getUTCHours(), minute: date.getUTCMinutes()}});
     };
-
+    
     return {
         init: initiate,
         onStartDateChange: onStartDateChange,
