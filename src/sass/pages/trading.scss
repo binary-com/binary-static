@@ -34,21 +34,6 @@
         #tab_graph-content {
           width: 100%;
         }
-        #tab_ohlc-content {
-          #prices_statistics_table {
-            .daily_price_stats_head {
-                .table_heading{
-                  text-align: center;
-                  background-color: $COLOR_LIGHT_GRAY;
-                  font-weight: bold;
-                  font-size: 1.1em;
-                }
-                hr {
-                  display: block;
-                }
-            }
-          }
-        }
         form.smallfont {
           .bet_bottom_loading_image {
             padding: 10px 15px;

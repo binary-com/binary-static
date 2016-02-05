@@ -22,20 +22,11 @@ var BetAnalysis = function () {
                     if (id == 'tab_explanation') {
                         that.tab_explanation.render(tab);
                         shown_some_tab = true;
-                    } else if(id == 'tab_ohlc' && BetForm.attributes.show_ohlc()) {
-                        that.tab_ohlc.render(tab);
-                        shown_some_tab = true;
-                    } else if(id == 'tab_intradayprices') {
-                        that.tab_intradayprices.render(tab);
-                        shown_some_tab = true;
                     } else if(id == 'tab_last_digit') {
                         that.tab_last_digit.render(tab);
                         shown_some_tab = true;
                     } else if(id == 'tab_graph') {
                         that.tab_live_chart.render();
-                        shown_some_tab = true;
-                    } else if(id == 'tab_pricing_table') {
-                        that.tab_pricing_table.render(tab);
                         shown_some_tab = true;
                     }
 
@@ -85,7 +76,7 @@ var BetAnalysis = function () {
         underlying_changed: function() {
             var saved_anaysis_tab = SessionStore.get('bet_page.selected_analysis_tab');
 
-            if (this.is_showing_tab('tab_graph') || this.is_showing_tab('tab_pricing_table')) {
+            if (this.is_showing_tab('tab_graph')) {
                 MenuContent.trigger({
                     'tab_id': saved_anaysis_tab
                 });
@@ -94,7 +85,7 @@ var BetAnalysis = function () {
         duration_changed: function() {
             var saved_anaysis_tab = SessionStore.get('bet_page.selected_analysis_tab');
 
-            if (this.is_showing_tab('tab_graph') || this.is_showing_tab('tab_pricing_table')) {
+            if (this.is_showing_tab('tab_graph')) {
                 MenuContent.trigger({
                     'tab_id': saved_anaysis_tab
                 });
@@ -146,120 +137,6 @@ var BetAnalysis = function () {
                     existing_link.attr('href', url);
                     return url;
                 }
-            };
-        }(),
-        tab_ohlc: function() {
-            return {
-                render: function(tab) {
-                    showLoadingImage(tab.content);
-                    $.get(this.url(tab), function (texts) {
-                        tab.content.html(texts);
-                    }).done(function (data) {
-                        BetAnalysis.set_submit_event(tab.id);
-                    });
-                },
-                url: function(tab) {
-                    return tab.target.attr('href').replace(/&underlying_symbol=\w+/,'&underlying_symbol=' + BetForm.attributes.underlying());
-                },
-                show_tab: function() {
-                    var tab_ohlc = $('#tab_ohlc');
-                    MenuContent.show_tab(tab_ohlc);
-                    var saved_anaysis_tab = SessionStore.get('bet_page.selected_analysis_tab');
-                    if(saved_anaysis_tab == 'tab_ohlc') {
-                        MenuContent.trigger({
-                            'tab_id': saved_anaysis_tab
-                        });
-                    }
-                },
-                hide_tab: function() {
-                    var tab_ohlc = $('#tab_ohlc');
-                    MenuContent.hide_tab(tab_ohlc);
-                }
-            };
-        }(),
-        tab_intradayprices: function() {
-            return {
-                render: function(tab) {
-                    showLoadingImage(tab.content);
-                    $.get(this.url(tab), function (texts) {
-                        tab.content.html(texts);
-                    }).done(function (data) {
-                        BetAnalysis.set_submit_event(tab.id);
-                    });
-                },
-                url: function(tab) {
-                    return tab.target.attr('href').replace(/underlying=\w+/,'underlying=' + BetForm.attributes.underlying());
-                },
-                show_tab: function() {
-                    var tab_intradayprices = $('#tab_intradayprices');
-                    MenuContent.show_tab(tab_intradayprices);
-                    var saved_anaysis_tab = SessionStore.get('bet_page.selected_analysis_tab');
-                    if(saved_anaysis_tab == 'tab_intradayprices') {
-                        MenuContent.trigger({
-                            'tab_id': saved_anaysis_tab
-                        });
-                    }
-                },
-                hide_tab: function() {
-                    var tab_intradayprices = $('#tab_intradayprices');
-                    MenuContent.hide_tab(tab_intradayprices);
-                },
-            };
-        }(),
-        tab_pricing_table: function() {
-            return {
-                render: function(tab) {
-                    showLoadingImage(tab.content);
-                    var expiry_type = BetForm.attributes.expiry_type();
-
-                    formData = {
-                        underlying_symbol: BetForm.attributes.underlying(),
-                        H: BetForm.attributes.barrier_1(),
-                        L: BetForm.attributes.barrier_2(),
-                        barrier_type: BetForm.attributes.barrier_type(),
-                        currency: BetForm.attributes.currency(),
-                        amount_type:  'payout',
-                        amount: 100,
-                        form_name: BetForm.attributes.bet_type(),
-                        expiry_type: expiry_type,
-                    };
-                    if (expiry_type === 'duration') {
-                        formData['duration_amount'] = BetForm.attributes.duration_amount();
-                        formData['duration_units'] = BetForm.attributes.duration_units();
-                    } else {
-                        formData['expiry_date'] = BetForm.attributes.expiry_date();
-                        formData['expiry_time'] = BetForm.attributes.expiry_time();
-                    }
-                    $.ajax({
-                        type: 'POST',
-                        url: this.url(tab),
-                        data: formData,
-                        success: function(prices) {
-                            tab.content.html(prices);
-                            attach_tabs('#pricing_table_tabs');
-                        },
-                        error: function(xhr, status) {
-                            tab.content.html(status);
-                        }
-                    });
-                },
-                url: function(tab) {
-                    return tab.target.attr('href');
-                },
-                show_tab: function() {
-                    var tab_pricing_table = $('#tab_pricing_table');
-                    MenuContent.show_tab(tab_pricing_table);
-                    var saved_anaysis_tab = SessionStore.get('bet_page.selected_analysis_tab');
-                    if(saved_anaysis_tab == 'tab_pricing_table') {
-                        MenuContent.trigger({
-                            'tab_id': saved_anaysis_tab
-                        });
-                    }
-                },
-                hide_tab: function() {
-                    var tab_pricing_table = $('#tab_pricing_table');
-                    MenuContent.hide_tab(tab_pricing_table);
-                },
             };
         }(),
     };

@@ -17,7 +17,7 @@ var RealAccOpeningUI = (function(){
     if (opt === 'duplicate') {
       error.innerHTML = text.localize("Sorry, you seem to already have a real money account with us. Perhaps you have used a different email address when you registered it. For legal reasons we are not allowed to open multiple real money accounts per person. If you do not remember your account with us, please") + " " + "<a href='" + page.url.url_for('contact') + "'>" + text.localize("contact us") + "</a>";
     } else {
-      error.innerHTML = Content.localize().textUnavailableReal;
+      error.innerHTML = Content.localize().opt;
     }
     error.parentNode.parentNode.parentNode.setAttribute('style', 'display:block');
   }

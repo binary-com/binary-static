@@ -139,9 +139,6 @@ BetForm.attributes = function() {
             amount_type: function() {
                 return $('#amount_type', this.form_selector()).val();
             },
-            show_ohlc: function() {
-                return ($('input[name="showohlc"]', this.form_selector()).val() == "yes");
-            },
             extratab: function() {
                 return ($('input[name="extratab"]', this.form_selector()).val());
             },
