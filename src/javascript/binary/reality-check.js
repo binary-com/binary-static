@@ -26,75 +26,14 @@ RealityCheck = (function ($) {
         return this.interval;
     };
 
-    function RealityCheck(cookieName, persistentStore) {
-        var val, that = this;
-
-        val = ($.cookie(cookieName)||'').split(',');
-        val[0] = parseFloat(val[0]);
-        if (isNaN(val[0]) || val[0]<=0) return;  // no or invalid cookie
-        this.default_interval = val[0] * 60 * 1000;
-
-        this.storage = persistentStore;
-
-        // A storage event handler is used to notify about interval changes.
-        // That way all windows see the same interval.
-        $(window).on('storage', function (jq_event) {
-            if (jq_event.originalEvent.key === 'reality_check.interval') {
-                that.interval = parseFloat(jq_event.originalEvent.newValue);
-
-                // garbage here can only happen if the user tries to tamper
-                if (isNaN(that.interval) || that.interval<=0)
-                    that.interval = that.default_interval;
-
-                // console.log('interval storage handler new value = '+that.interval);
-
-                that.setAlarm();
-            }
-
-            if (jq_event.originalEvent.key === 'reality_check.basetime') {
-                var val = parseInt(jq_event.originalEvent.newValue);
-
-                // garbage here can only happen if the user tries to tamper
-                if (isNaN(val) || val<=0) return;
-                that.basetime = val;
-
-                // console.log('basetime storage handler new value = '+that.basetime);
-
-                that.setAlarm();
-            }
-        });
-
-        // The cookie is formatted as DEFAULT_INTERVAL , SERVER_TIME_WHEN_IT_WAS_ISSUED
-        // We save the server time in local storage. If the stored time differs from
-        // the cookie time we are in a new session. Hence, we have to reset all stored
-        // data and to ask the user to check the reality-check frequency.
-
-        if (val[1] && val[1] != persistentStore.get('reality_check.srvtime')) {
-            persistentStore.set('reality_check.srvtime', val[1]);
-            persistentStore.set('reality_check.basetime', this.basetime = new Date().getTime());
-            persistentStore.set('reality_check.ack', 1);
-            this.askForFrequency();
-        } else if (persistentStore.get('reality_check.askingForInterval')) {
-            this.basetime = parseInt(persistentStore.get('reality_check.basetime'));
-            this.askForFrequency();
-        } else {
-            this.basetime = parseInt(persistentStore.get('reality_check.basetime'));
-            this.setAlarm();
-        }
-    }
-
     RealityCheck.prototype.setAlarm = function () {
         var that = this;
         var intv = this.getIntervalMs();
-        var alrm = intv - (new Date().getTime() - this.basetime) % intv;
-
-        // console.log('interval = '+this.interval+', next alarm in '+alrm+' ms');
-        // console.log('alrm at '+(new Date((new Date()).getTime()+alrm)).toUTCString());
+        var alrm = intv - (Date.now() - this.basetime) % intv;
 
         if (this.tmout) window.clearTimeout(this.tmout);
 
         this.tmout = window.setTimeout(function () {
-            // console.log('fire at '+(new Date()).toUTCString());
             that.fire();
         }, alrm);
     };
@@ -247,13 +186,68 @@ RealityCheck = (function ($) {
         this.isNumericValue(obj);
     };
 
+    function RealityCheck(cookieName, persistentStore) {
+        var val, that = this;
+
+        val = ($.cookie(cookieName)||'').split(',');
+        val[0] = parseFloat(val[0]);
+        if (isNaN(val[0]) || val[0]<=0) return;  // no or invalid cookie
+        this.default_interval = val[0] * 60 * 1000;
+
+        this.storage = persistentStore;
+
+        // A storage event handler is used to notify about interval changes.
+        // That way all windows see the same interval.
+        $(window).on('storage', function (jq_event) {
+            if (jq_event.originalEvent.key === 'reality_check.interval') {
+                that.interval = parseFloat(jq_event.originalEvent.newValue);
+
+                // garbage here can only happen if the user tries to tamper
+                if (isNaN(that.interval) || that.interval<=0)
+                    that.interval = that.default_interval;
+
+                // console.log('interval storage handler new value = '+that.interval);
+
+                that.setAlarm();
+            }
+
+            if (jq_event.originalEvent.key === 'reality_check.basetime') {
+                var val = parseInt(jq_event.originalEvent.newValue);
+
+                // garbage here can only happen if the user tries to tamper
+                if (isNaN(val) || val<=0) return;
+                that.basetime = val;
+
+                // console.log('basetime storage handler new value = '+that.basetime);
+
+                that.setAlarm();
+            }
+        });
+
+        // The cookie is formatted as DEFAULT_INTERVAL , SERVER_TIME_WHEN_IT_WAS_ISSUED
+        // We save the server time in local storage. If the stored time differs from
+        // the cookie time we are in a new session. Hence, we have to reset all stored
+        // data and to ask the user to check the reality-check frequency.
+
+        if (val[1] && val[1] != persistentStore.get('reality_check.srvtime')) {
+            persistentStore.set('reality_check.srvtime', val[1]);
+            persistentStore.set('reality_check.basetime', this.basetime = new Date().getTime());
+            persistentStore.set('reality_check.ack', 1);
+            this.askForFrequency();
+        } else if (persistentStore.get('reality_check.askingForInterval')) {
+            this.basetime = parseInt(persistentStore.get('reality_check.basetime'));
+            this.askForFrequency();
+        } else {
+            this.basetime = parseInt(persistentStore.get('reality_check.basetime'));
+            this.setAlarm();
+        }
+    }
+
     return RealityCheck;
 }(jQuery));
 
 if (!/backoffice/.test(document.URL)) { // exclude BO
     $(document).ready(function () {
-        // console.log('About to create reality-check object');
-
         if (window.reality_check_object) return;
         window.reality_check_object = new RealityCheck('reality_check',
                                                        LocalStore);

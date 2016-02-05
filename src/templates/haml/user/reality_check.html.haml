@@ -7,10 +7,10 @@
   - my $hours = int($dur / 3600); $dur = $dur % 3600;
   - my $minutes = int($dur / 60);
   - my @curtm = gmtime $time;
-  %p
+  %p#login-time
     %label= l('Login time:')
     = sprintf('%04d-%02d-%02d %02d:%02d:%02d GMT', $tm[5]+1900, $tm[4]+1, @tm[3,2,1,0])
-  %p
+  %p#current-time
     %label= l('Current time:')
     = sprintf('%04d-%02d-%02d %02d:%02d:%02d GMT', $curtm[5]+1900, $curtm[4]+1, @curtm[3,2,1,0])
   %p
@@ -43,12 +43,12 @@
     - }
   %p
     %label= l('Reality Check Interval:')
-    %input{:type => 'text' :interval => 1 :size => '6' :maxlength => '4' :id =>'realityDuration'}
+    %input{:type => 'number' :interval => 1 :size => '6' :maxlength => '4' :id =>'realityDuration' :min => 1}
     %span= l('minutes')
   %p.msg{:style => 'display:none; color:red;'}= l('Please enter a number greater than 0');
 %div#reality-check-nav
   %span.button
-    %button.button{:bcont => 1}= l('Continue Trading')
+    %button#continue.button{:bcont => 1}= l('Continue Trading')
   %span
   %a#btn_logout.button
     %span.logout= l('Logout')
