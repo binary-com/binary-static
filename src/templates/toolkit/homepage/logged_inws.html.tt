@@ -1,29 +1,26 @@
 <div class="grd-grid-12">
-    <h1 id="welcome"></h1>
-    <p id="welcome_text">
-         <span class="clientid"></span>
-    </p>
-    
-    <div class="center-aligned invisible" id="authenticate_button">
+    <h1 id="welcome">[% l('Welcome!') %]</h1>
+
+    <p id="welcome_text" class="invisible"></p>
+
+    <p class="center-aligned invisible" id="authenticate_button">
         <a class="button pjaxload" href="[% request.url_for('/cashier/authenticate') %]">
-          <span></span>
+            <span>[% l('Authenticate your account') %]</span>
         </a>
-    </div>
-    
-    <p id='VRT_topup_link'>
+    </p>
+
+    <p id="VRT_topup_link" class="invisible">
         <a href="[% request.url_for('/cashier/top_up_virtualws') %]"></a>
     </p>
-    <p class='invisible' id='payment_agent'>
+
+    <p class="invisible" id="payment_agent">
         [% l('Your account is registered as a Payment Agent.') %]
         <a class="pjaxload with_login_cookies" href="[% request.url_for('/paymentagent/transfer') %]">[% l('Transfer to client') %]</a>
     </p>
-    
-    <div class='notice-msg invisible'>
-        <p>
-        </p>
-    </div>
 
-    <div class='notice-msg invisible' id="investment_message">
+    <p class="notice-msg invisible"></p>
+
+    <div class="notice-msg invisible" id="investment_message">
         <div class="grd-grid-2 grd-hide-mobile">
             <img class="responsive" src="[% request.url_for('images/pages/cashier/protection-icon.svg') %]"/>
         </div>
@@ -36,67 +33,60 @@
     </div>
 </div>
 
-<div class='grd-grid-6 grd-grid-mobile-12 grd-parent invisible' id="cashier-portfolio">
-    <div class='grd-grid-6 grd-parent'>
-        <div class='grd-grid-8 grd-with-padding'>
+<div class="grd-grid-6 grd-grid-mobile-12 grd-parent invisible" id="cashier-portfolio">
+    <div class="grd-grid-6 grd-parent">
+        <div class="grd-grid-8 grd-with-padding">
             <a href="[% request.url_for('/cashier') %]" class="pjaxload">
-                <img class='responsive' src="[% request.url_for('images/pages/my_account/cashier-icon.svg') %]"/>
+                <img class="responsive" src="[% request.url_for('images/pages/my_account/cashier-icon.svg') %]"/>
             </a>
         </div>
-        <div class='grd-grid-12'>
+        <div class="grd-grid-12">
             <h4>
                 <a href="[% request.url_for('/cashier') %]" class="pjaxload">[% l('Cashier') %]</a>
             </h4>
-            <p>
-                [% l('Make a deposit or withdraw') %]
-            </p>
+            <p>[% l('Make a deposit or withdraw') %]</p>
         </div>
     </div>
-    <div class='grd-grid-6 grd-parent'>
-        <div class='grd-grid-8 grd-with-padding'>
+    <div class="grd-grid-6 grd-parent">
+        <div class="grd-grid-8 grd-with-padding">
             <a href="[% request.url_for('/user/openpositionsws') %]" class="pjaxload">
-                <img class='responsive' src="[% request.url_for('images/pages/my_account/portfolio-icon.svg') %]"/>
+                <img class="responsive" src="[% request.url_for('images/pages/my_account/portfolio-icon.svg') %]"/>
             </a>
         </div>
-        <div class='grd-grid-12'>
+        <div class="grd-grid-12">
             <h4>
                 <a href="[% request.url_for('/user/openpositionsws') %]" class="pjaxload">[% l('Portfolio') %]</a>
             </h4>
-            <p>
-                [% l('View your open positions.') %]
-            </p>
+            <p>[% l('View your open positions.') %]</p>
         </div>
     </div>
 </div>
-<div class='grd-grid-6 grd-grid-mobile-12 grd-parent invisible' id="profit-statement">
-    <div class='grd-grid-6 grd-parent'>
-        <div class='grd-grid-8 grd-with-padding'>
+
+<div class="grd-grid-6 grd-grid-mobile-12 grd-parent invisible" id="profit-statement">
+    <div class="grd-grid-6 grd-parent">
+        <div class="grd-grid-8 grd-with-padding">
             <a href="[% request.url_for('/user/profit_tablews') %]" class="pjaxload">
-                <img class='responsive' src="[% request.url_for('images/pages/my_account/profit-table-icon.svg') %]"/>
+                <img class="responsive" src="[% request.url_for('images/pages/my_account/profit-table-icon.svg') %]"/>
             </a>
         </div>
-        <div class='grd-grid-12'>
+        <div class="grd-grid-12">
             <h4>
                 <a href="[% request.url_for('/user/profit_tablews') %]" class="pjaxload">[% l('Profit Table') %]</a>
             </h4>
-            <p>
-                [% l('View your trading profit/loss.') %]
-            </p>
+            <p>[% l('View your trading profit/loss.') %]</p>
         </div>
     </div>
-    <div class='grd-grid-6 grd-parent'>
-        <div class='grd-grid-8 grd-with-padding'>
+    <div class="grd-grid-6 grd-parent">
+        <div class="grd-grid-8 grd-with-padding">
             <a href="[% request.url_for('/user/statementws') %]" class="pjaxload">
-                <img class='responsive' src="[% request.url_for('images/pages/my_account/statement-icon.svg') %]"/>
+                <img class="responsive" src="[% request.url_for('images/pages/my_account/statement-icon.svg') %]"/>
             </a>
         </div>
-        <div class='grd-grid-12'>
+        <div class="grd-grid-12">
             <h4>
                 <a href="[% request.url_for('/user/statementws') %]" class="pjaxload">[% l('Statement') %]</a>
             </h4>
-            <p>
-                [% l('View your historical transactions.') %]
-            </p>
+            <p>[% l('View your historical transactions.') %]</p>
         </div>
     </div>
 </div>
