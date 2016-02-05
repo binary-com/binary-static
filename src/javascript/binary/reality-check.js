@@ -246,10 +246,10 @@ RealityCheck = (function ($) {
     return RealityCheck;
 }(jQuery));
 
-if (!/backoffice/.test(document.URL)) { // exclude BO
-    $(document).ready(function () {
-        if (window.reality_check_object) return;
-        window.reality_check_object = new RealityCheck('reality_check',
-                                                       LocalStore);
-    });
-}
+//if (!/backoffice/.test(document.URL)) { // exclude BO
+//    $(document).ready(function () {
+//        if (window.reality_check_object) return;
+//        window.reality_check_object = new RealityCheck('reality_check',
+//                                                       LocalStore);
+//    });
+//}

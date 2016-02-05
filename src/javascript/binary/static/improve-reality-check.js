@@ -1,12 +1,18 @@
-var realityCheck = (function() {
+RealityCheckPlus = (function() {
     "use strict";
     var reality_check_url = page.url.url_for('user/reality_check');
     var reality_freq_url  = page.url.url_for('user/reality_check_frequency');
     var defaultFrequencyInMin = 60;
+    var updateFrequencyRef;
+    var baseTime = Date.now();
 
     function currentFrequencyInMS() {
         return LocalStore.get('reality_check.interval') || defaultFrequencyInMin * 60 * 1000;
-    };
+    }
+
+    function currentTimeInMS() {
+        return Date.now();
+    }
 
     function updateFrequency(min) {
         var ms = min * 60 * 1000;
@@ -14,11 +20,16 @@ var realityCheck = (function() {
     }
 
     function displayPopUp(div) {
-        var lightboxDiv = $("<div id='reality-check' class='lightbox'><div></div></div>");
-        div.appendTo(lightboxDiv);
+        var lightboxDiv = $("<div id='reality-check' class='lightbox'></div>");
+
+        var wrapper = $('<div></div>');
+        wrapper = wrapper.append(div);
+        wrapper = $('<div></div>').append(wrapper);
+        wrapper.appendTo(lightboxDiv);
         lightboxDiv.appendTo('body');
-        var inputBox = lightboxDiv.find('#realityDuration')
-        inputBox.val(currentFrequencyInMS());
+
+        var inputBox = lightboxDiv.find('#realityDuration');
+        inputBox.val(currentFrequencyInMS() / 60 / 1000);
         inputBox.change(function(e) {
             updateFrequency(e.target.value);
         });
@@ -30,6 +41,7 @@ var realityCheck = (function() {
     }
 
     function closePopUp() {
+        window.clearInterval(updateFrequencyRef);
         $('#reality-check').remove();
     }
 
@@ -53,13 +65,17 @@ var realityCheck = (function() {
             dataType: 'html',
             success: function(realityCheckText) {
                 var realityCheckDiv = $(realityCheckText);
-                var loginDate = new Date(realityCheckDiv.find('#login-time').text());
+                var loginDate = new Date(realityCheckDiv.find('#login-time > p').text());
 
                 realityCheckDiv
-                    .find('#current-time')
-                    .value(loginDate.toUTCString());
+                    .find('#current-time > p')
+                    .text(loginDate.toUTCString());
+
+                // should update session duration too
+
                 displayPopUp(realityCheckDiv);
-                window.setInterval(function () {
+
+                updateFrequencyRef = window.setInterval(function () {
                     realityCheckDiv
                         .find('#current-time')
                         .value((new Date()).toUTCString());
@@ -70,5 +86,22 @@ var realityCheck = (function() {
             }
         });
     }
-    
+
+    function popUpWhenIntervalHit() {
+        window.setInterval(function() {
+            if (currentTimeInMS() - baseTime >= currentFrequencyInMS()) {
+                baseTime = Date.now();
+                popUpRealityCheck();
+            }
+        }, 30000);
+    }
+
+    function init() {
+        popUpFrequency();
+        popUpWhenIntervalHit();
+    }
+
+    return {
+        init: init
+    };
 }());
