@@ -1,4 +1,4 @@
-RealityCheckPlus = (function() {
+var RealityCheck = (function() {
     "use strict";
     var reality_check_url = page.url.url_for('user/reality_check');
     var reality_freq_url  = page.url.url_for('user/reality_check_frequency');
@@ -7,7 +7,11 @@ RealityCheckPlus = (function() {
     var baseTime = Date.now();
 
     function currentFrequencyInMS() {
-        return LocalStore.get('reality_check.interval') || defaultFrequencyInMin * 60 * 1000;
+        if (!LocalStore.get('reality_check.interval')) {
+            LocalStore.set('reality_check.interval', defaultFrequencyInMin * 60 * 1000);
+            return defaultFrequencyInMin * 60 * 1000;
+        }
+        return LocalStore.get('reality_check.interval');
     }
 
     function currentTimeInMS() {
@@ -20,6 +24,9 @@ RealityCheckPlus = (function() {
     }
 
     function displayPopUp(div) {
+        if ($('#reality-check').length > 0) {
+            return;
+        }
         var lightboxDiv = $("<div id='reality-check' class='lightbox'></div>");
 
         var wrapper = $('<div></div>');
@@ -46,6 +53,10 @@ RealityCheckPlus = (function() {
     }
 
     function popUpFrequency() {
+        if (LocalStore.get('active_loginid').slice(0, 1) !== 'M') {
+            return;
+        }
+
         // show pop up to get user approval
         $.ajax({
             url: reality_freq_url,
@@ -77,8 +88,8 @@ RealityCheckPlus = (function() {
 
                 updateFrequencyRef = window.setInterval(function () {
                     realityCheckDiv
-                        .find('#current-time')
-                        .value((new Date()).toUTCString());
+                        .find('#current-time > p')
+                        .text((new Date()).toUTCString());
                 }, 1000);
             },
             error: function (xhr) {
@@ -89,7 +100,10 @@ RealityCheckPlus = (function() {
 
     function popUpWhenIntervalHit() {
         window.setInterval(function() {
-            if (currentTimeInMS() - baseTime >= currentFrequencyInMS()) {
+            if (
+                (currentTimeInMS() - baseTime) >= currentFrequencyInMS() &&
+                    LocalStore.get('active_loginid').slice(0, 1) === 'M'
+            ) {
                 baseTime = Date.now();
                 popUpRealityCheck();
             }
