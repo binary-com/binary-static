@@ -18,7 +18,7 @@ var RealAccOpeningData = (function(){
         };
 
         if ($.cookie('affiliate_tracking')) {
-          req.affiliate_token = $.cookie('affiliate_tracking');
+          req.affiliate_token = JSON.parse($.cookie('affiliate_tracking')).t;
         }
 
         BinarySocket.send(req);

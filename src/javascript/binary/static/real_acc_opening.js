@@ -56,7 +56,7 @@ pjax_config_page("new_account/realws", function(){
                   });
                   var affiliateToken = $.cookie('affiliate_tracking');
                   if (affiliateToken) {
-                    dataLayer.push({'bom_affiliate_token': affiliateToken});
+                    dataLayer.push({'bom_affiliate_token': JSON.parse($.cookie('affiliate_tracking')).t});
                   }
 
                   //generate dropdown list and switch
