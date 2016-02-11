@@ -42,7 +42,7 @@ var PaymentAgentWithdrawWS = (function() {
         }
 
         if ($.cookie('verify_token')) {
-          $.removeCookie($.cookie('verify_token'), {path: '/', domain: '.' + document.domain.split('.').slice(-2).join('.')});
+          $.removeCookie('verify_token', {path: '/', domain: '.' + document.domain.split('.').slice(-2).join('.')});
         }
 
         var residence = $.cookie('residence');
