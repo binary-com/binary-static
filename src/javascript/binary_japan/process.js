@@ -1,26 +1,25 @@
-if(typeof is_japan === 'function'){
+if (typeof is_japan === 'function') {
 
-	var processContractForm = function(){
+    var processContractForm = function() {
 
-	    Contract.details(sessionStorage.getItem('formname'));
+        Contract.details(sessionStorage.getItem('formname'));
 
-	    StartDates.display();
+        StartDates.display();
 
-	    if(Periods){
-	    	Periods.displayPeriods();
-	    }
+        if (Periods) {
+            Periods.displayPeriods();
+        }
 
-	    displayPrediction();
+        displayPrediction();
 
-	    displaySpreads();  
-	    
-	    if(sessionStorage.getItem('amount')){
-	        document.getElementById('amount').value = sessionStorage.getItem('amount');       
-	    }
+        displaySpreads();
 
-	    Durations.display();
+        if (sessionStorage.getItem('amount')) $('#amount').val(sessionStorage.getItem('amount'));
+        if (sessionStorage.getItem('currency')) selectOption(sessionStorage.getItem('currency'), document.getElementById('currency'));
 
-	    processPriceRequest();
-	};
+        Durations.display();
 
+        processPriceRequest();
+
+    };
 }
