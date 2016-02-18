@@ -300,6 +300,8 @@ function contractTypeDisplayMapping(type) {
     var obj = {
         CALL: "top",
         PUT: "bottom",
+        CALLE: "top",
+        PUTE: "bottom",
         ASIANU: "top",
         ASIAND: "bottom",
         DIGITMATCH: "top",
