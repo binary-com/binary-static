@@ -19,6 +19,18 @@
                     </div>
                 </div>
 
+                <div class="grd-grid-12 grd-parent grd-row-padding">
+                    <div class="grd-grid-4 form_label">
+                        <label for="txtName">[% l('Choose Scopes:') %]</label>
+                    </div>
+                    <div class="grd-grid-8">
+                        <input id="scopes" type="checkbox" name="scopes[]" value="read" checked="checked" readonly="readonly" /> Read
+                        <input type="checkbox" name="scopes[]" value="trade" /> Trade
+                        <input type="checkbox" name="scopes[]" value="payments" /> Payments
+                        <input type="checkbox" name="scopes[]" value="admin" /> Admin
+                    </div>
+                </div>
+
                 <div class="grd-grid-12 grd-parent">
                     <div class="grd-grid-4"></div>
                     <div class="grd-grid-8">
