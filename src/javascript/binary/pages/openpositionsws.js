@@ -2,11 +2,7 @@ var PortfolioWS =  (function() {
 
     'use strict';
 
-    var pageLanguage = page.language();
-    if(!pageLanguage) pageLanguage = "EN";
-
     var rowTemplate;
-    var retry;
 
     var init = function() {
         showLoadingImage($("#portfolio-loading"));
@@ -86,26 +82,28 @@ var PortfolioWS =  (function() {
     };
 
     var updateIndicative = function(data) {
-
-        var $td = $("tr[data-contract_id='"+data.proposal_open_contract.contract_id+"'] td.indicative");
+        var proposal = data.proposal_open_contract;
+        var $td = $("tr[data-contract_id='" + proposal.contract_id + "'] td.indicative");
         var old_indicative = $td.find('strong').text();
         old_indicative = parseFloat(old_indicative, 2);
         if(isNaN(old_indicative)) old_indicative = 0.0;
 
-        var new_indicative = parseFloat(data.proposal_open_contract.bid_price, 2);
+        var new_indicative = parseFloat(proposal.bid_price, 2);
         if(isNaN(new_indicative)) new_indicative = 0.0;
 
-        if(data.proposal_open_contract.is_valid_to_sell != 1) {
-            $td.html(data.proposal_open_contract.currency+' <strong class="indicative_price">'+data.proposal_open_contract.bid_price+'</strong><span>'+text.localize('Resale not offered')+'</span>').addClass("no_resale");
-        } else {
-            $td.removeClass("no_resale");
+        var bid_price = parseFloat(proposal.bid_price || 0).toFixed(2);
 
-            if(old_indicative > new_indicative) {
-                $td.html(data.proposal_open_contract.currency+' <strong class="indicative_price price_moved_down">'+data.proposal_open_contract.bid_price+'</strong>');
-            } else if(old_indicative < new_indicative) {
-                $td.html(data.proposal_open_contract.currency+' <strong class="indicative_price price_moved_up">'+data.proposal_open_contract.bid_price+'</strong>');
-            }
+        var status_class = '';
+        var no_resale_html = '';
+        if(proposal.is_valid_to_sell != 1) {
+            no_resale_html = '<span>' + text.localize('Resale not offered') + '</span>';
+            $td.addClass("no_resale");
         }
+        else {
+            status_class = new_indicative < old_indicative ? ' price_moved_down' : (new_indicative > old_indicative ? ' price_moved_up' : '');
+            $td.removeClass("no_resale");
+        }
+        $td.html(proposal.currency + ' <strong class="indicative_price' + status_class + '"">' + bid_price + '</strong>' + no_resale_html);
 
         var indicative_sum = 0, indicative_price = 0, up_down;
         $("strong.indicative_price").each(function() {

@@ -109,6 +109,80 @@ var Client = function() {
     }
 };
 
+Client.prototype = {
+    get_storage_value: function(key) {
+        return LocalStore.get('client.' + key) || '';
+    },
+    set_storage_value: function(key, value) {
+        return LocalStore.set('client.' + key, value);
+    },
+    check_storage_values: function(origin) {
+        var is_ok = true;
+
+        // currencies
+        if(!this.get_storage_value('currencies')) {
+            BinarySocket.send({
+                'payout_currencies': 1,
+                'passthrough': {
+                    'handler': 'page.client',
+                    'origin' : origin || ''
+                }
+            });
+            is_ok = false;
+        }
+
+        // allowed markets
+        if(this.is_logged_in) {
+            if(this.is_real && !this.get_storage_value('allowed_markets') && TUser.get().landing_company_name) {
+                $('#topMenuStartBetting').addClass('invisible');
+                BinarySocket.send({
+                    'landing_company_details': TUser.get().landing_company_name,
+                    'passthrough': {
+                        'handler': 'page.client',
+                        'origin' : origin || ''
+                    }
+                });
+                is_ok = false;
+            }
+        }
+
+        return is_ok;
+    },
+    response_payout_currencies: function(response) {
+        if (!response.hasOwnProperty('error')) {
+            this.set_storage_value('currencies', response.payout_currencies.join(','));
+            if(response.echo_req.hasOwnProperty('passthrough') && response.echo_req.passthrough.origin === 'attributes.restore.currency') {
+                BetForm.attributes.restore.currency();
+            }
+        }
+    },
+    response_landing_company_details: function(response) {
+        if (!response.hasOwnProperty('error')) {
+            var allowed_markets = response.landing_company_details.legal_allowed_markets;
+            var company = response.landing_company_details.name;
+
+            this.set_storage_value('allowed_markets', allowed_markets.length === 0 ? '' : allowed_markets.join(','));
+            this.set_storage_value('landing_company_name', company);
+
+            page.header.menu.disable_not_allowed_markets();
+            page.header.menu.register_dynamic_links();
+            $('#topMenuStartBetting').removeClass('invisible');
+        }
+    },
+    clear_storage_values: function() {
+        var that  = this;
+        var items = ['currencies', 'allowed_markets', 'landing_company_name'];
+        items.forEach(function(item) {
+            that.set_storage_value(item, '');
+        });
+        sessionStorage.setItem('currencies', '');
+    },
+    update_storage_values: function() {
+        this.clear_storage_values();
+        this.check_storage_values();
+    },
+};
+
 var URL = function (url) { // jshint ignore:line
     this.is_valid = true;
     this.history_supported = window.history && window.history.pushState;
@@ -267,7 +341,7 @@ Menu.prototype = {
                 this.show_main_menu();
             }
         } else {
-            var is_mojo_page = /^\/$|\/login|\/home|\/smart-indices|\/ad|\/open-source-projects|\/white-labels|\/bulk-trader-facility|\/partners|\/payment-agent|\/about-us|\/group-information|\/group-history|\/careers|\/contact|\/terms-and-conditions|\/terms-and-conditions-jp|\/responsible-trading|\/us_patents|\/lost_password|\/realws|\/virtualws$/.test(window.location.pathname);
+            var is_mojo_page = /^\/$|\/login|\/home|\/smart-indices|\/ad|\/open-source-projects|\/white-labels|\/bulk-trader-facility|\/partners|\/payment-agent|\/about-us|\/group-information|\/group-history|\/careers|\/contact|\/terms-and-conditions|\/terms-and-conditions-jp|\/responsible-trading|\/us_patents|\/lost_password|\/realws|\/virtualws|\/open-positions|\/job-details|\/user-testing$/.test(window.location.pathname);
             if(!is_mojo_page) {
                 trading.addClass('active');
                 this.show_main_menu();
@@ -299,22 +373,35 @@ Menu.prototype = {
 
         this.on_mouse_hover(active.item);
 
+        this.disable_not_allowed_markets();
+    },
+    disable_not_allowed_markets: function() {
         // enable only allowed markets
-        var allowed_markets = $.cookie('allowed_markets');
-        if(allowed_markets) {
-            var markets_array = allowed_markets.split(',');
-            var sub_items = $('li#topMenuStartBetting ul.sub_items');
-            sub_items.find('li').each(function () {
-                var link_id = $(this).attr('id').split('_')[1];
-                if(markets_array.indexOf(link_id) < 0) {
-                    var link = $(this).find('a');
-                    if(markets_array.indexOf(link.attr('id')) < 0) {
-                        var link_text = link.text();
-                        link.replaceWith($('<span/>', {class: 'link disabled-link', text: link_text}));
-                    }
-                }
-            });
+        var allowed_markets = page.client.get_storage_value('allowed_markets');
+        if(!allowed_markets && page.client.is_logged_in) {
+            if(page.client.is_real) {
+                $('#topMenuStartBetting').addClass('invisible');
+            }
+            return;
         }
+        var markets_array = allowed_markets ? allowed_markets.split(',') : [];
+        var sub_items = $('li#topMenuStartBetting ul.sub_items');
+        var isReal = $.cookie('loginid') && !(/VRT/.test($.cookie('loginid')));
+        sub_items.find('li').each(function () {
+            var link_id = $(this).attr('id').split('_')[1];
+            if(markets_array.indexOf(link_id) < 0 && isReal) {
+                var link = $(this).find('a');
+                var link_text = link.text();
+                var link_href = link.attr('href');
+                link.replaceWith($('<span/>', {class: 'link disabled-link', text: link_text, link_url: link_href}));
+            }
+            else {
+                var span = $(this).find('span');
+                var span_text = span.text();
+                var span_href = span.attr('link_url');
+                span.replaceWith($('<a/>', {class: 'link', text: span_text, href: span_href}));
+            }
+        });
     },
     reset: function() {
         $("#main-menu .item").unbind();
@@ -375,13 +462,15 @@ Menu.prototype = {
     },
     register_dynamic_links: function() {
         var stored_market = page.url.param('market') || LocalStore.get('bet_page.market') || 'forex';
-        var allowed_markets = $.cookie('allowed_markets');
-        if(allowed_markets) {
-            var markets_array = allowed_markets.split(',');
-            if(markets_array.indexOf(stored_market) < 0) {
-                stored_market = markets_array[0];
-                LocalStore.set('bet_page.market', stored_market);
-            }
+        var allowed_markets = page.client.get_storage_value('allowed_markets');
+        if(!allowed_markets && page.client.is_logged_in && page.client.is_real) {
+            return;
+        }
+
+        var markets_array = allowed_markets ? allowed_markets.split(',') : [];
+        if(page.client.is_real && markets_array.indexOf(stored_market) < 0) {
+            stored_market = markets_array[0];
+            LocalStore.set('bet_page.market', stored_market);
         }
         var start_trading = $('#topMenuStartBetting a:first');
         var trade_url = start_trading.attr("href");
@@ -395,11 +484,6 @@ Menu.prototype = {
 
             $('#mobile-menu #topMenuStartBetting a.trading_link').attr('href', trade_url);
         }
-
-        start_trading.on('click', function(event) {
-            event.preventDefault();
-            load_with_pjax(trade_url);
-        }).addClass('unbind_later');
     }
 };
 
@@ -542,21 +626,40 @@ Header.prototype = {
     },
     do_logout : function(response){
         if("logout" in response && response.logout === 1){
-            sessionStorage.setItem('currencies', '');
-            var cookies = ['login', 'loginid', 'loginid_list', 'email', 'settings', 'reality_check', 'affiliate_token', 'affiliate_tracking'];
-            var current_domain = window.location.hostname.replace('www', '');
-            cookies.map(function(c){
-                $.removeCookie(c, {path: '/', domain: current_domain});
-            });
+            page.client.clear_storage_values();
+            LocalStore.set('reality_check.ack', 0);
+            var cookies = ['login', 'loginid', 'loginid_list', 'email', 'settings', 'reality_check', 'affiliate_token', 'affiliate_tracking', 'residence', 'allowed_markets'];
+            var current_domain = ['.' + document.domain.split('.').slice(-2).join('.'), document.domain];
+            var cookie_path = ['/'];
+            if (window.location.pathname.split('/')[1] !== '') {
+              cookie_path.push('/' + window.location.pathname.split('/')[1]);
+            }
+            var regex;
 
+            cookies.map(function(c){
+              regex = new RegExp(c);
+              $.removeCookie(c, {path: cookie_path[0], domain: current_domain[0]});
+              $.removeCookie(c);
+              if (regex.test(document.cookie) && cookie_path[1]) {
+                  $.removeCookie(c, {path: cookie_path[1], domain: current_domain[0]});
+                  $.removeCookie(c, {path: cookie_path[1]});
+              }
+            });
             var redirectPage;
+                redirectCheck = 1;
             if(response.echo_req.hasOwnProperty('passthrough') && response.echo_req.passthrough.hasOwnProperty('redirect')) {
                 redirectPage = response.echo_req.passthrough.redirect;
+                regex = new RegExp(redirectPage);
+                if (regex.test(window.location.pathname)) {
+                  redirectCheck = 0;
+                }
             }
             else {
                 redirectPage = ''; //redirect to homepage
             }
-            window.location.href = page.url.url_for(redirectPage);
+            if (redirectCheck) {
+              window.location.href = page.url.url_for(redirectPage);
+            }
         }
     },
 };
@@ -832,6 +935,7 @@ Page.prototype = {
         this.on_click_acc_transfer();
         if(getCookieItem('login')){
             ViewBalance.init();
+            RealityCheck.init();
         }
         $('#current_width').val(get_container_width());//This should probably not be here.
     },
@@ -849,7 +953,7 @@ Page.prototype = {
     on_change_loginid: function() {
         var that = this;
         $('#client_loginid').on('change', function() {
-            sessionStorage.setItem('currencies', '');
+            page.client.clear_storage_values();
             $('#loginid-switch-form').submit();
         });
     },

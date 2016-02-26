@@ -20,14 +20,7 @@
               %div#password-meter-div{:style => 'display:none'}
                 %p{:style => "margin:0px;height:0.5em;"}
                   %meter#password-meter{:high => "20", :low => "10", :max => "50", :min => "0", :optimum => "50", :value => ""}
-                %div.hint
-                  %span= l('Requirements:')
-                  %ul.disc
-                    %li= l('At least 6 characters')
-                %div.hint{:style => "margin-top:15px;"}
-                  %span= l('Tips:')
-                  %ul.disc
-                    %li= l('Use letters with numbers.')
+                %div.hint= l('Minimum 6 characters with at least 1 number')
               %p.errorfield#errorcashierlockpassword1
                 %abbr#tooltip-password{:rel => "tooltip", :title => ""}
 

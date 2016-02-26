@@ -14,6 +14,7 @@ var PaymentAgentWithdrawWS = (function() {
         minAmount,
         maxAmount;
 
+    var verificationCode;
 
     var init = function() {
         containerID = '#paymentagent_withdrawal';
@@ -39,6 +40,14 @@ var PaymentAgentWithdrawWS = (function() {
         if((/VRT/).test($.cookie('loginid'))) { // Virtual Account
             showPageError(text.localize('You are not authorized for withdrawal via payment agent.'));
             return false;
+        }
+
+        if ($.cookie('verify_token')) {
+          verificationCode = $.cookie('verify_token');
+          $.removeCookie('verify_token', {path: '/', domain: '.' + document.domain.split('.').slice(-2).join('.')});
+        } else {
+          showPageError(Content.localize().textTokenMissing, Content.localize().textClickHereToRestart.replace('[_1]', page.url.url_for('paymentagent/request_withdrawws')));
+          return false;
         }
 
         var residence = $.cookie('residence');
@@ -90,13 +99,13 @@ var PaymentAgentWithdrawWS = (function() {
         var agent  = $(fieldIDs.ddlAgents).val(),
             amount = $(fieldIDs.txtAmount).val().trim(),
             desc   = $(fieldIDs.txtDesc).val().trim();
-        
+
         var letters = Content.localize().textLetters,
             numbers = Content.localize().textNumbers,
             space   = Content.localize().textSpace,
             period  = Content.localize().textPeriod,
             comma   = Content.localize().textComma;
-        
+
         // Payment Agent
         isRequiredError(fieldIDs.ddlAgents);
 
@@ -156,14 +165,14 @@ var PaymentAgentWithdrawWS = (function() {
     // ----------------------------
     var withdrawRequest = function(isDryRun) {
         var dry_run = isDryRun ? 1 : 0;
-
         BinarySocket.send({
             "paymentagent_withdraw" : 1,
             "paymentagent_loginid"  : formData.agent,
             "currency"    : formData.currency,
             "amount"      : formData.amount,
             "description" : formData.desc,
-            "dry_run"     : dry_run
+            "dry_run"     : dry_run,
+            "verification_code": verificationCode
         });
     };
 
@@ -216,9 +225,12 @@ var PaymentAgentWithdrawWS = (function() {
     // -----------------------------
     // ----- Message Functions -----
     // -----------------------------
-    var showPageError = function(errMsg) {
+    var showPageError = function(errMsg, noticeMsg) {
         setActiveView(viewIDs.error);
         $(viewIDs.error + ' > p').html(errMsg);
+        if (noticeMsg) {
+          $(viewIDs.error).append($('<p/>', {html: noticeMsg}));
+        }
     };
 
     var showError = function(fieldID, errMsg) {
@@ -253,7 +265,6 @@ pjax_config_page("paymentagent/withdrawws", function() {
                 window.location.href = page.url.url_for('login');
                 return;
             }
-
             BinarySocket.init({
                 onmessage: function(msg) {
                     var response = JSON.parse(msg.data);

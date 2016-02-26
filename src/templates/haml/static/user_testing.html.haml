@@ -1,0 +1,30 @@
+- stash(
+-   title => l('Sign Up to Test Our Platform'),
+- );
+
+.user_testing.grd-container
+  .grd-grid-12.grd-parent.static_full
+    .grd-grid-12
+      %h1= stash->{title}
+    .grd-grid-12
+      %p= l('At [_1], we consider the strength and security of our trading platform to be critically important.', stash->{website_name})
+      %p= l("This is why we’re now recruiting additional testers for each new release, to ensure that our platform remains stable and secure with every enhancement deployed.")
+      %p= l('Register to become a tester using the links below:')
+      .grd-grid-12
+        .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-6
+          %div.xquote
+            %div
+              %div.picture
+                %img.responsive{:src => url_for('images/pages/user_testing/mycrowd.svg')}
+              %div.text
+                %a.pjaxload{:href => 'https://mycrowd.com/', :target => '_blank'}= l('Mycrowd - for Binary.com traders')
+                %br
+                %span= ('Sign up as a tester and look for Binary.com-related projects.')
+        .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-6
+          %div.xquote
+            %div
+              %div.picture
+                %img.responsive{:src => url_for('images/pages/user_testing/hackerone.svg')}
+              %div.text
+                %a.pjaxload{:href => 'https://hackerone.com/binary', :target => '_blank'}= l('Hackerone - for IT security professionals')
+      %p= l('Earn money for any verifiable errors that you find.')

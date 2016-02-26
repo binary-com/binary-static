@@ -214,17 +214,13 @@ var Durations = (function(){
 
     var durationPopulate = function() {
         var unit = document.getElementById('duration_units');
-        if (isVisible(unit)) {
-            var unitValue = unit.options[unit.selectedIndex].getAttribute('data-minimum');
-            document.getElementById('duration_minimum').textContent = unitValue;
-            if(selected_duration.amount && selected_duration.unit > unitValue){
-                unitValue = selected_duration.amount;
-            }
-            document.getElementById('duration_amount').value = unitValue;
-            displayExpiryType(unit.value);
-        } else {
-            displayExpiryType();
+        var unitValue = unit.options[unit.selectedIndex].getAttribute('data-minimum');
+        document.getElementById('duration_minimum').textContent = unitValue;
+        if(selected_duration.amount && selected_duration.unit > unitValue){
+            unitValue = selected_duration.amount;
         }
+        document.getElementById('duration_amount').value = unitValue;
+        displayExpiryType(unit.value);
 
         // jquery for datepicker
         var amountElement = $('#duration_amount');

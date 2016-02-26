@@ -18,7 +18,7 @@ var Message = (function () {
             } else if (type === 'contracts_for') {
                 processContract(response);
             } else if (type === 'payout_currencies') {
-                sessionStorage.setItem('currencies', msg.data);
+                page.client.set_storage_value('currencies', response.payout_currencies);
                 displayCurrencies();
                 Symbols.getSymbols(1);
             } else if (type === 'proposal') {
@@ -28,7 +28,11 @@ var Message = (function () {
             } else if (type === 'tick') {
                 processTick(response);
             } else if (type === 'history') {
-                Tick.processHistory(response);
+                var digit_info = TradingAnalysis.digit_info();
+                if(response.req_id === 1 || response.req_id === 2){
+                    digit_info.show_chart(response.echo_req.ticks_history, response.history.prices);
+                } else
+                    Tick.processHistory(response);
             } else if (type === 'trading_times'){
                 processTradingTimes(response);
             } else if (type === 'statement'){

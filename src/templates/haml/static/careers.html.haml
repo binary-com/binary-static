@@ -16,9 +16,7 @@
       %p= l('But we’re picky. We only select people with special qualities: serious professionals, who have high moral standards, and thrive in an honest, collaborative environment.')
     .grd-grid-6.grd-grid-mobile-12
       .grd-row-padding.grd-hide-mobile
-      .grd-row-padding.grd-hide-mobile
       %img.responsive{:src => url_for('images/pages/careers/careers-header.jpg')}
-      .grd-row-padding.grd-hide-mobile
       .grd-row-padding.grd-hide-mobile
       %p= l('Imagine a workplace that often doesn’t feel like work.')
       %p= l('If you’re looking to build a career, and not a resume, talk to us, Binary.com. We’re one of the IT world’s most vibrant and progressive workplaces.')
@@ -60,18 +58,19 @@
       %div.xquote
         %div
           %div.picture
-            %img.responsive{:src => url_for('images/pages/careers/corporate-culture.svg')}
+            %img.responsive{:src => url_for('images/pages/careers/corporate-culture.svg'), :style => 'width:50px;'}
           %div.text
             %a{:href => 'http://www.wobb.my/users/companies/7e437e6d-f45a-486f-87e5-1ca53d403b08', :target => '_blank'}= l('Learn more about our corporate culture')
     .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-6
       %div.xquote
         %div
           %div.picture
-            %img.responsive{:src => url_for('images/pages/careers/handbook.svg')}
+            %img.responsive{:src => url_for('images/pages/careers/handbook.svg'), :style => 'width:50px;'}
           %div.text
             %a{:href => url_for('/download/binary-employee-handbook.pdf'), :download => true, :target => '_blank'}= l('Employee handbook')
+  .grd-grid-12.grd-hide-mobile
+      .separator-line
   .grd-grid-12.grd-row-padding
-    .separator-line
     %h1= l('Open positions')
     %p= l('[_1] is always looking to add experienced professionals to its talented team of administrators, technical contributors, and managers. To support our continued growth, we’ve developed a number of exciting career opportunities in the following areas:', stash->{website_name})
   .grd-grid-6.grd-grid-mobile-12
@@ -91,6 +90,17 @@
       %li= l('Legal & Regulatory Compliance')
       %li= l('Accounting & Payments')
   .grd-grid-12.grd-row-padding
+    .grd-grid-4.grd-hide-mobile
+    .grd-grid-4.grd-grid-mobile-12.grd-grid-phablet-6.center
+      %div.xquote
+        %div
+          %div.picture
+            %img.responsive{:src => url_for('images/pages/careers/view-positions-icon.svg'), :style => 'width:50px;'}
+          %div.text
+            %a.pjaxload{:href => url_for('/open-positions')}= l('View open positions')
+    .grd-grid-4.grd-hide-mobile
+  .grd-grid-12.grd-hide-mobile
+      .separator-line
   .grd-grid-12.grd-row-padding
     %h1= l('Are you ready?')
     %p= l('If you are, we’d love to hear from you.')

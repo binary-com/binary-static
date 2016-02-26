@@ -1,0 +1,92 @@
+.open-positions {
+  .grd-grid-4:not(:first-child) {
+    border: 1px dashed #d9d9d9;
+    border-width: 0 0 0 1px;
+  }
+  .grd-grid-4:nth-child(3n+1) {
+    border-width: 0;
+  }
+  .grd-grid-3 {
+    text-align: center;
+  }
+  .grd-grid-9, .grd-grid-3, .grd-row-padding {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  img.responsive {
+    margin-top: 1.1em;
+    width: 50%;
+  }
+  h2 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .title-section {
+    height: 2.5em;
+  }
+  .paragraph-section {
+    height: 10em;
+    overflow: visible;
+  }
+  .top-margin{
+    margin-top: 40px;
+  }
+}
+
+.job-details {
+  .grd-grid-3 .grd-grid-12 {
+    padding-left: 0;
+  }
+  .grd-grid-3 .grd-grid-12:first-child {
+    margin-bottom: .3em;
+  }
+  .sidebar {
+    position: relative;
+  }
+  .dept-image {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .open-positions {
+    .grd-grid-phablet-6 {
+      border-width: 0 !important;
+    }
+    .grd-grid-phablet-6:nth-child(even) {
+      border-width: 0 0 0 1px !important;
+    }
+    .grd-grid-phablet-6.first, .top-margin{
+      margin-top: 20px;
+    }
+    .grd-grid-phablet-6.first .title-section {
+      height: 1.4em;
+    }
+    .paragraph-section {
+      height: 9em;
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .open-positions {
+    .grd-grid-mobile-12:not(:first-child) {
+      padding-top: 20px;
+      margin-top: auto !important;
+    }
+    h1 {
+      text-align: center;
+    }
+    img.responsive {
+      width: 40%;
+    }
+    .title-section {
+      height: 1em;
+    }
+    .paragraph-section {
+      height: auto;
+    }
+    .top-margin{
+      margin-top: auto;
+    }
+  }
+}

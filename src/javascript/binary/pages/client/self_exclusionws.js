@@ -132,7 +132,7 @@ var SelfExlusionWS = (function() {
                     showError(key, text.localize('Please enter an integer value'));
                 }
                 else if(currentValue > 0 && (newValue.length === 0 || isLargerInt(newValue, currentValue))) {
-                    showError(key, text.localize('Please enter a number between 0 and %1').replace('%1', currentValue));
+                    showError(key, text.localize('Please enter a number between 0 and [_1]').replace('[_1]', currentValue));
                 }
                 else if(key === 'session_duration_limit' && newValue > (6 * 7 * 24 * 60)) {
                     showError(key, text.localize('Session duration limit cannot be more than 6 weeks.'));

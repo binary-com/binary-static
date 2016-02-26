@@ -70,7 +70,7 @@ var APITokenWS = (function() {
         // Hide form if tokens count reached the maximum limit
         if(api_token.tokens.length >= maxTokens) { 
             $('#token_form').addClass(hideClass);
-            showMessage(text.localize('The maximum number of tokens (%1) has been reached.').replace('%1', maxTokens), false);
+            showMessage(text.localize('The maximum number of tokens ([_1]) has been reached.').replace('[_1]', maxTokens), false);
         }
         else {
             $('#token_form').removeClass(hideClass);

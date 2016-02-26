@@ -59,8 +59,7 @@ var Purchase = (function () {
             }
             else{
                 cost_value = passthrough['amount'];
-                var match = receipt['longcode'].match(/[\d\,]+\.\d\d/);
-                payout_value = match[0].replace(',','');
+                payout_value = receipt['payout'];
             }
             profit_value = Math.round((payout_value - cost_value)*100)/100;
 
@@ -121,7 +120,7 @@ var Purchase = (function () {
                 decimal:3,
                 contract_sentiment:contract_sentiment,
                 price:passthrough['ask-price'],
-                payout:passthrough['amount'],
+                payout:receipt['payout'],
                 show_contract_result:1,
                 width: $('#confirmation_message').width(),
             });
@@ -130,7 +129,7 @@ var Purchase = (function () {
     };
 
     var update_spot_list = function(data){
-       
+
         if($('#contract_purchase_spots:hidden').length){
             return;
         }
@@ -209,7 +208,7 @@ var Purchase = (function () {
             }
 
         }
-        
+
     };
 
     return {

@@ -5,8 +5,8 @@
   .grd-grid-12.static_full
     %h1= stash->{title}
     %p= l('[_1] provides business partnership services via the following programs.', stash->{website_name})
-  .grd-grid-12.grd-grid-mobile-12.grd-parent
-    .grd-grid-4.grd-grid-mobile-12.grd-parent
+  .grd-grid-12.grd-grid-mobile-12.grd-parent.grd-clear
+    .grd-grid-4.grd-grid-mobile-12
       .grd-grid-6.grd-with-padding
         %a.pjaxload{:href => url_for('/affiliate/signup')}
           %img#charting_icon.responsive.charting-page-icon{:src => url_for('images/pages/partners/affiliate-program.svg')}
@@ -14,7 +14,7 @@
         %h4
           %a.pjaxload{:href => url_for('/affiliate/signup')}= l('Affiliate Program')
         %p= l('Earn commissions by introducing new customers to [_1].', stash->{website_name})
-    .grd-grid-4.grd-grid-mobile-12.grd-parent
+    .grd-grid-4.grd-grid-mobile-12
       .grd-grid-6.grd-with-padding
         %a.pjaxload{:href => url_for('/white-labels')}
           %img#charting_icon.responsive.charting-page-icon{:src => url_for('images/pages/partners/white-label-program.svg')}
@@ -22,7 +22,7 @@
         %h4
           %a.pjaxload{:href => url_for('/white-labels')}= l('White Labels')
         %p= l('Create your own white-label of the [_1] platform.', stash->{website_name})
-    .grd-grid-4.grd-grid-mobile-12.grd-parent
+    .grd-grid-4.grd-grid-mobile-12
       .grd-grid-6.grd-with-padding
         %a.pjaxload{:href => url_for('/payment-agent')}
           %img#charting_icon.responsive.charting-page-icon{:src => url_for('images/pages/partners/payment-agents.svg')}
@@ -31,7 +31,7 @@
           %a.pjaxload{:href => url_for('/payment-agent')}= l('Payment Agent')
         %p= l('Apply to become a Payment Agent')
   .grd-grid-12.grd-grid-mobile-12.grd-parent.grd-clear
-    .grd-grid-4.grd-grid-mobile-12.grd-parent
+    .grd-grid-4.grd-grid-mobile-12
       .grd-grid-6.grd-with-padding
         %a{:href => 'https://developers.binary.com', :target => '_blank'}
           %img#charting_icon.responsive.charting-page-icon{:src => url_for('images/pages/partners/api.svg')}
@@ -39,7 +39,7 @@
         %h4
           %a{:href => 'https://developers.binary.com', :target => '_blank'}= l('API')
         %p= l('Develop your own trading application with our APIs.')
-    .grd-grid-4.grd-grid-mobile-12.grd-parent
+    .grd-grid-4.grd-grid-mobile-12
       .grd-grid-6.grd-with-padding
         %a.pjaxload{:href => url_for('/open-source-projects')}
           %img#charting_icon.responsive.charting-page-icon{:src => url_for('images/pages/partners/open-source-venture.svg')}
@@ -47,11 +47,20 @@
         %h4
           %a.pjaxload{:href => url_for('/open-source-projects')}= l('Open Source')
         %p= l('Contribute to [_1]\'s open-source projects.', stash->{website_name})
-    .grd-grid-4.grd-grid-mobile-12.grd-parent
+    .grd-grid-4.grd-grid-mobile-12
       .grd-grid-6.grd-with-padding
         %a{:href => 'http://blog.binary.com/en/contributors/', :target => '_blank'}
           %img#charting_icon.responsive.charting-page-icon{:src => url_for('images/pages/partners/contributors.svg'), :target => '_blank'}
       .grd-grid-12
         %h4
-          %a{:href => 'https://blog.binary.com/en/contributors/'}= l('Contributors')
+          %a{:href => 'https://blog.binary.com/en/contributors/', :target => '_blank'}= l('Contributors')
         %p= l('Apply to become a contributor')
+  .grd-grid-12.grd-grid-mobile-12.grd-parent.grd-clear
+    .grd-grid-4.grd-grid-mobile-12
+      .grd-grid-6.grd-with-padding
+        %a.pjaxload{:href => url_for('/user-testing')}
+          %img#charting_icon.responsive.charting-page-icon{:src => url_for('images/pages/partners/tester.svg')}
+      .grd-grid-12
+        %h4
+          %a.pjaxload{:href => url_for('/user-testing')}= l('User Testing')
+        %p= l('Earn money for any verifiable errors that you find.')

@@ -16,6 +16,6 @@
         [%- END -%]
     </span>
     <span class='grd-grid-9 grd-grid-mobile-12 grd-grid-phablet-12'>
-        <input id="amount" name="amount" size=7 value="[%- amount -%]">
+        <input id="amount" name="amount" size=7 value="[%- amount -%]" maxlength="8">
     </span>
 </span>

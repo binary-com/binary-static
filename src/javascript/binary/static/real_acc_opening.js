@@ -13,7 +13,7 @@ pjax_config_page("new_account/realws", function(){
       }
       for (i = 0; i < page.user.loginid_array.length; i++){
         if (page.user.loginid_array[i].real === true){
-          window.location.href = page.url.url_for('user/myaccount');
+          window.location.href = page.url.url_for('user/my_accountws');
           return;
         }
       }
@@ -35,8 +35,9 @@ pjax_config_page("new_account/realws", function(){
 
                   //set cookies
                   var oldCookieValue = $.cookie('loginid_list');
-                  $.cookie('loginid_list', loginid + ':R:E+' + oldCookieValue, {domain: document.domain.substring(3), path:'/'});
-                  $.cookie('loginid', loginid, {domain: document.domain.substring(3), path:'/'});
+                  var cookie_domain = '.' + document.domain.split('.').slice(-2).join('.');
+                  $.cookie('loginid_list', loginid + ':R:E+' + oldCookieValue, {domain: cookie_domain, path:'/'});
+                  $.cookie('loginid', loginid, {domain: cookie_domain, path:'/'});
 
                   //push to gtm
                   var gtmDataLayer = document.getElementsByClassName('gtm_data_layer')[0];
@@ -56,20 +57,21 @@ pjax_config_page("new_account/realws", function(){
                   });
                   var affiliateToken = $.cookie('affiliate_tracking');
                   if (affiliateToken) {
-                    dataLayer.push({'bom_affiliate_token': affiliateToken});
+                    dataLayer.push({'bom_affiliate_token': JSON.parse($.cookie('affiliate_tracking')).t});
                   }
 
                   //generate dropdown list and switch
+                  page.client.clear_storage_values();
                   var option = new Option('Real Account (' + loginid + ')', loginid);
                   document.getElementById('client_loginid').appendChild(option);
                   $('#client_loginid option[value="' + page.client.loginid + '"]').removeAttr('selected');
                   option.setAttribute('selected', 'selected');
                   $('#loginid-switch-form').submit();
-                } else if (error) {
+                } else if (error && error.message) {
                   if (/multiple real money accounts/.test(error.message)){
                     RealAccOpeningUI.showError('duplicate');
                   } else {
-                    RealAccOpeningUI.showError();
+                    RealAccOpeningUI.showError(error.message);
                   }
                 }
               }

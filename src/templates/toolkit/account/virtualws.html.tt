@@ -24,16 +24,7 @@
                 <p style="margin:0px;height:0.5em;">
                   <meter id="password-meter" value="" max="50" min="0" high="20" low="10" optimum="50"></meter>
                 </p>
-                <div class="hint">[% l('Requirements') %]:
-                  <ul class="disc">
-                    <li>[% l('At least 6 characters') %]</li>
-                  </ul>
-                </div>
-                <div class="hint" style="margin-top:15px;">[% l('Tips') %]:
-                  <ul class="disc">
-                    <li>[% l('Use letters with numbers.') %]</li>
-                  </ul>
-                </div>
+                <div class="hint">[% l('Minimum 6 characters with at least 1 number') %]</div>
                 <p class="errorfield" id="error-password" style="display:none">
                   <abbr rel="tooltip" title="" id="tooltip-password"></abbr>
                 </p>
@@ -62,6 +53,7 @@
             <span class="button button-focus">
               <input type="hidden" name="account" value="new virtual account"></input>
               <button class="button button-focus" id="btn_submit" type="submit">[% l('Create New Account') %]</button>
+              <p class="errorfield" id="error-account-opening" style="display:none"></p>
             </span>
           </fieldset>
         </form>

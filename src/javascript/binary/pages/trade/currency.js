@@ -9,7 +9,7 @@ function displayCurrencies(selected) {
 
     var target = document.getElementById('currency'),
         fragment =  document.createDocumentFragment(),
-        currencies = JSON.parse(sessionStorage.getItem('currencies'))['payout_currencies'];
+        currencies = page.client.get_storage_value('currencies').split(',');
 
     if (!target) {
         return;
@@ -19,15 +19,7 @@ function displayCurrencies(selected) {
         target.removeChild(target.firstChild);
     }
 
-    var client_currencies;
-    if(page.client.is_logged_in) {
-        client_currencies = Settings.get('client.currencies');
-    }
-
     currencies.forEach(function (currency) {
-        if(client_currencies && client_currencies.length > 0 && client_currencies.indexOf(currency) < 0) {
-            return;
-        }
         var option = document.createElement('option'),
             content = document.createTextNode(currency);
 

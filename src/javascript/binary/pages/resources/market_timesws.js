@@ -58,7 +58,7 @@ var MarketTimesWS = (function() {
         var $contents = $('<div/>');
 
         for(var m = 0; m < markets.length; m++) {
-            var tabID = 'tradingtimes-' + markets[m].name.toLowerCase();
+            var tabID = 'market_' + (m + 1);
 
             // tabs
             if(!isJapan) {

@@ -15,6 +15,7 @@ var ViewBalanceUI = (function(){
             return;
         }
 
+        TUser.get().balance = balance.balance;
         $("#balance").text(view);
     }
 

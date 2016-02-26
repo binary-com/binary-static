@@ -18,7 +18,7 @@ var TickDisplay = function() {
             $self.contract_start_ms = parseInt(data.contract_start * 1000);
             $self.contract_category = data.contract_category;
             $self.set_barrier = ($self.contract_category.match('digits')) ? false : true;
-            $self.display_decimals = data.display_decimals;
+            $self.display_decimals = data.display_decimals || 2;
             var tick_frequency = 5;
 
             if (data.show_contract_result) {
@@ -85,6 +85,7 @@ var TickDisplay = function() {
                     height: config.minimize ? 143 : null,
                     backgroundColor: null,
                     events: { load: $self.plot(config.plot_from, config.plot_to) },
+                    marginLeft: 20,
                 },
                 credits: {enabled: false},
                 tooltip: {
@@ -213,6 +214,7 @@ var TickDisplay = function() {
                     label: {text: 'Barrier ('+barrier_tick.quote+')', align: 'center'},
                     color: 'green',
                     width: 2,
+                    zIndex: 2,
                 });
                 $self.contract_barrier = barrier_tick.quote;
                 $self.set_barrier = false;
@@ -236,6 +238,7 @@ var TickDisplay = function() {
                         align: 'center'
                     },
                     width: 2,
+                    zIndex: 2,
                 });
                 $self.contract_barrier = calc_barrier;
             }
@@ -246,9 +249,10 @@ var TickDisplay = function() {
             $self.chart.xAxis[0].addPlotLine({
                value: indicator.index,
                id: indicator.id,
-               label: {text: indicator.label},
+               label: {text: indicator.label, x: /start_tick|entry_tick/.test(indicator.id) ? -15 : 5},
                color: '#e98024',
                width: 2,
+               zIndex: 2,
             });
         },
         evaluate_contract_outcome: function() {

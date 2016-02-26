@@ -1,0 +1,381 @@
+- stash(
+-   title => l('Job details'),
+- );
+
+.job-details.grd-container
+  .grd-grid-12.grd-parent.static_full
+    .grd-grid-12
+      .grd-grid-3.grd-row-padding.grd-hide-mobile.grd-hide-phablet
+        .grd-grid-12.center
+          %img.responsive.dept-image{:src => url_for('images/pages/careers/Information_Technology.svg'), :style => "display:none"}
+        .grd-grid-12.grd-row-padding
+          %h1#title.center
+        .grd-grid-12.grd-row-padding
+          %div.sidebar{:style => "display:none"}
+            %ul#sidebar-nav
+              %li#one
+                %a{:href => "#section-one"}
+              %li#two
+                %a{:href => "#section-two"}
+              %li#three
+                %a{:href => "#section-three"}
+              %li#four
+                %a{:href => "#section-four"}
+              %li#five
+                %a{:href => "#section-five"}
+              %li#six
+                %a{:href => "#section-six"}
+              %li#seven
+                %a{:href => "#section-seven"}
+              %li#eight
+                %a{:href => "#section-eight"}
+      .grd-grid-9.grd-row-padding.grd-grid-mobile-12.grd-grid-phablet-12.sections
+        %h1.title-sections
+        %div
+    .grd-grid-12
+      .grd-grid-3.grd-hide-mobile.grd-hide-phablet
+      .grd-grid-9.grd-grid-mobile-12.grd-grid-phablet-12.center
+        .grd-grid-12
+          %a.button.button-focus.pjaxload{:href => 'mailto:hr@binary.com'}
+            %span= l('Submit your CV and Cover Letter')
+        .grd-grid-12.grd-row-padding
+          %a#back-button.pjaxload{:style => 'margin-top:1.4em; float:left;'}= l('<< Back to Job Descriptions')
+
+.contents{:style => "display:none"}
+  #content-Information_Technology
+    #Information_Technology-section-one.DevOps_Manager
+      %p= l('[_1]’s IT Operations Group is responsible for the design, development and operation of the company’s high-traffic networks. Its responsibilities include hardware and software deployment, up-time and reliability testing, incident response reporting, network security, intrusion detection, and load balancing.', stash->{website_name})
+      %p= l("As our DevOps Manager/Team Lead, you'll be responsible for the training, development and direction of a world class Linux-based Systems Administration team.")
+      %p= l("To be considered for this mission critical leadership role, you’ll need to demonstrate a passion for open source technologies and a desire to test your talents in a dynamic and challenging work environment.")
+      %p!= l('<strong>Duties and Responsibilities:</strong>')
+      %ul.bullet
+        %li= l('Translate the ongoing business needs of the company into a suitable IT infrastructure')
+        %li= l('Monitor hardware and software deployment and manage our worldwide network of servers and office networks')
+        %li= l('Oversee incident responses for our production servers and take the necessary measures to correct and enhance IT operations')
+        %li= l('Manage security, intrusion detection, DDoS protection and PCI compliance measures related to each of our deployed servers')
+        %li= l('Conduct disaster and recovery planning and execution')
+      %p!= l('<strong>Requirements:</strong>')
+      %ul.bullet
+        %li= l('Expertise in cloud solutions')
+        %li= l('Experience with, and enthusiasm for, Linux and open-source products such as Apache, mod proxy, mod_perl, Squid, Bind, DHCP, iptables and Postfix')
+        %li= l('Familiarity with virtualization concepts (openvz / Xen / vmware)')
+        %li= l('Knowledge of hardware and software firewalls, intrusion detection methods, security systems and DDoS protection')
+        %li= l('Extensive experience with TCP/IP networking, VPNs and IPSEC')
+        %li= l('Thorough knowledge of bash scripting, as well as experience with scripting languages such as Perl and PHP')
+    #Information_Technology-section-two.Senior_Front-End_Developer
+      %p= l('Binary Group Services is searching for talented and motivated front-end developers who are looking for a chance to excel.')
+      %p= l('If you have the skill set we seek, you’ll become a valued member of a highly competent front end development team engaged in driving our binary options trading systems to new heights.')
+      %p!= l('<strong>Duties and Responsibilities:</strong>')
+      %p= l("As a Senior Front-End Developer, you’ll be tasked with writing robust, high-quality, production-ready code; refactoring and optimizing a large and complex legacy code base; and contributing to the architecture that drives our high-traffic global website.")
+      %p!= l('<strong>Requirements:</strong>')
+      %ul.bullet
+        %li= l('Extensive experience in the application of advanced coding principles and standards')
+        %li= l('The ability to write high-quality, self-documenting code, using test-driven development techniques')
+        %li= l('Extensive knowledge of Javascript, HTML, CSS, AJAX, JSON')
+        %li= l('Experience working with client-side JavaScript frameworks such as jQuery, ReactJS, and/or AngularJS')
+        %li= l('Strong knowledge of developing cross-platform/browser-compatible applications for web and mobile')
+        %li= l('A preference and passion for Linux and open-source platforms')
+    #Information_Technology-section-three.Senior_Perl_Developer
+      %p= l('Binary Group Services is searching for talented and motivated Perl developers who are looking for a chance to excel. If you have the skill set we seek, you’ll become a valued member of a highly competent back-end development team engaged in driving our binary options trading systems to new heights.')
+      %p!= l('<strong>Duties and Responsibilities:</strong>')
+      %p= l("As a Senior Perl Developer, you’ll be tasked with writing robust, high-quality, production-ready code and contributing to the architecture that drives our high-traffic global website.")
+      %p!= l('<strong>Requirements:</strong>')
+      %ul.bullet
+        %li= l('Deep Perl expertise')
+        %li= l('Fluency with Linux administration')
+        %li= l('Familiarity with Perl, DBI, Mason, Moose, Sereal, Plack/PSGI, nginx, Javascript, MySQL/Postgres, Memcached, Redis, RabbitMQ, git')
+        %li= l('Experience with relational database design and/or open-source RDBMS (Postgres, MySQL, etc.) systems')
+        %li= l('The ability to write high-quality, self-documenting code, using test-driven development techniques')
+        %li= l('A preference and passion for Linux and open-source platforms')
+
+  #content-Quality_Assurance
+    #Quality_Assurance-section-one.Quality_Assurance_Engineer
+      %p!= l('<strong>Duties and Responsibilities:</strong>')
+      %ul.bullet
+        %li= l('Execute and update manual and automated test plans')
+        %li= l('Work with members of the QA team to ensure the integrity of releases')
+        %li= l('Investigate and reproduce client-reported issues')
+      %p!= l('<strong>Requirements:</strong>')
+      %ul.bullet
+        %li= l("A Bachelor’s degree in Computer Science, or an equivalent combination of technical education, training and work experience")
+        %li= l('2-3 years of applicable experience in a web application testing role')
+        %li= l('Hands-on test automation experience a plus')
+        %li= l('The ability to work in a Linux/Unix based environment')
+        %li= l('Proficiency in a scripting language - Perl preferred')
+        %li= l('Excellent oral and written communication skills')
+        %li= l('Strong analytical and problem solving abilities')
+        %li= l('Experience with Postgres or another RDBMS a plus')
+        %li= l('Strong attention to detail')
+        %li= l('Experience with Git')
+
+  #content-Quantitative_Analysis
+    #Quantitative_Analysis-section-one.Quantitative_Developer
+      %p= l('The [_1] Quantitative Analytics group is responsible for the pricing of binary options offered on our website, as well as the risk management and profitability of its options book. Processing over a million transactions each day, the company manages a book of exotic options which arguably exceeds in complexity that of the typical derivatives desk.', stash->{website_name})
+      %p= l('Since all dealing on the [_1] website is fully automated, our pricing and risk management algorithms must take full account of real-time pricing parameters, data feed irregularities and latencies.', stash->{website_name})
+      %p= l("As a developer in the [_1] Quant Group, you will be responsible for the implementation and maintenance of the company's risk management and derivatives pricing software. You and the members of your team will develop software designed to study the market micro-structure, optimize existing code, manage financial data feeds and ensure the continuous running of our automated trading platform.", stash->{website_name})
+      %p!= l('<strong>Duties and Responsibilities:</strong>')
+      %ul.bullet
+        %li= l('Work closely with other members of the team to develop software that would drive prices on our trading platform')
+        %li= l('Review, develop and enhance codes used in option pricing and real time risk management programs')
+        %li= l('Creating interfaces and tools to access market information, real-time and historical analysis of trading strategies')
+        %li= l('Engage in data mining using SQL databases, R/S-Plus, OLAP and other analytical tools')
+        %li= l('Monitor and optimize website trading activity')
+      %p!= l('<strong>Requirements:</strong>')
+      %ul.bullet
+        %li= l('An advanced university degree in Mathematics, Physics or Engineering')
+        %li= l('Advanced knowledge of software design principles')
+        %li= l('Perl knowledge and/or readiness to learn is a must')
+        %li= l('Experience with programming languages like Perl, Python, or Ruby coupled with the ability to produce high quality, self-documenting code, using test driven development techniques')
+        %li= l('A preference and passion for Linux and open-source platforms')
+        %li= l('Experience with languages like C/C++/R/Python/VBA/Mat lab/SQL would be a plus')
+        %li= l('Knowledge of probability theory, numerical methods, Monte-Carlo simulation, statistical modeling, and time series analysis would be a plus')
+    #Quantitative_Analysis-section-two.Quantitative_Analyst
+      %p= l('[_1]’s Quantitative Analytics group is responsible for the pricing of binary options offered on its website, as well as the risk management and profitability of its options book. Since all dealing on the company’s website is fully automated, our pricing and risk management algorithms must take full account of real-time pricing parameters, data feeds irregularities and latencies.', stash->{website_name})
+      %p!= l('<strong>Duties and Responsibilities:</strong>')
+      %ul.bullet
+        %li= l('Develop derivatives pricing, risk management models and algorithms using C/C++, R, MATLAB, Perl, Python and Java')
+        %li= l('Review, develop and enhance Perl, C++ and R codes used in options pricing, volatility forecasts, and risk management program')
+        %li= l('Maintain accurate system pricing parameters')
+        %li= l('Engage in data mining using SQL databases, R/S-Plus, OLAP and other analytical tools')
+        %li= l('Monitor website trading activity and minimize abuse')
+        %li= l('Generate periodic and special reports summarizing client trading trends')
+      %p!= l('<strong>Requirements:</strong>')
+      %ul.bullet
+        %li= l('To qualify, you’ll need an advanced university degree in Physics, Financial Engineering or Mathematics')
+        %li= l('Experience in exotic options pricing, volatility forecasts, high-frequency trading and the analysis of market inefficiencies')
+        %li= l('Knowledge of probability theory, stochastic calculus, numerical methods, Monte-Carlo simulation, differential equations, econometrics, and statistical modeling')
+        %li= l('Skill in the application of object-oriented programming languages (C++, Perl and Java) coupled with the ability to produce high quality code')
+        %li= l('Skill in the use of financial information sources such as Bloomberg and Reuters')
+        %li= l('Relevant experience in the use of Quant programming libraries and frameworks (Quantlib, PricingPartners, FINCAD, and NumeriX), and quant pricing platforms (SuperDerivatives and FENICS) would be a plus')
+
+  #content-Marketing
+    #Marketing-section-one.Marketing_Project_Manager
+      %p!= l('<strong>Duties and Responsibilities:</strong>')
+      %ul.bullet
+        %li= l('Coordinate project delivery; develop and update schedules, maintain task lists, and hold team members accountable for assigned deliverables')
+        %li= l('Work with members of the marketing team to prepare detailed project requirements')
+      %p!= l('<strong>Requirements:</strong>')
+      %ul.bullet
+        %li= l('Exceptional organizational skills; detail orientation and a strong work ethic')
+        %li= l('Effective interpersonal skills, with the ability to mediate situations, resolve disputes, and implement effective solutions')
+        %li= l('A strong and passionate interest in marketing and advertising')
+        %li= l('The ability to communicate fluently in English (both oral and written)')
+        %li= l('A university degree in Marketing, Communication, or Journalism')
+      %p!= l('<strong>Preferences:</strong>')
+      %ul.bullet
+        %li= l('Substantial experience in a senior marketing or advertising role')
+        %li= l('Related experience in the financial services industry')
+        %li= l('The ability to speak several languages')
+    #Marketing-section-two.Social_Media_Executive
+      %p!= l('<strong>Duties and Responsibilities:</strong>')
+      %ul.bullet
+        %li= l('Develop and maintain a consistent and engaging brand voice throughout assigned social-media channels')
+        %li= l('Identify, engage, and convert potential customers and business partners')
+        %li= l('Strengthen relationships with our current client base')
+        %li= l('Develop content that promotes the company through social media outlets')
+        %li= l('Manage social-media advertising campaigns targeting potential clients and business partners')
+      %p!= l('<strong>Requirements:</strong>')
+      %ul.bullet
+        %li= l('A strong and passionate interest in social media, marketing, and advertising')
+        %li= l('The ability to communicate effectively in English (both oral and written)')
+        %li= l('A university degree in Marketing, Communication, or Journalism')
+      %p!= l('<strong>Preferences:</strong>')
+      %ul.bullet
+        %li= l('Significant experience in, Social Media, Marketing, and/or advertising')
+        %li= l('Knowledge and experience in the financial services industry')
+        %li= l('The ability to speak several languages')
+    #Marketing-section-three.Country_Manager
+      %p= l('The Country Manager will have overall operational responsibility for directing the growth and ongoing development of the local market. He or she will actively support the goal of increasing [_1]’s market presence and investigating business development opportunities.', stash->{website_name})
+      %p!= l('<strong>Duties and Responsibilities:</strong>')
+      %ul.bullet
+        %li= l('Responsible for the recruiting, training and development of employees and affiliates to achieve assigned sales and marketing objectives')
+        %li= l('Prepare periodic and special reports on sales within the region and maintain a reporting structure with affiliates to collect data')
+        %li= l('Support country appropriate products and regional capability strategies by coordinating business development activities and generating partnership leads')
+        %li= l('Develop strong relationships with regulatory, governmental, and professional organizations in order to promote the business and contribute to the improvement of service delivery')
+      %p!= l('<strong>Requirements:</strong>')
+      %ul.bullet
+        %li= l("A Bachelor’s degree in business or related discipline")
+        %li= l("Five years of progressively responsible managerial experience in the region")
+        %li= l('Managerial, analytical, organizational, financial, and verbal/written communication skills in both the regional language and English')
+        %li= l('A sound understanding of the regulatory aspects of doing business in the region')
+        %li= l('Strong computer skills in Excel, Word and PowerPoint')
+    #Marketing-section-four.Graphic_Designers
+      %p= l("[_1] is looking to recruit several talented designers who are passionate about what they do best. As our design team is responsible for creating the graphics required to support our global marketing and advertising campaigns, the team's creative efforts span a number of channels, including online marketing, affiliate networks, print advertising, trade shows, special events, and promotional projects in a number of languages.", stash->{website_name})
+      %p!= l('<strong>Duties and Responsibilities:</strong>')
+      %ul.bullet
+        %li= l("The candidates selected will be responsible for the design and creative direction of the company's website content and the production of its marketing materials. They will work directly with members of our marketing and software development teams to produce the graphics required to support and drive our e-commerce business")
+        %li= l('These positions will present talented designers with a unique opportunity to develop their skills in graphics and creative design as valued members of an innovative marketing group')
+    #Marketing-section-five.Marketing_Executives
+      %p= l('[_1] is seeking several highly skilled Marketing Executives to join its team of talented professionals.', stash->{website_name})
+      %p!= l('<strong>Duties and Responsibilities:</strong>')
+      %ul.bullet
+        %li= l('Assist senior members of the marketing team in implementing a broad array of promotional campaigns')
+        %li= l("Develop the digital marketing content that appears on the company’s website")
+        %li= l('Blog, using a variety of formats')
+        %li= l('Promote the company using social media and other online channels')
+        %li= l('Contribute your ideas, energy and creativity to further the company’s dynamic branding efforts')
+      %p!= l('<strong>Requirements:</strong>')
+      %ul.bullet
+        %li= l('A strong and passionate interest in marketing')
+        %li= l('Exceptional communication skills (both oral and written) in English')
+        %li= l('A university degree in Marketing, Journalism, Communications or other business related discipline')
+        %li= l('Prior experience in the financial services industry is preferred, as is an interest in Information Technology and/or Software Development')
+    #Marketing-section-six.Copywriter
+      %p!= l('<strong>Duties and Responsibilities:</strong>')
+      %ul.bullet
+        %li= l("Create clear, concise and engaging content for display on the company’s website")
+        %li= l("Develop text that promotes the company’s product offerings in a variety formats")
+        %li= l('Educate prospects, clients, and partners regarding the benefits of [_1]’s innovative online trading platform', stash->{website_name})
+        %p!= l('<strong>Requirements:</strong>')
+        %ul.bullet
+          %li= l('The ability to translate information into clear, concise, and engaging content')
+          %li= l('Effective English language skills, with attention to detail regarding punctuation, spelling, grammar, and syntax')
+          %li= l('The ability to multi-task, balance deadlines, and reliably deliver high-quality content')
+        %p!= l('<strong>Preferences:</strong>')
+        %ul.bullet
+          %li= l('The ability to speak and write in multiple languages')
+          %li= l('Knowledge and experience in the financial services industry')
+          %li= l('A background in IT development')
+    #Marketing-section-seven.Translator
+      %p= l('[_1] is seeking qualified translation professionals familiar with specific target markets, languages, and cultures. By delivering a high level of translation and customer support services, you will be the company’s voice to our clients. You’ll work with colleagues in IT, Customer Support and Marketing to provide localized text and document translation services on our global website [_1]. This position will report to our Translation Project Manager.', stash->{website_name})
+      %p!= l('<strong>Duties and Responsibilities:</strong>')
+      %ul.bullet
+        %li= l('Proofread existing content used on the company’s blogs and social media outlets')
+        %li= l('Assist in the proofreading and recording of video presentations')
+        %li= l('Process website content translations regularly and efficiently')
+        %li= l('Ensure compliance with quality control standards governing website content')
+      %p!= l('<strong>Requirements:</strong>')
+      %ul.bullet
+        %li= l('A native speaker with good command of English (oral and written)')
+        %li= l('Will work with a simple web-based translation tool')
+        %li= l('Previous experience with financial/binary options website services')
+        %li= l('A university degree or accredited translation certification preferred')
+    #Marketing-section-eight.Proofreader
+      %p= l('[_1] is seeking a qualified proofreader with a flair for language and a meticulous eye for detail. You must be able to interact with our staff using a web-based translator interface. You’ll work with colleagues in IT, Customer Support and Marketing to provide localized text and document translation services on our global website [_1].', stash->{website_name})
+      %p!= l('<strong>Duties and Responsibilities:</strong>')
+      %p= l('Under the supervision of [_1]’s Translation Project Manager, you will:', stash->{website_name})
+      %ul.bullet
+        %li= l('Proofread and correct the content appearing on the company’s website, blogs and social media outlets, from English to the regional language and vice versa')
+        %li= l('Use appropriate terminology, taking into account the style and nuance of the original text')
+        %li= l('Maintain adequate speed and volume of output')
+        %li= l('Process website content translations when a full time translator is unavailable')
+        %li= l('Ensure compliance with the quality standards that govern our website content')
+      %p!= l('<strong>Requirements:</strong>')
+      %ul.bullet
+        %li= l('Good command of English (oral and written)')
+        %li= l('Previous experience with financial and/or binary options trading websites')
+        %li= l('A university degree or accredited translation certification preferred')
+
+  #content-Accounting
+    #Accounting-section-one.Accounts_And_Payments_Executive
+      %p!= l('<strong>Duties and Responsibilities:</strong>')
+      %p= l('As an Accounts And Payments Executive, you will be responsible for the processing of client payments, handling and resolving client payment queries, assisting with the management accounts of the companies within our group, performing reconciliations, preparing reports, and constantly liaising with all other departments within the company in relation to client payments and accounts. You will work within a multi-national team, using the proprietary accounting and backoffice systems provided by the company.')
+      %p!= l('<strong>Requirements:</strong>')
+      %ul.bullet
+        %li= l('Life-long career interest in the Accounting field')
+        %li= l('A degree major in Accounting or other relevant professional qualifications')
+        %li= l('At least 1 year working experience is required for this position')
+        %li= l('Excellent English language (written and oral) communication skills')
+        %li= l('Excellent IT/office skills')
+        %li= l('Ability to work in a multicultural and international environment')
+        %li= l('Motivated, accurate, organized and a self-starter')
+
+  #content-Compliance
+    #Compliance-section-one.Compliance_Executive
+      %p= l('In order to support its continued growth, [_1] is seeking to recruit and place a qualified Compliance Executive. In this newly created role, to be based in Malta, the incumbent will report to our Head of Regulatory and Legal Compliance')
+      %p!= l('<strong>Duties and Responsibilities:</strong>')
+      %ul.bullet
+        %li= l('Ensuring that the Binary Group of companies are in full compliance with the regulatory regimes to which they are subject')
+        %li= l('Working closely with the Head of Compliance to implement Know your Client (KYC), Anti-Money Laundering (AML), and data protection regulations')
+        %li= l('Preparing the periodic and special reports required to ensure legal and regulatory compliance in the jurisdictions within which we operate')
+        %li= l('Assisting the Head of Compliance in applying for the licenses required for group companies in new jurisdictions')
+        %li= l('Assisting with the regulatory and statutory audit of Binary Group companies worldwide')
+      %p!= l('<strong>Requirements:</strong>')
+      %ul.bullet
+        %li= l('A tertiary level education')
+        %li= l('A full understanding of, and a keen interest in, corporate legal compliance')
+        %li= l('Experience working within an international environment')
+        %li= l('The ability to acquire knowledge of compliance matters in a multitude of international jurisdictions')
+        %li= l('A proactive approach to solving problems and delivering client solutions')
+        %li= l('Work experience in a similar role')
+    #Compliance-section-two.Anti-Fraud_Officer
+      %p= l('[_1]’s principal Anti-Fraud Officer is responsible for the exercise of exceptional client relationship management skills applied to the prevention of fraudulent activities in payments processing and business transactions. He or she will be expected to partner with our payments and compliance teams in resolving payment queries; administering chargebacks; conducting anti-money laundering audits, and implement a broad array of fraud prevention measures.', stash->{website_name})
+      %p!= l('<strong>Duties and Responsibilities:</strong>')
+      %ul.bullet
+        %li= l('Effectively monitor daily client activity')
+        %li= l('Audit deposit patterns and take action on fraud or abuse')
+        %li= l('Review suspicious account transactions')
+        %li= l('Follow up on rejected deposits')
+        %li= l('Run daily payments reports and report suspected fraud')
+        %li= l('Liaise with banks and payment providers')
+        %li= l('Set client deposit and loss limits')
+        %li= l('Analyze data regarding fraud, risk assessment, and anti-money laundering')
+        %li= l('Document account chargebacks')
+        %li= l('Manage the company’s cashier system')
+        %li= l('Update the Anti-Fraud Manual and other related documents')
+      %p!= l('<strong>Requirements:</strong>')
+      %ul.bullet
+        %li= l('Excellent English language skills (both oral and written)')
+        %li= l('Experience in an anti-fraud or risk management role')
+        %li= l('Effective analytical and administrative skills')
+        %li= l('A detail orientation with the ability to detect patterns')
+        %li= l('A university degree in a related field is a plus')
+
+  #content-Customer_Support
+    #Customer_Support-section-one.Global_Customer_Service_Representatives
+      %p= l('[_1] has several exceptional career opportunities for Customer Service Professionals.', stash->{website_name})
+      %p= l('As a member of our global Client Service Team you will serve as the voice of our customers by resolving and reducing client service issues.')
+      %p!= l('<strong>Duties and Responsibilities:</strong>')
+      %ul.bullet
+        %li= l('Resolve complex customer care issues in the best interest of our global clients and the company')
+        %li= l('Respond to client queries using our state of the art telephone, electronic mail and on-line chat systems')
+        %li= l('Work to expand our international client base by applying creative marketing and customer support strategies')
+        %li= l("Collaborate with members of our IT Group to identify innovative ways to improve our website’s capability and performance")
+      %p!= l('<strong>Requirements:</strong>')
+      %ul.bullet
+        %li= l('Excellent English language skills, both oral and written')
+        %li= l('Proficiency in a second language (oral and written) is preferred')
+        %li= l('Previous work experience in a client service and/or marketing role')
+        %li= l('Experience in the financial services industry is preferred')
+        %li= l('A university degree in marketing or computer science is a plus')
+
+  #content-Human_Resources
+    #Human_Resources-section-one.Human_Resource_Executive
+      %p= l('In order to support its continued growth, the Human Resources Group at [_1] is seeking to place a highly competent administrator in a senior recruitment role. Please note that this is not a position suitable for an HR generalist, but should be of keen interest to a high level administrator with extensive experience in the global recruitment of managers and single technical contributors. A background in financial services and experience in the recruitment of senior professionals in IT and Quantitative Analytics would be ideal.', stash->{website_name})
+      %p!= l('<strong>Duties and Responsibilities:</strong>')
+      %ul.bullet
+        %li= l('In this newly created role, to be based on our offices in Cyberjaya, Malaysia, you will be responsible for:')
+        %li= l('Supporting the Group’s global recruiting and talent management needs')
+        %li= l('Advising senior managers regarding salary negotiations and job offers')
+        %li= l('Administering the company’s semi-annual performance appraisal process')
+        %li= l('A broad array of HR-related administrative tasks')
+      %p= l('Qualified applicants should have global experience in recruitment administration, excellent administrative skills, and the ability to work in a fast-paced entrepreneurial environment. We are seeking a true professional capable of making an impact by supporting and advancing HR best practices throughout the company’s global operations.')
+
+  #content-Administrator
+    #Administrator-section-one.Administrative_Executive
+      %p= l('[_1] is seeking a junior to mid-career professional with exceptional administrative and organization skills to join its General Affairs Team.', stash->{website_name})
+      %p!= l('<strong>Duties and Responsibilities:</strong>')
+
+      %p= l('As a General Affairs Executive, you will provide administrative support to several departments in areas related to vendor management, event planning, accounting, and human resources administration to name a few.')
+      %p!= l('<strong>Requirements:</strong>')
+      %ul.bullet
+        %li= l("An Advanced/Higher/Graduate Diploma or a Bachelor's Degree")
+        %li= l('Relevant work experience in a related field (financial services preferred)')
+        %li= l('Effective PC skills with extensive experience in MS Office applications')
+        %li= l('Well-developed organizational, administrative, and/or accounting skills')
+        %li= l('Excellent written and verbal communication skills in both English and Bahasa Malaysia')
+      %p= l('Fresh graduates who meet our basic requirements and are passionate about pursuing a professional career in administrative services are welcome to apply.')
+
+  #content-Internal_Audit
+    #Internal_Audit-section-one.Internal_Auditor
+      %p= l('We are looking for energetic and enthusiastic individuals who love challenges, are detail-oriented and highly analytical to join our Internal Audit team.')
+
+      %p!= l('<strong>Duties and Responsibilities:</strong>')
+
+      %p= l('As Internal Auditor, you will perform unique, risk-based internal audits on the Binary Ltd. Group of companies. You will also be involved in risk management, evaluation of regulatory compliance, as well as work with the Head of Departments to improve business processes and support the realization of audit recommendations.')
+      %p!= l('<strong>Requirements:</strong>')
+      %ul.bullet
+        %li= l('A degree in Accounting or Finance, and at least three years of experience working in Internal Audit or Corporate Governance')
+        %li= l('Strong MS Office skills and experience working with accounting software and databases')
+        %li= l('Proven knowledge of auditing standards, procedures, laws, rules and regulations are an added advantage')
+        %li= l('IT audit experience is a plus')

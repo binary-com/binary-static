@@ -1,0 +1,239 @@
+- stash(
+-   title => l('Open Positions'),
+- );
+
+.open-positions.grd-container
+  .grd-grid-12.grd-parent.static_full
+    .grd-grid-12.grd-row-padding
+      %h1= stash->{title}
+    .grd-grid-12.grd-row-padding#Information_Technology
+      .grd-grid-3.grd-grid-mobile-12
+        .grd-grid-12.grd-row-padding
+          %h2= l('Information Technology')
+          %img.responsive{:src => url_for('images/pages/careers/Information_Technology.svg')}
+      .grd-grid-9.grd-grid-mobile-12
+        .grd-grid-12.grd-row-padding
+          .grd-grid-4.grd-grid-phablet-6.grd-grid-mobile-12
+            .title-section
+              %h3= l('DevOps Manager / Team Lead')
+            .paragraph-section
+              %p= l('Responsibilities include hardware and software deployment, network security, intrusion detection, and load balancing.')
+            %a{:href => url_for('/open-positions/job-details?dept=Information_Technology#section-one'), :class => "pjaxload"}= l('Learn more')
+          .grd-grid-4.grd-grid-phablet-6.grd-grid-mobile-12
+            .title-section
+              %h3= l('Senior Front-End Developer')
+            .paragraph-section
+              %p= l('Tasked with writing robust, high-quality, production-ready code as well as refactoring and optimizing a large and complex legacy code base.')
+            %a{:href => url_for('/open-positions/job-details?dept=Information_Technology#section-two'), :class => "pjaxload"}= l('Learn more')
+          .grd-grid-4.grd-grid-phablet-6.grd-grid-mobile-12.first
+            .title-section
+              %h3= l('Senior Perl Developer')
+            .paragraph-section
+              %p= l('Tasked with writing robust, high-quality, production-ready code and contributing to the architecture that drives our high-traffic global website.')
+            %a{:href => url_for('/open-positions/job-details?dept=Information_Technology#section-three'), :class => "pjaxload"}= l('Learn more')
+
+    .grd-grid-12.grd-hide-mobile
+      .separator-line
+
+    .grd-grid-12.grd-row-padding#Quality_Assurance
+      .grd-grid-3.grd-grid-mobile-12
+        .grd-grid-12.grd-row-padding
+          %h2= l('Quality Assurance')
+          %img.responsive{:src => url_for('images/pages/careers/Quality_Assurance.svg')}
+      .grd-grid-9.grd-grid-mobile-12
+        .grd-grid-12.grd-row-padding
+          .grd-grid-4.grd-grid-phablet-6.grd-grid-mobile-12
+            .title-section
+              %h3= l('Quality Assurance Engineer')
+            .paragraph-section
+              %p= l('Execute and update manual and automated test plans, ensure the integrity of releases, investigate and reproduce client-reported issues.')
+            %a{:href => url_for('/open-positions/job-details?dept=Quality_Assurance#section-one'), :class => "pjaxload"}= l('Learn more')
+
+    .grd-grid-12.grd-hide-mobile
+      .separator-line
+
+    .grd-grid-12.grd-row-padding#Quantitative_Analysis
+      .grd-grid-3.grd-grid-mobile-12
+        .grd-grid-12.grd-row-padding
+          %h2= l('Quantitative Analysis')
+          %img.responsive{:src => url_for('images/pages/careers/Quantitative_Analysis.svg')}
+      .grd-grid-9.grd-grid-mobile-12
+        .grd-grid-12.grd-row-padding
+          .grd-grid-4.grd-grid-phablet-6.grd-grid-mobile-12
+            .title-section
+              %h3= l('Quantitative Developer')
+            .paragraph-section
+              %p= l("Responsible for the risk management and derivatives pricing of the company, including implementation and maintenance.")
+            %a{:href => url_for('/open-positions/job-details?dept=Quantitative_Analysis#section-one'), :class => "pjaxload"}= l('Learn more')
+          .grd-grid-4.grd-grid-phablet-6.grd-grid-mobile-12
+            .title-section
+              %h3= l('Quantitative Analyst')
+            .paragraph-section
+              %p= l('Responsible for the pricing of binary options offered on the Binary.com website and the risk management and profitability of its options book.')
+            %a{:href => url_for('/open-positions/job-details?dept=Quantitative_Analysis#section-two'), :class => "pjaxload"}= l('Learn more')
+
+    .grd-grid-12.grd-hide-mobile
+      .separator-line
+
+    .grd-grid-12.grd-row-padding#Marketing
+      .grd-grid-3.grd-grid-mobile-12
+        .grd-grid-12.grd-row-padding
+          %h2= l('Marketing')
+          %img.responsive{:src => url_for('images/pages/careers/Marketing.svg')}
+      .grd-grid-9.grd-grid-mobile-12
+        .grd-grid-4.grd-grid-phablet-6.grd-grid-mobile-12
+          .title-section
+            %h3= l('Marketing Project Manager')
+          .paragraph-section
+            %p= l('Coordinate project delivery; develop and update schedules, maintain task lists, and hold team members accountable for assigned deliverables.')
+          %a{:href => url_for('/open-positions/job-details?dept=Marketing#section-one'), :class => "pjaxload"}= l('Learn more')
+        .grd-grid-4.grd-grid-phablet-6.grd-grid-mobile-12
+          .title-section
+            %h3= l('Social Media Executive')
+          .paragraph-section
+            %p= l('Develop and maintain a consistent and engaging brand voice throughout assigned social-media channels to promote the company.')
+          %a{:href => url_for('/open-positions/job-details?dept=Marketing#section-two'), :class => "pjaxload"}= l('Learn more')
+        .grd-grid-4.grd-grid-phablet-6.grd-grid-mobile-12.first
+          .title-section
+            %h3= l('Country Manager')
+          .paragraph-section
+            %p= l('Responsible for the recruiting, training and development of employees and affiliates to achieve assigned sales and marketing objectives.')
+          %a{:href => url_for('/open-positions/job-details?dept=Marketing#section-three'), :class => "pjaxload"}= l('Learn more')
+        .grd-grid-4.grd-grid-phablet-6.grd-grid-mobile-12.top-margin
+          .title-section{:style => "height: 1.4em;"}
+            %h3= l('Graphic Designers')
+          .paragraph-section
+            %p= l("Responsible for the design and creative direction of the company's website's content and the production of marketing materials in an innovative group.")
+          %a{:href => url_for('/open-positions/job-details?dept=Marketing#section-four'), :class => "pjaxload"}= l('Learn more')
+        .grd-grid-4.grd-grid-phablet-6.grd-grid-mobile-12.top-margin
+          .title-section{:style => "height: 1.4em;"}
+            %h3= l('Marketing Executives')
+          .paragraph-section
+            %p= l("Contribute your creativity to further the company’s dynamic branding efforts by implementing a broad array of promotional campaigns.")
+          %a{:href => url_for('/open-positions/job-details?dept=Marketing#section-five'), :class => "pjaxload"}= l('Learn more')
+        .grd-grid-4.grd-grid-phablet-6.grd-grid-mobile-12.first.top-margin
+          .title-section{:style => "height: 1.4em;"}
+            %h3= l('Copywriter')
+          .paragraph-section
+            %p= l("Create clear, concise and engaging content that promotes the company’s product offerings in a variety formats to be displayed on our website.")
+          %a{:href => url_for('/open-positions/job-details?dept=Marketing#section-six'), :class => "pjaxload"}= l('Learn more')
+        .grd-grid-4.grd-grid-phablet-6.grd-grid-mobile-12.top-margin
+          .title-section{:style => "height: 1.4em;"}
+            %h3= l('Translator')
+          .paragraph-section
+            %p= l('Work with colleagues in IT, Customer Support and Marketing to provide localized text on our global website, blogs, and social media outlets.')
+          %a{:href => url_for('/open-positions/job-details?dept=Marketing#section-seven'), :class => "pjaxload"}= l('Learn more')
+        .grd-grid-4.grd-grid-phablet-6.grd-grid-mobile-12.top-margin
+          .title-section{:style => "height: 1.4em;"}
+            %h3= l('Proofreader')
+          .paragraph-section
+            %p= l("With a meticulous eye for detail, proofread and correct the content appearing on the company’s website, blogs and social media outlets.")
+          %a{:href => url_for('/open-positions/job-details?dept=Marketing#section-eight'), :class => "pjaxload"}= l('Learn more')
+
+    .grd-grid-12.grd-hide-mobile
+      .separator-line
+
+    .grd-grid-12.grd-row-padding#Accounting
+      .grd-grid-3.grd-grid-mobile-12
+        .grd-grid-12.grd-row-padding
+          %h2= l('Accounting')
+          %img.responsive{:src => url_for('images/pages/careers/Accounting.svg')}
+      .grd-grid-9.grd-grid-mobile-12
+        .grd-grid-12.grd-row-padding
+          .grd-grid-4.grd-grid-phablet-6.grd-grid-mobile-12
+            .title-section
+              %h3= l('Accounts And Payments Executive')
+            .paragraph-section
+              %p= l('Responsible for the processing of client payments, assisting with the management accounts of the companies within our group, and more.')
+            %a{:href => url_for('/open-positions/job-details?dept=Accounting#section-one'), :class => "pjaxload"}= l('Learn more')
+
+    .grd-grid-12.grd-hide-mobile
+      .separator-line
+
+    .grd-grid-12.grd-row-padding#Compliance
+      .grd-grid-3.grd-grid-mobile-12
+        .grd-grid-12.grd-row-padding
+          %h2= l('Compliance')
+          %img.responsive{:src => url_for('images/pages/careers/Compliance.svg')}
+      .grd-grid-9.grd-grid-mobile-12
+        .grd-grid-12.grd-row-padding
+          .grd-grid-4.grd-grid-phablet-6.grd-grid-mobile-12
+            .title-section{:style => "height: 1.2em;"}
+              %h3= l('Compliance Executive')
+            .paragraph-section
+              %p= l('Ensuring that the Binary Group of companies are in full compliance with the legal and regulatory regimes to which they are subject.')
+            %a{:href => url_for('/open-positions/job-details?dept=Compliance#section-one'), :class => "pjaxload"}= l('Learn more')
+          .grd-grid-4.grd-grid-phablet-6.grd-grid-mobile-12
+            .title-section{:style => "height: 1.2em;"}
+              %h3= l('Anti-Fraud Officer')
+            .paragraph-section
+              %p= l('Exercise exceptional client relationship management skills to prevent fraudulent activities in payments processing and business transactions.')
+            %a{:href => url_for('/open-positions/job-details?dept=Compliance#section-two'), :class => "pjaxload"}= l('Learn more')
+
+    .grd-grid-12.grd-hide-mobile
+      .separator-line
+
+    .grd-grid-12.grd-row-padding#Customer_Support
+      .grd-grid-3.grd-grid-mobile-12
+        .grd-grid-12.grd-row-padding
+          %h2= l('Customer Support')
+          %img.responsive{:src => url_for('images/pages/careers/Customer_Support.svg')}
+      .grd-grid-9.grd-grid-mobile-12
+        .grd-grid-12.grd-row-padding
+          .grd-grid-4.grd-grid-phablet-6.grd-grid-mobile-12
+            .title-section
+              %h3= l('Customer Service Representatives')
+            .paragraph-section
+              %p= l('As a member of our global Client Service Team you will serve as the voice of our customers by resolving and reducing client service issues.')
+            %a{:href => url_for('/open-positions/job-details?dept=Customer_Support#section-one'), :class => "pjaxload"}= l('Learn more')
+
+    .grd-grid-12.grd-hide-mobile
+      .separator-line
+
+    .grd-grid-12.grd-row-padding#Human_Resources
+      .grd-grid-3.grd-grid-mobile-12
+        .grd-grid-12.grd-row-padding
+          %h2= l('Human Resources')
+          %img.responsive{:src => url_for('images/pages/careers/Human_Resources.svg')}
+      .grd-grid-9.grd-grid-mobile-12
+        .grd-grid-12.grd-row-padding
+          .grd-grid-4.grd-grid-phablet-6.grd-grid-mobile-12
+            .title-section
+              %h3= l('Human Resource Executive')
+            .paragraph-section
+              %p= l('Responsible for supporting the Group’s global recruiting and talent management needs and a broad array of HR-related administrative tasks.')
+            %a{:href => url_for('/open-positions/job-details?dept=Human_Resources#section-one'), :class => "pjaxload"}= l('Learn more')
+
+    .grd-grid-12.grd-hide-mobile
+      .separator-line
+
+    .grd-grid-12.grd-row-padding#Administrator
+      .grd-grid-3.grd-grid-mobile-12
+        .grd-grid-12.grd-row-padding
+          %h2= l('Administrator')
+          %img.responsive{:src => url_for('images/pages/careers/Administrator.svg')}
+      .grd-grid-9.grd-grid-mobile-12
+        .grd-grid-12.grd-row-padding
+          .grd-grid-4.grd-grid-phablet-6.grd-grid-mobile-12
+            .title-section
+              %h3= l('Administrative Executive')
+            .paragraph-section
+              %p= l('Provide administrative support in areas related to vendor management, event planning, accounting, and human resources administration.')
+            %a{:href => url_for('/open-positions/job-details?dept=Administrator#section-one'), :class => "pjaxload"}= l('Learn more')
+
+    .grd-grid-12.grd-hide-mobile
+      .separator-line
+
+    .grd-grid-12.grd-row-padding#Internal_Audit
+      .grd-grid-3.grd-grid-mobile-12
+        .grd-grid-12.grd-row-padding
+          %h2= l('Internal Audit')
+          %img.responsive{:src => url_for('images/pages/careers/Internal_Audit.svg')}
+      .grd-grid-9.grd-grid-mobile-12
+        .grd-grid-12.grd-row-padding
+          .grd-grid-4.grd-grid-phablet-6.grd-grid-mobile-12
+            .title-section{:style => "height: 1.2em;"}
+              %h3= l('Internal Auditor')
+            .paragraph-section
+              %p= l('Involved in evaluation of regulatory compliance and risk management. Work with the Head of Departments to improve business processes.')
+            %a{:href => url_for('/open-positions/job-details?dept=Internal_Audit#section-one'), :class => "pjaxload"}= l('Learn more')

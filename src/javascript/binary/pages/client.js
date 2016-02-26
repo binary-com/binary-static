@@ -51,20 +51,6 @@ var enable_residence_form_submit = function () {
     });
 };
 
-/*pjax_config_page('new_account/real', function() {
-    return {
-        onLoad: function() {
-            client_form.on_residence_change();
-            select_user_country();
-            disable_residence();
-            enable_residence_form_submit();
-            if (page.client.is_logged_in) {
-                client_form.set_virtual_email_id(page.client.email);
-            }
-        }
-    };
-});*/
-
 var upgrade_investment_disabled_field = function () {
     if (page.client.is_real) {
         var fields = ['mrms', 'fname', 'lname', 'dobdd', 'dobmm', 'dobyy', 'residence', 'secretquestion', 'secretanswer'];

@@ -36,10 +36,10 @@ var TopUpVirtualWS = (function() {
         }
         else{
             showMessage(
-                text.localize('%1 %2 has been credited to your Virtual money account %3')
-                    .replace('%1', response.topup_virtual.currency)
-                    .replace('%2', response.topup_virtual.amount)
-                    .replace('%3', loginID),
+                text.localize('[_1] [_2] has been credited to your Virtual money account [_3]')
+                    .replace('[_1]', response.topup_virtual.currency)
+                    .replace('[_2]', response.topup_virtual.amount)
+                    .replace('[_3]', loginID),
                 true);
         }
     };

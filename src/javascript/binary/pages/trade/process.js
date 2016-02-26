@@ -283,12 +283,12 @@ function processForgetTicks() {
 function processTick(tick) {
     'use strict';
     var symbol = sessionStorage.getItem('underlying');
+    var digit_info = TradingAnalysis.digit_info();
     if(tick.echo_req.ticks === symbol || (tick.tick && tick.tick.symbol === symbol)){
         Tick.details(tick);
         Tick.display();
-        var digit_info = TradingAnalysis.digit_info();
         if (digit_info && tick.tick) {
-            digit_info.update(symbol, tick.tick.quote);
+            digit_info.update_chart(tick);
         }
         WSTickDisplay.updateChart(tick);
         Purchase.update_spot_list(tick);
@@ -297,6 +297,9 @@ function processTick(tick) {
             Barriers.setBarrierUpdate(true);
         }
         updateWarmChart();
+    } else {
+        if(digit_info)
+            digit_info.update_chart(tick);
     }
 }
 

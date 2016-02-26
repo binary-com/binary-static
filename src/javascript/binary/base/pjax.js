@@ -48,7 +48,7 @@ PjaxExecQueue.prototype = {
     },
     fire: function () {
         if(!this.fired) {
-            var match_loc = window.location.pathname;
+            var match_loc = window.location.href;
             var i = this.url_exec_queue.length;
             while(i--) {
                 this.url_exec_queue[i].fire(match_loc);

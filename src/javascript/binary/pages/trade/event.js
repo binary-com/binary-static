@@ -72,7 +72,7 @@ var TradingEvents = (function () {
             return 0;
         }
         $('#duration_units').val(value);
-
+        
         sessionStorage.setItem('duration_units',value);
         Durations.select_unit(value);
         Durations.populate();
@@ -172,17 +172,28 @@ var TradingEvents = (function () {
         /*
          * bind event to change in duration amount, request new price
          */
-        var durationAmountElement = document.getElementById('duration_amount');
+        function triggerOnDurationChange(e){
+            if (e.target.value % 1 !== 0 ) {
+                e.target.value = Math.floor(e.target.value);
+            }
+            sessionStorage.setItem('duration_amount',e.target.value);
+            Durations.select_amount(e.target.value);
+            processPriceRequest();
+            submitForm(document.getElementById('websocket_form'));
+        }
+        var durationAmountElement = document.getElementById('duration_amount'),
+            inputEventTriggered = false;          // For triggering one of the two events.
         if (durationAmountElement) {
             // jquery needed for datepicker
-            $('#duration_amount').on('input change', debounce(function (e) {
-                if (e.target.value % 1 !== 0 ) {
-                    e.target.value = Math.floor(e.target.value);
-                }
-                sessionStorage.setItem('duration_amount',e.target.value);
-                Durations.select_amount(e.target.value);
-                processPriceRequest();
-                submitForm(document.getElementById('websocket_form'));
+            $('#duration_amount').on('input', debounce(function (e) {
+                triggerOnDurationChange(e);
+                inputEventTriggered = true;
+            }));
+            $('#duration_amount').on('change', debounce(function (e) {
+                if(inputEventTriggered === false)
+                    triggerOnDurationChange(e);
+                else
+                    inputEventTriggered = false;
             }));
         }
 
@@ -234,6 +245,17 @@ var TradingEvents = (function () {
          */
         var amountElement = document.getElementById('amount');
         if (amountElement) {
+            amountElement.addEventListener('keypress', function(e) {
+                var key = e.keyCode;
+                var char = String.fromCharCode(e.which);
+                if((char === '.' && e.target.value.indexOf(char) >= 0) ||
+                    (!/[0-9\.]/.test(char) && [8, 37, 39, 46].indexOf(key) < 0) || // delete, backspace, arrow keys
+                    /['%]/.test(char)) { // similarity to arrows key code in some browsers
+                        e.returnValue = false;
+                        e.preventDefault();
+                }
+            });
+
             amountElement.addEventListener('input', debounce( function(e) {
                 e.target.value = e.target.value.replace(/[^0-9.]/g, '');
                 if (isStandardFloat(e.target.value)) {

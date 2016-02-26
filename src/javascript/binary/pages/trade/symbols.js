@@ -87,7 +87,8 @@ var Symbols = (function () {
         markets: function (list) { return list ? tradeMarketsList : tradeMarkets; },
         underlyings: function () { return tradeUnderlyings; },
         getName: function(symbol){ return names[symbol]; },
-        need_page_update: function () { return need_page_update; }
+        need_page_update: function () { return need_page_update; },
+        getAllSymbols: function(){return names;}
     };
 
 })();

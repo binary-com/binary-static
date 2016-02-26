@@ -85,15 +85,15 @@ var Content = (function () {
             textMaxAggregateTooltip: text.localize('Presents the maximum aggregate payouts on outstanding contracts in your portfolio. If the maximum is attained, you may not purchase additional contracts without first closing out existing positions.'),
             textTradingLimits: text.localize('Trading Limits'),
             textWithdrawalTitle: text.localize('Withdrawal Limits'),
-            textWithdrawalLimits: text.localize('Your withdrawal limit is EUR %1 (or equivalent in other currency).'),
-            textWithrawalAmount: text.localize('You have already withdrawn the equivalent of EUR %1'),
-            textDayWithdrawalLimit: text.localize('Your %1 day withdrawal limit is currently EUR %2 (or equivalent in other currency).'),
+            textWithdrawalLimits: text.localize('Your withdrawal limit is EUR [_1] (or equivalent in other currency).'),
+            textWithrawalAmount: text.localize('You have already withdrawn the equivalent of EUR [_1]'),
+            textDayWithdrawalLimit: text.localize('Your [_1] day withdrawal limit is currently EUR [_2] (or equivalent in other currency).'),
             textAuthenticatedWithdrawal: text.localize('Your account is fully authenticated and your withdrawal limits have been lifted.'),
             textAggregateOverLast: text.localize('in aggregate over the last'),
-            textWithdrawalForEntireDuration: text.localize('Your withdrawal limit for the entire duration of the account is currently: EUR %1 (or equivalent in other currency).'),
+            textWithdrawalForEntireDuration: text.localize('Your withdrawal limit for the entire duration of the account is currently: EUR [_1] (or equivalent in other currency).'),
             textInAggregateOverLifetime: text.localize('in aggregate over the lifetime of your account.'),
             textNotAllowedToWithdraw: text.localize('Therefore you may not withdraw any additional funds.'),
-            textCurrentMaxWithdrawal: text.localize('Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is EUR %1 (or equivalent in other currency).'),
+            textCurrentMaxWithdrawal: text.localize('Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is EUR [_1] (or equivalent in other currency).'),
             textBuyPrice: text.localize('Buy price'),
             textFinalPrice: text.localize('Final price'),
             textLoss: text.localize('Loss'),
@@ -102,9 +102,9 @@ var Content = (function () {
             textFormEvenOdd: text.localize('Even/Odd'),
             textFormOverUnder: text.localize('Over/Under'),
             textMessageRequired: text.localize('This field is required.'),
-            textMessageCountLimit: text.localize('You should enter between %1 characters.'), // %LIMIT% should be replaced by a range. sample: (6-20)
-            textMessageJustAllowed: text.localize('Only %1 are allowed.'), // %ALLOWED% should be replaced by values including: letters, numbers, space, period, ...
-            textMessageValid: text.localize('Please submit a valid %1.'), // %FIELD% should be replaced by values such as email address
+            textMessageCountLimit: text.localize('You should enter between [_1] characters.'), // [_1] should be replaced by a range. sample: (6-20)
+            textMessageJustAllowed: text.localize('Only [_1] are allowed.'), // [_1] should be replaced by values including: letters, numbers, space, period, ...
+            textMessageValid: text.localize('Please submit a valid [_1].'), // [_1] should be replaced by values such as email address
             textLetters: text.localize('letters'),
             textNumbers: text.localize('numbers'),
             textSpace: text.localize('space'),
@@ -114,7 +114,8 @@ var Content = (function () {
             textApost: text.localize('apostrophe'),
             textPassword: text.localize('password'),
             textPasswordsNotMatching: text.localize('The two passwords that you entered do not match.'),
-            textTokenMissing: text.localize('Verification token is missing. Click on the verification link sent to your email and make sure you are not already logged in.'),
+            textTokenMissing: text.localize('Verification token is missing.'),
+            textClickHereToRestart: text.localize('Please click on the verification link sent to your email, or click <a class="pjaxload" href="[_1]">here</a> to restart the verification process.'),
             textDuplicatedEmail: text.localize('Your provided email address is already in use by another Login ID'),
             textAsset: text.localize('Asset'),
             textOpens: text.localize('Opens'),
@@ -131,9 +132,9 @@ var Content = (function () {
             textErrorBirthdate: text.localize('Please input a valid date'),
             textSelect: text.localize('Please select'),
             textUnavailableReal: text.localize('Sorry, account opening is unavailable.'),
-            textMessageMinRequired: text.localize('Minimum of %1 characters required.'),
+            textMessageMinRequired: text.localize('Minimum of [_1] characters required.'),
             textFeatureUnavailable: text.localize('Sorry, this feature is not available.'),
-            textMessagePasswordScore: text.localize( 'Password score is: %1. Passing score is: 20.')
+            textMessagePasswordScore: text.localize( 'Password score is: [_1]. Passing score is: 20.')
         };
 
         var starTime = document.getElementById('start_time_label');
@@ -303,23 +304,23 @@ var Content = (function () {
                 break;
             case 'reg':
                 if(param)
-                    msg = localize.textMessageJustAllowed.replace('%1', param.join(separator));
+                    msg = localize.textMessageJustAllowed.replace('[_1]', param.join(separator));
                 break;
             case 'range':
                 if(param)
-                    msg = localize.textMessageCountLimit.replace('%1', param);
+                    msg = localize.textMessageCountLimit.replace('[_1]', param);
                 break;
             case 'valid':
                 if(param)
-                    msg = localize.textMessageValid.replace('%1', param);
+                    msg = localize.textMessageValid.replace('[_1]', param);
                 break;
             case 'min':
                 if(param)
-                    msg = localize.textMessageMinRequired.replace('%1', param);
+                    msg = localize.textMessageMinRequired.replace('[_1]', param);
                 break;
             case 'pass':
                 if(param)
-                    msg = localize.textMessagePasswordScore.replace('%1', param);
+                    msg = localize.textMessagePasswordScore.replace('[_1]', param);
                 break;
             default:
                 break;
