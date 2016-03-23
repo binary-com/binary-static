@@ -187,6 +187,7 @@ function BinarySocketClass() {
                 } else if (type === 'website_status') {
                   if (response.website_status.clients_country) {
                     localStorage.setItem('clients_country', response.website_status.clients_country);
+                    checkClientsCountry();
                   }
                 }
                 if (response.hasOwnProperty('error')) {
