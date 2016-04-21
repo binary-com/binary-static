@@ -1,7 +1,7 @@
 %div{class => 'grd-hide grd-show-mobile grd-show-phablet', id => 'mobile-menu-container'}
   %div.grd-hide#mobile-menu
     %ul
-      - my @top_nav = ({route => '/why-us', text => l('Why Us?')}, {route => '/get-started', text => l('Get Started')}, {route => '/tour', text => l('Tour')},);
+      - my @top_nav = ({route => '/why-us', text => l('Why Us?')}, {route => '/get-started', text => l('Get Started'), class => 'ja-hide'}, {route => '/get-started-jp', text => l('Get Started'), class => 'all-hide ja-show-block'}, {route => '/tour', text => l('Tour')},);
       - foreach my $menu_item (@top_nav) {
         - my ($route, $text) = ($menu_item->{route}, $menu_item->{text});
         - my $menu_class = (index(url_for, $route) != -1) ? 'active' : '';

@@ -94,60 +94,60 @@ var KnowledgeTestData = (function() {
                 answer: true, id: 18
             },
             {
-                question: "{JAPAN ONLY}Predicted that the underlying asset price is largely up-dean and in order to obtain the benefit also moving in either direction of rising send falling, obtained both options of the call options that exercise price is higher than the underlying asset price and tie put option that exercise prize is lower than underlying asset price.",
+                question: "{JAPAN ONLY}If you believe the underlying asset price will move by a large amount in either direction, you can benefit by buying both a call and a put option, with the exercise prices set above and below the current underlying price.",
                 answer: true, id: 19
             },
             {
-                question: "{JAPAN ONLY}Predicts that width of up-down of underlying asset is small and  in order to obtain the benefit also moving in either direction of rising and falling, granted together both of the call option that exercise price is higher than underlying asset and the put option that exercise price is lower than underlying asset price.",
+                question: "{JAPAN ONLY}If you believe the underlying asset price will be only moderately volatile, you could still benefit by buying both a call and put option with exercise prices that are above and below the exercise price.",
                 answer: true, id: 20
             },
             {
-                question: "{JAPAN ONLY}Covered option is holding the underlying assets which like covering sell position of options and sell the it.",
+                question: "{JAPAN ONLY}A Covered option position is where you hold an offsetting position in the underlying asset.",
                 answer: true,
                 id: 21,
             },
             {
-                question: "{JAPAN ONLY}Predicted the underlying asset price will decline than strike price at exit time and bought binary call options.",
+                question: "{JAPAN ONLY}A binary call option buyer will benefit from a correct prediction that the asset price will decline to below the strike price by the judgment time.",
                 answer: false,
                 id: 22
             },
             {
-                question: "{JAPAN ONLY}Predicted the underlying asset price will decline than strike price at exit time and bought binary put options.",
+                question: "{JAPAN ONLY}A binary put option buyer will benefit from a correct prediction that the asset price will decline to below the strike price by the judgment time.",
                 answer: false,
                 id: 23
             },
             {
-                question: "{JAPAN ONLY}Predicted the underlying asset price will raise than strike price at exit time and bought binary put options.",
+                question: "{JAPAN ONLY}A binary put options buyer will benefit from a correct prediction that the asset price will rise above the strike price by the judgment time.",
                 answer: false,
                 id: 24
             },
             {
-                question: "{JAPAN ONLY}Predicted the underlying asset price will decline than strike price at exit time and bought binary call options.",
+                question: "{JAPAN ONLY}A binary call options buyer will benefit from a correct prediction that the asset price will rise above the strike price by the judgment time.",
                 answer: true,
                 id: 25
             },
             {
-                question: "{JAPAN ONLY} At buying call option, break-even point is the price added option fee of a unit of the underlying asset to exercise price.",
+                question: "{JAPAN ONLY}When buying a vanilla call option, the break-even price at the exercise point is the strike price plus the option price paid in units of the underlying.",
                 answer: true,
                 id: 26
             },
             {
-                question: "{JAPAN ONLY} At buying put option, break-even point is the price minuses option fee of a unit of the underlying asset to exercise price.",
+                question: "{JAPAN ONLY}When buying a vanilla put option, the break-even price at the exercise point is the strike price minus the option price paid in units of the underlying.",
                 answer: true,
                 id: 27
             },
             {
-                question: "{JAPAN ONLY}Hedge you used for binary option is needed to be conducted as compensation part of loss of  the hedged asset because payout is fixed.",
+                question: "{JAPAN ONLY}Using binary options for hedging a position in the underlying asset means that only part of the loss or gain can be hedged, because the payout amount is fixed.",
                 answer: true,
                 id: 28
             },
             {
-                question: "{JAPAN ONLY}Using two options, if obtain  binary put option which exercise price is higher and binary call option which exercise price is lower, its possible to obtain profit in case that exit price is between the exercise prices of two options and its possible to invest range binary options which will be payout in case that exit price is in side of the predetermined price.",
+                question: "{JAPAN ONLY}It is possible to use two binary options to make a profit if the asset price settles inbetween the two strikes. It is also possible to buy a single range option that will achieve the same result.",
                 answer: true,
                 id: 29
             },
             {
-                question: "{JAPAN ONLY}Using two options, if get  binary call option which exercise price is higher and binary put option which exercise price is lower, its possible to obtain profit in case that exit price is out side of the price range made by exercise prices of two options and its possible to invest range binary options which will be payout in case that exit price is out side of the predetermined price.",
+                question: "{JAPAN ONLY}It is possible to use two binary options to make a profit if the asset price settles outside the two strikes. It is also possible to buy a single range option that will achieve the same result.",
                 answer: true,
                 id: 30
             },
@@ -155,7 +155,7 @@ var KnowledgeTestData = (function() {
         ],
         section3:[
             {
-                question: "{JAPAN ONLY}Trading period (expiration) of binary option is 2 hours and more. All of the transactions are established at the start of the trading period and the established position will be settled only by judge.",
+                question: "{JAPAN ONLY}In Japan there are defined trading periods for binary options must be 2 hours or longer, and all trades must be conducted at the start of each trading period.",
                 answer: false,
                 id: 31
             },
@@ -165,22 +165,22 @@ var KnowledgeTestData = (function() {
                 id: 32
             },
             {
-                question: "{JAPAN ONLY}Short positions of currency-related binary options, unlike the short positions of the other currency-related option, will not be loss cut because it is not a financial instruments subjected to loss cut regulation.",
+                question: "{JAPAN ONLY}In contrast to other types of FX options, short positions in FX Binary Options cannot be closed-out as they are not subject to loss-cut regulations.",
                 answer: false,
                 id: 33
             },
             {
-                question: "{JAPAN ONLY}Short positions of currency-related binary option is conducted transactions by depositing necessary margin requirement to trader in advance. If the margin shortage after the transaction established, it is necessary to deposit the additional margin to the trader.",
+                question: "{JAPAN ONLY}Short positions in FX Binary Options must be covered by initial margin and any further losses must be covered by further margin deposits.",
                 answer: true,
                 id: 34
             },
             {
-                question: "{JAPAN ONLY}Although each traders determined the limit amount to deal with the customer, even if customer's transaction amount, loss with a certain period and open interest a customer held exceeds the reference, the transaction with the customer will not be discontinued or cancelled.",
+                question: "{JAPAN ONLY}Although customers and brokers will set limits on customers trading losses, even if those losses are exceeded, it is the customer's responsibility to close the position and so mandatory loss-cuts will not be executed by the broker company.",
                 answer: false,
                 id: 35
             },
             {
-                question: "{JAPAN ONLY}Options may be either European or American style of exercise, and the one which can be exercised at only one expiry time is the European style option.",
+                question: "{JAPAN ONLY}Options may be European or American style of exercise, and those which can be exercised at only one expiry time are the European style options.",
                 answer: true,
                 id: 36
             },
@@ -210,27 +210,27 @@ var KnowledgeTestData = (function() {
                 id: 41,
             },
             {
-                question: "{JAPAN ONLY}Exercise price is the price which buy and sell underlying asset by exercise the right and in case of binary option, it is basic price to judge the presence (exist) of payout.",
+                question: "{JAPAN ONLY}The Exercise Price is the level at which the option buyer has the right to trade the underlying, and is also used for binary options to determine whether the buyer should receive a payout.",
                 answer: true,
                 id: 42
             },
             {
-                question: "{JAPAN ONLY}Exit price is the underlying asset price at exercise time and it's the price to judge the presence (exist) of payout by comparing with exercise price.",
+                question: "{JAPAN ONLY}The Exit Price is the price that is observed at the judgment time, and is used to determine whether a payout should be made.",
                 answer: true,
                 id: 43
             },
             {
-                question: "{JAPAN ONLY}The payout is the amount that seller of the option paid to the buyer as a result of exercising the right, when the predetermined exercise conditions meet and the amount paid like that called payout amount.",
+                question: "{JAPAN ONLY}The payout is the amount that the option seller must pay to the buyer if the buyer exercises his right when the conditions for a payout have been satisfied.",
                 answer: true,
                 id: 44
             },
             {
-                question: "{JAPAN ONLY}In the OTC currency binary options trading, if the exchange rate during the trading period move to one direction more than expected, that there is no exercise price which can continue appropriate trading around at-the-money, there is possible to add the exercise price on the way. However, even if the exercise price has been added, do the exercise price will continue trading using up to it, also the transaction price will not be affected by the additional impact of the exercise price.",
+                question: "{JAPAN ONLY}In OTC currency binary options trading, if the exchange rate during the trading period moves by more than expected in one direction, and there are no longer any exercise prices which can continue to trade, it is possible under certain conditions to add further exercise prices. However, even when further exercise price have been added, the prices of the original options will not be affected.",
                 answer: true,
                 id: 45
             },
             {
-                question: "{JAPAN ONLY}The exit price is important in binary options. In case of handling the OTC currency-related binary options trading for personal, company inspects if mistakes and intentional operation has not been performed inspection for exit price the company determined and also checking whether there is an error in the data in case that the company use the rate data provided by third company.",
+                question: "{JAPAN ONLY}The exit price is important in binary options. In case of handling the OTC currency-related binary options trading for private individuals, the broker company must perform inspections of the exit prices which have been used for determining option payout, and must check whether there is an error in the data in cases where that the company has used rated data provided by third company.",
                 answer: true,
                 id: 46
             },
@@ -274,76 +274,76 @@ var KnowledgeTestData = (function() {
                 answer: false, id: 54
             },
             {
-                question: "{JAPAN ONLY}The option of the leverage effect, the buyer is likely to be obtained several times profit compared to the option fee, but the loss is limited to the option fee, when it comes to seller, profit is limited to the option fee, but loss will be likely to be doubled of option fee.",
+                question: "{JAPAN ONLY}Options are said to be leveraged products because in the case of large moves in the underlying asset price, the values of the options can increase by large amounts compared to the price paid for the option.",
                 answer: true, id: 55
             },
             {
-                question: "{JAPAN ONLY}The buyer of the plane option can waiver when incriminating, so the maximum loss of buyer is option fee and maximum earning is the amount subtracted by the difference of underlying asset price and exercise price from option fee. Therefore, when the underlying asset price is infinite, the profit will be infinite.",
+                question: "{JAPAN ONLY}The buyer of a vanilla option can choose whether to exercise the option or not. His loss is limited to the price paid for the option, whereas his potential profit is unlimited.",
                 answer: true, id: 56
             },
             {
-                question: "{JAPAN ONLY}While seller of plan options is limited the earnings is the option fee, the difference of the underlying asset price and the strike price is a loss, if the underlying asset price is infinite, the loss will be infinite.",
+                question: "{JAPAN ONLY}The seller of a vanilla option can not choose whether to exercise the option or not. His profit is limited to the price received for the option, whereas his potential loss is unlimited and could be substantial.",
                 answer: true, id: 57
             },
             {
-                question: "{JAPAN ONLY}Exercise deadline is coming, but the option to exercise is not carried out and disappear, option premium the seller received will be as it is that of the seller.",
+                question: "{JAPAN ONLY}If the exercise period passes without the option being exercised by the buyer, the option premium received by the seller will be the profit made on the trade.",
                 answer: true, id: 58
             },
             {
-                question: "{JAPAN ONLY}Although the options which is not be exercised will disappear at the exercise period, the option fee which seller received will remain for sellers.",
+                question: "{JAPAN ONLY}Even if the option is exercise or not exercised, the original option premium remains with the option seller.",
                 answer: true, id: 59
             },
             {
-                question: "{JAPAN ONLY}Maximum loss of buyer at binary options is an optional fee, maximum loss of the seller will be the amount subtracted the option fee from the payout amount.",
+                question: "{JAPAN ONLY}The maximum loss for the buyer of an option is the price paid, and the maximium loss for the option seller will be the payout amount minus the opion price he received.",
                 answer: true, id: 60
             },
             {
-                question: "{JAPAN ONLY}Based on the probability of profit is obtained by the exercise, it can not be said that cheaper options is advantageous unconditionally.",
+                question: "{JAPAN ONLY}Because option prices are determined by the probability of being exercised, it cannot be said that cheaper options have any natural advantage over expensive options.",
                 answer: true,
                 id: 61,
             },
             {
-                question: "{JAPAN ONLY}Binary options is lower risks and higher returns than plan options because loss of sellers is limited at binary options.",
+                question: "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed.",
                 answer: false,
                 id: 62
             },
             {
-                question: "{JAPAN ONLY}Although binary option loss is limited, based on the assets of the investors, so as not to become excessive speculative trading, it is necessary to bear in mind the moderation in transactions.",
+                question: "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume.",
                 answer: true,
                 id: 63
             },
             {
-                question: "{JAPAN ONLY}In case probability to receive the payout is 50% and magnification of payout for the investment is less than a 2-fold lower, than the expected rate will be  1 times lower and forecast recovery amount is less than the investment.",
+                question: "{JAPAN ONLY}If the probablility of a payout is 50% then when the potential payout is less than 100% of the price paid for the option, the expected return on the investment will be less than 100%.",
                 answer: true,
                 id: 64
             },
             {
-                question: "{JAPAN ONLY}It can not be said that binary option is unconditionally advantageous because the reason why investors will lose the full amount of investment at binary option, on the other hand part of investment will remain at FX.",
+                question: "{JAPAN ONLY}It cannot be said that binary options trading is unconditionally advanteous over regular spot fx trading, because investors may lose all of their investment whereas in spot fx trading there will still be some value in the trading position.",
                 answer: true,
                 id: 65
             },
             {
-                question: "{JAPAN ONLY}The contents of the financial instruments of the OTC binary options are the same even transactions dealers handling financial instruments business are different.",
+                question: "{JAPAN ONLY}The particular details of binary options are all the same, no matter which broking company you trade with.",
                 answer: false,
                 id: 66
             },
             {
-                question: "{JAPAN ONLY}The price of OTC binary options of the same conditions, (sometimes) the price varies depending on transactions dealers handling financial instruments business.",
+                question: "{JAPAN ONLY}Even if all details of the binary options match perfectly, there may still be differences in the prices shown by different broking companies.",
                 answer: true,
                 id: 67
             },
             {
-                question: "{JAPAN ONLY}Price of OTC currency option is the calculated value based on multiple elements and is determined by relative trading basically.",
+                question: "{JAPAN ONLY}Prices for currency options are calculated relative the value of theunderlying spot price, and are dependant on multiple factors which may vary.",
                 answer: true,
                 id: 68
             },
             {
-                question: "{JAPAN ONLY}Regarding to the OTC price of financial instruments, in case that financial instruments business operator suggests both of  bid and ask price (or trading price and cancellation price), generally there is a difference of them. This option will be wider as the expiration approaches.",
+                question: "{JAPAN ONLY}Where broking companies show bid and offer prices for purchasing and sell-back of positions, these prices may become further apart the nearer you are to the exercise time.",
                 answer: true,
                 id: 69
             },
             {
-                question: "{JAPAN ONLY}Price of the option, the price of the underlying asset, price fluctuation rate of the underlying assets, the time until the exercise date, subject to any of the impact of interest rates.",
+                question: "{JAPAN ONLY}Option prices depend on the spot price, the time to expiry, the volatility of the spot rate and interest rates.",
                 answer: true, id: 70
             },
 
@@ -354,7 +354,7 @@ var KnowledgeTestData = (function() {
                 answer: true, id: 71
             },
             {
-                question: "{JAPAN ONLY}Price of call option will be lower interest rates of the underlying assets is low, but the price of the put option, go up when the interest rates of the underlying assets is low.",
+                question: "{JAPAN ONLY}The price of a vanilla call option will be lower when price of the underlying asset is low, but the price of the put option will be higher when the price of the underlying asset is low.",
                 answer: true, id: 72
             },
             {
@@ -523,4 +523,3 @@ var KnowledgeTestData = (function() {
         sendResult: sendResult
     };
 }());
-

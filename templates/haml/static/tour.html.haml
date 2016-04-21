@@ -6,7 +6,7 @@
       .grd-grid-12
         %h1= l('First, define your position...')
         %p= l('When you start trading with Binary.com, you’ll be directed to the trading screen, where you set your trading parameters, and choose what you want to trade, how and when.')
-        %a.pjaxload.button.ja-hide{:href => url_for('trade.cgi')}
+        %a.pjaxload.button.ja-hide{:href => url_for('trading')}
           %img.responsive#new-trader-icon.ja-hide{:src => url_for('images/pages/tour/trade-tutorial_1.svg')}
         %img.responsive#new-trader-icon.hidden.ja-show{:src => url_for('images/pages/tour/tour-jp.svg')}
 
@@ -16,10 +16,10 @@
         %h1= l('2-way pricing')
         %p= l('Simply change any of your parameters and the trade price instantly changes, giving you real-time knowledge of your stake. [_1] ensures fair and transparent pricing by showing you both sides of the trade.', stash->{website_name})
       .grd-grid-6.grd-grid-mobile-12.ja-hide
-        %a.pjaxload.button{:href => url_for('trade.cgi')}
+        %a.pjaxload.button{:href => url_for('trading')}
           %img.responsive#new-trader-icon{:src => url_for('images/pages/tour/tour-live-trade.svg')}
       .grd-grid-6.grd-grid-mobile-12.ja-hide
-        %a.pjaxload.button{:href => url_for('trade.cgi')}
+        %a.pjaxload.button{:href => url_for('trading')}
           %img.responsive#new-trader-icon{:src => url_for('images/pages/tour/tour-opposite-trade.svg')}
   .section
     .section-content

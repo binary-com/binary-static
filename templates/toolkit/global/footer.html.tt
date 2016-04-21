@@ -46,8 +46,13 @@
                             <a class="pjaxload" href="[% request.url_for('why-us') %]"[% IF target %] target="[% target
                             %]"[% END %]>[% l('Why Us?') %]</a>
                         </li>
-                        <li>
+                        <li class="ja-hide">
                             <a class="pjaxload" href="[% request.url_for('get-started') %]"[% IF target %] target="[%
+                            target
+                            %]"[% END %]>[% l('Getting Started') %]</a>
+                        </li>
+                        <li class="all-hide ja-show-block">
+                            <a class="pjaxload" href="[% request.url_for('get-started-jp') %]"[% IF target %] target="[%
                             target
                             %]"[% END %]>[% l('Getting Started') %]</a>
                         </li>

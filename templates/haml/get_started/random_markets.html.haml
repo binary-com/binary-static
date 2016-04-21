@@ -14,7 +14,7 @@
           %li#sidebar-link-section-4
             %a{:href => "#random-nocturnes"}= l('Random Nocturnes')
         .sidebar-button
-          %a.pjaxload{:href => url_for('trade.cgi?market=random')}= l('Place a random trade')
+          %a.pjaxload{:href => url_for('trading?market=random')}= l('Place a random trade')
     .grd-grid-9.grd-grid-mobile-12.grd-parent
       .section
         %a#what-are-random-markets
@@ -26,16 +26,16 @@
             .grd-grid-7.grd-grid-mobile-12
               %ul.checked
                 %li
-                  %a.pjaxload{:href=>url_for("trade.cgi?market=random&form_name=risefall")}= l('Rise/Fall')
+                  %a.pjaxload{:href=>url_for("trading?market=random&formname=risefall")}= l('Rise/Fall')
                 %li
-                  %a.pjaxload{:href=>url_for("trade.cgi?market=random&form_name=higherlower")}= l('Higher/Lower')
+                  %a.pjaxload{:href=>url_for("trading?market=random&formname=higherlower")}= l('Higher/Lower')
                 %li
-                  %a.pjaxload{:href=>url_for("trade.cgi?market=random&form_name=touchnotouch")}= l('Touch/No Touch')
-                %li!= l('In/Out (<a href="[_1]">ends between/outside</a> and <a href="[_2]">stays between/goes outside</a>)', url_for("trade.cgi?market=random&form_name=endsinout"), url_for("trade.cgi?market=random&form_name=staysinout"))
+                  %a.pjaxload{:href=>url_for("trading?market=random&formname=touchnotouch")}= l('Touch/No Touch')
+                %li!= l('In/Out (<a href="[_1]">ends between/outside</a> and <a href="[_2]">stays between/goes outside</a>)', url_for("trading?market=random&formname=endsinout"), url_for("trading?market=random&formname=staysinout"))
                 %li
-                  %a.pjaxload{:href=>url_for("trade.cgi?market=random&expiry_type=duration&form_name=asian&underlying_symbol=R_100&time=5t")}= l('Asians')
+                  %a.pjaxload{:href=>url_for("trading?market=random&expiry_type=duration&formname=asian&underlying=R_100&time=5t")}= l('Asians')
                 %li
-                  %a.pjaxload{:href=>url_for("trade.cgi?market=random&expiry_type=duration&form_name=digits&underlying_symbol=R_100&time=5t")}= l('Digits')
+                  %a.pjaxload{:href=>url_for("trading?market=random&expiry_type=duration&formname=matchdiff&underlying=R_100&time=5t")}= l('Digits')
             .grd-grid-5.grd-grid-mobile-12
               %img.responsive{:src => url_for('images/pages/get-started/get-started-random-markets.svg')}
             .clearfix
@@ -46,11 +46,11 @@
             .grd-grid-12
               %h1= l('Random Indices')
               %p
-                != l('[_1]\'s Random Indices are the [_2], [_3], [_4], and [_5]. These indices correspond to volatilities of 25%, 50%, 75% and 100%', stash->{website_name}, pjax_link_for(l('Random 25 Index'), url_for('trade.cgi?market=random&form_name=risefall&underlying_symbol=R_25')), pjax_link_for(l('Random 50 Index'), url_for('trade.cgi?market=random&form_name=risefall&underlying_symbol=R_50')), pjax_link_for(l('Random 75 Index'), url_for('trade.cgi?market=random&form_name=risefall&underlying_symbol=R_75')), pjax_link_for(l('Random 100 Index'), url_for('trade.cgi?market=random&form_name=risefall&underlying_symbol=R_100')))
+                != l('[_1]\'s Random Indices are the [_2], [_3], [_4], and [_5]. These indices correspond to volatilities of 25%, 50%, 75% and 100%', stash->{website_name}, pjax_link_for(l('Random 25 Index'), url_for('trading?market=random&formname=risefall&underlying=R_25')), pjax_link_for(l('Random 50 Index'), url_for('trading?market=random&formname=risefall&underlying=R_50')), pjax_link_for(l('Random 75 Index'), url_for('trading?market=random&formname=risefall&underlying=R_75')), pjax_link_for(l('Random 100 Index'), url_for('trading?market=random&formname=risefall&underlying=R_100')))
             #random-indices-container
               .grd-grid-8.grd-grid-mobile-12
                 %p
-                  != l('The [_1] is twice as volatile as the [_2], and four times as volatile as the [_3].', pjax_link_for(l('Random 100 Index'), url_for('trade.cgi?market=random&form_name=risefall&underlying_symbol=R_100')), pjax_link_for(l('Random 50 Index'), url_for('trade.cgi?market=random&form_name=risefall&underlying_symbol=R_50')), pjax_link_for(l('Random 25 Index'), url_for('trade.cgi?market=random&form_name=risefall&underlying_symbol=R_25')))
+                  != l('The [_1] is twice as volatile as the [_2], and four times as volatile as the [_3].', pjax_link_for(l('Random 100 Index'), url_for('trading?market=random&formname=risefall&underlying=R_100')), pjax_link_for(l('Random 50 Index'), url_for('trading?market=random&formname=risefall&underlying=R_50')), pjax_link_for(l('Random 25 Index'), url_for('trading?market=random&formname=risefall&underlying=R_25')))
               .grd-grid-4.grd-grid-mobile-12
                 %img.responsive{:src => url_for('images/pages/get-started/get-started-random-indices.svg')}
             .clearfix
@@ -62,20 +62,20 @@
               %h1= l('Random Quotidians')
               %p.heading= l('Don’t be put off by the name. Quotidian just means something that happens everyday.')
               %p
-                != l('[_1] are markets that reset back to a price of 1000 at the start of each trading day (00:00:00 GMT), and all trades settle before the end of the trading day (23:59:59 GMT).', pjax_link_for(l('Random Quotidians'), url_for('trade.cgi?market=random&form_name=risefall&underlying_symbol=RDBEAR')))
+                != l('[_1] are markets that reset back to a price of 1000 at the start of each trading day (00:00:00 GMT), and all trades settle before the end of the trading day (23:59:59 GMT).', pjax_link_for(l('Random Quotidians'), url_for('trading?market=random&formname=risefall&underlying=RDBEAR')))
             #random-quotidians-container
             .grd-grid-6.grd-grid-mobile-12.grd-parent
               .grd-grid-6.grd-centered
                 %img.responsive.img-with-height{:src => url_for('images/pages/get-started/get-started-bull-bear.svg')}
               .grd-grid-12
                 %p
-                  != l('The [_1] simulates a bullish market (it tends to move up). The [_2] simulates a bearish market (it tends to move down).', pjax_link_for(l('Random Bull'), url_for('trade.cgi?market=random&form_name=risefall&underlying_symbol=RDBULL')), pjax_link_for(l('Random Bear'), url_for('trade.cgi?market=random&form_name=risefall&underlying_symbol=RDBEAR')))
+                  != l('The [_1] simulates a bullish market (it tends to move up). The [_2] simulates a bearish market (it tends to move down).', pjax_link_for(l('Random Bull'), url_for('trading?market=random&formname=risefall&underlying=RDBULL')), pjax_link_for(l('Random Bear'), url_for('trading?market=random&formname=risefall&underlying=RDBEAR')))
             .grd-grid-6.grd-grid-mobile-12.grd-parent
               .grd-grid-6.grd-centered
                 %img.responsive.img-with-height{:src => url_for('images/pages/get-started/get-started-moon-sun.svg')}
               .grd-grid-12
                 %p
-                  != l('The [_1] simulates a market that gets more volatile as the day progresses (and then more quiet at night). The [_2] simulates a market that is quiet during the day (but becomes more volatile at night).', pjax_link_for(l('Random Sun'), url_for('trade.cgi?market=random&form_name=risefall&payout=100&underlying_symbol=RDSUN')), pjax_link_for(l('Random Moon'), url_for('trade.cgi?market=random&form_name=risefall&payout=100&underlying_symbol=RDMOON')))
+                  != l('The [_1] simulates a market that gets more volatile as the day progresses (and then more quiet at night). The [_2] simulates a market that is quiet during the day (but becomes more volatile at night).', pjax_link_for(l('Random Sun'), url_for('trading?market=random&formname=risefall&payout=100&underlying=RDSUN')), pjax_link_for(l('Random Moon'), url_for('trading?market=random&formname=risefall&payout=100&underlying=RDMOON')))
             .clearfix
       .section
         %a#random-nocturnes
@@ -84,18 +84,18 @@
             .grd-grid-12
               %h1= l('Random Nocturnes')
               %p
-                != l('Like [_2], [_1] reset back to a price of 1000 each day. The difference is that [_1] reset at 12:00:00 GMT, ([_2] reset at 00:00:00 GMT).', pjax_link_for(l('Random Nocturnes'), url_for('trade.cgi?market=random&form_name=risefall&underlying_symbol=RDYANG')), pjax_link_for(l('Random Quotidians'), url_for('trade.cgi?market=random&form_name=risefall&underlying_symbol=RDBEAR')))
-                != l('If you\'re in Asia, you may find [_1] more attractive because they reset around the time Asian markets close.', pjax_link_for(l("Random Nocturnes"), url_for('trade.cgi?market=random&form_name=risefall&underlying_symbol=RDYANG')))
+                != l('Like [_2], [_1] reset back to a price of 1000 each day. The difference is that [_1] reset at 12:00:00 GMT, ([_2] reset at 00:00:00 GMT).', pjax_link_for(l('Random Nocturnes'), url_for('trading?market=random&formname=risefall&underlying=RDYANG')), pjax_link_for(l('Random Quotidians'), url_for('trading?market=random&formname=risefall&underlying=RDBEAR')))
+                != l('If you\'re in Asia, you may find [_1] more attractive because they reset around the time Asian markets close.', pjax_link_for(l("Random Nocturnes"), url_for('trading?market=random&formname=risefall&underlying=RDYANG')))
             .grd-grid-6.grd-grid-mobile-12.grd-parent
               .grd-grid-6.grd-centered
                 %img.responsive.img-with-height{:src => url_for('images/pages/get-started/get-started-yin-yang.svg')}
               .grd-grid-12
                 %p
-                  != l('The [_1] simulates a bearish market. The [_2] simulates a bullish market.', pjax_link_for(l('Random Yin'), url_for('trade.cgi?market=random&form_name=risefall&underlying_symbol=RDYIN')), pjax_link_for(l('Random Yang'), url_for('trade.cgi?market=random&form_name=risefall&underlying_symbol=RDYANG')));
+                  != l('The [_1] simulates a bearish market. The [_2] simulates a bullish market.', pjax_link_for(l('Random Yin'), url_for('trading?market=random&formname=risefall&underlying=RDYIN')), pjax_link_for(l('Random Yang'), url_for('trading?market=random&formname=risefall&underlying=RDYANG')));
             .grd-grid-6.grd-grid-mobile-12.grd-parent
               .grd-grid-6.grd-centered
                 %img.responsive.img-with-height{:src => url_for('images/pages/get-started/get-started-mars-venus.svg')}
               .grd-grid-12
                 %p
-                  != l('The [_1] simulates a market that is active during the day (but becomes less volatile at night). The [_2] simulates a market that is quiet during the day (but becomes more volatile at night).', pjax_link_for(l('Random Mars'), url_for('trade.cgi?market=random&form_name=risefall&underlying_symbol=RDMARS')), pjax_link_for(l('Random Venus'), url_for('trade.cgi?market=random&form_name=risefall&underlying_symbol=RDVENUS')));
+                  != l('The [_1] simulates a market that is active during the day (but becomes less volatile at night). The [_2] simulates a market that is quiet during the day (but becomes more volatile at night).', pjax_link_for(l('Random Mars'), url_for('trading?market=random&formname=risefall&underlying=RDMARS')), pjax_link_for(l('Random Venus'), url_for('trading?market=random&formname=risefall&underlying=RDVENUS')));
             .clearfix

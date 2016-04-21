@@ -37,7 +37,7 @@ var Purchase = (function () {
             container.style.display = 'block';
             message_container.hide();
             confirmation_error.show();
-            confirmation_error.innerHTML = (/ClientUnwelcome/.test(error.code) ? error['message'] + '<a href="' + page.url.url_for('cashier/authenticate') + '"> ' + text.localize('Authorise your account.' + '</a>') : error['message']);
+            confirmation_error.innerHTML = (/ClientUnwelcome/.test(error.code) ? error['message'] + '<a href="' + page.url.url_for('cashier/authenticatews') + '"> ' + text.localize('Authorise your account.' + '</a>') : error['message']);
         } else {
             var guideBtn = document.getElementById('guideBtn');
             if(guideBtn) {
@@ -120,7 +120,7 @@ var Purchase = (function () {
             var tick_spot_epochs = Object.keys(tick_spots);
             if ( tick_spot_epochs.length > 0 ) {
                 var last_quote = tick_spots[tick_spot_epochs[0]].toString();
-                
+
                 if ( last_quote.indexOf(".") != -1 ) {
                     decimal_points = last_quote.split('.')[1].length;
                 }

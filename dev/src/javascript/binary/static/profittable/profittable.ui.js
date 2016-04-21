@@ -3,7 +3,7 @@ var ProfitTableUI = (function(){
     "use strict";
 
     var profitTableID = "profit-table";
-    var cols = ["buy-date", "ref", "contract", "buy-price", "sell-date", "sell-price", "pl"];
+    var cols = ["buy-date", "ref", "contract", "buy-price", "sell-date", "sell-price", "pl", "details"];
 
     function createEmptyTable(){
         var header = [
@@ -13,12 +13,13 @@ var ProfitTableUI = (function(){
             Content.localize().textPurchasePrice,
             Content.localize().textSaleDate,
             Content.localize().textSalePrice,
-            Content.localize().textProfitLoss
+            Content.localize().textProfitLoss,
+            Content.localize().textDetails
         ];
 
         header[6] = header[6] + (TUser.get().currency ? " (" + TUser.get().currency + ")" : "");
 
-        var footer = [Content.localize().textTotalProfitLoss, "", "", "", "", "", ""];
+        var footer = [Content.localize().textTotalProfitLoss, "", "", "", "", "", "", ""];
 
         var data = [];
         var metadata = {
@@ -72,7 +73,6 @@ var ProfitTableUI = (function(){
         var sellDate = sellMoment.format("YYYY-MM-DD") + "\n" + sellMoment.format("HH:mm:ss");
 
         var ref = transaction["transaction_id"];
-        var contract = transaction["longcode"];
         var buyPrice = Number(parseFloat(transaction["buy_price"])).toFixed(2);
         var sellPrice = Number(parseFloat(transaction["sell_price"])).toFixed(2);
 
@@ -80,12 +80,13 @@ var ProfitTableUI = (function(){
 
         var plType = (pl >= 0) ? "profit" : "loss";
 
-        var data = [buyDate, ref, contract, buyPrice, sellDate, sellPrice, pl];
+        var data = [buyDate, ref, '', buyPrice, sellDate, sellPrice, pl, ''];
         var $row = Table.createFlexTableRow(data, cols, "data");
 
         $row.children(".buy-date").addClass("pre");
         $row.children(".pl").addClass(plType);
         $row.children(".sell-date").addClass("pre");
+        $row.children(".contract").html(transaction["longcode"] + "<br>");
 
         //create view button and append
         var $viewButtonSpan = Button.createBinaryStyledButton();
@@ -94,11 +95,7 @@ var ProfitTableUI = (function(){
         $viewButton.addClass("open_contract_detailsws");
         $viewButton.attr("contract_id", transaction["contract_id"]);
 
-        $row.
-            children(".contract").
-            first().
-            append("<br>").
-            append($viewButtonSpan);
+        $row.children(".contract,.details").append($viewButtonSpan);
 
         return $row[0];
     }

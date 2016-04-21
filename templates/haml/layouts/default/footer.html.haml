@@ -22,8 +22,10 @@
           %ul
             %li
               %a.pjaxload{:href=>url_for("/why-us"), :class => 'pjaxload'}= l('Why Us?')
-            %li
+            %li.ja-hide
               %a.pjaxload{:href=>url_for("/get-started"), :class => 'pjaxload'}= l('Getting Started')
+            %li.all-hide.ja-show-block
+              %a.pjaxload{:href=>url_for("/get-started-jp"), :class => 'pjaxload'}= l('Getting Started')
             %li
               %a.pjaxload{:href=>url_for("/tour"), :class => 'pjaxload'}= l('Platform Tour')
             %li.ja-hide.id-hide

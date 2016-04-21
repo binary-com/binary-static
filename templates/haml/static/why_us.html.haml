@@ -31,9 +31,9 @@
               %ul.checked
                 %li= l('Real-time prices, benchmarked against interbank options markets.')
                 %li
-                  != l("Returns above 100% on simple <a href='[_1]' class='pjaxload'>rise/fall</a> contracts.", url_for('trade.cgi?market=forex&form_name=risefall'))
+                  != l("Returns above 100% on simple <a href='[_1]' class='pjaxload'>rise/fall</a> contracts.", url_for('trading?market=forex&formname=risefall'))
                 %li
-                  != l("Returns above 1000% on <a href='[_1]' class='pjaxload'>higher/lower</a> and <a href='[_2]' class='pjaxload'>touch/no-touch</a> trades.", url_for('trade.cgi?market=forex&form_name=higherlower'), url_for('trade.cgi?market=forex&form_name=touchnotouch'))
+                  != l("Returns above 1000% on <a href='[_1]' class='pjaxload'>higher/lower</a> and <a href='[_2]' class='pjaxload'>touch/no-touch</a> trades.", url_for('trading?market=forex&formname=higherlower'), url_for('trading?market=forex&formname=touchnotouch'))
                 %li= l('No hidden fees or commissions.')
             .grd-grid-5.grd-grid-mobile-10.grd-centered-mobile
               %img.responsive#new-trader-icon{:src => url_for('images/pages/why-us/why-us-sharp-prices.png')}

@@ -186,7 +186,7 @@ var Validate = (function(){
 }());
 
 function validateEmail(mail) {
-  if (/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(mail)){
+  if (/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/.test(mail)){
     return true;
   }
   return false;
@@ -196,7 +196,7 @@ function passwordValid(password) {
   if (password.length > 25) {
     return false;
   }
-  
+
   var r = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,25}$/;
   return r.test(password);
 }

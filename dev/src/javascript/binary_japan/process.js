@@ -1,25 +1,49 @@
-if (typeof is_japan === 'function') {
+if (isJapanTrading()) {
 
-    var processContractForm = function() {
+  var processForgetTables = function() {
+    BinarySocket.send({
+      forget_all: 'pricing_table',
+    });
+  };
 
-        Contract.details(sessionStorage.getItem('formname'));
+  var processPricingTableRequest = function() {
+    processForgetTables();
+    var symbol = $('#underlying').val();
+    var period = $('#period').val();
+    var res = period.split('_');
+    var date_expiry = res[1];
+    var formName = sessionStorage.getItem('formname');
+    var units = Math.abs(parseInt($('#japan_unit').val(), 10)) || 1;
+    var category = formName === 'higherlower' ? 'callput' : formName;
 
-        StartDates.display();
+    PricingTable.sendRequest({
+      symbol: symbol,
+      date_expiry: date_expiry,
+      contract_category: category,
+      units: units,
+    });
+  };
 
-        if (Periods) {
-            Periods.displayPeriods();
-        }
+  var processContractForm = function() {
 
-        displayPrediction();
+    Contract.details(sessionStorage.getItem('formname'));
 
-        displaySpreads();
+    StartDates.display();
 
-        if (sessionStorage.getItem('amount')) $('#amount').val(sessionStorage.getItem('amount'));
-        if (sessionStorage.getItem('currency')) selectOption(sessionStorage.getItem('currency'), document.getElementById('currency'));
+    if (Periods) {
+      Periods.displayPeriods();
+    }
 
-        Durations.display();
+    displayPrediction();
 
-        processPriceRequest();
+    displaySpreads();
 
-    };
+    if (sessionStorage.getItem('japan_unit')) $('#japan_unit').val(sessionStorage.getItem('japan_unit'));
+    if (sessionStorage.getItem('currency')) selectOption(sessionStorage.getItem('currency'), document.getElementById('currency'));
+
+    Durations.display();
+
+    processPricingTableRequest();
+
+  };
 }

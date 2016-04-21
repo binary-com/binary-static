@@ -141,7 +141,7 @@ var Price = (function() {
             type = typeDisplayIdMapping[id];
         }
 
-        var is_spread = false; 
+        var is_spread = false;
         if (params.contract_type && (params.contract_type === 'SPREADU' || params.contract_type === 'SPREADD')) {
             is_spread = true;
         }
@@ -185,30 +185,47 @@ var Price = (function() {
             }
         }
 
-        if (proposal && proposal['display_value']) {
-            if (is_spread) {
-                amount.textContent = proposal['display_value'];
-            } else {
-                amount.textContent = currency.value + ' ' + proposal['display_value'];
-            }
-        }
-
-        if (proposal && proposal['longcode']) {
-            proposal['longcode'] = proposal['longcode'].replace(/[\d\,]+\.\d\d/, function(x) {
-                return '<b>' + x + '</b>';
-            });
-            description.innerHTML = '<div>' + proposal['longcode'] + '</div>';
-        }
-
         if (details['error']) {
             purchase.hide();
             comment.hide();
-            amount_wrapper.hide();
-            description.innerHTML = "";
-            price_wrapper.classList.add('small');
+            var extraInfo = details['error']['details'];
+            if (extraInfo && extraInfo['display_value']) {
+                if (is_spread) {
+                    amount.textContent = extraInfo['display_value'];
+                } else {
+                    amount.textContent = currency.value + ' ' + extraInfo['display_value'];
+                }
+
+                extraInfo['longcode'] = extraInfo['longcode'].replace(/[\d\,]+\.\d\d/, function(x) {
+                    return '<b>' + x + '</b>';
+                });
+
+                description.innerHTML = '<div>' + extraInfo['longcode'] + '</div>';
+                price_wrapper.classList.remove('small');
+            } else {
+                description.innerHTML = "";
+                amount_wrapper.hide();
+                price_wrapper.classList.add('small');
+            }
+
             error.show();
-            error.textContent = details['error'].message;
+            error.textContent = details['error']['message'];
         } else {
+            if (proposal && proposal['display_value']) {
+                if (is_spread) {
+                    amount.textContent = proposal['display_value'];
+                } else {
+                    amount.textContent = currency.value + ' ' + proposal['display_value'];
+                }
+            }
+
+            if (proposal && proposal['longcode']) {
+                proposal['longcode'] = proposal['longcode'].replace(/[\d\,]+\.\d\d/, function(x) {
+                    return '<b>' + x + '</b>';
+                });
+                description.innerHTML = '<div>' + proposal['longcode'] + '</div>';
+            }
+
             purchase.show();
             comment.show();
             amount_wrapper.show();

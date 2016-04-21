@@ -77,7 +77,7 @@ function BinarySocketClass() {
                     else{
                         $('.price_container').hide();
                     }
-                }, 7*1000);
+                }, 60*1000);
             }
 
             binarySocket.send(JSON.stringify(data));
@@ -131,8 +131,14 @@ function BinarySocketClass() {
                         clearInterval(timeouts[response.echo_req.passthrough.req_number]);
                         delete timeouts[response.echo_req.passthrough.req_number];
                     }
-                    else if (passthrough.hasOwnProperty('dispatch_to') && passthrough.dispatch_to === 'ViewPopupWS') {
+                    else if (passthrough.hasOwnProperty('dispatch_to')) {
+                      if (passthrough.dispatch_to === 'ViewPopupWS') {
                         ViewPopupWS.dispatch(response);
+                      } else if (passthrough.dispatch_to === 'ViewChartWS') {
+                        Highchart.dispatch(response);
+                      } else if (passthrough.dispatch_to === 'ViewTickDisplayWS') {
+                        WSTickDisplay.dispatch(response);
+                      }
                     }
                 }
                 var type = response.msg_type;
@@ -156,10 +162,10 @@ function BinarySocketClass() {
                     ViewBalanceUI.updateBalances(response);
                 } else if (type === 'time') {
                     page.header.time_counter(response);
-                    ViewPopupWS.dispatch(response);
                 } else if (type === 'logout') {
-                    page.header.do_logout(response);
                     localStorage.removeItem('jp_test_allowed');
+                    RealityCheckData.clear();
+                    page.header.do_logout(response);
                 } else if (type === 'landing_company_details') {
                     page.client.response_landing_company_details(response);
                     RealityCheck.init();
@@ -193,6 +199,8 @@ function BinarySocketClass() {
                       checkClientsCountry();
                     }
                   }
+                } else if (type === 'reality_check') {
+                    RealityCheck.realityCheckWSHandler(response);
                 }
                 if (response.hasOwnProperty('error')) {
                     if(response.error && response.error.code) {
@@ -202,9 +210,9 @@ function BinarySocketClass() {
                             .on('click', '#ratelimit-refresh-link', function () {
                                 window.location.reload();
                             });
-                      } else if (response.error.code === 'InvalidToken' && 
-                          type !== 'reset_password' && 
-                          type !== 'new_account_virtual' && 
+                      } else if (response.error.code === 'InvalidToken' &&
+                          type !== 'reset_password' &&
+                          type !== 'new_account_virtual' &&
                           type !== 'paymentagent_withdraw') {
                         BinarySocket.send({'logout': '1'});
                       }

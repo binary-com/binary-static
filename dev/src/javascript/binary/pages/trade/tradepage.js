@@ -46,6 +46,7 @@ var TradePage = (function(){
 		trading_page = 0;
 		forgetTradingStreams();
 		BinarySocket.clear();
+		Defaults.clear();
 	};
 
 	return {
