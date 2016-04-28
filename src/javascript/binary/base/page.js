@@ -30,7 +30,7 @@ var GTM = (function() {
 
     var push_data_layer = function(data) {
         // follow the legacy method for not converted pages
-        var legacy_pages = ['affiliate_signup', 'cashier', 'trade.cgi', 'payment'];
+        var legacy_pages = ['affiliate_signup', 'cashier', 'payment'];
         var regex = new RegExp(legacy_pages.join('|'), 'i');
         if(regex.test(location.pathname)) {
             push_data_layer_legacy();
