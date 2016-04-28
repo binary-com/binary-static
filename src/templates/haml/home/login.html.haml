@@ -28,7 +28,7 @@
           %button#submit.button{:name => "submit" :type => "submit"}= l('Login')
 
 %p
-  %a.pjaxload#lost-password{:href=>url_for('/user/lost_password')}= l('Forgot Login ID or Password?')
+  %a.pjaxload#lost-password{:href=>url_for('/user/lost_passwordws')}= l('Forgot Login ID or Password?')
   = ' | '
   %a.pjaxload#lost-password{:href=>url_for('/user/logintrouble')}= l('Login Trouble')
   = ' | '

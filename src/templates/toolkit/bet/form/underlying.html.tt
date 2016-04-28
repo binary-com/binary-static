@@ -12,7 +12,7 @@
         [% END %]
     </select>
     [% IF info_link == 'random' %]
-    <a class="pjaxload unicode-info-icon" id="randomtip" href="[% request.url_for('/get-started/random-markets') %]">ⓘ</a>
+    <a class="pjaxload unicode-info-icon" id="randomtip" href="[% request.url_for('/get-started/volidx-markets') %]">ⓘ</a>
     [% ELSIF info_link == 'smarties' %]
     <a class="pjaxload unicode-info-icon" id="smarttip" href="[% request.url_for('/smart-indices') %]">ⓘ</a>
     [% END %]

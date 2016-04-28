@@ -376,7 +376,9 @@ URL.prototype = {
             var params = this.params();
             var param = params.length;
             while(param--) {
-                this._param_hash[params[param][0]] = params[param][1];
+                if(params[param][0]) {
+                    this._param_hash[params[param][0]] = params[param][1];
+                }
             }
         }
         return this._param_hash;
@@ -408,14 +410,14 @@ Menu.prototype = {
         this.hide_main_menu();
 
         var active = this.active_menu_top();
-        var trading = $('#menu-top li:eq(3)');
+        var trading = $('#menu-top li:eq(4)');
         if(active) {
             active.addClass('active');
             if(trading.is(active)) {
                 this.show_main_menu();
             }
         } else {
-            var is_mojo_page = /^\/$|\/login|\/home|\/smart-indices|\/ad|\/open-source-projects|\/white-labels|\/bulk-trader-facility|\/partners|\/payment-agent|\/about-us|\/group-information|\/group-history|\/careers|\/contact|\/terms-and-conditions|\/terms-and-conditions-jp|\/responsible-trading|\/us_patents|\/lost_password|\/realws|\/virtualws|\/open-positions|\/job-details|\/user-testing|\/japanws|\/maltainvestws$/.test(window.location.pathname);
+            var is_mojo_page = /^\/$|\/login|\/home|\/smart-indices|\/ad|\/open-source-projects|\/bulk-trader-facility|\/partners|\/payment-agent|\/about-us|\/group-information|\/group-history|\/careers|\/contact|\/terms-and-conditions|\/terms-and-conditions-jp|\/responsible-trading|\/us_patents|\/lost_password|\/realws|\/virtualws|\/open-positions|\/job-details|\/user-testing|\/japanws|\/maltainvestws$/.test(window.location.pathname);
             if(!is_mojo_page) {
                 trading.addClass('active');
                 this.show_main_menu();
@@ -675,7 +677,8 @@ Header.prototype = {
         that.client_time_at_response = moment().valueOf();
         that.server_time_at_response = ((start_timestamp * 1000) + (that.client_time_at_response - pass));
         var update_time = function() {
-            clock.html(moment(that.server_time_at_response + moment().valueOf() - that.client_time_at_response).utc().format("YYYY-MM-DD HH:mm") + " GMT");
+            window.time = moment(that.server_time_at_response + moment().valueOf() - that.client_time_at_response).utc();
+            clock.html(window.time.format("YYYY-MM-DD HH:mm") + " GMT");
         };
         update_time();
 
@@ -688,7 +691,6 @@ Header.prototype = {
             BinarySocket.send({"logout": "1"});
         });
     },
-
     validate_cookies: function(){
         if (getCookieItem('login') && getCookieItem('loginid_list')){
             var accIds = $.cookie("loginid_list").split("+");

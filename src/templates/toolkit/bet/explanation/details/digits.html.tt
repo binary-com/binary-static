@@ -4,5 +4,5 @@
 </p>
 
 <p class="hint">
-  <strong>[% l("Note") %]: </strong>[% l("Contracts will be refunded at the purchase price if the following conditions occur: (1) no tick occurs within ​the ​5 minutes ​after​ the start time; (2) no tick occurs within ​the ​5 minutes ​before the end time; (3) there are less than 2 ticks between the start and end times, or (4) for contracts of tick duration, if the contract doesn't end within 5 minutes.") %]
+  <strong>[% l("Note") %]: </strong>[% l("Contracts will be refunded at the purchase price if the following conditions occur: (1) there are less than 2 ticks between the start and end times, or (2) for contracts of tick duration, if the contract doesn't end within 5 minutes.") %]
 </p>

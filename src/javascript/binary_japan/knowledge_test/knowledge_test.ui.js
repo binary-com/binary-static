@@ -81,11 +81,11 @@ var KnowledgeTestUI = (function () {
     function createResultUI(score, time) {
 
         var $resultTable = $('<table></table>', { class: 'kv-pairs'});
-        var $scoreRow = $('<tr></tr>').append($('<td>Score</td>')).append($('<td>'+ score + '</td>'));
+        var $scoreRow = $('<tr></tr>').append($('<td>' + text.localize('Score') + '</td>')).append($('<td>'+ score + '</td>'));
 
         var submitDate = (new Date(time)).toUTCString();
 
-        var $dateRow = $('<tr></tr>').append($('<td>Date</td>')).append($('<td>'+ submitDate + '</td>'));
+        var $dateRow = $('<tr></tr>').append($('<td>' + text.localize('Date') + '</td>')).append($('<td>'+ submitDate + '</td>'));
 
         $resultTable.append($scoreRow).append($dateRow);
 

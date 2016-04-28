@@ -128,6 +128,8 @@ var Price = (function() {
             form_id: form_id
         };
 
+        resetPriceMovement();
+
         return proposal;
     };
 
@@ -141,7 +143,7 @@ var Price = (function() {
             type = typeDisplayIdMapping[id];
         }
 
-        var is_spread = false; 
+        var is_spread = false;
         if (params.contract_type && (params.contract_type === 'SPREADU' || params.contract_type === 'SPREADD')) {
             is_spread = true;
         }
@@ -185,30 +187,47 @@ var Price = (function() {
             }
         }
 
-        if (proposal && proposal['display_value']) {
-            if (is_spread) {
-                amount.textContent = proposal['display_value'];
-            } else {
-                amount.textContent = currency.value + ' ' + proposal['display_value'];
-            }
-        }
-
-        if (proposal && proposal['longcode']) {
-            proposal['longcode'] = proposal['longcode'].replace(/[\d\,]+\.\d\d/, function(x) {
-                return '<b>' + x + '</b>';
-            });
-            description.innerHTML = '<div>' + proposal['longcode'] + '</div>';
-        }
-
         if (details['error']) {
             purchase.hide();
             comment.hide();
-            amount_wrapper.hide();
-            description.innerHTML = "";
-            price_wrapper.classList.add('small');
+            var extraInfo = details['error']['details'];
+            if (extraInfo && extraInfo['display_value']) {
+                if (is_spread) {
+                    amount.textContent = extraInfo['display_value'];
+                } else {
+                    amount.textContent = currency.value + ' ' + extraInfo['display_value'];
+                }
+
+                extraInfo['longcode'] = extraInfo['longcode'].replace(/[\d\,]+\.\d\d/, function(x) {
+                    return '<b>' + x + '</b>';
+                });
+
+                description.innerHTML = '<div>' + extraInfo['longcode'] + '</div>';
+                price_wrapper.classList.remove('small');
+            } else {
+                description.innerHTML = "";
+                amount_wrapper.hide();
+                price_wrapper.classList.add('small');
+            }
+
             error.show();
-            error.textContent = details['error'].message;
+            error.textContent = details['error']['message'];
         } else {
+            if (proposal && proposal['display_value']) {
+                if (is_spread) {
+                    amount.textContent = proposal['display_value'];
+                } else {
+                    amount.textContent = currency.value + ' ' + proposal['display_value'];
+                }
+            }
+
+            if (proposal && proposal['longcode']) {
+                proposal['longcode'] = proposal['longcode'].replace(/[\d\,]+\.\d\d/, function(x) {
+                    return '<b>' + x + '</b>';
+                });
+                description.innerHTML = '<div>' + proposal['longcode'] + '</div>';
+            }
+
             purchase.show();
             comment.show();
             amount_wrapper.show();
@@ -220,9 +239,7 @@ var Price = (function() {
                 displayCommentPrice(comment, currency.value, proposal['ask_price'], proposal['payout']);
             }
             var oldprice = purchase.getAttribute('data-display_value');
-            if (oldprice) {
-                displayPriceMovement(amount, oldprice, proposal['display_value']);
-            }
+            displayPriceMovement(amount, oldprice, proposal['display_value']);
             purchase.setAttribute('data-purchase-id', id);
             purchase.setAttribute('data-ask-price', proposal['ask_price']);
             purchase.setAttribute('data-display_value', proposal['display_value']);

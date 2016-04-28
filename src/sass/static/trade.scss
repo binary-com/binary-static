@@ -78,6 +78,10 @@
   label{
     line-height: 28px;
   }
+  #japan_unit_row,
+  #japan_payout_row{
+    display: none;
+  }
   #contract_market_form_container{
     height: 28px;
     .tm-li{
@@ -220,6 +224,90 @@
   #contract_form_content {
     padding: 0 10px;
   }
+  .contract_heading {
+    text-transform: capitalize;
+    font-weight: bold;
+    padding-top: 2.4em;
+    text-align: center;
+    &.ASIANU {
+      background: url("../images/pages/trade/asian-u_1.svg") no-repeat top center;
+    }
+    &.ASIAND {
+      background: url("../images/pages/trade/asian-d_1.svg") no-repeat top center;
+    }
+    &.DIGITDIFF {
+      background: url("../images/pages/trade/differs_1.svg") no-repeat top center;
+    }
+    &.DIGITMATCH {
+      background: url("../images/pages/trade/matches_1.svg") no-repeat top center;
+    }
+    &.CALLE {
+      background: url("../images/pages/trade/rise_1.png") no-repeat top center;
+    }
+    &.PUTE {
+      background: url("../images/pages/trade/fall_1.png") no-repeat top center;
+    }
+    &.DIGITEVEN {
+      background: url("../images/pages/trade/digits_even_1.svg") no-repeat no-repeat top center;
+      background-size: 40%;
+    }
+    &.DIGITODD {
+      background: url("../images/pages/trade/digits_odd_1.svg") no-repeat no-repeat top center;
+      background-size: 40%;
+    }
+    &.DIGITOVER {
+      background: url("../images/pages/trade/digits_over_1.svg") no-repeat no-repeat top center;
+      background-size: 40%;
+    }
+    &.DIGITUNDER {
+      background: url("../images/pages/trade/digits_under_1.svg") no-repeat no-repeat top center;
+      background-size: 40%;
+    }
+    &.CALL {
+      background: url("../images/pages/trade/rise_1.png") no-repeat top center;
+    }
+    &.PUT {
+      background: url("../images/pages/trade/fall_1.png") no-repeat top center;
+    }
+    &.CALLE {
+      background: url("../images/pages/trade/rise_1.png") no-repeat top center;
+    }
+    &.PUTE {
+      background: url("../images/pages/trade/fall_1.png") no-repeat top center;
+    }
+    &.ONETOUCH {
+      background: url("../images/pages/trade/touch_1.png") no-repeat top center;
+    }
+    &.NOTOUCH {
+      background: url("../images/pages/trade/no-touch_1.png") no-repeat top center;
+    }
+    &.RANGE {
+      background: url("../images/pages/trade/stay-in-between_1.png") no-repeat top center;
+    }
+    &.UPORDOWN {
+      background: url("../images/pages/trade/stay-out_1.png") no-repeat top center;
+    }
+    &.EXPIRYRANGEE {
+      background: url("../images/pages/trade/ends-between_1.png") no-repeat top center;
+    }
+    &.EXPIRYMISSE {
+      background: url("../images/pages/trade/ends-outside_1.png") no-repeat top center;
+    }
+    &.EXPIRYRANGE {
+      background: url("../images/pages/trade/ends-between_1.png") no-repeat top center;
+    }
+    &.EXPIRYMISS {
+      background: url("../images/pages/trade/ends-outside_1.png") no-repeat top center;
+    }
+    &.SPREADU {
+      background: url("../images/pages/trade/spreads.svg") no-repeat top center;
+      background-size: 40%;
+    }
+    &.SPREADD {
+      background: url("../images/pages/trade/spreads_1.svg") no-repeat top center;
+      background-size: 40%;
+    }
+  }
   #contract_prices_container {
     #contract_purchase_reference{
       margin-bottom: 10px;
@@ -286,90 +374,6 @@
     }
     .contract_error {
       background-color: $COLOR_YELLOW;
-    }
-    .contract_heading {
-      text-transform: capitalize;
-      font-weight: bold;
-      padding-top: 2.4em;
-      text-align: center;
-      &.ASIANU {
-        background: url("../images/pages/trade/asian-u_1.svg") no-repeat top center;
-      }
-      &.ASIAND {
-        background: url("../images/pages/trade/asian-d_1.svg") no-repeat top center;
-      }
-      &.DIGITDIFF {
-        background: url("../images/pages/trade/differs_1.svg") no-repeat top center;
-      }
-      &.DIGITMATCH {
-        background: url("../images/pages/trade/matches_1.svg") no-repeat top center;
-      }
-      &.CALLE {
-        background: url("../images/pages/trade/rise_1.png") no-repeat top center;
-      }
-      &.PUTE {
-        background: url("../images/pages/trade/fall_1.png") no-repeat top center;
-      }
-      &.DIGITEVEN {
-        background: url("../images/pages/trade/digits_even_1.svg") no-repeat no-repeat top center;
-        background-size: 40%;
-      }
-      &.DIGITODD {
-        background: url("../images/pages/trade/digits_odd_1.svg") no-repeat no-repeat top center;
-        background-size: 40%;
-      }
-      &.DIGITOVER {
-        background: url("../images/pages/trade/digits_over_1.svg") no-repeat no-repeat top center;
-        background-size: 40%;
-      }
-      &.DIGITUNDER {
-        background: url("../images/pages/trade/digits_under_1.svg") no-repeat no-repeat top center;
-        background-size: 40%;
-      }
-      &.CALL {
-        background: url("../images/pages/trade/rise_1.png") no-repeat top center;
-      }
-      &.PUT {
-        background: url("../images/pages/trade/fall_1.png") no-repeat top center;
-      }
-      &.CALLE {
-        background: url("../images/pages/trade/rise_1.png") no-repeat top center;
-      }
-      &.PUTE {
-        background: url("../images/pages/trade/fall_1.png") no-repeat top center;
-      }
-      &.ONETOUCH {
-        background: url("../images/pages/trade/touch_1.png") no-repeat top center;
-      }
-      &.NOTOUCH {
-        background: url("../images/pages/trade/no-touch_1.png") no-repeat top center;
-      }
-      &.RANGE {
-        background: url("../images/pages/trade/stay-in-between_1.png") no-repeat top center;
-      }
-      &.UPORDOWN {
-        background: url("../images/pages/trade/stay-out_1.png") no-repeat top center;
-      }
-      &.EXPIRYRANGEE {
-        background: url("../images/pages/trade/ends-between_1.png") no-repeat top center;
-      }
-      &.EXPIRYMISSE {
-        background: url("../images/pages/trade/ends-outside_1.png") no-repeat top center;
-      }
-      &.EXPIRYRANGE {
-        background: url("../images/pages/trade/ends-between_1.png") no-repeat top center;
-      }
-      &.EXPIRYMISS {
-        background: url("../images/pages/trade/ends-outside_1.png") no-repeat top center;
-      }
-      &.SPREADU {
-        background: url("../images/pages/trade/spreads.svg") no-repeat top center;
-        background-size: 40%;
-      }
-      &.SPREADD {
-        background: url("../images/pages/trade/spreads_1.svg") no-repeat top center;
-        background-size: 40%;
-      }
     }
     .contract_amount, .contract_description {
       @include BIDIR_VALUE(padding, 10px 10px 10px 5px, 10px 5px 10px 10px);
@@ -494,6 +498,187 @@
   }
   .radio_label {
     margin: 0 10px;
+  }
+  #contract_description1
+  #contract_description2
+  #pricing_table_container
+  #open_positions_container{
+    display: none;
+  }
+}
+
+#open_positions_container {
+  display: none;
+}
+
+#trading_socket_container.japan{
+  #guideBtn {
+    display: none;
+  }
+  #japan_unit {
+    width: 50px;
+  }
+  .contract_heading{
+    float: left;
+    margin-top: 5px;
+    width: 62px;
+  }
+  .contract_longcode{
+    float: left;
+    width: 220px;
+    line-height: 1.5;
+    margin-left: 10px;
+  }
+  #contract_form_content {
+    float: left;
+    padding: 0;
+  }
+  #contract_description1,
+  #contract_description2{
+    float: left;
+    width: 301px;
+    border: 1px solid $COLOR_GRAY;
+    display: none;
+    height: 100px;
+    padding: 10px;
+    margin-left: 2px;
+  }
+  #contract_description2{
+    border-left: none;
+    margin-left: 0;
+    width: 302px;
+  }
+  #pricing_table_container{
+    float: left;
+    width: 100%;
+  }
+  .barrier {
+    flex: 2;
+  }
+  #contract_prices_container{
+    display: none;
+  }
+  #pricing_table {
+    width: 100%;
+  }
+  .multiplier2 input {
+    width: 29px;
+  }
+  .multiplier1{
+    text-align: center;
+  }
+  .col.pricing_table_cell,
+  .col.exercise_price,
+  .col.barrier{
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    display: flex;
+  }
+  .col.barrier{
+    border: 1px solid $COLOR_GRAY;
+  }
+  .col.buy_cell{
+    border-top: 1px solid $COLOR_GRAY;
+    border-bottom: 1px solid $COLOR_GRAY;
+  }
+  .col.sell_cell{
+    border-top: 1px solid $COLOR_GRAY;
+    border-bottom: 1px solid $COLOR_GRAY;
+    border-right: 1px solid $COLOR_GRAY;
+  }
+  .pricing_table_cell .button {
+    color: $COLOR_WHITE;
+    padding: 6px;
+    margin: 0;
+    border-radius: 5px;
+  }
+  .pricing_table_cell.buy_cell .button{
+    background: $COLOR_GREEN;
+  }
+  .pricing_table_cell.sell_cell .button{
+    background: $COLOR_GRAY;
+  }
+  #contract_container #contract_form_container .col.button{
+    margin: 0;
+    text-align: center;
+  }
+  #contract_container #contract_form_container .col.multiplier1{
+    margin: 0 5px;
+  }
+  #contract_container #contract_form_container .pricing_table_row > .col{
+    margin: 0;
+    padding: 5px 0;
+  }
+  .pricing_table_row{
+    padding: 0;
+    margin-top: -1px;
+    clear: left;
+  }
+  .pricing_table_row.row.heading{
+    float: left;
+    clear: left;
+    display: block;
+  }
+
+  .pricing_table_row .exercise_price_h{
+    float: left;
+    width: 305px;
+    text-align: center;
+  }
+
+  .pricing_table_row .prices_h{
+    float: left;
+    width: 163px;
+    text-align: center;
+  }
+
+  #contract_container #contract_form_container .pricing_table_row .col.pricing_table_cell{
+    padding: 5px;
+  }
+  #contract_form_content{
+    width: 310px;
+  }
+
+  .pricing_table_cell.price_rise{
+    background: $COLOR_RED;
+    color: $COLOR_WHITE;
+  }
+
+  .pricing_table_cell.price_fall{
+    background: $COLOR_LIGHT_BLUE;
+    color: $COLOR_WHITE;
+  }
+
+  .pricing_table_cell{
+    position: relative;
+  } 
+
+  .inactive {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: .8;
+    background: $COLOR_LIGHT_GRAY;
+  }
+
+  #period {
+    width: 155px;
+  }
+
+  #payout_row{
+    display: none;
+  }
+
+  #japan_unit_row,
+  #japan_payout_row{
+    display: flex;
+  }
+
+  .price {
+    width: 50px;
   }
 }
 
@@ -658,6 +843,10 @@
   input {
     margin: 0 10px;
   }
+}
+
+#tab_portfolio-content .portfolio-header-margin{
+  display: none;
 }
 
 

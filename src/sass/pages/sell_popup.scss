@@ -179,7 +179,7 @@
             color: $COLOR_WHITE;
         }
         td {
-            @include BIDIR_PROP(padding-left, padding-right, 10%);
+            @include BIDIR_PROP(padding-left, padding-right, 6%);
             @include BIDIR_VALUE(text-align, left, right);
         }
         #sell_details_chart_wrapper {

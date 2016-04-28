@@ -4,7 +4,7 @@
     <p id="welcome_text" class="invisible"></p>
 
     <p class="center-aligned invisible" id="authenticate_button">
-        <a class="button pjaxload" href="[% request.url_for('/cashier/authenticate') %]">
+        <a class="button pjaxload" href="[% request.url_for('/cashier/authenticatews') %]">
             <span>[% l('Authenticate your account') %]</span>
         </a>
     </p>
@@ -15,7 +15,7 @@
 
     <p class="invisible" id="payment_agent">
         [% l('Your account is registered as a Payment Agent.') %]
-        <a class="pjaxload with_login_cookies" href="[% request.url_for('/paymentagent/transfer') %]">[% l('Transfer to client') %]</a>
+        <a class="pjaxload with_login_cookies" href="[% request.url_for('/paymentagent/transferws') %]">[% l('Transfer to client') %]</a>
     </p>
 
     <p class="notice-msg invisible"></p>

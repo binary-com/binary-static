@@ -27,9 +27,14 @@
   }
   #statement-table{
     .flex-tr {     
+      & > th:last-child, & > td:last-child {display: none !important;}
       @media (max-width : $md){
         & > th:nth-child(4){ display : none !important; }
         & > td:nth-child(4){ display : none !important; }
+        & > th:last-child, & > td:last-child {
+          display: table-cell !important;
+          .button {padding: 8px 15px;}
+        }
         .flex-tr-child {
           font-size : 12px;
         }
@@ -37,11 +42,15 @@
     }
   }
   #profit-table{
-
     .flex-tr {     
+      & > th:last-child, & > td:last-child {display: none !important;}
       @media (max-width : $md){
         & > th:nth-child(3){ display : none !important; }
         & > td:nth-child(3){ display : none !important; }
+        & > th:last-child, & > td:last-child {
+          display: table-cell !important;
+          .button {padding: 8px 15px;}
+        }
         .flex-tr-child {
           font-size : 12px;
         }
@@ -50,3 +59,10 @@
   }
 }
 
+@media(max-width: 600px){
+  #profit-table-ws-container, #statement-ws-container {
+      .flex-table-container {
+        overflow: auto;
+      }
+  }
+}

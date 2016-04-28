@@ -1,0 +1,11 @@
+#temp_notice_msg {
+  margin: 0 0 10px 0;
+  #close_temp_msg {
+    position: absolute;
+    color: red;
+    font-size: .8em;
+    cursor: pointer;
+    top: 2px;
+    right: 2px;
+  }
+}

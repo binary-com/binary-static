@@ -10,6 +10,7 @@ var TradePage = (function(){
 		BinarySocket.init({
 			onmessage: function(msg){
 				Message.process(msg);
+				showRandomRenamedMsg(msg);				// temporary,
 			},
 			onclose: function(){
 				processMarketUnderlying();
@@ -46,6 +47,7 @@ var TradePage = (function(){
 		trading_page = 0;
 		forgetTradingStreams();
 		BinarySocket.clear();
+		Defaults.clear();
 	};
 
 	return {

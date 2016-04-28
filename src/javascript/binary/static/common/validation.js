@@ -35,14 +35,6 @@ var Validate = (function(){
     displayErrorMessage(error);
   }
 
-  //check validity of email
-  function validateEmail(mail) {
-    if (/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(mail)){
-      return true;
-    }
-    return false;
-  }
-
   //check validity of token
   function validateToken(token) {
     if (token.length == 48) {
@@ -133,24 +125,23 @@ var Validate = (function(){
 
   function passwordStrong(password, error){
     var tooltipPassword = document.getElementById('tooltip-password');
+    tooltipPassword.setAttribute('style', 'display:none');
     if (testPassword(password)[0] < 20) {
-      tooltipPassword.innerHTML = testPassword(password)[1];
-      if (/[0-9]+/.test(password) && !/[a-zA-Z]+/.test(password)){
-        tooltipPassword.setAttribute('title', text.localize('Try adding more letters.') + ' ' + Content.errorMessage('pass', testPassword(password)[0]));
-      } else if (!/[0-9]+/.test(password) && /[a-zA-Z]+/.test(password)) {
-        tooltipPassword.setAttribute('title', text.localize('Try adding more numbers.') + ' ' + Content.errorMessage('pass', testPassword(password)[0]));
-      } else {
-        tooltipPassword.setAttribute('title', text.localize('Try adding more letters or numbers.') + ' ' + Content.errorMessage('pass', testPassword(password)[0]));
-      }
-      tooltipPassword.setAttribute('style', 'display:inline-block');
       displayErrorMessage(error);
       return errorCounter++;
     }
-    tooltipPassword.setAttribute('style', 'display:none');
     return true;
   }
 
   //give error message for invalid password, needs value of password, repeat of password, and DOM element of error
+  /**
+   *
+   * @param password      password
+   * @param rPassword     confirm password
+   * @param error         dom to show error for password (not jquery!)
+   * @param rError        dom to show error for confirm password (not jquery!)
+   * @returns {boolean}
+     */
   function errorMessagePassword(password, rPassword, error, rError) {
     hideErrorMessage(error);
     hideErrorMessage(rError);
@@ -160,7 +151,6 @@ var Validate = (function(){
       passwordLength(password, error);
       passwordChars(password, error);
       passwordValid(password, error);
-      passwordStrong(password, error);
       if (fieldNotEmpty(rPassword, rError) === true){
         passwordMatching(password, rPassword, rError);
       }
@@ -194,3 +184,39 @@ var Validate = (function(){
     errorMessageToken: errorMessageToken
   };
 }());
+
+function validateEmail(mail) {
+  if (/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/.test(mail)){
+    return true;
+  }
+  return false;
+}
+
+function passwordValid(password) {
+  if (password.length > 25) {
+    return false;
+  }
+
+  var r = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,25}$/;
+  return r.test(password);
+}
+
+/**
+ * Use this if you want to separate validation logic with UI
+ * Use Validate.errorMessagePassword if you want to handle UI with validation together
+ * @param password      password
+ * @returns {Array}     array of error message, can be empty
+ */
+function showPasswordError(password) {
+  var errMsgs = [];
+  if (password.length < 6 || password.length > 25) {
+    errMsgs.push(Content.errorMessage('range', '6-25'));
+  }
+
+  var hasUpperLowerDigitRegex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/;
+  if (!hasUpperLowerDigitRegex.test(password)) {
+    errMsgs.push(text.localize('Password should have lower and uppercase letters with numbers.'));
+  }
+
+  return errMsgs;
+}

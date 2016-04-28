@@ -47,8 +47,11 @@
                             <li>
                                 <a class="smaller-font pjaxload" href="[% request.url_for('why-us') %]"[% target %]>[% l("Why Us?") %]</a>
                             </li>
-                            <li>
+                            <li class="ja-hide">
                                 <a class="smaller-font pjaxload" href="[% request.url_for('get-started') %]"[% target %]>[% l("Get Started") %]</a>
+                            </li>
+                            <li class="all-hide ja-show-block">
+                              <a class="smaller-font pjaxload" href="[% request.url_for('get-started-jp') %]"[% target %]>[% l("Get Started") %]</a>
                             </li>
                             <li>
                                 <a class="smaller-font pjaxload" href="[% request.url_for('tour') %]"[% target %]>[% l("Tour") %]</a>
@@ -79,7 +82,7 @@
                             <input type="submit" value="[% l("Log in") %]" />
                         </span>
                         <span id="login-links">
-                            <a class="pjaxload" id="lost-password" href="[% request.url_for('/user/lost_password') %]">[% l("Lost password?") %]</a>
+                            <a class="pjaxload" id="lost-password" href="[% request.url_for('/user/lost_passwordws') %]">[% l("Lost password?") %]</a>
                         </span>
                     </form>
                 </div>

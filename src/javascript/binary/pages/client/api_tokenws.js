@@ -179,8 +179,8 @@ var APITokenWS = (function() {
 
         // Token Name
         if(!isRequiredError(nameID) && !isCountError(nameID, 2, 32)){
-            if(!(/^[a-zA-Z0-9\s\-]*$/).test(newName)) {
-                showError(nameID, Content.errorMessage('reg', [letters, numbers, space, '-']));
+            if(!(/^\w+$/).test(newName)) {
+                showError(nameID, Content.errorMessage('reg', [letters, numbers, '_']));
             }
         }
 

@@ -50,24 +50,24 @@ var MarketTimesWS = (function() {
     var populateTable = function() {
         $('#errorMsg').addClass('hidden');
 
-        var isJapan = page.language().toLowerCase() === 'ja';
+        var isJapanTrading = page.language().toLowerCase() === 'ja';
 
         var markets = tradingTimes.markets;
 
-        var $ul = $('<ul/>', {class: isJapan ? 'hidden' : ''});
+        var $ul = $('<ul/>', {class: isJapanTrading ? 'hidden' : ''});
         var $contents = $('<div/>');
 
         for(var m = 0; m < markets.length; m++) {
             var tabID = 'market_' + (m + 1);
 
             // tabs
-            if(!isJapan) {
+            if(!isJapanTrading) {
                 $ul.append($('<li/>').append($('<a/>', {href: '#' + tabID, text: markets[m].name, id: 'outline'})));
             }
 
             // contents
             var $market = $('<div/>', {id: tabID});
-            $market.append(createMarketTables(markets[m], isJapan));
+            $market.append(createMarketTables(markets[m], isJapanTrading));
             $contents.append($market);
         }
 
@@ -80,14 +80,14 @@ var MarketTimesWS = (function() {
         $container.tabs('destroy').tabs();
     };
 
-    var createMarketTables = function(market, isJapan) {
+    var createMarketTables = function(market, isJapanTrading) {
         var $marketTables = $('<div/>');
 
         // submarkets of this market
         var submarkets = market.submarkets;
         for(var s = 0; s < submarkets.length; s++) {
             // just show "Major Pairs" when the language is JA
-            if(isJapan) {
+            if(isJapanTrading) {
                 var symbolInfo = symbolSearch(submarkets[s].name);
                 if(symbolInfo.length > 0 && symbolInfo[0].submarket !== 'major_pairs') {
                     continue;
