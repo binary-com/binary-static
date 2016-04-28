@@ -33,7 +33,7 @@
           %li!= l('<span>All markets:</span> currencies, stocks, indices, and commodities.')
           %li!= l('<span>All market conditions:</span> up/down, touch/no-touch, stays in/goes out.')
           %li!= l('<span>All durations:</span> from 10 seconds to 365 days.')
-          %li!= l('<span>All payouts:</span> from $1 to $100,000.')
+          %li!= l('<span>All payouts:</span> from $1 to $50,000.')
 #xcta
   #xreason
     .grd-container
@@ -41,7 +41,7 @@
         %h1.center-aligned.xhead= l('Why choose us')
         .grd-grid-12.grd-grid-mobile-12.grd-grid-phablet-12.center-aligned
           %p= l('Binary.com is the award-winning industry pioneer in online options trading.')
-          %div
+          %div.ja-hide
             %img.small-image{:alt => "", :src => url_for("images/pages/home/awards-t2w.png")}
             %img.small-image{:alt => "", :src => url_for("images/pages/why-us/why-us-GBAF-award-2012.svg")}
             %img.small-image{:alt => "", :src => url_for("images/pages/home/awards-egr.png")}
@@ -74,7 +74,7 @@
           %li= l('Free trading charts')
       .grd-grid-2.grd-grid-mobile-12.grd-grid-phablet-6
       .grd-grid-12.grd-grid-mobile-12.grd-grid-phablet-6.center
-        %p.academy-cta
+        %p.academy-cta.blog
           %a.button{:href=>"https://blog.binary.com", :target => '_blank'}
             %span= l('Start learning')
 #xtestimonial

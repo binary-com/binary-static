@@ -3,8 +3,7 @@
 pjax_config_page("user/profit_table", function(){
     return {
         onLoad: function() {
-            if (!getCookieItem('login')) {
-                window.location.href = page.url.url_for('login');
+            if (page.client.redirect_if_logout()) {
                 return;
             }
             BinarySocket.init({

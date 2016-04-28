@@ -4,7 +4,7 @@
     <p id="welcome_text" class="invisible"></p>
 
     <p class="center-aligned invisible" id="authenticate_button">
-        <a class="button pjaxload" href="[% request.url_for('/cashier/authenticate') %]">
+        <a class="button pjaxload" href="[% request.url_for('/cashier/authenticatews') %]">
             <span>[% l('Authenticate your account') %]</span>
         </a>
     </p>
@@ -15,25 +15,13 @@
 
     <p class="invisible" id="payment_agent">
         [% l('Your account is registered as a Payment Agent.') %]
-        <a class="pjaxload with_login_cookies" href="[% request.url_for('/paymentagent/transfer') %]">[% l('Transfer to client') %]</a>
+        <a class="pjaxload with_login_cookies" href="[% request.url_for('/paymentagent/transferws') %]">[% l('Transfer to client') %]</a>
     </p>
 
     <p class="notice-msg invisible"></p>
-
-    <div class="notice-msg invisible" id="investment_message">
-        <div class="grd-grid-2 grd-hide-mobile">
-            <img class="responsive" src="[% request.url_for('images/pages/cashier/protection-icon.svg') %]"/>
-        </div>
-        <div class="grd-grid-10 grd-grid-mobile-12">
-            [% l('Due to changes in regulation within the European Union, binary options on financial indices are now considered to be an investment activity.') %]
-            <p>
-                [% l('Accordingly, to continue trading binary options on forex/stock indices/commodities, please <a href="[_1]" class="pjaxload">open an account with Binary Investments (Europe) Ltd</a>., which is regulated by the Malta Financial Services Authority.', request.url_for('new_account/maltainvest')) %]
-            </p>
-        </div>
-    </div>
 </div>
 
-<div class="grd-grid-6 grd-grid-mobile-12 grd-parent" id="cashier-portfolio">
+<div class="grd-grid-6 grd-grid-mobile-12 grd-parent invisible" id="cashier-portfolio">
     <div class="grd-grid-6 grd-parent">
         <div class="grd-grid-8 grd-with-padding">
             <a href="[% request.url_for('/cashier') %]" class="pjaxload">
@@ -44,7 +32,7 @@
             <h4>
                 <a href="[% request.url_for('/cashier') %]" class="pjaxload">[% l('Cashier') %]</a>
             </h4>
-            <p>[% l('Make a deposit or withdraw') %]</p>
+            <p>[% l('Make a deposit or withdraw.') %]</p>
         </div>
     </div>
     <div class="grd-grid-6 grd-parent">
@@ -62,7 +50,7 @@
     </div>
 </div>
 
-<div class="grd-grid-6 grd-grid-mobile-12 grd-parent" id="profit-statement">
+<div class="grd-grid-6 grd-grid-mobile-12 grd-parent invisible" id="profit-statement">
     <div class="grd-grid-6 grd-parent">
         <div class="grd-grid-8 grd-with-padding">
             <a href="[% request.url_for('/user/profit_tablews') %]" class="pjaxload">

@@ -115,8 +115,8 @@
       text-transform: uppercase;
       padding: 5px 3px;
       word-break: break-all;
-      white-space: pre-wrap;
-      max-width: 60px;
+      white-space: nowrap;
+      max-width: 100px;
       letter-spacing: 0;
     }
   }

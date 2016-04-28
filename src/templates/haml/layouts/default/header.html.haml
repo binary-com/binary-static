@@ -28,7 +28,7 @@
             %input{:name => 'password', :type => 'password', :placeholder => stash('pwdholder')}
             %input{:type => 'submit', :value => stash('logintext')}
           %span#login-links
-            %a.pjaxload#lost-password{:href=>url_for('/user/lost_password')}= l('Lost password?')
+            %a.pjaxload#lost-password{:href=>url_for('/user/lost_passwordws')}= l('Lost password?')
       .grd-grid-1.grd-hide.grd-show-mobile.grd-no-gutter-mobile.grd-show-phablet
         #mobile-menu-icon-container
           %a{:href => '#mobile-menu', :id => 'mobile-menu-icon'}

@@ -1,23 +1,43 @@
-- stash(
+-  stash(
 -   title => l('Charting'),
 - );
 
-.grd-grid-12
+.grd-grid-12.charting-page
   %h1= l('Charting')
   %p= l('[_1] provides a variety of charts to help you determine what markets to trade on. Try them out.',stash->{website_name})
-.grd-grid-3.grd-grid-mobile-6.grd-parent.ja-hide
-  .grd-grid-8.grd-with-padding
-    %a.pjaxload{:href => '//webtrader.binary.com', :target => '_blank'}
-      %img.responsive.chart-type-icon{:src => url_for('images/pages/charting/highcharts.svg')}
-  .grd-grid-12
-    %h4
-      %a.pjaxload{:href => '//webtrader.binary.com', :target => '_blank'}= l('Webtrader')
-    %p= l('Flexible charting platform with a variety of customisable features.')
-.grd-grid-3.grd-grid-mobile-6.grd-parent.ja-hide
-  .grd-grid-8.grd-with-padding
-    %a.pjaxload{:href => '//tradingview.binary.com', :target => '_blank'}
-      %img.responsive.chart-type-icon{:src => url_for('images/pages/charting/light-charts.svg')}
-  .grd-grid-12
-    %h4
-      %a.pjaxload{:href => '//tradingview.binary.com', :target => '_blank'}= l('TradingView')
-    %p= l('Advanced charting platform with a wide range of technical indicators.')
+  .grd-grid-12.grd-parent
+    .grd-grid-12
+      %h2= l('Webtrader')
+      %p= l('Flexible charting platform with a variety of customisable features.')
+      .grd-grid-6.grd-grid-mobile-12.grd-grid-phablet-8.grd-parent.ja-hide
+        .grd-grid-4.grd-grid-mobile-8
+          %a{:href => '//webtrader.binary.com', :target => '_blank'}
+            %img.responsive.chart-type-icon{:src => url_for('images/pages/charting/webtrader-icon.svg')}
+          %p
+            %a{:href => '//webtrader.binary.com', :target => '_blank'}= l('Web version')
+        .grd-grid-2.grd-hide-mobile
+        .grd-grid-4.grd-grid-mobile-8
+          %a{:href => 'https://chrome.google.com/webstore/detail/webtrader/lcgbonbkhleeeoibhgepeeeldjmgjhcm', :target => '_blank'}
+            %img.responsive.chart-type-icon{:src => url_for('images/pages/charting/webtrader-chrome-app.svg')}
+          %p
+            %a{:href => 'https://chrome.google.com/webstore/detail/webtrader/lcgbonbkhleeeoibhgepeeeldjmgjhcm', :target => '_blank'}= l('Chrome app')
+        .grd-grid-2.grd-hide-mobile
+      .grd-grid-6.grd-hide-mobile
+    .grd-grid-12.separator-line
+    .grd-grid-12
+      %h2= l('Tradingview')
+      %p= l('Advanced charting platform with a wide range of technical indicators.')
+      .grd-grid-6.grd-grid-mobile-12.grd-parent.ja-hide
+        .grd-grid-4.grd-grid-mobile-8
+          %a{:href => '//tradingview.binary.com', :target => '_blank'}
+            %img.responsive.chart-type-icon{:src => url_for('images/pages/charting/tradingview-icon.svg')}
+          %p
+            %a{:href => '//tradingview.binary.com', :target => '_blank'}= l('Web version')
+        .grd-grid-2.grd-hide-mobile
+        .grd-grid-4.grd-grid-mobile-8
+          %a{:href => '//chrome.google.com/webstore/detail/binarycom-charts-tradingv/hjfmkhhogfkmedagjkdbgpineanneemh', :target => '_blank'}
+            %img.responsive.chart-type-icon{:src => url_for('images/pages/charting/tradingview-chrome-app.svg')}
+          %p
+            %a{:href => '//chrome.google.com/webstore/detail/binarycom-charts-tradingv/hjfmkhhogfkmedagjkdbgpineanneemh', :target => '_blank'}= l('Chrome app')
+        .grd-grid-2.grd-hide-mobile
+      .grd-grid-6.grd-hide-mobile

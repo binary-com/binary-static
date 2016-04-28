@@ -1,9 +1,9 @@
-var Content = (function () {
+var Content = (function() {
     'use strict';
 
     var localize = {};
 
-    var populate = function () {
+    var populate = function() {
         localize = {
             textStartTime: text.localize('Start time'),
             textSpot: text.localize('Spot'),
@@ -36,8 +36,7 @@ var Content = (function () {
             textFormHigherLower: text.localize('Higher/Lower'),
             textFormUpDown: text.localize('Up/Down'),
             textFormInOut: text.localize('In/Out'),
-            textContractPeriod: text.localize('Contract period'),
-            textExercisePeriod: text.localize('Exercise price'),
+            textContractPeriod: text.localize('Period'),
             predictionLabel: text.localize('Last Digit Prediction'),
             textContractConfirmationPayout: text.localize('Potential Payout'),
             textContractConfirmationCost: text.localize('Total Cost'),
@@ -64,8 +63,9 @@ var Content = (function () {
             textDescription: text.localize('Description'),
             textCreditDebit: text.localize('Credit/Debit'),
             textBalance: text.localize('Balance'),
+            textDetails: text.localize('Details'),
             textProfitTable: text.localize('Profit Table'),
-            textPurchaseDate: text.localize('Purchase Date'),
+            textPurchaseDate: text.localize('Date (GMT)'),
             textContract: text.localize('Contract'),
             textPurchasePrice: text.localize('Purchase Price'),
             textSaleDate: text.localize('Sale Date'),
@@ -85,15 +85,15 @@ var Content = (function () {
             textMaxAggregateTooltip: text.localize('Presents the maximum aggregate payouts on outstanding contracts in your portfolio. If the maximum is attained, you may not purchase additional contracts without first closing out existing positions.'),
             textTradingLimits: text.localize('Trading Limits'),
             textWithdrawalTitle: text.localize('Withdrawal Limits'),
-            textWithdrawalLimits: text.localize('Your withdrawal limit is EUR %1 (or equivalent in other currency).'),
-            textWithrawalAmount: text.localize('You have already withdrawn the equivalent of EUR %1'),
-            textDayWithdrawalLimit: text.localize('Your %1 day withdrawal limit is currently EUR %2 (or equivalent in other currency).'),
             textAuthenticatedWithdrawal: text.localize('Your account is fully authenticated and your withdrawal limits have been lifted.'),
-            textAggregateOverLast: text.localize('in aggregate over the last'),
-            textWithdrawalForEntireDuration: text.localize('Your withdrawal limit for the entire duration of the account is currently: EUR %1 (or equivalent in other currency).'),
-            textInAggregateOverLifetime: text.localize('in aggregate over the lifetime of your account.'),
-            textNotAllowedToWithdraw: text.localize('Therefore you may not withdraw any additional funds.'),
-            textCurrentMaxWithdrawal: text.localize('Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is EUR %1 (or equivalent in other currency).'),
+            textWithdrawalLimits: text.localize('Your withdrawal limit is [_1] [_2].'),
+            textWithdrawalLimitsEquivalant: text.localize('Your withdrawal limit is [_1] [_2] (or equivalent in other currency).'),
+            textWithrawalAmount: text.localize('You have already withdrawn [_1] [_2].'),
+            textWithrawalAmountEquivalant: text.localize('You have already withdrawn the equivalent of [_1] [_2].'),
+            textCurrentMaxWithdrawal: text.localize('Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is [_1] [_2].'),
+            textCurrentMaxWithdrawalEquivalant: text.localize('Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is [_1] [_2] (or equivalent in other currency).'),
+            textWithdrawalLimitsEquivalantDay: text.localize('Your [_1] day withdrawal limit is currently [_2] [_3] (or equivalent in other currency).'),
+            textWithrawalAmountEquivalantDay: text.localize('You have already withdrawn the equivalent of [_1] [_2] in aggregate over the last [_3] days.'),
             textBuyPrice: text.localize('Buy price'),
             textFinalPrice: text.localize('Final price'),
             textLoss: text.localize('Loss'),
@@ -102,9 +102,9 @@ var Content = (function () {
             textFormEvenOdd: text.localize('Even/Odd'),
             textFormOverUnder: text.localize('Over/Under'),
             textMessageRequired: text.localize('This field is required.'),
-            textMessageCountLimit: text.localize('You should enter between %1 characters.'), // %LIMIT% should be replaced by a range. sample: (6-20)
-            textMessageJustAllowed: text.localize('Only %1 are allowed.'), // %ALLOWED% should be replaced by values including: letters, numbers, space, period, ...
-            textMessageValid: text.localize('Please submit a valid %1.'), // %FIELD% should be replaced by values such as email address
+            textMessageCountLimit: text.localize('You should enter between [_1] characters.'), // [_1] should be replaced by a range. sample: (6-20)
+            textMessageJustAllowed: text.localize('Only [_1] are allowed.'), // [_1] should be replaced by values including: letters, numbers, space, period, ...
+            textMessageValid: text.localize('Please submit a valid [_1].'), // [_1] should be replaced by values such as email address
             textLetters: text.localize('letters'),
             textNumbers: text.localize('numbers'),
             textSpace: text.localize('space'),
@@ -114,27 +114,40 @@ var Content = (function () {
             textApost: text.localize('apostrophe'),
             textPassword: text.localize('password'),
             textPasswordsNotMatching: text.localize('The two passwords that you entered do not match.'),
-            textTokenMissing: text.localize('Verification token is missing.'),
-            textClickHereToRestart: text.localize('Please click on the verification link sent to your email, or click <a class="pjaxload" href="%1">here</a> to restart the verification process.'),
-            textDuplicatedEmail: text.localize('Your provided email address is already in use by another Login ID'),
+            textClickHereToRestart: text.localize('Your token has expired. Please click <a class="pjaxload" href="[_1]">here</a> to restart the verification process.'),
             textAsset: text.localize('Asset'),
             textOpens: text.localize('Opens'),
             textCloses: text.localize('Closes'),
             textSettles: text.localize('Settles'),
             textUpcomingEvents: text.localize('Upcoming Events'),
-            textEmailSent: text.localize('Thanks for signing up! Check your inbox now, to verify your email.'),
             textMr: text.localize('Mr'),
             textMrs: text.localize('Mrs'),
             textMs: text.localize('Ms'),
             textMiss: text.localize('Miss'),
-            textDr: text.localize('Dr'),
-            textProf: text.localize('Prof'),
             textErrorBirthdate: text.localize('Please input a valid date'),
             textSelect: text.localize('Please select'),
             textUnavailableReal: text.localize('Sorry, account opening is unavailable.'),
-            textMessageMinRequired: text.localize('Minimum of %1 characters required.'),
+            textMessageMinRequired: text.localize('Minimum of [_1] characters required.'),
             textFeatureUnavailable: text.localize('Sorry, this feature is not available.'),
-            textMessagePasswordScore: text.localize( 'Password score is: %1. Passing score is: 20.')
+            textExercisePrice: text.localize('Exercise price'),
+            textPrices: text.localize('Prices'),
+            textLots: text.localize('Lots'),
+            textBuy: text.localize('Buy'),
+            textSell: text.localize('Sell'),
+            textCALLE: text.localize('[_1] [_2] payout if [_3] is strictly higher or equal than Exercise price at close  on [_4].'),
+            textPUT: text.localize('[_1] [_2] payout if [_3] is strictly lower than Exercise price at close on [_4].'),
+            textNOTOUCH: text.localize('[_1] [_2] payout if [_3] does not touch Exercise price through close on [_4].'),
+            textONETOUCH: text.localize('[_1] [_2] payout if [_3] touches Exercise price through close on [_4].'),
+            textEXPIRYRANGEE: text.localize('[_1] [_2] payout if [_3] ends on or between low and high values of Exercise price at close on [_4].'),
+            textEXPIRYMISS: text.localize('[_1] [_2] payout if [_3] ends otside low and high values of Exercise price at close on [_4].'),
+            textRANGE: text.localize('[_1] [_2] payout if [_3] stays between low and high values of Exercise price through close on [_4].'),
+            textUPORDOWN: text.localize('[_1] [_2] payout if [_3] goes ouside of low and high values of Exercise price through close on [_4].'),
+            textBuyPriceUnit: text.localize('BUY price per unit'),
+            textSellPriceUnit: text.localize('SELL price  per unit'),
+            textUnits: text.localize('Units'),
+            textMessagePasswordScore: text.localize( 'Password score is: [_1]. Passing score is: 20.'),
+            textShouldNotLessThan: text.localize('Please enter a number greater or equal to [_1].'),
+            textNumberLimit: text.localize('Please enter a number between [_1].')       // [_1] should be a range
         };
 
         var starTime = document.getElementById('start_time_label');
@@ -185,13 +198,23 @@ var Content = (function () {
         }
 
         var predictionLabel = document.getElementById('prediction_label');
-        if(predictionLabel){
+        if (predictionLabel) {
             predictionLabel.textContent = localize.predictionLabel;
         }
 
         var payoutOption = document.getElementById('payout_option');
         if (payoutOption) {
             payoutOption.textContent = localize.textPayout;
+        }
+
+        var japanUnit = document.getElementById('japan_unit_label');
+        if (japanUnit) {
+            japanUnit.textContent = localize.textUnits;
+        }
+
+        var japanPayout = document.getElementById('japan_payout_label');
+        if (japanPayout) {
+            japanPayout.textContent = localize.textPayout;
         }
 
         var stakeOption = document.getElementById('stake_option');
@@ -256,7 +279,7 @@ var Content = (function () {
 
         var jpbarrier_label = document.getElementById('jbarrier_label');
         if (jpbarrier_label) {
-            jpbarrier_label.textContent = localize.textExercisePeriod;
+            jpbarrier_label.textContent = localize.textExercisePrice;
         }
 
         var jpbarrier_high_label = document.getElementById('jbarrier_high_label');
@@ -270,22 +293,22 @@ var Content = (function () {
         }
     };
 
-    var statementTranslation = function(){
+    var statementTranslation = function() {
         var titleElement = document.getElementById("statement-title").firstElementChild;
         titleElement.textContent = localize.textStatement;
     };
 
-    var profitTableTranslation = function(){
+    var profitTableTranslation = function() {
         var titleElement = document.getElementById("profit-table-title").firstElementChild;
         titleElement.textContent = localize.textProfitTable;
     };
 
-    var limitsTranslation = function(){
-        var titleElement = document.getElementById("limits-title").firstElementChild;
+    var limitsTranslation = function() {
+        var titleElement = document.getElementById("limits-ws-container").firstElementChild;
         titleElement.textContent = localize.textLimits;
 
-        if(TUser.get().loginid){
-            var loginId = TUser.get().loginid;
+        if (page.client.is_logged_in && !page.client.is_virtual()) {
+            var loginId = page.client.loginid;
 
             var tradingLimits = document.getElementById("trading-limits");
             tradingLimits.textContent = loginId + " - " + localize.textTradingLimits;
@@ -295,32 +318,38 @@ var Content = (function () {
         }
     };
 
-    var errorMessage = function(messageType, param){
+    var errorMessage = function(messageType, param) {
         var msg = "",
             separator = ', ';
-        switch(messageType){
+        switch (messageType) {
             case 'req':
                 msg = localize.textMessageRequired;
                 break;
             case 'reg':
-                if(param)
-                    msg = localize.textMessageJustAllowed.replace('%1', param.join(separator));
+                if (param)
+                    msg = localize.textMessageJustAllowed.replace('[_1]', param.join(separator));
                 break;
             case 'range':
-                if(param)
-                    msg = localize.textMessageCountLimit.replace('%1', param);
+                if (param)
+                    msg = localize.textMessageCountLimit.replace('[_1]', param);
                 break;
             case 'valid':
-                if(param)
-                    msg = localize.textMessageValid.replace('%1', param);
+                if (param)
+                    msg = localize.textMessageValid.replace('[_1]', param);
                 break;
             case 'min':
-                if(param)
-                    msg = localize.textMessageMinRequired.replace('%1', param);
+                if (param)
+                    msg = localize.textMessageMinRequired.replace('[_1]', param);
                 break;
             case 'pass':
-                if(param)
-                    msg = localize.textMessagePasswordScore.replace('%1', param);
+                if (param)
+                    msg = localize.textMessagePasswordScore.replace('[_1]', param);
+                break;
+            case 'number_not_less_than':
+                msg = localize.textShouldNotLessThan.replace('[_1]', param);
+                break;
+            case 'number_should_between':
+                msg = localize.textNumberLimit.replace('[_1]', param);
                 break;
             default:
                 break;
@@ -329,7 +358,9 @@ var Content = (function () {
     };
 
     return {
-        localize: function () { return localize; },
+        localize: function() {
+            return localize;
+        },
         populate: populate,
         statementTranslation: statementTranslation,
         profitTableTranslation: profitTableTranslation,

@@ -24,6 +24,9 @@ var TradingAnalysis = (function() {
             '<div class="tab-menu">' +
               '<div class="tab-menu-wrap grd-container">' +
                 '<ul id="betsBottomPage" class="tm-ul">' +
+                  '<li id="tab_portfolio" class="tm-li invisible first">' +
+                    '<a href="#tab_portfolio" class="tm-a first">' + text.localize('Portfolio') + '</a>' +
+                  '</li>' +
                   '<li id="tab_graph" class="tm-li first">' +
                     '<a href="#tab_graph" class="tm-a first">' + text.localize('Chart') + '</a>' +
                   '</li>' +
@@ -33,8 +36,7 @@ var TradingAnalysis = (function() {
                     '" class="tm-a">' + text.localize('Explanation') + '</a>' +
                   '</li>' +
                   '<li id="tab_last_digit" class="invisible tm-li">' +
-                    '<a href="' + page.url.url_for('trade/last_digit_info?underlying=' + $('#underlying').val() +
-                    '&ajax_only=1') + '" class="tm-a">' +
+                    '<a href="#" class="tm-a">' +
                     text.localize('Last Digit Stats') + '</a>' +
                   '</li>' +
                   '<li id="tab_japan_info" class="invisible tm-li last">' +
@@ -45,6 +47,7 @@ var TradingAnalysis = (function() {
             '</div>' +
             '<div class="tab-content grd-container">' +
               '<div class="tab-content-wrapper" id="bet_bottom_content">' +
+                '<div id="tab_portfolio-content" class="toggle-content invisible "></div>' +
                 '<div id="tab_graph-content" class="toggle-content invisible">' +
                   '<div id="trade_live_chart"></div>' +
                 '</div>' +
@@ -54,7 +57,7 @@ var TradingAnalysis = (function() {
               '</div>' +
             '</div>' +
           '</div>';
-        if (formName === 'digits') {
+        if (formName === 'digits' || formName === 'overunder' || formName === 'evenodd') {
             $('#tab_last_digit').removeClass("invisible");
         }
         sessionStorage.setItem('currentAnalysisTab', getActiveTab());
@@ -103,15 +106,18 @@ var TradingAnalysis = (function() {
         toggleActiveAnalysisTabs();
 
         tab_japan_info = new BetAnalysis.JapanInfo();
+        BetAnalysis.Portfolio.init();
 
-        if (currentTab === 'tab_japan_info') {
+        if(currentTab === 'tab_portfolio'){
+            BetAnalysis.Portfolio.show();
+        } else if (currentTab === 'tab_japan_info') {
             tab_japan_info.show();
         } else {
+            BetAnalysis.Portfolio.hide();
             tab_japan_info.hide();
             if (currentTab === 'tab_graph') {
                 if (document.getElementById('underlying')){
                     showHighchart();
-                    setUnderlyingTime();
                 } else {
                     BetAnalysis.tab_live_chart.reset();
                     BetAnalysis.tab_live_chart.render(true);
@@ -120,7 +126,7 @@ var TradingAnalysis = (function() {
                 if (currentTab == 'tab_last_digit') {
                     var underlying = $('[name=underlying] option:selected').val() || $('#underlying option:selected').val();
                     var tick = $('[name=tick_count]').val() || 100;
-                    trading_digit_info = BetAnalysis.tab_last_digitws;
+                    trading_digit_info = TradingAnalysis.tab_last_digitws;
                     var request = JSON.parse('{"ticks_history":"'+ underlying +'",'+
                                               '"end": "latest",'+
                                               '"count": '+ tick +','+
@@ -175,7 +181,7 @@ var TradingAnalysis = (function() {
      * get the current active tab if its visible i.e allowed for current parameters
      */
     var getActiveTab = function() {
-        var selectedTab = sessionStorage.getItem('currentAnalysisTab') || 'tab_explanation',
+        var selectedTab = sessionStorage.getItem('currentAnalysisTab') || (isJapanTrading() ? 'tab_portfolio' : 'tab_explanation'),
             selectedElement = document.getElementById(selectedTab);
 
         if (selectedElement && selectedElement.classList.contains('invisible')) {
@@ -191,8 +197,15 @@ var TradingAnalysis = (function() {
         digit_info: function() {
             return trading_digit_info;
         },
+        // Should be removed with legacy trading.
+        set_digit_info: function(obj) {
+            trading_digit_info = obj;
+        },
         japan_info: function() {
             return tab_japan_info;
+        },
+        tab_portfolio: function() {
+            return tab_portfolio;
         },
         getActiveTab: getActiveTab
     };

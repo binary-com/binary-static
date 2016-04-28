@@ -23,7 +23,7 @@ var BetAnalysis = function () {
                         that.tab_explanation.render(tab);
                         shown_some_tab = true;
                     } else if(id == 'tab_last_digit') {
-                        that.tab_last_digit.render(tab);
+                        Symbols.getSymbols();
                         shown_some_tab = true;
                     } else if(id == 'tab_graph') {
                         that.tab_live_chart.render();

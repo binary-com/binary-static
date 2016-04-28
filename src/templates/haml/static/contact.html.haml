@@ -2,7 +2,7 @@
 
 .grd-container
   .grd-grid-12.grd-parent.static_full
-    .grd-grid-2.grd-hide-mobile
+    .grd-grid-2.grd-hide-mobile.ja-hide
       %img.responsive{:src => url_for('images/pages/contact/contact-us-icon.svg')}
     .grd-grid-5.grd-grid-mobile-12
       .grd-row-padding
@@ -10,13 +10,14 @@
       - my $selected_language = stash->{language};
       - my $faq_url = "https://binary.desk.com/customer/" . lc($selected_language) . "/portal/articles";
       .grd-row-padding
-        %span.no-para-margin!= l("You'll find answers to most of your questions on the <a href='[_1]' target='_blank'>FAQ</a> page.", $faq_url)
-      .grd-row-padding.grd-hide-mobile 
+        %span.ja-hide.no-para-margin!= l("You'll find answers to most of your questions on the <a href='[_1]' target='_blank'>FAQ</a> page.", $faq_url)
+        %span.hidden.ja-show.no-para-margin= l("JAPAN ONLY CONTACT TEXT")
+      .grd-row-padding.grd-hide-mobile
       .grd-row-padding
         %span.grd-grid-4.grd-grid-tablet-12.grd-no-gutter= l('Email: ')
         %span#cs_contact_eaddress.grd-grid-7.grd-grid-tablet-12.grd-no-gutter
-      .grd-row-padding.grd-hide-mobile 
-      .grd-row-padding
+      .grd-row-padding.grd-hide-mobile
+      .grd-row-padding.ja-hide
         %span.no-para-margin
           %label.grd-grid-4.grd-grid-tablet-12.grd-no-gutter= l('Telephone:')
           %select.grd-grid-7.grd-grid-tablet-12.grd-no-gutter{:id => 'cs_telephone_number'}

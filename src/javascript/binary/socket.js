@@ -67,7 +67,7 @@ function BinarySocketClass() {
                 data.passthrough = {};
             }
             // temporary check
-            if(data.contracts_for || data.proposal){
+            if((data.contracts_for || data.proposal) && !data.passthrough.hasOwnProperty('dispatch_to')){
                 data.passthrough.req_number = ++req_number;
                 timeouts[req_number] = setTimeout(function(){
                     if(typeof reloadPage === 'function' && data.contracts_for){
@@ -77,7 +77,7 @@ function BinarySocketClass() {
                     else{
                         $('.price_container').hide();
                     }
-                }, 7*1000);
+                }, 60*1000);
             }
 
             binarySocket.send(JSON.stringify(data));
@@ -125,38 +125,98 @@ function BinarySocketClass() {
         binarySocket.onmessage = function (msg){
             var response = JSON.parse(msg.data);
             if (response) {
-                if(response.hasOwnProperty('echo_req') && response.echo_req.hasOwnProperty('passthrough') && response.echo_req.passthrough.hasOwnProperty('req_number')){
-                    clearInterval(timeouts[response.echo_req.passthrough.req_number]);
-                    delete timeouts[response.echo_req.passthrough.req_number];
+                if(response.hasOwnProperty('echo_req') && response.echo_req.hasOwnProperty('passthrough')) {
+                    var passthrough = response.echo_req.passthrough;
+                    if(passthrough.hasOwnProperty('req_number')) {
+                        clearInterval(timeouts[response.echo_req.passthrough.req_number]);
+                        delete timeouts[response.echo_req.passthrough.req_number];
+                    }
+                    else if (passthrough.hasOwnProperty('dispatch_to')) {
+                      if (passthrough.dispatch_to === 'ViewPopupWS') {
+                        ViewPopupWS.dispatch(response);
+                      } else if (passthrough.dispatch_to === 'ViewChartWS') {
+                        Highchart.dispatch(response);
+                      } else if (passthrough.dispatch_to === 'ViewTickDisplayWS') {
+                        WSTickDisplay.dispatch(response);
+                      }
+                    }
                 }
                 var type = response.msg_type;
                 if (type === 'authorize') {
                     if(response.hasOwnProperty('error')) {
+                        LocalStore.set('reality_check.ack', 0);
                        send({'logout': '1', passthrough: {'redirect': 'login'}});
                     }
-                   else {
-                       authorized = true;
-                       TUser.set(response.authorize);
-                       if(typeof events.onauth === 'function'){
-                           events.onauth();
-                       }
-                       send({balance:1, subscribe: 1});
-                       sendBufferedSends();
-                   }
+                    else {
+                        authorized = true;
+                        page.client.response_authorize(response);
+                        if(typeof events.onauth === 'function'){
+                            events.onauth();
+                        }
+                        send({balance:1, subscribe: 1});
+                        send({landing_company_details: TUser.get().landing_company_name});
+                        send({get_settings: 1});
+                        sendBufferedSends();
+                    }
                 } else if (type === 'balance') {
-                   ViewBalanceUI.updateBalances(response);
+                    ViewBalanceUI.updateBalances(response);
                 } else if (type === 'time') {
-                   page.header.time_counter(response);
+                    page.header.time_counter(response);
                 } else if (type === 'logout') {
-                   page.header.do_logout(response);
+                    localStorage.removeItem('jp_test_allowed');
+                    RealityCheckData.clear();
+                    page.header.do_logout(response);
+                } else if (type === 'landing_company_details') {
+                    page.client.response_landing_company_details(response);
+                    RealityCheck.init();
+                } else if (type === 'payout_currencies' && response.echo_req.hasOwnProperty('passthrough') && response.echo_req.passthrough.handler === 'page.client') {
+                    page.client.response_payout_currencies(response);
+                } else if (type === 'get_settings') {
+                    var jpStatus = response.get_settings.jp_account_status;
+
+                    if (jpStatus) {
+                        switch (jpStatus.status) {
+                            case 'jp_knowledge_test_pending': localStorage.setItem('jp_test_allowed', 1);
+                                break;
+                            case 'jp_knowledge_test_fail':
+                                if (Date.now() >= (jpStatus.next_test_epoch * 1000)) {
+                                    localStorage.setItem('jp_test_allowed', 1);
+                                } else {
+                                    localStorage.setItem('jp_test_allowed', 0);
+                                }
+                                break;
+                            default: localStorage.setItem('jp_test_allowed', 0);
+                        }
+
+                        KnowledgeTest.showKnowledgeTestTopBarIfValid(jpStatus);
+                    } else {
+                        localStorage.removeItem('jp_test_allowed');
+                    }
+                } else if (type === 'website_status') {
+                  if (response.website_status.clients_country) {
+                    localStorage.setItem('clients_country', response.website_status.clients_country);
+                    if (isNotBackoffice()) {
+                      checkClientsCountry();
+                    }
+                  }
+                } else if (type === 'reality_check') {
+                    RealityCheck.realityCheckWSHandler(response);
                 }
                 if (response.hasOwnProperty('error')) {
-                    if(response.error && response.error.code && response.error.code === 'RateLimit') {
+                    if(response.error && response.error.code) {
+                      if (response.error.code === 'RateLimit') {
                         $('#ratelimit-error-message')
                             .css('display', 'block')
                             .on('click', '#ratelimit-refresh-link', function () {
                                 window.location.reload();
                             });
+                      } else if (response.error.code === 'InvalidToken' &&
+                          type !== 'reset_password' &&
+                          type !== 'new_account_virtual' &&
+                          type !== 'paymentagent_withdraw' &&
+                          type !== 'cashier') {
+                        BinarySocket.send({'logout': '1'});
+                      }
                     }
                 }
                 if(typeof events.onmessage === 'function'){

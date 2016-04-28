@@ -29,37 +29,64 @@ var SettingsDetailsWS = (function() {
     var getDetails = function(response) {
         var data = response.get_settings;
 
-        // Check if it is a real account or not
-        var isReal = !(/VRT/.test($.cookie('loginid')));
-
         $('#lblCountry').text(data.country);
         $('#lblEmail').text(data.email);
 
-        if(!isReal){ // Virtual Account
+        if(page.client.is_virtual()){ // Virtual Account
             $(RealAccElements).remove();
-        } 
+        }
         else { // Real Account
-            $('#lblName').text((data.salutation || '') + ' ' + (data.first_name || '') + ' ' + (data.last_name || ''));
             var birthDate = data.date_of_birth ? moment.utc(new Date(data.date_of_birth * 1000)).format("YYYY-MM-DD") : '';
             $('#lblBirthDate').text(birthDate);
-            $(fieldIDs.address1).val(data.address_line_1);
-            $(fieldIDs.address2).val(data.address_line_2);
-            $(fieldIDs.city).val(data.address_city);
-
             // Generate states list
             var residence = $.cookie('residence');
             BinarySocket.send({"states_list": residence, "passthrough": {"value": data.address_state}});
-            
-            $(fieldIDs.postcode).val(data.address_postcode);
-            $(fieldIDs.phone).val(data.phone);
+            if (page.client.residence === 'jp') {
+                $('#lblName').text((data.last_name || '') + ' ' + (data.first_name || ''));
+                $('#lblGender').text(text.localize(data.gender) || '');
+                $('#lblOccupation').text(text.localize(data.occupation) || '');
+                $('#lblAddress1').text(data.address_line_1 || '');
+                $('#lblAddress2').text(data.address_line_2 || '');
+                $('#lblCity').text(data.address_city || '');
+                $('#lblPostcode').text(data.address_postcode || '');
+                $('#lblPhone').text(data.phone || '');
+                $('#lblAnnualIncome').text(text.localize(data.annual_income) || '');
+                $('#lblFinancialAsset').text(text.localize(data.financial_asset) || '');
+                $('#lblDailyLossLimit').text(data.daily_loss_limit || '');
+                $('#lblEquities').text(text.localize(data.trading_experience_equities) || '');
+                $('#lblCommodities').text(text.localize(data.trading_experience_commodities) || '');
+                $('#lblForeignCurrencyDeposit').text(text.localize(data.trading_experience_foreign_currency_deposit) || '');
+                $('#lblMarginFX').text(text.localize(data.trading_experience_margin_fx) || '');
+                $('#lblInvestmentTrust').text(text.localize(data.trading_experience_investment_trust) || '');
+                $('#lblPublicCorporationBond').text(text.localize(data.trading_experience_public_bond) || '');
+                $('#lblDerivativeTrading').text(text.localize(data.trading_experience_option_trading) || '');
+                $('#lblPurposeOfTrading').text(text.localize(data.trading_purpose) || '');
+                if (data.hedge_asset !== null && data.hedge_asset_amount !== null) {
+                  $('#lblHedgeAsset').text(text.localize(data.hedge_asset) || '');
+                  $('#lblHedgeAssetAmount').text(data.hedge_asset_amount || '');
+                  $('.hedge').css('display', 'block');
+                }
+                $('.JpAcc').css('display', 'block');
+                $('.rowBirthDate').removeClass('hidden');
+                $('.rowName').removeClass('hidden');
+                $('.rowCustomerSupport').removeClass('hidden');
+            } else {
+                $('#lblName').text((data.salutation || '') + ' ' + (data.first_name || '') + ' ' + (data.last_name || ''));
+                $(fieldIDs.address1).val(data.address_line_1);
+                $(fieldIDs.address2).val(data.address_line_2);
+                $(fieldIDs.city).val(data.address_city);
 
-            $(RealAccElements).removeClass('hidden');
+                $(fieldIDs.postcode).val(data.address_postcode);
+                $(fieldIDs.phone).val(data.phone);
 
-            $(frmBtn).click(function(e){
-                e.preventDefault();
-                e.stopPropagation();
-                return setDetails();
-            });
+                $(RealAccElements).removeClass('hidden');
+
+                $(frmBtn).click(function(e){
+                    e.preventDefault();
+                    e.stopPropagation();
+                    return setDetails();
+                });
+            }
         }
 
         $(formID).removeClass('hidden');
@@ -79,6 +106,7 @@ var SettingsDetailsWS = (function() {
         else {
             $(fieldIDs.state).replaceWith($('<input/>', {id: 'State', type: 'text', maxlength: '35', value: defaultValue}));
         }
+        $('#lblState').text($('#State option:selected').text());
     };
 
     var formValidate = function() {
@@ -91,13 +119,13 @@ var SettingsDetailsWS = (function() {
             state    = $(fieldIDs.state).val(),
             postcode = $(fieldIDs.postcode).val().trim(),
             phone    = $(fieldIDs.phone).val().trim();
-        
+
         var letters = Content.localize().textLetters,
             numbers = Content.localize().textNumbers,
             space   = Content.localize().textSpace,
             period  = Content.localize().textPeriod,
             comma   = Content.localize().textComma;
-        
+
         // address 1
         if(!isRequiredError(fieldIDs.address1) && !(/^[a-zA-Z0-9\s\,\.\-\/\(\)#']+$/).test(address1)) {
             showError(fieldIDs.address1, Content.errorMessage('reg', [letters, numbers, space, period, comma, '- / ( ) # \'']));
@@ -109,9 +137,7 @@ var SettingsDetailsWS = (function() {
         }
 
         // town/city
-        if(!isRequiredError(fieldIDs.city) && !(/^[a-zA-Z\s\-']+$/).test(city)) {
-            showError(fieldIDs.city, Content.errorMessage('reg', [letters, space, '- \'']));
-        }
+        isRequiredError(fieldIDs.city);
 
         // state
         if(!isRequiredError(fieldIDs.state) && ($(fieldIDs.state).is('input') && !(/^[a-zA-Z\s\-']+$/).test(state))) {
@@ -124,7 +150,7 @@ var SettingsDetailsWS = (function() {
         }
 
         // telephone
-        if(!isCountError(fieldIDs.phone, 6, 20) && !(/^(|\+?[0-9\s\-]+)$/).test(phone)) {
+        if(!isCountError(fieldIDs.phone, 6, 35) && !(/^(|\+?[0-9\s\-]+)$/).test(phone)) {
             showError(fieldIDs.phone, Content.errorMessage('reg', [numbers, space, '-']));
         }
 
@@ -195,7 +221,7 @@ var SettingsDetailsWS = (function() {
             .delay(3000)
             .fadeOut(1000);
     };
-   
+
 
     return {
         init: init,
@@ -211,8 +237,7 @@ var SettingsDetailsWS = (function() {
 pjax_config_page("settings/detailsws", function() {
     return {
         onLoad: function() {
-            if (!$.cookie('login')) {
-                window.location.href = page.url.url_for('login');
+            if (page.client.redirect_if_logout()) {
                 return;
             }
 

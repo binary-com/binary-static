@@ -10,7 +10,7 @@ var APITokenWS = (function() {
 
 
     var init = function() {
-        columns = ['Name', 'Token', 'Last Used', 'Action'];
+        columns = ['Name', 'Token', 'Scopes', 'Last Used', 'Action'];
         errorClass  = 'errorfield';
         hideClass   = 'dynamic';
         tableContainer = '#tokens_list';
@@ -68,9 +68,9 @@ var APITokenWS = (function() {
         }
 
         // Hide form if tokens count reached the maximum limit
-        if(api_token.tokens.length >= maxTokens) { 
+        if(api_token.tokens.length >= maxTokens) {
             $('#token_form').addClass(hideClass);
-            showMessage(text.localize('The maximum number of tokens (%1) has been reached.').replace('%1', maxTokens), false);
+            showMessage(text.localize('The maximum number of tokens ([_1]) has been reached.').replace('[_1]', maxTokens), false);
         }
         else {
             $('#token_form').removeClass(hideClass);
@@ -107,23 +107,36 @@ var APITokenWS = (function() {
             e.preventDefault();
             e.stopPropagation();
             if(window.confirm(
-                text.localize('Are you sure that you want to permanently delete token') + 
+                text.localize('Are you sure that you want to permanently delete token') +
                 ': "' + $(this).parents('tr').find('td.name').text() + '"?')) {
                     deleteToken($(this).attr('id'));
             }
         });
     };
 
+    String.prototype.capitalizeFirstLetter = function() {
+        return this.charAt(0).toUpperCase() + this.slice(1);
+    };
+
     var createTableRow = function(token) {
         var lastUsed = token.last_used ? token.last_used : text.localize('Never Used');
+        var scopes = token.scopes.map(function (v) {
+            return v.capitalizeFirstLetter();
+        });
+        // sort with Read, Trade, Payments, Admin
+        var scopes_i = {'Read': 0, 'Trade': 1, 'Payments': 2, 'Admin': 3};
+        scopes.sort(function(a, b) {
+            return scopes_i[a] > scopes_i[b];
+        });
         var $tableRow = Table.createFlexTableRow(
             [
                 token.display_name,
                 token.token,
+                scopes.join(', '),
                 lastUsed,
                 ''  // btnDelete
-            ], 
-            columns, 
+            ],
+            columns,
             "data"
         );
 
@@ -159,16 +172,23 @@ var APITokenWS = (function() {
 
         var nameID  = '#txtName';
         var newName = $(nameID).val().trim();
-        
+
         var letters = Content.localize().textLetters,
             numbers = Content.localize().textNumbers,
             space   = Content.localize().textSpace;
-        
+
         // Token Name
         if(!isRequiredError(nameID) && !isCountError(nameID, 2, 32)){
-            if(!(/^[a-zA-Z0-9\s\-]*$/).test(newName)) {
-                showError(nameID, Content.errorMessage('reg', [letters, numbers, space, '-']));
+            if(!(/^\w+$/).test(newName)) {
+                showError(nameID, Content.errorMessage('reg', [letters, numbers, '_']));
             }
+        }
+
+        var scopes = $('input:checkbox[name="scopes[]"]:checked').map(function () {
+            return this.value;
+        }).get();
+        if (scopes.length === 0) {
+            showError('#scopes', text.localize('Please select at least one scope.'));
         }
 
         return isValid ? newName : false;
@@ -197,11 +217,17 @@ var APITokenWS = (function() {
     // ----- Actions Process -----
     // ---------------------------
     var createToken = function() {
-        var newName = formValidate();
-        if(newName !== false) {
+        var is_valid = formValidate();
+        if(is_valid !== false) {
+            var newName = $('#txtName').val().trim();
+            var scopes = $('input:checkbox[name="scopes[]"]:checked').map(function () {
+                return this.value;
+            }).get();
+
             BinarySocket.send({
                 "api_token" : 1,
-                "new_token" : newName
+                "new_token" : newName,
+                "new_token_scopes": scopes
             });
         }
     };
@@ -258,8 +284,7 @@ var APITokenWS = (function() {
 pjax_config_page("api_tokenws", function() {
     return {
         onLoad: function() {
-            if (!$.cookie('login')) {
-                window.location.href = page.url.url_for('login');
+            if (page.client.redirect_if_logout()) {
                 return;
             }
 

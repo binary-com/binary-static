@@ -1,24 +1,27 @@
 pjax_config_page("limitsws", function(){
     return {
         onLoad: function() {
-            if (!$.cookie('login')) {
-                window.location.href = page.url.url_for('login');
+            if (page.client.redirect_if_logout()) {
                 return;
             }
             Content.populate();
+            Content.limitsTranslation();
+            if (TUser.get().is_virtual) {
+                LimitsWS.limitsError();
+                return;
+            }
             document.getElementById('client_message').setAttribute('style', 'display:none');
 
             BinarySocket.init({
                 onmessage: function(msg){
                     var response = JSON.parse(msg.data);
-
-                    if (/^VRT/.test(TUser.get().loginid)) {
-                        LimitsWS.limitsError();
-                    } else if (response && !/^VRT/.test(TUser.get().loginid)) {
+                    if (response) {
                         var type = response.msg_type;
                         var error = response.error;
 
-                        if (type === 'get_limits' && !error){
+                        if (type === 'authorize' && TUser.get().is_virtual){
+                            LimitsWS.limitsError();
+                        } else if (type === 'get_limits' && !error){
                             LimitsWS.limitsHandler(response);
                         } else if (error) {
                             LimitsWS.limitsError();

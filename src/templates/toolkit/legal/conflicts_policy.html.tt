@@ -5,10 +5,13 @@
     </p>
     <h2>[% l("General") %]</h2>
     <p>
-        [% l('A conflict of interest can arise between the Binary Group companies and associates, the directors and staff of such companies ("us") and you as a client or between your interests and those of another client of ours.') %]
+        [% l("It is understood that Binary Group companies, as trading counterparty, have an interest, relationship or arrangement that is material in relation to any trade effected on behalf of you and it is agreed that any company so interested shall be entitled to retain any benefit or profit received and shall not be liable to account therefore to you by reason only of such conflict.") %]
     </p>
     <p>
         [% l("We aim to establish and maintain and operate effective organisational and administrative arrangements with a view to taking all reasonable steps to prevent conflicts of interest from constituting or giving rise to a material risk of damage to the interests of our clients.") %]
+    </p>
+    <p>
+        [% l("We have in place adequate internal procedures to ensure that you are in all cases treated fairly and that the risk of damage to client interests will be mitigated.") %]
     </p>
     <h2>[% l("Our Policy") %]</h2>
     <p>
@@ -16,6 +19,6 @@
     </p>
     <h2>[% l("Disclosure: general") %]</h2>
     <p>
-        [% l("Where our arrangements to manage conflicts are not or cannot be sufficient to be reasonably confident that risks of damage to a client’s interest will be prevented we aim to disclose the general nature or sources of conflicts. This is aimed at allowing the client the opportunity to consider whether to ask for more information or to continue with the service; we do not aim to provide detailed, highly specific or comprehensive information.") %]
+        [% l("Where our arrangements to manage conflicts are not or cannot be sufficient to be reasonably confident that risks of damage to a client’s interest will be prevented we aim to disclose the general nature or sources of conflicts. This is aimed at allowing the client the opportunity to consider whether to ask for more information by sending an email to compliance<b></b>@<i></i>binary.com, or to continue with the service; we do not aim to provide detailed, highly specific or comprehensive information.") %]
     </p>
 </div>

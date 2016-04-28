@@ -4,8 +4,7 @@ var TopUpVirtualWS = (function() {
     var containerID,
         viewIDs,
         hiddenClass,
-        $views,
-        loginID;
+        $views;
 
     var init = function() {
         containerID = '#topup_virtual';
@@ -15,11 +14,10 @@ var TopUpVirtualWS = (function() {
             error   : '#viewError',
             success : '#viewSuccess'
         };
-        loginID = getCookieItem('loginid');
 
         $views.addClass('hidden');
 
-        if(!(/VRT/).test(loginID)) {
+        if(!page.client.is_virtual()) {
             showMessage(text.localize('Sorry, this feature is available to virtual accounts only.'), false);
         }
         else {
@@ -36,10 +34,10 @@ var TopUpVirtualWS = (function() {
         }
         else{
             showMessage(
-                text.localize('%1 %2 has been credited to your Virtual money account %3')
-                    .replace('%1', response.topup_virtual.currency)
-                    .replace('%2', response.topup_virtual.amount)
-                    .replace('%3', loginID),
+                text.localize('[_1] [_2] has been credited to your Virtual money account [_3]')
+                    .replace('[_1]', response.topup_virtual.currency)
+                    .replace('[_2]', response.topup_virtual.amount)
+                    .replace('[_3]', page.client.loginid),
                 true);
         }
     };
@@ -66,8 +64,7 @@ var TopUpVirtualWS = (function() {
 pjax_config_page("top_up_virtualws", function() {
     return {
         onLoad: function() {
-        	if (!getCookieItem('login')) {
-                window.location.href = page.url.url_for('login');
+            if (page.client.redirect_if_logout()) {
                 return;
             }
 
@@ -75,7 +72,10 @@ pjax_config_page("top_up_virtualws", function() {
                 onmessage: function(msg){
                     var response = JSON.parse(msg.data);
                     if (response) {
-                        if (response.msg_type === "topup_virtual") {
+                        if (response.msg_type === "authorize") {
+                            TopUpVirtualWS.init();
+                        }
+                        else if (response.msg_type === "topup_virtual") {
                             TopUpVirtualWS.responseHandler(response);
                         }
                     }
@@ -86,7 +86,9 @@ pjax_config_page("top_up_virtualws", function() {
             });
 
             Content.populate();
-            TopUpVirtualWS.init();
+            if(TUser.get().hasOwnProperty('is_virtual')) {
+                TopUpVirtualWS.init();
+            }
         }
     };
 });

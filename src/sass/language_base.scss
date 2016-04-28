@@ -5,12 +5,14 @@ body{
     display: none;
     font-style: italic;
   }
+  .all-hide {
+    display: none!important;
+  }
 }
 body.EN{
   .calls_recording{
     display: inline !important;;
   }
-
 }
 body.JA{
   .ja-hide{
@@ -47,6 +49,9 @@ body.JA{
     }
     #bet_guide_content div:nth-child(1) {
       display: none!important;
+    }
+    #language_select {
+      display: none;
     }
   @media screen and (max-width: 845px) {
     #header #menu-top li a.smaller-font, #header ul#menu-top.smaller-font{
@@ -119,6 +124,9 @@ body.ID{
   }
   .extra-space {
       margin-top: 127px;
+  }
+  #language_select {
+    display: none;
   }
   @media screen and (max-width: 480px) {
     .empty-space {

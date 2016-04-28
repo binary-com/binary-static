@@ -1,5 +1,5 @@
 /* GET-STARTED PAGES RULES */
-.get-started {
+.get-started, .get-started-jp {
   @include topspace;
   overflow: hidden;
   .sidebar-left {
@@ -15,6 +15,9 @@
       min-height: 210px;
       background: $COLOR_LIGHT_GRAY;
       margin:0 20px 20px 0;
+      &.section-jp {
+        min-height: 0;
+      }
     }
     .section-header {
       padding: 10px;
@@ -33,6 +36,9 @@
       text-align: center;
       background: $COLOR_BLACK;
       text-decoration: none;
+      &.a-jp {
+        min-height: 160px;
+      }
     }
     a:hover {
       background: $COLOR_DARK_GREEN;
@@ -82,6 +88,30 @@
       &#partners {
         height: 80px;
         background: url("../images/pages/partners/partner.svg") no-repeat 50% 50%/50% rgb(39, 40, 37);
+      }
+      &#how-to-open-an-account-img {
+        height: 80px;
+        background: url("../images/pages/get-started-jp/open_acc.svg") no-repeat;
+      }
+      &#options-basic-knowledge-img {
+        height: 80px;
+        background: url("../images/pages/get-started-jp/knowledge.svg") no-repeat;
+      }
+      &#summary-of-specifications-img {
+        height: 80px;
+        background: url("../images/pages/get-started-jp/summary.svg") no-repeat;
+      }
+      &#identification-documents-img {
+        height: 80px;
+        background: url("../images/pages/get-started-jp/id.svg") no-repeat;
+      }
+      &#trading-guide-img {
+        height: 80px;
+        background: url("../images/pages/get-started-jp/guide.svg") no-repeat;
+      }
+      &#pre-contract-documents-img {
+        height: 80px;
+        background: url("../images/pages/get-started-jp/contract.svg") no-repeat;
       }
     }
   }
@@ -139,5 +169,14 @@
   }
   .trade-type-flash{
     padding-bottom:25px;
+  }
+}
+
+.get-started-jp {
+  .link-size-box {
+    display: table-cell;
+    vertical-align: middle;
+    height: 35px;
+    width: 170px;
   }
 }

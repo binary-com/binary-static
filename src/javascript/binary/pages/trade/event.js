@@ -9,71 +9,71 @@
 var TradingEvents = (function () {
     'use strict';
 
-
     var onStartDateChange = function(value){
-
-        if(!value || !$('#date_start').find('option[value='+value+']').length){
+        var $dateStartSelect = $('#date_start');
+        if(!value || !$dateStartSelect.find('option[value='+value+']').length){
             return 0;
         }
-        $('#date_start').val(value);
 
-        var make_price_request = 1;
-        if (value === 'now') {
-            sessionStorage.removeItem('date_start');
+        var yellowBorder = 'light-yellow-background';
+        if (value !== 'now') {
+            $dateStartSelect.addClass(yellowBorder);
         } else {
-            if ($('expiry_type').val() === 'endtime'){
-                make_price_request = -1;
-                var end_time = moment(value*1000).utc().add(15,'minutes');
-                Durations.setTime(end_time.format("hh:mm"));
-                Durations.selectEndDate(end_time.format("YYYY-MM-DD"));
-            }
-            sessionStorage.setItem('date_start', value);
+            $dateStartSelect.removeClass(yellowBorder);
         }
 
-        Durations.display();
+        $dateStartSelect.val(value);
 
+        var make_price_request = 1;
+        if (value !== 'now' && $('expiry_type').val() === 'endtime') {
+            make_price_request = -1;
+            var end_time = moment(value*1000).utc().add(15,'minutes');
+            Durations.setTime(Defaults.get('expiry_time') || end_time.format("hh:mm"));
+            Durations.selectEndDate(Defaults.get('expiry_date') || end_time.format("YYYY-MM-DD"));
+        }
+        Durations.display();
         return make_price_request;
     };
 
     var onExpiryTypeChange = function(value){
-
         if(!value || !$('#expiry_type').find('option[value='+value+']').length){
             value = 'duration';
         }
-
         $('#expiry_type').val(value);
 
-        sessionStorage.setItem('expiry_type',value);
         var make_price_request = 0;
         if(value === 'endtime'){
             Durations.displayEndTime();
-            if(sessionStorage.getItem('end_date')){
-                Durations.selectEndDate(sessionStorage.getItem('end_date'));
+            if(Defaults.get('expiry_date')){
+                Durations.selectEndDate(Defaults.get('expiry_date'));
                 make_price_request = -1;
             }
+            Defaults.remove('duration_units', 'duration_amount');
         }
         else{
             Durations.display();
-            if(sessionStorage.getItem('duration_units')){
-                TradingEvents.onDurationUnitChange(sessionStorage.getItem('duration_units'));
+            if(Defaults.get('duration_units')){
+                TradingEvents.onDurationUnitChange(Defaults.get('duration_units'));
             }
-            if(sessionStorage.getItem('duration_amount') && sessionStorage.getItem('duration_amount') > $('#duration_minimum').text()){
-                $('#duration_amount').val(sessionStorage.getItem('duration_amount'));
+            var duration_amount = Defaults.get('duration_amount');
+            if(duration_amount && duration_amount > $('#duration_minimum').text()){
+                $('#duration_amount').val(duration_amount);
             }
             make_price_request = 1;
+            Defaults.remove('expiry_date', 'expiry_time', 'end_date');
         }
 
         return make_price_request;
     };
 
     var onDurationUnitChange = function(value){
-
         if(!value || !$('#duration_units').find('option[value='+value+']').length){
             return 0;
         }
-        $('#duration_units').val(value);
 
-        sessionStorage.setItem('duration_units',value);
+        $('#duration_units').val(value);
+        Defaults.set('duration_units', value);
+
         Durations.select_unit(value);
         Durations.populate();
 
@@ -88,12 +88,12 @@ var TradingEvents = (function () {
         var marketNavElement = document.getElementById('contract_markets');
         var onMarketChange = function(market){
             showPriceOverlay();
-            sessionStorage.setItem('market', market);
+            Defaults.set('market', market);
 
             // as different markets have different forms so remove from sessionStorage
             // it will default to proper one
-            sessionStorage.removeItem('formname');
-            sessionStorage.removeItem('underlying');
+            Defaults.remove('formname');
+            Defaults.remove('underlying');
             processMarket(1);
         };
 
@@ -119,7 +119,7 @@ var TradingEvents = (function () {
                 if (e.target && e.target.getAttribute('menuitem')) {
                     var clickedForm = e.target;
                     var isFormActive = clickedForm.classList.contains('active');
-                    sessionStorage.setItem('formname', clickedForm.getAttribute('menuitem'));
+                    Defaults.set('formname', clickedForm.getAttribute('menuitem'));
 
                     setFormPlaceholderContent();
                     // if form is already active then no need to send same request again
@@ -149,7 +149,8 @@ var TradingEvents = (function () {
                         e.target.selectedIndex = 0;
                     }
                     var underlying = e.target.value;
-                    sessionStorage.setItem('underlying', underlying);
+                    Defaults.remove('barrier', 'barrier_high', 'barrier_low');
+                    Defaults.set('underlying', underlying);
                     TradingAnalysis.request();
 
                     Tick.clean();
@@ -162,6 +163,7 @@ var TradingEvents = (function () {
                     processForgetTicks();
                     // get ticks for current underlying
                     Tick.request(underlying);
+                    displayTooltip('', underlying);
                 }
             });
             underlyingElement.addEventListener('mousedown', function(e) {
@@ -172,17 +174,30 @@ var TradingEvents = (function () {
         /*
          * bind event to change in duration amount, request new price
          */
-        var durationAmountElement = document.getElementById('duration_amount');
+        function triggerOnDurationChange(e){
+            if (e.target.value % 1 !== 0 ) {
+                e.target.value = Math.floor(e.target.value);
+            }
+            Defaults.set('duration_amount', e.target.value);
+            Durations.select_amount(e.target.value);
+            processPriceRequest();
+            submitForm(document.getElementById('websocket_form'));
+        }
+        var durationAmountElement = document.getElementById('duration_amount'),
+            inputEventTriggered = false;          // For triggering one of the two events.
         if (durationAmountElement) {
+            durationAmountElement.addEventListener('keypress', onlyNumericOnKeypress);
             // jquery needed for datepicker
-            $('#duration_amount').on('input change', debounce(function (e) {
-                if (e.target.value % 1 !== 0 ) {
-                    e.target.value = Math.floor(e.target.value);
-                }
-                sessionStorage.setItem('duration_amount',e.target.value);
-                Durations.select_amount(e.target.value);
-                processPriceRequest();
-                submitForm(document.getElementById('websocket_form'));
+            $('#duration_amount').on('input', debounce(function (e) {
+                triggerOnDurationChange(e);
+                inputEventTriggered = true;
+            }));
+            $('#duration_amount').on('change', debounce(function (e) {
+                // using Defaults, to update the value by datepicker if it was emptied by keyboard (delete)
+                if(inputEventTriggered === false || !Defaults.get('duration_amount'))
+                    triggerOnDurationChange(e);
+                else
+                    inputEventTriggered = false;
             }));
         }
 
@@ -193,6 +208,7 @@ var TradingEvents = (function () {
         var expiryTypeElement = document.getElementById('expiry_type');
         if (expiryTypeElement) {
             expiryTypeElement.addEventListener('change', function(e) {
+                Defaults.set('expiry_type', e.target.value);
                 onExpiryTypeChange(e.target.value);
                 processPriceRequest();
             });
@@ -204,6 +220,7 @@ var TradingEvents = (function () {
         var durationUnitElement = document.getElementById('duration_units');
         if (durationUnitElement) {
             durationUnitElement.addEventListener('change', function (e) {
+                Defaults.remove('barrier', 'barrier_high', 'barrier_low');
                 onDurationUnitChange(e.target.value);
                 processPriceRequest();
             });
@@ -234,23 +251,14 @@ var TradingEvents = (function () {
          */
         var amountElement = document.getElementById('amount');
         if (amountElement) {
-            amountElement.addEventListener('keypress', function(e) {
-                var key = e.keyCode;
-                var char = String.fromCharCode(e.which);
-                if((char === '.' && e.target.value.indexOf(char) >= 0) ||
-                    (!/[0-9\.]/.test(char) && [8, 37, 39, 46].indexOf(key) < 0) || // delete, backspace, arrow keys
-                    /['%]/.test(char)) { // similarity to arrows key code in some browsers
-                        e.returnValue = false;
-                        e.preventDefault();
-                }
-            });
+            amountElement.addEventListener('keypress', onlyNumericOnKeypress);
 
             amountElement.addEventListener('input', debounce( function(e) {
                 e.target.value = e.target.value.replace(/[^0-9.]/g, '');
                 if (isStandardFloat(e.target.value)) {
                     e.target.value = parseFloat(e.target.value).toFixed(2);
                 }
-                sessionStorage.setItem('amount', e.target.value);
+                Defaults.set('amount', e.target.value);
                 processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));
@@ -264,6 +272,7 @@ var TradingEvents = (function () {
         var dateStartElement = StartDates.node();
         if (dateStartElement) {
             dateStartElement.addEventListener('change', function (e) {
+                Defaults.set('date_start', e.target.value);
                 var r = onStartDateChange(e.target.value);
                 if(r>=0){
                     processPriceRequest();
@@ -278,7 +287,7 @@ var TradingEvents = (function () {
         var amountTypeElement = document.getElementById('amount_type');
         if (amountTypeElement) {
             amountTypeElement.addEventListener('change', function (e) {
-                sessionStorage.setItem('amount_type', e.target.value);
+                Defaults.set('amount_type', e.target.value);
                 processPriceRequest();
             });
         }
@@ -317,7 +326,7 @@ var TradingEvents = (function () {
         var currencyElement = document.getElementById('currency');
         if (currencyElement) {
             currencyElement.addEventListener('change', function (e) {
-                sessionStorage.setItem('currency', e.target.value);
+                Defaults.set('currency', e.target.value);
                 var stopTypeDollarLabel = document.getElementById('stop_type_dollar_label');
                 if (stopTypeDollarLabel && isVisible(stopTypeDollarLabel)) {
                     stopTypeDollarLabel.textContent = e.target.value;
@@ -379,6 +388,7 @@ var TradingEvents = (function () {
         var barrierElement = document.getElementById('barrier');
         if (barrierElement) {
             barrierElement.addEventListener('input', debounce( function (e) {
+                Defaults.set('barrier', e.target.value);
                 processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));
@@ -390,6 +400,7 @@ var TradingEvents = (function () {
         var lowBarrierElement = document.getElementById('barrier_low');
         if (lowBarrierElement) {
             lowBarrierElement.addEventListener('input', debounce( function (e) {
+                Defaults.set('barrier_low', e.target.value);
                 processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));
@@ -401,6 +412,7 @@ var TradingEvents = (function () {
         var highBarrierElement = document.getElementById('barrier_high');
         if (highBarrierElement) {
             highBarrierElement.addEventListener('input', debounce( function (e) {
+                Defaults.set('barrier_high', e.target.value);
                 processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));
@@ -413,7 +425,7 @@ var TradingEvents = (function () {
         if (predictionElement) {
 
             predictionElement.addEventListener('change', debounce( function (e) {
-                sessionStorage.setItem('prediction',e.target.value);
+                Defaults.set('prediction', e.target.value);
                 processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));
@@ -428,7 +440,7 @@ var TradingEvents = (function () {
                 if (isStandardFloat(e.target.value)) {
                     e.target.value = parseFloat(e.target.value).toFixed(2);
                 }
-                sessionStorage.setItem('amount_per_point',e.target.value);
+                Defaults.set('amount_per_point', e.target.value);
                 processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));
@@ -438,7 +450,7 @@ var TradingEvents = (function () {
          * attach an event to change in stop type for spreads
          */
         var stopTypeEvent = function (e) {
-            sessionStorage.setItem('stop_type',e.target.value);
+            Defaults.set('stop_type', e.target.value);
             processPriceRequest();
         };
 
@@ -458,7 +470,7 @@ var TradingEvents = (function () {
                 if (isStandardFloat(e.target.value)) {
                     e.target.value = parseFloat(e.target.value).toFixed(2);
                 }
-                sessionStorage.setItem('stop_loss',e.target.value);
+                Defaults.set('stop_loss', e.target.value);
                 processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));
@@ -473,12 +485,12 @@ var TradingEvents = (function () {
                 if (isStandardFloat(e.target.value)) {
                     e.target.value = parseFloat(e.target.value).toFixed(2);
                 }
-                sessionStorage.setItem('stop_profit',e.target.value);
+                Defaults.set('stop_profit', e.target.value);
                 processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));
         }
-        
+
         // For verifying there are 2 digits after decimal
         var isStandardFloat = (function(value){
             return (value % 1 !== 0 && ((+parseFloat(value)).toFixed(10)).replace(/^-?\d*\.?|0+$/g, '').length>2);
@@ -529,7 +541,8 @@ var TradingEvents = (function () {
         if(period){
             period.addEventListener('change', function (e) {
                 Periods.displayBarriers();
-                processPriceRequest();
+                processPricingTableRequest();
+                // processPriceRequest();
                 var japan_info = TradingAnalysis.japan_info();
                 if(japan_info && TradingAnalysis.getActiveTab() === 'tab_japan_info'){
                     japan_info.show();
@@ -537,7 +550,7 @@ var TradingEvents = (function () {
             });
         }
 
-        if(typeof is_japan === 'function'){
+        if(isJapanTrading()){
             var amount_type = document.getElementById('amount_type');
             var options = amount_type.getElementsByTagName('option');
             for(var d=0; d<options.length; d++){
@@ -561,6 +574,14 @@ var TradingEvents = (function () {
                 load_with_pjax(url);
             }));
         }
+
+        var $japanUnit = $('#japan_unit');
+        var japanState = PricingTable.getState();
+        $japanUnit.keyup(function(e){
+            var value = Math.abs(parseInt(e.target.value, 10)) || 1;
+            japanState.units = value;
+            $('#japan_payout').text('¥'+ parseInt(value)*1000);
+        });
 
         /*
          * attach datepicker and timepicker to end time durations

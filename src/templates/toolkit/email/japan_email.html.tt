@@ -1,0 +1,783 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Binary.com</title>
+</head>
+
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+    <style type="text/css">
+    /* /\/\/\/\/\/\/\/\/ CLIENT-SPECIFIC STYLES /\/\/\/\/\/\/\/\/ */
+
+    #outlook a {
+        padding: 0;
+    }
+    /* Force Outlook to provide a "view in browser" message */
+
+    .ReadMsgBody {
+        width: 100%;
+    }
+
+    .ExternalClass {
+        width: 100%;
+    }
+    /* Force Hotmail to display emails at full width */
+
+    .ExternalClass,
+    .ExternalClass p,
+    .ExternalClass span,
+    .ExternalClass font,
+    .ExternalClass td,
+    .ExternalClass div {
+        line-height: 100%;
+    }
+    /* Force Hotmail to display normal line spacing */
+
+    body,
+    table,
+    td,
+    p,
+    a,
+    li,
+    blockquote {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+    }
+    /* Prevent WebKit and Windows mobile changing default text sizes */
+
+    table,
+    td {
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+    }
+    /* Remove spacing between tables in Outlook 2007 and up */
+
+    img {
+        -ms-interpolation-mode: bicubic;
+    }
+    /* Allow smoother rendering of resized image in Internet Explorer */
+    /* /\/\/\/\/\/\/\/\/ RESET STYLES /\/\/\/\/\/\/\/\/ */
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    img {
+        border: 0;
+        height: auto;
+        line-height: 100%;
+        outline: none;
+        text-decoration: none;
+    }
+
+    table {
+        border-collapse: collapse !important;
+    }
+
+    body,
+    #bodyTable,
+    #bodyCell {
+        height: 100% !important;
+        margin: 0;
+        padding: 0;
+        width: 100% !important;
+    }
+    /* /\/\/\/\/\/\/\/\/ TEMPLATE STYLES /\/\/\/\/\/\/\/\/ */
+    /* ========== Page Styles ========== */
+
+    #bodyCell {
+        padding: 20px;
+    }
+
+    #templateContainer {
+        width: 700px;
+    }
+
+    body,
+    #bodyTable {
+        background-color: #FFFFFF;
+    }
+
+    #templateContainer h1 {
+        color: #ed8021 !important;
+        display: block;
+        font-family: Arial;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 100%;
+        letter-spacing: normal;
+        margin-top: 0;
+        margin-right: 0;
+        margin-bottom: 40px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    h2 {
+        color: #090b4c !important;
+        display: block;
+        font-family: Arial;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 100%;
+        letter-spacing: normal;
+        margin-top: 0;
+        margin-right: 0;
+        margin-bottom: 10px;
+        margin-left: 0;
+        text-align: left;
+    }
+
+    h3 {
+        color: #000 !important;
+        display: block;
+        font-family: Arial;
+        font-size: 1.17em;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 100%;
+        letter-spacing: normal;
+        margin-top: 15px;
+        margin-right: 0;
+        margin-bottom: 5px;
+        margin-left: 0;
+        /*text-align: center;*/
+    }
+
+    h4 {
+        color: #2e8836 !important;
+        display: block;
+        font-family: Arial;
+        font-size: 0.8em;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 100%;
+        letter-spacing: normal;
+        margin-top: 0;
+        margin-right: 0;
+        margin-bottom: 10px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    a {
+        text-decoration: none;
+    }
+    /* ========== Header Styles ========== */
+
+    #templateHeader {
+        background-color: #ffffff;
+        margin-top: 25px;
+    }
+
+    .headerContent {
+        color: #333333;
+        font-family: Arial;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 100%;
+        padding-top: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        text-align: left;
+        vertical-align: middle;
+        margin-bottom: 40px;
+    }
+    /**
+            * @tab Header
+            * @section header link
+            * @tip Set the styling for your email's header links. Choose a color that helps them stand out from your text.
+            */
+
+    .headerContent a:link,
+    .headerContent a:visited,
+    /* Yahoo! Mail Override */
+
+    .headerContent a .yshortcuts
+    /* Yahoo! Mail Override */
+
+    {
+        color: #699A7D;
+        font-weight: normal;
+    }
+
+    #headerImage {
+        height: auto;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        margin-bottom: 40px;
+    }
+    /* ========== Body Styles ========== */
+
+    #templateBody {
+        background-color: #ffffff;
+    }
+
+    .bodyContent {
+        color: #000;
+        font-family: Arial;
+        font-size: 18px;
+        line-height: 150%;
+        padding-top: 10px;
+        padding-right: 5px;
+        padding-bottom: 10px;
+        padding-left: 5px;
+        text-align: left;
+    }
+
+    .mainColumnContainer {
+        width: 300px;
+    }
+
+    p {
+        color: #000;
+        text-align: left;
+        font-size: 18px;
+        line-height: 140%;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+
+    .list {
+        color: #333333;
+    }
+
+    .list li {
+        margin-bottom: 10px;
+    }
+
+    .bodyContent a:link,
+    .bodyContent a:visited,
+    /* Yahoo! Mail Override */
+
+    .bodyContent a .yshortcuts
+    /* Yahoo! Mail Override */
+
+    {
+        color: #2e8836;
+        text-decoration: none;
+    }
+
+    .bodyContent img {
+        display: inline;
+        height: auto;
+        max-width: 660px;
+    }
+    /* ========== Column Styles ========== */
+
+    .templateColumnContainer {
+        width: 200px;
+    }
+
+    #templateColumns {
+        background-color: #ffffff;
+        border-top: 1px solid #FFFFFF;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .calltoaction {
+        text-align: center!important;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .button {
+        margin-top: 15px;
+        padding: 10px;
+        color: #ffffff!important;
+        font-weight: bold;
+        font-size: 21px;
+        display: inline;
+        background: #288942;
+        text-decoration: none!important;
+        text-align: center!important;
+        line-height: 40px;
+    }
+
+    .buttonSmall {
+        margin-top: 15px;
+        padding: 15px;
+        color: #ffffff!important;
+        font-weight: bold;
+        font-size: 21px;
+        display: inline;
+        background: #288942;
+        text-decoration: none!important;
+        text-align: center!important;
+        line-height: 40px;
+    }
+
+    .steps {
+        text-align: center!important;
+    }
+
+    .center {
+        text-align: center!important;
+    }
+
+    .leftM {
+        margin-left: 50px;
+    }
+
+    .leftColumnContent {
+        color: #777777;
+        font-family: Arial;
+        font-size: 11px;
+        line-height: 100%;
+        padding-top: 0;
+        padding-right: 10px;
+        padding-bottom: 20px;
+        padding-left: 10px;
+        text-align: left;
+    }
+
+    .leftColumnContent-footer {
+        color: #777777;
+        font-family: verdana;
+        font-size: 10px;
+        line-height: 150%;
+        padding-top: 0;
+        padding-right: 10px;
+        padding-bottom: 5px;
+        padding-left: 10px;
+        text-align: center;
+    }
+
+    .leftColumnContent a:link,
+    .leftColumnContent a:visited,
+    /* Yahoo! Mail Override */
+
+    .leftColumnContent a .yshortcuts
+    /* Yahoo! Mail Override */
+
+    {
+        color: #699A7D;
+        font-weight: normal;
+    }
+
+    .centerColumnContent {
+        color: #777777;
+        font-family: Arial;
+        font-size: 11px;
+        line-height: 100%;
+        padding-top: 0;
+        padding-right: 10px;
+        padding-bottom: 20px;
+        padding-left: 10px;
+        text-align: left;
+    }
+
+    .centerColumnContent-footer {
+        color: #777777;
+        font-family: verdana;
+        font-size: 10px;
+        line-height: 150%;
+        padding-top: 0;
+        padding-right: 10px;
+        padding-bottom: 5px;
+        padding-left: 10px;
+        text-align: center;
+    }
+
+    .centerColumnContent a:link,
+    .centerColumnContent a:visited,
+    /* Yahoo! Mail Override */
+
+    .centerColumnContent a .yshortcuts
+    /* Yahoo! Mail Override */
+
+    {
+        color: #EB4102;
+        font-weight: normal;
+    }
+
+    .rightColumnContent {
+        color: #777777;
+        font-family: Arial;
+        font-size: 11px;
+        line-height: 100%;
+        padding-top: 0;
+        padding-right: 10px;
+        padding-bottom: 20px;
+        padding-left: 10px;
+        text-align: left;
+    }
+
+    .rightColumnContent-footer {
+        color: #777777;
+        font-family: verdana;
+        font-size: 10px;
+        line-height: 150%;
+        padding-top: 0;
+        padding-right: 10px;
+        padding-bottom: 5px;
+        padding-left: 10px;
+        text-align: center;
+    }
+
+    .rightColumnContent-footer a {
+        text-decoration: none;
+    }
+
+    .rightColumnContent a:link,
+    .rightColumnContent a:visited,
+    /* Yahoo! Mail Override */
+
+    .rightColumnContent a .yshortcuts
+    /* Yahoo! Mail Override */
+
+    {
+        color: #699A7D;
+        font-weight: normal;
+    }
+
+    .leftColumnContent img,
+    .rightColumnContent img,
+    .centerColumnContent img {
+        display: block;
+        height: auto;
+        max-width: 260px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    /* ========== Footer Styles ========== */
+
+    #templateFooter {
+        background-color: #ffffff;
+        border-top: 1px solid #FFFFFF;
+    }
+
+    .footerContent {
+        color: #808080;
+        font-family: Arial;
+        font-size: 10px;
+        line-height: 150%;
+        padding-top: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        text-align: left;
+    }
+
+    .footer {
+        margin-top: 20px;
+        font-family: arial;
+        padding: 10px 25px 10px 20px;
+        background-color: #273051;
+        color: #ffffff;
+        font-size: 12px;
+        line-height: 140%;
+    }
+
+    .footer p {
+        font-family: arial;
+        font-size: 12px;
+    }
+
+    .footerContent a:link,
+    .footerContent a:visited,
+    /* Yahoo! Mail Override */
+
+    .footerContent a .yshortcuts,
+    .footerContent a span
+    /* Yahoo! Mail Override */
+
+    {
+        color: #606060;
+        font-weight: normal;
+    }
+
+    .footer-border {
+        width: 7px;
+    }
+
+    .learnMore {
+        font-weight: bold;
+        color: #999999;
+        font-size: 16px;
+        font-family: arial;
+        padding-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    .login {
+        color: #090b4c!important;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: normal;
+        text-align: center;
+    }
+
+    .content-block img {
+        max-width: 200px;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .content-block p {
+        width: 90%;
+    }
+
+    .content-block .tickTrade {
+        max-width: 125px!important;
+    }
+
+    .fund-dec {
+        width: 420px;
+    }
+
+    .fund-dec p {
+        line-height: normal;
+    }
+    .condition{
+        font-size:12px;
+        font-style: italic;
+        color:#777777;
+    }
+    .widecol h5{
+        font-size:14px;
+         line-height: 140%;
+    }
+    .biel{font-size:11px;font-family:Arial;color:#999999;text-align:justify;}
+    /* /\/\/\/\/\/\/\/\/ MOBILE STYLES /\/\/\/\/\/\/\/\/ */
+
+    @media only screen and (max-width: 480px) {
+        /* /\/\/\/\/\/\/ CLIENT-SPECIFIC MOBILE STYLES /\/\/\/\/\/\/ */
+
+        body,
+        table,
+        td,
+        p,
+        a,
+        li,
+        blockquote {
+            -webkit-text-size-adjust: none !important;
+        }
+        /* Prevent Webkit platforms from changing default text sizes */
+
+        body {
+            width: 100% !important;
+            min-width: 100% !important;
+        }
+        /* Prevent iOS Mail from adding padding to the body */
+        /* /\/\/\/\/\/\/ MOBILE RESET STYLES /\/\/\/\/\/\/ */
+
+        #templateBody img {
+            width: 100%!important;
+        }
+        #bodyCell {
+            padding: 5px !important;
+        }
+        p {
+            font-size: 14px!important;
+            margin-top: 20px!important;
+            margin-bottom: 20px!important;
+        }
+        /* /\/\/\/\/\/\/ MOBILE TEMPLATE STYLES /\/\/\/\/\/\/ */
+        /* ======== Page Styles ======== */
+
+        #templateContainer {
+            max-width: 700px !important;
+            width: 100% !important;
+        }
+        h1 {
+            font-size: 26px !important;
+            line-height: 100% !important;
+        }
+        h2 {
+            font-size: 20px !important;
+            line-height: 100% !important;
+        }
+        h3 {
+            font-size: 18px !important;
+            line-height: 100% !important;
+        }
+        h4 {
+            font-size: 16px !important;
+            line-height: 100% !important;
+        }
+        /* ======== Header Styles ======== */
+
+        #templatePreheader {
+            display: none !important;
+        }
+        #headerImage {
+            height: auto !important;
+            max-width: 700px !important;
+            margin-bottom: 20px!important;
+            /*width: 100% !important;*/
+        }
+        .headerContent {
+            font-size: 20px !important;
+            line-height: 125% !important;
+        }
+        /* ======== Body Styles ======== */
+
+        .bodyContent {
+            font-size: 14px !important;
+            line-height: 125% !important;
+            padding-left: 10px!important;
+            padding-right: 10px!important;
+        }
+        .content-block {
+            width: 100%!!important;
+            display: block!important;
+            text-align: center!important;
+            padding: 0 20px!important;
+        }
+        .content-block p {
+            width: 100%!important;
+        }
+        /* ======== Column Styles ======== */
+
+        .templateColumnContainer {
+            display: block !important;
+            width: 100% !important;
+        }
+        .mainColumnContainer {
+            display: block !important;
+            width: 100% !important;
+        }
+        .calltoaction {
+            text-align: center!important;
+            margin-top: 20px!important;
+            margin-bottom: 20px!important;
+        }
+        .button {
+            margin-top: 15px!important;
+            padding: 13px!important;
+            color: #ffffff!important;
+            font-weight: bold!important;
+            font-size: 15px!important;
+            display: inline!important;
+            background: #288942!important;
+            text-decoration: none!important;
+            text-align: center!!important;
+        }
+        .buttonSmall {
+            margin-top: 15px!important;
+            padding: 10px!important;
+            color: #ffffff!important;
+            font-weight: bold!important;
+            font-size: 12px!important;
+            display: inline!important;
+            background: #288942!important;
+            text-decoration: none!important;
+            text-align: center!important;
+        }
+        .leftM {
+            margin-left: 0px!important;
+        }
+        .fund-dec {
+            width: 100%!important;
+            display: block!important;
+        }
+        .mobile-hide {
+            display: none!important;
+        }
+        .columnImage {
+            height: auto !important;
+            max-width: 480px !important;
+            /*width: 100% !important;*/
+        }
+        .leftColumnContent {
+            font-size: 12px !important;
+            line-height: 125% !important;
+            text-align: justify;
+        }
+        .centerColumnContent {
+            font-size: 12px !important;
+            line-height: 125% !important;
+            text-align: justify;
+        }
+        .rightColumnContent {
+            font-size: 12px !important;
+            line-height: 125% !important;
+            text-align: justify;
+        }
+        /* ======== Footer Styles ======== */
+
+        .footerContent {
+            font-size: 14px !important;
+            line-height: 115% !important;
+        }
+        .footerContent a {
+            display: block !important;
+        }
+        .centerColumnContent-footer {
+            font-size: 12px!important;
+        }
+        .leftColumnContent-footer {
+            font-size: 12px!important;
+        }
+        .templateColumnContainer {
+            border-bottom: 1px dotted #777777;
+        }
+        .footer-border {
+            display: none!important;
+        }
+        /* Place footer social and utility links on their own lines, for easier access */
+    }
+    </style>
+    <center>
+        <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
+            <tr>
+                <td align="center" valign="top" id="bodyCell">
+                    <!-- BEGIN TEMPLATE // -->
+                    <table border="0" cellpadding="0" cellspacing="0" id="templateContainer">
+                        <tr>
+                            <td align="center" valign="top">
+                                <!-- BEGIN HEADER // -->
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateHeader">
+                                    <tr>
+                                        <td valign="top" class="headerContent">
+                                            <a href="https://www.binary.com/?l=JA&utm_source=customer_io&utm_medium=email&utm_content=header_logo&utm_campaign=email_template">
+                                                <img src="https://marketing.binary.com/images/email/logo.png" id="headerImage" />
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- // END HEADER -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" valign="top">
+                                <!-- BEGIN BODY // -->
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateBody">
+                                    <tr>
+                                        <td valign="top" class="bodyContent" style="width: 100%;">
+                                            <!-- ////////////////////////////////////////////////////////// -->
+                                            {{content}}
+                                            <!-- ////////////////////////////////////////////////////////// -->
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- // END BODY -->
+                            </td>
+                        </tr>
+                      </table>
+                </td>
+            </tr>
+            <tr>
+
+                <td>
+                    <p class="biel">
+                        This email and any files transmitted with it are confidential and intended solely for the use of the individual or entity to whom they are addressed. If you have received this email in error, please notify the system manager. Please note that any views or opinions presented in this email are solely those of the author and do not necessarily represent those of the Company. Finally, the recipient should check this email and any attachments for the presence of viruses. The company accepts no liability for any damage caused by any virus transmitted by this email.
+
+
+                    </p>
+                </td>
+            </tr>
+      </table>
+      <!-- // END TEMPLATE -->
+    </center>
+</body>
+
+</html>

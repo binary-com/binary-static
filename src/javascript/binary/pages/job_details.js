@@ -22,7 +22,7 @@ pjax_config_page('/open-positions/job-details', function() {
           $(window).on('hashchange', function(){
             showSelectedDiv();
           });
-          $('.job-details').find('#title').html(dept.replace(/_/g, ' '));
+          $('.job-details').find('#title').html(text.localize(dept.replace(/_/g, ' ')));
           var deptImage = $('.dept-image'),
               sourceImage = deptImage.attr('src').replace('Information_Technology', dept);
           deptImage.attr('src', sourceImage)
@@ -35,7 +35,7 @@ pjax_config_page('/open-positions/job-details', function() {
               section = $('#' + dept + '-' + sections[i]);
               section.insertAfter('.sections div:last-child');
               if (section.attr('class')) {
-                $('#sidebar-nav a[href="#' + sections[i] + '"]').html(section.attr('class').replace(/_/g, ' '));
+                $('#sidebar-nav a[href="#' + sections[i] + '"]').html(text.localize(section.attr('class').replace(/_/g, ' ')));
               }
           }
           $('.sidebar').show();

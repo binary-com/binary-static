@@ -22,15 +22,17 @@
           %ul
             %li
               %a.pjaxload{:href=>url_for("/why-us"), :class => 'pjaxload'}= l('Why Us?')
-            %li
+            %li.ja-hide
               %a.pjaxload{:href=>url_for("/get-started"), :class => 'pjaxload'}= l('Getting Started')
+            %li.all-hide.ja-show-block
+              %a.pjaxload{:href=>url_for("/get-started-jp"), :class => 'pjaxload'}= l('Getting Started')
             %li
               %a.pjaxload{:href=>url_for("/tour"), :class => 'pjaxload'}= l('Platform Tour')
-            %li.ja-hide
+            %li.ja-hide.id-hide
               %a{:href=>"http://www.gamcare.org.uk/", :target => "_blank"}= l('GamCare')
             %li.blog.ja-hide
               %a{:href=>"http://blog.binary.com", :target => '_blank'}= l('Blog')
-            %li.ja-hide
+            %li.ja-hide.id-hide
               %a{:href=>"http://blog.binary.com/en/webinar/", :target => "_blank"}= l('Webinars')
         .grd-grid-4
           %h1.ja-hide= l('Trading')
@@ -60,7 +62,7 @@
                   %a.pjaxload{:href=>url_for("responsible-trading")}= l('Responsible Trading')
                 %li.ja-hide
                   %a.pjaxload{:href=>url_for("/terms-and-conditions?selected_tab=complaints-disputes-tac-tab")}= l('Complaints and Disputes')
-                %li.ja-hide
+                %li.ja-hide.id-hide
                   %a.pjaxload{:href=>url_for("/legal/us_patents"), :class=>"us_patent_link"}= l('Patents')
         .grd-grid-4
           %h1= l('Market Data')
@@ -77,7 +79,7 @@
                   %img.responsive#iom_icon_footer{:src => url_for('images/pages/footer/partner-icon.svg')}
   #footer-regulatory.ja-top-padding
     .grd-container.grd-default-container
-      .grd-parent.grd-grid-12.regulatory-logo
+      .grd-parent.grd-grid-12.regulatory-logo.id-hide
         .grd-grid-2
           %a{:href => "http://www.gov.im/gambling/", :target => "_blank"}
             %img.responsive#iom_icon_footer{:src => url_for('images/pages/footer/isle-of-man.png')}
@@ -94,9 +96,6 @@
         #regulatory-text.grd-grid-9.grd-grid-phablet-7.grd-grid-mobile-12!= l("This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='[_1]' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='[_2]' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in the USA, Japan, Costa Rica or Hong Kong, or to persons under age 18.", "https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172", "https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495")
         #social-networks.ja-hide.grd-grid-3.grd-grid-mobile-12.grd-centered-mobile
           = include('layouts/default/social')
-    #appcache-reload-message
-      .message
-        != l("A new version of the interface is available. This page will <a href='#' id='appcache-refresh-link'>refresh</a> in 30 seconds.")
     #ratelimit-error-message
       .message
         != l("You have reached the rate limit of requests per second. To continue, please <a href='javascript:;' id='ratelimit-refresh-link'>refresh</a> the page.")

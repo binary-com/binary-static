@@ -4,8 +4,11 @@
             <li>
                 <a class="pjaxload" href="[% request.url_for('why-us') %]"[% target %]>[% l("Why Us?") %]</a>
             </li>
-            <li>
-                <a class="pjaxload" href="[% request.url_for('get-started') %]"[% target %]>[% l("Get Started") %]</a>
+            <li class="ja-hide">
+              <a class="pjaxload" href="[% request.url_for('get-started') %]"[% target %]>[% l("Get Started") %]</a>
+            </li>
+            <li class="all-hide ja-show-block">
+                <a class="pjaxload" href="[% request.url_for('get-started-jp') %]"[% target %]>[% l("Get Started") %]</a>
             </li>
             <li>
                 <a class="pjaxload" href="[% request.url_for('tour') %]"[% target %]>[% l("Tour") %]</a>

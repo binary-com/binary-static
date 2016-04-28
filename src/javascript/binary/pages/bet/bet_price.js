@@ -572,7 +572,6 @@ var BetPrice = function() {
                         var bet = JSON.parse(data);
                         BetForm.spot.update(bet.spot);
                         BetPrice.order_form.update_from_stream(bet);
-                        BetAnalysis.tab_last_digit.update(BetForm.attributes.underlying(), bet.spot);
                     }
                 },
             };

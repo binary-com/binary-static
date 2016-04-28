@@ -1,7 +1,7 @@
 <div class="grd-grid-12">
     <h2>[% l("Terms and Conditions") %]</h2>
     <p>
-    	[% l("Japan website Terms and Conditions Paragraph 1") %]
+      [% l("Japan website Terms and Conditions Paragraph 1") %]
     </p>
-    <a href="[% request.url_for('/download/japan/T&C(20150826).protected.pdf') %]" download>[% l("Japan website Download Text for Terms and Conditions Document") %]</a>
+    [% l("Japan website Download Text for Terms and Conditions Document") %]
 </div>

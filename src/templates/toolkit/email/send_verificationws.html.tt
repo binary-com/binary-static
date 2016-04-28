@@ -1,0 +1,8 @@
+[% l("<p style='font-weight: bold; margin-bottom: 0;'>Thanks for signing up for a virtual account!</p>
+<p style='margin-bottom: 0; margin-top: 0;'>Enter the following verification token into the form to [_1]:
+  <p style='margin-bottom: 0; margin-top: 0;'>
+    <span style='background: #f2f2f2; padding: 10px;'>[_2]</span>
+  </p>
+</p>
+<p style='margin-top: 0;'>Enjoy trading with us on Binary.com.</p>
+", purpose, code) %]

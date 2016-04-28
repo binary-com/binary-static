@@ -41,7 +41,7 @@
             <td class="details flex-tr-child">!longcode!</td>
             <td class="purchase flex-tr-child">!currency! <strong>!buy_price!</strong></td>
             <td class="indicative flex-tr-child">!currency! <strong class="indicative_price"></strong></td>
-            <td class="button flex-tr-child"><button class="button open_contract_details" contract_id="!contract_id!">:view:</button></td>
+            <td class="button flex-tr-child"><button class="button open_contract_detailsws" contract_id="!contract_id!">:view:</button></td>
           </tr>
         </tbody>
 

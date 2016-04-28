@@ -443,3 +443,32 @@ ul.checked {
 #main-menu .items li a {
    white-space: nowrap;
 }
+
+#japan-form .hint {
+  margin-bottom: 0;
+}
+
+.charting-page img.responsive {
+  width: 140px;
+  height: 140px;
+}
+
+.popup_page_overlay {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.fake-link {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.light-yellow-background {
+    background-color: lightyellow;
+}

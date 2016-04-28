@@ -263,7 +263,7 @@ var BetForm = function () {
                     var analysis_tab = BetForm.attributes.extratab();
                     if(analysis_tab == 'last_digit') {
                         // We should show exactly one of these
-                        BetAnalysis.tab_last_digit.show_tab();
+                        $('#tab_last_digit').removeClass("invisible");
                     } else {
                         // Hide them all if none selected
                         MenuContent.hide_tab($('#tab_last_digit'));

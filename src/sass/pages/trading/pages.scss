@@ -68,32 +68,9 @@
   background-image: url("../images/pages/logintrouble/chromelogo-icon_1.png");
 }
 
-#risefall {
-  background-image: url("../images/pages/contract_guide/rise-fall.svg");
-}
-
-#higherlower {
-  background-image: url("../images/pages/contract_guide/higher-lower.svg");
-}
-
-#touchnotouch {
-  background-image: url("../images/pages/contract_guide/touch-notouch.svg");
-}
-
-#inout {
-  background-image: url("../images/pages/contract_guide/in-out.svg");
-}
-
 /* Fixed width to match datepicker */
 #duration_amount {
   width: 95px;
-}
-/* Content of boxes is longer on Bet Guide page */
-#content #bet_guide_content {
-    background: none;
-    .li-2-boxes-content {
-        height: 10em;
-    }
 }
 
 #account_balance {
@@ -102,15 +79,13 @@
   width: 35%;
   font-size: 100%;
   display: none;
-}
-
-#account_balance td {
-  text-align: right;
-  padding: 0;
-}
-
-#account_balance .currency {
-  padding: 0 2px;
+  td {
+    text-align: right;
+    padding: 0;
+  }
+  .currency {
+    padding: 0 2px;
+  }
 }
 
 #std_loading_img {
@@ -137,10 +112,9 @@
   input[type="checkbox"] {
     border: none;
   }
-}
-
-#tradingform select {
-  width: 6.5em;
+  select {
+    width: 6.5em;
+  }
 }
 
 #statement-table table tfoot th.num {

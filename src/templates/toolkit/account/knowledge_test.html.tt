@@ -1,0 +1,55 @@
+<div id="knowledge-test-container">
+    <h1 id="knowledge-test-header">[% l('{JAPAN ONLY}Knowledge Test') %]</h1>
+    <p id="knowledge-test-msg"></p>
+    <div id="disclaimer">
+        <h3>[% l('{JAPAN ONLY}Disclaimer for knowledge test') %]</h3>
+        <ul>
+            <li>[% l('{JAPAN ONLY}This knowledge test is required by law. As we provide the test, we know customers better whether the customers are suitable investors to be carried out the binary options trading, and customers can start trading with us.') %]</li>
+            <li>[% l('{JAPAN ONLY}To invest a binary options investment accurately, the customer are required knowledge and experience related to derivative transactions.') %]</li>
+            <li>[% l('{JAPAN ONLY}This test is for the purpose of confirming if the customers have basic knowledge related to options trading .') %]</li>
+            <li>[% l('{JAPAN ONLY}It is determined that proper by the results of this test, if you want to start the transaction, and then also as a trouble on the transaction occurred between the Company , the Company despite missing is knowledge related to options trading trading cause of action and you agree that you will not is that it has admitted .') %]</li>
+            <li>[% l('{JAPAN ONLY}It is determined the customers have basic knowledge of option trading by the results of the knowledge test. If the customers start trading, the customers need to agree not have lawsuit despite the customer are shortage of knowledge related to options trading, and it cause damages, we admit to open the trading account.') %]</li>
+            <li>[% l('{JAPAN ONLY}It prohibits the copying of the questions . In addition , You agree that you will not leak to third party') %]</li>
+        </ul>
+    </div>
+
+    <div id="knowledge-test-answer" class="invisible">
+        <div id="section1-result">
+            <h2>[% l('{JAPAN ONLY}Section 1: Structure') %]</h2>
+        </div>
+        <div id="section2-result">
+            <h2>[% l('{JAPAN ONLY}Section 2: Method') %]</h2>
+        </div>
+        <div id="section3-result">
+            <h2>[% l('{JAPAN ONLY}Section 3: Outline') %]</h2>
+        </div>
+        <div id="section4-result">
+            <h2>[% l('{JAPAN ONLY}Section 4: Risk') %]</h2>
+        </div>
+        <div id="section5-result">
+            <h2>[% l('{JAPAN ONLY}Section 5: Calculation') %]</h2>
+        </div>
+    </div>
+    <div id="knowledge-test-questions" class="invisible">
+        <div id="section1-question">
+            <h2>[% l('{JAPAN ONLY}Section 1: Structure') %]</h2>
+        </div>
+        <div id="section2-question">
+            <h2>[% l('{JAPAN ONLY}Section 2: Method') %]</h2>
+        </div>
+        <div id="section3-question">
+            <h2>[% l('{JAPAN ONLY}Section 3: Outline') %]</h2>
+        </div>
+        <div id="section4-question">
+            <h2>[% l('{JAPAN ONLY}Section 4: Risk') %]</h2>
+        </div>
+        <div id="section5-question">
+            <h2>[% l('{JAPAN ONLY}Section 5: Calculation') %]</h2>
+        </div>
+
+        <span class="button">
+            <button id="knowledge-test-submit" class="button">[% l('Submit') %]</button>
+        </span>
+    </div>
+
+</div>
