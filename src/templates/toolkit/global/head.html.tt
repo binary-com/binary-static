@@ -34,7 +34,7 @@
         <link rel="icon" type="image/png" sizes="32x32" href="[% request.url_for('/images/favicons/favicon-32x32.png') %]" >
 
         [% FOREACH key = available_languages.keys %]
-            <link rel="alternate" href="[% request.get_current_path() =%]?l=[% key %]" hreflang="[% key %]"/>
+            <link rel="alternate" href="[% request.url_for(request.get_current_path(), { l => $key }) =%]" hreflang="[% key %]"/>
         [% END %]
         [%= FOREACH css_file IN css_files =%]
             <link rel="stylesheet" href="[%= css_file =%]">
