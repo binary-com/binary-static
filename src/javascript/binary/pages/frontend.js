@@ -677,7 +677,7 @@ pjax_config_page('\/login|\/loginid_switch', function() {
     return {
         onLoad: function() {
             if(!$('body').hasClass('BlueTopBack')) {
-                window.location.href = page.url.url_for('oauth2/authorize', 'app_id=1');
+                window.location.href = Login.login_url();
             }
         }
     };
