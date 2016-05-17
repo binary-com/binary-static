@@ -23,7 +23,7 @@ function BinarySocketClass() {
         socketUrl;
         var host = window.location.host;
         if((/www\.binary\.com/i).test(host)) {
-            socketUrl = 'wss://ws.binaryws.com/websockets/v3?app_key=binarycom';
+            socketUrl = 'wss://ws.binaryws.com/websockets/v3?app_id=1';
         } else if((/binaryqa/i).test(host)) {
             socketUrl = 'wss://' + host + '/websockets/v3';
         } else {

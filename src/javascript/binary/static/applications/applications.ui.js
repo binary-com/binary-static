@@ -35,7 +35,7 @@ var ApplicationsUI = (function(){
         var $viewButton = $viewButtonSpan.children(".button").first();
         $viewButton.text(text.localize("Revoke access"));
         $viewButton.on("click",function(){
-            ApplicationsData.revokeApplication(data.app_key);
+            ApplicationsData.revokeApplication(data.app_id);
             $row.css({ opacity: 0.5 });
         });
         $row.children(".action").first().append($viewButtonSpan);
