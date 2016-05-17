@@ -5,11 +5,29 @@ var LoggedInHandler = (function() {
         parent.window['is_logging_in'] = 1; // this flag is used in base.js to prevent auto-reloading this page
         var redirect_url;
         try {
-            storeTokens();
-            page.client.set_cookie('login', page.client.get_token(page.client.loginid));
+            var tokens  = storeTokens(),
+                loginid = $.cookie('loginid'),
+                cookie_domain;
+
+            if(!$.cookie('loginid')) { // redirected to another domain (e.g. github.io) so those cookie are not accessible here
+                var loginids = Object.keys(tokens);
+                var loginid_list = '';
+                loginids.map(function(id) {
+                    loginid_list += (loginid_list ? '+' : '') + id + ':' + (/^V/i.test(id) ? 'V' : 'R') + ':E'; // since there is not any data source to check, so assume all are enabled, disabled accounts will be handled on authorize
+                });
+                loginid = loginids[0];
+                cookie_domain = window.location.hostname;
+                // set cookies
+                page.client.set_cookie('loginid'     , loginid     , cookie_domain);
+                page.client.set_cookie('loginid_list', loginid_list, cookie_domain);
+            }
+            page.client.set_cookie('login', tokens[loginid], cookie_domain);
+
+            // set flags
             sessionStorage.setItem('check_tnc', '1');
             if (!$('body').hasClass('BlueTopBack')) localStorage.setItem('risk_classification', 'check');
             GTM.set_login_flag();
+
             // redirect url
             redirect_url = sessionStorage.getItem('redirect_url');
             sessionStorage.removeItem('redirect_url');
@@ -18,9 +36,9 @@ var LoggedInHandler = (function() {
         // redirect back
         var set_default = true;
         if(redirect_url) {
-            var do_not_redirect = ['reset_passwordws', 'lost_passwordws', 'change_passwordws', 'home', page.url.url_for('').replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&")];
+            var do_not_redirect = ['reset_passwordws', 'lost_passwordws', 'change_passwordws', 'home'];
             var reg = new RegExp(do_not_redirect.join('|'), 'i');
-            if(!reg.test(redirect_url)) {
+            if(!reg.test(redirect_url) && page.url.url_for('') !== redirect_url) {
                 set_default = false;
             }
         }
@@ -45,6 +63,7 @@ var LoggedInHandler = (function() {
         if(Object.keys(tokens).length > 0) {
             page.client.set_storage_value('tokens', JSON.stringify(tokens));
         }
+        return tokens;
     };
 
     var getHashValue = function(source, key) {

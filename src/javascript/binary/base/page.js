@@ -93,10 +93,10 @@ var GTM = (function() {
 }());
 
 var User = function() {
-    this.email =  $.cookie('email');
+    this.loginid =  $.cookie('loginid');
     var loginid_list = $.cookie('loginid_list');
 
-    if(this.email === null || typeof this.email === "undefined") {
+    if(this.loginid === null || typeof this.loginid === "undefined") {
         this.is_logged_in = false;
     } else {
         this.is_logged_in = true;
@@ -246,6 +246,7 @@ Client.prototype = {
     response_authorize: function(response) {
         page.client.set_storage_value('session_start', parseInt(moment().valueOf() / 1000));
         TUser.set(response.authorize);
+        if(!$.cookie('email')) this.set_cookie('email', response.authorize.email, window.location.host);
         this.set_storage_value('is_virtual', TUser.get().is_virtual);
         this.check_storage_values();
         page.contents.activate_by_client_type();
@@ -304,10 +305,10 @@ Client.prototype = {
         tokensObj[loginid] = token;
         this.set_storage_value('tokens', JSON.stringify(tokensObj));
     },
-    set_cookie: function(cookieName, Value) {
+    set_cookie: function(cookieName, Value, domain) {
         var cookie_expire = new Date();
         cookie_expire.setDate(cookie_expire.getDate() + 60);
-        var cookie = new CookieStorage(cookieName);
+        var cookie = new CookieStorage(cookieName, domain);
         cookie.write(Value, cookie_expire, true);
     },
     process_new_account: function(email, loginid, token, is_virtual) {
@@ -795,7 +796,7 @@ Header.prototype = {
             LocalStore.remove('client.tokens');
             LocalStore.set('reality_check.ack', 0);
             var cookies = ['login', 'loginid', 'loginid_list', 'email', 'settings', 'reality_check', 'affiliate_token', 'affiliate_tracking', 'residence', 'allowed_markets'];
-            var current_domain = ['.' + document.domain.split('.').slice(-2).join('.'), document.domain];
+            var current_domain = ['.' + document.domain.split('.').slice(-2).join('.'), document.domain, '.' + document.domain];
             var cookie_path = ['/'];
             if (window.location.pathname.split('/')[1] !== '') {
               cookie_path.push('/' + window.location.pathname.split('/')[1]);
@@ -805,9 +806,11 @@ Header.prototype = {
             cookies.map(function(c){
               regex = new RegExp(c);
               $.removeCookie(c, {path: cookie_path[0], domain: current_domain[0]});
+              $.removeCookie(c, {path: cookie_path[0], domain: current_domain[2]});
               $.removeCookie(c);
               if (regex.test(document.cookie) && cookie_path[1]) {
                   $.removeCookie(c, {path: cookie_path[1], domain: current_domain[0]});
+                  $.removeCookie(c, {path: cookie_path[1], domain: current_domain[2]});
                   $.removeCookie(c, {path: cookie_path[1]});
               }
             });

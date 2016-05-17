@@ -53,7 +53,7 @@ my @m = (
     ['legal/us_patents',           'legal/us_patents',            'toolkit', 'default', 'US Patents'],
     ['cashier',                    'cashier/index',               'haml',    'default'],
     ['cashier/payment_methods',    'cashier/payment_methods',     'toolkit', 'default', 'Payment Methods'],
-    # ['trade/bet_explanation', '']
+
     ['cashier/session_expired', 'cashier/session_expired', 'toolkit', 'default'],
     ['user-testing',            'static/user_testing',     'haml',    'full_width'],
 
@@ -112,7 +112,9 @@ my @m = (
     ['user/authorised_appsws',         'account/authorised_appsws',      'toolkit', 'default', 'Authorised Applications'],
     ['user/reality_check_frequencyws', 'user/reality_check_frequencyws', 'haml',    'default'],
     ['user/reality_check_summaryws',   'user/reality_check_summaryws',   'haml',    'default'],
-    ['logged_inws',                    'global/logged_inws',             'toolkit', undef],
+
+    ['logged_inws',           'global/logged_inws', 'toolkit', undef],
+    # ['trade/bet_explanation', 'bet/explanation',    'toolkit', undef],
 );
 
 ## config

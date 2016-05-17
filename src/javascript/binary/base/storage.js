@@ -53,10 +53,10 @@ InScriptStore.prototype = {
     }
 };
 
-var CookieStorage = function (cookie_name) {
+var CookieStorage = function (cookie_name, cookie_domain) {
     this.initialized = false;
     this.cookie_name = cookie_name;
-    this.domain = '.' + document.domain.split('.').slice(-2).join('.');
+    this.domain = cookie_domain || '.' + document.domain.split('.').slice(-2).join('.');
     this.expires = new Date('Thu, 1 Jan 2037 12:00:00 GMT');
     this.value = {};
 };
