@@ -31,7 +31,7 @@ function BinarySocketClass() {
         }
 
     if (page.language()) {
-        socketUrl += '?l=' + page.language();
+        socketUrl += '&l=' + page.language();
     }
 
     var clearTimeouts = function(){
