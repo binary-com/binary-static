@@ -1120,6 +1120,10 @@ Page.prototype = {
             LocalStore.set('reality_check.ack', 0);
         }
         $('#current_width').val(get_container_width());//This should probably not be here.
+        if(!getCookieItem('language')) {
+            var cookie = new CookieStorage('language');
+            cookie.write(this.language());
+        }
         if(sessionStorage.getItem('showLoginPage')) {
             sessionStorage.removeItem('showLoginPage');
             Login.redirect_to_login();
@@ -1133,6 +1137,8 @@ Page.prototype = {
         var that = this;
         $('#language_select').on('change', 'select', function() {
             var language = $(this).find('option:selected').attr('class');
+            var cookie = new CookieStorage('language');
+            cookie.write(language);
             document.location = that.url_for_language(language);
         });
     },
