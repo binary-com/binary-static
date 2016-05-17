@@ -2,14 +2,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-12 23:55+0000\n"
-"Last-Translator: Ahmed Kotb <ahmedmohamedkotp@gmail.com>\n"
-"Language-Team: Arabic <https://hosted.weblate.org/projects/binary/static/ar/>\n"
+"PO-Revision-Date: 2016-05-17 08:55+0000\n"
+"Last-Translator: Sittie Hadjirah Sevilla <sittiebaser@gmail.com>\n"
+"Language-Team: Arabic <https://hosted.weblate.org/projects/binary/static/ar/>"
+"\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 "X-Generator: Weblate 2.7-dev\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
@@ -151,7 +153,10 @@ msgstr "%1 تتطلع دائما إلى إضافة المحترفين ذوي ا�
 #. (request.website.display_name, "//developers.binary.com")
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:75
 msgid "%1 is an active proponent of the open-source movement. Suggest enhancements, and take part in the development of our powerful applications. You can find more information on our <a href=\"%2\" target=\"_blank\">Developers Portal</a>."
-msgstr "1% مؤيدين نشطين من الحركة مفتوحة المصدر. يقترحون التحسينات, ويشاركون في تطوير تطبيقاتنا القوية. يمكنك العثور على مزيد من المعلومات على<a href=\"%2\" target=\"_blank\"> بوابة المطورين</a>."
+msgstr ""
+"%1 مؤيدين نشطين من الحركة مفتوحة المصدر. يقترحون التحسينات, ويشاركون في "
+"تطوير تطبيقاتنا القوية. يمكنك العثور على مزيد من المعلومات على<a href=\"%2\" "
+"target=\"_blank\"> بوابة المطورين</a>."
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/beginners_faq.html.haml:1
@@ -324,12 +329,18 @@ msgstr "% 1 فشل محاولة فتح قسم الصراف"
 #. (stash('broker_name')
 #: /home/git/translations/binary-static-www2/src/templates/haml/home/index.html.haml:1
 msgid "%1: Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
-msgstr "1%: هي منصة تداول الخيارات الثنائية فى العملات والمؤشرات والسلع والمؤشرات الذكية"
+msgstr ""
+"%1: هي منصة تداول الخيارات الثنائية فى العملات والمؤشرات والسلع والمؤشرات "
+"الذكية"
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "%1’s IT Operations Group is responsible for the design, development and operation of the company’s high-traffic networks. Its responsibilities include hardware and software deployment, up-time and reliability testing, incident response reporting, network security, intrusion detection, and load balancing."
-msgstr "مجموعة عمليات تكنولوجيا المعلومات لـ %1 مسؤولة عن تصميم وتطوير وتشغيل شبكات المرور العالية للشركة. وتشمل مسؤولياتها نشر الأجهزة والبرمجيات واختبار التحديث والموثوقية وكذلك الإبلاغ عن الاستجابة في حالة الحوادث، وأمان شبكة الاتصال، وكشف التسلل وموازنة التحميل."
+msgstr ""
+"مجموعة عمليات تكنولوجيا المعلومات لـ 1% مسؤولة عن تصميم وتطوير وتشغيل شبكات "
+"المرور العالية للشركة. وتشمل مسؤولياتها نشر الأجهزة والبرمجيات واختبار "
+"التحديث والموثوقية وكذلك الإبلاغ عن الاستجابة في حالة الحوادث، وأمان شبكة "
+"الاتصال، وكشف التسلل وموازنة التحميل."
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
@@ -662,17 +673,30 @@ msgstr "<p style=\"font-weight: bold;\">شكراً لتسجيلكم من أجل 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:93
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Before we can help you change your password, please help us to verify your identity by entering the following verification token into the password reset form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">عميلنا العزيز المحترم</p>قبل أن نستطيع مساعدتك في تغيير كلمة المرور الخاصة بك, نرجو منك مساعدتنا في التحقق من هويتك من خلال إدخال رمز التحقق التالي في نموذج أعادة تعيين كلمة المرور<p><span style=\"background: #f2f2f2; padding: 10px;\">1%</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">عميلنا العزيز "
+"المحترم</p>قبل أن نستطيع مساعدتك في تغيير كلمة المرور الخاصة بك, نرجو منك "
+"مساعدتنا في التحقق من هويتك من خلال إدخال رمز التحقق التالي في نموذج أعادة "
+"تعيين كلمة المرور<p><span style=\"background: #f2f2f2; padding: 10px;\""
+">%1</span></p></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:133
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment agent withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">عزيزنا العميل المحترم,</p><p>نرجو منك مساعدتنا في التحقق من هويتك من خلال إدخال رمز التحقق التالي في نموذج وكيل سحب الدفعة<p><span style=\"background: #f2f2f2; padding: 10px;\">1%</span></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">عزيزنا العميل "
+"المحترم,</p><p>نرجو منك مساعدتنا في التحقق من هويتك من خلال إدخال رمز التحقق "
+"التالي في نموذج وكيل سحب الدفعة<p><span style=\"background: #f2f2f2; padding:"
+" 10px;\">%1</span></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:145
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">عزيزنا العميل المحترم,</p>نرجو منك مساعدتنا في التحقق من هويتك من خلال إدخال رمز التحقق التالي في نموذج سحب الدفع:<p><span style=\"background: #f2f2f2; padding: 10px;\">1%</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">عزيزنا العميل "
+"المحترم,</p>نرجو منك مساعدتنا في التحقق من هويتك من خلال إدخال رمز التحقق "
+"التالي في نموذج سحب الدفع:<p><span style=\"background: #f2f2f2; padding: "
+"10px;\">%1</span></p></p>"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/affiliates/faq.html.tt:73
 msgid ""
@@ -10314,7 +10338,12 @@ msgstr "نشكرك على التحقق من بريدك الإلكتروني."
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "The %1 Quantitative Analytics group is responsible for the pricing of binary options offered on our website, as well as the risk management and profitability of its options book. Processing over a million transactions each day, the company manages a book of exotic options which arguably exceeds in complexity that of the typical derivatives desk."
-msgstr "مجموعة التحليلات الكمية 1 % هي المسؤولة عن تسعير الخيارات الثنائية المعروضة على موقعنا على شبكة الأنترنت, فضلاً عن إدارة المخاطر والربحية من كتاب خياراتها, ومعالجة أكثر من مليون معاملة في كل يوم, وتدير الشركة كتاباً من الخيارات الغريبة التي يمكن القول عنها أنها تتجاوز التعقيد الموجود في مكتب المشتقات النموذجي."
+msgstr ""
+"مجموعة التحليلات الكمية 1% هي المسؤولة عن تسعير الخيارات الثنائية المعروضة "
+"على موقعنا على شبكة الأنترنت, فضلاً عن إدارة المخاطر والربحية من كتاب "
+"خياراتها, ومعالجة أكثر من مليون معاملة في كل يوم, وتدير الشركة كتاباً من "
+"الخيارات الغريبة التي يمكن القول عنها أنها تتجاوز التعقيد الموجود في مكتب "
+"المشتقات النموذجي."
 
 #. ($website_name)
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Accounts.pm:646
