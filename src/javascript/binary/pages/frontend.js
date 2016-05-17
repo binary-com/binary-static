@@ -685,3 +685,19 @@ pjax_config_page('\/login|\/loginid_switch', function() {
         }
     };
 });
+
+var $buoop = {
+  vs: {i:10, f:39, o:30, s:5, c:39},
+  l: page.language().toLowerCase(),
+  url: 'https://whatbrowser.org/'
+};
+function $buo_f(){
+ var e = document.createElement("script");
+ e.src = "//browser-update.org/update.min.js";
+ document.body.appendChild(e);
+}
+try {
+  document.addEventListener("DOMContentLoaded", $buo_f,false);
+} catch(e) {
+  window.attachEvent("onload", $buo_f);
+}
