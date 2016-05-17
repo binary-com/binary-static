@@ -51,7 +51,7 @@ var RealityCheckUI = (function () {
         $('#login-time').text(summary.loginTime);
         $('#current-time').text(summary.currentTime);
         $('#session-duration').text(summary.sessionDuration);
-        
+
         $('#login-id').text(summary.loginId);
         $('#rc_currency').text(summary.currency);
         $('#turnover').text(summary.turnover);
@@ -92,12 +92,12 @@ var RealityCheckUI = (function () {
             RealityCheckData.updateAck();
         });
     }
-    
+
     function summaryEventHandler() {
         $('button#continue').click(function() {
             RealityCheckData.updateAck();
         });
-        
+
         $('button#btn_logout').click(function() {
             BinarySocket.send({logout: 1});
         });
@@ -105,6 +105,7 @@ var RealityCheckUI = (function () {
 
     function closePopUp() {
         $('#reality-check').remove();
+        if (!page.client.is_virtual() && page.client.residence !== 'jp') BinarySocket.send({get_account_status: 1});
     }
 
     return {

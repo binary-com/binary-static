@@ -77,7 +77,7 @@ msgstr "Termos e condições do programa de afiliados %1"
 msgid "%1 New Password Request"
 msgstr "Pedido de nova senha %1"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:729
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:730
 msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
 msgstr "%1 Clique no link abaixo para reiniciar o processo de recuperação de senha. Caso você necessite de assistência adicional, contate o Apoio ao Cliente."
 
@@ -1305,7 +1305,7 @@ msgstr "Saldo de conta: %1 %2"
 msgid "Account balance: "
 msgstr "Saldo de conta: "
 
-#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Authorize.pm:29
+#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Authorize.pm:30
 msgid "Account is disabled."
 msgstr "A conta está desativada."
 
@@ -1647,7 +1647,7 @@ msgstr "Qualquer pessoa com idade superior a 18 anos (que tenha lido e aceitado 
 msgid "Anyone who has potential to grow or increase traffic to %1"
 msgstr "Qualquer pessoa ou entidade que tenha o potencial de aumentar o tráfego para a %1"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:719
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:720
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:175
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:284
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:2
@@ -1658,7 +1658,7 @@ msgstr "Aplicativos"
 msgid "Apply a meticulous eye for detail in proofreading the content that appears on the company’s website, blog, social media outlets, and marketing materials."
 msgstr "Ter uma visão meticulosa para os detalhes nas revisões dos conteúdos que aparecem no site, nos blogs e nos meios de comunicação social da empresa."
 
-#. (website, apply_payment_agent_url)
+#. (website, request.url_for("/payment-agent"))
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/payment_agent_listws.html.tt:67
 msgid "Apply to become a %1 <a class=\"pjaxload\" href=\"%2\">payment agent</a>."
 msgstr "Inscreva-se para se tornar um <a class=\"pjaxload\" href=\"%2\">Agente de Pagamentos</a> da %1."
@@ -2054,6 +2054,7 @@ msgid "BetOnMarkets.com reaches $1 billion turnover since starting in 1999"
 msgstr "BetOnMarkets.com atingiu $1 bilhão em volume de negócios desde 1999"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:116
+#: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/us_patents.html.tt:5
 msgid "Betting system and method"
 msgstr "Sistema e método de apostas"
 
@@ -2842,10 +2843,12 @@ msgid "Comply with the applicable laws, rules, and regulations (including, but n
 msgstr "Cumprir as leis, regras e regulamentos aplicáveis (incluindo, mas não limitados a, publicidade, proteção de dados e leis, regras e regulamentos de privacidade) da jurisdição na qual você opera ou em que se destina o seu negócio."
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:124
+#: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/us_patents.html.tt:7
 msgid "Computer system and method for speculating on a financial market"
 msgstr "Sistema informatizado e método para especulação em mercados financeiros"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:120
+#: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/us_patents.html.tt:6
 msgid "Computer trading system for offering custom financial market speculations"
 msgstr "Sistema informatizado de negociação para a disponibilização de especulações personalizadas de mercados financeiros"
 
@@ -2865,7 +2868,7 @@ msgstr "Confidencialidade"
 msgid "Confirm"
 msgstr "Confirmar"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:735
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:736
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "Confirm New Password"
 msgstr "Confirme a nova senha"
@@ -3289,7 +3292,7 @@ msgstr "Data (GMT)"
 msgid "Date and Time"
 msgstr "Data e hora"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:736
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:737
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "Date of Birth"
 msgstr "Data de nascimento"
@@ -3393,7 +3396,7 @@ msgstr ""
 "support@binary.com"
 
 #. ($client_name, $support_email)
-#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client/IDAuthentication.pm:198
+#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client/IDAuthentication.pm:172
 msgid ""
 "Dear %1,\n"
 "\n"
@@ -3676,7 +3679,7 @@ msgstr "Descrição"
 msgid "Design engaging, visually inspiring content for the company's website and many other forms of media, including both online and offline materials."
 msgstr "Projetar conteúdos cativantes e visualmente inspiradores para o website da empresa e muitas outras formas de mídia, incluindo tanto materiais online como offline."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:730
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:731
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/japanws.html.tt:9
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:9
@@ -3829,7 +3832,7 @@ msgstr "Documentar estornos nas contas"
 msgid "Document department processes, to enhance the marketing team’s ability to execute repeated tasks efficiently and effectively"
 msgstr "Documentar os processos do departamento para melhorar a capacidade da equipe de marketing em executar tarefas repetidas eficientemente e eficazmente"
 
-#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client/IDAuthentication.pm:197
+#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client/IDAuthentication.pm:171
 msgid "Documents are required to verify your identity"
 msgstr "Os documentos são necessários para verificar a sua identidade"
 
@@ -3856,6 +3859,10 @@ msgstr "Impulsionar crescimento rápido e desenvolvimento de negócios para auxi
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Drive rapid growth from key areas of the world, applying a variety of online and offline marketing abilities to expand the company's active affiliate network."
 msgstr "Impulsionar o rápido crescimento nas principais áreas do mundo, aplicando uma variedade de capacidades de marketing online e offline para expandir a rede de afiliados ativa da empresa."
+
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:717
+msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
+msgstr ""
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1417
 msgid "Due to regulatory requirements, you are required to authenticate your account in order to continue trading."
@@ -4394,7 +4401,7 @@ msgstr "Recurso que permite que você defina limites na sua conta."
 msgid "Failed"
 msgstr "Falhou"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:744
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:745
 msgid "Failed to reset password. %1, please retry."
 msgstr "Falha na redefinição da senha. %1, tente novamente."
 
@@ -4575,7 +4582,7 @@ msgstr "Siga a lei e estes termos"
 msgid "Follow up on rejected deposits"
 msgstr "Acompanhar a rejeição de depósitos"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:748
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:749
 msgid "For added security, please check your email to retrieve the verification token."
 msgstr "Para proporcionar maior segurança, verifique a sua caixa de entrada para obter o token de verificação."
 
@@ -4641,7 +4648,7 @@ msgstr "Experiência com negociações forex"
 msgid "Forex trading frequency"
 msgstr "Frequência de negociação forex"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:737
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:738
 msgid "Format: yyyy-mm-dd (not required for virtual-money accounts)"
 msgstr "Formato: aaaa-mm-dd (não é necessário para contas de dinheiro virtual)"
 
@@ -5179,7 +5186,7 @@ msgstr "Se você promover o nosso site a potenciais clientes, irá eventualmente
 msgid "If you meet our basic requirements, we’ll send you a talent test."
 msgstr "Se você preencher os nossos requisitos básicos, nos lhe enviaremos um teste de competências."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:751
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:752
 msgid "If you need assistance feel free to contact our %1Customer Support"
 msgstr "Caso você precise de assistência, contate o nosso %1Apoio ao Cliente"
 
@@ -5563,7 +5570,7 @@ msgstr "Informações sobre os feeds de dados utilizados pela nossa empresa, e s
 msgid "Information of the previous performance of any underlying instrument or asset does not guarantee its current and/or future performance. Past performance is not a reliable indicator of future results."
 msgstr "Informações sobre o desempenho anterior de qualquer instrumento ou ativo subjacente não garante o seu desempenho atual e/ou futuro. Desempenho anterior não é um indicador confiável para resultados futuros."
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:423
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:335
 msgid "Input validation failed: "
 msgstr "Falha na validação de entrada: "
 
@@ -5664,7 +5671,7 @@ msgstr "Valor inválido. O mínimo é 10, o máximo é 2000."
 msgid "Invalid candles request"
 msgstr "Solicitação de candelabros inválida"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:743
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:744
 msgid "Invalid date of birth."
 msgstr "Data de nascimento inválida."
 
@@ -6452,7 +6459,7 @@ msgstr "Jun"
 msgid "June"
 msgstr "Junho"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:725
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:726
 msgid "Keep track of your authorised applications."
 msgstr "Mantenha um registro dos seus aplicativos autorizados."
 
@@ -6525,7 +6532,7 @@ msgid "Last Digit Stats"
 msgstr "Estatísticas do último dígito"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:352
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:722
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:723
 msgid "Last Used"
 msgstr "Última utilização"
 
@@ -7244,7 +7251,7 @@ msgstr "Lucro líquido"
 msgid "Network Status"
 msgstr "Status da rede"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:723
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:724
 msgid "Never"
 msgstr "Nunca"
 
@@ -7256,7 +7263,7 @@ msgstr "Nunca utilizado"
 msgid "New"
 msgstr "Novo"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:734
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:735
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "New Password"
 msgstr "Nova Senha"
@@ -7738,7 +7745,7 @@ msgstr "O nosso site pode ser filtrado usando um número de sistemas de filtrage
 msgid "Our site does not charge any transfer fees."
 msgstr "O nosso site não cobra taxas de transferência."
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:453
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:393
 msgid "Output validation failed: "
 msgstr "Falha na validação de saída: "
 
@@ -7838,7 +7845,7 @@ msgstr "Página não encontrada"
 msgid "Parabolic SAR"
 msgstr "Sistema Parabólico SAR (Stop-And-Reversal)"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:593
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:495
 msgid "Parameters sanity check failed."
 msgstr "Falha na verificação de integridade de parâmetros."
 
@@ -7859,12 +7866,12 @@ msgstr "Parceiros"
 msgid "Password"
 msgstr "Senha"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:731
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:732
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "Password Reset"
 msgstr "Redefinição de senha"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:742
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:743
 msgid "Password does not match."
 msgstr "A senha não corresponde."
 
@@ -7889,7 +7896,7 @@ msgstr "A senha é muito forte"
 msgid "Password is weak"
 msgstr "A senha é fraca"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:741
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:742
 msgid "Password must contains at least 1 digit, 1 uppercase letter and 1 lowercase letter."
 msgstr "A senha deve conter pelo menos um número, uma maiúscula e uma minúscula."
 
@@ -8016,7 +8023,7 @@ msgid "Perl modules"
 msgstr "Módulos Perl"
 
 #. ($descriptor->{require_scope})
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:437
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:349
 msgid "Permission denied, requiring %1"
 msgstr "Permissão negada, %1 necessário"
 
@@ -8024,7 +8031,7 @@ msgstr "Permissão negada, %1 necessário"
 msgid "Permission denied."
 msgstr "Permissão negada."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:721
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:722
 msgid "Permissions"
 msgstr "Permissões"
 
@@ -8063,7 +8070,7 @@ msgstr "Por favor, aceite a proteção de fundos."
 msgid "Please agree to the risk disclaimer before proceeding."
 msgstr "Por favor, aceite o aviso de isenção de responsabilidade de risco antes de proceder."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:733
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:734
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/virtualws.html.tt:18
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/deposit_withdraw_ws.html.tt:79
@@ -8071,12 +8078,12 @@ msgstr "Por favor, aceite o aviso de isenção de responsabilidade de risco ante
 msgid "Please check your email for the value of this token"
 msgstr "Verifique o seu e-mail para o valor deste token"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:728
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:729
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "Please check your email to retrieve the token needed to reset your password."
 msgstr "Verifique o seu e-mail para obter o token necessário para a redefinição da sua senha."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:749
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:750
 msgid "Please choose which currency you would like to transact in."
 msgstr "Escolha a moeda com que pretende negociar."
 
@@ -8194,7 +8201,7 @@ msgstr "Insira uma data válida"
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Transaction.pm:29
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Utility.pm:118
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:432
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:344
 msgid "Please log in."
 msgstr "Por favor, conecte-se."
 
@@ -8919,7 +8926,7 @@ msgstr "Preço de revenda"
 msgid "Resend Verification Email"
 msgstr "Reenviar e-mail de verificação"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:738
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:739
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/lost_passwordws.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "Reset Password"
@@ -8938,8 +8945,8 @@ msgstr "Recursos"
 msgid "Respond to client queries using our state of the art telephone, electronic mail and on-line chat systems"
 msgstr "Responder a perguntas de clientes usando os nossos sistemas de topo telefônicos, de correio eletrônico e de chat online"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:193
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:123
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:195
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:120
 msgid "Response too large."
 msgstr "Resposta demasiado grande."
 
@@ -9021,7 +9028,7 @@ msgstr "Revisar, desenvolver e melhorar códigos usados nos programas de apreça
 msgid "Revisions to the Binary.com API"
 msgstr "Revisões à API Binary.com"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:724
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:725
 msgid "Revoke access"
 msgstr "Revogar acesso"
 
@@ -9509,11 +9516,11 @@ msgstr "Lamentamos, ocorreu um erro durante o processamento da sua conta."
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Accounts.pm:915
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Contract.pm:225
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Contract.pm:272
-#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/MarketDiscovery.pm:48
-#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/MarketDiscovery.pm:78
+#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/MarketDiscovery.pm:51
+#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/MarketDiscovery.pm:81
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount/Japan.pm:175
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:174
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:183
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:176
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:185
 msgid "Sorry, an error occurred while processing your request."
 msgstr "Lamentamos, ocorreu um erro durante o processamento do seu pedido."
 
@@ -9655,7 +9662,7 @@ msgstr "Lamentamos, você auto excluiu-se da página Web até %1."
 #. ($lim)
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client.pm:845
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/User.pm:100
-#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Authorize.pm:37
+#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Authorize.pm:38
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Utility.pm:132
 msgid "Sorry, you have excluded yourself until %1."
 msgstr "Lamentamos, você excluiu-se até %1."
@@ -9729,7 +9736,7 @@ msgstr "Aposta"
 msgid "Start Time"
 msgstr "Hora de Início"
 
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:189
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:190
 msgid "Start Trading"
 msgstr "Começar a Negociar"
 
@@ -10555,7 +10562,7 @@ msgstr "O montante de lucro/perda por ponto de subida/descida é multiplicado pe
 msgid "The anti-money laundering processes have the following effects on Clients:"
 msgstr "Os processos contra a lavagem de dinheiro têm os seguintes efeitos sobre os clientes:"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:117
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:114
 msgid "The application sent an invalid request."
 msgstr "O aplicativo enviou uma solicitação inválida."
 
@@ -10928,7 +10935,7 @@ msgstr "Ocorreu um problema ao aceder ao servidor."
 msgid "There was a problem validating your address."
 msgstr "Ocorreu um problema ao validar o seu endereço."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:750
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:751
 msgid "There was a problem validating your personal details. Please fix the fields %1here"
 msgstr "Ocorreu um problema ao validar os seus dados pessoais. Por favor corrija os campos %1aqui"
 
@@ -11763,7 +11770,7 @@ msgstr "Salvo indicação em contrário, iremos tratá-lo como um cliente não p
 msgid "Unlock Cashier"
 msgstr "Desbloquear o Caixa"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:466
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:406
 msgid "Unrecognised request."
 msgstr "Solicitação desconhecida."
 
@@ -11858,13 +11865,13 @@ msgstr "Valletta, a capital de Malta"
 msgid "Verification Successful"
 msgstr "Verificação bem sucedida"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:732
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:733
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_withdrawws.html.tt:35
 msgid "Verification Token"
 msgstr "Token de verificação"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:740
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:741
 msgid "Verification code format incorrect."
 msgstr "Formato incorreto de código de verificação."
 
@@ -12888,7 +12895,7 @@ msgstr "Você excedeu o seu limite de 7 dias em perdas de %1%2."
 msgid "You have exceeded your daily limit on losses of %1%2."
 msgstr "Você excedeu o seu limite diário em perdas de %1%2."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:720
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:721
 msgid "You have not granted access to any applications."
 msgstr "Você não concedeu acesso a quaisquer aplicativos."
 
@@ -12909,7 +12916,7 @@ msgid "You have purchased the following contract:"
 msgstr "Você comprou o seguinte contrato:"
 
 #. ($descriptor->{category})
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:410
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:322
 msgid "You have reached the rate limit for %1."
 msgstr "Já atingiu o limite de taxa para %1."
 
@@ -13209,7 +13216,7 @@ msgstr "A sua conta está totalmente autenticada. É possível consultar os seus
 msgid "Your account is important to us. Please <a href=\"%1\">contact us</a> should you need further assistance."
 msgstr "A sua conta é importante para nós. Por favor, <a href=\"%1\">contate-nos</a> se precisar de mais assistência."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:752
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:753
 msgid "Your account is not fully authenticated. Please visit the <a href=\"%1\">authentication</a> page for more information."
 msgstr "A sua conta não está totalmente autenticada. Visite a página <a href=\"%1\">autenticação</a> para mais informações."
 
@@ -13255,7 +13262,7 @@ msgstr "O seu caixa está bloqueado"
 msgid "Your cashier is locked as per your request"
 msgstr "A sua seção do caixa está bloqueada conforme o seu pedido"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:747
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:748
 msgid "Your cashier is locked as per your request - to unlock it, please click %1here"
 msgstr "O seu caixa está bloqueado conforme pedido - para desbloqueá-lo, clique %1aqui"
 
@@ -13366,7 +13373,7 @@ msgstr "A sua senha foi alterada. Conecte-se novamente."
 msgid "Your password has been reset."
 msgstr "A sua senha foi redefinida."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:739
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:740
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/reset_password.html.tt:23
 msgid "Your password has been successfully reset. Please log into your account using your new password."
 msgstr "A sua senha foi redefinida com sucesso. Por favor, inicie sessão na sua conta, usando a sua nova senha."

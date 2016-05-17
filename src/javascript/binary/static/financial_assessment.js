@@ -9,17 +9,16 @@ var FinancialAssessmentws = (function(){
             submitForm();
             return false;
         });
-        if (sessionStorage.getItem('risk_classification') === 'high') {
-          $('#high_risk_classification').text(text.localize('Please complete the following financial assessment form before continuing.'))
-                                        .removeClass('invisible');
-        }
         BinarySocket.send(JSON.parse("{\"get_financial_assessment\" : 1}"));
     };
 
     // For translating strings
     var LocalizeText = function(){
         $("#heading").text(text.localize($("#heading").text()));
-        $("legend").text(text.localize($("legend").text()));
+        $('#heading_risk').text(text.localize($("#heading_risk").text()));
+        $('#high_risk_classification').text(text.localize($('#high_risk_classification').text()));
+        document.getElementsByTagName('legend')[0].innerHTML = text.localize(document.getElementsByTagName('legend')[0].innerHTML);
+        if (document.getElementsByTagName('legend')[1]) document.getElementsByTagName('legend')[1].innerHTML = text.localize(document.getElementsByTagName('legend')[1].innerHTML);
         $("#assessment_form label").each(function(){
             var ele = $(this);
             ele.text(text.localize(ele.text()));
@@ -43,7 +42,7 @@ var FinancialAssessmentws = (function(){
         });
         $('html, body').animate({ scrollTop: 0 }, 'fast');
         BinarySocket.send(data);
-
+        RiskClassification.cleanup();
     };
 
     var validateForm = function(){
@@ -104,18 +103,9 @@ var FinancialAssessmentws = (function(){
 
     var responseOnSuccess = function(){
         $("#heading").hide();
-        $('#high_risk_classification').hide();
         hideLoadingImg(false);
         $("#response_on_success").text(text.localize("Your details have been updated."))
             .removeClass("invisible");
-        sessionStorage.removeItem('risk_classification');
-        if (sessionStorage.getItem('risk_redirect') && !sessionStorage.getItem('check_tnc')) {
-          var redirectUrl = sessionStorage.getItem('risk_redirect');
-          sessionStorage.removeItem('risk_redirect');
-          window.location.href = redirectUrl;
-        } else if (sessionStorage.getItem('check_tnc')) {
-          page.client.check_tnc();
-        }
     };
 
     var apiResponse = function(response){
@@ -143,7 +133,9 @@ var FinancialAssessmentws = (function(){
 
     return {
         init : init,
-        apiResponse : apiResponse
+        apiResponse : apiResponse,
+        submitForm: submitForm,
+        LocalizeText: LocalizeText
     };
 }());
 

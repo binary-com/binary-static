@@ -55,7 +55,7 @@ var MyAccountWS = (function() {
             return;
         }
 
-        if(isReal && terms_conditions_version !== client_tnc_status && !sessionStorage.getItem('risk_classification')) {
+        if(isReal && terms_conditions_version !== client_tnc_status && !localStorage.getItem('risk_classification')) {
             window.location.href = page.url.url_for('user/tnc_approvalws');
             return;
         }

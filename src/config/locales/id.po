@@ -81,7 +81,7 @@ msgstr "Syarat dan Ketentuan Program Affiliasi %1"
 msgid "%1 New Password Request"
 msgstr "Permohonan Kata Sandi Baru %1"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:729
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:730
 msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
 msgstr "%1 Silahkan klik link di bawah ini untuk memulai kembali proses pemulihan kata sandi. Jika Anda membutuhkan bantuan lebih lanjut, silakan hubungi Customer Support kami."
 
@@ -1306,7 +1306,7 @@ msgstr "Saldo akun : %1 %2"
 msgid "Account balance: "
 msgstr "Saldo akun Anda: "
 
-#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Authorize.pm:29
+#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Authorize.pm:30
 msgid "Account is disabled."
 msgstr "Akun telah dibatalkan."
 
@@ -1648,7 +1648,7 @@ msgstr "Siapa saja yang berumur dari 18 tahun keatas [dan sudah membaca dan meny
 msgid "Anyone who has potential to grow or increase traffic to %1"
 msgstr "Siapapun yang memiliki potensi atau ingin meningkatkan lalu lintas ke %1"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:719
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:720
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:175
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:284
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:2
@@ -1659,7 +1659,7 @@ msgstr "Aplikasi"
 msgid "Apply a meticulous eye for detail in proofreading the content that appears on the company’s website, blog, social media outlets, and marketing materials."
 msgstr "Cermat dan detail, mengoreksi dan memperbaiki konten yang muncul di website perusahaan, blog, media sosial dan materi pemasaran."
 
-#. (website, apply_payment_agent_url)
+#. (website, request.url_for("/payment-agent"))
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/payment_agent_listws.html.tt:67
 msgid "Apply to become a %1 <a class=\"pjaxload\" href=\"%2\">payment agent</a>."
 msgstr "Jika anda menjalankan bisnis exchanger, daftar sebagai <a class=\"pjaxload\" href=\"%2\">agen pembayaran</a>  %1."
@@ -2055,6 +2055,7 @@ msgid "BetOnMarkets.com reaches $1 billion turnover since starting in 1999"
 msgstr "BetOnMarkets.com mencapai $1 milyar omset sejak tahun 1999"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:116
+#: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/us_patents.html.tt:5
 msgid "Betting system and method"
 msgstr "Sistem dan metode trading"
 
@@ -2843,10 +2844,12 @@ msgid "Comply with the applicable laws, rules, and regulations (including, but n
 msgstr "Mematuhi hukum, aturan, dan peraturan (termasuk, namun tidak terbatas pada, hukum periklanan, perlindungan data dan privasi, aturan, dan peraturan) dari yurisdiksi di mana Anda beroperasi atau bisnis yang Anda targetkan."
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:124
+#: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/us_patents.html.tt:7
 msgid "Computer system and method for speculating on a financial market"
 msgstr "Sistem dan metode komputer dalam berspekulasi pada pasar finansial"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:120
+#: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/us_patents.html.tt:6
 msgid "Computer trading system for offering custom financial market speculations"
 msgstr "Sistem trading komputer untuk menawarkan spekulasi pasar finansial tertentu"
 
@@ -2866,7 +2869,7 @@ msgstr "Kerahasiaan"
 msgid "Confirm"
 msgstr "Lanjutkan"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:735
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:736
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "Confirm New Password"
 msgstr "Konfirmasi Kata Sandi Baru"
@@ -3290,7 +3293,7 @@ msgstr "Tanggal (GMT)"
 msgid "Date and Time"
 msgstr "Tanggal dan Waktu"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:736
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:737
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "Date of Birth"
 msgstr "Tanggal Lahir"
@@ -3394,7 +3397,7 @@ msgstr ""
 "support@binary.com"
 
 #. ($client_name, $support_email)
-#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client/IDAuthentication.pm:198
+#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client/IDAuthentication.pm:172
 msgid ""
 "Dear %1,\n"
 "\n"
@@ -3677,7 +3680,7 @@ msgstr "Deskripsi"
 msgid "Design engaging, visually inspiring content for the company's website and many other forms of media, including both online and offline materials."
 msgstr "Desain menarik, konten visual inspirasi untuk website perusahaan dan berbagai bentuk media lainnya, termasuk kedua bahan online dan offline."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:730
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:731
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/japanws.html.tt:9
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:9
@@ -3830,7 +3833,7 @@ msgstr "Dokumentasi akun tagihan ulang"
 msgid "Document department processes, to enhance the marketing team’s ability to execute repeated tasks efficiently and effectively"
 msgstr "Memproses dokumen departemen, meningkatkan kemampuan tim pemasaran untuk menjalankan tugas-tugas berulang secara efisien dan efektif"
 
-#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client/IDAuthentication.pm:197
+#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client/IDAuthentication.pm:171
 msgid "Documents are required to verify your identity"
 msgstr "Dokumen yang diperlukan untuk memverifikasi identitas anda"
 
@@ -3857,6 +3860,10 @@ msgstr "Mendorong pertumbuhan yang cepat dan pengembangan usaha, untuk mendukung
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Drive rapid growth from key areas of the world, applying a variety of online and offline marketing abilities to expand the company's active affiliate network."
 msgstr "Mendorong pertumbuhan yang cepat pada beberapa bidang utama dunia, menerapkan berbagai kemampuan pemasaran online dan offline untuk memperluas jaringan afiliasi aktif bagi perusahaan."
+
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:717
+msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
+msgstr ""
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1417
 msgid "Due to regulatory requirements, you are required to authenticate your account in order to continue trading."
@@ -4395,7 +4402,7 @@ msgstr "Fasilitas yang memungkinkan Anda untuk menetapkan batasan akun."
 msgid "Failed"
 msgstr "Gagal"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:744
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:745
 msgid "Failed to reset password. %1, please retry."
 msgstr "Gagal untuk mereset kata sandi. %1, silahkan coba lagi."
 
@@ -4576,7 +4583,7 @@ msgstr "Ikuti Hukum dan Syarat ini"
 msgid "Follow up on rejected deposits"
 msgstr "Menindaklanjuti deposito tertolak"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:748
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:749
 msgid "For added security, please check your email to retrieve the verification token."
 msgstr "Untuk keamanan tambahan, silahkan lihat email Anda untuk mengambil token verifikasi."
 
@@ -4642,7 +4649,7 @@ msgstr "Pengalaman trading forex"
 msgid "Forex trading frequency"
 msgstr "Frekuensi trading forex"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:737
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:738
 msgid "Format: yyyy-mm-dd (not required for virtual-money accounts)"
 msgstr "Format: tahun-bulan-tanggal (tidak diperlukan untuk akun uang virtual)"
 
@@ -5182,7 +5189,7 @@ msgstr "Jika Anda memperkenalkan website kami kepada klien potensial, Anda akhir
 msgid "If you meet our basic requirements, we’ll send you a talent test."
 msgstr "Jika anda memenuhi syarat utama kami, kami akan mengirimkan tes kemahiran."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:751
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:752
 msgid "If you need assistance feel free to contact our %1Customer Support"
 msgstr "Jika Anda membutuhkan bantuan jangan ragu untuk menghubungi Customer Support %1 kami"
 
@@ -5566,7 +5573,7 @@ msgstr "Informasi tentang kutipan data yang digunakan oleh Perusahaan kami dan b
 msgid "Information of the previous performance of any underlying instrument or asset does not guarantee its current and/or future performance. Past performance is not a reliable indicator of future results."
 msgstr "Informasi dari kinerja sebelumnya untuk setiap instrumen dasar atau aset tidak dapat menjamin kinerja saat ini dan/atau masa depan. Kinerja masa lalu bukan merupakan indikator yang dapat diandalkan untuk hasil di masa mendatang."
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:423
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:335
 msgid "Input validation failed: "
 msgstr "Validasi input gagal:"
 
@@ -5667,7 +5674,7 @@ msgstr "Jumlah salah. Minimum 10, maksimum 2000."
 msgid "Invalid candles request"
 msgstr "Permintaan candle salah"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:743
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:744
 msgid "Invalid date of birth."
 msgstr "Tanggal lahir salah."
 
@@ -6455,7 +6462,7 @@ msgstr "Juni"
 msgid "June"
 msgstr "Juni"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:725
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:726
 msgid "Keep track of your authorised applications."
 msgstr "Melacak aplikasi resmi Anda."
 
@@ -6528,7 +6535,7 @@ msgid "Last Digit Stats"
 msgstr "Statistik Digit Terakhir"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:352
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:722
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:723
 msgid "Last Used"
 msgstr "Terakhir digunakan"
 
@@ -7250,7 +7257,7 @@ msgstr "Laba bersih"
 msgid "Network Status"
 msgstr "Status Network"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:723
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:724
 msgid "Never"
 msgstr "Tidak pernah"
 
@@ -7262,7 +7269,7 @@ msgstr "Tidak pernah dipakai"
 msgid "New"
 msgstr "Baru"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:734
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:735
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "New Password"
 msgstr "Kata Sandi Baru"
@@ -7744,7 +7751,7 @@ msgstr " "
 msgid "Our site does not charge any transfer fees."
 msgstr "Situs kami tidak membebankan biaya transfer."
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:453
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:393
 msgid "Output validation failed: "
 msgstr "Validasi output gagal:"
 
@@ -7844,7 +7851,7 @@ msgstr "Halaman tidak ditemukan"
 msgid "Parabolic SAR"
 msgstr "Parabola SAR"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:593
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:495
 msgid "Parameters sanity check failed."
 msgstr "Pemeriksaan parameter sanity gagal."
 
@@ -7865,12 +7872,12 @@ msgstr "Mitra"
 msgid "Password"
 msgstr "Kata Sandi"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:731
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:732
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "Password Reset"
 msgstr "Merubah Kata Sandi"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:742
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:743
 msgid "Password does not match."
 msgstr "Kata sandi tidak cocok."
 
@@ -7895,7 +7902,7 @@ msgstr "Kata sandi sangat kuat"
 msgid "Password is weak"
 msgstr "Kata sandi lemah"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:741
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:742
 msgid "Password must contains at least 1 digit, 1 uppercase letter and 1 lowercase letter."
 msgstr "Kata sandi harus mengandung minimal 1 angka, 1 huruf besar dan 1 huruf kecil."
 
@@ -8022,7 +8029,7 @@ msgid "Perl modules"
 msgstr "Modul perl"
 
 #. ($descriptor->{require_scope})
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:437
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:349
 msgid "Permission denied, requiring %1"
 msgstr "Izin ditolak, memerlukan %1"
 
@@ -8030,7 +8037,7 @@ msgstr "Izin ditolak, memerlukan %1"
 msgid "Permission denied."
 msgstr "Izin ditolak."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:721
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:722
 msgid "Permissions"
 msgstr "Izin"
 
@@ -8069,7 +8076,7 @@ msgstr "Mohon terima Perlindungan Dana."
 msgid "Please agree to the risk disclaimer before proceeding."
 msgstr "Mohon setujui sanggahan risiko sebelum melanjutkan."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:733
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:734
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/virtualws.html.tt:18
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/deposit_withdraw_ws.html.tt:79
@@ -8077,12 +8084,12 @@ msgstr "Mohon setujui sanggahan risiko sebelum melanjutkan."
 msgid "Please check your email for the value of this token"
 msgstr "Silahkan cek email Anda untuk melihat token ini"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:728
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:729
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "Please check your email to retrieve the token needed to reset your password."
 msgstr "Silahkan periksa email Anda untuk memperoleh token diperlukan untuk mereset kata sandi Anda."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:749
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:750
 msgid "Please choose which currency you would like to transact in."
 msgstr "Silahkan pilih mata uang mana yang ingin Anda depositkan."
 
@@ -8200,7 +8207,7 @@ msgstr "Masukkan tanggal yang benar"
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Transaction.pm:29
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Utility.pm:118
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:432
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:344
 msgid "Please log in."
 msgstr "Silahkan log in."
 
@@ -8925,7 +8932,7 @@ msgstr "Harga jual"
 msgid "Resend Verification Email"
 msgstr "Kirim Ulang Email Verifikasi"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:738
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:739
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/lost_passwordws.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "Reset Password"
@@ -8944,8 +8951,8 @@ msgstr "Sumber"
 msgid "Respond to client queries using our state of the art telephone, electronic mail and on-line chat systems"
 msgstr "Menjawab pertanyaan pelanggan menggunakan telpon, email dan sistem chatting online"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:193
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:123
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:195
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:120
 msgid "Response too large."
 msgstr "Respon terlalu besar."
 
@@ -9027,7 +9034,7 @@ msgstr "Mengulas, mengembangkan dan meningkatkan kode yang digunakan dalam penen
 msgid "Revisions to the Binary.com API"
 msgstr "Revisi API Binary.com"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:724
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:725
 msgid "Revoke access"
 msgstr "Mencabut akses"
 
@@ -9515,11 +9522,11 @@ msgstr "Maaf, error terjadi ketika memproses rekening Anda."
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Accounts.pm:915
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Contract.pm:225
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Contract.pm:272
-#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/MarketDiscovery.pm:48
-#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/MarketDiscovery.pm:78
+#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/MarketDiscovery.pm:51
+#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/MarketDiscovery.pm:81
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount/Japan.pm:175
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:174
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:183
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:176
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:185
 msgid "Sorry, an error occurred while processing your request."
 msgstr "Maaf, error terjadi ketika memproses permohonan Anda."
 
@@ -9661,7 +9668,7 @@ msgstr "Maaf, Anda telah mengecualikan diri dari website hingga %1."
 #. ($lim)
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client.pm:845
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/User.pm:100
-#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Authorize.pm:37
+#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Authorize.pm:38
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Utility.pm:132
 msgid "Sorry, you have excluded yourself until %1."
 msgstr "Maaf, Anda telah mengecualikan diri hingga %1."
@@ -9735,7 +9742,7 @@ msgstr "Modal"
 msgid "Start Time"
 msgstr "Waktu Mulai"
 
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:189
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:190
 msgid "Start Trading"
 msgstr "Mulai Trading"
 
@@ -10564,7 +10571,7 @@ msgstr "Jumlah keuntungan/kerugian per poin dari rise/fall dikalikan dengan juml
 msgid "The anti-money laundering processes have the following effects on Clients:"
 msgstr "Proses anti pencucian uang mempunyai efek sebagai berikut pada klien:"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:117
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:114
 msgid "The application sent an invalid request."
 msgstr "Aplikasi mengirim permintaan yang tidak berlaku."
 
@@ -10937,7 +10944,7 @@ msgstr "Terjadi masalah pada saat mengakses server."
 msgid "There was a problem validating your address."
 msgstr "Terdapat masalah saat memvalidasi alamat Anda."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:750
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:751
 msgid "There was a problem validating your personal details. Please fix the fields %1here"
 msgstr "Terdapat masalah dalam memvalidasi data pribadi Anda. Perbaiki kolom %1 disini"
 
@@ -11772,7 +11779,7 @@ msgstr "Kecuali disarankan, kami memperlakukan Anda sebagai Klien Ritel. Anda ju
 msgid "Unlock Cashier"
 msgstr "Buka Kasir"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:466
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:406
 msgid "Unrecognised request."
 msgstr "Permintaan tidak dikenal."
 
@@ -11867,13 +11874,13 @@ msgstr "Valletta, ibukota Malta"
 msgid "Verification Successful"
 msgstr "Verifikasi Sukses"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:732
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:733
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_withdrawws.html.tt:35
 msgid "Verification Token"
 msgstr "Token Verifikasi"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:740
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:741
 msgid "Verification code format incorrect."
 msgstr "Format kode verifikasi salah."
 
@@ -12897,7 +12904,7 @@ msgstr "Anda telah melampaui batas kerugian 7-hari Anda %1%2."
 msgid "You have exceeded your daily limit on losses of %1%2."
 msgstr "Anda telah melampaui batas harian kerugian Anda %1%2."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:720
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:721
 msgid "You have not granted access to any applications."
 msgstr "Anda belum diberikan akses ke dalam aplikasi apapun."
 
@@ -12918,7 +12925,7 @@ msgid "You have purchased the following contract:"
 msgstr "Anda telah membeli kontrak berikut:"
 
 #. ($descriptor->{category})
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:410
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:322
 msgid "You have reached the rate limit for %1."
 msgstr "Anda telah mencapai batasan sebesar %1."
 
@@ -13218,7 +13225,7 @@ msgstr "Akun Anda telah terbukti. Anda dapat melihat batasan trading %1 Anda dis
 msgid "Your account is important to us. Please <a href=\"%1\">contact us</a> should you need further assistance."
 msgstr "Akun Anda adalah penting bagi kami. Silakan <a href=\"%1\">hubungi kami</a> jika Anda memerlukan bantuan."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:752
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:753
 msgid "Your account is not fully authenticated. Please visit the <a href=\"%1\">authentication</a> page for more information."
 msgstr "Akun Anda belum dikonfirmasi sepenuhnya. Silahkan kunjungi halaman <a href=\"%1\">otentikasi</a> untuk informasi lebih lanjut."
 
@@ -13264,7 +13271,7 @@ msgstr "Kasir Anda telah terkunci"
 msgid "Your cashier is locked as per your request"
 msgstr "Bagian kasir Anda telah terkunci sesuai dengan permintaan"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:747
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:748
 msgid "Your cashier is locked as per your request - to unlock it, please click %1here"
 msgstr "Kasir Anda telah terkunci sesuai permintaan Anda - untuk membuka kunci, silahkan klik %1 disini"
 
@@ -13375,7 +13382,7 @@ msgstr "Kata sandi Anda telah dirubah. Silahkan akses kembali."
 msgid "Your password has been reset."
 msgstr "Kata sandi Anda telah dirubah."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:739
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:740
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/reset_password.html.tt:23
 msgid "Your password has been successfully reset. Please log into your account using your new password."
 msgstr "Kata sandi Anda sudah berhasil dibuat ulang. Silahkan akes akun Anda menggunakan kata sandi baru."

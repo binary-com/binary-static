@@ -8,7 +8,7 @@ var LoggedInHandler = (function() {
             storeTokens();
             page.client.set_cookie('login', page.client.get_token(page.client.loginid));
             sessionStorage.setItem('check_tnc', '1');
-            sessionStorage.setItem('risk_classification', 'check');
+            if (isNotBackoffice()) localStorage.setItem('risk_classification', 'check');
             GTM.set_login_flag();
             // redirect url
             redirect_url = sessionStorage.getItem('redirect_url');

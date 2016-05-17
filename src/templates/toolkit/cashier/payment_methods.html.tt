@@ -8,10 +8,10 @@
                 <a href="[% request.url_for('/') %]" class="button by_client_type client_logged_out pjaxload">
                 <span>[% l('Open an account now') %]</span>
                 </a>
-                <a href="[% deposit_url %]" class="button button_large by_client_type client_real with_login_cookies">
+                <a href="[% request.url_for('cashier/forwardws#deposit') %]" class="button button_large by_client_type client_real with_login_cookies">
                 <span>[% l('Deposit') %]</span>
                 </a>
-                <a href="[% withdrawal_url %]" class="button by_client_type client_real with_login_cookies">
+                <a href="[% request.url_for('cashier/forwardws#withdraw') %]" class="button by_client_type client_real with_login_cookies">
                     <span>[% l('Withdraw') %]</span>
                 </a>
             </p>

@@ -260,10 +260,6 @@ Client.prototype = {
                 if(client_tnc_status !== website_tnc_version) {
                     sessionStorage.setItem('tnc_redirect', window.location.href);
                     window.location.href = page.url.url_for('user/tnc_approvalws');
-                } else if (sessionStorage.getItem('risk_redirect')) {
-                  var redirectUrl = sessionStorage.getItem('risk_redirect');
-                  sessionStorage.removeItem('risk_redirect');
-                  window.location.href = redirectUrl;
                 }
             }
         }
@@ -500,7 +496,7 @@ Menu.prototype = {
                 this.show_main_menu();
             }
         } else {
-            var is_mojo_page = /^\/$|\/login|\/home|\/ad|\/open-source-projects|\/bulk-trader-facility|\/partners|\/payment-agent|\/about-us|\/group-information|\/group-history|\/careers|\/contact|\/terms-and-conditions|\/terms-and-conditions-jp|\/responsible-trading|\/us_patents|\/lost_password|\/realws|\/virtualws|\/open-positions|\/job-details|\/user-testing|\/japanws|\/maltainvestws$/.test(window.location.pathname);
+            var is_mojo_page = /^\/$|\/login|\/home|\/ad|\/open-source-projects|\/bulk-trader-facility|\/partners|\/payment-agent|\/about-us|\/group-information|\/group-history|\/careers|\/contact|\/terms-and-conditions|\/terms-and-conditions-jp|\/responsible-trading|\/us_patents|\/lost_password|\/realws|\/virtualws|\/open-positions|\/job-details|\/user-testing|\/japanws|\/maltainvestws|\/reset_passwordws$/.test(window.location.pathname);
             if(!is_mojo_page) {
                 trading.addClass('active');
                 this.show_main_menu();
@@ -774,9 +770,10 @@ Header.prototype = {
         });
     },
     check_risk_classification: function() {
-      if (page.client.is_logged_in && !page.client.is_virtual() && page.client.residence !== 'jp' &&
-          sessionStorage.getItem('risk_classification') === 'high' && window.location.pathname !== '/user/assessmentws') {
-            window.location.href = page.url.url_for('user/assessmentws');
+      if (page.client.is_logged_in && !page.client.is_virtual() && page.client.residence !== 'jp' && isNotBackoffice() &&
+          localStorage.getItem('risk_classification.response') === 'high' && localStorage.getItem('risk_classification') === 'high' &&
+          (localStorage.getItem('reality_check.ack') === '1' || !localStorage.getItem('reality_check.interval'))) {
+            RiskClassification.renderRiskClassificationPopUp();
       }
     },
     validate_cookies: function(){
@@ -817,8 +814,8 @@ Header.prototype = {
                   $.removeCookie(c, {path: cookie_path[1]});
               }
             });
-            sessionStorage.removeItem('risk_classification');
-            sessionStorage.removeItem('risk_redirect');
+            localStorage.removeItem('risk_classification');
+            localStorage.removeItem('risk_classification.response');
             page.reload();
         }
     },

@@ -315,7 +315,7 @@ function generateBirthDate(country){
     var endYear = currentYear - 17;
     //years
     dropDownNumbers(year, startYear, endYear);
-    if (country && country === 'jp') {
+    if ((country && country === 'jp') || page.language().toLowerCase() === 'ja') {
       days.options[0].innerHTML = text.localize('Day');
       months.options[0].innerHTML = text.localize('Month');
       year.options[0].innerHTML = text.localize('Year');

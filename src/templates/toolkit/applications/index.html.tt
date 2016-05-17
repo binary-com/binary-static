@@ -1,4 +1,4 @@
-<div class="applications-page grd-grid-12">
+<div class="applications-page grd-grid-12 invisible">
     <h1>[% l('Applications') %]</h1>
     <p>[% l('[_1] provides a variety of applications to help you trade efficiently.', request.website.display_name) %]</p>
     <div class="grd-grid-12 grd-parent">

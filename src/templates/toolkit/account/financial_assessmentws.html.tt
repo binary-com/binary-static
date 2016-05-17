@@ -1,9 +1,10 @@
 <div class="grd-grid-12">
 
     <h1 id="heading">Financial Assessment</h1>
-    <p class="invisible" id="high_risk_classification"></p>
     <p class = "invisible" id="response_on_success"></p>
     <form class="formObject grd-row-padding invisible" id="assessment_form" name="assessment_form">
+        <h1 id="heading_risk" class="invisible">Financial Assessment</h1>
+        <p class="invisible" id="high_risk_classification">Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed.</p>
         <div class="rbox form">
             <div class="rbox-wrap">
                 <fieldset>

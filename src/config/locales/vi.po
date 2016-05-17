@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: I 18N\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-14 06:59+0000\n"
+"PO-Revision-Date: 2016-05-16 11:19+0000\n"
 "Last-Translator: Pham Minh Hieu <hphamv7@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/binary/static/vi/>\n"
 "Language: vi\n"
@@ -81,7 +81,7 @@ msgstr "Điều kiện và Điều khoản của chương trình hợp tác %1"
 msgid "%1 New Password Request"
 msgstr "%1 Yêu Cầu Mật khẩu Mới"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:729
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:730
 msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
 msgstr "%1 Vui lòng nhấn vào đường dẫn dưới đây để bắt đầu lại quá trình khôi phục mật khẩu. Nếu bạn cần thêm trợ giúp, vui lòng liên hệ với Trung tâm hỗ trợ khách hàng của chúng tôi."
 
@@ -1305,7 +1305,7 @@ msgstr "Số dư tài khoản : %1 %2"
 msgid "Account balance: "
 msgstr "Số dư tài khoản: "
 
-#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Authorize.pm:29
+#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Authorize.pm:30
 msgid "Account is disabled."
 msgstr "Tài khoản của bạn bị vô hiệu hóa."
 
@@ -1647,7 +1647,7 @@ msgstr "Bất kỳ ai trên 18 tuổi [đã đọc và đồng ý với những
 msgid "Anyone who has potential to grow or increase traffic to %1"
 msgstr "Bất kì ai người mà có tiềm năng lớn mạnh và phát triển mạng lưới với %1"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:719
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:720
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:175
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:284
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:2
@@ -1658,7 +1658,7 @@ msgstr "Các ứng dụng"
 msgid "Apply a meticulous eye for detail in proofreading the content that appears on the company’s website, blog, social media outlets, and marketing materials."
 msgstr "Sử dụng đôi mắt cẩn thận, tỉ mỉ để phát hiện lỗi và sửa nội dung thử nghiệm trên trang web, blog, phương tiện truyền thông xã hội và tài liệu tiếp thị của công ty."
 
-#. (website, apply_payment_agent_url)
+#. (website, request.url_for("/payment-agent"))
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/payment_agent_listws.html.tt:67
 msgid "Apply to become a %1 <a class=\"pjaxload\" href=\"%2\">payment agent</a>."
 msgstr "Đăng ký để trở thành %1 <a class=\"pjaxload\" href=\"%2\">đại lý thanh toán</a>."
@@ -2054,6 +2054,7 @@ msgid "BetOnMarkets.com reaches $1 billion turnover since starting in 1999"
 msgstr "BetOnMarkets.com đạt doanh thu 1 tỷ đô la Mỹ tính từ thời điểm thành lập vào năm 1999"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:116
+#: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/us_patents.html.tt:5
 msgid "Betting system and method"
 msgstr "Hệ thống và phương thức Cá cược"
 
@@ -2842,10 +2843,12 @@ msgid "Comply with the applicable laws, rules, and regulations (including, but n
 msgstr "Tuân thủ các điều luật, quy tắc và quy định tại nơi bạn hoạt động kinh doanh hoặc nhắm mục tiêu kinh doanh tới (bao gồm, nhưng không giới hạn với các quảng cáo, bảo mật dữ liệu và các điều luật, quy tắc và quy định về quyền riêng tư)."
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:124
+#: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/us_patents.html.tt:7
 msgid "Computer system and method for speculating on a financial market"
 msgstr "Hệ thống máy tính và phương pháp suy đoán trên thị trường tài chính"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:120
+#: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/us_patents.html.tt:6
 msgid "Computer trading system for offering custom financial market speculations"
 msgstr "Hệ thống giao dịch máy tính cung cấp suy đoán thị trường tài chính tùy chỉnh"
 
@@ -2865,7 +2868,7 @@ msgstr "Tính bảo mật"
 msgid "Confirm"
 msgstr "Xác nhận"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:735
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:736
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "Confirm New Password"
 msgstr "Xác nhận Mật khẩu mới"
@@ -3289,7 +3292,7 @@ msgstr "Ngày (GMT)"
 msgid "Date and Time"
 msgstr "Ngày và Thời gian"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:736
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:737
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "Date of Birth"
 msgstr "Ngày sinh"
@@ -3393,7 +3396,7 @@ msgstr ""
 "support@binary.com"
 
 #. ($client_name, $support_email)
-#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client/IDAuthentication.pm:198
+#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client/IDAuthentication.pm:172
 msgid ""
 "Dear %1,\n"
 "\n"
@@ -3677,7 +3680,7 @@ msgstr "Mô tả"
 msgid "Design engaging, visually inspiring content for the company's website and many other forms of media, including both online and offline materials."
 msgstr "Thiết kế nội dung hấp dẫn, bắt mắt cho trang web và nhiều hình thức truyền thống khác nhau của công ty, bao gồm cả tài liệu trực tuyến và ngoại tuyến."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:730
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:731
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/japanws.html.tt:9
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:9
@@ -3830,7 +3833,7 @@ msgstr "Tài liệu hoàn trả lại tiền cho tài khoản"
 msgid "Document department processes, to enhance the marketing team’s ability to execute repeated tasks efficiently and effectively"
 msgstr "Tạo quy trình quản lý tài liệu để tăng cường khả năng của đội ngũ tiếp thị khi thực hiện những nhiệm vụ lặp lại một cách hiệu quả và năng suất"
 
-#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client/IDAuthentication.pm:197
+#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client/IDAuthentication.pm:171
 msgid "Documents are required to verify your identity"
 msgstr "Những loại giấy tờ được yêu cầu để xác minh danh tính của bạn"
 
@@ -3857,6 +3860,10 @@ msgstr "Tạo sự tăng trưởng nhanh chóng và phát triển kinh doanh đ�
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Drive rapid growth from key areas of the world, applying a variety of online and offline marketing abilities to expand the company's active affiliate network."
 msgstr "Tạo sự phát triển nhanh chóng tại những khu vực trọng yếu trên thế giới, áp dụng cơ hội quảng bá tiếp thị đa dạng, cả trực tuyến và ngoại tuyến để mở rộng mạng lưới liên kết hoạt động của công ty."
+
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:717
+msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
+msgstr ""
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1417
 msgid "Due to regulatory requirements, you are required to authenticate your account in order to continue trading."
@@ -4395,7 +4402,7 @@ msgstr "Tiện ích cho phép bạn thiết lập giới hạn cho tài khoản 
 msgid "Failed"
 msgstr "Thất bại"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:744
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:745
 msgid "Failed to reset password. %1, please retry."
 msgstr "Thiết lập lại mật khẩu thất bại. %1, vui lòng thử lại."
 
@@ -4576,7 +4583,7 @@ msgstr "Hãy thực hiện theo Luật và những Điều khoản Sau đây"
 msgid "Follow up on rejected deposits"
 msgstr "Theo dõi các khoản tiền gửi bị từ chối"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:748
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:749
 msgid "For added security, please check your email to retrieve the verification token."
 msgstr "Để tăng cường độ bảo mật. vui lòng kiểm tra hòm thư của bạn để nhận cuỗi xác nhận."
 
@@ -4642,7 +4649,7 @@ msgstr "Kinh nghiệm giao dịch Thị trường Ngoại hối"
 msgid "Forex trading frequency"
 msgstr "Tần suất giao dịch Thị trường ngoại hối"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:737
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:738
 msgid "Format: yyyy-mm-dd (not required for virtual-money accounts)"
 msgstr "Định dạng: yyyy-mm-dd (không yêu cầu đối với các tài khoản tiền ảo)"
 
@@ -5180,7 +5187,7 @@ msgstr "Nếu bạn giới thiệu trang web của chúng tôi cho khách h
 msgid "If you meet our basic requirements, we’ll send you a talent test."
 msgstr "Nếu bạn đạt yêu cầu cơ bản của chúng tôi, chúng tôi sẽ gửi cho bạn một bài kiểm tra đánh giá kỹ năng."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:751
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:752
 msgid "If you need assistance feel free to contact our %1Customer Support"
 msgstr "Nếu bạn cần trợ giúp, vui lòng liên hệ với đội ngũ hỗ trợ khách hàng %1 của chúng tôi"
 
@@ -5564,7 +5571,7 @@ msgstr "Thông tin về nguồn dữ liệu mà công ty chúng tôi dùn
 msgid "Information of the previous performance of any underlying instrument or asset does not guarantee its current and/or future performance. Past performance is not a reliable indicator of future results."
 msgstr "Thông tin của bất kỳ lần giao dịch công cụ tài sản cơ sở hoặc tài sản lần trước không đảm bảo cho lần giao dịch hiện tại và/hoặc tương lai. GIao dịch lần trước không là chỉ số đáng tin cậy cho kết quả của tương lai."
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:423
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:335
 msgid "Input validation failed: "
 msgstr "Xác thực đầu vào thất bại: "
 
@@ -5665,7 +5672,7 @@ msgstr "Số tiền không hợp lệ. nhỏ nhất là 10 và lớn nhất là 
 msgid "Invalid candles request"
 msgstr "Yêu cầu kiểm tra không hợp lệ"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:743
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:744
 msgid "Invalid date of birth."
 msgstr "Ngày sinh không hợp lệ."
 
@@ -6453,7 +6460,7 @@ msgstr "Tháng Sáu"
 msgid "June"
 msgstr "Tháng Sáu"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:725
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:726
 msgid "Keep track of your authorised applications."
 msgstr "Theo dõi liên tục các ứng dụng được cho phép của bạn."
 
@@ -6526,7 +6533,7 @@ msgid "Last Digit Stats"
 msgstr "Dữ liệu Chữ số Cuối cùng"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:352
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:722
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:723
 msgid "Last Used"
 msgstr "Lần sử dụng cuối cùng"
 
@@ -7245,7 +7252,7 @@ msgstr "Lợi nhuận thuần"
 msgid "Network Status"
 msgstr "Tình trạng Mạng"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:723
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:724
 msgid "Never"
 msgstr "Chưa bao giờ"
 
@@ -7257,7 +7264,7 @@ msgstr "Chưa bao giờ Sử dụng"
 msgid "New"
 msgstr "Mới"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:734
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:735
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "New Password"
 msgstr "Mật khẩu mới"
@@ -7739,7 +7746,7 @@ msgstr "Trang web của chúng tôi có thể được lọc bởi việc s�
 msgid "Our site does not charge any transfer fees."
 msgstr "Trang web của chúng tôi không tính bất kì phí chuyển tiền nào."
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:453
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:393
 msgid "Output validation failed: "
 msgstr "Xác thực đầu ra thất bại: "
 
@@ -7839,7 +7846,7 @@ msgstr "Trang không được tìm thấy"
 msgid "Parabolic SAR"
 msgstr "Chỉ báo Parabolic SAR"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:593
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:495
 msgid "Parameters sanity check failed."
 msgstr "Kiểm tra tính đúng đắn của thông số thất bại."
 
@@ -7860,12 +7867,12 @@ msgstr "Đối tác"
 msgid "Password"
 msgstr "Mật khẩu"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:731
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:732
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "Password Reset"
 msgstr "Thiết lập lại Mật khẩu"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:742
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:743
 msgid "Password does not match."
 msgstr "Mật khẩu không đúng."
 
@@ -7890,7 +7897,7 @@ msgstr "Mật khẩu rất mạnh"
 msgid "Password is weak"
 msgstr "Mật khẩu yếu"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:741
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:742
 msgid "Password must contains at least 1 digit, 1 uppercase letter and 1 lowercase letter."
 msgstr "Mật khẩu phải chứa ít nhất 1 chữ số, 1 chữ cái viết hoa và 1 chữ cái viết thường."
 
@@ -8017,7 +8024,7 @@ msgid "Perl modules"
 msgstr "module Perl"
 
 #. ($descriptor->{require_scope})
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:437
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:349
 msgid "Permission denied, requiring %1"
 msgstr "Quyền hạn bị từ chối, yêu cầu %1"
 
@@ -8025,7 +8032,7 @@ msgstr "Quyền hạn bị từ chối, yêu cầu %1"
 msgid "Permission denied."
 msgstr "Quyền bị từ chối."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:721
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:722
 msgid "Permissions"
 msgstr "Quyền hạn"
 
@@ -8064,7 +8071,7 @@ msgstr "Vui lòng chấp nhận Bảo vệ Quỹ tiền tệ."
 msgid "Please agree to the risk disclaimer before proceeding."
 msgstr "Vui lòng đồng ý với tuyên bố từ chối rủi ro trước khi tiến hành."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:733
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:734
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/virtualws.html.tt:18
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/deposit_withdraw_ws.html.tt:79
@@ -8072,12 +8079,12 @@ msgstr "Vui lòng đồng ý với tuyên bố từ chối rủi ro trước 
 msgid "Please check your email for the value of this token"
 msgstr "Vui lòng kiểm tra email của bạn để biết giá trị của token này"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:728
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:729
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "Please check your email to retrieve the token needed to reset your password."
 msgstr "Vui lòng kiểm tra email của bạn để tìm lại token được yêu cầu để thiết lập lại mật khẩu của bạn."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:749
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:750
 msgid "Please choose which currency you would like to transact in."
 msgstr "Xin vui lòng chọn đồng tiền mà bạn muốn giao dịch."
 
@@ -8195,7 +8202,7 @@ msgstr "Vui lòng nhập ngày hợp lệ"
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Transaction.pm:29
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Utility.pm:118
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:432
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:344
 msgid "Please log in."
 msgstr "Vui lòng đăng nhập."
 
@@ -8920,7 +8927,7 @@ msgstr "Giá bán lại"
 msgid "Resend Verification Email"
 msgstr "Gửi lại Email Xác minh"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:738
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:739
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/lost_passwordws.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "Reset Password"
@@ -8939,8 +8946,8 @@ msgstr "Nguồn"
 msgid "Respond to client queries using our state of the art telephone, electronic mail and on-line chat systems"
 msgstr "Trả lời các truy vấn của khách hàng qua điện thoại, thư điện tử và hệ thống hỗ trợ trực tuyến của chúng tôi"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:193
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:123
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:195
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:120
 msgid "Response too large."
 msgstr "Phản hồi quá lớn."
 
@@ -9022,7 +9029,7 @@ msgstr "Đánh giá, phát triển, cải tiến các mã sử dụng trong vi�
 msgid "Revisions to the Binary.com API"
 msgstr "Xét duyệt lại hệ thống Binary.com API"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:724
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:725
 msgid "Revoke access"
 msgstr "Hủy bỏ truy cập"
 
@@ -9510,11 +9517,11 @@ msgstr "Xin lỗi, Lỗi xảy ra trong khi đang xử lý tài khoản cu�
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Accounts.pm:915
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Contract.pm:225
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Contract.pm:272
-#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/MarketDiscovery.pm:48
-#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/MarketDiscovery.pm:78
+#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/MarketDiscovery.pm:51
+#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/MarketDiscovery.pm:81
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount/Japan.pm:175
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:174
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:183
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:176
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:185
 msgid "Sorry, an error occurred while processing your request."
 msgstr "Rất tiếc, đã xảy ra lỗi khi đang xử lý yêu cầu của bạn."
 
@@ -9656,7 +9663,7 @@ msgstr "Xin lỗi, bạn đã đã rút ra khỏi trang web cho tới %1."
 #. ($lim)
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client.pm:845
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/User.pm:100
-#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Authorize.pm:37
+#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Authorize.pm:38
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Utility.pm:132
 msgid "Sorry, you have excluded yourself until %1."
 msgstr "Xin lỗi, bạn đã tự thoát ra trước khi %1."
@@ -9730,7 +9737,7 @@ msgstr "Đơn vị vốn, cổ phiếu"
 msgid "Start Time"
 msgstr "Thời gian bắt đầu"
 
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:189
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:190
 msgid "Start Trading"
 msgstr "Bắt đầu Giao dịch"
 
@@ -10333,8 +10340,6 @@ msgid "The Company may use or disclose (or choose not to use or disclose) such C
 msgstr "Công ty chúng tôi có thể sử dụng hay tiết lộ (hoặc lựa chọn không sử dụng hay tiết lộ) những phần Bồi thường như thế này cho bất kỳ mục đích gì, bằng cách nào, trên bất kỳ phương tiện thông tin toàn thế giới;"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/terms_and_conditions.html.tt:104
-#, fuzzy
-#| msgid "The Company may, from time to time, at its sole discretion, or as required by regulations in place to conduct appropriate \"Know Your Customer\" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and may at its sole discretion suspend an account until such proof has been provided to its satisfaction. Know Your Customer documentation will be required when a Client deposits money in the account. In the case of a client opening an account with Binary (Europe) Ltd, the threshold for verifying clients is on cumulative withdrawals of EUR 2,300."
 msgid "The Company may, from time to time, at its sole discretion, or as required by regulations in place to conduct appropriate \"Know Your Customer\" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and may at its sole discretion suspend an account until satisfactory identification information, evidence of identity and address, source of funds and/or source of wealth have been provided. Know Your Customer documentation will be required when a Client deposits money in the account. In the case of a client opening an account with Binary (Europe) Ltd, the threshold for verifying clients is on cumulative withdrawals of EUR 2,300."
 msgstr "Theo thời gian, Công ty có thể quyết định theo ý mình, hoặc theo yêu cầu của quy định ở vị trí thích hợp để tiến hành thủ tục \"Tìm hiểu Khách hàng\" và yêu cầu khách hàng cung cấp bằng chứng nhận dạng (như bản sao công chứng hộ chiếu hoặc các phương tiện xác minh danh tính khác khi Công ty xét thấy cần thiết trong một số trường hợp) và có thể tùy ý đình chỉ tài khoản cho đến khi bằng chứng này được cung cấp. Hồ sơ Tìm hiểu về Khách hàng sẽ được yêu cầu cung cấp khi Khách hàng gửi tiền vào tài khoản. Trong trường hợp khách hàng mở tài khoản với công ty TNHH Binary (Châu Âu), ngưỡng rút tiền tích lũy cho khách hàng đã được xác minh là  EUR 2,300."
 
@@ -10556,7 +10561,7 @@ msgstr "Khoản lợi nhuận/thua lỗ trên điểm của chỉ số tăn
 msgid "The anti-money laundering processes have the following effects on Clients:"
 msgstr "Xử lý chống rửa tiền có những ảnh hưởng sau đây đến Khách hàng:"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:117
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:114
 msgid "The application sent an invalid request."
 msgstr "Ứng dụng đã gửi một yêu cầu không hợp lệ."
 
@@ -10929,7 +10934,7 @@ msgstr "Có lỗi khi truy cập máy chủ."
 msgid "There was a problem validating your address."
 msgstr "Có lỗi xảy ra khi xác minh địa chỉ của bạn."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:750
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:751
 msgid "There was a problem validating your personal details. Please fix the fields %1here"
 msgstr "Xảy ra lỗi phê chuẩn thông tin cá nhân chi tiết của bạn. Vui lòng sửa trường %1tại đây"
 
@@ -11764,7 +11769,7 @@ msgstr "Trừ phi được yêu cầu, nếu không chúng tôi sẽ coi bạn n
 msgid "Unlock Cashier"
 msgstr "Mở khóa Thu ngân"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:466
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:406
 msgid "Unrecognised request."
 msgstr "Yêu cầu không rõ."
 
@@ -11859,13 +11864,13 @@ msgstr "Valletta, thủ đô của Malta"
 msgid "Verification Successful"
 msgstr "Xác nhận đã thành công"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:732
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:733
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_withdrawws.html.tt:35
 msgid "Verification Token"
 msgstr "Mã Token Xác thực"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:740
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:741
 msgid "Verification code format incorrect."
 msgstr "Định dạng của mã xác thực không chính xác."
 
@@ -11896,8 +11901,6 @@ msgid "Verify your withdrawal request - %1"
 msgstr "Xác minh yêu cầu rút tiền - %1"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/terms_and_conditions.html.tt:4
-#, fuzzy
-#| msgid "Version 39. Last modified 2016-03-01."
 msgid "Version 40. Last modified 2016-05-12."
 msgstr "Phiên bản 39. Chỉnh sửa lần cuối ngày 2016-03-01."
 
@@ -12889,7 +12892,7 @@ msgstr "Bạn đã vượt quá giới hạn mức thua lỗ cho phép trong vò
 msgid "You have exceeded your daily limit on losses of %1%2."
 msgstr "Bạn đã vượt quá giới hạn thua lỗ cho phép trong ngày của %1%2."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:720
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:721
 msgid "You have not granted access to any applications."
 msgstr "Bạn không được phép truy cập bất kỳ một ứng dụng nào."
 
@@ -12910,7 +12913,7 @@ msgid "You have purchased the following contract:"
 msgstr "Bạn đã mua hợp đồng sau đây:"
 
 #. ($descriptor->{category})
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:410
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:322
 msgid "You have reached the rate limit for %1."
 msgstr "Bạn đã đạt tỉ lệ giới hạn của %1."
 
@@ -13007,7 +13010,7 @@ msgstr ""
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:542
 msgid "You need to finish all 20 questions."
-msgstr ""
+msgstr "Bạn phải hoàn thành toàn bộ 20 câu hỏi."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/binary_options_basics.html.haml:1
 msgid "You only need to make four decisions to execute a binary contract."
@@ -13212,7 +13215,7 @@ msgstr "Tài khoản của bạn hoàn toàn được xác thực. Bạn co�
 msgid "Your account is important to us. Please <a href=\"%1\">contact us</a> should you need further assistance."
 msgstr "Tài khoản của bạn rất quan trọng với chúng tôi. Vui lòng <a href=\"%1\">liên hệ với chúng tôi</a> nếu bạn muốn giúp đỡ thêm."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:752
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:753
 msgid "Your account is not fully authenticated. Please visit the <a href=\"%1\">authentication</a> page for more information."
 msgstr "Tài khoản của bạn không được chứng thực đầy đủ. Vui lòng tuy cập trang <a href=\"%1\">xác thực</a> để biết thêm thông tin."
 
@@ -13258,7 +13261,7 @@ msgstr "Quỹ của bạn đã bị khoá"
 msgid "Your cashier is locked as per your request"
 msgstr "Quỹ của bạn đã được khóa theo yêu cầu của bạn"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:747
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:748
 msgid "Your cashier is locked as per your request - to unlock it, please click %1here"
 msgstr "Tiền đã bị khóa theo yêu cầu của bạn - để mở khóa, vui lòng nhấn %1tại đây"
 
@@ -13369,7 +13372,7 @@ msgstr "Mật khẩu của bạn đã được thay đổi. Vui lòng đăn
 msgid "Your password has been reset."
 msgstr "Mật khẩu của bạn đã được thay đổi."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:739
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:740
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/reset_password.html.tt:23
 msgid "Your password has been successfully reset. Please log into your account using your new password."
 msgstr "Mật khẩu của bạn đã được thiết lập lại thành công. Vui lòng dùng mật khẩu mới đăng nhập vào tài khoản của bạn."
@@ -15368,7 +15371,7 @@ msgstr "Berkshire Hathaway Inc."
 
 #: Underlying Symbol AUCBA
 msgid "Commonwealth Bank"
-msgstr ""
+msgstr "Ngân hàng Thịnh vượng chung"
 
 #: Underlying Symbol UKAAL
 msgid "Anglo American plc"
@@ -15436,7 +15439,7 @@ msgstr "AbbVie Inc."
 
 #: Underlying Symbol DESIE
 msgid "Siemens AG"
-msgstr ""
+msgstr "Siemens AG"
 
 #: Underlying Symbol UKRDSA
 msgid "Royal Dutch Shell plc"
@@ -15547,10 +15550,8 @@ msgid "YY Inc."
 msgstr "YY Inc."
 
 #: Underlying Symbol USAMZN
-#, fuzzy
-#| msgid "Sohu.com Inc."
 msgid "Amazon.com Inc"
-msgstr "Sohu.com Inc."
+msgstr "Amazon.com Inc"
 
 #: Underlying Symbol USHAL
 msgid "Halliburton Company"
@@ -15609,14 +15610,12 @@ msgid "Volkswagen AG"
 msgstr "Volkswagen AG"
 
 #: Underlying Symbol UKBARC
-#, fuzzy
-#| msgid "Barclays plc"
 msgid "Barclays"
-msgstr "Ngân hàng Barclays plc"
+msgstr "Barclays"
 
 #: Underlying Symbol AUMQG
 msgid "Macquarie Group"
-msgstr ""
+msgstr "Tập đoàn Macquarie"
 
 #: Underlying Symbol AUTLS
 msgid "TELSTRA CORPORATION LIMITED"
@@ -15719,10 +15718,8 @@ msgid "WOOLWORTHS LIMITED"
 msgstr "WOOLWORTHS LIMITED"
 
 #: Underlying Symbol UKGSK
-#, fuzzy
-#| msgid "GlaxoSmithKline plc"
 msgid "GlaxoSmithKline"
-msgstr "Tập đoàn dược phẩm GlaxoSmithKline"
+msgstr "GlaxoSmithKline"
 
 #: Underlying Symbol AUWES
 msgid "WESFARMERS LIMITED"
@@ -15797,10 +15794,8 @@ msgid "BMW"
 msgstr "BMW"
 
 #: Underlying Symbol USAAPL
-#, fuzzy
-#| msgid "Apple Inc."
 msgid "Apple Inc"
-msgstr "Apple Inc."
+msgstr "Apple Inc"
 
 #: Underlying Symbol INBHARTIARTL
 msgid "Bharti Airtel"
@@ -15815,10 +15810,8 @@ msgid "UBS AG"
 msgstr "UBS AG"
 
 #: Underlying Symbol USCT
-#, fuzzy
-#| msgid "Citigroup Inc."
 msgid "Citigroup Inc"
-msgstr "Citigroup Inc."
+msgstr "Citigroup Inc"
 
 #: Underlying Symbol FPMIC
 msgid "Michelin"
@@ -15861,10 +15854,8 @@ msgid "Reliance Industries Ltd"
 msgstr "Công ty Reliance Industries"
 
 #: Underlying Symbol AUBHP
-#, fuzzy
-#| msgid "BHP Billiton Ltd"
 msgid "BHP Billiton"
-msgstr "Công ty BHP Billiton"
+msgstr "BHP Billiton"
 
 #: Underlying Symbol USAMAT
 msgid "Applied Materials Inc."
@@ -15963,10 +15954,8 @@ msgid "Piraeus Bank SA"
 msgstr "Piraeus Bank SA"
 
 #: Underlying Symbol USFB
-#, fuzzy
-#| msgid "Facebook Inc."
 msgid "Facebook Inc"
-msgstr "Facebook Inc."
+msgstr "Facebook Inc"
 
 #: Underlying Symbol FPDG
 msgid "Vinci"
@@ -16065,10 +16054,8 @@ msgid "Philip Morris International"
 msgstr "Tập đoàn quốc tế Philip Morris International"
 
 #: Underlying Symbol UKHSBA
-#, fuzzy
-#| msgid "HSBC Holdings plc"
 msgid "HSBC Holdings"
-msgstr "Tập đoàn HSBC Holdings"
+msgstr "HSBC Holdings"
 
 #: Underlying Symbol DEEOAN
 msgid "E.ON SE"
@@ -16083,14 +16070,10 @@ msgid "IBM"
 msgstr "Tập đoàn IBM"
 
 #: Underlying Symbol USPFE
-#, fuzzy
-#| msgid "Pfizer Inc."
 msgid "Pfizer Inc"
-msgstr "Tập đoàn Pfizer Inc."
+msgstr "Pfizer Inc"
 
 #: Underlying Symbol AUANZ
-#, fuzzy
-#| msgid "ANZ Banking Group Ltd"
 msgid "ANZ Banking Group"
 msgstr "Tập đoàn tài chính ANZ"
 
@@ -16143,8 +16126,6 @@ msgid "Schneider Electric"
 msgstr "Tập đoàn năng lượng Schneider Electric"
 
 #: Underlying Symbol UKVOD
-#, fuzzy
-#| msgid "Vodafone"
 msgid "Vodafone Group"
 msgstr "Tập đoàn viễn thông Vodafone"
 
@@ -16169,10 +16150,8 @@ msgid "Dialog Semiconductor plc"
 msgstr "Dialog Semiconductor plc"
 
 #: Underlying Symbol USXOM
-#, fuzzy
-#| msgid "ExxonMobil"
 msgid "Exxon Mobil Corp"
-msgstr "Tập đoàn ExxonMobil"
+msgstr "Tập đoàn Exxon Mobil"
 
 #: Underlying Symbol USNTFLX
 msgid "Netflix Inc."
@@ -16267,10 +16246,8 @@ msgid "Veolia Environnement water"
 msgstr "Veolia Environnement water"
 
 #: Underlying Symbol USKO
-#, fuzzy
-#| msgid "The Coca-Cola Company"
 msgid "Coca-Cola Co"
-msgstr "Tập đoàn Coca-Cola"
+msgstr "Công ty Coca-Cola"
 
 #: Underlying Symbol BBUCB
 msgid "UCB"
@@ -16321,22 +16298,16 @@ msgid "Societe Generale"
 msgstr "Hãng Societe Generale"
 
 #: Underlying Symbol AUQAN
-#, fuzzy
-#| msgid "Qantas Airways Limited"
 msgid "Qantas Airways"
-msgstr "Qantas Airways Limited"
+msgstr "Hãng hàng không Qantas"
 
 #: Underlying Symbol USGE
-#, fuzzy
-#| msgid "General Electric Company"
 msgid "General Electric Co"
-msgstr "Tập đoàn General Electric Company"
+msgstr "Tập đoàn General Electric"
 
 #: Underlying Symbol USMSFT
-#, fuzzy
-#| msgid "Microsoft"
 msgid "Microsoft Corp"
-msgstr "Microsoft"
+msgstr "Tập đoàn Microsoft"
 
 #: Underlying Symbol USJD
 msgid "JD.com Inc."
@@ -16351,10 +16322,8 @@ msgid "Alstom industrial machinery"
 msgstr "Alstom industrial machinery"
 
 #: Underlying Symbol USGOOG
-#, fuzzy
-#| msgid "Alcoa Inc."
 msgid "Alphabet Inc"
-msgstr "Alcoa Inc."
+msgstr "Alphabet Inc"
 
 #: Underlying Symbol USWMT
 msgid "Wal-Mart Stores Inc."
@@ -16485,10 +16454,8 @@ msgid "Commodities are traded items with directly usable qualities."
 msgstr "Hàng hóa là những thứ được mang ra trao đổi buôn bán, có giá trị sử dụng trực tiếp."
 
 #: Translation for market name
-#, fuzzy
-#| msgid "Stocks"
 msgid "OTC Stocks"
-msgstr "Cổ phiếu"
+msgstr "Chứng khoán phi tập trung"
 
 #: Explanation for market OTC Stocks
 msgid "Stocks (or shares) represent the value of partial ownership in a single company."
@@ -16551,10 +16518,8 @@ msgid "Americas Future"
 msgstr "Hợp đồng tương lai Mỹ"
 
 #: Explanation for market Germany
-#, fuzzy
-#| msgid "Germany Stocks"
 msgid "Germany OTC Stocks"
-msgstr "Chứng khoán Đức"
+msgstr "Chứng khoán phi tập trung Đức"
 
 #: Translation for sub market name
 msgid "French Stocks"
@@ -16578,25 +16543,23 @@ msgstr "Dạ khúc"
 
 #: Explanation for market Nocturnes
 msgid "Represent a single day of trading with different market factors. They are reset at the start of each trading day (12:00GMT)."
-msgstr "Thể hiện giao dịch của một ngày với các nhân tố thị trường khác nhau. Chúng được thiết lập lại tại thời điểm bắt đầu ngày giao dịch (12:00 giờ GMT)."
+msgstr "Thể hiện một ngày giao dịch với những yếu tố thị trường khác nhau. Chúng được tái thiết lập tại thời điểm bắt đầu ngày giao dịch (12:00 giờ GMT)."
 
 #: Translation for sub market name
 msgid "OTC Indices"
-msgstr "Chỉ số phi tập trung"
+msgstr "Các chỉ số phi tập trung"
 
 #: Translation for sub market name
 msgid "Europe/Africa"
-msgstr "Châu Âu/châu Phi"
+msgstr "Châu Âu/Châu Phi"
 
 #: Translation for sub market name
 msgid "United States Stocks"
 msgstr "Chứng khoán Hoa Kỳ"
 
 #: Explanation for market Australia
-#, fuzzy
-#| msgid "Australia Stocks"
 msgid "Australia OTC Stocks"
-msgstr "Chứng khoán Úc"
+msgstr "Chứng khoán phi tập trung Úc"
 
 #: Translation for sub market name
 msgid "Minor Pairs"
@@ -16607,16 +16570,12 @@ msgid "Forex pairs of interest, but with less liquid international markets."
 msgstr "Lãi suất của cặp Ngoại hối, nhưng thị trường quốc tế ít thanh khoản hơn."
 
 #: Translation for sub market name
-#, fuzzy
-#| msgid "USD"
 msgid "US"
-msgstr "USD"
+msgstr "Hoa Kỳ"
 
 #: Explanation for market US
-#, fuzzy
-#| msgid "US Stocks"
 msgid "US OTC Stocks"
-msgstr "Chứng khoán Mỹ"
+msgstr "Chứng khoán phi tập trung Hoa Kỳ"
 
 #: Translation for sub market name
 msgid "Germany Stocks"
@@ -16624,21 +16583,19 @@ msgstr "Chứng khoán Đức"
 
 #: Explanation for market Daily Reset Indices
 msgid "Represent a single day of trading with different market factors. They are reset at the start of each trading day (00:00GMT)."
-msgstr "Đại diện cho một ngày duy nhất của giao dịch với các yếu tố thị trường khác nhau. Chúng được thiết lập lại vào đầu mỗi ngày giao dịch (00: 00GMT)."
+msgstr "Đại diện cho một ngày  giao dịch với các yếu tố thị trường khác nhau. Chúng được tái thiết lập vào đầu mỗi ngày giao dịch (00: 00GMT)."
 
 #: Explanation for market Continuous Indices
 msgid "Associated with a number that represents the relative volatility of the market. For example, the Volatility 100 Index is twice as volatile as the Volatility 50 Index."
-msgstr "Liên kết với một số mà đại diện cho sự biến động tương đối của thị trường. Ví dụ, Chỉ số Biến động 100 thì biến động gấp hai lần so với Chỉ số Biến động 50."
+msgstr "Liên kết với một số đại diện cho sự biến động tương đối của thị trường. Ví dụ, Chỉ số Biến động 100 thì biến động gấp hai lần so với Chỉ số Biến động 50."
 
 #: Translation for sub market name
 msgid "UK"
-msgstr ""
+msgstr "Vương quốc Anh"
 
 #: Explanation for market UK
-#, fuzzy
-#| msgid "UK Stocks"
 msgid "UK OTC Stocks"
-msgstr "Chứng khoán Anh"
+msgstr "Chứng khoán phi tập trung Anh"
 
 #: Translation for sub market name
 msgid "Metals"
@@ -16776,7 +16733,7 @@ msgstr "%1 %2 tiền thưởng nếu chữ số cuối cùng của %3 kh�
 
 #: Translation for contract type "DIGITEVEN"
 msgid "even"
-msgstr "đồng đều"
+msgstr "số chẵn"
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -16787,7 +16744,7 @@ msgstr "đồng đều"
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (DIGITEVEN - tick)
 msgid "%1 %2 payout if the last digit of %3 is even after %5 ticks."
-msgstr "%1 %2 tiền thưởng nếu chữ số cuối cùng của %3 đồng đều sau %5 bước giá."
+msgstr "%1 %2 tiền thưởng nếu chữ số cuối cùng của %3 là số chẵn sau %5 bước giá."
 
 #: Translation for contract type "DIGITMATCH"
 msgid "matches"
@@ -17040,7 +16997,7 @@ msgstr "%1 %2 tiền lãi cho mỗi điểm %3 rơi từ mức nhập va�
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (SPREADD - point)
 msgid "%1 %2 payout for every point %3 falls from entry level, with stop loss of %4 points and stop profit of %5 points."
-msgstr "%1 %2 tiền lãi cho mỗi điểm %3 rơi từ mức nhập vào, với điểm lỗ tới hạn của %4 điểm và điểm lãi tới hạn của %5 điểm."
+msgstr "%1 %2 tiền lãi cho mỗi điểm %3 rơi từ mức nhập vào, với điểm cắt lỗ %4 điểm và điểm cắt lãi %5 điểm."
 
 #: Translation for contract type "SPREADU"
 msgid "spread up"
@@ -17055,7 +17012,7 @@ msgstr "chênh lệch lên"
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (SPREADU - dollar)
 msgid "%1 %2 payout for every point %3 rises from entry level, with stop loss of %6 %4 and stop profit of %6 %5."
-msgstr "%1 %2 tiền lãi cho mỗi điểm %3 lên từ điểm nhập vào, với điểm tới hạn lỗ của %6 %4 và điểm tới hạn lãi của %6 %5."
+msgstr "%1 %2 tiền lãi cho mỗi điểm %3 lên từ điểm nhập vào, với điểm cắt lỗ %6 %4 và điểm cắt lãi %6 %5."
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -17066,7 +17023,7 @@ msgstr "%1 %2 tiền lãi cho mỗi điểm %3 lên từ điểm nhập v
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (SPREADU - point)
 msgid "%1 %2 payout for every point %3 rises from entry level, with stop loss of %4 points and stop profit of %5 points."
-msgstr "%1 %2 tiền lãi cho mỗi điểm %3 lên từ điểm nhập vào, với điểm tới hạn lỗ %4 điểm và điểm tới hạn lãi của %5 điểm."
+msgstr "%1 %2 tiền lãi cho mỗi điểm %3 lên từ điểm nhập vào, với điểm cắt lỗ %4 điểm và điểm cắt lãi %5 điểm."
 
 #: Translation for contract type "UPORDOWN"
 msgid "goes outside"

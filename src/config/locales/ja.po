@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-16 06:18+0000\n"
-"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
+"PO-Revision-Date: 2016-05-17 00:01+0000\n"
+"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -81,7 +81,7 @@ msgstr "当社アフィリエイトプログラム・ご利用規約"
 msgid "%1 New Password Request"
 msgstr "新認証コード発行　- %1"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:729
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:730
 msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
 msgstr "%1下記リンクをクリックしてパスワードの再設定を再度お試しください。サポートが必要な場合は、 カスタマーサポートまでご連絡ください。"
 
@@ -246,10 +246,8 @@ msgstr "当社ではインターバンク市場と同等レベルの算出方法
 
 #. (request.website.display_name)
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:3
-#, fuzzy
-#| msgid "%1 provides a variety of charts to help you determine what markets to trade on. Try them out."
 msgid "%1 provides a variety of applications to help you trade efficiently."
-msgstr "%1では、トレード計画に役立てるような様々なタイプのチャートを提供しています。是非ともご活用下さい。"
+msgstr "%1ではトレード計画に役立てるような様々なアプリケーションを提供しています。是非ともご活用下さい。"
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/partners.html.haml:1
@@ -1325,7 +1323,7 @@ msgstr "口座残高 : %1 %2"
 msgid "Account balance: "
 msgstr "口座残高： "
 
-#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Authorize.pm:29
+#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Authorize.pm:30
 msgid "Account is disabled."
 msgstr "この口座は無効です"
 
@@ -1427,7 +1425,7 @@ msgstr "ソフトウェア設計原則の高度な知識"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:29
 msgid "Advanced tool for active traders"
-msgstr ""
+msgstr "上級トレーダーのための高度なツール"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "Advising senior managers regarding salary negotiations and job offers"
@@ -1673,7 +1671,7 @@ msgstr "１８歳以上で %1のご利用規約に同意された方、かつ当
 msgid "Anyone who has potential to grow or increase traffic to %1"
 msgstr "当社へのトラフィックの成長または増加に貢献が見込める方"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:719
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:720
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:175
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:284
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:2
@@ -1684,7 +1682,7 @@ msgstr "アプリケーション"
 msgid "Apply a meticulous eye for detail in proofreading the content that appears on the company’s website, blog, social media outlets, and marketing materials."
 msgstr "細部にまで目を配りながら当社のウェブサイト、ブログ、ソーシャルメディア、マーケティングのコンテンツの校正。"
 
-#. (website, apply_payment_agent_url)
+#. (website, request.url_for("/payment-agent"))
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/payment_agent_listws.html.tt:67
 msgid "Apply to become a %1 <a class=\"pjaxload\" href=\"%2\">payment agent</a>."
 msgstr "%1での <a class=\"pjaxload\" href=\"%2\">決済サービスエージェント</a>として申し込む"
@@ -1913,7 +1911,7 @@ msgstr "ご利用できるお支払い方法"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:62
 msgid "Available soon..."
-msgstr ""
+msgstr "ただ今準備中です..."
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:642
 msgid "Avg Directional Index"
@@ -2082,6 +2080,7 @@ msgid "BetOnMarkets.com reaches $1 billion turnover since starting in 1999"
 msgstr "BetOnMarkets.comは1999年から累計で10億USDのターンオーバーを達成"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:116
+#: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/us_patents.html.tt:5
 msgid "Betting system and method"
 msgstr "ベッティングシステムとその方法"
 
@@ -2154,7 +2153,7 @@ msgstr "Binary Ltdは、<span itemprop='location'>47 Esplanade, St. Helier, Jers
 #, fuzzy
 #| msgid "Binary option"
 msgid "Binary Next Gen"
-msgstr "バイナリーオプション"
+msgstr "次世代バイナリー"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/binary_options_basics.html.haml:1
 msgid "Binary Options Basics"
@@ -2258,7 +2257,7 @@ msgstr "Binary.comではオープンソースによる開発を推進し、コ�
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/group_history.html.haml:1
 msgid "Binary.com is honoured as the world's \"Best Binary Options Broker\" at the 16th annual MENA International Financial Conference and Exhibition, hosted in Dubai."
-msgstr ""
+msgstr "ドバイで開催された第16回 MENA国際金融会議/展示会において「最優秀バイナリーオプションブローカー」をいただき、大変光栄に存じます。"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/about/group-information.html.haml:1
 msgid "Binary.com is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
@@ -2289,8 +2288,6 @@ msgid "Binary.com supports the <a target=\"_blank\" href=\"http://www.responsibl
 msgstr "Binary.comは、ギャンブルに関連する害を最小限にすることを約束している英国の大手慈善団体<a target=\"_blank\" href=\"http://www.responsiblegamblingtrust.org.uk/\">「責任ある賭博基金」(RGT, Responsible Gambling Trust)</a> をサポートしています。RGT資金教育、予防と治療のサービスや手数料の調査は、ギャンブルに関する害についてより理解するのに役立ちます。また、機密なアドバイスや感情的なサポートをしている全国ギャンブルヘルプラインも提供しています。"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/group_history.html.haml:1
-#, fuzzy
-#| msgid "Binary.com took home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
 msgid "Binary.com takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
 msgstr "ロンドンで開催された名誉あるEGRオペレーター賞授賞式にてBinary.comが金融ベッティングオペレーター部門で最優秀賞を受賞しました。"
 
@@ -2865,10 +2862,8 @@ msgstr "当社の権利"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/layouts/default/footer.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/global/footer.html.tt:133
-#, fuzzy
-#| msgid "Compliance"
 msgid "Complaints"
-msgstr "コンプライアンス"
+msgstr "クレーム"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/complaints_disputes.html.tt:2
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/tac.html.tt:19
@@ -2894,10 +2889,12 @@ msgid "Comply with the applicable laws, rules, and regulations (including, but n
 msgstr "ビジネスターゲットまたは操作上での管轄の法令、ルール、規制（広告、データ保護、、プライバシーに関する法令、ルール、規制を含むが、これに限定されない）を遵守します。"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:124
+#: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/us_patents.html.tt:7
 msgid "Computer system and method for speculating on a financial market"
 msgstr "金融市場を推測するコンピュータシステムとその方法"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:120
+#: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/us_patents.html.tt:6
 msgid "Computer trading system for offering custom financial market speculations"
 msgstr "金融市場を推測するカスタムを提供するコンピュータ取引システム"
 
@@ -2917,10 +2914,10 @@ msgstr "守秘義務"
 msgid "Confirm"
 msgstr "決定"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:735
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:736
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "Confirm New Password"
-msgstr "新しいパスワードを確認"
+msgstr "新パスワード（確認用）"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/japanws.html.tt:485
 msgid "Confirmation and understandings"
@@ -3341,7 +3338,7 @@ msgstr "日付 (GMT)"
 msgid "Date and Time"
 msgstr "日時"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:736
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:737
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "Date of Birth"
 msgstr "生年月日"
@@ -3455,7 +3452,7 @@ msgstr ""
 "support@binary.com"
 
 #. ($client_name, $support_email)
-#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client/IDAuthentication.pm:198
+#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client/IDAuthentication.pm:172
 msgid ""
 "Dear %1,\n"
 "\n"
@@ -3737,7 +3734,7 @@ msgstr "取引内容"
 msgid "Design engaging, visually inspiring content for the company's website and many other forms of media, including both online and offline materials."
 msgstr "オンライン/オフライン材料を含む当社ウェブサイトとその他のメディア形態への印象的なコンテンツのデザインをしています。"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:730
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:731
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/japanws.html.tt:9
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:9
@@ -3890,7 +3887,7 @@ msgstr "アカウントのチャージバック証明書類の提出"
 msgid "Document department processes, to enhance the marketing team’s ability to execute repeated tasks efficiently and effectively"
 msgstr "反復作業を効率的かつ効果的に実行するマーケティングのチームワーク強化に必要な部門プロセスの文書作成"
 
-#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client/IDAuthentication.pm:197
+#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client/IDAuthentication.pm:171
 msgid "Documents are required to verify your identity"
 msgstr "ご本人様確認のために書類の送付が必要です"
 
@@ -3917,6 +3914,10 @@ msgstr "セールス及びマーケティング目標をサポートする急速
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Drive rapid growth from key areas of the world, applying a variety of online and offline marketing abilities to expand the company's active affiliate network."
 msgstr "当社のアフィリエイトネットワーク展開へ、多様なオンライン/オフラインマーケティング能力を活用して世界の重要地域での急速な成長を推進します。"
+
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:717
+msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
+msgstr ""
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1417
 msgid "Due to regulatory requirements, you are required to authenticate your account in order to continue trading."
@@ -4132,7 +4133,7 @@ msgstr "潜在顧客、顧客、パートナーの誘致と展開に多様なチ
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:10
 msgid "Enjoy our fastest type of trading on your mobile phone or tablet. Place tick trades anytime, anywhere – even while you’re on the move."
-msgstr ""
+msgstr "モバイルまたはタブレットで最速のお取引をお楽しみください。出先でもTickトレードをいつでもどこでも取引可能。"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "Ensure compliance with quality control standards governing website content"
@@ -4455,7 +4456,7 @@ msgstr "アカウントの制限をユーザー自身で設定していただけ
 msgid "Failed"
 msgstr "失敗しました"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:744
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:745
 msgid "Failed to reset password. %1, please retry."
 msgstr "パスワードの再設定に失敗しました。%1、再度お試しください。"
 
@@ -4636,7 +4637,7 @@ msgstr "法律および規約に従う"
 msgid "Follow up on rejected deposits"
 msgstr "拒否された入金のフォローアップ"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:748
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:749
 msgid "For added security, please check your email to retrieve the verification token."
 msgstr "セキュリティチェックのため、メールご確認いただき認証コードを取得してください。"
 
@@ -4702,7 +4703,7 @@ msgstr "外国為替取引のご経験"
 msgid "Forex trading frequency"
 msgstr "外国為替取引の頻度"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:737
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:738
 msgid "Format: yyyy-mm-dd (not required for virtual-money accounts)"
 msgstr "形式：年月日（デモ口座の方はご必要ありません）"
 
@@ -5242,7 +5243,7 @@ msgstr "潜在顧客に当サイトをご紹介いただくと、クライアン
 msgid "If you meet our basic requirements, we’ll send you a talent test."
 msgstr "当社の基本的な要求基準に見合う場合は、テストのご連絡をいたします。"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:751
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:752
 msgid "If you need assistance feel free to contact our %1Customer Support"
 msgstr "ご不明な点がございましたら、%1当社カスタマーサポートチームまでお気軽にお問い合わせ下さい。"
 
@@ -5628,7 +5629,7 @@ msgstr "当社で用いるデータフィード、及びシステム上にデー
 msgid "Information of the previous performance of any underlying instrument or asset does not guarantee its current and/or future performance. Past performance is not a reliable indicator of future results."
 msgstr "商品または原資産の以前の実績情報は現在および/または将来の業績を保証するものではありません。過去の実績は将来の成果を示すものではありません。"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:423
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:335
 msgid "Input validation failed: "
 msgstr "入力確認ができません。 "
 
@@ -5731,7 +5732,7 @@ msgstr "無効な値です。最小10・最大 2000です。"
 msgid "Invalid candles request"
 msgstr "無効なローソク足チャートリクエストです"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:743
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:744
 msgid "Invalid date of birth."
 msgstr "生年月日が無効です。"
 
@@ -6529,7 +6530,7 @@ msgstr "6"
 msgid "June"
 msgstr "６月"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:725
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:726
 msgid "Keep track of your authorised applications."
 msgstr "認証済みアプリケーションを引き続き追跡してください。"
 
@@ -6602,7 +6603,7 @@ msgid "Last Digit Stats"
 msgstr "下一桁ステータス"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:352
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:722
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:723
 msgid "Last Used"
 msgstr "最後に使用した"
 
@@ -6766,10 +6767,8 @@ msgid "Links"
 msgstr "サイト内のリンクについて"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:83
-#, fuzzy
-#| msgid "Binary.com open-source projects"
 msgid "List of All Open-Source Projects"
-msgstr "Binary.comオープンソース・プロジェクト"
+msgstr "オープンソースプロジェクトリスト"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/contact.html.haml:1
 msgid "Live chat:"
@@ -7327,7 +7326,7 @@ msgstr "純利益"
 msgid "Network Status"
 msgstr "ネットワークの状態"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:723
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:724
 msgid "Never"
 msgstr "決してありません"
 
@@ -7339,7 +7338,7 @@ msgstr "使用されることはありません。"
 msgid "New"
 msgstr "進む"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:734
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:735
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "New Password"
 msgstr "新しいパスワード"
@@ -7829,7 +7828,7 @@ msgstr "数多く存在するフィルターシステムを用いることで、
 msgid "Our site does not charge any transfer fees."
 msgstr "当サイトはご入金、及びご出金時に手数料を請求することはありません。"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:453
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:393
 msgid "Output validation failed: "
 msgstr "出力検証に失敗しました。 "
 
@@ -7929,7 +7928,7 @@ msgstr "ページ未検出"
 msgid "Parabolic SAR"
 msgstr "パラボリックSAR"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:593
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:495
 msgid "Parameters sanity check failed."
 msgstr "パラメーターのサニティチェックに失敗しました。"
 
@@ -7950,12 +7949,12 @@ msgstr "パートナー協定"
 msgid "Password"
 msgstr "パスワード"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:731
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:732
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "Password Reset"
 msgstr "パスワード再設定"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:742
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:743
 msgid "Password does not match."
 msgstr "パスワードが一致しません。"
 
@@ -7980,7 +7979,7 @@ msgstr "パスワード強度は最強です"
 msgid "Password is weak"
 msgstr "パスワード強度は弱です"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:741
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:742
 msgid "Password must contains at least 1 digit, 1 uppercase letter and 1 lowercase letter."
 msgstr "数字、大文字、小文字を各1字以上含めるようにしてください。"
 
@@ -8107,7 +8106,7 @@ msgid "Perl modules"
 msgstr "Perl モジュール"
 
 #. ($descriptor->{require_scope})
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:437
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:349
 msgid "Permission denied, requiring %1"
 msgstr "アクセス権限がありません。%1が必要です。"
 
@@ -8115,7 +8114,7 @@ msgstr "アクセス権限がありません。%1が必要です。"
 msgid "Permission denied."
 msgstr "アクセス権限がありません"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:721
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:722
 msgid "Permissions"
 msgstr "アクセス許可"
 
@@ -8156,7 +8155,7 @@ msgstr "資金保護に同意してください。"
 msgid "Please agree to the risk disclaimer before proceeding."
 msgstr "リスク免責事項に同意してからお進みください。"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:733
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:734
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/virtualws.html.tt:18
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/deposit_withdraw_ws.html.tt:79
@@ -8164,12 +8163,12 @@ msgstr "リスク免責事項に同意してからお進みください。"
 msgid "Please check your email for the value of this token"
 msgstr "Eメールアドレスをご確認ください"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:728
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:729
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "Please check your email to retrieve the token needed to reset your password."
 msgstr "パスワードの再設定に認証コードが必要となりますので、メールをご確認ください。"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:749
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:750
 msgid "Please choose which currency you would like to transact in."
 msgstr "日本円にてお手続きできます"
 
@@ -8287,7 +8286,7 @@ msgstr "有効な日にちを入力して下さい。"
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Transaction.pm:29
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Utility.pm:118
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:432
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:344
 msgid "Please log in."
 msgstr "ログインをしてください"
 
@@ -8825,7 +8824,7 @@ msgstr "Rate Of Change：ROC"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/virtualws.html.tt:47
 msgid "Re-enter password"
-msgstr "パスワード再度入力"
+msgstr "パスワード（確認用）"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/cashier/settings_securityws.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/haml/home/index.html.haml:1
@@ -9012,7 +9011,7 @@ msgstr "転売価格"
 msgid "Resend Verification Email"
 msgstr "認証確認メールを再送信する"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:738
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:739
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/lost_passwordws.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "Reset Password"
@@ -9031,8 +9030,8 @@ msgstr "取引参考情報"
 msgid "Respond to client queries using our state of the art telephone, electronic mail and on-line chat systems"
 msgstr "当社最新式の電話、電子メール、チャットシステムを使用して顧客のお問い合わせに対応"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:193
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:123
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:195
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:120
 msgid "Response too large."
 msgstr "レスポンスが大きすぎます"
 
@@ -9114,7 +9113,7 @@ msgstr "オプション価格とリアルタイムリスク管理プログラム
 msgid "Revisions to the Binary.com API"
 msgstr "Binary.com APIへの改定"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:724
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:725
 msgid "Revoke access"
 msgstr "アクセス権の取消"
 
@@ -9606,11 +9605,11 @@ msgstr "申し訳ございませんが、処理中にエラーが発生しまし
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Accounts.pm:915
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Contract.pm:225
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Contract.pm:272
-#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/MarketDiscovery.pm:48
-#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/MarketDiscovery.pm:78
+#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/MarketDiscovery.pm:51
+#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/MarketDiscovery.pm:81
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount/Japan.pm:175
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:174
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:183
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:176
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:185
 msgid "Sorry, an error occurred while processing your request."
 msgstr "申し訳ございませんが、リクエスト処理中にエラーが発生しました。"
 
@@ -9754,7 +9753,7 @@ msgstr "申し訳ございませんが、お客さまは%1まで自己制限と�
 #. ($lim)
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client.pm:845
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/User.pm:100
-#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Authorize.pm:37
+#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Authorize.pm:38
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Utility.pm:132
 msgid "Sorry, you have excluded yourself until %1."
 msgstr "申し訳ございませんが、お客さまは%1まで自己制限として除外されました。"
@@ -9828,7 +9827,7 @@ msgstr "購入価格"
 msgid "Start Time"
 msgstr "開始時間"
 
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:189
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:190
 msgid "Start Trading"
 msgstr "トレード開始"
 
@@ -10293,8 +10292,6 @@ msgstr "%1のウェブサイトは特定の著作権で保護されています�
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/about/group-information.html.haml:1
-#, fuzzy
-#| msgid "The <span itemprop=\"brand\">%1</span> service (formerly known as BetOnMarkets.com) is owned and operated by Binary Ltd. Fully licensed and regulated, %1 has been providing financial trading to a worldwide audience of over 1,000,000 clients since <span itemprop=\"foundingdate\">1999</span>"
 msgid "The <span itemprop=\"brand\">%1</span> service (formerly known as BetOnMarkets.com) is owned and operated by Binary Ltd. Fully licensed and regulated, %1 has been providing financial trading to a worldwide audience of over 1,000,000 accounts since <span itemprop=\"foundingdate\">1999</span>"
 msgstr "<span itemprop=\"brand\">%1</span>サービス（旧サービス名：BetOnMarkets.com）はBinary Ltd.が所有し、運営しています。ライセンス監督機関による監査を受けながら発行ライセンスを保持しており、%1は<span itemprop=\"foundingdate\">1999</span>年から世界中に10万人以上の顧客を擁しています。"
 
@@ -10685,7 +10682,7 @@ msgstr ""
 "(1)　当社の故意または重過失によらない、お客さま・当社および当社のカバー先を結ぶ通信回線およびシステム関連機器等の瑕疵または障害。\n"
 "(2)　天変地異等やむを得ない事由による、お客さま・当社および当社のカバー先を結ぶ通信回線およびシステム関連機器等の瑕疵または障害。"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:117
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:114
 msgid "The application sent an invalid request."
 msgstr "アプリケーションが無効リクエストを送信しました。"
 
@@ -10879,10 +10876,8 @@ msgstr "最初のTickとは、当社のサーバにてトレードが処理さ�
 
 #. (request.website.display_name)
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:59
-#, fuzzy
-#| msgid "Purpose of trading"
 msgid "The future of trading on %1"
-msgstr "投資の目的"
+msgstr "%1での今後のお取引"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:118
 msgid "The information provided during the sign-up process warranted by yourself to be true and correct is determined by the Company to be false or incorrect during the term of this Agreement;"
@@ -11124,7 +11119,7 @@ msgstr "サーバーアクセスにエラーが発生しました。"
 msgid "There was a problem validating your address."
 msgstr "お客さまのメールアドレスの確認に問題が発生しました。"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:750
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:751
 msgid "There was a problem validating your personal details. Please fix the fields %1here"
 msgstr "個人情報の確認において問題が発生しました。%1こちらから項目を修正してください。"
 
@@ -11461,16 +11456,12 @@ msgid "Tick"
 msgstr "Tick"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:8
-#, fuzzy
-#| msgid "Tick Trades:"
 msgid "Tick Trade App"
-msgstr "Tickトレード："
+msgstr "Tickトレードアプリ"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:80
-#, fuzzy
-#| msgid "Tick Trade Up/Down"
 msgid "Tick Trade on GitHub"
-msgstr "Tickトレード・Up/Down"
+msgstr "GitHubでTickトレード"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/affiliates/commission_table.html.tt:3
 msgid "Tier"
@@ -11905,10 +11896,8 @@ msgid "Ultimate Oscillator"
 msgstr "アルティメット・オシレーター"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:9
-#, fuzzy
-#| msgid "Start trading"
 msgid "Ultra-fast trading"
-msgstr "トレード開始"
+msgstr "超高速取引"
 
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Locale.pm:205
 msgid "Unable to price the contract."
@@ -11989,7 +11978,7 @@ msgstr "他にお勧されない場合に限り、個人顧客として扱わせ
 msgid "Unlock Cashier"
 msgstr "入出金ロック解除"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:466
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:406
 msgid "Unrecognised request."
 msgstr "未承認のリクエストです"
 
@@ -12084,13 +12073,13 @@ msgstr "マルタ共和国首都・Valletta"
 msgid "Verification Successful"
 msgstr "認証成功"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:732
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:733
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_withdrawws.html.tt:35
 msgid "Verification Token"
 msgstr "認証コード"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:740
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:741
 msgid "Verification code format incorrect."
 msgstr "認証コードの形式が不適切です。"
 
@@ -12121,10 +12110,8 @@ msgid "Verify your withdrawal request - %1"
 msgstr "出金リクエストを確認する。- %1"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/terms_and_conditions.html.tt:4
-#, fuzzy
-#| msgid "Version 39. Last modified 2016-03-01."
 msgid "Version 40. Last modified 2016-05-12."
-msgstr "バージョン39　最終更新日：2016-03-01"
+msgstr "バージョン40　最終更新日：2016-05-12"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:190
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/analyse_link.html.tt:4
@@ -12496,10 +12483,8 @@ msgid "Webtrader"
 msgstr "Webtrader"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:81
-#, fuzzy
-#| msgid "Webtrader"
 msgid "Webtrader on GitHub"
-msgstr "Webtrader"
+msgstr "GitHubでWebtraderを利用"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:76
 msgid "Wednesday"
@@ -13140,9 +13125,7 @@ msgstr "%1%2の7日間損失制限をオーバーしました。"
 msgid "You have exceeded your daily limit on losses of %1%2."
 msgstr "%1%2の1日の損失制限をオーバーしました。"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:720
-#, fuzzy
-#| msgid "You have not granted access to any apps."
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:721
 msgid "You have not granted access to any applications."
 msgstr "アプリケーションへのアクセス権限がありません。"
 
@@ -13163,7 +13146,7 @@ msgid "You have purchased the following contract:"
 msgstr "次の内容のトレードを購入されました："
 
 #. ($descriptor->{category})
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:410
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:322
 msgid "You have reached the rate limit for %1."
 msgstr "%1のレート制限に達しました。"
 
@@ -13467,7 +13450,7 @@ msgstr "お客さまのご口座のアップグレードが完了しました。
 msgid "Your account is important to us. Please <a href=\"%1\">contact us</a> should you need further assistance."
 msgstr "お客さまのご口座の安全確保は当社の最優先事項です。もし、ご不明な点がございましたら <a href=\"%1\">カスタマーサポート</a> までご連絡ください。"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:752
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:753
 msgid "Your account is not fully authenticated. Please visit the <a href=\"%1\">authentication</a> page for more information."
 msgstr "口座の認証はまだ完了しておりません。詳細に関しましては<a href=\"%1\">認証</a> ページをご覧ください。"
 
@@ -13517,7 +13500,7 @@ msgstr "入出金はロックされています"
 msgid "Your cashier is locked as per your request"
 msgstr "お客さまからのリクエストにより入出金がロックされました。"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:747
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:748
 msgid "Your cashier is locked as per your request - to unlock it, please click %1here"
 msgstr "お客さまの入出金はリクエストによりロックされました。 - 解除するには%1こちらをクリックしてください。"
 
@@ -13628,7 +13611,7 @@ msgstr "パスワードを変更しました。再度ログインしてくださ
 msgid "Your password has been reset."
 msgstr "パスワード再設定"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:739
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:740
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/reset_password.html.tt:23
 msgid "Your password has been successfully reset. Please log into your account using your new password."
 msgstr "お客さまパスワードの再設定完了いたしました。新しいパスワードで口座にログインしてください。"
@@ -13660,10 +13643,8 @@ msgid "Your risks are known"
 msgstr "リスクが明確"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:315
-#, fuzzy
-#| msgid "Session duration limit, in minutes"
 msgid "Your session duration limit will end in %1 seconds."
-msgstr "取引継続時間の制限(分単位)"
+msgstr "お客様の取引継続時間制限は%1秒後に終了します。"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:263
 msgid "Your settings have been updated successfully."
@@ -14558,11 +14539,11 @@ msgstr ""
 "知識確認テスト用ディスクレーマー \n"
 " \n"
 "・この知識確認テストは、法令で義務付けられており、当社がお客さまの事を知り、お客さまがバイナリーオプション取引を行うことに適した\n"
-"    投資者かどうかを判断したうえで、お客さまとの取引を開始するためのものです。 \n"
+"   投資者かどうかを判断したうえで、お客さまとの取引を開始するためのものです。 \n"
 "・バイナリーオプション投資を的確に行うにはオプション取引などデリバティブ取引に関わる知識や経験が必要です。 \n"
 "・本テストはオプション取引に関わる基礎的な知識の有無を確認する目的で行われます。 \n"
 "・本テストの結果により適正と判断し、取引を開始する場合は、その後当社との間に取引上のトラブルが生じたとしても、オプション取引に\n"
-"　　　　関わる知識が不足していたにも関わらず当社が取引を認めたことを訴因とはしないことに同意いただくものとします。 \n"
+"　関わる知識が不足していたにも関わらず当社が取引を認めたことを訴因とはしないことに同意いただくものとします。 \n"
 "・問題の複写を禁止します。また、第三者に漏えいしないことに同意いただくものとします。"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/get_started_jp/get_started.html.tt:183
@@ -15846,10 +15827,8 @@ msgid "YY Inc."
 msgstr "YY Inc."
 
 #: Underlying Symbol USAMZN
-#, fuzzy
-#| msgid "Sohu.com Inc."
 msgid "Amazon.com Inc"
-msgstr "Sohu.com Inc.（ソフ ドットコム）"
+msgstr "Amazon.com Inc（アマゾン）"
 
 #: Underlying Symbol USHAL
 msgid "Halliburton Company"
@@ -15908,10 +15887,8 @@ msgid "Volkswagen AG"
 msgstr "Volkswagen AG（フォルクスワーゲン）"
 
 #: Underlying Symbol UKBARC
-#, fuzzy
-#| msgid "Barclays plc"
 msgid "Barclays"
-msgstr "Barclays plc（バークレイズ）"
+msgstr "Barclays（バークレイズ）"
 
 #: Underlying Symbol AUMQG
 msgid "Macquarie Group"
@@ -16018,10 +15995,8 @@ msgid "WOOLWORTHS LIMITED"
 msgstr "WOOLWORTHS LIMITED（ウールワース）"
 
 #: Underlying Symbol UKGSK
-#, fuzzy
-#| msgid "GlaxoSmithKline plc"
 msgid "GlaxoSmithKline"
-msgstr "GlaxoSmithKline plc（グラクソ・スミスクライン）"
+msgstr "GlaxoSmithKline（グラクソ・スミスクライン）"
 
 #: Underlying Symbol AUWES
 msgid "WESFARMERS LIMITED"
@@ -16096,10 +16071,8 @@ msgid "BMW"
 msgstr "BMW"
 
 #: Underlying Symbol USAAPL
-#, fuzzy
-#| msgid "Apple Inc."
 msgid "Apple Inc"
-msgstr "Apple Inc.（アップル）"
+msgstr "Apple Inc（アップル）"
 
 #: Underlying Symbol INBHARTIARTL
 msgid "Bharti Airtel"
@@ -16114,10 +16087,8 @@ msgid "UBS AG"
 msgstr "UBS AG"
 
 #: Underlying Symbol USCT
-#, fuzzy
-#| msgid "Citigroup Inc."
 msgid "Citigroup Inc"
-msgstr "Citigroup Inc.（シティグループ）"
+msgstr "Citigroup Inc（シティグループ）"
 
 #: Underlying Symbol FPMIC
 msgid "Michelin"
@@ -16160,10 +16131,8 @@ msgid "Reliance Industries Ltd"
 msgstr "Reliance Industries Ltd（リライアンス・インダストリーズ）"
 
 #: Underlying Symbol AUBHP
-#, fuzzy
-#| msgid "BHP Billiton Ltd"
 msgid "BHP Billiton"
-msgstr "BHP Billiton Ltd（BHBビリトン）"
+msgstr "BHP Billiton（BHBビリトン）"
 
 #: Underlying Symbol USAMAT
 msgid "Applied Materials Inc."
@@ -16262,10 +16231,8 @@ msgid "Piraeus Bank SA"
 msgstr "Piraeus Bank SA（ピレウス銀行）"
 
 #: Underlying Symbol USFB
-#, fuzzy
-#| msgid "Facebook Inc."
 msgid "Facebook Inc"
-msgstr "Facebook Inc.（フェイスブック）"
+msgstr "Facebook Inc（フェイスブック）"
 
 #: Underlying Symbol FPDG
 msgid "Vinci"
@@ -16364,8 +16331,6 @@ msgid "Philip Morris International"
 msgstr "Philip Morris International（フィリップ・モリス）"
 
 #: Underlying Symbol UKHSBA
-#, fuzzy
-#| msgid "HSBC Holdings plc"
 msgid "HSBC Holdings"
 msgstr "HSBCホールディングス"
 
@@ -16382,16 +16347,12 @@ msgid "IBM"
 msgstr "IBM"
 
 #: Underlying Symbol USPFE
-#, fuzzy
-#| msgid "Pfizer Inc."
 msgid "Pfizer Inc"
-msgstr "Pfizer Inc.（ファイザー）"
+msgstr "Pfizer Inc（ファイザー）"
 
 #: Underlying Symbol AUANZ
-#, fuzzy
-#| msgid "ANZ Banking Group Ltd"
 msgid "ANZ Banking Group"
-msgstr "ANZ Banking Group Ltd（ANZ銀行グループ）"
+msgstr "ANZ銀行グループ"
 
 #: Underlying Symbol UKBATS
 msgid "British American Tobacco"
@@ -16442,10 +16403,8 @@ msgid "Schneider Electric"
 msgstr "Schneider Electric（シュナイダーエレクトリック）"
 
 #: Underlying Symbol UKVOD
-#, fuzzy
-#| msgid "Vodafone"
 msgid "Vodafone Group"
-msgstr "Vodafone（ボーダフォン）"
+msgstr "Vodafone Group（ボーダフォングループ）"
 
 #: Underlying Symbol INSUNPHARMA
 msgid "Sun Pharma"
@@ -16468,10 +16427,8 @@ msgid "Dialog Semiconductor plc"
 msgstr "Dialog Semiconductor plc"
 
 #: Underlying Symbol USXOM
-#, fuzzy
-#| msgid "ExxonMobil"
 msgid "Exxon Mobil Corp"
-msgstr "ExxonMobil（エクソンモービル）"
+msgstr "Exxon Mobil Corp（エクソンモービル）"
 
 #: Underlying Symbol USNTFLX
 msgid "Netflix Inc."
@@ -16566,10 +16523,8 @@ msgid "Veolia Environnement water"
 msgstr "Veolia Environnement water"
 
 #: Underlying Symbol USKO
-#, fuzzy
-#| msgid "The Coca-Cola Company"
 msgid "Coca-Cola Co"
-msgstr "The Coca-Cola Company（ザ コカ・コーラカンパニー）"
+msgstr "Coca-Cola Co（コカ・コーラ）"
 
 #: Underlying Symbol BBUCB
 msgid "UCB"
@@ -16620,22 +16575,16 @@ msgid "Societe Generale"
 msgstr "Societe Generale"
 
 #: Underlying Symbol AUQAN
-#, fuzzy
-#| msgid "Qantas Airways Limited"
 msgid "Qantas Airways"
-msgstr "Qantas Airways Limited（カンタス航空）"
+msgstr "Qantas Airways（カンタス航空）"
 
 #: Underlying Symbol USGE
-#, fuzzy
-#| msgid "General Electric Company"
 msgid "General Electric Co"
-msgstr "General Electric Company（ゼネラル・エレクトリック）"
+msgstr "General Electric Co（ゼネラル・エレクトリック）"
 
 #: Underlying Symbol USMSFT
-#, fuzzy
-#| msgid "Microsoft"
 msgid "Microsoft Corp"
-msgstr "Microsoft"
+msgstr "Microsoft Corp（マイクロソフト）"
 
 #: Underlying Symbol USJD
 msgid "JD.com Inc."
@@ -16650,10 +16599,8 @@ msgid "Alstom industrial machinery"
 msgstr "Alstom industrial machinery"
 
 #: Underlying Symbol USGOOG
-#, fuzzy
-#| msgid "Alcoa Inc."
 msgid "Alphabet Inc"
-msgstr "Alcoa Inc.（アルコア）"
+msgstr "Alphabet Inc（アルコア）"
 
 #: Underlying Symbol USWMT
 msgid "Wal-Mart Stores Inc."
@@ -16784,10 +16731,8 @@ msgid "Commodities are traded items with directly usable qualities."
 msgstr "コモディティは直接的に利用出来る価値と共にトレードされるアイテムです。"
 
 #: Translation for market name
-#, fuzzy
-#| msgid "Stocks"
 msgid "OTC Stocks"
-msgstr "株式"
+msgstr "店頭株"
 
 #: Explanation for market OTC Stocks
 msgid "Stocks (or shares) represent the value of partial ownership in a single company."
@@ -16850,10 +16795,8 @@ msgid "Americas Future"
 msgstr "Americas Future"
 
 #: Explanation for market Germany
-#, fuzzy
-#| msgid "Germany Stocks"
 msgid "Germany OTC Stocks"
-msgstr "ドイツ株式"
+msgstr "ドイツ 店頭株"
 
 #: Translation for sub market name
 msgid "French Stocks"
@@ -16892,10 +16835,8 @@ msgid "United States Stocks"
 msgstr "米国株式"
 
 #: Explanation for market Australia
-#, fuzzy
-#| msgid "Australia Stocks"
 msgid "Australia OTC Stocks"
-msgstr "オーストラリア株式"
+msgstr "オーストラリア 店頭株"
 
 #: Translation for sub market name
 msgid "Minor Pairs"
@@ -16906,16 +16847,12 @@ msgid "Forex pairs of interest, but with less liquid international markets."
 msgstr "外国為替のうち、国際市場で流動性が低いペア。"
 
 #: Translation for sub market name
-#, fuzzy
-#| msgid "USD"
 msgid "US"
-msgstr "USD"
+msgstr "アメリカ"
 
 #: Explanation for market US
-#, fuzzy
-#| msgid "US Stocks"
 msgid "US OTC Stocks"
-msgstr "アメリカ株式"
+msgstr "アメリカ 店頭株"
 
 #: Translation for sub market name
 msgid "Germany Stocks"
@@ -16934,10 +16871,8 @@ msgid "UK"
 msgstr "イギリス"
 
 #: Explanation for market UK
-#, fuzzy
-#| msgid "UK Stocks"
 msgid "UK OTC Stocks"
-msgstr "イギリス株式"
+msgstr "イギリス 店頭株"
 
 #: Translation for sub market name
 msgid "Metals"

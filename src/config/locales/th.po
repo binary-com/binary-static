@@ -83,7 +83,7 @@ msgstr "%1 ข้อตกลงและเงื่อนไขของโป
 msgid "%1 New Password Request"
 msgstr "%1 ต้องการรหัสผ่านใหม่"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:729
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:730
 msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
 msgstr "%1 โปรดคลิกที่ลิงค์ด้านล่างเพื่อเริ่มกระบวนการกู้คืนรหัสผ่าน หากท่านต้องการความช่วยเหลือ โปรดติดต่อฝ่ายบริการลูกค้าของเรา"
 
@@ -1316,7 +1316,7 @@ msgstr "ยอดคงเหลือในบัญชี : %1 %2"
 msgid "Account balance: "
 msgstr "ยอดคงเหลือในบัญชี: "
 
-#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Authorize.pm:29
+#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Authorize.pm:30
 msgid "Account is disabled."
 msgstr "บัญชีถูกระงับ"
 
@@ -1658,7 +1658,7 @@ msgstr "บุคคลผู้มีอายุมากกว่า 18 [ผ�
 msgid "Anyone who has potential to grow or increase traffic to %1"
 msgstr "บุคคลผู้ซึ่งมีศักยภาพที่จะเติบโต หรือเพิ่มปริมาณธุรกรรมให้กับ %1 ได้"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:719
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:720
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:175
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:284
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:2
@@ -1669,7 +1669,7 @@ msgstr "แอพพลิเคชัน"
 msgid "Apply a meticulous eye for detail in proofreading the content that appears on the company’s website, blog, social media outlets, and marketing materials."
 msgstr "พิสูจน์อักษรและแก้ไขความสละสลวยของเนื้อหาที่ปรากฏในเว็บไซต์ของบริษัทฯ บล็อก สื่อสังคมต่างๆ และสื่อการตลาด"
 
-#. (website, apply_payment_agent_url)
+#. (website, request.url_for("/payment-agent"))
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/payment_agent_listws.html.tt:67
 msgid "Apply to become a %1 <a class=\"pjaxload\" href=\"%2\">payment agent</a>."
 msgstr "สมัครเพื่อเป็น %1 <a class=\"pjaxload\" href=\"%2\">ตัวแทนรับชำระเงิน</a>"
@@ -2065,6 +2065,7 @@ msgid "BetOnMarkets.com reaches $1 billion turnover since starting in 1999"
 msgstr "BetOnMarkets.com มีมูลค่าซื้อขายรวม 1 พันล้านเหรียญสหรัฐ ตั้งแต่เริ่มต้นในปี 1999 (พ.ศ. 2542)"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:116
+#: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/us_patents.html.tt:5
 msgid "Betting system and method"
 msgstr "ระบบการพนันและวิธีการ"
 
@@ -2884,10 +2885,12 @@ msgid "Comply with the applicable laws, rules, and regulations (including, but n
 msgstr ""
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:124
+#: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/us_patents.html.tt:7
 msgid "Computer system and method for speculating on a financial market"
 msgstr "ระเบียบวิธีและระบบคอมพิวเตอร์สำหรับการเก็งกำไรในตลาดการเงิน"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:120
+#: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/us_patents.html.tt:6
 msgid "Computer trading system for offering custom financial market speculations"
 msgstr "ระบบคอมพิวเตอร์เพื่อการซื้อขายผลิตภัณฑ์การลงทุนเพื่อการเก็งกำไรในตลาดการเงิน"
 
@@ -2907,7 +2910,7 @@ msgstr "การรักษาความลับ"
 msgid "Confirm"
 msgstr "ยืนยัน"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:735
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:736
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "Confirm New Password"
 msgstr "ยืนยันรหัสผ่านใหม่"
@@ -3331,7 +3334,7 @@ msgstr "วันที่ (GMT)"
 msgid "Date and Time"
 msgstr "วันที่และเวลา"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:736
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:737
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "Date of Birth"
 msgstr "วันเกิด"
@@ -3435,7 +3438,7 @@ msgstr ""
 "support@binary.com"
 
 #. ($client_name, $support_email)
-#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client/IDAuthentication.pm:198
+#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client/IDAuthentication.pm:172
 msgid ""
 "Dear %1,\n"
 "\n"
@@ -3727,7 +3730,7 @@ msgstr "รายละเอียด"
 msgid "Design engaging, visually inspiring content for the company's website and many other forms of media, including both online and offline materials."
 msgstr "ออกแบบเนื้อหาและสื่อที่จะใช้ในเว็บไซต์ของบริษัทฯ และรูปแบบต่างๆ ของสื่อทั้งออนไลน์และออฟไลน์"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:730
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:731
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/japanws.html.tt:9
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:9
@@ -3880,7 +3883,7 @@ msgstr "เอกสารบัญชีปฏิเสธการชำระ
 msgid "Document department processes, to enhance the marketing team’s ability to execute repeated tasks efficiently and effectively"
 msgstr "บริหารจัดการกระบวนการเอกสารของแผนกเพื่อเพิ่มความสามารถของทีมการตลาดในการดำเนินการงานซ้ำๆ ให้มีประสิทธิผลอย่างมีประสิทธิภาพ"
 
-#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client/IDAuthentication.pm:197
+#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client/IDAuthentication.pm:171
 msgid "Documents are required to verify your identity"
 msgstr "เอกสารมีความจำเป็นเพื่อการตรวจสอบอัตลักษณ์ของท่าน"
 
@@ -3907,6 +3910,10 @@ msgstr "ทำให้องค์กรเติบโตอย่างรว
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Drive rapid growth from key areas of the world, applying a variety of online and offline marketing abilities to expand the company's active affiliate network."
 msgstr "ทำให้องค์กรเติบโตอย่างรวดเร็วจากพื้นที่เป้าหมายที่กำหนดในภูมิภาค ใช้ศักยภาพของการตลาดออนไลน์และออฟไลน์เพื่อขยายเครือข่ายพันธมิตรที่เข้มแข็ง"
+
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:717
+msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
+msgstr ""
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1417
 msgid "Due to regulatory requirements, you are required to authenticate your account in order to continue trading."
@@ -4447,7 +4454,7 @@ msgstr "การอำนวยความสะดวกเพื่อให
 msgid "Failed"
 msgstr "ล้มเหลว"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:744
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:745
 msgid "Failed to reset password. %1, please retry."
 msgstr "ไม่สามารถตั้งรหัสผ่านใหม่ %1 โปรดลองอีกครั้ง"
 
@@ -4628,7 +4635,7 @@ msgstr "ปฏิบัติตามกฎและข้อตกลงเห
 msgid "Follow up on rejected deposits"
 msgstr "ติดตามการฝากเงินที่ถูกปฏิเสธ"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:748
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:749
 msgid "For added security, please check your email to retrieve the verification token."
 msgstr "โปรดตรวจสอบอีเมล์ของท่านเพื่อรับโทเค่นในการยืนยันตัวตน และความปลอดภัย"
 
@@ -4694,7 +4701,7 @@ msgstr "ประสบการณ์ของการเทรดฟอเร
 msgid "Forex trading frequency"
 msgstr "ความถี่ของการเทรดฟอเร็กซ์"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:737
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:738
 msgid "Format: yyyy-mm-dd (not required for virtual-money accounts)"
 msgstr "รูปแบบ: yyyy-mm-dd (ไม่ต้องระบุหากเป็นบัญชีเสมือน หรือ บัญชีทดลองใช้)"
 
@@ -5234,7 +5241,7 @@ msgstr ""
 msgid "If you meet our basic requirements, we’ll send you a talent test."
 msgstr "หากท่านมีคุณสมบัติพื้นฐานครบถ้วน เราจะขอให้ท่านทำข้อทดสอบความสามารถเฉพาะทาง"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:751
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:752
 msgid "If you need assistance feel free to contact our %1Customer Support"
 msgstr "หากท่านต้องการความช่วยเหลือ โปรดติดต่อแผนกบริการลูกค้า %1"
 
@@ -5623,7 +5630,7 @@ msgstr "สารสนเทศเกี่ยวกับข้อมูลน
 msgid "Information of the previous performance of any underlying instrument or asset does not guarantee its current and/or future performance. Past performance is not a reliable indicator of future results."
 msgstr "ข้อมูลของการดำเนินงานก่อนหน้านี้ของผลิตภัณฑ์อ้างอิง หรือ สินทรัพย์ใดๆ ไม่ได้รับประกันผลงานในปัจจุบัน และ/หรือ อนาคต ผลการดำเนินงานในอดีตไม่ได้เป็นตัวบ่งชี้การดำเนินงานในอนาคต"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:423
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:335
 msgid "Input validation failed: "
 msgstr "การตรวจสอบข้อมูลนำเข้าล้มเหลว: "
 
@@ -5724,7 +5731,7 @@ msgstr "จำนวนไม่ถูกต้อง มูลค่าต่�
 msgid "Invalid candles request"
 msgstr "การร้องขอแท่งเทียนไม่ถูกต้อง"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:743
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:744
 msgid "Invalid date of birth."
 msgstr "วันเกิดไม่ถูกต้อง"
 
@@ -6512,7 +6519,7 @@ msgstr "มิ.ย."
 msgid "June"
 msgstr "มิถุนายน"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:725
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:726
 msgid "Keep track of your authorised applications."
 msgstr "บันทึกการใช้งานแอพพลิเคชันของท่าน"
 
@@ -6585,7 +6592,7 @@ msgid "Last Digit Stats"
 msgstr "สถิติตัวเลขสุดท้าย"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:352
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:722
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:723
 msgid "Last Used"
 msgstr "ใช้ครั้งสุดท้าย"
 
@@ -7306,7 +7313,7 @@ msgstr "กำไรสุทธิ"
 msgid "Network Status"
 msgstr "สถานะของเครือข่าย"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:723
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:724
 msgid "Never"
 msgstr "ไม่เคย"
 
@@ -7318,7 +7325,7 @@ msgstr "ไม่เคยใช้"
 msgid "New"
 msgstr "ใหม่"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:734
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:735
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "New Password"
 msgstr "รหัสผ่านใหม่"
@@ -7792,7 +7799,7 @@ msgstr ""
 msgid "Our site does not charge any transfer fees."
 msgstr ""
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:453
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:393
 msgid "Output validation failed: "
 msgstr "การตรวจสอบข้อมูลนำออกล้มเหลว: "
 
@@ -7892,7 +7899,7 @@ msgstr "ไม่พบหน้าที่ต้องการ"
 msgid "Parabolic SAR"
 msgstr "Parabolic SAR"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:593
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:495
 msgid "Parameters sanity check failed."
 msgstr "การตรวจสอบตัวแปรล้มเหลว"
 
@@ -7913,12 +7920,12 @@ msgstr "พันธมิตร"
 msgid "Password"
 msgstr "รหัสผ่าน"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:731
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:732
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "Password Reset"
 msgstr "ตั้งรหัสผ่านใหม่"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:742
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:743
 msgid "Password does not match."
 msgstr "รหัสผ่านไม่ตรงกัน"
 
@@ -7943,7 +7950,7 @@ msgstr "รหัสผ่านมีความปลอดภัยขั้
 msgid "Password is weak"
 msgstr "รหัสผ่านไม่ปลอดภัย"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:741
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:742
 msgid "Password must contains at least 1 digit, 1 uppercase letter and 1 lowercase letter."
 msgstr ""
 "Password must contains at least 1 digit, 1 uppercase letter and 1 lowercase letter.\n"
@@ -8072,7 +8079,7 @@ msgid "Perl modules"
 msgstr ""
 
 #. ($descriptor->{require_scope})
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:437
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:349
 msgid "Permission denied, requiring %1"
 msgstr ""
 
@@ -8080,7 +8087,7 @@ msgstr ""
 msgid "Permission denied."
 msgstr ""
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:721
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:722
 msgid "Permissions"
 msgstr ""
 
@@ -8119,7 +8126,7 @@ msgstr ""
 msgid "Please agree to the risk disclaimer before proceeding."
 msgstr ""
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:733
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:734
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/virtualws.html.tt:18
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/deposit_withdraw_ws.html.tt:79
@@ -8127,12 +8134,12 @@ msgstr ""
 msgid "Please check your email for the value of this token"
 msgstr ""
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:728
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:729
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "Please check your email to retrieve the token needed to reset your password."
 msgstr ""
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:749
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:750
 msgid "Please choose which currency you would like to transact in."
 msgstr ""
 
@@ -8250,7 +8257,7 @@ msgstr ""
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Transaction.pm:29
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Utility.pm:118
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:432
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:344
 msgid "Please log in."
 msgstr ""
 
@@ -8975,7 +8982,7 @@ msgstr "ราคาจำหน่ายต่อ"
 msgid "Resend Verification Email"
 msgstr "ส่งอีเมล์เพื่อการตรวจสอบอีกครั้ง"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:738
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:739
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/lost_passwordws.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "Reset Password"
@@ -8994,8 +9001,8 @@ msgstr "แหล่งข้อมูล"
 msgid "Respond to client queries using our state of the art telephone, electronic mail and on-line chat systems"
 msgstr "ตอบคำถามลูกค้าทางโทรศัพท์ อีเมล์ และระบบไลฟ์แชต"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:193
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:123
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:195
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:120
 msgid "Response too large."
 msgstr "คำตอบยาวเกินไป"
 
@@ -9077,7 +9084,7 @@ msgstr "ทวนสอบ พัฒนา และปรับปรุงช�
 msgid "Revisions to the Binary.com API"
 msgstr "การปรับปรุงแก้ไข API ของ Binary.com"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:724
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:725
 msgid "Revoke access"
 msgstr "การเพิกถอนการเข้าถึง"
 
@@ -9568,11 +9575,11 @@ msgstr "ขออภัย มีความผิดพลาดเกิด�
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Accounts.pm:915
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Contract.pm:225
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Contract.pm:272
-#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/MarketDiscovery.pm:48
-#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/MarketDiscovery.pm:78
+#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/MarketDiscovery.pm:51
+#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/MarketDiscovery.pm:81
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount/Japan.pm:175
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:174
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:183
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:176
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:185
 msgid "Sorry, an error occurred while processing your request."
 msgstr "ขออภัย มีความผิดพลาดเกิดขึ้นขณะที่ประมวลผลความประสงค์ของท่าน"
 
@@ -9714,7 +9721,7 @@ msgstr "ขออภัยค่ะ ท่านได้พักการใ�
 #. ($lim)
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client.pm:845
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/User.pm:100
-#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Authorize.pm:37
+#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Authorize.pm:38
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Utility.pm:132
 msgid "Sorry, you have excluded yourself until %1."
 msgstr "ขออภัยค่ะ ท่านได้พักการใช้งานกระทั่ง %1"
@@ -9788,7 +9795,7 @@ msgstr "วางเงิน"
 msgid "Start Time"
 msgstr "เวลาเริ่ม"
 
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:189
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:190
 msgid "Start Trading"
 msgstr "เริ่มซื้อขาย"
 
@@ -10617,7 +10624,7 @@ msgstr ""
 msgid "The anti-money laundering processes have the following effects on Clients:"
 msgstr ""
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:117
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:114
 msgid "The application sent an invalid request."
 msgstr ""
 
@@ -10992,7 +10999,7 @@ msgstr "มีปัญหาในการเข้าถึงเครื่
 msgid "There was a problem validating your address."
 msgstr "มีปัญหาในการตรวจสอบที่อยู่ของท่าน"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:750
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:751
 msgid "There was a problem validating your personal details. Please fix the fields %1here"
 msgstr "มีปัญหาในการตรวจสอบที่อยู่ของท่าน โปรดแก้ไขข้อมูล %1"
 
@@ -11838,7 +11845,7 @@ msgstr ""
 msgid "Unlock Cashier"
 msgstr ""
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:466
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:406
 msgid "Unrecognised request."
 msgstr ""
 
@@ -11933,13 +11940,13 @@ msgstr "Valletta เมืองหลวงของประเทศมอล
 msgid "Verification Successful"
 msgstr ""
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:732
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:733
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_withdrawws.html.tt:35
 msgid "Verification Token"
 msgstr "โทเค่นเพื่อตรวจสอบ"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:740
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:741
 msgid "Verification code format incorrect."
 msgstr ""
 
@@ -12957,7 +12964,7 @@ msgstr "ท่านใช้วงเงินขาดทุนในช่ว
 msgid "You have exceeded your daily limit on losses of %1%2."
 msgstr "ท่านใช้วงเงินขาดทุนรายวัน ของ %1%2 เกิน"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:720
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:721
 #, fuzzy
 #| msgid "You have not granted access to any apps."
 msgid "You have not granted access to any applications."
@@ -12980,7 +12987,7 @@ msgid "You have purchased the following contract:"
 msgstr "ท่านได้ซื้อสัญญาต่อไปนี้:"
 
 #. ($descriptor->{category})
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:410
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:322
 msgid "You have reached the rate limit for %1."
 msgstr "ท่านได้ใช้วงเงินสำหรับ %1 เต็มมูลค่าแล้ว"
 
@@ -13280,7 +13287,7 @@ msgstr "บัญชีของท่านได้รับการยืน
 msgid "Your account is important to us. Please <a href=\"%1\">contact us</a> should you need further assistance."
 msgstr "บัญชีของท่านมีความสำคัญต่อเรา โปรด <a href=\"%1\">ติดต่อเรา</a> หากท่านมีความประสงค์ใดๆ ให้เราเป็นเกียรติในการช่วยเหลือ"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:752
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:753
 msgid "Your account is not fully authenticated. Please visit the <a href=\"%1\">authentication</a> page for more information."
 msgstr "บัญชีของท่านยังไม่ได้รับการยืนยันตัวตนอย่างสมบูรณ์ โปรดเข้าเยี่ยมหน้า <a href=\"%1\">การยืนยันตัวตน</a> เพื่อดำเนินการเพิ่มเติม"
 
@@ -13326,7 +13333,7 @@ msgstr "การรับ/ชำระเงินของท่านถู�
 msgid "Your cashier is locked as per your request"
 msgstr "การรับ/ชำระเงินของท่านถูกล็อกตามความประสงค์ของท่าน"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:747
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:748
 msgid "Your cashier is locked as per your request - to unlock it, please click %1here"
 msgstr "การรับ/ชำระเงินของท่านถูกล็อก - หากประสงค์ปลดล็อก โปรดคลิก %1ที่นี่"
 
@@ -13439,7 +13446,7 @@ msgstr "รหัสผ่านของท่านได้ถูกแก้
 msgid "Your password has been reset."
 msgstr "รหัสผ่านของท่านได้ถูกกำหนดใหม่แล้ว"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:739
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:740
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/reset_password.html.tt:23
 msgid "Your password has been successfully reset. Please log into your account using your new password."
 msgstr "รหัสผ่านของท่านได้ถูกกำหนดใหม่เรียบร้อยแล้ว โปรดเข้าสู่ระบบโดยการใช้รหัสผ่านใหม่ของท่าน"
