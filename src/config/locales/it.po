@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Italian (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-17 16:49+0000\n"
-"Last-Translator: Annalisa <ligiu@me.com>\n"
+"PO-Revision-Date: 2016-05-17 16:59+0000\n"
+"Last-Translator: Mauro Piccillo <mauro.piccillo@gmail.com>\n"
 "Language-Team: Italian "
 "<https://hosted.weblate.org/projects/binary/static/it/>\n"
 "Language: it\n"
@@ -152,8 +152,8 @@ msgstr "%1 cerca sempre di aggiungere professionisti con esperienza nel suo team
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:75
 msgid "%1 is an active proponent of the open-source movement. Suggest enhancements, and take part in the development of our powerful applications. You can find more information on our <a href=\"%2\" target=\"_blank\">Developers Portal</a>."
 msgstr ""
-"%1 è un sostenitore attivo del movimento open-source. Suggerisce "
-"miglioramenti e prende parte allo sviluppo delle nostre potenti "
+"%1 è un sostenitore attivo del movimento open-source. Suggerisci "
+"miglioramenti e prendi parte allo sviluppo delle nostre potenti "
 "applicazioni. Puoi trovare ulteriori informazioni sul nostro <a href=\"%2\" "
 "target=\"_blank\">Portale degli sviluppatori</a>."
 
@@ -3877,8 +3877,8 @@ msgstr "Guidare la rapida crescita di aree chiave del mondo, applicando una vari
 msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
 msgstr ""
 "A seguito di recenti variazioni normative, ai nostri clienti richiediamo di "
-"completare la seguente Valutazione finanziaria. Si prega di notare che non "
-"potrai continuare a fare trading fino a quando non l'avrai completato."
+"completare la seguente Valutazione finanziaria. Ti preghiamo di notare che "
+"non potrai continuare a fare trading fino a quando non l'avrai completato."
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1417
 msgid "Due to regulatory requirements, you are required to authenticate your account in order to continue trading."
@@ -10236,8 +10236,8 @@ msgstr ""
 "Il servizio di <span itemprop=\"brand\">%1</span> (precedentemente noto come "
 "BetOnMarkets.com) è di proprietà e gestito da Binary Ltd. Pienamente "
 "autorizzato e regolamentato, %1 offre trading finanziario a un pubblico "
-"mondiale di oltre 1.000.000 account sin dal <span itemprop=\"foundingdate\""
-">1999</span>"
+"mondiale di oltre 1.000.000 di account sin dal <span itemprop=\""
+"foundingdate\">1999</span>"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/home/index.html.haml:1
 msgid "The <strong>Premier Platform</strong> for Binary Options Trading"
@@ -15490,7 +15490,6 @@ msgid "AbbVie Inc."
 msgstr "AbbVie Inc."
 
 #: Underlying Symbol DESIE
-#, fuzzy
 msgid "Siemens AG"
 msgstr "Siemens AG"
 
@@ -15603,7 +15602,6 @@ msgid "YY Inc."
 msgstr "YY Inc."
 
 #: Underlying Symbol USAMZN
-#, fuzzy
 #| msgid "Sohu.com Inc."
 msgid "Amazon.com Inc"
 msgstr "Amazon.com Inc"
@@ -15665,13 +15663,11 @@ msgid "Volkswagen AG"
 msgstr "Volkswagen AG"
 
 #: Underlying Symbol UKBARC
-#, fuzzy
 #| msgid "Barclays plc"
 msgid "Barclays"
 msgstr "Barclays"
 
 #: Underlying Symbol AUMQG
-#, fuzzy
 msgid "Macquarie Group"
 msgstr "Macquarie Group"
 
@@ -15776,7 +15772,6 @@ msgid "WOOLWORTHS LIMITED"
 msgstr "WOOLWORTHS LIMITED"
 
 #: Underlying Symbol UKGSK
-#, fuzzy
 #| msgid "GlaxoSmithKline plc"
 msgid "GlaxoSmithKline"
 msgstr "GlaxoSmithKline"
@@ -15854,7 +15849,6 @@ msgid "BMW"
 msgstr "BMW"
 
 #: Underlying Symbol USAAPL
-#, fuzzy
 #| msgid "Apple Inc."
 msgid "Apple Inc"
 msgstr "Apple Inc"
@@ -15872,7 +15866,6 @@ msgid "UBS AG"
 msgstr "UBS AG"
 
 #: Underlying Symbol USCT
-#, fuzzy
 #| msgid "Citigroup Inc."
 msgid "Citigroup Inc"
 msgstr "Citigroup Inc"
@@ -15918,7 +15911,6 @@ msgid "Reliance Industries Ltd"
 msgstr "Reliance Industries Ltd"
 
 #: Underlying Symbol AUBHP
-#, fuzzy
 #| msgid "BHP Billiton Ltd"
 msgid "BHP Billiton"
 msgstr "BHP Billiton"
@@ -16020,7 +16012,6 @@ msgid "Piraeus Bank SA"
 msgstr "Piraeus Bank SA"
 
 #: Underlying Symbol USFB
-#, fuzzy
 #| msgid "Facebook Inc."
 msgid "Facebook Inc"
 msgstr "Facebook Inc"
@@ -16122,7 +16113,6 @@ msgid "Philip Morris International"
 msgstr "Philip Morris International"
 
 #: Underlying Symbol UKHSBA
-#, fuzzy
 #| msgid "HSBC Holdings plc"
 msgid "HSBC Holdings"
 msgstr "HSBC Holdings"
@@ -16140,13 +16130,11 @@ msgid "IBM"
 msgstr "IBM"
 
 #: Underlying Symbol USPFE
-#, fuzzy
 #| msgid "Pfizer Inc."
 msgid "Pfizer Inc"
 msgstr "Pfizer Inc"
 
 #: Underlying Symbol AUANZ
-#, fuzzy
 #| msgid "ANZ Banking Group Ltd"
 msgid "ANZ Banking Group"
 msgstr "ANZ Banking Group"
@@ -16200,7 +16188,6 @@ msgid "Schneider Electric"
 msgstr "Schneider Electric"
 
 #: Underlying Symbol UKVOD
-#, fuzzy
 #| msgid "Vodafone"
 msgid "Vodafone Group"
 msgstr "Vodafone Group"
@@ -16226,7 +16213,6 @@ msgid "Dialog Semiconductor plc"
 msgstr "Dialog Semiconductor plc"
 
 #: Underlying Symbol USXOM
-#, fuzzy
 #| msgid "ExxonMobil"
 msgid "Exxon Mobil Corp"
 msgstr "Exxon Mobil Corp"
@@ -16324,7 +16310,6 @@ msgid "Veolia Environnement water"
 msgstr "Veolia Environnement water"
 
 #: Underlying Symbol USKO
-#, fuzzy
 #| msgid "The Coca-Cola Company"
 msgid "Coca-Cola Co"
 msgstr "Coca-Cola Co"
@@ -16378,19 +16363,16 @@ msgid "Societe Generale"
 msgstr "Societe Generale"
 
 #: Underlying Symbol AUQAN
-#, fuzzy
 #| msgid "Qantas Airways Limited"
 msgid "Qantas Airways"
 msgstr "Qantas Airways"
 
 #: Underlying Symbol USGE
-#, fuzzy
 #| msgid "General Electric Company"
 msgid "General Electric Co"
 msgstr "General Electric Co"
 
 #: Underlying Symbol USMSFT
-#, fuzzy
 #| msgid "Microsoft"
 msgid "Microsoft Corp"
 msgstr "Microsoft Corp"
@@ -16408,7 +16390,6 @@ msgid "Alstom industrial machinery"
 msgstr "Alstom industrial machinery"
 
 #: Underlying Symbol USGOOG
-#, fuzzy
 #| msgid "Alcoa Inc."
 msgid "Alphabet Inc"
 msgstr "Alphabet Inc"
