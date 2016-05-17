@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-17 08:55+0000\n"
-"Last-Translator: Sittie Hadjirah Sevilla <sittiebaser@gmail.com>\n"
+"PO-Revision-Date: 2016-05-17 13:51+0000\n"
+"Last-Translator: Ahmed Kotb <ahmedmohamedkotp@gmail.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/binary/static/ar/>"
 "\n"
 "Language: ar\n"
@@ -668,17 +668,21 @@ msgstr "<option value=\"\"></option><option value=\"01\">يناير</option><opt
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:106
 msgid "<p style=\"font-weight: bold;\">Thanks for signing up for a virtual account!</p><p>Enter the following verification token into the form to create an account: <p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p><p>Enjoy trading with us on Binary.com.</p>"
-msgstr "<p style=\"font-weight: bold;\">شكراً لتسجيلكم من أجل الحصول على حساب إفتراضي!</p><p>أدخل رمز التحقق التالي في النموذج لإنشاء حساب<p><p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p><p>استمتع بالتداول معنا في Binary.com.</p>"
+msgstr ""
+"<p style=\"font-weight: bold;\">شكراً لتسجيلكم من أجل الحصول على حساب "
+"إفتراضي!</p><p>أدخل رمز التحقق التالي في النموذج لإنشاء حساب:<p><span style="
+"\"background: #f2f2f2; padding: 10px;\"></span></p></p><p>%1استمتع بالتداول "
+"معنا في Binary.com.</p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:93
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Before we can help you change your password, please help us to verify your identity by entering the following verification token into the password reset form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 msgstr ""
 "<p style=\"line-height:200%;color:#333333;font-size:15px;\">عميلنا العزيز "
-"المحترم</p>قبل أن نستطيع مساعدتك في تغيير كلمة المرور الخاصة بك, نرجو منك "
-"مساعدتنا في التحقق من هويتك من خلال إدخال رمز التحقق التالي في نموذج أعادة "
-"تعيين كلمة المرور<p><span style=\"background: #f2f2f2; padding: 10px;\""
-">%1</span></p></p>"
+"المحترم,</p><p>قبل أن نستطيع مساعدتك في تغيير كلمة المرور الخاصة بك, نرجو "
+"منك مساعدتنا في التحقق من هويتك من خلال إدخال رمز التحقق التالي في نموذج "
+"أعادة تعيين كلمة المرور:<p><span style=\"background: #f2f2f2; padding: 10px;"
+"\">1%</span></p></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:133
@@ -686,15 +690,15 @@ msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued C
 msgstr ""
 "<p style=\"line-height:200%;color:#333333;font-size:15px;\">عزيزنا العميل "
 "المحترم,</p><p>نرجو منك مساعدتنا في التحقق من هويتك من خلال إدخال رمز التحقق "
-"التالي في نموذج وكيل سحب الدفعة<p><span style=\"background: #f2f2f2; padding:"
-" 10px;\">%1</span></p>"
+"التالي في نموذج وكيل سحب الدفعة:<p><span style=\"background: #f2f2f2; "
+"padding: 10px;\">1%</span></p></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:145
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 msgstr ""
 "<p style=\"line-height:200%;color:#333333;font-size:15px;\">عزيزنا العميل "
-"المحترم,</p>نرجو منك مساعدتنا في التحقق من هويتك من خلال إدخال رمز التحقق "
+"المحترم,</p><p>نرجو منك مساعدتنا في التحقق من هويتك من خلال إدخال رمز التحقق "
 "التالي في نموذج سحب الدفع:<p><span style=\"background: #f2f2f2; padding: "
 "10px;\">%1</span></p></p>"
 
@@ -3929,6 +3933,9 @@ msgstr "دفع النمو السريع من المناطق الرئيسية حو
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:717
 msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
 msgstr ""
+"نظراً للتغيرات الأخيرة التي طرأت على اللوائح. فنحن مطالبون بمطالبة عملائنا "
+"بملء نموذج التقييم المالي التالي. يرجى ملاحظة أنك لن تكون قادر على مواصلة "
+"التداول حتى إكمال هذا النموذج."
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1417
 msgid "Due to regulatory requirements, you are required to authenticate your account in order to continue trading."
@@ -11079,7 +11086,11 @@ msgstr "لقد تحرك السوق كثيراً منذ قمت بتسعير ال�
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/api_tac_tab.html.tt:157
 msgid "The use of the Binary.com API is at your own risk, and you assume full responsibility and risk of loss it may suffer as a result of using, or accessing the Binary.com API. Except to the extent that liability under any applicable law or regulation cannot be excluded:"
-msgstr "استخدام واجهة برمجة التطبيقات الخاصة ب Binary.com يكون على مسؤوليتك الخاصة, وأنك تتحمل المسؤولية الكاملة ومخاطر الخسارة التي قد تعاني منها نتيجة استخدامك أو الوصول إلى واجهة برمجة التطبيقات الخاصة ب Binary.com. باستثناء المسؤولية التي لا يمكن استبعادها وفقا للقوانين و اللوائح المعمول بها."
+msgstr ""
+"استخدام واجهة برمجة التطبيقات الخاصة ب Binary.com يكون على مسؤوليتك الخاصة, "
+"وأنت تتحمل المسؤولية الكاملة ومخاطر الخسارة التي قد تعاني منها نتيجة "
+"استخدامك أو الوصول إلى واجهة برمجة التطبيقات الخاصة ب Binary.com. باستثناء "
+"المسؤولية التي لا يمكن استبعادها وفقا للقوانين و اللوائح المعمول بها:"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/api_tac_tab.html.tt:192
 msgid "The use, operation or combination of the Binary.com API with non-Binary.com API(s), data, equipment or documentation if liability would have been avoided but for such use, operation, or combination; or"
@@ -11440,7 +11451,9 @@ msgstr ""
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "Thorough knowledge of bash scripting, as well as experience with scripting languages such as Perl and PHP"
-msgstr "معرفة شاملة في كتابة البرمجة, وكذلك الخبرة في لغات البرمجة مثل بيرل و بي أتش بي."
+msgstr ""
+"معرفة شاملة في كتابة البرمجة, وكذلك الخبرة في لغات البرمجة مثل بيرل و بي أتش "
+"بي"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:77
 msgid "Thursday"
@@ -12861,7 +12874,10 @@ msgstr "العمل عن كثب مع الأعضاء الآخرين في الفر�
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "Work directly with members of our marketing and IT teams to produce graphics for the company website, blog, social media outlets, and marketing materials"
-msgstr "العمل مباشرة مع أعضاء من فريق التسويق لدينا وفريق تكنولوجيا المعلومات لإنتاج رسومات جرافيكس لموقع الشركة والمدونة ومنافذ وسائل التواصل الإجتماعي ومواد التسويق."
+msgstr ""
+"العمل مباشرة مع أعضاء من فريق التسويق لدينا وفريق تكنولوجيا المعلومات لإنتاج "
+"رسومات جرافيكس لموقع الشركة والمدونة ومنافذ وسائل التواصل الإجتماعي ومواد "
+"التسويق"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "Work experience in a similar role"
@@ -13267,7 +13283,7 @@ msgstr "يجب عليك الإبلاغ فوراً عن أي أوجه في الق
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:542
 msgid "You need to finish all 20 questions."
-msgstr ""
+msgstr "يجب عليك الإجابة على ال 20 سؤال."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/binary_options_basics.html.haml:1
 msgid "You only need to make four decisions to execute a binary contract."
@@ -15771,7 +15787,7 @@ msgstr "شركة بيركشاير هاثاواي المتحدة."
 
 #: Underlying Symbol AUCBA
 msgid "Commonwealth Bank"
-msgstr ""
+msgstr "بنك الكومنولث"
 
 #: Underlying Symbol UKAAL
 msgid "Anglo American plc"
@@ -15843,7 +15859,7 @@ msgstr "Apple Inc."
 
 #: Underlying Symbol DESIE
 msgid "Siemens AG"
-msgstr ""
+msgstr "سيمنز AG"
 
 #: Underlying Symbol UKRDSA
 msgid "Royal Dutch Shell plc"
@@ -16041,7 +16057,7 @@ msgstr "Barclays plc"
 
 #: Underlying Symbol AUMQG
 msgid "Macquarie Group"
-msgstr ""
+msgstr "مجموعة ماكواري"
 
 #: Underlying Symbol AUTLS
 msgid "TELSTRA CORPORATION LIMITED"
@@ -16111,7 +16127,7 @@ msgstr "Renault"
 
 #: Underlying Symbol USDANG
 msgid "E-Commerce China Dangdang Inc."
-msgstr "شركة دانج دانج الصينية للتجارة الإلكترونية المتحدة"
+msgstr "شركة دانج دانج الصينية للتجارة الإلكترونية المتحدة."
 
 #: Underlying Symbol DEADS
 msgid "ADIDAS AG"
