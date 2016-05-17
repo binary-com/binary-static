@@ -25,9 +25,9 @@ function BinarySocketClass() {
         if((/www\.binary\.com/i).test(host)) {
             socketUrl = 'wss://ws.binaryws.com/websockets/v3?app_id=1';
         } else if((/binaryqa/i).test(host)) {
-            socketUrl = 'wss://' + host + '/websockets/v3';
+            socketUrl = 'wss://' + host + '/websockets/v3?app_id=1';
         } else {
-            socketUrl = 'wss://www2.binary.com/websockets/v3';
+            socketUrl = 'wss://www2.binary.com/websockets/v3?app_id=1';
         }
 
     if (page.language()) {
