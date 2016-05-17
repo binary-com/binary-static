@@ -42,7 +42,7 @@
     %link{:rel=>"alternate", :hreflang=>$_, :href=>$complete_path}
   - }
 
-  - foreach my $css (css()->files) {
+  - foreach my $css (@$css_files) {
     %link{:rel=>"stylesheet" :href=> $css}
   - }
 
