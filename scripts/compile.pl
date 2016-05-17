@@ -254,7 +254,7 @@ sub haml_handle {
             my ($c)           = @_;
             my @allowed_langs = all_languages();
             my $al            = {};
-            map { $al->{$_} = lang_display_name($_) } @allowed_langs;
+            map { $al->{$_} = decode_utf8(lang_display_name($_)) } @allowed_langs;
             return $al;
         });
 
