@@ -361,7 +361,7 @@ URL.prototype = {
 
         var staticHost = window.staticHost;
         if(!staticHost || staticHost.length === 0) {
-            staticHost = $('script[src*="binary.min.js"]').attr('src');
+            staticHost = $('script[src*="binary.min.js"],script[src*="binary.js"]').attr('src');
 
             if(staticHost && staticHost.length > 0) {
                 staticHost = staticHost.substr(0, staticHost.indexOf('/js/') + 1);
