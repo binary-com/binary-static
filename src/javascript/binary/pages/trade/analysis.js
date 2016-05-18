@@ -277,8 +277,7 @@ var TradingAnalysis = (function() {
         tab_portfolio: function() {
             return tab_portfolio;
         },
-        getActiveTab: getActiveTab,
-        showExplanation: showExplanation,
+        getActiveTab: getActiveTab
     };
 
 })();
