@@ -7,9 +7,10 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-16 04:25+0000\n"
+"PO-Revision-Date: 2016-05-17 05:31+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
-"Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
+"Language-Team: Indonesian "
+"<https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3864,6 +3865,10 @@ msgstr "Mendorong pertumbuhan yang cepat pada beberapa bidang utama dunia, mener
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:717
 msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
 msgstr ""
+"Berhubung perubahan terbaru dalam peraturan, kami perlu memastikan untuk "
+"meminta klien menyelesaikan Penilaian Keuangan berikut. Mohon diketahui "
+"bahwa Anda tidak akan dapat melanjutkan pendaftaran hingga proses ini "
+"selesai."
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1417
 msgid "Due to regulatory requirements, you are required to authenticate your account in order to continue trading."
@@ -10348,10 +10353,20 @@ msgid "The Company may use or disclose (or choose not to use or disclose) such C
 msgstr "Perusahaan dapat menggunakan atau mengungkapkan (atau memilih untuk tidak menggunakan atau tidak menyingkap) tersebut untuk tujuan apa pun, dengan cara apapun, di media manapun di seluruh dunia."
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/terms_and_conditions.html.tt:104
-#, fuzzy
 #| msgid "The Company may, from time to time, at its sole discretion, or as required by regulations in place to conduct appropriate \"Know Your Customer\" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and may at its sole discretion suspend an account until such proof has been provided to its satisfaction. Know Your Customer documentation will be required when a Client deposits money in the account. In the case of a client opening an account with Binary (Europe) Ltd, the threshold for verifying clients is on cumulative withdrawals of EUR 2,300."
 msgid "The Company may, from time to time, at its sole discretion, or as required by regulations in place to conduct appropriate \"Know Your Customer\" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and may at its sole discretion suspend an account until satisfactory identification information, evidence of identity and address, source of funds and/or source of wealth have been provided. Know Your Customer documentation will be required when a Client deposits money in the account. In the case of a client opening an account with Binary (Europe) Ltd, the threshold for verifying clients is on cumulative withdrawals of EUR 2,300."
-msgstr "Perusahaan dapat, dari waktu ke waktu, dengan kebijakannya sendiri, atau berdasarkan peraturan dapat melakukan prosedur \"Know Your Customer\" dan memerlukan Pelanggan untuk memberikan bukti identitas (seperti copy diaktakan paspor atau lainnya cara verifikasi identitas dimana Perusahaan dianggap diperlukan dalam hal ini) dan mungkin atas kebijakannya sendiri menangguhkan akun sampai bukti tersebut telah memuaskan. Tahu dokumentasi Nasabah akan diperlukan jika Klien mendeposit dana kedalam akun. Dalam hal klien mendaftar pada Binary (Europe) Ltd, batas untuk memverifikasi klien adalah pada penarikan kumulatif sebesar EUR 2,300."
+msgstr ""
+"Perusahaan dapat, dari waktu ke waktu, dengan kebijakannya sendiri, atau "
+"berdasarkan peraturan dapat melakukan prosedur \"Know Your Customer\" dan "
+"memerlukan Pelanggan untuk memberikan bukti identitas (seperti copy "
+"diaktakan paspor atau lainnya cara verifikasi identitas dimana Perusahaan "
+"dianggap diperlukan dalam hal ini) dan mungkin atas kebijakannya sendiri "
+"menangguhkan proses identifikasi hingga informasi akun, bukti identitas dan "
+"alamat, sumber dana dan/atau sumber kekayaan telah diterima. Dokumentasi "
+"Know Your Customer akan diperlukan jika Klien mendeposit dana kedalam akun. "
+"Dalam hal klien mendaftar pada Binary (Europe) Ltd, batas untuk "
+"memverifikasi klien adalah pada penarikan kumulatif sebesar EUR 2,300 setara "
+"dengan USD10,000."
 
 #. (website)
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:97
@@ -11911,10 +11926,9 @@ msgid "Verify your withdrawal request - %1"
 msgstr "Verifikasi permintaan penarikan Anda - %1"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/terms_and_conditions.html.tt:4
-#, fuzzy
 #| msgid "Version 39. Last modified 2016-03-01."
 msgid "Version 40. Last modified 2016-05-12."
-msgstr "Version 39. Diubah terakhir pada 01-03-2016."
+msgstr "Version 40. Diubah terakhir pada 12-05-2016."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:190
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/analyse_link.html.tt:4
@@ -13020,7 +13034,7 @@ msgstr "Anda harus segera melaporkan setiap kekurangan keamanan, atau intrusi un
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:542
 msgid "You need to finish all 20 questions."
-msgstr ""
+msgstr "Anda perlu menjawab semua 20 pertanyaan."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/binary_options_basics.html.haml:1
 msgid "You only need to make four decisions to execute a binary contract."
@@ -15379,7 +15393,7 @@ msgstr "Berkshire Hathaway Inc."
 
 #: Underlying Symbol AUCBA
 msgid "Commonwealth Bank"
-msgstr ""
+msgstr "Bank Commonwealth"
 
 #: Underlying Symbol UKAAL
 msgid "Anglo American plc"
@@ -15447,7 +15461,7 @@ msgstr "AbbVie Inc."
 
 #: Underlying Symbol DESIE
 msgid "Siemens AG"
-msgstr ""
+msgstr "Siemens AG"
 
 #: Underlying Symbol UKRDSA
 msgid "Royal Dutch Shell plc"
@@ -15558,10 +15572,9 @@ msgid "YY Inc."
 msgstr "YY Inc."
 
 #: Underlying Symbol USAMZN
-#, fuzzy
 #| msgid "Sohu.com Inc."
 msgid "Amazon.com Inc"
-msgstr "Sohu.com Inc."
+msgstr "Amazon.com Inc"
 
 #: Underlying Symbol USHAL
 msgid "Halliburton Company"
@@ -15620,14 +15633,13 @@ msgid "Volkswagen AG"
 msgstr "Volkswagen AG"
 
 #: Underlying Symbol UKBARC
-#, fuzzy
 #| msgid "Barclays plc"
 msgid "Barclays"
-msgstr "Barclays plc"
+msgstr "Barclays"
 
 #: Underlying Symbol AUMQG
 msgid "Macquarie Group"
-msgstr ""
+msgstr "Macquarie Group"
 
 #: Underlying Symbol AUTLS
 msgid "TELSTRA CORPORATION LIMITED"
@@ -15730,10 +15742,9 @@ msgid "WOOLWORTHS LIMITED"
 msgstr "WOOLWORTHS LIMITED"
 
 #: Underlying Symbol UKGSK
-#, fuzzy
 #| msgid "GlaxoSmithKline plc"
 msgid "GlaxoSmithKline"
-msgstr "GlaxoSmithKline plc"
+msgstr "GlaxoSmithKline"
 
 #: Underlying Symbol AUWES
 msgid "WESFARMERS LIMITED"
@@ -15808,10 +15819,9 @@ msgid "BMW"
 msgstr "BMW"
 
 #: Underlying Symbol USAAPL
-#, fuzzy
 #| msgid "Apple Inc."
 msgid "Apple Inc"
-msgstr "Apple Inc."
+msgstr "Apple Inc"
 
 #: Underlying Symbol INBHARTIARTL
 msgid "Bharti Airtel"
@@ -15826,10 +15836,9 @@ msgid "UBS AG"
 msgstr "UBS AG"
 
 #: Underlying Symbol USCT
-#, fuzzy
 #| msgid "Citigroup Inc."
 msgid "Citigroup Inc"
-msgstr "Citigroup Inc."
+msgstr "Citigroup Inc"
 
 #: Underlying Symbol FPMIC
 msgid "Michelin"
@@ -15972,10 +15981,9 @@ msgid "Piraeus Bank SA"
 msgstr "Piraeus Bank SA"
 
 #: Underlying Symbol USFB
-#, fuzzy
 #| msgid "Facebook Inc."
 msgid "Facebook Inc"
-msgstr "Facebook Inc."
+msgstr "Facebook Inc"
 
 #: Underlying Symbol FPDG
 msgid "Vinci"
@@ -16074,10 +16082,9 @@ msgid "Philip Morris International"
 msgstr "Philip Morris International"
 
 #: Underlying Symbol UKHSBA
-#, fuzzy
 #| msgid "HSBC Holdings plc"
 msgid "HSBC Holdings"
-msgstr "HSBC Holdings plc"
+msgstr "HSBC Holdings"
 
 #: Underlying Symbol DEEOAN
 msgid "E.ON SE"
@@ -16092,16 +16099,14 @@ msgid "IBM"
 msgstr "IBM"
 
 #: Underlying Symbol USPFE
-#, fuzzy
 #| msgid "Pfizer Inc."
 msgid "Pfizer Inc"
-msgstr "Pfizer Inc."
+msgstr "Pfizer Inc"
 
 #: Underlying Symbol AUANZ
-#, fuzzy
 #| msgid "ANZ Banking Group Ltd"
 msgid "ANZ Banking Group"
-msgstr "ANZ Banking Group Ltd"
+msgstr "ANZ Banking Group"
 
 #: Underlying Symbol UKBATS
 msgid "British American Tobacco"
@@ -16152,10 +16157,9 @@ msgid "Schneider Electric"
 msgstr "Schneider Electric"
 
 #: Underlying Symbol UKVOD
-#, fuzzy
 #| msgid "Vodafone"
 msgid "Vodafone Group"
-msgstr "Vodafone"
+msgstr "Vodafone Group"
 
 #: Underlying Symbol INSUNPHARMA
 msgid "Sun Pharma"
@@ -16178,10 +16182,9 @@ msgid "Dialog Semiconductor plc"
 msgstr "Dialog Semiconductor plc"
 
 #: Underlying Symbol USXOM
-#, fuzzy
 #| msgid "ExxonMobil"
 msgid "Exxon Mobil Corp"
-msgstr "ExxonMobil"
+msgstr "Exxon Mobil Corp"
 
 #: Underlying Symbol USNTFLX
 msgid "Netflix Inc."
@@ -16276,10 +16279,9 @@ msgid "Veolia Environnement water"
 msgstr "Veolia Environnement water"
 
 #: Underlying Symbol USKO
-#, fuzzy
 #| msgid "The Coca-Cola Company"
 msgid "Coca-Cola Co"
-msgstr "The Coca-Cola Company"
+msgstr "Coca-Cola Co"
 
 #: Underlying Symbol BBUCB
 msgid "UCB"
@@ -16330,22 +16332,19 @@ msgid "Societe Generale"
 msgstr "Societe Generale"
 
 #: Underlying Symbol AUQAN
-#, fuzzy
 #| msgid "Qantas Airways Limited"
 msgid "Qantas Airways"
-msgstr "Qantas Airways Limited"
+msgstr "Qantas Airways"
 
 #: Underlying Symbol USGE
-#, fuzzy
 #| msgid "General Electric Company"
 msgid "General Electric Co"
-msgstr "General Electric Company"
+msgstr "General Electric Co"
 
 #: Underlying Symbol USMSFT
-#, fuzzy
 #| msgid "Microsoft"
 msgid "Microsoft Corp"
-msgstr "Microsoft"
+msgstr "Microsoft Corp"
 
 #: Underlying Symbol USJD
 msgid "JD.com Inc."
@@ -16360,10 +16359,9 @@ msgid "Alstom industrial machinery"
 msgstr "Alstom industrial machinery"
 
 #: Underlying Symbol USGOOG
-#, fuzzy
 #| msgid "Alcoa Inc."
 msgid "Alphabet Inc"
-msgstr "Alcoa Inc."
+msgstr "Alphabet Inc"
 
 #: Underlying Symbol USWMT
 msgid "Wal-Mart Stores Inc."
@@ -16494,10 +16492,9 @@ msgid "Commodities are traded items with directly usable qualities."
 msgstr "Komoditas adalah barang yang diperdagangkan dengan kualitas pakai."
 
 #: Translation for market name
-#, fuzzy
 #| msgid "Stocks"
 msgid "OTC Stocks"
-msgstr "Saham"
+msgstr "Saham OTC"
 
 #: Explanation for market OTC Stocks
 msgid "Stocks (or shares) represent the value of partial ownership in a single company."
@@ -16560,10 +16557,9 @@ msgid "Americas Future"
 msgstr "Berjangka Amerika"
 
 #: Explanation for market Germany
-#, fuzzy
 #| msgid "Germany Stocks"
 msgid "Germany OTC Stocks"
-msgstr "Saham Jerman"
+msgstr "Saham OTC Jerman"
 
 #: Translation for sub market name
 msgid "French Stocks"
@@ -16602,10 +16598,9 @@ msgid "United States Stocks"
 msgstr "Saham Amerika Serikat"
 
 #: Explanation for market Australia
-#, fuzzy
 #| msgid "Australia Stocks"
 msgid "Australia OTC Stocks"
-msgstr "Saham Australia"
+msgstr "Saham OTC Australia"
 
 #: Translation for sub market name
 msgid "Minor Pairs"
@@ -16616,16 +16611,14 @@ msgid "Forex pairs of interest, but with less liquid international markets."
 msgstr "Pasangan forex berdasarkan bunga dan kurang berlikuidasi pada pasar internasional."
 
 #: Translation for sub market name
-#, fuzzy
 #| msgid "USD"
 msgid "US"
-msgstr "USD"
+msgstr "AS"
 
 #: Explanation for market US
-#, fuzzy
 #| msgid "US Stocks"
 msgid "US OTC Stocks"
-msgstr "Saham AS"
+msgstr "Saham OTC AS"
 
 #: Translation for sub market name
 msgid "Germany Stocks"
@@ -16644,10 +16637,9 @@ msgid "UK"
 msgstr "UK"
 
 #: Explanation for market UK
-#, fuzzy
 #| msgid "UK Stocks"
 msgid "UK OTC Stocks"
-msgstr "Saham UK"
+msgstr "Saham OTC UK"
 
 #: Translation for sub market name
 msgid "Metals"

@@ -7,14 +7,16 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-13 20:25+0000\n"
-"Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
+"PO-Revision-Date: 2016-05-18 03:17+0000\n"
+"Last-Translator: Sittie Hadjirah Sevilla <sittiebaser@gmail.com>\n"
+"Language-Team: Russian "
+"<https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.7-dev\n"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/risk_disclaimer.html.tt:47
@@ -194,8 +196,12 @@ msgstr "%1 ищет квалифицированных переводчиков,
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
+#, fuzzy
 msgid "%1 is seeking several highly skilled Marketing Executives, eager to contribute their energy, passion, and specialised strengths in connecting with prospects and clients based throughout the globe."
-msgstr "%1 приглашает на руководящие должности нескольких высококвалифицированных маркетинговых специалистов, готовых посвятить свою энергию, умения и навыки для работы с клиентами и потенциальными клиентами по всему миру."
+msgstr ""
+"%1 приглашает на руководящие должности нескольких высококвалифицированных "
+"маркетинговых специалистов, готовых посвятить свою энергию, умения и навыки "
+"для работы с клиентами и потенциальными клиентами по всему миру."
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/benefits_of_trading_binaries.html.haml:1
@@ -264,8 +270,14 @@ msgstr "%1 приглашает на работу координатора пр�
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
+#, fuzzy
 msgid "%1 seeks a Social Media Executive to enhance and proactively manage the company's social-media efforts. This role requires effective utilisation of a variety of social media channels to attract and nurture prospects, clients, partners, and recruits based throughout the world."
-msgstr "%1 приглашает на работу главу информационного отдела, который будет улучшать и активно управлять проектами компании, проводимыми в СМИ. Данная должность требует навыков эффективного использования множества информационных каналов с целью привлечь и обучить текущих и потенциальных клиентов, партнёров, а также новых сотрудников компании по всему миру."
+msgstr ""
+"%1 приглашает на работу главу информационного отдела, который будет улучшать "
+"и активно управлять проектами компании, проводимыми в СМИ. Данная должность "
+"требует навыков эффективного использования множества информационных каналов "
+"с целью привлечь и обучить текущих и потенциальных клиентов, партнёров, а "
+"также новых сотрудников компании по всему миру."
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
@@ -659,22 +671,40 @@ msgstr "<option value=\"\"> </option><option value=\"01\">Янв</option><option
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:106
 msgid "<p style=\"font-weight: bold;\">Thanks for signing up for a virtual account!</p><p>Enter the following verification token into the form to create an account: <p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p><p>Enjoy trading with us on Binary.com.</p>"
-msgstr "<p style=\"font-weight: bold;\">Спасибо за регистрацию демо-счёта!</p><p>Введите следующий проверочный токен в форму, чтобы открыть счёт: <p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p><p>Торгуйте с нами на Binary.com.</p>"
+msgstr ""
+"<p style=\"font-weight: bold;\">Спасибо за регистрацию демо-счёта!</p><p>"
+"Введите следующий проверочный токен в форму, чтобы открыть счёт: </p><p><"
+"span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p><p>"
+"Торгуйте с нами на Binary.com.</p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:93
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Before we can help you change your password, please help us to verify your identity by entering the following verification token into the password reset form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Уважаемый клиент,</p><p>Перед тем, как мы поможем Вам изменить пароль, пожалуйста, помогите нам проверить Вашу личность и введите следующий проверочный токен в форму для изменения пароля:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">Уважаемый "
+"клиент,</p><p>Перед тем, как мы поможем Вам изменить пароль, пожалуйста, "
+"помогите нам проверить Вашу личность и введите следующий проверочный токен в "
+"форму для изменения пароля:</p><p><span style=\"background: #f2f2f2; padding:"
+" 10px;\">%1</span></p></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:133
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment agent withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Уважаемый клиент,</p><p>Пожалуйста, помогите нам подтвердить Вашу личность, введя следующий проверочный токен в форму для вывода средств через платёжного агента:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">Уважаемый "
+"клиент,</p><p>Пожалуйста, помогите нам подтвердить Вашу личность, введя "
+"следующий проверочный токен в форму для вывода средств через платёжного "
+"агента:</p><p><span style=\"background: #f2f2f2; padding: 10px;\""
+">%1</span></p></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:145
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Уважаемый клиент,</p><p>Пожалуйста, помогите нам подтвердить Вашу личность, введя следующий проверочный токен в форму для вывода средств:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">Уважаемый "
+"клиент,</p><p>Пожалуйста, помогите нам подтвердить Вашу личность, введя "
+"следующий проверочный токен в форму для вывода средств:</p><p><span style=\""
+"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/affiliates/faq.html.tt:73
 msgid ""
@@ -1393,6 +1423,7 @@ msgstr "Управление процессом полугодовой оцен�
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:631
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
+#, fuzzy
 msgid "Administrative Executive"
 msgstr "Глава отдела управления"
 
@@ -2833,6 +2864,7 @@ msgstr "Регулирование и контроль"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:625
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
+#, fuzzy
 msgid "Compliance Executive"
 msgstr "Глава отдела регулир. и контроля"
 
@@ -5042,6 +5074,7 @@ msgstr "Как оплачивать через платежного агента
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:629
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
+#, fuzzy
 msgid "Human Resource Executive"
 msgstr "Глава отдела кадров"
 
@@ -5404,8 +5437,13 @@ msgid "In order to proceed, please verify your email address."
 msgstr "Для того, чтобы продолжить, пожалуйста, верифицируйте свой эл.адрес."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
+#, fuzzy
 msgid "In order to support its continued growth, %1 is seeking to recruit and place a qualified Compliance Executive. In this newly created role, to be based in Malta, the incumbent will report to our Head of Regulatory and Legal Compliance"
-msgstr "С целью поддержания дальнейшего роста и развития, %1 ищет квалифицированного главу отдела регулирования и контроля. Этоа новая должность на Мальте подотчётна нашему главе отдела регулирования и нормативно-правового соответствия"
+msgstr ""
+"С целью поддержания дальнейшего роста и развития, %1 ищет квалифицированного "
+"главу отдела регулирования и контроля. Эта новая должность на Мальте "
+"подотчётна нашему главе отдела регулирования и нормативно-правового "
+"соответствия"
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
@@ -6912,6 +6950,7 @@ msgstr "Маркетинг"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:618
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
+#, fuzzy
 msgid "Marketing Executives"
 msgstr "Главы отдела маркетинга"
 
@@ -9462,6 +9501,7 @@ msgstr "Чего же Вы ждете? Станьте нашим партнер�
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:615
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
+#, fuzzy
 msgid "Social Media Executive"
 msgstr "Глава информационного отдела"
 

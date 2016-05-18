@@ -7,14 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-13 22:46+0000\n"
-"Last-Translator: Ewelina Bruździak <e.bruzdziak@gmail.com>\n"
-"Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>\n"
+"PO-Revision-Date: 2016-05-18 03:25+0000\n"
+"Last-Translator: Sittie Hadjirah Sevilla <sittiebaser@gmail.com>\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>"
+"\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.7-dev\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
@@ -660,22 +662,39 @@ msgstr "<option value=\"\"></option><option value=\"01\">styczeń</option><optio
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:106
 msgid "<p style=\"font-weight: bold;\">Thanks for signing up for a virtual account!</p><p>Enter the following verification token into the form to create an account: <p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p><p>Enjoy trading with us on Binary.com.</p>"
-msgstr "<p style=\"font-weight: bold;\">Dziękujemy za rejestrację w celu utworzenia konta wirtualnego!</p><p>Aby ukończyć proces, proszę wpisać w formularzu podany token weryfikujący: <p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p><p>Miłego handlowania z Binary.com.</p>"
+msgstr ""
+"<p style=\"font-weight: bold;\">Dziękujemy za rejestrację w celu utworzenia "
+"konta wirtualnego!</p><p>Aby ukończyć proces, proszę wpisać w formularzu "
+"podany token weryfikujący: </p><p><span style=\"background: #f2f2f2; padding:"
+" 10px;\">%1</span></p></p><p>Miłego handlowania z Binary.com.</p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:93
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Before we can help you change your password, please help us to verify your identity by entering the following verification token into the password reset form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Szanowny Kliencie,</p><p>Przed rozpoczęciem procedury zmiany hasła musimy zweryfikować Twoją tożsamość. Wpisz podany token weryfikacyjny w formularzu zmiany hasła:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">Szanowny "
+"Kliencie,</p><p>Przed rozpoczęciem procedury zmiany hasła musimy "
+"zweryfikować Twoją tożsamość. Wpisz podany token weryfikacyjny w formularzu "
+"zmiany hasła:</p><p><span style=\"background: #f2f2f2; padding: 10px;\""
+">%1</span></p></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:133
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment agent withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Szanowny Kliencie,</p><p>Pomóż nam zweryfikować Twoją tożsamość. Wpisz podany token weryfikacyjny w formularzu wypłaty przez pośrednika płatności:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">Szanowny "
+"Kliencie,</p><p>Pomóż nam zweryfikować Twoją tożsamość. Wpisz podany token "
+"weryfikacyjny w formularzu wypłaty przez pośrednika płatności:</p><p><span "
+"style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:145
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Szanowny Kliencie,</p><p>Pomóż nam zweryfikować Twoją tożsamość. Wpisz podany token weryfikacyjny w formularzu wypłaty:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">Szanowny "
+"Kliencie,</p><p>Pomóż nam zweryfikować Twoją tożsamość. Wpisz podany token "
+"weryfikacyjny w formularzu wypłaty:</p><p><span style=\"background: #f2f2f2; "
+"padding: 10px;\">%1</span></p></p>"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/affiliates/faq.html.tt:73
 msgid ""

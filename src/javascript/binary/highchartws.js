@@ -375,6 +375,7 @@ var Highchart = (function() {
     }
 
     if(!is_expired && !sell_spot_time && parseInt(window.time._i)/1000 < end_time && !chart_subscribed) {
+        chart_subscribed = true;
         request.subscribe = 1;
     }
 
@@ -395,9 +396,8 @@ var Highchart = (function() {
     if (!entry_tick_time && chart_delayed === false && start_time && parseInt((window.time._i/1000)) >= parseInt(start_time)) {
       show_error('', text.localize('Waiting for entry tick.'));
     } else if (!history_send){
-      if (request.subscribe === 1) chart_subscribed = true;
-      socketSend(request);
       history_send = true;
+      socketSend(request);
     }
     return;
   }
