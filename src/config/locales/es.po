@@ -8,9 +8,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-13 22:58+0000\n"
-"Last-Translator: cameliagf <cameliagf@yahoo.com>\n"
-"Language-Team: Spanish <https://hosted.weblate.org/projects/binary/static/es/>\n"
+"PO-Revision-Date: 2016-05-18 03:14+0000\n"
+"Last-Translator: Sittie Hadjirah Sevilla <sittiebaser@gmail.com>\n"
+"Language-Team: Spanish "
+"<https://hosted.weblate.org/projects/binary/static/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -660,26 +661,40 @@ msgstr "<option value=\"\"></option><option value=\"01\">Ene</option><option val
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:106
 msgid "<p style=\"font-weight: bold;\">Thanks for signing up for a virtual account!</p><p>Enter the following verification token into the form to create an account: <p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p><p>Enjoy trading with us on Binary.com.</p>"
-msgstr "<p style=\"font-weight: bold;\">¡Gracias por crear una cuenta virtual!</p><p>Introduzca el siguiente token de verificación en el formulario para crear una cuenta<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p><p>Disfrute comerciando con nosotros en Binary.com.</p>"
+msgstr ""
+"<p style=\"font-weight: bold;\">¡Gracias por crear una cuenta virtual!</p><p>"
+"Introduzca el siguiente token de verificación en el formulario para crear "
+"una cuenta</p><p><span style=\"background: #f2f2f2; padding: 10px;\""
+">%1</span></p></p><p>Disfrute comerciando con nosotros en Binary.com.</p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:93
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Before we can help you change your password, please help us to verify your identity by entering the following verification token into the password reset form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Estimado cliente,</p><p>Antes de que podamos ayudarle a cambiar su contraseña, por favor ayúdenos a verificar su identidad introduciendo el siguiente token de verificación en el formulario para restablecer la contraseña<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">Estimado "
+"cliente,</p><p>Antes de que podamos ayudarle a cambiar su contraseña, por "
+"favor ayúdenos a verificar su identidad introduciendo el siguiente token de "
+"verificación en el formulario para restablecer la contraseña</p><p><span "
+"style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:133
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment agent withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 msgstr ""
-"<p style=\"line-height:200%;color:#333333;font-size:15px;\">Estimado Cliente,</p><p>Por favor ayúdenos a verificar su identidad introduciendo el siguiente token de verificación en el formulario de retirada del agente de pago:<p>\n"
-"<span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">Estimado "
+"Cliente,</p><p>Por favor ayúdenos a verificar su identidad introduciendo el "
+"siguiente token de verificación en el formulario de retirada del agente de "
+"pago:</p><p><span style=\"background: #f2f2f2; padding: 10px;\""
+">%1</span></p></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:145
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 msgstr ""
-"<p style=\"line-height:200%;color:#333333;font-size:15px;\">Estimado Cliente,</p><p>Por favor ayúdenos a verificar su identidad introduciendo el siguiente token de verificación en el formulario de retirada de pago:<p><span style=\"background: #f2f2f2; padding: 10px;\">\n"
-"%1</span></p></p>"
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">Estimado "
+"Cliente,</p><p>Por favor ayúdenos a verificar su identidad introduciendo el "
+"siguiente token de verificación en el formulario de retirada de pago:</p><p><"
+"span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/affiliates/faq.html.tt:73
 msgid ""
@@ -15879,6 +15894,7 @@ msgid "Reliance Industries Ltd"
 msgstr "Reliance Industries Ltd"
 
 #: Underlying Symbol AUBHP
+#, fuzzy
 msgid "BHP Billiton"
 msgstr "BHP Billiton"
 

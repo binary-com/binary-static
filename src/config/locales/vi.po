@@ -7,9 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: I 18N\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-16 11:19+0000\n"
-"Last-Translator: Pham Minh Hieu <hphamv7@gmail.com>\n"
-"Language-Team: Vietnamese <https://hosted.weblate.org/projects/binary/static/vi/>\n"
+"PO-Revision-Date: 2016-05-18 03:09+0000\n"
+"Last-Translator: Sittie Hadjirah Sevilla <sittiebaser@gmail.com>\n"
+"Language-Team: Vietnamese "
+"<https://hosted.weblate.org/projects/binary/static/vi/>\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -659,22 +660,42 @@ msgstr "<option value=\"\"></option><option value=\"01\">Tháng 01</option><opti
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:106
 msgid "<p style=\"font-weight: bold;\">Thanks for signing up for a virtual account!</p><p>Enter the following verification token into the form to create an account: <p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p><p>Enjoy trading with us on Binary.com.</p>"
-msgstr "<p style=\"font-weight: bold;\">Cám ơn bạn đã đăng ký một tài khoản tiền ảo!</p><p>Nhập mã token xác minh sau đây vào biểu mẫu để tạo một tài khoản: <p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p><p>Hãy tận hưởng giao dịch với chúng tôi tại Binary.com.</p>"
+msgstr ""
+"<p style=\"font-weight: bold;\">Cám ơn bạn đã đăng ký một tài khoản tiền "
+"ảo!</p><p>Nhập mã token xác minh sau đây vào biểu mẫu để tạo một tài khoản: "
+"</p><p><span style=\"background: #f2f2f2; padding: 10px;\""
+">%1</span></p></p><p>Hãy tận hưởng giao dịch với chúng tôi tại "
+"Binary.com.</p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:93
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Before we can help you change your password, please help us to verify your identity by entering the following verification token into the password reset form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Kính gửi Quý khách hàng,</p><p>Trước khi chúng tôi có thể giúp bạn thay đổi mật khẩu của bạn, bạn vui lòng giúp chúng tôi xác minh nhận dạng của bạn bằng cách truy cập vào token xác minh sau đây và điền vào mẫu cài đặt lại mật khẩu:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">Kính gửi Quý "
+"khách hàng,</p><p>Trước khi chúng tôi có thể giúp bạn thay đổi mật khẩu của "
+"bạn, bạn vui lòng giúp chúng tôi xác minh nhận dạng của bạn bằng cách truy "
+"cập vào token xác minh sau đây và điền vào mẫu cài đặt lại mật khẩu:</p><p><"
+"span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:133
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment agent withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Kính gửi Quý khách hàng,</p><p>Vui lòng giúp chúng tôi xác thực danh tính của bạn bằng cách nhập mã token xác minh sau đây vào mẫu rút tiền đại lý thanh toán:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">Kính gửi Quý "
+"khách hàng,</p><p>Vui lòng giúp chúng tôi xác thực danh tính của bạn bằng "
+"cách nhập mã token xác minh sau đây vào mẫu rút tiền đại lý thanh "
+"toán:</p><p><span style=\"background: #f2f2f2; padding: 10px;\""
+">%1</span></p></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:145
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Kính gửi Quý khách hàng,</p><p>Vui lòng giúp chúng tôi xác thực danh tính của bạn bằng cách nhập mã token xác minh sau đây vào mẫu rút tiền đại lý thanh toán:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">Kính gửi Quý "
+"khách hàng,</p><p>Vui lòng giúp chúng tôi xác thực danh tính của bạn bằng "
+"cách nhập mã token xác minh sau đây vào mẫu rút tiền đại lý thanh "
+"toán:</p><p><span style=\"background: #f2f2f2; padding: 10px;\""
+">%1</span></p></p>"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/affiliates/faq.html.tt:73
 msgid ""
@@ -3864,6 +3885,9 @@ msgstr "Tạo sự phát triển nhanh chóng tại những khu vực trọng y�
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:717
 msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
 msgstr ""
+"Vì những thay đổi gần đây trong các quy định, chúng tôi buộc phải yêu cầu "
+"khách hàng hoàn tất bản Đánh giá Tài chính sau. Xin lưu ý rằng bạn sẽ không "
+"thể tiếp tục giao dịch cho đến khi bản đánh giá được hoàn thành."
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1417
 msgid "Due to regulatory requirements, you are required to authenticate your account in order to continue trading."

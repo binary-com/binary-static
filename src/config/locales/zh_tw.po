@@ -2,9 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Taiwan) (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-14 06:32+0000\n"
-"Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (Taiwan) <https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
+"PO-Revision-Date: 2016-05-18 02:44+0000\n"
+"Last-Translator: Sittie Hadjirah Sevilla <sittiebaser@gmail.com>\n"
+"Language-Team: Chinese (Taiwan) "
+"<https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
 "Language: zh_tw\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -654,22 +655,34 @@ msgstr "<option value=\"\"></option><option value=\"01\">一月</option><option 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:106
 msgid "<p style=\"font-weight: bold;\">Thanks for signing up for a virtual account!</p><p>Enter the following verification token into the form to create an account: <p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p><p>Enjoy trading with us on Binary.com.</p>"
-msgstr "<p style=\"font-weight: bold;\">謝謝您註冊虛擬帳戶!</p><p>請將以下驗證權杖輸入到表格內，以建立帳戶: <p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p><p>與Binary.com一起享受交易樂趣。</p>"
+msgstr ""
+"<p style=\"font-weight: bold;\">謝謝您註冊虛擬帳戶!</p><p>請將以下驗證權杖輸入到表格內，以建立帳戶: "
+"</p><p><span style=\"background: #f2f2f2; padding: 10px;\""
+">%1</span></p><p>與Binary.com一起享受交易樂趣。</p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:93
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Before we can help you change your password, please help us to verify your identity by entering the following verification token into the password reset form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">尊敬的客戶，</p><p>在我們協助您修改密碼之前，請在密碼重設表格輸入以下驗證權杖，以便我們對您的身份進行驗證：<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\""
+">尊敬的客戶，</p><p>在我們協助您修改密碼之前，請在密碼重設表格輸入以下驗證權杖，以便我們對您的身份進行驗證：</p><p><span style="
+"\"background: #f2f2f2; padding: 10px;\">%1</span></p><p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:133
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment agent withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">尊敬的客戶，</p><p>請在付款代理取款表格輸入以下驗證權杖，以協助我們驗證您的身份:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\""
+">尊敬的客戶，</p><p>請在付款代理取款表格輸入以下驗證權杖，以協助我們驗證您的身份:</p><p><span style=\"background:"
+" #f2f2f2; padding: 10px;\">%1</span></p></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:145
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">尊敬的客戶，</p><p>請在付款提款表格輸入以下驗證權杖，以協助我們驗證您的身份:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\""
+">尊敬的客戶，</p><p>請在付款提款表格輸入以下驗證權杖，以協助我們驗證您的身份:</p><p><span style=\"background: "
+"#f2f2f2; padding: 10px;\">%1</span></p></p>"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/affiliates/faq.html.tt:73
 msgid ""
@@ -3858,7 +3871,7 @@ msgstr "應用各種線上和離線行銷能力擴大公司的活躍聯盟網路
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:717
 msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
-msgstr ""
+msgstr "由於最近的法規變更，客戶必須填寫以下金融評估。您須填寫完成才能繼續交易。"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1417
 msgid "Due to regulatory requirements, you are required to authenticate your account in order to continue trading."
@@ -10335,10 +10348,12 @@ msgid "The Company may use or disclose (or choose not to use or disclose) such C
 msgstr "公司可基於任何用途通過世界各地任何媒介以任何方式使用或披露 （或選擇不使用或披露）該貢獻 ;"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/terms_and_conditions.html.tt:104
-#, fuzzy
 #| msgid "The Company may, from time to time, at its sole discretion, or as required by regulations in place to conduct appropriate \"Know Your Customer\" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and may at its sole discretion suspend an account until such proof has been provided to its satisfaction. Know Your Customer documentation will be required when a Client deposits money in the account. In the case of a client opening an account with Binary (Europe) Ltd, the threshold for verifying clients is on cumulative withdrawals of EUR 2,300."
 msgid "The Company may, from time to time, at its sole discretion, or as required by regulations in place to conduct appropriate \"Know Your Customer\" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and may at its sole discretion suspend an account until satisfactory identification information, evidence of identity and address, source of funds and/or source of wealth have been provided. Know Your Customer documentation will be required when a Client deposits money in the account. In the case of a client opening an account with Binary (Europe) Ltd, the threshold for verifying clients is on cumulative withdrawals of EUR 2,300."
-msgstr "公司有權不時自行或依據「了解你的客戶」法則的相關規定要求客戶提供身份證明（如經公證的護照複印件或其他公司在相關情形下認為必要的身份證明），也有權在得到滿意的身份證明之前自行中止帳戶。當客戶將資金存入帳戶時必須提交「了解你的客戶」文件。如果客戶在 Binary（歐洲）有限公司開立帳戶，客戶驗證累計提款額門檻為2,300歐元。"
+msgstr ""
+"公司有權不時自行或依據「了解你的客戶」法則的相關規定要求客戶提供身份證明（如經公證的護照複印件或其他公司在相關情形下認為必要的身份證明），也有權在得到滿意"
+"的身份證明資訊、身份與地址證明、基金來源和/或財富來源之前自行中止帳戶。當客戶將資金存入帳戶時必須提交「了解你的客戶」文件。如果客戶在 "
+"Binary（歐洲）有限公司開立帳戶，客戶驗證累計提款額門檻為2,300歐元。"
 
 #. (website)
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:97
@@ -11898,10 +11913,9 @@ msgid "Verify your withdrawal request - %1"
 msgstr "驗證您的提款要求 - %1"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/terms_and_conditions.html.tt:4
-#, fuzzy
 #| msgid "Version 39. Last modified 2016-03-01."
 msgid "Version 40. Last modified 2016-05-12."
-msgstr "版本39。最後修改時間為 2016年03月01日。"
+msgstr "版本40。最後修改時間為 2016年05月12日。"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:190
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/analyse_link.html.tt:4
@@ -13007,7 +13021,7 @@ msgstr "如果發現應用程式有任何安全缺陷或受入侵，您必須及
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:542
 msgid "You need to finish all 20 questions."
-msgstr ""
+msgstr "必須答覆全部20個問題。"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/binary_options_basics.html.haml:1
 msgid "You only need to make four decisions to execute a binary contract."
@@ -15368,7 +15382,7 @@ msgstr "伯克希爾哈撒韋公司"
 
 #: Underlying Symbol AUCBA
 msgid "Commonwealth Bank"
-msgstr ""
+msgstr "聯邦銀行"
 
 #: Underlying Symbol UKAAL
 msgid "Anglo American plc"
@@ -15436,7 +15450,7 @@ msgstr "艾伯維藥品有限公司"
 
 #: Underlying Symbol DESIE
 msgid "Siemens AG"
-msgstr ""
+msgstr "西門子股份公司"
 
 #: Underlying Symbol UKRDSA
 msgid "Royal Dutch Shell plc"
@@ -15547,10 +15561,9 @@ msgid "YY Inc."
 msgstr "歡聚時代科技有限公司"
 
 #: Underlying Symbol USAMZN
-#, fuzzy
 #| msgid "Sohu.com Inc."
 msgid "Amazon.com Inc"
-msgstr "搜狐公司"
+msgstr "Amazon.com公司"
 
 #: Underlying Symbol USHAL
 msgid "Halliburton Company"
@@ -15609,14 +15622,13 @@ msgid "Volkswagen AG"
 msgstr "福斯汽車"
 
 #: Underlying Symbol UKBARC
-#, fuzzy
 #| msgid "Barclays plc"
 msgid "Barclays"
-msgstr "巴克萊銀行"
+msgstr "Barclays"
 
 #: Underlying Symbol AUMQG
 msgid "Macquarie Group"
-msgstr ""
+msgstr "Macquarie 集團"
 
 #: Underlying Symbol AUTLS
 msgid "TELSTRA CORPORATION LIMITED"
@@ -15719,10 +15731,9 @@ msgid "WOOLWORTHS LIMITED"
 msgstr "沃爾沃斯有限公司"
 
 #: Underlying Symbol UKGSK
-#, fuzzy
 #| msgid "GlaxoSmithKline plc"
 msgid "GlaxoSmithKline"
-msgstr "荷商葛蘭素史克藥廠"
+msgstr "GlaxoSmithKline"
 
 #: Underlying Symbol AUWES
 msgid "WESFARMERS LIMITED"
@@ -15797,7 +15808,6 @@ msgid "BMW"
 msgstr "寶馬汽車"
 
 #: Underlying Symbol USAAPL
-#, fuzzy
 #| msgid "Apple Inc."
 msgid "Apple Inc"
 msgstr "蘋果公司"
@@ -15815,7 +15825,6 @@ msgid "UBS AG"
 msgstr "瑞銀集團"
 
 #: Underlying Symbol USCT
-#, fuzzy
 #| msgid "Citigroup Inc."
 msgid "Citigroup Inc"
 msgstr "花旗集團"
@@ -15861,10 +15870,9 @@ msgid "Reliance Industries Ltd"
 msgstr "信實工業有限公司"
 
 #: Underlying Symbol AUBHP
-#, fuzzy
 #| msgid "BHP Billiton Ltd"
 msgid "BHP Billiton"
-msgstr "必和必拓公司"
+msgstr "BHP Billiton"
 
 #: Underlying Symbol USAMAT
 msgid "Applied Materials Inc."
@@ -15963,10 +15971,9 @@ msgid "Piraeus Bank SA"
 msgstr "彼里夫斯銀行"
 
 #: Underlying Symbol USFB
-#, fuzzy
 #| msgid "Facebook Inc."
 msgid "Facebook Inc"
-msgstr "臉書"
+msgstr "Facebook"
 
 #: Underlying Symbol FPDG
 msgid "Vinci"
@@ -16065,7 +16072,6 @@ msgid "Philip Morris International"
 msgstr "菲利普莫里斯股份有限公司"
 
 #: Underlying Symbol UKHSBA
-#, fuzzy
 #| msgid "HSBC Holdings plc"
 msgid "HSBC Holdings"
 msgstr "滙豐控股有限公司"
@@ -16083,16 +16089,14 @@ msgid "IBM"
 msgstr "IBM"
 
 #: Underlying Symbol USPFE
-#, fuzzy
 #| msgid "Pfizer Inc."
 msgid "Pfizer Inc"
-msgstr "輝瑞大藥廠"
+msgstr "Pfizer 公司"
 
 #: Underlying Symbol AUANZ
-#, fuzzy
 #| msgid "ANZ Banking Group Ltd"
 msgid "ANZ Banking Group"
-msgstr "澳新銀行集團有限公司"
+msgstr "澳新銀行集團"
 
 #: Underlying Symbol UKBATS
 msgid "British American Tobacco"
@@ -16143,7 +16147,6 @@ msgid "Schneider Electric"
 msgstr "施耐德電氣公司"
 
 #: Underlying Symbol UKVOD
-#, fuzzy
 #| msgid "Vodafone"
 msgid "Vodafone Group"
 msgstr "沃達豐集團"
@@ -16169,7 +16172,6 @@ msgid "Dialog Semiconductor plc"
 msgstr "德商戴樂格半導體有限公司"
 
 #: Underlying Symbol USXOM
-#, fuzzy
 #| msgid "ExxonMobil"
 msgid "Exxon Mobil Corp"
 msgstr "埃克森美孚公司"
@@ -16267,7 +16269,6 @@ msgid "Veolia Environnement water"
 msgstr "威立雅環境股份有限公司"
 
 #: Underlying Symbol USKO
-#, fuzzy
 #| msgid "The Coca-Cola Company"
 msgid "Coca-Cola Co"
 msgstr "可口可樂"
@@ -16321,19 +16322,16 @@ msgid "Societe Generale"
 msgstr "法國興業銀行"
 
 #: Underlying Symbol AUQAN
-#, fuzzy
 #| msgid "Qantas Airways Limited"
 msgid "Qantas Airways"
 msgstr "澳洲航空公司"
 
 #: Underlying Symbol USGE
-#, fuzzy
 #| msgid "General Electric Company"
 msgid "General Electric Co"
 msgstr "通用電氣公司"
 
 #: Underlying Symbol USMSFT
-#, fuzzy
 #| msgid "Microsoft"
 msgid "Microsoft Corp"
 msgstr "微軟公司"
@@ -16351,10 +16349,9 @@ msgid "Alstom industrial machinery"
 msgstr "阿爾斯通工業機械公司"
 
 #: Underlying Symbol USGOOG
-#, fuzzy
 #| msgid "Alcoa Inc."
 msgid "Alphabet Inc"
-msgstr "美國鋁業公司"
+msgstr "Alphabet 公司"
 
 #: Underlying Symbol USWMT
 msgid "Wal-Mart Stores Inc."
@@ -16485,10 +16482,9 @@ msgid "Commodities are traded items with directly usable qualities."
 msgstr "商品是指可直接使用的交易品種。"
 
 #: Translation for market name
-#, fuzzy
 #| msgid "Stocks"
 msgid "OTC Stocks"
-msgstr "股票"
+msgstr "OTC 股票"
 
 #: Explanation for market OTC Stocks
 msgid "Stocks (or shares) represent the value of partial ownership in a single company."
@@ -16551,10 +16547,9 @@ msgid "Americas Future"
 msgstr "美洲期貨"
 
 #: Explanation for market Germany
-#, fuzzy
 #| msgid "Germany Stocks"
 msgid "Germany OTC Stocks"
-msgstr "德國股票"
+msgstr "德國OTC股票"
 
 #: Translation for sub market name
 msgid "French Stocks"
@@ -16593,10 +16588,9 @@ msgid "United States Stocks"
 msgstr "美國股票"
 
 #: Explanation for market Australia
-#, fuzzy
 #| msgid "Australia Stocks"
 msgid "Australia OTC Stocks"
-msgstr "澳大利亞股票"
+msgstr "澳大利亞OTC股票"
 
 #: Translation for sub market name
 msgid "Minor Pairs"
@@ -16607,16 +16601,14 @@ msgid "Forex pairs of interest, but with less liquid international markets."
 msgstr "外匯和利潤相對應，但國際市場流動性較差。"
 
 #: Translation for sub market name
-#, fuzzy
 #| msgid "USD"
 msgid "US"
-msgstr "美元"
+msgstr "美國"
 
 #: Explanation for market US
-#, fuzzy
 #| msgid "US Stocks"
 msgid "US OTC Stocks"
-msgstr "美國股票"
+msgstr "美國OTC股票"
 
 #: Translation for sub market name
 msgid "Germany Stocks"
@@ -16632,13 +16624,12 @@ msgstr "與代表市場相對波動率的數字相關聯。比如，波動率100
 
 #: Translation for sub market name
 msgid "UK"
-msgstr ""
+msgstr "英國"
 
 #: Explanation for market UK
-#, fuzzy
 #| msgid "UK Stocks"
 msgid "UK OTC Stocks"
-msgstr "英國股票"
+msgstr "英國OTC股票"
 
 #: Translation for sub market name
 msgid "Metals"

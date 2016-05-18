@@ -7,9 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-17 00:01+0000\n"
+"PO-Revision-Date: 2016-05-17 19:03+0000\n"
 "Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese "
+"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -156,6 +157,8 @@ msgstr "%1は常に管理者、技術的貢献者、および管理者の有能�
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:75
 msgid "%1 is an active proponent of the open-source movement. Suggest enhancements, and take part in the development of our powerful applications. You can find more information on our <a href=\"%2\" target=\"_blank\">Developers Portal</a>."
 msgstr ""
+"%1はオープンソース運動の積極的な支持者であり、当社の強力なアプリケーションの機能強化の提案と開発に参加しています。詳細は<a href=\"%2\" "
+"target=\"_blank\">開発者ポータル</a>よりご確認いただけます。"
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/beginners_faq.html.haml:1
@@ -2150,10 +2153,9 @@ msgid "Binary Ltd, with registered office address situated at <span itemprop='lo
 msgstr "Binary Ltdは、<span itemprop='location'>47 Esplanade, St. Helier, Jersey, JE 0BD Channel Islands</span>の住所に位置する事務所が登録されており、バイナリーグループ会社を有しています"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:58
-#, fuzzy
 #| msgid "Binary option"
 msgid "Binary Next Gen"
-msgstr "次世代バイナリー"
+msgstr "Binary Next Gen"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/binary_options_basics.html.haml:1
 msgid "Binary Options Basics"
@@ -3917,7 +3919,7 @@ msgstr "当社のアフィリエイトネットワーク展開へ、多様なオ
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:717
 msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
-msgstr ""
+msgstr "規制変更により、下記財務評価にご記入頂く必要があります。こちらが完了しない限り、お取引を引き続きご利用いただけませんのでご注意ください。"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1417
 msgid "Due to regulatory requirements, you are required to authenticate your account in order to continue trading."
@@ -4217,7 +4219,7 @@ msgstr "Even/Oddはトレードが5分以内で終了しない場合、購入金
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:46
 msgid "Examine the history of a particular instrument to plot your next move. This advanced charting platform offers a wide range of technical indicators."
-msgstr ""
+msgstr "次の動きをプロットする特定機器の歴史を探りましょう。この高度なチャートを携えたプラットフォームでは広範囲のテクニカル指標を提供しています。"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/spread_bets.html.haml:1
 msgid "Example:"
@@ -4422,7 +4424,7 @@ msgstr "取引概要"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:60
 msgid "Explore our most cutting-edge new platform, now available in beta form. Place trades from your virtual account."
-msgstr ""
+msgstr "最先端の新プラットフォームをお試しください。現在、ベータ版がご利用いただけます。デモ口座よりお取引ください。"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:491
 msgid "Exponential Moving Average"
@@ -6496,7 +6498,7 @@ msgstr "グローバルレベルの金融市場トレンドを知るために、
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:69
 msgid "Join our developer community"
-msgstr ""
+msgstr "当社の開発者コミュニティに参加する"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "Join our team of bright, talented professionals. Work collaboratively with us to enhance and promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years."
@@ -6889,7 +6891,7 @@ msgstr "MACDシグナル"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/group_history.html.haml:1
 msgid "MENA FFXPO Award"
-msgstr ""
+msgstr "MENA FFXPO 賞"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "Maintain accurate system pricing parameters"
@@ -7176,6 +7178,7 @@ msgstr "ハードウェアとソフトウェアの展開を監視し、サーバ
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:30
 msgid "Monitor the movements of all of your favourite assets and markets at the same time. This flexible charting platform provides a variety of customisable features."
 msgstr ""
+"お気にリの資産や市場の動きを同時にモニターすることができます。この柔軟なチャートを携えたプラットフォームではカスタマイズ可能の多様な機能を提供しています。"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "Monitor website trading activity and minimize abuse"
@@ -7375,10 +7378,9 @@ msgid "Next Day"
 msgstr "翌日"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:82
-#, fuzzy
 #| msgid "Webtrader"
 msgid "Next Gen on GitHub"
-msgstr "Webtrader"
+msgstr "GitHubでNext Genを利用する"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:415
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Backoffice/Form.pm:819
@@ -8142,10 +8144,9 @@ msgid "Platform Tour"
 msgstr "ご利用ガイド"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:313
-#, fuzzy
 #| msgid "Please log in to use this feature"
 msgid "Please %1 to view this page"
-msgstr "この機能をご利用頂くためにはログインが必要です。"
+msgstr "ご利用頂くためにはログインが必要です"
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Cashier.pm:90
 msgid "Please accept Funds Protection."
@@ -8174,7 +8175,7 @@ msgstr "日本円にてお手続きできます"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:716
 msgid "Please complete the following financial assessment form before continuing."
-msgstr ""
+msgstr "続行される前に下記財務評価書にご記入をお願いします。"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:138
 msgid "Please confirm the trade on your statement before proceeding."
@@ -8503,7 +8504,7 @@ msgstr "効果的かつ簡潔"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:45
 msgid "Powerful charting and technical analysis"
-msgstr ""
+msgstr "パワフルなチャートとテクニカル分析"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal_jp/contract.html.tt:2
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal_jp/tacjp.html.tt:10
@@ -8695,7 +8696,7 @@ msgstr "適切なバリア値が決定されませんでした。"
 #: /home/git/translations/binary-static-www2/src/templates/haml/layouts/default/footer.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/global/footer.html.tt:136
 msgid "Prospectus"
-msgstr ""
+msgstr "目論見書"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "Proven knowledge of auditing standards, procedures, laws, rules and regulations are an added advantage"
@@ -10435,10 +10436,14 @@ msgid "The Company may use or disclose (or choose not to use or disclose) such C
 msgstr "当社は世界中の媒体においていずれかの方法でいずれかの目的のためにコントリビューションを使用または開示（または使用と開示しないことを決定）することがあります。"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/terms_and_conditions.html.tt:104
-#, fuzzy
 #| msgid "The Company may, from time to time, at its sole discretion, or as required by regulations in place to conduct appropriate \"Know Your Customer\" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and may at its sole discretion suspend an account until such proof has been provided to its satisfaction. Know Your Customer documentation will be required when a Client deposits money in the account. In the case of a client opening an account with Binary (Europe) Ltd, the threshold for verifying clients is on cumulative withdrawals of EUR 2,300."
 msgid "The Company may, from time to time, at its sole discretion, or as required by regulations in place to conduct appropriate \"Know Your Customer\" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and may at its sole discretion suspend an account until satisfactory identification information, evidence of identity and address, source of funds and/or source of wealth have been provided. Know Your Customer documentation will be required when a Client deposits money in the account. In the case of a client opening an account with Binary (Europe) Ltd, the threshold for verifying clients is on cumulative withdrawals of EUR 2,300."
-msgstr "当社には場合に応じて、独自の判断で適切にな執行がする代わりに規制により必要な「Know Your Customer」（KYC）手順が必要であるため、お客さまに対して身分証明（パスポートの公証コピー、及び状況に応じて当社が必要と判断した身分証明資料など）を求める権利があり、確実にそのような証明資料が提供されるまでご口座に制限を設ける権利を有します。Know Your Customerの提出文書はお客さまが口座に資金を入金する際に必要となります。Binary (Europe) Ltdで口座を開設される場合、お客さま認証が必要となる閾値は累計2,300ユーロの出金です。"
+msgstr ""
+"当社には場合に応じて、独自の判断で適切にな執行がする代わりに規制により必要な「Know Your Customer」（KYC）手順が必要であるため、お客さ"
+"まに対して身分証明（パスポートの公証コピー、及び状況に応じて当社が必要と判断した身分証明資料など）を求める権利があり、個人情報、住所証明、資金源および/ま"
+"たは富源などの十分な証明資料が提供されるまでご口座に制限を設ける権利を有します。Know Your "
+"Customerの提出文書はお客さまが口座に資金を入金する際に必要となります。Binary (Europe) "
+"Ltdで口座を開設される場合、お客さま認証が必要となる閾値は累計2,300ユーロの出金です。"
 
 #. (website)
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:97
@@ -11816,10 +11821,9 @@ msgstr "信頼性の証"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:33
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:49
-#, fuzzy
 #| msgid "Try it now"
 msgid "Try It"
-msgstr "今すぐ試す"
+msgstr "試してみる"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:305
 msgid "Try adding more letters or numbers."
@@ -13241,7 +13245,7 @@ msgstr "Binary.comを発見するあなたのアプリケーションのセキ�
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:542
 msgid "You need to finish all 20 questions."
-msgstr ""
+msgstr "まだ、未回答の問題があります。"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/binary_options_basics.html.haml:1
 msgid "You only need to make four decisions to execute a binary contract."
@@ -13892,7 +13896,6 @@ msgid "loading..."
 msgstr "読み込み中"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:314
-#, fuzzy
 #| msgid "Login"
 msgid "login"
 msgstr "ログイン"
@@ -15648,7 +15651,7 @@ msgstr "Berkshire Hathaway Inc."
 
 #: Underlying Symbol AUCBA
 msgid "Commonwealth Bank"
-msgstr ""
+msgstr "Commonwealth Bank（オーストラリア・コモンウェルス銀行）"
 
 #: Underlying Symbol UKAAL
 msgid "Anglo American plc"
@@ -15716,7 +15719,7 @@ msgstr "AbbVie Inc.（アッヴィ）"
 
 #: Underlying Symbol DESIE
 msgid "Siemens AG"
-msgstr ""
+msgstr "Siemens AG（シーメンス AG）"
 
 #: Underlying Symbol UKRDSA
 msgid "Royal Dutch Shell plc"
@@ -15892,7 +15895,7 @@ msgstr "Barclays（バークレイズ）"
 
 #: Underlying Symbol AUMQG
 msgid "Macquarie Group"
-msgstr ""
+msgstr "Macquarie Group（マッコーリーグループ）"
 
 #: Underlying Symbol AUTLS
 msgid "TELSTRA CORPORATION LIMITED"
