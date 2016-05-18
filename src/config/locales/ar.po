@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-18 03:11+0000\n"
-"Last-Translator: Sittie Hadjirah Sevilla <sittiebaser@gmail.com>\n"
+"PO-Revision-Date: 2016-05-18 04:07+0000\n"
+"Last-Translator: Ahmed Kotb <ahmedmohamedkotp@gmail.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/binary/static/ar/>"
 "\n"
 "Language: ar\n"
@@ -2850,10 +2850,9 @@ msgstr "حق الشركة"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/layouts/default/footer.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/global/footer.html.tt:133
-#, fuzzy
 #| msgid "Compliance"
 msgid "Complaints"
-msgstr "الامتثال"
+msgstr "شكاوي"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/complaints_disputes.html.tt:2
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/tac.html.tt:19
@@ -2875,10 +2874,12 @@ msgid "Compliance with and Amendments to These Terms"
 msgstr "الإمتثال والتعديلات على هذه الشروط"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:23
-#, fuzzy
 #| msgid "Should the Company receive a complaint which could have involved the Alternate Dispute Resolution entity, or the Company believes that you, the affiliate is in breach of any relevant advertising code of practice, then the Company has the right to terminate this Agreement."
 msgid "Comply with the applicable laws, rules, and regulations (including, but not limited to, advertising, data protection and privacy laws, rules, and regulations) of the jurisdiction(s) in which you operate or target your business."
-msgstr "يجب أن تحصل الشركة على الشكوى التي كان يمكن ارسالها لهيئة حل المنازعات البديلة، وإلا فإن الشركة ستعتبر أنك، المنتسب خالف رمز الإعلانات ذات الصلة من الناحية العملية، وعليه فإن للشركة الحق في إنهاء هذه الاتفاقية."
+msgstr ""
+"امتثل للقوانين المعمول بها والقواعد واللوائح (بما في ذلك, ولكن ليس على سبيل "
+"الحصر, الإعلانات, حماية البيانات, قوانين الخصوصية, القواعد, واللوائح) للسلطة "
+"القضائية التي تعمل أو تستهدفها في أعمالك."
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:124
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/us_patents.html.tt:7
@@ -3098,16 +3099,18 @@ msgid "Contribute to %1's open-source projects."
 msgstr "ساهم في مشاريع %1 مفتوحة المصدر."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
-#, fuzzy
 #| msgid "Contribute your creativity to further the company’s dynamic branding efforts by implementing a broad array of promotional campaigns."
 msgid "Contribute your creativity and marketing capabilities to further the company’s branding efforts, implementing a broad array of promotional campaigns."
-msgstr "شارك بإبداعك وابذل مزيد من الجهد لعلامة الشركة التجارية الحيوية بتنفيذ مجموعة واسعة من الحملات الترويجية."
+msgstr ""
+"ساهم بإبداعك وقدراتك التسويقية لتعزيز جهود العلامة التجارية للشركة, لتنفيذ "
+"مجموعة واسعة من الحملات الترويجية."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
-#, fuzzy
 #| msgid "Contribute your ideas, energy and creativity to further the company’s dynamic branding efforts"
 msgid "Contribute your ideas, energy, and creativity to further the company’s dynamic branding efforts"
-msgstr "ساهم بالأفكار والطاقة والإبداع وابذل مزيد من الجهود للعلامة التجارية الحيوية للشركة"
+msgstr ""
+"ساهم بأفكارك, وطاقاتك, وإبداعاتك لتعزيز الجهود الديناميكية للعلامة التجارية "
+"للشركة"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/api_tac_tab.html.tt:128
 msgid "Contributions to the Binary.com API"
@@ -3186,26 +3189,31 @@ msgid "Create New Token"
 msgstr "إنشاء رمز جديد"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
-#, fuzzy
 #| msgid "Create clear, concise and engaging content for display on the company’s website"
 msgid "Create clear, concise and engaging content for display on the company’s website, blog, social media outlets, and marketing materials"
-msgstr "إنشاء محتوى واضح ومقتضب وجذاب للعرض على موقع الشركة"
+msgstr ""
+"إنشاء محتوى واضح وموجز وجذاب لعرضه على موقع الشركة على الإنترنت, المدونة, "
+"منصات التواصل الإجتماعية, والمواد التسويقية"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
-#, fuzzy
 #| msgid "Create clear, concise and engaging content that promotes the company’s product offerings in a variety formats to be displayed on our website."
 msgid "Create clear, concise, and engaging content that effectively promotes the company’s trading platform and product offerings in a variety of formats."
-msgstr "إنشاء محتوى واضح، موجز وجذاب والذي يروج لعروض الشركة ومنتجاتها في مجموعة متنوعة الأشكال ليتم عرضها على موقعنا على شبكة الإنترنت."
+msgstr ""
+"إنشاء محتوى واضح وموجز وجذاب للترويج بفاعلية لمنصة تداول الشركة وعروض "
+"المنتجات في مجموعة متنوعة من الأشكال."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "Create content to support our international marketing campaigns in a variety of different formats and languages"
 msgstr "إنشاء المحتوى لدعم حملاتنا التسويقية الدولية في مجموعة متنوعة من الأشكال واللغات المختلفة"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
-#, fuzzy
 #| msgid "%1 is looking to recruit several talented designers who are passionate about what they do best. As our design team is responsible for creating the graphics required to support our global marketing and advertising campaigns, the team's creative efforts span a number of channels, including online marketing, affiliate networks, print advertising, trade shows, special events, and promotional projects in a number of languages."
 msgid "Create the graphics required to support our global marketing and advertising campaigns. The team's creative efforts span a number of channels, including online marketing, affiliate networks, print advertising, tradeshows, special events, and promotional projects."
-msgstr "%1 تتطلع إلى توظيف العديد من المصممين الموهوبين المتحمسين لعملهم. فريق التصميم لدينا مسؤول عن إنشاء الرسومات المطلوبة لدعم خطط التسويق العالمية والحملات الإعلانية، الجهود الخلاقة للفريق تمتد عبر عدد من القنوات، بما في ذلك التسويق على الإنترنت، وشبكات الانتساب، والإعلانات المطبوعة، والمعارض التجارية، والأحداث الخاصة والمشاريع الترويجية بعدد من اللغات."
+msgstr ""
+"إنشاء الرسوم الجرافيكية المطلوبة لدعم حملاتنا التسويقية والإعلانية العالمية. "
+"تغطي جهود الفريق الإبداعية عدد من القنوات, بما في ذلك التسويق عبر الإنترنت, "
+"الشبكات التابعة, الإعلانات المطبوعة, المعارض التجارية, الأحداث الخاصة, "
+"والمشاريع الترويجية."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "Creating interfaces and tools to access market information, real-time and historical analysis of trading strategies"
@@ -3528,7 +3536,6 @@ msgstr ""
 
 #. (token, link)
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/email/lost_password.html.tt:1
-#, fuzzy
 #| msgid ""
 #| "Dear Valued Customer,\n"
 #| "\n"
@@ -3544,11 +3551,15 @@ msgid ""
 "\n"
 "Password reset form: %2"
 msgstr ""
-"عزيزي العميل،\n"
+"عزيزي العميل المحترم،\n"
 "\n"
-"قبل أن نتمكن من مساعدتك في تغيير كلمة المرور الخاصة بك، يرجى مساعدتنا للتحقق من هويتك بالضغط على الرابط أدناه:\n"
+"قبل أن نتمكن من مساعدتك في تغيير كلمة المرور الخاصة بك، يرجى مساعدتنا في "
+"التحقق من هويتك عن طريق إدخال رمز التحقق التالي في نموذج إعادة تعيين كلمة "
+"المرور:\n"
 "\n"
-"%1"
+"الرمز: 1%\n"
+"\n"
+"نموذج إعادة تعيين كلمة المرور: 2%"
 
 #. (link)
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/email/verify_cashier.html.tt:1
@@ -3573,7 +3584,6 @@ msgstr ""
 
 #. (token)
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/email/resend_verification.html.tt:1
-#, fuzzy
 #| msgid ""
 #| "Dear Valued Customer,\n"
 #| "\n"
@@ -3589,11 +3599,11 @@ msgid ""
 "%1\n"
 "\n"
 msgstr ""
-"عميلنا العزيز،\n"
+"عزيزي العميل المحترم،\n"
 "\n"
-"من أجل التحقق، الرجاء الضغط على الرابط التالي:\n"
+"من أجل التحقق، الرجاء استخدام الرمز التالي:\n"
 "\n"
-"%1\n"
+"1%\n"
 "\n"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/about/index.html.haml:1
