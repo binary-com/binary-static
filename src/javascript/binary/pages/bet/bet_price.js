@@ -726,15 +726,12 @@ var BetPrice = function() {
                         // We're intentionally making payout errors have highest priority
                         // it's something they can fix immediately on this web interface.
 
+                        // just a minimum stake and a maximum payout check will do.
                         if (prices[i].payout.raw/100  - epsilon > bf_amount.payout_max ||
-                            prices[i].payout.raw/100 + epsilon < bf_amount.payout_min) {
-                            err = bf_amount.payout_err;
-                        } else if (prices[i].price.raw/100 - epsilon > bf_amount.stake_max ||
                             prices[i].price.raw/100 + epsilon < bf_amount.stake_min) {
-                            // You probably think there should be two conditions above, but too high stake just
-                            // makes for "too high payout" or "no return" errors.
-                            err = bf_amount.stake_err;
+                            err = bf_amount.error;
                         }
+
                         this.show_error(form, err);
                         this.update_price(prices[i].id, prices[i].price, prices[i].prev_price);
                         this.update_description(prices[i].id, prices[i].payout, prices[i].prev_payout);
