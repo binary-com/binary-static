@@ -63,7 +63,7 @@
                 %li.ja-hide
                   %a.pjaxload{:href=>url_for("/terms-and-conditions?selected_tab=complaints-disputes-tac-tab")}= l('Complaints')
                 %li.ja-hide.id-hide.ru-hide
-                  %a.pjaxload{:href=>url_for("/download/BIEL_Prospectus.pdf"), :download => true, :target => '_blank'}= l('Prospectus')
+                  %a.pjaxload{:href=>url_for("/download/BIEL_Prospectus.pdf"), :target => '_blank'}= l('Prospectus')
                 %li.ja-hide.id-hide
                   %a.pjaxload{:href=>url_for("/legal/us_patents"), :class=>"us_patent_link"}= l('Patents')
         .grd-grid-4
