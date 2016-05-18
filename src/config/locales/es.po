@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-18 22:57+0000\n"
+"PO-Revision-Date: 2016-05-18 23:00+0000\n"
 "Last-Translator: cameliagf <cameliagf@yahoo.com>\n"
 "Language-Team: Spanish "
 "<https://hosted.weblate.org/projects/binary/static/es/>\n"
@@ -664,7 +664,7 @@ msgid "<p style=\"font-weight: bold;\">Thanks for signing up for a virtual accou
 msgstr ""
 "<p style=\"font-weight: bold;\">¡Gracias por crear una cuenta virtual!</p><p>"
 "Introduzca el siguiente token de verificación en el formulario para crear "
-"una cuenta</p><p><span style=\"background: #f2f2f2; padding: 10px;\""
+"una cuenta:<p><span style=\"background: #f2f2f2; padding: 10px;\""
 ">%1</span></p></p><p>Disfrute comerciando con nosotros en Binary.com.</p>"
 
 #. ($params->{code})
@@ -674,8 +674,8 @@ msgstr ""
 "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Estimado "
 "cliente,</p><p>Antes de que podamos ayudarle a cambiar su contraseña, por "
 "favor ayúdenos a verificar su identidad introduciendo el siguiente token de "
-"verificación en el formulario para restablecer la contraseña</p><p><span "
-"style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+"verificación en el formulario para restablecer la contraseña: <p><span style="
+"\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:133
@@ -684,8 +684,8 @@ msgstr ""
 "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Estimado "
 "Cliente,</p><p>Por favor ayúdenos a verificar su identidad introduciendo el "
 "siguiente token de verificación en el formulario de retirada del agente de "
-"pago:</p><p><span style=\"background: #f2f2f2; padding: 10px;\""
-">%1</span></p></p>"
+"pago:</p>\n"
+"<span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:145
@@ -693,7 +693,7 @@ msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued C
 msgstr ""
 "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Estimado "
 "Cliente,</p><p>Por favor ayúdenos a verificar su identidad introduciendo el "
-"siguiente token de verificación en el formulario de retirada de pago:</p><p><"
+"siguiente token de verificación en el formulario de retirada de pago:<p><"
 "span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/affiliates/faq.html.tt:73
