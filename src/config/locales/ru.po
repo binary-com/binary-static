@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-18 03:17+0000\n"
-"Last-Translator: Sittie Hadjirah Sevilla <sittiebaser@gmail.com>\n"
+"PO-Revision-Date: 2016-05-18 09:15+0000\n"
+"Last-Translator: Ruslan <ruslan.mukhametdinov.90@gmail.com>\n"
 "Language-Team: Russian "
 "<https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
@@ -196,12 +196,11 @@ msgstr "%1 ищет квалифицированных переводчиков,
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
-#, fuzzy
 msgid "%1 is seeking several highly skilled Marketing Executives, eager to contribute their energy, passion, and specialised strengths in connecting with prospects and clients based throughout the globe."
 msgstr ""
-"%1 приглашает на руководящие должности нескольких высококвалифицированных "
-"маркетинговых специалистов, готовых посвятить свою энергию, умения и навыки "
-"для работы с клиентами и потенциальными клиентами по всему миру."
+"%1 приглашает высококвалифицированных маркетинговых специалистов, готовых "
+"посвятить свою энергию, умения и навыки для работы с клиентами и "
+"потенциальными клиентами по всему миру."
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/benefits_of_trading_binaries.html.haml:1
@@ -270,14 +269,13 @@ msgstr "%1 приглашает на работу координатора пр�
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
-#, fuzzy
 msgid "%1 seeks a Social Media Executive to enhance and proactively manage the company's social-media efforts. This role requires effective utilisation of a variety of social media channels to attract and nurture prospects, clients, partners, and recruits based throughout the world."
 msgstr ""
-"%1 приглашает на работу главу информационного отдела, который будет улучшать "
-"и активно управлять проектами компании, проводимыми в СМИ. Данная должность "
-"требует навыков эффективного использования множества информационных каналов "
-"с целью привлечь и обучить текущих и потенциальных клиентов, партнёров, а "
-"также новых сотрудников компании по всему миру."
+"%1 приглашает на работу SMM специалиста, который будет улучшать и активно "
+"управлять проектами компании, проводимыми в СМИ. Данная должность требует "
+"навыков эффективного использования множества информационных каналов с целью "
+"привлечь и обучить текущих и потенциальных клиентов, партнёров, а также "
+"новых сотрудников компании по всему миру."
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
@@ -1423,9 +1421,8 @@ msgstr "Управление процессом полугодовой оцен�
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:631
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
-#, fuzzy
 msgid "Administrative Executive"
-msgstr "Глава отдела управления"
+msgstr "Сотрудник отдела управления"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:630
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
@@ -2864,9 +2861,8 @@ msgstr "Регулирование и контроль"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:625
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
-#, fuzzy
 msgid "Compliance Executive"
-msgstr "Глава отдела регулир. и контроля"
+msgstr "Специалист отдела регулир. и контроля"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/api_tac_tab.html.tt:85
 msgid "Compliance with and Amendments to These Terms"
@@ -5074,9 +5070,8 @@ msgstr "Как оплачивать через платежного агента
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:629
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
-#, fuzzy
 msgid "Human Resource Executive"
-msgstr "Глава отдела кадров"
+msgstr "Специалист отдела кадров"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:628
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
@@ -5437,11 +5432,10 @@ msgid "In order to proceed, please verify your email address."
 msgstr "Для того, чтобы продолжить, пожалуйста, верифицируйте свой эл.адрес."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
-#, fuzzy
 msgid "In order to support its continued growth, %1 is seeking to recruit and place a qualified Compliance Executive. In this newly created role, to be based in Malta, the incumbent will report to our Head of Regulatory and Legal Compliance"
 msgstr ""
 "С целью поддержания дальнейшего роста и развития, %1 ищет квалифицированного "
-"главу отдела регулирования и контроля. Эта новая должность на Мальте "
+"сотрудника отдела регулирования и контроля. Эта новая должность на Мальте "
 "подотчётна нашему главе отдела регулирования и нормативно-правового "
 "соответствия"
 
@@ -6950,9 +6944,8 @@ msgstr "Маркетинг"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:618
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
-#, fuzzy
 msgid "Marketing Executives"
-msgstr "Главы отдела маркетинга"
+msgstr "Специалисты отдела маркетинга"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Marketing Project Coordinator"
@@ -9501,9 +9494,8 @@ msgstr "Чего же Вы ждете? Станьте нашим партнер�
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:615
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
-#, fuzzy
 msgid "Social Media Executive"
-msgstr "Глава информационного отдела"
+msgstr "SMM специалист"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/careers.html.haml:1
 msgid "Software (Perl) Development"
