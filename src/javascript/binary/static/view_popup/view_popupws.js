@@ -281,7 +281,7 @@ var ViewPopupWS = (function() {
             if (!tickForgotten) {
               tickForgotten = true;
               socketSend({"forget_all":"ticks"});
-            } else {
+            } else if (candleForgotten) {
               Highchart.show_chart(contract, 'update');
               if (contract.entry_tick_time) {
                 chartStarted = true;
