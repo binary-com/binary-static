@@ -114,7 +114,7 @@ my @m = (
     ['user/reality_check_summaryws',   'user/reality_check_summaryws',   'haml',    'default'],
 
     ['logged_inws',           'global/logged_inws', 'toolkit', undef],
-    # ['trade/bet_explanation', 'bet/explanation',    'toolkit', undef],
+    ['trade/bet_explanation', 'bet/explanation',    'toolkit', undef],
 );
 
 ## config
