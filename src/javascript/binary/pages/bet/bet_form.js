@@ -517,12 +517,9 @@ var BetForm = function () {
         }(),
         amount: function() {
             return {
-                payout_min:    1,
                 payout_max:    100000,
-                payout_err:    undefined,
                 stake_min:    0.5,
-                stake_max:    100000,
-                stake_err:    undefined,
+                error:    undefined,
                 calculation_value: undefined,
                 keyup: function(event) {
                     var me = BetForm.amount;
@@ -556,11 +553,8 @@ var BetForm = function () {
                 },
                 update_settings: function() {
                     this.stake_min = parseFloat($('#staking_context #stake_min').html());
-                    this.stake_max = parseFloat($('#staking_context #stake_max').html());
-                    this.stake_err = $('#staking_context #stake_err').html();
-                    this.payout_min = parseFloat($('#staking_context #payout_min').html());
                     this.payout_max = parseFloat($('#staking_context #payout_max').html());
-                    this.payout_err = $('#staking_context #payout_err').html();
+                    this.error = $('#staking_context #error').html();
                 },
             };
         }(),
