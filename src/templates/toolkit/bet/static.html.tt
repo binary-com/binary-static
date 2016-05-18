@@ -1,8 +1,4 @@
-[% IF is_japan %]
-<script>function is_japan(){}</script>
-[% END %]
-
-<div id="trading_socket_container" class="tab-menu-wrap">
+<div id="trading_socket_container" class="tab-menu-wrap [% IF is_japan %]japan[% END %]">
    <p id="markets_closed_msg" class="notice-msg center hidden">[% l('All markets are closed now. Please try again later.') %]</p>
    <div id="loading_container" class="overlay_container">
    </div>
@@ -12,13 +8,14 @@
       <div id="contract_markets_container">
          <select id="contract_markets"></select>
       </div>
-      <div >
+      <div>
          <select id="underlying"></select>
          <span class="unicode-info-icon" id="symbol_tip" target="">&#9432;</span>
          <label for="spot" id="spot_label"></label>
          <span id="spot"></span>
          <span id="trading_worm_chart"></span>
       </div>
+      <ul id="market_menu"></ul>
    </div>
    <div class="row clear" id="contract_form_content_wrapper">
       <div class="col row-inner">
@@ -64,14 +61,6 @@
                            </div>
                         </div>
                      </div>
-                     <div class="row" id="jbarrier_row">
-                        <div class="col form_label">
-                           <label for="jbarrier" id="jbarrier_label"></label>
-                        </div>
-                        <div class="big-col">
-                           <select id="jbarrier" name="H"></select>
-                        </div>
-                     </div>
                      <div class="row barrier_class" id="barrier_row">
                         <div class="col form_label">
                            <label for="H" id="barrier_label">
@@ -80,16 +69,8 @@
                            </label>
                         </div>
                         <div class="big-col">
-                           <input id="barrier" type="text" name="H" pattern="^[\+-]\d+(\.\d{1,5})?|\d+(\.\d{1,5})?$" title="maximum of 5 decimal points allowed" />
+                           <input id="barrier" type="text" name="H" pattern="^[\+-]\d+(\.\d{1,5})?|\d+(\.\d{1,5})?$" title="[% l('Please enter a number.') %]" />
                            <abbr rel="tooltip" id="indicative_barrier_tooltip"></abbr>
-                        </div>
-                     </div>
-                     <div class="row" id="jhigh_barrier_row">
-                        <div class="col form_label">
-                           <label for="jbarrier_high" id="jbarrier_high_label"></label>
-                        </div>
-                        <div class="big-col">
-                           <select id="jbarrier_high" type="text" name="H"></select>
                         </div>
                      </div>
                      <div class="row barrier_class" id="high_barrier_row">
@@ -100,16 +81,8 @@
                            </label>
                         </div>
                         <div class="big-col">
-                           <input id="barrier_high" type="text" name="H" pattern="^\+\d+(\.\d{1,5})?|\d+(\.\d{1,5})?$" title="maximum of 5 decimal points allowed" />
+                           <input id="barrier_high" type="text" name="H" pattern="^[\+-]\d+(\.\d{1,5})?|\d+(\.\d{1,5})?$" title="[% l('Please enter a number.') %]" />
                            <abbr rel="tooltip" id="indicative_high_barrier_tooltip"></abbr>
-                        </div>
-                     </div>
-                     <div class="row" id="jlow_barrier_row">
-                        <div class="col form_label">
-                           <label for="jbarrier_low" id="jbarrier_low_label"></label>
-                        </div>
-                        <div class="big-col">
-                           <select id="jbarrier_low" type="text" name="H"></select>
                         </div>
                      </div>
                      <div class="row barrier_class" id="low_barrier_row">
@@ -120,7 +93,7 @@
                            </label>
                         </div>
                         <div class="big-col">
-                           <input id="barrier_low" type="text" name="L" pattern="^\-\d+(\.\d{1,5})?|\d+(\.\d{1,5})?$" title="maximum of 5 decimal points allowed" />
+                           <input id="barrier_low" type="text" name="L" pattern="^[\+-]\d+(\.\d{1,5})?|\d+(\.\d{1,5})?$" title="[% l('Please enter a number.') %]" />
                            <abbr rel="tooltip" id="indicative_low_barrier_tooltip"></abbr>
                         </div>
                      </div>
@@ -143,7 +116,7 @@
                            </select>
                         </div>
                      </div>
-                     <div class="row">
+                     <div class="row" id="payout_row">
                         <div class="col form_label">
                            <select id="amount_type">
                               <option value="payout" id="payout_option"></option>
@@ -159,6 +132,25 @@
                            </div>
                         </div>
                      </div>
+
+                     <div class="row" id="japan_unit_row">
+                        <div class="col form_label">
+                          <label for="japan_unit" id="japan_unit_label"></label>
+                        </div>
+                        <div class="row-inner big-col">
+                           <div><input id="japan_unit" type="text" step="any" maxlength="10" value="1" class="medium_width_input" /> x ¥1000</div>
+                        </div>
+                     </div>
+
+                     <div class="row" id="japan_payout_row">
+                        <div class="col form_label">
+                          <label for="japan_payout" id="japan_payout_label"></label>
+                        </div>
+                        <div class="row-inner big-col">
+                           <span id="japan_payout">¥1000</span>
+                        </div>
+                     </div>
+
                      <div id="spread_element_container">
                         <div class="row">
                             <div class="col form_label">
@@ -188,6 +180,12 @@
                      </div>
                   </form>
                </div>
+               <div id="contract_description1"></div>
+               <div id="contract_description2"></div>
+               <div id="pricing_table_container" class="row">
+                  <div id="pricing_table"></div>
+               </div>
+               <div id="open_positions_container">[% INCLUDE account/openpositionsws.html.tt %]</div>
             </div>
          </div>
       </div>
@@ -205,7 +203,7 @@
                   </div>
                   <div id="contract_purchase_reference"></div>
                   <div class="button">
-                     <button id="contract_purchase_button" class="open_contract_details"></button>
+                     <button id="contract_purchase_button" class="button open_contract_detailsws"></button>
                   </div>
                   <div id="contract_purchase_spots"></div>
                   <div id="tick_chart"></div>

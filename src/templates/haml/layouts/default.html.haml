@@ -1,10 +1,5 @@
 !!! 5
-  - if(stash('appcache_manifest')) {
-    - my $manifest = stash->{language} . '_appcache.appcache';
-%html{:manifest => url_for($manifest)}
-  - } else {
 %html
-  - }
   = include('layouts/default/head')
   - my $body_id = current_route;
   - my $lang1 = stash->{language};

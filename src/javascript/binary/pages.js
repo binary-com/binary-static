@@ -24,20 +24,6 @@ var hide_payment_agents = function() {
     }
 };
 
-function get_login_page_url() {
-    var params = '';
-    try {
-        var lang = page.language();
-        if (!lang) {
-            throw new Error("failed to detect page language");
-        }
-        params += '?l=' + lang;
-    } catch (e) {
-        console.log("error while getting page language. " + e);
-    }
-    return 'https://' + page.settings.get('domains')['private'] + '/login' + params;
-}
-
 onLoad.queue_for_url(confirm_popup_action, 'my_accountws|confirm_popup');
 onLoad.queue_for_url(hide_payment_agents, 'cashier');
 

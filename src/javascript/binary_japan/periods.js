@@ -1,4 +1,4 @@
-if(typeof is_japan === 'function'){
+if(isJapanTrading()){
 	var Periods = (function(){
 		var barrier = 0,
 			barrier2 = 0,
@@ -110,58 +110,6 @@ if(typeof is_japan === 'function'){
 			document.getElementById('barrier_row').style.display = 'none';
 			document.getElementById('high_barrier_row').style.display = 'none';
 			document.getElementById('low_barrier_row').style.display = 'none';
-
-			if(periods[formName][underlying][period].barriers==1){
-				document.getElementById('jbarrier_row').style.display = 'flex';
-				document.getElementById('jhigh_barrier_row').style.display = 'none';
-				document.getElementById('jlow_barrier_row').style.display = 'none';
-				var list = periods[formName][underlying][period].available_barriers;
-				list.sort();
-				list.forEach(function(barrier){
-					option = document.createElement('option');
-					content = document.createTextNode(barrier);
-					option.setAttribute('value', barrier);
-					option.appendChild(content);
-					fragment.appendChild(option);
-				});
-				target1.appendChild(fragment);
-				barrier = target1.value = periods[formName][underlying][period].barrier;
-				barriers1 = periods[formName][underlying][period].available_barriers;
-				barriers2 = [];
-			}
-			else{
-				document.getElementById('jbarrier_row').style.display = 'none';
-				document.getElementById('jhigh_barrier_row').style.display = 'flex';
-				document.getElementById('jlow_barrier_row').style.display = 'flex';
-				var list2 = periods[formName][underlying][period].available_barriers[1];
-				list2.sort();
-				list2.forEach(function(barrier){
-					option = document.createElement('option');
-					content = document.createTextNode(barrier);
-					option.setAttribute('value', barrier);
-					if(barrier <=  periods[formName][underlying][period].low_barrier){
-						option.setAttribute('disabled', true);
-					}
-					option.appendChild(content);
-					fragment.appendChild(option);
-				});
-				target2.appendChild(fragment);
-				barrier = target2.value = periods[formName][underlying][period].high_barrier;
-
-				var list3 = periods[formName][underlying][period].available_barriers[0];
-				list3.sort();
-				list3.forEach(function(barrier){
-					option = document.createElement('option');
-					content = document.createTextNode(barrier);
-					option.setAttribute('value', barrier);
-					option.appendChild(content);
-					fragment.appendChild(option);
-				});
-				target3.appendChild(fragment);
-				barrier2 = target3.value = periods[formName][underlying][period].low_barrier;
-				barriers1 = periods[formName][underlying][period].available_barriers[1];
-				barriers2 = periods[formName][underlying][period].available_barriers[0];
-			}
 		};
 
 		return {

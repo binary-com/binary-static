@@ -344,15 +344,18 @@ BetForm.attributes = function() {
                         }
                     },
                     currency: function() {
-                        if(page.client.is_logged_in) {
-                            var client_currencies = Settings.get('client.currencies');
-                            if(typeof client_currencies !== 'undefined'  && client_currencies.length > 0) {
-                                $('#bet_currency option').each(function() {
-                                    if($.inArray($(this).val(), client_currencies) < 0) {
-                                        $(this).remove();
-                                    }
-                                });
-                            }
+                        if(!page.client.check_storage_values('attributes.restore.currency')) {
+                            return;
+                        }
+
+                        var currencies = page.client.get_storage_value('currencies');
+                        if(currencies && currencies.length > 0) {
+                            var client_currencies = currencies.split(',');
+                            $('#bet_currency option').each(function() {
+                                if($.inArray($(this).val(), client_currencies) < 0) {
+                                    $(this).remove();
+                                }
+                            });
                         }
 
                         var currency = BetForm.attributes.model.currency();

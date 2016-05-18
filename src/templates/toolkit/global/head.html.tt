@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-[% IF appcache_manifest %]
-<html manifest='[%= request.url_for(iso639a_language _ "_appcache.appcache") =%]'>
-[% ELSE %]
 <html>
-[% END %]
     <head>
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
         <meta http-equiv="Content-Language" content="[%= iso639a_language =%]" />

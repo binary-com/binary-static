@@ -22,6 +22,10 @@
     image1.updown         = [ request.url_for('images/pages/trade-explanation/up-down-2.svg') ]
     image.spreads         = [ request.url_for('images/pages/trade-explanation/spreads-1.svg') ]
     image1.spreads        = [ request.url_for('images/pages/trade-explanation/spreads-2.svg') ]
+    image.evenodd         = [ request.url_for('images/pages/trade-explanation/evenodd-1.svg') ]
+    image1.evenodd        = [ request.url_for('images/pages/trade-explanation/evenodd-2.svg') ]
+    image.overunder       = [ request.url_for('images/pages/trade-explanation/overunder-1.svg') ]
+    image1.overunder      = [ request.url_for('images/pages/trade-explanation/overunder-2.svg') ]
 %]
 
 <div class='grd-grid-12 grd-parent'>

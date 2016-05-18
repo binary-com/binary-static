@@ -26,10 +26,19 @@
         </div>
 
         <div id="viewForm" class="viewItem hidden">
-            <p>[% l('Please provide us with the following information:') %]</p>
-
+            <p>[% l('Please provide us with the following information, after retrieving the verification token from your email:') %]</p>
             <form class="form rbox grd-row-padding" id="frmWithdrawal">
                 <fieldset>
+
+                  <div class="grd-row-padding row clear">
+                      <div class="grd-grid-4 form_label">
+                          <label for="verification-code">[% l('Verification Token') %]</label>
+                      </div>
+                      <div class="grd-grid-8">
+                          <input type="text" id="verification-code" maxlength="48" autocomplete="off"></input>
+                          <div class="hint">[% l('Please check your email for the value of this token') %]</div>
+                      </div>
+                  </div>
 
                     <div class="grd-row-padding row clear">
                         <div class="grd-grid-4 form_label">

@@ -1,8 +1,9 @@
 #guideBtn {
-    display: inline-block;
+    @include BIDIR_VALUE(display, inline-block, none);
     background-color: $COLOR_LIGHT_GRAY;
-    padding: 5px 20px;
+    padding: 4px 20px;
     position: relative;
+    @include BIDIR_PROP(margin-left, margin-right, 15px);
 
     span.close {
         display: none;
@@ -11,12 +12,7 @@
         cursor: pointer;
         position: absolute;
         top: 2px;
-        @if $LANGUAGE_DIRECTION == ltr {
-            right: 4px;
-        }
-        @else {
-            left: 4px;
-        }
+        @include BIDIR_PROP(right, left, 4px);
     }
     &:hover {
         span.close {
@@ -29,7 +25,7 @@
         cursor: pointer;
         display: inline-block;
         white-space: nowrap;
-        line-height: 22px;
+        line-height: 20px;
         span {
             display: inline-block;
             vertical-align: middle;

@@ -1,6 +1,4 @@
 - stash (
--    emailholder => l('Email'),
--    pwdholder   => l('Password'),
 -    logintext   => l('Log in'),
 - );
 #header
@@ -16,19 +14,13 @@
         = include('layouts/default/nav')
       .grd-grid-3.grd-grid-mobile-9.grd-grid-phablet-10.by_client_type.client_virtual.client_real#client-logged-in{ :style => 'display: none;'}
         #logout
-          %form#loginid-switch-form{:action => url_for('loginid_switch'), :method => 'post'}
+          %form#loginid-switch-form
             #login-fields
               %select{:name => 'client_loginid', :id => 'client_loginid'}
             %div#balance
             %a.logout{:href => 'javascript:;'}= l('Log out')
-      .grd-grid-3.grd-grid-mobile-9.grd-grid-phablet-10.grd-no-gutter-left.by_client_type.client_logged_out#client-logged-out
-        %form#login-form{:action => url_for('/login'), :method => 'post'}
-          %span#login-fields
-            %input{:name => 'email', :type => 'text', :placeholder => stash('emailholder')}
-            %input{:name => 'password', :type => 'password', :placeholder => stash('pwdholder')}
-            %input{:type => 'submit', :value => stash('logintext')}
-          %span#login-links
-            %a.pjaxload#lost-password{:href=>url_for('/user/lost_password')}= l('Lost password?')
+      .grd-grid-3.grd-grid-mobile-9.grd-grid-phablet-10.grd-no-gutter-left.by_client_type.client_logged_out.invisible#client-logged-out
+        %div{:id => 'btn_login', :class => 'button'}= stash('logintext')
       .grd-grid-1.grd-hide.grd-show-mobile.grd-no-gutter-mobile.grd-show-phablet
         #mobile-menu-icon-container
           %a{:href => '#mobile-menu', :id => 'mobile-menu-icon'}

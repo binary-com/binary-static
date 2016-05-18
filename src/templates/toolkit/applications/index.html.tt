@@ -1,0 +1,87 @@
+<div class="applications-page grd-grid-12 invisible">
+    <h1>[% l('Applications') %]</h1>
+    <p>[% l('[_1] provides a variety of applications to help you trade efficiently.', request.website.display_name) %]</p>
+    <div class="grd-grid-12 grd-parent">
+
+        <div class="grd-grid-6 grd-grid-phablet-12 grd-grid-mobile-12 no-padding application">
+            <div><img class="responsive image" src="[% request.url_for('images/pages/applications/ticktrade-image.png') %]" /></div>
+            <h2>[% l('Tick Trade App') %]</h2>
+            <strong>[% l('Ultra-fast trading') %]</strong>
+            <div class="grd-grid-12 desc">[% l('Enjoy our fastest type of trading on your mobile phone or tablet. Place tick trades anytime, anywhere – even while you’re on the move.') %]</div>
+            <div class="grd-grid-12 no-padding">
+                <div class="grd-grid-4 grd-grid-phablet-6 grd-grid-mobile-6 icon">
+                    <a href="https://play.google.com/store/apps/details?id=com.binary.ticktrade" target="_blank">
+                        <img src="[% request.url_for('images/pages/applications/googleplay.svg') %]">
+                    </a>
+                </div>
+                <div class="grd-grid-4 grd-grid-phablet-6 grd-grid-mobile-6 icon">
+                    <a href="#" target="_blank" class="invisible">
+                        <img src="[% request.url_for('images/pages/applications/appstore.svg') %]">
+                    </a>
+                </div>
+                <div class="grd-grid-4 grd-grid-phablet-6 grd-grid-mobile-6 icon"></div>
+            </div>
+        </div>
+
+        <div class="grd-grid-6 grd-grid-phablet-12 grd-grid-mobile-12 no-padding application">
+            <div><img class="responsive image" src="[% request.url_for('images/pages/applications/webtrader-image.png') %]" /></div>
+            <h2>[% l('Webtrader') %]</h2>
+            <strong>[% l('Advanced tool for active traders') %]</strong>
+            <div class="grd-grid-12 desc">[% l('Monitor the movements of all of your favourite assets and markets at the same time. This flexible charting platform provides a variety of customisable features.') %]</div>
+            <div class="grd-grid-12 no-padding">
+                <div class="grd-grid-4 grd-grid-phablet-6 grd-grid-mobile-12 icon">
+                    <a class="button" href="//webtrader.binary.com" target="_blank"><span class="button">[% l('Try It') %]</span></a>
+                </div>
+                <div class="grd-grid-4 grd-grid-phablet-6 grd-grid-mobile-6 icon"></div>
+                <div class="grd-grid-4 grd-grid-phablet-6 grd-grid-mobile-6 icon"></div>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+
+        <div class="grd-grid-6 grd-grid-phablet-12 grd-grid-mobile-12 no-padding application">
+            <div><img class="responsive image" src="[% request.url_for('images/pages/applications/tradingview-image.png') %]" /></div>
+            <h2>[% l('TradingView') %]</h2>
+            <strong>[% l('Powerful charting and technical analysis') %]</strong>
+            <div class="grd-grid-12 desc">[% l('Examine the history of a particular instrument to plot your next move. This advanced charting platform offers a wide range of technical indicators.') %]</div>
+            <div class="grd-grid-12 no-padding">
+                <div class="grd-grid-4 grd-grid-phablet-6 grd-grid-mobile-12 icon">
+                    <a class="button" href="//tradingview.binary.com" target="_blank"><span class="button">[% l('Try It') %]</span></a>
+                </div>
+                <div class="grd-grid-4 grd-grid-phablet-6 grd-grid-mobile-6 icon"></div>
+                <div class="grd-grid-4 grd-grid-phablet-6 grd-grid-mobile-6 icon"></div>
+            </div>
+        </div>
+
+        <div class="grd-grid-6 grd-grid-phablet-12 grd-grid-mobile-12 no-padding application">
+            <div><img class="responsive image" src="[% request.url_for('images/pages/applications/nextgen-image.png') %]" /></div>
+            <h2>[% l('Binary Next Gen') %]</h2>
+            <strong>[% l('The future of trading on [_1]', request.website.display_name) %]</strong>
+            <div class="desc">[% l('Explore our most cutting-edge new platform, now available in beta form. Place trades from your virtual account.') %]</div>
+            <div class="grd-grid-12 no-padding">
+                <p class="soon">[% l('Available soon...') %]</p>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+
+        <div class="grd-grid-12 no-padding">
+            <h2>[% l('Join our developer community') %]</h2>
+        </div>
+
+        <div class="clear"></div>
+
+        <div class="grd-grid-6 grd-grid-phablet-12 grd-grid-mobile-12 no-padding application">
+            <div class="grd-grid-12 no-padding">[% l('[_1] is an active proponent of the open-source movement. Suggest enhancements, and take part in the development of our powerful applications. You can find more information on our <a href="[_2]" target="_blank">Developers Portal</a>.', request.website.display_name, '//developers.binary.com') %]</div>
+        </div>
+
+        <div class="grd-grid-6 grd-grid-phablet-12 grd-grid-mobile-12 no-padding application links">
+            <div class="grd-grid-12 no-padding">
+                <a target="_blank" href="https://github.com/binary-com/mobile">[% l('Tick Trade on GitHub') %]</a><br />
+                <a target="_blank" href="https://github.com/binary-com/webtrader">[% l('Webtrader on GitHub') %]</a><br />
+                <a target="_blank" href="https://github.com/binary-com/binary-next-gen">[% l('Next Gen on GitHub') %]</a><br />
+                <a target="_blank" href="https://github.com/binary-com/">[% l('List of All Open-Source Projects') %]</a>
+            </div>
+        </div>
+    </div>
+</div>

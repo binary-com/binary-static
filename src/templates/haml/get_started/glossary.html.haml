@@ -1,5 +1,5 @@
 - stash(title => l('Glossary'));
-.section-content.section-8
+.section-content.section-11
   .grd-grid-12
     %h1= stash->{title}
     %p
@@ -47,8 +47,8 @@
     %h2= l('Profit')
     %p= l('The profit is the difference between the purchase price (the stake) and the payout on a winning trade.')
     .ja-hide
-      %h2= l('Random Indices')
-      %p= l('The random index is a stock index whose price is simulated using random numbers. Unlike real market stock indices whose prices depend on the prices of the individual stocks listed on an Exchange, the random stock index only relies on factors like volatility, previous index price (previous simulated price) and a random number to determine the price of the index. Due to the use of random numbers, the price (or direction) of the index cannot be predicted with certainty and thus behaves like a real market index. When the index is appended with a number, the number is the percentage volatility used in calculating the index price. For instance, the Random Index 25 uses a volatility of 25% in the calculation of the index price. The index started at 1000 on 16 May 2004.')
+      %h2= l('Volatility Indices')
+      %p= l('The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like – high volatility, low volatility, bullish and bearish trends.')
     %h2= l('Resale price')
     %p= l('The resale price indicates a contract\'s current market price. Resale prices are on a best-efforts basis and may not be available at all times after purchase. See \'Sell option\' for more details on selling contracts before expiry.')
     %h2= l('Return')

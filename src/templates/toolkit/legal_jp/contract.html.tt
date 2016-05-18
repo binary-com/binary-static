@@ -1,7 +1,7 @@
 <div class="grd-grid-12">
     <h2>[% l("Pre-contract Document") %]</h2>
     <p>
-    	[% l("Japan website Pre-contract Document Paragraph 1") %]
+      [% l("Japan website Pre-contract Document Paragraph 1") %]
     </p>
-    <a href="[% request.url_for('/download/japan/Pre-contractDocs(20150831).protected.pdf') %]" download>[% l("Japan website Download Text for Pre-contract Document") %]</a>
+    [% l("Japan website Download Text for Pre-contract Document") %]
 </div>

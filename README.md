@@ -6,25 +6,11 @@ This repository contains the static HTML/HAML, Javascript, CSS, and images conte
 How to work with this project
 =============================
 
-1. Learn how to setup the project:
-[Initial Project Setup](https://github.com/binary-com/binary-static/wiki/Initial-Project-Setup)
+In the master branch:
 
-2. Follow these rules:
-[Coding Guidelines](https://github.com/binary-com/binary-static/wiki/Coding-Guidelines)
+1. Run "grunt default"
 
-3. Test thoroughly:
-[Automated Testing](https://github.com/binary-com/binary-static/wiki/Automated-Testing)
+2. Run "perl -I  scripts/compile.pl -f"
 
-4. Get your code to our repo:
-[Contributing Guide](https://github.com/binary-com/binary-static/wiki/Contributing-Guide)
+3. Run "grunt gh-pages"
 
-External tools
-==============
-
-**Continuous integration** with Travis-CI: [![Build Status](https://travis-ci.org/binary-com/binary-static.svg?branch=master)](https://travis-ci.org/binary-com/binary-static)
-
-**Discuss the project on IRC** with gitter: [![Gitter chat](https://badges.gitter.im/binary-com/binary-static.png)](https://gitter.im/binary-com/binary-static)
-
-**Automated code review**: [![Code Climate](https://codeclimate.com/github/binary-com/binary-static.png)](https://codeclimate.com/github/binary-com/binary-static)
-
-**Translations** [![Translation status](https://hosted.weblate.org/widgets/binary/-/88x31-grey.png)](https://hosted.weblate.org/engage/binary/?utm_source=widget)

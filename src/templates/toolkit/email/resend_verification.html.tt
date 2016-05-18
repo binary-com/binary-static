@@ -1,7 +1,7 @@
 [% l("Dear Valued Customer,
 
-In order to verify, please click on the following link:
+In order to verify, please use the following token:
 
 [_1]
 
-", link) %]
+", token) %]

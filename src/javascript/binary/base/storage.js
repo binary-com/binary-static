@@ -71,6 +71,17 @@ CookieStorage.prototype = {
         }
         this.initialized = true;
     },
+    write: function(value, expireDate, isSecure) {
+        if (!this.initialized) this.read();
+        this.value = value;
+        if(expireDate) this.expires = expireDate;
+        $.cookie(this.cookie_name, this.value, {
+            expires: this.expires,
+            path   : '/',
+            domain : this.domain,
+            secure : !!isSecure,
+        });
+    },
     get: function(key) {
         if (!this.initialized) this.read();
         return this.value[key];

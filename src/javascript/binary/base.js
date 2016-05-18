@@ -193,9 +193,8 @@ onLoad.queue(function () {
 // different windows. The problem that is solved here is what
 // happens if the user logs out or switches loginid in one
 // window while keeping another window or tab open. This can
-// lead to unintended trades. The solution is to load the
-// account page in all windows after switching loginid or
-// the home page after logout.
+// lead to unintended trades. The solution is to reload the
+// page in all windows after switching loginid or after logout.
 
 // onLoad.queue does not work on the home page.
 // jQuery's ready function works always.
@@ -210,10 +209,12 @@ if (!/backoffice/.test(document.URL)) { // exclude BO
             if (jq_event.originalEvent.newValue === match) return;
             if (jq_event.originalEvent.newValue === '') {
                 // logged out
-                location.href = page.url.url_for('home');
+                page.reload();
             } else {
                 // loginid switch
-                location.href = page.url.url_for('user/my_accountws?loginid=' + jq_event.originalEvent.newValue);
+                if(!window['is_logging_in']) {
+                    page.reload();
+                }
             }
         });
 

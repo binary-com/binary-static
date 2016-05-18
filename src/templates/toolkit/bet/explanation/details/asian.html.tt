@@ -6,3 +6,6 @@
 <p>
     [% l("The average is the average of the ticks, including the first and the last tick.") %]
 </p>
+<p class="hint">
+  <strong>[% l("Note") %]: </strong>[% l("Asian contracts will be refunded at the purchase price if the contract doesn't end within 5 minutes.") %]
+</p>

@@ -1,12 +1,8 @@
 
 
-pjax_config_page("user/profit_table", function(){
+pjax_config_page_require_auth("user/profit_table", function(){
     return {
         onLoad: function() {
-            if (!getCookieItem('login')) {
-                window.location.href = page.url.url_for('login');
-                return;
-            }
             BinarySocket.init({
                 onmessage: function(msg){
                     var response = JSON.parse(msg.data);
@@ -15,6 +11,7 @@ pjax_config_page("user/profit_table", function(){
                         var type = response.msg_type;
                         if (type === 'profit_table'){
                             ProfitTableWS.profitTableHandler(response);
+                            showLocalTimeOnHover('td.buy-date,td.sell-date');
                         }
                     }
                 }

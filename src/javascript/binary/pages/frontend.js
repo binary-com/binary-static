@@ -80,6 +80,7 @@ var get_started_behaviour = function() {
 
         return false;
     };
+
     var to_show;
     var nav = $('.get-started').find('.subsection-navigation');
     var fragment;
@@ -100,6 +101,20 @@ var get_started_behaviour = function() {
         to_show = fragment ? $('a[name=' + fragment + '-section]').parent('.subsection') : $('.subsection.first');
         update_active_subsection(to_show);
     }
+    select_nav_element();
+};
+
+var select_nav_element = function() {
+  var $navLink = $('.nav li a');
+  var $navList = $('.nav li');
+  $navList.removeClass('selected');
+  for (i = 0; i < $navLink.length; i++) {
+    if ($navLink[i].href.match(window.location.pathname)) {
+      document.getElementsByClassName('nav')[0].getElementsByTagName('li')[i].setAttribute('class', 'selected');
+      break;
+    }
+  }
+  return;
 };
 
 var Charts = function(charts) {
@@ -254,7 +269,20 @@ function dropDownNumbers(select, startNum, endNum) {
 }
 
 function dropDownMonths(select, startNum, endNum) {
-    var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    var months = [
+        text.localize("Jan"),
+        text.localize("Feb"),
+        text.localize("Mar"),
+        text.localize("Apr"),
+        text.localize("May"),
+        text.localize("Jun"),
+        text.localize("Jul"),
+        text.localize("Aug"),
+        text.localize("Sep"),
+        text.localize("Oct"),
+        text.localize("Nov"),
+        text.localize("Dec")
+    ];
     select.appendChild(document.createElement("option"));
     for (i = startNum; i <= endNum; i++){
         var option = document.createElement("option");
@@ -271,21 +299,27 @@ function dropDownMonths(select, startNum, endNum) {
     return;
 }
 
-function generateBirthDate(){
+function generateBirthDate(country){
     var days    = document.getElementById('dobdd'),
-        months    = document.getElementById('dobmm'),
+        months  = document.getElementById('dobmm'),
         year    = document.getElementById('dobyy');
+
+    if (document.getElementById('dobdd').length > 1) return;
+
     //days
     dropDownNumbers(days, 1, 31);
     //months
     dropDownMonths(months, 1, 12);
-
     var currentYear = new Date().getFullYear();
     var startYear = currentYear - 100;
     var endYear = currentYear - 17;
-
     //years
     dropDownNumbers(year, startYear, endYear);
+    if ((country && country === 'jp') || page.language().toLowerCase() === 'ja') {
+      days.options[0].innerHTML = text.localize('Day');
+      months.options[0].innerHTML = text.localize('Month');
+      year.options[0].innerHTML = text.localize('Year');
+    }
     return;
 }
 
@@ -308,15 +342,48 @@ function handle_residence_state_ws(){
       var response = JSON.parse(msg.data);
       if (response) {
         var type = response.msg_type;
+        var country;
         var residenceDisabled = $('#residence-disabled');
-        if (response.msg_type === 'get_settings') {
-          var country = response.get_settings.country_code;
+        if (type === 'get_settings') {
+          country = response.get_settings.country_code;
           if (country && country !== null) {
             page.client.residence = country;
-            generateBirthDate();
+            generateBirthDate(country);
             generateState();
+            if (/maltainvestws/.test(window.location.pathname)) {
+              var settings = response.get_settings;
+              var title = document.getElementById('title'),
+                  fname = document.getElementById('fname'),
+                  lname = document.getElementById('lname'),
+                  dobdd = document.getElementById('dobdd'),
+                  dobmm = document.getElementById('dobmm'),
+                  dobyy = document.getElementById('dobyy');
+              var inputs = document.getElementsByClassName('input-disabled');
+              if (settings.salutation) {
+                title.value = settings.salutation;
+                fname.value = settings.first_name;
+                lname.value = settings.last_name;
+                var day = moment.utc(settings.date_of_birth * 1000).format('DD');
+                dobdd.value = /^0/.test(day) ? day.replace('0','') : day;
+                dobmm.value = moment.utc(settings.date_of_birth * 1000).format('MM');
+                dobyy.value = moment.utc(settings.date_of_birth * 1000).format('YYYY');
+                for (i = 0; i < inputs.length; i++) {
+                    inputs[i].disabled = true;
+                }
+                document.getElementById('address1').value = settings.address_line_1;
+                document.getElementById('address2').value = settings.address_line_2;
+                document.getElementById('address-town').value = settings.address_city;
+                window.state = settings.address_state;
+                document.getElementById('address-postcode').value = settings.address_postcode;
+                document.getElementById('tel').value = settings.phone;
+              } else {
+                for (i = 0; i < inputs.length; i++) {
+                    inputs[i].disabled = false;
+                }
+              }
+            }
             return;
-          } else {
+          } else if (document.getElementById('move-residence-here')) {
             var residenceForm = $('#residence-form');
             $('#real-form').hide();
             residenceDisabled.insertAfter('#move-residence-here');
@@ -343,12 +410,24 @@ function handle_residence_state_ws(){
             return;
           } else {
             errorElement.setAttribute('style', 'display:none');
+            BinarySocket.send({landing_company: page.client.residence});
+            return;
+          }
+        } else if (type === 'landing_company') {
+          $.cookie('residence', page.client.residence, {domain: '.' + document.domain.split('.').slice(-2).join('.'), path: '/'});
+          if (response.landing_company.hasOwnProperty('financial_company') && !response.landing_company.hasOwnProperty('gaming_company') && response.landing_company.financial_company.shortcode === 'maltainvest') {
+            window.location.href = page.url.url_for('new_account/maltainvestws');
+            return;
+          } else if (response.landing_company.hasOwnProperty('financial_company') && !response.landing_company.hasOwnProperty('gaming_company') && response.landing_company.financial_company.shortcode === 'japan') {
+            window.location.href = page.url.url_for('new_account/japanws');
+            return;
+          } else if (!$('#real-form').is(':visible')) {
             $('#residence-form').hide();
             residenceDisabled.insertAfter('#move-residence-back');
             $('#error-residence').insertAfter('#residence-disabled');
             residenceDisabled.attr('disabled', 'disabled');
             $('#real-form').show();
-            generateBirthDate();
+            generateBirthDate(country);
             generateState();
             return;
           }
@@ -360,6 +439,9 @@ function handle_residence_state_ws(){
                 appendTextValueChild(select, states_list[i].text, states_list[i].value);
             }
             select.parentNode.parentNode.setAttribute('style', 'display:block');
+            if (window.state) {
+              select.value = window.state;
+            }
           }
           return;
         } else if (type === 'residence_list'){
@@ -369,17 +451,29 @@ function handle_residence_state_ws(){
               residence_list = response.residence_list;
           if (residence_list.length > 0){
             for (i = 0; i < residence_list.length; i++) {
-              if (residence_list[i].disabled) {
+              if (residence_list[i].disabled  && select) {
                 appendTextValueChild(select, residence_list[i].text, residence_list[i].value, 'disabled');
-              } else {
+              } else if (select) {
                 appendTextValueChild(select, residence_list[i].text, residence_list[i].value);
               }
-              if (phoneElement && residence_list[i].phone_idd && residenceValue === residence_list[i].value){
+              if (phoneElement && phoneElement.value === '' && residence_list[i].phone_idd && residenceValue === residence_list[i].value){
                 phoneElement.value = '+' + residence_list[i].phone_idd;
               }
             }
-            if (residenceValue){
+            if (residenceValue && select){
                 select.value = residenceValue;
+            }
+            if (document.getElementById('virtual-form')) {
+                BinarySocket.send({website_status:1});
+            }
+          }
+          return;
+        } else if (type === 'website_status') {
+          var status  = response.website_status;
+          if (status && status.clients_country) {
+            var clientCountry = $('#residence option[value="' + status.clients_country + '"]');
+            if (!clientCountry.attr('disabled')) {
+                clientCountry.attr('selected', 'selected');
             }
           }
           return;
@@ -389,17 +483,6 @@ function handle_residence_state_ws(){
   });
 }
 
-function getSettings() {
-  BinarySocket.send({get_settings:1});
-  return;
-}
-
-function setResidenceWs(){
-  BinarySocket.send({residence_list:1});
-  return;
-}
-
-//pass select element to generate list of states
 function generateState() {
     var state = document.getElementById('address-state');
     appendTextValueChild(state, Content.localize().textSelect, '');
@@ -407,27 +490,6 @@ function generateState() {
       BinarySocket.send({ states_list: page.client.residence });
     }
     return;
-}
-
-function getUrlVars() {
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-        vars[key] = value;
-    });
-    return vars;
-}
-
-function replaceQueryParam(param, newval, search) {
-    var regex = new RegExp("([?;&])" + param + "[^&;]*[;&]?");
-    var query = search.replace(regex, "$1").replace(/&$/, '');
-
-    return (query.length > 2 ? query + "&" : "?") + (newval ? param + "=" + newval : '');
-}
-
-if (page.language() === 'JA' && !$.cookie('MyJACookie')) {
-  var str = window.location.search;
-  str = replaceQueryParam('l', 'EN', str);
-  window.location = window.location.pathname + str;
 }
 
 // returns true if internet explorer browser
@@ -442,15 +504,66 @@ function Trim(str){
   return str;
 }
 
-//remove wrong json affiliate_tracking
-if ($.cookie('affiliate_tracking')) {
-  $.removeCookie('affiliate_tracking');
+function changeLanguage(lang) {
+  str = window.location.search;
+  str = page.url.replaceQueryParam('l', lang, str);
+  window.location = window.location.pathname + str;
 }
 
-pjax_config_page('/$|/home', function() {
+function limitLanguage(lang) {
+  if (page.language() !== lang) {
+    changeLanguage(lang);
+  }
+  if (document.getElementById('language_select')) {
+    $('#language_select').remove();
+    $('#gmt-clock').removeClass();
+    $('#gmt-clock').addClass('grd-grid-6 grd-grid-mobile-12');
+    $('#contact-us').removeClass();
+    $('#contact-us').addClass('grd-grid-6 grd-hide-mobile');
+  }
+}
+
+function checkClientsCountry() {
+  var clients_country = localStorage.getItem('clients_country');
+  if (clients_country) {
+    var str;
+    if (clients_country === 'jp') {
+      limitLanguage('JA');
+    } else if (clients_country === 'id') {
+      limitLanguage('ID');
+    } else {
+      $('#language_select').show();
+    }
+  } else {
+    BinarySocket.init();
+    BinarySocket.send({"website_status" : "1"});
+  }
+}
+
+
+if (page.language() === 'ID') {
+  change_blog_link('id');
+}
+
+function change_blog_link(lang) {
+  var regex = new RegExp(lang);
+  if (!regex.test($('.blog a').attr('href'))) {
+    $('.blog a').attr('href', $('.blog a').attr('href') + '/' + lang + '/');
+  }
+}
+
+function isNotBackoffice() {
+  return !/backoffice/.test(window.location.pathname);
+}
+
+pjax_config_page('/\?.+|/home', function() {
     return {
         onLoad: function() {
+            if(/^(\/|\/home)$/i.test(window.location.pathname)) {
+                page.client.redirect_if_login();
+            }
             check_login_hide_signup();
+            submit_email();
         }
     };
 });
@@ -468,24 +581,10 @@ pjax_config_page('/why-us', function() {
     };
 });
 
-pjax_config_page('/smart-indices', function() {
+pjax_config_page('/volidx-markets', function() {
     return {
         onLoad: function() {
-            sidebar_scroll($('.smart-indices'));
-            if (page.url.location.hash !== "") {
-              $('a[href="' + page.url.location.hash + '"]').click();
-            }
-        },
-        onUnload: function() {
-            $(window).off('scroll');
-        }
-    };
-});
-
-pjax_config_page('/random-markets', function() {
-    return {
-        onLoad: function() {
-            sidebar_scroll($('.random-markets'));
+            sidebar_scroll($('.volidx-markets'));
             if (page.url.location.hash !== "") {
               $('a[href="' + page.url.location.hash + '"]').click();
             }
@@ -507,17 +606,6 @@ pjax_config_page('/open-source-projects', function() {
     };
 });
 
-pjax_config_page('/white-labels', function() {
-    return {
-        onLoad: function() {
-            sidebar_scroll($('.white-labels'));
-        },
-        onUnload: function() {
-            $(window).off('scroll');
-        }
-    };
-});
-
 pjax_config_page('/payment-agent', function() {
     return {
         onLoad: function() {
@@ -532,6 +620,9 @@ pjax_config_page('/payment-agent', function() {
 pjax_config_page('/get-started', function() {
     return {
         onLoad: function() {
+            if (!/jp/.test(window.location.pathname) && page.language().toLowerCase() === 'ja') {
+              window.location.href = page.url.url_for('get-started-jp');
+            }
             get_started_behaviour();
         },
         onUnload: function() {
@@ -569,9 +660,14 @@ pjax_config_page('/bulk-trader-facility', function() {
     };
 });
 
-pjax_config_page('/terms-and-condition', function() {
+pjax_config_page('/terms-and-conditions', function() {
     return {
         onLoad: function() {
+            if (page.language() === 'JA' && /^jp/.test(window.location.pathname)) {
+              window.location.href = page.url.url_for('terms-and-conditions-jp');
+            } else if (page.language() === 'EN' && /jp/.test(window.location.pathname)) {
+              window.location.href = page.url.url_for('terms-and-conditions');
+            }
             var year = document.getElementsByClassName('currentYear');
             for (i = 0; i < year.length; i++){
               year[i].innerHTML = new Date().getFullYear();
@@ -580,33 +676,28 @@ pjax_config_page('/terms-and-condition', function() {
     };
 });
 
-pjax_config_page('/user/myaccount', function() {
+pjax_config_page('\/login|\/loginid_switch', function() {
     return {
         onLoad: function() {
-            var divOne = text.localize('<div class="notice-msg" style="margin-top: 10px;">Your %1 account is unavailable. For any questions please contact <a href="%2">Customer Support</a>.</div>').replace('%2', page.url.url_for('contact')),
-                divTwo = text.localize('<div class="notice-msg" style="margin-top: 10px;">Your %1 accounts are unavailable. For any questions please contact <a href="%2">Customer Support</a>.</div>').replace('%2', page.url.url_for('contact'));
-            var loginidArry = page.user.loginid_array,
-                disabledAccount = [];
-            for (i = 0; i < loginidArry.length; i++) {
-              if (loginidArry[i].disabled === true && loginidArry[i].real === true) {
-                disabledAccount.push(loginidArry[i].id);
-              }
-            }
-            if (disabledAccount.length === 1) {
-                $(divOne.replace('%1', disabledAccount.toString())).insertAfter('.clientid');
-            } else if (disabledAccount.length > 1) {
-                $(divTwo.replace('%1', disabledAccount.join(', '))).insertAfter('.clientid');
-            }
-        },
-    };
-});
-
-pjax_config_page('/login', function() {
-    return {
-        onLoad: function() {
-            if (page.user.is_logged_in) {
-              window.location.href = page.url.url_for('user/my_accountws');
+            if(isNotBackoffice()) {
+                window.location.href = page.url.url_for('oauth2/authorize', 'app_id=binarycom');
             }
         }
     };
 });
+
+var $buoop = {
+  vs: {i:10, f:39, o:30, s:5, c:39},
+  l: page.language().toLowerCase(),
+  url: 'https://whatbrowser.org/'
+};
+function $buo_f(){
+ var e = document.createElement("script");
+ e.src = "//browser-update.org/update.min.js";
+ document.body.appendChild(e);
+}
+try {
+  document.addEventListener("DOMContentLoaded", $buo_f,false);
+} catch(e) {
+  window.attachEvent("onload", $buo_f);
+}

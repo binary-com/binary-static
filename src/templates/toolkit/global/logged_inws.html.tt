@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+[%= FOREACH js IN javascript.libs =%]
+    <script src='[%= js =%]' defer></script>
+[%= END =%]
+    <style>
+        body {margin: 0px;}
+        #header-binary {height: 55px; background: #2a3052; border-bottom: 4px solid #e98024; text-align: center; padding: 10px 0;}
+        #header-binary a {margin: 0 auto; vertical-align: middle; display: inline-block;}
+        #header-binary #symbol-logo {vertical-align: middle; height: 55px;}
+        #header-binary #type-logo {vertical-align: middle; height: 37px; margin-left: 6px;}
+        @keyframes spinning{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+        @-webkit-keyframes spinning{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+        #login_loading {text-align: center; padding-top: 90px;}
+        #login_loading .spinner {
+            width: 160px; height: 160px;
+            -webkit-animation: spinning 1s infinite linear;
+            animation: spinning 1s infinite linear;
+        }
+    </style>
+</head>
+<body onload="LoggedInHandler.init();">
+    <div id="header-binary">
+        <a href="[% request.url_for('/') %]">
+            <img id="symbol-logo" src="[% request.url_for('images/pages/binary-symbol-logo.svg') %]" alt="" />
+            <img id="type-logo" src="[% request.url_for('images/pages/binary-type-logo.svg') %]" alt="Binary.com" />
+        </a>
+    </div>
+    <div id="login_loading">
+        <a href="[% request.url_for('/') %]" id="loading_link">
+            <img class="spinner" src="[% request.url_for('images/pages/binary-symbol-logo.svg') %]" alt="" />
+        </a>
+    </div>
+</body>
+</html>

@@ -95,9 +95,7 @@ var BetPrice = function() {
             var that = this;
             var timeout = 60000;
 
-            if(!$.cookie('login')) {
-                page.client.is_logged_in = false;
-                window.location.href = page.url.url_for('login');
+            if(page.client.show_login_if_logout(false)) {
                 return;
             }
 
@@ -231,9 +229,7 @@ var BetPrice = function() {
                     var form = target.parents('form');
                     var timeout = 60000;
 
-                    if(!$.cookie('login')) {
-                        page.client.is_logged_in = false;
-                        window.location.href = page.url.url_for('login');
+                    if(page.client.show_login_if_logout(false)) {
                         return;
                     }
 
@@ -572,7 +568,6 @@ var BetPrice = function() {
                         var bet = JSON.parse(data);
                         BetForm.spot.update(bet.spot);
                         BetPrice.order_form.update_from_stream(bet);
-                        BetAnalysis.tab_last_digit.update(BetForm.attributes.underlying(), bet.spot);
                     }
                 },
             };

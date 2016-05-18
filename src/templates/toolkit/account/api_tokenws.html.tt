@@ -1,9 +1,11 @@
 <div id="api_token" class="api_token grd-grid-12">
     <h1>[% l('API Token') %]</h1>
 
-    <p>[% l('To access a third party application, such as a mobile app, you are required to generate an API Token and to copy and paste it into your app. Click on “Create” to generate your API token.') %]</p>
-    <p>[% l('Should you not need any of the API tokens that you’ve already generated, you may simply delete them from the list.') %]</p>
-    <p>[% l('Label your API tokens so as to recognise them easily at a later time.') %]</p>
+    <p>[% l("In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token.") %]</p>
+    <ul class="bullet">
+      <li>[% l('Simply click on "Create" to generate your token; then copy and paste it into the app.') %]</li>
+      <li>[% l('Choose the specific type of API token that you need, based on the capabilities that you wish to make available.') %]</li>
+    </ul>
 
     <div id="token_form" class="grd-grid-12 grd-row-padding">
         <form class="form rbox" id="frmNewToken">
@@ -16,6 +18,22 @@
                     </div>
                     <div class="grd-grid-8">
                         <input id="txtName" type="text" maxlength="32" />
+                    </div>
+                </div>
+
+                <div class="grd-grid-12 grd-parent grd-row-padding">
+                    <div class="grd-grid-4 form_label">
+                        <label for="txtName">[% l('Choose Scopes:') %]</label>
+                    </div>
+                    <div class="grd-grid-8">
+                        <input id="scopes" type="checkbox" name="scopes[]" value="read" checked="checked" readonly="readonly" />
+                          <abbr rel="tooltip" title="[% l('Can be used to view account activity, including settings, limits, balance sheets, trade purchase history, and more.') %]">[% l('Read') %]</abbr>
+                        <input type="checkbox" name="scopes[]" value="trade" />
+                          <abbr rel="tooltip" title="[% l('Can be used to buy and sell contracts, renew expired purchases, and top-up virtual-money accounts.') %]">[% l('Trade') %]</abbr>
+                        <input type="checkbox" name="scopes[]" value="payments" />
+                          <abbr rel="tooltip" title="[% l('Can be used to open accounts, set settings, manage token usage, and more.') %]">[% l('Payments') %]</abbr>
+                        <input type="checkbox" name="scopes[]" value="admin" />
+                          <abbr rel="tooltip" title="[% l('Can be used to withdraw to payment agents, transfer funds between accounts, and set / clear cashier passwords.') %]">[% l('Admin') %]</abbr>
                     </div>
                 </div>
 

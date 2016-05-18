@@ -1,6 +1,5 @@
       <div id="content"[% IF h.current_route +%] class="[% h.current_route %]-content"[% END %]>
-          [% google_tag_tracking_code %]
-          [% google_tag_declaration_code %]
+          [% INCLUDE global/gtm.html.tt %]
           <div id="page_info" style="display:none;">
               <title>[% title %]</title>
               <div id="body_id">[% body_id %]</div>

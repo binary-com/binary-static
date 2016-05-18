@@ -19,10 +19,10 @@ var TickDisplay = function() {
             $self.contract_category = data.contract_category;
             $self.set_barrier = ($self.contract_category.match('digits')) ? false : true;
             $self.display_decimals = data.display_decimals || 2;
+            $self.show_contract_result = data.show_contract_result;
             var tick_frequency = 5;
 
             if (data.show_contract_result) {
-                $self.show_contract_result = true;
                 $self.contract_sentiment = data.contract_sentiment;
                 $self.price = parseFloat(data.price);
                 $self.payout = parseFloat(data.payout);
@@ -45,7 +45,7 @@ var TickDisplay = function() {
             if ($self.contract_category.match('asian')) {
                 $self.ticks_needed = $self.number_of_ticks;
                 $self.x_indicators = {
-                    '_0': { label: 'Tick 1', id: 'start_tick'},
+                    '_0': { label: 'Entry Spot', id: 'start_tick'},
                 };
                 $self.x_indicators['_' + exit_tick_index] = {
                     label: 'Exit Spot',
@@ -72,7 +72,6 @@ var TickDisplay = function() {
             } else {
                 $self.x_indicators = {};
             }
-
         },
         initialize_chart: function(config) {
             var $self = this;
@@ -85,7 +84,7 @@ var TickDisplay = function() {
                     height: config.minimize ? 143 : null,
                     backgroundColor: null,
                     events: { load: $self.plot(config.plot_from, config.plot_to) },
-                    marginLeft: 20,
+                    marginLeft: 100
                 },
                 credits: {enabled: false},
                 tooltip: {
@@ -181,7 +180,9 @@ var TickDisplay = function() {
         },
         apply_chart_background_color: function(tick) {
             var $self = this;
-
+            if(!$self.show_contract_result) {
+                return;
+            }
             var chart_container = $('#tick_chart');
             if ($self.contract_sentiment === 'up') {
                 if (tick.quote > $self.contract_barrier) {
@@ -278,7 +279,6 @@ var TickDisplay = function() {
                     $self.lose();
                 }
             }
-
         },
         win: function() {
             var $self = this;
