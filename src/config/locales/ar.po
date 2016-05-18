@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-17 15:22+0000\n"
-"Last-Translator: Sittie Hadjirah Sevilla <sittiebaser@gmail.com>\n"
+"PO-Revision-Date: 2016-05-18 02:33+0000\n"
+"Last-Translator: Ahmed Kotb <ahmedmohamedkotp@gmail.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/binary/static/ar/>"
 "\n"
 "Language: ar\n"
@@ -245,10 +245,9 @@ msgstr "يتم قياس أسعار %1 مقارنة بأسعار سوق الخي�
 
 #. (request.website.display_name)
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:3
-#, fuzzy
 #| msgid "%1 provides a variety of charts to help you determine what markets to trade on. Try them out."
 msgid "%1 provides a variety of applications to help you trade efficiently."
-msgstr "تقدم 1% مجموعة متنوعة من الرسوم البيانية التى تساعدك على تحديد الأسواق التى يمكن أن تتداول فيها. جربهم."
+msgstr "تقدم 1% مجموعة متنوعة من التطبيقات التي تساعدك على التداول بكفاءة."
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/partners.html.haml:1
@@ -2141,10 +2140,9 @@ msgid "Binary Ltd, with registered office address situated at <span itemprop='lo
 msgstr "بيناري المحدودة، التي يقع مكتبها المسجل فى <span itemprop='location'>47 Esplanade, St. Helier, Jersey, JE 0BD Channel Islands</span>، هي الشركة القابضة لمجموعة بيناري."
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:58
-#, fuzzy
 #| msgid "Binary option"
 msgid "Binary Next Gen"
-msgstr "الخيار الثنائى"
+msgstr "الجيل القادم من الخيارات الثنائية"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/binary_options_basics.html.haml:1
 msgid "Binary Options Basics"
@@ -2279,10 +2277,11 @@ msgid "Binary.com supports the <a target=\"_blank\" href=\"http://www.responsibl
 msgstr "Binary.com تدعم <a target=\"_blank\" href=\"http://www.responsiblegamblingtrust.org.uk/\">Responsible Gambling Trust</a> (RGT) للعب المسئول وهي مؤسسة خيرية رائدة في بريطانيا ملتزمة بالحد من الضرر الناجم عن المراهنة. تمول RGT خدمات تعليمية والوقاية والعلاج ولجان بحث لمساعدة الناس على فهم المزيد عن الضرر الناجم عن المراهنة. كما أنها توفر خط مساعدة وطني للمراهنة لإسداء المشورة السرية والدعم العاطفي لأولئك الذين يلتمسون المساعدة."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/group_history.html.haml:1
-#, fuzzy
 #| msgid "Binary.com took home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
 msgid "Binary.com takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
-msgstr "Binary.com أخذت الجائزة الأولى الرئيسية في الفئة \"المالية عامل الرهان\" في حفل توزيع جوائز مشغل EGR 2015 المرموقة، واستضافت في لندن."
+msgstr ""
+"حازت Binary.com على الجائزة الرئيسية الأولى في فئة مضارب الرهان المالي في "
+"حفل توزيع جوائز التميز EGR Operator Awards 2015 المرموق, والمستضاف في لندن."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/open_source_projects.html.haml:1
 msgid "Binary.com’s CPAN contributions"
@@ -2804,10 +2803,12 @@ msgid "Commission on withdrawals"
 msgstr "العمولات عن السحب"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:81
-#, fuzzy
 #| msgid "Commissionable earnings will be earned for the life of the client, on all transactions the client undertakes at the merchant, for as long as you, the affiliate, remain a member of this affiliate program. The company reserves the right to cancel the commissions that are not reclaimed after 2 years."
 msgid "Commissions will be earned throughout the life of the client, on all transactions the client undertakes at the merchant, for as long as you, the Affiliate, remain a member of this affiliate program. The company reserves the right to cancel the commissions that are not reclaimed after 2 years."
-msgstr "يتم تحصيل أرباح العمولة طوال فترة حياة العميل، عن كل المعاملات التجارية التى يقوم بها العميل فى السوق طوال مدة انتسابك، لبرنامج الإنتساب هذا. تحتفظ الشركة بحق إلغاء العمولات التى لا يتم المطالبة بها بعد عامين."
+msgstr ""
+"ستكون العمولات مستحقة للعميل طوال فترة حياته على جميع المعاملات التي يقوم "
+"بها العميل عند المتاجر, لطالما كنت تابعاً, وبقيت عضواً في برنمج التبعية هذا. "
+"الشركة تحتفظ بالحق في إنهاء العمولات التي لا يتم طلبها بعد سنتين."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/glossary.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/japanws.html.tt:271
