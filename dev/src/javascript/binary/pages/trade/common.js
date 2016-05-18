@@ -730,24 +730,29 @@ function marketOrder(market){
     'use strict';
     var order = {
         forex: 0,
-        major_pairs: 1,
-        minor_pairs: 2,
-        smart_fx: 3,
+          major_pairs: 1,
+          minor_pairs: 2,
+          smart_fx: 3,
         indices: 4,
-        asia_oceania: 5,
-        europe_africa: 6,
-        americas: 7,
-        stocks: 8,
-        france: 9,
-        belgium: 10,
-        amsterdam: 11,
-        commodities: 12,
-        metals: 13,
-        energy: 14,
-        volidx: 15,
-        random_index: 16,
-        random_daily: 17,
-        random_nightly: 18
+          asia_oceania: 5,
+          europe_africa: 6,
+          americas: 7,
+          otc_index: 8,	
+        stocks: 9,
+          france: 10,
+          belgium: 11,
+          amsterdam: 12,
+          au_otc_stock: 13,
+	      ge_otc_stock: 14,
+          uk_otc_stock: 15,
+          us_otc_stock: 16,			
+        commodities: 17,
+          metals: 18,
+          energy: 19,
+        volidx: 20,
+          random_index: 21,
+          random_daily: 22,
+          random_nightly: 23
     };
     return order[market];
 }
@@ -777,7 +782,7 @@ function displayTooltip(market, symbol){
       app.hide();
       tip.hide();
     }
-    if (market.match(/^otc_index/) || symbol.match(/^OTC_/)){
+    if (market.match(/^otc_index/) || symbol.match(/^OTC_/) || market.match(/otc_stock/) || markets.by_symbol(symbol).submarket.name.match(/otc_stock/)){
         tip.show();
         tip.setAttribute('target','/get-started/otc-indices-stocks');
     }
@@ -789,7 +794,7 @@ function displayTooltip(market, symbol){
     }
     if (market.match(/^smart_fx/) || symbol.match(/^WLD/)){
         tip.show();
-        tip.setAttribute('target','/smart-indices#world-fx-indices');
+        tip.setAttribute('target','/get-started/smart-indices#world-fx-indices');
     }
 }
 

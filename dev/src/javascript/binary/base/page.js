@@ -496,7 +496,7 @@ Menu.prototype = {
                 this.show_main_menu();
             }
         } else {
-            var is_mojo_page = /^\/$|\/login|\/home|\/smart-indices|\/ad|\/open-source-projects|\/bulk-trader-facility|\/partners|\/payment-agent|\/about-us|\/group-information|\/group-history|\/careers|\/contact|\/terms-and-conditions|\/terms-and-conditions-jp|\/responsible-trading|\/us_patents|\/lost_password|\/realws|\/virtualws|\/open-positions|\/job-details|\/user-testing|\/japanws|\/maltainvestws$/.test(window.location.pathname);
+            var is_mojo_page = /^\/$|\/login|\/home|\/ad|\/open-source-projects|\/bulk-trader-facility|\/partners|\/payment-agent|\/about-us|\/group-information|\/group-history|\/careers|\/contact|\/terms-and-conditions|\/terms-and-conditions-jp|\/responsible-trading|\/us_patents|\/lost_password|\/realws|\/virtualws|\/open-positions|\/job-details|\/user-testing|\/japanws|\/maltainvestws|\/reset_passwordws|\/supported-browsers$/.test(window.location.pathname);
             if(!is_mojo_page) {
                 trading.addClass('active');
                 this.show_main_menu();
@@ -655,6 +655,7 @@ Header.prototype = {
         this.register_dynamic_links();
         this.simulate_input_placeholder_for_ie();
         this.logout_handler();
+        this.check_risk_classification();
         if (isNotBackoffice()) {
           checkClientsCountry();
         }
@@ -768,6 +769,13 @@ Header.prototype = {
             page.client.send_logout_request();
         });
     },
+    check_risk_classification: function() {
+      if (page.client.is_logged_in && !page.client.is_virtual() && page.client.residence !== 'jp' && isNotBackoffice() &&
+          localStorage.getItem('risk_classification.response') === 'high' && localStorage.getItem('risk_classification') === 'high' &&
+          (localStorage.getItem('reality_check.ack') === '1' || !localStorage.getItem('reality_check.interval'))) {
+            RiskClassification.renderRiskClassificationPopUp();
+      }
+    },
     validate_cookies: function(){
         if (getCookieItem('login') && getCookieItem('loginid_list')){
             var accIds = $.cookie("loginid_list").split("+");
@@ -806,6 +814,8 @@ Header.prototype = {
                   $.removeCookie(c, {path: cookie_path[1]});
               }
             });
+            localStorage.removeItem('risk_classification');
+            localStorage.removeItem('risk_classification.response');
             page.reload();
         }
     },

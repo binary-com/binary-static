@@ -2,9 +2,9 @@
 
     <h1>[% l("US Patents") %]</h1>
     <ul>
-        [% FOREACH patent = us_patents %]
-            <li><a onclick="window.open('[% patent.url %]')" href="javascript:void(0);">[% patent.title %]</a></li>
-        [% END %]
+        <li><a onclick="window.open('http://www.google.com/patents/US7206762')" href="javascript:void(0);">[% l('Betting system and method') %]</a></li>
+        <li><a onclick="window.open('http://www.google.com/patents/US8046293')" href="javascript:void(0);">[% l('Computer trading system for offering custom financial market speculations') %]</a></li>
+        <li><a onclick="window.open('http://www.google.com/patents/US8046292')" href="javascript:void(0);">[% l('Computer system and method for speculating on a financial market') %]</a></li>
     </ul>
 
 </div>

@@ -191,7 +191,7 @@ function BinarySocketClass() {
                 } else if (type === 'get_settings') {
                     GTM.event_handler(response.get_settings);
                     page.client.set_storage_value('tnc_status', response.get_settings.client_tnc_status || '-');
-                    page.client.check_tnc();
+                    if (!localStorage.getItem('risk_classification')) page.client.check_tnc();
                     var jpStatus = response.get_settings.jp_account_status;
                     if (jpStatus) {
                         switch (jpStatus.status) {
@@ -214,7 +214,7 @@ function BinarySocketClass() {
                 } else if (type === 'website_status') {
                     if(!response.hasOwnProperty('error')) {
                         LocalStore.set('website.tnc_version', response.website_status.terms_conditions_version);
-                        page.client.check_tnc();
+                        if (!localStorage.getItem('risk_classification')) page.client.check_tnc();
                     }
                   if (response.website_status.clients_country) {
                     localStorage.setItem('clients_country', response.website_status.clients_country);
@@ -231,6 +231,24 @@ function BinarySocketClass() {
                     } else {
                         RealityCheck.realityCheckWSHandler(response);
                     }
+                } else if (type === 'get_account_status') {
+                  if (response.get_account_status.risk_classification === 'high' && isNotBackoffice() && (localStorage.getItem('reality_check.ack') === '1' || !localStorage.getItem('reality_check.interval'))) {
+                    send({get_financial_assessment: 1});
+                  } else {
+                    localStorage.removeItem('risk_classification');
+                  }
+                  localStorage.setItem('risk_classification.response', response.get_account_status.risk_classification);
+                } else if (type === 'get_financial_assessment' && !response.hasOwnProperty('error')) {
+                  if (Object.keys(response.get_financial_assessment).length === 0) {
+                    if (localStorage.getItem('reality_check.ack') === '1' || !localStorage.getItem('reality_check.interval') && localStorage.getItem('risk_classification.response') === 'high') {
+                      localStorage.setItem('risk_classification', 'high');
+                      page.header.check_risk_classification();
+                    }
+                  } else if ((localStorage.getItem('reality_check.ack') === '1' || !localStorage.getItem('reality_check.interval')) && localStorage.getItem('risk_classification') !== 'high') {
+                    localStorage.removeItem('risk_classification');
+                    localStorage.removeItem('risk_classification.response');
+                    page.client.check_tnc();
+                  }
                 }
                 if (response.hasOwnProperty('error')) {
                     if(response.error && response.error.code) {

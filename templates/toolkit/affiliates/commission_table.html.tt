@@ -7,25 +7,25 @@
 
     <div class="grd-grid-12 grd-row-padding table-body table-body-lines">
         <div class="grd-grid-2 center-aligned">1</div>
-        <div class="grd-grid-6">[% commission_data.first_tier.min %] - [% commission_data.first_tier.max %]</div>
-        <div class="grd-grid-4 center-aligned">[% commission_data.min_commission %] %</div>
+        <div class="grd-grid-6">0 - $10,000</div>
+        <div class="grd-grid-4 center-aligned">20 %</div>
     </div>
 
     <div class="grd-grid-12 grd-row-padding table-body table-body-lines">
         <div class="grd-grid-2 center-aligned">2</div>
-        <div class="grd-grid-6">[% commission_data.second_tier.min %] - [% commission_data.second_tier.max %]</div>
-        <div class="grd-grid-4 center-aligned">[% commission_data.second_tier.rate %] %</div>
+        <div class="grd-grid-6">$10,001 - $50,000</div>
+        <div class="grd-grid-4 center-aligned">25 %</div>
     </div>
 
     <div class="grd-grid-12 grd-row-padding table-body table-body-lines">
         <div class="grd-grid-2 center-aligned">3</div>
-        <div class="grd-grid-6">[% commission_data.third_tier.min %] - [% commission_data.third_tier.max %]</div>
-        <div class="grd-grid-4 center-aligned">[% commission_data.third_tier.rate %] %</div>
+        <div class="grd-grid-6">$50,001 - $100,000</div>
+        <div class="grd-grid-4 center-aligned">30 %</div>
     </div>
 
     <div class="grd-grid-12 grd-row-padding table-body table-body-lines">
         <div class="grd-grid-2 center-aligned">4</div>
-        <div class="grd-grid-6">[% commission_data.fourth_tier.min %] +</div>
-        <div class="grd-grid-4 center-aligned">[% commission_data.max_commission %] %</div>
+        <div class="grd-grid-6">$100,001 +</div>
+        <div class="grd-grid-4 center-aligned">35 %</div>
     </div>
 </div>

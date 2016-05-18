@@ -17,19 +17,19 @@
     %p= l('Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet.')
     %a.pjaxload.ja-hide#view_payment_methods{:href=>url_for('cashier/payment_methods')}= l('View available payment methods')
   .grd-grid-5.grd-grid-mobile-12
-    .grd-row-padding
+    .grd-row-padding.by_client_type.client_real.with_login_cookies.invisible
       %a.pjaxload.button.button_large.by_client_type.client_real.with_login_cookies.invisible{ :href => url_for('/cashier/forwardws#deposit') }
         %span= l('Deposit')
-    .grd-row-padding
+    .grd-row-padding.by_client_type.client_real.with_login_cookies.invisible
       %a.pjaxload.button.button_large.by_client_type.client_real.with_login_cookies.invisible{ :href => url_for('/cashier/forwardws#withdraw') }
         %span= l('Withdraw')
-    .grd-row-padding
+    .grd-row-padding.by_client_type.client_virtual.with_login_cookies.virtual-upgrade-link.invisible
       %a.pjaxload.button.button_large.by_client_type.client_virtual.with_login_cookies.virtual-upgrade-link.invisible{:href => url_for('new_account/realws')}
         %span= l('Upgrade to a Real Account')
-    .grd-row-padding
+    .grd-row-padding.by_client_type.client_virtual.with_login_cookies.vr-japan-upgrade-link.invisible
       %a.pjaxload.button.button_large.by_client_type.client_virtual.with_login_cookies.vr-japan-upgrade-link.invisible{:href => url_for('new_account/japanws')}
         %span= l('Upgrade to a Real Account')
-    .grd-row-padding
+    .grd-row-padding.by_client_type.client_virtual.with_login_cookies.vr-financial-upgrade-link.invisible
       %a.pjaxload.button.button_large.by_client_type.client_virtual.with_login_cookies.vr-financial-upgrade-link.invisible{:href => url_for('new_account/maltainvestws')}
         %span= l('Upgrade to a Financial Account')
 

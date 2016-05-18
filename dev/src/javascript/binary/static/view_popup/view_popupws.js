@@ -9,7 +9,9 @@ var ViewPopupWS = (function() {
         isSold,
         isSellClicked,
         chartStarted,
-        tickForgotten;
+        tickForgotten,
+        candleForgotten,
+        chartUpdated;
     var $Container,
         $loading,
         btnView,
@@ -19,21 +21,23 @@ var ViewPopupWS = (function() {
         hiddenClass;
 
     var init = function(button) {
-        btnView       = button;
-        contractID    = $(btnView).attr('contract_id');
-        contractType  = '';
-        contract      = {};
-        history       = {};
-        proposal      = {};
-        isSold        = false;
-        isSellClicked = false;
-        chartStarted  = false;
-        tickForgotten = false;
-        $Container    = '';
-        popupboxID    = 'inpage_popup_content_box';
-        wrapperID     = 'sell_content_wrapper';
-        winStatusID   = 'contract_win_status';
-        hiddenClass   = 'hidden';
+        btnView         = button;
+        contractID      = $(btnView).attr('contract_id');
+        contractType    = '';
+        contract        = {};
+        history         = {};
+        proposal        = {};
+        isSold          = false;
+        isSellClicked   = false;
+        chartStarted    = false;
+        tickForgotten   = false;
+        candleForgotten = false;
+        chartUpdated    = false;
+        $Container      = '';
+        popupboxID      = 'inpage_popup_content_box';
+        wrapperID       = 'sell_content_wrapper';
+        winStatusID     = 'contract_win_status';
+        hiddenClass     = 'hidden';
 
         if (btnView) {
             ViewPopupUI.disable_button($(btnView));
@@ -68,7 +72,7 @@ var ViewPopupWS = (function() {
         // ----- Tick -----
         if(contract.hasOwnProperty('tick_count')) {
             contractType = 'tick';
-            getTickHistory(contract.underlying, contract.date_start - 60, contract.date_start - 1, 1);
+            tickShowContract();
         }
         // ----- Spread -----
         else if(contract.shortcode.toUpperCase().indexOf('SPREAD') === 0) {
@@ -112,18 +116,6 @@ var ViewPopupWS = (function() {
             'tick_popup'
         );
 
-        TickDisplay.initialize({
-             "symbol"              : contract.underlying,
-             "number_of_ticks"     : contract.tick_count,
-             "previous_tick_epoch" : history.times[0],
-             "contract_category"   : ((/asian/i).test(contract.shortcode) ? 'asian' : (/digit/i).test(contract.shortcode) ? 'digits' : 'callput'),
-             "longcode"            : contract.longcode,
-             "display_decimals"    : history.prices[0].split('.')[1].length || 2,
-             "display_symbol"      : contract.display_name,
-             "contract_start"      : contract.date_start,
-             "show_contract_result": 0
-         });
-
         tickUpdate();
     };
 
@@ -131,6 +123,10 @@ var ViewPopupWS = (function() {
         if(contract.is_expired) {
             showWinLossStatus((contract.sell_price || contract.bid_price) > 0);
         }
+        if (!chartUpdated) {
+             WSTickDisplay.updateChart('', contract);
+             chartUpdated = true;
+         }
     };
 
     // ===== Contract: Spread =====
@@ -283,8 +279,8 @@ var ViewPopupWS = (function() {
 
         if(!chartStarted) {
             if (!tickForgotten) {
-              socketSend({"forget_all":"ticks"});
               tickForgotten = true;
+              socketSend({"forget_all":"ticks"});
             } else {
               Highchart.show_chart(contract, 'update');
               if (contract.entry_tick_time) {
@@ -598,10 +594,6 @@ var ViewPopupWS = (function() {
         }
 
         switch(contractType) {
-            case 'tick':
-                 history = response.history;
-                 tickShowContract();
-                 break;
             case 'spread':
                 history = response.history;
                 spreadShowContract();
@@ -671,9 +663,14 @@ var ViewPopupWS = (function() {
                     responseSellExpired(response);
                     break;
                 case 'forget_all':
-                    Highchart.show_chart(contract);
-                    if (contract.entry_tick_time) {
-                      chartStarted = true;
+                    if (response.echo_req.forget_all === 'ticks' && !candleForgotten) {
+                      candleForgotten = true;
+                      socketSend({"forget_all":"candles"});
+                    } else if (response.echo_req.forget_all === 'candles') {
+                      Highchart.show_chart(contract);
+                      if (contract.entry_tick_time) {
+                        chartStarted = true;
+                      }
                     }
                     break;
                 default:

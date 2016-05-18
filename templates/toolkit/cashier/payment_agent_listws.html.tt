@@ -64,7 +64,7 @@
     <p id="no_paymentagent" class="error-msg hidden">[% l('Payment agent is unavailable in your country.') %]</p>
 
     <p>
-        [% l('Apply to become a [_1] <a class="pjaxload" href="[_2]">payment agent</a>.', website, apply_payment_agent_url) %]
+        [% l('Apply to become a [_1] <a class="pjaxload" href="[_2]">payment agent</a>.', website, request.url_for('/payment-agent')) %]
     </p>
     <p class="comment">
         [% l("<strong>IMPORTANT DISCLAIMER</strong> - [_1] is not affiliated with any of the payment agents listed above. Each payment agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by [_1]. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of payment agents before sending them any money. [_1] shall not in any circumstance be held responsible for transactions made between customers and payment agents.", website) %]

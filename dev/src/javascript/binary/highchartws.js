@@ -20,7 +20,7 @@ var Highchart = (function() {
       var lbl_entry_spot = '<div style="margin-left:10px;display:inline-block;border:3px solid orange;border-radius:6px;width:4px;height:4px;"></div> Entry spot ';
       var lbl_exit_spot = '<div style="margin-left:10px;display:inline-block;background-color:orange;border-radius:6px;width:10px;height:10px;"></div> Exit spot ';
       var lbl_end_time = '<div style="margin-bottom: 3px;margin-left:10px;height:0;width:20px;border:0;border-bottom:2px;border-style:dashed;border-color:#E98024;display:inline-block"></div> End time ';
-      var lbl_delay = '<span style="color:red">Charting for this underlying is delayed </span>';
+      var lbl_delay = '<span style="display:block;text-align:center;margin-bottom:0.2em;color:red">Charting for this underlying is delayed </span>';
       // options.history indicates line chart
       if(options.history){
         type = 'line';
@@ -131,14 +131,14 @@ var Highchart = (function() {
       if (options.history) {
         chartOptions.subtitle = {
           text: chart_delayed ? lbl_delay + lbl_start_time + lbl_entry_spot + lbl_exit_spot + lbl_end_time : lbl_start_time + lbl_entry_spot + lbl_exit_spot + lbl_end_time,
-          align: 'right',
+          align: 'center',
           useHTML: true
         };
         chartOptions.tooltip.valueDecimals = options.history.prices[0].split('.')[1].length || 3;
       } else if (options.candles) {
         chartOptions.subtitle = {
           text: chart_delayed ? lbl_delay + lbl_start_time + lbl_end_time : lbl_start_time + lbl_end_time,
-          align: 'right',
+          align: 'center',
           useHTML: true
         };
         chartOptions.tooltip.valueDecimals = options.candles[0].open.split('.')[1].length || 3;
@@ -161,7 +161,7 @@ var Highchart = (function() {
         });
         var subtitle = chart.subtitle.element;
         var subtitle_length = chart.subtitle.element.childNodes.length;
-        if (sell_spot_time) {
+        if (sell_time && sell_time < end_time) {
           var textnode = document.createTextNode(" Sell time ");
           for (i = 0; i < chart.subtitle.element.childNodes.length; i++) {
             if (/End time/.test(chart.subtitle.element.childNodes[i].nodeValue)) {
@@ -375,6 +375,7 @@ var Highchart = (function() {
     }
 
     if(!is_expired && !sell_spot_time && parseInt(window.time._i)/1000 < end_time && !chart_subscribed) {
+        chart_subscribed = true;
         request.subscribe = 1;
     }
 
@@ -395,9 +396,8 @@ var Highchart = (function() {
     if (!entry_tick_time && chart_delayed === false && start_time && parseInt((window.time._i/1000)) >= parseInt(start_time)) {
       show_error('', text.localize('Waiting for entry tick.'));
     } else if (!history_send){
-      if (request.subscribe === 1) chart_subscribed = true;
-      socketSend(request);
       history_send = true;
+      socketSend(request);
     }
     return;
   }

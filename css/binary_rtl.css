@@ -660,6 +660,10 @@ ul.checked li {
   padding: 0px !important;
 }
 
+_:-ms-fullscreen, :root #content-holder {
+  height: 100%;
+}
+
 *,
 *:after,
 *:before {
@@ -1418,6 +1422,8 @@ ul.checked li {
   text-align: center;
   background-color: #fff;
   border-radius: .3em;
+  max-height: 80vh;
+  overflow: auto;
 }
 
 #reality-check-content, #balances-content {
@@ -1452,6 +1458,11 @@ ul.checked li {
   }
 }
 
+@media screen and (max-width: 480px) {
+  #risk_classification.lightbox > div > div {
+    width: 95vw;
+  }
+}
 meter#password-meter {
   width: 10.9em;
   height: .5em;

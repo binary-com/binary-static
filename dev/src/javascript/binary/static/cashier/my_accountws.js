@@ -46,7 +46,7 @@ var MyAccountWS = (function() {
     };
 
     var responseAccountStatus = function(response) {
-        get_account_status = response.get_account_status;
+        get_account_status = response.get_account_status.status;
         checkAll();
     };
 
@@ -55,7 +55,7 @@ var MyAccountWS = (function() {
             return;
         }
 
-        if(isReal && terms_conditions_version !== client_tnc_status) {
+        if(isReal && terms_conditions_version !== client_tnc_status && !localStorage.getItem('risk_classification')) {
             window.location.href = page.url.url_for('user/tnc_approvalws');
             return;
         }
