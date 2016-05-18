@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-18 02:33+0000\n"
-"Last-Translator: Ahmed Kotb <ahmedmohamedkotp@gmail.com>\n"
+"PO-Revision-Date: 2016-05-18 03:11+0000\n"
+"Last-Translator: Sittie Hadjirah Sevilla <sittiebaser@gmail.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/binary/static/ar/>"
 "\n"
 "Language: ar\n"
@@ -669,9 +669,9 @@ msgstr "<option value=\"\"></option><option value=\"01\">يناير</option><opt
 msgid "<p style=\"font-weight: bold;\">Thanks for signing up for a virtual account!</p><p>Enter the following verification token into the form to create an account: <p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p><p>Enjoy trading with us on Binary.com.</p>"
 msgstr ""
 "<p style=\"font-weight: bold;\">شكراً لتسجيلكم من أجل الحصول على حساب "
-"إفتراضي!</p><p>أدخل رمز التحقق التالي في النموذج لإنشاء حساب:<p><span style="
-"\"background: #f2f2f2; padding: 10px;\"></span></p></p><p>%1استمتع بالتداول "
-"معنا في Binary.com.</p>"
+"إفتراضي!</p><p>أدخل رمز التحقق التالي في النموذج لإنشاء حساب:</p><p><span "
+"style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p><p>استمتع "
+"بالتداول معنا في Binary.com.</p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:93
@@ -680,8 +680,8 @@ msgstr ""
 "<p style=\"line-height:200%;color:#333333;font-size:15px;\">عميلنا العزيز "
 "المحترم,</p><p>قبل أن نستطيع مساعدتك في تغيير كلمة المرور الخاصة بك, نرجو "
 "منك مساعدتنا في التحقق من هويتك من خلال إدخال رمز التحقق التالي في نموذج "
-"أعادة تعيين كلمة المرور:<p><span style=\"background: #f2f2f2; padding: 10px;"
-"\">1%</span></p></p>"
+"أعادة تعيين كلمة المرور:</p><p><span style=\"background: #f2f2f2; padding: "
+"10px;\">%1</span></p></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:133
@@ -689,7 +689,7 @@ msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued C
 msgstr ""
 "<p style=\"line-height:200%;color:#333333;font-size:15px;\">عزيزنا العميل "
 "المحترم,</p><p>نرجو منك مساعدتنا في التحقق من هويتك من خلال إدخال رمز التحقق "
-"التالي في نموذج وكيل سحب الدفعة:<p><span style=\"background: #f2f2f2; "
+"التالي في نموذج وكيل سحب الدفعة:</p><p><span style=\"background: #f2f2f2; "
 "padding: 10px;\">%1</span></p></p>"
 
 #. ($params->{code})
@@ -698,7 +698,7 @@ msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued C
 msgstr ""
 "<p style=\"line-height:200%;color:#333333;font-size:15px;\">عزيزنا العميل "
 "المحترم,</p><p>نرجو منك مساعدتنا في التحقق من هويتك من خلال إدخال رمز التحقق "
-"التالي في نموذج سحب الدفع:<p><span style=\"background: #f2f2f2; padding: "
+"التالي في نموذج سحب الدفع:</p><p><span style=\"background: #f2f2f2; padding: "
 "10px;\">%1</span></p></p>"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/affiliates/faq.html.tt:73
