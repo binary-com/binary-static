@@ -32,6 +32,7 @@ var FinancialAssessmentws = (function(){
     };
 
     var submitForm = function(){
+        $('#submit').attr('disabled', 'disabled');
         if(!validateForm()){
             return;
         }
