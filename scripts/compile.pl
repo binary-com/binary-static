@@ -288,9 +288,6 @@ sub haml_handle {
             return $x;
         });
 
-    # FIXME
-    $haml->add_helper(google_tag_tracking_code => sub { });
-
     $stash{javascript} = js_config();
     $stash{css_files}  = [css_files()];
     $stash{menu}       = menu();
