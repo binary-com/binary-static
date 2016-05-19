@@ -20,25 +20,27 @@ sub url_for {
     my $LANG = lc $self->language;
     my $url = $args[0] || '';
 
-    # quick fix
-    $url = '/' . $url if grep { $url eq $_ } @HTML_URLS;
+    # alias
+    $url = '/home' if $url eq '' or $url eq '/';
 
-    if ($url =~ m{^/?(images|css|scripts)/}) {
+    %HTML_URLS = map { '/' . $_ => 1 } @HTML_URLS unless keys %HTML_URLS;
+    my $root_url = root_url();
+    $root_url =~ s{/$}{};
+
+    if ($url =~ m{^/?(images|css|scripts|download)/}) {
         $url =~ s/^\///;
         return Mojo::URL->new(root_url() . $url);
     }
 
-    %HTML_URLS = map { '/' . $_ => 1 } @HTML_URLS unless keys %HTML_URLS;
-    if ($HTML_URLS{$url}) {
-        $url =~ s/^\///;
-        return Mojo::URL->new(root_url() . "$LANG/$url.html");
+    my $uri  = Mojo::URL->new($url);
+    my $path = $uri->path;
+    $path = '/' . $path if grep { $path eq $_ } @HTML_URLS;
+    if ($HTML_URLS{$path}) {
+        my $x = $uri->clone->path("$root_url/${LANG}$path.html");
+        # print "$url -> $path -> $x\n";
+        return $x;
     }
-    # /terms-and-conditions#privacy-tab
-    my ($upre, $upost) = ($url =~ /^(.*?)\#(.*?)$/);
-    if ($upost and $HTML_URLS{$upre}) {
-        $upre =~ s/^\///;
-        return Mojo::URL->new(root_url() . "$LANG/$upre.html#$upost");
-    }
+
     # for link alternate
     my $query = $args[1] || {};
     if ($query->{l} and $query->{l} ne $LANG) {
@@ -50,7 +52,8 @@ sub url_for {
         }
     }
 
-    my $uri = Mojo::URL->new($url);
+    warn "XX $url -> $path\n";
+
     $uri->query($query);
     return $uri;
 }
