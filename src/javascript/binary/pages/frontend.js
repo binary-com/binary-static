@@ -554,10 +554,6 @@ function change_blog_link(lang) {
   }
 }
 
-function isNotBackoffice() {
-  return !/backoffice/.test(window.location.pathname);
-}
-
 pjax_config_page('/\?.+|/home', function() {
     return {
         onLoad: function() {
@@ -680,7 +676,7 @@ pjax_config_page('/terms-and-conditions', function() {
 pjax_config_page('\/login|\/loginid_switch', function() {
     return {
         onLoad: function() {
-            if(isNotBackoffice()) {
+            if(!$('body').hasClass('BlueTopBack')) {
                 window.location.href = page.url.url_for('oauth2/authorize', 'app_id=1');
             }
         }
