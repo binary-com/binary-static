@@ -10,8 +10,8 @@
 ### compile.pl usage (require `cd scripts`)
 
  * build HTMLs by `carton exec perl compile.pl`
- * re-build all HTML by `carton exec perl compile -f`
- * build specified url by `carton exec perl compile -p why-us`
+ * re-build all HTML by `carton exec perl compile.pl -f`
+ * build specified url by `carton exec perl compile.pl -p why-us`
 
 ### Local test
 
@@ -19,4 +19,4 @@ After HTML build, you can run `sudo grunt connect` then visits [https://localhos
 
 ### github.io deploy
 
- * `carton exec perl compile -d`
+ * `carton exec perl compile.pl -d`

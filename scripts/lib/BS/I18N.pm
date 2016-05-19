@@ -1,10 +1,10 @@
-package BOM::I18N;
+package BS::I18N;
 
 use feature 'state';
 use strict;
 use warnings;
 use Path::Tiny;
-use BOM qw/root_path all_languages/;
+use BS qw/root_path all_languages/;
 
 sub handle_for {
     my $language = shift;
@@ -21,7 +21,7 @@ sub handle_for {
 
 sub _class_for {
     state %classes;
-    my $rclass = "BOM::I18N::binary-com";
+    my $rclass = "BS::I18N::binary-com";
     $rclass =~ s/\./_/g;
     $rclass =~ s/-/_/g;
     return $rclass if $classes{$rclass};
@@ -31,7 +31,7 @@ sub _class_for {
     eval <<EOP;    ## no critic
 #line $where[0] "$where[1]"
 package $rclass;
-use parent 'BOM::I18N::Base';
+use parent 'BS::I18N::Base';
 sub import_lexicons {
     my \$class = shift;
     Locale::Maketext::Lexicon->import(\@_);

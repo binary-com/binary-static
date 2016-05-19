@@ -20,6 +20,8 @@
     text-align:       center;
     background-color: #fff;
     border-radius:    .3em;
+    max-height:       80vh;
+    overflow:         auto;
 }
 #reality-check-content, #balances-content {
     padding:    0;
@@ -48,4 +50,10 @@
     @media screen and (max-width: 480px){
         width : 45% !important;
     }
+}
+
+@media screen and (max-width: 480px){
+  #risk_classification.lightbox > div > div {
+    width: 95vw;
+  }
 }

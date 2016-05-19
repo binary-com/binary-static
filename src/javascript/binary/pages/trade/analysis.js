@@ -140,7 +140,9 @@ var TradingAnalysis = (function() {
                     })
                     .done(function(data) {
                         contentId.innerHTML = data;
-                        if (currentTab == 'tab_last_digit') {
+                        if(currentTab === 'tab_explanation') {
+                            showExplanation(currentLink.href);
+                        } else if (currentTab == 'tab_last_digit') {
                             trading_digit_info = new BetAnalysis.DigitInfo();
                             trading_digit_info.on_latest();
                             trading_digit_info.show_chart(sessionStorage.getItem('underlying'));
@@ -191,6 +193,73 @@ var TradingAnalysis = (function() {
         }
 
         return selectedTab;
+    };
+
+    /*
+     * handle the display of proper explanation based on parameters
+     */
+    var showExplanation = function(href) {
+        var options = new URL(href).params_hash();
+        var form_name    = options.form_name || 'risefall',
+            show_image   = options.show_image   ? options.show_image   > 0 : true,
+            show_winning = options.show_winning ? options.show_winning > 0 : true,
+            show_explain = true,
+            hidden_class = 'invisible',
+            $Container   = $('#tab_explanation-content');
+
+        if(show_winning) {
+            $Container.find('#explanation_winning, #winning_' + form_name).removeClass(hidden_class);
+        }
+
+        if(show_explain) {
+            $Container.find('#explanation_explain, #explain_' + form_name).removeClass(hidden_class);
+        }
+
+        var images = {
+            risefall : {
+                image1: 'rise-fall-1.svg',
+                image2: 'rise-fall-2.svg',
+            },
+            higherlower : {
+                image1: 'higher-lower-1.svg',
+                image2: 'higher-lower-2.svg',
+            },
+            touchnotouch : {
+                image1: 'touch-notouch-1.svg',
+                image2: 'touch-notouch-2.svg',
+            },
+            endsinout : {
+                image1: 'in-out-1.svg',
+                image2: 'in-out-2.svg',
+            },
+            staysinout : {
+                image1: 'in-out-3.svg',
+                image2: 'in-out-4.svg',
+            },
+            updown : {
+                image1: 'up-down-1.svg',
+                image2: 'up-down-2.svg',
+            },
+            spreads : {
+                image1: 'spreads-1.svg',
+                image2: 'spreads-2.svg',
+            },
+            evenodd : {
+                image1: 'evenodd-1.svg',
+                image2: 'evenodd-2.svg',
+            },
+            overunder : {
+                image1: 'overunder-1.svg',
+                image2: 'overunder-2.svg',
+            },
+        };
+
+        if(show_image && images.hasOwnProperty(form_name)) {
+            var image_path = page.url.url_for_static('images/pages/trade-explanation/');
+            $Container.find('#explanation_image_1').attr('src', image_path + images[form_name].image1);
+            $Container.find('#explanation_image_2').attr('src', image_path + images[form_name].image2);
+            $Container.find('#explanation_image').removeClass(hidden_class);
+        }
     };
 
     return {

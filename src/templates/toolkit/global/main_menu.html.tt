@@ -2,7 +2,7 @@
     <div class="tab-menu-wrap grd-container grd-hide-mobile grd-hide-phablet">
         <div class='grd-grid-12'>
             <ul class="items">
-            [%= FOREACH item IN menu =%]
+            [%= FOREACH item IN menu.main_menu=%]
                 <li id="[%= item.id =%]" class="item [%= item.class =%]">
                     <a class="link[% IF item.link_class %] [% item.link_class %][% END %]" target="[% IF item.target %][% item.target %][% END %]" href="[%= item.url =%]">[%= item.text =%]</a>
                     [% IF item.sub_items %]

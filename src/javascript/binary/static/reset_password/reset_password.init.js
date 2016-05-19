@@ -117,9 +117,15 @@ var ResetPassword = (function () {
         dobmm = undefined;
         dobyy = undefined;
 
-        $('#dobdd').val('');
-        $('#dobmm').val('');
-        $('#dobyy').val('');
+        if (page.language().toLowerCase() === 'ja') {
+          $("#dobyy").val($("#dobyy option:first").val());
+          $("#dobmm").val($("#dobmm option:first").val());
+          $("#dobdd").val($("#dobdd option:first").val());
+        } else {
+          $('#dobdd').val('');
+          $('#dobmm').val('');
+          $('#dobyy').val('');
+        }
 
         if (isChecked) {
             $('#dob-field').removeClass(hiddenClass);
@@ -143,6 +149,10 @@ var ResetPassword = (function () {
     function init() {
         $('#reset_passwordws').removeClass('invisible');
         Content.populate();
+        if (page.language().toLowerCase() === 'ja') {
+          $('#dobmm').insertAfter('#dobyy');
+          $('#dobdd').insertAfter('#dobmm');
+        }
         generateBirthDate();
         var $pmContainer = $('#password-meter-container');
 

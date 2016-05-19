@@ -1,0 +1,20 @@
+body .buorg {
+    background-color: #fef1cf;
+    font-family: Roboto,Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    text-align: center;
+    border-bottom: none;
+}
+body .buorg div {
+    padding: 10px 36px 10px 40px;
+}
+body .buorg a, body .buorg a:visited {
+    color: #2a3052;
+    text-decoration: none;
+}
+body .buorg a:hover {
+    text-decoration: underline;
+}
+body #buorgclose {
+  top: 7px;
+}

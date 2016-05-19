@@ -1,7 +1,7 @@
 .tab-menu-wrap.grd-container.grd-hide-mobile.grd-hide-phablet
   .grd-grid-12
     %ul{:class=>'items'}
-      - foreach my $item (@$menu) {
+      - foreach my $item (@{ menu()->main_menu }) {
       - my ($id, $url, $text) = @{$item}{'id', 'url', 'text'};
       - my $class = $item->{'class'} ? $item->{'class'} . " item" : "item";
       - my $link_class = $item->{'link_class'} ? $item->{'link_class'} . " link" : "link";

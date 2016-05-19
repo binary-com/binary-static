@@ -1,4 +1,4 @@
-package BOM::I18N::Base;
+package BS::I18N::Base;
 
 use strict;
 use warnings;
@@ -7,12 +7,12 @@ use Locale::Maketext::Lexicon;
 
 =head1 NAME
 
-BOM::I18N::Base
+BS::I18N::Base
 
 =head1 SYNOPSIS
 
-    use BOM::I18N::Base;
-    my $lh = BOM::I18N::Base->get_handle('en');
+    use BS::I18N::Base;
+    my $lh = BS::I18N::Base->get_handle('en');
     $lh->maketext("Hello");
 
 =head1 DESCRIPTION

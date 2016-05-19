@@ -23,8 +23,10 @@ var PortfolioWS =  (function() {
     **/
     var updateBalance = function(data) {
         $("span[data-id='balance']").text(data.balance.currency + ' ' + addComma(parseFloat(data.balance.balance)));
-        if(parseFloat(data.balance.balance, 10) > 0) {
-            $("#if-balance-zero").remove();
+        if(parseFloat(data.balance.balance, 10) > 0 || page.client.is_virtual()) {
+            $('#if-balance-zero').addClass('dynamic');
+        } else {
+            $('#if-balance-zero').removeClass('dynamic');
         }
     };
 

@@ -11,6 +11,10 @@ dev:
   - 'default'
   - 'connect'
 
+deploy:
+  - 'default'
+  - 'gh-pages'
+
 custom:
   - 'default'
   - 'connect'

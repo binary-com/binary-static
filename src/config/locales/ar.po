@@ -2,14 +2,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-11 23:16+0000\n"
+"PO-Revision-Date: 2016-05-18 04:07+0000\n"
 "Last-Translator: Ahmed Kotb <ahmedmohamedkotp@gmail.com>\n"
-"Language-Team: Arabic <https://hosted.weblate.org/projects/binary/static/ar/>\n"
+"Language-Team: Arabic <https://hosted.weblate.org/projects/binary/static/ar/>"
+"\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 "X-Generator: Weblate 2.7-dev\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
@@ -33,22 +35,22 @@ msgstr "يقول <strong> فينود جوراسيا مدير تسويق موقع
 msgid "\"Third Party Provider(s)\" means the third party (non-affiliated) entity that makes available features and functions through use of the Binary.com API."
 msgstr "\"مزود (مزودي) الطرف الثالث\" تعني الكيان الثالث (غير تابع) الذي يخلق مميزات ووظائف متاحة من خلال استخدام واجهة برمجة تطبيق Binary.com."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:710
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:711
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:394
 msgid "$100,000 - $250,000"
 msgstr "$100,000 - $250,000"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:707
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:708
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:380
 msgid "$100,000 - $500,000"
 msgstr "$100,000 - $500,000"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:706
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:707
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:379
 msgid "$25,000 - $100,000"
 msgstr "$25,000 - $100,000"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:711
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:712
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:395
 msgid "$250,000 - $1,000,000"
 msgstr "$250,000 - $1,000,000"
@@ -77,7 +79,7 @@ msgstr "%1 أحكام وشروط برنامج الإنتساب الخاص بـ"
 msgid "%1 New Password Request"
 msgstr "%1 طلب كلمة مرور جديدة"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:728
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:730
 msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
 msgstr "%1 يرجى النقر على الرابط أدناه لإعادة تشغيل عملية استرداد كلمة المرور. إذا كنت تتطلب مزيدا من المساعدة، الرجاء الاتصال \"دعم العملاء\"."
 
@@ -134,7 +136,7 @@ msgstr "%1 بها عدة فرص استثنائية للعمل بخدمة الع�
 msgid "%1 has thousands of clients taking a variety of positions on the financial markets at any one time, and earns a small margin on these trades."
 msgstr "لدى 1% آلاف العملاء الذين يشترون العديد من العقود فى الأسواق المالية فى أى وقت. وتربح هامش ربح قليل من هذه المعاملات."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:558
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:559
 msgid "%1 has updated its %2. By clicking OK, you confirm that you have read and accepted the updated %2."
 msgstr "%1 قامت بتحديث 2% الخاصة بها. بالنقر فوق موافق، فأنت تؤكد أنك قرأت ووافقت على 2% المحدثة."
 
@@ -151,7 +153,10 @@ msgstr "%1 تتطلع دائما إلى إضافة المحترفين ذوي ا�
 #. (request.website.display_name, "//developers.binary.com")
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:75
 msgid "%1 is an active proponent of the open-source movement. Suggest enhancements, and take part in the development of our powerful applications. You can find more information on our <a href=\"%2\" target=\"_blank\">Developers Portal</a>."
-msgstr "1% مؤيدين نشطين من الحركة مفتوحة المصدر. يقترحون التحسينات, ويشاركون في تطوير تطبيقاتنا القوية. يمكنك العثور على مزيد من المعلومات على<a href=\"%2\" target=\"_blank\"> بوابة المطورين</a>."
+msgstr ""
+"%1 مؤيدين نشطين من الحركة مفتوحة المصدر. يقترحون التحسينات, ويشاركون في "
+"تطوير تطبيقاتنا القوية. يمكنك العثور على مزيد من المعلومات على<a href=\"%2\" "
+"target=\"_blank\"> بوابة المطورين</a>."
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/beginners_faq.html.haml:1
@@ -240,10 +245,9 @@ msgstr "يتم قياس أسعار %1 مقارنة بأسعار سوق الخي�
 
 #. (request.website.display_name)
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:3
-#, fuzzy
 #| msgid "%1 provides a variety of charts to help you determine what markets to trade on. Try them out."
 msgid "%1 provides a variety of applications to help you trade efficiently."
-msgstr "تقدم 1% مجموعة متنوعة من الرسوم البيانية التى تساعدك على تحديد الأسواق التى يمكن أن تتداول فيها. جربهم."
+msgstr "تقدم 1% مجموعة متنوعة من التطبيقات التي تساعدك على التداول بكفاءة."
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/partners.html.haml:1
@@ -324,12 +328,18 @@ msgstr "% 1 فشل محاولة فتح قسم الصراف"
 #. (stash('broker_name')
 #: /home/git/translations/binary-static-www2/src/templates/haml/home/index.html.haml:1
 msgid "%1: Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
-msgstr "1%: هي منصة تداول الخيارات الثنائية فى العملات والمؤشرات والسلع والمؤشرات الذكية"
+msgstr ""
+"%1: هي منصة تداول الخيارات الثنائية فى العملات والمؤشرات والسلع والمؤشرات "
+"الذكية"
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "%1’s IT Operations Group is responsible for the design, development and operation of the company’s high-traffic networks. Its responsibilities include hardware and software deployment, up-time and reliability testing, incident response reporting, network security, intrusion detection, and load balancing."
-msgstr "مجموعة عمليات تكنولوجيا المعلومات لـ %1 مسؤولة عن تصميم وتطوير وتشغيل شبكات المرور العالية للشركة. وتشمل مسؤولياتها نشر الأجهزة والبرمجيات واختبار التحديث والموثوقية وكذلك الإبلاغ عن الاستجابة في حالة الحوادث، وأمان شبكة الاتصال، وكشف التسلل وموازنة التحميل."
+msgstr ""
+"مجموعة عمليات تكنولوجيا المعلومات لـ 1% مسؤولة عن تصميم وتطوير وتشغيل شبكات "
+"المرور العالية للشركة. وتشمل مسؤولياتها نشر الأجهزة والبرمجيات واختبار "
+"التحديث والموثوقية وكذلك الإبلاغ عن الاستجابة في حالة الحوادث، وأمان شبكة "
+"الاتصال، وكشف التسلل وموازنة التحميل."
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
@@ -408,7 +418,7 @@ msgstr "- صورة ضوئية من فاتورة خدمات أو كشف حساب 
 msgid "- A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth."
 msgstr "- نسخة من جواز سفرك، أو نسخة من رخصة قيادة (مؤقته أو كاملة) أو بطاقة تحقيق شخصية، تحمل اسمك وتاريخ ميلادك."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:686
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:687
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:163
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:191
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:219
@@ -418,7 +428,7 @@ msgstr "- نسخة من جواز سفرك، أو نسخة من رخصة قياد
 msgid "0-1 year"
 msgstr "0 - 1 سنة"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:689
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:690
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:177
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:205
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:233
@@ -432,7 +442,7 @@ msgstr "0 - 5 معاملات خلال الـ 12 شهرا الماضية"
 msgid "1 million transactions/day"
 msgstr "1 مليون صفقة / يوم"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:687
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:688
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:164
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:192
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:220
@@ -565,7 +575,7 @@ msgstr "ثلاث دقائق"
 msgid "4. Choose your Payout"
 msgstr "4. اخنر العائد"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:691
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:692
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:179
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:207
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:235
@@ -602,7 +612,7 @@ msgstr "5 أيام"
 msgid "6 months to 1 year"
 msgstr "6 أشهر إلى سنة واحدة"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:690
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:691
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:178
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:206
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:234
@@ -657,22 +667,39 @@ msgstr "<option value=\"\"></option><option value=\"01\">يناير</option><opt
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:106
 msgid "<p style=\"font-weight: bold;\">Thanks for signing up for a virtual account!</p><p>Enter the following verification token into the form to create an account: <p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p><p>Enjoy trading with us on Binary.com.</p>"
-msgstr "<p style=\"font-weight: bold;\">شكراً لتسجيلكم من أجل الحصول على حساب إفتراضي!</p><p>أدخل رمز التحقق التالي في النموذج لإنشاء حساب<p><p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p><p>استمتع بالتداول معنا في Binary.com.</p>"
+msgstr ""
+"<p style=\"font-weight: bold;\">شكراً لتسجيلكم من أجل الحصول على حساب "
+"إفتراضي!</p><p>أدخل رمز التحقق التالي في النموذج لإنشاء حساب:</p><p><span "
+"style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p><p>استمتع "
+"بالتداول معنا في Binary.com.</p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:93
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Before we can help you change your password, please help us to verify your identity by entering the following verification token into the password reset form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">عميلنا العزيز المحترم</p>قبل أن نستطيع مساعدتك في تغيير كلمة المرور الخاصة بك, نرجو منك مساعدتنا في التحقق من هويتك من خلال إدخال رمز التحقق التالي في نموذج أعادة تعيين كلمة المرور<p><span style=\"background: #f2f2f2; padding: 10px;\">1%</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">عميلنا العزيز "
+"المحترم,</p><p>قبل أن نستطيع مساعدتك في تغيير كلمة المرور الخاصة بك, نرجو "
+"منك مساعدتنا في التحقق من هويتك من خلال إدخال رمز التحقق التالي في نموذج "
+"أعادة تعيين كلمة المرور:</p><p><span style=\"background: #f2f2f2; padding: "
+"10px;\">%1</span></p></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:133
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment agent withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">عزيزنا العميل المحترم,</p><p>نرجو منك مساعدتنا في التحقق من هويتك من خلال إدخال رمز التحقق التالي في نموذج وكيل سحب الدفعة<p><span style=\"background: #f2f2f2; padding: 10px;\">1%</span></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">عزيزنا العميل "
+"المحترم,</p><p>نرجو منك مساعدتنا في التحقق من هويتك من خلال إدخال رمز التحقق "
+"التالي في نموذج وكيل سحب الدفعة:</p><p><span style=\"background: #f2f2f2; "
+"padding: 10px;\">%1</span></p></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:145
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">عزيزنا العميل المحترم,</p>نرجو منك مساعدتنا في التحقق من هويتك من خلال إدخال رمز التحقق التالي في نموذج سحب الدفع:<p><span style=\"background: #f2f2f2; padding: 10px;\">1%</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">عزيزنا العميل "
+"المحترم,</p><p>نرجو منك مساعدتنا في التحقق من هويتك من خلال إدخال رمز التحقق "
+"التالي في نموذج سحب الدفع:</p><p><span style=\"background: #f2f2f2; padding: "
+"10px;\">%1</span></p></p>"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/affiliates/faq.html.tt:73
 msgid ""
@@ -1304,11 +1331,11 @@ msgstr "رصيد الحساب: %1 %2"
 msgid "Account balance: "
 msgstr "رصيد الحساب: "
 
-#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Authorize.pm:29
+#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Authorize.pm:30
 msgid "Account is disabled."
 msgstr "الحساب معطل"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:621
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:622
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Accounting"
 msgstr "المحاسبة"
@@ -1317,7 +1344,7 @@ msgstr "المحاسبة"
 msgid "Accounting & Payments"
 msgstr "المحاسبة والمدفوعات"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:622
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:623
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Accounts And Payments Executive"
 msgstr "الحسابات والمدفوعات التنفيذية"
@@ -1388,12 +1415,12 @@ msgstr "المشرف"
 msgid "Administering the company’s semi-annual performance appraisal process"
 msgstr "إدارة عملية تقييم أداء نصف سنوية بالشركة"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:630
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:631
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Administrative Executive"
 msgstr "التنفيذي الإداري"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:629
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:630
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Administrator"
 msgstr "المسؤول"
@@ -1480,7 +1507,7 @@ msgstr "بدلا من ذلك، العملاء الذين تسجلوا مع كل 
 msgid "Although the Company has and retains all rights to refuse or to close a Client’s account, the Company does warrant that all contractual obligations already made, shall be honoured."
 msgstr "رغم أن الشركة تحتفظ بالحق في رفض أو حتى اغلاق حساب العميل، لا تضمن الشركة أن كافة الالتزامات التعاقدية التي سبق الاتفاق عليها، سيتم الالتزام بها."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:563
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:564
 #: /home/git/translations/binary-static-www2/src/templates/haml/cashier/account_transferws.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_transferws.html.tt:16
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_transferws.html.tt:62
@@ -1520,7 +1547,7 @@ msgstr "درجة بكالوريوس أو دبلومة تخرج/شهادة علي
 msgid "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target."
 msgstr "التداول الذي ينتهي بين حاجزين يعطي مردودات إذا كان سعر خروج السوق أعلى بالضبط من السعر المنخفض المستهدف ومنخفض بالضبط عن السعر المرتفع المستهدف. الثنائي الذي ينتهي خارج الحاجز يعطي مردودات إذا كان سعر الخروج أعلى من السعر المرتفع المستهدف أو منخفض أكثر من السعر المنخفض المستهدف."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:599
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:600
 msgid "An additional password can be used to restrict access to the cashier."
 msgstr "يمكن استخدام كلمة مرور إضافية لحظر الوصول لصفحة الصراف."
 
@@ -1601,7 +1628,7 @@ msgstr "جائزة كبرى أخرى. هذه المرة تم ترشيحنا من
 msgid "Answer to secret question"
 msgstr "إجابة السؤال السري"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:625
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:626
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Anti-Fraud Officer"
 msgstr "موظف لمكافحة الغش"
@@ -1646,7 +1673,7 @@ msgstr "أي شخص فوق سن 18عاما [من الذين قرأوا وواف�
 msgid "Anyone who has potential to grow or increase traffic to %1"
 msgstr "أي شخص يمكنه زيادة حركة المرور إلى موقع %1"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:718
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:720
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:175
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:284
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:2
@@ -1657,7 +1684,7 @@ msgstr "تطبيقات"
 msgid "Apply a meticulous eye for detail in proofreading the content that appears on the company’s website, blog, social media outlets, and marketing materials."
 msgstr "تطبيق على عين دقيقة للتفاصيل في تصحيح التجارب المطبعية المحتوى الذي يظهر على موقع الشركة، والمدونات، وسائل الإعلام الاجتماعية ، ومواد التسويق."
 
-#. (website, apply_payment_agent_url)
+#. (website, request.url_for("/payment-agent"))
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/payment_agent_listws.html.tt:67
 msgid "Apply to become a %1 <a class=\"pjaxload\" href=\"%2\">payment agent</a>."
 msgstr "تقدم بطلب لتصبح %1 <a class=\"pjaxload\" href=\"%2\">وكيل دفع</a>."
@@ -1795,7 +1822,7 @@ msgstr "الأصول"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:154
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:432
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2651
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2654
 #: /home/git/translations/binary-static-www2/src/templates/haml/layouts/default/footer.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/haml/resources/index.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/global/footer.html.tt:81
@@ -1924,7 +1951,7 @@ msgstr "بيال (BIEL) هي شركة تأسست في مالطا تحت رقم �
 msgid "BOM Charts Workspace"
 msgstr "مساحة عمل الرسوم البيانية الخاصة ب BOM"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:566
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:567
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/benefits_of_trading_binaries.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/how_to_trade_binaries.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_transferws.html.tt:22
@@ -2053,6 +2080,7 @@ msgid "BetOnMarkets.com reaches $1 billion turnover since starting in 1999"
 msgstr "دورة مبيعات BetOnMarkets.com تصل الى بليون دولار أمريكي منذ انطلاقها عام 1999"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:116
+#: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/us_patents.html.tt:5
 msgid "Betting system and method"
 msgstr "نظام وطريقة المراهنة"
 
@@ -2112,10 +2140,9 @@ msgid "Binary Ltd, with registered office address situated at <span itemprop='lo
 msgstr "بيناري المحدودة، التي يقع مكتبها المسجل فى <span itemprop='location'>47 Esplanade, St. Helier, Jersey, JE 0BD Channel Islands</span>، هي الشركة القابضة لمجموعة بيناري."
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:58
-#, fuzzy
 #| msgid "Binary option"
 msgid "Binary Next Gen"
-msgstr "الخيار الثنائى"
+msgstr "الجيل القادم من الخيارات الثنائية"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/binary_options_basics.html.haml:1
 msgid "Binary Options Basics"
@@ -2146,12 +2173,12 @@ msgstr "الخيارات الثنائية سهلة الفهم. تمت تسميت
 msgid "Binary options basics"
 msgstr "قواعد الخيارات الثنائية"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:677
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:678
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:270
 msgid "Binary options or other financial derivatives trading experience"
 msgstr "الخيارات الثنائية أو غيرها من خبرات تداول المشتقات المالية"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:678
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:679
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:284
 msgid "Binary options or other financial derivatives trading frequency"
 msgstr "وتيرة تداول الخيارات الثنائية أو المشتقات المالية الأخرى"
@@ -2250,10 +2277,11 @@ msgid "Binary.com supports the <a target=\"_blank\" href=\"http://www.responsibl
 msgstr "Binary.com تدعم <a target=\"_blank\" href=\"http://www.responsiblegamblingtrust.org.uk/\">Responsible Gambling Trust</a> (RGT) للعب المسئول وهي مؤسسة خيرية رائدة في بريطانيا ملتزمة بالحد من الضرر الناجم عن المراهنة. تمول RGT خدمات تعليمية والوقاية والعلاج ولجان بحث لمساعدة الناس على فهم المزيد عن الضرر الناجم عن المراهنة. كما أنها توفر خط مساعدة وطني للمراهنة لإسداء المشورة السرية والدعم العاطفي لأولئك الذين يلتمسون المساعدة."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/group_history.html.haml:1
-#, fuzzy
 #| msgid "Binary.com took home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
 msgid "Binary.com takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
-msgstr "Binary.com أخذت الجائزة الأولى الرئيسية في الفئة \"المالية عامل الرهان\" في حفل توزيع جوائز مشغل EGR 2015 المرموقة، واستضافت في لندن."
+msgstr ""
+"حازت Binary.com على الجائزة الرئيسية الأولى في فئة مضارب الرهان المالي في "
+"حفل توزيع جوائز التميز EGR Operator Awards 2015 المرموق, والمستضاف في لندن."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/open_source_projects.html.haml:1
 msgid "Binary.com’s CPAN contributions"
@@ -2327,7 +2355,7 @@ msgstr "العلامة التجارية لأول سيارة"
 msgid "Browse"
 msgstr "تصفح"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:582
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:583
 msgid "Browser"
 msgstr "المتصفح"
 
@@ -2731,7 +2759,7 @@ msgstr "إغلاق موقع القيمة"
 msgid "Close of trading day."
 msgstr "ختام تداولات اليوم."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:640
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:641
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/portfolio/analyse_spread_contract.html.tt:12
 msgid "Closed"
 msgstr "مغلق"
@@ -2775,10 +2803,12 @@ msgid "Commission on withdrawals"
 msgstr "العمولات عن السحب"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:81
-#, fuzzy
 #| msgid "Commissionable earnings will be earned for the life of the client, on all transactions the client undertakes at the merchant, for as long as you, the affiliate, remain a member of this affiliate program. The company reserves the right to cancel the commissions that are not reclaimed after 2 years."
 msgid "Commissions will be earned throughout the life of the client, on all transactions the client undertakes at the merchant, for as long as you, the Affiliate, remain a member of this affiliate program. The company reserves the right to cancel the commissions that are not reclaimed after 2 years."
-msgstr "يتم تحصيل أرباح العمولة طوال فترة حياة العميل، عن كل المعاملات التجارية التى يقوم بها العميل فى السوق طوال مدة انتسابك، لبرنامج الإنتساب هذا. تحتفظ الشركة بحق إلغاء العمولات التى لا يتم المطالبة بها بعد عامين."
+msgstr ""
+"ستكون العمولات مستحقة للعميل طوال فترة حياته على جميع المعاملات التي يقوم "
+"بها العميل عند المتاجر, لطالما كنت تابعاً, وبقيت عضواً في برنمج التبعية هذا. "
+"الشركة تحتفظ بالحق في إنهاء العمولات التي لا يتم طلبها بعد سنتين."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/glossary.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/japanws.html.tt:271
@@ -2791,12 +2821,12 @@ msgstr "السلع"
 msgid "Commodities are resources that are grown or extracted from the ground, such as silver, gold and oil. On %1, they are priced in US dollars."
 msgstr "السلع هى موارد يتم استخراجها من الأرض مثل الذهب والفضة والبترول. يتم تسعيرهم بالدولار الأمريكي على %1."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:673
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:674
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:214
 msgid "Commodities trading experience"
 msgstr "خبرة تداول السلع"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:674
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:675
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:228
 msgid "Commodities trading frequency"
 msgstr "معدل تداول السلع"
@@ -2820,22 +2850,21 @@ msgstr "حق الشركة"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/layouts/default/footer.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/global/footer.html.tt:133
-#, fuzzy
 #| msgid "Compliance"
 msgid "Complaints"
-msgstr "الامتثال"
+msgstr "شكاوي"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/complaints_disputes.html.tt:2
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/tac.html.tt:19
 msgid "Complaints and Disputes"
 msgstr "الشكاوى والمنازعات"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:623
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:624
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Compliance"
 msgstr "الامتثال"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:624
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:625
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Compliance Executive"
 msgstr "موظف امتثال تنفيذي"
@@ -2845,16 +2874,20 @@ msgid "Compliance with and Amendments to These Terms"
 msgstr "الإمتثال والتعديلات على هذه الشروط"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:23
-#, fuzzy
 #| msgid "Should the Company receive a complaint which could have involved the Alternate Dispute Resolution entity, or the Company believes that you, the affiliate is in breach of any relevant advertising code of practice, then the Company has the right to terminate this Agreement."
 msgid "Comply with the applicable laws, rules, and regulations (including, but not limited to, advertising, data protection and privacy laws, rules, and regulations) of the jurisdiction(s) in which you operate or target your business."
-msgstr "يجب أن تحصل الشركة على الشكوى التي كان يمكن ارسالها لهيئة حل المنازعات البديلة، وإلا فإن الشركة ستعتبر أنك، المنتسب خالف رمز الإعلانات ذات الصلة من الناحية العملية، وعليه فإن للشركة الحق في إنهاء هذه الاتفاقية."
+msgstr ""
+"امتثل للقوانين المعمول بها والقواعد واللوائح (بما في ذلك, ولكن ليس على سبيل "
+"الحصر, الإعلانات, حماية البيانات, قوانين الخصوصية, القواعد, واللوائح) للسلطة "
+"القضائية التي تعمل أو تستهدفها في أعمالك."
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:124
+#: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/us_patents.html.tt:7
 msgid "Computer system and method for speculating on a financial market"
 msgstr "نظام وطريقة حاسوبية للمضاربة على سوق مالية"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:120
+#: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/us_patents.html.tt:6
 msgid "Computer trading system for offering custom financial market speculations"
 msgstr "نظام تداول حاسوبي لتقديم المضاربات في الأسواق المالية بشكل مخصص"
 
@@ -2866,7 +2899,7 @@ msgstr "إدارة الكوارث والتخطيط للإصلاح والتنفي
 msgid "Confidentiality"
 msgstr "السرية"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:567
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:568
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_transferws.html.tt:25
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_withdrawws.html.tt:25
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/container/confirm_box_popup.html.tt:1
@@ -2874,7 +2907,7 @@ msgstr "السرية"
 msgid "Confirm"
 msgstr "تأكيد"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:734
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:736
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "Confirm New Password"
 msgstr "تأكيد كلمة المرور الجديدة"
@@ -2891,7 +2924,7 @@ msgstr "سياسة تضارب المصالح"
 msgid "Connection failure. Please try again later."
 msgstr "خطأ فى الاتصال. الرجاء المحاولة لاحقاً."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:692
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:693
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:331
 msgid "Construction"
 msgstr "الإنشاءات"
@@ -2948,15 +2981,15 @@ msgstr "تأكيد العقد"
 msgid "Contract Details"
 msgstr "تفاصيل العقد"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:636
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:637
 msgid "Contract Expiry"
 msgstr "انتهاء العقد"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:663
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:664
 msgid "Contract ID"
 msgstr "معرف العقد"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:635
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:636
 msgid "Contract Information"
 msgstr "معلومات العقد"
 
@@ -2968,7 +3001,7 @@ msgstr "عوائد العقد"
 msgid "Contract Risks"
 msgstr "مخاطر العقد"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:637
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:638
 msgid "Contract Sold"
 msgstr "بيع العقد"
 
@@ -2984,11 +3017,11 @@ msgstr "لا يمكن بيع هذا العقد فى الوقت الراهن."
 msgid "Contract expired"
 msgstr "انتهت صلاحية العقد"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2350
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2353
 msgid "Contract has already expired."
 msgstr "انتهت صلاحية هذا العقد."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:648
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:649
 msgid "Contract is not started yet"
 msgstr "لم يتم بدء العقد حتى الآن"
 
@@ -2996,7 +3029,7 @@ msgstr "لم يتم بدء العقد حتى الآن"
 msgid "Contract market price is too close to final payout."
 msgstr "سعر سوق العقد قريب جداً من العائد النهائي."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2407
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2410
 msgid "Contract must expire during trading hours."
 msgstr "ينبغى أن ينتهي العقد أثناء ساعات التداول."
 
@@ -3014,7 +3047,7 @@ msgstr "فترة العقد"
 msgid "Contract started"
 msgstr "بدأ العقد"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:662
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:663
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "سيتم بيع العقد بسعر السوق السائد عندما تتلقى خوادمنا الطلب. قد يختلف هذا السعر عن السعر المشار إليه."
 
@@ -3035,12 +3068,12 @@ msgid "Contracts may not expire on a weekend; therefore the expiry date of a con
 msgstr "لا تنتهي العقود فى عطلة نهاية الأسبوع، وبالتالي يتم تمديد العقد ليوم الإثنين إذا وقع وقت انتهاء العقد أحد يومي السبت أو الأحد."
 
 #. ($self->underlying->translated_display_name)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2365
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2368
 msgid "Contracts on %1 with duration more than 24 hours must expire at the end of a trading day."
 msgstr "العقود على %1 مع مدة أكثر من 24 ساعة يجب أن تنتهي بنهاية يوم التداول."
 
 #. ($underlying->translated_display_name()
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2416
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2419
 msgid "Contracts on %1 with durations under 24 hours must expire on the same trading day."
 msgstr "العقود على %1 بفترة زمنية أقل من 24 ساعة يجب أن تنتهي فى نفس يوم التداول."
 
@@ -3066,16 +3099,18 @@ msgid "Contribute to %1's open-source projects."
 msgstr "ساهم في مشاريع %1 مفتوحة المصدر."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
-#, fuzzy
 #| msgid "Contribute your creativity to further the company’s dynamic branding efforts by implementing a broad array of promotional campaigns."
 msgid "Contribute your creativity and marketing capabilities to further the company’s branding efforts, implementing a broad array of promotional campaigns."
-msgstr "شارك بإبداعك وابذل مزيد من الجهد لعلامة الشركة التجارية الحيوية بتنفيذ مجموعة واسعة من الحملات الترويجية."
+msgstr ""
+"ساهم بإبداعك وقدراتك التسويقية لتعزيز جهود العلامة التجارية للشركة, لتنفيذ "
+"مجموعة واسعة من الحملات الترويجية."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
-#, fuzzy
 #| msgid "Contribute your ideas, energy and creativity to further the company’s dynamic branding efforts"
 msgid "Contribute your ideas, energy, and creativity to further the company’s dynamic branding efforts"
-msgstr "ساهم بالأفكار والطاقة والإبداع وابذل مزيد من الجهود للعلامة التجارية الحيوية للشركة"
+msgstr ""
+"ساهم بأفكارك, وطاقاتك, وإبداعاتك لتعزيز الجهود الديناميكية للعلامة التجارية "
+"للشركة"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/api_tac_tab.html.tt:128
 msgid "Contributions to the Binary.com API"
@@ -3102,7 +3137,7 @@ msgstr "تنسيق أنشطة تطوير الأعمال وتوليد شراكا�
 msgid "Copyright"
 msgstr "حق النشر"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:618
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:619
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Copywriter"
 msgstr "المؤلف"
@@ -3115,7 +3150,7 @@ msgstr "إجراءات الشركات"
 msgid "Costs and Charges"
 msgstr "التكاليف والرسوم"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:615
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:616
 msgid "Country Manager"
 msgstr "مدير البلد"
 
@@ -3154,26 +3189,31 @@ msgid "Create New Token"
 msgstr "إنشاء رمز جديد"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
-#, fuzzy
 #| msgid "Create clear, concise and engaging content for display on the company’s website"
 msgid "Create clear, concise and engaging content for display on the company’s website, blog, social media outlets, and marketing materials"
-msgstr "إنشاء محتوى واضح ومقتضب وجذاب للعرض على موقع الشركة"
+msgstr ""
+"إنشاء محتوى واضح وموجز وجذاب لعرضه على موقع الشركة على الإنترنت, المدونة, "
+"منصات التواصل الإجتماعية, والمواد التسويقية"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
-#, fuzzy
 #| msgid "Create clear, concise and engaging content that promotes the company’s product offerings in a variety formats to be displayed on our website."
 msgid "Create clear, concise, and engaging content that effectively promotes the company’s trading platform and product offerings in a variety of formats."
-msgstr "إنشاء محتوى واضح، موجز وجذاب والذي يروج لعروض الشركة ومنتجاتها في مجموعة متنوعة الأشكال ليتم عرضها على موقعنا على شبكة الإنترنت."
+msgstr ""
+"إنشاء محتوى واضح وموجز وجذاب للترويج بفاعلية لمنصة تداول الشركة وعروض "
+"المنتجات في مجموعة متنوعة من الأشكال."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "Create content to support our international marketing campaigns in a variety of different formats and languages"
 msgstr "إنشاء المحتوى لدعم حملاتنا التسويقية الدولية في مجموعة متنوعة من الأشكال واللغات المختلفة"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
-#, fuzzy
 #| msgid "%1 is looking to recruit several talented designers who are passionate about what they do best. As our design team is responsible for creating the graphics required to support our global marketing and advertising campaigns, the team's creative efforts span a number of channels, including online marketing, affiliate networks, print advertising, trade shows, special events, and promotional projects in a number of languages."
 msgid "Create the graphics required to support our global marketing and advertising campaigns. The team's creative efforts span a number of channels, including online marketing, affiliate networks, print advertising, tradeshows, special events, and promotional projects."
-msgstr "%1 تتطلع إلى توظيف العديد من المصممين الموهوبين المتحمسين لعملهم. فريق التصميم لدينا مسؤول عن إنشاء الرسومات المطلوبة لدعم خطط التسويق العالمية والحملات الإعلانية، الجهود الخلاقة للفريق تمتد عبر عدد من القنوات، بما في ذلك التسويق على الإنترنت، وشبكات الانتساب، والإعلانات المطبوعة، والمعارض التجارية، والأحداث الخاصة والمشاريع الترويجية بعدد من اللغات."
+msgstr ""
+"إنشاء الرسوم الجرافيكية المطلوبة لدعم حملاتنا التسويقية والإعلانية العالمية. "
+"تغطي جهود الفريق الإبداعية عدد من القنوات, بما في ذلك التسويق عبر الإنترنت, "
+"الشبكات التابعة, الإعلانات المطبوعة, المعارض التجارية, الأحداث الخاصة, "
+"والمشاريع الترويجية."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "Creating interfaces and tools to access market information, real-time and historical analysis of trading strategies"
@@ -3203,11 +3243,11 @@ msgstr "العملات"
 msgid "Currency"
 msgstr "عملة"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:638
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:639
 msgid "Current"
 msgstr "الحالية"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:645
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:646
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/portfolio/analyse_spread_contract.html.tt:31
 msgid "Current Level"
 msgstr "المستوى الحالي"
@@ -3220,7 +3260,7 @@ msgstr "السعر الحالى للسوق"
 msgid "Current Spot Time"
 msgstr "الوقت الحالى للسوق"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2289
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2292
 msgid "Current market price is 0."
 msgstr "السعر الحالي للسوق صفر."
 
@@ -3240,7 +3280,7 @@ msgstr "أموال العملاء"
 msgid "Customer Service Representatives"
 msgstr "ممثلي خدمة العملاء"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:555
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:556
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/careers.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Customer Support"
@@ -3304,11 +3344,11 @@ msgstr "تاريخ"
 msgid "Date (GMT)"
 msgstr "التاريخ (بتوقيت جرينتش)"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:581
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:582
 msgid "Date and Time"
 msgstr "التاريخ والوقت"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:735
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:737
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "Date of Birth"
 msgstr "تاريخ الميلاد"
@@ -3412,7 +3452,7 @@ msgstr ""
 "support@binary.com"
 
 #. ($client_name, $support_email)
-#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client/IDAuthentication.pm:198
+#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client/IDAuthentication.pm:172
 msgid ""
 "Dear %1,\n"
 "\n"
@@ -3496,7 +3536,6 @@ msgstr ""
 
 #. (token, link)
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/email/lost_password.html.tt:1
-#, fuzzy
 #| msgid ""
 #| "Dear Valued Customer,\n"
 #| "\n"
@@ -3512,11 +3551,15 @@ msgid ""
 "\n"
 "Password reset form: %2"
 msgstr ""
-"عزيزي العميل،\n"
+"عزيزي العميل المحترم،\n"
 "\n"
-"قبل أن نتمكن من مساعدتك في تغيير كلمة المرور الخاصة بك، يرجى مساعدتنا للتحقق من هويتك بالضغط على الرابط أدناه:\n"
+"قبل أن نتمكن من مساعدتك في تغيير كلمة المرور الخاصة بك، يرجى مساعدتنا في "
+"التحقق من هويتك عن طريق إدخال رمز التحقق التالي في نموذج إعادة تعيين كلمة "
+"المرور:\n"
 "\n"
-"%1"
+"الرمز: 1%\n"
+"\n"
+"نموذج إعادة تعيين كلمة المرور: 2%"
 
 #. (link)
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/email/verify_cashier.html.tt:1
@@ -3541,7 +3584,6 @@ msgstr ""
 
 #. (token)
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/email/resend_verification.html.tt:1
-#, fuzzy
 #| msgid ""
 #| "Dear Valued Customer,\n"
 #| "\n"
@@ -3557,11 +3599,11 @@ msgid ""
 "%1\n"
 "\n"
 msgstr ""
-"عميلنا العزيز،\n"
+"عزيزي العميل المحترم،\n"
 "\n"
-"من أجل التحقق، الرجاء الضغط على الرابط التالي:\n"
+"من أجل التحقق، الرجاء استخدام الرمز التالي:\n"
 "\n"
-"%1\n"
+"1%\n"
 "\n"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/about/index.html.haml:1
@@ -3634,7 +3676,7 @@ msgstr "يقوم خادمنا بتطبيق خوارزمية لتنقية الح�
 msgid "Depending on the quality of the feeds received from our feed providers, our servers might also apply a very short-term smoothing algorithm to the data feed. This smoothing algorithm removes a little of the \"random noise\" surrounding the data feed, and ensures that clients who buy path-dependent contracts (such as the one-touch or barrier-range contracts) will not have their contracts knocked-in or knocked-out by random short-term market noise that does not reflect the true market price."
 msgstr "عندما يتم إزالة الحركات المتناثرة، يتم تطبيق خوارزمية إزالة قصيرة المدى على خلاصة البيانات لإزالة هذة الحركات. تزيل خوارزمية الإزالة القليل من \"الضوضاء العشوائية\" التى تحيط بخلاصة البيانات وتضمن للعملاء اللذين يشترون عقود تعتمد على المسار (مثل عقود اللمسة الواحدة أو العقود التى تعتمد على الحواجز) أن  عقودهم لن تخسر بسبب ضوضاء سوق عشوائية قصيرة المدى لا تعكس سعر السوق الحقيقى."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:564
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:565
 #: /home/git/regentmarkets/bom-backoffice/f_manager_confodeposit.cgi:273
 #: /home/git/translations/binary-static-www2/src/templates/haml/cashier/index.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/payment_methods.html.tt:12
@@ -3642,7 +3684,7 @@ msgstr "عندما يتم إزالة الحركات المتناثرة، يتم 
 msgid "Deposit"
 msgstr "إيداع"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:552
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:553
 msgid "Deposit %1 %2 virtual money into your account %3"
 msgstr "إيداع ٪ 1 ٪ 2 الأموال الافتراضية إلى حسابك 3٪"
 
@@ -3712,7 +3754,7 @@ msgstr "الوصف"
 msgid "Design engaging, visually inspiring content for the company's website and many other forms of media, including both online and offline materials."
 msgstr "التصميم الجذاب, المحتوى الملهم بصرياً لموقع الشركة على الأنترنت والعديد من أشكال وسائل الإعلام الأخرى, بما في ذلك المتصلة وغير المتصلة بالأنترنت."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:729
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:731
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/japanws.html.tt:9
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:9
@@ -3734,7 +3776,7 @@ msgstr "التذبذب السعرى بدون اتجاه (DPO)"
 msgid "DevOps Engineering"
 msgstr "هندسة DevOps"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:604
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:605
 msgid "DevOps Manager"
 msgstr "مدير ديفوبس"
 
@@ -3871,7 +3913,7 @@ msgstr "عمل تقرير لرد المبالغ المدفوعة"
 msgid "Document department processes, to enhance the marketing team’s ability to execute repeated tasks efficiently and effectively"
 msgstr "عمليات قسم الوثائق, لتعزيز قدرة فريق التسويق على تنفيذ المهام المتكررة بكفاءة وفعالية"
 
-#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client/IDAuthentication.pm:197
+#: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client/IDAuthentication.pm:171
 msgid "Documents are required to verify your identity"
 msgstr "المستندات المطلوبة للتحقق من هويتك"
 
@@ -3898,6 +3940,13 @@ msgstr "دفع النمو السريع وتطوير الأعمال, لدعم م�
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Drive rapid growth from key areas of the world, applying a variety of online and offline marketing abilities to expand the company's active affiliate network."
 msgstr "دفع النمو السريع من المناطق الرئيسية حول العالم, لتطبيق مجموعة متنوعة من القدرات التسويقية سواء المتصلة أو غير المتصلة بالأنترنت, لتوسيع نشاط الشبكة التابعة للشركة."
+
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:717
+msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
+msgstr ""
+"نظراً للتغيرات الأخيرة التي طرأت على اللوائح. فنحن مطالبون بمطالبة عملائنا "
+"بملء نموذج التقييم المالي التالي. يرجى ملاحظة أنك لن تكون قادر على مواصلة "
+"التداول حتى إكمال هذا النموذج."
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1417
 msgid "Due to regulatory requirements, you are required to authenticate your account in order to continue trading."
@@ -4009,7 +4058,7 @@ msgstr "سهولة الحركة"
 msgid "Educate prospects, clients, and partners regarding the benefits of %1’s innovative online trading platform"
 msgstr "تثقيف العملاء المحتملين والشركاء بشأن مميزات منصة %1 المبتكرة للتداول عبر الإنترنت"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:693
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:694
 #: /home/git/translations/binary-static-www2/src/templates/haml/layouts/default/footer.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:332
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/global/footer.html.tt:43
@@ -4155,7 +4204,7 @@ msgstr "أدخل الحاجز بتحديد البعد بينه وبين سعر �
 msgid "Enter your email"
 msgstr "أدخل بريدك الإلكتروني"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:641
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:642
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/explanation/details/spreads.html.tt:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/portfolio/analyse_spread_contract.html.tt:15
 msgid "Entry Level"
@@ -4179,7 +4228,7 @@ msgstr "سعر الدخول"
 msgid "Equities"
 msgstr "Equities"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:685
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:686
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:388
 msgid "Estimated Net Worth"
 msgstr "قيمة الثروة الصافية المقدرة"
@@ -4313,17 +4362,17 @@ msgstr "ممارسة مهارات استثنائية لإدارة العلاقة
 msgid "Exercise period"
 msgstr "فترة العمل"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:642
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:643
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/portfolio/analyse_spread_contract.html.tt:19
 msgid "Exit Level"
 msgstr "مستوى الخروج"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:652
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:653
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Trade.pm:208
 msgid "Exit Spot"
 msgstr "سعر الخروج"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:651
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:652
 msgid "Exit Spot Time"
 msgstr "وقت سعر الخروج"
 
@@ -4401,11 +4450,11 @@ msgstr "وقت انتهاء الصلاحية"
 msgid "Expiry price"
 msgstr "سعر الانقضاء"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2313
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2316
 msgid "Expiry time cannot be equal to start time."
 msgstr "لا يمكن أن يكون وقت انتهاء الصلاحية مساوياً لوقت البدء."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2322
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2325
 msgid "Expiry time cannot be in the past."
 msgstr "وقت النهاية لا يمكن أن يكون في الماضي."
 
@@ -4446,11 +4495,11 @@ msgstr "أسئلة شائعة"
 msgid "Facility that allows you to set limits on your account."
 msgstr "تسهيلات تتيح لك وضع قيود على حسابك."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:586
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:587
 msgid "Failed"
 msgstr "فشل"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:743
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:745
 msgid "Failed to reset password. %1, please retry."
 msgstr "فشل في إعادة تعيين كلمة المرور. 1 %, يرجى إعادة المحاولة."
 
@@ -4533,7 +4582,7 @@ msgstr "ترشيح الحركات المتناثرة"
 msgid "Final Price"
 msgstr "السعر النهائي"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:694
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:695
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:333
 msgid "Finance"
 msgstr "المالية"
@@ -4543,7 +4592,7 @@ msgstr "المالية"
 msgid "Financial Account Opening"
 msgstr "فتح الحساب المالي"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:668
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:669
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:675
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/settingsws.html.tt:112
 msgid "Financial Assessment"
@@ -4631,7 +4680,7 @@ msgstr "اتبع القانون وهذه الشروط"
 msgid "Follow up on rejected deposits"
 msgstr "متابعة الودائع المرفوضة"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:747
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:749
 #, fuzzy
 #| msgid "Please check your email for the value of this token"
 msgid "For added security, please check your email to retrieve the verification token."
@@ -4689,17 +4738,17 @@ msgstr "مخطط الغابة"
 msgid "Forex"
 msgstr "الفوركس"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:669
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:670
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:158
 msgid "Forex trading experience"
 msgstr "خبرة تداول العملات الأجنبية"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:670
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:671
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:172
 msgid "Forex trading frequency"
 msgstr "معدل تداول العملات الأجنبية"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:736
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:738
 msgid "Format: yyyy-mm-dd (not required for virtual-money accounts)"
 msgstr "تنسيق: yyyy-mm-dd (غير مطلوب لحسابات الأموال الافتراضية)"
 
@@ -4875,7 +4924,7 @@ msgstr "كيف تبدأ"
 msgid "Give Me More Money!"
 msgstr "أعطني مزيداً من المال!"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:626
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:627
 msgid "Global Customer Service Representatives"
 msgstr "ممثلي خدمة العملاء العالمية"
 
@@ -4910,7 +4959,7 @@ msgstr "القانون الحاكم والاختصاص القضائي"
 msgid "Granularity is not valid"
 msgstr "التقسيمات غير صالحة"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:616
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:617
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Graphic Designers"
 msgstr "مصممو جرافيك"
@@ -4947,7 +4996,7 @@ msgstr "تعتبر اضافة وجود خبرة في التشغيل الآلي �
 msgid "Have a question? Need Help?"
 msgstr "لديك أى أسئلة؟ هل تحتاج للمساعدة؟"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:695
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:696
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:334
 msgid "Health"
 msgstr "الصحة"
@@ -5096,12 +5145,12 @@ msgstr "كيف يمكن التداول في الأسواق المتقلبة ؟"
 msgid "How to use a payment agent?"
 msgstr "كيف تستعين بوكيل دفع؟"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:628
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:629
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Human Resource Executive"
 msgstr "تنفيذي الموارد البشرية"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:627
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:628
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Human Resources"
 msgstr "الموارد البشرية"
@@ -5143,7 +5192,7 @@ msgstr "I understand and agree that, with regard to over-the-counter binary opti
 msgid "I'm new to binaries, where do I start?"
 msgstr "أنا جديد على الثنائيات، أين أبدأ؟"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:583
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:584
 msgid "IP Address"
 msgstr "عنوان IP"
 
@@ -5243,7 +5292,7 @@ msgstr "إذا كنت تقدم موقعنا الإلكتروني للعملاء 
 msgid "If you meet our basic requirements, we’ll send you a talent test."
 msgstr "إذا قمت بتلبية المتطلبات الأساسية لدينا، سوف نرسل لك اختبار مواهب."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:750
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:752
 #, fuzzy
 #| msgid "If you need help, please contact our customer support team at"
 msgid "If you need assistance feel free to contact our %1Customer Support"
@@ -5538,7 +5587,7 @@ msgstr "داخل/خارج (ينتهي بين/خارج، ويبقى بين/يذه
 msgid "In/Out trades"
 msgstr "تداول الدخول/الخروج"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:683
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:684
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:357
 msgid "Income Source"
 msgstr "مصدر الدخل"
@@ -5555,7 +5604,7 @@ msgstr "التعويض"
 msgid "Indemnity and Liability"
 msgstr "التعويض والمسؤولية"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:653
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:654
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/openpositionsws.html.tt:32
 msgid "Indicative"
 msgstr "ارشادي"
@@ -5589,12 +5638,12 @@ msgstr "مؤشر يشير إلى اتجاه صعودي عندما يرتفع ف�
 msgid "Indices"
 msgstr "مؤشرات"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:671
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:672
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:186
 msgid "Indices trading experience"
 msgstr "خبرة التداول بالمؤشرات"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:672
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:673
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:200
 msgid "Indices trading frequency"
 msgstr "معدل تداول المؤشرات"
@@ -5607,7 +5656,7 @@ msgstr "متداولين أفراد"
 msgid "Indonesia"
 msgstr "اندونيسا"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:681
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:682
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:326
 msgid "Industry of Employment"
 msgstr "مجال العمل"
@@ -5616,7 +5665,7 @@ msgstr "مجال العمل"
 msgid "Information Security"
 msgstr "أمن المعلومات"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:603
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:604
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Information Technology"
 msgstr "تكنولوجيا المعلومات"
@@ -5629,7 +5678,7 @@ msgstr "معلومات عن خلاصة البيانات التى تستخدمه�
 msgid "Information of the previous performance of any underlying instrument or asset does not guarantee its current and/or future performance. Past performance is not a reliable indicator of future results."
 msgstr "المعلومات عن الأداء السابق لأي أداة أساسية أو أصل لا يضمن الأداء الراهن و/أو في المستقبل. الأداء في الماضي ليس مؤشرا موثوقا على النتائج المستقبلية."
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:423
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:335
 msgid "Input validation failed: "
 msgstr "فشل التحقق من صحة المدخلات: "
 
@@ -5658,13 +5707,13 @@ msgstr "مهتم، فما هي الخطوة التالية؟ إذا كان با�
 msgid "Interested? Why not try a virtual account"
 msgstr "إذا كنت مهتما؟ لم لا تجرب حسابا افتراضيا"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:631
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:632
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/careers.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Internal Audit"
 msgstr "المراجعة الداخلية"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:632
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:633
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Internal Auditor"
 msgstr "مراجع حسابات داخلي"
@@ -5681,7 +5730,7 @@ msgstr "مخاطر التداول على الانترنت"
 msgid "Interpretation"
 msgstr "التفسير"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2137
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2140
 msgid "Intraday contracts may not cross market open."
 msgstr "لا يجوز لصفقات التداول اليومي أن تجتاز موعد افتتاح السوق."
 
@@ -5730,7 +5779,7 @@ msgstr "قيمة غير صالحة. الحد الأدنى 10، والحد الأ
 msgid "Invalid candles request"
 msgstr "طلب الشموع غير صالح"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:742
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:744
 msgid "Invalid date of birth."
 msgstr "تاريخ الميلاد غير صحيح."
 
@@ -5746,7 +5795,7 @@ msgstr "صيغة غير صالحة للبريد الإلكتروني مع كلم
 msgid "Invalid period input! Please input the period between 0 and #1"
 msgstr "فترة الإدخال غير صالحة! الرجاء إدخال الفترة ما بين 0 و 1#"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2271
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2274
 msgid "Invalid stake"
 msgstr "حصة غير صالحة"
 
@@ -5792,7 +5841,7 @@ msgstr "Investment Solicitation Policy"
 msgid "Investment trust"
 msgstr "Investment trust"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:703
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:704
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:364
 msgid "Investments & Dividends"
 msgstr "الاستثمارات وتوزيعات الأرباح"
@@ -6518,7 +6567,7 @@ msgstr "يونيو"
 msgid "June"
 msgstr "يونيو"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:724
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:726
 msgid "Keep track of your authorised applications."
 msgstr "تتبع التطبيقات المعتمدة الخاصة بك."
 
@@ -6595,11 +6644,11 @@ msgid "Last Digit Stats"
 msgstr "احصائيات الرقم الأخير"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:352
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:721
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:723
 msgid "Last Used"
 msgstr "المستخدم أخيرا"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:547
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:548
 msgid "Last digit stats for the latest %1 ticks on %2"
 msgstr "آخر أرقام الإحصائيات لأحدث حركة % 1 في % 2"
 
@@ -6663,12 +6712,12 @@ msgstr "الامتثال القانوني والتنظيمي"
 msgid "Legal Compliance"
 msgstr "الامتثال القانوني"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:709
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:710
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:393
 msgid "Less than $100,000"
 msgstr "أقل من 100,000 دولار"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:705
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:706
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:378
 msgid "Less than $25,000"
 msgstr "أقل من 25,000 دولار"
@@ -6690,7 +6739,7 @@ msgstr "Less than 1 million JPY"
 msgid "Less than 6 months"
 msgstr "Less than 6 months"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:682
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:683
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:343
 msgid "Level of Education"
 msgstr "مستوى التعليم"
@@ -6768,7 +6817,7 @@ msgstr "مشاريع Binary.com مفتوحة المصدر"
 msgid "Live chat:"
 msgstr "المحادثة الحية:"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:598
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:599
 msgid "Lock Cashier"
 msgstr "قفل الصراف"
 
@@ -6800,13 +6849,13 @@ msgstr "سجل الدخول لحساب الإنتساب في %1 وانقر عل�
 msgid "Logarithmic Scale"
 msgstr "مقياس لوغاريتمي"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:588
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:589
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:657
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/settingsws.html.tt:98
 msgid "Login History"
 msgstr "تاريخ تسجيل الدخول"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:565
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:566
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reality_check_summaryws.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_transferws.html.tt:12
 msgid "Login ID"
@@ -6973,12 +7022,12 @@ msgstr "يتم تحديث أسعار السوق مرة واحدة على الأ�
 msgid "Market-closing times: Please refer to"
 msgstr "أوقات إقفال السوق: رجاء إرجع إلى"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:612
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:613
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Marketing"
 msgstr "التسويق"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:617
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:618
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Marketing Executives"
 msgstr "مديري التسويق"
@@ -6989,7 +7038,7 @@ msgstr "مديري التسويق"
 msgid "Marketing Project Coordinator"
 msgstr "مدير مشروع التسويق"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:613
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:614
 msgid "Marketing Project Manager"
 msgstr "مدير مشروع التسويق"
 
@@ -7307,7 +7356,7 @@ msgstr "الحاجة لمراقبة المراكز"
 msgid "Neither you, your direct relatives, or any persons you control are eligible to become clients, and you shall not be entitled to any share of net revenue or any other remuneration from the Company in relation to such relatives, friends, or controlled persons."
 msgstr "أنت أو أقاربك المباشرين غير مؤهلين لتصبحوا عملاء ولا يحق لك أخذ أية حصة من صافي الإيرادات أو أى مكافأة أخرى من الشركة فيما يتعلق بهؤلاء الأقارب أو الأصدقاء. الأقارب المباشرين فى هذا السياق هم الزوج أو الزوجة، الشريك، الأب أو الأم والأبناء والأخوة."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:684
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:685
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:373
 msgid "Net Annual Income"
 msgstr "صافي الدخل السنوي"
@@ -7322,7 +7371,7 @@ msgstr "صافي الربح"
 msgid "Network Status"
 msgstr "حالة الشبكة"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:722
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:724
 msgid "Never"
 msgstr "ابدأ"
 
@@ -7334,7 +7383,7 @@ msgstr "لم تستخدم من قبل"
 msgid "New"
 msgstr "جديد"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:733
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:735
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "New Password"
 msgstr "كلمة المرور الجديدة"
@@ -7462,7 +7511,7 @@ msgstr "لا. لا يوجد أى تكاليف للتسجيل فى برنامج �
 msgid "Not FATCA*"
 msgstr "Not FATCA*"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:661
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:662
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/explanation/details/asian.html.tt:10
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/explanation/details/digits.html.tt:7
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/explanation/details/endsinout.html.tt:14
@@ -7525,13 +7574,13 @@ msgstr "يمكن للمتداولين المبتدئين استخدام منصت
 msgid "Now"
 msgstr "الآن"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:546
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:547
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/form/tick.html.tt:2
 msgid "Number of ticks"
 msgstr "عدد الحركات"
 
 #. ($min_duration, $max_duration)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2638
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2641
 msgid "Number of ticks must be between %1 and %2"
 msgstr "يجب أن يكون عدد الحركات بين %1 و %2"
 
@@ -7569,7 +7618,7 @@ msgstr "أكتوبر"
 msgid "Office worker"
 msgstr "Office worker"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:560
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:561
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/terms_conditions_approval_message.html.tt:17
 msgid "Ok"
 msgstr "حسنا"
@@ -7605,7 +7654,7 @@ msgstr "بمجرد ان نتسلم طلبك، سيقوم أحد مديري ال�
 msgid "Once you click the 'Submit' button the funds will be withdrawn from your account and will be sent to the Payment Agent you have chosen."
 msgstr "عندما تضغط على زر \"التسليم\" ستسحب الأموال من حسابك وسيتم إرسالها لوكيل الدفع الذى اخترته."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:574
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:575
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_transferws.html.tt:93
 msgid "Once you click the 'Submit' button, the funds will be withdrawn from your account and transferred to your Client's account."
 msgstr "بمجرد النقر فوق الزر 'إرسال'، سوف تسحب من الحساب الخاص بك الأموال وتحويلها إلى حساب العميل الخاص بك."
@@ -7642,7 +7691,7 @@ msgstr "بعد خمس سنوات فقط من البداية، نلنا هذه ا
 msgid "Only one account is allowed per person. No winnings and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person."
 msgstr "مسموح لكل شخص بحساب واحد فقط. لا يمكن جني الأرباح و/أو استرداد الأموال من حسابات مفتوحة بأسماء وهمية أو حسابات متعددة لنفس الشخص."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:639
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:640
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:430
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:510
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/charting/ticker_data_table.html.tt:6
@@ -7714,7 +7763,7 @@ msgstr "تنفيذ الأمر"
 msgid "Oscillator calculated from the daily readings of the Accumulation Distribution Line. The CMF is unlike a momentum oscillator in that it is not influenced by the daily price change. Instead, the indicator focuses on the location of the close relative to the range for the period (daily or weekly)."
 msgstr "يتم حساب المذبذب من القراءات اليومية لمؤشر خط التجميع والتوزيع. مؤشر شايكن للتدفق النقدي ليس مثل مذبذب الزخم حيث أنه لا يتأثر بتغيرات السعر اليومية. بدلاً من ذلك، يركز المؤشر على مكان أقرب مدى للفترة الزمنية (يومي أو أسبوعي)."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:697
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:698
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/japanws.html.tt:395
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:336
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:366
@@ -7729,12 +7778,12 @@ msgstr "الالتزامات الأخرى"
 msgid "Other best execution factors such as speed of execution, likelihood of execution and settlement, size, nature or any other considerations relevant to the execution of a particular order may also be applied by us in order to obtain the best possible results for you."
 msgstr "عوامل أخرى تخص أفضل تنفيذ مثل سرعة التنفيذ، احتمال التنفيذ والتسوية، وحجم وطبيعة الأمر أو أي اعتبارات أخرى ذات صلة إلى تنفيذ أمر معين يمكن أن تطبق أيضا من جانبنا من أجل الحصول على أفضل نتائج ممكنة بالنسبة لك."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:679
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:680
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:298
 msgid "Other financial instruments trading experience"
 msgstr "خبرة التداول في الأدوات المالية الأخرى"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:680
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:681
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:312
 msgid "Other financial instruments trading frequency"
 msgstr "معدل التداول في الأدوات المالية الأخرى"
@@ -7815,21 +7864,21 @@ msgstr "يتم توفير خدماتنا على أساس تنفيذي فقط. و
 msgid "Our site can be filtered using a number of filtering systems available on the market which could be used to restrict one’s access to our site."
 msgstr "يمكن تصفية موقعنا باستخدام عدد من أنظمة الترشيح المتاحة في السوق والتي يمكن استخدامها لتقييد الدخول إلى موقعنا."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:573
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:574
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_transferws.html.tt:92
 msgid "Our site does not charge any transfer fees."
 msgstr "موقعنا لا تفرض أي رسوم نقل."
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:453
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:393
 msgid "Output validation failed: "
 msgstr "فشل التحقق من صحة الإخراج: "
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:712
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:713
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:396
 msgid "Over $1,000,000"
 msgstr "أكثر من 1,000,000 دولار"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:708
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:709
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:381
 msgid "Over $500,001"
 msgstr "أكثر من 500,001 دولار"
@@ -7844,7 +7893,7 @@ msgstr "أكثر من 1 مليون من الحسابات المسجلة على �
 msgid "Over 100 million JPY"
 msgstr "Over 100 million JPY"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:688
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:689
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:165
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:193
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:221
@@ -7924,7 +7973,7 @@ msgstr "الصفحة غير موجودة"
 msgid "Parabolic SAR"
 msgstr "مؤشر التوقف وعكس الاتجاه"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:593
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:495
 msgid "Parameters sanity check failed."
 msgstr "فشل التحقق من معايير السلامة العقلية."
 
@@ -7945,12 +7994,12 @@ msgstr "الشركاء"
 msgid "Password"
 msgstr "كلمة مرور"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:730
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:732
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "Password Reset"
 msgstr "إعادة تعيين كلمة المرور"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:741
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:743
 msgid "Password does not match."
 msgstr "لا تطابق كلمة المرور."
 
@@ -7975,7 +8024,7 @@ msgstr "كلمة المرور قوية جداً"
 msgid "Password is weak"
 msgstr "كلمة المرور ضعيفة"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:740
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:742
 msgid "Password must contains at least 1 digit, 1 uppercase letter and 1 lowercase letter."
 msgstr "يجب أن تحتوى كلمة المرور على الأقل 1 رقم, 1 أحرف كبيرة و 1 أحرف صغيرة."
 
@@ -8072,7 +8121,7 @@ msgstr "العائد"
 msgid "Payout has moved in your favour from %1 to %2."
 msgstr "لقد تحرك العائد لصالحك من %1 إلى %2."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2249
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2252
 msgid "Payout may not have more than two decimal places."
 msgstr "يجب ألا يحتوي العائد على أكثر من رقمين عشريين."
 
@@ -8081,7 +8130,7 @@ msgstr "يجب ألا يحتوي العائد على أكثر من رقمين ع
 msgid "Payout must be between %1 and %2."
 msgstr "يجب أن تكون العوائد بين %1 و %2."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:704
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:705
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:365
 msgid "Pension"
 msgstr "معاش"
@@ -8104,7 +8153,7 @@ msgid "Perl modules"
 msgstr "وحدات برل (Perl)"
 
 #. ($descriptor->{require_scope})
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:437
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:349
 msgid "Permission denied, requiring %1"
 msgstr "إذن مرفوض، التي تحتاج إلى % 1"
 
@@ -8112,7 +8161,7 @@ msgstr "إذن مرفوض، التي تحتاج إلى % 1"
 msgid "Permission denied."
 msgstr "تم رفض الإذن."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:720
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:722
 msgid "Permissions"
 msgstr "أذونات"
 
@@ -8153,7 +8202,7 @@ msgstr "يرجى قبول حماية الأموال."
 msgid "Please agree to the risk disclaimer before proceeding."
 msgstr "يرجى الموافقة على إخلاء المسؤولية عن المخاطر قبل المتابعة."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:732
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:734
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/virtualws.html.tt:18
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/deposit_withdraw_ws.html.tt:79
@@ -8161,24 +8210,24 @@ msgstr "يرجى الموافقة على إخلاء المسؤولية عن ال
 msgid "Please check your email for the value of this token"
 msgstr "الرجاء التحقق من البريد الإلكتروني الخاص بك لقيمة الرمز المميز هذا"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:727
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:729
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "Please check your email to retrieve the token needed to reset your password."
 msgstr "الرجاء التحقق من البريد الإلكتروني الخاص بك لاسترداد الرمز المميزالمطلوب إلى إعادة تعيين كلمة المرور الخاصة بك."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:748
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:750
 msgid "Please choose which currency you would like to transact in."
 msgstr "رجاء قم باختيار العملة التى تود أن تتعامل بها."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:715
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:716
 msgid "Please complete the following financial assessment form before continuing."
-msgstr ""
+msgstr "يرجى ملء استمارة التقييم المالي التالية قبل المتابعة."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:138
 msgid "Please confirm the trade on your statement before proceeding."
 msgstr "الرجاء التأكد من التداول بكشف حسابك قبل المتابعة."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:576
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:577
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_transferws.html.tt:5
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_withdrawws.html.tt:20
 msgid "Please confirm the transaction details in order to complete the transfer:"
@@ -8189,7 +8238,7 @@ msgstr "رجاء تأكيد تفاصيل المعاملة لأكمال التح�
 msgid "Please contact us with whatever is on your mind at <a href=\"mailto:%1\">%1</a>. We’d be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us."
 msgstr "يرجى الاتصال بنا وإخبارنا بكل ما يخطر ببالك على <a href=\"mailto:%1\">%1</a>. سيسعدنا أن نسمع منك ومستعدون أن نساعدك. لذلك، لا تتردد في تبادل الأفكار والاقتراحات الخاصة بك معنا."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:569
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:570
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_transferws.html.tt:39
 msgid "Please deposit before transfer to client."
 msgstr "الرجاء إيداع قبل نقلها إلى العميل."
@@ -8198,7 +8247,7 @@ msgstr "الرجاء إيداع قبل نقلها إلى العميل."
 msgid "Please enter a date that is at least 6 months from now."
 msgstr "رجاء إدخال تاريخ بعد الآن بستة أشهر على الأقل."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:592
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:593
 msgid "Please enter a number between %1."
 msgstr "الرجاء إدخال رقم بين % 1."
 
@@ -8211,7 +8260,7 @@ msgstr "يرجى إدخال رقم بين 0 و %1"
 msgid "Please enter a number between 0 and %1."
 msgstr "يرجى إدخال رقم بين 0 و %1."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:591
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:592
 msgid "Please enter a number greater or equal to %1."
 msgstr "الرجاء إدخال رقم أكبر أو يساوي % 1."
 
@@ -8226,7 +8275,7 @@ msgstr "يرجى إدخال رقم أكبر من 0"
 msgid "Please enter a number."
 msgstr "الرجاء إدخال رقم."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:572
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:573
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_transferws.html.tt:71
 msgid "Please enter a valid amount."
 msgstr "رجاء إدخال مبلغ صالح."
@@ -8269,7 +8318,7 @@ msgstr "برجاء إدخال كلمة سرك الحالية."
 msgid "Please enter your email address."
 msgstr "رجاء أدخل عنوان بريدك الإلكتروني."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:570
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:571
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_transferws.html.tt:44
 msgid "Please fill in the Login ID and Amount you wish to transfer to your Client in the form below:"
 msgstr "يرجى ملء معرف تسجيل الدخول والمبلغ الذي ترغب في تحويله إلى عميلك في النموذج التالي:"
@@ -8284,7 +8333,7 @@ msgstr "رجاء إدخال تاريخ صالح"
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Transaction.pm:29
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Utility.pm:118
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:432
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:344
 msgid "Please log in."
 msgstr "الرجاء تسجيل الدخول."
 
@@ -8562,7 +8611,7 @@ msgstr "خبرة كبيرة في التسويق أو الدعاية"
 msgid "Previous work experience in a client service and/or marketing role"
 msgstr "خبرة عمل سابقة في خدمة العملاء و/أو مجال التسويق"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:649
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:650
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/intraday_prices.html.tt:33
 msgid "Price"
 msgstr "سعر"
@@ -8586,7 +8635,7 @@ msgstr "قم بتسعير المعاملة."
 msgid "Prices"
 msgstr "أسعار"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:698
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:699
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:348
 msgid "Primary"
 msgstr "ابتدائي"
@@ -8688,7 +8737,7 @@ msgstr "جدول الأرباح"
 msgid "Profit/Loss"
 msgstr "الربح/الخسارة"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:646
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:647
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/portfolio/analyse_spread_contract.html.tt:43
 msgid "Profit/Loss (points)"
 msgstr "الربح/الخسارة (نقاط)"
@@ -8699,7 +8748,7 @@ msgstr "الربح/الخسارة (نقاط)"
 msgid "Proofread and correct the content appearing on the company’s website, blog, social media outlets, and marketing materials, from English to the regional language and vice versa"
 msgstr "تدقيق وتصحيح المحتوى الذي يظهر على موقع الشركة والمدونات ووسائل التواصل الاجتماعي، من الإنجليزية إلى لغة إقليمية، والعكس"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:620
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:621
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Proofreader"
 msgstr "مصحّح"
@@ -8792,22 +8841,22 @@ msgstr "ضع حدودا على أرباحك: عندما تصل إلى الحد �
 msgid "Qualified applicants should have global experience in recruitment administration, excellent administrative skills, and the ability to work in a fast-paced entrepreneurial environment. We are seeking a true professional capable of making an impact by supporting and advancing HR best practices throughout the company’s global operations."
 msgstr "يجب أن يمتلك طالبو الوظائف المؤهلين الخبرة العالمية في إدارة التوظيف ومهارات إدارية ممتازة، والقدرة على العمل في بيئة الأعمال الحرة سريعة الخطى. نبحث عن محترف حقيقي قادر على إحداث أثر في دعم وتعزيز الموارد البشرية في جميع أنحاء العمليات العالمية للشركة."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:607
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:608
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Quality Assurance"
 msgstr "ضمان الجودة"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:608
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:609
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Quality Assurance Engineer"
 msgstr "مهندس ضمان الجودة"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:609
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:610
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Quantitative Analysis"
 msgstr "التحليل الكمي"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:611
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:612
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Quantitative Analyst"
 msgstr "محلل كمي"
@@ -8816,7 +8865,7 @@ msgstr "محلل كمي"
 msgid "Quantitative Analytics"
 msgstr "التحليلات الكمية"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:610
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:611
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Quantitative Developer"
 msgstr "مطور كمي"
@@ -8898,7 +8947,7 @@ msgstr "اجن ثمار تداول الثنائيات، عندما تعلم أن
 msgid "Ref."
 msgstr "مرجع"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:664
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:665
 msgid "Reference ID"
 msgstr "الرقم المرجعي"
 
@@ -8990,7 +9039,7 @@ msgstr "أعد تحميل الصراف"
 msgid "Reload page"
 msgstr "إعادة تحميل الصفحة"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:665
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:666
 msgid "Remaining Time"
 msgstr "الوقت المتبقي"
 
@@ -9010,12 +9059,12 @@ msgstr "يمثل الحد الأقصى من العقود المعلقة فى م�
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "يمثل الحد الأقصى لحجم العقود التي بإمكانك أن تشتريها في أي يوم تداول."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2436
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2439
 msgid "Resale of this contract is not offered due to market holidays during contract period."
 msgstr "لا نقدم إعادة بيع لهذا العقد في الوقت الحالي نظراً لعطلة السوق خلال فترة العقد."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2612
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2621
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2615
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2624
 msgid "Resale of this contract is not offered."
 msgstr "لا نقدم إعادة بيع هذا العقد."
 
@@ -9027,7 +9076,7 @@ msgstr "سعر إعادة البيع"
 msgid "Resend Verification Email"
 msgstr "إعادة إرسال التحقق من البريد الإلكتروني"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:737
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:739
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/lost_passwordws.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "Reset Password"
@@ -9046,8 +9095,8 @@ msgstr "مصادر"
 msgid "Respond to client queries using our state of the art telephone, electronic mail and on-line chat systems"
 msgstr "الرد على استفسارات العملاء باستخدام أحدث الهواتف والبريد الإلكتروني وأنظمة المحادثة على الإنترنت"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:193
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:123
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:195
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:120
 msgid "Response too large."
 msgstr "استجابة كبيرة جدا."
 
@@ -9131,7 +9180,7 @@ msgstr "مراجعة وتطوير وتعزيز الرموز المستخدمة �
 msgid "Revisions to the Binary.com API"
 msgstr "التنقيحات على API Binary.com"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:723
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:725
 msgid "Revoke access"
 msgstr "إلغاء الوصول"
 
@@ -9195,7 +9244,7 @@ msgstr "روسيا"
 msgid "Sa"
 msgstr "السبت"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:701
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:702
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:362
 msgid "Salaried Employee"
 msgstr "موظف بأجر"
@@ -9258,7 +9307,7 @@ msgstr "يمكن للمتداولين المتمرسين استخدام منصة
 msgid "Second line of home address"
 msgstr "السطر الثاني من عنوان المنزل"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:699
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:700
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:349
 msgid "Secondary"
 msgstr "ثانوي"
@@ -9299,7 +9348,7 @@ msgstr "الأمان والخصوصية"
 msgid "Select Country"
 msgstr "اختر بلد"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:545
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:546
 msgid "Select market"
 msgstr "اختر السوق"
 
@@ -9319,7 +9368,7 @@ msgstr "اختر أصولك الأساسية"
 msgid "Self Exclusion"
 msgstr "الإقصاء الذاتي"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:702
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:703
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:363
 msgid "Self-Employed"
 msgstr "يعمل لحسابه الخاص"
@@ -9350,7 +9399,7 @@ msgstr "سعر البيع"
 msgid "Sell Time"
 msgstr "وقت البيع"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:658
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:659
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/portfolio/contract_details.html.tt:25
 msgid "Sell at market"
 msgstr "قم بالبيع فى السوق"
@@ -9376,12 +9425,12 @@ msgstr "أرسل لنا السيرة الذاتية ورسالة توضح اهت
 msgid "Send your funds to the payment agent. The deposited funds, less the agent's commission, will show up in your account."
 msgstr "ارسل مبلغ إيداعك إلى وكيل الدفع. سيظهر المبلغ المودع فى حسابك ناقصاً عمولة الوكيل."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:605
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:606
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Senior Front-End Developer"
 msgstr "كبير مطوري الفرنت-اند"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:606
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:607
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Senior Perl Developer"
 msgstr "كبير مطوري بيرل"
@@ -9565,7 +9614,7 @@ msgstr "إزالة الضوضاء العشوائية"
 msgid "So what are you waiting for? Join us as an affiliate today."
 msgstr "اذا ما الذي تنتظره؟ انضم إلينا كعضو منتسب اليوم."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:614
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:615
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Social Media Executive"
 msgstr "موظف وسائل الإعلام الاجتماعية"
@@ -9619,17 +9668,17 @@ msgstr "عفوا، حدث خطأ أثناء تحميل النموذج. يرجى 
 msgid "Sorry, an error occurred while processing your account."
 msgstr "عفواً، حدث خطأ أثناء معالجة حسابك."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:656
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:657
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Accounts.pm:1012
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Accounts.pm:902
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Accounts.pm:915
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Contract.pm:225
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Contract.pm:272
-#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/MarketDiscovery.pm:48
-#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/MarketDiscovery.pm:78
+#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/MarketDiscovery.pm:51
+#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/MarketDiscovery.pm:81
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount/Japan.pm:175
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:174
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:183
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:176
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:185
 msgid "Sorry, an error occurred while processing your request."
 msgstr "عفواً، حدث خطأ أثناء معالجة طلبك."
 
@@ -9771,7 +9820,7 @@ msgstr "عفواً، لقد قمت بإبعاد نفسك عن الموقع حت�
 #. ($lim)
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client.pm:845
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/User.pm:100
-#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Authorize.pm:37
+#: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Authorize.pm:38
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Utility.pm:132
 msgid "Sorry, you have excluded yourself until %1."
 msgstr "عفواً، لقد قمت بإبعاد نفسك حتى %1."
@@ -9817,7 +9866,7 @@ msgstr "تعليمات خاصة"
 msgid "Spot"
 msgstr "السعر"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:650
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:651
 #, fuzzy
 #| msgid "Support Times"
 msgid "Spot Time"
@@ -9847,7 +9896,7 @@ msgstr "الحصة"
 msgid "Start Time"
 msgstr "وقت البدء"
 
-#: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:189
+#: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:190
 msgid "Start Trading"
 msgstr "بدء التداول"
 
@@ -9866,16 +9915,16 @@ msgstr "وقت البدء"
 msgid "Start time %1 must be before end time %2"
 msgstr "يجب أن يكون وقت بدء % 1 قبل نهاية الوقت % 2"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2336
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2339
 msgid "Start time is in the future."
 msgstr "وقت البدء في المستقبل."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2331
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2334
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:384
 msgid "Start time is in the past"
 msgstr "وقت البداية فى الماضي"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2344
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2347
 msgid "Start time on forward-starting contracts must be more than 5 minutes from now."
 msgstr "يجب أن يكون وقت بداية العقود الآجلة أكثر من 5 دقائق من الآن."
 
@@ -9902,7 +9951,7 @@ msgstr "المحتوى الثابت"
 msgid "Statistics"
 msgstr "إحصائيات"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:584
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:585
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/japanws.html.tt:185
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/settings_detailsws.html.tt:206
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/portfolio/analyse_spread_contract.html.tt:11
@@ -9980,17 +10029,17 @@ msgstr "تجزئة الأسهم"
 msgid "Stock market indices measure the value of a selection of companies in the stock market."
 msgstr "تقيس مؤشرات البورصة قيمة مجموعة مختارة من أسهم الشركات فى البورصة."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:675
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:676
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:242
 msgid "Stocks trading experience"
 msgstr "خبرة تداول الأسهم"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:676
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:677
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:256
 msgid "Stocks trading frequency"
 msgstr "معدل تداول الأسهم"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:643
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:644
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/portfolio/analyse_spread_contract.html.tt:23
 msgid "Stop Loss Level"
 msgstr "مستوى وقف الخسارة"
@@ -10000,7 +10049,7 @@ msgstr "مستوى وقف الخسارة"
 msgid "Stop Loss must be between %1 and %2 %3"
 msgstr "يجب أن يكون وقف الخسارة بين %1 و %2 %3"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:644
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:645
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/portfolio/analyse_spread_contract.html.tt:27
 msgid "Stop Profit Level"
 msgstr "مستوى وقف الربح"
@@ -10109,7 +10158,7 @@ msgstr "تسليم"
 msgid "Submit your CV and Cover Letter"
 msgstr "قدم السيرة الذاتية الخاصة بك وخطاب"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:585
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:586
 msgid "Successful"
 msgstr "ناجح"
 
@@ -10254,7 +10303,7 @@ msgstr "إنهاء هذا الإتفاق لا يمس أي حق من حقوق ا�
 msgid "Terms"
 msgstr "الشروط"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:559
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:560
 msgid "Terms & Conditions"
 msgstr "الشروط والأحكام"
 
@@ -10282,7 +10331,7 @@ msgstr "Terms and conditions"
 msgid "Terms and conditions approval is required."
 msgstr "مطلوب الموافقة على الأحكام والشروط."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:700
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:701
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:350
 msgid "Tertiary"
 msgstr "تعليم عالي"
@@ -10307,7 +10356,12 @@ msgstr "نشكرك على التحقق من بريدك الإلكتروني."
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "The %1 Quantitative Analytics group is responsible for the pricing of binary options offered on our website, as well as the risk management and profitability of its options book. Processing over a million transactions each day, the company manages a book of exotic options which arguably exceeds in complexity that of the typical derivatives desk."
-msgstr "مجموعة التحليلات الكمية 1 % هي المسؤولة عن تسعير الخيارات الثنائية المعروضة على موقعنا على شبكة الأنترنت, فضلاً عن إدارة المخاطر والربحية من كتاب خياراتها, ومعالجة أكثر من مليون معاملة في كل يوم, وتدير الشركة كتاباً من الخيارات الغريبة التي يمكن القول عنها أنها تتجاوز التعقيد الموجود في مكتب المشتقات النموذجي."
+msgstr ""
+"مجموعة التحليلات الكمية 1% هي المسؤولة عن تسعير الخيارات الثنائية المعروضة "
+"على موقعنا على شبكة الأنترنت, فضلاً عن إدارة المخاطر والربحية من كتاب "
+"خياراتها, ومعالجة أكثر من مليون معاملة في كل يوم, وتدير الشركة كتاباً من "
+"الخيارات الغريبة التي يمكن القول عنها أنها تتجاوز التعقيد الموجود في مكتب "
+"المشتقات النموذجي."
 
 #. ($website_name)
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Accounts.pm:646
@@ -10466,7 +10520,9 @@ msgid "The Company may use or disclose (or choose not to use or disclose) such C
 msgstr "قد تستخدم الشركة أو تكشف (أو تختار عدم الإستخدام أو الكشف) عن مثل هذه المساهمات لأي غرض كان, وفي أي حال من الأحوال, في أي وسيلة إعلامية في جميع أنحاء العالم;"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/terms_and_conditions.html.tt:104
-msgid "The Company may, from time to time, at its sole discretion, or as required by regulations in place to conduct appropriate \"Know Your Customer\" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and may at its sole discretion suspend an account until such proof has been provided to its satisfaction. Know Your Customer documentation will be required when a Client deposits money in the account. In the case of a client opening an account with Binary (Europe) Ltd, the threshold for verifying clients is on cumulative withdrawals of EUR 2,300."
+#, fuzzy
+#| msgid "The Company may, from time to time, at its sole discretion, or as required by regulations in place to conduct appropriate \"Know Your Customer\" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and may at its sole discretion suspend an account until such proof has been provided to its satisfaction. Know Your Customer documentation will be required when a Client deposits money in the account. In the case of a client opening an account with Binary (Europe) Ltd, the threshold for verifying clients is on cumulative withdrawals of EUR 2,300."
+msgid "The Company may, from time to time, at its sole discretion, or as required by regulations in place to conduct appropriate \"Know Your Customer\" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and may at its sole discretion suspend an account until satisfactory identification information, evidence of identity and address, source of funds and/or source of wealth have been provided. Know Your Customer documentation will be required when a Client deposits money in the account. In the case of a client opening an account with Binary (Europe) Ltd, the threshold for verifying clients is on cumulative withdrawals of EUR 2,300."
 msgstr "يحق للشركة من آن لآخر،حسب تقديرها الخاص، أو حسب الحاجة بموجب لوائح مكان الإجراء \"اعرف عميلك\" أن تطلب من العميل إثبات شخصية (مثل نسخة موثقة من جواز السفر أو أي وسيلة أخرى من وسائل تحقيق الشخصية كما يتراءى للشركة حسب الظروف) ويحق لها حسب تقديرها الخاص أن تعلق أي حساب لحين تقديم إثبات مُرضي. الوثائق المطلوبة لاعتماد اعرف عميلك ستكون هناك حاجة إليها عند ايداع العميل لأموال في حسابه. في حالة فتح العميل حساب مع بيناري (أوروبا) المحدودة، الحد الادنى للتحقق من العملاء هو عند وصول عمليات السحب التراكمية لـ EUR 2300."
 
 #. (website)
@@ -10713,7 +10769,7 @@ msgstr "يتم ضرب مقدار الربح/الخسارة لكل نقطة صع�
 msgid "The anti-money laundering processes have the following effects on Clients:"
 msgstr "عمليات مكافحة غسيل الأموال لها التأثيرات التالية على العملاء:"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:117
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:114
 msgid "The application sent an invalid request."
 msgstr "أرسل التطبيق طلب غير صالح."
 
@@ -10803,7 +10859,7 @@ msgstr "لقد تغير العقد %4 من %1%2 إلى %1%3."
 msgid "The contract has expired"
 msgstr "انتهت صلاحية العقد"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2394
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2397
 msgid "The contract must expire on a trading day."
 msgstr "يجب أن تنتهي صلاحية العقد يوم التداول."
 
@@ -10857,7 +10913,7 @@ msgstr "تستند الخوارزمية المنقاه على صيغة رياض�
 msgid "The financial trading services contained within this site are only suitable for Clients who are able to bear the loss of all the money they invest and who understand and have experience of the risks involved in the acquisition of financial contracts."
 msgstr "خدمات التداول المالي الواردة في هذا الموقع مناسبة فقط للعملاء القادرين على تحمل خسارة جميع الأموال التي يستثمرونها والذين يفهمون المخاطر التي تنطوي علي حيازة العقود المالية ولديهم خبرة عنها."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:713
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:714
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:406
 msgid "The financial trading services contained within this site are only suitable for customers who are able to bear the loss of all the money they invest and who understand and have experience of the risk involved in the acquistion of financial contracts. Transactions in financial contracts carry a high degree of risk. If purchased contracts expire worthless, you will suffer a total loss of your investment, which consists of the contract premium."
 msgstr "خدمات التداول المالي الواردة في هذا الموقع مناسبة فقط للعملاء القادرين على تحمل خسارة جميع الأموال التي يستثمرونها والذين يفهمون المخاطر التي تنطوي على حيازة العقود المالية ولديهم خبرة عنها. معاملات العقود المالية تنطوي على درجة عالية من المخاطرة. إذا انتهت صلاحية العقود المشتراه بدون أي قيمة ستتحمل خسارة كامل استثماراتك والتي تتضمن قيمة العقد."
@@ -10901,7 +10957,7 @@ msgstr "خسارة 306 USD هو الفرق بين مستوى الخروج وال
 msgid "The market exit price is the price in effect at the end of the contract period."
 msgstr "سعر خروج السوق هو السعر المعمول به عند وقت نهاية العقد."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2383
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2386
 msgid "The market must be open at the start time."
 msgstr "يجب أن يكون السوق مفتوح وفت البداية."
 
@@ -11041,7 +11097,11 @@ msgstr "لقد تحرك السوق كثيراً منذ قمت بتسعير ال�
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/api_tac_tab.html.tt:157
 msgid "The use of the Binary.com API is at your own risk, and you assume full responsibility and risk of loss it may suffer as a result of using, or accessing the Binary.com API. Except to the extent that liability under any applicable law or regulation cannot be excluded:"
-msgstr "استخدام واجهة برمجة التطبيقات الخاصة ب Binary.com يكون على مسؤوليتك الخاصة, وأنك تتحمل المسؤولية الكاملة ومخاطر الخسارة التي قد تعاني منها نتيجة استخدامك أو الوصول إلى واجهة برمجة التطبيقات الخاصة ب Binary.com. باستثناء المسؤولية التي لا يمكن استبعادها وفقا للقوانين و اللوائح المعمول بها."
+msgstr ""
+"استخدام واجهة برمجة التطبيقات الخاصة ب Binary.com يكون على مسؤوليتك الخاصة, "
+"وأنت تتحمل المسؤولية الكاملة ومخاطر الخسارة التي قد تعاني منها نتيجة "
+"استخدامك أو الوصول إلى واجهة برمجة التطبيقات الخاصة ب Binary.com. باستثناء "
+"المسؤولية التي لا يمكن استبعادها وفقا للقوانين و اللوائح المعمول بها:"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/api_tac_tab.html.tt:192
 msgid "The use, operation or combination of the Binary.com API with non-Binary.com API(s), data, equipment or documentation if liability would have been avoided but for such use, operation, or combination; or"
@@ -11090,13 +11150,13 @@ msgstr "حدثت مشكلة في التواصل مع الخادم."
 msgid "There was a problem validating your address."
 msgstr "توجد مشكلة في التحقق من صحة العنوان الخاصة بك."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:749
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:751
 #, fuzzy
 #| msgid "There was a problem validating your address."
 msgid "There was a problem validating your personal details. Please fix the fields %1here"
 msgstr "توجد مشكلة في التحقق من صحة العنوان الخاصة بك."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:657
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:658
 msgid "There was an error"
 msgstr "كان هناك خطأ"
 
@@ -11230,11 +11290,11 @@ msgstr "قسم الصراف الخاص بهذاالعميل مغلق."
 msgid "This contract cannot be properly validated at this time."
 msgstr "لا يمكن التحقق من صحة هذا العقد بشكل صحيح هذة المرة."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:655
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:656
 msgid "This contract has LOST"
 msgstr "لقد فقدت هذا العقد"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:654
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:655
 msgid "This contract has WON"
 msgstr "هذا العقد رابح"
 
@@ -11269,7 +11329,7 @@ msgstr "هذا العقد غير متوفر على هذا الحساب."
 msgid "This contract lost"
 msgstr "هذا العقد خاسر"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2289
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2292
 msgid "This contract offers no return."
 msgstr "لا يقدم هذا العقد عائد."
 
@@ -11353,7 +11413,7 @@ msgstr "هذا هو السبب في أننا نعمل على توظيف مختب
 msgid "This market closes early today at"
 msgstr "يغلق هذا السوق في وقت مبكر اليوم في"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2383
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2386
 msgid "This market is presently closed."
 msgstr "عفواً، هذا السوق مغلق في الوقت الحالى."
 
@@ -11402,7 +11462,9 @@ msgstr ""
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "Thorough knowledge of bash scripting, as well as experience with scripting languages such as Perl and PHP"
-msgstr "معرفة شاملة في كتابة البرمجة, وكذلك الخبرة في لغات البرمجة مثل بيرل و بي أتش بي."
+msgstr ""
+"معرفة شاملة في كتابة البرمجة, وكذلك الخبرة في لغات البرمجة مثل بيرل و بي أتش "
+"بي"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:77
 msgid "Thursday"
@@ -11511,7 +11573,7 @@ msgid "Token"
 msgstr "رمز"
 
 #. ($safer_expiry->date)
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2437
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2440
 msgid "Too many market holidays during the contract period. Select an expiry date after %1."
 msgstr "هناك الكثير من عطلات السوق خلال فترة العقد. يرجى اختيار تاريخ انتهاء صلاحية بعد %1."
 
@@ -11554,7 +11616,7 @@ msgstr "عقود الوصول/عدم الوصول"
 msgid "Tour"
 msgstr "جولة"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:696
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:697
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:335
 msgid "Tourism"
 msgstr "السياحة"
@@ -11634,8 +11696,8 @@ msgstr "قواعد التداول"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:161
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:423
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2409
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2422
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2412
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2425
 #: /home/git/translations/binary-static-www2/src/templates/haml/resources/index.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/datafeed.html.tt:29
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/resources/market_timesws.html.tt:2
@@ -11666,18 +11728,18 @@ msgstr "التداول في الخيارات الثنائية مضاربة وي�
 msgid "Trading is Suspended"
 msgstr "تم تعليق التداول"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2622
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2625
 msgid "Trading is not offered for this duration."
 msgstr "لا نقدم تداول لهذة المدة الزمنية."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2154
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2164
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2174
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2181
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2157
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2167
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2177
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2184
 msgid "Trading is suspended at the moment."
 msgstr "تم تعليق التداول في الوقت الراهن."
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2674
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2677
 msgid "Trading is suspended due to missing market data."
 msgstr "تم تعليق التداول  بسبب عدم وجود بيانات السوق."
 
@@ -11700,8 +11762,8 @@ msgstr "تم تعليق التداول على %1 في الوقت الراهن."
 #. ($translated_name)
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1407
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:154
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2199
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2207
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2202
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2210
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Spread.pm:212
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Spread.pm:253
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Spread.pm:461
@@ -11732,13 +11794,13 @@ msgstr "تحويل"
 msgid "Transfer between your gaming and financial accounts."
 msgstr "التحويل بين حسابات الألعاب والحسابات المالية."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:577
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:578
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_transferws.html.tt:8
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_withdrawws.html.tt:22
 msgid "Transfer to"
 msgstr "النقل إلى"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:571
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:572
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_transferws.html.tt:48
 msgid "Transfer to Login ID"
 msgstr "التحويل إلى معرف تسجيل الدخول"
@@ -11759,7 +11821,7 @@ msgstr "ترجمة احتياجات الأعمال الجارية للشركة �
 msgid "Translations"
 msgstr "الترجمة"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:619
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:620
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Translator"
 msgstr "المترجم"
@@ -11801,7 +11863,7 @@ msgstr "حاول إضافة مزيد من الأرقام."
 msgid "Try it now"
 msgstr "جربه الآن"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2390
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2393
 msgid "Try out the Volatility Indices which are always open."
 msgstr "جرب المؤشرات المتقلبة المفتوحة دائما."
 
@@ -11946,11 +12008,11 @@ msgstr "شركة هبوط غير معروفة."
 msgid "Unless otherwise advised, we shall treat you as a Retail Client. You may also request, in writing, us to change the category in which you have been classified and this may have an effect on the level of protection afforded to you. We reserve the right to accept or refuse any such request for change in classification."
 msgstr "ما لم نبلغ بخلاف ذلك، يجب معاملتك كعميل تجزئة. يمكنك أيضا أن تلتمس، كتابة، تغيير الفئة التي كنت قد تم تصنيفك عليها وهذا قد يكون له تأثير على مستوى الحماية لك. نحتفظ بالحق في قبول أو رفض أي طلب من هذا القبيل للتغيير في التصنيف."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:596
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:597
 msgid "Unlock Cashier"
 msgstr "فتح الصراف"
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:466
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:406
 msgid "Unrecognised request."
 msgstr "طلب غير مدرج."
 
@@ -11970,7 +12032,7 @@ msgstr "تداولات فوق/تحت"
 msgid "Upcoming Events"
 msgstr "الأحداث القادمة"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:600
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:601
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/settings_detailsws.html.tt:367
 msgid "Update"
 msgstr "حدث"
@@ -12045,13 +12107,13 @@ msgstr "فاليتا، عاصمة مالطا"
 msgid "Verification Successful"
 msgstr "تم التحقق بنجاح"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:731
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:733
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_withdrawws.html.tt:35
 msgid "Verification Token"
 msgstr "رمز التحقق"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:739
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:741
 msgid "Verification code format incorrect."
 msgstr "رمز التحقق غير صحيح."
 
@@ -12082,7 +12144,9 @@ msgid "Verify your withdrawal request - %1"
 msgstr "تحقق من طلبك للسحب - %1"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/terms_and_conditions.html.tt:4
-msgid "Version 39. Last modified 2016-03-01."
+#, fuzzy
+#| msgid "Version 39. Last modified 2016-03-01."
+msgid "Version 40. Last modified 2016-05-12."
 msgstr "الإصدار 39. تم تعديله آخر مرة في 2016-03-01."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:190
@@ -12150,7 +12214,7 @@ msgstr "عرض الصفقات المفتوحة."
 msgid "View your personal information."
 msgstr "عرض معلوماتك الشخصية."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:568
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:569
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_transferws.html.tt:33
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_withdrawws.html.tt:14
 msgid "View your statement"
@@ -12821,7 +12885,10 @@ msgstr "العمل عن كثب مع الأعضاء الآخرين في الفر�
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "Work directly with members of our marketing and IT teams to produce graphics for the company website, blog, social media outlets, and marketing materials"
-msgstr "العمل مباشرة مع أعضاء من فريق التسويق لدينا وفريق تكنولوجيا المعلومات لإنتاج رسومات جرافيكس لموقع الشركة والمدونة ومنافذ وسائل التواصل الإجتماعي ومواد التسويق."
+msgstr ""
+"العمل مباشرة مع أعضاء من فريق التسويق لدينا وفريق تكنولوجيا المعلومات لإنتاج "
+"رسومات جرافيكس لموقع الشركة والمدونة ومنافذ وسائل التواصل الإجتماعي ومواد "
+"التسويق"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "Work experience in a similar role"
@@ -12958,22 +13025,22 @@ msgstr "أنت مشترك بالفعل في تحديثات الصفقات."
 msgid "You are being given the better price."
 msgstr "نقدم لك السعر الأفضل."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:550
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:551
 msgid "You are currently logged in to your real money account with %1 (%2)."
 msgstr "أنت حاليا قمت بتسجيل الدخول إلى حساب المال الحقيقي الخاص بك مع % 1 (% 2)."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:551
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:552
 msgid "You are currently logged in to your virtual money account (%2)."
 msgstr "أنت حاليا قمت بتسجيل الدخول الى حساب أموالك الافتراضية (%2)."
 
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Wrapper/Streamer.pm:342
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Wrapper/Streamer.pm:354
 #, fuzzy
 #| msgid "You are either already subscribed or you have reached the limit for proposal subscription."
 msgid "You are either already subscribed or you have reached the limit for pricing table subscription."
 msgstr "أنت الآن إما مشترك بالفعل أو قد وصلت إلى الحد الأقصى للإشتراك المقترح."
 
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Wrapper/Streamer.pm:168
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Wrapper/Streamer.pm:321
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Wrapper/Streamer.pm:333
 msgid "You are either already subscribed or you have reached the limit for proposal subscription."
 msgstr "أنت الآن إما مشترك بالفعل أو قد وصلت إلى الحد الأقصى للإشتراك المقترح."
 
@@ -13107,7 +13174,7 @@ msgstr "لقد تجاوزت حد الـ 7 أيام من الخسائر %1%2."
 msgid "You have exceeded your daily limit on losses of %1%2."
 msgstr "لقد تجاوزت حدك اليومي من الخسائر %1%2."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:719
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:721
 #, fuzzy
 #| msgid "You haven't purchased any contracts."
 msgid "You have not granted access to any applications."
@@ -13130,7 +13197,7 @@ msgid "You have purchased the following contract:"
 msgstr "لقد قمت بشراء العقد التالي:"
 
 #. ($descriptor->{category})
-#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:410
+#: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:322
 msgid "You have reached the rate limit for %1."
 msgstr "لقد وصلت إلى الحد لـ %1."
 
@@ -13150,7 +13217,7 @@ msgstr "لقد قمت بتسجيل أكثر من حساب."
 msgid "You have sold the following contract:"
 msgstr "لقد قمت ببيع العقد التالي:"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:659
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:660
 #, fuzzy
 #| msgid "You have sold the following contract:"
 msgid "You have sold this contract at %1 %2"
@@ -13224,6 +13291,10 @@ msgstr "لا يجب عليك نسخ أو تخزين أي محتوى أو إلت�
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/api_tac_tab.html.tt:207
 msgid "You must promptly report any security deficiencies in, or intrusions to, your Application that you discover to Binary.com by writing in to %1 or by raising a discussion  thread on %2 which is part of our Developer Site. You will work with Binary.com to immediately correct any security deficiency, and will immediately disconnect any intrusions or intruder. In the event of any security deficiency or intrusion involving the Application, APIs or Content, you will make no public statements (e.g. press, blogs, social media, bulletin boards, etc.) without prior written and express permission from Binary.com in each instance."
 msgstr "يجب عليك الإبلاغ فوراً عن أي أوجه في القصور الفني, أو اقتحام للتطبيق الخاص بك الذي قمت باكتشافه ل Binary.com عن طريق الكتابة ل 1% أو من خلال رفع الموضوع للمناقشة على 2% والتي تعد جزءاً من موقعنا الخاص بالمطورين. سوف تعمل مع Binary.com على تصحيح أي نقص أمنى فورياً, وقطع الإتصال فورياً عن أي اختراقات أو تطفل. وفي حال وجود أي نقص أمني أو اختراق يشمل التطبيق, واجهات برمجة التطبيقات أو المحتويات, فأنت لن تدلي بأي تصريحات علنية (على سبيل المثال الصحافة, المدونات, وسائل التواصل الإجتماعي, لوحات الإعلانات, وما إلى ذلك.) دون الحصول على إذن خطي مسبق وصريح من Binary.com في كل حالة."
+
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:542
+msgid "You need to finish all 20 questions."
+msgstr "يجب عليك الإجابة على ال 20 سؤال."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/binary_options_basics.html.haml:1
 msgid "You only need to make four decisions to execute a binary contract."
@@ -13367,13 +13438,13 @@ msgstr "ستجد إجابات عن معظم أسئلتك على صفحة <a href
 msgid "You're using a Virtual Account."
 msgstr "أنت تستخدم حساب افتراضي."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:553
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:554
 #, fuzzy
 #| msgid "This account is unavailable. For any questions please contact <a href=\"%1\">Customer Support</a>."
 msgid "Your %1 account is unavailable. For any questions please contact %2."
 msgstr "هذا الحساب غير متاح. إذا كان لديك أي استفسار يرجى الاتصال <a href=\"%1\">بخدمة العملاء</a>."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:554
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:555
 #, fuzzy
 #| msgid "This account is unavailable. For any questions please contact <a href=\"%1\">Customer Support</a>."
 msgid "Your %1 accounts are unavailable. For any questions please contact %2."
@@ -13385,7 +13456,7 @@ msgstr "هذا الحساب غير متاح. إذا كان لديك أي است�
 msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other currency)."
 msgstr "حد السحب لـ %1 يوم حاليا EUR %2. (أو ما يعادله بعملة أخرى)."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:575
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:576
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_transferws.html.tt:94
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "سيتسلم عميلك إشعار إلكتروني ليعلمه أنه قد تم عمل التحويل."
@@ -13419,7 +13490,7 @@ msgstr "رصيد حسابك هو %1 %2. الحد الأقصى للسحب بكل 
 msgid "Your account has exceeded the trading limit with free promo code, please deposit if you wish to continue trading."
 msgstr "لقد تجاوز حسابك حد التداول الخاص بكود العرض المجاني، يرجى أن تقوم بالايداع إذا كنت ترغب فى الاستمرار فى التداول."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:587
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:588
 #, fuzzy
 #| msgid "Your account has no country of residence."
 msgid "Your account has no Login/Logout activity."
@@ -13454,7 +13525,7 @@ msgstr "تم توثيق حسابك بالكامل. يمكنك أن تطلع عل
 msgid "Your account is important to us. Please <a href=\"%1\">contact us</a> should you need further assistance."
 msgstr "حسابك مهم لنا. يرجى أن <a href=\"%1\">تتصل بنا</a> إذا احتجت لمزيد من المساعدة."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:751
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:753
 msgid "Your account is not fully authenticated. Please visit the <a href=\"%1\">authentication</a> page for more information."
 msgstr "الحساب الخاص بك غير موثق بشكل كامل. يرجى زيارة صفحة<a href=\"%1\"> التوثيق </a>لمزيد من المعلومات."
 
@@ -13500,13 +13571,13 @@ msgstr "قسم الصراف الخاص بك مغلق"
 msgid "Your cashier is locked as per your request"
 msgstr "قسم الصراف الخاص بك مغلق بناءا على طلبك"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:746
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:748
 #, fuzzy
 #| msgid "Your cashier is locked as per your request - to unlock it, please <a href=\"%1\">click here</a>."
 msgid "Your cashier is locked as per your request - to unlock it, please click %1here"
 msgstr "قسم الصراف الخاص بك مغلقا بناءا على طلبك - لفتحه، يرجى <a href=\"%1\">الضغط هنا</a>."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:597
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:598
 msgid "Your cashier is locked as per your request - to unlock it, please enter the password."
 msgstr "قسم الصراف الخاص بك مغلقا بناءاً على طلبك - لفتحه، يرجى إدخال كلمة المرور."
 
@@ -13548,7 +13619,7 @@ msgstr "رصيدك الحالي هو"
 msgid "Your date of birth is invalid."
 msgstr "تاريخ ميلادك غير صحيح."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:714
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:715
 msgid "Your details have been updated."
 msgstr "تم تحديث التفاصيل الخاصة بك."
 
@@ -13617,7 +13688,7 @@ msgstr "تم تغيير كلمة المرور الخاصة بك."
 msgid "Your password has been reset."
 msgstr "تم تغيير كلمة المرور الخاصة بك."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:738
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:740
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/reset_password.html.tt:23
 msgid "Your password has been successfully reset. Please log into your account using your new password."
 msgstr "تم إعادة تعيين كلمة المرور الخاصة بك بنجاح. يرجى أن تسجل الدخول لحسابك باستخدام كلمة مرورك الجديدة."
@@ -13636,7 +13707,7 @@ msgstr "رقم هاتفك"
 msgid "Your provided email address is already in use by another Login ID. According to our terms and conditions, you may only register once through our site. If you have forgotten the password of your existing account, please <a href=\"%1\">try our password recovery tool</a> or contact customer service."
 msgstr "عنوان بريدك الإلكتروني المقدم مستخدم بالفعل من معرف تسجيل دخول آخر. وفقاً لشروطنا وأحكامنا، يمكنك أن تسجل مرة واحدة فقط من خلال موقعنا. إذا نسيت كلمة المرور الخاصة بحسابك الحالي، رجاء <a href=\"%21\">جرب أداة استعادة كلمة المرور الخاصة بنا</a> أو اتصل بخدمة العملاء."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:578
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:579
 msgid "Your request to transfer %1 %2 from %3 to %4 has been successfully processed."
 msgstr "تم معالجة طلبك لتحويل %1 %2 من %3 إلى %4 بنجاح."
 
@@ -13670,7 +13741,7 @@ msgstr "انتهت صلاحية مستنداتك"
 msgid "Your token has expired. Please click <a class=\"pjaxload\" href=\"%1\">here</a> to restart the verification process."
 msgstr "الرجاء النقر فوق رابط التحقق المرسل إلى بريدك الإلكتروني، أو انقر <a class=\"pjaxload\" href=\"%1\">هنا</a> لإعادة التحقق."
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:593
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:594
 #, fuzzy
 #| msgid "Your trading statistics "
 msgid "Your trading statistics since %1."
@@ -13681,7 +13752,7 @@ msgid "Your transaction reference is"
 msgstr "الرقم المرجعي لمعاملتك هو"
 
 #. ($tradeRef)
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:660
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:661
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:1319
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:1683
 msgid "Your transaction reference number is %1"
@@ -13771,7 +13842,7 @@ msgstr "أي تقييد لعملائها فيما يخص شراء عقود في 
 msgid "apostrophe"
 msgstr "فاصلة"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2087
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2090
 msgid "barrier"
 msgstr "حاجز"
 
@@ -13844,13 +13915,13 @@ msgstr "شرح"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:265
 msgid "f"
-msgstr ""
+msgstr "أف"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:810
 msgid "first tick"
 msgstr "الحركة الأولى"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2087
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2090
 msgid "high barrier"
 msgstr "حاجز مرتفع"
 
@@ -13899,7 +13970,7 @@ msgstr "تحميل..."
 msgid "login"
 msgstr "تسجيل الدخول"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2087
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2090
 msgid "low barrier"
 msgstr "حاجز منخفض"
 
@@ -13920,7 +13991,7 @@ msgstr "أدناها"
 msgid "minimum available duration"
 msgstr "أقل مدة زمنية متاحة"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2084
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2087
 msgid "minus"
 msgstr "ناقص"
 
@@ -13943,7 +14014,7 @@ msgstr "شهر"
 msgid "months"
 msgstr "شهور"
 
-#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:647
+#: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:648
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/portfolio/contract_table.html.tt:52
 msgid "not available"
 msgstr "غير متاح"
@@ -13977,7 +14048,7 @@ msgstr "كلمة المرور"
 msgid "period"
 msgstr "فترة"
 
-#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2084
+#: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2087
 msgid "plus"
 msgstr "زائد"
 
@@ -15726,8 +15797,8 @@ msgid "Berkshire Hathaway Inc."
 msgstr "شركة بيركشاير هاثاواي المتحدة."
 
 #: Underlying Symbol AUCBA
-msgid "Commbank (Australia)"
-msgstr "Commbank (استراليا)"
+msgid "Commonwealth Bank"
+msgstr "بنك الكومنولث"
 
 #: Underlying Symbol UKAAL
 msgid "Anglo American plc"
@@ -15798,8 +15869,8 @@ msgid "AbbVie Inc."
 msgstr "Apple Inc."
 
 #: Underlying Symbol DESIE
-msgid "Siemens Aktiengesellschaft"
-msgstr "Siemens Aktiengesellschaft"
+msgid "Siemens AG"
+msgstr "سيمنز AG"
 
 #: Underlying Symbol UKRDSA
 msgid "Royal Dutch Shell plc"
@@ -15919,9 +15990,9 @@ msgstr "YY Inc."
 
 #: Underlying Symbol USAMZN
 #, fuzzy
-#| msgid "Corporate Actions"
-msgid "Amazon Corporation"
-msgstr "إجراءات الشركات"
+#| msgid "Sohu.com Inc."
+msgid "Amazon.com Inc"
+msgstr "Sohu.com Inc."
 
 #: Underlying Symbol USHAL
 #, fuzzy
@@ -15990,12 +16061,14 @@ msgid "Volkswagen AG"
 msgstr "Volkswagen AG"
 
 #: Underlying Symbol UKBARC
-msgid "Barclays plc"
+#, fuzzy
+#| msgid "Barclays plc"
+msgid "Barclays"
 msgstr "Barclays plc"
 
 #: Underlying Symbol AUMQG
-msgid "MACQUARIE GROUP LIMITED"
-msgstr "MACQUARIE GROUP LIMITED"
+msgid "Macquarie Group"
+msgstr "مجموعة ماكواري"
 
 #: Underlying Symbol AUTLS
 msgid "TELSTRA CORPORATION LIMITED"
@@ -16065,7 +16138,7 @@ msgstr "Renault"
 
 #: Underlying Symbol USDANG
 msgid "E-Commerce China Dangdang Inc."
-msgstr "شركة دانج دانج الصينية للتجارة الإلكترونية المتحدة"
+msgstr "شركة دانج دانج الصينية للتجارة الإلكترونية المتحدة."
 
 #: Underlying Symbol DEADS
 msgid "ADIDAS AG"
@@ -16110,7 +16183,9 @@ msgid "WOOLWORTHS LIMITED"
 msgstr "WOOLWORTHS LIMITED"
 
 #: Underlying Symbol UKGSK
-msgid "GlaxoSmithKline plc"
+#, fuzzy
+#| msgid "GlaxoSmithKline plc"
+msgid "GlaxoSmithKline"
 msgstr "GlaxoSmithKline plc"
 
 #: Underlying Symbol AUWES
@@ -16194,7 +16269,9 @@ msgid "BMW"
 msgstr "IBM"
 
 #: Underlying Symbol USAAPL
-msgid "Apple Inc."
+#, fuzzy
+#| msgid "Apple Inc."
+msgid "Apple Inc"
 msgstr "Apple Inc."
 
 #: Underlying Symbol INBHARTIARTL
@@ -16212,7 +16289,9 @@ msgid "UBS AG"
 msgstr "UBS AG"
 
 #: Underlying Symbol USCT
-msgid "Citigroup Inc."
+#, fuzzy
+#| msgid "Citigroup Inc."
+msgid "Citigroup Inc"
 msgstr "Citigroup Inc."
 
 #: Underlying Symbol FPMIC
@@ -16262,7 +16341,9 @@ msgid "Reliance Industries Ltd"
 msgstr "Reliance Industries Ltd"
 
 #: Underlying Symbol AUBHP
-msgid "BHP Billiton Ltd"
+#, fuzzy
+#| msgid "BHP Billiton Ltd"
+msgid "BHP Billiton"
 msgstr "BHP Billiton Ltd"
 
 #: Underlying Symbol USAMAT
@@ -16376,7 +16457,9 @@ msgid "Piraeus Bank SA"
 msgstr "البنك الألمانى"
 
 #: Underlying Symbol USFB
-msgid "Facebook Inc."
+#, fuzzy
+#| msgid "Facebook Inc."
+msgid "Facebook Inc"
 msgstr "Facebook Inc."
 
 #: Underlying Symbol FPDG
@@ -16488,7 +16571,9 @@ msgid "Philip Morris International"
 msgstr "Philip Morris International"
 
 #: Underlying Symbol UKHSBA
-msgid "HSBC Holdings plc"
+#, fuzzy
+#| msgid "HSBC Holdings plc"
+msgid "HSBC Holdings"
 msgstr "HSBC Holdings plc"
 
 #: Underlying Symbol DEEOAN
@@ -16504,11 +16589,15 @@ msgid "IBM"
 msgstr "IBM"
 
 #: Underlying Symbol USPFE
-msgid "Pfizer Inc."
+#, fuzzy
+#| msgid "Pfizer Inc."
+msgid "Pfizer Inc"
 msgstr ".Pfizer Inc"
 
 #: Underlying Symbol AUANZ
-msgid "ANZ Banking Group Ltd"
+#, fuzzy
+#| msgid "ANZ Banking Group Ltd"
+msgid "ANZ Banking Group"
 msgstr "ANZ Banking Group Ltd"
 
 #: Underlying Symbol UKBATS
@@ -16564,7 +16653,9 @@ msgid "Schneider Electric"
 msgstr "Schneider Electric"
 
 #: Underlying Symbol UKVOD
-msgid "Vodafone"
+#, fuzzy
+#| msgid "Vodafone"
+msgid "Vodafone Group"
 msgstr "Vodafone"
 
 #: Underlying Symbol INSUNPHARMA
@@ -16596,7 +16687,9 @@ msgid "Dialog Semiconductor plc"
 msgstr "مؤشر شركات أشباه الموصلات"
 
 #: Underlying Symbol USXOM
-msgid "ExxonMobil"
+#, fuzzy
+#| msgid "ExxonMobil"
+msgid "Exxon Mobil Corp"
 msgstr "ExxonMobil"
 
 #: Underlying Symbol USNTFLX
@@ -16704,7 +16797,9 @@ msgid "Veolia Environnement water"
 msgstr "Veolia Environnement water"
 
 #: Underlying Symbol USKO
-msgid "The Coca-Cola Company"
+#, fuzzy
+#| msgid "The Coca-Cola Company"
+msgid "Coca-Cola Co"
 msgstr "The Coca-Cola Company"
 
 #: Underlying Symbol BBUCB
@@ -16762,15 +16857,21 @@ msgid "Societe Generale"
 msgstr "Societe Generale"
 
 #: Underlying Symbol AUQAN
-msgid "Qantas Airways Limited"
+#, fuzzy
+#| msgid "Qantas Airways Limited"
+msgid "Qantas Airways"
 msgstr "Qantas Airways Limited"
 
 #: Underlying Symbol USGE
-msgid "General Electric Company"
+#, fuzzy
+#| msgid "General Electric Company"
+msgid "General Electric Co"
 msgstr "General Electric Company"
 
 #: Underlying Symbol USMSFT
-msgid "Microsoft"
+#, fuzzy
+#| msgid "Microsoft"
+msgid "Microsoft Corp"
 msgstr "Microsoft"
 
 #: Underlying Symbol USJD
@@ -16788,8 +16889,10 @@ msgid "Alstom industrial machinery"
 msgstr "المؤشر الصناعى العالمى"
 
 #: Underlying Symbol USGOOG
-msgid "Google Inc."
-msgstr "Google Inc."
+#, fuzzy
+#| msgid "Apple Inc."
+msgid "Alphabet Inc"
+msgstr "Apple Inc."
 
 #: Underlying Symbol USWMT
 msgid "Wal-Mart Stores Inc."
@@ -16934,10 +17037,12 @@ msgid "Commodities are traded items with directly usable qualities."
 msgstr "السلع الأساسية هي بضائع يتم تداولها لها صفات صالحة للاستخدام المباشر."
 
 #: Translation for market name
-msgid "Stocks"
+#, fuzzy
+#| msgid "Stocks"
+msgid "OTC Stocks"
 msgstr "الأسهم"
 
-#: Explanation for market Stocks
+#: Explanation for market OTC Stocks
 msgid "Stocks (or shares) represent the value of partial ownership in a single company."
 msgstr "تمثل الأسهم قيمة الملكية الجزئية في شركة واحدة."
 
@@ -16997,6 +17102,12 @@ msgstr "بورصات أستراليا"
 msgid "Americas Future"
 msgstr "Americas Future"
 
+#: Explanation for market Germany
+#, fuzzy
+#| msgid "Germany Stocks"
+msgid "Germany OTC Stocks"
+msgstr "بورصات ألمانيا"
+
 #: Translation for sub market name
 msgid "French Stocks"
 msgstr "بورصات الفرنسية"
@@ -17035,6 +17146,12 @@ msgstr "أوروبا/أفريقيا"
 msgid "United States Stocks"
 msgstr "بورصات الولايات الأمريكية المتحدة"
 
+#: Explanation for market Australia
+#, fuzzy
+#| msgid "Australia Stocks"
+msgid "Australia OTC Stocks"
+msgstr "بورصات أستراليا"
+
 #: Translation for sub market name
 msgid "Minor Pairs"
 msgstr "الأزواج الثانوية"
@@ -17042,6 +17159,18 @@ msgstr "الأزواج الثانوية"
 #: Explanation for market Minor Pairs
 msgid "Forex pairs of interest, but with less liquid international markets."
 msgstr "أزواج عملات ذات أهمية، لكنها تنتمي لأسواق دولية أقل سيولة."
+
+#: Translation for sub market name
+#, fuzzy
+#| msgid "USDZAR"
+msgid "US"
+msgstr "دولار أمريكي/الراند الجنوب أفريقي"
+
+#: Explanation for market US
+#, fuzzy
+#| msgid "US Stocks"
+msgid "US OTC Stocks"
+msgstr "أسهم الولايات المتحدة"
 
 #: Translation for sub market name
 msgid "Germany Stocks"
@@ -17056,6 +17185,16 @@ msgstr "تمثل يوم واحد من التداول في ظل ظروف السو
 #| msgid "Associated with a number that represents the relative volatility of the market. For example, the Random 100 Index is twice as volatile as the Random 50 Index."
 msgid "Associated with a number that represents the relative volatility of the market. For example, the Volatility 100 Index is twice as volatile as the Volatility 50 Index."
 msgstr "ترتبط برقم يمثل تقلب السوق النسبي. على سبيل المثال، معامل تقلب المؤشر راندم المئوي ضعف معامل تقلب مؤشر راندم الخمسيني."
+
+#: Translation for sub market name
+msgid "UK"
+msgstr "المملكة المتحدة"
+
+#: Explanation for market UK
+#, fuzzy
+#| msgid "UK Stocks"
+msgid "UK OTC Stocks"
+msgstr "أسهم المملكة المتحدة"
 
 #: Translation for sub market name
 msgid "Metals"
@@ -17510,6 +17649,23 @@ msgstr "%1 %2 عائد إذا %3 تحرك خارج %7 إلى %6 قبل %5."
 #: Translation for contract type description (UPORDOWN - intraday)
 msgid "%1 %2 payout if %3 goes outside %7 and %6 through %5 after %4."
 msgstr "%1 %2 عائد إذا %3 خرج عن %7 و %6 قبل %5 بعد %4."
+
+#~ msgid "Commbank (Australia)"
+#~ msgstr "Commbank (استراليا)"
+
+#~ msgid "Siemens Aktiengesellschaft"
+#~ msgstr "Siemens Aktiengesellschaft"
+
+#, fuzzy
+#~| msgid "Corporate Actions"
+#~ msgid "Amazon Corporation"
+#~ msgstr "إجراءات الشركات"
+
+#~ msgid "MACQUARIE GROUP LIMITED"
+#~ msgstr "MACQUARIE GROUP LIMITED"
+
+#~ msgid "Google Inc."
+#~ msgstr "Google Inc."
 
 #~ msgid "%1’s exclusive Smart Markets are built to key on a particular subset of the world’s markets. With a price derived from related assets, Smart Markets allow traders to take positions on a variety of market action."
 #~ msgstr "لقد بنيت الأسواق الذكية الحصرية لـ %1 حسب مجموعة فرعية معينة من أسواق العالم. مع استقاء الأسعار من الأصول ذات الصلة، تتيح الأسواق الذكية للمتداولين التداول في تنوع كبير من سلوك الأسواق."
@@ -21072,9 +21228,6 @@ msgstr "%1 %2 عائد إذا %3 خرج عن %7 و %6 قبل %5 بعد %4."
 
 #~ msgid "Toll-Free number"
 #~ msgstr "رقم مجانى"
-
-#~ msgid "UK"
-#~ msgstr "المملكة المتحدة"
 
 #~ msgid "User Support - Thank you"
 #~ msgstr "دعم المستخدم - شكرا لكم"

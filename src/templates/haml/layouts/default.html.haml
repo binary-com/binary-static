@@ -1,8 +1,9 @@
 !!! 5
 %html
   = include('layouts/default/head')
+  - my $body_id = current_route;
   - my $lang1 = stash->{language};
-  %body.$lang1
+  %body#$body_id.$lang1
     #page-wrapper
       = include('layouts/default/topbar')
       = include('layouts/default/header')

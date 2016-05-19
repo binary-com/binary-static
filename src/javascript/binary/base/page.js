@@ -260,10 +260,6 @@ Client.prototype = {
                 if(client_tnc_status !== website_tnc_version) {
                     sessionStorage.setItem('tnc_redirect', window.location.href);
                     window.location.href = page.url.url_for('user/tnc_approvalws');
-                } else if (sessionStorage.getItem('risk_redirect')) {
-                  var redirectUrl = sessionStorage.getItem('risk_redirect');
-                  sessionStorage.removeItem('risk_redirect');
-                  window.location.href = redirectUrl;
                 }
             }
         }
@@ -343,16 +339,25 @@ var URL = function (url) { // jshint ignore:line
 };
 
 URL.prototype = {
-    url_for: function(path, params) {
-        if(!path) {
-            path = '';
+    url_for: function(path, params, type) {
+        var mid_path = '/';
+        if(/.cgi/.test(path)) {
+            if(type == 'cached') {
+                mid_path = '/c/';
+            } else {
+                mid_path = '/d/';
+            }
         }
-        else if (path.length > 0 && path[0] === '/') {
-            path = path.substr(1);
+
+        var url = "https://" + this.location.host + mid_path + path;
+        if(params) {
+            url += '?' + params;
+            url += '&l=' + page.language();
+        } else {
+            url += '?l=' + page.language();
         }
-        var lang = page.language().toLowerCase(),
-            url  = window.location.href;
-        return url.substring(0, url.indexOf('/' + lang + '/') + lang.length + 2) + path + (params ? '?' + params : '');
+
+        return url;
     },
     url_for_static: function(path) {
         if(!path) {
@@ -491,7 +496,7 @@ Menu.prototype = {
                 this.show_main_menu();
             }
         } else {
-            var is_mojo_page = /^\/$|\/login|\/home|\/ad|\/open-source-projects|\/bulk-trader-facility|\/partners|\/payment-agent|\/about-us|\/group-information|\/group-history|\/careers|\/contact|\/terms-and-conditions|\/terms-and-conditions-jp|\/responsible-trading|\/us_patents|\/lost_password|\/realws|\/virtualws|\/open-positions|\/job-details|\/user-testing|\/japanws|\/maltainvestws$/.test(window.location.pathname);
+            var is_mojo_page = /^\/$|\/login|\/home|\/ad|\/open-source-projects|\/bulk-trader-facility|\/partners|\/payment-agent|\/about-us|\/group-information|\/group-history|\/careers|\/contact|\/terms-and-conditions|\/terms-and-conditions-jp|\/responsible-trading|\/us_patents|\/lost_password|\/realws|\/virtualws|\/open-positions|\/job-details|\/user-testing|\/japanws|\/maltainvestws|\/reset_passwordws|\/supported-browsers$/.test(window.location.pathname);
             if(!is_mojo_page) {
                 trading.addClass('active');
                 this.show_main_menu();
@@ -765,9 +770,10 @@ Header.prototype = {
         });
     },
     check_risk_classification: function() {
-      if (page.client.is_logged_in && !page.client.is_virtual() && page.client.residence !== 'jp' &&
-          sessionStorage.getItem('risk_classification') === 'high' && window.location.pathname !== '/user/assessmentws') {
-            window.location.href = page.url.url_for('user/assessmentws');
+      if (page.client.is_logged_in && !page.client.is_virtual() && page.client.residence !== 'jp' && isNotBackoffice() &&
+          localStorage.getItem('risk_classification.response') === 'high' && localStorage.getItem('risk_classification') === 'high' &&
+          (localStorage.getItem('reality_check.ack') === '1' || !localStorage.getItem('reality_check.interval'))) {
+            RiskClassification.renderRiskClassificationPopUp();
       }
     },
     validate_cookies: function(){
@@ -808,8 +814,8 @@ Header.prototype = {
                   $.removeCookie(c, {path: cookie_path[1]});
               }
             });
-            sessionStorage.removeItem('risk_classification');
-            sessionStorage.removeItem('risk_redirect');
+            localStorage.removeItem('risk_classification');
+            localStorage.removeItem('risk_classification.response');
             page.reload();
         }
     },
@@ -929,6 +935,7 @@ Contents.prototype = {
     on_load: function() {
         this.activate_by_client_type();
         this.topbar_message_visibility();
+        this.update_body_id();
         this.update_content_class();
         this.tooltip.attach();
         this.init_draggable();
@@ -983,6 +990,11 @@ Contents.prototype = {
             $('#account-transfer-section').addClass('invisible');
             $('#account-transfer-section').hide();
         }
+    },
+    update_body_id: function() {
+        //This is required for our css to work.
+        $('body').attr('id', '');
+        $('body').attr('id', $('#body_id').html());
     },
     update_content_class: function() {
         //This is required for our css to work.
@@ -1074,30 +1086,16 @@ var Page = function(config) {
 };
 
 Page.prototype = {
-    all_languages: function() {
-        return ['EN', 'AR', 'DE', 'ES', 'FR', 'ID', 'IT', 'PL', 'PT', 'RU', 'VI', 'ZH_CN', 'ZH_TW'];
-    },
-    language_from_url: function() {
-        var regex = new RegExp('^(' + this.all_languages().join('|') + ')$', 'i'),
-            urls  = window.location.href.split('/').slice(3);
-        var langs = urls.filter(function(u){
-            return regex.test(u);
-        });
-        return langs && langs.length > 0 ? langs[0].toUpperCase() : '';
-    },
     language: function() {
-        var lang = window.lang;
-        if(!lang) {
-            lang = this.language_from_url();
-            if(!lang) {
-                lang = $.cookie('language');
-                if(!lang) {
-                    lang = 'EN';
-                }
-            }
-            window.lang = lang.toUpperCase();
+        if ($('#language_select').length > 0) {
+            return $('#language_select').attr('class').toUpperCase(); //Required as mojo still provides lower case lang codes and most of our system expects upper case.
+        } else if(page.url.param('l')) {
+            return page.url.param('l');
+        } else if($.cookie('language')) {
+            return $.cookie('language');
+        } else {
+            return 'EN';
         }
-        return lang;
     },
     on_load: function() {
         this.url.reset();
@@ -1175,9 +1173,22 @@ Page.prototype = {
         moment.locale(language.toLowerCase());
     },
     url_for_language: function(lang) {
-        lang = lang.trim();
-        SessionStore.set('selected.language', lang.toUpperCase());
-        return window.location.href.replace(new RegExp('\/' + page.language() + '\/', 'i'), '/' + lang.toLowerCase() + '/');
+        lang = lang.trim().toUpperCase();
+        SessionStore.set('selected.language', lang);
+        var loc = document.location; // quick access
+        var qs = loc.search || '?';
+        var url = loc.protocol + '//' + loc.host + loc.pathname;
+        if (qs.indexOf('l=') >= 0) {
+            url += qs.replace(/(\?|&)l=[A-Z_]{2,5}/, "$1l=" + lang);
+        } else {
+            if (qs.length > 1) {
+                lang = '&l=' + lang;
+            } else {
+                lang = 'l=' + lang;
+            }
+            url += qs + lang;
+        }
+        return url;
     },
     record_affiliate_exposure: function() {
         var token = this.url.param('t');

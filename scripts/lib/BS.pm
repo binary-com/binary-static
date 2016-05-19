@@ -1,4 +1,4 @@
-package BOM;
+package BS;
 
 use strict;
 use warnings;
@@ -41,8 +41,8 @@ sub set_lang {
 sub localize {
     my @texts = @_;
 
-    require BOM::I18N;
-    my $lh = BOM::I18N::handle_for($LANG)
+    require BS::I18N;
+    my $lh = BS::I18N::handle_for($LANG)
         || die("could not build locale for language $LANG");
 
     return $lh->maketext(@texts);
@@ -86,8 +86,8 @@ sub root_url {
 }
 
 sub url_for {
-    require BOM::Request;
-    state $request = BOM::Request->new(language => $LANG);
+    require BS::Request;
+    state $request = BS::Request->new(language => $LANG);
     return $request->url_for(@_);
 }
 
@@ -95,7 +95,7 @@ sub url_for {
 sub tt2 {
     my @include_path = (root_path() . '/src/templates/toolkit');
 
-    state $request = BOM::Request->new(language => $LANG);
+    state $request = BS::Request->new(language => $LANG);
     my $stash = Template::Stash->new({
         language    => $request->language,
         broker      => $request->broker,
@@ -290,31 +290,14 @@ sub menu {
     $resources_items_ref->{'sub_items'} = [$asset_index_ref, $trading_times_ref];
     push @menu, $resources_items_ref;
 
-    # charting
-    my $charting_items_ref = {
-        url        => url_for('/charting'),
-        text       => localize('Charting'),
-        id         => 'topMenuCharting',
+    # applications
+    push @menu,
+        {
+        id         => 'topMenuApplications',
+        url        => url_for('/applications'),
+        text       => localize('Applications'),
         link_class => 'pjaxload',
-    };
-
-    # chart director
-    my $charts_director_ref = {
-        id     => 'topMenuWebtrader',
-        url    => '//webtrader.binary.com',
-        text   => localize('Webtrader'),
-        target => "_blank"
-    };
-
-    my $trading_view_ref = {
-        id     => 'topMenuTradingView',
-        url    => '//tradingview.binary.com',
-        text   => localize('TradingView'),
-        target => "_blank"
-    };
-
-    $charting_items_ref->{'sub_items'} = [$charts_director_ref, $trading_view_ref];
-    push @menu, $charting_items_ref;
+        };
 
     # push @{$menu}, $self->_main_menu_trading();
 

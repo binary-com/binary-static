@@ -11,8 +11,8 @@ use Path::Tiny;
 use HTML::Entities qw( encode_entities );
 use Encode;
 
-use BOM qw/set_is_dev is_dev localize set_lang all_languages lang_display_name tt2 css_files js_config menu/;
-use BOM::Request;
+use BS qw/set_is_dev is_dev localize set_lang all_languages lang_display_name tt2 css_files js_config menu/;
+use BS::Request;
 
 # force = re-generate all files
 # dev   = for domain like http://fayland.github.io/binary-static-www2/ which has a sub path
@@ -38,7 +38,7 @@ my @m = (
     ['terms-and-conditions',       'legal/tac',                   'toolkit', 'default', 'Terms and Conditions'],
     ['terms-and-conditions-jp',    'legal_jp/tacjp',              'toolkit', 'default', 'Terms and Conditions'],
     ['resources',                  'resources/index',             'haml',    'default'],
-    ['applications',               'applications/index',          'toolkit', 'default'],
+    ['applications',               'applications/index',          'toolkit', 'default', 'Applications'],
     ['about-us',                   'about/index',                 'haml',    'full_width'],
     ['group-information',          'about/group-information',     'haml',    'default'],
     ['open-positions',             'static/job_descriptions',     'haml',    'full_width'],
@@ -118,7 +118,7 @@ my @m = (
 ## config
 my $root_path = "$Bin/..";
 my $dist_path = "$root_path/dist";
-@BOM::Request::HTML_URLS = map { $_->[0] } @m;
+@BS::Request::HTML_URLS = map { $_->[0] } @m;
 
 foreach my $m (@m) {
     my $save_as  = $m->[0];
@@ -140,7 +140,7 @@ foreach my $m (@m) {
 
         mkdir("$dist_path/$lang")      unless -d "$dist_path/$lang";
         mkdir("$dist_path/$lang/pjax") unless -d "$dist_path/$lang/pjax";
-        my $request = BOM::Request->new(
+        my $request = BS::Request->new(
             language => uc $lang,
         );
 
@@ -174,9 +174,12 @@ foreach my $m (@m) {
         }
 
         ## pjax is using layout/default/content
-        my $layout_file = "$root_path/src/templates/haml/layouts/default/content.html.haml";
-        if ($tpl_type eq 'toolkit') {
-            $layout_file = "layouts/default/content.html.tt";
+        my $layout_file = $file;
+        if($layout) {
+            $layout_file = "$root_path/src/templates/haml/layouts/$layout/content.html.haml";
+            if ($tpl_type eq 'toolkit') {
+                $layout_file = "layouts/default/content.html.tt";
+            }
         }
         $stash{is_pjax_request} = 1;
         $stash{content}         = $output;

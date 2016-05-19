@@ -1,7 +1,9 @@
-%script{:type => "text/javascript"}
-  !=  "window.page_params = { settings: ". $javascript->{settings} . "};"
+- my $configs = js_configs();
 
-- foreach my $lib (@{ $javascript->{libs} }) {
+%script{:type => "text/javascript"}
+  !=  "window.page_params = { settings: ". $configs->{settings} . "};"
+
+- foreach my $lib (@{ $configs->{libs} }) {
   %script{:src => $lib :defer=>"true"}
 - }
 

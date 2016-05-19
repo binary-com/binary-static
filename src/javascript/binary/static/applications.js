@@ -1,23 +1,14 @@
-pjax_config_page_require_auth("user/authorised_appsws", function(){
+pjax_config_page("applications", function(){
     return {
         onLoad: function() {
-            BinarySocket.init({
-                onmessage: function(msg){
-                    var response = JSON.parse(msg.data);
-
-                    if (response) {
-                        var type = response.msg_type;
-                        if (type === 'oauth_apps'){
-                            Applications.responseHandler(response);
-                        }
-                    }
-                }
-            });
-            Content.populate();
-            Applications.init();
-        },
-        onUnload: function(){
-            Applications.clean();
+          Content.populate();
+          if (page.client.residence === 'jp' || page.language().toLowerCase() === 'ja') {
+            $('.applications-page').empty()
+                                   .append('<p class="notice-msg">' + Content.localize().textFeatureUnavailable + '</p>')
+                                   .removeClass('invisible');
+          } else {
+            $('.applications-page').removeClass('invisible');
+          }
         }
     };
 });

@@ -1,11 +1,11 @@
-package BOM::Request;
+package BS::Request;
 
 use Moo;
-use BOM qw/root_url/;
+use BS qw/root_url/;
 
 has 'language' => (is => 'rw');
 has 'website'  => (is => 'lazy');
-sub _build_website { return BOM::Request::Website->new }
+sub _build_website { return BS::Request::Website->new }
 
 sub param  { }         # return nothing
 sub broker { 'CR' }    # hardcode
@@ -58,7 +58,7 @@ sub url_for {
     return $uri;
 }
 
-package BOM::Request::Website;
+package BS::Request::Website;
 
 use Moo;
 

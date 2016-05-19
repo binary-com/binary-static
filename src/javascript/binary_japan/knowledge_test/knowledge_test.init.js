@@ -4,6 +4,7 @@ var KnowledgeTest = (function() {
     var hiddenClass = 'invisible';
 
     var submitted = {};
+    var submitCompleted = false;
     var randomPicks = [];
     var randomPicksAnswer = {};
     var resultScore = 0;
@@ -18,6 +19,9 @@ var KnowledgeTest = (function() {
     }
 
     function submitHandler() {
+        if (submitCompleted) {
+            return;
+        }
         var answeredQid = Object.keys(submitted).map(function(k) {return +k;});
         if (answeredQid.length !== 20) {
             $('#knowledge-test-msg')
@@ -43,6 +47,7 @@ var KnowledgeTest = (function() {
             }
         }
         KnowledgeTestData.sendResult(resultScore);
+        submitCompleted = true;
     }
 
     function showQuestionsTable() {

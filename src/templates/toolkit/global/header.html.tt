@@ -20,7 +20,7 @@
                     </div>
                     <div class='grd-grid-4 grd-grid-mobile-5'>
                         <div class="[% language %]" id='language_select'>
-                            [% INCLUDE global/language_form.html.tt %]
+                            [% language_select %]
                         </div>
                     </div>
                 </div>

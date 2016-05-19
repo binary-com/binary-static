@@ -1,5 +1,5 @@
 <select>
-[% FOREACH o IN language_options %]
+[% FOREACH o IN options %]
     [% IF o.selected %]
         <option class='[% o.code %]' selected='selected'>
             [% o.text %]

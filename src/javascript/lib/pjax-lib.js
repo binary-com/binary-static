@@ -416,8 +416,7 @@
 		};
 		// Secret pjax ?get param so browser doesn't return pjax content from cache when we don't want it to
 		// Switch between ? and & so as not to break any URL params (Based on change by zmasek https://github.com/zmasek/)
-		var lang = page.language();
-		xmlhttp.open("GET", location.replace(new RegExp('\/' + lang + '\/', 'i'), '/' + lang.toLowerCase() + '/pjax/'), true);
+		xmlhttp.open("GET", location + ((!/[?&]/.test(location)) ? '?_pjax' : '&_pjax'), true);
 		// Add headers so things can tell the request is being performed via AJAX.
 		xmlhttp.setRequestHeader('X-PJAX', 'true'); // PJAX header
 		xmlhttp.setRequestHeader('X-Requested-With', 'XMLHttpRequest');// Standard AJAX header.
