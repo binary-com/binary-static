@@ -681,7 +681,7 @@ pjax_config_page('\/login|\/loginid_switch', function() {
     return {
         onLoad: function() {
             if(isNotBackoffice()) {
-                window.location.href = page.url.url_for('oauth2/authorize', 'app_id=binarycom');
+                window.location.href = page.url.url_for('oauth2/authorize', 'app_id=1');
             }
         }
     };
