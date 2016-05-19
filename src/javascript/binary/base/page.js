@@ -570,7 +570,7 @@ Menu.prototype = {
         var active;
         var path = window.location.pathname;
         $('#menu-top li a').each(function() {
-            if(path.indexOf(this.pathname) >= 0) {
+            if(path.indexOf(this.pathname.replace(/\.html/i, '')) >= 0) {
                 active = $(this).closest('li');
             }
         });
@@ -578,18 +578,18 @@ Menu.prototype = {
         return active;
     },
     active_main_menu: function() {
-        var path = window.location.pathname;
-        path = path.replace(/\/$/, "");
-        path = decodeURIComponent(path);
+        var page_url = this.page_url;
+        if(/detailsws|securityws|self_exclusionws|limitsws|api_tokenws|authorised_appsws|iphistoryws|assessmentws/i.test(page_url.location.href)) {
+            page_url = new URL($('#main-menu a[href*="user/settingsws"]').attr('href'));
+        }
 
         var item;
         var subitem;
 
-        var that = this;
         //Is something selected in main items list
         $("#main-menu .items a").each(function () {
             var url = new URL($(this).attr('href'));
-            if(url.is_in(that.page_url)) {
+            if(url.is_in(page_url)) {
                 item = $(this).closest('.item');
             }
         });
@@ -598,7 +598,7 @@ Menu.prototype = {
             var link_href = $(this).attr('href');
             if (link_href) {
                 var url = new URL(link_href);
-                if(url.is_in(that.page_url)) {
+                if(url.is_in(page_url)) {
                     item = $(this).closest('.item');
                     subitem = $(this);
                 }
