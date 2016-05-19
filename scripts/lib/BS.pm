@@ -49,7 +49,7 @@ sub localize {
 }
 
 sub all_languages {
-    return ('EN', 'AR', 'DE', 'ES', 'FR', 'ID', 'IT', 'PL', 'PT', 'RU', 'VI', 'ZH_CN', 'ZH_TW');
+    return ('EN', 'AR', 'DE', 'ES', 'FR', 'ID', 'IT', 'PL', 'PT', 'RU', 'VI', 'JA', 'ZH_CN', 'ZH_TW');
 }
 
 sub rtl_languages {

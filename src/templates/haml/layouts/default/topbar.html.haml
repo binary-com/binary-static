@@ -21,9 +21,11 @@
             %select
               - foreach (sort keys %{ $languages }) {
                 - my ($code, $name) = ($_, $languages->{$_});
-                - if ($code ne $sel_code) {
-                  %option{:class => $code}= $name
-                - } else {
-                  %option{:class => $code, :selected => 'selected'}= $name
+                - if (lc($code) ne 'ja') {
+                  - if ($code ne $sel_code) {
+                    %option{:class => $code}= $name
+                  - } else {
+                    %option{:class => $code, :selected => 'selected'}= $name
+                  - }
                 - }
               - }
