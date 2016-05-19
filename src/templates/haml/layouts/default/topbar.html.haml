@@ -19,7 +19,7 @@
         .grd-grid-4.grd-grid-mobile-5
           %span{:class => $sel_code, id => 'language_select'}
             %select
-              - foreach (keys %{ $languages }) {
+              - foreach (sort keys %{ $languages }) {
                 - my ($code, $name) = ($_, $languages->{$_});
                 - if ($code ne $sel_code) {
                   %option{:class => $code}= $name
