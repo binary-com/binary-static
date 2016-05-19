@@ -31,8 +31,8 @@ var TradingAnalysis = (function() {
                     '<a href="#tab_graph" class="tm-a first">' + text.localize('Chart') + '</a>' +
                   '</li>' +
                   '<li id="tab_explanation" class="tm-li active">' +
-                    '<a href="' + page.url.url_for('trade/bet_explanation') + '&underlying_symbol=' + $('#underlying').val() +
-                    '&form_name=' + formName +
+                    '<a href="' + page.url.url_for('trade/bet_explanation', 'underlying_symbol=' + $('#underlying').val() +
+                    '&form_name=' + formName) +
                     '" class="tm-a">' + text.localize('Explanation') + '</a>' +
                   '</li>' +
                   '<li id="tab_last_digit" class="invisible tm-li">' +

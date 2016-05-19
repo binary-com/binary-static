@@ -349,7 +349,7 @@ URL.prototype = {
         }
         var lang = page.language().toLowerCase(),
             url  = window.location.href;
-        return url.substring(0, url.indexOf('/' + lang + '/') + lang.length + 2) + path + (params ? '?' + params : '');
+        return url.substring(0, url.indexOf('/' + lang + '/') + lang.length + 2) + path + '.html' + (params ? '?' + params : '');
     },
     url_for_static: function(path) {
         if(!path) {
