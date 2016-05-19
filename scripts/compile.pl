@@ -66,9 +66,9 @@ my @m = (
     ['get-started/beginners-faq',                'get_started/beginners_faq',                'haml', 'get_started'],
     ['get-started/glossary',                     'get_started/glossary',                     'haml', 'get_started'],
     ['get-started/volidx-markets',               'get_started/volidx_markets',               'haml', 'get_started'],
-    ['get-started/smart-indices',                'static/smart_indices',                     'haml', 'get_started'],
     ['get-started/otc-indices-stocks',           'get_started/otc_indices_stocks',           'haml', 'get_started'],
     ['get-started/spread',                       'get_started/spread_bets',                  'haml', 'get_started'],
+    ['get-started/smart-indices',                'static/smart_indices',                     'haml', 'get_started'],
 
     ['get-started-jp', 'get_started_jp/get_started', 'toolkit', 'default', 'Get Started'],
 
