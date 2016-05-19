@@ -770,11 +770,17 @@ Header.prototype = {
         });
     },
     check_risk_classification: function() {
-      if (page.client.is_logged_in && !page.client.is_virtual() && page.client.residence !== 'jp' && isNotBackoffice() &&
-          localStorage.getItem('risk_classification.response') === 'high' && localStorage.getItem('risk_classification') === 'high' &&
-          (localStorage.getItem('reality_check.ack') === '1' || !localStorage.getItem('reality_check.interval'))) {
+      if (localStorage.getItem('risk_classification.response') === 'high' && localStorage.getItem('risk_classification') === 'high' &&
+          this.qualify_for_risk_classification()) {
             RiskClassification.renderRiskClassificationPopUp();
       }
+    },
+    qualify_for_risk_classification: function() {
+      if (page.client.is_logged_in && !page.client.is_virtual() && page.client.residence !== 'jp' && isNotBackoffice() &&
+          (localStorage.getItem('reality_check.ack') === '1' || !localStorage.getItem('reality_check.interval'))) {
+              return true;
+      }
+      return false;
     },
     validate_cookies: function(){
         if (getCookieItem('login') && getCookieItem('loginid_list')){
