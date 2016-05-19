@@ -15,7 +15,7 @@
                     </a>
                 </div>
                 <div class="grd-grid-4 grd-grid-phablet-6 grd-grid-mobile-6 icon">
-                    <a href="#" target="_blank" class="invisible">
+                    <a href="#" target="_blank">
                         <img src="[% request.url_for('images/pages/applications/appstore.svg') %]">
                     </a>
                 </div>
