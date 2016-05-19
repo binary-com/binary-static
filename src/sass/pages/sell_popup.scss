@@ -72,7 +72,7 @@
                 td {
                     border: 0;
                     padding: 0;
-                } 
+                }
             }
             .contract_barriers{
               width: auto;
@@ -188,6 +188,9 @@
             padding: 0px;
             .chart-notice {
                 margin: 0px;
+            }
+            .highcharts-container {
+              direction: ltr;
             }
         }
         #sell_details_table {
