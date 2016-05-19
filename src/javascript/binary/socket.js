@@ -218,7 +218,7 @@ function BinarySocketClass() {
                     }
                   if (response.website_status.clients_country) {
                     localStorage.setItem('clients_country', response.website_status.clients_country);
-                    if (isNotBackoffice()) {
+                    if (!$('body').hasClass('BlueTopBack')) {
                       checkClientsCountry();
                     }
                   }

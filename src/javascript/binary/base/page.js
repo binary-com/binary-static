@@ -656,7 +656,7 @@ Header.prototype = {
         this.simulate_input_placeholder_for_ie();
         this.logout_handler();
         this.check_risk_classification();
-        if (isNotBackoffice()) {
+        if (!$('body').hasClass('BlueTopBack')) {
           checkClientsCountry();
         }
     },
@@ -776,7 +776,7 @@ Header.prototype = {
       }
     },
     qualify_for_risk_classification: function() {
-      if (page.client.is_logged_in && !page.client.is_virtual() && page.client.residence !== 'jp' && isNotBackoffice() &&
+      if (page.client.is_logged_in && !page.client.is_virtual() && page.client.residence !== 'jp' && !$('body').hasClass('BlueTopBack') &&
           (localStorage.getItem('reality_check.ack') === '1' || !localStorage.getItem('reality_check.interval'))) {
               return true;
       }

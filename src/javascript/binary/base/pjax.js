@@ -129,7 +129,7 @@ var pjax_config = function() {
 
 var init_pjax = function () {
     var document_location = document.URL;
-    if(!/backoffice/.test(document_location)) { //No Pjax for backoffice.
+    if(!$('body').hasClass('BlueTopBack')) { //No Pjax for BO.
         pjax.connect(pjax_config());
     }
 };
