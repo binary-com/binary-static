@@ -7,4 +7,4 @@
  *
  */
 
-var app_id = 'id-xL45Q2tRZ0jbi55d5ut3kRinjodGP';
+var app_id = '1';

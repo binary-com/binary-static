@@ -23,12 +23,13 @@ function BinarySocketClass() {
         socketUrl;
         var host = window.location.host;
         if((/www\.binary\.com/i).test(host)) {
-            socketUrl = 'wss://ws.binaryws.com/websockets/v3?app_id=1';
+            socketUrl = 'wss://ws.binaryws.com/websockets/v3';
         } else if((/binaryqa/i).test(host)) {
-            socketUrl = 'wss://' + host + '/websockets/v3?app_id=1';
+            socketUrl = 'wss://' + host + '/websockets/v3';
         } else {
-            socketUrl = 'wss://www2.binary.com/websockets/v3?app_id=1';
+            socketUrl = 'wss://www2.binary.com/websockets/v3';
         }
+        socketUrl += '?app_id=' + app_id;
 
     if (page.language()) {
         socketUrl += '&l=' + page.language();
