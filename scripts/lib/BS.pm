@@ -125,18 +125,17 @@ our $static_hash = join('', map{('a'..'z',0..9)[rand 36]} 0..7);
 sub css_files {
     my @css;
 
-    if (is_dev()) {
-        if (grep { $_ eq uc $LANG } rtl_languages()) {
-            push @css, root_url() . "css/binary_rtl.css?$static_hash";
-        } else {
-            push @css, root_url() . "css/binary.css?$static_hash";
-        }
+    # if (is_dev()) {
+    #     if (grep { $_ eq uc $LANG } rtl_languages()) {
+    #         push @css, root_url() . "css/binary_rtl.css?$static_hash";
+    #     } else {
+    #         push @css, root_url() . "css/binary.css?$static_hash";
+    #     }
+    # } else {
+    if (grep { $_ eq uc $LANG } rtl_languages()) {
+        push @css, root_url() . "css/binary_rtl.min.css?$static_hash";
     } else {
-        if (grep { $_ eq uc $LANG } rtl_languages()) {
-            push @css, root_url() . "css/binary_rtl.min.css?$static_hash";
-        } else {
-            push @css, root_url() . "css/binary.min.css?$static_hash";
-        }
+        push @css, root_url() . "css/binary.min.css?$static_hash";
     }
 
     return @css;
