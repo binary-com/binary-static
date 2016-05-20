@@ -17,7 +17,7 @@
                     'fr': 'fr|ad|bj|bf|cf|cg|ga|gn|ml|mc|ne|sn|tg',
                     'id': 'id',
                     'it': 'it',
-                    'jp': 'jp',
+                    'ja': 'jp',
                     'pl': 'po',
                     'pt': 'br|mz|ao|pt|gw|pg|cv|st',
                     'ru': 'ru|ua|by|kz',
@@ -41,7 +41,16 @@
             if(lang) {
                 redirect(lang);
             } else {
-                var ws = new WebSocket('wss://www2.binary.com/websockets/v3');
+                var host = window.location.host,
+                    socketUrl;
+                if((/www\.binary\.com/i).test(host)) {
+                    socketUrl = 'wss://ws.binaryws.com/websockets/v3';
+                } else if((/binaryqa/i).test(host)) {
+                    socketUrl = 'wss://' + host + '/websockets/v3';
+                } else {
+                    socketUrl = 'wss://www2.binary.com/websockets/v3';
+                }
+                var ws = new WebSocket(socketUrl);
                 ws.onopen = function(e) {
                     ws.send(JSON.stringify({'website_status': '1'}));
                 };
