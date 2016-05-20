@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-18 03:14+0000\n"
-"Last-Translator: Sittie Hadjirah Sevilla <sittiebaser@gmail.com>\n"
+"PO-Revision-Date: 2016-05-18 23:00+0000\n"
+"Last-Translator: cameliagf <cameliagf@yahoo.com>\n"
 "Language-Team: Spanish "
 "<https://hosted.weblate.org/projects/binary/static/es/>\n"
 "Language: es\n"
@@ -664,7 +664,7 @@ msgid "<p style=\"font-weight: bold;\">Thanks for signing up for a virtual accou
 msgstr ""
 "<p style=\"font-weight: bold;\">¡Gracias por crear una cuenta virtual!</p><p>"
 "Introduzca el siguiente token de verificación en el formulario para crear "
-"una cuenta</p><p><span style=\"background: #f2f2f2; padding: 10px;\""
+"una cuenta:<p><span style=\"background: #f2f2f2; padding: 10px;\""
 ">%1</span></p></p><p>Disfrute comerciando con nosotros en Binary.com.</p>"
 
 #. ($params->{code})
@@ -674,8 +674,8 @@ msgstr ""
 "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Estimado "
 "cliente,</p><p>Antes de que podamos ayudarle a cambiar su contraseña, por "
 "favor ayúdenos a verificar su identidad introduciendo el siguiente token de "
-"verificación en el formulario para restablecer la contraseña</p><p><span "
-"style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+"verificación en el formulario para restablecer la contraseña: <p><span style="
+"\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:133
@@ -684,8 +684,8 @@ msgstr ""
 "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Estimado "
 "Cliente,</p><p>Por favor ayúdenos a verificar su identidad introduciendo el "
 "siguiente token de verificación en el formulario de retirada del agente de "
-"pago:</p><p><span style=\"background: #f2f2f2; padding: 10px;\""
-">%1</span></p></p>"
+"pago:</p>\n"
+"<span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:145
@@ -693,7 +693,7 @@ msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued C
 msgstr ""
 "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Estimado "
 "Cliente,</p><p>Por favor ayúdenos a verificar su identidad introduciendo el "
-"siguiente token de verificación en el formulario de retirada de pago:</p><p><"
+"siguiente token de verificación en el formulario de retirada de pago:<p><"
 "span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/affiliates/faq.html.tt:73
@@ -3886,6 +3886,9 @@ msgstr "Impulsar el crecimiento rápido de áreas clave del mundo, usando una va
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:717
 msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
 msgstr ""
+"Debido a recientes cambios en las regulaciones, nos vemos obligados a pedir "
+"a nuestros clientes que completen el siguiente Asesramiento Financiero. "
+"Tenga en cuenta que no podrás seguir operando hasta que no lo complete."
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1417
 msgid "Due to regulatory requirements, you are required to authenticate your account in order to continue trading."
@@ -10362,10 +10365,20 @@ msgid "The Company may use or disclose (or choose not to use or disclose) such C
 msgstr "La Compañía puede usar o divulgar (o elegir no divulgar) dichas Contribuciones para cualquier propósito, de cualquiera manera, en cualquier medio de comunicación en todo el mundo;"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/terms_and_conditions.html.tt:104
-#, fuzzy
 #| msgid "The Company may, from time to time, at its sole discretion, or as required by regulations in place to conduct appropriate \"Know Your Customer\" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and may at its sole discretion suspend an account until such proof has been provided to its satisfaction. Know Your Customer documentation will be required when a Client deposits money in the account. In the case of a client opening an account with Binary (Europe) Ltd, the threshold for verifying clients is on cumulative withdrawals of EUR 2,300."
 msgid "The Company may, from time to time, at its sole discretion, or as required by regulations in place to conduct appropriate \"Know Your Customer\" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and may at its sole discretion suspend an account until satisfactory identification information, evidence of identity and address, source of funds and/or source of wealth have been provided. Know Your Customer documentation will be required when a Client deposits money in the account. In the case of a client opening an account with Binary (Europe) Ltd, the threshold for verifying clients is on cumulative withdrawals of EUR 2,300."
-msgstr "La Compañía puede, cada tanto, y bajo su propia discreción, solicitar que el Cliente proporcione una prueba de identidad (como una copia certificada del pasaporte u otros medios de verificación de identidad que la Compañía requiera bajo ciertas circunstancias) y puede, bajo su propia discreción, suspender una cuenta hasta que tal prueba se haya proporcionado para su satisfacción. La documentación de la identificación personal será requerida cuando un Cliente deposita dinero en su cuenta. En el caso de que el Cliente abra una cuenta con Binary (Europe) Ltd, el umbral para la verificación de los Clientes para retiros acumulativos se situará en EUR 2.300."
+msgstr ""
+"La Compañía puede, cada tanto, y bajo su propia discreción, solicitar que el "
+"Cliente proporcione una prueba de identidad (como una copia certificada del "
+"pasaporte u otros medios de verificación de identidad que la Compañía "
+"requiera bajo ciertas circunstancias) y puede, bajo su propia discreción, "
+"suspender una cuenta hasta que se haya proporcionado información de "
+"identificación satisfactoria, prueba de identidad y dirección, procedencia "
+"de los fondos y fuente de ingresos. La documentación de la identificación "
+"personal será requerida cuando un Cliente deposita dinero en su cuenta. En "
+"el caso de que el Cliente abra una cuenta con Binary (Europe) Ltd, el umbral "
+"para la verificación de los Clientes para retiros acumulativos se situará en "
+"EUR 2.300."
 
 #. (website)
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:97
@@ -11925,10 +11938,9 @@ msgid "Verify your withdrawal request - %1"
 msgstr "Verifique su solicitud de retiro - %1"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/terms_and_conditions.html.tt:4
-#, fuzzy
 #| msgid "Version 39. Last modified 2016-03-01."
 msgid "Version 40. Last modified 2016-05-12."
-msgstr "Versión 39. Última modificación el 2016-03-01."
+msgstr "Versión 40. Última modificación el 2016-05-12."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:190
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/analyse_link.html.tt:4
@@ -13037,7 +13049,7 @@ msgstr "Usted debe informar a Binary.com con prontitud sobre cualquier deficienc
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:542
 msgid "You need to finish all 20 questions."
-msgstr ""
+msgstr "Tiene que terminar todas las 20 preguntas."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/binary_options_basics.html.haml:1
 msgid "You only need to make four decisions to execute a binary contract."
@@ -15401,7 +15413,7 @@ msgstr "Berkshire Hathaway Inc."
 
 #: Underlying Symbol AUCBA
 msgid "Commonwealth Bank"
-msgstr ""
+msgstr "Banco de la Commonwealth"
 
 #: Underlying Symbol UKAAL
 msgid "Anglo American plc"
@@ -15469,7 +15481,7 @@ msgstr "AbbVie Inc."
 
 #: Underlying Symbol DESIE
 msgid "Siemens AG"
-msgstr ""
+msgstr "Siemens AG"
 
 #: Underlying Symbol UKRDSA
 msgid "Royal Dutch Shell plc"
@@ -15580,10 +15592,9 @@ msgid "YY Inc."
 msgstr "YY Inc."
 
 #: Underlying Symbol USAMZN
-#, fuzzy
 #| msgid "Sohu.com Inc."
 msgid "Amazon.com Inc"
-msgstr "Sohu.com Inc."
+msgstr "Amazon.com Inc"
 
 #: Underlying Symbol USHAL
 msgid "Halliburton Company"
@@ -15642,14 +15653,13 @@ msgid "Volkswagen AG"
 msgstr "Volkswagen AG"
 
 #: Underlying Symbol UKBARC
-#, fuzzy
 #| msgid "Barclays plc"
 msgid "Barclays"
-msgstr "Barclays plc"
+msgstr "Barclays"
 
 #: Underlying Symbol AUMQG
 msgid "Macquarie Group"
-msgstr ""
+msgstr "Grupo Macquarie"
 
 #: Underlying Symbol AUTLS
 msgid "TELSTRA CORPORATION LIMITED"
@@ -15752,10 +15762,9 @@ msgid "WOOLWORTHS LIMITED"
 msgstr "WOOLWORTHS LIMITED"
 
 #: Underlying Symbol UKGSK
-#, fuzzy
 #| msgid "GlaxoSmithKline plc"
 msgid "GlaxoSmithKline"
-msgstr "GlaxoSmithKline plc"
+msgstr "GlaxoSmithKline"
 
 #: Underlying Symbol AUWES
 msgid "WESFARMERS LIMITED"
@@ -15830,10 +15839,9 @@ msgid "BMW"
 msgstr "BMW"
 
 #: Underlying Symbol USAAPL
-#, fuzzy
 #| msgid "Apple Inc."
 msgid "Apple Inc"
-msgstr "Apple Inc."
+msgstr "Apple Inc"
 
 #: Underlying Symbol INBHARTIARTL
 msgid "Bharti Airtel"
@@ -15848,10 +15856,9 @@ msgid "UBS AG"
 msgstr "UBS AG"
 
 #: Underlying Symbol USCT
-#, fuzzy
 #| msgid "Citigroup Inc."
 msgid "Citigroup Inc"
-msgstr "Citigroup Inc."
+msgstr "Citigroup Inc"
 
 #: Underlying Symbol FPMIC
 msgid "Michelin"
@@ -15894,7 +15901,6 @@ msgid "Reliance Industries Ltd"
 msgstr "Reliance Industries Ltd"
 
 #: Underlying Symbol AUBHP
-#, fuzzy
 msgid "BHP Billiton"
 msgstr "BHP Billiton"
 
@@ -15995,10 +16001,9 @@ msgid "Piraeus Bank SA"
 msgstr "Piraeus Bank SA"
 
 #: Underlying Symbol USFB
-#, fuzzy
 #| msgid "Facebook Inc."
 msgid "Facebook Inc"
-msgstr "Facebook Inc."
+msgstr "Facebook Inc"
 
 #: Underlying Symbol FPDG
 msgid "Vinci"
@@ -16097,10 +16102,9 @@ msgid "Philip Morris International"
 msgstr "Philip Morris International"
 
 #: Underlying Symbol UKHSBA
-#, fuzzy
 #| msgid "HSBC Holdings plc"
 msgid "HSBC Holdings"
-msgstr "HSBC Holdings plc"
+msgstr "HSBC Holdings"
 
 #: Underlying Symbol DEEOAN
 msgid "E.ON SE"
@@ -16115,16 +16119,14 @@ msgid "IBM"
 msgstr "IBM"
 
 #: Underlying Symbol USPFE
-#, fuzzy
 #| msgid "Pfizer Inc."
 msgid "Pfizer Inc"
-msgstr "Pfizer Inc."
+msgstr "Pfizer Inc"
 
 #: Underlying Symbol AUANZ
-#, fuzzy
 #| msgid "ANZ Banking Group Ltd"
 msgid "ANZ Banking Group"
-msgstr "ANZ Banking Group Ltd"
+msgstr "ANZ Banking Group"
 
 #: Underlying Symbol UKBATS
 msgid "British American Tobacco"
@@ -16175,10 +16177,9 @@ msgid "Schneider Electric"
 msgstr "Schneider Electric"
 
 #: Underlying Symbol UKVOD
-#, fuzzy
 #| msgid "Vodafone"
 msgid "Vodafone Group"
-msgstr "Vodafone"
+msgstr "Grupo Vodafone"
 
 #: Underlying Symbol INSUNPHARMA
 msgid "Sun Pharma"
@@ -16201,10 +16202,9 @@ msgid "Dialog Semiconductor plc"
 msgstr "Dialog Semiconductor plc"
 
 #: Underlying Symbol USXOM
-#, fuzzy
 #| msgid "ExxonMobil"
 msgid "Exxon Mobil Corp"
-msgstr "ExxonMobil"
+msgstr "Exxon Mobil Corp"
 
 #: Underlying Symbol USNTFLX
 msgid "Netflix Inc."
@@ -16299,10 +16299,9 @@ msgid "Veolia Environnement water"
 msgstr "Veolia Environnement water"
 
 #: Underlying Symbol USKO
-#, fuzzy
 #| msgid "The Coca-Cola Company"
 msgid "Coca-Cola Co"
-msgstr "The Coca-Cola Company"
+msgstr "Coca-Cola Co"
 
 #: Underlying Symbol BBUCB
 msgid "UCB"
@@ -16353,22 +16352,19 @@ msgid "Societe Generale"
 msgstr "Societe Generale"
 
 #: Underlying Symbol AUQAN
-#, fuzzy
 #| msgid "Qantas Airways Limited"
 msgid "Qantas Airways"
-msgstr "Qantas Airways Limited"
+msgstr "Qantas Airways"
 
 #: Underlying Symbol USGE
-#, fuzzy
 #| msgid "General Electric Company"
 msgid "General Electric Co"
-msgstr "General Electric Company"
+msgstr "General Electric Co"
 
 #: Underlying Symbol USMSFT
-#, fuzzy
 #| msgid "Microsoft"
 msgid "Microsoft Corp"
-msgstr "Microsoft"
+msgstr "Microsoft Corp"
 
 #: Underlying Symbol USJD
 msgid "JD.com Inc."
@@ -16383,10 +16379,9 @@ msgid "Alstom industrial machinery"
 msgstr "Alstom industrial machinery"
 
 #: Underlying Symbol USGOOG
-#, fuzzy
 #| msgid "Alcoa Inc."
 msgid "Alphabet Inc"
-msgstr "Alcoa Inc."
+msgstr "Alphabet Inc"
 
 #: Underlying Symbol USWMT
 msgid "Wal-Mart Stores Inc."
@@ -16517,10 +16512,9 @@ msgid "Commodities are traded items with directly usable qualities."
 msgstr "Las materias primas son productos de comercialización con cualidades directamente utilizables."
 
 #: Translation for market name
-#, fuzzy
 #| msgid "Stocks"
 msgid "OTC Stocks"
-msgstr "Acciones"
+msgstr "OTC Stocks"
 
 #: Explanation for market OTC Stocks
 msgid "Stocks (or shares) represent the value of partial ownership in a single company."
@@ -16583,10 +16577,9 @@ msgid "Americas Future"
 msgstr "Americas Future"
 
 #: Explanation for market Germany
-#, fuzzy
 #| msgid "Germany Stocks"
 msgid "Germany OTC Stocks"
-msgstr "Acciones Alemania"
+msgstr "Acciones OTC Alemania"
 
 #: Translation for sub market name
 msgid "French Stocks"
@@ -16625,10 +16618,9 @@ msgid "United States Stocks"
 msgstr "Acciones EE.UU."
 
 #: Explanation for market Australia
-#, fuzzy
 #| msgid "Australia Stocks"
 msgid "Australia OTC Stocks"
-msgstr "Acciones Australia"
+msgstr "Acciones OTC Australia"
 
 #: Translation for sub market name
 msgid "Minor Pairs"
@@ -16639,16 +16631,14 @@ msgid "Forex pairs of interest, but with less liquid international markets."
 msgstr "Pares de cambio de divisas de interés, pero en los mercados internacionales menos líquidos."
 
 #: Translation for sub market name
-#, fuzzy
 #| msgid "USD"
 msgid "US"
-msgstr "USD"
+msgstr "US"
 
 #: Explanation for market US
-#, fuzzy
 #| msgid "US Stocks"
 msgid "US OTC Stocks"
-msgstr "Acciones de EE.UU."
+msgstr "Acciones OTC de EE.UU."
 
 #: Translation for sub market name
 msgid "Germany Stocks"
@@ -16667,10 +16657,9 @@ msgid "UK"
 msgstr "RU"
 
 #: Explanation for market UK
-#, fuzzy
 #| msgid "UK Stocks"
 msgid "UK OTC Stocks"
-msgstr "Acciones del RU"
+msgstr "Acciones OTC del RU"
 
 #: Translation for sub market name
 msgid "Metals"

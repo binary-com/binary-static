@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: German (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-18 02:51+0000\n"
-"Last-Translator: Sittie Hadjirah Sevilla <sittiebaser@gmail.com>\n"
+"PO-Revision-Date: 2016-05-19 18:54+0000\n"
+"Last-Translator: Robert Grundler <grundlertex@gmail.com>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/binary/static/de/>"
 "\n"
 "Language: de\n"
@@ -153,6 +153,10 @@ msgstr "%1 versucht laufend, seinem talentierten Team von Administratoren, techn
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:75
 msgid "%1 is an active proponent of the open-source movement. Suggest enhancements, and take part in the development of our powerful applications. You can find more information on our <a href=\"%2\" target=\"_blank\">Developers Portal</a>."
 msgstr ""
+"%1 ist ein aktiver Verfechter der Open-Source-Bewegung. Schlägt "
+"Verbesserungen vor und nimmt and der Entwicklung unserer mächtigen "
+"Anwendungen teil. Weitere Informationen finden Sie in unserem  <a href=\"%2\""
+" target=\"_blank\">Entwicklerportal</a>."
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/beginners_faq.html.haml:1
@@ -241,10 +245,11 @@ msgstr "%1 Kurse werden im Verhältnis zum Interbank-Optionsmarkt festgelegt, so
 
 #. (request.website.display_name)
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:3
-#, fuzzy
 #| msgid "%1 provides a variety of charts to help you determine what markets to trade on. Try them out."
 msgid "%1 provides a variety of applications to help you trade efficiently."
-msgstr "%1 stellt Ihnen unterschiedliche Charts zur Verfügung, die Ihnen helfen zu entscheiden, auf welchem Markt Geschäfte getätigt werden sollen. Probieren Sie diese aus."
+msgstr ""
+"%1 stellt eine Vielzahl an Anwendungen zur Verfügung, die Ihnen helfen "
+"effizient zu handeln."
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/partners.html.haml:1
@@ -1426,7 +1431,7 @@ msgstr "Fortgeschrittene Kenntnis der Softwaredesign-Prinzipien"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:29
 msgid "Advanced tool for active traders"
-msgstr ""
+msgstr "Erweitertes Tool für aktive Händler"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "Advising senior managers regarding salary negotiations and job offers"
@@ -1906,7 +1911,7 @@ msgstr "Vorhandene Zahlungsmethoden"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:62
 msgid "Available soon..."
-msgstr ""
+msgstr "Bald erhältlich..."
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:642
 msgid "Avg Directional Index"
@@ -2135,10 +2140,9 @@ msgid "Binary Ltd, with registered office address situated at <span itemprop='lo
 msgstr "Binary Ltd, mit eingetragenem Firmensitz in <span itemprop='location'>47 Esplanade, St. Helier, Jersey, JE 0BD Kanalinseln</span>, ist die Holdinggesellschaft des Binary Konzerns."
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:58
-#, fuzzy
 #| msgid "Binary option"
 msgid "Binary Next Gen"
-msgstr "Binäre Option"
+msgstr "Binary Next Gen"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/binary_options_basics.html.haml:1
 msgid "Binary Options Basics"
@@ -2243,6 +2247,9 @@ msgstr "Binary.com ist ein aktiver Vertreter der Open-Source-Bewegung und ist da
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/group_history.html.haml:1
 msgid "Binary.com is honoured as the world's \"Best Binary Options Broker\" at the 16th annual MENA International Financial Conference and Exhibition, hosted in Dubai."
 msgstr ""
+"Binary.com wurde auf der 16. jährlichen MENA Internationalen Konferenz und "
+"Messe, die in Dubai stattfand, als der „Best Binary Options Broker\" der "
+"Welt ausgezeichnet."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/about/group-information.html.haml:1
 msgid "Binary.com is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
@@ -2273,10 +2280,12 @@ msgid "Binary.com supports the <a target=\"_blank\" href=\"http://www.responsibl
 msgstr "Binary.com fördert den  <a target=\"_blank\" href=\"http://www.responsiblegamblingtrust.org.uk/\">Responsible Gambling Trust</a> (RGT), der in Großbritannien eine führende Wohltätigkeitsorganisation ist, der die Gefahren des Glücksspiels minimieren möchte. Der RGT finanziert Ausbildungs-, Vorbeugungs- und Behandlungsmaßnahmen und lässt Forschungen durchführen, um Menschen zu helfen, mehr über die mit dem Glücksspiel verbunden Gefahren zu erfahren. Er bietet auch ein nationales Glücksspiel Sorgentelefon, um denjenigen vertrauliche Ratschläge und emotionale Unterstützung zu bieten, die Hilfe wegen ihres Spielverhaltens benötigen."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/group_history.html.haml:1
-#, fuzzy
 #| msgid "Binary.com took home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
 msgid "Binary.com takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
-msgstr "Binary.com hat den ersten Preis in der Kategorie Finanzwettenanbieter während der prestigeträchtigen 2015 EGR Operator Awards Zeremonie, die in London veranstaltet wurde, erhalten."
+msgstr ""
+"Binary.com hat den ersten Preis in der Kategorie Finanzwettenanbieter "
+"während der prestigeträchtigen 2015 EGR Operator Awards Zeremonie, die in "
+"London veranstaltet wurde, erhalten."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/open_source_projects.html.haml:1
 msgid "Binary.com’s CPAN contributions"
@@ -2841,10 +2850,9 @@ msgstr "Unternehmensrecht"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/layouts/default/footer.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/global/footer.html.tt:133
-#, fuzzy
 #| msgid "Compliance"
 msgid "Complaints"
-msgstr "Compliance"
+msgstr "Reklamationen"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/complaints_disputes.html.tt:2
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/tac.html.tt:19
@@ -3892,6 +3900,10 @@ msgstr "Unterstützung des raschen Wachstums in den Hauptweltregionen, unter Anw
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:717
 msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
 msgstr ""
+"Wegen der kürzlichen Änderungen der Vorschriften sind wir gezwungen, unsere "
+"Kunden zu bitten, die folgende Finanzielle Beurteilung auszufüllen. Bitte "
+"beachten Sie, dass Sie, bis diese ausgefüllt ist, nicht weiter Handel "
+"treiben können."
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1417
 msgid "Due to regulatory requirements, you are required to authenticate your account in order to continue trading."
@@ -4108,6 +4120,9 @@ msgstr "Verbesserung und proaktive Steuerung der Akivitäten des Unternehmens un
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:10
 msgid "Enjoy our fastest type of trading on your mobile phone or tablet. Place tick trades anytime, anywhere – even while you’re on the move."
 msgstr ""
+"Haben Sie Freude an unserer schnellsten Art des Handels auf Ihrem "
+"Mobiltelefon oder Tablet. Sie können zu jeder Zeit von überall aus - auch "
+"wenn Sie unterwegs sind, Tick-Kontrakte platzieren."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "Ensure compliance with quality control standards governing website content"
@@ -4192,6 +4207,9 @@ msgstr "Gerade/Ungerade Kontrakte werden zum Kaufpreis erstattet, wenn der Kontr
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:46
 msgid "Examine the history of a particular instrument to plot your next move. This advanced charting platform offers a wide range of technical indicators."
 msgstr ""
+"Sehen Sie sich den Verlauf eines bestimmten Instruments an, um Ihre nächste "
+"Entscheidung zu planen. Diese fortschrittlich Charting-Plattform bietet ein "
+"großes Angebot an technischen Indikatoren."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/spread_bets.html.haml:1
 msgid "Example:"
@@ -4397,6 +4415,8 @@ msgstr "Erläuterung"
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:60
 msgid "Explore our most cutting-edge new platform, now available in beta form. Place trades from your virtual account."
 msgstr ""
+"Entdecken Sie unsere neue, modernste Plattform, die jetzt als Beta-Version "
+"verfügbar ist. Platzieren Sie Kontrakte mit Ihrem virtuellen Konto. "
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:491
 msgid "Exponential Moving Average"
@@ -6456,7 +6476,7 @@ msgstr "Verfolgen Sie unsere Analysten zwei Mal wöchentlich LIVE, die eine umfa
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:69
 msgid "Join our developer community"
-msgstr ""
+msgstr "Beteiligen Sie sich an unserer Entwicklergemeinschaft"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "Join our team of bright, talented professionals. Work collaboratively with us to enhance and promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years."
@@ -6725,10 +6745,9 @@ msgid "Links"
 msgstr "Links"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:83
-#, fuzzy
 #| msgid "Binary.com open-source projects"
 msgid "List of All Open-Source Projects"
-msgstr "Binary.com Open-Source Projekte"
+msgstr "Liste aller Open-Source Projekte"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/contact.html.haml:1
 msgid "Live chat:"
@@ -6849,7 +6868,7 @@ msgstr "GMKD-Signal"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/group_history.html.haml:1
 msgid "MENA FFXPO Award"
-msgstr ""
+msgstr "MENA FFXPO Auszeichnung"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "Maintain accurate system pricing parameters"

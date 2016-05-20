@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Portuguese (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-18 03:22+0000\n"
-"Last-Translator: Sittie Hadjirah Sevilla <sittiebaser@gmail.com>\n"
+"PO-Revision-Date: 2016-05-18 06:21+0000\n"
+"Last-Translator: Alcino Jorge <alcino@binary.com>\n"
 "Language-Team: Portuguese "
 "<https://hosted.weblate.org/projects/binary/static/pt/>\n"
 "Language: pt\n"
@@ -661,7 +661,7 @@ msgid "<p style=\"font-weight: bold;\">Thanks for signing up for a virtual accou
 msgstr ""
 "<p style=\"font-weight: bold;\">Obrigado por se inscrever para uma conta "
 "virtual!</p><p>Insira o seguinte token de verificação no formulário para "
-"criar uma conta:</p><p><span style=\"background: #f2f2f2; padding: 10px;\""
+"criar uma conta:<p><span style=\"background: #f2f2f2; padding: 10px;\""
 ">%1</span></p></p><p>Desfrute das negociações conosco aqui na Binary.com.</p>"
 
 #. ($params->{code})
@@ -671,8 +671,8 @@ msgstr ""
 "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Prezado "
 "cliente,</p><p>Antes de poder assisti-lo com a alteração da sua senha, "
 "pedimos que nos ajude a verificar a sua identidade ao inserir o seguinte "
-"token de verificação no formulário de redefinição de senha:</p><p><span "
-"style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+"token de verificação no formulário de redefinição de senha:<p><span style=\""
+"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:133
@@ -681,7 +681,7 @@ msgstr ""
 "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Prezado "
 "cliente,</p><p>Pedimos que nos ajude a verificar a sua identidade ao inserir "
 "o seguinte token de verificação no formulário de retirada do agente de "
-"pagamento:</p><p><span style=\"background: #f2f2f2; padding: 10px;\""
+"pagamento:<p><span style=\"background: #f2f2f2; padding: 10px;\""
 ">%1</span></p></p>"
 
 #. ($params->{code})
@@ -691,7 +691,7 @@ msgstr ""
 "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Prezado "
 "cliente,</p><p>Pedimos que nos ajude a verificar a sua identidade ao inserir "
 "o seguinte token de verificação no formulário de retirada do agente de "
-"pagamento:</p><p><span style=\"background: #f2f2f2; padding: 10px;\""
+"pagamento:<p><span style=\"background: #f2f2f2; padding: 10px;\""
 ">%1</span></p></p>"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/affiliates/faq.html.tt:73
@@ -3883,9 +3883,9 @@ msgstr "Impulsionar o rápido crescimento nas principais áreas do mundo, aplica
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:717
 msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
 msgstr ""
-"Devido alterações recentes nos regulamentos, somos obrigados a pedir aos "
+"Devido a alterações recentes nos regulamentos, somos obrigados a pedir aos "
 "nossos clientes que preencham a seguinte avaliação financeira. Note que você "
-"não poderá continuar a negociar até avaliação estar preenchida."
+"não poderá continuar a negociar até a avaliação estar preenchida."
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1417
 msgid "Due to regulatory requirements, you are required to authenticate your account in order to continue trading."
@@ -10368,16 +10368,16 @@ msgstr "A empresa pode usar ou divulgar (ou escolher não usar nem divulgar) tai
 msgid "The Company may, from time to time, at its sole discretion, or as required by regulations in place to conduct appropriate \"Know Your Customer\" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and may at its sole discretion suspend an account until satisfactory identification information, evidence of identity and address, source of funds and/or source of wealth have been provided. Know Your Customer documentation will be required when a Client deposits money in the account. In the case of a client opening an account with Binary (Europe) Ltd, the threshold for verifying clients is on cumulative withdrawals of EUR 2,300."
 msgstr ""
 "A empresa pode, ocasionalmente e a seu exclusivo critério, ou conforme "
-"exigido por regulamentos em vigor para a efetuação de procedimentos \""
+"exigido por regulamentos em vigor para a efetuação de procedimentos de \""
 "Conhecer o cliente\" apropriados, pedir aos clientes que forneçam prova da "
 "sua identidade (tal como uma cópia autenticada do passaporte ou outro meio "
 "de verificação de identidade que a Empresa considere necessário, segundo as "
 "circunstâncias) e pode, a seu exclusivo critério, suspender uma conta até "
-"que informações de identificação satisfatórias, provas de identidade e "
-"morada, fontes de fundos e/ou riqueza tenham sido fornecidas. Documentação \""
-"Conhecer o cliente\" será necessária quando os clientes abrirem uma conta "
-"junto da Binary (Europe) Ltd, o limite para a verificação reside em "
-"retiradas cumulativas de fundos que atingem EUR 2.300."
+"que informações de identificação satisfatórias, comprovantes de identidade e "
+"endereço, fontes de fundos e/ou riqueza tenham sido fornecidas. A "
+"documentação \"Conhecer o cliente\" será necessária quando os clientes "
+"abrirem uma conta junto da Binary (Europe) Ltd, o limite para a verificação "
+"reside em retiradas cumulativas de fundos que atingem EUR 2.300."
 
 #. (website)
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:97
@@ -16510,7 +16510,7 @@ msgstr "As matérias-primas são produtos negociados com características direta
 #: Translation for market name
 #| msgid "Stocks"
 msgid "OTC Stocks"
-msgstr "OTC Stocks"
+msgstr "Ações OTC"
 
 #: Explanation for market OTC Stocks
 msgid "Stocks (or shares) represent the value of partial ownership in a single company."
@@ -16575,7 +16575,7 @@ msgstr "Futuro Américas"
 #: Explanation for market Germany
 #| msgid "Germany Stocks"
 msgid "Germany OTC Stocks"
-msgstr "Germany OTC Stocks"
+msgstr "Ações OTC Alemãs"
 
 #: Translation for sub market name
 msgid "French Stocks"
@@ -16616,7 +16616,7 @@ msgstr "Ações dos EUA"
 #: Explanation for market Australia
 #| msgid "Australia Stocks"
 msgid "Australia OTC Stocks"
-msgstr "Australia OTC Stocks"
+msgstr "Ações OTC Austrália"
 
 #: Translation for sub market name
 msgid "Minor Pairs"
@@ -16629,7 +16629,7 @@ msgstr "Pares de câmbio de interesse, mas com menor liquidação nos mercados i
 #: Translation for sub market name
 #| msgid "USD"
 msgid "US"
-msgstr "US"
+msgstr "EUA"
 
 #: Explanation for market US
 #| msgid "US Stocks"

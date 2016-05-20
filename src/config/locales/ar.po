@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-18 04:07+0000\n"
+"PO-Revision-Date: 2016-05-18 06:09+0000\n"
 "Last-Translator: Ahmed Kotb <ahmedmohamedkotp@gmail.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/binary/static/ar/>"
 "\n"
@@ -3665,16 +3665,26 @@ msgid "Demonstrate the ability to think / act quickly and multi-task as needed t
 msgstr "إظهار القدرة على التفكير / العمل بسرعة وتعدد المهام كما هو مطلوب لتنفيذ حملات فعالة"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/datafeed.html.tt:10
-#, fuzzy
 #| msgid "Our servers apply a tick filtering algorithm. The purpose of this filtering algorithm is to strip the feed of stray ticks. Stray ticks are ticks that manifestly fall outside of the current trading range of the market; such ticks are often due to communication delays with the exchanges or banks that provide quotes, human error, or database problems at any point between the originator of the quote and our servers."
 msgid "Depending on the quality of the data feeds received from our feed providers, our servers might apply a tick filtering algorithm. The purpose of this filtering algorithm is to strip the feed of stray ticks. Stray ticks are ticks that manifestly fall outside of the current trading range of the market; such ticks are often due to communication delays with the exchanges or banks that provide quotes, human error, or database problems at any point between the originator of the quote and our servers."
-msgstr "يقوم خادمنا بتطبيق خوارزمية لتنقية الحركات. الهدف من هذه الخوارزمية المنقية هو إزالة أي حركات متناثرة من خلاصة البيانات. الحركات المتناثرة هي الحركات التى تقع خارج نطاق مدى التداول الحالي فى السوق؛ هذه الحركات غالباً ما تكون بسبب تأخر الإتصال مع الوسطاء أو البنوك الذين يقدمون عروض الأسعار أو نتيجة لخطأ بشري أو نتيجة مشاكل فى قاعدة البيانات عند أي نقطة بين منشأ السعر وخادمنا."
+msgstr ""
+"بناء على جودة تغذيات البيانات الواردة إلينا من مقدمي التغذية, قد تقوم "
+"الخوادم الخاصة بنا بتطبيق تصفية لنظام الحلول الحسابية. الغرض من تصفية نظام "
+"الحلول الحسابية هو نزع تغذية العلامات الضالة. العلامات الضالة هي العلامات "
+"التي تقع بشكل واضح خارج نطاق التداول الحالي للسوق; وتنشأ مثل هذه العلامات "
+"غالباً بسبب تأخيرات الإتصال مع البورصات أو البنوك التي تقدم الإقتباسات, "
+"الخطأ البشري, أو مشاكل قاعدة البيانات في أي لحظة بين منشىء الإقتباس وخوادمنا."
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/datafeed.html.tt:17
-#, fuzzy
 #| msgid "Once stray ticks have been removed, a very short-term smoothing algorithm is applied to the data feed. This smoothing algorithm removes a little of the \"random noise\" surrounding the data feed, and ensures that clients who buy path-dependent contracts (such as the one-touch or barrier-range contracts) will not have their contracts knocked-in or knocked-out by random short-term market noise that does not reflect the true market price."
 msgid "Depending on the quality of the feeds received from our feed providers, our servers might also apply a very short-term smoothing algorithm to the data feed. This smoothing algorithm removes a little of the \"random noise\" surrounding the data feed, and ensures that clients who buy path-dependent contracts (such as the one-touch or barrier-range contracts) will not have their contracts knocked-in or knocked-out by random short-term market noise that does not reflect the true market price."
-msgstr "عندما يتم إزالة الحركات المتناثرة، يتم تطبيق خوارزمية إزالة قصيرة المدى على خلاصة البيانات لإزالة هذة الحركات. تزيل خوارزمية الإزالة القليل من \"الضوضاء العشوائية\" التى تحيط بخلاصة البيانات وتضمن للعملاء اللذين يشترون عقود تعتمد على المسار (مثل عقود اللمسة الواحدة أو العقود التى تعتمد على الحواجز) أن  عقودهم لن تخسر بسبب ضوضاء سوق عشوائية قصيرة المدى لا تعكس سعر السوق الحقيقى."
+msgstr ""
+"بناءً على جودة التغذيات الواردة من مقدمي التغذية, قد تعمل خوادمنا على تطبيق "
+"نظام حلول حسابية سهل وقصير جداً لخلاصة البيانات. ويزيل هذا النظام للحلول "
+"الحسابية السهل القليل من \"الضجيج العشوائي\" المحيط بخلاصة البيانات, ولضمان "
+"أن العملاء الذين يقومون بشراء العقود المعتمدة على المسار (مثل عقود اللمسة "
+"الواحدة وعقود حاجز المدى) لن تطرق في أو تطرق من ضجيج سوق عشوائي قصير المدى "
+"والذي لا يعكس السعر الحقيقي للسوق."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:565
 #: /home/git/regentmarkets/bom-backoffice/f_manager_confodeposit.cgi:273
