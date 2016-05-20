@@ -120,21 +120,22 @@ sub tt2 {
     return $template_toolkit;
 }
 
+our $static_hash = join('', map{('a'..'z',0..9)[rand 36]} 0..7);
 ## css/js/menu
 sub css_files {
     my @css;
 
     if (is_dev()) {
         if (grep { $_ eq uc $LANG } rtl_languages()) {
-            push @css, root_url() . "css/binary_rtl.css?_=1";
+            push @css, root_url() . "css/binary_rtl.css?$static_hash";
         } else {
-            push @css, root_url() . "css/binary.css?_=1";
+            push @css, root_url() . "css/binary.css?$static_hash";
         }
     } else {
         if (grep { $_ eq uc $LANG } rtl_languages()) {
-            push @css, root_url() . "css/binary_rtl.min.css?_=1";
+            push @css, root_url() . "css/binary_rtl.min.css?$static_hash";
         } else {
-            push @css, root_url() . "css/binary.min.css?_=1";
+            push @css, root_url() . "css/binary.min.css?$static_hash";
         }
     }
 
@@ -144,9 +145,9 @@ sub css_files {
 sub js_config {
     my @libs;
     if (is_dev()) {
-        push @libs, root_url . 'js/binary.js?_=1';
+        push @libs, root_url . "js/binary.js?$static_hash";
     } else {
-        push @libs, root_url . 'js/binary.min.js?_=1';
+        push @libs, root_url . "js/binary.min.js?$static_hash";
     }
 
     my %setting = (
