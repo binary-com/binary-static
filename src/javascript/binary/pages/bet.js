@@ -25,3 +25,10 @@ pjax_config_page('/trading', function () {
         onUnload: function(){TradePage.onUnload();}
     };
 });
+
+pjax_config_page('/jptrading', function () {
+    return {
+        onLoad: function(){TradePage.onLoad();},
+        onUnload: function(){TradePage.onUnload();}
+    };
+});
