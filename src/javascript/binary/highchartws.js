@@ -223,8 +223,8 @@ var Highchart = (function() {
       var type = response.msg_type,
           error = response.error;
       if (type === 'contracts_for' && (!error || (error && error.code && error.code === 'InvalidSymbol'))) {
-          if (response.contracts_for && response.contracts_for.feed_license && response.contracts_for.feed_license === 'delayed') {
-            handle_delay();
+          if (response.contracts_for && response.contracts_for.feed_license) {
+            handle_delay(response.contracts_for.feed_license);
           }
           show_entry_error();
       } else if ((type === 'history' || type === 'candles' || type === 'tick' || type === 'ohlc') && !error){
@@ -382,8 +382,8 @@ var Highchart = (function() {
     var contracts_response = window.contracts_for;
 
     if (contracts_response && contracts_response.echo_req.contracts_for === underlying) {
-      if (contracts_response.contracts_for.feed_license === 'delayed') {
-        handle_delay();
+      if (contracts_response.contracts_for.feed_license) {
+        handle_delay(contracts_response.contracts_for.feed_license);
       }
       show_entry_error();
     } else if(!contracts_for_send && update === '') {
@@ -402,12 +402,15 @@ var Highchart = (function() {
     return;
   }
 
-  function handle_delay() {
-    if (!is_expired) {
-      request.end = 'latest';
+  function handle_delay(feed_license) {
+    if (feed_license !== 'realtime') {
+      if (!is_expired) {
+        request.end = 'latest';
+      }
+      delete request.subscribe;
+      chart_delayed = true;
     }
-    delete request.subscribe;
-    chart_delayed = true;
+    return;
   }
 
   // we have to update the color zones with the correct entry_tick_time

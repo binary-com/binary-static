@@ -23,15 +23,15 @@ function BinarySocketClass() {
         socketUrl;
         var host = window.location.host;
         if((/www\.binary\.com/i).test(host)) {
-            socketUrl = 'wss://ws.binaryws.com/websockets/v3';
+            socketUrl = 'wss://ws.binaryws.com/websockets/v3?app_id=1';
         } else if((/binaryqa/i).test(host)) {
-            socketUrl = 'wss://' + host + '/websockets/v3';
+            socketUrl = 'wss://' + host + '/websockets/v3?app_id=1';
         } else {
-            socketUrl = 'wss://www2.binary.com/websockets/v3';
+            socketUrl = 'wss://www2.binary.com/websockets/v3?app_id=1';
         }
 
     if (page.language()) {
-        socketUrl += '?l=' + page.language();
+        socketUrl += '&l=' + page.language();
     }
 
     var clearTimeouts = function(){
@@ -218,7 +218,7 @@ function BinarySocketClass() {
                     }
                   if (response.website_status.clients_country) {
                     localStorage.setItem('clients_country', response.website_status.clients_country);
-                    if (isNotBackoffice()) {
+                    if (!$('body').hasClass('BlueTopBack')) {
                       checkClientsCountry();
                     }
                   }
@@ -232,7 +232,7 @@ function BinarySocketClass() {
                         RealityCheck.realityCheckWSHandler(response);
                     }
                 } else if (type === 'get_account_status') {
-                  if (response.get_account_status.risk_classification === 'high' && isNotBackoffice() && (localStorage.getItem('reality_check.ack') === '1' || !localStorage.getItem('reality_check.interval'))) {
+                  if (response.get_account_status.risk_classification === 'high' && page.header.qualify_for_risk_classification()) {
                     send({get_financial_assessment: 1});
                   } else {
                     localStorage.removeItem('risk_classification');
@@ -240,7 +240,7 @@ function BinarySocketClass() {
                   localStorage.setItem('risk_classification.response', response.get_account_status.risk_classification);
                 } else if (type === 'get_financial_assessment' && !response.hasOwnProperty('error')) {
                   if (Object.keys(response.get_financial_assessment).length === 0) {
-                    if (localStorage.getItem('reality_check.ack') === '1' || !localStorage.getItem('reality_check.interval') && localStorage.getItem('risk_classification.response') === 'high') {
+                    if (page.header.qualify_for_risk_classification() && localStorage.getItem('risk_classification.response') === 'high') {
                       localStorage.setItem('risk_classification', 'high');
                       page.header.check_risk_classification();
                     }

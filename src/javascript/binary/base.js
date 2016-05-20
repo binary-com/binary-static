@@ -44,8 +44,6 @@ onUnload.queue(function () {
     page.on_unload();
 });
 
-var bo_url;
-
 //////////////////////////////////////////////////////////////
 //Purpose: To solve cross domain logged out server problem.
 //Return: Hostname for this page
@@ -198,50 +196,50 @@ onLoad.queue(function () {
 
 // onLoad.queue does not work on the home page.
 // jQuery's ready function works always.
-if (!/backoffice/.test(document.URL)) { // exclude BO
-    $(document).ready(function () {
-        // $.cookie is not always available.
-        // So, fall back to a more basic solution.
-        var match = document.cookie.match(/\bloginid=(\w+)/);
-        match = match ? match[1] : '';
-        $(window).on('storage', function (jq_event) {
-            if (jq_event.originalEvent.key !== 'active_loginid') return;
-            if (jq_event.originalEvent.newValue === match) return;
-            if (jq_event.originalEvent.newValue === '') {
-                // logged out
+
+$(document).ready(function () {
+  if (!$('body').hasClass('BlueTopBack')) { // exclude BO
+    // $.cookie is not always available.
+    // So, fall back to a more basic solution.
+    var match = document.cookie.match(/\bloginid=(\w+)/);
+    match = match ? match[1] : '';
+    $(window).on('storage', function (jq_event) {
+        if (jq_event.originalEvent.key !== 'active_loginid') return;
+        if (jq_event.originalEvent.newValue === match) return;
+        if (jq_event.originalEvent.newValue === '') {
+            // logged out
+            page.reload();
+        } else {
+            // loginid switch
+            if(!window['is_logging_in']) {
                 page.reload();
-            } else {
-                // loginid switch
-                if(!window['is_logging_in']) {
-                    page.reload();
-                }
-            }
-        });
-
-        LocalStore.set('active_loginid', match);
-        var start_time;
-        var time_now;
-        var tabChanged = function() {
-            if(clock_started === true){
-                if (document.hidden || document.webkitHidden) {
-                    start_time = moment().valueOf();
-                    time_now = page.header.time_now;
-                }else {
-                    time_now = (time_now + (moment().valueOf() - start_time));
-                    page.header.time_now = time_now;
-                }
-            }
-        };
-
-        if (typeof document.webkitHidden !== 'undefined') {
-            if (document.addEventListener) {
-                document.addEventListener("webkitvisibilitychange", tabChanged);
-            }
-        } else if (typeof document.hidden !== 'undefined') {
-            if (document.addEventListener) {
-                document.addEventListener("visibilitychange", tabChanged);
             }
         }
-
     });
-}
+
+    LocalStore.set('active_loginid', match);
+    var start_time;
+    var time_now;
+    var tabChanged = function() {
+        if(clock_started === true){
+            if (document.hidden || document.webkitHidden) {
+                start_time = moment().valueOf();
+                time_now = page.header.time_now;
+            }else {
+                time_now = (time_now + (moment().valueOf() - start_time));
+                page.header.time_now = time_now;
+            }
+        }
+    };
+
+    if (typeof document.webkitHidden !== 'undefined') {
+        if (document.addEventListener) {
+            document.addEventListener("webkitvisibilitychange", tabChanged);
+        }
+    } else if (typeof document.hidden !== 'undefined') {
+        if (document.addEventListener) {
+            document.addEventListener("visibilitychange", tabChanged);
+        }
+    }
+  }
+});

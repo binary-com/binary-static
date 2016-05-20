@@ -4,6 +4,10 @@ RiskClassification = (function() {
   var financial_assessment_url = page.url.url_for('user/assessmentws');
 
   var renderRiskClassificationPopUp = function () {
+      if (window.location.pathname === '/user/assessmentws') {
+        window.location.href = page.url.url_for('user/my_accountws');
+        return;
+      }
       $.ajax({
           url: financial_assessment_url,
           dataType: 'html',

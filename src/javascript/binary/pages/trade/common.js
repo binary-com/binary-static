@@ -560,7 +560,7 @@ function displayCommentPrice(node, currency, type, payout) {
     if (node && type && payout) {
         var profit = payout - type,
             return_percent = (profit/type)*100,
-            comment = Content.localize().textNetProfit + ': ' + currency + ' ' + profit.toFixed(2) + ' | ' + Content.localize().textReturn + ' ' + return_percent.toFixed(0) + '%';
+            comment = Content.localize().textNetProfit + ': ' + currency + ' ' + profit.toFixed(2) + ' | ' + Content.localize().textReturn + ' ' + return_percent.toFixed(1) + '%';
 
         if (isNaN(profit) || isNaN(return_percent)) {
             node.hide();
