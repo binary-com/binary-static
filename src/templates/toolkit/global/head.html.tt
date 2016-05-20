@@ -35,13 +35,14 @@
         <link rel="icon" type="image/png" sizes="16x16" href="[% request.url_for('/images/favicons/favicon-16x16.png') %]" >
         <link rel="icon" type="image/png" sizes="32x32" href="[% request.url_for('/images/favicons/favicon-32x32.png') %]" >
 
-        [% FOREACH key = available_languages.keys %]
-            <link rel="alternate" href="[% request.url_for(request.get_current_path(), { l => $key }) =%]" hreflang="[% key %]"/>
+        [% FOREACH o IN language_options =%]
+            [%= IF o.code.lower != 'ja' =%]
+            <link rel="alternate" href="[% request.url_for(request.url_for(current_path), { l => o.code.lower }) =%]" hreflang="[% o.code %]" />
+            [%= END %]
         [% END %]
-        [%= FOREACH css_file IN css_files =%]
+        [% FOREACH css_file IN css_files =%]
             <link rel="stylesheet" href="[%= css_file =%]">
         [% END %]
-
         [% INCLUDE global/javascripts.html.tt
             javascript=javascript
         %]

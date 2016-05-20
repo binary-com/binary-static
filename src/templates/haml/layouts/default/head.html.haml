@@ -38,8 +38,10 @@
   - my $languages = available_languages();
   - my $path = get_current_path();
   - foreach (keys %{ $languages }) {
-    - my $complete_path = url_for($path, { l => $_ });
-    %link{:rel=>"alternate", :hreflang=>$_, :href=>$complete_path}
+    - if (lc($_) ne 'ja') {
+      - my $complete_path = url_for($path, { l => $_ });
+      %link{:rel=>"alternate", :hreflang=>$_, :href=>$complete_path}
+    - }
   - }
 
   - foreach my $css (@$css_files) {
