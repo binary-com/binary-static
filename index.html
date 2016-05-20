@@ -56,8 +56,10 @@
                 };
                 ws.onmessage = function(msg) {
                     var response = JSON.parse(msg.data);
-                    if(response.msg_type === 'website_status' && !response.error && response.hasOwnProperty('website_status')) {
-                        lang = getLanguage(response.website_status.clients_country);
+                    if(response.msg_type === 'website_status') {
+                        if(!response.error && response.hasOwnProperty('website_status')) {
+                            lang = getLanguage(response.website_status.clients_country);
+                        }
                         ws.close();
                         redirect(lang);
                     }

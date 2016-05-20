@@ -94,6 +94,7 @@ var GTM = (function() {
 
 var User = function() {
     this.loginid =  $.cookie('loginid');
+    this.email   =  $.cookie('email');
     var loginid_list = $.cookie('loginid_list');
 
     if(this.loginid === null || typeof this.loginid === "undefined") {
@@ -1081,7 +1082,7 @@ var Page = function(config) {
 
 Page.prototype = {
     all_languages: function() {
-        return ['EN', 'AR', 'DE', 'ES', 'FR', 'ID', 'IT', 'PL', 'PT', 'RU', 'VI', 'ZH_CN', 'ZH_TW'];
+        return ['EN', 'AR', 'DE', 'ES', 'FR', 'ID', 'IT', 'PL', 'PT', 'RU', 'VI', 'JA', 'ZH_CN', 'ZH_TW'];
     },
     language_from_url: function() {
         var regex = new RegExp('^(' + this.all_languages().join('|') + ')$', 'i'),
