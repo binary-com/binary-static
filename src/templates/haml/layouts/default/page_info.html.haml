@@ -1,4 +1,4 @@
 - my $content_class = (current_route || 'home').'-content';
   #page_info{:style => 'display: none;'}
-    %title= stash('website_name') . (stash('title') ? " : ".stash('title'): '')
+    %title= $browser_title
     #content_class= $content_class
