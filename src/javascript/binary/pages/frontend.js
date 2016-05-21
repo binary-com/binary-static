@@ -58,6 +58,7 @@ var sidebar_scroll = function(elm_selector) {
 
 var get_started_behaviour = function() {
     // Get Started behaviour:
+
     var update_active_subsection = function(to_show) {
         var fragment;
         var subsection = $('.subsection');
@@ -100,7 +101,7 @@ var get_started_behaviour = function() {
         });
 
         fragment = (location.href.split('#'))[1];
-        to_show = fragment ? $('a[name=' + fragment + '-section]').parent('.subsection') : $('.subsection.first');
+        to_show = fragment ? $('a[name=' + fragment + '-section]').parent().parent('.subsection') : $('.subsection.first');
         update_active_subsection(to_show);
     }
     select_nav_element();
