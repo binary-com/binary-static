@@ -8,3 +8,4 @@
  */
 
 var app_id = '1';
+var socket_url = 'wss://ws.binaryws.com/websockets/v3';
