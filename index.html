@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Binary.com</title>
+        <meta charset="utf-8" />
+        <script type="text/javascript">
+            function getCookieItem(sKey) {
+                'use strict';
+                if (!sKey) { return null; }
+                return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
+            }
+            function getLanguage(country) {
+                var langs = {
+                    'ar': 'dz|bh|km|dj|eg|iq|jo|kw|lb|ly|mr|ma|om|ps|qa|sa|so|sd|sy|tn|ae|ye',
+                    'de': 'de|at|li',
+                    'es': 'ar|bo|cl|co|cr|cu|do|ec|sv|gt|hn|mx|ni|pa|py|pr|es|uy|ve',
+                    'fr': 'fr|ad|bj|bf|cf|cg|ga|gn|ml|mc|ne|sn|tg',
+                    'id': 'id',
+                    'it': 'it',
+                    'ja': 'jp',
+                    'pl': 'po',
+                    'pt': 'br|mz|ao|pt|gw|pg|cv|st',
+                    'ru': 'ru|ua|by|kz',
+                    'vi': 'vn',
+                    'zh_tw': 'tw|mo',
+                    'zh_cn': 'cn|sg',
+                };
+                var conLang = 'en';
+                if(country) {
+                    Object.keys(langs).map(function(l) {
+                        if((new RegExp(langs[l], 'i')).test(country)) conLang = l;
+                    });
+                }
+                return conLang;
+            }
+            function redirect(lang) {
+                window.location.href = (lang || 'en').toLowerCase() + '/' + (getCookieItem('loginid') ? 'trading' : 'home') + '.html';
+            }
+
+            var lang = getCookieItem('language');
+            if(lang) {
+                redirect(lang);
+            } else {
+                var host = window.location.host,
+                    socketUrl;
+                if((/www\.binary\.com/i).test(host)) {
+                    socketUrl = 'wss://ws.binaryws.com/websockets/v3';
+                } else if((/binaryqa/i).test(host)) {
+                    socketUrl = 'wss://' + host + '/websockets/v3';
+                } else {
+                    socketUrl = 'wss://www2.binary.com/websockets/v3';
+                }
+                var ws = new WebSocket(socketUrl);
+                ws.onopen = function(e) {
+                    ws.send(JSON.stringify({'website_status': '1'}));
+                };
+                ws.onmessage = function(msg) {
+                    var response = JSON.parse(msg.data);
+                    if(response.msg_type === 'website_status') {
+                        if(!response.error && response.hasOwnProperty('website_status')) {
+                            lang = getLanguage(response.website_status.clients_country);
+                        }
+                        ws.close();
+                        redirect(lang);
+                    }
+                };
+            }
+        </script>
+    </head>
+</html>

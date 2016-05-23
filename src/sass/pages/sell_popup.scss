@@ -1,0 +1,237 @@
+.popup_bet_desc {
+    padding: 5px 0;
+    border: 1px solid #DEDEDE;
+}
+
+#sell_popup_container {
+    &.spread_popup {
+        width: 300px;
+    }
+    &.message_popup {
+        width: 500px;
+        line-height: 25px;
+    }
+    &.tick_popup {
+        min-height: 460px;
+    }
+}
+
+#sell_popup_container {
+    width: 90%;
+    font-size: 80%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0;
+    a.close {
+        top: 0;
+        right: 0;
+    }
+
+    .inpage_popup_content {
+        margin: 0;
+        #explanation-content {
+            margin-top: 10px;
+            text-align: left;
+        }
+        #sell_content_wrapper {
+            .sell_price_wrapper {
+                margin-top: 10px;
+                #sell_price_container {
+                    margin: 0 auto;
+                    width: 60%;
+                    display: inline-block;
+
+                    .stylized_price {
+                        min-width: 155px;
+                        width: 40%;
+                        margin-bottom: 5px;
+                        display: inline-block;
+                    }
+
+                    #sell_price_sparkline {
+                        padding: 0;
+                        width: 40%;
+                        text-align: left;
+                        display: inline-block;
+                    }
+                }
+
+                #sell_info {
+                    display: inline-block;
+                    width: 30%;
+                }
+                .form_button {
+                    display: inline-block;
+                    margin: 0 auto;
+                    vertical-align: top;
+                }
+            }
+
+            .extra-info {
+                font-size: 85%;
+                td {
+                    border: 0;
+                    padding: 0;
+                }
+            }
+            .contract_barriers{
+              width: auto;
+              margin: 0 auto;
+              td {
+                margin: 0;
+                border: none;
+                text-align: left;
+                padding: 0 2px;
+                &.diff {
+                  text-align: right;
+                }
+                &.dir {
+                  text-align: center;
+                }
+              }
+            }
+
+            #message_container_wrapper {
+                clear: both;
+                padding: 0; // keep padding 0 so when there are no warnings, the container is not displayed
+                background: none;
+            }
+            #overlay-wrapper {
+                position: absolute;
+                top: 0;
+                left:0;
+                width: 100%;
+                height: 90%;
+                background-color: #fff;
+                filter:alpha(opacity=50);
+                opacity: 0.5;
+                -moz-opacity: 0.5;
+                z-index: 150000;
+            }
+        }
+
+        .bet_confirm_wrapper {
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 0;
+            margin-bottom: 40px;
+        }
+
+        .note {
+            clear: both;
+            margin: 20px;
+            margin-top: 0;
+            text-align: left;
+        }
+
+        #confirmation_table {
+            font-size: 16px;
+            border: none;
+            margin: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+
+            th, td {
+                width: auto;
+            }
+
+            .standout {
+                width: 40%;
+            }
+            .standin  {
+                width: 30%;
+            }
+        }
+
+        .trade_ref {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .account_balance {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    }
+}
+
+.inpage_popup_container_ws {
+    border: 2px solid $COLOR_BLUE;
+    border-top: 1px solid $COLOR_WHITE;
+    background-color: $COLOR_WHITE;
+    .inpage_popup_content_box {
+        border: 0px;
+        #contract_win_status {
+            line-height: 30px;
+            &.won {
+                background-color: rgba(46, 136, 54, 0.196078);
+            }
+            &.lost {
+                background-color: rgba(204, 0, 0, 0.0980392);
+            }
+        }
+        .popup_bet_desc {
+            border: 0px;
+            padding: 5px;
+            line-height: 20px;
+            background-color: $COLOR_BLUE;
+            color: $COLOR_WHITE;
+        }
+        td {
+            @include BIDIR_PROP(padding-left, padding-right, 6%);
+            @include BIDIR_VALUE(text-align, left, right);
+        }
+        #sell_details_chart_wrapper {
+            border-right: 1px solid $COLOR_DARK_GRAY;
+            margin-right: -1px;
+            padding: 0px;
+            .chart-notice {
+                margin: 0px;
+            }
+            .highcharts-container {
+              direction: ltr;
+            }
+        }
+        #sell_details_table {
+            padding: 0px;
+            border-left: 1px solid $COLOR_DARK_GRAY;
+            th {
+                line-height: 24px;
+                border-bottom-color: $COLOR_GRAY_SHADE;
+            }
+            td {
+                border-bottom-width: 1px;
+            }
+            #trade_details_profit_loss {
+                font-weight: bold;
+                span {
+                    font-size: 10px;
+                    @include BIDIR_PROP(padding-left, padding-right, 7px);
+                    font-weight: normal;
+                }
+            }
+            .last_cell {
+                border-bottom: 0px;
+                min-height: 20px;
+                padding: 5px 15px;
+                text-align: center;
+            }
+            #trade_details_message {
+                font-style: italic;
+            }
+            #contract_sell_message {
+                font-size: 0.9em;
+                line-height: 20px;
+            }
+            #sell_at_market_wrapper {
+                .note {
+                    line-height: 18px;
+                    margin-bottom: 10px;
+                    font-size: 12px;
+                    padding: 3px 10px;
+                }
+            }
+        }
+    }
+}

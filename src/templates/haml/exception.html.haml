@@ -1,0 +1,5 @@
+- layout('exception');
+- stash( title => l('Unable to process your request') );
+  %h1= l('Unable to process your request')
+  %p= l('There was an error and we were unable to process your request.')
+  %p= l('Should you need help or support, please contact our <a href="[_1]">Customer Service department</a> and one of our representatives will assist you as soon as possible.', url_for('contact'))

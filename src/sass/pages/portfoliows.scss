@@ -1,0 +1,35 @@
+a.dynamic, span.dynamic, div.dynamic, p.dynamic, button.dynamic, table.dynamic {
+  display: none!important;
+}
+
+#portfolio {
+    td {
+      padding: 10px 10px;
+    }
+    td.indicative, td.purchase {
+        white-space: nowrap;
+    }
+    td.indicative.no_resale {
+        color: lightgray;
+        span {
+            font-size: 8px;
+            display: block;
+            margin-top: -11px;
+        }
+    }
+    th {
+      padding: 10px 10px;
+      text-align: left;
+    }
+    th.details {
+      width: 45%;
+    }
+    table .ref {
+      text-align: left!important;
+    }
+    @media screen and (max-width: 480px) {
+        .details{
+            display: none;
+        }
+    }
+}

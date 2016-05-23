@@ -1,0 +1,26 @@
+#profit-table-ws-container {
+
+  th {
+    padding-right: 8px;
+  }
+
+  td {
+    padding-right: 8px;
+  }
+
+  .pl {
+    text-align: right !important;
+  }
+
+  #pl-day-total {
+    .buy-date {
+      flex-grow: 6;
+      flex-shrink: 6;
+    }
+  }
+
+  .contract {
+    flex: 2 1 100px;
+    padding-right: 20px;
+  }
+}

@@ -1,0 +1,519 @@
+- stash(
+-   title => l('Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices'),
+- );
+
+.grd-container
+  %div.grd-grid-12.grd-parent
+    %h1= "Titles"
+    %div.grd-grid-6
+      %pre
+        <h1>Title</h1>
+    %div.grd-grid-6
+      %h1= "Title"
+    .grd-clear
+    %div.grd-grid-6
+      %pre
+        <h1 class="dark">Title</h1>
+    %div.grd-grid-6
+      %h1.dark= "Title"
+    .grd-clear
+    %div.grd-grid-6
+      %pre
+        <h2>Title</h2>
+    %div.grd-grid-6
+      %h2= "Title"
+    .grd-clear
+    %div.grd-grid-6
+      %pre
+        <h3>Title</h3>
+    %div.grd-grid-6
+      %h3= "Title"
+
+  %div.grd-grid-12.grd-parent
+    %h1= "Text"
+    %div.grd-grid-6
+      %pre
+        <p>paragraph with <strong>strong text</strong><p>
+    %div.grd-grid-6
+      %p
+        paragraph with
+        %strong
+          strong text
+    %div.grd-grid-6
+      %pre
+        <ul>
+          <li>unordered list item 1</li>
+          <li>unordered list item 2</li>
+          <li>unordered list item 3</li>
+        </ul>
+    %div.grd-grid-6
+        %ul
+          %li= 'unordered list item 1'
+          %li= 'unordered list item 2'
+          %li= 'unordered list item 3'
+    .grd-clear
+    %div.grd-grid-6
+      %pre
+        <ul class="bullet">
+          <li>unordered list item 1</li>
+          <li>unordered list item 2</li>
+          <li>unordered list item 3</li>
+        </ul>
+    %div.grd-grid-6
+      %ul.bullet
+        %li= 'unordered list item 1'
+        %li= 'unordered list item 2'
+        %li= 'unordered list item 3'
+    .grd-clear
+    %div.grd-grid-6
+      %pre
+        <ul class="checked">
+          <li>unordered list item 1</li>
+          <li>unordered list item 2</li>
+          <li>unordered list item 3</li>
+        </ul>
+    %div.grd-grid-6
+      %ul.checked
+        %li= 'unordered list item 1'
+        %li= 'unordered list item 2'
+        %li= 'unordered list item 3'
+    .grd-clear
+    %div.grd-grid-6
+      %pre
+        <ol>
+          <li>ordered list item 1</li>
+          <li>ordered list item 2</li>
+          <li>ordered list item 3</li>
+        </ol>
+    %div.grd-grid-6
+      %ol
+        %li= 'ordered list item 1'
+        %li= 'ordered list item 2'
+        %li= 'ordered list item 3'
+
+  %div.grd-grid-12.grd-parent
+    %h1= "Links"
+    %div.grd-grid-6
+      %pre
+        <p>paragraph with <a href="#">link</a><p>
+    %div.grd-grid-6
+      %p
+        paragraph with
+        %a{:href => "#"}= "link"
+    .grd-clear
+    %div.grd-grid-6
+      %pre
+        <a class="button" href="#">
+          <span>button link</span>
+        </a>
+    %div.grd-grid-6
+      %a.button{:href => "#"}
+        %span= "button link"
+    .grd-clear
+    %div.grd-grid-6
+      %pre
+        <a class="button-disabled">
+          <span>button link</span>
+        </a>
+    %div.grd-grid-6
+      %a.button-disabled{:href => "#"}
+        %span= "disabled button link"
+
+  %div.grd-grid-12.grd-parent
+    %h1= "Messages"
+    %div.grd-grid-6
+      %pre
+        <p class="success-msg">success message</p>
+    %div.grd-grid-6
+      %p.success-msg= "success message"
+    .grd-clear
+    %div.grd-grid-6
+      %pre
+        <p class="notice-msg">notice message</p>
+    %div.grd-grid-6
+      %p.notice-msg= "notice message"
+    .grd-clear
+    %div.grd-grid-6
+      %pre
+        <p class="error-msg">error message</p>
+    %div.grd-grid-6
+      %p.error-msg= "error message"
+    .grd-clear
+    %div.grd-grid-6
+      %pre
+        <abbr rel="tooltip" title="message">
+          text with tooltip
+        </abbr>
+    %div.grd-grid-6
+      %abbr{:rel => "tooltip", :title => "message"}
+        text with tooltip
+
+  %div.grd-grid-12.grd-parent
+    %h1= "Tabs"
+    %p= "For all types of tabs, you could call \"build_menu_with_content\" on server side to generate the HTML for you, or just output this HTML samples."
+    %div.grd-grid-6
+      %h2= "Simple Tab"
+      %pre
+        <div class="has-tabs">
+          <ul>
+            <li>
+              <a href="#new-tab-1">first item</a>
+            </li>
+            <li class="active">
+              <a href="#new-tab-2">second item</a>
+            </li>
+            <li>
+              <a href="#new-tab-3">third item</a>
+            </li>
+          </ul>
+          <div id="new-tab-1">
+            <p>Content 1 for tab 1</p>
+          </div>
+          <div id="new-tab-2">
+            <p>Content 2 for tab 2. active by default</p>
+          </div>
+          <div id="new-tab-3">
+            <p>Content 3 for tab 3</p>
+          </div>
+        </div>
+    %div.grd-grid-6
+      %div.has-tabs
+          %ul
+            %li
+              %a{:href => "#new-tab-1"}= "first item"
+            %li.active
+              %a{:href => "#new-tab-2"}= "second item"
+            %li
+              %a{:href => "#new-tab-3"}= "third item"
+          %div{:id => "new-tab-1"}
+            %p= "Content 1 for tab 1"
+          %div{:id => "new-tab-2"}
+            %p= "Content 2 for tab 2. active by default"
+          %div{:id => "new-tab-3"}
+            %p= "Content 3 for tab 3"
+    .grd-clear
+    %div.grd-grid-6
+      %h2= "Tab With Submenus"
+      %pre
+        <div class='content-tab-container'>
+            <div class='tab-menu'>
+              <div class='tab-menu-wrap'>
+                <ul class='tm-ul'>
+                  <li class='tm-li first' id='adv-tab-first'>
+                    <a class='tm-a' href='#adv-tab-first'>first item</a>
+                  </li>
+                  <li class='tm-li' id='adv-tab-second'>
+                    <a class='tm-a' href='#adv-tab-second'>second item</a>
+                    <ul class='tm-ul-2'>
+                      <li class='tm-li-2' id='adv-tab-second-sub-first'>
+                        <a class='tm-a-2' href='#adv-tab-second-sub-first'>submenu item 1</a>
+                      </li>
+                      <li class='tm-li-2' id='adv-tab-second-sub-second'>
+                        <a class='tm-a-2' href='#adv-tab-second-sub-second'>submenu item 2</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='tm-li last active' id='adv-tab-third'>
+                    <a class='tm-a' href='#adv-tab-third'>third item</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class='tab-content'>
+              <div class='tab-content-wrapper'>
+                <div class='invisible toggle-content' id='adv-tab-first-content'>
+                  <p>Content 1 for tab 1</p>
+                </div>
+                <div class='invisible toggle-content' id='adv-tab-second-sub-first-content'>
+                  <p>Content 2/1 for tab 2 submenu 1</p>
+                </div>
+                <div class='invisible toggle-content' id='adv-tab-second-sub-second-content'>
+                  <p>Content 2/2 for tab 2 submenu 2</p>
+                </div>
+                <div class='toggle-content' id='adv-tab-third-content'>
+                  <p>Content 3 for tab 3</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    %div.grd-grid-6
+      %div.content-tab-container
+        %div.tab-menu
+          %div.tab-menu-wrap
+            %ul.tm-ul
+              %li{:class => "tm-li first" :id => "adv-tab-first"}
+                %a.tm-a{:href => "#adv-tab-first"}= "first item"
+              %li.tm-li{:id => "adv-tab-second"}
+                %a.tm-a{:href => "#adv-tab-second"}= "second item"
+                %ul.tm-ul-2
+                  %li.tm-li-2{:id => "adv-tab-second-sub-first"}
+                    %a.tm-a-2{:href => "#adv-tab-second-sub-first"}= "submenu item 1"
+                  %li.tm-li-2{:id => "adv-tab-second-sub-second"}
+                    %a.tm-a-2{:href => "#adv-tab-second-sub-second"}= "submenu item 2"
+              %li{:class => "tm-li last active" :id => "adv-tab-third"}
+                %a.tm-a{:href => "#adv-tab-third"}= "third item"
+        %div.tab-content
+          %div.tab-content-wrapper
+            %div.toggle-content{:id => "adv-tab-first-content" :class => "invisible"}
+              %p= "Content 1 for tab 1"
+            %div.toggle-content{:id => "adv-tab-second-sub-first-content" :class => "invisible"}
+              %p= "Content 2/1 for tab 2 submenu 1"
+            %div.toggle-content{:id => "adv-tab-second-sub-second-content" :class => "invisible"}
+              %p= "Content 2/2 for tab 2 submenu 2"
+            %div.toggle-content{:id => "adv-tab-third-content"}
+              %p= "Content 3 for tab 3"
+    .grd-clear
+    %div.grd-grid-6
+      %h2= "Page section tab"
+      %pre
+        <div class='section-tab-container'>
+            <div class='tab-menu'>
+              <div class='tab-menu-wrap'>
+                <ul class='tm-ul'>
+                  <li class='tm-li first' id='page-tab-first'>
+                    <a class='tm-a' href='#page-tab-first'>first item</a>
+                  </li>
+                  <li class='tm-li' id='page-tab-second'>
+                    <a class='tm-a' href='#page-tab-second'>second item</a>
+                    <ul class='tm-ul-2'>
+                      <li class='tm-li-2' id='page-tab-second-sub-first'>
+                        <a class='tm-a-2' href='#page-tab-second-sub-first'>submenu item 1</a>
+                      </li>
+                      <li class='tm-li-2' id='page-tab-second-sub-second'>
+                        <a class='tm-a-2' href='#page-tab-second-sub-second'>submenu item 2</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='tm-li last active' id='page-tab-third'>
+                    <a class='tm-a' href='#page-tab-third'>third item</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class='tab-content'>
+              <div class='tab-content-wrapper'>
+                <div class='invisible toggle-content' id='page-tab-first-content'>
+                  <p>Content 1 for tab 1</p>
+                </div>
+                <div class='invisible toggle-content' id='page-tab-second-sub-first-content'>
+                  <p>Content 2/1 for tab 2 submenu 1</p>
+                </div>
+                <div class='invisible toggle-content' id='page-tab-second-sub-second-content'>
+                  <p>Content 2/2 for tab 2 submenu 2</p>
+                </div>
+                <div class='toggle-content' id='page-tab-third-content'>
+                  <p>Content 3 for tab 3</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    %div.grd-grid-6
+      %div.content-tab-container{:class => "page-section" :id => "style-guide-page-section"}
+        %div.tab-menu
+          %div.tab-menu-wrap
+            %ul.tm-ul
+              %li{:class => "tm-li first" :id => "page-tab-first"}
+                %a.tm-a{:href => "#page-tab-first"}= "first item"
+              %li.tm-li{:id => "page-tab-second"}
+                %a.tm-a{:href => "#page-tab-second"}= "second item"
+                %ul.tm-ul-2
+                  %li.tm-li-2{:id => "page-tab-second-sub-first"}
+                    %a.tm-a-2{:href => "#page-tab-second-sub-first"}= "submenu item 1"
+                  %li.tm-li-2{:id => "page-tab-second-sub-second"}
+                    %a.tm-a-2{:href => "#page-tab-second-sub-second"}= "submenu item 2"
+              %li{:class => "tm-li active" :id => "page-tab-third"}
+                %a.tm-a{:href => "#page-tab-third"}= "third item"
+        %div.tab-content
+          %div.tab-content-wrapper
+            %div.toggle-content{:id => "page-tab-first-content" :class => "invisible"}
+              %p= "Content 1 for tab 1"
+            %div.toggle-content{:id => "page-tab-second-sub-first-content" :class => "invisible"}
+              %p= "Content 2/1 for tab 2 submenu 1"
+            %div.toggle-content{:id => "page-tab-second-sub-second-content" :class => "invisible"}
+              %p= "Content 2/2 for tab 2 submenu 2"
+            %div.toggle-content{:id => "page-tab-third-content"}
+              %p= "Content 3 for tab 3"
+
+  %div.grd-grid-12.grd-parent
+    %h1= "Tables"
+    %div.grd-grid-6
+      %pre
+        <table>
+          <thead>
+            <tr>
+              <th>Header</th>
+              <th>Header</th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <th>Footer</th>
+              <th>Footer</th>
+            </tr>
+          </tfoot>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>data 1</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>data 2</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class='paging-navigation'>
+          <span class='paging-desc'>Page 2 of 3</span>
+          <ul class='paging-links'>
+            <li>
+              <a href='#'>Previous</a>
+            </li>
+            <li>
+              <a href='#'>1</a>
+            </li>
+            <li class='current'>2</li>
+            <li>
+              <a href='#'>3</a>
+            </li>
+            <li>
+              <a href='#'>Next</a>
+            </li>
+          </ul>
+        </div>
+
+    %div.grd-grid-6
+      %table
+        %thead
+          %tr
+            %th
+              Header
+            %th
+              Header
+        %tfoot
+          %tr
+            %th
+              Footer
+            %th
+              Footer
+        %tbody
+          %tr
+            %td= "1"
+            %td= "data 1"
+          %tr
+            %td= "2"
+            %td= "data 2"
+
+      %div.paging-navigation
+        %span.paging-desc= "Page 2 of 3"
+        %ul.paging-links
+          %li
+            %a{:href => "#"}= "Previous"
+          %li
+            %a{:href => "#"}= "1"
+          %li.current= "2"
+          %li
+            %a{:href => "#"}= "3"
+          %li
+            %a{:href => "#"}= "Next"
+
+  %div.grd-grid-12.grd-parent
+    %h1= "Forms"
+    %div.grd-grid-6
+      %pre
+        <fieldset>
+          <legend>Fieldset Legend</legend>
+          <div class="grd-row-padding">
+            <div class='grd-grid-4 form_label'>
+              <label for='loginid'>Login ID</label>
+            </div>
+            <div class='grd-grid-8'>
+              <input type='text' name='loginid' />
+              <p class='hint'>Hint comes here</p>
+              <p class='errorfield'>error in loginid</p>
+            </div>
+          </div>
+          <div class="grd-row-padding">
+            <div class='grd-grid-4'></div>
+            <div class='grd-grid-8'>
+              <span class='button'>
+                <button class='button' name='submit' type='submit'>Login</button>
+              </span>
+            </div>
+          </div>
+        </fieldset>
+    %div.grd-grid-6
+      %fieldset
+        %legend= 'Fieldset Legend'
+          %div.grd-row-padding
+            .grd-grid-4.form_label
+              %label{:for => "loginid"}= "Login ID"
+            .grd-grid-8
+              %input#loginid{:type => 'text', :name => 'loginid'}
+              %p.hint= "Hint comes here"
+              %p.errorfield= "error in loginid"
+          %div.grd-row-padding
+            .grd-grid-4
+            .grd-grid-8
+              %span.button
+                %button#submit.button{:name => "submit" :type => "submit"}= "Login"
+
+  %div.grd-grid-12.grd-parent
+    %h1= "Inpage Popup"
+    %div.grd-grid-6
+      %pre
+        <a href="#" class="has-inpage-popup"
+        popup-content="popup contents">
+          Open Inpage Popup
+        </a>
+    %div.grd-grid-6
+      %div
+        %a.has-inpage-popup{:href => "#" :popup-content => "popup contents"}= "Open Inpage Popup"
+    .grd-clear
+    %div.grd-grid-6
+      %pre
+        <span class='button'>
+          <button id="_open-popup" class="has-inpage-popup"
+          popup-width="800">
+            Open Inpage Popup
+          </button>
+        </span>
+        <div class="inpage_popup_content invisible" id="_open-popup-content">
+          <h2>Popup Title</h2>
+          <p>contents of the popup, might contain HTML.</p>
+          <div class="drag-handle inpage_popup_content_box">
+            <p>if you want to drag the popup, use this section</p>
+          </div>
+        </div>
+    %div.grd-grid-6
+      %div
+        %span.button
+          %button.has-inpage-popup{:id => "_open-popup" :popup-width => "800"}= "Open Inpage Popup"
+        %div.inpage_popup_content{:class => 'invisible' :id => "_open-popup-content"}
+          %h2= "Popup Title"
+          %p
+            contents of the popup, might contain HTML.
+          %div.drag-handle{ :class => "inpage_popup_content_box"}
+            %p if you want to drag the popup, use this section.
+
+  %div.grd-grid-12.grd-parent
+    %h1= "Date/Time Picker"
+    %div.grd-grid-6
+      %pre
+        <label for="date">Date</label>
+        <input class="has-date-picker" name="date"/>
+    %div.grd-grid-6
+      %label{:for => 'date'}= 'Date'
+      %input.has-date-picker{:name => 'date'}
+    .grd-clear
+    %div.grd-grid-6
+      %pre
+        <label for="time">Time</label>
+        <input class="has-time-picker"
+        name="time" :time:minTimeHour="8" />
+    %div.grd-grid-6
+      %label{:for => 'time'}= 'Time'
+      %input.has-time-picker{:name => 'time' :time:minTimeHour => "8"}

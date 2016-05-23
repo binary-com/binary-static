@@ -1,0 +1,17 @@
+.tour {
+  @include topspace;
+  @include section-separator;
+  .section {
+      display: block;
+      overflow: hidden;
+  }
+  .section-content {
+    text-align: center;
+    h1 {
+      margin:35px 0 25px 0;
+    }
+  }
+}
+.tour-content#content {
+    margin-bottom: 0;
+}

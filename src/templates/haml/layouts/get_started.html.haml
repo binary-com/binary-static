@@ -1,0 +1,14 @@
+!!! 5
+%html
+  = include('layouts/default/head')
+  - my $lang3 = stash->{language};
+  %body.$lang3
+    #page-wrapper
+      = include('layouts/default/topbar')
+      = include('layouts/default/header')
+      #content-holder
+        .tab-menu.hidden#main-menu
+          = include('layouts/default/main_menu')
+        = include('layouts/default/mobile_menu')
+        = include('layouts/get_started/content')
+      = include('layouts/default/footer')

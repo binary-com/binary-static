@@ -1,0 +1,7 @@
+<div id="client_message" class="rbox errorbox">
+    <div class="rbox-wrap">
+        <div class="rbox-content grd-grid-12" id="client_message_content">
+        [% content %]
+        </div>
+    </div>
+</div>

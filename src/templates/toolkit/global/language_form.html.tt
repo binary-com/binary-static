@@ -1,0 +1,7 @@
+<select>
+[% FOREACH o IN language_options -%]
+    [% IF o.code.lower != 'ja' -%]
+        <option class='[% o.code %]'[% IF o.selected %] selected='selected'[% END %]>[% o.text %]</option>
+    [% END -%]
+[% END -%]
+</select>

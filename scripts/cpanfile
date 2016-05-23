@@ -1,0 +1,12 @@
+requires 'Getopt::Long';
+requires 'Text::Haml', '== 0.990116';
+requires 'Template';
+requires 'Path::Tiny';
+requires 'HTML::Entities';
+requires 'Locale::Maketext::Lexicon';
+requires 'JSON';
+requires 'YAML::XS';
+requires 'Mojolicious';
+requires 'Encode';
+requires 'Moo';
+requires 'Format::Util::Numbers';

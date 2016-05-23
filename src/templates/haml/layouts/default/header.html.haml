@@ -1,0 +1,27 @@
+- stash (
+-    logintext   => l('Log in'),
+- );
+#header
+  .grd-container
+    .grd-row-padding
+      .grd-grid-3.grd-grid-mobile-2.grd-grid-phablet-1
+        %a#logo{:href=>url_for("/")}
+          .grd-grid-3.grd-grid-mobile-12.grd-grid-phablet-12.grd-no-gutter
+            %img{:class => 'responsive grd-float-left', src => url_for('images/pages/binary-symbol-logo.svg')}
+          .grd-grid-9.grd-hide-mobile.grd-hide-phablet#binary-logo-text
+            %img{:class => 'responsive', src => url_for('images/pages/binary-type-logo.svg')}
+      .grd-grid-6.grd-hide-mobile.grd-hide-phablet
+        = include('layouts/default/nav')
+      .grd-grid-3.grd-grid-mobile-9.grd-grid-phablet-10.by_client_type.client_virtual.client_real#client-logged-in{ :style => 'display: none;'}
+        #logout
+          %form#loginid-switch-form
+            #login-fields
+              %select{:name => 'client_loginid', :id => 'client_loginid'}
+            %div#balance
+            %a.logout{:href => 'javascript:;'}= l('Log out')
+      .grd-grid-3.grd-grid-mobile-9.grd-grid-phablet-10.grd-no-gutter-left.by_client_type.client_logged_out.invisible#client-logged-out
+        %div{:id => 'btn_login', :class => 'button'}= stash('logintext')
+      .grd-grid-1.grd-hide.grd-show-mobile.grd-no-gutter-mobile.grd-show-phablet
+        #mobile-menu-icon-container
+          %a{:href => '#mobile-menu', :id => 'mobile-menu-icon'}
+            %img{:class => 'responsive', :src => url_for('images/pages/binary-mobile-menu.svg')}

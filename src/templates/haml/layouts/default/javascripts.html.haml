@@ -1,0 +1,8 @@
+%script{:type => "text/javascript"}
+  !=  "window.page_params = { settings: ". $javascript->{settings} . "};"
+
+- foreach my $lib (@{ $javascript->{libs} }) {
+  %script{:src => $lib :defer=>"true"}
+- }
+
+%script{:async => "true", :defer => "true", :src => "https://apis.google.com/js/platform.js"}

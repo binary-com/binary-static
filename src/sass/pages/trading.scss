@@ -1,0 +1,616 @@
+.batch_transaction_total {
+    text-align: right;
+    font-weight: bold;
+}
+
+.batch_transaction_total_price {
+    text-align: center;
+    font-weight: bold;
+}
+
+#betpage #content-holder #content {
+    form {
+        fieldset { background:none; }
+    }
+    #explanation-content{
+      margin-top: 20px;
+    }
+    .padding-left{
+      padding-left: 40px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .padding-right{
+      padding-right: 40px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    width: 100%;
+    > .content-tab-container {
+        width: 100%;
+      .tab-content-wrapper {
+        width: 100%;
+        margin: 0 auto;
+        #tab_graph-content {
+          width: 100%;
+        }
+        form.smallfont {
+          .bet_bottom_loading_image {
+            padding: 10px 15px;
+          }
+          height: 40px;
+          button.button {
+            line-height: 0.3em;
+          }
+        }
+      }
+    }
+  #bet_container {
+    margin-bottom:20px;
+    fieldset {
+      border: 0;
+    }
+    .form_button {
+      margin-top: 0;
+    }
+    #betInputBox_container {
+      position: relative;
+      z-index: 10;
+      margin: 0;
+      .tab-content {
+         border: 1px solid $COLOR_DARK_GRAY;
+         min-height: 369px;
+      }
+      .tab-content-wrapper, .tab-content {
+        background-color: transparent;
+      }
+      .tab-menu {
+        ul#betsTab {
+          border-bottom: none;
+          > li {
+            padding: 0;
+            .tm-ul-2 {
+              top: 27px;
+              margin-top: 0;
+            }
+            a.tm-a {
+              padding: 0 5px 0 5px;
+              width: auto;
+              font-size: 85%;
+            }
+          }
+        }
+      }
+    }
+    .unicode-info-icon {
+        font-size: 14px;
+    }
+    #bet_calculation_container {
+      margin: 0;
+      padding: 0;
+      position: relative;
+      #page_timeout_notice {
+        padding: 10px;
+        background: $COLOR_WHITE;
+      }
+      .rbox-content {
+        padding: 0;
+      }
+      .bet-error-box {
+        clear: both;
+        margin: 0;
+        margin-top: 27px;
+        margin-left: 20px;
+        padding: 10px;
+        width: 380px;
+        color: $COLOR_BLACK;
+        background-color: $COLOR_YELLOW;
+        p {
+          margin: 0;
+        }
+      }
+      .rbox {
+        margin: 0;
+        padding-bottom: 1.8em;
+        .rbox-wrap {
+          min-height: 140px;
+          .bet-error-box {
+              margin: 0;
+              padding: 1em;
+              font-size: 0.8em;
+              width: auto;
+          }
+          .rbox-heading {
+            background-color: transparent;
+            margin-bottom: 0;
+            /*margin-bottom: 10px;*/
+            h4 {
+              padding: 0.7em 0 0.7em 4em;
+              text-transform: capitalize;
+            }
+            .asian_up {
+              background: url("../images/pages/trade/asian-u_1.svg") no-repeat 5% 75%;
+            }
+            .asian_down {
+              background: url("../images/pages/trade/asian-d_1.svg") no-repeat 5% 75%;
+            }
+            .differs {
+              background: url("../images/pages/trade/differs_1.svg") no-repeat 5% 75%;
+            }
+            .matches {
+              background: url("../images/pages/trade/matches_1.svg") no-repeat 5% 75%;
+            }
+            .spread_up {
+              background: url("../images/pages/trade/spreadbet.svg") no-repeat 5% 75%;
+            }
+            .spread_down {
+              background: url("../images/pages/trade/spreadbet.svg") no-repeat 5% 75%;
+            }
+            .rises {
+              background: url("../images/pages/trade/rise_1.png") no-repeat 5% 75%;
+            }
+            .falls {
+              background: url("../images/pages/trade/fall_1.png") no-repeat 5% 75%;
+            }
+            .higher {
+              background: url("../images/pages/trade/higher_1.png") no-repeat 5% 75%;
+            }
+            .lower {
+              background: url("../images/pages/trade/lower_1.png") no-repeat 5% 75%;
+            }
+            .touches {
+              background: url("../images/pages/trade/touch_1.png") no-repeat 5% 75%;
+            }
+            .does_not_touch {
+              background: url("../images/pages/trade/no-touch_1.png") no-repeat 5% 75%;
+            }
+            .stays_between {
+              background: url("../images/pages/trade/stay-in-between_1.png") no-repeat 5% 75%;
+            }
+            .goes_outside {
+              background: url("../images/pages/trade/stay-out_1.png") no-repeat 5% 75%;
+            }
+            .ends_between {
+              background: url("../images/pages/trade/ends-between_1.png") no-repeat 5% 75%;
+            }
+            .ends_outside {
+              background: url("../images/pages/trade/ends-outside_1.png") no-repeat 5% 75%;
+            }
+          }
+        }
+        .ui-tabs {
+          ul.ui-tabs-nav {
+            li {
+              list-style-image: none;
+            }
+          }
+        }
+        .ui-datepicker {
+          td {
+            padding: 0.1em;
+          }
+        }
+        .form_button {
+          margin-bottom: 0;
+        }
+      }
+      /* loading section for bet container */
+      .rbox-bg-alt {
+        background: none;
+        .rbox-content {
+          background: none;
+          padding: 0;
+        }
+      }
+      .bet_pricebox_wrapper {
+          padding: 0;
+          margin: 0;
+      }
+    }
+    #bet_cost_container {
+      font-size: 0.8em;
+      display: inline-block;
+      background: white;
+      .rbox-wrap {
+        border-bottom: 1px solid $COLOR_GRAY_SHADE;
+      }
+      form {
+        width: 40%;
+        position: relative;
+      }
+      .pricing-details {
+        top: 1px;
+      }
+    }
+
+    #loading-price {
+      text-align: center;
+    }
+    #spot {
+      padding: 1px 2px;
+    }
+
+    .basicInputForm {
+      .error {
+        background-color: $COLOR_YELLOW;
+      }
+      #no_bets {
+        text-align: center;
+        margin: 30px 0 70px;
+      }
+    }
+
+    #betInputBox {
+      button {
+        margin: 1em auto 0;
+      }
+      form {
+        margin-top: 21px;
+        fieldset {
+          background:none;
+        }
+      }
+      div {
+        clear: both;
+        padding: 10px 0;
+      }
+      #std_loading_img {
+        min-height: 300px;
+        padding-top: 50px;
+      }
+      div.toggle-content {
+          margin-top: 0;
+      }
+    }
+    #expiry,
+    #type {
+      width: 163px;
+    }
+    .tab-content-wrapper p.required {
+      padding-top: 3px;
+    }
+  }
+}
+
+.outer_box {
+    color: white;
+    position: relative;
+    width: 153px;
+    height: 106px;
+    text-decoration: none;
+    text-align: left;
+    .button_text {
+      margin-left: 8px;
+    }
+}
+
+.inner_box {
+    color: #000;
+    position: absolute;
+    text-align: center;
+    width: 139px;
+    height: 60px;
+    bottom: 0px;
+    margin: 0px 7px 7px;
+    background-color: rgb(255, 255, 255);
+    .stylized_price {
+      margin: 15px 0;
+    }
+}
+
+.grey-out {
+    background-color: $COLOR_GRAY;
+    .inner_box {
+      color: $COLOR_GRAY;
+    }
+}
+
+.buy {
+    background-color: $COLOR_LIGHT_BLUE;
+}
+
+.sell {
+    background-color: $COLOR_RED;
+}
+
+a.spread_250, a.spread_260, a.spread_buy, a.spread_sell {
+    text-decoration: none;
+}
+
+.stylized_cents {
+  font-size: 65%;
+  vertical-align: text-top;
+  margin-left: .02em;
+  margin-right: 0.1em;
+}
+
+.stylized_currency {
+  font-size: 75%;
+  text-align: left;
+}
+
+.stylized_price {
+  font-weight: bold;
+  font-size: 150%;
+}
+
+.price_moved_up {
+  background-color: $COLOR_LIGHT_BLUE;
+  color: $COLOR_WHITE;
+}
+
+.price_moved_down {
+  background-color: $COLOR_RED;
+  color: $COLOR_WHITE;
+}
+
+.bet_cost {
+  text-align: center;
+  width: 40%;
+  float: left;
+  margin: 0 5px 5px 5px;
+}
+
+.bet_cost em {
+  font-style: normal;
+}
+
+.bet_cost b {
+  font-size: 128%;
+}
+
+.bet_description {
+  width: 55.5%;
+  float: right;
+  padding: 0 3px 3px 0;
+  font-size: 1.2em;
+}
+
+.bet_return {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  margin: auto;
+  background-color: $COLOR_GRAY;
+  line-height: 1.8em;
+  font-size: 0.7em;
+  white-space: nowrap;
+  bottom: 0;
+}
+
+.price_box {
+  padding: 0;
+  margin-top: 20;
+  border: 1px solid $COLOR_DARK_GRAY;
+  a {
+    color: $COLOR_BLUE;
+  }
+}
+
+.price_box_first {
+  margin-top: 26px;
+  margin-bottom: 20px;
+}
+
+.price_box_last {
+    position: relative;
+    bottom: 0;
+    margin-bottom: 0;
+}
+
+#bet_bottom_content {
+  padding-top: 1em;
+  input {
+    border: 1px solid $COLOR_GRAY;
+    border-radius: 4px;
+  }
+  select {
+    border: 1px solid $COLOR_GRAY;
+    background: $COLOR_WHITE;
+  }
+  button {
+    height: 1.5em;
+    line-height: 0;
+  }
+  ul {
+      > li {
+          list-style-image: none;
+      }
+  }
+  h4 {
+    color: $COLOR_BLUE;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+}
+
+/* added for the underlying highlight */
+.is_intraday {
+    background-color: $COLOR_GRAY_SHADE;
+}
+
+a.close {
+    display: inline-block;
+    float:right;
+    margin-top: 0;
+    margin-right: 0;
+    padding: 10px 8px;
+    cursor: pointer;
+    color: $COLOR_WHITE;
+    border: solid 1px $COLOR_ORANGE;
+    border-radius: 0;
+    border-bottom-left-radius: 4px;
+    background: $COLOR_ORANGE;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 0px;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.trade_confirm_container {
+    overflow: display;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    border: solid 1px $COLOR_LIGHT_GRAY;
+    background: $COLOR_LIGHT_GRAY;
+}
+
+.bet_confirm_wrapper {
+    padding: 0;
+    margin: 0;
+
+    h2, h3, h4 {
+        margin-top: 30px;
+    }
+
+    p, div {
+        font-size: 16px;
+    }
+
+    .bet_confirm_error_message {
+        margin: 10px 0;
+    }
+
+    .price {
+        font-weight: bold;
+        font-size: 100%;
+    }
+
+    .bet_confirm_desc {
+        float: clear;
+        margin: 0 10px;
+        padding: 10px 5px;
+        text-align: justify;
+        border: solid 2px $COLOR_GRAY;
+        background: $COLOR_WHITE;
+    }
+
+    .account_balance {
+        text-align: center;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        background: $COLOR_ORANGE;
+        color: $COLOR_WHITE;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .trade_ref {
+        padding: 0;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    & table .even {
+        background: $COLOR_LIGHT_GRAY;
+    }
+
+    #confirmation_table {
+        font-size: 16px;
+        border: none;
+        margin: 0;
+
+        th, tr, td {
+            border: none;
+            padding-top: 0;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        th {
+            padding-bottom: 5px;
+        }
+
+        span.notes {
+            font-size: 12px;
+            margin: 0;
+            padding: 0;
+            padding-top: 6px;
+        }
+
+        .success {
+            background: $COLOR_ORANGE;
+            color:      $COLOR_WHITE;
+            padding-left: 1px;
+            padding-right: 1px;
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+    }
+}
+
+.standout {
+    font-weight: bold;
+    .price {
+        color: $COLOR_ORANGE;
+    }
+}
+.standin {
+    font-size: 100%;
+    font-weight: normal;
+}
+.profit {
+    color: $COLOR_GREEN;
+}
+.loss {
+    color: $COLOR_RED;
+}
+.with_right_border {
+    border-right: solid 1px $COLOR_BLACK;
+}
+.with_left_border {
+    border-left: solid 1px $COLOR_BLACK;
+}
+#buy_confirm_container {
+    position: absolute;
+    overflow: display;
+    z-index: 100;
+    margin: 0;
+    top: 0;
+    padding: 0;
+    right: 0;
+    width: 100%;
+
+    a.visualization {
+        font-size: 14px;
+        font-weight: normal;
+        text-decoration: underline;
+    }
+
+    .account_balance {
+        padding: 10px 0;
+        margin: 0;
+    }
+
+    #confirmation_table {
+        &.rbox {
+            padding-bottom: 0 !important;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+  #betpage #content-holder #content {
+    .padding-left{
+      padding-left: 10px;
+      margin-top: 20px;
+      margin-bottom: 0px;
+    }
+    .padding-right{
+      padding-right: 10px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+  }
+}

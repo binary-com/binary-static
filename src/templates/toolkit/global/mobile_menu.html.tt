@@ -1,0 +1,32 @@
+<div class='grd-hide grd-show-mobile grd-show-phablet' id='mobile-menu-container'>
+    <div class='grd-hide' id='mobile-menu'>
+        <ul>
+            <li>
+                <a class="pjaxload" href="[% request.url_for('why-us') %]"[% target %]>[% l("Why Us?") %]</a>
+            </li>
+            <li class="ja-hide">
+              <a class="pjaxload" href="[% request.url_for('get-started') %]"[% target %]>[% l("Get Started") %]</a>
+            </li>
+            <li class="all-hide ja-show-block">
+                <a class="pjaxload" href="[% request.url_for('get-started-jp') %]"[% target %]>[% l("Get Started") %]</a>
+            </li>
+            <li>
+                <a class="pjaxload" href="[% request.url_for('tour') %]"[% target %]>[% l("Tour") %]</a>
+            </li>
+            [%= FOREACH item IN menu=%]
+            <li id="[%= item.id =%]" class="item[% IF item.class %] [%= item.class =%][% END %]">
+                <a class="pjaxload link [% item.link_class %]" href="[%= item.url =%]">[%= item.text =%]</a>
+                [% IF item.sub_items %]
+                    <ul class="sub_items">
+                    [%= FOREACH sub_item IN item.sub_items =%]
+                        <li id="[%= sub_item.id =%]" class="sub_item[% IF sub_item.class %] [%= sub_item.class %][% END %]">
+                            <a class="pjaxload link[% IF sub_item.link_class %] [% sub_item.link_class %][% END %]" href="[%= sub_item.url =%]">[%= sub_item.text =%]</a>
+                        </li>
+                    [%= END =%]
+                    </ul>
+                [% END %]
+            </li>
+            [%= END =%]
+        </ul>
+    </div>
+</div>

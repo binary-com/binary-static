@@ -1,0 +1,8 @@
+.tab_menu_container {
+    &.ui-corner-all {
+        border-radius: 0;
+    }
+    &.ui-widget-content {
+        border: 1px solid $COLOR_GRAY;
+    }
+}

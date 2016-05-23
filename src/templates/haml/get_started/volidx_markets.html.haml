@@ -1,0 +1,52 @@
+- stash(title => l('Volatility Index Markets'));
+.section-content.section-6
+  .grd-grid-12
+    %h1= stash->{title}
+
+    .subsection
+      .grd-grid-12.grd-row-padding
+        %h2= l('How to trade the Volatility Indices markets?')
+        %p= l('[_1] has created Volatility Indices that you can trade 24/7. You can trade these on all types of contract:', stash->{website_name});
+      .grd-grid-8.grd-grid-mobile-12
+        %ul.checked
+          %li
+            != l('Rise/Fall')
+          %li
+            != l('Higher/Lower')
+          %li
+            != l('Touch/No Touch')
+          %li!= l('In/Out (ends between/outside and stays between/goes outside)')
+          %li
+            != l('Asians')
+          %li
+            != l('Digits')
+      .grd-grid-4.grd-grid-mobile-12
+        %img.responsive{:src => url_for('images/pages/get-started/volidx-markets.svg')}
+      .clearfix
+      %p= l('Volatility Indices are further categorized into two types:');
+      %ul.bullet
+        %li
+          != l('Continuous Indices')
+        %li
+          != l('Daily Reset Indices')
+
+    .subsection
+      .grd-grid-12
+        %h2= l('Continuous Indices')
+        %p
+          != l('[_1]\'s Continuous Indices are the Volatility 25 Index, Volatility 50 Index, Volatility 75 Index and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 25%, 50%, 75% and 100%.', stash->{website_name})
+      #volidx-indices-container
+        .grd-grid-8.grd-grid-mobile-12
+          %p
+            != l('The Volatility 100 Index is twice as volatile as the Volatility 50 Index, and four times as volatile as the Volatility 25 Index.')
+        .grd-grid-4.grd-grid-mobile-12
+          %img.responsive{:src => url_for('images/pages/get-started/get-started-volidx-indices.svg')}
+      .clearfix
+
+    .subsection
+      .grd-grid-12
+        %h2= l('Daily Reset Indices')
+        %p
+          != l('Daily Reset Indices replicate markets with a bullish and bearish trend, with a constant volatility.')
+        %p
+          != l('Bull Market and Bear Market Indices start at 00:00 GMT each day, replicating a bullish and bearish market respectively.')

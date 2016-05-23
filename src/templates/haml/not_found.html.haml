@@ -1,0 +1,6 @@
+- stash( title => l('Page not found') );
+#exception
+  %h1= l('Sorry, the page cannot be found.')
+  %p
+    %a{:href => url_for('/'), :class => 'button'}= l('BACK TO HOMEPAGE')
+  %p= l('or please try the site map below')

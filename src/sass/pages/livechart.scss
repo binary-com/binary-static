@@ -1,0 +1,50 @@
+.live_chart_wrapper {
+  margin: 0 auto;
+  hr {
+    display: block;
+  }
+}
+
+#live_chart_form_wrapper {
+  margin: 0 auto;
+  a {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  input {
+    border-radius: 4px;
+  }
+  input[type=button] {
+    @include link-button;
+    padding: 6px 15px 6px 15px;
+    font-size: 14px;
+  }
+  #live_chart_options {
+      display: block;
+      min-height: 50px;
+      #live_chart_duration {
+        li {
+          float: left;
+          text-align: center;
+          min-width: 7%;
+          span.button {
+              margin: 0 5px;
+              color: $COLOR_BLACK;
+              font-weight: bold;
+              border-bottom: 2px solid $COLOR_GRAY_SHADE;
+              &.current {
+                color: $COLOR_ORANGE;
+                border-bottom: 4px solid $COLOR_ORANGE;
+              }
+          }
+        }
+      }
+  }
+}
+.chart-notice {
+    text-align: left;
+    font-size: 80%;
+    color: $COLOR_DARK_GRAY;
+    width: 90%;
+    margin: 5px 0;
+}

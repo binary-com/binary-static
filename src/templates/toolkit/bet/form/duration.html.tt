@@ -1,0 +1,44 @@
+<div id='duration_container' [% IF extra_class %] class="[% extra_class %]" [% END %]>
+    <span class='grd-grid-5 form_label'>
+        <select id="expiry_type" name="expiry_type">
+            <option value="duration" [% IF expiry_type == 'duration' %]selected="selected" [% END %]>[% l("Duration") %]</option>
+            <option value="endtime" [% IF expiry_type == 'endtime' %]selected="selected" [% END %]>[% l("End Time") %]</option>
+        </select>
+    </span>
+    <span id="expiry_type_duration" class='grd-grid-7 grd-parent'>
+        <span class='grd-grid-4 grd-grid-mobile-12 grd-grid-phablet-12'>
+            <input type="text" name="duration_amount" id="duration_amount" size="4" maxlength="5" value="[% selected_amount %]"/>
+        </span>
+        <span class='grd-grid-5 grd-grid-mobile-12 grd-grid-phablet-12'>
+            <select id="duration_units" name="duration_units" >
+                [% IF duration_options.spot %]
+                    [% FOREACH duration_option IN duration_options.spot %]
+                        <option class="spot" value="[% duration_option.value %]" [% IF duration_option.value == selected_unit %]selected="selected"[% END %]>[% duration_option.text %]</option>
+                    [% END %]
+                [% END %]
+                [% IF duration_options.forward_starting %]
+                        [% FOREACH duration_option IN duration_options.forward_starting %]
+                            <option class="forward_starting" value="[% duration_option.value %]" [% IF duration_option.value == selected_unit %]selected="selected"[% END %]>[% duration_option.text %]</option>
+                        [% END %]
+                [% END %]
+            </select>
+        </span>
+        <span class='grd-grid-3 grd-grid-mobile-12 grd-no-gutter-right grd-grid-phablet-12'>
+            [% FOREACH minimum IN minimums.spot %]
+                <span class="non_input [% minimum.unit %]"><abbr rel='tooltip' title="[% l("minimum available duration") %]">[% l("min") %]</abbr>: [% minimum.value %]</span>
+            [% END %]
+            [% FOREACH minimum IN minimums.forward_starting %]
+                <span class="forward_starting non_input [% minimum.unit %]"><abbr rel='tooltip' title="[% l("minimum available duration") %]">[% l("min") %]</abbr>: [% minimum.value %]</span>
+            [% END%]
+        </span>
+    </span><!-- expiry type duration closes -->
+        <span id="expiry_type_endtime" class='grd-grid-7 grd-parent'>
+            <span class='grd-grid-5 grd-grid-mobile-12 grd-no-gutter-right grd-grid-phablet-12'>
+                <input type="text" name="expiry_date" id="expiry_date" size="10" maxlength="11" value="[% date %]"/>
+           </span>
+            <span class='grd-grid-7 grd-grid-mobile-12 grd-no-gutter-right grd-grid-phablet-12'>
+                <input type="text" name="expiry_time" id="expiry_time" size="9" maxlength="10" value="[% time %]"/>
+                <a id="market-closed-tip" class="unicode-info-icon" href="#"><abbr rel="tooltip" title="[% l('Close of trading day.') %]">ⓘ</abbr></a>
+            </span>
+        </span>
+</div>

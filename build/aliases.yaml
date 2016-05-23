@@ -1,0 +1,30 @@
+css:
+  - 'sass'
+  - 'postcss'
+  - 'cssmin'
+
+js:
+  - 'concat'
+  - 'uglify'
+
+dev:
+  - 'default'
+  - 'connect'
+
+deploy:
+  - 'default'
+  - 'gh-pages'
+
+custom:
+  - 'default'
+  - 'connect'
+
+test:
+  - 'jshint'
+
+default:
+  - 'jshint'
+  - 'css'
+  - 'js'
+  - 'fileindex'
+  - 'copy'

@@ -1,0 +1,42 @@
+<form class="basicInputForm" name="form0" action="[% action %]" method="post" autocomplete="off">
+    <fieldset>
+        <div>[% underlying_html %]</div>
+        [% IF bets_available %]
+            [% IF start_time_html %]
+                [% start_time_html %]
+            [% END %]
+            [% IF tick_html %]
+                <div>[% tick_html %]</div>
+            [% END %]
+            [% IF duration_html %]
+                [% duration_html %]
+            [% END %]
+            [% spot_html %]
+            [% barrier_html %]
+            <div>[% amount_html %]</div>
+            <div>[% amount_per_point_html %]</div>
+            [% stop_loss_html %]
+            [% stop_profit_html %]
+
+            [% FOREACH input IN hidden_inputs %]
+                <input type="hidden" name="[% input.name %]" value="[% input.value %]"
+                    [% IF input.id %] id="[% input.id %]"[% END %]/>
+            [% END %]
+
+            <div id="submit" class="form_button">
+                <img id="hourglass" style="display:none;" src="[% hourglass_url %]" />
+                <span class="button">
+                    <button type="submit" id="bet_calculate" class="button"
+                            value="[% price_this_bet_button_text %]">
+                        [% price_this_bet_button_text %]
+                    </button>
+                </span>
+            </div>
+        [% ELSE %]
+            <p id="no_bets">[% l(error_message) %]
+        [% END %]
+
+        [% market_warning_html %]
+        [% british_standard_time %]
+    </fieldset>
+</form>

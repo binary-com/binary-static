@@ -1,0 +1,11 @@
+#limits-ws-container {
+	.item.flex-tr-child img {
+		margin-left: 5px;
+	}
+	thead {
+		@include BIDIR_VALUE(text-align, left, right);
+	}
+	td {
+		padding: 3px 8px;
+	}
+}

@@ -1,0 +1,51 @@
+- stash(
+-   keyword => l('binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, stocks, investment, trading'),
+-   description => l('[_1] gives everyone an easy and exciting way to participate in the financial markets. Trade with as little as $1 USD on major currencies, indices and commodities.',stash('website_name')),
+- );
+
+%head
+  %meta{:charset => "utf-8"}
+  %meta{:name => "description", :content => stash('description')}
+  %meta{:name => "keywords" :content => encode_html_text(stash('keyword'))}
+  %meta{:name => "author", :content => stash('website_name')}
+  %meta{:name => "dcterms.rightsHolder" :content => stash('website_name')}
+  %meta{:name => "dcterms.rights", :content => stash('website_name')}
+  %meta{:name => "google-site-verification", :content => "roReCEK-wNa1EMA6ZM9a4zCOQOMqxfJjvfsZMC9qh_k"}
+  %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}
+  %meta{:property => "og:title", :content=>"Binary.com"}
+  %meta{:property => "og:type", :content=>"website"}
+  %meta{:property => "og:image", :content=>url_for('images/common/og_image.gif')}
+
+  %title= stash('browser_title')
+
+  %link{:href => "https://fonts.googleapis.com/css?family=Roboto:300,400,700&subset=latin,vietnamese,cyrillic-ext,latin-ext,cyrillic", :rel => "stylesheet", :type => "text/css"}
+
+  %link{:href => url_for("/images/favicons/apple-touch-icon-57x57.png"), :rel => "apple-touch-icon", :sizes => "57x57"}
+  %link{:href => url_for("/images/favicons/apple-touch-icon-114x114.png"), :rel => "apple-touch-icon", :sizes => "114x114"}
+  %link{:href => url_for("/images/favicons/apple-touch-icon-72x72.png"), :rel => "apple-touch-icon", :sizes => "72x72"}
+  %link{:href => url_for("/images/favicons/apple-touch-icon-144x144.png"), :rel => "apple-touch-icon", :sizes => "144x144"}
+  %link{:href => url_for("/images/favicons/apple-touch-icon-60x60.png"), :rel => "apple-touch-icon", :sizes => "60x60"}
+  %link{:href => url_for("/images/favicons/apple-touch-icon-120x120.png"), :rel => "apple-touch-icon", :sizes => "120x120"}
+  %link{:href => url_for("/images/favicons/apple-touch-icon-76x76.png"), :rel => "apple-touch-icon", :sizes => "76x76"}
+  %link{:href => url_for("/images/favicons/apple-touch-icon-152x152.png"), :rel => "apple-touch-icon", :sizes => "152x152"}
+  %link{:href => url_for("/images/favicons/apple-touch-icon-180x180.png"), :rel => "apple-touch-icon", :sizes => "180x180"}
+  %link{:href => url_for("/images/favicons/favicon-192x192.png"), :rel => "icon", :sizes => "192x192", :type => "image/png"}
+  %link{:href => url_for("/images/favicons/favicon-160x160.png"), :rel => "icon", :sizes => "160x160", :type => "image/png"}
+  %link{:href => url_for("/images/favicons/favicon-96x96.png"), :rel => "icon", :sizes => "96x96", :type => "image/png"}
+  %link{:href => url_for("/images/favicons/favicon-16x16.png"), :rel => "icon", :sizes => "16x16", :type => "image/png"}
+  %link{:href => url_for("/images/favicons/favicon-32x32.png"), :rel => "icon", :sizes => "32x32", :type => "image/png"}
+
+  - my $languages = available_languages();
+  - my $path = get_current_path();
+  - foreach (keys %{ $languages }) {
+    - if (lc($_) ne 'ja') {
+      - my $complete_path = url_for($path, { l => $_ });
+      %link{:rel=>"alternate", :hreflang=>$_, :href=>$complete_path}
+    - }
+  - }
+
+  - foreach my $css (@$css_files) {
+    %link{:rel=>"stylesheet" :href=> $css}
+  - }
+
+  = include('layouts/default/javascripts')

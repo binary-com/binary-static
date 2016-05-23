@@ -1,0 +1,182 @@
+/* GET-STARTED PAGES RULES */
+.get-started, .get-started-jp {
+  @include topspace;
+  overflow: hidden;
+  .sidebar-left {
+    @include menu-left;
+  }
+  .sidebar-right {
+    @include menu-right;
+  }
+
+  dl {
+    text-align: center;
+    .section {
+      min-height: 210px;
+      background: $COLOR_LIGHT_GRAY;
+      margin:0 20px 20px 0;
+      &.section-jp {
+        min-height: 0;
+      }
+    }
+    .section-header {
+      padding: 10px;
+      font-weight: normal;
+    }
+    .section-info {
+      width: auto;
+      text-align: center;
+      padding: 10px;
+      min-height:50px;
+      font-size: 90%;
+    }
+    a {
+      display: block;
+      color: $COLOR_WHITE;
+      text-align: center;
+      background: $COLOR_BLACK;
+      text-decoration: none;
+      &.a-jp {
+        min-height: 160px;
+      }
+    }
+    a:hover {
+      background: $COLOR_DARK_GREEN;
+    }
+    div {
+      &#what-is-binary-trading {
+        height: 80px;
+        background: url("../images/pages/get-started/intro_2.png") no-repeat 0 0;
+      }
+      &#binary-options-basics {
+        height: 80px;
+        background: url("../images/pages/get-started/intro_2.png") no-repeat 100% 0;
+      }
+      &#how-to-trade-binaries {
+        height: 80px;
+        background: url("../images/pages/get-started/intro_2.png") no-repeat 100% 24%;
+      }
+      &#types-of-trades {
+        height: 80px;
+        background: url("../images/pages/get-started/intro_2.png") no-repeat 0 47%;
+      }
+      &#benefits-of-trading-binaries {
+        height: 80px;
+        background: url("../images/pages/get-started/intro_2.png") no-repeat 0 24%;
+      }
+      &#beginners-faq {
+        height: 80px;
+        background: url("../images/pages/get-started/intro_2.png") no-repeat 0 71%;
+      }
+      &#glossary {
+        height: 80px;
+        background: url("../images/pages/get-started/intro_2.png") no-repeat 100% 71%;
+      }
+      &#spread {
+        height: 80px;
+        background: url("../images/pages/get-started/spread_bet.svg") no-repeat 100% 71%;
+      }
+      &#random-trades {
+        height: 80px;
+        background: url("../images/pages/get-started/intro_2.png") no-repeat 100% 93%;
+      }
+      &#smart-indices {
+        height: 80px;
+        background: url("../images/pages/get-started/smart-indices.svg") no-repeat 50% 50%/20% rgb(39, 40, 37);
+        background-size:20%;
+      }
+      &#partners {
+        height: 80px;
+        background: url("../images/pages/partners/partner.svg") no-repeat 50% 50%/50% rgb(39, 40, 37);
+      }
+      &#how-to-open-an-account-img {
+        height: 80px;
+        background: url("../images/pages/get-started-jp/open_acc.svg") no-repeat;
+      }
+      &#options-basic-knowledge-img {
+        height: 80px;
+        background: url("../images/pages/get-started-jp/knowledge.svg") no-repeat;
+      }
+      &#summary-of-specifications-img {
+        height: 80px;
+        background: url("../images/pages/get-started-jp/summary.svg") no-repeat;
+      }
+      &#identification-documents-img {
+        height: 80px;
+        background: url("../images/pages/get-started-jp/id.svg") no-repeat;
+      }
+      &#trading-guide-img {
+        height: 80px;
+        background: url("../images/pages/get-started-jp/guide.svg") no-repeat;
+      }
+      &#pre-contract-documents-img {
+        height: 80px;
+        background: url("../images/pages/get-started-jp/contract.svg") no-repeat;
+      }
+    }
+  }
+  .section-content {
+    h2 {
+      color: $COLOR_ORANGE;
+      padding-top: 20px;
+      &.center {
+        width: 63.8297872%;
+      }
+    }
+  }
+  .subsection-navigation {
+    clear: both;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    a {
+      @include link-button;
+      padding: 0.4375em 3.19149%;
+    }
+    a.disabled {
+      color: $COLOR_GRAY_SHADE;
+      background: $COLOR_LIGHT_GRAY;
+      cursor: default;
+    }
+  }
+  .section-5 {
+    ol, ul {
+      ol {
+        list-style-type: lower-alpha;
+      }
+    }
+    .subsection {
+      p {
+        .highlight {
+          font-style: italic;
+          margin: 0.625em 0;
+        }
+      }
+    }
+  }
+
+  .section-7 {
+    h4 {
+      font-weight: bold;
+      margin-top: 1.875em;
+    }
+    p {
+      margin: 0.625em 0 1.25em 0;
+    }
+    a {
+      font-weight: bold;
+    }
+  }
+  .trade-type-flash{
+    padding-bottom:25px;
+  }
+}
+
+.get-started-jp {
+  .link-size-box {
+    display: table-cell;
+    vertical-align: middle;
+    height: 35px;
+    width: 170px;
+  }
+}

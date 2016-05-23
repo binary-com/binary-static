@@ -1,0 +1,191 @@
+[%
+    barrier_count = 1;
+    FOREACH time = time_table.keys;
+        IF time_table.$time.barriers.barrier2.amnt;
+            barrier_count = 2;
+        END;
+    END;
+%]
+
+[%- MACRO show_date(item) BLOCK -%]
+        [% IF item.is_start %]
+        <span class="trade_details_date" id='trade_details_start_date' epoch_time='[% item.epoch %]'>[% item.time %]</span>
+        [% ELSIF item.is_now %]
+        <span class="trade_details_date" id='trade_details_now_date' epoch_time='[% item.epoch %]'>[% item.time %]</span>
+        [% ELSIF item.is_early_out %]
+        <span class="trade_details_date" id='trade_details_sold_date' epoch_time='[% item.epoch %]'>[% item.time %]</span>
+        [% ELSIF item.is_end %]
+        <span class="trade_details_date" id='trade_details_end_date' epoch_time='[% item.epoch %]'>[% item.time %]</span>
+        [% ELSIF not_started %]
+        <span class="trade_details_date" id='trade_details_purchase_date' epoch_time='[% item.epoch %]'>[% item.time %]</span>
+        [% ELSE %]
+        <span class="trade_details_date" epoch_time='[% item.epoch %]'>[% item.time %]</span>
+        [% END %]
+[%- END -%]
+
+[%- MACRO show_interval(item) BLOCK -%]
+        [%  IF item.interval.keys.size %]
+            [% IF item.is_now %]
+                <span style="display: none;" id="now_time_container" [% FOREACH interval IN item.interval %] [% interval.key %] = "[% interval.value %]" [% END %]></span>
+                [% IF item.interval.display_string == ''; item.interval.display_string = '&nbpsp;'; END; %]
+                <abbr rel='tooltip' title="[% IF not_started %][% l('starting in') %][% ELSE %][% l('running') %] [% END %]"><span id="trade_date_now" class='extra-info'>[% item.interval.display_string %]</span></abbr>
+            [% ELSIF item.is_end %]
+                <span style="display: none;" id="end_time_container" [% FOREACH interval IN item.interval %] [% interval.key %] = "[% interval.value %]" [% END %]></span>
+                    [% IF !is_expired && !not_started && !is_past_expiry %]
+                        <abbr rel='tooltip' title="[% l('remaining') %]"><span id="trade_date_end" class='extra-info'>&nbsp;</span></abbr>
+                    [% ELSE %]
+                        &nbsp;
+                    [% END %]
+            [% ELSE %]
+                <span class='extra-info'>&nbsp;</span>
+            [% END %]
+        [% ELSIF item.interval %]
+            <span class='extra-info'>[% item.interval %]</span>
+        [% ELSE %]
+            <span class='extra-info'>&nbsp;</span>
+        [% END %]
+[%- END -%]
+
+[%- MACRO show_spot(item) BLOCK -%]
+        [% IF item.is_now %]
+            [% IF license == 'delayed' %]
+                <abbr rel='tooltip' title="[% l('Realtime data is not available for this underlying') %]">[% l('not available') %]</abbr>
+            [% ELSE %]
+                <span id='now_high' style="display: none;">[% item.high %]</span>
+                <span id='now_low' style="display: none;">[% item.low %]</span>
+                <abbr rel='tooltip' id="now_high_low_tooltip" title=""><span id="now_spot">[% item.spot_table.spot %]</span></abbr>
+            [% END %]
+        [% ELSIF item.is_start %]
+        <span id="trade_details_entry_spot">
+            <abbr rel='tooltip' title="[% item.spot_table.time %]">[% item.spot_table.spot %]</abbr>
+            <input type='hidden' epoch_time="[% item.spot_table.epoch %]" id='trade_details_entry_spot_time'/>
+        </span>
+        [% ELSIF item.is_end %]
+                <span id='final_high' style="display: none;">[% item.high %]</span>
+                <span id='final_low' style="display: none;">[% item.low %]</span>
+                [% IF item.spot_table.spot == ''; item.spot_table.spot='&nbsp;'; END; %]
+                <abbr rel='tooltip' id="final_high_low_tooltip" title=""><span id="trade_details_spot">[% item.spot_table.spot %]</span></abbr>
+        [% ELSIF item.is_early_out %]
+                <span id='eo_high' style="display: none;">[% item.high %]</span>
+                <span id='eo_low' style="display: none;">[% item.low %]</span>
+                <abbr rel='tooltip' id="eo_high_low_tooltip" title=""><span id="trade_details_spot">[% item.spot_table.spot %]</span></abbr>
+
+        [% END %]
+[%- END -%]
+
+[%- MACRO show_barriers(item) BLOCK -%]
+    [% IF barrier && !not_started %]
+        [% IF item.barriers.barrier.desc %]
+        <table [% IF item.is_now %]id= "live_barriers" [% END %]class="contract_barriers">
+                    <tr [% IF item.is_now %]id='now_barrier' [% END %]class='extra-info'><td class="desc"><abbr rel='tooltip' title="[% item.barriers.barrier.amnt %]">[% item.barriers.barrier.desc %]</abbr>:</td><td class="spot_desc">[% item.spot_table.label FILTER lower %]</td><td class="dir">[% item.barriers.barrier.dir %]</td><td class="diff">[% IF item.barriers.barrier.dir %][% item.barriers.barrier.diff %][% END %]</td></tr>
+            [% IF item.barriers.barrier2.desc %]
+                    <tr [% IF item.is_now %]id='now_barrier2' [% END %]class='extra-info'><td class="desc"><abbr rel='tooltip' title="[% item.barriers.barrier2.amnt %]">[% item.barriers.barrier2.desc %]</abbr>:</td><td class="spot_desc">[% item.spot_table.label FILTER lower %]</td><td class="dir">[% item.barriers.barrier2.dir %]</td><td class="diff">[% IF item.barriers.barrier2.dir %][% item.barriers.barrier2.diff %][% END %]</td></tr>
+            [% END %]
+        </table>
+        [% ELSE %]
+            <table class="contract_barriers">
+            [% FOREACH barier IN [1..barrier_count] %]
+                <tr class="extra-info"><td>&nbsp;</td></tr>
+            [% END %]
+            </table>
+        [% END %]
+    [% END %]
+[%- END -%]
+
+[%- MACRO show_price(item) BLOCK -%]
+    [% IF item.is_now %]
+        [% IF item.price_table.value %]
+            <span id='trade_details_currency'>[% currency %]</span>
+            <span id='trade_details_price'>[% item.price_table.value %]</span>
+        [% END %]
+    [% ELSE %]
+        [% IF item.price_table.value %]
+        [% currency %] [% item.price_table.value %]
+        [% ELSE %]
+        &nbsp;
+        [% END %]
+    [% END %]
+[%- END -%]
+
+[%- MACRO show_roi(item) BLOCK -%]
+    [% IF item.price_table.roi %]
+        <abbr rel='tooltip' title="[% l('return') %]">
+        [% IF item.is_now %]
+        <span id="trade_details_return" class='extra-info'>
+        [% ELSE %]
+        <span class='extra-info'>
+        [% END %]
+            [% item.price_table.roi %]%
+        </span>
+        </abbr>
+    [% ELSE %]
+        &nbsp;
+    [% END %]
+[%- END -%]
+
+[% colum_grid = 'grd-grid-' _ (12 / time_table.keys.size) %]
+<div class="grd-grid-12 grd-row-padding contract_table">
+    <div class="grd-grid-12 grd-row-padding table-header">
+    [% FOREACH time = sort_keys_by(time_table, 'epoch') %]
+            <div class="[%- colum_grid -%]">
+                [% time_table.$time.label %]
+            </div>
+    [% END %]
+    </div>
+    <div class="grd-grid-12 table-body table-body-lines">
+    [% FOREACH time = sort_keys_by(time_table, 'epoch') %]
+            <div class="[%- colum_grid -%]">
+                [% show_date(time_table.$time) %]
+            </div>
+    [% END %]
+    </div>
+    <div class="grd-grid-12 table-body">
+    [% FOREACH time = sort_keys_by(time_table, 'epoch') %]
+        <div class="[%- colum_grid -%]">
+            [% show_interval(time_table.$time) %]
+        </div>
+    [% END %]
+    </div>
+    <div class="grd-grid-12 grd-row-padding table-header">
+    [% FOREACH time = sort_keys_by(time_table, 'epoch') %]
+        <div class="[%- colum_grid -%]">
+            [% time_table.$time.spot_table.label %]
+        </div>
+    [% END %]
+    </div>
+    <div class="grd-grid-12 table-body table-body-lines">
+    [% FOREACH time = sort_keys_by(time_table, 'epoch') %]
+        <div class="[%- colum_grid -%]">
+            [% show_spot(time_table.$time) %]
+        </div>
+    [% END %]
+    </div>
+    <div class="grd-grid-12 grd-hide-mobile grd-hide-phablet table-body">
+    [% FOREACH time = sort_keys_by(time_table, 'epoch') %]
+        <div class="[%- colum_grid -%]">
+            [% show_barriers(time_table.$time) %]
+        </div>
+    [% END %]
+    </div>
+    <div class="grd-grid-12 grd-row-padding table-header">
+    [% FOREACH time = sort_keys_by(time_table, 'epoch') %]
+        <div class="[%- colum_grid -%]">
+            [% time_table.$time.price_table.label %]
+        </div>
+    [% END %]
+    </div>
+    <div class="grd-grid-12 table-body table-body-lines">
+    [% FOREACH time = sort_keys_by(time_table, 'epoch') %]
+        <div class="[%- colum_grid -%]">
+            [% show_price(time_table.$time) %]
+       </div>
+    [% END %]
+    </div>
+    <div class="grd-grid-12 table-body">
+    [% FOREACH time = sort_keys_by(time_table, 'epoch') %]
+        <div class="[%- colum_grid -%]">
+            [% show_roi(time_table.$time) %]
+        </div>
+    [% END %]
+    </div>
+</div>

@@ -1,0 +1,74 @@
+- stash(title => l('Get Started'));
+%dl
+  .list.grd-grid-6.grd-no-gutter-right
+    .section
+      %a.pjaxload{:href => url_for('/get-started/what-is-binary-trading')}
+        %div{:id => 'what-is-binary-trading'}
+        .section-header
+          = l('Why choose binary trading?')
+      .section-info
+        = l('Learn about one of the fastest growing sectors of the finance industry.')
+    .section
+      %a.pjaxload{:href => url_for('/get-started/binary-options-basics')}
+        %div{:id => 'binary-options-basics'}
+        .section-header
+          = l('Binary options basics')
+      .section-info
+        = l('Learn the basics, from choosing your asset to winning your payout.')
+    .section
+      %a.pjaxload{:href => url_for('/get-started/how-to-trade-binaries')}
+        %div{:id => 'how-to-trade-binaries'}
+        .section-header
+          = l('How to trade binaries?')
+      .section-info
+        = l('Follow a simple step-by-step guide to binary trading.')
+    .section.ja-hide
+      %a.pjaxload{:href => url_for('/get-started/volidx-markets')}
+        %div{:id => 'random-trades'}
+        .section-header
+          = l('How to trade the Volatility Indices markets?')
+      .section-info
+        = l('Discover our Volatility Indices.')
+    .section
+      %a.pjaxload{:href => url_for('/get-started/glossary')}
+        %div{:id => 'glossary'}
+        .section-header
+          = l('Glossary')
+      .section-info
+        = l('Check out some technical terms before you start.')
+  .list.grd-grid-6.grd-no-gutter-left
+    .section
+      %a.pjaxload{:href => url_for('/get-started/types-of-trades')}
+        %div{:id => 'types-of-trades'}
+        .section-header
+          = l('Types of trades')
+      .section-info
+        = l('Read about the five types of trade offered by [_1].', stash->{website_name})
+    .section
+      %a.pjaxload{:href => url_for('/get-started/benefits-of-trading-binaries')}
+        %div{:id => 'benefits-of-trading-binaries'}
+        .section-header
+          = l('Benefits of trading binaries')
+      .section-info
+        = l('Learn about the simplicity, transparency and flexibility of binary trading.')
+    .section
+      %a.pjaxload{:href => url_for('/get-started/beginners-faq')}
+        %div{:id => 'beginners-faq'}
+        .section-header
+          = l("FAQ")
+      .section-info
+        = l('Read the answers to some common questions.')
+    .section.ja-hide
+      %a.pjaxload{:href => url_for('/get-started/smart-indices')}
+        %div{:id => 'smart-indices'}
+        .section-header
+          = l('Smart Markets')
+      .section-info
+        = l('Discover our Smart Markets.')
+    .section.ja-hide
+      %a.pjaxload{:href => url_for('/get-started/spread')}
+        %div{:id => 'spread'}
+        .section-header
+          = l('Spreads')
+      .section-info
+        = l('Learn more about spreads on binary.com.')

@@ -1,0 +1,28 @@
+#applications-ws-container {
+    table {
+		td, th.flex-tr-child {
+			text-align: center!important;
+			vertical-align: middle!important;
+			line-height: 30px;
+
+			.button {
+				margin: 3px 0px;
+			}
+		}
+    }
+}
+
+@media screen and (max-width: 480px) {
+	#applications-ws-container {
+	    table td, table th {
+			font-size: 80%;
+		}
+		table button {
+			font-size: 80%;
+			padding: 10px 15px;
+		}
+		.errorfield {
+			font-size: 80%!important;
+		}
+	}
+}

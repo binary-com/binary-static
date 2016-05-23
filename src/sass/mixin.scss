@@ -1,0 +1,217 @@
+/* GLOBAL RULES */
+
+/* 
+ * To simplify usage of a property 
+ * with different values for LTR and RTL languages
+ * sample usage: @include BIDIR_VALUE(float, left, right);
+ */ 
+@mixin BIDIR_VALUE($prop, $ltr_value, $rtl_value) {
+  #{$prop}: if($IS_LTR, $ltr_value, $rtl_value);
+}
+
+/* 
+ * To simplify usage of different properties 
+ * with the same value for LTR and RTL languages
+ * sample usage: @include BIDIR_PROP(margin-left, margin-right, 5px);
+ */ 
+@mixin BIDIR_PROP($ltr_prop, $rtl_prop, $value) {
+  @if $IS_LTR {
+    #{$ltr_prop}: $value;
+  }
+  @else {
+    #{$rtl_prop}: $value;
+  }
+}
+
+@mixin topspace {
+  margin-top:40px;
+}
+
+@mixin section-background {
+  background: -moz-linear-gradient(top, $COLOR_WHITE 30%, $COLOR_LIGHT_GRAY 90%);
+  background: -webkit-linear-gradient(top, $COLOR_WHITE 30%, $COLOR_LIGHT_GRAY 90%);
+  background: -ms-linear-gradient(top, $COLOR_WHITE 30%, $COLOR_LIGHT_GRAY 90%);
+  border-bottom: 1px solid transparent;
+}
+
+@mixin section-separator {
+    .section {
+        border-bottom: 1px solid $COLOR_GRAY;
+    }
+    .section:first-child {
+        padding-bottom: 50px;
+    }
+    .section:not(:first-child) {
+        padding: 50px 0;
+    }
+    .section:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+}
+
+@mixin menu-left-margin { margin-left:255px; }
+@mixin menu-left {
+  ul {
+    font-size:90%;
+    li {
+      list-style-image: none;
+      margin: 0;
+      background: $COLOR_LIGHT_GRAY;
+      line-height: 150%;
+      border-bottom: 1px solid #FFFFFF;
+      &:hover {
+        background: $COLOR_GRAY;
+      }
+      a {
+        font-weight: normal;
+        text-decoration: none;
+        display: block;
+        padding: 5px 5px 5px 10px;
+        color: $COLOR_BLUE;
+      }
+    }
+    li.selected {
+      background: $COLOR_BLUE;
+      a {
+        color: $COLOR_WHITE;
+        text-decoration: none;
+      }
+    }
+  }
+  .open-account {
+    background: $COLOR_LIGHT_GRAY;
+    padding: 20px;
+    a {
+      @include link-button;
+      display: block;
+    }
+  }
+}
+
+@mixin menu-right-margin { margin-right:255px; }
+@mixin menu-right {
+  div {
+    background: $COLOR_LIGHT_GRAY;
+    border-bottom: $COLOR_GRAY;
+    margin-bottom: 20px;
+    padding: 20px;
+    text-align: center;
+    p {
+      margin: 0;
+    }
+    a {
+      font-weight: normal;
+    }
+  }
+  .open-account {
+    p { margin-bottom: 1em; }
+    padding: 20px;
+    a {
+      @include link-button;
+      display: block;
+    }
+  }
+}
+
+@mixin link-button {
+  color: $COLOR_WHITE;
+  text-decoration: none;
+  text-align: center;
+  line-height:100%;
+  background: $COLOR_GREEN;
+  border-radius: 4px;
+  text-transform: capitalize;
+  padding: 10px 25px 10px 25px;
+  display: inline-block;
+  letter-spacing: 0.75px;
+  &:visited {
+    color: $COLOR_WHITE;
+  }
+  &:hover, &:active {
+    text-decoration: none;
+    background-color: #14602B;
+  }
+}
+
+@mixin chart-day-selector {
+  float: left;
+  list-style-image: none;
+  list-style-position: inherit;
+  label.button {
+    width: auto;
+    span.button {
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid $COLOR_GRAY_SHADE;
+      border-radius: 0;
+      color: $COLOR_BLACK;
+      font-weight: normal;
+      &.disabled {
+        color: $COLOR_ORANGE;
+        font-weight: bold;
+        border-bottom: 4px solid $COLOR_ORANGE;
+      }
+    }
+  }
+}
+
+@mixin tab-list {
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin-left: 0;
+    background: none;
+    border-bottom: 1px solid $COLOR_DARK_GRAY;
+    li {
+      border: none;
+      list-style-image: none;
+      background: $COLOR_LIGHT_GRAY;
+      border-radius: 4px 4px 0 0;
+      @include BIDIR_VALUE(margin, 0 6px 0 0, 0 0 0 6px);
+      padding: 0 10px;
+      a, a:visited {
+        padding: 0;
+        font-weight: normal;
+        text-decoration: none;
+        color: $COLOR_BLACK;
+        font-size: 90%;
+        background: transparent;
+      }
+    }
+    li.active, li.ui-tabs-active {
+      background: $COLOR_BLUE;
+      color: $COLOR_WHITE;
+      a {
+        background: none;
+        color: $COLOR_WHITE;
+        font-weight: normal;
+        text-decoration: none;
+        padding: 0;
+        outline: none;
+      }
+      span.a-active {
+          line-height: 2;
+      }
+    }
+    ul.tm-ul-2 {
+      list-style-type: none;
+      margin: 0;
+      li {
+        background: none;
+        a {
+          color: $COLOR_BLACK;
+          padding-top: 0;
+          font-weight: normal;
+          text-decoration: none;
+          width: auto;
+        }
+        a.a-active {
+          color: $COLOR_ORANGE;
+        }
+        a:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+}

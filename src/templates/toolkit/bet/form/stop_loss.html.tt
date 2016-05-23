@@ -1,0 +1,23 @@
+<div>
+    <span class='grd-grid-5 form_label'>
+        <label for="stop_loss" >
+            [% l('Stop-loss:') %]
+        </label>
+    </span>
+    <span class='grd-grid-7 grd-parent'>
+        <span class='grd-grid-4'>
+            <select id="stop_type" name="stop_type">
+                <option value="point" selected="selected">[% l('points') %]</option>
+                <option value="dollar">[% currency %]</option>
+            </select>
+        </span>
+        <span class='grd-grid-5'>
+            <input id="stop_loss" type="text" name="stop_loss" maxlength="40" size="8" value="[% stop_loss %]" />
+        </span>
+        <span class='grd-grid-3'>
+            <abbr rel="tooltip" title="[% l("This is an indicative stop loss. Actual stop loss will be the entry spot plus the stop loss point.") %]">
+                <span class="calculated_barrier_from_relative_high non_input" style="[% relative_style %]"></span>
+            </abbr>
+        </span>
+    </span>
+</div>

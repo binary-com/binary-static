@@ -1,0 +1,180 @@
+#main-menu {
+  background-color: $COLOR_LIGHT_GRAY;
+  border-bottom: 1px solid $COLOR_GRAY;
+  margin-bottom: 40px;
+  ul {
+    ul {
+      width: 100%;
+    }
+  }
+  a.a-active, span.a-active {
+    color: $COLOR_ORANGE;
+  }
+}
+
+.tab-menu-wrap, #content .tab-menu-wrap {
+  ul {
+    margin: 0;
+    font-size: 85%;
+    background-color: $COLOR_LIGHT_GRAY;
+    position: relative;
+    display: block;
+    li {
+      @include BIDIR_VALUE(margin, 0 2em 0 0, 0 0 0 2em);
+      display: inline-block;
+      &#topMenuStartBetting {
+          @include BIDIR_VALUE(float, right, left);
+          @include BIDIR_VALUE(margin, 0 0 0 2em, 0 2em 0 0);
+          ul {
+            @include BIDIR_VALUE(text-align, right, left);
+            li {
+              @include BIDIR_VALUE(margin, 0 0 0 2em, 0 2em 0 0);
+            }
+          }
+      }
+      a {
+        font-weight: normal;
+        color: $COLOR_BLACK;
+        line-height: 2;
+        top: 1px;
+        text-decoration: none;
+        display: inline-block;
+        position: relative;
+        text-transform: capitalize;
+        a.a-active, span.a-active {
+          color: $COLOR_WHITE;
+        }
+      }
+      ul.sub_items {
+        margin-top: 1px;
+        display: none;
+        li.sub_item {
+            font-size: 100%;
+        }
+      }
+      ul.tm-ul-2  {
+        margin-top: 1px;
+        display: none;
+        li.tm-li-2 {
+            font-size: 100%;
+            @include BIDIR_PROP(margin-right, margin-left, 20px);
+        }
+      }
+    }
+    li.hover {
+      ul {
+        display: block;
+        position: absolute;
+        left: 1px;
+        width: 99%;
+        z-index: 10;
+        margin-top: 3px solid transparent;
+        background: #fff;
+        li {
+          a, span {
+            top:auto;
+            border: 0;
+            color: $COLOR_DARK_GRAY;
+            display: inline-block;
+          }
+          a.a-active, span.a-active {
+            color: $COLOR_ORANGE;
+          }
+        }
+      }
+    }
+    li.active {
+      @extend li.hover;
+      a {
+        color: $COLOR_ORANGE;
+        background: url("../images/common/nav/menu-sub-selection_1.png") no-repeat bottom;
+      }
+      ul {
+        z-index: 1;
+        a {
+          background: none;
+        }
+      }
+    }
+  }
+}
+
+#content {
+  ul.tm-ul {
+    @include tab-list;
+  }
+}
+
+.has-tabs {
+  border: none;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  font: inherit !important;
+
+  // fix jquery UI tabs to look more like our tabs
+  ul.ui-tabs-nav {
+    @include tab-list;
+    font: inherit !important;
+    li {
+      @include BIDIR_PROP(margin-right, margin-left, 6px !important);
+      @include BIDIR_VALUE(float, left, right);
+    }
+  }
+
+  .ui-tabs-panel {
+    padding: 0 !important;
+  }
+}
+
+#content .page-section {
+    width: 100%;
+    & > .tab-menu {
+        width: 100%;
+        height: 32px;
+        background-color: $COLOR_LIGHT_GRAY;
+        border-bottom: 1px solid $COLOR_GRAY;
+        ul.tm-ul {
+            margin: 0;
+            background-color: $COLOR_LIGHT_GRAY;
+            border-bottom: 1px solid $COLOR_GRAY;
+            font-size: 100%;
+            li {
+                margin-right: 2em;
+                color: $COLOR_ORANGE;
+                a {
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+                &.active {
+                    background: none;
+                    a {
+                        color: $COLOR_ORANGE;
+                        background: url("../images/common/nav/menu-sub-selection_1.png") no-repeat bottom;
+                    }
+                }
+            }
+        }
+        ul.tm-ul-2 {
+          li.active {
+            a.tm-a-2 {
+              color: $COLOR_DARK_GRAY;
+              background: none;
+            }
+            a.a-active {
+              color: $COLOR_ORANGE;
+              background: none;
+            }
+          }
+        }
+    }
+    & > .tab-content-wrapper {
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 2em;
+        .full-width-content {
+            width: 100%;
+        }
+    }
+}

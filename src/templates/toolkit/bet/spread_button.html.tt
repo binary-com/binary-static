@@ -1,0 +1,15 @@
+<a class="spread_[% display_id %]" href="#">
+    <form class="orderform" id="orderform_[% display_id %]" name="orderform" action="[% form_url %]" method="post" autocomplete="off">
+            [% FOREACH pair IN form_fields.pairs %]
+            <input type="hidden" name="[% pair.key %]" value="[% pair.value %]" />
+        [% END %]
+        <div class="outer_box [% IF disabled %]grey-out disabled[% ELSE %][% action %][% END %]" [% IF start_hidden %]style="display:none"[% END %]>
+            <span class="button_text">[% button_text %]</span>
+            <div class="inner_box">
+                <div class='grd-grid-12 stylized_price'>
+                <span class="spread_point_[% display_id %]">[% level.point %]</span><span class="stylized_cents spread_decimal_[% display_id %]">.[% level.decimal %]</span>
+                </div>
+            </div>
+        </div>
+    </form>
+</a>

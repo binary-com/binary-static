@@ -1,0 +1,23 @@
+#androidApp {
+  width: 100px;
+  height: 30px;
+  display: inline-block;
+  background: url("../images/pages/trade/google-play-badge.png") no-repeat;
+  background-size: 100px 30px;
+  position: relative;
+}
+
+/* trading page */
+#trading_socket_container {
+    #androidApp {
+        float: if($LANGUAGE_DIRECTION == ltr, right, left);
+    }
+    @media (max-width: 768px) {
+        #androidApp {
+          margin: 0 auto;
+          padding-bottom: 10px;
+          display: block;
+          float: none;
+        }
+    }
+}

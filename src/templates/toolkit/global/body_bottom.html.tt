@@ -1,0 +1,8 @@
+[% IF system_message %]
+    <div id="footerMessage">[% system_message %]</div>
+[% END %]
+</div> [% # closes div#contentWrap %]
+[% menu %]
+
+</body>
+</html>

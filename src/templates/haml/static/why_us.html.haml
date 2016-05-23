@@ -1,0 +1,128 @@
+- stash(title => l('Why Us?'));
+
+.grd-container.grd-default-container
+  .why-us.static_full
+    .grd-grid-3.grd-hide-mobile
+      .sidebar
+        %ul#sidebar-nav
+          %li#sidebar-link-section-1.selected
+            %a{:href => "#sharp-prices"}= l('Sharp prices')
+          %li#sidebar-link-section-2
+            %a{:href => "#flexible-trades"}= l('Flexible trades')
+          %li#sidebar-link-section-3
+            %a{:href => "#controlled-risk"}= l('Controlled risk')
+          %li#sidebar-link-section-4
+            %a{:href => "#power-and-simplicity"}= l('Power & simplicity')
+          %li#sidebar-link-section-5.id-hide.ja-hide
+            %a{:href => "#security"}= l('Security')
+          %li#sidebar-link-section-6.ja-hide
+            %a{:href => "#trust"}= l('Trust')
+        .open-account{:class => 'by_client_type client_logged_out client_virtual'}
+          %a.pjaxload{:href => url_for('/')}= l('Open a free account')
+    .grd-grid-9.grd-grid-mobile-12.grd-parent
+      .section
+        %a#sharp-prices
+        .section-content
+          #section-1
+            .grd-grid-12
+              %h1= l('Why pay more?')
+              %p= l('[_1]\'s patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market.', stash->{website_name});
+            .grd-grid-7.grd-grid-mobile-12
+              %ul.checked
+                %li= l('Real-time prices, benchmarked against interbank options markets.')
+                %li
+                  != l("Returns above 100% on simple <a href='[_1]' class='pjaxload'>rise/fall</a> contracts.", url_for('trading?market=forex&formname=risefall'))
+                %li
+                  != l("Returns above 1000% on <a href='[_1]' class='pjaxload'>higher/lower</a> and <a href='[_2]' class='pjaxload'>touch/no-touch</a> trades.", url_for('trading?market=forex&formname=higherlower'), url_for('trading?market=forex&formname=touchnotouch'))
+                %li= l('No hidden fees or commissions.')
+            .grd-grid-5.grd-grid-mobile-10.grd-centered-mobile
+              %img.responsive#new-trader-icon{:src => url_for('images/pages/why-us/why-us-sharp-prices.png')}
+      .section
+        %a#flexible-trades
+        .section-content
+          #section-2
+            .grd-grid-12
+              %h1= l('Trade your way')
+              %p= l('Why limit yourself? Whatever your market view, [_1] allows you to put your strategy to work and profit from your predictions.', stash->{website_name})
+            .grd-grid-12
+              %img.responsive#new-trader-icon.ja-hide{:src => url_for('images/pages/tour/trade-tutorial_1.svg')}
+              %img.responsive#new-trader-icon.hidden.ja-show{:src => url_for('images/pages/tour/tour-jp.svg')}
+            .grd-grid-12
+              %ul.checked
+                %li= l('Choose a payout from $1 to $50,000.')
+                %li= l('Trade all major currencies, indices, stocks, and commodities.')
+                %li= l('Choose a duration from 10 seconds to 365 days.')
+                %li= l('Choose your own strike.')
+            .clearfix
+      .section
+        %a#controlled-risk
+        .section-content
+          #section-3
+            .grd-grid-12.grd-with-padding
+              %h1= l('You won\'t lose your shirt')
+            .grd-grid-7.grd-grid-mobile-12
+              %p= l('With [_1], you\'re in control. Simply fix your upside and your downside before every trade.', stash->{website_name})
+              %ul.checked
+                %li= l('You risk only your initial stake, and your stake never increases, even in gapping markets.')
+                %li= l("You will have no 'margin calls', no 'stops', and no surprises.")
+                %li= l('You can close your trade before expiry to lock in profits.')
+            .grd-grid-5.grd-grid-mobile-8.grd-centered-mobile
+              %img.responsive{:src => url_for('images/pages/why-us/why-us-do-not-lose.svg')}
+      .section
+        %a#power-and-simplicity
+        .section-content
+          #section-4
+            .grd-grid-12
+              %h1= l('One simple platform')
+              %p= l('[_1] offers the world\'s financial markets in a simple, user-friendly platform.', stash->{website_name})
+            .grd-grid-8.grd-grid-mobile-12.grd-parent
+              .grd-grid-7.grd-with-padding
+                %img.responsive{:src => url_for('images/pages/why-us/trade-sample.svg')}
+              .grd-grid-5.grd-parent
+                .grd-grid-12.grd-with-padding
+                .grd-grid-12.grd-with-padding
+                  %img.responsive{:src => url_for('images/pages/why-us/trade-direct-value.svg')}
+                .grd-grid-12.grd-with-padding
+                  %img.responsive{:src => url_for('images/pages/why-us/trade-opposite-value.svg')}
+            .grd-grid-4.grd-grid-mobile-12
+              %ul.checked
+                %li= l('Find the right trade for every market condition.')
+                %li= l('Execute your trade in seconds.')
+                %li= l('Monitor your portfolio in real time.')
+                %li= l('Sell back trades at market prices.')
+      .section.id-hide.ja-hide
+        %a#security
+        .section-content.grd-parent.grd-grid-12
+          #section-5
+            .grd-grid-12
+              %h1= l('Your funds are safe')
+            .grd-grid-8.grd-grid-mobile-12
+              %p= l('With [_1], your money is secure.', stash->{website_name})
+              %ul.checked
+                %li= l('We segregate and hold client funds in secure AAA-rated banks.')
+                %li= l('We are fully licensed in the British Isles and Malta.')
+                %li= l('We have a proven track record since starting in 2000.')
+            .grd-grid-4.grd-grid-mobile-12.grd-parent
+              .grd-grid-11.grd-grid-mobile-8.grd-with-padding.grd-centered
+                %img.responsive{:src => url_for('images/pages/why-us/mga-logo2.svg')}
+              .grd-parent.grd-grid-12.grd-grid-mobile-8.grd-centered
+                .grd-grid-6.grd-with-padding
+                  %img.responsive{:src => url_for('images/pages/why-us/why-us-proven-record_1.svg')}
+                .grd-grid-6.grd-with-padding
+                  %img.responsive{:src => url_for('images/pages/footer/isle-of-man.png')}
+      .section.ja-hide
+        %a#trust
+        .section-content
+          #section-6
+            .grd-grid-12
+              %h1= l('Go with the leader')
+            .grd-grid-3.grd-grid-mobile-6.grd-centered-mobile
+              %p
+                %img.responsive{:src => url_for('images/pages/home/awards-mena.png')}
+            .grd-grid-9.grd-grid-mobile-12
+              %p= l('[_1] is the award-winning industry pioneer in online options trading. We boast:', stash->{website_name})
+              %ul.checked
+                %li= l('Over two billion dollars in trades to date.')
+                %li= l('First-class client service.')
+                %li= l('Multi award-winning trading platform.')
+                %li= l('Exclusive binary trading technology.')

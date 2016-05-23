@@ -1,0 +1,78 @@
+- stash(title => l('Binary.com Open-Source Projects'));
+
+.grd-container.grd-default-container
+  .open-source-projects.static_full
+    .grd-grid-3.grd-hide-mobile
+      .sidebar
+        %ul#sidebar-nav
+          %li#sidebar-link-section-1.selected
+            %a{:href => "#open-source-projects-section"}= l('Open-source projects')
+          %li#sidebar-link-section-2
+            %a{:href => "#static-content"}= l('Static content')
+          %li#sidebar-link-section-3
+            %a{:href => "#perl-modules"}= l('Perl modules')
+          %li#sidebar-link-section-4
+            %a{:href => "#translations"}= l('Translations')
+        .sidebar-button
+          %a.pjaxload{:href => url_for('contact')}= l('Contact us')
+    .grd-grid-9.grd-grid-mobile-12.grd-parent
+      .section
+        %a#open-source-projects-section
+        .section-content
+          #section-1
+            .grd-grid-12
+              %h1= l('Binary.com open-source projects')
+            .grd-grid-12.grd-row-padding
+            .grd-grid-4.grd-hide.grd-show-mobile.grd-centered-mobile.grd-row-padding
+              %img.responsive{:src => url_for('images/pages/open-source-projects/open-source-projects-1.svg')}
+            .grd-grid-8.grd-grid-mobile-12
+              %p= l('Binary.com is an active proponent of the open-source movement and is in the process of open-sourcing a number of components of its codebase.')
+            .grd-grid-4.grd-hide-mobile.grd-parent
+              .grd-grid-8
+                %img.responsive{:src => url_for('images/pages/open-source-projects/open-source-projects-1.svg')}
+      .section
+        %a#static-content
+        .section-content
+          #section-2
+            .grd-grid-12
+              %h1= l('Static content')
+            .grd-grid-12
+              %h4= l('Improve Binary.com’s front-end content')
+            .grd-grid-4.grd-parent.grd-hide-mobile
+              %p= ' '
+              .grd-grid-11
+                %img.responsive{:src => url_for('images/pages/open-source-projects/open-source-projects-3.png')}
+            .grd-grid-8.grd-grid-mobile-12
+              %p!= l('The Binary.com website’s static content (CSS, Javascript) is available as the <a target="_blank" href="[_1]">binary-static</a> open-source project on github. Would you like to re-skin the Binary.com website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes.', 'https://github.com/binary-com/binary-static')
+      .section
+        %a#perl-modules
+        .section-content
+          #section-3
+            .grd-grid-12
+              %h1= l('Perl modules')
+            .grd-grid-12
+              %h4= l('Binary.com’s CPAN contributions')
+            .grd-grid-12.grd-row-padding
+            .grd-grid-4.grd-hide.grd-show-mobile.grd-centered-mobile.grd-row-padding
+              %img.responsive{:src => url_for('images/pages/open-source-projects/open-source-projects-4.svg')}
+            .grd-grid-8.grd-grid-mobile-12
+              %p!= l('Binary.com is an active member of the Perl community and is in the process of uploading a number of its internal utility modules to <a target="_blank" href="[_1]">CPAN</a>. If you are a Perl enthusiast, contribute by reviewing these modules, and submitting pull-requests on <a target="_blank" href="[_2]">github</a>.', 'http://search.cpan.org/~binary/', 'https://github.com/binary-com')
+            .grd-grid-3.grd-parent.grd-hide-mobile
+              .grd-grid-10
+                %img.responsive{:src => url_for('images/pages/open-source-projects/open-source-projects-4.svg')}
+            .grd-grid-1.grd-hide-mobile
+      .section
+        %a#translations
+        .section-content
+          #section-4
+            .grd-grid-12
+              %h1= l('Translations')
+            .grd-grid-12.grd-row-padding
+            .grd-grid-4.grd-parent.grd-grid-mobile-6.grd-centered-mobile
+              .grd-grid-9
+                %img.responsive{:src => url_for('images/pages/open-source-projects/open-source-projects-5.png')}
+            .grd-grid-8.grd-grid-mobile-12.grd-parent
+              .grd-grid-12
+                %p= l('Do you want to see Binary.com in other languages, or can you suggest improvements to our current translations?')
+                %a.pjaxload.button{:href => url_for('contact')}
+                  %span= l('Contact us')

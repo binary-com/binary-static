@@ -1,0 +1,67 @@
+<div id='sell_content_wrapper'>
+    <div id="is_spread_contract"></div> <!-- need this to distinguish it form normal contract as both return html -->
+    <div id="spread_table">
+        <table>
+            <thead>
+                <th>Contract Information</th>
+                <th></th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>[% l("Status") %]</td>
+                    <td id="status" class="[% IF is_expired %]loss[% ELSE %]profit[% END %]">[% IF is_expired %][% l('Closed') %][% ELSE %][% l('Open') %][% END %]</td>
+                </tr>
+                <tr>
+                    <td>[% l("Entry Level") %]</td>
+                    <td>[% entry_level %]</td>
+                </tr>
+                <tr [% UNLESS is_expired %] style="display:none" [% END %]>
+                    <td>[% l("Exit Level") %]</td>
+                    <td id="exit_level">[% exit_level %]</td>
+                </tr>
+                <tr>
+                    <td>[% l("Stop Loss Level") %]</td>
+                    <td id="stop_loss_level">[% stop_loss_level %]</td>
+                </tr>
+                <tr>
+                    <td>[% l("Stop Profit Level") %]</td>
+                    <td id="stop_profit_level">[% stop_profit_level %]</td>
+                </tr>
+                <tr [% IF is_expired %] style="display:none" [% END %]>
+                    <td>[% l("Current Level") %]</td>
+                    <td id="sell_level">[% sell_level %]</td>
+                </tr>
+                <tr>
+                    <td>[% l("Amount Per Point") %]</td>
+                    <td>[% amount_per_point %]</td>
+                </tr>
+                <tr>
+                    <td id="pnl_label">[% l("Profit/Loss") %] ([% currency %])</td>
+                    <td><span id="pnl_value" class="[% status_class %]">[% current_value.dollar %]</span></td>
+                </tr>
+                <tr>
+                    <td id="pnl_label">[% l("Profit/Loss (points)") %]</td>
+                    <td><span id="pnl_point">[% current_value.point %]</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="sell_extra_info_data" style="display:none;" sell_channel="[% sell_channel %]"></div>
+    <div id='error_box' [% IF !error_message %]style="display:none"[% END %]>
+        <p class="notice-msg">[% error_message %]</p>
+    </div>
+    [% IF !is_expired %]
+        <div class="form_button">
+            <form action="[% url %]" method="post" autocomplete="off">
+                <input type="hidden" id="shortcode" name="shortcode" value="[% shortcode %]">
+                <input type="hidden" id="currency" name="currency" value="[% currency %]">
+                <input type="hidden" id="purchase_price" name="purchase_price" value="[% purchase_price %]">
+                <input type="hidden" id="contract_id" name="contract_id" value="[% contract_id %]">
+                <input type="hidden" id="controller_action" name="controller_action" value="[% controller_action %]">
+                <span class="button" [% IF error_message %]style="display:none"[% END %]>
+                    <button name="close_position" class="button close_position" type="submit" style="margin-top: 25px;"value="[% button_text %]">[% button_text %]</button>
+                </span>
+            </form>
+        </div>
+    [% END %]
+</div>

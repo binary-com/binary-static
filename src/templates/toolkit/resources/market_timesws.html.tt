@@ -1,0 +1,14 @@
+<div class="grd-grid-12">
+    <h1>[% l('Trading Times') %]</h1>
+    <p>
+        <label for="trading-date">[% l('Date') %]: </label>
+        <input type="text" id="trading-date" readonly="readonly" />
+    </p>
+    <p>[% l('All times are in GMT (Greenwich Mean Time).') %]</p>
+</div>
+
+<div class="grd-grid-12">
+    <p class="error-msg hidden" id="errorMsg"></p>
+
+    <div id="trading-times" class="has-tabs grd-parent grd-grid-12"></div>
+</div>

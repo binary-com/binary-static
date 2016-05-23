@@ -1,0 +1,72 @@
+[%
+  selected_tab = request.param('selected_tab');
+  IF NOT selected_tab; selected_tab = 'legal-tab'; END;
+%]
+<div class="hidden ja-show content-tab-container">
+  <div class="tab-menu static_full">
+    <div class="tab-menu-wrap grd-container">
+      <ul id="legal-menu" class="tm-ul">
+        <li id="legal-tab" class="tm-li[% IF selected_tab == 'legal-tab' +%] active[% END +%]"><a href="#legal-tab" class="tm-a[% IF selected_tab == 'legal-tab' +%] a-active[% END +%]">[% l('Terms and Conditions') %]</a></li>
+        <li id="contract-tab" class="tm-li[% IF selected_tab == 'contract-tab' +%] active[% END +%]"><a href="#contract-tab" class="tm-a[% IF selected_tab == 'contract-tab' +%] a-active[% END +%]">[% l('Pre-contract Document') %]</a></li>
+
+        <li id="account-tab" class="tm-li[% IF selected_tab == 'account-tab' || selected_tab == 'privacy-tab' || selected_tab == 'anti-social-connection-tab' || selected_tab == 'risk-tab' || selected_tab == 'risk-warning-tab' +%] active[% END +%] first">
+          <span class="menu-wrap-a">
+            <span class="menu-wrap-b"><a href="#account-tab" class="tm-a first[% IF selected_tab == 'account-tab' || selected_tab == 'privacy-tab' || selected_tab == 'anti-social-connection-tab' || selected_tab == 'risk-tab' || selected_tab == 'risk-warning-tab' +%] a-active[% END +%]">[% l('Account Opening') %]</a></span>
+          </span>
+          <ul class="tm-ul-2">
+            <li id="privacy-tab" class="tm-li-2[% IF selected_tab == 'account-tab' || selected_tab == 'privacy-tab' +%] active[% END +%] first"><a href="?selected_tab=privacy-tab" class="tm-a-2[% IF selected_tab == 'account-tab' || selected_tab == 'privacy-tab' +%] a-active[% END +%]">[% l('Privacy Policy') %]</span></li>
+            <li id="anti-social-connection-tab" class="tm-li-2[% IF selected_tab == 'anti-social-connection-tab' +%] active[% END +%]"><a href="?selected_tab=anti-social-connection-tab" class="tm-a-2[% IF selected_tab == 'anti-social-connection-tab' +%] a-active[% END +%]">[% l('No Connections with Antisocial Forces') %]</a></li>
+            <li id="risk-tab" class="tm-li-2[% IF selected_tab == 'risk-tab' +%] active[% END +%]"><a href="?selected_tab=risk-tab" class="tm-a-2[% IF selected_tab == 'risk-tab' +%] a-active[% END +%]">[% l('Risk for Binary Option Trading') %]</a></li>
+            <li id="risk-warning-tab" class="tm-li-2[% IF selected_tab == 'risk-warning-tab' +%] active[% END +%]"><a href="?selected_tab=risk-warning-tab" class="tm-a-2[% IF selected_tab == 'risk-warning-tab' +%] a-active[% END +%]">[% l('General Risk Warning') %]</a></li>
+          </ul>
+        </li>
+
+        <li id="ethics-tab" class="tm-li[% IF selected_tab == 'ethics-tab' || selected_tab == 'ethics-code-tab' || selected_tab == 'liability-exclusion-tab' || selected_tab == 'anti-social-forces-tab' || selected_tab == 'solicitation-tab' +%] active[% END +%] first">
+          <span class="menu-wrap-a">
+            <span class="menu-wrap-b"><a href="#ethics-tab" class="tm-a first[% IF selected_tab == 'ethics-tab' || selected_tab == 'ethics-code-tab' || selected_tab == 'anti-social-forces-tab' || selected_tab == 'solicitation-tab'|| selected_tab == 'liability-exclusion-tab' +%] a-active[% END +%]">[% l('Policies and Exclusion of Liability') %]</a></span>
+          </span>
+          <ul class="tm-ul-2">
+            <li id="ethics-code-tab" class="tm-li-2[% IF selected_tab == 'ethics-tab' || selected_tab == 'ethics-code-tab' +%] active[% END +%] first"><a href="?selected_tab=ethics-code-tab" class="tm-a-2[% IF selected_tab == 'ethics-tab' || selected_tab == 'ethics-code-tab' +%] a-active[% END +%]">[% l('Ethics Code') %]</span></li>
+            <li id="anti-social-forces-tab" class="tm-li-2[% IF selected_tab == 'anti-social-forces-tab' +%] active[% END +%]"><a href="?selected_tab=anti-social-forces-tab" class="tm-a-2[% IF selected_tab == 'anti-social-forces-tab' +%] a-active[% END +%]">[% l('Eliminating Antisocial Forces') %]</a></li>
+            <li id="solicitation-tab" class="tm-li-2[% IF selected_tab == 'solicitation-tab' +%] active[% END +%]"><a href="?selected_tab=solicitation-tab" class="tm-a-2[% IF selected_tab == 'solicitation-tab' +%] a-active[% END +%]">[% l('Investment Solicitation Policy') %]</a></li>
+            <li id="liability-exclusion-tab" class="tm-li-2[% IF selected_tab == 'liability-exclusion-tab' +%] active[% END +%]"><a href="?selected_tab=liability-exclusion-tab" class="tm-a-2[% IF selected_tab == 'liability-exclusion-tab' +%] a-active[% END +%]">[% l('Exclusion of Liability') %]</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="tab-content grd-container">
+    <div class="tab-content-wrapper menu-has-sub-item">
+      <div id="legal-tab-content" class="toggle-content[% IF selected_tab == 'legal-tab' +%][% ELSE +%] invisible[% END +%]">
+        [% INCLUDE legal_jp/terms_and_conditions.html.tt %]
+      </div>
+      <div id="contract-tab-content" class="toggle-content[% IF selected_tab == 'contract-tab' +%][% ELSE +%] invisible[% END +%]">
+        [% INCLUDE legal_jp/contract.html.tt %]
+      </div>
+      <div id="privacy-tab-content" class="toggle-content[% IF selected_tab == 'account-tab' || selected_tab == 'privacy-tab' +%][% ELSE +%] invisible[% END +%]">
+        [% INCLUDE legal_jp/privacy.html.tt %]
+      </div>
+      <div id="anti-social-connection-tab-content" class="toggle-content[% IF selected_tab == 'anti-social-connection-tab' +%][% ELSE +%] invisible[% END +%]">
+        [% INCLUDE legal_jp/antisocial_connection.html.tt %]
+      </div>
+      <div id="risk-tab-content" class="toggle-content[% IF selected_tab == 'risk-tab' +%][% ELSE +%] invisible[% END +%]">
+        [% INCLUDE legal_jp/risk.html.tt %]
+      </div>
+      <div id="risk-warning-tab-content" class="toggle-content[% IF selected_tab == 'risk-warning-tab' +%][% ELSE +%] invisible[% END +%]">
+        [% INCLUDE legal_jp/risk_warning.html.tt %]
+      </div>
+      <div id="ethics-code-tab-content" class="toggle-content[% IF selected_tab == 'ethics-tab' || selected_tab == 'ethics-code-tab' +%][% ELSE +%] invisible[% END +%]">
+        [% INCLUDE legal_jp/ethics_code.html.tt %]
+      </div>
+      <div id="anti-social-forces-tab-content" class="toggle-content[% IF selected_tab == 'anti-social-forces-tab' +%][% ELSE +%] invisible[% END +%]">
+        [% INCLUDE legal_jp/antisocial_forces.html.tt %]
+      </div>
+      <div id="solicitation-tab-content" class="toggle-content[% IF selected_tab == 'solicitation-tab' +%][% ELSE +%] invisible[% END +%]">
+        [% INCLUDE legal_jp/solicitation.html.tt %]
+      </div>
+      <div id="liability-exclusion-tab-content" class="toggle-content[% IF selected_tab == 'liability-exclusion-tab' +%][% ELSE +%] invisible[% END +%]">
+        [% INCLUDE legal_jp/liability_exclusion.html.tt %]
+      </div>
+    </div>
+  </div>
+</div>

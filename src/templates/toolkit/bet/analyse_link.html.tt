@@ -1,0 +1,7 @@
+<div>
+    <span class="button">
+        <button class="button open_contract_details" contract_id="[% contract_id %]" [% IF bo_client %]bo_client="[% bo_client %]"[% END %]>
+        [% l("View") %]
+        </button>
+    </span>
+</div>

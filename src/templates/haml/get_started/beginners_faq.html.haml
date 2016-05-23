@@ -1,0 +1,52 @@
+- stash(title => l("FAQ"));
+.section-content.section-10
+  .grd-grid-12
+    %h1= stash->{title}
+    %p
+  .grd-grid-12
+    %h2= l('Opening an account')
+    %br
+    %h3= l("I'm new to binaries, where do I start?")
+    %p
+      != l("The first step is to open an account. You can <a target='_blank' href='[_1]'>apply online</a> in just a few minutes.", url_for('/'))
+    %h3= l('Do I need to send any documents?')
+    %p= l("We don't usually require any documents as we can verify your identity online.")
+  .grd-grid-12
+    %h2= l('Financial Security')
+    %br
+    %h3= l('How safe is my money with [_1]?', stash->{website_name})
+  .grd-grid-8.grd-grid-mobile-12
+    %p= l('Your money is always safe with [_1]. At all times, it is held in segregated AAA-rated banks, which is a condition of our trading licenses.', stash->{website_name})
+  .grd-parent.grd-grid-4.grd-grid-mobile-8.grd-centered-mobile.ja-hide
+    .grd-grid-11.grd-with-padding.grd-centered
+      %img.responsive{:src => url_for('images/pages/why-us/mga-logo2.svg')}
+    .grd-grid-6.grd-with-padding
+      %img.responsive{:src => url_for('images/pages/why-us/why-us-proven-record_1.svg')}
+    .grd-grid-6.grd-with-padding
+      %img.responsive{:src => url_for('images/pages/footer/isle-of-man.png')}
+  .grd-grid-12
+    %h3= l('How does [_1] make money?', stash->{website_name})
+    %p= l('[_1] has thousands of clients taking a variety of positions on the financial markets at any one time, and earns a small margin on these trades.', stash->{website_name})
+  .grd-grid-12
+    %h2= l('Depositing and withdrawing funds')
+    %br
+    %h3= l('Do I need to deposit any funds to open an account?')
+  .grd-grid-12
+    %p= l("You don't need to deposit any money to open an account, but you need to deposit funds before you can start trading.")
+  .grd-grid-12
+    %h3= l('How do I fund my account?')
+    %p= l('[_1] offers a range of common deposit and withdrawal methods, from credit and debit cards to bank wires, e-cash and e-wallets.', stash->{website_name})
+  .grd-grid-12
+    %h3= l('Is it possible to deposit the same funds through different payment methods?')
+    %p= l('Unfortunately, no – funds initially deposited through one payment method must be withdrawn through the same system; funds cannot be transferred to an alternate system for withdrawal. We do offer a wide variety of payment methods, to suit your specific needs and preferences.')
+  .grd-grid-12
+    %h2= l('Learning to trade')
+    %br
+    %h3= l('Do you offer virtual-money accounts?')
+    %p
+      != l('[_2] offers a virtual-money account so you can get the hang of trading binaries. Why not <a class="pjaxload" href="[_1]">open a free $10k fully-functional virtual-money account</a>, and start learning how to trade.', url_for('/'), stash->{website_name})
+    %h3= l('Will I need to install any software?')
+    %p= l('[_1] is entirely web-based and requires no software installation.', stash->{website_name})
+    %h3= l('How soon can I start trading?')
+    %p
+      != l('You can <a class="pjaxload" href="[_1]">open an account</a>, deposit funds and begin trading within minutes.', url_for('/'))

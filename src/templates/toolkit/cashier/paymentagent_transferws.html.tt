@@ -1,0 +1,97 @@
+<div class="grd-grid-12" id="pa-transfer-client">
+    <h1>[% l('Payment Agent transfer') %]</h1>
+
+    <div id="pa_confirm_transfer" class="invisible">
+        <p>[% l('Please confirm the transaction details in order to complete the transfer:') %]</p>
+        <table class="kv-pairs">
+            <tr>
+                <td>[% l('Transfer to') %]: </td>
+                <td id="user-name"></td>
+            </tr>
+            <tr>
+                <td>[% l('Login ID') %]: </td>
+                <td id="login-id"></td>
+            </tr>
+            <tr>
+                <td>[% l('Amount') %]: </td>
+                <td id="amount"></td>
+            </tr>
+        </table>
+        <p class="errorfield invisible"></p>
+        <span class="button button-focus">
+            <button id="back_transfer" class="button button-focus">[% l('Back') %]</button>
+        </span>
+        <span class="button button-focus">
+            <button id="confirm_transfer" class="button button-focus" type="submit">[% l('Confirm') %]</button>
+        </span>
+    </div>
+
+    <div id="pa_transfer_done" class="invisible">
+        <p id="confirm-msg" class="invisible"></p>
+        <p>
+            <a class="button" href="/user/statementws">
+                <span class="button">[% l('View your statement') %]</span>
+            </a>
+        </p>
+    </div>
+
+    <div id="no_balance_error" class="invisible">
+        <p class="notice-msg">[% l('Please deposit before transfer to client.') %]</p>
+        <a href="/cashier?l=EN">[% l('Deposit') %]</a>
+    </div>
+
+    <div id="paymentagent_transfer">
+        <p>[% l('Please fill in the Login ID and Amount you wish to transfer to your Client in the form below:') %]</p>
+        <table class="kv-pairs">
+            <tr>
+                <td>
+                    <label for="client_id">[% l('Transfer to Login ID') %]</label>
+                </td>
+                <td>
+                    <input type="text" name="client_id" id="client_id"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <span class="errorfield invisible" id="transfer_error_client_id"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="amount">[% l('Amount') %]</label>
+                </td>
+                <td>
+                    <input type="number" name="amount" min="10" max="2000"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <span class="errorfield invisible" id="transfer_error_amount">[% l('Please enter a valid amount.') %]</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <span class="hint">[% l('Min:') %] 10 [% l('Max:') %] 2000</span>
+                </td>
+            </tr>
+        </table>
+        <p id="insufficient-balance-error" class="errorfield invisible">[% l('Insufficient balance') %]</p>
+        <br/>
+        <span class="button button-focus">
+            <button class="button button-focus" id="submit" name="submit" type="submit" value="Submit">[% l('Submit') %]</button>
+        </span>
+    </div>
+
+    <br>
+    <div id="paymentagent_transfer_notes">
+        <div>Notes:</div>
+        <ul>
+            <li>[% l('Our site does not charge any transfer fees.') %]</li>
+            <li>[% l('Once you click the \'Submit\' button, the funds will be withdrawn from your account and transferred to your Client\'s account.') %]</li>
+            <li>[% l('Your Client will receive an email notification informing him/her that the transfer has been processed.') %]</li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+.static_full {
+    @include topspace;
+    .sidebar {
+      @include menu-left;
+    }
+    @include section-separator;
+    .section {
+        display: block;
+        overflow: hidden;
+        .section-content {
+            #section-1, #section-2, #section-3, #section-4, #section-5, #section-6 {
+                .heading {
+                    font-weight: bold;
+                    color: $COLOR_BLUE;
+                }
+            }
+        }
+    }
+    .sidebar-button {
+        background: $COLOR_LIGHT_GRAY;
+        padding: 20px;
+        a {
+            @include link-button;
+            display: block;
+        }
+    }
+    .code-sample {
+        background-color: $COLOR_LIGHT_GRAY;
+        overflow-x: auto;
+        width: 90%;
+        font-family: monospace;
+        white-space: pre;
+        padding: 18px;
+    }
+}
+
+.payment-agent {
+    .faded {
+        color: #AFAFAF;
+        font-size: 90%;
+        margin-bottom: 0;
+    }
+    .grd-grid-hide {
+        padding: 0;
+    }
+    h1 {
+        margin-bottom: 40px;
+    }
+}
+
+#frmPersonalDetails {
+  .JpAcc, .hedge {
+    display: none;
+  }
+}
+
+#api_token {
+  abbr {
+    text-decoration: none;
+    @include BIDIR_PROP(margin-right, margin-left, 15px);
+  }
+}

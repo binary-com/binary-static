@@ -1,0 +1,11 @@
+.sidebar-right
+  .by_client_type.client_logged_out
+    %p
+      %a.pjaxload{:href => url_for('/')}= l('Try it now')
+      %br
+      = l('No risk, $10K virtual money account')
+  %div
+    %p
+      = l('Want to learn more?')
+      %br
+      %a.pjaxload{:href => url_for('/tour')}= l('View the Tour')
