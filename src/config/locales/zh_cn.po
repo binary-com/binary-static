@@ -3,9 +3,10 @@ msgstr ""
 "Project-Id-Version: Chinese (China) (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-18 05:09+0000\n"
+"PO-Revision-Date: 2016-05-23 11:40+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
+"Language-Team: Chinese (China) "
+"<https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -655,31 +656,39 @@ msgstr "<option value=\"\"></option><option value=\"01\">一月</option><option 
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:108
-#, fuzzy
 #| msgid "<p style=\"font-weight: bold;\">Thanks for signing up for a virtual account!</p><p>Enter the following verification token into the form to create an account: <p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p><p>Enjoy trading with us on Binary.com.</p>"
 msgid "<p style=\"font-weight: bold;\">Thanks for signing up for a virtual account!</p><p>Enter the following verification token into the form to create an account: <p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p><p>Enjoy trading with us on Binary.com.</p>"
-msgstr "<p style=\"font-weight: bold;\">谢谢您注册虚拟账户!</p><p>请将以下验证令牌输入到表格内以创建账户:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p><p>与Binary.com一块享受交易的乐趣。</p>"
+msgstr ""
+"<p style=\"font-weight: bold;\">谢谢您注册虚拟账户!</p><p>请将以下验证令牌输入到表格内以创建账户:<p><"
+"span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\""
+">%1</span></p></p><p>与Binary.com一块享受交易的乐趣。</p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:95
-#, fuzzy
 #| msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Before we can help you change your password, please help us to verify your identity by entering the following verification token into the password reset form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Before we can help you change your password, please help us to verify your identity by entering the following verification token into the password reset form:<p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">尊敬的客户，</p><p>在我们协助您修改密码之前，请在密码重设表格输入以下验证令牌，以便我们对您的身份进行验证：<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\""
+">尊敬的客户，</p><p>在我们协助您修改密码之前，请在密码重设表格输入以下验证令牌，以便我们对您的身份进行验证：<p><span style=\""
+"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:135
-#, fuzzy
 #| msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment agent withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment agent withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">尊敬的客户，</p><p>请在付款代理提款表格输入以下验证令牌，以便我们验证您的身份:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\""
+">尊敬的客户，</p><p>请在付款代理提款表格输入以下验证令牌，以便我们验证您的身份:<p><span style=\"background: "
+"#f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:147
-#, fuzzy
 #| msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">尊敬的客户，</p><p>请在付款提款表格输入以下验证令牌，以协助我们验证您的身份:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\""
+">尊敬的客户，</p><p>请在付款提款表格输入以下验证令牌，以协助我们验证您的身份:<p><span style=\"background: "
+"#f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p>"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/affiliates/faq.html.tt:73
 msgid ""
@@ -3402,7 +3411,6 @@ msgstr ""
 
 #. ($client_name, $support_email)
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client/IDAuthentication.pm:128
-#, fuzzy
 #| msgid ""
 #| "Dear %1,\n"
 #| "\n"
@@ -7082,7 +7090,7 @@ msgstr "至少6个大小写字母和数字"
 #. (to_monetary_number_format($stake_min)
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1618
 msgid "Minimum stake of %1 and maximum payout of %2"
-msgstr ""
+msgstr "最小交易金额%1及最大赔付额%2"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:323
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Locale.pm:35
