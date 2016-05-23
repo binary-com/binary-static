@@ -165,6 +165,7 @@ var TradingEvents = (function () {
                     // get ticks for current underlying
                     Tick.request(underlying);
                     displayTooltip(Defaults.get('market'), underlying);
+                    chartFrameSource();
                 }
             });
             if (isJapanTrading()) {
