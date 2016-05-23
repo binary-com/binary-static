@@ -737,15 +737,15 @@ function marketOrder(market){
           asia_oceania: 5,
           europe_africa: 6,
           americas: 7,
-          otc_index: 8,	
+          otc_index: 8,
         stocks: 9,
           france: 10,
           belgium: 11,
           amsterdam: 12,
           au_otc_stock: 13,
-	      ge_otc_stock: 14,
+        ge_otc_stock: 14,
           uk_otc_stock: 15,
-          us_otc_stock: 16,			
+          us_otc_stock: 16,
         commodities: 17,
           metals: 18,
           energy: 19,
@@ -907,7 +907,10 @@ function showHighchart(){
                     text.localize('day').toLowerCase() +'</option></select></td></td></tr><tr align="center"><td colspan="4">' +
                     '<iframe src="" width="100%" height="630" id="chart_frame" style="overflow-y : hidden;" scrolling="no"></iframe></td></tr></table>';
     document.getElementById('trade_live_chart').appendChild(div);
-    setUnderlyingTime();
+    document.getElementById('time_period').addEventListener("change", function() {
+      chartFrameSource();
+    });
+    chartFrameSource();
   } else {
     div.innerHTML = '<p class="error-msg">' + text.localize('Chart is not available for this underlying.') + '</p>';
     document.getElementById('trade_live_chart').appendChild(div);
@@ -915,31 +918,10 @@ function showHighchart(){
   }
 }
 
-function setUnderlyingTime() {
-   var instrumentCode = document.getElementById('underlying'),
-       contractMarkets = document.getElementById('bet_underlying'),
-       highchart_time =  document.getElementById('time_period');
-   highchart_time.addEventListener("change", function(){
-     setUnderlyingTime();
-   });
-   if (instrumentCode) {
-     instrumentCode.addEventListener("change", function(){
-       setUnderlyingTime();
-     });
-     chartFrameSource(instrumentCode.value, highchart_time);
-   } else if (contractMarkets) {
-     contractMarkets.addEventListener("change", function(){
-       setUnderlyingTime();
-     });
-     document.getElementById('submarket').addEventListener("change", function(){
-       setUnderlyingTime();
-     });
-     chartFrameSource(contractMarkets.value, highchart_time);
-   }
-}
-
-function chartFrameSource(underlying, highchart_time){
-  document.getElementById('chart_frame').src = 'https://webtrader.binary.com?affiliates=true&instrument=' + underlying + '&timePeriod=' + highchart_time.value + '&gtm=true';
+function chartFrameSource() {
+  if ($('#tab_graph').hasClass('active')) {
+      document.getElementById('chart_frame').src = 'https://webtrader.binary.com?affiliates=true&instrument=' + document.getElementById('underlying').value + '&timePeriod=' + document.getElementById('time_period').value + '&gtm=true';
+  }
 }
 
 function isJapanTrading(){
