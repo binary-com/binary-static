@@ -3,6 +3,7 @@ module.exports = {
         files: [
             { expand: true, src: ['javascript.json'], dest: 'dist' },
             { expand: true, src: ['index.html'], dest: 'dist' },
+            { expand: true, src: ['404.html'], dest: 'dist' },
             { expand: true, cwd: 'src/config/', src: ['**'], dest: 'dist/config/' },
             { expand: true, cwd: 'src/images/', src: ['**'], dest: 'dist/images/', },
             { expand: true, cwd: 'src/download/', src: ['**'], dest: 'dist/download/' },
