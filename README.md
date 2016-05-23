@@ -10,21 +10,19 @@ In order to work on your own version of the Binary.com Javascript and CSS, pleas
 You will also need to install the following on your development machine:
 
 - Ruby, RubyGems
-- Sass version 3.3.13 (`gem install sass -v 3.3.13`)
+- Sass version 3.3.13 (`sudo gem install sass -v 3.3.13`)
 - Node.js and NPM (see <https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager>)
 
-Please check your `sass` version, run `sass -v` and it should give you `Sass 3.3.13` but if it doesn't match then uninstall your version using `gem uninstall sass --version '<yourversion>'` and execute `gem install sass -v 3.3.13` again
-
-After you have made your code edits, you can run the Javascript and CSS minification by doing:
+Please check your `sass` version, run `sass -v` and it should give you `Sass 3.3.13` but if it doesn't match then uninstall your version using `sudo gem uninstall sass --version '<yourversion>'` and execute `sudo gem install sass -v 3.3.13` again
 
 - Go to project root
 
 ```bash
 npm install
-npm install -g grunt-cli
+sudo npm install -g grunt-cli
 
-curl -L https://cpanmin.us | perl - App::cpanminus
-cpanm Carton
+curl -L https://cpanmin.us | sudo perl - App::cpanminus
+sudo cpanm Carton
 cd scripts
 carton install
 ```
