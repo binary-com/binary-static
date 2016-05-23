@@ -5,7 +5,24 @@ This repository contains the static HTML/HAML, Javascript, CSS, and images conte
 
 ## Installation
 
+In order to work on your own version of the Binary.com Javascript and CSS, please **fork this project**.
+
+You will also need to install the following on your development machine:
+
+- Ruby, RubyGems
+- Sass version 3.3.13 (`gem install sass -v 3.3.13`)
+- Node.js and NPM (see <https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager>)
+
+Please check your `sass` version, run `sass -v` and it should give you `Sass 3.3.13` but if it doesn't match then uninstall your version using `gem uninstall sass --version '<yourversion>'` and execute `gem install sass -v 3.3.13` again
+
+After you have made your code edits, you can run the Javascript and CSS minification by doing:
+
+- Go to project root
+
 ```bash
+npm install
+npm install -g grunt-cli
+
 curl -L https://cpanmin.us | perl - App::cpanminus
 cpanm Carton
 cd scripts
