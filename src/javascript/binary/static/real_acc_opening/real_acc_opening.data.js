@@ -1,20 +1,20 @@
 var RealAccOpeningData = (function(){
-    function getRealAcc(arr){
+    function getRealAcc(elementObj){
         var req = {
             new_account_real: 1,
-            salutation: arr[0],
-            first_name: arr[1],
-            last_name: arr[2],
-            date_of_birth: arr[3],
-            residence: arr[4],
-            address_line_1: arr[5],
-            address_line_2: arr[6],
-            address_city: arr[7],
-            address_state: arr[8],
-            address_postcode: arr[9],
-            phone: arr[10],
-            secret_question: arr[11],
-            secret_answer: arr[12]
+            salutation: elementObj['title'].value,
+            first_name: elementObj['fname'].value,
+            last_name: elementObj['lname'].value,
+            date_of_birth: elementObj['dobyy'].value + '-' + elementObj['dobmm'].value + '-' + elementObj['dobdd'].value,
+            residence: elementObj['residence'].value,
+            address_line_1: elementObj['address1'].value,
+            address_line_2: elementObj['address2'].value,
+            address_city: elementObj['town'].value,
+            address_state: elementObj['state'].value,
+            address_postcode: elementObj['postcode'].value,
+            phone: elementObj['tel'].value,
+            secret_question: elementObj['question'].value,
+            secret_answer: elementObj['answer'].value
         };
 
         if ($.cookie('affiliate_tracking')) {

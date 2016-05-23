@@ -1,7 +1,0 @@
-<h1>[% l('Authenticate to Withdraw') %]</h1>
-<p>[% l('In order to complete your withdrawal, you must authenticate your account. Once you have done so, please proceed to the Cashier and try withdrawing again.') %]</p>
-<p class="centerText">
-    <a class="button" href="[% authenticate_url %]">
-        <span class="button">[% l('Authenticate your Account') %]</span>
-    </a>
-</p>

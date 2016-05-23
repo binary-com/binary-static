@@ -6,16 +6,20 @@
   .grd-grid-12.grd-row-padding
     .timeline
       %ul
-        %li.year.first.center-aligned= 2015
+        %li.year.first.center-aligned= 2016
+        %li.event.left{:style => "margin-bottom: 50px"}
+          .header= l("MENA FFXPO Award")
+          .event-body= l("Binary.com is honoured as the world's \"Best Binary Options Broker\" at the 16th annual MENA International Financial Conference and Exhibition, hosted in Dubai.")
+        %li.year.center-aligned= 2015
         %li.event.left
           .header= l("EGR Operator Award ")
-          .event-body= l("Binary.com took home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London.")
+          .event-body= l("Binary.com takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London.")
         %li.event.right
           .header= l('1 million transactions/day')
-          .event-body= l("[_1]'s systems are now processing in excess of 1 million transactions/day (including virtual accounts).", stash->{website_name})  
+          .event-body= l("[_1]'s systems are now processing in excess of 1 million transactions/day (including virtual accounts).", stash->{website_name})
         %li.event.left.featured
           .header= l('Binary granted Investment Services license')
-          .event-body= l('Binary\'s Maltese subsidiary Binary Investments (Europe) Ltd. is granted a Category 3 Investment Services license by the Malta Financial Services Authority.')  
+          .event-body= l('Binary\'s Maltese subsidiary Binary Investments (Europe) Ltd. is granted a Category 3 Investment Services license by the Malta Financial Services Authority.')
         %li.event.right
           .header= l('Binary opens Japan office')
           .event-body= l("Binary's Japanese subsidiary Binary KK opens an office in Tokyo and starts the process of applying for relevant licenses.")

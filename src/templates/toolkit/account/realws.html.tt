@@ -22,7 +22,6 @@
                     </div>
                   </fieldset>
                 </form>
-                </fieldset>
                 <form id="real-form">
                     <fieldset>
                         <legend id="details">[% l('Details') %]</legend>
@@ -36,8 +35,6 @@
                                   <option value="Mrs">[% l('Mrs') %]</option>
                                   <option value="Ms">[% l('Ms') %]</option>
                                   <option value="Miss">[% l('Miss') %]</option>
-                                  <option value="Dr">[% l('Dr') %]</option>
-                                  <option value="Prof">[% l('Prof') %]</option>
                                 </select>
                                 <p class="errorfield" id="error-title" style="display:none"></p>
                             </div>

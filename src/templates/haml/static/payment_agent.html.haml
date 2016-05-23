@@ -1,6 +1,7 @@
 - stash(
 -  title => l('Payment Agents'),
 - );
+- my $email_link = 'mailto:'.stash->{affiliate_email};
 .grd-container.grd-default-container
   .payment-agent.static_full
     .grd-grid-3.grd-hide-mobile
@@ -17,7 +18,7 @@
           %li#sidebar-link-section-4
             %a{:href => "#next-steps"}= l('How does it work?')
         .sidebar-button
-          %a.pjaxload{:href => 'mailto:affiliates@binary.com'}= l('Contact Us')
+          %a.pjaxload{:href => $email_link}= l('Contact Us')
     .grd-grid-9.grd-grid-mobile-12.grd-parent
       .section
         %a#why-choose-payment-agents
@@ -87,7 +88,7 @@
                 %li= l('Your website URL (if you have one)')
                 %li= l('A list of payment methods you will accept from Clients')
                 %li= l('The commission you will charge Clients on deposits and withdrawals')
-              %p!= l("Please submit the above information to <a href='mailto:affiliates\@binary.com'>affiliates\@binary.com</a>.")
+              %p!= l("Please submit the above information to <a href='mailto:[_1]'>[_1]</a>.", stash->{affiliate_email})
               %p= l('Once we receive your application, one of our affiliate managers will contact you to follow up with the next steps in the application process (this will include asking you to submit several documents).')
               %p!= l("Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='[_1]'>payment agent</a> list.", url_for('/cashier/payment_agent_listws'))
             .clearfix
@@ -97,6 +98,6 @@
           #section-6
             .grd-grid-12
               %h1= l('Need more information?')
-              %p!= l("If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:affiliates\@binary.com'>affiliates\@binary.com</a>")
+              %p!= l("If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:[_1]'>[_1]</a>", stash->{affiliate_email})
               %p= l('We look forward to hearing from you.')
             .clearfix

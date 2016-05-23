@@ -7,7 +7,7 @@ var ViewBalanceUI = (function(){
             return;
         }
         var balance = response.balance;
-        var bal = Number(parseFloat(balance.balance)).toFixed(2);
+        var bal = addComma(Number(parseFloat(balance.balance)));
         var currency = balance.currency;
         var view = currency.toString() + " " + bal.toString();
 
@@ -15,6 +15,7 @@ var ViewBalanceUI = (function(){
             return;
         }
 
+        TUser.get().balance = balance.balance;
         $("#balance").text(view);
     }
 

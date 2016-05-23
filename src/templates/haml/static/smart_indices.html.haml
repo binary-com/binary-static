@@ -1,41 +1,18 @@
 - stash(title => l('Smart Indices'));
 
-.grd-container.grd-default-container
-  .smart-indices.static_full
-    .grd-grid-3.grd-hide-mobile
-      .sidebar
-        %ul#sidebar-nav
-          %li#sidebar-link-section-1.selected
-            %a{:href => "#what-are-the-smart-markets"}= l('What are the Smart Markets?')
-          %li#sidebar-link-section-2
-            %a{:href => "#world-fx-indices"}= l('Smart FX')
-    .grd-grid-9.grd-grid-mobile-12.grd-parent
-      .section
-        %a#what-are-the-smart-markets
-        .section-content
-          #section-1
-            .grd-grid-12
-              %h1= l('What are Smart Markets?')
-            .grd-grid-8.grd-grid-mobile-12
-              %p= l('[_1]’s exclusive Smart Markets are built to key on a particular subset of the world’s markets. With a price derived from related assets, Smart Markets allow traders to take positions on a variety of market action.', stash->{website_name});
-            .grd-grid-2.grd-hide-mobile
-            .grd-grid-2.grd-grid-mobile-4.grd-centered-mobile
-              %img.responsive{:src => url_for('images/pages/smart-indices/smart-indices-1.svg')}
-      .section
-        %a#world-fx-indices
-        .section-content
-          #section-2
-            .grd-grid-12
-              %h1= l('Smart FX')
-              %p= l('[_1]’s Smart FX are smart markets that measure the value of a currency against a basket of major currencies.', stash->{website_name})
-            .grd-grid-4
-              %p= ' '
-              %img.responsive{:src => url_for('images/pages/smart-indices/smart-indices-2.svg')}
-            .grd-grid-8
-              %p= l('The USD Index is a weighted Index, measuring the US Dollar’s value against a basket of 5 global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%.')
-            .grd-grid-12
-              %p= l('The AUD Index is a weighted Index, measuring the Australian Dollar’s value against a basket of 5 global currencies (USD, EUR, GBP, JPY, CAD), each weighted by 20%.')
-            .grd-grid-12
-              %p= l('The EUR Index is a weighted Index, measuring the Euro’s value against a basket of 5 global currencies (USD, AUD, GBP, JPY, CAD), each weighted by 20%.')
-            .grd-grid-12
-              %p= l('The GBP Index is a weighted Index, measuring the British Pound’s value against a basket of 5 global currencies (USD, EUR, AUD, JPY, CAD), each weighted by 20%.')
+  .section-content.section-8
+    %h1= stash->{title}
+    .grd-grid-12.grd-row-padding
+      %h2= l('Smart FX')
+      %p= l('[_1]’s Smart FX are smart markets that measure the value of a currency against a basket of major currencies.', stash->{website_name})
+    .grd-grid-4
+      %p= ' '
+      %img.responsive{:src => url_for('images/pages/smart-indices/smart-indices-2.svg')}
+    .grd-grid-8
+      %p= l('The USD Index is a weighted Index, measuring the US Dollar’s value against a basket of 5 global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%.')
+    .grd-grid-12
+      %p= l('The AUD Index is a weighted Index, measuring the Australian Dollar’s value against a basket of 5 global currencies (USD, EUR, GBP, JPY, CAD), each weighted by 20%.')
+    .grd-grid-12
+      %p= l('The EUR Index is a weighted Index, measuring the Euro’s value against a basket of 5 global currencies (USD, AUD, GBP, JPY, CAD), each weighted by 20%.')
+    .grd-grid-12
+      %p= l('The GBP Index is a weighted Index, measuring the British Pound’s value against a basket of 5 global currencies (USD, EUR, AUD, JPY, CAD), each weighted by 20%.')

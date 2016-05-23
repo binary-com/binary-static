@@ -1,16 +1,13 @@
 .grd-grid-12
   %h1= l('Security')
-  %div{:class => "errorbox rbox", :id => "client_message"}
-    .rbox-wrap
-      .rbox-content#client_message_content
   %p#SecuritySuccessMsg
-  %form{:class => "formObject grd-row-padding",:id => "changeCashierLock" }
+  %form{:class => "formObject grd-row-padding",:id => "changeCashierLock", :style => "display:none;" }
     .rbox.form
       .rbox-wrap
         %fieldset#lockcashiersection
-          %legend= l('Lock Cashier')
+          %legend
           .grd-grid-12
-            %p#lockInfo= l('An additional password can be used to restrict access to the cashier.')
+            %p#lockInfo
 
           %div{:class =>"grd-row-padding row clear", :id =>"passwordrow"}
             .grd-grid-4.form_label
@@ -20,11 +17,11 @@
               %div#password-meter-div{:style => 'display:none'}
                 %p{:style => "margin:0px;height:0.5em;"}
                   %meter#password-meter{:high => "20", :low => "10", :max => "50", :min => "0", :optimum => "50", :value => ""}
-                %div.hint= l('Minimum 6 characters with at least 1 number')
+                %div.hint= l('Minimum of six lower and uppercase letters with numbers')
               %p.errorfield#errorcashierlockpassword1
                 %abbr#tooltip-password{:rel => "tooltip", :title => ""}
 
-          %div{:class =>"grd-row-padding row clear", :id =>"repasswordrow"}
+          %div{:class =>"grd-row-padding row clear", :id =>"repasswordrow", :style => "display: none;"}
             %div{:class => "grd-grid-4  form_label"}
               %label{:for => "cashierlockpassword2" }= l('Re-enter your password')
             .grd-grid-8
@@ -33,9 +30,7 @@
 
     %fieldset{:class =>"formlayout settings sticky" , :id =>"formlayout"}
       .grd-row-padding.row.clear
-        %div{:class => "grd-grid-4 grd-hide-mobile form_label"}
-          %label
-        .grd-grid-8
+        .grd-grid-12.center
+          %p.error-msg#invalidinputfound
           %span.button
-            %button{:class =>" button",:id =>"submit",:name =>"submit",:type =>"submit",:value =>"Update"}= l('Update')
-          %p.errorfield#invalidinputfound
+            %button{:class =>" button",:id =>"submit",:name =>"submit",:type =>"submit",:value =>""}

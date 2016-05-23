@@ -1,10 +1,6 @@
-pjax_config_page("user/statement", function(){
+pjax_config_page_require_auth("user/statement", function(){
     return {
         onLoad: function() {
-            if (!getCookieItem('login')) {
-                window.location.href = page.url.url_for('login');
-                return;
-            }
             BinarySocket.init({
                 onmessage: function(msg){
                     var response = JSON.parse(msg.data);
@@ -13,6 +9,7 @@ pjax_config_page("user/statement", function(){
                         var type = response.msg_type;
                         if (type === 'statement'){
                             StatementWS.statementHandler(response);
+                            showLocalTimeOnHover('td.date');
                         }
                     }
                 }

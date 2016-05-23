@@ -3,6 +3,7 @@ var PasswordWS = (function(){
   var $form, $result;
 
   var init = function() {
+    $('#change-password').removeClass('invisible');
     $form   = $("#change-password > form");
     $result = $("#change-password > div[data-id='success-result']");
     $form.find("button").on("click", function(e){
@@ -96,6 +97,7 @@ var PasswordWS = (function(){
     **/
     $form.addClass("hidden");
     $result.removeClass("hidden");
+    setTimeout(function(){page.client.send_logout_request(true);}, 5000);
     return true;
 
   };
@@ -108,7 +110,7 @@ var PasswordWS = (function(){
 
 })();
 
-pjax_config_page("user/change_password", function() {
+pjax_config_page_require_auth("user/change_password", function() {
     return {
         onLoad: function() {
           Content.populate();
@@ -119,10 +121,7 @@ pjax_config_page("user/change_password", function() {
           } else {
             $('#password-meter').remove();
           }
-          if (!getCookieItem('login')) {
-                window.location.href = page.url.url_for('login');
-                return;
-            }
+
           BinarySocket.init({
                 onmessage: function(msg){
                     var response = JSON.parse(msg.data);

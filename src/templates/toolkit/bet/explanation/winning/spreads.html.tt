@@ -1,6 +1,0 @@
-<p> [% l('Spread contracts payout based on the movement of the index relative to the entry level of the contract.') %] </p>
-<p> [% l("'<strong>Long</strong>' contracts generate profits when the index rises and loses when it falls.") %] </p>
-<p> [% l("'<strong>Short</strong>' contracts generate losses when the index rises and profits when it falls.") %] </p>
-<p>
-    [% l("The stop-loss and stop-profit are guaranteed. The loss and profit are limited to the stop-loss and stop-profit respectively.  When the exit level touches either the stop-loss or stop-profit, the contract will be closed at the stop-loss or stop-profit level.") %]
-</p>

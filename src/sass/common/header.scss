@@ -90,35 +90,21 @@
   #binary-logo-text {
       margin-top: 10px;
   }
-  #login-form, #loginid-switch-form {
-    @include BIDIR_VALUE(text-align, right, left);
-    #login-links {
-      margin: 5px 0 0 0;
-      display: block;
-    }
-    input {
-      display: inline;
-      border-radius: 4px;
-      font-size: 11px;
-      margin: 0 0 0 5px;
-    }
-    input[type=text], input[type=password] {
-      background: #FEFEFE;
-      border: 0;
-      width: 50px;
-      color: #000000;
-      padding: 4px;
-    }
-    input[type=submit] {
+  #client-logged-out {
+    #btn_login {
       @include link-button;
       border: 0;
       text-transform: uppercase;
-      padding: 5px 3px;
-      word-break: break-all;
-      white-space: pre-wrap;
-      max-width: 60px;
-      letter-spacing: 0;
+      padding: 0px 10px;
+      white-space: nowrap;
+      font-weight: normal;
+      font-size: .8em;
+      line-height: 2em;
+      margin: 0.8em 0;
     }
+  }
+  #client-logged-out, #loginid-switch-form {
+    @include BIDIR_VALUE(text-align, right, left);
   }
   a#lost-password, a#register {
     display: inline-block;

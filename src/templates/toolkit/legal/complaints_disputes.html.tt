@@ -16,6 +16,9 @@
     [% l("Clients registered with Binary (Europe) Ltd can raise their unresolved disputes with the Malta Gaming Authority [_1] at", '<a href="http://www.mga.org.mt/" target="_blank">(www.mga.org.mt)</a>') %]  support.mga@mga.org.mt. [% l("UK clients registered with Binary (Europe) Ltd can submit their dispute with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity’s") %] <a href="http://www.ibas-uk.com/adjudicationForm.php" target="_blank">[% l("website") %]</a>.
     </p>
     <p>
+        [% l("Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission’s Online Dispute Resolution (ODR) platform available <a href='http://ec.europa.eu/odr' target='_blank'>here</a>.") %]
+    </p>
+    <p>
     [% l("Clients registered with Binary Investments (Europe) Ltd can raise their unresolved disputes with the MFSA's Consumer Complaints Manager. Details on making a complaint with the MFSA's Consumer Complaints Manager as well as their contact details can be found here: [_1]. Complaints to the MFSA's Consumer Complaints Manager should always be made in writing.", "<a href='http://mymoneybox.mfsa.com.mt' target='_blank'>http://mymoneybox.mfsa.com.mt</a>") %]
     </p>
     <p>

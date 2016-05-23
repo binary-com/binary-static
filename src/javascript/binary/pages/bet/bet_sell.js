@@ -1205,7 +1205,7 @@ var BetSell = function() {
                 if (liveChartConfig.has_indicator('entry_spot_time')) {
                     live_chart.remove_indicator('entry_spot_time');
                 }
-                
+
                 if (start_time && entry_spot_time < start_time) {
                     indicator = new LiveChartIndicator.Barrier({ name: "entry_spot_time", label: 'Entry Spot', value: that.get_date_from_seconds(parseInt(entry_spot_time)), color: '#e98024', axis: 'x'});
                 } else {
@@ -1239,6 +1239,12 @@ var BetSell = function() {
                 height: $('#sell_content_container').outerHeight(true) + 'px',
                 top: $('#sell_bet_desc').outerHeight() + 'px', // appending pixel because this height is already generated
             });
+        },
+        show_popup: function(trans_id) {
+            var contract_id = (/trading/i).test(window.location.pathname) ? 
+                $('div.button button.open_contract_detailsws').attr('contract_id') :
+                $('td').filter(function() {return $(this).text() == trans_id;}).parents('tr').find('button.open_contract_detailsws').attr('contract_id');
+            this.get_analyse_contract(contract_id);
         },
     }; // BetSell
 }();

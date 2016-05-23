@@ -1,5 +1,5 @@
 - stash(title => l('Types of trades'));
-.section-content.section-5
+.section-content.section-2
   .grd-grid-12
     %h1= stash->{title}
     %p= l('Whatever your market view or strategy, [_1] provides you with the right trade to profit from your prediction. Choose from five ways to trade:', stash->{website_name})
@@ -13,7 +13,7 @@
   .subsection
     .grd-grid-12
       %h2
-        %a.pjaxload{:href => url_for('trade.cgi?market=forex&form_name=risefall')}= l('Up/Down')
+        %a.pjaxload{:href => url_for('trading?market=forex&formname=risefall')}= l('Up/Down')
       %p.ja-hide= l('Choose Rise/Fall when you want to profit from the market rising or falling from its current level.')
       %p= l('Choose Higher/Lower when you want to profit from the market ending higher or lower than a price target.')
       %ol
@@ -23,7 +23,7 @@
   .subsection
     .grd-grid-12
       %h2
-        %a.pjaxload{:href => url_for('trade.cgi?market=forex&form_name=touchnotouch')}= l('Touch/No Touch')
+        %a.pjaxload{:href => url_for('trading?market=forex&formname=touchnotouch')}= l('Touch/No Touch')
       %p= l('Choose Touch / No Touch when you want to profit from the market touching or not touching a target any time during the contract period.')
       %ol
         %li= l('Choose the market, the price target, the time period, and how much you wish to win.')
@@ -32,7 +32,7 @@
   .subsection
     .grd-grid-12
       %h2
-        %a.pjaxload{:href => url_for('trade.cgi?market=forex&form_name=staysinout')}= l('In/Out')
+        %a.pjaxload{:href => url_for('trading?market=forex&formname=staysinout')}= l('In/Out')
       %p= l('Choose Stays In/Out to profit from the market staying inside or going outside two price targets any time during the contract period.')
       %p= l('Choose Ends In/Out to profit from the market stopping inside or outside two price targets at the end of the time period.')
       %ol
@@ -42,7 +42,7 @@
   .subsection.ja-hide
     .grd-grid-12
       %h2
-        %a.pjaxload{:href => url_for('trade.cgi?market=random&form_name=asian')}= l('Asians')
+        %a.pjaxload{:href => url_for('trading?market=volidx&formname=asian')}= l('Asians')
       %p= l('Choose Asian Rise/Fall when you want to profit from the market ending higher or lower than the average price.')
       %ol
         %li= l('“Asian Rise” – You win when the last tick is higher than the average of the ticks during the trade.')
@@ -50,9 +50,8 @@
   .subsection.ja-hide
     .grd-grid-12
       %h2
-        %a.pjaxload{:href => url_for('trade.cgi?market=random&form_name=digits')}= l('Digits')
+        %a.pjaxload{:href => url_for('trading?market=volidx&formname=matchdiff')}= l('Digits')
       %p= l('Choose digit if you want to profit from predicting the last decimal digit of the spot.')
       %ol
         %li= l('“Matches” – You win when the last digit of the last tick matches your prediction.')
         %li= l('“Differs” – You win when the last digit of the last tick does not match your prediction.')
-  

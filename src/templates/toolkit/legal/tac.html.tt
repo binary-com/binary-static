@@ -6,7 +6,7 @@
   <div class="tab-menu">
     <div class="tab-menu-wrap grd-container">
       <ul id="legal-menu" class="tm-ul">
-        <li id="legal-tab" class="tm-li[% IF selected_tab == 'legal-tab' || selected_tab == 'legal-tac-tab' || selected_tab == 'betting-rules-tab' || selected_tab == 'promo-tac-tab' || selected_tab == 'affiliate-tac-tab' || selected_tab == 'complaints-disputes-tac-tab' +%] active[% END +%] first">
+        <li id="legal-tab" class="tm-li[% IF selected_tab == 'legal-tab' || selected_tab == 'legal-tac-tab' || selected_tab == 'betting-rules-tab' || selected_tab == 'promo-tac-tab' || selected_tab == 'affiliate-tac-tab' || selected_tab == 'api-tac-tab' || selected_tab == 'complaints-disputes-tac-tab' +%] active[% END +%] first">
           <span class="menu-wrap-a">
             <span class="menu-wrap-b"><a href="#legal-tab" class="tm-a first[% IF selected_tab == 'legal-tab' || selected_tab == 'legal-tac-tab' || selected_tab == 'betting-rules-tab' || selected_tab == 'promo-tac-tab' || selected_tab == 'affiliate-tac-tab' || selected_tab == 'complaints-disputes-tac-tab' +%] a-active[% END +%]">[% l('Terms and Conditions') %]</a></span>
           </span>
@@ -15,6 +15,7 @@
             <li id="betting-rules-tab" class="tm-li-2[% IF selected_tab == 'betting-rules-tab' +%] active[% END +%]"><a href="?selected_tab=betting-rules-tab" class="tm-a-2[% IF selected_tab == 'betting-rules-tab' +%] a-active[% END +%]">[% l('Trading Rules') %]</a></li>
             <li id="promo-tac-tab" class="ja-hide tm-li-2[% IF selected_tab == 'promo-tac-tab' +%] active[% END +%]"><a href="?selected_tab=promo-tac-tab" class="tm-a-2[% IF selected_tab == 'promo-tac-tab' +%] a-active[% END +%]">[% l('Bonus Code') %]</a></li>
             <li id="affiliate-tac-tab" class="ja-hide tm-li-2[% IF selected_tab == 'affiliate-tac-tab' +%] active[% END +%]"><a href="?selected_tab=affiliate-tac-tab" class="tm-a-2[% IF selected_tab == 'affiliate-tac-tab' +%] a-active[% END +%]">[% l('Affiliate') %]</a></li>
+            <li id="api-tac-tab" class="ja-hide tm-li-2[% IF selected_tab == 'api-tac-tab' +%] active[% END +%]"><a href="?selected_tab=api-tac-tab" class="tm-a-2[% IF selected_tab == 'api-tac-tab' +%] a-active[% END +%]">[% l('API') %]</a></li>
             <li id="complaints-disputes-tac-tab" class="tm-li-2[% IF selected_tab == 'complaints-disputes-tac-tab' +%] active[% END +%] last"><a href="?selected_tab=complaints-disputes-tac-tab" class="tm-a-2[% IF selected_tab == 'complaints-disputes-tac-tab' +%] a-active[% END +%]">[% l('Complaints and Disputes') %]</a></li>
             <li id="conflicts-policy-tac-tab" class="tm-li-2[% IF selected_tab == 'conflicts-policy-tac-tab' +%] active[% END +%] last"><a href="?selected_tab=conflicts-policy-tac-tab" class="tm-a-2[% IF selected_tab == 'conflicts-policy-tac-tab' +%] a-active[% END +%]">[% l('conflicts Policy') %]</a></li>
             <li id="biel-terms-tac-tab" class="ja-hide tm-li-2[% IF selected_tab == 'biel-terms-tac-tab' +%] active[% END +%] last"><a href="?selected_tab=biel-terms-tac-tab" class="tm-a-2[% IF selected_tab == 'biel-terms-tac-tab' +%] a-active[% END +%]">[% l('BIEL Terms') %]</a></li>
@@ -41,6 +42,9 @@
       </div>
       <div id="affiliate-tac-tab-content" class="toggle-content[% IF selected_tab == 'affiliate-tac-tab' +%][% ELSE +%] invisible[% END +%]">
         [% INCLUDE misc/affiliate_tac_tab.html.tt %]
+      </div>
+      <div id="api-tac-tab-content" class="toggle-content[% IF selected_tab == 'api-tac-tab' +%][% ELSE +%] invisible[% END +%]">
+        [% INCLUDE misc/api_tac_tab.html.tt %]
       </div>
 
       <div id="complaints-disputes-tac-tab-content" class="toggle-content[% IF selected_tab == 'complaints-disputes-tac-tab' +%][% ELSE +%] invisible[% END +%]">

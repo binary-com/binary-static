@@ -1,5 +1,8 @@
 <div class='grd-grid-12 static_full'>
   <h1>[% l('Create New Account') %]</h1>
+  <p class='notice-message'>
+    [% l('Thank you for signing up! Please check your email to retrieve the verification token.') %]
+  </p>
   <div class="grd-parent grd-row-padding">
     <div class="rbox form">
       <div class="rbox-wrap">
@@ -7,24 +10,33 @@
           <fieldset>
             <legend id="details">[% l('Details') %]</legend>
             <div class="grd-row-padding row clear">
-              <div class="grd-grid-4  form_label">
+              <div class="grd-grid-4 form_label">
+                <label for="verification-code">[% l('Verification token') %]</label>
+              </div>
+              <div class="grd-grid-8">
+                <input type="text" id="verification-code" maxlength="48" autocomplete="off"></input>
+                <div class="hint">[% l('Please check your email for the value of this token') %]</div>
+                <p class="errorfield" id="error-verification-code" style="display:none"></p>
+              </div>
+            </div>
+            <div class="grd-row-padding row clear" style="display:none">
+              <div class="grd-grid-4 form_label">
                 <label for="email">[% l('Please re-enter your email') %]</label>
               </div>
               <div class="grd-grid-8">
                 <input type="email" id="email" name="email" maxlength="50"></input>
-                <p class="errorfield" id="error-email" style="display:none"></p>
               </div>
             </div>
             <div class="grd-row-padding row clear">
               <div class="grd-grid-4  form_label">
-                <label for="password">[% l('Password') %]</label>
+                <label for="password">[% l('Choose a password') %]</label>
               </div>
               <div class="grd-grid-8">
                 <input type="password" id="password" name="password" maxlength="25"></input>
                 <p style="margin:0px;height:0.5em;">
                   <meter id="password-meter" value="" max="50" min="0" high="20" low="10" optimum="50"></meter>
                 </p>
-                <div class="hint">[% l('Minimum 6 characters with at least 1 number') %]</div>
+                <div class="hint">[% l('Minimum of six lower and uppercase letters with numbers') %]</div>
                 <p class="errorfield" id="error-password" style="display:none">
                   <abbr rel="tooltip" title="" id="tooltip-password"></abbr>
                 </p>
@@ -51,7 +63,6 @@
           </fieldset>
           <fieldset class="center-aligned" id="formlayout">
             <span class="button button-focus">
-              <input type="hidden" name="account" value="new virtual account"></input>
               <button class="button button-focus" id="btn_submit" type="submit">[% l('Create New Account') %]</button>
               <p class="errorfield" id="error-account-opening" style="display:none"></p>
             </span>

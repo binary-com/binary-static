@@ -126,63 +126,63 @@
 [% colum_grid = 'grd-grid-' _ (12 / time_table.keys.size) %]
 <div class="grd-grid-12 grd-row-padding contract_table">
     <div class="grd-grid-12 grd-row-padding table-header">
-    [% FOREACH time = time_table.keys.nsort %]
+    [% FOREACH time = sort_keys_by(time_table, 'epoch') %]
             <div class="[%- colum_grid -%]">
                 [% time_table.$time.label %]
             </div>
     [% END %]
     </div>
     <div class="grd-grid-12 table-body table-body-lines">
-    [% FOREACH time = time_table.keys.nsort %]
+    [% FOREACH time = sort_keys_by(time_table, 'epoch') %]
             <div class="[%- colum_grid -%]">
                 [% show_date(time_table.$time) %]
             </div>
     [% END %]
     </div>
     <div class="grd-grid-12 table-body">
-    [% FOREACH time = time_table.keys.nsort %]
+    [% FOREACH time = sort_keys_by(time_table, 'epoch') %]
         <div class="[%- colum_grid -%]">
             [% show_interval(time_table.$time) %]
         </div>
     [% END %]
     </div>
     <div class="grd-grid-12 grd-row-padding table-header">
-    [% FOREACH time = time_table.keys.nsort %]
+    [% FOREACH time = sort_keys_by(time_table, 'epoch') %]
         <div class="[%- colum_grid -%]">
             [% time_table.$time.spot_table.label %]
         </div>
     [% END %]
     </div>
     <div class="grd-grid-12 table-body table-body-lines">
-[% FOREACH time = time_table.keys.nsort %]
+    [% FOREACH time = sort_keys_by(time_table, 'epoch') %]
         <div class="[%- colum_grid -%]">
             [% show_spot(time_table.$time) %]
         </div>
-[% END %]
+    [% END %]
     </div>
     <div class="grd-grid-12 grd-hide-mobile grd-hide-phablet table-body">
-    [% FOREACH time = time_table.keys.nsort %]
+    [% FOREACH time = sort_keys_by(time_table, 'epoch') %]
         <div class="[%- colum_grid -%]">
             [% show_barriers(time_table.$time) %]
         </div>
     [% END %]
     </div>
     <div class="grd-grid-12 grd-row-padding table-header">
-    [% FOREACH time = time_table.keys.nsort %]
+    [% FOREACH time = sort_keys_by(time_table, 'epoch') %]
         <div class="[%- colum_grid -%]">
             [% time_table.$time.price_table.label %]
         </div>
     [% END %]
     </div>
     <div class="grd-grid-12 table-body table-body-lines">
-    [% FOREACH time = time_table.keys.nsort %]
+    [% FOREACH time = sort_keys_by(time_table, 'epoch') %]
         <div class="[%- colum_grid -%]">
             [% show_price(time_table.$time) %]
        </div>
     [% END %]
     </div>
     <div class="grd-grid-12 table-body">
-    [% FOREACH time = time_table.keys.nsort %]
+    [% FOREACH time = sort_keys_by(time_table, 'epoch') %]
         <div class="[%- colum_grid -%]">
             [% show_roi(time_table.$time) %]
         </div>

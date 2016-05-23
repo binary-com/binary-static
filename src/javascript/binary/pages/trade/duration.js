@@ -17,9 +17,8 @@ var Durations = (function(){
     var has_end_date = 0;
 
     var displayDurations = function() {
-
         var startType;
-        if(sessionStorage.getItem('date_start') && StartDates.displayed() && moment(sessionStorage.getItem('date_start')*1000).isAfter(moment()) ){
+        if(Defaults.get('date_start') !== 'now' && StartDates.displayed() && moment(Defaults.get('date_start')*1000).isAfter(moment())) {
             startType = 'forward';
         }
         else {
@@ -29,6 +28,7 @@ var Durations = (function(){
         var durations = Contract.durations();
         if (durations === false) {
             document.getElementById('expiry_row').style.display = 'none';
+            Defaults.remove('expiry_type', 'duration_amount', 'duration_units', 'expiry_date', 'expiry_time');
             return false;
         }
 
@@ -179,10 +179,14 @@ var Durations = (function(){
     };
 
     var displayEndTime = function(){
-        var current_moment = moment().add(5, 'minutes').utc();
-        document.getElementById('expiry_date').value = current_moment.format('YYYY-MM-DD');
-        document.getElementById('expiry_time').value = current_moment.format('HH:mm');
-        Durations.setTime(current_moment.format('HH:mm'));
+        var current_moment = moment(window.time).add(5, 'minutes').utc();
+        var expiry_date = Defaults.get('expiry_date') || current_moment.format('YYYY-MM-DD'),
+            expiry_time = Defaults.get('expiry_time') || current_moment.format('HH:mm');
+        document.getElementById('expiry_date').value = expiry_date;
+        document.getElementById('expiry_time').value = expiry_time;
+        Defaults.set('expiry_date', expiry_date);
+        Defaults.set('expiry_time', expiry_time);
+        Durations.setTime(expiry_time);
 
         durationPopulate();
     };
@@ -214,18 +218,24 @@ var Durations = (function(){
 
     var durationPopulate = function() {
         var unit = document.getElementById('duration_units');
-        var unitValue = unit.options[unit.selectedIndex].getAttribute('data-minimum');
-        document.getElementById('duration_minimum').textContent = unitValue;
+        var unitMinValue = unit.options[unit.selectedIndex].getAttribute('data-minimum'),
+            unitValue = Defaults.get('duration_amount') || unitMinValue;
+        unit.value = Defaults.get('duration_units') &&
+            document.querySelectorAll('select[id="duration_units"] [value="' + Defaults.get('duration_units') + '"]').length ?
+                Defaults.get('duration_units') : unit.value;
+        document.getElementById('duration_minimum').textContent = unitMinValue;
         if(selected_duration.amount && selected_duration.unit > unitValue){
             unitValue = selected_duration.amount;
         }
         document.getElementById('duration_amount').value = unitValue;
+        Defaults.set('duration_amount', unitValue);
         displayExpiryType(unit.value);
+        Defaults.set('duration_units', unit.value);
 
         // jquery for datepicker
         var amountElement = $('#duration_amount');
         if (unit.value === 'd') {
-            var tomorrow = new Date();
+            var tomorrow = window.time ? new Date(window.time) : new Date();
             tomorrow.setDate(tomorrow.getDate() + 1);
 
             amountElement.datepicker({
@@ -237,7 +247,7 @@ var Durations = (function(){
                     }
                     else{
                         var date = new Date(value);
-                        var today = new Date();
+                        var today = window.time ? new Date(window.time) : new Date();
                         dayDiff = Math.ceil((date - today) / (1000 * 60 * 60 * 24));
                     }                    
                     amountElement.val(dayDiff);
@@ -248,6 +258,13 @@ var Durations = (function(){
             amountElement.datepicker("destroy");
         }
 
+        $('.pickadate').datepicker('destroy');
+        $('.pickadate').datepicker({
+            minDate: window.time ? new Date(window.time) : new Date(),
+            dateFormat: 'yy-mm-dd'
+        });
+
+        validateMinDurationAmount();
         // we need to call it here as for days we need to show absolute barriers
         Barriers.display();
     };
@@ -256,7 +273,13 @@ var Durations = (function(){
         var target = document.getElementById('expiry_type'),
             fragment = document.createDocumentFragment();
 
-        var current_selected = target.value || 'duration',
+        // in case of having endtime as expiry_type and change the form to contract types
+        // which only have duration and do not support endtime, it should change the Default value
+        // to get corrected based on contract situations
+        if($('#expiry_type').find('option[value=' + Defaults.get('expiry_type') + ']').length === 0 && target.value) {
+                Defaults.set('expiry_type', target.value);
+        }
+        var current_selected = Defaults.get('expiry_type') || target.value || 'duration',
             id = current_selected,
             hideId = (current_selected === 'duration') ? 'endtime' : 'duration';
 
@@ -322,8 +345,10 @@ var Durations = (function(){
     var selectEndDate = function(end_date){
         var expiry_time = document.getElementById('expiry_time');
         $('#expiry_date').val(end_date);
-        if(moment(end_date).isAfter(moment(),'day')){
+        Defaults.set('expiry_date', end_date);
+        if(moment(end_date).isAfter(moment(window.time),'day')){
             Durations.setTime('');
+            Defaults.remove('expiry_time');
             StartDates.setNow();
             expiry_time.hide();
             var date_start = StartDates.node();
@@ -331,25 +356,36 @@ var Durations = (function(){
         }
         else{
             Durations.setTime(expiry_time.value);
+            Defaults.set('expiry_time', Defaults.get('expiry_time') || expiry_time.value);
             expiry_time.show();
             processPriceRequest();
         }
 
-        sessionStorage.setItem('end_date',end_date);
         Barriers.display();
+    };
+
+    var validateMinDurationAmount = function(){
+        var durationAmountElement = document.getElementById('duration_amount'),
+            durationMinElement    = document.getElementById('duration_minimum');
+        if(!isVisible(durationAmountElement) || !isVisible(durationMinElement)) return;
+        if(durationAmountElement.value * 1 < durationMinElement.textContent * 1) {
+            durationAmountElement.classList.add('error-field');
+        } else {
+            durationAmountElement.classList.remove('error-field');
+        }
     };
 
     return {
         display: displayDurations,
         displayEndTime: displayEndTime,
         populate: durationPopulate,
-        setTime: function(time){ $('#expiry_time').val(time); expiry_time = time; },
+        setTime: function(time){ $('#expiry_time').val(time); Defaults.set('expiry_time', time); expiry_time = time; },
         getTime: function(){ return expiry_time; },
         processTradingTimesAnswer: processTradingTimesAnswer,
         trading_times: function(){ return trading_times; },
         select_amount: function(a){ selected_duration.amount = a; },
         select_unit: function(u){ selected_duration.unit = u; } ,
-        selectEndDate: selectEndDate       
+        selectEndDate: selectEndDate,
+        validateMinDurationAmount: validateMinDurationAmount
     };
 })();
-

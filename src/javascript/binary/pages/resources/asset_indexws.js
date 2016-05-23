@@ -29,7 +29,14 @@ var AssetIndexWS = (function() {
             values : 4
         };
 
-        BinarySocket.send({"active_symbols": "brief"});
+        var $args = {
+            active_symbols: "brief"
+        };
+        if (isJapanTrading()) {
+            $args['landing_company'] = "japan";
+        }
+
+        BinarySocket.send($args);
         BinarySocket.send({"asset_index": 1});
     };
 

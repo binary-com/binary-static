@@ -95,9 +95,7 @@ var BetPrice = function() {
             var that = this;
             var timeout = 60000;
 
-            if(!$.cookie('login')) {
-                page.client.is_logged_in = false;
-                window.location.href = page.url.url_for('login');
+            if(page.client.show_login_if_logout(false)) {
                 return;
             }
 
@@ -231,9 +229,7 @@ var BetPrice = function() {
                     var form = target.parents('form');
                     var timeout = 60000;
 
-                    if(!$.cookie('login')) {
-                        page.client.is_logged_in = false;
-                        window.location.href = page.url.url_for('login');
+                    if(page.client.show_login_if_logout(false)) {
                         return;
                     }
 
@@ -572,7 +568,6 @@ var BetPrice = function() {
                         var bet = JSON.parse(data);
                         BetForm.spot.update(bet.spot);
                         BetPrice.order_form.update_from_stream(bet);
-                        BetAnalysis.tab_last_digit.update(BetForm.attributes.underlying(), bet.spot);
                     }
                 },
             };
@@ -731,15 +726,12 @@ var BetPrice = function() {
                         // We're intentionally making payout errors have highest priority
                         // it's something they can fix immediately on this web interface.
 
+                        // just a minimum stake and a maximum payout check will do.
                         if (prices[i].payout.raw/100  - epsilon > bf_amount.payout_max ||
-                            prices[i].payout.raw/100 + epsilon < bf_amount.payout_min) {
-                            err = bf_amount.payout_err;
-                        } else if (prices[i].price.raw/100 - epsilon > bf_amount.stake_max ||
                             prices[i].price.raw/100 + epsilon < bf_amount.stake_min) {
-                            // You probably think there should be two conditions above, but too high stake just
-                            // makes for "too high payout" or "no return" errors.
-                            err = bf_amount.stake_err;
+                            err = bf_amount.error;
                         }
+
                         this.show_error(form, err);
                         this.update_price(prices[i].id, prices[i].price, prices[i].prev_price);
                         this.update_description(prices[i].id, prices[i].payout, prices[i].prev_payout);

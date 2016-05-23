@@ -22,7 +22,7 @@
     %div{:class => 'grd-grid-12 rbox-content', :id => 'client_message_content'}
       %p{:class =>'center notice-msg'}
         = l('The account transfer is unavailable. Please')
-        %a.pjaxload{:href => url_for('/cashier/forward') , :act => 'deposit'}= l('deposit')
+        %a.pjaxload{:href => url_for('/cashier/forwardws#deposit')}= l('deposit')
         = l('to your account.')
 
 %form{:id => 'account_transfer'}

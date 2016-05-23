@@ -5,7 +5,7 @@ var SettingsWS = (function() {
         var classHidden = 'invisible',
             classReal   = '.real';
 
-        if(page.client.is_real) {
+        if(!page.client.is_virtual()) {
             $(classReal).removeClass(classHidden);
         }
         else {
@@ -21,15 +21,22 @@ var SettingsWS = (function() {
 }());
 
 
-pjax_config_page("settingsws", function() {
+pjax_config_page_require_auth("settingsws", function() {
     return {
         onLoad: function() {
-            if (!page.client.is_logged_in) {
-                window.location.href = page.url.url_for('login');
-                return;
+            if(page.client.get_storage_value('is_virtual').length === 0) {
+                BinarySocket.init({
+                    onmessage: function(msg) {
+                        var response = JSON.parse(msg.data);
+                        if (response && response.msg_type === 'authorize') {
+                            SettingsWS.init();
+                        }
+                    }
+                });
             }
-
-            SettingsWS.init();
+            else {
+                SettingsWS.init();
+            }
         }
     };
 });

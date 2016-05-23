@@ -23,9 +23,8 @@ test:
   - 'jshint'
 
 default:
-  - 'clean'
+  - 'jshint'
   - 'css'
   - 'js'
   - 'fileindex'
   - 'copy'
-  - 'jshint'

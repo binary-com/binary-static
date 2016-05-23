@@ -18,6 +18,12 @@ var SelfExlusionWS = (function() {
         errorClass  = 'errorfield';
         hiddenClass = 'hidden';
 
+        if(page.client.is_virtual()) {
+            $('#selfExclusionDesc').addClass(hiddenClass);
+            showPageError(Content.localize().textFeatureUnavailable, true);
+            return;
+        }
+
         showLoadingImage($loading);
 
         submittedValues = {};
@@ -51,6 +57,9 @@ var SelfExlusionWS = (function() {
         $form.removeClass(hiddenClass);
 
         if('error' in response) {
+            if (response.error.code === 'ClientSelfExclusion') {
+                page.client.send_logout_request();
+            }
             if('message' in response.error) {
                 showPageError(response.error.message, true);
             }
@@ -104,6 +113,7 @@ var SelfExlusionWS = (function() {
         }
         else {
             showFormMessage(text.localize('Your changes have been updated.'), true);
+            page.client.set_storage_value('session_start', parseInt(moment().valueOf() / 1000)); // used to handle session duration limit
             getRequest();
         }
     };
@@ -132,7 +142,7 @@ var SelfExlusionWS = (function() {
                     showError(key, text.localize('Please enter an integer value'));
                 }
                 else if(currentValue > 0 && (newValue.length === 0 || isLargerInt(newValue, currentValue))) {
-                    showError(key, text.localize('Please enter a number between 0 and %1').replace('%1', currentValue));
+                    showError(key, text.localize('Please enter a number between 0 and [_1]').replace('[_1]', currentValue));
                 }
                 else if(key === 'session_duration_limit' && newValue > (6 * 7 * 24 * 60)) {
                     showError(key, text.localize('Session duration limit cannot be more than 6 weeks.'));
@@ -240,23 +250,17 @@ var SelfExlusionWS = (function() {
 }());
 
 
-pjax_config_page("user/self_exclusionws", function() {
+pjax_config_page_require_auth("user/self_exclusionws", function() {
     return {
         onLoad: function() {
-        	if (!getCookieItem('login')) {
-                window.location.href = page.url.url_for('login');
-                return;
-            }
-            if((/VRT/.test($.cookie('loginid')))){
-                window.location.href = page.url.url_for('user/settingsws');
-                return;
-            }
-
-        	BinarySocket.init({
+            BinarySocket.init({
                 onmessage: function(msg){
                     var response = JSON.parse(msg.data);
                     if (response) {
-                        if (response.msg_type === "get_self_exclusion") {
+                        if (response.msg_type === "authorize") {
+                            SelfExlusionWS.init();
+                        }
+                        else if (response.msg_type === "get_self_exclusion") {
                             SelfExlusionWS.getResponse(response);
                         }
                         else if (response.msg_type === "set_self_exclusion") {
@@ -267,10 +271,12 @@ pjax_config_page("user/self_exclusionws", function() {
                         console.log('some error occured');
                     }
                 }
-            });	
+            });
 
             Content.populate();
-            SelfExlusionWS.init();
+            if(TUser.get().hasOwnProperty('is_virtual')) {
+                SelfExlusionWS.init();
+            }
         }
     };
 });

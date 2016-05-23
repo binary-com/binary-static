@@ -44,8 +44,6 @@ onUnload.queue(function () {
     page.on_unload();
 });
 
-var bo_url;
-
 //////////////////////////////////////////////////////////////
 //Purpose: To solve cross domain logged out server problem.
 //Return: Hostname for this page
@@ -193,54 +191,55 @@ onLoad.queue(function () {
 // different windows. The problem that is solved here is what
 // happens if the user logs out or switches loginid in one
 // window while keeping another window or tab open. This can
-// lead to unintended trades. The solution is to load the
-// account page in all windows after switching loginid or
-// the home page after logout.
+// lead to unintended trades. The solution is to reload the
+// page in all windows after switching loginid or after logout.
 
 // onLoad.queue does not work on the home page.
 // jQuery's ready function works always.
-if (!/backoffice/.test(document.URL)) { // exclude BO
-    $(document).ready(function () {
-        // $.cookie is not always available.
-        // So, fall back to a more basic solution.
-        var match = document.cookie.match(/\bloginid=(\w+)/);
-        match = match ? match[1] : '';
-        $(window).on('storage', function (jq_event) {
-            if (jq_event.originalEvent.key !== 'active_loginid') return;
-            if (jq_event.originalEvent.newValue === match) return;
-            if (jq_event.originalEvent.newValue === '') {
-                // logged out
-                location.href = page.url.url_for('home');
-            } else {
-                // loginid switch
-                location.href = page.url.url_for('user/my_accountws?loginid=' + jq_event.originalEvent.newValue);
-            }
-        });
 
-        LocalStore.set('active_loginid', match);
-        var start_time;
-        var time_now;
-        var tabChanged = function() {
-            if(clock_started === true){
-                if (document.hidden || document.webkitHidden) {
-                    start_time = moment().valueOf();
-                    time_now = page.header.time_now;
-                }else {
-                    time_now = (time_now + (moment().valueOf() - start_time));
-                    page.header.time_now = time_now;
-                }
-            }
-        };
-
-        if (typeof document.webkitHidden !== 'undefined') {
-            if (document.addEventListener) {
-                document.addEventListener("webkitvisibilitychange", tabChanged);
-            }
-        } else if (typeof document.hidden !== 'undefined') {
-            if (document.addEventListener) {
-                document.addEventListener("visibilitychange", tabChanged);
+$(document).ready(function () {
+  if (!$('body').hasClass('BlueTopBack')) { // exclude BO
+    // $.cookie is not always available.
+    // So, fall back to a more basic solution.
+    var match = document.cookie.match(/\bloginid=(\w+)/);
+    match = match ? match[1] : '';
+    $(window).on('storage', function (jq_event) {
+        if (jq_event.originalEvent.key !== 'active_loginid') return;
+        if (jq_event.originalEvent.newValue === match) return;
+        if (jq_event.originalEvent.newValue === '') {
+            // logged out
+            page.reload();
+        } else {
+            // loginid switch
+            if(!window['is_logging_in']) {
+                page.reload();
             }
         }
-
     });
-}
+
+    LocalStore.set('active_loginid', match);
+    var start_time;
+    var time_now;
+    var tabChanged = function() {
+        if(clock_started === true){
+            if (document.hidden || document.webkitHidden) {
+                start_time = moment().valueOf();
+                time_now = page.header.time_now;
+            }else {
+                time_now = (time_now + (moment().valueOf() - start_time));
+                page.header.time_now = time_now;
+            }
+        }
+    };
+
+    if (typeof document.webkitHidden !== 'undefined') {
+        if (document.addEventListener) {
+            document.addEventListener("webkitvisibilitychange", tabChanged);
+        }
+    } else if (typeof document.hidden !== 'undefined') {
+        if (document.addEventListener) {
+            document.addEventListener("visibilitychange", tabChanged);
+        }
+    }
+  }
+});

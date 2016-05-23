@@ -22,11 +22,3 @@
       %h4
         %a.pjaxload{:href => url_for('/resources/market_timesws')}= l('Trading Times')
       %p= l('View the operating hours of the markets you can trade.')
-  .grd-grid-3.grd-grid-mobile-6.grd-parent
-    .grd-grid-8.grd-with-padding
-      %a.pjaxload{:href => url_for('/resources/contract_guide'),:id => 'contract-guide'}
-        %img#charting_icon.responsive.charting-page-icon{:src => url_for('images/pages/resources/contract-guide.svg')}
-    .grd-grid-12
-      %h4
-        %a.pjaxload{:href => url_for('/resources/contract_guide')}= l('Trading Guide')
-      %p= l('Learn about the different ways to trade on the markets.')

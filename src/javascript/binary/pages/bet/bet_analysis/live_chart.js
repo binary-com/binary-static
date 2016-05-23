@@ -21,7 +21,6 @@ BetAnalysis.tab_live_chart = function () {
         get_live_chart: function() {
             if (document.getElementById('underlying')){
                 showHighchart();
-                setUnderlyingTime();
             } else {
                 var that = this;
                 $.ajax(ajax_loggedin({

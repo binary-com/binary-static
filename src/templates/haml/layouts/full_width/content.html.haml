@@ -1,6 +1,6 @@
 - my $content_class = (current_route || 'home').'-content';
 #content.$content_class
-  != google_tag_tracking_code
+  = include('layouts/default/gtm')
   = include('layouts/default/page_info')
   = content
   .push

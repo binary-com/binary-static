@@ -14,8 +14,6 @@ var PaymentAgentWithdrawWS = (function() {
         minAmount,
         maxAmount;
 
-    var verificationCode;
-
     var init = function() {
         containerID = '#paymentagent_withdrawal';
         $views      = $(containerID + ' .viewItem');
@@ -27,9 +25,10 @@ var PaymentAgentWithdrawWS = (function() {
             form    : '#viewForm'
         };
         fieldIDs = {
-            ddlAgents : '#ddlAgents',
-            txtAmount : '#txtAmount',
-            txtDesc   : '#txtDescription'
+            verificationCode : '#verification-code',
+            ddlAgents        : '#ddlAgents',
+            txtAmount        : '#txtAmount',
+            txtDesc          : '#txtDescription'
         };
         withdrawCurrency = 'USD';
         minAmount = 10;
@@ -37,17 +36,9 @@ var PaymentAgentWithdrawWS = (function() {
 
         $views.addClass('hidden');
 
-        if((/VRT/).test($.cookie('loginid'))) { // Virtual Account
+        if(page.client.is_virtual()) { // Virtual Account
             showPageError(text.localize('You are not authorized for withdrawal via payment agent.'));
             return false;
-        }
-
-        if ($.cookie('verify_token')) {
-          verificationCode = $.cookie('verify_token');
-          $.removeCookie('verify_token', {path: '/', domain: '.' + document.domain.split('.').slice(-2).join('.')});
-        } else {
-          showPageError(Content.localize().textTokenMissing, Content.localize().textClickHereToRestart.replace('%1', page.url.url_for('paymentagent/request_withdrawws')));
-          return false;
         }
 
         var residence = $.cookie('residence');
@@ -74,6 +65,7 @@ var PaymentAgentWithdrawWS = (function() {
         $ddlAgents.empty();
         var paList = response.paymentagent_list.list;
         if(paList.length > 0) {
+            BinarySocket.send({verify_email:page.user.email, type:'paymentagent_withdraw'});
             insertListOption($ddlAgents, text.localize('Please select a payment agent'), '');
             for(var i = 0; i < paList.length; i++){
                 insertListOption($ddlAgents, paList[i].name, paList[i].paymentagent_loginid);
@@ -98,7 +90,8 @@ var PaymentAgentWithdrawWS = (function() {
 
         var agent  = $(fieldIDs.ddlAgents).val(),
             amount = $(fieldIDs.txtAmount).val().trim(),
-            desc   = $(fieldIDs.txtDesc).val().trim();
+            desc   = $(fieldIDs.txtDesc).val().trim(),
+            token  = $(fieldIDs.verificationCode).val().trim();
 
         var letters = Content.localize().textLetters,
             numbers = Content.localize().textNumbers,
@@ -109,10 +102,20 @@ var PaymentAgentWithdrawWS = (function() {
         // Payment Agent
         isRequiredError(fieldIDs.ddlAgents);
 
+        // verification token
+        if(!isRequiredError(fieldIDs.verificationCode)){
+          if (token.length !== 48) {
+            showError(fieldIDs.verificationCode, Content.errorMessage('valid', text.localize('verification token')));
+          }
+        }
+
         // Amount
         if(!isRequiredError(fieldIDs.txtAmount)){
-            if(!(/(^[0-9\.]+$)/).test(amount) || !$.isNumeric(amount)) {
+            if(!(/^\d+(\.\d+)?$/).test(amount) || !$.isNumeric(amount)) {
                 showError(fieldIDs.txtAmount, Content.errorMessage('reg', [numbers]));
+            }
+            else if(!(/^\d+(\.\d{1,2})?$/).test(amount)) {
+                showError(fieldIDs.txtAmount, text.localize('Only 2 decimal points are allowed.'));
             }
             else if(amount < minAmount) {
                 showError(fieldIDs.txtAmount, text.localize('Invalid amount, minimum is') + ' ' + withdrawCurrency + ' ' + minAmount);
@@ -129,11 +132,12 @@ var PaymentAgentWithdrawWS = (function() {
 
         if(isValid) {
             return {
-                agent    : agent,
-                agentname: $(fieldIDs.ddlAgents + ' option:selected').text(),
-                currency : withdrawCurrency,
-                amount   : amount,
-                desc     : desc
+                agent             : agent,
+                agentname         : $(fieldIDs.ddlAgents + ' option:selected').text(),
+                currency          : withdrawCurrency,
+                amount            : amount,
+                desc              : desc,
+                verificationCode : token
             };
         }
         else {
@@ -168,11 +172,11 @@ var PaymentAgentWithdrawWS = (function() {
         BinarySocket.send({
             "paymentagent_withdraw" : 1,
             "paymentagent_loginid"  : formData.agent,
-            "currency"    : formData.currency,
-            "amount"      : formData.amount,
-            "description" : formData.desc,
-            "dry_run"     : dry_run,
-            "verification_code": verificationCode
+            "currency"              : formData.currency,
+            "amount"                : formData.amount,
+            "description"           : formData.desc,
+            "dry_run"               : dry_run,
+            "verification_code"     : formData.verificationCode
         });
     };
 
@@ -215,6 +219,8 @@ var PaymentAgentWithdrawWS = (function() {
                     $('#formMessage').css('display', '')
                         .attr('class', errorClass)
                         .html(response.error.message);
+                } else if (response.error.code === 'InvalidToken') {
+                    showPageError(Content.localize().textClickHereToRestart.replace('[_1]', page.url.url_for('paymentagent/withdrawws')));
                 } else {
                     showPageError(response.error.message);
                 }
@@ -258,19 +264,18 @@ var PaymentAgentWithdrawWS = (function() {
 
 
 
-pjax_config_page("paymentagent/withdrawws", function() {
+pjax_config_page_require_auth("paymentagent/withdrawws", function() {
     return {
         onLoad: function() {
-            if (!$.cookie('login')) {
-                window.location.href = page.url.url_for('login');
-                return;
-            }
             BinarySocket.init({
                 onmessage: function(msg) {
                     var response = JSON.parse(msg.data);
                     if (response) {
                         var type = response.msg_type;
                         switch(type){
+                            case "authorize":
+                                PaymentAgentWithdrawWS.init();
+                                break;
                             case "paymentagent_list":
                                 PaymentAgentWithdrawWS.populateAgentsList(response);
                                 break;
@@ -288,7 +293,9 @@ pjax_config_page("paymentagent/withdrawws", function() {
             });
 
             Content.populate();
-            PaymentAgentWithdrawWS.init();
+            if(TUser.get().hasOwnProperty('is_virtual')) {
+                PaymentAgentWithdrawWS.init();
+            }
         }
     };
 });

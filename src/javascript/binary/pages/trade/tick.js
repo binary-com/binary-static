@@ -109,7 +109,10 @@ var Tick = (function() {
         clean: function() {
             spots = {};
             quote = '';
-            $('#spot').fadeOut(200);
+            $('#spot').fadeOut(200, function(){
+                // resets spot movement coloring, will continue on the next tick responses
+                $(this).removeClass('price_moved_down price_moved_up').text('');
+            });
         },
         spots: function() {
             return spots;

@@ -1,0 +1,11 @@
+- stash(title => l('OTC Indices and Stocks'));
+.section-content.section-9
+  .grd-grid-12.grd-grid-mobile-12
+    %h1= l('What are OTC indices and stocks?')
+  .grd-grid-8.grd-grid-mobile-12
+    %p= l('[_1]\'s OTC Indices and stocks offer the benefit of real-time charts and pricing. Enjoy even more exciting opportunities to trade our featured market indices and stocks through this new real-time offering.', stash->{website_name});
+    %p= l('[_1]\'s OTC Indices and stocks are sourced from the over-the-counter market and provide you with an alternative means of trading stock indices and stocks - available from sources outside of the centralised exchanges.', stash->{website_name});
+    %p= l('Please note that due to their over-the-counter nature, the prices of the OTC Indices and stocks will differ from the prices of the corresponding indices and stocks on centralised exchanges.');
+  .grd-grid-4.grd-grid-mobile-12
+    %p
+      %img.responsive{:src => url_for('images/pages/get-started/otc-indices.svg')}

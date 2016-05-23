@@ -2,16 +2,16 @@
     <div id="topbar">
         <div class='grd-container'>
             <div class='grd-grid-12 grd-parent'>
-                <div class='grd-grid-6 grd-grid-mobile-12 by_client_type client_virtual upgrademessage' style="display: none;">
+                <div id="topbar-msg" class='grd-grid-6 grd-grid-mobile-12 by_client_type client_virtual upgrademessage' style="display: none;">
                     <span class='grd-hide-mobile'>
                         <span id='virtual-text'>[% l("You're using a Virtual Account.") %]</span>
                     </span>
-                    <a id="virtual-upgrade-link" class="pjaxload with_login_cookies pulser" href="[% request.url_for('new_account/realws') %]">[% l("Upgrade to a Real Account") %]</a>
-                    <a id="vr-japan-upgrade-link" class="pjaxload with_login_cookies pulser" href="[% request.url_for('new_account/japan') %]">[% l("Upgrade to a Real Account") %]</a>
-                    <a id="vr-financial-upgrade-link" class="invisible pjaxload with_login_cookies pulser" href="[% request.url_for('new_account/maltainvest') %]">[% l("Upgrade to a Financial Account") %]</a>
+                    <a class="pjaxload with_login_cookies pulser virtual-upgrade-link" href="[% request.url_for('new_account/realws') %]">[% l("Upgrade to a Real Account") %]</a>
+                    <a class="pjaxload with_login_cookies pulser vr-japan-upgrade-link" href="[% request.url_for('new_account/japanws') %]">[% l("Upgrade to a Real Account") %]</a>
+                    <a class="invisible pjaxload with_login_cookies pulser vr-financial-upgrade-link" href="[% request.url_for('new_account/maltainvestws') %]">[% l("Upgrade to a Financial Account") %]</a>
                 </div>
                 <div class='grd-grid-6 grd-grid-mobile-12 by_client_type client_real upgrademessage' style="display: none;">
-                    <a id="financial-upgrade-link" class="invisible pjaxload with_login_cookies pulser" href="[% request.url_for('new_account/maltainvest') %]">[% l("Open a Financial Account") %]</a>
+                    <a class="invisible pjaxload with_login_cookies pulse financial-upgrade-link" href="[% request.url_for('new_account/maltainvestws') %]">[% l("Open a Financial Account") %]</a>
                 </div>
                 <div class='grd-grid-6 grd-grid-mobile-12 grd-parent' id='topbar-info'>
                     <div class='grd-grid-5 grd-grid-mobile-7' id="gmt-clock"></div>
@@ -20,7 +20,7 @@
                     </div>
                     <div class='grd-grid-4 grd-grid-mobile-5'>
                         <div class="[% language %]" id='language_select'>
-                            [% language_select %]
+                            [% INCLUDE global/language_form.html.tt %]
                         </div>
                     </div>
                 </div>
@@ -47,8 +47,11 @@
                             <li>
                                 <a class="smaller-font pjaxload" href="[% request.url_for('why-us') %]"[% target %]>[% l("Why Us?") %]</a>
                             </li>
-                            <li>
+                            <li class="ja-hide">
                                 <a class="smaller-font pjaxload" href="[% request.url_for('get-started') %]"[% target %]>[% l("Get Started") %]</a>
+                            </li>
+                            <li class="all-hide ja-show-block">
+                              <a class="smaller-font pjaxload" href="[% request.url_for('get-started-jp') %]"[% target %]>[% l("Get Started") %]</a>
                             </li>
                             <li>
                                 <a class="smaller-font pjaxload" href="[% request.url_for('tour') %]"[% target %]>[% l("Tour") %]</a>
@@ -61,7 +64,7 @@
                 </div>
                 <div id="client-logged-in" class="grd-grid-3 grd-grid-mobile-9 grd-grid-phablet-10 by_client_type client_real client_virtual" style="display: none">
                   <div id="logout">
-                    <form id="loginid-switch-form" action="[% request.url_for('loginid_switch?l=EN') %]" method="post">
+                    <form id="loginid-switch-form">
                         <div id="login-fields">
                             <select id="client_loginid" name="client_loginid">
                             </select>
@@ -71,17 +74,8 @@
                     </form>
                   </div>
                 </div>
-                <div id="client-logged-out" class="grd-grid-3 grd-grid-mobile-9 grd-grid-phablet-10 grd-no-gutter-left by_client_type client_logged_out">
-                    <form id="login-form" action="[% request.url_for('login') %]" method="post">
-                        <span id="login-fields">
-                            <input name="email" type="text" placeholder="[% l("Email") %]" />
-                            <input name="password" type="password" placeholder="[% l("Password") %]" />
-                            <input type="submit" value="[% l("Log in") %]" />
-                        </span>
-                        <span id="login-links">
-                            <a class="pjaxload" id="lost-password" href="[% request.url_for('/user/lost_password') %]">[% l("Lost password?") %]</a>
-                        </span>
-                    </form>
+                <div id="client-logged-out" class="grd-grid-3 grd-grid-mobile-9 grd-grid-phablet-10 grd-no-gutter-left by_client_type client_logged_out invisible">
+                    <div id="btn_login" class="button">[% l('Log in') %]</div>
                 </div>
                 <div class='grd-grid-1 grd-hide grd-show-mobile grd-no-gutter-mobile grd-show-phablet'>
                     <div id='mobile-menu-icon-container'>

@@ -53,10 +53,10 @@ InScriptStore.prototype = {
     }
 };
 
-var CookieStorage = function (cookie_name) {
+var CookieStorage = function (cookie_name, cookie_domain) {
     this.initialized = false;
     this.cookie_name = cookie_name;
-    this.domain = '.' + document.domain.split('.').slice(-2).join('.');
+    this.domain = cookie_domain || (/\.github\.io/i.test(window.location.hostname) ? window.location.hostname : '.' + document.domain.split('.').slice(-2).join('.'));
     this.expires = new Date('Thu, 1 Jan 2037 12:00:00 GMT');
     this.value = {};
 };
@@ -70,6 +70,17 @@ CookieStorage.prototype = {
             this.value = {};
         }
         this.initialized = true;
+    },
+    write: function(value, expireDate, isSecure) {
+        if (!this.initialized) this.read();
+        this.value = value;
+        if(expireDate) this.expires = expireDate;
+        $.cookie(this.cookie_name, this.value, {
+            expires: this.expires,
+            path   : '/',
+            domain : this.domain,
+            secure : !!isSecure,
+        });
     },
     get: function(key) {
         if (!this.initialized) this.read();
