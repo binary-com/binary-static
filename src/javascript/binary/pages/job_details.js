@@ -18,6 +18,11 @@ pjax_config_page('/open-positions/job-details', function() {
             $('.sections div').hide();
             $('.sections div[id=' + dept + '-' + page.url.location.hash.substring(1) + ']').show();
             $('.title-sections').html($('.sidebar li[class="selected"]').text());
+            if (dept === 'Information_Technology' && page.url.location.hash.substring(1) === 'section-three') {
+              $('.senior_perl_message').removeClass('invisible');
+            } else if (!$('.senior_perl_message').hasClass('invisible')) {
+              $('.senior_perl_message').addClass('invisible');
+            }
           }
           $(window).on('hashchange', function(){
             showSelectedDiv();
