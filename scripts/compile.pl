@@ -15,7 +15,7 @@ use BS qw/set_is_dev is_dev localize set_lang all_languages lang_display_name tt
 use BS::Request;
 
 # force = re-generate all files
-# dev   = for domain like http://fayland.github.io/binary-static-www2/ which has a sub path
+# dev   = for domain like http://fayland.github.io/binary-static/ which has a sub path
 # pattern = the url pattern to rebuild
 my $force;
 my $is_dev;
