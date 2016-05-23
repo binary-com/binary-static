@@ -23,12 +23,13 @@ function BinarySocketClass() {
         socketUrl;
         var host = window.location.host;
         if((/www\.binary\.com/i).test(host)) {
-            socketUrl = 'wss://ws.binaryws.com/websockets/v3?app_id=1';
+            socketUrl = 'wss://ws.binaryws.com/websockets/v3';
         } else if((/binaryqa/i).test(host)) {
-            socketUrl = 'wss://' + host + '/websockets/v3?app_id=1';
+            socketUrl = 'wss://' + host + '/websockets/v3';
         } else {
-            socketUrl = 'wss://www2.binary.com/websockets/v3?app_id=1';
+            socketUrl = 'wss://www2.binary.com/websockets/v3';
         }
+        socketUrl += '?app_id=' + app_id;
 
     if (page.language()) {
         socketUrl += '&l=' + page.language();
@@ -189,6 +190,7 @@ function BinarySocketClass() {
                 } else if (type === 'payout_currencies' && response.echo_req.hasOwnProperty('passthrough') && response.echo_req.passthrough.handler === 'page.client') {
                     page.client.response_payout_currencies(response);
                 } else if (type === 'get_settings') {
+                    if(!$.cookie('residence') && response.get_settings.country_code) page.client.set_cookie('residence', response.get_settings.country_code, window.location.host);
                     GTM.event_handler(response.get_settings);
                     page.client.set_storage_value('tnc_status', response.get_settings.client_tnc_status || '-');
                     if (!localStorage.getItem('risk_classification')) page.client.check_tnc();

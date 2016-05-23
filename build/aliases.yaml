@@ -24,7 +24,6 @@ test:
 
 default:
   - 'jshint'
-  - 'clean'
   - 'css'
   - 'js'
   - 'fileindex'

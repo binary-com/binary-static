@@ -16,6 +16,8 @@
         <meta property="og:type" content="website" />
         <meta property="og:image" content="[% request.url_for('images/common/og_image.gif') %]" />
 
+        <title>[%= browser_title =%]</title>
+
         <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700&subset=latin,vietnamese,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
 
         <link rel="apple-touch-icon" sizes="57x57" href="[% request.url_for('/images/favicons/apple-touch-icon-57x57.png') %]">
@@ -33,16 +35,15 @@
         <link rel="icon" type="image/png" sizes="16x16" href="[% request.url_for('/images/favicons/favicon-16x16.png') %]" >
         <link rel="icon" type="image/png" sizes="32x32" href="[% request.url_for('/images/favicons/favicon-32x32.png') %]" >
 
-        [% FOREACH key = available_languages.keys %]
-            <link rel="alternate" href="[% request.get_current_path() =%]?l=[% key %]" hreflang="[% key %]"/>
+        [% FOREACH o IN language_options =%]
+            [%= IF o.code.lower != 'ja' =%]
+            <link rel="alternate" href="[% request.url_for(request.url_for(current_path), { l => o.code.lower }) =%]" hreflang="[% o.code %]" />
+            [%= END %]
         [% END %]
-        [%= FOREACH css_file IN css_files =%]
+        [% FOREACH css_file IN css_files =%]
             <link rel="stylesheet" href="[%= css_file =%]">
         [% END %]
-
         [% INCLUDE global/javascripts.html.tt
             javascript=javascript
         %]
-
-        <title>[%= broker_name =%] - [%= title =%]</title>
     </head>

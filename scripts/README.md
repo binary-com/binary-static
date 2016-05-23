@@ -1,9 +1,9 @@
 ## INSTALL
 
- $ curl -L https://cpanmin.us | perl - App::cpanminus
- $ cpanm Carton
- $ cd scripts
- $ carton install
+* $ curl -L https://cpanmin.us | perl - App::cpanminus
+* $ cpanm Carton
+* $ cd scripts
+* $ carton install
 
 ## FAQ
 
