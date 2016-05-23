@@ -45,7 +45,7 @@ How to work with this project
         "trade",
         "payments"
       ],
-      "redirect_uri": "https://YOUR_GITHUB_USERNAME.github.io/binary-static-www2/en/logged_inws.html"
+      "redirect_uri": "https://YOUR_GITHUB_USERNAME.github.io/binary-static/en/logged_inws.html"
     }
     ```
 
@@ -88,5 +88,5 @@ How to work with this project
 ## Compile Parameters
 
 * `-f` force to overwrite the existing HTMLs
-* `-d` compile for use in gh-pages of a binary-static-www2 fork
+* `-d` compile for use in gh-pages of a binary-static fork
 * `-p pathname` only compile the files having *pathname* in path
