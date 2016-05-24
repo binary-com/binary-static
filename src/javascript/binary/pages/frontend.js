@@ -507,15 +507,9 @@ function Trim(str){
   return str;
 }
 
-function changeLanguage(lang) {
-  str = window.location.search;
-  str = page.url.replaceQueryParam('l', lang, str);
-  window.location = window.location.pathname + str;
-}
-
 function limitLanguage(lang) {
-  if (page.language() !== lang) {
-    changeLanguage(lang);
+  if (page.language() !== lang && !Login.is_login_pages()) {
+    window.location.href = page.url_for_language(lang);
   }
   if (document.getElementById('language_select')) {
     $('#language_select').remove();

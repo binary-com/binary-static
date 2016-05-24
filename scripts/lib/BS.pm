@@ -38,14 +38,15 @@ sub set_lang {
     $LANG = shift;
 }
 
+my %__lh;
 sub localize {
     my @texts = @_;
 
     require BS::I18N;
-    my $lh = BS::I18N::handle_for($LANG)
+    $__lh{$LANG} //= BS::I18N::handle_for($LANG)
         || die("could not build locale for language $LANG");
 
-    return $lh->maketext(@texts);
+    return $__lh{$LANG}->maketext(@texts);
 }
 
 sub all_languages {
@@ -82,13 +83,14 @@ sub lang_display_name {
 
 ## url_for
 sub root_url {
-    return is_dev() ? '/binary-static-www2/' : '/';
+    return is_dev() ? '/binary-static/' : '/';
 }
 
+my %__request;
 sub url_for {
     require BS::Request;
-    state $request = BS::Request->new(language => $LANG);
-    return $request->url_for(@_);
+    $__request{$LANG} //= BS::Request->new(language => $LANG);
+    return $__request{$LANG}->url_for(@_);
 }
 
 ## tt2/haml
@@ -296,7 +298,7 @@ sub menu {
         id         => 'topMenuApplications',
         url        => url_for('/applications'),
         text       => localize('Applications'),
-        link_class => 'pjaxload',
+        link_class => 'ja-hide pjaxload',
         };
 
     # push @{$menu}, $self->_main_menu_trading();
