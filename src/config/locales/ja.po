@@ -7,9 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-18 05:09+0000\n"
+"PO-Revision-Date: 2016-05-24 04:27+0000\n"
 "Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese "
+"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -662,42 +663,43 @@ msgstr "<option value=\"\"></option><option value=\"01\">１月</option><option 
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:108
-#, fuzzy
 #| msgid "<p style=\"font-weight: bold;\">Thanks for signing up for a virtual account!</p><p>Enter the following verification token into the form to create an account: <p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p><p>Enjoy trading with us on Binary.com.</p>"
 msgid "<p style=\"font-weight: bold;\">Thanks for signing up for a virtual account!</p><p>Enter the following verification token into the form to create an account: <p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p><p>Enjoy trading with us on Binary.com.</p>"
 msgstr ""
-"<p style=\"font-weight: bold;\">デモ口座へご登録いただきありがとうございます</p><p>下記認証コードをデモ口座申込みページ上の認証コード欄にご入力してください。 <p>\n"
-"<span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p><p>ご不明な点等ございましたら、カスタマーサポートまでご連絡ください。</p>"
+"<p style=\"font-weight: bold;\""
+">デモ口座へご登録いただきありがとうございます</p><p>下記認証コードをデモ口座申込みページ上の認証コード欄にご入力してください。 <p>\n"
+"<span style=\"background: #f2f2f2; padding: 10px; line-height: 50px\""
+">%1</span></p></p><p>ご不明な点等ございましたら、カスタマーサポートまでご連絡ください。</p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:95
-#, fuzzy
 #| msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Before we can help you change your password, please help us to verify your identity by entering the following verification token into the password reset form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Before we can help you change your password, please help us to verify your identity by entering the following verification token into the password reset form:<p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p>"
 msgstr ""
 "<p style=\"line-height:200%;color:#333333;font-size:15px;\">お客さまへ</p>\n"
 "<p>新しい認証コードを発行いたしました。パスワード再設定ページ上で下記認証コードをご入力頂き、新しいパスワードを再設定してください。<p>\n"
-"<span style=\"background: #f2f2f2; padding: 10px;\">%1</span> </p> </p>"
+"<span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\""
+">%1</span> </p> </p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:135
-#, fuzzy
 #| msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment agent withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment agent withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p>"
 msgstr ""
 "<p style=\"line-height:200%;color:#333333;font-size:15px;\">お客さまへ</p>\n"
 "<p>決済サービスでのご出金の申請ページに下記認証コードをご入力いただき、ご本人確認をお済ませください。<p>\n"
-"<span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+"<span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\""
+">%1</span></p></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:147
-#, fuzzy
 #| msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p>"
 msgstr ""
 "<p style=\"line-height:200%;color:#333333;font-size:15px;\">お客様へ</p>\n"
 "<p>ご出金の申請ページに下記認証コードをご入力いただき、ご本人確認をお済ませください。<p>\n"
-"<span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+"<span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\""
+">%1</span></p></p>"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/affiliates/faq.html.tt:73
 msgid ""
@@ -3454,7 +3456,6 @@ msgstr ""
 
 #. ($client_name, $support_email)
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client/IDAuthentication.pm:128
-#, fuzzy
 #| msgid ""
 #| "Dear %1,\n"
 #| "\n"
@@ -7151,7 +7152,7 @@ msgstr "6文字以上の英数字（大文字と小文字を含む）"
 #. (to_monetary_number_format($stake_min)
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1618
 msgid "Minimum stake of %1 and maximum payout of %2"
-msgstr ""
+msgstr "%1の最小投資比率と%2の最小ペイアウト額"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:323
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Locale.pm:35
@@ -14453,7 +14454,7 @@ msgstr "投資者に不利な方向に動いた場合には、バイナリーオ
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:539
 msgid "{JAPAN ONLY}It is determined that proper by the results of this test, if you want to start the transaction, and then also as a trouble on the transaction occurred between the Company , the Company despite missing is knowledge related to options trading trading cause of action and you agree that you will not is that it has admitted ."
-msgstr ""
+msgstr "　　　"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:540
 msgid "{JAPAN ONLY}It is determined the customers have basic knowledge of option trading by the results of the knowledge test. If the customers start trading, the customers need to agree not have lawsuit despite the customer are shortage of knowledge related to options trading, and it cause damages, we admit to open the trading account."
