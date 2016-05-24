@@ -7,9 +7,10 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-20 03:47+0000\n"
+"PO-Revision-Date: 2016-05-25 07:29+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
-"Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
+"Language-Team: Indonesian "
+"<https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -658,31 +659,47 @@ msgstr "<option value=\"\"></option><option value=\"01\">Jan</option><option val
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:108
-#, fuzzy
 #| msgid "<p style=\"font-weight: bold;\">Thanks for signing up for a virtual account!</p><p>Enter the following verification token into the form to create an account: <p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p><p>Enjoy trading with us on Binary.com.</p>"
 msgid "<p style=\"font-weight: bold;\">Thanks for signing up for a virtual account!</p><p>Enter the following verification token into the form to create an account: <p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p><p>Enjoy trading with us on Binary.com.</p>"
-msgstr "<p style=\"font-weight: bold;\">Terima kasih karena telah mendaftar akun virtual!</p><p>Masukkan token verifikasi berikut ke dalam kolom yang tersedia untuk mendaftar akun: <p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p><p>Nikmati trading bersama kami di Binary.com.</p>"
+msgstr ""
+"<p style=\"font-weight: bold;\">Terima kasih karena telah mendaftar akun "
+"virtual!</p><p>Masukkan token verifikasi berikut ke dalam kolom yang "
+"tersedia untuk mendaftar akun: <p><span style=\"background: #f2f2f2; padding:"
+" 10px; line-height: 50px;\">%1</span></p></p><p>Nikmati trading bersama kami "
+"di Binary.com.</p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:95
-#, fuzzy
 #| msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Before we can help you change your password, please help us to verify your identity by entering the following verification token into the password reset form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Before we can help you change your password, please help us to verify your identity by entering the following verification token into the password reset form:<p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Kepada Pelanggan Yth.,</p><p>Sebelum kami dapat membantu Anda lebih lanjut dalam pergantian kata sandi, silahkan lengkapi pembuktian dengan memasukkan token verifikasi kedalam formulir pergantian kata sandi:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">Kepada Pelanggan "
+"Yth.,</p><p>Sebelum kami dapat membantu Anda lebih lanjut dalam pergantian "
+"kata sandi, silahkan lengkapi pembuktian dengan memasukkan token verifikasi "
+"kedalam formulir pergantian kata sandi:<p><span style=\"background: #f2f2f2; "
+"padding: 10px; line-height: 50px;\">%1</span></p></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:135
-#, fuzzy
 #| msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment agent withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment agent withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Kepada Pelanggan Yth.,</p><p>Mohon bantu kami untuk membuktikan bahwa Anda adalah pemilik asli dari akun ini dengan memasukkan token verifikasi berikut pada formulir penarikan via agen pembayaran:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">Kepada Pelanggan "
+"Yth.,</p><p>Mohon bantu kami untuk membuktikan bahwa Anda adalah pemilik "
+"asli dari akun ini dengan memasukkan token verifikasi berikut pada formulir "
+"penarikan via agen pembayaran:<p><span style=\"background: #f2f2f2; padding: "
+"10px; line-height: 50px;\">%1</span></p></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:147
-#, fuzzy
 #| msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Kepada Pelanggan Yth.,</p><p>Mohon bantu kami untuk membuktikan bahwa Anda adalah pemilik asli dari akun ini dengan memasukkan token verifikasi berikut pada formulir penarikan:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">Kepada Pelanggan "
+"Yth.,</p><p>Mohon bantu kami untuk membuktikan bahwa Anda adalah pemilik "
+"asli dari akun ini dengan memasukkan token verifikasi berikut pada formulir "
+"penarikan:<p><span style=\"background: #f2f2f2; padding: 10px; line-height: "
+"50px;\">%1</span></p></p>"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/affiliates/faq.html.tt:73
 msgid ""
@@ -3401,7 +3418,6 @@ msgstr ""
 
 #. ($client_name, $support_email)
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client/IDAuthentication.pm:128
-#, fuzzy
 #| msgid ""
 #| "Dear %1,\n"
 #| "\n"
@@ -3439,11 +3455,14 @@ msgstr ""
 "\n"
 "Email berikut berhubungan dengan akun Binary.com Anda.\n"
 "\n"
-"Kami diwajibkan untuk memastikan Anda berumur diatas 18 tahun, maka dengan demikian Anda perlu mengirimkan bukti umur sebagai berikut ke %2:\n"
+"Kami diwajibkan untuk memastikan Anda berumur diatas 18 tahun, maka dengan "
+"demikian Anda perlu mengirimkan bukti umur sebagai berikut ke %2:\n"
 "\n"
 "    - KTP atau SIM atau Paspor\n"
 "\n"
-"Untuk memenuhi peraturan perijinan yang kami miliki, untuk saat ini Anda tidak dapat melakukan transaksi lebih lanjut hingga dokumen tersebut kami terima dan usia Anda terbukti.\n"
+"Untuk memenuhi peraturan perijinan yang kami miliki, untuk saat ini Anda "
+"tidak dapat melakukan transaksi lebih lanjut hingga dokumen tersebut kami "
+"terima dan usia Anda terbukti.\n"
 "\n"
 "Kami menunggu balasan anda selanjutnya.\n"
 "\n"
@@ -7085,7 +7104,7 @@ msgstr "Minimal enam huruf kecil dan huruf besar beserta angka"
 #. (to_monetary_number_format($stake_min)
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1618
 msgid "Minimum stake of %1 and maximum payout of %2"
-msgstr ""
+msgstr "Modal minimal %1 dan hasil maksimal %2"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:323
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Locale.pm:35
@@ -15008,10 +15027,9 @@ msgid "French Smart Index"
 msgstr "Indeks Smart Perancis"
 
 #: Underlying Symbol OTC_DJI
-#, fuzzy
 #| msgid "Wall Street Index"
 msgid "Wall Street OTC Index"
-msgstr "Indeks Wall Street"
+msgstr "Indeks OTC Wall Street"
 
 #: Underlying Symbol SYNN225
 msgid "Japanese Smart Index"
@@ -15026,10 +15044,9 @@ msgid "Russian Regular OTC Index"
 msgstr "Indeks OTC Reguler Rusia"
 
 #: Underlying Symbol OTC_AEX
-#, fuzzy
 #| msgid "Dutch Index"
 msgid "Dutch OTC Index"
-msgstr "Indeks Belanda"
+msgstr "Indeks OTC Belanda"
 
 #: Underlying Symbol FTSE
 msgid "UK Index"
@@ -15052,10 +15069,9 @@ msgid "Shanghai Index"
 msgstr "Indeks Shanghai"
 
 #: Underlying Symbol OTC_BIST100
-#, fuzzy
 #| msgid "Istanbul Index"
 msgid "Istanbul OTC Index"
-msgstr "Indeks Istanbul"
+msgstr "Indeks OTC Istanbul"
 
 #: Underlying Symbol FCHI
 msgid "French Index"
@@ -15090,10 +15106,9 @@ msgid "Euro 50 Index"
 msgstr "Indeks Euro 50"
 
 #: Underlying Symbol OTC_N225
-#, fuzzy
 #| msgid "Japanese Index"
 msgid "Japanese OTC Index"
-msgstr "Indeks Jepang"
+msgstr "Indeks OTC Jepang"
 
 #: Underlying Symbol SYNSX5E
 msgid "Euro 50 Smart Index"
@@ -15108,16 +15123,14 @@ msgid "Norwegian Index"
 msgstr "Indeks Norwegia"
 
 #: Underlying Symbol OTC_BFX
-#, fuzzy
 #| msgid "Belgian Index"
 msgid "Belgian OTC Index"
-msgstr "Indeks Belgia"
+msgstr "Indeks OTC Belgia"
 
 #: Underlying Symbol OTC_AS51
-#, fuzzy
 #| msgid "Australian Index"
 msgid "Australian OTC Index"
-msgstr "Indeks Australia"
+msgstr "Indeks OTC Australia"
 
 #: Underlying Symbol N225
 msgid "Japanese Index"
@@ -15212,10 +15225,9 @@ msgid "Jakarta Index"
 msgstr "Indeks Jakarta"
 
 #: Underlying Symbol OTC_GDAXI
-#, fuzzy
 #| msgid "German Index"
 msgid "German OTC Index"
-msgstr "Indeks Jerman"
+msgstr "Indeks OTC Jerman"
 
 #: Underlying Symbol OTC_KOSPI2
 msgid "Korean OTC Index"
@@ -15226,10 +15238,9 @@ msgid "Kuwait OTC Index"
 msgstr "Indeks OTC Kuwait"
 
 #: Underlying Symbol OTC_FCHI
-#, fuzzy
 #| msgid "French Index"
 msgid "French OTC Index"
-msgstr "Indeks Perancis"
+msgstr "Indeks OTC Perancis"
 
 #: Underlying Symbol SYNFTSE
 msgid "UK Smart Index"
@@ -15276,16 +15287,14 @@ msgid "Korean Index"
 msgstr "Indeks Korea"
 
 #: Underlying Symbol OTC_HSI
-#, fuzzy
 #| msgid "Hong Kong Index"
 msgid "Hong Kong OTC Index"
-msgstr "Indeks Hong Kong"
+msgstr "Indeks OTC Hong Kong"
 
 #: Underlying Symbol OTC_IXIC
-#, fuzzy
 #| msgid "US Tech 100 Index"
 msgid "US Tech OTC Index"
-msgstr "Indeks US 100 Tech"
+msgstr "Indeks OTC Tech AS"
 
 #: Underlying Symbol SYNAEX
 msgid "Dutch Smart Index"
@@ -15304,10 +15313,9 @@ msgid "Swiss Index"
 msgstr "Indeks Swis"
 
 #: Underlying Symbol OTC_FTSE
-#, fuzzy
 #| msgid "UK Index"
 msgid "UK OTC Index"
-msgstr "UK Index"
+msgstr "Indeks OTC Inggris"
 
 #: Underlying Symbol HSI
 msgid "Hong Kong Index"
@@ -15330,20 +15338,18 @@ msgid "Euro 100 Index"
 msgstr "Indeks Euro 100"
 
 #: Underlying Symbol OTC_BSESENSEX30
-#, fuzzy
 #| msgid "Bombay Index"
 msgid "Bombay OTC Index"
-msgstr "Bombay Indeks"
+msgstr "Indeks OTC Bombay"
 
 #: Underlying Symbol OTC_N150
 msgid "Euro 150 OTC Index"
 msgstr "Indeks OTC Euro 150"
 
 #: Underlying Symbol OTC_SPC
-#, fuzzy
 #| msgid "US Index"
 msgid "US OTC Index"
-msgstr "Indeks AS"
+msgstr "Indeks OTC AS"
 
 #: Underlying Symbol OTC_SPTSX60
 msgid "Canadian OTC Index"
