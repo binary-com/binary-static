@@ -2,9 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Italian (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-18 03:28+0000\n"
-"Last-Translator: Sittie Hadjirah Sevilla <sittiebaser@gmail.com>\n"
-"Language-Team: Italian <https://hosted.weblate.org/projects/binary/static/it/>\n"
+"PO-Revision-Date: 2016-05-24 07:47+0000\n"
+"Last-Translator: Annalisa <ligiu@me.com>\n"
+"Language-Team: Italian "
+"<https://hosted.weblate.org/projects/binary/static/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -653,31 +654,46 @@ msgstr "<option value=\"\"></option><option value=\"01\">Gen</option><option val
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:108
-#, fuzzy
 #| msgid "<p style=\"font-weight: bold;\">Thanks for signing up for a virtual account!</p><p>Enter the following verification token into the form to create an account: <p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p><p>Enjoy trading with us on Binary.com.</p>"
 msgid "<p style=\"font-weight: bold;\">Thanks for signing up for a virtual account!</p><p>Enter the following verification token into the form to create an account: <p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p><p>Enjoy trading with us on Binary.com.</p>"
-msgstr "<p style=\"font-weight: bold;\">Grazie per esserti registrato e per aver aperto un account virtuale!</p><p>Inserisci il seguente token di verifica nel modulo per creare un account:</p><p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p><p>Goditi il trading con noi su Binary.com.</p>"
+msgstr ""
+"<p style=\"font-weight: bold;\">Grazie per esserti registrato e per aver "
+"aperto un account virtuale!</p><p>Inserisci il seguente token di verifica "
+"nel modulo per creare un account: <p><span style=\"background: #f2f2f2; "
+"padding: 10px; line-height: 50px;\">%1</span></p></p><p>Goditi il trading "
+"con noi su Binary.com.</p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:95
-#, fuzzy
 #| msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Before we can help you change your password, please help us to verify your identity by entering the following verification token into the password reset form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Before we can help you change your password, please help us to verify your identity by entering the following verification token into the password reset form:<p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Gentile Cliente,</p><p>prima di poterti aiutare a cambiare la tua password, aiutaci a verificare la tua identità inserendo il seguente token di verifica nel modulo per il ripristino della password:</p><p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">Gentile "
+"Cliente,</p><p>prima di poterti aiutare a cambiare la tua password, aiutaci "
+"a verificare la tua identità inserendo il seguente token di verifica nel "
+"modulo per il ripristino della password:<p><span style=\"background: #f2f2f2;"
+" padding: 10px; line-height: 50px;\">%1</span></p></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:135
-#, fuzzy
 #| msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment agent withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment agent withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Gentile Cliente,</p><p>aiutaci a verificare la tua identità inserendo il seguente token di verifica nel modulo per il prelievo dell'agente di pagamento:</p><p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">Gentile "
+"Cliente,</p><p>aiutaci a verificare la tua identità inserendo il seguente "
+"token di verifica nel modulo per il prelievo dell'agente di pagamento:<p><"
+"span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\""
+">%1</span></p></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:147
-#, fuzzy
 #| msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Gentile Cliente,</p><p>aiutaci a verificare la tua identità inserendo il seguente token di verifica nel modulo per il prelievo del pagamento:</p><p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">Gentile "
+"Cliente,</p><p>aiutaci a verificare la tua identità inserendo il seguente "
+"token di verifica nel modulo per il prelievo del pagamento:<p><span style=\""
+"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p>"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/affiliates/faq.html.tt:73
 msgid ""
