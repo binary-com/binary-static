@@ -11,7 +11,7 @@ use Path::Tiny;
 use HTML::Entities qw( encode_entities );
 use Encode;
 
-use BS qw/set_is_dev is_dev localize set_lang all_languages lang_display_name tt2 css_files js_config menu/;
+use BS qw/set_is_dev is_dev branch set_branch localize set_lang all_languages lang_display_name tt2 css_files js_config menu/;
 use BS::Request;
 
 # force = re-generate all files
@@ -19,13 +19,16 @@ use BS::Request;
 # pattern = the url pattern to rebuild
 my $force;
 my $is_dev;
+my $branch;
 my $pattern;
 GetOptions(
     "force|f"     => \$force,
     "dev|d"       => \$is_dev,
+    "branch|b"    => \$branch,
     "pattern|p=s" => \$pattern,
 );
 set_is_dev() if $is_dev;
+set_branch() if $branch;
 
 my @langs = map { lc $_ } all_languages();
 my @m = (
@@ -120,7 +123,7 @@ my @m = (
 
 ## config
 my $root_path = "$Bin/..";
-my $dist_path = "$root_path/dist";
+my $dist_path = "$root_path/dist".($branch ? '/'.branch() : '');
 @BS::Request::HTML_URLS = map { $_->[0] } @m;
 
 foreach my $m (@m) {
