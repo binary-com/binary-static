@@ -50,6 +50,7 @@ my @m = (
     ['styles',                     'home/styles',                 'haml',    'full_width', 'Styles'],
     ['affiliate/signup',           'affiliates/signup',           'toolkit', 'default', 'Affiliate'],
     ['user/logintrouble',          'misc/logintrouble',           'toolkit', 'default', 'Login trouble'],
+    ['endpoint',                   'misc/endpoint',               'toolkit', 'default', 'Endpoint'],
     ['legal/us_patents',           'legal/us_patents',            'toolkit', 'default', 'US Patents'],
     ['cashier',                    'cashier/index',               'haml',    'default', 'Cashier'],
     ['cashier/payment_methods',    'cashier/payment_methods',     'toolkit', 'default', 'Payment Methods'],
