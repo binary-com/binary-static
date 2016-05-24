@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Portuguese (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-24 13:04+0000\n"
-"Last-Translator: Alcino Jorge <alcino@binary.com>\n"
+"PO-Revision-Date: 2016-05-24 13:24+0000\n"
+"Last-Translator: Gabriela Balieiro Moreira <eusouagabi@gmail.com>\n"
 "Language-Team: Portuguese "
 "<https://hosted.weblate.org/projects/binary/static/pt/>\n"
 "Language: pt\n"
@@ -262,7 +262,12 @@ msgstr "A %1 fornece serviços de parceria de negócios através dos seguintes p
 #. (stash->{website_name}, url_for('/user/self_exclusionws')
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/responsible_trading.html.haml:1
 msgid "%1 provides you with the opportunity to either self-exclude or <a href=\"%2\">set limits on your trading activities</a> on this website. You may also <a href=\"%3\">contact us</a> to state the limits you wish to set via live chat, email or phone. Available limits are:"
-msgstr "A %1 proporciona-lhe a oportunidade de escolher entre a auto-exclusão ou<a href=\"%2\">a definição de limites nas suas atividades de negociação</a> neste site. Você também pode <a href=\"%3\">nos contatar</a> por chat ao vivo, e-mail ou telefone, para comunicar o limite que você pretende definir. Os limites disponíveis são:"
+msgstr ""
+"A %1 proporciona-lhe a oportunidade de escolher entre a auto-exclusão ou <a "
+"href=\"%2\">a definição de limites nas suas atividades de negociação</a> "
+"neste site. Você também pode <a href=\"%3\">nos contatar</a> por chat ao "
+"vivo, e-mail ou telefone, para comunicar o limite que você pretende definir. "
+"Os limites disponíveis são:"
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
@@ -288,7 +293,10 @@ msgstr "As transações %1 podem não ser realizadas com esta conta."
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/payment_agent.html.haml:1
 msgid "%1 would like to team up with potential payment agents worldwide so we can offer local payment processing services to our clients in their respective regions."
-msgstr "A %1 gostaria de criar parcerias com potenciais agentes de pagamento em todo o mundo para que possamos disponibilizar serviços de processamento de pagamentos aos nossos clientes nas suas respectivas regiões."
+msgstr ""
+"A %1 gostaria de criar parcerias com potenciais agentes de pagamento em todo "
+"o mundo, para que possamos disponibilizar serviços de processamento de "
+"pagamentos aos nossos clientes nas suas respectivas regiões."
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/volidx_markets.html.haml:1
@@ -320,7 +328,9 @@ msgstr "Os contratos de spread da %1 exigem um \"limite de perdas\" que limita a
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/why_us.html.haml:1
 msgid "%1's patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market."
-msgstr "A tecnologia de preços patenteada da %1 permite que você aproveita as mesmas taxas de retorno do mercado interbancário."
+msgstr ""
+"A tecnologia de preços patenteada da %1 permite que você aproveite as mesmas "
+"taxas de retorno do mercado interbancário."
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/group_history.html.haml:1
@@ -330,7 +340,7 @@ msgstr "Os sistemas %1 já processam mais de 1 milhão de transações/dia (incl
 #. ($client->loginid)
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Accounts.pm:398
 msgid "%1-Failed attempt to unlock cashier section"
-msgstr "%1-Tentativa falhada para desbloquear seção do caixa"
+msgstr "%1-Tentativa para desbloquear seção do caixa falhou"
 
 #. (stash('broker_name')
 #: /home/git/translations/binary-static-www2/src/templates/haml/home/index.html.haml:1
@@ -345,7 +355,13 @@ msgstr "O grupo de operações de TI da %1 é responsável pelo design, desenvol
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "%1’s Quantitative Analytics group is responsible for the pricing of binary options offered on its website, as well as the risk management and profitability of its options book. Since all dealing on the company’s website is fully automated, our pricing and risk management algorithms must take full account of real-time pricing parameters, data feeds irregularities and latencies."
-msgstr "O grupo de análise quantitativa é responsável pela fixação de preços das opções binárias disponibilizadas no website, bem como a gestão de risco e rendabilidade da corretagem. Uma vez que todas as operações no website da empresa são automatizadas, os nossos algoritmos de determinação de preços e gestão de risco devem ter inteiramente em conta todos os parâmetros de preço, irregularidades nos feeds de dados e latências em tempo real."
+msgstr ""
+"O grupo de análise quantitativa é responsável pela fixação de preços das "
+"opções binárias disponibilizadas no website, bem como pela gestão de risco e "
+"rentabilidade da corretagem. Uma vez que todas as operações no website da "
+"empresa são automatizadas, os nossos algoritmos de determinação de preços e "
+"gestão de risco devem ter inteiramente em conta todos os parâmetros de "
+"preço, irregularidades nos feeds de dados e latências em tempo real."
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/smart_indices.html.haml:1
@@ -355,7 +371,15 @@ msgstr "Os Índices Inteligentes FX da %1 são mercados inteligentes que medem o
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "%1’s principal Anti-Fraud Officer is responsible for the exercise of exceptional client relationship management skills applied to the prevention of fraudulent activities in payments processing and business transactions. He or she will be expected to partner with our payments and compliance teams in resolving payment queries; administering chargebacks; conducting anti-money laundering audits, and implement a broad array of fraud prevention measures."
-msgstr "O oficial principal contra fraude na %1 é responsável pela execução de capacidades excepcionais de gestão de relacionamentos com clientes, aplicadas à prevenção de atividades fraudulentas no processamento de pagamentos e transações de negócio. É esperado que esta pessoa colabore com as nossas equipes de pagamentos e conformidade para resolução de problemas com pagamentos; gerenciando estornos; efetuar auditorias contra a lavagem de dinheiro e a implementação de um amplo conjunto de medidas para a prevenção de fraude."
+msgstr ""
+"O principal oficial anti-fraude na %1 é responsável pela execução de "
+"capacidades excepcionais de gestão de relacionamentos com clientes, "
+"aplicadas à prevenção de atividades fraudulentas no processamento de "
+"pagamentos e transações de negócio. É esperado que esta pessoa colabore com "
+"as nossas equipes de pagamentos e conformidade, para resolução de problemas "
+"com pagamentos; gerenciando estornos; efetuando auditorias contra a lavagem "
+"de dinheiro e na implementação de um amplo conjunto de medidas para a "
+"prevenção de fraude."
 
 #. (url_for('/')
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/beginners_faq.html.haml:1
@@ -778,7 +802,7 @@ msgstr "<strong>Exposição adicional de negócio:</strong> Você aumentará o r
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/what_is_binary_trading.html.haml:1
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
-msgstr "<strong>Todas as durações</strong> - de 10 segundos até 365 dias."
+msgstr "<strong>Todas as durações</strong> - de 10 segundos a 365 dias."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/what_is_binary_trading.html.haml:1
 msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
@@ -834,7 +858,15 @@ msgstr "<strong>Funções e responsabilidades:</strong>"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/risk_disclaimer.html.tt:77
 msgid "<strong>Exchange Rate Risk</strong>: Exchange rates between foreign currencies can change rapidly due to a wide range of economic, political and other conditions, exposing you to risk of exchange rate losses in addition to the inherent risk of loss from trading the underlying investment product. If you deposit funds in a currency to trade Contracts denominated in a different currency, your gains or losses on the underlying investment therefore may be affected by changes in the exchange rate between the currencies."
-msgstr "<strong>Risco de taxa de câmbio</strong>: As taxas de câmbio entre divisas estrangeiras podem mudar rapidamente devido a uma ampla variedade de condições econômicas, políticas e outras, expondo você ao risco de perdas cambiais, além do risco de perda inerente de negociar o produto de investimento subjacente. Se você depositar fundos numa determinada moeda para negociar contratos expressos em moeda diferente, os seus ganhos ou as suas perdas no investimento subjacente podem, desse modo, ser afetados por alterações na taxa de câmbio entre as duas moedas."
+msgstr ""
+"<strong>Risco de taxa de câmbio</strong>: As taxas de câmbio entre moedas "
+"estrangeiras podem mudar rapidamente devido a uma ampla variedade de "
+"condições econômicas, políticas e outras, expondo você ao risco de perdas "
+"cambiais, além do risco de perda inerente de negociar o produto de "
+"investimento subjacente. Se você depositar fundos numa determinada moeda "
+"para negociar contratos expressos em moeda diferente, os seus ganhos ou as "
+"suas perdas no investimento subjacente podem, desse modo, ser afetados por "
+"alterações na taxa de câmbio entre as duas moedas."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/payment_agent.html.haml:1
 msgid "<strong>Extra revenue stream:</strong> You will have the potential to earn another level of income from our affiliate program."
@@ -2238,7 +2270,10 @@ msgstr "A Binary.com é defensora ativa do movimento open-source e está em proc
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/group_history.html.haml:1
 msgid "Binary.com is honoured as the world's \"Best Binary Options Broker\" at the 16th annual MENA International Financial Conference and Exhibition, hosted in Dubai."
-msgstr "A Binary.com foi premiada como \"A Melhor Correta de Opções Binárias\" na 16.ª Conferência e Exposição Financeira Internacional do MENA, realizada em Dubai."
+msgstr ""
+"A Binary.com foi premiada como \"A Melhor Corretora de Opções Binárias\" na "
+"16ª Conferência e Exposição Financeira Internacional do MENA, realizada em "
+"Dubai."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/about/group-information.html.haml:1
 msgid "Binary.com is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
@@ -4109,7 +4144,10 @@ msgstr "Melhorar e gerenciar proativamente as iniciativas de mídia social da em
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:10
 msgid "Enjoy our fastest type of trading on your mobile phone or tablet. Place tick trades anytime, anywhere – even while you’re on the move."
-msgstr "Desfrute da nossa forma mais rápida de negociar no seu telefone celular ou tablet. Realize negociações tique-taque a qualquer momento, em qualquer lugar – mesmo quando está em trânsito."
+msgstr ""
+"Desfrute da nossa forma mais rápida de negociar no seu telefone celular ou "
+"tablet. Realize negociações tique-taque a qualquer momento, em qualquer "
+"lugar – mesmo quando estiver em trânsito."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "Ensure compliance with quality control standards governing website content"
@@ -10752,7 +10790,7 @@ msgstr "O primeiro tique-taque é o primeiro movimento depois que o contrato é 
 #. (request.website.display_name)
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:59
 msgid "The future of trading on %1"
-msgstr "O futuro de negociações na %1"
+msgstr "O futuro das negociações na %1"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:118
 msgid "The information provided during the sign-up process warranted by yourself to be true and correct is determined by the Company to be false or incorrect during the term of this Agreement;"
@@ -11274,7 +11312,7 @@ msgstr "Tique-taque"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:8
 msgid "Tick Trade App"
-msgstr "Aplicativo das tique-taque"
+msgstr "Aplicativo dos tique-taque"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:80
 msgid "Tick Trade on GitHub"
@@ -12785,7 +12823,9 @@ msgstr "Você está atualmente conectado à sua conta de dinheiro virtual (%2)."
 
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Wrapper/Streamer.pm:346
 msgid "You are either already subscribed or you have reached the limit for pricing table subscription."
-msgstr "Ou você já está subscrito ou já atingiu o limite de subscrição da tabela de preços."
+msgstr ""
+"Ou você já está inscrito ou já atingiu o limite de inscrição da tabela de "
+"preços."
 
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Wrapper/Streamer.pm:169
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Wrapper/Streamer.pm:325
@@ -12914,7 +12954,7 @@ msgstr "Você excedeu o seu limite diário em perdas de %1%2."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:721
 msgid "You have not granted access to any applications."
-msgstr "Você não concedeu acesso a quaisquer aplicativos."
+msgstr "Você não concedeu acesso a nenhum aplicativo."
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:119
 msgid "You have not obtained and have not maintained all necessary licences and consents to operate within any laws, rules, and regulations applicable under the authority of any regulatory body of the jurisdiction(s) in which you operate or target your business;"
@@ -13423,7 +13463,7 @@ msgstr "Seus riscos são conhecidos"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:315
 msgid "Your session duration limit will end in %1 seconds."
-msgstr "O seu limite de duração de sessão terminará em %1 segundos."
+msgstr "O limite de duração da sua sessão terminará em %1 segundos."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:263
 msgid "Your settings have been updated successfully."
@@ -13656,7 +13696,7 @@ msgstr "a carregar..."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:314
 msgid "login"
-msgstr "login"
+msgstr "Conecte-se"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2054
 msgid "low barrier"
@@ -16651,7 +16691,7 @@ msgstr "Europa/África"
 
 #: Translation for sub market name
 msgid "United States Stocks"
-msgstr "Ações dos EUA"
+msgstr "Ações EUA"
 
 #: Explanation for market Australia
 msgid "Australia OTC Stocks"
@@ -16675,7 +16715,7 @@ msgstr "Ações OTC EUA"
 
 #: Translation for sub market name
 msgid "Germany Stocks"
-msgstr "Ações da Alemanha"
+msgstr "Ações Alemanha"
 
 #: Explanation for market Daily Reset Indices
 msgid "Represent a single day of trading with different market factors. They are reset at the start of each trading day (00:00GMT)."
@@ -16739,7 +16779,9 @@ msgstr "Fica dentro/Sai fora"
 
 #: Explanation for contract category Stays In/Goes Out
 msgid "Predict whether or not the market will touch either of 2 chosen levels before expiration."
-msgstr "Preveja se o mercado vai tocar ou não qualquer um dos 2 níveis escolhidos antes da expiração."
+msgstr ""
+"Preveja se o mercado vai tocar ou não qualquer um dos 2 níveis escolhidos "
+"antes de expirar."
 
 #: Explanation for contract category Touch/No Touch
 msgid "Predict whether or not the market will touch a chosen level before expiration."
@@ -17030,7 +17072,8 @@ msgstr "Prêmio de %1 %2 se %3 for estritamente inferior a %6 às %5."
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (PUT - intraday)
 msgid "%1 %2 payout if %3 is strictly lower than %6 at %5 after %4."
-msgstr "Prêmio de %1 %2 se %3 for estritamente inferior a %6 a %5 depois de %4."
+msgstr ""
+"Prêmio de %1 %2 se %3 for estritamente inferior a %6 às %5 depois de %4."
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
