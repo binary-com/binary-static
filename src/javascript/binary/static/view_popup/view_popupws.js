@@ -12,6 +12,8 @@ var ViewPopupWS = (function() {
         tickForgotten,
         candleForgotten,
         candleForgottenSent,
+        corporateActionEvent,
+        corporateActionSent,
         chartUpdated;
     var $Container,
         $loading,
@@ -22,24 +24,26 @@ var ViewPopupWS = (function() {
         hiddenClass;
 
     var init = function(button) {
-        btnView             = button;
-        contractID          = $(btnView).attr('contract_id');
-        contractType        = '';
-        contract            = {};
-        history             = {};
-        proposal            = {};
-        isSold              = false;
-        isSellClicked       = false;
-        chartStarted        = false;
-        tickForgotten       = false;
-        candleForgotten     = false;
-        candleForgottenSent = false;
-        chartUpdated        = false;
-        $Container          = '';
-        popupboxID          = 'inpage_popup_content_box';
-        wrapperID           = 'sell_content_wrapper';
-        winStatusID         = 'contract_win_status';
-        hiddenClass         = 'hidden';
+        btnView              = button;
+        contractID           = $(btnView).attr('contract_id');
+        contractType         = '';
+        contract             = {};
+        history              = {};
+        proposal             = {};
+        isSold               = false;
+        isSellClicked        = false;
+        chartStarted         = false;
+        tickForgotten        = false;
+        candleForgotten      = false;
+        candleForgottenSent  = false;
+        chartUpdated         = false;
+        corporateActionEvent = false;
+        corporateActionSent  = false;
+        $Container           = '';
+        popupboxID           = 'inpage_popup_content_box';
+        wrapperID            = 'sell_content_wrapper';
+        winStatusID          = 'contract_win_status';
+        hiddenClass          = 'hidden';
 
         if (btnView) {
             ViewPopupUI.disable_button($(btnView));
@@ -69,6 +73,12 @@ var ViewPopupWS = (function() {
             if (!document.getElementById(wrapperID)) return;
             ViewPopupWS[contractType + 'Update']();
             return;
+        }
+
+        // ----- Corporate Action -----
+        if (contract.has_corporate_actions && !corporateActionSent) {
+            corporateActionSent = true;
+            getCorporateActions();
         }
 
         // ----- Tick -----
@@ -272,11 +282,11 @@ var ViewPopupWS = (function() {
             containerSetText('trade_details_entry_spot', '-');
             containerSetText('trade_details_message'   , text.localize('Contract is not started yet'));
         }
-        else{
+        else {
             if(contract.entry_spot > 0) {
                 containerSetText('trade_details_entry_spot', contract.entry_spot);
             }
-            containerSetText('trade_details_message', contract.validation_error || '&nbsp;');
+            containerSetText('trade_details_message', contract.validation_error ? contract.validation_error : corporateActionEvent ? '* ' + text.localize('This contract was affected by a Corporate Action event.') : '&nbsp;');
         }
 
         if(!chartStarted) {
@@ -348,14 +358,73 @@ var ViewPopupWS = (function() {
         // showWinLossStatus(is_win);
     };
 
+    var addColorAndClass = function($tabToShow, $tabToHide, $contentToShow, $contentToHide) {
+      $tabToShow.attr('style', 'background: #f2f2f2;');
+      $tabToHide.attr('style', 'background: #c2c2c2;');
+      $contentToHide.addClass('invisible');
+      $contentToShow.removeClass('invisible');
+    };
+
+    var showCorporateAction = function() {
+      var $contractInformationTab = $('#contract_information_tab'),
+          $contractInformationContent = $('#contract_information_content');
+
+      $contractInformationTab.removeAttr('colspan');
+      $('#contract_tabs').append('<th id="corporate_action_tab">' + text.localize('Corporate Action') + '</th>');
+
+      var $corporateActionTab = $('#corporate_action_tab'),
+          $corporateActionContent = $('#corporate_action_content');
+      var $barrierChange = $('#barrier_change'),
+          $barrierChangeContent = $('#barrier_change_content');
+
+      $corporateActionTab.attr('style', 'background: #c2c2c2;');
+      $('#sell_details_table').draggable({disabled:true});
+
+      $corporateActionTab.on('click', function() {
+        addColorAndClass($corporateActionTab, $contractInformationTab, $corporateActionContent, $contractInformationContent);
+        $barrierChange.removeClass('invisible');
+        $barrierChangeContent.removeClass('invisible');
+      });
+      $contractInformationTab.on('click', function() {
+        $barrierChange.addClass('invisible');
+        $barrierChangeContent.addClass('invisible');
+        addColorAndClass($contractInformationTab, $corporateActionTab, $contractInformationContent, $corporateActionContent);
+      });
+    };
+
+    var populateCorporateAction = function(corporateAction) {
+      for (var i = 0; i < corporateAction.get_corporate_actions.actions.length; i++) {
+        $('#corporate_action_content').append(
+          normalRow(corporateAction.get_corporate_actions.actions[i].display_date, '', '', '', corporateAction.get_corporate_actions.actions[i].type + ' (' + corporateAction.get_corporate_actions.actions[i].value + '-' + text.localize('for') + '-1)')
+        );
+      }
+      var originalBarriers, adjustedBarriers;
+      if (contract.original_barrier) {
+        originalBarriers = normalRow(text.localize('Original Barrier'), '', '', '', contract.original_barrier);
+      } else if (contract.original_high_barrier) {
+        originalBarriers = normalRow(text.localize('Original High Barrier'), '', '', '', contract.original_high_barrier) +
+                           normalRow(text.localize('Original Low Barrier'), '', '', '', contract.original_low_barrier);
+      }
+      if (contract.barrier) {
+        adjustedBarriers = normalRow(text.localize('Adjusted Barrier'), '', '', '', contract.barrier);
+      } else if (contract.high_barrier) {
+        adjustedBarriers = normalRow(text.localize('Adjusted High Barrier'), '', '', '', contract.high_barrier) +
+                           normalRow(text.localize('Adjusted Low Barrier'), '', '', '', contract.low_barrier);
+      }
+      $('#barrier_change_content').append(
+        originalBarriers +
+        adjustedBarriers
+      );
+    };
+
     var normalMakeTemplate = function() {
         $Container = $('<div/>').append($('<div/>', {id: wrapperID}));
         $Container.prepend($('<div/>', {id: 'sell_bet_desc', class: 'popup_bet_desc drag-handle', text: contract.longcode}));
-        var $sections = $('<div/>').append($('<div id="sell_details_chart_wrapper" class="grd-grid-8 grd-grid-mobile-12"></div><div id="sell_details_table" class="grd-grid-4 grd-grid-mobile-12 drag-handle"></div>'));
+        var $sections = $('<div/>').append($('<div id="sell_details_chart_wrapper" class="grd-grid-8 grd-grid-mobile-12"></div><div id="sell_details_table" class="grd-grid-4 grd-grid-mobile-12"></div>'));
 
         $sections.find('#sell_details_table').append($(
             '<table>' +
-                '<tr><th colspan="2">' + text.localize('Contract Information') + '</th></tr>' +
+                '<tr id="contract_tabs"><th colspan="2" id="contract_information_tab">' + text.localize('Contract Information') + '</th></tr><tbody id="contract_information_content">' +
                     normalRow('Contract ID',    '', 'trade_details_contract_id') +
                     normalRow('Reference ID',   '', 'trade_details_ref_id') +
                     normalRow('Start Time',     '', 'trade_details_start_date') +
@@ -365,6 +434,9 @@ var ViewPopupWS = (function() {
                     normalRow(contract.barrier_count > 1 ? 'High Barrier' : 'Barrier', '', 'trade_details_barrier'    , true) +
                     (contract.barrier_count > 1 ? normalRow('Low Barrier',             '', 'trade_details_barrier_low', true) : '') +
                     normalRow('Purchase Price', '', 'trade_details_purchase_price') +
+                '</tbody><tbody id="corporate_action_content" class="invisible"></tbody>' +
+                '<th colspan="2" id="barrier_change" class="invisible">' + text.localize('Barrier Change') + '</th>' +
+                '<tbody id="barrier_change_content" class="invisible"></tbody>' +
                 '<tr><th colspan="2" id="trade_details_current_title">' + text.localize('Current') + '</th></tr>' +
                     normalRow('Spot',           'trade_details_spot_label'    , 'trade_details_current_spot') +
                     normalRow('Spot Time',      'trade_details_spottime_label', 'trade_details_current_date') +
@@ -385,13 +457,12 @@ var ViewPopupWS = (function() {
             .append($sections.html())
             .append($('<div/>', {id: 'errMsg', class: 'notice-msg ' + hiddenClass}));
 
-        ViewPopupUI.show_inpage_popup('<div class="' + popupboxID + '">' + $Container.html() + '</div>', '', '#sell_bet_desc, #sell_details_table');
-
+        ViewPopupUI.show_inpage_popup('<div class="' + popupboxID + '">' + $Container.html() + '</div>', '', '#sell_bet_desc');
         return $('#' + wrapperID);
     };
 
-    var normalRow = function(label, label_id, value_id, isHidden) {
-        return '<tr' + (isHidden ? ' class="' + hiddenClass + '"' : '') + '><td' + (label_id ? ' id="' + label_id + '"' : '') + '>' + text.localize(label) + '</td><td' + (value_id ? ' id="' + value_id + '"' : '') + '></td></tr>';
+    var normalRow = function(label, label_id, value_id, isHidden, value) {
+        return '<tr' + (isHidden ? ' class="' + hiddenClass + '"' : '') + '><td' + (label_id ? ' id="' + label_id + '"' : '') + '>' + text.localize(label) + '</td><td' + (value_id ? ' id="' + value_id + '"' : '') + '>' + (value ? value : '') + '</td></tr>';
     };
 
     var normalSetVisibleRow = function(child_id, isVisible) {
@@ -453,7 +524,7 @@ var ViewPopupWS = (function() {
             $('<div/>', {id: wrapperID})
                 .append($('<div/>', {class: msgClass, html: text.localize(message)}))
         );
-        ViewPopupUI.show_inpage_popup('<div class="' + popupboxID + '">' + $con.html() + '</div>', 'message_popup', '#sell_bet_desc, #sell_content_wrapper');
+        ViewPopupUI.show_inpage_popup('<div class="' + popupboxID + '">' + $con.html() + '</div>', 'message_popup', '#sell_bet_desc');
     };
 
     var showErrorPopup = function(response, message) {
@@ -511,6 +582,17 @@ var ViewPopupWS = (function() {
             if (option === 'no-subscribe') delete req.subscribe;
             socketSend(req);
         }
+    };
+
+    // ----- Corporate Action -----
+    var getCorporateActions = function() {
+      var end_time = (window.time._i/1000).toFixed(0) < contract.date_expiry ? (window.time._i/1000).toFixed(0) : contract.date_expiry;
+      socketSend({
+        "get_corporate_actions": "1",
+        "symbol": contract.underlying,
+        "start": contract.date_start,
+        "end": end_time
+      });
     };
 
     // ----- Sell Expired -----
@@ -674,6 +756,14 @@ var ViewPopupWS = (function() {
                       if (contract.entry_tick_time) {
                         chartStarted = true;
                       }
+                    }
+                    break;
+                case 'get_corporate_actions':
+                    if (Object.keys(response.get_corporate_actions).length > 0) {
+                      corporateActionEvent = true;
+                      containerSetText('trade_details_message', contract.validation_error ? contract.validation_error : corporateActionEvent ? '* ' + text.localize('This contract was affected by a Corporate Action event.') : '&nbsp;');
+                      populateCorporateAction(response);
+                      showCorporateAction();
                     }
                     break;
                 default:
