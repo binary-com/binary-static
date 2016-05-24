@@ -46,7 +46,7 @@ var LoggedInHandler = (function() {
             redirect_url = page.url.default_redirect_url();
             var lang_cookie = $.cookie('language');
             if(lang_cookie && lang_cookie !== page.language()) {
-                redirect_url.replace(new RegExp('\/' + page.language() + '\/', 'i'), '/' + lang_cookie.toLowerCase() + '/');
+                redirect_url = redirect_url.replace(new RegExp('\/' + page.language() + '\/', 'i'), '/' + lang_cookie.toLowerCase() + '/');
             }
         }
         document.getElementById('loading_link').setAttribute('href', redirect_url);
