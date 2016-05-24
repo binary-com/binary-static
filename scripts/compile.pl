@@ -144,6 +144,7 @@ foreach my $m (@m) {
 
         set_lang($lang);
 
+        mkdir("$dist_path")            unless -d "$dist_path";
         mkdir("$dist_path/$lang")      unless -d "$dist_path/$lang";
         mkdir("$dist_path/$lang/pjax") unless -d "$dist_path/$lang/pjax";
         my $request = BS::Request->new(
