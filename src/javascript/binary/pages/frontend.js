@@ -508,7 +508,7 @@ function Trim(str){
 }
 
 function limitLanguage(lang) {
-  if (page.language() !== lang) {
+  if (page.language() !== lang && !Login.is_login_pages()) {
     window.location.href = page.url_for_language(lang);
   }
   if (document.getElementById('language_select')) {
