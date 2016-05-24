@@ -18,6 +18,7 @@ var TickDisplay = function() {
             $self.contract_start_ms = parseInt(data.contract_start * 1000);
             $self.contract_category = data.contract_category;
             $self.set_barrier = ($self.contract_category.match('digits')) ? false : true;
+            $self.barrier = data.barrier;
             $self.display_decimals = data.display_decimals || 2;
             $self.show_contract_result = data.show_contract_result;
             var tick_frequency = 5;
@@ -209,6 +210,16 @@ var TickDisplay = function() {
 
             if (barrier_type === 'static') {
                 var barrier_tick = $self.applicable_ticks[0];
+
+                if ( $self.barrier ) {
+                  var final_barrier = barrier_tick.quote + parseFloat($self.barrier);
+                  //sometimes due to rounding issues, result is 1.009999 while it should
+                  //be 1.01
+                  final_barrier = Number(Math.round(final_barrier+'e'+$self.display_decimals)+'e-'+$self.display_decimals);
+
+                  barrier_tick.quote = final_barrier;
+                }
+
                 $self.chart.yAxis[0].addPlotLine({
                     id: 'tick-barrier',
                     value: barrier_tick.quote,
