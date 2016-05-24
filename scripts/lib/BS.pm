@@ -82,7 +82,7 @@ sub lang_display_name {
 
 ## url_for
 sub root_url {
-    return is_dev() ? '/binary-static-www2/' : '/';
+    return is_dev() ? '/binary-static/' : '/';
 }
 
 sub url_for {
