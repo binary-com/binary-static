@@ -298,7 +298,7 @@ sub menu {
         id         => 'topMenuApplications',
         url        => url_for('/applications'),
         text       => localize('Applications'),
-        link_class => 'pjaxload',
+        link_class => 'ja-hide pjaxload',
         };
 
     # push @{$menu}, $self->_main_menu_trading();
