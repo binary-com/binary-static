@@ -20,7 +20,7 @@ function BinarySocketClass() {
         authorized = false,
         timeouts = {},
         req_number = 0,
-        socketUrl = socket_url + '?app_id=' + app_id + (page.language() ? '&l=' + page.language() : '');
+        socketUrl = getSocketURL() + '?app_id=' + getAppId() + (page.language() ? '&l=' + page.language() : '');
 
     var clearTimeouts = function(){
         for(var k in timeouts){
