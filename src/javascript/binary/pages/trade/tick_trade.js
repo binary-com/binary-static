@@ -50,6 +50,7 @@ WSTickDisplay.dispatch = function(data) {
           "longcode"            : window.tick_longcode,
           "display_symbol"      : window.tick_display_name,
           "contract_start"      : window.tick_date_start,
+          "abs_barrier"         : window.abs_barrier,
           "display_decimals"    : display_decimals,
           "show_contract_result": 0
       });
@@ -114,6 +115,7 @@ WSTickDisplay.updateChart = function(data, contract) {
       window.tick_longcode = contract.longcode;
       window.tick_display_name = contract.display_name;
       window.tick_date_start = contract.date_start;
+      window.abs_barrier = contract.barrier;
       window.tick_shortcode = contract.shortcode;
       window.tick_init = '';
       var request = {

@@ -19,6 +19,7 @@ var TickDisplay = function() {
             $self.contract_category = data.contract_category;
             $self.set_barrier = ($self.contract_category.match('digits')) ? false : true;
             $self.barrier = data.barrier;
+            $self.abs_barrier = data.abs_barrier;
             $self.display_decimals = data.display_decimals || 2;
             $self.show_contract_result = data.show_contract_result;
             var tick_frequency = 5;
@@ -218,6 +219,9 @@ var TickDisplay = function() {
                   final_barrier = Number(Math.round(final_barrier+'e'+$self.display_decimals)+'e-'+$self.display_decimals);
 
                   barrier_tick.quote = final_barrier;
+                }
+                else if ( $self.abs_barrier ) {
+                  barrier_tick.quote = parseFloat($self.abs_barrier);
                 }
 
                 $self.chart.yAxis[0].addPlotLine({
