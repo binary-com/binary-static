@@ -495,6 +495,7 @@ function resetPriceMovement() {
     var btns = document.getElementsByClassName('purchase_button');
     for(var i = 0; i < btns.length; i++) {
         btns[i].setAttribute('data-display_value', '');
+        btns[i].setAttribute('data-payout', '');
     }
 }
 
