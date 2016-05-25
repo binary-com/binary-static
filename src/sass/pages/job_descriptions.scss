@@ -1,10 +1,13 @@
 .open-positions {
-  .grd-grid-4:not(:first-child) {
+  .eq:not(:first-child) {
     border: 1px dashed #d9d9d9;
     border-width: 0 0 0 1px;
   }
-  .grd-grid-4:nth-child(3n+1) {
+  .eq:nth-child(3n+1) {
     border-width: 0;
+  }
+  .one-line {
+    margin-bottom: 35px;
   }
   .grd-grid-3 {
     text-align: center;
@@ -21,15 +24,16 @@
     padding-left: 10px;
     padding-right: 10px;
   }
-  .title-section {
-    height: 2.5em;
+  .nowrap {
+    white-space: nowrap;
   }
-  .paragraph-section {
-    height: 10em;
-    overflow: visible;
+  .eq {
+    padding: 10px;
+    width: 30%;
   }
-  .top-margin{
-    margin-top: 40px;
+  .eqWrap {
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 
@@ -48,27 +52,30 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
   .open-positions {
+    .eq {
+      width: 45%;
+    }
+    .eq:nth-child(3n+1) {
+      border-width: 0 0 0 1px;
+    }
+    .eq:nth-child(2n+1) {
+      border-width: 0;
+    }
     .grd-grid-phablet-6 {
       border-width: 0 !important;
     }
     .grd-grid-phablet-6:nth-child(even) {
       border-width: 0 0 0 1px !important;
     }
-    .grd-grid-phablet-6.first, .top-margin{
-      margin-top: 20px;
-    }
-    .grd-grid-phablet-6.first .title-section {
-      height: 1.4em;
-    }
-    .paragraph-section {
-      height: 9em;
-    }
   }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 460px) {
   .open-positions {
+    .eq {
+      width: 100%;
+    }
     .grd-grid-mobile-12:not(:first-child) {
       padding-top: 20px;
       margin-top: auto !important;
@@ -78,15 +85,6 @@
     }
     img.responsive {
       width: 40%;
-    }
-    .title-section {
-      height: 1em;
-    }
-    .paragraph-section {
-      height: auto;
-    }
-    .top-margin{
-      margin-top: auto;
     }
   }
 }
