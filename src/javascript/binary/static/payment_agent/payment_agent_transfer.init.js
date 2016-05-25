@@ -1,5 +1,26 @@
 var PaymentAgentTransfer = (function () {
-    var hiddenClass = 'invisible';
+    var hiddenClass = 'invisible',
+        paymentagent;
+
+    function init_variable() {
+      paymentagent = false;
+    }
+
+    function handleResponse(response) {
+      var type = response.msg_type;
+      if (type === 'get_settings') {
+        error_if_not_pa(response);
+      }
+
+      if (type === 'authorize' && paymentagent) {
+          PaymentAgentTransfer.init(true);
+      }
+
+      if (type === 'paymentagent_transfer' && paymentagent){
+          PaymentAgentTransfer.paymentAgentTransferHandler(response);
+      }
+    }
+
     function paymentAgentTransferHandler(response) {
         var req = response.echo_req;
 
@@ -48,6 +69,7 @@ var PaymentAgentTransfer = (function () {
         } else {
             $('#no_balance_error').addClass(hiddenClass);
             $pa_form.removeClass(hiddenClass);
+            $('#paymentagent_transfer_notes').removeClass('invisible');
         }
 
         PaymentAgentTransferUI.updateFormView(currency);
@@ -132,8 +154,33 @@ var PaymentAgentTransfer = (function () {
         });
     }
 
+    function error_if_virtual() {
+      if (page.client.is_virtual()) {
+        $('#virtual_error').removeClass('invisible');
+        return true;
+      }
+      return false;
+    }
+
+    function error_if_not_pa(response) {
+      if (response.get_settings.hasOwnProperty('is_authenticated_payment_agent') && response.get_settings.is_authenticated_payment_agent === 0) {
+        $('#not_pa_error').removeClass('invisible');
+        return;
+      } else if (error_if_virtual()) {
+        return;
+      } else if (response.get_settings.is_authenticated_payment_agent) {
+        $('#paymentagent_transfer').removeClass('invisible');
+        $('#paymentagent_transfer_notes').removeClass('invisible');
+        paymentagent = true;
+        PaymentAgentTransfer.init(true);
+        return;
+      }
+    }
+
     return {
         init: init,
+        init_variable: init_variable,
+        handleResponse: handleResponse,
         paymentAgentTransferHandler: paymentAgentTransferHandler
     };
 }());
