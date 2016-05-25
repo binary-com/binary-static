@@ -660,6 +660,10 @@ pjax_config_page('/terms-and-conditions', function() {
             } else if (page.language() === 'EN' && /jp/.test(window.location.pathname)) {
               window.location.href = page.url.url_for('terms-and-conditions');
             }
+            var selected_tab = page.url.params_hash().selected_tab;
+            if(selected_tab) {
+              $('li#' + selected_tab + ' a').click();
+            }
             var year = document.getElementsByClassName('currentYear');
             for (i = 0; i < year.length; i++){
               year[i].innerHTML = new Date().getFullYear();
