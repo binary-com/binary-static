@@ -72,7 +72,6 @@ var Content = (function() {
             textSalePrice: text.localize('Sale Price'),
             textProfitLoss: text.localize('Profit/Loss'),
             textTotalProfitLoss: text.localize('Total Profit/Loss'),
-            textLimits: text.localize('Trading and Withdrawal Limits'),
             textItem: text.localize('Item'),
             textLimit: text.localize('Limit'),
             textMaxOpenPosition: text.localize('Maximum number of open positions'),
@@ -83,8 +82,6 @@ var Content = (function() {
             textMaxDailyTurnoverTooltip: text.localize('Represents the maximum volume of contracts that you may purchase in any given trading day.'),
             textMaxAggregate: text.localize('Maximum aggregate payouts on open positions'),
             textMaxAggregateTooltip: text.localize('Presents the maximum aggregate payouts on outstanding contracts in your portfolio. If the maximum is attained, you may not purchase additional contracts without first closing out existing positions.'),
-            textTradingLimits: text.localize('Trading Limits'),
-            textWithdrawalTitle: text.localize('Withdrawal Limits'),
             textAuthenticatedWithdrawal: text.localize('Your account is fully authenticated and your withdrawal limits have been lifted.'),
             textWithdrawalLimits: text.localize('Your withdrawal limit is [_1] [_2].'),
             textWithdrawalLimitsEquivalant: text.localize('Your withdrawal limit is [_1] [_2] (or equivalent in other currency).'),
@@ -304,21 +301,6 @@ var Content = (function() {
         titleElement.textContent = localize.textProfitTable;
     };
 
-    var limitsTranslation = function() {
-        var titleElement = document.getElementById("limits-ws-container").firstElementChild;
-        titleElement.textContent = localize.textLimits;
-
-        if (page.client.is_logged_in && !page.client.is_virtual()) {
-            var loginId = page.client.loginid;
-
-            var tradingLimits = document.getElementById("trading-limits");
-            tradingLimits.textContent = loginId + " - " + localize.textTradingLimits;
-
-            var withdrawalTitle = document.getElementById("withdrawal-title");
-            withdrawalTitle.textContent = loginId + " - " + localize.textWithdrawalTitle;
-        }
-    };
-
     var errorMessage = function(messageType, param) {
         var msg = "",
             separator = ', ';
@@ -365,7 +347,6 @@ var Content = (function() {
         populate: populate,
         statementTranslation: statementTranslation,
         profitTableTranslation: profitTableTranslation,
-        limitsTranslation: limitsTranslation,
         errorMessage: errorMessage
     };
 

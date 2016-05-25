@@ -2,12 +2,12 @@ pjax_config_page_require_auth("limitsws", function(){
     return {
         onLoad: function() {
             Content.populate();
-            Content.limitsTranslation();
+            var titleElement = document.getElementById("limits-ws-container").firstElementChild;
+            titleElement.textContent = text.localize('Trading and Withdrawal Limits');
             if (TUser.get().is_virtual) {
                 LimitsWS.limitsError();
                 return;
             }
-            document.getElementById('client_message').setAttribute('style', 'display:none');
 
             BinarySocket.init({
                 onmessage: function(msg){
@@ -17,11 +17,11 @@ pjax_config_page_require_auth("limitsws", function(){
                         var error = response.error;
 
                         if (type === 'authorize' && TUser.get().is_virtual){
-                            LimitsWS.limitsError();
+                            LimitsWS.limitsError(error);
                         } else if (type === 'get_limits' && !error){
                             LimitsWS.limitsHandler(response);
                         } else if (error) {
-                            LimitsWS.limitsError();
+                            LimitsWS.limitsError(error);
                         }
                     }
                 }
