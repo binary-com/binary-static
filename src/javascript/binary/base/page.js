@@ -97,7 +97,7 @@ var User = function() {
     this.email   =  $.cookie('email');
     var loginid_list = $.cookie('loginid_list');
 
-    if(this.loginid === null || typeof this.loginid === "undefined") {
+    if(!this.loginid || !loginid_list) {
         this.is_logged_in = false;
     } else {
         this.is_logged_in = true;
@@ -247,7 +247,7 @@ Client.prototype = {
     response_authorize: function(response) {
         page.client.set_storage_value('session_start', parseInt(moment().valueOf() / 1000));
         TUser.set(response.authorize);
-        if(!$.cookie('email')) this.set_cookie('email', response.authorize.email, window.location.host);
+        if(!$.cookie('email')) this.set_cookie('email', response.authorize.email);
         this.set_storage_value('is_virtual', TUser.get().is_virtual);
         this.check_storage_values();
         page.contents.activate_by_client_type();
