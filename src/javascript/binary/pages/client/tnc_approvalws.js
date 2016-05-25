@@ -56,7 +56,7 @@ var TNCApproval = (function() {
     };
 
     var redirectBack = function() {
-        window.location.href = redirectUrl || page.url.url_for('trading');
+        window.location.href = redirectUrl || page.url.default_redirect_url();
     };
 
     var apiResponse = function(response) {
