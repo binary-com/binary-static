@@ -463,7 +463,7 @@ URL.prototype = {
         return params;
     },
     default_redirect_url: function() {
-        return this.url_for('trading');
+        return this.url_for(page.language() === 'JA' ? 'jptrading' : 'trading');
     },
 };
 
