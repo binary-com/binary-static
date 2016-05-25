@@ -7,9 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: I 18N\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-18 09:38+0000\n"
+"PO-Revision-Date: 2016-05-25 09:32+0000\n"
 "Last-Translator: Pham Minh Hieu <hphamv7@gmail.com>\n"
-"Language-Team: Vietnamese <https://hosted.weblate.org/projects/binary/static/vi/>\n"
+"Language-Team: Vietnamese "
+"<https://hosted.weblate.org/projects/binary/static/vi/>\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -658,31 +659,47 @@ msgstr "<option value=\"\"></option><option value=\"01\">Tháng 01</option><opti
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:108
-#, fuzzy
 #| msgid "<p style=\"font-weight: bold;\">Thanks for signing up for a virtual account!</p><p>Enter the following verification token into the form to create an account: <p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p><p>Enjoy trading with us on Binary.com.</p>"
 msgid "<p style=\"font-weight: bold;\">Thanks for signing up for a virtual account!</p><p>Enter the following verification token into the form to create an account: <p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p><p>Enjoy trading with us on Binary.com.</p>"
-msgstr "<p style=\"font-weight: bold;\">Cảm ơn bạn đã đăng ký tài khoản tiền ảo!</p><p>Nhập mã xác nhận sau đây vào biểu mẫu để tạo một tài khoản: <p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p><p>Hãy trải nghiệm giao dịch với chúng tôi trên Binary.com.</p>"
+msgstr ""
+"<p style=\"font-weight: bold;\">Cảm ơn bạn đã đăng ký tài khoản ảo!</p><p>"
+"Nhập mã xác nhận sau đây vào khung để tạo một tài khoản: <p><span style=\""
+"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p><p>"
+"Hãy trải nghiệm việc giao dịch với chúng tôi trên Binary.com.</p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:95
-#, fuzzy
 #| msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Before we can help you change your password, please help us to verify your identity by entering the following verification token into the password reset form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Before we can help you change your password, please help us to verify your identity by entering the following verification token into the password reset form:<p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Kính gửi Quý khách hàng,</p><p>Trước khi chúng tôi có thể giúp bạn thay đổi mật khẩu của bạn, bạn vui lòng giúp chúng tôi xác minh nhận dạng của bạn bằng cách truy cập vào token xác minh sau đây và điền vào mẫu cài đặt lại mật khẩu:</p><p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">Kính gửi Quý "
+"khách hàng,</p><p>Trước khi chúng tôi có thể giúp bạn thay đổi mật khẩu của "
+"bạn, bạn vui lòng giúp chúng tôi xác minh nhận dạng của bạn bằng cách truy "
+"cập vào token xác minh sau đây và điền vào mẫu cài đặt lại mật khẩu:<p><span "
+"style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\""
+">%1</span></p></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:135
-#, fuzzy
 #| msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment agent withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment agent withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Kính gửi Quý khách hàng,</p><p>Vui lòng giúp chúng tôi xác thực danh tính của bạn bằng cách nhập mã token xác minh sau đây vào mẫu rút tiền đại lý thanh toán:</p><p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">Kính gửi Quý "
+"khách hàng,</p><p>Vui lòng giúp chúng tôi xác thực danh tính của bạn bằng "
+"cách nhập mã token xác minh sau đây vào mẫu rút tiền đại lý thanh toán:<p><"
+"span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\""
+">%1</span></p></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:147
-#, fuzzy
 #| msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Kính gửi Quý khách hàng,</p><p>Vui lòng giúp chúng tôi xác thực danh tính của bạn bằng cách nhập mã token xác minh sau đây vào mẫu rút tiền đại lý thanh toán:</p><p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">Kính gửi Quý "
+"khách hàng,</p><p>Vui lòng giúp chúng tôi xác thực danh tính của bạn bằng "
+"cách nhập mã token xác minh sau đây vào mẫu rút tiền đại lý thanh toán:<p><"
+"span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\""
+">%1</span></p></p>"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/affiliates/faq.html.tt:73
 msgid ""
@@ -3400,7 +3417,6 @@ msgstr ""
 
 #. ($client_name, $support_email)
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client/IDAuthentication.pm:128
-#, fuzzy
 #| msgid ""
 #| "Dear %1,\n"
 #| "\n"
@@ -3436,15 +3452,21 @@ msgid ""
 msgstr ""
 "%1 thân mến,\n"
 "\n"
-"Tôi viết thư cho bạn về việc liên quan tới tài khoản của bạn trên trang Binary.com.\n"
+"Chúng tôi viết thư cho bạn về việc liên quan tới tài khoản của bạn "
+"trên trang Binary.com.\n"
 "\n"
-"Chúng tôi được yêu cầu xác minh việc khách hàng đã trên 18 tuổi, và vì vậy chúng tôi yêu cầu bạn gửi bản scan phô tô của một trong những thứ sau tới %2:\n"
+"Chúng tôi được yêu cầu xác minh việc khách hàng đã trên 18 tuổi, và"
+" vì vậy chúng tôi yêu cầu bạn gửi bản scan phô tô của một trong nhữ"
+"ng thứ sau tới %2:\n"
 "\n"
-"- Hộ chiếu hoặc giấy phép Lái xe hoặc Chứng minh nhân dân có giá trị hiện hành.\n"
+"- Hộ chiếu hoặc giấy phép Lái xe hoặc Chứng minh nhân dân có giá "
+"trị hiện hành.\n"
 "\n"
-"Để phù hợp với quy định cấp phép, bạn sẽ không thể gửi tiền, rút tiền hoặc giao dịch trên tài khoản cho tới khi chúng tôi nhận được những giấy tờ này.\n"
+"Để phù hợp với quy định cấp phép, bạn sẽ không thể gửi tiền, rú"
+"t tiền hoặc giao dịch trên tài khoản cho tới khi chúng tôi nhận đượ"
+"c những giấy tờ này.\n"
 "\n"
-"Hi vọng sớm nhận được hồi âm từ bạn.\n"
+"Chúng tôi hy vọng sớm nhận được hồi âm từ bạn.\n"
 "\n"
 "Thân ái,\n"
 "\n"
@@ -7081,7 +7103,7 @@ msgstr "Ít nhất 6 chữ thường và chữ hoa với những con số"
 #. (to_monetary_number_format($stake_min)
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1618
 msgid "Minimum stake of %1 and maximum payout of %2"
-msgstr ""
+msgstr "Đặt cọc tối thiểu %1 và lợi nhuận tối đa %2"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:323
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Locale.pm:35
@@ -15004,10 +15026,9 @@ msgid "French Smart Index"
 msgstr "Chỉ số French Smart"
 
 #: Underlying Symbol OTC_DJI
-#, fuzzy
 #| msgid "Wall Street Index"
 msgid "Wall Street OTC Index"
-msgstr "Chỉ số phố Wall"
+msgstr "Chỉ số chứng khoán phi tập trung phố Wall"
 
 #: Underlying Symbol SYNN225
 msgid "Japanese Smart Index"
@@ -15022,10 +15043,9 @@ msgid "Russian Regular OTC Index"
 msgstr "Chỉ số chứng khoán phi tập trung Thông thường Nga"
 
 #: Underlying Symbol OTC_AEX
-#, fuzzy
 #| msgid "Dutch Index"
 msgid "Dutch OTC Index"
-msgstr "Chỉ số Hà Lan"
+msgstr "Chỉ số chứng khoán phi tập trung Hà Lan"
 
 #: Underlying Symbol FTSE
 msgid "UK Index"
@@ -15048,10 +15068,9 @@ msgid "Shanghai Index"
 msgstr "Chỉ số chứng khoán Thượng Hải"
 
 #: Underlying Symbol OTC_BIST100
-#, fuzzy
 #| msgid "Istanbul Index"
 msgid "Istanbul OTC Index"
-msgstr "Chỉ Số Istanbul"
+msgstr "Chỉ số chứng khoán phi tập trung Istanbul"
 
 #: Underlying Symbol FCHI
 msgid "French Index"
@@ -15086,10 +15105,9 @@ msgid "Euro 50 Index"
 msgstr "Chỉ số 50 châu Âu"
 
 #: Underlying Symbol OTC_N225
-#, fuzzy
 #| msgid "Japanese Index"
 msgid "Japanese OTC Index"
-msgstr "Chỉ số Nhật Bản"
+msgstr "Chỉ số chứng khoán phi tập trung Nhật Bản"
 
 #: Underlying Symbol SYNSX5E
 msgid "Euro 50 Smart Index"
@@ -15104,16 +15122,14 @@ msgid "Norwegian Index"
 msgstr "Chỉ số Na Uy"
 
 #: Underlying Symbol OTC_BFX
-#, fuzzy
 #| msgid "Belgian Index"
 msgid "Belgian OTC Index"
-msgstr "Chỉ số Bỉ"
+msgstr "Chỉ số chứng khoán phi tập trung Bỉ"
 
 #: Underlying Symbol OTC_AS51
-#, fuzzy
 #| msgid "Australian Index"
 msgid "Australian OTC Index"
-msgstr "Chỉ số Úc"
+msgstr "Chỉ số chứng khoán phi tập trung Úc"
 
 #: Underlying Symbol N225
 msgid "Japanese Index"
@@ -15208,10 +15224,9 @@ msgid "Jakarta Index"
 msgstr "Chỉ số Jakarta"
 
 #: Underlying Symbol OTC_GDAXI
-#, fuzzy
 #| msgid "German Index"
 msgid "German OTC Index"
-msgstr "Chỉ số chứng khoán Đức"
+msgstr "Chỉ số chứng khoán phi tập trung Đức"
 
 #: Underlying Symbol OTC_KOSPI2
 msgid "Korean OTC Index"
@@ -15222,10 +15237,9 @@ msgid "Kuwait OTC Index"
 msgstr "Chỉ số chứng khoán phi tập trung Cô-oét"
 
 #: Underlying Symbol OTC_FCHI
-#, fuzzy
 #| msgid "French Index"
 msgid "French OTC Index"
-msgstr "Chỉ số chứng khoán Pháp"
+msgstr "Chỉ số chứng khoán phi tập trung Pháp"
 
 #: Underlying Symbol SYNFTSE
 msgid "UK Smart Index"
@@ -15272,16 +15286,14 @@ msgid "Korean Index"
 msgstr "Chỉ số chứng khoán Hàn Quốc"
 
 #: Underlying Symbol OTC_HSI
-#, fuzzy
 #| msgid "Hong Kong Index"
 msgid "Hong Kong OTC Index"
-msgstr "Chỉ số Hồng Kông"
+msgstr "Chỉ số chứng khoán phi tập trung Hồng Kông"
 
 #: Underlying Symbol OTC_IXIC
-#, fuzzy
 #| msgid "US Tech 100 Index"
 msgid "US Tech OTC Index"
-msgstr "Chỉ số US Tech 100"
+msgstr "Chỉ số chứng khoán phi tập trung US Tech"
 
 #: Underlying Symbol SYNAEX
 msgid "Dutch Smart Index"
@@ -15300,10 +15312,9 @@ msgid "Swiss Index"
 msgstr "Chỉ số chứng khoán Thụy Sĩ"
 
 #: Underlying Symbol OTC_FTSE
-#, fuzzy
 #| msgid "UK Index"
 msgid "UK OTC Index"
-msgstr "Chỉ số Anh quốc"
+msgstr "Chỉ số chứng khoán phi tập trung Anh quốc"
 
 #: Underlying Symbol HSI
 msgid "Hong Kong Index"
@@ -15326,20 +15337,18 @@ msgid "Euro 100 Index"
 msgstr "Chỉ số 100 Euro"
 
 #: Underlying Symbol OTC_BSESENSEX30
-#, fuzzy
 #| msgid "Bombay Index"
 msgid "Bombay OTC Index"
-msgstr "Chỉ số Bombay"
+msgstr "Chỉ số chứng khoán phi tập trung Bombay"
 
 #: Underlying Symbol OTC_N150
 msgid "Euro 150 OTC Index"
 msgstr "Nhóm 150 Chỉ số chứng khoán phi tập trung Châu Âu"
 
 #: Underlying Symbol OTC_SPC
-#, fuzzy
 #| msgid "US Index"
 msgid "US OTC Index"
-msgstr "Chỉ số Hoa Kỳ"
+msgstr "Chỉ số chứng khoán phi tập trung Hoa Kỳ"
 
 #: Underlying Symbol OTC_SPTSX60
 msgid "Canadian OTC Index"
