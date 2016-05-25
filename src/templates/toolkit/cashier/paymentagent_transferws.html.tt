@@ -40,7 +40,15 @@
         <a href="/cashier?l=EN">[% l('Deposit') %]</a>
     </div>
 
-    <div id="paymentagent_transfer">
+    <div id="virtual_error" class="invisible">
+        <p class="center notice-msg">[% l('This feature is not relevant to virtual-money accounts.') %]</p>
+    </div>
+
+    <div id="not_pa_error" class="invisible">
+        <p class="center notice-msg">[% l('This feature is only relevant to payment agent accounts.') %]</p>
+    </div>
+
+    <div id="paymentagent_transfer" class="invisible">
         <p>[% l('Please fill in the Login ID and Amount you wish to transfer to your Client in the form below:') %]</p>
         <table class="kv-pairs">
             <tr>
@@ -86,7 +94,7 @@
     </div>
 
     <br>
-    <div id="paymentagent_transfer_notes">
+    <div id="paymentagent_transfer_notes" class="invisible">
         <div>Notes:</div>
         <ul>
             <li>[% l('Our site does not charge any transfer fees.') %]</li>
