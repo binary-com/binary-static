@@ -53,7 +53,7 @@ var LoggedInHandler = (function() {
 
     var storeTokens = function() {
         // Parse hash for loginids and tokens returned by OAuth
-        var hash = window.location.hash.substr(1).split('&');
+        var hash = window.location.search.substr(1).split('&');
         var tokens = {};
         for(var i = 0; i < hash.length; i += 2) {
             var loginid = getHashValue(hash[i], 'acct');
