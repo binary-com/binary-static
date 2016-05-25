@@ -165,6 +165,10 @@ var Price = (function() {
 
         var h4 = container.getElementsByClassName('contract_heading')[0],
             amount = container.getElementsByClassName('contract_amount')[0],
+            payoutAmount = container.getElementsByClassName('contract_payout')[0],
+            payountElement = document.getElementById('amount').value || document.getElementById('amount_per_point').value,
+            stake = container.getElementsByClassName('stake')[0],
+            payout = container.getElementsByClassName('payout')[0],
             purchase = container.getElementsByClassName('purchase_button')[0],
             description = container.getElementsByClassName('contract_description')[0],
             comment = container.getElementsByClassName('price_comment')[0],
@@ -193,19 +197,26 @@ var Price = (function() {
             var extraInfo = details['error']['details'];
             if (extraInfo && extraInfo['display_value']) {
                 if (is_spread) {
-                    amount.textContent = extraInfo['display_value'];
+                    $('.stake').hide();
+                    amount.textContent = proposal['display_value'];
+                    payout.textContent = text.localize('Payout/point') + ': ';
+                    payoutAmount.textContent = currency.value + ' ' + addComma(payountElement);
                 } else {
+                    $('.stake').show();
+                    stake.textContent = text.localize('Stake') + ': ';
                     amount.textContent = currency.value + ' ' + extraInfo['display_value'];
+                    payout.textContent = text.localize('Payout') + ': ';
+                    payoutAmount.textContent = currency.value + ' ' + addComma(payountElement);
                 }
 
                 extraInfo['longcode'] = extraInfo['longcode'].replace(/[\d\,]+\.\d\d/, function(x) {
                     return '<b>' + x + '</b>';
                 });
 
-                description.innerHTML = '<div>' + extraInfo['longcode'] + '</div>';
+                description.setAttribute('title', extraInfo['longcode']);
                 price_wrapper.classList.remove('small');
             } else {
-                description.innerHTML = "";
+                description.setAttribute('title', extraInfo['longcode']);
                 amount_wrapper.hide();
                 price_wrapper.classList.add('small');
             }
@@ -215,9 +226,16 @@ var Price = (function() {
         } else {
             if (proposal && proposal['display_value']) {
                 if (is_spread) {
+                    $('.stake').hide();
                     amount.textContent = proposal['display_value'];
+                    payout.textContent = text.localize('Payout/point') + ': ';
+                    payoutAmount.textContent = currency.value + ' ' + addComma(payountElement);
                 } else {
+                    $('.stake').show();
+                    stake.textContent = text.localize('Stake') + ': ';
                     amount.textContent = currency.value + ' ' + proposal['display_value'];
+                    payout.textContent = text.localize('Payout') + ': ';
+                    payoutAmount.textContent = currency.value + ' ' + addComma(payountElement);
                 }
             }
 
@@ -225,7 +243,7 @@ var Price = (function() {
                 proposal['longcode'] = proposal['longcode'].replace(/[\d\,]+\.\d\d/, function(x) {
                     return '<b>' + x + '</b>';
                 });
-                description.innerHTML = '<div>' + proposal['longcode'] + '</div>';
+                description.setAttribute('title', proposal['longcode']);
             }
 
             purchase.show();
