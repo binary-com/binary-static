@@ -97,7 +97,7 @@ var User = function() {
     this.email   =  $.cookie('email');
     var loginid_list = $.cookie('loginid_list');
 
-    if(this.loginid === null || typeof this.loginid === "undefined") {
+    if(!this.loginid || !loginid_list) {
         this.is_logged_in = false;
     } else {
         this.is_logged_in = true;
