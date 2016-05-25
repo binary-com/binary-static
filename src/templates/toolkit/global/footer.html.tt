@@ -129,7 +129,7 @@
                             target="[% target %]"[% END %]>[% l('Responsible Trading') %]</a>
                         </li>
                         <li class="ja-hide">
-                        <a class="pjaxload" href="[% request.url_for('/terms-and-conditions', {selected_tab => 'complaints-disputes-tac-tab'}) %]"[% IF target %]
+                        <a class="pjaxload" href="[% request.url_for('/terms-and-conditions?selected_tab=complaints-disputes-tac-tab') %]"[% IF target %]
                             target="[% target %]"[% END %]>[% l('Complaints') %]</a>
                         </li>
                         <li class="ja-hide id-hide ru-hide">
