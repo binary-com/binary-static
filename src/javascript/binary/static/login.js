@@ -13,7 +13,8 @@ var Login = (function() {
     };
 
     var login_url = function() {
-        return 'https://oauth.binary.com/oauth2/authorize?app_id=' + getAppId() + '&l=' + page.language();
+        return localStorage.getItem('config.server_url') && /qa/.test(localStorage.getItem('config.server_url')) ? 'https://www.' + localStorage.getItem('config.server_url').split('.')[1] + '.com/oauth2/authorize?app_id=' + getAppId() + '&l=' + page.language() :
+                                                           'https://oauth.binary.com/oauth2/authorize?app_id=' + getAppId() + '&l=' + page.language();
     };
 
     var is_login_pages = function() {
