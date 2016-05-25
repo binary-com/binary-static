@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-05 15:15+0000\n"
+"PO-Revision-Date: 2016-05-25 15:51+0000\n"
 "Last-Translator: Jutawan <bubbleblythe@gmail.com>\n"
 "Language-Team: Thai <https://hosted.weblate.org/projects/binary/static/th/>\n"
 "Language: th\n"
@@ -158,6 +158,10 @@ msgstr "%1 กำลังขยายงานเพื่อค้นหาผ
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:75
 msgid "%1 is an active proponent of the open-source movement. Suggest enhancements, and take part in the development of our powerful applications. You can find more information on our <a href=\"%2\" target=\"_blank\">Developers Portal</a>."
 msgstr ""
+"%1 เป็นผู้สนับสนุนการทำงานแบบโอเพ่นซอส มีการให้ข้อเสนอแนะ "
+"การมีส่วนร่วมในการพัฒนาระบบงานของแอพพลิเคชันของเรา "
+"ท่านสามารถศึกษาข้อมูลเพิ่มเติมได้จาก\n"
+" <a href=\"%2\" target=\"_blank\">Developers Portal</a> ของเรา"
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/beginners_faq.html.haml:1
@@ -250,10 +254,10 @@ msgstr "%1 ราคาต่างๆ นั้น อ้างอิงตา�
 
 #. (request.website.display_name)
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:3
-#, fuzzy
 #| msgid "%1 provides a variety of charts to help you determine what markets to trade on. Try them out."
 msgid "%1 provides a variety of applications to help you trade efficiently."
-msgstr "%1 มีแผนภูมิต่างๆ ให้ใช้งานเพื่อช่วยในการตัดสินใจของท่านในการเลือกตลาดในการเทรด ให้ท่านได้ใช้งาน"
+msgstr ""
+"%1 มีแอพพลิเคชันต่างๆ ให้ใช้งานเพื่อช่วยในการซื้อขายของท่านอย่างมีประสิทธิภาพ"
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/partners.html.haml:1
@@ -328,7 +332,6 @@ msgstr "ระบบต่างๆ ของ %1 ขณะนี้มีกา�
 
 #. ($client->loginid)
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Accounts.pm:398
-#, fuzzy
 msgid "%1-Failed attempt to unlock cashier section"
 msgstr "%1-ความพยายามล้มเหลวในการปลดล็อกแคชเชียร์"
 
@@ -668,31 +671,44 @@ msgstr "<option value=\"\"></option><option value=\"01\">ม.ค.</option><optio
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:108
-#, fuzzy
 #| msgid "<p style=\"font-weight: bold;\">Thanks for signing up for a virtual account!</p><p>Enter the following verification token into the form to create an account: <p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p><p>Enjoy trading with us on Binary.com.</p>"
 msgid "<p style=\"font-weight: bold;\">Thanks for signing up for a virtual account!</p><p>Enter the following verification token into the form to create an account: <p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p><p>Enjoy trading with us on Binary.com.</p>"
-msgstr "<p style=\"font-weight: bold;\">ขอขอบพระคุณที่ลงทะเบียนบัญชีทดลองใช้งาน!</p><p>กรุณาป้อนอักขระสำหรับการตรวจสอบต่อไปนี้ในแบบฟอร์มเพื่อสร้างบัญชีใหม่:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p><p>ขอให้เพลิดเพลินกับการซื้อขายกับเราที่ Binary.com</p>"
+msgstr ""
+"<p style=\"font-weight: bold;\">ขอขอบพระคุณที่ลงทะเบียนบัญชีทดลองใช้งาน!</p><"
+"p>กรุณาป้อนอักขระสำหรับการตรวจสอบต่อไปนี้ในแบบฟอร์มเพื่อสร้างบัญชีใหม่:<p><"
+"span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\""
+">%1</span></p></p><p>ขอให้เพลิดเพลินกับการซื้อขายกับเราที่ Binary.com</p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:95
-#, fuzzy
 #| msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Before we can help you change your password, please help us to verify your identity by entering the following verification token into the password reset form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Before we can help you change your password, please help us to verify your identity by entering the following verification token into the password reset form:<p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">เรียน ท่านลูกค้าผู้มีอุปการะคุณ</p><p>ในการเปลี่ยนรหัสผ่าน กรุณาป้อนอักขระสำหรับการตรวจสอบต่อไปนี้ในแบบฟอร์มเพื่อกำหนดรหัสผ่านใหม่:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">เรียน "
+"ท่านลูกค้าผู้มีอุปการะคุณ</p><p>ในการเปลี่ยนรหัสผ่าน "
+"กรุณาป้อนอักขระสำหรับการตรวจสอบต่อไปนี้ในแบบฟอร์มเพื่อกำหนดรหัสผ่านใหม่:<p><"
+"span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\""
+">%1</span></p></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:135
-#, fuzzy
 #| msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment agent withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment agent withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">เรียน ท่านลูกค้าผู้มีอุปการะคุณ</p><p>กรุณาป้อนอักขระสำหรับการตรวจสอบต่อไปนี้ในแบบฟอร์มถอนเงิน:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">เรียน ท่านลูกค้าผ"
+"ู้มีอุปการะคุณ</p><p>กรุณาป้อนอักขระสำหรับการตรวจสอบต่อไปนี้ในแบบฟอร์มถอนเงิน"
+":<p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\""
+">%1</span></p></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:147
-#, fuzzy
 #| msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">เรียน ท่านลูกค้าผู้มีอุปการะคุณ</p><p>กรุณาป้อนอักขระสำหรับการตรวจสอบต่อไปนี้ในแบบฟอร์มถอนเงิน:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">เรียน ท่านลูกค้าผ"
+"ู้มีอุปการะคุณ</p><p>กรุณาป้อนอักขระสำหรับการตรวจสอบต่อไปนี้ในแบบฟอร์มถอนเงิน"
+":<p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\""
+">%1</span></p></p>"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/affiliates/faq.html.tt:73
 msgid ""
@@ -1424,7 +1440,7 @@ msgstr "มีความรู้ขั้นสูงในเรื่อง
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:29
 msgid "Advanced tool for active traders"
-msgstr ""
+msgstr "เครื่องมือขั้นสูงสำหรับนักลงทุนที่ใช้งานอยู่ในปัจจุบัน"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "Advising senior managers regarding salary negotiations and job offers"
@@ -1794,7 +1810,7 @@ msgstr "ทันทีที่ท่าคลิกที่ปุ่ม \"ซ
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/explanation.html.tt:112
 msgid "Asian contracts will be refunded at the purchase price if the contract doesn't end within 5 minutes."
-msgstr ""
+msgstr "สัญญา Asian จะถูกคืนมูลค่าที่ราคาซื้อหากสัญญาไม่สิ้นสุดภายใน 5 นาที"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/explanation.html.tt:11
 msgid "Asian options settle by comparing the <strong>last tick</strong> with the average spot over the period."
@@ -1904,7 +1920,7 @@ msgstr "วิธีการชำระเงิน"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:62
 msgid "Available soon..."
-msgstr ""
+msgstr "ติดตาม เร็วๆ นี้ ..."
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:642
 msgid "Avg Directional Index"
@@ -2133,10 +2149,9 @@ msgid "Binary Ltd, with registered office address situated at <span itemprop='lo
 msgstr "Binary Ltd ขึ้นทะเบียนที่อยู่สำนักงานที่ <span itemprop='location'>47 Esplanade, St. Helier, Jersey, JE 0BD Channel Islands</span> เป็นบริษัทในเครือ Binary"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:58
-#, fuzzy
 #| msgid "Binary option"
 msgid "Binary Next Gen"
-msgstr "ไบนารีออปชั่น"
+msgstr "ไบนารี เน็กซ์ เจน"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/binary_options_basics.html.haml:1
 msgid "Binary Options Basics"
@@ -2241,6 +2256,13 @@ msgstr "Binary.com เป็นผู้สนับสนุนกระบว�
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/group_history.html.haml:1
 msgid "Binary.com is honoured as the world's \"Best Binary Options Broker\" at the 16th annual MENA International Financial Conference and Exhibition, hosted in Dubai."
 msgstr ""
+"Binary.com is honoured as the world's \"Best Binary Options Broker\" at the "
+"16th annual MENA International Financial Conference and Exhibition, hosted "
+"in Dubai.\n"
+"\n"
+"Binary.com ได้รับ “รางวัลโบรกเกอร์ไบนารีออปชั่นที่ดีที่สุด” "
+"ระดับโลกจากนิทรรศการและการประชุมการเงินนานาชาติประจำปี MENA ครั้งที่ 16 "
+"ที่ประเทศดูไบ"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/about/group-information.html.haml:1
 msgid "Binary.com is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
@@ -2281,15 +2303,11 @@ msgstr ""
 "The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/group_history.html.haml:1
-#, fuzzy
 #| msgid "Binary.com took home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
 msgid "Binary.com takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
 msgstr ""
-"== not fin ==\n"
-"\n"
-"Binary.com\n"
-"\n"
-" took home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
+"Binary.com ได้รับรางวัลชนะเลิศ ประเภท Financial Betting Operator ในงานเกียรติ"
+"ยศ EGR Operator Awards ปี 2015 จัดที่เมืองลอนดอน"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/open_source_projects.html.haml:1
 msgid "Binary.com’s CPAN contributions"
@@ -2505,19 +2523,16 @@ msgid "Certain limits are imposed as to the acceptable levels for barrier/strike
 msgstr ""
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:637
-#, fuzzy
 msgid "Chaikin Money Flow"
 msgstr "Chaikin Money Flow"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:629
-#, fuzzy
 msgid "Chaikin Oscillator"
 msgstr "Chaikin Oscillator"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:599
-#, fuzzy
 msgid "Chaikin Volatility"
-msgstr "Chaikin Volatility"
+msgstr "ความแปรปรวน Chaikin"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/intraday_prices.html.tt:34
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/charting/legacy_chart_table.html.tt:16
@@ -2592,10 +2607,14 @@ msgstr "กำหนดขอบเขต:"
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/types_of_trades.html.haml:1
 msgid "Choose Stays In/Out to profit from the market staying inside or going outside two price targets any time during the contract period."
 msgstr ""
+"เลือก Stays In/Out เมื่อต้องการทำกำไรในตลาดโดยการพิจารณาราคาเป้าหมายว่า "
+"จะอยู่ใน หรือ ออกนอก ขอบเขตของ 2 ราคาเป้าหมายในระยะเวลาของสัญญา"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/types_of_trades.html.haml:1
 msgid "Choose Touch / No Touch when you want to profit from the market touching or not touching a target any time during the contract period."
 msgstr ""
+"เลือก Touch / No Touch เมื่อต้องการทำกำไรในตลาดโดยการพิจารณาราคาเป้าหมายว่า "
+"จะบรรลุ หรือ ไม่บรรลุ ราคาเป้าหมายในระยะเวลาของสัญญา"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/api_tokenws.html.tt:17
 msgid "Choose a Name:"
@@ -2710,6 +2729,10 @@ msgstr "ลูกค้าสามารถใช้โบนัสเมื่
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/responsible_trading.html.haml:1
 msgid "Clients must be aware that underage gambling is an offence. If a client, upon age verification, is proven to be underage, will be deprived from any winnings and only deposits made shall be refunded."
 msgstr ""
+"ลูกค้าต้องมีความตระหนักในพฤติกรรมการเสี่ยงโชค (การพนัน) "
+"สำหรับผู้ที่ยังไม่บรรลุนิติภาวะ หากลูกค้าได้รับการพิสูจน์ว่าเป็น "
+"ผู้ที่ยังไม่บรรลุนิติภาวะ ในกระบวนการการตรวจสอบอายุ "
+"ผู้นั้นจะไม่ได้รับผลจากการเสี่ยงโชคที่ชนะ และเงินที่ได้ฝากเข้ามาจะถูกนำส่งคืน"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/terms_and_conditions.html.tt:87
 msgid "Clients must fill into the account opening form all requested details that establish their identity. Clients must give a valid identification, address, and contact email and personal telephone number."
@@ -2744,6 +2767,10 @@ msgstr "ลูกค้าจะต้องไม่เป็น หรือ �
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/responsible_trading.html.haml:1
 msgid "Clients who do not wish to renew the self-exclusion and make a request to begin trading again, shall be given one day to cool off before being allowed access to the website. It is important to note that contact must be made to our customer services via telephone. Email contact is not sufficient."
 msgstr ""
+"ลูกค้าที่ไม่ต้องการยุติการพักใช้งานและเริ่มซื้อขายใหม่ จะใช้เวลาประมาณ 1 วัน "
+"ก่อนที่จะใช้งานเว็บได้อีกครั้ง "
+"โดยจะต้องเป็นการติดต่อฝ่ายบริการลูกค้าทางโทรศัพท์ "
+"และไม่สามารถดำเนินการผ่านทางอีเมล์"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/responsible_trading.html.haml:1
 msgid "Clients who wish to self-exclude should be aware that the self-exclusion period is a minimum of six months and are given the option to extend it to a total of at least five years, immediately without any cooling-off period. When the self-exclusion period is set, the balance of funds in the client's account will be refunded to the client. At the end of the self-exclusion period, the self-exclusion remains in place, unless positive action is taken by the client in order to trade again."
@@ -2859,10 +2886,9 @@ msgstr "สิทธิ์ของบริษัท"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/layouts/default/footer.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/global/footer.html.tt:133
-#, fuzzy
 #| msgid "Compliance"
 msgid "Complaints"
-msgstr "การปฏิบัติตามข้อกำหนด"
+msgstr "ข้อร้องเรียน"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/complaints_disputes.html.tt:2
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/tac.html.tt:19
@@ -2886,6 +2912,9 @@ msgstr "การปฏิบัติตามข้อกำหนดและ
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:23
 msgid "Comply with the applicable laws, rules, and regulations (including, but not limited to, advertising, data protection and privacy laws, rules, and regulations) of the jurisdiction(s) in which you operate or target your business."
 msgstr ""
+"สอดคล้องกับกฎหมายต่างๆ หลักเกณฑ์ต่างๆ (รวมถึง สื่อโฆษณา "
+"กฎหมายป้องกันข้อมูลและความเป็นส่วนตัว กฎเกณฑ์ตามการพิจารณาคดีตามกฎหมาย "
+"ที่ใช้ปฏิบัติ หรือ เกี่ยวกับธุรกิจของท่าน)"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:124
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/us_patents.html.tt:7
@@ -3169,6 +3198,9 @@ msgstr "ประเทศที่พำนัก"
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/biel_terms.html.tt:84
 msgid "Cover is made available on the basis of the depositor rather than on the basis of the number of deposits, meaning that if an individual has multiple accounts he will only be covered as to €20,000 on the global amount. Any other amount exceeding such threshold is not protected and will thus have to be borne by the investor."
 msgstr ""
+"เงินสำรองถูกกำหนดไว้สำหรับผู้ฝาก หมายถึง เมื่อบุคคลมีบัญชีมากกว่า 1 บัญชี "
+"เขาจะต้องสำรองเงินไว้ 20,000 ยูโร จำนวนเงินที่มากกว่าจำนวนเงินที่กำหนดไว้จะไม"
+"่ได้รับการคุ้มครองและจะเป็นความรับผิดชอบของนักลงทุนเอง"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/api_tokenws.html.tt:51
 msgid "Create"
@@ -3442,7 +3474,6 @@ msgstr ""
 
 #. ($client_name, $support_email)
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client/IDAuthentication.pm:128
-#, fuzzy
 #| msgid ""
 #| "Dear %1,\n"
 #| "\n"
@@ -3478,13 +3509,17 @@ msgid ""
 msgstr ""
 "เรียน %1\n"
 "\n"
-"อ้างถึงบัญชีของท่านที่มีกับ Binary.com เพื่อให้เป็นไปตามข้อกำหนดทางกฎหมาย พวกเราขออนุญาตขอเอกสารท่านเพื่อดำเนินการตรวจสอบว่า ลูกค้ามีอายุมากกว่า 18 ปี และขอให้ท่านนำส่งสำเนาเอกสารสแกนของเอกสารหนึ่งในรายการต่อไปนี้ ให้ %2:\n"
+"อ้างถึงบัญชีของท่านที่มีกับ Binary.com เพื่อให้เป็นไปตามข้อกำหนดทางกฎหมาย "
+"พวกเราขออนุญาตขอเอกสารท่านเพื่อดำเนินการตรวจสอบว่า ลูกค้ามีอายุมากกว่า 18 ปี "
+"และขอให้ท่านนำส่งสำเนาเอกสารสแกนของเอกสารหนึ่งในรายการต่อไปนี้ ให้ %2:\n"
 "\n"
 "- หนังสือเดินทาง (ที่ไม่หมดอายุ) หรือ\n"
 "- ใบขับขี่ (ที่ไม่หมดอายุ) หรือ\n"
 "- บัตรประจำตัวประชาชน (ที่ไม่หมดอายุ)\n"
 "\n"
-"ท่านจะยังไม่สามารถดำเนินการฝากเงิน หรือถอนเงิน หรือทำการซื้อขายในบัญชีของท่าน จนกระทั่งพวกเราได้รับเอกสารของท่านและดำเนินการตรวจสอบเรียบร้อยแล้ว เพื่อเป็นไปตามหลักเกณฑ์และระเบียบปฏิบัติ จึงเรียนมาเพื่อโปรดทราบ\n"
+"ท่านจะยังไม่สามารถดำเนินการฝากเงิน หรือถอนเงิน หรือทำการซื้อขายในบัญชีของท่"
+"าน จนกระทั่งพวกเราได้รับเอกสารของท่านและดำเนินการตรวจสอบเรียบร้อยแล้ว "
+"เพื่อเป็นไปตามหลักเกณฑ์และระเบียบปฏิบัติ จึงเรียนมาเพื่อโปรดทราบ\n"
 "\n"
 "หวังว่าเราจะได้รับการติดต่อกลับจากท่านเร็วๆ นี้\n"
 "\n"
@@ -3582,7 +3617,6 @@ msgstr ""
 
 #. (token)
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/email/resend_verification.html.tt:1
-#, fuzzy
 #| msgid ""
 #| "Dear Valued Customer,\n"
 #| "\n"
@@ -3600,7 +3634,7 @@ msgid ""
 msgstr ""
 "เรียน ท่านลูกค้าผู้มีอุปการะคุณ\n"
 "\n"
-"โปรดคลิกที่ลิงค์ด้านล่าง เพื่อดำเนินการตามการร้องขอของท่าน:\n"
+"โปรดใช้โทเค่นด้านล่างนี้ เพื่อดำเนินการตามการร้องขอของท่าน:\n"
 "\n"
 "%1\n"
 "\n"
@@ -3806,7 +3840,7 @@ msgstr "ความแตกต่างของข้อมูลฟีดอ
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/explanation.html.tt:118
 msgid "Digit contracts will be refunded at the purchase price if the contract doesn't end within 5 minutes."
-msgstr ""
+msgstr "สัญญา Digit จะถูกคืนมูลค่าที่ราคาซื้อหากสัญญาไม่สิ้นสุดภายใน 5 นาที"
 
 #. (@range)
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Pricing/Engine/Digits.pm:52
@@ -3934,6 +3968,10 @@ msgstr "ทำให้องค์กรเติบโตอย่างรว
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:717
 msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
 msgstr ""
+"ตามที่มีการเปลี่ยนแปลงเกิดขึ้นในหลักเกณฑ์ "
+"พวกเราใคร่ขอให้ลูกค้าดำเนินการบันทึกการประเมินทางการเงินของท่านใหม่ ทางบริษั"
+"ทฯ ขอเรียนให้ทราบว่า "
+"ท่านจะไม่สามารถซื้อขายต่อไปได้หากท่านยังไม่ได้ตอบแบบสำรวจดังกล่าว"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1412
 msgid "Due to regulatory requirements, you are required to authenticate your account in order to continue trading."
@@ -4136,10 +4174,11 @@ msgid "Ends Between/Ends Outside trades"
 msgstr "สิ้นสุดระหว่าง/สิ้นสุดนอกขอบเขต"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/explanation.html.tt:126
-#, fuzzy
 #| msgid "Contracts will be refunded at the purchase price if the following conditions occur: (1) there are less than 2 ticks between the start and end times, or (2) for contracts of tick duration, if the contract doesn't end within 5 minutes."
 msgid "Ends In/Out contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "สัญญาจะถูกคืนมูลค่าที่ราคาซื้อหากมีกรณีต่อไปนี้เกิดขึ้น: (1) มีน้อยกว่า 2 ช่วงราคาระหว่างเวลาเริ่มต้นกระทั่งเวลาสิ้นสุด หรือ (2) สำหรับสัญญาตามระยะเวลาของช่วงราคา เมื่อสัญญาไม่สิ้นสุดใน 5 นาที"
+msgstr ""
+"สัญญา Ends In/Out จะถูกคืนมูลค่าที่ราคาซื้อหาก มีจำนวนช่วงราคาน้อยกว่า 2 ช่"
+"วง ระหว่างเวลาเริ่มต้นกระทั่งเวลาสิ้นสุด"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "Engage in data mining using SQL databases, R/S-Plus, OLAP and other analytical tools"
@@ -4152,6 +4191,9 @@ msgstr "เพิ่มศักยภาพในการใช้สื่อ
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:10
 msgid "Enjoy our fastest type of trading on your mobile phone or tablet. Place tick trades anytime, anywhere – even while you’re on the move."
 msgstr ""
+"เพลิดเพลินกับการซื้อขายที่รวดเร็วที่สุดบนโทรศัพท์เคลื่อนที่ หรือ "
+"แท็บแล็ตของท่าน ทำการซื้อขายได้ตลอดเวลา ทุกสถานที่ "
+"แม้ว่าท่านกำลังอยู่ระหว่างการเดินทาง"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "Ensure compliance with quality control standards governing website content"
@@ -4231,7 +4273,7 @@ msgstr "คู่/คี่"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/explanation.html.tt:132
 msgid "Even/Odd contracts will be refunded at the purchase price if the contract doesn't end within 5 minutes."
-msgstr ""
+msgstr "สัญญา Even/Odd จะถูกคืนมูลค่าที่ราคาซื้อหากสัญญาไม่สิ้นสุดภายใน 5 นาที"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:46
 msgid "Examine the history of a particular instrument to plot your next move. This advanced charting platform offers a wide range of technical indicators."
@@ -4440,6 +4482,8 @@ msgstr "คำอธิบาย"
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:60
 msgid "Explore our most cutting-edge new platform, now available in beta form. Place trades from your virtual account."
 msgstr ""
+"ใช้งานแพลตฟอร์มล้ำยุคที่สุดของเราได้แล้วตอนนี้ สำหรับรุ่นเบต้า "
+"โดยการซื้อขายจากบัญชีทดลองใช้ของท่าน"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:491
 msgid "Exponential Moving Average"
@@ -4789,6 +4833,9 @@ msgstr "คำแนะนำ ต้องไม่เกิน %1 ตัวอ�
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/terms_and_conditions.html.tt:139
 msgid "Further, the Company, under the above circumstances, or any other, reserves the right to adjust a client’s account should any trade result in a disruption, miscarry or aborted trade."
 msgstr ""
+"นอกจากนี้ บริษัทฯ "
+"สงวนสิทธิ์ในการดำเนินการกับบัญชีลูกค้าที่มีพฤติการณ์ของการขัดขวาง "
+"การใช้งานที่ไม่ถูกต้อง หรือ การยุติการซื้อขาย"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/api_tac_tab.html.tt:173
 msgid "Furthermore, the Company disclaims all liability for any malfunctioning, impossibility of access, or poor use conditions of the Binary.com API due to inappropriate equipment, disturbances related to internet service providers, to the saturation of the internet network, and for any other reason."
@@ -5039,10 +5086,11 @@ msgid "Higher/Lower"
 msgstr "สูงกว่า/ต่ำกว่า"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/explanation.html.tt:140
-#, fuzzy
 #| msgid "Contracts will be refunded at the purchase price if the following conditions occur: (1) there are less than 2 ticks between the start and end times, or (2) for contracts of tick duration, if the contract doesn't end within 5 minutes."
 msgid "Higher/Lower contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "สัญญาจะถูกคืนมูลค่าที่ราคาซื้อหากมีกรณีต่อไปนี้เกิดขึ้น: (1) มีน้อยกว่า 2 ช่วงราคาระหว่างเวลาเริ่มต้นกระทั่งเวลาสิ้นสุด หรือ (2) สำหรับสัญญาตามระยะเวลาของช่วงราคา เมื่อสัญญาไม่สิ้นสุดใน 5 นาที"
+msgstr ""
+"สัญญา Higher/Lower จะถูกคืนมูลค่าที่ราคาซื้อหาก มีจำนวนช่วงราคาน้อยกว่า 2 ช่"
+"วง ระหว่างเวลาเริ่มต้นกระทั่งเวลาสิ้นสุด"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/glossary.html.haml:1
 msgid "Higher/Lower trades"
@@ -5225,6 +5273,9 @@ msgstr ""
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/logintrouble.html.tt:5
 msgid "If you are experiencing difficulties logging into your account, please verify that cookies are enabled in your browser. This website uses cookies to store your login ID and password (in encrypted format) on your PC during your login session."
 msgstr ""
+"หากท่านไม่สามารถเข้าใช้งานบัญชีของท่าน โปรดตรวจสอบคุกกี้ของเบราเซอร์ท่าน "
+"เว็บไซต์ของเราใช้คุกกี้ที่เก็บอยู่ในบัญชีผู้ใช้งานและรหัสผ่านของท่าน "
+"(ที่มีการเข้ารหัส) ในเครื่องคอมพิวเตอร์ของท่านในขณะที่ท่านใช้งานระบบซื้อขาย"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/careers.html.haml:1
 msgid "If you are, we’d love to hear from you."
@@ -5439,9 +5490,13 @@ msgid "Improvements"
 msgstr "การปรับปรุง"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/group_history.html.haml:1
-#, fuzzy
 msgid "In April, <a target=\"_blank\" href=\"http://www.betonmarkets.com\">Betonmarkets.com</a> (formerly known as <a target=\"_blank\" href=\"http://www.xodds.com\">Xodds.com</a>) goes live, establishing a round-the-clock financial betting service on a variety of financial indices. Business grows quickly, and we soon become the market leader in fixed-odds financial betting."
-msgstr "เดือนเมษายน <a target=\"_blank\" href=\"http://www.betonmarkets.com\">Betonmarkets.com</a> (รู้จักในนาม <a target=\"_blank\" href=\"http://www.xodds.com\">Xodds.com</a>) ได้เปิดใช้งานจริง บริการทางการเงินที่มีความหลากหลายของสกุลเงินต่างๆ ธุรกิจเติบโตอย่างรวดเร็ว และพวกเราก้าวสู่การเป็นผู้นำตลาด  Fixed-odds financial betting"
+msgstr ""
+"ในเดือนเมษายน <a target=\"_blank\" href=\"http://www.betonmarkets.com\""
+">Betonmarkets.com</a> (รู้จักในนาม <a target=\"_blank\" href=\""
+"http://www.xodds.com\">Xodds.com</a>) ได้เปิดใช้งานจริง "
+"ให้บริการทางการเงินที่มีความหลากหลายของสกุลเงินต่างๆ ธุรกิจเติบโตอย่างรวดเร็"
+"ว และพวกเราก้าวสู่การเป็นผู้นำตลาด Fixed-odds financial betting"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/group_history.html.haml:1
 msgid "In October 1999, Regent Markets receives US$2 million investment funding from Jim Mellon through his Regent Pacific Group, a Hong Kong based fund management company."
@@ -5551,12 +5606,12 @@ msgstr "In/Out"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/volidx_markets.html.haml:1
 msgid "In/Out (ends between/outside and stays between/goes outside)"
-msgstr ""
+msgstr "In/Out (ends between/outside และ stays between/goes outside)"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/glossary.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/types_of_trades.html.haml:1
 msgid "In/Out trades"
-msgstr ""
+msgstr "การซื้อขาย In/Out"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:684
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:357
@@ -6773,10 +6828,9 @@ msgid "Links"
 msgstr "ลิงค์"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:83
-#, fuzzy
 #| msgid "Binary.com open-source projects"
 msgid "List of All Open-Source Projects"
-msgstr "โครงการโอเพ่นซอสต่างๆ ของ Binary.com"
+msgstr "รายนามโครงการโอเพ่นซอสต่างๆ ทั้งหมด"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/contact.html.haml:1
 msgid "Live chat:"
@@ -7771,11 +7825,17 @@ msgstr ""
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/group_history.html.haml:1
 msgid "Our company continues to thrive and obtains a license in the Isle of Man to better service our UK clients."
 msgstr ""
+"บริษัทของเรามีการพัฒนาอย่างต่อเนื่องเพื่อขอใบอนุญาตบนเกาะ Isle of Man "
+"ในการให้บริการที่ดีขึ้นกับลูกค้าในประเทศสหราชอาณาจักร"
 
 #. (request.url_for("cashier/payment_methods"))
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/risk_disclaimer.html.tt:96
 msgid "Our costs and charges for depositing and withdrawing money are set out <a href=\"%1\" class=\"pjaxload\">here</a>. Please be aware of all costs and charges that apply to you because they will affect your profitability."
 msgstr ""
+"ค่าใช้จ่ายและค่าธรรมเนียมของเราในการฝากเงินละถอนเงินถูกกไหนดไว้ <a href=\"%"
+"1\" class=\"pjaxload\">ที่นี่</a> "
+"โปรดศึกษาข้อมูลดังกล่าวที่มีความเกี่ยวข้องกับบัญชีท่าน "
+"เนื่องจากค่าใช้จ่ายดังกล่าวสัมพันธ์กับความสามารถในการทำกำไรของท่าน"
 
 #. (website_name)
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/email/bonus_reject.html.tt:21
@@ -7789,26 +7849,45 @@ msgid ""
 "Karen Yap\n"
 "%1"
 msgstr ""
+"ฝ่ายบริการลูกค้าของเราจะดำเนินการเรื่องโบนัสแทนท่านเมื่อเราได้รับเอกสาร "
+"และจะใช้เวลาดำเนินการ 3 วันทำการ เพื่อโอนโบนัสเข้าบัญชีของท่าน\n"
+"\n"
+"ขอให้ท่านโชคดีในการซื้อขาย\n"
+"\n"
+"ขอแสดงความนับถือ\n"
+"\n"
+"Karen Yap\n"
+"%1"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/group_history.html.haml:1
 msgid "Our customers clearly like us. In mid-2014, Binary.com has over 100 million historical transactions and over 130,000 new daily transactions."
 msgstr ""
+"เราเป็นที่นิยมชมชอบของลูกค้า ในกลางปี 2557 Binary.com มีธุรกรรมมากกว่า 100 "
+"ล้านระเบียน และมีธุรกรรมใหม่ที่เกิดขึ้นรายวันกว่า 130,000 ธุรกรรม"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/datafeed.html.tt:35
 msgid "Our data feed is designed to be one of the best and most robust available for a trading environment."
 msgstr ""
+"ฟีดข้อมูลของเราถูกออกแบบเพื่อการทำงานที่ดีที่สุด เร็วที่สุด "
+"มีศักยภาพสูงสูงในการซื้อขายของท่าน"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/datafeed.html.tt:21
 msgid "Our data feed may at times differ slightly from other data feeds found on the internet (who may themselves differ between each other). Reasons for differences in feed providers include:"
 msgstr ""
+"ข้อมูลฟีดของเราจะมีเวลาที่มีความแตกต่างเล็กน้อยจากฟีดข้อมูลอื่นที่อยู่บนอินเท"
+"อร์เน็ต โดยมีเหตุผลของความแตกต่างจากผู้ให้ฟีด ดังนี้:"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/group_history.html.haml:1
 msgid "Our fast organic growth is supplemented by the acquisition of the client base of BetsForTraders, one of our main competitors."
 msgstr ""
+"หลักการเติบโตอย่างรวดเร็วของเรา คือ การผนวกกันโดยได้มาซึ่งฐานลูกค้าของ "
+"BetsForTraders ผู้เป็นหนึ่งในคู่แข่งหลักของเรา"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/privacy.html.tt:26
 msgid "Our information security policies are based on industry best practices in access control and business continuity."
 msgstr ""
+"นโยบายเกี่ยวกับความปลอดภัยของข้อมูลเป็นไปตามกระบวนวิธีการปฏิบัติที่เป็นมาตรฐา"
+"นในการควบคุมการเข้าถึงและการดำเนินธุรกิจอย่างต่อเนื่อง"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/risk_disclaimer.html.tt:19
 msgid "Our services are provided on an execution only basis. We do not provide investment advice in relation to our products or services. We sometimes provide factual information or research recommendations about a market, information about transaction procedures and information about the potential risks involved and how those risks may be minimised. However, any decision to use our products or services is made by you."
@@ -7821,7 +7900,7 @@ msgstr ""
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:574
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_transferws.html.tt:92
 msgid "Our site does not charge any transfer fees."
-msgstr ""
+msgstr "ระบบของเราไม่เรียกเก็บค่าธรรมเนียมใดๆ ในการโอน"
 
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:439
 msgid "Output validation failed: "
@@ -7884,6 +7963,7 @@ msgstr "สูงกว่า/ต่ำกว่า"
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/explanation.html.tt:146
 msgid "Over/Under contracts will be refunded at the purchase price if the contract doesn't end within 5 minutes."
 msgstr ""
+"สัญญา Over/Under จะถูกคืนมูลค่าที่ราคาซื้อหากสัญญาไม่สิ้นสุดภายใน 5 นาที"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:427
 msgid "Overlay"
@@ -7896,6 +7976,8 @@ msgstr "เครื่องมือ Overlay"
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "Oversee incident responses for our production servers and take the necessary measures to correct and enhance IT operations"
 msgstr ""
+"ดูแลบริหารจัดการปัญหาการใช้งานเครื่องแม่ข่ายสำหรับที่ใช้งานจริง "
+"และวัดผลเพื่อปรับปรุงการปฏิบัติการระบบเทคโนโลยีสารสนเทศ"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:59
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/api_tac_tab.html.tt:107
@@ -7904,8 +7986,14 @@ msgstr "กรรมสิทธิ์"
 
 #. (website)
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:61
+#, fuzzy
 msgid "Ownership and content of the %1 website remains our respective properties and shall not be deemed to have been transferred to you through any act or omission in respect of this Agreement."
 msgstr ""
+"== Pending ==\n"
+"กรรมสิทธิ์และเนื้อหาในเว็บไซต์ %1 ประกอบด้วยคุณสมบัติ \n"
+"\n"
+"and shall not be deemed to have been transferred to you through any act or "
+"omission in respect of this Agreement."
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:62
 msgid "Ownership, content, and liability of the Affiliate's websites are the sole responsibility of the Affiliate. You will be solely responsible for the development, operation, and maintenance of your website and for all materials that appear on your website. You will indemnify and hold us harmless from all claims, damages, and expenses (including, without limitation to, attorneys' fees) relating to the development, operation, maintenance, and contents of your website."
@@ -7991,130 +8079,134 @@ msgstr "ตั้งรหัสผ่านใหม่"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:306
 msgid "Password score is: %1. Passing score is: 20."
-msgstr ""
+msgstr "คะแนนของรหัสผ่าน: %1 คะแนนที่ผ่าน: 20"
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Utility.pm:181
 msgid "Password should be at least six characters, including lower and uppercase letters with numbers."
 msgstr ""
+"รหัสผ่านควรมีอย่างน้อย 6 อักขระ ที่ประกอบด้วยอักษรตัวเล็ก อักษรตัวใหญ่ "
+"และตัวเลข"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:307
 msgid "Password should have lower and uppercase letters with numbers."
-msgstr ""
+msgstr "รหัสผ่านควรประกอบด้วยอักษรตัวเล็ก อักษรตัวใหญ่ และตัวเลข"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/layouts/default/footer.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/global/footer.html.tt:139
 msgid "Patents"
-msgstr ""
+msgstr "สิทธิบัตรต่างๆ"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/cashier/index.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/partners.html.haml:1
 msgid "Payment Agent"
-msgstr ""
+msgstr "ตัวแทนรับชำระเงิน"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:265
 msgid "Payment Agent Deposit"
-msgstr ""
+msgstr "ตัวแทนรับชำระเงินสำหรับฝากเงิน"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:255
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_withdrawws.html.tt:2
 msgid "Payment Agent Withdrawal"
-msgstr ""
+msgstr "ตัวแทนรับชำระเงินสำหรับถอนเงิน"
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Cashier.pm:440
 msgid "Payment Agent activity not currently authorized"
-msgstr ""
+msgstr "รายการของตัวแทนรับชำระเงินยังไม่ได้รับการตรวจสอบ"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_transferws.html.tt:2
 msgid "Payment Agent transfer"
-msgstr ""
+msgstr "ตัวแทนรับชำระเงินสำหรับการโอนเงิน"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Payment Agents"
-msgstr ""
+msgstr "ตัวแทนรับชำระเงิน"
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Cashier.pm:436
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Cashier.pm:672
 msgid "Payment Agents are not available on this site."
-msgstr ""
+msgstr "ไม่สามารถใช้ตัวแทนรับชำระเงินกับไซต์นี้"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:201
 #: /home/git/translations/binary-static-www2/src/templates/haml/layouts/default/footer.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/global/footer.html.tt:95
 msgid "Payment Methods"
-msgstr ""
+msgstr "วิธีการชำระเงิน"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/payment_agent_listws.html.tt:64
 msgid "Payment agent is unavailable in your country."
-msgstr ""
+msgstr "ไม่สามารถใช้ตัวแทนรับชำระเงินในประเทศของท่าน"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/home/index.html.haml:1
 msgid "Payment methods"
-msgstr ""
+msgstr "วิธีการชำระเงิน"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:78
 msgid "Payment of commission earned for the previous calendar month will be made monthly, on or around the 15th day of each month, and may be credited to any payment method as agreed between the Company and the Affiliate."
 msgstr ""
+"การจ่ายค่าตอบแทนที่เกิดขึ้นในเดือนก่อนหน้าตามปฏิทิน จะดำเนินการทุกวันที่ 15 "
+"ในแต่ละเดือน และจะนำเข้าบัญชีท่านตามช่องทางที่ท่าระบุกับบริษัทฯ"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/api_tokenws.html.tt:34
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:74
 msgid "Payments"
-msgstr ""
+msgstr "การชำระเงิน"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:158
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/ContractForm.pm:751
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/glossary.html.haml:1
 msgid "Payout"
-msgstr ""
+msgstr "การชำระเงิน"
 
 #. (to_monetary_number_format($transaction_parameters->{payout})
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:1362
 msgid "Payout has moved in your favour from %1 to %2."
-msgstr ""
+msgstr "การชำระเงินได้รับการปรับปรุงจาก %1 เป็น %2"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2207
 msgid "Payout may not have more than two decimal places."
-msgstr ""
+msgstr "การชำระเงินจะไม่เกินเลขทศนิยม 2 หลัก"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:705
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:365
 msgid "Pension"
-msgstr ""
+msgstr "บำนาญ"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:571
 msgid "Performance"
-msgstr ""
+msgstr "ผลการดำเนินงาน"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:179
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:541
 msgid "Period"
-msgstr ""
+msgstr "ระยะเวลา"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "Perl knowledge and/or readiness to learn is a must"
-msgstr ""
+msgstr "ความรู้ภาษา Perl และ/หรือ ความพร้อมในการศึกษาเป็นสิ่งจำเป็น"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/open_source_projects.html.haml:1
 msgid "Perl modules"
-msgstr ""
+msgstr "โมดูลต่างๆ ในภาษา Perl"
 
 #. ($descriptor->{require_scope})
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:389
 msgid "Permission denied, requiring %1"
-msgstr ""
+msgstr "ท่านไม่ได้รับอนุญาตในการใช้งาน ต้องการ %1"
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Utility.pm:68
 msgid "Permission denied."
-msgstr ""
+msgstr "ท่านไม่ได้รับอนุญาตในการใช้งาน"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:722
 msgid "Permissions"
-msgstr ""
+msgstr "สิทธิ์"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:594
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/settings_detailsws.html.tt:3
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/settingsws.html.tt:12
 msgid "Personal Details"
-msgstr ""
+msgstr "รายละเอียดส่วนบุคคล"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:433
 msgid "Pick workspace file"
@@ -8122,11 +8214,12 @@ msgstr ""
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/glossary.html.haml:1
 msgid "Pip"
-msgstr ""
+msgstr "Pip"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/glossary.html.haml:1
 msgid "Pip stands for ‘percentage in point’ which is generally the fourth decimal place (i.e. 0.0001)."
 msgstr ""
+"Pip ย่อมาจาก ‘Percentage in Point’ ซึ่งปกติจะเป็นทศนิยม 4 หลัก (เช่น 0.0001)"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/layouts/default/footer.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/global/footer.html.tt:62
@@ -8135,15 +8228,15 @@ msgstr "เยี่ยมชมระบบของเรา"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:313
 msgid "Please %1 to view this page"
-msgstr ""
+msgstr "โปรด %1 เพื่อเรียกดูหน้านี้"
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Cashier.pm:90
 msgid "Please accept Funds Protection."
-msgstr ""
+msgstr "โปรดยอมรับ Fund Protection"
 
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Locale.pm:221
 msgid "Please agree to the risk disclaimer before proceeding."
-msgstr ""
+msgstr "โปรดแสดงความยินยอมในการสงวนสิทธิ์ความเสี่ยงก่อนดำเนินการต่อไป"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:734
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
@@ -8151,85 +8244,90 @@ msgstr ""
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/deposit_withdraw_ws.html.tt:79
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_withdrawws.html.tt:39
 msgid "Please check your email for the value of this token"
-msgstr ""
+msgstr "โปรดตรวจสอบอีเมล์ของท่านเพื่อการใช้งานโทเค่นนี้"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:729
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reset_passwordws.html.haml:1
 msgid "Please check your email to retrieve the token needed to reset your password."
-msgstr ""
+msgstr "โปรดตรวจสอบอีเมล์ของท่านเพื่อใช้โทเค่นในการตั้งรหัสผ่านใหม่ของท่าน"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:750
 msgid "Please choose which currency you would like to transact in."
-msgstr ""
+msgstr "โปรดระบุสกุลเงินที่ท่านต้องการ"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:716
 msgid "Please complete the following financial assessment form before continuing."
 msgstr ""
+"โปรดบันทึกผลการประเมินทางการเงินของท่านในแบบฟอร์มต่อไปนี้ "
+"ก่อนการดำเนินการต่อไป"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:138
 msgid "Please confirm the trade on your statement before proceeding."
-msgstr ""
+msgstr "โปรดยืนยันการซื้อขายตามสเตทเมนท์ของท่านก่อนการดำเนินการต่อไป"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:577
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_transferws.html.tt:5
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_withdrawws.html.tt:20
 msgid "Please confirm the transaction details in order to complete the transfer:"
-msgstr ""
+msgstr "โปรดยืนยันรายละเอียดของธุรกรรมเพื่อทำให้การโอนสมบูรณ์:"
 
 #. (affiliate_email)
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/affiliates/faq.html.tt:103
 msgid "Please contact us with whatever is on your mind at <a href=\"mailto:%1\">%1</a>. We’d be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us."
 msgstr ""
+"โปรดให้เราได้รับฟังทุกข้อสงสัยของท่านที่ <a href=\"mailto:%1\">%1</a> "
+"พวกเรายินดีที่จะรับฟังและปรารถนาที่จะให้ความช่วยเหลือท่าน "
+"โปรดแสดงความคิดเห็นและข้อเสนอแนะของท่านให้เราทราบโดยไม่ต้องลังเล"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:570
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_transferws.html.tt:39
 msgid "Please deposit before transfer to client."
-msgstr ""
+msgstr "โปรดฝากเงินก่อนทำการโอนให้ลูกค้า"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:136
 msgid "Please enter a date that is at least 6 months from now."
-msgstr ""
+msgstr "โปรดป้อนวันที่อย่างน้อย 6 เดือน จากปัจจุบัน"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:593
 msgid "Please enter a number between %1."
-msgstr ""
+msgstr "โปรดป้อนตัวเลขระหว่าง %1"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:375
 msgid "Please enter a number between 0 and %1"
-msgstr ""
+msgstr "โปรดป้อนตัวเลขระหว่าง 0 และ %1"
 
 #. ($self_exclusion->{$field})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Accounts.pm:743
 msgid "Please enter a number between 0 and %1."
-msgstr ""
+msgstr "โปรดป้อนตัวเลขระหว่าง 0 และ %1"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:592
 msgid "Please enter a number greater or equal to %1."
-msgstr ""
+msgstr "โปรดป้อนตัวเลขมากกว่า หรือ เท่ากับ %1"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reality_check_frequencyws.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reality_check_summaryws.html.haml:1
 msgid "Please enter a number greater than 0"
-msgstr ""
+msgstr "โปรดป้อนตัวเลขมากกว่า 0"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/static.html.tt:72
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/static.html.tt:84
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/static.html.tt:96
 msgid "Please enter a number."
-msgstr ""
+msgstr "โปรดป้อนตัวเลข"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:573
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_transferws.html.tt:71
 msgid "Please enter a valid amount."
-msgstr ""
+msgstr "โปรดป้อนตัวเลขที่ถูกต้อง"
 
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Backoffice/Form.pm:467
 msgid "Please enter a valid name."
-msgstr ""
+msgstr "โปรดป้อนชื่อที่ถูกต้อง"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:374
 msgid "Please enter an integer value"
-msgstr ""
+msgstr "โปรดป้อนจำนวนเต็ม"
 
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Backoffice/Form.pm:110
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Backoffice/Form.pm:136
@@ -8241,48 +8339,53 @@ msgstr ""
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Backoffice/Form.pm:289
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Backoffice/Form.pm:84
 msgid "Please enter an integer value."
-msgstr ""
+msgstr "โปรดป้อนจำนวนเต็ม"
 
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Backoffice/Form.pm:322
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Backoffice/Form.pm:331
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/self_exclusionws.html.tt:108
 msgid "Please enter date in the format YYYY-MM-DD."
-msgstr ""
+msgstr "โปรดป้อนวันที่ในรูปแบบ YYYY-MM-DD"
 
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Backoffice/Form.pm:499
 msgid "Please enter the country where you want to offer your service"
-msgstr ""
+msgstr "โปรดป้อนประเทศที่ท่าใช้บริการ"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/change_passwordws.html.tt:17
 msgid "Please enter your current password."
-msgstr ""
+msgstr "โปรดป้อนรหัสผ่านปัจจุบันของท่าน"
 
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Backoffice/Form.pm:539
 msgid "Please enter your email address."
-msgstr ""
+msgstr "โปรดป้อนอีเมล์ของท่าน"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:571
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_transferws.html.tt:44
 msgid "Please fill in the Login ID and Amount you wish to transfer to your Client in the form below:"
 msgstr ""
+"โปรดกรอกรหัสผู้ใช้งาน "
+"และจำนวนเงินที่ท่านต้องการโอนให้กับลูกค้าของท่านในแบบฟอร์มด้านล่าง:"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:403
 msgid "Please follow the pattern 3 numbers, a dash, followed by 4 numbers."
 msgstr ""
+"โปรดป้อนข้อมูลในรูปแบบ ตัวเลข 3 หลัก ขีดกลาง และตามด้วย ตัวเลข 4 หลักสุดท้าย"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:324
 msgid "Please input a valid date"
-msgstr ""
+msgstr "โปรดป้อนวันที่ที่ถูกต้อง"
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Transaction.pm:29
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Utility.pm:118
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:384
 msgid "Please log in."
-msgstr ""
+msgstr "โปรดเข้าสู่ระบบ"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_withdrawws.html.tt:94
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr ""
+"โปรดแน่ใจว่า "
+"ท่านยินยอมกับตัวแทนในเงื่อนไขการชำระเงินก่อนที่จะส่งความต้องการของท่าน"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/otc_indices_stocks.html.haml:1
 msgid "Please note that due to their over-the-counter nature, the prices of the OTC Indices and stocks will differ from the prices of the corresponding indices and stocks on centralised exchanges."
@@ -8291,6 +8394,11 @@ msgstr ""
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/privacy.html.tt:11
 msgid "Please note that our website generates log files that record the IP addresses of accesses to your account. This information is gathered with the sole purpose of assisting in the unlikely event of a need to investigate accesses to your account by unauthorised users. Additionally we may verify certain of the information you supply in the account opening form, or otherwise, with third-party information providers."
 msgstr ""
+"เว็บไซต์ของเรามีการบันทึกการใช้งานและบันทึกไอพีแอดเดรสที่เข้าใช้งานบัญชีของท่"
+"าน ข้อมูลนี้ถูกรวบรวมเพื่อการติดตามเหตุการณ์ที่ไม่ปกติเพื่อช่วยในการสอบสวนหาก"
+"มีผู้ใช้งานที่ไม่ได้รับอนุญาตเข้าใช้บัญชีของท่าน "
+"และพวกเรายังตรวจสอบข้อมูลของท่านตามเอกสารการเปิดบัญชี หรือเอกสารอื่นๆ "
+"ด้วยทีมงานภายนอก"
 
 #. (broker_name)
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/datafeed.html.tt:37
@@ -8301,38 +8409,42 @@ msgstr ""
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/privacy.html.tt:12
 msgid "Please note that you may update your personal information at any time by logging into the \"Settings\" section of your account. It is your responsibility to ensure that %1 is promptly and continually informed of any change in your personal information."
 msgstr ""
+"ท่านสามารถปรับปรุงข้อมูลส่วนตัวของท่านได้ตามต้องการ โดยการแก้ไขจากเมนู \""
+"การตั้งค่า (Settings)\" ในบัญชีของท่าน "
+"และเป็นความรับผิดชอบของท่านเพื่อทำให้แน่ใจว่า %1 "
+"มีการปรับปรุงข้อมูลส่วนบุคคลของท่านมีการแจ้งให้ทราบทันทีและสม่ำเสมอ"
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Accounts.pm:619
 msgid "Please note that your settings have been updated as follows:"
-msgstr ""
+msgstr "การตั้งค่าของท่านมีการแก้ไขดังต่อไปนี้:"
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/TickStreamer.pm:180
 msgid "Please provide an underlying symbol."
-msgstr ""
+msgstr "โปรดแจ้งสัญลักษณ์ผลิตภัณฑ์อ้างอิง"
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Accounts.pm:833
 msgid "Please provide at least one self-exclusion setting."
-msgstr ""
+msgstr "โปรดแจ้งการตั้งค่า การพักการใช้งาน อย่างน้อย 1 ค่า"
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:357
 msgid "Please provide complete details for account opening."
-msgstr ""
+msgstr "โปรดให้ข้อมูลที่สมบูรณ์สำหรับการเปิดบัญชี"
 
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Backoffice/Form.pm:651
 msgid "Please provide some information about yourself and your proposed services"
-msgstr ""
+msgstr "โปรดให้ข้อมูลเกี่ยวกับตัวท่าน และบริการที่ได้นำเสนอแก่ท่าน"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_withdrawws.html.tt:29
 msgid "Please provide us with the following information, after retrieving the verification token from your email:"
-msgstr ""
+msgstr "โปรดให้ข้อมูลต่อไปนี้ ภายหลังการเรียกข้อมูลโทเค่นจากอีเมล์ของท่าน:"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/virtualws.html.tt:24
 msgid "Please re-enter your email"
-msgstr ""
+msgstr "โปรดป้อนอีเมล์ของท่านอีกครั้ง"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/affiliates/faq.html.tt:60
 msgid "Please refer to the following commission plan."
-msgstr ""
+msgstr "โปรดอ้างอิงแผนค่าตอบแทนต่อไปนี้"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/responsible_trading.html.haml:1
 msgid "Please remember at all times that trading binary options can be an exciting activity, but we have a moral duty to remind you of the risks you may run. Options trading can become a real addiction, as can any other activity pushed to its limits. We kindly ask you to engage in a careful self-analysis to check if you are at risk. To avoid the danger of such an addiction, it is important that you follow some basic principles and guidelines."
@@ -8372,23 +8484,23 @@ msgstr ""
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:377
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:392
 msgid "Please select"
-msgstr ""
+msgstr "โปรดระบุ"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet/ParametersBase.pm:218
 msgid "Please select \"Payout\" or \"Stake\" option."
-msgstr ""
+msgstr "โปรดเลือกระหว่าง \"Payout\" หรือ \"Stake\""
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:339
 msgid "Please select a payment agent"
-msgstr ""
+msgstr "โปรดระบุตัวแทนรับชำระเงิน"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:378
 msgid "Please select a valid date"
-msgstr ""
+msgstr "โปรดระบุวันที่ที่ถูกต้อง"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/realws.html.tt:9
 msgid "Please select your country of residence"
-msgstr ""
+msgstr "โปรดระบุประเทศที่พำนักของท่าน"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reality_check_frequencyws.html.haml:1
 msgid "Please specify your preferred reality-check interval in minutes "
@@ -8396,37 +8508,39 @@ msgstr ""
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:298
 msgid "Please submit a valid %1."
-msgstr ""
+msgstr "โปรดส่ง %1 ที่ถูกต้อง"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/payment_agent.html.haml:1
 msgid "Please submit the above information to <a href='mailto:affiliates@binary.com'>affiliates@binary.com</a>."
 msgstr ""
+"โปรดส่งข้อมูลข้างต้นที่ <a "
+"href='mailto:affiliates@binary.com'>affiliates@binary.com</a>"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1513
 msgid "Please switch accounts to trade this contract."
-msgstr ""
+msgstr "โปรดเปลี่ยนบัญชีเพื่อทำการซื้อขายสัญญานี้"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:666
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1521
 msgid "Please switch accounts to trade this market."
-msgstr ""
+msgstr "โปรดเปลี่ยนบัญชีเพื่อทำการซื้อขายในตลาดนี้"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1539
 msgid "Please switch accounts to trade this underlying."
-msgstr ""
+msgstr "โปรดเปลี่ยนบัญชีเพื่อทำการซื้อขายผลิตภัณฑ์อ้างอิงนี้"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/reset_password.html.tt:6
 msgid "Please take a moment to verify your identity by providing us with your date of birth, below."
-msgstr ""
+msgstr "โปรดตรวจสอบข้อมูลอัฒลักษณ์ของท่านโดยให้ข้อมูล วันเกิดของท่าน ด้านล่าง"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:59
 msgid "Please try again."
-msgstr ""
+msgstr "โปรดลองอีกครั้ง"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/reset_password.html.tt:11
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/reset_password.html.tt:16
 msgid "Please type your chosen password twice into the fields below:"
-msgstr ""
+msgstr "โปรดพิมพ์รหัสผ่านที่ท่านเลือกสองครั้งในช่องว่างด้านล่าง:"
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Accounts.pm:359
 msgid "Please use a different password than your login password."
@@ -8454,7 +8568,7 @@ msgstr ""
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/my_accountws.html.tt:46
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/openpositionsws.html.tt:4
 msgid "Portfolio"
-msgstr ""
+msgstr "พอร์ตโฟลิโอ"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/settings_detailsws.html.tt:118
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/settings_detailsws.html.tt:140
@@ -8493,7 +8607,7 @@ msgstr "ความเรียบง่ายและพลัง"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:45
 msgid "Powerful charting and technical analysis"
-msgstr ""
+msgstr "แผนภูมิกราฟที่เป็นประโยชน์และการวิเคราะห์ท่างเทคนิค"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal_jp/contract.html.tt:2
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal_jp/tacjp.html.tt:10
@@ -8685,7 +8799,7 @@ msgstr "ไม่สามารถกำหนด Barrier ที่เหมา
 #: /home/git/translations/binary-static-www2/src/templates/haml/layouts/default/footer.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/global/footer.html.tt:136
 msgid "Prospectus"
-msgstr ""
+msgstr "หนังสือชี้ชวน"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "Proven knowledge of auditing standards, procedures, laws, rules and regulations are an added advantage"
@@ -8765,6 +8879,11 @@ msgstr "กำหนดวงเงินของท่านสำหรับ
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "Qualified applicants should have global experience in recruitment administration, excellent administrative skills, and the ability to work in a fast-paced entrepreneurial environment. We are seeking a true professional capable of making an impact by supporting and advancing HR best practices throughout the company’s global operations."
 msgstr ""
+"ผู้สมัครควรมีประสบการณ์ระดับสากลในการบริหารการสรรหาบุคลากร "
+"มีทักษะการจัดการที่บยอดเยี่ยม "
+"และมีความสามารถในการปฏิบัติงานในสภาพแวดล้อมของกิจการที่พัฒนาอย่างรวดเร็ว พวกเ"
+"ราสรรหาบุคลากรมืออาชีพที่มีความสามารถในด้านการบริหารงานบุคคลขั้นสูงโดยใช้หลัก"
+"การที่มีมาตรฐานในบริษัทฯ แนวหน้าระดับสากล"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:608
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_descriptions.html.haml:1
@@ -8810,33 +8929,33 @@ msgstr "การสุ่ม"
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:480
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:621
 msgid "Rate of Change"
-msgstr ""
+msgstr "อัตราการเปลี่ยนแปลง"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/virtualws.html.tt:47
 msgid "Re-enter password"
-msgstr ""
+msgstr "ป้อนรหัสผ่านอีกครั้ง"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/cashier/settings_securityws.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/haml/home/index.html.haml:1
 msgid "Re-enter your password"
-msgstr ""
+msgstr "ป้อนรหัสผ่านของท่านอีกครั้ง"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/api_tokenws.html.tt:30
 msgid "Read"
-msgstr ""
+msgstr "อ่าน"
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/index.html.haml:1
 msgid "Read about the five types of trade offered by %1."
-msgstr ""
+msgstr "อ่านเกี่ยวกับประเภทของการซื้อขาย 5 ประเภท โดย %1"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/index.html.haml:1
 msgid "Read the answers to some common questions."
-msgstr ""
+msgstr "อ่านคำตอบของคำถามพื้นฐานต่างๆ"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:142
 msgid "Real Account"
-msgstr ""
+msgstr "บัญชีจริง"
 
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:612
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:621
@@ -8844,11 +8963,14 @@ msgstr ""
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/japanws.html.tt:2
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/realws.html.tt:2
 msgid "Real Money Account Opening"
-msgstr ""
+msgstr "การเปิดบัญชีเงินจริง"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/why_us.html.haml:1
+#, fuzzy
 msgid "Real-time prices, benchmarked against interbank options markets."
 msgstr ""
+"== Pending ==\n"
+"ราคาเรียลไทม์"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reality_check_frequencyws.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/reality_check_summaryws.html.haml:1
@@ -9125,10 +9247,13 @@ msgid "Rise/Fall contracts of less than 5 minutes duration are only available wh
 msgstr "สัญญา Rise/Fall ที่ระยะเวลาน้อยกว่า 5 นาที จะใช้ได้ เมื่อท่านเลือก \"เวลาขณะนี้\" เป็นเวลาเริ่มต้น"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/explanation.html.tt:166
-#, fuzzy
 #| msgid "Contracts will be refunded at the purchase price if the following conditions occur: (1) there are less than 2 ticks between the start and end times, or (2) for contracts of tick duration, if the contract doesn't end within 5 minutes."
 msgid "Rise/Fall contracts will be refunded at the purchase price if the following conditions occur: (1) there are less than 2 ticks between the start and end times, or (2) for contracts of tick duration, if the contract doesn't end within 5 minutes, or (3) for contracts starting in the future, if there are no ticks in the 5 minutes before the contract's start time."
-msgstr "สัญญาจะถูกคืนมูลค่าที่ราคาซื้อหากมีกรณีต่อไปนี้เกิดขึ้น: (1) มีน้อยกว่า 2 ช่วงราคาระหว่างเวลาเริ่มต้นกระทั่งเวลาสิ้นสุด หรือ (2) สำหรับสัญญาตามระยะเวลาของช่วงราคา เมื่อสัญญาไม่สิ้นสุดใน 5 นาที"
+msgstr ""
+"สัญญา Rise/Fall จะถูกคืนมูลค่าที่ราคาซื้อหากมีกรณีต่อไปนี้เกิดขึ้น: (1) "
+"มีน้อยกว่า 2 ช่วงราคาระหว่างเวลาเริ่มต้นกระทั่งเวลาสิ้นสุด หรือ (2) "
+"สำหรับสัญญาตามระยะเวลาของช่วงราคา เมื่อสัญญาไม่สิ้นสุดใน 5 นาที หรือ (3) "
+"สำหรับสัญญาในอนาคต หากไม่มีช่วงราคาใน 5 นาทีก่อนเวลาเริ่มต้นของสัญญา"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/glossary.html.haml:1
 msgid "Rise/Fall trades"
@@ -9478,6 +9603,9 @@ msgstr "ความง่าย"
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/tour.html.haml:1
 msgid "Simply change any of your parameters and the trade price instantly changes, giving you real-time knowledge of your stake. %1 ensures fair and transparent pricing by showing you both sides of the trade."
 msgstr ""
+"ท่านสามารถแก้ไขตัวแปรได้โดยง่ายและกำหนดราคาซื้อขายได้ทันที "
+"วางเงินได้อย่างเรียลไทม์ %1 "
+"ทำให้ท่ามั่นใจในราคาที่ยุติธรรมและโปร่งใสในการซื้อขาย"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/api_tokenws.html.tt:6
 msgid "Simply click on \"Create\" to generate your token; then copy and paste it into the app."
@@ -9634,11 +9762,11 @@ msgstr ""
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Cashier.pm:696
 msgid "Sorry, the Payment Agent does not exist."
-msgstr ""
+msgstr "ขออภัย ไม่มีตัวแทนชำระเงินนี้"
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Cashier.pm:699
 msgid "Sorry, the Payment Agent is unavailable for your region."
-msgstr ""
+msgstr "ขออภัย ไม่มีตัวแทนรับชำระเงินนี้ในเขตของท่าน"
 
 #. ($currency)
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Cashier.pm:710
@@ -9652,11 +9780,11 @@ msgstr ""
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/not_found.html.haml:1
 msgid "Sorry, the page cannot be found."
-msgstr ""
+msgstr "ขออภัย ไม่พบหน้าที่ท่านเรียก"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/charting/legacy_chart_table.html.tt:1
 msgid "Sorry, there is too much data to display, please select a shorter interval"
-msgstr ""
+msgstr "ขออภัย ข้อมูลที่แสดงมีมากเกินไป โปรดกำหนดช่วงเวลาให้สั้นลง"
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Cashier.pm:214
 msgid "Sorry, there was a problem validating your personal information with our payment processor. Please contact our Customer Service."
@@ -9757,17 +9885,23 @@ msgstr ""
 
 #. ("$currency$balance",                "$currency$limit")
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:862
+#, fuzzy
 msgid "Sorry, your account cash balance is too high (%1). Your maximum account balance is %2."
 msgstr ""
+"ขออภัย your account cash balance is too high (%1). Your maximum account "
+"balance is %2."
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1561
+#, fuzzy
 msgid "Sorry, your account is not authorised for any further contract purchases."
 msgstr ""
+"ขออภัย your account is not authorised for any further contract purchases."
 
 #. ($currency)
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Cashier.pm:706
+#, fuzzy
 msgid "Sorry, your currency of %1 is unavailable for Payment Agent Withdrawal"
-msgstr ""
+msgstr "ขออภัย your currency of %1 is unavailable for Payment Agent Withdrawal"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:67
 msgid "Spam - We do not condone Spam"
@@ -9882,10 +10016,11 @@ msgid "Stays Between/Goes Outside trades"
 msgstr "Stays Between/Goes Outside trades"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/explanation.html.tt:180
-#, fuzzy
 #| msgid "Contracts will be refunded at the purchase price if the following conditions occur: (1) there are less than 2 ticks between the start and end times, or (2) for contracts of tick duration, if the contract doesn't end within 5 minutes."
 msgid "Stays In/Goes Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "สัญญาจะถูกคืนมูลค่าที่ราคาซื้อหากมีกรณีต่อไปนี้เกิดขึ้น: (1) มีน้อยกว่า 2 ช่วงราคาระหว่างเวลาเริ่มต้นกระทั่งเวลาสิ้นสุด หรือ (2) สำหรับสัญญาตามระยะเวลาของช่วงราคา เมื่อสัญญาไม่สิ้นสุดใน 5 นาที"
+msgstr ""
+"สัญญา Stays In/Goes Out จะถูกคืนมูลค่าที่ราคาซื้อหาก มีช่วงราคาน้อยกว่า 2 "
+"ช่วงระหว่างเวลาเริ่มต้นกระทั่งเวลาสิ้นสุด"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:360
 msgid "Step"
@@ -9956,7 +10091,7 @@ msgstr "ความถี่ในการซื้อขายหลักท
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:644
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/portfolio/analyse_spread_contract.html.tt:23
 msgid "Stop Loss Level"
-msgstr ""
+msgstr "ระดับการระงับการขาดทุน"
 
 #. ($min, $max, $unit)
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Spread.pm:501
@@ -10073,7 +10208,6 @@ msgid "Such materials may be copied and distributed on a limited basis for nonco
 msgstr "เอกสารและสื่อใดๆ ที่อาจจะถูกคัดลอกและใช้ในวงจำกัดสำหรับวัตถุประสงค์ที่ไม่ใช่เชิงพาณิชย์เท่านั้น และเอกสารหรือสื่อดังกล่าวนั้นถูกคัดลอกโดยไม่เปลี่ยนแปลงรวมถึงการบอกกล่าวอย่างชัดเจนในการนำไปใช้: &ldquo; ลิขสิทธิ์ 1999-<span class='currentYear'></span>สงวนลิขสิทธิ์โดย Binary Ltd. &rdquo;"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/order_execution.html.tt:2
-#, fuzzy
 msgid "Summary Order Execution Policy"
 msgstr "นโยบาย Summary Order Execution"
 
@@ -10278,10 +10412,13 @@ msgstr "%1 เว็บไซต์ถูกป้องกันโดยกา
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/about/group-information.html.haml:1
-#, fuzzy
 #| msgid "The <span itemprop=\"brand\">%1</span> service (formerly known as BetOnMarkets.com) is owned and operated by Binary Ltd. Fully licensed and regulated, %1 has been providing financial trading to a worldwide audience of over 1,000,000 clients since <span itemprop=\"foundingdate\">1999</span>"
 msgid "The <span itemprop=\"brand\">%1</span> service (formerly known as BetOnMarkets.com) is owned and operated by Binary Ltd. Fully licensed and regulated, %1 has been providing financial trading to a worldwide audience of over 1,000,000 accounts since <span itemprop=\"foundingdate\">1999</span>"
-msgstr "บริการของ<span itemprop=\"brand\">%1</span> (รู้จักในนาม BetOnMarkets.com) ดำเนินการและครอบครองโดย Binary Ltd. %1 ได้รับใบอนุญาตเต็มรูปแบบและส่งมอบบริการซื้อขายผลิตภัณฑ์ทางการเงินสู่ลูกค้าทั่วโลกมากกว่า 1,000,000 ราย ตั้งแต่ปี <span itemprop=\"foundingdate\">พ.ศ. 2542 (ค.ศ. 1999)</span>"
+msgstr ""
+"บริการของ<span itemprop=\"brand\">%1</span> (รู้จักในนาม BetOnMarkets.com) "
+"ดำเนินการและครอบครองโดย Binary Ltd. %1 ได้รับใบอนุญาตเต็มรูปแบบและส่งมอบบริกา"
+"รซื้อขายผลิตภัณฑ์ทางการเงินสู่ลูกค้าทั่วโลกมากกว่า 1,000,000 บัญชี ตั้งแต่ปี "
+"<span itemprop=\"foundingdate\">พ.ศ. 2542 (ค.ศ. 1999)</span>"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/home/index.html.haml:1
 msgid "The <strong>Premier Platform</strong> for Binary Options Trading"
@@ -10325,7 +10462,7 @@ msgstr ""
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:21
 msgid "The Affiliate’s Obligations"
-msgstr ""
+msgstr "ความรับผิดชอบของพันธมิตร"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/paymentagent_withdrawws.html.tt:96
 msgid "The Agent will send you the withdrawal amount (minus the commission) via your preferred payment method."
@@ -10341,11 +10478,11 @@ msgstr ""
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/api_tac_tab.html.tt:97
 msgid "The Binary.com Order Execution Policy."
-msgstr ""
+msgstr "นโยบายการดำเนินการคำสั่งซื้อของ Binary.com"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/api_tac_tab.html.tt:96
 msgid "The Binary.com Privacy and Security Policy;"
-msgstr ""
+msgstr "นโยบายความปลอดภัยและความเป็นส่วนตัวของ Binary.com"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/api_tac_tab.html.tt:95
 msgid "The Binary.com Terms and Conditions;"
@@ -10410,8 +10547,24 @@ msgid "The Company may impose certain rules and restrictions in relation to the 
 msgstr ""
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/betting_rules.html.tt:58
+#, fuzzy
 msgid "The Company may impose volume trading limits on Client accounts in its sole discretion. Current trading volume limits upon account opening are USD/GBP/EUR/AUD 30,000/day maximum trading volume. The maximum account size (i.e. cash balance) is USD/GBP/EUR/AUD 300,000 and the maximum outstanding contract payout at a given time per account is USD/GBP/EUR/AUD 25,000. These limits are increased once a Client is fully authenticated; where the new maximum trading volume will be USD/GBP/EUR/AUD 500,000, having a maximum account size of USD/GBP/EUR/AUD 300,000 and a maximum outstanding contract payout at a given time per account of USD/GBP/EUR/AUD 500,000. If the account balance exceeds the maximum account size, then withdrawals must be made to bring the balance down to under this limit."
 msgstr ""
+"== Pending ==\n"
+"\n"
+"The Company may impose volume trading limits on Client accounts in its sole "
+"discretion.\n"
+"Current trading volume limits upon account opening are USD/GBP/EUR/AUD "
+"30,000/day maximum trading volume.\n"
+"The maximum account size (เช่น แคชบาลานซ์) คือ USD/GBP/EUR/AUD 300,000 and "
+"the maximum outstanding contract payout at a given time per account is "
+"USD/GBP/EUR/AUD 25,000. These limits are increased once a Client is fully "
+"authenticated; where the new maximum trading volume will be USD/GBP/EUR/AUD "
+"500,000, having a maximum account size of USD/GBP/EUR/AUD 300,000 and a "
+"maximum outstanding contract payout at a given time per account of "
+"USD/GBP/EUR/AUD 500,000. If the account balance exceeds the maximum account "
+"size, then withdrawals must be made to bring the balance down to under this "
+"limit."
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/api_tac_tab.html.tt:133
 msgid "The Company may use or disclose (or choose not to use or disclose) such Contributions for any purpose, in any way, in any media worldwide;"
@@ -10480,7 +10633,7 @@ msgstr ""
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:17
 msgid "The Company will notify you by email if your application has been successful."
-msgstr ""
+msgstr "บริษัทฯ จะแจ้งผลให้ท่านทราบทางอีเมล์ เมื่อใบสมัครของท่านได้รับอนุมัติ"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:51
 msgid "The Company will provide advertising collaterals with links containing affiliate IDs which may be modified by us from time to time."
@@ -10496,7 +10649,7 @@ msgstr ""
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/careers.html.haml:1
 msgid "The Cyberview Lodge Resort in Cyberjaya"
-msgstr ""
+msgstr "Cyberview Lodge Resort ในไซเบอร์จายา"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/privacy.html.tt:8
 msgid "The Data Protection laws and regulations place obligations on users of personal data and lay down principles for fair and lawful processing of this information. We are committed to safeguarding your privacy online. We only use your personal information to help us service your account, to improve our services to you, and to provide you with products you have requested. We do not sell your personal information to third parties, but we may provide your personal information to payment providers to facilitate transactions on your account."
@@ -10524,6 +10677,8 @@ msgstr ""
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/smart_indices.html.haml:1
 msgid "The GBP Index is a weighted Index, measuring the British Pound’s value against a basket of 5 global currencies (USD, EUR, AUD, JPY, CAD), each weighted by 20%."
 msgstr ""
+"ดัชนี GBP เป็นดัชนีถ่วงน้ำหนัก แสดงมูลค่าของค่าเงินปอนด์ต่อ 5 สกุลเงินสากล ("
+"USD, EUR, AUD, JPY, CAD) โดยใช้ร้อยละ 20 ในการถ่วงน้ำหนัก"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:548
 msgid "The Mass Index attempts to predict reversals by comparing the trading range (High minus Low) for each period. Reversals are signalled by a bulge in the index line."
@@ -10561,6 +10716,8 @@ msgstr ""
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/smart_indices.html.haml:1
 msgid "The USD Index is a weighted Index, measuring the US Dollar’s value against a basket of 5 global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%."
 msgstr ""
+"ดัชนี USD เป็นดัชนีถ่วงน้ำหนัก แสดงมูลค่าของค่าเงินดอลลาร์สหรัฐต่อ 5 สกุลเงิ"
+"นสากล (EUR, GBP, JPY, CAD, AUD) โดยใช้ร้อยละ 20 ในการถ่วงน้ำหนัก"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/volidx_markets.html.haml:1
 msgid "The Volatility 100 Index is twice as volatile as the Volatility 50 Index, and four times as volatile as the Volatility 25 Index."
@@ -10572,31 +10729,35 @@ msgstr ""
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "The ability to communicate effectively in English, in both oral and written form"
-msgstr ""
+msgstr "มีความสามารถในการสื่อสารภาษาอังกฤษทั้งพูด และเขียน อย่างมีประสิทธิภาพ"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "The ability to communicate fluently in English, in both oral and written form"
-msgstr ""
+msgstr "มีความสามารถในการสื่อสารภาษาอังกฤษทั้งพูด และเขียน อย่างคล่องแคล่ว"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "The ability to multi-task, balance deadlines, and reliably deliver high-quality content"
 msgstr ""
+"มีความสามารถในการทำงานหลายๆ ชิ้นพร้อมๆ กัน "
+"สามารถจัดการกำหนดการส่งมอบงานได้อย่างเหมาะสม และเนื้อหาข้อมูลมีคุณภาพสูง"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "The ability to speak and write in multiple languages"
-msgstr ""
+msgstr "มีความสามารถในการพูดและเขียนหลายภาษา"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "The ability to speak multiple languages"
-msgstr ""
+msgstr "มีความสามารถในการพูดได้หลายภาษา"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "The ability to translate information into clear, concise, and engaging content"
 msgstr ""
+"มีความสามารถในการแปลข้อมูลที่มีความชัดเจน กระชับ "
+"และถูกต้องตามสาระสำคัญของเนื้อหา"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "The ability to work in a Linux/Unix based environment"
-msgstr ""
+msgstr "มีความสามารถในการทำงานกับระบบปฏิบัติการลินุกซ์และยูนิกซ์"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "The ability to write high-quality, self-documenting code, using test-driven development techniques"
@@ -10751,7 +10912,7 @@ msgstr ""
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Accounts.pm:465
 msgid "The email address and date of birth do not match."
-msgstr ""
+msgstr "อีเมล์และวันเกิดไม่ตรงกัน"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/spread_bets.html.haml:1
 msgid "The entry level for a long contract is 1001, which is entry spot + half spread. At exit, the spot is at 1100 and hence the exit level for a long contract is 1099, which is exit spot - half spread."
@@ -10804,10 +10965,9 @@ msgstr ""
 
 #. (request.website.display_name)
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:59
-#, fuzzy
 #| msgid "Purpose of trading"
 msgid "The future of trading on %1"
-msgstr "วัตถุประสงค์ของการซื้อขาย"
+msgstr "อนาคตของการซื้อขายกับ %1"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:118
 msgid "The information provided during the sign-up process warranted by yourself to be true and correct is determined by the Company to be false or incorrect during the term of this Agreement;"
@@ -11111,7 +11271,7 @@ msgstr "เอกสารฉบับนี้"
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Cashier.pm:728
 msgid "This Payment Agent cashier section is locked."
-msgstr ""
+msgstr "ส่วนแคชเชียร์ของตัวแทนรับชำระเงินถูกล็อก"
 
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Backoffice/Form.pm:606
 msgid "This URL is invalid."
@@ -11222,99 +11382,183 @@ msgstr "ข้อมูลในช่องนี้จำเป็นต้อ
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Cashier.pm:48
 msgid "This is a virtual-money account. Please switch to a real-money account to deposit funds."
-msgstr ""
+msgstr "นี้คือ บัญชีทดลองใช้ โปรดเปลี่ยนกลับไปบัญชีเงินจริงเพื่อฝากเงิน"
 
 #. ($client->loginid,                            $client_ip)
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Accounts.pm:379
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Accounts.pm:425
 msgid "This is an automated message to alert you that a change was made to your cashier settings section of your account %1 from IP address %2. If you did not perform this update please login to your account and update settings."
 msgstr ""
+"นี้คือข้อความอัตโนมัติเพื่อแจ้งให้ท่านทราบว่า "
+"มีการเปลี่ยนแปลงการตั้งค่าแคชเชียร์ของบัญชีท่าน %1 จาก IP Address %2 "
+"หากท่านไม่ได้ดำเนินการ "
+"โปรดเข้าสู่ระบบของท่านและทำการแก้ไขการตั้งค่าของบัญชีท่าน"
 
 #. ($client->loginid,                            $client_ip)
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Accounts.pm:404
 msgid "This is an automated message to alert you to the fact that there was a failed attempt to unlock the Cashier/Settings section of your account %1 from IP address %2"
 msgstr ""
+"นี้คือข้อความอัตโนมัติเพื่อแจ้งให้ท่านทราบว่า "
+"มีความพยายามในการปลดล็อกแคชเชียร์ หรือ การตั้งค่าของบัญชีท่าน %1 จาก IP "
+"Address %2"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/form/barrier.html.tt:23
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/form/barrier.html.tt:42
 msgid "This is an indicative barrier. Actual barrier will be the entry spot plus the barrier offset."
 msgstr ""
+"นี้คือ Indicative Barrier ส่วน Barrier จริงนั้น จะเป็นสปอตเริ่มต้นรวมกับ "
+"Barrier Offset"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/form/stop_loss.html.tt:18
 msgid "This is an indicative stop loss. Actual stop loss will be the entry spot plus the stop loss point."
 msgstr ""
+"นี้คือ Indicative Stop Loss ส่วนการ Stop Loss จริงนั้น "
+"จะเป็นสปอตเริ่มต้นรวมกับจุด Stop Loss"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/form/stop_profit.html.tt:18
 msgid "This is an indicative stop profit. Actual stop profit will be the entry spot plus the stop profit point."
 msgstr ""
+"นี้คือ Indicative Stop Profit ส่วนการ Stop Profit จริงนั้น "
+"จะเป็นสปอตเริ่มต้นรวมกับจุด Stop Profit"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/group_history.html.haml:1
 msgid "This is another award we really savour. Trade2win is a portal for active traders seeking to profit from stocks, futures, options and forex, and these traders award us silver (we are just pipped for gold by Betfair). It means active traders worldwide rate our trading platform extremely highly."
 msgstr ""
+"นี้คืออีกรางวัลหนึ่งที่เราได้ดื่มด่ำอย่างมีความสุข Trade2win "
+"เป็นระบบสำหรับนักลงทุนเพื่อการแสวงหากำไรจากหลักทรัพย์ ฟิวเจอร์ ออปชั่น "
+"และฟอเร็กซ์ นักลงทุนเหล่านี้เองที่มอบรางวัลให้เรา สำหรับรางวัลซิลเวอร์ "
+"(ซึ่งเราเพิ่งได้ระดับโกลด์มา จาก Betfair) นั่นหมายความว่า "
+"นักลงทุนที่ใช้งานอยู่ทั่วโลกประกาศว่า เราคือระบบซื้อขายที่เยี่ยมยอดทีเดียว"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/group_history.html.haml:1
 msgid "This is big. We pick up a double award from the Financial Times and Investors Chronicle, reflecting our success in improving the quality and usability of our website and products."
 msgstr ""
+"นี้ก็ผลงานชิ้นใหญ่อีกอันหนึ่ง พวกเราได้รับสองรางวัลจาก The Financial Times "
+"และ Investors Chronicle เพื่อแสดงถึงความสำเร็จของเราในการพัฒนาเว็บไซต์และผลิต"
+"ภัณฑ์ของเราอย่างมีคุณภาพและใช้งานง่าย"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/glossary.html.haml:1
 msgid "This is the current price at which an underlying can be bought or sold at a particular time."
-msgstr ""
+msgstr "นี้คือราคาปัจจุบันที่ผลิตภัณฑ์อ้างอิงสามารถถูกซื้อ หรือ ขาย ณ เวลาใดๆ"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/user_testing.html.haml:1
 msgid "This is why we’re now recruiting additional testers for each new release, to ensure that our platform remains stable and secure with every enhancement deployed."
 msgstr ""
+"และนี่คือเหตุผลว่า ทำไมขณะนี้พวกเราทำการสรรหานักทดสอบระบบสำหรับงานแต่ละชุด "
+"เพื่อทำให้แน่ใจว่าระบบของเรามีเสถียรภาพและปลอดภัยในทุกๆ "
+"ครั้งที่มีการปรับปรุงระบบ"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/form/market_warning.html.tt:3
 msgid "This market closes early today at"
-msgstr ""
+msgstr "วันนี้ ตลาดนี้ปิดทำการเร็ว เมื่อ"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2323
 msgid "This market is presently closed."
-msgstr ""
+msgstr "ตลาดนี้ได้ปิดทำการขณะนี้"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Spread.pm:486
 msgid "This market is presently closed. Try out the Volatility Indices which are always open."
-msgstr "ตลาดปิดทำการแล้ว ลองพิจารณาซื้อขายดัชนีผันผวนซึ่งเปิดตลอดเวลา"
+msgstr "ตลาดนี้ได้ปิดทำการขณะนี้ ลองพิจารณาซื้อขายดัชนีผันผวนซึ่งเปิดตลอดเวลา"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/form/market_warning.html.tt:8
 msgid "This market opens late today at"
-msgstr "วันนี้ตลาดเปิดล่าช้า เมื่อ"
+msgstr "วันนี้ ตลาดนี้เปิดล่าช้า เมื่อ"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/risk_disclaimer.html.tt:10
 msgid "This notice does not explain all of the risks involved in investments or similar products or how such risks relate to your personal circumstances. It is important that you fully understand the risks involved before making a decision to enter into or sell an investment product or gambling product with us. If you are in any doubt about the risks involved with Investment Products or Gambling Products, you should seek professional advice."
 msgstr ""
+"ข้อสังเกตนี้ไม่ได้ชี้แจงความเสี่ยงที่เกี่ยวข้องทั้งหมดในการลงทุน หรือ "
+"ในผลิตภัณฑ์ที่ใกล้เคียงกัน หรือ "
+"ความเสี่ยงเหล่านั้นมีความสัมพันธ์อย่างไรกับกรณีของท่าน "
+"มันเป็นสิ่งสำคัญที่ท่านต้องมีความเข้าใจในความเสี่ยงต่างๆ อย่างถ่องแท้ "
+"ก่อนที่จะตัดสินใจในการซื้อ หรือ ขายผลิตภัณฑ์การลงทุนใดๆ หรือ "
+"ผลิตภัณฑ์เสี่ยงโชคกับเรา หากท่านมีข้อสงสัยใดๆ "
+"เกี่ยวกับความเสี่ยงในผลิตภัณฑ์เพื่อการลงทุนต่างๆ หรือ ผลิตภัณฑ์เสี่ยงโชคต่"
+"างๆ โปรดศึกษาข้อมูลและขอคำแนะนำจากผู้เชี่ยวชาญ"
 
 #. (website)
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/risk_disclaimer.html.tt:4
 msgid "This notice provides you with information about the risks associated with investment contracts, which you may invest in through services provided to you through %1. Binary Group provides a wide range of products including Binary Options relating to foreign exchange, indices, stocks and other investment products (\"Investment Products\") and binary bets such as those relating to the Random Markets (\"Gambling Products\")."
 msgstr ""
+"ข้อสังเกตนี้ให้ข้อมูลท่านเกี่ยวกับความเสี่ยงที่เกี่ยวข้องกับสัญญาการลงทุนต่"
+"างๆ ซึ่งท่านอาจจะลงทุนในผลิตภัรฑ์ต่างๆ ผ่าน %1 เครือ Binary Group "
+"ให้บริการผลิตภัณฑ์เพื่อการลงทุนที่หลากหลาย รวมถึง "
+"ไบนารีออปชั่นของอตราแลกเปลี่ยนต่างประเทศ ดัชนีต่างๆ หุ้น หรือ หลักทรัพย์ต่"
+"างๆ และผลิตภัณฑ์เพื่อการลงทุนอื่นๆ (เรียกว่า \"ผลิตภัณฑ์เพื่อการลงทุน ("
+"Investment Products)\") และไบนารีในกลุ่มการพนัน เช่น กลุ่ม Random Markets "
+"(เรียกว่า \"ผลิตภัณฑ์เพื่อการเสี่ยงโชค (Gambling Products)\")"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/promocode.html.tt:29
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/promocode.html.tt:52
 msgid "This offer cannot be used in conjunction with any other offer."
-msgstr ""
+msgstr "ข้อเสนอนี้ไม่สามารถใช้ร่วมกับข้อเสนออื่นๆ"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/promocode.html.tt:49
 msgid "This promotion is only available to new Clients. Existing or former Clients do not qualify. It is only available once to each Client."
 msgstr ""
+"การส่งเสริมการขายนี้จัดขึ้นเฉพาะลูกค้ารายใหม่เท่านั้น "
+"ลูกค้าเดิมไม่สามารถใช้ได้ ขอสงวนสิทธิ์สำหรับลูกค้าแต่ละราย"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/privacy.html.tt:33
 msgid "This website contains links to other websites and may contain banner or icon advertisements related to third-party websites. These websites and the advertisements thereof may submit cookies onto your web browser and as such are beyond our control. We are not responsible for the privacy practices or the content of such websites. We encourage you to read the privacy policies of these websites, because their practices may differ from ours."
 msgstr ""
+"เว็ยไซต์นี้มีลิงค์ไปยังเว็บไซต์อื่นและอาจจะมีแบนเนอร์ หรือ "
+"ไอค่อนโฆษณาที่เกี่ยวกับเว็บไซต์ภายนอกอื่นๆ เว็ยไซต์เหล่านี้และโฆษณาต่างๆ "
+"อาจจะส่งคุกกี้ติดตามเว็บเบราเซอร์ของท่านซึ่งอยู่นอกเหนือการควบคุมของเรา "
+"เราไม่รับผิดชอบต่อแนวปฏิบัติในเรื่องความเป็นส่วนตัว หรือ "
+"เนื้อหาของเว็บไซต์ดังกล่าว "
+"พวกเราขอให้ท่านศึกษานโยบายความเป็นส่วนตัวของเว็บไซต์เหล่านั้น "
+"เนื่องจากการปฏิบัติอาจมีความแตกต่างกับแนวปฏิบัติของเรา"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/privacy.html.tt:31
 msgid "This website does not collect personally identifying information about you except when you specifically and knowingly provide it. There is a technology called \"cookies\" which can be used to provide tailored information from a website. A cookie is an element of data that a website can send to your browser, which may then store it on your system. You can set your browser to notify you when you receive a cookie, giving you the chance to decide whether to accept it. If you do not accept the cookie, then you will need to input your loginID and password again at every form required to enter into the system. You are advised to choose this option if you have concerns about the security of your personal browser or PC."
 msgstr ""
+"เว็บไซต์นี้ไม่มีการเก็บข้อมูลส่วนบุคคลของท่านนอกจากข้อมูลที่ท่านได้รับทราบว่"
+"า เป็นข้อมูลเจาะจงที่ขอจากท่านโดยตรง มีการใช้เทคโนโลยีที่เรียกว่า \"คุกกี้\" "
+"ในการติดตามข้อมูลจากทางเว็บไซต์ คุกกี้เป็นส่วนหนึ่งของข้อมูลที่เว็บไซต์หนึ่"
+"งๆ สามารถส่งให้กับเบราเซอร์ของท่าน และอาจจะถูกเก็บในระบบของท่าน "
+"ท่านอาจจะตั้งค่าเบราเซอร์ของท่านให้แจ้งเมื่อท่านได้รับคุกกี้ใดๆ "
+"ศึ่งช่วยให้ท่านมีโอกาสตัดสินใจจะยอมรับหรือปฏิเสธคุกกี้นั้น "
+"หากท่านไม่รับคุกกี้ ท่านจะต้องบันทึกรหัสผู้ใช้งานอละรหัสผ่านครั้งแล้วครั้งเล่"
+"าเมื่อมีการเรียกแบบฟอร์มที่ต้องการคุกกี้จากเครื่องของท่าน "
+"ท่านได้รับข้อแนะนำให้ปฏิบัติตามทางเลือกดังกล่าว "
+"หากท่านมีข้อสงสัยเกี่ยวกับความปลอดภัยของเบราเซอร์ของท่าน หรือ "
+"เครื่องคอมพิวเตอร์ของท่าน"
 
 #. ("https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172", "https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495")
 #: /home/git/translations/binary-static-www2/src/templates/haml/layouts/default/footer.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/global/footer.html.tt:192
 msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in the USA, Japan, Costa Rica or Hong Kong, or to persons under age 18."
 msgstr ""
+"เว็บไซต์นี้ใช้สำหรับประเทศสหราชอาณาจักรและเกาะ  Isle of Man โดยบริษัท Binary "
+"(IOM) Ltd. ตั้งอยู่ที่ ชั้น 1 อาคาร Millennium House ถนน Victoria เขต "
+"Douglas IM2 4RW บนเกาะ Isle of Man  ในบริติชไอลส์ "
+"โดยได้รับใบอนุญาตและผ่านหลักเกณฑ์ต่อไปนี้ (1) Gambling Supervision "
+"Commission บนเกาะ Isle of Man  ในบริติชไอลส์ "
+"ใบอนุญาตสำหรับผลิตภัณฑ์การเสี่ยงโชคออนไลน์ได้รับเมื่อ 31 สิงหาคม 2555 "
+"และสำหรับลูกค้าในสหราชอาณาจักรได้รับใบอนุญาตจาก (2) UK Gambling Commission - "
+"<a href='%1' target='_blank'>คลิกดูใบอนุญาต</a> "
+"เว็บไซต์นี้ใช้สำหรับประเทศในกลุ่มยุโรป สำหรับผลิตภัณฑ์การลงทุนต่างๆ โดยบริษั"
+"ท  Binary Investments (Europe) Ltd. ตั้งอยู่ที่ อาคาร Mompalao Suite 2 ถนน "
+"Tower เมือง Msida MSD1825 ประเทศมอลตา "
+"โดยได้รับใบอนุญาตและผ่านหลักเกณฑ์ในหมวดที่ 3 ของผู้ให้บริการการลงทุนโดยหน่"
+"วยงาน Malta Financial Services Authority (ใบอนุญาตเลขที่ IS/70156) "
+"และสำหรับผลิตภัณฑ์การพนัน โดยบริษัท Binary (Europe) Ltd. ตั้งอยู่ที่ อาคาร "
+"Mompalao Suite 2 ถนน Tower เมือง Msida MSD1825 ประเทศมอลตา "
+"ได้รับใบอนุญาตและผ่านหลักเกณฑ์ต่อไปนี้ (1) Malta Gaming Authority "
+"ประเทศมอลตา ใบอนุญาตเลขที่ MGA/CL2/118/2000 ได้รับเมื่อ 26 พฤษภาคม 2558 "
+"และสำหรับลูกค้าในสหราชอาณาจักรได้รับใบอนุญาตจาก (2) UK Gambling Commission - "
+"<a href='%2' target='_blank'>คลิกดูใบอนุญาต</a> "
+"และสำหรับลูกค้าในประเทศไอร์แลนด์ได้รับใบอนุญาตจาก (3) Revenue Commissioners "
+"ประเทศไอร์แลนด์ ได้รับใบอนุญาตเมื่อ 29 กันยายน 2558 (ใบอนุญาตเลขที่ 1010285) "
+"อนึ่ง เว็บไซต์นี้ไม่เปิดให้บริการในประเทศต่อไปนี้ สหรัฐอเมริกา ญี่ปุ่น "
+"คอสตาริกา และ ฮ่องกง และรวมถึงบุคคลที่อายุต่ำกว่า 18 ปี"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "Thorough knowledge of bash scripting, as well as experience with scripting languages such as Perl and PHP"
 msgstr ""
+"มีความรู้ในเรื่อง Bash Scripting และประสบการณ์ในการพัฒนาภาษาสคริป เช่น ภาษา "
+"Perl และ PHP"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:77
 msgid "Thursday"
@@ -11325,76 +11569,91 @@ msgstr "วันพฤหัสบดี"
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:459
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/glossary.html.haml:1
 msgid "Tick"
-msgstr ""
+msgstr "Tick"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:8
-#, fuzzy
 #| msgid "Trade"
 msgid "Tick Trade App"
-msgstr "เทรด"
+msgstr "แอพ Tick Trade"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:80
 msgid "Tick Trade on GitHub"
-msgstr ""
+msgstr "Tick Trade บน GitHub"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/affiliates/commission_table.html.tt:3
 msgid "Tier"
-msgstr ""
+msgstr "ชั้น"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:432
 msgid "Tile"
-msgstr ""
+msgstr "Tile"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/intraday_prices.html.tt:32
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/charting/ticker_data_table.html.tt:11
 msgid "Time"
-msgstr ""
+msgstr "เวลา"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/group_history.html.haml:1
 msgid "Times are changing. We increase payouts so our clients can make the most of their winning trades."
 msgstr ""
+"เวลาเปลี่ยนแปรไป เราเพิ่มการจ่ายเงิน "
+"ดังนั้นลูกค้าของเราสามารถมีโอกาสมากขึ้นในการได้รับเงินเพิ่มจากการซื้อขาย"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:500
 msgid "Tip:"
-msgstr ""
+msgstr "เคล็ดลับ:"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/maltainvestws.html.tt:12
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/realws.html.tt:30
 msgid "Title"
-msgstr ""
+msgstr "คำนำหน้าชื่อ"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:71
 msgid "To"
-msgstr ""
+msgstr "ถึง"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/careers.html.haml:1
 msgid "To apply, please submit your CV and a cover letter to <span id=\"hr_contact_eaddress\"></span>."
 msgstr ""
+"หากประสงค์จะสมัคร โปรดส่งประวัติย่อของท่าน และจดหมายแนะนำตัวมาที่ <span id=\""
+"hr_contact_eaddress\"></span>."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:392
 msgid "To authenticate your account, kindly email the following to %1"
-msgstr ""
+msgstr "เพื่อตรวจสอบบัญชีของท่าน โปรดส่งข้อมูลผ่านอีเมล์มาที่ %1"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "To be considered for this mission critical leadership role, you’ll need to demonstrate a passion for open source technologies and a desire to test your talents in a dynamic and challenging work environment."
 msgstr ""
+"เพื่อพิจารณากลั่นกรองตำแหน่งผู้นำในปฏิบัติการสำคัญ ท่านจะต้องแสดงว่า "
+"ท่านมีความสนใจในเทคโนโลยีโอเพ่นซอส และปรารถนาที่จะนำความเชี่ยวชาญ "
+"พรสวรรค์ของท่านมาใช้กับงานที่มีความยืดหยุ่นและท้าทาย"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/japanws.html.tt:434
 msgid "To begin Binary option trading, you will first need to read all these documents carefully to understand the structure, risk and other important things. Please confirm that you have read and understood the documents listed below checking the box. If you have any questions, please contact our customer support."
 msgstr ""
+"ในการเริ่มซื้อขายไบนารีออปชั่น ประการแรก "
+"ท่านควรศึกษาข้อมูลเหล่านี้ด้วยความระมัดระวังเพื่อทำความเข้าใจในโครงสร้าง "
+"ความเสี่ยง และสาระสำคัญต่างๆ โปรดยืนยันว่า "
+"ท่านได้อ่านและมีความเข้าใจในเอกสารตามรายการข้างล่างในแต่ละข้อ หากท่านมีคำถาม "
+"โปรดติดต่อเจ้าหน้าที่บริการลูกค้าของเรา"
 
 #. (request.url_for("contact"))
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/settings_detailsws.html.tt:375
 msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
 msgstr ""
+"ในการเปลี่ยนแปลง ชื่อ วันเกิด ประเทศที่พำนัก หรือ อีเมล์ของท่าน โปรดติดต่แ <"
+"a href=\"%1\">เจ้าหน้าที่บริการลูกค้า</a>"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/session_expired.html.tt:9
 msgid "To continue using our cashier system, please try accessing it again:"
-msgstr ""
+msgstr "เพื่อใช้งานระบบแคชเชียร์ของเรา โปรดเข้าใช้งานอีกครั้ง:"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/logintrouble.html.tt:6
 msgid "To enable cookies, follow the instructions below for the browser version that you are using."
 msgstr ""
+"เพื่อติดตั้งคุกกี้ "
+"โปรดปฏิบัติตามขั้นตอนข้างล่างสำหรับเวอร์ชันของเบราเซอร์ที่ท่านใช้งาน"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/api_tac_tab.html.tt:61
 msgid "To improve the user experience of your Application, where appropriate you may cache the Content for up to 24 hours from a request for that Content through the Binary.com API before being deleted. This limited permission to cache is for performance reasons only."
@@ -11407,6 +11666,8 @@ msgstr ""
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "To qualify, you’ll need an advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr ""
+"สำหรับตำแหน่งนี้ ท่านต้องสำเร็จการศึกษาขั้นสูงในสาขา ฟิสิกส์ วิศวกรรมการเงิน "
+"หรือ คณิตศาสตร์"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/user/lost_passwordws.html.haml:1
 msgid "To reset your password, enter the e-mail address you registered in the field below and click \"RESET PASSWORD\"."
@@ -11447,10 +11708,11 @@ msgid "Touch/No Touch"
 msgstr "Touch/No Touch"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/explanation.html.tt:189
-#, fuzzy
 #| msgid "Contracts will be refunded at the purchase price if the following conditions occur: (1) there are less than 2 ticks between the start and end times, or (2) for contracts of tick duration, if the contract doesn't end within 5 minutes."
 msgid "Touch/No Touch contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "สัญญาจะถูกคืนมูลค่าที่ราคาซื้อหากมีกรณีต่อไปนี้เกิดขึ้น: (1) มีน้อยกว่า 2 ช่วงราคาระหว่างเวลาเริ่มต้นกระทั่งเวลาสิ้นสุด หรือ (2) สำหรับสัญญาตามระยะเวลาของช่วงราคา เมื่อสัญญาไม่สิ้นสุดใน 5 นาที"
+msgstr ""
+"สัญญา Touch/No Touch จะถูกคืนมูลค่าที่ราคาซื้อหากช่วงราคามีน้อยกว่า 2 ช่วง "
+"ระหว่างเวลาเริ่มต้นกระทั่งเวลาสิ้นสุด"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/types_of_trades.html.haml:1
 msgid "Touch/No touch trades"
@@ -11691,10 +11953,9 @@ msgstr "เชื่อ"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:33
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:49
-#, fuzzy
 #| msgid "Try it now"
 msgid "Try It"
-msgstr "ลองเดี๋ยวนี้เลย"
+msgstr "ลองเลย"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:305
 msgid "Try adding more letters or numbers."
@@ -11738,7 +11999,7 @@ msgstr "ประเภทของการซื้อขาย"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:457
 msgid "UK Stocks"
-msgstr "หลักทรัพย์สหราชอาณาจักร"
+msgstr "หลักทรัพย์ US"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/about/group-information.html.haml:1
 msgid "UK and Manx residents will have their account opened with Binary (IOM) Ltd."
@@ -11751,11 +12012,11 @@ msgstr "ลูกค้าในสหราชอาณาจักรที่
 #: /home/git/regentmarkets/bom-web/lib/BOM/Web/Static.pm:113
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/us_patents.html.tt:3
 msgid "US Patents"
-msgstr ""
+msgstr "สิทธิบัตร US"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:451
 msgid "US Stocks"
-msgstr ""
+msgstr "หลักทรัพย์US"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/cashier/deposit_withdraw_ws.html.tt:54
 msgid "USD"
@@ -11771,10 +12032,9 @@ msgid "Ultimate Oscillator"
 msgstr "การแกว่งตัวสูงสุด"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:9
-#, fuzzy
 #| msgid "Purpose of trading"
 msgid "Ultra-fast trading"
-msgstr "วัตถุประสงค์ของการซื้อขาย"
+msgstr "การซื้อขายที่เร็วยิ่งยวด"
 
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Locale.pm:205
 msgid "Unable to price the contract."
@@ -11820,7 +12080,7 @@ msgstr ""
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/contact.html.haml:1
 msgid "United Kingdom"
-msgstr "สหราชอาณาจักร"
+msgstr "ประเทศสหราชอาณาจักร"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "University degree in Marketing, Communications, Journalism, or related discipline"
@@ -11987,10 +12247,9 @@ msgid "Verify your withdrawal request - %1"
 msgstr ""
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/terms_and_conditions.html.tt:4
-#, fuzzy
 #| msgid "Version 39. Last modified 2016-03-01."
 msgid "Version 40. Last modified 2016-05-12."
-msgstr "เวอร์ชัน 39 แก้ไขล่าสุดเมื่อ 2016-03-01"
+msgstr "เวอร์ชัน 40 แก้ไขล่าสุดเมื่อ 2016-05-12"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:190
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/analyse_link.html.tt:4
@@ -12071,24 +12330,24 @@ msgstr ""
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:141
 msgid "Virtual Account"
-msgstr ""
+msgstr "บัญชีทดลองใช้"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/email/common_email.html.tt:724
 msgid "Visit our"
-msgstr ""
+msgstr "เยี่ยมชม"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/volidx_markets.html.haml:1
 msgid "Volatility Index Markets"
-msgstr ""
+msgstr "ตลาดดัชนีความผันผวน"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:414
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/glossary.html.haml:1
 msgid "Volatility Indices"
-msgstr ""
+msgstr "ดัชนีความผันผวน"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/volidx_markets.html.haml:1
 msgid "Volatility Indices are further categorized into two types:"
-msgstr ""
+msgstr "ดัชนีความผันผวนถูกจำแนกเป็น 2 ประเภท:"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:227
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:152
@@ -12123,7 +12382,7 @@ msgstr ""
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:123
 msgid "We"
-msgstr ""
+msgstr "พวกเรา"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/conflicts_policy.html.tt:11
 msgid "We aim to establish and maintain and operate effective organisational and administrative arrangements with a view to taking all reasonable steps to prevent conflicts of interest from constituting or giving rise to a material risk of damage to the interests of our clients."
@@ -12190,7 +12449,7 @@ msgstr ""
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Digitmatch.pm:45
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Role/BarrierBuilder.pm:21
 msgid "We could not process this contract at this time."
-msgstr ""
+msgstr "เราไม่สามารถดำเนินการสัญญานี้ได้ในขณะนี้"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/group_history.html.haml:1
 msgid "We do it again. BetOnMarkets.com follows up our 2007 award by being voted 'Best Fixed-Odds Financial Trading Provider' for 2008."
@@ -12860,7 +13119,7 @@ msgstr ""
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Cashier.pm:438
 msgid "You are not a Payment Agent"
-msgstr ""
+msgstr "ท่านไม่ใช่ตัวแทนรับชำระเงิน"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:82
 msgid "You are not allowed to rebate any part commission payment onto your referrals and should the company realise you are engaged in such actions; your affiliate account shall be revoked immediately."
@@ -12873,7 +13132,7 @@ msgstr ""
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount/Japan.pm:136
 msgid "You are not eligible for Japan knowledge test."
-msgstr ""
+msgstr "ท่านไม่มีสิทธิ์ในการทำแบบทดสอบความรู้ญี่ปุ่น"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/api_tac_tab.html.tt:135
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
@@ -12975,7 +13234,6 @@ msgid "You have exceeded your daily limit on losses of %1%2."
 msgstr "ท่านใช้วงเงินขาดทุนรายวัน ของ %1%2 เกิน"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:721
-#, fuzzy
 #| msgid "You have not granted access to any apps."
 msgid "You have not granted access to any applications."
 msgstr "ท่านไม่ได้รับอนุญาตให้เข้าใช้งานระบบใดๆ"
@@ -13092,7 +13350,7 @@ msgstr "ท่านต้องรายงานให้เ Binary.com ทร
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:542
 msgid "You need to finish all 20 questions."
-msgstr ""
+msgstr "ท่าต้องตอบคำถาม 20 ข้อ ทุกข้อ"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/binary_options_basics.html.haml:1
 msgid "You only need to make four decisions to execute a binary contract."
@@ -13120,7 +13378,7 @@ msgstr ""
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/how_to_trade_binaries.html.haml:1
 msgid "You set the barrier(s) to define your position."
-msgstr ""
+msgstr "ท่านตั้งค่า Barrier เพื่อกำหนด Position ของท่าน"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:26
 msgid "You shall avoid disclosure or unauthorized use of any confidential information that may come to your knowledge or possession to third persons or external parties."
@@ -13199,8 +13457,11 @@ msgid "You will be provided with all the tools, to turn your traffic into a lucr
 msgstr ""
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/why_us.html.haml:1
+#, fuzzy
 msgid "You will have no 'margin calls', no 'stops', and no surprises."
 msgstr ""
+"== from doc == to paste\n"
+"You will have no 'margin calls', no 'stops', and no surprises."
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/explanation.html.tt:51
 msgid "You win the payout if the market price does not end in the digit you have selected."
@@ -13447,10 +13708,9 @@ msgid "Your password has been changed."
 msgstr "รหัสผ่านของท่านได้ถูกแก้ไขแล้ว"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/change_passwordws.html.tt:72
-#, fuzzy
 #| msgid "Your password has been changed."
 msgid "Your password has been changed. Please log in again."
-msgstr "รหัสผ่านของท่านได้ถูกแก้ไขแล้ว"
+msgstr "รหัสผ่านของท่านได้ถูกแก้ไขแล้ว โปรดเข้าสู่ระบบอีกครั้ง"
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Accounts.pm:485
 msgid "Your password has been reset."
@@ -13488,10 +13748,9 @@ msgid "Your risks are known"
 msgstr "ความเสี่ยงของท่านที่ทราบ"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:315
-#, fuzzy
 #| msgid "Session duration limit, in minutes"
 msgid "Your session duration limit will end in %1 seconds."
-msgstr "รอบระยะเวลาการซื้อขาย ในหน่วยนาที"
+msgstr "เวลาการซื้อขายของท่านจะสิ้นสุดภายใน %1 วินาที"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:263
 msgid "Your settings have been updated successfully."
@@ -13673,7 +13932,6 @@ msgid "explanation"
 msgstr "คำอธิบาย"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:265
-#, fuzzy
 msgid "f"
 msgstr "f"
 
@@ -13725,7 +13983,6 @@ msgid "loading..."
 msgstr "กำลังโหลด..."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:314
-#, fuzzy
 #| msgid "Login"
 msgid "login"
 msgstr "เข้าสู่ระบบ"
@@ -13735,7 +13992,6 @@ msgid "low barrier"
 msgstr "Barrier ต่ำ"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:264
-#, fuzzy
 msgid "m"
 msgstr "m"
 
@@ -13826,9 +14082,8 @@ msgid "return"
 msgstr "ผลกำไร"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/portfolio/contract_table.html.tt:31
-#, fuzzy
 msgid "running"
-msgstr "การดำเนินการ"
+msgstr "กำลังดำเนินการ"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:112
 msgid "second"
@@ -14181,11 +14436,15 @@ msgstr "{JAPAN ONLY}If an option buyer wishes to exercise the option rights, the
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:491
 msgid "{JAPAN ONLY}If implied volatility increases then the prices of both call and put types of plain vanilla options will increase."
-msgstr "{ญี่ปุ่นเท่านั้น}If implied volatility increases then the prices of both call and put types of plain vanilla options will increase."
+msgstr ""
+"{JAPAN ONLY}If implied volatility increases then the prices of both call and "
+"put types of plain vanilla options will increase."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:464
 msgid "{JAPAN ONLY}If the buyer of an option does not exercise the option rights, there will be no fee payable to the option seller."
-msgstr "{ญี่ปุ่นเท่านั้น}If the buyer of an option does not exercise the option rights, there will be no fee payable to the option seller."
+msgstr ""
+"{JAPAN ONLY}If the buyer of an option does not exercise the option rights, "
+"there will be no fee payable to the option seller."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:465
 msgid "{JAPAN ONLY}If the buyer of an option waives his right to exercise, a transaction in the underlying asset will not be dealt between the seller and the buyer."
@@ -14245,7 +14504,10 @@ msgstr "{ญี่ปุ่นเท่านั้น}Implied volatility is a p
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:444
 msgid "{JAPAN ONLY}In Japan there are defined trading periods for binary options must be 2 hours or longer, and all trades must be conducted at the start of each trading period."
-msgstr "{ญี่ปุ่นเท่านั้น}In Japan there are defined trading periods for binary options must be 2 hours or longer, and all trades must be conducted at the start of each trading period."
+msgstr ""
+"{JAPAN ONLY}In Japan there are defined trading periods for binary options "
+"must be 2 hours or longer, and all trades must be conducted at the start of "
+"each trading period."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:458
 msgid "{JAPAN ONLY}In OTC currency binary options trading, if the exchange rate during the trading period moves by more than expected in one direction, and there are no longer any exercise prices which can continue to trade, it is possible under certain conditions to add further exercise prices. However, even when further exercise price have been added, the prices of the original options will not be affected."
@@ -14282,18 +14544,35 @@ msgstr "{ญี่ปุ่นเท่านั้น}Introduction to Binary Op
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:478
 msgid "{JAPAN ONLY}It cannot be said that binary options trading is unconditionally advanteous over regular spot fx trading, because investors may lose all of their investment whereas in spot fx trading there will still be some value in the trading position."
 msgstr ""
+"{JAPAN ONLY}It cannot be said that binary options trading is unconditionally "
+"advanteous over regular spot fx trading, because investors may lose all of "
+"their investment whereas in spot fx trading there will still be some value "
+"in the trading position."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:539
 msgid "{JAPAN ONLY}It is determined that proper by the results of this test, if you want to start the transaction, and then also as a trouble on the transaction occurred between the Company , the Company despite missing is knowledge related to options trading trading cause of action and you agree that you will not is that it has admitted ."
 msgstr ""
+"{JAPAN ONLY}It is determined that proper by the results of this test, if you "
+"want to start the transaction, and then also as a trouble on the transaction "
+"occurred between the Company , the Company despite missing is knowledge "
+"related to options trading trading cause of action and you agree that you "
+"will not is that it has admitted ."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:540
 msgid "{JAPAN ONLY}It is determined the customers have basic knowledge of option trading by the results of the knowledge test. If the customers start trading, the customers need to agree not have lawsuit despite the customer are shortage of knowledge related to options trading, and it cause damages, we admit to open the trading account."
 msgstr ""
+"{JAPAN ONLY}It is determined the customers have basic knowledge of option "
+"trading by the results of the knowledge test. If the customers start "
+"trading, the customers need to agree not have lawsuit despite the customer "
+"are shortage of knowledge related to options trading, and it cause damages, "
+"we admit to open the trading account."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:442
 msgid "{JAPAN ONLY}It is possible to use two binary options to make a profit if the asset price settles inbetween the two strikes. It is also possible to buy a single range option that will achieve the same result."
 msgstr ""
+"{JAPAN ONLY}It is possible to use two binary options to make a profit if the "
+"asset price settles inbetween the two strikes. It is also possible to buy a "
+"single range option that will achieve the same result."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:443
 msgid "{JAPAN ONLY}It is possible to use two binary options to make a profit if the asset price settles outside the two strikes. It is also possible to buy a single range option that will achieve the same result."
@@ -14302,6 +14581,8 @@ msgstr "{JAPAN ONLY}It is possible to use two binary options to make a profit if
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:541
 msgid "{JAPAN ONLY}It prohibits the copying of the questions . In addition , You agree that you will not leak to third party"
 msgstr ""
+"{JAPAN ONLY}It prohibits the copying of the questions . In addition , You "
+"agree that you will not leak to third party"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:408
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/knowledge_test.html.tt:2
@@ -14315,7 +14596,7 @@ msgstr "{JAPAN ONLY}Knowledge Test Result"
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/japanws.html.tt:30
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/account/japanws.html.tt:42
 msgid "{JAPAN ONLY}No space between last name and first name"
-msgstr ""
+msgstr "{JAPAN ONLY}No space between last name and first name"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/get_started_jp/get_started.html.tt:169
 msgid "{JAPAN ONLY}Option Pricing"
@@ -14332,6 +14613,8 @@ msgstr "{JAPAN ONLY}Option prices are normally dependant on elements such as the
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:534
 msgid "{JAPAN ONLY}Option prices depend on the spot price, the time to expiry, the volatility of the spot rate and interest rates."
 msgstr ""
+"{JAPAN ONLY}Option prices depend on the spot price, the time to expiry, the "
+"volatility of the spot rate and interest rates."
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/get_started_jp/get_started.html.tt:12
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/get_started_jp/get_started.html.tt:137
@@ -14552,10 +14835,16 @@ msgstr "{JAPAN ONLY}There are two types of option delivery: One requires exchang
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:536
 msgid "{JAPAN ONLY}This knowledge test is required by law. As we provide the test, we know customers better whether the customers are suitable investors to be carried out the binary options trading, and customers can start trading with us."
 msgstr ""
+"{JAPAN ONLY}This knowledge test is required by law. As we provide the test, "
+"we know customers better whether the customers are suitable investors to be "
+"carried out the binary options trading, and customers can start trading with "
+"us."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:538
 msgid "{JAPAN ONLY}This test is for the purpose of confirming if the customers have basic knowledge related to options trading ."
 msgstr ""
+"{JAPAN ONLY}This test is for the purpose of confirming if the customers have "
+"basic knowledge related to options trading ."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:430
 msgid "{JAPAN ONLY}To avoid or hedge the future price of an underlying asset which you hold, you should buy a call option."
@@ -14568,6 +14857,8 @@ msgstr "{JAPAN ONLY}To compensate for any rise in the price of an underlying ass
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:537
 msgid "{JAPAN ONLY}To invest a binary options investment accurately, the customer are required knowledge and experience related to derivative transactions."
 msgstr ""
+"{JAPAN ONLY}To invest a binary options investment accurately, the customer "
+"are required knowledge and experience related to derivative transactions."
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/get_started_jp/get_started.html.tt:164
 msgid "{JAPAN ONLY}Trading & Hedging"
@@ -14610,6 +14901,9 @@ msgstr "{JAPAN ONLY}When buying a vanilla put option, the break-even price at th
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:533
 msgid "{JAPAN ONLY}Where broking companies show bid and offer prices for purchasing and sell-back of positions, these prices may become further apart the nearer you are to the exercise time."
 msgstr ""
+"{JAPAN ONLY}Where broking companies show bid and offer prices for purchasing "
+"and sell-back of positions, these prices may become further apart the nearer "
+"you are to the exercise time."
 
 #. (request.url_for("/", { 'l' => 'JA'  }))
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/get_started_jp/get_started.html.tt:89
@@ -14641,8 +14935,11 @@ msgid "‘Financial Betting Operator of the Year’ award by eGaming Review"
 msgstr "‘Financial Betting Operator of the Year’ เป็นรางวัลจาก eGaming Review"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/types_of_trades.html.haml:1
+#, fuzzy
 msgid "“Asian Fall” – You win when the last tick is lower than the average of the ticks during the trade."
 msgstr ""
+"“Asian Fall” – You win when the last tick is lower than the average of the "
+"ticks during the trade."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/types_of_trades.html.haml:1
 msgid "“Asian Rise” – You win when the last tick is higher than the average of the ticks during the trade."
@@ -14773,10 +15070,9 @@ msgid "USD/NOK"
 msgstr "USD/NOK"
 
 #: Underlying Symbol frxAUDTRY
-#, fuzzy
 #| msgid "USD/TRY"
 msgid "AUD/TRY"
-msgstr "USD/TRY"
+msgstr "AUD/TRY"
 
 #: Underlying Symbol frxEURBRL
 msgid "EUR/BRL"
@@ -15080,20 +15376,18 @@ msgid "CHF/JPY"
 msgstr "CHF/JPY"
 
 #: Underlying Symbol OTC_SSECOMP
-#, fuzzy
 #| msgid "Shanghai Index"
 msgid "Shanghai OTC Index"
-msgstr "ดัชนีเซี่ยงไฮ้"
+msgstr "ดัชนี Shanghai OTC"
 
 #: Underlying Symbol SYNFCHI
 msgid "French Smart Index"
 msgstr "ดัชนีฝรั่งเศส สมาร์ท"
 
 #: Underlying Symbol OTC_DJI
-#, fuzzy
 #| msgid "Wall Street Index"
 msgid "Wall Street OTC Index"
-msgstr "ดัชนีวอลล์สตรีท"
+msgstr "ดัชนี Wall Street OTC"
 
 #: Underlying Symbol SYNN225
 msgid "Japanese Smart Index"
@@ -15104,16 +15398,14 @@ msgid "US Tech Composite Index"
 msgstr "ดัชนียูเอส เทค คอมโพสิต"
 
 #: Underlying Symbol OTC_RTSI
-#, fuzzy
 #| msgid "Russian Regular Index"
 msgid "Russian Regular OTC Index"
-msgstr "ดัชนีรัสเซีย เรกกูลาร์"
+msgstr "ดัชนี Russian Regular OTC"
 
 #: Underlying Symbol OTC_AEX
-#, fuzzy
 #| msgid "Dutch Index"
 msgid "Dutch OTC Index"
-msgstr "ดัชนีดัชท์"
+msgstr "ดัชนี Dutch OTC"
 
 #: Underlying Symbol FTSE
 msgid "UK Index"
@@ -15128,20 +15420,18 @@ msgid "Euro 150 Index"
 msgstr "ดัชนียูโร 150"
 
 #: Underlying Symbol OTC_FTSEMIB
-#, fuzzy
 #| msgid "Italian Index"
 msgid "Italian OTC Index"
-msgstr "ดัชนีอิตาลี"
+msgstr "ดัชนี Italian OTC"
 
 #: Underlying Symbol SSECOMP
 msgid "Shanghai Index"
 msgstr "ดัชนีเซี่ยงไฮ้"
 
 #: Underlying Symbol OTC_BIST100
-#, fuzzy
 #| msgid "Istanbul Index"
 msgid "Istanbul OTC Index"
-msgstr "ดัชนีอิสตันบูล"
+msgstr "ดัชนี Istanbul OTC"
 
 #: Underlying Symbol FCHI
 msgid "French Index"
@@ -15156,88 +15446,78 @@ msgid "Portuguese Index"
 msgstr "ดัชนีโปรตุเกส"
 
 #: Underlying Symbol OTC_IBOV
-#, fuzzy
 #| msgid "Brazilian Index"
 msgid "Brazilian OTC Index"
-msgstr "ดัชนีบราซิล"
+msgstr "ดัชนี Brazilian OTC"
 
 #: Underlying Symbol SASEIDX
 msgid "Saudi Arabia Index"
 msgstr "ดัชนีซาอุดิอาระเบีย"
 
 #: Underlying Symbol OTC_PSI20
-#, fuzzy
 #| msgid "Portuguese Index"
 msgid "Portuguese OTC Index"
-msgstr "ดัชนีโปรตุเกส"
+msgstr "ดัชนี Portuguese OTC"
 
 #: Underlying Symbol OTC_IBEX35
-#, fuzzy
 #| msgid "Spanish Index"
 msgid "Spanish OTC Index"
-msgstr "ดัชนีสเปน"
+msgstr "ดัชนี Spanish OTC"
 
 #: Underlying Symbol SX5E
 msgid "Euro 50 Index"
 msgstr "ดัชนียูโร 50"
 
 #: Underlying Symbol OTC_N225
-#, fuzzy
 #| msgid "Japanese Index"
 msgid "Japanese OTC Index"
-msgstr "ดัชนีญี่ปุ่น"
+msgstr "ดัชนี Japanese OTC"
 
 #: Underlying Symbol SYNSX5E
 msgid "Euro 50 Smart Index"
 msgstr "ดัชนียูโร 50 สมาร์ท"
 
 #: Underlying Symbol OTC_SZSECOMP
-#, fuzzy
 #| msgid "Shenzhen Index"
 msgid "Shenzhen OTC Index"
-msgstr "ดัชนีเสิ่นเจิ้น"
+msgstr "ดัชนี Shenzhen OTC"
 
 #: Underlying Symbol OBX
 msgid "Norwegian Index"
 msgstr "ดัชนีนอรเวย์"
 
 #: Underlying Symbol OTC_BFX
-#, fuzzy
 #| msgid "Belgian Index"
 msgid "Belgian OTC Index"
-msgstr "ดัชนีเบลเยี่ยม"
+msgstr "ดัชนี Belgian OTC"
 
 #: Underlying Symbol OTC_AS51
-#, fuzzy
 #| msgid "Australian Index"
 msgid "Australian OTC Index"
-msgstr "ดัชนีออสเตรเลีย"
+msgstr "ดัชนี Australian OTC"
 
 #: Underlying Symbol N225
 msgid "Japanese Index"
 msgstr "ดัชนีญี่ปุ่น"
 
 #: Underlying Symbol OTC_MICEX
-#, fuzzy
 #| msgid "Russian 10 Index"
 msgid "Russian 10 OTC Index"
-msgstr "ดัชนีรัสเซีย 10"
+msgstr "ดัชนี Russian 10 OTC"
 
 #: Underlying Symbol OTC_SHSZ300
-#, fuzzy
 #| msgid "Shenzhen 300 Index"
 msgid "Shenzhen 300 OTC Index"
-msgstr "ดัชนีเสิ่นเจิ้น 300"
+msgstr "ดัชนี Shenzhen 300 OTC"
 
 #: Underlying Symbol IBEX35
 msgid "Spanish Index"
 msgstr "ดัชนีสเปน"
 
 #: Underlying Symbol OTC_DFMGI
-#, fuzzy
 #| msgid "Dubai Index"
 msgid "Dubai OTC Index"
-msgstr "ดัชนีดูไบ"
+msgstr "ดัชนี Dubai OTC"
 
 #: Underlying Symbol SPTSX60
 msgid "Canadian Index"
@@ -15260,10 +15540,9 @@ msgid "Shenzhen Index"
 msgstr "ดัชนีเสิ่นเจิ้น"
 
 #: Underlying Symbol OTC_NIFTY
-#, fuzzy
 #| msgid "Indian 50 Index"
 msgid "Indian 50 OTC Index"
-msgstr "ดัชนีอินเดีย 50"
+msgstr "ดัชนี Indian 50 OTC"
 
 #: Underlying Symbol ADSMI
 msgid "Abu Dhabi Index"
@@ -15282,10 +15561,9 @@ msgid "Belgian Index"
 msgstr "ดัชนีเบลเยี่ยม"
 
 #: Underlying Symbol OTC_OMXS30
-#, fuzzy
 #| msgid "Swedish Index"
 msgid "Swedish OTC Index"
-msgstr "ดัชนีสวีเดน"
+msgstr "ดัชนี Swedish OTC"
 
 #: Underlying Symbol ISEQ
 msgid "Irish Index"
@@ -15316,22 +15594,19 @@ msgid "Jakarta Index"
 msgstr "ดัชนีจาร์กาต้า"
 
 #: Underlying Symbol OTC_GDAXI
-#, fuzzy
 #| msgid "German Index"
 msgid "German OTC Index"
-msgstr "ดัชนีเยอรมัน"
+msgstr "ดัชนี German OTC"
 
 #: Underlying Symbol OTC_KOSPI2
-#, fuzzy
 #| msgid "Korean Index"
 msgid "Korean OTC Index"
-msgstr "ดัชนีเกาหลี"
+msgstr "ดัชนี Korean OTC"
 
 #: Underlying Symbol OTC_KWSEIDX
-#, fuzzy
 #| msgid "Kuwait Index"
 msgid "Kuwait OTC Index"
-msgstr "ดัชนีคูเวต"
+msgstr "ดัชนี Kuwait OTC"
 
 #: Underlying Symbol OTC_FCHI
 msgid "French OTC Index"
@@ -15386,20 +15661,18 @@ msgid "Hong Kong OTC Index"
 msgstr "ดัชนีตลาดเจรจาต่อรองของฮ่องกง"
 
 #: Underlying Symbol OTC_IXIC
-#, fuzzy
 #| msgid "US Tech 100 Index"
 msgid "US Tech OTC Index"
-msgstr "ดัชนียูเอส เทค 100"
+msgstr "ดัชนี US Tech OTC"
 
 #: Underlying Symbol SYNAEX
 msgid "Dutch Smart Index"
 msgstr "ดัชนีดัชท์ สมาร์ท"
 
 #: Underlying Symbol OTC_OBX
-#, fuzzy
 #| msgid "Norwegian Index"
 msgid "Norwegian OTC Index"
-msgstr "ดัชนีนอรเวย์"
+msgstr "ดัชนี Norwegian OTC"
 
 #: Underlying Symbol OTC_SASEIDX
 msgid "Saudi Arabia OTC Index"
@@ -15738,10 +16011,9 @@ msgid "YY Inc."
 msgstr "YY Inc."
 
 #: Underlying Symbol USAMZN
-#, fuzzy
 #| msgid "Sohu.com Inc."
 msgid "Amazon.com Inc"
-msgstr "Sohu.com Inc."
+msgstr "Amazon.com Inc"
 
 #: Underlying Symbol USHAL
 msgid "Halliburton Company"
@@ -15800,10 +16072,9 @@ msgid "Volkswagen AG"
 msgstr "Volkswagen AG"
 
 #: Underlying Symbol UKBARC
-#, fuzzy
 #| msgid "Barclays plc"
 msgid "Barclays"
-msgstr "Barclays PLC"
+msgstr "Barclays"
 
 #: Underlying Symbol AUMQG
 msgid "Macquarie Group"
@@ -15910,10 +16181,9 @@ msgid "WOOLWORTHS LIMITED"
 msgstr "Woolworths Limited"
 
 #: Underlying Symbol UKGSK
-#, fuzzy
 #| msgid "GlaxoSmithKline plc"
 msgid "GlaxoSmithKline"
-msgstr "GlaxoSmithKline PLC"
+msgstr "GlaxoSmithKline"
 
 #: Underlying Symbol AUWES
 msgid "WESFARMERS LIMITED"
@@ -15988,10 +16258,9 @@ msgid "BMW"
 msgstr "BMW"
 
 #: Underlying Symbol USAAPL
-#, fuzzy
 #| msgid "Apple Inc."
 msgid "Apple Inc"
-msgstr "Apple Inc."
+msgstr "Apple Inc"
 
 #: Underlying Symbol INBHARTIARTL
 msgid "Bharti Airtel"
@@ -16006,128 +16275,126 @@ msgid "UBS AG"
 msgstr "UBS AG"
 
 #: Underlying Symbol USCT
-#, fuzzy
 #| msgid "Citigroup Inc."
 msgid "Citigroup Inc"
-msgstr "บริษัท Citigroup Inc."
+msgstr "Citigroup Inc"
 
 #: Underlying Symbol FPMIC
 msgid "Michelin"
-msgstr "มิชลิน"
+msgstr "Michelin"
 
 #: Underlying Symbol DECOMMBK
 msgid "Commerzbank"
-msgstr "คอมเมิร์ซแบงค์"
+msgstr "Commerzbank"
 
 #: Underlying Symbol USVISA
 msgid "VISA Inc."
-msgstr "บริษัท VISA Inc."
+msgstr "VISA Inc."
 
 #: Underlying Symbol USVIPSHP
 msgid "Vipshop Holdings Limited"
-msgstr "เครือ Vipshop Holdings Limited"
+msgstr "Vipshop Holdings Limited"
 
 #: Underlying Symbol DETKAG
 msgid "Thyssenkrupp SS"
-msgstr "บริษัท Thyssenkrupp SS"
+msgstr "Thyssenkrupp SS"
 
 #: Underlying Symbol USCTRP
 msgid "Ctrip.com International Ltd."
-msgstr "บริษัท Ctrip.com International Ltd."
+msgstr "Ctrip.com International Ltd."
 
 #: Underlying Symbol UKULVR
 msgid "Unilever plc"
-msgstr "บริษัท Unilever plc"
+msgstr "Unilever PLC"
 
 #: Underlying Symbol USBNG
 msgid "The Boeing Company"
-msgstr "บริษัท โบอิ้ง (The Boeing Company)"
+msgstr "The Boeing Company"
 
 #: Underlying Symbol AUSUN
 msgid "SUNCORP GROUP LIMITED"
-msgstr "บริษัท ซันคอร์ป กรุ๊ป (SUNCORP GROUP LIMITED)"
+msgstr "SUNCORP GROUP LIMITED"
 
 #: Underlying Symbol INRIL
 msgid "Reliance Industries Ltd"
-msgstr "บริษัท Reliance Industries Ltd"
+msgstr "Reliance Industries Ltd"
 
 #: Underlying Symbol AUBHP
-#, fuzzy
 #| msgid "BHP Billiton Ltd"
 msgid "BHP Billiton"
-msgstr "บริษัท BHP Billiton Ltd"
+msgstr "BHP Billiton"
 
 #: Underlying Symbol USAMAT
 msgid "Applied Materials Inc."
-msgstr "บริษัท Applied Materials Inc."
+msgstr "Applied Materials Inc."
 
 #: Underlying Symbol INTATAMOTORS
 msgid "Tata Motors"
-msgstr "บริษัท ทาทามอเตอร์ (Tata Motors)"
+msgstr "Tata Motors"
 
 #: Underlying Symbol USUKU
 msgid "Youku Tudou Inc."
-msgstr "บริษัท Youku Tudou Inc."
+msgstr "Youku Tudou Inc."
 
 #: Underlying Symbol NAHEIA
 msgid "Heineken"
-msgstr "บริษัท Heineken"
+msgstr "Heineken"
 
 #: Underlying Symbol UKANH
 msgid "Al Noor Hospitals Group plc"
-msgstr "บริษัท Al Noor Hospitals Group plc"
+msgstr "Al Noor Hospitals Group PLC"
 
 #: Underlying Symbol FPAI
 msgid "Air Liquide"
-msgstr "บริษัท Air Liquide"
+msgstr "Air Liquide"
 
 #: Underlying Symbol AUMGR
 msgid "Mirvac Group Stapled"
-msgstr "บริษัท Mirvac Group Stapled"
+msgstr "Mirvac Group Stapled"
 
 #: Underlying Symbol USSFUN
 msgid "SouFun Holdings Limited"
-msgstr "บริษัท SouFun Holdings Limited"
+msgstr "SouFun Holdings Limited"
 
 #: Underlying Symbol USVRTX
 msgid "Vertex Pharmaceuticals Incorporated"
-msgstr "บริษัท Vertex Pharmaceuticals Incorporated"
+msgstr "Vertex Pharmaceuticals Incorporated"
 
 #: Underlying Symbol DEALV
 msgid "Allianz SE"
-msgstr "บริษัท Allianz SE"
+msgstr "Allianz SE"
 
 #: Underlying Symbol USQHO
 msgid "Qihoo 360 Technology Company Limited"
-msgstr "บริษัท Qihoo 360 Technology Company Limited"
+msgstr "Qihoo 360 Technology Company Limited"
 
 #: Underlying Symbol USJNJ
 msgid "Johnson & Johnson"
-msgstr "บริษัท จอห์นสัน แอนด์ จอห์นสัน (Johnson & Johnson)"
+msgstr "Johnson & Johnson"
 
 #: Underlying Symbol AUGPT
 msgid "GPT Group Stapled"
-msgstr "บริษัท GPT Group Stapled"
+msgstr "GPT Group Stapled"
 
 #: Underlying Symbol UKVIV
 msgid "Aviva plc"
-msgstr "บริษัท Aviva PLC"
+msgstr "Aviva PLC"
 
 #: Underlying Symbol USAMX
 msgid "American Express Company"
-msgstr "บริษัท American Express Company"
+msgstr "American Express Company"
 
 #: Underlying Symbol AUAGL
 msgid "AGL Energy Limited"
-msgstr "บริษัท AGL Energy Limited"
+msgstr "AGL Energy Limited"
 
 #: Underlying Symbol USGMO
 msgid "Keurig Green Mountain Inc."
-msgstr "บริษัท Keurig Green Mountain Inc."
+msgstr "Keurig Green Mountain Inc."
 
 #: Underlying Symbol USYNDX
 msgid "Yandex N.V."
-msgstr "บริษัท Yandex N.V."
+msgstr "Yandex N.V."
 
 #: Underlying Symbol FPAIR
 msgid "Airbus Group"
@@ -16154,10 +16421,9 @@ msgid "Piraeus Bank SA"
 msgstr "Piraeus Bank SA"
 
 #: Underlying Symbol USFB
-#, fuzzy
 #| msgid "Facebook Inc."
 msgid "Facebook Inc"
-msgstr "Facebook Inc."
+msgstr "Facebook Inc"
 
 #: Underlying Symbol FPDG
 msgid "Vinci"
@@ -16237,7 +16503,7 @@ msgstr "National Australia Bank Ltd"
 
 #: Underlying Symbol UKAZN
 msgid "AstraZeneca plc"
-msgstr ""
+msgstr "AstraZeneca PLC"
 
 #: Underlying Symbol FPLEG
 msgid "Legrand electrical components & equipm"
@@ -16256,10 +16522,9 @@ msgid "Philip Morris International"
 msgstr "Philip Morris International"
 
 #: Underlying Symbol UKHSBA
-#, fuzzy
 #| msgid "HSBC Holdings plc"
 msgid "HSBC Holdings"
-msgstr "HSBC Holdings PLC"
+msgstr "HSBC Holdings"
 
 #: Underlying Symbol DEEOAN
 msgid "E.ON SE"
@@ -16274,28 +16539,26 @@ msgid "IBM"
 msgstr "IBM"
 
 #: Underlying Symbol USPFE
-#, fuzzy
 #| msgid "Pfizer Inc."
 msgid "Pfizer Inc"
-msgstr "Pfizer Inc."
+msgstr "Pfizer Inc"
 
 #: Underlying Symbol AUANZ
-#, fuzzy
 #| msgid "ANZ Banking Group Ltd"
 msgid "ANZ Banking Group"
-msgstr "ANZ Banking Group Ltd"
+msgstr "ANZ Banking Group"
 
 #: Underlying Symbol UKBATS
 msgid "British American Tobacco"
-msgstr ""
+msgstr "British American Tobacco"
 
 #: Underlying Symbol DELHA
 msgid "Deutsche Lufthansa"
-msgstr ""
+msgstr "Deutsche Lufthansa"
 
 #: Underlying Symbol USORCL
 msgid "Oracle"
-msgstr "Oracle Corporation"
+msgstr "Oracle"
 
 #: Underlying Symbol FPKER
 msgid "Kering"
@@ -16334,10 +16597,9 @@ msgid "Schneider Electric"
 msgstr "Schneider Electric"
 
 #: Underlying Symbol UKVOD
-#, fuzzy
 #| msgid "Vodafone"
 msgid "Vodafone Group"
-msgstr "Vodafone"
+msgstr "Vodafone Group"
 
 #: Underlying Symbol INSUNPHARMA
 msgid "Sun Pharma"
@@ -16360,10 +16622,9 @@ msgid "Dialog Semiconductor plc"
 msgstr "Dialog Semiconductor PLC"
 
 #: Underlying Symbol USXOM
-#, fuzzy
 #| msgid "ExxonMobil"
 msgid "Exxon Mobil Corp"
-msgstr "ExxonMobil"
+msgstr "Exxon Mobil Corp"
 
 #: Underlying Symbol USNTFLX
 msgid "Netflix Inc."
@@ -16458,10 +16719,9 @@ msgid "Veolia Environnement water"
 msgstr "Veolia Environnement Water"
 
 #: Underlying Symbol USKO
-#, fuzzy
 #| msgid "The Coca-Cola Company"
 msgid "Coca-Cola Co"
-msgstr "The Coca-Cola Company"
+msgstr "Coca-Cola Co"
 
 #: Underlying Symbol BBUCB
 msgid "UCB"
@@ -16512,22 +16772,19 @@ msgid "Societe Generale"
 msgstr "Societe Generale"
 
 #: Underlying Symbol AUQAN
-#, fuzzy
 #| msgid "Qantas Airways Limited"
 msgid "Qantas Airways"
-msgstr "Qantas Airways Limited"
+msgstr "Qantas Airways"
 
 #: Underlying Symbol USGE
-#, fuzzy
 #| msgid "General Electric Company"
 msgid "General Electric Co"
-msgstr "General Electric Company"
+msgstr "General Electric Co"
 
 #: Underlying Symbol USMSFT
-#, fuzzy
 #| msgid "Microsoft"
 msgid "Microsoft Corp"
-msgstr "Microsoft"
+msgstr "Microsoft Corp"
 
 #: Underlying Symbol USJD
 msgid "JD.com Inc."
@@ -16542,10 +16799,9 @@ msgid "Alstom industrial machinery"
 msgstr "Alstom Industrial Machinery"
 
 #: Underlying Symbol USGOOG
-#, fuzzy
 #| msgid "Alcoa Inc."
 msgid "Alphabet Inc"
-msgstr "Alcoa Inc."
+msgstr "Alphabet Inc"
 
 #: Underlying Symbol USWMT
 msgid "Wal-Mart Stores Inc."
@@ -16676,10 +16932,9 @@ msgid "Commodities are traded items with directly usable qualities."
 msgstr "สินค้าโภคภัณฑ์ถูกซื้อขายด้วยคุณภาพของการใช้งาน"
 
 #: Translation for market name
-#, fuzzy
 #| msgid "Stocks"
 msgid "OTC Stocks"
-msgstr "หุ้น หรือ หลักทรัพย์"
+msgstr "หลักทรัพย์ OTC"
 
 #: Explanation for market OTC Stocks
 msgid "Stocks (or shares) represent the value of partial ownership in a single company."
@@ -16742,10 +16997,9 @@ msgid "Americas Future"
 msgstr "Americas Future"
 
 #: Explanation for market Germany
-#, fuzzy
 #| msgid "Germany Stocks"
 msgid "Germany OTC Stocks"
-msgstr "หลักทรัพย์ประเทศเยอรมนี"
+msgstr "หลักทรัพย์ Germany OTC"
 
 #: Translation for sub market name
 msgid "French Stocks"
@@ -16764,7 +17018,6 @@ msgid "Americas"
 msgstr "Americas"
 
 #: Translation for sub market name
-#, fuzzy
 msgid "Nocturnes"
 msgstr "Nocturnes"
 
@@ -16785,10 +17038,9 @@ msgid "United States Stocks"
 msgstr "หลักทรัพย์ประเทศสหรัฐอเมริกา"
 
 #: Explanation for market Australia
-#, fuzzy
 #| msgid "Australia Stocks"
 msgid "Australia OTC Stocks"
-msgstr "หลักทรัพย์ประเทศออสเตรเลีย"
+msgstr "หลักทรัพย์ Australia OTC"
 
 #: Translation for sub market name
 msgid "Minor Pairs"
@@ -16799,16 +17051,14 @@ msgid "Forex pairs of interest, but with less liquid international markets."
 msgstr ""
 
 #: Translation for sub market name
-#, fuzzy
 #| msgid "USD"
 msgid "US"
-msgstr "USD"
+msgstr "US"
 
 #: Explanation for market US
-#, fuzzy
 #| msgid "UK Stocks"
 msgid "US OTC Stocks"
-msgstr "หลักทรัพย์สหราชอาณาจักร"
+msgstr "หลักทรัพย์ US OTC"
 
 #: Translation for sub market name
 msgid "Germany Stocks"
@@ -16827,10 +17077,9 @@ msgid "UK"
 msgstr ""
 
 #: Explanation for market UK
-#, fuzzy
 #| msgid "UK Stocks"
 msgid "UK OTC Stocks"
-msgstr "หลักทรัพย์สหราชอาณาจักร"
+msgstr "หลักทรัพย์ UK OTC"
 
 #: Translation for sub market name
 msgid "Metals"
@@ -16885,7 +17134,6 @@ msgid "Predict whether or not the market will touch a chosen level before expira
 msgstr "พยากรณ์ว่าตลาดจะไปถึงระดับที่กำหนดไว้หรือไม่ ก่อนการสิ้นสุด"
 
 #: Translation for contract type "ASIAND"
-#, fuzzy
 msgid "asian down"
 msgstr "Asian Down"
 
@@ -16901,7 +17149,6 @@ msgid "%1 %2 payout if the last tick of %3 is strictly lower than the average of
 msgstr ""
 
 #: Translation for contract type "ASIANU"
-#, fuzzy
 msgid "asian up"
 msgstr "Asian Up"
 
