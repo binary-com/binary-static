@@ -155,7 +155,7 @@ var Highchart = (function() {
            id: chartOptions.id || chartOptions.value,
            label: {text: chartOptions.label || '', x: chartOptions.text_left ? -15 : 5},
            color: chartOptions.color || '#e98024',
-           zIndex: 4,
+           zIndex: 2,
            width: chartOptions.width || 2,
            dashStyle: chartOptions.dashStyle || 'Solid'
         });
@@ -179,7 +179,7 @@ var Highchart = (function() {
           value: chartOptions.value,
           label: {text: chartOptions.label, align: 'center'},
           color: chartOptions.color || 'green',
-          zIndex: 4,
+          zIndex: 1,
           width: 2,
           dashStyle: chartOptions.dashStyle || 'Solid'
         });
