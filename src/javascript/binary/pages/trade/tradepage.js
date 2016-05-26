@@ -3,6 +3,10 @@ var TradePage = (function(){
 	var trading_page = 0;
 
 	var onLoad = function(){
+        if(page.language() === 'JA' && /\/trading\.html/i.test(window.location.pathname)) {
+            window.location.href = page.url.url_for('jptrading');
+            return;
+        }
 		trading_page = 1;
 		if(sessionStorage.getItem('currencies')){
 			displayCurrencies();
