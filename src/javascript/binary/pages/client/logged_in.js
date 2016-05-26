@@ -6,8 +6,7 @@ var LoggedInHandler = (function() {
         var redirect_url;
         try {
             var tokens  = storeTokens(),
-                loginid = $.cookie('loginid'),
-                cookie_domain;
+                loginid = $.cookie('loginid');
 
             if(!$.cookie('loginid')) { // redirected to another domain (e.g. github.io) so those cookie are not accessible here
                 var loginids = Object.keys(tokens);
@@ -16,12 +15,11 @@ var LoggedInHandler = (function() {
                     loginid_list += (loginid_list ? '+' : '') + id + ':' + (/^V/i.test(id) ? 'V' : 'R') + ':E'; // since there is not any data source to check, so assume all are enabled, disabled accounts will be handled on authorize
                 });
                 loginid = loginids[0];
-                cookie_domain = window.location.hostname;
                 // set cookies
-                page.client.set_cookie('loginid'     , loginid     , cookie_domain);
-                page.client.set_cookie('loginid_list', loginid_list, cookie_domain);
+                page.client.set_cookie('loginid'     , loginid);
+                page.client.set_cookie('loginid_list', loginid_list);
             }
-            page.client.set_cookie('login', tokens[loginid], cookie_domain);
+            page.client.set_cookie('login', tokens[loginid]);
 
             // set flags
             sessionStorage.setItem('check_tnc', '1');
@@ -55,7 +53,7 @@ var LoggedInHandler = (function() {
 
     var storeTokens = function() {
         // Parse hash for loginids and tokens returned by OAuth
-        var hash = window.location.hash.substr(1).split('&');
+        var hash = (/acct1/i.test(window.location.hash) ? window.location.hash : window.location.search).substr(1).split('&'); // to maintain compatibility till backend change released
         var tokens = {};
         for(var i = 0; i < hash.length; i += 2) {
             var loginid = getHashValue(hash[i], 'acct');

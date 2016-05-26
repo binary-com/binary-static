@@ -312,6 +312,7 @@ sub tt2_handle {
     $stash{icon_url}         = $request->url_for('images/common/favicon_1.ico');
     $stash{lang}             = $request->language;
     $stash{menu}             = menu();
+    $stash{is_japan}         = 1 if index($stash{current_path}, 'jptrading') > -1;
 
     ## global/language_form.html.tt
     $stash{language_options} = [
