@@ -326,7 +326,7 @@ Client.prototype = {
         // set local storage
         GTM.set_newaccount_flag();
         localStorage.setItem('active_loginid', loginid);
-        window.location.href = page.url.url_for('trading');
+        window.location.href = page.url.default_redirect_url();
     }
 };
 
@@ -463,7 +463,7 @@ URL.prototype = {
         return params;
     },
     default_redirect_url: function() {
-        return this.url_for('trading');
+        return this.url_for(page.language() === 'JA' ? 'jptrading' : 'trading');
     },
 };
 
