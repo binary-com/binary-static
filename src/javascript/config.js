@@ -13,5 +13,7 @@ function getAppId() {
 }
 
 function getSocketURL() {
-  return localStorage.getItem('config.server_url') ? 'wss://' + localStorage.getItem('config.server_url') + '/websockets/v3' : 'wss://ws.binaryws.com/websockets/v3';
+    var server_url = localStorage.getItem('config.server_url');
+    if(!server_url) server_url = (/staging\.binary\.com/i.test(window.location.hostname) ? 'www2' : 'ws') + '.binaryws.com';
+    return 'wss://' + server_url + '/websockets/v3';
 }
