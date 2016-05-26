@@ -7,14 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-18 03:25+0000\n"
-"Last-Translator: Sittie Hadjirah Sevilla <sittiebaser@gmail.com>\n"
-"Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>\n"
+"PO-Revision-Date: 2016-05-26 12:59+0000\n"
+"Last-Translator: Ewelina Bruździak <e.bruzdziak@gmail.com>\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>"
+"\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.7-dev\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
@@ -659,31 +661,45 @@ msgstr "<option value=\"\"></option><option value=\"01\">styczeń</option><optio
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:108
-#, fuzzy
 #| msgid "<p style=\"font-weight: bold;\">Thanks for signing up for a virtual account!</p><p>Enter the following verification token into the form to create an account: <p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p><p>Enjoy trading with us on Binary.com.</p>"
 msgid "<p style=\"font-weight: bold;\">Thanks for signing up for a virtual account!</p><p>Enter the following verification token into the form to create an account: <p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p><p>Enjoy trading with us on Binary.com.</p>"
-msgstr "<p style=\"font-weight: bold;\">Dziękujemy za rejestrację w celu utworzenia konta wirtualnego!</p><p>Aby ukończyć proces, proszę wpisać w formularzu podany token weryfikujący: </p><p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p><p>Miłego handlowania z Binary.com.</p>"
+msgstr ""
+"<p style=\"font-weight: bold;\">Dziękujemy za rejestrację w celu utworzenia "
+"konta wirtualnego!</p><p>Aby ukończyć proces, proszę wpisać w formularzu "
+"podany token weryfikujący: <p><span style=\"background: #f2f2f2; padding: "
+"10px; line-height: 50px;\">%1</span></p></p><p>Miłego handlowania z "
+"Binary.com.</p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:95
-#, fuzzy
 #| msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Before we can help you change your password, please help us to verify your identity by entering the following verification token into the password reset form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Before we can help you change your password, please help us to verify your identity by entering the following verification token into the password reset form:<p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Szanowny Kliencie,</p><p>Przed rozpoczęciem procedury zmiany hasła musimy zweryfikować Twoją tożsamość. Wpisz podany token weryfikacyjny w formularzu zmiany hasła:</p><p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">Szanowny "
+"Kliencie,</p><p>Przed rozpoczęciem procedury zmiany hasła musimy "
+"zweryfikować Twoją tożsamość. Wpisz podany token weryfikacyjny w formularzu "
+"zmiany hasła:<p><span style=\"background: #f2f2f2; padding: 10px; line-"
+"height: 50px;\">%1</span></p></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:135
-#, fuzzy
 #| msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment agent withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment agent withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Szanowny Kliencie,</p><p>Pomóż nam zweryfikować Twoją tożsamość. Wpisz podany token weryfikacyjny w formularzu wypłaty przez pośrednika płatności:</p><p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">Szanowny "
+"Kliencie,</p><p>Pomóż nam zweryfikować Twoją tożsamość. Wpisz podany token "
+"weryfikacyjny w formularzu wypłaty przez pośrednika płatności:<p><span style="
+"\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:147
-#, fuzzy
 #| msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Szanowny Kliencie,</p><p>Pomóż nam zweryfikować Twoją tożsamość. Wpisz podany token weryfikacyjny w formularzu wypłaty:</p><p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">Szanowny "
+"Kliencie,</p><p>Pomóż nam zweryfikować Twoją tożsamość. Wpisz podany token "
+"weryfikacyjny w formularzu wypłaty:<p><span style=\"background: #f2f2f2; "
+"padding: 10px; line-height: 50px;\">%1</span></p></p>"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/affiliates/faq.html.tt:73
 msgid ""
@@ -3402,7 +3418,6 @@ msgstr ""
 
 #. ($client_name, $support_email)
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Client/IDAuthentication.pm:128
-#, fuzzy
 #| msgid ""
 #| "Dear %1,\n"
 #| "\n"
@@ -3440,11 +3455,15 @@ msgstr ""
 "\n"
 "Kontaktujemy się z Panem\\Panią w sprawie konta na Binary.com.\n"
 "\n"
-"Jesteśmy zobowiązani prawnie do weryfikacji, czy klienci mają skończone 18 lat, dlatego prosimy o przesłanie skanów następujących dokumentów na adres e-mail: %2:\n"
+"Jesteśmy zobowiązani prawnie do weryfikacji, czy klienci mają skończone 18 "
+"lat, dlatego prosimy o przesłanie skanów następujących dokumentów na adres "
+"e-mail: %2:\n"
 "\n"
 "- Aktualny paszport, prawo jazdy lub dowód osobisty\n"
 "\n"
-"Zgodnie z przepisami licencyjnymi, nie będzie Pan\\Pani miał(a) możliwości dokonywania dalszych wpłat ani wypłat do momentu otrzymania przez nas tych dokumentów. Oczekujemy na odpowiedź.\n"
+"Zgodnie z przepisami licencyjnymi, nie będzie Pan\\Pani miał(a) możliwości "
+"dokonywania dalszych wpłat ani wypłat do momentu otrzymania przez nas tych "
+"dokumentów. Oczekujemy na odpowiedź.\n"
 "\n"
 "Z poważaniem,\n"
 "\n"
@@ -3885,6 +3904,10 @@ msgstr "Dbanie o szybki wzrost w kluczowych obszarach na świecie, stosując ró
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:717
 msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
 msgstr ""
+"Z powodu niedawnych zmian w przepisach jesteśmy zobowiązani poprosić "
+"klientów o wypełnienie następującego formularza oceny sytuacji finansowej. "
+"Kontynuowanie handlowania będzie niemożliwe dopóki formularz nie zostanie "
+"wypełniony."
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1412
 msgid "Due to regulatory requirements, you are required to authenticate your account in order to continue trading."
@@ -7082,7 +7105,7 @@ msgstr "Minimum 6 małych i wielkich liter oraz cyfr"
 #. (to_monetary_number_format($stake_min)
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1618
 msgid "Minimum stake of %1 and maximum payout of %2"
-msgstr ""
+msgstr "Minimalna stawka: %1 i maksymalna kwota wypłaty: %2"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:323
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Locale.pm:35
@@ -8080,10 +8103,9 @@ msgid "Platform Tour"
 msgstr "Przewodnik po platformie"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:313
-#, fuzzy
 #| msgid "Please log in to use this feature"
 msgid "Please %1 to view this page"
-msgstr "Zaloguj się, aby korzystać z tej funkcji"
+msgstr "Zaloguj się, aby wyświetlić tę stronę"
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Cashier.pm:90
 msgid "Please accept Funds Protection."
@@ -10358,10 +10380,21 @@ msgid "The Company may use or disclose (or choose not to use or disclose) such C
 msgstr "Firma może wykorzystywać lub ujawniać (lub nie wykorzystywać i nie ujawniać) taki Wkład w jakimkolwiek celu, w jakikolwiek sposób i za pośrednictwem wszystkich dostępnych na świecie mediów;"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/terms_and_conditions.html.tt:104
-#, fuzzy
 #| msgid "The Company may, from time to time, at its sole discretion, or as required by regulations in place to conduct appropriate \"Know Your Customer\" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and may at its sole discretion suspend an account until such proof has been provided to its satisfaction. Know Your Customer documentation will be required when a Client deposits money in the account. In the case of a client opening an account with Binary (Europe) Ltd, the threshold for verifying clients is on cumulative withdrawals of EUR 2,300."
 msgid "The Company may, from time to time, at its sole discretion, or as required by regulations in place to conduct appropriate \"Know Your Customer\" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and may at its sole discretion suspend an account until satisfactory identification information, evidence of identity and address, source of funds and/or source of wealth have been provided. Know Your Customer documentation will be required when a Client deposits money in the account. In the case of a client opening an account with Binary (Europe) Ltd, the threshold for verifying clients is on cumulative withdrawals of EUR 2,300."
-msgstr "Firma może, od czasu do czasu, według własnego uznania lub w związku z wymaganiami narzuconymi przez obowiązujące przepisy prawne, przeprowadzać tzw. procedury „Poznaj swojego klienta” i wymagać od  klienta przedstawienia dowodu tożsamości (np. poświadczoną notarialnie kopię paszportu lub innych środków weryfikacji tożsamości, jakie Firma uzna za wymagane w danych okolicznościach) i może, według własnego uznania, zawiesić konto, dopóki taki dowód nie zostanie dostarczony. Dokumenty związane z procedurą „Poznaj swojego klienta” będą wymagane w przypadku wpłacenia przez Klienta środków na konto. W przypadku klientów, dla których Binary (Europe) Ltd otwiera konto, kwota progowa dla weryfikacji klientów wynosi 2 300 EUR łącznej kwoty wypłat."
+msgstr ""
+"Firma może, od czasu do czasu, według własnego uznania lub w związku z "
+"wymaganiami narzuconymi przez obowiązujące przepisy prawne, przeprowadzać "
+"tzw. procedury „Poznaj swojego klienta” i wymagać od  klienta przedstawienia "
+"dowodu tożsamości (np. poświadczoną notarialnie kopię paszportu lub innych "
+"środków weryfikacji tożsamości, jakie Firma uzna za wymagane w danych "
+"okolicznościach) i może, według własnego uznania, zawiesić konto, dopóki nie "
+"zostaną dostarczone zadawalające informacje pozwalające potwierdzić "
+"tożsamość, adres oraz źródło środków finansowych lub bogactwa. Dokumenty "
+"związane z procedurą „Poznaj swojego klienta” będą wymagane w przypadku "
+"wpłacenia przez Klienta środków na konto. W przypadku klientów, dla których "
+"Binary (Europe) Ltd otwiera konto, kwota progowa dla weryfikacji klientów "
+"wynosi 2 300 EUR łącznej kwoty wypłat."
 
 #. (website)
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:97
@@ -11916,10 +11949,9 @@ msgid "Verify your withdrawal request - %1"
 msgstr "Zweryfikuj swój wniosek o wypłatę - %1"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/terms_and_conditions.html.tt:4
-#, fuzzy
 #| msgid "Version 39. Last modified 2016-03-01."
 msgid "Version 40. Last modified 2016-05-12."
-msgstr "Wersja 39. Ostatnio zmieniana dnia 01.03.2016 r."
+msgstr "Wersja 40. Ostatnio zmieniana dnia 12.05.2016 r."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:190
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/analyse_link.html.tt:4
@@ -13025,7 +13057,7 @@ msgstr "Użytkownik jest zobowiązany niezwłocznie zgłosić Binary.com wszelki
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:542
 msgid "You need to finish all 20 questions."
-msgstr ""
+msgstr "Należy odpowiedzieć na wszystkie 20 pytań."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/binary_options_basics.html.haml:1
 msgid "You only need to make four decisions to execute a binary contract."
@@ -13652,10 +13684,9 @@ msgid "loading..."
 msgstr "ładowanie..."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:314
-#, fuzzy
 #| msgid "Login"
 msgid "login"
-msgstr "Zaloguj"
+msgstr "login"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2054
 msgid "low barrier"
@@ -15440,7 +15471,7 @@ msgstr "Berkshire Hathaway Inc."
 
 #: Underlying Symbol AUCBA
 msgid "Commonwealth Bank"
-msgstr ""
+msgstr "Commonwealth Bank"
 
 #: Underlying Symbol UKAAL
 msgid "Anglo American plc"
@@ -15508,7 +15539,7 @@ msgstr "AbbVie Inc."
 
 #: Underlying Symbol DESIE
 msgid "Siemens AG"
-msgstr ""
+msgstr "Siemens AG"
 
 #: Underlying Symbol UKRDSA
 msgid "Royal Dutch Shell plc"
@@ -15619,10 +15650,9 @@ msgid "YY Inc."
 msgstr "YY Inc."
 
 #: Underlying Symbol USAMZN
-#, fuzzy
 #| msgid "Sohu.com Inc."
 msgid "Amazon.com Inc"
-msgstr "Sohu.com Inc."
+msgstr "Amazon.com Inc"
 
 #: Underlying Symbol USHAL
 msgid "Halliburton Company"
@@ -15681,14 +15711,13 @@ msgid "Volkswagen AG"
 msgstr "Volkswagen AG"
 
 #: Underlying Symbol UKBARC
-#, fuzzy
 #| msgid "Barclays plc"
 msgid "Barclays"
-msgstr "Barclays plc"
+msgstr "Barclays"
 
 #: Underlying Symbol AUMQG
 msgid "Macquarie Group"
-msgstr ""
+msgstr "Macquarie Group"
 
 #: Underlying Symbol AUTLS
 msgid "TELSTRA CORPORATION LIMITED"
@@ -15791,10 +15820,9 @@ msgid "WOOLWORTHS LIMITED"
 msgstr "WOOLWORTHS LIMITED"
 
 #: Underlying Symbol UKGSK
-#, fuzzy
 #| msgid "GlaxoSmithKline plc"
 msgid "GlaxoSmithKline"
-msgstr "GlaxoSmithKline plc"
+msgstr "GlaxoSmithKline"
 
 #: Underlying Symbol AUWES
 msgid "WESFARMERS LIMITED"
@@ -15869,10 +15897,9 @@ msgid "BMW"
 msgstr "BMW"
 
 #: Underlying Symbol USAAPL
-#, fuzzy
 #| msgid "Apple Inc."
 msgid "Apple Inc"
-msgstr "Apple Inc."
+msgstr "Apple Inc"
 
 #: Underlying Symbol INBHARTIARTL
 msgid "Bharti Airtel"
@@ -15887,10 +15914,9 @@ msgid "UBS AG"
 msgstr "UBS AG"
 
 #: Underlying Symbol USCT
-#, fuzzy
 #| msgid "Citigroup Inc."
 msgid "Citigroup Inc"
-msgstr "Citigroup Inc."
+msgstr "Citigroup Inc"
 
 #: Underlying Symbol FPMIC
 msgid "Michelin"
@@ -15933,10 +15959,9 @@ msgid "Reliance Industries Ltd"
 msgstr "Reliance Industries Ltd"
 
 #: Underlying Symbol AUBHP
-#, fuzzy
 #| msgid "BHP Billiton Ltd"
 msgid "BHP Billiton"
-msgstr "BHP Billiton Ltd"
+msgstr "BHP Billiton"
 
 #: Underlying Symbol USAMAT
 msgid "Applied Materials Inc."
@@ -16035,10 +16060,9 @@ msgid "Piraeus Bank SA"
 msgstr "Piraeus Bank SA"
 
 #: Underlying Symbol USFB
-#, fuzzy
 #| msgid "Facebook Inc."
 msgid "Facebook Inc"
-msgstr "Facebook Inc."
+msgstr "Facebook Inc"
 
 #: Underlying Symbol FPDG
 msgid "Vinci"
@@ -16137,10 +16161,9 @@ msgid "Philip Morris International"
 msgstr "Philip Morris International"
 
 #: Underlying Symbol UKHSBA
-#, fuzzy
 #| msgid "HSBC Holdings plc"
 msgid "HSBC Holdings"
-msgstr "HSBC Holdings plc"
+msgstr "HSBC Holdings"
 
 #: Underlying Symbol DEEOAN
 msgid "E.ON SE"
@@ -16155,16 +16178,14 @@ msgid "IBM"
 msgstr "IBM"
 
 #: Underlying Symbol USPFE
-#, fuzzy
 #| msgid "Pfizer Inc."
 msgid "Pfizer Inc"
-msgstr "Pfizer Inc."
+msgstr "Pfizer Inc"
 
 #: Underlying Symbol AUANZ
-#, fuzzy
 #| msgid "ANZ Banking Group Ltd"
 msgid "ANZ Banking Group"
-msgstr "ANZ Banking Group Ltd"
+msgstr "ANZ Banking Group"
 
 #: Underlying Symbol UKBATS
 msgid "British American Tobacco"
@@ -16215,10 +16236,9 @@ msgid "Schneider Electric"
 msgstr "Schneider Electric"
 
 #: Underlying Symbol UKVOD
-#, fuzzy
 #| msgid "Vodafone"
 msgid "Vodafone Group"
-msgstr "Vodafone"
+msgstr "Vodafone Group"
 
 #: Underlying Symbol INSUNPHARMA
 msgid "Sun Pharma"
@@ -16241,10 +16261,9 @@ msgid "Dialog Semiconductor plc"
 msgstr "Dialog Semiconductor plc"
 
 #: Underlying Symbol USXOM
-#, fuzzy
 #| msgid "ExxonMobil"
 msgid "Exxon Mobil Corp"
-msgstr "ExxonMobil"
+msgstr "Exxon Mobil Corp"
 
 #: Underlying Symbol USNTFLX
 msgid "Netflix Inc."
@@ -16339,10 +16358,9 @@ msgid "Veolia Environnement water"
 msgstr "Veolia Environnement water"
 
 #: Underlying Symbol USKO
-#, fuzzy
 #| msgid "The Coca-Cola Company"
 msgid "Coca-Cola Co"
-msgstr "The Coca-Cola Company"
+msgstr "Coca-Cola Co"
 
 #: Underlying Symbol BBUCB
 msgid "UCB"
@@ -16393,22 +16411,19 @@ msgid "Societe Generale"
 msgstr "Societe Generale"
 
 #: Underlying Symbol AUQAN
-#, fuzzy
 #| msgid "Qantas Airways Limited"
 msgid "Qantas Airways"
-msgstr "Qantas Airways Limited"
+msgstr "Qantas Airways"
 
 #: Underlying Symbol USGE
-#, fuzzy
 #| msgid "General Electric Company"
 msgid "General Electric Co"
-msgstr "General Electric Company"
+msgstr "General Electric Co"
 
 #: Underlying Symbol USMSFT
-#, fuzzy
 #| msgid "Microsoft"
 msgid "Microsoft Corp"
-msgstr "Microsoft"
+msgstr "Microsoft Corp"
 
 #: Underlying Symbol USJD
 msgid "JD.com Inc."
@@ -16423,10 +16438,9 @@ msgid "Alstom industrial machinery"
 msgstr "Alstom industrial machinery"
 
 #: Underlying Symbol USGOOG
-#, fuzzy
 #| msgid "Alcoa Inc."
 msgid "Alphabet Inc"
-msgstr "Alcoa Inc."
+msgstr "Alphabet Inc"
 
 #: Underlying Symbol USWMT
 msgid "Wal-Mart Stores Inc."
@@ -16557,10 +16571,9 @@ msgid "Commodities are traded items with directly usable qualities."
 msgstr "Towary to bezpośrednio użyteczne zbywalne elementy."
 
 #: Translation for market name
-#, fuzzy
 #| msgid "Stocks"
 msgid "OTC Stocks"
-msgstr "Akcje"
+msgstr "Akcje OTC"
 
 #: Explanation for market OTC Stocks
 msgid "Stocks (or shares) represent the value of partial ownership in a single company."
@@ -16623,10 +16636,9 @@ msgid "Americas Future"
 msgstr "Ameryki - Kontrakty futures"
 
 #: Explanation for market Germany
-#, fuzzy
 #| msgid "Germany Stocks"
 msgid "Germany OTC Stocks"
-msgstr "Akcje niemieckie"
+msgstr "Niemieckie akcje OTC"
 
 #: Translation for sub market name
 msgid "French Stocks"
@@ -16665,10 +16677,9 @@ msgid "United States Stocks"
 msgstr "Akcje Stanów Zjednoczonych"
 
 #: Explanation for market Australia
-#, fuzzy
 #| msgid "Australia Stocks"
 msgid "Australia OTC Stocks"
-msgstr "Akcje australijskie"
+msgstr "Australijskie akcje OTC"
 
 #: Translation for sub market name
 msgid "Minor Pairs"
@@ -16679,16 +16690,14 @@ msgid "Forex pairs of interest, but with less liquid international markets."
 msgstr "Pary walut z mniej płynnymi rynkami międzynarodowymi."
 
 #: Translation for sub market name
-#, fuzzy
 #| msgid "USD"
 msgid "US"
-msgstr "USD"
+msgstr "US"
 
 #: Explanation for market US
-#, fuzzy
 #| msgid "US Stocks"
 msgid "US OTC Stocks"
-msgstr "Akcje amerykańskie"
+msgstr "Amerykańskie akcje OTC"
 
 #: Translation for sub market name
 msgid "Germany Stocks"
@@ -16707,10 +16716,9 @@ msgid "UK"
 msgstr "Wielka Brytania"
 
 #: Explanation for market UK
-#, fuzzy
 #| msgid "UK Stocks"
 msgid "UK OTC Stocks"
-msgstr "Akcje brytyjskie"
+msgstr "Brytyjskie akcje OTC"
 
 #: Translation for sub market name
 msgid "Metals"
