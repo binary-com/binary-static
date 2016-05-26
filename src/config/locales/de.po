@@ -3,9 +3,10 @@ msgstr ""
 "Project-Id-Version: German (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-19 18:54+0000\n"
+"PO-Revision-Date: 2016-05-26 14:40+0000\n"
 "Last-Translator: Robert Grundler <grundlertex@gmail.com>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/binary/static/de/>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/binary/static/de/>"
+"\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -7082,7 +7083,7 @@ msgstr "Mindestens sechs Klein- und Großbuchstaben mit Zahlen"
 #. (to_monetary_number_format($stake_min)
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1618
 msgid "Minimum stake of %1 and maximum payout of %2"
-msgstr ""
+msgstr "Mindesteinsatzb von %1 und Höchstauszahlung von %2"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:323
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Locale.pm:35
@@ -7127,6 +7128,9 @@ msgstr "Überwachung des Hardware- und Softwareeinsatzes und Verwaltung unseres 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:30
 msgid "Monitor the movements of all of your favourite assets and markets at the same time. This flexible charting platform provides a variety of customisable features."
 msgstr ""
+"Beobachten Sie die Bewegungen aller Ihrer ausgewählten Anlagen und Kurse "
+"gleichzeitig. Diese flexible Charting-Plattform stellt eine Menge "
+"anpassbarer Features zur Verfügung."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "Monitor website trading activity and minimize abuse"
@@ -7326,10 +7330,9 @@ msgid "Next Day"
 msgstr "Nächster Tag"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:82
-#, fuzzy
 #| msgid "Webtrader"
 msgid "Next Gen on GitHub"
-msgstr "Webtrader"
+msgstr "Next Gen auf GitHub"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Charting.pm:415
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Backoffice/Form.pm:819
@@ -8082,10 +8085,9 @@ msgid "Platform Tour"
 msgstr "Plattformtour"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:313
-#, fuzzy
 #| msgid "Please log in to use this feature"
 msgid "Please %1 to view this page"
-msgstr "Bitte loggen Sie ein, um diese Funktion zu nutzen"
+msgstr "Bitte %1, um diese Seite anzuzeigen"
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Cashier.pm:90
 msgid "Please accept Funds Protection."
@@ -8115,6 +8117,8 @@ msgstr "Bitte wählen Sie die Währung aus, in der Sie Transaktionen abwickeln m
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:716
 msgid "Please complete the following financial assessment form before continuing."
 msgstr ""
+"Bevor Sie fortfahren, füllen Sie bitte das nachfolgende finanzielle "
+"Beurteilungsformular aus."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:138
 msgid "Please confirm the trade on your statement before proceeding."
@@ -8443,7 +8447,7 @@ msgstr "Stärke & Bescheidenheit"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:45
 msgid "Powerful charting and technical analysis"
-msgstr ""
+msgstr "Leistungsfähiges Charting und leistungsfähige Analyse"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal_jp/contract.html.tt:2
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal_jp/tacjp.html.tt:10
@@ -8635,7 +8639,7 @@ msgstr "Es können keine korrekten Schwellen festgelegt werden."
 #: /home/git/translations/binary-static-www2/src/templates/haml/layouts/default/footer.html.haml:1
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/global/footer.html.tt:136
 msgid "Prospectus"
-msgstr ""
+msgstr "Prospekte"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/static/job_details.html.haml:1
 msgid "Proven knowledge of auditing standards, procedures, laws, rules and regulations are an added advantage"
@@ -10222,10 +10226,14 @@ msgstr "Die Website von %1 ist durch bestimmte Copyrights geschützt."
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static-www2/src/templates/haml/about/group-information.html.haml:1
-#, fuzzy
 #| msgid "The <span itemprop=\"brand\">%1</span> service (formerly known as BetOnMarkets.com) is owned and operated by Binary Ltd. Fully licensed and regulated, %1 has been providing financial trading to a worldwide audience of over 1,000,000 clients since <span itemprop=\"foundingdate\">1999</span>"
 msgid "The <span itemprop=\"brand\">%1</span> service (formerly known as BetOnMarkets.com) is owned and operated by Binary Ltd. Fully licensed and regulated, %1 has been providing financial trading to a worldwide audience of over 1,000,000 accounts since <span itemprop=\"foundingdate\">1999</span>"
-msgstr "Der Eigentümer und Betreiber des <span itemprop=\"brand\">%1</span> Service(vormals BetOnMarkets.com) ist die Binary Ltd.  Dieser ist amtlich zugelassen und wird beaufsichtigt. %1 bietet seit <span itemprop=\"foundingdate\">1999</span> einem weltweiten Stamm von über 1.000.000 Kunden den Finanzhandel an"
+msgstr ""
+"Der Eigentümer und Betreiber des <span itemprop=\"brand\">%1</span> Service("
+"vormals BetOnMarkets.com) ist die Binary Ltd.  Dieser ist amtlich zugelassen "
+"und wird beaufsichtigt. %1 bietet seit <span itemprop=\"foundingdate\""
+">1999</span> einem weltweiten Stamm von über 1.000.000 Konten den "
+"Finanzhandel an"
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/home/index.html.haml:1
 msgid "The <strong>Premier Platform</strong> for Binary Options Trading"
@@ -10362,10 +10370,22 @@ msgid "The Company may use or disclose (or choose not to use or disclose) such C
 msgstr "Das Unternehmen darf diese Beiträge für jeden Zweck, in jeglicher Weise in jedem weltweiten Medium verwenden oder veröffentlichen (oder auswählen, diese nicht zu verwenden oder zu veröffentlichen);"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/terms_and_conditions.html.tt:104
-#, fuzzy
 #| msgid "The Company may, from time to time, at its sole discretion, or as required by regulations in place to conduct appropriate \"Know Your Customer\" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and may at its sole discretion suspend an account until such proof has been provided to its satisfaction. Know Your Customer documentation will be required when a Client deposits money in the account. In the case of a client opening an account with Binary (Europe) Ltd, the threshold for verifying clients is on cumulative withdrawals of EUR 2,300."
 msgid "The Company may, from time to time, at its sole discretion, or as required by regulations in place to conduct appropriate \"Know Your Customer\" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and may at its sole discretion suspend an account until satisfactory identification information, evidence of identity and address, source of funds and/or source of wealth have been provided. Know Your Customer documentation will be required when a Client deposits money in the account. In the case of a client opening an account with Binary (Europe) Ltd, the threshold for verifying clients is on cumulative withdrawals of EUR 2,300."
-msgstr "Das Unternehmen kann zu gegebener Zeit nach eigenem Ermessen, oder wie durch bestehende Vorschriften zur Durchführung von geeigneten \"Kenne Deinen Kunden\" Verfahren vorgeschrieben, vom Kunden verlangen, einen Identitätsnachweis (wie z. B. eine vom Notar bestätigte Ausweiskopie oder andere Mittel des Identitätsnachweises, die das Unternehmen unter den Umständen als erforderlich erachtet) vorzulegen und kann im eigenen Ermessen ein Konto so lange sperren, bis ein zufriedenstellender Nachweis erbracht wurde. Wenn ein Kunde Geld auf das Konto einzahlt, ist die 'Kenne Deinen Kunden' Dokumentation erforderlich. Für den Fall, dass ein Kunde ein Konto bei der Binary (Europe) Ltd. eröffnet, beträgt für zu verifizierende Kunden die Obergrenze für kumulative Auszahlungen 2.300 EUR."
+msgstr ""
+"Das Unternehmen kann zu gegebener Zeit nach eigenem Ermessen, oder wie durch "
+"bestehende Vorschriften zur Durchführung von geeigneten \"Kenne Deinen "
+"Kunden\" Verfahren vorgeschrieben, vom Kunden verlangen, einen "
+"Identitätsnachweis (wie z. B. eine vom Notar bestätigte Ausweiskopie oder "
+"andere Mittel des Identitätsnachweises, die das Unternehmen unter den "
+"Umständen als erforderlich erachtet) vorzulegen und kann im eigenen Ermessen "
+"ein Konto so lange sperren, bis zufriedenstellende "
+"Identifikationsinformationen, der Nachweis der Identität und der Anschrift, "
+"Geldquellen und/oder Quelle des Vermögens vorgelegt wurden. Wenn ein Kunde "
+"Geld auf das Konto einzahlt, ist die 'Kenne Deinen Kunden' Dokumentation "
+"erforderlich. Für den Fall, dass ein Kunde ein Konto bei der Binary (Europe) "
+"Ltd. eröffnet, beträgt für zu verifizierende Kunden die Obergrenze für "
+"kumulative Auszahlungen 2.300 EUR."
 
 #. (website)
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:97
@@ -10750,10 +10770,9 @@ msgstr "Der erste Tick ist der erste Tick, nach dem der Kontrakt von unseren Ser
 
 #. (request.website.display_name)
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:59
-#, fuzzy
 #| msgid "Purpose of trading"
 msgid "The future of trading on %1"
-msgstr "Purpose of trading"
+msgstr "Die Zukunft des Handelns auf %1"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:118
 msgid "The information provided during the sign-up process warranted by yourself to be true and correct is determined by the Company to be false or incorrect during the term of this Agreement;"
@@ -11274,16 +11293,14 @@ msgid "Tick"
 msgstr "Tick"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:8
-#, fuzzy
 #| msgid "Tick Trades:"
 msgid "Tick Trade App"
-msgstr "Tick-Trades:"
+msgstr "Tick-Trade App"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:80
-#, fuzzy
 #| msgid "Tick Trade Up/Down"
 msgid "Tick Trade on GitHub"
-msgstr "Tick-Trade Up/Down"
+msgstr "Tick-Trade auf GitHub"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/affiliates/commission_table.html.tt:3
 msgid "Tier"
@@ -11634,10 +11651,9 @@ msgstr "Vertrauen"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:33
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:49
-#, fuzzy
 #| msgid "Try it now"
 msgid "Try It"
-msgstr "Versuchen Sie es jetzt"
+msgstr "Versuchen Sie es"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:305
 msgid "Try adding more letters or numbers."
@@ -11714,10 +11730,9 @@ msgid "Ultimate Oscillator"
 msgstr "Höchster Oszillator"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:9
-#, fuzzy
 #| msgid "Start trading"
 msgid "Ultra-fast trading"
-msgstr "Handel beginnen"
+msgstr "Ultraschneller Handel"
 
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Locale.pm:205
 msgid "Unable to price the contract."
@@ -11930,10 +11945,9 @@ msgid "Verify your withdrawal request - %1"
 msgstr "Bestätigen Sie Ihren Auszahlungsantrag - %1"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/legal/terms_and_conditions.html.tt:4
-#, fuzzy
 #| msgid "Version 39. Last modified 2016-03-01."
 msgid "Version 40. Last modified 2016-05-12."
-msgstr "Version 39. Letzte Änderung 01. 03. 2016."
+msgstr "Version 40. Letzte Änderung 12. 05. 2016."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:190
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/bet/analyse_link.html.tt:4
@@ -12285,10 +12299,9 @@ msgid "Webtrader"
 msgstr "Webtrader"
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/applications/index.html.tt:81
-#, fuzzy
 #| msgid "Webtrader"
 msgid "Webtrader on GitHub"
-msgstr "Webtrader"
+msgstr "Webtrader auf GitHub"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:76
 msgid "Wednesday"
@@ -12932,10 +12945,9 @@ msgid "You have exceeded your daily limit on losses of %1%2."
 msgstr "Sie haben das Tageslimit für Verluste in Höhe von %2 %1 überschritten."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:721
-#, fuzzy
 #| msgid "You have not granted access to any apps."
 msgid "You have not granted access to any applications."
-msgstr "Sie haben keinen Zugriff auf Apps gewährt."
+msgstr "Sie haben keinen Zugriff auf Anwendungen gewährt."
 
 #: /home/git/translations/binary-static-www2/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:119
 msgid "You have not obtained and have not maintained all necessary licences and consents to operate within any laws, rules, and regulations applicable under the authority of any regulatory body of the jurisdiction(s) in which you operate or target your business;"
@@ -13049,7 +13061,7 @@ msgstr "Sie müssen von Ihnen erkannte Sicherheitsmängel oder das Eindringen in
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:542
 msgid "You need to finish all 20 questions."
-msgstr ""
+msgstr "Sie müssen alle 20 Fragen beantworten."
 
 #: /home/git/translations/binary-static-www2/src/templates/haml/get_started/binary_options_basics.html.haml:1
 msgid "You only need to make four decisions to execute a binary contract."
@@ -13443,10 +13455,9 @@ msgid "Your risks are known"
 msgstr "Ihre Risiken sind bekannt"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:315
-#, fuzzy
 #| msgid "Session duration limit, in minutes"
 msgid "Your session duration limit will end in %1 seconds."
-msgstr "Limit der Sitzungsdauer in Minuten"
+msgstr "Das Limit Ihrer Sitzungsdauer endet in %1 Sekunden"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:263
 msgid "Your settings have been updated successfully."
@@ -15035,10 +15046,9 @@ msgid "French Smart Index"
 msgstr "Französischer Smart Index"
 
 #: Underlying Symbol OTC_DJI
-#, fuzzy
 #| msgid "Wall Street Index"
 msgid "Wall Street OTC Index"
-msgstr "Wall Street Index"
+msgstr "Wall Street OTC Index"
 
 #: Underlying Symbol SYNN225
 msgid "Japanese Smart Index"
@@ -15054,10 +15064,9 @@ msgstr "Russischer regulärer OTC Index"
 
 # Start of extra_translations
 #: Underlying Symbol OTC_AEX
-#, fuzzy
 #| msgid "Dutch Index"
 msgid "Dutch OTC Index"
-msgstr "Niederländischer Index"
+msgstr "Niederländischer OTC Index"
 
 #: Underlying Symbol FTSE
 msgid "UK Index"
@@ -15081,10 +15090,9 @@ msgid "Shanghai Index"
 msgstr "Shanghai Index"
 
 #: Underlying Symbol OTC_BIST100
-#, fuzzy
 #| msgid "Istanbul Index"
 msgid "Istanbul OTC Index"
-msgstr "Istanbul Index"
+msgstr "Istanbul OTC Index"
 
 #: Underlying Symbol FCHI
 msgid "French Index"
@@ -15119,10 +15127,9 @@ msgid "Euro 50 Index"
 msgstr "Euro 50 Index"
 
 #: Underlying Symbol OTC_N225
-#, fuzzy
 #| msgid "Japanese Index"
 msgid "Japanese OTC Index"
-msgstr "Japanischer Index"
+msgstr "Japanischer OTC Index"
 
 #: Underlying Symbol SYNSX5E
 msgid "Euro 50 Smart Index"
@@ -15137,16 +15144,14 @@ msgid "Norwegian Index"
 msgstr "Norwegischer Index"
 
 #: Underlying Symbol OTC_BFX
-#, fuzzy
 #| msgid "Belgian Index"
 msgid "Belgian OTC Index"
-msgstr "Belgischer Index"
+msgstr "Belgischer OTC Index"
 
 #: Underlying Symbol OTC_AS51
-#, fuzzy
 #| msgid "Australian Index"
 msgid "Australian OTC Index"
-msgstr "Australischer Index"
+msgstr "Australischer OTC Index"
 
 #: Underlying Symbol N225
 msgid "Japanese Index"
@@ -15243,10 +15248,9 @@ msgid "Jakarta Index"
 msgstr "Jakarta Index"
 
 #: Underlying Symbol OTC_GDAXI
-#, fuzzy
 #| msgid "German Index"
 msgid "German OTC Index"
-msgstr "Deutscher Index"
+msgstr "Deutscher OTC Index"
 
 #: Underlying Symbol OTC_KOSPI2
 msgid "Korean OTC Index"
@@ -15258,10 +15262,9 @@ msgid "Kuwait OTC Index"
 msgstr "Kuwait OTC Index"
 
 #: Underlying Symbol OTC_FCHI
-#, fuzzy
 #| msgid "French Index"
 msgid "French OTC Index"
-msgstr "Französischer Index"
+msgstr "Französischer OTC Index"
 
 #: Underlying Symbol SYNFTSE
 msgid "UK Smart Index"
@@ -15308,16 +15311,14 @@ msgid "Korean Index"
 msgstr "Koreanischer Index"
 
 #: Underlying Symbol OTC_HSI
-#, fuzzy
 #| msgid "Hong Kong Index"
 msgid "Hong Kong OTC Index"
-msgstr "Hong Kong Index"
+msgstr "Hong Kong OTC Index"
 
 #: Underlying Symbol OTC_IXIC
-#, fuzzy
 #| msgid "US Tech 100 Index"
 msgid "US Tech OTC Index"
-msgstr "US Tech 100 Index"
+msgstr "US Tech OTC Index"
 
 # Start of extra_translations
 #: Underlying Symbol SYNAEX
@@ -15337,10 +15338,9 @@ msgid "Swiss Index"
 msgstr "Schweizerischer Index"
 
 #: Underlying Symbol OTC_FTSE
-#, fuzzy
 #| msgid "UK Index"
 msgid "UK OTC Index"
-msgstr "GB Index"
+msgstr "GB OTC Index"
 
 #: Underlying Symbol HSI
 msgid "Hong Kong Index"
@@ -15363,20 +15363,18 @@ msgid "Euro 100 Index"
 msgstr "Euro 100 Index"
 
 #: Underlying Symbol OTC_BSESENSEX30
-#, fuzzy
 #| msgid "Bombay Index"
 msgid "Bombay OTC Index"
-msgstr "Mumbai Index"
+msgstr "Mumbai OTC Index"
 
 #: Underlying Symbol OTC_N150
 msgid "Euro 150 OTC Index"
 msgstr "Euro 150 OTC Index"
 
 #: Underlying Symbol OTC_SPC
-#, fuzzy
 #| msgid "US Index"
 msgid "US OTC Index"
-msgstr "US Index"
+msgstr "US OTC Index"
 
 #: Underlying Symbol OTC_SPTSX60
 msgid "Canadian OTC Index"
@@ -15492,7 +15490,7 @@ msgstr "Berkshire Hathaway Inc."
 
 #: Underlying Symbol AUCBA
 msgid "Commonwealth Bank"
-msgstr ""
+msgstr "Commonwealth Bank"
 
 #: Underlying Symbol UKAAL
 msgid "Anglo American plc"
@@ -15560,7 +15558,7 @@ msgstr "AbbVie Inc."
 
 #: Underlying Symbol DESIE
 msgid "Siemens AG"
-msgstr ""
+msgstr "Siemens AG"
 
 #: Underlying Symbol UKRDSA
 msgid "Royal Dutch Shell plc"
@@ -15671,10 +15669,9 @@ msgid "YY Inc."
 msgstr "YY Inc."
 
 #: Underlying Symbol USAMZN
-#, fuzzy
 #| msgid "Sohu.com Inc."
 msgid "Amazon.com Inc"
-msgstr "Sohu.com Inc."
+msgstr "Amazon.com Inc"
 
 #: Underlying Symbol USHAL
 msgid "Halliburton Company"
@@ -15733,14 +15730,13 @@ msgid "Volkswagen AG"
 msgstr "Volkswagen AG"
 
 #: Underlying Symbol UKBARC
-#, fuzzy
 #| msgid "Barclays plc"
 msgid "Barclays"
-msgstr "Barclays plc"
+msgstr "Barclays"
 
 #: Underlying Symbol AUMQG
 msgid "Macquarie Group"
-msgstr ""
+msgstr "Macquarie Group"
 
 #: Underlying Symbol AUTLS
 msgid "TELSTRA CORPORATION LIMITED"
@@ -15843,10 +15839,9 @@ msgid "WOOLWORTHS LIMITED"
 msgstr "WOOLWORTHS LIMITED"
 
 #: Underlying Symbol UKGSK
-#, fuzzy
 #| msgid "GlaxoSmithKline plc"
 msgid "GlaxoSmithKline"
-msgstr "GlaxoSmithKline plc"
+msgstr "GlaxoSmithKline"
 
 #: Underlying Symbol AUWES
 msgid "WESFARMERS LIMITED"
@@ -15921,10 +15916,9 @@ msgid "BMW"
 msgstr "BMW"
 
 #: Underlying Symbol USAAPL
-#, fuzzy
 #| msgid "Apple Inc."
 msgid "Apple Inc"
-msgstr "Apple Inc."
+msgstr "Apple Inc"
 
 #: Underlying Symbol INBHARTIARTL
 msgid "Bharti Airtel"
@@ -15939,10 +15933,9 @@ msgid "UBS AG"
 msgstr "UBS AG"
 
 #: Underlying Symbol USCT
-#, fuzzy
 #| msgid "Citigroup Inc."
 msgid "Citigroup Inc"
-msgstr "Citigroup Inc."
+msgstr "Citigroup Inc"
 
 #: Underlying Symbol FPMIC
 msgid "Michelin"
@@ -16085,10 +16078,9 @@ msgid "Piraeus Bank SA"
 msgstr "Piraeus Bank SA"
 
 #: Underlying Symbol USFB
-#, fuzzy
 #| msgid "Facebook Inc."
 msgid "Facebook Inc"
-msgstr "Facebook Inc."
+msgstr "Facebook Inc"
 
 #: Underlying Symbol FPDG
 msgid "Vinci"
@@ -16187,10 +16179,9 @@ msgid "Philip Morris International"
 msgstr "Philip Morris International"
 
 #: Underlying Symbol UKHSBA
-#, fuzzy
 #| msgid "HSBC Holdings plc"
 msgid "HSBC Holdings"
-msgstr "HSBC Holdings plc"
+msgstr "HSBC Holdings"
 
 #: Underlying Symbol DEEOAN
 msgid "E.ON SE"
@@ -16205,16 +16196,14 @@ msgid "IBM"
 msgstr "IBM"
 
 #: Underlying Symbol USPFE
-#, fuzzy
 #| msgid "Pfizer Inc."
 msgid "Pfizer Inc"
-msgstr "Pfizer Inc."
+msgstr "Pfizer Inc"
 
 #: Underlying Symbol AUANZ
-#, fuzzy
 #| msgid "ANZ Banking Group Ltd"
 msgid "ANZ Banking Group"
-msgstr "ANZ Banking Group Ltd"
+msgstr "ANZ Banking Group"
 
 #: Underlying Symbol UKBATS
 msgid "British American Tobacco"
@@ -16265,10 +16254,9 @@ msgid "Schneider Electric"
 msgstr "Schneider Electric"
 
 #: Underlying Symbol UKVOD
-#, fuzzy
 #| msgid "Vodafone"
 msgid "Vodafone Group"
-msgstr "Vodafone"
+msgstr "Vodafone Konzern"
 
 #: Underlying Symbol INSUNPHARMA
 msgid "Sun Pharma"
@@ -16291,10 +16279,9 @@ msgid "Dialog Semiconductor plc"
 msgstr "Dialog Semiconductor plc"
 
 #: Underlying Symbol USXOM
-#, fuzzy
 #| msgid "ExxonMobil"
 msgid "Exxon Mobil Corp"
-msgstr "ExxonMobil"
+msgstr "Exxon Mobil Corp"
 
 #: Underlying Symbol USNTFLX
 msgid "Netflix Inc."
@@ -16389,10 +16376,9 @@ msgid "Veolia Environnement water"
 msgstr "Veolia Environnement water"
 
 #: Underlying Symbol USKO
-#, fuzzy
 #| msgid "The Coca-Cola Company"
 msgid "Coca-Cola Co"
-msgstr "The Coca-Cola Company"
+msgstr "Coca-Cola Co"
 
 #: Underlying Symbol BBUCB
 msgid "UCB"
@@ -16443,22 +16429,19 @@ msgid "Societe Generale"
 msgstr "Societe Generale"
 
 #: Underlying Symbol AUQAN
-#, fuzzy
 #| msgid "Qantas Airways Limited"
 msgid "Qantas Airways"
-msgstr "Qantas Airways Limited"
+msgstr "Qantas Airways"
 
 #: Underlying Symbol USGE
-#, fuzzy
 #| msgid "General Electric Company"
 msgid "General Electric Co"
-msgstr "General Electric Company"
+msgstr "General Electric Co"
 
 #: Underlying Symbol USMSFT
-#, fuzzy
 #| msgid "Microsoft"
 msgid "Microsoft Corp"
-msgstr "Microsoft"
+msgstr "Microsoft Corp"
 
 #: Underlying Symbol USJD
 msgid "JD.com Inc."
@@ -16473,10 +16456,9 @@ msgid "Alstom industrial machinery"
 msgstr "Alstom industrial machinery"
 
 #: Underlying Symbol USGOOG
-#, fuzzy
 #| msgid "Alcoa Inc."
 msgid "Alphabet Inc"
-msgstr "Alcoa Inc."
+msgstr "Alphabet Inc"
 
 #: Underlying Symbol USWMT
 msgid "Wal-Mart Stores Inc."
@@ -16607,10 +16589,9 @@ msgid "Commodities are traded items with directly usable qualities."
 msgstr "Handelswaren sind gehandelte Artikel mit unmittelbar nutzbaren Qualitäten."
 
 #: Translation for market name
-#, fuzzy
 #| msgid "Stocks"
 msgid "OTC Stocks"
-msgstr "Aktien"
+msgstr "OTC Aktien"
 
 #: Explanation for market OTC Stocks
 msgid "Stocks (or shares) represent the value of partial ownership in a single company."
@@ -16673,10 +16654,9 @@ msgid "Americas Future"
 msgstr "Amerikas Future"
 
 #: Explanation for market Germany
-#, fuzzy
 #| msgid "Germany Stocks"
 msgid "Germany OTC Stocks"
-msgstr "Deutschland Aktien"
+msgstr "Deutschland OTC Aktien"
 
 #: Translation for sub market name
 msgid "French Stocks"
@@ -16715,10 +16695,9 @@ msgid "United States Stocks"
 msgstr "US Aktien"
 
 #: Explanation for market Australia
-#, fuzzy
 #| msgid "Australia Stocks"
 msgid "Australia OTC Stocks"
-msgstr "Australien Aktien"
+msgstr "Australien OTC Aktien"
 
 #: Translation for sub market name
 msgid "Minor Pairs"
@@ -16729,16 +16708,14 @@ msgid "Forex pairs of interest, but with less liquid international markets."
 msgstr "Interessante Devisenpaare, jedoch mit weniger liquiden internationalen Märkten."
 
 #: Translation for sub market name
-#, fuzzy
 #| msgid "USD"
 msgid "US"
-msgstr "USD"
+msgstr "US"
 
 #: Explanation for market US
-#, fuzzy
 #| msgid "US Stocks"
 msgid "US OTC Stocks"
-msgstr "US Aktien"
+msgstr "US OTC Aktien"
 
 #: Translation for sub market name
 msgid "Germany Stocks"
@@ -16757,10 +16734,9 @@ msgid "UK"
 msgstr "GB"
 
 #: Explanation for market UK
-#, fuzzy
 #| msgid "UK Stocks"
 msgid "UK OTC Stocks"
-msgstr "GB Aktien"
+msgstr "GB OTC Aktien"
 
 #: Translation for sub market name
 msgid "Metals"
