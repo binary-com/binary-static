@@ -10,6 +10,7 @@ use Text::Haml;
 use Path::Tiny;
 use HTML::Entities qw( encode_entities );
 use Encode;
+use Term::ANSIColor;
 
 use BS qw/set_is_dev is_dev branch set_branch localize set_lang all_languages lang_display_name tt2 css_files js_config menu/;
 use BS::Request;
@@ -21,11 +22,13 @@ my $force;
 my $is_dev;
 my $branch;
 my $pattern;
+my $verbose;
 GetOptions(
     "force|f"     => \$force,
     "dev|d"       => \$is_dev,
     "branch|b"    => \$branch,
     "pattern|p=s" => \$pattern,
+    "verbose|vr"  => \$verbose,
 );
 set_is_dev() if $is_dev;
 set_branch() if $branch;
@@ -125,6 +128,9 @@ my @m = (
 my $root_path = "$Bin/..";
 my $dist_path = "$root_path/dist".($branch ? '/'.branch() : '');
 @BS::Request::HTML_URLS = map { $_->[0] } @m;
+my $index = 0;
+$| = 1;
+print colored(['cyan'], "Target: ")."$dist_path\n";
 
 foreach my $m (@m) {
     my $save_as  = $m->[0];
@@ -137,6 +143,8 @@ foreach my $m (@m) {
         next unless index($save_as, $pattern) > -1;
         $force = 1;
     }
+
+    $index++;
 
     foreach my $lang (@langs) {
         my $save_as_file = "$dist_path/$lang/pjax/$save_as.html";
@@ -198,7 +206,8 @@ foreach my $m (@m) {
             $layout_output = tt2_handle($layout_file, %stash);
         }
 
-        say $save_as_file;
+        print colored(['green'], ($verbose ? "" : "\r")."[$index".($pattern ? '' : ' / '.(scalar @m))."] ($lang) => ")."/$lang/$save_as.html".($verbose ? "\n" : "");
+
         my $path = path($save_as_file);
         $path->parent->mkpath if $save_as =~ '/';
         $path->spew_utf8($layout_output);
@@ -225,6 +234,7 @@ foreach my $m (@m) {
         $path->spew_utf8($layout_output);
     }
 }
+print "\n";
 
 sub haml_handle {
     my ($file, %stash) = @_;
