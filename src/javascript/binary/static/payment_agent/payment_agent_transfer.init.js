@@ -16,7 +16,7 @@ var PaymentAgentTransfer = (function () {
           PaymentAgentTransfer.init(true);
       }
 
-      if (type === 'paymentagent_transfer' && paymentagent){
+      if (type === 'paymentagent_transfer'){
           PaymentAgentTransfer.paymentAgentTransferHandler(response);
       }
     }
