@@ -4,6 +4,13 @@ var clock_started = false;
 var GTM = (function() {
     "use strict";
 
+    var gtm_applicable = function() {
+      if (getAppId() === '1' && getSocketURL() === 'wss://ws.binaryws.com/websockets/v3') {
+        return true;
+      }
+      return false;
+    };
+
     var gtm_data_layer_info = function(data) {
         var data_layer_info = {
             language  : page.language(),
@@ -28,6 +35,7 @@ var GTM = (function() {
     };
 
     var push_data_layer = function(data) {
+        if (!gtm_applicable) return;
         if(!(/logged_inws/i).test(window.location.pathname)) {
             var info = gtm_data_layer_info(data && typeof(data) === 'object' ? data : null);
             dataLayer[0] = info.data;
@@ -42,6 +50,7 @@ var GTM = (function() {
     };
 
     var event_handler = function(get_settings) {
+        if (!gtm_applicable) return;
         var is_login      = localStorage.getItem('GTM_login')      === '1',
             is_newaccount = localStorage.getItem('GTM_newaccount') === '1';
         if(!is_login && !is_newaccount) {
@@ -77,10 +86,12 @@ var GTM = (function() {
     };
 
     var set_login_flag = function() {
+        if (!gtm_applicable) return;
         localStorage.setItem('GTM_login', '1');
     };
 
     var set_newaccount_flag = function() {
+        if (!gtm_applicable) return;
         localStorage.setItem('GTM_newaccount', '1');
     };
 
