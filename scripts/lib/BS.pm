@@ -13,7 +13,7 @@ use Template::Stash;
 use Format::Util::Numbers;
 
 our @EXPORT_OK = qw/
-    root_path is_dev set_is_dev
+    root_path is_dev set_is_dev branch set_branch
     localize set_lang all_languages lang_display_name
 
     root_url
@@ -31,6 +31,13 @@ sub root_path {
 our $IS_DEV = 0;
 sub is_dev { return $IS_DEV; }
 sub set_is_dev { $IS_DEV = 1; }
+
+our $BRANCH = '';
+sub branch { return $BRANCH; }
+sub set_branch {
+    $BRANCH = 'br_'.shift;
+    # chomp ($BRANCH = `git symbolic-ref --short HEAD`); $BRANCH = '_'.(split('/', $BRANCH))[-1];
+}
 
 our $LANG = 'en';
 
@@ -83,7 +90,7 @@ sub lang_display_name {
 
 ## url_for
 sub root_url {
-    return is_dev() ? '/binary-static/' : '/';
+    return is_dev() ? '/binary-static/'.($BRANCH ? $BRANCH.'/' : '') : '/';
 }
 
 my %__request;
