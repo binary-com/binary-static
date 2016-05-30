@@ -52,16 +52,12 @@ How to work with this project
 2. Put the `app_id` returned by WebSocket in `src/javascript/config.js`
   * **NOTE:** In order to avoid accidentally committing personal changes to this file, use `git update-index --assume-unchanged src/javascript/config.js`
 
-3. Run `grunt default`
-
-4. `cd scripts` and run `carton exec perl compile.pl -d -f`
-
-5. Run `grunt gh-pages`
+3. Run `grunt dev`
 
 
 ### Deploy js/css changes
 
-* `grunt deploy` 
+- `grunt deploy` 
 
 
 ### Deploy template changes
@@ -72,17 +68,18 @@ How to work with this project
 
 ### Deploy js/css and template changes together
 
-1. `grunt default`
-2. `cd scripts` and run `carton exec perl compile.pl -d -f`
-3. `grunt gh-pages`
+- `grunt dev`
+
+
+### Using sub-folders
+There are times that you're working on various branches at the same time, and you want to deploy/test each branch separately on your gh-pages, you can simply use `--branch=branchname` for grunt commands:
+- `grunt dev --branch=branchname`
+This will deploy your changes to a sub-folder named: `br_branchname` and it can be browsed at: https://YOUR_GITHUB_USERNAME.github.io/binary-static/br_branchname/
 
 
 ### Release to Production
 
-1. `grunt clean`
-2. `grunt default`
-3. `cd scripts` and run `carton exec perl compile.pl -f`
-4. `grunt gh-pages`
+- `grunt release`
 
 
 ## Compile Parameters
@@ -90,3 +87,5 @@ How to work with this project
 * `-f` force to overwrite the existing HTMLs
 * `-d` compile for use in gh-pages of a binary-static fork
 * `-p pathname` only compile the files having *pathname* in path
+* `-b branchname` to compile the changes to sub-folder named br_branchname
+* `-vr` to display list of all generated files
