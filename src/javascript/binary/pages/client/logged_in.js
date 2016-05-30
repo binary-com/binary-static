@@ -53,7 +53,7 @@ var LoggedInHandler = (function() {
 
     var storeTokens = function() {
         // Parse hash for loginids and tokens returned by OAuth
-        var hash = window.location.hash.substr(1).split('&');
+        var hash = (/acct1/i.test(window.location.hash) ? window.location.hash : window.location.search).substr(1).split('&'); // to maintain compatibility till backend change released
         var tokens = {};
         for(var i = 0; i < hash.length; i += 2) {
             var loginid = getHashValue(hash[i], 'acct');

@@ -250,7 +250,7 @@ var ViewPopupWS = (function() {
             user_sold  = contract.sell_spot_time && contract.sell_spot_time < contract.date_expiry,
             is_ended   = contract.is_expired || contract.is_sold || user_sold;
 
-        if(contract.high_barrier) {
+        if(contract.barrier_count > 1) {
             containerSetText('trade_details_barrier'    , contract.high_barrier , '', true);
             containerSetText('trade_details_barrier_low', contract.low_barrier  , '', true);
         } else if(contract.barrier) {
@@ -362,8 +362,8 @@ var ViewPopupWS = (function() {
                     normalRow('End Time',       '', 'trade_details_end_date') +
                     normalRow('Remaining Time', '', 'trade_details_live_remaining') +
                     normalRow('Entry Spot',     '', 'trade_details_entry_spot') +
-                    normalRow(contract.high_barrier ? 'High Barrier' : 'Barrier', '', 'trade_details_barrier'    , true) +
-                    (contract.low_barrier ? normalRow('Low Barrier',              '', 'trade_details_barrier_low', true) : '') +
+                    normalRow(contract.barrier_count > 1 ? 'High Barrier' : 'Barrier', '', 'trade_details_barrier'    , true) +
+                    (contract.barrier_count > 1 ? normalRow('Low Barrier',             '', 'trade_details_barrier_low', true) : '') +
                     normalRow('Purchase Price', '', 'trade_details_purchase_price') +
                 '<tr><th colspan="2" id="trade_details_current_title">' + text.localize('Current') + '</th></tr>' +
                     normalRow('Spot',           'trade_details_spot_label'    , 'trade_details_current_spot') +

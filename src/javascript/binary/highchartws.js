@@ -155,7 +155,7 @@ var Highchart = (function() {
            id: chartOptions.id || chartOptions.value,
            label: {text: chartOptions.label || '', x: chartOptions.text_left ? -15 : 5},
            color: chartOptions.color || '#e98024',
-           zIndex: 4,
+           zIndex: 2,
            width: chartOptions.width || 2,
            dashStyle: chartOptions.dashStyle || 'Solid'
         });
@@ -179,7 +179,7 @@ var Highchart = (function() {
           value: chartOptions.value,
           label: {text: chartOptions.label, align: 'center'},
           color: chartOptions.color || 'green',
-          zIndex: 4,
+          zIndex: 1,
           width: 2,
           dashStyle: chartOptions.dashStyle || 'Solid'
         });
@@ -325,7 +325,7 @@ var Highchart = (function() {
       if (!update) {
         init_once();
       }
-      if (!chart && !chart_subscribed) {
+      if (!chart && !history_send) {
         request_data(update || '');
       } else if (entry_tick_time && chart) {
         select_entry_tick_barrier();
@@ -375,7 +375,6 @@ var Highchart = (function() {
     }
 
     if(!is_expired && !sell_spot_time && parseInt(window.time._i)/1000 < end_time && !chart_subscribed) {
-        chart_subscribed = true;
         request.subscribe = 1;
     }
 
@@ -397,6 +396,7 @@ var Highchart = (function() {
       show_error('', text.localize('Waiting for entry tick.'));
     } else if (!history_send){
       history_send = true;
+      if (request.subscribe) chart_subscribed = true;
       socketSend(request);
     }
     return;

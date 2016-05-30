@@ -182,7 +182,7 @@ sub menu {
     push @menu,
         {
         id         => 'topMenuBetaInterface',
-        url        => url_for('/trading'),
+        url        => url_for($LANG eq 'ja' ? '/jptrading' : '/trading'),
         text       => localize('Start Trading'),
         link_class => 'pjaxload'
         };

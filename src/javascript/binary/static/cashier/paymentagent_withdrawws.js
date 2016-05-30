@@ -65,7 +65,7 @@ var PaymentAgentWithdrawWS = (function() {
         $ddlAgents.empty();
         var paList = response.paymentagent_list.list;
         if(paList.length > 0) {
-            BinarySocket.send({verify_email:page.user.email, type:'paymentagent_withdraw'});
+            BinarySocket.send({verify_email: TUser.get().email, type:'paymentagent_withdraw'});
             insertListOption($ddlAgents, text.localize('Please select a payment agent'), '');
             for(var i = 0; i < paList.length; i++){
                 insertListOption($ddlAgents, paList[i].name, paList[i].paymentagent_loginid);
