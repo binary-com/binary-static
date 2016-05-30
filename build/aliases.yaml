@@ -7,18 +7,6 @@ js:
   - 'concat'
   - 'uglify'
 
-dev:
-  - 'default'
-  - 'connect'
-
-deploy:
-  - 'default'
-  - 'gh-pages'
-
-custom:
-  - 'default'
-  - 'connect'
-
 test:
   - 'jshint'
 
@@ -28,3 +16,23 @@ default:
   - 'js'
   - 'fileindex'
   - 'copy'
+
+dev:
+  - 'clean'
+  - 'default'
+  - 'shell:compile_dev'
+  - 'gh-pages'
+
+deploy:
+  - 'default'
+  - 'gh-pages'
+
+custom:
+  - 'default'
+  - 'connect'
+
+release:
+  - 'clean'
+  - 'default'
+  - 'shell:compile_production'
+  - 'gh-pages'

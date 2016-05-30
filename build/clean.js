@@ -1,5 +1,5 @@
 module.exports = {
     all: {
-        src: 'dist'
+        src: global.dist
     }
 };

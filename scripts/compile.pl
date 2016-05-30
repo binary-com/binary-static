@@ -17,7 +17,9 @@ use BS::Request;
 
 # force = re-generate all files
 # dev   = for domain like http://fayland.github.io/binary-static/ which has a sub path
+# branch = will add _[branch_name] to path
 # pattern = the url pattern to rebuild
+# verbose = to display all generated files list
 my $force;
 my $is_dev;
 my $branch;
@@ -26,12 +28,12 @@ my $verbose;
 GetOptions(
     "force|f"     => \$force,
     "dev|d"       => \$is_dev,
-    "branch|b"    => \$branch,
+    "branch|b=s"  => \$branch,
     "pattern|p=s" => \$pattern,
     "verbose|vr"  => \$verbose,
 );
 set_is_dev() if $is_dev;
-set_branch() if $branch;
+set_branch($branch) if $branch;
 
 my @langs = map { lc $_ } all_languages();
 my @m = (
@@ -206,7 +208,7 @@ foreach my $m (@m) {
             $layout_output = tt2_handle($layout_file, %stash);
         }
 
-        print colored(['green'], ($verbose ? "" : "\r")."[$index".($pattern ? '' : ' / '.(scalar @m))."] ($lang) => ")."/$lang/$save_as.html".($verbose ? "\n" : "");
+        print colored(['green'], ($verbose ? "" : "\e[K\r")."[$index".($pattern ? '' : ' / '.(scalar @m))."] ($lang) => ")."/$lang/$save_as.html".($verbose ? "\n" : "");
 
         my $path = path($save_as_file);
         $path->parent->mkpath if $save_as =~ '/';

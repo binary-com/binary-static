@@ -34,7 +34,10 @@ sub set_is_dev { $IS_DEV = 1; }
 
 our $BRANCH = '';
 sub branch { return $BRANCH; }
-sub set_branch { chomp ($BRANCH = `git symbolic-ref --short HEAD`); $BRANCH = (split('/', $BRANCH))[-1]; }
+sub set_branch {
+    $BRANCH = 'br_'.shift;
+    # chomp ($BRANCH = `git symbolic-ref --short HEAD`); $BRANCH = '_'.(split('/', $BRANCH))[-1];
+}
 
 our $LANG = 'en';
 
