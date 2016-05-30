@@ -260,7 +260,7 @@ var Highchart = (function() {
                   show_error('missing');
                   return;
                 }
-                for (i = 0; i < response.candles.length; i++) {
+                for (i = 1; i < response.candles.length; i++) {
                     if (entry_tick_time && response.candles[i] && parseInt(response.candles[i].epoch) <= parseInt(entry_tick_time) && response.candles[i+1].epoch > parseInt(entry_tick_time)) {
                         // set the chart to display from the candle before entry_tick_time
                         min_point = parseInt(response.candles[i-1].epoch);
