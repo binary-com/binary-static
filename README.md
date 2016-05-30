@@ -62,8 +62,7 @@ How to work with this project
 
 ### Deploy template changes
 
-1. To compile a change in one template: `cd scripts` and run `carton exec perl compile.pl -d -f -p about-us`
-2. `grunt gh-pages`
+- `grunt dev --path=about-us`
 
 
 ### Deploy js/css and template changes together

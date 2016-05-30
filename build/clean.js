@@ -1,5 +1,5 @@
 module.exports = {
     all: {
-        src: global.dist
+        src: global.path ? 'zzzzz' : global.dist
     }
 };

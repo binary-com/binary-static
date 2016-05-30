@@ -17,9 +17,9 @@ use BS::Request;
 
 # force = re-generate all files
 # dev   = for domain like http://fayland.github.io/binary-static/ which has a sub path
-# branch = will add _[branch_name] to path
+# branch = will add br_[branch_name] to path
 # pattern = the url pattern to rebuild
-# verbose = to display all generated files list
+# verbose = to display list of all generated files
 my $force;
 my $is_dev;
 my $branch;
