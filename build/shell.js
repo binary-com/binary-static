@@ -1,4 +1,16 @@
 module.exports = {
+    compile_dev: {
+        command: global.compileCommand('-f -d'),
+        options: {
+            stdout: true
+        }
+    },
+    compile_production: {
+        command: global.compileCommand('-f'),
+        options: {
+            stdout: true
+        }
+    },
     all: {
         nightwatch: {
             command: 'nightwatch',

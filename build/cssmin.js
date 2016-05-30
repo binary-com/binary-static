@@ -1,8 +1,8 @@
 module.exports = {
     all: {
-        files: {
-            'dist/css/binary.min.css': ['src/css/external/**/*.css', 'dist/css/binary.css'],
-            'dist/css/binary_rtl.min.css': ['src/css/external/**/*.css', 'dist/css/binary_rtl.css']
-        }
+        files: [
+            {dest: global.dist + '/css/binary.min.css', src: ['src/css/external/**/*.css', global.dist + '/css/binary.css']},
+            {dest: global.dist + '/css/binary_rtl.min.css', src: ['src/css/external/**/*.css', global.dist + '/css/binary_rtl.css']}
+        ]
     }
 };
