@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-31 08:25+0000\n"
-"Last-Translator: Sittie Hadjirah Sevilla <sittiebaser@gmail.com>\n"
+"PO-Revision-Date: 2016-05-31 17:15+0000\n"
+"Last-Translator: Ahmed Kotb <ahmedmohamedkotp@gmail.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/binary/static/ar/>"
 "\n"
 "Language: ar\n"
@@ -57,9 +57,8 @@ msgstr "$250,000 - $1,000,000"
 
 #. (website, "<a href=\"https://developers.binary.com\" target=\"_blank\"> Application Program Interface</a>")
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:3
-#, fuzzy
 msgid "%1 %2 (\"API\") Terms and Conditions"
-msgstr "%1 %2 (\"API\") الشروط والأحكام"
+msgstr "1% 2% (\"واجهة برمجة التطبيقات\") الشروط والأحكام"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:364
 msgid "%1 %2 has been credited to your Virtual money account %3"
@@ -77,16 +76,14 @@ msgstr "أحكام وشروط برنامج الإنتساب الخاص بـ %1"
 
 #. ($params->{website_name})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:86
-#, fuzzy
 msgid "%1 New Password Request"
-msgstr "%1 طلب كلمة مرور جديدة"
+msgstr "1% طلب كلمة مرور جديدة"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:733
-#, fuzzy
 msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
 msgstr ""
-"%1 يرجى النقر على الرابط أدناه لإعادة تشغيل عملية استرداد كلمة المرور. إذا "
-"كنت تتطلب مزيدا من المساعدة، الرجاء الاتصال \"دعم العملاء\"."
+"1% يرجى الضغط على الرابط أدناه لإعادة تشغيل عملية استرداد كلمة المرور. إذا "
+"كنت بحاجة إلى المزيد من المساعدة، الرجاء الاتصال بفريق دعم العملاء لدينا."
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
@@ -106,9 +103,8 @@ msgstr "%1 وbull/bear هما علامتان تجاريتان مسجلتان."
 #. ($client->loginid)
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Accounts.pm:373
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Accounts.pm:419
-#, fuzzy
 msgid "%1 cashier password updated"
-msgstr "%1 تحديث كلمة مرور الصراف"
+msgstr "1% تم تحديث كلمة مرور الصراف"
 
 #. (request.website.display_name)
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/paymentagent_withdrawws.html.tt:93
@@ -124,11 +120,10 @@ msgstr "تعطى 1% الجميع وسيلة سهلة ومثيرة للمشارك
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/get_started/volidx_markets.html.haml:1
-#, fuzzy
 msgid "%1 has created Volatility Indices that you can trade 24/7. You can trade these on all types of contract:"
 msgstr ""
-"أنشأت %1 مؤشرات تمكنك من التداول 24 ساعة فى اليوم وطوال أيام الأسبوع. يمكنك "
-"أن تتداول المؤشرات على كل أنواع العقود:"
+"1% انشأت مؤشرات التقلب التي يمكنك تداولها 24/7. يمكنك تداول هذه المؤشرات على "
+"كل أنواع العقود:"
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/about/index.html.haml:1
@@ -290,7 +285,7 @@ msgstr "%1 لا يجوز إجراء معاملات على هذا الحساب."
 #. ($app->{name}, $client->loginid)
 #: /home/git/regentmarkets/bom-oauth/templates/scope_confirms.html.ep:9
 msgid "%1 would like permission to access your account %2"
-msgstr ""
+msgstr "1% ترغب في الحصول على إذن للوصول إلى حسابك 2%"
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
@@ -299,12 +294,11 @@ msgstr "%1 ترغب بتشكيل فريق مع وكلاء الدفع المحت�
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/get_started/volidx_markets.html.haml:1
-#, fuzzy
 msgid "%1's Continuous Indices are the Volatility 25 Index, Volatility 50 Index, Volatility 75 Index and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 25%, 50%, 75% and 100%."
 msgstr ""
-"مؤشرات المستمرة في %1 هي مؤشر 25 تقلب وتقلب 50 مؤشر، تقلبات مؤشر 75 وتقلبات "
-"مؤشر 100. وتناظر هذه المؤشرات الأسواق محاكاة مع التقلبات المستمرة من 25%، "
-"50%، 75% و 100%."
+"المؤشرات المستمرة ل 1% هي مؤشر التقلب 25, مؤشر التقلب 50, مؤشر التقلب 75 "
+"ومؤشر التقلب 100. هذه المؤشرات متطابقة لتحاكي الأسواق مع التقلبات المستمرة "
+"لنسب 25%, 50%, 75%, و 100%."
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/get_started/otc_indices_stocks.html.haml:1
@@ -1396,16 +1390,14 @@ msgid "Adjusted Barrier"
 msgstr "الحاجز المعدل"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:667
-#, fuzzy
 #| msgid "Adjusted Barrier"
 msgid "Adjusted High Barrier"
-msgstr "الحاجز المعدل"
+msgstr "حاجز عالي معدل"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:668
-#, fuzzy
 #| msgid "Adjusted Barrier"
 msgid "Adjusted Low Barrier"
-msgstr "الحاجز المعدل"
+msgstr "حاجز منخفض معدل"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/account/api_tokenws.html.tt:36
 msgid "Admin"
@@ -1901,10 +1893,9 @@ msgid "Authorised Applications"
 msgstr "التطبيقات المعتمدة"
 
 #: /home/git/regentmarkets/bom-oauth/templates/scope_confirms.html.ep:8
-#, fuzzy
 #| msgid "Authorised Applications"
 msgid "Authorize application"
-msgstr "التطبيقات المعتمدة"
+msgstr "تطبيق مرخص"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_methods.html.tt:3
 msgid "Available payment methods"
@@ -2000,16 +1991,14 @@ msgid "Barrier"
 msgstr "حاجز"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:662
-#, fuzzy
 #| msgid "Barrier 1"
 msgid "Barrier Change"
-msgstr "حاجز 1"
+msgstr "تغيير الحاجز"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Strike/Digit.pm:25
-#, fuzzy
 #| msgid "Barrier must be an integer."
 msgid "Barrier is not an integer between 0 to 9."
-msgstr "الجدار يجب أن يكون عددا صحيحاً."
+msgstr "الحاجز ليس عدداً صحيحاً ما بين 0 إلى 9."
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Role/SingleBarrier.pm:65
 msgid "Barrier is out of acceptable range."
@@ -3116,10 +3105,9 @@ msgid "Copywriter"
 msgstr "المؤلف"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:669
-#, fuzzy
 #| msgid "Corporate Actions"
 msgid "Corporate Action"
-msgstr "إجراءات الشركات"
+msgstr "إجراء الشركة"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/risk_disclaimer.html.tt:94
 msgid "Costs and Charges"
@@ -4845,7 +4833,7 @@ msgstr "القانون الحاكم والاختصاص القضائي"
 #: /home/git/regentmarkets/bom-oauth/templates/scope_confirms.html.ep:31
 #: /home/git/regentmarkets/bom-oauth/templates/scope_confirms.html.ep:32
 msgid "Grant"
-msgstr ""
+msgstr "منحة"
 
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Wrapper/Streamer.pm:59
 msgid "Granularity is not valid"
@@ -5305,10 +5293,11 @@ msgstr "إذا كنت ترغب فى زيادة هذه الحدود، رجاءا 
 
 #. (stash->{affiliate_email})
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:affiliates@binary.com'>affiliates@binary.com</a>"
 msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:%1'>%1</a>"
-msgstr "للمزيد من المعلومات حول كيفية أن تصبح وكيل دفع، يرجى الاتصال بنا على <a href='mailto:affiliates@binary.com'>affiliates@binary.com</a>"
+msgstr ""
+"إذا كنت ترغب في المزيد من المعلومات حول كيف يمكنك أن تصبح وكيل دفع, يرجى "
+"الاتصال بنا على<a href='mailto:%1'>1%</a>"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/complaints_disputes.html.tt:4
 msgid "If you would like to file a complaint with regards to our service, kindly contact us providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within 1-2 weeks (and at most within 2 months) from receipt of all relevant details."
@@ -6731,7 +6720,6 @@ msgstr "مقياس لوغاريتمي"
 #: /home/git/regentmarkets/bom-oauth/templates/login.html.ep:13
 #: /home/git/regentmarkets/bom-oauth/templates/loginbinary.html.ep:19
 #: /home/git/regentmarkets/bom-oauth/templates/loginbinary.html.ep:9
-#, fuzzy
 #| msgid "Login"
 msgid "Login"
 msgstr "تسجيل الدخول"
@@ -6783,7 +6771,6 @@ msgid "Loss"
 msgstr "خسارة"
 
 #: /home/git/regentmarkets/bom-oauth/templates/loginbinary.html.ep:24
-#, fuzzy
 #| msgid "Lost password?"
 msgid "Lost Password?"
 msgstr "كلمة مرور مفقودة؟"
@@ -7400,10 +7387,9 @@ msgstr "Not FATCA*"
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/App.pm:159
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/App.pm:89
-#, fuzzy
 #| msgid "Page not found"
 msgid "Not Found"
-msgstr "الصفحة غير موجودة"
+msgstr "غير موجود"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:656
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/explanation.html.tt:112
@@ -7648,10 +7634,9 @@ msgid "Opens late (at %1)"
 msgstr "يفتح متأخرا (فى %1)"
 
 #: /home/git/regentmarkets/bom-oauth/templates/scope_confirms.html.ep:21
-#, fuzzy
 #| msgid "create new account"
 msgid "Operate on accounts"
-msgstr "أنشىء حساب جديد"
+msgstr "تشغيل على الحسابات"
 
 #: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequencyws.html.haml:1
 msgid "Options trading can become a real addiction, as can any other activity pushed to its limits. To avoid the danger of such an addiction, we provide a reality-check that gives you a summary of your trades and accounts on a regular basis."
@@ -7662,22 +7647,19 @@ msgid "Order Execution"
 msgstr "تنفيذ الأمر"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:663
-#, fuzzy
 #| msgid "High Barrier"
 msgid "Original Barrier"
-msgstr "حاجز عالي"
+msgstr "حاجز أصلي"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:664
-#, fuzzy
 #| msgid "High Barrier"
 msgid "Original High Barrier"
-msgstr "حاجز عالي"
+msgstr "حاجز عالي أصلي"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:665
-#, fuzzy
 #| msgid "Low Barrier"
 msgid "Original Low Barrier"
-msgstr "حاجز منخفض"
+msgstr "حاجز منخفض أصلي"
 
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Charting.pm:591
 msgid "Oscillator calculated from the daily readings of the Accumulation Distribution Line. The CMF is unlike a momentum oscillator in that it is not influenced by the daily price change. Instead, the indicator focuses on the location of the close relative to the range for the period (daily or weekly)."
@@ -8359,10 +8341,9 @@ msgstr "برجاء تقديم %1 صالح."
 
 #. (stash->{affiliate_email})
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "Please submit the above information to <a href='mailto:affiliates@binary.com'>affiliates@binary.com</a>."
 msgid "Please submit the above information to <a href='mailto:%1'>%1</a>."
-msgstr "يرجى إرسال المعلومات المذكورة أعلاه إلى <a href='mailto:affiliates@binary.com'>affiliates@binary.com</a>."
+msgstr "برجاء إرسال المعلومات المذكورة أعلاه إلى<a href='mailto:%1'>1%</a>."
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1513
 msgid "Please switch accounts to trade this contract."
@@ -8776,7 +8757,7 @@ msgstr "إقرا إجابة بعض الأسئلة الشائعة."
 
 #: /home/git/regentmarkets/bom-oauth/templates/scope_confirms.html.ep:15
 msgid "Read user profile"
-msgstr ""
+msgstr "أقرأ ملف المستخدم الشخصي"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:136
 msgid "Real Account"
@@ -9029,10 +9010,9 @@ msgid "Returns above 1000% on <a href='%1' class='pjaxload'>higher/lower</a> and
 msgstr "عوائد بأكثر من 1000% على صفقات <a href='%1' class='pjaxload'>أعلى/أسفل</a> و <a href='%2' class='pjaxload'>الوصول/عدم الوصول</a>."
 
 #: /home/git/regentmarkets/bom-oauth/templates/scope_confirms.html.ep:11
-#, fuzzy
 #| msgid "Permissions"
 msgid "Review Permissions"
-msgstr "أذونات"
+msgstr "مراجعة الإذونات"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Review suspicious account transactions"
@@ -11095,10 +11075,9 @@ msgid "This contract offers no return."
 msgstr "لا يقدم هذا العقد عائد."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:661
-#, fuzzy
 #| msgid "This contract is affected by corporate action."
 msgid "This contract was affected by a Corporate Action event."
-msgstr "يتأثر هذا العقد بالعمل المؤسسي."
+msgstr "هذا العقد قد تأثر بحدث ناتج عن إجراءات الشركة."
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:674
 msgid "This contract was not found among your open positions."
@@ -11988,6 +11967,8 @@ msgstr "يتم تصنيف مؤشرات التقلب إلى نوعين آخرين
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl+ebg13@ovanel.pbz sbe snfg-genpx pbafvqrengvba."
 msgstr ""
+"Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb "
+"wl+ebg13@ovanel.pbz sbe snfg-genpx pbafvqrengvba."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:221
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:152
