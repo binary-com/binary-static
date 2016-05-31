@@ -2,14 +2,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-25 15:39+0000\n"
-"Last-Translator: Ahmed Kotb <ahmedmohamedkotp@gmail.com>\n"
-"Language-Team: Arabic <https://hosted.weblate.org/projects/binary/static/ar/>\n"
+"PO-Revision-Date: 2016-05-31 08:25+0000\n"
+"Last-Translator: Sittie Hadjirah Sevilla <sittiebaser@gmail.com>\n"
+"Language-Team: Arabic <https://hosted.weblate.org/projects/binary/static/ar/>"
+"\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 "X-Generator: Weblate 2.7-dev\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
@@ -55,12 +57,13 @@ msgstr "$250,000 - $1,000,000"
 
 #. (website, "<a href=\"https://developers.binary.com\" target=\"_blank\"> Application Program Interface</a>")
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:3
+#, fuzzy
 msgid "%1 %2 (\"API\") Terms and Conditions"
-msgstr "%1 %2  (\"API\") الشروط  والأحكام"
+msgstr "%1 %2 (\"API\") الشروط والأحكام"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:364
 msgid "%1 %2 has been credited to your Virtual money account %3"
-msgstr "%3 تم إضافة 1% 2% لحساب أموالك الإفتراضي"
+msgstr " تم إضافة %1 %2 لحساب أموالك الإفتراضي %3"
 
 #. (client.loginid)
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/betting_limits.html.tt:2
@@ -70,21 +73,25 @@ msgstr "%1 - حدودالتداول"
 #. (website)
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:3
 msgid "%1 Affiliate Program Terms and Conditions"
-msgstr "%1 أحكام وشروط برنامج الإنتساب الخاص بـ"
+msgstr "أحكام وشروط برنامج الإنتساب الخاص بـ %1"
 
 #. ($params->{website_name})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:86
+#, fuzzy
 msgid "%1 New Password Request"
 msgstr "%1 طلب كلمة مرور جديدة"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:733
+#, fuzzy
 msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
-msgstr "%1 يرجى النقر على الرابط أدناه لإعادة تشغيل عملية استرداد كلمة المرور. إذا كنت تتطلب مزيدا من المساعدة، الرجاء الاتصال \"دعم العملاء\"."
+msgstr ""
+"%1 يرجى النقر على الرابط أدناه لإعادة تشغيل عملية استرداد كلمة المرور. إذا "
+"كنت تتطلب مزيدا من المساعدة، الرجاء الاتصال \"دعم العملاء\"."
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "%1 affiliate partners who wish to support a big group of Clients"
-msgstr "شركاء انتساب 1% الذين يرغبون في دعم مجموعة كبيرة من العملاء"
+msgstr "شركاء انتساب %1 الذين يرغبون في دعم مجموعة كبيرة من العملاء"
 
 #. ('<a target="_blank" href="http://www.gambleaware.co.uk/">GambleAware</a>')
 #: /home/git/translations/binary-static/src/templates/haml/static/responsible_trading.html.haml:1
@@ -99,6 +106,7 @@ msgstr "%1 وbull/bear هما علامتان تجاريتان مسجلتان."
 #. ($client->loginid)
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Accounts.pm:373
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Accounts.pm:419
+#, fuzzy
 msgid "%1 cashier password updated"
 msgstr "%1 تحديث كلمة مرور الصراف"
 
@@ -116,8 +124,11 @@ msgstr "تعطى 1% الجميع وسيلة سهلة ومثيرة للمشارك
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/get_started/volidx_markets.html.haml:1
+#, fuzzy
 msgid "%1 has created Volatility Indices that you can trade 24/7. You can trade these on all types of contract:"
-msgstr "أنشأت 1% مؤشرات تمكنك من التداول 24 ساعة فى اليوم وطوال أيام الأسبوع. يمكنك أن تتداول المؤشرات على كل أنواع العقود:"
+msgstr ""
+"أنشأت %1 مؤشرات تمكنك من التداول 24 ساعة فى اليوم وطوال أيام الأسبوع. يمكنك "
+"أن تتداول المؤشرات على كل أنواع العقود:"
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/about/index.html.haml:1
@@ -132,7 +143,9 @@ msgstr "%1 بها عدة فرص استثنائية للعمل بخدمة الع�
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/get_started/beginners_faq.html.haml:1
 msgid "%1 has thousands of clients taking a variety of positions on the financial markets at any one time, and earns a small margin on these trades."
-msgstr "لدى 1% آلاف العملاء الذين يشترون العديد من العقود فى الأسواق المالية فى أى وقت. وتربح هامش ربح قليل من هذه المعاملات."
+msgstr ""
+"لدى %1 آلاف العملاء الذين يشترون العديد من العقود فى الأسواق المالية فى أى "
+"وقت. وتربح هامش ربح قليل من هذه المعاملات."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:553
 msgid "%1 has updated its %2. By clicking OK, you confirm that you have read and accepted the updated %2."
@@ -286,8 +299,12 @@ msgstr "%1 ترغب بتشكيل فريق مع وكلاء الدفع المحت�
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/get_started/volidx_markets.html.haml:1
+#, fuzzy
 msgid "%1's Continuous Indices are the Volatility 25 Index, Volatility 50 Index, Volatility 75 Index and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 25%, 50%, 75% and 100%."
-msgstr "مؤشرات المستمرة في % 1 هي مؤشر 25 تقلب وتقلب 50 مؤشر، تقلبات مؤشر 75 وتقلبات مؤشر 100. وتناظر هذه المؤشرات الأسواق محاكاة مع التقلبات المستمرة من 25%، 50%، 75% و 100%."
+msgstr ""
+"مؤشرات المستمرة في %1 هي مؤشر 25 تقلب وتقلب 50 مؤشر، تقلبات مؤشر 75 وتقلبات "
+"مؤشر 100. وتناظر هذه المؤشرات الأسواق محاكاة مع التقلبات المستمرة من 25%، "
+"50%، 75% و 100%."
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/get_started/otc_indices_stocks.html.haml:1
@@ -14007,10 +14024,9 @@ msgid "{JAPAN ONLY}As the time to the exercise point shortens, the time-value of
 msgstr "{JAPAN ONLY}As the time to the exercise point shortens, the time-value of a plain vanilla option decreases."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:522
-#, fuzzy
 #| msgid "{JAPAN ONLY}How to Open an Account"
 msgid "{JAPAN ONLY}BUY price per unit"
-msgstr "{JAPAN ONLY}How to Open an Account"
+msgstr "{JAPAN ONLY}BUY price per unit"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:468
 msgid "{JAPAN ONLY}Because option prices are determined by the probability of being exercised, it cannot be said that cheaper options have any natural advantage over expensive options."
@@ -14025,10 +14041,11 @@ msgid "{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support
 msgstr "{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:510
-#, fuzzy
 #| msgid "{JAPAN ONLY}Dear customer, you are not allowed to take knowledge test until %1.\\nLast test taken at %2."
 msgid "{JAPAN ONLY}Dear customer, you are not allowed to take knowledge test until %1. Last test taken at %2."
-msgstr "{JAPAN ONLY}Dear customer, you are not allowed to take knowledge test until %1.\\nLast test taken at %2."
+msgstr ""
+"{JAPAN ONLY}Dear customer, you are not allowed to take knowledge test until %"
+"1. Last test taken at %2."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:511
 msgid "{JAPAN ONLY}Dear customer, you've already completed the knowledge test, please proceed to next step."
@@ -14361,10 +14378,12 @@ msgid "{JAPAN ONLY}Price of the option, the price of the underlying asset, price
 msgstr "{JAPAN ONLY}Price of the option, the price of the underlying asset, price fluctuation rate of the underlying assets, the time until the exercise date, subject to any of the impact of interest rates."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:526
-#, fuzzy
 #| msgid "{JAPAN ONLY}Price of OTC currency option is the calculated value based on multiple elements and is determined by relative trading basically."
 msgid "{JAPAN ONLY}Prices for currency options are calculated relative the value of theunderlying spot price, and are dependant on multiple factors which may vary."
-msgstr "{JAPAN ONLY}Price of OTC currency option is the calculated value based on multiple elements and is determined by relative trading basically."
+msgstr ""
+"{JAPAN ONLY}Prices for currency options are calculated relative the value of "
+"theunderlying spot price, and are dependant on multiple factors which may "
+"vary."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/get_started_jp/get_started.html.tt:152
 msgid "{JAPAN ONLY}Purchase, Settlement & Resale"
@@ -14379,10 +14398,9 @@ msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "{JAPAN ONLY}Regulation & Tax"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:523
-#, fuzzy
 #| msgid "{JAPAN ONLY}How to Open an Account"
 msgid "{JAPAN ONLY}SELL price  per unit"
-msgstr "{JAPAN ONLY}How to Open an Account"
+msgstr "{JAPAN ONLY}SELL price  per unit"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:403
 #: /home/git/translations/binary-static/src/templates/toolkit/account/knowledge_test.html.tt:24
@@ -14477,10 +14495,12 @@ msgid "{JAPAN ONLY}The price of a binary option is affected by not only the chan
 msgstr "{JAPAN ONLY}The price of a binary option is affected by not only the change in the underlying asset price, but also the change in remaining time to the exercise point."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:529
-#, fuzzy
 #| msgid "{JAPAN ONLY}Price of call option will be lower interest rates of the underlying assets is low, but the price of the put option, go up when the interest rates of the underlying assets is low."
 msgid "{JAPAN ONLY}The price of a vanilla call option will be lower when price of the underlying asset is low, but the price of the put option will be higher when the price of the underlying asset is low."
-msgstr "{JAPAN ONLY}Price of call option will be lower interest rates of the underlying assets is low, but the price of the put option, go up when the interest rates of the underlying assets is low."
+msgstr ""
+"{JAPAN ONLY}The price of a vanilla call option will be lower when price of "
+"the underlying asset is low, but the price of the put option will be higher "
+"when the price of the underlying asset is low."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:478
 msgid "{JAPAN ONLY}The price of an option can be affected by the underlying asset price, by the volatility rate of the underlying asset, or by the time remaining to the exercise time."
