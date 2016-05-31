@@ -1,3 +1,4 @@
+var price_stream_ids = [];
 /*
  * This function process the active symbols to get markets
  * and underlying list
@@ -92,6 +93,7 @@ function processContract(contracts) {
     'use strict';
     if(contracts.hasOwnProperty('error') && contracts.error.code === 'InvalidSymbol') {
         processForgetProposals();
+        processForgetPriceStream();
         var container = document.getElementById('contract_confirmation_container'),
             message_container = document.getElementById('confirmation_message'),
             confirmation_error = document.getElementById('confirmation_error'),
@@ -244,6 +246,7 @@ function displaySpreads() {
 
 function forgetTradingStreams() {
     processForgetProposals();
+    processForgetPriceStream();
     processForgetTicks();
 }
 /*
@@ -258,6 +261,18 @@ function processForgetProposals() {
     Price.clearMapping();
 }
 
+function processForgetPriceStream() {
+  'use strict';
+  showPriceOverlay();
+  while(price_stream_ids && price_stream_ids.length > 0) {
+      var id = price_stream_ids.pop();
+      if(id && id.length > 0) {
+          BinarySocket.send({"forget": id});
+      }
+  }
+  Price.clearMapping();
+}
+
 /*
  * Function to process and calculate price based on current form
  * parameters or change in form parameters
@@ -267,6 +282,7 @@ function processPriceRequest() {
 
     Price.incrFormId();
     processForgetProposals();
+    processForgetPriceStream();
     showPriceOverlay();
     var types = Contract.contractType()[Contract.form()];
     if (Contract.form() === 'digits') {
@@ -338,6 +354,19 @@ function processProposal(response) {
     'use strict';
     var form_id = Price.getFormId();
     if(response.echo_req.passthrough.form_id===form_id){
+        hideOverlayContainer();
+        Price.display(response, Contract.contractType()[Contract.form()]);
+        hidePriceOverlay();
+    }
+}
+
+function processPriceStream(response) {
+    'use strict';
+    var form_id = Price.getFormId();
+    if (response.price_stream && response.price_stream.id && $.inArray(response.price_stream.id, price_stream_ids) < 0) {
+      price_stream_ids.push(response.price_stream.id);
+    }
+    if((response.echo_req.passthrough && response.echo_req.passthrough.form_id===form_id) || response.error){
         hideOverlayContainer();
         Price.display(response, Contract.contractType()[Contract.form()]);
         hidePriceOverlay();

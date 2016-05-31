@@ -58,7 +58,7 @@ function BinarySocketClass() {
                 data.passthrough = {};
             }
             // temporary check
-            if((data.contracts_for || data.proposal) && !data.passthrough.hasOwnProperty('dispatch_to')){
+            if((data.contracts_for || data.proposal || data.price_stream) && !data.passthrough.hasOwnProperty('dispatch_to')){
                 data.passthrough.req_number = ++req_number;
                 timeouts[req_number] = setTimeout(function(){
                     if(typeof reloadPage === 'function' && data.contracts_for){
