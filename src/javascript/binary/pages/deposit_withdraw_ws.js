@@ -80,7 +80,7 @@ pjax_config_page_require_auth("cashier/forwardws", function() {
                     } else {
                       var cashier_type = ForwardWS.getCashierType();
                       if (cashier_type === 'withdraw') {
-                        BinarySocket.send({'verify_email': page.user.email, 'type': 'payment_withdraw'});
+                        BinarySocket.send({'verify_email': TUser.get().email, 'type': 'payment_withdraw'});
                         document.getElementById('deposit-withdraw-message').innerHTML = text.localize('For added security, please check your email to retrieve the verification token.');
                         $('#withdraw-form').show();
                       } else if (cashier_type === 'deposit') {

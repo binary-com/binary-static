@@ -41,16 +41,7 @@
             if(lang) {
                 redirect(lang);
             } else {
-                var host = window.location.host,
-                    socketUrl;
-                if((/www\.binary\.com/i).test(host)) {
-                    socketUrl = 'wss://ws.binaryws.com/websockets/v3';
-                } else if((/binaryqa/i).test(host)) {
-                    socketUrl = 'wss://' + host + '/websockets/v3';
-                } else {
-                    socketUrl = 'wss://www2.binary.com/websockets/v3';
-                }
-                var ws = new WebSocket(socketUrl);
+                var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3');
                 ws.onopen = function(e) {
                     ws.send(JSON.stringify({'website_status': '1'}));
                 };

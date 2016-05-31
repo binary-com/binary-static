@@ -507,15 +507,9 @@ function Trim(str){
   return str;
 }
 
-function changeLanguage(lang) {
-  str = window.location.search;
-  str = page.url.replaceQueryParam('l', lang, str);
-  window.location = window.location.pathname + str;
-}
-
 function limitLanguage(lang) {
-  if (page.language() !== lang) {
-    changeLanguage(lang);
+  if (page.language() !== lang && !Login.is_login_pages()) {
+    window.location.href = page.url_for_language(lang);
   }
   if (document.getElementById('language_select')) {
     $('#language_select').remove();
@@ -665,6 +659,10 @@ pjax_config_page('/terms-and-conditions', function() {
               window.location.href = page.url.url_for('terms-and-conditions-jp');
             } else if (page.language() === 'EN' && /jp/.test(window.location.pathname)) {
               window.location.href = page.url.url_for('terms-and-conditions');
+            }
+            var selected_tab = page.url.params_hash().selected_tab;
+            if(selected_tab) {
+              $('li#' + selected_tab + ' a').click();
             }
             var year = document.getElementsByClassName('currentYear');
             for (i = 0; i < year.length; i++){

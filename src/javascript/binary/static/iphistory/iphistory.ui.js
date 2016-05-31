@@ -38,10 +38,15 @@ var IPHistoryUI = (function(){
             browser = "Internet Explorer";
             verOffset = /(msie)/i.test(userAgent) ? userAgent.indexOf("MSIE") : verOffset;
             verOffset = /(trident)/i.test(userAgent) ? userAgent.indexOf("Trident") : verOffset;
-            ver = userAgent.substring(verOffset+13).split(" ")[0].split(":")[1].split(")")[0];
+            if (userAgent.substring(verOffset+13).split(" ")[0].indexOf(':') != -1) {
+              ver = userAgent.substring(verOffset+13).split(" ")[0].split(":")[1].split(")")[0];
+            }
         } else if ((verOffset = userAgent.indexOf("Edge")) != -1) {
             browser = "Edge";
             ver = userAgent.substring(verOffset).split("/")[1].split(" ")[0];
+            if (ver.indexOf(';') != -1) {
+              ver = ver.split(';')[0];
+            }
         } else if ((verOffset = userAgent.indexOf("OPR")) != -1){
             browser = "Opera";
             ver = userAgent.substring(verOffset+4).split(" ")[0];

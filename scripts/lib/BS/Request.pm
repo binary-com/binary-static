@@ -44,8 +44,8 @@ sub url_for {
     # for link alternate
     my $query = $args[1] || {};
     if ($query->{l} and $query->{l} ne $LANG) {
-        # /binary-static-www2/en/home.html
-        $url =~ s{^(/binary-static-www2)?/(\w+)/(.+)\.html$}{/$3};
+        # /binary-static/en/home.html
+        $url =~ s{^(/binary-static)?/(\w+)/(.+)\.html$}{/$3};
         if ($HTML_URLS{$url}) {
             $url =~ s/^\///;
             return Mojo::URL->new(root_url() . lc($query->{l}) . "/$url.html");

@@ -3,9 +3,9 @@ module.exports = {
         options: {
             style: 'expanded'
         },
-        files: {
-            'dist/css/binary.css': 'src/sass/binary.scss',
-            'dist/css/binary_rtl.css': 'src/sass/binary_rtl.scss',
-        }
+        files: [
+            {dest: global.dist + '/css/binary.css', src: 'src/sass/binary.scss'},
+            {dest: global.dist + '/css/binary_rtl.css', src: 'src/sass/binary_rtl.scss'}
+        ]
     }
 };

@@ -887,41 +887,28 @@ function addComma(num){
 function showHighchart(){
   Content.populate();
 
-  // avoid rendering again if it already exists
-  if(document.getElementById('trade_live_chart').hasChildNodes()) {
-    return;
-  }
-  var div = document.createElement('div');
-  div.className = 'grd-grid-12 chart_div';
   if (window.chartAllowed) {
-    div.innerHTML = '<table width="600px" align="center"><tr id="highchart_duration"><td width="25%">' +
-                    Content.localize().textDuration + ':</td><td width="25%"><select id="time_period"><option value="1t" selected="selected">1 ' +
-                    Content.localize().textTickResultLabel.toLowerCase() + '</option><option value="1m">1 ' + text.localize("minute").toLowerCase() +
-                    '</option><option value="2m">2 ' + Content.localize().textDurationMinutes.toLowerCase() + '</option><option value="3m">3 ' +
-                    Content.localize().textDurationMinutes.toLowerCase() +'</option><option value="5m">5 ' + Content.localize().textDurationMinutes.toLowerCase() +
-                    '</option><option value="10m">10 ' + Content.localize().textDurationMinutes.toLowerCase() + '</option><option value="15m">15 ' +
-                    Content.localize().textDurationMinutes.toLowerCase() +'</option><option value="30m">30 ' + Content.localize().textDurationMinutes.toLowerCase() +
-                    '</option><option value="1h">1 ' + text.localize('hour').toLowerCase() + '</option><option value="2h">2 ' +
-                    Content.localize().textDurationHours.toLowerCase() +'</option><option value="4h">4 ' + Content.localize().textDurationHours.toLowerCase() +
-                    '</option><option value="8h">8 ' + Content.localize().textDurationHours.toLowerCase() + '</option><option value="1d">1 ' +
-                    text.localize('day').toLowerCase() +'</option></select></td></td></tr><tr align="center"><td colspan="4">' +
-                    '<iframe src="" width="100%" height="630" id="chart_frame" style="overflow-y : hidden;" scrolling="no"></iframe></td></tr></table>';
-    document.getElementById('trade_live_chart').appendChild(div);
-    document.getElementById('time_period').addEventListener("change", function() {
-      chartFrameSource();
-    });
     chartFrameSource();
   } else {
-    div.innerHTML = '<p class="error-msg">' + text.localize('Chart is not available for this underlying.') + '</p>';
-    document.getElementById('trade_live_chart').appendChild(div);
+    document.getElementById('chart_frame').src = '';
+    $('#trade_live_chart').hide();
+    $('#chart-error').text(text.localize('Chart is not available for this underlying.'))
+                     .show();
     return;
   }
 }
 
 function chartFrameSource() {
-  if ($('#tab_graph').hasClass('active')) {
-      document.getElementById('chart_frame').src = 'https://webtrader.binary.com?affiliates=true&instrument=' + document.getElementById('underlying').value + '&timePeriod=' + document.getElementById('time_period').value + '&gtm=true';
+  if ($('#tab_graph').hasClass('active') && (sessionStorage.getItem('old_underlying') !== sessionStorage.getItem('underlying') || $('#chart_frame').attr('src') === '')) {
+      setChartSource();
+      sessionStorage.setItem('old_underlying', document.getElementById('underlying').value);
   }
+  $('#chart-error').hide();
+  $('#trade_live_chart').show();
+}
+
+function setChartSource() {
+  document.getElementById('chart_frame').src = 'https://webtrader.binary.com?affiliates=true&instrument=' + document.getElementById('underlying').value + '&timePeriod=' + document.getElementById('time_period').value + '&gtm=true';
 }
 
 function isJapanTrading(){

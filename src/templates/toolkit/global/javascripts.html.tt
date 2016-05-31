@@ -4,7 +4,7 @@
 </script>
 
 [%= FOREACH js IN javascript.libs =%]
-  <script src='[%= js =%]' defer></script>
+  <script src='[%= js =%]' defer async></script>
 [%= END =%]
 
 <script src="https://apis.google.com/js/platform.js" defer async></script>

@@ -32,10 +32,10 @@ var FinancialAssessmentws = (function(){
     };
 
     var submitForm = function(){
-        $('#submit').attr('disabled', 'disabled');
         if(!validateForm()){
             return;
         }
+        $('#submit').attr('disabled', 'disabled');
         var data = {'set_financial_assessment' : 1};
         showLoadingImg();
         $('#assessment_form select').each(function(){

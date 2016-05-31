@@ -5,6 +5,6 @@ module.exports = {
             add: true,
             message: 'Auto-generated commit',
         },
-        src: ['**']
+        src: global.branch ? [global.branch_prefix + global.branch + '/**'] : ['**', '!' + global.branch_prefix + '*/**']
     }
 };

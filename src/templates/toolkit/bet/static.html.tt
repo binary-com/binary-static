@@ -257,5 +257,69 @@
    </div>
 </div>
 <div id="all_prices"></div>
-<div id="trading_bottom_content"></div>
+<div id="trading_bottom_content">
+  <div class="content-tab-container page-section">
+    <div class="tab-menu">
+      <div class="tab-menu-wrap grd-container">
+        <ul id="betsBottomPage" class="tm-ul">
+          <li id="tab_portfolio" class="tm-li invisible first">
+            <a href="#tab_portfolio" class="tm-a first"></a>
+          </li>
+          <li id="tab_graph" class="tm-li first">
+            <a href="#tab_graph" class="tm-a first"></a>
+          </li>
+          <li id="tab_explanation" class="tm-li active">
+            <a href="" class="tm-a"></a>
+          </li>
+          <li id="tab_last_digit" class="invisible tm-li">
+            <a href="#" class="tm-a"></a>
+          </li>
+          <li id="tab_japan_info" class="invisible tm-li last">
+            <a href="#" class="tm-a"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="tab-content grd-container">
+      <div class="tab-content-wrapper" id="bet_bottom_content">
+        <div id="tab_portfolio-content" class="toggle-content invisible "></div>
+        <div id="tab_graph-content" class="toggle-content invisible">
+          <p class="error-msg" id="chart-error"></p>
+          <div id="trade_live_chart">
+            <table width="600px" align="center">
+              <tr id="highchart_duration">
+                <td width="25%" id='time_duration'></td>
+                <td width="25%">
+                  <select id="time_period">
+                    <option value="1t" selected="selected"></option>
+                    <option value="1m"></option>
+                    <option value="2m"></option>
+                    <option value="3m"></option>
+                    <option value="5m"></option>
+                    <option value="10m"></option>
+                    <option value="15m"></option>
+                    <option value="30m"></option>
+                    <option value="1h"></option>
+                    <option value="2h"></option>
+                    <option value="4h"></option>
+                    <option value="8h"></option>
+                    <option value="1d"></option>
+                  </select>
+                </td>
+              </tr>
+              <tr align="center">
+                <td colspan="4">
+                  <iframe src="" width="100%" height="630" id="chart_frame" style="overflow-y : hidden;" scrolling="no"></iframe>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div id="tab_explanation-content" class="toggle-content selectedTab"></div>
+        <div id="tab_last_digit-content" class="toggle-content invisible "></div>
+        <div id="tab_japan_info-content" class="toggle-content invisible "></div>
+      </div>
+    </div>
+  </div>
+</div>
 <div id="trading_init_progress"><img src="[% request.url_for('images/pages/binary-symbol-logo.svg') %]" width="100%" height="100%" alt="" /></div>
