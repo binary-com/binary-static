@@ -217,7 +217,7 @@ var TradingEvents = (function () {
             expiryTypeElement.addEventListener('change', function(e) {
                 Defaults.set('expiry_type', e.target.value);
                 onExpiryTypeChange(e.target.value);
-                processPriceRequest();
+                if (expiryTypeElement.value !== 'endtime') processPriceRequest();
             });
         }
 
@@ -364,6 +364,7 @@ var TradingEvents = (function () {
                 BinarySocket.send(params);
                 Price.incrFormId();
                 processForgetProposals();
+                processForgetPriceStream();
             }
         };
 

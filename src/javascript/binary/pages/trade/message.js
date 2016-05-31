@@ -22,6 +22,8 @@ var Message = (function () {
                 page.client.set_storage_value('currencies', response.payout_currencies);
                 displayCurrencies();
                 Symbols.getSymbols(1);
+            } else if (type === 'price_stream') {
+                processPriceStream(response);
             } else if (type === 'proposal') {
                 processProposal(response);
             } else if (type === 'buy') {
