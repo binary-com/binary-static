@@ -219,17 +219,23 @@
             <div class="col price_container row-inner" id="price_container_top">
                <div class="col row">
                   <div class="price_wrapper row">
-                     <div>
-                        <h4 class="contract_heading"></h4>
-                     </div>
-                     <div class="amount_wrapper">
-                        <div class="contract_amount"></div>
-                        <div class="contract_purchase button">
-                           <button class="purchase_button" id="purchase_button_top" value="purchase"></button>
+                      <h4 class="contract_heading"></h4>
+                      <span class="amount_wrapper">
+                        <div class="amount_wrapper_div">
+                          <div class="stake_wrapper">
+                            <span class="stake"></span>
+                            <span class="contract_amount"></span>
+                          </div>
+                          <div class="payout_wrapper">
+                            <span class="payout"></span>
+                            <span class="contract_payout"></span>
+                          </div>
                         </div>
-                     </div>
+                        <div class="contract_purchase button">
+                           <button class="purchase_button contract_description" id="purchase_button_top" rel="tooltip" title="" value="purchase"></button>
+                        </div>
+                      </span>
                   </div>
-                  <div class="contract_description big-col"></div>
                </div>
                <div class="col price_comment"></div>
                <div class="col contract_error"></div>
@@ -237,17 +243,23 @@
             <div class="col price_container row-inner" id="price_container_bottom">
                <div class="col row">
                   <div class="price_wrapper row">
-                     <div>
-                        <h4 class="contract_heading"></h4>
-                     </div>
-                     <div class="amount_wrapper">
-                        <div class="contract_amount"></div>
-                        <div class="contract_purchase button">
-                           <button class="purchase_button" id="purchase_button_bottom" value="purchase"></button>
+                      <h4 class="contract_heading"></h4>
+                      <span class="amount_wrapper">
+                        <div class="amount_wrapper_div">
+                          <div class="stake_wrapper">
+                            <span class="stake"></span>
+                            <span class="contract_amount"></span>
+                          </div>
+                          <div class="payout_wrapper">
+                            <span class="payout"></span>
+                            <span class="contract_payout"></span>
+                          </div>
                         </div>
-                     </div>
+                        <div class="contract_purchase button">
+                          <button class="purchase_button contract_description" id="purchase_button_bottom" rel="tooltip" title="" value="purchase"></button>
+                        </div>
+                      </span>
                   </div>
-                  <div class="contract_description big-col"></div>
                </div>
                <div class="col price_comment"></div>
                <div class="col contract_error"></div>
