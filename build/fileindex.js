@@ -5,7 +5,7 @@ module.exports = {
             pretty: true
         },
         files: [{ 
-            dest: 'dist/javascript.json', 
+            dest: global.dist + '/javascript.json', 
             src: [
             'src/javascript/lib/jquery.js', 
             'src/javascript/lib/highstock/highstock.js', 
@@ -21,7 +21,8 @@ module.exports = {
             ]
         },
         { 
-            dest: 'dist/binary.json', src: [
+            dest: global.dist + '/binary.json',
+            src: [
             'src/javascript/lib/jquery.js', 
             'src/javascript/lib/highstock/highstock.js', 
             'src/javascript/lib/moment/moment.js', 

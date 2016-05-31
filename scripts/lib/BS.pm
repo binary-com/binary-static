@@ -13,7 +13,7 @@ use Template::Stash;
 use Format::Util::Numbers;
 
 our @EXPORT_OK = qw/
-    root_path is_dev set_is_dev
+    root_path is_dev set_is_dev branch set_branch
     localize set_lang all_languages lang_display_name
 
     root_url
@@ -32,20 +32,28 @@ our $IS_DEV = 0;
 sub is_dev { return $IS_DEV; }
 sub set_is_dev { $IS_DEV = 1; }
 
+our $BRANCH = '';
+sub branch { return $BRANCH; }
+sub set_branch {
+    $BRANCH = 'br_'.shift;
+    # chomp ($BRANCH = `git symbolic-ref --short HEAD`); $BRANCH = '_'.(split('/', $BRANCH))[-1];
+}
+
 our $LANG = 'en';
 
 sub set_lang {
     $LANG = shift;
 }
 
+my %__lh;
 sub localize {
     my @texts = @_;
 
     require BS::I18N;
-    my $lh = BS::I18N::handle_for($LANG)
+    $__lh{$LANG} //= BS::I18N::handle_for($LANG)
         || die("could not build locale for language $LANG");
 
-    return $lh->maketext(@texts);
+    return $__lh{$LANG}->maketext(@texts);
 }
 
 sub all_languages {
@@ -82,13 +90,14 @@ sub lang_display_name {
 
 ## url_for
 sub root_url {
-    return is_dev() ? '/binary-static-www2/' : '/';
+    return is_dev() ? '/binary-static/'.($BRANCH ? $BRANCH.'/' : '') : '/';
 }
 
+my %__request;
 sub url_for {
     require BS::Request;
-    state $request = BS::Request->new(language => $LANG);
-    return $request->url_for(@_);
+    $__request{$LANG} //= BS::Request->new(language => $LANG);
+    return $__request{$LANG}->url_for(@_);
 }
 
 ## tt2/haml
@@ -180,7 +189,7 @@ sub menu {
     push @menu,
         {
         id         => 'topMenuBetaInterface',
-        url        => url_for('/trading'),
+        url        => url_for($LANG eq 'ja' ? '/jptrading' : '/trading'),
         text       => localize('Start Trading'),
         link_class => 'pjaxload'
         };
@@ -296,7 +305,7 @@ sub menu {
         id         => 'topMenuApplications',
         url        => url_for('/applications'),
         text       => localize('Applications'),
-        link_class => 'pjaxload',
+        link_class => 'ja-hide pjaxload',
         };
 
     # push @{$menu}, $self->_main_menu_trading();
