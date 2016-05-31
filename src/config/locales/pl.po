@@ -7,14 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-30 07:36+0000\n"
+"PO-Revision-Date: 2016-05-31 13:52+0000\n"
 "Last-Translator: Sittie Hadjirah Sevilla <sittiebaser@gmail.com>\n"
-"Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>"
+"\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.7-dev\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
@@ -8167,6 +8169,7 @@ msgstr "Proszę podać liczbę."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:567
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/paymentagent_transferws.html.tt:71
+#, fuzzy
 msgid "Please enter a valid amount."
 msgstr "Please enter a valid amount."
 
@@ -8193,10 +8196,12 @@ msgstr "Wpisz liczbę całkowitą."
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Backoffice/Form.pm:322
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Backoffice/Form.pm:331
 #: /home/git/translations/binary-static/src/templates/toolkit/account/self_exclusionws.html.tt:108
+#, fuzzy
 msgid "Please enter date in the format YYYY-MM-DD."
 msgstr "Wpisz datę w formacie RRRR-MM-DD."
 
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Backoffice/Form.pm:499
+#, fuzzy
 msgid "Please enter the country where you want to offer your service"
 msgstr "Wpisz kraj, w którym chcesz świadczyć usługi"
 
@@ -8205,13 +8210,17 @@ msgid "Please enter your current password."
 msgstr "Proszę podać swoje aktualne hasło."
 
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Backoffice/Form.pm:539
+#, fuzzy
 msgid "Please enter your email address."
 msgstr "Wpisz swój adres e-mail."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:565
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/paymentagent_transferws.html.tt:44
+#, fuzzy
 msgid "Please fill in the Login ID and Amount you wish to transfer to your Client in the form below:"
-msgstr "W formularzu poniżej wpisz login i kwotę, którą chcesz przekazać swojemu Klientowi:"
+msgstr ""
+"W formularzu poniżej wpisz login i kwotę, którą chcesz przekazać swojemu "
+"Klientowi:"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:397
 msgid "Please follow the pattern 3 numbers, a dash, followed by 4 numbers."
@@ -10436,6 +10445,7 @@ msgid "The Performance indicator displays a security's price performance as a pe
 msgstr "Wskaźnik kształtowania ceny pokazuje, jak kształtuje się cena danego papieru wartościowego i jest podawany procentowo. Jest to tak zwany „znormalizowany” wykres. Wskaźnik kształtowania ceny pokazuje w procentach, o ile wzrosła wartość papieru wartościowego w danym okresie. Np. gdy wskaźnik wynosi 10 oznacza to, że cena papieru wartościowego wzrosła o 10% od pierwszego okresu wyświetlonego po lewej stronie wykresu. Analogicznie, wartość -10% oznacza, że cena papieru wartościowego spadła o 10% w stosunku do pierwszego wyświetlonego okresu. Wykresy kształtowania ceny są pomocne przy porównywaniu ruchów cen różnych papierów wartościowych."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/faq.html.tt:16
+#, fuzzy
 msgid "The Program"
 msgstr "Program"
 
@@ -11875,10 +11885,12 @@ msgstr "Wersja 40. Ostatnio zmieniana dnia 12.05.2016 r."
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:184
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/analyse_link.html.tt:4
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/intraday_prices.html.tt:16
+#, fuzzy
 msgid "View"
 msgstr "Widok"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/top_up_virtualws.html.tt:12
+#, fuzzy
 msgid "View Updated Portfolio"
 msgstr "Zobacz uaktualnione portfolio"
 
@@ -11891,19 +11903,23 @@ msgid "View open positions"
 msgstr "Zobacz wolne stanowiska"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/tour.html.haml:1
+#, fuzzy
 msgid "View payment methods"
 msgstr "Zobacz metody płatności"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/portfolio/contract_details.html.tt:62
+#, fuzzy
 msgid "View progress"
 msgstr "Zobacz postęp"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/portfolio/contract_details.html.tt:67
+#, fuzzy
 msgid "View result"
 msgstr "Zobacz wynik"
 
 #: /home/git/translations/binary-static/src/templates/haml/layouts/get_started/more.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/get_started_jp/get_started.html.tt:231
+#, fuzzy
 msgid "View the Tour"
 msgstr "Zobacz przewodnik"
 
@@ -11920,6 +11936,7 @@ msgid "View your financial assessment settings."
 msgstr "Zobacz swoje ustawienia oceny finansowej."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/account/my_accountws.html.tt:77
+#, fuzzy
 msgid "View your historical transactions."
 msgstr "Zobacz swoją historię transakcji."
 
@@ -11928,6 +11945,7 @@ msgid "View your login history."
 msgstr "Zobacz swoją historię logowania."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/account/my_accountws.html.tt:48
+#, fuzzy
 msgid "View your open positions."
 msgstr "Zobacz swoje otwarte pozycje."
 
@@ -11938,6 +11956,7 @@ msgstr "Zobacz swoje informacje osobowe."
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:563
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/paymentagent_transferws.html.tt:33
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/paymentagent_withdrawws.html.tt:14
+#, fuzzy
 msgid "View your statement"
 msgstr "Zobacz swój wyciąg"
 
@@ -11950,6 +11969,7 @@ msgid "View your trading profit/loss."
 msgstr "Zobacz swoje zyski/straty z zakładów."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:135
+#, fuzzy
 msgid "Virtual Account"
 msgstr "Konto wirtualne"
 
@@ -11986,6 +12006,7 @@ msgstr "Przewodnik ogólny"
 #: /home/git/translations/binary-static/src/templates/haml/layouts/get_started/more.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/email/common_email.html.tt:635
 #: /home/git/translations/binary-static/src/templates/toolkit/get_started_jp/get_started.html.tt:229
+#, fuzzy
 msgid "Want to learn more?"
 msgstr "Chcesz dowiedzieć się więcej?"
 
@@ -11994,6 +12015,7 @@ msgid "Want to telecommute? "
 msgstr "Chcesz pracować zdalnie? "
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:86
+#, fuzzy
 msgid "Warranties"
 msgstr "Gwarancje"
 
@@ -12981,8 +13003,10 @@ msgid "You need to finish all 20 questions."
 msgstr "Należy odpowiedzieć na wszystkie 20 pytań."
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/binary_options_basics.html.haml:1
+#, fuzzy
 msgid "You only need to make four decisions to execute a binary contract."
-msgstr "Aby zawrzeć kontrakt opcji binarnych musisz podjąć tylko cztery decyzje."
+msgstr ""
+"Aby zawrzeć kontrakt opcji binarnych musisz podjąć tylko cztery decyzje."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:188
 msgid "You or your employees’ or agents’ acts or omissions, including yours or their breach or alleged breach of these Terms;"
@@ -13001,10 +13025,14 @@ msgid "You represent, warrant, and undertake that your website or promotion shal
 msgstr "Partner oświadcza, gwarantuje i zobowiązuje się, że jego strona lub materiały promocyjne nie będą zawierać żadnych materiałów, które są oszczercze, pornograficzne, niezgodne z prawem, szkodliwe, obsceniczne, nękające, rasistowskie, lub w inny sposób obraźliwe lub dyskryminujące, brutalne, politycznie wrażliwe lub w inny sposób kontrowersyjne lub naruszają prawa osób trzecich oraz że nie zawierają linków do takich materiałów."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/why_us.html.haml:1
+#, fuzzy
 msgid "You risk only your initial stake, and your stake never increases, even in gapping markets."
-msgstr "Ryzykujesz tylko początkową stawkę, a ona nigdy nie rośnie, nawet na rynkach niszowych."
+msgstr ""
+"Ryzykujesz tylko początkową stawkę, a ona nigdy nie rośnie, nawet na rynkach "
+"niszowych."
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/how_to_trade_binaries.html.haml:1
+#, fuzzy
 msgid "You set the barrier(s) to define your position."
 msgstr "Ustalasz limit(y), aby określić swoją pozycję."
 
@@ -13077,6 +13105,7 @@ msgstr "Należy dokładnie zapoznać się z niniejszymi DW, jak również ze Str
 
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Backoffice/Form.pm:305
 #: /home/git/translations/binary-static/src/templates/toolkit/account/self_exclusionws.html.tt:98
+#, fuzzy
 msgid "You will be automatically logged out after such time."
 msgstr "Zostaniesz automatycznie wylogowany po tym czasie."
 
@@ -13089,14 +13118,21 @@ msgid "You will have no 'margin calls', no 'stops', and no surprises."
 msgstr "Nie napotkasz tu „wezwań do uzupełnienia depozytów”, „ograniczeń” czy innych niespodzianek."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/explanation.html.tt:51
+#, fuzzy
 msgid "You win the payout if the market price does not end in the digit you have selected."
-msgstr "Wygrywasz wypłatę, jeśli cena rynkowa nie zakończy się podaną przez Ciebie cyfrą."
+msgstr ""
+"Wygrywasz wypłatę, jeśli cena rynkowa nie zakończy się podaną przez Ciebie "
+"cyfrą."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/explanation.html.tt:47
+#, fuzzy
 msgid "You win the payout if the market price ends in the digit you have selected."
-msgstr "Wygrywasz wypłatę, jeśli cena rynkowa zakończy się wybraną przez Ciebie cyfrą."
+msgstr ""
+"Wygrywasz wypłatę, jeśli cena rynkowa zakończy się wybraną przez Ciebie "
+"cyfrą."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/why_us.html.haml:1
+#, fuzzy
 msgid "You won't lose your shirt"
 msgstr "Nie dasz się ograć"
 
@@ -13615,6 +13651,7 @@ msgid "login"
 msgstr "login"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1977
+#, fuzzy
 msgid "low barrier"
 msgstr "niski limit"
 
@@ -13624,16 +13661,19 @@ msgstr "miesiąc"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/form/duration.html.tt:28
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/form/duration.html.tt:31
+#, fuzzy
 msgid "min"
 msgstr "min."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:158
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/form/duration.html.tt:28
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/form/duration.html.tt:31
+#, fuzzy
 msgid "minimum available duration"
 msgstr "minimalny dostępny czas trwania"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1974
+#, fuzzy
 msgid "minus"
 msgstr "minus"
 
@@ -13649,15 +13689,18 @@ msgid "minutes"
 msgstr "min"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:101
+#, fuzzy
 msgid "month"
 msgstr "miesiąc"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:102
+#, fuzzy
 msgid "months"
 msgstr "miesiące"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:642
 #: /home/git/translations/binary-static/src/templates/toolkit/portfolio/contract_table.html.tt:52
+#, fuzzy
 msgid "not available"
 msgstr "niedostępne"
 
@@ -13671,10 +13714,12 @@ msgid "of the site."
 msgstr "niniejszej strony."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/email/common_email.html.tt:724
+#, fuzzy
 msgid "or Email us at"
 msgstr "lub napisz do nas na adres"
 
 #: /home/git/translations/binary-static/src/templates/haml/not_found.html.haml:1
+#, fuzzy
 msgid "or please try the site map below"
 msgstr "lub skorzystaj z mapy strony poniżej"
 
@@ -13691,12 +13736,14 @@ msgid "period"
 msgstr "okres"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1974
+#, fuzzy
 msgid "plus"
 msgstr "plus"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:199
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/form/stop_loss.html.tt:10
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/form/stop_profit.html.tt:10
+#, fuzzy
 msgid "points"
 msgstr "punkty"
 
@@ -13709,14 +13756,17 @@ msgid "return"
 msgstr "zwrot"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/portfolio/contract_table.html.tt:31
+#, fuzzy
 msgid "running"
 msgstr "działające"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:106
+#, fuzzy
 msgid "second"
 msgstr "sek."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:160
+#, fuzzy
 msgid "seconds"
 msgstr "sek."
 
@@ -13760,6 +13810,7 @@ msgid "to your account."
 msgstr "na swoje konto."
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Offerings.pm:183
+#, fuzzy
 msgid "today"
 msgstr "dziś"
 
@@ -13777,14 +13828,17 @@ msgstr "token weryfikacyjny"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/complaints_disputes.html.tt:13
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/complaints_disputes.html.tt:16
+#, fuzzy
 msgid "website"
 msgstr "strona internetowa"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:99
+#, fuzzy
 msgid "year"
 msgstr "rok"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:100
+#, fuzzy
 msgid "years"
 msgstr "lat(a)"
 
@@ -13818,7 +13872,9 @@ msgstr "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:519
 msgid "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
-msgstr "%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
+msgstr ""
+"{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise "
+"price at close on %4."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:521
 msgid "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
@@ -13842,95 +13898,163 @@ msgstr "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:411
 msgid "{JAPAN ONLY}A  Net Settlement type of option is one where the underlying asset does not include yen, but the option fee and settlement are paid in yen; it therefore requires some definition of how the settlement amounts will be calculated and converted to yen."
-msgstr "A  Net Settlement type of option is one where the underlying asset does not include yen, but the option fee and settlement are paid in yen; it therefore requires some definition of how the settlement amounts will be calculated and converted to yen."
+msgstr ""
+"{JAPAN ONLY}A  Net Settlement type of option is one where the underlying "
+"asset does not include yen, but the option fee and settlement are paid in "
+"yen; it therefore requires some definition of how the settlement amounts "
+"will be calculated and converted to yen."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:412
 msgid "{JAPAN ONLY}A Binary Option contains the right for the buyer to receive a certain fixed amount if the market price reaches the exercise price by the exercise time, but it does not contain any rights to sell or buy the underlying asset."
-msgstr "A Binary Option contains the right for the buyer to receive a certain fixed amount if the market price reaches the exercise price by the exercise time, but it does not contain any rights to sell or buy the underlying asset."
+msgstr ""
+"{JAPAN ONLY}A Binary Option contains the right for the buyer to receive a "
+"certain fixed amount if the market price reaches the exercise price by the "
+"exercise time, but it does not contain any rights to sell or buy the "
+"underlying asset."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:428
 msgid "{JAPAN ONLY}A Covered option position is where you hold an offsetting position in the underlying asset."
-msgstr "A Covered option position is where you hold an offsetting position in the underlying asset."
+msgstr ""
+"{JAPAN ONLY}A Covered option position is where you hold an offsetting "
+"position in the underlying asset."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:415
 msgid "{JAPAN ONLY}A Currency Binary Option is one where there is a target for a particular currency pair, so a strike price for the exchange rate is agreed, and a payout will be due if the judgment price meets the conditions of being over or under the target strike price, depending on the option type, by the exercise time."
-msgstr "A Currency Binary Option is one where there is a target for a particular currency pair, so a strike price for the exchange rate is agreed, and a payout will be due if the judgment price meets the conditions of being over or under the target strike price, depending on the option type, by the exercise time."
+msgstr ""
+"{JAPAN ONLY}A Currency Binary Option is one where there is a target for a "
+"particular currency pair, so a strike price for the exchange rate is agreed, "
+"and a payout will be due if the judgment price meets the conditions of being "
+"over or under the target strike price, depending on the option type, by the "
+"exercise time."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:409
 msgid "{JAPAN ONLY}A Currency Option confers the right to sell one currency in exchange for another currency as the underlying asset. For example, the right to sell Yen and buy Dollars is known as a Yen Put / Dollar Call Option, or just Yen Put for short; and the opposite right to buy Yen and sell Dollar is called a Yen Call / Dollar Put Option, or just Yen Call for short."
-msgstr "A Currency Option confers the right to sell one currency in exchange for another currency as the underlying asset. For example, the right to sell Yen and buy Dollars is known as a Yen Put / Dollar Call Option, or just Yen Put for short; and the opposite right to buy Yen and sell Dollar is called a Yen Call / Dollar Put Option, or just Yen Call for short."
+msgstr ""
+"{JAPAN ONLY}A Currency Option confers the right to sell one currency in "
+"exchange for another currency as the underlying asset. For example, the "
+"right to sell Yen and buy Dollars is known as a Yen Put / Dollar Call "
+"Option, or just Yen Put for short; and the opposite right to buy Yen and "
+"sell Dollar is called a Yen Call / Dollar Put Option, or just Yen Call for "
+"short."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:429
 msgid "{JAPAN ONLY}A binary call option buyer will benefit from a correct prediction that the asset price will decline to below the strike price by the judgment time."
-msgstr "A binary call option buyer will benefit from a correct prediction that the asset price will decline to below the strike price by the judgment time."
+msgstr ""
+"{JAPAN ONLY}A binary call option buyer will benefit from a correct "
+"prediction that the asset price will decline to below the strike price by "
+"the judgment time."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:432
 msgid "{JAPAN ONLY}A binary call options buyer will benefit from a correct prediction that the asset price will rise above the strike price by the judgment time."
-msgstr "A binary call options buyer will benefit from a correct prediction that the asset price will rise above the strike price by the judgment time."
+msgstr ""
+"{JAPAN ONLY}A binary call options buyer will benefit from a correct "
+"prediction that the asset price will rise above the strike price by the "
+"judgment time."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:492
 msgid "{JAPAN ONLY}A binary option price cannot exceed the payout amount."
-msgstr "Cena opcji binarnej nie może przewyższać kwoty wypłaty."
+msgstr "{JAPAN ONLY}A binary option price cannot exceed the payout amount."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:497
 msgid "{JAPAN ONLY}A binary option which is in-the-money will have a higher value than an option that is out-of-the-money because there will be a higher probability of receiving the payout amount."
-msgstr "A binary option which is in-the-money will have a higher value than an option that is out-of-the-money because there will be a higher probability of receiving the payout amount."
+msgstr ""
+"{JAPAN ONLY}A binary option which is in-the-money will have a higher value "
+"than an option that is out-of-the-money because there will be a higher "
+"probability of receiving the payout amount."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:496
 msgid "{JAPAN ONLY}A binary option which is out-of-the-money will have a lower price than an option which is in-the-money because the probability of receiving the payout amount is lower."
-msgstr "A binary option which is out-of-the-money will have a lower price than an option which is in-the-money because the probability of receiving the payout amount is lower."
+msgstr ""
+"{JAPAN ONLY}A binary option which is out-of-the-money will have a lower "
+"price than an option which is in-the-money because the probability of "
+"receiving the payout amount is lower."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:430
 msgid "{JAPAN ONLY}A binary put option buyer will benefit from a correct prediction that the asset price will decline to below the strike price by the judgment time."
-msgstr "A binary put option buyer will benefit from a correct prediction that the asset price will decline to below the strike price by the judgment time."
+msgstr ""
+"{JAPAN ONLY}A binary put option buyer will benefit from a correct prediction "
+"that the asset price will decline to below the strike price by the judgment "
+"time."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:431
 msgid "{JAPAN ONLY}A binary put options buyer will benefit from a correct prediction that the asset price will rise above the strike price by the judgment time."
-msgstr "A binary put options buyer will benefit from a correct prediction that the asset price will rise above the strike price by the judgment time."
+msgstr ""
+"{JAPAN ONLY}A binary put options buyer will benefit from a correct "
+"prediction that the asset price will rise above the strike price by the "
+"judgment time."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:439
 msgid "{JAPAN ONLY}A bought or sold binary option may be closed-out before exercise time by selling or buying-back the option, or alternatively by cancelling."
-msgstr "A bought or sold binary option may be closed-out before exercise time by selling or buying-back the option, or alternatively by cancelling."
+msgstr ""
+"{JAPAN ONLY}A bought or sold binary option may be closed-out before exercise "
+"time by selling or buying-back the option, or alternatively by cancelling."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:507
 msgid "{JAPAN ONLY}A modified version of the Black-Scholes model is widely used to calculate the theoretical prices of binary options."
-msgstr "Zmodyfikowaną wersję modelu Blacka-Scholesa stosuje się powszechnie do wyliczania teoretycznych cen opcji binarnych."
+msgstr ""
+"{JAPAN ONLY}A modified version of the Black-Scholes model is widely used to "
+"calculate the theoretical prices of binary options."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:454
 msgid "{JAPAN ONLY}About OTC currency for binary options trading, summarizes the profit and loss result of all transactions that have been made between the customer, to publish the information in the company's home page, at any time while the customer is doing the transaction before the start, or the transaction, the information Make sure, for that you're willing to trade under the calm judgment, we are committed to a variety of environmental improvement."
-msgstr "About OTC currency for binary options trading, summarizes the profit and loss result of all transactions that have been made between the customer, to publish the information in the company's home page, at any time while the customer is doing the transaction before the start, or the transaction, the information Make sure, for that you're willing to trade under the calm judgment, we are committed to a variety of environmental improvement."
+msgstr ""
+"{JAPAN ONLY}About OTC currency for binary options trading, summarizes the "
+"profit and loss result of all transactions that have been made between the "
+"customer, to publish the information in the company's home page, at any time "
+"while the customer is doing the transaction before the start, or the "
+"transaction, the information Make sure, for that you're willing to trade "
+"under the calm judgment, we are committed to a variety of environmental "
+"improvement."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/get_started_jp/get_started.html.tt:107
 msgid "{JAPAN ONLY}Activate your account by confirming your authorisation code which we will post to your registered address."
-msgstr "Activate your account by confirming your authorisation code which we will post to your registered address."
+msgstr ""
+"{JAPAN ONLY}Activate your account by confirming your authorisation code "
+"which we will post to your registered address."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:442
 msgid "{JAPAN ONLY}Although customers and brokers will set limits on customers trading losses, even if those losses are exceeded, it is the customer's responsibility to close the position and so mandatory loss-cuts will not be executed by the broker company."
-msgstr "Although customers and brokers will set limits on customers trading losses, even if those losses are exceeded, it is the customer's responsibility to close the position and so mandatory loss-cuts will not be executed by the broker company."
+msgstr ""
+"{JAPAN ONLY}Although customers and brokers will set limits on customers "
+"trading losses, even if those losses are exceeded, it is the customer's "
+"responsibility to close the position and so mandatory loss-cuts will not be "
+"executed by the broker company."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:408
 msgid "{JAPAN ONLY}An option holder must buy ( or sell ) the underlying asset at a predetermined price within a specified period ( or at a specific time )."
-msgstr "An option holder must buy ( or sell ) the underlying asset at a predetermined price within a specified period ( or at a specific time )."
+msgstr ""
+"{JAPAN ONLY}An option holder must buy ( or sell ) the underlying asset at a "
+"predetermined price within a specified period ( or at a specific time )."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:488
 msgid "{JAPAN ONLY}An option price is the sum of the intrinsic-value and the time-value."
-msgstr "An option price is the sum of the intrinsic-value and the time-value."
+msgstr ""
+"{JAPAN ONLY}An option price is the sum of the intrinsic-value and the time-"
+"value."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:498
 msgid "{JAPAN ONLY}As the exercise deadline approaches, the price of an in-the-money binary option will move towards the payout amount."
-msgstr "As the exercise deadline approaches, the price of an in-the-money binary option will move towards the payout amount."
+msgstr ""
+"{JAPAN ONLY}As the exercise deadline approaches, the price of an in-the-"
+"money binary option will move towards the payout amount."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:499
 msgid "{JAPAN ONLY}As the exercise deadline approaches, the price of an out-of-the-money binary option will move towards zero."
-msgstr "As the exercise deadline approaches, the price of an out-of-the-money binary option will move towards zero."
+msgstr ""
+"{JAPAN ONLY}As the exercise deadline approaches, the price of an out-of-the-"
+"money binary option will move towards zero."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:486
 msgid "{JAPAN ONLY}As the expected volatility of the underlying asset increases, a plain vanilla option price will move higher."
-msgstr "As the expected volatility of the underlying asset increases, a plain vanilla option price will move higher."
+msgstr ""
+"{JAPAN ONLY}As the expected volatility of the underlying asset increases, a "
+"plain vanilla option price will move higher."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:491
 msgid "{JAPAN ONLY}As the time to the exercise point shortens, the time-value of a plain vanilla option decreases."
-msgstr "As the time to the exercise point shortens, the time-value of a plain vanilla option decreases."
+msgstr ""
+"{JAPAN ONLY}As the time to the exercise point shortens, the time-value of a "
+"plain vanilla option decreases."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:522
 msgid "{JAPAN ONLY}BUY price per unit"
@@ -13938,27 +14062,40 @@ msgstr "{JAPAN ONLY}BUY price per unit"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:468
 msgid "{JAPAN ONLY}Because option prices are determined by the probability of being exercised, it cannot be said that cheaper options have any natural advantage over expensive options."
-msgstr "Because option prices are determined by the probability of being exercised, it cannot be said that cheaper options have any natural advantage over expensive options."
+msgstr ""
+"{JAPAN ONLY}Because option prices are determined by the probability of being "
+"exercised, it cannot be said that cheaper options have any natural advantage "
+"over expensive options."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:469
 msgid "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
-msgstr "Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
+msgstr ""
+"{JAPAN ONLY}Binary options have lower risk than vanilla options for option "
+"sellers, because with binary options the maximum loss is fixed."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:508
 msgid "{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly."
-msgstr "Congratulations, you have pass the test, our Customer Support will contact you shortly."
+msgstr ""
+"{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support "
+"will contact you shortly."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:510
 msgid "{JAPAN ONLY}Dear customer, you are not allowed to take knowledge test until %1. Last test taken at %2."
-msgstr "Dear customer, you are not allowed to take knowledge test until %1. Last test taken at %2."
+msgstr ""
+"{JAPAN ONLY}Dear customer, you are not allowed to take knowledge test until %"
+"1. Last test taken at %2."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:511
 msgid "{JAPAN ONLY}Dear customer, you've already completed the knowledge test, please proceed to next step."
-msgstr "Szanowny użytkowniku, test wiedzy został już ukończony. Przejdź do następnego etapu."
+msgstr ""
+"{JAPAN ONLY}Dear customer, you've already completed the knowledge test, "
+"please proceed to next step."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:503
 msgid "{JAPAN ONLY}Delta refers to  a percentage change of the option price with respect to the change in the underlying asset price."
-msgstr "Delta refers to  a percentage change of the option price with respect to the change in the underlying asset price."
+msgstr ""
+"{JAPAN ONLY}Delta refers to  a percentage change of the option price with "
+"respect to the change in the underlying asset price."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/get_started_jp/get_started.html.tt:116
 #: /home/git/translations/binary-static/src/templates/toolkit/get_started_jp/get_started.html.tt:131
@@ -13966,75 +14103,116 @@ msgstr "Delta refers to  a percentage change of the option price with respect to
 #: /home/git/translations/binary-static/src/templates/toolkit/get_started_jp/get_started.html.tt:199
 #: /home/git/translations/binary-static/src/templates/toolkit/get_started_jp/get_started.html.tt:211
 msgid "{JAPAN ONLY}Download"
-msgstr "Download"
+msgstr "{JAPAN ONLY}Download"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/get_started_jp/get_started.html.tt:101
 msgid "{JAPAN ONLY}Email us copies of your Identification Documents and My Number card."
-msgstr "Email us copies of your Identification Documents and My Number card."
+msgstr ""
+"{JAPAN ONLY}Email us copies of your Identification Documents and My Number "
+"card."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/get_started_jp/get_started.html.tt:95
 msgid "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
-msgstr "Enter your personal information, and acknowledge our terms and conditions."
+msgstr ""
+"{JAPAN ONLY}Enter your personal information, and acknowledge our terms and "
+"conditions."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:525
 msgid "{JAPAN ONLY}Even if all details of the binary options match perfectly, there may still be differences in the prices shown by different broking companies."
-msgstr "Even if all details of the binary options match perfectly, there may still be differences in the prices shown by different broking companies."
+msgstr ""
+"{JAPAN ONLY}Even if all details of the binary options match perfectly, there "
+"may still be differences in the prices shown by different broking companies."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:466
 msgid "{JAPAN ONLY}Even if the option is exercise or not exercised, the original option premium remains with the option seller."
-msgstr "Even if the option is exercise or not exercised, the original option premium remains with the option seller."
+msgstr ""
+"{JAPAN ONLY}Even if the option is exercise or not exercised, the original "
+"option premium remains with the option seller."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:470
 msgid "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
-msgstr "Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
+msgstr ""
+"{JAPAN ONLY}Even though losses in binary options are limited, it is still "
+"necessary to take care not to engage in excessive speculative trading and to "
+"moderate your transactions volume."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:444
 msgid "{JAPAN ONLY}For a call option, if the price of the underlying asset is higher than the option exercise price, it is know as an in-the-money option."
-msgstr "For a call option, if the price of the underlying asset is higher than the option exercise price, it is know as an in-the-money option."
+msgstr ""
+"{JAPAN ONLY}For a call option, if the price of the underlying asset is "
+"higher than the option exercise price, it is know as an in-the-money option."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:445
 msgid "{JAPAN ONLY}For a call option, if the price of the underlying asset is higher than the option exercise price, it is know as an out-of-the-money option."
-msgstr "For a call option, if the price of the underlying asset is higher than the option exercise price, it is know as an out-of-the-money option."
+msgstr ""
+"{JAPAN ONLY}For a call option, if the price of the underlying asset is "
+"higher than the option exercise price, it is know as an out-of-the-money "
+"option."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:416
 msgid "{JAPAN ONLY}For a currency binary option which has the underlying exchange rate of dollars against yen, the right to receive a payout if the yen becomes weaker is known as a dollar-put binary option."
-msgstr "For a currency binary option which has the underlying exchange rate of dollars against yen, the right to receive a payout if the yen becomes weaker is known as a dollar-put binary option."
+msgstr ""
+"{JAPAN ONLY}For a currency binary option which has the underlying exchange "
+"rate of dollars against yen, the right to receive a payout if the yen "
+"becomes weaker is known as a dollar-put binary option."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:417
 msgid "{JAPAN ONLY}For a currency binary option with the underlying exchange rate of dollars against yen, the right to receive a payout if the yen becomes stronger is known as a dollar-put binary option."
-msgstr "For a currency binary option with the underlying exchange rate of dollars against yen, the right to receive a payout if the yen becomes stronger is known as a dollar-put binary option."
+msgstr ""
+"{JAPAN ONLY}For a currency binary option with the underlying exchange rate "
+"of dollars against yen, the right to receive a payout if the yen becomes "
+"stronger is known as a dollar-put binary option."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:487
 msgid "{JAPAN ONLY}For a plain vanilla option, as the time to the exercise point shortens, the price of the option will decrease."
-msgstr "For a plain vanilla option, as the time to the exercise point shortens, the price of the option will decrease."
+msgstr ""
+"{JAPAN ONLY}For a plain vanilla option, as the time to the exercise point "
+"shortens, the price of the option will decrease."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:448
 msgid "{JAPAN ONLY}For a put option, if the underlying asset price is higher than the option exercise price, it is known as an in-the-money option."
-msgstr "For a put option, if the underlying asset price is higher than the option exercise price, it is known as an in-the-money option."
+msgstr ""
+"{JAPAN ONLY}For a put option, if the underlying asset price is higher than "
+"the option exercise price, it is known as an in-the-money option."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:447
 msgid "{JAPAN ONLY}For a put option, if the underlying asset price is lower than the option exercise price, it is known as an out-of-the-money option."
-msgstr "For a put option, if the underlying asset price is lower than the option exercise price, it is known as an out-of-the-money option."
+msgstr ""
+"{JAPAN ONLY}For a put option, if the underlying asset price is lower than "
+"the option exercise price, it is known as an out-of-the-money option."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:484
 msgid "{JAPAN ONLY}For an in-the-money option, the further away from the underlying asset price that the option exercise price is, the lower the price of the option will be."
-msgstr "For an in-the-money option, the further away from the underlying asset price that the option exercise price is, the lower the price of the option will be."
+msgstr ""
+"{JAPAN ONLY}For an in-the-money option, the further away from the underlying "
+"asset price that the option exercise price is, the lower the price of the "
+"option will be."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:455
 msgid "{JAPAN ONLY}For an individual investor, all profits from OTC currency options trading are tax-free."
-msgstr "For an individual investor, all profits from OTC currency options trading are tax-free."
+msgstr ""
+"{JAPAN ONLY}For an individual investor, all profits from OTC currency "
+"options trading are tax-free."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:456
 msgid "{JAPAN ONLY}For an individual investor, profits and losses from OTC currency options traing cannot be combined with profits and losses from margin FX and securities-related OTC options."
-msgstr "For an individual investor, profits and losses from OTC currency options traing cannot be combined with profits and losses from margin FX and securities-related OTC options."
+msgstr ""
+"{JAPAN ONLY}For an individual investor, profits and losses from OTC currency "
+"options traing cannot be combined with profits and losses from margin FX and "
+"securities-related OTC options."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:483
 msgid "{JAPAN ONLY}For an out-of-the-money option, the further away from the underlying asset price that the option exercise price is, the lower the price of the option will be."
-msgstr "For an out-of-the-money option, the further away from the underlying asset price that the option exercise price is, the lower the price of the option will be."
+msgstr ""
+"{JAPAN ONLY}For an out-of-the-money option, the further away from the "
+"underlying asset price that the option exercise price is, the lower the "
+"price of the option will be."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:446
 msgid "{JAPAN ONLY}For both call and put options, if the underlying asset price is the same as the exercise price, it is known as an at-the-money option."
-msgstr "For both call and put options, if the underlying asset price is the same as the exercise price, it is known as an at-the-money option."
+msgstr ""
+"{JAPAN ONLY}For both call and put options, if the underlying asset price is "
+"the same as the exercise price, it is known as an at-the-money option."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/get_started_jp/get_started.html.tt:127
 msgid "{JAPAN ONLY}For full details of the documents we can accept please download the following guide:"
@@ -14042,7 +14220,9 @@ msgstr "For full details of the documents we can accept please download the foll
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:502
 msgid "{JAPAN ONLY}Historical volatility is a prediction of the future rate of change in the underlying asset."
-msgstr "Historical volatility is a prediction of the future rate of change in the underlying asset."
+msgstr ""
+"{JAPAN ONLY}Historical volatility is a prediction of the future rate of "
+"change in the underlying asset."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/get_started_jp/get_started.html.tt:34
 #: /home/git/translations/binary-static/src/templates/toolkit/get_started_jp/get_started.html.tt:6
@@ -14054,15 +14234,19 @@ msgstr "How to Open an Account"
 #: /home/git/translations/binary-static/src/templates/toolkit/get_started_jp/get_started.html.tt:61
 #: /home/git/translations/binary-static/src/templates/toolkit/get_started_jp/get_started.html.tt:9
 msgid "{JAPAN ONLY}Identification Documents"
-msgstr "Identification Documents"
+msgstr "{JAPAN ONLY}Identification Documents"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:461
 msgid "{JAPAN ONLY}If an option buyer wishes to exercise the option rights, the seller may still reject the deal."
-msgstr "If an option buyer wishes to exercise the option rights, the seller may still reject the deal."
+msgstr ""
+"{JAPAN ONLY}If an option buyer wishes to exercise the option rights, the "
+"seller may still reject the deal."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:485
 msgid "{JAPAN ONLY}If implied volatility increases then the prices of both call and put types of plain vanilla options will increase."
-msgstr "If implied volatility increases then the prices of both call and put types of plain vanilla options will increase."
+msgstr ""
+"{JAPAN ONLY}If implied volatility increases then the prices of both call and "
+"put types of plain vanilla options will increase."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:458
 msgid "{JAPAN ONLY}If the buyer of an option does not exercise the option rights, there will be no fee payable to the option seller."
@@ -15488,6 +15672,7 @@ msgid "Daimler AG"
 msgstr "Daimler AG"
 
 #: Underlying Symbol USATNT
+#, fuzzy
 msgid "AT&T"
 msgstr "AT&T"
 
@@ -15496,6 +15681,7 @@ msgid "Metro AG"
 msgstr "Metro AG"
 
 #: Underlying Symbol DEDBK
+#, fuzzy
 msgid "Deutsche Bank AG"
 msgstr "Deutsche Bank AG"
 
@@ -15676,6 +15862,7 @@ msgid "Belgacom"
 msgstr "Belgacom"
 
 #: Underlying Symbol USQQQQ
+#, fuzzy
 msgid "PowerShares QQQ"
 msgstr "PowerShares QQQ"
 
@@ -15700,6 +15887,7 @@ msgid "E-Commerce China Dangdang Inc."
 msgstr "E-Commerce China Dangdang Inc."
 
 #: Underlying Symbol DEADS
+#, fuzzy
 msgid "ADIDAS AG"
 msgstr "ADIDAS AG"
 
@@ -15780,6 +15968,7 @@ msgid "L'Oreal"
 msgstr "L'Oreal"
 
 #: Underlying Symbol UKTSCO
+#, fuzzy
 msgid "Tesco plc"
 msgstr "Tesco plc"
 
@@ -15804,6 +15993,7 @@ msgid "MOMO Inc."
 msgstr "MOMO Inc."
 
 #: Underlying Symbol USINTC
+#, fuzzy
 msgid "Intel"
 msgstr "Intel"
 
@@ -15948,6 +16138,7 @@ msgid "Airbus Group"
 msgstr "Airbus Group"
 
 #: Underlying Symbol FPSAN
+#, fuzzy
 msgid "SANOFI"
 msgstr "SANOFI"
 
@@ -15988,6 +16179,7 @@ msgid "Imperial Tobacco Group plc"
 msgstr "Imperial Tobacco Group plc"
 
 #: Underlying Symbol USQCOM
+#, fuzzy
 msgid "QUALCOMM"
 msgstr "QUALCOMM"
 
@@ -16048,6 +16240,7 @@ msgid "National Australia Bank Ltd"
 msgstr "National Australia Bank Ltd"
 
 #: Underlying Symbol UKAZN
+#, fuzzy
 msgid "AstraZeneca plc"
 msgstr "AstraZeneca plc"
 
@@ -16080,6 +16273,7 @@ msgid "Solvay chemicals"
 msgstr "Solvay chemicals"
 
 #: Underlying Symbol USIBM
+#, fuzzy
 msgid "IBM"
 msgstr "IBM"
 
@@ -16088,14 +16282,17 @@ msgid "Pfizer Inc"
 msgstr "Pfizer Inc"
 
 #: Underlying Symbol UKBATS
+#, fuzzy
 msgid "British American Tobacco"
 msgstr "British American Tobacco"
 
 #: Underlying Symbol DELHA
+#, fuzzy
 msgid "Deutsche Lufthansa"
 msgstr "Deutsche Lufthansa"
 
 #: Underlying Symbol USORCL
+#, fuzzy
 msgid "Oracle"
 msgstr "Oracle"
 
@@ -16264,6 +16461,7 @@ msgid "UCB"
 msgstr "UCB"
 
 #: Underlying Symbol UKBP
+#, fuzzy
 msgid "BP plc"
 msgstr "BP plc"
 
@@ -16348,22 +16546,27 @@ msgid "XPD/GBP"
 msgstr "XPD/GBP"
 
 #: Underlying Symbol frxXAGAUD
+#, fuzzy
 msgid "XAG/AUD"
 msgstr "XAG/AUD"
 
 #: Underlying Symbol frxBROUSD
+#, fuzzy
 msgid "Oil/USD"
 msgstr "Ropa/USD"
 
 #: Underlying Symbol frxXPTUSD
+#, fuzzy
 msgid "Platinum/USD"
 msgstr "Platyna/USD"
 
 #: Underlying Symbol frxXAUAUD
+#, fuzzy
 msgid "Gold/AUD"
 msgstr "Złoto/AUD"
 
 #: Underlying Symbol frxXAUEUR
+#, fuzzy
 msgid "Gold/EUR"
 msgstr "Złoto/EUR"
 
@@ -16372,18 +16575,22 @@ msgid "XPT/AUD"
 msgstr "XPT/AUD"
 
 #: Underlying Symbol frxXAGEUR
+#, fuzzy
 msgid "XAG/EUR"
 msgstr "XAG/EUR"
 
 #: Underlying Symbol frxBROGBP
+#, fuzzy
 msgid "Oil/GBP"
 msgstr "Ropa/GBP"
 
 #: Underlying Symbol frxXAUUSD
+#, fuzzy
 msgid "Gold/USD"
 msgstr "Złoto/USD"
 
 #: Underlying Symbol frxXAGGBP
+#, fuzzy
 msgid "XAG/GBP"
 msgstr "XAG/GBP"
 
@@ -16392,10 +16599,12 @@ msgid "XPD/EUR"
 msgstr "XPD/EUR"
 
 #: Underlying Symbol frxXPDUSD
+#, fuzzy
 msgid "Palladium/USD"
 msgstr "Pallad/USD"
 
 #: Underlying Symbol frxXAGUSD
+#, fuzzy
 msgid "Silver/USD"
 msgstr "Srebro/USD"
 
@@ -16404,14 +16613,17 @@ msgid "XPD/AUD"
 msgstr "XPD/AUD"
 
 #: Underlying Symbol frxBROEUR
+#, fuzzy
 msgid "Oil/EUR"
 msgstr "Ropa/EUR"
 
 #: Underlying Symbol frxBROAUD
+#, fuzzy
 msgid "Oil/AUD"
 msgstr "Ropa/AUD"
 
 #: Underlying Symbol frxXAUGBP
+#, fuzzy
 msgid "Gold/GBP"
 msgstr "Złoto/GBP"
 
@@ -16456,6 +16668,7 @@ msgid "Synthetic represents the empirical simulation of cash index from futures.
 msgstr "Syntetyczny oznacza symulację empiryczną indeksu gotówkowego z kontraktów futures."
 
 #: Explanation for market Commodities
+#, fuzzy
 msgid "Commodities are traded items with directly usable qualities."
 msgstr "Towary to bezpośrednio użyteczne zbywalne elementy."
 
@@ -16464,8 +16677,11 @@ msgid "OTC Stocks"
 msgstr "Akcje OTC"
 
 #: Explanation for market OTC Stocks
+#, fuzzy
 msgid "Stocks (or shares) represent the value of partial ownership in a single company."
-msgstr "Akcje (lub udziały) przedstawiają wartość częściowej własności pojedynczej firmy."
+msgstr ""
+"Akcje (lub udziały) przedstawiają wartość częściowej własności pojedynczej "
+"firmy."
 
 #: Explanation for market Forex
 msgid "Forex (or foreign exchange) represents the ratio between the values of two currencies."
@@ -16480,10 +16696,12 @@ msgid "Indices represent the weighted value of a basket of companies, typically 
 msgstr "Wskaźniki przedstawiają wartość ważoną koszyka przedsiębiorstw, standardowo sprzedawanych bądź kupowanych w tej samej walucie."
 
 #: Translation for sub market name
+#, fuzzy
 msgid "United Kingdom Stocks"
 msgstr "Akcje brytyjskie"
 
 #: Translation for sub market name
+#, fuzzy
 msgid "Energy"
 msgstr "Energetyka"
 
@@ -16492,10 +16710,12 @@ msgid "Asia/Oceania Future"
 msgstr "Azja/Oceania - Kontrakty futures"
 
 #: Translation for sub market name
+#, fuzzy
 msgid "India Stocks"
 msgstr "Akcje indyjskie"
 
 #: Explanation for market Smart FX
+#, fuzzy
 msgid "Smart FX indices"
 msgstr "Inteligentne wskaźniki forex"
 
@@ -16516,6 +16736,7 @@ msgid "Synthetic Indices"
 msgstr "Syntetyczne wskaźniki"
 
 #: Translation for sub market name
+#, fuzzy
 msgid "Australia Stocks"
 msgstr "Akcje australijskie"
 
@@ -16532,34 +16753,43 @@ msgid "French Stocks"
 msgstr "Akcje francuskie"
 
 #: Translation for sub market name
+#, fuzzy
 msgid "Major Pairs"
 msgstr "Główne pary"
 
 #: Explanation for market Major Pairs
+#, fuzzy
 msgid "The most widely traded and liquid forex pairs."
 msgstr "Najczęściej sprzedawane i kupowane oraz płynne pary walut."
 
 #: Translation for sub market name
+#, fuzzy
 msgid "Americas"
 msgstr "Ameryki"
 
 #: Translation for sub market name
+#, fuzzy
 msgid "Nocturnes"
 msgstr "Nokturny"
 
 #: Explanation for market Nocturnes
+#, fuzzy
 msgid "Represent a single day of trading with different market factors. They are reset at the start of each trading day (12:00GMT)."
-msgstr "Przedstawia pojedynczą sesję giełdową z różnymi czynnikami rynkowymi. Są one resetowane w momencie rozpoczęcia każdej sesji giełdowej (godz. 12.00 GMT)."
+msgstr ""
+"Przedstawia pojedynczą sesję giełdową z różnymi czynnikami rynkowymi. Są one "
+"resetowane w momencie rozpoczęcia każdej sesji giełdowej (godz. 12.00 GMT)."
 
 #: Translation for sub market name
 msgid "OTC Indices"
 msgstr "Wskaźniki OTC"
 
 #: Translation for sub market name
+#, fuzzy
 msgid "Europe/Africa"
 msgstr "Europa/Afryka"
 
 #: Translation for sub market name
+#, fuzzy
 msgid "United States Stocks"
 msgstr "Akcje Stanów Zjednoczonych"
 
@@ -16568,10 +16798,12 @@ msgid "Australia OTC Stocks"
 msgstr "Australijskie akcje OTC"
 
 #: Translation for sub market name
+#, fuzzy
 msgid "Minor Pairs"
 msgstr "Mniej ważne pary"
 
 #: Explanation for market Minor Pairs
+#, fuzzy
 msgid "Forex pairs of interest, but with less liquid international markets."
 msgstr "Pary walut z mniej płynnymi rynkami międzynarodowymi."
 
@@ -16584,6 +16816,7 @@ msgid "US OTC Stocks"
 msgstr "Amerykańskie akcje OTC"
 
 #: Translation for sub market name
+#, fuzzy
 msgid "Germany Stocks"
 msgstr "Akcje niemieckie"
 
@@ -16596,6 +16829,7 @@ msgid "Associated with a number that represents the relative volatility of the m
 msgstr "Kojarzony z liczbą przedstawiającą względną zmienność rynku. Np. indeks zmienności 100 jest dwukrotnie bardziej zmienny niż indeks zmienności 50."
 
 #: Translation for sub market name
+#, fuzzy
 msgid "UK"
 msgstr "Wielka Brytania"
 
@@ -16604,6 +16838,7 @@ msgid "UK OTC Stocks"
 msgstr "Brytyjskie akcje OTC"
 
 #: Translation for sub market name
+#, fuzzy
 msgid "Metals"
 msgstr "Metale"
 
@@ -16612,6 +16847,7 @@ msgid "Europe/Africa Future"
 msgstr "Europa/Afryka - Kontrakty futures"
 
 #: Translation for sub market name
+#, fuzzy
 msgid "config-only"
 msgstr "tylko konfiguracja"
 
@@ -16620,18 +16856,23 @@ msgid "Belgian Stocks"
 msgstr "Akcje belgijskie"
 
 #: Translation for sub market name
+#, fuzzy
 msgid "Asia/Oceania"
 msgstr "Azja/Oceania"
 
 #: Explanation for contract category Asians
+#, fuzzy
 msgid "Predict the ending market level relative to the average market prices throughout the course of the contract"
-msgstr "Prognozuj końcową cenę rynkową względem średnich cen rynkowych obowiązujących w czasie trwania kontraktu."
+msgstr ""
+"Prognozuj końcową cenę rynkową względem średnich cen rynkowych "
+"obowiązujących w czasie trwania kontraktu."
 
 #: Explanation for contract category Up/Down
 msgid "Predict the ending market level relative to a chosen barrier."
 msgstr "Prognozuj końcową cenę rynkową względem wybranego limitu."
 
 #: Explanation for contract category Digits
+#, fuzzy
 msgid "Predict the last digit of the market price at expiration."
 msgstr "Prognozuj ostatnią cyfrę ceny rynkowej w momencie wygaśnięcia."
 
@@ -16656,6 +16897,7 @@ msgid "Predict whether or not the market will touch a chosen level before expira
 msgstr "Prognozuj, czy cena rynkowa osiągnie wybrany poziom przed datą wygaśnięcia."
 
 #: Translation for contract type "ASIAND"
+#, fuzzy
 msgid "asian down"
 msgstr "azjatyckie w dół"
 
@@ -16673,6 +16915,7 @@ msgid "Win payout if the last tick of %3 is strictly lower than the average of t
 msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że ostatnia najmniejsza zmiana ceny %3 jest dokładnie niższa niż średnia %plural(%5,%d najmniejszej zmiany ceny,%d najmniejszych zmian ceny)."
 
 #: Translation for contract type "ASIANU"
+#, fuzzy
 msgid "asian up"
 msgstr "azjatyckie w górę"
 
@@ -16690,6 +16933,7 @@ msgid "Win payout if the last tick of %3 is strictly higher than the average of 
 msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że ostatnia najmniejsza zmiana ceny %3 jest dokładnie wyższa niż średnia %plural(%5,%d najmniejszej zmiany ceny,%d najmniejszych zmian ceny)."
 
 #: Translation for contract type "CALL"
+#, fuzzy
 msgid "higher"
 msgstr "wyższa"
 
@@ -16733,6 +16977,7 @@ msgid "Win payout if %3 after %plural(%5,%d tick,%d ticks) is strictly higher th
 msgstr "Wypłata %2 %1 nastąpi pod warunkiem, że %3 po %plural(%5,%d najmniejsza zmiana ceny,%d najmniejsze zmiany ceny) jest dokładnie wyższy niż %6."
 
 #: Translation for contract type "DIGITDIFF"
+#, fuzzy
 msgid "differs"
 msgstr "różni się"
 
@@ -16750,6 +16995,7 @@ msgid "Win payout if the last digit of %3 is not %6 after %plural(%5,%d tick,%d 
 msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że ostatnia cyfra %3 nie wyniesie %6 po %plural(%5,%d najmniejsza zmiana ceny,%d najmniejsze zmiany ceny)."
 
 #: Translation for contract type "DIGITEVEN"
+#, fuzzy
 msgid "even"
 msgstr "parzysta"
 
@@ -16767,6 +17013,7 @@ msgid "Win payout if the last digit of %3 is even after %5 ticks."
 msgstr "Wypłata %1 %2 nastąpi, pod warunkiem że ostatnia cyfra %3 będzie parzysta po %5 najmniejszych zmianach ceny."
 
 #: Translation for contract type "DIGITMATCH"
+#, fuzzy
 msgid "matches"
 msgstr "zgadza się"
 
@@ -16784,6 +17031,7 @@ msgid "Win payout if the last digit of %3 is %6 after %plural(%5,%d tick,%d tick
 msgstr "Wypłata %1 %2 nastąpi, pod warunkiem że ostatnia cyfra %3 wyniesie %6 po %plural(%5,%d najmniejsza zmiana ceny,%d najmniejsze zmiany ceny)."
 
 #: Translation for contract type "DIGITODD"
+#, fuzzy
 msgid "odd"
 msgstr "nieparzysta"
 
@@ -16801,6 +17049,7 @@ msgid "Win payout if the last digit of %3 is odd after %5 ticks."
 msgstr "Wypłata %1 %2 nastąpi, pod warunkiem że ostatnia cyfra %3 będzie nieparzysta po %5 najmniejszych zmianach ceny."
 
 #: Translation for contract type "DIGITOVER"
+#, fuzzy
 msgid "over"
 msgstr "ponad"
 
@@ -16818,6 +17067,7 @@ msgid "Win payout if the last digit of %3 is strictly higher than %6 after %5 ti
 msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że ostatnia cyfra %3 jest wyższa niż %6 po %5 najmniejszych zmianach ceny."
 
 #: Translation for contract type "DIGITUNDER"
+#, fuzzy
 msgid "under"
 msgstr "poniżej"
 
@@ -16835,6 +17085,7 @@ msgid "Win payout if the last digit of %3 is strictly lower than %6 after %5 tic
 msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że ostatnia cyfra %3 jest niższa niż %6 po %5 najmniejszych zmianach ceny."
 
 #: Translation for contract type "EXPIRYMISS"
+#, fuzzy
 msgid "ends outside"
 msgstr "kończy się poza"
 
@@ -16865,6 +17116,7 @@ msgid "Win payout if %3 ends outside %7 to %6 at %5 after %4."
 msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że %3 zakończy się poza %7 do %6: %5 po %4."
 
 #: Translation for contract type "EXPIRYRANGE"
+#, fuzzy
 msgid "ends between"
 msgstr "kończy się pomiędzy"
 
@@ -16895,6 +17147,7 @@ msgid "Win payout if %3 ends strictly between %7 to %6 at %5 after %4."
 msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że %3 zakończy się dokładnie pomiędzy %7 a %6: %5 po %4."
 
 #: Translation for contract type "NOTOUCH"
+#, fuzzy
 msgid "does not touch"
 msgstr "nie osiąga"
 
@@ -16925,6 +17178,7 @@ msgid "Win payout if %3 does not touch %6 through %5 after %4."
 msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że %3 nie osiągnie %6 w przeciągu %5 po %4."
 
 #: Translation for contract type "ONETOUCH"
+#, fuzzy
 msgid "touches"
 msgstr "osiąga"
 
@@ -16955,6 +17209,7 @@ msgid "Win payout if %3 touches %6 through %5 after %4."
 msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że %3 osiągnie %6 w przeciągu: %5 po %4."
 
 #: Translation for contract type "PUT"
+#, fuzzy
 msgid "lower"
 msgstr "niższa"
 
@@ -16998,6 +17253,7 @@ msgid "Win payout if %3 after %plural(%5,%d tick,%d ticks) is strictly lower tha
 msgstr "Wypłata %2 %1 nastąpi pod warunkiem, że %3 po %plural(%5,%d najmniejsza zmiana ceny,%d najmniejsze zmiany ceny) jest dokładnie niższy niż %6."
 
 #: Translation for contract type "RANGE"
+#, fuzzy
 msgid "stays between"
 msgstr "pozostaje pomiędzy"
 
@@ -17028,6 +17284,7 @@ msgid "Win payout if %3 stays between %7 and %6 through %5 after %4."
 msgstr "Wypłata %2 %1 nastąpi, pod warunkiem, że %3 pozostanie pomiędzy %7 a %6 w przeciągu %5 po %4."
 
 #: Translation for contract type "SPREADD"
+#, fuzzy
 msgid "spread down"
 msgstr "spread w dół"
 
@@ -17039,8 +17296,11 @@ msgstr "spread w dół"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (SPREADD - dollar)
+#, fuzzy
 msgid "%1 %2 payout for every point %3 falls from entry level, with stop loss of %6 %4 and stop profit of %6 %5."
-msgstr "Wypłata %2 %1 dla każdego punktu %3 spadła z poziomu wejściowego z limitem stop stratom wynoszącym %6 %4 i limitem stop zyskom wynoszącym %6 %5."
+msgstr ""
+"Wypłata %2 %1 dla każdego punktu %3 spadła z poziomu wejściowego z limitem "
+"stop stratom wynoszącym %6 %4 i limitem stop zyskom wynoszącym %6 %5."
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -17050,10 +17310,15 @@ msgstr "Wypłata %2 %1 dla każdego punktu %3 spadła z poziomu wejściowego z l
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (SPREADD - point)
+#, fuzzy
 msgid "%1 %2 payout for every point %3 falls from entry level, with stop loss of %4 points and stop profit of %5 points."
-msgstr "Wypłata %2 %1 dla każdego punktu %3 spadła z poziomu wejściowego z limitem stop stratom wynoszącym %4 punkty/punktów i limitem stop zyskom wynoszącym %5 punkty/punktów."
+msgstr ""
+"Wypłata %2 %1 dla każdego punktu %3 spadła z poziomu wejściowego z limitem "
+"stop stratom wynoszącym %4 punkty/punktów i limitem stop zyskom wynoszącym %"
+"5 punkty/punktów."
 
 #: Translation for contract type "SPREADU"
+#, fuzzy
 msgid "spread up"
 msgstr "spread w górę"
 
@@ -17065,8 +17330,11 @@ msgstr "spread w górę"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (SPREADU - dollar)
+#, fuzzy
 msgid "%1 %2 payout for every point %3 rises from entry level, with stop loss of %6 %4 and stop profit of %6 %5."
-msgstr "Wypłata %2 %1 dla każdego punktu %3 wzrasta z poziomu wejściowego z limitem stop stratom wynoszącym %6 %4 i limitem stop zyskom wynoszącym %6 %5."
+msgstr ""
+"Wypłata %2 %1 dla każdego punktu %3 wzrasta z poziomu wejściowego z limitem "
+"stop stratom wynoszącym %6 %4 i limitem stop zyskom wynoszącym %6 %5."
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -17076,8 +17344,12 @@ msgstr "Wypłata %2 %1 dla każdego punktu %3 wzrasta z poziomu wejściowego z l
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (SPREADU - point)
+#, fuzzy
 msgid "%1 %2 payout for every point %3 rises from entry level, with stop loss of %4 points and stop profit of %5 points."
-msgstr "Wypłata %2 %1 dla każdego punktu %3 wzrasta z poziomu wejściowego z limitem stop stratom wynoszącym %4 punkty/punktów i limitem stop zyskom wynoszącym %5 punkty/punktów."
+msgstr ""
+"Wypłata %2 %1 dla każdego punktu %3 wzrasta z poziomu wejściowego z limitem "
+"stop stratom wynoszącym %4 punkty/punktów i limitem stop zyskom wynoszącym %"
+"5 punkty/punktów."
 
 #: Translation for contract type "UPORDOWN"
 msgid "goes outside"
