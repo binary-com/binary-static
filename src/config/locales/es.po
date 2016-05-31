@@ -8,9 +8,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-30 22:24+0000\n"
-"Last-Translator: Sittie Hadjirah Sevilla <sittiebaser@gmail.com>\n"
-"Language-Team: Spanish <https://hosted.weblate.org/projects/binary/static/es/>\n"
+"PO-Revision-Date: 2016-05-31 11:59+0000\n"
+"Last-Translator: cameliagf <cameliagf@yahoo.com>\n"
+"Language-Team: Spanish "
+"<https://hosted.weblate.org/projects/binary/static/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -282,7 +283,7 @@ msgstr "Operaciones %1 no se pueden realizar con esta cuenta."
 #. ($app->{name}, $client->loginid)
 #: /home/git/regentmarkets/bom-oauth/templates/scope_confirms.html.ep:9
 msgid "%1 would like permission to access your account %2"
-msgstr ""
+msgstr "%1 pide permiso para acceder a su cuenta %2"
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
@@ -1383,16 +1384,14 @@ msgid "Adjusted Barrier"
 msgstr "Límite ajustado"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:667
-#, fuzzy
 #| msgid "Adjusted Barrier"
 msgid "Adjusted High Barrier"
-msgstr "Límite ajustado"
+msgstr "Límite Superior Ajustado"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:668
-#, fuzzy
 #| msgid "Adjusted Barrier"
 msgid "Adjusted Low Barrier"
-msgstr "Límite ajustado"
+msgstr "Límite Inferior Ajustado"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/account/api_tokenws.html.tt:36
 msgid "Admin"
@@ -1890,10 +1889,9 @@ msgid "Authorised Applications"
 msgstr "Aplicaciones Autorizadas"
 
 #: /home/git/regentmarkets/bom-oauth/templates/scope_confirms.html.ep:8
-#, fuzzy
 #| msgid "Authorised Applications"
 msgid "Authorize application"
-msgstr "Aplicaciones Autorizadas"
+msgstr "Autorizar aplicación"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_methods.html.tt:3
 msgid "Available payment methods"
@@ -1989,16 +1987,14 @@ msgid "Barrier"
 msgstr "Límite"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:662
-#, fuzzy
 #| msgid "Barrier 1"
 msgid "Barrier Change"
-msgstr "Límite 1"
+msgstr "Cambio de Límite"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Strike/Digit.pm:25
-#, fuzzy
 #| msgid "Barrier must be an integer."
 msgid "Barrier is not an integer between 0 to 9."
-msgstr "La barrera tiene que ser un número entero."
+msgstr "El límite no es un número entero entre 0 y 9."
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Role/SingleBarrier.pm:65
 msgid "Barrier is out of acceptable range."
@@ -3105,10 +3101,9 @@ msgid "Copywriter"
 msgstr "Copywriter"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:669
-#, fuzzy
 #| msgid "Corporate Actions"
 msgid "Corporate Action"
-msgstr "Acciones corporativas"
+msgstr "Acción Corporativa"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/risk_disclaimer.html.tt:94
 msgid "Costs and Charges"
@@ -4835,7 +4830,7 @@ msgstr "Leyes aplicables y jurisdicción"
 #: /home/git/regentmarkets/bom-oauth/templates/scope_confirms.html.ep:31
 #: /home/git/regentmarkets/bom-oauth/templates/scope_confirms.html.ep:32
 msgid "Grant"
-msgstr ""
+msgstr "Conceder"
 
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Wrapper/Streamer.pm:59
 msgid "Granularity is not valid"
@@ -5295,10 +5290,11 @@ msgstr "Si desea elevar estos límites, autentique su cuenta."
 
 #. (stash->{affiliate_email})
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:affiliates@binary.com'>affiliates@binary.com</a>"
 msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:%1'>%1</a>"
-msgstr "Si desea más información sobre cómo convertirse en un Agente de pago, por favor contáctenos en<a href='mailto:affiliates@binary.com'>affiliates@binary.com</a>"
+msgstr ""
+"Si desea más información sobre cómo convertirse en un Agente de Pago, por "
+"favor contáctenos en <a href='mailto:%1'>%1</a>"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/complaints_disputes.html.tt:4
 msgid "If you would like to file a complaint with regards to our service, kindly contact us providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within 1-2 weeks (and at most within 2 months) from receipt of all relevant details."
@@ -6721,7 +6717,6 @@ msgstr "Escala logarítmica"
 #: /home/git/regentmarkets/bom-oauth/templates/login.html.ep:13
 #: /home/git/regentmarkets/bom-oauth/templates/loginbinary.html.ep:19
 #: /home/git/regentmarkets/bom-oauth/templates/loginbinary.html.ep:9
-#, fuzzy
 #| msgid "login"
 msgid "Login"
 msgstr "iniciar sesión"
@@ -6773,10 +6768,9 @@ msgid "Loss"
 msgstr "Pérdida"
 
 #: /home/git/regentmarkets/bom-oauth/templates/loginbinary.html.ep:24
-#, fuzzy
 #| msgid "Lost password?"
 msgid "Lost Password?"
-msgstr "¿Olvidó su contraseña?"
+msgstr "¿Olvidó su Contraseña?"
 
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Charting.pm:502
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/legacy_chart_table.html.tt:14
@@ -7390,10 +7384,9 @@ msgstr "No FATCA*"
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/App.pm:159
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/App.pm:89
-#, fuzzy
 #| msgid "Page not found"
 msgid "Not Found"
-msgstr "Página no encontrada"
+msgstr "No Encontrado"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:656
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/explanation.html.tt:112
@@ -7638,10 +7631,9 @@ msgid "Opens late (at %1)"
 msgstr "Abre tarde (a la(s) %1)"
 
 #: /home/git/regentmarkets/bom-oauth/templates/scope_confirms.html.ep:21
-#, fuzzy
 #| msgid "create new account"
 msgid "Operate on accounts"
-msgstr "crear una cuenta nueva"
+msgstr "Operar en las cuentas"
 
 #: /home/git/translations/binary-static/src/templates/haml/user/reality_check_frequencyws.html.haml:1
 msgid "Options trading can become a real addiction, as can any other activity pushed to its limits. To avoid the danger of such an addiction, we provide a reality-check that gives you a summary of your trades and accounts on a regular basis."
@@ -7652,22 +7644,19 @@ msgid "Order Execution"
 msgstr "Ordenar ejecución"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:663
-#, fuzzy
 #| msgid "High Barrier"
 msgid "Original Barrier"
-msgstr "Barrera Superior"
+msgstr "Barrera Original"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:664
-#, fuzzy
 #| msgid "High Barrier"
 msgid "Original High Barrier"
-msgstr "Barrera Superior"
+msgstr "Barrera Superior Original"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:665
-#, fuzzy
 #| msgid "Low Barrier"
 msgid "Original Low Barrier"
-msgstr "Barrera Inferior"
+msgstr "Barrera Inferior Original"
 
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Charting.pm:591
 msgid "Oscillator calculated from the daily readings of the Accumulation Distribution Line. The CMF is unlike a momentum oscillator in that it is not influenced by the daily price change. Instead, the indicator focuses on the location of the close relative to the range for the period (daily or weekly)."
@@ -8349,10 +8338,9 @@ msgstr "Por favor ingrese un valor válido de %1."
 
 #. (stash->{affiliate_email})
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "Please submit the above information to <a href='mailto:affiliates@binary.com'>affiliates@binary.com</a>."
 msgid "Please submit the above information to <a href='mailto:%1'>%1</a>."
-msgstr "Por favor, envíe la información anterior a <a href='mailto:affiliates@binary.com'>affiliates@binary.com</a>."
+msgstr "Por favor, envíe la información anterior a <a href='mailto:%1'>%1</a>."
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1513
 msgid "Please switch accounts to trade this contract."
@@ -8765,10 +8753,9 @@ msgid "Read the answers to some common questions."
 msgstr "Lea las respuestas a algunas preguntas comunes."
 
 #: /home/git/regentmarkets/bom-oauth/templates/scope_confirms.html.ep:15
-#, fuzzy
 #| msgid "Bad quote file"
 msgid "Read user profile"
-msgstr "Archivo de cotización incorrecto"
+msgstr "Leer el perfil de usuario"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:136
 msgid "Real Account"
@@ -9021,10 +9008,9 @@ msgid "Returns above 1000% on <a href='%1' class='pjaxload'>higher/lower</a> and
 msgstr "Ganancias sobre 1000% están disponibles para los tipos de contrato <a href='%1' class='pjaxload'>Superior/Inferior</a> y <a href='%2' class='pjaxload'>Toque/Sin Toque</a> trades."
 
 #: /home/git/regentmarkets/bom-oauth/templates/scope_confirms.html.ep:11
-#, fuzzy
 #| msgid "Permissions"
 msgid "Review Permissions"
-msgstr "Permisos"
+msgstr "Revisar Permisos"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Review suspicious account transactions"
@@ -11087,10 +11073,9 @@ msgid "This contract offers no return."
 msgstr "Este contrato no ofrece ganancias."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:661
-#, fuzzy
 #| msgid "This contract is affected by corporate action."
 msgid "This contract was affected by a Corporate Action event."
-msgstr "Este contrato ha sido afectado por la acción corporativa."
+msgstr "Este contrato ha sido afectado por un evento de Acción Corporativa."
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:674
 msgid "This contract was not found among your open positions."
@@ -11977,6 +11962,8 @@ msgstr "Los Índices de Volatilidad se clasifican en dos tipos:"
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl+ebg13@ovanel.pbz sbe snfg-genpx pbafvqrengvba."
 msgstr ""
+"Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb "
+"wl+ebg13@ovanel.pbz sbe snfg-genpx pbafvqrengvba."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:221
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:152
@@ -13135,10 +13122,9 @@ msgid "Your Client will receive an email notification informing him/her that the
 msgstr "Su Cliente recibirá una notificación por correo electrónico informándole a él/ella que la transferencia ha sido procesada."
 
 #: /home/git/regentmarkets/bom-oauth/templates/loginbinary.html.ep:11
-#, fuzzy
 #| msgid "Your details"
 msgid "Your Details"
-msgstr "Sus datos"
+msgstr "Sus Datos"
 
 #. (broker_name)
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/main.html.tt:70
@@ -13212,10 +13198,9 @@ msgid "Your account transfer is successful. Your new balances are:"
 msgstr "La transferencia de su cuenta ha sido finalizada con éxito. Sus nuevos saldos son:"
 
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI.pm:98
-#, fuzzy
 #| msgid "Your date of birth is invalid."
 msgid "Your app_id is invalid."
-msgstr "Su fecha de nacimiento no es válida."
+msgstr "Su app_id no es válido."
 
 #. (url_for('/cashier/payment_agent_listws')
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
@@ -16674,10 +16659,11 @@ msgstr "asiáticas abajo"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (ASIAND - tick)
-#, fuzzy
 #| msgid "%1 %2 payout if the last tick of %3 is strictly lower than the average of the %plural(%5,%d tick,%d ticks)."
 msgid "Win payout if the last tick of %3 is strictly lower than the average of the %plural(%5,%d tick,%d ticks)."
-msgstr "Pago de %1 %2 si el último intervalo de %3 es estrictamente menor a la media de los %plural(%5,%d intervalo,%d intervalos)."
+msgstr ""
+"Pago de ganancia si el último intervalo de %3 es estrictamente menor a la "
+"media de los %plural(%5,%d intervalo,%d intervalos)."
 
 #: Translation for contract type "ASIANU"
 msgid "asian up"
@@ -16691,10 +16677,11 @@ msgstr "asiáticos arriba"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (ASIANU - tick)
-#, fuzzy
 #| msgid "%1 %2 payout if the last tick of %3 is strictly higher than the average of the %plural(%5,%d tick,%d ticks)."
 msgid "Win payout if the last tick of %3 is strictly higher than the average of the %plural(%5,%d tick,%d ticks)."
-msgstr "Pago de %1 %2 si el último intervalo de %3 es estrictamente mayor a la media de los %plural(%5,%d intervalo,%d intervalos)."
+msgstr ""
+"Pago de ganancia si el último intervalo de %3 es estrictamente mayor a la "
+"media de los %plural(%5,%d intervalo,%d intervalos)."
 
 #: Translation for contract type "CALL"
 msgid "higher"
@@ -16708,10 +16695,9 @@ msgstr "superior"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (CALL - daily)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 is strictly higher than %6 at %5."
 msgid "Win payout if %3 is strictly higher than %6 at %5."
-msgstr "Pago de %1 %2 si %3 es estrictamente mayor a %6 a %5."
+msgstr "Pago de ganancia si %3 es estrictamente mayor a %6 a %5."
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -16721,10 +16707,9 @@ msgstr "Pago de %1 %2 si %3 es estrictamente mayor a %6 a %5."
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (CALL - intraday)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 is strictly higher than %6 at %5 after %4."
 msgid "Win payout if %3 is strictly higher than %6 at %5 after %4."
-msgstr "Pago de %1 %2 si %3 es estrictamente mayor a %6 a %5 después de %4."
+msgstr "Pago de ganancia si %3 es estrictamente mayor a %6 a %5 después de %4."
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -16734,10 +16719,11 @@ msgstr "Pago de %1 %2 si %3 es estrictamente mayor a %6 a %5 después de %4."
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (CALL - tick)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 after %plural(%5,%d tick,%d ticks) is strictly higher than %6."
 msgid "Win payout if %3 after %plural(%5,%d tick,%d ticks) is strictly higher than %6."
-msgstr "Pago de %1 %2 si %3 después de los %plural(%5,%d intervalo,%d intervalos) es estrictamente mayor a %6."
+msgstr ""
+"Pago de ganancia si %3 después de los %plural(%5,%d intervalo,%d intervalos) "
+"es estrictamente mayor a %6."
 
 #: Translation for contract type "DIGITDIFF"
 msgid "differs"
@@ -16751,10 +16737,11 @@ msgstr "diferentes"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (DIGITDIFF - tick)
-#, fuzzy
 #| msgid "%1 %2 payout if the last digit of %3 is not %6 after %plural(%5,%d tick,%d ticks)."
 msgid "Win payout if the last digit of %3 is not %6 after %plural(%5,%d tick,%d ticks)."
-msgstr "Pago de %1 %2 si el último dígito de %3 no es%6 después de los %plural(%5,%d intervalo,%d intervalos)."
+msgstr ""
+"Pago de ganancia si el último dígito de %3 no es%6 después de los "
+"%plural(%5,%d intervalo,%d intervalos)."
 
 #: Translation for contract type "DIGITEVEN"
 msgid "even"
@@ -16768,10 +16755,10 @@ msgstr "par"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (DIGITEVEN - tick)
-#, fuzzy
 #| msgid "%1 %2 payout if the last digit of %3 is even after %5 ticks."
 msgid "Win payout if the last digit of %3 is even after %5 ticks."
-msgstr "Pago de %1 %2 si el último dígito de %3 es par de %5 intervalos."
+msgstr ""
+"Pago de ganancia si el último dígito de %3 es par después de %5 intervalos."
 
 #: Translation for contract type "DIGITMATCH"
 msgid "matches"
@@ -16785,10 +16772,11 @@ msgstr "iguales"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (DIGITMATCH - tick)
-#, fuzzy
 #| msgid "%1 %2 payout if the last digit of %3 is %6 after %plural(%5,%d tick,%d ticks)."
 msgid "Win payout if the last digit of %3 is %6 after %plural(%5,%d tick,%d ticks)."
-msgstr "Pago de %1 %2 si el último dígito de %3 es%6 después de los %plural(%5,%d intervalo,%d intervalos)."
+msgstr ""
+"Pago de ganancia si el último dígito de %3 es%6 después de los %plural(%5,%d "
+"intervalo,%d intervalos)."
 
 #: Translation for contract type "DIGITODD"
 msgid "odd"
@@ -16802,10 +16790,11 @@ msgstr "impar"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (DIGITODD - tick)
-#, fuzzy
 #| msgid "%1 %2 payout if the last digit of %3 is odd after %5 ticks."
 msgid "Win payout if the last digit of %3 is odd after %5 ticks."
-msgstr "Pago de %1 %2 si el último dígito de %3 es impar  después de %5 intervalos."
+msgstr ""
+"Pago de ganancia si el último dígito de %3 es impar  después de %5 "
+"intervalos."
 
 #: Translation for contract type "DIGITOVER"
 msgid "over"
@@ -16819,10 +16808,11 @@ msgstr "sobre"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (DIGITOVER - tick)
-#, fuzzy
 #| msgid "%1 %2 payout if the last digit of %3 is strictly higher than %6 after %5 ticks."
 msgid "Win payout if the last digit of %3 is strictly higher than %6 after %5 ticks."
-msgstr "Pago de %1 %2 si el último dígito de %3 es estrictamente mayor a %6 después de %5 intervalos."
+msgstr ""
+"Pago de ganancia si el último dígito de %3 es estrictamente mayor a %6 "
+"después de %5 intervalos."
 
 #: Translation for contract type "DIGITUNDER"
 msgid "under"
@@ -16836,10 +16826,11 @@ msgstr "bajo"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (DIGITUNDER - tick)
-#, fuzzy
 #| msgid "%1 %2 payout if the last digit of %3 is strictly lower than %6 after %5 ticks."
 msgid "Win payout if the last digit of %3 is strictly lower than %6 after %5 ticks."
-msgstr "Pago de %1 %2 si el último dígito de %3 es estrictamente inferior a %6 después de %5 intervalos."
+msgstr ""
+"Pago de ganancia si el último dígito de %3 es estrictamente inferior a %6 "
+"después de %5 intervalos."
 
 #: Translation for contract type "EXPIRYMISS"
 msgid "ends outside"
@@ -16853,10 +16844,10 @@ msgstr "Finaliza fuera"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (EXPIRYMISS - daily)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 ends outside %7 to %6 at %5."
 msgid "Win payout if %3 ends outside %7 to %6 at %5."
-msgstr "Pago de %1 %2 si %3 finaliza fuera del rango de %7 a %6 al cierre %5."
+msgstr ""
+"Pago de ganancia si %3 finaliza fuera del rango de %7 a %6 al cierre %5."
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -16866,10 +16857,11 @@ msgstr "Pago de %1 %2 si %3 finaliza fuera del rango de %7 a %6 al cierre %5."
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (EXPIRYMISS - intraday)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 ends outside %7 to %6 at %5 after %4."
 msgid "Win payout if %3 ends outside %7 to %6 at %5 after %4."
-msgstr "Pago de %1 %2 si %3 finaliza fuera del rango de %7 a %6 a la hora del %5 después de %4."
+msgstr ""
+"Pago de ganancia si %3 finaliza fuera del rango de %7 a %6 a la hora del %5 "
+"después de %4."
 
 #: Translation for contract type "EXPIRYRANGE"
 msgid "ends between"
@@ -16883,10 +16875,10 @@ msgstr "Finaliza dentro"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (EXPIRYRANGE - daily)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 ends strictly between %7 to %6 at %5."
 msgid "Win payout if %3 ends strictly between %7 to %6 at %5."
-msgstr "Pago de %1 %2 si %3 finaliza estrictamente entre %7 y %6 a la hora del %5."
+msgstr ""
+"Pago de ganancia si %3 finaliza estrictamente entre %7 y %6 a la hora del %5."
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -16896,10 +16888,11 @@ msgstr "Pago de %1 %2 si %3 finaliza estrictamente entre %7 y %6 a la hora del %
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (EXPIRYRANGE - intraday)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 ends strictly between %7 to %6 at %5 after %4."
 msgid "Win payout if %3 ends strictly between %7 to %6 at %5 after %4."
-msgstr "Pago de %1 %2 si %3 finaliza estrictamente entre %7 y %6 a la hora del %5 después de %4."
+msgstr ""
+"Pago de ganancia si %3 finaliza estrictamente entre %7 y %6 a la hora del %5 "
+"después de %4."
 
 #: Translation for contract type "NOTOUCH"
 msgid "does not touch"
@@ -16913,10 +16906,9 @@ msgstr "no toca"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (NOTOUCH - daily)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 does not touch %6 through %5."
 msgid "Win payout if %3 does not touch %6 through %5."
-msgstr "Pago de %1 %2 si %3 no toca %6 hasta el %5."
+msgstr "Pago de ganancia si %3 no toca %6 hasta el %5."
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -16926,10 +16918,9 @@ msgstr "Pago de %1 %2 si %3 no toca %6 hasta el %5."
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (NOTOUCH - intraday)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 does not touch %6 through %5 after %4."
 msgid "Win payout if %3 does not touch %6 through %5 after %4."
-msgstr "Pago de %1 %2 si %3 no toca %6 hasta el cierre %5 después de %4."
+msgstr "Pago de ganancia si %3 no toca %6 hasta el cierre %5 después de %4."
 
 #: Translation for contract type "ONETOUCH"
 msgid "touches"
@@ -16943,10 +16934,9 @@ msgstr "toca"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (ONETOUCH - daily)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 touches %6 through %5."
 msgid "Win payout if %3 touches %6 through %5."
-msgstr "Pago de %1 %2 si %3 toca %6 hasta el %5."
+msgstr "Pago de ganancia si %3 toca %6 hasta el %5."
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -16956,10 +16946,9 @@ msgstr "Pago de %1 %2 si %3 toca %6 hasta el %5."
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (ONETOUCH - intraday)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 touches %6 through %5 after %4."
 msgid "Win payout if %3 touches %6 through %5 after %4."
-msgstr "Pago de %1 %2 si %3 toca %6 hasta el %5 después de %4."
+msgstr "Pago de ganancia si %3 toca %6 hasta el %5 después de %4."
 
 #: Translation for contract type "PUT"
 msgid "lower"
@@ -16973,10 +16962,9 @@ msgstr "inferior"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (PUT - daily)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 is strictly lower than %6 at %5."
 msgid "Win payout if %3 is strictly lower than %6 at %5."
-msgstr "Pago de %1 %2 si %3 es estrictamente inferior a %6 a la hora del %5."
+msgstr "Pago de ganancia si %3 es estrictamente inferior a %6 a la hora del %5."
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -16986,10 +16974,11 @@ msgstr "Pago de %1 %2 si %3 es estrictamente inferior a %6 a la hora del %5."
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (PUT - intraday)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 is strictly lower than %6 at %5 after %4."
 msgid "Win payout if %3 is strictly lower than %6 at %5 after %4."
-msgstr "Pago de %1 %2 si %3 es estrictamente inferior a %6 a la hora del %5 después de %4."
+msgstr ""
+"Pago de ganancia si %3 es estrictamente inferior a %6 a la hora del %5 "
+"después de %4."
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -16999,10 +16988,11 @@ msgstr "Pago de %1 %2 si %3 es estrictamente inferior a %6 a la hora del %5 desp
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (PUT - tick)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 after %plural(%5,%d tick,%d ticks) is strictly lower than %6."
 msgid "Win payout if %3 after %plural(%5,%d tick,%d ticks) is strictly lower than %6."
-msgstr "Pago de %1 %2 si %3 después de los  %plural(%5,%d intervalos,%d intervalos) es estrictamente inferior a %6."
+msgstr ""
+"Pago de ganancia si %3 después de los  %plural(%5,%d intervalos,%d "
+"intervalos) es estrictamente inferior a %6."
 
 #: Translation for contract type "RANGE"
 msgid "stays between"
@@ -17016,10 +17006,11 @@ msgstr "queda dentro"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (RANGE - daily)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 stays between %7 to %6 through %5."
 msgid "Win payout if %3 stays between %7 to %6 through %5."
-msgstr "Pago de %1 %2 si %3 se queda estrictamente dentro el rango de %7 a %6 hasta el %5."
+msgstr ""
+"Pago de ganancia si %3 se queda estrictamente dentro el rango de %7 a %6 "
+"hasta el %5."
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -17029,10 +17020,11 @@ msgstr "Pago de %1 %2 si %3 se queda estrictamente dentro el rango de %7 a %6 ha
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (RANGE - intraday)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 stays between %7 and %6 through %5 after %4."
 msgid "Win payout if %3 stays between %7 and %6 through %5 after %4."
-msgstr "Pago de %1 %2 si %3 se queda estrictamente dentro del rango de %7 a %6 hasta el %5 después de %4."
+msgstr ""
+"Pago de ganancia si %3 se queda estrictamente dentro del rango de %7 a %6 "
+"hasta el %5 después de %4."
 
 #: Translation for contract type "SPREADD"
 msgid "spread down"
@@ -17098,10 +17090,9 @@ msgstr "sale fuera"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (UPORDOWN - daily)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 goes outside %7 to %6 through %5."
 msgid "Win payout if %3 goes outside %7 to %6 through %5."
-msgstr "Pago de %1 %2 si %3 sale fuera del rango de %7 a %6 hasta el %5."
+msgstr "Pago de ganancia si %3 sale fuera del rango de %7 a %6 hasta el %5."
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -17111,10 +17102,11 @@ msgstr "Pago de %1 %2 si %3 sale fuera del rango de %7 a %6 hasta el %5."
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (UPORDOWN - intraday)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 goes outside %7 and %6 through %5 after %4."
 msgid "Win payout if %3 goes outside %7 and %6 through %5 after %4."
-msgstr "Pago de %1 %2 si %3 sale fuera del rango de %7 a %6 hasta el %5 después de %4."
+msgstr ""
+"Pago de ganancia si %3 sale fuera del rango de %7 a %6 hasta el %5 después "
+"de %4."
 
 #~ msgid "Account Details"
 #~ msgstr "Detalles de la cuenta"
