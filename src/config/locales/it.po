@@ -2,9 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Italian (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-27 13:41+0000\n"
-"Last-Translator: Sittie Hadjirah Sevilla <sittiebaser@gmail.com>\n"
-"Language-Team: Italian <https://hosted.weblate.org/projects/binary/static/it/>\n"
+"PO-Revision-Date: 2016-06-01 13:08+0000\n"
+"Last-Translator: Annalisa <ligiu@me.com>\n"
+"Language-Team: Italian "
+"<https://hosted.weblate.org/projects/binary/static/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -6782,7 +6783,6 @@ msgid "Loss"
 msgstr "Perdita"
 
 #: /home/git/regentmarkets/bom-oauth/templates/loginbinary.html.ep:24
-#, fuzzy
 #| msgid "Lost password?"
 msgid "Lost Password?"
 msgstr "Password dimenticata?"
@@ -13139,7 +13139,6 @@ msgid "Your Client will receive an email notification informing him/her that the
 msgstr "Il tuo Cliente riceverà un'email di notifica in cui gli viene comunicato che il trasferimento è stato elaborato."
 
 #: /home/git/regentmarkets/bom-oauth/templates/loginbinary.html.ep:11
-#, fuzzy
 #| msgid "Your details"
 msgid "Your Details"
 msgstr "I tuoi dettagli"
