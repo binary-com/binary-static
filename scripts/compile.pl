@@ -127,12 +127,23 @@ my @m = (
 );
 
 ## config
-my $root_path = "$Bin/..";
+my $root_path = substr $Bin, 0, rindex($Bin, '/');
 my $dist_path = "$root_path/dist".($branch ? '/'.branch() : '');
 @BS::Request::HTML_URLS = map { $_->[0] } @m;
 my $index = 0;
 $| = 1;
 print colored(['cyan'], "Target: ")."$dist_path\n";
+
+mkdir("$dist_path") unless -d "$dist_path";
+foreach my $lang (@langs) {
+    mkdir("$dist_path/$lang")      unless -d "$dist_path/$lang";
+    mkdir("$dist_path/$lang/pjax") unless -d "$dist_path/$lang/pjax";
+}
+
+if ($pattern) {
+    @m = grep {index($_->[0], $pattern) > -1} @m;
+    $force = 1;
+}
 
 foreach my $m (@m) {
     my $save_as  = $m->[0];
@@ -140,11 +151,6 @@ foreach my $m (@m) {
     my $tpl_type = $m->[2];
     my $layout   = $m->[3];
     my $title    = $m->[4];
-
-    if ($pattern) {
-        next unless index($save_as, $pattern) > -1;
-        $force = 1;
-    }
 
     $index++;
 
@@ -154,9 +160,6 @@ foreach my $m (@m) {
 
         set_lang($lang);
 
-        mkdir("$dist_path")            unless -d "$dist_path";
-        mkdir("$dist_path/$lang")      unless -d "$dist_path/$lang";
-        mkdir("$dist_path/$lang/pjax") unless -d "$dist_path/$lang/pjax";
         my $request = BS::Request->new(
             language => uc $lang,
         );
@@ -208,7 +211,7 @@ foreach my $m (@m) {
             $layout_output = tt2_handle($layout_file, %stash);
         }
 
-        print colored(['green'], ($verbose ? "" : "\e[K\r")."[$index".($pattern ? '' : ' / '.(scalar @m))."] ($lang) => ")."/$lang/$save_as.html".($verbose ? "\n" : "");
+        print colored(['green'], ($verbose ? "" : "\e[K\r")."[$index / ".(scalar @m)."] ($lang) => ")."/$lang/$save_as.html".($verbose ? "\n" : "");
 
         my $path = path($save_as_file);
         $path->parent->mkpath if $save_as =~ '/';

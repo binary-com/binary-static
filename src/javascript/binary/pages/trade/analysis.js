@@ -15,7 +15,7 @@ var TradingAnalysis = (function() {
 
     var requestTradeAnalysis = function() {
         var contentId = document.getElementById('trading_bottom_content');
-        var formName = $('#contract_form_name_nav').find('.a-active').attr('id');
+        var formName = isJapanTrading() ? $('input[type="radio"][name="market_menu"]:checked').val() : $('#contract_form_name_nav').find('.a-active').attr('id');
         if (formName === 'matchdiff') {
           formName = 'digits';
         }

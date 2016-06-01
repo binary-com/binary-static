@@ -108,6 +108,7 @@ var PortfolioWS =  (function() {
     };
 
     var updateIndicative = function(data) {
+        if(data.hasOwnProperty('error')) return;
         var proposal = data.proposal_open_contract;
         var $td = $("tr[data-contract_id='" + proposal.contract_id + "'] td.indicative");
         var old_indicative = $td.find('strong').text();
