@@ -84,7 +84,7 @@ var TickDisplay = function() {
                     height: config.minimize ? 143 : null,
                     backgroundColor: null,
                     events: { load: $self.plot(config.plot_from, config.plot_to) },
-                    marginLeft: 100
+                    marginLeft: 50
                 },
                 credits: {enabled: false},
                 tooltip: {
@@ -115,6 +115,9 @@ var TickDisplay = function() {
                 title: '',
                 exporting: {enabled: false, enableImages: false},
                 legend: {enabled: false},
+            });
+            Highcharts.setOptions({
+              lang: {thousandsSep: ','}
             });
         },
         plot: function(plot_from, plot_to) {

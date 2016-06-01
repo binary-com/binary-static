@@ -81,13 +81,8 @@ var ViewPopupWS = (function() {
             getCorporateActions();
         }
 
-        // ----- Tick -----
-        if(contract.hasOwnProperty('tick_count')) {
-            contractType = 'tick';
-            tickShowContract();
-        }
         // ----- Spread -----
-        else if(contract.shortcode.toUpperCase().indexOf('SPREAD') === 0) {
+        if(contract.shortcode.toUpperCase().indexOf('SPREAD') === 0) {
             contractType = 'spread';
             getTickHistory(contract.underlying, contract.date_start + 1, contract.date_start + 60, 0);
 
@@ -114,31 +109,6 @@ var ViewPopupWS = (function() {
             contractType = 'normal';
             normalShowContract();
         }
-    };
-
-    // ===== Contract: Tick =====
-    var tickShowContract = function() {
-        setLoadingState(false);
-
-        ViewPopupUI.show_inpage_popup(
-            $('<div/>', {id: wrapperID, class: popupboxID})
-                .append($('<div/>', {class: 'popup_bet_desc drag-handle', text: contract.longcode}))
-                .append($('<div/>', {id: 'tick_chart'}))
-                .append($('<div/>', {id: winStatusID, class: hiddenClass})),
-            'tick_popup'
-        );
-
-        tickUpdate();
-    };
-
-    var tickUpdate = function() {
-        if(contract.is_expired) {
-            showWinLossStatus((contract.sell_price || contract.bid_price) > 0);
-        }
-        if (!chartUpdated) {
-             WSTickDisplay.updateChart('', contract);
-             chartUpdated = true;
-         }
     };
 
     // ===== Contract: Spread =====
@@ -170,7 +140,7 @@ var ViewPopupWS = (function() {
     var spreadSetValues = function() {
         contract.is_ended          = contract.is_expired || contract.is_sold;
         contract.status            = text.localize(contract.is_ended ? 'Closed' : 'Open');
-        contract.profit            = contract.sell_price ? parseFloat(contract.sell_price) - parseFloat(contract.buy_price) : parseFloat(contract.bid_price) - parseFloat(contract.ask_price);
+        contract.profit            = parseFloat(contract.sell_price ? contract.sell_price : contract.bid_price) - parseFloat(contract.buy_price);
         contract.profit_point      = contract.profit / contract.per_point;
         contract.stop_loss_level   = contract.entry_level + contract.stop_loss   / (contract.is_point ? 1 : contract.per_point) * (- contract.direction);
         contract.stop_profit_level = contract.entry_level + contract.stop_profit / (contract.is_point ? 1 : contract.per_point) * contract.direction;
@@ -247,7 +217,8 @@ var ViewPopupWS = (function() {
 
         containerSetText('trade_details_contract_id'   , contract.contract_id);
         containerSetText('trade_details_start_date'    , epochToDateTime(contract.date_start));
-        containerSetText('trade_details_end_date'      , epochToDateTime(contract.date_expiry));
+        if (document.getElementById('trade_details_end_date')) containerSetText('trade_details_end_date'      , epochToDateTime(contract.date_expiry));
+        containerSetText('trade_details_payout', contract.currency + ' ' + parseFloat(contract.payout).toFixed(2));
         containerSetText('trade_details_purchase_price', contract.currency + ' ' + parseFloat(contract.buy_price).toFixed(2));
 
         normalUpdateTimers();
@@ -289,7 +260,7 @@ var ViewPopupWS = (function() {
             containerSetText('trade_details_message', contract.validation_error ? contract.validation_error : corporateActionEvent ? '* ' + text.localize('This contract was affected by a Corporate Action event.') : '&nbsp;');
         }
 
-        if(!chartStarted) {
+        if(!chartStarted && !contract.tick_count) {
             if (!tickForgotten) {
               tickForgotten = true;
               socketSend({"forget_all":"ticks"});
@@ -299,11 +270,14 @@ var ViewPopupWS = (function() {
                 chartStarted = true;
               }
             }
+        } else if (contract.tick_count && !chartUpdated) {
+            WSTickDisplay.updateChart('', contract);
+            chartUpdated = true;
         }
 
         if(!isSold && user_sold) {
             isSold = true;
-            Highchart.show_chart(contract, 'update');
+            if (!contract.tick_count) Highchart.show_chart(contract, 'update');
         }
         if(is_ended) {
             normalContractEnded(parseFloat(profit_loss) >= 0);
@@ -311,7 +285,7 @@ var ViewPopupWS = (function() {
                 ViewPopupUI.forget_streams();
                 sellExpired();
             }
-            Highchart.show_chart(contract, 'update');
+            if (!contract.tick_count) Highchart.show_chart(contract, 'update');
         }
 
         sellSetVisibility(!isSellClicked && !isSold && !is_ended && +contract.is_valid_to_sell === 1);
@@ -327,7 +301,7 @@ var ViewPopupWS = (function() {
 
             var is_started = !contract.is_forward_starting || contract.current_spot_time > contract.date_start,
                 is_ended   = contract.is_expired || contract.is_sold;
-            if(!is_started || is_ended || now >= contract.date_expiry) {
+            if((!is_started || is_ended || now >= contract.date_expiry) && document.getElementById('trade_details_live_remaining')) {
                 containerSetText('trade_details_live_remaining', '-');
             } else {
                 var remained = contract.date_expiry - now,
@@ -337,9 +311,11 @@ var ViewPopupWS = (function() {
                     days = Math.floor(remained / day_seconds);
                     remained = remained % day_seconds;
                 }
-                containerSetText('trade_details_live_remaining',
-                    (days > 0 ? days + ' ' + text.localize(days > 1 ? 'days' : 'day') + ', ' : '') +
-                    moment((remained) * 1000).utc().format('HH:mm:ss'));
+                if (document.getElementById('trade_details_live_remaining')) {
+                  containerSetText('trade_details_live_remaining',
+                      (days > 0 ? days + ' ' + text.localize(days > 1 ? 'days' : 'day') + ', ' : '') +
+                      moment((remained) * 1000).utc().format('HH:mm:ss'));
+                }
             }
         };
         update_time();
@@ -428,11 +404,12 @@ var ViewPopupWS = (function() {
                     normalRow('Contract ID',    '', 'trade_details_contract_id') +
                     normalRow('Reference ID',   '', 'trade_details_ref_id') +
                     normalRow('Start Time',     '', 'trade_details_start_date') +
-                    normalRow('End Time',       '', 'trade_details_end_date') +
-                    normalRow('Remaining Time', '', 'trade_details_live_remaining') +
+                    (!contract.tick_count ? normalRow('End Time',       '', 'trade_details_end_date') +
+                                            normalRow('Remaining Time', '', 'trade_details_live_remaining') : '') +
                     normalRow('Entry Spot',     '', 'trade_details_entry_spot') +
                     normalRow(contract.barrier_count > 1 ? 'High Barrier' : 'Barrier', '', 'trade_details_barrier'    , true) +
                     (contract.barrier_count > 1 ? normalRow('Low Barrier',             '', 'trade_details_barrier_low', true) : '') +
+                    normalRow('Potential Payout', '', 'trade_details_payout') +
                     normalRow('Purchase Price', '', 'trade_details_purchase_price') +
                 '</tbody><tbody id="corporate_action_content" class="invisible"></tbody>' +
                 '<th colspan="2" id="barrier_change" class="invisible">' + text.localize('Barrier Change') + '</th>' +
@@ -451,7 +428,7 @@ var ViewPopupWS = (function() {
 
         $sections.find('#sell_details_chart_wrapper').html('<div id="live_chart_form_wrapper" class="grd-grid-12"></div>' +
             '<div class="chart-notice"><div class="notice" id="delayed_feed_notice" style="display: none;">Charting for this underlying is delayed</div><div class="notice" id="not_available_notice" style="display: none;">Charting is not available for this underlying</div></div>' +
-            '<div id="analysis_live_chart" class="live_chart_wrapper grd-grid-12"><div>');
+            '<div id="' + (contract.tick_count ? 'tick_chart' : 'analysis_live_chart') + '" class="live_chart_wrapper grd-grid-12"></div>');
 
         $Container.find('#' + wrapperID)
             .append($sections.html())
@@ -770,7 +747,7 @@ var ViewPopupWS = (function() {
                     break;
             }
             showLocalTimeOnHover('#trade_details_start_date');
-            showLocalTimeOnHover('#trade_details_end_date');
+            if (document.getElementById('trade_details_end_date')) showLocalTimeOnHover('#trade_details_end_date');
             showLocalTimeOnHover('#trade_details_current_date');
             showLocalTimeOnHover('#trade_details_live_date');
         }
@@ -779,7 +756,6 @@ var ViewPopupWS = (function() {
     return {
         init                : init,
         dispatch            : dispatch,
-        tickUpdate          : tickUpdate,
         spreadUpdate        : spreadUpdate,
         normalUpdate        : normalUpdate,
         storeSubscriptionID : storeSubscriptionID

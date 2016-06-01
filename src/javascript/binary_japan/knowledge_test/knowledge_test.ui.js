@@ -108,7 +108,7 @@ var KnowledgeTestUI = (function () {
         var $knowledgeTestLink = $('<a></a>', {
             class: 'pjaxload',
             id: 'knowledgetest-link',
-            href: '/new_account/knowledge_testws'
+            href: page.url.url_for('/new_account/knowledge_testws')
         }).text(text.localize('{JAPAN ONLY}Take knowledge test'));
 
         $topbarmsg.children('a').addClass('invisible');
