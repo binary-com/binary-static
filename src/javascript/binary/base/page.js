@@ -858,7 +858,7 @@ ToolTip.prototype = {
             title   = false;
 
         targets.on('mouseenter', function(e) {
-            tip = $(this).attr( 'title' );
+            tip = $(this).attr( 'title' ) || $(this).attr('data-title');
 
             if( !tip || tip === '' )
                 return false;
@@ -866,7 +866,8 @@ ToolTip.prototype = {
             that.showing.target = $(this);
             that.showing.tip = tip;
 
-            that.showing.target.removeAttr( 'title' );
+            that.showing.target.removeAttr( 'title' )
+                               .removeAttr( 'data-title' );
 
             that.tooltip.html(tip);
             that.resize_tooltip();
@@ -875,14 +876,14 @@ ToolTip.prototype = {
         });
 
         targets.on('mouseleave', function() {
-            if(that.showing.target) {
-                that.showing.target.attr( 'title', that.showing.tip );
+            if(that.showing.target && !that.showing.target.attr('data-title')) {
+                that.showing.target.attr( 'data-title', that.showing.tip );
             }
             that.hide_tooltip();
         });
 
         targets.on('click', function() {
-            if(that.showing.target) {
+            if(that.showing.target && !that.showing.target.attr('data-title')) {
                 that.showing.target.attr( 'title', that.showing.tip );
             }
             that.hide_tooltip();

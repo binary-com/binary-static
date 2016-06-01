@@ -434,6 +434,7 @@ var TradingEvents = (function () {
 
             predictionElement.addEventListener('change', debounce( function (e) {
                 Defaults.set('prediction', e.target.value);
+                page.contents.tooltip.hide_tooltip();
                 processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));

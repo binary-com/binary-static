@@ -215,9 +215,10 @@ var Price = (function() {
                   extraInfo['longcode'] = extraInfo['longcode'].replace(/[\d\,]+\.\d\d/, function(x) {
                       return '<b>' + x + '</b>';
                   });
-                  description.setAttribute('title', extraInfo['longcode']);
+                  description.setAttribute('data-title', extraInfo['longcode']);
+                  page.contents.tooltip.attach();
                 } else {
-                  description.removeAttribute('title');
+                  description.removeAttribute('data-title');
                 }
             }
 
@@ -247,9 +248,10 @@ var Price = (function() {
                 proposal['longcode'] = proposal['longcode'].replace(/[\d\,]+\.\d\d/, function(x) {
                     return '<b>' + x + '</b>';
                 });
-                description.setAttribute('title', proposal['longcode']);
+                description.setAttribute('data-title', proposal['longcode']);
+                page.contents.tooltip.attach();
             } else {
-              description.removeAttribute('title');
+              description.removeAttribute('data-title');
             }
 
             purchase.show();
