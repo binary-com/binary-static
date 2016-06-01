@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-31 07:45+0000\n"
-"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
+"PO-Revision-Date: 2016-06-01 02:52+0000\n"
+"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -289,7 +289,7 @@ msgstr "％1のお取引は、このアカウントで実行されない場合�
 #. ($app->{name}, $client->loginid)
 #: /home/git/regentmarkets/bom-oauth/templates/scope_confirms.html.ep:9
 msgid "%1 would like permission to access your account %2"
-msgstr ""
+msgstr "%1があなたのアカウント%2へのアクセス許可を求めています"
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
@@ -1919,10 +1919,9 @@ msgid "Authorised Applications"
 msgstr "認識済みアプリケーション"
 
 #: /home/git/regentmarkets/bom-oauth/templates/scope_confirms.html.ep:8
-#, fuzzy
 #| msgid "Authorised Applications"
 msgid "Authorize application"
-msgstr "認識済みアプリケーション"
+msgstr "アプリケーション認承"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_methods.html.tt:3
 msgid "Available payment methods"
@@ -3152,7 +3151,6 @@ msgid "Copywriter"
 msgstr "コピーライター"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:669
-#, fuzzy
 #| msgid "Corporate Actions"
 msgid "Corporate Action"
 msgstr "企業活動"
@@ -5352,10 +5350,9 @@ msgstr "取引上限の引き上げを希望される場合は、ご口座のア
 
 #. (stash->{affiliate_email})
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:affiliates@binary.com'>affiliates@binary.com</a>"
 msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:%1'>%1</a>"
-msgstr "決済サービスエージェントに関して詳細をご覧になりたい場合は、<a href='mailto:affiliates@binary.com'>affiliates@binary.com</a>までご連絡ください。"
+msgstr "決済サービスエージェントに関して詳細をご覧になりたい場合は、<a href='mailto:%1'>%1</a>までご連絡ください。"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/complaints_disputes.html.tt:4
 msgid "If you would like to file a complaint with regards to our service, kindly contact us providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within 1-2 weeks (and at most within 2 months) from receipt of all relevant details."
@@ -6794,7 +6791,6 @@ msgstr "Logarithmicスケール"
 #: /home/git/regentmarkets/bom-oauth/templates/login.html.ep:13
 #: /home/git/regentmarkets/bom-oauth/templates/loginbinary.html.ep:19
 #: /home/git/regentmarkets/bom-oauth/templates/loginbinary.html.ep:9
-#, fuzzy
 #| msgid "login"
 msgid "Login"
 msgstr "ログイン"
@@ -6846,10 +6842,9 @@ msgid "Loss"
 msgstr "損益"
 
 #: /home/git/regentmarkets/bom-oauth/templates/loginbinary.html.ep:24
-#, fuzzy
 #| msgid "Lost password?"
 msgid "Lost Password?"
-msgstr "パスワードをお忘れの場合"
+msgstr "パスワードをお忘れですか？"
 
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Charting.pm:502
 #: /home/git/translations/binary-static/src/templates/toolkit/charting/legacy_chart_table.html.tt:14
@@ -7467,7 +7462,6 @@ msgstr "外国口座税務コンプライアンス法（米国FATCA）に該当�
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/App.pm:159
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/App.pm:89
-#, fuzzy
 #| msgid "Page not found"
 msgid "Not Found"
 msgstr "ページ未検出"
@@ -8430,10 +8424,9 @@ msgstr "有効な%1をご提出ください。"
 
 #. (stash->{affiliate_email})
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
-#, fuzzy
 #| msgid "Please submit the above information to <a href='mailto:affiliates@binary.com'>affiliates@binary.com</a>."
 msgid "Please submit the above information to <a href='mailto:%1'>%1</a>."
-msgstr "<a href='mailto:affiliates@binary.com'>affiliates@binary.com</a>まで上記の情報をご提出ください。"
+msgstr "<a href='mailto:%1'>%1</a>まで上記の情報をご提出ください。"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1513
 msgid "Please switch accounts to trade this contract."
@@ -8847,7 +8840,7 @@ msgstr "よくあるご質問事項に対する回答はこちらから"
 
 #: /home/git/regentmarkets/bom-oauth/templates/scope_confirms.html.ep:15
 msgid "Read user profile"
-msgstr ""
+msgstr "ユーザープロファイルを見る"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:136
 msgid "Real Account"
@@ -9100,10 +9093,9 @@ msgid "Returns above 1000% on <a href='%1' class='pjaxload'>higher/lower</a> and
 msgstr "<a href='%1' class='pjaxload'>HIGH/LOW</a>、<a href='%2' class='pjaxload'>TOUCH/NO-TOUCH</a>オプションで多様な収益機会を提供"
 
 #: /home/git/regentmarkets/bom-oauth/templates/scope_confirms.html.ep:11
-#, fuzzy
 #| msgid "Permissions"
 msgid "Review Permissions"
-msgstr "アクセス許可"
+msgstr "アクセス許可を確認"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Review suspicious account transactions"
@@ -13360,7 +13352,6 @@ msgid "Your Client will receive an email notification informing him/her that the
 msgstr "あなたのクライアントに送金が処理されたことをお知らせする通知メールが届きます。"
 
 #: /home/git/regentmarkets/bom-oauth/templates/loginbinary.html.ep:11
-#, fuzzy
 #| msgid "Your details"
 msgid "Your Details"
 msgstr "ログイン情報"
@@ -16936,10 +16927,9 @@ msgstr "asian down"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (ASIAND - tick)
-#, fuzzy
 #| msgid "%1 %2 payout if the last tick of %3 is strictly lower than the average of the %plural(%5,%d tick,%d ticks)."
 msgid "Win payout if the last tick of %3 is strictly lower than the average of the %plural(%5,%d tick,%d ticks)."
-msgstr "%3の最後の値 が%plural(%5,%d tick,%d ticks)の平均よりも正確に低い場合に、%1 %2のペイアウトをお受け取りいただけます。"
+msgstr "%3の最後の値 が%plural(%5,%d tick,%d ticks)の平均よりも低い場合に、ペイアウトをお受け取りいただけます。"
 
 #: Translation for contract type "ASIANU"
 msgid "asian up"
@@ -16953,10 +16943,9 @@ msgstr "Asian アップ"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (ASIANU - tick)
-#, fuzzy
 #| msgid "%1 %2 payout if the last tick of %3 is strictly higher than the average of the %plural(%5,%d tick,%d ticks)."
 msgid "Win payout if the last tick of %3 is strictly higher than the average of the %plural(%5,%d tick,%d ticks)."
-msgstr "%3の最後の値が%plural(%5,%d tick,%d ticks)の平均よりも正確に高い場合に、%1 %2のペイアウトをお受け取りいただけます。"
+msgstr "%3の最後の値が%plural(%5,%d tick,%d ticks)の平均よりも高い場合に、ペイアウトをお受け取りいただけます。"
 
 #: Translation for contract type "CALL"
 msgid "higher"
@@ -16970,10 +16959,9 @@ msgstr "HIGH"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (CALL - daily)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 is strictly higher than %6 at %5."
 msgid "Win payout if %3 is strictly higher than %6 at %5."
-msgstr "%3が%5の時点で%6よりも正確に高い場合に%1 %2のペイアウトをお受け取りいただけます。"
+msgstr "%3が%5の時点で%6よりも高い場合にペイアウトをお受け取りいただけます。"
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -16983,10 +16971,9 @@ msgstr "%3が%5の時点で%6よりも正確に高い場合に%1 %2のペイア�
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (CALL - intraday)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 is strictly higher than %6 at %5 after %4."
 msgid "Win payout if %3 is strictly higher than %6 at %5 after %4."
-msgstr "%3が%4後の%5の時点で%6より正確に高い場合に%1 %2のペイアウトをお受け取りいただけます。"
+msgstr "%3が%4後の%5の時点で%6より高い場合にペイアウトをお受け取りいただけます。"
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -16996,10 +16983,9 @@ msgstr "%3が%4後の%5の時点で%6より正確に高い場合に%1 %2のペ�
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (CALL - tick)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 after %plural(%5,%d tick,%d ticks) is strictly higher than %6."
 msgid "Win payout if %3 after %plural(%5,%d tick,%d ticks) is strictly higher than %6."
-msgstr "%3が%plural(%5,%d tick,%d ticks)後に%6よりも正確に高い場合に、%1 %2のペイアウトをお受け取りいただけます。"
+msgstr "%3が%plural(%5,%d tick,%d ticks)後に%6よりも高い場合に、ペイアウトをお受け取りいただけます。"
 
 #: Translation for contract type "DIGITDIFF"
 msgid "differs"
@@ -17013,10 +16999,9 @@ msgstr "アンマッチ"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (DIGITDIFF - tick)
-#, fuzzy
 #| msgid "%1 %2 payout if the last digit of %3 is not %6 after %plural(%5,%d tick,%d ticks)."
 msgid "Win payout if the last digit of %3 is not %6 after %plural(%5,%d tick,%d ticks)."
-msgstr "%3の下一桁が%plural(%5,%d tick,%d ticks)後に%6ではない場合に、%1 %2のペイアウトをお受け取りいただけます。"
+msgstr "%3の下一桁が%plural(%5,%d tick,%d ticks)後に%6ではない場合に、ペイアウトをお受け取りいただけます。"
 
 #: Translation for contract type "DIGITEVEN"
 msgid "even"
@@ -17030,10 +17015,9 @@ msgstr "もなお"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (DIGITEVEN - tick)
-#, fuzzy
 #| msgid "%1 %2 payout if the last digit of %3 is even after %5 ticks."
 msgid "Win payout if the last digit of %3 is even after %5 ticks."
-msgstr "%3の下一桁が %5 ticks以降もxxxである場合、%1 %2 のペイアウトをお受け取りいただけます。"
+msgstr "%3の下一桁が %5 ticks以降もxxxである場合に、ペイアウトをお受け取りいただけます。"
 
 #: Translation for contract type "DIGITMATCH"
 msgid "matches"
@@ -17047,10 +17031,9 @@ msgstr "マッチ"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (DIGITMATCH - tick)
-#, fuzzy
 #| msgid "%1 %2 payout if the last digit of %3 is %6 after %plural(%5,%d tick,%d ticks)."
 msgid "Win payout if the last digit of %3 is %6 after %plural(%5,%d tick,%d ticks)."
-msgstr "%3の下一桁が%plural(%5,%d tick,%d ticks)後に%6である場合に、%1 %2のペイアウトをお受け取りいただけます。"
+msgstr "%3の下一桁が%plural(%5,%d tick,%d ticks)後に%6である場合に、ペイアウトをお受け取りいただけます。"
 
 #: Translation for contract type "DIGITODD"
 msgid "odd"
@@ -17064,10 +17047,9 @@ msgstr "奇数"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (DIGITODD - tick)
-#, fuzzy
 #| msgid "%1 %2 payout if the last digit of %3 is odd after %5 ticks."
 msgid "Win payout if the last digit of %3 is odd after %5 ticks."
-msgstr "%5 tick後に%3の下一桁の数が奇数である場合、%1 %2のペイアウトをお受け取りいただけます。"
+msgstr "%5 tick後に%3の下一桁の数が奇数である場合に、ペイアウトをお受け取りいただけます。"
 
 #: Translation for contract type "DIGITOVER"
 msgid "over"
@@ -17081,10 +17063,9 @@ msgstr "オーバー"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (DIGITOVER - tick)
-#, fuzzy
 #| msgid "%1 %2 payout if the last digit of %3 is strictly higher than %6 after %5 ticks."
 msgid "Win payout if the last digit of %3 is strictly higher than %6 after %5 ticks."
-msgstr "%3の下一桁が%5 tickの時点で%6よりも正確に高い場合に%1 %2のペイアウトをお受け取りいただけます。"
+msgstr "%3の下一桁が%5 tickの時点で%6よりも高い場合に、ペイアウトをお受け取りいただけます。"
 
 #: Translation for contract type "DIGITUNDER"
 msgid "under"
@@ -17098,10 +17079,9 @@ msgstr "未満"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (DIGITUNDER - tick)
-#, fuzzy
 #| msgid "%1 %2 payout if the last digit of %3 is strictly lower than %6 after %5 ticks."
 msgid "Win payout if the last digit of %3 is strictly lower than %6 after %5 ticks."
-msgstr "%3の下一桁が%5 tickの時点で正確に%6よりも低い場合、%1 %2のペイアウトをお受け取りいただけます。"
+msgstr "%3の下一桁が%5 tickの時点で%6よりも低い場合、ペイアウトをお受け取りいただけます。"
 
 #: Translation for contract type "EXPIRYMISS"
 msgid "ends outside"
@@ -17115,10 +17095,9 @@ msgstr "レンジ外で終了"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (EXPIRYMISS - daily)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 ends outside %7 to %6 at %5."
 msgid "Win payout if %3 ends outside %7 to %6 at %5."
-msgstr "%3が%5の時点で%7と%6のレンジ外にある場合</strong>、%1 %2のペイアウトをお受け取りいただけます。"
+msgstr "%3が%5の時点で%7と%6のレンジ外で終了した場合に、ペイアウトをお受け取りいただけます。"
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -17128,10 +17107,9 @@ msgstr "%3が%5の時点で%7と%6のレンジ外にある場合</strong>、%1 %
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (EXPIRYMISS - intraday)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 ends outside %7 to %6 at %5 after %4."
 msgid "Win payout if %3 ends outside %7 to %6 at %5 after %4."
-msgstr "%3が%4後の%5の時点で%7と%6のレンジ外にある場合</strong>、%1 %2のペイアウトをお受け取りいただけます。"
+msgstr "%3が%4後の%5の時点で%7と%6のレンジ外で終了した場合に、ペイアウトをお受け取りいただけます。"
 
 #: Translation for contract type "EXPIRYRANGE"
 msgid "ends between"
@@ -17145,10 +17123,9 @@ msgstr "範囲内で終了"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (EXPIRYRANGE - daily)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 ends strictly between %7 to %6 at %5."
 msgid "Win payout if %3 ends strictly between %7 to %6 at %5."
-msgstr "%3が%5の時点で正確に%7と%6の範囲内で終了した場合、%1 %2のペイアウトをお受け取りいただけます。"
+msgstr "%3が%5の時点で正確に%7と%6の範囲内で終了した場合、ペイアウトをお受け取りいただけます。"
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -17158,10 +17135,9 @@ msgstr "%3が%5の時点で正確に%7と%6の範囲内で終了した場合、%
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (EXPIRYRANGE - intraday)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 ends strictly between %7 to %6 at %5 after %4."
 msgid "Win payout if %3 ends strictly between %7 to %6 at %5 after %4."
-msgstr "%3が%4後の%5の時点で正確に%7と%6の範囲内で終了した場合に、%1 %2のペイアウトをお受け取りいただけます。"
+msgstr "%3が%4後の%5の時点で%7と%6の範囲内で終了した場合に、ペイアウトをお受け取りいただけます。"
 
 #: Translation for contract type "NOTOUCH"
 msgid "does not touch"
@@ -17175,10 +17151,9 @@ msgstr "ノータッチ"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (NOTOUCH - daily)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 does not touch %6 through %5."
 msgid "Win payout if %3 does not touch %6 through %5."
-msgstr "%3が%5まで%6にタッチしなかった場合、%1%2のペイアウトをお受け取りいただけます。"
+msgstr "%3が%5までに%6に達しなかった場合に、ペイアウトをお受け取りいただけます。"
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -17188,10 +17163,9 @@ msgstr "%3が%5まで%6にタッチしなかった場合、%1%2のペイアウ�
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (NOTOUCH - intraday)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 does not touch %6 through %5 after %4."
 msgid "Win payout if %3 does not touch %6 through %5 after %4."
-msgstr "%3が%4後の%5までに%6にタッチしなかった場合に、%1 %2のペイアウトをお受け取りいただけます。"
+msgstr "%3が%4後の%5までに%6に達しなかった場合に、ペイアウトをお受け取りいただけます。"
 
 #: Translation for contract type "ONETOUCH"
 msgid "touches"
@@ -17205,10 +17179,9 @@ msgstr "タッチ"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (ONETOUCH - daily)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 touches %6 through %5."
 msgid "Win payout if %3 touches %6 through %5."
-msgstr "%3が%5までに%6にタッチした場合、%1 %2のペイアウトをお受け取りいただけます。"
+msgstr "%3が%5までに%6に達した場合に、ペイアウトをお受け取りいただけます。"
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -17218,10 +17191,9 @@ msgstr "%3が%5までに%6にタッチした場合、%1 %2のペイアウトを�
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (ONETOUCH - intraday)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 touches %6 through %5 after %4."
 msgid "Win payout if %3 touches %6 through %5 after %4."
-msgstr "%3が%4後の%5までに%6にタッチした場合、%1 %2のペイアウトをお受け取りいただけます。"
+msgstr "%3が%4後の%5までに%6に達した場合に、ペイアウトをお受け取りいただけます。"
 
 #: Translation for contract type "PUT"
 msgid "lower"
@@ -17235,10 +17207,9 @@ msgstr "LOW"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (PUT - daily)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 is strictly lower than %6 at %5."
 msgid "Win payout if %3 is strictly lower than %6 at %5."
-msgstr "%3が%5の時点で正確に%6よりも低い場合、%1 %2のペイアウトをお受け取りいただけます。"
+msgstr "%3が%5の時点で%6よりも低い場合に、ペイアウトをお受け取りいただけます。"
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -17248,10 +17219,9 @@ msgstr "%3が%5の時点で正確に%6よりも低い場合、%1 %2のペイア�
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (PUT - intraday)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 is strictly lower than %6 at %5 after %4."
 msgid "Win payout if %3 is strictly lower than %6 at %5 after %4."
-msgstr "%3が%4後の%5で正確に%6よりも低い場合、%1 %2のペイアウトをお受け取りいただけます。"
+msgstr "%3が%4後の%5で%6よりも低い場合に、ペイアウトをお受け取りいただけます。"
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -17261,10 +17231,9 @@ msgstr "%3が%4後の%5で正確に%6よりも低い場合、%1 %2のペイア�
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (PUT - tick)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 after %plural(%5,%d tick,%d ticks) is strictly lower than %6."
 msgid "Win payout if %3 after %plural(%5,%d tick,%d ticks) is strictly lower than %6."
-msgstr "%3が%plural(%5,%d tick,%d ticks)後に%6よりも正確に低い場合に、%1 %2のペイアウトをお受け取りいただけます。"
+msgstr "%3が%plural(%5,%d tick,%d ticks)後に%6よりも低い場合に、ペイアウトをお受け取りいただけます。"
 
 #: Translation for contract type "RANGE"
 msgid "stays between"
@@ -17278,10 +17247,9 @@ msgstr "STAY-IN"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (RANGE - daily)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 stays between %7 to %6 through %5."
 msgid "Win payout if %3 stays between %7 to %6 through %5."
-msgstr "%3が%5までに常に正確に%7と%6の範囲内で留まった場合、%1 %2のペイアウトをお受け取りいただけます。"
+msgstr "%3が%5までに常に%7と%6の範囲内に留まった場合に、ペイアウトをお受け取りいただけます。"
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -17291,10 +17259,9 @@ msgstr "%3が%5までに常に正確に%7と%6の範囲内で留まった場合�
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (RANGE - intraday)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 stays between %7 and %6 through %5 after %4."
 msgid "Win payout if %3 stays between %7 and %6 through %5 after %4."
-msgstr "%3が%4後の%5まで常に正確に%7と%6の範囲内に留まった場合、%1 %2のペイアウトをお受け取りいただけます。"
+msgstr "%3が%4後の%5まで常に%7と%6の範囲内に留まった場合に、ペイアウトをお受け取りいただけます。"
 
 #: Translation for contract type "SPREADD"
 msgid "spread down"
@@ -17360,10 +17327,9 @@ msgstr "BREAK-OUT"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (UPORDOWN - daily)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 goes outside %7 to %6 through %5."
 msgid "Win payout if %3 goes outside %7 to %6 through %5."
-msgstr "%3が%5までに%7と%6のレンジ外で終了した場合、%1 %2のペイアウトをお受け取りいただけます。"
+msgstr "%3が%5までに%7と%6のレンジ外に出た場合に、ペイアウトをお受け取りいただけます。"
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -17373,10 +17339,9 @@ msgstr "%3が%5までに%7と%6のレンジ外で終了した場合、%1 %2の�
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (UPORDOWN - intraday)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 goes outside %7 and %6 through %5 after %4."
 msgid "Win payout if %3 goes outside %7 and %6 through %5 after %4."
-msgstr "%3が%4後の%5までに%7と%6のレンジ外にある場合、%1 %2のペイアウトをお受け取りいただけます。"
+msgstr "%3が%4後の%5までに%7と%6のレンジ外に出た場合に、ペイアウトをお受け取りいただけます。"
 
 #~ msgid "Account Details"
 #~ msgstr "ご口座の詳細情報"
