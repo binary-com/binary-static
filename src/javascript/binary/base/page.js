@@ -807,6 +807,7 @@ Header.prototype = {
             page.client.clear_storage_values();
             LocalStore.remove('client.tokens');
             LocalStore.set('reality_check.ack', 0);
+            sessionStorage.removeItem('withdrawal_locked');
             var cookies = ['login', 'loginid', 'loginid_list', 'email', 'settings', 'reality_check', 'affiliate_token', 'affiliate_tracking', 'residence', 'allowed_markets'];
             var current_domain = ['.' + document.domain.split('.').slice(-2).join('.'), document.domain, '.' + document.domain];
             var cookie_path = ['/'];
@@ -1175,6 +1176,7 @@ Page.prototype = {
         // cleaning the previous values
         page.client.clear_storage_values();
         sessionStorage.setItem('active_tab', '1');
+        sessionStorage.removeItem('withdrawal_locked');
         // set cookies: loginid, login
         page.client.set_cookie('loginid', loginid);
         page.client.set_cookie('login'  , token);

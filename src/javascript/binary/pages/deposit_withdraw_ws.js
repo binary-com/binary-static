@@ -42,15 +42,25 @@ var ForwardWS = (function() {
   }
   function showError(error) {
     hideAll();
-    document.getElementById('deposit-withdraw-error').innerHTML = error.message || text.localize('Sorry, an error occurred while processing your request.');
+    document.getElementById('deposit-withdraw-error').innerHTML = error || text.localize('Sorry, an error occurred while processing your request.');
     $('#deposit-withdraw-error').show();
+  }
+  function lock_withdrawal(withdrawal_locked) {
+    if (withdrawal_locked === 'locked') {
+      showError(text.localize('Withdrawal is locked, please [_1] for more information.')
+                    .replace('[_1]', '<a href="' + page.url.url_for('/contact') + '">' +
+                                     text.localize('contact us') + '</a>'));
+    } else {
+      BinarySocket.send({"cashier_password": "1"});
+    }
   }
   return {
     init: init,
     getCashierType: getCashierType,
     getCashierURL: getCashierURL,
     hideAll: hideAll,
-    showError: showError
+    showError: showError,
+    lock_withdrawal: lock_withdrawal
   };
 })();
 
@@ -59,14 +69,11 @@ pjax_config_page_require_auth("cashier/forwardws", function() {
         onLoad: function() {
           function check_virtual() {
             if (page.client.is_virtual()) {
-              var msg = document.getElementById('deposit-withdraw-message');
-              msg.innerHTML = text.localize('This feature is not relevant to virtual-money accounts.');
-              msg.classList.add('notice-msg', 'center');
+              ForwardWS.showError(text.localize('This feature is not relevant to virtual-money accounts.'));
             }
             return page.client.is_virtual();
           }
           if (!check_virtual()) {
-            ForwardWS.init();
             BinarySocket.init({
               onmessage: function(msg){
                 var response = JSON.parse(msg.data);
@@ -74,6 +81,7 @@ pjax_config_page_require_auth("cashier/forwardws", function() {
                   var type = response.msg_type;
                   var error = response.error;
                   if (type === 'cashier_password' && !error){
+                    ForwardWS.init();
                     if (response.cashier_password === 1) {
                       document.getElementById('deposit-withdraw-message').innerHTML = text.localize('Your cashier is locked as per your request - to unlock it, please click [_1]here')
                                                                                           .replace('[_1]', '<a href="' + page.url.url_for('user/settings/securityws') + '">') + '.</a>';
@@ -93,7 +101,7 @@ pjax_config_page_require_auth("cashier/forwardws", function() {
                       }
                     }
                   } else if (type === 'cashier_password' && error) {
-                    ForwardWS.showError(error);
+                    ForwardWS.showError(error.message);
                   } else if (type === 'cashier' && !error) {
                     ForwardWS.hideAll();
                     document.getElementById('deposit-withdraw-message').innerHTML = '';
@@ -115,21 +123,27 @@ pjax_config_page_require_auth("cashier/forwardws", function() {
                       document.getElementById('deposit-withdraw-message').innerHTML = text.localize('Your account is not fully authenticated. Please visit the <a href="[_1]">authentication</a> page for more information.')
                                                                                           .replace('[_1]', page.url.url_for('cashier/authenticatews'));
                     } else {
-                        ForwardWS.showError(error);
+                        ForwardWS.showError(error.message);
                     }
                   } else if (type === 'set_account_currency' && !error) {
                     ForwardWS.getCashierURL();
                   } else if (type === 'set_account_currency' && error) {
-                    ForwardWS.showError(error);
+                    ForwardWS.showError(error.message);
                   } else if (type === 'tnc_approval' && !error) {
                     ForwardWS.getCashierURL();
                   } else if (type === 'tnc_approval' && error) {
-                    ForwardWS.showError(error);
+                    ForwardWS.showError(error.message);
                   }
                 }
               }
             });
-            BinarySocket.send({"cashier_password": "1"});
+            if (sessionStorage.getItem('withdrawal_locked') === 'locked' && /withdraw/.test(window.location.hash)) {
+              ForwardWS.lock_withdrawal('locked');
+            } else if (!sessionStorage.getItem('withdrawal_locked') && /withdraw/.test(window.location.hash)) {
+              BinarySocket.send({"get_account_status": "1", "passthrough":{"dispatch_to":"ForwardWS"}});
+            } else {
+              BinarySocket.send({"cashier_password": "1"});
+            }
           }
         }
     };
