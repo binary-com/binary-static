@@ -254,7 +254,7 @@ var PricingTable = (function() {
         date_start: form.date_start,
         symbol: form.symbol,
         type: 'japan',
-        payout: 1000
+        payout: state.units * 1000
       });
     }
   }
