@@ -3,9 +3,10 @@ msgstr ""
 "Project-Id-Version: French (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-26 13:38+0000\n"
-"Last-Translator: Chloe Chevreton <chloe-che@hotmail.fr>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/binary/static/fr/>\n"
+"PO-Revision-Date: 2016-06-01 16:58+0000\n"
+"Last-Translator: Sittie Hadjirah Sevilla <sittiebaser@gmail.com>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/binary/static/fr/>"
+"\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,10 +21,19 @@ msgstr "Les options \"binaires\" ou \"digitales\" sont des options qui paient un
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:10
 msgid "\"Binary.com API\" means the Binary.com proprietary set of programmatic routines, protocols, tools and resources created and maintained by Binary.com that allows you to use a registered Application to interface with the Binary.com trading platform."
 msgstr ""
+"« L'API Binary.com » désigne l'ensemble des produits propriétaires de "
+"Binary.com, notamment les routines, protocoles, outils et ressources de "
+"programmation créés et mis en service par Binary.com, vous permettant "
+"d'utiliser une Application enregistrée pour communiquer avec la plateforme "
+"de trading Binary.com."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:11
 msgid "\"Content\" means any data or content from our Website or accessed via the API. Our \"Website\" means Binary.com’s website at www.binary.com and any other website or service owned or operated by Binary.com."
 msgstr ""
+"« Contenu(s) » désigne tous types de données ou de contenus issus de notre "
+"site Web ou accessibles via l'API. Notre « site Web » désigne le site Web de "
+"Binary.com à l'adresse www.binary.com et tout autre site Web ou service "
+"détenu ou exploité par Binary.com."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/main.html.tt:44
 msgid "\"I work with a number of affiliate companies, and it is by far, the friendliest and most helpful that I've found. They go out of their way to provide their affiliates with all the tools, advice and support they need in order to succeed. To top it all off, they offer some of the most handsome rebates in the industry.\" - <strong>Vinod Gorasia, Marketing Manager, Agora Lifestyles</strong>."
@@ -32,6 +42,9 @@ msgstr "« Je travaille avec plusieurs sociétés affiliées, et celle-ci est d
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:12
 msgid "\"Third Party Provider(s)\" means the third party (non-affiliated) entity that makes available features and functions through use of the Binary.com API."
 msgstr ""
+"« Tiers fournisseur(s) » désigne la tierce partie (non-affiliée) offrant "
+"l'accès à différentes caractéristiques et fonctionnalités par le biais de "
+"l'API Binary.com."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:714
 #: /home/git/translations/binary-static/src/templates/toolkit/account/maltainvestws.html.tt:394
@@ -118,7 +131,10 @@ msgstr "%1 ne facture aucun frais de transfert."
 #: /home/git/translations/binary-static/src/templates/haml/layouts/default/head.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/global/head.html.tt:7
 msgid "%1 gives everyone an easy and exciting way to participate in the financial markets. Trade with as little as $1 USD on major currencies, indices and commodities."
-msgstr "%1 offre une plateforme de trading simple, permettant à chacun de profiter des nombreuses opportunités qu'offrent les marchés financiers. Négociez les devises, les indices et les matières premières à partir de 1 USD seulement."
+msgstr ""
+"%1 offre une plateforme de trading simple, permettant à chacun de profiter "
+"des nombreuses opportunités qu'offrent les marchés financiers. Négociez les "
+"devises, les indices et les matières premières à partir de 1 USD seulement."
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/get_started/volidx_markets.html.haml:1
@@ -135,7 +151,9 @@ msgstr "%1 a acquis une réputation solide en adhérant à des normes éthiques 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "%1 has several exceptional career opportunities for Customer Service Professionals."
-msgstr "%1 offre des opportunités de carrière exceptionnelles aux professionnels du service client."
+msgstr ""
+"%1 offre des possibilités de carrière exceptionnelles pour les "
+"professionnels du service à la clientèle."
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/get_started/beginners_faq.html.haml:1
@@ -186,7 +204,10 @@ msgstr "%1 appartient au groupe d'entreprises Binary Ltd. et est exploitée par 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "%1 is seeking a junior to mid-career professional with exceptional administrative and organization skills to join its General Affairs Team."
-msgstr "%1 recherche un professionnel en début ou milieu de carrière, doté d'excellentes compétences administratives et organisationnelles, désireux de rejoindre son équipe de gestion administrative."
+msgstr ""
+"%1 recherche un professionnel en début ou milieu de carrière, doté "
+"d'excellentes compétences administratives et organisationnelles, désireux de "
+"rejoindre notre équipe de gestion des affaires générales."
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
@@ -351,7 +372,14 @@ msgstr "L'équipe de gestion des TI de %1 est responsable de la conception, du d
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "%1’s Quantitative Analytics group is responsible for the pricing of binary options offered on its website, as well as the risk management and profitability of its options book. Since all dealing on the company’s website is fully automated, our pricing and risk management algorithms must take full account of real-time pricing parameters, data feeds irregularities and latencies."
-msgstr "L'équipe d'analystes quantitatifs de %1 est responsable de la tarification des options binaires proposées sur notre site Web, de la gestion du risque et de la rentabilité du portefeuille d'options de la société.  Toutes les opérations de courtage sont automatisées sur le site Binary.com. Par conséquent, nos algorithmes de cotation et de gestion du risque doivent prendre en compte les paramètres de cotation en temps réel, les irrégularités des flux de données et les latences."
+msgstr ""
+"L'équipe d'analystes quantitatifs de %1 est responsable de la tarification "
+"des options binaires proposées sur notre site Web, de la gestion du risque "
+"et de la rentabilité du portefeuille d'options de la société.  Toutes les "
+"opérations de courtage sont automatisées sur le site Binary.com. Par "
+"conséquent, nos algorithmes de tarification et de gestion du risque doivent "
+"prendre en compte les paramètres de cotation en temps réel, les "
+"irrégularités des flux de données et les latences."
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/smart_indices.html.haml:1
@@ -362,6 +390,13 @@ msgstr "Les FX intelligents de %1 sont des marchés intelligents qui mesurent la
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "%1’s principal Anti-Fraud Officer is responsible for the exercise of exceptional client relationship management skills applied to the prevention of fraudulent activities in payments processing and business transactions. He or she will be expected to partner with our payments and compliance teams in resolving payment queries; administering chargebacks; conducting anti-money laundering audits, and implement a broad array of fraud prevention measures."
 msgstr ""
+"Le responsable de la lutte anti-fraude de %1 met à profit ses compétences "
+"exceptionnelles en termes de gestion de la relation client afin d'assurer la "
+"prévention des activités frauduleuses concernant le traitement des paiements "
+"et les transactions commerciales. He or she will be expected to partner with "
+"our payments and compliance teams in resolving payment queries; "
+"administering chargebacks; conducting anti-money laundering audits, and "
+"implement a broad array of fraud prevention measures."
 
 #. (url_for('/')
 #: /home/git/translations/binary-static/src/templates/haml/get_started/beginners_faq.html.haml:1
@@ -933,10 +968,9 @@ msgid "<strong>Payment options</strong> - %1 offers many payment methods, such a
 msgstr "<strong>Options de paiement</strong> - %1 offre plusieurs moyens de paiement comme des cartes de crédit/débit, les virements bancaires, la monnaie électronique et les portefeuilles électroniques."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
-#, fuzzy
 #| msgid "<strong>To get your API token:</strong>"
 msgid "<strong>Preferences:</strong>"
-msgstr "<strong>Pour obtenir votre token d'API :</strong>"
+msgstr "<strong>Préférences :</strong>"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/benefits_of_trading_binaries.html.haml:1
 msgid "<strong>Quiet markets</strong> - choose the no-touch trade, the stays-between trade, or the ends-between trade."
@@ -1107,7 +1141,7 @@ msgstr "Un véritable partenariat"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "A background in IT development"
-msgstr ""
+msgstr "Une expérience dans le domaine du développement des TI"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/glossary.html.haml:1
 msgid "A binary option is a contract purchased by a trader, which pays a pre-determined amount if their prediction is correct."
@@ -1120,6 +1154,7 @@ msgstr "Une option binaire est une option avec un gain fixe déterminé au débu
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "A broad array of HR-related administrative tasks"
 msgstr ""
+"Un large éventail de tâches administratives liées aux ressources humaines"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/main.html.tt:52
 msgid "A dedicated affiliate team to provide you with the best service possible"
@@ -1128,10 +1163,14 @@ msgstr "Une équipe affiliée spécialisée pour vous offrir les meilleurs servi
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "A degree in Accounting or Finance, and at least three years of experience working in Internal Audit or Corporate Governance"
 msgstr ""
+"Un diplôme en comptabilité ou en finance, et au moins trois ans d'expérience "
+"dans le domaine de l'audit interne ou de la gouvernance d'entreprise"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "A degree major in Accounting or other relevant professional qualifications"
 msgstr ""
+"Diplôme spécialisé en comptabilité ou autres qualifications professionnelles "
+"pertinentes"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/glossary.html.haml:1
 msgid "A derivative is a financial instrument whose value is determined by reference to an underlying market. Derivatives are commonly traded in the inter-bank market, and binaries are one of the simplest forms of derivatives."
@@ -1139,11 +1178,13 @@ msgstr "Un dérivé est instrument financier dont la valeur est déterminée par
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "A detail orientation with the ability to detect patterns"
-msgstr ""
+msgstr "Souci du détail et capacité à déceler les tendances"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "A full understanding of, and a keen interest in, corporate legal compliance"
 msgstr ""
+"Une compréhension approfondie de la conformité juridique des entreprises et "
+"un intérêt prononcé pour ce domaine"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:542
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:666
@@ -1173,6 +1214,8 @@ msgstr "Une préférence et une passion pour Linux et les plateformes open sourc
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr ""
+"Capacité à résoudre les problèmes et à proposer des solutions adaptées aux "
+"clients de façon proactive"
 
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Charting.pm:481
 msgid "A problem occurred while connecting to the server. Please try again later."
@@ -1188,11 +1231,13 @@ msgstr "Une copie scannée de votre passeport ou de votre permis de conduire."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "A strong and passionate interest in Marketing and Advertising"
-msgstr ""
+msgstr "Intérêt prononcé et passion pour le marketing et la publicité"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "A strong and passionate interest in Social Media, Marketing, and Advertising"
 msgstr ""
+"Intérêt prononcé et passion pour les médias sociaux, le marketing et la "
+"publicité"
 
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Charting.pm:613
 msgid "A technical indicator which measures overbought/oversold levels in a very similar way to that of an Oscillator indicator, except that %R is plotted upside-down 0% to -100%. Readings in the range of 80 to 100% indicate that the security is oversold while readings in the 0 to 20% range suggest that it is overbought."
@@ -1200,27 +1245,31 @@ msgstr "Un indicateur technique mesurant les niveaux d'achats/ventes excessifs d
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "A tertiary level education"
-msgstr ""
+msgstr "Un diplôme d'enseignement supérieur"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/glossary.html.haml:1
 msgid "A tick is the minimum upward or downward movement in the price of a market."
 msgstr "Un intervalle est le mouvement ascendant ou descendant minimal du prix d'un marché."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
+#, fuzzy
 msgid "A university degree in Marketing, Communication, Business Administration, or related discipline"
-msgstr ""
+msgstr "Diplôme universitaire de marketing, de communication"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
+#, fuzzy
 msgid "A university degree in Marketing, Journalism, Communications, or other business-related discipline"
-msgstr ""
+msgstr "Diplôme universitaire de marketing, de journalisme, de communication"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "A university degree in a related field is a plus"
-msgstr ""
+msgstr "Un diplôme universitaire dans un domaine connexe serait un plus"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "A university degree in marketing or computer science is a plus"
 msgstr ""
+"Un diplôme universitaire dans le domaine du marketing ou de l'informatique "
+"serait un plus"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "A university degree or accredited translation certification preferred"
@@ -1261,15 +1310,17 @@ msgstr ""
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Ability to speak multiple languages"
-msgstr ""
+msgstr "Capacité à parler"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
+#, fuzzy
 msgid "Ability to speak, read, and write multiple languages"
-msgstr ""
+msgstr "Capacité à parler"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Ability to work in a multicultural and international environment"
 msgstr ""
+"Capacité à travailler dans un environnement multiculturel et international"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Ability to work with a simple web-based translation tool"
@@ -1290,10 +1341,9 @@ msgid "About Us and our Regulator"
 msgstr "À propos de nous et notre régulateur"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:16
-#, fuzzy
 #| msgid "About Us and our Regulator"
 msgid "About Us and these Terms"
-msgstr "À propos de nous et notre régulateur"
+msgstr "À propos de nous et des présentes Conditions"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/account/maltainvestws.html.tt:440
 #: /home/git/translations/binary-static/src/templates/toolkit/register/risk_disclaimer_message.html.tt:11
@@ -1447,6 +1497,8 @@ msgstr ""
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Administering the company’s semi-annual performance appraisal process"
 msgstr ""
+"Administrer la procédure semestrielle d'évaluation des performances mise en "
+"place par la société"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:625
 #: /home/git/translations/binary-static/src/templates/haml/static/job_descriptions.html.haml:1
@@ -1471,6 +1523,8 @@ msgstr ""
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Advising senior managers regarding salary negotiations and job offers"
 msgstr ""
+"Conseiller les cadres supérieurs de la société concernant les négociations "
+"de salaire et les offres d'emploi"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:112
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/signup.html.tt:2
@@ -1490,10 +1544,9 @@ msgid "Affiliate Program"
 msgstr "Programme d'affiliation"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:26
-#, fuzzy
 #| msgid "Agreement for documents"
 msgid "Agreement Restrictions"
-msgstr "Agreement for documents"
+msgstr "Restrictions applicables à l'Accord"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/account/japanws.html.tt:412
 msgid "Agreement for documents"
@@ -1581,7 +1634,7 @@ msgstr "Montant par point de base"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
-msgstr ""
+msgstr "Un diplôme d'études supérieures ou une licence universitaire"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/glossary.html.haml:1
 msgid "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target."
@@ -1641,6 +1694,8 @@ msgstr "Un oscillateur utilisé pour identifier les relevés d'achats ou de vent
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Analyze data regarding fraud, risk assessment, and anti-money laundering"
 msgstr ""
+"Analyse de données concernant les fraudes, l'évaluation du risque et la "
+"lutte contre le blanchiment d'argent"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/careers.html.haml:1
 msgid "And your weekends can take you to some of the world’s most exotic and beautiful places."
@@ -1686,6 +1741,9 @@ msgstr ""
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:191
 msgid "Any failure on your part to maintain the security of any security devices or procedures used in or in association with the Binary.com API;"
 msgstr ""
+"Tout manquement de votre part au maintien de la sécurité de tout type de "
+"dispositif ou de procédure de sécurité utilisé au sein de l'API Binary.com "
+"ou en lien avec celle-ci ;"
 
 #. (website)
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:69
@@ -1704,6 +1762,9 @@ msgstr "Toute notification donnée ou faite à la Société dans le cadre de cet
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:193
 msgid "Any third party claims arising out of, or relating to, your use of, or inability to use, the Binary.com API."
 msgstr ""
+"Toute réclamation émanant d'une tierce partie en conséquence de, ou en lien "
+"avec, votre utilisation de l'API Binary.com ou votre incapacité à utiliser "
+"celle-ci."
 
 #. (broker_name)
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/faq.html.tt:14
@@ -1795,23 +1856,50 @@ msgstr "AroonOsc"
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "As Internal Auditor, you will perform unique, risk-based internal audits on the Binary Ltd. Group of companies. You will also be involved in risk management, evaluation of regulatory compliance, as well as work with the Head of Departments to improve business processes and support the realization of audit recommendations."
 msgstr ""
+"En tant qu'auditeur interne, vous réaliserez des audits internes basés sur "
+"les risques afin de mettre au point des solutions sur-mesure pour le groupe "
+"de sociétés Binary Ltd. Vous interviendrez également dans la gestion du "
+"risque, l'évaluation de la conformité réglementaire, tout en collaborant "
+"avec le directeur du service d'audit interne pour améliorer les processus "
+"opérationnels et promouvoir la réalisation des recommandations d'audit."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "As a General Affairs Executive, you will provide administrative support to several departments in areas related to vendor management, event planning, accounting, and human resources administration to name a few."
-msgstr "En tant que directeur administratif, vous prendrez en charge l'administration de différents services dans des domaines tels que la gestion des fournisseurs, la gestion événementielle, la comptabilité et l'administration des ressources humaines, entre autres."
+msgstr ""
+"En tant que chargé des affaires générales, vous assisterez différents "
+"services dans des domaines tels que la gestion des fournisseurs, la gestion "
+"événementielle, la comptabilité et l'administration des ressources humaines, "
+"entre autres."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "As a Senior Front-End Developer, you’ll be tasked with writing robust, high-quality, production-ready code; refactoring and optimizing a large and complex legacy code base; and contributing to the architecture that drives our high-traffic global website."
-msgstr "En tant que développeur front-end expérimenté, vous rédigerez des lignes de code de haute qualité, fiables et prêtes à l'emploi. Vous prendrez également en charge le réusinage de code tout en contribuant à améliorer l'architecture essentielle au bon fonctionnement de notre site Web international à fort trafic."
+msgstr ""
+"En tant que développeur front-end sénior, vous rédigerez des lignes de code "
+"de haute qualité, fiables et prêtes à l'emploi. Vous prendrez également en "
+"charge le réusinage de code tout en contribuant à améliorer l'architecture "
+"essentielle au bon fonctionnement de notre site Web international à fort "
+"trafic."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "As a Senior Perl Developer, you’ll be tasked with writing robust, high-quality, production-ready code and contributing to the architecture that drives our high-traffic global website."
-msgstr "En tant que développeur Perl expérimenté, vous rédigerez des lignes de code de haute qualité, fiables et prêtes à l'emploi, tout en contribuant à améliorer l'architecture essentielle au bon fonctionnement de notre site Web international à fort trafic."
+msgstr ""
+"En tant que développeur Perl sénior, vous rédigerez des lignes de code de "
+"haute qualité, fiables et prêtes à l'emploi, tout en contribuant à améliorer "
+"l'architecture essentielle au bon fonctionnement de notre site Web "
+"international à fort trafic."
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "As a developer in the %1 Quant Group, you will be responsible for the implementation and maintenance of the company's risk management and derivatives pricing software. You and the members of your team will develop software designed to study the market micro-structure, optimize existing code, manage financial data feeds and ensure the continuous running of our automated trading platform."
-msgstr "En tant que développeur au sein de l'équipe d'analystes quantitatifs de %1, vous serez responsable de l'installation et de la maintenance du logiciel de la société, permettant la gestion du risque et la tarification des produits dérivés.  En collaboration avec les membres de votre équipe, vous développerez un logiciel dédié à l'étude de la microstructure du marché et optimiserez le code existant. Vous assurerez la gestion des flux de données financières et veillerez au bon fonctionnement en continu de notre plateforme de trading automatisée."
+msgstr ""
+"En tant que développeur au sein de l'équipe d'analystes quantitatifs de %1, "
+"vous prendrez en charge l'installation et la maintenance du logiciel de la "
+"société, dédié à la gestion du risque et la tarification des produits "
+"dérivés. En collaboration avec les membres de votre équipe, vous "
+"développerez un logiciel dédié à l'étude de la microstructure du marché et "
+"optimiserez le code existant. Vous assurerez la gestion des flux de données "
+"financières et veillerez au bon fonctionnement en continu de notre "
+"plateforme de trading automatisée."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
 msgid "As a first step, please send us an application with:"
@@ -1821,18 +1909,40 @@ msgstr "Pour commencer, veuillez nous envoyer une demande indiquant :"
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "As a member of our global Client Service Team you will serve as the voice of our customers by resolving and reducing client service issues."
 msgstr ""
+"En tant que membre de notre équipe internationale de service à la clientèle, "
+"vous prendrez en charge la résolution des questions liées au service à la "
+"clientèle tout en travaillant à réduire l'incidence des problèmes rencontrés."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "As an Accounts And Payments Executive, you will be responsible for the processing of client payments, handling and resolving client payment queries, assisting with the management accounts of the companies within our group, performing reconciliations, preparing reports, and constantly liaising with all other departments within the company in relation to client payments and accounts. You will work within a multi-national team, using the proprietary accounting and backoffice systems provided by the company."
 msgstr ""
+"En tant que responsable de la comptabilité et des paiements, vous prendrez "
+"en charge le traitement des paiements client, le traitement et la résolution "
+"des demandes de nos clients concernant les paiements, vous interviendrez "
+"également en comptabilité analytique pour gérer les comptes des différentes "
+"entreprises réunies au sein de notre groupe, vous effectuerez les "
+"réconciliations et préparerez différents rapports, en liaison constante avec "
+"tous les autres services assurant les paiements client et la gestion des "
+"comptes au sein de notre société. Vous travaillerez au sein d'une équipe "
+"multinationale et utiliserez les systèmes de comptabilité et de back-office "
+"fournis par notre société."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:111
 msgid "As between you and us, we own all rights, title, and interest, including all intellectual property rights, in and to, the Binary.com API, and all elements, components, and executables of the Binary.com API."
 msgstr ""
+"Entre vous et nous, nous détenons tous les droits, titres et intérêts, y "
+"compris tous les droits de propriété intellectuelle afférents à l'API "
+"Binary.com, ainsi que tous les éléments, composants et fichiers exécutables "
+"de l'API Binary.com."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:23
 msgid "As long as you follow these Terms, we grant you a limited, non-exclusive, non-assignable, non-transferable, terminable license to use the Binary.com API to develop, test, and support your Application, and to let your customers use your integration of the Binary.com API within your Application."
 msgstr ""
+"Sous réserve du respect de ces Conditions, nous vous octroyons une licence "
+"restreinte, non exclusive, incessible, non transférable et révocable, vous "
+"autorisant à utiliser l'API Binary.com pour développer, tester et supporter "
+"votre Application, et permettant à vos clients d'utiliser l'intégration de "
+"l'API Binary.com dans votre Application."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "As our DevOps Manager/Team Lead, you'll be responsible for the training, development and direction of a world class Linux-based Systems Administration team."
@@ -1883,14 +1993,20 @@ msgstr ""
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Assist senior members of the marketing team in implementing a broad array of promotional campaigns"
 msgstr ""
+"Assister les cadres supérieurs de l'équipe marketing dans la mise en œuvre "
+"d'un large éventail de campagnes promotionnelles"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Assisting the Head of Compliance in applying for the licenses required for group companies in new jurisdictions"
 msgstr ""
+"Assister la directrice de la conformité dans l'obtention des licences "
+"nécessaires aux sociétés de notre groupe dans les nouvelles juridictions"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Assisting with the regulatory and statutory audit of Binary Group companies worldwide"
 msgstr ""
+"Contribuer au bon déroulement de l'audit réglementaire et légal des sociétés "
+"Binary Group à l'international"
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/user_testing.html.haml:1
@@ -1900,10 +2016,14 @@ msgstr ""
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:221
 msgid "At any time and for any reason or no reason, the Company, in its sole discretion, may:"
 msgstr ""
+"À tout moment, avec ou sans raison et pour quelque raison que ce soit, la "
+"Société peut, à sa seule discrétion :"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "At least 1 year working experience is required for this position"
 msgstr ""
+"Pour ce poste, vous devez justifier d'au moins un an d'expérience "
+"professionnelle"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "At least five years of experience with affiliate marketing, growth hacking, business development, and other closely related skills"
@@ -1911,7 +2031,7 @@ msgstr ""
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Audit deposit patterns and take action on fraud or abuse"
-msgstr ""
+msgstr "Audit des activités de dépôt et action contre les fraudes ou les abus"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:81
 msgid "Aug"
@@ -2175,11 +2295,18 @@ msgstr "Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Binary Group Services is searching for talented and motivated Perl developers who are looking for a chance to excel. If you have the skill set we seek, you’ll become a valued member of a highly competent back-end development team engaged in driving our binary options trading systems to new heights."
-msgstr "Le groupe Binary recrute des développeurs Perl talentueux et motivés, désireux d'exceller dans leur domaine.  Si vous possédez les compétences que nous recherchons, vous deviendrez un maillon indispensable de notre équipe experte en développement back-end, chargée de propulser nos systèmes de trading d'options binaires au sommet du marché."
+msgstr ""
+"Binary Group Services recrute des développeurs Perl talentueux et motivés, "
+"désireux d'exceller dans leur domaine. Si vous possédez les compétences que "
+"nous recherchons, vous deviendrez un maillon indispensable de notre équipe "
+"experte en développement back-end, chargée de propulser nos systèmes de "
+"trading d'options binaires au sommet du marché."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Binary Group Services is searching for talented and motivated front-end developers who are looking for a chance to excel."
-msgstr "Le groupe Binary recrute des développeurs front-end talentueux et motivés, désireux d'exceller dans leur domaine."
+msgstr ""
+"Binary Group Services recrute des développeurs front-end talentueux et "
+"motivés, désireux d'exceller dans leur domaine."
 
 #. (website)
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/risk_disclaimer.html.tt:7
@@ -2268,10 +2395,9 @@ msgid "Binary.com Open-Source Projects"
 msgstr "Binary.com Projets Open Source"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:109
-#, fuzzy
 #| msgid "Binary.com academy"
 msgid "Binary.com Property"
-msgstr "Académie Binary.com"
+msgstr "Propriété de Binary.com"
 
 #: /home/git/translations/binary-static/src/templates/haml/home/index.html.haml:1
 msgid "Binary.com academy"
@@ -2461,20 +2587,25 @@ msgstr "Il est important que vous lisiez et compreniez le contenu des présentes
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:19
 msgid "By registering a software application, website, or product you create or a service you offer (an \"Application\"), you acknowledge that you have read and understood and agree to be bound by these terms."
 msgstr ""
+"En enregistrant une application logicielle, un site Web, un produit ou un "
+"service créé ou proposé par vous (une « Application »), vous reconnaissez "
+"avoir lu et compris ces conditions et vous acceptez d'être lié par celles-ci."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:130
 msgid "By submitting suggestions or other feedback regarding the Binary.com API to the Company (\"Contributions\"), you acknowledge and agree that:"
 msgstr ""
+"En nous soumettant des suggestions ou des commentaires concernant l'API "
+"Binary.com (« Contributions »), vous reconnaissez et acceptez les clauses "
+"suivantes :"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/faq.html.tt:67
 msgid "By the 15th of every month, you will receive the commission earned during the previous calendar month."
 msgstr "Le 15e jour de chaque mois au plus tard, vous recevrez la commission gagnée au cours du précédent mois civil."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:59
-#, fuzzy
 #| msgid "Contest<br>Performance"
 msgid "Caching Content for Performance"
-msgstr "Performance de<br>concours"
+msgstr "Mise en mémoire cache et optimisation de la performance"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/faq.html.tt:48
 msgid "Can I become an affiliate even if I don't have a website?"
@@ -2843,6 +2974,9 @@ msgstr "Ferme tôt (à %1)"
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Collaborate with members of our IT Group to identify innovative ways to improve our website’s capability and performance"
 msgstr ""
+"Collaborer avec les membres de notre équipe de gestion des TI pour améliorer "
+"les capacités et les performances de notre site Web à travers des solutions "
+"innovantes"
 
 #. (2000)
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Backoffice/Form.pm:673
@@ -2939,7 +3073,7 @@ msgstr "Chargé de conformité"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:85
 msgid "Compliance with and Amendments to These Terms"
-msgstr ""
+msgstr "Conformité aux amendements apportés à ces Conditions"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:23
 #, fuzzy
@@ -2960,10 +3094,9 @@ msgid "Conduct disaster and recovery planning and execution"
 msgstr "Gérer la planification et la mise en œuvre d'un plan de reprise après catastrophe"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:199
-#, fuzzy
 #| msgid "Client's Liability"
 msgid "Confidentiality"
-msgstr "Responsabilité du Client"
+msgstr "Confidentialité"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:562
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/paymentagent_transferws.html.tt:25
@@ -3183,12 +3316,13 @@ msgstr ""
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Contribute your ideas, energy, and creativity to further the company’s dynamic branding efforts"
 msgstr ""
+"Mobiliser vos idées, votre énergie et votre créativité pour soutenir les "
+"initiatives de la société en termes d'image de marque (branding)"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:128
-#, fuzzy
 #| msgid "A Web Application using the Binary.com API"
 msgid "Contributions to the Binary.com API"
-msgstr "Une Application Web qui utilise l'API de Binary.com"
+msgstr "Contributions à l'API Binary.com"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/partners.html.haml:1
 msgid "Contributors"
@@ -3268,6 +3402,9 @@ msgstr "Créer un nouveau jeton"
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Create clear, concise and engaging content for display on the company’s website, blog, social media outlets, and marketing materials"
 msgstr ""
+"Création de contenus clairs, concis et attrayants destinés à la diffusion "
+"sur le site Web et le blog de la société, sur les réseaux sociaux et dans le "
+"cadre de nos campagnes marketing"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Create clear, concise, and engaging content that effectively promotes the company’s trading platform and product offerings in a variety of formats."
@@ -3285,7 +3422,9 @@ msgstr "%1 recherche plusieurs graphistes talentueux, désireux de mettre à pro
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Creating interfaces and tools to access market information, real-time and historical analysis of trading strategies"
-msgstr "Création d'interfaces et d'outils permettant d'accéder aux informations de marché et à l'analyse historique des stratégies de trading en temps réel"
+msgstr ""
+"Création d'interfaces et d'outils permettant d'accéder aux informations de "
+"marché et à l'analyse des stratégies de trading historique et en temps réel"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:197
 msgid "Credit/Debit"
@@ -3720,10 +3859,9 @@ msgid "Define your position"
 msgstr "Définissez votre position"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:8
-#, fuzzy
 #| msgid "Define your position"
 msgid "Definitions"
-msgstr "Définissez votre position"
+msgstr "Définitions"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:348
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Charting.pm:518
@@ -3744,7 +3882,7 @@ msgstr "Supprimer toutes les lignes ?"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:64
 msgid "Delete for Breach"
-msgstr ""
+msgstr "Suppression pour non-respect des Conditions"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Demonstrate the ability to think / act quickly and multi-task as needed to execute effective campaigns"
@@ -3875,8 +4013,11 @@ msgid "DevOps Manager / Team Lead"
 msgstr ""
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
+#, fuzzy
 msgid "Develop and maintain a consistent, engaging brand voice throughout all social-media channels"
 msgstr ""
+"Développer et maintenir un message de marque cohérent et attrayant par le "
+"biais des canaux sociaux dont vous avez la charge"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Develop content as necessary to promote the company through social media"
@@ -3923,10 +4064,9 @@ msgid "Disclaimer"
 msgstr "Non-responsabilité"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:167
-#, fuzzy
 #| msgid "Disclaimer"
 msgid "Disclaimers"
-msgstr "Non-responsabilité"
+msgstr "Clauses de non-responsabilité"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/conflicts_policy.html.tt:20
 msgid "Disclosure: general"
@@ -3996,7 +4136,7 @@ msgstr "Vous désirez voir Binary.com en d'autres langues, ou vous pouvez suggé
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Document account chargebacks"
-msgstr ""
+msgstr "Administration des rejets de débit"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Document department processes, to enhance the marketing team’s ability to execute repeated tasks efficiently and effectively"
@@ -4055,6 +4195,9 @@ msgstr "Durant notre processus d'application, nous pouvons vous demander de l'in
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:119
 msgid "During the term of this Agreement, you grant us a royalty-free, non-exclusive, worldwide, irrevocable right, under all of your intellectual property rights, to:"
 msgstr ""
+"Pour la durée de cet Accord, vous nous octroyez, en vertu de l'ensemble de "
+"vos droits de propriété intellectuelle, le droit libre de redevances, non "
+"exclusif, mondial et irrévocable de prendre les mesures suivantes :"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_methods.html.tt:221
 msgid "E-cash"
@@ -4143,6 +4286,8 @@ msgstr "Facilité de mouvement"
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Educate prospects, clients, and partners regarding the benefits of %1’s innovative online trading platform"
 msgstr ""
+"Sensibilisation des prospects, des clients et des partenaires aux avantages "
+"de la plateforme de trading en ligne innovante de %1"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:697
 #: /home/git/translations/binary-static/src/templates/haml/layouts/default/footer.html.haml:1
@@ -4152,10 +4297,9 @@ msgid "Education"
 msgstr "Formation"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:240
-#, fuzzy
 #| msgid "Termination"
 msgid "Effect of Termination"
-msgstr "Fin"
+msgstr "Prise d'effet de la résiliation"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Effective English language skills, with precise attention to detail regarding punctuation, spelling, grammar, and syntax"
@@ -4164,18 +4308,22 @@ msgstr ""
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Effective PC skills with extensive experience in MS Office applications"
 msgstr ""
+"Bonnes compétences informatiques et solide expérience des applications de MS "
+"Office"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Effective analytical and administrative skills"
-msgstr ""
+msgstr "Solides compétences analytiques et administratives"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Effective interpersonal skills, with the ability to mediate situations, resolve disputes, and implement effective solutions"
 msgstr ""
+"Bonnes aptitudes relationnelles et de médiation, capacité à résoudre les "
+"conflits et à mettre en œuvre des solutions efficaces"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Effectively monitor daily client activity"
-msgstr ""
+msgstr "Contrôle efficace des activités quotidiennes des clients"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:111
 #, fuzzy
@@ -4251,7 +4399,9 @@ msgstr ""
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Engage in data mining using SQL databases, R/S-Plus, OLAP and other analytical tools"
-msgstr "Exploration de données utilisant les bases de données SQL, R/S-Plus, le traitement analytique en ligne (OLAP) et d'autres outils analytiques"
+msgstr ""
+"Assurer l'exploration de données en utilisant les bases de données SQL, R/S-"
+"Plus, le traitement analytique en ligne (OLAP) et d'autres outils analytiques"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Enhance and proactively manage the company's social-media efforts, using a variety of channels to attract and nurture prospects, clients, partners, and recruits."
@@ -4281,6 +4431,8 @@ msgstr ""
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Ensuring that the Binary Group of companies are in full compliance with the regulatory regimes to which they are subject"
 msgstr ""
+"Veiller à la parfaite conformité des sociétés Binary Group aux régimes de "
+"réglementation en vigueur"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:159
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/form/barrier.html.tt:3
@@ -4350,19 +4502,19 @@ msgstr "Exemple :"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Excellent English language (written and oral) communication skills"
-msgstr ""
+msgstr "Parfaite maîtrise de l'anglais (écrit et oral)"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Excellent English language skills (both oral and written)"
-msgstr ""
+msgstr "Excellente maîtrise de l'anglais (oral et écrit)"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Excellent English language skills, both oral and written"
-msgstr ""
+msgstr "Excellente maîtrise de l'anglais (oral et écrit)"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Excellent IT/office skills"
-msgstr ""
+msgstr "Excellente maîtrise des outils informatiques et bureautiques"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Excellent oral and written communication skills"
@@ -4371,22 +4523,36 @@ msgstr "Excellentes capacités de communication orale et écrite"
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Excellent written and verbal communication skills in both English and Bahasa Malaysia"
 msgstr ""
+"Excellente maîtrise de la communication orale et écrite en anglais et en "
+"malaisien"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:113
 msgid "Except for the license granted in this Agreement, the Company does not grant you any right, title, or interest in the Binary.com API. You agree to take such actions as the Company may reasonably request to perfect the Company’s rights to the Binary.com API."
 msgstr ""
+"À l'exception de la licence octroyée dans le cadre du présent Accord, la "
+"Société ne vous cède aucun droit, titre ou intérêt concernant l'API "
+"Binary.com. Vous acceptez de prendre les mesures que la Société peut "
+"raisonnablement exiger afin de faire valoir les droits de la Société sur "
+"l'API Binary.com."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:118
 msgid "Except to the extent your Application contains the Binary.com API, the Company claims no ownership or control over your Application."
 msgstr ""
+"Sauf dans la mesure où votre Application contient l'API Binary.com, la "
+"Société de revendique aucun droit de propriété ou de contrôle sur votre "
+"Application."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Exceptional communication skills in English, in both oral and written form"
 msgstr ""
+"Excellentes aptitudes à la communication en anglais, à l'oral et à l'écrit"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
+#, fuzzy
 msgid "Exceptional organizational skills; detail orientation; strong work ethic; and efficient multi-tasking capabilities"
 msgstr ""
+"Excellentes compétences organisationnelles ; sens du détail et éthique de "
+"travail irréprochable"
 
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Backoffice/Form.pm:310
 #: /home/git/translations/binary-static/src/templates/toolkit/account/self_exclusionws.html.tt:104
@@ -4474,6 +4640,7 @@ msgstr ""
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Experience in an anti-fraud or risk management role"
 msgstr ""
+"Expérience sur un poste lié à la lutte anti-fraude ou à la gestion du risque"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Experience in exotic options pricing, volatility forecasts, high-frequency trading and the analysis of market inefficiencies"
@@ -4482,6 +4649,8 @@ msgstr "Expérience dans les domaines des options exotiques, des prévisions de 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Experience in the financial services industry is preferred"
 msgstr ""
+"Il est préférable de justifier d'une expérience dans le secteur des services "
+"financiers"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Experience with Git"
@@ -4489,7 +4658,9 @@ msgstr "Expérience du travail avec Git"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Experience with Postgres or another RDBMS a plus"
-msgstr "Une expérience préalable de Postgres ou d'un autre système de gestion de base de données relationnelle est un plus"
+msgstr ""
+"Une expérience préalable de Postgres ou d'un autre système de gestion de "
+"base de données relationnelle serait un plus"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Experience with languages like C/C++/R/Python/VBA/Mat lab/SQL would be a plus"
@@ -4513,7 +4684,7 @@ msgstr "Expérience du travail sur les frameworks JavaScript (côté client) tel
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Experience working within an international environment"
-msgstr ""
+msgstr "Expérience du travail au sein d'un environnement international"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Expertise in cloud solutions"
@@ -4753,11 +4924,11 @@ msgstr "Suivez un guide simple étape-par-étape du trading binaire."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:78
 msgid "Follow the Law and These Terms"
-msgstr ""
+msgstr "Respect de la loi et des présentes Conditions"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Follow up on rejected deposits"
-msgstr ""
+msgstr "Suivi des rejets de fonds"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:752
 #, fuzzy
@@ -4869,6 +5040,9 @@ msgstr "Webinaires gratuits"
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Fresh graduates who meet our basic requirements and are passionate about pursuing a professional career in administrative services are welcome to apply."
 msgstr ""
+"Les jeunes diplômés satisfaisant nos exigences de base et souhaitant "
+"poursuivre une carrière professionnelle dans le domaine des services "
+"administratifs peuvent postuler."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:72
 msgid "Friday"
@@ -4902,6 +5076,11 @@ msgstr "De plus, la Société, sous les circonstances ci-dessus, ou toutes autre
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:173
 msgid "Furthermore, the Company disclaims all liability for any malfunctioning, impossibility of access, or poor use conditions of the Binary.com API due to inappropriate equipment, disturbances related to internet service providers, to the saturation of the internet network, and for any other reason."
 msgstr ""
+"En outre, la Société décline toute responsabilité concernant tout type de "
+"dysfonctionnement, d'impossibilité d'accès, ou de mauvaises conditions "
+"d'utilisation de l'API Binary.com pouvant découler d'équipements "
+"inappropriés, de perturbations liées aux fournisseurs d'accès Internet, de "
+"la saturation du réseau Internet ou de toute autre situation."
 
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Charting.pm:412
 msgid "Futures"
@@ -4943,10 +5122,9 @@ msgid "General"
 msgstr "Généralités"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:248
-#, fuzzy
 #| msgid "General Risks"
 msgid "General Provisions"
-msgstr "Risques Généraux"
+msgstr "Clauses générales"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/account/japanws.html.tt:449
 #: /home/git/translations/binary-static/src/templates/toolkit/legal_jp/risk_warning.html.tt:2
@@ -5082,7 +5260,7 @@ msgstr ""
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Hands-on test automation experience a plus"
-msgstr "Une expérience directe de l'automatisation de tests est un plus"
+msgstr "Une expérience directe de l'automatisation de tests serait un plus"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/email/common_email.html.tt:723
 msgid "Have a question? Need Help?"
@@ -5299,6 +5477,7 @@ msgstr "Adresse IP"
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "IT audit experience is a plus"
 msgstr ""
+"Une expérience dans l'audit des technologies de l'information serait un plus"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/benefits_of_trading_binaries.html.haml:1
 msgid "Ideal for both pros and novices"
@@ -5329,6 +5508,12 @@ msgstr "Si une erreur est commise dans le calcul de votre part des revenus, la S
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:252
 msgid "If any provision of these Terms is found to be illegal, void, or unenforceable, the unenforceable provision will be modified so as to render it enforceable to the maximum extent possible in order to effect the intention of the provision; if a term cannot be so modified, it will be severed and the remaining provisions of these Terms will not be affected in any way."
 msgstr ""
+"Si toute disposition de ces Conditions est jugée illégale, nulle ou "
+"inapplicable, la disposition inapplicable sera modifiée de manière à la "
+"rendre applicable dans la plus large mesure possible afin de réaliser "
+"l'intention de la disposition ; si une condition ne peut être modifiée de "
+"cette manière, elle sera réputée séparée et les autres dispositions de ces "
+"Conditions n'en seront en aucun cas affectées."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:132
 msgid "If any provision of this Agreement is held to be void or unenforceable in whole or part, the impugned provision (or part thereof) shall be deemed to be deleted from this Agreement and the remaining provisions (including the remainder of the affected provision) shall continue to be valid and applicable."
@@ -5345,14 +5530,27 @@ msgstr "Si nous sommes satisfaits de vos résultats, nous vous contacterons pour
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:100
 msgid "If you are an affiliate of Binary.com, you must also comply with the Binary.com Affiliate Program Terms and Conditions."
 msgstr ""
+"Si vous êtes affilié à Binary.com, vous devez également vous conformer aux "
+"Conditions générales du programme d'affiliation Binary.com."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:20
 msgid "If you are developing on our API on behalf of a company or other entity, you represent and warrant that you have full legal authority to register an Application on behalf of that entity and bind it to these Terms. If you are not authorized, you may not accept these Terms or register an Application for someone else."
 msgstr ""
+"Si vous menez des activités de développement et de programmation sur notre "
+"API pour le compte d'une société ou d'une autre entité, vous déclarez et "
+"garantissez que vous détenez toutes les autorisations légales requises pour "
+"enregistrer une Application pour le compte de cette entité et pour engager "
+"cette entité selon les présentes Conditions. Si vous ne disposez pas des "
+"autorisations requises, vous n'êtes pas en mesure d'accepter ces Conditions "
+"ou d'enregistrer une Application pour quelqu'un d'autre."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:255
 msgid "If you are entering into this Agreement on behalf of your employer or other entity, you represent and warrant that you have full legal authority to bind your employer or such entity to this Agreement."
 msgstr ""
+"Si vous concluez le présent Accord au nom de votre employeur ou d'une autre "
+"entité, vous déclarez et garantissez que vous détenez toutes les "
+"autorisations légales requises pour engager votre employeur conformément au "
+"présent Accord."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/logintrouble.html.tt:5
 msgid "If you are experiencing difficulties logging into your account, please verify that cookies are enabled in your browser. This website uses cookies to store your login ID and password (in encrypted format) on your PC during your login session."
@@ -5559,7 +5757,7 @@ msgstr "Si vous cherchez avant tout à construire une carrière, et non un CV, B
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:115
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:232
 msgid "If:"
-msgstr ""
+msgstr "S'applique en cas de :"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/careers.html.haml:1
 msgid "Imagine"
@@ -5582,10 +5780,9 @@ msgid "Improve your trading skills with our free educational & training resource
 msgstr "Améliorez vos compétences de trading grâce à nos ressources d'apprentissage théorique et pratique."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:140
-#, fuzzy
 #| msgid "price improvement"
 msgid "Improvements"
-msgstr "amélioration de prix"
+msgstr "Améliorations"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/group_history.html.haml:1
 msgid "In April, <a target=\"_blank\" href=\"http://www.betonmarkets.com\">Betonmarkets.com</a> (formerly known as <a target=\"_blank\" href=\"http://www.xodds.com\">Xodds.com</a>) goes live, establishing a round-the-clock financial betting service on a variety of financial indices. Business grows quickly, and we soon become the market leader in fixed-odds financial betting."
@@ -5632,11 +5829,24 @@ msgstr "Afin de procéder, veuillez vérifier votre adresse mail."
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "In order to support its continued growth, %1 is seeking to recruit and place a qualified Compliance Executive. In this newly created role, to be based in Malta, the incumbent will report to our Head of Regulatory and Legal Compliance"
 msgstr ""
+"Pour mieux répondre aux besoins d'une croissance continue, %1 recrute un "
+"responsable de la conformité qualifié. Dans le cadre de ce nouveau poste "
+"basé à Malte, le candidat sélectionné prendra ses fonctions sous la "
+"supervision de notre directrice de la conformité réglementaire et juridique"
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "In order to support its continued growth, the Human Resources Group at %1 is seeking to place a highly competent administrator in a senior recruitment role. Please note that this is not a position suitable for an HR generalist, but should be of keen interest to a high level administrator with extensive experience in the global recruitment of managers and single technical contributors. A background in financial services and experience in the recruitment of senior professionals in IT and Quantitative Analytics would be ideal."
 msgstr ""
+"Pour mieux répondre aux besoins d'une croissance continue, le service des "
+"ressources humaines de %1 recherche un administrateur compétent pour un "
+"poste de chargé de recrutement. Ce poste ne convient pas à un/une "
+"généraliste des RH. Il s'adresse à un administrateur hautement qualifié, "
+"justifiant d'une vaste expérience du recrutement de cadres dirigeants et de "
+"collaborateurs techniques individuels à l'échelle internationale. Le "
+"candidat dispose idéalement d'une bonne connaissance des services financiers "
+"ainsi que d'une expérience dans le recrutement de cadres supérieurs dans les "
+"domaines des technologies de l'information et de l'analyse quantitative."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/biel_terms.html.tt:24
 msgid "In providing these services, we are bound by the Act, any applicable regulations, bye-laws, licence conditions, guidelines, exchange requirements and other provisions or market practices (the \"Rules\"). In the event of conflict between these ST&Cs and the Rules, the latter should prevail."
@@ -5673,6 +5883,11 @@ msgstr "Dans le cours de fournir des services, nous, quand applicable, conduiron
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:101
 msgid "In the event of any conflict between the content in this document and the above documents, this document controls your use of the Binary.com API. If you disagree with any of the provisions in these Terms, do not access or use the Binary.com API."
 msgstr ""
+"Dans l'éventualité de toute divergence entre le contenu du présent document "
+"et le contenu des documents listés ci-dessus, le présent document régit "
+"votre utilisation de l'API Binary.com. Si vous n'acceptez pas l'une ou "
+"l'autre des dispositions des présentes Conditions, veuillez vous abstenir "
+"d'accéder à l'API Binary.com ou de l'utiliser."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:43
 msgid "In the event that the Company is aware of an Affiliate who is in breach of any of the above provisions, the Company shall have the right, in addition to any other right or remedy available to it under this Agreement or applicable law, to immediately block the Affiliate’s access to this Program. The Affiliate hereby irrevocably waives its rights to, and shall indemnify the Company and any member of the Binary group of companies for, any claim or demand made against the Company or any member of the Binary group of companies, their directors, officers, shareholders, employees or against the Binary.com website in respect of such action taken by the Company."
@@ -5685,6 +5900,8 @@ msgstr "Dans l'événement improbable que BIEL souffre un défaut d'investisseme
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "In this newly created role, to be based on our offices in Cyberjaya, Malaysia, you will be responsible for:"
 msgstr ""
+"En tant que titulaire de ce nouveau poste basé dans nos bureaux de "
+"Cyberjaya, en Malaisie, vous prendrez en charge les tâches suivantes :"
 
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Backoffice/Form.pm:484
 msgid "In what country do you want to offer your service"
@@ -5716,10 +5933,9 @@ msgid "Incorrect email or password."
 msgstr "Mail ou mot de passe incorrect."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:184
-#, fuzzy
 #| msgid "Indicator"
 msgid "Indemnification"
-msgstr "Indicateur"
+msgstr "Exonération de responsabilité"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:101
 msgid "Indemnity and Liability"
@@ -6724,7 +6940,7 @@ msgstr ""
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Knowledge and experience in the financial services industry"
-msgstr ""
+msgstr "Compétences et expérience dans le secteur des services financiers"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Knowledge and experience with the financial services industry"
@@ -6845,10 +7061,9 @@ msgid "Legal & Regulatory Compliance"
 msgstr "Conformité juridique et réglementaire"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:80
-#, fuzzy
 #| msgid "Compliance Executive"
 msgid "Legal Compliance"
-msgstr "Chargé de conformité"
+msgstr "Conformité juridique"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:713
 #: /home/git/translations/binary-static/src/templates/toolkit/account/maltainvestws.html.tt:393
@@ -6892,7 +7107,7 @@ msgstr "Responsabilité"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Liaise with banks and payment providers"
-msgstr ""
+msgstr "Liaison avec les banques et les prestataires de services de paiement"
 
 #: /home/git/translations/binary-static/src/templates/haml/about/index.html.haml:1
 msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland"
@@ -6900,7 +7115,7 @@ msgstr "Autorisée et réglementée à Malte, au Royaume-Uni, à l'île de Man e
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Life-long career interest in the Accounting field"
-msgstr ""
+msgstr "Carrière dans le secteur de la comptabilité"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:226
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/betting_limits.html.tt:8
@@ -6908,14 +7123,13 @@ msgid "Limit"
 msgstr "Limite"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:155
-#, fuzzy
 #| msgid "Exclusion of Liability"
 msgid "Limitations on Liability"
-msgstr "Exclusion of Liability"
+msgstr "Limitations de responsabilité"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:21
 msgid "Limited License Grant"
-msgstr ""
+msgstr "Octroi de licence restreinte"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/account/settingsws.html.tt:54
 msgid "Limits"
@@ -6940,6 +7154,8 @@ msgstr "Graphique lignes et points"
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:123
 msgid "Link to and direct our clients to your Application."
 msgstr ""
+"rediriger nos clients vers votre Application, notamment par le biais de "
+"liens."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/privacy.html.tt:32
 msgid "Links"
@@ -7045,7 +7261,6 @@ msgid "Loss"
 msgstr "Perte"
 
 #: /home/git/regentmarkets/bom-oauth/templates/loginbinary.html.ep:24
-#, fuzzy
 #| msgid "Lost password?"
 msgid "Lost Password?"
 msgstr "Mot de passe oublié ?"
@@ -7127,7 +7342,7 @@ msgstr "Assurer la sécurité, la détection d'intrusion, la protection contre l
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Manage the company’s cashier system"
-msgstr ""
+msgstr "Gestion du système de caisse de la société"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/account/settingsws.html.tt:28
 msgid "Manage your account access and security settings."
@@ -7433,7 +7648,7 @@ msgstr "Nom de jeune fille de votre mère"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Motivated, accurate, organized and a self-starter"
-msgstr ""
+msgstr "Motivation, rigueur, organisation et capacité d'initiative"
 
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Charting.pm:474
 msgid "Mountain Chart"
@@ -7617,7 +7832,7 @@ msgstr "Pas de mises à jour du prix en Direct"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:49
 msgid "No Storing of Any Content"
-msgstr ""
+msgstr "Le stockage de tout contenu est interdit"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/glossary.html.haml:1
 msgid "No Touch trades"
@@ -7985,10 +8200,9 @@ msgid "Other"
 msgstr "Autre"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:91
-#, fuzzy
 #| msgid "The Company's Obligations"
 msgid "Other Obligations"
-msgstr "Les Obligations de la Société"
+msgstr "Autres obligations"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/biel_terms.html.tt:67
 msgid "Other best execution factors such as speed of execution, likelihood of execution and settlement, size, nature or any other considerations relevant to the execution of a particular order may also be applied by us in order to obtain the best possible results for you."
@@ -8161,12 +8375,15 @@ msgstr "Instruments de Superposition"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Oversee incident responses for our production servers and take the necessary measures to correct and enhance IT operations"
-msgstr "Superviser la réaction aux incidents informatiques pour nos serveurs de production et prendre les mesures nécessaires à la correction et à l'amélioration des systèmes de gestion des TI"
+msgstr ""
+"Superviser la réaction aux incidents informatiques pour nos serveurs de "
+"production et prendre les mesures nécessaires à la correction et à "
+"l'amélioration des processus informatiques"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:59
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:107
 msgid "Ownership"
-msgstr ""
+msgstr "Propriété"
 
 #. (website)
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:61
@@ -8819,6 +9036,9 @@ msgstr ""
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Preparing the periodic and special reports required to ensure legal and regulatory compliance in the jurisdictions within which we operate"
 msgstr ""
+"Préparer les rapports périodiques et spécifiques requis pour garantir la "
+"conformité juridique et réglementaire dans les juridictions au sein "
+"desquelles nous sommes implantés"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:234
 msgid "Presents the maximum aggregate payouts on outstanding contracts in your portfolio. If the maximum is attained, you may not purchase additional contracts without first closing out existing positions."
@@ -8851,6 +9071,8 @@ msgstr ""
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Previous work experience in a client service and/or marketing role"
 msgstr ""
+"Expérience professionnelle préalable dans le domaine du service à la "
+"clientèle et/ou du marketing"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:644
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/intraday_prices.html.tt:33
@@ -8892,6 +9114,8 @@ msgstr "Imprimer graphique"
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Prior knowledge and experience in Information Technology and/or Software Development"
 msgstr ""
+"Connaissance et expérience préalable dans le domaine des technologies de "
+"l'information et/ou du développement de logiciel"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Prior knowledge and experience with IT development"
@@ -8945,6 +9169,7 @@ msgstr "Parfaite maîtrise d'un langage de script (idéalement Perl)"
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Proficiency in a second language (oral and written) is preferred"
 msgstr ""
+"Il est préférable de maîtriser une seconde langue (à l'oral et à l'écrit)"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:124
 #: /home/git/translations/binary-static/src/templates/haml/get_started/glossary.html.haml:1
@@ -8993,6 +9218,8 @@ msgstr ""
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Proven knowledge of auditing standards, procedures, laws, rules and regulations are an added advantage"
 msgstr ""
+"La connaissance des normes, procédures, lois et réglementations applicables "
+"à l'audit constitue un avantage supplémentaire"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Provide administrative support in areas related to vendor management, event planning, accounting, and human resources administration."
@@ -9011,6 +9238,9 @@ msgstr "Public worker"
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:121
 msgid "Publish your name and logo (with or without a link to your Application) on our website, in press releases, and in promotional materials without additional consent;"
 msgstr ""
+"publier votre nom et votre logo (avec ou sans lien vers votre Application) "
+"sur notre site Web, sur des communiqués de presse et sur des supports "
+"promotionnels sans autorisation supplémentaire ;"
 
 #: /home/git/translations/binary-static/src/templates/haml/about/index.html.haml:1
 msgid "Published in English, Japanese, Chinese, Arabic, Polish, German, French, Spanish, Portuguese, Italian and Russian"
@@ -9061,6 +9291,14 @@ msgstr "Mettez une limite sur vos gains. Une fois que vous avez atteint cette li
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Qualified applicants should have global experience in recruitment administration, excellent administrative skills, and the ability to work in a fast-paced entrepreneurial environment. We are seeking a true professional capable of making an impact by supporting and advancing HR best practices throughout the company’s global operations."
 msgstr ""
+"Les candidats éligibles doivent disposer d'une expérience globale dans "
+"l'administration du recrutement et d'excellentes compétences "
+"administratives. Ils doivent également être capables de s'adapter à la "
+"cadence soutenue de notre environnement d'entreprise dynamique. Nous "
+"recherchons un véritable professionnel capable de jouer un rôle moteur dans "
+"la promotion et la progression des meilleures pratiques en ressources "
+"humaines, au sein des différents sièges d'exploitation internationaux de la "
+"société."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:602
 #: /home/git/translations/binary-static/src/templates/haml/static/job_descriptions.html.haml:1
@@ -9254,7 +9492,7 @@ msgstr ""
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Related experience in the financial services industry"
-msgstr ""
+msgstr "Expérience pertinente dans le secteur des services financiers"
 
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Charting.pm:478
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Charting.pm:616
@@ -9268,6 +9506,8 @@ msgstr "Une expérience pertinente dans l'utilisation des bibliothèques et fram
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Relevant work experience in a related field (financial services preferred)"
 msgstr ""
+"Expérience professionnelle pertinente dans un domaine connexe (idéalement "
+"dans le domaine des services financiers)"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/session_expired.html.tt:12
 msgid "Reload Cashier"
@@ -9325,6 +9565,8 @@ msgstr "Réinitialiser le Mot de Passe"
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Resolve complex customer care issues in the best interest of our global clients and the company"
 msgstr ""
+"Résoudre les questions complexes d'assistance à la clientèle, dans le "
+"meilleur intérêt de nos clients internationaux et de la société"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Menu.pm:146
 #: /home/git/translations/binary-static/src/templates/haml/resources/index.html.haml:1
@@ -9334,6 +9576,8 @@ msgstr "Ressources"
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Respond to client queries using our state of the art telephone, electronic mail and on-line chat systems"
 msgstr ""
+"Répondre aux demandes des clients par le biais de nos systèmes d'assistance "
+"de pointe (par téléphone, e-mail ou messagerie instantanée en ligne)"
 
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/CallingEngine.pm:204
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:141
@@ -9411,10 +9655,9 @@ msgid "Review Permissions"
 msgstr "Permission refusée."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
-#, fuzzy
 #| msgid "View your historical transactions."
 msgid "Review suspicious account transactions"
-msgstr "Voir vos transactions historiques."
+msgstr "Examen des transactions suspicieuses enregistrées sur les comptes"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Review, develop and enhance Perl, C++ and R codes used in options pricing, volatility forecasts, and risk management program"
@@ -9425,10 +9668,9 @@ msgid "Review, develop and enhance codes used in option pricing and real time ri
 msgstr "Révision, développement et amélioration des codes utilisés dans la tarification d'options et dans les programmes de gestion du risque en temps réel"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:145
-#, fuzzy
 #| msgid "A Web Application using the Binary.com API"
 msgid "Revisions to the Binary.com API"
-msgstr "Une Application Web qui utilise l'API de Binary.com"
+msgstr "Révisions de l'API Binary.com"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:728
 msgid "Revoke access"
@@ -9439,10 +9681,9 @@ msgid "Right click to add studies, lines, overlays and more. You can save your w
 msgstr "Faites un clic droit pour ajouter des etudes, lignes, superpositions et plus. Vous pouvez sauvegarder votre travail en selectionnant Espace de travail dans le menu du haut"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:219
-#, fuzzy
 #| msgid "Rights Offering"
 msgid "Right to Terminate"
-msgstr "Offre de Droits"
+msgstr "Droit de résiliation"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:171
 #: /home/git/translations/binary-static/src/templates/haml/get_started/volidx_markets.html.haml:1
@@ -9485,6 +9726,8 @@ msgstr "Risques de Produits d'Investissements"
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Run daily payments reports and report suspected fraud"
 msgstr ""
+"Réalisation de rapports de paiements quotidiens et signalement des "
+"suspicions de fraude"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/contact.html.haml:1
 msgid "Russia"
@@ -9537,10 +9780,9 @@ msgid "Save as SVG"
 msgstr "Sauvegarder comme SVG"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:40
-#, fuzzy
 #| msgid "Scope not given"
 msgid "Scope and Intent"
-msgstr "Etendue non entrée"
+msgstr "Champ d'application et objet"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:398
 msgid "Score"
@@ -9581,10 +9823,9 @@ msgid "Security"
 msgstr "Sécurité"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:176
-#, fuzzy
 #| msgid "Risk Disclaimer"
 msgid "Security Disclaimer"
-msgstr "Divulgation des risques"
+msgstr "Clause de non-responsabilité quant à la sécurité"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/privacy.html.tt:20
 msgid "Security Statement"
@@ -9711,7 +9952,7 @@ msgstr "Durée de session:"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Set client deposit and loss limits"
-msgstr ""
+msgstr "Définition des limites de dépôt et de pertes des clients"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Set up and manage social-media advertising campaigns, effectively micro-targeting potential clients and partners"
@@ -9727,10 +9968,9 @@ msgid "Settles"
 msgstr "Configuration"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:250
-#, fuzzy
 #| msgid "Liability"
 msgid "Severability"
-msgstr "Responsabilité"
+msgstr "Divisibilité"
 
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:544
 #: /home/git/regentmarkets/bom-app/lib/BOM/View/Controller/Bet.pm:647
@@ -9786,6 +10026,8 @@ msgstr "Inscription"
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Significant experience in Social Media, Marketing, and / or Advertising"
 msgstr ""
+"Expérience significative dans les domaines des médias sociaux, du marketing "
+"et/ou de la publicité"
 
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Charting.pm:410
 msgid "Simple Moving Average"
@@ -9807,7 +10049,11 @@ msgstr ""
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Since all dealing on the %1 website is fully automated, our pricing and risk management algorithms must take full account of real-time pricing parameters, data feed irregularities and latencies."
-msgstr "Toutes les opérations de courtage sont automatisées sur le site %1. Par conséquent, nos algorithmes de cotation et de gestion du risque doivent prendre en compte les paramètres de cotation en temps réel, les irrégularités des flux de données et les latences."
+msgstr ""
+"Sur le site %1, toutes les opérations de courtage sont automatisées. Par "
+"conséquent, nos algorithmes de cotation et de gestion du risque doivent "
+"prendre en compte les paramètres de cotation en temps réel, les "
+"irrégularités des flux de données et les latences."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/faq.html.tt:31
 msgid "Since their inception, 'binary options' has become a popular trading product. The numerous binary options trading platforms subsequently being created, support this growing trend. By becoming an affiliate now you can profit from the fast growth of interest in this new industry."
@@ -10328,10 +10574,9 @@ msgid "Stop-type"
 msgstr "Type d'ordre stop"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:47
-#, fuzzy
 #| msgid "Static content"
 msgid "Storage of Content"
-msgstr "Contenu statique"
+msgstr "Stockage de Contenu"
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/TickStreamer.pm:184
 #, fuzzy
@@ -10340,12 +10585,15 @@ msgid "Streaming for this symbol is not available due to license restrictions."
 msgstr "Les prix ne peuvent pas être affichés du fait de restrictions de licence du fournisseur de source."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
+#, fuzzy
 msgid "Strengthen relationships with current clients and foster greater loyalty through a variety of social-media outlets"
 msgstr ""
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Strong MS Office skills and experience working with accounting software and databases"
 msgstr ""
+"Solide maîtrise de MS Office et expérience des logiciels et bases de données "
+"de comptabilité"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Strong analytical and problem solving abilities"
@@ -10445,6 +10693,8 @@ msgstr "La liste de banques soutenues est non valide"
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Supporting the Group’s global recruiting and talent management needs"
 msgstr ""
+"Répondre aux besoins de la société dans les domaines du recrutement "
+"international et de la gestion des compétences"
 
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Charting.pm:454
 msgid "Switch to full screen mode"
@@ -10518,26 +10768,25 @@ msgid "Telephone:"
 msgstr "Téléphone :"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:214
-#, fuzzy
 #| msgid "Terms"
 msgid "Term"
-msgstr "Termes"
+msgstr "Durée"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:212
-#, fuzzy
 #| msgid "Termination"
 msgid "Term & Termination"
-msgstr "Fin"
+msgstr "Durée et résiliation"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:224
 msgid "Terminate this Agreement by giving a minimum of seven days written notice to you."
 msgstr ""
+"résilier cet Accord après vous en avoir informé avec un préavis écrit de "
+"sept jours minimum."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:223
-#, fuzzy
 #| msgid "A Web Application using the Binary.com API"
 msgid "Terminate your use of the Binary.com API; or"
-msgstr "Une Application Web qui utilise l'API de Binary.com"
+msgstr "résilier votre accès à l'API Binary.com ; ou"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:108
 msgid "Termination"
@@ -10545,10 +10794,9 @@ msgstr "Fin"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:113
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:230
-#, fuzzy
 #| msgid "Termination"
 msgid "Termination for Causes"
-msgstr "Fin"
+msgstr "Résiliation motivée"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:124
 msgid "Termination of this Agreement shall not prejudice any rights of any party which may have arisen on or before the date of termination."
@@ -10610,7 +10858,13 @@ msgstr "Merci d'avoir vérifié votre mail."
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "The %1 Quantitative Analytics group is responsible for the pricing of binary options offered on our website, as well as the risk management and profitability of its options book. Processing over a million transactions each day, the company manages a book of exotic options which arguably exceeds in complexity that of the typical derivatives desk."
-msgstr "L'équipe d'analystes quantitatifs de %1 est responsable de la tarification des options binaires proposées sur notre site Web, de la gestion du risque et de la rentabilité du portefeuille d'options de la société.  Affichant plus d'un million de transactions par jour, la société gère un portefeuille d'options exotiques dont la complexité excède celle des marchés dérivés standards."
+msgstr ""
+"L'équipe d'analystes quantitatifs de %1 est responsable de la tarification "
+"des options binaires proposées sur notre site Web, de la gestion du risque "
+"et de la rentabilité du portefeuille d'options de la société. Affichant plus "
+"d'un million de transactions par jour, la société gère un portefeuille "
+"d'options exotiques dont la complexité excède celle des marchés dérivés "
+"traditionnels."
 
 #. ($website_name)
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Accounts.pm:647
@@ -10687,22 +10941,26 @@ msgstr "Moyenne"
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:74
 msgid "The Binary.com API has usage limits enforced to prevent abuse and/or repurposing of the Binary.com API. These usage limits may be changed in the future without notice. If you consistently exceed the usage limit or otherwise abuse the service, we may block your access to the Binary.com API."
 msgstr ""
+"L'API Binary.com est soumise à des restrictions d'utilisation pour prévenir "
+"les abus et/ou la réorientation de l'API Binary.com. Ces restrictions "
+"d'utilisation peuvent être modifiées ultérieurement sans préavis. Si vous ne "
+"respectez pas les restrictions d'utilisation ou utilisez le service de "
+"manière abusive, et ce de façon récurrente, nous sommes susceptibles de "
+"bloquer votre accès à l'API Binary.com."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:97
-#, fuzzy
 #| msgid "Summary Order Execution Policy"
 msgid "The Binary.com Order Execution Policy."
-msgstr "Résumé de politique d'exécution des ordres"
+msgstr "Politique d'exécution des ordres de Binary.com"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:96
 msgid "The Binary.com Privacy and Security Policy;"
-msgstr ""
+msgstr "Politique de confidentialité et de sécurité de Binary.com"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:95
-#, fuzzy
 #| msgid "Terms and Conditions"
 msgid "The Binary.com Terms and Conditions;"
-msgstr "Conditions générales"
+msgstr "Conditions générales de Binary.com"
 
 #. ('https://github.com/binary-com/binary-static')
 #: /home/git/translations/binary-static/src/templates/haml/static/open_source_projects.html.haml:1
@@ -10724,6 +10982,12 @@ msgstr "La fonction Chaikin Volatility détermine na volatilité de séries de d
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:172
 msgid "The Company does not guarantee that the Binary.com API it provides will function without interruption or errors in functioning. In particular, the operation of the Binary.com API may be interrupted due to maintenance, updates, or system or network failures. The Company disclaims all liability for damages caused by any such interruption or errors in functioning."
 msgstr ""
+"La Société ne peut garantir le fonctionnement sans interruption de l'API "
+"Binary.com ou l'absence d'erreurs dans son fonctionnement. En particulier, "
+"le fonctionnement de l'API Binary.com peut être interrompu pour cause de "
+"maintenance, de mises à jour, ou de défaillances du système ou du réseau. La "
+"Société décline toute responsabilité quant aux dommages éventuels résultant "
+"de toute interruption ou erreur de fonctionnement de ce type."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:54
 msgid "The Company does not provide a market amongst or between Clients for investments, securities, derivatives or speculations. Each financial contract purchased by a Client via this site is an individual agreement between that Client and the Company and is not a security, nor is it transferable, negotiable or assignable to or with any third party."
@@ -10736,10 +11000,16 @@ msgstr "La Société a et retient le droit, de supprimer n'importe quel événem
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:159
 msgid "The Company is not liable for loss or damage of any kind whatsoever arising as a result of information or prices published on or furnished through the Binary.com API, or any errors or omissions of the Binary.com API;"
 msgstr ""
+"la Société ne peut être tenue responsable de toute forme de perte ou de "
+"dommage résultant d'informations ou de prix publiés sur, ou fournis par le "
+"biais de, l'API Binary.com, ou d'éventuelles erreurs ou omissions relatives "
+"à l'API Binary.com ;"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:132
 msgid "The Company is not under any obligation of confidentiality with respect to the Contributions;"
 msgstr ""
+"La Société n'est tenue à aucune obligation de confidentialité concernant "
+"lesdites Contributions ;"
 
 #. (website)
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:96
@@ -10755,6 +11025,10 @@ msgstr ""
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:149
 msgid "The Company may change, suspend, terminate or discontinue any aspect of the Binary.com API, including the availability of any services, information features or functions accessible by means of the Binary.com API, on no less than seven days advance notice to you."
 msgstr ""
+"La Société peut modifier, suspendre, résilier ou mettre hors service tout "
+"aspect de l'API Binary.com, y compris tout service, caractéristique ou "
+"fonctionnalité d'information accessible par le biais de l'API Binary.com, en "
+"respectant un préavis de sept jours minimum."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:163
 msgid "The Company may from time to time inform you about changes on the website, new services and promotions. If you, however, wish to opt out of such a service and do not wish to receive any direct marketing data you can either unsubscribe to the service or email our customer support team. If you decide to opt in again into receiving promotional material, you can also do so by contacting us."
@@ -10771,6 +11045,9 @@ msgstr "La Société peut imposer des limites de volume de trading à sa seule d
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:133
 msgid "The Company may use or disclose (or choose not to use or disclose) such Contributions for any purpose, in any way, in any media worldwide;"
 msgstr ""
+"La Société peut utiliser ou divulguer (ou choisir de ne pas utiliser ni "
+"divulguer) de telles Contributions à toute fin et de quelque manière que ce "
+"soit, et par le biais de tout média, à l'échelle mondiale ;"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:104
 #, fuzzy
@@ -10786,6 +11063,13 @@ msgstr ""
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:171
 msgid "The Company provides the Binary.com API on an \"as is\" and \"as available\" basis with no warranties, either express or implied, of any kind. To the fullest extent permissible under applicable law, the Company disclaim any and all warranties and representations, including, without limitation, any implied warranties of merchantability, fitness for a particular purpose, title, accuracy of data, and non-infringement."
 msgstr ""
+"La Société met en service l'API Binary.com « en l'état » et « en fonction de "
+"la disponibilité » et n'accorde aucune garantie expresse ou tacite. Dans "
+"toute la mesure permise par la loi applicable, la Société rejette "
+"expressément toute garantie ou représentation, y compris, sans toutefois s'y "
+"limiter, toute garantie implicite de qualité marchande, d'adéquation à un "
+"usage particulier, de titre, d'exactitude des données ou d'absence de "
+"contrefaçon."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:117
 #, fuzzy
@@ -10826,6 +11110,10 @@ msgstr "La Société sera autorisée à exercer tous ses droits ou à satisfaire
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:160
 msgid "The Company shall have no liability arising from orders, investment decisions or purchases of third party goods or services (including financial instruments and currency) based on information published on or furnished through the Binary.com API;"
 msgstr ""
+"la Société décline toute responsabilité concernant les ordres, décisions "
+"d'investissement et achats de produits ou services proposés par des tiers (y "
+"compris les instruments financiers et les devises) sur la base "
+"d'informations publiées sur, ou fournies par le biais de, l'API Binary.com ;"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:104
 #, fuzzy
@@ -10946,30 +11234,39 @@ msgstr "Le %1 est deux fois plus instable que le %2, et quatre fois plus instabl
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "The ability to acquire knowledge of compliance matters in a multitude of international jurisdictions"
 msgstr ""
+"Capacité à acquérir des connaissances concernant les questions de conformité "
+"au sein de multiples juridictions internationales"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
+#, fuzzy
 msgid "The ability to communicate effectively in English, in both oral and written form"
-msgstr ""
+msgstr "Capacité à communiquer efficacement en anglais"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
+#, fuzzy
 msgid "The ability to communicate fluently in English, in both oral and written form"
-msgstr ""
+msgstr "Capacité à communiquer couramment en anglais,"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "The ability to multi-task, balance deadlines, and reliably deliver high-quality content"
 msgstr ""
+"Capacité à gérer simultanément différentes tâches tout en respectant les "
+"échéances pour produire un contenu fiable de haute qualité"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "The ability to speak and write in multiple languages"
-msgstr ""
+msgstr "Maîtrise orale et écrite de plusieurs langues"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
+#, fuzzy
 msgid "The ability to speak multiple languages"
-msgstr ""
+msgstr "Capacité à parler"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "The ability to translate information into clear, concise, and engaging content"
 msgstr ""
+"Capacité à synthétiser les informations sous forme de contenus clairs, "
+"concis et attrayants"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "The ability to work in a Linux/Unix based environment"
@@ -11351,10 +11648,17 @@ msgstr "Le marché sous-jacent a varié excessivement depuis que vous avez tarif
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:157
 msgid "The use of the Binary.com API is at your own risk, and you assume full responsibility and risk of loss it may suffer as a result of using, or accessing the Binary.com API. Except to the extent that liability under any applicable law or regulation cannot be excluded:"
 msgstr ""
+"Vous utilisez l'API Binary.com à vos risques et périls, et vous assumez "
+"l'entière responsabilité du risque de perte éventuelle résultant de "
+"l'utilisation ou de l'accès à l'API Binary.com. Sauf dans la mesure permise "
+"par toute loi ou réglementation applicable concernant la responsabilité :"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:192
 msgid "The use, operation or combination of the Binary.com API with non-Binary.com API(s), data, equipment or documentation if liability would have been avoided but for such use, operation, or combination; or"
 msgstr ""
+"L'utilisation, l'exploitation ou l'utilisation combinée de l'API Binary.com "
+"avec des données, des équipements ou de la documentation externes à l'API "
+"Binary.com"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/glossary.html.haml:1
 msgid "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like – high volatility, low volatility, bullish and bearish trends."
@@ -11496,6 +11800,9 @@ msgstr "Cet Accord contient l'intégralité des accords entre les parties, par r
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:42
 msgid "This Agreement governs your use of our API unless you have executed another agreement with the Company that expressly governs your use of our API."
 msgstr ""
+"Cet Accord régit l'utilisation que vous faites de notre API, sauf si vous "
+"avez conclu avec la Société un autre accord régissant expressément "
+"l'utilisation que vous faites de notre API."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:110
 msgid "This Agreement may be terminated forthwith by either party on written notice to the other party if the other party is in material breach of the terms of the Agreement and, in the event of a breach capable of being remedied, fails to remedy the breach within 15 days of receipt of notice in writing of such breach."
@@ -11504,6 +11811,9 @@ msgstr "Cet Accord pourra être résilié immédiatement par l'une des parties p
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:216
 msgid "This Agreement shall commence on the date you first accept this Agreement, and shall continue unless and until terminated in accordance with the Term and Termination conditions set forth in this Agreement."
 msgstr ""
+"Cet Accord prend effet à la date de votre acceptation de cet Accord et se "
+"prolonge jusqu'à sa résiliation conformément aux conditions énoncées dans la "
+"section « Durée et résiliation » de cet Accord."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:6
 msgid "This Document"
@@ -11614,10 +11924,13 @@ msgid "This contract's price is %1%2. Contracts purchased from %3 must have a pu
 msgstr "Le prix de ce contrat est de %1%2. Le prix des contrats achetés à %3 doit être supérieur à %1%4. Veuillez augmenter la somme du contrat conformément à cet investissement minimum."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:5
-#, fuzzy
 #| msgid "This document (the \"Agreement\") sets out the terms and conditions between \"the Company\" which is Binary Services Ltd, and you (the person who applied for this program; \"you\" or \"your\"), in relation to your application to setup an affiliate account (and membership of the affiliate program if your application is deemed successful) to promote the website %1"
 msgid "This document (the \"Agreement\") sets out the terms and conditions (\"Terms\") between \"the Company\" which is Binary Services Ltd (\"we,\" \"us,\" and \"our\"), and you (the person who registered for the Binary.com Application Program Interface (\"API\"); \"you\", or \"your\")."
-msgstr "Ce document (« l'Accord ») définit les conditions générales applicables entre la « Société », à savoir Binary Ltd, et vous (la personne ayant demandé à rejoindre ce programme ; « vous » ou « votre »), concernant votre demande d'ouverture d'un compte affilié (et l'appartenance au programme d'affiliation si votre demande est jugée recevable) dédié à la promotion du site Web %1"
+msgstr ""
+"Ce document (« Accord ») définit les conditions générales (« Conditions ») "
+"applicables entre la « Société », à savoir Binary Services Ltd (« nous » et «"
+" notre »), et vous (la personne ayant demandé l'accès à l'interface de "
+"programmation d'application (« API ») de Binary.com ; « vous » ou « votre »)."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:8
 #, fuzzy
@@ -11730,7 +12043,29 @@ msgstr "Ce site web ne collecte pas d'informations d'identification personnelle 
 #: /home/git/translations/binary-static/src/templates/haml/layouts/default/footer.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/global/footer.html.tt:192
 msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in the USA, Japan, Costa Rica or Hong Kong, or to persons under age 18."
-msgstr "Pour le Royaume-Uni et l'île de Man, les services proposés via ce site Web sont commercialisés par Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, British Isles, autorisés et réglementés par (1) la Gambling Supervision Commission de l'île de Man, îles britanniques (licence actuelle pour les services de jeux en ligne délivrée le 31 août 2012), et pour les clients du Royaume-Uni par (2) la Commission des jeux du Royaume-Uni <a href='%1' target='_blank'>afficher la licence</a>.  Pour le reste de l'Europe, les services d'investissement proposés via ce site Web sont commercialisés par Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malte, autorisés et réglementés par l'Autorité maltaise des services financiers conformément à la licence de « fournisseur de services d'investissement » de catégorie 3 (licence n° IS/70156). Les services de jeu en ligne sont commercialisés par Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malte, autorisés et réglementés par (1) l'Autorité maltaise des jeux (licence n° MGA/CL2/118/2000 du 26 mai 2015), pour les clients du Royaume-Uni par (2) la Commission des jeux du Royaume-Uni <a href='%2' target='_blank'>afficher la licence</a>, et pour les clients basés en Irlande par (3) Revenue Commissioners (licence actuelle de bookmaker en ligne délivrée le 29 septembre 2015, licence n° 1010285).  Les services de ce site Web sont indisponibles aux États-Unis, au Japon, au Costa Rica et à Hong-Kong et ne sont pas accessibles aux personnes âgées de moins de 18 ans."
+msgstr ""
+"Pour le Royaume-Uni et l'île de Man, les services proposés via ce site Web "
+"sont commercialisés par Binary (IOM) Ltd., First Floor, Millennium House, "
+"Victoria Road, Douglas, IM2 4RW, British Isles, autorisés et réglementés par "
+"(1) la Gambling Supervision Commission de l'île de Man, îles britanniques ("
+"licence actuelle pour les services de jeux en ligne délivrée le 31 août 2012)"
+", et pour les clients du Royaume-Uni par (2) la Commission des jeux du "
+"Royaume-Uni <a href='%1' target='_blank'>afficher la licence</a>. Pour le "
+"reste de l'Europe, les services d'investissement proposés via ce site Web "
+"sont commercialisés par Binary Investments (Europe) Ltd., Mompalao Building, "
+"Suite 2, Tower Road, Msida MSD1825, Malte, autorisés et réglementés par "
+"l'Autorité maltaise des services financiers conformément à la licence de « "
+"fournisseur de services d'investissement » de catégorie 3 (licence n° "
+"IS/70156). Les services de jeu en ligne sont commercialisés par Binary "
+"(Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malte, "
+"autorisés et réglementés par (1) l'Autorité maltaise des jeux (licence n° "
+"MGA/CL2/118/2000 du 26 mai 2015), pour les clients du Royaume-Uni par (2) la "
+"Commission des jeux du Royaume-Uni <a href='%2' target='_blank'>afficher la "
+"licence</a>, et pour les clients basés en Irlande par (3) Revenue "
+"Commissioners (licence actuelle de bookmaker en ligne délivrée le 29 "
+"septembre 2015, licence n° 1010285).  Les services de ce site Web sont "
+"indisponibles aux États-Unis, au Japon, au Costa Rica et à Hong-Kong et ne "
+"sont pas accessibles aux personnes âgées de moins de 18 ans."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Thorough knowledge of bash scripting, as well as experience with scripting languages such as Perl and PHP"
@@ -11821,6 +12156,12 @@ msgstr "Pour activer les cookies, suivez les instructions ci-dessous pour la ver
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:61
 msgid "To improve the user experience of your Application, where appropriate you may cache the Content for up to 24 hours from a request for that Content through the Binary.com API before being deleted. This limited permission to cache is for performance reasons only."
 msgstr ""
+"Pour améliorer l'expérience utilisateur sur votre Application, vous pouvez, "
+"s'il y a lieu, mettre le contenu en cache pour une durée inférieure ou égale "
+"à 24 heures après l'envoi d'une demande pour ce Contenu par le biais de "
+"l'API Binary.com. Ce Contenu sera ensuite supprimé. Cette utilisation "
+"limitée de la mémoire cache est autorisée exclusivement dans une optique de "
+"performance."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/account/japanws.html.tt:488
 msgid "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
@@ -11985,7 +12326,14 @@ msgstr "Le trading d'options binaires est d'une simplicité remarquable, et ne d
 #: /home/git/translations/binary-static/src/templates/haml/layouts/default/footer.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/global/footer.html.tt:209
 msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. <span class=\"ja-hide\">Read about <a href=\"%1\" class=\"pjaxload\">Responsible Trading</a>.</span>"
-msgstr "Le trading d'options binaires ne convient pas nécessairement à tout le monde et vous devez vous assurer de bien comprendre les risques associés.  Vos pertes peuvent excéder votre dépôt initial et vous ne détenez aucune partie de l'actif sous-jacent.  Les options binaires sont des produits apparentés aux jeux d'argent. N'oubliez pas que ces derniers peuvent s'avérer addictifs : jouez de manière responsable. <span class=\"ja-hide\">Lisez notre article consacré au <a href=\"%1\" class=\"pjaxload\">trading responsable</a>.</span>"
+msgstr ""
+"Le trading d'options binaires ne convient pas nécessairement à tout le monde "
+"et vous devez vous assurer de bien comprendre les risques associés. Vos "
+"pertes peuvent excéder votre dépôt initial et vous ne détenez aucune partie "
+"de l'actif sous-jacent.  Les options binaires sont des produits apparentés "
+"aux jeux d'argent. N'oubliez pas que ces derniers peuvent s'avérer addictifs "
+": jouez de manière responsable. <span class=\"ja-hide\">Lisez notre article "
+"consacré au <a href=\"%1\" class=\"pjaxload\">trading responsable</a>.</span>"
 
 #. (website)
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/risk_disclaimer.html.tt:50
@@ -12083,7 +12431,9 @@ msgstr "Transfert au client"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Translate the ongoing business needs of the company into a suitable IT infrastructure"
-msgstr "Répondre aux besoins permanents de la société à travers le développement d'une infrastructure informatique adéquate"
+msgstr ""
+"Répondre aux besoins permanents de la société à travers la mise en œuvre "
+"d'une infrastructure informatique adéquate"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/open_source_projects.html.haml:1
 msgid "Translations"
@@ -12213,6 +12563,15 @@ msgstr "Impossible de traiter votre demande"
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:161
 msgid "Under no circumstances shall the Company or its directors or employees be liable under this agreement to you or any third party for any indirect, special, incidental, punitive or consequential loss or damages or any other similar damages under any theory of liability (whether in contract, tort, strict liability or any other theory), that are directly or indirectly attributable to the use of, or the inability to use, the Binary.com API, or any content contained thereon, even if the Company has been informed of the possibility thereof."
 msgstr ""
+"en vertu de cet accord, la Société et ses membres dirigeants ou employés ne "
+"peuvent en aucun cas être tenus responsables, envers vous ou toute tierce "
+"partie, d'éventuels dommages indirects, spéciaux, accessoires, punitifs ou "
+"consécutifs, ou de toute autre forme de perte ou de dommage similaire, en "
+"vertu de quelque théorie de responsabilité que ce soit (qu'il s'agisse de "
+"responsabilité contractuelle, civile ou stricte ou de toute autre théorie), "
+"directement ou indirectement imputables à l'utilisation de, ou à "
+"l'incapacité d'utiliser, l'API Binary.com ou tout contenu de celle-ci, et ce "
+"même si la Société a été informée de cette possibilité."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/biel_terms.html.tt:29
 msgid "Under the Rules, clients may be categorised into one of the following three categories:"
@@ -12316,6 +12675,7 @@ msgstr "Mise à jour des paramètres"
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Update the Anti-Fraud Manual and other related documents"
 msgstr ""
+"Mise à jour du manuel de lutte anti-fraude et d'autres documents pertinents"
 
 #: /home/git/translations/binary-static/src/templates/haml/cashier/index.html.haml:1
 #: /home/git/translations/binary-static/src/templates/haml/layouts/default/topbar.html.haml:1
@@ -12333,12 +12693,22 @@ msgstr "Ouvrir un compte réel"
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:242
 msgid "Upon the expiration or termination of this Agreement, for whatever reason, all rights and license granted to you in this Agreement, including use of the Binary.com API, shall immediately terminate. You agree to promptly cease all further use of the Binary.com API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of your liability for breach of its obligation under this Agreement. The Company shall not be liable to you for damages of any kind solely as a result of terminating this Agreement in accordance with its terms."
 msgstr ""
+"Au moment de l'expiration ou de la résiliation de cet Accord pour quelque "
+"raison que ce soit, les droits et les licences vous ayant été octroyés en "
+"vertu du présent Accord, y compris le droit d'utiliser l'API Binary.com, "
+"sont immédiatement résiliés en totalité. Vous acceptez de cesser sans délai "
+"toute utilisation ultérieure de l'API Binary.com. La résiliation de cet "
+"Accord ne constitue nullement une renonciation à se prévaloir de toute "
+"violation de cet Accord et ne vous dégage nullement de votre responsabilité "
+"en cas de violation des obligations qui vous incombent en vertu de cet "
+"Accord. La Société n'assume aucune responsabilité envers vous en cas de "
+"dommages quels qu'ils soient résultant uniquement de la résiliation de cet "
+"Accord conformément aux conditions de celui-ci."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:72
-#, fuzzy
 #| msgid "Trading Limits"
 msgid "Usage Limit"
-msgstr "Limites de Trading"
+msgstr "Restrictions d'utilisation"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Use appropriate terminology, taking into account the style and nuance of the original text"
@@ -12359,6 +12729,9 @@ msgstr "Utilisez l'opportunité fournie par notre site web pour pratiquer gratui
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:122
 msgid "Use, perform, and display your Application and its content for purposes of marketing, demonstrating, and making your Application available to our clients; and    "
 msgstr ""
+"utiliser, exécuter et diffuser votre Application et son contenu à des fins "
+"de commercialisation, de démonstration et de mise à disposition de votre "
+"Application auprès de nos clients ; et    "
 
 #: /home/git/translations/binary-static/src/templates/haml/static/partners.html.haml:1
 #, fuzzy
@@ -12568,10 +12941,9 @@ msgid "Warranties"
 msgstr "Garanties"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:169
-#, fuzzy
 #| msgid "Disclaimer"
 msgid "Warranty Disclaimer"
-msgstr "Non-responsabilité"
+msgstr "Clause d'exclusion de garantie"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/email/common_email.html.tt:700
 msgid "Watch,earn and learn for FREE! Binary.com teams up with professional traders on a monthly basis to show you how to identify trading opportunities using various trading techniques and strategies."
@@ -12617,6 +12989,9 @@ msgstr "Binary.com jouit de toutes les autorisations en vigueur dans les îles b
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "We are looking for energetic and enthusiastic individuals who love challenges, are detail-oriented and highly analytical to join our Internal Audit team."
 msgstr ""
+"Nous recrutons au sein de notre équipe d'audit interne des personnes "
+"dynamiques, enthousiastes et rigoureuses, dotées d'excellentes compétences "
+"analytiques et aimant relever les défis."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:127
 msgid "We are not able to stream live prices at the moment. To enjoy live streaming of prices try refreshing the page, if you get this issue after repeated attempts try a different browser"
@@ -12686,6 +13061,10 @@ msgstr "Nous gardons les soldes des clients en espèces ou équivalent d'espèce
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:147
 msgid "We may release subsequent versions of the Binary.com API and require that you use those subsequent versions. Your continued use of the APIs following a subsequent release will be deemed your acceptance of modifications."
 msgstr ""
+"Nous sommes susceptibles de publier des versions ultérieures de l'API "
+"Binary.com et nous vous demandons, le cas échéant, d'utiliser ces versions "
+"ultérieures. En continuant à utiliser les API après la publication d'une "
+"version ultérieure, vous acceptez les modifications effectuées."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/careers.html.haml:1
 msgid "We offer a market-based remuneration structure, an annual cash bonus plan, health benefits for you and your family, travel and internet allowances, and company trips."
@@ -12711,6 +13090,11 @@ msgstr "Nous sommes conscients de l'importance de protéger vos informations per
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:88
 msgid "We reserve the right to modify, supplement, or replace these Terms at any time. Any material changes will be notified to you. Your continued registration with the Binary.com API and your continued use of the Binary.com API will constitute binding acceptance of such changes."
 msgstr ""
+"Nous nous réservons le droit de modifier, compléter ou remplacer ces "
+"Conditions à tout moment. Nous vous informerons des éventuels changements "
+"importants. Le fait de maintenir votre inscription à l'API Binary.com et de "
+"continuer à utiliser l'API Binary.com constitue votre acceptation ferme de "
+"tels changements."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:50
 msgid "We reserve the right to refuse your referrals’ application to open an account (or to close their accounts), as deemed necessary, to comply with any requirements we may periodically establish and/or that may be required under applicable laws, rules, and regulations."
@@ -12851,7 +13235,7 @@ msgstr "Bienvenue !"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Well-developed organizational, administrative, and/or accounting skills"
-msgstr ""
+msgstr "Bonnes compétences organisationnelles, administratives et/ou comptables"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/group_history.html.haml:1
 msgid "We’re granted patents for ‘Computer trading system and method for speculating on a financial market’ and ‘Computer trading system for offering custom financial market speculations’. The patents show our ability to innovate and stay ahead of the pack."
@@ -13183,6 +13567,8 @@ msgstr "Limites de retrait"
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Work closely with other members of the team to develop software that would drive prices on our trading platform"
 msgstr ""
+"Développement d'un logiciel de tarification pour notre plateforme de "
+"trading, en collaboration étroite avec les autres membres de l'équipe"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Work directly with members of our marketing and IT teams to produce graphics for the company website, blog, social media outlets, and marketing materials"
@@ -13190,11 +13576,14 @@ msgstr ""
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Work experience in a similar role"
-msgstr ""
+msgstr "Expérience professionnelle sur un poste similaire"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Work to expand our international client base by applying creative marketing and customer support strategies"
 msgstr ""
+"Élargir notre base internationale de clients en mettant en œuvre des "
+"stratégies créatives dans les domaines du marketing et du service à la "
+"clientèle"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_descriptions.html.haml:1
 msgid "Work with colleagues in IT, Customer Support, and Marketing to provide localised text for our global website, blog, social media outlets, and promotional materials."
@@ -13215,6 +13604,10 @@ msgstr "Coordonner la livraison des projets en collaboration avec les cadres sup
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Working closely with the Head of Compliance to implement Know your Client (KYC), Anti-Money Laundering (AML), and data protection regulations"
 msgstr ""
+"En collaboration étroite avec notre directrice de la conformité, veiller à "
+"la mise en œuvre de nos procédures KYC (« know your client ») et anti-"
+"blanchiment d'argent, tout en assurant la conformité aux réglementations "
+"relatives à la protection des données"
 
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Charting.pm:517
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Charting.pm:538
@@ -13253,21 +13646,40 @@ msgstr "Oui. Veuillez nous envoyer un email à l'adresse <a href=\"mailto:%1\">%
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:54
 msgid "You May Store Tokens"
-msgstr ""
+msgstr "Le stockage de jetons d'authentification est autorisé"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:178
-#, fuzzy
 #| msgid "There are risks associated with utilizing an Internet-based deal execution trading system, including but not limited to the failure of hardware, software and Internet connection. Since %1 does not control signal power, its reception or routing via Internet, configuration of your equipment or reliability of its connection, we cannot be responsible for communication failures, distortions or delays when trading via the Internet."
 msgid "You acknowledge and agree that you are solely and exclusively responsible for the control, operation and security of transactions and communications made through its access to or use of the Binary.com API. You acknowledge that there are risks associated with utilizing an internet-based deal execution trading system including, but not limited to, the failure of hardware, software, and internet connections. You acknowledge that the Company does not control signal power, its reception or routing via the internet, configuration of your equipment or reliability of its connection, and the Company shall not be responsible for any communication failures, disruptions, errors, distortions or delays you may experience when trading via the internet using the Binary.com API."
-msgstr "L'utilisation d'un système d'exécution de transactions de trading basé sur le web présente des risques, incluant, sans s'y limiter, la défaillance du matériel informatique, du logiciel ou de la connexion Internet. Étant donné que %1 ne contrôle pas la puissance du signal, sa réception ou le routage via Internet, la configuration de votre équipement ou la fiabilité de sa connexion, nous ne pouvons pas être tenus pour responsables en cas d'échecs de communication, déformations ou retards pendant le trading via Internet."
+msgstr ""
+"Vous reconnaissez et acceptez que vous assumez l'entière responsabilité du "
+"contrôle, du fonctionnement et de la sécurité des transactions et des "
+"communications effectuées via l'accès à, ou l'utilisation de, l'API "
+"Binary.com. Vous reconnaissez que l'utilisation d'un système d'exécution "
+"d'ordres en ligne présente des risques, y compris, sans s'y limiter, des "
+"risques de défaillance du matériel informatique, du logiciel ou de la "
+"connexion Internet. Vous reconnaissez que la Société n'exerce aucun contrôle "
+"sur la puissance du signal, sa réception ou son routage via Internet, la "
+"configuration de votre équipement ou la fiabilité de sa connexion, et la "
+"Société ne peut être tenue responsable en cas d'échecs de communication, de "
+"perturbations, d'erreurs, de déformations ou de retards survenant au cours "
+"de vos transactions en ligne par le biais de l'API Binary.com."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:201
 msgid "You acknowledge that, in the course of dealing under these Terms, you may obtain confidential information relating to the Company and its parent, subsidiaries, affiliates or other third party. Such confidential information shall belong solely to the Company."
 msgstr ""
+"Vous reconnaissez que, dans le cadre des transactions effectuées "
+"conformément aux présentes Conditions, vous êtes susceptible d'accéder à des "
+"informations confidentielles concernant la Société et son entité mère, ses "
+"filiales, ses affiliés ou d'autres tierces parties. Ces informations "
+"confidentielles sont la propriété exclusive de la Société."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:18
 msgid "You agree that by developing on the Binary.com API, you are entering into a legally binding agreement with the Company."
 msgstr ""
+"En menant des activités de développement et de programmation sur l'API "
+"Binary.com, vous acceptez de conclure un accord juridiquement contraignant "
+"entre vous et la Société."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:107
 msgid "You agree that we may use Personal information provided by you in order to conduct appropriate anti-fraud checks. Personal Information that you provide may be disclosed to a credit reference or fraud prevention agency, which may keep a record of that information."
@@ -13275,11 +13687,31 @@ msgstr "Vous acceptez le fait que nous pourrions utiliser les Informations Perso
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:28
 msgid "You agree that you will not:"
-msgstr ""
+msgstr "Vous vous engagez à :"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:142
 msgid "You also acknowledge that Binary.com may continue to make changes to and enhance the Binary.com API and that those changes and enhancements will be owned by Binary.com. You hereby assign and transfer to the Company all of your right, title and interest in and to any modifications or derivative works of the Binary.com API created by or for you, regardless of whether they were created in accordance with these Terms; such assignment being effective upon creation of such works, and shall include, without limitation, all rights under any intellectual property laws, including copyright. You shall not take any action to jeopardise, encumber, limit or interface in any manner with Binary.com’s ownership of and rights with respect to the Binary.com API, or any derivative works or updates thereof or thereto. Any components, parts, or mechanics of any system or API program derived from the Binary.com API, or Binary.com’s business practices shall belong solely to Binary.com. Further, you will not, at any time, contest or assist any other third party in contesting the rights of Binary.com in the Binary.com API or any other intellectual property provided in these Terms."
 msgstr ""
+"En outre, vous reconnaissez que Binary.com est, à tout moment, susceptible "
+"d'effectuer des modifications ou d'améliorer l'API Binary.com et que de "
+"telles modifications et améliorations seront la propriété de Binary.com. Par "
+"le présent Accord, vous cédez et transférez à la Société l'ensemble de vos "
+"droits, titres et intérêts se rapportant à toute forme de modifications ou "
+"de travaux dérivés effectués sur l'API Binary.com, créés par ou pour vous, "
+"que ces modifications et travaux aient été effectués conformément à ces "
+"Conditions ou non. La cession de vos droits, y compris, sans s'y limiter, "
+"des droits relatifs à la propriété intellectuelle, et notamment du droit "
+"d'auteur, prend effet à la date de création desdits travaux. Vous ne devez "
+"entreprendre aucune action visant à compromettre, à grever, à limiter ou à "
+"interférer de quelque manière que ce soit avec la propriété et les droits de "
+"Binary.com en ce qui concerne l'API Binary.com ou avec toute forme de de "
+"mises à jour ou de travaux dérivés en lien avec l'API Binary.com. L'ensemble "
+"des composants, parties et mécanismes de tout système ou programme d'API "
+"dérivé de l'API Binary.com, ainsi que l'ensemble des pratiques commerciales "
+"de Binary.com, est la propriété exclusive de Binary.com. En outre, vous ne "
+"pouvez en aucun cas contester, ou venir en aide à toute tierce partie pour "
+"contester les droits de Binary.com sur l'API Binary.com ou toute autre "
+"propriété intellectuelle mentionnée dans les présentes Conditions."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/privacy.html.tt:37
 msgid "You also have the right to request from us to inform you about the personal data that we process about you and to request its correction where necessary. This request must be made in writing to us and signed by you as the data subject."
@@ -13294,6 +13726,8 @@ msgstr "Vous et nous sommes des contractants indépendants, et rien dans cet Acc
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:93
 msgid "You and your Application must also comply with the following, which are hereby incorporated by reference:"
 msgstr ""
+"Vos activités et votre Application doivent également être conformes aux "
+"conditions et politiques suivantes, intégrées aux présentes par référence :"
 
 #. (website)
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/risk_disclaimer.html.tt:53
@@ -13345,6 +13779,10 @@ msgstr "Vous êtes déjà inscrit(e) ou avez atteint la limite d'inscription aux
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:234
 msgid "You are in default or breach of any covenant, obligation or condition contained in this Agreement, and if such default is not cured within seven days of receipt of written notice from the Company;"
 msgstr ""
+"manquement ou violation de votre part concernant tout type d'engagement, "
+"d'obligation ou de condition que prévoit le présent Accord, si vous ne "
+"remédiez pas audit manquement dans un délai de sept jours après réception "
+"d'un préavis écrit de la part de la Société ;"
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Cashier.pm:438
 msgid "You are not a Payment Agent"
@@ -13368,6 +13806,8 @@ msgstr "You are not eligible for Japan knowledge test."
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:135
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
 msgstr ""
+"Vous ne pouvez prétendre à aucune forme de compensation ou de remboursement "
+"de la part de la Société, quelles que soient les circonstances."
 
 #. (website)
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/risk_disclaimer.html.tt:22
@@ -13505,7 +13945,10 @@ msgstr "Vous avez atteint la limite autorisée de demandes par seconde. Pour con
 
 #: /home/git/translations/binary-static/src/templates/haml/layouts/default/footer.html.haml:1
 msgid "You have reached the rate limit of requests per second. To continue, please <a href='javascript:;' id='ratelimit-refresh-link'>refresh</a> the page."
-msgstr "Vous avez atteint la limite autorisée de demandes par seconde. Pour continuer, veuillez <a href=\"javascript:;\" id=\"ratelimit-refresh-link\"> actualiser</a> la page."
+msgstr ""
+"Vous avez atteint la limite autorisée de demandes par seconde. Pour "
+"continuer, veuillez <a href='javascript:;' id='ratelimit-refresh-"
+"link'>actualiser</a> la page."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/email/bonus_reject.html.tt:7
 msgid "You have signed up for more than one account."
@@ -13524,6 +13967,8 @@ msgstr "Vous avez vendu le contrat suivant:"
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:134
 msgid "You irrevocably, non-exclusively license to the Company rights to use your Contributions; and"
 msgstr ""
+"Vous octroyez à la Société une licence irrévocable et non exclusive "
+"l'autorisant à utiliser vos Contributions ; et"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:188
 msgid "You may choose to contact us to close your account held with the Company. Your account may be closed if you do not have any open trade positions and if you have complied with the requested \"Know Your Client\" procedures to enable you to withdraw any pending funds in your account."
@@ -13536,6 +13981,9 @@ msgstr "Vous pouvez communiquer avec nous par le biais de ce site Web, par e-mai
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:43
 msgid "You may develop Applications using the Binary.com API as soon as you register an Application and you agree to follow these Terms."
 msgstr ""
+"Vous pouvez développer des Applications utilisant l'API Binary.com dès lors "
+"que vous enregistrez une Application et acceptez de respecter les présentes "
+"Conditions."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/main.html.tt:60
 msgid "You may earn up to 35% commission on the net revenue generated by clients whom you introduce to our trading platform."
@@ -13544,6 +13992,8 @@ msgstr "Vous pouvez percevoir une commission s'élevant jusqu'à 35 % du revenu
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:256
 msgid "You may not assign rights granted in this Agreement without the Company’s prior written approval."
 msgstr ""
+"Vous n'êtes pas en mesure de céder les droits octroyés en vertu du présent "
+"Accord, sauf autorisation écrite préalable de la Société."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:167
 msgid "You may only open an account at this site on condition that:"
@@ -13552,10 +14002,19 @@ msgstr "Vous pouvez uniquement ouvrir un compte sur ce site à condition de:"
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:56
 msgid "You may store the Application-specific alphanumeric user IDs that we provide to you for identifying users of your Application (\"API Tokens\") or the tokens that we provide to you when Binary.com authenticates your Application via Open Authorisation Standard (\"OAuth Tokens\")."
 msgstr ""
+"Vous pouvez stocker les identifiants alphanumériques que nous vous "
+"fournissons pour l'identification des utilisateurs de votre Application (« "
+"jetons d'API »), ou bien les jetons que nous vous fournissons lorsque "
+"Binary.com authentifie votre Application via le protocole OAuth (« jetons "
+"OAuth »)."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:227
 msgid "You may terminate this Agreement at any time, but only by giving the Company a minimum of seven days written notice. \"Written notice\" here includes notice delivered by regular letter mail or by email."
 msgstr ""
+"Vous pouvez résilier cet Accord à tout moment, mais uniquement après en "
+"avoir informé la Société avec un préavis écrit de sept jours minimum. Le "
+"terme de « préavis écrit » désigne ici un préavis envoyé par voie postale "
+"traditionnelle ou par e-mail."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/promocode.html.tt:55
 msgid "You may withdraw the bonus amount once you have exceeded an account turnover of 25 times the bonus amount value."
@@ -13572,10 +14031,17 @@ msgstr "Vous devez être connecté pour utiliser la fonctionnalité d'espace de 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:87
 msgid "You must comply with these Terms in order to use the Binary.com API."
 msgstr ""
+"Pour pouvoir utiliser l'API Binary.com, vous devez vous conformer à ces "
+"Conditions."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:66
 msgid "You must immediately delete all Content if we terminate your use of the Binary.com API for breach of these Terms, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
 msgstr ""
+"Si nous mettons fin à votre autorisation d'utiliser l'API Binary.com en "
+"raison d'un non-respect des présentes Conditions, vous devez immédiatement "
+"supprimer l'ensemble des Contenus, sauf dans le cas où cette suppression "
+"impliquerait la violation de toute loi ou obligation imposée par une "
+"autorité gouvernementale."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/account/japanws.html.tt:194
 msgid "You must not be a USA resident, citizen, or have any tax reporting to the USA"
@@ -13584,11 +14050,25 @@ msgstr "You must not be a USA resident, citizen, or have any tax reporting to th
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:51
 msgid "You must not copy or store any Content or capture or store any information expressed by the Content (such as feed data), except to the extent permitted by these Terms."
 msgstr ""
+"Vous ne devez en aucun cas copier ou stocker tout Contenu, ni extraire ou "
+"stocker toute information issue du Contenu (notamment les flux de données), "
+"autrement que dans la mesure permise par les présentes Conditions."
 
 #. ("<a href=\"https://hackerone.com/binary\" target=\"_blank\">Hackerone</a>", "<a href=\"https://binary.vanillacommunity.com\" target=\"_blank\">Vanilla Community</a>")
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:207
 msgid "You must promptly report any security deficiencies in, or intrusions to, your Application that you discover to Binary.com by writing in to %1 or by raising a discussion  thread on %2 which is part of our Developer Site. You will work with Binary.com to immediately correct any security deficiency, and will immediately disconnect any intrusions or intruder. In the event of any security deficiency or intrusion involving the Application, APIs or Content, you will make no public statements (e.g. press, blogs, social media, bulletin boards, etc.) without prior written and express permission from Binary.com in each instance."
 msgstr ""
+"Vous êtes tenu(e) de signaler sans délai à Binary.com toute déficience ou "
+"intrusion que vous pourriez détecter dans votre Application, en envoyant un "
+"message sur %1 ou en ouvrant un fil de discussion sur %2 qui fait partie de "
+"notre Site de Développement. Vous collaborerez avec Binary.com pour corriger "
+"immédiatement toute déficience de la sécurité, et vous déconnecterez "
+"immédiatement toute intrusion ou intrus. Dans l'éventualité de toute "
+"déficience de la sécurité ou de toute intrusion impliquant l'Application, "
+"les API ou les Contenus, vous ne ferez aucune déclaration publique (par "
+"exemple, dans la presse, sur les blogs, les réseaux sociaux, les forums en "
+"ligne, etc.) sans autorisation préalable écrite et expresse de Binary.com "
+"pour chaque déclaration."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:536
 msgid "You need to finish all 20 questions."
@@ -13601,10 +14081,21 @@ msgstr "Vous ne devez que prendre quatre décisions afin d'effectuer un contrat 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:188
 msgid "You or your employees’ or agents’ acts or omissions, including yours or their breach or alleged breach of these Terms;"
 msgstr ""
+"Les agissements ou omissions émanant de vous ou de vos employés ou agents, y "
+"compris la violation ou violation présumée de ces Conditions ;"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:82
 msgid "You represent and warrant to the Company that, excluding the Content, you have the right to use, reproduce, transmit, copy, publicly display, publicly perform, and distribute your Application, and that use or promotion of your Application will not violate the rights of any third party (e.g., copyright, patent, trademark, privacy, publicity or other proprietary right of any person or entity), or any applicable regulation or law, and the laws of any country in which your Application is made available."
 msgstr ""
+"Vous déclarez et garantissez à la Société que vous avez le droit d'utiliser, "
+"de reproduire, de transmettre, de copier, de diffuser publiquement, "
+"d'exécuter publiquement et de distribuer votre Application, à l'exception "
+"des Contenus disponibles via cette Application, et que l'utilisation ou la "
+"promotion de votre Application ne constituera pas une violation des droits "
+"de toute tierce partie (par exemple, droits d'auteur, brevet, marque "
+"déposée, vie privée, publicité ou autre droit de propriété de toute personne "
+"ou entité), ou de toute réglementation ou loi applicable, et des lois de "
+"tout pays au sein duquel votre Application est accessible."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:89
 msgid "You represent, warrant, and undertake that you have obtained and shall maintain all necessary licences and consents to operate within any laws, rules, and regulations applicable under the authority of any regulatory body of the jurisdiction(s) in which you operate or target your business."
@@ -13629,14 +14120,27 @@ msgid "You shall avoid disclosure or unauthorized use of any confidential inform
 msgstr ""
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:186
-#, fuzzy
 #| msgid "You shall indemnify on demand and hold the Company harmless from and against any and all losses, demands, claims, damages, costs, expenses (including, but not limited to, consequential losses and loss of profit, reasonable legal costs and expenses and VAT thereon if applicable) and liabilities suffered or incurred, directly or indirectly, by the Company in consequence of any breach by you of clause 3.3 or 3.4."
 msgid "You shall be solely responsible for, and shall indemnify and hold the Company free and harmless from, any and all third party claims, damages or lawsuits (including, but not limited to, consequential losses and loss of profit, the Company’s reasonable legal costs and expenses if applicable):"
-msgstr "Vous devez indemniser et mettre hors de cause en rapport à l'ensemble de pertes, d'exigences, de demandes d’indemnités, de dommages, de frais, de dépenses (incluant, sans s'y limiter, les pertes et les pertes de gains, les coûts et dépenses juridiques raisonnables et la TVA applicable s'il y a lieu) et les engagements financiers subis ou causés, directement ou indirectement, par la Société à cause d'une rupture de votre part de la clause 3.3 ou 3.4."
+msgstr ""
+"Vous assumez l'entière responsabilité de, et devez couvrir et exonérer la "
+"Société de toute responsabilité concernant, l'ensemble des réclamations et "
+"des actions en justice émanant de, et des dommages subis par, toute tierce "
+"partie (y compris, sans s'y limiter, les pertes consécutives et pertes de "
+"profit et, le cas échéant, les frais de justice encourus par la Société), à "
+"savoir :"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:148
 msgid "You shall discontinue your use of all prior versions of the Binary.com API in favour of the revised Binary.com API. While it is the Company’s intention that the revised Binary.com API shall be backward compatible with the immediately prior version of the Binary.com API, the Company does not guarantee or warrant that this shall be so, and the Company shall have no liability whatsoever to you for any failure of the revised Binary.com API to be backward compatible with any prior version of the Binary.com API."
 msgstr ""
+"Vous devez, le cas échéant, cesser d'utiliser toutes les versions "
+"précédentes de l'API Binary.com et opter pour la version révisée de l'API "
+"Binary.com. Bien que la Société entende faire en sorte que l'API Binary.com "
+"révisée soit compatible avec la dernière version antérieure de l'API "
+"Binary.com, la Société ne peut en aucun cas garantir ou assurer qu'il en "
+"soit ainsi, et la Société décline toute responsabilité envers vous dans le "
+"cas où l'API Binary.com révisée ne serait pas compatible avec toute version "
+"antérieure de l'API Binary.com."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:103
 #, fuzzy
@@ -13775,10 +14279,9 @@ msgid "Your Login ID"
 msgstr "Votre Identifiant de connexion"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:116
-#, fuzzy
 #| msgid "Your country"
 msgid "Your Property"
-msgstr "Votre pays"
+msgstr "Votre propriété"
 
 #. ($currency,                to_monetary_number_format($balance)
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:805
@@ -13868,7 +14371,7 @@ msgstr "Votre demande de bonus - %1"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:189
 msgid "Your breach of any of Binary.com’s rights;"
-msgstr ""
+msgstr "Toute violation des droits de Binary.com de votre part ;"
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Cashier.pm:104
 msgid "Your cashier is locked"
@@ -14077,14 +14580,23 @@ msgstr "Le numéro de référence de votre transaction est %1"
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:235
 msgid "Your use of the Binary.com API causes damage to the Binary.com trading platform, then Binary.com may, at its option, forthwith suspend your use of the Binary.com API and/or terminate this Agreement without further written notice."
 msgstr ""
+"dommages causés à la plateforme Binary.com résultant de votre utilisation de "
+"l'API Binary.com, auquel cas Binary.com peut, à son gré, suspendre "
+"immédiatement votre accès à l'API Binary.com et/ou résilier cet Accord sans "
+"notification écrite supplémentaire."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:112
 msgid "Your use of the Binary.com API will not confer to you any title, ownership interest or intellectual property rights that otherwise belongs to the Company. Our trading platform is protected under patent and our website, including its content, is protected by copyright laws, and will remain our exclusive property, as applicable."
 msgstr ""
+"Votre utilisation de l'API Binary.com ne vous confère aucune partie des "
+"titres, des parts ou des droits de propriété intellectuelle détenus par la "
+"Société. Notre plateforme de trading est protégée par un brevet et notre "
+"site Web, ainsi que son contenu, est protégé par le droit d'auteur et "
+"restera notre propriété exclusive, conformément aux lois applicables."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:190
 msgid "Your violation of any applicable law, rule or regulation;"
-msgstr ""
+msgstr "La violation de toute loi ou réglementation applicable de votre part ;"
 
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Backoffice/Form.pm:590
 msgid "Your website URL"
@@ -14407,6 +14919,9 @@ msgstr "démarrant dans"
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:30
 msgid "sublicense any of the rights granted under these Terms, other than as permitted by these Terms;"
 msgstr ""
+"ne céder aucune sous-licence ni aucun des droits octroyés en vertu des "
+"présentes Conditions, autrement que dans la mesure permise par les présentes "
+"Conditions ;"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/account/maltainvestws.html.tt:415
 #: /home/git/translations/binary-static/src/templates/toolkit/account/realws.html.tt:176
@@ -14442,10 +14957,18 @@ msgstr "aujourd'hui"
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:31
 msgid "use or reproduce the Binary.com API other than as permitted by these Terms or"
 msgstr ""
+"ne pas utiliser ou reproduire l'API Binary.com autrement que dans la mesure "
+"permise par les présentes Conditions ;"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:32
 msgid "use the Binary.com API for any purpose that violates any law or regulation, any right of any person, including but not limited to intellectual property rights, rights of privacy or rights of personality, or in any manner inconsistent with these Terms or privacy policy."
 msgstr ""
+"ne pas utiliser l'API Binary.com à toute fin constituant une violation de "
+"toute loi ou réglementation, ou des droits de toute personne, y compris, "
+"sans toutefois s'y limiter, une violation des droits à la propriété "
+"intellectuelle, à la vie privée ou de la personnalité, ou qui aille, de "
+"quelque manière que ce soit, à l'encontre des présentes Conditions ou de "
+"notre politique de confidentialité."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:291
 #, fuzzy
