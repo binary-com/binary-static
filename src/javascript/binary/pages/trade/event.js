@@ -96,6 +96,7 @@ var TradingEvents = (function () {
             Defaults.remove('formname');
             Defaults.remove('underlying');
             processMarket(1);
+            chartFrameSource();
         };
 
         if (marketNavElement) {
@@ -144,6 +145,7 @@ var TradingEvents = (function () {
         if (underlyingElement) {
             underlyingElement.addEventListener('change', function(e) {
                 if (e.target) {
+                    chartFrameSource();
                     showFormOverlay();
                     showPriceOverlay();
                     if(e.target.selectedIndex < 0) {
@@ -165,7 +167,6 @@ var TradingEvents = (function () {
                     // get ticks for current underlying
                     Tick.request(underlying);
                     displayTooltip(Defaults.get('market'), underlying);
-                    chartFrameSource();
                 }
             });
             if (isJapanTrading()) {
@@ -216,7 +217,7 @@ var TradingEvents = (function () {
             expiryTypeElement.addEventListener('change', function(e) {
                 Defaults.set('expiry_type', e.target.value);
                 onExpiryTypeChange(e.target.value);
-                processPriceRequest();
+                if (expiryTypeElement.value !== 'endtime') processPriceRequest();
             });
         }
 
@@ -363,6 +364,7 @@ var TradingEvents = (function () {
                 BinarySocket.send(params);
                 Price.incrFormId();
                 processForgetProposals();
+                processForgetPriceStream();
             }
         };
 

@@ -19,49 +19,13 @@ var TradingAnalysis = (function() {
         if (formName === 'matchdiff') {
           formName = 'digits';
         }
-        contentId.innerHTML =
-          '<div class="content-tab-container page-section">' +
-            '<div class="tab-menu">' +
-              '<div class="tab-menu-wrap grd-container">' +
-                '<ul id="betsBottomPage" class="tm-ul">' +
-                  '<li id="tab_portfolio" class="tm-li invisible first">' +
-                    '<a href="#tab_portfolio" class="tm-a first">' + text.localize('Portfolio') + '</a>' +
-                  '</li>' +
-                  '<li id="tab_graph" class="tm-li first">' +
-                    '<a href="#tab_graph" class="tm-a first">' + text.localize('Chart') + '</a>' +
-                  '</li>' +
-                  '<li id="tab_explanation" class="tm-li active">' +
-                    '<a href="' + page.url.url_for('trade/bet_explanation', 'underlying_symbol=' + $('#underlying').val() +
-                    '&form_name=' + formName) +
-                    '" class="tm-a">' + text.localize('Explanation') + '</a>' +
-                  '</li>' +
-                  '<li id="tab_last_digit" class="invisible tm-li">' +
-                    '<a href="#" class="tm-a">' +
-                    text.localize('Last Digit Stats') + '</a>' +
-                  '</li>' +
-                  '<li id="tab_japan_info" class="invisible tm-li last">' +
-                    '<a href="#" class="tm-a">' + text.localize('Prices') + '</a>' +
-                  '</li>' +
-                '</ul>' +
-              '</div>' +
-            '</div>' +
-            '<div class="tab-content grd-container">' +
-              '<div class="tab-content-wrapper" id="bet_bottom_content">' +
-                '<div id="tab_portfolio-content" class="toggle-content invisible "></div>' +
-                '<div id="tab_graph-content" class="toggle-content invisible">' +
-                  '<div id="trade_live_chart"></div>' +
-                '</div>' +
-                '<div id="tab_explanation-content" class="toggle-content selectedTab"></div>' +
-                '<div id="tab_last_digit-content" class="toggle-content invisible "></div>' +
-                '<div id="tab_japan_info-content" class="toggle-content invisible "></div>' +
-              '</div>' +
-            '</div>' +
-          '</div>';
+        $('#tab_explanation a').attr('href',  page.url.url_for('trade/bet_explanation', 'underlying_symbol=' + $('#underlying').val() + '&form_name=' + formName));
         if (formName === 'digits' || formName === 'overunder' || formName === 'evenodd') {
             $('#tab_last_digit').removeClass("invisible");
+        } else {
+          $('#tab_last_digit').addClass("invisible");
         }
         sessionStorage.setItem('currentAnalysisTab', getActiveTab());
-        bindAnalysisTabEvent();
         loadAnalysisTab();
     };
 
@@ -277,7 +241,8 @@ var TradingAnalysis = (function() {
         tab_portfolio: function() {
             return tab_portfolio;
         },
-        getActiveTab: getActiveTab
+        getActiveTab: getActiveTab,
+        bindAnalysisTabEvent: bindAnalysisTabEvent
     };
 
 })();

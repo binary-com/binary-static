@@ -4,8 +4,8 @@ module.exports = {
             sourceMap: true,
             sourceMapIncludeSources: true,
         },
-        files: {
-            'dist/js/binary.min.js': ['dist/js/binary.js']
-        }
+        files: [
+            {dest: global.dist + '/js/binary.min.js', src: global.dist + '/js/binary.js'}
+        ]
     }
 };
