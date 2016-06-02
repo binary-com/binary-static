@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-02 06:05+0000\n"
-"Last-Translator: Sittie Hadjirah Sevilla <sittiebaser@gmail.com>\n"
+"PO-Revision-Date: 2016-06-02 14:05+0000\n"
+"Last-Translator: Ewelina Bruździak <e.bruzdziak@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>"
 "\n"
 "Language: pl\n"
@@ -3103,7 +3103,7 @@ msgstr "Copywriter"
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:669
 #| msgid "Corporate Actions"
 msgid "Corporate Action"
-msgstr "Działania korporacyjne"
+msgstr "Działania przedsiębiorstwa"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/risk_disclaimer.html.tt:94
 msgid "Costs and Charges"
@@ -4829,7 +4829,7 @@ msgstr "Prawo właściwe i jurysdykcja"
 #: /home/git/regentmarkets/bom-oauth/templates/scope_confirms.html.ep:31
 #: /home/git/regentmarkets/bom-oauth/templates/scope_confirms.html.ep:32
 msgid "Grant"
-msgstr ""
+msgstr "Zatwierdź"
 
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Wrapper/Streamer.pm:59
 msgid "Granularity is not valid"
@@ -10567,7 +10567,16 @@ msgstr "Obliczanie ceny do zapłaty (lub wypłaty do otrzymania) dla umów finan
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/betting_rules.html.tt:51
 msgid "The charting data made available to Clients by the Company is indicative only and may at times differ from the real market values. The Company's decision as to the calculation of a financial contract price will be final and binding. The Company allows the option to sell contracts before expiry time of some contracts but will not be obliged to do so and can suspend this option depending on the current market conditions. Contracts may be amended when the underlying asset value is adjusted by corporate actions during the contract period."
-msgstr "Dane przedstawiane Klientom na wykresach mają wyłącznie charakter informacyjny i mogą się różnić czasami od rzeczywistych wartości rynkowych. Decyzja Firmy dotycząca obliczania ceny kontraktu finansowego jest ostateczna i wiążąca. W przypadku niektórych kontraktów Firma dopuszcza możliwość sprzedania kontraktu przed datą jego wygaśnięcia, ale nie jest do tego zobowiązana i może zawiesić taką możliwość w zależności od sytuacji na rynku walutowym. Kontrakty podlegają zmianom w sytuacji, gdy wartość instrumentu bazowego zostaje zmieniona w czasie trwania kontraktu w wyniku działań korporacyjnych."
+msgstr ""
+"Dane przedstawiane Klientom na wykresach mają wyłącznie charakter "
+"informacyjny i mogą się różnić czasami od rzeczywistych wartości rynkowych. "
+"Decyzja Firmy dotycząca obliczania ceny kontraktu finansowego jest "
+"ostateczna i wiążąca. W przypadku niektórych kontraktów Firma dopuszcza "
+"możliwość sprzedania kontraktu przed datą jego wygaśnięcia, ale nie jest do "
+"tego zobowiązana i może zawiesić taką możliwość w zależności od sytuacji na "
+"rynku walutowym. Kontrakty podlegają zmianom w sytuacji, gdy wartość "
+"instrumentu bazowego zostaje zmieniona w czasie trwania kontraktu w wyniku "
+"działań przedsiębiorstwa."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/promocode.html.tt:12
 msgid "The client has reached a turnover that is 5 times the bonus amount"
@@ -11080,7 +11089,6 @@ msgid "This contract offers no return."
 msgstr "Ten kontrakt nie daje zwrotu."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:661
-#, fuzzy
 #| msgid "This contract is affected by corporate action."
 msgid "This contract was affected by a Corporate Action event."
 msgstr "Działania przedsiębiorstwa wpłynęły na ten kontrakt."
@@ -11982,6 +11990,8 @@ msgstr "Istnieją dwa typy wskaźników zmienności:"
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl+ebg13@ovanel.pbz sbe snfg-genpx pbafvqrengvba."
 msgstr ""
+"Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb "
+"wl+ebg13@ovanel.pbz sbe snfg-genpx pbafvqrengvba."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:221
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:152
@@ -13153,7 +13163,6 @@ msgid "Your Client will receive an email notification informing him/her that the
 msgstr "Twój Klient dostanie powiadomienie e-mailem z informacją, że przelew został wykonany."
 
 #: /home/git/regentmarkets/bom-oauth/templates/loginbinary.html.ep:11
-#, fuzzy
 #| msgid "Your details"
 msgid "Your Details"
 msgstr "Twoje dane"
@@ -13230,10 +13239,9 @@ msgid "Your account transfer is successful. Your new balances are:"
 msgstr "Przelew środków z konta został zrealizowany. Twoje nowe saldo wynosi:"
 
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI.pm:98
-#, fuzzy
 #| msgid "Your date of birth is invalid."
 msgid "Your app_id is invalid."
-msgstr "Twoja data urodzenia jest nieprawidłowa."
+msgstr "Identyfikator Twojej aplikacji (app_id) jest nieprawidłowy."
 
 #. (url_for('/cashier/payment_agent_listws')
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
@@ -16898,10 +16906,12 @@ msgstr "azjatyckie w dół"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (ASIAND - tick)
-#, fuzzy
 #| msgid "%1 %2 payout if the last tick of %3 is strictly lower than the average of the %plural(%5,%d tick,%d ticks)."
 msgid "Win payout if the last tick of %3 is strictly lower than the average of the %plural(%5,%d tick,%d ticks)."
-msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że ostatnia najmniejsza zmiana ceny %3 jest dokładnie niższa niż średnia %plural(%5,%d najmniejszej zmiany ceny,%d najmniejszych zmian ceny)."
+msgstr ""
+"Zyskasz wypłatę, gdy ostatnia najmniejsza zmiana ceny %3 będzie dokładnie "
+"niższa niż średnia %plural(%5,%d najmniejszej zmiany ceny,%d najmniejszych "
+"zmian ceny)."
 
 #: Translation for contract type "ASIANU"
 #, fuzzy
@@ -16916,10 +16926,12 @@ msgstr "azjatyckie w górę"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (ASIANU - tick)
-#, fuzzy
 #| msgid "%1 %2 payout if the last tick of %3 is strictly higher than the average of the %plural(%5,%d tick,%d ticks)."
 msgid "Win payout if the last tick of %3 is strictly higher than the average of the %plural(%5,%d tick,%d ticks)."
-msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że ostatnia najmniejsza zmiana ceny %3 jest dokładnie wyższa niż średnia %plural(%5,%d najmniejszej zmiany ceny,%d najmniejszych zmian ceny)."
+msgstr ""
+"Zyskasz wypłatę, gdy ostatnia najmniejsza zmiana ceny %3 będzie dokładnie "
+"wyższa niż średnia %plural(%5,%d najmniejszej zmiany ceny,%d najmniejszych "
+"zmian ceny)."
 
 #: Translation for contract type "CALL"
 #, fuzzy
@@ -16934,10 +16946,10 @@ msgstr "wyższa"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (CALL - daily)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 is strictly higher than %6 at %5."
 msgid "Win payout if %3 is strictly higher than %6 at %5."
-msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że %3 jest dokładnie wyższy niż %6: %5."
+msgstr ""
+"Zyskasz wypłatę, pod warunkiem że %3 będzie dokładnie wyższy niż %6: %5."
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -16947,10 +16959,11 @@ msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że %3 jest dokładnie wyższy ni
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (CALL - intraday)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 is strictly higher than %6 at %5 after %4."
 msgid "Win payout if %3 is strictly higher than %6 at %5 after %4."
-msgstr "Wypłata %2 %1 nastąpi pod warunkiem, że %3 jest dokładnie wyższy niż %6: %5 po %4."
+msgstr ""
+"Zyskasz wypłatę, pod warunkiem że %3 będzie dokładnie wyższy niż %6: %5 po "
+"%4."
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -16960,10 +16973,11 @@ msgstr "Wypłata %2 %1 nastąpi pod warunkiem, że %3 jest dokładnie wyższy ni
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (CALL - tick)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 after %plural(%5,%d tick,%d ticks) is strictly higher than %6."
 msgid "Win payout if %3 after %plural(%5,%d tick,%d ticks) is strictly higher than %6."
-msgstr "Wypłata %2 %1 nastąpi pod warunkiem, że %3 po %plural(%5,%d najmniejsza zmiana ceny,%d najmniejsze zmiany ceny) jest dokładnie wyższy niż %6."
+msgstr ""
+"Zyskasz wypłatę, pod warunkiem że %3 po %plural(%5,%d najmniejsza zmiana "
+"ceny,%d najmniejsze zmiany ceny) będzie dokładnie wyższy niż %6."
 
 #: Translation for contract type "DIGITDIFF"
 #, fuzzy
@@ -16978,10 +16992,11 @@ msgstr "różni się"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (DIGITDIFF - tick)
-#, fuzzy
 #| msgid "%1 %2 payout if the last digit of %3 is not %6 after %plural(%5,%d tick,%d ticks)."
 msgid "Win payout if the last digit of %3 is not %6 after %plural(%5,%d tick,%d ticks)."
-msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że ostatnia cyfra %3 nie wyniesie %6 po %plural(%5,%d najmniejsza zmiana ceny,%d najmniejsze zmiany ceny)."
+msgstr ""
+"Zyskasz wypłatę, pod warunkiem że ostatnia cyfra %3 nie wyniesie %6 po "
+"%plural(%5,%d najmniejsza zmiana ceny,%d najmniejsze zmiany ceny)."
 
 #: Translation for contract type "DIGITEVEN"
 #, fuzzy
@@ -16996,10 +17011,11 @@ msgstr "parzysta"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (DIGITEVEN - tick)
-#, fuzzy
 #| msgid "%1 %2 payout if the last digit of %3 is even after %5 ticks."
 msgid "Win payout if the last digit of %3 is even after %5 ticks."
-msgstr "Wypłata %1 %2 nastąpi, pod warunkiem że ostatnia cyfra %3 będzie parzysta po %5 najmniejszych zmianach ceny."
+msgstr ""
+"Zyskasz wypłatę, pod warunkiem że ostatnia cyfra %3 będzie parzysta po %5 "
+"najmniejszych zmianach ceny."
 
 #: Translation for contract type "DIGITMATCH"
 #, fuzzy
@@ -17014,10 +17030,11 @@ msgstr "zgadza się"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (DIGITMATCH - tick)
-#, fuzzy
 #| msgid "%1 %2 payout if the last digit of %3 is %6 after %plural(%5,%d tick,%d ticks)."
 msgid "Win payout if the last digit of %3 is %6 after %plural(%5,%d tick,%d ticks)."
-msgstr "Wypłata %1 %2 nastąpi, pod warunkiem że ostatnia cyfra %3 wyniesie %6 po %plural(%5,%d najmniejsza zmiana ceny,%d najmniejsze zmiany ceny)."
+msgstr ""
+"Zyskasz wypłatę, pod warunkiem że ostatnia cyfra %3 wyniesie %6 po "
+"%plural(%5,%d najmniejsza zmiana ceny,%d najmniejsze zmiany ceny)."
 
 #: Translation for contract type "DIGITODD"
 #, fuzzy
@@ -17032,10 +17049,11 @@ msgstr "nieparzysta"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (DIGITODD - tick)
-#, fuzzy
 #| msgid "%1 %2 payout if the last digit of %3 is odd after %5 ticks."
 msgid "Win payout if the last digit of %3 is odd after %5 ticks."
-msgstr "Wypłata %1 %2 nastąpi, pod warunkiem że ostatnia cyfra %3 będzie nieparzysta po %5 najmniejszych zmianach ceny."
+msgstr ""
+"Zyskasz wypłatę, pod warunkiem że ostatnia cyfra %3 będzie nieparzysta po %5 "
+"najmniejszych zmianach ceny."
 
 #: Translation for contract type "DIGITOVER"
 #, fuzzy
@@ -17050,10 +17068,11 @@ msgstr "ponad"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (DIGITOVER - tick)
-#, fuzzy
 #| msgid "%1 %2 payout if the last digit of %3 is strictly higher than %6 after %5 ticks."
 msgid "Win payout if the last digit of %3 is strictly higher than %6 after %5 ticks."
-msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że ostatnia cyfra %3 jest wyższa niż %6 po %5 najmniejszych zmianach ceny."
+msgstr ""
+"Zyskasz wypłatę, pod warunkiem że ostatnia cyfra %3 będzie wyższa niż %6 po %"
+"5 najmniejszych zmianach ceny."
 
 #: Translation for contract type "DIGITUNDER"
 #, fuzzy
@@ -17068,10 +17087,11 @@ msgstr "poniżej"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (DIGITUNDER - tick)
-#, fuzzy
 #| msgid "%1 %2 payout if the last digit of %3 is strictly lower than %6 after %5 ticks."
 msgid "Win payout if the last digit of %3 is strictly lower than %6 after %5 ticks."
-msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że ostatnia cyfra %3 jest niższa niż %6 po %5 najmniejszych zmianach ceny."
+msgstr ""
+"Zyskasz wypłatę, pod warunkiem że ostatnia cyfra %3 będzie niższa niż %6 po %"
+"5 najmniejszych zmianach ceny."
 
 #: Translation for contract type "EXPIRYMISS"
 #, fuzzy
@@ -17086,10 +17106,9 @@ msgstr "kończy się poza"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (EXPIRYMISS - daily)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 ends outside %7 to %6 at %5."
 msgid "Win payout if %3 ends outside %7 to %6 at %5."
-msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że %3 zakończy się poza %7 do %6: %5."
+msgstr "Zyskasz wypłatę, pod warunkiem że %3 zakończy się poza %7 do %6: %5."
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -17099,10 +17118,10 @@ msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że %3 zakończy się poza %7 do 
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (EXPIRYMISS - intraday)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 ends outside %7 to %6 at %5 after %4."
 msgid "Win payout if %3 ends outside %7 to %6 at %5 after %4."
-msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że %3 zakończy się poza %7 do %6: %5 po %4."
+msgstr ""
+"Zyskasz wypłatę, pod warunkiem że %3 zakończy się poza %7 do %6: %5 po %4."
 
 #: Translation for contract type "EXPIRYRANGE"
 #, fuzzy
@@ -17117,10 +17136,11 @@ msgstr "kończy się pomiędzy"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (EXPIRYRANGE - daily)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 ends strictly between %7 to %6 at %5."
 msgid "Win payout if %3 ends strictly between %7 to %6 at %5."
-msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że %3 zakończy się dokładnie pomiędzy %7 a %6: %5."
+msgstr ""
+"Zyskasz wypłatę, pod warunkiem że %3 zakończy się dokładnie pomiędzy %7 a %6:"
+" %5."
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -17130,10 +17150,11 @@ msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że %3 zakończy się dokładnie 
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (EXPIRYRANGE - intraday)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 ends strictly between %7 to %6 at %5 after %4."
 msgid "Win payout if %3 ends strictly between %7 to %6 at %5 after %4."
-msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że %3 zakończy się dokładnie pomiędzy %7 a %6: %5 po %4."
+msgstr ""
+"Zyskasz wypłatę, pod warunkiem że %3 zakończy się dokładnie pomiędzy %7 a %6:"
+" %5 po %4."
 
 #: Translation for contract type "NOTOUCH"
 #, fuzzy
@@ -17148,10 +17169,11 @@ msgstr "nie osiąga"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (NOTOUCH - daily)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 does not touch %6 through %5."
 msgid "Win payout if %3 does not touch %6 through %5."
-msgstr "Wypłata %2 %1 nastąpi pod warunkiem, że %3 nie osiągnie wartości %6 w przeciągu: %5."
+msgstr ""
+"Zyskasz wypłatę, pod warunkiem że %3 nie osiągnie wartości %6 w przeciągu: "
+"%5."
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -17161,10 +17183,10 @@ msgstr "Wypłata %2 %1 nastąpi pod warunkiem, że %3 nie osiągnie wartości %6
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (NOTOUCH - intraday)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 does not touch %6 through %5 after %4."
 msgid "Win payout if %3 does not touch %6 through %5 after %4."
-msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że %3 nie osiągnie %6 w przeciągu %5 po %4."
+msgstr ""
+"Zyskasz wypłatę, pod warunkiem że %3 nie osiągnie %6 w przeciągu %5 po %4."
 
 #: Translation for contract type "ONETOUCH"
 #, fuzzy
@@ -17179,10 +17201,9 @@ msgstr "osiąga"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (ONETOUCH - daily)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 touches %6 through %5."
 msgid "Win payout if %3 touches %6 through %5."
-msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że %3 osiągnie %6 w przeciągu: %5."
+msgstr "Zyskasz wypłatę, pod warunkiem że %3 osiągnie %6 w przeciągu: %5."
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -17192,10 +17213,9 @@ msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że %3 osiągnie %6 w przeciągu:
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (ONETOUCH - intraday)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 touches %6 through %5 after %4."
 msgid "Win payout if %3 touches %6 through %5 after %4."
-msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że %3 osiągnie %6 w przeciągu: %5 po %4."
+msgstr "Zyskasz wypłatę, pod warunkiem że %3 osiągnie %6 w przeciągu: %5 po %4."
 
 #: Translation for contract type "PUT"
 #, fuzzy
@@ -17210,10 +17230,10 @@ msgstr "niższa"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (PUT - daily)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 is strictly lower than %6 at %5."
 msgid "Win payout if %3 is strictly lower than %6 at %5."
-msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że %3 jest dokładnie niższy niż %6: %5."
+msgstr ""
+"Zyskasz wypłatę, pod warunkiem że %3 będzie dokładnie niższy niż %6: %5."
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -17223,10 +17243,11 @@ msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że %3 jest dokładnie niższy ni
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (PUT - intraday)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 is strictly lower than %6 at %5 after %4."
 msgid "Win payout if %3 is strictly lower than %6 at %5 after %4."
-msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że %3 jest dokładnie niższe niż %6: %5 po %4."
+msgstr ""
+"Zyskasz wypłatę, pod warunkiem że %3 będzie dokładnie niższe niż %6: %5 po "
+"%4."
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -17236,10 +17257,11 @@ msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że %3 jest dokładnie niższe ni
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (PUT - tick)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 after %plural(%5,%d tick,%d ticks) is strictly lower than %6."
 msgid "Win payout if %3 after %plural(%5,%d tick,%d ticks) is strictly lower than %6."
-msgstr "Wypłata %2 %1 nastąpi pod warunkiem, że %3 po %plural(%5,%d najmniejsza zmiana ceny,%d najmniejsze zmiany ceny) jest dokładnie niższy niż %6."
+msgstr ""
+"Zyskasz wypłatę, pod warunkiem że %3 po %plural(%5,%d najmniejsza zmiana "
+"ceny,%d najmniejsze zmiany ceny) będzie dokładnie niższy niż %6."
 
 #: Translation for contract type "RANGE"
 #, fuzzy
@@ -17254,10 +17276,10 @@ msgstr "pozostaje pomiędzy"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (RANGE - daily)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 stays between %7 to %6 through %5."
 msgid "Win payout if %3 stays between %7 to %6 through %5."
-msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że %3 pozostanie pomiędzy %7 do %6 przez %5."
+msgstr ""
+"Zyskasz wypłatę, pod warunkiem że %3 pozostanie pomiędzy %7 do %6 przez %5."
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -17267,10 +17289,11 @@ msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że %3 pozostanie pomiędzy %7 do
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (RANGE - intraday)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 stays between %7 and %6 through %5 after %4."
 msgid "Win payout if %3 stays between %7 and %6 through %5 after %4."
-msgstr "Wypłata %2 %1 nastąpi, pod warunkiem, że %3 pozostanie pomiędzy %7 a %6 w przeciągu %5 po %4."
+msgstr ""
+"Zyskasz wypłatę, pod warunkiem, że %3 pozostanie pomiędzy %7 a %6 w "
+"przeciągu %5 po %4."
 
 #: Translation for contract type "SPREADD"
 #, fuzzy
@@ -17352,10 +17375,9 @@ msgstr "przekracza"
 #. %6 - High (or single) barrier
 #. %7 - Low barrier (when present)
 #: Translation for contract type description (UPORDOWN - daily)
-#, fuzzy
 #| msgid "%1 %2 payout if %3 goes outside %7 to %6 through %5."
 msgid "Win payout if %3 goes outside %7 to %6 through %5."
-msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że %3 przekroczy %7 do %6 przez: %5."
+msgstr "Zyskasz wypłatę, pod warunkiem że %3 przekroczy %7 do %6 przez: %5."
 
 #. %1 - Payout Currency (example USD)
 #. %2 - Payout value (example 100)
@@ -17367,7 +17389,7 @@ msgstr "Wypłata %2 %1 nastąpi, pod warunkiem że %3 przekroczy %7 do %6 przez:
 #: Translation for contract type description (UPORDOWN - intraday)
 #| msgid "%1 %2 payout if %3 goes outside %7 and %6 through %5 after %4."
 msgid "Win payout if %3 goes outside %7 and %6 through %5 after %4."
-msgstr "Zyskaj wypłatę, jeśli %3 przekroczy %7 i %6 w przeciągu: %5 po %4."
+msgstr "Zyskasz wypłatę, jeśli %3 przekroczy %7 i %6 w przeciągu: %5 po %4."
 
 #~ msgid "Account Details"
 #~ msgstr "Dane konta"
