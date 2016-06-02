@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-01 02:52+0000\n"
-"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
+"PO-Revision-Date: 2016-06-02 05:15+0000\n"
+"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -3412,9 +3412,9 @@ msgstr ""
 "おめでとうございます！バイナリーオプション取引の知識確認テストに合格されました。\n"
 "\n"
 "口座開設の次のステップとしまして、本人確認書類及びマイナンバー「個人番号カード」確認書類の提出をお願い致します。\n"
-"お手数ですが下記確認書類（本人確認書類）のうちから1点とマイナンバー確認書類をコピーしていただき、<u>このメールに添付してご返信ください。</u><ul>\n"
-"詳細につきましては、下記をクリックしてご確認ください。\n"
-"https://www2.binary.com/get-started-jp?l=JA#identification-documents\n"
+"お手数ですが下記確認書類（本人確認書類）のうちから1点とマイナンバー確認書類をコピーしていただき、<u>このメールに添付してご返信ください。</u><ul"
+">\n"
+"詳細につきましては、弊社ホームページにてご確認ください。\n"
 "\n"
 "マイナンバー「個人番号カード」確認書類 (下記のうちから1点)\n"
 " 　　　<li><b>個人番号カード</b>：裏面</li>\n"
@@ -3432,7 +3432,8 @@ msgstr ""
 "　　　　<li><b>特別永住者証明書</b>：裏面に記載がある場合は裏面も必要</li>\n"
 "</ul>\n"
 "\n"
-"当社へ提供された詳細と同じ現住所が書類に記載されていることを事前に確認してください。また、申請に遅れが生じないためにも、住所やその他の情報が確認しやすいようきちんと読み取られていることを確認してから添付してください。\n"
+"当社へ提供された詳細と同じ現住所が書類に記載されていることを事前に確認してください。また、申請に遅れが生じないためにも、住所やその他の情報が確認しやすいよ"
+"うきちんと読み取られていることを確認してから添付してください。\n"
 "\n"
 "24時間以内に書類を確認し、完了後ご連絡させていただきます。\n"
 "\n"
@@ -14185,7 +14186,7 @@ msgstr "権利行使により利益が得られる確率を踏まえれば、一
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:469
 msgid "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
-msgstr "バイナリーオプションは、売り手の損失が限定されており、プレーンオプションに比べ、ローリスクハイリターンな取引といえる。"
+msgstr "バイナリーオプションは、売り手の損失が限定されており、バニラオプションに比べ、ローリスクハイリターンな取引といえる。"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:508
 msgid "{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly."
@@ -14399,7 +14400,7 @@ msgstr "一般的には、インザマネーのバイナリーオプションの
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:495
 msgid "{JAPAN ONLY}In general the price of a binary option will be lower than the price of a plain vanilla option because the payout amount is fixed."
-msgstr "一般的には、バイナリーオプションの価格は、ペイアウト額が固定されるので、プレーンオプションの価格と比べて低くなる。"
+msgstr "一般的には、バイナリーオプションの価格は、ペイアウト額が固定されるので、バニラオプションの価格と比べて低くなる。"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/get_started_jp/get_started.html.tt:139
 msgid "{JAPAN ONLY}In order to open a trading account for you we will need to test your knowledge of options to ensure you have the necessary understanding of the products and risks of binary option trading."
@@ -14516,7 +14517,7 @@ msgstr "必要なオプションの基本知識についてわかりやすく説
 
 #: /home/git/translations/binary-static/src/templates/toolkit/get_started_jp/get_started.html.tt:207
 msgid "{JAPAN ONLY}Please download our Pre-Contract Documents which you must confirm you have read, understood and agree with, when upgrading to a real money account."
-msgstr "リアルマネー口座開設前に、契約締結前交付書面を十分読んでご理解頂く必要がありますのでダウンロードしてご確認してください。"
+msgstr "リアル口座開設前に、契約締結前交付書面を十分読んでご理解頂く必要がありますのでダウンロードしてご確認してください。"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/get_started_jp/get_started.html.tt:195
 msgid "{JAPAN ONLY}Please download our Summary of Specifications which lists all the details of our trade types, rules and conditions for trading etc."
@@ -14626,7 +14627,9 @@ msgstr "判定レートとは、権利行使時点の原資産価格であり、
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:463
 msgid "{JAPAN ONLY}The buyer of a vanilla option can choose whether to exercise the option or not. His loss is limited to the price paid for the option, whereas his potential profit is unlimited."
-msgstr "プレーンオプションの買い手は、自分に不利なときには権利放棄するので、買い手の最大損失額はオプション料、利益額は原資産価格と権利行使価格の差からオプション料を引いた額となり、原資産価格が無限大ならば、利益も無限大となる。"
+msgstr ""
+"バニラオプションの買い手は、自分に不利なときには権利放棄するので、買い手の最大損失額はオプション料、利益額は原資産価格と権利行使価格の差からオプション料を"
+"引いた額となり、原資産価格が無限大ならば、利益も無限大となる。"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:453
 msgid "{JAPAN ONLY}The exit price is important in binary options. In case of handling the OTC currency-related binary options trading for private individuals, the broker company must perform inspections of the exit prices which have been used for determining option payout, and must check whether there is an error in the data in cases where that the company has used rated data provided by third company."
@@ -14662,7 +14665,9 @@ msgstr "オプションの価格は、原資産の価格、原資産の価格変
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:464
 msgid "{JAPAN ONLY}The seller of a vanilla option can not choose whether to exercise the option or not. His profit is limited to the price received for the option, whereas his potential loss is unlimited and could be substantial."
-msgstr "プレーンオプションの売り手は、利益額はオプション料に限定される一方、原資産価格と権利行使価格の差が損失となるので、原資産価格が無限大とすれば、その損失額も無限大となる。"
+msgstr ""
+"バニラオプションの売り手は、利益額はオプション料に限定される一方、原資産価格と権利行使価格の差が損失となるので、原資産価格が無限大とすれば、その損失額も無"
+"限大となる。"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:460
 msgid "{JAPAN ONLY}The seller of an option should receive the option premium from the buyer, even if the buyer waives the right to exercise the option."
@@ -14728,7 +14733,7 @@ msgstr "特別の取り決めがなされる場合を除き、店頭バイナリ
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:494
 msgid "{JAPAN ONLY}Unlike a plain vanilla option, an in-the-money binary option will have a lower price, the further away it is from the exercise point."
-msgstr "バイナリーオプションの場合、プレーンオプションとは異なり、インザマネーのときには、残存期間が長くなるほど、オプション価格は低くなる。"
+msgstr "バイナリーオプションの場合、バニラオプションとは異なり、インザマネーのときには、残存期間が長くなるほど、オプション価格は低くなる。"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:435
 msgid "{JAPAN ONLY}Using binary options for hedging a position in the underlying asset means that only part of the loss or gain can be hedged, because the payout amount is fixed."
