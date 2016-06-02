@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-02 05:15+0000\n"
-"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
+"PO-Revision-Date: 2016-06-02 23:01+0000\n"
+"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -1408,16 +1408,14 @@ msgid "Adjusted Barrier"
 msgstr "調整バリア"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:667
-#, fuzzy
 #| msgid "Adjusted Barrier"
 msgid "Adjusted High Barrier"
-msgstr "調整バリア"
+msgstr "調整高バリア"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:668
-#, fuzzy
 #| msgid "Adjusted Barrier"
 msgid "Adjusted Low Barrier"
-msgstr "調整バリア"
+msgstr "調整低バリア"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/account/api_tokenws.html.tt:36
 msgid "Admin"
@@ -2017,16 +2015,14 @@ msgid "Barrier"
 msgstr "バリア"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:662
-#, fuzzy
 #| msgid "Barrier 1"
 msgid "Barrier Change"
-msgstr "バリア 1"
+msgstr "バリア値の変更"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Strike/Digit.pm:25
-#, fuzzy
 #| msgid "Barrier must be an integer."
 msgid "Barrier is not an integer between 0 to 9."
-msgstr "バリア値は整数です"
+msgstr "バリア値が0から9の整数ではありません。"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Role/SingleBarrier.pm:65
 msgid "Barrier is out of acceptable range."
@@ -4889,7 +4885,7 @@ msgstr "準拠法と裁判管轄"
 #: /home/git/regentmarkets/bom-oauth/templates/scope_confirms.html.ep:31
 #: /home/git/regentmarkets/bom-oauth/templates/scope_confirms.html.ep:32
 msgid "Grant"
-msgstr ""
+msgstr "認可グラント"
 
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Wrapper/Streamer.pm:59
 msgid "Granularity is not valid"
@@ -7728,22 +7724,19 @@ msgid "Order Execution"
 msgstr "オーダー実行"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:663
-#, fuzzy
 #| msgid "High Barrier"
 msgid "Original Barrier"
-msgstr "上限バリア"
+msgstr "オリジナルバリア"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:664
-#, fuzzy
 #| msgid "High Barrier"
 msgid "Original High Barrier"
-msgstr "上限バリア"
+msgstr "オリジナル高バリア"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:665
-#, fuzzy
 #| msgid "Low Barrier"
 msgid "Original Low Barrier"
-msgstr "下限バリア"
+msgstr "オリジナル低バリア"
 
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Charting.pm:591
 msgid "Oscillator calculated from the daily readings of the Accumulation Distribution Line. The CMF is unlike a momentum oscillator in that it is not influenced by the daily price change. Instead, the indicator focuses on the location of the close relative to the range for the period (daily or weekly)."
@@ -11263,10 +11256,9 @@ msgid "This contract offers no return."
 msgstr "このトレード条件での払い戻しは不可能です。"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:661
-#, fuzzy
 #| msgid "This contract is affected by corporate action."
 msgid "This contract was affected by a Corporate Action event."
-msgstr "この契約は、コーポレートアクションの影響を受けます。"
+msgstr "この契約は、コーポレートアクションの影響を受けていました。"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:674
 msgid "This contract was not found among your open positions."
@@ -13433,10 +13425,9 @@ msgid "Your account transfer is successful. Your new balances are:"
 msgstr "口座振替が完了しました。移行後残高："
 
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI.pm:98
-#, fuzzy
 #| msgid "Your date of birth is invalid."
 msgid "Your app_id is invalid."
-msgstr "生年月日が無効です"
+msgstr "アプリIDが無効です。"
 
 #. (url_for('/cashier/payment_agent_listws')
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
