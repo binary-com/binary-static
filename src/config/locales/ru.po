@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-03 14:10+0000\n"
-"Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
+"PO-Revision-Date: 2016-06-03 16:34+0000\n"
+"Last-Translator: Ruslan <ruslan.mukhametdinov.90@gmail.com>\n"
 "Language-Team: Russian "
 "<https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
@@ -7388,10 +7388,9 @@ msgstr "Not FATCA*"
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/App.pm:159
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/App.pm:89
-#, fuzzy
 #| msgid "Page not found"
 msgid "Not Found"
-msgstr "Страница не найдена"
+msgstr "Данные не найдены"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:656
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/explanation.html.tt:112
@@ -13215,10 +13214,9 @@ msgid "Your account transfer is successful. Your new balances are:"
 msgstr "Трансфер между Вашими счетами прошел успешно. Ваш новый баланс:"
 
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI.pm:98
-#, fuzzy
 #| msgid "Your date of birth is invalid."
 msgid "Your app_id is invalid."
-msgstr "Ваша дата рождения недействительна."
+msgstr "Ваш app_id недействителен"
 
 #. (url_for('/cashier/payment_agent_listws')
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
