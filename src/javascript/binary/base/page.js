@@ -4,6 +4,13 @@ var clock_started = false;
 var GTM = (function() {
     "use strict";
 
+    var gtm_applicable = function() {
+      if (getAppId() === '1' && getSocketURL() === 'wss://ws.binaryws.com/websockets/v3') {
+        return true;
+      }
+      return false;
+    };
+
     var gtm_data_layer_info = function(data) {
         var data_layer_info = {
             language  : page.language(),
@@ -28,6 +35,7 @@ var GTM = (function() {
     };
 
     var push_data_layer = function(data) {
+        if (!gtm_applicable) return;
         if(!(/logged_inws/i).test(window.location.pathname)) {
             var info = gtm_data_layer_info(data && typeof(data) === 'object' ? data : null);
             dataLayer[0] = info.data;
@@ -42,6 +50,7 @@ var GTM = (function() {
     };
 
     var event_handler = function(get_settings) {
+        if (!gtm_applicable) return;
         var is_login      = localStorage.getItem('GTM_login')      === '1',
             is_newaccount = localStorage.getItem('GTM_newaccount') === '1';
         if(!is_login && !is_newaccount) {
@@ -77,10 +86,12 @@ var GTM = (function() {
     };
 
     var set_login_flag = function() {
+        if (!gtm_applicable) return;
         localStorage.setItem('GTM_login', '1');
     };
 
     var set_newaccount_flag = function() {
+        if (!gtm_applicable) return;
         localStorage.setItem('GTM_newaccount', '1');
     };
 
@@ -802,6 +813,7 @@ Header.prototype = {
             page.client.clear_storage_values();
             LocalStore.remove('client.tokens');
             LocalStore.set('reality_check.ack', 0);
+            sessionStorage.removeItem('withdrawal_locked');
             var cookies = ['login', 'loginid', 'loginid_list', 'email', 'settings', 'reality_check', 'affiliate_token', 'affiliate_tracking', 'residence', 'allowed_markets'];
             var current_domain = ['.' + document.domain.split('.').slice(-2).join('.'), document.domain, '.' + document.domain];
             var cookie_path = ['/'];
@@ -853,7 +865,7 @@ ToolTip.prototype = {
             title   = false;
 
         targets.on('mouseenter', function(e) {
-            tip = $(this).attr( 'title' );
+            tip = $(this).attr( 'title' ) || $(this).attr('data-title');
 
             if( !tip || tip === '' )
                 return false;
@@ -861,7 +873,8 @@ ToolTip.prototype = {
             that.showing.target = $(this);
             that.showing.tip = tip;
 
-            that.showing.target.removeAttr( 'title' );
+            that.showing.target.removeAttr( 'title' )
+                               .removeAttr( 'data-title' );
 
             that.tooltip.html(tip);
             that.resize_tooltip();
@@ -870,14 +883,14 @@ ToolTip.prototype = {
         });
 
         targets.on('mouseleave', function() {
-            if(that.showing.target) {
-                that.showing.target.attr( 'title', that.showing.tip );
+            if(that.showing.target && !that.showing.target.attr('data-title')) {
+                that.showing.target.attr( 'data-title', that.showing.tip );
             }
             that.hide_tooltip();
         });
 
         targets.on('click', function() {
-            if(that.showing.target) {
+            if(that.showing.target && !that.showing.target.attr('data-title')) {
                 that.showing.target.attr( 'title', that.showing.tip );
             }
             that.hide_tooltip();
@@ -1169,6 +1182,7 @@ Page.prototype = {
         // cleaning the previous values
         page.client.clear_storage_values();
         sessionStorage.setItem('active_tab', '1');
+        sessionStorage.removeItem('withdrawal_locked');
         // set cookies: loginid, login
         page.client.set_cookie('loginid', loginid);
         page.client.set_cookie('login'  , token);

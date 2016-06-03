@@ -73,6 +73,7 @@ var PortfolioWS =  (function() {
             contracts += rowTemplate
             .split("!transaction_id!").join(c.transaction_id)
             .split("!contract_id!").join(c.contract_id)
+            .split("!payout!").join(parseFloat(c.payout).toFixed(2))
             .split("!longcode!").join(longcode)
             .split("!currency!").join(c.currency)
             .split("!buy_price!").join(addComma(parseFloat(c.buy_price)));
@@ -114,6 +115,7 @@ var PortfolioWS =  (function() {
     };
 
     var updateIndicative = function(data) {
+        if(data.hasOwnProperty('error')) return;
         var proposal = data.proposal_open_contract;
         var $td = $("tr[data-contract_id='" + proposal.contract_id + "'] td.indicative");
         var old_indicative = $td.find('strong').text();

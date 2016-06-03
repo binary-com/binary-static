@@ -1,5 +1,3 @@
-
-
 pjax_config_page_require_auth("user/profit_table", function(){
     return {
         onLoad: function() {

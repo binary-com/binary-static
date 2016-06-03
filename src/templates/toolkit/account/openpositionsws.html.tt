@@ -27,6 +27,7 @@
         <thead>
           <tr class="flex-tr">
             <th class="ref flex-tr-child">[% l('Ref.') %]</th>
+            <th class="payout flex-tr-child">[% l('Potential Payout') %]</th>
             <th class="details flex-tr-child">[% l('Contract Details') %]</th>
             <th class="purchase flex-tr-child">[% l('Purchase') %]</th>
             <th class="indicative flex-tr-child">[% l('Indicative') %]</th>
@@ -38,6 +39,7 @@
         <tbody id="portfolio-dynamic">
           <tr class="flex-tr" data-contract_id="!contract_id!">
             <td class="ref flex-tr-child">!transaction_id!</td>
+            <td class="payout flex-tr-child">!currency! <strong>!payout!</strong></td>
             <td class="details flex-tr-child">!longcode!</td>
             <td class="purchase flex-tr-child">!currency! <strong>!buy_price!</strong></td>
             <td class="indicative flex-tr-child">!currency! <strong class="indicative_price"></strong></td>
@@ -47,7 +49,7 @@
 
         <tfoot>
           <tr class="flex-tr">
-            <th class="ref flex-tr-child" colspan="2">&nbsp;</th>
+            <th class="ref flex-tr-child" colspan="3">&nbsp;</th>
             <th class="cost flex-tr-child" id="cost-of-open-positions"></th>
             <th class="value flex-tr-child" id="value-of-open-positions" colspan="2"></th>
           </tr>

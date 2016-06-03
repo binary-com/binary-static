@@ -58,7 +58,7 @@ function BinarySocketClass() {
                 data.passthrough = {};
             }
             // temporary check
-            if((data.contracts_for || data.proposal) && !data.passthrough.hasOwnProperty('dispatch_to')){
+            if((data.contracts_for || data.proposal || data.price_stream) && !data.passthrough.hasOwnProperty('dispatch_to')){
                 data.passthrough.req_number = ++req_number;
                 timeouts[req_number] = setTimeout(function(){
                     if(typeof reloadPage === 'function' && data.contracts_for){
@@ -226,6 +226,23 @@ function BinarySocketClass() {
                   } else {
                     localStorage.removeItem('risk_classification');
                   }
+                  var withdrawal_locked, i;
+                  for (i = 0; i < response.get_account_status.status.length; i++) {
+                    if (response.get_account_status.status[i] === 'withdrawal_locked') {
+                      withdrawal_locked = 'locked';
+                      break;
+                    }
+                  }
+                  if (response.echo_req.hasOwnProperty('passthrough') && response.echo_req.passthrough.hasOwnProperty('dispatch_to')) {
+                    if (response.echo_req.passthrough.dispatch_to === 'ForwardWS') {
+                        ForwardWS.lock_withdrawal(withdrawal_locked || 'unlocked');
+                    } else if (response.echo_req.passthrough.dispatch_to === 'Cashier') {
+                        Cashier.lock_withdrawal(withdrawal_locked || 'unlocked');
+                    } else if (response.echo_req.passthrough.dispatch_to === 'PaymentAgentWithdrawWS') {
+                      PaymentAgentWithdrawWS.lock_withdrawal(withdrawal_locked || 'unlocked');
+                    }
+                  }
+                  sessionStorage.setItem('withdrawal_locked', withdrawal_locked || 'unlocked');
                   localStorage.setItem('risk_classification.response', response.get_account_status.risk_classification);
                 } else if (type === 'get_financial_assessment' && !response.hasOwnProperty('error')) {
                   if (Object.keys(response.get_financial_assessment).length === 0) {

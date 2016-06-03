@@ -8,7 +8,7 @@
  *
  * Usage:
  *
- * `socket.send(Price.createProposal())` to send price proposal to sever
+ * `socket.send(Price.proposal())` to send price proposal to sever
  * `Price.display()` to display the price details returned from server
  */
 var Price = (function() {
@@ -19,10 +19,10 @@ var Price = (function() {
 
     var createProposal = function(typeOfContract) {
         var proposal = {
-                proposal: 1,
-                subscribe: 1
-            },
-            underlying = document.getElementById('underlying'),
+          proposal: 1,
+          subscribe: 1
+        };
+        var underlying = document.getElementById('underlying'),
             submarket = document.getElementById('submarket'),
             contractType = typeOfContract,
             amountType = document.getElementById('amount_type'),
@@ -134,7 +134,7 @@ var Price = (function() {
     };
 
     var display = function(details, contractType) {
-        var proposal = details['proposal'];
+        var proposal = details['proposal'] || details['price_stream'];
         var id = proposal ? proposal['id'] : '';
         var params = details['echo_req'];
 
@@ -165,11 +165,13 @@ var Price = (function() {
 
         var h4 = container.getElementsByClassName('contract_heading')[0],
             amount = container.getElementsByClassName('contract_amount')[0],
+            payoutAmount = container.getElementsByClassName('contract_payout')[0],
+            stake = container.getElementsByClassName('stake')[0],
+            payout = container.getElementsByClassName('payout')[0],
             purchase = container.getElementsByClassName('purchase_button')[0],
             description = container.getElementsByClassName('contract_description')[0],
             comment = container.getElementsByClassName('price_comment')[0],
             error = container.getElementsByClassName('contract_error')[0],
-            amount_wrapper = container.getElementsByClassName('amount_wrapper')[0],
             price_wrapper = container.getElementsByClassName('price_wrapper')[0],
             currency = document.getElementById('currency');
 
@@ -193,21 +195,31 @@ var Price = (function() {
             var extraInfo = details['error']['details'];
             if (extraInfo && extraInfo['display_value']) {
                 if (is_spread) {
+                    $('.stake').hide();
                     amount.textContent = extraInfo['display_value'];
+                    if (extraInfo['payout']) {
+                      payout.textContent = text.localize('Payout/point') + ': ';
+                      payoutAmount.textContent = currency.value + ' ' + (extraInfo['payout']*1).toFixed(2);
+                    }
                 } else {
-                    amount.textContent = currency.value + ' ' + extraInfo['display_value'];
+                    $('.stake').show();
+                    stake.textContent = text.localize('Stake') + ': ';
+                    amount.textContent = currency.value + ' ' + (extraInfo['display_value']*1).toFixed(2);
+                    if (extraInfo['payout']) {
+                      payout.textContent = text.localize('Payout') + ': ';
+                      payoutAmount.textContent = currency.value + ' ' + (extraInfo['payout']*1).toFixed(2);
+                    }
                 }
 
-                extraInfo['longcode'] = extraInfo['longcode'].replace(/[\d\,]+\.\d\d/, function(x) {
-                    return '<b>' + x + '</b>';
-                });
-
-                description.innerHTML = '<div>' + extraInfo['longcode'] + '</div>';
-                price_wrapper.classList.remove('small');
-            } else {
-                description.innerHTML = "";
-                amount_wrapper.hide();
-                price_wrapper.classList.add('small');
+                if (extraInfo['longcode'] && window.innerWidth > 500) {
+                  extraInfo['longcode'] = extraInfo['longcode'].replace(/[\d\,]+\.\d\d/, function(x) {
+                      return '<b>' + x + '</b>';
+                  });
+                  description.setAttribute('data-title', extraInfo['longcode']);
+                  page.contents.tooltip.attach();
+                } else {
+                  description.removeAttribute('data-title');
+                }
             }
 
             error.show();
@@ -215,37 +227,52 @@ var Price = (function() {
         } else {
             if (proposal && proposal['display_value']) {
                 if (is_spread) {
+                    $('.stake').hide();
                     amount.textContent = proposal['display_value'];
+                    if (proposal['payout']) {
+                      payout.textContent = text.localize('Payout/point') + ': ';
+                      payoutAmount.textContent = currency.value + ' ' + (proposal['payout']*1).toFixed(2);
+                    }
                 } else {
-                    amount.textContent = currency.value + ' ' + proposal['display_value'];
+                    $('.stake').show();
+                    stake.textContent = text.localize('Stake') + ': ';
+                    amount.textContent = currency.value + ' ' + (proposal['display_value']*1).toFixed(2);
+                    if (proposal['payout']) {
+                      payout.textContent = text.localize('Payout') + ': ';
+                      payoutAmount.textContent = currency.value + ' ' + (proposal['payout']*1).toFixed(2);
+                    }
                 }
             }
 
-            if (proposal && proposal['longcode']) {
+            if (proposal && proposal['longcode'] && window.innerWidth > 500) {
                 proposal['longcode'] = proposal['longcode'].replace(/[\d\,]+\.\d\d/, function(x) {
                     return '<b>' + x + '</b>';
                 });
-                description.innerHTML = '<div>' + proposal['longcode'] + '</div>';
+                description.setAttribute('data-title', proposal['longcode']);
+                page.contents.tooltip.attach();
+            } else {
+              description.removeAttribute('data-title');
             }
 
             purchase.show();
             comment.show();
-            amount_wrapper.show();
-            price_wrapper.classList.remove('small');
             error.hide();
             if (is_spread) {
                 displayCommentSpreads(comment, currency.value, proposal['spread']);
             } else {
                 displayCommentPrice(comment, currency.value, proposal['ask_price'], proposal['payout']);
             }
-            var oldprice = purchase.getAttribute('data-display_value');
+            var oldprice = purchase.getAttribute('data-display_value'),
+                oldpayout = purchase.getAttribute('data-payout');
             displayPriceMovement(amount, oldprice, proposal['display_value']);
+            displayPriceMovement(payoutAmount, oldpayout, proposal['payout']);
             purchase.setAttribute('data-purchase-id', id);
             purchase.setAttribute('data-ask-price', proposal['ask_price']);
             purchase.setAttribute('data-display_value', proposal['display_value']);
+            purchase.setAttribute('data-payout', proposal['payout']);
             purchase.setAttribute('data-symbol', id);
             for (var key in params) {
-                if (key && key !== 'proposal') {
+                if (key && key !== 'price_stream' && key !== 'proposal') {
                     purchase.setAttribute('data-' + key, params[key]);
                 }
             }

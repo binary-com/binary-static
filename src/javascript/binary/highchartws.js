@@ -155,7 +155,7 @@ var Highchart = (function() {
            id: chartOptions.id || chartOptions.value,
            label: {text: chartOptions.label || '', x: chartOptions.text_left ? -15 : 5},
            color: chartOptions.color || '#e98024',
-           zIndex: 4,
+           zIndex: 2,
            width: chartOptions.width || 2,
            dashStyle: chartOptions.dashStyle || 'Solid'
         });
@@ -179,7 +179,7 @@ var Highchart = (function() {
           value: chartOptions.value,
           label: {text: chartOptions.label, align: 'center'},
           color: chartOptions.color || 'green',
-          zIndex: 4,
+          zIndex: 1,
           width: 2,
           dashStyle: chartOptions.dashStyle || 'Solid'
         });
@@ -225,6 +225,7 @@ var Highchart = (function() {
       if (type === 'contracts_for' && (!error || (error && error.code && error.code === 'InvalidSymbol'))) {
           if (response.contracts_for && response.contracts_for.feed_license) {
             handle_delay(response.contracts_for.feed_license);
+            save_feed_license(response.echo_req.contracts_for, response.contracts_for.feed_license);
           }
           show_entry_error();
       } else if ((type === 'history' || type === 'candles' || type === 'tick' || type === 'ohlc') && !error){
@@ -260,7 +261,7 @@ var Highchart = (function() {
                   show_error('missing');
                   return;
                 }
-                for (i = 0; i < response.candles.length; i++) {
+                for (i = 1; i < response.candles.length; i++) {
                     if (entry_tick_time && response.candles[i] && parseInt(response.candles[i].epoch) <= parseInt(entry_tick_time) && response.candles[i+1].epoch > parseInt(entry_tick_time)) {
                         // set the chart to display from the candle before entry_tick_time
                         min_point = parseInt(response.candles[i-1].epoch);
@@ -325,7 +326,7 @@ var Highchart = (function() {
       if (!update) {
         init_once();
       }
-      if (!chart && !chart_subscribed) {
+      if (!chart && !history_send) {
         request_data(update || '');
       } else if (entry_tick_time && chart) {
         select_entry_tick_barrier();
@@ -375,7 +376,6 @@ var Highchart = (function() {
     }
 
     if(!is_expired && !sell_spot_time && parseInt(window.time._i)/1000 < end_time && !chart_subscribed) {
-        chart_subscribed = true;
         request.subscribe = 1;
     }
 
@@ -384,7 +384,11 @@ var Highchart = (function() {
     if (contracts_response && contracts_response.echo_req.contracts_for === underlying) {
       if (contracts_response.contracts_for.feed_license) {
         handle_delay(contracts_response.contracts_for.feed_license);
+        save_feed_license(contracts_response.echo_req.contracts_for, contracts_response.contracts_for.feed_license);
       }
+      show_entry_error();
+    } else if (sessionStorage.getItem('license.' + underlying)) {
+      handle_delay(sessionStorage.getItem('license.' + underlying));
       show_entry_error();
     } else if(!contracts_for_send && update === '') {
       socketSend({'contracts_for': underlying});
@@ -397,6 +401,7 @@ var Highchart = (function() {
       show_error('', text.localize('Waiting for entry tick.'));
     } else if (!history_send){
       history_send = true;
+      if (request.subscribe) chart_subscribed = true;
       socketSend(request);
     }
     return;
@@ -611,6 +616,23 @@ var Highchart = (function() {
       }
     }
     return;
+  }
+
+  function save_feed_license(contract, license) {
+    var regex = new RegExp('license.' + contract),
+        match_found = false;
+
+    for(i = 0; i < sessionStorage.length; i++) {
+      if(regex.test(sessionStorage.key(i))) {
+        match_found = true;
+        break;
+      }
+    }
+
+    if (!match_found) {
+      sessionStorage.setItem('license.' + contract, license);
+    }
+
   }
 
   return {

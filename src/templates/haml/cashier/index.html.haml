@@ -6,6 +6,8 @@
   %h1= l('Cashier')
 
 .grd-row-padding.table-body
+  .grd-grid-12.grd-row-padding.invisible
+    %p.notice-msg.by_client_type.client_real.with_login_cookies
   .grd-grid-12.grd-row-padding
     %h3= l('Bank-wire, credit card, e-cash wallet')
   .grd-grid-2.grd-grid-mobile-4
@@ -21,8 +23,8 @@
       %a.pjaxload.button.button_large.by_client_type.client_real.with_login_cookies.invisible{ :href => url_for('/cashier/forwardws#deposit') }
         %span= l('Deposit')
     .grd-row-padding.by_client_type.client_real.with_login_cookies.invisible
-      %a.pjaxload.button.button_large.by_client_type.client_real.with_login_cookies.invisible{ :href => url_for('/cashier/forwardws#withdraw') }
-        %span= l('Withdraw')
+      %a.button.button_large.by_client_type.client_real.with_login_cookies.invisible{ :href => url_for('/cashier/forwardws#withdraw') }
+        %span.withdraw= l('Withdraw')
     .grd-row-padding.by_client_type.client_virtual.with_login_cookies.virtual-upgrade-link.invisible
       %a.pjaxload.button.button_large.by_client_type.client_virtual.with_login_cookies.virtual-upgrade-link.invisible{:href => url_for('new_account/realws')}
         %span= l('Upgrade to a Real Account')
@@ -51,8 +53,8 @@
       %a.pjaxload.button.button_large.by_client_type.client_real.with_login_cookies.invisible{:href => url_for('/cashier/payment_agent_listws')}
         %span= l('Deposit')
     .grd-row-padding
-      %a.pjaxload.button.button_large.by_client_type.client_real.with_login_cookies.invisible{:href => url_for('/paymentagent/withdrawws')}
-        %span= l('Withdraw')
+      %a.button.button_large.by_client_type.client_real.with_login_cookies.invisible{:href => url_for('/paymentagent/withdrawws')}
+        %span.withdraw= l('Withdraw')
 
 #account-transfer-section.grd-row-padding.table-body.ja-hide
   .grd-grid-2.grd-grid-mobile-4
@@ -63,5 +65,5 @@
     %p= l('Transfer between your gaming and financial accounts.')
   .grd-grid-5.grd-grid-mobile-12
     .grd-row-padding
-      %a.pjaxload.button.button_large.by_client_type.client_real.with_login_cookies.invisible{:href => url_for('/cashier/account_transferws')}
-        %span= l('Transfer')
+      %a.button.button_large.by_client_type.client_real.with_login_cookies.invisible{:href => url_for('/cashier/account_transferws')}
+        %span.withdraw= l('Transfer')

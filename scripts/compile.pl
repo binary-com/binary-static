@@ -10,22 +10,30 @@ use Text::Haml;
 use Path::Tiny;
 use HTML::Entities qw( encode_entities );
 use Encode;
+use Term::ANSIColor;
 
-use BS qw/set_is_dev is_dev localize set_lang all_languages lang_display_name tt2 css_files js_config menu/;
+use BS qw/set_is_dev is_dev branch set_branch localize set_lang all_languages lang_display_name tt2 css_files js_config menu/;
 use BS::Request;
 
 # force = re-generate all files
 # dev   = for domain like http://fayland.github.io/binary-static/ which has a sub path
+# branch = will add br_[branch_name] to path
 # pattern = the url pattern to rebuild
+# verbose = to display list of all generated files
 my $force;
 my $is_dev;
+my $branch;
 my $pattern;
+my $verbose;
 GetOptions(
     "force|f"     => \$force,
     "dev|d"       => \$is_dev,
+    "branch|b=s"  => \$branch,
     "pattern|p=s" => \$pattern,
+    "verbose|vr"  => \$verbose,
 );
 set_is_dev() if $is_dev;
+set_branch($branch) if $branch;
 
 my @langs = map { lc $_ } all_languages();
 my @m = (
@@ -119,9 +127,23 @@ my @m = (
 );
 
 ## config
-my $root_path = "$Bin/..";
-my $dist_path = "$root_path/dist";
+my $root_path = substr $Bin, 0, rindex($Bin, '/');
+my $dist_path = "$root_path/dist".($branch ? '/'.branch() : '');
 @BS::Request::HTML_URLS = map { $_->[0] } @m;
+my $index = 0;
+$| = 1;
+print colored(['cyan'], "Target: ")."$dist_path\n";
+
+mkdir("$dist_path") unless -d "$dist_path";
+foreach my $lang (@langs) {
+    mkdir("$dist_path/$lang")      unless -d "$dist_path/$lang";
+    mkdir("$dist_path/$lang/pjax") unless -d "$dist_path/$lang/pjax";
+}
+
+if ($pattern) {
+    @m = grep {index($_->[0], $pattern) > -1} @m;
+    $force = 1;
+}
 
 foreach my $m (@m) {
     my $save_as  = $m->[0];
@@ -130,10 +152,7 @@ foreach my $m (@m) {
     my $layout   = $m->[3];
     my $title    = $m->[4];
 
-    if ($pattern) {
-        next unless index($save_as, $pattern) > -1;
-        $force = 1;
-    }
+    $index++;
 
     foreach my $lang (@langs) {
         my $save_as_file = "$dist_path/$lang/pjax/$save_as.html";
@@ -141,8 +160,6 @@ foreach my $m (@m) {
 
         set_lang($lang);
 
-        mkdir("$dist_path/$lang")      unless -d "$dist_path/$lang";
-        mkdir("$dist_path/$lang/pjax") unless -d "$dist_path/$lang/pjax";
         my $request = BS::Request->new(
             language => uc $lang,
         );
@@ -194,7 +211,8 @@ foreach my $m (@m) {
             $layout_output = tt2_handle($layout_file, %stash);
         }
 
-        say $save_as_file;
+        print colored(['green'], ($verbose ? "" : "\e[K\r")."[$index / ".(scalar @m)."] ($lang) => ")."/$lang/$save_as.html".($verbose ? "\n" : "");
+
         my $path = path($save_as_file);
         $path->parent->mkpath if $save_as =~ '/';
         $path->spew_utf8($layout_output);
@@ -221,6 +239,7 @@ foreach my $m (@m) {
         $path->spew_utf8($layout_output);
     }
 }
+print "\n";
 
 sub haml_handle {
     my ($file, %stash) = @_;
