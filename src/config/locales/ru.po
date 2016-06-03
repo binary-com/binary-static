@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-03 16:34+0000\n"
-"Last-Translator: Ruslan <ruslan.mukhametdinov.90@gmail.com>\n"
+"PO-Revision-Date: 2016-06-03 16:36+0000\n"
+"Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
 "Language-Team: Russian "
 "<https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
@@ -6716,10 +6716,9 @@ msgstr "Логарифмическая шкала"
 #: /home/git/regentmarkets/bom-oauth/templates/login.html.ep:13
 #: /home/git/regentmarkets/bom-oauth/templates/loginbinary.html.ep:19
 #: /home/git/regentmarkets/bom-oauth/templates/loginbinary.html.ep:9
-#, fuzzy
 #| msgid "login"
 msgid "Login"
-msgstr "войдите"
+msgstr "Войдите"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:583
 #: /home/git/translations/binary-static/src/templates/toolkit/account/settingsws.html.tt:98
@@ -6768,7 +6767,6 @@ msgid "Loss"
 msgstr "Потери"
 
 #: /home/git/regentmarkets/bom-oauth/templates/loginbinary.html.ep:24
-#, fuzzy
 #| msgid "Lost password?"
 msgid "Lost Password?"
 msgstr "Забыли пароль?"
@@ -11087,7 +11085,6 @@ msgid "This contract offers no return."
 msgstr "На данный контракт не может быть предложен выигрыш."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:661
-#, fuzzy
 #| msgid "This contract is affected by corporate action."
 msgid "This contract was affected by a Corporate Action event."
 msgstr "На данный контракт повлияли корпоративные действия."
@@ -13137,7 +13134,6 @@ msgid "Your Client will receive an email notification informing him/her that the
 msgstr "Ваш клиент получит по электронной почте уведомление о том, что перевод был выполнен."
 
 #: /home/git/regentmarkets/bom-oauth/templates/loginbinary.html.ep:11
-#, fuzzy
 #| msgid "Your details"
 msgid "Your Details"
 msgstr "Ваши данные"
@@ -13216,7 +13212,7 @@ msgstr "Трансфер между Вашими счетами прошел у�
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI.pm:98
 #| msgid "Your date of birth is invalid."
 msgid "Your app_id is invalid."
-msgstr "Ваш app_id недействителен"
+msgstr "Ваш app_id недействителен."
 
 #. (url_for('/cashier/payment_agent_listws')
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
