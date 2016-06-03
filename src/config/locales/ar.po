@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-31 17:15+0000\n"
+"PO-Revision-Date: 2016-06-03 21:57+0000\n"
 "Last-Translator: Ahmed Kotb <ahmedmohamedkotp@gmail.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/binary/static/ar/>"
 "\n"
@@ -12542,10 +12542,18 @@ msgid "With %1, your money is secure."
 msgstr "مع %1، أموالك فى أمان."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:52
-#, fuzzy
 #| msgid "Subject to your complying with the Company's instructions, with regards to tracking Clients accessing %1 via the Links on your Site or by quoting your affiliate IDs during signup, the Company shall use all reasonable endeavours to ensure that whenever a Client links to %1 through these Links or affiliate IDs and they subsequently place a contract or otherwise transact with the Company, the relevant Client is identified as originating from you or your Site. However, the Company shall not be liable to you in any way if the Company is unable to identify a Client as originating from you or your Site."
 msgid "With regards to tracking your referrals accessing Binary.com via the links on your website or by quoting your affiliate IDs during the sign-up process, the Company shall use all reasonable endeavours to ensure that whenever a client is referred to Binary.com through these links or affiliate IDs, and they subsequently place a contract or otherwise transact with the Company, the relevant client is identified as originating from your referral. However, the Company shall not be liable to you in any way if the Company is unable to identify a client as originating from your referral. Only properly tagged clients can be assigned to you. It is your responsibility to ensure that all links are properly tagged."
-msgstr "رهنا لإلتزامك بتعليمات الشركة، فيما يخص تتبع العملاء الذين يصلون لـ %1 عن طريق الروابط الموجودة على موقع الويب الخاص بك أو عن طريق استعمالهم لمعرفات برنامج الانتساب الخاصة بك عند التسجيل، ستقوم الشركة بعمل كل ما في وسعها لضمان أنه كلما استخدم عميل هذه الروابط أو معرفات برنامج الانتساب ليصلوا لـ %1 ومن ثم يقوموا بإبرام عقد أو أى معاملة أخرى مع الشركة، يتم تعريف هذا العميل على أنه توصل إلينا عن طريقك أو عن طريق موقعك. ومع ذلك، فإن الشركة لن تكون مسؤولة تجاهك بأي شكل من الأشكال إذا كانت غير قادرة على تحديد إذا كان عميل ما قد قام بالتوصل إلينا عن طريقك أو عن طريق موقعك."
+msgstr ""
+"فيما يتعلق بتتبع الإحالات الخاصة بك التي تصل Binary.com عبر الروابط في موقعك "
+"الخاص أو بواسطة الهويات المقتبسة التابعة لك خلال عملية التسجيل, فإن الشركة "
+"ستقوم بكل المساعي المعقولة لضمان أن أي عميل يتم إحالته إلى Binary.com من "
+"خلال هذه الروابط أو الهويات التابعة, و حتى إذا ما قاموا بعد ذلك بتحرير عقد "
+"أو قاموا بالتعامل مع الشركة بطريقة أو بأخرى, فسيتم التعامل مع هذا العميل "
+"بأنه محال من قبلك. ومع ذلك فإن الشركة لن تكون مسئولة تجاهك بأي حال من "
+"الأحوال إذا ما لم تستطيع تحديد ما إذا كان هذا العميل محال من قبلك أم لا. "
+"العملاء المربوطين بك بطريقة صحيحة فقط هم من سيتم تخصيصهم لك. وتقع على "
+"مسؤوليتكم ضمان أن جميع الروابط مربوطة بطريقة صحيحة."
 
 #: /home/git/translations/binary-static/src/templates/haml/cashier/index.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/payment_methods.html.tt:15
@@ -12605,10 +12613,12 @@ msgid "Work to expand our international client base by applying creative marketi
 msgstr "العمل على توسيع قاعدة عملائنا الدوليين عن طريق تطبيق التسويق الإبداعي واستراتيجيات دعم العملاء"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_descriptions.html.haml:1
-#, fuzzy
 #| msgid "Work with colleagues in IT, Customer Support and Marketing to provide localized text on our global website, blogs, and social media outlets."
 msgid "Work with colleagues in IT, Customer Support, and Marketing to provide localised text for our global website, blog, social media outlets, and promotional materials."
-msgstr "العمل مع الزملاء في تكنولوجيا المعلومات ودعم العملاء والتسويق لتقديم النص المترجم على الموقع على شبكة الإنترنت العالمية والمدونات، ووسائل الإعلام الاجتماعي."
+msgstr ""
+"العمل مع الزملاء في تكنولوجيا المعلومات ودعم العملاء والتسويق لتقديم النصوص "
+"المحددة لموقعنا العالمي على شبكة الأنترنت والمدونة ومنصات التواصل الإجتماعي "
+"والمواد الترويجية."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Work with members of the QA team to ensure the integrity of releases"
@@ -12619,10 +12629,11 @@ msgid "Work with senior staff to coordinate project delivery; develop and update
 msgstr "العمل مع كبار الموظفين لتنسيق تنفيذ المشاريع; تطوير وتحديث الجداول; عمليات التوثيق; ودفع المبادرات الرامية إلى الإنتهاء بنجاح."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
-#, fuzzy
 #| msgid "Coordinate project delivery; develop and update schedules, maintain task lists, and hold team members accountable for assigned deliverables"
 msgid "Work with senior staff to coordinate project delivery; develop and update schedules; maintain task lists; and hold team members accountable for assigned deliverables"
-msgstr "نسق في تنفيذ المشاريع؛ طور وحدث الجداول وحافظ على قوائم المهام، واسأل أعضاء الفريق لتسليم المهام في الوقت المحدد"
+msgstr ""
+"العمل مع كبار الموظفين للتنسيق حول تنفيذ المشروع; تطوير وتحديث الجداول; "
+"الحفاظ على قائمة المهام; ومساءلة أعضاء الفريق حول إنجازات معينة."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Working closely with the Head of Compliance to implement Know your Client (KYC), Anti-Money Laundering (AML), and data protection regulations"
@@ -12668,10 +12679,18 @@ msgid "You May Store Tokens"
 msgstr "يمكنك تخزين الرموز"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:178
-#, fuzzy
 #| msgid "There are risks associated with utilizing an Internet-based deal execution trading system, including but not limited to the failure of hardware, software and Internet connection. Since %1 does not control signal power, its reception or routing via Internet, configuration of your equipment or reliability of its connection, we cannot be responsible for communication failures, distortions or delays when trading via the Internet."
 msgid "You acknowledge and agree that you are solely and exclusively responsible for the control, operation and security of transactions and communications made through its access to or use of the Binary.com API. You acknowledge that there are risks associated with utilizing an internet-based deal execution trading system including, but not limited to, the failure of hardware, software, and internet connections. You acknowledge that the Company does not control signal power, its reception or routing via the internet, configuration of your equipment or reliability of its connection, and the Company shall not be responsible for any communication failures, disruptions, errors, distortions or delays you may experience when trading via the internet using the Binary.com API."
-msgstr "هناك مخاطر ترتبط باستخدام نظام تداول مبنى على الانترنت لتنفيذ المعاملات، تتضمن ولكن لا تقتصر على فشل الأجهزة والبرمجيات وفشل الاتصال بالإنترنت. بما أن %1 ليس لها تحكم على قوة الإشارة أو استقبالها أو توجيهها عبر الانترنت أو تكوين اجهزتك أو قوة اتصال الانترنت ،لا يمكن أن نكون مسوؤلين عن فشل الاتصال، أو التأخير عند التداول عبر الإنترنت."
+msgstr ""
+"أنت تقر وتوافق على أنك وحدك وعلى وجه الحصر المسؤول عن التحكم والتشغيل وأمن "
+"وحماية التعاملات والاتصالات التي تتم عبر وصولها إلى أو باستخدام واجهة برمجة "
+"التطبيقات الخاصة ب Binary.com. أنت تقر بأن هناك مخاطر مرتبطة باستخدام نظام "
+"التداول لتنفيذ الصفقات عبر الأنترنت بما في ذلك ولكن ليس على سبيل الحصر, فشل "
+"الأجهزة أو البرمجيات أو الاتصال بالأنترنت. أنت تقر بان الشركة لا تتحكم في "
+"قوة الإشارة أو استقبالها أو توجيهها عبر الأنترنت أو أعدادات معداتك أو "
+"موثوقية اتصالها, والشركة لن تكون مسؤولة عن أي فشل في الاتصالات أو عراقيل أو "
+"أخطاء أو تشويهات أو تأخير قد تقوم بتجربته عند التداول عبر الأنترنت باستخدام "
+"واجهة برمجة التطبيقات الخاصة ب  Binary.com."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:201
 msgid "You acknowledge that, in the course of dealing under these Terms, you may obtain confidential information relating to the Company and its parent, subsidiaries, affiliates or other third party. Such confidential information shall belong solely to the Company."
@@ -12698,10 +12717,15 @@ msgid "You also have the right to request from us to inform you about the person
 msgstr "يحق لك أيضاً أن تطلب منا أن نحيطك علماً ببياناتك الشخصية التي نستخدمها ولك أن تطلب تصحيحها عند الضرورة. يجب أن يتم هذا الأمر عن طريق تقديم طلب كتابي لنا ممهور بتوقيعك بوصفك مالك البيانات."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:49
-#, fuzzy
 #| msgid "You and we are independent contractors, and nothing in this Agreement will create any partnership, joint venture, agency, franchise, sales representative, or employment relationship between us. You will have no authority to make or accept any offers or representations on our behalf. You will not make any statement, whether on your site or otherwise, that reasonably would contradict anything in this paragraph."
 msgid "You and the Company are independent contractors, and nothing in this Agreement will create any partnership, joint venture, agency, franchise, sales representative, or employment relationship between us. You will have no authority to make or accept any offers or representations on our behalf. You will not make any statement, whether on your website or otherwise, that reasonably would contradict anything in this paragraph."
-msgstr "نحن وأنت متعاقدين مستقلين، ولا شيء فى هذه الاتفاقية سينشأ عنه أي شراكة، أو مشروع مشترك أو وكالة أو امتياز أو مندوب للمبيعات أو علاقة عمل بيننا. لا يجوز لك أن تقدم أو تقبل أي عروض أو ممثلين نيابة عنا. ولن تقوم بالإدلاء بأي تصريح على موقع الويب الخاص بك أو خلاف ذلك، قد يتعارض مع أي شيء فى هذه الفقرة."
+msgstr ""
+"أنت والشركة متعاقدين مستقلين, ولايوجد أي شيء في هذه الإتفاقية قد ينشأ عنه أي "
+"نوع من أنواع الشراكة أو مشروع مشترك أو وكالة أو امتياز أو تمثيل في المبيعات "
+"أو علاقة عمل فيما بيننا. أنت لن يكون لديك أي سلطة لتقديم أو قبول أي عروض أو "
+"تمثيلات بالنيابة عنا. أنت لن تقوم بالإدلاء بأي تصريحات على الموقع الخاص بك "
+"على الأنترنت أو أي شيء بخلاف ذلك, والذي قد يتعارض بعقلانية مع أي شيء في هذه "
+"الإتفاقية."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:93
 msgid "You and your Application must also comply with the following, which are hereby incorporated by reference:"
@@ -12740,10 +12764,9 @@ msgid "You are currently logged in to your virtual money account (%2)."
 msgstr "أنت حاليا قمت بتسجيل الدخول الى حساب أموالك الافتراضية (%2)."
 
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Wrapper/Streamer.pm:190
-#, fuzzy
 #| msgid "You are either already subscribed or you have reached the limit for proposal subscription."
 msgid "You are either already subscribed or you have reached the limit for pricing table subscription."
-msgstr "أنت الآن إما مشترك بالفعل أو قد وصلت إلى الحد الأقصى للإشتراك المقترح."
+msgstr "أنت أما بالفعل مشترك أو أنك قد وصلت للحد الأقصى لجدول تسعير الإشتراك."
 
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Wrapper/Pricer.pm:27
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/v3/Wrapper/Streamer.pm:169
@@ -12759,10 +12782,12 @@ msgid "You are not a Payment Agent"
 msgstr "لست وكيل دفع"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:82
-#, fuzzy
 #| msgid "You are not allowed to rebate any part commission payment onto your referrals and should the company realise you are engaged in such actions, your affiliate account shall be revoked immediately."
 msgid "You are not allowed to rebate any part commission payment onto your referrals and should the company realise you are engaged in such actions; your affiliate account shall be revoked immediately."
-msgstr "لا يجوز لك أن تخصم أي مبلغ عمولة من الأشخاص الذين تمت إحالتهم وإذا علمت الشركة أنك تقوم بمثل تلك الأعمال، سيتم إلغاء حساب الإنتساب الخاص بك على الفور."
+msgstr ""
+"غير مسموح لك أن تخصم أي جزء من مبلغ العمولة على الإحالات الخاصة بك وينبغي "
+"على الشركة إذا ما علمت بأنك تقوم بمثل هذه الأعمال أن تقوم بإلغاء حسابك "
+"التابع فوراً."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:332
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Cashier.pm:675
@@ -12792,10 +12817,11 @@ msgid "You can <a class=\"pjaxload\" href=\"%1\">open an account</a>, deposit fu
 msgstr "يمكنك أن <a class=\"pjaxload\" href=\"%1\">تفتح حسابا</a>، وتقوم بالإيداع وتبدأ التداول فى دقائق."
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/how_to_trade_binaries.html.haml:1
-#, fuzzy
 #| msgid "You can choose payouts from $1 to $100,000. This wide payout range is ideal for both small and large traders."
 msgid "You can choose payouts from $1 to $50,000. This wide payout range is ideal for both small and large traders."
-msgstr "يمكنك أن تختار مردودات من 1$ إلى 100,000. هذا المدى الواسع مثالي لكل من صغار وكبار المتداولين."
+msgstr ""
+"يمكنك اختيار عوائد من 1 دولار إلى 50 ألف دولار. ويعد هذا النطاق العريض من "
+"العائد مثالياً لكل من كبار وصغار المتداولين."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/why_us.html.haml:1
 msgid "You can close your trade before expiry to lock in profits."
@@ -12840,22 +12866,20 @@ msgid "You have already claimed a bonus in the past."
 msgstr "لقد قمت بالفعل بطلب مكافأة في الماضي."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:240
-#, fuzzy
 #| msgid "You have already withdrawn the equivalent of EUR"
 msgid "You have already withdrawn %1 %2."
-msgstr "لقد سحبت بالفعل ما يعادل يورو"
+msgstr "لقد سحبت بالفعل 1% 2%."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:245
-#, fuzzy
 #| msgid "You have already withdrawn the equivalent of EUR %1 in aggregate over the last %2 days."
 msgid "You have already withdrawn the equivalent of %1 %2 in aggregate over the last %3 days."
-msgstr "لقد سحبت بالفعل ما يعادل %1 EUR من المجموع الكلي على مدى الأيام الـ %2 الماضية."
+msgstr ""
+"لقد سحبت بالفعل ما يعادل 1% 2% من الإجمالي على مدار 3% الثلاثة أيام الماضية."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:241
-#, fuzzy
 #| msgid "You have already withdrawn the equivalent of EUR %1"
 msgid "You have already withdrawn the equivalent of %1 %2."
-msgstr "لقد سحبت بالفعل ما يعادل %1 يورو"
+msgstr "لقد سحبت بالفعل ما يعادل 1% 2%."
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:810
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:815
@@ -12881,10 +12905,9 @@ msgid "You have exceeded your daily limit on losses of %1%2."
 msgstr "لقد تجاوزت حدك اليومي من الخسائر %1%2."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:724
-#, fuzzy
 #| msgid "You haven't purchased any contracts."
 msgid "You have not granted access to any applications."
-msgstr "لم تقم بشراء أى عقود."
+msgstr "أنت غير مسموح لك بالوصول لأي تطبيقات."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:119
 msgid "You have not obtained and have not maintained all necessary licences and consents to operate within any laws, rules, and regulations applicable under the authority of any regulatory body of the jurisdiction(s) in which you operate or target your business;"
@@ -12924,10 +12947,9 @@ msgid "You have sold the following contract:"
 msgstr "لقد قمت ببيع العقد التالي:"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:654
-#, fuzzy
 #| msgid "You have sold the following contract:"
 msgid "You have sold this contract at %1 %2"
-msgstr "لقد قمت ببيع العقد التالي:"
+msgstr "أنت قمت ببيع هذا العقد عند 1% 2%"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:134
 msgid "You irrevocably, non-exclusively license to the Company rights to use your Contributions; and"
@@ -13019,10 +13041,14 @@ msgid "You represent, warrant, and undertake that you have obtained and shall ma
 msgstr "أنت تقر وتضمن وتتعهد بأنك حصلت على وسوف تحتفظ بكافة التراخيص والموافقات اللازمة للعمل ضمن أي قونين أو قواعد أو لوائح معمول بها تحت أي سلطة لأي هيئة تنظيمية قضائية, والتي كنت تعمل أو تستهدفها في عملك."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:90
-#, fuzzy
 #| msgid "You represent, warrant and undertake that your Site or promotion shall contain no material which is defamatory, pornographic, unlawful, harmful, threatening, obscene, harassing, or racially, ethnically, or otherwise objectionable or discriminatory, violent, politically sensitive or otherwise controversial or in breach of any third party rights and shall not link to any such material."
 msgid "You represent, warrant, and undertake that your website or promotion shall contain no material which is defamatory, pornographic, unlawful, harmful, threatening, obscene, harassing, or racially, ethnically, or otherwise objectionable or discriminatory, violent, politically sensitive, or otherwise controversial or in breach of any third party rights and shall not link to any such material."
-msgstr "أنت تصرح وتضمن وتتعهد بأن موقع الويب الخاص بك أو ترويجك لن يحتوي على أي مواد مسيئة للسمعة أو إباحية أو غير قانونية أو مؤذية، أو مهددة، فاحشة، مضايقة، أو عنصرية وعرقية، أو غير مرغوب فيها أو تمييزية، عنيفة، حساسة سياسياً أو مثيرة للجدل بأي شكل آخر أو فيها خرق لحقوق أي طرف ثالث، ويجب أن لا ترتبط بأي مواد من هذا القبيل."
+msgstr ""
+"أنت تمثل وتضمن وتتعهد بأن موقعك الخاص بك على الأنترنت أو الترويج الخاص بك لن "
+"يحتوي على أي مادة إفترائية أو إباحية أو غير شرعية أو مضرة أو مهددة أو فاحشة "
+"أو مزعجة أو عنصرية أو عرقية أو أي شيء بخلاف ذلك قد يكون بغيضاً أو تمييزي أو "
+"عنيف أو سياسي حساس أو أي شيء بخلاف ذلك يثير الجدل أو يخرق أي حقوق لطرف أو "
+"كيان ثالث أو أن يكون مربوط بأي مواد من مثل هذا القبيل."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/why_us.html.haml:1
 msgid "You risk only your initial stake, and your stake never increases, even in gapping markets."
@@ -13037,30 +13063,40 @@ msgid "You shall avoid disclosure or unauthorized use of any confidential inform
 msgstr "يجب عليك عدم الكشف أو الاستخدام غير المصرح به لأي معلومات سرية قد تصل إلى علمك أو حيازتك لأي طرف ثالث أو أطراف خارجية."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:186
-#, fuzzy
 #| msgid "You shall indemnify on demand and hold the Company harmless from and against any and all losses, demands, claims, damages, costs, expenses (including, but not limited to, consequential losses and loss of profit, reasonable legal costs and expenses and VAT thereon if applicable) and liabilities suffered or incurred, directly or indirectly, by the Company in consequence of any breach by you of clause 3.3 or 3.4."
 msgid "You shall be solely responsible for, and shall indemnify and hold the Company free and harmless from, any and all third party claims, damages or lawsuits (including, but not limited to, consequential losses and loss of profit, the Company’s reasonable legal costs and expenses if applicable):"
-msgstr "يجب عليك أن تعوض الشركة عند الطلب وتجنب الشركة أذى أي وجميع الخسائر والطلبات والمطالبات والتكاليف والنفقات (بما في ذلك، ولكن ليس على سبيل الحصر، الخسائر التبعية وخسارةالأرباح، والتكاليف والمصاريف القانونية المعقولة والضريبة على القيمة المضافة بهذا الشأن إن وجدت) والمطالبات المتكبدة أو التي  تكبدتها الشركة بشكل مباشر أو غير مباشر نتيجة لخرقك للفقرتين 3.3 أو 3.4."
+msgstr ""
+"ستكون أنت وحدك المسؤول عن, وستعوض وتبقي الشركة بعيدة عن أي ضرر قد ينشأ عن "
+"مطالبات أي طرف ثالث أو خسائر أو شكاوي (بما في ذلك, ولكن ليس على سبيل الحصر, "
+"الخسائر المترتبة عن أو خسائر الأرباح أو تكاليف ونفقات الشركة المعقولة إن "
+"وجدت):"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:148
 msgid "You shall discontinue your use of all prior versions of the Binary.com API in favour of the revised Binary.com API. While it is the Company’s intention that the revised Binary.com API shall be backward compatible with the immediately prior version of the Binary.com API, the Company does not guarantee or warrant that this shall be so, and the Company shall have no liability whatsoever to you for any failure of the revised Binary.com API to be backward compatible with any prior version of the Binary.com API."
 msgstr "يجب عليك التوقف عن استخدام جميع الإصدارات السابقة لواجهة برمجة التطبيقات الخاصة ب Binary.com لصالح الإصدار المعدل من واجهة برمجة التطبيقات الخاصة ب Binary.com. في حين أن نية الشركة بأن يكون الإصدار المعدل لواجهة برمجة التطبيقات الخاصة ب Binary.com متوافق فورياً مع الإصدار السابق لواجهة برمجة التطبيقات الخاصة ب Binary.com, فإن الشركة لا تضمن بأن يكون الأمر كذلك, والشركة لن تتحمل أي مسئولية تجاهك أياً كانت بسبب فشل توافق الإصدار المعدل لواجهة برمجة التطبيقات الخاصة ب Binary.com مع أي من الإصدارات السابق لواجهة برمجة التطبيقات الخاصة ب Binary.com."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:103
-#, fuzzy
 #| msgid "You shall indemnify on demand and hold the Company harmless from and against any and all losses, demands, claims, damages, costs, expenses (including, but not limited to, consequential losses and loss of profit, reasonable legal costs and expenses and VAT thereon if applicable) and liabilities suffered or incurred, directly or indirectly, by the Company in consequence of any breach, non-performance or non-observance by you of any of your obligations or warranties under this Agreement."
 msgid "You shall indemnify on demand and hold the Company harmless from, and against any and all losses, demands, claims, damages, costs, expenses (including, but not limited to, consequential losses, loss of profit, and reasonable legal costs, if applicable), and liabilities suffered or incurred, directly, or indirectly, by the Company in consequence of any breach, non-performance, or non-observance by you of any of your obligations or warranties under this Agreement."
-msgstr "يجب عليك أن تعوض الشركة عند الطلب وتجنب الشركة أذى أي وجميع الخسائر والطلبات والمطالبات والتكاليف والنفقات (بما في ذلك، ولكن ليس على سبيل الحصر، الخسائر التبعية وخسارة الأرباح، والتكاليف والمصاريف القانونية المعقولة والضريبة على القيمة المضافة بهذا الشأن إن وجدت) والمطلوبات المتكبدة أو التي تكبدتها الشركة بشكل مباشر أو غير مباشر نتيجة لخرقك، أوعدم أدائك أو عدم تقيدك بأي من التزاماتك أو ضماناتك بموجب هذا الاتفاق."
+msgstr ""
+"يجب عليك التعويض على الطلب وأن تبقي الشركة بعيدة عن الضرر من أي خسائر أو "
+"مطالبات أو إدعاءات أو تكاليف أو نفقات (بما في ذلك, ولكن ليس على سبيل الحصر, "
+"الخسائر المترتبة عن, الخسائر على الأرباح, التكاليف القانونية المعقولة), "
+"والمسؤوليات التي تعاني منها, والمتكبدة, والمباشرة أو غير المباشرة, على "
+"الشركة نتيجة لأي خرق, عدم آدائك أو عدم مراعاتك لأي من إلتزاماتك أو ضماناتك "
+"بموجب هذه الإتفاقية."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:40
 msgid "You shall not develop and implement marketing, advertising, and promotional activities which infringe any applicable laws, rules, regulations, or codes of practice relating to marketing, advertising, and promotional activities applicable under the authority of any regulatory body of the jurisdiction(s) in which you operate or target your business."
 msgstr "لا يحق لك تطوير وتنفيذ أعمال تسويقية, أو إعلانية, وأنشطة ترويجية تخرق أي قوانين معمول بها, قواعد, لوائح, أو أكواد الممارسة أو التدريب المتعلقة بالتسويق, الإعلان, والأنشطة الترويجية المعمول بها تحت سلطة أي هيئة تنظيمية قضائية والتي تعمل أو تستهدف أعمالك."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:36
-#, fuzzy
 #| msgid "You have a duty to act in the client's best interests and you shall not encourage clients to make deposits or place any trades where the purpose of that action is (whether in whole or part) to increase affiliate commissions rather than to benefit the client's trading performance and profitability."
 msgid "You shall not encourage your referrals to make deposits or place any trades where the purpose of that action is (whether in whole or in part) to increase affiliate commissions rather than to benefit your referrals’ trading performance and profitability."
-msgstr "يجب عليك أن تتصرف كما تقتضي مصلحة العميل ويجب عليك ألا تشجع العملاء على عمل أي إيداعات أو تداولات يكون الغرض منها (جزئياً أو كلياً) زيادة عمولات الإنتساب بدلاً من إفادة العميل في التداول والربح."
+msgstr ""
+"لا يجوز لك تشجيع المحالين من قبلك لإيداع الودائع أو إحلال أو وضع الصفقات "
+"بغرض (سواء كان كلياً أو جزئياً) زيادة العمولات الخاصة بك بدلاً من إفادة آداء "
+"التداول وربحية المحالين من قبلك."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:32
 msgid "You shall not encourage your referrals to take out any form of loans to be able to make deposits and/or place trades."
@@ -13068,10 +13104,11 @@ msgstr "لا يجوز لك تشجيع الإحالات الخاصة بك لإخ�
 
 #. (website)
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:34
-#, fuzzy
 #| msgid "You shall not hold or pool client funds or third party funds into your own account held with %1."
 msgid "You shall not hold or pool your referrals’ funds or third party funds into your own account held with %1."
-msgstr "لا يجوز لك أن تضع أو تجمع أموال العملاء أو أموال طرف ثالث في حسابك مع %1."
+msgstr ""
+"لا يجوز لك إمساك أو جمع أموال المحالين من قبلك أو أموال طرف ثالث في حسابك "
+"الخاص مع 1%."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:37
 msgid "You shall not place trades on your referrals’ behalf."
@@ -13079,10 +13116,13 @@ msgstr "لا يجوز لك وضع التداولات بالنيابة عن ال�
 
 #. (website)
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:38
-#, fuzzy
 #| msgid "You may not purchase or register keywords, search terms or other identifiers for use in any search engine, portal, sponsored advertising service or other search or referral service which are identical or similar to any of the Company's trademarks or trade names that include the word \"%1\" or any variation thereof. However, this does not extend to the use of Meta tag keywords on your site which are identical or similar to any of the Company's trademarks or trade names including the term %1."
 msgid "You shall not purchase or register keywords, search terms or other identifiers for use in any search engine, portal, sponsored advertising service or other search or referral service which are identical or similar to any of the Company's trademarks or trade names that include the word \"%1\" or any variation thereof."
-msgstr "لا يجوز لك شراء أو تسجيل الكلمات الرئيسية أو مصطلحات البحث أو معرفات أخرى لاستخدامها في أي محرك بحث أو بوابة إليكترونية أو خدمة إعلانية راعية أو غيره من خدمات البحث والإحالة التي تتطابق أو تتشابه مع أي من العلامات التجارية الخاصة بالشركة أو الأسماء التجارية التي تشمل كلمة \"%1\" أو أي شكل آخر. ومع ذلك، هذا لا يمتد إلى استخدام الكلمات الرئيسية الوصفية (Meta tag) على موقعك والتي تتطابق أو تتشابه مع أي من العلامات أو الأسماء التجارية الخاصة بالشركة بما في ذلك مصطلح %1."
+msgstr ""
+"لا يجوز لك شراء أو استخدام تسجيل الكلمات الرئيسية أو مصطلحات البحث أو "
+"المعرفات الأخرى في أي محرك بحث أو بوابة أو خدمة أعلانية تم رعايتها أو خدمة "
+"بحث أو إحالة أخرى, والتي تكون مطابقة أو مشابهة لأي من العلامات التجارية "
+"للشركة أو الأسماء التجارية والتي تتضمن كلمة \"1%\" أو أي اختلاف فيها."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:35
 msgid "You shall not resort to high-pressure sales tactics or false promises."
@@ -13145,22 +13185,20 @@ msgid "You're using a Virtual Account."
 msgstr "أنت تستخدم حساب افتراضي."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:548
-#, fuzzy
 #| msgid "This account is unavailable. For any questions please contact <a href=\"%1\">Customer Support</a>."
 msgid "Your %1 account is unavailable. For any questions please contact %2."
-msgstr "هذا الحساب غير متاح. إذا كان لديك أي استفسار يرجى الاتصال <a href=\"%1\">بخدمة العملاء</a>."
+msgstr "حسابك 1% غير متاح. لأي استفسارات برجاء الاتصال ب 2%."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:549
-#, fuzzy
 #| msgid "This account is unavailable. For any questions please contact <a href=\"%1\">Customer Support</a>."
 msgid "Your %1 accounts are unavailable. For any questions please contact %2."
-msgstr "هذا الحساب غير متاح. إذا كان لديك أي استفسار يرجى الاتصال <a href=\"%1\">بخدمة العملاء</a>."
+msgstr "حساباتك 1% غير متاحة. لأي استفسارات برجاء الاتصال ب 2%."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:244
-#, fuzzy
 #| msgid "Your %1 day withdrawal limit is currently EUR %2. (or equivalent in other currency)."
 msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other currency)."
-msgstr "حد السحب لـ %1 يوم حاليا EUR %2. (أو ما يعادله بعملة أخرى)."
+msgstr ""
+"حد السحب 1% الخاص بك لليوم هو حالياً 2% 3% (أو ما يعادله من العملة الأخرى)."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:570
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/paymentagent_transferws.html.tt:94
@@ -13168,7 +13206,6 @@ msgid "Your Client will receive an email notification informing him/her that the
 msgstr "سيتسلم عميلك إشعار إلكتروني ليعلمه أنه قد تم عمل التحويل."
 
 #: /home/git/regentmarkets/bom-oauth/templates/loginbinary.html.ep:11
-#, fuzzy
 #| msgid "Your details"
 msgid "Your Details"
 msgstr "التفاصيل الخاصة بك"
@@ -13183,10 +13220,9 @@ msgid "Your Login ID"
 msgstr "معرف الدخول الخاص بك"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:116
-#, fuzzy
 #| msgid "Your country"
 msgid "Your Property"
-msgstr "بلدك"
+msgstr "الملكية الخاصة بك"
 
 #. ($currency,                to_monetary_number_format($balance)
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:805
@@ -13203,20 +13239,18 @@ msgid "Your account has exceeded the trading limit with free promo code, please 
 msgstr "لقد تجاوز حسابك حد التداول الخاص بكود العرض المجاني، يرجى أن تقوم بالايداع إذا كنت ترغب فى الاستمرار فى التداول."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:582
-#, fuzzy
 #| msgid "Your account has no country of residence."
 msgid "Your account has no Login/Logout activity."
-msgstr "حسابك ليس به بلد الإقامة."
+msgstr "حسابك لا يوجد لديه دخول/خروج نشط."
 
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Locale.pm:206
 msgid "Your account has no country of residence."
 msgstr "حسابك ليس به بلد الإقامة."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:382
-#, fuzzy
 #| msgid "Your account has no country of residence."
 msgid "Your account has no trading activity."
-msgstr "حسابك ليس به بلد الإقامة."
+msgstr "حسابك لا يوجد لديه تداول نشط."
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Cashier.pm:106
 msgid "Your account is disabled"
@@ -13227,10 +13261,9 @@ msgid "Your account is fully authenticated and your withdrawal limits have been 
 msgstr "تم توثيق حسابك بالكامل وحد السحب الخاص بك تم رفعه."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:385
-#, fuzzy
 #| msgid "Your account is fully authenticated. You can view your <a class=\"pjaxload\" href=\"%1\">trading limits here</a>."
 msgid "Your account is fully authenticated. You can view your %1trading limits here"
-msgstr "تم توثيق حسابك بالكامل. يمكنك أن تطلع على <a class=\"pjaxload\" href=\"%1\">حدود تداولك هنا</a>."
+msgstr "تم توثيق حسابك بشكل كامل. يمكنك رؤية حدود التداول 1% الخاصة بك هنا"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:756
 msgid "Your account is not fully authenticated. Please visit the <a href=\"%1\">authentication</a> page for more information."
@@ -13253,10 +13286,9 @@ msgid "Your account transfer is successful. Your new balances are:"
 msgstr "نقل حسابك بنجاح. أرصدتك الجديدة هي:"
 
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI.pm:98
-#, fuzzy
 #| msgid "Your date of birth is invalid."
 msgid "Your app_id is invalid."
-msgstr "تاريخ ميلادك غير صحيح."
+msgstr "تطبيق الهوية الشخصية الخاص بك غير صالح."
 
 #. (url_for('/cashier/payment_agent_listws')
 #: /home/git/translations/binary-static/src/templates/haml/static/payment_agent.html.haml:1
@@ -13285,10 +13317,9 @@ msgid "Your cashier is locked as per your request"
 msgstr "قسم الصراف الخاص بك مغلق بناءا على طلبك"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:751
-#, fuzzy
 #| msgid "Your cashier is locked as per your request - to unlock it, please <a href=\"%1\">click here</a>."
 msgid "Your cashier is locked as per your request - to unlock it, please click %1here"
-msgstr "قسم الصراف الخاص بك مغلقا بناءا على طلبك - لفتحه، يرجى <a href=\"%1\">الضغط هنا</a>."
+msgstr "الصراف الخاص بك مغلق بناءً على طلبك - لفتحه, برجاء الضغط 1% هنا"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:592
 msgid "Your cashier is locked as per your request - to unlock it, please enter the password."
@@ -13390,16 +13421,14 @@ msgid "Your password has been changed."
 msgstr "تم تغيير كلمة المرور الخاصة بك."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/account/change_passwordws.html.tt:72
-#, fuzzy
 #| msgid "Your password has been changed."
 msgid "Your password has been changed. Please log in again."
-msgstr "تم تغيير كلمة المرور الخاصة بك."
+msgstr "تم تغيير كلمة المرور الخاصة بك. الرجاء تسجيل الدخول مرة أخرى."
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Accounts.pm:485
-#, fuzzy
 #| msgid "Your password has been changed."
 msgid "Your password has been reset."
-msgstr "تم تغيير كلمة المرور الخاصة بك."
+msgstr "تم إعادة تعيين كلمة المرور الخاصة بك."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:743
 msgid "Your password has been successfully reset. Please log into your account using your new password."
@@ -13432,32 +13461,30 @@ msgid "Your risks are known"
 msgstr "مخاطرتك معلومة"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:309
-#, fuzzy
 #| msgid "Session duration limit, in minutes"
 msgid "Your session duration limit will end in %1 seconds."
-msgstr "حد فترة الجلسة بالدقائق"
+msgstr "ستنتهي مدة الجلسة الخاصة بك في غضون 1% ثانية."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:257
 msgid "Your settings have been updated successfully."
 msgstr "تم تحديث إعداداتك بنجاح."
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Utility.pm:148
-#, fuzzy
 #| msgid "Your documents are expired"
 msgid "Your token has expired."
-msgstr "انتهت صلاحية مستنداتك"
+msgstr "انتهت صلاحية الرمز الخاص بك."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:295
-#, fuzzy
 #| msgid "Please click on the verification link sent to your email, or click <a class=\"pjaxload\" href=\"%1\">here</a> to restart the verification process."
 msgid "Your token has expired. Please click <a class=\"pjaxload\" href=\"%1\">here</a> to restart the verification process."
-msgstr "الرجاء النقر فوق رابط التحقق المرسل إلى بريدك الإلكتروني، أو انقر <a class=\"pjaxload\" href=\"%1\">هنا</a> لإعادة التحقق."
+msgstr ""
+"انتهت صلاحية الرمز الخاص بك. برجاء الضغط <a class=\"pjaxload\" href=\"%1\""
+">هنا</a> لإعادة عملية التحقق."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:588
-#, fuzzy
 #| msgid "Your trading statistics "
 msgid "Your trading statistics since %1."
-msgstr "إحصائيات تداولاتك "
+msgstr "إحصائيات التداول الخاصة بك منذ 1%."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:169
 msgid "Your transaction reference is"
@@ -13491,16 +13518,14 @@ msgid "Your website URL (if you have one)"
 msgstr "عنوان الـ URL الخاص بموقعك (إذا كان لديك واحدا)"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:239
-#, fuzzy
 #| msgid "Your withdrawal limit is EUR %1 (or equivalent in other currency)."
 msgid "Your withdrawal limit is %1 %2 (or equivalent in other currency)."
-msgstr "حد السحب الخاص بك هو EUR %1 (أو ما يعادله بعملة أخرى)."
+msgstr "حد السحب الخاص بك هو 1% 2% (أو ما يعادله بعملة أخرى)."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:238
-#, fuzzy
 #| msgid "Your withdrawal limit is EUR"
 msgid "Your withdrawal limit is %1 %2."
-msgstr "حد السحب الخاص بك هو يورو"
+msgstr "حد السحب الخاص بك هو 1% 2%."
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/benefits_of_trading_binaries.html.haml:1
 msgid "You’ll be surprised by the returns you can make."
@@ -13677,7 +13702,6 @@ msgid "loading..."
 msgstr "تحميل..."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:308
-#, fuzzy
 #| msgid "Login"
 msgid "login"
 msgstr "تسجيل الدخول"
@@ -13687,10 +13711,9 @@ msgid "low barrier"
 msgstr "حاجز منخفض"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:258
-#, fuzzy
 #| msgid "1m"
 msgid "m"
-msgstr "دقيقة واحدة"
+msgstr "دقيقة"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/form/duration.html.tt:28
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/form/duration.html.tt:31
@@ -13842,10 +13865,9 @@ msgid "use the Binary.com API for any purpose that violates any law or regulatio
 msgstr "استخدام واجهة برمجة التطبيقات الخاصة ب Binary.com لأي غرض ينتهك أي قانون أو نظام, أي حق لأي شخص, بما في ذلك ولكن ليس على سبيل الحصر لحقوق الملكية الفكرية, حقوق خصوصية أو حقوق شخصية, أو بأي طريقة لا تنسجم مع هذه الشروط أو سياسة الخصوصية."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:291
-#, fuzzy
 #| msgid "Verification of identity"
 msgid "verification token"
-msgstr "التحقق من الهوية"
+msgstr "رمز التحقق"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/complaints_disputes.html.tt:13
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/complaints_disputes.html.tt:16
@@ -14639,10 +14661,9 @@ msgid "EUR/AED"
 msgstr "يورو/درهم إماراتي"
 
 #: Underlying Symbol frxBTCEUR
-#, fuzzy
 #| msgid "XPT/EUR"
 msgid "BTC/EUR"
-msgstr "XPT/EUR"
+msgstr "بتكوين/يورو"
 
 #: Underlying Symbol frxGBPAED
 msgid "GBP/AED"
@@ -14657,26 +14678,23 @@ msgid "EUR/JPY"
 msgstr "اليورو/الين الياباني"
 
 #: Underlying Symbol frxCADJPY
-#, fuzzy
 #| msgid "AUD/JPY"
 msgid "CAD/JPY"
-msgstr "دولار أسترالي/ ين ياباني"
+msgstr "دولار كندي/ ين ياباني"
 
 #: Underlying Symbol frxEURRUB
-#, fuzzy
 #| msgid "EUR/HUF"
 msgid "EUR/RUB"
-msgstr "يورو/الفورنت المجري"
+msgstr "يورو/روبل روسي"
 
 #: Underlying Symbol frxGBPUSD
 msgid "GBP/USD"
 msgstr "الجنيه الاسترليني/الدولار"
 
 #: Underlying Symbol frxBTCUSD
-#, fuzzy
 #| msgid "GBP/USD"
 msgid "BTC/USD"
-msgstr "الجنيه الاسترليني/الدولار"
+msgstr "بتكوين/الدولار"
 
 #: Underlying Symbol frxUSDCNY
 msgid "USD/CNY"
@@ -14719,10 +14737,9 @@ msgid "AUDZAR"
 msgstr "دولار أسترالي/الراند الجنوب أفريقي"
 
 #: Underlying Symbol frxEURILS
-#, fuzzy
 #| msgid "EUR/INR"
 msgid "EUR/ILS"
-msgstr "يورو/الروبية الهندية"
+msgstr "يورو/شيكل إسرائيلي"
 
 #: Underlying Symbol frxAUDSAR
 msgid "AUD/SAR"
@@ -14749,10 +14766,9 @@ msgid "USD/NOK"
 msgstr "دولار أمريكي/كرونة نرويجية"
 
 #: Underlying Symbol frxAUDTRY
-#, fuzzy
 #| msgid "USD/KRW"
 msgid "AUD/TRY"
-msgstr "دولار أمريكي/ون كوريا الجنوبية"
+msgstr "دولار أسترالي/ليرة تركي"
 
 #: Underlying Symbol frxEURBRL
 msgid "EUR/BRL"
@@ -14791,20 +14807,18 @@ msgid "GBP/CZK"
 msgstr "GBP/CZK"
 
 #: Underlying Symbol frxUSDILS
-#, fuzzy
 #| msgid "USD/INR"
 msgid "USD/ILS"
-msgstr "دولار أمريكي/الروبية الهندية"
+msgstr "دولار أمريكي/شيكل إسرائيلي"
 
 #: Underlying Symbol WLDAUD
 msgid "AUD Index"
 msgstr "مؤشر الاسترالي"
 
 #: Underlying Symbol frxGBPILS
-#, fuzzy
 #| msgid "GBP/INR"
 msgid "GBP/ILS"
-msgstr "الجنيه الاسترليني/الروبية الهندية"
+msgstr "الجنيه الاسترليني/شيكل إسرائيلي"
 
 #: Underlying Symbol frxUSDCAD
 msgid "USD/CAD"
@@ -14859,10 +14873,9 @@ msgid "GBP/ZAR"
 msgstr "الجنيه الاسترليني/الراند الجنوب أفريقي"
 
 #: Underlying Symbol frxEURTRY
-#, fuzzy
 #| msgid "EUR/JPY"
 msgid "EUR/TRY"
-msgstr "اليورو/الين الياباني"
+msgstr "اليورو/ليرة تركي"
 
 #: Underlying Symbol frxAUDPLN
 msgid "AUD/PLN"
@@ -14909,10 +14922,9 @@ msgid "AUD/SGD"
 msgstr "أسترالي/دولار سنغافوري"
 
 #: Underlying Symbol frxGBPTRY
-#, fuzzy
 #| msgid "GBP/ZAR"
 msgid "GBP/TRY"
-msgstr "الجنيه الاسترليني/الراند الجنوب أفريقي"
+msgstr "الجنيه الاسترليني/ليرة تركي"
 
 #: Underlying Symbol frxAUDNOK
 msgid "AUD/NOK"
@@ -14923,10 +14935,9 @@ msgid "EUR/KRW"
 msgstr "يورو/ الوون الكوري"
 
 #: Underlying Symbol frxCADCHF
-#, fuzzy
 #| msgid "AUD/CHF"
 msgid "CAD/CHF"
-msgstr "أسترالي/الفرنك السويسري"
+msgstr "دولار كندي/فرنك سويسري"
 
 #: Underlying Symbol frxEURZAR
 msgid "EUR/ZAR"
@@ -14949,10 +14960,9 @@ msgid "EUR Index"
 msgstr "مؤشر يورو"
 
 #: Underlying Symbol frxUSDRUB
-#, fuzzy
 #| msgid "USD/KRW"
 msgid "USD/RUB"
-msgstr "دولار أمريكي/ون كوريا الجنوبية"
+msgstr "دولار أمريكي/روبل روسي"
 
 #: Underlying Symbol frxEURCNY
 msgid "EUR/CNY"
@@ -14983,10 +14993,9 @@ msgid "USD/CHF"
 msgstr "الدولار الأمريكي/الفرنك السويسري"
 
 #: Underlying Symbol frxAUDILS
-#, fuzzy
 #| msgid "AUD/IDR"
 msgid "AUD/ILS"
-msgstr "دولار أسترالي/روبية أندونيسي"
+msgstr "دولار أسترالي/شيكل إسرائيلي"
 
 #: Underlying Symbol frxAUDUSD
 msgid "AUD/USD"
@@ -15033,10 +15042,9 @@ msgid "USD/SAR"
 msgstr "دولار أمريكي/ريال سعودي"
 
 #: Underlying Symbol frxUSDTRY
-#, fuzzy
 #| msgid "USD/KRW"
 msgid "USD/TRY"
-msgstr "دولار أمريكي/ون كوريا الجنوبية"
+msgstr "دولار أمريكي/ليرة تركي"
 
 #: Underlying Symbol frxUSDPLN
 msgid "USD/PLN"
@@ -15071,20 +15079,18 @@ msgid "CHF/JPY"
 msgstr "الفرنك السويسري/ الين الياباني"
 
 #: Underlying Symbol OTC_SSECOMP
-#, fuzzy
 #| msgid "Shanghai Index"
 msgid "Shanghai OTC Index"
-msgstr "مؤشر شنغهاي"
+msgstr "مؤشر شنغهاي اللامركزي"
 
 #: Underlying Symbol SYNFCHI
 msgid "French Smart Index"
 msgstr "مؤشر الفرنسي الذكي(French Smart Index)"
 
 #: Underlying Symbol OTC_DJI
-#, fuzzy
 #| msgid "Wall Street Index"
 msgid "Wall Street OTC Index"
-msgstr "مؤشر وول ستريت"
+msgstr "مؤشر وول ستريت اللامركزي"
 
 #: Underlying Symbol SYNN225
 msgid "Japanese Smart Index"
@@ -15095,17 +15101,15 @@ msgid "US Tech Composite Index"
 msgstr "مؤشر ناسداك للتكنولوجيا الولايات المتحدة"
 
 #: Underlying Symbol OTC_RTSI
-#, fuzzy
 #| msgid "Russian Regular Index"
 msgid "Russian Regular OTC Index"
-msgstr "المؤشر الروسي المنتظم"
+msgstr "المؤشر الروسي المنتظم اللامركزي"
 
 # Start of extra_translations
 #: Underlying Symbol OTC_AEX
-#, fuzzy
 #| msgid "Dutch Index"
 msgid "Dutch OTC Index"
-msgstr "مؤشر هولندي"
+msgstr "المؤشر الهولندي اللامركزي"
 
 #: Underlying Symbol FTSE
 msgid "UK Index"
@@ -15121,20 +15125,18 @@ msgid "Euro 150 Index"
 msgstr "مؤشر يورو 150"
 
 #: Underlying Symbol OTC_FTSEMIB
-#, fuzzy
 #| msgid "Italian Index"
 msgid "Italian OTC Index"
-msgstr "مؤشر إيطالي"
+msgstr "المؤشر الإيطالي اللامركزي"
 
 #: Underlying Symbol SSECOMP
 msgid "Shanghai Index"
 msgstr "مؤشر شنغهاي"
 
 #: Underlying Symbol OTC_BIST100
-#, fuzzy
 #| msgid "Italian Index"
 msgid "Istanbul OTC Index"
-msgstr "مؤشر إيطالي"
+msgstr "مؤشر إسطنبول اللامركزي"
 
 #: Underlying Symbol FCHI
 msgid "French Index"
@@ -15149,78 +15151,69 @@ msgid "Portuguese Index"
 msgstr "مؤشر البرتغال"
 
 #: Underlying Symbol OTC_IBOV
-#, fuzzy
 #| msgid "Brazilian Index"
 msgid "Brazilian OTC Index"
-msgstr "مؤشر برازيلى"
+msgstr "المؤشر البرازيلي اللامركزي"
 
 #: Underlying Symbol SASEIDX
 msgid "Saudi Arabia Index"
 msgstr "مؤشر السعودية"
 
 #: Underlying Symbol OTC_PSI20
-#, fuzzy
 #| msgid "Portuguese Index"
 msgid "Portuguese OTC Index"
-msgstr "مؤشر البرتغال"
+msgstr "مؤشر البرتغال اللامركزي"
 
 #: Underlying Symbol OTC_IBEX35
-#, fuzzy
 #| msgid "Spanish Index"
 msgid "Spanish OTC Index"
-msgstr "مؤشر أسبانى"
+msgstr "مؤشر أسبانيا اللامركزي"
 
 #: Underlying Symbol SX5E
 msgid "Euro 50 Index"
 msgstr "مؤشر اليورو 50"
 
 #: Underlying Symbol OTC_N225
-#, fuzzy
 #| msgid "Japanese Index"
 msgid "Japanese OTC Index"
-msgstr "مؤشر ياباني"
+msgstr "المؤشر الياباني اللامركزي"
 
 #: Underlying Symbol SYNSX5E
 msgid "Euro 50 Smart Index"
 msgstr "مؤشر اليورو50 الذكي (Euro 50 Smart Index)"
 
 #: Underlying Symbol OTC_SZSECOMP
-#, fuzzy
 #| msgid "Shenzhen Index"
 msgid "Shenzhen OTC Index"
-msgstr "مؤشر شنزن"
+msgstr "مؤشر شنجن اللامركزي"
 
 #: Underlying Symbol OBX
 msgid "Norwegian Index"
 msgstr "مؤشر نرويجي"
 
 #: Underlying Symbol OTC_BFX
-#, fuzzy
 #| msgid "Belgian Index"
 msgid "Belgian OTC Index"
-msgstr "مؤشر بلجيكي"
+msgstr "المؤشر البلجيكي اللامركزي"
 
 #: Underlying Symbol OTC_AS51
-#, fuzzy
 #| msgid "Australian Index"
 msgid "Australian OTC Index"
-msgstr "مؤشر أستراليا"
+msgstr "المؤشر الأسترالي اللامركزي"
 
 #: Underlying Symbol N225
 msgid "Japanese Index"
 msgstr "مؤشر ياباني"
 
 #: Underlying Symbol OTC_MICEX
-#, fuzzy
 #| msgid "Russian Regular Index"
 msgid "Russian 10 OTC Index"
-msgstr "المؤشر الروسي المنتظم"
+msgstr "المؤشر الروسي 10 اللامركزي"
 
 #: Underlying Symbol OTC_SHSZ300
-#, fuzzy
 #| msgid "Shenzhen Index"
 msgid "Shenzhen 300 OTC Index"
-msgstr "مؤشر شنزن"
+msgstr "مؤشر شنجن 300 اللامركزي"
 
 #: Underlying Symbol IBEX35
 msgid "Spanish Index"
@@ -15228,10 +15221,9 @@ msgstr "مؤشر أسبانى"
 
 # Start of extra_translations
 #: Underlying Symbol OTC_DFMGI
-#, fuzzy
 #| msgid "Dubai Index"
 msgid "Dubai OTC Index"
-msgstr "مؤشر دبي"
+msgstr "مؤشر دبي اللامركزي"
 
 #: Underlying Symbol SPTSX60
 msgid "Canadian Index"
@@ -15255,36 +15247,32 @@ msgid "Shenzhen Index"
 msgstr "مؤشر شنزن"
 
 #: Underlying Symbol OTC_NIFTY
-#, fuzzy
 #| msgid "Indian 50 Index"
 msgid "Indian 50 OTC Index"
-msgstr "مؤشر 50 الهندى"
+msgstr "المؤشر الهندي 50 اللامركزي"
 
 #: Underlying Symbol ADSMI
 msgid "Abu Dhabi Index"
 msgstr "مؤشر أبوظبي"
 
 #: Underlying Symbol BIST100
-#, fuzzy
 #| msgid "Italian Index"
 msgid "Istanbul Index"
-msgstr "مؤشر إيطالي"
+msgstr "مؤشر إسطنبول"
 
 #: Underlying Symbol OTC_ISEQ
-#, fuzzy
 #| msgid "Irish Index"
 msgid "Irish OTC Index"
-msgstr "مؤشر أيرلندي"
+msgstr "المؤشر الأيرلندي اللامركزي"
 
 #: Underlying Symbol BFX
 msgid "Belgian Index"
 msgstr "مؤشر بلجيكي"
 
 #: Underlying Symbol OTC_OMXS30
-#, fuzzy
 #| msgid "Swedish Index"
 msgid "Swedish OTC Index"
-msgstr "مؤشر سويدى"
+msgstr "المؤشر السويدي اللامركزي"
 
 #: Underlying Symbol ISEQ
 msgid "Irish Index"
@@ -15315,29 +15303,25 @@ msgid "Jakarta Index"
 msgstr "مؤشر جاكرتا"
 
 #: Underlying Symbol OTC_GDAXI
-#, fuzzy
 #| msgid "German Index"
 msgid "German OTC Index"
-msgstr "مؤشر ألماني"
+msgstr "المؤشر الألماني اللامركزي"
 
 #: Underlying Symbol OTC_KOSPI2
-#, fuzzy
 #| msgid "Korean Index"
 msgid "Korean OTC Index"
-msgstr "مؤشر كورى"
+msgstr "المؤشر الكوري اللامركزي"
 
 # Start of extra_translations
 #: Underlying Symbol OTC_KWSEIDX
-#, fuzzy
 #| msgid "Dubai Index"
 msgid "Kuwait OTC Index"
-msgstr "مؤشر دبي"
+msgstr "مؤشر الكويت اللامركزي"
 
 #: Underlying Symbol OTC_FCHI
-#, fuzzy
 #| msgid "French Index"
 msgid "French OTC Index"
-msgstr "مؤشر فرنسى"
+msgstr "مؤشر فرنسا اللامركزي"
 
 #: Underlying Symbol SYNFTSE
 msgid "UK Smart Index"
@@ -15356,20 +15340,18 @@ msgid "Australian Index"
 msgstr "مؤشر أستراليا"
 
 #: Underlying Symbol OTC_JCI
-#, fuzzy
 #| msgid "Jakarta Index"
 msgid "Jakarta OTC Index"
-msgstr "مؤشر جاكرتا"
+msgstr "مؤشر جاكرتا اللامركزي"
 
 #: Underlying Symbol OMXS30
 msgid "Swedish Index"
 msgstr "مؤشر سويدى"
 
 #: Underlying Symbol OTC_N100
-#, fuzzy
 #| msgid "Euro 100 Index"
 msgid "Euro 100 OTC Index"
-msgstr "مؤشر اليورو 100"
+msgstr "مؤشر اليورو 100 اللامركزي"
 
 #: Underlying Symbol SYNDJI
 msgid "Wall Street Smart Index"
@@ -15388,16 +15370,14 @@ msgid "Korean Index"
 msgstr "مؤشر كورى"
 
 #: Underlying Symbol OTC_HSI
-#, fuzzy
 #| msgid "Hong Kong Index"
 msgid "Hong Kong OTC Index"
-msgstr "مؤشر هونج كونج"
+msgstr "مؤشر هونج كونج اللامركزي"
 
 #: Underlying Symbol OTC_IXIC
-#, fuzzy
 #| msgid "US Tech 100 Index"
 msgid "US Tech OTC Index"
-msgstr "مؤشر الولايات المتحدة تك 100"
+msgstr "مؤشر الولايات المتحدة التقني اللامركزي"
 
 # Start of extra_translations
 #: Underlying Symbol SYNAEX
@@ -15405,26 +15385,23 @@ msgid "Dutch Smart Index"
 msgstr "مؤشر هولندا الذكي"
 
 #: Underlying Symbol OTC_OBX
-#, fuzzy
 #| msgid "Norwegian Index"
 msgid "Norwegian OTC Index"
-msgstr "مؤشر نرويجي"
+msgstr "المؤشر النرويجي اللامركزي"
 
 #: Underlying Symbol OTC_SASEIDX
-#, fuzzy
 #| msgid "Saudi Arabia Index"
 msgid "Saudi Arabia OTC Index"
-msgstr "مؤشر السعودية"
+msgstr "مؤشر السعودية اللامركزي"
 
 #: Underlying Symbol SSMI
 msgid "Swiss Index"
 msgstr "المؤشر السويسري"
 
 #: Underlying Symbol OTC_FTSE
-#, fuzzy
 #| msgid "UK Index"
 msgid "UK OTC Index"
-msgstr "مؤشر المملكة المتحدة"
+msgstr "مؤشر المملكة المتحدة اللامركزي"
 
 #: Underlying Symbol HSI
 msgid "Hong Kong Index"
@@ -15447,16 +15424,14 @@ msgid "Euro 100 Index"
 msgstr "مؤشر اليورو 100"
 
 #: Underlying Symbol OTC_BSESENSEX30
-#, fuzzy
 #| msgid "Bombay Index"
 msgid "Bombay OTC Index"
-msgstr "مؤشر بومباي"
+msgstr "مؤشر بومباي اللامركزي"
 
 #: Underlying Symbol OTC_N150
-#, fuzzy
 #| msgid "Euro 150 Index"
 msgid "Euro 150 OTC Index"
-msgstr "مؤشر يورو 150"
+msgstr "مؤشر يورو 150 اللامركزي"
 
 #: Underlying Symbol OTC_SPC
 #, fuzzy
