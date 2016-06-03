@@ -11,7 +11,6 @@ var ViewPopupWS = (function() {
         chartStarted,
         tickForgotten,
         candleForgotten,
-        candleForgottenSent,
         corporateActionEvent,
         corporateActionSent,
         chartUpdated;
@@ -35,7 +34,6 @@ var ViewPopupWS = (function() {
         chartStarted         = false;
         tickForgotten        = false;
         candleForgotten      = false;
-        candleForgottenSent  = false;
         chartUpdated         = false;
         corporateActionEvent = false;
         corporateActionSent  = false;
@@ -264,7 +262,13 @@ var ViewPopupWS = (function() {
             if (!tickForgotten) {
               tickForgotten = true;
               socketSend({"forget_all":"ticks"});
-            } else if (candleForgotten) {
+            }
+            if (!candleForgotten) {
+              candleForgotten = true;
+              socketSend({"forget_all":"candles"});
+              Highchart.show_chart(contract);
+            }
+            if (candleForgotten && tickForgotten) {
               Highchart.show_chart(contract, 'update');
               if (contract.entry_tick_time) {
                 chartStarted = true;
@@ -722,18 +726,6 @@ var ViewPopupWS = (function() {
                     break;
                 case 'sell_expired':
                     responseSellExpired(response);
-                    break;
-                case 'forget_all':
-                    if (response.echo_req.forget_all === 'ticks' && !candleForgottenSent) {
-                      candleForgottenSent = true;
-                      socketSend({"forget_all":"candles"});
-                    } else if (response.echo_req.forget_all === 'candles') {
-                      candleForgotten = true;
-                      Highchart.show_chart(contract);
-                      if (contract.entry_tick_time) {
-                        chartStarted = true;
-                      }
-                    }
                     break;
                 case 'get_corporate_actions':
                     if (Object.keys(response.get_corporate_actions).length > 0) {
