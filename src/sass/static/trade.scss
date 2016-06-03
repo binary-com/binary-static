@@ -601,6 +601,7 @@
     border-top: 1px solid $COLOR_GRAY;
     border-bottom: 1px solid $COLOR_GRAY;
     border-right: 1px solid $COLOR_GRAY;
+    text-align: right;
   }
   .pricing_table_cell .button {
     color: $COLOR_WHITE;
@@ -692,9 +693,9 @@
     display: flex;
   }
 
-  .price {
-    width: 50px;
-  }
+  // .price {
+  //   width: 50px;
+  // }
 }
 
 @media all and (max-width: 480px) {

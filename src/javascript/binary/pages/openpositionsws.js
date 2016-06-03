@@ -63,10 +63,17 @@ var PortfolioWS =  (function() {
         $.each(data.portfolio.contracts, function(ci, c) {
             sumPurchase += parseFloat(c.buy_price, 10);
             currency = c.currency;
+            var longcode = c.longcode;
+            var match = longcode.match(/\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2} GMT/);
+            if(match){
+                var time = toJapanTimeIfNeeded(match[0]);
+                longcode = longcode.replace(match[0], time);
+            }
+
             contracts += rowTemplate
             .split("!transaction_id!").join(c.transaction_id)
             .split("!contract_id!").join(c.contract_id)
-            .split("!longcode!").join(c.longcode)
+            .split("!longcode!").join(longcode)
             .split("!currency!").join(c.currency)
             .split("!buy_price!").join(addComma(parseFloat(c.buy_price)));
         });
@@ -149,7 +156,8 @@ var PortfolioWS =  (function() {
 
         indicative_sum = indicative_sum.toFixed(2);
 
-        $("#value-of-open-positions").text('USD ' + parseFloat(indicative_sum).toFixed(2));
+        var curr = localStorage.getItem('client.currencies');
+        $("#value-of-open-positions").text(curr + ' ' + parseFloat(indicative_sum).toFixed(2));
     };
 
 

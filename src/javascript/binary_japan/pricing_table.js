@@ -42,7 +42,7 @@ var PricingTable = (function() {
 
     render: function render() {
       var price = parseInt(this.props.price);
-      var inactive = this.props.is_active && price !== 1000 && price !== 0 ? '' : 'inactive';
+      var inactive = this.props.is_active && price !== this.props.units*1000 && price !== 0 ? '' : 'inactive';
       var barrierArr = this.props.barrier ? this.props.barrier.split(/ \- /).reverse() : [];
       var props = this.props;
 
@@ -58,7 +58,7 @@ var PricingTable = (function() {
             "div", { "className": inactive, key: 'inactive' }
           ),
           React.createElement(
-            "div", { "className": "price", "key": "price" },
+            "div", { "className": "price col", "key": "price" },
             '¥' + price
           ),
           (this.props.type === 'buy' ? React.createElement(
@@ -89,8 +89,8 @@ var PricingTable = (function() {
     displayName: "PricingTableHeader",
     render: function render() {
       var barrierLabel = Content.localize().textBarrier;
-      var buyPriceUnitLabel = Content.localize().textBuyPriceUnit;
-      var sellPriceUnitLabel = Content.localize().textSellPriceUnit;
+      var buyPriceUnitLabel = Content.localize().textBuy;
+      var sellPriceUnitLabel = Content.localize().textSell;
 
       return React.createElement(
         'div', { 'className': 'pricing_table_row row heading' },
@@ -123,9 +123,9 @@ var PricingTable = (function() {
 
     render: function render() {
       var types = Object.keys(this.props.values);
-      var buy1 = React.createElement(PricingTableCell, { type: 'buy', is_active: 0, price: 1000 });
+      var buy1 = React.createElement(PricingTableCell, { type: 'buy', is_active: 0, price: 1000*this.props.units });
       var sell1 = React.createElement(PricingTableCell, { type: 'sell', is_active: 0, price: 0 });
-      var buy2 = React.createElement(PricingTableCell, { type: 'buy', is_active: 0, price: 1000 });
+      var buy2 = React.createElement(PricingTableCell, { type: 'buy', is_active: 0, price: 1000*this.props.units });
       var sell2 = React.createElement(PricingTableCell, { type: 'sell', is_active: 0, price: 0 });
 
       var barrier = this.props.barrier.replace(/_/, ' - ');
@@ -157,7 +157,7 @@ var PricingTable = (function() {
           sell2 = React.createElement(PricingTableCell, {
             type: 'sell',
             is_active: 1,
-            price: 1000 - this.props.values[type],
+            price: this.props.units*1000 - this.props.values[type],
             dyn: dyn,
             barrier: barrier,
             contractType: type,
@@ -180,7 +180,7 @@ var PricingTable = (function() {
           sell1 = React.createElement(PricingTableCell, {
             type: 'sell',
             is_active: 1,
-            price: 1000 - this.props.values[type],
+            price: this.props.units*1000 - this.props.values[type],
             dyn: dyn,
             barrier: barrier,
             contractType: type,
@@ -254,6 +254,7 @@ var PricingTable = (function() {
         date_start: form.date_start,
         symbol: form.symbol,
         type: 'japan',
+        payout: 1000*state.units,
       });
     }
   }
@@ -298,6 +299,7 @@ var PricingTable = (function() {
       var contractTypes = Contract.contractType()[state.category];
       var close = $("#period option:selected").text();
       close = close.replace(/\s+\(.+$/, '');
+      close = toJapanTimeIfNeeded(close);
 
       if (contractTypes) {
 
@@ -309,7 +311,7 @@ var PricingTable = (function() {
               mask: mask,
               values: {
                 currency: '¥',
-                sum: 1000,
+                sum: state.units*1000,
                 symbol: state.symbol,
                 close: close,
               },
