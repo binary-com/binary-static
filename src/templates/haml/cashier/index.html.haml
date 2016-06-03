@@ -6,6 +6,8 @@
   %h1= l('Cashier')
 
 .grd-row-padding.table-body
+  .grd-grid-12.grd-row-padding.invisible
+    %p.notice-msg.by_client_type.client_real.with_login_cookies
   .grd-grid-12.grd-row-padding
     %h3= l('Bank-wire, credit card, e-cash wallet')
   .grd-grid-2.grd-grid-mobile-4
@@ -22,7 +24,7 @@
         %span= l('Deposit')
     .grd-row-padding.by_client_type.client_real.with_login_cookies.invisible
       %a.pjaxload.button.button_large.by_client_type.client_real.with_login_cookies.invisible{ :href => url_for('/cashier/forwardws#withdraw') }
-        %span= l('Withdraw')
+        %span.withdraw= l('Withdraw')
     .grd-row-padding.by_client_type.client_virtual.with_login_cookies.virtual-upgrade-link.invisible
       %a.pjaxload.button.button_large.by_client_type.client_virtual.with_login_cookies.virtual-upgrade-link.invisible{:href => url_for('new_account/realws')}
         %span= l('Upgrade to a Real Account')
@@ -52,7 +54,7 @@
         %span= l('Deposit')
     .grd-row-padding
       %a.pjaxload.button.button_large.by_client_type.client_real.with_login_cookies.invisible{:href => url_for('/paymentagent/withdrawws')}
-        %span= l('Withdraw')
+        %span.withdraw= l('Withdraw')
 
 #account-transfer-section.grd-row-padding.table-body.ja-hide
   .grd-grid-2.grd-grid-mobile-4
@@ -64,4 +66,4 @@
   .grd-grid-5.grd-grid-mobile-12
     .grd-row-padding
       %a.pjaxload.button.button_large.by_client_type.client_real.with_login_cookies.invisible{:href => url_for('/cashier/account_transferws')}
-        %span= l('Transfer')
+        %span.withdraw= l('Transfer')

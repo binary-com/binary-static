@@ -5,15 +5,13 @@ var account_transferws = (function(){
     var currType,account_bal;
     var availableCurr= [] ;
     var payoutCurr = [];
-    
+
     var init = function(){
         if(page.client.redirect_if_is_virtual()) {
             return;
         }
 
         $form = $('#account_transfer');
-        $("#success_form").hide();
-        $("#client_message").hide();
         account_bal = 0;
 
         BinarySocket.send({ "transfer_between_accounts": "1","req_id" : 4 });
@@ -27,7 +25,7 @@ var account_transferws = (function(){
             }
 
             var amt = $form.find("#acc_transfer_amount").val();
-            BinarySocket.send({ 
+            BinarySocket.send({
                         "transfer_between_accounts": "1",
                         "account_from": account_from,
                         "account_to": account_to,
@@ -51,15 +49,15 @@ var account_transferws = (function(){
         var accounts = $("#transfer_account_transfer option:selected").text();
         var matches = accounts
                         .split('(')
-                        .filter(function(v){ 
+                        .filter(function(v){
                             return v.indexOf(')') > -1;})
-                        .map( function(value) { 
+                        .map( function(value) {
                             return value.split(')')[0];
-                    }); 
+                    });
 
         account_from = matches[0];
         account_to = matches[1];
-        
+
         $.each(availableCurr,function(index,value){
             if(value.account == account_from){
                 currType = value.currency;
@@ -73,7 +71,7 @@ var account_transferws = (function(){
 
         var amt = $form.find("#acc_transfer_amount").val();
         var isValid = true;
-       
+
         if(amt.length <=0 ){
             $form.find("#invalid_amount").text(text.localize("Invalid amount. Minimum transfer amount is 0.10, and up to 2 decimal places."));
             isValid = false;
@@ -101,13 +99,14 @@ var account_transferws = (function(){
                 if("message" in response.error) {
 
                     if($('#transfer_account_transfer option').length > 0 ){
+                        $form.removeClass('invisible');
                         $form.find("#invalid_amount").text(text.localize(response.error.message));
                     }
                     else{
-                        $("#client_message").show();
+                        $("#client_message").removeClass('invisible');
                         $("#client_message p").html(text.localize(response.error.message));
-                        $("#success_form").hide();
-                        $form.hide();
+                        $("#success_form").addClass('invisible');
+                        $form.addClass('invisible');
 
                     }
                     return false;
@@ -122,11 +121,11 @@ var account_transferws = (function(){
         else if ("transfer_between_accounts" in response){
 
             if(response.req_id === 5){
-        
+
                 $.each(response.accounts,function(key,value){
-                    $form.hide();
-                    $("#success_form").show();
-                    $("#client_message").hide();
+                    $form.addClass('invisible');
+                    $("#success_form").removeClass('invisible');
+                    $("#client_message").addClass('invisible');
 
                     if(value.loginid == account_from){
                         $("#loginid_1").html(value.loginid);
@@ -140,7 +139,7 @@ var account_transferws = (function(){
                 });
             }
             else if(response.req_id === 4){
-
+                $form.removeClass('invisible');
                 var secondacct, firstacct,str,optionValue;
                 var selectedIndex = -1;
 
@@ -175,21 +174,21 @@ var account_transferws = (function(){
                         $form.find("#transfer_account_transfer")
                              .append($("<option></option>")
                              .attr("value",optionValue)
-                             .text(str));     
+                             .text(str));
 
                         currObj.account = value.loginid;
                         currObj.currency = value.currency;
                         currObj.balance = value.balance;
 
-                        availableCurr.push(currObj);     
+                        availableCurr.push(currObj);
 
-                        firstacct = {};    
+                        firstacct = {};
 
                         if(selectedIndex < 0 && value.balance){
                             selectedIndex =  index;
-                        }  
+                        }
                     }
-                    
+
                     if(($.isEmptyObject(firstacct) === false) && ($.isEmptyObject(secondacct) === false))
                     {
                         str = text.localize("from account (" + secondacct + ") to account (" + firstacct + ")");
@@ -197,7 +196,7 @@ var account_transferws = (function(){
                         $form.find("#transfer_account_transfer")
                                  .append($("<option></option>")
                                  .attr("value",optionValue)
-                                 .text(str));     
+                                 .text(str));
                     }
                     secondacct = {};
 
@@ -207,12 +206,12 @@ var account_transferws = (function(){
                     else{
                         if(selectedIndex < 0 ){
                             selectedIndex =  index;
-                        } 
+                        }
                     }
 
 
                 });
-                
+
                 for(var i = 0; i < selectedIndex; i++){
                     $form.find("#transfer_account_transfer option").eq(i).remove();
                 }
@@ -220,29 +219,29 @@ var account_transferws = (function(){
                 if(selectedIndex >=0){
                     $form.find("#transfer_account_transfer option").eq(selectedIndex).attr('selected', 'selected');
                 }
-        
+
 
                 set_account_from_to();
 
                 if((account_bal <=0) && (response.accounts.length > 1) ){
-                    $("#client_message").show();
-                    $("#success_form").hide();
-                    $form.hide();
+                    $("#client_message").removeClass('invisible');
+                    $("#success_form").addClass('invisible');
+                    $form.addClass('invisible');
                     return false;
                 }
                 else if(account_to === undefined || account_from === undefined || $.isEmptyObject(account_to))
                 {
-                    $("#client_message").show();
+                    $("#client_message").removeClass('invisible');
                     $("#client_message p").html(text.localize("The account transfer is unavailable for your account."));
-                    $("#success_form").hide();
-                    $form.hide();
+                    $("#success_form").addClass('invisible');
+                    $form.addClass('invisible');
                     return false;
                 }
 
                 BinarySocket.send({"payout_currencies": "1"});
             }
             else{
-                BinarySocket.send({ 
+                BinarySocket.send({
                     "transfer_between_accounts": "1",
                     "req_id" : 5
                 });
@@ -262,14 +261,14 @@ var account_transferws = (function(){
 pjax_config_page_require_auth("cashier/account_transferws", function() {
     return {
         onLoad: function() {
-        	BinarySocket.init({
+            BinarySocket.init({
                 onmessage: function(msg){
                     var response = JSON.parse(msg.data);
                     if (response) {
                         account_transferws.apiResponse(response);
                     }
                 }
-            });	
+            });
 
             if(TUser.get().hasOwnProperty('is_virtual')) {
                 account_transferws.init();
