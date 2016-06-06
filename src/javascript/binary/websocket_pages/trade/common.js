@@ -789,7 +789,7 @@ function displayTooltip(market, symbol){
       tip.hide();
       if (guide) guide.show();
     }
-    if (market.match(/^otc_index/) || symbol.match(/^OTC_/) || market.match(/otc_stock/) || (markets.by_symbol(symbol) && markets.by_symbol(symbol).market.name.match(/stocks/))){
+    if (market.match(/^otc_index/) || symbol.match(/^OTC_/) || market.match(/stock/) || (markets.by_symbol(symbol) && markets.by_symbol(symbol).market.name.match(/stocks/))){
         tip.show();
         tip.setAttribute('target', page.url.url_for('/get-started/otc-indices-stocks'));
     }
