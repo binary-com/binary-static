@@ -9,10 +9,11 @@ use XML::Writer;
 use IO::File;
 use Term::ANSIColor;
 
-use BS qw/set_is_dev is_dev branch set_branch localize set_lang all_languages lang_display_name tt2 css_files js_config menu/;
+use BS qw/all_languages/;
 
-my @langs = map { lc $_ } grep {$_ ne 'JA'} all_languages();
+my @langs = map { lc $_ } grep {$_ ne 'JA'} all_languages(); # exclude JA language from sitemap
 my @urls = (
+    # path (without .html) , changefreq, priority
     ['home'                , 'monthly', '1.00'],
     ['why-us'              , 'monthly', '0.80'],
     ['get-started'         , 'monthly', '0.80'],
