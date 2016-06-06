@@ -7,7 +7,7 @@ var PortfolioWS =  (function() {
         showLoadingImage($("#portfolio-loading"));
         // get the row template and then discard the node as it has served its purpose
         var $tempRow = $("#portfolio-dynamic tr[data-contract_id='!contract_id!']");
-        if($tempRow) {
+        if($tempRow.length) {
             rowTemplate = $tempRow[0].outerHTML;
             $tempRow.remove();
         }
