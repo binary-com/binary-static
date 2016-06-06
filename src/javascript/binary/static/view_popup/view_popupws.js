@@ -214,8 +214,9 @@ var ViewPopupWS = (function() {
         }
 
         containerSetText('trade_details_contract_id'   , contract.contract_id);
-        containerSetText('trade_details_start_date'    , epochToDateTime(contract.date_start));
-        if (document.getElementById('trade_details_end_date')) containerSetText('trade_details_end_date'      , epochToDateTime(contract.date_expiry));
+
+        containerSetText('trade_details_start_date'    , toJapanTimeIfNeeded(epochToDateTime(contract.date_start)));
+        if (document.getElementById('trade_details_end_date')) containerSetText('trade_details_end_date'      , toJapanTimeIfNeeded(epochToDateTime(contract.date_expiry)));
         containerSetText('trade_details_payout', contract.currency + ' ' + parseFloat(contract.payout).toFixed(2));
         containerSetText('trade_details_purchase_price', contract.currency + ' ' + parseFloat(contract.buy_price).toFixed(2));
 
@@ -239,7 +240,7 @@ var ViewPopupWS = (function() {
         var currentSpot = user_sold ? contract.sell_spot : (is_ended ? contract.exit_tick : contract.current_spot);
 
         containerSetText('trade_details_ref_id'          , contract.transaction_ids.buy + (contract.transaction_ids.sell ? ' - ' + contract.transaction_ids.sell : ''));
-        containerSetText('trade_details_current_date'    , epochToDateTime(!is_ended ? contract.current_spot_time : (user_sold ? contract.sell_spot_time : contract.exit_tick_time)));
+        containerSetText('trade_details_current_date'    , toJapanTimeIfNeeded(epochToDateTime(!is_ended ? contract.current_spot_time : (user_sold ? contract.sell_spot_time : contract.exit_tick_time))));
         containerSetText('trade_details_current_spot'    , currentSpot || text.localize('not available'));
         containerSetText('trade_details_indicative_price', contract.currency + ' ' + parseFloat(is_ended ? (contract.sell_price || contract.bid_price) : contract.bid_price).toFixed(2));
 
@@ -300,7 +301,7 @@ var ViewPopupWS = (function() {
     var normalUpdateTimers = function() {
         var update_time = function() {
             var now = Math.max(Math.ceil((window.time || 0) / 1000), contract.current_spot_time || 0);
-            containerSetText('trade_details_live_date' , epochToDateTime(now));
+            containerSetText('trade_details_live_date' , toJapanTimeIfNeeded(epochToDateTime(now)));
             showLocalTimeOnHover('#trade_details_live_date');
 
             var is_started = !contract.is_forward_starting || contract.current_spot_time > contract.date_start,
@@ -399,7 +400,16 @@ var ViewPopupWS = (function() {
 
     var normalMakeTemplate = function() {
         $Container = $('<div/>').append($('<div/>', {id: wrapperID}));
-        $Container.prepend($('<div/>', {id: 'sell_bet_desc', class: 'popup_bet_desc drag-handle', text: contract.longcode}));
+
+        var longcode = contract.longcode;
+
+        var match = longcode.match(/(\d{4}-\d{2}-\d{2})\s?(\d{2}:\d{2}:\d{2})?/);
+        if(match){
+            var time = toJapanTimeIfNeeded(contract.date_expiry);
+            longcode = longcode.replace(match[0], time);
+        }
+
+        $Container.prepend($('<div/>', {id: 'sell_bet_desc', class: 'popup_bet_desc drag-handle', text: longcode}));
         var $sections = $('<div/>').append($('<div id="sell_details_chart_wrapper" class="grd-grid-8 grd-grid-mobile-12"></div><div id="sell_details_table" class="grd-grid-4 grd-grid-mobile-12"></div>'));
 
         $sections.find('#sell_details_table').append($(

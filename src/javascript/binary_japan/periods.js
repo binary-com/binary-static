@@ -62,7 +62,7 @@ if(isJapanTrading()){
 					text = s_hours+":"+s_min+' - '+e_hours+":"+e_min+' ('+period.duration+')';
 				}
 				else{
-					text = period.date_expiry.date + ' ('+period.duration+')';
+					text = toJapanTimeIfNeeded(period.date_expiry.date) + ' ('+period.duration+')';
 				}
 				option = document.createElement('option');
 				content = document.createTextNode(text);

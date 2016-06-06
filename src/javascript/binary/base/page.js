@@ -762,8 +762,14 @@ Header.prototype = {
         that.server_time_at_response = ((start_timestamp * 1000) + (that.client_time_at_response - pass));
         var update_time = function() {
             window.time = moment(that.server_time_at_response + moment().valueOf() - that.client_time_at_response).utc();
-            clock.html(window.time.format("YYYY-MM-DD HH:mm") + ' GMT');
-            showLocalTimeOnHover('#gmt-clock');
+            var curr = localStorage.getItem('client.currencies');
+            var timeStr = window.time.format("YYYY-MM-DD HH:mm") + ' GMT';
+            if(curr === 'JPY'){
+                clock.html(toJapanTimeIfNeeded(timeStr, 1));
+            } else {
+                clock.html(timeStr);
+                showLocalTimeOnHover('#gmt-clock');
+            }
             window.HeaderTimeUpdateTimeOutRef = setTimeout(update_time, 1000);
         };
         update_time();

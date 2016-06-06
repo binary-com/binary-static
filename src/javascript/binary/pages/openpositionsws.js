@@ -7,7 +7,7 @@ var PortfolioWS =  (function() {
         showLoadingImage($("#portfolio-loading"));
         // get the row template and then discard the node as it has served its purpose
         var $tempRow = $("#portfolio-dynamic tr[data-contract_id='!contract_id!']");
-        if($tempRow) {
+        if($tempRow.length) {
             rowTemplate = $tempRow[0].outerHTML;
             $tempRow.remove();
         }
@@ -63,11 +63,18 @@ var PortfolioWS =  (function() {
         $.each(data.portfolio.contracts, function(ci, c) {
             sumPurchase += parseFloat(c.buy_price, 10);
             currency = c.currency;
+            var longcode = c.longcode;
+            var match = longcode.match(/(\d{4}-\d{2}-\d{2})\s?(\d{2}:\d{2}:\d{2})?/);
+            if(match){
+                var time = toJapanTimeIfNeeded(c.expiry_time);
+                longcode = longcode.replace(match[0], time);
+            }
+
             contracts += rowTemplate
             .split("!transaction_id!").join(c.transaction_id)
             .split("!contract_id!").join(c.contract_id)
             .split("!payout!").join(parseFloat(c.payout).toFixed(2))
-            .split("!longcode!").join(c.longcode)
+            .split("!longcode!").join(longcode)
             .split("!currency!").join(c.currency)
             .split("!buy_price!").join(addComma(parseFloat(c.buy_price)));
         });
@@ -151,7 +158,8 @@ var PortfolioWS =  (function() {
 
         indicative_sum = indicative_sum.toFixed(2);
 
-        $("#value-of-open-positions").text('USD ' + parseFloat(indicative_sum).toFixed(2));
+        var curr = localStorage.getItem('client.currencies');
+        $("#value-of-open-positions").text(curr + ' ' + parseFloat(indicative_sum).toFixed(2));
     };
 
 

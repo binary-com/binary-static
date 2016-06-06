@@ -424,6 +424,7 @@ function showLocalTimeOnHover(s) {
         }
 
         var localTimeStr = localTime.format('YYYY-MM-DD HH:mm:ss ZZ');
+
         var timeToShow = localTimeStr.replace(' ', '\n');
         var tooltip = $('<span></span>', { class: 'tooltip-content', text: timeToShow });
         $(ele)
@@ -431,4 +432,27 @@ function showLocalTimeOnHover(s) {
             .remove();
         $(ele).append(tooltip);
     });
+}
+
+function toJapanTimeIfNeeded(gmtTimeStr, showTimeZone){
+    var curr = localStorage.getItem('client.currencies');
+
+    var japanTimeStr = gmtTimeStr;
+
+    if(curr === 'JPY'){
+        var japanTime;
+        if(typeof gmtTimeStr === 'number'){
+            japanTime = moment.utc(gmtTimeStr*1000);
+        } else {
+            japanTime = moment.utc(gmtTimeStr, 'YYYY-MM-DD HH:mm:ss');
+        }
+        
+        if (!japanTime.isValid()) {
+            return;
+        }
+
+        japanTimeStr = japanTime.zone("+09:00").format('YYYY-MM-DD HH:mm:ss' + (showTimeZone ? ' ZZ' : ''));
+    }
+
+    return japanTimeStr;
 }
