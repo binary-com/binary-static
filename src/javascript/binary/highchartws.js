@@ -225,6 +225,7 @@ var Highchart = (function() {
       if (type === 'contracts_for' && (!error || (error && error.code && error.code === 'InvalidSymbol'))) {
           if (response.contracts_for && response.contracts_for.feed_license) {
             handle_delay(response.contracts_for.feed_license);
+            save_feed_license(response.echo_req.contracts_for, response.contracts_for.feed_license);
           }
           show_entry_error();
       } else if ((type === 'history' || type === 'candles' || type === 'tick' || type === 'ohlc') && !error){
@@ -383,7 +384,11 @@ var Highchart = (function() {
     if (contracts_response && contracts_response.echo_req.contracts_for === underlying) {
       if (contracts_response.contracts_for.feed_license) {
         handle_delay(contracts_response.contracts_for.feed_license);
+        save_feed_license(contracts_response.echo_req.contracts_for, contracts_response.contracts_for.feed_license);
       }
+      show_entry_error();
+    } else if (sessionStorage.getItem('license.' + underlying)) {
+      handle_delay(sessionStorage.getItem('license.' + underlying));
       show_entry_error();
     } else if(!contracts_for_send && update === '') {
       socketSend({'contracts_for': underlying});
@@ -611,6 +616,23 @@ var Highchart = (function() {
       }
     }
     return;
+  }
+
+  function save_feed_license(contract, license) {
+    var regex = new RegExp('license.' + contract),
+        match_found = false;
+
+    for(i = 0; i < sessionStorage.length; i++) {
+      if(regex.test(sessionStorage.key(i))) {
+        match_found = true;
+        break;
+      }
+    }
+
+    if (!match_found) {
+      sessionStorage.setItem('license.' + contract, license);
+    }
+
   }
 
   return {
