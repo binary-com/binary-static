@@ -730,31 +730,32 @@ function durationOrder(duration){
 function marketOrder(market){
     'use strict';
     var order = {
-        forex: 0,
-          major_pairs: 1,
-          minor_pairs: 2,
-          smart_fx: 3,
-        indices: 4,
-          asia_oceania: 5,
-          europe_africa: 6,
-          americas: 7,
-          otc_index: 8,
-        stocks: 9,
-          france: 10,
-          belgium: 11,
-          amsterdam: 12,
-          au_otc_stock: 13,
-        ge_otc_stock: 14,
-          uk_otc_stock: 15,
-          us_otc_stock: 16,
-        commodities: 17,
-          metals: 18,
-          energy: 19,
-        volidx: 20,
-          random_index: 21,
-          random_daily: 22,
-          random_nightly: 23
-    };
+        forex:               0,
+            major_pairs:     1,
+            minor_pairs:     2,
+            smart_fx:        3,
+        indices:             4,
+            asia_oceania:    5,
+            europe_africa:   6,
+            americas:        7,
+            otc_index:       8,
+        stocks:              9,
+            france:          10,
+            belgium:         11,
+            amsterdam:       12,
+            au_otc_stock:    13,
+            ge_otc_stock:    14,
+            india_otc_stock: 15,
+            uk_otc_stock:    16,
+            us_otc_stock:    17,
+        commodities:         18,
+            metals:          19,
+            energy:          20,
+        volidx:              21,
+            random_index:    22,
+            random_daily:    23,
+            random_nightly:  24
+    }; 
     return order[market];
 }
 
@@ -788,7 +789,7 @@ function displayTooltip(market, symbol){
       tip.hide();
       if (guide) guide.show();
     }
-    if (market.match(/^otc_index/) || symbol.match(/^OTC_/) || market.match(/otc_stock/) || markets.by_symbol(symbol).submarket.name.match(/otc_stock/)){
+    if (market.match(/^otc_index/) || symbol.match(/^OTC_/) || market.match(/otc_stock/) || (markets.by_symbol(symbol) && markets.by_symbol(symbol).market.name.match(/stocks/))){
         tip.show();
         tip.setAttribute('target', page.url.url_for('/get-started/otc-indices-stocks'));
     }
