@@ -41,10 +41,10 @@
         [% INCLUDE legal/promocode.html.tt %]
       </div>
       <div id="affiliate-tac-tab-content" class="toggle-content[% IF selected_tab == 'affiliate-tac-tab' +%][% ELSE +%] invisible[% END +%]">
-        [% INCLUDE misc/affiliate_tac_tab.html.tt %]
+        [% INCLUDE legal/affiliate_tac_tab.html.tt %]
       </div>
       <div id="api-tac-tab-content" class="toggle-content[% IF selected_tab == 'api-tac-tab' +%][% ELSE +%] invisible[% END +%]">
-        [% INCLUDE misc/api_tac_tab.html.tt %]
+        [% INCLUDE legal/api_tac_tab.html.tt %]
       </div>
 
       <div id="complaints-disputes-tac-tab-content" class="toggle-content[% IF selected_tab == 'complaints-disputes-tac-tab' +%][% ELSE +%] invisible[% END +%]">
