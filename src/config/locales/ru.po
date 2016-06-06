@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-06 10:57+0000\n"
-"Last-Translator: Ruslan <ruslan.mukhametdinov.90@gmail.com>\n"
+"PO-Revision-Date: 2016-06-06 11:09+0000\n"
+"Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
 "Language-Team: Russian "
 "<https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
@@ -1535,7 +1535,12 @@ msgstr "Диплом о дополнительном специальном/вы
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/glossary.html.haml:1
 msgid "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target."
-msgstr "Контракт \"Закончится внутри\" выигрывает, если выходная цена рынка строго выше, чем нижний ценовой барьер И строго ниже, чем высший ценовой барьер. Контракт \"Закончится вне\" выигрывает, если выходная цена рынка ЛИБО строго выше, чем высший ценовой барьер, ЛИБО строго ниже, чем низший ценовой барьер."
+msgstr ""
+"Контракт \"Закончится внутри\" выигрывает, если выходная цена рынка строго "
+"выше, чем нижний ценовой барьер И строго ниже, чем верхний ценовой барьер. "
+"Контракт \"Закончится вне\" выигрывает, если выходная цена рынка ЛИБО строго "
+"выше, чем верхний ценовой барьер, ЛИБО строго ниже, чем нижний ценовой "
+"барьер."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:594
 msgid "An additional password can be used to restrict access to the cashier."
@@ -1960,7 +1965,7 @@ msgstr "Денежный/банковский перевод"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/tour.html.haml:1
 msgid "Bank your way"
-msgstr "Пополните удобным способом"
+msgstr "Пополните счёт удобным способом"
 
 #: /home/git/translations/binary-static/src/templates/haml/cashier/index.html.haml:1
 msgid "Bank-wire, credit card, e-cash wallet"
@@ -2365,7 +2370,10 @@ msgstr "Вам не нужно ждать окончания контракта.
 
 #: /home/git/translations/binary-static/src/templates/haml/static/careers.html.haml:1
 msgid "But we’re picky. We only select people with special qualities: serious professionals, who have high moral standards, and thrive in an honest, collaborative environment."
-msgstr "Но мы придирчивы. Мы выбираем только людей с особыми качествами: серьезных профессионалов, которые имеют высокие моральные стандарты и готовы работать и расти в честной и дружелюбной обстановке сотрудничества."
+msgstr ""
+"Но мы придирчивы. Мы выбираем только людей с особыми качествами: серьезных "
+"профессионалов с высокими моральными стандартами, которые готовы работать и "
+"расти в честной и дружественной обстановке сотрудничества."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:195
 msgid "Buy"
@@ -4905,11 +4913,11 @@ msgstr "Высшее значение"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:111
 msgid "High Barrier"
-msgstr "Высший Барьер"
+msgstr "Верхний барьер"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Role/DoubleBarrier.pm:24
 msgid "High and low barriers must be different."
-msgstr "Высший и низший барьеры должны быть разными."
+msgstr "Верхний и нижний барьеры должны быть разными."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:148
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/form/barrier.html.tt:18
@@ -4923,12 +4931,12 @@ msgstr ""
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Role/DoubleBarrier.pm:16
 msgid "High barrier must be higher than low barrier."
-msgstr "Высший барьер должен быть выше нижнего барьера."
+msgstr "Верхний барьер должен быть выше нижнего барьера."
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:149
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/form/barrier.html.tt:15
 msgid "High barrier offset"
-msgstr "Изменение высшего барьера"
+msgstr "Изменение верхнего барьера"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/main.html.tt:49
 msgid "High conversions and customer value"
@@ -5193,11 +5201,17 @@ msgstr "Если Вы выбираете \"Не коснется\", Вы пол�
 
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/explanation.html.tt:22
 msgid "If you select \"Ends Between\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>Low barrier</strong> AND strictly lower than the <strong>High barrier</strong>."
-msgstr "Если Вы выбираете \"Закончится между\", Вы получаете прибыль, если <strong>выходная цена рынка</strong> строго выше, чем <strong>Низший барьер</strong> и строго ниже, чем <strong>Высший барьер</strong>."
+msgstr ""
+"Если Вы выбираете \"Закончится между\", Вы получаете прибыль, если <strong>"
+"выходная цена рынка</strong> строго выше, чем <strong>Нижний барьер</strong> "
+"и строго ниже, чем <strong>Верхний барьер</strong>."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/explanation.html.tt:23
 msgid "If you select \"Ends Outside\", you win the payout if the <strong>exit spot</strong> is EITHER strictly higher than the <strong>High barrier</strong>, OR strictly lower than the <strong>Low barrier</strong>."
-msgstr "Если Вы выбираете \"Закончится вне\", Вы выиграете, если <strong>выходная цена рынка</strong> ЛИБО строго выше, чем <strong>Высший барьер</strong>, ЛИБО строго ниже, чем <strong>Низший барьер</strong>."
+msgstr ""
+"Если Вы выбираете \"Закончится вне\", Вы выиграете, если <strong>выходная "
+"цена рынка</strong> ЛИБО строго выше, чем <strong>Верхний барьер</strong>, "
+"ЛИБО строго ниже, чем <strong>Нижний барьер</strong>."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/explanation.html.tt:27
 msgid "If you select \"Even\", you will win the payout if the <strong>last digit</strong> of the last tick is an <strong>even number (i.e., 2, 4, 6, 8, or 0).</strong>"
@@ -5355,7 +5369,10 @@ msgstr "В апреле начинает работу сайт <a target=\"_blan
 
 #: /home/git/translations/binary-static/src/templates/haml/static/group_history.html.haml:1
 msgid "In October 1999, Regent Markets receives US$2 million investment funding from Jim Mellon through his Regent Pacific Group, a Hong Kong based fund management company."
-msgstr "В октябре 1999 Regent Markets получает инвестицию в размере 2 миллиона $ от Джима Меллон, через его группу компаний Regent Pacific Group – базированную в Гонконге компанию по управлению фондами."
+msgstr ""
+"В октябре 1999 года Regent Markets получает от Джима Меллона инвестицию в "
+"размере 2 миллиона долларов США через его группу компаний Regent Pacific "
+"Group – компанию по управлению фондами, находящуюся в Гонконге."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:131
 msgid "In all circumstances, the Company reserves the right to make changes to these Terms and Conditions. If the Company elects to make any material changes to these Terms and Conditions, our clients will be notified in advance and shall either accept or decline to agree. Declining to agree shall result in a material breach of this agreement and the client’s account maybe frozen, suspended or cancelled."
@@ -5371,7 +5388,15 @@ msgstr "In carrying out OTC binary option trading, a customer needs expert knowl
 
 #: /home/git/translations/binary-static/src/templates/haml/static/group_history.html.haml:1
 msgid "In classic Silicon Valley style, Hong Kong based hedge fund manager and entrepreneur, Jean-Yves Sireau, starts Regent Markets in his Hong Kong bedroom. He develops the systems, methods and algorithms for implementing a fixed-odds financial betting system. Jean-Yves’s vision is to create a market in the simplest of all derivatives contracts – the fixed-odds bet – and to offer ordinary investors the chance to make small bets. Until his innovation, binary options are normally only traded in large quantities."
-msgstr "В классическом стиле Силиконовой Долины, хедж-менеджер фонда и предприниматель Жан-Ив Сиро начинает историю Regent Markets в своей комнате в Гонконге. Он развивает системы, методы и алгоритмы для системы финансовых ставок с фиксированным коэффициентом выигрыша. Идея Жан-Ива - создать рынок в самой простой форме из всех производных контрактов - с фиксированным коэффициентом выигрыша - и давать обычным инвесторам шанс делать ставки на небольшие суммы. До этой инновации торговля на бинарных опционах обычно была возможна только в больших объемах."
+msgstr ""
+"В классическом стиле Силиконовой долины, хедж-менеджер фонда и "
+"предприниматель Жан-Ив Сиро основал проект Regent Markets в своей комнате в "
+"Гонконге. Он развивает системы, методы и алгоритмы для системы финансовых "
+"ставок с фиксированным коэффициентом выигрыша. Идея Жан-Ива: создать из всех "
+"производных контрактов простой рынок (с фиксированным коэффициентом выигрыша)"
+" и дать обычным инвесторам шанс делать ставки на небольшие суммы. До этой "
+"инновации торговля на бинарных опционах была возможна только в больших "
+"объемах."
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/glossary.html.haml:1
 msgid "In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro will rise in relation to the value of the US dollar."
@@ -7144,7 +7169,7 @@ msgstr "Девичья фамилия матери"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Motivated, accurate, organized and a self-starter"
-msgstr "Мотивированный, аккуратный, организованный и инициативный"
+msgstr "Высокая мотивация, аккуратность, организованность и инициативность"
 
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Charting.pm:474
 msgid "Mountain Chart"
@@ -9023,7 +9048,7 @@ msgstr "Обзор права доступа"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Review suspicious account transactions"
-msgstr "Просмотреть подозрительные транзакции на счету"
+msgstr "Просмотр подозрительных транзакций на счету"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Review, develop and enhance Perl, C++ and R codes used in options pricing, volatility forecasts, and risk management program"
