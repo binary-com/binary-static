@@ -440,7 +440,13 @@ function toJapanTimeIfNeeded(gmtTimeStr, showTimeZone){
     var japanTimeStr = gmtTimeStr;
 
     if(curr === 'JPY'){
-        var japanTime = moment.utc(gmtTimeStr, 'YYYY-MM-DD HH:mm:ss');
+        var japanTime;
+        if(typeof gmtTimeStr === 'number'){
+            japanTime = moment.utc(gmtTimeStr*1000);
+        } else {
+            japanTime = moment.utc(gmtTimeStr, 'YYYY-MM-DD HH:mm:ss');
+        }
+        
         if (!japanTime.isValid()) {
             return;
         }

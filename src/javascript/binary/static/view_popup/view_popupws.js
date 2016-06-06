@@ -403,9 +403,9 @@ var ViewPopupWS = (function() {
 
         var longcode = contract.longcode;
 
-        var match = longcode.match(/\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2} GMT/);
+        var match = longcode.match(/(\d{4}-\d{2}-\d{2})\s?(\d{2}:\d{2}:\d{2})?/);
         if(match){
-            var time = toJapanTimeIfNeeded(match[0]);
+            var time = toJapanTimeIfNeeded(contract.date_expiry);
             longcode = longcode.replace(match[0], time);
         }
 
