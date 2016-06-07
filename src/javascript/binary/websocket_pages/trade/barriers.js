@@ -35,7 +35,7 @@ var Barriers = (function () {
                     var elm = document.getElementById('barrier'),
                         tooltip = document.getElementById('barrier_tooltip'),
                         span = document.getElementById('barrier_span');
-                    if ((unit && unit.value === 'd') || (end_time && moment(end_time.value).isAfter(moment(),'day'))) {
+                    if ((unit && unit.value === 'd') || (end_time && isVisible(end_time) && moment(end_time.value).isAfter(moment(),'day'))) {
                         if (currentTick && !isNaN(currentTick) && String(barrier_def).match(/^[+-]/)) {
                             elm.value = (parseFloat(currentTick) + parseFloat(barrier_def)).toFixed(decimalPlaces);
                             elm.textContent = (parseFloat(currentTick) + parseFloat(barrier_def)).toFixed(decimalPlaces);
@@ -48,6 +48,7 @@ var Barriers = (function () {
                         // no need to display indicative barrier in case of absolute barrier
                         indicativeBarrierTooltip.textContent = '';
                     } else {
+                        if(!String(barrier_def).match(/^[+-]/)) barrier_def = barrier['barrier']; // override Defaults value, because it's changing from absolute to relative barrier
                         elm.value = barrier_def;
                         elm.textContent = barrier_def;
                         span.style.display = 'none';
