@@ -4,6 +4,7 @@ module.exports = {
             { expand: true, src: ['javascript.json'], dest: global.dist },
             { expand: true, src: ['index.html'], dest: global.dist },
             { expand: true, src: ['404.html'], dest: global.dist },
+            { expand: true, src: ['sitemap.xml'], dest: global.dist },
             { expand: true, cwd: 'src/config/', src: ['**'], dest: global.dist + '/config/' },
             { expand: true, cwd: 'src/images/', src: ['**'], dest: global.dist + '/images/', },
             { expand: true, cwd: 'src/download/', src: ['**'], dest: global.dist + '/download/' },

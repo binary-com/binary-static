@@ -188,7 +188,7 @@
                <div id="pricing_table_container" class="row">
                   <div id="pricing_table"></div>
                </div>
-               <div id="open_positions_container">[% INCLUDE account/openpositionsws.html.tt %]</div>
+               <div id="open_positions_container">[% INCLUDE user/portfoliows.html.tt %]</div>
             </div>
          </div>
       </div>
