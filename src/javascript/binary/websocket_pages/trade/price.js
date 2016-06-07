@@ -18,10 +18,18 @@ var Price = (function() {
         form_id = 0;
 
     var createProposal = function(typeOfContract) {
-        var proposal = {
-          proposal: 1,
-          subscribe: 1
-        };
+        var proposal;
+        if (page.user.is_logged_in) {
+          proposal = {
+            proposal: 1,
+            subscribe: 1
+          };
+        } else {
+          proposal = {
+            price_stream: 1,
+            subscribe: 1
+          };
+        }
         var underlying = document.getElementById('underlying'),
             submarket = document.getElementById('submarket'),
             contractType = typeOfContract,
