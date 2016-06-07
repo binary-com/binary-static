@@ -22,10 +22,8 @@
                   <label for="app_id">[% l('OAuth App ID (Optional)') %]</label>
               </div>
               <div class="grd-grid-8">
-                  <input type="text" class="text" id="app_id" maxlength="30"></input>
+                  <input type="text" class="text" id="app_id" maxlength="5"></input>
                   <p class="hint">
-                    [% l('e.g. id-HXSSH5AIQylFwsiUcXGqpXApvnFe') %]
-                    <br/>
                     [% l('You have to register and get App ID before you can use different OAuth server for authentication. For more information refer to OAuth details on https://developers.binary.com/.') %]
                   </p>
                   <p class="errorfield" id="error-app_id" style="display:none"></p>

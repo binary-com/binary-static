@@ -183,7 +183,6 @@ onLoad.queue(function () {
 onLoad.queue(function () {
     attach_date_picker('.has-date-picker');
     attach_time_picker('.has-time-picker');
-    attach_inpage_popup('.has-inpage-popup');
     attach_tabs('.has-tabs');
 });
 
@@ -243,3 +242,49 @@ $(document).ready(function () {
     }
   }
 });
+
+var client_form;
+onLoad.queue(function() {
+    client_form = new ClientForm({valid_loginids: page.settings.get('valid_loginids')});
+});
+
+var ClientForm = function(init_params) {
+    this.valid_loginids =  new RegExp("^(" + init_params['valid_loginids'] + ")[0-9]+$", "i");
+};
+
+ClientForm.prototype = {
+    is_loginid_valid: function(login_id) {
+        if (login_id.length > 0) {
+            login_id = login_id.toUpperCase();
+            return this.valid_loginids.test(login_id);
+        }
+
+        return true;
+    }
+};
+
+var TUser = (function () {
+    var data = {};
+    return {
+        set: function(a){ data = a; },
+        get: function(){ return data; }
+    };
+})();
+
+/*
+ * Make sure data js is loaded before this
+ * else website will not work properly
+ * objects texts_json, markets_list, markets_json
+ * should be available
+ */
+
+// make texts object as Localizable
+var texts = {};
+for (var key in texts_json) {
+    if (texts_json.hasOwnProperty(key)) {
+        texts[key] = new Localizable(texts_json[key]);
+    }
+}
+
+// make markets object
+var markets = new Markets(markets_list, markets_json);

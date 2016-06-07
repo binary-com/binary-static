@@ -500,7 +500,7 @@ Menu.prototype = {
                 this.show_main_menu();
             }
         } else {
-            var is_mojo_page = /^\/$|\/login|\/home|\/ad|\/open-source-projects|\/bulk-trader-facility|\/partners|\/payment-agent|\/about-us|\/group-information|\/group-history|\/careers|\/contact|\/terms-and-conditions|\/terms-and-conditions-jp|\/responsible-trading|\/us_patents|\/lost_password|\/realws|\/virtualws|\/open-positions|\/job-details|\/user-testing|\/japanws|\/maltainvestws|\/reset_passwordws|\/supported-browsers$/.test(window.location.pathname);
+            var is_mojo_page = /^\/$|\/login|\/home|\/ad|\/open-source-projects|\/partners|\/payment-agent|\/about-us|\/group-information|\/group-history|\/careers|\/contact|\/terms-and-conditions|\/terms-and-conditions-jp|\/responsible-trading|\/us_patents|\/lost_password|\/realws|\/virtualws|\/open-positions|\/job-details|\/user-testing|\/japanws|\/maltainvestws|\/reset_passwordws|\/supported-browsers$/.test(window.location.pathname);
             if(!is_mojo_page) {
                 trading.addClass('active');
                 this.show_main_menu();
@@ -762,8 +762,14 @@ Header.prototype = {
         that.server_time_at_response = ((start_timestamp * 1000) + (that.client_time_at_response - pass));
         var update_time = function() {
             window.time = moment(that.server_time_at_response + moment().valueOf() - that.client_time_at_response).utc();
-            clock.html(window.time.format("YYYY-MM-DD HH:mm") + ' GMT');
-            showLocalTimeOnHover('#gmt-clock');
+            var curr = localStorage.getItem('client.currencies');
+            var timeStr = window.time.format("YYYY-MM-DD HH:mm") + ' GMT';
+            if(curr === 'JPY'){
+                clock.html(toJapanTimeIfNeeded(timeStr, 1));
+            } else {
+                clock.html(timeStr);
+                showLocalTimeOnHover('#gmt-clock');
+            }
             window.HeaderTimeUpdateTimeOutRef = setTimeout(update_time, 1000);
         };
         update_time();
@@ -807,6 +813,7 @@ Header.prototype = {
             page.client.clear_storage_values();
             LocalStore.remove('client.tokens');
             LocalStore.set('reality_check.ack', 0);
+            sessionStorage.removeItem('withdrawal_locked');
             var cookies = ['login', 'loginid', 'loginid_list', 'email', 'settings', 'reality_check', 'affiliate_token', 'affiliate_tracking', 'residence', 'allowed_markets'];
             var current_domain = ['.' + document.domain.split('.').slice(-2).join('.'), document.domain, '.' + document.domain];
             var cookie_path = ['/'];
@@ -858,7 +865,7 @@ ToolTip.prototype = {
             title   = false;
 
         targets.on('mouseenter', function(e) {
-            tip = $(this).attr( 'title' );
+            tip = $(this).attr( 'title' ) || $(this).attr('data-title');
 
             if( !tip || tip === '' )
                 return false;
@@ -866,7 +873,8 @@ ToolTip.prototype = {
             that.showing.target = $(this);
             that.showing.tip = tip;
 
-            that.showing.target.removeAttr( 'title' );
+            that.showing.target.removeAttr( 'title' )
+                               .removeAttr( 'data-title' );
 
             that.tooltip.html(tip);
             that.resize_tooltip();
@@ -875,14 +883,14 @@ ToolTip.prototype = {
         });
 
         targets.on('mouseleave', function() {
-            if(that.showing.target) {
-                that.showing.target.attr( 'title', that.showing.tip );
+            if(that.showing.target && !that.showing.target.attr('data-title')) {
+                that.showing.target.attr( 'data-title', that.showing.tip );
             }
             that.hide_tooltip();
         });
 
         targets.on('click', function() {
-            if(that.showing.target) {
+            if(that.showing.target && !that.showing.target.attr('data-title')) {
                 that.showing.target.attr( 'title', that.showing.tip );
             }
             that.hide_tooltip();
@@ -1131,7 +1139,6 @@ Page.prototype = {
         } else {
             LocalStore.set('reality_check.ack', 0);
         }
-        $('#current_width').val(get_container_width());//This should probably not be here.
         if(!getCookieItem('language')) {
             var cookie = new CookieStorage('language');
             cookie.write(this.language());
@@ -1174,6 +1181,7 @@ Page.prototype = {
         // cleaning the previous values
         page.client.clear_storage_values();
         sessionStorage.setItem('active_tab', '1');
+        sessionStorage.removeItem('withdrawal_locked');
         // set cookies: loginid, login
         page.client.set_cookie('loginid', loginid);
         page.client.set_cookie('login'  , token);

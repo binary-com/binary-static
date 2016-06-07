@@ -1,8 +1,0 @@
-- stash(title => l('Email Verification'));
-%div.grd-grid-12
-  %h1= l('Email Verification')
-  %p= l("In order to proceed, please verify your email address.")
-  %p.center-aligned
-    %a.button.pjaxload{:href => url_for("/user/resend_verification")}
-      %span= l('Send Verification Email')
-
