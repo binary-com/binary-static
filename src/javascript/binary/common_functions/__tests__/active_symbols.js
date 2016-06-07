@@ -1,5 +1,5 @@
 var expect = require('chai').expect;
-var activeSymbols = require('../activeSymbols');
+var activeSymbols = require('../active_symbols');
 var ws = require('ws');
 var LiveApi = require('binary-live-api').LiveApi;
 var api = new LiveApi({ websocket: ws });
@@ -26,6 +26,7 @@ var set_active = function set_active(obj) {
 describe('ActiveSymbols', function() {
 	var active_symbols;
 	before(function(done){
+		this.timeout(10000);
 		api.getActiveSymbolsBrief().then(function(response){
 			active_symbols = response.active_symbols;
 			done();
