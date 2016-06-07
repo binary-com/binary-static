@@ -740,21 +740,18 @@ function marketOrder(market){
             americas:        7,
             otc_index:       8,
         stocks:              9,
-            france:          10,
-            belgium:         11,
-            amsterdam:       12,
-            au_otc_stock:    13,
-            ge_otc_stock:    14,
-            india_otc_stock: 15,
-            uk_otc_stock:    16,
-            us_otc_stock:    17,
-        commodities:         18,
-            metals:          19,
-            energy:          20,
-        volidx:              21,
-            random_index:    22,
-            random_daily:    23,
-            random_nightly:  24
+            au_otc_stock:    10,
+            ge_otc_stock:    11,
+            india_otc_stock: 12,
+            uk_otc_stock:    13,
+            us_otc_stock:    14,
+        commodities:         15,
+            metals:          16,
+            energy:          17,
+        volidx:              18,
+            random_index:    19,
+            random_daily:    20,
+            random_nightly:  21
     }; 
     return order[market];
 }
