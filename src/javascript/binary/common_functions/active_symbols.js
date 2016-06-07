@@ -37,7 +37,7 @@ var ActiveSymbols = (function () {
                     var marketSymbols = markets[key];
                     var symbol = marketSymbols[0];
                     that.markets[marketName] = {
-                        name: symbol.market_display_name,
+                        name: symbol.market_display_name + ' FAULTY',
                         is_active: !symbol.is_trading_suspended && symbol.exchange_is_open,
                     };
                     that.getSubmarketsForMarket(marketSymbols, that.markets[marketName]);
