@@ -12,19 +12,13 @@
                     <h1>[% l('Our Company') %]</h1>
                     <ul>
                         <li>
-                            <a class="pjaxload" href="[% request.url_for('about-us') %]"[% IF target %] target="[%
-                            target
-                            %]"[% END %]>[% l('About Us') %]</a>
+                            <a class="pjaxload" href="[% request.url_for('about-us') %]">[% l('About Us') %]</a>
                         </li>
                         <li>
-                            <a class="pjaxload id-hide ar-hide" href="[% request.url_for('group-information') %]"[% IF target %] target="[%
-                            target
-                            %]"[% END %]>[% l('Group Information') %]</a>
+                            <a class="pjaxload id-hide ar-hide" href="[% request.url_for('group-information') %]">[% l('Group Information') %]</a>
                         </li>
                         <li>
-                            <a class="pjaxload" href="[% request.url_for('group-history') %]"[% IF target %] target="[%
-                            target
-                            %]"[% END %]>[% l('Group History') %]</a>
+                            <a class="pjaxload" href="[% request.url_for('group-history') %]">[% l('Group History') %]</a>
                         </li>
                         <li class="ja-hide">
                             <a class="pjaxload" href="[% request.url_for('careers') %]">[% l('Careers') %]</a>
@@ -33,9 +27,7 @@
                             <a href="http://binarycom.statuspage.io" target="_blank">[% l('Network Status') %]</a>
                         </li>
                         <li>
-                            <a class="pjaxload" href="[% request.url_for('contact') %]"[% IF target %] target="[%
-                            target
-                            %]"[% END %]>[% l('Contact Us') %]</a>
+                            <a class="pjaxload" href="[% request.url_for('contact') %]">[% l('Contact Us') %]</a>
                         </li>
                     </ul>
                 </div>
@@ -43,23 +35,16 @@
                     <h1>[% l('Education') %]</h1>
                     <ul>
                         <li>
-                            <a class="pjaxload" href="[% request.url_for('why-us') %]"[% IF target %] target="[% target
-                            %]"[% END %]>[% l('Why Us?') %]</a>
+                            <a class="pjaxload" href="[% request.url_for('why-us') %]">[% l('Why Us?') %]</a>
                         </li>
                         <li class="ja-hide">
-                            <a class="pjaxload" href="[% request.url_for('get-started') %]"[% IF target %] target="[%
-                            target
-                            %]"[% END %]>[% l('Getting Started') %]</a>
+                            <a class="pjaxload" href="[% request.url_for('get-started') %]">[% l('Getting Started') %]</a>
                         </li>
                         <li class="all-hide ja-show-block">
-                            <a class="pjaxload" href="[% request.url_for('get-started-jp') %]"[% IF target %] target="[%
-                            target
-                            %]"[% END %]>[% l('Getting Started') %]</a>
+                            <a class="pjaxload" href="[% request.url_for('get-started-jp') %]">[% l('Getting Started') %]</a>
                         </li>
                         <li>
-                            <a class="pjaxload" href="[% request.url_for('tour') %]"[% IF target %] target="[% target
-                            %]"[%
-                            END %]>[% l('Platform Tour') %]</a>
+                            <a class="pjaxload" href="[% request.url_for('tour') %]">[% l('Platform Tour') %]</a>
                         </li>
                         <li class="ja-hide id-hide">
                             <a href="http://www.gamcare.org.uk/" target="_blank">[% l('GamCare') %]</a>
@@ -76,9 +61,7 @@
                     <h1 class="ja-hide">[% l('Trading') %]</h1>
                     <ul class="ja-hide">
                         <li class="ja-hide">
-                            <a class="pjaxload" href="[% request.url_for('/resources/asset_indexws') %]"[% IF target %]
-                            target="[%
-                            target %]"[% END %]>[% l('Asset Index') %]</a>
+                            <a class="pjaxload" href="[% request.url_for('/resources/asset_indexws') %]">[% l('Asset Index') %]</a>
                         </li>
                     </ul>
                     <div class='grd-row-padding ja-no-padding'>
@@ -125,12 +108,10 @@
                             %] target="[% target %]"[% END %]>[% l('Security and Privacy') %]</a>
                         </li>
                         <li class="ja-hide">
-                            <a class="pjaxload" href="[% request.url_for('responsible-trading') %]"[% IF target %]
-                            target="[% target %]"[% END %]>[% l('Responsible Trading') %]</a>
+                            <a class="pjaxload" href="[% request.url_for('responsible-trading') %]">[% l('Responsible Trading') %]</a>
                         </li>
                         <li class="ja-hide">
-                        <a class="pjaxload" href="[% request.url_for('/terms-and-conditions?selected_tab=complaints-disputes-tac-tab') %]"[% IF target %]
-                            target="[% target %]"[% END %]>[% l('Complaints') %]</a>
+                        <a class="pjaxload" href="[% request.url_for('/terms-and-conditions?selected_tab=complaints-disputes-tac-tab') %]">[% l('Complaints') %]</a>
                         </li>
                         <li class="ja-hide id-hide ru-hide">
                             <a href="[% request.url_for('/download/BIEL_Prospectus.pdf') %]" target="_blank">[% l('Prospectus') %]</a>
@@ -144,12 +125,10 @@
                     <h1>[% l('Market Data') %]</h1>
                     <ul>
                         <li class="ja-hide">
-                            <a class="pjaxload" href="//webtrader.binary.com"[% IF target %] target="[%
-                            target %]"[% END %]>[% l('Webtrader') %]</a>
+                            <a class="pjaxload" href="//webtrader.binary.com" target="_blank">[% l('Webtrader') %]</a>
                         </li>
                         <li>
-                            <a class="pjaxload" href="//tradingview.binary.com"[% IF target %] target="[%
-                            target %]"[% END %]>[% l('TradingView') %]</a>
+                            <a class="pjaxload" href="//tradingview.binary.com" target="_blank">[% l('TradingView') %]</a>
                         </li>
                     </ul>
                 </div>
@@ -157,7 +136,7 @@
                     <h1 class="ja-hide">[% l('Partner With Us') %]</h1>
                     <ul class="ja-hide partner">
                         <li>
-                            <a class="pjaxload" href="[% request.url_for('/partners') %]"[% IF target %] target="[% target %]"[% END %]><img id="iom_icon_footer" class="responsive" src="[% request.url_for('images/pages/footer/partner-icon.svg') %]"/></a>
+                            <a class="pjaxload" href="[% request.url_for('/partners') %]"><img id="iom_icon_footer" class="responsive" src="[% request.url_for('images/pages/footer/partner-icon.svg') %]"/></a>
                         </li>
                 </div>
             </div>

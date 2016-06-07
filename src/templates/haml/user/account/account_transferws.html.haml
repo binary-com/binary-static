@@ -1,0 +1,52 @@
+.grd-row-padding
+
+.grd-grid-12#success_form.invisible
+  %h1= l('Account Transfer')
+  %br
+  %p= l('Your account transfer is successful. Your new balances are:')
+  .grd-row-padding.table-body
+    .grd-grid-1
+    .grd-grid-2
+      %span#loginid_1
+    .grd-grid-5
+      %span#balance_1
+  .grd-row-padding.table-body
+    .grd-grid-1
+    .grd-grid-2
+      %span#loginid_2
+    .grd-grid-5
+      %span#balance_2
+
+%div{:class => 'errorbox rbox invisible', :id =>'client_message'}
+  .rbox-wrap
+    %div{:class => 'grd-grid-12 rbox-content', :id => 'client_message_content'}
+      %p{:class =>'center notice-msg'}
+        = l('The account transfer is unavailable. Please')
+        %a.pjaxload{:href => url_for('/cashier/forwardws#deposit')}= l('deposit')
+        = l('to your account.')
+
+%form.invisible{:id => 'account_transfer'}
+  %h1= l('Account Transfer')
+  %br
+  %fieldset
+    .grd-parent.grd-grid-12.grd-row-padding
+      .grd-grid-3.form_label
+        %label{:for => "transfer"}= l('Transfer')
+      .grd-grid-9
+        %select{:name => 'transfer', :id => 'transfer_account_transfer'}
+        %p.errorfield#erroraccount_transfer
+    .grd-parent.grd-grid-12.grd-row-padding
+      .grd-grid-3.form_label
+        %label{:for => "amount", :id => 'transfer_amount'}= l('Amount')
+      .grd-grid-9.grd-parent
+        .grd-grid-1.form_label
+          %label#currencyType
+        .grd-grid-11
+          %input#acc_transfer_amount{:type => 'text', :name => 'amount', :placeholder => "#{l('Amount')}"}
+          %p#invalid_amount.errorfield
+    .grd-parent.grd-grid-12.grd-row-padding
+    .grd-parent.grd-grid-12.grd-row-padding
+      .grd-grid-4
+      .grd-grid-8
+        %span.button
+          %button#acc_transfer_submit.button{:name => "submit" :type => "submit"}= l('Transfer')

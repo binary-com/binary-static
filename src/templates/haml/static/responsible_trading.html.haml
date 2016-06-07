@@ -14,7 +14,7 @@
       %li= l('Trade only with money you can afford to lose. Do not trade with borrowed money.')
     %h2= l('Written limits and self-exclusion')
     %p
-      != l('[_1] provides you with the opportunity to either self-exclude or <a href="[_2]">set limits on your trading activities</a> on this website. You may also <a href="[_3]">contact us</a> to state the limits you wish to set via live chat, email or phone. Available limits are:', stash->{website_name}, url_for('/user/self_exclusionws'), url_for('contact'))
+      != l('[_1] provides you with the opportunity to either self-exclude or <a href="[_2]">set limits on your trading activities</a> on this website. You may also <a href="[_3]">contact us</a> to state the limits you wish to set via live chat, email or phone. Available limits are:', stash->{website_name}, url_for('/user/settings/self_exclusionws'), url_for('contact'))
       %ol
         %li= l('a limit on the amount you may trade within a specified period of time;')
         %li= l('a limit on the losses you may incur within a specified period of time;')

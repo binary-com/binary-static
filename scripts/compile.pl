@@ -44,7 +44,7 @@ my @m = (
     ['tour',                'static/tour',                'haml', 'full_width', 'Tour'],
     ['responsible-trading', 'static/responsible_trading', 'haml', 'full_width', 'Responsible Trading'],
     ['terms-and-conditions',       'legal/tac',                   'toolkit', 'default',    'Terms and Conditions'],
-    ['terms-and-conditions-jp',    'legal_jp/tacjp',              'toolkit', 'default',    'Terms and Conditions'],
+    ['terms-and-conditions-jp',    'japan/legal/tacjp',           'toolkit', 'default',    'Terms and Conditions'],
     ['resources',                  'resources/index',             'haml',    'default',    'Resources'],
     ['applications',               'applications/index',          'toolkit', 'default',    'Applications'],
     ['about-us',                   'about/index',                 'haml',    'full_width', 'About Us'],
@@ -79,60 +79,71 @@ my @m = (
     ['get-started/beginners-faq',                'get_started/beginners_faq',                'haml', 'get_started', 'FAQ'],
     ['get-started/glossary',                     'get_started/glossary',                     'haml', 'get_started', 'Glossary'],
 
-    ['get-started-jp', 'get_started_jp/get_started', 'toolkit', 'default', 'Get Started'],
+    ['get-started-jp', 'japan/get_started', 'toolkit', 'default', 'Get Started'],
 
     ## ws
-    ['cashier/authenticatews',       'cashier/authenticatews',             'toolkit', 'default', 'Authenticate'],
-    ['cashier/forwardws',            'cashier/deposit_withdraw_ws',        'toolkit', 'default', 'Cashier'],
-    ['cashier/limitsws',             'account/trading_withdrawal_limitws', 'toolkit', 'default', 'Account Limits'],
-    ['cashier/account_transferws',   'cashier/account_transferws',         'haml',    'default', 'Account Transfer'],
-    ['cashier/payment_agent_listws', 'cashier/payment_agent_listws',       'toolkit', 'default', 'Payment Agent Deposit'],
-    ['cashier/top_up_virtualws',     'cashier/top_up_virtualws',           'toolkit', 'default', 'Give Me More Money!'],
-    ['paymentagent/transferws',      'cashier/paymentagent_transferws',    'toolkit', 'default', 'Payment Agent Transfer'],
-    ['paymentagent/withdrawws',      'cashier/paymentagent_withdrawws',    'toolkit', 'default', 'Payment Agent Withdrawal'],
+    ['user/authenticatews',          'user/authenticatews',                      'toolkit', 'default', 'Authenticate'],
+    ['cashier/forwardws',            'cashier/deposit_withdraw_ws',              'toolkit', 'default', 'Cashier'],
+    ['user/settings/limitsws',       'user/settings/limitsws',                   'toolkit', 'default', 'Account Limits'],
+    ['account/account_transferws',   'user/account/account_transferws',          'haml',    'default', 'Account Transfer'],
+    ['cashier/payment_agent_listws', 'cashier/payment_agent_listws',             'toolkit', 'default', 'Payment Agent Deposit'],
+    ['cashier/top_up_virtualws',     'user/top_up_virtualws',                    'toolkit', 'default', 'Give Me More Money!'],
+    ['paymentagent/transferws',      'cashier/paymentagent_transferws',          'toolkit', 'default', 'Payment Agent Transfer'],
+    ['paymentagent/withdrawws',      'cashier/paymentagent_withdrawws',          'toolkit', 'default', 'Payment Agent Withdrawal'],
 
     ['jptrading', 'bet/static', 'toolkit', 'default', 'Sharp Prices. Smart Trading.'],
     ['trading',   'bet/static', 'toolkit', 'default', 'Sharp Prices. Smart Trading.'],
 
-    ['new_account/virtualws',        'account/virtualws',      'toolkit', 'default', 'Create New Account'],
-    ['new_account/realws',           'account/realws',         'toolkit', 'default', 'Real Money Account Opening'],
-    ['new_account/japanws',          'account/japanws',        'toolkit', 'default', 'Real Money Account Opening'],
-    ['new_account/maltainvestws',    'account/maltainvestws',  'toolkit', 'default', 'Financial Account Opening'],
-    ['new_account/knowledge_testws', 'account/knowledge_test', 'toolkit', 'default', 'Real Money Account Opening'],
+    ['new_account/virtualws',        'new_account/virtualws',      'toolkit', 'default', 'Create New Account'],
+    ['new_account/realws',           'new_account/realws',         'toolkit', 'default', 'Real Money Account Opening'],
+    ['new_account/japanws',          'new_account/japanws',        'toolkit', 'default', 'Real Money Account Opening'],
+    ['new_account/maltainvestws',    'new_account/maltainvestws',  'toolkit', 'default', 'Financial Account Opening'],
+    ['new_account/knowledge_testws', 'japan/knowledge_test',       'toolkit', 'default', 'Real Money Account Opening'],
 
     ['resources/asset_indexws',  'resources/asset_indexws',  'toolkit', 'default', 'Asset Index'],
     ['resources/market_timesws', 'resources/market_timesws', 'toolkit', 'default', 'Trading Times'],
 
-    ['user/api_tokenws',               'account/api_tokenws',            'toolkit', 'default', 'API Token'],
-    ['user/change_passwordws',         'account/change_passwordws',      'toolkit', 'default', 'Change Password'],
-    ['user/openpositionsws',           'account/openpositionsws',        'toolkit', 'default', 'Portfolio'],
-    ['user/profit_tablews',            'account/profit_tablews',         'toolkit', 'default', 'Profit Table'],
-    ['user/self_exclusionws',          'account/self_exclusionws',       'toolkit', 'default', 'Account Details'],
-    ['user/settings/detailsws',        'account/settings_detailsws',     'toolkit', 'default', 'Personal Details'],
-    ['user/settings/securityws',       'cashier/settings_securityws',    'haml',    'default', 'Security'],
-    ['user/statementws',               'account/statementws',            'toolkit', 'default', 'Statement'],
-    ['user/my_accountws',              'account/my_accountws',           'toolkit', 'default', 'My Account'],
-    ['user/settingsws',                'account/settingsws',             'toolkit', 'default', 'Settings'],
-    ['user/iphistoryws',               'account/iphistory',              'toolkit', 'default', 'Login History'],
-    ['user/tnc_approvalws',            'legal/tnc_approvalws',           'toolkit', 'default', 'Terms and Conditions Approval'],
-    ['user/assessmentws',              'account/financial_assessmentws', 'toolkit', 'default', 'Financial Assessment'],
-    ['user/lost_passwordws',           'user/lost_passwordws',           'haml',    'default', 'Password Reset'],
-    ['user/reset_passwordws',          'user/reset_passwordws',          'haml',    'default', 'Password Reset'],
-    ['user/authorised_appsws',         'account/authorised_appsws',      'toolkit', 'default', 'Authorised Applications'],
-    ['user/reality_check_frequencyws', 'user/reality_check_frequencyws', 'haml',    'default', 'Reality Check'],
-    ['user/reality_check_summaryws',   'user/reality_check_summaryws',   'haml',    'default', 'Reality Check'],
+    ['user/settings/api_tokenws',       'user/settings/api_tokenws',                     'toolkit', 'default', 'API Token'],
+    ['user/change_passwordws',          'user/settings/change_passwordws',               'toolkit', 'default', 'Change Password'],
+    ['user/portfoliows',                'user/portfoliows',                              'toolkit', 'default', 'Portfolio'],
+    ['user/profit_tablews',             'user/profit_tablews',                           'toolkit', 'default', 'Profit Table'],
+    ['user/settings/self_exclusionws',   'user/settings/self_exclusionws',                'toolkit', 'default', 'Account Details'],
+    ['user/settings/detailsws',         'user/settings/settings_detailsws',              'toolkit', 'default', 'Personal Details'],
+    ['user/settings/securityws',        'user/account/settings_securityws',              'haml',    'default', 'Security'],
+    ['user/statementws',                'user/statementws',                              'toolkit', 'default', 'Statement'],
+    ['user/my_accountws',               'user/my_accountws',                             'toolkit', 'default', 'My Account'],
+    ['user/settingsws',                 'user/settingsws',                               'toolkit', 'default', 'Settings'],
+    ['user/settings/iphistoryws',       'user/settings/iphistory',                       'toolkit', 'default', 'Login History'],
+    ['user/tnc_approvalws',             'legal/tnc_approvalws',                          'toolkit', 'default', 'Terms and Conditions Approval'],
+    ['user/settings/assessmentws',      'user/settings/financial_assessmentws',          'toolkit', 'default', 'Financial Assessment'],
+    ['user/lost_passwordws',            'user/lost_passwordws',                          'haml',    'default', 'Password Reset'],
+    ['user/reset_passwordws',           'user/reset_passwordws',                         'haml',    'default', 'Password Reset'],
+    ['user/settings/authorised_appsws', 'user/settings/authorised_appsws',               'toolkit', 'default', 'Authorised Applications'],
+    ['user/reality_check_frequencyws',  'user/reality_check_frequencyws',                'haml',    'default', 'Reality Check'],
+    ['user/reality_check_summaryws',    'user/reality_check_summaryws',                  'haml',    'default', 'Reality Check'],
 
     ['logged_inws',           'global/logged_inws', 'toolkit', undef],
     ['trade/bet_explanation', 'bet/explanation',    'toolkit', undef],
 );
 
 ## config
-my $root_path = "$Bin/..";
+my $root_path = substr $Bin, 0, rindex($Bin, '/');
 my $dist_path = "$root_path/dist".($branch ? '/'.branch() : '');
 @BS::Request::HTML_URLS = map { $_->[0] } @m;
 my $index = 0;
 $| = 1;
 print colored(['cyan'], "Target: ")."$dist_path\n";
+
+mkdir("$dist_path") unless -d "$dist_path";
+foreach my $lang (@langs) {
+    mkdir("$dist_path/$lang")      unless -d "$dist_path/$lang";
+    mkdir("$dist_path/$lang/pjax") unless -d "$dist_path/$lang/pjax";
+}
+
+if ($pattern) {
+    @m = grep {index($_->[0], $pattern) > -1} @m;
+    $force = 1;
+}
 
 foreach my $m (@m) {
     my $save_as  = $m->[0];
@@ -140,11 +151,6 @@ foreach my $m (@m) {
     my $tpl_type = $m->[2];
     my $layout   = $m->[3];
     my $title    = $m->[4];
-
-    if ($pattern) {
-        next unless index($save_as, $pattern) > -1;
-        $force = 1;
-    }
 
     $index++;
 
@@ -154,9 +160,6 @@ foreach my $m (@m) {
 
         set_lang($lang);
 
-        mkdir("$dist_path")            unless -d "$dist_path";
-        mkdir("$dist_path/$lang")      unless -d "$dist_path/$lang";
-        mkdir("$dist_path/$lang/pjax") unless -d "$dist_path/$lang/pjax";
         my $request = BS::Request->new(
             language => uc $lang,
         );
@@ -208,7 +211,7 @@ foreach my $m (@m) {
             $layout_output = tt2_handle($layout_file, %stash);
         }
 
-        print colored(['green'], ($verbose ? "" : "\e[K\r")."[$index".($pattern ? '' : ' / '.(scalar @m))."] ($lang) => ")."/$lang/$save_as.html".($verbose ? "\n" : "");
+        print colored(['green'], ($verbose ? "" : "\e[K\r")."[$index / ".(scalar @m)."] ($lang) => ")."/$lang/$save_as.html".($verbose ? "\n" : "");
 
         my $path = path($save_as_file);
         $path->parent->mkpath if $save_as =~ '/';

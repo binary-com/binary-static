@@ -185,10 +185,10 @@
     }
     border: 1px solid $COLOR_GRAY;
     flex: 1 0 auto;
-    input[type=number]::-webkit-inner-spin-button, 
-    input[type=number]::-webkit-outer-spin-button { 
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
       -webkit-appearance: none;
-      margin: 0; 
+      margin: 0;
     }
     input[type=number] {
       -moz-appearance: textfield;
@@ -215,8 +215,11 @@
       }
       .contract_purchase {
         margin-bottom: 6px;
+        width: 90%;
+        display: inline-flex;
         .purchase_button{
           cursor: pointer;
+          width: 100%;
         }
       }
     }
@@ -375,19 +378,23 @@
     .contract_error {
       background-color: $COLOR_YELLOW;
     }
-    .contract_amount, .contract_description {
-      @include BIDIR_VALUE(padding, 10px 10px 10px 5px, 10px 5px 10px 10px);
+    .contract_amount, .contract_payout, .payout, .stake {
+      @include BIDIR_VALUE(padding, 3px, 3px);
       line-height: 1.5;
       font-size: 90%;
       flex: 1 0 auto;
       display: flex;
       align-items: center;
-      justify-content: center;
     }
-    .contract_amount {
+    .stake, .payout {
+      padding: 0;
+      justify-content: flex-end;
+    }
+    .contract_amount, .contract_payout {
       font-weight: bold;
       font-size: 1.1rem;
       border-radius: 5px;
+      justify-content: center;
     }
   }
   #expiry_type_duration{
@@ -420,7 +427,9 @@
   #contract_prices_container .price_container .price_wrapper {
     text-align: center;
     align-items: center;
-    width: 230px;
+    width: 100%;
+    justify-content: flex-start;
+    padding-left: 30px;
 
     &.small{
       width: 95px;
@@ -437,9 +446,25 @@
     }
     .amount_wrapper {
       float: left;
+      width: 100%;
+      .amount_wrapper_div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 10px;
+        div {
+          flex-grow: 1;
+        }
+        .stake_wrapper {
+          margin-left: 20px;
+        }
+        .payout_wrapper {
+          margin-right: 20px;
+        }
+      }
     }
-    .contract_amount {
-      margin-bottom: 10px;
+    .contract_amount, .contract_payout, .stake, .payout {
+      display: inline-flex;
     }
   }
   #period_row, #jbarrier_row, #jhigh_barrier_row, #jlow_barrier_row {
@@ -601,6 +626,7 @@
     border-top: 1px solid $COLOR_GRAY;
     border-bottom: 1px solid $COLOR_GRAY;
     border-right: 1px solid $COLOR_GRAY;
+    text-align: right;
   }
   .pricing_table_cell .button {
     color: $COLOR_WHITE;
@@ -667,7 +693,7 @@
 
   .pricing_table_cell{
     position: relative;
-  } 
+  }
 
   .inactive {
     position: absolute;
@@ -692,9 +718,9 @@
     display: flex;
   }
 
-  .price {
-    width: 50px;
-  }
+  // .price {
+  //   width: 50px;
+  // }
 }
 
 @media all and (max-width: 480px) {
@@ -713,6 +739,9 @@
       #duration_amount {
         margin-bottom: 5px;
       }
+    }
+    .contract_purchase {
+      width: 70%!important;
     }
   }
 }
@@ -757,6 +786,9 @@
         flex-direction: row !important;
          &.small{
           width: auto;
+        }
+        .amount_wrapper {
+          width: 70%;
         }
       }
       .row {

@@ -208,7 +208,7 @@ sub menu {
     push @{$my_account_ref->{sub_items}},
         {
         id         => 'topMenuPortfolio',
-        url        => url_for('/user/openpositionsws'),
+        url        => url_for('/user/portfoliows'),
         text       => localize('Portfolio'),
         link_class => 'with_login_cookies pjaxload',
         };
@@ -257,7 +257,7 @@ sub menu {
     push @{$my_account_ref->{sub_items}},
         {
         id         => 'topMenuAuthenticateAccount',
-        url        => url_for('/cashier/authenticatews'),
+        url        => url_for('/user/authenticatews'),
         text       => localize('Authenticate'),
         class      => 'by_client_type client_real',
         link_class => 'with_login_cookies pjaxload',
