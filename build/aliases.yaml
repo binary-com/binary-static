@@ -8,10 +8,11 @@ js:
   - 'uglify'
 
 test:
+  - 'mochaTest'
   - 'jshint'
 
 default:
-  - 'jshint'
+  - 'test'
   - 'css'
   - 'js'
   - 'fileindex'
@@ -28,7 +29,9 @@ deploy:
   - 'gh-pages'
 
 custom:
+  - 'clean'
   - 'default'
+  - 'shell:compile_production'
   - 'connect'
 
 release:
