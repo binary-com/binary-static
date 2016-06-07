@@ -239,25 +239,32 @@ function showLocalTimeOnHover(s) {
     });
 }
 
-function toJapanTimeIfNeeded(gmtTimeStr, showTimeZone){
-    var curr = localStorage.getItem('client.currencies');
-
-    var japanTimeStr = gmtTimeStr;
-
-    if(curr === 'JPY'){
-        var japanTime;
-        if(typeof gmtTimeStr === 'number'){
-            japanTime = moment.utc(gmtTimeStr*1000);
-        } else {
-            japanTime = moment.utc(gmtTimeStr, 'YYYY-MM-DD HH:mm:ss');
-        }
-        
-        if (!japanTime.isValid()) {
-            return;
-        }
-
-        japanTimeStr = japanTime.zone("+09:00").format('YYYY-MM-DD HH:mm:ss' + (showTimeZone ? ' ZZ' : ''));
+function toJapanTimeIfNeeded(gmtTimeStr, showTimeZone, longcode){
+    var match;
+    if (longcode) {
+      match = longcode.match(/(\d{4}-\d{2}-\d{2})\s?(\d{2}:\d{2}:\d{2})?/);
+      if (!match) return longcode;
     }
 
-    return japanTimeStr;
+    var curr = localStorage.getItem('client.currencies'),
+        timeStr = gmtTimeStr,
+        time;
+
+    if(typeof gmtTimeStr === 'number'){
+        time = moment.utc(gmtTimeStr*1000);
+    } else {
+        time = moment.utc(gmtTimeStr, 'YYYY-MM-DD HH:mm:ss');
+    }
+
+    if (!time.isValid()) {
+        return;
+    }
+
+    if(curr === 'JPY'){
+        timeStr = time.zone("+09:00").format('YYYY-MM-DD HH:mm:ss' + (showTimeZone && showTimeZone !== '' ? ' ZZ' : ''));
+    } else {
+        timeStr = time.zone("+00:00").format('YYYY-MM-DD HH:mm:ss' + (showTimeZone && showTimeZone !== '' ? ' ZZ' : ''));
+    }
+
+    return (longcode ? longcode.replace(match[0], timeStr) : timeStr);
 }
