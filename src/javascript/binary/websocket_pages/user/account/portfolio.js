@@ -63,12 +63,7 @@ var PortfolioWS =  (function() {
         $.each(data.portfolio.contracts, function(ci, c) {
             sumPurchase += parseFloat(c.buy_price, 10);
             currency = c.currency;
-            var longcode = c.longcode;
-            var match = longcode.match(/(\d{4}-\d{2}-\d{2})\s?(\d{2}:\d{2}:\d{2})?/);
-            if(match){
-                var time = toJapanTimeIfNeeded(c.expiry_time);
-                longcode = longcode.replace(match[0], time);
-            }
+            var longcode = toJapanTimeIfNeeded(c.expiry_time, '', c.longcode);
 
             contracts += rowTemplate
             .split("!transaction_id!").join(c.transaction_id)
