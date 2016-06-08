@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-07 06:56+0000\n"
+"PO-Revision-Date: 2016-06-08 10:04+0000\n"
 "Last-Translator: Ahmed Kotb <ahmedmohamedkotp@gmail.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/binary/static/ar/>"
 "\n"
@@ -686,7 +686,11 @@ msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">عزيزنا
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:142
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p>"
-msgstr "<p style=\"line-height:200%;color:#333333;font-size:15px;\">عزيزنا العميل المحترم,</p><p>نرجو منك مساعدتنا في التحقق من هويتك من خلال إدخال رمز التحقق التالي في نموذج سحب الدفع:</p><p><span style=\"background: #f2f2f2; padding: 10px;\">%1</span></p></p>"
+msgstr ""
+"<p style=\"line-height:200%;color:#333333;font-size:15px;\">عميلنا العزيز "
+"المحترم,</p><p>نرجو منك مساعدتنا في التحقق من هويتك من خلال إدخال رمز التحقق "
+"التالي في نموذج سحب الدفع:</p><p><span style=\"background: #f2f2f2; padding: "
+"10px;\">%1</span></p></p>"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/faq.html.tt:73
 msgid ""
@@ -3718,7 +3722,9 @@ msgstr "تطوير مشتقات التسعير، ونماذج إدارة الم�
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Develop text that promotes the company’s product offerings in a variety of formats"
-msgstr "تطوير النصوص التي تروج لعروض منتجات الشركة في مجموعة متنوعة من الصيغ والأشكال"
+msgstr ""
+"تطوير النصوص التي تروج لعروض منتجات الشركة في مجموعة متنوعة من الأشكال "
+"والتصاميم"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/partners.html.haml:1
 msgid "Develop your own trading application with our APIs."
@@ -3933,7 +3939,11 @@ msgstr "Each option transaction has a specified expiry time and date, known as t
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:88
 msgid "Each party to this Agreement represents and warrants to the other that it has, and will retain throughout the term of this Agreement all right, title, and authority to enter into this Agreement, to grant to the other party the rights and licences granted in this Agreement, and to perform all of its obligations under this Agreement."
-msgstr "كل طرف من أطراف هذه الإتفاقية يضمن للأطراف الأخرى بأنه سيحافظ طوال مدة هذه الإتفاقية على كل الحقوق والملكيات والسلطة للدخول في هذه الإتفاقية, وذلك من أجل منح الأطراف الأخرى الحقوق والتراخيص الممنوحة في هذه الإتفاقية, ولآداء كافة إلتزاماتها بموجب هذه الإتفاقية."
+msgstr ""
+"كل طرف من أطراف هذه الإتفاقية يمثل ويضمن للأطراف الأخرى بأن لديه وسيحتفظ "
+"طوال مدة هذه الإتفاقية بكافة الحقوق والملكيات والسلطة من أجل الدخول في هذه "
+"الإتفاقية, ومن أجل منح الأطراف الأخرى الحقوق والتراخيص الممنوحة في هذه "
+"الإتفاقية, ولآداء جميع إلتزاماته بموجب هذه الإتفاقية."
 
 #. (stash->{website_name})
 #: /home/git/translations/binary-static/src/templates/haml/static/partners.html.haml:1
@@ -3979,7 +3989,9 @@ msgstr "تأثير الإنهاء"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Effective English language skills, with precise attention to detail regarding punctuation, spelling, grammar, and syntax"
-msgstr "مهارات فعالة في اللغة الإنجليزية، مع الاهتمام الدقيق بالتفاصيل فيما يتعلق بعلامات الترقيم، والتدقيق الإملائي والنحوي وبناء الجملة"
+msgstr ""
+"مهارات فعالة في اللغة الإنجليزية، مع الاهتمام بالتفاصيل الدقيقة المتعلقة "
+"بعلامات الترقيم، والتدقيق الإملائي والنحوي وبناء الجملة"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Effective PC skills with extensive experience in MS Office applications"
@@ -3999,7 +4011,14 @@ msgstr "رصد فعالية نشاط العميل اليومية"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:111
 msgid "Either party may terminate this Agreement forthwith on written notice if a receiver, examiner, or administrator is appointed of the whole or any part of the other party's assets or the other party is struck off the Register of Companies in the jurisdiction where it was incorporated or an order is made or a resolution passed for winding up of the other party (unless such order or resolution is part of a voluntary scheme for the reconstruction or amalgamation of that party as a solvent corporation and the resulting corporation, if a different legal person, undertakes to be bound by this Agreement)."
-msgstr "يجوز لأي طرف من الأطراف إنهاء هذه الإتفاقية فوراً من خلال إشعار خطي إذا ما تم تعيين متلقي أو محقق أو مدير على كل أو أي جزء من أصول الأطراف الأخرى أو إذا ما تم شطب الطرف الآخر من سجل الشركات في الإختصاص الذي كان مدمجاً فيه أو إصدار أمر أو تمرير قرار لتصفية طرف آخر (إلا إذا ما كان هذا الأمر أو القرر هو جزء من مخطط تطوعي لإعادة بناء أو دمج هذا الطرف كشركة قادرة على الوفاء بإلتزاماتها المالية وكشركة ناتجة, إذا ما تعهد شخص أخر قانوني بالإلتزام بهذه الإتفاقية)."
+msgstr ""
+"يحق لأى من الطرفين إنهاء هذا الاتفاق فوراً بواسطة إشعار خطي إذا ما تم تعيين "
+"مُتلقي أو محقق أو مدير ليكون مسؤولاً عن كل أو أي جزء من أصول الطرف الآخر أو "
+"إذا تم شطب الطرف الآخر من سجل الشركات فى السلطة القضائية التى تأسست فيها أو "
+"إذا صدر أمر قضائي أو تم تمرير قرار لتصفية أعمال الطرف الآخر (إلا إذا كان هذا "
+"الأمر أو القرار جزء من مخطط تطوعي لإعادة بناء أو إدماج هذا الطرف كشركة قادرة "
+"على الوفاء بالتزاماتها المالية والشركة الناتجة، إذا كان شخص قانوني آخر, "
+"يتعهد بالإلتزام بهذا الاتفاق)."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:112
 msgid "Either party may terminate this Agreement on delivery of one weeks' prior written notice to the other party."
@@ -4063,7 +4082,9 @@ msgstr "تداولات الأنتهاء بين/الخروج عن"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/explanation.html.tt:126
 msgid "Ends In/Out contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "سيتم إعادة العقود المنتهية في / خارج عند سعر الشراء إذا كان هناك أقل من علامتين بين أوقات البداية والنهاية."
+msgstr ""
+"العقود التي تنتهي في / خارج سيتم إعادتها عند سعر الشراء إذا ما كانت أقل من "
+"علامتين بين وقت البداية والنهاية."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Engage in data mining using SQL databases, R/S-Plus, OLAP and other analytical tools"
@@ -4198,11 +4219,13 @@ msgstr "الشركة لا تدعي أية ملكية أو سيطرة على ال
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Exceptional communication skills in English, in both oral and written form"
-msgstr "مهارات تواصل استثنائية في اللغة الإنجليزية, سواء كانت شفهية أو كتابية."
+msgstr "مهارات تواصل استثنائية في اللغة الإنجليزية, سواء كانت شفهية أو كتابية"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Exceptional organizational skills; detail orientation; strong work ethic; and efficient multi-tasking capabilities"
-msgstr "مهارات تنظيمية استثنائية؛ التوجيه بالتفاصيل; أخلاقيات عمل قوية; وكفاءات وقدرات متعددة المهام"
+msgstr ""
+"مهارات تنظيمية استثنائية؛ توجيه التفاصيل وأخلاقيات عمل قوية وكفاءات وقدرات "
+"متعددة المهام"
 
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Backoffice/Form.pm:310
 #: /home/git/translations/binary-static/src/templates/toolkit/account/self_exclusionws.html.tt:104
@@ -4707,7 +4730,7 @@ msgstr "العقود الآجلة"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/deposit_withdraw_ws.html.tt:56
 msgid "GBP"
-msgstr "جنية أسترلينى"
+msgstr "الجنيه الإسترليني"
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/glossary.html.haml:1
 msgid "GMT"
@@ -4950,7 +4973,9 @@ msgstr "أعلى/أسفل"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/bet/explanation.html.tt:140
 msgid "Higher/Lower contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "سيتم رد العقود المنخفضة / المرتفعة عند سعر الشراء إذا كان هناك أقل من علامتين بين أوقات البداية والنهاية."
+msgstr ""
+"سيتم إعادة العقود المرتفعة / المنخفضة عند سعر الشراء إذا كان هناك أقل من "
+"علامتين بين وقت البداية والنهاية."
 
 #: /home/git/translations/binary-static/src/templates/haml/get_started/glossary.html.haml:1
 msgid "Higher/Lower trades"
@@ -5170,7 +5195,8 @@ msgstr "إذا قمت بتلبية المتطلبات الأساسية لدين�
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:755
 msgid "If you need assistance feel free to contact our %1Customer Support"
-msgstr "إذا كنت بحاجة إلى المساعدة, فلا تتردد بالإتصال بفريقنا 1% لدعم العملاء"
+msgstr ""
+"إذا كنت بحاجة إلى المساعدة, فلا تتردد بالإتصال بفريق 1% دعم العملاء لدينا"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/email/lost_password.html.tt:9
 msgid "If you need help, please contact our customer support team at"
@@ -6937,7 +6963,7 @@ msgstr "يسمح بحد أقصى 30 من الرموز."
 
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/paymentagent_transferws.html.tt:77
 msgid "Max:"
-msgstr "أقصى:"
+msgstr "أقصى"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:229
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Backoffice/Form.pm:72
