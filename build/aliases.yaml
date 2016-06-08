@@ -28,10 +28,24 @@ deploy:
   - 'default'
   - 'gh-pages'
 
+serve:
+  - 'connect:livereload'
+  - 'watch'
+
+livereload:
+  - 'clean'
+  - 'css'
+  - 'js'
+  - 'fileindex'
+  - 'copy'
+  - 'shell:compile_dev'
+  - 'connect:livereload'
+  - 'watch'
+
 custom:
   - 'clean'
   - 'default'
-  - 'shell:compile_production'
+  - 'shell:compile_dev'
   - 'connect'
 
 release:

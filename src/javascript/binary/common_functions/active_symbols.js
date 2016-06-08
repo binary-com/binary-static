@@ -21,13 +21,19 @@ var ActiveSymbols = (function () {
         return obj && obj instanceof Object && Object.keys(obj).length;
     };
 
+    var clone = function clone(obj){
+        var newObj = {};
+        extend(newObj, obj);
+        return newObj;
+    };
+
     var activeSymbols = {
         markets: {},
         submarkets: {},
         symbols: {},
         getMarkets: function getMarkets(activeSymbols) {
             if ( objectNotEmpty(this.markets) ) {
-                return this.markets;
+                return clone(this.markets);
             } else {
                 var that = this;
                 var markets = groupBy(activeSymbols, 'market');
@@ -42,12 +48,12 @@ var ActiveSymbols = (function () {
                     };
                     that.getSubmarketsForMarket(marketSymbols, that.markets[marketName]);
                 });
-                return this.markets;
+                return clone(this.markets);
             }
         },
         getSubmarketsForMarket: function getSubmarketsForMarket(activeSymbols, market) {
             if ( objectNotEmpty(market.submarkets) ) {
-                return market.submarkets;
+                return clone(market.submarkets);
             } else {
                 market.submarkets = {};
                 var that = this;
@@ -63,12 +69,12 @@ var ActiveSymbols = (function () {
                     };
                     that.getSymbolsForSubmarket(submarketSymbols, market.submarkets[submarketName]);
                 });
-                return market.submarkets;
+                return clone(market.submarkets);
             }
         },
         getSymbolsForSubmarket: function getSymbolsForSubmarket(activeSymbols, submarket) {
             if ( objectNotEmpty(submarket.symbols) ) {
-                return submarket.symbols;
+                return clone(submarket.symbols);
             } else {
                 submarket.symbols = {};
                 activeSymbols.forEach(function(symbol){
@@ -81,12 +87,12 @@ var ActiveSymbols = (function () {
                         submarket: symbol.submarket
                     };
                 });
-                return submarket.symbols;
+                return clone(submarket.symbols);
             }
         },
         getSubmarkets: function getSubmarkets(active_symbols) {
             if ( objectNotEmpty(this.submarkets) ) {
-                return this.submarkets;
+                return clone(this.submarkets);
             } else {
                 var markets = this.getMarkets(active_symbols);
                 var that = this;
@@ -95,12 +101,12 @@ var ActiveSymbols = (function () {
                     var submarkets = that.getSubmarketsForMarket(active_symbols, market);
                     extend(that.submarkets, submarkets);
                 });
-                return this.submarkets;
+                return clone(this.submarkets);
             }
         },
         getSymbols: function getSymbols(active_symbols) {
             if ( objectNotEmpty(this.symbols) ) {
-                return this.symbols;
+                return clone(this.symbols);
             } else {
                 var submarkets = this.getSubmarkets(active_symbols);
                 var that = this;
@@ -109,7 +115,7 @@ var ActiveSymbols = (function () {
                     var symbols = that.getSymbolsForSubmarket(active_symbols, submarket);
                     extend(that.symbols, symbols);
                 });
-                return this.symbols;
+                return clone(this.symbols);
             }
         },
         getMarketsList: function getMarketsList(active_symbols) {

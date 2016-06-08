@@ -4,7 +4,9 @@
   "description": "Binary.com static content",
   "scripts": {
     "test": "grunt test",
-    "start": "sudo authbind grunt custom"
+    "start": "sudo -p 'enter password for sudo:' grunt custom",
+    "livereload": "sudo -p 'enter password for sudo:' grunt livereload",
+    "serve": "sudo -p 'enter password for sudo:' grunt serve"
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,8 @@
     "autoprefixer-core": "^5.2.1",
     "binary-live-api": "^18.9.6",
     "chai": "^3.5.0",
+    "connect-livereload": "^0.5.4",
+    "connect-modrewrite": "^0.9.0",
     "grunt": "^0.4.5",
     "grunt-bump": "^0.0.16",
     "grunt-contrib-clean": "^0.5.0",
