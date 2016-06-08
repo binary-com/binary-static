@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-08 10:05+0000\n"
-"Last-Translator: Rudy Karam <rudykaram6@gmail.com>\n"
+"PO-Revision-Date: 2016-06-08 10:07+0000\n"
+"Last-Translator: Ahmed Kotb <ahmedmohamedkotp@gmail.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/binary/static/ar/>"
 "\n"
 "Language: ar\n"
@@ -7083,7 +7083,7 @@ msgstr "الحد الأدنى من ستة حروف الدنيا و الكبرة 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1541
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Helper.pm:139
 msgid "Minimum stake of %1 and maximum payout of %2"
-msgstr "الحد الأدنى للمراهنة 1% والحد الأدنى للصرف 2%"
+msgstr "الحد الأدنى للمراهنة 1% والحد الأقصى للصرف 2%"
 
 #: /home/git/regentmarkets/bom-app/bin/GenerateStaticData.pm:317
 #: /home/git/regentmarkets/bom-platform/lib/BOM/Platform/Locale.pm:35
@@ -10483,7 +10483,7 @@ msgstr "القدرة على اكتساب المعرفة بالامتثال في 
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "The ability to communicate effectively in English, in both oral and written form"
-msgstr "القدرة على التواصل بفاعلية باللغة الإنجليزية (نطقا وكتابة)"
+msgstr "القدرة على التواصل بطلاقة باللغة الإنجليزية (نطقا وكتابة)"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "The ability to communicate fluently in English, in both oral and written form"
@@ -12135,7 +12135,10 @@ msgstr "نحافظ على أرصدة العملاء نقدا أو ما يعاد�
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/api_tac_tab.html.tt:147
 msgid "We may release subsequent versions of the Binary.com API and require that you use those subsequent versions. Your continued use of the APIs following a subsequent release will be deemed your acceptance of modifications."
-msgstr "قد نطلق إصدارت لاحقة لواجهة برمجة التطبيقات الخاصة ب Binary.com ونحن نطلب منك استخدام هذه الإصدارات اللاحقة. استمرارك في استخدام واجهة برمجة التطبيقات بعد إطلاق الإصدارت الحديثة سيعتبر موافقة منك على التعديلات."
+msgstr ""
+"قد نطلق إصدارت لاحقة لواجهة برمجة التطبيقات الخاصة ب Binary.com ونحن نطلب "
+"منك استخدام هذه الإصدارات اللاحقة. استخدامك المستمر لواجهة برمجة التطبيقات "
+"بعد إطلاق الإصدارت الحديثة سيعتبر موافقة منك على التعديلات."
 
 #: /home/git/translations/binary-static/src/templates/haml/static/careers.html.haml:1
 msgid "We offer a market-based remuneration structure, an annual cash bonus plan, health benefits for you and your family, travel and internet allowances, and company trips."
@@ -12223,7 +12226,7 @@ msgstr "عفواً لكن أداة الاستبعاد الذاتي غير متا
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Web design / development experience"
-msgstr "خبرة تصميم وتطوير المواقع"
+msgstr "خبرة في تصميم وتطوير المواقع"
 
 #: /home/git/translations/binary-static/src/templates/haml/layouts/default/footer.html.haml:1
 #: /home/git/translations/binary-static/src/templates/toolkit/global/footer.html.tt:71
@@ -13126,7 +13129,9 @@ msgstr ""
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:32
 msgid "You shall not encourage your referrals to take out any form of loans to be able to make deposits and/or place trades."
-msgstr "لا يجوز لك تشجيع الإحالات الخاصة بك لإخراج أي شكل من أشكال القروض لتكون قادرة على جعل الودائع و/أو مكان التداولات."
+msgstr ""
+"لا يجوز لك تشجيع الإحالات الخاصة بك لإخراج أي شكل من أشكال القروض لتكون "
+"قادرة على جعل الودائع و/أو مكان التداول."
 
 #. (website)
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/affiliate_tac_tab.html.tt:34
