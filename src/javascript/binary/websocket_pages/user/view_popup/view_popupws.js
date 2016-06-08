@@ -401,13 +401,7 @@ var ViewPopupWS = (function() {
     var normalMakeTemplate = function() {
         $Container = $('<div/>').append($('<div/>', {id: wrapperID}));
 
-        var longcode = contract.longcode;
-
-        var match = longcode.match(/(\d{4}-\d{2}-\d{2})\s?(\d{2}:\d{2}:\d{2})?/);
-        if(match){
-            var time = toJapanTimeIfNeeded(contract.date_expiry);
-            longcode = longcode.replace(match[0], time);
-        }
+        var longcode = toJapanTimeIfNeeded(contract.date_expiry, '', contract.longcode);
 
         $Container.prepend($('<div/>', {id: 'sell_bet_desc', class: 'popup_bet_desc drag-handle', text: longcode}));
         var $sections = $('<div/>').append($('<div id="sell_details_chart_wrapper" class="grd-grid-8 grd-grid-mobile-12"></div><div id="sell_details_table" class="grd-grid-4 grd-grid-mobile-12"></div>'));
