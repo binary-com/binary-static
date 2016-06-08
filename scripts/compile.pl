@@ -12,7 +12,7 @@ use HTML::Entities qw( encode_entities );
 use Encode;
 use Term::ANSIColor;
 
-use BS qw/set_is_dev is_dev branch set_branch localize set_lang all_languages lang_display_name tt2 css_files js_config menu/;
+use BS qw/set_is_dev is_dev branch set_branch localize set_lang all_languages lang_display_name tt2 css_files js_config menu get_static_hash/;
 use BS::Request;
 
 # force = re-generate all files
@@ -240,6 +240,10 @@ foreach my $m (@m) {
     }
 }
 print "\n";
+my $static_hash = get_static_hash();
+path($root_path.'/version')->spew_utf8($static_hash);
+path($dist_path.'/version')->spew_utf8($static_hash);
+
 
 sub haml_handle {
     my ($file, %stash) = @_;
