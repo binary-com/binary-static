@@ -18,7 +18,7 @@ var Message = (function () {
             } else if (type === 'contracts_for') {
                 processContract(response);
                 window.contracts_for = response;
-            } else if (type === 'payout_currencies') {
+            } else if (type === 'payout_currencies' && (!response.echo_req.hasOwnProperty('passthrough') || !response.echo_req.passthrough.hasOwnProperty('handler'))) {
                 page.client.set_storage_value('currencies', response.payout_currencies);
                 displayCurrencies();
                 Symbols.getSymbols(1);
