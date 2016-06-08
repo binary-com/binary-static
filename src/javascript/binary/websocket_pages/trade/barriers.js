@@ -35,7 +35,9 @@ var Barriers = (function () {
                     var elm = document.getElementById('barrier'),
                         tooltip = document.getElementById('barrier_tooltip'),
                         span = document.getElementById('barrier_span');
-                    if ((unit && isVisible(unit) && unit.value === 'd') || (end_time && isVisible(end_time) && moment(end_time.value).isAfter(moment(),'day'))) {
+                    if ((unit && isVisible(unit) && unit.value === 'd') ||
+                        (end_time && isVisible(end_time) && moment(end_time.value).isAfter(moment(),'day')) ||
+                        !String(barrier['barrier']).match(/^[+-]/)) {
                         if (currentTick && !isNaN(currentTick) && String(barrier_def).match(/^[+-]/)) {
                             elm.value = (parseFloat(currentTick) + parseFloat(barrier_def)).toFixed(decimalPlaces);
                             elm.textContent = (parseFloat(currentTick) + parseFloat(barrier_def)).toFixed(decimalPlaces);
