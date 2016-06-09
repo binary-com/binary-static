@@ -7,9 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-06 02:22+0000\n"
+"PO-Revision-Date: 2016-06-09 09:18+0000\n"
 "Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese "
+"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -606,42 +607,51 @@ msgstr "<option value=\"\"></option><option value=\"01\">１月</option><option 
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:103
-#, fuzzy
 #| msgid "<p style=\"font-weight: bold;\">Thanks for signing up for a virtual account!</p><p>Enter the following verification token into the form to create an account: <p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p><p>Enjoy trading with us on Binary.com.</p>"
 msgid "<p style=\"font-weight: bold;\">Thanks for signing up for a virtual account!</p><p>Enter the following verification token into the form to create an account: <p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p><p>Enjoy trading with us on Binary.com.</p><p style=\"color:#333333;font-size:15px;\">With Regards,<br/>Binary.com</p>"
 msgstr ""
-"<p style=\"font-weight: bold;\">デモ口座へご登録いただきありがとうございます</p><p>下記認証コードをデモ口座申込みページ上の認証コード欄にご入力してください。 <p>\n"
-"<span style=\"background: #f2f2f2; padding: 10px; line-height: 50px\">%1</span></p></p><p>ご不明な点等ございましたら、カスタマーサポートまでご連絡ください。</p>"
+"<p style=\"font-weight: bold;\""
+">デモ口座へご登録いただきありがとうございます</p><p>下記認証コードをデモ口座申込みページ上の認証コード欄にご入力してください。 <p>\n"
+"<span style=\"background: #f2f2f2; padding: 10px; line-height: 50px\""
+">%1</span></p></p><p>ご不明な点等ございましたら、カスタマーサポートまでご連絡ください。</p>\n"
+"<p style=\"color:#333333;font-size:15px;\">よろしくお願い致します。\n"
+"<br/>Binary.com</p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:90
-#, fuzzy
 #| msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Before we can help you change your password, please help us to verify your identity by entering the following verification token into the password reset form:<p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p>"
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Before we can help you change your password, please help us to verify your identity by entering the following verification token into the password reset form:<p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p><p style=\"color:#333333;font-size:15px;\">With Regards,<br/>Binary.com</p>"
 msgstr ""
 "<p style=\"line-height:200%;color:#333333;font-size:15px;\">お客さまへ</p>\n"
 "<p>新しい認証コードを発行いたしました。パスワード再設定ページ上で下記認証コードをご入力頂き、新しいパスワードを再設定してください。<p>\n"
-"<span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span> </p> </p>"
+"<span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\""
+">%1</span> </p> </p>\n"
+"<p style=\"color:#333333;font-size:15px;\">よろしくお願い致します。\n"
+"<br/>Binary.com</p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:130
-#, fuzzy
 #| msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment agent withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p>"
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment agent withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p><p style=\"color:#333333;font-size:15px;\">With Regards,<br/>Binary.com</p>"
 msgstr ""
 "<p style=\"line-height:200%;color:#333333;font-size:15px;\">お客さまへ</p>\n"
 "<p>決済サービスでのご出金の申請ページに下記認証コードをご入力いただき、ご本人確認をお済ませください。<p>\n"
-"<span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p>"
+"<span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\""
+">%1</span></p></p>\n"
+"<p style=\"color:#333333;font-size:15px;\">よろしくお願い致します。\n"
+"<br/>Binary.com</p>"
 
 #. ($params->{code})
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:142
-#, fuzzy
 #| msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p>"
 msgid "<p style=\"line-height:200%;color:#333333;font-size:15px;\">Dear Valued Customer,</p><p>Please help us to verify your identity by entering the following verification token into the payment withdrawal form:<p><span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p><p style=\"color:#333333;font-size:15px;\">With Regards,<br/>Binary.com</p>"
 msgstr ""
 "<p style=\"line-height:200%;color:#333333;font-size:15px;\">お客様へ</p>\n"
 "<p>ご出金の申請ページに下記認証コードをご入力いただき、ご本人確認をお済ませください。<p>\n"
-"<span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\">%1</span></p></p>"
+"<span style=\"background: #f2f2f2; padding: 10px; line-height: 50px;\""
+">%1</span></p></p>\n"
+"<p style=\"color:#333333;font-size:15px;\">よろしくお願い致します。\n"
+"<br/>Binary.com</p>"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/faq.html.tt:73
 msgid ""
@@ -673,12 +683,14 @@ msgstr ""
 "    </ul>"
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/NewAccount.pm:115
-#, fuzzy
 #| msgid "<p>Dear Valued Customer,</p><p>It appears that you have tried to register an email address that is already included in our system. If it was not you, simply ignore this email, or contact our customer support if you have any concerns.</p>"
 msgid "<p>Dear Valued Customer,</p><p>It appears that you have tried to register an email address that is already included in our system. If it was not you, simply ignore this email, or contact our customer support if you have any concerns.</p><p style=\"color:#333333;font-size:15px;\">With Regards,<br/>Binary.com</p>"
 msgstr ""
 "<p>お客さまへ</p>\n"
-"<p>お申し込み頂いたメールアドレスは既に当システムに登録済みです。本メールにお心あたりがない場合は無視していただくか、ご不明な点がございましたら、カスタマーサポートまでご連絡ください。</p>"
+"<p>お申し込み頂いたメールアドレスは既に当システムに登録済みです。本メールにお心あたりがない場合は無視していただくか、ご不明な点がございましたら、カスタ"
+"マーサポートまでご連絡ください。</p>\n"
+"<p style=\"color:#333333;font-size:15px;\">よろしくお願い致します。\n"
+"<br/>Binary.com</p>"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/affiliates/faq.html.tt:89
 msgid ""
@@ -2420,7 +2432,7 @@ msgstr "チャイキン・ボラティリティ"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/endpoint.html.tt:2
 msgid "Change API Endpoint"
-msgstr ""
+msgstr "API エンドポイントの変更"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/user/settings/change_passwordws.html.tt:3
 #: /home/git/translations/binary-static/src/templates/toolkit/user/settings/change_passwordws.html.tt:62
@@ -2940,16 +2952,14 @@ msgid "Contracts may not expire on a weekend; therefore the expiry date of a con
 msgstr "トレードを週末に終了するよう指定することができない場合があります。ゆえに、土曜日か日曜日に終了時間を指定したトレードは、終了時間が月曜日に指定される場合があります。"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2183
-#, fuzzy
 #| msgid "Contracts on %1 with duration more than 24 hours must expire at the end of a trading day."
 msgid "Contracts on this market with a duration of more than 24 hours must expire at the end of a trading day."
-msgstr "取引期間が24時間を超える％1の契約は、取引日の終わりに期限が切れます。"
+msgstr "取引期間が24時間を超えるこのマーケットのトレードは、取引日の終わりに満期となります。"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2224
-#, fuzzy
 #| msgid "Contracts on %1 with durations under 24 hours must expire on the same trading day."
 msgid "Contracts on this market with a duration of under 24 hours must expire on the same trading day."
-msgstr "取引期間を２４時間以下と指定した%1でのトレードは、購入日と同日に終了します。"
+msgstr "取引期間を２４時間以内に指定されたこのマーケットでのトレードは、購入日と同日に終了します。"
 
 #: /home/git/translations/binary-static/src/templates/haml/user/reality_check_summaryws.html.haml:1
 msgid "Contracts sold"
@@ -4975,10 +4985,10 @@ msgid "If the Company is legally required to disclose your personal or financial
 msgstr "管轄裁判所または政府機関の命に従い、法律により当社は個人情報または財務情報を開示する必要があります。法的に禁止されない限り、適切とみなす情報への保護ができるよう迅速にその旨をユーザーに通知致します。このような必要な開示は、利用規約契約の違反とはなりません。"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/api_tac_tab.html.tt:52
-#, fuzzy
 #| msgid "You must immediately delete all Content if we terminate your use of the Binary.com API for breach of these Terms, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
 msgid "If this Agreement is terminated for any reason, you must permanently delete all Content, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
-msgstr "政府機関によって課せられた法律や義務に違反した場合を除き、本利用規約の違反が原因でBinary.com APIの使用を終了した場合、直ちにすべてのコンテンツを削除する必要があります。"
+msgstr ""
+"政府機関によって課せられた法律や義務に違反した場合を除き、いかなる理由で本契約が終了した場合、すべてのコンテンツを完全に削除していただく必要があります。"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/careers.html.haml:1
 msgid "If we’re happy with your results, we’ll contact you for an interview and then do background and reference checks."
@@ -7287,7 +7297,7 @@ msgstr "有効なTickは、%1から%2の間です"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/endpoint.html.tt:22
 msgid "OAuth App ID (Optional)"
-msgstr ""
+msgstr "OAuth アプリ ID (任意)"
 
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Charting.pm:509
 msgid "OK"
@@ -7857,10 +7867,9 @@ msgstr "Perl モジュール"
 
 #. ($descriptor->{require_scope})
 #: /home/git/regentmarkets/bom-websocket-api/lib/BOM/WebSocketAPI/Websocket_v3.pm:444
-#, fuzzy
 #| msgid "Permission denied, requiring %1"
 msgid "Permission denied, requires %1 scope."
-msgstr "アクセス権限がありません。%1が必要です。"
+msgstr "アクセス権限がありません。%1のスコープが必要です。"
 
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Utility.pm:68
 msgid "Permission denied."
@@ -8721,7 +8730,7 @@ msgstr "パスワード再設定"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/endpoint.html.tt:38
 msgid "Reset to Original Settings"
-msgstr ""
+msgstr "初期設定にリセットする"
 
 #: /home/git/translations/binary-static/src/templates/haml/static/job_details.html.haml:1
 msgid "Resolve complex customer care issues in the best interest of our global clients and the company"
@@ -9064,7 +9073,7 @@ msgstr "９月"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/endpoint.html.tt:10
 msgid "Server"
-msgstr ""
+msgstr "サーバー"
 
 #: /home/git/regentmarkets/bom-backoffice/bin/GenerateStaticData.pm:368
 #: /home/git/regentmarkets/bom-backoffice/lib/BOM/Backoffice/Form.pm:296
@@ -10915,10 +10924,9 @@ msgid "This feature is not relevant to virtual-money accounts."
 msgstr "この機能は、デモ口座ではご利用頂けません。"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/cashier/paymentagent_transferws.html.tt:48
-#, fuzzy
 #| msgid "This feature is not relevant to virtual-money accounts."
 msgid "This feature is only relevant to payment agent accounts."
-msgstr "この機能は、デモ口座ではご利用頂けません。"
+msgstr "この機能は、決済サービスアカウントのみご利用いただけます。"
 
 #: /home/git/regentmarkets/bom-backoffice/bin/GenerateStaticData.pm:246
 #: /home/git/translations/binary-static/src/templates/haml/user/lost_passwordws.html.haml:1
@@ -11107,10 +11115,9 @@ msgid "Token"
 msgstr "トークン"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:2244
-#, fuzzy
 #| msgid "Too many market holidays during the contract period. Select an expiry date after %1."
 msgid "Too many market holidays during the contract period."
-msgstr "このトレードの取引期間中に多くの祭日が存在しますので、トレード終了日を%1以降に設定して下さい。"
+msgstr "このトレードの取引期間中に祭日が多く含まれます。"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Transaction.pm:1361
 msgid "Too many recent attempts. Try again later."
@@ -11269,10 +11276,9 @@ msgid "Trading manual"
 msgstr "取引マニュアル"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Spread.pm:478
-#, fuzzy
 #| msgid "Trading on %1 is not offered for this contract type."
 msgid "Trading on this market is not offered for this contract type."
-msgstr "%1でのこのタイプのトレードはできません。"
+msgstr "このマーケットでのお取引ではこのタイプのトレードをご利用いただけません。"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:1314
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract.pm:155
@@ -11282,10 +11288,9 @@ msgstr "%1でのこのタイプのトレードはできません。"
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Spread.pm:213
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Spread.pm:254
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Spread.pm:462
-#, fuzzy
 #| msgid "Trading on %1 is suspended due to missing market data."
 msgid "Trading on this market is suspended due to missing market data."
-msgstr "市場価格の入手が不可能なため、%1でのトレード提供を一時的に停止しております。"
+msgstr "市場価格の入手が不可能なため、このマーケットでのトレード提供を一時的に停止しております。"
 
 #. (request.url_for("contact"))
 #: /home/git/translations/binary-static/src/templates/toolkit/user/settings/self_exclusionws.html.tt:4
@@ -12526,7 +12531,7 @@ msgstr "アフィリエイト会員は獲得会員にアフィリエイト報酬
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/api_tac_tab.html.tt:49
 msgid "You are not allowed to store any Content (such as feed data)."
-msgstr ""
+msgstr "コンテンツの格納が許可されていません（データフィードなど）。"
 
 #: /home/git/regentmarkets/bom-backoffice/bin/GenerateStaticData.pm:330
 #: /home/git/regentmarkets/bom-rpc/lib/BOM/RPC/v3/Cashier.pm:675
@@ -12676,6 +12681,8 @@ msgstr "%1 %2でこのトレードを売却しました"
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/endpoint.html.tt:27
 msgid "You have to register and get App ID before you can use different OAuth server for authentication. For more information refer to OAuth details on https://developers.binary.com/."
 msgstr ""
+"認承に他のOAuthサーバーをご利用される前に、登録をしてアプリIDを取得頂く必要があります。OAuthに関する詳細は下記URLよりご確認ください。\n"
+"https://developers.binary.com/"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/api_tac_tab.html.tt:118
 msgid "You irrevocably, non-exclusively license to the Company rights to use your Contributions; and"
@@ -12683,7 +12690,7 @@ msgstr "あなたのコントリビューションを使用する当社の権利
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/api_tac_tab.html.tt:51
 msgid "You may cache the Content for up to 24 hours from a request for that Content through the Binary.com API."
-msgstr ""
+msgstr "Binary.com APIを介したコンテンツのリクエストから24時間までコンテンツをキャッシュすることができます。"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/terms_and_conditions.html.tt:188
 msgid "You may choose to contact us to close your account held with the Company. Your account may be closed if you do not have any open trade positions and if you have complied with the requested \"Know Your Client\" procedures to enable you to withdraw any pending funds in your account."
@@ -12710,10 +12717,11 @@ msgid "You may only open an account at this site on condition that:"
 msgstr "お客さまは以下の条件を満たす場合にのみ、ご口座を開設することができます。"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/api_tac_tab.html.tt:50
-#, fuzzy
 #| msgid "You may store the Application-specific alphanumeric user IDs that we provide to you for identifying users of your Application (\"API Tokens\") or the tokens that we provide to you when Binary.com authenticates your Application via Open Authorisation Standard (\"OAuth Tokens\")."
 msgid "You may store the Application-specific alphanumeric user IDs provided (\"API Tokens\") or the authentication tokens provided via Open Authorisation Standard (\"OAuth Tokens\")."
-msgstr "あなたのアプリケーション（APIトークン）のユーザーを識別するために当社が提供するアプリケーション固有の英数字のユーザーIDまたはオープン認可基準（OAuthのトークン）を介してアプリケーションをBinary.comが認証する際に提供するトークンを格納することができます。"
+msgstr ""
+"当社が提供するアプリケーション固有の英数字ユーザーID（APIトークン）またはオープン認可基準（OAuthトークン）を介して提供された認承トークンを格納す"
+"ることができます。"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/legal/api_tac_tab.html.tt:211
 msgid "You may terminate this Agreement at any time, but only by giving the Company a minimum of seven days written notice. \"Written notice\" here includes notice delivered by regular letter mail or by email."
@@ -13305,7 +13313,7 @@ msgstr "ご入金"
 
 #: /home/git/translations/binary-static/src/templates/toolkit/misc/endpoint.html.tt:15
 msgid "e.g. www.binaryqa36.com"
-msgstr ""
+msgstr "例：www.binaryqa36.com"
 
 #: /home/git/regentmarkets/bom/lib/BOM/Product/Contract/Strike.pm:252
 msgid "entry spot"
