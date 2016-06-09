@@ -1,19 +1,19 @@
 /* GLOBAL RULES */
 
-/* 
- * To simplify usage of a property 
+/*
+ * To simplify usage of a property
  * with different values for LTR and RTL languages
  * sample usage: @include BIDIR_VALUE(float, left, right);
- */ 
+ */
 @mixin BIDIR_VALUE($prop, $ltr_value, $rtl_value) {
   #{$prop}: if($IS_LTR, $ltr_value, $rtl_value);
 }
 
-/* 
- * To simplify usage of different properties 
+/*
+ * To simplify usage of different properties
  * with the same value for LTR and RTL languages
  * sample usage: @include BIDIR_PROP(margin-left, margin-right, 5px);
- */ 
+ */
 @mixin BIDIR_PROP($ltr_prop, $rtl_prop, $value) {
   @if $IS_LTR {
     #{$ltr_prop}: $value;
@@ -50,7 +50,6 @@
     }
 }
 
-@mixin menu-left-margin { margin-left:255px; }
 @mixin menu-left {
   ul {
     font-size:90%;
@@ -89,7 +88,6 @@
   }
 }
 
-@mixin menu-right-margin { margin-right:255px; }
 @mixin menu-right {
   div {
     background: $COLOR_LIGHT_GRAY;
@@ -131,28 +129,6 @@
   &:hover, &:active {
     text-decoration: none;
     background-color: #14602B;
-  }
-}
-
-@mixin chart-day-selector {
-  float: left;
-  list-style-image: none;
-  list-style-position: inherit;
-  label.button {
-    width: auto;
-    span.button {
-      background: transparent;
-      border: none;
-      border-bottom: 2px solid $COLOR_GRAY_SHADE;
-      border-radius: 0;
-      color: $COLOR_BLACK;
-      font-weight: normal;
-      &.disabled {
-        color: $COLOR_ORANGE;
-        font-weight: bold;
-        border-bottom: 4px solid $COLOR_ORANGE;
-      }
-    }
   }
 }
 
