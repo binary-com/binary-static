@@ -145,7 +145,7 @@ if ($pattern) {
     @m = grep {index($_->[0], $pattern) > -1} @m;
     $force = 1;
     # use the last hash to maintain consistency between current templates with new one
-    # since one or few templates are going to be compiled not all of them
+    # since pattern specified, so one or few templates are going to be compiled not all of them
     if(open(my $file_handler, '<', $hash_file)) {
         set_static_hash(<$file_handler>);
         close $file_handler;
