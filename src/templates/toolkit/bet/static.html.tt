@@ -3,7 +3,10 @@
    <div id="loading_container" class="overlay_container">
    </div>
    <div id="guideBtn"></div>
-   <a href="https://goo.gl/5KmSsU" target="_blank" id="androidApp"></a>
+   <div id="app-container">
+     <a href="https://itunes.apple.com/app/apple-store/id1091187567?pt=117911266&ct=trading_page&mt=8" target="_blank" id="appstore"></a>
+     <a href="https://goo.gl/5KmSsU" target="_blank" id="androidApp"></a>
+   </div>
    <div class="row" id="contract_symbol_container">
       <div id="contract_markets_container">
          <select id="contract_markets"></select>
@@ -185,7 +188,7 @@
                <div id="pricing_table_container" class="row">
                   <div id="pricing_table"></div>
                </div>
-               <div id="open_positions_container">[% INCLUDE account/openpositionsws.html.tt %]</div>
+               <div id="open_positions_container">[% INCLUDE user/portfoliows.html.tt %]</div>
             </div>
          </div>
       </div>

@@ -11,6 +11,12 @@ module.exports = {
             stdout: true
         }
     },
+    sitemap: {
+        command: 'cd ' + process.cwd() + '/scripts && carton exec perl sitemap.pl',
+        options: {
+            stdout: true
+        }
+    },
     all: {
         nightwatch: {
             command: 'nightwatch',
