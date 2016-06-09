@@ -1,6 +1,4 @@
 /* Logo and top bar */
-
-
 .dark-blue {
   background: $COLOR_DARK_BLUE;
 }
@@ -22,19 +20,16 @@
   #topbar-info {
     @include BIDIR_VALUE(float, right, left);
   }
-  #gmt-clock, #contact-us {
+  #gmt-clock, #contact-us, .upgrademessage {
       padding-top: 3px;
   }
-  .upgrademessage {
-    padding-top: 3px;
-    a {
+  .upgrademessage a {
       @include link-button;
       border-radius: 2px;
       font-size: 90%;
       padding: 2px 4px 2px 4px;
       text-transform: none;
       @include BIDIR_VALUE(margin, 0 0 0 10px, 0 10px 0 0);
-    }
   }
 
   #language_select {
@@ -46,32 +41,6 @@
     color: $COLOR_WHITE;
     white-space: nowrap;
     text-decoration: none;
-  }
-
-  ul {
-    z-index: 999999;
-    position: absolute;
-    display: none;
-    background: $COLOR_DARK_BLUE;
-    border-radius: 0 0 5px 5px;
-    margin: 1px 0 0 0;
-    padding: 5px 10px 10px 10px;
-    li {
-      margin: 0 0 0 10px;
-      border: 0;
-      position: relative;
-      white-space: nowrap;
-      border-radius: 0;
-      padding: 2px 5px 2px 5px;
-      display: block;
-      border-radius: 2px;
-      line-height: 1.5;
-      &:active > ul, &:focus, &:hover {
-        cursor: pointer;
-        background: white;
-        color: black;
-      }
-    }
   }
 }
 
@@ -105,12 +74,6 @@
   }
   #client-logged-out, #loginid-switch-form {
     @include BIDIR_VALUE(text-align, right, left);
-  }
-  a#lost-password, a#register {
-    display: inline-block;
-    margin: 0 0 0 10px;
-    line-height: 170%;
-    font-size: 70%;
   }
   #logout {
     text-align: right;
