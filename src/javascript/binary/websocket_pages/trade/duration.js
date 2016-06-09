@@ -355,6 +355,9 @@ var Durations = (function(){
             processTradingTimesRequest(end_date);
         }
         else{
+            if(!expiry_time.value) {
+                expiry_time.value = moment(window.time).add(5, 'minutes').utc().format('HH:mm');
+            }
             Durations.setTime(expiry_time.value);
             Defaults.set('expiry_time', Defaults.get('expiry_time') || expiry_time.value);
             expiry_time.show();

@@ -689,7 +689,7 @@ function displayIndicativeBarrier() {
         highBarrierElement = document.getElementById('barrier_high'),
         lowBarrierElement = document.getElementById('barrier_low');
 
-    if (unit && unit.value !== 'd' && currentTick && !isNaN(currentTick)) {
+    if (unit && (!isVisible(unit) || unit.value !== 'd') && currentTick && !isNaN(currentTick)) {
         var decimalPlaces = countDecimalPlaces(currentTick);
         if (indicativeBarrierTooltip && isVisible(indicativeBarrierTooltip)) {
             var barrierValue = isNaN(parseFloat(barrierElement.value))?0:parseFloat(barrierElement.value);
@@ -730,31 +730,29 @@ function durationOrder(duration){
 function marketOrder(market){
     'use strict';
     var order = {
-        forex: 0,
-          major_pairs: 1,
-          minor_pairs: 2,
-          smart_fx: 3,
-        indices: 4,
-          asia_oceania: 5,
-          europe_africa: 6,
-          americas: 7,
-          otc_index: 8,
-        stocks: 9,
-          france: 10,
-          belgium: 11,
-          amsterdam: 12,
-          au_otc_stock: 13,
-        ge_otc_stock: 14,
-          uk_otc_stock: 15,
-          us_otc_stock: 16,
-        commodities: 17,
-          metals: 18,
-          energy: 19,
-        volidx: 20,
-          random_index: 21,
-          random_daily: 22,
-          random_nightly: 23
-    };
+        forex:               0,
+            major_pairs:     1,
+            minor_pairs:     2,
+            smart_fx:        3,
+        indices:             4,
+            asia_oceania:    5,
+            europe_africa:   6,
+            americas:        7,
+            otc_index:       8,
+        stocks:              9,
+            au_otc_stock:    10,
+            ge_otc_stock:    11,
+            india_otc_stock: 12,
+            uk_otc_stock:    13,
+            us_otc_stock:    14,
+        commodities:         15,
+            metals:          16,
+            energy:          17,
+        volidx:              18,
+            random_index:    19,
+            random_daily:    20,
+            random_nightly:  21
+    }; 
     return order[market];
 }
 
@@ -788,7 +786,7 @@ function displayTooltip(market, symbol){
       tip.hide();
       if (guide) guide.show();
     }
-    if (market.match(/^otc_index/) || symbol.match(/^OTC_/) || market.match(/otc_stock/) || markets.by_symbol(symbol).submarket.name.match(/otc_stock/)){
+    if (market.match(/^otc_index/) || symbol.match(/^OTC_/) || market.match(/stock/) || (markets.by_symbol(symbol) && markets.by_symbol(symbol).market.name.match(/stocks/))){
         tip.show();
         tip.setAttribute('target', page.url.url_for('/get-started/otc-indices-stocks'));
     }
