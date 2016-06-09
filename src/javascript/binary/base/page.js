@@ -1244,7 +1244,24 @@ Page.prototype = {
             domain: '.' + location.hostname.split('.').slice(-2).join('.')
         });
     },
-    reload: function() {
-        window.location.reload();
+    reload: function(forcedReload) {
+        window.location.reload(forcedReload ? true : false);
+    },
+    check_new_release: function() { // calling this method is handled by GTM tags
+        var last_reload = localStorage.getItem('new_release_reload_time');
+        if(last_reload && last_reload * 1 + 10 * 60 * 1000 > moment().valueOf()) return; // prevent reload in less than 10 minutes
+        var currect_hash = $('script[src*="binary.min.js"],script[src*="binary.js"]').attr('src').split('?')[1];
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                var latest_hash = xhttp.responseText;
+                if(latest_hash && latest_hash !== currect_hash) {
+                    localStorage.setItem('new_release_reload_time', moment().valueOf());
+                    page.reload(true);
+                }
+            }
+        };
+        xhttp.open('GET', page.url.url_for_static() + 'version?' + Math.random().toString(36).slice(2), true);
+        xhttp.send();
     },
 };
