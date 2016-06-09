@@ -6,7 +6,7 @@ a.dynamic, span.dynamic, div.dynamic, p.dynamic, button.dynamic, table.dynamic {
     td {
       padding: 10px 10px;
     }
-    td.indicative, td.purchase {
+    td.indicative, td.purchase, .payout {
         white-space: nowrap;
     }
     td.indicative.no_resale {
@@ -28,7 +28,7 @@ a.dynamic, span.dynamic, div.dynamic, p.dynamic, button.dynamic, table.dynamic {
       text-align: left!important;
     }
     @media screen and (max-width: 480px) {
-        .details{
+        .details, .payout{
             display: none;
         }
     }

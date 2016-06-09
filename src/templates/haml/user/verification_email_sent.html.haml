@@ -1,8 +1,0 @@
-- stash(title => l('Email Verification'));
-%div.grd-grid-12
-  %h1= l('Email Verification')
-  %p!= l("A verification email has been sent to [_1].", $email)
-  %p= l("If you don't receive the email within the next few minutes, please check your junk/spam mail folder.")
-  %p.center-aligned
-    %a.button{:href => "javascript:window.location.reload();"}
-      %span= l('Resend Verification Email')
