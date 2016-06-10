@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-10 08:11+0000\n"
-"Last-Translator: Sittie Hadjirah Sevilla <sittiebaser@gmail.com>\n"
+"PO-Revision-Date: 2016-06-10 09:53+0000\n"
+"Last-Translator: Ahmed Kotb <ahmedmohamedkotp@gmail.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/binary/static/ar/>"
 "\n"
 "Language: ar\n"
@@ -1405,7 +1405,7 @@ msgid "Certain limits are imposed as to the acceptable levels for barrier/strike
 msgstr "يتم فرض حدود معينة فيما يتعلق بالمستويات المقبولة لحاجز أسعار العقود أو أسعار تنفيذها. عادة، لا يكون الحاجز أو سعر التنفيذ قريب جدا أو بعيد جدا عن المستوى الحالي للسوق المعني."
 
 msgid "Change API Endpoint"
-msgstr ""
+msgstr "تغيير نقطة النهاية لواجهة برمجة التطبيقات"
 
 msgid "Change Password"
 msgstr "غير كلمة المرور"
@@ -2827,10 +2827,12 @@ msgstr "إذا ثبت أن أي حكم من أحكام هذا الاتفاق ب�
 msgid "If the Company is legally required to disclose your personal or financial information by law, regulation or pursuant to the order of a court of competent jurisdiction or a governmental agency, the Company  shall, unless legally prohibited, promptly notify you to that effect, in order to give you the opportunity to seek such protection for the information as it deems appropriate. Such required disclosure shall not be construed as a breach of this Terms and Conditions Agreement."
 msgstr "إذا كانت الشركة من الناحية القانونية بحاجة إلى الكشف عن المعلومات الشخصية أو المالية  بموجب القانون أو جهة التنظيم أو وفقا لأمر صادر عن محكمة مختصة أو هيئة حكومية، يجب  على الشركة، ما لم يحظر قانونا، أن تخطرك فورا بهذا الشأن، كي نعطيك الفرصة للحصول على تلك الحماية للمعلومات حسبما تراه مناسبا. ولا يجوز أن يفسر مثل هذا الكشف المطلوب على أنه خرق لشروط وأحكام هذه الاتفاقية."
 
-#, fuzzy
 #| msgid "You must immediately delete all Content if we terminate your use of the Binary.com API for breach of these Terms, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
 msgid "If this Agreement is terminated for any reason, you must permanently delete all Content, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
-msgstr "يجب عليك فوراً حذف جميع المحتويات إذا ما قمنا بإنهاء استخدامك لواجهة برمجة التطبيقات الخاصة ب Binary.com بسبب خرق هذه الشروط, إلا إذا ما كان ذلك سيتسبب في إنتهاكك لأي قانون أو إلتزام مفروض من قبل سلطة حكومية."
+msgstr ""
+"إذا تم انهاء هذه الإتفاقية لأي سبب من الأسباب, فيجب عليك حذف جميع المحتويات "
+"باستمرار, إلا إذا ما كان ذلك سيؤدي إلى انتهاك أي قانون أو إلتزام مفروض من "
+"قبل سلطة حكومية."
 
 msgid "If we’re happy with your results, we’ll contact you for an interview and then do background and reference checks."
 msgstr "إذا كنا راضين عن نتائجك، سنتواصل معك لعمل مقابلة و بعدها سنقوم بمراجعة حالتك و خلفياتك ."
@@ -4243,7 +4245,7 @@ msgid "Number of ticks"
 msgstr "عدد الحركات"
 
 msgid "OAuth App ID (Optional)"
-msgstr ""
+msgstr "تطبيق هوية ذات تفويض قياسي مفتوح (اختياري)"
 
 msgid "OTC Derivative (Option) Trading"
 msgstr "OTC Derivative (Option) Trading"
@@ -5014,7 +5016,7 @@ msgid "Reset Password"
 msgstr "اعادة تعيين كلمة السر"
 
 msgid "Reset to Original Settings"
-msgstr ""
+msgstr "إعادة تعيين للإعدادات الأصلية"
 
 msgid "Resolve complex customer care issues in the best interest of our global clients and the company"
 msgstr "حل قضايا رعاية العملاء المعقدة مع الميل لمصلحة عملائنا والشركة"
@@ -5227,7 +5229,7 @@ msgid "September"
 msgstr "سبتمبر"
 
 msgid "Server"
-msgstr ""
+msgstr "خادم"
 
 msgid "Session duration limit cannot be more than 6 weeks."
 msgstr "الحد الأقصى لمدة الدورة لا يمكن أن يتجاوز 6 أسابيع."
@@ -6084,10 +6086,9 @@ msgstr "هذه الوثيقة (\"الإتفاقية\") تحدد الأحكام �
 msgid "This feature is not relevant to virtual-money accounts."
 msgstr "هذه الميزة ليست ذات صلة بحسابات الأموال الافتراضية."
 
-#, fuzzy
 #| msgid "This feature is not relevant to virtual-money accounts."
 msgid "This feature is only relevant to payment agent accounts."
-msgstr "هذه الميزة ليست ذات صلة بحسابات الأموال الافتراضية."
+msgstr "هذه الميزة هي فقط ذات صلة بوكيل الدفع للحسابات."
 
 msgid "This field is required."
 msgstr "هذه الخانة مطلوبة."
@@ -6972,7 +6973,7 @@ msgid "You are not allowed to rebate any part commission payment onto your refer
 msgstr "غير مسموح لك أن تخصم أي جزء من مبلغ العمولة على الإحالات الخاصة بك وينبغي على الشركة إذا ما علمت بأنك تقوم بمثل هذه الأعمال أن تقوم بإلغاء حسابك التابع فوراً."
 
 msgid "You are not allowed to store any Content (such as feed data)."
-msgstr ""
+msgstr "غير مسموح لك تخزين أي محتوى (مثل تغذية البيانات)."
 
 msgid "You are not authorized for withdrawal via payment agent."
 msgstr "غير مصرح لك بالسحب بواسطة وكيل دفع."
@@ -7042,12 +7043,17 @@ msgstr "أنت قمت ببيع هذا العقد عند 1% 2%"
 
 msgid "You have to register and get App ID before you can use different OAuth server for authentication. For more information refer to OAuth details on https://developers.binary.com/."
 msgstr ""
+"يجب عليك التسجيل والحصول على تطبيق هوية قبل أن تتمكن من استخدام خادم ذات "
+"تفويض قياسي مفتوح مختلف للمصادقة. لمزيد من المعلومات راجع تفاصيل التفويض "
+"القياسي المفتوح على: https://developers.binary.com/."
 
 msgid "You irrevocably, non-exclusively license to the Company rights to use your Contributions; and"
 msgstr "أنت بصورة لا رجعة فيها, وترخيص غير حصري لحقوق الشركة لإستخدام الإشتراكات الخاصة بك; و"
 
 msgid "You may cache the Content for up to 24 hours from a request for that Content through the Binary.com API."
 msgstr ""
+"يمكنك تخزين المحتوى لمدة 24 ساعة من طلب هذا المحتوى من خلال واجهة برمجة "
+"التطبيقات الخاصة ب Binary.com."
 
 msgid "You may choose to contact us to close your account held with the Company. Your account may be closed if you do not have any open trade positions and if you have complied with the requested \"Know Your Client\" procedures to enable you to withdraw any pending funds in your account."
 msgstr "قد يمكنك اختيار الاتصال بنا لإغلاق حسابك لدى الشركة. يجوز أن تغلق حسابك إذا لم يكن لديك أي مراكز تجارية مفتوحة وإذا كنت قد امتثلت للإجراءات المطلوبة \"اعرف عميلك\" لتتمكن من سحب أي أموال معلقة في حسابك."
@@ -7067,10 +7073,12 @@ msgstr "أنت لا تستطيع تخصيص الحقوق الممنوحة في �
 msgid "You may only open an account at this site on condition that:"
 msgstr "يمكنك أن تفتح حساب على هذا الموقع شريطة أن:"
 
-#, fuzzy
 #| msgid "You may store the Application-specific alphanumeric user IDs that we provide to you for identifying users of your Application (\"API Tokens\") or the tokens that we provide to you when Binary.com authenticates your Application via Open Authorisation Standard (\"OAuth Tokens\")."
 msgid "You may store the Application-specific alphanumeric user IDs provided (\"API Tokens\") or the authentication tokens provided via Open Authorisation Standard (\"OAuth Tokens\")."
-msgstr "تستطيع تخزين أبجدية تطبيق خاص بهويات المستخدمين والتي نقدمها لك للتحقق من هوية مستخدمي التطبيق الخاص بك (\"رموز واجهة برمجة التطبيقات\") أو الرموز التي نقدمها لك عندما يتم توثيق التطبيق الخاص بك من قبل Binary.com بواسطة تفويض قياسي مفتوح (\"OAuth Tokens ==> تفويض مفتوح\")."
+msgstr ""
+"تستطيع تخزين تطبيق خاص بهويات المستخدم الأبجدية والمقدمة من (\"رموز واجهة "
+"برمجة التطبيقات\") أو الرموز المصدق عليها والمقدمة من خلال تفويض قياسي مفتوح "
+"(\"رموز ذات تفويض قياسي مفتوح\")."
 
 msgid "You may terminate this Agreement at any time, but only by giving the Company a minimum of seven days written notice. \"Written notice\" here includes notice delivered by regular letter mail or by email."
 msgstr "بإمكانك إنهاء هذه الإتفاقية في أي وقت, ولكن فقط عن طريق إعطاء الشركة إشعار خطي في مدة لا تقل عن سبعة أيام. \"الإشعار الخطي\" هنا يتضمن إشعار مسلم عن طريق خطاب عادي بالبريد الإلكتروني أو عن طريق البريد الإلكتروني."
@@ -7382,7 +7390,7 @@ msgid "deposit"
 msgstr "إيداع"
 
 msgid "e.g. www.binaryqa36.com"
-msgstr ""
+msgstr "على سبيل المثال www.binaryqa36.com"
 
 msgid "f"
 msgstr "أف"
