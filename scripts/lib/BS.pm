@@ -101,7 +101,7 @@ sub url_for {
     return $__request{$LANG}->url_for(@_);
 }
 
-## tt2/haml
+## tt2
 sub tt2 {
     my @include_path = (root_path() . '/src/templates/toolkit');
 

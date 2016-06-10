@@ -7,7 +7,7 @@
             <div><img class="responsive image" src="[% request.url_for('images/pages/applications/ticktrade-image.png') %]" /></div>
             <h2>[% l('Tick Trade App') %]</h2>
             <strong>[% l('Ultra-fast trading') %]</strong>
-            <div class="grd-grid-12 desc">[% l('Enjoy our fastest type of trading on your mobile phone or tablet. Place tick trades anytime, anywhere – even while you’re on the move.') %]</div>
+            <div class="grd-grid-12 desc">[% l("Enjoy our fastest type of trading on your mobile phone or tablet. Place tick trades anytime, anywhere - even while you're on the move.") %]</div>
             <div class="grd-grid-12 no-padding">
                 <div class="grd-grid-4 grd-grid-phablet-6 grd-grid-mobile-6 icon">
                     <a href="https://play.google.com/store/apps/details?id=com.binary.ticktrade" target="_blank">

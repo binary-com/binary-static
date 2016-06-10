@@ -1,0 +1,20 @@
+<div class="sidebar-right">
+  <div class="by_client_type client_logged_out">
+    <p>
+      <a class="pjaxload" href="[% url_for('/') %]">
+        [% l('Try it now') %]
+      </a>
+      <br/>
+      [% l('No risk, $10K virtual money account') %]
+    </p>
+  </div>
+  <div>
+    <p>
+      [% l('Want to learn more?') %]
+      <br/>
+      <a class="pjaxload" href="[% request.url_for('/tour') %]">
+        [% l('View the Tour') %]
+      </a>
+    </p>
+  </div>
+</div>

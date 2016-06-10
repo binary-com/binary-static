@@ -47,7 +47,7 @@
         [% l("Laws regarding financial contracts vary throughout the world, and it is the responsibility of persons accessing this site to ensure that they understand and fully comply with any laws or regulations relevant to themselves in their own country. This site does not constitute, and may not be used for the purposes of, an offer or solicitation to anyone in any jurisdiction in which such offer or solicitation is not authorised or to any person to whom it is unlawful to make such offer or solicitation. Access to this site and the offering of financial contracts via this site in certain jurisdictions may be restricted and, accordingly, persons accessing this site are required to inform themselves about and to observe such restrictions.") %]
     </p>
     <p>
-        [% l("The transactions performed on this site and the relationship between Clients and the Company are to be governed by and construed in accordance with the laws of the country of incorporation of the Company (the \"Jurisdiction\"), which shall be either of the Isle of Man, Malta, or Costa Rica. You agree that the Jurisdiction's courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, you irrevocably submit to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and you agree that any claim you might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company’s Complaints and Disputes section.") %]
+        [% l("The transactions performed on this site and the relationship between Clients and the Company are to be governed by and construed in accordance with the laws of the country of incorporation of the Company (the \"Jurisdiction\"), which shall be either of the Isle of Man, Malta, or Costa Rica. You agree that the Jurisdiction's courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, you irrevocably submit to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and you agree that any claim you might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company's Complaints and Disputes section.") %]
     </p>
     <h2>E. [% l("Contracts") %]</h2>
     <p>
@@ -68,7 +68,7 @@
         [% l("We are required by our licence to inform you about what happens to funds which we hold on account for you, and the extent to which funds are protected in the event of insolvency <a href='[_1]' target='_blank'>[_1]</a>.", "http://www.gamblingcommission.gov.uk/Consumers/Protection-of-customer-funds.aspx") %]
     </p>
     <p>
-        [% l("The company holds customer funds in separate bank accounts to the operational accounts; and arrangements have been made to ensure assets in the customer accounts are distributed to customers in the event of insolvency. This meets the Gambling Commission’s requirements for the segregation of customer funds at the level: medium protection.") %]
+        [% l("The company holds customer funds in separate bank accounts to the operational accounts; and arrangements have been made to ensure assets in the customer accounts are distributed to customers in the event of insolvency. This meets the Gambling Commission's requirements for the segregation of customer funds at the level: medium protection.") %]
     </p>
     <p>
     [% l("The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='[_1]' class='pjaxload'>here:</a>", request.url_for('cashier/payment_methods')) %]
@@ -128,7 +128,7 @@
                 [% l("In any event of an error in current prices, published odds or trading software.") %]
             </li>
             <li>
-                [% l("In all circumstances, the Company reserves the right to make changes to these Terms and Conditions. If the Company elects to make any material changes to these Terms and Conditions, our clients will be notified in advance and shall either accept or decline to agree. Declining to agree shall result in a material breach of this agreement and the client’s account maybe frozen, suspended or cancelled.") %]
+                [% l("In all circumstances, the Company reserves the right to make changes to these Terms and Conditions. If the Company elects to make any material changes to these Terms and Conditions, our clients will be notified in advance and shall either accept or decline to agree. Declining to agree shall result in a material breach of this agreement and the client's account maybe frozen, suspended or cancelled.") %]
             </li>
         </ul>
     </p>
@@ -136,10 +136,10 @@
         [% l("In such an event, the Company may at its sole discretion (with or without notice) close out Client's open financial contracts at prices it considers fair and reasonable at such a time and no claims may be entertained against the Company in connection thereto.") %]
     </p>
     <p>
-        [% l("Further, the Company, under the above circumstances, or any other, reserves the right to adjust a client’s account should any trade result in a disruption, miscarry or aborted trade.") %]
+        [% l("Further, the Company, under the above circumstances, or any other, reserves the right to adjust a client's account should any trade result in a disruption, miscarry or aborted trade.") %]
     </p>
     <p>
-        [% l("Although the Company has and retains all rights to refuse or to close a Client’s account, the Company does warrant that all contractual obligations already made, shall be honoured.") %]
+        [% l("Although the Company has and retains all rights to refuse or to close a Client's account, the Company does warrant that all contractual obligations already made, shall be honoured.") %]
     </p>
     <p>
         [% l("The Company reserves the right to restrict client trading and/or cancel or reverse transactions in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug or glitch in our website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, or manifest mis-calculation of prices or other manifest error. Clients have a duty to report to the Company any such problems, errors or suspected system inadequacies that they may experience and may not abuse of or arbitrage such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website.") %]
@@ -148,7 +148,7 @@
         [% l("Any information given on these pages and/or emails or newsletters sent by the company related thereto, is not intended as financial or investment advice and the Company will not accept any liability in this respect, nor will the Company accept any responsibility for the accuracy or comprehensiveness of the information provided on this site.") %]
     <p>
     <p>
-        [% l("The right is also reserved to amend or change the rules and scope of this service from time to time. Any change to the rules made whilst the site is in operation will not apply retrospectively and will only apply to acquisitions of financial contracts made after such change. It is the Company’s responsibility to notify Clients before any changes to its terms come into effect.") %]
+        [% l("The right is also reserved to amend or change the rules and scope of this service from time to time. Any change to the rules made whilst the site is in operation will not apply retrospectively and will only apply to acquisitions of financial contracts made after such change. It is the Company's responsibility to notify Clients before any changes to its terms come into effect.") %]
     </p>
     <h2>J. [% l("Dormant and Inactive Accounts") %]</h2>
     <p>

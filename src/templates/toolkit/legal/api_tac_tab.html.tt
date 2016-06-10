@@ -8,7 +8,7 @@
         <li><strong>[% l("Definitions") %]</strong>
             <ol class="reset_ol">
                 <li>[% l("\"Binary.com API\" means the Binary.com proprietary set of programmatic routines, protocols, tools and resources created and maintained by Binary.com that allows you to use a registered Application to interface with the Binary.com trading platform.") %]</li>
-                <li>[% l("\"Content\" means any data or content from our Website or accessed via the API. Our \"Website\" means Binary.com’s website at www.binary.com and any other website or service owned or operated by Binary.com.") %]</li>
+                <li>[% l("\"Content\" means any data or content from our Website or accessed via the API. Our \"Website\" means Binary.com's website at www.binary.com and any other website or service owned or operated by Binary.com.") %]</li>
                 <li>[% l("\"Third Party Provider(s)\" means the third party (non-affiliated) entity that makes available features and functions through use of the Binary.com API.") %]</li>
             </ol>
         </li>
@@ -94,7 +94,7 @@
                     <ol class="reset_ol">
                         <li>[% l("As between you and us, we own all rights, title, and interest, including all intellectual property rights, in and to, the Binary.com API, and all elements, components, and executables of the Binary.com API.") %]</li>
                         <li>[% l("Your use of the Binary.com API will not confer to you any title, ownership interest or intellectual property rights that otherwise belongs to the Company. Our trading platform is protected under patent and our website, including its content, is protected by copyright laws, and will remain our exclusive property, as applicable.") %]</li>
-                        <li>[% l("Except for the license granted in this Agreement, the Company does not grant you any right, title, or interest in the Binary.com API. You agree to take such actions as the Company may reasonably request to perfect the Company’s rights to the Binary.com API.") %]</li>
+                        <li>[% l("Except for the license granted in this Agreement, the Company does not grant you any right, title, or interest in the Binary.com API. You agree to take such actions as the Company may reasonably request to perfect the Company's rights to the Binary.com API.") %]</li>
                     </ol>
                 </li>
                 <li>[% l("Your Property") %]
@@ -123,13 +123,13 @@
                 </li>
                 <li>[% l("Improvements") %]
                     <ol class="reset_ol">
-                        <li>[% l("You also acknowledge that Binary.com may continue to make changes to and enhance the Binary.com API and that those changes and enhancements will be owned by Binary.com. You hereby assign and transfer to the Company all of your right, title and interest in and to any modifications or derivative works of the Binary.com API created by or for you, regardless of whether they were created in accordance with these Terms; such assignment being effective upon creation of such works, and shall include, without limitation, all rights under any intellectual property laws, including copyright. You shall not take any action to jeopardise, encumber, limit or interface in any manner with Binary.com’s ownership of and rights with respect to the Binary.com API, or any derivative works or updates thereof or thereto. Any components, parts, or mechanics of any system or API program derived from the Binary.com API, or Binary.com’s business practices shall belong solely to Binary.com. Further, you will not, at any time, contest or assist any other third party in contesting the rights of Binary.com in the Binary.com API or any other intellectual property provided in these Terms.") %]</li>
+                        <li>[% l("You also acknowledge that Binary.com may continue to make changes to and enhance the Binary.com API and that those changes and enhancements will be owned by Binary.com. You hereby assign and transfer to the Company all of your right, title and interest in and to any modifications or derivative works of the Binary.com API created by or for you, regardless of whether they were created in accordance with these Terms; such assignment being effective upon creation of such works, and shall include, without limitation, all rights under any intellectual property laws, including copyright. You shall not take any action to jeopardise, encumber, limit or interface in any manner with Binary.com's ownership of and rights with respect to the Binary.com API, or any derivative works or updates thereof or thereto. Any components, parts, or mechanics of any system or API program derived from the Binary.com API, or Binary.com's business practices shall belong solely to Binary.com. Further, you will not, at any time, contest or assist any other third party in contesting the rights of Binary.com in the Binary.com API or any other intellectual property provided in these Terms.") %]</li>
                     </ol>
                 </li>
                 <li>[% l("Revisions to the Binary.com API") %]
                     <ol class="reset_ol">
                         <li>[% l("We may release subsequent versions of the Binary.com API and require that you use those subsequent versions. Your continued use of the APIs following a subsequent release will be deemed your acceptance of modifications.") %]</li>
-                        <li>[% l("You shall discontinue your use of all prior versions of the Binary.com API in favour of the revised Binary.com API. While it is the Company’s intention that the revised Binary.com API shall be backward compatible with the immediately prior version of the Binary.com API, the Company does not guarantee or warrant that this shall be so, and the Company shall have no liability whatsoever to you for any failure of the revised Binary.com API to be backward compatible with any prior version of the Binary.com API.") %]</li>
+                        <li>[% l("You shall discontinue your use of all prior versions of the Binary.com API in favour of the revised Binary.com API. While it is the Company's intention that the revised Binary.com API shall be backward compatible with the immediately prior version of the Binary.com API, the Company does not guarantee or warrant that this shall be so, and the Company shall have no liability whatsoever to you for any failure of the revised Binary.com API to be backward compatible with any prior version of the Binary.com API.") %]</li>
                         <li>[% l("The Company may change, suspend, terminate or discontinue any aspect of the Binary.com API, including the availability of any services, information features or functions accessible by means of the Binary.com API, on no less than seven days advance notice to you.") %]</li>
                     </ol>
                 </li>
@@ -167,10 +167,10 @@
 
         <li><strong>[% l("Indemnification") %]</strong>
             <ol class="reset_ol">
-                <li>[% l("You shall be solely responsible for, and shall indemnify and hold the Company free and harmless from, any and all third party claims, damages or lawsuits (including, but not limited to, consequential losses and loss of profit, the Company’s reasonable legal costs and expenses if applicable):") %]
+                <li>[% l("You shall be solely responsible for, and shall indemnify and hold the Company free and harmless from, any and all third party claims, damages or lawsuits (including, but not limited to, consequential losses and loss of profit, the Company's reasonable legal costs and expenses if applicable):") %]
                     <ol class="reset_ol">
-                        <li>[% l("You or your employees’ or agents’ acts or omissions, including yours or their breach or alleged breach of these Terms;") %]</li>
-                        <li>[% l("Your breach of any of Binary.com’s rights;") %]</li>
+                        <li>[% l("You or your employees' or agents' acts or omissions, including yours or their breach or alleged breach of these Terms;") %]</li>
+                        <li>[% l("Your breach of any of Binary.com's rights;") %]</li>
                         <li>[% l("Your violation of any applicable law, rule or regulation;") %]</li>
                         <li>[% l("Any failure on your part to maintain the security of any security devices or procedures used in or in association with the Binary.com API;") %]</li>
                         <li>[% l("The use, operation or combination of the Binary.com API with non-Binary.com API(s), data, equipment or documentation if liability would have been avoided but for such use, operation, or combination; or") %]</li>
@@ -237,7 +237,7 @@
                     </ol>
                 </li>
                 <li>[% l("If you are entering into this Agreement on behalf of your employer or other entity, you represent and warrant that you have full legal authority to bind your employer or such entity to this Agreement.") %]</li>
-                <li>[% l("You may not assign rights granted in this Agreement without the Company’s prior written approval.") %]</li>
+                <li>[% l("You may not assign rights granted in this Agreement without the Company's prior written approval.") %]</li>
             </ol>
         </li>
     </ol>

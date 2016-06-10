@@ -4,7 +4,7 @@ DIR=$(cd "$(dirname "$0")"; pwd)
 cd "$DIR"
 echo "make translation under $DIR\n";
 
-carton exec perl local/bin/xgettext.pl  --verbose  -P haml=haml -P perl=pl,pm -P tt2=tt,tt2  \
+carton exec perl local/bin/xgettext.pl  --verbose -P perl=pl,pm -P tt2=tt,tt2  \
     --output=messages.pot   --output-dir=../src/config/locales/   --directory=../src/templates/  --directory=bin/
 
 PATH=/usr/local/opt/gettext/bin/:$PATH
