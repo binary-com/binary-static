@@ -7,9 +7,10 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-09 03:47+0000\n"
+"PO-Revision-Date: 2016-06-10 06:59+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
-"Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
+"Language-Team: Indonesian "
+"<https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1398,10 +1399,9 @@ msgstr "Kata sandi Kasir"
 msgid "Certain limits are imposed as to the acceptable levels for barrier/strike prices of contracts. Typically, the barrier/strike may not be too close nor too far from the current underlying market level."
 msgstr "Beberapa batasan tertentu akan dikenakan pada batasan atau tingkat harga kontrak. Pada dasarnya batasan atau tingkat adalah tidak terlalu dekat atau terlalu jauh dari tingkat harga pasar terkini."
 
-#, fuzzy
 #| msgid "Change country"
 msgid "Change API Endpoint"
-msgstr "Rubah negara"
+msgstr "Rubah Endpoint API"
 
 msgid "Change Password"
 msgstr "Perubahan Kata Sandi"
@@ -2825,10 +2825,13 @@ msgstr "Jika ketentuan apapun dalam Perjanjian ini dianggap tidak berlaku atau t
 msgid "If the Company is legally required to disclose your personal or financial information by law, regulation or pursuant to the order of a court of competent jurisdiction or a governmental agency, the Company  shall, unless legally prohibited, promptly notify you to that effect, in order to give you the opportunity to seek such protection for the information as it deems appropriate. Such required disclosure shall not be construed as a breach of this Terms and Conditions Agreement."
 msgstr "Jika Perusahaan diwajibkan secara hukum untuk menginformasikan data pribadi atau keuangan Anda oleh hukum, regulasi atau sesuai dengan perintah dari pengadilan yang berwenang atau badan pemerintah, Perusahaan harus, kecuali dilarang secara hukum, segera memberitahu Anda mengenai hal tersebut, untuk memberikan kesempatan kepada Anda dalam mencari perlindungan yang dianggap perlu. Pengungkapan yang diperlukan tersebut tidak dapat ditafsirkan sebagai pelanggaran Syarat dan Ketentuan Perjanjian ini."
 
-#, fuzzy
 #| msgid "You must immediately delete all Content if we terminate your use of the Binary.com API for breach of these Terms, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
 msgid "If this Agreement is terminated for any reason, you must permanently delete all Content, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
-msgstr "Anda harus segera menghapus semua Konten jika kami menghentikan penggunaan API Binary.com berhubung pelanggaran Persyaratan ini, kecuali bila hal itu akan menyebabkan Anda untuk melanggar hukum atau kewajiban yang dibebankan oleh otoritas pemerintah."
+msgstr ""
+"Jika Perjanjian ini dihentikan berhubung alasan apapun, maka Anda harus "
+"menghapus secara permanen semua Konten, kecuali jika melakukan hal tersebut "
+"akan menyebabkan Anda melanggar hukum atau kewajiban yang dibebankan oleh "
+"sebuah otoritas pemerintah."
 
 msgid "If we’re happy with your results, we’ll contact you for an interview and then do background and reference checks."
 msgstr "Jika anda lulus, kami akan menghubungi Anda untuk wawancara termasuk pemeriksaan latar belakang dan referensi."
@@ -4244,7 +4247,7 @@ msgid "Number of ticks"
 msgstr "Jumlah tik"
 
 msgid "OAuth App ID (Optional)"
-msgstr ""
+msgstr "OAuth App ID (Pilihan)"
 
 msgid "OTC Derivative (Option) Trading"
 msgstr "OTC Derivative (Option) Trading"
@@ -5015,7 +5018,7 @@ msgid "Reset Password"
 msgstr "Ulang Kata Sandi"
 
 msgid "Reset to Original Settings"
-msgstr ""
+msgstr "Reset ke Pengaturan Asli"
 
 msgid "Resolve complex customer care issues in the best interest of our global clients and the company"
 msgstr "Dapat menyelesaikan masalah kompleks yang dialami pelanggan yang merupakan fokus pelanggan dan perusahaan"
@@ -5228,7 +5231,7 @@ msgid "September"
 msgstr "September"
 
 msgid "Server"
-msgstr ""
+msgstr "Server"
 
 msgid "Session duration limit cannot be more than 6 weeks."
 msgstr "Batas durasi sesi tidak dapat lebih dari 6 minggu."
@@ -6088,10 +6091,9 @@ msgstr "Dokumen ini (\"Perjanjian\") ini menjabarkan syarat dan ketentuan antara
 msgid "This feature is not relevant to virtual-money accounts."
 msgstr "Fasilitas ini tidak tersedia untuk akun uang virtual."
 
-#, fuzzy
 #| msgid "This feature is not relevant to virtual-money accounts."
 msgid "This feature is only relevant to payment agent accounts."
-msgstr "Fasilitas ini tidak tersedia untuk akun uang virtual."
+msgstr "Fitur ini hanya relevan untuk akun agen pembayaran."
 
 msgid "This field is required."
 msgstr "Bagian ini diperlukan."
@@ -6972,10 +6974,9 @@ msgstr "Anda berada dalam kegagalan atau pelanggaran dari setiap perjanjian, kew
 msgid "You are not allowed to rebate any part commission payment onto your referrals and should the company realise you are engaged in such actions; your affiliate account shall be revoked immediately."
 msgstr "Anda tidak dibenarkan memberi potongan pembayaran komisi kepada anggota afiliasi Anda dan jika Perusahaan mengetahui Anda terlibat dalam hal ini, maka akun afiliasi Anda akan dibatakan serta merta."
 
-#, fuzzy
 #| msgid "<p>You are not allowed to access this payment method page.</p>"
 msgid "You are not allowed to store any Content (such as feed data)."
-msgstr "<p>Anda tidak diperkenankan untuk mengakses halaman metode pembayaran</p>"
+msgstr "Anda tidak diizinkan untuk menyimpan Konten (seperti data feed)."
 
 msgid "You are not authorized for withdrawal via payment agent."
 msgstr "Anda tidak dibenarkan menarik dana menggunakan agen pembayaran."
@@ -7045,12 +7046,17 @@ msgstr "Anda telah menjual kontrak pada %1 %2"
 
 msgid "You have to register and get App ID before you can use different OAuth server for authentication. For more information refer to OAuth details on https://developers.binary.com/."
 msgstr ""
+"Anda perlu mendaftar dan memperoleh App ID sebelum dapat menggunakan server "
+"OAuth berbeda. Untuk informasi lebih lanjut mengenai OAuth lihat di "
+"https://developers.binary.com/."
 
 msgid "You irrevocably, non-exclusively license to the Company rights to use your Contributions; and"
 msgstr "Anda sepenuhnya tidak dapat membatalkan, tidak memiliki kekuasaan penuh kepada Perusahaan untuk menggunakan kontribusi Anda dan"
 
 msgid "You may cache the Content for up to 24 hours from a request for that Content through the Binary.com API."
 msgstr ""
+"Anda mungkin dapat menyimpan Konten hingga 24 jam dari permintaan melalui "
+"API Binary.com."
 
 msgid "You may choose to contact us to close your account held with the Company. Your account may be closed if you do not have any open trade positions and if you have complied with the requested \"Know Your Client\" procedures to enable you to withdraw any pending funds in your account."
 msgstr "Anda dapat menghubungi kami untuk menutup akun yang Anda miliki pada Perusahaan. Akun Anda juga dapat ditutup jika Anda tidak memiliki posisi trading dan jika Anda telah diminta untuk melengkapi prosedur \"Know Your Client\" untuk menarik saldo atau dana yang masih tersisa pada akun Anda."
@@ -7070,10 +7076,12 @@ msgstr "Anda tidak dapat mengalihkan hak yang diberikan dalam Perjanjian ini tan
 msgid "You may only open an account at this site on condition that:"
 msgstr "Anda hanya dapat mendaftar akun di situs ini dengan syarat bahwa:"
 
-#, fuzzy
 #| msgid "You may store the Application-specific alphanumeric user IDs that we provide to you for identifying users of your Application (\"API Tokens\") or the tokens that we provide to you when Binary.com authenticates your Application via Open Authorisation Standard (\"OAuth Tokens\")."
 msgid "You may store the Application-specific alphanumeric user IDs provided (\"API Tokens\") or the authentication tokens provided via Open Authorisation Standard (\"OAuth Tokens\")."
-msgstr "Anda mungkin menyimpan ID pengguna alfanumerik khusus aplikasi yang kami sediakan untuk Anda untuk mengidentifikasi pengguna Aplikasi Anda (\"API Token\") atau token yang kami sediakan untuk Anda ketika Binary.com mengotentikasi Aplikasi Anda melalui Buka Otorisasi Standar (\"OAuth Token\")."
+msgstr ""
+"Anda mungkin dapat menyimpan ID pengguna alfanumerik khusus aplikasi (\"API "
+"Token\") atau token otentikasi yang disediakan melalui Buka Otorisasi "
+"Standar (\"OAuth Token\")."
 
 msgid "You may terminate this Agreement at any time, but only by giving the Company a minimum of seven days written notice. \"Written notice\" here includes notice delivered by regular letter mail or by email."
 msgstr "Anda dapat mengakhiri Perjanjian ini setiap saat, tetapi hanya dengan memberikan Perusahaan minimal tujuh hari pemberitahuan tertulis. \"Pemberitahuan tertulis\" di sini termasuk pemberitahuan yang disampaikan melalui surat surat biasa atau melalui email."
@@ -7385,7 +7393,7 @@ msgid "deposit"
 msgstr "deposit"
 
 msgid "e.g. www.binaryqa36.com"
-msgstr ""
+msgstr "contoh www.binaryqa36.com"
 
 msgid "f"
 msgstr "f"
