@@ -3,9 +3,10 @@ msgstr ""
 "Project-Id-Version: Chinese (China) (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-05-31 09:46+0000\n"
+"PO-Revision-Date: 2016-06-10 06:01+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
+"Language-Team: Chinese (China) "
+"<https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1395,10 +1396,9 @@ msgstr "收银台密码"
 msgid "Certain limits are imposed as to the acceptable levels for barrier/strike prices of contracts. Typically, the barrier/strike may not be too close nor too far from the current underlying market level."
 msgstr "合约障碍/行权价格的可接受水平存在特定限制。一般来说，障碍或行权价格不能离标的资产当前价格水平太近或太远。"
 
-#, fuzzy
 #| msgid "Change country"
 msgid "Change API Endpoint"
-msgstr "更改国家"
+msgstr "更改 API 端点"
 
 msgid "Change Password"
 msgstr "更改密码"
@@ -2822,10 +2822,9 @@ msgstr "如果本协议的任何条款被认定完全或部分无效，或无法
 msgid "If the Company is legally required to disclose your personal or financial information by law, regulation or pursuant to the order of a court of competent jurisdiction or a governmental agency, the Company  shall, unless legally prohibited, promptly notify you to that effect, in order to give you the opportunity to seek such protection for the information as it deems appropriate. Such required disclosure shall not be construed as a breach of this Terms and Conditions Agreement."
 msgstr "如果公司因法律法规或具有司法管辖权的法庭或政府机构的规定，必须公布您的个人或财务信息，公司须在法律允许范围内及时通知您，使您有机会对相关数据采取恰当的保护措施。该必要的公布行为不可解释为违反此协议条款和条件。"
 
-#, fuzzy
 #| msgid "You must immediately delete all Content if we terminate your use of the Binary.com API for breach of these Terms, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
 msgid "If this Agreement is terminated for any reason, you must permanently delete all Content, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
-msgstr "如果我们因您违反这些条款而终止您使用Binary.com API，您必须立即删除所有内容，除非这样做将导致您违反任何法律或政府部门所规定的义务。"
+msgstr "如果协议因任何原因被终止，您必须立即删除所有内容，除非这样做将导致您违反任何法律或政府部门所规定的义务。"
 
 msgid "If we’re happy with your results, we’ll contact you for an interview and then do background and reference checks."
 msgstr "如果您的测试结果令人满意，我们会与您联系安排面试，然后做背景和身份调查。"
@@ -4240,7 +4239,7 @@ msgid "Number of ticks"
 msgstr "跳动点数目"
 
 msgid "OAuth App ID (Optional)"
-msgstr ""
+msgstr "OAuth 应用程序 ID (可选)"
 
 msgid "OTC Derivative (Option) Trading"
 msgstr "OTC Derivative (Option) Trading"
@@ -5011,7 +5010,7 @@ msgid "Reset Password"
 msgstr "重置密码"
 
 msgid "Reset to Original Settings"
-msgstr ""
+msgstr "重设为原始设置"
 
 msgid "Resolve complex customer care issues in the best interest of our global clients and the company"
 msgstr "维护全球客户和公司最大利益，解决复杂的客户服务问题"
@@ -5224,7 +5223,7 @@ msgid "September"
 msgstr "九月"
 
 msgid "Server"
-msgstr ""
+msgstr "服务器"
 
 msgid "Session duration limit cannot be more than 6 weeks."
 msgstr "交易期持续时间限制不能大于 6周。"
@@ -6083,10 +6082,9 @@ msgstr "本文件（“协议”）规定了“公司”（即 Binary Services L
 msgid "This feature is not relevant to virtual-money accounts."
 msgstr "此功能不适用于虚拟资金账户。"
 
-#, fuzzy
 #| msgid "This feature is not relevant to virtual-money accounts."
 msgid "This feature is only relevant to payment agent accounts."
-msgstr "此功能不适用于虚拟资金账户。"
+msgstr "此功能仅适用于支付代理账户。"
 
 msgid "This field is required."
 msgstr "此字段为必填项。"
@@ -6969,10 +6967,9 @@ msgstr "您已违犯或违反本协议所包含的条款、义务或条件，如
 msgid "You are not allowed to rebate any part commission payment onto your referrals and should the company realise you are engaged in such actions; your affiliate account shall be revoked immediately."
 msgstr "您不能使用佣金作为给推荐人的回扣，一旦被公司发现，您的账户将立即被撤销。"
 
-#, fuzzy
 #| msgid "<p>You are not allowed to access this payment method page.</p>"
 msgid "You are not allowed to store any Content (such as feed data)."
-msgstr "<p>您不允许访问此支付方式页面。</p>"
+msgstr "您不允许保存任何内容（例如源数据）。"
 
 msgid "You are not authorized for withdrawal via payment agent."
 msgstr "您无权通过付款代理取款。"
@@ -7042,12 +7039,14 @@ msgstr "您已经以 %1 %2 卖出此合约"
 
 msgid "You have to register and get App ID before you can use different OAuth server for authentication. For more information refer to OAuth details on https://developers.binary.com/."
 msgstr ""
+"使用各OAuth服务器进行验证前须先注册并领取应用程序ID。欲知详情，请到https://developers.binary.com/参阅 "
+"OAuth信息。"
 
 msgid "You irrevocably, non-exclusively license to the Company rights to use your Contributions; and"
 msgstr "您不可撤回地允许公司以非独家方式使用您的贡献;和"
 
 msgid "You may cache the Content for up to 24 hours from a request for that Content through the Binary.com API."
-msgstr ""
+msgstr "通过Binary.com API对指定内容提出请求后可保留该内容缓存为时24小时。"
 
 msgid "You may choose to contact us to close your account held with the Company. Your account may be closed if you do not have any open trade positions and if you have complied with the requested \"Know Your Client\" procedures to enable you to withdraw any pending funds in your account."
 msgstr "您可以和我们联系，关闭在本公司开立的账户。如您没有任何未平仓交易头寸，且满足“了解您的客户“的要求，可以提取账户内的待领款项，您的账户就可以关闭。"
@@ -7067,10 +7066,9 @@ msgstr "未经公司事先书面批准，您不得转让本协议授予的权利
 msgid "You may only open an account at this site on condition that:"
 msgstr "只有满足下列条件，您才能在本网站开户："
 
-#, fuzzy
 #| msgid "You may store the Application-specific alphanumeric user IDs that we provide to you for identifying users of your Application (\"API Tokens\") or the tokens that we provide to you when Binary.com authenticates your Application via Open Authorisation Standard (\"OAuth Tokens\")."
 msgid "You may store the Application-specific alphanumeric user IDs provided (\"API Tokens\") or the authentication tokens provided via Open Authorisation Standard (\"OAuth Tokens\")."
-msgstr "您可以存储我们提供给您作为辨识应用程序（\"API 令牌\"）用户的应用程序特定字母数字用户身份编号，或当Binary.com通过开放授权标准（\"OAuth 令牌\"）对您的应用程序进行身份验证时我们为您提供的令牌。"
+msgstr "您可以存储所提供的应用程序特定字母数字用户身份编号（\"API 令牌\"），或通过开放授权标准（\"OAuth 令牌\"）提供的身份验证令牌。"
 
 msgid "You may terminate this Agreement at any time, but only by giving the Company a minimum of seven days written notice. \"Written notice\" here includes notice delivered by regular letter mail or by email."
 msgstr "您可以随时终止本协议，但须预先给公司最少7天书面通知。\"书面通知\"在这里包括普通信件邮寄或发送电子邮件通知。"
@@ -7382,7 +7380,7 @@ msgid "deposit"
 msgstr "存款"
 
 msgid "e.g. www.binaryqa36.com"
-msgstr ""
+msgstr "例如 www.binaryqa36.com"
 
 msgid "f"
 msgstr "f"
