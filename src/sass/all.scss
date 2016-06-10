@@ -10,23 +10,19 @@
 @import "common/header";
 @import "common/footer";
 @import "common/nav";
-@import "common/exception";
 @import "common/reality-check";
 @import "common/password-meter";
 @import "common/tooltip";
 
 /* pages */
 @import "pages/home.scss";
-@import "pages/login.scss";
 @import "pages/get-started.scss";
 @import "pages/tour.scss";
 @import "pages/contact.scss";
 @import "pages/trading.scss";
 @import "pages/sell_popup.scss";
-@import "pages/tabs.scss";
 @import "pages/trading/common.scss";
 @import "pages/trading/container.scss";
-@import "pages/trading/form.scss";
 @import "pages/trading/pages.scss";
 @import "pages/trading/table.scss";
 @import "pages/cashier.scss";
