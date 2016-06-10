@@ -1,15 +1,3 @@
 $LANGUAGE_DIRECTION : rtl;
 $IS_LTR : false;
 @import "all";
-
-body.AR#betpage {
-    #content-holder {
-        #content {
-            #bet_container {
-                #bet_calculation_container {
-                    padding-right: 5px;
-                }
-            }
-        }
-    }
-}

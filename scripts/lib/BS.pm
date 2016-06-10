@@ -15,6 +15,7 @@ use Format::Util::Numbers;
 our @EXPORT_OK = qw/
     root_path is_dev set_is_dev branch set_branch
     localize set_lang all_languages lang_display_name
+    get_static_hash set_static_hash
 
     root_url
 
@@ -130,6 +131,9 @@ sub tt2 {
 }
 
 our $static_hash = join('', map{('a'..'z',0..9)[rand 36]} 0..7);
+sub get_static_hash { return $static_hash; }
+sub set_static_hash { $static_hash = shift; }
+
 ## css/js/menu
 sub css_files {
     my @css;

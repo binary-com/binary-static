@@ -12,7 +12,7 @@ use HTML::Entities qw( encode_entities );
 use Encode;
 use Term::ANSIColor;
 
-use BS qw/set_is_dev is_dev branch set_branch localize set_lang all_languages lang_display_name tt2 css_files js_config menu/;
+use BS qw/set_is_dev is_dev branch set_branch localize set_lang all_languages lang_display_name tt2 css_files js_config menu get_static_hash set_static_hash/;
 use BS::Request;
 
 # force = re-generate all files
@@ -57,7 +57,7 @@ my @m = (
     ['open-source-projects',       'static/open_source_projects', 'haml',    'full_width', 'Open-Source Projects'],
     ['styles',                     'home/styles',                 'haml',    'full_width', 'Styles'],
     ['affiliate/signup',           'affiliates/signup',           'toolkit', 'default', 'Affiliate'],
-    ['user/logintrouble',          'misc/logintrouble',           'toolkit', 'default', 'Login trouble'],
+    ['user/browser-support',       'misc/logintrouble',           'toolkit', 'default', 'Login trouble'],
     ['endpoint',                   'misc/endpoint',               'toolkit', 'default', 'Endpoint'],
     ['legal/us_patents',           'legal/us_patents',            'toolkit', 'default', 'US Patents'],
     ['cashier',                    'cashier/index',               'haml',    'default', 'Cashier'],
@@ -129,6 +129,7 @@ my @m = (
 ## config
 my $root_path = substr $Bin, 0, rindex($Bin, '/');
 my $dist_path = "$root_path/dist".($branch ? '/'.branch() : '');
+my $hash_file = "$dist_path/version";
 @BS::Request::HTML_URLS = map { $_->[0] } @m;
 my $index = 0;
 $| = 1;
@@ -143,6 +144,12 @@ foreach my $lang (@langs) {
 if ($pattern) {
     @m = grep {index($_->[0], $pattern) > -1} @m;
     $force = 1;
+    # use the last hash to maintain consistency between current templates with new one
+    # since pattern specified, so one or few templates are going to be compiled not all of them
+    if(open(my $file_handler, '<', $hash_file)) {
+        set_static_hash(<$file_handler>);
+        close $file_handler;
+    }
 }
 
 foreach my $m (@m) {
@@ -240,6 +247,13 @@ foreach my $m (@m) {
     }
 }
 print "\n";
+
+# save latest hash
+if(not $pattern) {
+    # my $static_hash = get_static_hash();
+    path($hash_file)->spew_utf8(get_static_hash());
+}
+
 
 sub haml_handle {
     my ($file, %stash) = @_;

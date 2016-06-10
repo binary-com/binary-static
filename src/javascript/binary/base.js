@@ -203,16 +203,24 @@ $(document).ready(function () {
     var match = document.cookie.match(/\bloginid=(\w+)/);
     match = match ? match[1] : '';
     $(window).on('storage', function (jq_event) {
-        if (jq_event.originalEvent.key !== 'active_loginid') return;
-        if (jq_event.originalEvent.newValue === match) return;
-        if (jq_event.originalEvent.newValue === '') {
-            // logged out
-            page.reload();
-        } else {
-            // loginid switch
-            if(!window['is_logging_in']) {
-                page.reload();
-            }
+        switch(jq_event.originalEvent.key) {
+            case 'active_loginid':
+                if (jq_event.originalEvent.newValue === match) return;
+                if (jq_event.originalEvent.newValue === '') {
+                    // logged out
+                    page.reload();
+                } else {
+                    // loginid switch
+                    if(!window['is_logging_in']) {
+                        page.reload();
+                    }
+                }
+                break;
+            case 'new_release_reload_time':
+                if (jq_event.originalEvent.newValue !== jq_event.originalEvent.oldValue) {
+                    page.reload(true);
+                }
+                break;
         }
     });
 
