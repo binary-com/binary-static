@@ -33,21 +33,9 @@
       text-align: center;
     }
   }
-
-  .empty-space {
-    margin-top: 90px;
-  }
 }
 
 @media screen and (max-width: 640px) {
-    ul#betsTab {  height: auto; }
-    ul#betsTab > li {  float: none; width: 100%; }
-    ul#betsTab a { line-height: 40px; }
-    ul#betsTab ul { position: relative; }
-    ul#betsTab > li {
-            position: relative !important;
-    }
-
     ul.tm-ul-2 {
         display: block !important;
         top: 0 !important;
