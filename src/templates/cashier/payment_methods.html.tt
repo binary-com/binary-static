@@ -3,7 +3,9 @@
         <h1>[% l('Available payment methods') %]</h1></br>
     </div>
     <div class="grd-grid-12 invisible">
-      <p class="notice-msg by_client_type client_real with_login_cookies"></p>
+      <p class="notice-msg by_client_type client_real with_login_cookies">
+        [% l('Withdrawal is locked, please <a class="pjaxload" href="[_1]">contact us</a> for more information.', request.url_for('/contact')) %]
+      </p>
     </div>
     <div class="grd-grid-12">
         <div id="payment_method_suggestions grd-row-padding" class='center-aligned'>
