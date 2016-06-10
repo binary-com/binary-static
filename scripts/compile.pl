@@ -57,7 +57,7 @@ my @m = (
     ['open-source-projects',       'static/open_source_projects', 'haml',    'full_width', 'Open-Source Projects'],
     ['styles',                     'home/styles',                 'haml',    'full_width', 'Styles'],
     ['affiliate/signup',           'affiliates/signup',           'toolkit', 'default', 'Affiliate'],
-    ['user/logintrouble',          'misc/logintrouble',           'toolkit', 'default', 'Login trouble'],
+    ['user/browser-support',       'misc/logintrouble',           'toolkit', 'default', 'Login trouble'],
     ['endpoint',                   'misc/endpoint',               'toolkit', 'default', 'Endpoint'],
     ['legal/us_patents',           'legal/us_patents',            'toolkit', 'default', 'US Patents'],
     ['cashier',                    'cashier/index',               'haml',    'default', 'Cashier'],
