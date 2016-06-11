@@ -10,3 +10,4 @@ requires 'Mojolicious';
 requires 'Encode';
 requires 'Moo';
 requires 'Format::Util::Numbers';
+requires 'File::Slurp', '9999.19';
