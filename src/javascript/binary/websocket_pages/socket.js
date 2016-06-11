@@ -94,7 +94,7 @@ function BinarySocketClass() {
 
         binarySocket.onopen = function (){
             var loginToken = getCookieItem('login');
-            if(loginToken && !authorized) {
+            if(loginToken && !authorized && localStorage.getItem('client.tokens')) {
                 binarySocket.send(JSON.stringify({authorize: loginToken}));
             }
             else {
