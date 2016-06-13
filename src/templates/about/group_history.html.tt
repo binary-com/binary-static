@@ -272,7 +272,7 @@
           <div class="header">
             [% l("BetOnMarkets goes live") %]
           </div>
-          <div class="event-body">!= l("In April, <a target="_blank" href="http://www.betonmarkets.com">Betonmarkets.com</a> (formerly known as <a target="_blank" href="http://www.xodds.com">Xodds.com</a>) goes live, establishing a round-the-clock financial betting service on a variety of financial indices. Business grows quickly, and we soon become the market leader in fixed-odds financial betting.")</div>
+          <div class="event-body">[% l("In April, <a target='_blank' href='http://www.betonmarkets.com'>Betonmarkets.com</a> (formerly known as <a target='_blank' href='http://www.xodds.com'>Xodds.com</a>) goes live, establishing a round-the-clock financial betting service on a variety of financial indices. Business grows quickly, and we soon become the market leader in fixed-odds financial betting.") %]</div>
         </li>
         <li class="event right">
           <div class="header">
