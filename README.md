@@ -55,19 +55,25 @@ How to work with this project
 3. Run `grunt dev`
 
 
-### Deploy js/css changes
-
-- `grunt deploy`
-
-
-### Deploy template changes
-
-- `grunt dev --path=about-us`
-
-
 ### Deploy js/css and template changes together
 
-- `grunt dev`
+```
+grunt dev
+```
+
+
+### Deploy only js/css changes
+
+```
+grunt deploy
+```
+
+
+### Deploy some template changes
+
+```
+grunt dev --path=about-us
+```
 
 
 ### Using sub-folders
@@ -76,6 +82,12 @@ There are times that you're working on various branches at the same time, and yo
 This will deploy your changes to a sub-folder named: `br_branchname` and it can be browsed at: https://YOUR_GITHUB_USERNAME.github.io/binary-static/br_branchname/
 
 
-### Release to Production
+## Release to Production
 
-- `grunt release`
+```
+grunt release
+```
+###Parameters:
+- `--cleanup`
+  - Create CNAME file with proper value according to remote origin
+  - Deploy to gh-pages would be with option `add: false`

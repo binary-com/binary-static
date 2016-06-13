@@ -35,4 +35,5 @@ release:
   - 'clean'
   - 'default'
   - 'shell:compile_production'
+  - 'shell:make_cname'
   - 'gh-pages'
