@@ -1,0 +1,87 @@
+<div class="grd-row-padding"></div>
+<div class="grd-grid-12 invisible" id="success_form">
+  <h1>
+    [% l("Account Transfer") %]
+  </h1>
+  <br/>
+  <p>
+    [% l("Your account transfer is successful. Your new balances are:") %]
+  </p>
+  <div class="grd-row-padding table-body">
+    <div class="grd-grid-1"></div>
+    <div class="grd-grid-2">
+      <span id="loginid_1"></span>
+    </div>
+    <div class="grd-grid-5">
+      <span id="balance_1"></span>
+    </div>
+  </div>
+  <div class="grd-row-padding table-body">
+    <div class="grd-grid-1"></div>
+    <div class="grd-grid-2">
+      <span id="loginid_2"></span>
+    </div>
+    <div class="grd-grid-5">
+      <span id="balance_2"></span>
+    </div>
+  </div>
+</div>
+<div class="errorbox rbox invisible" id="client_message">
+  <div class="rbox-wrap">
+    <div class="grd-grid-12 rbox-content" id="client_message_content">
+      <p class="center notice-msg">
+        [% l("The account transfer is unavailable. Please") %]
+        <a class="pjaxload" href="[% request.url_for('/cashier/forwardws#deposit') %]">
+          [% l("deposit") %]
+        </a>
+        [% l("to your account.") %]
+      </p>
+    </div>
+  </div>
+</div>
+<form class="invisible" id="account_transfer">
+  <h1>
+    [% l("Account Transfer") %]
+  </h1>
+  <br/>
+  <fieldset>
+    <div class="grd-parent grd-grid-12 grd-row-padding">
+      <div class="grd-grid-3 form_label">
+        <label for="transfer">
+          [% l("Transfer") %]
+        </label>
+      </div>
+      <div class="grd-grid-9">
+        <select id="transfer_account_transfer" name="transfer"></select>
+        <p class="errorfield" id="erroraccount_transfer"></p>
+      </div>
+    </div>
+    <div class="grd-parent grd-grid-12 grd-row-padding">
+      <div class="grd-grid-3 form_label">
+        <label for="amount" id="transfer_amount">
+          [% l("Amount") %]
+        </label>
+      </div>
+      <div class="grd-grid-9 grd-parent">
+        <div class="grd-grid-1 form_label">
+          <label id="currencyType"></label>
+        </div>
+        <div class="grd-grid-11">
+          <input id="acc_transfer_amount" name="amount" placeholder="[% l("Amount") %]" type="text"></input>
+          <p class="errorfield" id="invalid_amount"></p>
+        </div>
+      </div>
+    </div>
+    <div class="grd-parent grd-grid-12 grd-row-padding"></div>
+    <div class="grd-parent grd-grid-12 grd-row-padding">
+      <div class="grd-grid-4"></div>
+      <div class="grd-grid-8">
+        <span class="button">
+          <button class="button" id="acc_transfer_submit" name="submit" type="submit">
+            [% l("Transfer") %]
+          </button>
+        </span>
+      </div>
+    </div>
+  </fieldset>
+</form>
