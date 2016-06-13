@@ -3,7 +3,11 @@ var Cashier = (function() {
 
     var lock_withdrawal = function(withdrawal_locked) {
       if (withdrawal_locked === 'locked') {
-        $('.withdraw').parent().addClass('button-disabled').removeAttr('href');
+        $.each($('.withdraw'), function(){
+          $a = $(this).parent();
+          // use replaceWith, to disable previously catched pjax event
+          $a.replaceWith($('<a/>', {class: $a.attr('class').replace('pjaxload') + ' button-disabled', html: $a.html()}));
+        });
         $('.notice-msg').removeClass('invisible').parent().removeClass('invisible');
       }
     };
