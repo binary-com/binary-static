@@ -120,7 +120,7 @@ var TradingEvents = (function () {
             formNavElement.addEventListener('click', function(e) {
                 if (e.target && e.target.getAttribute('menuitem')) {
                     var clickedForm = e.target;
-                    var isFormActive = clickedForm.classList.contains('active');
+                    var isFormActive = clickedForm.classList.contains('active') || clickedForm.parentElement.classList.contains('active');
                     Defaults.set('formname', clickedForm.getAttribute('menuitem'));
 
                     setFormPlaceholderContent();

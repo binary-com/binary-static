@@ -40,10 +40,17 @@ var LimitsWS = (function(){
         }
     }
 
-    function limitsError(){
+    function limitsError(error){
         document.getElementById('withdrawal-title').setAttribute('style', 'display:none');
         document.getElementById('limits-title').setAttribute('style', 'display:none');
-        document.getElementsByClassName('notice-msg')[0].innerHTML = Content.localize().textFeatureUnavailable;
+        var errorElement = document.getElementsByClassName('notice-msg')[0];
+        if ((error && error.code === 'FeatureNotAvailable' && page.client.is_virtual()) || page.client.is_virtual()) {
+          errorElement.innerHTML = text.localize('This feature is not relevant to virtual-money accounts.');
+        } else if (error && error.message) {
+          errorElement.innerHTML = error.message;
+        } else {
+          errorElement.innerHTML = text.localize('An error occured') + '.';
+        }
         document.getElementById('client_message').setAttribute('style', 'display:block');
     }
 
