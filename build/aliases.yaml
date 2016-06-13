@@ -32,6 +32,7 @@ custom:
   - 'connect'
 
 release:
+  - 'shell:check_origin'
   - 'clean'
   - 'default'
   - 'shell:compile_production'

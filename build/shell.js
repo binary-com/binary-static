@@ -26,17 +26,41 @@ module.exports = function (grunt) {
                         if(grunt.option('cleanup')) {
                             var origin = stdout.replace('\n', ''),
                                 CNAME;
-                            if (origin === 'git@github.com:binary-com/binary-static.git') {
-                                CNAME = 'staging.binary.com';
-                            } else if (origin === 'git@github.com:binary-static-deployed/binary-static.git') {
-                                CNAME = 'www.binary.com';
+                            if (origin === global.repos.staging.origin) {
+                                CNAME = global.repos.staging.CNAME;
+                            } else if (origin === global.repos.production.origin) {
+                                CNAME = global.repos.production.CNAME;
                             }
                             if (CNAME) {
-                                grunt.file.write(global.dist + '/CNAME', CNAME);
+                                grunt.file.write(global.dist + '/CNAME', CNAME + "\n");
                                 grunt.log.ok('CNAME file created: ' + CNAME);
                             } else {
                                 grunt.log.error('CNAME file is not created: remote origin does not match.');
                             }
+                        }
+                    }
+                    cb();
+                },
+                stdout: false
+            }
+        },
+        check_origin: {
+            command: 'git config --get remote.origin.url',
+            options: {
+                callback: function (err, stdout, stderr, cb) {
+                    if(!err) {
+                        var origin = stdout.replace('\n', '');
+                        grunt.log.ok('origin: ' + origin);
+                        if (grunt.option('staging')) {
+                            if (origin !== global.repos.staging.origin) {
+                                grunt.fail.fatal('Your remote origin does not match the STAGING repository.');
+                            }
+                        } else if (grunt.option('production')) {
+                            if (origin !== global.repos.production.origin) {
+                                grunt.fail.fatal('Your remote origin does not match the PRODUCTION repository.');
+                            }
+                        } else {
+                            grunt.fail.fatal('Target is required: use --staging or --production to do a release.');
                         }
                     }
                     cb();

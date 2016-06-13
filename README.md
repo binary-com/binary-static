@@ -85,9 +85,12 @@ This will deploy your changes to a sub-folder named: `br_branchname` and it can 
 ## Release to Production
 
 ```
-grunt release
+grunt release --staging|--production [--cleanup]
 ```
 ###Parameters:
-- `--cleanup`
+- `--staging` or `--production` (mandatory)
+  - In order to prevent accidentally releasing to the wrong target, it is mandatory to provide one of these parameters.
+  - Your remote origin will be checked to be the correct target of the given parameter.
+- `--cleanup` [optional]
   - Create CNAME file with proper value according to remote origin
-  - Deploy to gh-pages would be with option `add: false`
+  - Deploy to gh-pages with the option `add: false`
