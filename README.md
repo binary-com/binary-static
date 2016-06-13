@@ -1,7 +1,7 @@
 Binary-Static
 =============
 
-This repository contains the static HTML/HAML, Javascript, CSS, and images content of the [Binary.com](http://www.binary.com) website.
+This repository contains the static HTML, Javascript, CSS, and images content of the [Binary.com](http://www.binary.com) website.
 
 ## Installation
 
@@ -57,7 +57,7 @@ How to work with this project
 
 ### Deploy js/css changes
 
-- `grunt deploy` 
+- `grunt deploy`
 
 
 ### Deploy template changes
