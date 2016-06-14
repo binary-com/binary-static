@@ -181,7 +181,8 @@ foreach my $m (@m) {
             current_path    => $save_as,
             current_route   => $current_route,
             affiliate_email => 'affiliates@binary.com',
-            full_width      => $layout && $layout eq 'full_width'
+            full_width      => $layout && $layout eq 'full_width',
+            get_started     => $layout && $layout eq 'get_started'
         );
 
         if ($title) {
@@ -193,10 +194,7 @@ foreach my $m (@m) {
         my $output = tt2_handle($file, %stash);
 
         ## pjax is using layout/$layout/content
-        my $layout_file = $file;
-        if($layout) {
-            $layout_file = "layouts/$layout/content.html.tt";
-        }
+        my $layout_file = "global/layout.html.tt";
         $stash{is_pjax_request} = 1;
         $stash{content}         = $output;
         my $layout_output = tt2_handle($layout_file, %stash);
@@ -210,7 +208,6 @@ foreach my $m (@m) {
         ## not pjax
         $save_as_file = "$dist_path/$lang/$save_as.html";
         if ($layout) {
-            $layout_file = "layouts/$layout.html.tt";
             $stash{is_pjax_request} = 0;
             $stash{content}         = $output;
             $layout_output = tt2_handle($layout_file, %stash);
