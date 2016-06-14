@@ -38,11 +38,10 @@ var TNCApproval = (function() {
         $('#tnc-loading').addClass(hiddenClass);
         $('#tnc_image').attr('src', page.url.url_for_static('images/pages/cashier/protection-icon.svg'));
         $('#tnc_approval').removeClass(hiddenClass);
-        $('#tnc-message').html(
-            text.localize('[_1] has updated its [_2]. By clicking OK, you confirm that you have read and accepted the updated [_2].')
-                .replace('[_1]', page.client.get_storage_value('landing_company_name'))
-                .replace(/\[_2\]/g, $('<a/>', {class: 'pjaxload', href: page.url.url_for('terms-and-conditions'), text: text.localize('Terms & Conditions')}).prop('outerHTML'))
-        );
+        var tnc_message = $('#tnc-message').html()
+            .replace('[_1]', page.client.get_storage_value('landing_company_name'))
+            .replace(/\[_2\]/g, page.url.url_for('terms-and-conditions'));
+        $('#tnc-message').html(tnc_message).removeClass(hiddenClass);
         $('#btn-accept').text(text.localize('OK'));
     };
 

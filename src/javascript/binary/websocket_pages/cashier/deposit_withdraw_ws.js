@@ -22,10 +22,10 @@ var ForwardWS = (function() {
     var cashier_type;
     if (/withdraw/.test(window.location.hash)) {
       cashier_type = 'withdraw';
-      document.getElementById('deposit-withdraw-heading').innerHTML = 'Withdraw';
+      document.getElementById('deposit-withdraw-heading').innerHTML = text.localize('Withdraw');
     } else if (/deposit/.test(window.location.hash)) {
       cashier_type = 'deposit';
-      document.getElementById('deposit-withdraw-heading').innerHTML = 'Deposit';
+      document.getElementById('deposit-withdraw-heading').innerHTML = text.localize('Deposit');
     }
     return cashier_type;
   }
@@ -40,16 +40,24 @@ var ForwardWS = (function() {
     $('#ukgc-funds-protection').hide();
     $('#deposit-withdraw-error').hide();
   }
-  function showError(error) {
+  function showError(error, id) {
     hideAll();
-    document.getElementById('deposit-withdraw-error').innerHTML = error || text.localize('Sorry, an error occurred while processing your request.');
+    $('#deposit-withdraw-error .error_messages').hide();
+    if (id) {
+      $('#deposit-withdraw-error #' + id).show();
+    } else {
+      $('#custom-error').html(error || text.localize('Sorry, an error occurred while processing your request.')).show();
+    }
     $('#deposit-withdraw-error').show();
+  }
+  function showMessage(id) {
+    $('#deposit-withdraw-message .messages').hide();
+    $('#deposit-withdraw-message #' + id).show();
+    $('#deposit-withdraw-message').show();
   }
   function lock_withdrawal(withdrawal_locked) {
     if (withdrawal_locked === 'locked') {
-      showError(text.localize('Withdrawal is locked, please [_1] for more information.')
-                    .replace('[_1]', '<a href="' + page.url.url_for('/contact') + '">' +
-                                     text.localize('contact us') + '</a>'));
+      showError('', 'withdrawal-locked-error');
     } else {
       BinarySocket.send({"cashier_password": "1"});
     }
@@ -60,6 +68,7 @@ var ForwardWS = (function() {
     getCashierURL: getCashierURL,
     hideAll: hideAll,
     showError: showError,
+    showMessage: showMessage,
     lock_withdrawal: lock_withdrawal
   };
 })();
@@ -83,19 +92,18 @@ pjax_config_page_require_auth("cashier/forwardws", function() {
                   if (type === 'cashier_password' && !error){
                     ForwardWS.init();
                     if (response.cashier_password === 1) {
-                      document.getElementById('deposit-withdraw-message').innerHTML = text.localize('Your cashier is locked as per your request - to unlock it, please click [_1]here')
-                                                                                          .replace('[_1]', '<a href="' + page.url.url_for('user/settings/securityws') + '">') + '.</a>';
+                      ForwardWS.showMessage('cashier-locked-message');
                     } else {
                       var cashier_type = ForwardWS.getCashierType();
                       if (cashier_type === 'withdraw') {
                         BinarySocket.send({'verify_email': TUser.get().email, 'type': 'payment_withdraw'});
-                        document.getElementById('deposit-withdraw-message').innerHTML = text.localize('For added security, please check your email to retrieve the verification token.');
+                        ForwardWS.showMessage('check-email-message');
                         $('#withdraw-form').show();
                       } else if (cashier_type === 'deposit') {
                         if (TUser.get().currency !== "") {
                           ForwardWS.getCashierURL();
                         } else {
-                          document.getElementById('deposit-withdraw-message').innerHTML = text.localize('Please choose which currency you would like to transact in.');
+                          ForwardWS.showMessage('choose-currency-message');
                           $('#currency-form').show();
                         }
                       }
@@ -104,24 +112,20 @@ pjax_config_page_require_auth("cashier/forwardws", function() {
                     ForwardWS.showError(error.message);
                   } else if (type === 'cashier' && !error) {
                     ForwardWS.hideAll();
-                    document.getElementById('deposit-withdraw-message').innerHTML = '';
+                    $('#deposit-withdraw-message').hide();
                     $('#deposit-withdraw-iframe-container iframe').attr('src', response.cashier);
                     $('#deposit-withdraw-iframe-container').show();
                   } else if (type === 'cashier' && error) {
                     ForwardWS.hideAll();
-                    document.getElementById('deposit-withdraw-message').innerHTML = '';
+                    $('#deposit-withdraw-message').hide();
                     if (error.code && error.code === 'ASK_TNC_APPROVAL') {
                       window.location.href = page.url.url_for('user/tnc_approvalws');
                     } else if (error.code && error.code === 'ASK_FIX_ADDRESS') {
-                      document.getElementById('deposit-withdraw-message').innerHTML = text.localize('There was a problem validating your personal details. Please fix the fields [_1]here')
-                                                                                          .replace('[_1]', '<a href="' + page.url.url_for('user/settings/detailsws') + '">') + '.</a> ' +
-                                                                                          text.localize('If you need assistance feel free to contact our [_1]Customer Support')
-                                                                                          .replace('[_1]', '<a href="' + page.url.url_for('contact') + '">') + '.</a>';
+                      ForwardWS.showMessage('personal-details-message');
                     } else if (error.code && error.code === 'ASK_UK_FUNDS_PROTECTION') {
                       $('#ukgc-funds-protection').show();
                     } else if (error.code && error.code === 'ASK_AUTHENTICATE') {
-                      document.getElementById('deposit-withdraw-message').innerHTML = text.localize('Your account is not fully authenticated. Please visit the <a href="[_1]">authentication</a> page for more information.')
-                                                                                          .replace('[_1]', page.url.url_for('user/authenticatews'));
+                      ForwardWS.showMessage('not-authenticated-message');
                     } else {
                         ForwardWS.showError(error.message);
                     }
