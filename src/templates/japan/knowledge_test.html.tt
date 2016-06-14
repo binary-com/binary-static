@@ -1,7 +1,25 @@
 <div id="knowledge-test-container">
     <h1 id="knowledge-test-header">[% l('{JAPAN ONLY}Knowledge Test') %]</h1>
     <p id="knowledge-test-msg"></p>
-
+    <div class="invisible" id="knowledge-test-instructions">
+      <ul class="bullet">
+        <li>
+          [% l('{JAPAN ONLY}Knowledge test list item 1') %]
+        </li>
+        <li>
+          [% l('{JAPAN ONLY}Knowledge test list item 2') %]
+        </li>
+        <li>
+          [% l('{JAPAN ONLY}Knowledge test list item 3') %]
+        </li>
+        <li>
+          [% l('{JAPAN ONLY}Knowledge test list item 4') %]
+        </li>
+        <li>
+          [% l('{JAPAN ONLY}Knowledge test list item 5') %]
+        </li>
+      </ul>
+    </div>
     <div id="knowledge-test-answer" class="invisible">
         <div id="section1-result">
             <h2>[% l('{JAPAN ONLY}Section 1: Structure') %]</h2>
