@@ -1,0 +1,12 @@
+      <div id="content"[% IF current_route +%] class="[% current_route %]-content"[% END %]>
+          [% INCLUDE global/gtm.html.tt %]
+          <div id="page_info" style="display:none;">
+              <title>[% browser_title %]</title>
+          </div>
+          [% IF !full_width %]
+          <div class="grd-container">
+          [% END %]
+
+          [% content %]
+          </div>
+      </div>

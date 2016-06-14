@@ -1,4 +1,3 @@
-
 /* DO NOT include any rules for specific pages in this file. */
 
 /* theme elements */
@@ -30,13 +29,6 @@ a, a:visited {
     font-weight: bold;
     &:hover, &:active {
         text-decoration: underline;
-    }
-    .learn-more {
-        font-weight: bold;
-        font-size: 0.8125em;
-        padding-right: 15px;
-        margin-top: 15px;
-        background: url("pages/home/learn-more-arrow_1.png") no-repeat right;
     }
 }
 p {
@@ -178,13 +170,6 @@ select.input {
     width: 46.2%;
 }
 /* form styles */
-.extra_tooltip_container {
-    float: left;
-    text-align: right;
-    padding-right: 1em;
-    width: 40%;
-    line-height: 1.7em;
-}
 label {
     line-height: 25px;
 }
@@ -192,16 +177,6 @@ label {
 .form_label {
     @include BIDIR_VALUE(text-align, right, left);
     line-height: 25px;
-}
-.extra_tooltip_container label {
-    padding: 0;
-    width: 94%;
-}
-#profit-table-form {
-    background: $COLOR_WHITE;
-    input {
-        border: 1px solid #e4e4e4;
-    }
 }
 .input {
     width: 45%;
@@ -236,21 +211,6 @@ label {
     font-size: 93%;
     font-style: italic;
 }
-.non_input {
-    color: $COLOR_DARK_GRAY;
-    line-height: 1.7em;
-}
-.non_input label {
-    line-height: 1.6em;
-}
-.gray {
-    color: $COLOR_DARK_GRAY;
-}
-.form_link {
-    display: block;
-    font-size: 76%;
-    line-height: 0.8em;
-}
 fieldset .error-msg {
     width: 100%;
     text-align: center;
@@ -258,10 +218,6 @@ fieldset .error-msg {
 /* global styles */
 * {
     margin: 0;
-}
-#popup {
-    width: 95%;
-    margin: 0 auto;
 }
 .clearfix {
     clear:both;
@@ -329,16 +285,6 @@ fieldset .error-msg {
     background-color: $COLOR_YELLOW;
     padding: 10px;
     overflow: hidden;
-}
-/* hacks - avoid! */
-
-/* using pixel as we need it to make footer sticky */
-.scrollbar-measure {
-    width: 100px;
-    height: 100px;
-    overflow: scroll;
-    position: absolute;
-    top: -9999px;
 }
 .center {
     margin-left: auto;
@@ -436,21 +382,12 @@ ul.checked {
     outline: 0;
 }
 
-.empty-space {
-    margin-top: 137px;
-}
-
 #main-menu .items li a {
    white-space: nowrap;
 }
 
 #japan-form .hint {
   margin-bottom: 0;
-}
-
-.charting-page img.responsive {
-  width: 140px;
-  height: 140px;
 }
 
 .popup_page_overlay {
@@ -461,12 +398,6 @@ ul.checked {
     top: 0;
     left: 0;
     z-index: 10;
-}
-
-.fake-link {
-    color: blue;
-    text-decoration: underline;
-    cursor: pointer;
 }
 
 .light-yellow-background {
@@ -500,4 +431,8 @@ ul.checked {
 
 _:-ms-fullscreen, :root #content-holder {
     height: 100%;
+}
+
+xmp {
+  font-family: inherit;
 }

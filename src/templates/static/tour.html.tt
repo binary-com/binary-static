@@ -1,0 +1,118 @@
+<div class="tour grd-container">
+  <div class="section">
+    <div class="section-content">
+      <div class="grd-grid-12">
+        <h1>
+          [% l("First, define your position...") %]
+        </h1>
+        <p>
+          [% l("When you start trading with Binary.com, you'll be directed to the trading screen, where you set your trading parameters, and choose what you want to trade, how and when.") %]
+        </p>
+        <a class="pjaxload button ja-hide" href="[% request.url_for('trading') %]">
+          <img class="responsive ja-hide" id="new-trader-icon" src="[% request.url_for('images/pages/tour/trade-tutorial_1.svg') %]"/>
+        </a>
+        <img class="responsive hidden ja-show" id="new-trader-icon" src="[% request.url_for('images/pages/tour/tour-jp.svg') %]"/>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="section-content">
+      <div class="grd-grid-12">
+        <h1>
+          [% l("2-way pricing") %]
+        </h1>
+        <p>
+          [% l("Simply change any of your parameters and the trade price instantly changes, giving you real-time knowledge of your stake. [_1] ensures fair and transparent pricing by showing you both sides of the trade.", website_name) %]
+        </p>
+      </div>
+      <div class="grd-grid-6 grd-grid-mobile-12 ja-hide">
+        <a class="pjaxload button" href="[% request.url_for('trading') %]">
+          <img class="responsive" id="new-trader-icon" src="[% request.url_for('images/pages/tour/tour-live-trade.svg') %]"/>
+        </a>
+      </div>
+      <div class="grd-grid-6 grd-grid-mobile-12 ja-hide">
+        <a class="pjaxload button" href="[% request.url_for('trading') %]">
+          <img class="responsive" id="new-trader-icon" src="[% request.url_for('images/pages/tour/tour-opposite-trade.svg') %]"/>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="section-content">
+      <div class="grd-grid-12">
+        <h1>
+          [% l("Then, make your trade") %]
+        </h1>
+        <p>
+          [% l("As soon as you click on the 'PURCHASE' button, your trade registers in your account. The price of your trade continues to update in real time.") %]
+        </p>
+        <img class="responsive ja-hide" id="new-trader-icon" src="[% request.url_for('images/pages/tour/tour-portfolio-snapshot_1.svg') %]"/>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="section-content">
+      <div class="grd-grid-12">
+        <h1>
+          [% l("Do you want to lock in profits?") %]
+        </h1>
+        <p>
+          [% l("If you do, no worries. With Binary.com, you can sell your trades before expiry to lock in profits. There's no need to wait until the end time.") %]
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="section ja-hide">
+    <div class="section-content">
+      <div class="grd-grid-12">
+        <h1>
+          [% l("Bank your way") %]
+        </h1>
+        <a class="pjaxload button" href="[% request.url_for('cashier/payment_methods') %]">
+          <span>
+            [% l("View payment methods") %]
+          </span>
+        </a>
+        <p>
+          [% l("Trade with ease with [_1]'s wide range of deposit and withdrawal methods. Your funds will be segregated and held in AAA-rated banks.", website_name) %]
+        </p>
+        <a class="pjaxload button" href="[% request.url_for('/cashier/payment_methods') %]">
+          <img class="responsive" src="[% request.url_for('images/pages/tour/tour-flexible-banking.png') %]"/>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="section-content">
+      <div class="grd-grid-12">
+        <h1>
+          [% l("Learn from us") %]
+        </h1>
+        <p>
+          [% l("Stay informed. [_1] offers daily market reports and market research, as well as frequent trading webinars.", website_name) %]
+        </p>
+        <span id="edu-research-tool"></span>
+        <a class="pjaxload button" href="[% request.url_for('/resources') %]">
+          <img class="responsive" id="new-trader-icon" src="[% request.url_for('images/pages/tour/tour-tools-education.svg') %]"/>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="section-content">
+      <div class="grd-grid-12">
+        <h1>
+          [% l("Talk to us") %]
+        </h1>
+        <p>
+          [% l("Feel free to contact our friendly and helpful customer service experts. They're always available to answer your questions. You can contact us via live chat, email and telephone.") %]
+        </p>
+      </div>
+      <div class="grd-grid-4 grd-grid-mobile-8 grd-centered ja-hide">
+        <a class="pjaxload button" href="[% request.url_for('contact') %]">
+          <img class="responsive" src="[% request.url_for('images/pages/tour/tour-customer-support.png') %]"/>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

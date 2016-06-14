@@ -42,6 +42,17 @@ DISTRIBUTIONS
       ExtUtils::MakeMaker 0
       Sub::Exporter::Progressive 0.001011
       perl 5.006
+  File-Slurp-9999.19
+    pathname: U/UR/URI/File-Slurp-9999.19.tar.gz
+    provides:
+      File::Slurp 9999.19
+      FileSlurp_12 9999.13
+    requirements:
+      Carp 0
+      Exporter 0
+      ExtUtils::MakeMaker 0
+      Fcntl 0
+      POSIX 0
   Format-Util-0.06
     pathname: B/BI/BINARY/Format-Util-0.06.tar.gz
     provides:
@@ -104,7 +115,6 @@ DISTRIBUTIONS
       Locale::Maketext::Extract::Plugin::FormFu 1.00
       Locale::Maketext::Extract::Plugin::FormFu::Extractor 1.00
       Locale::Maketext::Extract::Plugin::Generic 1.00
-      Locale::Maketext::Extract::Plugin::Haml 1.00
       Locale::Maketext::Extract::Plugin::Mason 1.00
       Locale::Maketext::Extract::Plugin::PPI 1.00
       Locale::Maketext::Extract::Plugin::Perl 1.00
@@ -488,23 +498,6 @@ DISTRIBUTIONS
       Storable 0
       perl 5.008001
       utf8 0
-  Text-Haml-0.990116
-    pathname: V/VT/VTI/Text-Haml-0.990116.tar.gz
-    provides:
-      Text::Haml 0.990116
-    requirements:
-      CPAN::Meta 0
-      CPAN::Meta::Prereqs 0
-      Carp 0
-      Data::Section::Simple 0
-      Encode 0
-      ExtUtils::CBuilder 0
-      File::Basename 0
-      File::Spec 0
-      IO::File 0
-      Module::Build 0.38
-      Scalar::Util 0
-      URI::Escape 0
   URI-1.71
     pathname: E/ET/ETHER/URI-1.71.tar.gz
     provides:
