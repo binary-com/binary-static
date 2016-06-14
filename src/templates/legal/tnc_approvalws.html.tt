@@ -9,7 +9,9 @@
         </div>
         <div class="grd-grid-10 grd-grid-mobile-12">
             <form>
-                <p id="tnc-message"></p>
+                <p id="tnc-message" class="invisible">
+                    [% l('[_1] has updated its  <a class="pjaxload" href="[_2]">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a class="pjaxload" href="[_2]">Terms & Conditions</a>.', '[_1]' ,'[_2]') %]
+                </p>
                 <div class="grd-grid-3 grd-grid-mobile-6 grd-centered">
                     <span class="button">
                         <button class="button" id="btn-accept"></button>

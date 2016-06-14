@@ -5,7 +5,9 @@
 </div>
 <div class="grd-row-padding table-body">
   <div class="grd-grid-12 grd-row-padding invisible">
-    <p class="notice-msg by_client_type client_real with_login_cookies"></p>
+    <p class="notice-msg by_client_type client_real with_login_cookies">
+      [% l('Withdrawal is locked, please <a class="pjaxload" href="[_1]">contact us</a> for more information.', request.url_for('/contact')) %]
+    </p>
   </div>
   <div class="grd-grid-12 grd-row-padding">
     <h3>
@@ -37,7 +39,7 @@
       </a>
     </div>
     <div class="grd-row-padding by_client_type client_real with_login_cookies invisible">
-      <a class="button button_large by_client_type client_real with_login_cookies invisible" href="[% request.url_for('/cashier/forwardws#withdraw') %]">
+      <a class="pjaxload button button_large by_client_type client_real with_login_cookies invisible" href="[% request.url_for('/cashier/forwardws#withdraw') %]">
         <span class="withdraw">
           [% l('Withdraw') %]
         </span>
@@ -99,7 +101,7 @@
       </a>
     </div>
     <div class="grd-row-padding">
-      <a class="button button_large by_client_type client_real with_login_cookies invisible" href="[% request.url_for('/paymentagent/withdrawws') %]">
+      <a class="pjaxload button button_large by_client_type client_real with_login_cookies invisible" href="[% request.url_for('/paymentagent/withdrawws') %]">
         <span class="withdraw">
           [% l('Withdraw') %]
         </span>

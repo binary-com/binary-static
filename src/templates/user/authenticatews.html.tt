@@ -1,3 +1,19 @@
 <div class="grd-grid-12">
-<h1>[% l('Authentication') %]</h1>
-<div id="authentication-message"></div>
+  <h1>[% l('Authentication') %]</h1>
+  <div id="authentication-message">
+
+      <p id="fully-authenticated" class="invisible">
+          [% l('Your account is fully authenticated. You can view your <a class="pjaxload" href="[_1]">trading limits here</a>.', request.url_for('/user/settings/limitsws')) %]
+      </p>
+
+      <div id="not-authenticated" class="invisible">
+          <p>[% l('To authenticate your account, kindly email the following to <a href="mailto:[_1]">[_1]</a>', 'support@binary.com') %]</p>
+          <p>[% l('- A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth.') %]</p>
+          <p>[% l('and') %]</p>
+          <p>[% l('- A scanned copy of a utility bill or bank statement (no more than 3 months old).') %]</p>
+      </div>
+
+      <p class="center notice-msg invisible" id="error_message"></p>
+
+  </div>
+</div>

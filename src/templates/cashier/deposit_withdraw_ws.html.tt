@@ -1,8 +1,30 @@
 <div class='grd-grid-12 grd-row-padding'>
   <h1 id="deposit-withdraw-heading"></h1>
   <div>
-    <p id="deposit-withdraw-message"></p>
-    <p id="deposit-withdraw-error" class="error-msg"></p>
+
+    <div id="deposit-withdraw-message" style="display:none">
+      <p id="cashier-locked-message" class="messages">
+        [% l('Your cashier is locked as per your request - to unlock it, please click <a class="pjaxload" href="[_1]">here</a>.', request.url_for('/user/settings/securityws')) %]
+      </p>
+      <p id="check-email-message" class="messages">[% l('For added security, please check your email to retrieve the verification token.') %]</p>
+      <p id="choose-currency-message" class="messages">[% l('Please choose which currency you would like to transact in.') %]</p>
+      <p id="personal-details-message" class="messages">
+        [% l('There was a problem validating your personal details. Please fix the fields <a class="pjaxload" href="[_1]">here</a>.', request.url_for('/user/settings/detailsws')) %]
+        <br />
+        [% l('If you need assistance feel free to contact our <a class="pjaxload" href="[_1]">Customer Support</a>.', request.url_for('/contact')) %]
+      </p>
+      <p id="not-authenticated-message" class="messages">
+        [% l('Your account is not fully authenticated. Please visit the <a class="pjaxload" href="[_1]">authentication</a> page for more information.', request.url_for('/user/authenticatews')) %]
+      </p>
+    </div>
+
+    <div id="deposit-withdraw-error" class="error-msg" style="display:none">
+      <p id="withdrawal-locked-error" class="error_messages">
+        [% l('Withdrawal is locked, please <a class="pjaxload" href="[_1]">contact us</a> for more information.', request.url_for('/contact')) %]
+      </p>
+      <p id="custom-error" class="error_messages"></p>
+    </div>
+
   </div>
   <div class="grd-container" id="deposit-withdraw-iframe-container" style="display:none">
     <script data-cfasync="false" type="text/javascript">
