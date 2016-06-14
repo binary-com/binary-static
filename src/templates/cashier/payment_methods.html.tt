@@ -3,7 +3,9 @@
         <h1>[% l('Available payment methods') %]</h1></br>
     </div>
     <div class="grd-grid-12 invisible">
-      <p class="notice-msg by_client_type client_real with_login_cookies"></p>
+      <p class="notice-msg by_client_type client_real with_login_cookies">
+        [% l('Withdrawal is locked, please <a class="pjaxload" href="[_1]">contact us</a> for more information.', request.url_for('/contact')) %]
+      </p>
     </div>
     <div class="grd-grid-12">
         <div id="payment_method_suggestions grd-row-padding" class='center-aligned'>
@@ -14,7 +16,7 @@
                 <a href="[% request.url_for('cashier/forwardws#deposit') %]" class="button button_large by_client_type client_real with_login_cookies invisible">
                 <span>[% l('Deposit') %]</span>
                 </a>
-                <a href="[% request.url_for('cashier/forwardws#withdraw') %]" class="button by_client_type client_real with_login_cookies invisible">
+                <a href="[% request.url_for('cashier/forwardws#withdraw') %]" class="button pjaxload by_client_type client_real with_login_cookies invisible">
                     <span class="withdraw">[% l('Withdraw') %]</span>
                 </a>
             </p>
