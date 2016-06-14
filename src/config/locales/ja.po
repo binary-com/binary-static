@@ -7,9 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-09 09:18+0000\n"
-"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"PO-Revision-Date: 2016-06-14 05:31+0000\n"
+"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
+"Language-Team: Japanese "
+"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2534,7 +2535,7 @@ msgid "Follow up on rejected deposits"
 msgstr "拒否された入金のフォローアップ"
 
 msgid "For added security, please check your email to retrieve the verification token."
-msgstr "セキュリティチェックのため、メールご確認いただき認証コードを取得してください。"
+msgstr "セキュリティチェックのため、メールをご確認いただきワンタイムパスワードを取得してください。"
 
 msgid "For e-cash methods or local currencies not supported by %1."
 msgstr "eキャッシュの手段または現地通貨が%1では対応していません。"
@@ -2732,7 +2733,7 @@ msgid "High returns"
 msgstr "収益機会の拡大"
 
 msgid "Higher/Lower"
-msgstr "HIGH/LOW"
+msgstr "ラダーHIGH/ラダーLOW"
 
 msgid "Higher/Lower contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
 msgstr "Higher/Lowerトレードは開始から終了までの取引期間中にTickが2未満である場合、購入金額が返金されます。"
@@ -4621,7 +4622,7 @@ msgid "Please check your email for the value of this token"
 msgstr "Eメールアドレスをご確認ください"
 
 msgid "Please check your email to retrieve the token needed to reset your password."
-msgstr "パスワードの再設定に認証コードが必要となりますので、メールをご確認ください。"
+msgstr "パスワードの再設定にはワンタイムパスワードが必要となりますので、メールをご確認ください。"
 
 msgid "Please choose which currency you would like to transact in."
 msgstr "日本円にてお手続きできます"
@@ -4696,7 +4697,7 @@ msgid "Please note that you may update your personal information at any time by 
 msgstr "お客さまの個人情報はいつでも各種設定ページから変更して頂くことが可能です。お客さまの個人情報を適切、かつ継続的に%1に更新して頂くことはお客さまの義務になります。"
 
 msgid "Please provide us with the following information, after retrieving the verification token from your email:"
-msgstr "メールから認証コードを取得後、下記の情報をご提供下さい。"
+msgstr "メールからワンタイムパスワードを取得後、下記の情報をご提供下さい。"
 
 msgid "Please re-enter your email"
 msgstr "メールアドレスを再度ご入力下さい。"
@@ -5621,7 +5622,7 @@ msgid "Th"
 msgstr "木曜日"
 
 msgid "Thank you for signing up! Please check your email to retrieve the verification token."
-msgstr "ご登録頂きありがとうございます！　ご登録頂いたメールアドレスに認証コードを送信致しました。"
+msgstr "ご登録頂きありがとうございます！　ご登録頂いたメールアドレスにワンタイムパスワードを送信致しました。"
 
 msgid "The %1 Quantitative Analytics group is responsible for the pricing of binary options offered on our website, as well as the risk management and profitability of its options book. Processing over a million transactions each day, the company manages a book of exotic options which arguably exceeds in complexity that of the typical derivatives desk."
 msgstr "定量分析グループではオプションブックのリスク管理および収益性だけではなく、ウェブサイトに提供するバイナリーオプションの価格設定も担当していただきます。日々何百万もの取引が行われるため、当社では典型的なデリバティブデスクの複雑さを遥かに超えるエキゾチックオプションブックを管理しています。"
@@ -6612,13 +6613,13 @@ msgid "Valletta, the capital of Malta"
 msgstr "マルタ共和国首都・Valletta"
 
 msgid "Verification Token"
-msgstr "認証コード"
+msgstr "ワンタイムパスワード"
 
 msgid "Verification code format incorrect."
-msgstr "認証コードの形式が不適切です。"
+msgstr "ワンタイムパスワードの形式が不適切です。"
 
 msgid "Verification token"
-msgstr "認証コード"
+msgstr "ワンタイムパスワード"
 
 msgid "Verify new password"
 msgstr "新パスワード（確認用）"
@@ -7489,7 +7490,9 @@ msgid "Your settings have been updated successfully."
 msgstr "設定が正しく更新されました。"
 
 msgid "Your token has expired. Please click <a class=\"pjaxload\" href=\"%1\">here</a> to restart the verification process."
-msgstr "認証コードの有効期限が切れています。再度、<a class=\"pjaxload\" href=\"%1\">「最初からやり直し」</a> をクリックして認証コードを発行して下さい。"
+msgstr ""
+"ワンタイムパスワードの有効期限が切れています。再度、<a class=\"pjaxload\" href=\"%1\">「最初からやり直し」</a> "
+"をクリックしてワンタイムパスワードを発行して下さい。"
 
 msgid "Your trading statistics since %1."
 msgstr "%1からのお取引統計情報"
@@ -7700,7 +7703,7 @@ msgid "use the Binary.com API for any purpose that violates any law or regulatio
 msgstr "知的財産権に限定されず、プライバシーの権利、人格権を含む法律、規律、人権を違反する目的とした本規約又はプライバシーポリシーに反する方法でのBinary.com APIの使用"
 
 msgid "verification token"
-msgstr "認証コード"
+msgstr "ワンタイムパスワード"
 
 msgid "website"
 msgstr "ウェブサイト"
@@ -7796,7 +7799,8 @@ msgid "{JAPAN ONLY}About OTC currency for binary options trading, summarizes the
 msgstr "店頭通貨バイナリーオプション取引については、顧客との間で行われた全取引の損益結果をまとめ、自社のホームページにおいて情報を公開し、顧客が取引開始前、あるいは取引を行っている間いつでも、その情報を確認し、冷静な判断の下にお取引いただけるための、様々な環境整備に努めている。"
 
 msgid "{JAPAN ONLY}Activate your account by confirming your authorisation code which we will post to your registered address."
-msgstr "リアル口座開設完了後にお客さまへ簡易書留郵便で認証コードを郵送いたします。当社から送信したメールに認証コードを記載の上返信してください。"
+msgstr ""
+"リアル口座開設完了後にお客さまへ簡易書留郵便で口座認証コードを郵送いたします。当社から送信したメールに口座認証コードを記載のうえ返信してください。"
 
 msgid "{JAPAN ONLY}Although customers and brokers will set limits on customers trading losses, even if those losses are exceeded, it is the customer's responsibility to close the position and so mandatory loss-cuts will not be executed by the broker company."
 msgstr "各業者は顧客との取引に限度額を定めているが、顧客の一定期間の取引額や損失額、顧客が保有する建玉が基準を超えた場合であっても、顧客との取引を中断あるいは中止することはない。"
