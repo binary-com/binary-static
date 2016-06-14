@@ -49,7 +49,9 @@ custom:
   - 'connect'
 
 release:
+  - 'shell:check_origin'
   - 'clean'
   - 'default'
   - 'shell:compile_production'
+  - 'shell:make_cname'
   - 'gh-pages'
