@@ -1,0 +1,135 @@
+<div class="grd-container">
+  <div class="grd-grid-12 grd-parent static_full">
+    <div class="grd-grid-2 grd-hide-mobile ja-hide">
+      <img class="responsive" src="[% request.url_for('images/pages/contact/contact-us-icon.svg') %]"/>
+    </div>
+    <div class="grd-grid-5 grd-grid-mobile-12">
+      <div class="grd-row-padding">
+        <h1>
+          [% l("Contact us") %]
+        </h1>
+      </div>
+      <div class="grd-row-padding">
+        <span class="ja-hide no-para-margin">
+          [% l("You'll find answers to most of your questions on the <a href='' target='_blank' id='faq_url'>FAQ</a> page.") %]
+        </span>
+        <span class="hidden ja-show no-para-margin">
+          [% l("JAPAN ONLY CONTACT TEXT") %]
+        </span>
+      </div>
+      <div class="grd-row-padding grd-hide-mobile"></div>
+      <div class="grd-row-padding">
+        <span class="grd-grid-4 grd-grid-tablet-12 grd-no-gutter">
+          [% l("Email: ") %]
+        </span>
+        <span class="grd-grid-7 grd-grid-tablet-12 grd-no-gutter" id="cs_contact_eaddress"></span>
+      </div>
+      <div class="grd-row-padding grd-hide-mobile"></div>
+      <div class="grd-row-padding ja-hide">
+        <span class="no-para-margin">
+          <label class="grd-grid-4 grd-grid-tablet-12 grd-no-gutter">
+            [% l("Telephone:") %]
+          </label>
+          <select class="grd-grid-7 grd-grid-tablet-12 grd-no-gutter" id="cs_telephone_number">
+            <option disabled="[% true %]">
+              [% l("Select Country") %]
+            </option>
+            <option value="+61 (02) 8294 5448">
+              [% l("Australia") %]
+            </option>
+            <option value="+1 (450) 823 1002">
+              [% l("Canada") %]
+            </option>
+            <option value="+49 0221 98259000">
+              [% l("Germany") %]
+            </option>
+            <option value="+353 (0) 76 888 7500">
+              [% l("Ireland") %]
+            </option>
+            <option value="+48 58 881 00 02">
+              [% l("Poland") %]
+            </option>
+            <option selected="[% true %]" value="+44 (0) 1666 800042">
+              [% l("United Kingdom") %]
+            </option>
+            <option disabled="[% true %]">
+              [% l("== Toll Free ==") %]
+            </option>
+            <option value="1800 093570">
+              [% l("Australia") %]
+            </option>
+            <option value="0018030113641">
+              [% l("Indonesia") %]
+            </option>
+            <option value="1800931084">
+              [% l("Ireland") %]
+            </option>
+            <option value="8 10 8002 8553011">
+              [% l("Russia") %]
+            </option>
+            <option value="0800 011 9847">
+              [% l("United Kingdom") %]
+            </option>
+          </select>
+        </span>
+        <span class="grd-grid-7 grd-prefix-4 grd-no-gutter grd-grid-tablet-12 grd-prefix-tablet-0 grd-row-padding grd-grid-mobile-12" id="display_cs_telephone">
+          [% "+44 (0) 1666 800042" %]
+        </span>
+      </div>
+      <div class="grd-row-padding">
+        <span class="no-para-margin calls_recording grd-grid-mobile-12">
+          [% l("All calls are recorded for training and monitoring purposes") %]
+        </span>
+      </div>
+      <div class="grd-row-padding">
+        <div class="grd-grid-12 grd-parent ja-hide" id="live-chat-container">
+          <label class="grd-grid-4 grd-no-gutter">
+            [% l("Live chat:") %]
+          </label>
+          <div class="grd-grid-8 grd-no-gutter">
+            <span id="live-chat-icon"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grd-grid-5 grd-grid-mobile-12">
+      <div class="grd-row-padding">
+        <h1>
+          [% l("Company addresses") %]
+        </h1>
+      </div>
+      <div class="grd-row-padding">
+        <p class="no-para-margin address-heading">
+          [% l("Malta") %]
+        </p>
+        <p class="no-para-margin">
+          [% l("Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825") %]
+        </p>
+      </div>
+      <div class="grd-row-padding">
+        <p class="no-para-margin address-heading">
+          [% l("Isle of Man") %]
+        </p>
+        <p class="no-para-margin">
+          [% l("Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW") %]
+        </p>
+      </div>
+      <div class="grd-row-padding">
+        <p class="no-para-margin address-heading">
+          [% l("Malaysia") %]
+        </p>
+        <p class="no-para-margin">
+          [% l("Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan") %]
+        </p>
+      </div>
+      <div class="grd-row-padding">
+        <p class="no-para-margin address-heading">
+          [% l("Japan") %]
+        </p>
+        <p class="no-para-margin">
+          [% l("Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan") %]
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -5,6 +5,7 @@ var PaymentAgentWithdrawWS = (function() {
         viewIDs,
         fieldIDs,
         errorClass,
+        hiddenClass,
         $views;
 
     var formData,
@@ -18,6 +19,7 @@ var PaymentAgentWithdrawWS = (function() {
         containerID = '#paymentagent_withdrawal';
         $views      = $(containerID + ' .viewItem');
         errorClass  = 'errorfield';
+        hiddenClass = 'hidden';
         viewIDs = {
             error   : '#viewError',
             success : '#viewSuccess',
@@ -34,7 +36,7 @@ var PaymentAgentWithdrawWS = (function() {
         minAmount = 10;
         maxAmount = 2000;
 
-        $views.addClass('hidden');
+        $views.addClass(hiddenClass);
 
         if(page.client.is_virtual()) { // Virtual Account
             showPageError(text.localize('You are not authorized for withdrawal via payment agent.'));
@@ -236,12 +238,14 @@ var PaymentAgentWithdrawWS = (function() {
     // -----------------------------
     // ----- Message Functions -----
     // -----------------------------
-    var showPageError = function(errMsg, noticeMsg) {
-        setActiveView(viewIDs.error);
-        $(viewIDs.error + ' > p').html(errMsg);
-        if (noticeMsg) {
-          $(viewIDs.error).append($('<p/>', {html: noticeMsg}));
+    var showPageError = function(errMsg, id) {
+        $(viewIDs.error + ' > p').addClass(hiddenClass);
+        if(id) {
+            $(viewIDs.error + ' #' + id).removeClass(hiddenClass);
+        } else {
+            $(viewIDs.error + ' #custom-error').html(errMsg).removeClass(hiddenClass);
         }
+        setActiveView(viewIDs.error);
     };
 
     var showError = function(fieldID, errMsg) {
@@ -255,15 +259,13 @@ var PaymentAgentWithdrawWS = (function() {
 
     // ----- View Control -----
     var setActiveView = function(viewID) {
-        $views.addClass('hidden');
-        $(viewID).removeClass('hidden');
+        $views.addClass(hiddenClass);
+        $(viewID).removeClass(hiddenClass);
     };
 
     var lock_withdrawal = function(withdrawal_locked) {
       if (withdrawal_locked === 'locked') {
-        showPageError(text.localize('Withdrawal is locked, please [_1] for more information.')
-                          .replace('[_1]', '<a href="' + page.url.url_for('/contact') + '">' +
-                                            text.localize('contact us') + '</a>'));
+        showPageError('', 'withdrawal-locked-error');
       } else if (!page.client.is_virtual()) {
         BinarySocket.send({"paymentagent_list": $.cookie('residence')});
       }
