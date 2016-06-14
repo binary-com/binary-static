@@ -1,0 +1,116 @@
+<div class="grd-container grd-default-container">
+  <div class="grd-grid-12 static_full">
+    <h1>
+      [% l("Partners") %]
+    </h1>
+    <p>
+      [% l("[_1] provides business partnership services via the following programs.", website_name) %]
+    </p>
+  </div>
+  <div class="grd-grid-12 grd-grid-mobile-12 grd-parent grd-clear">
+    <div class="grd-grid-4 grd-grid-mobile-12">
+      <div class="grd-grid-6 grd-with-padding">
+        <a class="pjaxload" href="[% request.url_for('/affiliate/signup') %]">
+          <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/partners/affiliate-program.svg') %]"/>
+        </a>
+      </div>
+      <div class="grd-grid-12">
+        <h4>
+          <a class="pjaxload" href="[% request.url_for('/affiliate/signup') %]">
+            [% l("Affiliate Program") %]
+          </a>
+        </h4>
+        <p>
+          [% l("Earn commissions by introducing new customers to [_1].", website_name) %]
+        </p>
+      </div>
+    </div>
+    <div class="grd-grid-4 grd-grid-mobile-12">
+      <div class="grd-grid-6 grd-with-padding">
+        <a class="pjaxload" href="[% request.url_for('/payment-agent') %]">
+          <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/partners/payment-agents.svg') %]"/>
+        </a>
+      </div>
+      <div class="grd-grid-12">
+        <h4>
+          <a class="pjaxload" href="[% request.url_for('/payment-agent') %]">
+            [% l("Payment Agent") %]
+          </a>
+        </h4>
+        <p>
+          [% l("Apply to become a Payment Agent") %]
+        </p>
+      </div>
+    </div>
+    <div class="grd-grid-4 grd-grid-mobile-12">
+      <div class="grd-grid-6 grd-with-padding">
+        <a href="https://developers.binary.com" target="_blank">
+          <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/partners/api.svg') %]"/>
+        </a>
+      </div>
+      <div class="grd-grid-12">
+        <h4>
+          <a href="https://developers.binary.com" target="_blank">
+            [% l("API") %]
+          </a>
+        </h4>
+        <p>
+          [% l("Develop your own trading application with our APIs.") %]
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="grd-grid-12 grd-grid-mobile-12 grd-parent grd-clear">
+    <div class="grd-grid-4 grd-grid-mobile-12">
+      <div class="grd-grid-6 grd-with-padding">
+        <a class="pjaxload" href="[% request.url_for('/open-source-projects') %]">
+          <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/partners/open-source-venture.svg') %]"/>
+        </a>
+      </div>
+      <div class="grd-grid-12">
+        <h4>
+          <a class="pjaxload" href="[% request.url_for('/open-source-projects') %]">
+            [% l("Open Source") %]
+          </a>
+        </h4>
+        <p>
+          [% l("Contribute to [_1]\'s open-source projects.", website_name) %]
+        </p>
+      </div>
+    </div>
+    <div class="grd-grid-4 grd-grid-mobile-12">
+      <div class="grd-grid-6 grd-with-padding">
+        <a href="http://blog.binary.com/en/contributors/" target="_blank">
+          <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/partners/contributors.svg') %]" target="_blank"/>
+        </a>
+      </div>
+      <div class="grd-grid-12">
+        <h4>
+          <a href="https://blog.binary.com/en/contributors/" target="_blank">
+            [% l("Contributors") %]
+          </a>
+        </h4>
+        <p>
+          [% l("Apply to become a contributor") %]
+        </p>
+      </div>
+    </div>
+    <div class="grd-grid-4 grd-grid-mobile-12">
+      <div class="grd-grid-6 grd-with-padding">
+        <a class="pjaxload" href="[% request.url_for('/user-testing') %]">
+          <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/partners/tester.svg') %]"/>
+        </a>
+      </div>
+      <div class="grd-grid-12">
+        <h4>
+          <a class="pjaxload" href="[% request.url_for('/user-testing') %]">
+            [% l("User Testing") %]
+          </a>
+        </h4>
+        <p>
+          [% l("Earn money for any verifiable errors that you find.") %]
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
