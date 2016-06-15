@@ -23,7 +23,7 @@
           <li>
             [% l("Touch/No Touch") %]
           </li>
-          <li>!= l("In/Out (ends between/outside and stays between/goes outside)")</li>
+          <li>[% l("In/Out (ends between/outside and stays between/goes outside)") %]</li>
           <li>
             [% l("Asians") %]
           </li>
@@ -80,6 +80,7 @@
         <p>
           [% l("Bull Market and Bear Market Indices start at 00:00 GMT each day, replicating a bullish and bearish market respectively.") %]
         </p>
+        <p>[% l("[_1]'s Volatility Indices are based on a cryptographically secure random number generator audited for fairness by an independent third party.", website_name) %]</p>
       </div>
     </div>
   </div>
