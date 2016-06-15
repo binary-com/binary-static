@@ -3,6 +3,6 @@ module.exports = {
         // options: {
         //     syntax: require('postcss-scss') // work with SCSS directly
         // },
-        src: ['src/sass/pages/api_token.scss', '!src/sass/external/**/*.scss']
+        src: ['src/sass/pages/cashier.scss', '!src/sass/external/**/*.scss']
     }
 };
