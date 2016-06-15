@@ -144,8 +144,9 @@ function BinarySocketClass() {
                         }
                         LocalStore.set('reality_check.ack', 0);
                         page.client.send_logout_request(isActiveTab);
-                    }
-                    else {
+                    } else if (response.authorize.loginid !== page.client.loginid) {
+                        page.client.send_logout_request(true);
+                    } else {
                         authorized = true;
                         if(typeof events.onauth === 'function'){
                             events.onauth();
