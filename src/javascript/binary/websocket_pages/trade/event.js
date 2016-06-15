@@ -367,7 +367,6 @@ var TradingEvents = (function () {
                 BinarySocket.send(params);
                 Price.incrFormId();
                 processForgetProposals();
-                processForgetPriceStream();
             }
         };
 
