@@ -8,8 +8,8 @@ js:
   - 'uglify'
 
 test:
-  - 'mochaTest'
   - 'jshint'
+  - 'mochaTest'
   - 'stylelint'
 
 default:
