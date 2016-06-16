@@ -3,7 +3,7 @@
     border-bottom: 1px dotted $COLOR_BLACK;
 }
 
-.no-line[data-balloon] {
+.no-underline[data-balloon] {
     border-bottom: none;
 }
 
@@ -39,7 +39,7 @@
     border-radius: 4px;
     color: $COLOR_BLACK;
     content: attr(data-balloon);
-    padding: 0.5em 1em;
+    padding: 1em;
     white-space: nowrap;
     margin-bottom: 11px;
 }
