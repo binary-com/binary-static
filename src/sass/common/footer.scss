@@ -1,96 +1,93 @@
 #footer {
-  #footer-menu {
-    background: $COLOR_BLUE;
-    padding: 10px 0;
-    h1 {
-      font-size: 13px;
-      font-weight: bold;
-      // text-transform: uppercase;
-    }
-    a {
-      font-size: 13px;
-      font-weight: normal;
-      color: $COLOR_WHITE;
-    }
-    li {
-      line-height: 1;
-    }
-    .partner{
-      img{
-        max-width: 65%;
-        margin: 0.3em auto;
-      }
-    }
-  }
-
-  #footer-regulatory {
-    background: $COLOR_DARK_BLUE;
-    a {
-      display: inline-block;
-      color: $COLOR_WHITE;
-      text-decoration: underline;
-    }
-    #regulatory-text {
-      line-height: 1.2em;
-      text-align: justify;
-      color: $COLOR_WHITE;
-      font-size: 10px;
-    }
-    #social-networks {
-      padding-top: 20px;
-    }
-    #lga_icon_footer {
-      max-width: 140px;
-    }
-    #mfsa_logo{
-      max-width:320px;
-      margin-top:10px;
-    }
-    #mifid_logo{
-      max-width:150px;
-      margin-top:15px;
-    }
-    .social-icons {
-      @include BIDIR_VALUE(text-align, right, left);
-      .social-network-icon {
-        width: 30px;
-        height: 30px;
-        padding-right: 5px;
-        padding-top: 10px;
-      }
-    }
-    #ratelimit-error-message {
-      display: none;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: $COLOR_YELLOW;
-      z-index: 999;
-      text-align: center;
-      .message {
-        margin: 12px;
-        font-style: italic;
-        color: $COLOR_RED;
-        a {
-          color: $COLOR_GREEN;
+    #footer-menu {
+        background: $COLOR_BLUE;
+        padding: 10px 0;
+        h1 {
+            font-size: 13px;
+            font-weight: bold;
         }
-      }
+        a {
+            font-size: 13px;
+            font-weight: normal;
+            color: $COLOR_WHITE;
+        }
+        li {
+            line-height: 1;
+        }
+        .partner {
+            img {
+                max-width: 65%;
+                margin: 0.3em auto;
+            }
+        }
     }
-  }
-
-  #footer-last{
-      background: $COLOR_BLUE;
-    a {
-      color: $COLOR_WHITE;
-      text-decoration: underline;
+    #footer-regulatory {
+        background: $COLOR_DARK_BLUE;
+        a {
+            display: inline-block;
+            color: $COLOR_WHITE;
+            text-decoration: underline;
+        }
+        #regulatory-text {
+            line-height: 1.2em;
+            text-align: justify;
+            color: $COLOR_WHITE;
+            font-size: 10px;
+        }
+        #social-networks {
+            padding-top: 20px;
+        }
+        #lga_icon_footer {
+            max-width: 140px;
+        }
+        #mfsa_logo {
+            max-width: 320px;
+            margin-top: 10px;
+        }
+        #mifid_logo {
+            max-width: 150px;
+            margin-top: 15px;
+        }
+        .social-icons {
+            @include BIDIR_VALUE (text-align, right, left);
+            .social-network-icon {
+                width: 30px;
+                height: 30px;
+                padding-right: 5px;
+                padding-top: 10px;
+            }
+        }
+        #ratelimit-error-message {
+            display: none;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: $COLOR_YELLOW;
+            z-index: 999;
+            text-align: center;
+            .message {
+                margin: 12px;
+                font-style: italic;
+                color: $COLOR_RED;
+                a {
+                    color: $COLOR_GREEN;
+                }
+            }
+        }
     }
-    .gambling{
-      margin: 0;
-      text-align: justify;
-      font-size: 13px;
-      font-weight: 400;
-      color:$COLOR_WHITE;
-      line-height: 110%;
+    #footer-last {
+        background: $COLOR_BLUE;
+        a {
+            color: $COLOR_WHITE;
+            text-decoration: underline;
+        }
+        .gambling {
+            margin: 0;
+            text-align: justify;
+            font-size: 13px;
+            font-weight: 400;
+            color: $COLOR_WHITE;
+            line-height: 110%;
+        }
     }
-  }
 }
