@@ -1,33 +1,33 @@
 /* landing page icon */
 #internet_explorer {
-  background-image: url("../images/pages/logintrouble/ielogo-icon_1.png");
+    background-image: url('../images/pages/logintrouble/ielogo-icon_1.png');
 }
 
 #microsoft_edge {
-  background-image: url("../images/pages/logintrouble/edgelogo.png");
-  background-size: 50%;
-  margin-top: -1em;
+    background-image: url('../images/pages/logintrouble/edgelogo.png');
+    background-size: 50%;
+    margin-top: -1em;
 }
 
 #firefox {
-  background-image: url("../images/pages/logintrouble/firefoxlogo-icon_1.png");
+    background-image: url('../images/pages/logintrouble/firefoxlogo-icon_1.png');
 }
 
 #safari {
-  background-image: url("../images/pages/logintrouble/safarilogo-icon_1.png");
+    background-image: url('../images/pages/logintrouble/safarilogo-icon_1.png');
 }
 
 #opera {
-  background-image: url("../images/pages/logintrouble/operalogo-icon_1.png");
+    background-image: url('../images/pages/logintrouble/operalogo-icon_1.png');
 }
 
 #chrome {
-  background-image: url("../images/pages/logintrouble/chromelogo-icon_1.png");
+    background-image: url('../images/pages/logintrouble/chromelogo-icon_1.png');
 }
 
 #std_loading_img {
-  margin: 0 auto;
-  text-align: center;
+    margin: 0 auto;
+    text-align: center;
 }
 
 /* statement */
@@ -53,15 +53,12 @@
     margin-bottom: 20px;
 }
 
-/* Aanlyse bet*/
 .tab-menu-wrap {
+    /* Aanlyse bet*/
     ul#trading-times {
         margin-bottom: 1em;
     }
-}
-
-/* Terms and conditions */
-.tab-menu-wrap {
+    /* Terms and conditions */
     ul#legal-menu {
         margin-bottom: 2em;
         li#legal-tab {
@@ -77,7 +74,7 @@
     ul.recursive_list {
         margin-left: 1.5em;
         li {
-            list-style-image: url("../images/pages/get-started/list-circle_1.png");
+            list-style-image: url('../images/pages/get-started/list-circle_1.png');
         }
     }
 }
@@ -87,7 +84,7 @@
     text-align: center;
     .rbox-wrap {
         background-color: inherit;
-        .rbox-content {            
+        .rbox-content {
             background-color: inherit;
             margin: 10px 0;
         }
@@ -95,8 +92,8 @@
 }
 
 @media screen and (max-width: 768px) {
-  #microsoft_edge {
-    background-size: 65%;
-    margin-top: -1em;
-  }
+    #microsoft_edge {
+        background-size: 65%;
+        margin-top: -1em;
+    }
 }

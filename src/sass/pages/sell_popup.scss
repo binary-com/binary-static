@@ -1,16 +1,6 @@
 .popup_bet_desc {
     padding: 5px 0;
-    border: 1px solid #DEDEDE;
-}
-
-#sell_popup_container {
-    &.spread_popup {
-        width: 300px;
-    }
-    &.message_popup {
-        width: 500px;
-        line-height: 25px;
-    }
+    border: 1px solid $COLOR_GRAY;
 }
 
 #sell_popup_container {
@@ -23,9 +13,15 @@
         top: 0;
         right: 0;
     }
-
     .inpage_popup_content {
         margin: 0;
+    }
+    &.spread_popup {
+        width: 300px;
+    }
+    &.message_popup {
+        width: 500px;
+        line-height: 25px;
     }
 }
 
@@ -38,10 +34,10 @@
         #contract_win_status {
             line-height: 30px;
             &.won {
-                background-color: rgba(46, 136, 54, 0.196078);
+                background-color: rgba(46, 136, 54, 0.2);
             }
             &.lost {
-                background-color: rgba(204, 0, 0, 0.0980392);
+                background-color: rgba(204, 0, 0, 0.1);
             }
         }
         .popup_bet_desc {
@@ -63,7 +59,7 @@
                 margin: 0px;
             }
             .highcharts-container {
-              direction: ltr;
+                direction: ltr;
             }
         }
         #sell_details_table {
