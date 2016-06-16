@@ -1,59 +1,65 @@
 .lightbox {
-    display:          table;
-    position:         fixed;
-    top:              0;
-    left:             0;
-    width:            100%;
-    height:           100%;
-    background-color: rgba(0,0,0,.7);
-    z-index:          2000000000;
+    display: table;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.7);
+    z-index: 2000000000;
 }
+
 .lightbox > div {
-    display:        table-cell;
+    display: table-cell;
     vertical-align: middle;
 }
+
 .lightbox > div > div {
-    margin-left:      auto;
-    margin-right:     auto;
-    padding:          .5em .5em;
-    width:            44em;
-    text-align:       center;
-    background-color: #fff;
-    border-radius:    .3em;
-    max-height:       80vh;
-    overflow:         auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.5em;
+    width: 44em;
+    text-align: center;
+    background-color: $COLOR_WHITE;
+    border-radius: 0.3em;
+    max-height: 80vh;
+    overflow: auto;
 }
+
 #reality-check-content, #balances-content {
-    padding:    0;
+    padding: 0;
     text-align: left;
     tr, td {
-        width: 12.4999%;
+        width: 12.5%;
     }
     label {
         display: inline-block;
-        width:   14em;
+        width: 14em;
     }
 }
+
 #reality-check-content {
-    @media screen and (max-width: 480px){
+    @media screen and (max-width: 480px) {
         width: 45% !important;
     }
 }
+
 #reality-check-nav, #balances-nav {
     margin-top: 1em;
     span:nth-child(2) {
         display: inline-block;
-        width:   5em;
-    }
-}
-#reality-check-nav{
-    @media screen and (max-width: 480px){
-        width : 45% !important;
+        width: 5em;
     }
 }
 
-@media screen and (max-width: 480px){
-  #risk_classification.lightbox > div > div {
-    width: 95vw;
-  }
+#reality-check-nav {
+    @media screen and (max-width: 480px) {
+        width: 45% !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #risk_classification.lightbox > div > div {
+        width: 95vw;
+    }
 }
