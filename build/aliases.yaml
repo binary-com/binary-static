@@ -10,6 +10,7 @@ js:
 test:
   - 'mochaTest'
   - 'jshint'
+  - 'stylelint'
 
 default:
   - 'test'
