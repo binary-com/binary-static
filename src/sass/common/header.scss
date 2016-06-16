@@ -1,136 +1,136 @@
 /* Logo and top bar */
+
 .dark-blue {
-  background: $COLOR_DARK_BLUE;
+    background: $COLOR_DARK_BLUE;
 }
+
 .orange {
-  background: $COLOR_ORANGE;
+    background: $COLOR_ORANGE;
 }
 
 #topbar {
-  width: 100%;
-  color: $COLOR_WHITE;
-  line-height: 1;
-  font-size: 70%;
-  @include BIDIR_VALUE(text-align, right, left);
-  padding: 3px 0;
-
-  #virtual-text {
-    font-weight: 700;
-  }
-  #topbar-info {
-    @include BIDIR_VALUE(float, right, left);
-  }
-  #gmt-clock, #contact-us, .upgrademessage {
-      padding-top: 3px;
-  }
-  .upgrademessage a {
-      @include link-button;
-      border-radius: 2px;
-      font-size: 90%;
-      padding: 2px 4px 2px 4px;
-      text-transform: none;
-      @include BIDIR_VALUE(margin, 0 0 0 10px, 0 10px 0 0);
-  }
-
-  #language_select {
-      select {
-          padding: 0px;
-      }
-  }
-  a {
+    width: 100%;
     color: $COLOR_WHITE;
-    white-space: nowrap;
-    text-decoration: none;
-  }
+    line-height: 1;
+    font-size: 70%;
+    @include BIDIR_VALUE(text-align, right, left);
+    padding: 3px 0;
+    #virtual-text {
+        font-weight: 700;
+    }
+    #topbar-info {
+        @include BIDIR_VALUE(float, right, left);
+    }
+    #gmt-clock, #contact-us, .upgrademessage {
+        padding-top: 3px;
+    }
+    .upgrademessage a {
+        @include link-button;
+        border-radius: 2px;
+        font-size: 90%;
+        padding: 2px 4px;
+        text-transform: none;
+        @include BIDIR_VALUE(margin, 0 0 0 10px, 0 10px 0 0);
+    }
+    #language_select {
+        select {
+            padding: 0px;
+        }
+    }
+    a {
+        color: $COLOR_WHITE;
+        white-space: nowrap;
+        text-decoration: none;
+    }
 }
 
 #header {
-  background: $COLOR_BLUE;
-  border-top: 2px solid $COLOR_BLUE_SHADE;
-  border-bottom: 4px solid $COLOR_ORANGE;
-  height: 75px;
-  a {
-    color: $COLOR_WHITE;
-    text-decoration: none;
-  }
-  select#client_loginid option[disabled=disabled] {
-      background-color: lightgrey;
-  }
-  #binary-logo-text {
-      margin-top: 10px;
-  }
-  #client-logged-out {
-    #btn_login {
-      @include link-button;
-      border: 0;
-      text-transform: uppercase;
-      padding: 0px 10px;
-      white-space: nowrap;
-      font-weight: normal;
-      font-size: .8em;
-      line-height: 2em;
-      margin: 0.8em 0;
-    }
-  }
-  #client-logged-out, #loginid-switch-form {
-    @include BIDIR_VALUE(text-align, right, left);
-  }
-  #logout {
-    text-align: right;
-    color: $COLOR_WHITE;
-    font-size: 70%;
-    a, a:visited {
-      &:hover, &:active {
-        text-decoration: underline;
-      }
-      &.logout {
-        @include link-button;
-        background-position: 104.6% 0.3%;
-        background-repeat: no-repeat;
-        padding: 6px;
-        font-weight: normal;
-        @include BIDIR_PROP(margin-left, margin-right, 0.4em);
-        margin-top: 0.5em;
-        text-transform: uppercase;
-      }
-    }
-  }
-  #mobile-menu-icon-container {
-    margin-top: 5px;
-    margin-right: 3px;
-  }
-  #menu-top {
-    text-align: center;
-    a:hover {
-      opacity: .75;
-    }
-    li {
-      line-height: 1;
-      display: inline-block;
-      text-align: center;
-      margin: 0;
-      &:last-child {
-        background: none;
-      }
-      a {
-        font-weight: normal;
-        vertical-align: middle;
-        display: table-cell;
-        height: 50px;
-        max-width: 110px;
+    background: $COLOR_BLUE;
+    border-top: 2px solid $COLOR_BLUE_SHADE;
+    border-bottom: 4px solid $COLOR_ORANGE;
+    height: 75px;
+    a {
         color: $COLOR_WHITE;
         text-decoration: none;
-        letter-spacing: 0;
-        text-transform: capitalize;
-        font-size: 109%;
-        padding: 0px 10px;
-        word-wrap: break-word;
-      }
     }
-    li.active {
-      a {
-        color: $COLOR_ORANGE;
-      }
+    select#client_loginid option[disabled=disabled] {
+        background-color: $COLOR_LIGHT_GRAY;
     }
-  }
+    #binary-logo-text {
+        margin-top: 10px;
+    }
+    #client-logged-out {
+        #btn_login {
+            @include link-button;
+            border: 0;
+            text-transform: uppercase;
+            padding: 0px 10px;
+            white-space: nowrap;
+            font-weight: normal;
+            font-size: 0.8em;
+            line-height: 2em;
+            margin: 0.8em 0;
+        }
+    }
+    #client-logged-out, #loginid-switch-form {
+        @include BIDIR_VALUE(text-align, right, left);
+    }
+    #logout {
+        text-align: right;
+        color: $COLOR_WHITE;
+        font-size: 70%;
+        a, a:visited {
+            &:hover, &:active {
+                text-decoration: underline;
+            }
+            &.logout {
+                @include link-button;
+                background-position: 104.6% 0.3%;
+                background-repeat: no-repeat;
+                padding: 6px;
+                font-weight: normal;
+                @include BIDIR_PROP(margin-left, margin-right, 0.4em);
+                margin-top: 0.5em;
+                text-transform: uppercase;
+            }
+        }
+    }
+    #mobile-menu-icon-container {
+        margin-top: 5px;
+        margin-right: 3px;
+    }
+    #menu-top {
+        text-align: center;
+        a:hover {
+            opacity: 0.75;
+        }
+        li {
+            line-height: 1;
+            display: inline-block;
+            text-align: center;
+            margin: 0;
+            &:last-child {
+                background: none;
+            }
+            a {
+                font-weight: normal;
+                vertical-align: middle;
+                display: table-cell;
+                height: 50px;
+                max-width: 110px;
+                color: $COLOR_WHITE;
+                text-decoration: none;
+                letter-spacing: 0;
+                text-transform: capitalize;
+                font-size: 109%;
+                padding: 0px 10px;
+                word-wrap: break-word;
+            }
+        }
+        li.active {
+            a {
+                color: $COLOR_ORANGE;
+            }
+        }
+    }
 }

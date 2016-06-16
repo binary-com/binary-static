@@ -1,16 +1,16 @@
 a.dynamic, span.dynamic, div.dynamic, p.dynamic, button.dynamic, table.dynamic {
-  display: none!important;
+    display: none !important;
 }
 
 #portfolio {
     td {
-      padding: 10px 10px;
+        padding: 10px;
     }
     td.indicative, td.purchase, .payout {
         white-space: nowrap;
     }
     td.indicative.no_resale {
-        color: lightgray;
+        color: $COLOR_LIGHT_GRAY;
         span {
             font-size: 8px;
             display: block;
@@ -18,17 +18,17 @@ a.dynamic, span.dynamic, div.dynamic, p.dynamic, button.dynamic, table.dynamic {
         }
     }
     th {
-      padding: 10px 10px;
-      text-align: left;
+        padding: 10px;
+        text-align: left;
     }
     th.details {
-      width: 45%;
+        width: 45%;
     }
     table .ref {
-      text-align: left!important;
+        text-align: left !important;
     }
     @media screen and (max-width: 480px) {
-        .details, .payout{
+        .details, .payout {
             display: none;
         }
     }
