@@ -36,6 +36,17 @@ sub _texts {
         push @texts, localize("(Bejing/CST -8 hours)");
         push @texts, localize('You must accept the terms and conditions to open an account.');
         push @texts, localize('We are not accepting accounts from residents of this country at the present time.');
+        # menu items
+        push @texts, localize('Start Trading');
+        push @texts, localize('My Account');
+        push @texts, localize('Portfolio');
+        push @texts, localize('Settings');
+        push @texts, localize('Affiliate');
+        push @texts, localize('Authenticate');
+        push @texts, localize('Cashier');
+        push @texts, localize('Resources');
+        push @texts, localize('Asset Index');
+        push @texts, localize('Trading Times');
         # highchart localization text
         push @texts, localize('Print chart');
         push @texts, localize('Save as JPEG');
