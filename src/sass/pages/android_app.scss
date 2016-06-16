@@ -1,21 +1,21 @@
 #app-container {
-  text-align: center;
+    text-align: center;
 }
 
 #androidApp, #appstore {
-  width: 100px;
-  height: 30px;
-  display: inline-block;
-  position: relative;
+    width: 100px;
+    height: 30px;
+    display: inline-block;
+    position: relative;
 }
 
 #appstore {
-  background: url("../images/pages/applications/appstore.svg") 0 0/100px 30px no-repeat;
-  margin-left: 10px;
+    background: url('../images/pages/applications/appstore.svg') 0 0/100px 30px no-repeat;
+    margin-left: 10px;
 }
 
 #androidApp {
-  background: url("../images/pages/trade/google-play-badge.png") 0 0/100px 30px no-repeat;
+    background: url('../images/pages/trade/google-play-badge.png') 0 0/100px 30px no-repeat;
 }
 
 /* trading page */
@@ -25,12 +25,12 @@
     }
     @media (max-width: 768px) {
         #androidApp {
-          margin-left: 10px;
+            margin-left: 10px;
         }
         #appstore, #androidApp {
-          margin: 0 auto;
-          padding-bottom: 10px;
-          float: none;
+            margin: 0 auto;
+            padding-bottom: 10px;
+            float: none;
         }
     }
 }
