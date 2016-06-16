@@ -20,7 +20,7 @@
           <div class="xquote">
             <div>
               <div class="picture">
-                <img class="responsive" src="[% request.url_for('images/pages/user_testing/mycrowd.svg') %]"/>
+                <img class="responsive" src="[% request.url_for('images/pages/user_testing/mycrowd-img.svg') %]"/>
               </div>
               <div class="text">
                 <a class="pjaxload" href="https://mycrowd.com/" target="_blank">
@@ -38,7 +38,7 @@
           <div class="xquote">
             <div>
               <div class="picture">
-                <img class="responsive" src="[% request.url_for('images/pages/user_testing/hackerone.svg') %]"/>
+                <img class="responsive" src="[% request.url_for('images/pages/user_testing/hackerone-img.svg') %]"/>
               </div>
               <div class="text">
                 <a class="pjaxload" href="https://hackerone.com/binary" target="_blank">
