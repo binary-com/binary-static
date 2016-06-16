@@ -1,10 +1,12 @@
 @font-face {
     font-family: 'casino_handregular';
     src: url('../download/fonts/guide/casino_hand-webfont.eot');
+    /* stylelint-disable */
     src: url('../download/fonts/guide/casino_hand-webfont.eot?#iefix') format('embedded-opentype'),
         url('../download/fonts/guide/casino_hand-webfont.woff') format('woff'),
         url('../download/fonts/guide/casino_hand-webfont.ttf') format('truetype'),
         url('../download/fonts/guide/casino_hand-webfont.svg#casino_handregular') format('svg');
+    /* stylelint-enable */
     font-weight: 400;
     font-style: normal;
 }
@@ -126,7 +128,7 @@
     height: 0.24em;
     -webkit-border-radius: 1em;
     border-radius: 1em;
-    font: 400 8em/normal Arial, Helvetica, sans-serif;
+    font: 400 8em/normal 'Arial', 'Helvetica', sans-serif;
     color: rgba(0, 0, 0, 1);
     -o-text-overflow: clip;
     text-overflow: clip;
@@ -146,7 +148,7 @@
     top: 16px;
     left: 3px;
     border: none;
-    font: normal 100%/normal Arial, Helvetica, sans-serif;
+    font: normal 100%/normal 'Arial', 'Helvetica', sans-serif;
     color: rgba(0, 0, 0, 1);
     -o-text-overflow: clip;
     text-overflow: clip;
@@ -168,7 +170,7 @@
     top: 16px;
     left: 3px;
     border: none;
-    font: normal 100%/normal Arial, Helvetica, sans-serif;
+    font: normal 100%/normal 'Arial', 'Helvetica', sans-serif;
     color: rgba(0, 0, 0, 1);
     -o-text-overflow: clip;
     text-overflow: clip;
@@ -204,7 +206,7 @@
     border: 2px solid $COLOR_GREEN;
     -webkit-border-radius: 40px;
     border-radius: 40px;
-    font: normal normal normal 17px/40px 'Advent Pro', Helvetica, sans-serif;
+    font: normal normal normal 17px/40px 'Advent Pro', 'Helvetica', sans-serif;
     color: $COLOR_GREEN;
     text-align: center;
     -o-text-overflow: clip;
