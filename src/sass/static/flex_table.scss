@@ -1,66 +1,77 @@
 .flex-table-container {
-  $md: 600px;
+    $md: 600px;
+    th {
+        @include BIDIR_VALUE(text-align, left !important, right !important);
+        border-bottom: none !important;
+        overflow: hidden;
+    }
+    td {
+        @include BIDIR_VALUE(text-align, left !important, right !important);
+        @include BIDIR_PROP(padding-left, padding-right, 10px);
+        overflow: hidden;
 
-  th {
-    @include BIDIR_VALUE(text-align, left !important, right !important);
-    border-bottom: none !important;
-    overflow:hidden;
-  }
-  td {
-    @include BIDIR_VALUE(text-align, left !important, right !important);
-    @include BIDIR_PROP(padding-left, padding-right, 10px);
-    overflow:hidden;
-
-  }
-  .pre{
-    white-space: pre;
-  }
-  @media(max-width: $md){
-    td{
-      padding-left : 5px !important;
-      padding-right : 5px !important
     }
-    th{
-      padding-left : 5px !important;
-      padding-right : 5px !important;
+    .pre {
+        white-space: pre;
     }
-  }
-  #statement-table{
-    .flex-tr {     
-      & > th.details, & > td.details {display: none !important;}
-      @media (max-width : $md){
-        & > th.desc, & > td.desc { display : none !important; }
-        & > th.details, & > td.details {
-          display: table-cell !important;
-          .button {padding: 8px 15px;}
+    @media (max-width: $md) {
+        td {
+            padding-left: 5px !important;
+            padding-right: 5px !important;
         }
-        .flex-tr-child {
-          font-size : 12px;
+        th {
+            padding-left: 5px !important;
+            padding-right: 5px !important;
         }
-      }
     }
-  }
-  #profit-table{
-    .flex-tr {     
-      & > th.details, & > td.details {display: none !important;}
-      @media (max-width : $md){
-        & > th.contract, & > td.contract { display : none !important; }
-        & > th.details, & > td.details {
-          display: table-cell !important;
-          .button {padding: 8px 15px;}
+    #statement-table {
+        .flex-tr {
+            & > th.details, & > td.details {
+                display: none !important;
+            }
+            @media (max-width: $md) {
+                & > th.desc, & > td.desc {
+                    display: none !important;
+                }
+                & > th.details, & > td.details {
+                    display: table-cell !important;
+                    .button {
+                        padding: 8px 15px;
+                    }
+                }
+                .flex-tr-child {
+                    font-size: 12px;
+                }
+            }
         }
-        .flex-tr-child {
-          font-size : 12px;
-        }
-      }
     }
-  }
+    #profit-table {
+        .flex-tr {
+            & > th.details, & > td.details {
+                display: none !important;
+            }
+            @media (max-width: $md) {
+                & > th.contract, & > td.contract {
+                    display: none !important;
+                }
+                & > th.details, & > td.details {
+                    display: table-cell !important;
+                    .button {
+                        padding: 8px 15px;
+                    }
+                }
+                .flex-tr-child {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
 }
 
-@media(max-width: 600px){
-  #profit-table-ws-container, #statement-ws-container {
-      .flex-table-container {
-        overflow: auto;
-      }
-  }
+@media (max-width: 600px) {
+    #profit-table-ws-container, #statement-ws-container {
+        .flex-table-container {
+            overflow: auto;
+        }
+    }
 }
