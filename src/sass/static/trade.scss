@@ -176,7 +176,7 @@
             width: 100%;
             display: none;
             background: transparent;
-            z-index: 9999;
+            z-index: 9;
             &#loading_container3 {
                 background: $COLOR_LIGHT_GRAY;
                 opacity: 0.5;
@@ -399,7 +399,7 @@
         width: 100%;
         display: none;
         background: transparent;
-        z-index: 9999;
+        z-index: 9;
         &#loading_container2 {
             background: $COLOR_LIGHT_GRAY;
             opacity: 0.5;
