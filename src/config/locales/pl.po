@@ -7,14 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-08 12:38+0000\n"
+"PO-Revision-Date: 2016-06-16 09:42+0000\n"
 "Last-Translator: Ewelina Bruździak <e.bruzdziak@gmail.com>\n"
-"Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>"
+"\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.7-dev\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
@@ -511,7 +513,10 @@ msgid "<strong>Extra revenue stream:</strong> You will have the potential to ear
 msgstr "<strong>Źródło dodatkowych przychodów:</strong> Nasz program partnerski będzie potencjalnym źródłem nowych dochodów."
 
 msgid "<strong>Falling markets</strong> - choose the falls trade, lower trade, one-touch trade with a low barrier, or no-touch trade with a high barrier."
-msgstr "<strong>Rynki o tendencji zniżkowej </strong> - wybieraj między zakładami na rynkach o tendencji zniżkowej lub malejącej, zakładami „osiągnie jeden raz” z niskim limitem lub brakiem osiągnięcia z wysokim limitem."
+msgstr ""
+"<strong>Rynki o tendencji zniżkowej </strong> - wybieraj między zakładami na "
+"rynkach o tendencji zniżkowej lub malejącej, zakładami „osiągnie jeden raz” "
+"z dolnym limitem lub brakiem osiągnięcia z górnym limitem."
 
 msgid "<strong>Higher/Lower</strong> - predict if the market will end higher or lower than a price target."
 msgstr "<strong>Wyższe/niższe</strong> - prognozuj, czy cena rynkowa będzie wyższa czy niższa niż cena docelowa."
@@ -580,7 +585,10 @@ msgid "<strong>Rise/Fall</strong> - where you can profit from the market rising 
 msgstr "<strong>Wzrost/spadek</strong> - możesz zyskać, jeśli rynek zyska lub straci w stosunku do obecnego poziomu."
 
 msgid "<strong>Rising markets</strong> - choose the rise trade, higher trade, one-touch trade with a high barrier, or no-touch trade with a low barrier."
-msgstr "<strong>Rynki zwyżkujące</strong> - możesz wybierać spośród transakcji o trendzie zwyżkującym lub wyższym oraz transakcji „osiągnie jeden raz” z wysokim limitem lub transakcji „nie osiągnie” z niskim limitem."
+msgstr ""
+"<strong>Rynki zwyżkujące</strong> - możesz wybierać spośród transakcji o "
+"trendzie zwyżkującym lub wyższym oraz transakcji „osiągnie jeden raz” z "
+"górnym limitem lub transakcji „nie osiągnie” z dolnym limitem."
 
 msgid "<strong>Scalable trading</strong> - win the same proportional return on stakes of all values."
 msgstr "<strong>Handel skalowalny</strong> - wygraj proporcjonalny zwrot ze stawek dla wszystkich wartości."
@@ -863,10 +871,10 @@ msgid "Adjusted Barrier"
 msgstr "Limit zmieniony"
 
 msgid "Adjusted High Barrier"
-msgstr "Wysoki limit został zmieniony"
+msgstr "Górny limit został zmieniony"
 
 msgid "Adjusted Low Barrier"
-msgstr "Niski limit został zmieniony"
+msgstr "Dolny limit został zmieniony"
 
 msgid "Admin"
 msgstr "Admin"
@@ -2862,13 +2870,13 @@ msgid "Hedging"
 msgstr "Hedging"
 
 msgid "High Barrier"
-msgstr "Wysoki limit"
+msgstr "Górny limit"
 
 msgid "High barrier"
-msgstr "Wysoki limit"
+msgstr "Górny limit"
 
 msgid "High barrier offset"
-msgstr "Offset wysokiego limitu"
+msgstr "Offset górnego limitu"
 
 msgid "High conversions and customer value"
 msgstr "Wysokie konwersje i szacunek dla klienta"
@@ -3070,10 +3078,16 @@ msgid "If you select \"Does Not Touch\", you win the payout if the market never 
 msgstr "Jeśli wybierzesz „Nie osiągnie”, zdobędziesz wypłatę, jeśli cena rynkowa nie osiągnie <strong>limitu</strong> w żadnym momencie w trakcie <strong>trwania umowy</strong>."
 
 msgid "If you select \"Ends Between\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>Low barrier</strong> AND strictly lower than the <strong>High barrier</strong>."
-msgstr "Jeśli wybierzesz „zakończy się pomiędzy”, zdobędziesz wypłatę, gdy <strong>punkt wyjściowy</strong> będzie znacząco wyższy niż <strong>niski limit</strong> ORAZ znacząco niższy niż <strong>wysoki limit</strong>."
+msgstr ""
+"Jeśli wybierzesz „zakończy się pomiędzy”, zdobędziesz wypłatę, gdy <strong>"
+"punkt wyjściowy</strong> będzie znacząco wyższy niż <strong>dolny "
+"limit</strong> ORAZ znacząco niższy niż <strong>górny limit</strong>."
 
 msgid "If you select \"Ends Outside\", you win the payout if the <strong>exit spot</strong> is EITHER strictly higher than the <strong>High barrier</strong>, OR strictly lower than the <strong>Low barrier</strong>."
-msgstr "Jeśli wybierzesz „zakończy się poza”, zdobędziesz wypłatę, gdy <strong>punkt wyjściowy</strong> jest ALBO znacząco wyższy niż <strong>wysoki limit</strong>, ALBO znacząco niższy niż <strong>niski limit</strong>."
+msgstr ""
+"Jeśli wybierzesz „zakończy się poza”, zdobędziesz wypłatę, gdy <strong>punkt "
+"wyjściowy</strong> jest ALBO znacząco wyższy niż <strong>górny limit</strong>"
+", ALBO znacząco niższy niż <strong>dolny limit</strong>."
 
 msgid "If you select \"Even\", you will win the payout if the <strong>last digit</strong> of the last tick is an <strong>even number (i.e., 2, 4, 6, 8, or 0).</strong>"
 msgstr "Jeśli wybierzesz „parzysta”, zdobędziesz wypłatę, gdy <strong>ostatnia cyfra</strong> ostatniego najmniejszego przyrostu ceny będzie <strong>liczbą parzystą (np. 2, 4, 6, 8, 0).</strong>"
@@ -3082,7 +3096,10 @@ msgid "If you select \"Falls\", you win the payout if the <strong>exit spot</str
 msgstr "Jeśli wybierzesz „Spadnie”, zdobędziesz wypłatę, gdy <strong>punkt wyjściowy</strong> będzie znacząco niższy niż <strong>punkt wejściowy</strong>."
 
 msgid "If you select \"Goes Outside\", you win the payout if the market touches either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>."
-msgstr "Jeśli wybierzesz „przekroczy”, zdobędziesz wypłatę, gdy cena rynkowa osiągnie albo <strong>wysoki limit</strong>, albo <strong>niski limit</strong> w dowolnym momencie podczas <strong>okresu kontraktu</strong>."
+msgstr ""
+"Jeśli wybierzesz „przekroczy”, zdobędziesz wypłatę, gdy cena rynkowa "
+"osiągnie albo <strong>górny limit</strong>, albo <strong>dolny limit</strong>"
+" w dowolnym momencie podczas <strong>okresu kontraktu</strong>."
 
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>."
 msgstr "Jeśli wybierzesz „wzrośnie”, zdobędziesz wypłatę, gdy <strong>punkt wyjściowy</strong> będzie znacząco wyższy niż <strong>limit</strong>."
@@ -3103,7 +3120,11 @@ msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</str
 msgstr "Jeśli wybierzesz „wzrośnie”, zdobędziesz wypłatę, gdy <strong>punkt wyjściowy</strong> będzie znacząco wyższy niż <strong>punkt wejściowy</strong>."
 
 msgid "If you select \"Stays Between\", you win the payout if the market stays between (does not touch) either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>."
-msgstr "Jeśli wybierzesz „Pozostanie pomiędzy”, zdobędziesz wypłatę, gdy cena rynkowa pozostanie pomiędzy (nie osiągnie) <strong>wysokiego limitu</strong> ani <strong>niskiego limitu</strong> w żadnym momencie w czasie <strong>trwania kontraktu</strong>."
+msgstr ""
+"Jeśli wybierzesz „Pozostanie pomiędzy”, zdobędziesz wypłatę, gdy cena "
+"rynkowa pozostanie pomiędzy (nie osiągnie) <strong>górnego limitu</strong> "
+"ani <strong>dolnego limitu</strong> w żadnym momencie w czasie <strong>"
+"trwania kontraktu</strong>."
 
 msgid "If you select \"Touches\", you win the payout if the market touches the <strong>barrier</strong> at any time during the <strong>contract period</strong>."
 msgstr "Jeśli wybierzesz „osiągnie”, zdobędziesz wypłatę, gdy cena rynkowa osiągnie <strong>limit</strong> w dowolnym momencie w czasie <strong>trwania kontraktu</strong>."
@@ -4087,13 +4108,13 @@ msgid "Loss"
 msgstr "Strata"
 
 msgid "Low Barrier"
-msgstr "Niski limit"
+msgstr "Dolny limit"
 
 msgid "Low barrier"
-msgstr "Niski limit"
+msgstr "Dolny limit"
 
 msgid "Low barrier offset"
-msgstr "Ustawienie niskiego limitu"
+msgstr "Ustawienie dolnego limitu"
 
 msgid "MENA FFXPO Award"
 msgstr "Nagroda MENA FFXPO"
@@ -4574,10 +4595,10 @@ msgid "Original Barrier"
 msgstr "Pierwotny limit"
 
 msgid "Original High Barrier"
-msgstr "Pierwotny wysoki limit"
+msgstr "Pierwotny górny limit"
 
 msgid "Original Low Barrier"
-msgstr "Pierwotny niski limit"
+msgstr "Pierwotny dolny limit"
 
 msgid "Other"
 msgstr "Inne"
@@ -6324,7 +6345,10 @@ msgid "These are trades where the trader predicts if a market will rise or fall 
 msgstr "Są to zakłady, w których gracz prognozuje, czy cena rynkowa będzie rosła czy malała pod koniec wybranego okresu."
 
 msgid "These are trades where the trader selects a low and high barrier, and predicts if the market will stay within these barriers or go outside them (see also 'Stays Between/Goes Outside trades')."
-msgstr "Są to zakłady, w których gracz wybiera niski i wysoki limit, a następnie prognozuje, czy cena rynkowa pozostanie pomiędzy tymi limitami czy je przekroczy (zobacz także „Zakłady typu pozostanie pomiędzy/przekroczy”)."
+msgstr ""
+"Są to zakłady, w których gracz wybiera dolny i górny limit, a następnie "
+"prognozuje, czy cena rynkowa pozostanie pomiędzy tymi limitami czy je "
+"przekroczy (zobacz także „Zakłady typu pozostanie pomiędzy/przekroczy”)."
 
 msgid "These are trades where the trader selects a price target, and predicts that the market will never touch the target before the expiry of the trade."
 msgstr "Są to zakłady, w których gracz wybiera cenę docelową oraz prognozuje, że rynek nigdy nie osiągnie ceny docelowej przed wygaśnięciem zakładu."
