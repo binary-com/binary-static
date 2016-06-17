@@ -1,20 +1,20 @@
 .price_moved_up {
-  background-color: $COLOR_LIGHT_BLUE;
-  color: $COLOR_WHITE;
+    background-color: $COLOR_LIGHT_BLUE;
+    color: $COLOR_WHITE;
 }
 
 .price_moved_down {
-  background-color: $COLOR_RED;
-  color: $COLOR_WHITE;
+    background-color: $COLOR_RED;
+    color: $COLOR_WHITE;
 }
 
 #bet_bottom_content {
-  padding-top: 1em;
+    padding-top: 1em;
 }
 
 a.close {
     display: inline-block;
-    float:right;
+    float: right;
     margin-top: 0;
     margin-right: 0;
     padding: 10px 8px;
@@ -30,4 +30,12 @@ a.close {
     &:hover {
         text-decoration: none;
     }
+}
+
+.profit {
+    color: $COLOR_GREEN;
+}
+
+.loss {
+    color: $COLOR_RED;
 }

@@ -1,5 +1,4 @@
-table
-{
+table {
     border-collapse: collapse;
     font-size: 0.9em;
     line-height: 1.5em;
@@ -30,7 +29,7 @@ table
     td {
         vertical-align: top;
         border-width: 0 1px;
-        padding: 4px 4px;
+        padding: 4px;
         border-bottom: 3px solid $COLOR_LIGHT_GRAY;
         &.num {
             text-align: center;
@@ -98,14 +97,14 @@ table
 }
 
 /* Gridle based table styling */
-.table-header{
+.table-header {
     clear: both;
     overflow: auto;
     font-weight: bold;
     font-size: 90%;
-    border-bottom: 1px solid #808080;
-    background: none repeat scroll 0% 0% #F2F2F2;
-    [class*="grd-grid-"] {
+    border-bottom: 1px solid $COLOR_DARK_GRAY;
+    background: none repeat scroll 0% 0% $COLOR_LIGHT_GRAY;
+    [class*='grd-grid-'] {
         word-wrap: break-word;
         white-space: normal;
     }
@@ -117,7 +116,6 @@ table
     padding-top: 20px;
     font-size: 90%;
     padding-bottom: 0px;
-
     .profit {
         color: $COLOR_GREEN;
     }
@@ -143,6 +141,7 @@ table
         }
     }
 }
+
 .table-body-lines {
-    border-bottom: 3px solid #F2F2F2;
+    border-bottom: 3px solid $COLOR_LIGHT_GRAY;
 }

@@ -20,6 +20,7 @@ function BinarySocketClass() {
         authorized = false,
         timeouts = {},
         req_number = 0,
+        wrongAppId = 0,
         socketUrl = getSocketURL() + '?app_id=' + getAppId() + (page.language() ? '&l=' + page.language() : '');
 
     var clearTimeouts = function(){
@@ -58,7 +59,7 @@ function BinarySocketClass() {
                 data.passthrough = {};
             }
             // temporary check
-            if((data.contracts_for || data.proposal || data.price_stream) && !data.passthrough.hasOwnProperty('dispatch_to')){
+            if((data.contracts_for || data.proposal) && !data.passthrough.hasOwnProperty('dispatch_to')){
                 data.passthrough.req_number = ++req_number;
                 timeouts[req_number] = setTimeout(function(){
                     if(typeof reloadPage === 'function' && data.contracts_for){
@@ -78,6 +79,9 @@ function BinarySocketClass() {
     };
 
     var init = function (es) {
+        if(wrongAppId === getAppId()) {
+            return;
+        }
         if(!es){
             events = {};
         }
@@ -94,7 +98,7 @@ function BinarySocketClass() {
 
         binarySocket.onopen = function (){
             var loginToken = getCookieItem('login');
-            if(loginToken && !authorized) {
+            if(loginToken && !authorized && localStorage.getItem('client.tokens')) {
                 binarySocket.send(JSON.stringify({authorize: loginToken}));
             }
             else {
@@ -144,8 +148,9 @@ function BinarySocketClass() {
                         }
                         LocalStore.set('reality_check.ack', 0);
                         page.client.send_logout_request(isActiveTab);
-                    }
-                    else {
+                    } else if (response.authorize.loginid !== page.client.loginid) {
+                        page.client.send_logout_request(true);
+                    } else {
                         authorized = true;
                         if(typeof events.onauth === 'function'){
                             events.onauth();
@@ -177,7 +182,10 @@ function BinarySocketClass() {
                 } else if (type === 'payout_currencies' && response.echo_req.hasOwnProperty('passthrough') && response.echo_req.passthrough.handler === 'page.client') {
                     page.client.response_payout_currencies(response);
                 } else if (type === 'get_settings') {
-                    if(!$.cookie('residence') && response.get_settings.country_code) page.client.set_cookie('residence', response.get_settings.country_code);
+                    if(!$.cookie('residence') && response.get_settings.country_code) {
+                      page.client.set_cookie('residence', response.get_settings.country_code);
+                      page.client.residence = response.get_settings.country_code;
+                    }
                     GTM.event_handler(response.get_settings);
                     page.client.set_storage_value('tnc_status', response.get_settings.client_tnc_status || '-');
                     if (!localStorage.getItem('risk_classification')) page.client.check_tnc();
@@ -270,6 +278,9 @@ function BinarySocketClass() {
                           type !== 'paymentagent_withdraw' &&
                           type !== 'cashier') {
                             page.client.send_logout_request();
+                      } else if (response.error.code === 'InvalidAppID') {
+                          wrongAppId = getAppId();
+                          alert(response.error.message);
                       }
                     }
                 }
@@ -283,7 +294,7 @@ function BinarySocketClass() {
             authorized = false;
             clearTimeouts();
 
-            if(!manualClosed){
+            if(!manualClosed && wrongAppId !== getAppId()) {
                 init(1);
             }
             if(typeof events.onclose === 'function'){

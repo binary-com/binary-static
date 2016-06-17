@@ -120,7 +120,7 @@ var TradingEvents = (function () {
             formNavElement.addEventListener('click', function(e) {
                 if (e.target && e.target.getAttribute('menuitem')) {
                     var clickedForm = e.target;
-                    var isFormActive = clickedForm.classList.contains('active');
+                    var isFormActive = clickedForm.classList.contains('active') || clickedForm.parentElement.classList.contains('active');
                     Defaults.set('formname', clickedForm.getAttribute('menuitem'));
 
                     setFormPlaceholderContent();
@@ -200,6 +200,7 @@ var TradingEvents = (function () {
             }));
             $('#duration_amount').on('change', debounce(function (e) {
                 // using Defaults, to update the value by datepicker if it was emptied by keyboard (delete)
+                page.contents.tooltip.hide_tooltip();
                 Durations.validateMinDurationAmount();
                 if(inputEventTriggered === false || !Defaults.get('duration_amount'))
                     triggerOnDurationChange(e);
@@ -241,6 +242,7 @@ var TradingEvents = (function () {
             // need to use jquery as datepicker is used, if we switch to some other
             // datepicker we can move back to javascript
             $('#expiry_date').on('change input', function () {
+                page.contents.tooltip.hide_tooltip();
                 Durations.selectEndDate(this.value);
             });
         }
@@ -248,6 +250,7 @@ var TradingEvents = (function () {
         var endTimeElement = document.getElementById('expiry_time');
         if (endTimeElement) {
             $('#expiry_time').on('change input', function () {
+                page.contents.tooltip.hide_tooltip();
                 Durations.setTime(endTimeElement.value);
                 processPriceRequest();
             });
@@ -364,7 +367,6 @@ var TradingEvents = (function () {
                 BinarySocket.send(params);
                 Price.incrFormId();
                 processForgetProposals();
-                processForgetPriceStream();
             }
         };
 
@@ -434,7 +436,6 @@ var TradingEvents = (function () {
 
             predictionElement.addEventListener('change', debounce( function (e) {
                 Defaults.set('prediction', e.target.value);
-                page.contents.tooltip.hide_tooltip();
                 processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
             }));

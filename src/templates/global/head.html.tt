@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+        <style id="antiClickjack">body{display:none !important;}</style>
+        <script type="text/javascript">
+            if (self === top) {
+                var antiClickjack = document.getElementById("antiClickjack");
+                antiClickjack.parentNode.removeChild(antiClickjack);
+            } else {
+                top.location = self.location;
+            }
+        </script>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <meta http-equiv="Content-Language" content="[%= iso639a_language =%]" />
+        <meta name="description" content="
+        [%= l('[_1] gives everyone an easy and exciting way to participate in the financial markets. Trade with as little as $1 USD on major currencies, indices and commodities.', broker_name) =%]" />
+        <meta name="keywords" content="
+                [%= l('binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, stocks, investment, trading') =%]" />
+        <meta name="author" content="[%= broker_name =%]" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="dcterms.rightsHolder" content="[%= broker_name =%]" />
+        <meta name="dcterms.rights" content="[%= broker_name =%]" />
+        <meta name="google-site-verification" content="roReCEK-wNa1EMA6ZM9a4zCOQOMqxfJjvfsZMC9qh_k" />
+        <meta property="og:title" content="[%= broker_name =%]" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="[% request.url_for('images/common/og_image.gif') %]" />
+
+        <title>[%= browser_title =%]</title>
+
+        <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700&subset=latin,vietnamese,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+
+        <link rel="apple-touch-icon" sizes="57x57" href="[% request.url_for('/images/favicons/apple-touch-icon-57x57.png') %]">
+        <link rel="apple-touch-icon" sizes="114x114" href="[% request.url_for('/images/favicons/apple-touch-icon-114x114.png') %]">
+        <link rel="apple-touch-icon" sizes="72x72" href="[% request.url_for('/images/favicons/apple-touch-icon-72x72.png') %]">
+        <link rel="apple-touch-icon" sizes="144x144" href="[% request.url_for('/images/favicons/apple-touch-icon-144x144.png') %]">
+        <link rel="apple-touch-icon" sizes="60x60" href="[% request.url_for('/images/favicons/apple-touch-icon-60x60.png') %]">
+        <link rel="apple-touch-icon" sizes="120x120" href="[% request.url_for('/images/favicons/apple-touch-icon-120x120.png') %]">
+        <link rel="apple-touch-icon" sizes="76x76" href="[% request.url_for('/images/favicons/apple-touch-icon-76x76.png') %]">
+        <link rel="apple-touch-icon" sizes="152x152" href="[% request.url_for('/images/favicons/apple-touch-icon-152x152.png') %]">
+        <link rel="apple-touch-icon" sizes="180x180" href="[% request.url_for('/images/favicons/apple-touch-icon-180x180.png') %]">
+        <link rel="icon" type="image/png" sizes="192x192" href="[% request.url_for('/images/favicons/favicon-192x192.png') %]">
+        <link rel="icon" type="image/png" sizes="160x160" href="[% request.url_for('/images/favicons/favicon-160x160.png') %]">
+        <link rel="icon" type="image/png" sizes="96x96" href="[% request.url_for('/images/favicons/favicon-96x96.png') %]">
+        <link rel="icon" type="image/png" sizes="16x16" href="[% request.url_for('/images/favicons/favicon-16x16.png') %]" >
+        <link rel="icon" type="image/png" sizes="32x32" href="[% request.url_for('/images/favicons/favicon-32x32.png') %]" >
+
+        [% FOREACH o IN language_options =%]
+            [%= IF o.code.lower != 'ja' =%]
+            <link rel="alternate" href="[% request.url_for(request.url_for(current_path), { l => o.code.lower }) =%]" hreflang="[% o.code %]" />
+            [%= END %]
+        [% END %]
+        [% FOREACH css_file IN css_files =%]
+            <link rel="stylesheet" href="[%= css_file =%]">
+        [% END %]
+        [% INCLUDE global/javascripts.html.tt
+            javascript=javascript
+        %]
+    </head>

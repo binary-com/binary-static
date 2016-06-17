@@ -108,7 +108,7 @@ var User = function() {
     this.email   =  $.cookie('email');
     var loginid_list = $.cookie('loginid_list');
 
-    if(!this.loginid || !loginid_list) {
+    if(!this.loginid || !loginid_list || !localStorage.getItem('client.tokens')) {
         this.is_logged_in = false;
     } else {
         this.is_logged_in = true;
@@ -146,7 +146,7 @@ var User = function() {
 var Client = function() {
     this.loginid      =  $.cookie('loginid');
     this.residence    =  $.cookie('residence');
-    this.is_logged_in = this.loginid && this.loginid.length > 0;
+    this.is_logged_in = this.loginid && this.loginid.length > 0 && localStorage.getItem('client.tokens');
 };
 
 Client.prototype = {

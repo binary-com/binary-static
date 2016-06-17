@@ -1,5 +1,4 @@
 requires 'Getopt::Long';
-requires 'Text::Haml', '== 0.990116';
 requires 'Template';
 requires 'Path::Tiny';
 requires 'HTML::Entities';

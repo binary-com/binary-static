@@ -19,7 +19,7 @@ var Price = (function() {
 
     var createProposal = function(typeOfContract) {
         var proposal = {
-            price_stream: 1,
+            proposal: 1,
             subscribe: 1
         };
         var underlying = document.getElementById('underlying'),
@@ -134,7 +134,7 @@ var Price = (function() {
     };
 
     var display = function(details, contractType) {
-        var proposal = details['proposal'] || details['price_stream'];
+        var proposal = details['proposal'];
         var id = proposal ? proposal['id'] : '';
         var params = details['echo_req'];
 
@@ -272,7 +272,7 @@ var Price = (function() {
             purchase.setAttribute('data-payout', proposal['payout']);
             purchase.setAttribute('data-symbol', id);
             for (var key in params) {
-                if (key && key !== 'price_stream' && key !== 'proposal') {
+                if (key && key !== 'proposal') {
                     purchase.setAttribute('data-' + key, params[key]);
                 }
             }

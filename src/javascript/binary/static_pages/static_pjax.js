@@ -75,6 +75,7 @@ pjax_config_page('/get-started', function() {
 pjax_config_page('/contact', function() {
     return {
         onLoad: function() {
+            $('#faq_url').attr('href', 'https://binary.desk.com/customer/' + page.language() + "/portal/articles");
             display_cs_contacts();
             show_live_chat_icon();
         },

@@ -6,7 +6,6 @@ use v5.10;
 use FindBin qw/$Bin/;
 use lib "$Bin/lib";
 use Getopt::Long;
-use Text::Haml;
 use Path::Tiny;
 use HTML::Entities qw( encode_entities );
 use Encode;
@@ -37,93 +36,93 @@ set_branch($branch) if $branch;
 
 my @langs = map { lc $_ } all_languages();
 my @m = (
-    ['home',                'home/index',                 'haml', 'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices'],
-    ['why-us',              'static/why_us',              'haml', 'full_width', 'Why Us'],
-    ['payment-agent',       'static/payment_agent',       'haml', 'full_width', 'Payment Agents'],
-    ['contact',             'static/contact',             'haml', 'full_width', 'Contact Us'],
-    ['tour',                'static/tour',                'haml', 'full_width', 'Tour'],
-    ['responsible-trading', 'static/responsible_trading', 'haml', 'full_width', 'Responsible Trading'],
-    ['terms-and-conditions',       'legal/tac',                   'toolkit', 'default',    'Terms and Conditions'],
-    ['terms-and-conditions-jp',    'japan/legal/tacjp',           'toolkit', 'default',    'Terms and Conditions'],
-    ['resources',                  'resources/index',             'haml',    'default',    'Resources'],
-    ['applications',               'applications/index',          'toolkit', 'default',    'Applications'],
-    ['about-us',                   'about/index',                 'haml',    'full_width', 'About Us'],
-    ['group-information',          'about/group-information',     'haml',    'default',    'Group Information'],
-    ['open-positions',             'static/job_descriptions',     'haml',    'full_width', 'Open Positions'],
-    ['open-positions/job-details', 'static/job_details',          'haml',    'full_width', 'Job Details'],
-    ['careers',                    'static/careers',              'haml',    'full_width', 'Careers'],
-    ['partners',                   'static/partners',             'haml',    'full_width', 'Partners'],
-    ['group-history',              'static/group_history',        'haml',    'full_width', 'Group History'],
-    ['open-source-projects',       'static/open_source_projects', 'haml',    'full_width', 'Open-Source Projects'],
-    ['styles',                     'home/styles',                 'haml',    'full_width', 'Styles'],
-    ['affiliate/signup',           'affiliates/signup',           'toolkit', 'default', 'Affiliate'],
-    ['user/browser-support',       'misc/logintrouble',           'toolkit', 'default', 'Login trouble'],
-    ['endpoint',                   'misc/endpoint',               'toolkit', 'default', 'Endpoint'],
-    ['legal/us_patents',           'legal/us_patents',            'toolkit', 'default', 'US Patents'],
-    ['cashier',                    'cashier/index',               'haml',    'default', 'Cashier'],
-    ['cashier/payment_methods',    'cashier/payment_methods',     'toolkit', 'default', 'Payment Methods'],
+    ['home',                       'home/index',                   'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices'],
+    ['why-us',                     'static/why_us',                'full_width', 'Why Us'],
+    ['tour',                       'static/tour',                  'full_width', 'Tour'],
+    ['responsible-trading',        'static/responsible_trading',   'full_width', 'Responsible Trading'],
+    ['terms-and-conditions',       'legal/tac',                    'default',    'Terms and Conditions'],
+    ['terms-and-conditions-jp',    'japan/legal/tacjp',            'default',    'Terms and Conditions'],
+    ['applications',               'applications/index',           'default',    'Applications'],
+    ['styles',                     'home/styles',                  'full_width', 'Styles'],
+    ['affiliate/signup',           'affiliates/signup',            'default',    'Affiliate'],
+    ['user/browser-support',       'misc/logintrouble',            'default',    'Login trouble'],
+    ['endpoint',                   'misc/endpoint',                'default',    'Endpoint'],
+    ['legal/us_patents',           'legal/us_patents',             'default',    'US Patents'],
+    ['cashier',                    'cashier/index',                'default',    'Cashier'],
+    ['cashier/payment_methods',    'cashier/payment_methods',      'default',    'Payment Methods'],
 
-    ['cashier/session_expired', 'cashier/session_expired', 'toolkit', 'default'],
-    ['user-testing',            'static/user_testing',     'haml',    'full_width', 'Sign Up to Test Our Platform'],
+    ['about-us',                   'about/index',                  'full_width', 'About Us'],
+    ['group-information',          'about/group-information',      'default',    'Group Information'],
+    ['group-history',              'about/group_history',          'full_width', 'Group History'],
+    ['contact',                    'about/contact',                'full_width', 'Contact Us'],
+    ['careers',                    'about/careers',                'full_width', 'Careers'],
+    ['open-positions',             'about/job_descriptions',       'full_width', 'Open Positions'],
+    ['open-positions/job-details', 'about/job_details',            'full_width', 'Job Details'],
 
-    ['get-started',                              'get_started/index',                        'haml', 'get_started', 'Get Started'],
-    ['get-started/what-is-binary-trading',       'get_started/what_is_binary_trading',       'haml', 'get_started', 'Why Choose Binary Trading?'],
-    ['get-started/types-of-trades',              'get_started/types_of_trades',              'haml', 'get_started', 'Types of Trades'],
-    ['get-started/binary-options-basics',        'get_started/binary_options_basics',        'haml', 'get_started', 'Binary Options Basics'],
-    ['get-started/benefits-of-trading-binaries', 'get_started/benefits_of_trading_binaries', 'haml', 'get_started', 'Benefits of Binary Trading'],
-    ['get-started/how-to-trade-binaries',        'get_started/how_to_trade_binaries',        'haml', 'get_started', 'How to Trade Binaries?'],
-    ['get-started/volidx-markets',               'get_started/volidx_markets',               'haml', 'get_started', 'Volatility Index Markets'],
-    ['get-started/spread',                       'get_started/spread_bets',                  'haml', 'get_started', 'Spreads'],
-    ['get-started/smart-indices',                'static/smart_indices',                     'haml', 'get_started', 'Smart Indices'],
-    ['get-started/otc-indices-stocks',           'get_started/otc_indices_stocks',           'haml', 'get_started', 'What Are OTC Indices and Stocks?'],
-    ['get-started/beginners-faq',                'get_started/beginners_faq',                'haml', 'get_started', 'FAQ'],
-    ['get-started/glossary',                     'get_started/glossary',                     'haml', 'get_started', 'Glossary'],
+    ['open-source-projects',       'partners/open_source_projects',  'full_width', 'Open-Source Projects'],
+    ['partners',                   'partners/partners',              'full_width', 'Partners'],
+    ['payment-agent',              'partners/payment_agent',         'full_width', 'Payment Agents'],
+    ['user-testing',               'partners/user_testing',          'full_width', 'Sign Up to Test Our Platform'],
 
-    ['get-started-jp', 'japan/get_started', 'toolkit', 'default', 'Get Started'],
+    ['get-started',                              'get_started/index',                         'get_started', 'Get Started'],
+    ['get-started/what-is-binary-trading',       'get_started/what_is_binary_trading',        'get_started', 'Why Choose Binary Trading?'],
+    ['get-started/types-of-trades',              'get_started/types_of_trades',               'get_started', 'Types of Trades'],
+    ['get-started/binary-options-basics',        'get_started/binary_options_basics',         'get_started', 'Binary Options Basics'],
+    ['get-started/benefits-of-trading-binaries', 'get_started/benefits_of_trading_binaries',  'get_started', 'Benefits of Binary Trading'],
+    ['get-started/how-to-trade-binaries',        'get_started/how_to_trade_binaries',         'get_started', 'How to Trade Binaries?'],
+    ['get-started/volidx-markets',               'get_started/volidx_markets',                'get_started', 'Volatility Index Markets'],
+    ['get-started/spread',                       'get_started/spread_bets',                   'get_started', 'Spreads'],
+    ['get-started/smart-indices',                'get_started/smart_indices',                 'get_started', 'Smart Indices'],
+    ['get-started/otc-indices-stocks',           'get_started/otc_indices_stocks',            'get_started', 'What Are OTC Indices and Stocks?'],
+    ['get-started/beginners-faq',                'get_started/beginners_faq',                 'get_started', 'FAQ'],
+    ['get-started/glossary',                     'get_started/glossary',                      'get_started', 'Glossary'],
+
+    ['get-started-jp', 'japan/get_started',  'default', 'Get Started'],
 
     ## ws
-    ['user/authenticatews',          'user/authenticatews',                      'toolkit', 'default', 'Authenticate'],
-    ['cashier/forwardws',            'cashier/deposit_withdraw_ws',              'toolkit', 'default', 'Cashier'],
-    ['user/settings/limitsws',       'user/settings/limitsws',                   'toolkit', 'default', 'Account Limits'],
-    ['account/account_transferws',   'user/account/account_transferws',          'haml',    'default', 'Account Transfer'],
-    ['cashier/payment_agent_listws', 'cashier/payment_agent_listws',             'toolkit', 'default', 'Payment Agent Deposit'],
-    ['cashier/top_up_virtualws',     'user/top_up_virtualws',                    'toolkit', 'default', 'Give Me More Money!'],
-    ['paymentagent/transferws',      'cashier/paymentagent_transferws',          'toolkit', 'default', 'Payment Agent Transfer'],
-    ['paymentagent/withdrawws',      'cashier/paymentagent_withdrawws',          'toolkit', 'default', 'Payment Agent Withdrawal'],
+    ['user/authenticatews',          'user/authenticatews',                       'default', 'Authenticate'],
+    ['cashier/forwardws',            'cashier/deposit_withdraw_ws',               'default', 'Cashier'],
+    ['user/settings/limitsws',       'user/settings/limitsws',                    'default', 'Account Limits'],
+    ['account/account_transferws',   'cashier/account_transferws',                'default', 'Account Transfer'],
+    ['cashier/payment_agent_listws', 'cashier/payment_agent_listws',              'default', 'Payment Agent Deposit'],
+    ['cashier/top_up_virtualws',     'user/top_up_virtualws',                     'default', 'Give Me More Money!'],
+    ['paymentagent/transferws',      'cashier/paymentagent_transferws',           'default', 'Payment Agent Transfer'],
+    ['paymentagent/withdrawws',      'cashier/paymentagent_withdrawws',           'default', 'Payment Agent Withdrawal'],
 
-    ['jptrading', 'bet/static', 'toolkit', 'default', 'Sharp Prices. Smart Trading.'],
-    ['trading',   'bet/static', 'toolkit', 'default', 'Sharp Prices. Smart Trading.'],
+    ['jptrading', 'bet/static',  'default', 'Sharp Prices. Smart Trading.'],
+    ['trading',   'bet/static',  'default', 'Sharp Prices. Smart Trading.'],
 
-    ['new_account/virtualws',        'new_account/virtualws',      'toolkit', 'default', 'Create New Account'],
-    ['new_account/realws',           'new_account/realws',         'toolkit', 'default', 'Real Money Account Opening'],
-    ['new_account/japanws',          'new_account/japanws',        'toolkit', 'default', 'Real Money Account Opening'],
-    ['new_account/maltainvestws',    'new_account/maltainvestws',  'toolkit', 'default', 'Financial Account Opening'],
-    ['new_account/knowledge_testws', 'japan/knowledge_test',       'toolkit', 'default', 'Real Money Account Opening'],
+    ['new_account/virtualws',        'new_account/virtualws',       'default', 'Create New Account'],
+    ['new_account/realws',           'new_account/realws',          'default', 'Real Money Account Opening'],
+    ['new_account/japanws',          'new_account/japanws',         'default', 'Real Money Account Opening'],
+    ['new_account/maltainvestws',    'new_account/maltainvestws',   'default', 'Financial Account Opening'],
+    ['new_account/knowledge_testws', 'japan/knowledge_test',        'default', 'Real Money Account Opening'],
 
-    ['resources/asset_indexws',  'resources/asset_indexws',  'toolkit', 'default', 'Asset Index'],
-    ['resources/market_timesws', 'resources/market_timesws', 'toolkit', 'default', 'Trading Times'],
+    ['resources',                'resources/index',           'default', 'Resources'],
+    ['resources/asset_indexws',  'resources/asset_indexws',   'default', 'Asset Index'],
+    ['resources/market_timesws', 'resources/market_timesws',  'default', 'Trading Times'],
 
-    ['user/settings/api_tokenws',       'user/settings/api_tokenws',                     'toolkit', 'default', 'API Token'],
-    ['user/change_passwordws',          'user/settings/change_passwordws',               'toolkit', 'default', 'Change Password'],
-    ['user/portfoliows',                'user/portfoliows',                              'toolkit', 'default', 'Portfolio'],
-    ['user/profit_tablews',             'user/profit_tablews',                           'toolkit', 'default', 'Profit Table'],
-    ['user/settings/self_exclusionws',   'user/settings/self_exclusionws',                'toolkit', 'default', 'Account Details'],
-    ['user/settings/detailsws',         'user/settings/settings_detailsws',              'toolkit', 'default', 'Personal Details'],
-    ['user/settings/securityws',        'user/account/settings_securityws',              'haml',    'default', 'Security'],
-    ['user/statementws',                'user/statementws',                              'toolkit', 'default', 'Statement'],
-    ['user/my_accountws',               'user/my_accountws',                             'toolkit', 'default', 'My Account'],
-    ['user/settingsws',                 'user/settingsws',                               'toolkit', 'default', 'Settings'],
-    ['user/settings/iphistoryws',       'user/settings/iphistory',                       'toolkit', 'default', 'Login History'],
-    ['user/tnc_approvalws',             'legal/tnc_approvalws',                          'toolkit', 'default', 'Terms and Conditions Approval'],
-    ['user/settings/assessmentws',      'user/settings/financial_assessmentws',          'toolkit', 'default', 'Financial Assessment'],
-    ['user/lost_passwordws',            'user/lost_passwordws',                          'haml',    'default', 'Password Reset'],
-    ['user/reset_passwordws',           'user/reset_passwordws',                         'haml',    'default', 'Password Reset'],
-    ['user/settings/authorised_appsws', 'user/settings/authorised_appsws',               'toolkit', 'default', 'Authorised Applications'],
-    ['user/reality_check_frequencyws',  'user/reality_check_frequencyws',                'haml',    'default', 'Reality Check'],
-    ['user/reality_check_summaryws',    'user/reality_check_summaryws',                  'haml',    'default', 'Reality Check'],
+    ['user/settings/api_tokenws',       'user/settings/api_tokenws',                      'default', 'API Token'],
+    ['user/change_passwordws',          'user/settings/change_passwordws',                'default', 'Change Password'],
+    ['user/portfoliows',                'user/portfoliows',                               'default', 'Portfolio'],
+    ['user/profit_tablews',             'user/profit_tablews',                            'default', 'Profit Table'],
+    ['user/settings/self_exclusionws',   'user/settings/self_exclusionws',                'default', 'Account Details'],
+    ['user/settings/detailsws',         'user/settings/settings_detailsws',               'default', 'Personal Details'],
+    ['user/settings/securityws',        'user/settings/settings_securityws',              'default', 'Security'],
+    ['user/statementws',                'user/statementws',                               'default', 'Statement'],
+    ['user/my_accountws',               'user/my_accountws',                              'default', 'My Account'],
+    ['user/settingsws',                 'user/settingsws',                                'default', 'Settings'],
+    ['user/settings/iphistoryws',       'user/settings/iphistory',                        'default', 'Login History'],
+    ['user/tnc_approvalws',             'legal/tnc_approvalws',                           'default', 'Terms and Conditions Approval'],
+    ['user/settings/assessmentws',      'user/settings/financial_assessmentws',           'default', 'Financial Assessment'],
+    ['user/lost_passwordws',            'user/lost_passwordws',                           'default', 'Password Reset'],
+    ['user/reset_passwordws',           'user/reset_passwordws',                          'default', 'Password Reset'],
+    ['user/settings/authorised_appsws', 'user/settings/authorised_appsws',                'default', 'Authorised Applications'],
+    ['user/reality_check_frequencyws',  'user/reality_check_frequencyws',                 'default', 'Reality Check'],
+    ['user/reality_check_summaryws',    'user/reality_check_summaryws',                   'default', 'Reality Check'],
 
-    ['logged_inws',           'global/logged_inws', 'toolkit', undef],
-    ['trade/bet_explanation', 'bet/explanation',    'toolkit', undef],
+    ['logged_inws',           'global/logged_inws',  undef],
+    ['trade/bet_explanation', 'bet/explanation',     undef],
 );
 
 ## config
@@ -155,9 +154,8 @@ if ($pattern) {
 foreach my $m (@m) {
     my $save_as  = $m->[0];
     my $tpl_path = $m->[1];
-    my $tpl_type = $m->[2];
-    my $layout   = $m->[3];
-    my $title    = $m->[4];
+    my $layout   = $m->[2];
+    my $title    = $m->[3];
 
     $index++;
 
@@ -183,40 +181,23 @@ foreach my $m (@m) {
             current_path    => $save_as,
             current_route   => $current_route,
             affiliate_email => 'affiliates@binary.com',
+            full_width      => $layout && $layout eq 'full_width',
+            get_started     => $layout && $layout eq 'get_started'
         );
 
         if ($title) {
             $stash{title} = localize($title);
         }
 
-        my $file = "$root_path/src/templates/haml/$tpl_path.html.haml";
-        if ($tpl_type eq 'toolkit') {
-            $file = "$tpl_path.html.tt";    # no Absolute path
-        }
+        my $file = "$tpl_path.html.tt";    # no Absolute path
 
-        my $output;
-        if ($tpl_type eq 'haml') {
-            $output = haml_handle($file, %stash);
-        } else {
-            $output = tt2_handle($file, %stash);
-        }
+        my $output = tt2_handle($file, %stash);
 
-        ## pjax is using layout/default/content
-        my $layout_file = $file;
-        if($layout) {
-            $layout_file = "$root_path/src/templates/haml/layouts/$layout/content.html.haml";
-            if ($tpl_type eq 'toolkit') {
-                $layout_file = "layouts/default/content.html.tt";
-            }
-        }
+        ## pjax is using layout/$layout/content
+        my $layout_file = "global/layout.html.tt";
         $stash{is_pjax_request} = 1;
         $stash{content}         = $output;
-        my $layout_output = '';
-        if ($tpl_type eq 'haml') {
-            $layout_output = haml_handle($layout_file, %stash);
-        } else {
-            $layout_output = tt2_handle($layout_file, %stash);
-        }
+        my $layout_output = tt2_handle($layout_file, %stash);
 
         print colored(['green'], ($verbose ? "" : "\e[K\r")."[$index / ".(scalar @m)."] ($lang) => ")."/$lang/$save_as.html".($verbose ? "\n" : "");
 
@@ -227,19 +208,9 @@ foreach my $m (@m) {
         ## not pjax
         $save_as_file = "$dist_path/$lang/$save_as.html";
         if ($layout) {
-            $layout_file = "$root_path/src/templates/$tpl_type/layouts/$layout.html.$tpl_type";
-            if ($tpl_type eq 'toolkit') {
-                $layout_file = "layouts/$layout.html.tt";
-            }
-
             $stash{is_pjax_request} = 0;
             $stash{content}         = $output;
-            $layout_output          = '';
-            if ($tpl_type eq 'haml') {
-                $layout_output = haml_handle($layout_file, %stash);
-            } else {
-                $layout_output = tt2_handle($layout_file, %stash);
-            }
+            $layout_output = tt2_handle($layout_file, %stash);
         }
         $path = path($save_as_file);
         $path->parent->mkpath if $save_as =~ '/';
@@ -252,84 +223,6 @@ print "\n";
 if(not $pattern) {
     # my $static_hash = get_static_hash();
     path($hash_file)->spew_utf8(get_static_hash());
-}
-
-
-sub haml_handle {
-    my ($file, %stash) = @_;
-
-    my $haml = Text::Haml->new(cache => 0);
-    if ($file =~ 'layout') {
-        $haml->escape_html(0);
-    }
-    $haml->add_helper(
-        stash => sub {
-            my $self = shift;
-            if (@_ > 1 || ref($_[0])) {
-                return %stash = (%stash, (@_ > 1 ? @_ : %{$_[0]}));
-            } elsif (@_) {
-                return $stash{$_[0]} // '';
-            } else {
-                return \%stash;
-            }
-        });
-    $haml->add_helper(
-        l => sub {
-            my $self = shift;
-            return localize(@_);
-        });
-
-    $haml->add_helper(
-        encode_html_text => sub {
-            my ($self, $text) = @_;
-            return encode_entities($text);
-        });
-    $haml->add_helper(
-        available_languages => sub {
-            my ($c)           = @_;
-            my @allowed_langs = all_languages();
-            my $al            = {};
-            map { $al->{$_} = decode_utf8(lang_display_name($_)) } @allowed_langs;
-            return $al;
-        });
-
-    my $request      = $stash{request};
-    my $current_path = $stash{current_path};
-    $haml->add_helper(
-        url_for => sub {
-            my $self = shift;
-            return $request->url_for(@_);
-        });
-    $haml->add_helper(
-        get_current_path => sub {
-            my $self = shift;
-            return $request->url_for($current_path, undef, {no_lang => 1});
-        });
-    $haml->add_helper(
-        current_route => sub {
-            return $stash{current_route};
-        });
-    $haml->add_helper(
-        content => sub {
-            return $stash{content};
-        });
-
-    $haml->add_helper(
-        include => sub {
-            my ($self, $tpl) = (shift, shift);
-            my $x = $haml->render_file("$root_path/src/templates/haml/$tpl.html.haml", %stash, @_)
-                or die $haml->error;
-            # say "$tpl get $x";
-            return $x;
-        });
-
-    $stash{javascript} = js_config();
-    $stash{css_files}  = [css_files()];
-    $stash{menu}       = menu();
-
-    my $output = $haml->render_file($file, %stash) or die $haml->error;
-
-    return $output;
 }
 
 sub tt2_handle {
