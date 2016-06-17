@@ -10,10 +10,15 @@
         input {
             border-radius: 3px;
             font-size: 14px;
+            width: 100%;
+            height: 3em;
+            margin: 5px 0;
         }
         button {
-            @include link-button;
             background: $COLOR_BLUE;
+            margin: 5px 0;
+            height: 3rem;
+            width: 100%;
             &:hover {
                 text-decoration: none;
                 background-color: $COLOR_DARK_GREEN;
