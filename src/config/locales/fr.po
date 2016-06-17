@@ -227,6 +227,9 @@ msgstr "Les contrats spread de %1 sont des contrats dérivés à effet de levier
 msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
 msgstr "Les contrats spread requièrent un ordre « stop loss » qui limite les pertes maximales auxquelles s'expose un client. Le montant correspondant au « stop loss » tient lieu de dépôt et ne peut être utilisé dans le cadre d'opérations de trading jusqu'à la clôture du contrat spread associé. Les contrats spread sont clôturés à l'issue de leur vente par le client, lorsque les niveaux « stop loss » ou « stop profit » sont atteints."
 
+msgid "%1's Volatility Indices are based on a cryptographically secure random number generator audited for fairness by an independent third party."
+msgstr ""
+
 msgid "%1's patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market."
 msgstr "La technologie de tarification brevetée de %1 vous permet de profiter des mêmes taux de retour sur investissement que les traders du marché interbancaire."
 
@@ -1198,6 +1201,9 @@ msgstr "août"
 
 msgid "Australia"
 msgstr "Australie"
+
+msgid "Authenticate"
+msgstr "Authentification"
 
 msgid "Authenticate your account"
 msgstr "Authentifier votre compte"
@@ -3417,6 +3423,11 @@ msgstr "En tant que titulaire de ce nouveau poste basé dans nos bureaux de Cybe
 msgid "In/Out"
 msgstr "Dans/Hors de"
 
+#, fuzzy
+#| msgid "In/Out (<a href=\"%1\">ends between/outside</a> and <a href=\"%2\">stays between/goes outside</a>)"
+msgid "In/Out (ends between/outside and stays between/goes outside)"
+msgstr "Dans/Hors de (<a href=\"%1\">finit entre/hors de</a> et <a href=\"%2\">reste entre/sort de</a>)"
+
 msgid "In/Out trades"
 msgstr "Trades Dans/Hors de"
 
@@ -4498,6 +4509,9 @@ msgstr "Une plateforme de trading maintes fois récompensée par différents pri
 
 msgid "Multi-lingual and multi-currency support"
 msgstr "Support multilingue et multi-devises"
+
+msgid "My Account"
+msgstr "Mon compte"
 
 msgid "Mycrowd - for Binary.com traders"
 msgstr ""
@@ -5904,6 +5918,9 @@ msgstr "Gain"
 
 msgid "Start Time"
 msgstr "Heure du Début"
+
+msgid "Start Trading"
+msgstr "Commencer le trading"
 
 msgid "Start learning"
 msgstr "Apprendre le trading"
@@ -9058,11 +9075,6 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 
 #~ msgid "Get started"
 #~ msgstr "Se lancer"
-
-#, fuzzy
-#~| msgid "In/Out (<a href=\"%1\">ends between/outside</a> and <a href=\"%2\">stays between/goes outside</a>)"
-#~ msgid "In/Out (ends between/outside and stays between/goes outside)"
-#~ msgstr "Dans/Hors de (<a href=\"%1\">finit entre/hors de</a> et <a href=\"%2\">reste entre/sort de</a>)"
 
 #~ msgid "Job details"
 #~ msgstr "Informations sur le poste"
@@ -12742,9 +12754,6 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 #~ msgid "Amount must be a positive number."
 #~ msgstr "Le montant doit être un nombre positif."
 
-#~ msgid "Authenticate"
-#~ msgstr "Authentification"
-
 #~ msgid "Buy Price"
 #~ msgstr "Prix d'Achat"
 
@@ -12821,9 +12830,6 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 #~ msgid "Monthly Webinars"
 #~ msgstr "Webinairs Mensuels"
 
-#~ msgid "My Account"
-#~ msgstr "Mon compte"
-
 #~ msgid "No Storing of Any Content"
 #~ msgstr "Le stockage de tout contenu est interdit"
 
@@ -12871,9 +12877,6 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 
 #~ msgid "Sorry, you have reached your session duration limit of %plural(%1,%d minute,%d minutes)."
 #~ msgstr "Désolé, vous avez atteint la limite de durée de votre session de %plural(%1,%d minute,%d minutes)."
-
-#~ msgid "Start Trading"
-#~ msgstr "Commencer le trading"
 
 #~ msgid "Stop-loss:"
 #~ msgstr "Stop-loss :"

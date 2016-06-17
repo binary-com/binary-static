@@ -4,14 +4,12 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2016-06-15 13:14+0000\n"
 "Last-Translator: Ahmed Kotb <ahmedmohamedkotp@gmail.com>\n"
-"Language-Team: Arabic <https://hosted.weblate.org/projects/binary/static/ar/>"
-"\n"
+"Language-Team: Arabic <https://hosted.weblate.org/projects/binary/static/ar/>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 "X-Generator: Weblate 2.7-dev\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
@@ -218,6 +216,9 @@ msgstr "عقود السبريد الخاصة بـ %1 هي عقود مشتقات 
 
 msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
 msgstr "عقود السبريد الخاصة بـ %1 تحتاج إلى أمر \"وقف الخسارة\" الذي يحد من الحدود القصوى للخسائر التي يتكبدها العميل. ومبلغ \"وقف الخسارة\" هذا بمثابة وديعة لا يجوز استخدامها لمزيد من التداول حتى يتم إغلاق عقد السبريد هذا. يتم إغلاق عقود السبريد عند بيعها من قبل العميل، أو عندما تصل إلى مستوى \"وقف الخسارة\" أو \"وقف الأرباح\"."
+
+msgid "%1's Volatility Indices are based on a cryptographically secure random number generator audited for fairness by an independent third party."
+msgstr ""
 
 msgid "%1's patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market."
 msgstr "تكنولوجيا التسعير المسجلة الخاصة بـ %1 تتيح لك أن تستفيد من نفس معدلات العائد التى يحصل عليها المتداولون فى سوق ما بين البنوك."
@@ -1158,6 +1159,9 @@ msgstr "أغسطس"
 
 msgid "Australia"
 msgstr "أستراليا"
+
+msgid "Authenticate"
+msgstr "التوثيق"
 
 msgid "Authenticate your account"
 msgstr "وثق حسابك"
@@ -2667,9 +2671,7 @@ msgid "For added security, please check your email to retrieve the verification 
 msgstr "لمزيد من الأمان, الرجاء التحقق من البريد الإلكتروني الخاص بك لاسترداد رمز التحقق."
 
 msgid "For all types of tabs, you could call \"build_menu_with_content\" on server side to generate the HTML for you, or just output this HTML samples."
-msgstr ""
-"لجميع أنواع علامات التبويب, بإمكانك استدعاء \"انشيء_قائمة_مع_المحتوى\" على "
-"جانب الخادم لتوليد ال HTML لك, أو مجرد إخراج عينات ال HTML هذه."
+msgstr "لجميع أنواع علامات التبويب, بإمكانك استدعاء \"انشيء_قائمة_مع_المحتوى\" على جانب الخادم لتوليد ال HTML لك, أو مجرد إخراج عينات ال HTML هذه."
 
 msgid "For e-cash methods or local currencies not supported by %1."
 msgstr "لطرق محفظة النقود الالكترونية أو للعملات المحلية الغير مدعومة من %1."
@@ -3262,6 +3264,9 @@ msgstr "وفي هذا الدورالجديد، ستتواجد في مكاتبن�
 
 msgid "In/Out"
 msgstr "داخل/خارج"
+
+msgid "In/Out (ends between/outside and stays between/goes outside)"
+msgstr "داخل/خارج (ينتهي بين/خارج، ويبقى بين/يذهب خارج)"
 
 msgid "In/Out trades"
 msgstr "تداول الدخول/الخروج"
@@ -4286,9 +4291,7 @@ msgid "More benefits"
 msgstr "المزيد من الفوائد"
 
 msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with "
-msgstr ""
-"بشكل أكثر تحديداً, عندما ندخل معك في تداول الخيارت الثنائية (كل, \"عقد\"), "
-"فإنه من الواجب علينا أن نقدم لك "
+msgstr "بشكل أكثر تحديداً, عندما ندخل معك في تداول الخيارت الثنائية (كل, \"عقد\"), فإنه من الواجب علينا أن نقدم لك "
 
 msgid "Mother's maiden name"
 msgstr "اسم الأم قبل الزواج"
@@ -4310,6 +4313,9 @@ msgstr "منصة تداول حاصلة على أكثر من جائزة."
 
 msgid "Multi-lingual and multi-currency support"
 msgstr "دعم متعدد اللغات ومتعدد العملات"
+
+msgid "My Account"
+msgstr "حسابي"
 
 msgid "Mycrowd - for Binary.com traders"
 msgstr "Mycrowd - لمتداولي Binary.com"
@@ -5616,6 +5622,9 @@ msgstr "الحصة"
 
 msgid "Start Time"
 msgstr "وقت البدء"
+
+msgid "Start Trading"
+msgstr "بدء التداول"
 
 msgid "Start learning"
 msgstr "ابدأ التعلم"
@@ -8527,9 +8536,6 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 
 #~ msgid "Get started"
 #~ msgstr "ابدأ"
-
-#~ msgid "In/Out (ends between/outside and stays between/goes outside)"
-#~ msgstr "داخل/خارج (ينتهي بين/خارج، ويبقى بين/يذهب خارج)"
 
 #~ msgid "Job details"
 #~ msgstr "تفاصيل العمل"
@@ -12225,9 +12231,6 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 #~ msgid "Amount must be a positive number."
 #~ msgstr "يجب أن يكون المبلغ رقم إيجابي."
 
-#~ msgid "Authenticate"
-#~ msgstr "التوثيق"
-
 #~ msgid "Buy Price"
 #~ msgstr "سعر الشراء"
 
@@ -12303,9 +12306,6 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 #~ msgid "Monthly Webinars"
 #~ msgstr "ندوات شهرية"
 
-#~ msgid "My Account"
-#~ msgstr "حسابي"
-
 #~ msgid "No Storing of Any Content"
 #~ msgstr "لا تخزين لأي محتوى"
 
@@ -12353,9 +12353,6 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 
 #~ msgid "Sorry, you have reached your session duration limit of %plural(%1,%d minute,%d minutes)."
 #~ msgstr "عفوا، لقد وصلت لحد مدة الدورة البالغ %plural(%1,%d دقيقة,%d دقائق)."
-
-#~ msgid "Start Trading"
-#~ msgstr "بدء التداول"
 
 #~ msgid "Stop-loss:"
 #~ msgstr "وقف الخسارة:"

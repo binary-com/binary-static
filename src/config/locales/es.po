@@ -222,6 +222,9 @@ msgstr "Los contratos spread de %1 son contratos derivados apalancados, cuyo val
 msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
 msgstr "Los contratos spread de %1 requieren un 'stop loss' que limita las pérdidas máximas en las que puede incurrir un cliente. Esta cantidad de 'stop loss' actuará como depósito y no podrá ser utilizada para su comercio hasta que el contrato spread esté cerrado. Los contratos spread se cierran cuando el cliente los vende o bien al tocar el nivel de 'stop loss' o de 'stop profit'."
 
+msgid "%1's Volatility Indices are based on a cryptographically secure random number generator audited for fairness by an independent third party."
+msgstr ""
+
 msgid "%1's patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market."
 msgstr "Con la tecnología de valorización patentada de %1, usted puede obtener el mismo margen de beneficios que los inversores profesionales del mercado interbancario."
 
@@ -1162,6 +1165,9 @@ msgstr "Agosto"
 
 msgid "Australia"
 msgstr "Australia"
+
+msgid "Authenticate"
+msgstr "Autenticar"
 
 msgid "Authenticate your account"
 msgstr "Autenticar su cuenta"
@@ -3267,6 +3273,9 @@ msgstr "En este puesto de nueva creación, basado en nuestras oficinas en Cyberj
 msgid "In/Out"
 msgstr "Dentro/Fuera"
 
+msgid "In/Out (ends between/outside and stays between/goes outside)"
+msgstr "Dentro/Fuera (finaliza dentro/fuera y queda dentro/sale)"
+
 msgid "In/Out trades"
 msgstr "Contratos Dentro/Fuera"
 
@@ -4312,6 +4321,9 @@ msgstr "Plataforma con múltiples galardones."
 
 msgid "Multi-lingual and multi-currency support"
 msgstr "Soporte multi-idioma y en múltiples divisas"
+
+msgid "My Account"
+msgstr "Mi cuenta"
 
 msgid "Mycrowd - for Binary.com traders"
 msgstr "Mycrowd - para los comerciantes de Binary.com"
@@ -5618,6 +5630,9 @@ msgstr "Inversión"
 
 msgid "Start Time"
 msgstr "Hora de comienzo"
+
+msgid "Start Trading"
+msgstr "Operar ahora"
 
 msgid "Start learning"
 msgstr "Comience a aprender"
@@ -8531,9 +8546,6 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 
 #~ msgid "Get started"
 #~ msgstr "Comenzar"
-
-#~ msgid "In/Out (ends between/outside and stays between/goes outside)"
-#~ msgstr "Dentro/Fuera (finaliza dentro/fuera y queda dentro/sale)"
 
 #~ msgid "Job details"
 #~ msgstr "Detalles del trabajo"
@@ -12092,9 +12104,6 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 #~ msgid "Amount must be a positive number."
 #~ msgstr "El monto debe ser un valor positivo."
 
-#~ msgid "Authenticate"
-#~ msgstr "Autenticar"
-
 #~ msgid "Buy Price"
 #~ msgstr "Precio de compra"
 
@@ -12170,9 +12179,6 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 #~ msgid "Monthly Webinars"
 #~ msgstr "Webinars mensuales"
 
-#~ msgid "My Account"
-#~ msgstr "Mi cuenta"
-
 #~ msgid "No Storing of Any Content"
 #~ msgstr "No hay Almacenamiento de Ningún Contenido"
 
@@ -12220,9 +12226,6 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 
 #~ msgid "Sorry, you have reached your session duration limit of %plural(%1,%d minute,%d minutes)."
 #~ msgstr "Lo sentimos, ha alcanzado el límite de duración de la sesión del %plural(%1,%d minuto,%d minutos)."
-
-#~ msgid "Start Trading"
-#~ msgstr "Operar ahora"
 
 #~ msgid "Stop-loss:"
 #~ msgstr "Stop loss:"
