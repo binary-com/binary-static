@@ -223,57 +223,6 @@ fieldset .error-msg {
     color: $COLOR_ORANGE;
 }
 
-.button {
-    cursor: pointer;
-    margin-bottom: 0.5em;
-    &:hover {
-        color: $COLOR_WHITE;
-        text-decoration: none;
-    }
-    span, button {
-        @include link-button;
-        overflow: visible;
-        border: 0;
-    }
-}
-
-.button-disabled {
-    cursor: pointer;
-    margin-bottom: 0.5em;
-    &:hover {
-        color: $COLOR_GRAY_SHADE;
-        background: $COLOR_LIGHT_GRAY;
-        text-decoration: none;
-    }
-    span, button {
-        @include link-button;
-        overflow: visible;
-        white-space: nowrap;
-        border: 0;
-        font-weight: bold;
-        color: $COLOR_GRAY_SHADE;
-        background: $COLOR_LIGHT_GRAY;
-        cursor: default;
-        &:hover, &:active {
-            color: $COLOR_GRAY_SHADE;
-            background: $COLOR_LIGHT_GRAY;
-        }
-    }
-}
-
-.error-msg {
-    color: $COLOR_RED;
-    font-style: italic;
-    font-size: 93%;
-}
-
-.notice-msg {
-    color: $COLOR_BLACK;
-    background-color: $COLOR_YELLOW;
-    padding: 10px;
-    overflow: hidden;
-}
-
 .center {
     margin-left: auto;
     margin-right: auto;
