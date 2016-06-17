@@ -1,13 +1,13 @@
 <div id="portfolio">
-  <div class="grd-grid-12">
+  <div class="gr-12">
 
     <h1 class="portfolio-header-margin">[% l('Portfolio') %]</h1>
 
     <div id="portfolio-loading"></div>
 
     <div id="portfolio-content" class="dynamic">
-      <div class="grd-parent grd-row-padding">
-        <div class="grd-hide-mobile grd-hide-phablet">
+      <div class="gr-parent gr-row-padding">
+        <div class="gr-hide-m gr-hide-t">
           [% l("Account balance : [_1] [_2]", '', '') %]
           <span class="loading" data-id="balance"></span>
 

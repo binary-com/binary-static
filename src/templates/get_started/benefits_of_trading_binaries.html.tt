@@ -1,16 +1,16 @@
 <div class="section-content section-4">
-  <div class="grd-grid-12">
+  <div class="gr-12">
     <h1>[% l("Benefits of binary trading") %]</h1>
   </div>
   <div class="subsection first">
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <a name="simplicity-section"></a>
       <h2>[% l("Simplicity") %]</h2>
       <p>
         [% l("Binary Trading is simple to learn and to execute.") %]
       </p>
     </div>
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <ul>
         <li>
           [% l("<strong>Known risks</strong> - you know from the start what you will win or lose.") %]
@@ -28,14 +28,14 @@
     </div>
   </div>
   <div class="subsection hidden">
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <a name="flexibility-section"></a>
       <h2>[% l("Flexibility") %]</h2>
       <p>
         [% l("You can trade a range of markets, timescales and indices - 24/7.") %]
       </p>
     </div>
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <ul>
         <li>
           [% l("<strong>Trade when you want to trade</strong> - trade 24/7, even on weekends.") %]
@@ -56,14 +56,14 @@
     </div>
   </div>
   <div class="subsection hidden">
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <a name="from-beginners-to-pros-section"></a>
       <h2>[% l("Ideal for both pros and novices") %]</h2>
       <p>
         [% l("[_1] is tailored to traders of all levels.", website_name) %]
       </p>
     </div>
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <ul>
         <li>
           [% l("<strong>Trade with confidence</strong> - get pricing that is normally reserved for big institutional players.") %]
@@ -78,14 +78,14 @@
     </div>
   </div>
   <div class="subsection hidden">
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <a name="control-your-risk-section"></a>
       <h2>[% l("Your risks are known") %]</h2>
       <p>
         [% l("With [_1], the most you can lose is the amount you stake at the start of your trade.", website_name) %]
       </p>
     </div>
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <ul>
         <li>
           [% l("<strong>No surprises</strong> - you will never have margin calls, gap risk, slippage costs, hidden fees or commissions.") %]
@@ -100,14 +100,14 @@
     </div>
   </div>
   <div class="subsection hidden">
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <a name="high-returns-section"></a>
       <h2>[% l("High returns") %]</h2>
       <p>
         [% l("You'll be surprised by the returns you can make.") %]
       </p>
     </div>
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <ul>
         <li>
           [% l("<strong>Benchmarked prices</strong> - [_1] benchmarks its prices daily against inter-bank derivatives markets.", website_name) %]
@@ -125,14 +125,14 @@
     </div>
   </div>
   <div class="subsection hidden">
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <a name="wide-range-of-markets-section"></a>
       <h2>[% l("Choose from over 1 million trades") %]</h2>
       <p>
         [% l("Choose from over a million possible trades at any time.") %]
       </p>
     </div>
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <ul>
         <li>
           [% l("<strong>Currencies</strong> - trade all major FX pairs, around the clock.") %]
@@ -150,14 +150,14 @@
     </div>
   </div>
   <div class="subsection hidden">
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <a name="all-conditions-trading-section"></a>
       <h2>[% l("Trade all market conditions") %]</h2>
       <p>
         [% l("No matter the market - rising or falling, quiet or volatile - you'll find a trade to suit your outlook.") %]
       </p>
     </div>
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <ul>
         <li>
           [% l("<strong>Rising markets</strong> - choose the rise trade, higher trade, one-touch trade with a high barrier, or no-touch trade with a low barrier.") %]
@@ -181,14 +181,14 @@
     </div>
   </div>
   <div class="subsection hidden last">
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <a name="tax-advantages-section"></a>
       <h2>[% l("Financial rewards") %]</h2>
       <p>
         [% l("Reap the rewards of trading binaries, knowing your funds are always safe.") %]
       </p>
     </div>
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <ul>
         <li>
           [% l("<strong>Tax-free</strong> - binaries are licensed as a betting activity in the UK, so your winnings are tax-free.") %]
@@ -205,7 +205,7 @@
       </ul>
     </div>
   </div>
-  <div class="subsection-navigation grd-grid-12">
+  <div class="subsection-navigation gr-12">
     <a class="back" href="#">[% l("Back") %]</a>
     <a class="next" href="#">[% l("Next") %]</a>
   </div>
