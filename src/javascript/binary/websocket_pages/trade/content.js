@@ -156,7 +156,7 @@ var Content = (function() {
         var minDurationTooltip = document.getElementById('duration_tooltip');
         if (minDurationTooltip) {
             minDurationTooltip.textContent = localize.textMinDuration;
-            minDurationTooltip.setAttribute('title', localize.textMinDurationTooltip);
+            minDurationTooltip.setAttribute('data-balloon', localize.textMinDurationTooltip);
         }
 
         var spotLabel = document.getElementById('spot_label');
@@ -167,7 +167,7 @@ var Content = (function() {
         var barrierTooltip = document.getElementById('barrier_tooltip');
         if (barrierTooltip) {
             barrierTooltip.textContent = localize.textBarrierOffset;
-            barrierTooltip.setAttribute('title', localize.textBarrierOffsetTooltip);
+            barrierTooltip.setAttribute('data-balloon', localize.textBarrierOffsetTooltip);
         }
 
         var barrierSpan = document.getElementById('barrier_span');
@@ -178,7 +178,7 @@ var Content = (function() {
         var barrierHighTooltip = document.getElementById('barrier_high_tooltip');
         if (barrierHighTooltip) {
             barrierHighTooltip.textContent = localize.textHighBarrierOffset;
-            barrierHighTooltip.setAttribute('title', localize.textBarrierOffsetTooltip);
+            barrierHighTooltip.setAttribute('data-balloon', localize.textBarrierOffsetTooltip);
         }
         var barrierHighSpan = document.getElementById('barrier_high_span');
         if (barrierHighSpan) {
@@ -188,7 +188,7 @@ var Content = (function() {
         var barrierLowTooltip = document.getElementById('barrier_low_tooltip');
         if (barrierLowTooltip) {
             barrierLowTooltip.textContent = localize.textLowBarrierOffset;
-            barrierLowTooltip.setAttribute('title', localize.textBarrierOffsetTooltip);
+            barrierLowTooltip.setAttribute('data-balloon', localize.textBarrierOffsetTooltip);
         }
         var barrierLowSpan = document.getElementById('barrier_low_span');
         if (barrierLowSpan) {
@@ -262,17 +262,17 @@ var Content = (function() {
 
         var indicative_barrier_tooltip = document.getElementById('indicative_barrier_tooltip');
         if (indicative_barrier_tooltip) {
-            indicative_barrier_tooltip.setAttribute('title', localize.textIndicativeBarrierTooltip);
+            indicative_barrier_tooltip.setAttribute('data-balloon', localize.textIndicativeBarrierTooltip);
         }
 
         var indicative_high_barrier_tooltip = document.getElementById('indicative_high_barrier_tooltip');
         if (indicative_high_barrier_tooltip) {
-            indicative_high_barrier_tooltip.setAttribute('title', localize.textIndicativeBarrierTooltip);
+            indicative_high_barrier_tooltip.setAttribute('data-balloon', localize.textIndicativeBarrierTooltip);
         }
 
         var indicative_low_barrier_tooltip = document.getElementById('indicative_low_barrier_tooltip');
         if (indicative_low_barrier_tooltip) {
-            indicative_low_barrier_tooltip.setAttribute('title', localize.textIndicativeBarrierTooltip);
+            indicative_low_barrier_tooltip.setAttribute('data-balloon', localize.textIndicativeBarrierTooltip);
         }
 
         var jpbarrier_label = document.getElementById('jbarrier_label');

@@ -1,6 +1,7 @@
 [data-balloon] {
     position: relative;
     border-bottom: 1px dotted $COLOR_BLACK;
+    cursor: help;
 }
 
 .no-underline[data-balloon] {
@@ -33,6 +34,9 @@
     font-size: 14px;
     font-weight: normal;
     line-height: 1.5;
+    text-align: initial;
+    text-transform: none;
+    letter-spacing: normal;
     border: 1px solid $COLOR_GRAY_SHADE;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
     background: $COLOR_YELLOW;
