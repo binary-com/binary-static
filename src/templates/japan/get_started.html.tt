@@ -1,5 +1,5 @@
 <div class="get-started-jp">
-  <div class="grd-grid-3 grd-hide-mobile">
+  <div class="gr-3 gr-hide-m">
     <div class="sidebar-left">
       <ul class="nav">
         <li class="how-to-open-an-account">
@@ -24,9 +24,9 @@
     </div>
   </div>
 
-  <div class="grd-grid-6 grd-grid-mobile-12 grd-parent" id="index">
+  <div class="gr-6 gr-12-m gr-parent" id="index">
     <dl>
-      <div class="grd-grid-6 grd-no-gutter-right list">
+      <div class="gr-6 gr-no-gutter-right list">
         <div class="section section-jp">
           <a class="pjaxload a-jp" href="#how-to-open-an-account">
             <div id="how-to-open-an-account-img"></div>
@@ -53,7 +53,7 @@
         </div>
       </div>
 
-      <div class="grd-grid-6 grd-no-gutter-left list">
+      <div class="gr-6 gr-no-gutter-left list">
         <div class="section section-jp">
           <a class="pjaxload a-jp" href="#identification-documents">
             <div id="identification-documents-img"></div>
@@ -82,7 +82,7 @@
     </dl>
   </div>
 
-  <div class="grd-grid-6 grd-grid-mobile-12 grd-parent contents" style="display:none">
+  <div class="gr-6 gr-12-m gr-parent contents" style="display:none">
     <div id="content-how-to-open-an-account">
       <h1>[% l('{JAPAN ONLY}How to Open an Account') %]</h1>
       <p>
@@ -141,7 +141,7 @@
       <p>
         [% l('{JAPAN ONLY}Please download our Options Basic Knowledge guides which cover all the essential concepts, terminalogy and required information:') %]
       </p>
-      <div class="grd-grid-6 grd-grid-mobile-12">
+      <div class="gr-6 gr-12-m">
         <p class="center-aligned">
           <a class="button" href="#">
             <span class="link-size-box">[% l('{JAPAN ONLY}Introduction to Binary Options') %]</span>
@@ -158,7 +158,7 @@
           </a>
         </p>
       </div>
-      <div class="grd-grid-6 grd-grid-mobile-12">
+      <div class="gr-6 gr-12-m">
         <p class="center-aligned">
           <a class="button" href="#">
             <span class="link-size-box">[% l('{JAPAN ONLY}Trading & Hedging') %]</span>
@@ -215,7 +215,7 @@
 
   </div>
 
-  <div class="grd-grid-3 grd-hide-mobile">
+  <div class="gr-3 gr-hide-m">
     <div class="sidebar-right">
       <div class="by_client_type client_logged_out invisible">
         <p>

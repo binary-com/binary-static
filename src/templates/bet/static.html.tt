@@ -275,7 +275,7 @@
 <div id="trading_bottom_content">
   <div class="content-tab-container page-section">
     <div class="tab-menu">
-      <div class="tab-menu-wrap grd-container">
+      <div class="tab-menu-wrap container">
         <ul id="betsBottomPage" class="tm-ul">
           <li id="tab_portfolio" class="tm-li invisible first">
             <a href="#tab_portfolio" class="tm-a first"></a>
@@ -295,7 +295,7 @@
         </ul>
       </div>
     </div>
-    <div class="tab-content grd-container">
+    <div class="tab-content container">
       <div class="tab-content-wrapper" id="bet_bottom_content">
         <div id="tab_portfolio-content" class="toggle-content invisible "></div>
         <div id="tab_graph-content" class="toggle-content invisible">

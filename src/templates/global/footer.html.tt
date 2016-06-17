@@ -1,14 +1,14 @@
 [% IF !full_width %]
-</div> [% # closes grd-container %]
+</div> [% # closes container %]
 [% END %]
 <div class="push"></div>
 </div> [% # closes div#content %]
 </div>[% #closes div#content-holder %]
 <div id="footer">
     <div id="footer-menu">
-        <div class="grd-container grd-default-container">
-            <div class="grd-grid-6 grd-grid-mobile-12 grd-parent">
-                <div class="grd-grid-4">
+        <div class="container container">
+            <div class="gr-6 gr-12-m gr-parent">
+                <div class="gr-4">
                     <h1>[% l('Our Company') %]</h1>
                     <ul>
                         <li>
@@ -31,7 +31,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="grd-grid-4">
+                <div class="gr-4">
                     <h1>[% l('Education') %]</h1>
                     <ul>
                         <li>
@@ -57,14 +57,14 @@
                         </li>
                     </ul>
                 </div>
-                <div class="grd-grid-4">
+                <div class="gr-4">
                     <h1 class="ja-hide">[% l('Trading') %]</h1>
                     <ul class="ja-hide">
                         <li class="ja-hide">
                             <a class="pjaxload" href="[% request.url_for('/resources/asset_indexws') %]">[% l('Asset Index') %]</a>
                         </li>
                     </ul>
-                    <div class='grd-row-padding ja-no-padding'>
+                    <div class='gr-row-padding ja-no-padding'>
                         <h1>[% l('Banking') %]</h1>
                         <ul>
                             <li>
@@ -81,8 +81,8 @@
                     </div>
                 </div>
             </div>
-            <div class="grd-grid-6 grd-grid-mobile-12 grd-parent">
-                 <div class="grd-grid-4">
+            <div class="gr-6 gr-12-m gr-parent">
+                 <div class="gr-4">
                     <h1>[% l('Terms') %]</h1>
                     <ul>
                         <li class='ja-hide'>
@@ -121,7 +121,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="grd-grid-4">
+                <div class="gr-4">
                     <h1>[% l('Market Data') %]</h1>
                     <ul>
                         <li class="ja-hide">
@@ -132,7 +132,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="grd-grid-4">
+                <div class="gr-4">
                     <h1 class="ja-hide">[% l('Partner With Us') %]</h1>
                     <ul class="ja-hide partner">
                         <li>
@@ -143,34 +143,34 @@
         </div>
     </div>
     <div id="footer-regulatory">
-        <div class="grd-container grd-default-container">
-            <div class="grd-parent grd-grid-12 ja-hide id-hide">
-                <div class="grd-grid-2">
+        <div class="container container">
+            <div class="gr-parent gr-12 ja-hide id-hide">
+                <div class="gr-2">
                     <a href="http://www.gov.im/gambling/" target="_blank">
                         <img id="iom_icon_footer" class="responsive" src="[% request.url_for('images/pages/footer/isle-of-man.png') %]"/>
                     </a>
                 </div>
-                <div class="grd-grid-2 center">
+                <div class="gr-2 center">
                     <a href="https://www.authorisation.mga.org.mt/verification.aspx?lang=en&company=a5fd1edc-d072-4c26-b0cd-ab3fa0f0cc40" target="_blank">
                         <img id="lga_icon_footer" class="responsive" src="[% request.url_for('images/pages/footer/mga-logo-footer.svg') %]"/>
                     </a>
                 </div>
-                <div class="grd-grid-6 center">
+                <div class="gr-6 center">
                     <a href="http://mfsa.com.mt/" target="_blank">
                         <img id="mfsa_logo" class="responsive" src="[% request.url_for('images/pages/footer/mfsa-logo.svg') %]"/>
                     </a>
                 </div>
-                <div class="grd-grid-2 center">
+                <div class="gr-2 center">
                     <a href="http://mfsa.com.mt/" target="_blank">
                         <img id="mifid_logo" class="responsive" src="[% request.url_for('images/pages/footer/mifid-logo.svg') %]"/>
                     </a>
                 </div>
             </div>
-            <div class="grd-parent grd-grid-12">
-                <div id="regulatory-text" class="grd-grid-9 grd-grid-mobile-12 grd-grid-phablet-7">
+            <div class="gr-parent gr-12">
+                <div id="regulatory-text" class="gr-9 gr-12-m gr-7-t">
                     [% l("This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='[_1]' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='[_2]' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in the USA, Japan, Costa Rica or Hong Kong, or to persons under age 18.", "https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172", "https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495") %]
                 </div>
-                <div class="ja-hide grd-grid-3 grd-grid-mobile-12 grd-centered-mobile" id="social-networks">
+                <div class="ja-hide gr-3 gr-12-m gr-centered-m" id="social-networks">
                     [% INCLUDE global/social.html.tt %]
                 </div>
             </div>
@@ -182,8 +182,8 @@
         </div>
     </div>
     <div id="footer-last">
-        <div class="grd-container grd-default-container">
-            <div class="grd-grid-12">
+        <div class="container container">
+            <div class="gr-12">
                 <p class="gambling">
                     [% l('Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. <span class="ja-hide">Read about <a href="[_1]" class="pjaxload">Responsible Trading</a>.</span>', request.url_for('responsible-trading')) %]
                 </p>

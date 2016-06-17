@@ -12,5 +12,5 @@
               <div id="content_class">[% current_route %]-content</div>
           </div>
           [% IF !full_width %]
-          <div class="grd-container">
+          <div class="container">
           [% END %]

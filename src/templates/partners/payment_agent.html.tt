@@ -1,6 +1,6 @@
-<div class="grd-container grd-default-container">
+<div class="container container">
   <div class="payment-agent static_full">
-    <div class="grd-grid-3 grd-hide-mobile">
+    <div class="gr-3 gr-hide-m">
       <div class="sidebar">
         <ul id="sidebar-nav">
           <li class="selected" id="sidebar-link-section-1">
@@ -36,12 +36,12 @@
         </div>
       </div>
     </div>
-    <div class="grd-grid-9 grd-grid-mobile-12 grd-parent">
+    <div class="gr-9 gr-12-m gr-parent">
       <div class="section">
         <a id="why-choose-payment-agents"></a>
         <div class="section-content">
           <div id="section-1">
-            <div class="grd-grid-12">
+            <div class="gr-12">
               <h1>
                 [% l("Payment Agents") %]
               </h1>
@@ -52,16 +52,16 @@
                 [% l("[_1] would like to team up with potential payment agents worldwide so we can offer local payment processing services to our clients in their respective regions.", website_name) %]
               </p>
             </div>
-            <div class="grd-grid-8 grd-grid-mobile-12">
+            <div class="gr-8 gr-12-m">
               <p>
                 [% l("A Payment Agent acts like an exchange between the Client (that is, our customer) and [_1]. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by [_1]. The transfer fees are borne by the Client.", website_name) %]
               </p>
             </div>
-            <div class="grd-grid-hide grd-grid-mobile-2"></div>
-            <div class="grd-grid-4 grd-grid-mobile-8">
+            <div class="gr-hide gr-2-m"></div>
+            <div class="gr-4 gr-8-m">
               <img class="responsive" src="[% request.url_for('images/pages/payment_agent/payment_agents.svg') %]"/>
             </div>
-            <div class="grd-grid-12">
+            <div class="gr-12">
               <p class="faded">
                 [% l("Note: Payment Agent transfers are only available for accounts registered with Binary (CR) SA. Transactions are accepted only in US dollars.") %]
               </p>
@@ -74,7 +74,7 @@
         <a id="why-choose-payment-agents"></a>
         <div class="section-content">
           <div id="section-2">
-            <div class="grd-grid-12">
+            <div class="gr-12">
               <h1>
                 [% l("Why do Clients choose to use Payment Agents?") %]
               </h1>
@@ -101,16 +101,16 @@
         <a id="who-can-apply-payment-agent"></a>
         <div class="section-content">
           <div id="section-3">
-            <div class="grd-grid-12">
+            <div class="gr-12">
               <h1>
                 [% l("Who can apply to be a Payment Agent?") %]
               </h1>
             </div>
-            <div class="grd-grid-hide grd-grid-mobile-2"></div>
-            <div class="grd-grid-4 grd-grid-mobile-8">
+            <div class="gr-hide gr-2-m"></div>
+            <div class="gr-4 gr-8-m">
               <img class="responsive" src="[% request.url_for('images/pages/payment_agent/who_payment_agents.svg') %]"/>
             </div>
-            <div class="grd-grid-8 grd-grid-mobile-12">
+            <div class="gr-8 gr-12-m">
               <ul class="checked">
                 <li>
                   [% l("Online currency exchangers") %]
@@ -131,7 +131,7 @@
         <a id="benefits-of-payment-agent"></a>
         <div class="section-content">
           <div id="section-4">
-            <div class="grd-grid-12">
+            <div class="gr-12">
               <h1>
                 [% l("Benefits of being a Payment Agent") %]
               </h1>
@@ -148,9 +148,9 @@
       </div>
       <div class="section">
         <a id="next-steps"></a>
-        <div class="section-content grd-parent grd-grid-12">
+        <div class="section-content gr-parent gr-12">
           <div id="section-5">
-            <div class="grd-grid-12">
+            <div class="gr-12">
               <h1>
                 [% l("How does it work?") %]
               </h1>
@@ -184,9 +184,9 @@
       </div>
       <div class="section">
         <a id="need-more-information"></a>
-        <div class="section-content grd-parent grd-grid-12">
+        <div class="section-content gr-parent gr-12">
           <div id="section-6">
-            <div class="grd-grid-12">
+            <div class="gr-12">
               <h1>
                 [% l("Need more information?") %]
               </h1>

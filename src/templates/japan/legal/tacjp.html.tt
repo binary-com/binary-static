@@ -4,7 +4,7 @@
 %]
 <div class="hidden ja-show content-tab-container">
   <div class="tab-menu static_full">
-    <div class="tab-menu-wrap grd-container">
+    <div class="tab-menu-wrap container">
       <ul id="legal-menu" class="tm-ul">
         <li id="legal-tab" class="tm-li[% IF selected_tab == 'legal-tab' +%] active[% END +%]"><a href="#legal-tab" class="tm-a[% IF selected_tab == 'legal-tab' +%] a-active[% END +%]">[% l('Terms and Conditions') %]</a></li>
         <li id="contract-tab" class="tm-li[% IF selected_tab == 'contract-tab' +%] active[% END +%]"><a href="#contract-tab" class="tm-a[% IF selected_tab == 'contract-tab' +%] a-active[% END +%]">[% l('Pre-contract Document') %]</a></li>
@@ -35,7 +35,7 @@
       </ul>
     </div>
   </div>
-  <div class="tab-content grd-container">
+  <div class="tab-content container">
     <div class="tab-content-wrapper menu-has-sub-item">
       <div id="legal-tab-content" class="toggle-content[% IF selected_tab == 'legal-tab' +%][% ELSE +%] invisible[% END +%]">
         [% INCLUDE japan/legal/terms_and_conditions.html.tt %]

@@ -1,9 +1,9 @@
-<div id="limits-ws-container" class="grd-grid-12">
+<div id="limits-ws-container" class="gr-12">
     <h1></h1>
     <br>
     <div class="page-title" id="limits-title">
         <h2 id="trading-limits"></h2>
-        <div class="grd-row-padding">
+        <div class="gr-row-padding">
           <table class="flex-table" id="client-limits" style="display:none">
             <thead>
               <tr class="flex-tr">
@@ -57,7 +57,7 @@
     </div>
     <div class="errorbox rbox" id="client_message" style="display:none">
         <div class="rbox-wrap">
-            <div class="grd-grid-12 rbox-content" id="client_message_content">
+            <div class="gr-12 rbox-content" id="client_message_content">
             <p class="center notice-msg"></p>
         </div>
     </div>

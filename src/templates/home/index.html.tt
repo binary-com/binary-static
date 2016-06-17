@@ -1,37 +1,35 @@
 <div id="banner">
-  <div class="grd-container">
-    <div class="grd-grid-12 grd-row-padding">
-      <div class="grd-grid-12 grd-grid-mobile-12 grd-grid-phablet-12">
+  <div class="container">
+    <div class="gr-12 gr-row">
+      <div class="gr-12">
         <div id="xtop">
           <h1 class="dark">[% l("The <strong>Premier Platform</strong> for Binary Options Trading") %]</h1>
           <p class="break">[% l("Trade <strong>24/7</strong>, even on weekends.") %]</p>
           <form id="verify-email-form">
-            <span class="grd-grid-2 grd-hide-mobile"></span>
-            <div class="grd-parent grd-grid-8 grd-grid-mobile-12" id="open-account">
-              <input autocomplete="off" class="grd-grid-9" id="email" maxlength="50" placeholder="[% l('Enter your email') %]"></input>
-              <input class="grd-grid-3 button" id="btn-verify-email" type="submit" value="[% l('Create Free Account') %]"></input>
-              <p class="grd-grid-12 error-message" id="signup_error" style="display:none"></p>
+            <div class="gr-parent gr-8 gr-12-m" id="open-account">
+              <input autocomplete="off" class="gr-9" id="email" maxlength="50" placeholder="[% l('Enter your email') %]"></input>
+              <input class="gr-3 button" id="btn-verify-email" type="submit" value="[% l('Create Free Account') %]"></input>
+              <p class="gr-12 error-message" id="signup_error" style="display:none"></p>
             </div>
-            <span class="grd-grid-2 grd-hide-mobile"></span>
           </form>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div class="grd-container">
+<div class="container">
   <div id="xsection1">
-    <div class="grd-grid-12 grd-parent">
-      <h1 class="center">
+    <div class="gr-12 gr-parent">
+      <h1>
         [% l("The easiest way to get started in the financial markets") %]
       </h1>
-      <p class="center">
+      <p>
         [% l("Trade in the world's financial markets in a simple, user-friendly platform.") %]
       </p>
-      <div class="grd-grid-7 grd-grid-mobile-12 grd-parent">
-        <img class="responsive" src="[% request.url_for("images/pages/tour/trade-tutorial_1.svg") %]"/>
+      <div class="gr-7 gr-12-m gr-parent">
+        <img class="responsive" src="[% request.url_for('images/pages/tour/trade-tutorial_1.svg') %]"/>
       </div>
-      <div class="grd-grid-5 grd-grid-mobile-12 grd-parent">
+      <div class="gr-5 gr-12-m gr-parent">
         <ul>
           <li>[% l("<span>All markets:</span> currencies, stocks, indices, and commodities.") %]</li>
           <li>[% l("<span>All market conditions:</span> up/down, touch/no-touch, stays in/goes out.") %]</li>
@@ -44,12 +42,12 @@
 </div>
 <div id="xcta">
   <div id="xreason">
-    <div class="grd-container">
-      <div class="grd-row-padding">
-        <h1 class="center-aligned xhead">
+    <div class="container">
+      <div class="gr-row-padding">
+        <h1 class="xhead">
           [% l("Why choose us") %]
         </h1>
-        <div class="grd-grid-12 grd-grid-mobile-12 grd-grid-phablet-12 center-aligned">
+        <div class="gr-12">
           <p>
             [% l("Binary.com is the award-winning industry pioneer in online options trading.") %]
           </p>
@@ -61,9 +59,9 @@
           </div>
           <div id="xtop">
             <ul>
-              <span class="grd-grid-12">
-                <span class="grd-grid-1 grd-grid-phablet-2"></span>
-                <span class="grd-grid-10 grd-grid-phablet-8">
+              <span class="gr-12">
+                <span class="gr-1 gr-2-t"></span>
+                <span class="gr-10 gr-8-t">
                   <li class="xlist1">
                     <h3>
                       [% l("Sharp prices") %]
@@ -80,7 +78,7 @@
                     </h3>
                   </li>
                 </span>
-                <span class="grd-grid-1 grd-grid-phablet-2"></span>
+                <span class="gr-1 gr-2-t"></span>
               </span>
             </ul>
           </div>
@@ -90,19 +88,19 @@
   </div>
 </div>
 <div class="ja-hide" id="xacademy">
-  <div class="grd-container">
-    <div class="grd-row-padding">
-      <h1 class="center-aligned head-academy">
+  <div class="container">
+    <div class="gr-row-padding">
+      <h1 class="head-academy">
         [% l("Binary.com academy") %]
       </h1>
-      <div class="grd-grid-12 grd-grid-mobile-12 grd-grid-phablet-6 center">
+      <div class="gr-12 gr-6-t">
         <p>[% l("Improve your trading skills with our free educational & training resources.") %]</p>
       </div>
-      <div class="grd-grid-3 grd-grid-mobile-12 grd-grid-phablet-6"></div>
-      <div class="grd-grid-3 grd-grid-mobile-12 grd-grid-phablet-6 center">
-        <img class="responsive" src="[% request.url_for("images/pages/home/academy-icon.svg") %]"/>
+      <div class="gr-3 gr-12-m gr-6-t"></div>
+      <div class="gr-3 gr-12-m gr-6-t">
+        <img class="responsive" src="[% request.url_for('images/pages/home/academy-icon.svg') %]"/>
       </div>
-      <div class="grd-grid-4 grd-grid-mobile-12 grd-grid-phablet-6">
+      <div class="gr-4 gr-12-m gr-6-t">
         <ul class="checked">
           <li>
             [% l("Free webinars") %]
@@ -118,8 +116,8 @@
           </li>
         </ul>
       </div>
-      <div class="grd-grid-2 grd-grid-mobile-12 grd-grid-phablet-6"></div>
-      <div class="grd-grid-12 grd-grid-mobile-12 grd-grid-phablet-6 center">
+      <div class="gr-2 gr-6-t"></div>
+      <div class="gr-12 gr-6-t">
         <p class="academy-cta blog">
           <a class="button" href="https://blog.binary.com" target="_blank">
             <span>
@@ -132,12 +130,12 @@
   </div>
 </div>
 <div id="xtestimonial">
-  <div class="grd-container">
-    <div class="grd-row-padding">
-      <h1 class="center-aligned xhead">
+  <div class="container">
+    <div class="gr-row-padding">
+      <h1 class="xhead">
         [% l("What our clients are saying") %]
       </h1>
-      <div class="grd-grid-6 grd-grid-mobile-12 grd-grid-phablet-6">
+      <div class="gr-6 gr-12-m gr-6-t">
         <div class="xquote">
           <p>[% l("&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide&#8221;") %]</p>
         </div>
@@ -146,7 +144,7 @@
           <p>[% l("Joshua Cavallaro <span> Markets And You Trader.</span>") %]</p>
         </div>
       </div>
-      <div class="grd-grid-6 grd-grid-mobile-12 grd-grid-phablet-6">
+      <div class="gr-6 gr-12-m gr-6-t">
         <div class="xquote">
           <p>[% l("&#8220;Binary.com is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;") %]</p>
         </div>
@@ -158,13 +156,13 @@
     </div>
   </div>
 </div>
-<div class="center-aligned ja-hide" id="xpayment">
-  <div class="grd-container">
-    <div class="grd-row-padding">
-      <h1 class="center-aligned xhead">
+<div class="ja-hide" id="xpayment">
+  <div class="container">
+    <div class="gr-row-padding">
+      <h1 class="xhead">
         [% l("Payment methods") %]
       </h1>
-      <div class="grd-grid-12">
+      <div class="gr-12">
         <a class="pjaxload" href="[% request.url_for('/cashier/payment_methods') %]">
           <div class="inlined" id="visa"></div>
           <div class="inlined" id="mastercard"></div>

@@ -1,14 +1,14 @@
-<div class="grd-row-padding"></div>
-<div class="grd-row-padding"></div>
-<div class="grd-grid-12">
+<div class="gr-row-padding"></div>
+<div class="gr-row-padding"></div>
+<div class="gr-12">
     <h1>[% l('Login trouble') %]</h1>
     <p class="">[% l('If you are experiencing difficulties logging into your account, please verify that cookies are enabled in your browser. This website uses cookies to store your login ID and password (in encrypted format) on your PC during your login session.') %]</p>
     <p class="">[% l('To enable cookies, follow the instructions below for the browser version that you are using.') %]</p>
 </div>
 
-<div class="grd-parent clear">
+<div class="gr-parent clear">
 
-    <div class="grd-grid-6 grd-grid-mobile-12">
+    <div class="gr-6 gr-12-m">
         <a id="chrome" target="_blank" href="http://www.google.com/chrome/" class="li-boxes-content-icon">Binary (C.R.) S.A.</a>
         <div class="li-2-boxes-content li-boxes-content-extra-height">
             <h2>Chrome 40+</h2>
@@ -16,7 +16,7 @@
         </div>
     </div>
 
-    <div class="grd-grid-6 grd-grid-mobile-12">
+    <div class="gr-6 gr-12-m">
         <a id="firefox" target="_blank" href="http://www.mozilla.com/en-US/firefox/firefox.html" class="li-boxes-content-icon">Binary (IOM) Ltd</a>
         <div class="li-2-boxes-content li-boxes-content-extra-height">
             <h2>Mozilla Firefox 40+</h2>
@@ -26,9 +26,9 @@
 
 </div>
 
-<div class="grd-parent clear">
+<div class="gr-parent clear">
 
-    <div class="grd-grid-6 grd-grid-mobile-12">
+    <div class="gr-6 gr-12-m">
         <a id="safari" target="_blank" href="http://www.apple.com/safari/" class="li-boxes-content-icon">Binary (Europe) Ltd</a>
         <div class="li-2-boxes-content li-boxes-content-extra-height">
             <h2>Safari 5.x+</h2>
@@ -36,7 +36,7 @@
         </div>
     </div>
 
-    <div class="grd-grid-6 grd-grid-mobile-12">
+    <div class="gr-6 gr-12-m">
         <a id="opera" target="_blank" href="http://www.opera.com/" class="li-boxes-content-icon">Binary (C.R.) S.A.</a>
         <div class="li-2-boxes-content li-boxes-content-extra-height">
             <h2>Opera 30+</h2>
@@ -45,9 +45,9 @@
     </div>
 </div>
 
-<div class="grd-parent">
+<div class="gr-parent">
 
-    <div class="grd-grid-6 grd-grid-mobile-12">
+    <div class="gr-6 gr-12-m">
         <a id="internet_explorer" target="_blank" href="http://www.microsoft.com/windows/internet-explorer/default.aspx" class="li-boxes-content-icon">Binary Ltd</a>
         <div class="li-2-boxes-content li-boxes-content-extra-height">
             <h2>Microsoft Internet Explorer 11+</h2>
@@ -55,7 +55,7 @@
         </div>
     </div>
 
-    <div class="grd-grid-6 grd-grid-mobile-12">
+    <div class="gr-6 gr-12-m">
         <a id="microsoft_edge" target="_blank" href="https://www.microsoft.com/en-us/download/details.aspx?id=48126" class="li-boxes-content-icon">Binary Ltd</a>
         <div class="li-2-boxes-content li-boxes-content-extra-height" style="margin-top: 1em;">
             <h2>Microsoft Edge 12+</h2>
@@ -64,5 +64,5 @@
     </div>
 
 </div>
-<div class="grd-row-padding clear"></div>
-<div class="grd-row-padding"></div>
+<div class="gr-row-padding clear"></div>
+<div class="gr-row-padding"></div>
