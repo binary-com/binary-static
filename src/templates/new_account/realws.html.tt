@@ -15,7 +15,7 @@
                           <span id="move-residence-here"></span>
                         </div>
                     </div>
-                    <div class="center-aligned">
+                    <div class="center-text">
                       <span class="button button-focus">
                           <button class="button button-focus" id="residence_submit" type="submit">[% l('Proceed') %]</button>
                       </span>
@@ -169,7 +169,7 @@
                         </div>
                     </fieldset>
 
-                    <fieldset class="center-aligned" id="formlayout">
+                    <fieldset class="center-text" id="formlayout">
                         <div class="gr-12">
                             <p>
                                 <input type="checkbox" name="tnc" id="tnc">

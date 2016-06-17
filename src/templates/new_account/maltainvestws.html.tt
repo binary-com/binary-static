@@ -410,7 +410,7 @@
                         </div>
                     </fieldset>
 
-                    <fieldset class="center-aligned" id="formlayout">
+                    <fieldset class="center-text" id="formlayout">
                         <div class="gr-12">
                             <p>
                                 <input type="checkbox" id="tnc">
@@ -437,7 +437,7 @@
                       <p>
                         [% l('By clicking <strong>Accept</strong> below and proceeding with the Account Opening you should note that you may be exposing yourself to risks (which may be significant, including the risk of loss of the entire sum invested) that you may not have the knowledge and experience to properly assess or mitigate.') %]
                       </p>
-                      <p class="center-aligned">
+                      <p class="center-text">
                         <span class="button">
                           <button class="button" type="submit">[% l('Accept') %]</button>
                         </span>
