@@ -187,3 +187,12 @@
 [data-balloon-length='fit']:before {
     width: 100%;
 }
+
+@media screen and (max-width: 768px) {
+    [data-balloon] {
+        cursor: initial;
+    }
+    [data-balloon]:after, [data-balloon]:before {
+        display: none !important;
+    }
+}

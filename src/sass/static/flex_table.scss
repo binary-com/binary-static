@@ -43,6 +43,12 @@
                     font-size: 12px;
                 }
             }
+            td {
+                overflow: initial;
+                &[data-balloon] {
+                    border-bottom: 3px solid $COLOR_LIGHT_GRAY;
+                }
+            }
         }
     }
     #profit-table {
@@ -62,6 +68,12 @@
                 }
                 .flex-tr-child {
                     font-size: 12px;
+                }
+            }
+            td {
+                overflow: initial;
+                &[data-balloon] {
+                    border-bottom: 3px solid $COLOR_LIGHT_GRAY;
                 }
             }
         }

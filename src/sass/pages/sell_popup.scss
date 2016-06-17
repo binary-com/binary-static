@@ -70,8 +70,8 @@
                 border-bottom-color: $COLOR_GRAY_SHADE;
                 cursor: pointer;
             }
-            td {
-                border-bottom-width: 1px;
+            td, td[data-balloon] {
+                border-bottom: 1px solid $COLOR_LIGHT_GRAY;
             }
             #trade_details_profit_loss {
                 font-weight: bold;
