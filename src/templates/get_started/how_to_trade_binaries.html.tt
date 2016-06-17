@@ -113,8 +113,8 @@
     </div>
     <div class="grd-grid-12">
       <ul>
-        <li>!= l("You can set the length of your trade, from 10 seconds to 365 days.")</li>
-        <li>!= l("But there's no need to wait until expiry. You can sell back long-term trades at any time to profit from changing market conditions.")</li>
+        <li>[% l("You can set the length of your trade, from 10 seconds to 365 days.") %]</li>
+        <li>[% l("But there's no need to wait until expiry. You can sell back long-term trades at any time to profit from changing market conditions.") %]</li>
       </ul>
     </div>
     <div class="grd-grid-12">
