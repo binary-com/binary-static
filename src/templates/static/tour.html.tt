@@ -25,15 +25,17 @@
           [% l("Simply change any of your parameters and the trade price instantly changes, giving you real-time knowledge of your stake. [_1] ensures fair and transparent pricing by showing you both sides of the trade.", website_name) %]
         </p>
       </div>
-      <div class="gr-6 gr-12-m ja-hide">
-        <a class="pjaxload button" href="[% request.url_for('trading') %]">
-          <img class="responsive" id="new-trader-icon" src="[% request.url_for('images/pages/tour/tour-live-trade.svg') %]"/>
-        </a>
-      </div>
-      <div class="gr-6 gr-12-m ja-hide">
-        <a class="pjaxload button" href="[% request.url_for('trading') %]">
-          <img class="responsive" id="new-trader-icon" src="[% request.url_for('images/pages/tour/tour-opposite-trade.svg') %]"/>
-        </a>
+      <div class="gr-row">
+          <div class="gr-6 gr-12-m ja-hide">
+            <a class="pjaxload button" href="[% request.url_for('trading') %]">
+              <img class="responsive" id="new-trader-icon" src="[% request.url_for('images/pages/tour/tour-live-trade.svg') %]"/>
+            </a>
+          </div>
+          <div class="gr-6 gr-12-m ja-hide">
+            <a class="pjaxload button" href="[% request.url_for('trading') %]">
+              <img class="responsive" id="new-trader-icon" src="[% request.url_for('images/pages/tour/tour-opposite-trade.svg') %]"/>
+            </a>
+          </div>
       </div>
     </div>
   </div>
