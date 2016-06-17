@@ -42,8 +42,12 @@
     padding-top: 0 !important;
 }
 
-[class*="gr-row-padding"] {
+.gr-padding-10 {
     padding-top: 10px;
     padding-bottom: 10px;
-    overflow: hidden;
+}
+
+.gr-padding-30 {
+    padding-top: 30px;
+    padding-bottom: 30px;
 }

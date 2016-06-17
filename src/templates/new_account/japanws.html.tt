@@ -1,13 +1,13 @@
 <div class='gr-12 static_full'>
     <h1>[% l('Real Money Account Opening') %]</h1>
-    <div class="gr-parent gr-row-padding">
+    <div class="gr-parent gr-padding-10">
 
         <div class="rbox form">
             <div class="rbox-wrap">
                 <form id="japan-form">
                     <fieldset>
                         <legend id="details">[% l('Details') %]</legend>
-                        <div class="gr-row-padding row clear">
+                        <div class="gr-padding-10 row clear">
                             <div class="gr-4 form_label">
                                 <label for="gender">[% l('Gender') %]</label>
                             </div>
@@ -20,7 +20,7 @@
                                 <p class="errorfield" id="error-gender" style="display:none"></p>
                             </div>
                         </div>
-                        <div class="gr-row-padding row clear">
+                        <div class="gr-padding-10 row clear">
                             <div class="gr-4 form_label">
                                 <label for="lname">[% l('Family name') %]</label>
                             </div>
@@ -32,7 +32,7 @@
                                 <p class="errorfield" id="error-lname" style="display:none"></p>
                             </div>
                         </div>
-                        <div class="gr-row-padding row clear">
+                        <div class="gr-padding-10 row clear">
                             <div class="gr-4 form_label">
                                 <label for="fname">[% l('First name') %]</label>
                             </div>
@@ -44,7 +44,7 @@
                                 <p class="errorfield" id="error-fname" style="display:none"></p>
                             </div>
                         </div>
-                        <div class="gr-row-padding row clear">
+                        <div class="gr-padding-10 row clear">
                             <div class="gr-4 form_label">
                                 <label for="dobdd">[% l('Date of birth') %]</label>
                             </div>
@@ -55,7 +55,7 @@
                                 <p class="errorfield" id="error-birthdate" style="display:none"></p>
                             </div>
                         </div>
-                        <div class="gr-row-padding row clear">
+                        <div class="gr-padding-10 row clear">
                             <div class="gr-4 form_label">
                                 <label for="occupation">[% l('Occupation') %]</label>
                             </div>
@@ -79,7 +79,7 @@
 
                     <fieldset>
                         <legend id="address">[% l('Address') %]</legend>
-                        <div class="gr-row-padding row clear">
+                        <div class="gr-padding-10 row clear">
                             <div class="gr-4 form_label">
                                 <label for="address-postcode">[% l('Postal code/ZIP') %]</label>
                             </div>
@@ -91,7 +91,7 @@
                                 <p class="errorfield" id="error-postcode" style="display:none"></p>
                             </div>
                         </div>
-                        <div class="gr-row-padding row clear" style="display:none">
+                        <div class="gr-padding-10 row clear" style="display:none">
                             <div class="gr-4 form_label">
                                 <label for="address-state">[% l('State/Province') %]</label>
                             </div>
@@ -100,7 +100,7 @@
                                 <p class="errorfield" id="error-state" style="display:none"></p>
                             </div>
                         </div>
-                        <div class="gr-row-padding row clear">
+                        <div class="gr-padding-10 row clear">
                             <div class="gr-4 form_label">
                                 <label for="address-town">[% l('Town/City') %]</label>
                             </div>
@@ -112,7 +112,7 @@
                                 <p class="errorfield" id="error-town" style="display:none"></p>
                             </div>
                         </div>
-                        <div class="gr-row-padding row clear">
+                        <div class="gr-padding-10 row clear">
                             <div class="gr-4 form_label">
                                 <label for="address1">[% l('First line of home address') %]</label>
                             </div>
@@ -124,7 +124,7 @@
                                 <p class="errorfield" id="error-address1" style="display:none"></p>
                             </div>
                         </div>
-                        <div class="gr-row-padding row clear">
+                        <div class="gr-padding-10 row clear">
                             <div class="gr-4 form_label">
                                 <label for="address2">[% l('Second line of home address') %]</label>
                             </div>
@@ -136,7 +136,7 @@
                                 <p class="errorfield" id="error-address2" style="display:none"></p>
                             </div>
                         </div>
-                        <div class="gr-row-padding row clear">
+                        <div class="gr-padding-10 row clear">
                             <div class="gr-4 form_label">
                                 <label for="tel">[% l('Telephone') %]</label>
                             </div>
@@ -152,7 +152,7 @@
 
                     <fieldset>
                         <legend id="security">[% l('Security') %]</legend>
-                        <div class="gr-row-padding row clear">
+                        <div class="gr-padding-10 row clear">
                             <div class="gr-4 form_label">
                                 <label for="secret-question">[% l('Secret question') %]</label>
                             </div>
@@ -170,7 +170,7 @@
                                 <p class="errorfield" id="error-question" style="display:none"></p>
                             </div>
                         </div>
-                        <div class="gr-row-padding row clear">
+                        <div class="gr-padding-10 row clear">
                             <div class="gr-4 form_label">
                                 <label for="secret-answer">[% l('Answer to secret question') %]</label>
                             </div>
@@ -183,7 +183,7 @@
 
                     <fieldset>
                         <legend id="status">[% l('Status') %]</legend>
-                        <div class="gr-row-padding row clear">
+                        <div class="gr-padding-10 row clear">
                             <div class="gr-4 form_label">
                                 <label for="fatca">[% l('Not FATCA*') %]</label>
                             </div>
@@ -196,7 +196,7 @@
                               <p class="errorfield" id="error-fatca"></p>
                             </div>
                         </div>
-                        <div class="gr-row-padding row clear">
+                        <div class="gr-padding-10 row clear">
                             <div class="gr-4 form_label">
                                 <label for="annual-income">[% l('Annual Income') %]</label>
                             </div>
@@ -215,7 +215,7 @@
                               <p class="errorfield" id="error-annual-income"></p>
                             </div>
                         </div>
-                        <div class="gr-row-padding row clear">
+                        <div class="gr-padding-10 row clear">
                             <div class="gr-4 form_label">
                                 <label for="financial-asset">[% l('Financial Asset') %]</label>
                             </div>
@@ -234,7 +234,7 @@
                               <p class="errorfield" id="error-financial-asset"></p>
                             </div>
                         </div>
-                        <div class="gr-row-padding row clear">
+                        <div class="gr-padding-10 row clear">
                             <div class="gr-4 form_label">
                                 <label for="daily-loss-limit">[% l('Daily limit on losses') %]</label>
                             </div>
@@ -249,7 +249,7 @@
 
                     <fieldset>
                       <legend id="trading-experience">[% l('Trading Experience') %]</legend>
-                      <div class="gr-row-padding row clear">
+                      <div class="gr-padding-10 row clear">
                           <div class="gr-4 form_label">
                               <label for="equities">[% l('Equities') %]</label>
                           </div>
@@ -266,7 +266,7 @@
                             <p class="errorfield" id="error-equities"></p>
                           </div>
                       </div>
-                      <div class="gr-row-padding row clear">
+                      <div class="gr-padding-10 row clear">
                           <div class="gr-4 form_label">
                               <label for="commodities">[% l('Commodities') %]</label>
                           </div>
@@ -283,7 +283,7 @@
                             <p class="errorfield" id="error-commodities"></p>
                           </div>
                       </div>
-                      <div class="gr-row-padding row clear">
+                      <div class="gr-padding-10 row clear">
                           <div class="gr-4 form_label">
                               <label for="foreign-currency-deposit">[% l('Foreign currency deposit') %]</label>
                           </div>
@@ -300,7 +300,7 @@
                             <p class="errorfield" id="error-foreign-currency-deposit"></p>
                           </div>
                       </div>
-                      <div class="gr-row-padding row clear">
+                      <div class="gr-padding-10 row clear">
                           <div class="gr-4 form_label">
                               <label for="margin-fx">[% l('Margin FX') %]</label>
                           </div>
@@ -317,7 +317,7 @@
                             <p class="errorfield" id="error-margin-fx"></p>
                           </div>
                       </div>
-                      <div class="gr-row-padding row clear">
+                      <div class="gr-padding-10 row clear">
                           <div class="gr-4 form_label">
                               <label for="investment-trust">[% l('Investment trust') %]</label>
                           </div>
@@ -334,7 +334,7 @@
                             <p class="errorfield" id="error-investment-trust"></p>
                           </div>
                       </div>
-                      <div class="gr-row-padding row clear">
+                      <div class="gr-padding-10 row clear">
                           <div class="gr-4 form_label">
                               <label for="public-and-corporation-bond">[% l('Public and corporation bond') %]</label>
                           </div>
@@ -351,7 +351,7 @@
                             <p class="errorfield" id="error-public-and-corporation-bond"></p>
                           </div>
                       </div>
-                      <div class="gr-row-padding row clear">
+                      <div class="gr-padding-10 row clear">
                           <div class="gr-4 form_label">
                               <label for="otc-derivative-trading">[% l('OTC Derivative (Option) Trading') %]</label>
                           </div>
@@ -368,7 +368,7 @@
                             <p class="errorfield" id="error-otc-derivative-trading"></p>
                           </div>
                       </div>
-                      <div class="gr-row-padding row clear">
+                      <div class="gr-padding-10 row clear">
                           <div class="gr-4 form_label">
                               <label for="trading-purpose">[% l('Purpose of trading') %]</label>
                           </div>
@@ -383,7 +383,7 @@
                             <p class="errorfield" id="error-trading-purpose"></p>
                           </div>
                       </div>
-                      <div class="gr-row-padding row clear hedging-assets" style="display: none;">
+                      <div class="gr-padding-10 row clear hedging-assets" style="display: none;">
                         <div class="gr-4 form_label">
                           <label for="hedge-asset">[% l('Classification of assets requiring hedge') %]</label>
                         </div>
@@ -397,7 +397,7 @@
                           <p class="errorfield" id="error-hedge-asset"></p>
                         </div>
                       </div>
-                      <div class="gr-row-padding row clear hedging-assets" style="display: none;">
+                      <div class="gr-padding-10 row clear hedging-assets" style="display: none;">
                         <div class="gr-4 form_label">
                           <label for="hedge-asset-amount">[% l('Amount of above assets') %]</label>
                         </div>
@@ -415,7 +415,7 @@
                           [% l('We will provide all documents in electronic format. Please tick the box if you agree and go to the next step.') %]
                         </p>
                       </div>
-                      <div class="gr-row-padding row clear">
+                      <div class="gr-padding-10 row clear">
                         <div class="gr-12">
                           <div class="gr-1">
                             <input id="use-electronic-doc" type="checkbox"></input>
@@ -428,13 +428,13 @@
                           <p class="errorfield" id="error-use-electronic-doc"></p>
                         </div>
                       </div>
-                      <div class="gr-row-padding row clear">
+                      <div class="gr-padding-10 row clear">
                         <br />
                         <p class="gr-12">
                           [% l('To begin Binary option trading, you will first need to read all these documents carefully to understand the structure, risk and other important things. Please confirm that you have read and understood the documents listed below checking the box. If you have any questions, please contact our customer support.') %]
                         </p>
                       </div>
-                      <div class="gr-row-padding row clear">
+                      <div class="gr-padding-10 row clear">
                         <div class="gr-12">
                           <div class="gr-1">
                             <input id="warnings-and-policies" type="checkbox"></input>
@@ -488,7 +488,7 @@
                           [% l('To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside.') %]
                         </p>
                       </div>
-                      <div class="gr-row-padding row clear">
+                      <div class="gr-padding-10 row clear">
                         <div class="gr-12">
                           <div class="gr-1">
                             <input id="own-judgment" type="checkbox"></input>
@@ -501,7 +501,7 @@
                           <p class="errorfield" id="error-own-judgment"></p>
                         </div>
                       </div>
-                      <div class="gr-row-padding row clear">
+                      <div class="gr-padding-10 row clear">
                         <div class="gr-12">
                           <div class="gr-1">
                             <input id="trading-mechanism" type="checkbox"></input>
@@ -514,13 +514,13 @@
                           <p class="errorfield" id="error-trading-mechanism"></p>
                         </div>
                       </div>
-                      <div class="gr-row-padding row clear">
+                      <div class="gr-padding-10 row clear">
                         <br />
                         <p class="gr-12">
                           [% l('The customer agrees they understand each the following statements regarding OTC binary options trading:') %]
                         </p>
                       </div>
-                      <div class="gr-row-padding row clear">
+                      <div class="gr-padding-10 row clear">
                         <div class="gr-12">
                           <div class="gr-1">
                             <input id="judgment-time" type="checkbox"></input>
@@ -533,7 +533,7 @@
                           <p class="errorfield" id="error-judgment-time"></p>
                         </div>
                       </div>
-                      <div class="gr-row-padding row clear">
+                      <div class="gr-padding-10 row clear">
                         <div class="gr-12">
                           <div class="gr-1">
                             <input id="total-loss" type="checkbox"></input>
@@ -546,7 +546,7 @@
                           <p class="errorfield" id="error-total-loss"></p>
                         </div>
                       </div>
-                      <div class="gr-row-padding row clear">
+                      <div class="gr-padding-10 row clear">
                         <div class="gr-12">
                           <div class="gr-1">
                             <input id="sellback-loss" type="checkbox"></input>
@@ -559,7 +559,7 @@
                           <p class="errorfield" id="error-sellback-loss"></p>
                         </div>
                       </div>
-                      <div class="gr-row-padding row clear">
+                      <div class="gr-padding-10 row clear">
                         <div class="gr-12">
                           <div class="gr-1">
                             <input id="shortsell-loss" type="checkbox"></input>
@@ -572,7 +572,7 @@
                           <p class="errorfield" id="error-shortsell-loss"></p>
                         </div>
                       </div>
-                      <div class="gr-row-padding row clear">
+                      <div class="gr-padding-10 row clear">
                         <div class="gr-12">
                           <div class="gr-1">
                             <input id="company-profit" type="checkbox"></input>
@@ -585,7 +585,7 @@
                           <p class="errorfield" id="error-company-profit"></p>
                         </div>
                       </div>
-                      <div class="gr-row-padding row clear">
+                      <div class="gr-padding-10 row clear">
                         <div class="gr-12">
                           <div class="gr-1">
                             <input id="expert-knowledge" type="checkbox"></input>

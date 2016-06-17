@@ -23,7 +23,7 @@
 
 <div class="gr-6 gr-12-m gr-parent invisible" id="cashier-portfolio">
     <div class="gr-6 gr-parent">
-        <div class="gr-8 gr-row-padding">
+        <div class="gr-8 gr-padding-10">
             <a href="[% request.url_for('/cashier') %]" class="pjaxload">
                 <img class="responsive" src="[% request.url_for('images/pages/my_account/cashier-icon.svg') %]"/>
             </a>
@@ -36,7 +36,7 @@
         </div>
     </div>
     <div class="gr-6 gr-parent">
-        <div class="gr-8 gr-row-padding">
+        <div class="gr-8 gr-padding-10">
             <a href="[% request.url_for('/user/portfoliows') %]" class="pjaxload">
                 <img class="responsive" src="[% request.url_for('images/pages/my_account/portfolio-icon.svg') %]"/>
             </a>
@@ -52,7 +52,7 @@
 
 <div class="gr-6 gr-12-m gr-parent invisible" id="profit-statement">
     <div class="gr-6 gr-parent">
-        <div class="gr-8 gr-row-padding">
+        <div class="gr-8 gr-padding-10">
             <a href="[% request.url_for('/user/profit_tablews') %]" class="pjaxload">
                 <img class="responsive" src="[% request.url_for('images/pages/my_account/profit-table-icon.svg') %]"/>
             </a>
@@ -65,7 +65,7 @@
         </div>
     </div>
     <div class="gr-6 gr-parent">
-        <div class="gr-8 gr-row-padding">
+        <div class="gr-8 gr-padding-10">
             <a href="[% request.url_for('/user/statementws') %]" class="pjaxload">
                 <img class="responsive" src="[% request.url_for('images/pages/my_account/statement-icon.svg') %]"/>
             </a>

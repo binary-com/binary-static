@@ -30,10 +30,10 @@
 
         <div id="viewForm" class="viewItem hidden">
             <p>[% l('Please provide us with the following information, after retrieving the verification token from your email:') %]</p>
-            <form class="form rbox gr-row-padding" id="frmWithdrawal">
+            <form class="form rbox gr-padding-10" id="frmWithdrawal">
                 <fieldset>
 
-                  <div class="gr-row-padding row clear">
+                  <div class="gr-padding-10 row clear">
                       <div class="gr-4 form_label">
                           <label for="verification-code">[% l('Verification Token') %]</label>
                       </div>
@@ -43,7 +43,7 @@
                       </div>
                   </div>
 
-                    <div class="gr-row-padding row clear">
+                    <div class="gr-padding-10 row clear">
                         <div class="gr-4 form_label">
                             <label for="ddlAgents">[% l('Transfer to Payment Agent') %]</label>
                         </div>
@@ -52,7 +52,7 @@
                         </div>
                     </div>
 
-                    <div class="gr-row-padding row clear">
+                    <div class="gr-padding-10 row clear">
                         <div class="gr-4 form_label">
                             <label for="txtAmount">[% l('Amount') %]</label>
                         </div>
@@ -62,7 +62,7 @@
                         </div>
                     </div>
 
-                    <div class="gr-row-padding row clear">
+                    <div class="gr-padding-10 row clear">
                         <div class="gr-4 form_label">
                             <label for="txtDescription">[% l('Further Instructions') %]</label>
                         </div>
@@ -71,14 +71,14 @@
                         </div>
                     </div>
 
-                    <div class="gr-row-padding">
+                    <div class="gr-padding-10">
                         <div class="gr-4"></div>
                         <div class="gr-8">
                             <div id="formMessage"></div>
                         </div>
                     </div>
 
-                    <div class="gr-row-padding">
+                    <div class="gr-padding-10">
                         <div class="gr-4"></div>
                         <div class="gr-8">
                             <span class="button">

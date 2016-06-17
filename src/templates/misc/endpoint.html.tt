@@ -1,11 +1,11 @@
 <div class="endpoint-config">
   <h1>[% l('Change API Endpoint') %]</h1>
-  <div class="gr-parent gr-row-padding">
+  <div class="gr-parent gr-padding-10">
     <div class="rbox form">
       <div class="rbox-wrap">
         <fieldset>
           <legend>[% l('Details') %]</legend>
-          <div class="gr-row-padding row clear">
+          <div class="gr-padding-10 row clear">
               <div class="gr-4 form_label">
                   <label for="server_url">[% l('Server') %]</label>
               </div>
@@ -17,7 +17,7 @@
                   <p class="errorfield" id="error-server_url" style="display:none"></p>
               </div>
           </div>
-          <div class="gr-row-padding row clear">
+          <div class="gr-padding-10 row clear">
               <div class="gr-4 form_label">
                   <label for="app_id">[% l('OAuth App ID (Optional)') %]</label>
               </div>

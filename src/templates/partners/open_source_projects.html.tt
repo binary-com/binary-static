@@ -41,8 +41,8 @@
                 [% l("Binary.com open-source projects") %]
               </h1>
             </div>
-            <div class="gr-12 gr-row-padding"></div>
-            <div class="gr-4 gr-hide gr-show-m gr-centered-m gr-row-padding">
+            <div class="gr-12 gr-padding-10"></div>
+            <div class="gr-4 gr-hide gr-show-m gr-centered-m gr-padding-10">
               <img class="responsive" src="[% request.url_for('images/pages/open-source-projects/open-source-projects-1.svg') %]"/>
             </div>
             <div class="gr-8 gr-12-m">
@@ -100,8 +100,8 @@
                 [% l("Binary.com's CPAN contributions") %]
               </h4>
             </div>
-            <div class="gr-12 gr-row-padding"></div>
-            <div class="gr-4 gr-hide gr-show-m gr-centered-m gr-row-padding">
+            <div class="gr-12 gr-padding-10"></div>
+            <div class="gr-4 gr-hide gr-show-m gr-centered-m gr-padding-10">
               <img class="responsive" src="[% request.url_for('images/pages/open-source-projects/open-source-projects-4.svg') %]"/>
             </div>
             <div class="gr-8 gr-12-m">
@@ -125,7 +125,7 @@
                 [% l("Translations") %]
               </h1>
             </div>
-            <div class="gr-12 gr-row-padding"></div>
+            <div class="gr-12 gr-padding-10"></div>
             <div class="gr-4 gr-parent gr-6-m gr-centered-m">
               <div class="gr-9">
                 <img class="responsive" src="[% request.url_for('images/pages/open-source-projects/open-source-projects-5.png') %]"/>

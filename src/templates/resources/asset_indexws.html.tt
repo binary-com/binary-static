@@ -2,7 +2,7 @@
     <h1>[% l('Asset Index') %]</h1>
 </div>
 
-<div class="gr-12 gr-row-padding">
+<div class="gr-12 gr-padding-10">
     <p class="error-msg hidden" id="errorMsg"></p>
 
     <div id="asset-index" class="has-tabs gr-parent gr-12"></div>

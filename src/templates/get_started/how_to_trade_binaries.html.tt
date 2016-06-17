@@ -108,7 +108,7 @@
         [% l("Choose the duration") %]
       </h2>
     </div>
-    <div class="gr-3 gr-4-m gr-centered gr-row-padding ja-hide">
+    <div class="gr-3 gr-4-m gr-centered gr-padding-10 ja-hide">
       <img class="responsive" src="[% request.url_for('images/pages/get-started/duration.svg') %]"/>
     </div>
     <div class="gr-12">
@@ -122,7 +122,7 @@
         [% l("Choose the barrier(s)") %]
       </h2>
     </div>
-    <div class="gr-6 gr-7-m gr-centered gr-row-padding ja-hide">
+    <div class="gr-6 gr-7-m gr-centered gr-padding-10 ja-hide">
       <img class="responsive" src="[% request.url_for('images/pages/get-started/barriers.svg') %]"/>
     </div>
     <div class="gr-12">
@@ -140,7 +140,7 @@
         [% l("Choose the payout") %]
       </h2>
     </div>
-    <div class="gr-5 gr-8-m gr-centered gr-row-padding ja-hide">
+    <div class="gr-5 gr-8-m gr-centered gr-padding-10 ja-hide">
       <img class="responsive" src="[% request.url_for('images/pages/get-started/payout.svg') %]"/>
     </div>
     <div class="gr-12">
@@ -234,7 +234,7 @@
         </strong>
       </div>
     </div>
-    <div class="gr-12 gr-row-padding center-aligned by_client_type client_logged_out">
+    <div class="gr-12 gr-padding-10 center-aligned by_client_type client_logged_out">
       <a class="button pjaxload" href="[% request.url_for('/') %]">
         <span>
           [% l("Try it now") %]

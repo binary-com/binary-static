@@ -616,7 +616,7 @@
       <xmp>
 <fieldset>
   <legend>Fieldset Legend</legend>
-  <div class="gr-row-padding">
+  <div class="gr-padding-10">
     <div class="form_label gr-4">
       <label for="loginid">Login ID</label>
     </div>
@@ -626,7 +626,7 @@
       <p class="errorfield">error in loginid</p>
     </div>
   </div>
-  <div class="gr-row-padding">
+  <div class="gr-padding-10">
     <div class="gr-4"></div>
     <div class="gr-8">
       <span class="button">
@@ -640,7 +640,7 @@
     <div class="gr-6">
       <fieldset>
         <legend>[% l("Fieldset Legend") %]</legend>
-        <div class="gr-row-padding">
+        <div class="gr-padding-10">
           <div class="form_label gr-4">
             <label for="loginid">[% l("Login ID") %]</label>
           </div>
@@ -650,7 +650,7 @@
             <p class="errorfield">[% l("error in loginid") %]</p>
           </div>
         </div>
-        <div class="gr-row-padding">
+        <div class="gr-padding-10">
           <div class="gr-4"></div>
           <div class="gr-8">
             <span class="button">

@@ -1,5 +1,5 @@
 <div id="main-menu" class="tab-menu">
-    <div class="tab-menu-wrap container gr-hide-m gr-hide-t">
+    <div class="tab-menu-wrap container gr-hide-m gr-hide-p">
         <div class='gr-12'>
             <ul class="items">
             [%= FOREACH item IN menu=%]

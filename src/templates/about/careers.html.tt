@@ -29,9 +29,9 @@
       </p>
     </div>
     <div class="gr-6 gr-12-m">
-      <div class="gr-row-padding gr-hide-m"></div>
+      <div class="gr-padding-10 gr-hide-m"></div>
       <img class="responsive" src="[% request.url_for('images/pages/careers/careers-header.jpg') %]"/>
-      <div class="gr-row-padding gr-hide-m"></div>
+      <div class="gr-padding-10 gr-hide-m"></div>
       <p>
         [% l("Imagine a workplace that often doesn't feel like work.") %]
       </p>
@@ -79,7 +79,7 @@
     </div>
   </div>
   <div class="gr-12 gr-parent">
-    <div class="gr-6 gr-12-m gr-row-padding">
+    <div class="gr-6 gr-12-m gr-padding-10">
       <h1>
         [% l("Where you can go") %]
       </h1>
@@ -87,7 +87,7 @@
         [% l("When it's time to kick back, you'll find beautiful beaches, islands and mountains to explore, just a short flight away. From Malta, you'll have Europe, the Mediterranean and North Africa on your doorstep. And from Malaysia, you'll be within easy reach of some of Asia's most spectacular scenery.") %]
       </p>
     </div>
-    <div class="gr-6 gr-12-m gr-row-padding">
+    <div class="gr-6 gr-12-m gr-padding-10">
       <h1>
         [% l("More benefits") %]
       </h1>
@@ -100,10 +100,10 @@
     </div>
   </div>
   <div class="gr-12 gr-parent">
-    <div class="gr-6 gr-12-m gr-row-padding">
+    <div class="gr-6 gr-12-m gr-padding-10">
       <img class="responsive" src="[% request.url_for('images/pages/careers/careers-3.png') %]"/>
     </div>
-    <div class="gr-6 gr-12-m gr-row-padding">
+    <div class="gr-6 gr-12-m gr-padding-10">
       <img class="responsive" src="[% request.url_for('images/pages/careers/careers-4.png') %]"/>
       <div class="hint right-aligned">
         [% l("Company trip to Phuket, Thailand") %]
@@ -114,7 +114,7 @@
     <div class="separator-line"></div>
   </div>
   <div class="gr-12">
-    <div class="gr-6 gr-12-m gr-6-t">
+    <div class="gr-6 gr-12-m gr-6-p">
       <div class="xquote">
         <div>
           <div class="picture">
@@ -128,7 +128,7 @@
         </div>
       </div>
     </div>
-    <div class="gr-6 gr-12-m gr-6-t">
+    <div class="gr-6 gr-12-m gr-6-p">
       <div class="xquote">
         <div>
           <div class="picture">
@@ -146,7 +146,7 @@
   <div class="gr-12 gr-hide-m">
     <div class="separator-line"></div>
   </div>
-  <div class="gr-12 gr-row-padding">
+  <div class="gr-12 gr-padding-10">
     <h1>
       [% l("Open positions") %]
     </h1>
@@ -198,9 +198,9 @@
       </li>
     </ul>
   </div>
-  <div class="gr-12 gr-row-padding">
+  <div class="gr-12 gr-padding-10">
     <div class="gr-4 gr-hide-m"></div>
-    <div class="gr-4 gr-12-m gr-6-t center">
+    <div class="gr-4 gr-12-m gr-6-p center">
       <div class="xquote">
         <div>
           <div class="picture">
@@ -219,7 +219,7 @@
   <div class="gr-12 gr-hide-m">
     <div class="separator-line"></div>
   </div>
-  <div class="gr-12 gr-row-padding">
+  <div class="gr-12 gr-padding-10">
     <h1>
       [% l("Are you ready?") %]
     </h1>

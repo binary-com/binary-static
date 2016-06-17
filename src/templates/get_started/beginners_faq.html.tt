@@ -25,13 +25,13 @@
     </p>
   </div>
   <div class="gr-parent gr-4 gr-8-m gr-centered-m ja-hide">
-    <div class="gr-11 gr-row-padding gr-centered">
+    <div class="gr-11 gr-padding-10 gr-centered">
       <img class="responsive" src="[% request.url_for('images/pages/why-us/mga-logo2.svg') %]" />
     </div>
-    <div class="gr-6 gr-row-padding">
+    <div class="gr-6 gr-padding-10">
       <img class="responsive" src="[% request.url_for('images/pages/why-us/why-us-proven-record_1.svg') %]" />
     </div>
-    <div class="gr-6 gr-row-padding">
+    <div class="gr-6 gr-padding-10">
       <img class="responsive" src="[% request.url_for('images/pages/footer/isle-of-man.png') %]" />
     </div>
   </div>

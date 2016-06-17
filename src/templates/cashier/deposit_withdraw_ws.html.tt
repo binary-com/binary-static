@@ -1,4 +1,4 @@
-<div class='gr-12 gr-row-padding'>
+<div class='gr-12 gr-padding-10'>
   <h1 id="deposit-withdraw-heading"></h1>
   <div>
 
@@ -67,7 +67,7 @@
   <div id="currency-form" style="display:none">
     <div class="rbox-wrap">
       <fieldset>
-        <div class="gr-row-padding row clear">
+        <div class="gr-padding-10 row clear">
           <div class="gr-4 form_label">
             <label for="currency">[% l("Transact in") %]</label>
           </div>
@@ -80,7 +80,7 @@
             </select>
           </div>
         </div>
-        <div class="gr-row-padding row clear form_button">
+        <div class="gr-padding-10 row clear form_button">
           <div class="gr-8">
             <span class="button">
               <button class="button" id="submit-currency" type="submit" value="Continue">[% l("Continue") %]</button>
@@ -92,7 +92,7 @@
   </div>
   <div id="withdraw-form" style="display:none">
     <fieldset>
-      <div class="gr-12 gr-parent gr-row-padding">
+      <div class="gr-12 gr-parent gr-padding-10">
         <div class="form_label gr-4">
           <label for="verification-token">[% l("Verification token") %]</label>
         </div>
