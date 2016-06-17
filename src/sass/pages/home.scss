@@ -1,45 +1,19 @@
 .home-content {
     #banner {
         background: url('../images/pages/home/banner-background_1.png') 0 0/100% 108% no-repeat;
-        background-size: 100% 108%;
     }
     #verify-email-form {
-        #open-account {
-            background: $COLOR_ORANGE;
-        }
         input {
-            border-radius: 3px;
-            font-size: 14px;
             width: 100%;
             height: 3em;
             margin: 5px 0;
+            font-size: $FONT_SIZE_S;
         }
         button {
-            background: $COLOR_BLUE;
             margin: 5px 0;
             height: 3rem;
             width: 100%;
-            &:hover {
-                text-decoration: none;
-                background-color: $COLOR_DARK_GREEN;
-            }
         }
-        #signup_error {
-            background: $COLOR_ORANGE;
-            color: $COLOR_WHITE;
-        }
-        .error-message {
-            font-style: italic;
-            margin: 0;
-            margin-top: 8px;
-        }
-    }
-    .break {
-        margin-top: 1em;
-        margin-bottom: 2em;
-    }
-    .boldtop {
-        font-size: 170%;
     }
     .xlist1 {
         background: url('../images/pages/home/xicon-1.png') no-repeat;
@@ -103,9 +77,6 @@
     .xquoter-left p span, .xquoter-right p span {
         font-size: 12px;
         font-style: italic;
-    }
-    #xpayment a:hover {
-        text-decoration: none;
     }
 }
 

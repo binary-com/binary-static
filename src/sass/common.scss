@@ -48,6 +48,7 @@ input, button, textarea, select, optgroup, option {
 
 input, textarea {
     vertical-align: middle;
+    border-radius: $BORDER_RADIUS;
 }
 
 strong {
@@ -334,10 +335,25 @@ img.responsive {
     color: $COLOR_ORANGE;
 }
 
+.color-white {
+    color: $COLOR_WHITE;
+}
+
 .font-weight-700 {
     font-weight: 700;
 }
 
 .background-gray {
     background-color: $COLOR_LIGHT_GRAY;
+}
+
+.background-orange {
+    background-color: $COLOR_ORANGE;
+}
+
+button.blue-button {
+    background: $COLOR_BLUE;
+    &:hover {
+        background-color: $COLOR_DARK_GREEN;
+    }
 }
