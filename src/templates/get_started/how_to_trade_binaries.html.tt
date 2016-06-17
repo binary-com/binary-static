@@ -28,21 +28,21 @@
     <div class="gr-12 gr-parent">
       <div class="gr-4">
         <strong>
-          <p class="center-aligned">
+          <p class="center-text">
             [% l("Define your position") %]
           </p>
         </strong>
       </div>
       <div class="gr-4">
         <strong>
-          <p class="center-aligned">
+          <p class="center-text">
             [% l("Get your price") %]
           </p>
         </strong>
       </div>
       <div class="gr-4">
         <strong>
-          <p class="center-aligned">
+          <p class="center-text">
             [% l("Make your trade") %]
           </p>
         </strong>
@@ -214,27 +214,27 @@
     <div class="gr-12 gr-parent">
       <div class="gr-4">
         <strong>
-          <p class="center-aligned">
+          <p class="center-text">
             [% l("Define your position") %]
           </p>
         </strong>
       </div>
       <div class="gr-4">
         <strong>
-          <p class="center-aligned">
+          <p class="center-text">
             [% l("Get your price") %]
           </p>
         </strong>
       </div>
       <div class="gr-4">
         <strong>
-          <p class="center-aligned">
+          <p class="center-text">
             [% l("Make your trade") %]
           </p>
         </strong>
       </div>
     </div>
-    <div class="gr-12 gr-padding-10 center-aligned by_client_type client_logged_out">
+    <div class="gr-12 gr-padding-10 center-text by_client_type client_logged_out">
       <a class="button pjaxload" href="[% request.url_for('/') %]">
         <span>
           [% l("Try it now") %]

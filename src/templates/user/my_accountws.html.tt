@@ -3,7 +3,7 @@
 
     <p id="welcome_text" class="invisible"></p>
 
-    <p class="center-aligned invisible" id="authenticate_button">
+    <p class="center-text invisible" id="authenticate_button">
         <a class="button pjaxload" href="[% request.url_for('/user/authenticatews') %]">
             <span>[% l('Authenticate your account') %]</span>
         </a>
