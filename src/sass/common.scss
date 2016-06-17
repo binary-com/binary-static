@@ -6,19 +6,13 @@ html {
 }
 
 body {
-    background: $COLOR_WHITE;
-    color: $COLOR_BLACK;
-    font-size: 18px;
     min-height: 100%;
     position: relative;
     background-position: bottom;
     background-repeat: repeat-x;
-    padding: 0px;
-    margin: 0px;
     .ui-widget {
         font-size: 0.9em;
     }
-    font-family: roboto, sans-serif;
 }
 
 html, body {
@@ -62,27 +56,6 @@ strong {
 
 em {
     font-style: italic;
-}
-
-ul, ol {
-    margin: 0;
-    li {
-        margin: 0.5em 0 0;
-        line-height: 1.4em;
-        ul, ol {
-            margin: 0.8em 0 0 1em;
-        }
-    }
-}
-
-ol li {
-    list-style-type: decimal;
-    list-style-image: none;
-}
-
-img {
-    vertical-align: middle;
-    border: 0px;
 }
 
 hr {
@@ -276,25 +249,6 @@ ul.bullet li {
     }
 }
 /* Coche icon, AKA tick */
-ul.checked {
-    li {
-        background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNC4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDQzMzYzKSAgLS0+DQo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjI0cHgiIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAwIDI0IDIwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAyNCAyMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8Zz4NCgkJPGc+DQoJCQk8cG9seWdvbiBmaWxsPSIjRTk4MDI1IiBwb2ludHM9IjguNjIzLDE5LjU1NyAwLDEwLjkzNiAzLjczNiw3LjE5OCA4LjYyMywxMi4wODIgMjAuMjYyLDAuNDQzIDI0LDQuMTggOC42MjMsMTkuNTU3IAkJCSIvPg0KCQk8L2c+DQoJPC9nPg0KPC9nPg0KPC9zdmc+DQo=') no-repeat;
-        @include BIDIR_VALUE(background-position, left, right);
-        @include BIDIR_PROP(padding-left, padding-right, 35px);
-        min-height: 24px;
-    }
-}
-
-.reset_ol {
-    counter-reset: item;
-    li {
-        display: block;
-    }
-    li:before {
-        content: counters(item, '.') '. ';
-        counter-increment: item;
-    }
-}
 
 .hint {
     font-size: 14px;
