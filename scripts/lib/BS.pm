@@ -263,7 +263,7 @@ sub menu {
         id         => 'topMenuAuthenticateAccount',
         url        => url_for('/user/authenticatews'),
         text       => localize('Authenticate'),
-        class      => 'by_client_type client_real',
+        class      => 'by_client_type client_real ja-hide',
         link_class => 'with_login_cookies pjaxload',
         };
     push @menu, $my_account_ref;
