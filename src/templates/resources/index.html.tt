@@ -8,7 +8,7 @@
 </div>
 <div class="gr-12 gr-12-m gr-parent">
   <div class="gr-3 gr-6-m gr-parent ja-hide">
-    <div class="gr-8 gr-row-padding">
+    <div class="gr-8 gr-padding-10">
       <a class="pjaxload" href="[% request.url_for('/resources/asset_indexws') %]" id="asset-index">
         <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/resources/asset-index.svg') %]"/>
       </a>
@@ -25,7 +25,7 @@
     </div>
   </div>
   <div class="gr-3 gr-6-m gr-parent">
-    <div class="gr-8 gr-row-padding">
+    <div class="gr-8 gr-padding-10">
       <a class="pjaxload" href="[% request.url_for('/resources/market_timesws') %]" id="trading-times">
         <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/resources/trading-times.svg') %]"/>
       </a>

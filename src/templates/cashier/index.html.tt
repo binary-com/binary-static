@@ -3,13 +3,13 @@
     [% l('Cashier') %]
   </h1>
 </div>
-<div class="gr-row-padding table-body">
-  <div class="gr-12 gr-row-padding invisible">
+<div class="gr-padding-10 table-body">
+  <div class="gr-12 gr-padding-10 invisible">
     <p class="notice-msg by_client_type client_real with_login_cookies">
       [% l('Withdrawal is locked, please <a class="pjaxload" href="[_1]">contact us</a> for more information.', request.url_for('/contact')) %]
     </p>
   </div>
-  <div class="gr-12 gr-row-padding">
+  <div class="gr-12 gr-padding-10">
     <h3>
       [% l('Bank-wire, credit card, e-cash wallet') %]
     </h3>
@@ -31,35 +31,35 @@
     </a>
   </div>
   <div class="gr-5 gr-12-m">
-    <div class="gr-row-padding by_client_type client_real with_login_cookies invisible">
+    <div class="gr-padding-10 by_client_type client_real with_login_cookies invisible">
       <a class="pjaxload button button_large by_client_type client_real with_login_cookies invisible" href="[% request.url_for('/cashier/forwardws#deposit') %]">
         <span>
           [% l('Deposit') %]
         </span>
       </a>
     </div>
-    <div class="gr-row-padding by_client_type client_real with_login_cookies invisible">
+    <div class="gr-padding-10 by_client_type client_real with_login_cookies invisible">
       <a class="pjaxload button button_large by_client_type client_real with_login_cookies invisible" href="[% request.url_for('/cashier/forwardws#withdraw') %]">
         <span class="withdraw">
           [% l('Withdraw') %]
         </span>
       </a>
     </div>
-    <div class="gr-row-padding by_client_type client_virtual with_login_cookies virtual-upgrade-link invisible">
+    <div class="gr-padding-10 by_client_type client_virtual with_login_cookies virtual-upgrade-link invisible">
       <a class="pjaxload button button_large by_client_type client_virtual with_login_cookies virtual-upgrade-link invisible" href="[% request.url_for('new_account/realws') %]">
         <span>
           [% l('Upgrade to a Real Account') %]
         </span>
       </a>
     </div>
-    <div class="gr-row-padding by_client_type client_virtual with_login_cookies vr-japan-upgrade-link invisible">
+    <div class="gr-padding-10 by_client_type client_virtual with_login_cookies vr-japan-upgrade-link invisible">
       <a class="pjaxload button button_large by_client_type client_virtual with_login_cookies vr-japan-upgrade-link invisible" href="[% request.url_for('new_account/japanws') %]">
         <span>
           [% l('Upgrade to a Real Account') %]
         </span>
       </a>
     </div>
-    <div class="gr-row-padding by_client_type client_virtual with_login_cookies vr-financial-upgrade-link invisible">
+    <div class="gr-padding-10 by_client_type client_virtual with_login_cookies vr-financial-upgrade-link invisible">
       <a class="pjaxload button button_large by_client_type client_virtual with_login_cookies vr-financial-upgrade-link invisible" href="[% request.url_for('new_account/maltainvestws') %]">
         <span>
           [% l('Upgrade to a Financial Account') %]
@@ -68,11 +68,11 @@
     </div>
   </div>
 </div>
-<div class="gr-row-padding">
+<div class="gr-padding-10">
   <span></span>
 </div>
-<div class="gr-row-padding table-body ja-hide payment-agent" id="payment-agent-section">
-  <div class="gr-12 gr-row-padding">
+<div class="gr-padding-10 table-body ja-hide payment-agent" id="payment-agent-section">
+  <div class="gr-12 gr-padding-10">
     <h3>
       [% l('Payment Agent') %]
     </h3>
@@ -93,14 +93,14 @@
     </p>
   </div>
   <div class="gr-5 gr-12-m">
-    <div class="gr-row-padding">
+    <div class="gr-padding-10">
       <a class="pjaxload button button_large by_client_type client_real with_login_cookies invisible" href="[% request.url_for('/cashier/payment_agent_listws') %]">
         <span>
           [% l('Deposit') %]
         </span>
       </a>
     </div>
-    <div class="gr-row-padding">
+    <div class="gr-padding-10">
       <a class="pjaxload button button_large by_client_type client_real with_login_cookies invisible" href="[% request.url_for('/paymentagent/withdrawws') %]">
         <span class="withdraw">
           [% l('Withdraw') %]
@@ -109,7 +109,7 @@
     </div>
   </div>
 </div>
-<div class="gr-row-padding table-body ja-hide" id="account-transfer-section">
+<div class="gr-padding-10 table-body ja-hide" id="account-transfer-section">
   <div class="gr-2 gr-4-m">
     <div class="gr-12 no_side_padding">
       <a class="pjaxload" href="[% request.url_for('/account/account_transferws') %]" id="account_transfer">
@@ -123,7 +123,7 @@
     </p>
   </div>
   <div class="gr-5 gr-12-m">
-    <div class="gr-row-padding">
+    <div class="gr-padding-10">
       <a class="button button_large by_client_type client_real with_login_cookies invisible" href="[% request.url_for('/account/account_transferws') %]">
         <span class="withdraw">
           [% l('Transfer') %]

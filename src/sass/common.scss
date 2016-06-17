@@ -309,14 +309,35 @@ fieldset .error-msg {
     margin: 30px auto;
 }
 
-.no-padding {
-    padding: 0px !important;
-}
-
 _:-ms-fullscreen, :root #content-holder {
     height: 100%;
 }
 
 xmp {
     font-family: inherit;
+}
+
+img.responsive {
+    width: 100%;
+    height: auto;
+}
+
+.color-blue {
+    color: $COLOR_BLUE;
+}
+
+.color-green {
+    color: $COLOR_GREEN;
+}
+
+.color-orange {
+    color: $COLOR_ORANGE;
+}
+
+.font-weight-700 {
+    font-weight: 700;
+}
+
+.background-gray {
+    background-color: $COLOR_LIGHT_GRAY;
 }

@@ -1,14 +1,14 @@
 <div class="job-details container">
   <div class="gr-12 gr-parent static_full">
     <div class="gr-12">
-      <div class="gr-3 gr-row-padding gr-hide-m gr-hide-t">
+      <div class="gr-3 gr-padding-10 gr-hide-m gr-hide-p">
         <div class="gr-12 center">
           <img class="responsive dept-image" src="[% request.url_for('images/pages/careers/Information_Technology.svg') %]" style="display:none"/>
         </div>
-        <div class="gr-12 gr-row-padding">
+        <div class="gr-12 gr-padding-10">
           <h1 class="center" id="title"></h1>
         </div>
-        <div class="gr-12 gr-row-padding">
+        <div class="gr-12 gr-padding-10">
           <div class="sidebar" style="display:none">
             <ul id="sidebar-nav">
               <li id="one">
@@ -39,14 +39,14 @@
           </div>
         </div>
       </div>
-      <div class="gr-9 gr-row-padding gr-12-m gr-1-t2 sections">
+      <div class="gr-9 gr-padding-10 gr-12-m gr-12-p sections">
         <h1 class="title-sections"></h1>
         <div></div>
       </div>
     </div>
     <div class="gr-12">
-      <div class="gr-3 gr-hide-m gr-hide-t"></div>
-      <div class="gr-9 gr-12-m gr-1-t2 center">
+      <div class="gr-3 gr-hide-m gr-hide-p"></div>
+      <div class="gr-9 gr-12-m gr-12-p center">
         <div class="gr-12">
           <a class="button button-focus pjaxload" href="mailto:hr@binary.com">
             <span>
@@ -54,12 +54,12 @@
             </span>
           </a>
         </div>
-        <div class="gr-12 gr-row-padding senior_perl_message invisible">
+        <div class="gr-12 gr-padding-10 senior_perl_message invisible">
           <p>
             [% l("Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl+ebg13@ovanel.pbz sbe snfg-genpx pbafvqrengvba.") %]
           </p>
         </div>
-        <div class="gr-12 gr-row-padding">
+        <div class="gr-12 gr-padding-10">
           <a class="pjaxload" id="back-button" style="margin-top:1.4em; float:left;">
             [% l("<< Back to Job Descriptions") %]
           </a>

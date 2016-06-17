@@ -7,12 +7,12 @@
       <li>[% l('Choose the specific type of API token that you need, based on the capabilities that you wish to make available.') %]</li>
     </ul>
 
-    <div id="token_form" class="gr-12 gr-row-padding">
+    <div id="token_form" class="gr-12 gr-padding-10">
         <form class="form rbox" id="frmNewToken">
             <fieldset>
                 <legend>[% l('Create New Token') %]</legend>
 
-                <div class="gr-12 gr-parent gr-row-padding">
+                <div class="gr-12 gr-parent gr-padding-10">
                     <div class="gr-4 form_label">
                         <label for="txtName">[% l('Choose a Name:') %]</label>
                     </div>
@@ -21,7 +21,7 @@
                     </div>
                 </div>
 
-                <div class="gr-12 gr-parent gr-row-padding">
+                <div class="gr-12 gr-parent gr-padding-10">
                     <div class="gr-4 form_label">
                         <label for="txtName">[% l('Choose Scopes:') %]</label>
                     </div>
@@ -57,10 +57,10 @@
         </form>
     </div>
 
-    <div id="token_message" class="gr-12 gr-row-padding center dynamic">
+    <div id="token_message" class="gr-12 gr-padding-10 center dynamic">
         <p></p>
     </div>
 
-    <div id="tokens_list" class="gr-12 gr-parent gr-row-padding">
+    <div id="tokens_list" class="gr-12 gr-parent gr-padding-10">
     </div>
 </div>

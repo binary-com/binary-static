@@ -13,8 +13,8 @@
     </div>
   </div>
   <div class="gr-12 gr-parent">
-    <div class="gr-6 gr-12-m gr-parent gr-row-padding">
-      <div class="gr-12 gr-row-padding">
+    <div class="gr-6 gr-12-m gr-parent gr-padding-10">
+      <div class="gr-12 gr-padding-10">
         <h2 class="empty-space" itemprop="legalname">
           [% 'Binary Ltd' %]
         </h2>
@@ -24,14 +24,14 @@
       </div>
     </div>
     <div class="gr-6 gr-12-m">
-      <div class="gr-9 gr-6-m gr-centered gr-row-padding">
+      <div class="gr-9 gr-6-m gr-centered gr-padding-10">
         <a href="http://mfsa.com.mt/" target="_blank">
           <img class="responsive" src="[% request.url_for('images/pages/about/mfsa-logo.svg') %]"/>
         </a>
       </div>
-      <div class="gr-12 gr-row-padding"></div>
-      <div class="gr-12 gr-row-padding"></div>
-      <div class="gr-12 gr-row-padding">
+      <div class="gr-12 gr-padding-10"></div>
+      <div class="gr-12 gr-padding-10"></div>
+      <div class="gr-12 gr-padding-10">
         <h2>
           [% 'Binary Investments (Europe) Ltd.' %]
         </h2>
@@ -44,10 +44,10 @@
       </div>
     </div>
     <div class="gr-6 gr-12-m">
-      <div class="gr-4 gr-6-m gr-centered gr-row-padding">
+      <div class="gr-4 gr-6-m gr-centered gr-padding-10">
         <img class="responsive" src="[% request.url_for('images/pages/about/costa-rica.png') %]"/>
       </div>
-      <div class="gr-12 gr-row-padding">
+      <div class="gr-12 gr-padding-10">
         <h2>
           [% 'Binary (C.R.) S.A.' %]
         </h2>
@@ -62,13 +62,13 @@
         </p>
       </div>
     </div>
-    <div class="gr-6 gr-12-m gr-parent gr-row-padding">
-      <div class="gr-4 gr-6-m gr-centered gr-row-padding id-hide">
+    <div class="gr-6 gr-12-m gr-parent gr-padding-10">
+      <div class="gr-4 gr-6-m gr-centered gr-padding-10 id-hide">
         <a href="http://www.gov.im/gambling/" target="_blank">
           <img class="responsive" src="[% request.url_for('images/pages/footer/isle-of-man.png') %]"/>
         </a>
       </div>
-      <div class="gr-12 gr-row-padding id-hide">
+      <div class="gr-12 gr-padding-10 id-hide">
         <h2 class="small-margin">
           [% 'Binary (IOM) Ltd' %]
         </h2>
@@ -82,12 +82,12 @@
   </div>
   <div class="gr-12 gr-parent">
     <div class="gr-6 gr-12-m">
-      <div class="gr-8 gr-12-m gr-centered gr-row-padding id-hide">
+      <div class="gr-8 gr-12-m gr-centered gr-padding-10 id-hide">
         <a href='http://www.mga.org.mt/' target="_blank" >
           <img class="responsive" src="[% request.url_for("images/pages/why-us/mga-logo2.svg") %]"/>
         </a>
       </div>
-      <div class="gr-12 gr-row-padding id-hide">
+      <div class="gr-12 gr-padding-10 id-hide">
         <h2>
           [% 'Binary (Europe) Ltd' %]
         </h2>

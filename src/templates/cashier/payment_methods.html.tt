@@ -8,7 +8,7 @@
       </p>
     </div>
     <div class="gr-12">
-        <div id="payment_method_suggestions gr-row-padding" class='center-aligned'>
+        <div id="payment_method_suggestions gr-padding-10" class='center-aligned'>
             <p>
                 <a href="[% request.url_for('/') %]" class="button by_client_type client_logged_out invisible pjaxload">
                 <span>[% l('Open an account now') %]</span>
@@ -23,7 +23,7 @@
         </div>
     </div>
 
-    <div class="gr-row-padding table-header">
+    <div class="gr-padding-10 table-header">
         <div class="gr-2 gr-6-m">
             [% l('Method') %]
         </div>
@@ -45,7 +45,7 @@
         </div>
     </div>
 
-    <div class="gr-row-padding table-body">
+    <div class="gr-padding-10 table-body">
 
         <div class="gr-12">
             <h3>[% l('Bank wire/Money transfer') %]</h3>
@@ -74,7 +74,7 @@
         </div>
     </div>
 
-    <div class="gr-row-padding table-body">
+    <div class="gr-padding-10 table-body">
         <div class="gr-2 gr-6-m">
             <div id="local_bank_transfer"></div>
         </div>
@@ -98,7 +98,7 @@
         </div>
     </div>
 
-    <div class="gr-row-padding table-body">
+    <div class="gr-padding-10 table-body">
         <div class="gr-2 gr-6-m">
             <div id="western_union"></div>
         </div>
@@ -122,7 +122,7 @@
         </div>
     </div>
 
-    <div class="gr-row-padding table-body">
+    <div class="gr-padding-10 table-body">
         <div class="gr-2 gr-6-m">
             <div id="citadel"></div>
         </div>
@@ -146,7 +146,7 @@
         </div>
     </div>
 
-    <div class="gr-row-padding table-body">
+    <div class="gr-padding-10 table-body">
 
         <div class="gr-12">
             <h3>[% l('Credit/Debit Card') %]</h3>
@@ -174,7 +174,7 @@
         </div>
     </div>
 
-    <div class="gr-row-padding table-body">
+    <div class="gr-padding-10 table-body">
         <div class="gr-2 gr-6-m">
             <div id="mastercard"></div>
         </div>
@@ -198,7 +198,7 @@
         </div>
     </div>
 
-    <div class="gr-row-padding table-body">
+    <div class="gr-padding-10 table-body">
         <div class="gr-2 gr-6-m">
             <div id="cuo-credit-card"></div>
         </div>
@@ -220,7 +220,7 @@
         </div>
     </div>
 
-    <div class="gr-row-padding table-body">
+    <div class="gr-padding-10 table-body">
 
         <div class="gr-12">
             <h3>[% l('E-cash') %]</h3>
@@ -248,7 +248,7 @@
         </div>
     </div>
 
-    <div class="gr-row-padding table-body">
+    <div class="gr-padding-10 table-body">
         <div class="gr-2 gr-6-m">
             <div id="fastpay"></div>
         </div>
@@ -272,7 +272,7 @@
 
    </div>
 
-    <div class="gr-row-padding table-body">
+    <div class="gr-padding-10 table-body">
         <div class="gr-2 gr-6-m">
             <div id="perfect_money"></div>
         </div>
@@ -295,7 +295,7 @@
         </div>
     </div>
 
-    <div class="gr-row-padding table-body">
+    <div class="gr-padding-10 table-body">
         <div class="gr-2 gr-6-m">
             <div id="moneybrokers"></div>
         </div>
@@ -319,7 +319,7 @@
         </div>
     </div>
 
-    <div class="gr-row-padding table-body">
+    <div class="gr-padding-10 table-body">
         <div class="gr-2 gr-6-m">
             <div id="neteller"></div>
         </div>
@@ -343,7 +343,7 @@
         </div>
     </div>
 
-    <div class="gr-row-padding table-body">
+    <div class="gr-padding-10 table-body">
         <div class="gr-2 gr-6-m">
             <div id="moneta"></div>
         </div>
@@ -366,7 +366,7 @@
         </div>
     </div>
 
-    <div class="gr-row-padding table-body">
+    <div class="gr-padding-10 table-body">
         <div class="gr-2 gr-6-m">
             <div id="webmoney"></div>
         </div>
@@ -389,7 +389,7 @@
         </div>
     </div>
 
-    <div class="gr-row-padding table-body">
+    <div class="gr-padding-10 table-body">
         <div class="gr-2 gr-6-m">
             <div id="qiwi"></div>
         </div>
@@ -414,7 +414,7 @@
         </div>
     </div>
 
-    <div class="gr-row-padding table-body">
+    <div class="gr-padding-10 table-body">
         <div class="gr-2 gr-6-m">
             <div id="yandex"></div>
         </div>
@@ -435,7 +435,7 @@
         </div>
     </div>
 
-    <div class="gr-row-padding table-body">
+    <div class="gr-padding-10 table-body">
         <div class="gr-2 gr-6-m">
             <div id="paysafecard"></div>
         </div>

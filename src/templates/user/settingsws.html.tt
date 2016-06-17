@@ -2,7 +2,7 @@
     <h1>[% l('Settings') %]</h1>
 
     <div class="gr-3 gr-6-m gr-parent">
-        <div class="gr-8 gr-row-padding">
+        <div class="gr-8 gr-padding-10">
             <a class="pjaxload" href="[% request.url_for('/user/settings/detailsws') %]">
                 <img class="responsive" src="[% request.url_for('images/pages/settings/detail.svg') %]">
             </a>
@@ -16,7 +16,7 @@
     </div>
 
     <div class="gr-3 gr-6-m gr-parent real invisible">
-        <div class="gr-8 gr-row-padding">
+        <div class="gr-8 gr-padding-10">
             <a class="pjaxload" href="[% request.url_for('/user/settings/securityws') %]">
                 <img class="responsive" src="[% request.url_for('images/pages/settings/security.svg') %]">
             </a>
@@ -30,7 +30,7 @@
     </div>
 
     <div class="gr-3 gr-6-m gr-parent real invisible">
-        <div class="gr-8 gr-row-padding">
+        <div class="gr-8 gr-padding-10">
             <a class="pjaxload" href="[% request.url_for('/user/settings/self_exclusionws') %]">
                 <img class="responsive" src="[% request.url_for('images/pages/settings/self-exclusion.svg') %]">
             </a>
@@ -44,7 +44,7 @@
     </div>
 
     <div class="gr-3 gr-6-m gr-parent real invisible">
-        <div class="gr-8 gr-row-padding">
+        <div class="gr-8 gr-padding-10">
             <a class="pjaxload" href="[% request.url_for('/user/settings/limitsws') %]">
                 <img class="responsive" src="[% request.url_for('images/pages/settings/limits.svg') %]">
             </a>
@@ -60,7 +60,7 @@
     <div class="gr-clear real invisible"></div>
 
     <div class="gr-3 gr-6-m gr-parent ja-hide">
-        <div class="gr-8 gr-row-padding">
+        <div class="gr-8 gr-padding-10">
             <a class="pjaxload" href="[% request.url_for('/user/settings/api_tokenws') %]">
                 <img class="responsive" src="[% request.url_for('images/pages/settings/api-token.svg') %]">
             </a>
@@ -74,7 +74,7 @@
     </div>
 
     <div class="gr-3 gr-6-m gr-parent ja-hide">
-        <div class="gr-8 gr-row-padding">
+        <div class="gr-8 gr-padding-10">
             <a class="pjaxload" href="[% request.url_for('/user/settings/authorised_appsws') %]">
                 <img class="responsive" src="[% request.url_for('images/pages/settings/applications.svg') %]">
             </a>
@@ -88,7 +88,7 @@
     </div>
 
     <div class="gr-3 gr-6-m gr-parent ja-hide">
-        <div class="gr-8 gr-row-padding">
+        <div class="gr-8 gr-padding-10">
             <a class="pjaxload" href="[% request.url_for('/user/settings/iphistoryws') %]">
                 <img class="responsive" src="[% request.url_for('images/pages/settings/iphistory.svg') %]">
             </a>
@@ -102,7 +102,7 @@
     </div>
 
     <div class="gr-3 gr-6-m gr-parent ja-hide real invisible">
-        <div class="gr-8 gr-row-padding">
+        <div class="gr-8 gr-padding-10">
             <a class="pjaxload" href="[% request.url_for('/user/settings/assessmentws') %]">
                 <img class="responsive" src="[% request.url_for('images/pages/settings/financial-assessment.svg') %]">
             </a>

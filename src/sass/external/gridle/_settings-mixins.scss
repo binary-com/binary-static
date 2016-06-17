@@ -355,6 +355,11 @@
 	@include gridle_register_state(m, (
 		max-width : 480px
 	));
+	//phablet = p
+	@include gridle_register_state(p, (
+		min-width : 481px,
+		max-width : 767px
+	));
 	//tablet = t
 	@include gridle_register_state(t, (
 		min-width : 481px,

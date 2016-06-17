@@ -116,7 +116,7 @@
         <a id="controlled-risk"></a>
         <div class="section-content">
           <div id="section-3">
-            <div class="gr-12 gr-row-padding">
+            <div class="gr-12 gr-padding-10">
               <h1>
                 [% l("You won't lose your shirt") %]
               </h1>
@@ -156,15 +156,15 @@
               </p>
             </div>
             <div class="gr-8 gr-12-m gr-parent">
-              <div class="gr-7 gr-row-padding">
+              <div class="gr-7 gr-padding-10">
                 <img class="responsive" src="[% request.url_for('images/pages/why-us/trade-sample.svg') %]"/>
               </div>
               <div class="gr-5 gr-parent">
-                <div class="gr-12 gr-row-padding"></div>
-                <div class="gr-12 gr-row-padding">
+                <div class="gr-12 gr-padding-10"></div>
+                <div class="gr-12 gr-padding-10">
                   <img class="responsive" src="[% request.url_for('images/pages/why-us/trade-direct-value.svg') %]"/>
                 </div>
-                <div class="gr-12 gr-row-padding">
+                <div class="gr-12 gr-padding-10">
                   <img class="responsive" src="[% request.url_for('images/pages/why-us/trade-opposite-value.svg') %]"/>
                 </div>
               </div>
@@ -214,14 +214,14 @@
               </ul>
             </div>
             <div class="gr-4 gr-12-m gr-parent">
-              <div class="gr-11 gr-8-m gr-row-padding gr-centered">
+              <div class="gr-11 gr-8-m gr-padding-10 gr-centered">
                 <img class="responsive" src="[% request.url_for('images/pages/why-us/mga-logo2.svg') %]"/>
               </div>
               <div class="gr-parent gr-12 gr-8-m gr-centered">
-                <div class="gr-6 gr-row-padding">
+                <div class="gr-6 gr-padding-10">
                   <img class="responsive" src="[% request.url_for('images/pages/why-us/why-us-proven-record_1.svg') %]"/>
                 </div>
-                <div class="gr-6 gr-row-padding">
+                <div class="gr-6 gr-padding-10">
                   <img class="responsive" src="[% request.url_for('images/pages/footer/isle-of-man.png') %]"/>
                 </div>
               </div>

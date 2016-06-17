@@ -6,8 +6,8 @@
     <div id="portfolio-loading"></div>
 
     <div id="portfolio-content" class="dynamic">
-      <div class="gr-parent gr-row-padding">
-        <div class="gr-hide-m gr-hide-t">
+      <div class="gr-parent gr-padding-10">
+        <div class="gr-hide-m gr-hide-p">
           [% l("Account balance : [_1] [_2]", '', '') %]
           <span class="loading" data-id="balance"></span>
 
