@@ -40,6 +40,7 @@ sub _texts {
         push @texts, localize('Start Trading');
         push @texts, localize('My Account');
         push @texts, localize('Portfolio');
+        push @texts, localize('Password');
         push @texts, localize('Settings');
         push @texts, localize('Affiliate');
         push @texts, localize('Authenticate');
