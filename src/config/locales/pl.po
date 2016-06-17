@@ -9,14 +9,12 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2016-06-16 09:42+0000\n"
 "Last-Translator: Ewelina Bruździak <e.bruzdziak@gmail.com>\n"
-"Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>"
-"\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.7-dev\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
@@ -223,6 +221,9 @@ msgstr "Kontrakty Spread oferowane przez %1 to lewarowane instrumenty pochodne, 
 
 msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
 msgstr "Kontrakty Spread oferowane przez %1 wiążą się z określeniem kwoty „stop stratom”, która stanowi maksymalny limit strat ponoszonych przez klienta. Kwota „stop stratom” odgrywa rolę depozytu i nie będzie można jej wykorzystać do dalszego handlu do czasu zamknięcia kontraktu Spread. Kontrakty Spread są zamykane w chwili sprzedania ich przez Klienta lub w momencie osiągnięcia limitu „stop stratom” bądź „stop zyskom”."
+
+msgid "%1's Volatility Indices are based on a cryptographically secure random number generator audited for fairness by an independent third party."
+msgstr ""
 
 msgid "%1's patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market."
 msgstr "Opatentowana technologia wyceny opracowana przez %1 umożliwia korzystanie z takich samych stawek zwrotu, z jakich korzystają handlujący na rynku międzybankowym."
@@ -513,10 +514,7 @@ msgid "<strong>Extra revenue stream:</strong> You will have the potential to ear
 msgstr "<strong>Źródło dodatkowych przychodów:</strong> Nasz program partnerski będzie potencjalnym źródłem nowych dochodów."
 
 msgid "<strong>Falling markets</strong> - choose the falls trade, lower trade, one-touch trade with a low barrier, or no-touch trade with a high barrier."
-msgstr ""
-"<strong>Rynki o tendencji zniżkowej </strong> - wybieraj między zakładami na "
-"rynkach o tendencji zniżkowej lub malejącej, zakładami „osiągnie jeden raz” "
-"z dolnym limitem lub brakiem osiągnięcia z górnym limitem."
+msgstr "<strong>Rynki o tendencji zniżkowej </strong> - wybieraj między zakładami na rynkach o tendencji zniżkowej lub malejącej, zakładami „osiągnie jeden raz” z dolnym limitem lub brakiem osiągnięcia z górnym limitem."
 
 msgid "<strong>Higher/Lower</strong> - predict if the market will end higher or lower than a price target."
 msgstr "<strong>Wyższe/niższe</strong> - prognozuj, czy cena rynkowa będzie wyższa czy niższa niż cena docelowa."
@@ -585,10 +583,7 @@ msgid "<strong>Rise/Fall</strong> - where you can profit from the market rising 
 msgstr "<strong>Wzrost/spadek</strong> - możesz zyskać, jeśli rynek zyska lub straci w stosunku do obecnego poziomu."
 
 msgid "<strong>Rising markets</strong> - choose the rise trade, higher trade, one-touch trade with a high barrier, or no-touch trade with a low barrier."
-msgstr ""
-"<strong>Rynki zwyżkujące</strong> - możesz wybierać spośród transakcji o "
-"trendzie zwyżkującym lub wyższym oraz transakcji „osiągnie jeden raz” z "
-"górnym limitem lub transakcji „nie osiągnie” z dolnym limitem."
+msgstr "<strong>Rynki zwyżkujące</strong> - możesz wybierać spośród transakcji o trendzie zwyżkującym lub wyższym oraz transakcji „osiągnie jeden raz” z górnym limitem lub transakcji „nie osiągnie” z dolnym limitem."
 
 msgid "<strong>Scalable trading</strong> - win the same proportional return on stakes of all values."
 msgstr "<strong>Handel skalowalny</strong> - wygraj proporcjonalny zwrot ze stawek dla wszystkich wartości."
@@ -1169,6 +1164,9 @@ msgstr "Sierpień"
 
 msgid "Australia"
 msgstr "Australia"
+
+msgid "Authenticate"
+msgstr "Zweryfikuj"
 
 msgid "Authenticate your account"
 msgstr "Zweryfikuj swoje konto"
@@ -3078,16 +3076,10 @@ msgid "If you select \"Does Not Touch\", you win the payout if the market never 
 msgstr "Jeśli wybierzesz „Nie osiągnie”, zdobędziesz wypłatę, jeśli cena rynkowa nie osiągnie <strong>limitu</strong> w żadnym momencie w trakcie <strong>trwania umowy</strong>."
 
 msgid "If you select \"Ends Between\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>Low barrier</strong> AND strictly lower than the <strong>High barrier</strong>."
-msgstr ""
-"Jeśli wybierzesz „zakończy się pomiędzy”, zdobędziesz wypłatę, gdy <strong>"
-"punkt wyjściowy</strong> będzie znacząco wyższy niż <strong>dolny "
-"limit</strong> ORAZ znacząco niższy niż <strong>górny limit</strong>."
+msgstr "Jeśli wybierzesz „zakończy się pomiędzy”, zdobędziesz wypłatę, gdy <strong>punkt wyjściowy</strong> będzie znacząco wyższy niż <strong>dolny limit</strong> ORAZ znacząco niższy niż <strong>górny limit</strong>."
 
 msgid "If you select \"Ends Outside\", you win the payout if the <strong>exit spot</strong> is EITHER strictly higher than the <strong>High barrier</strong>, OR strictly lower than the <strong>Low barrier</strong>."
-msgstr ""
-"Jeśli wybierzesz „zakończy się poza”, zdobędziesz wypłatę, gdy <strong>punkt "
-"wyjściowy</strong> jest ALBO znacząco wyższy niż <strong>górny limit</strong>"
-", ALBO znacząco niższy niż <strong>dolny limit</strong>."
+msgstr "Jeśli wybierzesz „zakończy się poza”, zdobędziesz wypłatę, gdy <strong>punkt wyjściowy</strong> jest ALBO znacząco wyższy niż <strong>górny limit</strong>, ALBO znacząco niższy niż <strong>dolny limit</strong>."
 
 msgid "If you select \"Even\", you will win the payout if the <strong>last digit</strong> of the last tick is an <strong>even number (i.e., 2, 4, 6, 8, or 0).</strong>"
 msgstr "Jeśli wybierzesz „parzysta”, zdobędziesz wypłatę, gdy <strong>ostatnia cyfra</strong> ostatniego najmniejszego przyrostu ceny będzie <strong>liczbą parzystą (np. 2, 4, 6, 8, 0).</strong>"
@@ -3096,10 +3088,7 @@ msgid "If you select \"Falls\", you win the payout if the <strong>exit spot</str
 msgstr "Jeśli wybierzesz „Spadnie”, zdobędziesz wypłatę, gdy <strong>punkt wyjściowy</strong> będzie znacząco niższy niż <strong>punkt wejściowy</strong>."
 
 msgid "If you select \"Goes Outside\", you win the payout if the market touches either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>."
-msgstr ""
-"Jeśli wybierzesz „przekroczy”, zdobędziesz wypłatę, gdy cena rynkowa "
-"osiągnie albo <strong>górny limit</strong>, albo <strong>dolny limit</strong>"
-" w dowolnym momencie podczas <strong>okresu kontraktu</strong>."
+msgstr "Jeśli wybierzesz „przekroczy”, zdobędziesz wypłatę, gdy cena rynkowa osiągnie albo <strong>górny limit</strong>, albo <strong>dolny limit</strong> w dowolnym momencie podczas <strong>okresu kontraktu</strong>."
 
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>."
 msgstr "Jeśli wybierzesz „wzrośnie”, zdobędziesz wypłatę, gdy <strong>punkt wyjściowy</strong> będzie znacząco wyższy niż <strong>limit</strong>."
@@ -3120,11 +3109,7 @@ msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</str
 msgstr "Jeśli wybierzesz „wzrośnie”, zdobędziesz wypłatę, gdy <strong>punkt wyjściowy</strong> będzie znacząco wyższy niż <strong>punkt wejściowy</strong>."
 
 msgid "If you select \"Stays Between\", you win the payout if the market stays between (does not touch) either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>."
-msgstr ""
-"Jeśli wybierzesz „Pozostanie pomiędzy”, zdobędziesz wypłatę, gdy cena "
-"rynkowa pozostanie pomiędzy (nie osiągnie) <strong>górnego limitu</strong> "
-"ani <strong>dolnego limitu</strong> w żadnym momencie w czasie <strong>"
-"trwania kontraktu</strong>."
+msgstr "Jeśli wybierzesz „Pozostanie pomiędzy”, zdobędziesz wypłatę, gdy cena rynkowa pozostanie pomiędzy (nie osiągnie) <strong>górnego limitu</strong> ani <strong>dolnego limitu</strong> w żadnym momencie w czasie <strong>trwania kontraktu</strong>."
 
 msgid "If you select \"Touches\", you win the payout if the market touches the <strong>barrier</strong> at any time during the <strong>contract period</strong>."
 msgstr "Jeśli wybierzesz „osiągnie”, zdobędziesz wypłatę, gdy cena rynkowa osiągnie <strong>limit</strong> w dowolnym momencie w czasie <strong>trwania kontraktu</strong>."
@@ -3286,6 +3271,9 @@ msgstr "Na tym nowoutworzonym stanowisku w naszym biurze w Cyberjava w Malezji b
 
 msgid "In/Out"
 msgstr "Zakłady w/poza"
+
+msgid "In/Out (ends between/outside and stays between/goes outside)"
+msgstr "W/poza (zakończy się pomiędzy/poza oraz pozostanie pomiędzy/przekroczy)"
 
 msgid "In/Out trades"
 msgstr "Zakłady typu „w/poza”"
@@ -4332,6 +4320,9 @@ msgstr "Platforma uhonorowana wieloma wyróżnieniami."
 
 msgid "Multi-lingual and multi-currency support"
 msgstr "Wsparcie w wielu językach i dla różnych walut"
+
+msgid "My Account"
+msgstr "Moje konto"
 
 msgid "Mycrowd - for Binary.com traders"
 msgstr "Mycrowd - dla klientów Binary.com"
@@ -5641,6 +5632,9 @@ msgstr "Stawka"
 msgid "Start Time"
 msgstr "Godzina rozpoczęcia"
 
+msgid "Start Trading"
+msgstr "Rozpocznij handel"
+
 msgid "Start learning"
 msgstr "Rozpocznij naukę"
 
@@ -6345,10 +6339,7 @@ msgid "These are trades where the trader predicts if a market will rise or fall 
 msgstr "Są to zakłady, w których gracz prognozuje, czy cena rynkowa będzie rosła czy malała pod koniec wybranego okresu."
 
 msgid "These are trades where the trader selects a low and high barrier, and predicts if the market will stay within these barriers or go outside them (see also 'Stays Between/Goes Outside trades')."
-msgstr ""
-"Są to zakłady, w których gracz wybiera dolny i górny limit, a następnie "
-"prognozuje, czy cena rynkowa pozostanie pomiędzy tymi limitami czy je "
-"przekroczy (zobacz także „Zakłady typu pozostanie pomiędzy/przekroczy”)."
+msgstr "Są to zakłady, w których gracz wybiera dolny i górny limit, a następnie prognozuje, czy cena rynkowa pozostanie pomiędzy tymi limitami czy je przekroczy (zobacz także „Zakłady typu pozostanie pomiędzy/przekroczy”)."
 
 msgid "These are trades where the trader selects a price target, and predicts that the market will never touch the target before the expiry of the trade."
 msgstr "Są to zakłady, w których gracz wybiera cenę docelową oraz prognozuje, że rynek nigdy nie osiągnie ceny docelowej przed wygaśnięciem zakładu."
@@ -8585,9 +8576,6 @@ msgstr "You can apply to open an account online. Simply click<a class=\"pjaxload
 
 #~ msgid "Get started"
 #~ msgstr "Rozpocznij"
-
-#~ msgid "In/Out (ends between/outside and stays between/goes outside)"
-#~ msgstr "W/poza (zakończy się pomiędzy/poza oraz pozostanie pomiędzy/przekroczy)"
 
 #~ msgid "Job details"
 #~ msgstr "Opis stanowiska"
@@ -12223,9 +12211,6 @@ msgstr "You can apply to open an account online. Simply click<a class=\"pjaxload
 #~ msgid "Amount must be a positive number."
 #~ msgstr "Kwota musi być liczbą dodatnią."
 
-#~ msgid "Authenticate"
-#~ msgstr "Zweryfikuj"
-
 #~ msgid "Buy Price"
 #~ msgstr "Cena kupna"
 
@@ -12301,9 +12286,6 @@ msgstr "You can apply to open an account online. Simply click<a class=\"pjaxload
 #~ msgid "Monthly Webinars"
 #~ msgstr "Comiesięczne szkolenia internetowe"
 
-#~ msgid "My Account"
-#~ msgstr "Moje konto"
-
 #~ msgid "No Storing of Any Content"
 #~ msgstr "Nieprzechowywanie treści"
 
@@ -12351,9 +12333,6 @@ msgstr "You can apply to open an account online. Simply click<a class=\"pjaxload
 
 #~ msgid "Sorry, you have reached your session duration limit of %plural(%1,%d minute,%d minutes)."
 #~ msgstr "Przepraszamy, zakończył się dozwolony czas trwania sesji: %plural(%1,%d minuta,%d minut(y))."
-
-#~ msgid "Start Trading"
-#~ msgstr "Rozpocznij handel"
 
 #~ msgid "Stop-loss:"
 #~ msgstr "Stop-stratom:"
