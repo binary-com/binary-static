@@ -25,7 +25,8 @@
 	max-width:960px;
 }
 
-[class*="gr"] {
+//we're not using this because it overrides the existing mobile classes
+/*[class*="gr"] {
 	@include gridle_set((
 		m : (
 			grid : 12,
@@ -35,7 +36,7 @@
 			suffix : 0
 		)
 	));
-}
+}*/
 
 [class*="gr-parent"] {
     padding-bottom: 5px;

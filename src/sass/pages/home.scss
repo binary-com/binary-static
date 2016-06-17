@@ -1,11 +1,6 @@
-/* HOME PAGE RULES */
-.home-content#content {
-    width: 100%;
-}
-
 .home-content {
     #banner {
-        background: url('../images/pages/home/banner-background_1.png') no-repeat;
+        background: url('../images/pages/home/banner-background_1.png') 0 0/100% 108% no-repeat;
         background-size: 100% 108%;
     }
     #verify-email-form {
@@ -27,9 +22,6 @@
         #signup_error {
             background: $COLOR_ORANGE;
             color: $COLOR_WHITE;
-            font-size: 85%;
-            margin-bottom: 1em;
-            margin-top: 1em;
         }
         .error-message {
             font-style: italic;
@@ -43,9 +35,6 @@
     }
     .boldtop {
         font-size: 170%;
-    }
-    .inlined {
-        display: inline-block;
     }
     .xlist1 {
         background: url('../images/pages/home/xicon-1.png') no-repeat;
