@@ -1,11 +1,7 @@
 <div class="user_testing container">
-  <div class="gr-12 gr-parent static_full">
-    <div class="gr-12">
-      <h1>
-        [% l("Sign Up to Test Our Platform") %]
-      </h1>
-    </div>
-    <div class="gr-12">
+  <div class="gr-no-gutter static_full">
+    <h1>[% l("Sign Up to Test Our Platform") %]</h1>
+    <div>
       <p>
         [% l("At [_1], we consider the strength and security of our trading platform to be critically important.", website_name) %]
       </p>
@@ -15,7 +11,7 @@
       <p>
         [% l("Register to become a tester using the links below:") %]
       </p>
-      <div class="gr-12">
+      <div class="gr-row">
         <div class="gr-6 gr-12-m gr-6-p">
           <div class="xquote">
             <div>
