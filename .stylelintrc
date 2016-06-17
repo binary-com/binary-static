@@ -1,4 +1,4 @@
-{ 
+{
     'rules': {
         'color-hex-case': 'lower',
         'color-named': 'never',
@@ -81,6 +81,7 @@
         'no-duplicate-selectors': true,
         'no-eol-whitespace': true,
         'no-extra-semicolons': true,
+        'no-invalid-double-slash-comments': true,
         'no-missing-eof-newline': true,
     }
 }
