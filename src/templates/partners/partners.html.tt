@@ -7,7 +7,7 @@
       [% l("[_1] provides business partnership services via the following programs.", website_name) %]
     </p>
   </div>
-  <div class="gr-12 gr-12-m gr-parent gr-clear">
+  <div class="gr-row gr-clear">
     <div class="gr-4 gr-12-m">
       <div class="gr-6 gr-padding-10">
         <a class="pjaxload" href="[% request.url_for('/affiliate/signup') %]">
@@ -60,7 +60,7 @@
       </div>
     </div>
   </div>
-  <div class="gr-12 gr-12-m gr-parent gr-clear">
+  <div class="gr-row gr-clear">
     <div class="gr-4 gr-12-m">
       <div class="gr-6 gr-padding-10">
         <a class="pjaxload" href="[% request.url_for('/open-source-projects') %]">

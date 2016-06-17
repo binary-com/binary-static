@@ -1,5 +1,5 @@
 <div itemtype="http://schema.org/Organization">
-  <div class="gr-12 gr-parent static_full">
+  <div class="gr-row static_full">
     <div class="gr-2 gr-8-m gr-centered-m">
       <img class="responsive" src="[% request.url_for('images/pages/about/logo-blue.svg') %]"/>
     </div>
@@ -12,7 +12,7 @@
       </p>
     </div>
   </div>
-  <div class="gr-12 gr-parent">
+  <div class="gr-row">
     <div class="gr-6 gr-12-m gr-parent gr-padding-10">
       <div class="gr-12 gr-padding-10">
         <h2 class="empty-space" itemprop="legalname">
@@ -43,6 +43,8 @@
         </p>
       </div>
     </div>
+  </div>
+  <div class="gr-row">
     <div class="gr-6 gr-12-m">
       <div class="gr-4 gr-6-m gr-centered gr-padding-10">
         <img class="responsive" src="[% request.url_for('images/pages/about/costa-rica.png') %]"/>
@@ -80,7 +82,7 @@
       </div>
     </div>
   </div>
-  <div class="gr-12 gr-parent">
+  <div class="gr-row">
     <div class="gr-6 gr-12-m">
       <div class="gr-8 gr-12-m gr-centered gr-padding-10 id-hide">
         <a href='http://www.mga.org.mt/' target="_blank" >
