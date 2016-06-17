@@ -1,5 +1,5 @@
 <div class="container container">
-  <div class="why-us static_full">
+  <div class="why-us static_full gr-row">
     <div class="gr-3 gr-hide-m">
       <div class="sidebar">
         <ul id="sidebar-nav">
@@ -54,24 +54,26 @@
                 [% l("[_1]'s patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market.", website_name); %]
               </p>
             </div>
-            <div class="gr-7 gr-12-m">
-              <ul class="checked">
-                <li>
-                  [% l("Real-time prices, benchmarked against interbank options markets.") %]
-                </li>
-                <li>
-                  [% l("Returns above 100% on simple <a href='[_1]' class='pjaxload'>rise/fall</a> contracts.", request.url_for('trading?market=forex&formname=risefall')) %]
-                </li>
-                <li>
-                  [% l("Returns above 1000% on <a href='[_1]' class='pjaxload'>higher/lower</a> and <a href='[_2]' class='pjaxload'>touch/no-touch</a> trades.", request.url_for('trading?market=forex&formname=higherlower'), request.url_for('trading?market=forex&formname=touchnotouch')) %]
-                </li>
-                <li>
-                  [% l("No hidden fees or commissions.") %]
-                </li>
-              </ul>
-            </div>
-            <div class="gr-5 gr-1-m0 gr-centered-m">
-              <img class="responsive" id="new-trader-icon" src="[% request.url_for('images/pages/why-us/why-us-sharp-prices.png') %]"/>
+            <div class="gr-row">
+                <div class="gr-7 gr-12-m">
+                  <ul class="checked">
+                    <li>
+                      [% l("Real-time prices, benchmarked against interbank options markets.") %]
+                    </li>
+                    <li>
+                      [% l("Returns above 100% on simple <a href='[_1]' class='pjaxload'>rise/fall</a> contracts.", request.url_for('trading?market=forex&formname=risefall')) %]
+                    </li>
+                    <li>
+                      [% l("Returns above 1000% on <a href='[_1]' class='pjaxload'>higher/lower</a> and <a href='[_2]' class='pjaxload'>touch/no-touch</a> trades.", request.url_for('trading?market=forex&formname=higherlower'), request.url_for('trading?market=forex&formname=touchnotouch')) %]
+                    </li>
+                    <li>
+                      [% l("No hidden fees or commissions.") %]
+                    </li>
+                  </ul>
+                </div>
+                <div class="gr-5 gr-1-m0 gr-centered-m">
+                  <img class="responsive" id="new-trader-icon" src="[% request.url_for('images/pages/why-us/why-us-sharp-prices.png') %]"/>
+                </div>
             </div>
           </div>
         </div>
@@ -121,24 +123,26 @@
                 [% l("You won't lose your shirt") %]
               </h1>
             </div>
-            <div class="gr-7 gr-12-m">
-              <p>
-                [% l("With [_1], you're in control. Simply fix your upside and your downside before every trade.", website_name) %]
-              </p>
-              <ul class="checked">
-                <li>
-                  [% l("You risk only your initial stake, and your stake never increases, even in gapping markets.") %]
-                </li>
-                <li>
-                  [% l("You will have no 'margin calls', no 'stops', and no surprises.") %]
-                </li>
-                <li>
-                  [% l("You can close your trade before expiry to lock in profits.") %]
-                </li>
-              </ul>
-            </div>
-            <div class="gr-5 gr-8-m gr-centered-m">
-              <img class="responsive" src="[% request.url_for('images/pages/why-us/why-us-do-not-lose.svg') %]"/>
+            <div class="gr-row">
+                <div class="gr-7 gr-12-m">
+                  <p>
+                    [% l("With [_1], you're in control. Simply fix your upside and your downside before every trade.", website_name) %]
+                  </p>
+                  <ul class="checked">
+                    <li>
+                      [% l("You risk only your initial stake, and your stake never increases, even in gapping markets.") %]
+                    </li>
+                    <li>
+                      [% l("You will have no 'margin calls', no 'stops', and no surprises.") %]
+                    </li>
+                    <li>
+                      [% l("You can close your trade before expiry to lock in profits.") %]
+                    </li>
+                  </ul>
+                </div>
+                <div class="gr-5 gr-8-m gr-centered-m">
+                  <img class="responsive" src="[% request.url_for('images/pages/why-us/why-us-do-not-lose.svg') %]"/>
+                </div>
             </div>
           </div>
         </div>
@@ -155,35 +159,39 @@
                 [% l("[_1] offers the world's financial markets in a simple, user-friendly platform.", website_name) %]
               </p>
             </div>
-            <div class="gr-8 gr-12-m gr-parent">
-              <div class="gr-7 gr-padding-10">
-                <img class="responsive" src="[% request.url_for('images/pages/why-us/trade-sample.svg') %]"/>
-              </div>
-              <div class="gr-5 gr-parent">
-                <div class="gr-12 gr-padding-10"></div>
-                <div class="gr-12 gr-padding-10">
-                  <img class="responsive" src="[% request.url_for('images/pages/why-us/trade-direct-value.svg') %]"/>
+            <div class="gr-row">
+                <div class="gr-8 gr-12-m gr-parent">
+                    <div class="gr-row">
+                        <div class="gr-7 gr-padding-10">
+                          <img class="responsive" src="[% request.url_for('images/pages/why-us/trade-sample.svg') %]"/>
+                        </div>
+                        <div class="gr-5 gr-parent">
+                          <div class="gr-12 gr-padding-10"></div>
+                          <div class="gr-12 gr-padding-10">
+                            <img class="responsive" src="[% request.url_for('images/pages/why-us/trade-direct-value.svg') %]"/>
+                          </div>
+                          <div class="gr-12 gr-padding-10">
+                            <img class="responsive" src="[% request.url_for('images/pages/why-us/trade-opposite-value.svg') %]"/>
+                          </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="gr-12 gr-padding-10">
-                  <img class="responsive" src="[% request.url_for('images/pages/why-us/trade-opposite-value.svg') %]"/>
+                <div class="gr-4 gr-12-m">
+                  <ul class="checked">
+                    <li>
+                      [% l("Find the right trade for every market condition.") %]
+                    </li>
+                    <li>
+                      [% l("Execute your trade in seconds.") %]
+                    </li>
+                    <li>
+                      [% l("Monitor your portfolio in real time.") %]
+                    </li>
+                    <li>
+                      [% l("Sell back trades at market prices.") %]
+                    </li>
+                  </ul>
                 </div>
-              </div>
-            </div>
-            <div class="gr-4 gr-12-m">
-              <ul class="checked">
-                <li>
-                  [% l("Find the right trade for every market condition.") %]
-                </li>
-                <li>
-                  [% l("Execute your trade in seconds.") %]
-                </li>
-                <li>
-                  [% l("Monitor your portfolio in real time.") %]
-                </li>
-                <li>
-                  [% l("Sell back trades at market prices.") %]
-                </li>
-              </ul>
             </div>
           </div>
         </div>
@@ -197,34 +205,38 @@
                 [% l("Your funds are safe") %]
               </h1>
             </div>
-            <div class="gr-8 gr-12-m">
-              <p>
-                [% l("With [_1], your money is secure.", website_name) %]
-              </p>
-              <ul class="checked">
-                <li>
-                  [% l("We segregate and hold client funds in secure AAA-rated banks.") %]
-                </li>
-                <li>
-                  [% l("We are fully licensed in the British Isles and Malta.") %]
-                </li>
-                <li>
-                  [% l("We have a proven track record since starting in 2000.") %]
-                </li>
-              </ul>
-            </div>
-            <div class="gr-4 gr-12-m gr-parent">
-              <div class="gr-11 gr-8-m gr-padding-10 gr-centered">
-                <img class="responsive" src="[% request.url_for('images/pages/why-us/mga-logo2.svg') %]"/>
-              </div>
-              <div class="gr-parent gr-12 gr-8-m gr-centered">
-                <div class="gr-6 gr-padding-10">
-                  <img class="responsive" src="[% request.url_for('images/pages/why-us/why-us-proven-record_1.svg') %]"/>
+            <div class="gr-row">
+                <div class="gr-8 gr-12-m">
+                  <p>
+                    [% l("With [_1], your money is secure.", website_name) %]
+                  </p>
+                  <ul class="checked">
+                    <li>
+                      [% l("We segregate and hold client funds in secure AAA-rated banks.") %]
+                    </li>
+                    <li>
+                      [% l("We are fully licensed in the British Isles and Malta.") %]
+                    </li>
+                    <li>
+                      [% l("We have a proven track record since starting in 2000.") %]
+                    </li>
+                  </ul>
                 </div>
-                <div class="gr-6 gr-padding-10">
-                  <img class="responsive" src="[% request.url_for('images/pages/footer/isle-of-man.png') %]"/>
+                <div class="gr-4 gr-12-m gr-parent">
+                    <div class="gr-row">
+                        <div class="gr-11 gr-8-m gr-padding-10 gr-centered">
+                          <img class="responsive" src="[% request.url_for('images/pages/why-us/mga-logo2.svg') %]"/>
+                        </div>
+                        <div class="gr-parent gr-12 gr-8-m gr-centered">
+                          <div class="gr-6 gr-padding-10">
+                            <img class="responsive" src="[% request.url_for('images/pages/why-us/why-us-proven-record_1.svg') %]"/>
+                          </div>
+                          <div class="gr-6 gr-padding-10">
+                            <img class="responsive" src="[% request.url_for('images/pages/footer/isle-of-man.png') %]"/>
+                          </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
           </div>
         </div>
@@ -238,29 +250,31 @@
                 [% l("Go with the leader") %]
               </h1>
             </div>
-            <div class="gr-3 gr-6-m gr-centered-m">
-              <p>
-                <img class="responsive" src="[% request.url_for('images/pages/home/awards-mena.png') %]"/>
-              </p>
-            </div>
-            <div class="gr-9 gr-12-m">
-              <p>
-                [% l("[_1] is the award-winning industry pioneer in online options trading. We boast:", website_name) %]
-              </p>
-              <ul class="checked">
-                <li>
-                  [% l("Over two billion dollars in trades to date.") %]
-                </li>
-                <li>
-                  [% l("First-class client service.") %]
-                </li>
-                <li>
-                  [% l("Multi award-winning trading platform.") %]
-                </li>
-                <li>
-                  [% l("Exclusive binary trading technology.") %]
-                </li>
-              </ul>
+            <div class="gr-row">
+                <div class="gr-3 gr-6-m gr-centered-m">
+                  <p>
+                    <img class="responsive" src="[% request.url_for('images/pages/home/awards-mena.png') %]"/>
+                  </p>
+                </div>
+                <div class="gr-9 gr-12-m">
+                  <p>
+                    [% l("[_1] is the award-winning industry pioneer in online options trading. We boast:", website_name) %]
+                  </p>
+                  <ul class="checked">
+                    <li>
+                      [% l("Over two billion dollars in trades to date.") %]
+                    </li>
+                    <li>
+                      [% l("First-class client service.") %]
+                    </li>
+                    <li>
+                      [% l("Multi award-winning trading platform.") %]
+                    </li>
+                    <li>
+                      [% l("Exclusive binary trading technology.") %]
+                    </li>
+                  </ul>
+                </div>
             </div>
           </div>
         </div>

@@ -160,12 +160,12 @@
                                     <img id="iom_icon_footer" class="responsive" src="[% request.url_for('images/pages/footer/isle-of-man.png') %]"/>
                                 </a>
                             </div>
-                            <div class="gr-2 centerText">
+                            <div class="gr-2 center-text">
                                 <a href="https://www.authorisation.mga.org.mt/verification.aspx?lang=en&company=a5fd1edc-d072-4c26-b0cd-ab3fa0f0cc40" target="_blank">
                                     <img id="lga_icon_footer" class="responsive" src="[% request.url_for('images/pages/footer/mga-logo-footer.svg') %]"/>
                                 </a>
                             </div>
-                            <div class="gr-6 centerText">
+                            <div class="gr-6 center-text">
                                 <a href="http://mfsa.com.mt/" target="_blank">
                                     <img id="mfsa_logo" class="responsive" src="[% request.url_for('images/pages/footer/mfsa-logo.svg') %]"/>
                                 </a>
