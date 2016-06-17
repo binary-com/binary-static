@@ -196,20 +196,6 @@ fieldset .error-msg {
     color: $COLOR_ORANGE;
 }
 
-.center {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-
-ul.bullet, ol {
-    margin: 1.25em 0 1.25em 1.25em;
-}
-
-ul.bullet li {
-    list-style-image: url('../images/pages/get-started/list-circle_1.png');
-}
-
 .inpage_popup_container {
     position: fixed;
     margin: 0;
