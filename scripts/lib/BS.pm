@@ -261,6 +261,7 @@ sub menu {
     push @{$my_account_ref->{sub_items}},
         {
         id         => 'topMenuAuthenticateAccount',
+        class      => 'ja-hide',
         url        => url_for('/user/authenticatews'),
         text       => localize('Authenticate'),
         class      => 'by_client_type client_real',
