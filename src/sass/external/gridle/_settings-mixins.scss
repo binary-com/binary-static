@@ -362,7 +362,7 @@
 	));
 	//tablet = t
 	@include gridle_register_state(t, (
-		min-width : 481px,
+		min-width : 767px,
 		max-width : 1024px
 	));
 }

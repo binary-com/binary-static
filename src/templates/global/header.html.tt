@@ -81,10 +81,10 @@
                     </form>
                   </div>
                 </div>
-                <div id="client-logged-out" class="gr-3 gr-9-m gr-10-p gr-no-gutter-left by_client_type client_logged_out invisible">
+                <div id="client-logged-out" class="gr-3 gr-8-m gr-10-p gr-no-gutter-left by_client_type client_logged_out invisible">
                     <div id="btn_login" class="button">[% l('Log in') %]</div>
                 </div>
-                <div class='gr-1 gr-hide gr-show-m gr-no-gutter-mobile gr-show-p'>
+                <div class='gr-2-m gr-hide gr-show-m gr-no-gutter-mobile gr-show-p'>
                     <div id='mobile-menu-icon-container'>
                         <a href='#mobile-menu' id='mobile-menu-icon'>
                             <img class='responsive' src="[% request.url_for('images/pages/binary-mobile-menu.svg') %]"/>
