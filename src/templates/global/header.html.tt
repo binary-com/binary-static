@@ -14,7 +14,7 @@
                     <a class="invisible pjaxload with_login_cookies pulse financial-upgrade-link" href="[% request.url_for('new_account/maltainvestws') %]">[% l("Open a Financial Account") %]</a>
                 </div>
                 <div class='grd-grid-6 grd-grid-mobile-12 grd-parent' id='topbar-info'>
-                    <div class='grd-grid-5 grd-grid-mobile-7' id="gmt-clock"></div>
+                    <div class='grd-grid-5 grd-grid-mobile-7 no-underline' id="gmt-clock" data-balloon-pos="down"></div>
                     <div class='grd-grid-3 grd-hide-mobile' id='contact-us'>
                         <a class="pjaxload" href="[% request.url_for('contact') %]"[% target %]>[% l("Contact Us") %]</a>
                     </div>

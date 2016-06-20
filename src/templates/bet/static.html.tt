@@ -54,8 +54,8 @@
                               <input id="duration_amount" type="number" class="small_width_input" /><label></label>
                               <select id="duration_units" class="medium_width_input"></select>
                               <span id="duration_tooltip_wrapper">
-                              <abbr rel="tooltip" id="duration_tooltip"></abbr>
-                              <span id="duration_minimum"></span>
+                                <span id="duration_tooltip"></span>
+                                <span id="duration_minimum"></span>
                               </span>
                            </div>
                            <div id="expiry_type_endtime">
@@ -67,37 +67,37 @@
                      <div class="row barrier_class" id="barrier_row">
                         <div class="col form_label">
                            <label for="H" id="barrier_label">
-                           <abbr rel="tooltip" id="barrier_tooltip"></abbr>
-                           <span id="barrier_span"></span>
+                             <span id="barrier_tooltip" data-balloon-length="xlarge"></span>
+                             <span id="barrier_span"></span>
                            </label>
                         </div>
                         <div class="big-col">
                            <input id="barrier" type="text" name="H" pattern="^[\+-]\d+(\.\d{1,5})?|\d+(\.\d{1,5})?$" title="[% l('Please enter a number.') %]" />
-                           <abbr rel="tooltip" id="indicative_barrier_tooltip"></abbr>
+                           <span id="indicative_barrier_tooltip" data-balloon-length="xlarge"></span>
                         </div>
                      </div>
                      <div class="row barrier_class" id="high_barrier_row">
                         <div class="col form_label">
                            <label for="H" id="barrier_high_label">
-                           <abbr rel="tooltip" id="barrier_high_tooltip"></abbr>
-                           <span id="barrier_high_span"></span>
+                             <span id="barrier_high_tooltip" data-balloon-length="xlarge"></span>
+                             <span id="barrier_high_span"></span>
                            </label>
                         </div>
                         <div class="big-col">
                            <input id="barrier_high" type="text" name="H" pattern="^[\+-]\d+(\.\d{1,5})?|\d+(\.\d{1,5})?$" title="[% l('Please enter a number.') %]" />
-                           <abbr rel="tooltip" id="indicative_high_barrier_tooltip"></abbr>
+                           <span id="indicative_high_barrier_tooltip" data-balloon-length="xlarge"></span>
                         </div>
                      </div>
                      <div class="row barrier_class" id="low_barrier_row">
                         <div class="col form_label">
                            <label for="L" id="barrier_low_label">
-                           <abbr rel="tooltip" id="barrier_low_tooltip"></abbr>
-                           <span id="barrier_low_span"></span>
+                             <span id="barrier_low_tooltip" data-balloon-length="xlarge"></span>
+                             <span id="barrier_low_span"></span>
                            </label>
                         </div>
                         <div class="big-col">
                            <input id="barrier_low" type="text" name="L" pattern="^[\+-]\d+(\.\d{1,5})?|\d+(\.\d{1,5})?$" title="[% l('Please enter a number.') %]" />
-                           <abbr rel="tooltip" id="indicative_low_barrier_tooltip"></abbr>
+                           <span id="indicative_low_barrier_tooltip" data-balloon-length="xlarge"></span>
                         </div>
                      </div>
                      <div class="row" id="prediction_row">
@@ -235,7 +235,7 @@
                           </div>
                         </div>
                         <div class="contract_purchase button">
-                           <button class="purchase_button contract_description" id="purchase_button_top" rel="tooltip" title="" value="purchase"></button>
+                           <button class="purchase_button contract_description" id="purchase_button_top" data-balloon-length="xlarge" value="purchase"></button>
                         </div>
                       </span>
                   </div>
@@ -259,7 +259,7 @@
                           </div>
                         </div>
                         <div class="contract_purchase button">
-                          <button class="purchase_button contract_description" id="purchase_button_bottom" rel="tooltip" title="" value="purchase"></button>
+                          <button class="purchase_button contract_description" id="purchase_button_bottom" data-balloon-length="xlarge" value="purchase"></button>
                         </div>
                       </span>
                   </div>
