@@ -200,7 +200,8 @@
         [% l("Test-run [_1], and sharpen your trading skills, with a no-risk, no-commitment, virtual account.", website_name) %]
       </p>
     </div>
-    <div class="gr-12 gr-parent">
+    <div class="gr-12">
+      <div class="gr-row">
       <div class="gr-4">
         <img class="responsive" src="[% request.url_for('images/pages/home/step-1.svg') %]"/>
       </div>
@@ -210,8 +211,10 @@
       <div class="gr-4">
         <img class="responsive" src="[% request.url_for('images/pages/home/step-3.svg') %]"/>
       </div>
+      </div>
     </div>
-    <div class="gr-12 gr-parent">
+    <div class="gr-12">
+      <div class="gr-row">
       <div class="gr-4">
         <strong>
           <p class="center-text">
@@ -232,6 +235,7 @@
             [% l("Make your trade") %]
           </p>
         </strong>
+      </div>
       </div>
     </div>
     <div class="gr-12 gr-padding-10 center-text by_client_type client_logged_out">
