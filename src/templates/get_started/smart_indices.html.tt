@@ -10,6 +10,7 @@
       [% l("[_1]'s Smart FX are smart markets that measure the value of a currency against a basket of major currencies.", website_name) %]
     </p>
   </div>
+  <div class="gr-row">
   <div class="gr-4">
     <img class="responsive" src="[% request.url_for('images/pages/smart-indices/smart-indices-2.svg') %]"/>
   </div>
@@ -17,6 +18,7 @@
     <p>
       [% l("The USD Index is a weighted Index, measuring the US Dollar's value against a basket of 5 global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%.") %]
     </p>
+  </div>
   </div>
   <div class="gr-12">
     <p>

@@ -6,6 +6,7 @@
 
 [% IF get_started %]
 <div class="get-started">
+  <div class="gr-row">
   <div class="gr-3 gr-hide-m">
     <div class="sidebar-left">
       <ul class="nav">
@@ -48,6 +49,7 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 [% ELSE %]
   [% content %]

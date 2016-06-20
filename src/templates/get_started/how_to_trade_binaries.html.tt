@@ -11,7 +11,7 @@
         [% l("Trading binaries is remarkably easy, and requires only 3 simple steps:") %]
       </p>
     </div>
-    <div class="gr-12 gr-parent">
+    <div class="gr-row">
       <div class="gr-4">
         <img class="ja-hide responsive" src="[% request.url_for('images/pages/home/step-1.svg') %]"/>
         <img class="hidden ja-show responsive" src="[% request.url_for('images/pages/home/step-1-jp.svg') %]"/>
@@ -25,7 +25,7 @@
         <img class="hidden ja-show responsive" src="[% request.url_for('images/pages/home/step-3-jp.svg') %]"/>
       </div>
     </div>
-    <div class="gr-12 gr-parent">
+    <div class="gr-row">
       <div class="gr-4">
         <strong>
           <p class="center-text">

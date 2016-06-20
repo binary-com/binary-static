@@ -19,6 +19,7 @@
     <br />
     <h3>[% l("How safe is my money with [_1]?", website_name) %]</h3>
   </div>
+  <div class="gr-row">
   <div class="gr-8 gr-12-m">
     <p>
       [% l("Your money is always safe with [_1]. At all times, it is held in segregated AAA-rated banks, which is a condition of our trading licenses.", website_name) %]
@@ -28,12 +29,15 @@
     <div class="gr-11 gr-padding-10 gr-centered">
       <img class="responsive" src="[% request.url_for('images/pages/why-us/mga-logo2.svg') %]" />
     </div>
+    <div class="gr-row">
     <div class="gr-6 gr-padding-10">
       <img class="responsive" src="[% request.url_for('images/pages/why-us/why-us-proven-record_1.svg') %]" />
     </div>
     <div class="gr-6 gr-padding-10">
       <img class="responsive" src="[% request.url_for('images/pages/footer/isle-of-man.png') %]" />
     </div>
+    </div>
+  </div>
   </div>
   <div class="gr-12">
     <h3>[% l("How does [_1] make money?", website_name) %]</h3>

@@ -12,6 +12,7 @@
           [% l("[_1] has created Volatility Indices that you can trade 24/7. You can trade these on all types of contract:", website_name) %]
         </p>
       </div>
+      <div class="gr-row">
       <div class="gr-8 gr-12-m">
         <ul class="checked">
           <li>
@@ -35,7 +36,7 @@
       <div class="gr-4 gr-12-m">
         <img class="responsive" src="[% request.url_for('images/pages/get-started/volidx-markets.svg') %]"/>
       </div>
-      <div class="clearfix"></div>
+      </div>
       <p>
         [% l("Volatility Indices are further categorized into two types:") %]
       </p>
@@ -57,7 +58,7 @@
           [% l("[_1]'s Continuous Indices are the Volatility 25 Index, Volatility 50 Index, Volatility 75 Index and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 25%, 50%, 75% and 100%.", website_name) %]
         </p>
       </div>
-      <div id="volidx-indices-container">
+      <div id="volidx-indices-container" class="gr-row">
         <div class="gr-8 gr-12-m">
           <p>
             [% l("The Volatility 100 Index is twice as volatile as the Volatility 50 Index, and four times as volatile as the Volatility 25 Index.") %]
@@ -67,7 +68,6 @@
           <img class="responsive" src="[% request.url_for('images/pages/get-started/get-started-volidx-indices.svg') %]"/>
         </div>
       </div>
-      <div class="clearfix"></div>
     </div>
     <div class="subsection">
       <div class="gr-12">
