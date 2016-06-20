@@ -8,8 +8,9 @@
     td {
         @include BIDIR_VALUE(text-align, left !important, right !important);
         @include BIDIR_PROP(padding-left, padding-right, 10px);
-        overflow: hidden;
-
+        &[data-balloon] {
+            border-bottom: 3px solid $COLOR_LIGHT_GRAY;
+        }
     }
     .pre {
         white-space: pre;
@@ -45,9 +46,6 @@
             }
             td {
                 overflow: initial;
-                &[data-balloon] {
-                    border-bottom: 3px solid $COLOR_LIGHT_GRAY;
-                }
             }
         }
     }
@@ -72,9 +70,6 @@
             }
             td {
                 overflow: initial;
-                &[data-balloon] {
-                    border-bottom: 3px solid $COLOR_LIGHT_GRAY;
-                }
             }
         }
     }
