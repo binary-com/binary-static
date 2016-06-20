@@ -204,7 +204,7 @@
       <div class="xquote">
         <div>
           <div class="picture">
-            <img class="responsive" src="[% request.url_for('images/pages/careers/view-positions-icon.svg') %]" style="width:50px;"/>
+            <img class="responsive" id="half-sized-picture" src="[% request.url_for('images/pages/careers/view-positions-icon.svg') %]"/>
           </div>
           <div class="text">
             <a class="pjaxload" href="[% request.url_for('/open-positions') %]">
