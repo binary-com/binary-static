@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="gr-12 gr-parent static_full">
+  <div class="gr-row gr-parent static_full">
     <div class="gr-2 gr-hide-m ja-hide">
       <img class="responsive" src="[% request.url_for('images/pages/contact/contact-us-icon.svg') %]"/>
     </div>
@@ -17,20 +17,18 @@
           [% l("JAPAN ONLY CONTACT TEXT") %]
         </span>
       </div>
-      <div class="gr-padding-10 gr-hide-m"></div>
-      <div class="gr-padding-10">
-        <span class="gr-4 gr-12-t gr-no-gutter">
+      <div class="gr-padding-10 gr-row">
+        <span class="gr-4 gr-12-t">
           [% l("Email: ") %]
         </span>
-        <span class="gr-7 gr-12-t gr-no-gutter" id="cs_contact_eaddress"></span>
+        <span class="gr-7 gr-12-t" id="cs_contact_eaddress"></span>
       </div>
-      <div class="gr-padding-10 gr-hide-m"></div>
       <div class="gr-padding-10 ja-hide">
-        <span class="no-para-margin">
-          <label class="gr-4 gr-12-t gr-no-gutter">
+        <span class="no-para-margin gr-row">
+          <label class="gr-4 gr-12-t">
             [% l("Telephone:") %]
           </label>
-          <select class="gr-7 gr-12-t gr-no-gutter" id="cs_telephone_number">
+          <select class="gr-7 gr-12-t" id="cs_telephone_number">
             <option disabled="[% true %]">
               [% l("Select Country") %]
             </option>
@@ -72,7 +70,7 @@
             </option>
           </select>
         </span>
-        <span class="gr-7 gr-prefix-4 gr-no-gutter gr-12-t gr-prefix-t-0 gr-padding-10 gr-12-m" id="display_cs_telephone">
+        <span class="gr-7 gr-prefix-4 gr-12-t gr-prefix-t-0 gr-padding-10 gr-12-m" id="display_cs_telephone">
           [% "+44 (0) 1666 800042" %]
         </span>
       </div>
@@ -82,11 +80,11 @@
         </span>
       </div>
       <div class="gr-padding-10">
-        <div class="gr-12 gr-parent ja-hide" id="live-chat-container">
-          <label class="gr-4 gr-no-gutter">
+        <div class="gr-row gr-parent ja-hide" id="live-chat-container">
+          <label class="gr-4">
             [% l("Live chat:") %]
           </label>
-          <div class="gr-8 gr-no-gutter">
+          <div class="gr-8">
             <span id="live-chat-icon"></span>
           </div>
         </div>

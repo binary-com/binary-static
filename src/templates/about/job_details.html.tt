@@ -1,12 +1,12 @@
 <div class="job-details container">
   <div class="gr-12 gr-parent static_full">
-    <div class="gr-12">
+    <div class="gr-row">
       <div class="gr-3 gr-padding-10 gr-hide-m gr-hide-p">
-        <div class="gr-12 center">
+        <div class="gr-12 center-text">
           <img class="responsive dept-image" src="[% request.url_for('images/pages/careers/Information_Technology.svg') %]" style="display:none"/>
         </div>
         <div class="gr-12 gr-padding-10">
-          <h1 class="center" id="title"></h1>
+          <h1 class="center-text" id="title"></h1>
         </div>
         <div class="gr-12 gr-padding-10">
           <div class="sidebar" style="display:none">
@@ -44,9 +44,9 @@
         <div></div>
       </div>
     </div>
-    <div class="gr-12">
+    <div class="gr-row">
       <div class="gr-3 gr-hide-m gr-hide-p"></div>
-      <div class="gr-9 gr-12-m gr-12-p center">
+      <div class="gr-9 gr-12-m gr-12-p center-text gr-centered">
         <div class="gr-12">
           <a class="button button-focus pjaxload" href="mailto:hr@binary.com">
             <span>
@@ -60,7 +60,7 @@
           </p>
         </div>
         <div class="gr-12 gr-padding-10">
-          <a class="pjaxload" id="back-button" style="margin-top:1.4em; float:left;">
+          <a class="pjaxload" id="back-button">
             [% l("<< Back to Job Descriptions") %]
           </a>
         </div>
