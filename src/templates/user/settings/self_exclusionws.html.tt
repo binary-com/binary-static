@@ -10,7 +10,7 @@
 	<form id="frmSelfExclusion" class="form rbox hidden">
 		<fieldset>
 
-			<div class="gr-padding-10 row clear">
+			<div class="gr-row gr-padding-10 row clear">
 				<div class="gr-4 form_label">
 					<label for="max_balance">[% l('Maximum account cash balance') %]</label>
 				</div>
@@ -20,7 +20,7 @@
 				</div>
 			</div>
 
-			<div class="gr-padding-10 row clear">
+			<div class="gr-row gr-padding-10 row clear">
 				<div class="gr-4 form_label">
 					<label for="max_turnover">[% l('Daily turnover limit') %]</label>
 				</div>
@@ -30,7 +30,7 @@
 				</div>
 			</div>
 
-			<div class="gr-padding-10 row clear">
+			<div class="gr-row gr-padding-10 row clear">
 				<div class="gr-4 form_label">
 					<label for="max_losses">[% l('Daily limit on losses') %]</label>
 				</div>
@@ -40,7 +40,7 @@
 				</div>
 			</div>
 
-			<div class="gr-padding-10 row clear">
+			<div class="gr-row gr-padding-10 row clear">
 				<div class="gr-4 form_label">
 					<label for="max_7day_turnover">[% l('7-day turnover limit') %]</label>
 				</div>
@@ -50,7 +50,7 @@
 				</div>
 			</div>
 
-			<div class="gr-padding-10 row clear">
+			<div class="gr-row gr-padding-10 row clear">
 				<div class="gr-4 form_label">
 					<label for="max_7day_losses">[% l('7-day limit on losses') %] </label>
 				</div>
@@ -60,7 +60,7 @@
 				</div>
 			</div>
 
-			<div class="gr-padding-10 row clear">
+			<div class="gr-row gr-padding-10 row clear">
 				<div class="gr-4 form_label">
 					<label for="max_30day_turnover">[% l('30-day turnover limit ') %]</label>
 				</div>
@@ -70,7 +70,7 @@
 				</div>
 			</div>
 
-			<div class="gr-padding-10 row clear">
+			<div class="gr-row gr-padding-10 row clear">
 				<div class="gr-4 form_label">
 					<label for="max_30day_losses">[% l('30-day limit on losses') %]</label>
 				</div>
@@ -80,7 +80,7 @@
 				</div>
 			</div>
 
-			<div class="gr-padding-10 row clear">
+			<div class="gr-row gr-padding-10 row clear">
 				<div class="gr-4 form_label">
 					<label for="max_open_bets">[% l('Maximum number of open positions') %]</label>
 				</div>
@@ -89,7 +89,7 @@
 				</div>
 			</div>
 
-			<div class="gr-padding-10 row clear">
+			<div class="gr-row gr-padding-10 row clear">
 				<div class="gr-4 form_label">
 					<label for="session_duration_limit">[% l('Session duration limit, in minutes') %]</label>
 				</div>
@@ -99,7 +99,7 @@
 				</div>
 			</div>
 
-			<div class="gr-padding-10 row clear">
+			<div class="gr-row gr-padding-10 row clear">
 				<div class="gr-4 form_label">
 					<label for="exclude_until">[% l('Exclude me from the website until') %]</label>
 				</div>
@@ -109,7 +109,7 @@
 				</div>
 			</div>
 
-			<div class="gr-padding-10 row clear">
+			<div class="gr-row gr-padding-10 row clear">
 				<div class="gr-4"></div>
 				<div class="gr-8">
 					<span class="button">
@@ -118,7 +118,7 @@
 				</div>
 			</div>
 
-			<div class="gr-padding-10 row clear">
+			<div class="gr-row gr-padding-10 row clear">
 				<div class="gr-4"></div>
 				<div class="gr-8">
 					<div id="formMessage"></div>

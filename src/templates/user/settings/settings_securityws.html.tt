@@ -11,7 +11,7 @@
           <div class="gr-12">
             <p id="lockInfo"></p>
           </div>
-          <div class="gr-padding-10 row clear" id="passwordrow">
+          <div class="gr-padding-10 gr-row clear" id="passwordrow">
             <div class="gr-4 form_label">
               <label for="cashierlockpassword1">
                 [% l("Cashier password") %]
@@ -32,7 +32,7 @@
               </p>
             </div>
           </div>
-          <div class="gr-padding-10 row clear" id="repasswordrow" style="display: none;">
+          <div class="gr-padding-10 gr-row clear" id="repasswordrow" style="display: none;">
             <div class="gr-4  form_label">
               <label for="cashierlockpassword2">
                 [% l("Re-enter your password") %]
@@ -47,7 +47,7 @@
       </div>
     </div>
     <fieldset class="formlayout settings sticky" id="formlayout">
-      <div class="gr-padding-10 row clear">
+      <div class="gr-padding-10 gr-row clear">
         <div class="gr-12 center">
           <p class="error-msg" id="invalidinputfound"></p>
           <span class="button">

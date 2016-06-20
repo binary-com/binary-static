@@ -12,7 +12,7 @@
             <fieldset>
                 <legend>[% l('Create New Token') %]</legend>
 
-                <div class="gr-12 gr-parent gr-padding-10">
+                <div class="gr-row gr-padding-10">
                     <div class="gr-4 form_label">
                         <label for="txtName">[% l('Choose a Name:') %]</label>
                     </div>
@@ -21,7 +21,7 @@
                     </div>
                 </div>
 
-                <div class="gr-12 gr-parent gr-padding-10">
+                <div class="gr-row gr-padding-10">
                     <div class="gr-4 form_label">
                         <label for="txtName">[% l('Choose Scopes:') %]</label>
                     </div>
@@ -37,14 +37,14 @@
                     </div>
                 </div>
 
-                <div class="gr-12 gr-parent">
+                <div class="gr-row">
                     <div class="gr-4"></div>
                     <div class="gr-8">
                         <div id="formMessage"></div>
                     </div>
                 </div>
 
-                <div class="gr-12 gr-parent">
+                <div class="gr-row">
                     <div class="gr-4"></div>
                     <div class="gr-8">
                         <span class="button">

@@ -10,7 +10,7 @@
                 <fieldset>
                     <legend>Financial Information</legend>
 
-                    <div class="gr-padding-10 row clear">
+                    <div class="gr-padding-10 gr-row clear">
                         <div class="gr-4  form_label">
                             <label for="forex_trading_experience">Forex trading experience</label>
                         </div>
@@ -25,7 +25,7 @@
                         </div>
                     </div>
 
-                    <div class="gr-padding-10 row clear">
+                    <div class="gr-padding-10 gr-row clear">
                         <div class="gr-4  form_label">
                             <label for="forex_trading_frequency">Forex trading frequency</label>
                         </div>
@@ -40,7 +40,7 @@
                         </div>
                     </div>
 
-                    <div class="gr-padding-10 row clear">
+                    <div class="gr-padding-10 gr-row clear">
                         <div class="gr-4  form_label">
                             <label for="indices_trading_experience">Indices trading experience</label>
                         </div>
@@ -55,7 +55,7 @@
                         </div>
                     </div>
 
-                    <div class="gr-padding-10 row clear">
+                    <div class="gr-padding-10 gr-row clear">
                         <div class="gr-4  form_label">
                             <label for="indices_trading_frequency">Indices trading frequency</label>
                         </div>
@@ -70,7 +70,7 @@
                         </div>
                     </div>
 
-                    <div class="gr-padding-10 row clear">
+                    <div class="gr-padding-10 gr-row clear">
                         <div class="gr-4  form_label">
                             <label for="commodities_trading_experience">Commodities trading experience</label>
                         </div>
@@ -85,7 +85,7 @@
                         </div>
                     </div>
 
-                    <div class="gr-padding-10 row clear">
+                    <div class="gr-padding-10 gr-row clear">
                         <div class="gr-4  form_label">
                             <label for="commodities_trading_frequency">Commodities trading frequency</label>
                         </div>
@@ -100,7 +100,7 @@
                         </div>
                     </div>
 
-                    <div class="gr-padding-10 row clear">
+                    <div class="gr-padding-10 gr-row clear">
                         <div class="gr-4  form_label">
                             <label for="stocks_trading_experience">Stocks trading experience</label>
                         </div>
@@ -115,7 +115,7 @@
                         </div>
                     </div>
 
-                    <div class="gr-padding-10 row clear">
+                    <div class="gr-padding-10 gr-row clear">
                         <div class="gr-4  form_label">
                             <label for="stocks_trading_frequency">Stocks trading frequency</label>
                         </div>
@@ -129,7 +129,7 @@
                             <p class="errorfield" id="errorstocks_trading_frequency"></p>
                         </div>
                     </div>
-                    <div class="gr-padding-10 row clear">
+                    <div class="gr-padding-10 gr-row clear">
                         <div class="gr-4  form_label">
                             <label for="other_derivatives_trading_experience">Binary options or other financial derivatives trading experience</label>
                         </div>
@@ -143,7 +143,7 @@
                             <p class="errorfield" id="errorother_derivatives_trading_experience"></p>
                         </div>
                     </div>
-                    <div class="gr-padding-10 row clear">
+                    <div class="gr-padding-10 gr-row clear">
                         <div class="gr-4  form_label">
                             <label for="other_derivatives_trading_frequency">Binary options or other financial derivatives trading frequency</label>
                         </div>
@@ -157,7 +157,7 @@
                             <p class="errorfield" id="errorother_derivatives_trading_frequency"></p>
                         </div>
                     </div>
-                    <div class="gr-padding-10 row clear">
+                    <div class="gr-padding-10 gr-row clear">
                         <div class="gr-4  form_label">
                             <label for="other_instruments_trading_experience">Other financial instruments trading experience</label>
                         </div>
@@ -171,7 +171,7 @@
                             <p class="errorfield" id="errorother_instruments_trading_experience"></p>
                         </div>
                     </div>
-                    <div class="gr-padding-10 row clear">
+                    <div class="gr-padding-10 gr-row clear">
                         <div class="gr-4  form_label">
                             <label for="other_instruments_trading_frequency">Other financial instruments trading frequency</label>
                         </div>
@@ -185,7 +185,7 @@
                             <p class="errorfield" id="errorother_instruments_trading_frequency"></p>
                         </div>
                     </div>
-                    <div class="gr-padding-10 row clear">
+                    <div class="gr-padding-10 gr-row clear">
                         <div class="gr-4  form_label">
                             <label for="employment_industry">Industry of Employment</label>
                         </div>
@@ -202,7 +202,7 @@
                             <p class="errorfield" id="erroremployment_industry"></p>
                         </div>
                     </div>
-                    <div class="gr-padding-10 row clear">
+                    <div class="gr-padding-10 gr-row clear">
                         <div class="gr-4  form_label">
                             <label for="education_level">Level of Education</label>
                         </div>
@@ -216,7 +216,7 @@
                             <p class="errorfield" id="erroreducation_level"></p>
                         </div>
                     </div>
-                    <div class="gr-padding-10 row clear">
+                    <div class="gr-padding-10 gr-row clear">
                         <div class="gr-4  form_label">
                             <label for="income_source">Income Source</label>
                         </div>
@@ -232,7 +232,7 @@
                             <p class="errorfield" id="errorincome_source"></p>
                         </div>
                     </div>
-                    <div class="gr-padding-10 row clear">
+                    <div class="gr-padding-10 gr-row clear">
                         <div class="gr-4  form_label">
                             <label for="net_income">Net Annual Income</label>
                         </div>
@@ -248,7 +248,7 @@
                             <p class="errorfield" id="errornet_income"></p>
                         </div>
                     </div>
-                    <div class="gr-padding-10 row clear">
+                    <div class="gr-padding-10 gr-row clear">
                         <div class="gr-4  form_label">
                             <label for="estimated_worth">Estimated Net Worth</label>
                         </div>
