@@ -1276,7 +1276,9 @@ msgstr "Sistema e método de apostas"
 msgid "Binary (C.R.) S.A., registered in Costa Rica."
 msgstr "Binary (C.R.) S.A., registrada na Costa Rica."
 
-msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
+#, fuzzy
+#| msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
+msgid "Binary (Europe) Ltd & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 msgstr "Binary (Europa) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 
 #, fuzzy
@@ -1470,6 +1472,9 @@ msgstr "Os índices \"Mercado em alta\" e \"Mercado em baixa\" entram em funcion
 
 msgid "Business Development"
 msgstr "Desenvolvimento de negócios"
+
+msgid "But there's no need to wait until expiry. You can sell back long-term trades at any time to profit from changing market conditions."
+msgstr "Mas você não precisa esperar até o vencimento do contrato. Você pode vender contratos de longo prazo a qualquer momento, para aproveitar as mudanças das condições de mercado."
 
 #, fuzzy
 #| msgid "But we’re picky. We only select people with special qualities: serious professionals, who have high moral standards, and thrive in an honest, collaborative environment."
@@ -4709,6 +4714,9 @@ msgstr "Seja nosso parceiro"
 msgid "Partners"
 msgstr "Parceiros"
 
+msgid "Password"
+msgstr "Senha"
+
 msgid "Password Reset"
 msgstr "Redefinição de senha"
 
@@ -6294,7 +6302,7 @@ msgstr "Ocorreu um problema ao validar os seus dados pessoais. Por favor corrija
 
 #, fuzzy
 #| msgid "There was a problem validating your personal details. Please fix the fields %1here"
-msgid "There was a problem validating your personal details. Please fix the fields <a class=\"pjaxload\" href=\"%1\">here</a>."
+msgid "There was a problem validating your personal details. Please update your %1 <a class=\"pjaxload\" href=\"%2\">here</a>."
 msgstr "Ocorreu um problema ao validar os seus dados pessoais. Por favor corrija os campos %1aqui"
 
 msgid "There was an error"
@@ -7357,6 +7365,9 @@ msgstr "Você pode fechar o seu contrato antes da data de vencimento para bloque
 
 msgid "You can sell back long-term trades at any time to profit from changing market conditions."
 msgstr "Você pode vender contratos a longo prazo a qualquer momento a fim de aproveitar as mudanças das condições de mercado."
+
+msgid "You can set the length of your trade, from 10 seconds to 365 days."
+msgstr "Você pode definir a duração da sua negociação, desde 10 segundos até 365 dias."
 
 #, fuzzy
 #| msgid "You can trade a range of markets, timescales and indices – 24/7."
@@ -8515,9 +8526,6 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 #~ msgid "Binary.com Open-Source Projects"
 #~ msgstr "Projetos open-source da Binary.com"
 
-#~ msgid "But there's no need to wait until expiry. You can sell back long-term trades at any time to profit from changing market conditions."
-#~ msgstr "Mas você não precisa esperar até o vencimento do contrato. Você pode vender contratos de longo prazo a qualquer momento, para aproveitar as mudanças das condições de mercado."
-
 #~ msgid ""
 #~ "Dear Valued Customer,\n"
 #~ "\n"
@@ -8581,9 +8589,6 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 
 #~ msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a \"Touch\" trade, with a price target farther away from the current price."
 #~ msgstr "Ganhe 10% a 1000% sobre a sua aposta se você estiver correto. Para um contrato \"Tocar\", quanto mais distante o preço-alvo for do preço atual, maior será o retorno."
-
-#~ msgid "You can set the length of your trade, from 10 seconds to 365 days."
-#~ msgstr "Você pode definir a duração da sua negociação, desde 10 segundos até 365 dias."
 
 #~ msgid "You have reached the rate limit of requests per second. To continue, please <a href='javascript:;' id='ratelimit-refresh-link'>refresh</a> the page."
 #~ msgstr "O limite da taxa de pedidos por segundo foi atingido. Para continuar, <a href='javascript:;' id='ratelimit-refresh-link'>atualize</a> a página."
@@ -9451,9 +9456,6 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 
 #~ msgid "Parameters sanity check failed."
 #~ msgstr "Falha na verificação de integridade de parâmetros."
-
-#~ msgid "Password"
-#~ msgstr "Senha"
 
 #~ msgid "Password not given."
 #~ msgstr "Senha não dada."

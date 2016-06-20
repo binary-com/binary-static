@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Chinese (China) (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-16 03:31+0000\n"
+"PO-Revision-Date: 2016-06-20 01:51+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
@@ -195,7 +195,7 @@ msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum loss
 msgstr "%1 的价差合约需要可以制定客户最大损失限额的“止损”。此“止损”额将当作定金，在价差合约平仓前不可用于继续交易。价差合约在接触“止损”或“止盈”水平时由客户售出完成平仓。"
 
 msgid "%1's Volatility Indices are based on a cryptographically secure random number generator audited for fairness by an independent third party."
-msgstr ""
+msgstr "1％的波动率指数由经过加密的安全随机数字生成器生成，并由独立的第三方审计其公平度。"
 
 msgid "%1's patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market."
 msgstr "利用 %1 受专利保护的报价技术，您可获得与银行间市场交易员同样的回报率。"
@@ -1194,7 +1194,9 @@ msgstr "博彩系统和方法"
 msgid "Binary (C.R.) S.A., registered in Costa Rica."
 msgstr "Binary (C.R.) S.A.在哥斯达黎加注册。"
 
-msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
+#, fuzzy
+#| msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
+msgid "Binary (Europe) Ltd & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 msgstr "Binary(Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 
 msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licenced and regulated (for gambling products only) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>."
@@ -1364,6 +1366,9 @@ msgstr "每天，牛市和熊市指数于格林尼治时间 00:00 时开始，�
 
 msgid "Business Development"
 msgstr "商务发展"
+
+msgid "But there's no need to wait until expiry. You can sell back long-term trades at any time to profit from changing market conditions."
+msgstr "但您不需要等到合约到期。可以在任何时间内卖出您的长线交易合约，根据市场变化及时获利。"
 
 msgid "But we're picky. We only select people with special qualities: serious professionals, who have high moral standards, and thrive in an honest, collaborative environment."
 msgstr "但是我们也很挑剔。我们只选择有特殊技能且认真负责的专业人士。他们必须拥有很高的道德标准，并能在诚实、协作的环境中蓬勃发展。"
@@ -4513,6 +4518,9 @@ msgstr "成为我们的合作伙伴"
 msgid "Partners"
 msgstr "合作伙伴"
 
+msgid "Password"
+msgstr "密码"
+
 msgid "Password Reset"
 msgstr "重设密码"
 
@@ -6042,7 +6050,9 @@ msgstr "服务器访问发生问题。"
 msgid "There was a problem validating your personal details. Please fix the fields %1here"
 msgstr "您的个人资料验证出了问题。请在此更正 %1 字段"
 
-msgid "There was a problem validating your personal details. Please fix the fields <a class=\"pjaxload\" href=\"%1\">here</a>."
+#, fuzzy
+#| msgid "There was a problem validating your personal details. Please fix the fields <a class=\"pjaxload\" href=\"%1\">here</a>."
+msgid "There was a problem validating your personal details. Please update your %1 <a class=\"pjaxload\" href=\"%2\">here</a>."
 msgstr "您的个人资料验证出了问题。请<a class=\"pjaxload\" href=\"%1\">在此</a>更正字段。"
 
 msgid "There was an error"
@@ -7051,6 +7061,9 @@ msgstr "您可在合约到期前卖出交易合约，以锁定利润。"
 
 msgid "You can sell back long-term trades at any time to profit from changing market conditions."
 msgstr "您可以在任何时间卖出您的长线交易合约，根据市场变化及时获利。"
+
+msgid "You can set the length of your trade, from 10 seconds to 365 days."
+msgstr "您可设定交易期限，从10 秒至 365 天。"
 
 msgid "You can trade a range of markets, timescales and indices - 24/7."
 msgstr "您可全天候参与各种市场、时间周期和指数的交易。"
@@ -8154,9 +8167,6 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 #~ msgid "Binary.com Open-Source Projects"
 #~ msgstr "Binary.com 开源项目"
 
-#~ msgid "But there's no need to wait until expiry. You can sell back long-term trades at any time to profit from changing market conditions."
-#~ msgstr "但您不需要等到合约到期。可以在任何时间内卖出您的长线交易合约，根据市场变化及时获利。"
-
 #~ msgid ""
 #~ "Dear Valued Customer,\n"
 #~ "\n"
@@ -8220,9 +8230,6 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 
 #~ msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a \"Touch\" trade, with a price target farther away from the current price."
 #~ msgstr "如果您预测正确，即可获得投注额 10%-1000% 的回报。选择目标价与当前价格距离比较远的 \"触及\" 交易，可提高回报率。"
-
-#~ msgid "You can set the length of your trade, from 10 seconds to 365 days."
-#~ msgstr "您可设定交易期限，从10 秒至 365 天。"
 
 #~ msgid "You have reached the rate limit of requests per second. To continue, please <a href='javascript:;' id='ratelimit-refresh-link'>refresh</a> the page."
 #~ msgstr "您已达每秒最大请求限额。请 <a href='javascript:;' id='ratelimit-refresh-link'>刷新</a>页面继续操作。"
@@ -9092,9 +9099,6 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 
 #~ msgid "Parameters sanity check failed."
 #~ msgstr "参数完整性检查失败。"
-
-#~ msgid "Password"
-#~ msgstr "密码"
 
 #~ msgid "Password not given."
 #~ msgstr "未输入密码。"

@@ -120,8 +120,22 @@ pjax_config_page_require_auth("cashier/forwardws", function() {
                     $('#deposit-withdraw-message').hide();
                     if (error.code && error.code === 'ASK_TNC_APPROVAL') {
                       window.location.href = page.url.url_for('user/tnc_approvalws');
-                    } else if (error.code && error.code === 'ASK_FIX_ADDRESS') {
-                      ForwardWS.showMessage('personal-details-message');
+                    } else if (error.code && error.code === 'ASK_FIX_DETAILS') {
+                      var msgID = 'personal-details-message';
+                      if(error.details) {
+                        var errorFields = {
+                          province: 'State/Province',
+                          country:  'Country',
+                          city:     'Town/City',
+                          street:   'First line of home address',
+                          pcode:    'Postal Code / ZIP',
+                          phone:    'Telephone',
+                          email:    'Email address'
+                        };
+                        var errMsg = $('#' + msgID).html().replace('[_1]', text.localize(errorFields[error.details]));
+                        $('#' + msgID).html(errMsg);
+                      }
+                      ForwardWS.showMessage(msgID);
                     } else if (error.code && error.code === 'ASK_UK_FUNDS_PROTECTION') {
                       $('#ukgc-funds-protection').show();
                     } else if (error.code && error.code === 'ASK_AUTHENTICATE') {

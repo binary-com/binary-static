@@ -1208,7 +1208,9 @@ msgstr "ระบบการพนันและวิธีการ"
 msgid "Binary (C.R.) S.A., registered in Costa Rica."
 msgstr "Binary (C.R.) S.A. ขึ้นทะเบียนที่ Costa Rica"
 
-msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
+#, fuzzy
+#| msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
+msgid "Binary (Europe) Ltd & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 msgstr "Binary (Europe) Ltd ตั้งอยู่ที่อาคาร Mompalao Suite 2 ถนนทาวเวอร์ Msida MSD1825"
 
 msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licenced and regulated (for gambling products only) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>."
@@ -1404,6 +1406,9 @@ msgstr "ดัชนีกระทิง และดัชนีหมี เ�
 
 msgid "Business Development"
 msgstr "การพัฒนาธุรกิจ"
+
+msgid "But there's no need to wait until expiry. You can sell back long-term trades at any time to profit from changing market conditions."
+msgstr "แต่ไม่มีความจำเป็นที่จะรอจนกระทั่งหมดอายุ ท่านสามารถขายสินทรัพย์ระยะยาวในเวลาใดๆ เพื่อทำกำไรจากการเปลี่ยนแปลงของเงื่อนไขต่างๆ ของตลาดได้"
 
 msgid "But we're picky. We only select people with special qualities: serious professionals, who have high moral standards, and thrive in an honest, collaborative environment."
 msgstr "แต่เราค่อนข้างช่างเลือกสรร พวกเราคัดบุคลากรที่มีคุณลักษณะพิเศษ: มีความเป็นมืออาชีพอย่างจริงจังแข็งขัน ผู้มีศีลธรรมพื้นฐาน เติบโตบนรากฐานความซื่อสัตย์ ให้ความร่วมมือกับทุกฝ่าย"
@@ -4595,6 +4600,9 @@ msgstr "พันธมิตรกับเรา"
 msgid "Partners"
 msgstr "พันธมิตร"
 
+msgid "Password"
+msgstr "รหัสผ่าน"
+
 msgid "Password Reset"
 msgstr "ตั้งรหัสผ่านใหม่"
 
@@ -6174,7 +6182,7 @@ msgstr "มีปัญหาในการตรวจสอบที่อย
 
 #, fuzzy
 #| msgid "There was a problem validating your personal details. Please fix the fields %1here"
-msgid "There was a problem validating your personal details. Please fix the fields <a class=\"pjaxload\" href=\"%1\">here</a>."
+msgid "There was a problem validating your personal details. Please update your %1 <a class=\"pjaxload\" href=\"%2\">here</a>."
 msgstr "มีปัญหาในการตรวจสอบที่อยู่ของท่าน โปรดแก้ไขข้อมูล %1"
 
 msgid "There was an error"
@@ -7203,6 +7211,11 @@ msgstr ""
 
 msgid "You can sell back long-term trades at any time to profit from changing market conditions."
 msgstr ""
+
+#, fuzzy
+#| msgid "Choose a duration from 10 seconds to 365 days."
+msgid "You can set the length of your trade, from 10 seconds to 365 days."
+msgstr "กำหนด ระยะเวลา จาก 10 วินาที ถึง 365 วัน"
 
 msgid "You can trade a range of markets, timescales and indices - 24/7."
 msgstr ""
@@ -8345,9 +8358,6 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 #~ msgid "Binary.com Open-Source Projects"
 #~ msgstr "โครงการโอเพ่นซอสต่างๆ ของ Binary.com"
 
-#~ msgid "But there's no need to wait until expiry. You can sell back long-term trades at any time to profit from changing market conditions."
-#~ msgstr "แต่ไม่มีความจำเป็นที่จะรอจนกระทั่งหมดอายุ ท่านสามารถขายสินทรัพย์ระยะยาวในเวลาใดๆ เพื่อทำกำไรจากการเปลี่ยนแปลงของเงื่อนไขต่างๆ ของตลาดได้"
-
 #~ msgid ""
 #~ "Dear Valued Customer,\n"
 #~ "\n"
@@ -9260,9 +9270,6 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 
 #~ msgid "Parameters sanity check failed."
 #~ msgstr "การตรวจสอบตัวแปรล้มเหลว"
-
-#~ msgid "Password"
-#~ msgstr "รหัสผ่าน"
 
 #~ msgid "Password not given."
 #~ msgstr "ไม่ได้กำหนดรหัสผ่าน"
