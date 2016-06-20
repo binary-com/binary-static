@@ -19,6 +19,7 @@
     <br />
     <h3>[% l("How safe is my money with [_1]?", website_name) %]</h3>
   </div>
+  <div class="gr-12">
   <div class="gr-row">
   <div class="gr-8 gr-12-m">
     <p>
@@ -39,6 +40,7 @@
     </div>
   </div>
   </div>
+</div>
   <div class="gr-12">
     <h3>[% l("How does [_1] make money?", website_name) %]</h3>
     <p>
