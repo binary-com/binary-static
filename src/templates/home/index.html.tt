@@ -11,7 +11,7 @@
                           <div class="gr-row gr-padding-10">
                               <div class="gr-7 gr-10-m gr-centered"><input autocomplete="off" id="email" maxlength="50" placeholder="[% l('Enter your email') %]"></input></div>
                               <div class="gr-5 gr-8-m gr-centered"><button class="blue-button" id="btn-verify-email" type="submit">[% l('Create Free Account') %]</button></div>
-                              <span class="gr-12 gr-padding-10 error-msg hint color-white" style="display:none"></span>
+                              <span class="gr-12 gr-padding-10 error-msg hint color-white" id="signup_error" style="display:none"></span>
                           </div>
                       </div>
                   </div>

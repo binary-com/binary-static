@@ -44,7 +44,7 @@
     </script>
     <iframe src="" frameborder="0" width="100%" height="2000" id="cashiercont" scrolling="auto" style="padding:0px;margin:0px;"></iframe>
   </div>
-  <div id="ukgc-funds-protection" class="gr-12 gr-parent" style="display:none">
+  <div id="ukgc-funds-protection" class="gr-row gr-parent" style="display:none">
       <div class="gr-2 gr-6-m gr-centered-m">
           <p>
               <img class="responsive" src="[% request.url_for('images/pages/cashier/protection-icon.svg') %]"/>
@@ -67,7 +67,7 @@
   <div id="currency-form" style="display:none">
     <div class="rbox-wrap">
       <fieldset>
-        <div class="gr-padding-10 row clear">
+        <div class="gr-padding-10 gr-row clear">
           <div class="gr-4 form_label">
             <label for="currency">[% l("Transact in") %]</label>
           </div>
@@ -92,7 +92,7 @@
   </div>
   <div id="withdraw-form" style="display:none">
     <fieldset>
-      <div class="gr-12 gr-parent gr-padding-10">
+      <div class="gr-row gr-parent gr-padding-10">
         <div class="form_label gr-4">
           <label for="verification-token">[% l("Verification token") %]</label>
         </div>
@@ -102,8 +102,7 @@
           <p class="errorfield" id="verification-error" style="display:none"></p>
         </div>
       </div>
-      <div class="gr-12 gr-parent">
-        <div class="gr-4"></div>
+      <div class="gr-12 gr-parent gr-centered center-text">
         <div class="gr-8">
             <span class="button">
               <button class="button" id="submit-verification" type="button">[% l("Submit") %]</button>

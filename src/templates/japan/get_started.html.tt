@@ -1,4 +1,4 @@
-<div class="get-started-jp">
+<div class="get-started-jp gr-row">
   <div class="gr-3 gr-hide-m">
     <div class="sidebar-left">
       <ul class="nav">
@@ -25,8 +25,8 @@
   </div>
 
   <div class="gr-6 gr-12-m gr-parent" id="index">
-    <dl>
-      <div class="gr-6 gr-no-gutter-right list">
+    <dl class="gr-row">
+      <div class="gr-6 list">
         <div class="section section-jp">
           <a class="pjaxload a-jp" href="#how-to-open-an-account">
             <div id="how-to-open-an-account-img"></div>
@@ -53,7 +53,7 @@
         </div>
       </div>
 
-      <div class="gr-6 gr-no-gutter-left list">
+      <div class="gr-6 list">
         <div class="section section-jp">
           <a class="pjaxload a-jp" href="#identification-documents">
             <div id="identification-documents-img"></div>
@@ -141,39 +141,41 @@
       <p>
         [% l('{JAPAN ONLY}Please download our Options Basic Knowledge guides which cover all the essential concepts, terminalogy and required information:') %]
       </p>
-      <div class="gr-6 gr-12-m">
-        <p class="center-text">
-          <a class="button" href="#">
-            <span class="link-size-box">[% l('{JAPAN ONLY}Introduction to Binary Options') %]</span>
-          </a>
-        </p>
-        <p class="center-text">
-          <a class="button" href="#">
-            <span class="link-size-box">[% l('{JAPAN ONLY}Purchase, Settlement & Resale') %]</span>
-          </a>
-        </p>
-        <p class="center-text">
-          <a class="button" href="#">
-            <span class="link-size-box">[% l('{JAPAN ONLY}Options Basics') %]</span>
-          </a>
-        </p>
-      </div>
-      <div class="gr-6 gr-12-m">
-        <p class="center-text">
-          <a class="button" href="#">
-            <span class="link-size-box">[% l('{JAPAN ONLY}Trading & Hedging') %]</span>
-          </a>
-        </p>
-        <p class="center-text">
-          <a class="button" href="#">
-            <span class="link-size-box">[% l('{JAPAN ONLY}Option Pricing') %]</span>
-          </a>
-        </p>
-        <p class="center-text">
-          <a class="button" href="#">
-            <span class="link-size-box">[% l('{JAPAN ONLY}Regulation & Tax') %]</span>
-          </a>
-        </p>
+      <div class="gr-row">
+          <div class="gr-6 gr-12-m">
+            <p class="center-text">
+              <a class="button" href="#">
+                <span class="link-size-box">[% l('{JAPAN ONLY}Introduction to Binary Options') %]</span>
+              </a>
+            </p>
+            <p class="center-text">
+              <a class="button" href="#">
+                <span class="link-size-box">[% l('{JAPAN ONLY}Purchase, Settlement & Resale') %]</span>
+              </a>
+            </p>
+            <p class="center-text">
+              <a class="button" href="#">
+                <span class="link-size-box">[% l('{JAPAN ONLY}Options Basics') %]</span>
+              </a>
+            </p>
+          </div>
+          <div class="gr-6 gr-12-m">
+            <p class="center-text">
+              <a class="button" href="#">
+                <span class="link-size-box">[% l('{JAPAN ONLY}Trading & Hedging') %]</span>
+              </a>
+            </p>
+            <p class="center-text">
+              <a class="button" href="#">
+                <span class="link-size-box">[% l('{JAPAN ONLY}Option Pricing') %]</span>
+              </a>
+            </p>
+            <p class="center-text">
+              <a class="button" href="#">
+                <span class="link-size-box">[% l('{JAPAN ONLY}Regulation & Tax') %]</span>
+              </a>
+            </p>
+          </div>
       </div>
     </div>
 

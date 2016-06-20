@@ -28,20 +28,22 @@ var JapanInfo = function() {
             }
         }
         var $header = $('<div />', {
-            'class': 'gr-parent gr-12 gr-centered table-header gr-padding-10 gr-row'
-        }).append(
-            $('<div />', {
-                'class': 'gr-4 center-text',
-                'text': Content.localize().textExercisePeriod
-            }),
-            $('<div />', {
-                'class': 'gr-4 center-text',
-                'text': ask
-            }),
-            $('<div />', {
-                'class': 'gr-4 center-text',
-                'text': bid
-            })
+            'class': 'gr-12 gr-centered table-header gr-padding-10'
+        }).append($('<div/>', {'class': 'gr-row'})
+            .append(
+                $('<div />', {
+                    'class': 'gr-4 center-text',
+                    'text': Content.localize().textExercisePeriod
+                }),
+                $('<div />', {
+                    'class': 'gr-4 center-text',
+                    'text': ask
+                }),
+                $('<div />', {
+                    'class': 'gr-4 center-text',
+                    'text': bid
+                })
+            )
         );
         $container.append($header);
     };
