@@ -8,7 +8,7 @@
 	context : 12,
 	gutter-width : 20px,
 	// gutter-left : 20px,
-	// direction : rtl,
+	direction : $LANGUAGE_DIRECTION,
 	// dir-attribute : true,
 	states-classes : true,
 	classes-prefix : 'gr-'
