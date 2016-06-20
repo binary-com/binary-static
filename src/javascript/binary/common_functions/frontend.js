@@ -514,9 +514,9 @@ function limitLanguage(lang) {
   if (document.getElementById('language_select')) {
     $('#language_select').remove();
     $('#gmt-clock').removeClass();
-    $('#gmt-clock').addClass('grd-grid-6 grd-grid-mobile-12');
+    $('#gmt-clock').addClass('gr-6 gr-m-12');
     $('#contact-us').removeClass();
-    $('#contact-us').addClass('grd-grid-6 grd-hide-mobile');
+    $('#contact-us').addClass('gr-6 gr-m-hide');
   }
 }
 

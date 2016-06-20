@@ -67,7 +67,6 @@
                 [% l("Note: Payment Agent transfers are only available for accounts registered with Binary (CR) SA. Transactions are accepted only in US dollars.") %]
               </p>
             </div>
-            <div class="clearfix"></div>
           </div>
         </div>
       </div>
@@ -94,7 +93,6 @@
                 </li>
               </ul>
             </div>
-            <div class="clearfix"></div>
           </div>
         </div>
       </div>
@@ -125,7 +123,6 @@
                   </ul>
                 </div>
             </div>
-            <div class="clearfix"></div>
           </div>
         </div>
       </div>
@@ -144,7 +141,6 @@
                 <li>[% l("<strong>Long-term partnership:</strong> Your partnership with [_1] could be a means to promote your product or services for FREE to our 1,000,000+ registered clients, worldwide.", website_name) %]</li>
               </ul>
             </div>
-            <div class="clearfix"></div>
           </div>
         </div>
       </div>
@@ -180,7 +176,6 @@
               </p>
               <p>[% l("Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='[_1]'>payment agent</a> list.", request.url_for('/cashier/payment_agent_listws')) %]</p>
             </div>
-            <div class="clearfix"></div>
           </div>
         </div>
       </div>
@@ -197,7 +192,6 @@
                 [% l("We look forward to hearing from you.") %]
               </p>
             </div>
-            <div class="clearfix"></div>
           </div>
         </div>
       </div>
