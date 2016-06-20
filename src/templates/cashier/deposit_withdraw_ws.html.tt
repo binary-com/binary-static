@@ -9,7 +9,7 @@
       <p id="check-email-message" class="messages">[% l('For added security, please check your email to retrieve the verification token.') %]</p>
       <p id="choose-currency-message" class="messages">[% l('Please choose which currency you would like to transact in.') %]</p>
       <p id="personal-details-message" class="messages">
-        [% l('There was a problem validating your personal details. Please fix the fields <a class="pjaxload" href="[_1]">here</a>.', request.url_for('/user/settings/detailsws')) %]
+        [% l('There was a problem validating your personal details. Please update your [_1] <a class="pjaxload" href="[_2]">here</a>.', '[_1]', request.url_for('/user/settings/detailsws')) %]
         <br />
         [% l('If you need assistance feel free to contact our <a class="pjaxload" href="[_1]">Customer Support</a>.', request.url_for('/contact')) %]
       </p>
