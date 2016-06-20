@@ -5,143 +5,155 @@
         [% l("Imagine") %]
       </h1>
     </div>
-    <div class="gr-6 gr-12-m">
-      <p>
-        [% l("Imagine a workplace where your individuality, creativity and sense of adventure are valued and rewarded.") %]
-      </p>
-      <p>
-        [% l("Where new ideas trump safe, old ones. And you're free to work your way, free from hierarchies and red tape.") %]
-      </p>
-      <p>
-        [% l("Where your experience, drive and talent can propel you in unknown directions. And you have the freedom to push into new frontiers.") %]
-      </p>
-      <p>
-        [% l("Where teamwork and a collaborative culture form the platform for personal and corporate growth.") %]
-      </p>
-      <p>
-        [% l("Where supportive colleagues are like a second family.") %]
-      </p>
-      <p>
-        [% l("And your weekends can take you to some of the world's most exotic and beautiful places.") %]
-      </p>
-      <p>
-        [% l("But we're picky. We only select people with special qualities: serious professionals, who have high moral standards, and thrive in an honest, collaborative environment.") %]
-      </p>
-    </div>
-    <div class="gr-6 gr-12-m">
-      <div class="gr-padding-10 gr-hide-m"></div>
-      <img class="responsive" src="[% request.url_for('images/pages/careers/careers-header.jpg') %]"/>
-      <div class="gr-padding-10 gr-hide-m"></div>
-      <p>
-        [% l("Imagine a workplace that often doesn't feel like work.") %]
-      </p>
-      <p>
-        [% l("If you're looking to build a career, and not a resume, talk to us, Binary.com. We're one of the IT world's most vibrant and progressive workplaces.") %]
-      </p>
-      <p>
-        [% l("Who love working with people from different cultures, and are keen to contribute to a dynamic and unique workplace, and not merely pass on through.") %]
-      </p>
+    <div class="gr-row">
+        <div class="gr-6 gr-12-m">
+          <p>
+            [% l("Imagine a workplace where your individuality, creativity and sense of adventure are valued and rewarded.") %]
+          </p>
+          <p>
+            [% l("Where new ideas trump safe, old ones. And you're free to work your way, free from hierarchies and red tape.") %]
+          </p>
+          <p>
+            [% l("Where your experience, drive and talent can propel you in unknown directions. And you have the freedom to push into new frontiers.") %]
+          </p>
+          <p>
+            [% l("Where teamwork and a collaborative culture form the platform for personal and corporate growth.") %]
+          </p>
+          <p>
+            [% l("Where supportive colleagues are like a second family.") %]
+          </p>
+          <p>
+            [% l("And your weekends can take you to some of the world's most exotic and beautiful places.") %]
+          </p>
+          <p>
+            [% l("But we're picky. We only select people with special qualities: serious professionals, who have high moral standards, and thrive in an honest, collaborative environment.") %]
+          </p>
+        </div>
+        <div class="gr-6 gr-12-m">
+          <div class="gr-padding-10 gr-hide-m"></div>
+          <img class="responsive" src="[% request.url_for('images/pages/careers/careers-header.jpg') %]"/>
+          <div class="gr-padding-10 gr-hide-m"></div>
+          <p>
+            [% l("Imagine a workplace that often doesn't feel like work.") %]
+          </p>
+          <p>
+            [% l("If you're looking to build a career, and not a resume, talk to us, Binary.com. We're one of the IT world's most vibrant and progressive workplaces.") %]
+          </p>
+          <p>
+            [% l("Who love working with people from different cultures, and are keen to contribute to a dynamic and unique workplace, and not merely pass on through.") %]
+          </p>
+        </div>
     </div>
   </div>
   <div class="gr-12 gr-hide-m">
     <div class="separator-line"></div>
   </div>
   <div class="gr-12 gr-parent">
-    <div class="gr-6 gr-12-m">
-      <h1>
-        [% l("Where we are") %]
-      </h1>
-      <p>
-        [% l("Binary.com's headquarters are in Malta, a favoured tourist destination with a warm climate, beautiful recreational areas and World Heritage sites. We also have an Operational Headquarters office in Cyberjaya, a high-tech precinct south of Kuala Lumpur, the capital of Malaysia, an equally exciting destination at the heart of Asia.") %]
-      </p>
-    </div>
-    <div class="gr-6 gr-12-m">
-      <h1>
-        [% l("Want to telecommute? ") %]
-      </h1>
-      <p>
-        [% l("Binary.com is a flexible place. As well as our offices, we have staff who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it.") %]
-      </p>
-    </div>
+      <div class="gr-row">
+          <div class="gr-6 gr-12-m">
+            <h1>
+              [% l("Where we are") %]
+            </h1>
+            <p>
+              [% l("Binary.com's headquarters are in Malta, a favoured tourist destination with a warm climate, beautiful recreational areas and World Heritage sites. We also have an Operational Headquarters office in Cyberjaya, a high-tech precinct south of Kuala Lumpur, the capital of Malaysia, an equally exciting destination at the heart of Asia.") %]
+            </p>
+          </div>
+          <div class="gr-6 gr-12-m">
+            <h1>
+              [% l("Want to telecommute? ") %]
+            </h1>
+            <p>
+              [% l("Binary.com is a flexible place. As well as our offices, we have staff who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it.") %]
+            </p>
+          </div>
+      </div>
   </div>
   <div class="gr-12 gr-parent">
-    <div class="gr-6 gr-12-m">
-      <img class="responsive" src="[% request.url_for('images/pages/careers/careers-1.png') %]"/>
-      <div class="hint right-aligned">
-        [% l("Valletta, the capital of Malta") %]
+      <div class="gr-row">
+          <div class="gr-6 gr-12-m">
+            <img class="responsive" src="[% request.url_for('images/pages/careers/careers-1.png') %]"/>
+            <div class="hint right-aligned">
+              [% l("Valletta, the capital of Malta") %]
+            </div>
+          </div>
+          <div class="gr-6 gr-12-m">
+            <img class="responsive" src="[% request.url_for('images/pages/careers/careers-2.png') %]"/>
+            <div class="hint right-aligned">
+              [% l("The Cyberview Lodge Resort in Cyberjaya") %]
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="gr-6 gr-12-m">
-      <img class="responsive" src="[% request.url_for('images/pages/careers/careers-2.png') %]"/>
-      <div class="hint right-aligned">
-        [% l("The Cyberview Lodge Resort in Cyberjaya") %]
+  <div class="gr-12 gr-parent">
+      <div class="gr-row">
+          <div class="gr-6 gr-12-m gr-padding-10">
+            <h1>
+              [% l("Where you can go") %]
+            </h1>
+            <p>
+              [% l("When it's time to kick back, you'll find beautiful beaches, islands and mountains to explore, just a short flight away. From Malta, you'll have Europe, the Mediterranean and North Africa on your doorstep. And from Malaysia, you'll be within easy reach of some of Asia's most spectacular scenery.") %]
+            </p>
+          </div>
+          <div class="gr-6 gr-12-m gr-padding-10">
+            <h1>
+              [% l("More benefits") %]
+            </h1>
+            <p>
+              [% l("We offer a market-based remuneration structure, an annual cash bonus plan, health benefits for you and your family, travel and internet allowances, and company trips.") %]
+            </p>
+            <p>
+              [% l("Whether in Malta or Malaysia, you'll enjoy a high standard of living, and your income will stretch further than in most western countries.") %]
+            </p>
+          </div>
       </div>
-    </div>
   </div>
   <div class="gr-12 gr-parent">
-    <div class="gr-6 gr-12-m gr-padding-10">
-      <h1>
-        [% l("Where you can go") %]
-      </h1>
-      <p>
-        [% l("When it's time to kick back, you'll find beautiful beaches, islands and mountains to explore, just a short flight away. From Malta, you'll have Europe, the Mediterranean and North Africa on your doorstep. And from Malaysia, you'll be within easy reach of some of Asia's most spectacular scenery.") %]
-      </p>
-    </div>
-    <div class="gr-6 gr-12-m gr-padding-10">
-      <h1>
-        [% l("More benefits") %]
-      </h1>
-      <p>
-        [% l("We offer a market-based remuneration structure, an annual cash bonus plan, health benefits for you and your family, travel and internet allowances, and company trips.") %]
-      </p>
-      <p>
-        [% l("Whether in Malta or Malaysia, you'll enjoy a high standard of living, and your income will stretch further than in most western countries.") %]
-      </p>
-    </div>
-  </div>
-  <div class="gr-12 gr-parent">
-    <div class="gr-6 gr-12-m gr-padding-10">
-      <img class="responsive" src="[% request.url_for('images/pages/careers/careers-3.png') %]"/>
-    </div>
-    <div class="gr-6 gr-12-m gr-padding-10">
-      <img class="responsive" src="[% request.url_for('images/pages/careers/careers-4.png') %]"/>
-      <div class="hint right-aligned">
-        [% l("Company trip to Phuket, Thailand") %]
+      <div class="gr-row">
+          <div class="gr-6 gr-12-m gr-padding-10">
+            <img class="responsive" src="[% request.url_for('images/pages/careers/careers-3.png') %]"/>
+          </div>
+          <div class="gr-6 gr-12-m gr-padding-10">
+            <img class="responsive" src="[% request.url_for('images/pages/careers/careers-4.png') %]"/>
+            <div class="hint right-aligned">
+              [% l("Company trip to Phuket, Thailand") %]
+            </div>
+          </div>
       </div>
-    </div>
   </div>
   <div class="gr-12 gr-hide-m">
     <div class="separator-line"></div>
   </div>
   <div class="gr-12">
-    <div class="gr-6 gr-12-m gr-6-p">
-      <div class="xquote">
-        <div>
-          <div class="picture">
-            <img class="responsive" src="[% request.url_for('images/pages/careers/corporate-culture.svg') %]" style="width:50px;"/>
+      <div class="gr-row">
+          <div class="gr-6 gr-12-m gr-6-p">
+            <div class="xquote">
+              <div>
+                <div class="picture">
+                  <img class="responsive" src="[% request.url_for('images/pages/careers/corporate-culture.svg') %]" style="width:50px;"/>
+                </div>
+                <div class="text">
+                  <a href="https://my.wobb.co/users/companies/binary-com" target="_blank">
+                    [% l("Learn more about our corporate culture") %]
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="text">
-            <a href="https://my.wobb.co/users/companies/binary-com" target="_blank">
-              [% l("Learn more about our corporate culture") %]
-            </a>
+          <div class="gr-6 gr-12-m gr-6-p">
+            <div class="xquote">
+              <div>
+                <div class="picture">
+                  <img class="responsive" src="[% request.url_for('images/pages/careers/handbook.svg') %]" style="width:50px;"/>
+                </div>
+                <div class="text">
+                  <a download="[% true %]" href="[% request.url_for('/download/binary-employee-handbook.pdf') %]" target="_blank">
+                    [% l("Employee handbook") %]
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
       </div>
-    </div>
-    <div class="gr-6 gr-12-m gr-6-p">
-      <div class="xquote">
-        <div>
-          <div class="picture">
-            <img class="responsive" src="[% request.url_for('images/pages/careers/handbook.svg') %]" style="width:50px;"/>
-          </div>
-          <div class="text">
-            <a download="[% true %]" href="[% request.url_for('/download/binary-employee-handbook.pdf') %]" target="_blank">
-              [% l("Employee handbook") %]
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
   <div class="gr-12 gr-hide-m">
     <div class="separator-line"></div>
@@ -154,53 +166,54 @@
       [% l("[_1] is always looking to add experienced professionals to its talented team of administrators, technical contributors, and managers. To support our continued growth, we've developed a number of exciting career opportunities in the following areas:", website_name) %]
     </p>
   </div>
-  <div class="gr-6 gr-12-m">
-    <ul class="checked">
-      <li>
-        [% l("Software (Perl) Development") %]
-      </li>
-      <li>
-        [% l("DevOps Engineering") %]
-      </li>
-      <li>
-        [% l("Information Security") %]
-      </li>
-      <li>
-        [% l("Front-End (Javascript) Development") %]
-      </li>
-      <li>
-        [% l("Quantitative Analytics") %]
-      </li>
-      <li>
-        [% l("Internal Audit") %]
-      </li>
-    </ul>
+  <div class="gr-row">
+      <div class="gr-6 gr-12-m">
+        <ul class="checked">
+          <li>
+            [% l("Software (Perl) Development") %]
+          </li>
+          <li>
+            [% l("DevOps Engineering") %]
+          </li>
+          <li>
+            [% l("Information Security") %]
+          </li>
+          <li>
+            [% l("Front-End (Javascript) Development") %]
+          </li>
+          <li>
+            [% l("Quantitative Analytics") %]
+          </li>
+          <li>
+            [% l("Internal Audit") %]
+          </li>
+        </ul>
+      </div>
+      <div class="gr-6 gr-12-m">
+        <ul class="checked">
+          <li>
+            [% l("Online Marketing") %]
+          </li>
+          <li>
+            [% l("Business Development") %]
+          </li>
+          <li>
+            [% l("Graphics Design") %]
+          </li>
+          <li>
+            [% l("Customer Support") %]
+          </li>
+          <li>
+            [% l("Legal & Regulatory Compliance") %]
+          </li>
+          <li>
+            [% l("Accounting & Payments") %]
+          </li>
+        </ul>
+      </div>
   </div>
-  <div class="gr-6 gr-12-m">
-    <ul class="checked">
-      <li>
-        [% l("Online Marketing") %]
-      </li>
-      <li>
-        [% l("Business Development") %]
-      </li>
-      <li>
-        [% l("Graphics Design") %]
-      </li>
-      <li>
-        [% l("Customer Support") %]
-      </li>
-      <li>
-        [% l("Legal & Regulatory Compliance") %]
-      </li>
-      <li>
-        [% l("Accounting & Payments") %]
-      </li>
-    </ul>
-  </div>
-  <div class="gr-12 gr-padding-10">
-    <div class="gr-4 gr-hide-m"></div>
-    <div class="gr-4 gr-12-m gr-6-p center">
+  <div class="gr-row gr-padding-10">
+    <div class="gr-4 gr-12-m gr-6-p center-text gr-centered">
       <div class="xquote">
         <div>
           <div class="picture">
@@ -214,7 +227,6 @@
         </div>
       </div>
     </div>
-    <div class="gr-4 gr-hide-m"></div>
   </div>
   <div class="gr-12 gr-hide-m">
     <div class="separator-line"></div>

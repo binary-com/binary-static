@@ -1,5 +1,5 @@
 <div class="container container">
-  <div class="payment-agent static_full">
+  <div class="payment-agent static_full gr-row">
     <div class="gr-3 gr-hide-m">
       <div class="sidebar">
         <ul id="sidebar-nav">
@@ -52,14 +52,15 @@
                 [% l("[_1] would like to team up with potential payment agents worldwide so we can offer local payment processing services to our clients in their respective regions.", website_name) %]
               </p>
             </div>
-            <div class="gr-8 gr-12-m">
-              <p>
-                [% l("A Payment Agent acts like an exchange between the Client (that is, our customer) and [_1]. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by [_1]. The transfer fees are borne by the Client.", website_name) %]
-              </p>
-            </div>
-            <div class="gr-hide gr-2-m"></div>
-            <div class="gr-4 gr-8-m">
-              <img class="responsive" src="[% request.url_for('images/pages/payment_agent/payment_agents.svg') %]"/>
+            <div class="gr-row">
+                <div class="gr-8 gr-12-m">
+                  <p>
+                    [% l("A Payment Agent acts like an exchange between the Client (that is, our customer) and [_1]. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by [_1]. The transfer fees are borne by the Client.", website_name) %]
+                  </p>
+                </div>
+                <div class="gr-4 gr-8-m gr-centered">
+                  <img class="responsive" src="[% request.url_for('images/pages/payment_agent/payment_agents.svg') %]"/>
+                </div>
             </div>
             <div class="gr-12">
               <p class="faded">
@@ -106,22 +107,23 @@
                 [% l("Who can apply to be a Payment Agent?") %]
               </h1>
             </div>
-            <div class="gr-hide gr-2-m"></div>
-            <div class="gr-4 gr-8-m">
-              <img class="responsive" src="[% request.url_for('images/pages/payment_agent/who_payment_agents.svg') %]"/>
-            </div>
-            <div class="gr-8 gr-12-m">
-              <ul class="checked">
-                <li>
-                  [% l("Online currency exchangers") %]
-                </li>
-                <li>
-                  [% l("[_1] affiliate partners who wish to support a big group of Clients", website_name) %]
-                </li>
-                <li>
-                  [% l("Anyone who has potential to grow or increase traffic to [_1]", website_name) %]
-                </li>
-              </ul>
+            <div class="gr-row">
+                <div class="gr-4 gr-8-m gr-centered">
+                  <img class="responsive" src="[% request.url_for('images/pages/payment_agent/who_payment_agents.svg') %]"/>
+                </div>
+                <div class="gr-8 gr-12-m">
+                  <ul class="checked">
+                    <li>
+                      [% l("Online currency exchangers") %]
+                    </li>
+                    <li>
+                      [% l("[_1] affiliate partners who wish to support a big group of Clients", website_name) %]
+                    </li>
+                    <li>
+                      [% l("Anyone who has potential to grow or increase traffic to [_1]", website_name) %]
+                    </li>
+                  </ul>
+                </div>
             </div>
             <div class="clearfix"></div>
           </div>
