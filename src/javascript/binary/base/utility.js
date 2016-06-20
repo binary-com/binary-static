@@ -230,12 +230,7 @@ function showLocalTimeOnHover(s) {
 
         var localTimeStr = localTime.format('YYYY-MM-DD HH:mm:ss ZZ');
 
-        var timeToShow = localTimeStr.replace(' ', '\n');
-        var tooltip = $('<span></span>', { class: 'tooltip-content', text: timeToShow });
-        $(ele)
-            .children('.tooltip-content')
-            .remove();
-        $(ele).append(tooltip);
+        $(ele).attr('data-balloon', localTimeStr);
     });
 }
 

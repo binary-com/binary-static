@@ -20,6 +20,10 @@
     fieldset {
         border-bottom: 1px solid $COLOR_GRAY;
         margin: 20px 0;
+        label {
+            text-decoration: none;
+            @include BIDIR_PROP(margin-right, margin-left, 15px);
+        }
         #formMessage {
             margin-bottom: 10px;
         }

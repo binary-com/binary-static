@@ -17,7 +17,7 @@
                     <div class='gr-6 gr-hide-m by_client_type client_logged_out'></div>
                     <div class='gr-6 gr-12-m' id='topbar-info'>
                         <div class="gr-row">
-                            <div class='gr-5 gr-7-m' id="gmt-clock"></div>
+                            <div class='gr-5 gr-7-m no-underline' id="gmt-clock" data-balloon-pos="down"></div>
                             <div class='gr-3 gr-hide-m' id='contact-us'>
                                 <a class="pjaxload" href="[% request.url_for('contact') %]"[% target %]>[% l("Contact Us") %]</a>
                             </div>

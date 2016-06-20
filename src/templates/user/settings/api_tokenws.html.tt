@@ -27,13 +27,13 @@
                     </div>
                     <div class="gr-8">
                         <input id="scopes" type="checkbox" name="scopes[]" value="read" checked="checked" readonly="readonly" />
-                          <abbr rel="tooltip" title="[% l('Can be used to view account activity, including settings, limits, balance sheets, trade purchase history, and more.') %]">[% l('Read') %]</abbr>
-                        <input type="checkbox" name="scopes[]" value="trade" />
-                          <abbr rel="tooltip" title="[% l('Can be used to buy and sell contracts, renew expired purchases, and top-up virtual-money accounts.') %]">[% l('Trade') %]</abbr>
-                        <input type="checkbox" name="scopes[]" value="payments" />
-                          <abbr rel="tooltip" title="[% l('Can be used to open accounts, set settings, manage token usage, and more.') %]">[% l('Payments') %]</abbr>
-                        <input type="checkbox" name="scopes[]" value="admin" />
-                          <abbr rel="tooltip" title="[% l('Can be used to withdraw to payment agents, transfer funds between accounts, and set / clear cashier passwords.') %]">[% l('Admin') %]</abbr>
+                          <label for="scopes" data-balloon="[% l('Can be used to view account activity, including settings, limits, balance sheets, trade purchase history, and more.') %]" data-balloon-length="xlarge">[% l('Read') %]</label>
+                        <input id="scopes-trade" type="checkbox" name="scopes[]" value="trade" />
+                          <label for="scopes-trade" data-balloon="[% l('Can be used to buy and sell contracts, renew expired purchases, and top-up virtual-money accounts.') %]" data-balloon-length="xlarge">[% l('Trade') %]</label>
+                        <input id="scopes-payments" type="checkbox" name="scopes[]" value="payments" />
+                          <label for="scopes-payments" data-balloon="[% l('Can be used to open accounts, set settings, manage token usage, and more.') %]" data-balloon-length="xlarge">[% l('Payments') %]</label>
+                        <input id="scopes-admin" type="checkbox" name="scopes[]" value="admin" />
+                          <label for="scopes-admin" data-balloon="[% l('Can be used to withdraw to payment agents, transfer funds between accounts, and set / clear cashier passwords.') %]" data-balloon-length="xlarge">[% l('Admin') %]</label>
                     </div>
                 </div>
 
