@@ -33,7 +33,7 @@
             <form class="form rbox gr-padding-10" id="frmWithdrawal">
                 <fieldset>
 
-                  <div class="gr-padding-10 row clear">
+                  <div class="gr-padding-10 gr-row clear">
                       <div class="gr-4 form_label">
                           <label for="verification-code">[% l('Verification Token') %]</label>
                       </div>
@@ -43,7 +43,7 @@
                       </div>
                   </div>
 
-                    <div class="gr-padding-10 row clear">
+                    <div class="gr-padding-10 gr-row clear">
                         <div class="gr-4 form_label">
                             <label for="ddlAgents">[% l('Transfer to Payment Agent') %]</label>
                         </div>
@@ -52,7 +52,7 @@
                         </div>
                     </div>
 
-                    <div class="gr-padding-10 row clear">
+                    <div class="gr-padding-10 gr-row clear">
                         <div class="gr-4 form_label">
                             <label for="txtAmount">[% l('Amount') %]</label>
                         </div>
@@ -62,7 +62,7 @@
                         </div>
                     </div>
 
-                    <div class="gr-padding-10 row clear">
+                    <div class="gr-padding-10 gr-row clear">
                         <div class="gr-4 form_label">
                             <label for="txtDescription">[% l('Further Instructions') %]</label>
                         </div>
@@ -79,8 +79,7 @@
                     </div>
 
                     <div class="gr-padding-10">
-                        <div class="gr-4"></div>
-                        <div class="gr-8">
+                        <div class="gr-8 gr-centered center-text">
                             <span class="button">
                                 <button class="button">[% l('Submit') %]</button>
                             </span>

@@ -441,7 +441,7 @@ function handle_residence_state_ws(){
             for (i = 0; i < states_list.length; i++) {
                 appendTextValueChild(select, states_list[i].text, states_list[i].value);
             }
-            select.parentNode.parentNode.setAttribute('style', 'display:block');
+            select.parentNode.parentNode.show();
             if (window.state) {
               select.value = window.state;
             }
