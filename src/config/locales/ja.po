@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-16 18:58+0000\n"
-"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
+"PO-Revision-Date: 2016-06-20 01:22+0000\n"
+"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -1207,7 +1207,9 @@ msgstr "ベッティングシステムとその方法"
 msgid "Binary (C.R.) S.A., registered in Costa Rica."
 msgstr "Binary (C.R.) S.Aは、コスタリカ共和国に登記されています。"
 
-msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
+#, fuzzy
+#| msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
+msgid "Binary (Europe) Ltd & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 msgstr ""
 "Binary (Europe) Ltd\n"
 "所在地：Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
@@ -1387,6 +1389,9 @@ msgstr "ブル/ベア市場インデックスは毎日00:00 GMT から。それ�
 
 msgid "Business Development"
 msgstr "事業開発"
+
+msgid "But there's no need to wait until expiry. You can sell back long-term trades at any time to profit from changing market conditions."
+msgstr "権利行使期限まで待つ必要はありません。利益がでているポジションは、取引期間内に転売して利益を確定することが可能です。"
 
 msgid "But we're picky. We only select people with special qualities: serious professionals, who have high moral standards, and thrive in an honest, collaborative environment."
 msgstr "しかしながら、当社の人財に対する要求水準は高いです。当社は、高いプロ意識、高いモラル意識、実直、そして協力的な態度を有するような特別な人財のみ選抜します。"
@@ -3143,7 +3148,7 @@ msgid "Indemnity and Liability"
 msgstr "賠償と責任範囲"
 
 msgid "Indicative"
-msgstr "気配"
+msgstr "参考売却"
 
 msgid "Indices"
 msgstr "インデックス"
@@ -4584,6 +4589,9 @@ msgstr "パートナー協定"
 msgid "Partners"
 msgstr "パートナー協定"
 
+msgid "Password"
+msgstr "パスワード"
+
 msgid "Password Reset"
 msgstr "パスワード再設定"
 
@@ -4815,7 +4823,7 @@ msgid "Policies and Exclusion of Liability"
 msgstr "ポリシーと免責事項"
 
 msgid "Portfolio"
-msgstr "資産情報"
+msgstr "ポジション一覧"
 
 msgid "Postal Code / ZIP"
 msgstr "郵便番号"
@@ -4854,7 +4862,7 @@ msgid "Preparing the periodic and special reports required to ensure legal and r
 msgstr "当社事業内の法域における法律および規制の遵守を確保するために定期報告書または特別報告書の作成を行います"
 
 msgid "Presents the maximum aggregate payouts on outstanding contracts in your portfolio. If the maximum is attained, you may not purchase additional contracts without first closing out existing positions."
-msgstr "資産情報ページ内に存在する未決済分トレードに対する払い戻し金額の最高総額を示します。最高総額を超えた場合、オープン中のトレードを閉じて頂くことで新たなトレードの購入が可能になります。"
+msgstr "ポジション一覧ページ内に存在する未決済分のポジションに対する払い戻し金額の最高総額を示します。最高総額を超えた場合、保有中のオープンポジションを閉じて頂くことで新たなトレードの購入が可能になります。"
 
 msgid "Previous"
 msgstr "戻る"
@@ -6266,7 +6274,7 @@ msgstr "個人情報の確認において問題が発生しました。%1こち�
 
 #, fuzzy
 #| msgid "There was a problem validating your personal details. Please fix the fields %1here"
-msgid "There was a problem validating your personal details. Please fix the fields <a class=\"pjaxload\" href=\"%1\">here</a>."
+msgid "There was a problem validating your personal details. Please update your %1 <a class=\"pjaxload\" href=\"%2\">here</a>."
 msgstr "個人情報の確認において問題が発生しました。%1こちらから項目を修正してください。"
 
 msgid "There was an error"
@@ -6791,7 +6799,7 @@ msgid "View"
 msgstr "表示"
 
 msgid "View Updated Portfolio"
-msgstr "更新された資産情報を表示する"
+msgstr "更新されたポジション一覧を表示する"
 
 msgid "View available payment methods"
 msgstr "ご利用できる決済方法を確認する"
@@ -7373,6 +7381,9 @@ msgstr "お客さまの予想通りに相場が動いた場合、判定時刻前
 
 msgid "You can sell back long-term trades at any time to profit from changing market conditions."
 msgstr "既存ポジションは、取引期間内にいつでも転売が可能です。"
+
+msgid "You can set the length of your trade, from 10 seconds to 365 days."
+msgstr "取引期間は2時間以上からご選択いただけます。"
 
 #, fuzzy
 #| msgid "You can trade a range of markets, timescales and indices – 24/7."
@@ -8566,9 +8577,6 @@ msgstr "リアル口座開設の流れについてご案内致します。まず
 #~ msgid "Binary.com Open-Source Projects"
 #~ msgstr "Binary.comオープンソース・プロジェクト"
 
-#~ msgid "But there's no need to wait until expiry. You can sell back long-term trades at any time to profit from changing market conditions."
-#~ msgstr "権利行使期限まで待つ必要はありません。利益がでているポジションは、取引期間内に転売して利益を確定することが可能です。"
-
 #~ msgid ""
 #~ "Dear Valued Customer,\n"
 #~ "\n"
@@ -8633,9 +8641,6 @@ msgstr "リアル口座開設の流れについてご案内致します。まず
 
 #~ msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a \"Touch\" trade, with a price target farther away from the current price."
 #~ msgstr "条件を満たすことで利益を確保することができます。現在の市場価格からより離れたバリア価格を設定することにより、より高い利益を期待することができます。"
-
-#~ msgid "You can set the length of your trade, from 10 seconds to 365 days."
-#~ msgstr "取引期間は2時間以上からご選択いただけます。"
 
 #~ msgid "You have reached the rate limit of requests per second. To continue, please <a href='javascript:;' id='ratelimit-refresh-link'>refresh</a> the page."
 #~ msgstr "秒単位のレート制限に達しました。続行されるにはページを <a href='javascript:;' id='ratelimit-refresh-link'>更新</a> してください。"
@@ -9530,9 +9535,6 @@ msgstr "リアル口座開設の流れについてご案内致します。まず
 
 #~ msgid "Parameters sanity check failed."
 #~ msgstr "パラメーターのサニティチェックに失敗しました。"
-
-#~ msgid "Password"
-#~ msgstr "パスワード"
 
 #~ msgid "Password not given."
 #~ msgstr "パスワードが入力されませんでした。"

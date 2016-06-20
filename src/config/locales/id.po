@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-15 04:13+0000\n"
+"PO-Revision-Date: 2016-06-17 08:49+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
@@ -198,7 +198,7 @@ msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum loss
 msgstr "Kontrak Spread %1 memerlukan 'stop loss' yang akan membatasi jumlah maksimal kerugian yang akan dialami oleh Klien. Jumlah 'stop loss' akan berperan sebagai deposit dan tidak akan ditradingkan hingga Kontrak Spread ditutup. Kontrak Spread akan ditutup setelah terjual melewati batasan 'stop loss' atau 'stop profit'."
 
 msgid "%1's Volatility Indices are based on a cryptographically secure random number generator audited for fairness by an independent third party."
-msgstr ""
+msgstr "Indeks Volatilitas %1 didasarkan pada kriptografi generator angka random aman yang diaudit untuk kejujuran oleh pihak ketiga yang independen."
 
 msgid "%1's patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market."
 msgstr "Teknologi harga %1 yang telah dipatenkan memberi kesempatan kepada anda untuk memperoleh keuntungan dari tingkat pengembalian yang sama seperti perdagangan pada pasar antar bank."
@@ -1197,7 +1197,9 @@ msgstr "Sistem dan metode trading"
 msgid "Binary (C.R.) S.A., registered in Costa Rica."
 msgstr "Binary (C.R.) S.A., terdaftar di Costa Rica."
 
-msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
+#, fuzzy
+#| msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
+msgid "Binary (Europe) Ltd & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 msgstr "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 
 msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licenced and regulated (for gambling products only) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>."
@@ -1367,6 +1369,9 @@ msgstr "Indeks Market Bull dan Market Bear dimulai pada 00:00 GMT setiap hari, m
 
 msgid "Business Development"
 msgstr "Pengembangan Bisnis"
+
+msgid "But there's no need to wait until expiry. You can sell back long-term trades at any time to profit from changing market conditions."
+msgstr "Namun Anda tidak perlu menunggu hingga kontrak berakhir. Anda dapat menjual kontrak jangka panjang kapan saja untuk memperoleh keuntungan dari perubahan kondisi pasar."
 
 msgid "But we're picky. We only select people with special qualities: serious professionals, who have high moral standards, and thrive in an honest, collaborative environment."
 msgstr "Namun kami agak memilih. Kami hanya memilih orang-orang yang berkualitas: profesional, memiliki standar moral tinggi, jujur dan memberi lingkungan bersahabat."
@@ -4517,6 +4522,9 @@ msgstr "Bermitra Bersama Kami"
 msgid "Partners"
 msgstr "Mitra"
 
+msgid "Password"
+msgstr "Kata Sandi"
+
 msgid "Password Reset"
 msgstr "Merubah Kata Sandi"
 
@@ -6047,7 +6055,9 @@ msgstr "Terjadi masalah pada saat mengakses server."
 msgid "There was a problem validating your personal details. Please fix the fields %1here"
 msgstr "Terdapat masalah dalam memvalidasi data pribadi Anda. Perbaiki kolom %1 disini"
 
-msgid "There was a problem validating your personal details. Please fix the fields <a class=\"pjaxload\" href=\"%1\">here</a>."
+#, fuzzy
+#| msgid "There was a problem validating your personal details. Please fix the fields <a class=\"pjaxload\" href=\"%1\">here</a>."
+msgid "There was a problem validating your personal details. Please update your %1 <a class=\"pjaxload\" href=\"%2\">here</a>."
 msgstr "Terdapat masalah dalam memvalidasi data pribadi Anda. Perbaiki kolom <a class=\"pjaxload\" href=\"%1\">disin</a>."
 
 msgid "There was an error"
@@ -7054,6 +7064,9 @@ msgstr "Anda dapat menjual kontrak sebelum berakhir untuk memperoleh keuntungan.
 
 msgid "You can sell back long-term trades at any time to profit from changing market conditions."
 msgstr "Anda dapat menjual kembali kontrak jangka panjang untuk profit dari perubahan kondisi pasar."
+
+msgid "You can set the length of your trade, from 10 seconds to 365 days."
+msgstr "Anda dapat menentukan lama kontrak, dari 10 detik hingga 365 hari."
 
 msgid "You can trade a range of markets, timescales and indices - 24/7."
 msgstr "Anda dapat bertrading pada berbagai pilihan pasar, waktu dan indeks - 24/7."
@@ -8156,9 +8169,6 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 #~ msgid "Binary.com Open-Source Projects"
 #~ msgstr "Proyek Open Source Binary.com"
 
-#~ msgid "But there's no need to wait until expiry. You can sell back long-term trades at any time to profit from changing market conditions."
-#~ msgstr "Namun Anda tidak perlu menunggu hingga kontrak berakhir. Anda dapat menjual kontrak jangka panjang kapan saja untuk memperoleh keuntungan dari perubahan kondisi pasar."
-
 #~ msgid ""
 #~ "Dear Valued Customer,\n"
 #~ "\n"
@@ -8222,9 +8232,6 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 
 #~ msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a \"Touch\" trade, with a price target farther away from the current price."
 #~ msgstr "Laba 10-1000% dari modal jika analisa Anda tepat. Tingkatkan hasil dengan memilih kontrak \"Menyentuh\", dengan target harga yang jauh dari harga terkini."
-
-#~ msgid "You can set the length of your trade, from 10 seconds to 365 days."
-#~ msgstr "Anda dapat menentukan lama kontrak, dari 10 detik hingga 365 hari."
 
 #~ msgid "You have reached the rate limit of requests per second. To continue, please <a href='javascript:;' id='ratelimit-refresh-link'>refresh</a> the page."
 #~ msgstr "Anda telah mencapai batas permintaan per detik. Untuk melanjutkan, silahkan <a href=\"javascript:;\" id=\"ratelimit-refresh-link\">perbarui</a> halaman."
@@ -9092,9 +9099,6 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 
 #~ msgid "Parameters sanity check failed."
 #~ msgstr "Pemeriksaan parameter sanity gagal."
-
-#~ msgid "Password"
-#~ msgstr "Kata Sandi"
 
 #~ msgid "Password not given."
 #~ msgstr "Kata sandi tidak diberikan."
