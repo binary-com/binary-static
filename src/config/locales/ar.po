@@ -1273,7 +1273,9 @@ msgstr "نظام وطريقة المراهنة"
 msgid "Binary (C.R.) S.A., registered in Costa Rica."
 msgstr "بيناري (سى.آر) إس. أ. مسجلة فى كوستاريكا."
 
-msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
+#, fuzzy
+#| msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
+msgid "Binary (Europe) Ltd & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 msgstr "بيناري (أوروبا) المحدودة، Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 
 #, fuzzy
@@ -1467,6 +1469,9 @@ msgstr "مؤشرات أسواق الثيران والدببة تبدأ كل يو
 
 msgid "Business Development"
 msgstr "تطوير الاعمال"
+
+msgid "But there's no need to wait until expiry. You can sell back long-term trades at any time to profit from changing market conditions."
+msgstr "ليس هناك حاجة للأنتظار حتى أنتهاء الصلاحية. يمكنك أن تقوم بإعادة بيع المعاملات طويلة الأجل لتربح من أحوال السوق المتغيرة."
 
 #, fuzzy
 #| msgid "But we’re picky. We only select people with special qualities: serious professionals, who have high moral standards, and thrive in an honest, collaborative environment."
@@ -4704,6 +4709,9 @@ msgstr "شريك معنا"
 msgid "Partners"
 msgstr "الشركاء"
 
+msgid "Password"
+msgstr "كلمة مرور"
+
 msgid "Password Reset"
 msgstr "إعادة تعيين كلمة المرور"
 
@@ -6289,7 +6297,7 @@ msgstr "كانت هناك مشكلة في التحقق من صحة التفاص�
 
 #, fuzzy
 #| msgid "There was a problem validating your personal details. Please fix the fields %1here"
-msgid "There was a problem validating your personal details. Please fix the fields <a class=\"pjaxload\" href=\"%1\">here</a>."
+msgid "There was a problem validating your personal details. Please update your %1 <a class=\"pjaxload\" href=\"%2\">here</a>."
 msgstr "كانت هناك مشكلة في التحقق من صحة التفاصيل الشخصية الخاصة بك. يرجى إصلاح الحقول 1% هنا"
 
 msgid "There was an error"
@@ -7353,6 +7361,9 @@ msgstr "يمكنك أن تغلق معاملتك قبل تاريخ الأنتها
 
 msgid "You can sell back long-term trades at any time to profit from changing market conditions."
 msgstr "يمكنك أن تقوم بإعادة بيع المعاملات طويلة الأجل في أي وقت لتربح من أحوال السوق المتغيرة."
+
+msgid "You can set the length of your trade, from 10 seconds to 365 days."
+msgstr "يمكنك أن تحدد طول مدة معاملتك من 10 ثوان لـ 365 يوما."
 
 #, fuzzy
 #| msgid "You can trade a range of markets, timescales and indices – 24/7."
@@ -8509,9 +8520,6 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 #~ msgid "Binary.com Open-Source Projects"
 #~ msgstr "مشاريع Binary.com مفتوحة المصدر"
 
-#~ msgid "But there's no need to wait until expiry. You can sell back long-term trades at any time to profit from changing market conditions."
-#~ msgstr "ليس هناك حاجة للأنتظار حتى أنتهاء الصلاحية. يمكنك أن تقوم بإعادة بيع المعاملات طويلة الأجل لتربح من أحوال السوق المتغيرة."
-
 #~ msgid ""
 #~ "Dear Valued Customer,\n"
 #~ "\n"
@@ -8575,9 +8583,6 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 
 #~ msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a \"Touch\" trade, with a price target farther away from the current price."
 #~ msgstr "أحصل على عائد 10%- 1000% مضافة إلى حصتك إذا كان توقعك صحيحا. يمكنك زيادة العائد باختيار تداول \"الوصول\" ذات سعر مستهدف بعيد عن السعر الحالي."
-
-#~ msgid "You can set the length of your trade, from 10 seconds to 365 days."
-#~ msgstr "يمكنك أن تحدد طول مدة معاملتك من 10 ثوان لـ 365 يوما."
 
 #~ msgid "You have reached the rate limit of requests per second. To continue, please <a href='javascript:;' id='ratelimit-refresh-link'>refresh</a> the page."
 #~ msgstr "لقد وصلت إلى معدل الحد الأقصى من الطلبات في الثانية الواحدة. للمتابعة، الرجاء <a href='javascript:;' id='ratelimit-refresh-link'>تحديث</a> الصفحة."
@@ -9445,9 +9450,6 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 
 #~ msgid "Parameters sanity check failed."
 #~ msgstr "فشل التحقق من معايير السلامة العقلية."
-
-#~ msgid "Password"
-#~ msgstr "كلمة مرور"
 
 #~ msgid "Password not given."
 #~ msgstr "لم يتم إعطاء كلمة المرور."
