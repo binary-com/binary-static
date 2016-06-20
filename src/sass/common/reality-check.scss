@@ -36,6 +36,9 @@
         display: inline-block;
         width: 14em;
     }
+    [data-balloon] {
+        border-bottom: none;
+    }
 }
 
 #reality-check-content {
