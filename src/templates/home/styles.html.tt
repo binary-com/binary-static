@@ -241,17 +241,39 @@
       </p>
     </div>
     <div class="grd-clear"></div>
+  </div>
+  <div class="grd-grid-12 grd-parent">
+    <h1>
+      [% l("Tooltips") %]
+    </h1>
     <div class="grd-grid-6">
       <xmp>
-<abbr rel="tooltip" title="message">
+<span data-balloon="message"
+      data-balloon-length="small">
   text with tooltip
-</abbr>
+</span>
       </xmp>
     </div>
     <div class="grd-grid-6">
-      <abbr rel="tooltip" title="message">
+      <span data-balloon="message" data-balloon-length="small">
         text with tooltip
-      </abbr>
+      </span>
+    </div>
+    <div class="grd-clear"></div>
+    <div class="grd-grid-6">
+      <xmp>
+<span data-balloon="message"
+      data-balloon-pos="down"
+      data-balloon-length="medium"
+      class="no-underline">
+  text with tooltip
+</span>
+      </xmp>
+    </div>
+    <div class="grd-grid-6">
+      <span data-balloon="Tooltip message at bottom" data-balloon-pos="down" data-balloon-length="medium" class="no-underline">
+        text with tooltip
+      </span>
     </div>
   </div>
   <div class="grd-grid-12 grd-parent">
