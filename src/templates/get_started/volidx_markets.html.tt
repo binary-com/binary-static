@@ -13,29 +13,29 @@
         </p>
       </div>
       <div class="gr-row">
-      <div class="gr-8 gr-12-m">
-        <ul class="checked">
-          <li>
-            [% l("Rise/Fall") %]
-          </li>
-          <li>
-            [% l("Higher/Lower") %]
-          </li>
-          <li>
-            [% l("Touch/No Touch") %]
-          </li>
-          <li>[% l("In/Out (ends between/outside and stays between/goes outside)") %]</li>
-          <li>
-            [% l("Asians") %]
-          </li>
-          <li>
-            [% l("Digits") %]
-          </li>
-        </ul>
-      </div>
-      <div class="gr-4 gr-12-m">
-        <img class="responsive" src="[% request.url_for('images/pages/get-started/volidx-markets.svg') %]"/>
-      </div>
+          <div class="gr-8 gr-12-m">
+            <ul class="checked">
+              <li>
+                [% l("Rise/Fall") %]
+              </li>
+              <li>
+                [% l("Higher/Lower") %]
+              </li>
+              <li>
+                [% l("Touch/No Touch") %]
+              </li>
+              <li>[% l("In/Out (ends between/outside and stays between/goes outside)") %]</li>
+              <li>
+                [% l("Asians") %]
+              </li>
+              <li>
+                [% l("Digits") %]
+              </li>
+            </ul>
+          </div>
+          <div class="gr-4 gr-12-m">
+            <img class="responsive" src="[% request.url_for('images/pages/get-started/volidx-markets.svg') %]"/>
+          </div>
       </div>
       <p>
         [% l("Volatility Indices are further categorized into two types:") %]

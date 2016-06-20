@@ -87,7 +87,7 @@
 
         <!-- ========== Image ========== -->
         <div id="explanation_image" class="invisible">
-            <div class='gr-12'>
+            <div class='gr-row'>
                 <div class='gr-2 hide-mobile'></div>
                 <div class='gr-4 gr-12-m padding-right'>
                     <img id="explanation_image_1" class="responsive" />
@@ -97,7 +97,6 @@
                 </div>
                 <div class='gr-2 hide-mobile'></div>
             </div>
-            <div class="push"></div>
         </div>
 
         <!-- ========== Explain ========== -->

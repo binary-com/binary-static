@@ -1,7 +1,6 @@
 [% IF !full_width %]
 </div> [% # closes container %]
 [% END %]
-<div class="push"></div>
 </div> [% # closes div#content %]
 </div>[% #closes div#content-holder %]
 <div id="footer">

@@ -28,18 +28,18 @@ var JapanInfo = function() {
             }
         }
         var $header = $('<div />', {
-            'class': 'grd-parent grd-grid-12 grd-centered table-header grd-row-padding'
+            'class': 'gr-parent gr-12 gr-centered table-header gr-padding-10 gr-row'
         }).append(
             $('<div />', {
-                'class': 'grd-grid-4 center-text',
+                'class': 'gr-4 center-text',
                 'text': Content.localize().textExercisePeriod
             }),
             $('<div />', {
-                'class': 'grd-grid-4 center-text',
+                'class': 'gr-4 center-text',
                 'text': ask
             }),
             $('<div />', {
-                'class': 'grd-grid-4 center-text',
+                'class': 'gr-4 center-text',
                 'text': bid
             })
         );
@@ -48,18 +48,18 @@ var JapanInfo = function() {
 
     var add_row = function(barrier, id, ask, bid) {
         $rows[id] = $('<div />', {
-            'class': 'grd-parent grd-grid-12 grd-centered table-body table-body-lines grd-row-paddingd',
+            'class': 'gr-parent gr-12 gr-centered table-body table-body-lines gr-padding-10 gr-row',
         }).append(
             $('<div />', {
-                'class': 'grd-grid-4 center-text',
+                'class': 'gr-4 center-text',
                 'text': barrier
             }),
             $('<div />', {
-                'class': 'grd-grid-4 center-text ask',
+                'class': 'gr-4 center-text ask',
                 'text': ask
             }),
             $('<div />', {
-                'class': 'grd-grid-4 center-text bid',
+                'class': 'gr-4 center-text bid',
                 'text': bid
             })
         );

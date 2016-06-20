@@ -153,7 +153,7 @@ Client.prototype = {
     show_login_if_logout: function(shouldReplacePageContents) {
         if(!this.is_logged_in) {
             if(shouldReplacePageContents) {
-                $('#content > .grd-container').addClass('center').empty()
+                $('#content > .container').addClass('center-text').empty()
                     .append($('<p/>', {class: 'notice-msg', html: text.localize('Please [_1] to view this page')
                         .replace('[_1]', '<a class="login_link" href="javascript:;">' + text.localize('login') + '</a>')}));
                 $('.login_link').click(function(){Login.redirect_to_login();});
