@@ -117,7 +117,7 @@
                                <a class="pjaxload" href="[% request.url_for('/terms-and-conditions?selected_tab=complaints-disputes-tac-tab') %]">[% l('Complaints') %]</a>
                                </li>
                                <li class="ja-hide id-hide ru-hide">
-                                   <a href="[% request.url_for('/download/BIEL_Prospectus.pdf') %]" target="_blank">[% l('Prospectus') %]</a>
+                                   <a href="[% request.url_for('/download/BIEL_Prospectus.pdf') %]" target="_blank">[% l('BIEL Prospectus') %]</a>
                                </li>
                                <li class="ja-hide id-hide ru-hide">
                                    <a href="[% request.url_for('/download/BIEL_Pillar_3_Report.pdf') %]" target="_blank">[% l('BIEL Pillar III') %]</a>
