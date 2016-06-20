@@ -1321,7 +1321,9 @@ msgstr "Système et méthode de trading"
 msgid "Binary (C.R.) S.A., registered in Costa Rica."
 msgstr "Binary (C.R.) S.A., enregistré au Costa Rica."
 
-msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
+#, fuzzy
+#| msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
+msgid "Binary (Europe) Ltd & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 msgstr "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 
 #, fuzzy
@@ -1521,6 +1523,9 @@ msgstr ""
 
 msgid "Business Development"
 msgstr "Développement commercial"
+
+msgid "But there's no need to wait until expiry. You can sell back long-term trades at any time to profit from changing market conditions."
+msgstr "Mais il ne faut pas attendre jusqu'à l'expiration. Vous pouvez revendre les trades à long terme à n'importe quel moment afin de bénéficier des conditions du marché changeantes."
 
 #, fuzzy
 #| msgid "But we’re picky. We only select people with special qualities: serious professionals, who have high moral standards, and thrive in an honest, collaborative environment."
@@ -4932,6 +4937,9 @@ msgstr "Devenez partenaire Binary.com"
 msgid "Partners"
 msgstr "Partenaires"
 
+msgid "Password"
+msgstr "Mot de passe"
+
 #, fuzzy
 #| msgid "Password reset"
 msgid "Password Reset"
@@ -6618,7 +6626,7 @@ msgstr "Un problème est survenu avec votre adresse email"
 
 #, fuzzy
 #| msgid "There was a problem with your email address"
-msgid "There was a problem validating your personal details. Please fix the fields <a class=\"pjaxload\" href=\"%1\">here</a>."
+msgid "There was a problem validating your personal details. Please update your %1 <a class=\"pjaxload\" href=\"%2\">here</a>."
 msgstr "Un problème est survenu avec votre adresse email"
 
 #, fuzzy
@@ -7743,6 +7751,9 @@ msgstr "Vous pouvez clôturer votre position avant l'expiration pour protéger v
 
 msgid "You can sell back long-term trades at any time to profit from changing market conditions."
 msgstr "Vous pouvez revendre les trades à long terme à n'importe quel moment afin de bénéficier des conditions du marché changeantes."
+
+msgid "You can set the length of your trade, from 10 seconds to 365 days."
+msgstr "Vous pouvez déterminer la durée de votre trade, de 10 secondes à 365 jours."
 
 #, fuzzy
 #| msgid "You can trade a range of markets, timescales and indices – 24/7."
@@ -9049,9 +9060,6 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 #~ msgid "Binary.com Open-Source Projects"
 #~ msgstr "Binary.com Projets Open Source"
 
-#~ msgid "But there's no need to wait until expiry. You can sell back long-term trades at any time to profit from changing market conditions."
-#~ msgstr "Mais il ne faut pas attendre jusqu'à l'expiration. Vous pouvez revendre les trades à long terme à n'importe quel moment afin de bénéficier des conditions du marché changeantes."
-
 #~ msgid ""
 #~ "Dear Valued Customer,\n"
 #~ "\n"
@@ -9114,9 +9122,6 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 
 #~ msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a \"Touch\" trade, with a price target farther away from the current price."
 #~ msgstr "Gagnez 10%-1000% sur votre mise si votre prédiction s'avère correcte. Augmentez votre retour gagnant en choisissant un trade \"Touche\" avec un prix-cible qui est plus éloigné du prix actuel."
-
-#~ msgid "You can set the length of your trade, from 10 seconds to 365 days."
-#~ msgstr "Vous pouvez déterminer la durée de votre trade, de 10 secondes à 365 jours."
 
 #~ msgid "You have reached the rate limit of requests per second. To continue, please <a href='javascript:;' id='ratelimit-refresh-link'>refresh</a> the page."
 #~ msgstr "Vous avez atteint la limite autorisée de demandes par seconde. Pour continuer, veuillez <a href='javascript:;' id='ratelimit-refresh-link'>actualiser</a> la page."
@@ -10025,9 +10030,6 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 
 #~ msgid "Parameters sanity check failed."
 #~ msgstr "Paramètres non conformes détectés."
-
-#~ msgid "Password"
-#~ msgstr "Mot de passe"
 
 #~ msgid "Password not given."
 #~ msgstr "Mot de passe non entré."
