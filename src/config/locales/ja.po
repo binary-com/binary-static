@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-20 01:22+0000\n"
-"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
+"PO-Revision-Date: 2016-06-21 01:28+0000\n"
+"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -1001,6 +1001,11 @@ msgstr "準備はよろしいですか？"
 msgid "Are you sure that you want to permanently delete token"
 msgstr "トークンを完全に削除してもよろしいですか？"
 
+#, fuzzy
+#| msgid "Are you sure that you want to permanently delete token"
+msgid "Are you sure that you want to permanently revoke access to application"
+msgstr "トークンを完全に削除してもよろしいですか？"
+
 msgid "Are your site visitors interested in:"
 msgstr "お客さまのサイト訪問者は以下の内容に興味がありますか？"
 
@@ -1123,6 +1128,14 @@ msgstr "Eウォレットの必要性を避ける"
 msgid "Award-winning, patented financial trading platform"
 msgstr "受賞履歴を誇る特許取得済みのトレードプラットフォームを提供"
 
+msgid "BIEL Pillar III"
+msgstr ""
+
+#, fuzzy
+#| msgid "Prospectus"
+msgid "BIEL Prospectus"
+msgstr "目論見書"
+
 msgid "BIEL Terms"
 msgstr "BIEL規約"
 
@@ -1207,11 +1220,9 @@ msgstr "ベッティングシステムとその方法"
 msgid "Binary (C.R.) S.A., registered in Costa Rica."
 msgstr "Binary (C.R.) S.Aは、コスタリカ共和国に登記されています。"
 
-#, fuzzy
-#| msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 msgid "Binary (Europe) Ltd & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 msgstr ""
-"Binary (Europe) Ltd\n"
+"Binary (Europe) Ltd & Binary Investments (Europe)\n"
 "所在地：Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 
 msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licenced and regulated (for gambling products only) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>."
@@ -1457,6 +1468,11 @@ msgid "Change Password"
 msgstr "パスワード変更"
 
 msgid "Chart"
+msgstr "チャート"
+
+#, fuzzy
+#| msgid "Chart"
+msgid "Charts"
 msgstr "チャート"
 
 msgid "Check out our commission rates below:"
@@ -3044,10 +3060,8 @@ msgstr "以下の場合："
 msgid "Imagine"
 msgstr "当社のカルチャー"
 
-#, fuzzy
-#| msgid "Imagine a workplace that often doesn’t feel like work."
 msgid "Imagine a workplace that often doesn't feel like work."
-msgstr "当社のオフィスでは、働いているという感覚が無くなることがあるでしょう。"
+msgstr "雰囲気の良い職場でやりがいを持って働いていただけるので、仕事という概念を忘れてしまうかもしれません。"
 
 msgid "Imagine a workplace where your individuality, creativity and sense of adventure are valued and rewarded."
 msgstr "当社では、従業員の個性、創造性、そして挑戦する姿勢が重んじられ、評価されます。"
@@ -3148,7 +3162,7 @@ msgid "Indemnity and Liability"
 msgstr "賠償と責任範囲"
 
 msgid "Indicative"
-msgstr "参考売却"
+msgstr "参考売却価格"
 
 msgid "Indices"
 msgstr "インデックス"
@@ -4004,10 +4018,8 @@ msgstr "マルタ共和国"
 msgid "Manage security, intrusion detection, DDoS protection and PCI compliance measures related to each of our deployed servers"
 msgstr "当社が展開するサーバーのセキュリティ・侵入検知・DDoS攻撃からの保護・PCIコンプライアンス対策の管理"
 
-#, fuzzy
-#| msgid "Manage the company’s cashier system"
 msgid "Manage the company's cashier system"
-msgstr "当社の入出金システム管理"
+msgstr "入出金のシステム管理"
 
 msgid "Manage your account access and security settings."
 msgstr "アカウントのアクセス・セキュリティ設定を管理する。"
@@ -4023,9 +4035,6 @@ msgstr "３月"
 
 msgid "Margin FX"
 msgstr "外国為替証拠金取引"
-
-msgid "Market Data"
-msgstr "マーケットデータ"
 
 msgid "Market Opinions"
 msgstr "マーケットに関する掲載情報について"
@@ -4102,8 +4111,6 @@ msgstr "思い出のある日時"
 msgid "Memorable town/city"
 msgstr "思い出のある都市／街の名前"
 
-#, fuzzy
-#| msgid "Message"
 msgid "Messages"
 msgstr "メッセージ"
 
@@ -4395,10 +4402,8 @@ msgstr "簡単な取引システム"
 msgid "Online Marketing"
 msgstr "オンラインマーケティング"
 
-#, fuzzy
-#| msgid "Online currency exchangers "
 msgid "Online currency exchangers"
-msgstr "オンライン通貨両替 "
+msgstr "オンライン通貨両替"
 
 msgid "Only %1 are allowed."
 msgstr "%1のみご利用いただけます。"
@@ -4406,10 +4411,8 @@ msgstr "%1のみご利用いただけます。"
 msgid "Only 2 decimal points are allowed."
 msgstr "小数点以下2桁のみご利用いただけます。"
 
-#, fuzzy
-#| msgid "Only five years after inception, we pick up this major award for our online trading services. The award recognises BetOnMarkets.com’s reliable, fast and secure online trading for novice and expert traders. At this time, our website has received over 15 million trades."
 msgid "Only five years after inception, we pick up this major award for our online trading services. The award recognises BetOnMarkets.com's reliable, fast and secure online trading for novice and expert traders. At this time, our website has received over 15 million trades."
-msgstr "サービス公開からわずか５年にて、当社のオンライントレードサービスに対しこのような主要な賞を受賞。この賞では、BetOnMarkets.com’が信頼できる迅速で安全なオンライントレードの機会をトレード初心者をはじめ、上級者にも提供していることが評価され、この時点で当社のウェブサイトには１５００万人以上のトレーダーに利用されている。"
+msgstr "サービス公開からわずか5年にて、当社のオンライントレードサービスに対しこのような主要な賞を受賞。この賞では、BetOnMarkets.com’が信頼できる迅速で安全なオンライントレードの機会をトレード初心者をはじめ、上級者にも提供していることが評価され、この時点で当社のウェブサイトには1,500万人以上のトレーダーに利用されている。"
 
 msgid "Only one account is allowed per person. No winnings and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person."
 msgstr ""
@@ -4520,8 +4523,6 @@ msgstr "当社の情報秘匿に関する取り決めは、アクセス管理と
 msgid "Our services are provided on an execution only basis. We do not provide investment advice in relation to our products or services. We sometimes provide factual information or research recommendations about a market, information about transaction procedures and information about the potential risks involved and how those risks may be minimised. However, any decision to use our products or services is made by you."
 msgstr "当社のサービスは取引の実行にのみ基いて提供されています。当社商品またはサービスに関する投資アドバイスを提供するものではありません。時として事実に基づく情報を伝えたり、マーケットに関する推奨または取引手順、起こりうる潜在リスク、それらリスクを最小限にする手段の情報を調査します。当社製品またはサービスの使用へのご決断は、お客さま自身となります。"
 
-#, fuzzy
-#| msgid "Our site can be filtered using a number of filtering systems available on the market which could be used to restrict one’s access to our site."
 msgid "Our site can be filtered using a number of filtering systems available on the market which could be used to restrict one's access to our site."
 msgstr "数多く存在するフィルターシステムを用いることで、当社のサイトへのアクセスを禁じるためのフィルタリングを行うことができます。"
 
@@ -4546,10 +4547,8 @@ msgstr "3年以上"
 msgid "Over 5 years"
 msgstr "6年以上"
 
-#, fuzzy
-#| msgid "Over 90 <a href=\"%1\">staff</a> and contractors worldwide"
 msgid "Over 90 <a href='%1'>staff</a> and contractors worldwide"
-msgstr "世界中で90を超える<a href=\"%1\">スタッフ</a> と請負業者"
+msgstr "世界中で90を超える<a href='%1'>スタッフ</a>と請負業者"
 
 msgid "Over two billion dollars in trades to date."
 msgstr "設立以来、累計で20億ドルを超える取引実績（親会社）"
@@ -4572,10 +4571,8 @@ msgstr "%1サイトの所有権とコンテンツは当社に属し、規約を�
 msgid "Ownership, content, and liability of the Affiliate's websites are the sole responsibility of the Affiliate. You will be solely responsible for the development, operation, and maintenance of your website and for all materials that appear on your website. You will indemnify and hold us harmless from all claims, damages, and expenses (including, without limitation to, attorneys' fees) relating to the development, operation, maintenance, and contents of your website."
 msgstr "アフィリエイト会員は、自身が保有するプロモーションサイトに関する所有権とコンテンツに責任を負います。プロモーションサイトの開発、オペレーション、維持、そしてサイト上に存在する全ての素材に対して責任があります。アフィリエイト会員は、開発、オペレーション、維持、そしてサイト上に存在する全ての素材に関係する請求、損害賠償や費用（訴訟費用など）を当社に対して求めないことを確証します。"
 
-#, fuzzy
-#| msgid "Page %1 of %2"
 msgid "Page 2 of 3"
-msgstr "%2ページ中%1ページ目"
+msgstr "2ページ/3ページ"
 
 msgid "Page section tab"
 msgstr ""
@@ -4679,8 +4676,6 @@ msgstr "お客さま登録情報"
 msgid "Pip"
 msgstr "Pip"
 
-#, fuzzy
-#| msgid "Pip stands for ‘percentage in point’ which is generally the fourth decimal place (i.e. 0.0001)."
 msgid "Pip stands for 'percentage in point' which is generally the fourth decimal place (i.e. 0.0001)."
 msgstr "Pipとは ‘percentage in point’の略語であり、通常は小数第４位の値を示します。例）0.0001"
 
@@ -4708,8 +4703,6 @@ msgstr "続行する前に、お客さまの取引明細書をご確認くださ
 msgid "Please confirm the transaction details in order to complete the transfer:"
 msgstr "送金を完了するために、取引明細をご確認ください。"
 
-#, fuzzy
-#| msgid "Please contact us with whatever is on your mind at <a href=\"mailto:%1\">%1</a>. We’d be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us."
 msgid "Please contact us with whatever is on your mind at <a href=\"mailto:%1\">%1</a>. We'd be happy to hear from you and willing to assist you. So, feel free to share your ideas and suggestions with us."
 msgstr "ご不明な点がございましたら、<a href=\"mailto:%1\">%1</a>までお問い合わせください。喜んでサポートさせていただきます。ご希望、ご要望等ございましたらお気軽にご連絡ください。"
 
@@ -4794,18 +4787,14 @@ msgstr "有効な日付を選択してください"
 msgid "Please select your country of residence"
 msgstr "居住国を選択して下さい"
 
-#, fuzzy
-#| msgid "Please specify your preferred reality-check interval in minutes "
 msgid "Please specify your preferred reality-check interval in minutes"
-msgstr "ご希望のリアリティチェック間隔を分単位で指定してください。 "
+msgstr "ご希望のリアリティチェック間隔を分単位で指定してください"
 
 msgid "Please submit a valid %1."
 msgstr "有効な%1をご提出ください。"
 
-#, fuzzy
-#| msgid "Please submit the above information to <a href='mailto:%1'>%1</a>."
 msgid "Please submit the above information to <a href='mailto:affiliates@binary.com'>%1</a>."
-msgstr "<a href='mailto:%1'>%1</a>まで上記の情報をご提出ください。"
+msgstr "<a href='mailto:affiliates@binary.com'>%1</a>まで上記の情報をご提出ください。"
 
 msgid "Please try again."
 msgstr "再びお試し下さい。"
@@ -4927,8 +4916,6 @@ msgstr "フルタイムの翻訳者が不在の時にもウェブサイトのコ
 msgid "Processing Time"
 msgstr "決済所要時間"
 
-#, fuzzy
-#| msgid "Produce content for the company’s website, blog, social media outlets, and marketing materials"
 msgid "Produce content for the company's website, blog, social media outlets, and marketing materials"
 msgstr "当社のブログ、ソーシャルメディア、マーケティング資料のコンテンツ作成"
 
@@ -4948,7 +4935,7 @@ msgid "Profit / Loss"
 msgstr "損益"
 
 msgid "Profit Table"
-msgstr "取引明細"
+msgstr "取引履歴"
 
 msgid "Profit/Loss"
 msgstr "損益"
@@ -4956,16 +4943,11 @@ msgstr "損益"
 msgid "Profit/Loss (points)"
 msgstr "損益（ポイント）"
 
-#, fuzzy
-#| msgid "Proofread and correct the content appearing on the company’s website, blog, social media outlets, and marketing materials, from English to the regional language and vice versa"
 msgid "Proofread and correct the content appearing on the company's website, blog, social media outlets, and marketing materials, from English to the regional language and vice versa"
 msgstr "ウェブサイト、ブログ、ソーシャルメディア、マーケティング資料に使用するコンテンツの英語から地方言語（またはその逆）の校正と修正"
 
 msgid "Proofreader"
 msgstr "校正者"
-
-msgid "Prospectus"
-msgstr "目論見書"
 
 msgid "Proven knowledge of auditing standards, procedures, laws, rules and regulations are an added advantage"
 msgstr "監査の基準、手続き、法律、規則および規制に関した実績ある知識があると好ましい"
@@ -5000,8 +4982,6 @@ msgstr "投資の目的"
 msgid "Put a limit on your winnings. Once you have reached it put some aside and trade with the rest of the money."
 msgstr "資金管理も万全のものとしましょう。目標の利益を達成したら一旦、トレードを休止されることをお勧めします。"
 
-#, fuzzy
-#| msgid "Qualified applicants should have global experience in recruitment administration, excellent administrative skills, and the ability to work in a fast-paced entrepreneurial environment. We are seeking a true professional capable of making an impact by supporting and advancing HR best practices throughout the company’s global operations."
 msgid "Qualified applicants should have global experience in recruitment administration, excellent administrative skills, and the ability to work in a fast-paced entrepreneurial environment. We are seeking a true professional capable of making an impact by supporting and advancing HR best practices throughout the company's global operations."
 msgstr "応募資格として、採用管理、優れた管理経営スキル、ペースの早い起業家精神の強い環境下で働ける能力をグローバル環境で活かされてきた経験が必要となります。会社の国際事業を通して人事のベストプラクティスをサポート、進展することで影響を与えうる真のプロフェッショナルを求めいてます。"
 
@@ -5083,8 +5063,6 @@ msgstr "2000年3月に固定オッズ業界での独自のポジションを明�
 msgid "Regent Markets files for patent, and registers BetOnMarkets trading name"
 msgstr "Regent Marketsは特許取得を申請し、BetOnMarketsを商標登録"
 
-#, fuzzy
-#| msgid "Regent Markets granted US patent for ‘Betting system and method’"
 msgid "Regent Markets granted US patent for 'Betting system and method'"
 msgstr "Regent Marketsは、「トレードシステムと手法」に関する米国特許を取得"
 
@@ -5420,8 +5398,6 @@ msgstr ""
 msgid "Significant experience in Social Media, Marketing, and / or Advertising"
 msgstr "ソーシャルメディア、マーケティングと/または広告に関する豊富な経験"
 
-#, fuzzy
-#| msgid "Simple"
 msgid "Simple Tab"
 msgstr "シンプル表示"
 
@@ -6506,6 +6482,11 @@ msgstr "パスワードを再設定される場合は下記の入力欄に登録
 
 msgid "Token"
 msgstr "トークン"
+
+#, fuzzy
+#| msgid "%1 Tools"
+msgid "Tooltips"
+msgstr "%1ツール"
 
 msgid "Total Cost"
 msgstr "合計投資額"
@@ -8381,16 +8362,7 @@ msgid "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-doc
 msgstr "本人確認およびマイナンバー「個人番号カード」書類に関する詳細につきましては<a class=\"pjaxload\" href=\"#identification-documents\">こちらを</a> クリックしてください。"
 
 msgid "{JAPAN ONLY}Please complete the following questions."
-msgstr ""
-"知識確認テスト用ディスクレーマー \n"
-" \n"
-"・この知識確認テストは、法令で義務付けられており、当社がお客さまの事を知り、お客さまがバイナリーオプション取引を行うことに適した\n"
-"   投資者かどうかを判断したうえで、お客さまとの取引を開始するためのものです。 \n"
-"・バイナリーオプション投資を的確に行うにはオプション取引などデリバティブ取引に関わる知識や経験が必要です。 \n"
-"・本テストはオプション取引に関わる基礎的な知識の有無を確認する目的で行われます。 \n"
-"・本テストの結果により適正と判断し、取引を開始する場合は、その後当社との間に取引上のトラブルが生じたとしても、オプション取引に\n"
-"　関わる知識が不足していたにも関わらず当社が取引を認めたことを訴因とはしないことに同意いただくものとします。 \n"
-"・問題の複写を禁止します。また、第三者に漏えいしないことに同意いただくものとします。"
+msgstr "知識確認テスト用ディスクレーマー"
 
 msgid "{JAPAN ONLY}Please download our Full Trading Guide which describes in detail how to use our trading screens and other features of our website:"
 msgstr "取引画面の見方、購入方法や入出金方法など詳しい操作方法をご確認できます。ご利用の際は、操作マニュアルをダウンロードしてください。"
@@ -8567,6 +8539,9 @@ msgstr "次の文章のうち、金融商品の店頭取引の価格について
 
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "リアル口座開設の流れについてご案内致します。まず、<a class=\"pjaxload\" href=\"%1\"> こちらを</a>クリックしてデモ口座を開設して頂く必要があります。デモ口座では、取引ツールの操作性及びバイナリーオプション取引への理解を高める上では非常にお役に立ちます。実際の取引への準備ができましたらリアル口座開設の手続きをしてください。"
+
+#~ msgid "Market Data"
+#~ msgstr "マーケットデータ"
 
 #~ msgid "%1: Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 #~ msgstr "%1: 外国為替のバイナリーオプションオンライン取引プラットフォーム"
@@ -16988,9 +16963,6 @@ msgstr "リアル口座開設の流れについてご案内致します。まず
 #~| msgid "Scope(s) missing"
 #~ msgid "missing"
 #~ msgstr "Scope(s)がありません"
-
-#~ msgid "%1 Tools"
-#~ msgstr "%1ツール"
 
 #~ msgid "Close Window"
 #~ msgstr "ウィンドウを閉じる"

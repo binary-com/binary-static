@@ -1067,6 +1067,11 @@ msgstr "¿Está listo?"
 msgid "Are you sure that you want to permanently delete token"
 msgstr "Está seguro de querer eliminar el token"
 
+#, fuzzy
+#| msgid "Are you sure that you want to permanently delete token"
+msgid "Are you sure that you want to permanently revoke access to application"
+msgstr "Está seguro de querer eliminar el token"
+
 msgid "Are your site visitors interested in:"
 msgstr "Están los visitantes de su sitio interesados en:"
 
@@ -1192,6 +1197,14 @@ msgstr "Evite la necesidad de tener un monedero electrónico"
 
 msgid "Award-winning, patented financial trading platform"
 msgstr "Plataforma de inversiones financieras patentada y premiada"
+
+msgid "BIEL Pillar III"
+msgstr ""
+
+#, fuzzy
+#| msgid "Prospectus"
+msgid "BIEL Prospectus"
+msgstr "Prospecto"
 
 msgid "BIEL Terms"
 msgstr "Términos BIEL"
@@ -1545,6 +1558,11 @@ msgid "Change Password"
 msgstr "Cambiar contraseña"
 
 msgid "Chart"
+msgstr "Gráfico"
+
+#, fuzzy
+#| msgid "Chart"
+msgid "Charts"
 msgstr "Gráfico"
 
 msgid "Check out our commission rates below:"
@@ -4160,9 +4178,6 @@ msgstr "Marzo"
 msgid "Margin FX"
 msgstr "Margen FX"
 
-msgid "Market Data"
-msgstr "Datos de Mercado"
-
 msgid "Market Opinions"
 msgstr "Opiniones del mercado"
 
@@ -5091,9 +5106,6 @@ msgstr "Revisar y corregir el contenido que aparece en el sitio web, el blog, lo
 
 msgid "Proofreader"
 msgstr "Corrector"
-
-msgid "Prospectus"
-msgstr "Prospecto"
 
 msgid "Proven knowledge of auditing standards, procedures, laws, rules and regulations are an added advantage"
 msgstr "El conocimiento probado de las normas auditoriales, los procedimientos, los leyes, las normas y los reglamentos es una ventaja añadida"
@@ -6521,6 +6533,11 @@ msgstr "Para restablecer su contraseña, introduzca la dirección de correo elec
 
 msgid "Token"
 msgstr "Token"
+
+#, fuzzy
+#| msgid "%1 Tools"
+msgid "Tooltips"
+msgstr "%1 Herramientas"
 
 msgid "Total Cost"
 msgstr "Coste total"
@@ -8521,6 +8538,9 @@ msgstr "{JAPAN ONLY}Where broking companies show bid and offer prices for purcha
 
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
+
+#~ msgid "Market Data"
+#~ msgstr "Datos de Mercado"
 
 #~ msgid "%1: Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 #~ msgstr "%1: La plataforma en linea de opciones binarias sobre Forex, índices, materias primas e índices Smart"
@@ -17069,9 +17089,6 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 
 #~ msgid "missing"
 #~ msgstr "falta"
-
-#~ msgid "%1 Tools"
-#~ msgstr "%1 Herramientas"
 
 #~ msgid "Close Window"
 #~ msgstr "Cerrar ventana"
