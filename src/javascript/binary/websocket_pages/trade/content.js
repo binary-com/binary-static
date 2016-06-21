@@ -41,6 +41,7 @@ var Content = (function() {
             textContractConfirmationPayout: text.localize('Potential Payout'),
             textContractConfirmationCost: text.localize('Total Cost'),
             textContractConfirmationProfit: text.localize('Potential Profit'),
+            textContractConfirmationBarrier: text.localize('Barrier value is'),
             textAmountPerPoint: text.localize('Amount per point'),
             textStopLoss: text.localize('Stop-loss'),
             textStopProfit: text.localize('Stop-profit'),
