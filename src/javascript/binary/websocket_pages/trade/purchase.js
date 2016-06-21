@@ -17,6 +17,7 @@ var Purchase = (function () {
             message_container = document.getElementById('confirmation_message'),
             heading = document.getElementById('contract_purchase_heading'),
             descr = document.getElementById('contract_purchase_descr'),
+            barrier_element = document.getElementById('contract_purchase_barrier'),
             reference = document.getElementById('contract_purchase_reference'),
             chart = document.getElementById('tick_chart'),
             balance = document.getElementById('contract_purchase_balance'),
@@ -49,6 +50,7 @@ var Purchase = (function () {
 
             heading.textContent = Content.localize().textContractConfirmationHeading;
             descr.textContent = receipt['longcode'];
+            if (barrier_element) barrier_element.textContent = '';
             reference.textContent = Content.localize().textContractConfirmationReference + ' ' + receipt['transaction_id'];
 
             var payout_value, cost_value, profit_value;
