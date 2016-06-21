@@ -1103,6 +1103,11 @@ msgstr "Vous vous sentez prêt(e) ?"
 msgid "Are you sure that you want to permanently delete token"
 msgstr "Êtes-vous sûr de vouloir supprimer le jeton d'authentification de façon permanente"
 
+#, fuzzy
+#| msgid "Are you sure that you want to permanently delete token"
+msgid "Are you sure that you want to permanently revoke access to application"
+msgstr "Êtes-vous sûr de vouloir supprimer le jeton d'authentification de façon permanente"
+
 msgid "Are your site visitors interested in:"
 msgstr "Les visiteurs de votre site souhaitent-ils :"
 
@@ -1232,6 +1237,12 @@ msgstr "Évitez d'avoir à utiliser un service de paiement électronique"
 
 msgid "Award-winning, patented financial trading platform"
 msgstr "Plate-forme de trading financier primée et brevetée"
+
+msgid "BIEL Pillar III"
+msgstr ""
+
+msgid "BIEL Prospectus"
+msgstr ""
 
 msgid "BIEL Terms"
 msgstr "Termes BIEL"
@@ -1595,6 +1606,11 @@ msgid "Change Password"
 msgstr "Changer de mot de passe"
 
 msgid "Chart"
+msgstr "Graphique"
+
+#, fuzzy
+#| msgid "Chart"
+msgid "Charts"
 msgstr "Graphique"
 
 msgid "Check out our commission rates below:"
@@ -4338,9 +4354,6 @@ msgstr "Mars"
 msgid "Margin FX"
 msgstr "Margin FX"
 
-msgid "Market Data"
-msgstr "Données de marché"
-
 msgid "Market Opinions"
 msgstr "Opinions du marché"
 
@@ -5352,9 +5365,6 @@ msgid "Proofread and correct the content appearing on the company's website, blo
 msgstr "Relecture et correction des contenus diffusés sur le site Web et le blog de la société ainsi que sur les réseaux sociaux, de l'anglais vers la langue cible et vice-versa"
 
 msgid "Proofreader"
-msgstr ""
-
-msgid "Prospectus"
 msgstr ""
 
 msgid "Proven knowledge of auditing standards, procedures, laws, rules and regulations are an added advantage"
@@ -6860,6 +6870,11 @@ msgstr "Pour réinitialiser votre mot de passe, introduisez l'adresse émail que
 
 msgid "Token"
 msgstr "Jeton d'authentification"
+
+#, fuzzy
+#| msgid "%1 Tools"
+msgid "Tooltips"
+msgstr "Outils de %1"
 
 msgid "Total Cost"
 msgstr "Coût Total"
@@ -9050,6 +9065,9 @@ msgstr "{JAPAN ONLY}Where broking companies show bid and offer prices for purcha
 
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
+
+#~ msgid "Market Data"
+#~ msgstr "Données de marché"
 
 #~ msgid "%1: Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 #~ msgstr "%1: Plate-forme de trading en ligne pour les options binaires sur les taux de change, les indices, les matières premières et les indices intelligents"
@@ -17619,9 +17637,6 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 #~| msgid "Scope(s) missing"
 #~ msgid "missing"
 #~ msgstr "Portée(s) manquante(s)"
-
-#~ msgid "%1 Tools"
-#~ msgstr "Outils de %1"
 
 #~ msgid "Close Window"
 #~ msgstr "Fermer la fenêtre"

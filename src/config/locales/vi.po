@@ -992,6 +992,11 @@ msgstr "Bạn đã sẵn sàng chưa?"
 msgid "Are you sure that you want to permanently delete token"
 msgstr "Bạn có chắc chắn muốn xóa vĩnh viễn token"
 
+#, fuzzy
+#| msgid "Are you sure that you want to permanently delete token"
+msgid "Are you sure that you want to permanently revoke access to application"
+msgstr "Bạn có chắc chắn muốn xóa vĩnh viễn token"
+
 msgid "Are your site visitors interested in:"
 msgstr "Khách đến thăm trang của bạn có hứng thú với:"
 
@@ -1111,6 +1116,14 @@ msgstr "Không cần thiết phải có ví điện tử"
 
 msgid "Award-winning, patented financial trading platform"
 msgstr "Giao diện giao dịch tài chính có bằng sáng chế và nhận được nhiều giải thưởng"
+
+msgid "BIEL Pillar III"
+msgstr ""
+
+#, fuzzy
+#| msgid "Prospectus"
+msgid "BIEL Prospectus"
+msgstr "Bản cáo bạch"
 
 msgid "BIEL Terms"
 msgstr "Điều khoản BIEL"
@@ -1436,6 +1449,11 @@ msgid "Change Password"
 msgstr "Thay đổi Mật khẩu"
 
 msgid "Chart"
+msgstr "Biểu đồ"
+
+#, fuzzy
+#| msgid "Chart"
+msgid "Charts"
 msgstr "Biểu đồ"
 
 msgid "Check out our commission rates below:"
@@ -3973,9 +3991,6 @@ msgstr "Tháng Ba"
 msgid "Margin FX"
 msgstr "Margin FX"
 
-msgid "Market Data"
-msgstr "Dữ liệu Thị trường"
-
 msgid "Market Opinions"
 msgstr "Các phản hồi của thị trường"
 
@@ -4878,9 +4893,6 @@ msgstr "Kiểm tra và sửa nội dung trên trang web, blog, phương tiện t
 
 msgid "Proofreader"
 msgstr "Kiểm tra và sửa nội dung"
-
-msgid "Prospectus"
-msgstr "Bản cáo bạch"
 
 msgid "Proven knowledge of auditing standards, procedures, laws, rules and regulations are an added advantage"
 msgstr "Chứng minh được kiến thức về các tiêu chuẩn của kiểm toán, thủ tục, pháp luật, quy tắc và quy định là một lợi thế"
@@ -6248,6 +6260,9 @@ msgstr "Để thiết lập lại mật khẩu, nhập địa chỉ email bạn 
 
 msgid "Token"
 msgstr "Mã Token"
+
+msgid "Tooltips"
+msgstr ""
 
 msgid "Total Cost"
 msgstr "Tổng Chi phí"
@@ -8152,6 +8167,9 @@ msgstr "{JAPAN ONLY}Where broking companies show bid and offer prices for purcha
 
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
+
+#~ msgid "Market Data"
+#~ msgstr "Dữ liệu Thị trường"
 
 #~ msgid "%1: Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 #~ msgstr "%1: Sàn Giao dịch Trực tuyến dành cho quyền chọn nhị phân trên thị trường Ngoại hối, Chỉ số, Hàng hóa và Chỉ số thông minh"

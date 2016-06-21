@@ -1002,6 +1002,11 @@ msgstr "Jesteś gotowy?"
 msgid "Are you sure that you want to permanently delete token"
 msgstr "Czy na pewno chcesz trwale usunąć token"
 
+#, fuzzy
+#| msgid "Are you sure that you want to permanently delete token"
+msgid "Are you sure that you want to permanently revoke access to application"
+msgstr "Czy na pewno chcesz trwale usunąć token"
+
 msgid "Are your site visitors interested in:"
 msgstr "Czy odwiedzających Twoją stronę interesuje:"
 
@@ -1121,6 +1126,14 @@ msgstr "Nie trzeba mieć e-portfela"
 
 msgid "Award-winning, patented financial trading platform"
 msgstr "Uznana platforma handlowa z opatentowaną technologią"
+
+msgid "BIEL Pillar III"
+msgstr ""
+
+#, fuzzy
+#| msgid "Prospectus"
+msgid "BIEL Prospectus"
+msgstr "Prospekt"
 
 msgid "BIEL Terms"
 msgstr "Warunki BIEL"
@@ -1456,6 +1469,11 @@ msgid "Change Password"
 msgstr "Zmień hasło"
 
 msgid "Chart"
+msgstr "Wykres"
+
+#, fuzzy
+#| msgid "Chart"
+msgid "Charts"
 msgstr "Wykres"
 
 msgid "Check out our commission rates below:"
@@ -3995,9 +4013,6 @@ msgstr "Marzec"
 msgid "Margin FX"
 msgstr "Margin FX"
 
-msgid "Market Data"
-msgstr "Dane rynkowe"
-
 msgid "Market Opinions"
 msgstr "Opinie rynkowe"
 
@@ -4903,9 +4918,6 @@ msgstr "Sprawdzanie i korekta treści umieszczanych na stronie internetowej firm
 
 msgid "Proofreader"
 msgstr "Korektor"
-
-msgid "Prospectus"
-msgstr "Prospekt"
 
 msgid "Proven knowledge of auditing standards, procedures, laws, rules and regulations are an added advantage"
 msgstr "Potwierdzona znajomość standardów i procedur audytowych, przepisów prawnych i regulacyjnych będzie dodatkowym atutem"
@@ -6284,6 +6296,11 @@ msgstr "Aby zresetować hasło, w polu poniżej wprowadź adres e-mail podany pr
 
 msgid "Token"
 msgstr "Token"
+
+#, fuzzy
+#| msgid "%1 Tools"
+msgid "Tooltips"
+msgstr "Narzędzia %1"
 
 msgid "Total Cost"
 msgstr "Całkowity koszt"
@@ -8225,6 +8242,9 @@ msgstr "Where broking companies show bid and offer prices for purchasing and sel
 
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "You can apply to open an account online. Simply click<a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
+
+#~ msgid "Market Data"
+#~ msgstr "Dane rynkowe"
 
 #~ msgid "%1: Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 #~ msgstr "%1: Internetowa platforma handlowa umożliwiająca handel opcjami binarnymi różnego rodzaju: forex, wskaźniki, towary i inteligentne wskaźniki"
@@ -16867,9 +16887,6 @@ msgstr "You can apply to open an account online. Simply click<a class=\"pjaxload
 
 #~ msgid "is not available.  If this error persists, please email"
 #~ msgstr "nie jest dostępny. Jeśli błąd będzie się powtarzał, napisz na adres"
-
-#~ msgid "%1 Tools"
-#~ msgstr "Narzędzia %1"
 
 #~ msgid "Close Window"
 #~ msgstr "Zamknij okno"

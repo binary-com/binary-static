@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Taiwan) (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-20 01:52+0000\n"
+"PO-Revision-Date: 2016-06-20 08:50+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) <https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
 "Language: zh_tw\n"
@@ -988,6 +988,11 @@ msgstr "準備好了嗎？"
 msgid "Are you sure that you want to permanently delete token"
 msgstr "確定要永久刪除權杖嗎"
 
+#, fuzzy
+#| msgid "Are you sure that you want to permanently delete token"
+msgid "Are you sure that you want to permanently revoke access to application"
+msgstr "確定要永久刪除權杖嗎"
+
 msgid "Are your site visitors interested in:"
 msgstr "您的網站訪問者是否有興趣："
 
@@ -1108,6 +1113,14 @@ msgstr "避免使用電子錢包"
 msgid "Award-winning, patented financial trading platform"
 msgstr "屢獲大獎、受專利保護的金融交易平台"
 
+msgid "BIEL Pillar III"
+msgstr ""
+
+#, fuzzy
+#| msgid "Prospectus"
+msgid "BIEL Prospectus"
+msgstr "章程"
+
 msgid "BIEL Terms"
 msgstr "BIEL條款"
 
@@ -1192,10 +1205,8 @@ msgstr "博彩系統和方法"
 msgid "Binary (C.R.) S.A., registered in Costa Rica."
 msgstr "Binary (C.R.) S.A. 在哥斯大黎加註冊。"
 
-#, fuzzy
-#| msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 msgid "Binary (Europe) Ltd & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
-msgstr "Binary(Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
+msgstr "Binary (Europe) Ltd & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 
 msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licenced and regulated (for gambling products only) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>."
 msgstr "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta。公司經馬爾他博彩局授權並受其監管（僅博彩產品），（執照號 MGA/CL2/118/2000）。而英國客戶由英國博彩委員會授予執照和監管 - <a href='%1' target='_blank'>檢視執照</a>。"
@@ -1432,6 +1443,11 @@ msgid "Change Password"
 msgstr "更改密碼"
 
 msgid "Chart"
+msgstr "圖表"
+
+#, fuzzy
+#| msgid "Chart"
+msgid "Charts"
 msgstr "圖表"
 
 msgid "Check out our commission rates below:"
@@ -3969,9 +3985,6 @@ msgstr "三月"
 msgid "Margin FX"
 msgstr "Margin FX"
 
-msgid "Market Data"
-msgstr "市場資料"
-
 msgid "Market Opinions"
 msgstr "市場觀點"
 
@@ -4874,9 +4887,6 @@ msgstr "校對並更正公司網站、部落格、社交媒體網站和行銷材
 
 msgid "Proofreader"
 msgstr "校對員"
-
-msgid "Prospectus"
-msgstr "章程"
 
 msgid "Proven knowledge of auditing standards, procedures, laws, rules and regulations are an added advantage"
 msgstr "具備審計標準、程序、法律、規則和條例知識者優先錄取"
@@ -6042,10 +6052,8 @@ msgstr "伺服器存取出了問題。"
 msgid "There was a problem validating your personal details. Please fix the fields %1here"
 msgstr "您的個人資料驗證出了問題。請在此更正 %1欄位"
 
-#, fuzzy
-#| msgid "There was a problem validating your personal details. Please fix the fields <a class=\"pjaxload\" href=\"%1\">here</a>."
 msgid "There was a problem validating your personal details. Please update your %1 <a class=\"pjaxload\" href=\"%2\">here</a>."
-msgstr "您的個人資料驗證出了問題。請<a class=\"pjaxload\" href=\"%1\">在此</a>更正欄位。"
+msgstr "您的個人資料驗證出了問題。請<a class=\"pjaxload\" href=\"%2\">在此</a>更新您的%1。"
 
 msgid "There was an error"
 msgstr "出現錯誤"
@@ -6244,6 +6252,9 @@ msgstr "如要重新設定密碼，在下面的欄位中輸入您註冊的電子
 
 msgid "Token"
 msgstr "權杖"
+
+msgid "Tooltips"
+msgstr ""
 
 msgid "Total Cost"
 msgstr "成本總計"
@@ -8146,6 +8157,9 @@ msgstr "{JAPAN ONLY}Where broking companies show bid and offer prices for purcha
 
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
+
+#~ msgid "Market Data"
+#~ msgstr "市場資料"
 
 #~ msgid "%1: Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 #~ msgstr "%1：外匯、指數、商品及智慧指數的二元期權線上交易平台"

@@ -1061,6 +1061,11 @@ msgstr "هل أنت مستعد؟"
 msgid "Are you sure that you want to permanently delete token"
 msgstr "هل أنت متأكد أنك تريد حذف الرمز المميز بشكل دائم"
 
+#, fuzzy
+#| msgid "Are you sure that you want to permanently delete token"
+msgid "Are you sure that you want to permanently revoke access to application"
+msgstr "هل أنت متأكد أنك تريد حذف الرمز المميز بشكل دائم"
+
 msgid "Are your site visitors interested in:"
 msgstr "هل يهتم زوار موقعك بـ:"
 
@@ -1186,6 +1191,14 @@ msgstr "تجنب الحاجة إلى وجود محفظة إلكترونية"
 
 msgid "Award-winning, patented financial trading platform"
 msgstr "منصة تداول مسجلة وحاصدة جوائز"
+
+msgid "BIEL Pillar III"
+msgstr ""
+
+#, fuzzy
+#| msgid "Prospectus"
+msgid "BIEL Prospectus"
+msgstr "نشرة تمهيدية"
 
 msgid "BIEL Terms"
 msgstr "شروط  بيال (BIEL)"
@@ -1539,6 +1552,11 @@ msgid "Change Password"
 msgstr "غير كلمة المرور"
 
 msgid "Chart"
+msgstr "رسم بياني"
+
+#, fuzzy
+#| msgid "Chart"
+msgid "Charts"
 msgstr "رسم بياني"
 
 msgid "Check out our commission rates below:"
@@ -4152,9 +4170,6 @@ msgstr "مارس"
 msgid "Margin FX"
 msgstr "Margin FX"
 
-msgid "Market Data"
-msgstr "بيانات السوق"
-
 msgid "Market Opinions"
 msgstr "أراء السوق"
 
@@ -5083,9 +5098,6 @@ msgstr "تدقيق وتصحيح المحتوى الموجود على موقع ا
 
 msgid "Proofreader"
 msgstr "مصحّح"
-
-msgid "Prospectus"
-msgstr "نشرة تمهيدية"
 
 msgid "Proven knowledge of auditing standards, procedures, laws, rules and regulations are an added advantage"
 msgstr "تعتبر ميزة إضافية وجود معرفة مؤكدة بمعايير مراجعة الحسابات، والإجراءات، والقوانين، والقواعد واللوائح"
@@ -6514,6 +6526,11 @@ msgstr "لإعادة تعيين كلمة المرور الخاصة بك، يرج
 
 msgid "Token"
 msgstr "رمز"
+
+#, fuzzy
+#| msgid "%1 Tools"
+msgid "Tooltips"
+msgstr "الأدوات "
 
 msgid "Total Cost"
 msgstr "التكلفة الإجمالية"
@@ -8510,6 +8527,9 @@ msgstr "{اليابان فقط} أينما تظهر شركت الوساطة أس
 
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\"> 1here</a> 2 to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
+
+#~ msgid "Market Data"
+#~ msgstr "بيانات السوق"
 
 #~ msgid "%1: Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 #~ msgstr "%1: هي منصة تداول الخيارات الثنائية فى العملات والمؤشرات والسلع والمؤشرات الذكية"
@@ -17116,9 +17136,6 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 #~| msgid "Scope(s) missing"
 #~ msgid "missing"
 #~ msgstr "نطافات مفقودة"
-
-#~ msgid "%1 Tools"
-#~ msgstr "الأدوات "
 
 #~ msgid "Close Window"
 #~ msgstr "أغلق النافذة"
