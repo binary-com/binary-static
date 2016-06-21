@@ -103,11 +103,9 @@
         </div>
       </div>
       <div class="gr-12 gr-parent gr-centered center-text">
-        <div class="gr-8">
-            <span class="button">
-              <button class="button" id="submit-verification" type="button">[% l("Submit") %]</button>
-            </span>
-          </div>
+        <span class="button">
+          <button class="button" id="submit-verification" type="button">[% l("Submit") %]</button>
+        </span>
       </div>
     </fieldset>
   </div>

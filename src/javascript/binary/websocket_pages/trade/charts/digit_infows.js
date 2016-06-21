@@ -107,7 +107,7 @@ TradingAnalysis.DigitInfoWS.prototype = {
         var contentId = document.getElementById('tab_last_digit-content'),
             content = '<div class="gr-parent">'+
                         '<div id="last_digit_histo_form" class="gr-8 gr-m-12 gr-centered">'+
-                        '<form class=smallfont action="#" method="post">'+
+                        '<form class="smallfont gr-row" action="#" method="post">'+
                         '<div class="gr-6 gr-m-12">'+ text.localize('Select market')+' : ' + elem +' </div>'+
                         '<div class="gr-6 gr-m-12">'+ text.localize('Number of ticks')+' : <select class="smallfont" name="tick_count"><option value="25">25</option><option value="50">50</option><option selected="selected" value="100">100</option><option value="500">500</option><option value="1000">1000</option></select></div>'+
                         '</form>'+
