@@ -557,7 +557,7 @@ $(function() {
 });
 
 var $buoop = {
-  vs: {i:11, f:39, o:30, s:5, c:39},
+  vs: {i:10, f:39, o:30, s:5, c:39},
   l: page.language().toLowerCase(),
   url: 'https://whatbrowser.org/'
 };
