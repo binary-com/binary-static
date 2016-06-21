@@ -5,8 +5,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2016-06-21 02:18+0000\n"
 "Last-Translator: Gabriela Balieiro Moreira <eusouagabi@gmail.com>\n"
-"Language-Team: Portuguese "
-"<https://hosted.weblate.org/projects/binary/static/pt/>\n"
+"Language-Team: Portuguese <https://hosted.weblate.org/projects/binary/static/pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -221,10 +220,7 @@ msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum loss
 msgstr "Os contratos de spread da %1 exigem um \"limite de perdas\" que limita as perdas máximas incorridas por um cliente. Este valor de \"limite de perdas\" atuará como um depósito e não poderá ser usado para negociação posterior até que esse contrato de spread seja fechado. Os contratos de spread são fechados quando são vendidos por um cliente, ao atingir o nível do \"limite de perdas\" ou \"limite de ganhos\"."
 
 msgid "%1's Volatility Indices are based on a cryptographically secure random number generator audited for fairness by an independent third party."
-msgstr ""
-"Os índices Volatility da %1 são baseados num gerador de números aleatórios "
-"criptograficamente seguro, sujeito a fiscalizações por imparcialidade por "
-"terceiros independentes."
+msgstr "Os índices Volatility da %1 são baseados num gerador de números aleatórios criptograficamente seguro, sujeito a fiscalizações por imparcialidade por terceiros independentes."
 
 msgid "%1's patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market."
 msgstr "A tecnologia de preços patenteada da %1 permite que você aproveite as mesmas taxas de retorno do mercado interbancário."
@@ -1068,6 +1064,11 @@ msgstr "Você está pronto?"
 msgid "Are you sure that you want to permanently delete token"
 msgstr "Tem certeza que deseja excluir permanentemente o token"
 
+#, fuzzy
+#| msgid "Are you sure that you want to permanently delete token"
+msgid "Are you sure that you want to permanently revoke access to application"
+msgstr "Tem certeza que deseja excluir permanentemente o token"
+
 msgid "Are your site visitors interested in:"
 msgstr "Os visitantes do seu site estão interessados em:"
 
@@ -1193,6 +1194,14 @@ msgstr "Evite a necessidade de ter uma carteira eletrônica"
 
 msgid "Award-winning, patented financial trading platform"
 msgstr "Plataforma de negociação financeira patenteada e premiada"
+
+msgid "BIEL Pillar III"
+msgstr ""
+
+#, fuzzy
+#| msgid "Prospectus"
+msgid "BIEL Prospectus"
+msgstr "Prospecto"
 
 msgid "BIEL Terms"
 msgstr "Termos da BIEL"
@@ -1546,6 +1555,11 @@ msgid "Change Password"
 msgstr "Alterar Senha"
 
 msgid "Chart"
+msgstr "Gráfico"
+
+#, fuzzy
+#| msgid "Chart"
+msgid "Charts"
 msgstr "Gráfico"
 
 msgid "Check out our commission rates below:"
@@ -2597,14 +2611,8 @@ msgstr "Feminino"
 msgid "Fieldset Legend"
 msgstr "Legenda do conjunto de campos"
 
-#| msgid "Fifteen years on, and we’re still innovating, growing and working on new ways to serve our customers better. For the first time, we offer short-term touch/no-touch trades and introduce a new charting application. We believe we have the most competitive and comprehensive digital options platform available to the retail public."
 msgid "Fifteen years on, and we're still innovating, growing and working on new ways to serve our customers better. For the first time, we offer short-term touch/no-touch trades and introduce a new charting application. We believe we have the most competitive and comprehensive digital options platform available to the retail public."
-msgstr ""
-"Quinze anos depois e ainda estamos inovando, crescendo e trabalhando em "
-"novas maneiras de servir melhor os nossos clientes. Pela primeira vez, nós "
-"oferecemos negociações toca/não toca de curto prazo e introduzimos um novo "
-"aplicativo de gráficos. Acreditamos que temos a plataforma de opções "
-"digitais mais competitiva e abrangente disponível ao grande público."
+msgstr "Quinze anos depois e ainda estamos inovando, crescendo e trabalhando em novas maneiras de servir melhor os nossos clientes. Pela primeira vez, nós oferecemos negociações toca/não toca de curto prazo e introduzimos um novo aplicativo de gráficos. Acreditamos que temos a plataforma de opções digitais mais competitiva e abrangente disponível ao grande público."
 
 msgid "Filtering Controls"
 msgstr "Filtro de Controle"
@@ -4165,9 +4173,6 @@ msgstr "Março"
 msgid "Margin FX"
 msgstr "Margin FX"
 
-msgid "Market Data"
-msgstr "Dados do mercado"
-
 msgid "Market Opinions"
 msgstr "Opiniões de Mercado"
 
@@ -4309,9 +4314,7 @@ msgid "More benefits"
 msgstr "Mais benefícios"
 
 msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with "
-msgstr ""
-"Mais especificamente, quando firmamos um contrato de negociação de opções "
-"binárias com você (cada, um \"Contrato\"), temos o dever de lhe proporcionar "
+msgstr "Mais especificamente, quando firmamos um contrato de negociação de opções binárias com você (cada, um \"Contrato\"), temos o dever de lhe proporcionar "
 
 msgid "Mother's maiden name"
 msgstr "Nome de solteira da mãe"
@@ -5099,9 +5102,6 @@ msgstr "Fazer revisão e corrigir os conteúdos exibidos no site, blog, meios de
 msgid "Proofreader"
 msgstr "Revisor"
 
-msgid "Prospectus"
-msgstr "Prospecto"
-
 msgid "Proven knowledge of auditing standards, procedures, laws, rules and regulations are an added advantage"
 msgstr "Conhecimentos comprovados de padrões de auditoria, leis, regras e regulamentações são uma vantagem"
 
@@ -5283,9 +5283,7 @@ msgid "Reset to Original Settings"
 msgstr "Redefinir para as configurações originais"
 
 msgid "Resolve complex customer care issues in the best interest of our global clients and the company"
-msgstr ""
-"Resolver problemas complexos de atendimento ao cliente no interesse geral "
-"dos nossos clientes globais e da nossa empresa"
+msgstr "Resolver problemas complexos de atendimento ao cliente no interesse geral dos nossos clientes globais e da nossa empresa"
 
 msgid "Resources"
 msgstr "Recursos"
@@ -5548,9 +5546,7 @@ msgid "Sign me up"
 msgstr "Registrar-me"
 
 msgid "Sign up as a tester and look for Binary.com-related projects."
-msgstr ""
-"Inscreva-se como um testador e procure projetos relacionadas com a "
-"Binary.com."
+msgstr "Inscreva-se como um testador e procure projetos relacionadas com a Binary.com."
 
 msgid "Significant experience in Social Media, Marketing, and / or Advertising"
 msgstr "Experiência relevante em Mídia Social, Marketing e / ou Publicidade"
@@ -5787,7 +5783,6 @@ msgstr "Apoiar as necessidades globais de recrutamento e gerenciamento de talent
 msgid "Tab With Submenus"
 msgstr "Aba com submenus"
 
-#| msgid "Table"
 msgid "Tables"
 msgstr "Tabelas"
 
@@ -6531,6 +6526,11 @@ msgstr "Para redefinir a sua senha, por favor digite o endereço de e-mail com o
 
 msgid "Token"
 msgstr "Token"
+
+#, fuzzy
+#| msgid "%1 Tools"
+msgid "Tooltips"
+msgstr "%1 Ferramentas"
 
 msgid "Total Cost"
 msgstr "Custo Total"
@@ -7351,9 +7351,7 @@ msgid "You are not allowed to rebate any part commission payment onto your refer
 msgstr "Não lhe é permitido passar qualquer parte do pagamento de comissões para as suas indicações e, caso a Empresa entenda que você está envolvido em tais ações, a sua conta de afiliado será revogada imediatamente."
 
 msgid "You are not allowed to store any Content (such as feed data)."
-msgstr ""
-"Não é permitido a armazenagem de qualquer conteúdo (tais como feeds de "
-"dados)."
+msgstr "Não é permitido a armazenagem de qualquer conteúdo (tais como feeds de dados)."
 
 msgid "You are not authorized for withdrawal via payment agent."
 msgstr "Você não está autorizado a fazer uma retirada por meio de agente de pagamento."
@@ -7423,18 +7421,13 @@ msgid "You have sold this contract at %1 %2"
 msgstr "Você vendeu este contrato por %1 %2"
 
 msgid "You have to register and get App ID before you can use different OAuth server for authentication. For more information refer to OAuth details on https://developers.binary.com/."
-msgstr ""
-"É necessário que você se cadastre e obtenha uma ID de aplicativo antes de "
-"poder usar um servidor OAuth diferente para autenticação. Para mais "
-"informações, consulte os detalhes do OAuth em https://developers.binary.com/."
+msgstr "É necessário que você se cadastre e obtenha uma ID de aplicativo antes de poder usar um servidor OAuth diferente para autenticação. Para mais informações, consulte os detalhes do OAuth em https://developers.binary.com/."
 
 msgid "You irrevocably, non-exclusively license to the Company rights to use your Contributions; and"
 msgstr "Você concede irrevogavelmente direitos não exclusivos de usar as suas contribuições; e"
 
 msgid "You may cache the Content for up to 24 hours from a request for that Content through the Binary.com API."
-msgstr ""
-"Você poder guardar o Conteúdo em memória cache durante até 24 horas a partir "
-"de um pedido para tal Conteúdo através da API Binary.com."
+msgstr "Você poder guardar o Conteúdo em memória cache durante até 24 horas a partir de um pedido para tal Conteúdo através da API Binary.com."
 
 msgid "You may choose to contact us to close your account held with the Company. Your account may be closed if you do not have any open trade positions and if you have complied with the requested \"Know Your Client\" procedures to enable you to withdraw any pending funds in your account."
 msgstr "Você pode optar por nos contatar para encerrar a sua conta mantida na nossa Empresa. A sua conta pode ser encerrada se não houver nenhumas posições de negociação em aberto e se você tiver cumprido os procedimentos \"Conhecer o Cliente\" solicitados para habilitá-lo a retirar quaisquer fundos pendentes na sua conta."
@@ -8536,6 +8529,9 @@ msgstr "{JAPAN ONLY}Where broking companies show bid and offer prices for purcha
 
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
+
+#~ msgid "Market Data"
+#~ msgstr "Dados do mercado"
 
 #~ msgid "%1: Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 #~ msgstr "%1: Plataforma de negociação online para opções binárias sobre Índices, Forex, Matérias-Primas e Índices Inteligentes"
@@ -16957,9 +16953,6 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 #~| msgid "Scope(s) missing"
 #~ msgid "missing"
 #~ msgstr "Espaço ausente"
-
-#~ msgid "%1 Tools"
-#~ msgstr "%1 Ferramentas"
 
 #~ msgid "Close Window"
 #~ msgstr "Fechar Janela"
