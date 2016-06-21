@@ -1,26 +1,26 @@
-<div class="gr-12">
-    <h1 id="welcome">[% l('Welcome!') %]</h1>
-
-    <p id="welcome_text" class="invisible"></p>
-
-    <p class="center-text invisible" id="authenticate_button">
-        <a class="button pjaxload" href="[% request.url_for('/user/authenticatews') %]">
-            <span>[% l('Authenticate your account') %]</span>
-        </a>
-    </p>
-
-    <p id="VRT_topup_link" class="invisible">
-        <a href="[% request.url_for('/cashier/top_up_virtualws') %]"></a>
-    </p>
-
-    <p class="invisible" id="payment_agent">
-        [% l('Your account is registered as a Payment Agent.') %]
-        <a class="pjaxload with_login_cookies" href="[% request.url_for('/paymentagent/transferws') %]">[% l('Transfer to client') %]</a>
-    </p>
-
-    <p class="notice-msg invisible"></p>
-</div>
 <div class="gr-row">
+    <div class="gr-12">
+        <h1 id="welcome">[% l('Welcome!') %]</h1>
+
+        <p id="welcome_text" class="invisible"></p>
+
+        <p class="center-text invisible" id="authenticate_button">
+            <a class="button pjaxload" href="[% request.url_for('/user/authenticatews') %]">
+                <span>[% l('Authenticate your account') %]</span>
+            </a>
+        </p>
+
+        <p id="VRT_topup_link" class="invisible">
+            <a href="[% request.url_for('/cashier/top_up_virtualws') %]"></a>
+        </p>
+
+        <p class="invisible" id="payment_agent">
+            [% l('Your account is registered as a Payment Agent.') %]
+            <a class="pjaxload with_login_cookies" href="[% request.url_for('/paymentagent/transferws') %]">[% l('Transfer to client') %]</a>
+        </p>
+
+        <p class="notice-msg invisible"></p>
+    </div>
 
     <div class="gr-6 gr-12-m gr-parent invisible" id="cashier-portfolio">
         <div class="gr-row">
@@ -32,8 +32,8 @@
                 </div>
                 <div class="gr-12">
                     <h4>
-                <a href="[% request.url_for('/cashier') %]" class="pjaxload">[% l('Cashier') %]</a>
-            </h4>
+                        <a href="[% request.url_for('/cashier') %]" class="pjaxload">[% l('Cashier') %]</a>
+                    </h4>
                     <p>[% l('Make a deposit or withdraw.') %]</p>
                 </div>
             </div>
@@ -45,8 +45,8 @@
                 </div>
                 <div class="gr-12">
                     <h4>
-                <a href="[% request.url_for('/user/portfoliows') %]" class="pjaxload">[% l('Portfolio') %]</a>
-            </h4>
+                        <a href="[% request.url_for('/user/portfoliows') %]" class="pjaxload">[% l('Portfolio') %]</a>
+                    </h4>
                     <p>[% l('View your open positions.') %]</p>
                 </div>
             </div>
@@ -63,8 +63,8 @@
                 </div>
                 <div class="gr-12">
                     <h4>
-                <a href="[% request.url_for('/user/profit_tablews') %]" class="pjaxload">[% l('Profit Table') %]</a>
-            </h4>
+                        <a href="[% request.url_for('/user/profit_tablews') %]" class="pjaxload">[% l('Profit Table') %]</a>
+                    </h4>
                     <p>[% l('View your trading profit/loss.') %]</p>
                 </div>
             </div>
@@ -76,11 +76,11 @@
                 </div>
                 <div class="gr-12">
                     <h4>
-                <a href="[% request.url_for('/user/statementws') %]" class="pjaxload">[% l('Statement') %]</a>
-            </h4>
+                        <a href="[% request.url_for('/user/statementws') %]" class="pjaxload">[% l('Statement') %]</a>
+                    </h4>
                     <p>[% l('View your historical transactions.') %]</p>
                 </div>
             </div>
-            <div>
-            </div>
         </div>
+    </div>
+</div>
