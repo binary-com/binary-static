@@ -19,7 +19,7 @@
         font-weight: 700;
     }
     #topbar-info {
-        @include BIDIR_PROP(margin-left, margin-right: , auto);
+        @include BIDIR_PROP(margin-left, margin-right, auto);
     }
     #gmt-clock, #contact-us, .upgrademessage {
         padding-top: 3px;
