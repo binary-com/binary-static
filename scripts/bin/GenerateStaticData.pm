@@ -212,6 +212,10 @@ sub _texts {
         push @texts, localize('Authorise your account.');
         push @texts, localize('Even/Odd');
         push @texts, localize('Over/Under');
+        push @texts, localize('Up/Down');
+        push @texts, localize('Ends In/Out');
+        push @texts, localize('Touch/No Touch');
+        push @texts, localize('Stays In/Goes Out');
         push @texts, localize('Waiting for entry tick.');
 
         #strings for limitsws page
