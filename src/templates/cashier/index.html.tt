@@ -5,53 +5,55 @@
     </div>
 
     <div class="gr-12 gr-padding-10 table-body">
+        <div class="gr-padding-10 invisible">
+            <p class="notice-msg by_client_type client_real with_login_cookies">
+                [% l('Withdrawal is locked, please <a class="pjaxload" href="[_1]">contact us</a> for more information.', request.url_for('/contact')) %]
+            </p>
+        </div>
+        <div class="gr-padding-10">
+            <h3>[% l('Bank-wire, credit card, e-cash wallet') %]</h3>
+        </div>
         <div class="gr-row">
-            <div class="gr-12 gr-padding-10 invisible">
-                <p class="notice-msg by_client_type client_real with_login_cookies">
-                    [% l('Withdrawal is locked, please <a class="pjaxload" href="[_1]">contact us</a> for more information.', request.url_for('/contact')) %]
-                </p>
-            </div>
-            <div class="gr-12 gr-padding-10">
-                <h3>[% l('Bank-wire, credit card, e-cash wallet') %]</h3>
-            </div>
             <div class="gr-12">
-                <div class="gr-2 gr-4-m">
-                    <a class="pjaxload" href="[% request.url_for('/cashier/forwardws#deposit') %]" id="payment_methods">
-                        <img class="ja-hide responsive charting-page-icon" id="payment_methods_icon" src="[% request.url_for('images/pages/cashier/payment-methods.svg') %]" />
-                        <img class="hidden ja-show responsive charting-page-icon" id="payment_methods_icon" src="[% request.url_for('images/pages/cashier/japan_cashier.svg') %]" />
-                    </a>
-                </div>
-                <div class="gr-5 gr-12-m">
-                    <p>[% l('Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet.') %]</p>
-                    <a class="pjaxload ja-hide" href="[% request.url_for('cashier/payment_methods') %]" id="view_payment_methods">
-                        [% l('View available payment methods') %]
-                    </a>
-                </div>
-                <div class="gr-5 gr-12-m">
-                    <div class="gr-padding-10 by_client_type client_real with_login_cookies invisible">
-                        <a class="pjaxload button button_large by_client_type client_real with_login_cookies invisible" href="[% request.url_for('/cashier/forwardws#deposit') %]">
-                            <span>[% l('Deposit') %]</span>
+                <div class="gr-row">
+                    <div class="gr-2 gr-4-m">
+                        <a class="pjaxload" href="[% request.url_for('/cashier/forwardws#deposit') %]" id="payment_methods">
+                            <img class="ja-hide responsive charting-page-icon" id="payment_methods_icon" src="[% request.url_for('images/pages/cashier/payment-methods.svg') %]" />
+                            <img class="hidden ja-show responsive charting-page-icon" id="payment_methods_icon" src="[% request.url_for('images/pages/cashier/japan_cashier.svg') %]" />
                         </a>
                     </div>
-                    <div class="gr-padding-10 by_client_type client_real with_login_cookies invisible">
-                        <a class="pjaxload button button_large by_client_type client_real with_login_cookies invisible" href="[% request.url_for('/cashier/forwardws#withdraw') %]">
-                            <span class="withdraw">[% l('Withdraw') %]</span>
+                    <div class="gr-5 gr-12-m">
+                        <p>[% l('Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet.') %]</p>
+                        <a class="pjaxload ja-hide" href="[% request.url_for('cashier/payment_methods') %]" id="view_payment_methods">
+                            [% l('View available payment methods') %]
                         </a>
                     </div>
-                    <div class="gr-padding-10 by_client_type client_virtual with_login_cookies virtual-upgrade-link invisible">
-                        <a class="pjaxload button button_large by_client_type client_virtual with_login_cookies virtual-upgrade-link invisible" href="[% request.url_for('new_account/realws') %]">
-                            <span>[% l('Upgrade to a Real Account') %]</span>
-                        </a>
-                    </div>
-                    <div class="gr-padding-10 by_client_type client_virtual with_login_cookies vr-japan-upgrade-link invisible">
-                        <a class="pjaxload button button_large by_client_type client_virtual with_login_cookies vr-japan-upgrade-link invisible" href="[% request.url_for('new_account/japanws') %]">
-                            <span>[% l('Upgrade to a Real Account') %]</span>
-                        </a>
-                    </div>
-                    <div class="gr-padding-10 by_client_type client_virtual with_login_cookies vr-financial-upgrade-link invisible">
-                        <a class="pjaxload button button_large by_client_type client_virtual with_login_cookies vr-financial-upgrade-link invisible" href="[% request.url_for('new_account/maltainvestws') %]">
-                            <span>[% l('Upgrade to a Financial Account') %]</span>
-                        </a>
+                    <div class="gr-5 gr-12-m">
+                        <div class="gr-padding-10 by_client_type client_real with_login_cookies invisible">
+                            <a class="pjaxload button button_large by_client_type client_real with_login_cookies invisible" href="[% request.url_for('/cashier/forwardws#deposit') %]">
+                                <span>[% l('Deposit') %]</span>
+                            </a>
+                        </div>
+                        <div class="gr-padding-10 by_client_type client_real with_login_cookies invisible">
+                            <a class="pjaxload button button_large by_client_type client_real with_login_cookies invisible" href="[% request.url_for('/cashier/forwardws#withdraw') %]">
+                                <span class="withdraw">[% l('Withdraw') %]</span>
+                            </a>
+                        </div>
+                        <div class="gr-padding-10 by_client_type client_virtual with_login_cookies virtual-upgrade-link invisible">
+                            <a class="pjaxload button button_large by_client_type client_virtual with_login_cookies virtual-upgrade-link invisible" href="[% request.url_for('new_account/realws') %]">
+                                <span>[% l('Upgrade to a Real Account') %]</span>
+                            </a>
+                        </div>
+                        <div class="gr-padding-10 by_client_type client_virtual with_login_cookies vr-japan-upgrade-link invisible">
+                            <a class="pjaxload button button_large by_client_type client_virtual with_login_cookies vr-japan-upgrade-link invisible" href="[% request.url_for('new_account/japanws') %]">
+                                <span>[% l('Upgrade to a Real Account') %]</span>
+                            </a>
+                        </div>
+                        <div class="gr-padding-10 by_client_type client_virtual with_login_cookies vr-financial-upgrade-link invisible">
+                            <a class="pjaxload button button_large by_client_type client_virtual with_login_cookies vr-financial-upgrade-link invisible" href="[% request.url_for('new_account/maltainvestws') %]">
+                                <span>[% l('Upgrade to a Financial Account') %]</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
