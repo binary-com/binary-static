@@ -21,8 +21,10 @@
 
 // Max size :
 .container {
-	margin:0 auto;
-	max-width:960px;
+    margin:0 auto;
+    max-width:960px;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
 //we're not using this because it overrides the existing mobile classes

@@ -1,11 +1,12 @@
 [% IF !full_width %]
+</div> [% # closes gr-row %]
 </div> [% # closes container %]
 [% END %]
 </div> [% # closes div#content %]
 </div>[% #closes div#content-holder %]
 <div id="footer">
     <div id="footer-menu">
-        <div class="container gr-12-t gr-12-p gr-12-m">
+        <div class="container">
             <div class="gr-row gr-padding-10">
                 <div class="gr-6 gr-12-m gr-parent">
                     <div class="gr-row">
@@ -149,7 +150,7 @@
         </div>
     </div>
     <div id="footer-regulatory">
-        <div class="container gr-12-t gr-12-p gr-12-m">
+        <div class="container">
             <div class="ja-hide id-hide">
                 <div class="gr-padding-10">
                     <div class="gr-parent">
@@ -196,7 +197,7 @@
         </div>
     </div>
     <div id="footer-last">
-        <div class="container gr-12-t gr-12-p gr-12-m">
+        <div class="container">
             <div class="gr-padding-10">
                 <p class="gambling">
                     [% l('Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. <span class="ja-hide">Read about <a href="[_1]" class="pjaxload">Responsible Trading</a>.</span>', request.url_for('responsible-trading')) %]
