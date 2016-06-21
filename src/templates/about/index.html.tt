@@ -1,6 +1,6 @@
 <div class="about-us">
   <div class="container">
-    <div class="gr-12 gr-parent">
+    <div class="gr-parent">
       <h1 class="center-text">
         [% l("The premier platform for trading binary options in the world's financial markets") %]
       </h1>
@@ -27,7 +27,7 @@
   </div>
   <div class="blue-fill">
     <div class="container">
-      <div class="gr-12 gr-padding-10 facts">
+      <div class="gr-padding-10 facts">
         <h1 class="center-text margin-top">[% l("Key facts") %]</h1>
         <div class="gr-row gr-parent border-bottom">
           <div class="gr-6 gr-12-m">
@@ -109,7 +109,7 @@
     </div>
   </div>
   <div class="container">
-    <div class="gr-12 gr-parent">
+    <div class="gr-parent">
       <p>
         [% l("[_1] is owned and operated by the Binary Ltd. group of companies. For more information, <a href='[_2]'>visit our history page</a>.", website_name, request.url_for("/group-history")) %]
       </p>

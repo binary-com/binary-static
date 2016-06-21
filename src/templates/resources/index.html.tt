@@ -1,11 +1,5 @@
-<div class="gr-12">
-  <h1>
-    [% l("Resources") %]
-  </h1>
-  <p>
-    [% l("Do you want to learn more about the markets and how to trade them? Check out the resources below.") %]
-  </p>
-</div>
+<h1>[% l("Resources") %]</h1>
+<p>[% l("Do you want to learn more about the markets and how to trade them? Check out the resources below.") %]</p>
 <div class="gr-row">
   <div class="gr-3 gr-8-m gr-parent ja-hide">
     <div class="gr-8 gr-padding-10">
@@ -19,9 +13,7 @@
           [% l("Asset Index") %]
         </a>
       </h4>
-      <p>
-        [% l("View the full list of assets, contract types and durations.") %]
-      </p>
+      <p>[% l("View the full list of assets, contract types and durations.") %]</p>
     </div>
   </div>
   <div class="gr-3 gr-8-m gr-parent">
@@ -36,9 +28,7 @@
           [% l("Trading Times") %]
         </a>
       </h4>
-      <p>
-        [% l("View the operating hours of the markets you can trade.") %]
-      </p>
+      <p>[% l("View the operating hours of the markets you can trade.") %]</p>
     </div>
   </div>
 </div>
