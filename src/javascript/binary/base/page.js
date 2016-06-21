@@ -970,9 +970,9 @@ Contents.prototype = {
                     }
                 }
                 if (show_financial) {
-                    $('.financial-upgrade-link').removeClass('invisible');
+                    $('.financial-upgrade-link').parent().removeClass('invisible');
                 } else {
-                    $('.financial-upgrade-link').addClass('invisible');
+                    $('.financial-upgrade-link').parent().addClass('invisible');
                 }
             }
         }

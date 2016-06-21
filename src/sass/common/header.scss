@@ -52,6 +52,9 @@
     a {
         color: $COLOR_WHITE;
         text-decoration: none;
+        img {
+            max-height: 55px;
+        }
     }
     select#client_loginid option[disabled=disabled] {
         background-color: $COLOR_LIGHT_GRAY;
@@ -82,6 +85,7 @@
         text-align: right;
         color: $COLOR_WHITE;
         font-size: 70%;
+        display: inline-block;
         a, a:visited {
             &:hover, &:active {
                 text-decoration: underline;
