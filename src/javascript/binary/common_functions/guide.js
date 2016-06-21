@@ -76,7 +76,7 @@ var Guide = (function() {
 		}
 
 		$(opt.guideBtnID)
-			.addClass('gr-m-hide pulser')
+			.addClass('gr-hide-m pulser')
 			.append($('<span/>', {class: 'close', text: 'X'}))
 			.append($('<strong/>'));
 		$(opt.guideBtnID + ' strong').html('<span></span>' + opt.btnText);
