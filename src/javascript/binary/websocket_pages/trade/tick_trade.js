@@ -192,6 +192,10 @@ var TickDisplay = function() {
                 });
                 $self.contract_barrier = calc_barrier;
             }
+            var barrier = document.getElementById('contract_purchase_barrier');
+            if ($self.contract_barrier) {
+                barrier.innerHTML = Content.localize().textContractConfirmationBarrier + ' ' + $self.contract_barrier;
+            }
         },
         add: function(indicator) {
             var $self = this;
