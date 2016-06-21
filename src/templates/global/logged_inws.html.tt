@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+    <style id="antiClickjack">body{display:none !important;}</style>
+    <script type="text/javascript">
+        if (self === top) {
+            var antiClickjack = document.getElementById("antiClickjack");
+            antiClickjack.parentNode.removeChild(antiClickjack);
+        } else {
+            top.location = self.location;
+        }
+    </script>
 [%= FOREACH js IN javascript.libs =%]
     <script src='[%= js =%]' defer></script>
 [%= END =%]
     <style>
         body {margin: 0px;}
         #header-binary {height: 55px; background: #2a3052; border-bottom: 4px solid #e98024; text-align: center; padding: 10px 0;}
-        #header-binary a {margin: 0 auto; vertical-align: middle; display: inline-block;}
+        #header-binary a {margin: 0 auto; vertical-align: middle; display: inline-block; min-width: 220px;}
         #header-binary #symbol-logo {vertical-align: middle; height: 55px;}
         #header-binary #type-logo {vertical-align: middle; height: 37px; margin-left: 6px;}
         @keyframes spinning{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}

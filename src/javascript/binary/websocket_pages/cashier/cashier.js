@@ -4,7 +4,7 @@ var Cashier = (function() {
     var lock_withdrawal = function(withdrawal_locked) {
       if (withdrawal_locked === 'locked') {
         $.each($('.withdraw'), function(){
-          $a = $(this).parent();
+          var $a = $(this).parent();
           // use replaceWith, to disable previously catched pjax event
           $a.replaceWith($('<a/>', {class: $a.attr('class').replace('pjaxload') + ' button-disabled', html: $a.html()}));
         });

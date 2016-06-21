@@ -1,5 +1,16 @@
 module.exports = function (grunt) {
 
+    global.repos = {
+        staging: {
+            origin: 'git@github.com:binary-com/binary-static.git',
+            CNAME : 'staging.binary.com'
+        },
+        production: {
+            origin: 'git@github.com:binary-static-deployed/binary-static.git',
+            CNAME : 'www.binary.com'
+        }
+    };
+
     global.branch_prefix = 'br_';
     global.branch = grunt.option('branch');
     global.dist = 'dist' + (global.branch ? '/' + global.branch_prefix + global.branch : '');

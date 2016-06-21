@@ -50,7 +50,7 @@ var FinancialAssessmentws = (function(){
         var isValid = true,
             errors = {};
         $('#assessment_form select').each(function(){
-            if($(this).val() === ''){
+            if(!$(this).val()){
                 isValid = false;
                 errors[$(this).attr("id")] = text.localize('Please select a value.');
             }
