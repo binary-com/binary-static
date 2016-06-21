@@ -36,6 +36,18 @@ sub _texts {
         push @texts, localize("(Bejing/CST -8 hours)");
         push @texts, localize('You must accept the terms and conditions to open an account.');
         push @texts, localize('We are not accepting accounts from residents of this country at the present time.');
+        # menu items
+        push @texts, localize('Start Trading');
+        push @texts, localize('My Account');
+        push @texts, localize('Portfolio');
+        push @texts, localize('Password');
+        push @texts, localize('Settings');
+        push @texts, localize('Affiliate');
+        push @texts, localize('Authenticate');
+        push @texts, localize('Cashier');
+        push @texts, localize('Resources');
+        push @texts, localize('Asset Index');
+        push @texts, localize('Trading Times');
         # highchart localization text
         push @texts, localize('Print chart');
         push @texts, localize('Save as JPEG');
@@ -702,7 +714,7 @@ sub _texts {
         push @texts, localize('Please complete the following financial assessment form before continuing.');
         push @texts, localize('Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed.');
 
-        # Strings for applicationsws
+        # Strings for authorised_appsws
         push @texts, localize('Applications');
         push @texts, localize('You have not granted access to any applications.');
         push @texts, localize('Permissions');
@@ -710,6 +722,7 @@ sub _texts {
         push @texts, localize('Never');
         push @texts, localize('Revoke access');
         push @texts, localize('Keep track of your authorised applications.');
+        push @texts, localize('Are you sure that you want to permanently revoke access to application');
 
         # Strings for lostpasswordws
         push @texts, localize('Please check your email to retrieve the token needed to reset your password.');

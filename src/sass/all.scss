@@ -1,71 +1,71 @@
-@import "constants";
+@import 'constants';
 
 /* common styles */
-@import "reset";
-@import "mixin";
-@import "common";
-@import "animations";
+@import 'reset';
+@import 'mixin';
+@import 'common';
+@import 'animations';
 
 /* main style */
-@import "common/header";
-@import "common/footer";
-@import "common/nav";
-@import "common/reality-check";
-@import "common/password-meter";
-@import "common/tooltip";
+@import 'common/header';
+@import 'common/footer';
+@import 'common/nav';
+@import 'common/reality-check';
+@import 'common/password-meter';
+@import 'common/tooltip';
 
 /* pages */
-@import "pages/home.scss";
-@import "pages/get-started.scss";
-@import "pages/tour.scss";
-@import "pages/contact.scss";
-@import "pages/trading.scss";
-@import "pages/sell_popup.scss";
-@import "pages/trading/common.scss";
-@import "pages/trading/container.scss";
-@import "pages/trading/pages.scss";
-@import "pages/trading/table.scss";
-@import "pages/cashier.scss";
-@import "pages/static.scss";
-@import "pages/livechart.scss";
-@import "pages/payment_agent.scss";
-@import "pages/timeline.scss";
-@import "pages/api_token.scss";
-@import "pages/authorised_apps.scss";
-@import "pages/careers.scss";
-@import "pages/about_us.scss";
-@import "pages/portfoliows.scss";
-@import "pages/resources.scss";
-@import "pages/guide.enjoyhint.scss";
-@import "pages/guide.scss";
-@import "pages/android_app.scss";
-@import "pages/job_descriptions.scss";
+@import 'pages/home.scss';
+@import 'pages/get-started.scss';
+@import 'pages/tour.scss';
+@import 'pages/contact.scss';
+@import 'pages/trading.scss';
+@import 'pages/sell_popup.scss';
+@import 'pages/trading/common.scss';
+@import 'pages/trading/container.scss';
+@import 'pages/trading/pages.scss';
+@import 'pages/trading/table.scss';
+@import 'pages/cashier.scss';
+@import 'pages/static.scss';
+@import 'pages/livechart.scss';
+@import 'pages/payment_agent.scss';
+@import 'pages/timeline.scss';
+@import 'pages/api_token.scss';
+@import 'pages/authorised_apps.scss';
+@import 'pages/careers.scss';
+@import 'pages/about_us.scss';
+@import 'pages/portfoliows.scss';
+@import 'pages/resources.scss';
+@import 'pages/guide.enjoyhint.scss';
+@import 'pages/guide.scss';
+@import 'pages/android_app.scss';
+@import 'pages/job_descriptions.scss';
 
 /* static pages */
-@import "static/trade.scss";
-@import "static/statement.scss";
-@import "static/balance.scss";
-@import "static/flex_table.scss";
-@import "static/highcharts.scss";
-@import "static/knowledge_test.scss";
-@import "static/profit_table.scss";
-@import "static/limit.scss";
-@import "static/reset-password";
-@import "static/applications.scss";
-@import "static/virtual.scss";
-@import "static/payment_agent.scss";
+@import 'static/trade.scss';
+@import 'static/statement.scss';
+@import 'static/balance.scss';
+@import 'static/flex_table.scss';
+@import 'static/highcharts.scss';
+@import 'static/knowledge_test.scss';
+@import 'static/profit_table.scss';
+@import 'static/limit.scss';
+@import 'static/reset-password';
+@import 'static/applications.scss';
+@import 'static/virtual.scss';
+@import 'static/payment_agent.scss';
 
 /* Language based rules */
-@import "language_base.scss";
+@import 'language_base.scss';
 
 /* media queries */
-@import "media-queries";
+@import 'media-queries';
 
 /* external stylesheets
  * ===================================== */
 /* date picker */
-@import "external/jquery.ui.timepicker.scss";
+@import 'external/jquery.ui.timepicker.scss';
 
 /* Grid layout system */
-@import "external/grid";
-@import "external/mmenu/jquery.mmenu.all";
+@import 'external/grid';
+@import 'external/mmenu/jquery.mmenu.all';

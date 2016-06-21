@@ -19,7 +19,7 @@ var Price = (function() {
 
     var createProposal = function(typeOfContract) {
         var proposal = {
-            price_stream: 1,
+            proposal: 1,
             subscribe: 1
         };
         var underlying = document.getElementById('underlying'),
@@ -134,7 +134,7 @@ var Price = (function() {
     };
 
     var display = function(details, contractType) {
-        var proposal = details['proposal'] || details['price_stream'];
+        var proposal = details['proposal'];
         var id = proposal ? proposal['id'] : '';
         var params = details['echo_req'];
 
@@ -212,13 +212,9 @@ var Price = (function() {
                 }
 
                 if (extraInfo['longcode'] && window.innerWidth > 500) {
-                  extraInfo['longcode'] = extraInfo['longcode'].replace(/[\d\,]+\.\d\d/, function(x) {
-                      return '<b>' + x + '</b>';
-                  });
-                  description.setAttribute('data-title', extraInfo['longcode']);
-                  page.contents.tooltip.attach();
+                  description.setAttribute('data-balloon', extraInfo['longcode']);
                 } else {
-                  description.removeAttribute('data-title');
+                  description.removeAttribute('data-balloon');
                 }
             }
 
@@ -245,13 +241,9 @@ var Price = (function() {
             }
 
             if (proposal && proposal['longcode'] && window.innerWidth > 500) {
-                proposal['longcode'] = proposal['longcode'].replace(/[\d\,]+\.\d\d/, function(x) {
-                    return '<b>' + x + '</b>';
-                });
-                description.setAttribute('data-title', proposal['longcode']);
-                page.contents.tooltip.attach();
+                description.setAttribute('data-balloon', proposal['longcode']);
             } else {
-              description.removeAttribute('data-title');
+              description.removeAttribute('data-balloon');
             }
 
             purchase.show();
@@ -272,7 +264,7 @@ var Price = (function() {
             purchase.setAttribute('data-payout', proposal['payout']);
             purchase.setAttribute('data-symbol', id);
             for (var key in params) {
-                if (key && key !== 'price_stream' && key !== 'proposal') {
+                if (key && key !== 'proposal') {
                     purchase.setAttribute('data-' + key, params[key]);
                 }
             }

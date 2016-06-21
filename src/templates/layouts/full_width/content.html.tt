@@ -1,9 +1,0 @@
-<div id="content" class="[% (current_route) %]-content">
-  [% INCLUDE global/gtm.html.tt %]
-  <div id="page_info" style="display: none;">
-    <title>[% browser_title %]</title>
-    <div id="content_class">[% current_route %]-content</div>
-  </div>
-  [% content %]
-  <div class="push"></div>
-</div>

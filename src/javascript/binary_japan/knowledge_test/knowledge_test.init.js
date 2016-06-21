@@ -24,10 +24,10 @@ var KnowledgeTest = (function() {
         }
         var answeredQid = Object.keys(submitted).map(function(k) {return +k;});
         if (answeredQid.length !== 20) {
+            $('#knowledge-test-instructions').addClass('invisible');
             $('#knowledge-test-msg')
                 .addClass('notice-msg')
                 .text(text.localize('You need to finish all 20 questions.'));
-
             // $("html, body").animate({ scrollTop: 0 }, "slow");
 
             var allQid = [].concat.apply([], randomPicks).map(function(q) {
@@ -60,9 +60,11 @@ var KnowledgeTest = (function() {
         $('#knowledge-test-submit').click(submitHandler);
         $('#knowledge-test-questions').removeClass(hiddenClass);
         $('#knowledge-test-msg').text(text.localize('{JAPAN ONLY}Please complete the following questions.'));
+        $('#knowledge-test-instructions').removeClass('invisible');
     }
 
     function showResult(score, time) {
+        $('#knowledge-test-instructions').addClass('invisible');
         $('#knowledge-test-header').text(text.localize('{JAPAN ONLY}Knowledge Test Result'));
         if (score >= 14) {
             $('#knowledge-test-msg').text(text.localize(passMsg));
@@ -79,6 +81,7 @@ var KnowledgeTest = (function() {
     function showMsgOnly(msg) {
         $('#knowledge-test-questions').addClass(hiddenClass);
         $('#knowledge-test-msg').text(text.localize(msg));
+        $('#knowledge-test-instructions').addClass('invisible');
     }
 
     function showDisallowedMsg(jpStatus) {

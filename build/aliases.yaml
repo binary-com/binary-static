@@ -8,10 +8,12 @@ js:
   - 'uglify'
 
 test:
+  - 'stylelint'
   - 'jshint'
+  - 'mochaTest'
 
 default:
-  - 'jshint'
+  - 'test'
   - 'css'
   - 'js'
   - 'fileindex'
@@ -27,12 +29,30 @@ deploy:
   - 'default'
   - 'gh-pages'
 
+serve:
+  - 'connect:livereload'
+  - 'watch'
+
+livereload:
+  - 'clean'
+  - 'css'
+  - 'js'
+  - 'fileindex'
+  - 'copy'
+  - 'shell:compile_dev'
+  - 'connect:livereload'
+  - 'watch'
+
 custom:
+  - 'clean'
   - 'default'
+  - 'shell:compile_dev'
   - 'connect'
 
 release:
+  - 'shell:check_origin'
   - 'clean'
   - 'default'
   - 'shell:compile_production'
+  - 'shell:make_cname'
   - 'gh-pages'

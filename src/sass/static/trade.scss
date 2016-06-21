@@ -23,18 +23,25 @@
 }
 
 @keyframes spinning {
-    from {transform: rotate(0deg);}
-    to {transform: rotate(360deg);}
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes fade {
-    from {opacity: 0;}
-    to {opacity: 1;}
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-
 .spinner {
-    animation: spinning .2s * 5 infinite linear;
+    animation: spinning 0.2s * 5 infinite linear;
 }
 
 #trading_init_progress {
@@ -53,852 +60,808 @@
 }
 
 #trading_socket_container {
-
-  font-size: 1rem;
-  position: relative;
-  opacity: 0;
-  #markets_closed_msg {
-    margin-top: 0px;
-  }
-  abbr{
-    text-decoration: none;
-  }
-  &.show{
-    animation: fade 1s;
-    animation-fill-mode: forwards;
-  }
-  select,input{
-    border-radius: 5px;
-    box-sizing: border-box;
-    height: 28px;
-  }
-  b{
-    font-weight: bold;
-  }
-  label{
-    line-height: 28px;
-  }
-  #japan_unit_row,
-  #japan_payout_row{
-    display: none;
-  }
-  #contract_market_form_container{
-    height: 28px;
-    .tm-li{
-      height: 28px;
-    }
-  }
-  .button button{
-    cursor: pointer;
-  }
-  .row, .row-inner {
-    display: flex;
-    justify-content: space-around;
-  }
-  .col, .col-inner {
-    flex: 1;
-  }
-  .row {
-    flex-direction: row;
-  }
-  .row-inner {
-    flex-direction: column;
-    .col-inner {
-      margin-bottom: 5px;
-    }
-  }
-  .vertical-row {
-    flex-direction: column;
-    display: flex;
-  }
-  .nav_placeholder {
-    display: none;
-    overflow: hidden;
-    width: 100%;
-    background-color: $COLOR_BLUE;
-    padding: 3px 0 3px 10px;
-    margin: 10px 0;
-    color: $COLOR_WHITE;
-    text-transform: capitalize;
-    &:after {
-      content: '\25BC';
-      font-size: 50%;
-      right: 0;
-      position: absolute;
-      margin-right: 10px;
-    }
-  }
-  .form_label input, .form_label select{
-    max-width: 170px;
-  }
-  input[type=checkbox] {
-    &.show_menu {
-      display: none;
-    }
-    &#market_show_menu:checked ~ #contract_market_nav, &#contract_form_show_menu:checked ~ #contract_form_name_nav {
-      display: flex;
-    }
-  }
-  .row {
-    padding: 10px 0;
-  }
-  .big-col {
-    flex: 1.5;
-  }
-  #expiry_type_endtime{
-    flex-wrap: wrap;
-  }
-  #contract_form_content_wrapper{
-    padding-top: .5em;
-  }
-  #contract_symbol_container {
-    display: inline-flex;
-    padding: 0px;
-    #contract_markets_container {
-      text-align: right;
-      @include BIDIR_PROP(margin-right, margin-left, 1rem);
-    }
-    #spot_label {
-      margin: 0 5px 0 15px;
-    }
-  }
-  #contract_container {
-    align-items: center;
-    padding-top: 25px;
+    font-size: 1rem;
     position: relative;
-    #contract_form_container .col {
-      @include BIDIR_PROP(margin-right, margin-left, 1rem);
+    opacity: 0;
+    #markets_closed_msg {
+        margin-top: 0px;
     }
-    .overlay_container {
-    width: 100%;
-    display: none;
-    background: transparent;
-    z-index: 9999;
-    &#loading_container3{
-        background: $COLOR_LIGHT_GRAY;
-        opacity: 0.5;
-        display: block;
-        position: absolute;
-        height: 100%;
-        margin-top: -25px;
-      }
+    abbr {
+        text-decoration: none;
     }
-    border: 1px solid $COLOR_GRAY;
-    flex: 1 0 auto;
-    input[type=number]::-webkit-inner-spin-button,
-    input[type=number]::-webkit-outer-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
+    &.show {
+        animation: fade 1s;
+        animation-fill-mode: forwards;
     }
-    input[type=number] {
-      -moz-appearance: textfield;
+    select, input {
+        border-radius: 5px;
+        box-sizing: border-box;
+        height: 28px;
     }
-  }
-  #contract_prices_container {
-    position: relative;
-    @include BIDIR_PROP(margin-left, margin-right, 1em);
-    margin-top: 28px;
-    .price_container {
-      border: 1px solid $COLOR_GRAY;
-      align-items: stretch;
-      padding: 0;
-      flex: 1 0 auto;
-      display: none;
-      >.col.row{
-        flex: 1 0 auto;
-      }
-      >.row{
-        padding: 0;
-      }
-      .big-col {
-        flex: 3;
-      }
-      .contract_purchase {
-        margin-bottom: 6px;
-        width: 90%;
-        display: inline-flex;
-        .purchase_button{
-          cursor: pointer;
-          width: 100%;
+    b {
+        font-weight: bold;
+    }
+    label {
+        line-height: 28px;
+    }
+    #japan_unit_row, #japan_payout_row {
+        display: none;
+    }
+    #contract_market_form_container {
+        height: 28px;
+        .tm-li {
+            height: 28px;
         }
-      }
     }
-  }
-  #contract_form_content {
-    padding: 0 10px;
-  }
-  .contract_heading {
-    text-transform: capitalize;
-    font-weight: bold;
-    padding-top: 2.4em;
-    text-align: center;
-    &.ASIANU {
-      background: url("../images/pages/trade/asian-u_1.svg") no-repeat top center;
+    .button button {
+        cursor: pointer;
     }
-    &.ASIAND {
-      background: url("../images/pages/trade/asian-d_1.svg") no-repeat top center;
+    .row, .row-inner {
+        display: flex;
+        justify-content: space-around;
     }
-    &.DIGITDIFF {
-      background: url("../images/pages/trade/differs_1.svg") no-repeat top center;
+    .col, .col-inner {
+        flex: 1;
     }
-    &.DIGITMATCH {
-      background: url("../images/pages/trade/matches_1.svg") no-repeat top center;
+    .row {
+        flex-direction: row;
+        padding: 10px 0;
     }
-    &.CALLE {
-      background: url("../images/pages/trade/rise_1.png") no-repeat top center;
+    .row-inner {
+        flex-direction: column;
+        .col-inner {
+            margin-bottom: 5px;
+        }
     }
-    &.PUTE {
-      background: url("../images/pages/trade/fall_1.png") no-repeat top center;
+    .vertical-row {
+        flex-direction: column;
+        display: flex;
     }
-    &.DIGITEVEN {
-      background: url("../images/pages/trade/digits_even_1.svg") no-repeat no-repeat top center;
-      background-size: 40%;
+    .nav_placeholder {
+        display: none;
+        overflow: hidden;
+        width: 100%;
+        background-color: $COLOR_BLUE;
+        padding: 3px 0 3px 10px;
+        margin: 10px 0;
+        color: $COLOR_WHITE;
+        text-transform: capitalize;
+        &:after {
+            content: '\25BC';
+            font-size: 50%;
+            right: 0;
+            position: absolute;
+            margin-right: 10px;
+        }
     }
-    &.DIGITODD {
-      background: url("../images/pages/trade/digits_odd_1.svg") no-repeat no-repeat top center;
-      background-size: 40%;
+    .form_label input, .form_label select {
+        max-width: 170px;
     }
-    &.DIGITOVER {
-      background: url("../images/pages/trade/digits_over_1.svg") no-repeat no-repeat top center;
-      background-size: 40%;
+    input[type=checkbox] {
+        &.show_menu {
+            display: none;
+        }
+        &#market_show_menu:checked ~ #contract_market_nav, &#contract_form_show_menu:checked ~ #contract_form_name_nav {
+            display: flex;
+        }
     }
-    &.DIGITUNDER {
-      background: url("../images/pages/trade/digits_under_1.svg") no-repeat no-repeat top center;
-      background-size: 40%;
+    .big-col {
+        flex: 1.5;
     }
-    &.CALL {
-      background: url("../images/pages/trade/rise_1.png") no-repeat top center;
+    #expiry_type_endtime {
+        flex-wrap: wrap;
     }
-    &.PUT {
-      background: url("../images/pages/trade/fall_1.png") no-repeat top center;
+    #contract_form_content_wrapper {
+        padding-top: 0.5em;
     }
-    &.CALLE {
-      background: url("../images/pages/trade/rise_1.png") no-repeat top center;
+    #contract_symbol_container {
+        display: inline-flex;
+        padding: 0px;
+        #contract_markets_container {
+            text-align: right;
+            @include BIDIR_PROP(margin-right, margin-left, 1rem);
+        }
+        #spot_label {
+            margin: 0 5px 0 15px;
+        }
     }
-    &.PUTE {
-      background: url("../images/pages/trade/fall_1.png") no-repeat top center;
+    #contract_container {
+        align-items: center;
+        padding-top: 25px;
+        position: relative;
+        #contract_form_container .col {
+            @include BIDIR_PROP(margin-right, margin-left, 1rem);
+        }
+        .overlay_container {
+            width: 100%;
+            display: none;
+            background: transparent;
+            z-index: 9;
+            &#loading_container3 {
+                background: $COLOR_LIGHT_GRAY;
+                opacity: 0.5;
+                display: block;
+                position: absolute;
+                height: 100%;
+                margin-top: -25px;
+            }
+        }
+        border: 1px solid $COLOR_GRAY;
+        flex: 1 0 auto;
+        input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
     }
-    &.ONETOUCH {
-      background: url("../images/pages/trade/touch_1.png") no-repeat top center;
-    }
-    &.NOTOUCH {
-      background: url("../images/pages/trade/no-touch_1.png") no-repeat top center;
-    }
-    &.RANGE {
-      background: url("../images/pages/trade/stay-in-between_1.png") no-repeat top center;
-    }
-    &.UPORDOWN {
-      background: url("../images/pages/trade/stay-out_1.png") no-repeat top center;
-    }
-    &.EXPIRYRANGEE {
-      background: url("../images/pages/trade/ends-between_1.png") no-repeat top center;
-    }
-    &.EXPIRYMISSE {
-      background: url("../images/pages/trade/ends-outside_1.png") no-repeat top center;
-    }
-    &.EXPIRYRANGE {
-      background: url("../images/pages/trade/ends-between_1.png") no-repeat top center;
-    }
-    &.EXPIRYMISS {
-      background: url("../images/pages/trade/ends-outside_1.png") no-repeat top center;
-    }
-    &.SPREADU {
-      background: url("../images/pages/trade/spreads.svg") no-repeat top center;
-      background-size: 40%;
-    }
-    &.SPREADD {
-      background: url("../images/pages/trade/spreads_1.svg") no-repeat top center;
-      background-size: 40%;
-    }
-  }
-  #contract_prices_container {
-    #contract_purchase_reference{
-      margin-bottom: 10px;
-    }
-    #confirmation_error{
-      padding: 20px;
-      font-style: italic;
-      vertical-align: middle;
-    }
-    .price_container#price_container_top {
-      margin-bottom: 1rem;
-    }
-    .price_comment,.contract_error,#contract_purchase_balance{
-      background-color: $COLOR_GRAY;
-      line-height: 1.5rem;
-      font-size: 0.8rem;
-      flex: 1;
-      padding: 5px;
-      text-align: center;
-      flex: 0 0 auto
-    }
-    #contract_purchase_balance{
-      position: absolute;
-      bottom: 0;
-      color: $COLOR_WHITE;
-      box-sizing: border-box;
-      display: block;
-      background-color: $COLOR_ORANGE;
-      width: 100%;
-    }
-    #confirmation_message{
-      padding-bottom: 34px;
-    }
-    #contract_purchase_descr{
-      background-color: #FFF;
-      border: 2px solid #dedede;
-      margin: 0 10px;
-      padding: 10px 5px;
-      text-align: justify;
-    }
-    #contract_purchase_profit_list,
-    #contract_purchase_spots .row{
-      padding: 3px 0;
-      flex-direction: row !important;
-    }
-    #contract_purchase_spots{
-      height: 110px;
-      overflow: hidden;
-      &.won{
-        background-color: rgba(46, 136, 54, 0.196078);
-      }
-      &.lost{
-        background-color: rgba(204, 0, 0, 0.0980392);
-      }
-    }
-    #contract_purchase_heading{
-      padding-bottom: 10px;
-    }
-    #contract_purchase_payout{
-      border-right: 1px solid #dedede;
-    }
-    #contract_purchase_profit{
-      border-left: 1px solid #dedede;
-    }
-    .contract_error {
-      background-color: $COLOR_YELLOW;
-    }
-    .contract_amount, .contract_payout, .payout, .stake {
-      @include BIDIR_VALUE(padding, 3px, 3px);
-      line-height: 1.5;
-      font-size: 90%;
-      flex: 1 0 auto;
-      display: flex;
-      align-items: center;
-    }
-    .stake, .payout {
-      padding: 0;
-      justify-content: flex-end;
-    }
-    .contract_amount, .contract_payout {
-      font-weight: bold;
-      font-size: 1.1rem;
-      border-radius: 5px;
-      justify-content: center;
-    }
-  }
-  #expiry_type_duration{
-    flex-wrap: wrap;
-  }
-  #contracts_list{
-    position: relative;
-  }
-  .overlay_container {
-    width: 100%;
-    display: none;
-    background: transparent;
-    z-index: 9999;
-    &#loading_container2{
-      background: $COLOR_LIGHT_GRAY;
-      opacity: 0.5;
-      display: block;
-      position: absolute;
-      height: 100%;
-      flex: 1 0 auto;
-    }
-  }
-  #contract_confirmation_container {
-    background-color: $COLOR_LIGHT_GRAY;
-    text-align: center;
-    #confirmation_message_container {
-      padding-top: 15px;
-    }
-  }
-  #contract_prices_container .price_container .price_wrapper {
-    text-align: center;
-    align-items: center;
-    width: 100%;
-    justify-content: flex-start;
-    padding-left: 30px;
-
-    &.small{
-      width: 95px;
-    }
-
-    div {
-      padding: 0 5px;
+    #contract_form_content {
+        padding: 0 10px;
     }
     .contract_heading {
-      display: block;
-      float: left;
-      width: 80px;
-      padding-left: 5px;
+        text-transform: capitalize;
+        font-weight: bold;
+        padding-top: 2.4em;
+        text-align: center;
+        &.ASIANU {
+            background: url('../images/pages/trade/asian-u_1.svg') no-repeat top center;
+        }
+        &.ASIAND {
+            background: url('../images/pages/trade/asian-d_1.svg') no-repeat top center;
+        }
+        &.DIGITDIFF {
+            background: url('../images/pages/trade/differs_1.svg') no-repeat top center;
+        }
+        &.DIGITMATCH {
+            background: url('../images/pages/trade/matches_1.svg') no-repeat top center;
+        }
+        &.DIGITEVEN {
+            background: url('../images/pages/trade/digits_even_1.svg') no-repeat no-repeat top center;
+            background-size: 40%;
+        }
+        &.DIGITODD {
+            background: url('../images/pages/trade/digits_odd_1.svg') no-repeat no-repeat top center;
+            background-size: 40%;
+        }
+        &.DIGITOVER {
+            background: url('../images/pages/trade/digits_over_1.svg') no-repeat no-repeat top center;
+            background-size: 40%;
+        }
+        &.DIGITUNDER {
+            background: url('../images/pages/trade/digits_under_1.svg') no-repeat no-repeat top center;
+            background-size: 40%;
+        }
+        &.CALL {
+            background: url('../images/pages/trade/rise_1.png') no-repeat top center;
+        }
+        &.PUT {
+            background: url('../images/pages/trade/fall_1.png') no-repeat top center;
+        }
+        &.CALLE {
+            background: url('../images/pages/trade/rise_1.png') no-repeat top center;
+        }
+        &.PUTE {
+            background: url('../images/pages/trade/fall_1.png') no-repeat top center;
+        }
+        &.ONETOUCH {
+            background: url('../images/pages/trade/touch_1.png') no-repeat top center;
+        }
+        &.NOTOUCH {
+            background: url('../images/pages/trade/no-touch_1.png') no-repeat top center;
+        }
+        &.RANGE {
+            background: url('../images/pages/trade/stay-in-between_1.png') no-repeat top center;
+        }
+        &.UPORDOWN {
+            background: url('../images/pages/trade/stay-out_1.png') no-repeat top center;
+        }
+        &.EXPIRYRANGEE {
+            background: url('../images/pages/trade/ends-between_1.png') no-repeat top center;
+        }
+        &.EXPIRYMISSE {
+            background: url('../images/pages/trade/ends-outside_1.png') no-repeat top center;
+        }
+        &.EXPIRYRANGE {
+            background: url('../images/pages/trade/ends-between_1.png') no-repeat top center;
+        }
+        &.EXPIRYMISS {
+            background: url('../images/pages/trade/ends-outside_1.png') no-repeat top center;
+        }
+        &.SPREADU {
+            background: url('../images/pages/trade/spreads.svg') no-repeat top center;
+            background-size: 40%;
+        }
+        &.SPREADD {
+            background: url('../images/pages/trade/spreads_1.svg') no-repeat top center;
+            background-size: 40%;
+        }
     }
-    .amount_wrapper {
-      float: left;
-      width: 100%;
-      .amount_wrapper_div {
-        display: flex;
-        flex-direction: row;
+    #contract_prices_container {
+        position: relative;
+        @include BIDIR_PROP(margin-left, margin-right, 1em);
+        margin-top: 28px;
+        .price_container {
+            border: 1px solid $COLOR_GRAY;
+            align-items: stretch;
+            padding: 0;
+            flex: 1 0 auto;
+            display: none;
+            > .col.row {
+                flex: 1 0 auto;
+            }
+            > .row {
+                padding: 0;
+            }
+            .big-col {
+                flex: 3;
+            }
+            .contract_purchase {
+                margin-bottom: 6px;
+                width: 90%;
+                display: inline-flex;
+                .purchase_button {
+                    cursor: pointer;
+                    width: 100%;
+                }
+            }
+        }
+        #contract_purchase_reference {
+            margin-bottom: 10px;
+        }
+        #confirmation_error {
+            padding: 20px;
+            font-style: italic;
+            vertical-align: middle;
+        }
+        .price_container#price_container_top {
+            margin-bottom: 1rem;
+        }
+        .price_comment, .contract_error, #contract_purchase_balance {
+            background-color: $COLOR_GRAY;
+            line-height: 1.5rem;
+            font-size: 0.8rem;
+            padding: 5px;
+            text-align: center;
+            flex: 0 0 auto;
+        }
+        #contract_purchase_balance {
+            position: absolute;
+            bottom: 0;
+            color: $COLOR_WHITE;
+            box-sizing: border-box;
+            display: block;
+            background-color: $COLOR_ORANGE;
+            width: 100%;
+        }
+        #confirmation_message {
+            padding-bottom: 34px;
+        }
+        #contract_purchase_descr {
+            background-color: $COLOR_WHITE;
+            border: 2px solid $COLOR_GRAY;
+            margin: 0 10px;
+            padding: 10px 5px;
+            text-align: justify;
+        }
+        #contract_purchase_profit_list, #contract_purchase_spots .row {
+            padding: 3px 0;
+            flex-direction: row !important;
+        }
+        #contract_purchase_spots {
+            height: 110px;
+            overflow: hidden;
+            &.won {
+                background-color: rgba(46, 136, 54, 0.2);
+            }
+            &.lost {
+                background-color: rgba(204, 0, 0, 0.1);
+            }
+        }
+        #contract_purchase_heading {
+            padding-bottom: 10px;
+        }
+        #contract_purchase_payout {
+            border-right: 1px solid $COLOR_GRAY;
+        }
+        #contract_purchase_profit {
+            border-left: 1px solid $COLOR_GRAY;
+        }
+        .contract_error {
+            background-color: $COLOR_YELLOW;
+        }
+        .contract_amount, .contract_payout, .payout, .stake {
+            @include BIDIR_VALUE(padding, 3px, 3px);
+            line-height: 1.5;
+            font-size: 90%;
+            flex: 1 0 auto;
+            display: flex;
+            align-items: center;
+        }
+        .stake, .payout {
+            padding: 0;
+            justify-content: flex-end;
+        }
+        .contract_amount, .contract_payout {
+            font-weight: bold;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            justify-content: center;
+        }
+    }
+    #expiry_type_duration {
+        flex-wrap: wrap;
+    }
+    #contracts_list {
+        position: relative;
+    }
+    .overlay_container {
+        width: 100%;
+        display: none;
+        background: transparent;
+        z-index: 9;
+        &#loading_container2 {
+            background: $COLOR_LIGHT_GRAY;
+            opacity: 0.5;
+            display: block;
+            position: absolute;
+            height: 100%;
+            flex: 1 0 auto;
+        }
+    }
+    #contract_confirmation_container {
+        background-color: $COLOR_LIGHT_GRAY;
+        text-align: center;
+        #confirmation_message_container {
+            padding-top: 15px;
+        }
+    }
+    #contract_prices_container .price_container .price_wrapper {
+        text-align: center;
         align-items: center;
-        margin-bottom: 10px;
+        width: 100%;
+        justify-content: flex-start;
+        padding-left: 30px;
+        &.small {
+            width: 95px;
+        }
         div {
-          flex-grow: 1;
+            padding: 0 5px;
         }
-        .stake_wrapper {
-          margin-left: 20px;
+        .contract_heading {
+            display: block;
+            float: left;
+            width: 80px;
+            padding-left: 5px;
         }
-        .payout_wrapper {
-          margin-right: 20px;
+        .amount_wrapper {
+            float: left;
+            width: 100%;
+            .amount_wrapper_div {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-bottom: 10px;
+                div {
+                    flex-grow: 1;
+                }
+                .stake_wrapper {
+                    margin-left: 20px;
+                }
+                .payout_wrapper {
+                    margin-right: 20px;
+                }
+            }
         }
-      }
+        .contract_amount, .contract_payout, .stake, .payout {
+            display: inline-flex;
+        }
     }
-    .contract_amount, .contract_payout, .stake, .payout {
-      display: inline-flex;
+    #period_row, #jbarrier_row, #jhigh_barrier_row, #jlow_barrier_row {
+        display: none;
     }
-  }
-  #period_row, #jbarrier_row, #jhigh_barrier_row, #jlow_barrier_row {
-    display: none;
-  }
-  #duration_amount{
-    margin-right: 5px;
-  }
-  #duration_units{
-    margin-right: 10px;
-  }
-  #duration_tooltip_wrapper{
-    line-height: 28px;
-    white-space: nowrap;
-  }
-  .small_width_input {
-    width: 70px;
-  }
-  #currency{
-    margin-bottom: 5px;
-  }
-  #expiry_date{
-    width: 175px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-  }
-  #expiry_time{
-    width: 80px;
-  }
-  #expiry_date, #expiry_time{
-    font-size: 90%;
-  }
-  .barrier_class input, #jhigh_barrier_row select, #jlow_barrier_row select, #jbarrier_row select, #period{
-    width: 175px;
-  }
-  #period{
-    font-size: 80%;
-  }
-  .medium_width_input {
-    width: 100px;
-  }
-  #amount{
-    margin-top: -1px;
-  }
-  #underlying{
-    @include BIDIR_PROP(margin-right, margin-left, 10px);
-    margin-bottom: 5px;
-  }
-  #symbol_tip{
-    @include BIDIR_PROP(padding-right, padding-left, 8px);
-    padding-bottom: 5px;
-    cursor: pointer;
-  }
-  #spot_label{
-    display: none;
-  }
-  .radio_label {
-    margin: 0 10px;
-  }
-  #contract_description1
-  #contract_description2
-  #pricing_table_container
-  #open_positions_container{
-    display: none;
-  }
+    #duration_amount {
+        margin-right: 5px;
+    }
+    #duration_units {
+        margin-right: 10px;
+    }
+    #duration_tooltip_wrapper {
+        line-height: 28px;
+        white-space: nowrap;
+    }
+    .small_width_input {
+        width: 70px;
+    }
+    #currency {
+        margin-bottom: 5px;
+    }
+    #expiry_date {
+        width: 175px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+    }
+    #expiry_time {
+        width: 80px;
+    }
+    #expiry_date, #expiry_time {
+        font-size: 90%;
+    }
+    .barrier_class input, #jhigh_barrier_row select, #jlow_barrier_row select, #jbarrier_row select, #period {
+        width: 175px;
+    }
+    #period {
+        font-size: 80%;
+    }
+    .medium_width_input {
+        width: 100px;
+    }
+    #amount {
+        margin-top: -1px;
+    }
+    #underlying {
+        @include BIDIR_PROP(margin-right, margin-left, 10px);
+        margin-bottom: 5px;
+    }
+    #symbol_tip {
+        @include BIDIR_PROP(padding-right, padding-left, 8px);
+        padding-bottom: 5px;
+        cursor: pointer;
+    }
+    #spot_label {
+        display: none;
+    }
+    .radio_label {
+        margin: 0 10px;
+    }
+    #contract_description1 #contract_description2 #pricing_table_container #open_positions_container {
+        display: none;
+    }
 }
 
 #open_positions_container {
-  display: none;
+    display: none;
 }
 
-#trading_socket_container.japan{
-  min-width: 960px;
-  .big-col {
-    flex: 3;
-  }
-  #market_menu {
-    background: #FFF;
-    margin-left: 20px;
-    input {
-      margin-right: 5px;
+#trading_socket_container.japan {
+    min-width: 960px;
+    .big-col {
+        flex: 3;
     }
-  }
-  #contract_markets_container,
-  #contract_market_form_container {
-    display: none;
-  }
-  #guideBtn {
-    display: none;
-  }
-  #japan_unit {
-    width: 50px;
-  }
-  .contract_heading{
-    float: left;
-    margin-top: 5px;
-    width: 62px;
-  }
-  .contract_longcode{
-    float: left;
-    width: 220px;
-    line-height: 1.5;
-    margin-left: 10px;
-  }
-  #contract_form_content {
-    float: left;
-    padding: 0;
-  }
-  #contract_description1,
-  #contract_description2{
-    float: left;
-    width: 301px;
-    border: 1px solid $COLOR_GRAY;
-    display: none;
-    height: 120px;
-    padding: 10px;
-    margin-left: 2px;
-  }
-  #contract_description2{
-    border-left: none;
-    margin-left: 0;
-    width: 302px;
-  }
-  #pricing_table_container{
-    float: left;
-    width: 100%;
-  }
-  .barrier {
-    flex: 2;
-  }
-  #contract_prices_container{
-    display: none;
-  }
-  #pricing_table {
-    width: 100%;
-  }
-  .multiplier2 input {
-    width: 29px;
-  }
-  .multiplier1{
-    text-align: center;
-  }
-  .col.pricing_table_cell,
-  .col.exercise_price,
-  .col.barrier{
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    display: flex;
-  }
-  .col.barrier{
-    border: 1px solid $COLOR_GRAY;
-  }
-  .col.buy_cell{
-    border-top: 1px solid $COLOR_GRAY;
-    border-bottom: 1px solid $COLOR_GRAY;
-  }
-  .col.sell_cell{
-    border-top: 1px solid $COLOR_GRAY;
-    border-bottom: 1px solid $COLOR_GRAY;
-    border-right: 1px solid $COLOR_GRAY;
-    text-align: right;
-  }
-  .pricing_table_cell .button {
-    color: $COLOR_WHITE;
-    padding: 6px;
-    margin: 0;
-    border-radius: 5px;
-  }
-  .pricing_table_cell.buy_cell .button{
-    background: $COLOR_GREEN;
-  }
-  .pricing_table_cell.sell_cell .button{
-    background: $COLOR_GRAY;
-  }
-  #contract_container #contract_form_container .col.button{
-    margin: 0;
-    text-align: center;
-  }
-  #contract_container #contract_form_container .col.multiplier1{
-    margin: 0 5px;
-  }
-  #contract_container #contract_form_container .pricing_table_row > .col{
-    margin: 0;
-    padding: 5px 0;
-  }
-  .pricing_table_row{
-    padding: 0;
-    margin-top: -1px;
-    clear: left;
-  }
-  .pricing_table_row.row.heading{
-    float: left;
-    clear: left;
-    display: block;
-  }
-
-  .pricing_table_row .exercise_price_h{
-    float: left;
-    width: 305px;
-    text-align: center;
-  }
-
-  .pricing_table_row .prices_h{
-    float: left;
-    width: 163px;
-    text-align: center;
-  }
-
-  #contract_container #contract_form_container .pricing_table_row .col.pricing_table_cell{
-    padding: 5px;
-  }
-  #contract_form_content{
-    width: 310px;
-  }
-
-  .pricing_table_cell.price_rise{
-    background: $COLOR_RED;
-    color: $COLOR_WHITE;
-  }
-
-  .pricing_table_cell.price_fall{
-    background: $COLOR_LIGHT_BLUE;
-    color: $COLOR_WHITE;
-  }
-
-  .pricing_table_cell{
-    position: relative;
-  }
-
-  .inactive {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    opacity: .8;
-    background: $COLOR_LIGHT_GRAY;
-  }
-
-  #period {
-    width: 200px;
-  }
-
-  #payout_row{
-    display: none;
-  }
-
-  #japan_unit_row,
-  #japan_payout_row{
-    display: flex;
-  }
-
-  // .price {
-  //   width: 50px;
-  // }
+    #market_menu {
+        background: $COLOR_WHITE;
+        margin-left: 20px;
+        input {
+            margin-right: 5px;
+        }
+    }
+    #contract_markets_container, #contract_market_form_container {
+        display: none;
+    }
+    #guideBtn {
+        display: none;
+    }
+    #japan_unit {
+        width: 50px;
+    }
+    .contract_heading {
+        float: left;
+        margin-top: 5px;
+        width: 62px;
+    }
+    .contract_longcode {
+        float: left;
+        width: 220px;
+        line-height: 1.5;
+        margin-left: 10px;
+    }
+    #contract_form_content {
+        float: left;
+        padding: 0;
+        width: 310px;
+    }
+    #contract_description1, #contract_description2 {
+        float: left;
+        width: 301px;
+        border: 1px solid $COLOR_GRAY;
+        display: none;
+        height: 120px;
+        padding: 10px;
+        margin-left: 2px;
+    }
+    #contract_description2 {
+        border-left: none;
+        margin-left: 0;
+        width: 302px;
+    }
+    #pricing_table_container {
+        float: left;
+        width: 100%;
+    }
+    .barrier {
+        flex: 2;
+    }
+    #contract_prices_container {
+        display: none;
+    }
+    #pricing_table {
+        width: 100%;
+    }
+    .multiplier2 input {
+        width: 29px;
+    }
+    .multiplier1 {
+        text-align: center;
+    }
+    .col.pricing_table_cell, .col.exercise_price, .col.barrier {
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        display: flex;
+    }
+    .col.barrier {
+        border: 1px solid $COLOR_GRAY;
+    }
+    .col.buy_cell {
+        border-top: 1px solid $COLOR_GRAY;
+        border-bottom: 1px solid $COLOR_GRAY;
+    }
+    .col.sell_cell {
+        border-top: 1px solid $COLOR_GRAY;
+        border-bottom: 1px solid $COLOR_GRAY;
+        border-right: 1px solid $COLOR_GRAY;
+        text-align: right;
+    }
+    .pricing_table_cell .button {
+        color: $COLOR_WHITE;
+        padding: 6px;
+        margin: 0;
+        border-radius: 5px;
+    }
+    .pricing_table_cell.buy_cell .button {
+        background: $COLOR_GREEN;
+    }
+    .pricing_table_cell.sell_cell .button {
+        background: $COLOR_GRAY;
+    }
+    #contract_container #contract_form_container .col.button {
+        margin: 0;
+        text-align: center;
+    }
+    #contract_container #contract_form_container .col.multiplier1 {
+        margin: 0 5px;
+    }
+    #contract_container #contract_form_container .pricing_table_row > .col {
+        margin: 0;
+        padding: 5px 0;
+    }
+    .pricing_table_row {
+        padding: 0;
+        margin-top: -1px;
+        clear: left;
+    }
+    .pricing_table_row.row.heading {
+        float: left;
+        clear: left;
+        display: block;
+    }
+    .pricing_table_row .exercise_price_h {
+        float: left;
+        width: 305px;
+        text-align: center;
+    }
+    .pricing_table_row .prices_h {
+        float: left;
+        width: 163px;
+        text-align: center;
+    }
+    #contract_container #contract_form_container .pricing_table_row .col.pricing_table_cell {
+        padding: 5px;
+    }
+    .pricing_table_cell.price_rise {
+        background: $COLOR_RED;
+        color: $COLOR_WHITE;
+    }
+    .pricing_table_cell.price_fall {
+        background: $COLOR_LIGHT_BLUE;
+        color: $COLOR_WHITE;
+    }
+    .pricing_table_cell {
+        position: relative;
+    }
+    .inactive {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        opacity: 0.8;
+        background: $COLOR_LIGHT_GRAY;
+    }
+    #period {
+        width: 200px;
+    }
+    #payout_row {
+        display: none;
+    }
+    #japan_unit_row, #japan_payout_row {
+        display: flex;
+    }
 }
 
 @media all and (max-width: 480px) {
-  #trading_socket_container {
-    #contract_market_form_container {
-      ul#contract_form_name_nav {
-        a.tm-a {
-          font-size: 65%;
+    #trading_socket_container {
+        #contract_market_form_container {
+            ul#contract_form_name_nav {
+                a.tm-a {
+                    font-size: 65%;
+                }
+            }
         }
-      }
+        #contract_form_content {
+            #expiry_type {
+                max-width: 100%;
+            }
+            #duration_amount {
+                margin-bottom: 5px;
+            }
+        }
+        .contract_purchase {
+            width: 70% !important;
+        }
     }
-    #contract_form_content {
-      #expiry_type {
-        max-width: 100%;
-      }
-      #duration_amount {
-        margin-bottom: 5px;
-      }
-    }
-    .contract_purchase {
-      width: 70%!important;
-    }
-  }
 }
 @media all and (max-width: 640px) {
-  #trading_socket_container {
-    #contract_market_form_container {
-      height: auto;
-    }
-    #expiry_time{
-      width: 175px;
-    }
-    #contract_form_content{
-      margin-top: 0px;
-    }
-    #contract_form_content_wrapper {
-      flex-direction: column;
-    }
-    .nav_placeholder {
-      display: flex;
-    }
-    #contract_symbol_container {
-      text-align: center;
-      .row {
-        flex-direction: column;
-        .col {
-          margin-bottom: 5px;
+    #trading_socket_container {
+        #contract_market_form_container {
+            height: auto;
         }
-      }
-      #contract_markets_container {
-        margin-right: 0;
-        text-align: inherit;
-      }
+        #expiry_time {
+            width: 175px;
+        }
+        #contract_form_content {
+            margin-top: 0px;
+        }
+        #contract_form_content_wrapper {
+            flex-direction: column;
+        }
+        .nav_placeholder {
+            display: flex;
+        }
+        #contract_symbol_container {
+            text-align: center;
+            .row {
+                flex-direction: column;
+                .col {
+                    margin-bottom: 5px;
+                }
+            }
+            #contract_markets_container {
+                margin-right: 0;
+                text-align: inherit;
+            }
+        }
+        #contract_prices_container {
+            #contract_purchase_spots {
+                height: auto;
+            }
+            #price_container_top {
+                margin-right: 0 !important;
+            }
+            .price_wrapper {
+                flex-direction: row !important;
+                &.small {
+                    width: auto;
+                }
+                .amount_wrapper {
+                    width: 70%;
+                }
+            }
+            .row {
+                flex-direction: column;
+                .col {
+                    margin-bottom: 5px;
+                    &.price_comment {
+                        margin: 0;
+                    }
+                }
+            }
+        }
     }
-    #contract_prices_container {
-      #contract_purchase_spots{
-        height: auto;
-      }
-      #price_container_top {
-        margin-right: 0 !important;
-      }
-      .price_wrapper {
-        flex-direction: row !important;
-         &.small{
-          width: auto;
+    div#contract_market_form_container {
+        ul#contract_form_name_nav {
+            white-space: nowrap !important;
+            > li.tm-li {
+                /*float: none;
+                width: 100%; */
+                ul.tm-ul-2 {
+                    position: absolute !important;
+                    top: 28px !important;
+                    display: none !important;
+                }
+                &.hover ul, &.active ul {
+                    display: block !important;
+                }
+            }
         }
-        .amount_wrapper {
-          width: 70%;
-        }
-      }
-      .row {
-        flex-direction: column;
-        .col {
-          margin-bottom: 5px;
-          &.price_comment {
-            margin: 0;
-          }
-        }
-      }
     }
-  }
-  div#contract_market_form_container {
-    ul#contract_form_name_nav {
-      white-space: nowrap !important;
-      > li.tm-li {
-        /*float: none;
-        width: 100%; */
-        ul.tm-ul-2 {
-          position: absolute !important;
-          top: 28px !important;
-          display: none !important;
+    #trading_socket_container #contract_prices_container .price_container .price_wrapper {
+        width: 100%;
+        &.small {
+            width: auto;
         }
-        &.hover ul, &.active ul {
-          display: block !important;
-        }
-      }
     }
-  }
-  #trading_socket_container #contract_prices_container .price_container .price_wrapper {
-    width: 100%;
-     &.small{
-      width: auto;
-    }
-  }
 }
 
 @media all and (max-width: 768px) {
-  #trading_socket_container {
-    #contract_form_content_wrapper {
-      flex-direction: column;
-      >.col{
-        flex: 1 0 auto;
-      }
+    #trading_socket_container {
+        #contract_form_content_wrapper {
+            flex-direction: column;
+            > .col {
+                flex: 1 0 auto;
+            }
+        }
+        #contract_form_content {
+            margin-top: 20px;
+        }
+        #contract_prices_container {
+            margin-left: 0;
+        }
     }
-    #contract_form_content{
-      margin-top: 20px;
-    }
-    #contract_prices_container {
-      margin-left: 0;
-    }
-  }
 }
 
 #spot {
-  line-height: 25px;
-  white-space: nowrap;
-  padding: 3px;
-  border-radius: 5px;
-  @include BIDIR_PROP(margin-right, margin-left, 8px);
-  &.error{
-    font-style: italic;
-  }
+    line-height: 25px;
+    white-space: nowrap;
+    padding: 3px;
+    border-radius: 5px;
+    @include BIDIR_PROP(margin-right, margin-left, 8px);
+    &.error {
+        font-style: italic;
+    }
 }
 
 #trading_socket_container #contract_form_name_nav {
-  border-bottom: none;
-  font-size: $FONT_SIZE_N;
-  > li {
-    cursor: pointer;
-  }
+    border-bottom: none;
+    font-size: $FONT_SIZE_N;
+    > li {
+        cursor: pointer;
+        padding: 0;
+        a.tm-a {
+            padding: 0 5px;
+            width: auto;
+            font-size: 85%;
+            line-height: 28px;
+        }
+        .tm-ul-2 {
+            top: 29px;
+            margin-top: -1px;
+            border-top: 1px solid $COLOR_GRAY;
+        }
+    }
 }
 
 #content ul.tm-ul li {
-  &.active, &.ui-tabs-active {
-    background: $COLOR_BLUE;
-    color: $COLOR_WHITE;
-  }
-}
-
-#trading_socket_container #contract_form_name_nav > li {
-  padding: 0;
-  a.tm-a {
-    padding: 0 5px;
-    width: auto;
-    font-size: 85%;
-    line-height: 28px;
-  }
-  .tm-ul-2 {
-    top: 29px;
-    margin-top: -1px;
-    border-top: 1px solid $COLOR_GRAY;
-  }
+    &.active, &.ui-tabs-active {
+        background: $COLOR_BLUE;
+        color: $COLOR_WHITE;
+    }
 }
 
 #analysis_daily_prices_form {
-  text-align: center;
-  input {
-    margin: 0 10px;
-  }
+    text-align: center;
+    input {
+        margin: 0 10px;
+    }
 }
 
-#tab_portfolio-content .portfolio-header-margin{
-  display: none;
+#tab_portfolio-content .portfolio-header-margin {
+    display: none;
 }
 
 .error-field {
-  border-color: $COLOR_RED;
-  color: $COLOR_RED;
+    border-color: $COLOR_RED;
+    color: $COLOR_RED;
 }
 
 /*
@@ -911,7 +874,7 @@
     font-size: 1rem;
     .tab-menu {
         background: transparent !important;
-        border:0 !important;
+        border: 0 !important;
         height: auto !important;
     }
     ul#betsBottomPage {

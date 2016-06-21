@@ -228,14 +228,9 @@ function showLocalTimeOnHover(s) {
             return;
         }
 
-        var localTimeStr = localTime.format('YYYY-MM-DD HH:mm:ss ZZ');
+        var localTimeStr = localTime.format('YYYY-MM-DD HH:mm:ss Z');
 
-        var timeToShow = localTimeStr.replace(' ', '\n');
-        var tooltip = $('<span></span>', { class: 'tooltip-content', text: timeToShow });
-        $(ele)
-            .children('.tooltip-content')
-            .remove();
-        $(ele).append(tooltip);
+        $(ele).attr('data-balloon', localTimeStr);
     });
 }
 
@@ -261,9 +256,9 @@ function toJapanTimeIfNeeded(gmtTimeStr, showTimeZone, longcode){
     }
 
     if(curr === 'JPY'){
-        timeStr = time.zone("+09:00").format('YYYY-MM-DD HH:mm:ss' + (showTimeZone && showTimeZone !== '' ? ' ZZ' : ''));
+        timeStr = time.zone("+09:00").format('YYYY-MM-DD HH:mm:ss' + (showTimeZone && showTimeZone !== '' ? ' Z' : ''));
     } else {
-        timeStr = time.zone("+00:00").format('YYYY-MM-DD HH:mm:ss' + (showTimeZone && showTimeZone !== '' ? ' ZZ' : ''));
+        timeStr = time.zone("+00:00").format('YYYY-MM-DD HH:mm:ss' + (showTimeZone && showTimeZone !== '' ? ' Z' : ''));
     }
 
     return (longcode ? longcode.replace(match[0], timeStr) : timeStr);

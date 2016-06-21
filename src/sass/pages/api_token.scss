@@ -1,44 +1,46 @@
 .api_token {
-	table {
-		td, th.flex-tr-child {
-			text-align: center!important;
-			vertical-align: middle!important;
-			line-height: 30px;
-
-			.button {
-				margin: 3px 0px;
-			}
-		}
-		tr {
-			&.deleting {
-				background-color: lightgray;
-			}
-			&.new {
-				background-color: #EDFFEE;
-			}
-		}
-	}
-	fieldset {
-		border-bottom: 1px solid #E5E5E5;
-		margin: 20px 0;
-
-		#formMessage {
-			margin-bottom: 10px;
-		}
-	}
+    table {
+        td, th.flex-tr-child {
+            text-align: center !important;
+            vertical-align: middle !important;
+            line-height: 30px;
+            .button {
+                margin: 3px 0px;
+            }
+        }
+        tr {
+            &.deleting {
+                background-color: $COLOR_LIGHT_GRAY;
+            }
+            &.new {
+                background-color: rgba(46, 136, 54, 0.2);
+            }
+        }
+    }
+    fieldset {
+        border-bottom: 1px solid $COLOR_GRAY;
+        margin: 20px 0;
+        label {
+            text-decoration: none;
+            @include BIDIR_PROP(margin-right, margin-left, 15px);
+        }
+        #formMessage {
+            margin-bottom: 10px;
+        }
+    }
 }
 
 @media screen and (max-width: 480px) {
-	.api_token {
-	    table td, table th {
-			font-size: 80%;
-		}
-		table button {
-			font-size: 80%;
-			padding: 10px 15px;
-		}
-		.errorfield {
-			font-size: 80%!important;
-		}
-	}
+    .api_token {
+        table td, table th {
+            font-size: 80%;
+        }
+        table button {
+            font-size: 80%;
+            padding: 10px 15px;
+        }
+        .errorfield {
+            font-size: 80% !important;
+        }
+    }
 }

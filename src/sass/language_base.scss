@@ -1,175 +1,174 @@
 /* Specific rules for languages */
 
-body{
-  .calls_recording{
-    display: none;
-    font-style: italic;
-  }
-  .all-hide {
-    display: none!important;
-  }
+body {
+    .calls_recording {
+        display: none;
+        font-style: italic;
+    }
+    .all-hide {
+        display: none !important;
+    }
 }
-body.EN{
-  .calls_recording{
-    display: inline !important;;
-  }
+
+body.EN {
+    .calls_recording {
+        display: inline !important;
+    }
 }
-body.JA{
-  .ja-hide{
-    display: none!important;
-  }
-  .ja-show{
-    display: inline!important;
-    visibility: visible!important;
-  }
-  .ja-show-block{
-    display: inline-block!important;
-    visibility: visible!important;
-  }
-  .ja-no-padding {
-    padding: 0!important;
-  }
-  .regulatory-logo{
-    display: none!important;
-  }
-  #header #menu-top li a.smaller-font, #header ul#menu-top.smaller-font{
-    font-size: 90%;
-  }
+
+body.JA {
+    .ja-hide {
+        display: none !important;
+    }
+    .ja-show {
+        display: inline !important;
+        visibility: visible !important;
+    }
+    .ja-show-block {
+        display: inline-block !important;
+        visibility: visible !important;
+    }
+    .ja-no-padding {
+        padding: 0 !important;
+    }
+    .regulatory-logo {
+        display: none !important;
+    }
+    #header #menu-top li a.smaller-font, #header ul#menu-top.smaller-font {
+        font-size: 90%;
+    }
     #asset-forex div.table-header:nth-of-type(n + 3), #asset-forex div.table-body:nth-of-type(n + 15) {
-      display: none!important;
+        display: none !important;
     }
     #tradingtimes-forex div.table-header:nth-of-type(n + 3), #tradingtimes-forex div.table-body:nth-of-type(n + 15) {
-      display: none!important;
+        display: none !important;
     }
     #topMenuWebtrader, #topMenuBetaInterface {
-      display: none!important;
+        display: none !important;
     }
     #footer-regulatory .grd-grid-9, #footer-regulatory .grd-grid-phablet-7 {
-      width: 100%!important;
+        width: 100% !important;
     }
     #bet_guide_content div:nth-child(1) {
-      display: none!important;
+        display: none !important;
     }
     #language_select {
-      display: none;
+        display: none;
     }
-  @media screen and (max-width: 845px) {
-    #header #menu-top li a.smaller-font, #header ul#menu-top.smaller-font{
-      font-size: 75%;
+    @media screen and (max-width: 845px) {
+        #header #menu-top li a.smaller-font, #header ul#menu-top.smaller-font {
+            font-size: 75%;
+        }
     }
-  }
 }
 /*Vietnamese Language */
-body.VI{
-  font-family: arial!important;
-  #legal-tab li.tm-li-2 {
-    margin-right: 0px!important;
-    padding: 0 8px!important;
-  }
-  #trading_socket_container #contract_form_name_nav{
-    font-size: 80%;
-  }
+body.VI {
+    font-family: arial !important;
+    #legal-tab li.tm-li-2 {
+        margin-right: 0px !important;
+        padding: 0 8px !important;
+    }
+    #trading_socket_container #contract_form_name_nav {
+        font-size: 80%;
+    }
 }
 
 /*French Language */
-body.FR{
-  a, button, .button, span, input {
-    text-transform: initial!important;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    text-transform: initial!important;
-  }
-  #trading_socket_container #contract_form_name_nav{
-    font-size: 80%;
-  }
+body.FR {
+    a, button, .button, span, input {
+        text-transform: initial !important;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        text-transform: initial !important;
+    }
+    #trading_socket_container #contract_form_name_nav {
+        font-size: 80%;
+    }
 }
 
 /*Arabic Language */
-body.AR{
-  .regulatory-logo{
-    display: none!important;
-  }
-  .ar-hide{
-    display: none;
-  }
+body.AR {
+    .regulatory-logo {
+        display: none !important;
+    }
+    .ar-hide {
+        display: none;
+    }
 }
 /*Indonesian Language */
-body.ID{
-  .calls_recording{
-    display: inline !important;
-  }
-  .regulatory-logo{
-    display: none !important;
-  }
-  #regulatory-text {
-    margin-top: 10px;
-       margin-bottom: 10px;
-  }
-  #footer #social-networks {
-    padding-top: 0px;
-  }
-  .id-hide {
-    display: none!important;
-  }
-  .extra-space {
-      margin-top: 127px;
-  }
-  #language_select {
-    display: none;
-  }
-  @media screen and (max-width: 480px) {
-    .empty-space {
-        margin-top: 0!important;
+body.ID {
+    .calls_recording {
+        display: inline !important;
+    }
+    .regulatory-logo {
+        display: none !important;
+    }
+    #regulatory-text {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    #footer #social-networks {
+        padding-top: 0px;
+    }
+    .id-hide {
+        display: none !important;
     }
     .extra-space {
-        margin-top: 0!important;
+        margin-top: 127px;
     }
-  }
+    #language_select {
+        display: none;
+    }
+    @media screen and (max-width: 480px) {
+        .empty-space {
+            margin-top: 0 !important;
+        }
+        .extra-space {
+            margin-top: 0 !important;
+        }
+    }
 }
 
-body.IT, body.DE{
-  #legal-tab li.tm-li-2 {
-    margin-right: 0px!important;
-    padding: 0 8px!important;
-  }
-  a, button, .button, span, input {
-    text-transform: initial!important;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    text-transform: initial!important;
-  }
+body.IT, body.DE {
+    #legal-tab li.tm-li-2 {
+        margin-right: 0px !important;
+        padding: 0 8px !important;
+    }
+    a, button, .button, span, input {
+        text-transform: initial !important;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        text-transform: initial !important;
+    }
 }
 
-body.ES{
-  #trading_socket_container #contract_form_name_nav{
-    font-size: 80%;
-  }
+body.ES {
+    #trading_socket_container #contract_form_name_nav {
+        font-size: 80%;
+    }
 }
 
-body.RU{
-  #trading_socket_container #contract_form_name_nav{
-    font-size: 80%;
-  }
-
-  #trading_socket_container .contract_heading{
-    font-size: 95%;
-    padding-top: 2.7em;
-  }
-
-  .calls_recording{
-    display: inline !important;
-  }
-
-  .ru-hide {
-    display: none !important;
-  }
+body.RU {
+    #trading_socket_container #contract_form_name_nav {
+        font-size: 80%;
+    }
+    #trading_socket_container .contract_heading {
+        font-size: 95%;
+        padding-top: 2.7em;
+    }
+    .calls_recording {
+        display: inline !important;
+    }
+    .ru-hide {
+        display: none !important;
+    }
 }
 
 body.PT, body.RU {
-  a, button, .button, span, input {
-    text-transform: initial!important;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    text-transform: initial!important;
-  }
+    a, button, .button, span, input {
+        text-transform: initial !important;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        text-transform: initial !important;
+    }
 }

@@ -1,0 +1,57 @@
+[% UNLESS is_pjax_request %]
+  [% INCLUDE global/head.html.tt %]
+[% END %]
+
+[% INCLUDE global/body_top.html.tt %]
+
+[% IF get_started %]
+<div class="get-started">
+  <div class="grd-grid-3 grd-hide-mobile">
+    <div class="sidebar-left">
+      <ul class="nav">
+          <li><a class="pjaxload" href="[% request.url_for('/get-started/what-is-binary-trading') %]">[% l("Why choose binary trading?") %]</a></li>
+          <li><a class="pjaxload" href="[% request.url_for('/get-started/types-of-trades') %]">[% l("Types of trades") %]</a></li>
+          <li><a class="pjaxload" href="[% request.url_for('/get-started/binary-options-basics') %]">[% l("Binary options basics") %]</a></li>
+          <li><a class="pjaxload" href="[% request.url_for('/get-started/benefits-of-trading-binaries') %]">[% l("Benefits of binary trading") %]</a></li>
+          <li><a class="pjaxload" href="[% request.url_for('/get-started/how-to-trade-binaries') %]">[% l("How to trade binaries?") %]</a></li>
+          <li class="ja-hide"><a class="pjaxload" href="[% request.url_for('/get-started/volidx-markets') %]">[% l("How to trade the Volatility Indices markets?") %]</a></li>
+          <li class="ja-hide"><a class="pjaxload" href="[% request.url_for('/get-started/spread') %]">[% l("How to trade spreads?") %]</a></li>
+          <li class="ja-hide"><a class="pjaxload" href="[% request.url_for('/get-started/smart-indices') %]">[% l("Smart Markets") %]</a></li>
+          <li class="ja-hide"><a class="pjaxload" href="[% request.url_for('/get-started/otc-indices-stocks') %]">[% l("OTC Indices and Stocks") %]</a></li>
+          <li><a class="pjaxload" href="[% request.url_for('/get-started/beginners-faq') %]">[% l("FAQ") %]</a></li>
+          <li><a class="pjaxload" href="[% request.url_for('/get-started/glossary') %]">[% l("Glossary") %]</a></li>
+        </ul>
+    </div>
+  </div>
+  <div class="grd-grid-6 grd-grid-mobile-12 grd-parent">
+    [% content %]
+  </div>
+  <div class="grd-grid-3 grd-hide-mobile">
+    <div class="sidebar-right">
+      <div class="by_client_type client_logged_out">
+        <p>
+          <a class="pjaxload" href="[% url_for('/') %]">
+            [% l('Try it now') %]
+          </a>
+          <br/>
+          [% l('No risk, $10K virtual money account') %]
+        </p>
+      </div>
+      <div>
+        <p>
+          [% l('Want to learn more?') %]
+          <br/>
+          <a class="pjaxload" href="[% request.url_for('/tour') %]">
+            [% l('View the Tour') %]
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+[% ELSE %]
+  [% content %]
+[% END %]
+[% UNLESS is_pjax_request %]
+  [% INCLUDE global/footer.html.tt %]
+[% END %]

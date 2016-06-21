@@ -124,8 +124,6 @@ var Validate = (function(){
   }
 
   function passwordStrong(password, error){
-    var tooltipPassword = document.getElementById('tooltip-password');
-    tooltipPassword.setAttribute('style', 'display:none');
     if (testPassword(password)[0] < 20) {
       displayErrorMessage(error);
       return errorCounter++;
