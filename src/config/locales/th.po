@@ -1004,6 +1004,11 @@ msgstr "คุณพร้อมหรือยัง?"
 msgid "Are you sure that you want to permanently delete token"
 msgstr "คุณแน่ใจใช่ไหมที่จะลบโทเค่นถาวร"
 
+#, fuzzy
+#| msgid "Are you sure that you want to permanently delete token"
+msgid "Are you sure that you want to permanently revoke access to application"
+msgstr "คุณแน่ใจใช่ไหมที่จะลบโทเค่นถาวร"
+
 msgid "Are your site visitors interested in:"
 msgstr "ผู้เยี่ยมชมเว็บของท่านสนใจใน:"
 
@@ -1123,6 +1128,14 @@ msgstr "หลีกเลี่ยงความจำเป็นในกา
 
 msgid "Award-winning, patented financial trading platform"
 msgstr "ได้รับรางวัลสำหรับระบบการซื้อขายทางการเงินที่เปิดเผยโปร่งใส"
+
+msgid "BIEL Pillar III"
+msgstr ""
+
+#, fuzzy
+#| msgid "Prospectus"
+msgid "BIEL Prospectus"
+msgstr "หนังสือชี้ชวน"
 
 msgid "BIEL Terms"
 msgstr "ข้อตกลง BIEL"
@@ -1474,6 +1487,11 @@ msgid "Change Password"
 msgstr "เปลี่ยนรหัสผ่าน"
 
 msgid "Chart"
+msgstr "แผนภูมิ"
+
+#, fuzzy
+#| msgid "Chart"
+msgid "Charts"
 msgstr "แผนภูมิ"
 
 msgid "Check out our commission rates below:"
@@ -4038,9 +4056,6 @@ msgstr "มีนาคม"
 msgid "Margin FX"
 msgstr "Margin FX"
 
-msgid "Market Data"
-msgstr "ข้อมูลการตลาด"
-
 msgid "Market Opinions"
 msgstr "ความคิดเห็นของตลาด"
 
@@ -4976,9 +4991,6 @@ msgstr "พิสูจน์อักษรและแก้ไขความ
 
 msgid "Proofreader"
 msgstr "นักพิสูจน์อักษร"
-
-msgid "Prospectus"
-msgstr "หนังสือชี้ชวน"
 
 msgid "Proven knowledge of auditing standards, procedures, laws, rules and regulations are an added advantage"
 msgstr "มีความรู้ของมาตรฐานการตรวจสอบภายใน ระเบียบวิธี กฎหมาย ข้อบัญญัติ ที่พิสูจน์ได้จะเป็นประโยชน์ในการพิจารณา"
@@ -6398,6 +6410,9 @@ msgstr ""
 
 msgid "Token"
 msgstr "โทเค่น"
+
+msgid "Tooltips"
+msgstr ""
 
 msgid "Total Cost"
 msgstr "ราคารวม"
@@ -8348,6 +8363,9 @@ msgstr "{JAPAN ONLY}Where broking companies show bid and offer prices for purcha
 
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
+
+#~ msgid "Market Data"
+#~ msgstr "ข้อมูลการตลาด"
 
 #~ msgid "%1: Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 #~ msgstr "%1: เป็นแพลตฟอร์มการเทรดออนไลน์สำหรับไบนารีออปชั่นสำหรับ ค่าเงินต่างๆ (ฟอเร็กซ์) ดัชนีต่างๆ สินค้าโภคภัณฑ์ต่างๆ และ ดัชนีสมาร์ทต่างๆ"
