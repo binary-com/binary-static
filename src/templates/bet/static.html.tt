@@ -1,4 +1,4 @@
-<div id="trading_socket_container" class="tab-menu-wrap [% IF is_japan %]japan[% END %]">
+<div id="trading_socket_container" class="tab-menu-wrap gr-12 [% IF is_japan %]japan[% END %]">
    <p id="markets_closed_msg" class="notice-msg center hidden">[% l('All markets are closed now. Please try again later.') %]</p>
    <div id="loading_container" class="overlay_container">
    </div>
@@ -272,10 +272,10 @@
    </div>
 </div>
 <div id="all_prices"></div>
-<div id="trading_bottom_content">
+<div id="trading_bottom_content" class="gr-12">
   <div class="content-tab-container page-section">
     <div class="tab-menu">
-      <div class="tab-menu-wrap container">
+      <div class="tab-menu-wrap">
         <ul id="betsBottomPage" class="tm-ul">
           <li id="tab_portfolio" class="tm-li invisible first">
             <a href="#tab_portfolio" class="tm-a first"></a>
@@ -295,7 +295,7 @@
         </ul>
       </div>
     </div>
-    <div class="tab-content container">
+    <div class="tab-content">
       <div class="tab-content-wrapper" id="bet_bottom_content">
         <div id="tab_portfolio-content" class="toggle-content invisible "></div>
         <div id="tab_graph-content" class="toggle-content invisible">
