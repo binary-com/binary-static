@@ -35,8 +35,12 @@ var ApplicationsUI = (function(){
         var $viewButton = $viewButtonSpan.children(".button").first();
         $viewButton.text(text.localize("Revoke access"));
         $viewButton.on("click",function(){
-            ApplicationsData.revokeApplication(data.app_id);
-            $row.css({ opacity: 0.5 });
+            if(window.confirm(
+                text.localize('Are you sure that you want to permanently revoke access to application') +
+                ': "' + $(this).parents('tr').find('td.name').text() + '"?')) {
+                    ApplicationsData.revokeApplication(data.app_id);
+                    $row.css({ opacity: 0.5 });
+            }
         });
         $row.children(".action").first().append($viewButtonSpan);
         return $row[0];

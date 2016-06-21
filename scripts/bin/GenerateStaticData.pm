@@ -713,7 +713,7 @@ sub _texts {
         push @texts, localize('Please complete the following financial assessment form before continuing.');
         push @texts, localize('Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed.');
 
-        # Strings for applicationsws
+        # Strings for authorised_appsws
         push @texts, localize('Applications');
         push @texts, localize('You have not granted access to any applications.');
         push @texts, localize('Permissions');
@@ -721,6 +721,7 @@ sub _texts {
         push @texts, localize('Never');
         push @texts, localize('Revoke access');
         push @texts, localize('Keep track of your authorised applications.');
+        push @texts, localize('Are you sure that you want to permanently revoke access to application');
 
         # Strings for lostpasswordws
         push @texts, localize('Please check your email to retrieve the token needed to reset your password.');

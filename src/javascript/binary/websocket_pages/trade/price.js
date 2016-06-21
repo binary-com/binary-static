@@ -212,13 +212,9 @@ var Price = (function() {
                 }
 
                 if (extraInfo['longcode'] && window.innerWidth > 500) {
-                  extraInfo['longcode'] = extraInfo['longcode'].replace(/[\d\,]+\.\d\d/, function(x) {
-                      return '<b>' + x + '</b>';
-                  });
-                  description.setAttribute('data-title', extraInfo['longcode']);
-                  page.contents.tooltip.attach();
+                  description.setAttribute('data-balloon', extraInfo['longcode']);
                 } else {
-                  description.removeAttribute('data-title');
+                  description.removeAttribute('data-balloon');
                 }
             }
 
@@ -245,13 +241,9 @@ var Price = (function() {
             }
 
             if (proposal && proposal['longcode'] && window.innerWidth > 500) {
-                proposal['longcode'] = proposal['longcode'].replace(/[\d\,]+\.\d\d/, function(x) {
-                    return '<b>' + x + '</b>';
-                });
-                description.setAttribute('data-title', proposal['longcode']);
-                page.contents.tooltip.attach();
+                description.setAttribute('data-balloon', proposal['longcode']);
             } else {
-              description.removeAttribute('data-title');
+              description.removeAttribute('data-balloon');
             }
 
             purchase.show();

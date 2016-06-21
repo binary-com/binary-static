@@ -265,7 +265,6 @@ function processForgetProposals() {
 function processPriceRequest() {
     'use strict';
 
-    page.contents.tooltip.hide_tooltip();
     Price.incrFormId();
     processForgetProposals();
     showPriceOverlay();
