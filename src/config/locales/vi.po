@@ -7,9 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: I 18N\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-18 15:56+0000\n"
+"PO-Revision-Date: 2016-06-21 09:22+0000\n"
 "Last-Translator: Pham Minh Hieu <hphamv7@gmail.com>\n"
-"Language-Team: Vietnamese <https://hosted.weblate.org/projects/binary/static/vi/>\n"
+"Language-Team: Vietnamese "
+"<https://hosted.weblate.org/projects/binary/static/vi/>\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -992,10 +993,9 @@ msgstr "Bạn đã sẵn sàng chưa?"
 msgid "Are you sure that you want to permanently delete token"
 msgstr "Bạn có chắc chắn muốn xóa vĩnh viễn token"
 
-#, fuzzy
 #| msgid "Are you sure that you want to permanently delete token"
 msgid "Are you sure that you want to permanently revoke access to application"
-msgstr "Bạn có chắc chắn muốn xóa vĩnh viễn token"
+msgstr "Bạn có chắc chắn muốn thu hồi quyền truy cập vào ứng dụng vĩnh viễn"
 
 msgid "Are your site visitors interested in:"
 msgstr "Khách đến thăm trang của bạn có hứng thú với:"
@@ -1118,12 +1118,11 @@ msgid "Award-winning, patented financial trading platform"
 msgstr "Giao diện giao dịch tài chính có bằng sáng chế và nhận được nhiều giải thưởng"
 
 msgid "BIEL Pillar III"
-msgstr ""
+msgstr "BIEL Pillar III"
 
-#, fuzzy
 #| msgid "Prospectus"
 msgid "BIEL Prospectus"
-msgstr "Bản cáo bạch"
+msgstr "Bản cáo bạch BIEL"
 
 msgid "BIEL Terms"
 msgstr "Điều khoản BIEL"
@@ -1209,10 +1208,11 @@ msgstr "Hệ thống và phương thức Cá cược"
 msgid "Binary (C.R.) S.A., registered in Costa Rica."
 msgstr "Binary (C.R.) S.A., được đăng ký tại Costa Rica."
 
-#, fuzzy
 #| msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 msgid "Binary (Europe) Ltd & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
-msgstr "Công ty TNHH Binary (châu Âu), Tòa nhà Mompalao, Khu 2, ĐườngTower, Msida MSD1825"
+msgstr ""
+"Công ty TNHH Binary (châu Âu) và công ty TNHH Đầu tư Binary (châu Âu), Tòa "
+"nhà Mompalao, Khu 2, ĐườngTower, Msida MSD1825"
 
 msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licenced and regulated (for gambling products only) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>."
 msgstr "Công ty TNHH Binary (châu Âu), Tòa nhà Mompalao, Khu 2, Đường Tower, Msida MSD1825, Malta. Được cấp giấy phép và quy định (chỉ đối với các sản phẩm cá cược) bởi Ủy ban Cá cược Malta tại Malta (giấy phép số MGA/CL2/118/2000) và đối với khách hàng Anh được quy định và cấp phép bởi Ủy ban Cá cược Anh - <a href='%1' target='_blank'> xem giấy phép</a>."
@@ -1451,10 +1451,9 @@ msgstr "Thay đổi Mật khẩu"
 msgid "Chart"
 msgstr "Biểu đồ"
 
-#, fuzzy
 #| msgid "Chart"
 msgid "Charts"
-msgstr "Biểu đồ"
+msgstr "Các biểu đồ"
 
 msgid "Check out our commission rates below:"
 msgstr "Xem xét tỉ lệ hoa hồng của chúng tôi dưới đây:"
@@ -6058,10 +6057,11 @@ msgstr "Có lỗi khi truy cập máy chủ."
 msgid "There was a problem validating your personal details. Please fix the fields %1here"
 msgstr "Xảy ra lỗi phê chuẩn thông tin cá nhân chi tiết của bạn. Vui lòng sửa trường %1tại đây"
 
-#, fuzzy
 #| msgid "There was a problem validating your personal details. Please fix the fields <a class=\"pjaxload\" href=\"%1\">here</a>."
 msgid "There was a problem validating your personal details. Please update your %1 <a class=\"pjaxload\" href=\"%2\">here</a>."
-msgstr "Xảy ra lỗi phê chuẩn thông tin cá nhân chi tiết của bạn. Vui lòng sửa trường <a class=\"pjaxload\" href=\"%1\">tại đây</a>."
+msgstr ""
+"Xảy ra lỗi phê chuẩn thông tin cá nhân chi tiết của bạn. Vui lòng cập nhật %"
+"1 của bạn <a class=\"pjaxload\" href=\"%2\"> tại đây</a>."
 
 msgid "There was an error"
 msgstr "Đã có lỗi xảy ra"
@@ -6262,7 +6262,7 @@ msgid "Token"
 msgstr "Mã Token"
 
 msgid "Tooltips"
-msgstr ""
+msgstr "Chú thích công cụ"
 
 msgid "Total Cost"
 msgstr "Tổng Chi phí"
