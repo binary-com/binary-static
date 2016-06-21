@@ -1,7 +1,5 @@
 <div id='cashier-content'>
-    <div class="gr-12">
-        <h1>[% l('Available payment methods') %]</h1></br>
-    </div>
+    <h1>[% l('Available payment methods') %]</h1>
     <div class="gr-12 invisible">
       <p class="notice-msg by_client_type client_real with_login_cookies">
         [% l('Withdrawal is locked, please <a class="pjaxload" href="[_1]">contact us</a> for more information.', request.url_for('/contact')) %]

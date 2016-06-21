@@ -1,7 +1,5 @@
-<div class="gr-12">
-  <h1>
-    [% l("Security") %]
-  </h1>
+<div>
+  <h1>[% l("Security") %]</h1>
   <p id="SecuritySuccessMsg"></p>
   <form class="formObject gr-padding-10" id="changeCashierLock" style="display:none;">
     <div class="rbox form">
