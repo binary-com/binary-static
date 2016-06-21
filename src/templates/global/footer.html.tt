@@ -1,5 +1,4 @@
 [% IF !full_width %]
-</div> [% # closes gr-row %]
 </div> [% # closes container %]
 [% END %]
 </div> [% # closes div#content %]
