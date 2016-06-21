@@ -40,7 +40,7 @@ var securityws = (function(){
     var checkIsVirtual = function(){
         if(page.client.is_virtual()) {
             $form.hide();
-            $('#SecuritySuccessMsg').addClass('notice-msg center').text(Content.localize().textFeatureUnavailable);
+            $('#SecuritySuccessMsg').addClass('notice-msg center-text').text(Content.localize().textFeatureUnavailable);
             return true;
         }
         return false;
