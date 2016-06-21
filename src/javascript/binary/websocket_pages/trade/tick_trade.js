@@ -194,7 +194,7 @@ var TickDisplay = function() {
             }
             var barrier = document.getElementById('contract_purchase_barrier');
             if ($self.contract_barrier && barrier) {
-                barrier.innerHTML = Content.localize().textContractConfirmationBarrier + ' ' + $self.contract_barrier;
+                barrier.innerHTML = Content.localize().textBarrier + ': ' + $self.contract_barrier;
             }
         },
         add: function(indicator) {
