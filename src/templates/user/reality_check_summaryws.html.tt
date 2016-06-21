@@ -69,7 +69,7 @@
         [% l("minutes") %]
       </span>
     </p>
-    <p class="error-msg invisible">
+    <p id="rc-err" class="error-msg invisible">
       [% l("Please enter a number greater than 0") %]
     </p>
   </div>
