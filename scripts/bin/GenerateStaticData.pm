@@ -160,6 +160,9 @@ sub _texts {
         push @texts, localize('Return');
         push @texts, localize('Now');
         push @texts, localize('Contract Confirmation');
+        push @texts, localize('Barrier value is');
+        push @texts, localize('High barrier value is');
+        push @texts, localize('Low barrier value is');
         push @texts, localize('Your transaction reference is');
         push @texts, localize('Your current balance is');
         push @texts, localize('Rise/Fall');
