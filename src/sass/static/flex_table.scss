@@ -8,8 +8,9 @@
     td {
         @include BIDIR_VALUE(text-align, left !important, right !important);
         @include BIDIR_PROP(padding-left, padding-right, 10px);
-        overflow: hidden;
-
+        &[data-balloon] {
+            border-bottom: 3px solid $COLOR_LIGHT_GRAY;
+        }
     }
     .pre {
         white-space: pre;
@@ -43,6 +44,9 @@
                     font-size: 12px;
                 }
             }
+            td {
+                overflow: initial;
+            }
         }
     }
     #profit-table {
@@ -63,6 +67,9 @@
                 .flex-tr-child {
                     font-size: 12px;
                 }
+            }
+            td {
+                overflow: initial;
             }
         }
     }

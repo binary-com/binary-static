@@ -19,18 +19,18 @@ var LimitsUI = (function(){
             limit[1].textContent = Content.localize().textLimit + " (" + currency + ")";
         }
         $('#max-open-position').prepend(Content.localize().textMaxOpenPosition);
-        document.getElementById('max-open-position-tooltip').setAttribute('title', Content.localize().textMaxOpenPositionTooltip);
+        document.getElementById('max-open-position-tooltip').setAttribute('data-balloon', Content.localize().textMaxOpenPositionTooltip);
         document.getElementById('open-positions').textContent = open_positions;
 
         $('#max-acc-balance').prepend(Content.localize().textMaxAccBalance);
-        document.getElementById('max-acc-balance-tooltip').setAttribute('title', Content.localize().textMaxAccBalanceTooltip);
+        document.getElementById('max-acc-balance-tooltip').setAttribute('data-balloon', Content.localize().textMaxAccBalanceTooltip);
         document.getElementById('account-balance').textContent = account_balance;
 
         $('#max-daily-turnover').prepend(Content.localize().textMaxDailyTurnover);
-        document.getElementById('max-daily-turnover-tooltip').setAttribute('title', Content.localize().textMaxDailyTurnoverTooltip);
+        document.getElementById('max-daily-turnover-tooltip').setAttribute('data-balloon', Content.localize().textMaxDailyTurnoverTooltip);
 
         $('#max-aggregate').prepend(Content.localize().textMaxAggregate);
-        document.getElementById('max-aggregate-tooltip').setAttribute('title', Content.localize().textMaxAggregateTooltip);
+        document.getElementById('max-aggregate-tooltip').setAttribute('data-balloon', Content.localize().textMaxAggregateTooltip);
         document.getElementById('payout').textContent = payout;
 
         if (marketSpecific && Object.keys(marketSpecific).length > 0) {
