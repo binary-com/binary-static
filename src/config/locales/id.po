@@ -7,9 +7,10 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-17 08:49+0000\n"
+"PO-Revision-Date: 2016-06-21 09:06+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
-"Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
+"Language-Team: Indonesian "
+"<https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -993,10 +994,10 @@ msgstr "Anda sudah bersedia?"
 msgid "Are you sure that you want to permanently delete token"
 msgstr "Apakah Anda yakin untuk menghapus token secara permanen"
 
-#, fuzzy
 #| msgid "Are you sure that you want to permanently delete token"
 msgid "Are you sure that you want to permanently revoke access to application"
-msgstr "Apakah Anda yakin untuk menghapus token secara permanen"
+msgstr ""
+"Apakah Anda yakin bahwa Anda ingin secara permanen mencabut akses ke aplikasi"
 
 msgid "Are your site visitors interested in:"
 msgstr "Apakah pengunjung website Anda tertarik untuk:"
@@ -1119,12 +1120,11 @@ msgid "Award-winning, patented financial trading platform"
 msgstr "Dipatenkan sebagai platform trading finansial"
 
 msgid "BIEL Pillar III"
-msgstr ""
+msgstr "BIEL Pillar III"
 
-#, fuzzy
 #| msgid "Prospectus"
 msgid "BIEL Prospectus"
-msgstr "Prospektus"
+msgstr "Prospektus BIEL"
 
 msgid "BIEL Terms"
 msgstr "Ketentuan BIEL"
@@ -1210,10 +1210,11 @@ msgstr "Sistem dan metode trading"
 msgid "Binary (C.R.) S.A., registered in Costa Rica."
 msgstr "Binary (C.R.) S.A., terdaftar di Costa Rica."
 
-#, fuzzy
 #| msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 msgid "Binary (Europe) Ltd & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
-msgstr "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
+msgstr ""
+"Binary (Europe) Ltd & Binary Investments (Europe) Ltd, Mompalao Building, "
+"Suite 2, Tower Road, Msida MSD1825"
 
 msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licenced and regulated (for gambling products only) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>."
 msgstr "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Berlisensi dan diatur."
@@ -1452,7 +1453,6 @@ msgstr "Perubahan Kata Sandi"
 msgid "Chart"
 msgstr "Grafik"
 
-#, fuzzy
 #| msgid "Chart"
 msgid "Charts"
 msgstr "Grafik"
@@ -4703,7 +4703,9 @@ msgid "Please make sure that you first agree with the Agent on the terms of paym
 msgstr "Pastikan Anda telah setuju dengan Agen mengenai syarat pembayaran sebelum mengajukan permohonan Anda."
 
 msgid "Please note that due to their over-the-counter nature, the prices of the OTC Indices and stocks will differ from the prices of the corresponding indices and stocks on centralised exchanges."
-msgstr "Harap dicatat bahwa karena sifat over-the-counter, harga dari Indeks dan saham OTC akan sedikit berbeda dari harga indeks dan saham pada di bursa pusat."
+msgstr ""
+"Harap dicatat bahwa karena sifat over-the-counter, harga dari Indeks dan "
+"saham OTC akan sedikit berbeda dari harga indeks dan saham pada bursa pusat."
 
 msgid "Please note that our website generates log files that record the IP addresses of accesses to your account. This information is gathered with the sole purpose of assisting in the unlikely event of a need to investigate accesses to your account by unauthorised users. Additionally we may verify certain of the information you supply in the account opening form, or otherwise, with third-party information providers."
 msgstr "Mohon diketahui bahwa website kami akan mencatat alamat IP yang digunakan untuk mengakses akun Anda. Informasi ini kami perlukan untuk memastikan pengaksesan yang dibenarkan. Kami juga akan melakukan pembuktian mengenai data yang Anda masukkan pada saat mendaftar akun dari waktu ke waktu atau melalui pihak ketiga untuk membuktikan kebenaran data Anda."
@@ -6067,10 +6069,11 @@ msgstr "Terjadi masalah pada saat mengakses server."
 msgid "There was a problem validating your personal details. Please fix the fields %1here"
 msgstr "Terdapat masalah dalam memvalidasi data pribadi Anda. Perbaiki kolom %1 disini"
 
-#, fuzzy
 #| msgid "There was a problem validating your personal details. Please fix the fields <a class=\"pjaxload\" href=\"%1\">here</a>."
 msgid "There was a problem validating your personal details. Please update your %1 <a class=\"pjaxload\" href=\"%2\">here</a>."
-msgstr "Terdapat masalah dalam memvalidasi data pribadi Anda. Perbaiki kolom <a class=\"pjaxload\" href=\"%1\">disin</a>."
+msgstr ""
+"Terdapat masalah pada saat memvalidasi data pribadi Anda. Silahkan perbarui %"
+"1 Anda <a class=\"pjaxload\" href=\"%2\">disini</a>."
 
 msgid "There was an error"
 msgstr "Terdapat error"
@@ -6270,10 +6273,9 @@ msgstr "Untuk mengatur ulang kata sandi, masukkan alamat email yang Anda daftark
 msgid "Token"
 msgstr "Token"
 
-#, fuzzy
 #| msgid "%1 Tools"
 msgid "Tooltips"
-msgstr "Peralatan %1"
+msgstr "Tooltips"
 
 msgid "Total Cost"
 msgstr "Total Biaya"
