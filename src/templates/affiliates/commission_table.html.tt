@@ -1,31 +1,31 @@
-<div class="grd-parent grd-grid-6 grd-grid-mobile-12 grd-centered">
-    <div class="grd-grid-12 grd-row-padding table-header">
-        <div class="grd-grid-2 center-aligned">[% l('Tier') %]</div>
-        <div class="grd-grid-6">[% l('Total Net Revenue Per Month') %]</div>
-        <div class="grd-grid-4">[% l('Commission Rates') %]</div>
+<div class="gr-parent gr-6 gr-12-m gr-centered">
+    <div class="gr-row gr-padding-10 table-header">
+        <div class="gr-2 center-text">[% l('Tier') %]</div>
+        <div class="gr-6">[% l('Total Net Revenue Per Month') %]</div>
+        <div class="gr-4">[% l('Commission Rates') %]</div>
     </div>
 
-    <div class="grd-grid-12 grd-row-padding table-body table-body-lines">
-        <div class="grd-grid-2 center-aligned">1</div>
-        <div class="grd-grid-6">0 - $10,000</div>
-        <div class="grd-grid-4 center-aligned">20 %</div>
+    <div class="gr-row gr-padding-10 table-body table-body-lines">
+        <div class="gr-2 center-text">1</div>
+        <div class="gr-6">0 - $10,000</div>
+        <div class="gr-4 center-text">20 %</div>
     </div>
 
-    <div class="grd-grid-12 grd-row-padding table-body table-body-lines">
-        <div class="grd-grid-2 center-aligned">2</div>
-        <div class="grd-grid-6">$10,001 - $50,000</div>
-        <div class="grd-grid-4 center-aligned">25 %</div>
+    <div class="gr-row gr-padding-10 table-body table-body-lines">
+        <div class="gr-2 center-text">2</div>
+        <div class="gr-6">$10,001 - $50,000</div>
+        <div class="gr-4 center-text">25 %</div>
     </div>
 
-    <div class="grd-grid-12 grd-row-padding table-body table-body-lines">
-        <div class="grd-grid-2 center-aligned">3</div>
-        <div class="grd-grid-6">$50,001 - $100,000</div>
-        <div class="grd-grid-4 center-aligned">30 %</div>
+    <div class="gr-row gr-padding-10 table-body table-body-lines">
+        <div class="gr-2 center-text">3</div>
+        <div class="gr-6">$50,001 - $100,000</div>
+        <div class="gr-4 center-text">30 %</div>
     </div>
 
-    <div class="grd-grid-12 grd-row-padding table-body table-body-lines">
-        <div class="grd-grid-2 center-aligned">4</div>
-        <div class="grd-grid-6">$100,001 +</div>
-        <div class="grd-grid-4 center-aligned">35 %</div>
+    <div class="gr-row gr-padding-10 table-body table-body-lines">
+        <div class="gr-2 center-text">4</div>
+        <div class="gr-6">$100,001 +</div>
+        <div class="gr-4 center-text">35 %</div>
     </div>
 </div>

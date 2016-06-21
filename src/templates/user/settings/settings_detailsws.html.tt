@@ -1,72 +1,71 @@
-<div class="grd-grid-12">
-
+<div>
     <h1>[% l('Personal Details') %]</h1>
 
-    <form class="form form grd-row-padding hidden" id="frmPersonalDetails">
+    <form class="form form gr-padding-10 hidden" id="frmPersonalDetails">
 
         <fieldset>
             <legend>[% l('Details') %]</legend>
 
-            <div class="grd-row-padding row rowName clear hidden RealAcc">
-                <div class="grd-grid-4 form_label">
+            <div class="gr-padding-10 gr-row rowName clear hidden RealAcc">
+                <div class="gr-4 form_label">
                     <label><em class="required_asterisk">**</em> [% l('Name') %]</label>
                 </div>
-                <div class="grd-grid-8">
+                <div class="gr-8">
                     <span id="inputheading">
                         <strong id="lblName"></strong>
                     </span>
                 </div>
             </div>
 
-            <div class="grd-row-padding row clear JpAcc">
-                <div class="grd-grid-4 form_label">
+            <div class="gr-padding-10 gr-row clear JpAcc">
+                <div class="gr-4 form_label">
                     <label><em class="required_asterisk">**</em> [% l('Gender') %]</label>
                 </div>
-                <div class="grd-grid-8">
+                <div class="gr-8">
                     <span id="inputheading">
                         <strong id="lblGender"></strong>
                     </span>
                 </div>
             </div>
 
-            <div class="grd-row-padding row clear rowBirthDate hidden RealAcc">
-                <div class="grd-grid-4 form_label">
+            <div class="gr-padding-10 gr-row clear rowBirthDate hidden RealAcc">
+                <div class="gr-4 form_label">
                     <label><em class="required_asterisk">**</em> [% l('Date of birth') %]</label>
                 </div>
-                <div class="grd-grid-8">
+                <div class="gr-8">
                     <span id="inputheading">
                         <strong id="lblBirthDate"></strong>
                     </span>
                 </div>
             </div>
 
-            <div class="grd-row-padding row clear">
-                <div class="grd-grid-4 form_label">
+            <div class="gr-padding-10 gr-row clear">
+                <div class="gr-4 form_label">
                     <label><em class="required_asterisk">**</em> [% l('Country of Residence') %]</label>
                 </div>
-                <div class="grd-grid-8">
+                <div class="gr-8">
                     <span id="inputheading">
                         <strong id="lblCountry"></strong>
                     </span>
                 </div>
             </div>
 
-            <div class="grd-row-padding row clear">
-                <div class="grd-grid-4 form_label">
+            <div class="gr-padding-10 gr-row clear">
+                <div class="gr-4 form_label">
                     <label><em class="required_asterisk">**</em> [% l('Email address') %]</label>
                 </div>
-                <div class="grd-grid-8">
+                <div class="gr-8">
                     <span id="inputheading">
                         <strong id="lblEmail"></strong>
                     </span>
                 </div>
             </div>
 
-            <div class="grd-row-padding row clear JpAcc">
-                <div class="grd-grid-4 form_label">
+            <div class="gr-padding-10 gr-row clear JpAcc">
+                <div class="gr-4 form_label">
                     <label><em class="required_asterisk">**</em> [% l('Occupation') %]</label>
                 </div>
-                <div class="grd-grid-8">
+                <div class="gr-8">
                     <span id="inputheading">
                         <strong id="lblOccupation"></strong>
                     </span>
@@ -77,56 +76,56 @@
         <fieldset class="hidden RealAcc ja-hide">
             <legend>[% l('Address') %]</legend>
 
-            <div class="grd-row-padding row clear">
-                <div class="grd-grid-4 form_label">
+            <div class="gr-padding-10 gr-row clear">
+                <div class="gr-4 form_label">
                     <label for="Address1">[% l('First line of home address') %]</label>
                 </div>
-                <div class="grd-grid-8">
+                <div class="gr-8">
                     <input type="text" id="Address1" maxlength="70" />
                 </div>
             </div>
 
-            <div class="grd-row-padding row clear">
-                <div class="grd-grid-4 form_label">
+            <div class="gr-padding-10 gr-row clear">
+                <div class="gr-4 form_label">
                     <label for="Address2">[% l('Second line of home address') %]</label>
                 </div>
-                <div class="grd-grid-8">
+                <div class="gr-8">
                     <input type="text" id="Address2" maxlength="70" />
                 </div>
             </div>
 
-            <div class="grd-row-padding row clear">
-                <div class="grd-grid-4 form_label">
+            <div class="gr-padding-10 gr-row clear">
+                <div class="gr-4 form_label">
                     <label for="City">[% l('Town/City') %]</label>
                 </div>
-                <div class="grd-grid-8">
+                <div class="gr-8">
                     <input type="text" id="City" maxlength="35" />
                 </div>
             </div>
 
-            <div class="grd-row-padding row clear">
-                <div class="grd-grid-4 form_label">
+            <div class="gr-padding-10 gr-row clear">
+                <div class="gr-4 form_label">
                     <label for="State">[% l('State/Province') %]</label>
                 </div>
-                <div class="grd-grid-8">
+                <div class="gr-8">
                     <select id="State"></select>
                 </div>
             </div>
 
-            <div class="grd-row-padding row clear">
-                <div class="grd-grid-4 form_label">
+            <div class="gr-padding-10 gr-row clear">
+                <div class="gr-4 form_label">
                     <label for="Postcode">[% l('Postal Code / ZIP') %]</label>
                 </div>
-                <div class="grd-grid-8">
+                <div class="gr-8">
                     <input type="text" id="Postcode" maxlength="20" />
                 </div>
             </div>
 
-            <div class="grd-row-padding row clear">
-                <div class="grd-grid-4 form_label">
+            <div class="gr-padding-10 gr-row clear">
+                <div class="gr-4 form_label">
                     <label for="Phone">[% l('Telephone') %]</label>
                 </div>
-                <div class="grd-grid-8">
+                <div class="gr-8">
                     <input type="text" id="Phone" maxlength="35" />
                 </div>
             </div>
@@ -135,66 +134,66 @@
         <fieldset class="JpAcc">
             <legend>[% l('Address') %]</legend>
 
-            <div class="grd-row-padding row clear">
-                <div class="grd-grid-4 form_label">
+            <div class="gr-padding-10 gr-row clear">
+                <div class="gr-4 form_label">
                     <label for="Postcode"><em class="required_asterisk">**</em> [% l('Postal Code / ZIP') %]</label>
                 </div>
-                <div class="grd-grid-8">
+                <div class="gr-8">
                     <span id="inputheading">
                         <strong id="lblPostcode"></strong>
                     </span>
                 </div>
             </div>
 
-            <div class="grd-row-padding row clear">
-                <div class="grd-grid-4 form_label">
+            <div class="gr-padding-10 gr-row clear">
+                <div class="gr-4 form_label">
                     <label for="State"><em class="required_asterisk">**</em> [% l('State/Province') %]</label>
                 </div>
-                <div class="grd-grid-8">
+                <div class="gr-8">
                     <span id="inputheading">
                         <strong id="lblState"></strong>
                     </span>
                 </div>
             </div>
 
-            <div class="grd-row-padding row clear">
-                <div class="grd-grid-4 form_label">
+            <div class="gr-padding-10 gr-row clear">
+                <div class="gr-4 form_label">
                     <label for="City"><em class="required_asterisk">**</em> [% l('Town/City') %]</label>
                 </div>
-                <div class="grd-grid-8">
+                <div class="gr-8">
                     <span id="inputheading">
                         <strong id="lblCity"></strong>
                     </span>
                 </div>
             </div>
 
-            <div class="grd-row-padding row clear">
-                <div class="grd-grid-4 form_label">
+            <div class="gr-padding-10 gr-row clear">
+                <div class="gr-4 form_label">
                     <label for="Address1"><em class="required_asterisk">**</em> [% l('First line of home address') %]</label>
                 </div>
-                <div class="grd-grid-8">
+                <div class="gr-8">
                     <span id="inputheading">
                         <strong id="lblAddress1"></strong>
                     </span>
                 </div>
             </div>
 
-            <div class="grd-row-padding row clear">
-                <div class="grd-grid-4 form_label">
+            <div class="gr-padding-10 gr-row clear">
+                <div class="gr-4 form_label">
                     <label for="Address2"><em class="required_asterisk">**</em> [% l('Second line of home address') %]</label>
                 </div>
-                <div class="grd-grid-8">
+                <div class="gr-8">
                     <span id="inputheading">
                         <strong id="lblAddress2"></strong>
                     </span>
                 </div>
             </div>
 
-            <div class="grd-row-padding row clear">
-                <div class="grd-grid-4 form_label">
+            <div class="gr-padding-10 gr-row clear">
+                <div class="gr-4 form_label">
                     <label for="Phone"><em class="required_asterisk">**</em> [% l('Telephone') %]</label>
                 </div>
-                <div class="grd-grid-8">
+                <div class="gr-8">
                     <span id="inputheading">
                         <strong id="lblPhone"></strong>
                     </span>
@@ -205,33 +204,33 @@
         <fieldset class="JpAcc">
             <legend>[% l('Status') %]</legend>
 
-            <div class="grd-row-padding row clear">
-                <div class="grd-grid-4 form_label">
+            <div class="gr-padding-10 gr-row clear">
+                <div class="gr-4 form_label">
                     <label><em class="required_asterisk">**</em> [% l('Annual income') %]</label>
                 </div>
-                <div class="grd-grid-8">
+                <div class="gr-8">
                     <span id="inputheading">
                         <strong id="lblAnnualIncome"></strong>
                     </span>
                 </div>
             </div>
 
-            <div class="grd-row-padding row clear">
-                <div class="grd-grid-4 form_label">
+            <div class="gr-padding-10 gr-row clear">
+                <div class="gr-4 form_label">
                     <label><em class="required_asterisk">**</em> [% l('Financial asset') %]</label>
                 </div>
-                <div class="grd-grid-8">
+                <div class="gr-8">
                     <span id="inputheading">
                         <strong id="lblFinancialAsset"></strong>
                     </span>
                 </div>
             </div>
 
-            <div class="grd-row-padding row clear">
-                <div class="grd-grid-4 form_label">
+            <div class="gr-padding-10 gr-row clear">
+                <div class="gr-4 form_label">
                     <label><em class="required_asterisk">**</em> [% l('Daily limit on losses') %]</label>
                 </div>
-                <div class="grd-grid-8">
+                <div class="gr-8">
                     <span id="inputheading">
                         <strong id="lblDailyLossLimit"></strong>
                     </span>
@@ -242,110 +241,110 @@
         <fieldset class="JpAcc">
             <legend>[% l('Trading Experience') %]</legend>
 
-            <div class="grd-row-padding row clear">
-                <div class="grd-grid-4 form_label">
+            <div class="gr-padding-10 gr-row clear">
+                <div class="gr-4 form_label">
                     <label><em class="required_asterisk">**</em> [% l('Equities') %]</label>
                 </div>
-                <div class="grd-grid-8">
+                <div class="gr-8">
                     <span id="inputheading">
                         <strong id="lblEquities"></strong>
                     </span>
                 </div>
             </div>
 
-            <div class="grd-row-padding row clear">
-                <div class="grd-grid-4 form_label">
+            <div class="gr-padding-10 gr-row clear">
+                <div class="gr-4 form_label">
                     <label><em class="required_asterisk">**</em> [% l('Commodities') %]</label>
                 </div>
-                <div class="grd-grid-8">
+                <div class="gr-8">
                     <span id="inputheading">
                         <strong id="lblCommodities"></strong>
                     </span>
                 </div>
             </div>
 
-            <div class="grd-row-padding row clear">
-                <div class="grd-grid-4 form_label">
+            <div class="gr-padding-10 gr-row clear">
+                <div class="gr-4 form_label">
                     <label><em class="required_asterisk">**</em> [% l('Foreign currency deposit') %]</label>
                 </div>
-                <div class="grd-grid-8">
+                <div class="gr-8">
                     <span id="inputheading">
                         <strong id="lblForeignCurrencyDeposit"></strong>
                     </span>
                 </div>
             </div>
 
-            <div class="grd-row-padding row clear">
-                <div class="grd-grid-4 form_label">
+            <div class="gr-padding-10 gr-row clear">
+                <div class="gr-4 form_label">
                     <label><em class="required_asterisk">**</em> [% l('Margin FX') %]</label>
                 </div>
-                <div class="grd-grid-8">
+                <div class="gr-8">
                     <span id="inputheading">
                         <strong id="lblMarginFX"></strong>
                     </span>
                 </div>
             </div>
 
-            <div class="grd-row-padding row clear">
-                <div class="grd-grid-4 form_label">
+            <div class="gr-padding-10 gr-row clear">
+                <div class="gr-4 form_label">
                     <label><em class="required_asterisk">**</em> [% l('Investment trust') %]</label>
                 </div>
-                <div class="grd-grid-8">
+                <div class="gr-8">
                     <span id="inputheading">
                         <strong id="lblInvestmentTrust"></strong>
                     </span>
                 </div>
             </div>
 
-            <div class="grd-row-padding row clear">
-                <div class="grd-grid-4 form_label">
+            <div class="gr-padding-10 gr-row clear">
+                <div class="gr-4 form_label">
                     <label><em class="required_asterisk">**</em> [% l('Public and corporation bond') %]</label>
                 </div>
-                <div class="grd-grid-8">
+                <div class="gr-8">
                     <span id="inputheading">
                         <strong id="lblPublicCorporationBond"></strong>
                     </span>
                 </div>
             </div>
 
-            <div class="grd-row-padding row clear">
-                <div class="grd-grid-4 form_label">
+            <div class="gr-padding-10 gr-row clear">
+                <div class="gr-4 form_label">
                     <label><em class="required_asterisk">**</em> [% l('OTC Derivative (Option) Trading') %]</label>
                 </div>
-                <div class="grd-grid-8">
+                <div class="gr-8">
                     <span id="inputheading">
                         <strong id="lblDerivativeTrading"></strong>
                     </span>
                 </div>
             </div>
 
-            <div class="grd-row-padding row clear">
-                <div class="grd-grid-4 form_label">
+            <div class="gr-padding-10 gr-row clear">
+                <div class="gr-4 form_label">
                     <label><em class="required_asterisk">**</em> [% l('Purpose of trading') %]</label>
                 </div>
-                <div class="grd-grid-8">
+                <div class="gr-8">
                     <span id="inputheading">
                         <strong id="lblPurposeOfTrading"></strong>
                     </span>
                 </div>
             </div>
 
-            <div class="grd-row-padding row clear hedge">
-                <div class="grd-grid-4 form_label">
+            <div class="gr-padding-10 gr-row clear hedge">
+                <div class="gr-4 form_label">
                     <label><em class="required_asterisk">**</em> [% l('Classification of assets requiring hedge') %]</label>
                 </div>
-                <div class="grd-grid-8">
+                <div class="gr-8">
                     <span id="inputheading">
                         <strong id="lblHedgeAsset"></strong>
                     </span>
                 </div>
             </div>
 
-            <div class="grd-row-padding row clear hedge">
-                <div class="grd-grid-4 form_label">
+            <div class="gr-padding-10 gr-row clear hedge">
+                <div class="gr-4 form_label">
                     <label><em class="required_asterisk">**</em> [% l('Amount of above assets') %]</label>
                 </div>
-                <div class="grd-grid-8">
+                <div class="gr-8">
                     <span id="inputheading">
                         <strong id="lblHedgeAssetAmount"></strong>
                     </span>
@@ -354,15 +353,15 @@
         </fieldset>
 
         <fieldset class="formlayout settings sticky hidden RealAcc ja-hide" id="formlayout">
-            <div class="grd-row-padding">
-                <div class="grd-grid-4"></div>
-                <div class="grd-grid-8">
+            <div class="gr-row gr-padding-10">
+                <div class="gr-4"></div>
+                <div class="gr-8">
                     <div id="formMessage"></div>
                 </div>
             </div>
-            <div class="grd-row-padding">
-                <div class="grd-grid-4"></div>
-                <div class="grd-grid-8">
+            <div class="gr-row gr-padding-10">
+                <div class="gr-4"></div>
+                <div class="gr-8">
                     <span class="button">
                         <button class="button">[% l('Update') %]</button>
                     </span>

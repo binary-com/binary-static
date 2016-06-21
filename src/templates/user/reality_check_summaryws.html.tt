@@ -73,7 +73,7 @@
       [% l("Please enter a number greater than 0") %]
     </p>
   </div>
-  <div class="center-aligned" id="reality-check-nav">
+  <div class="center-text" id="reality-check-nav">
     <span class="button">
       <button bcont="1" class="button" id="continue">
         [% l("Continue Trading") %]

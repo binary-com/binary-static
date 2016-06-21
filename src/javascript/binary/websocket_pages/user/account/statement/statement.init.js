@@ -42,7 +42,7 @@ var StatementWS = (function(){
                 $('#statement-table tbody')
                     .append($('<tr/>', {class: "flex-tr"})
                         .append($('<td/>', {colspan: 7})
-                            .append($('<p/>', {class: "notice-msg center", text: text.localize("Your account has no trading activity.")})
+                            .append($('<p/>', {class: "notice-msg center-text", text: text.localize("Your account has no trading activity.")})
                             )
                         )
                     );

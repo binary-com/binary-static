@@ -1,5 +1,5 @@
 /*
- *  This is developed to simplify the usage of enjoyhint (https://github.com/xbsoftware/enjoyhint) 
+ *  This is developed to simplify the usage of enjoyhint (https://github.com/xbsoftware/enjoyhint)
  *
  *  How to Implement in a page:
  *  1. Add the button element to the template: <div id="guideBtn"></div>
@@ -76,7 +76,7 @@ var Guide = (function() {
 		}
 
 		$(opt.guideBtnID)
-			.addClass('grd-hide-mobile pulser')
+			.addClass('gr-hide-m pulser')
 			.append($('<span/>', {class: 'close', text: 'X'}))
 			.append($('<strong/>'));
 		$(opt.guideBtnID + ' strong').html('<span></span>' + opt.btnText);
@@ -94,7 +94,7 @@ var Guide = (function() {
 			enjoyhint_instance.setScript(getScript(opt.script));
 			enjoyhint_instance.runScript();
 		});
-		
+
 		if(opt.autoStart) {
 			$(opt.guideBtnID).click();
 		}
@@ -114,14 +114,14 @@ var Guide = (function() {
 			return [
 				{
 					selector    : '#contract_markets',
-					description : '<h1>' + text.localize('Step') + ' 1</h1>' + 
+					description : '<h1>' + text.localize('Step') + ' 1</h1>' +
 									text.localize('Select your market'),
 					event_type  : 'next',
 					nextButton  : btnNext
 				},
 				{
 					selector    : '#underlying',
-					description : '<h1>' + text.localize('Step') + ' 2</h1>' + 
+					description : '<h1>' + text.localize('Step') + ' 2</h1>' +
 									text.localize('Select your underlying asset'),
 					event_type  : 'next',
 					nextButton  : btnNext
@@ -135,14 +135,14 @@ var Guide = (function() {
 				},
 				{
 					selector    : '#websocket_form',
-					description : '<h1>' + text.localize('Step') + ' 4</h1>' + 
+					description : '<h1>' + text.localize('Step') + ' 4</h1>' +
 									text.localize('Adjust trade parameters'),
 					event_type  : 'next',
 					nextButton  : btnNext
 				},
 				{
 					selector    : '#contracts_list',
-					description : '<h1>' + text.localize('Step') + ' 5</h1>' + 
+					description : '<h1>' + text.localize('Step') + ' 5</h1>' +
 									text.localize('Predict the direction<br />and purchase'),
 					event_type  : 'next',
 					nextButton  : btnFinish

@@ -1,117 +1,120 @@
-<div class="grd-grid-12 invisible" id="settingsContainer">
+<div class="invisible" id="settingsContainer">
     <h1>[% l('Settings') %]</h1>
 
-    <div class="grd-grid-3 grd-grid-mobile-6 grd-parent">
-        <div class="grd-grid-8 grd-with-padding">
-            <a class="pjaxload" href="[% request.url_for('/user/settings/detailsws') %]">
-                <img class="responsive" src="[% request.url_for('images/pages/settings/detail.svg') %]">
-            </a>
+    <div class="gr-row">
+        <div class="gr-3 gr-6-m gr-parent">
+            <div class="gr-8 gr-padding-10">
+                <a class="pjaxload" href="[% request.url_for('/user/settings/detailsws') %]">
+                    <img class="responsive" src="[% request.url_for('images/pages/settings/detail.svg') %]">
+                </a>
+            </div>
+            <div class="gr-12">
+                <h4>
+                    <a class="pjaxload" href="[% request.url_for('/user/settings/detailsws') %]">[% l('Personal Details') %]</a>
+                </h4>
+                <p>[% l('View your personal information.') %]</p>
+            </div>
         </div>
-        <div class="grd-grid-12">
-            <h4>
-                <a class="pjaxload" href="[% request.url_for('/user/settings/detailsws') %]">[% l('Personal Details') %]</a>
-            </h4>
-            <p>[% l('View your personal information.') %]</p>
+
+        <div class="gr-3 gr-6-m gr-parent real invisible">
+            <div class="gr-8 gr-padding-10">
+                <a class="pjaxload" href="[% request.url_for('/user/settings/securityws') %]">
+                    <img class="responsive" src="[% request.url_for('images/pages/settings/security.svg') %]">
+                </a>
+            </div>
+            <div class="gr-12">
+                <h4>
+                    <a class="pjaxload" href="[% request.url_for('/user/settings/securityws') %]">[% l('Security') %]</a>
+                </h4>
+                <p>[% l('Manage your account access and security settings.') %]</p>
+            </div>
+        </div>
+
+        <div class="gr-3 gr-6-m gr-parent real invisible">
+            <div class="gr-8 gr-padding-10">
+                <a class="pjaxload" href="[% request.url_for('/user/settings/self_exclusionws') %]">
+                    <img class="responsive" src="[% request.url_for('images/pages/settings/self-exclusion.svg') %]">
+                </a>
+            </div>
+            <div class="gr-12">
+                <h4>
+                    <a class="pjaxload" href="[% request.url_for('/user/settings/self_exclusionws') %]">[% l('Self Exclusion') %]</a>
+                </h4>
+                <p>[% l('Facility that allows you to set limits on your account.') %]</p>
+            </div>
+        </div>
+
+        <div class="gr-3 gr-6-m gr-parent real invisible">
+            <div class="gr-8 gr-padding-10">
+                <a class="pjaxload" href="[% request.url_for('/user/settings/limitsws') %]">
+                    <img class="responsive" src="[% request.url_for('images/pages/settings/limits.svg') %]">
+                </a>
+            </div>
+            <div class="gr-12">
+                <h4>
+                    <a class="pjaxload" href="[% request.url_for('/user/settings/limitsws') %]">[% l('Limits') %]</a>
+                </h4>
+                <p>[% l('View your trading and withdrawal limits.') %]</p>
+            </div>
+        </div>
+
+        <div class="gr-clear real invisible"></div>
+
+        <div class="gr-3 gr-6-m gr-parent ja-hide">
+            <div class="gr-8 gr-padding-10">
+                <a class="pjaxload" href="[% request.url_for('/user/settings/api_tokenws') %]">
+                    <img class="responsive" src="[% request.url_for('images/pages/settings/api-token.svg') %]">
+                </a>
+            </div>
+            <div class="gr-12">
+                <h4>
+                    <a class="pjaxload" href="[% request.url_for('/user/settings/api_tokenws') %]">[% l('API Token') %]</a>
+                </h4>
+                <p>[% l('API token for third party applications.') %]</p>
+            </div>
+        </div>
+
+        <div class="gr-3 gr-6-m gr-parent ja-hide">
+            <div class="gr-8 gr-padding-10">
+                <a class="pjaxload" href="[% request.url_for('/user/settings/authorised_appsws') %]">
+                    <img class="responsive" src="[% request.url_for('images/pages/settings/applications.svg') %]">
+                </a>
+            </div>
+            <div class="gr-12">
+                <h4>
+                    <a class="pjaxload" href="[% request.url_for('/user/settings/authorised_appsws') %]">[% l('Authorised Applications') %]</a>
+                </h4>
+                <p>[% l('Manage your authorised applications.') %]</p>
+            </div>
+        </div>
+
+        <div class="gr-3 gr-6-m gr-parent ja-hide">
+            <div class="gr-8 gr-padding-10">
+                <a class="pjaxload" href="[% request.url_for('/user/settings/iphistoryws') %]">
+                    <img class="responsive" src="[% request.url_for('images/pages/settings/iphistory.svg') %]">
+                </a>
+            </div>
+            <div class="gr-12">
+                <h4>
+                    <a class="pjaxload" href="[% request.url_for('/user/settings/iphistoryws') %]">[% l('Login History') %]</a>
+                </h4>
+                <p>[% l('View your login history.') %]</p>
+            </div>
+        </div>
+
+        <div class="gr-3 gr-6-m gr-parent ja-hide real invisible">
+            <div class="gr-8 gr-padding-10">
+                <a class="pjaxload" href="[% request.url_for('/user/settings/assessmentws') %]">
+                    <img class="responsive" src="[% request.url_for('images/pages/settings/financial-assessment.svg') %]">
+                </a>
+            </div>
+            <div class="gr-12">
+                <h4>
+                    <a class="pjaxload" href="[% request.url_for('/user/settings/assessmentws') %]">[% l('Financial Assessment') %]</a>
+                </h4>
+                <p>[% l('View your financial assessment settings.') %]</p>
+            </div>
         </div>
     </div>
 
-    <div class="grd-grid-3 grd-grid-mobile-6 grd-parent real invisible">
-        <div class="grd-grid-8 grd-with-padding">
-            <a class="pjaxload" href="[% request.url_for('/user/settings/securityws') %]">
-                <img class="responsive" src="[% request.url_for('images/pages/settings/security.svg') %]">
-            </a>
-        </div>
-        <div class="grd-grid-12">
-            <h4>
-                <a class="pjaxload" href="[% request.url_for('/user/settings/securityws') %]">[% l('Security') %]</a>
-            </h4>
-            <p>[% l('Manage your account access and security settings.') %]</p>
-        </div>
-    </div>
-
-    <div class="grd-grid-3 grd-grid-mobile-6 grd-parent real invisible">
-        <div class="grd-grid-8 grd-with-padding">
-            <a class="pjaxload" href="[% request.url_for('/user/settings/self_exclusionws') %]">
-                <img class="responsive" src="[% request.url_for('images/pages/settings/self-exclusion.svg') %]">
-            </a>
-        </div>
-        <div class="grd-grid-12">
-            <h4>
-                <a class="pjaxload" href="[% request.url_for('/user/settings/self_exclusionws') %]">[% l('Self Exclusion') %]</a>
-            </h4>
-            <p>[% l('Facility that allows you to set limits on your account.') %]</p>
-        </div>
-    </div>
-
-    <div class="grd-grid-3 grd-grid-mobile-6 grd-parent real invisible">
-        <div class="grd-grid-8 grd-with-padding">
-            <a class="pjaxload" href="[% request.url_for('/user/settings/limitsws') %]">
-                <img class="responsive" src="[% request.url_for('images/pages/settings/limits.svg') %]">
-            </a>
-        </div>
-        <div class="grd-grid-12">
-            <h4>
-                <a class="pjaxload" href="[% request.url_for('/user/settings/limitsws') %]">[% l('Limits') %]</a>
-            </h4>
-            <p>[% l('View your trading and withdrawal limits.') %]</p>
-        </div>
-    </div>
-
-    <div class="grd-clear real invisible"></div>
-
-    <div class="grd-grid-3 grd-grid-mobile-6 grd-parent ja-hide">
-        <div class="grd-grid-8 grd-with-padding">
-            <a class="pjaxload" href="[% request.url_for('/user/settings/api_tokenws') %]">
-                <img class="responsive" src="[% request.url_for('images/pages/settings/api-token.svg') %]">
-            </a>
-        </div>
-        <div class="grd-grid-12">
-            <h4>
-                <a class="pjaxload" href="[% request.url_for('/user/settings/api_tokenws') %]">[% l('API Token') %]</a>
-            </h4>
-            <p>[% l('API token for third party applications.') %]</p>
-        </div>
-    </div>
-
-    <div class="grd-grid-3 grd-grid-mobile-6 grd-parent ja-hide">
-        <div class="grd-grid-8 grd-with-padding">
-            <a class="pjaxload" href="[% request.url_for('/user/settings/authorised_appsws') %]">
-                <img class="responsive" src="[% request.url_for('images/pages/settings/applications.svg') %]">
-            </a>
-        </div>
-        <div class="grd-grid-12">
-            <h4>
-                <a class="pjaxload" href="[% request.url_for('/user/settings/authorised_appsws') %]">[% l('Authorised Applications') %]</a>
-            </h4>
-            <p>[% l('Manage your authorised applications.') %]</p>
-        </div>
-    </div>
-
-    <div class="grd-grid-3 grd-grid-mobile-6 grd-parent ja-hide">
-        <div class="grd-grid-8 grd-with-padding">
-            <a class="pjaxload" href="[% request.url_for('/user/settings/iphistoryws') %]">
-                <img class="responsive" src="[% request.url_for('images/pages/settings/iphistory.svg') %]">
-            </a>
-        </div>
-        <div class="grd-grid-12">
-            <h4>
-                <a class="pjaxload" href="[% request.url_for('/user/settings/iphistoryws') %]">[% l('Login History') %]</a>
-            </h4>
-            <p>[% l('View your login history.') %]</p>
-        </div>
-    </div>
-
-    <div class="grd-grid-3 grd-grid-mobile-6 grd-parent ja-hide real invisible">
-        <div class="grd-grid-8 grd-with-padding">
-            <a class="pjaxload" href="[% request.url_for('/user/settings/assessmentws') %]">
-                <img class="responsive" src="[% request.url_for('images/pages/settings/financial-assessment.svg') %]">
-            </a>
-        </div>
-        <div class="grd-grid-12">
-            <h4>
-                <a class="pjaxload" href="[% request.url_for('/user/settings/assessmentws') %]">[% l('Financial Assessment') %]</a>
-            </h4>
-            <p>[% l('View your financial assessment settings.') %]</p>
-        </div>
-    </div>
 </div>

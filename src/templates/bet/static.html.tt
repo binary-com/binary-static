@@ -235,7 +235,7 @@
                           </div>
                         </div>
                         <div class="contract_purchase button">
-                           <button class="purchase_button contract_description" id="purchase_button_top" data-balloon-length="xlarge" value="purchase"></button>
+                           <button class="purchase_button contract_description no-underline" id="purchase_button_top" data-balloon-length="xlarge" value="purchase"></button>
                         </div>
                       </span>
                   </div>
@@ -259,7 +259,7 @@
                           </div>
                         </div>
                         <div class="contract_purchase button">
-                          <button class="purchase_button contract_description" id="purchase_button_bottom" data-balloon-length="xlarge" value="purchase"></button>
+                          <button class="purchase_button contract_description no-underline" id="purchase_button_bottom" data-balloon-length="xlarge" value="purchase"></button>
                         </div>
                       </span>
                   </div>

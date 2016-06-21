@@ -28,7 +28,7 @@ var Applications = (function(){
                 $('#applications-table tbody')
                     .append($('<tr/>', {class: "flex-tr"})
                         .append($('<td/>', {colspan: 7})
-                            .append($('<p/>', {class: "notice-msg center", text: text.localize("You have not granted access to any applications.")})
+                            .append($('<p/>', {class: "notice-msg center-text", text: text.localize("You have not granted access to any applications.")})
                             )
                         )
                     );
