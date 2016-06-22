@@ -125,7 +125,7 @@
             <div class="xquote">
               <div>
                 <div class="picture">
-                  <img class="responsive half-sized-picture" src="[% request.url_for('images/pages/careers/corporate-culture.svg') %]"/>
+                  <img class="half-sized-picture" src="[% request.url_for('images/pages/careers/corporate-culture.svg') %]"/>
                 </div>
                 <div class="text">
                   <a href="https://my.wobb.co/users/companies/binary-com" target="_blank">
@@ -139,7 +139,7 @@
             <div class="xquote">
               <div>
                 <div class="picture">
-                  <img class="responsive half-sized-picture" src="[% request.url_for('images/pages/careers/handbook.svg') %]"/>
+                  <img class="half-sized-picture" src="[% request.url_for('images/pages/careers/handbook.svg') %]"/>
                 </div>
                 <div class="text">
                   <a download="[% true %]" href="[% request.url_for('/download/binary-employee-handbook.pdf') %]" target="_blank">
@@ -213,7 +213,7 @@
       <div class="xquote">
         <div>
           <div class="picture">
-            <img class="responsive half-sized-picture" src="[% request.url_for('images/pages/careers/view-positions-icon.svg') %]"/>
+            <img class="half-sized-picture" src="[% request.url_for('images/pages/careers/view-positions-icon.svg') %]"/>
           </div>
           <div class="text">
             <a class="pjaxload" href="[% request.url_for('/open-positions') %]">
