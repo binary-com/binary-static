@@ -517,6 +517,12 @@
     #contract_description1 #contract_description2 #pricing_table_container #open_positions_container {
         display: none;
     }
+    #notice-message-forex {
+        float: right;
+        margin-top: 1px;
+        padding: 6px 30px;
+        background-color: $COLOR_YELLOW;
+    }
 }
 
 #open_positions_container {
