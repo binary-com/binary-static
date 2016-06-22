@@ -101,6 +101,19 @@
 
 			<div class="gr-row gr-padding-10 row clear">
 				<div class="gr-4 form_label">
+					<label for="timeout_until">[% l('Time out until') %]</label>
+				</div>
+                <div class="gr-3">
+					<input id="timeout_until_duration" type="text" maxlength="10" />
+					<div class="hint nowrap">[% l('Please enter date in the format YYYY-MM-DD HH:mm (local time).') %]</div>
+				</div>
+				<div class="gr-5">
+                    <input id="timeout_until" type="text" maxlength="8" />
+				</div>
+			</div>
+
+			<div class="gr-row gr-padding-10 row clear">
+				<div class="gr-4 form_label">
 					<label for="exclude_until">[% l('Exclude me from the website until') %]</label>
 				</div>
 				<div class="gr-8">
