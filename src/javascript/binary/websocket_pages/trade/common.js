@@ -801,10 +801,10 @@ function displayTooltip(market, symbol){
         tip.show();
         tip.setAttribute('target', page.url.url_for('/get-started/smart-indices', '#world-fx-indices'));
     }
-    if (market.match(/^forex/) || market.match(/^major_pairs/) || market.match(/^minor_pairs/) || market.match(/^smart_fx/)) {
-        notice.show();
-    } else {
+    if (market.match(/^volidx/) || market.match(/^random_/)) {
         notice.hide();
+    } else {
+        notice.show();
     }
 }
 
