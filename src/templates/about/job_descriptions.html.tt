@@ -1,20 +1,18 @@
-<div class="open-positions grd-container">
-  <div class="grd-grid-12 grd-parent static_full">
-    <div class="grd-grid-12 grd-row-padding">
-      <h1>
-        [% l("Open Positions") %]
-      </h1>
+<div class="open-positions container">
+  <div class="gr-parent static_full">
+    <div class="gr-padding-10">
+      <h1>[% l("Open Positions") %]</h1>
     </div>
-    <div class="grd-grid-12 grd-row-padding" id="Information_Technology">
-      <div class="grd-grid-3 grd-grid-mobile-12">
-        <div class="grd-grid-12 grd-row-padding">
+    <div class="gr-row gr-padding-10" id="Information_Technology">
+      <div class="gr-3 gr-12-m">
+        <div class="gr-12 gr-padding-10 center-text">
           <h2>
             [% l("Information Technology") %]
           </h2>
           <img class="responsive" src="[% request.url_for('images/pages/careers/Information_Technology.svg') %]"/>
         </div>
       </div>
-      <div class="grd-grid-9 grd-grid-mobile-12">
+      <div class="gr-9 gr-12-m">
         <div class="eqWrap">
           <div class="eq">
             <h3>
@@ -52,19 +50,19 @@
         </div>
       </div>
     </div>
-    <div class="grd-grid-12 grd-hide-mobile">
+    <div class="gr-12 gr-hide-m">
       <div class="separator-line"></div>
     </div>
-    <div class="grd-grid-12 grd-row-padding" id="Quality_Assurance">
-      <div class="grd-grid-3 grd-grid-mobile-12">
-        <div class="grd-grid-12 grd-row-padding">
+    <div class="gr-row gr-padding-10" id="Quality_Assurance">
+      <div class="gr-3 gr-12-m">
+        <div class="gr-12 gr-padding-10 center-text">
           <h2>
             [% l("Quality Assurance") %]
           </h2>
           <img class="responsive" src="[% request.url_for('images/pages/careers/Quality_Assurance.svg') %]"/>
         </div>
       </div>
-      <div class="grd-grid-9 grd-grid-mobile-12">
+      <div class="gr-9 gr-12-m">
         <div class="eqWrap">
           <div class="eq">
             <h3 class="nowrap">
@@ -80,19 +78,19 @@
         </div>
       </div>
     </div>
-    <div class="grd-grid-12 grd-hide-mobile">
+    <div class="gr-12 gr-hide-m">
       <div class="separator-line"></div>
     </div>
-    <div class="grd-grid-12 grd-row-padding" id="Quantitative_Analysis">
-      <div class="grd-grid-3 grd-grid-mobile-12">
-        <div class="grd-grid-12 grd-row-padding">
+    <div class="gr-row gr-padding-10" id="Quantitative_Analysis">
+      <div class="gr-3 gr-12-m">
+        <div class="gr-12 gr-padding-10 center-text">
           <h2>
             [% l("Quantitative Analysis") %]
           </h2>
           <img class="responsive" src="[% request.url_for('images/pages/careers/Quantitative_Analysis.svg') %]"/>
         </div>
       </div>
-      <div class="grd-grid-9 grd-grid-mobile-12">
+      <div class="gr-9 gr-12-m">
         <div class="eqWrap">
           <div class="eq">
             <h3>
@@ -119,19 +117,19 @@
         </div>
       </div>
     </div>
-    <div class="grd-grid-12 grd-hide-mobile">
+    <div class="gr-12 gr-hide-m">
       <div class="separator-line"></div>
     </div>
-    <div class="grd-grid-12 grd-row-padding" id="Marketing">
-      <div class="grd-grid-3 grd-grid-mobile-12">
-        <div class="grd-grid-12 grd-row-padding">
+    <div class="gr-row gr-padding-10" id="Marketing">
+      <div class="gr-3 gr-12-m">
+        <div class="gr-12 gr-padding-10 center-text">
           <h2>
             [% l("Marketing") %]
           </h2>
           <img class="responsive" src="[% request.url_for('images/pages/careers/Marketing.svg') %]"/>
         </div>
       </div>
-      <div class="grd-grid-9 grd-grid-mobile-12">
+      <div class="gr-9 gr-12-m">
         <div class="eqWrap">
           <div class="eq">
             <h3>
@@ -224,19 +222,19 @@
         </div>
       </div>
     </div>
-    <div class="grd-grid-12 grd-hide-mobile">
+    <div class="gr-12 gr-hide-m">
       <div class="separator-line"></div>
     </div>
-    <div class="grd-grid-12 grd-row-padding" id="Accounting">
-      <div class="grd-grid-3 grd-grid-mobile-12">
-        <div class="grd-grid-12 grd-row-padding">
+    <div class="gr-row gr-padding-10" id="Accounting">
+      <div class="gr-3 gr-12-m">
+        <div class="gr-12 gr-padding-10 center-text">
           <h2>
             [% l("Accounting") %]
           </h2>
           <img class="responsive" src="[% request.url_for('images/pages/careers/Accounting.svg') %]"/>
         </div>
       </div>
-      <div class="grd-grid-9 grd-grid-mobile-12">
+      <div class="gr-9 gr-12-m">
         <div class="eqWrap">
           <div class="eq">
             <h3>
@@ -252,19 +250,19 @@
         </div>
       </div>
     </div>
-    <div class="grd-grid-12 grd-hide-mobile">
+    <div class="gr-12 gr-hide-m">
       <div class="separator-line"></div>
     </div>
-    <div class="grd-grid-12 grd-row-padding" id="Compliance">
-      <div class="grd-grid-3 grd-grid-mobile-12">
-        <div class="grd-grid-12 grd-row-padding">
+    <div class="gr-row gr-padding-10" id="Compliance">
+      <div class="gr-3 gr-12-m">
+        <div class="gr-12 gr-padding-10 center-text">
           <h2>
             [% l("Compliance") %]
           </h2>
           <img class="responsive" src="[% request.url_for('images/pages/careers/Compliance.svg') %]"/>
         </div>
       </div>
-      <div class="grd-grid-9 grd-grid-mobile-12">
+      <div class="gr-9 gr-12-m">
         <div class="eqWrap">
           <div class="eq">
             <h3>
@@ -291,19 +289,19 @@
         </div>
       </div>
     </div>
-    <div class="grd-grid-12 grd-hide-mobile">
+    <div class="gr-12 gr-hide-m">
       <div class="separator-line"></div>
     </div>
-    <div class="grd-grid-12 grd-row-padding" id="Customer_Support">
-      <div class="grd-grid-3 grd-grid-mobile-12">
-        <div class="grd-grid-12 grd-row-padding">
+    <div class="gr-row gr-padding-10" id="Customer_Support">
+      <div class="gr-3 gr-12-m">
+        <div class="gr-12 gr-padding-10 center-text">
           <h2>
             [% l("Customer Support") %]
           </h2>
           <img class="responsive" src="[% request.url_for('images/pages/careers/Customer_Support.svg') %]"/>
         </div>
       </div>
-      <div class="grd-grid-9 grd-grid-mobile-12">
+      <div class="gr-9 gr-12-m">
         <div class="eqWrap">
           <div class="eq">
             <h3>
@@ -319,19 +317,19 @@
         </div>
       </div>
     </div>
-    <div class="grd-grid-12 grd-hide-mobile">
+    <div class="gr-12 gr-hide-m">
       <div class="separator-line"></div>
     </div>
-    <div class="grd-grid-12 grd-row-padding" id="Human_Resources">
-      <div class="grd-grid-3 grd-grid-mobile-12">
-        <div class="grd-grid-12 grd-row-padding">
+    <div class="gr-row gr-padding-10" id="Human_Resources">
+      <div class="gr-3 gr-12-m">
+        <div class="gr-12 gr-padding-10 center-text">
           <h2>
             [% l("Human Resources") %]
           </h2>
           <img class="responsive" src="[% request.url_for('images/pages/careers/Human_Resources.svg') %]"/>
         </div>
       </div>
-      <div class="grd-grid-9 grd-grid-mobile-12">
+      <div class="gr-9 gr-12-m">
         <div class="eqWrap">
           <div class="eq">
             <h3>
@@ -347,19 +345,19 @@
         </div>
       </div>
     </div>
-    <div class="grd-grid-12 grd-hide-mobile">
+    <div class="gr-12 gr-hide-m">
       <div class="separator-line"></div>
     </div>
-    <div class="grd-grid-12 grd-row-padding" id="Administrator">
-      <div class="grd-grid-3 grd-grid-mobile-12">
-        <div class="grd-grid-12 grd-row-padding">
+    <div class="gr-row gr-padding-10" id="Administrator">
+      <div class="gr-3 gr-12-m">
+        <div class="gr-12 gr-padding-10 center-text">
           <h2>
             [% l("Administrator") %]
           </h2>
           <img class="responsive" src="[% request.url_for('images/pages/careers/Administrator.svg') %]"/>
         </div>
       </div>
-      <div class="grd-grid-9 grd-grid-mobile-12">
+      <div class="gr-9 gr-12-m">
         <div class="eqWrap">
           <div class="eq">
             <h3>
@@ -375,19 +373,19 @@
         </div>
       </div>
     </div>
-    <div class="grd-grid-12 grd-hide-mobile">
+    <div class="gr-12 gr-hide-m">
       <div class="separator-line"></div>
     </div>
-    <div class="grd-grid-12 grd-row-padding" id="Internal_Audit">
-      <div class="grd-grid-3 grd-grid-mobile-12">
-        <div class="grd-grid-12 grd-row-padding">
+    <div class="gr-row gr-padding-10" id="Internal_Audit">
+      <div class="gr-3 gr-12-m">
+        <div class="gr-12 gr-padding-10 center-text">
           <h2>
             [% l("Internal Audit") %]
           </h2>
           <img class="responsive" src="[% request.url_for('images/pages/careers/Internal_Audit.svg') %]"/>
         </div>
       </div>
-      <div class="grd-grid-9 grd-grid-mobile-12">
+      <div class="gr-9 gr-12-m">
         <div class="eqWrap">
           <div class="eq">
             <h3>

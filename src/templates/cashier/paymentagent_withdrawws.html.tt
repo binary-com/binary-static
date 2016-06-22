@@ -1,4 +1,4 @@
-<div class="grd-grid-12">
+<div class="gr-12">
     <h1>[% l('Payment Agent Withdrawal') %]</h1>
 
     <div id="paymentagent_withdrawal">
@@ -30,57 +30,56 @@
 
         <div id="viewForm" class="viewItem hidden">
             <p>[% l('Please provide us with the following information, after retrieving the verification token from your email:') %]</p>
-            <form class="form rbox grd-row-padding" id="frmWithdrawal">
+            <form class="form rbox gr-padding-10" id="frmWithdrawal">
                 <fieldset>
 
-                  <div class="grd-row-padding row clear">
-                      <div class="grd-grid-4 form_label">
+                  <div class="gr-padding-10 gr-row clear">
+                      <div class="gr-4 form_label">
                           <label for="verification-code">[% l('Verification Token') %]</label>
                       </div>
-                      <div class="grd-grid-8">
+                      <div class="gr-8">
                           <input type="text" id="verification-code" maxlength="48" autocomplete="off"></input>
                           <div class="hint">[% l('Please check your email for the value of this token') %]</div>
                       </div>
                   </div>
 
-                    <div class="grd-row-padding row clear">
-                        <div class="grd-grid-4 form_label">
+                    <div class="gr-padding-10 gr-row clear">
+                        <div class="gr-4 form_label">
                             <label for="ddlAgents">[% l('Transfer to Payment Agent') %]</label>
                         </div>
-                        <div class="grd-grid-8">
+                        <div class="gr-8">
                             <select id="ddlAgents"></select>
                         </div>
                     </div>
 
-                    <div class="grd-row-padding row clear">
-                        <div class="grd-grid-4 form_label">
+                    <div class="gr-padding-10 gr-row clear">
+                        <div class="gr-4 form_label">
                             <label for="txtAmount">[% l('Amount') %]</label>
                         </div>
-                        <div class="grd-grid-8">
+                        <div class="gr-8">
                             USD <input type="text" id="txtAmount" />
                             <div class="hint">[% l('Min: 10 Max: 2000') %]</div>
                         </div>
                     </div>
 
-                    <div class="grd-row-padding row clear">
-                        <div class="grd-grid-4 form_label">
+                    <div class="gr-padding-10 gr-row clear">
+                        <div class="gr-4 form_label">
                             <label for="txtDescription">[% l('Further Instructions') %]</label>
                         </div>
-                        <div class="grd-grid-8">
+                        <div class="gr-8">
                             <textarea id="txtDescription" row="6" cols="60" maxlength="300"></textarea>
                         </div>
                     </div>
 
-                    <div class="grd-row-padding">
-                        <div class="grd-grid-4"></div>
-                        <div class="grd-grid-8">
+                    <div class="gr-padding-10">
+                        <div class="gr-4"></div>
+                        <div class="gr-8">
                             <div id="formMessage"></div>
                         </div>
                     </div>
 
-                    <div class="grd-row-padding">
-                        <div class="grd-grid-4"></div>
-                        <div class="grd-grid-8">
+                    <div class="gr-padding-10">
+                        <div class="gr-8 gr-centered center-text">
                             <span class="button">
                                 <button class="button">[% l('Submit') %]</button>
                             </span>

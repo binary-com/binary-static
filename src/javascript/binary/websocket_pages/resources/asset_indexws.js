@@ -4,7 +4,7 @@ var AssetIndexWS = (function() {
     var $container,
         $tabs,
         $contents;
-    
+
     var activeSymbols,
         assetIndex,
         marketColumns,
@@ -91,9 +91,9 @@ var AssetIndexWS = (function() {
                 values = {};
             for(var j = 0; j < assetCells.length; j++) {
                 var col  = assetCells[j][idx.cellName];
-                
+
                 values[col] = assetCells[j][idx.cellFrom] + ' - ' + assetCells[j][idx.cellTo];
-                
+
                 var marketCols = marketColumns[market];
                 if($.inArray(col, marketCols.columns) === -1) {
                     marketCols.header.push(text.localize(assetCells[j][idx.cellDisplayName]));
@@ -109,7 +109,7 @@ var AssetIndexWS = (function() {
         organizeData();
 
         var isJapan = page.language().toLowerCase() === 'ja';
-        
+
         $tabs = $('<ul/>', {class: isJapan ? 'hidden' : ''});
         $contents = $('<div/>');
 
@@ -123,7 +123,7 @@ var AssetIndexWS = (function() {
             // just show "Major Pairs" when the language is JA
             if(isJapan && symbolInfo.submarket !== 'major_pairs') {
                 continue;
-            }            
+            }
 
             var $submarketTable = getSubmarketTable(assetItem, symbolInfo);
             $submarketTable.find('tbody').append(createSubmarketTableRow(assetItem, symbolInfo));
@@ -132,7 +132,7 @@ var AssetIndexWS = (function() {
         $container
             .empty()
             .append($tabs)
-            .append($('<div/>', {class: 'grd-row-padding'}))
+            .append($('<div/>', {class: 'gr-padding-10'}))
             .append($contents.children());
 
         $container.tabs('destroy').tabs();
@@ -141,7 +141,7 @@ var AssetIndexWS = (function() {
     var getSubmarketTable = function(assetItem, symbolInfo) {
         var marketID    = 'market-'    + symbolInfo.market;
         var submarketID = 'submarket-' + symbolInfo.submarket;
-        
+
         var $table = $contents.find('#' + submarketID);
         if($table.length === 0) {
             // Create the table for this submarket
@@ -185,7 +185,7 @@ var AssetIndexWS = (function() {
         };
 
         var $submarketTable = Table.createFlexTable([], metadata, marketColumns[market].header);
-        
+
         var $submarketHeader = $('<tr/>', {class: 'flex-tr'})
             .append($('<th/>', {class: 'flex-tr-child submarket-name', colspan: marketColumns[market].columns.length, text: symbolInfo.submarket_display_name}));
         $submarketTable.find('thead').prepend($submarketHeader);

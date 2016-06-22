@@ -1,7 +1,7 @@
 [% USE String %]
 
-<div class='grd-grid-12 grd-parent'>
-    <div class='grd-grid-12'>
+<div class='gr-12 gr-parent'>
+    <div class='gr-12'>
 
         <!-- ========== Winning ========== -->
         <div id="explanation_winning" class="invisible">
@@ -87,17 +87,16 @@
 
         <!-- ========== Image ========== -->
         <div id="explanation_image" class="invisible">
-            <div class='grd-grid-12'>
-                <div class='grd-grid-2 hide-mobile'></div>
-                <div class='grd-grid-4 grd-grid-mobile-12 padding-right'>
+            <div class='gr-row'>
+                <div class='gr-2 hide-mobile'></div>
+                <div class='gr-4 gr-12-m padding-right'>
                     <img id="explanation_image_1" class="responsive" />
                 </div>
-                <div class='grd-grid-4 grd-grid-mobile-12 padding-left'>
+                <div class='gr-4 gr-12-m padding-left'>
                     <img id="explanation_image_2" class="responsive" />
                 </div>
-                <div class='grd-grid-2 hide-mobile'></div>
+                <div class='gr-2 hide-mobile'></div>
             </div>
-            <div class="push"></div>
         </div>
 
         <!-- ========== Explain ========== -->
@@ -193,4 +192,4 @@
         </div>
 
     </div>
-</div><!-- grd-parent closes -->
+</div><!-- gr-parent closes -->

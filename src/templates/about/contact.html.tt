@@ -1,15 +1,15 @@
-<div class="grd-container">
-  <div class="grd-grid-12 grd-parent static_full">
-    <div class="grd-grid-2 grd-hide-mobile ja-hide">
+<div class="container">
+  <div class="gr-row gr-parent static_full">
+    <div class="gr-2 gr-hide-m ja-hide">
       <img class="responsive" src="[% request.url_for('images/pages/contact/contact-us-icon.svg') %]"/>
     </div>
-    <div class="grd-grid-5 grd-grid-mobile-12">
-      <div class="grd-row-padding">
+    <div class="gr-5 gr-12-m">
+      <div class="gr-padding-10">
         <h1>
           [% l("Contact us") %]
         </h1>
       </div>
-      <div class="grd-row-padding">
+      <div class="gr-padding-10">
         <span class="ja-hide no-para-margin">
           [% l("You'll find answers to most of your questions on the <a href='' target='_blank' id='faq_url'>FAQ</a> page.") %]
         </span>
@@ -17,20 +17,18 @@
           [% l("JAPAN ONLY CONTACT TEXT") %]
         </span>
       </div>
-      <div class="grd-row-padding grd-hide-mobile"></div>
-      <div class="grd-row-padding">
-        <span class="grd-grid-4 grd-grid-tablet-12 grd-no-gutter">
+      <div class="gr-padding-10 gr-row">
+        <span class="gr-4 gr-12-t">
           [% l("Email: ") %]
         </span>
-        <span class="grd-grid-7 grd-grid-tablet-12 grd-no-gutter" id="cs_contact_eaddress"></span>
+        <span class="gr-7 gr-12-t" id="cs_contact_eaddress"></span>
       </div>
-      <div class="grd-row-padding grd-hide-mobile"></div>
-      <div class="grd-row-padding ja-hide">
-        <span class="no-para-margin">
-          <label class="grd-grid-4 grd-grid-tablet-12 grd-no-gutter">
+      <div class="gr-padding-10 ja-hide">
+        <span class="no-para-margin gr-row">
+          <label class="gr-4 gr-12-t">
             [% l("Telephone:") %]
           </label>
-          <select class="grd-grid-7 grd-grid-tablet-12 grd-no-gutter" id="cs_telephone_number">
+          <select class="gr-7 gr-12-t" id="cs_telephone_number">
             <option disabled="[% true %]">
               [% l("Select Country") %]
             </option>
@@ -72,33 +70,33 @@
             </option>
           </select>
         </span>
-        <span class="grd-grid-7 grd-prefix-4 grd-no-gutter grd-grid-tablet-12 grd-prefix-tablet-0 grd-row-padding grd-grid-mobile-12" id="display_cs_telephone">
+        <span class="gr-7 gr-prefix-4 gr-12-t gr-prefix-t-0 gr-padding-10 gr-12-m" id="display_cs_telephone">
           [% "+44 (0) 1666 800042" %]
         </span>
       </div>
-      <div class="grd-row-padding">
-        <span class="no-para-margin calls_recording grd-grid-mobile-12">
+      <div class="gr-padding-10">
+        <span class="no-para-margin calls_recording gr-12-m">
           [% l("All calls are recorded for training and monitoring purposes") %]
         </span>
       </div>
-      <div class="grd-row-padding">
-        <div class="grd-grid-12 grd-parent ja-hide" id="live-chat-container">
-          <label class="grd-grid-4 grd-no-gutter">
+      <div class="gr-padding-10">
+        <div class="gr-row gr-parent ja-hide" id="live-chat-container">
+          <label class="gr-4">
             [% l("Live chat:") %]
           </label>
-          <div class="grd-grid-8 grd-no-gutter">
+          <div class="gr-8">
             <span id="live-chat-icon"></span>
           </div>
         </div>
       </div>
     </div>
-    <div class="grd-grid-5 grd-grid-mobile-12">
-      <div class="grd-row-padding">
+    <div class="gr-5 gr-12-m">
+      <div class="gr-padding-10">
         <h1>
           [% l("Company addresses") %]
         </h1>
       </div>
-      <div class="grd-row-padding">
+      <div class="gr-padding-10">
         <p class="no-para-margin address-heading">
           [% l("Malta") %]
         </p>
@@ -106,7 +104,7 @@
           [% l("Binary (Europe) Ltd & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825") %]
         </p>
       </div>
-      <div class="grd-row-padding">
+      <div class="gr-padding-10">
         <p class="no-para-margin address-heading">
           [% l("Isle of Man") %]
         </p>
@@ -114,7 +112,7 @@
           [% l("Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW") %]
         </p>
       </div>
-      <div class="grd-row-padding">
+      <div class="gr-padding-10">
         <p class="no-para-margin address-heading">
           [% l("Malaysia") %]
         </p>
@@ -122,7 +120,7 @@
           [% l("Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan") %]
         </p>
       </div>
-      <div class="grd-row-padding">
+      <div class="gr-padding-10">
         <p class="no-para-margin address-heading">
           [% l("Japan") %]
         </p>

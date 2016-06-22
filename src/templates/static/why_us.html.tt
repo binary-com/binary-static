@@ -1,6 +1,6 @@
-<div class="grd-container grd-default-container">
-  <div class="why-us static_full">
-    <div class="grd-grid-3 grd-hide-mobile">
+<div class="container">
+  <div class="why-us static_full gr-row">
+    <div class="gr-3 gr-hide-m">
       <div class="sidebar">
         <ul id="sidebar-nav">
           <li class="selected" id="sidebar-link-section-1">
@@ -41,12 +41,12 @@
         </div>
       </div>
     </div>
-    <div class="grd-grid-9 grd-grid-mobile-12 grd-parent">
+    <div class="gr-9 gr-12-m gr-parent">
       <div class="section">
         <a id="sharp-prices"></a>
         <div class="section-content">
           <div id="section-1">
-            <div class="grd-grid-12">
+            <div class="gr-12">
               <h1>
                 [% l("Why pay more?") %]
               </h1>
@@ -54,24 +54,26 @@
                 [% l("[_1]'s patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market.", website_name); %]
               </p>
             </div>
-            <div class="grd-grid-7 grd-grid-mobile-12">
-              <ul class="checked">
-                <li>
-                  [% l("Real-time prices, benchmarked against interbank options markets.") %]
-                </li>
-                <li>
-                  [% l("Returns above 100% on simple <a href='[_1]' class='pjaxload'>rise/fall</a> contracts.", request.url_for('trading?market=forex&formname=risefall')) %]
-                </li>
-                <li>
-                  [% l("Returns above 1000% on <a href='[_1]' class='pjaxload'>higher/lower</a> and <a href='[_2]' class='pjaxload'>touch/no-touch</a> trades.", request.url_for('trading?market=forex&formname=higherlower'), request.url_for('trading?market=forex&formname=touchnotouch')) %]
-                </li>
-                <li>
-                  [% l("No hidden fees or commissions.") %]
-                </li>
-              </ul>
-            </div>
-            <div class="grd-grid-5 grd-grid-mobile-10 grd-centered-mobile">
-              <img class="responsive" id="new-trader-icon" src="[% request.url_for('images/pages/why-us/why-us-sharp-prices.png') %]"/>
+            <div class="gr-row">
+                <div class="gr-7 gr-12-m">
+                  <ul class="checked">
+                    <li>
+                      [% l("Real-time prices, benchmarked against interbank options markets.") %]
+                    </li>
+                    <li>
+                      [% l("Returns above 100% on simple <a href='[_1]' class='pjaxload'>rise/fall</a> contracts.", request.url_for('trading?market=forex&formname=risefall')) %]
+                    </li>
+                    <li>
+                      [% l("Returns above 1000% on <a href='[_1]' class='pjaxload'>higher/lower</a> and <a href='[_2]' class='pjaxload'>touch/no-touch</a> trades.", request.url_for('trading?market=forex&formname=higherlower'), request.url_for('trading?market=forex&formname=touchnotouch')) %]
+                    </li>
+                    <li>
+                      [% l("No hidden fees or commissions.") %]
+                    </li>
+                  </ul>
+                </div>
+                <div class="gr-5 gr-1-m0 gr-centered-m">
+                  <img class="responsive" id="new-trader-icon" src="[% request.url_for('images/pages/why-us/why-us-sharp-prices.png') %]"/>
+                </div>
             </div>
           </div>
         </div>
@@ -80,7 +82,7 @@
         <a id="flexible-trades"></a>
         <div class="section-content">
           <div id="section-2">
-            <div class="grd-grid-12">
+            <div class="gr-12">
               <h1>
                 [% l("Trade your way") %]
               </h1>
@@ -88,11 +90,11 @@
                 [% l("Why limit yourself? Whatever your market view, [_1] allows you to put your strategy to work and profit from your predictions.", website_name) %]
               </p>
             </div>
-            <div class="grd-grid-12">
+            <div class="gr-12">
               <img class="responsive ja-hide" id="new-trader-icon" src="[% request.url_for('images/pages/tour/trade-tutorial_1.svg') %]"/>
               <img class="responsive hidden ja-show" id="new-trader-icon" src="[% request.url_for('images/pages/tour/tour-jp.svg') %]"/>
             </div>
-            <div class="grd-grid-12">
+            <div class="gr-12">
               <ul class="checked">
                 <li>
                   [% l("Choose a payout from \$1 to \$50,000.") %]
@@ -108,7 +110,6 @@
                 </li>
               </ul>
             </div>
-            <div class="clearfix"></div>
           </div>
         </div>
       </div>
@@ -116,29 +117,31 @@
         <a id="controlled-risk"></a>
         <div class="section-content">
           <div id="section-3">
-            <div class="grd-grid-12 grd-with-padding">
+            <div class="gr-12 gr-padding-10">
               <h1>
                 [% l("You won't lose your shirt") %]
               </h1>
             </div>
-            <div class="grd-grid-7 grd-grid-mobile-12">
-              <p>
-                [% l("With [_1], you're in control. Simply fix your upside and your downside before every trade.", website_name) %]
-              </p>
-              <ul class="checked">
-                <li>
-                  [% l("You risk only your initial stake, and your stake never increases, even in gapping markets.") %]
-                </li>
-                <li>
-                  [% l("You will have no 'margin calls', no 'stops', and no surprises.") %]
-                </li>
-                <li>
-                  [% l("You can close your trade before expiry to lock in profits.") %]
-                </li>
-              </ul>
-            </div>
-            <div class="grd-grid-5 grd-grid-mobile-8 grd-centered-mobile">
-              <img class="responsive" src="[% request.url_for('images/pages/why-us/why-us-do-not-lose.svg') %]"/>
+            <div class="gr-row">
+                <div class="gr-7 gr-12-m">
+                  <p>
+                    [% l("With [_1], you're in control. Simply fix your upside and your downside before every trade.", website_name) %]
+                  </p>
+                  <ul class="checked">
+                    <li>
+                      [% l("You risk only your initial stake, and your stake never increases, even in gapping markets.") %]
+                    </li>
+                    <li>
+                      [% l("You will have no 'margin calls', no 'stops', and no surprises.") %]
+                    </li>
+                    <li>
+                      [% l("You can close your trade before expiry to lock in profits.") %]
+                    </li>
+                  </ul>
+                </div>
+                <div class="gr-5 gr-8-m gr-centered-m">
+                  <img class="responsive" src="[% request.url_for('images/pages/why-us/why-us-do-not-lose.svg') %]"/>
+                </div>
             </div>
           </div>
         </div>
@@ -147,7 +150,7 @@
         <a id="power-and-simplicity"></a>
         <div class="section-content">
           <div id="section-4">
-            <div class="grd-grid-12">
+            <div class="gr-12">
               <h1>
                 [% l("One simple platform") %]
               </h1>
@@ -155,76 +158,84 @@
                 [% l("[_1] offers the world's financial markets in a simple, user-friendly platform.", website_name) %]
               </p>
             </div>
-            <div class="grd-grid-8 grd-grid-mobile-12 grd-parent">
-              <div class="grd-grid-7 grd-with-padding">
-                <img class="responsive" src="[% request.url_for('images/pages/why-us/trade-sample.svg') %]"/>
-              </div>
-              <div class="grd-grid-5 grd-parent">
-                <div class="grd-grid-12 grd-with-padding"></div>
-                <div class="grd-grid-12 grd-with-padding">
-                  <img class="responsive" src="[% request.url_for('images/pages/why-us/trade-direct-value.svg') %]"/>
+            <div class="gr-row">
+                <div class="gr-8 gr-12-m gr-parent">
+                    <div class="gr-row">
+                        <div class="gr-7 gr-padding-10">
+                          <img class="responsive" src="[% request.url_for('images/pages/why-us/trade-sample.svg') %]"/>
+                        </div>
+                        <div class="gr-5 gr-parent">
+                          <div class="gr-12 gr-padding-10"></div>
+                          <div class="gr-12 gr-padding-10">
+                            <img class="responsive" src="[% request.url_for('images/pages/why-us/trade-direct-value.svg') %]"/>
+                          </div>
+                          <div class="gr-12 gr-padding-10">
+                            <img class="responsive" src="[% request.url_for('images/pages/why-us/trade-opposite-value.svg') %]"/>
+                          </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="grd-grid-12 grd-with-padding">
-                  <img class="responsive" src="[% request.url_for('images/pages/why-us/trade-opposite-value.svg') %]"/>
+                <div class="gr-4 gr-12-m">
+                  <ul class="checked">
+                    <li>
+                      [% l("Find the right trade for every market condition.") %]
+                    </li>
+                    <li>
+                      [% l("Execute your trade in seconds.") %]
+                    </li>
+                    <li>
+                      [% l("Monitor your portfolio in real time.") %]
+                    </li>
+                    <li>
+                      [% l("Sell back trades at market prices.") %]
+                    </li>
+                  </ul>
                 </div>
-              </div>
-            </div>
-            <div class="grd-grid-4 grd-grid-mobile-12">
-              <ul class="checked">
-                <li>
-                  [% l("Find the right trade for every market condition.") %]
-                </li>
-                <li>
-                  [% l("Execute your trade in seconds.") %]
-                </li>
-                <li>
-                  [% l("Monitor your portfolio in real time.") %]
-                </li>
-                <li>
-                  [% l("Sell back trades at market prices.") %]
-                </li>
-              </ul>
             </div>
           </div>
         </div>
       </div>
       <div class="section id-hide ja-hide">
         <a id="security"></a>
-        <div class="section-content grd-parent grd-grid-12">
+        <div class="section-content gr-parent gr-12">
           <div id="section-5">
-            <div class="grd-grid-12">
+            <div class="gr-12">
               <h1>
                 [% l("Your funds are safe") %]
               </h1>
             </div>
-            <div class="grd-grid-8 grd-grid-mobile-12">
-              <p>
-                [% l("With [_1], your money is secure.", website_name) %]
-              </p>
-              <ul class="checked">
-                <li>
-                  [% l("We segregate and hold client funds in secure AAA-rated banks.") %]
-                </li>
-                <li>
-                  [% l("We are fully licensed in the British Isles and Malta.") %]
-                </li>
-                <li>
-                  [% l("We have a proven track record since starting in 2000.") %]
-                </li>
-              </ul>
-            </div>
-            <div class="grd-grid-4 grd-grid-mobile-12 grd-parent">
-              <div class="grd-grid-11 grd-grid-mobile-8 grd-with-padding grd-centered">
-                <img class="responsive" src="[% request.url_for('images/pages/why-us/mga-logo2.svg') %]"/>
-              </div>
-              <div class="grd-parent grd-grid-12 grd-grid-mobile-8 grd-centered">
-                <div class="grd-grid-6 grd-with-padding">
-                  <img class="responsive" src="[% request.url_for('images/pages/why-us/why-us-proven-record_1.svg') %]"/>
+            <div class="gr-row">
+                <div class="gr-8 gr-12-m">
+                  <p>
+                    [% l("With [_1], your money is secure.", website_name) %]
+                  </p>
+                  <ul class="checked">
+                    <li>
+                      [% l("We segregate and hold client funds in secure AAA-rated banks.") %]
+                    </li>
+                    <li>
+                      [% l("We are fully licensed in the British Isles and Malta.") %]
+                    </li>
+                    <li>
+                      [% l("We have a proven track record since starting in 2000.") %]
+                    </li>
+                  </ul>
                 </div>
-                <div class="grd-grid-6 grd-with-padding">
-                  <img class="responsive" src="[% request.url_for('images/pages/footer/isle-of-man.png') %]"/>
+                <div class="gr-4 gr-12-m gr-parent">
+                    <div class="gr-row">
+                        <div class="gr-11 gr-8-m gr-padding-10 gr-centered">
+                          <img class="responsive" src="[% request.url_for('images/pages/why-us/mga-logo2.svg') %]"/>
+                        </div>
+                        <div class="gr-parent gr-12 gr-8-m gr-centered">
+                          <div class="gr-6 gr-padding-10">
+                            <img class="responsive" src="[% request.url_for('images/pages/why-us/why-us-proven-record_1.svg') %]"/>
+                          </div>
+                          <div class="gr-6 gr-padding-10">
+                            <img class="responsive" src="[% request.url_for('images/pages/footer/isle-of-man.png') %]"/>
+                          </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
           </div>
         </div>
@@ -233,34 +244,36 @@
         <a id="trust"></a>
         <div class="section-content">
           <div id="section-6">
-            <div class="grd-grid-12">
+            <div class="gr-12">
               <h1>
                 [% l("Go with the leader") %]
               </h1>
             </div>
-            <div class="grd-grid-3 grd-grid-mobile-6 grd-centered-mobile">
-              <p>
-                <img class="responsive" src="[% request.url_for('images/pages/home/awards-mena.png') %]"/>
-              </p>
-            </div>
-            <div class="grd-grid-9 grd-grid-mobile-12">
-              <p>
-                [% l("[_1] is the award-winning industry pioneer in online options trading. We boast:", website_name) %]
-              </p>
-              <ul class="checked">
-                <li>
-                  [% l("Over two billion dollars in trades to date.") %]
-                </li>
-                <li>
-                  [% l("First-class client service.") %]
-                </li>
-                <li>
-                  [% l("Multi award-winning trading platform.") %]
-                </li>
-                <li>
-                  [% l("Exclusive binary trading technology.") %]
-                </li>
-              </ul>
+            <div class="gr-row">
+                <div class="gr-3 gr-6-m gr-centered-m">
+                  <p>
+                    <img class="responsive" src="[% request.url_for('images/pages/home/awards-mena.png') %]"/>
+                  </p>
+                </div>
+                <div class="gr-9 gr-12-m">
+                  <p>
+                    [% l("[_1] is the award-winning industry pioneer in online options trading. We boast:", website_name) %]
+                  </p>
+                  <ul class="checked">
+                    <li>
+                      [% l("Over two billion dollars in trades to date.") %]
+                    </li>
+                    <li>
+                      [% l("First-class client service.") %]
+                    </li>
+                    <li>
+                      [% l("Multi award-winning trading platform.") %]
+                    </li>
+                    <li>
+                      [% l("Exclusive binary trading technology.") %]
+                    </li>
+                  </ul>
+                </div>
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-<div class="grd-grid-12">
+<div class="gr-12">
 
     <p>[% l('Are you an Investment professional?') %]</p>
     <p>[% l('Do you run a website?') %]</p>
@@ -9,7 +9,7 @@
         <h4>[% l('Register') %]</h4>
     </div>
 
-    <div class="center-aligned grd-row-padding">
+    <div class="center-text gr-padding-10">
        <a class="button" href="https://login.binary.com/signup.php">
             <span>[% l('Sign me up') %]</span>
         </a>
@@ -32,7 +32,7 @@
         <h4>[% l('Register') %]</h4>
     </div>
 
-    <div class="center-aligned grd-row-padding">
+    <div class="center-text gr-padding-10">
         <a class="button" href="https://login.binary.com/signup.php">
             <span>[% l('Sign me up') %]</span>
         </a>
@@ -87,7 +87,7 @@
         <h4>[% l('Register') %]</h4>
     </div>
 
-    <div class="center-aligned grd-row-padding">
+    <div class="center-text gr-padding-10">
         <a class="button" href="https://login.binary.com/signup.php">
             <span>[% l('Sign me up') %]</span>
         </a>

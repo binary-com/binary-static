@@ -1,14 +1,14 @@
-<div class="job-details grd-container">
-  <div class="grd-grid-12 grd-parent static_full">
-    <div class="grd-grid-12">
-      <div class="grd-grid-3 grd-row-padding grd-hide-mobile grd-hide-phablet">
-        <div class="grd-grid-12 center">
+<div class="job-details container">
+  <div class="gr-parent static_full">
+    <div class="gr-row">
+      <div class="gr-3 gr-padding-10 gr-hide-m gr-hide-p">
+        <div class="gr-12 center-text">
           <img class="responsive dept-image" src="[% request.url_for('images/pages/careers/Information_Technology.svg') %]" style="display:none"/>
         </div>
-        <div class="grd-grid-12 grd-row-padding">
-          <h1 class="center" id="title"></h1>
+        <div class="gr-12 gr-padding-10">
+          <h1 class="center-text" id="title"></h1>
         </div>
-        <div class="grd-grid-12 grd-row-padding">
+        <div class="gr-12 gr-padding-10">
           <div class="sidebar" style="display:none">
             <ul id="sidebar-nav">
               <li id="one">
@@ -39,28 +39,28 @@
           </div>
         </div>
       </div>
-      <div class="grd-grid-9 grd-row-padding grd-grid-mobile-12 grd-grid-phablet-12 sections">
+      <div class="gr-9 gr-padding-10 gr-12-m gr-12-p sections">
         <h1 class="title-sections"></h1>
         <div></div>
       </div>
     </div>
-    <div class="grd-grid-12">
-      <div class="grd-grid-3 grd-hide-mobile grd-hide-phablet"></div>
-      <div class="grd-grid-9 grd-grid-mobile-12 grd-grid-phablet-12 center">
-        <div class="grd-grid-12">
+    <div class="gr-row">
+      <div class="gr-3 gr-hide-m gr-hide-p"></div>
+      <div class="gr-9 gr-12-m gr-12-p center-text gr-centered">
+        <div class="gr-12">
           <a class="button button-focus pjaxload" href="mailto:hr@binary.com">
             <span>
               [% l("Submit your CV and Cover Letter") %]
             </span>
           </a>
         </div>
-        <div class="grd-grid-12 grd-row-padding senior_perl_message invisible">
+        <div class="gr-12 gr-padding-10 senior_perl_message invisible">
           <p>
             [% l("Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl+ebg13@ovanel.pbz sbe snfg-genpx pbafvqrengvba.") %]
           </p>
         </div>
-        <div class="grd-grid-12 grd-row-padding">
-          <a class="pjaxload" id="back-button" style="margin-top:1.4em; float:left;">
+        <div class="gr-12 gr-padding-10">
+          <a class="pjaxload" id="back-button">
             [% l("<< Back to Job Descriptions") %]
           </a>
         </div>

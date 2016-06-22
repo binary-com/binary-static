@@ -28,9 +28,6 @@ body.JA {
         display: inline-block !important;
         visibility: visible !important;
     }
-    .ja-no-padding {
-        padding: 0 !important;
-    }
     .regulatory-logo {
         display: none !important;
     }
@@ -46,7 +43,7 @@ body.JA {
     #topMenuWebtrader, #topMenuBetaInterface {
         display: none !important;
     }
-    #footer-regulatory .grd-grid-9, #footer-regulatory .grd-grid-phablet-7 {
+    #footer-regulatory .gr-9, #footer-regulatory .gr-p-7 {
         width: 100% !important;
     }
     #bet_guide_content div:nth-child(1) {

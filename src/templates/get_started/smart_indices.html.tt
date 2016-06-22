@@ -2,7 +2,7 @@
   <h1>
     [% l("Smart Indices") %]
   </h1>
-  <div class="grd-grid-12 grd-row-padding">
+  <div class="gr-12 gr-padding-10">
     <h2>
       [% l("Smart FX") %]
     </h2>
@@ -10,25 +10,27 @@
       [% l("[_1]'s Smart FX are smart markets that measure the value of a currency against a basket of major currencies.", website_name) %]
     </p>
   </div>
-  <div class="grd-grid-4">
+  <div class="gr-row">
+  <div class="gr-4">
     <img class="responsive" src="[% request.url_for('images/pages/smart-indices/smart-indices-2.svg') %]"/>
   </div>
-  <div class="grd-grid-8">
+  <div class="gr-8">
     <p>
       [% l("The USD Index is a weighted Index, measuring the US Dollar's value against a basket of 5 global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%.") %]
     </p>
   </div>
-  <div class="grd-grid-12">
+  </div>
+  <div class="gr-12">
     <p>
       [% l("The AUD Index is a weighted Index, measuring the Australian Dollar's value against a basket of 5 global currencies (USD, EUR, GBP, JPY, CAD), each weighted by 20%.") %]
     </p>
   </div>
-  <div class="grd-grid-12">
+  <div class="gr-12">
     <p>
       [% l("The EUR Index is a weighted Index, measuring the Euro's value against a basket of 5 global currencies (USD, AUD, GBP, JPY, CAD), each weighted by 20%.") %]
     </p>
   </div>
-  <div class="grd-grid-12">
+  <div class="gr-12">
     <p>
       [% l("The GBP Index is a weighted Index, measuring the British Pound's value against a basket of 5 global currencies (USD, EUR, AUD, JPY, CAD), each weighted by 20%.") %]
     </p>

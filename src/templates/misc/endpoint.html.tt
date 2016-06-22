@@ -1,15 +1,15 @@
 <div class="endpoint-config">
   <h1>[% l('Change API Endpoint') %]</h1>
-  <div class="grd-parent grd-row-padding">
+  <div class="gr-padding-10">
     <div class="rbox form">
       <div class="rbox-wrap">
         <fieldset>
           <legend>[% l('Details') %]</legend>
-          <div class="grd-row-padding row clear">
-              <div class="grd-grid-4 form_label">
+          <div class="gr-padding-10 gr-row clear">
+              <div class="gr-4 form_label">
                   <label for="server_url">[% l('Server') %]</label>
               </div>
-              <div class="grd-grid-8">
+              <div class="gr-8">
                   <input type="text" class="text" id="server_url" maxlength="30"></input>
                   <p class="hint">
                     [% l('e.g. www.binaryqa36.com') %]
@@ -17,11 +17,11 @@
                   <p class="errorfield" id="error-server_url" style="display:none"></p>
               </div>
           </div>
-          <div class="grd-row-padding row clear">
-              <div class="grd-grid-4 form_label">
+          <div class="gr-padding-10 gr-row clear">
+              <div class="gr-4 form_label">
                   <label for="app_id">[% l('OAuth App ID (Optional)') %]</label>
               </div>
-              <div class="grd-grid-8">
+              <div class="gr-8">
                   <input type="text" class="text" id="app_id" maxlength="5"></input>
                   <p class="hint">
                     [% l('You have to register and get App ID before you can use different OAuth server for authentication. For more information refer to OAuth details on https://developers.binary.com/.') %]
@@ -30,7 +30,7 @@
               </div>
           </div>
         </fieldset>
-        <fieldset class="center-aligned" id="formlayout">
+        <fieldset class="center-text" id="formlayout">
           <div class="button" style="display:inline-block">
               <button class="button" id="new_endpoint">[% l('Submit') %]</button>
           </div>

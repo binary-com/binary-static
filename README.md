@@ -10,10 +10,8 @@ In order to work on your own version of the Binary.com Javascript and CSS, pleas
 You will also need to install the following on your development machine:
 
 - Ruby, RubyGems
-- Sass version 3.3.13 (`sudo gem install sass -v 3.3.13`)
+- Sass (`sudo gem install sass`)
 - Node.js and NPM (see <https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager>)
-
-Please check your `sass` version, run `sass -v` and it should give you `Sass 3.3.13` but if it doesn't match then uninstall your version using `sudo gem uninstall sass --version '<yourversion>'` and execute `sudo gem install sass -v 3.3.13` again
 
 - Go to project root
 

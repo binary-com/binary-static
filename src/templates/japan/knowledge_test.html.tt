@@ -22,39 +22,39 @@
     </div>
     <div id="knowledge-test-answer" class="invisible">
         <div id="section1-result">
-            <h2>[% l('{JAPAN ONLY}Section 1: Structure') %]</h2>
+            <h2 class="gr-padding-10">[% l('{JAPAN ONLY}Section 1: Structure') %]</h2>
         </div>
         <div id="section2-result">
-            <h2>[% l('{JAPAN ONLY}Section 2: Method') %]</h2>
+            <h2 class="gr-padding-10">[% l('{JAPAN ONLY}Section 2: Method') %]</h2>
         </div>
         <div id="section3-result">
-            <h2>[% l('{JAPAN ONLY}Section 3: Outline') %]</h2>
+            <h2 class="gr-padding-10">[% l('{JAPAN ONLY}Section 3: Outline') %]</h2>
         </div>
         <div id="section4-result">
-            <h2>[% l('{JAPAN ONLY}Section 4: Risk') %]</h2>
+            <h2 class="gr-padding-10">[% l('{JAPAN ONLY}Section 4: Risk') %]</h2>
         </div>
         <div id="section5-result">
-            <h2>[% l('{JAPAN ONLY}Section 5: Calculation') %]</h2>
+            <h2 class="gr-padding-10">[% l('{JAPAN ONLY}Section 5: Calculation') %]</h2>
         </div>
     </div>
     <div id="knowledge-test-questions" class="invisible">
         <div id="section1-question">
-            <h2>[% l('{JAPAN ONLY}Section 1: Structure') %]</h2>
+            <h2 class="gr-padding-10">[% l('{JAPAN ONLY}Section 1: Structure') %]</h2>
         </div>
         <div id="section2-question">
-            <h2>[% l('{JAPAN ONLY}Section 2: Method') %]</h2>
+            <h2 class="gr-padding-10">[% l('{JAPAN ONLY}Section 2: Method') %]</h2>
         </div>
         <div id="section3-question">
-            <h2>[% l('{JAPAN ONLY}Section 3: Outline') %]</h2>
+            <h2 class="gr-padding-10">[% l('{JAPAN ONLY}Section 3: Outline') %]</h2>
         </div>
         <div id="section4-question">
-            <h2>[% l('{JAPAN ONLY}Section 4: Risk') %]</h2>
+            <h2 class="gr-padding-10">[% l('{JAPAN ONLY}Section 4: Risk') %]</h2>
         </div>
         <div id="section5-question">
-            <h2>[% l('{JAPAN ONLY}Section 5: Calculation') %]</h2>
+            <h2 class="gr-padding-10">[% l('{JAPAN ONLY}Section 5: Calculation') %]</h2>
         </div>
 
-        <span class="button">
+        <span class="button gr-centered center-text">
             <button id="knowledge-test-submit" class="button">[% l('Submit') %]</button>
         </span>
     </div>

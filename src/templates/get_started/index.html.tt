@@ -1,5 +1,6 @@
 <dl>
-  <div class="list grd-grid-6 grd-no-gutter-right">
+  <div class="gr-row">
+  <div class="list gr-6 gr-no-gutter-right">
     <div class="section">
       <a class="pjaxload" href="[% request.url_for('/get-started/what-is-binary-trading') %]">
         <div id="what-is-binary-trading"></div>
@@ -56,7 +57,7 @@
       </div>
     </div>
   </div>
-  <div class="list grd-grid-6 grd-no-gutter-left">
+  <div class="list gr-6 gr-no-gutter-left">
     <div class="section">
       <a class="pjaxload" href="[% request.url_for('/get-started/types-of-trades') %]">
         <div id="types-of-trades"></div>
@@ -113,4 +114,5 @@
       </div>
     </div>
   </div>
+</div>
 </dl>
