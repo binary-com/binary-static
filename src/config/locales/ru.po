@@ -7,14 +7,16 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-17 09:18+0000\n"
+"PO-Revision-Date: 2016-06-22 17:02+0000\n"
 "Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
+"Language-Team: Russian "
+"<https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.7-dev\n"
 
 msgid "\"Binary\" or \"digital\" options are options that pay a pre-determined, fixed amount, depending on whether or not an event occurs at the time the Binary Option expires. Binary Options can have only one of two possible outcomes and allow you to take a simple \"Yes or No\" approach. Like traditional options, Binary Options are based on an underlying asset such as currencies, commodities, indexes or stocks, however one of the most significant differences from traditional options, among others, is that there can be only two outcomes for the option, either the client is paid the return upon the occurrence of the event, or the client loses the investment amount as determined in each option."
@@ -112,7 +114,10 @@ msgid "%1 is one of the oldest and most respected names in online binary trading
 msgstr "%1 – одно из первых и самых авторитетных имён в онлайн торговле бинарными опционами."
 
 msgid "%1 is owned and operated by the Binary Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
-msgstr "%1 принадлежит и находится под управлением группы компаний Binary Ltd. Для получения дополнительной информации, пожалуйста, <a href=\"%2\">посетите страницу нашей истории</a>."
+msgstr ""
+"%1 принадлежит и находится под управлением группы компаний Binary Ltd. Для "
+"получения дополнительной информации, пожалуйста, <a href='%2'>посетите "
+"страницу нашей истории</a>."
 
 msgid "%1 is seeking a junior to mid-career professional with exceptional administrative and organization skills to join its General Affairs Team."
 msgstr "%1 ищет младшего или среднего специалиста с отличными административными и организационными навыками в команду, занимающуюся решением общих вопросов."
@@ -1540,10 +1545,9 @@ msgstr "Пароль кассы"
 msgid "Certain limits are imposed as to the acceptable levels for barrier/strike prices of contracts. Typically, the barrier/strike may not be too close nor too far from the current underlying market level."
 msgstr "Налагаются определенные ограничения на приемлемые уровни рыночных цен для выигрыша контрактов. Обычно уровень рынка для выигрыша не может быть слишком близок к настоящему уровню рынка."
 
-#, fuzzy
 #| msgid "Change country"
 msgid "Change API Endpoint"
-msgstr "Поменять страну"
+msgstr "Изменить конечную точку API"
 
 msgid "Change Password"
 msgstr "Сменить пароль"
@@ -1798,19 +1802,19 @@ msgid "Contact us"
 msgstr "Обратная связь"
 
 msgid "Content 1 for tab 1"
-msgstr ""
+msgstr "Содержание 1 во вкладке 1"
 
 msgid "Content 2 for tab 2. active by default"
-msgstr ""
+msgstr "Содержание 2 во вкладке 2. активно по умолчанию"
 
 msgid "Content 2/1 for tab 2 submenu 1"
-msgstr ""
+msgstr "Содержание 2/1 во вкладке 2 подменю 1"
 
 msgid "Content 2/2 for tab 2 submenu 2"
-msgstr ""
+msgstr "Содержание 2/2 во вкладке 2 подменю 2"
 
 msgid "Content 3 for tab 3"
-msgstr ""
+msgstr "Содержание 3 во вкладке 3"
 
 msgid "Continue"
 msgstr "Подтвердить"
@@ -2685,13 +2689,16 @@ msgid "Follow up on rejected deposits"
 msgstr "Контроль над обработкой отклоненных депозитов"
 
 msgid "Footer"
-msgstr ""
+msgstr "Подвал сайта"
 
 msgid "For added security, please check your email to retrieve the verification token."
 msgstr "Для дополнительной безопасности, пожалуйста, проверьте электронную почту, на которую должен прийти проверочный токен."
 
 msgid "For all types of tabs, you could call \"build_menu_with_content\" on server side to generate the HTML for you, or just output this HTML samples."
 msgstr ""
+"Чтобы просмотреть все типы вкладок, вы можете набрать \""
+"build_menu_with_content\" на сервере, чтобы создать  код HTML или просто "
+"вывести данные примеры HTML кода."
 
 msgid "For e-cash methods or local currencies not supported by %1."
 msgstr "Для методов электронной оплаты или местных валют, не поддерживаемых %1."
@@ -2726,7 +2733,7 @@ msgid "Format: yyyy-mm-dd (not required for virtual-money accounts)"
 msgstr "Формат: гггг-мм-дд (не требуется для демо-счетов)"
 
 msgid "Forms"
-msgstr ""
+msgstr "Формы"
 
 msgid "Fr"
 msgstr "Пт"
@@ -2907,7 +2914,7 @@ msgid "Higher/Lower trades"
 msgstr "Контракты Выше/Ниже"
 
 msgid "Hint comes here"
-msgstr ""
+msgstr "Подсказка"
 
 msgid "Housewife / Househusband"
 msgstr "Housewife / Househusband"
@@ -3019,10 +3026,13 @@ msgstr "Если какой-либо из пунктов данного Согл
 msgid "If the Company is legally required to disclose your personal or financial information by law, regulation or pursuant to the order of a court of competent jurisdiction or a governmental agency, the Company  shall, unless legally prohibited, promptly notify you to that effect, in order to give you the opportunity to seek such protection for the information as it deems appropriate. Such required disclosure shall not be construed as a breach of this Terms and Conditions Agreement."
 msgstr "Если Компания по закону обязана раскрыть Вашу личную или финансовую информацию в соответствии с законом, распоряжением или приказом суда компетентной юрисдикции или правительственным органом, то Компания, если это не запрещено законом, незамедлительно уведомит Вас на этот счет для того, чтобы дать Вам возможность получить защиту информации, которую Компания сочтет целесообразной. Такое обязательное раскрытие не должно быть истолковано как нарушение Правил и Условий соглашения."
 
-#, fuzzy
 #| msgid "You must immediately delete all Content if we terminate your use of the Binary.com API for breach of these Terms, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
 msgid "If this Agreement is terminated for any reason, you must permanently delete all Content, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
-msgstr "Вы должны незамедлительно удалить весь Контент, если мы прервём использование Вами API Binary.com за нарушение данных Правил, за исключением случаев, когда таковые действия приведут к нарушению Вами любых законов или обязательств, возложенных на Вас государственными органами."
+msgstr ""
+"В случае прекращения действия данного Договора (по любой причине), Вы должны "
+"удалить весь Контент без возможности восстановления, за исключением случаев, "
+"когда таковые действия приведут к нарушению Вами любых законов или "
+"обязательств, возложенных на Вас государственными органами."
 
 #, fuzzy
 #| msgid "If we’re happy with your results, we’ll contact you for an interview and then do background and reference checks."
@@ -4312,6 +4322,9 @@ msgstr "Дополнительные преимущества"
 
 msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with "
 msgstr ""
+"В частности, когда мы заключим с Вами сделку в рамках торговли бинарными "
+"опционами (далее именуемую \"Контракт\"), мы будем обязаны предоставить Вам "
+"следующее: "
 
 msgid "Mother's maiden name"
 msgstr "Девичья фамилия матери"
@@ -4715,7 +4728,7 @@ msgid "Page 2 of 3"
 msgstr "Страница %1 of %2"
 
 msgid "Page section tab"
-msgstr ""
+msgstr "Вкладка раздела страницы"
 
 msgid "Participating in the forex, stocks or commodities markets?"
 msgstr "Хотите участвовать в торговле на рынках форекс, акций и сырьевых материалов?"
@@ -5279,7 +5292,7 @@ msgid "Reset Password"
 msgstr "Изменить пароль"
 
 msgid "Reset to Original Settings"
-msgstr ""
+msgstr "Восстановить исходные настройки"
 
 msgid "Resolve complex customer care issues in the best interest of our global clients and the company"
 msgstr "Разрешение сложных вопросов из области обслуживания клиентов в интересах наших мировых клиентов и самой компании"
@@ -5494,7 +5507,7 @@ msgid "September"
 msgstr "Сентябрь"
 
 msgid "Server"
-msgstr ""
+msgstr "Сервер"
 
 msgid "Session duration limit cannot be more than 6 weeks."
 msgstr "Лимит на продолжительность сессии не может превышать 6 недель."
@@ -5546,6 +5559,7 @@ msgstr "Открыть счет"
 
 msgid "Sign up as a tester and look for Binary.com-related projects."
 msgstr ""
+"Войти в качестве тестировщика и найти проекты, относящиеся к Binary.com."
 
 msgid "Significant experience in Social Media, Marketing, and / or Advertising"
 msgstr "Хороший опыт работы в социальных сетях, маркетинге и / или в сфере рекламы"
@@ -5658,7 +5672,7 @@ msgid "State/Province"
 msgstr "Штат/провинция/область"
 
 msgid "Stated limits are subject to change without prior notice."
-msgstr ""
+msgstr "Указанные лимиты могут быть изменены без предварительного уведомления."
 
 msgid "Statement"
 msgstr "История счета"
@@ -5782,7 +5796,7 @@ msgid "Supporting the Group's global recruiting and talent management needs"
 msgstr "Поддержание процесса найма мировых сотрудников для группы наших компаний и управление кадровым потенциалом"
 
 msgid "Tab With Submenus"
-msgstr ""
+msgstr "Вкладка с подменю"
 
 #, fuzzy
 #| msgid "Table"
@@ -5790,7 +5804,7 @@ msgid "Tables"
 msgstr "Таблица"
 
 msgid "Tabs"
-msgstr ""
+msgstr "Вкладки"
 
 msgid "Talk to us"
 msgstr "Пообщайтесь с нами"
@@ -5859,7 +5873,7 @@ msgid "Test-run %1, and sharpen your trading skills, with a no-risk, no-commitme
 msgstr "Попробуйте прямо сейчас работу на демо-счету, чтобы улучшить свои навыки, без риска или обязательств."
 
 msgid "Text"
-msgstr ""
+msgstr "Текст"
 
 msgid "Th"
 msgstr "Чт"
@@ -6409,10 +6423,9 @@ msgstr "Данный документ (\"Соглашение\") устанав�
 msgid "This feature is not relevant to virtual-money accounts."
 msgstr "Данная функция недоступна на демо-счетах."
 
-#, fuzzy
 #| msgid "This feature is not relevant to virtual-money accounts."
 msgid "This feature is only relevant to payment agent accounts."
-msgstr "Данная функция недоступна на демо-счетах."
+msgstr "Данная функция доступна лишь на счетах платёжных агентов."
 
 msgid "This field is required."
 msgstr "Данное поле является необходимым."
@@ -7353,10 +7366,9 @@ msgstr "Вы не выполняете или нарушаете любое об
 msgid "You are not allowed to rebate any part commission payment onto your referrals and should the company realise you are engaged in such actions; your affiliate account shall be revoked immediately."
 msgstr "Вы не имеете права перечислять часть комиссионных выплат клиентам. Если Компания узнает, что Вы причастны к таким действиям, Ваш партнерский счет будет незамедлительно аннулирован."
 
-#, fuzzy
 #| msgid "<p>You are not allowed to access this payment method page.</p>"
 msgid "You are not allowed to store any Content (such as feed data)."
-msgstr "<p>У Вас нет доступа к странице с этим способом снятия средств.</p>"
+msgstr "Вам запрещено хранить любой Контент (например, котировки)."
 
 msgid "You are not authorized for withdrawal via payment agent."
 msgstr "Вы не можете выводить средства через платежного агента."
