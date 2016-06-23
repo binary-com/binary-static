@@ -159,6 +159,7 @@ var Price = (function() {
         }
 
         var container = document.getElementById('price_container_' + position);
+        if (!container) return;
         if (!$(container).is(":visible")) {
             $(container).fadeIn(200);
         }

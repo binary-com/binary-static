@@ -36,6 +36,8 @@ if (isJapanTrading()) {
                 contractCategories = {},
                 barrierCategory;
 
+            if (!contracts) return;
+
             open = contracts['open'];
             close = contracts['close'];
 
@@ -68,6 +70,8 @@ if (isJapanTrading()) {
         var getContractForms = function() {
             var contracts = Contract.contracts()['contracts_for'],
                 tradeContractForms = {};
+
+            if (!contracts) return;
 
             contracts.available.forEach(function(currentObj) {
                 var contractCategory = currentObj['contract_category'];

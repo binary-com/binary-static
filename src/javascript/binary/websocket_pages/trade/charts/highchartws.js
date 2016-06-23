@@ -606,6 +606,7 @@ var Highchart = (function() {
       chart.series[0].addPoint([options.tick.epoch*1000, options.tick.quote*1]);
     } else {
       var c = options.ohlc;
+      if (!c) return;
       var ohlc = [c.open_time*1000, c.open*1, c.high*1, c.low*1, c.close*1];
 
       if(last.x !== ohlc[0]) {
