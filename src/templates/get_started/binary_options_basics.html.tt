@@ -47,7 +47,7 @@
       [% l("4. Choose your Payout") %]
     </h2>
     <p>
-      [% l("With [_1] you're in control of how much you can win. You specify a fixed payout amount at the outset, and your stake - what you pay - is then calculated. Binary.com offers payouts from \$1 to \$50,000.", website_name) %]
+      [% l("With [_1] you're in control of how much you can win. You specify a fixed payout amount at the outset, and your stake - what you pay - is then calculated. [_1] offers payouts from \$1 to \$50,000.", website_name) %]
     </p>
   </div>
 </div>

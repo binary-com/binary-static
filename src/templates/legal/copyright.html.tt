@@ -3,7 +3,7 @@
         [% l("Copyright") %]
     </h2>
     <p>
-        [% l("The [_1] website is protected by certain copyrights.", website) %]
+        [% l("The [_1] website is protected by certain copyrights.", website_name) %]
     </p>
     <p>
         [% l("The materials comprising the [_1] website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-<span class='currentYear'></span> Binary Group of companies. All rights reserved.", SITENAME) %]
@@ -15,7 +15,7 @@
         [% l("These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a Binary Group company. If you have questions about these terms or would like information about licensing materials from Binary Ltd., please contact us.") %]
     </p>
     <p>
-        [% l("[_1] and the bull/bear logo are registered trademarks.", website) %]
+        [% l("[_1] and the bull/bear logo are registered trademarks.", website_name) %]
     </p>
 
 </div>

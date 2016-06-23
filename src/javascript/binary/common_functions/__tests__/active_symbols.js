@@ -5,7 +5,7 @@ var LiveApi = require('binary-live-api').LiveApi;
 var api = new LiveApi({ websocket: ws });
 var deep = require('deep-diff');
 
-/* 
+/*
 	There is a market called forex, which has a submarket called major_pairs, which has a symbol called frxEURUSD
 */
 

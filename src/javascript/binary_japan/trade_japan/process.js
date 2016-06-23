@@ -1,9 +1,9 @@
 if (isJapanTrading()) {
 
   var processForgetTables = function() {
-    BinarySocket.send({
-      forget_all: 'pricing_table',
-    });
+      BinarySocket.send({
+          forget_all: 'pricing_table',
+      });
   };
 
   var processPricingTableRequest = function() {
@@ -49,4 +49,3 @@ if (isJapanTrading()) {
 
   };
 }
-
