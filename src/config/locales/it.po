@@ -2,9 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Italian (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-22 13:15+0000\n"
+"PO-Revision-Date: 2016-06-23 13:18+0000\n"
 "Last-Translator: Annalisa <ligiu@me.com>\n"
-"Language-Team: Italian <https://hosted.weblate.org/projects/binary/static/it/>\n"
+"Language-Team: Italian "
+"<https://hosted.weblate.org/projects/binary/static/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -188,6 +189,9 @@ msgstr "I Contratti Spread di %1 richiedono uno 'stop loss' in grado di limitare
 
 msgid "%1's Volatility Indices are based on a cryptographically secure random number generator audited for fairness by an independent third party."
 msgstr ""
+"Gli indici di volatilità di %1 si basano su un generatore di numeri random "
+"sicuri crittograficamente per correttezza da parte di una terza parte "
+"indipendente."
 
 msgid "%1's patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market."
 msgstr "La tecnologia brevettata per la determinazione dei prezzi di %1 ti consente di beneficiare delle stesse percentuali di rendimento dei trader del mercato interbancario."
@@ -987,10 +991,9 @@ msgstr "Sei pronto?"
 msgid "Are you sure that you want to permanently delete token"
 msgstr "Sei sicuro di voler eliminare definitivamente il token"
 
-#, fuzzy
 #| msgid "Are you sure that you want to permanently delete token"
 msgid "Are you sure that you want to permanently revoke access to application"
-msgstr "Sei sicuro di voler eliminare definitivamente il token"
+msgstr "Sei sicuro di voler revocare definitivamente l'accesso all'applicazione"
 
 msgid "Are your site visitors interested in:"
 msgstr "I visitatori del tuo sito sono interessati a:"
@@ -1110,12 +1113,11 @@ msgid "Award-winning, patented financial trading platform"
 msgstr "Una piattaforma di trading finanziario pluripremiata e brevettata"
 
 msgid "BIEL Pillar III"
-msgstr ""
+msgstr "BIEL Pillar III"
 
-#, fuzzy
 #| msgid "Prospectus"
 msgid "BIEL Prospectus"
-msgstr "Programma"
+msgstr "Programma BIEL"
 
 msgid "BIEL Terms"
 msgstr "Termini di BIEL"
@@ -6042,10 +6044,11 @@ msgstr "Si è verificato un problema d'accesso al server."
 msgid "There was a problem validating your personal details. Please fix the fields %1here"
 msgstr "Si è verificato un problema nella procedura di convalida dei tuoi dati personali. Sistema i campi %1 qui"
 
-#, fuzzy
 #| msgid "There was a problem validating your personal details. Please fix the fields <a class=\"pjaxload\" href=\"%1\">here</a>."
 msgid "There was a problem validating your personal details. Please update your %1 <a class=\"pjaxload\" href=\"%2\">here</a>."
-msgstr "Si è verificato un problema nella procedura di convalida dei tuoi dati personali. Sistema i campi <a class=\"pjaxload\" href=\"%1\">qui</a>."
+msgstr ""
+"Si è verificato un problema nella procedura di convalida dei tuoi dati "
+"personali. Aggiorna i tuoi %1<a class=\"pjaxload\" href=\"%2\">qui</a>."
 
 msgid "There was an error"
 msgstr "Si è verificato un errore"
