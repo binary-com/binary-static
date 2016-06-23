@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Chinese (China) (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-20 08:49+0000\n"
+"PO-Revision-Date: 2016-06-21 08:26+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
@@ -92,9 +92,6 @@ msgstr "%1已经更新了<a class=\"pjaxload\" href=\"%2\">条款和条件</a>�
 msgid "%1 is always looking to add experienced professionals to its talented team of administrators, technical contributors, and managers. To support our continued growth, we've developed a number of exciting career opportunities in the following areas:"
 msgstr "%1 不断为系统管理员、技术参与者和主管人才团队添加经验丰富的专业人员。我们在以下区域开发了多个吸引人的工作机会，以支持我们持续成长:"
 
-msgid "%1 is an active proponent of the open-source movement. Suggest enhancements, and take part in the development of our powerful applications. You can find more information on our <a href=\"%2\" target=\"_blank\">Developers Portal</a>."
-msgstr "%1 是活跃的开源移动支持者。请提出增强功能的建议，并参与开发我们强大的应用程序。您可在我们的<a href=\"%2\" target=\"_blank\">程序员门户</a>获取详细信息。"
-
 msgid "%1 is entirely web-based and requires no software installation."
 msgstr "%1 完全基于网络，无需安装任何软件即可交易。"
 
@@ -148,9 +145,6 @@ msgstr "%1 提供简单、人性化的全球性金融交易平台。"
 
 msgid "%1 prices are benchmarked against the interbank options market, so you always get best-in-class prices for your trades."
 msgstr "%1 的报价基于银行间二元期权市场，让您可在交易中始终获得同类产品中最优的报价。"
-
-msgid "%1 provides a variety of applications to help you trade efficiently."
-msgstr "%1 提供多种应用程序，以帮助您高效交易。"
 
 msgid "%1 provides business partnership services via the following programs."
 msgstr "%1 通过以下方案提供商业伙伴关系服务。"
@@ -399,16 +393,24 @@ msgstr ""
 "  <li>横幅广告应包含的特定信息。</li>\n"
 " </ul>"
 
-msgid "<span>All durations:</span> from 10 seconds to 365 days."
+#, fuzzy
+#| msgid "<span>All durations:</span> from 10 seconds to 365 days."
+msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
 msgstr "<span>所有合约期限:</span>从10 秒到 365 天。"
 
-msgid "<span>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
+#, fuzzy
+#| msgid "<span>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
+msgid "<span class='color-green font-weight-700'>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
 msgstr "<span>所有市场条件:</span>上涨/下跌，触及/未触及，范围内/范围外。"
 
-msgid "<span>All markets:</span> currencies, stocks, indices, and commodities."
+#, fuzzy
+#| msgid "<span>All markets:</span> currencies, stocks, indices, and commodities."
+msgid "<span class='color-green font-weight-700'>All markets:</span> currencies, stocks, indices, and commodities."
 msgstr "<span>所有市场:</span>外汇、股指和大宗商品。"
 
-msgid "<span>All payouts:</span> from $1 to $50,000."
+#, fuzzy
+#| msgid "<span>All payouts:</span> from $1 to $50,000."
+msgid "<span class='color-green font-weight-700'>All payouts:</span> from $1 to $50,000."
 msgstr "<span>所有赔付额:</span>从 1 美元到 5 万美元。"
 
 msgid "<strong>2-way pricing</strong> - %1 quotes a trade and the counter-trade, so you always get unbiased, transparent prices."
@@ -822,9 +824,6 @@ msgstr "管理员"
 msgid "Advanced knowledge of software design principles"
 msgstr "深入的软件设计原则知识"
 
-msgid "Advanced tool for active traders"
-msgstr "活跃交易员专用的高级工具"
-
 msgid "Advising senior managers regarding salary negotiations and job offers"
 msgstr "向高级管理人员提供关于工资协商和录用的建议"
 
@@ -990,10 +989,8 @@ msgstr "准备好了吗？"
 msgid "Are you sure that you want to permanently delete token"
 msgstr "确定要永久删除令牌吗"
 
-#, fuzzy
-#| msgid "Are you sure that you want to permanently delete token"
 msgid "Are you sure that you want to permanently revoke access to application"
-msgstr "确定要永久删除令牌吗"
+msgstr "确定要永久废除应用程序访问权限吗"
 
 msgid "Are your site visitors interested in:"
 msgstr "您的网站访问者是否有兴趣："
@@ -1106,9 +1103,6 @@ msgstr "授权应用程序"
 msgid "Available payment methods"
 msgstr "可用支付方式"
 
-msgid "Available soon..."
-msgstr "很快即可启用..."
-
 msgid "Avoid the need to have an e-wallet"
 msgstr "避免使用电子钱包"
 
@@ -1116,12 +1110,10 @@ msgid "Award-winning, patented financial trading platform"
 msgstr "备受赞誉、受专利保护的金融交易平台"
 
 msgid "BIEL Pillar III"
-msgstr ""
+msgstr "BIEL 三大支柱"
 
-#, fuzzy
-#| msgid "Prospectus"
 msgid "BIEL Prospectus"
-msgstr "章程"
+msgstr "BIEL 章程"
 
 msgid "BIEL Terms"
 msgstr "BIEL条款"
@@ -1239,9 +1231,6 @@ msgstr "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 
 
 msgid "Binary Ltd, with registered office address situated at <span itemprop='location'>47 Esplanade, St. Helier, Jersey, JE 0BD Channel Islands</span>, is the holding company for the Binary group."
 msgstr "Binary Ltd 的注册办事处地址为 <span itemprop='location'>47 Esplanade, St. Helier, Jersey, JE 0BD Channel Islands</span>，为 Binary Group 的控股公司。"
-
-msgid "Binary Next Gen"
-msgstr "Binary 下一代"
 
 msgid "Binary Options Basics"
 msgstr "二元期权基础知识"
@@ -1447,8 +1436,6 @@ msgstr "更改密码"
 msgid "Chart"
 msgstr "图表"
 
-#, fuzzy
-#| msgid "Chart"
 msgid "Charts"
 msgstr "图表"
 
@@ -2105,6 +2092,9 @@ msgstr "应用各种在线和离线营销能力扩大公司的活跃联盟网络
 msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
 msgstr "由于最近的法规变更，客户必须填写以下金融评估。您须填写完成才能继续交易。"
 
+msgid "Due to the impending Brexit vote, returns on some instruments may be lower than usual until Friday."
+msgstr ""
+
 msgid "Duration"
 msgstr "期限"
 
@@ -2225,6 +2215,9 @@ msgstr "结束时间"
 msgid "Ends Between/Ends Outside trades"
 msgstr "“收于范围之内/之外”的交易"
 
+msgid "Ends In/Out"
+msgstr "“范围之内/之外”收盘"
+
 msgid "Ends In/Out contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
 msgstr "如果开始和结束期间价格跳动次数少于2，收于范围之内/之外合约购入价将全额退还。"
 
@@ -2233,9 +2226,6 @@ msgstr "使用 SQL 数据库、R/S-Plus、OLAP 和其他分析工具从事数据
 
 msgid "Enhance and proactively manage the company's social-media efforts, using a variety of channels to attract and nurture prospects, clients, partners, and recruits."
 msgstr "加强并主动管理公司的社交媒体宣传，利用各种渠道吸引和培育潜在用户、客户、合作伙伴和新员工。"
-
-msgid "Enjoy our fastest type of trading on your mobile phone or tablet. Place tick trades anytime, anywhere - even while you're on the move."
-msgstr "用您的手机或平板电脑享受我们速度最快的交易。随时随地 - 甚至当您在旅途中也可参与跳动价格交易。"
 
 msgid "Ensure compliance with quality control standards governing website content"
 msgstr "确保网站内容符合质量控制标准"
@@ -2290,9 +2280,6 @@ msgstr "偶/奇"
 
 msgid "Even/Odd contracts will be refunded at the purchase price if the contract doesn't end within 5 minutes."
 msgstr "奇/偶合约如果没在 5 分钟内结束，将退还购入价格。"
-
-msgid "Examine the history of a particular instrument to plot your next move. This advanced charting platform offers a wide range of technical indicators."
-msgstr "研究某项工具的历史，为下一步行动制定计划。此先进的制图平台提供广泛的技术指标。"
 
 msgid "Example:"
 msgstr "例如："
@@ -2416,9 +2403,6 @@ msgstr "到期价格"
 
 msgid "Explanation"
 msgstr "说明"
-
-msgid "Explore our most cutting-edge new platform, now available in beta form. Place trades from your virtual account."
-msgstr "探讨我们的最前沿新平台，目前 beta 版本已启用。请用您的虚拟账户交易。"
 
 msgid "Extensive experience in the application of advanced coding principles and standards"
 msgstr "有丰富的先进编码原则和标准应用经验"
@@ -3005,7 +2989,9 @@ msgstr "如果您选择具体的<strong>结束时间</strong>，交易<strong>�
 msgid "If you want to profit from this high demand product then your best option is to partner with the market leader. %1 has been in the business for over 15 years, and has been successful ever since."
 msgstr "要通过这个极受欢迎的产品获利，与市场领先者合作是您最佳的选择。%1 从事该行业已超过15年，一直很成功。"
 
-msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:affiliates@binary.com'>%1</a>"
+#, fuzzy
+#| msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:affiliates@binary.com'>%1</a>"
+msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='%1'>%2</a>"
 msgstr "如您希望获取成为付款代理的更多详情，请随时通过<a href='mailto:affiliates@binary.com'>%1</a> 联系我们"
 
 msgid "If you would like to file a complaint with regards to our service, kindly contact us providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within 1-2 weeks (and at most within 2 months) from receipt of all relevant details."
@@ -3167,7 +3153,9 @@ msgstr "即时"
 msgid "Insufficient balance"
 msgstr "余额不足"
 
-msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:affiliates@binary.com'>hear from you!</a>"
+#, fuzzy
+#| msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:affiliates@binary.com'>hear from you!</a>"
+msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='%2'>hear from you!</a>"
 msgstr "感兴趣，接下来该怎么做？如您可向我们的客户提供特殊的电子付款方式或 %1目前不支持的本地付款选项，且在市场上有良好的记录，我们非常乐意通过<a href='mailto:affiliates@binary.com'>收到您的消息!</a>"
 
 msgid "Interested? Why not try a virtual account"
@@ -3728,9 +3716,6 @@ msgstr "Japan website Risk For Binary Option Trading Paragraph 2"
 msgid "Japan website Terms and Conditions Paragraph 1"
 msgstr "Japan website Terms and Conditions Paragraph 1"
 
-msgid "Join our developer community"
-msgstr "加入我们的程序员社区"
-
 msgid "Join our team of bright, talented professionals. Work collaboratively with us to enhance and promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years."
 msgstr "加入我们卓越、才华洋溢的专业人才团队。与我们共同合作加强并促进一个15年来在二元期权交易行业中最受认可的高科技平台。"
 
@@ -3883,9 +3868,6 @@ msgstr "将我们客户与您的应用程序相连接。"
 
 msgid "Links"
 msgstr "链接"
-
-msgid "List of All Open-Source Projects"
-msgstr "所有开源项目列表"
 
 msgid "Live chat:"
 msgstr "在线聊天："
@@ -4109,9 +4091,6 @@ msgstr "网站交易活动监控和优化"
 msgid "Monitor hardware and software deployment and manage our worldwide network of servers and office networks"
 msgstr "监管硬件和软件，管理全球服务器网络和办公网络"
 
-msgid "Monitor the movements of all of your favourite assets and markets at the same time. This flexible charting platform provides a variety of customisable features."
-msgstr "同时监测您最喜爱的所有资产和市场变动。此灵活的图表平台提供各种可定制的功能。"
-
 msgid "Monitor website trading activity and minimize abuse"
 msgstr "监管网站交易活动，尽量减少滥用现象"
 
@@ -4213,9 +4192,6 @@ msgstr "下一页"
 msgid "Next Day"
 msgstr "第二天"
 
-msgid "Next Gen on GitHub"
-msgstr "GitHub 的下一代"
-
 msgid "No Advice"
 msgstr "无建议"
 
@@ -4278,6 +4254,9 @@ msgstr "注意：您必须完全通过付款代理存款才可使用付款代理
 
 msgid "Notes:"
 msgstr "注："
+
+msgid "Notice"
+msgstr ""
 
 msgid "Notification of Changes"
 msgstr "变动通知"
@@ -4678,6 +4657,11 @@ msgstr "请输入有效金额。"
 msgid "Please enter an integer value"
 msgstr "请输入整数"
 
+#, fuzzy
+#| msgid "Please enter date in the format YYYY-MM-DD."
+msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
+msgstr "请输入日期，格式为年-月-日。"
+
 msgid "Please enter date in the format YYYY-MM-DD."
 msgstr "请输入日期，格式为年-月-日。"
 
@@ -4738,7 +4722,9 @@ msgstr "请指定您的优选实况调查间隔时间分钟数"
 msgid "Please submit a valid %1."
 msgstr "请提交有效的 %1。"
 
-msgid "Please submit the above information to <a href='mailto:affiliates@binary.com'>%1</a>."
+#, fuzzy
+#| msgid "Please submit the above information to <a href='mailto:affiliates@binary.com'>%1</a>."
+msgid "Please submit the above information to <a href='%1'>%2</a>."
 msgstr "请将以上信息发送到<a href='mailto:affiliates@binary.com'>%1</a>。"
 
 msgid "Please try again."
@@ -4779,9 +4765,6 @@ msgstr "潜在盈亏分别受止盈、止损价位所限制。"
 
 msgid "Power & simplicity"
 msgstr "简单有力"
-
-msgid "Powerful charting and technical analysis"
-msgstr "功能强大的图表和技术分析"
 
 msgid "Pre-contract Document"
 msgstr "Pre-contract Document"
@@ -5308,6 +5291,9 @@ msgstr "可分割性"
 msgid "Sharp prices"
 msgstr "精准报价"
 
+msgid "Shop"
+msgstr ""
+
 msgid "Short"
 msgstr "短仓"
 
@@ -5459,6 +5445,9 @@ msgstr "通过 %1 的每日市场报告、市场研究和经常举行的在线�
 
 msgid "Stays Between/Goes Outside trades"
 msgstr "“保持在范围内/超出范围”的交易"
+
+msgid "Stays In/Goes Out"
+msgstr "“保持在范围之内/超出范围之外”"
 
 msgid "Stays In/Goes Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
 msgstr "如果开始和结束期间价格跳动次数少于2，“保持在范围内/超出范围”合约购入价将全额退还。"
@@ -5964,9 +5953,6 @@ msgstr "首先选择您要交易的资产，如黄金、原油、股票或外汇
 msgid "The first tick is the first tick after the contract is processed by our servers."
 msgstr "首个跳动点指在我们服务器处理合约后的第一个跳动点。"
 
-msgid "The future of trading on %1"
-msgstr "%1的交易前景"
-
 msgid "The information provided during the sign-up process warranted by yourself to be true and correct is determined by the Company to be false or incorrect during the term of this Agreement;"
 msgstr "您保证注册过程中所提供的信息是真实和正确的。在本协议期限内公司确定该信息虚假或不正确；"
 
@@ -6204,17 +6190,14 @@ msgstr "星期四"
 msgid "Tick"
 msgstr "跳动点"
 
-msgid "Tick Trade App"
-msgstr "跳动交易应用程序"
-
-msgid "Tick Trade on GitHub"
-msgstr "GitHub 的跳动交易"
-
 msgid "Tier"
 msgstr "层级"
 
 msgid "Time"
 msgstr "时间"
+
+msgid "Time out until"
+msgstr ""
 
 msgid "Times are changing. We increase payouts so our clients can make the most of their winning trades."
 msgstr "时代在变。我们增加了赔付金额，使客户可以从盈利交易中获取最大的收益。"
@@ -6260,11 +6243,6 @@ msgstr "如要重新设置密码，在下面输入您注册的电子邮件并点
 
 msgid "Token"
 msgstr "令牌"
-
-#, fuzzy
-#| msgid "%1 Tools"
-msgid "Tooltips"
-msgstr "%1 工具"
 
 msgid "Total Cost"
 msgstr "成本总计"
@@ -6389,9 +6367,6 @@ msgstr "True"
 msgid "Trust"
 msgstr "信任"
 
-msgid "Try It"
-msgstr "试用"
-
 msgid "Try adding more letters or numbers."
 msgstr "请试添加字母或数字。"
 
@@ -6430,9 +6405,6 @@ msgstr "美元"
 
 msgid "UX / UI experience"
 msgstr "UX / UI 经验"
-
-msgid "Ultra-fast trading"
-msgstr "超快交易"
 
 msgid "Under no circumstances shall the Company or its directors or employees be liable under this agreement to you or any third party for any indirect, special, incidental, punitive or consequential loss or damages or any other similar damages under any theory of liability (whether in contract, tort, strict liability or any other theory), that are directly or indirectly attributable to the use of, or the inability to use, the Binary.com API, or any content contained thereon, even if the Company has been informed of the possibility thereof."
 msgstr "在任何情况下，根据本协议，公司或其董事或雇员一概不对您或任何第三方直接或间接由于使用或不能使用Binary.com API或其任何内容的任何间接、特定、附带、惩罚性或后果性损失或损害或任何理论下的任何其他类似损害（无论是在合同、侵权行为、严格赔偿责任或任何其他理论）承担赔偿责任，即使已预先通知公司事件发生的可能性。"
@@ -6754,9 +6726,6 @@ msgstr "网站"
 
 msgid "Webtrader"
 msgstr "Webtrader"
-
-msgid "Webtrader on GitHub"
-msgstr "GitHub的Webtrader"
 
 msgid "Wednesday"
 msgstr "星期三"
@@ -8170,6 +8139,67 @@ msgstr "{JAPAN ONLY}Where broking companies show bid and offer prices for purcha
 
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
+
+#~ msgid "%1 is an active proponent of the open-source movement. Suggest enhancements, and take part in the development of our powerful applications. You can find more information on our <a href=\"%2\" target=\"_blank\">Developers Portal</a>."
+#~ msgstr "%1 是活跃的开源移动支持者。请提出增强功能的建议，并参与开发我们强大的应用程序。您可在我们的<a href=\"%2\" target=\"_blank\">程序员门户</a>获取详细信息。"
+
+#~ msgid "%1 provides a variety of applications to help you trade efficiently."
+#~ msgstr "%1 提供多种应用程序，以帮助您高效交易。"
+
+#~ msgid "Advanced tool for active traders"
+#~ msgstr "活跃交易员专用的高级工具"
+
+#~ msgid "Available soon..."
+#~ msgstr "很快即可启用..."
+
+#~ msgid "Binary Next Gen"
+#~ msgstr "Binary 下一代"
+
+#~ msgid "Enjoy our fastest type of trading on your mobile phone or tablet. Place tick trades anytime, anywhere - even while you're on the move."
+#~ msgstr "用您的手机或平板电脑享受我们速度最快的交易。随时随地 - 甚至当您在旅途中也可参与跳动价格交易。"
+
+#~ msgid "Examine the history of a particular instrument to plot your next move. This advanced charting platform offers a wide range of technical indicators."
+#~ msgstr "研究某项工具的历史，为下一步行动制定计划。此先进的制图平台提供广泛的技术指标。"
+
+#~ msgid "Explore our most cutting-edge new platform, now available in beta form. Place trades from your virtual account."
+#~ msgstr "探讨我们的最前沿新平台，目前 beta 版本已启用。请用您的虚拟账户交易。"
+
+#~ msgid "Join our developer community"
+#~ msgstr "加入我们的程序员社区"
+
+#~ msgid "List of All Open-Source Projects"
+#~ msgstr "所有开源项目列表"
+
+#~ msgid "Monitor the movements of all of your favourite assets and markets at the same time. This flexible charting platform provides a variety of customisable features."
+#~ msgstr "同时监测您最喜爱的所有资产和市场变动。此灵活的图表平台提供各种可定制的功能。"
+
+#~ msgid "Next Gen on GitHub"
+#~ msgstr "GitHub 的下一代"
+
+#~ msgid "Powerful charting and technical analysis"
+#~ msgstr "功能强大的图表和技术分析"
+
+#~ msgid "The future of trading on %1"
+#~ msgstr "%1的交易前景"
+
+#~ msgid "Tick Trade App"
+#~ msgstr "跳动交易应用程序"
+
+#~ msgid "Tick Trade on GitHub"
+#~ msgstr "GitHub 的跳动交易"
+
+#~| msgid "%1 Tools"
+#~ msgid "Tooltips"
+#~ msgstr "提示工具"
+
+#~ msgid "Try It"
+#~ msgstr "试用"
+
+#~ msgid "Ultra-fast trading"
+#~ msgstr "超快交易"
+
+#~ msgid "Webtrader on GitHub"
+#~ msgstr "GitHub的Webtrader"
 
 #~ msgid "Market Data"
 #~ msgstr "市场数据"
@@ -11532,14 +11562,8 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 #~ msgid "Predict the last digit of the market price at expiration."
 #~ msgstr "预测到期时市场价格的最后一个数字。"
 
-#~ msgid "Ends In/Out"
-#~ msgstr "“范围之内/之外”收盘"
-
 #~ msgid "Predict the ending market level relative to 2 chosen barriers."
 #~ msgstr "预测相对于2个设定的障碍市场收盘价格的位置。"
-
-#~ msgid "Stays In/Goes Out"
-#~ msgstr "“保持在范围之内/超出范围之外”"
 
 #~ msgid "Predict whether or not the market will touch either of 2 chosen levels before expiration."
 #~ msgstr "预测市场是否会在到期前触及2个选定价格水平中的任意一个。"

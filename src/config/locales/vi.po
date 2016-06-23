@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: I 18N\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-18 15:56+0000\n"
+"PO-Revision-Date: 2016-06-21 09:22+0000\n"
 "Last-Translator: Pham Minh Hieu <hphamv7@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/binary/static/vi/>\n"
 "Language: vi\n"
@@ -95,9 +95,6 @@ msgstr "%1 vừa cập nhật <a class=\"pjaxload\" href=\"%2\">Điều khoản 
 msgid "%1 is always looking to add experienced professionals to its talented team of administrators, technical contributors, and managers. To support our continued growth, we've developed a number of exciting career opportunities in the following areas:"
 msgstr "%1 luôn tìm kiếm các chuyên gia có kinh nghiệm để bổ sung vào đội ngũ quản trị, kỹ thuật, và quản lý. Để hỗ trợ cho việc tăng trưởng liên tục, chúng tôi đã và đang phát triển một số cơ hội nghề nghiệp thú vị trong các lĩnh vực sau:"
 
-msgid "%1 is an active proponent of the open-source movement. Suggest enhancements, and take part in the development of our powerful applications. You can find more information on our <a href=\"%2\" target=\"_blank\">Developers Portal</a>."
-msgstr "%1 là một người khởi xướng nhiệt tình phong trào nguồn mở. Để gợi ý những cải tiến và góp phần vào sự phát triển những ứng dụng mạnh mẽ của chúng tôi. Bạn có thể tìm thấy nhiều thông tin hơn trên <a href=\"%2\" target=\"_blank\">Cổng thông tin phát triển</a> của chúng tôi."
-
 msgid "%1 is entirely web-based and requires no software installation."
 msgstr "%1 hoàn toàn dựa trên nền tảng web, không yêu cầu cài đặt bất kỳ phần mềm nào."
 
@@ -151,9 +148,6 @@ msgstr "%1 cung cấp giao diện thị trường tài chính thế giới đ
 
 msgid "%1 prices are benchmarked against the interbank options market, so you always get best-in-class prices for your trades."
 msgstr "Giá %1 được quy chuẩn so với thị trường liên ngân hàng tùy chọn, vì thế bạn luôn có được giá tốt nhất cho giao dịch của mình."
-
-msgid "%1 provides a variety of applications to help you trade efficiently."
-msgstr "%1 cung cấp nhiều ứng dụng đa dạng để giúp bạn giao dịch hiệu quả."
 
 msgid "%1 provides business partnership services via the following programs."
 msgstr "%1 cung cấp dịch vụ hợp tác kinh doanh thông qua các chương trình sau."
@@ -401,16 +395,24 @@ msgstr ""
 "        <li>Thông điệp của biểu ngữ.</li>\n"
 "    </ul>"
 
-msgid "<span>All durations:</span> from 10 seconds to 365 days."
+#, fuzzy
+#| msgid "<span>All durations:</span> from 10 seconds to 365 days."
+msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
 msgstr "<span>Tất cả thời hạn:</span> từ 10 giây đến 365 ngày."
 
-msgid "<span>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
+#, fuzzy
+#| msgid "<span>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
+msgid "<span class='color-green font-weight-700'>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
 msgstr "<span>Tất cả điều kiện thị trường:</span> lên/xuống, chạm/Không chạm, ở trong/ra ngoài."
 
-msgid "<span>All markets:</span> currencies, stocks, indices, and commodities."
+#, fuzzy
+#| msgid "<span>All markets:</span> currencies, stocks, indices, and commodities."
+msgid "<span class='color-green font-weight-700'>All markets:</span> currencies, stocks, indices, and commodities."
 msgstr "<span>Tất cả các thị trường:</span> tiền tệ, chỉ số, chứng khoán, và hàng hóa."
 
-msgid "<span>All payouts:</span> from $1 to $50,000."
+#, fuzzy
+#| msgid "<span>All payouts:</span> from $1 to $50,000."
+msgid "<span class='color-green font-weight-700'>All payouts:</span> from $1 to $50,000."
 msgstr "<span>Tất cả tiền thưởng:</span> từ $1 đến $50,000."
 
 msgid "<strong>2-way pricing</strong> - %1 quotes a trade and the counter-trade, so you always get unbiased, transparent prices."
@@ -824,9 +826,6 @@ msgstr "Hành Chính"
 msgid "Advanced knowledge of software design principles"
 msgstr "Nắm vững kiến thức về nguyên tắc thiết kế phần mềm"
 
-msgid "Advanced tool for active traders"
-msgstr "Công cụ tiên tiến cho những nhà giao dịch năng động"
-
 msgid "Advising senior managers regarding salary negotiations and job offers"
 msgstr "Nhà quản lý cấp cao liên quan đến đàm phán mức lương và yêu cầu công việc"
 
@@ -992,10 +991,8 @@ msgstr "Bạn đã sẵn sàng chưa?"
 msgid "Are you sure that you want to permanently delete token"
 msgstr "Bạn có chắc chắn muốn xóa vĩnh viễn token"
 
-#, fuzzy
-#| msgid "Are you sure that you want to permanently delete token"
 msgid "Are you sure that you want to permanently revoke access to application"
-msgstr "Bạn có chắc chắn muốn xóa vĩnh viễn token"
+msgstr "Bạn có chắc chắn muốn thu hồi quyền truy cập vào ứng dụng vĩnh viễn"
 
 msgid "Are your site visitors interested in:"
 msgstr "Khách đến thăm trang của bạn có hứng thú với:"
@@ -1108,9 +1105,6 @@ msgstr "Các Ứng dụng được cho phép"
 msgid "Available payment methods"
 msgstr "Phương thức thanh toán có sẵn"
 
-msgid "Available soon..."
-msgstr "Sớm ra mắt..."
-
 msgid "Avoid the need to have an e-wallet"
 msgstr "Không cần thiết phải có ví điện tử"
 
@@ -1118,12 +1112,10 @@ msgid "Award-winning, patented financial trading platform"
 msgstr "Giao diện giao dịch tài chính có bằng sáng chế và nhận được nhiều giải thưởng"
 
 msgid "BIEL Pillar III"
-msgstr ""
+msgstr "BIEL Pillar III"
 
-#, fuzzy
-#| msgid "Prospectus"
 msgid "BIEL Prospectus"
-msgstr "Bản cáo bạch"
+msgstr "Bản cáo bạch BIEL"
 
 msgid "BIEL Terms"
 msgstr "Điều khoản BIEL"
@@ -1209,10 +1201,8 @@ msgstr "Hệ thống và phương thức Cá cược"
 msgid "Binary (C.R.) S.A., registered in Costa Rica."
 msgstr "Binary (C.R.) S.A., được đăng ký tại Costa Rica."
 
-#, fuzzy
-#| msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 msgid "Binary (Europe) Ltd & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
-msgstr "Công ty TNHH Binary (châu Âu), Tòa nhà Mompalao, Khu 2, ĐườngTower, Msida MSD1825"
+msgstr "Công ty TNHH Binary (châu Âu) và công ty TNHH Đầu tư Binary (châu Âu), Tòa nhà Mompalao, Khu 2, ĐườngTower, Msida MSD1825"
 
 msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licenced and regulated (for gambling products only) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>."
 msgstr "Công ty TNHH Binary (châu Âu), Tòa nhà Mompalao, Khu 2, Đường Tower, Msida MSD1825, Malta. Được cấp giấy phép và quy định (chỉ đối với các sản phẩm cá cược) bởi Ủy ban Cá cược Malta tại Malta (giấy phép số MGA/CL2/118/2000) và đối với khách hàng Anh được quy định và cấp phép bởi Ủy ban Cá cược Anh - <a href='%1' target='_blank'> xem giấy phép</a>."
@@ -1243,9 +1233,6 @@ msgstr "Binary KK, Tòa nhà Hiroo Miyata 3F, 9-16, Hiroo 1-chome, Shibuya-ku,
 
 msgid "Binary Ltd, with registered office address situated at <span itemprop='location'>47 Esplanade, St. Helier, Jersey, JE 0BD Channel Islands</span>, is the holding company for the Binary group."
 msgstr "Công ty TNHH Binary, địa chỉ văn phòng được đăng ký tại <span itemprop='location'>47 Esplanade, St. Helier, Jersey, Đảo Channel JE 0BD</span>, là công ty được sở hữu bởi tập đoàn Binary."
-
-msgid "Binary Next Gen"
-msgstr "Binary Next Gen"
 
 msgid "Binary Options Basics"
 msgstr "Cơ bản về Quyền chọn Nhị phân"
@@ -1451,10 +1438,8 @@ msgstr "Thay đổi Mật khẩu"
 msgid "Chart"
 msgstr "Biểu đồ"
 
-#, fuzzy
-#| msgid "Chart"
 msgid "Charts"
-msgstr "Biểu đồ"
+msgstr "Các biểu đồ"
 
 msgid "Check out our commission rates below:"
 msgstr "Xem xét tỉ lệ hoa hồng của chúng tôi dưới đây:"
@@ -2107,6 +2092,9 @@ msgstr "Tạo sự phát triển nhanh chóng tại những khu vực trọng y�
 msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
 msgstr "Vì những thay đổi gần đây trong các quy định, chúng tôi buộc phải yêu cầu khách hàng hoàn tất bản Đánh giá Tài chính sau. Xin lưu ý rằng bạn sẽ không thể tiếp tục giao dịch cho đến khi bản đánh giá được hoàn thành."
 
+msgid "Due to the impending Brexit vote, returns on some instruments may be lower than usual until Friday."
+msgstr ""
+
 msgid "Duration"
 msgstr "Khoảng thời gian"
 
@@ -2227,6 +2215,9 @@ msgstr "Thời gian Kết thúc"
 msgid "Ends Between/Ends Outside trades"
 msgstr "Giao dịch Kết thúc ở Giữa/ Kết thúc bên ngoài"
 
+msgid "Ends In/Out"
+msgstr "Kết thúc Trong/Ngoài"
+
 msgid "Ends In/Out contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
 msgstr "Hợp đồng kết thúc trong/ ngoài sẽ được hoàn lại bằng giá mua nếu có ít hơn 2 sự thay đổi giá giữa thời điểm hợp đồng bắt đầu và kết thúc."
 
@@ -2235,9 +2226,6 @@ msgstr "Tham gia khai thác dữ liệu bằng cách sử dụng cơ sở dữ l
 
 msgid "Enhance and proactively manage the company's social-media efforts, using a variety of channels to attract and nurture prospects, clients, partners, and recruits."
 msgstr "Nâng cao và chủ động quản lý những dự án truyền thông xã hội của công ty, sử dụng đa dạng các kênh để thu hút và chăm sóc các khách hàng tiềm năng, khách hàng hiện tại, đối tác và nhà tuyển dụng."
-
-msgid "Enjoy our fastest type of trading on your mobile phone or tablet. Place tick trades anytime, anywhere - even while you're on the move."
-msgstr "Trải nghiệm phương thức giao dịch nhanh nhất trên điện thoại hoặc máy tính bảng của bạn. Bạn có thể đặt giá giao dịch bất cứ lúc nào, bất cứ đâu - thậm chí cả khi bạn đang di chuyển."
 
 msgid "Ensure compliance with quality control standards governing website content"
 msgstr "Tuân thủ các tiêu chuẩn quản lý chất lượng áp dụng cho nội dung trang web"
@@ -2292,9 +2280,6 @@ msgstr "Hòa vốn/ Số dư"
 
 msgid "Even/Odd contracts will be refunded at the purchase price if the contract doesn't end within 5 minutes."
 msgstr "Các hợp đồng chẵn/ lẻ sẽ được hoàn tiền tại giá mua nếu hợp đồng không kết thúc trong vòng 5 phút."
-
-msgid "Examine the history of a particular instrument to plot your next move. This advanced charting platform offers a wide range of technical indicators."
-msgstr "Kiểm tra lịch sử của một công cụ tài chính nhất định để xác định hoạt động tiếp theo của bạn. Nền tảng biểu đồ tiên tiến này mang đến một mức độ lớn các chỉ số kỹ thuật."
 
 msgid "Example:"
 msgstr "Ví dụ:"
@@ -2418,9 +2403,6 @@ msgstr "Giá hết hạn"
 
 msgid "Explanation"
 msgstr "Giải thích"
-
-msgid "Explore our most cutting-edge new platform, now available in beta form. Place trades from your virtual account."
-msgstr "Khám phá nền tảng tiên tiến mới nhất của chúng tôi, hiện đã ra mắt ở dạng beta. Đặt giao dịch từ tài khoản ảo của bạn."
 
 msgid "Extensive experience in the application of advanced coding principles and standards"
 msgstr "Giàu kinh nghiệm trong việc áp dụng nguyên tắc mã hóa tiên tiến và các tiêu chuẩn"
@@ -3007,7 +2989,9 @@ msgstr "Nếu bạn chọn <strong>thời gian kết thúc cụ thể</stro
 msgid "If you want to profit from this high demand product then your best option is to partner with the market leader. %1 has been in the business for over 15 years, and has been successful ever since."
 msgstr "Nếu bạn muốn có lợi nhuận từ sản phẩm có nhu cầu cao này thì lựa chọn tốt nhất của bạn là trở thành đối tác với người dẫn đầu thị trường. %1 đã đi vào hoạt động kinh doanh trên 15 năm, và đã thành công từ đó."
 
-msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:affiliates@binary.com'>%1</a>"
+#, fuzzy
+#| msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:affiliates@binary.com'>%1</a>"
+msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='%1'>%2</a>"
 msgstr "Nếu bạn muốn biết thêm thông tin để trở thành Đại lý Thanh toán, vui lòng liên hệ với chúng tôi tại <a href='mailto:affiliates@binary.com'>%1 </a>"
 
 msgid "If you would like to file a complaint with regards to our service, kindly contact us providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within 1-2 weeks (and at most within 2 months) from receipt of all relevant details."
@@ -3169,7 +3153,9 @@ msgstr "Tức thì"
 msgid "Insufficient balance"
 msgstr "Số dư tài khoản không đủ"
 
-msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:affiliates@binary.com'>hear from you!</a>"
+#, fuzzy
+#| msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:affiliates@binary.com'>hear from you!</a>"
+msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='%2'>hear from you!</a>"
 msgstr "Bạn đã thấy hứng thú, vậy điều gì tiếp theo? Nếu bạn có thể cung cấp cho Khách hàng của chúng tôi sử dụng phương thức thẻ điện tử hoặc phương thức thanh toán nội tệ mà chưa được %1 cung cấp, và bạn có có hồ sơ ghi nhận theo dõi tốt trên thị trường, chúng tôi muốn <a href='mailto:affiliates@binary.com'>nhận được thông tin từ bạn!</a>"
 
 msgid "Interested? Why not try a virtual account"
@@ -3730,9 +3716,6 @@ msgstr "Japan website Risk For Binary Option Trading Paragraph 2"
 msgid "Japan website Terms and Conditions Paragraph 1"
 msgstr "Japan website Terms and Conditions Paragraph 1"
 
-msgid "Join our developer community"
-msgstr "Hãy tham gia vào cộng động các nhà phát triển của chúng tôi"
-
 msgid "Join our team of bright, talented professionals. Work collaboratively with us to enhance and promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years."
 msgstr "Tham gia vào đội ngũ các chuyên gia tài năng, sáng giá của chúng tôi. Cộng tác với chúng tôi để tăng cường và cải thiện nền tảng công nghệ cao, nền công nghệ đã được công nhận trong ngành công nghiệp giao dịch các tùy chọn nhị phân trong hơn 15 năm qua."
 
@@ -3885,9 +3868,6 @@ msgstr "Liên kết tới và trực tiếp khách hàng tới ứng dụng củ
 
 msgid "Links"
 msgstr "Các liên kết"
-
-msgid "List of All Open-Source Projects"
-msgstr "Danh sách tất cả các dự án có nguồn mở"
 
 msgid "Live chat:"
 msgstr "Tương tác trực tuyến:"
@@ -4111,9 +4091,6 @@ msgstr "Theo dõi và tối ưu hóa hoạt động giao dịch của website"
 msgid "Monitor hardware and software deployment and manage our worldwide network of servers and office networks"
 msgstr "Giám sát quá trình triển khai phần cứng, phần mềm và quản lý hệ thống máy chủ cũng như hệ thống mạng của công ty"
 
-msgid "Monitor the movements of all of your favourite assets and markets at the same time. This flexible charting platform provides a variety of customisable features."
-msgstr "Giám sát các hoạt động của tất cả các tài sản và thị trường yêu thích của bạn cùng một lúc. Nền tảng biểu đồ linh hoạt này mang lại rất nhiều các tính năng đa dạng có thể tuỳ chỉnh."
-
 msgid "Monitor website trading activity and minimize abuse"
 msgstr "Giám sát hoạt động giao dịch trên trang web và giảm thiểu các hành động lạm dụng"
 
@@ -4213,9 +4190,6 @@ msgstr "Tiếp theo"
 msgid "Next Day"
 msgstr "Ngày tiếp theo"
 
-msgid "Next Gen on GitHub"
-msgstr "Next Gen trên GitHub"
-
 msgid "No Advice"
 msgstr "Không có Tư vấn"
 
@@ -4278,6 +4252,9 @@ msgstr "Lưu ý: Rút tiền thông qua đại lý thanh toán chỉ khả dụn
 
 msgid "Notes:"
 msgstr "Chú ý:"
+
+msgid "Notice"
+msgstr ""
 
 msgid "Notification of Changes"
 msgstr "Thông báo Thay đổi"
@@ -4678,6 +4655,11 @@ msgstr "Vui lòng nhập số tiền hợp lệ."
 msgid "Please enter an integer value"
 msgstr "Vui lòng nhập giá trị số nguyên"
 
+#, fuzzy
+#| msgid "Please enter date in the format YYYY-MM-DD."
+msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
+msgstr "Vui lòng nhập ngày với định dạng YYYY-MM-DD."
+
 msgid "Please enter date in the format YYYY-MM-DD."
 msgstr "Vui lòng nhập ngày với định dạng YYYY-MM-DD."
 
@@ -4738,7 +4720,9 @@ msgstr "Hãy chỉ rõ khoảng thời gian kiểm tra thực tế ưa thích c�
 msgid "Please submit a valid %1."
 msgstr "Vui lòng nhập một tài khoản %1 hợp lệ."
 
-msgid "Please submit the above information to <a href='mailto:affiliates@binary.com'>%1</a>."
+#, fuzzy
+#| msgid "Please submit the above information to <a href='mailto:affiliates@binary.com'>%1</a>."
+msgid "Please submit the above information to <a href='%1'>%2</a>."
 msgstr "Vui lòng gửi thông tin trên tới <a href='mailto:affiliates@binary.com'>%1</a>."
 
 msgid "Please try again."
@@ -4779,9 +4763,6 @@ msgstr "Lợi nhuận và thua lỗ tiềm năng được giới hạn t�
 
 msgid "Power & simplicity"
 msgstr "Mạnh mẽ và đơn giản"
-
-msgid "Powerful charting and technical analysis"
-msgstr "Phân tích biểu đồ và kỹ thuật mạnh mẽ"
 
 msgid "Pre-contract Document"
 msgstr "Pre-contract Document"
@@ -5308,6 +5289,9 @@ msgstr "Tính chia tách"
 msgid "Sharp prices"
 msgstr "Giá sắc bén"
 
+msgid "Shop"
+msgstr ""
+
 msgid "Short"
 msgstr "Ngắn"
 
@@ -5457,6 +5441,9 @@ msgstr "Hãy theo dõi thông báo. %1 cung cấp báo cáo thị trườ
 
 msgid "Stays Between/Goes Outside trades"
 msgstr "Giao dịch Ở Giữa/ Đi ra ngoài"
+
+msgid "Stays In/Goes Out"
+msgstr "Vẫn ở trong /Đi ra Ngoài"
 
 msgid "Stays In/Goes Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
 msgstr "Hợp đồng trong/ ngoài sẽ được hoàn lại bằng giá mua nếu có ít hơn 2 sự thay đổi giá giữa thời điểm hợp đồng bắt đầu và kết thúc."
@@ -5962,9 +5949,6 @@ msgstr "Điều đầu tiên cần làm là chọn tài sản bạn muốn giao 
 msgid "The first tick is the first tick after the contract is processed by our servers."
 msgstr "Điểm đầu tiên là giây đầu tiên sau khi hợp đồng được xử lý bởi máy chủ của chúng tôi."
 
-msgid "The future of trading on %1"
-msgstr "Hợp đồng tương lai của giao dịch trên %1"
-
 msgid "The information provided during the sign-up process warranted by yourself to be true and correct is determined by the Company to be false or incorrect during the term of this Agreement;"
 msgstr "Thông tin được cung cấp trong quá trình đăng ký được bạn đảm bảo là đúng và chính xác sẽ được Công ty xác nhận nếu sai hoặc không chính xác trong thời hạn của Thoả thuận này;"
 
@@ -6058,10 +6042,8 @@ msgstr "Có lỗi khi truy cập máy chủ."
 msgid "There was a problem validating your personal details. Please fix the fields %1here"
 msgstr "Xảy ra lỗi phê chuẩn thông tin cá nhân chi tiết của bạn. Vui lòng sửa trường %1tại đây"
 
-#, fuzzy
-#| msgid "There was a problem validating your personal details. Please fix the fields <a class=\"pjaxload\" href=\"%1\">here</a>."
 msgid "There was a problem validating your personal details. Please update your %1 <a class=\"pjaxload\" href=\"%2\">here</a>."
-msgstr "Xảy ra lỗi phê chuẩn thông tin cá nhân chi tiết của bạn. Vui lòng sửa trường <a class=\"pjaxload\" href=\"%1\">tại đây</a>."
+msgstr "Xảy ra lỗi phê chuẩn thông tin cá nhân chi tiết của bạn. Vui lòng cập nhật %1 của bạn <a class=\"pjaxload\" href=\"%2\"> tại đây</a>."
 
 msgid "There was an error"
 msgstr "Đã có lỗi xảy ra"
@@ -6204,17 +6186,14 @@ msgstr "Thứ Năm"
 msgid "Tick"
 msgstr "Giây"
 
-msgid "Tick Trade App"
-msgstr "Ứng dụng bước giá giao dịch"
-
-msgid "Tick Trade on GitHub"
-msgstr "Tick Trade trên GitHub"
-
 msgid "Tier"
 msgstr "Lớp"
 
 msgid "Time"
 msgstr "Thời gian"
+
+msgid "Time out until"
+msgstr ""
 
 msgid "Times are changing. We increase payouts so our clients can make the most of their winning trades."
 msgstr "Thời gian đang thay đổi. Chúng tôi tăng tiền thưởng vì thế khách hàng có thể tận dụng nhiều nhất từ các giao dịch thắng."
@@ -6260,9 +6239,6 @@ msgstr "Để thiết lập lại mật khẩu, nhập địa chỉ email bạn 
 
 msgid "Token"
 msgstr "Mã Token"
-
-msgid "Tooltips"
-msgstr ""
 
 msgid "Total Cost"
 msgstr "Tổng Chi phí"
@@ -6387,9 +6363,6 @@ msgstr "Đúng"
 msgid "Trust"
 msgstr "Sự tin tưởng"
 
-msgid "Try It"
-msgstr "Trải nghiệm ngay"
-
 msgid "Try adding more letters or numbers."
 msgstr "Hãy thử nhập thêm các chữ cái hoặc số."
 
@@ -6428,9 +6401,6 @@ msgstr "USD"
 
 msgid "UX / UI experience"
 msgstr "UX / UI kinh nghiệm"
-
-msgid "Ultra-fast trading"
-msgstr "Giao dịch cực nhanh"
 
 msgid "Under no circumstances shall the Company or its directors or employees be liable under this agreement to you or any third party for any indirect, special, incidental, punitive or consequential loss or damages or any other similar damages under any theory of liability (whether in contract, tort, strict liability or any other theory), that are directly or indirectly attributable to the use of, or the inability to use, the Binary.com API, or any content contained thereon, even if the Company has been informed of the possibility thereof."
 msgstr "Trong bất cứ trường hợp nào, kể cả khi Công ty chúng tôi đã được thông báo về khả năng xảy ra sự việc, Công ty chúng tôi hay các giám đốc hoặc các nhân viên trong công ty chúng tôi sẽ không chịu trách nhiệm pháp lý  theo thỏa thuận này với bạn hoặc với bất kỳ một bên thứ ba nào khác về các thiệt hại hay thua lỗ gián tiếp, bất thường, ngẫu nhiên, có tính trừng phạt hay tổn thất hậu quả hay bất kỳ loại tổn thất tương tự khác theo lý thuyết về trách nhiệm pháp lý (có trong hợp đồng, sai lầm cá nhân, trách nhiệm pháp lý nghiêm ngặt hay bất kỳ một lý thuyết khác), cái mà có thể trực tiếp hay gián tiếp ảnh hưởng tới việc sử dụng, hoặc không thể sử dụng Binary.com API, hay bất kỳ nội dung được chứa theo đó."
@@ -6752,9 +6722,6 @@ msgstr "Trang web"
 
 msgid "Webtrader"
 msgstr "Webtrader"
-
-msgid "Webtrader on GitHub"
-msgstr "Webtrader trên GitHub"
 
 msgid "Wednesday"
 msgstr "Thứ Tư"
@@ -8167,6 +8134,66 @@ msgstr "{JAPAN ONLY}Where broking companies show bid and offer prices for purcha
 
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
+
+#~ msgid "%1 is an active proponent of the open-source movement. Suggest enhancements, and take part in the development of our powerful applications. You can find more information on our <a href=\"%2\" target=\"_blank\">Developers Portal</a>."
+#~ msgstr "%1 là một người khởi xướng nhiệt tình phong trào nguồn mở. Để gợi ý những cải tiến và góp phần vào sự phát triển những ứng dụng mạnh mẽ của chúng tôi. Bạn có thể tìm thấy nhiều thông tin hơn trên <a href=\"%2\" target=\"_blank\">Cổng thông tin phát triển</a> của chúng tôi."
+
+#~ msgid "%1 provides a variety of applications to help you trade efficiently."
+#~ msgstr "%1 cung cấp nhiều ứng dụng đa dạng để giúp bạn giao dịch hiệu quả."
+
+#~ msgid "Advanced tool for active traders"
+#~ msgstr "Công cụ tiên tiến cho những nhà giao dịch năng động"
+
+#~ msgid "Available soon..."
+#~ msgstr "Sớm ra mắt..."
+
+#~ msgid "Binary Next Gen"
+#~ msgstr "Binary Next Gen"
+
+#~ msgid "Enjoy our fastest type of trading on your mobile phone or tablet. Place tick trades anytime, anywhere - even while you're on the move."
+#~ msgstr "Trải nghiệm phương thức giao dịch nhanh nhất trên điện thoại hoặc máy tính bảng của bạn. Bạn có thể đặt giá giao dịch bất cứ lúc nào, bất cứ đâu - thậm chí cả khi bạn đang di chuyển."
+
+#~ msgid "Examine the history of a particular instrument to plot your next move. This advanced charting platform offers a wide range of technical indicators."
+#~ msgstr "Kiểm tra lịch sử của một công cụ tài chính nhất định để xác định hoạt động tiếp theo của bạn. Nền tảng biểu đồ tiên tiến này mang đến một mức độ lớn các chỉ số kỹ thuật."
+
+#~ msgid "Explore our most cutting-edge new platform, now available in beta form. Place trades from your virtual account."
+#~ msgstr "Khám phá nền tảng tiên tiến mới nhất của chúng tôi, hiện đã ra mắt ở dạng beta. Đặt giao dịch từ tài khoản ảo của bạn."
+
+#~ msgid "Join our developer community"
+#~ msgstr "Hãy tham gia vào cộng động các nhà phát triển của chúng tôi"
+
+#~ msgid "List of All Open-Source Projects"
+#~ msgstr "Danh sách tất cả các dự án có nguồn mở"
+
+#~ msgid "Monitor the movements of all of your favourite assets and markets at the same time. This flexible charting platform provides a variety of customisable features."
+#~ msgstr "Giám sát các hoạt động của tất cả các tài sản và thị trường yêu thích của bạn cùng một lúc. Nền tảng biểu đồ linh hoạt này mang lại rất nhiều các tính năng đa dạng có thể tuỳ chỉnh."
+
+#~ msgid "Next Gen on GitHub"
+#~ msgstr "Next Gen trên GitHub"
+
+#~ msgid "Powerful charting and technical analysis"
+#~ msgstr "Phân tích biểu đồ và kỹ thuật mạnh mẽ"
+
+#~ msgid "The future of trading on %1"
+#~ msgstr "Hợp đồng tương lai của giao dịch trên %1"
+
+#~ msgid "Tick Trade App"
+#~ msgstr "Ứng dụng bước giá giao dịch"
+
+#~ msgid "Tick Trade on GitHub"
+#~ msgstr "Tick Trade trên GitHub"
+
+#~ msgid "Tooltips"
+#~ msgstr "Chú thích công cụ"
+
+#~ msgid "Try It"
+#~ msgstr "Trải nghiệm ngay"
+
+#~ msgid "Ultra-fast trading"
+#~ msgstr "Giao dịch cực nhanh"
+
+#~ msgid "Webtrader on GitHub"
+#~ msgstr "Webtrader trên GitHub"
 
 #~ msgid "Market Data"
 #~ msgstr "Dữ liệu Thị trường"
@@ -11528,14 +11555,8 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 #~ msgid "Predict the last digit of the market price at expiration."
 #~ msgstr "Dự đoán con số cuối cùng của giá thị trường tại thời điểm hết hạn."
 
-#~ msgid "Ends In/Out"
-#~ msgstr "Kết thúc Trong/Ngoài"
-
 #~ msgid "Predict the ending market level relative to 2 chosen barriers."
 #~ msgstr "Dự đoán mức thị trường kết thúc có liên quan tới 2 rào cản đã chọn."
-
-#~ msgid "Stays In/Goes Out"
-#~ msgstr "Vẫn ở trong /Đi ra Ngoài"
 
 #~ msgid "Predict whether or not the market will touch either of 2 chosen levels before expiration."
 #~ msgstr "Dự đoán thị trường sẽ chạm hay không chạm với 2 mức đã chọn trước khi hết hạn."

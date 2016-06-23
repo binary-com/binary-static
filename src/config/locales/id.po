@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-17 08:49+0000\n"
+"PO-Revision-Date: 2016-06-21 09:06+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
@@ -95,9 +95,6 @@ msgstr "%1 telah memperbarui <a class=\"pjaxload\" href=\"%2\">Syarat & Ketentua
 msgid "%1 is always looking to add experienced professionals to its talented team of administrators, technical contributors, and managers. To support our continued growth, we've developed a number of exciting career opportunities in the following areas:"
 msgstr "%1 selalu mencari profesional berpengalaman untuk bergabung di dalam tim administrasi, kontributor teknikal dan beberapa manajer berbakat. Untuk mendukung perkembangan kami, kami telah mengembangkan beberapa peluang karir pada area berikut ini:"
 
-msgid "%1 is an active proponent of the open-source movement. Suggest enhancements, and take part in the development of our powerful applications. You can find more information on our <a href=\"%2\" target=\"_blank\">Developers Portal</a>."
-msgstr "%1 adalah proponen aktif dari pergerakan open-source. Beri saran peningkatan dan ikut beraktifitas dalam pengembangan aplikasi kami. Informasi lebih lanjut mengenai pengembang terdapat pada <a href=\"%2\" target=\"_blank\">Portal Pengembang</a> kami."
-
 msgid "%1 is entirely web-based and requires no software installation."
 msgstr "%1 sepenuhnya berbasis web dan tidak memerlukan instalasi software."
 
@@ -151,9 +148,6 @@ msgstr "%1 menawarkan platform pasar finansial dunia yang sederhana dan mudah."
 
 msgid "%1 prices are benchmarked against the interbank options market, so you always get best-in-class prices for your trades."
 msgstr "Harga %1 mengacu kepada pasar antar bank pilihan, dimana Anda selalu akan memperoleh harga terbaik pada setiap trading Anda."
-
-msgid "%1 provides a variety of applications to help you trade efficiently."
-msgstr "%1 menyediakan berbagai aplikasi yang bisa membantu Anda bertrading secara efisien."
 
 msgid "%1 provides business partnership services via the following programs."
 msgstr "%1 menyediakan layanan mitra usaha melalui program-program berikut."
@@ -402,16 +396,24 @@ msgstr ""
 "  <li>Pesan khusus yang ingin ditampilkan pada banner.</li>\n"
 "   </ul>"
 
-msgid "<span>All durations:</span> from 10 seconds to 365 days."
+#, fuzzy
+#| msgid "<span>All durations:</span> from 10 seconds to 365 days."
+msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
 msgstr "<span>Semua durasi:</span> dari 10 detik hingga 365 hari."
 
-msgid "<span>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
+#, fuzzy
+#| msgid "<span>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
+msgid "<span class='color-green font-weight-700'>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
 msgstr "<span>Semua kondisi pasar:</span> naik/turun, menyentuh/tidak menyentuh, di dalam/di luar."
 
-msgid "<span>All markets:</span> currencies, stocks, indices, and commodities."
+#, fuzzy
+#| msgid "<span>All markets:</span> currencies, stocks, indices, and commodities."
+msgid "<span class='color-green font-weight-700'>All markets:</span> currencies, stocks, indices, and commodities."
 msgstr "<span>Semua pasar:</span> mata uang, saham, indeks, dan komoditas."
 
-msgid "<span>All payouts:</span> from $1 to $50,000."
+#, fuzzy
+#| msgid "<span>All payouts:</span> from $1 to $50,000."
+msgid "<span class='color-green font-weight-700'>All payouts:</span> from $1 to $50,000."
 msgstr "<span>Hasil:</span> dari $1 hingga $50,000."
 
 msgid "<strong>2-way pricing</strong> - %1 quotes a trade and the counter-trade, so you always get unbiased, transparent prices."
@@ -825,9 +827,6 @@ msgstr "Administrator"
 msgid "Advanced knowledge of software design principles"
 msgstr "Pengetahuan lebih maju mengenai prinsip-prinsip desain perangkat lunak"
 
-msgid "Advanced tool for active traders"
-msgstr "Alat canggih untuk trader aktif"
-
 msgid "Advising senior managers regarding salary negotiations and job offers"
 msgstr "Memberi masukan kepada senior manajer mengenai negosiasi gaji dan tawaran pekerjaan"
 
@@ -993,10 +992,8 @@ msgstr "Anda sudah bersedia?"
 msgid "Are you sure that you want to permanently delete token"
 msgstr "Apakah Anda yakin untuk menghapus token secara permanen"
 
-#, fuzzy
-#| msgid "Are you sure that you want to permanently delete token"
 msgid "Are you sure that you want to permanently revoke access to application"
-msgstr "Apakah Anda yakin untuk menghapus token secara permanen"
+msgstr "Apakah Anda yakin bahwa Anda ingin secara permanen mencabut akses ke aplikasi"
 
 msgid "Are your site visitors interested in:"
 msgstr "Apakah pengunjung website Anda tertarik untuk:"
@@ -1109,9 +1106,6 @@ msgstr "Aplikasi Resmi"
 msgid "Available payment methods"
 msgstr "Metode pembayaran yang tersedia"
 
-msgid "Available soon..."
-msgstr "Akan tersedia segera..."
-
 msgid "Avoid the need to have an e-wallet"
 msgstr "Menghindari kebutuhan untuk memiliki e-wallet"
 
@@ -1119,12 +1113,10 @@ msgid "Award-winning, patented financial trading platform"
 msgstr "Dipatenkan sebagai platform trading finansial"
 
 msgid "BIEL Pillar III"
-msgstr ""
+msgstr "BIEL Pillar III"
 
-#, fuzzy
-#| msgid "Prospectus"
 msgid "BIEL Prospectus"
-msgstr "Prospektus"
+msgstr "Prospektus BIEL"
 
 msgid "BIEL Terms"
 msgstr "Ketentuan BIEL"
@@ -1210,10 +1202,8 @@ msgstr "Sistem dan metode trading"
 msgid "Binary (C.R.) S.A., registered in Costa Rica."
 msgstr "Binary (C.R.) S.A., terdaftar di Costa Rica."
 
-#, fuzzy
-#| msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 msgid "Binary (Europe) Ltd & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
-msgstr "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
+msgstr "Binary (Europe) Ltd & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 
 msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licenced and regulated (for gambling products only) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>."
 msgstr "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Berlisensi dan diatur."
@@ -1244,9 +1234,6 @@ msgstr "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 
 
 msgid "Binary Ltd, with registered office address situated at <span itemprop='location'>47 Esplanade, St. Helier, Jersey, JE 0BD Channel Islands</span>, is the holding company for the Binary group."
 msgstr "Binary Ltd, dengan alamat di <span itemprop='location'>47 Esplanade, St. Helier, Jersey, JE 0BD Channel Islands</span>, adalah perusahaan utama untuk group Binary."
-
-msgid "Binary Next Gen"
-msgstr "Binary Next Gen"
 
 msgid "Binary Options Basics"
 msgstr "Opsi Binary Dasar"
@@ -1452,8 +1439,6 @@ msgstr "Perubahan Kata Sandi"
 msgid "Chart"
 msgstr "Grafik"
 
-#, fuzzy
-#| msgid "Chart"
 msgid "Charts"
 msgstr "Grafik"
 
@@ -2108,6 +2093,9 @@ msgstr "Mendorong pertumbuhan yang cepat pada beberapa bidang utama dunia, mener
 msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
 msgstr "Berhubung perubahan terbaru dalam peraturan, kami perlu memastikan untuk meminta klien menyelesaikan Penilaian Keuangan berikut. Mohon diketahui bahwa Anda tidak akan dapat melanjutkan pendaftaran hingga proses ini selesai."
 
+msgid "Due to the impending Brexit vote, returns on some instruments may be lower than usual until Friday."
+msgstr ""
+
 msgid "Duration"
 msgstr "Durasi"
 
@@ -2228,6 +2216,9 @@ msgstr "Waktu berakhir"
 msgid "Ends Between/Ends Outside trades"
 msgstr "Kontrak Berakhir Antara/Berakhir Keluar"
 
+msgid "Ends In/Out"
+msgstr "Ends In/Out"
+
 msgid "Ends In/Out contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
 msgstr "Kontrak Ends In/Out akan mendapat pengembalian harga beli jika terdapat kurang dari 2 tik penyelesaian dari waktu mulai hingga akhir."
 
@@ -2236,9 +2227,6 @@ msgstr "Terlibat dalam data mining menggunakan database SQL, R/S-Plus, OLAP dan 
 
 msgid "Enhance and proactively manage the company's social-media efforts, using a variety of channels to attract and nurture prospects, clients, partners, and recruits."
 msgstr "Meningkatkan dan secara proaktif mengelola usaha sosial-media perusahaan, menggunakan berbagai saluran untuk menarik dan memelihara prospek, klien, mitra, dan merekrut."
-
-msgid "Enjoy our fastest type of trading on your mobile phone or tablet. Place tick trades anytime, anywhere - even while you're on the move."
-msgstr "Nikmati jenis trading tercepat yang kami sediakan pada mobile phone atau tablet. Trading tik kapan saja, dimana saja - bahkan saat Anda sedang berpergian."
 
 msgid "Ensure compliance with quality control standards governing website content"
 msgstr "Memastikan untuk mematuhi kualitas standar kontrol yang mengatur konten website"
@@ -2293,9 +2281,6 @@ msgstr "Even/Odd"
 
 msgid "Even/Odd contracts will be refunded at the purchase price if the contract doesn't end within 5 minutes."
 msgstr "Kontrak Even/Odd akan memperoleh pengembalian harga beli jika kontrak tidak berakhir dalam waktu 5 menit."
-
-msgid "Examine the history of a particular instrument to plot your next move. This advanced charting platform offers a wide range of technical indicators."
-msgstr "Meneliti sejarah instrumen tertentu untuk merencanakan langkah selanjutnya. Platform charting canggih ini menawarkan berbagai indikator teknis."
 
 msgid "Example:"
 msgstr "Contoh:"
@@ -2419,9 +2404,6 @@ msgstr "Harga akhir"
 
 msgid "Explanation"
 msgstr "Penjelasan"
-
-msgid "Explore our most cutting-edge new platform, now available in beta form. Place trades from your virtual account."
-msgstr "Jelajahi platform mutakhir kami yang terbaru, sekarang tersedia dalam bentuk beta. Coba beli kontrak menggunakan akun virtual Anda."
 
 msgid "Extensive experience in the application of advanced coding principles and standards"
 msgstr "Berpengalaman luas dalam penerapan prinsip-prinsip coding canggih dan standar"
@@ -3010,7 +2992,9 @@ msgstr "Jika anda memilih <strong>waktu berakhir</strong> tertentu, maka <strong
 msgid "If you want to profit from this high demand product then your best option is to partner with the market leader. %1 has been in the business for over 15 years, and has been successful ever since."
 msgstr "Jika Anda ingin memperoleh keuntungan dari produk terlaris ini maka pilihan terbaik Anda adalah untuk bekerjasama dengan pemimpin pasar. %1 sudah beroperasi sejak 15 tahun dan telah berhasil sejak itu."
 
-msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:affiliates@binary.com'>%1</a>"
+#, fuzzy
+#| msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:affiliates@binary.com'>%1</a>"
+msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='%1'>%2</a>"
 msgstr "Jika Anda ingin informasi lebih lanjut mengenai Agen Pembayaran, silahkan hubungi kami di <a href='mailto:affiliates@binary.com'>%1</a>"
 
 msgid "If you would like to file a complaint with regards to our service, kindly contact us providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within 1-2 weeks (and at most within 2 months) from receipt of all relevant details."
@@ -3172,7 +3156,9 @@ msgstr "Langsung"
 msgid "Insufficient balance"
 msgstr "Saldo tidak mencukupi"
 
-msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:affiliates@binary.com'>hear from you!</a>"
+#, fuzzy
+#| msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:affiliates@binary.com'>hear from you!</a>"
+msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='%2'>hear from you!</a>"
 msgstr "Tertarik, bagaimana langkah selanjutnya? Jika Anda dapat menawarkan metode pembayaran tunai atau pembayaran lokal yang tidak disediakan oleh %1 dan Anda memiliki track record yang baik, maka kami ingin <a href='mailto:affiliates@binary.com'>mendengar Anda!</a>"
 
 msgid "Interested? Why not try a virtual account"
@@ -3733,9 +3719,6 @@ msgstr "Japan website Risk For Binary Option Trading Paragraph 2"
 msgid "Japan website Terms and Conditions Paragraph 1"
 msgstr "Japan website Terms and Conditions Paragraph 1"
 
-msgid "Join our developer community"
-msgstr "Bergabung dengan komunitas pengembang kami"
-
 msgid "Join our team of bright, talented professionals. Work collaboratively with us to enhance and promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years."
 msgstr "Bergabung dengan tim kami yang memiliki masa depan cerah, profesional berbakat. Bekerja secara kolaboratif dengan kami untuk meningkatkan dan mempromosikan platform teknologi tinggi yang telah menjadi salah satu yang paling dikenal pada industri trading opsi binary selama lebih dari 15 tahun."
 
@@ -3888,9 +3871,6 @@ msgstr "Link ke dan mengarahkan pelanggan kami kedalam Aplikasi Anda."
 
 msgid "Links"
 msgstr "Berbagai Link"
-
-msgid "List of All Open-Source Projects"
-msgstr "Daftar Semua Proyek Open-Source"
 
 msgid "Live chat:"
 msgstr "Komunikasi langsung:"
@@ -4116,9 +4096,6 @@ msgstr "Memantau dan mengoptimalkan aktivitas trading website"
 msgid "Monitor hardware and software deployment and manage our worldwide network of servers and office networks"
 msgstr "Memonitor pengembangan hardware dan software dan mengelola jaringan server kami di seluruh dunia dan jaringan kantor"
 
-msgid "Monitor the movements of all of your favourite assets and markets at the same time. This flexible charting platform provides a variety of customisable features."
-msgstr "Memantau pergerakan semua aset dan pasar favorit Anda pada waktu yang sama. Platform charting fleksibel ini menyediakan berbagai fitur yang dapat disesuaikan."
-
 msgid "Monitor website trading activity and minimize abuse"
 msgstr "Memonitor aktivitas trading situs dan meminimalkan penyalahgunaan"
 
@@ -4219,9 +4196,6 @@ msgstr "Lanjutkan"
 msgid "Next Day"
 msgstr "Hari Berikutnya"
 
-msgid "Next Gen on GitHub"
-msgstr "Next Gen pada GitHub"
-
 msgid "No Advice"
 msgstr "Tidak ada saran"
 
@@ -4284,6 +4258,9 @@ msgstr "Nota: Penarikan via agen pembayaran hanya tersedia jika Anda mendeposit 
 
 msgid "Notes:"
 msgstr "Catatan:"
+
+msgid "Notice"
+msgstr ""
 
 msgid "Notification of Changes"
 msgstr "Pemberitahuan Perubahan"
@@ -4684,6 +4661,11 @@ msgstr "Tolong masukan jumlah yang benar."
 msgid "Please enter an integer value"
 msgstr "Silahkan masukan nilai penuh"
 
+#, fuzzy
+#| msgid "Please enter date in the format YYYY-MM-DD."
+msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
+msgstr "Silakan masukkan tanggal dalam format YYY-MM-DD."
+
 msgid "Please enter date in the format YYYY-MM-DD."
 msgstr "Silakan masukkan tanggal dalam format YYY-MM-DD."
 
@@ -4703,7 +4685,7 @@ msgid "Please make sure that you first agree with the Agent on the terms of paym
 msgstr "Pastikan Anda telah setuju dengan Agen mengenai syarat pembayaran sebelum mengajukan permohonan Anda."
 
 msgid "Please note that due to their over-the-counter nature, the prices of the OTC Indices and stocks will differ from the prices of the corresponding indices and stocks on centralised exchanges."
-msgstr "Harap dicatat bahwa karena sifat over-the-counter, harga dari Indeks dan saham OTC akan sedikit berbeda dari harga indeks dan saham pada di bursa pusat."
+msgstr "Harap dicatat bahwa karena sifat over-the-counter, harga dari Indeks dan saham OTC akan sedikit berbeda dari harga indeks dan saham pada bursa pusat."
 
 msgid "Please note that our website generates log files that record the IP addresses of accesses to your account. This information is gathered with the sole purpose of assisting in the unlikely event of a need to investigate accesses to your account by unauthorised users. Additionally we may verify certain of the information you supply in the account opening form, or otherwise, with third-party information providers."
 msgstr "Mohon diketahui bahwa website kami akan mencatat alamat IP yang digunakan untuk mengakses akun Anda. Informasi ini kami perlukan untuk memastikan pengaksesan yang dibenarkan. Kami juga akan melakukan pembuktian mengenai data yang Anda masukkan pada saat mendaftar akun dari waktu ke waktu atau melalui pihak ketiga untuk membuktikan kebenaran data Anda."
@@ -4744,7 +4726,9 @@ msgstr "Silahkan tentukan interval cek-realitas pilihan Anda dalam menit"
 msgid "Please submit a valid %1."
 msgstr "Silakan kirim %1 yang berlaku."
 
-msgid "Please submit the above information to <a href='mailto:affiliates@binary.com'>%1</a>."
+#, fuzzy
+#| msgid "Please submit the above information to <a href='mailto:affiliates@binary.com'>%1</a>."
+msgid "Please submit the above information to <a href='%1'>%2</a>."
 msgstr "Silahkan kirim informasi diatas ke <a href='mailto:affiliates@binary.com'>%1</a>."
 
 msgid "Please try again."
@@ -4785,9 +4769,6 @@ msgstr "Potensi keuntungan dan kerugian adalah terbatas kepada masing-masing tin
 
 msgid "Power & simplicity"
 msgstr "Kuat & sederhana"
-
-msgid "Powerful charting and technical analysis"
-msgstr "Charting lengkap dan analisis teknis"
 
 msgid "Pre-contract Document"
 msgstr "Pre-contract Document"
@@ -5314,6 +5295,9 @@ msgstr "Keterpisahan"
 msgid "Sharp prices"
 msgstr "Harga tajam"
 
+msgid "Shop"
+msgstr ""
+
 msgid "Short"
 msgstr "Pendek"
 
@@ -5464,6 +5448,9 @@ msgstr "Pengetahuan terkini. %1 menawarkan laporan dan penelitian pasar harian t
 
 msgid "Stays Between/Goes Outside trades"
 msgstr "Kontrak Tetap Antara/Bergerak Keluar"
+
+msgid "Stays In/Goes Out"
+msgstr "Stays In/Goes Out"
 
 msgid "Stays In/Goes Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
 msgstr "Kontrak In/Goes Out akan mendapat pengembalian harga beli jika terdapat kurang dari 2 tik penyelesaian dari waktu mulai hingga akhir."
@@ -5971,9 +5958,6 @@ msgstr "Hal pertama yang harus dilakukan adalah memilih aset yang ingin anda tra
 msgid "The first tick is the first tick after the contract is processed by our servers."
 msgstr "Tik awal adalah tik pertama setelah kontrak diproses oleh server kami."
 
-msgid "The future of trading on %1"
-msgstr "Masa depan trading pada %1"
-
 msgid "The information provided during the sign-up process warranted by yourself to be true and correct is determined by the Company to be false or incorrect during the term of this Agreement;"
 msgstr "Informasi yang disediakan selama proses pendaftaran adalah terjamin asli dan lengkap adalah ditentukan oleh Perusahaan sebagai palsu atau tidak benar selama jangka waktu Perjanjian ini;"
 
@@ -6067,10 +6051,8 @@ msgstr "Terjadi masalah pada saat mengakses server."
 msgid "There was a problem validating your personal details. Please fix the fields %1here"
 msgstr "Terdapat masalah dalam memvalidasi data pribadi Anda. Perbaiki kolom %1 disini"
 
-#, fuzzy
-#| msgid "There was a problem validating your personal details. Please fix the fields <a class=\"pjaxload\" href=\"%1\">here</a>."
 msgid "There was a problem validating your personal details. Please update your %1 <a class=\"pjaxload\" href=\"%2\">here</a>."
-msgstr "Terdapat masalah dalam memvalidasi data pribadi Anda. Perbaiki kolom <a class=\"pjaxload\" href=\"%1\">disin</a>."
+msgstr "Terdapat masalah pada saat memvalidasi data pribadi Anda. Silahkan perbarui %1 Anda <a class=\"pjaxload\" href=\"%2\">disini</a>."
 
 msgid "There was an error"
 msgstr "Terdapat error"
@@ -6213,17 +6195,14 @@ msgstr "Kamis"
 msgid "Tick"
 msgstr "Tik"
 
-msgid "Tick Trade App"
-msgstr "App Trading Tik"
-
-msgid "Tick Trade on GitHub"
-msgstr "Trading Tik pada GitHub"
-
 msgid "Tier"
 msgstr "Tingkat"
 
 msgid "Time"
 msgstr "Waktu"
+
+msgid "Time out until"
+msgstr ""
 
 msgid "Times are changing. We increase payouts so our clients can make the most of their winning trades."
 msgstr "Dengan perubahan waktu. Kami meningkatkan hasil sehingga klien kami dapat menikmati keuntungan trading mereka."
@@ -6269,11 +6248,6 @@ msgstr "Untuk mengatur ulang kata sandi, masukkan alamat email yang Anda daftark
 
 msgid "Token"
 msgstr "Token"
-
-#, fuzzy
-#| msgid "%1 Tools"
-msgid "Tooltips"
-msgstr "Peralatan %1"
 
 msgid "Total Cost"
 msgstr "Total Biaya"
@@ -6398,9 +6372,6 @@ msgstr "Benar"
 msgid "Trust"
 msgstr "Kepercayaan"
 
-msgid "Try It"
-msgstr "Cobalah"
-
 msgid "Try adding more letters or numbers."
 msgstr "Coba tambahkan lebih huruf atau angka."
 
@@ -6439,9 +6410,6 @@ msgstr "USD"
 
 msgid "UX / UI experience"
 msgstr "Pengalaman UX/UI"
-
-msgid "Ultra-fast trading"
-msgstr "Trading super cepat"
 
 msgid "Under no circumstances shall the Company or its directors or employees be liable under this agreement to you or any third party for any indirect, special, incidental, punitive or consequential loss or damages or any other similar damages under any theory of liability (whether in contract, tort, strict liability or any other theory), that are directly or indirectly attributable to the use of, or the inability to use, the Binary.com API, or any content contained thereon, even if the Company has been informed of the possibility thereof."
 msgstr "Dalam situasi apapun, Perusahaan atau direksi atau karyawan bertanggung jawab berdasarkan perjanjian ini kepada Anda atau pihak ketiga atas kerugian secara tidak langsung, khusus, insidental, hukuman atau konsekuensial atau kerusakan atau kerugian serupa lainnya di bawah setiap teori kewajiban (baik dalam kontrak , tort, kewajiban yang ketat atau teori lain), yang secara langsung atau tidak langsung disebabkan penggunaan, atau ketidakmampuan untuk menggunakan, API Binary.com, atau konten yang terkandung atasnya, bahkan jika Perusahaan telah diberitahu tentang kemungkinan daripadanya."
@@ -6763,9 +6731,6 @@ msgstr "Situs web"
 
 msgid "Webtrader"
 msgstr "Webtrader"
-
-msgid "Webtrader on GitHub"
-msgstr "Webtrader pada GitHub"
 
 msgid "Wednesday"
 msgstr "Rabu"
@@ -8176,6 +8141,67 @@ msgstr "{JAPAN ONLY}Where broking companies show bid and offer prices for purcha
 
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
+
+#~ msgid "%1 is an active proponent of the open-source movement. Suggest enhancements, and take part in the development of our powerful applications. You can find more information on our <a href=\"%2\" target=\"_blank\">Developers Portal</a>."
+#~ msgstr "%1 adalah proponen aktif dari pergerakan open-source. Beri saran peningkatan dan ikut beraktifitas dalam pengembangan aplikasi kami. Informasi lebih lanjut mengenai pengembang terdapat pada <a href=\"%2\" target=\"_blank\">Portal Pengembang</a> kami."
+
+#~ msgid "%1 provides a variety of applications to help you trade efficiently."
+#~ msgstr "%1 menyediakan berbagai aplikasi yang bisa membantu Anda bertrading secara efisien."
+
+#~ msgid "Advanced tool for active traders"
+#~ msgstr "Alat canggih untuk trader aktif"
+
+#~ msgid "Available soon..."
+#~ msgstr "Akan tersedia segera..."
+
+#~ msgid "Binary Next Gen"
+#~ msgstr "Binary Next Gen"
+
+#~ msgid "Enjoy our fastest type of trading on your mobile phone or tablet. Place tick trades anytime, anywhere - even while you're on the move."
+#~ msgstr "Nikmati jenis trading tercepat yang kami sediakan pada mobile phone atau tablet. Trading tik kapan saja, dimana saja - bahkan saat Anda sedang berpergian."
+
+#~ msgid "Examine the history of a particular instrument to plot your next move. This advanced charting platform offers a wide range of technical indicators."
+#~ msgstr "Meneliti sejarah instrumen tertentu untuk merencanakan langkah selanjutnya. Platform charting canggih ini menawarkan berbagai indikator teknis."
+
+#~ msgid "Explore our most cutting-edge new platform, now available in beta form. Place trades from your virtual account."
+#~ msgstr "Jelajahi platform mutakhir kami yang terbaru, sekarang tersedia dalam bentuk beta. Coba beli kontrak menggunakan akun virtual Anda."
+
+#~ msgid "Join our developer community"
+#~ msgstr "Bergabung dengan komunitas pengembang kami"
+
+#~ msgid "List of All Open-Source Projects"
+#~ msgstr "Daftar Semua Proyek Open-Source"
+
+#~ msgid "Monitor the movements of all of your favourite assets and markets at the same time. This flexible charting platform provides a variety of customisable features."
+#~ msgstr "Memantau pergerakan semua aset dan pasar favorit Anda pada waktu yang sama. Platform charting fleksibel ini menyediakan berbagai fitur yang dapat disesuaikan."
+
+#~ msgid "Next Gen on GitHub"
+#~ msgstr "Next Gen pada GitHub"
+
+#~ msgid "Powerful charting and technical analysis"
+#~ msgstr "Charting lengkap dan analisis teknis"
+
+#~ msgid "The future of trading on %1"
+#~ msgstr "Masa depan trading pada %1"
+
+#~ msgid "Tick Trade App"
+#~ msgstr "App Trading Tik"
+
+#~ msgid "Tick Trade on GitHub"
+#~ msgstr "Trading Tik pada GitHub"
+
+#~| msgid "%1 Tools"
+#~ msgid "Tooltips"
+#~ msgstr "Tooltips"
+
+#~ msgid "Try It"
+#~ msgstr "Cobalah"
+
+#~ msgid "Ultra-fast trading"
+#~ msgstr "Trading super cepat"
+
+#~ msgid "Webtrader on GitHub"
+#~ msgstr "Webtrader pada GitHub"
 
 #~ msgid "Market Data"
 #~ msgstr "Data Pasar"
@@ -11534,14 +11560,8 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 #~ msgid "Predict the last digit of the market price at expiration."
 #~ msgstr "Menganalisa digit terakhir pada penutupan pasar."
 
-#~ msgid "Ends In/Out"
-#~ msgstr "Ends In/Out"
-
 #~ msgid "Predict the ending market level relative to 2 chosen barriers."
 #~ msgstr "Analisa tingkat akhir pasar berdasarkan 2 batasan terpilih."
-
-#~ msgid "Stays In/Goes Out"
-#~ msgstr "Stays In/Goes Out"
 
 #~ msgid "Predict whether or not the market will touch either of 2 chosen levels before expiration."
 #~ msgstr "Analisa apakah pasar akan menyentuh salah satu dari 2 tingkatan yang dipilih sebelum berakhir."
