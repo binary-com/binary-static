@@ -1,105 +1,115 @@
 <div class="about-us">
-  <div class="grd-container">
-    <div class="grd-grid-12 grd-parent">
-      <h1 class="center">
+  <div class="container">
+    <div class="gr-parent">
+      <h1 class="center-text">
         [% l("The premier platform for trading binary options in the world's financial markets") %]
       </h1>
-      <div class="grd-grid-7 grd-grid-mobile-12">
-        <img class="mac responsive" src="[% request.url_for('images/pages/about/imac.svg') %]"/>
-      </div>
-      <div class="grd-grid-5 grd-grid-mobile-12">
-        <p>
-          [% l("[_1] is one of the oldest and most respected names in online binary trading.", website_name) %]
-        </p>
-        <p>
-          [% l("Using our website, customers can trade currencies, indices, stocks and commodities 24/7. We have the most flexible pricing and the most comprehensive suite of products available.") %]
-        </p>
-        <p>
-          [% l("[_1] has earned an enviable reputation for our commitment to high ethical standards and the quality of the trading experience we provide.", website_name) %]
-        </p>
-        <p>
-          [% l("When you trade with [_1], you can be assured that your deposits are held in a separate trust account and are not used for any other purpose.", website_name) %]
-        </p>
+      <div class="gr-row">
+          <div class="gr-7 gr-12-m">
+            <img class="mac responsive" src="[% request.url_for('images/pages/about/imac.svg') %]"/>
+          </div>
+          <div class="gr-5 gr-12-m">
+            <p>
+              [% l("[_1] is one of the oldest and most respected names in online binary trading.", website_name) %]
+            </p>
+            <p>
+              [% l("Using our website, customers can trade currencies, indices, stocks and commodities 24/7. We have the most flexible pricing and the most comprehensive suite of products available.") %]
+            </p>
+            <p>
+              [% l("[_1] has earned an enviable reputation for our commitment to high ethical standards and the quality of the trading experience we provide.", website_name) %]
+            </p>
+            <p>
+              [% l("When you trade with [_1], you can be assured that your deposits are held in a separate trust account and are not used for any other purpose.", website_name) %]
+            </p>
+          </div>
       </div>
     </div>
   </div>
   <div class="blue-fill">
-    <div class="grd-container">
-      <div class="grd-grid-12 grd-parent facts">
-        <h1 class="center margin-top">[% l("Key facts") %]</h1>
-        <div class="grd-grid-12 grd-parent border-bottom">
-          <div class="grd-grid-6 grd-grid-mobile-12">
-            <div class="grd-grid-6 center border-right-top">
-              <a class="pjaxload" href="[% request.url_for('/group-history') %]">
-                <img class="responsive" src="[% request.url_for('images/pages/about/founded.svg') %]"/>
-              </a>
-              <p>
-                [% l("<a href='[_1]'>Founded</a> October 1999", request.url_for("/group-history")) %]
-              </p>
-            </div>
-            <div class="grd-grid-6 center border-right-top">
-              <img class="responsive" src="[% request.url_for('images/pages/about/debt-free.svg') %]"/>
-              <p>
-                [% l("Debt-free") %]
-              </p>
-            </div>
+    <div class="container">
+      <div class="gr-padding-10 facts">
+        <h1 class="center-text margin-top">[% l("Key facts") %]</h1>
+        <div class="gr-row gr-parent border-bottom">
+          <div class="gr-6 gr-12-m">
+              <div class="gr-row">
+                  <div class="gr-6 center-text border-right-top">
+                    <a class="pjaxload" href="[% request.url_for('/group-history') %]">
+                      <img class="responsive" src="[% request.url_for('images/pages/about/founded.svg') %]"/>
+                    </a>
+                    <p>
+                      [% l("<a href='[_1]'>Founded</a> October 1999", request.url_for("/group-history")) %]
+                    </p>
+                  </div>
+                  <div class="gr-6 center-text border-right-top">
+                    <img class="responsive" src="[% request.url_for('images/pages/about/debt-free.svg') %]"/>
+                    <p>
+                      [% l("Debt-free") %]
+                    </p>
+                  </div>
+              </div>
           </div>
-          <div class="grd-grid-6 grd-grid-mobile-12">
-            <div class="grd-grid-6 center border-right-top">
-              <a class="pjaxload" href="[% request.url_for('/careers') %]">
-                <img class="responsive" src="[% request.url_for('images/pages/about/staff.svg') %]"/>
-              </a>
-              <p>
-                [% l("Over 90 <a href='[_1]'>staff</a> and contractors worldwide", request.url_for("/careers")) %]
-              </p>
-            </div>
-            <div class="grd-grid-6 center">
-              <img class="responsive" src="[% request.url_for('images/pages/about/1mil.svg') %]"/>
-              <p>
-                [% l("Over 1 million registered accounts worldwide") %]
-              </p>
-            </div>
+          <div class="gr-6 gr-12-m">
+              <div class="gr-row">
+                  <div class="gr-6 center-text border-right-top">
+                    <a class="pjaxload" href="[% request.url_for('/careers') %]">
+                      <img class="responsive" src="[% request.url_for('images/pages/about/staff.svg') %]"/>
+                    </a>
+                    <p>
+                      [% l("Over 90 <a href='[_1]'>staff</a> and contractors worldwide", request.url_for("/careers")) %]
+                    </p>
+                  </div>
+                  <div class="gr-6 center-text">
+                    <img class="responsive" src="[% request.url_for('images/pages/about/1mil.svg') %]"/>
+                    <p>
+                      [% l("Over 1 million registered accounts worldwide") %]
+                    </p>
+                  </div>
+              </div>
           </div>
         </div>
-        <div class="grd-grid-12 grd-parent">
-          <div class="grd-grid-6 grd-grid-mobile-12">
-            <div class="grd-grid-6 center border-right-bottom">
-              <a class="pjaxload" href="http://binarycom.statuspage.io/" target="_blank">
-                <img class="responsive" src="[% request.url_for('images/pages/about/transacts.svg') %]"/>
-              </a>
-              <p>
-                [% l("Binary's platform transacts on average 15 <a href='http://binarycom.statuspage.io/' target='_blank'>transactions</a> per second, 24/7") %]
-              </p>
-            </div>
-            <div class="grd-grid-6 center border-right-bottom">
-              <a class="pjaxload" href="[% request.url_for('/contact') %]">
-                <img class="responsive" src="[% request.url_for('images/pages/about/locations.svg') %]"/>
-              </a>
-              <p>
-                [% l("<a href='[_1]'>Offices</a> in Malta, Malaysia and Japan", request.url_for("/contact")) %]
-              </p>
-            </div>
+        <div class="gr-row gr-parent">
+          <div class="gr-6 gr-12-m">
+              <div class="gr-row">
+                  <div class="gr-6 center-text border-right-bottom">
+                    <a class="pjaxload" href="http://binarycom.statuspage.io/" target="_blank">
+                      <img class="responsive" src="[% request.url_for('images/pages/about/transacts.svg') %]"/>
+                    </a>
+                    <p>
+                      [% l("Binary's platform transacts on average 15 <a href='http://binarycom.statuspage.io/' target='_blank'>transactions</a> per second, 24/7") %]
+                    </p>
+                  </div>
+                  <div class="gr-6 center-text border-right-bottom">
+                    <a class="pjaxload" href="[% request.url_for('/contact') %]">
+                      <img class="responsive" src="[% request.url_for('images/pages/about/locations.svg') %]"/>
+                    </a>
+                    <p>
+                      [% l("<a href='[_1]'>Offices</a> in Malta, Malaysia and Japan", request.url_for("/contact")) %]
+                    </p>
+                  </div>
+              </div>
           </div>
-          <div class="grd-grid-6 grd-grid-mobile-12">
-            <div class="grd-grid-6 center border-right-bottom">
-              <img class="responsive" src="[% request.url_for('images/pages/about/license.svg') %]"/>
-              <p>
-                [% l("Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland") %]
-              </p>
-            </div>
-            <div class="grd-grid-6 center align">
-              <img class="responsive" src="[% request.url_for('images/pages/about/languages.svg') %]"/>
-              <p>
-                [% l("Published in English, Japanese, Chinese, Arabic, Polish, German, French, Spanish, Portuguese, Italian and Russian") %]
-              </p>
-            </div>
+          <div class="gr-6 gr-12-m">
+              <div class="gr-row">
+                  <div class="gr-6 center-text border-right-bottom">
+                    <img class="responsive" src="[% request.url_for('images/pages/about/license.svg') %]"/>
+                    <p>
+                      [% l("Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland") %]
+                    </p>
+                  </div>
+                  <div class="gr-6 center-text align">
+                    <img class="responsive" src="[% request.url_for('images/pages/about/languages.svg') %]"/>
+                    <p>
+                      [% l("Published in English, Japanese, Chinese, Arabic, Polish, German, French, Spanish, Portuguese, Italian and Russian") %]
+                    </p>
+                  </div>
+              </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="grd-container">
-    <div class="grd-grid-12 grd-parent">
+  <div class="container">
+    <div class="gr-parent">
       <p>
         [% l("[_1] is owned and operated by the Binary Ltd. group of companies. For more information, <a href='[_2]'>visit our history page</a>.", website_name, request.url_for("/group-history")) %]
       </p>

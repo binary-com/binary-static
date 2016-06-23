@@ -1,58 +1,44 @@
-<div class="grd-container grd-default-container">
-  <div class="open-source-projects static_full">
-    <div class="grd-grid-3 grd-hide-mobile">
+<div class="container container">
+  <div class="open-source-projects static_full gr-row">
+    <div class="gr-3 gr-hide-m">
       <div class="sidebar">
         <ul id="sidebar-nav">
           <li class="selected" id="sidebar-link-section-1">
-            <a href="#open-source-projects-section">
-              [% l("Open-source projects") %]
-            </a>
+            <a href="#open-source-projects-section">[% l("Open-source projects") %]</a>
           </li>
           <li id="sidebar-link-section-2">
-            <a href="#static-content">
-              [% l("Static content") %]
-            </a>
+            <a href="#static-content">[% l("Static content") %]</a>
           </li>
           <li id="sidebar-link-section-3">
-            <a href="#perl-modules">
-              [% l("Perl modules") %]
-            </a>
+            <a href="#perl-modules">[% l("Perl modules") %]</a>
           </li>
           <li id="sidebar-link-section-4">
-            <a href="#translations">
-              [% l("Translations") %]
-            </a>
+            <a href="#translations">[% l("Translations") %]</a>
           </li>
         </ul>
         <div class="sidebar-button">
-          <a class="pjaxload" href="[% request.url_for('contact') %]">
-            [% l("Contact us") %]
-          </a>
+          <a class="pjaxload" href="[% request.url_for('contact') %]">[% l("Contact us") %]</a>
         </div>
       </div>
     </div>
-    <div class="grd-grid-9 grd-grid-mobile-12 grd-parent">
+    <div class="gr-9 gr-12-m gr-parent">
       <div class="section">
         <a id="open-source-projects-section"></a>
         <div class="section-content">
           <div id="section-1">
-            <div class="grd-grid-12">
-              <h1>
-                [% l("Binary.com open-source projects") %]
-              </h1>
-            </div>
-            <div class="grd-grid-12 grd-row-padding"></div>
-            <div class="grd-grid-4 grd-hide grd-show-mobile grd-centered-mobile grd-row-padding">
-              <img class="responsive" src="[% request.url_for('images/pages/open-source-projects/open-source-projects-1.svg') %]"/>
-            </div>
-            <div class="grd-grid-8 grd-grid-mobile-12">
-              <p>
-                [% l("Binary.com is an active proponent of the open-source movement and is in the process of open-sourcing a number of components of its codebase.") %]
-              </p>
-            </div>
-            <div class="grd-grid-4 grd-hide-mobile grd-parent">
-              <div class="grd-grid-8">
+            <h1>[% l("Binary.com open-source projects") %]</h1>
+            <div class="gr-12 gr-padding-10"></div>
+            <div class="gr-row">
+              <div class="gr-4 gr-hide gr-show-m gr-centered-m gr-padding-10">
                 <img class="responsive" src="[% request.url_for('images/pages/open-source-projects/open-source-projects-1.svg') %]"/>
+              </div>
+              <div class="gr-8 gr-12-m">
+                <p>[% l("Binary.com is an active proponent of the open-source movement and is in the process of open-sourcing a number of components of its codebase.") %]</p>
+              </div>
+              <div class="gr-4 gr-hide-m gr-parent">
+                <div class="gr-8">
+                  <img class="responsive" src="[% request.url_for('images/pages/open-source-projects/open-source-projects-1.svg') %]"/>
+                </div>
               </div>
             </div>
           </div>
@@ -62,26 +48,22 @@
         <a id="static-content"></a>
         <div class="section-content">
           <div id="section-2">
-            <div class="grd-grid-12">
-              <h1>
-                [% l("Static content") %]
-              </h1>
+            <h1>[% l("Static content") %]</h1>
+            <div class="gr-padding-10">
+              <h4>[% l("Improve Binary.com's front-end content") %]</h4>
             </div>
-            <div class="grd-grid-12">
-              <h4>
-                [% l("Improve Binary.com's front-end content") %]
-              </h4>
-            </div>
-            <div class="grd-grid-4 grd-parent grd-hide-mobile">
-              <p>
-                [% ' ' %]
-              </p>
-              <div class="grd-grid-11">
-                <img class="responsive" src="[% request.url_for('images/pages/open-source-projects/open-source-projects-3.png') %]"/>
+            <div class="gr-row">
+              <div class="gr-4 gr-parent gr-hide-m">
+                <p>
+                  [% ' ' %]
+                </p>
+                <div class="gr-11">
+                  <img class="responsive" src="[% request.url_for('images/pages/open-source-projects/open-source-projects-3.png') %]"/>
+                </div>
               </div>
-            </div>
-            <div class="grd-grid-8 grd-grid-mobile-12">
-              <p>[% l("The Binary.com website's static content (CSS, Javascript) is available as the <a target='_blank' href='[_1]'>binary-static</a> open-source project on github. Would you like to re-skin the Binary.com website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes.", 'https://github.com/binary-com/binary-static') %]</p>
+              <div class="gr-8 gr-12-m">
+                <p>[% l("The Binary.com website's static content (CSS, Javascript) is available as the <a target='_blank' href='[_1]'>binary-static</a> open-source project on github. Would you like to re-skin the Binary.com website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes.", 'https://github.com/binary-com/binary-static') %]</p>
+              </div>
             </div>
           </div>
         </div>
@@ -90,29 +72,25 @@
         <a id="perl-modules"></a>
         <div class="section-content">
           <div id="section-3">
-            <div class="grd-grid-12">
-              <h1>
-                [% l("Perl modules") %]
-              </h1>
+            <h1>[% l("Perl modules") %]</h1>
+            <div class="gr-padding-10">
+              <h4>[% l("Binary.com's CPAN contributions") %]</h4>
             </div>
-            <div class="grd-grid-12">
-              <h4>
-                [% l("Binary.com's CPAN contributions") %]
-              </h4>
-            </div>
-            <div class="grd-grid-12 grd-row-padding"></div>
-            <div class="grd-grid-4 grd-hide grd-show-mobile grd-centered-mobile grd-row-padding">
-              <img class="responsive" src="[% request.url_for('images/pages/open-source-projects/open-source-projects-4.svg') %]"/>
-            </div>
-            <div class="grd-grid-8 grd-grid-mobile-12">
-              <p>[% l("Binary.com is an active member of the Perl community and is in the process of uploading a number of its internal utility modules to <a target='_blank' href='[_1]'>CPAN</a>. If you are a Perl enthusiast, contribute by reviewing these modules, and submitting pull-requests on <a target='_blank' href='[_2]'>github</a>.", 'http://search.cpan.org/~binary/', 'https://github.com/binary-com') %]</p>
-            </div>
-            <div class="grd-grid-3 grd-parent grd-hide-mobile">
-              <div class="grd-grid-10">
+            <div class="gr-12 gr-padding-10"></div>
+            <div class="gr-row">
+              <div class="gr-4 gr-hide gr-show-m gr-centered-m gr-padding-10">
                 <img class="responsive" src="[% request.url_for('images/pages/open-source-projects/open-source-projects-4.svg') %]"/>
               </div>
+              <div class="gr-8 gr-12-m">
+                <p>[% l("Binary.com is an active member of the Perl community and is in the process of uploading a number of its internal utility modules to <a target='_blank' href='[_1]'>CPAN</a>. If you are a Perl enthusiast, contribute by reviewing these modules, and submitting pull-requests on <a target='_blank' href='[_2]'>github</a>.", 'http://search.cpan.org/~binary/', 'https://github.com/binary-com') %]</p>
+              </div>
+              <div class="gr-3 gr-parent gr-hide-m">
+                <div class="gr-10">
+                  <img class="responsive" src="[% request.url_for('images/pages/open-source-projects/open-source-projects-4.svg') %]"/>
+                </div>
+              </div>
+              <div class="gr-1 gr-hide-m"></div>
             </div>
-            <div class="grd-grid-1 grd-hide-mobile"></div>
           </div>
         </div>
       </div>
@@ -120,27 +98,25 @@
         <a id="translations"></a>
         <div class="section-content">
           <div id="section-4">
-            <div class="grd-grid-12">
-              <h1>
-                [% l("Translations") %]
-              </h1>
-            </div>
-            <div class="grd-grid-12 grd-row-padding"></div>
-            <div class="grd-grid-4 grd-parent grd-grid-mobile-6 grd-centered-mobile">
-              <div class="grd-grid-9">
-                <img class="responsive" src="[% request.url_for('images/pages/open-source-projects/open-source-projects-5.png') %]"/>
+            <h1>[% l("Translations") %]</h1>
+            <div class="gr-12 gr-padding-10"></div>
+            <div class="gr-row">
+              <div class="gr-4 gr-parent gr-6-m gr-centered-m">
+                <div class="gr-9">
+                  <img class="responsive" src="[% request.url_for('images/pages/open-source-projects/open-source-projects-5.png') %]"/>
+                </div>
               </div>
-            </div>
-            <div class="grd-grid-8 grd-grid-mobile-12 grd-parent">
-              <div class="grd-grid-12">
-                <p>
-                  [% l("Do you want to see Binary.com in other languages, or can you suggest improvements to our current translations?") %]
-                </p>
-                <a class="pjaxload button" href="[% request.url_for('contact') %]">
-                  <span>
-                    [% l("Contact us") %]
-                  </span>
-                </a>
+              <div class="gr-8 gr-12-m gr-parent">
+                <div class="gr-12">
+                  <p>
+                    [% l("Do you want to see Binary.com in other languages, or can you suggest improvements to our current translations?") %]
+                  </p>
+                  <a class="pjaxload button" href="[% request.url_for('contact') %]">
+                    <span>
+                      [% l("Contact us") %]
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

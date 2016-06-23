@@ -6,7 +6,8 @@
 
 [% IF get_started %]
 <div class="get-started">
-  <div class="grd-grid-3 grd-hide-mobile">
+  <div class="gr-row">
+  <div class="gr-3 gr-hide-m">
     <div class="sidebar-left">
       <ul class="nav">
           <li><a class="pjaxload" href="[% request.url_for('/get-started/what-is-binary-trading') %]">[% l("Why choose binary trading?") %]</a></li>
@@ -23,10 +24,10 @@
         </ul>
     </div>
   </div>
-  <div class="grd-grid-6 grd-grid-mobile-12 grd-parent">
+  <div class="gr-6 gr-12-m gr-parent">
     [% content %]
   </div>
-  <div class="grd-grid-3 grd-hide-mobile">
+  <div class="gr-3 gr-hide-m">
     <div class="sidebar-right">
       <div class="by_client_type client_logged_out">
         <p>
@@ -48,6 +49,7 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 [% ELSE %]
   [% content %]

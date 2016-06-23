@@ -1,16 +1,16 @@
 [% UNLESS is_pjax_request %]
 <body[% IF lang %] class="[% language %]"[% END %]>
-      [% INCLUDE global/header.html.tt %]
-      [% INCLUDE global/main_menu.html.tt %]
-      [% INCLUDE global/mobile_menu.html.tt %]
-      <!-- FlushHead -->
+    [% INCLUDE global/header.html.tt %]
+    [% INCLUDE global/main_menu.html.tt %]
+    [% INCLUDE global/mobile_menu.html.tt %]
+    <!-- FlushHead -->
 [% END %]
-      <div id="content"[% IF current_route +%] class="[% current_route %]-content"[% END %]>
-          [% INCLUDE global/gtm.html.tt %]
-          <div id="page_info" style="display:none;">
-              <title>[% browser_title %]</title>
-              <div id="content_class">[% current_route %]-content</div>
-          </div>
-          [% IF !full_width %]
-          <div class="grd-container">
-          [% END %]
+    <div id="content"[% IF current_route +%] class="[% current_route %]-content"[% END %]>
+        [% INCLUDE global/gtm.html.tt %]
+        <div id="page_info" style="display:none;">
+            <title>[% browser_title %]</title>
+            <div id="content_class">[% current_route %]-content</div>
+        </div>
+        [% IF !full_width %]
+        <div class="container">
+        [% END %]

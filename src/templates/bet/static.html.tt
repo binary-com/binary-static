@@ -3,6 +3,7 @@
    <div id="loading_container" class="overlay_container">
    </div>
    <div id="guideBtn"></div>
+   <span class="gr-hide-p gr-hide-m no-underline" data-balloon="[% l('Due to the impending Brexit vote, returns on some instruments may be lower than usual until Friday.') %]" data-balloon-length="xlarge" id="notice-message-forex">[% l("Notice") %]</span>
    <div id="app-container">
      <a href="https://itunes.apple.com/app/apple-store/id1091187567?pt=117911266&ct=trading_page&mt=8" target="_blank" id="appstore"></a>
      <a href="https://goo.gl/5KmSsU" target="_blank" id="androidApp"></a>
@@ -236,7 +237,7 @@
                           </div>
                         </div>
                         <div class="contract_purchase button">
-                           <button class="purchase_button contract_description" id="purchase_button_top" data-balloon-length="xlarge" value="purchase"></button>
+                           <button class="purchase_button contract_description no-underline" id="purchase_button_top" data-balloon-length="xlarge" value="purchase"></button>
                         </div>
                       </span>
                   </div>
@@ -260,7 +261,7 @@
                           </div>
                         </div>
                         <div class="contract_purchase button">
-                          <button class="purchase_button contract_description" id="purchase_button_bottom" data-balloon-length="xlarge" value="purchase"></button>
+                          <button class="purchase_button contract_description no-underline" id="purchase_button_bottom" data-balloon-length="xlarge" value="purchase"></button>
                         </div>
                       </span>
                   </div>

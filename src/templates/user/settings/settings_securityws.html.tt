@@ -1,23 +1,21 @@
-<div class="grd-grid-12">
-  <h1>
-    [% l("Security") %]
-  </h1>
+<div>
+  <h1>[% l("Security") %]</h1>
   <p id="SecuritySuccessMsg"></p>
-  <form class="formObject grd-row-padding" id="changeCashierLock" style="display:none;">
+  <form class="formObject gr-padding-10" id="changeCashierLock" style="display:none;">
     <div class="rbox form">
       <div class="rbox-wrap">
         <fieldset id="lockcashiersection">
           <legend></legend>
-          <div class="grd-grid-12">
+          <div class="gr-12">
             <p id="lockInfo"></p>
           </div>
-          <div class="grd-row-padding row clear" id="passwordrow">
-            <div class="grd-grid-4 form_label">
+          <div class="gr-padding-10 gr-row clear" id="passwordrow">
+            <div class="gr-4 form_label">
               <label for="cashierlockpassword1">
                 [% l("Cashier password") %]
               </label>
             </div>
-            <div class="grd-grid-8">
+            <div class="gr-8">
               <input autocomplete="off" class=" text" id="cashierlockpassword1" maxlength="25" name="cashierlockpassword1" type="password"></input>
               <div id="password-meter-div" style="display:none">
                 <p style="margin:0px;height:0.5em;">
@@ -30,13 +28,13 @@
               <p class="errorfield" id="errorcashierlockpassword1"></p>
             </div>
           </div>
-          <div class="grd-row-padding row clear" id="repasswordrow" style="display: none;">
-            <div class="grd-grid-4  form_label">
+          <div class="gr-padding-10 gr-row clear" id="repasswordrow" style="display: none;">
+            <div class="gr-4  form_label">
               <label for="cashierlockpassword2">
                 [% l("Re-enter your password") %]
               </label>
             </div>
-            <div class="grd-grid-8">
+            <div class="gr-8">
               <input autocomplete="off" class="text" id="cashierlockpassword2" maxlength="25" name="cashierlockpassword2" type="password"></input>
               <p class="errorfield" id="errorcashierlockpassword2"></p>
             </div>
@@ -45,8 +43,8 @@
       </div>
     </div>
     <fieldset class="formlayout settings sticky" id="formlayout">
-      <div class="grd-row-padding row clear">
-        <div class="grd-grid-12 center">
+      <div class="gr-padding-10">
+        <div class="gr-12 center-text gr-centered">
           <p class="error-msg" id="invalidinputfound"></p>
           <span class="button">
             <button class=" button" id="submit" name="submit" type="submit"></button>

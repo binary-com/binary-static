@@ -1,62 +1,62 @@
-<div class="grd-container">
-  <div class="grd-grid-12 grd-parent">
+<div class="container">
+  <div class="gr-12 gr-parent">
     <h1>
       [% l("Titles") %]
     </h1>
-    <div class="grd-grid-6">
+    <div class="gr-6">
       <xmp>
 <h1>Title</h1>
       </xmp>
     </div>
-    <div class="grd-grid-6">
+    <div class="gr-6">
       <h1>
         [% l("Title") %]
       </h1>
     </div>
-    <div class="grd-clear"></div>
-    <div class="grd-grid-6">
+    <div class="gr-clear"></div>
+    <div class="gr-6">
       <xmp>
 <h1 class="dark">Title</h1>
       </xmp>
     </div>
-    <div class="grd-grid-6">
+    <div class="gr-6">
       <h1 class="dark">
         [% l("Title") %]
       </h1>
     </div>
-    <div class="grd-clear"></div>
-    <div class="grd-grid-6">
+    <div class="gr-clear"></div>
+    <div class="gr-6">
       <xmp>
 <h2>Title</h2>
       </xmp>
     </div>
-    <div class="grd-grid-6">
+    <div class="gr-6">
       <h2>
         [% l("Title") %]
       </h2>
     </div>
-    <div class="grd-clear"></div>
-    <div class="grd-grid-6">
+    <div class="gr-clear"></div>
+    <div class="gr-6">
       <xmp>
 <h3>Title</h3>
       </xmp>
     </div>
-    <div class="grd-grid-6">
+    <div class="gr-6">
       <h3>
         [% l("Title") %]
       </h3>
     </div>
   </div>
-  <div class="grd-grid-12 grd-parent">
+  <div class="gr-12 gr-parent">
     <h1>
       [% l("Text") %]
     </h1>
-    <div class="grd-grid-6">
+    <div class="gr-6">
       <xmp>
 <p>paragraph with <strong>strong text</strong><p>
       </xmp>
     </div>
-    <div class="grd-grid-6">
+    <div class="gr-6">
       <p>
         [% l("paragraph with") %]
         <strong>
@@ -64,7 +64,7 @@
         </strong>
       </p>
     </div>
-    <div class="grd-grid-6">
+    <div class="gr-6">
       <xmp>
 <ul>
   <li>unordered list item 1</li>
@@ -73,7 +73,7 @@
 </ul>
       </xmp>
     </div>
-    <div class="grd-grid-6">
+    <div class="gr-6">
       <ul>
         <li>
           [% l('unordered list item 1') %]
@@ -86,8 +86,8 @@
         </li>
       </ul>
     </div>
-    <div class="grd-clear"></div>
-    <div class="grd-grid-6">
+    <div class="gr-clear"></div>
+    <div class="gr-6">
       <xmp>
 <ul class="bullet">
   <li>unordered list item 1</li>
@@ -96,7 +96,7 @@
 </ul>
       </xmp>
     </div>
-    <div class="grd-grid-6">
+    <div class="gr-6">
       <ul class="bullet">
         <li>
           [% l('unordered list item 1') %]
@@ -109,8 +109,8 @@
         </li>
       </ul>
     </div>
-    <div class="grd-clear"></div>
-    <div class="grd-grid-6">
+    <div class="gr-clear"></div>
+    <div class="gr-6">
       <xmp>
 <ul class="checked">
   <li>unordered list item 1</li>
@@ -119,7 +119,7 @@
 </ul>
       </xmp>
     </div>
-    <div class="grd-grid-6">
+    <div class="gr-6">
 <ul class="checked">
   <li>
     [% l('unordered list item 1') %]
@@ -132,8 +132,8 @@
   </li>
 </ul>
     </div>
-    <div class="grd-clear"></div>
-    <div class="grd-grid-6">
+    <div class="gr-clear"></div>
+    <div class="gr-6">
       <xmp>
 <ol>
   <li>ordered list item 1</li>
@@ -142,7 +142,7 @@
 </ol>
       </xmp>
     </div>
-    <div class="grd-grid-6">
+    <div class="gr-6">
       <ol>
         <li>
           [% l('ordered list item 1') %]
@@ -156,16 +156,16 @@
       </ol>
     </div>
   </div>
-  <div class="grd-grid-12 grd-parent">
+  <div class="gr-12 gr-parent">
     <h1>
       [% l("Links") %]
     </h1>
-    <div class="grd-grid-6">
+    <div class="gr-6">
       <xmp>
 <p>paragraph with <a href="#">link</a><p>
       </xmp>
     </div>
-    <div class="grd-grid-6">
+    <div class="gr-6">
       <p>
         paragraph with
         <a href="#">
@@ -173,30 +173,30 @@
         </a>
       </p>
     </div>
-    <div class="grd-clear"></div>
-    <div class="grd-grid-6">
+    <div class="gr-clear"></div>
+    <div class="gr-6">
       <xmp>
 <a class="button" href="#">
   <span>button link</span>
 </a>
       </xmp>
     </div>
-    <div class="grd-grid-6">
+    <div class="gr-6">
       <a class="button" href="#">
         <span>
           [% l("button link") %]
         </span>
       </a>
     </div>
-    <div class="grd-clear"></div>
-    <div class="grd-grid-6">
+    <div class="gr-clear"></div>
+    <div class="gr-6">
       <xmp>
 <a class="button-disabled">
   <span>button link</span>
 </a>
       </xmp>
     </div>
-    <div class="grd-grid-6">
+    <div class="gr-6">
       <a class="button-disabled" href="#">
         <span>
           [% l("disabled button link") %]
@@ -204,86 +204,52 @@
       </a>
     </div>
   </div>
-  <div class="grd-grid-12 grd-parent">
+  <div class="gr-12 gr-parent">
     <h1>
       [% l("Messages") %]
     </h1>
-    <div class="grd-grid-6">
+    <div class="gr-6">
       <xmp>
 <p class="success-msg">success message</p>
       </xmp>
     </div>
-    <div class="grd-grid-6">
+    <div class="gr-6">
       <p class="success-msg">
         [% l("success message") %]
       </p>
     </div>
-    <div class="grd-clear"></div>
-    <div class="grd-grid-6">
+    <div class="gr-clear"></div>
+    <div class="gr-6">
       <xmp>
 <p class="notice-msg">notice message</p>
       </xmp>
     </div>
-    <div class="grd-grid-6">
+    <div class="gr-6">
       <p class="notice-msg">
         [% l("notice message") %]
       </p>
     </div>
-    <div class="grd-clear"></div>
-    <div class="grd-grid-6">
+    <div class="gr-clear"></div>
+    <div class="gr-6">
       <xmp>
 <p class="error-msg">error message</p>
       </xmp>
     </div>
-    <div class="grd-grid-6">
+    <div class="gr-6">
       <p class="error-msg">
         [% l("error message") %]
       </p>
     </div>
-    <div class="grd-clear"></div>
+    <div class="gr-clear"></div>
   </div>
-  <div class="grd-grid-12 grd-parent">
-    <h1>
-      [% l("Tooltips") %]
-    </h1>
-    <div class="grd-grid-6">
-      <xmp>
-<span data-balloon="message"
-      data-balloon-length="small">
-  text with tooltip
-</span>
-      </xmp>
-    </div>
-    <div class="grd-grid-6">
-      <span data-balloon="message" data-balloon-length="small">
-        text with tooltip
-      </span>
-    </div>
-    <div class="grd-clear"></div>
-    <div class="grd-grid-6">
-      <xmp>
-<span data-balloon="message"
-      data-balloon-pos="down"
-      data-balloon-length="medium"
-      class="no-underline">
-  text with tooltip
-</span>
-      </xmp>
-    </div>
-    <div class="grd-grid-6">
-      <span data-balloon="Tooltip message at bottom" data-balloon-pos="down" data-balloon-length="medium" class="no-underline">
-        text with tooltip
-      </span>
-    </div>
-  </div>
-  <div class="grd-grid-12 grd-parent">
+  <div class="gr-12 gr-parent">
     <h1>
       [% l("Tabs") %]
     </h1>
     <p>
       [% l("For all types of tabs, you could call \"build_menu_with_content\" on server side to generate the HTML for you, or just output this HTML samples.") %]
     </p>
-    <div class="grd-grid-6">
+    <div class="gr-6">
       <h2>
         [% l("Simple Tab") %]
       </h2>
@@ -312,7 +278,7 @@
 </div>
       </xmp>
     </div>
-    <div class="grd-grid-6">
+    <div class="gr-6">
       <div class="has-tabs">
         <ul>
           <li>
@@ -348,8 +314,8 @@
         </div>
       </div>
     </div>
-    <div class="grd-clear"></div>
-    <div class="grd-grid-6">
+    <div class="gr-clear"></div>
+    <div class="gr-6">
       <h2>
         [% l("Tab With Submenus") %]
       </h2>
@@ -397,7 +363,7 @@
 </div>
       </xmp>
     </div>
-    <div class="grd-grid-6">
+    <div class="gr-6">
       <div class="content-tab-container">
         <div class="tab-menu">
           <div class="tab-menu-wrap">
@@ -440,8 +406,8 @@
         </div>
       </div>
     </div>
-    <div class="grd-clear"></div>
-    <div class="grd-grid-6">
+    <div class="gr-clear"></div>
+    <div class="gr-6">
       <h2>[% l("Page section tab") %]</h2>
       <xmp>
 <div class="section-tab-container">
@@ -487,7 +453,7 @@
 </div>
       </xmp>
     </div>
-    <div class="grd-grid-6">
+    <div class="gr-6">
       <div class="content-tab-container page-section" id="style-guide-page-section">
         <div class="tab-menu">
           <div class="tab-menu-wrap">
@@ -531,9 +497,9 @@
       </div>
     </div>
   </div>
-  <div class="grd-grid-12 grd-parent">
+  <div class="gr-12 gr-parent">
     <h1>[% l("Tables") %]</h1>
-    <div class="grd-grid-6">
+    <div class="gr-6">
       <xmp>
 <table>
   <thead>
@@ -579,7 +545,7 @@
 </div>
       </xmp>
     </div>
-    <div class="grd-grid-6">
+    <div class="gr-6">
       <table>
         <thead>
           <tr>
@@ -632,25 +598,25 @@
       </div>
     </div>
   </div>
-  <div class="grd-grid-12 grd-parent">
+  <div class="gr-12 gr-parent">
     <h1>[% l("Forms") %]</h1>
-    <div class="grd-grid-6">
+    <div class="gr-6">
       <xmp>
 <fieldset>
   <legend>Fieldset Legend</legend>
-  <div class="grd-row-padding">
-    <div class="form_label grd-grid-4">
+  <div class="gr-padding-10">
+    <div class="form_label gr-4">
       <label for="loginid">Login ID</label>
     </div>
-    <div class="grd-grid-8">
+    <div class="gr-8">
       <input id="loginid" type="text" name="loginid">
       <p class="hint">Hint comes here</p>
       <p class="errorfield">error in loginid</p>
     </div>
   </div>
-  <div class="grd-row-padding">
-    <div class="grd-grid-4"></div>
-    <div class="grd-grid-8">
+  <div class="gr-padding-10">
+    <div class="gr-4"></div>
+    <div class="gr-8">
       <span class="button">
         <button class="button" id="submit" name="submit" type="submit">Login</button>
       </span>
@@ -659,22 +625,22 @@
 </fieldset>
       </xmp>
     </div>
-    <div class="grd-grid-6">
+    <div class="gr-6">
       <fieldset>
         <legend>[% l("Fieldset Legend") %]</legend>
-        <div class="grd-row-padding">
-          <div class="form_label grd-grid-4">
+        <div class="gr-padding-10">
+          <div class="form_label gr-4">
             <label for="loginid">[% l("Login ID") %]</label>
           </div>
-          <div class="grd-grid-8">
+          <div class="gr-8">
             <input id="loginid" type="text" name="loginid">
             <p class="hint">[% l("Hint comes here") %]</p>
             <p class="errorfield">[% l("error in loginid") %]</p>
           </div>
         </div>
-        <div class="grd-row-padding">
-          <div class="grd-grid-4"></div>
-          <div class="grd-grid-8">
+        <div class="gr-padding-10">
+          <div class="gr-4"></div>
+          <div class="gr-8">
             <span class="button">
               <button class="button" id="submit" name="submit" type="submit">[% l("Login") %]</button>
             </span>
@@ -683,27 +649,27 @@
       </fieldset>
     </div>
   </div>
-  <div class="grd-grid-12 grd-parent">
+  <div class="gr-12 gr-parent">
     <h1>[% l("Date/Time Picker") %]</h1>
-    <div class="grd-grid-6">
+    <div class="gr-6">
       <xmp>
 <label for="date">Date</label>
 <input class="has-date-picker" name="date">
       </xmp>
     </div>
-    <div class="grd-grid-6">
+    <div class="gr-6">
       <label for="date">[% l("Date") %]</label>
       <input class="has-date-picker" name="date">
     </div>
-    <div class="grd-clear"></div>
-    <div class="grd-grid-6">
+    <div class="gr-clear"></div>
+    <div class="gr-6">
       <xmp>
 <label for="time">Time</label>
 <input class="has-time-picker"
  name="time" time:mintimehour="8">
       </xmp>
     </div>
-    <div class="grd-grid-6">
+    <div class="gr-6">
       <label for="time">[% l("Time") %]</label>
       <input class="has-time-picker" name="time" time:mintimehour="8">
     </div>

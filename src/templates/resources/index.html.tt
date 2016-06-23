@@ -1,44 +1,34 @@
-<div class="grd-grid-12">
-  <h1>
-    [% l("Resources") %]
-  </h1>
-  <p>
-    [% l("Do you want to learn more about the markets and how to trade them? Check out the resources below.") %]
-  </p>
-</div>
-<div class="grd-grid-12 grd-grid-mobile-12 grd-parent">
-  <div class="grd-grid-3 grd-grid-mobile-6 grd-parent ja-hide">
-    <div class="grd-grid-8 grd-with-padding">
+<h1>[% l("Resources") %]</h1>
+<p>[% l("Do you want to learn more about the markets and how to trade them? Check out the resources below.") %]</p>
+<div class="gr-row">
+  <div class="gr-3 gr-8-m gr-parent ja-hide">
+    <div class="gr-8 gr-padding-10">
       <a class="pjaxload" href="[% request.url_for('/resources/asset_indexws') %]" id="asset-index">
         <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/resources/asset-index.svg') %]"/>
       </a>
     </div>
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <h4>
         <a class="pjaxload" href="[% request.url_for('/resources/asset_indexws') %]">
           [% l("Asset Index") %]
         </a>
       </h4>
-      <p>
-        [% l("View the full list of assets, contract types and durations.") %]
-      </p>
+      <p>[% l("View the full list of assets, contract types and durations.") %]</p>
     </div>
   </div>
-  <div class="grd-grid-3 grd-grid-mobile-6 grd-parent">
-    <div class="grd-grid-8 grd-with-padding">
+  <div class="gr-3 gr-8-m gr-parent">
+    <div class="gr-8 gr-padding-10">
       <a class="pjaxload" href="[% request.url_for('/resources/market_timesws') %]" id="trading-times">
         <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/resources/trading-times.svg') %]"/>
       </a>
     </div>
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <h4>
         <a class="pjaxload" href="[% request.url_for('/resources/market_timesws') %]">
           [% l("Trading Times") %]
         </a>
       </h4>
-      <p>
-        [% l("View the operating hours of the markets you can trade.") %]
-      </p>
+      <p>[% l("View the operating hours of the markets you can trade.") %]</p>
     </div>
   </div>
 </div>

@@ -4,6 +4,9 @@ var SelfExlusionWS = (function() {
     var $form,
         $loading,
         dateID,
+        timeDateID,
+        timeID,
+        time,
         errorClass,
         hiddenClass;
 
@@ -14,6 +17,9 @@ var SelfExlusionWS = (function() {
     var init = function() {
         $form       = $('#frmSelfExclusion');
         $loading    = $('#loading');
+        timeDateID  = 'timeout_until_duration';
+        timeID      = 'timeout_until';
+        time        = new Date();
         dateID      = 'exclude_until';
         errorClass  = 'errorfield';
         hiddenClass = 'hidden';
@@ -82,6 +88,26 @@ var SelfExlusionWS = (function() {
         var end_date = new Date();
         end_date.setFullYear(end_date.getFullYear() + 5);
 
+        // 6 weeks from now
+        var week_end_date = new Date();
+        week_end_date.setMonth(week_end_date.getMonth() + 2);
+        week_end_date.setDate(week_end_date.getDate() + 1);
+
+        var now_date = new Date();
+
+        var $timeID = $('#' + timeID);
+        attach_time_picker($timeID);
+
+        var $timeDateID = $('#' + timeDateID);
+        $timeDateID.datepicker({
+            dateFormat: 'yy-mm-dd',
+            minDate   : now_date,
+            maxDate   : week_end_date,
+            onSelect  : function(dateText, inst) {
+                $timeDateID.attr('value', dateText);
+            }
+        });
+
         var $dateID = $('#' + dateID);
         $dateID.datepicker({
             dateFormat: 'yy-mm-dd',
@@ -131,22 +157,29 @@ var SelfExlusionWS = (function() {
             var newValue = $form.find('#' + key).val().trim();
 
             if(newValue.length > 0) {
-                submittedValues[key] = newValue;
-            }
-
-            if(key === dateID) {
-                validateExclusionDate(newValue);
-            }
-            else {
-                if(newValue.length > 0 && !isNormalInteger(newValue)) {
-                    showError(key, text.localize('Please enter an integer value'));
+                if (key === timeDateID) {
+                    if (validateExclusionDate(newValue, 'timeDate')) {
+                        submittedValues['timeout_until'] = time;
+                    }
+                } else if (key !== timeID) {
+                    submittedValues[key] = newValue;
                 }
-                else if(currentValue > 0 && (newValue.length === 0 || isLargerInt(newValue, currentValue))) {
-                    showError(key, text.localize('Please enter a number between 0 and [_1]').replace('[_1]', currentValue));
+                if(key === dateID) {
+                    validateExclusionDate(newValue);
                 }
-                else if(key === 'session_duration_limit' && newValue > (6 * 7 * 24 * 60)) {
-                    showError(key, text.localize('Session duration limit cannot be more than 6 weeks.'));
+                else if(key !== timeID && key !== timeDateID) {
+                    if(newValue.length > 0 && !isNormalInteger(newValue)) {
+                        showError(key, text.localize('Please enter an integer value'));
+                    }
+                    else if(currentValue > 0 && (newValue.length === 0 || isLargerInt(newValue, currentValue))) {
+                        showError(key, text.localize('Please enter a number between 0 and [_1]').replace('[_1]', currentValue));
+                    }
+                    else if(key === 'session_duration_limit' && newValue > (6 * 7 * 24 * 60)) {
+                        showError(key, text.localize('Session duration limit cannot be more than 6 weeks.'));
+                    }
                 }
+            } else if (key === timeDateID && $form.find('#' + timeID).val().trim().length > 0) {
+                showError(timeDateID, text.localize('Please select a valid date'));
             }
 
             if(newValue !== currentValue) {
@@ -170,7 +203,7 @@ var SelfExlusionWS = (function() {
         return /^\d+$/.test(value);
     };
 
-    var validateExclusionDate = function(exclusion_date) {
+    var validateExclusionDate = function(exclusion_date, opt) {
         var date_regex = /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/;
         var errMsg = '';
 
@@ -180,6 +213,17 @@ var SelfExlusionWS = (function() {
             }
             else {
                 exclusion_date = new Date(exclusion_date);
+                if (opt) {
+                    if (validateExclusionTime($('#' + timeID).val().trim())) {
+                        if ($('#' + timeID).val().trim().length > 0) {
+                            exclusion_date.setHours(parseInt($('#' + timeID).val().split(':')[0]));
+                            exclusion_date.setMinutes(parseInt($('#' + timeID).val().split(':')[1]));
+                        }
+                        time = Math.floor(exclusion_date.getTime()/1000);
+                    } else {
+                        return false;
+                    }
+                }
                 // self exclusion date must > 6 months from now
                 var six_month_date = new Date();
                 six_month_date.setMonth(six_month_date.getMonth() + 6);
@@ -187,27 +231,53 @@ var SelfExlusionWS = (function() {
                 var five_year_date = new Date();
                 five_year_date.setFullYear(five_year_date.getFullYear() + 5);
 
+                var six_week_date = new Date();
+                six_week_date.setMonth(six_week_date.getMonth() + 2);
+
                 if (exclusion_date < new Date()) {
                     errMsg = 'Exclude time must be after today.';
-                }
-                else if (exclusion_date < six_month_date) {
-                    errMsg = 'Exclude time cannot be less than 6 months.';
-                }
-                else if (exclusion_date > five_year_date) {
-                    errMsg = 'Exclude time cannot be for more than 5 years.';
-                }
-                else {
-                    var isConfirmed = confirm(text.localize('When you click "Ok" you will be excluded from trading on the site until the selected date.'));
-                    if(!isConfirmed) {
-                        isValid = false;
+                } else if (!opt) {
+                    if (exclusion_date < six_month_date) {
+                        errMsg = 'Exclude time cannot be less than 6 months.';
+                    }
+                    else if (exclusion_date > five_year_date) {
+                        errMsg = 'Exclude time cannot be for more than 5 years.';
+                    }
+                } else if (opt) {
+                    if (exclusion_date > six_week_date) {
+                        errMsg = 'Exclude time cannot be more than 6 weeks.';
                     }
                 }
             }
         }
 
         if(errMsg.length > 0) {
-            showError(dateID, text.localize(errMsg));
+            showError((opt ? timeDateID : dateID), text.localize(errMsg));
+            return false;
+        } else {
+            var isConfirmed = confirm(text.localize('When you click "Ok" you will be excluded from trading on the site until the selected date.'));
+            if(!isConfirmed) {
+                isValid = false;
+            }
+            return true;
         }
+    };
+
+    var validateExclusionTime = function(exclusion_time) {
+        var time_regex = /^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/;
+        var errMsg = '';
+
+        if (exclusion_time) {
+            if(time_regex.test(exclusion_time) === false){
+                errMsg = 'Please select a valid time';
+            }
+        }
+
+        if(errMsg.length > 0) {
+            showError(timeID, text.localize(errMsg));
+            return false;
+        }
+        return true;
     };
 
     // -----------------------------
@@ -222,6 +292,9 @@ var SelfExlusionWS = (function() {
 
     var showError = function(fieldID, errMsg) {
         $('#' + fieldID).parent().append($('<p/>', {class: errorClass, text: errMsg}));
+        if (fieldID === timeID) {
+            $('#' + fieldID).attr('style', 'margin-bottom:10px');
+        }
         isValid = false;
     };
 

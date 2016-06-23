@@ -1,98 +1,56 @@
-/* GRID LAYOUT INTERFACE Acting as an abstraction layer over the actual grid system underneath. */
+// Import grid settings :
+@import 'grid-settings';
 
-/* Gridle settings */
+// @include gridle_init();
 
-// Prefix to be prepended to all generated class names in order to make them more specific.
-$gridle-class-prefix: "grd-";
-
-// Register default responsive states and generate css classes.
-@import 'gridle/gridle';
-@include gridle_register_default_states();
-// Register our own state for phablet devices, by default gridle mobile is till 480px.
-@include gridle_register_state("phablet", 481px, 767px);
+// Generate classes :
+// @include gridle_generate_classes();
 @include gridle_generate_classes();
 
-$gridle-container-max-width: 960px;
-$gridle-container-min-width: 320px;
-$gridle-gutter-height: 10px;
+// you can generate classes separately if you need :
+// @include gridle_generate_classes(default);  	// default is the base state always registered
+// @include gridle_generate_classes(mobile); 	// only the mobile state
+// @include gridle_generate_classes(all, -helpers); // all states, all packages but the helpers
 
-body {
-    direction: $LANGUAGE_DIRECTION;
-}
-%gridle-container-common {
+// generate a center custom class for all the states :
+// @include gridle_generate_custom_class( ('center','@','%state') ) {
+// 	text-align:center;
+// }
+// this will produces classes : center, center@mobile, center@tablet, center@ipad-landscape
+// for separators, you can use -, --, _, __ or @
+
+// Max size :
+.container {
     margin: 0 auto;
-    min-width: $gridle-container-min-width;
-    max-width: $gridle-container-max-width;
+    max-width: 960px;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
-// Provide gutter height as it is not provided by default in gridle.
-.grd-row-padding {
-    padding-top: $gridle-gutter-height;
-    padding-bottom: $gridle-gutter-height;
-    overflow: hidden;
+//we're not using this because it overrides the existing mobile classes
+/*[class*="gr"] {
+	@include gridle_set((
+		m : (
+			grid : 12,
+			push : 0,
+			pull : 0,
+			prefix : 0,
+			suffix : 0
+		)
+	));
+}*/
+
+[class*="gr-parent"] {
+    padding-bottom: 5px;
+    padding-top: 0 !important;
 }
 
-.grd-no-row-padding {
-    padding-top: 0px;
-    padding-bottom: 0px;
-    overflow: hidden;
+.gr-padding-10 {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-.grd-no-col-padding {
-    padding-left: 0px;
-    padding-right: 0px;
-    overflow: hidden;
-}
-
-// this provides padding to individual grid element whereas grd-row-padding
-// provides padding for the container
-.grd-with-padding {
-    padding-top: $gridle-gutter-height;
-    padding-bottom: $gridle-gutter-height;
-}
-
-.grd-with-top-padding {
-    padding-top: $gridle-gutter-height*3/4;
-    padding-bottom: 0px;
-}
-
-// Default container with default padding for naive flat containers (Like footer and footer regulatory).
-// NOTE : Dependent on gridle prefix name defined above. Change the corresponding selectors
-// in case of refactoring.
-.grd-default-container {
-    padding-top: $gridle-gutter-height / 2;
-    padding-bottom: $gridle-gutter-height / 2;
-    [class*="grd-grid-"] {
-        padding-top: $gridle-gutter-height / 2;
-    }
-    [class*="grd-parent"] {
-        padding-bottom: $gridle-gutter-height / 2;
-        padding-top: 0 !important;
-    }
-}
-
-// Add some helper classes for aligning grid cells, useful in aligning table headers and columns.
-.right-aligned {
-    text-align: right;
-}
-
-.left-aligned {
-    text-align: left;
-}
-
-.center-aligned {
-    text-align: center;
-}
-
-// Presets for responsive images. This should work in most cases out of the box and responsive images
-// should react to size of their parent.
-img.responsive {
-    width: 100%;
-    height: auto;
-}
-img.img-with-height {
-    height: 200px;
-}
-.content-with-height {
-    min-height: 200px;
+.gr-padding-30 {
+    padding-top: 30px;
+    padding-bottom: 30px;
 }

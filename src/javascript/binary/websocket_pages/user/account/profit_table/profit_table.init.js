@@ -1,7 +1,6 @@
-
 var ProfitTableWS = (function () {
-    var batchSize = 100;
-    var chunkSize = batchSize/2;
+    var batchSize = 100,
+        chunkSize = batchSize/2;
 
     var transactionsReceived = 0;
     var transactionsConsumed = 0;
@@ -51,7 +50,7 @@ var ProfitTableWS = (function () {
                 $('#profit-table tbody')
                     .append($('<tr/>', {class: "flex-tr"})
                         .append($('<td/>', {colspan: 8})
-                            .append($('<p/>', {class: "notice-msg center", text: text.localize("Your account has no trading activity.")})
+                            .append($('<p/>', {class: "notice-msg center-text", text: text.localize("Your account has no trading activity.")})
                             )
                         )
                     );
@@ -103,6 +102,13 @@ var ProfitTableWS = (function () {
 
 
     function init(){
+        batchSize = 100;
+        chunkSize = batchSize/2;
+        transactionsReceived = 0;
+        transactionsConsumed = 0;
+        noMoreData = false;
+        pending = false;
+        currentBatch = [];
         getNextBatchTransactions();
         onScrollLoad();
     }

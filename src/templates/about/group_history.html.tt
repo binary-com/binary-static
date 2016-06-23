@@ -1,13 +1,13 @@
-<div class="grd-container grd-default-container">
-  <div class="grd-grid-12 grd-row-padding static_full">
-    <h1 class="center-aligned">
+<div class="container container">
+  <div class="gr-padding-10 static_full">
+    <h1 class="center-text">
       [% l("Binary.com's remarkable history") %]
     </h1>
   </div>
-  <div class="grd-grid-12 grd-row-padding">
+  <div class="gr-padding-10">
     <div class="timeline">
       <ul>
-        <li class="year first center-aligned">
+        <li class="year first center-text">
           [% 2016 %]
         </li>
         <li class="event left" style="margin-bottom: 50px">
@@ -18,7 +18,7 @@
             [% l("Binary.com is honoured as the world's \"Best Binary Options Broker\" at the 16th annual MENA International Financial Conference and Exhibition, hosted in Dubai.") %]
           </div>
         </li>
-        <li class="year center-aligned">
+        <li class="year center-text">
           [% 2015 %]
         </li>
         <li class="event left">
@@ -67,7 +67,7 @@
           </div>
           <div class="event-body">[% l("Regent Pacific Group Ltd., the Hong Kong-listed founding shareholder of Binary.com, <a href='[_1]' target='_blank'>disposes of its stake</a> at a valuation of US\$ 50.5 million.", ("http://www.regentpac.com/ICMServlet/download/13-1907-3066/EAnnt-ThirdPartiesSale(04Mar2015).pdf")) %]</div>
         </li>
-        <li class="year center-aligned">
+        <li class="year center-text">
           [% 2014 %]
         </li>
         <li class="event right featured">
@@ -104,7 +104,7 @@
         </li>
       </ul>
       <ul>
-        <li class="year center-aligned">
+        <li class="year center-text">
           [% 2013 %]
         </li>
         <li class="event featured">
@@ -115,7 +115,7 @@
         </li>
       </ul>
       <ul>
-        <li class="year center-aligned">
+        <li class="year center-text">
           [% 2012 %]
         </li>
         <li class="event right featured">
@@ -144,7 +144,7 @@
         </li>
       </ul>
       <ul>
-        <li class="year center-aligned">
+        <li class="year center-text">
           [% 2011 %]
         </li>
         <li class="event">
@@ -165,7 +165,7 @@
         </li>
       </ul>
       <ul>
-        <li class="year center-aligned">
+        <li class="year center-text">
           [% 2009 %]
         </li>
         <li class="event featured">
@@ -194,7 +194,7 @@
         </li>
       </ul>
       <ul>
-        <li class="year center-aligned">
+        <li class="year center-text">
           [% 2008 %]
         </li>
         <li class="event right">
@@ -223,7 +223,7 @@
         </li>
       </ul>
       <ul>
-        <li class="year center-aligned">
+        <li class="year center-text">
           [% 2007 %]
         </li>
         <li class="event">
@@ -244,7 +244,7 @@
         </li>
       </ul>
       <ul>
-        <li class="year center-aligned">
+        <li class="year center-text">
           [% 2004 %]
         </li>
         <li class="event">
@@ -265,7 +265,7 @@
         </li>
       </ul>
       <ul>
-        <li class="year center-aligned">
+        <li class="year center-text">
           [% 2000 %]
         </li>
         <li class="event featured">
@@ -284,7 +284,7 @@
         </li>
       </ul>
       <ul>
-        <li class="year center-aligned">
+        <li class="year center-text">
           [% 1999 %]
         </li>
         <li class="event featured">
