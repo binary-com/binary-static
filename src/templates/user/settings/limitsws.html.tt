@@ -1,9 +1,9 @@
-<div id="limits-ws-container" class="grd-grid-12">
+<div id="limits-ws-container">
     <h1></h1>
     <br>
     <div class="page-title" id="limits-title">
         <h2 id="trading-limits"></h2>
-        <p>
+        <div class="gr-padding-10">
           <table class="flex-table" id="client-limits" style="display:none">
             <thead>
               <tr class="flex-tr">
@@ -41,24 +41,24 @@
                 <td></td>
               </tr>
               <tr class="flex-tr">
-                <th class="flex-tr-child left-aligned" id="max-daily-turnover">
+                <th class="flex-tr-child align-start" id="max-daily-turnover">
                   <a href="#" id="max-daily-turnover-tooltip" data-balloon-length="xlarge" class="no-underline">
                     <img src="[% request.url_for('images/common/question_1.png') %]">
                   </a>
                 </th>
-                <th class="flex-tr-child limit left-aligned"></th>
+                <th class="flex-tr-child limit align-start"></th>
               </tr>
             </tbody>
           </table>
           <p class="hint">
             [% l('Stated limits are subject to change without prior notice.') %]
           </p>
-        </p>
+        </div>
     </div>
     <div class="errorbox rbox" id="client_message" style="display:none">
         <div class="rbox-wrap">
-            <div class="grd-grid-12 rbox-content" id="client_message_content">
-            <p class="center notice-msg"></p>
+            <div class="gr-12 rbox-content" id="client_message_content">
+            <p class="center-text notice-msg"></p>
         </div>
     </div>
 </div>

@@ -19,7 +19,7 @@
         font-weight: 700;
     }
     #topbar-info {
-        @include BIDIR_VALUE(float, right, left);
+        @include BIDIR_PROP(margin-left, margin-right, auto);
     }
     #gmt-clock, #contact-us, .upgrademessage {
         padding-top: 3px;
@@ -52,12 +52,18 @@
     a {
         color: $COLOR_WHITE;
         text-decoration: none;
+        img {
+            max-height: 55px;
+        }
     }
     select#client_loginid option[disabled=disabled] {
         background-color: $COLOR_LIGHT_GRAY;
     }
     #binary-logo-text {
         margin-top: 10px;
+        img {
+            width: 90%;
+        }
     }
     #client-logged-out {
         #btn_login {
@@ -79,6 +85,7 @@
         text-align: right;
         color: $COLOR_WHITE;
         font-size: 70%;
+        display: inline-block;
         a, a:visited {
             &:hover, &:active {
                 text-decoration: underline;
@@ -93,6 +100,11 @@
                 margin-top: 0.5em;
                 text-transform: uppercase;
             }
+        }
+    }
+    #mobile-menu-icon {
+        img {
+            max-height: 35px;
         }
     }
     #mobile-menu-icon-container {

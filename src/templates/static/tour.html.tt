@@ -1,7 +1,7 @@
-<div class="tour grd-container">
+<div class="tour container">
   <div class="section">
     <div class="section-content">
-      <div class="grd-grid-12">
+      <div class="gr-12">
         <h1>
           [% l("First, define your position...") %]
         </h1>
@@ -17,7 +17,7 @@
   </div>
   <div class="section">
     <div class="section-content">
-      <div class="grd-grid-12">
+      <div class="gr-12">
         <h1>
           [% l("2-way pricing") %]
         </h1>
@@ -25,21 +25,23 @@
           [% l("Simply change any of your parameters and the trade price instantly changes, giving you real-time knowledge of your stake. [_1] ensures fair and transparent pricing by showing you both sides of the trade.", website_name) %]
         </p>
       </div>
-      <div class="grd-grid-6 grd-grid-mobile-12 ja-hide">
-        <a class="pjaxload button" href="[% request.url_for('trading') %]">
-          <img class="responsive" id="new-trader-icon" src="[% request.url_for('images/pages/tour/tour-live-trade.svg') %]"/>
-        </a>
-      </div>
-      <div class="grd-grid-6 grd-grid-mobile-12 ja-hide">
-        <a class="pjaxload button" href="[% request.url_for('trading') %]">
-          <img class="responsive" id="new-trader-icon" src="[% request.url_for('images/pages/tour/tour-opposite-trade.svg') %]"/>
-        </a>
+      <div class="gr-row">
+          <div class="gr-6 gr-12-m ja-hide">
+            <a class="pjaxload button" href="[% request.url_for('trading') %]">
+              <img class="responsive" id="new-trader-icon" src="[% request.url_for('images/pages/tour/2-way-pricing_live.svg') %]"/>
+            </a>
+          </div>
+          <div class="gr-6 gr-12-m ja-hide">
+            <a class="pjaxload button" href="[% request.url_for('trading') %]">
+              <img class="responsive" id="new-trader-icon" src="[% request.url_for('images/pages/tour/2-way-pricing_opposite.svg') %]"/>
+            </a>
+          </div>
       </div>
     </div>
   </div>
   <div class="section">
     <div class="section-content">
-      <div class="grd-grid-12">
+      <div class="gr-12">
         <h1>
           [% l("Then, make your trade") %]
         </h1>
@@ -52,7 +54,7 @@
   </div>
   <div class="section">
     <div class="section-content">
-      <div class="grd-grid-12">
+      <div class="gr-12">
         <h1>
           [% l("Do you want to lock in profits?") %]
         </h1>
@@ -64,7 +66,7 @@
   </div>
   <div class="section ja-hide">
     <div class="section-content">
-      <div class="grd-grid-12">
+      <div class="gr-12">
         <h1>
           [% l("Bank your way") %]
         </h1>
@@ -84,7 +86,7 @@
   </div>
   <div class="section">
     <div class="section-content">
-      <div class="grd-grid-12">
+      <div class="gr-12">
         <h1>
           [% l("Learn from us") %]
         </h1>
@@ -100,7 +102,7 @@
   </div>
   <div class="section">
     <div class="section-content">
-      <div class="grd-grid-12">
+      <div class="gr-12">
         <h1>
           [% l("Talk to us") %]
         </h1>
@@ -108,7 +110,7 @@
           [% l("Feel free to contact our friendly and helpful customer service experts. They're always available to answer your questions. You can contact us via live chat, email and telephone.") %]
         </p>
       </div>
-      <div class="grd-grid-4 grd-grid-mobile-8 grd-centered ja-hide">
+      <div class="gr-4 gr-8-m gr-centered ja-hide">
         <a class="pjaxload button" href="[% request.url_for('contact') %]">
           <img class="responsive" src="[% request.url_for('images/pages/tour/tour-customer-support.png') %]"/>
         </a>

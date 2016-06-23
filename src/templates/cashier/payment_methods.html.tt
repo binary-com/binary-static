@@ -1,14 +1,12 @@
 <div id='cashier-content'>
-    <div class="grd-grid-12">
-        <h1>[% l('Available payment methods') %]</h1></br>
-    </div>
-    <div class="grd-grid-12 invisible">
+    <h1>[% l('Available payment methods') %]</h1>
+    <div class="gr-12 invisible">
       <p class="notice-msg by_client_type client_real with_login_cookies">
         [% l('Withdrawal is locked, please <a class="pjaxload" href="[_1]">contact us</a> for more information.', request.url_for('/contact')) %]
       </p>
     </div>
-    <div class="grd-grid-12">
-        <div id="payment_method_suggestions grd-row-padding" class='center-aligned'>
+    <div class="gr-12">
+        <div id="payment_method_suggestions gr-padding-10" class='center-text'>
             <p>
                 <a href="[% request.url_for('/') %]" class="button by_client_type client_logged_out invisible pjaxload">
                 <span>[% l('Open an account now') %]</span>
@@ -23,435 +21,435 @@
         </div>
     </div>
 
-    <div class="grd-row-padding table-header">
-        <div class="grd-grid-2 grd-grid-mobile-6">
+    <div class="gr-padding-10 table-header gr-row">
+        <div class="gr-2 gr-6-m">
             [% l('Method') %]
         </div>
 
-        <div class="grd-grid-2 grd-grid-mobile-6">
+        <div class="gr-2 gr-6-m">
             [% l('Currencies') %]
         </div>
 
-        <div class="grd-grid-2 grd-hide-mobile">
+        <div class="gr-2 gr-hide-m">
             [% l('Min-Max Deposit') %]
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
             [% l('Min-Max Withdrawal') %]
         </div>
 
-       <div class="grd-grid-3 grd-hide-mobile">
+       <div class="gr-3 gr-hide-m">
             [% l('Processing Time') %]
         </div>
     </div>
 
-    <div class="grd-row-padding table-body">
+    <div class="gr-padding-10 table-body gr-row">
 
-        <div class="grd-grid-12">
+        <div class="gr-12">
             <h3>[% l('Bank wire/Money transfer') %]</h3>
         </div>
 
-        <div class="grd-grid-2 grd-grid-mobile-6">
+        <div class="gr-2 gr-6-m">
             <div id="int_bank_wire"></div>
         </div>
 
-        <div class="grd-grid-2 grd-grid-mobile-6">
+        <div class="gr-2 gr-6-m">
             USD GBP
             EUR AUD
         </div>
 
-        <div class="grd-grid-2 grd-hide-mobile">
+        <div class="gr-2 gr-hide-m">
             25 - 100,000
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
             25 - 100,000
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
                 [% l('Deposit: [_1] working days', 5)%]<br>
                 [% l('Withdraw: [_1] working days', 5) %]
         </div>
     </div>
 
-    <div class="grd-row-padding table-body">
-        <div class="grd-grid-2 grd-grid-mobile-6">
+    <div class="gr-padding-10 table-body gr-row">
+        <div class="gr-2 gr-6-m">
             <div id="local_bank_transfer"></div>
         </div>
 
-        <div class="grd-grid-2 grd-grid-mobile-6">
+        <div class="gr-2 gr-6-m">
             USD GBP
             EUR AUD
         </div>
 
-        <div class="grd-grid-2 grd-hide-mobile">
+        <div class="gr-2 gr-hide-m">
             25 - 50,000
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
             25 - 10,000
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
                 [% l('Deposit: [_1] working days', 5)%]<br>
                 [% l('Withdraw: [_1] working days', 5) %]
         </div>
     </div>
 
-    <div class="grd-row-padding table-body">
-        <div class="grd-grid-2 grd-grid-mobile-6">
+    <div class="gr-padding-10 table-body gr-row">
+        <div class="gr-2 gr-6-m">
             <div id="western_union"></div>
         </div>
 
-        <div class="grd-grid-2 grd-grid-mobile-6">
+        <div class="gr-2 gr-6-m">
             USD GBP
             EUR AUD
         </div>
 
-        <div class="grd-grid-2 grd-hide-mobile">
+        <div class="gr-2 gr-hide-m">
             10 - 3,000
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
             50 - 250
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
                 [% l('Deposit: [_1] working days', 1)%]<br>
                 [% l('Withdraw: [_1] working days', 2) %]
         </div>
     </div>
 
-    <div class="grd-row-padding table-body">
-        <div class="grd-grid-2 grd-grid-mobile-6">
+    <div class="gr-padding-10 table-body gr-row">
+        <div class="gr-2 gr-6-m">
             <div id="citadel"></div>
         </div>
 
-        <div class="grd-grid-2 grd-grid-mobile-6">
+        <div class="gr-2 gr-6-m">
             USD GBP
             EUR AUD
         </div>
 
-        <div class="grd-grid-2 grd-hide-mobile">
+        <div class="gr-2 gr-hide-m">
             100 - 5,000
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
             100 - 5,000
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
             [% l('Deposit: [_1] working days', 5)%]<br>
             [% l('Withdraw: [_1] working days', 5) %]
         </div>
     </div>
 
-    <div class="grd-row-padding table-body">
+    <div class="gr-padding-10 table-body gr-row">
 
-        <div class="grd-grid-12">
+        <div class="gr-12">
             <h3>[% l('Credit/Debit Card') %]</h3>
         </div>
 
-        <div class="grd-grid-2 grd-grid-mobile-6">
+        <div class="gr-2 gr-6-m">
             <div id="visa"></div>
         </div>
 
-        <div class="grd-grid-2 grd-grid-mobile-6">
+        <div class="gr-2 gr-6-m">
             USD GBP
             EUR AUD
         </div>
 
-        <div class="grd-grid-2 grd-hide-mobile">
+        <div class="gr-2 gr-hide-m">
             10 - 10,000
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
             10 - 10,000
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
                 [% l('Instant') %]<br>[% l('Withdraw: [_1] working days', 3) %]
         </div>
     </div>
 
-    <div class="grd-row-padding table-body">
-        <div class="grd-grid-2 grd-grid-mobile-6">
+    <div class="gr-padding-10 table-body gr-row">
+        <div class="gr-2 gr-6-m">
             <div id="mastercard"></div>
         </div>
 
-        <div class="grd-grid-2 grd-grid-mobile-6">
+        <div class="gr-2 gr-6-m">
             USD GBP
             EUR AUD
         </div>
 
-        <div class="grd-grid-2 grd-hide-mobile">
+        <div class="gr-2 gr-hide-m">
             10 - 10,000
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
             10 - 10,000
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
             [% l('Deposit: Instant')%]<br>
             [% l('Withdraw: [_1] working days', 3) %]
         </div>
     </div>
 
-    <div class="grd-row-padding table-body">
-        <div class="grd-grid-2 grd-grid-mobile-6">
+    <div class="gr-padding-10 table-body gr-row">
+        <div class="gr-2 gr-6-m">
             <div id="cuo-credit-card"></div>
         </div>
 
-        <div class="grd-grid-2 grd-grid-mobile-6">
+        <div class="gr-2 gr-6-m">
             USD
         </div>
 
-        <div class="grd-grid-2 grd-hide-mobile">
+        <div class="gr-2 gr-hide-m">
             10 - 1,000
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
             [% l('Deposit: Instant')%]<br>
             [% l('Withdraw: Not applicable') %]
         </div>
     </div>
 
-    <div class="grd-row-padding table-body">
+    <div class="gr-padding-10 table-body gr-row">
 
-        <div class="grd-grid-12">
+        <div class="gr-12">
             <h3>[% l('E-cash') %]</h3>
         </div>
 
-        <div class="grd-grid-2 grd-grid-mobile-6">
+        <div class="gr-2 gr-6-m">
             <div id="okpay"></div>
         </div>
 
-        <div class="grd-grid-2 grd-grid-mobile-6">
+        <div class="gr-2 gr-6-m">
             USD
         </div>
 
-        <div class="grd-grid-2 grd-hide-mobile">
+        <div class="gr-2 gr-hide-m">
             5 - 1,000
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
             5 - 1,000
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
             [% l('Deposit: Instant')%]<br>
             [% l('Withdraw: [_1] working day', 1) %]
         </div>
     </div>
 
-    <div class="grd-row-padding table-body">
-        <div class="grd-grid-2 grd-grid-mobile-6">
+    <div class="gr-padding-10 table-body gr-row">
+        <div class="gr-2 gr-6-m">
             <div id="fastpay"></div>
         </div>
 
-        <div class="grd-grid-2 grd-grid-mobile-6">
+        <div class="gr-2 gr-6-m">
             USD
         </div>
 
-        <div class="grd-grid-2 grd-hide-mobile">
+        <div class="gr-2 gr-hide-m">
             5 - 10,000
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
             5 - 10,000
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
             [% l('Deposit: Instant')%]<br>
             [% l('Withdraw: [_1] working day', 1)%]<br>
         </div>
 
    </div>
 
-    <div class="grd-row-padding table-body">
-        <div class="grd-grid-2 grd-grid-mobile-6">
+    <div class="gr-padding-10 table-body gr-row">
+        <div class="gr-2 gr-6-m">
             <div id="perfect_money"></div>
         </div>
 
-        <div class="grd-grid-2 grd-grid-mobile-6">
+        <div class="gr-2 gr-6-m">
             USD
         </div>
 
-        <div class="grd-grid-2 grd-hide-mobile">
+        <div class="gr-2 gr-hide-m">
             5 - 10,000
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
             5 - 10,000
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
             [% l('Deposit: Instant')%]<br>
             [% l('Withdraw: [_1] working day', 1) %]
         </div>
     </div>
 
-    <div class="grd-row-padding table-body">
-        <div class="grd-grid-2 grd-grid-mobile-6">
+    <div class="gr-padding-10 table-body gr-row">
+        <div class="gr-2 gr-6-m">
             <div id="moneybrokers"></div>
         </div>
 
-        <div class="grd-grid-2 grd-grid-mobile-6">
+        <div class="gr-2 gr-6-m">
             USD GBP
             EUR AUD
         </div>
 
-        <div class="grd-grid-2 grd-hide-mobile">
+        <div class="gr-2 gr-hide-m">
             5 - 20,000
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
             5 - 20,000
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
             [% l('Deposit: Instant')%]<br>
             [% l('Withdraw: [_1] working day', 1) %]
         </div>
     </div>
 
-    <div class="grd-row-padding table-body">
-        <div class="grd-grid-2 grd-grid-mobile-6">
+    <div class="gr-padding-10 table-body gr-row">
+        <div class="gr-2 gr-6-m">
             <div id="neteller"></div>
         </div>
 
-        <div class="grd-grid-2 grd-grid-mobile-6">
+        <div class="gr-2 gr-6-m">
             USD GBP
             EUR AUD
         </div>
 
-        <div class="grd-grid-2 grd-hide-mobile">
+        <div class="gr-2 gr-hide-m">
             5 - 20,000
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
             5 - 20,000
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
             [% l('Deposit: Instant')%]<br>
             [% l('Withdraw: [_1] working day', 1) %]
         </div>
     </div>
 
-    <div class="grd-row-padding table-body">
-        <div class="grd-grid-2 grd-grid-mobile-6">
+    <div class="gr-padding-10 table-body gr-row">
+        <div class="gr-2 gr-6-m">
             <div id="moneta"></div>
         </div>
 
-        <div class="grd-grid-2 grd-grid-mobile-6">
+        <div class="gr-2 gr-6-m">
             USD EUR
         </div>
 
-        <div class="grd-grid-2 grd-hide-mobile">
+        <div class="gr-2 gr-hide-m">
             5 - 20,000
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
             5 - 20,000
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
             [% l('Deposit: Instant')%]<br>
             [% l('Withdraw: [_1] working day', 1) %]
         </div>
     </div>
 
-    <div class="grd-row-padding table-body">
-        <div class="grd-grid-2 grd-grid-mobile-6">
+    <div class="gr-padding-10 table-body gr-row">
+        <div class="gr-2 gr-6-m">
             <div id="webmoney"></div>
         </div>
 
-        <div class="grd-grid-2 grd-grid-mobile-6">
+        <div class="gr-2 gr-6-m">
             USD EUR
         </div>
 
-        <div class="grd-grid-2 grd-hide-mobile">
+        <div class="gr-2 gr-hide-m">
             5 - 20,000
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
             5 - 20,000
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
             [% l('Deposit: Instant')%]<br>
             [% l('Withdraw: [_1] working day', 1) %]
         </div>
     </div>
 
-    <div class="grd-row-padding table-body">
-        <div class="grd-grid-2 grd-grid-mobile-6">
+    <div class="gr-padding-10 table-body gr-row">
+        <div class="gr-2 gr-6-m">
             <div id="qiwi"></div>
         </div>
 
-        <div class="grd-grid-2 grd-grid-mobile-6">
+        <div class="gr-2 gr-6-m">
             USD EUR
         </div>
 
-        <div class="grd-grid-2 grd-hide-mobile">
+        <div class="gr-2 gr-hide-m">
             5 - 200 (USD)<br>
             5 - 150 (EUR)
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
             5 - 200 (USD)<br>
             5 - 150 (EUR)
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
             [% l('Deposit: [_1] working day', 1) %]<br>
             [% l('Withdraw: [_1] working day', 1) %]
         </div>
     </div>
 
-    <div class="grd-row-padding table-body">
-        <div class="grd-grid-2 grd-grid-mobile-6">
+    <div class="gr-padding-10 table-body gr-row">
+        <div class="gr-2 gr-6-m">
             <div id="yandex"></div>
         </div>
 
-        <div class="grd-grid-2 grd-grid-mobile-6">
+        <div class="gr-2 gr-6-m">
             USD EUR
         </div>
 
-        <div class="grd-grid-2 grd-hide-mobile">
+        <div class="gr-2 gr-hide-m">
             25 - 640
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
             [% l('Deposit: Instant') %]
         </div>
     </div>
 
-    <div class="grd-row-padding table-body">
-        <div class="grd-grid-2 grd-grid-mobile-6">
+    <div class="gr-padding-10 table-body gr-row">
+        <div class="gr-2 gr-6-m">
             <div id="paysafecard"></div>
         </div>
 
-        <div class="grd-grid-2 grd-grid-mobile-6">
+        <div class="gr-2 gr-6-m">
             USD EUR
         </div>
 
-        <div class="grd-grid-2 grd-hide-mobile">
+        <div class="gr-2 gr-hide-m">
             5 - 1,000
         </div>
 
-        <div class="grd-grid-3 grd-hide-mobile">
+        <div class="gr-3 gr-hide-m">
         </div>
 
-       <div class="grd-grid-3 grd-hide-mobile">
+       <div class="gr-3 gr-hide-m">
             [% l('Deposit: Instant') %]
         </div>
     </div>

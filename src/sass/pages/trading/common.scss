@@ -27,8 +27,16 @@
     }
 }
 
-.centerText {
+.center-text {
     text-align: center;
+}
+
+.align-start {
+    @include BIDIR_VALUE (text-align, left, right);
+}
+
+.align-end {
+    @include BIDIR_VALUE (text-align, right, left);
 }
 
 .li-2-boxes-content {

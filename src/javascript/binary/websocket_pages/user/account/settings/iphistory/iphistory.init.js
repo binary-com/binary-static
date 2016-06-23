@@ -42,7 +42,7 @@ var IPHistory = (function(){
                   $('#login-history-table tbody')
                       .append($('<tr/>', {class: "flex-tr"})
                           .append($('<td/>', {colspan: 6})
-                              .append($('<p/>', {class: "notice-msg center", text: text.localize("Your account has no Login/Logout activity.")})
+                              .append($('<p/>', {class: "notice-msg center-text", text: text.localize("Your account has no Login/Logout activity.")})
                               )
                           )
                       );

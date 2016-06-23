@@ -1,54 +1,54 @@
 <div class="section-content section-5">
-  <div class="grd-grid-12">
+  <div class="gr-12">
     <h1>
       [% l("How to trade binaries?") %]
     </h1>
   </div>
   <div class="first subsection">
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <a name="binary-trading-in-3-easy-steps-section"></a>
       <p>
         [% l("Trading binaries is remarkably easy, and requires only 3 simple steps:") %]
       </p>
     </div>
-    <div class="grd-grid-12 grd-parent">
-      <div class="grd-grid-4">
+    <div class="gr-row">
+      <div class="gr-4">
         <img class="ja-hide responsive" src="[% request.url_for('images/pages/home/step-1.svg') %]"/>
         <img class="hidden ja-show responsive" src="[% request.url_for('images/pages/home/step-1-jp.svg') %]"/>
       </div>
-      <div class="grd-grid-4">
+      <div class="gr-4">
         <img class="ja-hide responsive" src="[% request.url_for('images/pages/home/step-2.svg') %]"/>
         <img class="hidden ja-show responsive" src="[% request.url_for('images/pages/home/step-2-jp.svg') %]"/>
       </div>
-      <div class="grd-grid-4">
+      <div class="gr-4">
         <img class="ja-hide responsive" src="[% request.url_for('images/pages/home/step-3.svg') %]"/>
         <img class="hidden ja-show responsive" src="[% request.url_for('images/pages/home/step-3-jp.svg') %]"/>
       </div>
     </div>
-    <div class="grd-grid-12 grd-parent">
-      <div class="grd-grid-4">
+    <div class="gr-row">
+      <div class="gr-4">
         <strong>
-          <p class="center-aligned">
+          <p class="center-text">
             [% l("Define your position") %]
           </p>
         </strong>
       </div>
-      <div class="grd-grid-4">
+      <div class="gr-4">
         <strong>
-          <p class="center-aligned">
+          <p class="center-text">
             [% l("Get your price") %]
           </p>
         </strong>
       </div>
-      <div class="grd-grid-4">
+      <div class="gr-4">
         <strong>
-          <p class="center-aligned">
+          <p class="center-text">
             [% l("Make your trade") %]
           </p>
         </strong>
       </div>
     </div>
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <a name="define-your-position-section"></a>
       <h2>
         [% l("Step 1: Define your position") %]
@@ -57,16 +57,16 @@
         [% l("First, you need to set the parameters of your trade. Here's what you need to consider.") %]
       </p>
     </div>
-    <div class="grd-grid-10">
+    <div class="gr-10">
       <img class="ja-hide responsive" src="[% request.url_for('images/pages/get-started/define-your-position.svg') %]"/>
       <img class="hidden ja-show responsive" src="[% request.url_for('images/pages/get-started/define-your-position-jp.svg') %]"/>
     </div>
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <h2>
         [% l("Choose a trade type") %]
       </h2>
     </div>
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <ul>
         <li class="ja-hide">
           [% l("<strong>Rise/Fall</strong> - predict if the market will rise or fall from its current level.") %]
@@ -82,12 +82,12 @@
         </li>
       </ul>
     </div>
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <h2>
         [% l("Choose the underlying market") %]
       </h2>
     </div>
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <ul>
         <li>
           [% l("<strong>Currencies</strong> - trade all major FX pairs.") %]
@@ -103,29 +103,29 @@
         </li>
       </ul>
     </div>
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <h2>
         [% l("Choose the duration") %]
       </h2>
     </div>
-    <div class="grd-grid-3 grd-grid-mobile-4 grd-centered grd-with-padding ja-hide">
+    <div class="gr-3 gr-4-m gr-centered gr-padding-10 ja-hide">
       <img class="responsive" src="[% request.url_for('images/pages/get-started/duration.svg') %]"/>
     </div>
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <ul>
         <li>[% l("You can set the length of your trade, from 10 seconds to 365 days.") %]</li>
         <li>[% l("But there's no need to wait until expiry. You can sell back long-term trades at any time to profit from changing market conditions.") %]</li>
       </ul>
     </div>
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <h2>
         [% l("Choose the barrier(s)") %]
       </h2>
     </div>
-    <div class="grd-grid-6 grd-grid-mobile-7 grd-centered grd-with-padding ja-hide">
+    <div class="gr-6 gr-7-m gr-centered gr-padding-10 ja-hide">
       <img class="responsive" src="[% request.url_for('images/pages/get-started/barriers.svg') %]"/>
     </div>
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <ul>
         <li>
           [% l("The barrier(s) you choose defines your position and triggers your payout.") %]
@@ -135,15 +135,15 @@
         </li>
       </ul>
     </div>
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <h2>
         [% l("Choose the payout") %]
       </h2>
     </div>
-    <div class="grd-grid-5 grd-grid-mobile-8 grd-centered grd-with-padding ja-hide">
+    <div class="gr-5 gr-8-m gr-centered gr-padding-10 ja-hide">
       <img class="responsive" src="[% request.url_for('images/pages/get-started/payout.svg') %]"/>
     </div>
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <ul>
         <li>
           [% l("Each binary trade is for a pre-determined payout amount. You win the payout if your prediction is correct.") %]
@@ -155,7 +155,7 @@
     </div>
   </div>
   <div class="subsection hidden">
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <a name="get-your-price-section"></a>
       <h2>
         [% l("Step 2: Get your trade price") %]
@@ -172,7 +172,7 @@
     </div>
   </div>
   <div class="subsection hidden">
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <a name="make-your-trade-section"></a>
       <h2>
         [% l("Step 3: Make your trade") %]
@@ -191,7 +191,7 @@
     </div>
   </div>
   <div class="subsection last hidden">
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <a class="by_client_type client_logged_out" name="dont-just-read-about-it-section"></a>
       <h2>
         [% l("Interested? Why not try a virtual account") %]
@@ -200,41 +200,45 @@
         [% l("Test-run [_1], and sharpen your trading skills, with a no-risk, no-commitment, virtual account.", website_name) %]
       </p>
     </div>
-    <div class="grd-grid-12 grd-parent">
-      <div class="grd-grid-4">
+    <div class="gr-12">
+      <div class="gr-row">
+      <div class="gr-4">
         <img class="responsive" src="[% request.url_for('images/pages/home/step-1.svg') %]"/>
       </div>
-      <div class="grd-grid-4">
+      <div class="gr-4">
         <img class="responsive" src="[% request.url_for('images/pages/home/step-2.svg') %]"/>
       </div>
-      <div class="grd-grid-4">
+      <div class="gr-4">
         <img class="responsive" src="[% request.url_for('images/pages/home/step-3.svg') %]"/>
       </div>
+      </div>
     </div>
-    <div class="grd-grid-12 grd-parent">
-      <div class="grd-grid-4">
+    <div class="gr-12">
+      <div class="gr-row">
+      <div class="gr-4">
         <strong>
-          <p class="center-aligned">
+          <p class="center-text">
             [% l("Define your position") %]
           </p>
         </strong>
       </div>
-      <div class="grd-grid-4">
+      <div class="gr-4">
         <strong>
-          <p class="center-aligned">
+          <p class="center-text">
             [% l("Get your price") %]
           </p>
         </strong>
       </div>
-      <div class="grd-grid-4">
+      <div class="gr-4">
         <strong>
-          <p class="center-aligned">
+          <p class="center-text">
             [% l("Make your trade") %]
           </p>
         </strong>
       </div>
+      </div>
     </div>
-    <div class="grd-grid-12 grd-with-padding center-aligned by_client_type client_logged_out">
+    <div class="gr-12 gr-padding-10 center-text by_client_type client_logged_out">
       <a class="button pjaxload" href="[% request.url_for('/') %]">
         <span>
           [% l("Try it now") %]

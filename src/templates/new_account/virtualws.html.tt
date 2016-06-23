@@ -1,37 +1,37 @@
-<div class='grd-grid-12 static_full'>
+<div class='gr-12 static_full'>
   <h1>[% l('Create New Account') %]</h1>
   <p class='notice-message'>
     [% l('Thank you for signing up! Please check your email to retrieve the verification token.') %]
   </p>
-  <div class="grd-parent grd-row-padding">
+  <div class="gr-padding-10">
     <div class="rbox form">
       <div class="rbox-wrap">
         <form id="virtual-form">
           <fieldset>
             <legend id="details">[% l('Details') %]</legend>
-            <div class="grd-row-padding row clear">
-              <div class="grd-grid-4 form_label">
+            <div class="gr-padding-10 gr-row clear">
+              <div class="gr-4 form_label">
                 <label for="verification-code">[% l('Verification token') %]</label>
               </div>
-              <div class="grd-grid-8">
+              <div class="gr-8">
                 <input type="text" id="verification-code" maxlength="48" autocomplete="off"></input>
                 <div class="hint">[% l('Please check your email for the value of this token') %]</div>
                 <p class="errorfield" id="error-verification-code" style="display:none"></p>
               </div>
             </div>
-            <div class="grd-row-padding row clear" style="display:none">
-              <div class="grd-grid-4 form_label">
+            <div class="gr-padding-10 gr-row clear" style="display:none">
+              <div class="gr-4 form_label">
                 <label for="email">[% l('Please re-enter your email') %]</label>
               </div>
-              <div class="grd-grid-8">
+              <div class="gr-8">
                 <input type="email" id="email" name="email" maxlength="50"></input>
               </div>
             </div>
-            <div class="grd-row-padding row clear">
-              <div class="grd-grid-4  form_label">
+            <div class="gr-padding-10 gr-row clear">
+              <div class="gr-4  form_label">
                 <label for="password">[% l('Choose a password') %]</label>
               </div>
-              <div class="grd-grid-8">
+              <div class="gr-8">
                 <input type="password" id="password" name="password" maxlength="25"></input>
                 <p style="margin:0px;height:0.5em;">
                   <meter id="password-meter" value="" max="50" min="0" high="20" low="10" optimum="50"></meter>
@@ -40,26 +40,26 @@
                 <p class="errorfield" id="error-password" style="display:none"></p>
               </div>
             </div>
-            <div class="grd-row-padding row clear">
-              <div class="grd-grid-4  form_label">
+            <div class="gr-padding-10 gr-row clear">
+              <div class="gr-4 form_label">
                 <label for="r-password">[% l('Re-enter password') %]</label>
               </div>
-              <div class="grd-grid-8">
+              <div class="gr-8">
                 <input type="password" id="r-password" name="r-password" maxlength="25"></input>
                 <p class="errorfield" id="error-r-password" style="display:none"></p>
               </div>
             </div>
-            <div class="grd-row-padding row clear">
-              <div class="grd-grid-4  form_label">
+            <div class="gr-padding-10 gr-row clear">
+              <div class="gr-4 form_label">
                 <label for="residence">[% l('Country of residence') %]</label>
               </div>
-              <div class="grd-grid-8">
+              <div class="gr-8">
                 <select name="residence" id="residence"></select>
                 <p class="errorfield" id="error-residence" style="display:none"></p>
               </div>
             </div>
           </fieldset>
-          <fieldset class="center-aligned" id="formlayout">
+          <fieldset class="center-text" id="formlayout">
             <span class="button button-focus">
               <button class="button button-focus" id="btn_submit" type="submit">[% l('Create New Account') %]</button>
               <p class="errorfield" id="error-account-opening" style="display:none"></p>

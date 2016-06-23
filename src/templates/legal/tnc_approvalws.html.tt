@@ -1,18 +1,18 @@
-<div class="grd-grid-12">
+<div class="gr-12">
     <div id="tnc-loading"></div>
 
-    <div class="grd-grid-12 grd-parent invisible" id="tnc_approval">
-        <div class="grd-grid-2 grd-grid-mobile-6 grd-centered-mobile">
+    <div class="gr-row gr-parent invisible" id="tnc_approval">
+        <div class="gr-2 gr-6-m gr-centered-m">
             <p>
                 <img class="responsive" id="tnc_image" />
             </p>
         </div>
-        <div class="grd-grid-10 grd-grid-mobile-12">
+        <div class="gr-10 gr-12-m">
             <form>
                 <p id="tnc-message" class="invisible">
                     [% l('[_1] has updated its  <a class="pjaxload" href="[_2]">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a class="pjaxload" href="[_2]">Terms & Conditions</a>.', '[_1]' ,'[_2]') %]
                 </p>
-                <div class="grd-grid-3 grd-grid-mobile-6 grd-centered">
+                <div class="gr-3 gr-6-m gr-centered">
                     <span class="button">
                         <button class="button" id="btn-accept"></button>
                     </span>
@@ -21,5 +21,5 @@
         </div>
     </div>
 
-    <p class="grd-grid-12 grd-parent invisible error-msg center" id="err_message"></p>
+    <p class="gr-12 gr-parent invisible error-msg center-text" id="err_message"></p>
 </div>
