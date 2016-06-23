@@ -1,17 +1,17 @@
-<div class='grd-grid-12 static_full'>
+<div class='gr-12 static_full'>
     <h1>[% l('Real Money Account Opening') %]</h1>
-    <div class="grd-parent grd-row-padding">
+    <div class="gr-parent gr-padding-10">
 
         <div class="rbox form">
             <div class="rbox-wrap">
                 <form id="japan-form">
                     <fieldset>
                         <legend id="details">[% l('Details') %]</legend>
-                        <div class="grd-row-padding row clear">
-                            <div class="grd-grid-4 form_label">
+                        <div class="gr-padding-10 gr-row clear">
+                            <div class="gr-4 form_label">
                                 <label for="gender">[% l('Gender') %]</label>
                             </div>
-                            <div class="grd-grid-8">
+                            <div class="gr-8">
                                 <select id="gender">
                                   <option value="">[% l('Please select') %]</option>
                                   <option value="m">[% l('Male') %]</option>
@@ -20,11 +20,11 @@
                                 <p class="errorfield" id="error-gender" style="display:none"></p>
                             </div>
                         </div>
-                        <div class="grd-row-padding row clear">
-                            <div class="grd-grid-4 form_label">
+                        <div class="gr-padding-10 gr-row clear">
+                            <div class="gr-4 form_label">
                                 <label for="lname">[% l('Family name') %]</label>
                             </div>
-                            <div class="grd-grid-8">
+                            <div class="gr-8">
                                 <input type="text" class="text" id="lname" name="lname" maxlength="30"></input>
                                 <p class="hint">
                                   [% l('{JAPAN ONLY}No space between last name and first name') %]
@@ -32,11 +32,11 @@
                                 <p class="errorfield" id="error-lname" style="display:none"></p>
                             </div>
                         </div>
-                        <div class="grd-row-padding row clear">
-                            <div class="grd-grid-4 form_label">
+                        <div class="gr-padding-10 gr-row clear">
+                            <div class="gr-4 form_label">
                                 <label for="fname">[% l('First name') %]</label>
                             </div>
-                            <div class="grd-grid-8">
+                            <div class="gr-8">
                                 <input type="text" class="text" id="fname" name="fname" maxlength="30"></input>
                                 <p class="hint">
                                   [% l('{JAPAN ONLY}No space between last name and first name') %]
@@ -44,22 +44,22 @@
                                 <p class="errorfield" id="error-fname" style="display:none"></p>
                             </div>
                         </div>
-                        <div class="grd-row-padding row clear">
-                            <div class="grd-grid-4 form_label">
+                        <div class="gr-padding-10 gr-row clear">
+                            <div class="gr-4 form_label">
                                 <label for="dobdd">[% l('Date of birth') %]</label>
                             </div>
-                            <div class="grd-grid-8">
+                            <div class="gr-8">
                                 <select name="dobyy" id="dobyy"></select>
                                 <select name="dobmm" id="dobmm"></select>
                                 <select name="dobdd" id="dobdd"></select>
                                 <p class="errorfield" id="error-birthdate" style="display:none"></p>
                             </div>
                         </div>
-                        <div class="grd-row-padding row clear">
-                            <div class="grd-grid-4 form_label">
+                        <div class="gr-padding-10 gr-row clear">
+                            <div class="gr-4 form_label">
                                 <label for="occupation">[% l('Occupation') %]</label>
                             </div>
-                            <div class="grd-grid-8">
+                            <div class="gr-8">
                                 <select id="occupation">
                                   <option value="">[% l('Please select') %]</option>
                                   <option value="Office worker">[% l('Office worker') %]</option>
@@ -79,11 +79,11 @@
 
                     <fieldset>
                         <legend id="address">[% l('Address') %]</legend>
-                        <div class="grd-row-padding row clear">
-                            <div class="grd-grid-4 form_label">
+                        <div class="gr-padding-10 gr-row clear">
+                            <div class="gr-4 form_label">
                                 <label for="address-postcode">[% l('Postal code/ZIP') %]</label>
                             </div>
-                            <div class="grd-grid-8">
+                            <div class="gr-8">
                                 <input type="text" class="text" id="address-postcode" name="address-postcode" maxlength="20"></input>
                                 <p class="hint">
                                   [% l('E.g. 123-4567') %]
@@ -91,20 +91,20 @@
                                 <p class="errorfield" id="error-postcode" style="display:none"></p>
                             </div>
                         </div>
-                        <div class="grd-row-padding row clear" style="display:none">
-                            <div class="grd-grid-4 form_label">
+                        <div class="gr-padding-10 gr-row clear" style="display:none">
+                            <div class="gr-4 form_label">
                                 <label for="address-state">[% l('State/Province') %]</label>
                             </div>
-                            <div class="grd-grid-8">
+                            <div class="gr-8">
                                 <select id="address-state" name="address-state"></select>
                                 <p class="errorfield" id="error-state" style="display:none"></p>
                             </div>
                         </div>
-                        <div class="grd-row-padding row clear">
-                            <div class="grd-grid-4 form_label">
+                        <div class="gr-padding-10 gr-row clear">
+                            <div class="gr-4 form_label">
                                 <label for="address-town">[% l('Town/City') %]</label>
                             </div>
-                            <div class="grd-grid-8">
+                            <div class="gr-8">
                                 <input type="text" class="text" id="address-town" name="address-town" maxlength="35"></input>
                                 <p class="hint">
                                   [% l('E.g. Shibuya-ku') %]
@@ -112,11 +112,11 @@
                                 <p class="errorfield" id="error-town" style="display:none"></p>
                             </div>
                         </div>
-                        <div class="grd-row-padding row clear">
-                            <div class="grd-grid-4 form_label">
+                        <div class="gr-padding-10 gr-row clear">
+                            <div class="gr-4 form_label">
                                 <label for="address1">[% l('First line of home address') %]</label>
                             </div>
-                            <div class="grd-grid-8">
+                            <div class="gr-8">
                                 <input type="text" class="text" id="address1" name="address1" maxlength="70"></input>
                                 <p class="hint">
                                   [% l('E.g. Hiroo') %]
@@ -124,11 +124,11 @@
                                 <p class="errorfield" id="error-address1" style="display:none"></p>
                             </div>
                         </div>
-                        <div class="grd-row-padding row clear">
-                            <div class="grd-grid-4 form_label">
+                        <div class="gr-padding-10 gr-row clear">
+                            <div class="gr-4 form_label">
                                 <label for="address2">[% l('Second line of home address') %]</label>
                             </div>
-                            <div class="grd-grid-8">
+                            <div class="gr-8">
                                 <input type="text" class="text" id="address2" name="address2" maxlength="70"></input>
                                 <p class="hint">
                                   [% l('E.g. Building name, apartment number etc (Optional)') %]
@@ -136,11 +136,11 @@
                                 <p class="errorfield" id="error-address2" style="display:none"></p>
                             </div>
                         </div>
-                        <div class="grd-row-padding row clear">
-                            <div class="grd-grid-4 form_label">
+                        <div class="gr-padding-10 gr-row clear">
+                            <div class="gr-4 form_label">
                                 <label for="tel">[% l('Telephone') %]</label>
                             </div>
-                            <div class="grd-grid-8">
+                            <div class="gr-8">
                                 <input type="text" class="text" id="tel" name="tel" maxlength="35"></input>
                                 <p class="hint">
                                   [% l('E.g. 03-1234-5678') %]
@@ -152,11 +152,11 @@
 
                     <fieldset>
                         <legend id="security">[% l('Security') %]</legend>
-                        <div class="grd-row-padding row clear">
-                            <div class="grd-grid-4 form_label">
+                        <div class="gr-padding-10 gr-row clear">
+                            <div class="gr-4 form_label">
                                 <label for="secret-question">[% l('Secret question') %]</label>
                             </div>
-                            <div class="grd-grid-8">
+                            <div class="gr-8">
                                 <select id="secret-question">
                                   <option value="Mother's maiden name">[% l("Mother's maiden name") %]</option>
                                   <option value="Name of your pet">[% l('Name of your pet') %]</option>
@@ -170,11 +170,11 @@
                                 <p class="errorfield" id="error-question" style="display:none"></p>
                             </div>
                         </div>
-                        <div class="grd-row-padding row clear">
-                            <div class="grd-grid-4 form_label">
+                        <div class="gr-padding-10 gr-row clear">
+                            <div class="gr-4 form_label">
                                 <label for="secret-answer">[% l('Answer to secret question') %]</label>
                             </div>
-                            <div class="grd-grid-8">
+                            <div class="gr-8">
                                 <input type="text" class="text" id="secret-answer" maxlength="50" autocomplete="off"></input>
                                 <p class="errorfield" id="error-answer" style="display:none"></p>
                             </div>
@@ -183,11 +183,11 @@
 
                     <fieldset>
                         <legend id="status">[% l('Status') %]</legend>
-                        <div class="grd-row-padding row clear">
-                            <div class="grd-grid-4 form_label">
+                        <div class="gr-padding-10 gr-row clear">
+                            <div class="gr-4 form_label">
                                 <label for="fatca">[% l('Not FATCA*') %]</label>
                             </div>
-                            <div class="grd-grid-8">
+                            <div class="gr-8">
                               <input id="fatca" type="checkbox"></input>
                               <br />
                               <p class="hint">
@@ -196,11 +196,11 @@
                               <p class="errorfield" id="error-fatca"></p>
                             </div>
                         </div>
-                        <div class="grd-row-padding row clear">
-                            <div class="grd-grid-4 form_label">
+                        <div class="gr-padding-10 gr-row clear">
+                            <div class="gr-4 form_label">
                                 <label for="annual-income">[% l('Annual Income') %]</label>
                             </div>
-                            <div class="grd-grid-8">
+                            <div class="gr-8">
                               <select id="annual-income">
                                 <option value="">[% l('Please select') %]</option>
                                 <option value="Less than 1 million JPY">[% l('Less than 1 million JPY') %]</option>
@@ -215,11 +215,11 @@
                               <p class="errorfield" id="error-annual-income"></p>
                             </div>
                         </div>
-                        <div class="grd-row-padding row clear">
-                            <div class="grd-grid-4 form_label">
+                        <div class="gr-padding-10 gr-row clear">
+                            <div class="gr-4 form_label">
                                 <label for="financial-asset">[% l('Financial Asset') %]</label>
                             </div>
-                            <div class="grd-grid-8">
+                            <div class="gr-8">
                               <select id="financial-asset">
                                 <option value="">[% l('Please select') %]</option>
                                 <option value="Less than 1 million JPY">[% l('Less than 1 million JPY') %]</option>
@@ -234,11 +234,11 @@
                               <p class="errorfield" id="error-financial-asset"></p>
                             </div>
                         </div>
-                        <div class="grd-row-padding row clear">
-                            <div class="grd-grid-4 form_label">
+                        <div class="gr-padding-10 gr-row clear">
+                            <div class="gr-4 form_label">
                                 <label for="daily-loss-limit">[% l('Daily limit on losses') %]</label>
                             </div>
-                            <div class="grd-grid-8">
+                            <div class="gr-8">
                               <input class="text" id="daily-loss-limit" type="text" maxlength="20"></input>
                               <br />
                               <p class="hint">[% l('Maximum aggregate loss per day.') %]</p>
@@ -249,11 +249,11 @@
 
                     <fieldset>
                       <legend id="trading-experience">[% l('Trading Experience') %]</legend>
-                      <div class="grd-row-padding row clear">
-                          <div class="grd-grid-4 form_label">
+                      <div class="gr-padding-10 gr-row clear">
+                          <div class="gr-4 form_label">
                               <label for="equities">[% l('Equities') %]</label>
                           </div>
-                          <div class="grd-grid-8">
+                          <div class="gr-8">
                             <select id="equities">
                               <option value="">[% l('Please select') %]</option>
                               <option value="No experience">[% l('No experience') %]</option>
@@ -266,11 +266,11 @@
                             <p class="errorfield" id="error-equities"></p>
                           </div>
                       </div>
-                      <div class="grd-row-padding row clear">
-                          <div class="grd-grid-4 form_label">
+                      <div class="gr-padding-10 gr-row clear">
+                          <div class="gr-4 form_label">
                               <label for="commodities">[% l('Commodities') %]</label>
                           </div>
-                          <div class="grd-grid-8">
+                          <div class="gr-8">
                             <select id="commodities">
                               <option value="">[% l('Please select') %]</option>
                               <option value="No experience">[% l('No experience') %]</option>
@@ -283,11 +283,11 @@
                             <p class="errorfield" id="error-commodities"></p>
                           </div>
                       </div>
-                      <div class="grd-row-padding row clear">
-                          <div class="grd-grid-4 form_label">
+                      <div class="gr-padding-10 gr-row clear">
+                          <div class="gr-4 form_label">
                               <label for="foreign-currency-deposit">[% l('Foreign currency deposit') %]</label>
                           </div>
-                          <div class="grd-grid-8">
+                          <div class="gr-8">
                             <select id="foreign-currency-deposit">
                               <option value="">[% l('Please select') %]</option>
                               <option value="No experience">[% l('No experience') %]</option>
@@ -300,11 +300,11 @@
                             <p class="errorfield" id="error-foreign-currency-deposit"></p>
                           </div>
                       </div>
-                      <div class="grd-row-padding row clear">
-                          <div class="grd-grid-4 form_label">
+                      <div class="gr-padding-10 gr-row clear">
+                          <div class="gr-4 form_label">
                               <label for="margin-fx">[% l('Margin FX') %]</label>
                           </div>
-                          <div class="grd-grid-8">
+                          <div class="gr-8">
                             <select id="margin-fx">
                               <option value="">[% l('Please select') %]</option>
                               <option value="No experience">[% l('No experience') %]</option>
@@ -317,11 +317,11 @@
                             <p class="errorfield" id="error-margin-fx"></p>
                           </div>
                       </div>
-                      <div class="grd-row-padding row clear">
-                          <div class="grd-grid-4 form_label">
+                      <div class="gr-padding-10 gr-row clear">
+                          <div class="gr-4 form_label">
                               <label for="investment-trust">[% l('Investment trust') %]</label>
                           </div>
-                          <div class="grd-grid-8">
+                          <div class="gr-8">
                             <select id="investment-trust">
                               <option value="">[% l('Please select') %]</option>
                               <option value="No experience">[% l('No experience') %]</option>
@@ -334,11 +334,11 @@
                             <p class="errorfield" id="error-investment-trust"></p>
                           </div>
                       </div>
-                      <div class="grd-row-padding row clear">
-                          <div class="grd-grid-4 form_label">
+                      <div class="gr-padding-10 gr-row clear">
+                          <div class="gr-4 form_label">
                               <label for="public-and-corporation-bond">[% l('Public and corporation bond') %]</label>
                           </div>
-                          <div class="grd-grid-8">
+                          <div class="gr-8">
                             <select id="public-and-corporation-bond">
                               <option value="">[% l('Please select') %]</option>
                               <option value="No experience">[% l('No experience') %]</option>
@@ -351,11 +351,11 @@
                             <p class="errorfield" id="error-public-and-corporation-bond"></p>
                           </div>
                       </div>
-                      <div class="grd-row-padding row clear">
-                          <div class="grd-grid-4 form_label">
+                      <div class="gr-padding-10 gr-row clear">
+                          <div class="gr-4 form_label">
                               <label for="otc-derivative-trading">[% l('OTC Derivative (Option) Trading') %]</label>
                           </div>
-                          <div class="grd-grid-8">
+                          <div class="gr-8">
                             <select id="otc-derivative-trading">
                               <option value="">[% l('Please select') %]</option>
                               <option value="No experience">[% l('No experience') %]</option>
@@ -368,11 +368,11 @@
                             <p class="errorfield" id="error-otc-derivative-trading"></p>
                           </div>
                       </div>
-                      <div class="grd-row-padding row clear">
-                          <div class="grd-grid-4 form_label">
+                      <div class="gr-padding-10 gr-row clear">
+                          <div class="gr-4 form_label">
                               <label for="trading-purpose">[% l('Purpose of trading') %]</label>
                           </div>
-                          <div class="grd-grid-8">
+                          <div class="gr-8">
                             <select id="trading-purpose">
                               <option value="">[% l('Please select') %]</option>
                               <option value="Targeting short-term profits">[% l('Targeting short-term profits') %]</option>
@@ -383,11 +383,11 @@
                             <p class="errorfield" id="error-trading-purpose"></p>
                           </div>
                       </div>
-                      <div class="grd-row-padding row clear hedging-assets" style="display: none;">
-                        <div class="grd-grid-4 form_label">
+                      <div class="gr-padding-10 gr-row clear hedging-assets" style="display: none;">
+                        <div class="gr-4 form_label">
                           <label for="hedge-asset">[% l('Classification of assets requiring hedge') %]</label>
                         </div>
-                        <div class="grd-grid-8">
+                        <div class="gr-8">
                           <select id="hedge-asset">
                             <option value="">[% l('Please select') %]</option>
                             <option value="Foreign currency deposit">[% l('Foreign currency deposit') %]</option>
@@ -397,11 +397,11 @@
                           <p class="errorfield" id="error-hedge-asset"></p>
                         </div>
                       </div>
-                      <div class="grd-row-padding row clear hedging-assets" style="display: none;">
-                        <div class="grd-grid-4 form_label">
+                      <div class="gr-padding-10 gr-row clear hedging-assets" style="display: none;">
+                        <div class="gr-4 form_label">
                           <label for="hedge-asset-amount">[% l('Amount of above assets') %]</label>
                         </div>
-                        <div class="grd-grid-8">
+                        <div class="gr-8">
                           <input class="text" id="hedge-asset-amount" maxlength="20" type="text"></input>
                           <p class="errorfield" id="error-hedge-asset-amount"></p>
                         </div>
@@ -410,71 +410,75 @@
 
                     <fieldset>
                       <legend id="agreement-for-documents">[% l('Agreement for documents') %]</legend>
-                      <div class="grd-grid-12">
+                      <div class="gr-12">
                         <p>
                           [% l('We will provide all documents in electronic format. Please tick the box if you agree and go to the next step.') %]
                         </p>
                       </div>
-                      <div class="grd-row-padding row clear">
-                        <div class="grd-grid-12">
-                          <div class="grd-grid-1">
-                            <input id="use-electronic-doc" type="checkbox"></input>
-                          </div>
-                          <div class="grd-grid-11">
-                            <span>
-                              [% l('I hereby agree and accept that all documents such as pre-contract forms, all terms and conditions, trade reports and other legally required materials will be issued in electronic format only.') %]
-                            </span>
-                          </div>
+                      <div class="gr-padding-10 gr-row clear">
+                        <div class="gr-12">
+                            <div class="gr-row">
+                                <div class="gr-1">
+                                  <input id="use-electronic-doc" type="checkbox"></input>
+                                </div>
+                                <div class="gr-11">
+                                  <span>
+                                    [% l('I hereby agree and accept that all documents such as pre-contract forms, all terms and conditions, trade reports and other legally required materials will be issued in electronic format only.') %]
+                                  </span>
+                                </div>
+                            </div>
                           <p class="errorfield" id="error-use-electronic-doc"></p>
                         </div>
                       </div>
-                      <div class="grd-row-padding row clear">
+                      <div class="gr-padding-10 gr-row clear">
                         <br />
-                        <p class="grd-grid-12">
+                        <p class="gr-12">
                           [% l('To begin Binary option trading, you will first need to read all these documents carefully to understand the structure, risk and other important things. Please confirm that you have read and understood the documents listed below checking the box. If you have any questions, please contact our customer support.') %]
                         </p>
                       </div>
-                      <div class="grd-row-padding row clear">
-                        <div class="grd-grid-12">
-                          <div class="grd-grid-1">
-                            <input id="warnings-and-policies" type="checkbox"></input>
-                          </div>
-                          <div class="grd-grid-11">
-                            <span>
-                              [% l('I confirm my agreement to the contents of all the documents listed below:') %]
-                              <br />
-                              <ul>
-                                <li>
-                                  <a href="[% request.url_for('/terms-and-conditions-jp?selected_tab=risk-warning-tab', {l => 'JA'}) %]" target="_blank">
-                                    [% l('General Risk Warning') %]</a>
-                                  </li>
-                                  <li>
-                                    <a href="[% request.url_for('/terms-and-conditions-jp?selected_tab=risk-tab', {l => 'JA'}) %]" target="_blank">
-                                      [% l('Risks for binary option trading') %]
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="[% request.url_for('/get-started', {l => 'JA'}) %]" target="_blank">
-                                      [% l('Trading manual') %]
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="[% request.url_for('/terms-and-conditions-jp', {l => 'JA'}) %]" target="_blank">
-                                      [% l('Terms and conditions') %]
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="[% request.url_for('/terms-and-conditions-jp?selected_tab=privacy-tab', {l => 'JA'}) %]" target="_blank">
-                                      [% l('Privacy Policy') %]
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="[% request.url_for('/terms-and-conditions-jp?selected_tab=anti-social-connection-tab', {l => 'JA'}) %]" target="_blank">
-                                      [% l('No connection with Antisocial forces') %]
-                                    </a>
-                                  </li>
-                                </ul>
-                              </span>
+                      <div class="gr-padding-10 gr-row clear">
+                        <div class="gr-12">
+                            <div class="gr-row">
+                              <div class="gr-1">
+                                <input id="warnings-and-policies" type="checkbox"></input>
+                              </div>
+                              <div class="gr-11">
+                                <span>
+                                  [% l('I confirm my agreement to the contents of all the documents listed below:') %]
+                                  <br />
+                                  <ul>
+                                    <li>
+                                      <a href="[% request.url_for('/terms-and-conditions-jp?selected_tab=risk-warning-tab', {l => 'JA'}) %]" target="_blank">
+                                        [% l('General Risk Warning') %]</a>
+                                      </li>
+                                      <li>
+                                        <a href="[% request.url_for('/terms-and-conditions-jp?selected_tab=risk-tab', {l => 'JA'}) %]" target="_blank">
+                                          [% l('Risks for binary option trading') %]
+                                        </a>
+                                      </li>
+                                      <li>
+                                        <a href="[% request.url_for('/get-started', {l => 'JA'}) %]" target="_blank">
+                                          [% l('Trading manual') %]
+                                        </a>
+                                      </li>
+                                      <li>
+                                        <a href="[% request.url_for('/terms-and-conditions-jp', {l => 'JA'}) %]" target="_blank">
+                                          [% l('Terms and conditions') %]
+                                        </a>
+                                      </li>
+                                      <li>
+                                        <a href="[% request.url_for('/terms-and-conditions-jp?selected_tab=privacy-tab', {l => 'JA'}) %]" target="_blank">
+                                          [% l('Privacy Policy') %]
+                                        </a>
+                                      </li>
+                                      <li>
+                                        <a href="[% request.url_for('/terms-and-conditions-jp?selected_tab=anti-social-connection-tab', {l => 'JA'}) %]" target="_blank">
+                                          [% l('No connection with Antisocial forces') %]
+                                        </a>
+                                      </li>
+                                    </ul>
+                                  </span>
+                                </div>
                             </div>
                             <p class="errorfield" id="error-warnings-and-policies"></p>
                           </div>
@@ -483,124 +487,140 @@
 
                     <fieldset>
                       <legend id="confirmation-and-understandings">[% l('Confirmation and understandings') %]</legend>
-                      <div class="grd-grid-12">
+                      <div class="gr-12">
                         <p>
                           [% l('To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside.') %]
                         </p>
                       </div>
-                      <div class="grd-row-padding row clear">
-                        <div class="grd-grid-12">
-                          <div class="grd-grid-1">
-                            <input id="own-judgment" type="checkbox"></input>
-                          </div>
-                          <div class="grd-grid-11">
-                            <span>
-                              [% l('I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets.') %]
-                            </span>
-                          </div>
+                      <div class="gr-padding-10 gr-row clear">
+                        <div class="gr-12">
+                            <div class="gr-row">
+                              <div class="gr-1">
+                                <input id="own-judgment" type="checkbox"></input>
+                              </div>
+                              <div class="gr-11">
+                                <span>
+                                  [% l('I agree that I will trade OTC binary options using my own judgment and accept responsibility for any loss that may occur from the transaction, and that it is within a range acceptable with regard to the total value of my financial assets.') %]
+                                </span>
+                              </div>
+                            </div>
                           <p class="errorfield" id="error-own-judgment"></p>
                         </div>
                       </div>
-                      <div class="grd-row-padding row clear">
-                        <div class="grd-grid-12">
-                          <div class="grd-grid-1">
-                            <input id="trading-mechanism" type="checkbox"></input>
-                          </div>
-                          <div class="grd-grid-11">
-                            <span>
-                              [% l('I understand and agree that, with regard to over-the-counter binary option trading, I have read and understand the general conditions and mechanisms for trading the contract, including details of the underlying financial index, before committing to a transaction.') %]
-                            </span>
-                          </div>
+                      <div class="gr-padding-10 gr-row clear">
+                        <div class="gr-12">
+                            <div class="gr-row">
+                              <div class="gr-1">
+                                <input id="trading-mechanism" type="checkbox"></input>
+                              </div>
+                              <div class="gr-11">
+                                <span>
+                                  [% l('I understand and agree that, with regard to over-the-counter binary option trading, I have read and understand the general conditions and mechanisms for trading the contract, including details of the underlying financial index, before committing to a transaction.') %]
+                                </span>
+                              </div>
+                            </div>
                           <p class="errorfield" id="error-trading-mechanism"></p>
                         </div>
                       </div>
-                      <div class="grd-row-padding row clear">
+                      <div class="gr-padding-10 gr-row clear">
                         <br />
-                        <p class="grd-grid-12">
+                        <p class="gr-12">
                           [% l('The customer agrees they understand each the following statements regarding OTC binary options trading:') %]
                         </p>
                       </div>
-                      <div class="grd-row-padding row clear">
-                        <div class="grd-grid-12">
-                          <div class="grd-grid-1">
-                            <input id="judgment-time" type="checkbox"></input>
-                          </div>
-                          <div class="grd-grid-11">
-                            <span>
-                              [% l('Each option transaction has a specified expiry time and date, known as the judgment time.') %]
-                            </span>
-                          </div>
+                      <div class="gr-padding-10 gr-row clear">
+                        <div class="gr-12">
+                            <div class="gr-row">
+                              <div class="gr-1">
+                                <input id="judgment-time" type="checkbox"></input>
+                              </div>
+                              <div class="gr-11">
+                                <span>
+                                  [% l('Each option transaction has a specified expiry time and date, known as the judgment time.') %]
+                                </span>
+                              </div>
+                            </div>
                           <p class="errorfield" id="error-judgment-time"></p>
                         </div>
                       </div>
-                      <div class="grd-row-padding row clear">
-                        <div class="grd-grid-12">
-                          <div class="grd-grid-1">
-                            <input id="total-loss" type="checkbox"></input>
-                          </div>
-                          <div class="grd-grid-11">
-                            <span>
-                              [% l('If a customer holds a long position and the prediction goes wrong as of the judgment time, the invested principal amount will become zero value.') %]
-                            </span>
-                          </div>
+                      <div class="gr-padding-10 gr-row clear">
+                        <div class="gr-12">
+                            <div class="gr-row">
+                              <div class="gr-1">
+                                <input id="total-loss" type="checkbox"></input>
+                              </div>
+                              <div class="gr-11">
+                                <span>
+                                  [% l('If a customer holds a long position and the prediction goes wrong as of the judgment time, the invested principal amount will become zero value.') %]
+                                </span>
+                              </div>
+                            </div>
                           <p class="errorfield" id="error-total-loss"></p>
                         </div>
                       </div>
-                      <div class="grd-row-padding row clear">
-                        <div class="grd-grid-12">
-                          <div class="grd-grid-1">
-                            <input id="sellback-loss" type="checkbox"></input>
-                          </div>
-                          <div class="grd-grid-11">
-                            <span>
-                              [% l('If a customer sells back a long option position before the determination time, then the sale price may be lower than the original purchase price, so there is a possibility of a net loss.') %]
-                            </span>
-                          </div>
+                      <div class="gr-padding-10 gr-row clear">
+                        <div class="gr-12">
+                            <div class="gr-row">
+                              <div class="gr-1">
+                                <input id="sellback-loss" type="checkbox"></input>
+                              </div>
+                              <div class="gr-11">
+                                <span>
+                                  [% l('If a customer sells back a long option position before the determination time, then the sale price may be lower than the original purchase price, so there is a possibility of a net loss.') %]
+                                </span>
+                              </div>
+                            </div>
                           <p class="errorfield" id="error-sellback-loss"></p>
                         </div>
                       </div>
-                      <div class="grd-row-padding row clear">
-                        <div class="grd-grid-12">
-                          <div class="grd-grid-1">
-                            <input id="shortsell-loss" type="checkbox"></input>
-                          </div>
-                          <div class="grd-grid-11">
-                            <span>
-                              [% l('If a customer holds a short position and the prediction is incorrect as of the judgment time, the customer is required to pay the payout amount, and as that will be greater than the trade price that the customer originally received, this will cause a net loss.') %]
-                            </span>
-                          </div>
+                      <div class="gr-padding-10 gr-row clear">
+                        <div class="gr-12">
+                            <div class="gr-row">
+                              <div class="gr-1">
+                                <input id="shortsell-loss" type="checkbox"></input>
+                              </div>
+                              <div class="gr-11">
+                                <span>
+                                  [% l('If a customer holds a short position and the prediction is incorrect as of the judgment time, the customer is required to pay the payout amount, and as that will be greater than the trade price that the customer originally received, this will cause a net loss.') %]
+                                </span>
+                              </div>
+                            </div>
                           <p class="errorfield" id="error-shortsell-loss"></p>
                         </div>
                       </div>
-                      <div class="grd-row-padding row clear">
-                        <div class="grd-grid-12">
-                          <div class="grd-grid-1">
-                            <input id="company-profit" type="checkbox"></input>
-                          </div>
-                          <div class="grd-grid-11">
-                            <span>
-                              [% l("Binary.com earns a return from the difference between the total amount of all customers' payment and the total amount of all customers' receipts.") %]
-                            </span>
+                      <div class="gr-padding-10 gr-row clear">
+                        <div class="gr-12">
+                          <div class="gr-row">
+                            <div class="gr-1">
+                              <input id="company-profit" type="checkbox"></input>
+                            </div>
+                            <div class="gr-11">
+                              <span>
+                                [% l("Binary.com earns a return from the difference between the total amount of all customers' payment and the total amount of all customers' receipts.") %]
+                              </span>
+                            </div>
                           </div>
                           <p class="errorfield" id="error-company-profit"></p>
                         </div>
                       </div>
-                      <div class="grd-row-padding row clear">
-                        <div class="grd-grid-12">
-                          <div class="grd-grid-1">
-                            <input id="expert-knowledge" type="checkbox"></input>
-                          </div>
-                          <div class="grd-grid-11">
-                            <span>
-                              [% l('In carrying out OTC binary option trading, a customer needs expert knowledge such as the theoretical value of options, in order to make reasonable investment decisions.') %]
-                            </span>
-                          </div>
+                      <div class="gr-padding-10 gr-row clear">
+                        <div class="gr-12">
+                            <div class="gr-row">
+                              <div class="gr-1">
+                                <input id="expert-knowledge" type="checkbox"></input>
+                              </div>
+                              <div class="gr-11">
+                                <span>
+                                  [% l('In carrying out OTC binary option trading, a customer needs expert knowledge such as the theoretical value of options, in order to make reasonable investment decisions.') %]
+                                </span>
+                              </div>
+                            </div>
                           <p class="errorfield" id="error-expert-knowledge"></p>
                         </div>
                       </div>
                     </fieldset>
 
-                    <fieldset class="center-aligned" id="formlayout">
+                    <fieldset class="center-text" id="formlayout">
                         <span class="button button-focus">
                             <button class="button button-focus" id="btn_submit" type="submit">[% l('Open Account') %]</button>
                         </span>
@@ -608,8 +628,8 @@
                 </form>
                 <div class="errorbox rbox" id="client_message" style="display:none">
                     <div class="rbox-wrap">
-                        <div class="grd-grid-12 rbox-content" id="client_message_content">
-                            <p class="center notice-msg"></p>
+                        <div class="gr-12 rbox-content" id="client_message_content">
+                            <p class="center-text notice-msg"></p>
                         </div>
                     </div>
                 </div>

@@ -6,89 +6,18 @@ html {
 }
 
 body {
-    background: $COLOR_WHITE;
-    color: $COLOR_BLACK;
-    font-size: 18px;
     min-height: 100%;
     position: relative;
     background-position: bottom;
     background-repeat: repeat-x;
-    padding: 0px;
-    margin: 0px;
     .ui-widget {
         font-size: 0.9em;
     }
-    font-family: roboto, sans-serif;
 }
 
 html, body {
     width: 100%;
     overflow-x: hidden;
-}
-
-h1, h2, h3, h4, li, p, a, span {
-    text-rendering: optimizeLegibility;
-}
-
-a, a:visited {
-    color: $COLOR_BLUE;
-    text-decoration: none;
-    font-weight: bold;
-    &:hover, &:active {
-        text-decoration: underline;
-    }
-}
-
-p {
-    margin: 1em 0;
-    line-height: 1.4em;
-}
-
-h1 {
-    font-size: 36px;
-    font-weight: 300;
-    color: $COLOR_ORANGE;
-    a {
-        color: $COLOR_ORANGE !important;
-    }
-}
-
-h1.dark {
-    color: $COLOR_BLACK;
-    a {
-        color: $COLOR_BLACK !important;
-    }
-}
-
-h2 {
-    font-size: 28px;
-    color: $COLOR_BLUE;
-    a {
-        color: $COLOR_BLUE !important;
-    }
-    em {
-        text-decoration: underline;
-    }
-    &.center {
-        text-align: center;
-        margin: 1.25em auto;
-    }
-}
-
-h3 {
-    color: $COLOR_BLACK;
-    a {
-        color: $COLOR_BLACK !important;
-    }
-    font-size: 22px;
-}
-
-h4 {
-    color: $COLOR_BLACK;
-    a {
-        color: $COLOR_BLACK !important;
-    }
-    font-size: 18px;
 }
 
 select, input, button, textarea {
@@ -102,7 +31,7 @@ button {
 }
 
 button:focus, input[type='submit']:focus {
-    background: $COLOR_RED;
+    background: $COLOR_GREEN;
     outline: none;
 }
 
@@ -119,6 +48,7 @@ input, button, textarea, select, optgroup, option {
 
 input, textarea {
     vertical-align: middle;
+    border-radius: $BORDER_RADIUS;
 }
 
 strong {
@@ -127,27 +57,6 @@ strong {
 
 em {
     font-style: italic;
-}
-
-ul, ol {
-    margin: 0;
-    li {
-        margin: 0.5em 0 0;
-        line-height: 1.4em;
-        ul, ol {
-            margin: 0.8em 0 0 1em;
-        }
-    }
-}
-
-ol li {
-    list-style-type: decimal;
-    list-style-image: none;
-}
-
-img {
-    vertical-align: middle;
-    border: 0px;
 }
 
 hr {
@@ -262,95 +171,12 @@ fieldset .error-msg {
     margin: 0;
 }
 
-.clearfix {
-    clear: both;
-    visibility: hidden;
-    content: '.';
-}
-
 .hidden {
     display: none;
 }
 
-.left {
-    float: left;
-}
-
-.right {
-    float: right;
-}
-
-.push {
-    clear: both;
-}
-
 .required_asterisk {
     color: $COLOR_ORANGE;
-}
-
-.button {
-    cursor: pointer;
-    margin-bottom: 0.5em;
-    &:hover {
-        color: $COLOR_WHITE;
-        text-decoration: none;
-    }
-    span, button {
-        @include link-button;
-        overflow: visible;
-        border: 0;
-    }
-}
-
-.button-disabled {
-    cursor: pointer;
-    margin-bottom: 0.5em;
-    &:hover {
-        color: $COLOR_GRAY_SHADE;
-        background: $COLOR_LIGHT_GRAY;
-        text-decoration: none;
-    }
-    span, button {
-        @include link-button;
-        overflow: visible;
-        white-space: nowrap;
-        border: 0;
-        font-weight: bold;
-        color: $COLOR_GRAY_SHADE;
-        background: $COLOR_LIGHT_GRAY;
-        cursor: default;
-        &:hover, &:active {
-            color: $COLOR_GRAY_SHADE;
-            background: $COLOR_LIGHT_GRAY;
-        }
-    }
-}
-
-.error-msg {
-    color: $COLOR_RED;
-    font-style: italic;
-    font-size: 93%;
-}
-
-.notice-msg {
-    color: $COLOR_BLACK;
-    background-color: $COLOR_YELLOW;
-    padding: 10px;
-    overflow: hidden;
-}
-
-.center {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-
-ul.bullet, ol {
-    margin: 1.25em 0 1.25em 1.25em;
-}
-
-ul.bullet li {
-    list-style-image: url('../images/pages/get-started/list-circle_1.png');
 }
 
 .inpage_popup_container {
@@ -392,25 +218,6 @@ ul.bullet li {
     }
 }
 /* Coche icon, AKA tick */
-ul.checked {
-    li {
-        background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNC4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDQzMzYzKSAgLS0+DQo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjI0cHgiIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAwIDI0IDIwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAyNCAyMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8Zz4NCgkJPGc+DQoJCQk8cG9seWdvbiBmaWxsPSIjRTk4MDI1IiBwb2ludHM9IjguNjIzLDE5LjU1NyAwLDEwLjkzNiAzLjczNiw3LjE5OCA4LjYyMywxMi4wODIgMjAuMjYyLDAuNDQzIDI0LDQuMTggOC42MjMsMTkuNTU3IAkJCSIvPg0KCQk8L2c+DQoJPC9nPg0KPC9nPg0KPC9zdmc+DQo=') no-repeat;
-        @include BIDIR_VALUE(background-position, left, right);
-        @include BIDIR_PROP(padding-left, padding-right, 35px);
-        min-height: 24px;
-    }
-}
-
-.reset_ol {
-    counter-reset: item;
-    li {
-        display: block;
-    }
-    li:before {
-        content: counters(item, '.') '. ';
-        counter-increment: item;
-    }
-}
 
 .hint {
     font-size: 14px;
@@ -485,10 +292,6 @@ ul.checked {
     margin: 30px auto;
 }
 
-.no-padding {
-    padding: 0px !important;
-}
-
 _:-ms-fullscreen, :root #content-holder {
     height: 100%;
 }
@@ -497,7 +300,51 @@ xmp {
     font-family: inherit;
 }
 
-#half-sized-picture {
+img.responsive {
+    width: 100%;
+    height: auto;
+}
+
+.color-blue {
+    color: $COLOR_BLUE;
+}
+
+.color-green {
+    color: $COLOR_GREEN;
+}
+
+.color-orange {
+    color: $COLOR_ORANGE;
+}
+
+.color-white {
+    color: $COLOR_WHITE;
+}
+
+.font-weight-700 {
+    font-weight: 700;
+}
+
+.background-gray {
+    background-color: $COLOR_LIGHT_GRAY;
+}
+
+.background-orange {
+    background-color: $COLOR_ORANGE;
+}
+
+button.blue-button {
+    background: $COLOR_BLUE;
+    &:hover {
+        background-color: $COLOR_DARK_GREEN;
+    }
+}
+
+.half-sized-picture {
     width: 50px;
     height: 50px;
+}
+
+.nowrap {
+    white-space: nowrap;
 }

@@ -1,5 +1,5 @@
-<div class="grd-container grd-default-container">
-  <div class="grd-grid-12 static_full">
+<div class="container container">
+  <div class="static_full">
     <h1>
       [% l("Partners") %]
     </h1>
@@ -7,14 +7,14 @@
       [% l("[_1] provides business partnership services via the following programs.", website_name) %]
     </p>
   </div>
-  <div class="grd-grid-12 grd-grid-mobile-12 grd-parent grd-clear">
-    <div class="grd-grid-4 grd-grid-mobile-12">
-      <div class="grd-grid-6 grd-with-padding">
+  <div class="gr-row gr-clear">
+    <div class="gr-4 gr-12-m">
+      <div class="gr-6 gr-padding-10">
         <a class="pjaxload" href="[% request.url_for('/affiliate/signup') %]">
           <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/partners/affiliate-program.svg') %]"/>
         </a>
       </div>
-      <div class="grd-grid-12">
+      <div class="gr-12">
         <h4>
           <a class="pjaxload" href="[% request.url_for('/affiliate/signup') %]">
             [% l("Affiliate Program") %]
@@ -25,13 +25,13 @@
         </p>
       </div>
     </div>
-    <div class="grd-grid-4 grd-grid-mobile-12">
-      <div class="grd-grid-6 grd-with-padding">
+    <div class="gr-4 gr-12-m">
+      <div class="gr-6 gr-padding-10">
         <a class="pjaxload" href="[% request.url_for('/payment-agent') %]">
           <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/partners/payment-agents.svg') %]"/>
         </a>
       </div>
-      <div class="grd-grid-12">
+      <div class="gr-12">
         <h4>
           <a class="pjaxload" href="[% request.url_for('/payment-agent') %]">
             [% l("Payment Agent") %]
@@ -42,13 +42,13 @@
         </p>
       </div>
     </div>
-    <div class="grd-grid-4 grd-grid-mobile-12">
-      <div class="grd-grid-6 grd-with-padding">
+    <div class="gr-4 gr-12-m">
+      <div class="gr-6 gr-padding-10">
         <a href="https://developers.binary.com" target="_blank">
           <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/partners/api.svg') %]"/>
         </a>
       </div>
-      <div class="grd-grid-12">
+      <div class="gr-12">
         <h4>
           <a href="https://developers.binary.com" target="_blank">
             [% l("API") %]
@@ -60,14 +60,14 @@
       </div>
     </div>
   </div>
-  <div class="grd-grid-12 grd-grid-mobile-12 grd-parent grd-clear">
-    <div class="grd-grid-4 grd-grid-mobile-12">
-      <div class="grd-grid-6 grd-with-padding">
+  <div class="gr-row gr-clear">
+    <div class="gr-4 gr-12-m">
+      <div class="gr-6 gr-padding-10">
         <a class="pjaxload" href="[% request.url_for('/open-source-projects') %]">
           <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/partners/open-source-venture.svg') %]"/>
         </a>
       </div>
-      <div class="grd-grid-12">
+      <div class="gr-12">
         <h4>
           <a class="pjaxload" href="[% request.url_for('/open-source-projects') %]">
             [% l("Open Source") %]
@@ -78,13 +78,13 @@
         </p>
       </div>
     </div>
-    <div class="grd-grid-4 grd-grid-mobile-12">
-      <div class="grd-grid-6 grd-with-padding">
+    <div class="gr-4 gr-12-m">
+      <div class="gr-6 gr-padding-10">
         <a href="http://blog.binary.com/en/contributors/" target="_blank">
           <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/partners/contributors.svg') %]" target="_blank"/>
         </a>
       </div>
-      <div class="grd-grid-12">
+      <div class="gr-12">
         <h4>
           <a href="https://blog.binary.com/en/contributors/" target="_blank">
             [% l("Contributors") %]
@@ -95,13 +95,13 @@
         </p>
       </div>
     </div>
-    <div class="grd-grid-4 grd-grid-mobile-12">
-      <div class="grd-grid-6 grd-with-padding">
+    <div class="gr-4 gr-12-m">
+      <div class="gr-6 gr-padding-10">
         <a class="pjaxload" href="[% request.url_for('/user-testing') %]">
           <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/partners/tester.svg') %]"/>
         </a>
       </div>
-      <div class="grd-grid-12">
+      <div class="gr-12">
         <h4>
           <a class="pjaxload" href="[% request.url_for('/user-testing') %]">
             [% l("User Testing") %]

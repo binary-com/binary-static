@@ -5,7 +5,7 @@ var MarketTimesWS = (function() {
         $container;
 
     var columns,
-        activeSymbols, 
+        activeSymbols,
         tradingTimes;
 
 
@@ -74,7 +74,7 @@ var MarketTimesWS = (function() {
         $container
             .empty()
             .append($ul)
-            .append($('<div/>', {class: 'grd-row-padding'}))
+            .append($('<div/>', {class: 'gr-padding-10'}))
             .append($contents.children());
 
         $container.tabs('destroy').tabs();
@@ -125,8 +125,8 @@ var MarketTimesWS = (function() {
                 '', // Closes
                 symbol.times.settlement,
                 ''  // UpcomingEvents
-            ], 
-            columns, 
+            ],
+            columns,
             "data"
         );
 

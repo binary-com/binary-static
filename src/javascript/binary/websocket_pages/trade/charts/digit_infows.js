@@ -105,15 +105,15 @@ TradingAnalysis.DigitInfoWS.prototype = {
         }
         elem = elem + '</select>';
         var contentId = document.getElementById('tab_last_digit-content'),
-            content = '<div class="grd-parent">'+
-                        '<div id="last_digit_histo_form" class="grd-grid-8 grd-grid-mobile-12 grd-centered">'+
-                        '<form class=smallfont action="#" method="post">'+
-                        '<div class="grd-grid-6 grd-grid-mobile-12">'+ text.localize('Select market')+' : ' + elem +' </div>'+
-                        '<div class="grd-grid-6 grd-grid-mobile-12">'+ text.localize('Number of ticks')+' : <select class="smallfont" name="tick_count"><option value="25">25</option><option value="50">50</option><option selected="selected" value="100">100</option><option value="500">500</option><option value="1000">1000</option></select></div>'+
+            content = '<div class="gr-parent">'+
+                        '<div id="last_digit_histo_form" class="gr-8 gr-12-m gr-centered">'+
+                        '<form class="smallfont gr-row" action="#" method="post">'+
+                        '<div class="gr-6 gr-12-m">'+ text.localize('Select market')+' : ' + elem +' </div>'+
+                        '<div class="gr-6 gr-12-m">'+ text.localize('Number of ticks')+' : <select class="smallfont" name="tick_count"><option value="25">25</option><option value="50">50</option><option selected="selected" value="100">100</option><option value="500">500</option><option value="1000">1000</option></select></div>'+
                         '</form>'+
                         '</div>'+
-                        '<div id="last_digit_histo" class="grd-grid-8 grd-grid-mobile-12 grd-centered"></div>'+
-                        '<div id="last_digit_title" class="grd-hide">'+ (domain.charAt(0).toUpperCase() + domain.slice(1)) + ' - ' + text.localize('Last digit stats for the latest [_1] ticks on [_2]') +'</div>'+
+                        '<div id="last_digit_histo" class="gr-8 gr-12-m gr-centered"></div>'+
+                        '<div id="last_digit_title" class="gr-hide">'+ (domain.charAt(0).toUpperCase() + domain.slice(1)) + ' - ' + text.localize('Last digit stats for the latest [_1] ticks on [_2]') +'</div>'+
                         '</div>';
         contentId.innerHTML = content;
         $('[name=underlying]').val(underlying);

@@ -1,9 +1,9 @@
 <div itemtype="http://schema.org/Organization">
-  <div class="grd-grid-12 grd-parent static_full">
-    <div class="grd-grid-2 grd-grid-mobile-8 grd-centered-mobile">
+  <div class="gr-row static_full">
+    <div class="gr-2 gr-8-m gr-centered-m">
       <img class="responsive" src="[% request.url_for('images/pages/about/logo-blue.svg') %]"/>
     </div>
-    <div class="grd-grid-9 grd-grid-mobile-12">
+    <div class="gr-9 gr-12-m">
       <h1>
         [% l("Group Information") %]
       </h1>
@@ -12,9 +12,9 @@
       </p>
     </div>
   </div>
-  <div class="grd-grid-12 grd-parent">
-    <div class="grd-grid-6 grd-grid-mobile-12 grd-parent grd-row-padding">
-      <div class="grd-grid-12 grd-row-padding">
+  <div class="gr-row">
+    <div class="gr-6 gr-12-m gr-parent gr-padding-10">
+      <div class="gr-12 gr-padding-10">
         <h2 class="empty-space" itemprop="legalname">
           [% 'Binary Ltd' %]
         </h2>
@@ -23,15 +23,15 @@
         </p>
       </div>
     </div>
-    <div class="grd-grid-6 grd-grid-mobile-12">
-      <div class="grd-grid-9 grd-grid-mobile-6 grd-centered grd-row-padding">
+    <div class="gr-6 gr-12-m">
+      <div class="gr-9 gr-6-m gr-centered gr-padding-10">
         <a href="http://mfsa.com.mt/" target="_blank">
           <img class="responsive" src="[% request.url_for('images/pages/about/mfsa-logo.svg') %]"/>
         </a>
       </div>
-      <div class="grd-grid-12 grd-row-padding"></div>
-      <div class="grd-grid-12 grd-row-padding"></div>
-      <div class="grd-grid-12 grd-row-padding">
+      <div class="gr-12 gr-padding-10"></div>
+      <div class="gr-12 gr-padding-10"></div>
+      <div class="gr-12 gr-padding-10">
         <h2>
           [% 'Binary Investments (Europe) Ltd.' %]
         </h2>
@@ -43,11 +43,13 @@
         </p>
       </div>
     </div>
-    <div class="grd-grid-6 grd-grid-mobile-12">
-      <div class="grd-grid-4 grd-grid-mobile-6 grd-centered grd-row-padding">
+  </div>
+  <div class="gr-row">
+    <div class="gr-6 gr-12-m">
+      <div class="gr-4 gr-6-m gr-centered gr-padding-10">
         <img class="responsive" src="[% request.url_for('images/pages/about/costa-rica.png') %]"/>
       </div>
-      <div class="grd-grid-12 grd-row-padding">
+      <div class="gr-12 gr-padding-10">
         <h2>
           [% 'Binary (C.R.) S.A.' %]
         </h2>
@@ -62,13 +64,13 @@
         </p>
       </div>
     </div>
-    <div class="grd-grid-6 grd-grid-mobile-12 grd-parent grd-row-padding">
-      <div class="grd-grid-4 grd-grid-mobile-6 grd-centered grd-row-padding id-hide">
+    <div class="gr-6 gr-12-m gr-parent gr-padding-10">
+      <div class="gr-4 gr-6-m gr-centered gr-padding-10 id-hide">
         <a href="http://www.gov.im/gambling/" target="_blank">
           <img class="responsive" src="[% request.url_for('images/pages/footer/isle-of-man.png') %]"/>
         </a>
       </div>
-      <div class="grd-grid-12 grd-row-padding id-hide">
+      <div class="gr-12 gr-padding-10 id-hide">
         <h2 class="small-margin">
           [% 'Binary (IOM) Ltd' %]
         </h2>
@@ -80,15 +82,14 @@
       </div>
     </div>
   </div>
-  <div class="grd-grid-12 grd-parent">
-    <div class="grd-grid-6 grd-grid-mobile-12">
-      <div class="grd-grid-8 grd-grid-mobile-12 grd-centered grd-row-padding id-hide">
+  <div class="gr-row">
+    <div class="gr-6 gr-12-m">
+      <div class="gr-8 gr-12-m gr-centered gr-padding-10 id-hide">
         <a href='http://www.mga.org.mt/' target="_blank" >
           <img class="responsive" src="[% request.url_for("images/pages/why-us/mga-logo2.svg") %]"/>
         </a>
-        <p class="grd-with-top-padding"></p>
       </div>
-      <div class="grd-grid-12 grd-row-padding id-hide">
+      <div class="gr-12 gr-padding-10 id-hide">
         <h2>
           [% 'Binary (Europe) Ltd' %]
         </h2>
@@ -97,7 +98,7 @@
           [% l("European Union residents with the exception of the UK, who wish to trade gambling products, will have their account opened with Binary (Europe) Ltd.") %]
         </p>
       </div>
-      <div class="grd-grid-12 grd-parent"></div>
+      <div class="gr-12 gr-parent"></div>
     </div>
   </div>
 </div>

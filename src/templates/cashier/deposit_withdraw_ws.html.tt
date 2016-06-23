@@ -1,4 +1,4 @@
-<div class='grd-grid-12 grd-row-padding'>
+<div class='gr-12 gr-padding-10'>
   <h1 id="deposit-withdraw-heading"></h1>
   <div>
 
@@ -26,7 +26,7 @@
     </div>
 
   </div>
-  <div class="grd-container" id="deposit-withdraw-iframe-container" style="display:none">
+  <div class="container" id="deposit-withdraw-iframe-container" style="display:none">
     <script data-cfasync="false" type="text/javascript">
     function receiveCmd(e){
       if (e.origin !== "https://cashier.binary.com") return;
@@ -44,20 +44,20 @@
     </script>
     <iframe src="" frameborder="0" width="100%" height="1500" id="cashiercont" scrolling="auto" style="padding:0px;margin:0px;"></iframe>
   </div>
-  <div id="ukgc-funds-protection" class="grd-grid-12 grd-parent" style="display:none">
-      <div class="grd-grid-2 grd-grid-mobile-6 grd-centered-mobile">
+  <div id="ukgc-funds-protection" class="gr-row gr-parent" style="display:none">
+      <div class="gr-2 gr-6-m gr-centered-m">
           <p>
               <img class="responsive" src="[% request.url_for('images/pages/cashier/protection-icon.svg') %]"/>
           </p>
       </div>
-      <div class="grd-grid-10 grd-grid-mobile-12">
+      <div class="gr-10 gr-12-m">
               <p>
                   [% l("We are required by our license to inform you about what happens to funds which we hold on account for you, and the extent to which funds are protected in the event of insolvency <a href='[_1]' target='_blank'>[_1]</a>.", "http://www.gamblingcommission.gov.uk/Consumers/Protection-of-customer-funds.aspx") %]
               </p>
               <p>
                   [% l("The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission's requirements for the segregation of customer funds at the level: <strong>medium protection</strong>.") %]
               </p>
-              <div class='grd-grid-3 grd-grid-mobile-6 grd-centered'>
+              <div class='gr-3 gr-6-m gr-centered'>
                   <span class="button">
                       <button id="submit-ukgc-funds-protection" class="button" value="ok" type="submit">[% l('Proceed') %]</button>
                   </span>
@@ -67,11 +67,11 @@
   <div id="currency-form" style="display:none">
     <div class="rbox-wrap">
       <fieldset>
-        <div class="grd-row-padding row clear">
-          <div class="grd-grid-4 form_label">
+        <div class="gr-padding-10 gr-row clear">
+          <div class="gr-4 form_label">
             <label for="currency">[% l("Transact in") %]</label>
           </div>
-          <div class="grd-grid-8">
+          <div class="gr-8">
             <select id="select-currency">
               <option value="USD" selected="selected">[% l("USD") %]</option>
               <option value="EUR">[% l("EUR") %]</option>
@@ -80,8 +80,8 @@
             </select>
           </div>
         </div>
-        <div class="grd-row-padding row clear form_button">
-          <div class="grd-grid-8">
+        <div class="gr-padding-10 row clear form_button">
+          <div class="gr-8">
             <span class="button">
               <button class="button" id="submit-currency" type="submit" value="Continue">[% l("Continue") %]</button>
             </span>
@@ -92,23 +92,20 @@
   </div>
   <div id="withdraw-form" style="display:none">
     <fieldset>
-      <div class="grd-grid-12 grd-parent grd-row-padding">
-        <div class="form_label grd-grid-4">
+      <div class="gr-row gr-parent gr-padding-10">
+        <div class="form_label gr-4">
           <label for="verification-token">[% l("Verification token") %]</label>
         </div>
-        <div class="grd-grid-8">
+        <div class="gr-8">
           <input id="verification-token" type="text" maxlength="48" autocomplete="off" />
           <div class="hint">[% l("Please check your email for the value of this token") %]</div>
           <p class="errorfield" id="verification-error" style="display:none"></p>
         </div>
       </div>
-      <div class="grd-grid-12 grd-parent">
-        <div class="grd-grid-4"></div>
-        <div class="grd-grid-8">
-            <span class="button">
-              <button class="button" id="submit-verification" type="button">[% l("Submit") %]</button>
-            </span>
-          </div>
+      <div class="gr-12 gr-parent gr-centered center-text">
+        <span class="button">
+          <button class="button" id="submit-verification" type="button">[% l("Submit") %]</button>
+        </span>
       </div>
     </fieldset>
   </div>

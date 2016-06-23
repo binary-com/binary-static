@@ -1,9 +1,9 @@
 <div class="section-content section-7">
-  <div class="grd-grid-12">
+  <div class="gr-12">
     <h1>
       [% l("Spreads") %]
     </h1>
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <p>
         [% l("[_1]'s Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements.  Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market.", website_name) %]
       </p>
@@ -17,7 +17,7 @@
         [% l("The entry spot of an instrument XYZ is 1000 and the spread on this instrument is 2 points.") %]
       </p>
     </div>
-    <div class="grd-grid-12">
+    <div class="gr-12">
       <img class="responsive" src="[% request.url_for('images/pages/trade-explanation/spreads-1.svg') %]"/>
       <p>
         [% l("The entry level for a long contract is 1001, which is entry spot + half spread. At exit, the spot is at 1100 and hence the exit level for a long contract is 1099, which is exit spot - half spread.") %]
