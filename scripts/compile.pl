@@ -42,7 +42,6 @@ my @m = (
     ['responsible-trading',        'static/responsible_trading',   'full_width', 'Responsible Trading'],
     ['terms-and-conditions',       'legal/tac',                    'default',    'Terms and Conditions'],
     ['terms-and-conditions-jp',    'japan/legal/tacjp',            'default',    'Terms and Conditions'],
-    ['applications',               'applications/index',           'default',    'Applications'],
     ['styles',                     'home/styles',                  'full_width', 'Styles'],
     ['affiliate/signup',           'affiliates/signup',            'default',    'Affiliate'],
     ['user/browser-support',       'misc/logintrouble',            'default',    'Login trouble'],

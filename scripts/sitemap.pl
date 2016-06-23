@@ -19,7 +19,6 @@ my @urls = (
     ['trading'             , 'monthly', '0.80'],
     ['contact'             , 'monthly', '0.80'],
     ['about-us'            , 'monthly', '0.80'],
-    ['applications'        , 'monthly', '0.80'],
     ['partners'            , 'monthly', '0.80'],
     ['cashier'             , 'monthly', '0.80'],
     ['careers'             , 'monthly', '0.80'],
