@@ -1,4 +1,3 @@
-
 var ProfitTableData = (function(){
     function getProfitTable(opts){
         var req = {profit_table: 1, description: 1};

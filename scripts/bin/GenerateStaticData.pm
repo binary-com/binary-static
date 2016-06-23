@@ -48,6 +48,7 @@ sub _texts {
         push @texts, localize('Resources');
         push @texts, localize('Asset Index');
         push @texts, localize('Trading Times');
+        push @texts, localize('Shop');
         # highchart localization text
         push @texts, localize('Print chart');
         push @texts, localize('Save as JPEG');
