@@ -1,7 +1,6 @@
-
 var ProfitTableWS = (function () {
-    var batchSize = 100;
-    var chunkSize = batchSize/2;
+    var batchSize = 100,
+        chunkSize = batchSize/2;
 
     var transactionsReceived = 0;
     var transactionsConsumed = 0;
@@ -103,6 +102,13 @@ var ProfitTableWS = (function () {
 
 
     function init(){
+        batchSize = 100;
+        chunkSize = batchSize/2;
+        transactionsReceived = 0;
+        transactionsConsumed = 0;
+        noMoreData = false;
+        pending = false;
+        currentBatch = [];
         getNextBatchTransactions();
         onScrollLoad();
     }

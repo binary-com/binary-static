@@ -1,14 +1,14 @@
-
 var ProfitTableUI = (function(){
     "use strict";
 
     var profitTableID = "profit-table";
-    var cols = ["buy-date", "ref", "contract", "buy-price", "sell-date", "sell-price", "pl", "details"];
+    var cols = ["buy-date", "ref", "payout", "contract", "buy-price", "sell-date", "sell-price", "pl", "details"];
 
     function createEmptyTable(){
         var header = [
             Content.localize().textDate,
             Content.localize().textRef,
+            text.localize('Potential Payout'),
             Content.localize().textContract,
             Content.localize().textPurchasePrice,
             Content.localize().textSaleDate,
@@ -17,9 +17,9 @@ var ProfitTableUI = (function(){
             Content.localize().textDetails
         ];
 
-        header[6] = header[6] + (TUser.get().currency ? " (" + TUser.get().currency + ")" : "");
+        header[7] = header[7] + (TUser.get().currency ? " (" + TUser.get().currency + ")" : "");
 
-        var footer = [Content.localize().textTotalProfitLoss, "", "", "", "", "", "", ""];
+        var footer = [Content.localize().textTotalProfitLoss, "", "", "", "", "", "", "", ""];
 
         var data = [];
         var metadata = {
@@ -73,6 +73,7 @@ var ProfitTableUI = (function(){
         var sellDate = sellMoment.format("YYYY-MM-DD") + "\n" + sellMoment.format("HH:mm:ss") + ' GMT';
 
         var ref = transaction["transaction_id"];
+        var payout = Number(parseFloat(transaction["payout"])).toFixed(2);
         var buyPrice = Number(parseFloat(transaction["buy_price"])).toFixed(2);
         var sellPrice = Number(parseFloat(transaction["sell_price"])).toFixed(2);
 
@@ -80,7 +81,7 @@ var ProfitTableUI = (function(){
 
         var plType = (pl >= 0) ? "profit" : "loss";
 
-        var data = [buyDate, ref, '', buyPrice, sellDate, sellPrice, pl, ''];
+        var data = [buyDate, ref, payout, '', buyPrice, sellDate, sellPrice, pl, ''];
         var $row = Table.createFlexTableRow(data, cols, "data");
 
         $row.children(".buy-date").addClass("pre");
