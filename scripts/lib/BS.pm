@@ -303,13 +303,13 @@ sub menu {
     $resources_items_ref->{'sub_items'} = [$asset_index_ref, $trading_times_ref];
     push @menu, $resources_items_ref;
 
-    # applications
+    # Portfolio
     push @menu,
         {
-        id         => 'topMenuApplications',
-        url        => url_for('/applications'),
-        text       => localize('Applications'),
-        link_class => 'ja-hide pjaxload',
+        id         => 'topMenuShop',
+        url        => 'https://shop.binary.com',
+        text       => localize('Shop'),
+        target     => '_blank'
         };
 
     # push @{$menu}, $self->_main_menu_trading();
