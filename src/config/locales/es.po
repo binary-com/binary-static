@@ -102,9 +102,6 @@ msgstr "%1 ha actualizado sus<a class=\"pjaxload\" href=\"%2\">Términos y Condi
 msgid "%1 is always looking to add experienced professionals to its talented team of administrators, technical contributors, and managers. To support our continued growth, we've developed a number of exciting career opportunities in the following areas:"
 msgstr "%1 está en búsqueda constante de profesionales con experiencia que puedan unirse a nuestro talentoso equipo de administradores, colaboradores técnicos y gerentes. Para apoyar nuestro continuo crecimiento, ofrecemos una serie de emocionantes oportunidades profesionales en las siguientes áreas:"
 
-msgid "%1 is an active proponent of the open-source movement. Suggest enhancements, and take part in the development of our powerful applications. You can find more information on our <a href=\"%2\" target=\"_blank\">Developers Portal</a>."
-msgstr "%1 es un defensor activo del movimiento de código abierto. Sugiera mejoras y participe en el desarrollo de nuestras aplicaciones potentes. Puede encontrar más información en nuestro <a href=\"%2\" target=\"_blank\"> Portal de Desarrolladores</a>."
-
 msgid "%1 is entirely web-based and requires no software installation."
 msgstr "%1 está totalmente basado en la Web y no requiere la instalación de ningún software."
 
@@ -168,9 +165,6 @@ msgstr "%1 ofrece los mercados financieros mundiales en una plataforma sencilla 
 
 msgid "%1 prices are benchmarked against the interbank options market, so you always get best-in-class prices for your trades."
 msgstr "Los precios de %1 toman como referente el mercado de opciones interbancarias, por lo tanto usted siempre obtiene los mejores precios de su clase para sus contratos."
-
-msgid "%1 provides a variety of applications to help you trade efficiently."
-msgstr "%1 proporciona una variedad de aplicaciones para ayudarle a comerciar de forma eficiente."
 
 msgid "%1 provides business partnership services via the following programs."
 msgstr "%1 proporciona servicios de colaboración empresarial a través de los siguientes programas."
@@ -452,16 +446,24 @@ msgstr ""
 "  <li>Mensaje específico que deberá incluir el banner.</li>\n"
 " </ul>"
 
-msgid "<span>All durations:</span> from 10 seconds to 365 days."
+#, fuzzy
+#| msgid "<span>All durations:</span> from 10 seconds to 365 days."
+msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
 msgstr "<span>Todas las duraciones:</span> desde 10 segundos hasta 365 días."
 
-msgid "<span>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
+#, fuzzy
+#| msgid "<span>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
+msgid "<span class='color-green font-weight-700'>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
 msgstr "<span>Todas las condiciones del mercado:</span> arriba/abajo, con toque/sin toque, permanece dentro/sale."
 
-msgid "<span>All markets:</span> currencies, stocks, indices, and commodities."
+#, fuzzy
+#| msgid "<span>All markets:</span> currencies, stocks, indices, and commodities."
+msgid "<span class='color-green font-weight-700'>All markets:</span> currencies, stocks, indices, and commodities."
 msgstr "<span>Todos los mercados:</span> divisas, acciones, índices y artículos."
 
-msgid "<span>All payouts:</span> from $1 to $50,000."
+#, fuzzy
+#| msgid "<span>All payouts:</span> from $1 to $50,000."
+msgid "<span class='color-green font-weight-700'>All payouts:</span> from $1 to $50,000."
 msgstr "<span>Todos los pagos:</span> desde $1 hasta $50.000."
 
 msgid "<strong>2-way pricing</strong> - %1 quotes a trade and the counter-trade, so you always get unbiased, transparent prices."
@@ -887,9 +889,6 @@ msgstr "Administrador"
 msgid "Advanced knowledge of software design principles"
 msgstr "Conocimiento avanzado de los principios de diseño de software"
 
-msgid "Advanced tool for active traders"
-msgstr "Herramienta avanzada para comerciantes activos"
-
 msgid "Advising senior managers regarding salary negotiations and job offers"
 msgstr "Asesoramiento de los altos directivos relacionado con las negociaciones salariales y ofertas de trabajo"
 
@@ -1189,9 +1188,6 @@ msgstr "Aplicaciones Autorizadas"
 msgid "Available payment methods"
 msgstr "Métodos de pago disponibles"
 
-msgid "Available soon..."
-msgstr "Disponible pronto..."
-
 msgid "Avoid the need to have an e-wallet"
 msgstr "Evite la necesidad de tener un monedero electrónico"
 
@@ -1332,9 +1328,6 @@ msgstr "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokio 
 
 msgid "Binary Ltd, with registered office address situated at <span itemprop='location'>47 Esplanade, St. Helier, Jersey, JE 0BD Channel Islands</span>, is the holding company for the Binary group."
 msgstr "Binary Ltd., con dirección de oficina registrada en <span itemprop=\"location\">47 Esplanade, St. Helier, Jersey, JE 0BD Islas del canal</span>, es la sociedad de cartera del grupo Binary."
-
-msgid "Binary Next Gen"
-msgstr "Binary Next Gen"
 
 msgid "Binary Options Basics"
 msgstr "Cuestiones básicas de las opciones binarias"
@@ -2234,6 +2227,9 @@ msgstr "Impulsar el crecimiento rápido de áreas clave del mundo, usando una va
 msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
 msgstr "Debido a recientes cambios en las regulaciones, nos vemos obligados a pedir a nuestros clientes que completen el siguiente Asesramiento Financiero. Tenga en cuenta que no podrás seguir operando hasta que no lo complete."
 
+msgid "Due to the impending Brexit vote, returns on some instruments may be lower than usual until Friday."
+msgstr ""
+
 msgid "Duration"
 msgstr "Duración"
 
@@ -2358,6 +2354,9 @@ msgstr "Hora de finalización"
 msgid "Ends Between/Ends Outside trades"
 msgstr "Contratos Finaliza dentro/Finaliza fuera"
 
+msgid "Ends In/Out"
+msgstr "Finaliza Dentro/Fuera"
+
 msgid "Ends In/Out contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
 msgstr "Los contratos termina Dentro/Fuera serán reembolsados al precio de compra si hay menos de 2 ticks entre el tiempo de inicio y el tiempo final."
 
@@ -2366,11 +2365,6 @@ msgstr "Dedicarse a la extracción de datos usando bases de datos SQL, R / S-Plu
 
 msgid "Enhance and proactively manage the company's social-media efforts, using a variety of channels to attract and nurture prospects, clients, partners, and recruits."
 msgstr "Mejorar y administrar de manera proactiva los esfuerzos de la compañía en los medios sociales, usando una variedad de canales para atraer y fomentar clientes potenciales, clientes actuales, socios y reclutas."
-
-#, fuzzy
-#| msgid "Enjoy our fastest type of trading on your mobile phone or tablet. Place tick trades anytime, anywhere – even while you’re on the move."
-msgid "Enjoy our fastest type of trading on your mobile phone or tablet. Place tick trades anytime, anywhere - even while you're on the move."
-msgstr "Disfrute del tipo de comercio más rápido su móvil o tablet. Haga operaciones tick trade en cualquier momento y en cualquier lugar – incluso mientras está viajando."
 
 msgid "Ensure compliance with quality control standards governing website content"
 msgstr "Garantizar el cumplimiento de las normas de control de calidad que rigen el contenido web"
@@ -2425,9 +2419,6 @@ msgstr "Par/Impar"
 
 msgid "Even/Odd contracts will be refunded at the purchase price if the contract doesn't end within 5 minutes."
 msgstr "Los contratos de pares/impares se reembolsarán el precio de compra si el contrato no termina en 5 minutos."
-
-msgid "Examine the history of a particular instrument to plot your next move. This advanced charting platform offers a wide range of technical indicators."
-msgstr "Examine la historia de un instrumento particular para trazar su próximo movimiento. Esta plataforma de gráficos avanzada ofrece una amplia gama de indicadores técnicos."
 
 msgid "Example:"
 msgstr "Ejemplo:"
@@ -2553,9 +2544,6 @@ msgstr "Precio de expiración"
 
 msgid "Explanation"
 msgstr "Explicación"
-
-msgid "Explore our most cutting-edge new platform, now available in beta form. Place trades from your virtual account."
-msgstr "Explore nuestra nueva plataforma más avanzada, ahora disponible en versión beta. Realice operaciones desde su cuenta virtual."
 
 msgid "Extensive experience in the application of advanced coding principles and standards"
 msgstr "Amplia experiencia en la aplicación de los principios y normas de codificación avanzada"
@@ -3170,7 +3158,7 @@ msgstr "Si desea beneficiarse de este producto de alta demanda, su mejor opción
 
 #, fuzzy
 #| msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:%1'>%1</a>"
-msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:affiliates@binary.com'>%1</a>"
+msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='%1'>%2</a>"
 msgstr "Si desea más información sobre cómo convertirse en un Agente de Pago, por favor contáctenos en <a href='mailto:%1'>%1</a>"
 
 msgid "If you would like to file a complaint with regards to our service, kindly contact us providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within 1-2 weeks (and at most within 2 months) from receipt of all relevant details."
@@ -3352,7 +3340,7 @@ msgstr "Saldo insuficiente"
 
 #, fuzzy
 #| msgid "Interested, so what’s next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:affiliates@binary.com'>hear from you!</a>"
-msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:affiliates@binary.com'>hear from you!</a>"
+msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='%2'>hear from you!</a>"
 msgstr "Le parece interesante, ¿qué hay que hacer ahora? Si puede ofrecer a nuestros clientes un específico método de pago electrónico o una opción de pago local que no esté ya proporcionada por %1, y tiene un buen historial en el mercado, ¡nos encantaría <a href='mailto:affiliates@binary.com'>saber de usted!</a>"
 
 msgid "Interested? Why not try a virtual account"
@@ -3915,9 +3903,6 @@ msgstr "Japan website Risk For Binary Option Trading Paragraph 2"
 msgid "Japan website Terms and Conditions Paragraph 1"
 msgstr "Japan website Terms and Conditions Paragraph 1"
 
-msgid "Join our developer community"
-msgstr "Únase a nuestra comunidad de desarrolladores"
-
 msgid "Join our team of bright, talented professionals. Work collaboratively with us to enhance and promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years."
 msgstr "Únase a nuestro equipo de profesionales brillantes y talentosos. Trabaje en colaboración con nosotros para mejorar y promover una plataforma de alta tecnología que es una de las más reconocidas en la industria del comercio con opciones binarias desde hace más de 15 años."
 
@@ -4070,9 +4055,6 @@ msgstr "Enlace a y envíe a sus clientes a su Aplicación."
 
 msgid "Links"
 msgstr "Enlaces"
-
-msgid "List of All Open-Source Projects"
-msgstr "Lista de todos los proyectos de código abierto"
 
 msgid "Live chat:"
 msgstr "Chat:"
@@ -4300,9 +4282,6 @@ msgstr "Monitorizar y optimizar la actividad comercial de la página web"
 msgid "Monitor hardware and software deployment and manage our worldwide network of servers and office networks"
 msgstr "Monitorizar la implementación de hardware y software y gestionar nuestra red mundial de servidores y redes de oficinas"
 
-msgid "Monitor the movements of all of your favourite assets and markets at the same time. This flexible charting platform provides a variety of customisable features."
-msgstr "Controle los movimientos de todos sus activos y mercados favoritos al mismo tiempo. Esta plataforma de gráficos flexible ofrece una variedad de características personalizables."
-
 msgid "Monitor website trading activity and minimize abuse"
 msgstr "Controlar la actividad comercial de la página web y minimizar el abuso"
 
@@ -4402,9 +4381,6 @@ msgstr "Siguiente"
 msgid "Next Day"
 msgstr "Día siguiente"
 
-msgid "Next Gen on GitHub"
-msgstr "Next Gen en GitHub"
-
 msgid "No Advice"
 msgstr "Sin consejo"
 
@@ -4469,6 +4445,9 @@ msgstr "Note: La retirada a través de un agente de pago sólo está disponible 
 
 msgid "Notes:"
 msgstr "Notas:"
+
+msgid "Notice"
+msgstr ""
 
 msgid "Notification of Changes"
 msgstr "Notificación de cambios"
@@ -4883,6 +4862,11 @@ msgstr "Ingrese un monto válido."
 msgid "Please enter an integer value"
 msgstr "Ingrese un valor entero"
 
+#, fuzzy
+#| msgid "Please enter date in the format YYYY-MM-DD."
+msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
+msgstr "Ingrese una fecha en el formato AAAA-MM-DD."
+
 msgid "Please enter date in the format YYYY-MM-DD."
 msgstr "Ingrese una fecha en el formato AAAA-MM-DD."
 
@@ -4947,7 +4931,7 @@ msgstr "Por favor ingrese un valor válido de %1."
 
 #, fuzzy
 #| msgid "Please submit the above information to <a href='mailto:%1'>%1</a>."
-msgid "Please submit the above information to <a href='mailto:affiliates@binary.com'>%1</a>."
+msgid "Please submit the above information to <a href='%1'>%2</a>."
 msgstr "Por favor, envíe la información anterior a <a href='mailto:%1'>%1</a>."
 
 msgid "Please try again."
@@ -4988,9 +4972,6 @@ msgstr "Las ganancias y pérdidas potenciales se limitan a los niveles stop prof
 
 msgid "Power & simplicity"
 msgstr "Potencia y simplicidad"
-
-msgid "Powerful charting and technical analysis"
-msgstr "Potentes gráficos y análisis técnico"
 
 msgid "Pre-contract Document"
 msgstr "Pre-contract Document"
@@ -5529,6 +5510,9 @@ msgstr "Divisibilidad"
 msgid "Sharp prices"
 msgstr "Mejores precios"
 
+msgid "Shop"
+msgstr ""
+
 msgid "Short"
 msgstr "Cortos"
 
@@ -5680,6 +5664,9 @@ msgstr "Manténgase informado. %1 le ofrece los informes diarios y los estudios 
 
 msgid "Stays Between/Goes Outside trades"
 msgstr "Contratos Queda dentro/Sale"
+
+msgid "Stays In/Goes Out"
+msgstr "Queda Dentro/Sale Fuera"
 
 msgid "Stays In/Goes Out Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
 msgstr "Los contratos Queda Dentro/Sale Fuera serán reembolsados al precio de compra si hay menos de 2 ticks entre el tiempo de inicio y el tiempo final."
@@ -6211,9 +6198,6 @@ msgstr "Lo primero que tiene que hacer es elegir el activo con qué desea negoci
 msgid "The first tick is the first tick after the contract is processed by our servers."
 msgstr "El primer intervalo es el primer intervalo después de que el contrato haya sido procesado por nuestros servidores."
 
-msgid "The future of trading on %1"
-msgstr "El futuro del comercio en %1"
-
 msgid "The information provided during the sign-up process warranted by yourself to be true and correct is determined by the Company to be false or incorrect during the term of this Agreement;"
 msgstr "La Compañía ha determinado durante la vigencia del presente acuerdo que la información proporcionada durante el proceso de registro que usted garantiza que es verdadera y correcta es falsa o incorrecta;"
 
@@ -6465,17 +6449,14 @@ msgstr "Jueves"
 msgid "Tick"
 msgstr "Intervalo"
 
-msgid "Tick Trade App"
-msgstr "Tick Trade App"
-
-msgid "Tick Trade on GitHub"
-msgstr "Tick Trade en GitHub"
-
 msgid "Tier"
 msgstr "Nivel"
 
 msgid "Time"
 msgstr "Hora"
+
+msgid "Time out until"
+msgstr ""
 
 msgid "Times are changing. We increase payouts so our clients can make the most of their winning trades."
 msgstr "Los tiempos están cambiando. Aumentamos los pagos para que nuestros clientes puedan sacar el máximo provecho de sus transacciones ganadoras."
@@ -6533,11 +6514,6 @@ msgstr "Para restablecer su contraseña, introduzca la dirección de correo elec
 
 msgid "Token"
 msgstr "Token"
-
-#, fuzzy
-#| msgid "%1 Tools"
-msgid "Tooltips"
-msgstr "%1 Herramientas"
 
 msgid "Total Cost"
 msgstr "Coste total"
@@ -6662,9 +6638,6 @@ msgstr "True"
 msgid "Trust"
 msgstr "Confianza"
 
-msgid "Try It"
-msgstr "Pruébelo"
-
 msgid "Try adding more letters or numbers."
 msgstr "Pruebe a añadir más letras o números."
 
@@ -6705,9 +6678,6 @@ msgstr "USD"
 
 msgid "UX / UI experience"
 msgstr "Experiencia UX / UI"
-
-msgid "Ultra-fast trading"
-msgstr "Comercio ultra rápido"
 
 msgid "Under no circumstances shall the Company or its directors or employees be liable under this agreement to you or any third party for any indirect, special, incidental, punitive or consequential loss or damages or any other similar damages under any theory of liability (whether in contract, tort, strict liability or any other theory), that are directly or indirectly attributable to the use of, or the inability to use, the Binary.com API, or any content contained thereon, even if the Company has been informed of the possibility thereof."
 msgstr "Bajo ninguna circunstancia la Compañía o sus directores o empleados serán responsables según este acuerdo frente a usted o frente a un tercero por cualquier pérdida o daño indirecto, especial, incidental, punitivo o consecuente o cualquier otro daño similar bajo cualquier teoría de responsabilidad (ya sea por contrato, agravio, responsabilidad estricta o cualquier otra teoría), que sean atribuíbles de forma directa o indirecta al uso de, o a la imposibilidad de usar, la API de Binary.com, o cualquier contenido, incluso si la Compañía ha sido informada de la posibilidad de que esto ocurra."
@@ -7043,9 +7013,6 @@ msgstr "Sitio web"
 
 msgid "Webtrader"
 msgstr "Webtrader"
-
-msgid "Webtrader on GitHub"
-msgstr "Webtrader en GitHub"
 
 msgid "Wednesday"
 msgstr "Miércoles"
@@ -8538,6 +8505,70 @@ msgstr "{JAPAN ONLY}Where broking companies show bid and offer prices for purcha
 
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
+
+#~ msgid "%1 is an active proponent of the open-source movement. Suggest enhancements, and take part in the development of our powerful applications. You can find more information on our <a href=\"%2\" target=\"_blank\">Developers Portal</a>."
+#~ msgstr "%1 es un defensor activo del movimiento de código abierto. Sugiera mejoras y participe en el desarrollo de nuestras aplicaciones potentes. Puede encontrar más información en nuestro <a href=\"%2\" target=\"_blank\"> Portal de Desarrolladores</a>."
+
+#~ msgid "%1 provides a variety of applications to help you trade efficiently."
+#~ msgstr "%1 proporciona una variedad de aplicaciones para ayudarle a comerciar de forma eficiente."
+
+#~ msgid "Advanced tool for active traders"
+#~ msgstr "Herramienta avanzada para comerciantes activos"
+
+#~ msgid "Available soon..."
+#~ msgstr "Disponible pronto..."
+
+#~ msgid "Binary Next Gen"
+#~ msgstr "Binary Next Gen"
+
+#, fuzzy
+#~| msgid "Enjoy our fastest type of trading on your mobile phone or tablet. Place tick trades anytime, anywhere – even while you’re on the move."
+#~ msgid "Enjoy our fastest type of trading on your mobile phone or tablet. Place tick trades anytime, anywhere - even while you're on the move."
+#~ msgstr "Disfrute del tipo de comercio más rápido su móvil o tablet. Haga operaciones tick trade en cualquier momento y en cualquier lugar – incluso mientras está viajando."
+
+#~ msgid "Examine the history of a particular instrument to plot your next move. This advanced charting platform offers a wide range of technical indicators."
+#~ msgstr "Examine la historia de un instrumento particular para trazar su próximo movimiento. Esta plataforma de gráficos avanzada ofrece una amplia gama de indicadores técnicos."
+
+#~ msgid "Explore our most cutting-edge new platform, now available in beta form. Place trades from your virtual account."
+#~ msgstr "Explore nuestra nueva plataforma más avanzada, ahora disponible en versión beta. Realice operaciones desde su cuenta virtual."
+
+#~ msgid "Join our developer community"
+#~ msgstr "Únase a nuestra comunidad de desarrolladores"
+
+#~ msgid "List of All Open-Source Projects"
+#~ msgstr "Lista de todos los proyectos de código abierto"
+
+#~ msgid "Monitor the movements of all of your favourite assets and markets at the same time. This flexible charting platform provides a variety of customisable features."
+#~ msgstr "Controle los movimientos de todos sus activos y mercados favoritos al mismo tiempo. Esta plataforma de gráficos flexible ofrece una variedad de características personalizables."
+
+#~ msgid "Next Gen on GitHub"
+#~ msgstr "Next Gen en GitHub"
+
+#~ msgid "Powerful charting and technical analysis"
+#~ msgstr "Potentes gráficos y análisis técnico"
+
+#~ msgid "The future of trading on %1"
+#~ msgstr "El futuro del comercio en %1"
+
+#~ msgid "Tick Trade App"
+#~ msgstr "Tick Trade App"
+
+#~ msgid "Tick Trade on GitHub"
+#~ msgstr "Tick Trade en GitHub"
+
+#, fuzzy
+#~| msgid "%1 Tools"
+#~ msgid "Tooltips"
+#~ msgstr "%1 Herramientas"
+
+#~ msgid "Try It"
+#~ msgstr "Pruébelo"
+
+#~ msgid "Ultra-fast trading"
+#~ msgstr "Comercio ultra rápido"
+
+#~ msgid "Webtrader on GitHub"
+#~ msgstr "Webtrader en GitHub"
 
 #~ msgid "Market Data"
 #~ msgstr "Datos de Mercado"
@@ -11904,14 +11935,8 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 #~ msgid "Predict the last digit of the market price at expiration."
 #~ msgstr "Haga su predicción del último dígito del precio del mercado al vencimiento."
 
-#~ msgid "Ends In/Out"
-#~ msgstr "Finaliza Dentro/Fuera"
-
 #~ msgid "Predict the ending market level relative to 2 chosen barriers."
 #~ msgstr "Haga una predicción sobre el nivel del mercado al vencimiento del contrato en relación a las dos barreras seleccionadas."
-
-#~ msgid "Stays In/Goes Out"
-#~ msgstr "Queda Dentro/Sale Fuera"
 
 #~ msgid "Predict whether or not the market will touch either of 2 chosen levels before expiration."
 #~ msgstr "Haga una predicción sobre si el mercado toca o no una de las dos barreras seleccionadas antes del vencimento del contrato."
