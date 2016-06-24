@@ -16,9 +16,9 @@ var LimitsWS = (function(){
             var text_WithrawalAmount      = Content.localize().textWithrawalAmountEquivalant;
             var text_CurrentMaxWithdrawal = Content.localize().textCurrentMaxWithdrawalEquivalant;
             var client_currency           = 'EUR';
-            var num_of_days_limit         = addComma(limits['num_of_days_limit']);
+            var num_of_days_limit         = addComma(limits['num_of_days_limit']).split('.')[1] === '00' ? addComma(limits['num_of_days_limit']).split('.')[0] : addComma(limits['num_of_days_limit']);
             var already_withdraw          = limits["withdrawal_since_inception_monetary"]; // no need for addComma since it is already string like "1,000"
-            var remainder                 = addComma(limits['remainder']);
+            var remainder                 = addComma(limits['remainder']).split('.')[1] === '00' ? addComma(limits['remainder']).split('.')[0] : addComma(limits['remainder']);
 
             if((/^(iom)$/i).test(TUser.get().landing_company_name)) { // MX
                 text_WithdrawalLimits = Content.localize().textWithdrawalLimitsEquivalantDay;
