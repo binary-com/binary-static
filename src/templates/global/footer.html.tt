@@ -150,10 +150,10 @@
     </div>
     <div id="footer-regulatory">
         <div class="container">
-            <div class="ja-hide id-hide">
+            <div>
                 <div class="gr-padding-10">
                     <div class="gr-parent">
-                        <div class="gr-row">
+                        <div class="gr-row ja-hide id-hide">
                             <div class="gr-2">
                                 <a href="http://www.gov.im/gambling/" target="_blank">
                                     <img id="iom_icon_footer" class="responsive" src="[% request.url_for('images/pages/footer/isle-of-man.png') %]"/>
