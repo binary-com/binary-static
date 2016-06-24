@@ -50,6 +50,7 @@ var Tick = (function() {
     var display = function() {
         $('#spot').fadeIn(200);
         var spotElement = document.getElementById('spot');
+        if (!spotElement) return;
         var message = '';
         if (errorMessage) {
             message = errorMessage;
