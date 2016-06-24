@@ -52,6 +52,8 @@ var Contract = (function() {
             contractCategories = {},
             barrierCategory;
 
+        if (!contracts) return;
+
         startDates = { has_spot: 0, list: [] };
         durations = {};
         open = contracts['open'];
@@ -124,6 +126,8 @@ var Contract = (function() {
     var getContractForms = function() {
         var contracts = Contract.contracts()['contracts_for'],
             tradeContractForms = {};
+
+        if (!contracts) return;
 
         contracts.available.forEach(function(currentObj) {
             var contractCategory = currentObj['contract_category'];
