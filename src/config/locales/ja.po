@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-24 05:43+0000\n"
-"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
+"PO-Revision-Date: 2016-06-24 07:03+0000\n"
+"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -4306,7 +4306,7 @@ msgid "Notes:"
 msgstr "ご注意："
 
 msgid "Notice"
-msgstr ""
+msgstr "お知らせ"
 
 msgid "Notification of Changes"
 msgstr "ポリシー変更に関する通知について"
@@ -5353,7 +5353,7 @@ msgid "Sharp prices"
 msgstr "優れた価格設定"
 
 msgid "Shop"
-msgstr ""
+msgstr "ショップ"
 
 msgid "Short"
 msgstr "ショート"
@@ -7487,20 +7487,19 @@ msgstr ""
 "あなたの操作またはあなたのビジネスターゲットの裁判管轄の規制機関の権限の下、マーケティング、広告、プロモーション活動に関して適用される法律、規則、規制、服務規程\n"
 "を侵害するようなマーケティング、広告、プロモーション活動の展開または実施をしてはいけない。"
 
-#, fuzzy
 #| msgid "You shall not encourage your referrals to make deposits or place any trades where the purpose of that action is (whether in whole or in part) to increase affiliate commissions rather than to benefit your referrals’ trading performance and profitability."
 msgid "You shall not encourage your referrals to make deposits or place any trades where the purpose of that action is (whether in whole or in part) to increase affiliate commissions rather than to benefit your referrals' trading performance and profitability."
-msgstr "アフィリエイト会員は獲得会員のトレード実績や利益よりも、自身のアフィリエイト報酬を増やす目的で獲得会員に対して入金やトレードを強要することは禁じられています。常に獲得会員の利益を優先した行動を行うことが義務となっています。"
+msgstr ""
+"アフィリエイト会員は獲得会員のトレード実績や利益よりも、自身のアフィリエイト報酬を増やす目的で獲得会員に対して入金やトレードを強要することは禁じられていま"
+"す。常に獲得会員の利益を優先した行動を行うことが義務となっています。"
 
 msgid "You shall not encourage your referrals to take out any form of loans to be able to make deposits and/or place trades."
 msgstr "あなたは獲得会員に入金または/及びトレードの購入を行うことができる融資や貸出金をいかなる形式においても奨励してはいけません。"
 
-#, fuzzy
 #| msgid "You shall not hold or pool your referrals’ funds or third party funds into your own account held with %1."
 msgid "You shall not hold or pool your referrals' funds or third party funds into your own account held with %1."
 msgstr "獲得会員、及び第三者の資金をアフィリエイト会員の%1のご口座に保持したりプールする行為は慎んで下さい。"
 
-#, fuzzy
 #| msgid "You shall not place trades on your referrals’ behalf."
 msgid "You shall not place trades on your referrals' behalf."
 msgstr "獲得会員に代わってトレードを購入してはいけません。"
@@ -7544,17 +7543,15 @@ msgstr "市場価格の末尾がご指定頂いた数値となった場合、ペ
 msgid "You won't lose your shirt"
 msgstr "損益の管理について"
 
-#, fuzzy
 #| msgid "You’ll be surprised by the returns you can make."
 msgid "You'll be surprised by the returns you can make."
 msgstr "収益性の高さに驚かれることでしょう。"
 
-#, fuzzy
 #| msgid "You'll find answers to most of your questions on the <a href='%1' target='_blank'>FAQ</a> page."
 msgid "You'll find answers to most of your questions on the <a href='' target='_blank' id='faq_url'>FAQ</a> page."
 msgstr ""
 "現在お客さまからのお問い合わせはEmailのみとさせていただいております。\n"
-"<a href='%1' target='_blank'>FAQ</a>ページからもよくある質問をご確認いただけます。"
+"<a href='' target='_blank' id='faq_url'>FAQ</a>ページからもよくある質問をご確認いただけます。"
 
 msgid "You're using a Virtual Account."
 msgstr "現在デモ口座を使用されています。"
@@ -7592,10 +7589,11 @@ msgstr "お客さまのご口座のアップグレードが完了しました。
 msgid "Your account is fully authenticated. You can view your <a class=\"pjaxload\" href=\"%1\">trading limits here</a>."
 msgstr "お客様のご口座はアップグレード済みです。トレードの上限条件を<a class=\"pjaxload\" href=\"%1\">こちらから</a>ご確認頂けます。"
 
-#, fuzzy
 #| msgid "Your account is not fully authenticated. Please visit the <a href=\"%1\">authentication</a> page for more information."
 msgid "Your account is not fully authenticated. Please visit the <a class=\"pjaxload\" href=\"%1\">authentication</a> page for more information."
-msgstr "口座の認証はまだ完了しておりません。詳細に関しましては<a href=\"%1\">認証</a> ページをご覧ください。"
+msgstr ""
+"口座の認証はまだ完了しておりません。詳細に関しましては<a class=\"pjaxload\" href=\"%1\">認証</a> "
+"ページをご覧ください。"
 
 msgid "Your account is not fully authenticated. Please visit the <a href=\"%1\">authentication</a> page for more information."
 msgstr "口座の認証はまだ完了しておりません。詳細に関しましては<a href=\"%1\">認証</a> ページをご覧ください。"
@@ -7616,7 +7614,6 @@ msgstr "口座振替が完了しました。移行後残高："
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='%1'>payment agent</a> list."
 msgstr "当社コンプライアンス部門およびマーケティング部門により申請の審査に入ります。承認されましたら、当社<a href='%1'>決済サービスエージェント</a>リストに登録させていただきます。"
 
-#, fuzzy
 #| msgid "Your breach of any of Binary.com’s rights;"
 msgid "Your breach of any of Binary.com's rights;"
 msgstr "Binary.comの権利に対する違反行為；"
@@ -7624,7 +7621,6 @@ msgstr "Binary.comの権利に対する違反行為；"
 msgid "Your cashier is locked as per your request - to unlock it, please click %1here"
 msgstr "お客さまの入出金はリクエストによりロックされました。 - 解除するには%1こちらをクリックしてください。"
 
-#, fuzzy
 #| msgid "Your cashier is locked as per your request - to unlock it, please <a href=\"%1\">click here</a>."
 msgid "Your cashier is locked as per your request - to unlock it, please click <a class=\"pjaxload\" href=\"%1\">here</a>."
 msgstr "お客様の入出金はリクエストによりロックしました。 - 解除するには<a href=\"%1\">こちらをクリック</a>してください。"
@@ -7707,10 +7703,9 @@ msgstr "Binary.com APIの使用にあたり当社に属する権原、所有持�
 msgid "Your violation of any applicable law, rule or regulation;"
 msgstr "適用される法律、規則、規制への違反行為；"
 
-#, fuzzy
 #| msgid "Your website URL (if you have one)"
 msgid "Your website request.url (if you have one)"
-msgstr "ウェブサイトURL（お持ちの場合）"
+msgstr "ウェブサイトリクエストURL（お持ちの場合）"
 
 msgid "Your withdrawal limit is %1 %2 (or equivalent in other currency)."
 msgstr "お客さまの出金限度額は %1 %2 です。限度額以上の出金額をご希望される場合は、本人確認が必要となります。"
@@ -7779,15 +7774,13 @@ msgstr "読点"
 msgid "conflicts Policy"
 msgstr "利益相反ポリシー"
 
-#, fuzzy
 #| msgid "No data for"
 msgid "data 1"
-msgstr "データが存在しません："
+msgstr "データ１"
 
-#, fuzzy
 #| msgid "No data for"
 msgid "data 2"
-msgstr "データが存在しません："
+msgstr "データ２"
 
 msgid "day"
 msgstr "日"
@@ -7807,18 +7800,16 @@ msgstr "例：www.binaryqa36.com"
 msgid "error in loginid"
 msgstr ""
 
-#, fuzzy
 #| msgid "Message"
 msgid "error message"
-msgstr "メッセージ"
+msgstr "エラーメッセージ"
 
 msgid "f"
 msgstr "女性"
 
-#, fuzzy
 #| msgid "first tick"
 msgid "first item"
-msgstr "最初のTick"
+msgstr "最初の項目"
 
 msgid "hour"
 msgstr "時間"
@@ -7871,10 +7862,9 @@ msgstr "ヶ月"
 msgid "not available"
 msgstr "利用不可"
 
-#, fuzzy
 #| msgid "Client-facing message"
 msgid "notice message"
-msgstr "Client-facingメッセージ"
+msgstr "通知メッセージ"
 
 msgid "numbers"
 msgstr "数字"
@@ -7894,10 +7884,9 @@ msgstr ""
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "から、全てのトレードに関する正確な終値の適用時間をご確認下さい。他のウェブサイトでは、異なるデータを採用している可能性があります。（例：ニューヨーク時間・午前４時、ロンドン時間・午前５時など）ゆえに、当社が公表している始値、最高値、最安値、及び市場閉場価格は、他のウェブサイトで公表している価格と異なる可能性があります。"
 
-#, fuzzy
 #| msgid "Graph with"
 msgid "paragraph with"
-msgstr "グラフの種類"
+msgstr "段落"
 
 msgid "password"
 msgstr "パスワード"
@@ -7911,10 +7900,9 @@ msgstr "ポイント"
 msgid "second"
 msgstr "秒"
 
-#, fuzzy
 #| msgid "second"
 msgid "second item"
-msgstr "秒"
+msgstr "２項目目"
 
 msgid "seconds"
 msgstr "秒"
