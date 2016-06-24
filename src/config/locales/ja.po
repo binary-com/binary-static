@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-23 22:24+0000\n"
-"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
+"PO-Revision-Date: 2016-06-24 05:43+0000\n"
+"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -1141,7 +1141,7 @@ msgid "Back"
 msgstr "戻る"
 
 msgid "Balance"
-msgstr "残高"
+msgstr "口座残高"
 
 msgid "Bank wire/Money transfer"
 msgstr "銀行振込・送金"
@@ -3183,7 +3183,7 @@ msgid "Instant"
 msgstr "即刻"
 
 msgid "Insufficient balance"
-msgstr "残高が不足しています"
+msgstr "口座残高が不足しています"
 
 #| msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:affiliates@binary.com'>hear from you!</a>"
 msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='%2'>hear from you!</a>"
@@ -4079,7 +4079,7 @@ msgid "Maximum aggregate payouts on open positions"
 msgstr "オープン中ポジションに対する払い戻し金額の最高総額"
 
 msgid "Maximum daily turnover"
-msgstr "１日あたりのトレード購入可能金額"
+msgstr "１日の取引数量限度額"
 
 msgid "Maximum number of open positions"
 msgstr "最大保有ポジション"
@@ -4831,7 +4831,9 @@ msgid "Preparing the periodic and special reports required to ensure legal and r
 msgstr "当社事業内の法域における法律および規制の遵守を確保するために定期報告書または特別報告書の作成を行います"
 
 msgid "Presents the maximum aggregate payouts on outstanding contracts in your portfolio. If the maximum is attained, you may not purchase additional contracts without first closing out existing positions."
-msgstr "ポジション一覧ページ内に存在する未決済分のポジションに対する払い戻し金額の最高総額を示します。最高総額を超えた場合、保有中のオープンポジションを閉じて頂くことで新たなトレードの購入が可能になります。"
+msgstr ""
+"ポジション一覧ページ内に存在する未決済分のポジションに対する払い戻し金額の最高総額を示します。最高総額を超えた場合、保有中のオープンポジションを決済される"
+"まで新規注文を行えません。"
 
 msgid "Previous"
 msgstr "戻る"
@@ -4915,7 +4917,7 @@ msgid "Profit / Loss"
 msgstr "損益"
 
 msgid "Profit Table"
-msgstr "取引履歴"
+msgstr "取引明細"
 
 msgid "Profit/Loss"
 msgstr "損益"
@@ -5088,7 +5090,7 @@ msgid "Remaining Time"
 msgstr "残り時間"
 
 msgid "Represents the maximum amount of cash that you may hold in your account.  If the maximum is reached, you will be asked to withdraw funds."
-msgstr "ご口座で保有可能なご口座残高の最高金額を示します。最高金額を超えた場合はご出金をお願いいたします。"
+msgstr "口座で保有可能な口座残高の限度額を示します。限度額を超えた場合は出金手続きをお願いいたします。"
 
 msgid "Represents the maximum number of outstanding contracts in your portfolio. Each line in your portfolio counts for one open position. Once the maximum is reached, you will not be able to open new positions without closing an existing position first."
 msgstr "未決済分のトレード総数を示し、各行を１件分の未決済分のオープン中のポジションとしてカウントします。最高件数を超えた場合、オープン中のトレードを閉じて頂くことで新たなトレードの購入が可能になります。"
@@ -5486,10 +5488,10 @@ msgid "State/Province"
 msgstr "都道府県"
 
 msgid "Stated limits are subject to change without prior notice."
-msgstr ""
+msgstr "上記の1日取引数量限度額に変更する場合、当社にホームページ上でお知らせいたします。"
 
 msgid "Statement"
-msgstr "取引残高"
+msgstr "口座残高"
 
 msgid "Static content"
 msgstr "静的コンテンツ"
@@ -6253,10 +6255,10 @@ msgid "There was some invalid character in an input field."
 msgstr "入力された文字に使用できない文字が含まれています。"
 
 msgid "Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is %1 %2 (or equivalent in other currency)."
-msgstr "そのため、現在即座にご出金いただける金額（ただし、ご口座残高が不足していない場合）は%1 %2です。（または同等の他通貨）"
+msgstr "そのため、現在即座にご出金いただける限度金額（ただし、ご口座残高が不足していない場合）は%1 %2です。"
 
 msgid "Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is %1 %2."
-msgstr "そのため、現在即座にご出金いただける最高額（ただし、口座残高が不足していない場合）は%1 %2です。"
+msgstr "そのため、現在即座にご出金いただける限度額（ただし、口座残高が不足していない場合）は%1 %2です。"
 
 msgid "These ST&Cs are to be governed by and construed in accordance with Maltese law and the parties hereto agree to submit to the non exclusive jurisdiction of the Maltese courts."
 msgstr "これらST＆Cs（特別条件と事業条件）は、マルタ裁判所の非専属管轄権に服することに同意し、マルタの法律や当事者によって規制されることを解します。"
@@ -6526,7 +6528,7 @@ msgid "Trading Experience"
 msgstr "投資経験"
 
 msgid "Trading Limits"
-msgstr "トレードの上限について"
+msgstr "取引上限について"
 
 msgid "Trading Rules"
 msgstr "取引ルール"
@@ -6535,7 +6537,7 @@ msgid "Trading Times"
 msgstr "トレード対応時間"
 
 msgid "Trading and Withdrawal Limits"
-msgstr "トレード及びご出金限度額"
+msgstr "取引及び出金限度額"
 
 msgid "Trading binaries is remarkably easy, and requires only 3 simple steps:"
 msgstr "バイナリーオプション取引は簡単な操作で行うことができます。たった3つのステップで完了です！"
@@ -6793,7 +6795,7 @@ msgid "View your statement"
 msgstr "取引残高を表示"
 
 msgid "View your trading and withdrawal limits."
-msgstr "取引制限と出金制限を確認する"
+msgstr "取引上限と出金限度額を確認する"
 
 msgid "View your trading profit/loss."
 msgstr "トレードの損益を確認"
@@ -7564,7 +7566,7 @@ msgid "Your %1 accounts are unavailable. For any questions please contact %2."
 msgstr "お客さまのご口座%1はご利用いただけません。ご不明な点がございましたら%2までご連絡ください。"
 
 msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other currency)."
-msgstr "お客さまの%1日の出金限度額は現在%2 %3です。（または同等の他通貨）"
+msgstr "お客さまの%1日の出金限度額は現在%2 %3です。限度額以上の出金額をご希望される場合、本人確認が必要となります。"
 
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "あなたのクライアントに送金が処理されたことをお知らせする通知メールが届きます。"
@@ -7711,10 +7713,10 @@ msgid "Your website request.url (if you have one)"
 msgstr "ウェブサイトURL（お持ちの場合）"
 
 msgid "Your withdrawal limit is %1 %2 (or equivalent in other currency)."
-msgstr "お客さまのご出金限度額は %1 %2 です。 (または同等の他通貨)"
+msgstr "お客さまの出金限度額は %1 %2 です。限度額以上の出金額をご希望される場合は、本人確認が必要となります。"
 
 msgid "Your withdrawal limit is %1 %2."
-msgstr "お客さまの出金限度額は%1 %2です。"
+msgstr "お客さまの出金限度額は%1 %2です。限度額以上の出金額をご希望される場合は、本人確認が必要となります。"
 
 msgid "Zoom"
 msgstr "ズーム"
