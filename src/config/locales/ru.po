@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-25 10:05+0000\n"
-"Last-Translator: Ruslan <ruslan.mukhametdinov.90@gmail.com>\n"
+"PO-Revision-Date: 2016-06-25 19:34+0000\n"
+"Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
 "Language-Team: Russian "
 "<https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
@@ -420,10 +420,9 @@ msgstr "<< Вернуться к вакансиям"
 msgid "<a href='%1'>Founded</a> October 1999"
 msgstr "<a href='%1'>Компания основана</a> в октябре 1999 г."
 
-#, fuzzy
 #| msgid "<a href=\"%1\">Offices</a> in Malta, Malaysia and Japan"
 msgid "<a href='%1'>Offices</a> in Malta, Malaysia and Japan"
-msgstr "<a href=\"%1\">Офисы</a> на Мальте, в Малайзии и Японии"
+msgstr "<a href='%1'>Офисы</a> на Мальте, в Малайзии и Японии"
 
 msgid ""
 "<p><strong>Detailed report</strong>: The detailed report shows you your detailed traffic and income statistics. Use the filters and column selectors to break down your reporting as desired.</p>\n"
@@ -475,25 +474,29 @@ msgstr ""
 "  <li>Конкретное текстовое сообщение.</li>\n"
 " </ul>"
 
-#, fuzzy
 #| msgid "<span>All durations:</span> from 10 seconds to 365 days."
 msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
-msgstr "<span>С любой продолжительностью:</span> от 10 секунд до 365 дней."
+msgstr ""
+"<span class='color-green font-weight-700'>С любой продолжительностью:</span> "
+"от 10 секунд до 365 дней."
 
-#, fuzzy
 #| msgid "<span>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
 msgid "<span class='color-green font-weight-700'>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
-msgstr "<span>При любых условиях рынка:</span> вверх/вниз, касание/нет касания, внутри/вне."
+msgstr ""
+"<span class='color-green font-weight-700'>При любых условиях рынка:</span> "
+"вверх/вниз, касание/нет касания, внутри/вне."
 
-#, fuzzy
 #| msgid "<span>All markets:</span> currencies, stocks, indices, and commodities."
 msgid "<span class='color-green font-weight-700'>All markets:</span> currencies, stocks, indices, and commodities."
-msgstr "<span>На всех рынках:</span> валютными парами, акциями, индексами и сырьевыми материалами."
+msgstr ""
+"<span class='color-green font-weight-700'>На всех рынках:</span> валютными "
+"парами, акциями, индексами и сырьевыми материалами."
 
-#, fuzzy
 #| msgid "<span>All payouts:</span> from $1 to $50,000."
 msgid "<span class='color-green font-weight-700'>All payouts:</span> from $1 to $50,000."
-msgstr "<span>С выплатами по контрактам</span> от $1 до $50,000."
+msgstr ""
+"<span class='color-green font-weight-700'>С выплатами по контрактам</span> "
+"от $1 до $50,000."
 
 msgid "<strong>2-way pricing</strong> - %1 quotes a trade and the counter-trade, so you always get unbiased, transparent prices."
 msgstr "<strong>оценка контракта в двух направлениях</strong> - %1 предоставляет условия контракта и его противоположного опциона, обеспечивая непредвзятые и прозрачные цены."
@@ -651,10 +654,11 @@ msgstr "<strong>Касание/Нет касания</strong> - где вы мо
 msgid "<strong>Trade to your budget</strong> - dip a toe in the water with $2 or go all out for $50,000."
 msgstr "<strong>Торгуйте в соответствии со своим бюджетом</strong> - попробуйте свои силы с маленького выигрыша $2 или сыграйте на полную катушку для получения прибыли в размере $50,000."
 
-#, fuzzy
 #| msgid "<strong>Trade to your strategy</strong> - set your trades on ‘gut feel’, or use technical or fundamental analysis."
 msgid "<strong>Trade to your strategy</strong> - set your trades on 'gut feel', or use technical or fundamental analysis."
-msgstr "<strong>Придерживайтесь своей стратегии</strong> - доверяйте своему чутью, а также используйте технический или фундаментальный анализ."
+msgstr ""
+"<strong>Придерживайтесь своей стратегии</strong> – доверяйте своему чутью, а "
+"также используйте технический или фундаментальный анализ."
 
 msgid "<strong>Trade when you want to trade</strong> - trade 24/7, even on weekends."
 msgstr "<strong>Торгуйте в любое время</strong> - работайте на рынках 24 часа 7 дней в неделю, даже в выходные."
@@ -698,10 +702,11 @@ msgstr "<ul><li>Зайдите в выпадающее \"<strong>Меню Chrome
 msgid "== Toll Free =="
 msgstr "== Бесплатно =="
 
-#, fuzzy
 #| msgid "A Bachelor’s degree in Computer Science, or an equivalent combination of technical education, training and work experience"
 msgid "A Bachelor's degree in Computer Science, or an equivalent combination of technical education, training and work experience"
-msgstr "Степень бакалавра в области информатики или техническое образование, обучение и опыт работы в схожей области"
+msgstr ""
+"Степень бакалавра в области информатики или техническое образование, "
+"обучение и опыт работы в смежной области"
 
 #, fuzzy
 #| msgid "A Bachelor’s degree in Marketing, Business Administration, or related discipline"
@@ -723,10 +728,14 @@ msgstr "Опыт работы в области IT-разработки"
 msgid "A binary option is a contract purchased by a trader, which pays a pre-determined amount if their prediction is correct."
 msgstr "Бинарный опцион - это покупаемый трейдером контракт, по которому выплачивается заранее оговоренная сумма в случае правильного прогноза."
 
-#, fuzzy
 #| msgid "A binary option is an option with a fixed payout that is determined at the start of the trade. If your prediction is correct, you receive an agreed payout. If not, you lose your initial stake, and no more. The options are called ‘binary’ because there can be only two outcomes – win or lose."
 msgid "A binary option is an option with a fixed payout that is determined at the start of the trade. If your prediction is correct, you receive an agreed payout. If not, you lose your initial stake, and no more. The options are called 'binary' because there can be only two outcomes - win or lose."
-msgstr "Бинарный опцион - это опцион с фиксированной прибылью, которая определяется при расчете контракта. Если прогноз сбывается, трейдер получает оговоренную прибыль. В противном случае, он теряет только свою ставку (цену покупки), и не более того. Опционы называются \"бинарными\", потому что они предлагают два возможных истечения контракта - выигрыш или проигрыш."
+msgstr ""
+"Бинарный опцион – это опцион с фиксированной прибылью, которая определяется "
+"при расчете контракта. Если прогноз сбывается, трейдер получает оговоренную "
+"прибыль. В противном случае, он теряет только свою ставку (цену покупки) и "
+"не более того. Опционы называются \"бинарными\", потому что они предлагают "
+"два возможных исхода контракта – выигрыш или проигрыш."
 
 msgid "A broad array of HR-related administrative tasks"
 msgstr "Широкий спектр административных задач в области HR"
@@ -755,10 +764,14 @@ msgstr "Список методов оплаты, которые Вы будет
 msgid "A native speaker with strong command of the English language, in both oral and written form"
 msgstr "Носитель языка с отличным знанием английского (в письменной и устной форме)"
 
-#, fuzzy
 #| msgid "A panel featuring industry leaders awards BetOnMarkets.com ‘Financial Betting Operator of the Year’ over two other finalists. It’s a major victory for our brand and further recognition of our world-beating service. Ten years on, and going from strength to strength."
 msgid "A panel featuring industry leaders awards BetOnMarkets.com 'Financial Betting Operator of the Year' over two other finalists. It's a major victory for our brand and further recognition of our world-beating service. Ten years on, and going from strength to strength."
-msgstr "Жюри с участием лидеров отрасли награждает BetOnMarkets.com премией в номинации ‘Financial Betting Operator of the Year’ (финансовый оператор года по беттингу), отдав нам предпочтение над двумя другими финалистами. Это большая победа для нашего бренда и важный знак признания нашего сервиса. Десять лет спустя, мы не останавливаемся на достигнутом."
+msgstr ""
+"Жюри с участием лидеров в данной индустрии награждает BetOnMarkets.com "
+"премией в номинации ‘Financial Betting Operator of the Year’ (финансовый "
+"оператор года по беттингу), отдав нам предпочтение над двумя другими "
+"финалистами. Это большая победа для нашего бренда и важный знак признания "
+"нашего сервиса. Десять лет спустя мы не останавливаемся на достигнутом."
 
 msgid "A preference and passion for Linux and open-source platforms"
 msgstr "Знание и заинтересованность в Linux, а также в платформах с открытым исходным кодом"
@@ -4229,16 +4242,15 @@ msgstr "Максимальный баланс на счету"
 
 msgid "Maximum aggregate contract purchases over a 30-day period."
 msgstr ""
-"Максимальная совокупная ценность приобретенных контрактов за 30-дневный "
-"период."
+"Максимальная совокупная ценна приобретенных контрактов за 30-дневный период."
 
 msgid "Maximum aggregate contract purchases over a 7-day period."
 msgstr ""
-"Максимальная совокупная ценность приобретенных контрактов за 7-дневный "
+"Максимальная совокупная стоимость приобретенных контрактов за 7-дневный "
 "период."
 
 msgid "Maximum aggregate contract purchases per day."
-msgstr "Максимальная совокупная ценность приобретенных контрактов за день."
+msgstr "Максимальная совокупная стоимость приобретенных контрактов за день."
 
 msgid "Maximum aggregate loss over a 30-day period."
 msgstr "Максимальная общая проигранная сумма за 30-дневный период."
