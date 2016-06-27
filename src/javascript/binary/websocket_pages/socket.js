@@ -181,7 +181,7 @@ function BinarySocketClass() {
                     SessionDurationLimit.exclusionResponseHandler(response);
                 } else if (type === 'payout_currencies' && response.echo_req.hasOwnProperty('passthrough') && response.echo_req.passthrough.handler === 'page.client') {
                     page.client.response_payout_currencies(response);
-                } else if (type === 'get_settings') {
+                } else if (type === 'get_settings' && response.get_settings) {
                     if(!$.cookie('residence') && response.get_settings.country_code) {
                       page.client.set_cookie('residence', response.get_settings.country_code);
                       page.client.residence = response.get_settings.country_code;
@@ -228,7 +228,7 @@ function BinarySocketClass() {
                     } else {
                         RealityCheck.realityCheckWSHandler(response);
                     }
-                } else if (type === 'get_account_status') {
+                } else if (type === 'get_account_status' && response.get_account_status) {
                   if (response.get_account_status.risk_classification === 'high' && page.header.qualify_for_risk_classification()) {
                     send({get_financial_assessment: 1});
                   } else {

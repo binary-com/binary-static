@@ -38,7 +38,8 @@ var sidebar_scroll = function(elm_selector) {
             sticky_navigation();
 
             for (var i = 0; i < length; i++) {
-                if ($(window).scrollTop() === 0 || $(this).scrollTop() >= $('.section:eq(' + i + ')').offset().top - 5) {
+                var sectionOffset = $('.section:eq(' + i + ')').offset();
+                if ($(window).scrollTop() === 0 || (sectionOffset && $(this).scrollTop() >= sectionOffset.top - 5)) {
                     sidebar_nav.find('li').removeClass('selected');
 
                     if ($(window).scrollTop() === 0) {
