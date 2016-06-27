@@ -44,13 +44,34 @@
                 }
                 return conLang;
             }
-            function redirect(lang) {
+            function redirect() {
                 window.location.href = (lang || 'en').toLowerCase() + '/' + (getCookieItem('loginid') ? 'trading' : 'home') + '.html';
+            }
+            function isDelayedRedirect() {
+                if(isGtmApplicable() && !window.redirectTimeOut) {
+                    window.redirectTimeOut = setTimeout(redirect, 5000);
+                } else {
+                    clearTimeout(window.redirectTimeOut);
+                    redirect();
+                }
+            }
+            function isGtmApplicable() {
+                return /www\.binary\.com/i.test(window.location.hostname);
+            }
+            function pushEvent() {
+                if(isGtmApplicable()) {
+                    dataLayer.push({
+                        'event': 'fireEvent',
+                        'eventCallback': function() {
+                            isDelayedRedirect();
+                        }
+                    });
+                }
             }
 
             var lang = getCookieItem('language');
             if(lang) {
-                redirect(lang);
+                isDelayedRedirect();
             } else {
                 var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3');
                 ws.onopen = function(e) {
@@ -63,13 +84,13 @@
                             lang = getLanguage(response.website_status.clients_country);
                         }
                         ws.close();
-                        redirect(lang);
+                        isDelayedRedirect();
                     }
                 };
             }
         </script>
     </head>
-    <body>
+    <body onload="pushEvent()">
 <!-- Google Tag Manager -->
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MZWFF7"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
