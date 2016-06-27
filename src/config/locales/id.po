@@ -7,9 +7,10 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-21 09:06+0000\n"
+"PO-Revision-Date: 2016-06-27 03:32+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
-"Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
+"Language-Team: Indonesian "
+"<https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -396,25 +397,29 @@ msgstr ""
 "  <li>Pesan khusus yang ingin ditampilkan pada banner.</li>\n"
 "   </ul>"
 
-#, fuzzy
 #| msgid "<span>All durations:</span> from 10 seconds to 365 days."
 msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
-msgstr "<span>Semua durasi:</span> dari 10 detik hingga 365 hari."
+msgstr ""
+"<span class='color-green font-weight-700'>Semua durasi:</span> dari 10 detik "
+"hingga 365 hari."
 
-#, fuzzy
 #| msgid "<span>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
 msgid "<span class='color-green font-weight-700'>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
-msgstr "<span>Semua kondisi pasar:</span> naik/turun, menyentuh/tidak menyentuh, di dalam/di luar."
+msgstr ""
+"<span class='color-green font-weight-700'>Semua kondisi pasar:</span> up/"
+"down, touch/no-touch, stays in/goes out."
 
-#, fuzzy
 #| msgid "<span>All markets:</span> currencies, stocks, indices, and commodities."
 msgid "<span class='color-green font-weight-700'>All markets:</span> currencies, stocks, indices, and commodities."
-msgstr "<span>Semua pasar:</span> mata uang, saham, indeks, dan komoditas."
+msgstr ""
+"<span class='color-green font-weight-700'>Semua pasar:</span> mata uang, "
+"saham, indeks, dan komoditas."
 
-#, fuzzy
 #| msgid "<span>All payouts:</span> from $1 to $50,000."
 msgid "<span class='color-green font-weight-700'>All payouts:</span> from $1 to $50,000."
-msgstr "<span>Hasil:</span> dari $1 hingga $50,000."
+msgstr ""
+"<span class='color-green font-weight-700'>Semua hasil:</span> dari $1 hingga "
+"$50,000."
 
 msgid "<strong>2-way pricing</strong> - %1 quotes a trade and the counter-trade, so you always get unbiased, transparent prices."
 msgstr "<strong>harga 2-arah</strong> - %1 selalu memperlihatkan harga lawan arah dari trading Anda, dimana Anda memperoleh harga transparan."
@@ -2989,10 +2994,11 @@ msgstr "Jika anda memilih <strong>waktu berakhir</strong> tertentu, maka <strong
 msgid "If you want to profit from this high demand product then your best option is to partner with the market leader. %1 has been in the business for over 15 years, and has been successful ever since."
 msgstr "Jika Anda ingin memperoleh keuntungan dari produk terlaris ini maka pilihan terbaik Anda adalah untuk bekerjasama dengan pemimpin pasar. %1 sudah beroperasi sejak 15 tahun dan telah berhasil sejak itu."
 
-#, fuzzy
 #| msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:affiliates@binary.com'>%1</a>"
 msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='%1'>%2</a>"
-msgstr "Jika Anda ingin informasi lebih lanjut mengenai Agen Pembayaran, silahkan hubungi kami di <a href='mailto:affiliates@binary.com'>%1</a>"
+msgstr ""
+"Jika Anda ingin informasi lebih lanjut mengenai Agen Pembayaran, silahkan "
+"hubungi kami di <a href='%1'>%2</a>"
 
 msgid "If you would like to file a complaint with regards to our service, kindly contact us providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within 1-2 weeks (and at most within 2 months) from receipt of all relevant details."
 msgstr "Jika Anda ingin mengajukan keluhan berkaitan dengan layanan kami, silakan hubungi kami dengan memberikan rincian yang relevan berkaitan dengan keluhan Anda. Kami akan menyelidiki dan akan memberi jawaban kepada keluhan Anda tersebut. Kami biasanya akan memberikan keputusan dalam tempo 1-2 minggu (paling lambat 2 bulan) setelah laporan detail kami terima."
@@ -3153,10 +3159,13 @@ msgstr "Langsung"
 msgid "Insufficient balance"
 msgstr "Saldo tidak mencukupi"
 
-#, fuzzy
 #| msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:affiliates@binary.com'>hear from you!</a>"
 msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='%2'>hear from you!</a>"
-msgstr "Tertarik, bagaimana langkah selanjutnya? Jika Anda dapat menawarkan metode pembayaran tunai atau pembayaran lokal yang tidak disediakan oleh %1 dan Anda memiliki track record yang baik, maka kami ingin <a href='mailto:affiliates@binary.com'>mendengar Anda!</a>"
+msgstr ""
+"Tertarik, bagaimana langkah selanjutnya? Jika Anda dapat menawarkan metode "
+"pembayaran tunai atau pembayaran lokal yang tidak disediakan oleh %1 dan "
+"Anda memiliki track record yang baik, maka kami ingin <a href='%2'>mendengar "
+"balasan Anda!</a>"
 
 msgid "Interested? Why not try a virtual account"
 msgstr "Tertarik? Mengapa tidak mencoba akun virtual"
@@ -4655,10 +4664,9 @@ msgstr "Tolong masukan jumlah yang benar."
 msgid "Please enter an integer value"
 msgstr "Silahkan masukan nilai penuh"
 
-#, fuzzy
 #| msgid "Please enter date in the format YYYY-MM-DD."
 msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
-msgstr "Silakan masukkan tanggal dalam format YYY-MM-DD."
+msgstr "Silakan masukkan tanggal dalam format YYYY-MM-DD HH:mm (waktu lokal)."
 
 msgid "Please enter date in the format YYYY-MM-DD."
 msgstr "Silakan masukkan tanggal dalam format YYY-MM-DD."
@@ -4720,10 +4728,9 @@ msgstr "Silahkan tentukan interval cek-realitas pilihan Anda dalam menit"
 msgid "Please submit a valid %1."
 msgstr "Silakan kirim %1 yang berlaku."
 
-#, fuzzy
 #| msgid "Please submit the above information to <a href='mailto:affiliates@binary.com'>%1</a>."
 msgid "Please submit the above information to <a href='%1'>%2</a>."
-msgstr "Silahkan kirim informasi diatas ke <a href='mailto:affiliates@binary.com'>%1</a>."
+msgstr "Silahkan kirim informasi diatas ke <a href='%1'>%2</a>."
 
 msgid "Please try again."
 msgstr "Silahkan coba kembali."
@@ -5290,7 +5297,7 @@ msgid "Sharp prices"
 msgstr "Harga tajam"
 
 msgid "Shop"
-msgstr ""
+msgstr "Toko"
 
 msgid "Short"
 msgstr "Pendek"
@@ -6196,7 +6203,7 @@ msgid "Time"
 msgstr "Waktu"
 
 msgid "Time out until"
-msgstr ""
+msgstr "Time out hingga"
 
 msgid "Times are changing. We increase payouts so our clients can make the most of their winning trades."
 msgstr "Dengan perubahan waktu. Kami meningkatkan hasil sehingga klien kami dapat menikmati keuntungan trading mereka."
