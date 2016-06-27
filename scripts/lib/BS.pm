@@ -307,6 +307,7 @@ sub menu {
     push @menu,
         {
         id         => 'topMenuShop',
+        class      => 'ja-hide',
         url        => 'https://shop.binary.com',
         text       => localize('Shop'),
         target     => '_blank'

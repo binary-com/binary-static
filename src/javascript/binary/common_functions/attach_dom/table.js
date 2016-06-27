@@ -104,6 +104,7 @@ var Table = (function(){
      */
     function appendTableBody(id, data, rowGenerator){
         var tbody = document.querySelector("#" + id +">tbody");
+        if (!tbody) return;
         var docFrag = document.createDocumentFragment();
         data.map(function(ele){
             var row = rowGenerator(ele);

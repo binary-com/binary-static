@@ -539,6 +539,9 @@ function checkClientsCountry() {
 
 if (page.language() === 'ID') {
   change_blog_link('id');
+} else if (page.language() === 'JA') {
+    $('#regulatory-text').removeClass('gr-9 gr-7-p')
+                         .addClass('gr-12 gr-12-p');
 }
 
 function change_blog_link(lang) {
