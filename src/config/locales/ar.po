@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-15 13:14+0000\n"
+"PO-Revision-Date: 2016-06-23 14:46+0000\n"
 "Last-Translator: Ahmed Kotb <ahmedmohamedkotp@gmail.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/binary/static/ar/>\n"
 "Language: ar\n"
@@ -2221,9 +2221,6 @@ msgstr "دفع النمو السريع من المناطق الرئيسية حو
 msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
 msgstr "نظراً للتغيرات الأخيرة التي طرأت على اللوائح. فنحن مطالبون بمطالبة عملائنا بملء نموذج التقييم المالي التالي. يرجى ملاحظة أنك لن تكون قادر على مواصلة التداول حتى إكمال هذا النموذج."
 
-msgid "Due to the impending Brexit vote, returns on some instruments may be lower than usual until Friday."
-msgstr ""
-
 msgid "Duration"
 msgstr "المدة"
 
@@ -2352,7 +2349,7 @@ msgid "Ends In/Out"
 msgstr "ينتهي بين/خارج"
 
 msgid "Ends In/Out contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "العقود التي تنتهي في / خارج سيتم إعادتها عند سعر الشراء إذا ما كانت أقل من علامتين بين وقت البداية والنهاية."
+msgstr "سيتم إعادة العقود التي تنتهي في / خارج عند سعر الشراء إذا كان هناك أقل من علامتين بين وقت البداية والنهاية.."
 
 msgid "Engage in data mining using SQL databases, R/S-Plus, OLAP and other analytical tools"
 msgstr "المشاركة في التنقيب عن البيانات باستخدام قواعد بيانات SQL، R/S-Plus، OLAP والأدوات التحليلية الأخرى"
@@ -4437,9 +4434,6 @@ msgstr "ملاحظة: السحب عبر وكلاء الدفع يتوفر فقط 
 
 msgid "Notes:"
 msgstr "ملاحظات:"
-
-msgid "Notice"
-msgstr ""
 
 msgid "Notification of Changes"
 msgstr "إشعار بالتغييرات"
@@ -8236,9 +8230,6 @@ msgstr "{JAPAN ONLY}Introduction to Binary Options"
 msgid "{JAPAN ONLY}It cannot be said that binary options trading is unconditionally advanteous over regular spot fx trading, because investors may lose all of their investment whereas in spot fx trading there will still be some value in the trading position."
 msgstr "{JAPAN ONLY}It cannot be said that binary options trading is unconditionally advanteous over regular spot fx trading, because investors may lose all of their investment whereas in spot fx trading there will still be some value in the trading position."
 
-msgid "{JAPAN ONLY}It is determined that proper by the results of this test, if you want to start the transaction, and then also as a trouble on the transaction occurred between the Company , the Company despite missing is knowledge related to options trading trading cause of action and you agree that you will not is that it has admitted ."
-msgstr "ثبت أن الصحيح من قبل نتائج هذا الإختبار, إذا كنت تريد أن تبدأ هذه الصفقة, ومن ثم كمشكلة وقعت على الصفقة بين الشركة, الشركة على الرغم من المفقود على علم أن مرجعيتها لخيارات التداول التداول سبب الفعل وأنت توافق على أنك لن هو أنه معترف به."
-
 msgid "{JAPAN ONLY}It is determined the customers have basic knowledge of option trading by the results of the knowledge test. If the customers start trading, the customers need to agree not have lawsuit despite the customer are shortage of knowledge related to options trading, and it cause damages, we admit to open the trading account."
 msgstr "{اليابان فقط} ثبت أن العملاء لديهم معرفة أساسية بتداول الخيارات من خلال نتائج اختبار المعرفة. إذا بدأ العملاء التداول, فإن العملاء بحاجة للموافقة بأن لا يكون لديهم شكوى على الرغم من نقص معرفة العملاء المتعلقة بتداول الخيارات, وأنها تسبب أضرار, علينا أن نعترف بفتح حساب تداول."
 
@@ -8494,6 +8485,9 @@ msgstr "{اليابان فقط} أينما تظهر شركت الوساطة أس
 
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\"> 1here</a> 2 to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
+
+#~ msgid "{JAPAN ONLY}It is determined that proper by the results of this test, if you want to start the transaction, and then also as a trouble on the transaction occurred between the Company , the Company despite missing is knowledge related to options trading trading cause of action and you agree that you will not is that it has admitted ."
+#~ msgstr "ثبت أن الصحيح من قبل نتائج هذا الإختبار, إذا كنت تريد أن تبدأ هذه الصفقة, ومن ثم كمشكلة وقعت على الصفقة بين الشركة, الشركة على الرغم من المفقود على علم أن مرجعيتها لخيارات التداول التداول سبب الفعل وأنت توافق على أنك لن هو أنه معترف به."
 
 #~ msgid "%1 is an active proponent of the open-source movement. Suggest enhancements, and take part in the development of our powerful applications. You can find more information on our <a href=\"%2\" target=\"_blank\">Developers Portal</a>."
 #~ msgstr "%1 مؤيدين نشطين من الحركة مفتوحة المصدر. يقترحون التحسينات, ويشاركون في تطوير تطبيقاتنا القوية. يمكنك العثور على مزيد من المعلومات على<a href=\"%2\" target=\"_blank\"> بوابة المطورين</a>."

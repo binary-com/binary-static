@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-22 15:21+0000\n"
+"PO-Revision-Date: 2016-06-26 18:43+0000\n"
 "Last-Translator: Jutawan <bubbleblythe@gmail.com>\n"
 "Language-Team: Thai <https://hosted.weblate.org/projects/binary/static/th/>\n"
 "Language: th\n"
@@ -402,25 +402,17 @@ msgstr ""
 "        <li>ระบุข้อความบนแบนเนอร์</li>\n"
 "    </ul>"
 
-#, fuzzy
-#| msgid "<span>All durations:</span> from 10 seconds to 365 days."
 msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
-msgstr "<span>ระยะเวลาทั้งหมด:</span>10 วินาที ถึง 365 วัน"
+msgstr "<span class='color-green font-weight-700'>ระยะเวลาทั้งหมด:</span> 10 วินาที ถึง 365 วัน"
 
-#, fuzzy
-#| msgid "<span>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
 msgid "<span class='color-green font-weight-700'>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
-msgstr "<span>เงื่อนไขของตลาด:</span> up/down, touch/no-touch, stays in/goes out."
+msgstr "<span class='color-green font-weight-700'>เงื่อนไขของตลาด:</span> up/down, touch/no-touch และ stays in/goes out"
 
-#, fuzzy
-#| msgid "<span>All markets:</span> currencies, stocks, indices, and commodities."
 msgid "<span class='color-green font-weight-700'>All markets:</span> currencies, stocks, indices, and commodities."
-msgstr "<span>ประเภทตลาด:</span> สกุลเงินต่างๆ หุ้นต่างๆ ดัชนีต่างๆ และ สินค้าโภคภัณฑ์ต่างๆ"
+msgstr "<span class='color-green font-weight-700'>ประเภทตลาด:</span> สกุลเงินต่างๆ หุ้นต่างๆ ดัชนีต่างๆ และ สินค้าโภคภัณฑ์ต่างๆ"
 
-#, fuzzy
-#| msgid "<span>All payouts:</span> from $1 to $50,000."
 msgid "<span class='color-green font-weight-700'>All payouts:</span> from $1 to $50,000."
-msgstr "<span>การชำระเงิน:</span> 1 ถึง 50,000 ดอลลาร์สหรัฐ"
+msgstr "<span class='color-green font-weight-700'>การชำระเงิน:</span> 1 ถึง 50,000 ดอลลาร์สหรัฐ"
 
 msgid "<strong>2-way pricing</strong> - %1 quotes a trade and the counter-trade, so you always get unbiased, transparent prices."
 msgstr "<strong>ราคาสองทาง</strong> - %1 ตั้งราคาซื้อขาย และ เทรดผ่านตัวแทน ไม่ว่าช่องทางใด ท่านจะได้เห็นข้อมูลเดียวกัน ไม่ปกปิด ราคาโปร่งใส ตรงไปตรงมา"
@@ -1307,10 +1299,8 @@ msgstr "Binary.com มีผู้ใช้งานรวมราว 1 ล้�
 msgid "Binary.com is a flexible place. As well as our offices, we have staff who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
 msgstr "Binary.com มีความยืดหยุ่น เฉกเช่นที่เรามีสำนักงานสาขาต่างๆ เรามีพนักงานที่ทำงานให้เราจากสำนักงานหรือที่พักของเขาในประเทศต่างๆ ทั่วโลก และหากสิ่งนี้ตอบสนองความเป็นตัวคุณ เราเปิดรับท่านเพื่อเข้ามาร่วมงานกับเรา"
 
-#, fuzzy
-#| msgid "Binary.com is an active member of the Perl community and is in the process of uploading a number of its internal utility modules to <a target=\"_blank\" href=\"%1\">CPAN</a>. If you are a Perl enthusiast, contribute by reviewing these modules, and submitting pull-requests on <a target=\"_blank\" href=\"%2\">github</a>."
 msgid "Binary.com is an active member of the Perl community and is in the process of uploading a number of its internal utility modules to <a target='_blank' href='%1'>CPAN</a>. If you are a Perl enthusiast, contribute by reviewing these modules, and submitting pull-requests on <a target='_blank' href='%2'>github</a>."
-msgstr "Binary.com เป็นสมาชิกปัจจุบันของชุมชน Perl ที่มีส่วนร่วมอย่างสม่ำเสมอ และเราอยู่ในกระบวนการของการพัฒนาโมดูลที่สำคัญอีกมากมายให้เป็นรูปแบบ <a target=\"_blank\" href=\"%1\">CPAN</a> หากคุณเป็นผู้คลั่งไคล้ Perl สามารถสนับสนุนเรา โดยการดำเนินการทวนสอบโมดูลต่างๆ ของเรา และส่งความเห็นของท่านมาที่ <a target=\"_blank\" href=\"%2\">GitHub</a>"
+msgstr "Binary.com เป็นสมาชิกปัจจุบันของชุมชน Perl ที่มีส่วนร่วมอย่างสม่ำเสมอ และเราอยู่ในกระบวนการของการพัฒนาโมดูลที่สำคัญอีกมากมายให้เป็นรูปแบบ <a target='_blank' href='%1'>CPAN</a> หากคุณเป็นผู้คลั่งไคล้ Perl สามารถสนับสนุนเรา โดยการดำเนินการทวนสอบโมดูลต่างๆ ของเรา และส่งความเห็นของท่านมาที่ <a target='_blank' href='%2'>GitHub</a>"
 
 msgid "Binary.com is an active proponent of the open-source movement and is in the process of open-sourcing a number of components of its codebase."
 msgstr "Binary.com เป็นผู้สนับสนุนกระบวนการโอเพ่นซอส และมีแผนการที่จะพัฒนาชุดคำสั่ง หรือโปรแกรมโอเพ่นซอสอีกมากมาย"
@@ -1360,15 +1350,8 @@ msgstr "Binary.com ได้รับรางวัลชนะเลิศ ป
 msgid "Binary.com's CPAN contributions"
 msgstr "Binary.com เป็นผู้มีส่วนร่วมในการพัฒนาระบบในรูปแบบ CPAN"
 
-#, fuzzy
-#| msgid "Binary.com’s headquarters are in Malta, a favoured tourist destination with a warm climate, beautiful recreational areas and World Heritage sites. We also have an Operational Headquarters office in Cyberjaya, a high-tech precinct south of Kuala Lumpur, the capital of Malaysia, an equally exciting destination at the heart of Asia."
 msgid "Binary.com's headquarters are in Malta, a favoured tourist destination with a warm climate, beautiful recreational areas and World Heritage sites. We also have an Operational Headquarters office in Cyberjaya, a high-tech precinct south of Kuala Lumpur, the capital of Malaysia, an equally exciting destination at the heart of Asia."
-msgstr ""
-"== not fin ==\n"
-"\n"
-"สำนักงานใหญ่ของ Binary.com อยู่ที่มอลตา\n"
-"\n"
-"’s headquarters are in Malta, a favoured tourist destination with a warm climate, beautiful recreational areas and World Heritage sites. We also have an Operational Headquarters office in Cyberjaya, a high-tech precinct south of Kuala Lumpur, the capital of Malaysia, an equally exciting destination at the heart of Asia."
+msgstr "สำนักงานใหญ่ของ Binary.com อยู่ที่มอลตา เมืองที่นักท่องเที่ยวหลงไหล อากาศอบอุ่น มีวิวทิวทัศน์ที่สวยงาม และเป็นเมืองมรดกโลก หวกเรามีสำนักงานใหญ่ของส่วนปฏิบัติการอยู่ที่ไซเบอร์จายา ศูนย์ของความไฮเทคและเทคโนโลยีทางตอนใต้ของกัวลาลัมเปอร์ เมืองหลวงของประเทศมาเลเซีย เป็นอีกเมืองหนึ่งที่เป็นหัวใจของภูมิภาคเอเชีย"
 
 msgid "Binary.com's remarkable history"
 msgstr "ประวัติศาสตร์อันน่าจดจำของ Binary.com"
@@ -2122,9 +2105,6 @@ msgstr "ทำให้องค์กรเติบโตอย่างรว
 
 msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
 msgstr "ตามที่มีการเปลี่ยนแปลงเกิดขึ้นในหลักเกณฑ์ พวกเราใคร่ขอให้ลูกค้าดำเนินการบันทึกการประเมินทางการเงินของท่านใหม่ ทางบริษัทฯ ขอเรียนให้ทราบว่า ท่านจะไม่สามารถซื้อขายต่อไปได้หากท่านยังไม่ได้ตอบแบบสำรวจดังกล่าว"
-
-msgid "Due to the impending Brexit vote, returns on some instruments may be lower than usual until Friday."
-msgstr ""
 
 msgid "Duration"
 msgstr "ระยะเวลา"
@@ -3023,10 +3003,8 @@ msgstr "หากท่านกำหนดเจาะจง<strong>เวล�
 msgid "If you want to profit from this high demand product then your best option is to partner with the market leader. %1 has been in the business for over 15 years, and has been successful ever since."
 msgstr "หากท่านต้องการกำไรจากความต้องการผลิตภัณฑ์ขั้นสูง ทางเลือกที่ดีที่สุดของท่าน คือ การเป็นพันธมิตรกับผู้นำตลาด %1 ดำเนินธุรกิจมากว่า 15 ปี และประสบความสำเร็จเรื่อยมา"
 
-#, fuzzy
-#| msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:affiliates@binary.com'>%1</a>"
 msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='%1'>%2</a>"
-msgstr "หากท่านต้องการทราบข้อมูลเพิ่มเติมในการเป็นตัวแทนชำระเงิน โปรดติดต่อเราที่ <a href='mailto:affiliates@binary.com'>%1</a>"
+msgstr "หากท่านต้องการทราบข้อมูลเพิ่มเติมในการเป็นตัวแทนชำระเงิน โปรดติดต่อเราที่ <a href='%1'>%2</a>"
 
 msgid "If you would like to file a complaint with regards to our service, kindly contact us providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within 1-2 weeks (and at most within 2 months) from receipt of all relevant details."
 msgstr "หากท่านต้องการแจ้งข้อปรับปรุง หรือร้องทุกข์เกี่ยวกับบริการของเรา โปรดติดต่อเราและให้รายละเอียดที่เกี่ยวข้องกับเหตุการณ์ที่ท่านพบ เราจะดำเนินการตรวจสอบและแจ้งกลับให้ท่านทราบต่อข้อร้องเรียนของท่าน เวลาที่ใช้ในการดำเนินการตามปกติ คือ ประมาณ 1-2 สัปดาห์ (และมากที่สุด คือ 2 เดือน) เมื่อได้รับเอกสารและรายละเอียดที่เกี่ยวข้องทั้งหมด"
@@ -3199,10 +3177,8 @@ msgstr "ทันที"
 msgid "Insufficient balance"
 msgstr "ยอดคงเหลือไม่เพียงพอ"
 
-#, fuzzy
-#| msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:affiliates@binary.com'>hear from you!</a>"
 msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='%2'>hear from you!</a>"
-msgstr "รู้สึกสนใจมั้ย แล้วขั้นตอนถัดไปทำอย่างไร? หากท่านสามารถระบุการชำระเงินอิเล็กทรอนิกส์ หรือ วิธีการชำระเงินส่วนท้องถิ่นที่ %1 ไม่มี และท่านมีภาพรวมของผลงานที่ดีในตลาด พวกเราปรารถนาที่จะ <a href='mailto:affiliates@binary.com'>ได้การตอบรับจากท่าน!</a>"
+msgstr "รู้สึกสนใจมั้ย แล้วขั้นตอนถัดไปทำอย่างไร? หากท่านสามารถระบุการชำระเงินอิเล็กทรอนิกส์ หรือ วิธีการชำระเงินส่วนท้องถิ่นที่ %1 ไม่มี และท่านมีภาพรวมของผลงานที่ดีในตลาด พวกเราปรารถนาที่จะ <a href='%2'>ได้การตอบรับจากท่าน!</a>"
 
 msgid "Interested? Why not try a virtual account"
 msgstr "รู้สึกสนใจแล้วใช่ไหม? ทำไมไม่ลองบัญชีเสมือน"
@@ -4299,9 +4275,6 @@ msgstr "หมายเหตุ: การถอนเงินผ่านต�
 msgid "Notes:"
 msgstr "บันทึก:"
 
-msgid "Notice"
-msgstr ""
-
 msgid "Notification of Changes"
 msgstr "การแจ้งความเปลี่ยนแปลงให้ทราบ"
 
@@ -4708,10 +4681,8 @@ msgstr "โปรดป้อนตัวเลขที่ถูกต้อง
 msgid "Please enter an integer value"
 msgstr "โปรดป้อนจำนวนเต็ม"
 
-#, fuzzy
-#| msgid "Please enter date in the format YYYY-MM-DD."
 msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
-msgstr "โปรดป้อนวันที่ในรูปแบบ YYYY-MM-DD"
+msgstr "โปรดป้อนวันที่ในรูปแบบ YYYY-MM-DD HH:mm (เวลาท้องถิ่น)"
 
 msgid "Please enter date in the format YYYY-MM-DD."
 msgstr "โปรดป้อนวันที่ในรูปแบบ YYYY-MM-DD"
@@ -4773,10 +4744,8 @@ msgstr "โปรดระบุช่วงเวลาการตรวจส
 msgid "Please submit a valid %1."
 msgstr "โปรดส่ง %1 ที่ถูกต้อง"
 
-#, fuzzy
-#| msgid "Please submit the above information to <a href='mailto:affiliates@binary.com'>%1</a>."
 msgid "Please submit the above information to <a href='%1'>%2</a>."
-msgstr "โปรดส่งข้อมูลข้างต้นมาที่ <a href='mailto:affiliates@binary.com'>%1</a>"
+msgstr "โปรดส่งข้อมูลข้างต้นมาที่ <a href='%1'>%2</a>"
 
 msgid "Please try again."
 msgstr "โปรดลองอีกครั้ง"
@@ -6081,7 +6050,7 @@ msgid "The use of the Binary.com API is at your own risk, and you assume full re
 msgstr ""
 
 msgid "The use, operation or combination of the Binary.com API with non-Binary.com API(s), data, equipment or documentation if liability would have been avoided but for such use, operation, or combination; or"
-msgstr ""
+msgstr "การใช้งาน ปฏิบัติการ หรือ การผสมผสาน API ของ Binary.com กับ API อื่นๆ ข้อมูล อุปกรณ์ หรือ เอกสารต่างๆ หากมีพฤติกรรมการหลีกเลี่ยงความรับผิดชอบใน การใช้งาน ปฏิบัติการ หรือ การผสมผสาน API หรือ"
 
 msgid "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends."
 msgstr "ดัชนีความผันผวนจำลองความหลากหลายของสถานการณ์ตลาดจริงและมีแพลตผอร์มในอุดมคตดสำหรับการซื้อขายและการทดสอบกลยุทธภายใต้เงื่อนไขทางตลาดที่หลากหลาย"
@@ -6252,7 +6221,7 @@ msgid "Time"
 msgstr "เวลา"
 
 msgid "Time out until"
-msgstr ""
+msgstr "หมดเวลากระทั่ง"
 
 msgid "Times are changing. We increase payouts so our clients can make the most of their winning trades."
 msgstr "เวลาเปลี่ยนแปรไป เราเพิ่มการจ่ายเงิน ดังนั้นลูกค้าของเราสามารถมีโอกาสมากขึ้นในการได้รับเงินเพิ่มจากการซื้อขาย"
@@ -6294,7 +6263,7 @@ msgid "To qualify, you'll need an advanced university degree in Physics, Financi
 msgstr "สำหรับตำแหน่งนี้ ท่านต้องสำเร็จการศึกษาขั้นสูงในสาขา ฟิสิกส์ วิศวกรรมการเงิน หรือ คณิตศาสตร์"
 
 msgid "To reset your password, enter the e-mail address you registered in the field below and click "
-msgstr ""
+msgstr "เพื่อตั้งค่ารหัสผ่านของท่านใหม่ ป้อนอีเมล์ที่ท่านลงทะเบียนไว้ในช่องว่างข้างล่างและคลิก "
 
 msgid "Token"
 msgstr "โทเค่น"
@@ -6525,13 +6494,13 @@ msgid "Upon the expiration or termination of this Agreement, for whatever reason
 msgstr ""
 
 msgid "Usage Limit"
-msgstr ""
+msgstr "วงเงินที่ใช้"
 
 msgid "Use appropriate terminology, taking into account the style and nuance of the original text"
 msgstr ""
 
 msgid "Use of Information"
-msgstr ""
+msgstr "การใช้งานข้อมูล"
 
 msgid "Use of bid/ask prices: when the market is illiquid, the data feed may contain many bid and ask prices, without there actually being any traded price for quite a while. By taking an average of the bid/ask price (i.e. bid + ask, divided by 2), a market quote is generated that reflects the current market, without it actually being a traded price. Our system will generate prices from these bid and ask prices, whereas other websites might not. As a result, our website might display ticks that do not appear in the data feeds of other websites."
 msgstr ""
@@ -6543,7 +6512,7 @@ msgid "Use, perform, and display your Application and its content for purposes o
 msgstr ""
 
 msgid "User Testing"
-msgstr ""
+msgstr "การทดสอบด้วยผู้ใช้งาน"
 
 msgid "Using our website, customers can trade currencies, indices, stocks and commodities 24/7. We have the most flexible pricing and the most comprehensive suite of products available."
 msgstr ""
@@ -6558,7 +6527,7 @@ msgid "Verification Token"
 msgstr "โทเค่นเพื่อตรวจสอบ"
 
 msgid "Verification code format incorrect."
-msgstr ""
+msgstr "รูปแบบของรหัสตรวจสอบไม่ถูกต้อง"
 
 msgid "Verification token"
 msgstr "โทเค่นเพื่อตรวจสอบ"
@@ -6594,7 +6563,7 @@ msgid "View the operating hours of the markets you can trade."
 msgstr ""
 
 msgid "View your financial assessment settings."
-msgstr ""
+msgstr "ดูการตั้งค่าของการประเมินทางการเงิน"
 
 msgid "View your historical transactions."
 msgstr "ดูประวัติการทำธุรกรรมของท่าน"
@@ -6660,7 +6629,7 @@ msgid "We aim to keep a record of the kinds of activity we carry on in which a m
 msgstr ""
 
 msgid "We also offer specialized pay-out structures to affiliates who offer a trading advice in connection with, and in relation to our commodities. <a href=\"mailto:%1\">Contact our affiliate manager, Karen Yap for details</a>."
-msgstr ""
+msgstr "พวกเราเสนอโครงสร้างการมอบผลตอบแทนพิเศษให้กับพันธมิตรผู้แนะนำกลุ่มเป้าหมายใหม่ๆให้กับเรา และที่มีความเกี่ยวข้องกับสินค้าโภคภัณฑ์ของเรา <a href=\"mailto:%1\">ติดต่อผู้จัดการพันธมิตรของเรา (คุณ Karen Yap) สำหรับข้อมูลเพิ่มเติม</a>"
 
 msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business.  We are exclusively authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and this in relation to financial derivative products (primarily binary options) relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than dealing on own account in Financial Products. Should you feel that you require investment advice or investment services other that those described above then you should contact an independent financial advisor or firm."
 msgstr ""
@@ -6858,10 +6827,10 @@ msgid "Where an account is funded solely by means of a bonus code, the bonus amo
 msgstr ""
 
 msgid "Where are they located?"
-msgstr ""
+msgstr "พวกเขาอยู่ที่ไหน?"
 
 msgid "Where can I send my questions, comments and suggestions?"
-msgstr ""
+msgstr "ฉันสามารถส่งคำถาม ข้อคิดเห็น ข้อแนะนำได้ที่ไหน?"
 
 msgid "Where new ideas trump safe, old ones. And you're free to work your way, free from hierarchies and red tape."
 msgstr ""
@@ -7020,7 +6989,7 @@ msgid "Working closely with the Head of Compliance to implement Know your Client
 msgstr ""
 
 msgid "Written limits and self-exclusion"
-msgstr ""
+msgstr "วงเงินและการพักที่แจ้งเป็นลายลักษณ์อักษร"
 
 msgid "Year"
 msgstr "ปี"
@@ -7944,9 +7913,6 @@ msgstr "{JAPAN ONLY}Introduction to Binary Options"
 msgid "{JAPAN ONLY}It cannot be said that binary options trading is unconditionally advanteous over regular spot fx trading, because investors may lose all of their investment whereas in spot fx trading there will still be some value in the trading position."
 msgstr "{JAPAN ONLY}It cannot be said that binary options trading is unconditionally advanteous over regular spot fx trading, because investors may lose all of their investment whereas in spot fx trading there will still be some value in the trading position."
 
-msgid "{JAPAN ONLY}It is determined that proper by the results of this test, if you want to start the transaction, and then also as a trouble on the transaction occurred between the Company , the Company despite missing is knowledge related to options trading trading cause of action and you agree that you will not is that it has admitted ."
-msgstr "{JAPAN ONLY}It is determined that proper by the results of this test, if you want to start the transaction, and then also as a trouble on the transaction occurred between the Company , the Company despite missing is knowledge related to options trading trading cause of action and you agree that you will not is that it has admitted ."
-
 msgid "{JAPAN ONLY}It is determined the customers have basic knowledge of option trading by the results of the knowledge test. If the customers start trading, the customers need to agree not have lawsuit despite the customer are shortage of knowledge related to options trading, and it cause damages, we admit to open the trading account."
 msgstr "{JAPAN ONLY}It is determined the customers have basic knowledge of option trading by the results of the knowledge test. If the customers start trading, the customers need to agree not have lawsuit despite the customer are shortage of knowledge related to options trading, and it cause damages, we admit to open the trading account."
 
@@ -8192,6 +8158,12 @@ msgstr "{JAPAN ONLY}Where broking companies show bid and offer prices for purcha
 
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
+
+#~ msgid "Due to the impending Brexit vote, returns on some instruments may be lower than usual until Friday."
+#~ msgstr "เนื่องจากมติ Brexit ที่กำลังจะเกิดขึ้น ผลตอบแทนที่ได้จากเครื่องมือบางประเภทอาจจะต่ำกว่ากรณีปกติจนกระทั่งวันศุกร์"
+
+#~ msgid "{JAPAN ONLY}It is determined that proper by the results of this test, if you want to start the transaction, and then also as a trouble on the transaction occurred between the Company , the Company despite missing is knowledge related to options trading trading cause of action and you agree that you will not is that it has admitted ."
+#~ msgstr "{JAPAN ONLY}It is determined that proper by the results of this test, if you want to start the transaction, and then also as a trouble on the transaction occurred between the Company , the Company despite missing is knowledge related to options trading trading cause of action and you agree that you will not is that it has admitted ."
 
 #~ msgid "%1 is an active proponent of the open-source movement. Suggest enhancements, and take part in the development of our powerful applications. You can find more information on our <a href=\"%2\" target=\"_blank\">Developers Portal</a>."
 #~ msgstr ""

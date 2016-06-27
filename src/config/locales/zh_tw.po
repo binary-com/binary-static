@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Taiwan) (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-21 08:30+0000\n"
+"PO-Revision-Date: 2016-06-26 03:53+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) <https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
 "Language: zh_tw\n"
@@ -391,25 +391,17 @@ msgstr ""
 "       <li>橫幅廣告應包含的特定訊息。</li>\n"
 "   </ul>"
 
-#, fuzzy
-#| msgid "<span>All durations:</span> from 10 seconds to 365 days."
 msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
-msgstr "<span>所有合約期限:</span>從10 秒到365 天。"
+msgstr "<span class='color-green font-weight-700'>所有合約期限:</span>從10 秒到365 天。"
 
-#, fuzzy
-#| msgid "<span>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
 msgid "<span class='color-green font-weight-700'>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
-msgstr "<span>所有市場條件:</span>上漲/下跌，觸及/未觸及，範圍內/範圍外。"
+msgstr "<span class='color-green font-weight-700'>所有市場條件:</span>上漲/下跌，觸及/未觸及，範圍內/範圍外。"
 
-#, fuzzy
-#| msgid "<span>All markets:</span> currencies, stocks, indices, and commodities."
 msgid "<span class='color-green font-weight-700'>All markets:</span> currencies, stocks, indices, and commodities."
-msgstr "<span>所有市場:</span>外匯、股指和商品。"
+msgstr "<span class='color-green font-weight-700'>所有市場:</span>外匯、股指和商品。"
 
-#, fuzzy
-#| msgid "<span>All payouts:</span> from $1 to $50,000."
 msgid "<span class='color-green font-weight-700'>All payouts:</span> from $1 to $50,000."
-msgstr "<span>所有賠付額:</span>從1 美元到10 萬美元。"
+msgstr "<span class='color-green font-weight-700'>所有賠付額:</span>從1 美元到5 萬美元。"
 
 msgid "<strong>2-way pricing</strong> - %1 quotes a trade and the counter-trade, so you always get unbiased, transparent prices."
 msgstr "<strong>雙向報價</strong> - %1 提供交易與反向交易的報價，因此您將始終獲得公正透明的價格。"
@@ -2088,9 +2080,6 @@ msgstr "應用各種線上和離線行銷能力擴大公司的活躍聯盟網路
 msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
 msgstr "由於最近的法規變更，客戶必須填寫以下金融評估。您須填寫完成才能繼續交易。"
 
-msgid "Due to the impending Brexit vote, returns on some instruments may be lower than usual until Friday."
-msgstr ""
-
 msgid "Duration"
 msgstr "期限"
 
@@ -2985,10 +2974,8 @@ msgstr "如果您選擇具體的<strong>結束時間</strong>，交易<strong>�
 msgid "If you want to profit from this high demand product then your best option is to partner with the market leader. %1 has been in the business for over 15 years, and has been successful ever since."
 msgstr "如要通過這個極受歡迎的產品獲利，您的最佳選擇為跟市場領先者合作。%1已經從事此行業超過15年，一直以來都很成功。"
 
-#, fuzzy
-#| msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:affiliates@binary.com'>%1</a>"
 msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='%1'>%2</a>"
-msgstr "如您希望獲得成為付款代理的更詳細資料，請隨時通過<a href='mailto:affiliates@binary.com'>%1</a>聯繫我們"
+msgstr "如您希望獲得成為付款代理的更詳細資料，請隨時通過<a href='%1'>%2</a>聯繫我們"
 
 msgid "If you would like to file a complaint with regards to our service, kindly contact us providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within 1-2 weeks (and at most within 2 months) from receipt of all relevant details."
 msgstr "如果您想投訴我們的服務，請與我們聯繫並將一切有關投訴的細節提供給我們。我們將進行相關調查並予以回覆。我們一般將會在收到所有相關詳細資訊後1-2週內(不超過2個月)提供最終回應。"
@@ -3149,10 +3136,8 @@ msgstr "即時"
 msgid "Insufficient balance"
 msgstr "餘額不足"
 
-#, fuzzy
-#| msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:affiliates@binary.com'>hear from you!</a>"
 msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='%2'>hear from you!</a>"
-msgstr "感興趣，接下來該怎麼做？如您可向我們的客戶提供特別電子貨幣支付方式或 %1目前還未提供之本地付款選項，且您在市場上有良好的紀錄，那麼我們非常樂意通過<a href='mailto:affiliates@binary.com'>收到您的聯繫!</a>"
+msgstr "感興趣，接下來該怎麼做？如您可向我們的客戶提供特別電子貨幣支付方式或 %1目前還未提供之本地付款選項，且您在市場上有良好的紀錄，那麼我們非常樂意通過<a href='%2'>收到您的聯繫!</a>"
 
 msgid "Interested? Why not try a virtual account"
 msgstr "感興趣？何不開個虛擬帳戶試試"
@@ -4249,9 +4234,6 @@ msgstr "注意:您必須完全通過付款代理存款才可使用付款代理�
 msgid "Notes:"
 msgstr "注："
 
-msgid "Notice"
-msgstr ""
-
 msgid "Notification of Changes"
 msgstr "變動通知"
 
@@ -4651,10 +4633,8 @@ msgstr "請輸入有效金額。"
 msgid "Please enter an integer value"
 msgstr "請輸入整數"
 
-#, fuzzy
-#| msgid "Please enter date in the format YYYY-MM-DD."
 msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
-msgstr "請輸入日期，格式為年-月-日。"
+msgstr "請輸入日期，格式為年-月-日 時:分(當地時間)。"
 
 msgid "Please enter date in the format YYYY-MM-DD."
 msgstr "請輸入日期，格式為年-月-日。"
@@ -4716,10 +4696,8 @@ msgstr "請指定您的優選實況調查間隔時間分鐘數"
 msgid "Please submit a valid %1."
 msgstr "請提交有效的 %1。"
 
-#, fuzzy
-#| msgid "Please submit the above information to <a href='mailto:affiliates@binary.com'>%1</a>."
 msgid "Please submit the above information to <a href='%1'>%2</a>."
-msgstr "請將以上資訊傳到<a href='mailto:affiliates@binary.com'>%1</a>。"
+msgstr "請將以上資訊傳到<a href='%1'>%2</a>。"
 
 msgid "Please try again."
 msgstr "請重試。"
@@ -5286,7 +5264,7 @@ msgid "Sharp prices"
 msgstr "精準報價"
 
 msgid "Shop"
-msgstr ""
+msgstr "商店"
 
 msgid "Short"
 msgstr "短倉"
@@ -6189,7 +6167,7 @@ msgid "Time"
 msgstr "時間"
 
 msgid "Time out until"
-msgstr ""
+msgstr "時間已過。下次開啟時間為"
 
 msgid "Times are changing. We increase payouts so our clients can make the most of their winning trades."
 msgstr "時代在變。我們增加了賠付金額，以便我們的客戶從盈利交易中獲取最大的收益。"
@@ -7880,9 +7858,6 @@ msgstr "{JAPAN ONLY}Introduction to Binary Options"
 msgid "{JAPAN ONLY}It cannot be said that binary options trading is unconditionally advanteous over regular spot fx trading, because investors may lose all of their investment whereas in spot fx trading there will still be some value in the trading position."
 msgstr "{JAPAN ONLY}It cannot be said that binary options trading is unconditionally advanteous over regular spot fx trading, because investors may lose all of their investment whereas in spot fx trading there will still be some value in the trading position."
 
-msgid "{JAPAN ONLY}It is determined that proper by the results of this test, if you want to start the transaction, and then also as a trouble on the transaction occurred between the Company , the Company despite missing is knowledge related to options trading trading cause of action and you agree that you will not is that it has admitted ."
-msgstr "{JAPAN ONLY}It is determined that proper by the results of this test, if you want to start the transaction, and then also as a trouble on the transaction occurred between the Company , the Company despite missing is knowledge related to options trading trading cause of action and you agree that you will not is that it has admitted ."
-
 msgid "{JAPAN ONLY}It is determined the customers have basic knowledge of option trading by the results of the knowledge test. If the customers start trading, the customers need to agree not have lawsuit despite the customer are shortage of knowledge related to options trading, and it cause damages, we admit to open the trading account."
 msgstr "{JAPAN ONLY}It is determined the customers have basic knowledge of option trading by the results of the knowledge test. If the customers start trading, the customers need to agree not have lawsuit despite the customer are shortage of knowledge related to options trading, and it cause damages, we admit to open the trading account."
 
@@ -8128,6 +8103,15 @@ msgstr "{JAPAN ONLY}Where broking companies show bid and offer prices for purcha
 
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
+
+#~ msgid "Due to the impending Brexit vote, returns on some instruments may be lower than usual until Friday."
+#~ msgstr "因英國退出歐盟公投即將舉行，直到星期五以前一些交易工具的回報可能會比平時低。"
+
+#~ msgid "Notice"
+#~ msgstr "注意事項"
+
+#~ msgid "{JAPAN ONLY}It is determined that proper by the results of this test, if you want to start the transaction, and then also as a trouble on the transaction occurred between the Company , the Company despite missing is knowledge related to options trading trading cause of action and you agree that you will not is that it has admitted ."
+#~ msgstr "{JAPAN ONLY}It is determined that proper by the results of this test, if you want to start the transaction, and then also as a trouble on the transaction occurred between the Company , the Company despite missing is knowledge related to options trading trading cause of action and you agree that you will not is that it has admitted ."
 
 #~ msgid "%1 is an active proponent of the open-source movement. Suggest enhancements, and take part in the development of our powerful applications. You can find more information on our <a href=\"%2\" target=\"_blank\">Developers Portal</a>."
 #~ msgstr "%1 是活躍的開源移動支援者。請為增強功能提出建議，並參與開發我們強大的應用程式。 您可在我們的<a href=\"%2\" target=\"_blank\">程式師門戶</a>獲取詳細資訊。"
