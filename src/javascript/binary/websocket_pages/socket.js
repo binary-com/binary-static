@@ -222,7 +222,7 @@ function BinarySocketClass() {
                 } else if (type === 'reality_check') {
                     if (response.echo_req.passthrough.for === 'init_rc') {
                         var currentData = TUser.get();
-                        var addedLoginTime = Object.assign({logintime: response.reality_check.start_time}, currentData);
+                        var addedLoginTime = $.extend({logintime: response.reality_check.start_time}, currentData);
                         TUser.set(addedLoginTime);
                         RealityCheck.init();
                     } else {
