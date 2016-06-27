@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-27 06:40+0000\n"
-"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
+"PO-Revision-Date: 2016-06-27 08:15+0000\n"
+"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -1116,7 +1116,7 @@ msgid "Award-winning, patented financial trading platform"
 msgstr "受賞履歴を誇る特許取得済みのトレードプラットフォームを提供"
 
 msgid "BIEL Pillar III"
-msgstr ""
+msgstr "BIELの3本柱"
 
 msgid "BIEL Prospectus"
 msgstr "BIEL目論見書"
@@ -1701,19 +1701,19 @@ msgid "Contact us"
 msgstr "お問い合わせ"
 
 msgid "Content 1 for tab 1"
-msgstr ""
+msgstr "タブ１のコンテンツ１"
 
 msgid "Content 2 for tab 2. active by default"
-msgstr ""
+msgstr "タブ２のコンテンツ２。デフォルト表示"
 
 msgid "Content 2/1 for tab 2 submenu 1"
-msgstr ""
+msgstr "タブ２サブメニュー１のコンテンツ2/1"
 
 msgid "Content 2/2 for tab 2 submenu 2"
-msgstr ""
+msgstr "タブ２サブメニュー２のコンテンツ2/2"
 
 msgid "Content 3 for tab 3"
-msgstr ""
+msgstr "タブ３のコンテンツ３"
 
 msgid "Continue"
 msgstr "続ける"
@@ -2478,7 +2478,7 @@ msgid "Female"
 msgstr "女性"
 
 msgid "Fieldset Legend"
-msgstr ""
+msgstr "フォームのグループ分け"
 
 msgid "Fifteen years on, and we're still innovating, growing and working on new ways to serve our customers better. For the first time, we offer short-term touch/no-touch trades and introduce a new charting application. We believe we have the most competitive and comprehensive digital options platform available to the retail public."
 msgstr "創業１５年を迎えてもなお、当社は進化と成長を続けることで顧客目線の新たなサービスの提供に注力しています。短期間でのタッチ/ノータッチ・トレードの提供と新しいチャートアプリケーションを開発。個人向けのオプション取引にて他の追従を許さない、かつ理解しやすいシステムを提供しているという確かな自信と共にサービスを提供します。"
@@ -2563,6 +2563,8 @@ msgstr "セキュリティチェックのため、メールをご確認いただ
 
 msgid "For all types of tabs, you could call \"build_menu_with_content\" on server side to generate the HTML for you, or just output this HTML samples."
 msgstr ""
+"全てのタブにおいて、HTMLの生成またはこのHTMLサンプルの出力に、サーバー側で\"build_menu_with_content\""
+"を呼び出すことができます。"
 
 msgid "For e-cash methods or local currencies not supported by %1."
 msgstr "eキャッシュの手段または現地通貨が%1では対応していません。"
@@ -2772,7 +2774,7 @@ msgid "Higher/Lower trades"
 msgstr "HIGH/LOW・トレード"
 
 msgid "Hint comes here"
-msgstr ""
+msgstr "ヒントはこちら"
 
 msgid "Housewife / Househusband"
 msgstr "主婦/主夫"
@@ -4142,7 +4144,7 @@ msgid "More benefits"
 msgstr "福利厚生について"
 
 msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with "
-msgstr ""
+msgstr "すなわち、お客様が当社においてバイナリーオプション取引を開始された際には（各”トレード”）、当社はXXXをお客様に提供する義務があります。 "
 
 msgid "Mother's maiden name"
 msgstr "母親の旧姓"
@@ -4535,7 +4537,7 @@ msgid "Page 2 of 3"
 msgstr "2ページ/3ページ"
 
 msgid "Page section tab"
-msgstr ""
+msgstr "ページセクションタブ"
 
 msgid "Participating in the forex, stocks or commodities markets?"
 msgstr "外国為替市場でお取引"
@@ -5357,7 +5359,7 @@ msgid "Sign me up"
 msgstr "登録する"
 
 msgid "Sign up as a tester and look for Binary.com-related projects."
-msgstr ""
+msgstr "テスターとして登録し、Binary.comに関連するプロジェクトを確認する。"
 
 msgid "Significant experience in Social Media, Marketing, and / or Advertising"
 msgstr "ソーシャルメディア、マーケティングと/または広告に関する豊富な経験"
@@ -5591,7 +5593,7 @@ msgid "Supporting the Group's global recruiting and talent management needs"
 msgstr "グループのグローバルな人材募集や人材管理のニーズをサポート"
 
 msgid "Tab With Submenus"
-msgstr ""
+msgstr "サブメニューを含むタブ"
 
 msgid "Tables"
 msgstr "テーブル"
@@ -5728,10 +5730,13 @@ msgstr "Binary.comプライバシーとセキリティポリシー；"
 msgid "The Binary.com Terms and Conditions;"
 msgstr "Binary.com利用規約；"
 
-#, fuzzy
 #| msgid "The Binary.com website’s static content (CSS, Javascript) is available as the <a target=\"_blank\" href=\"%1\">binary-static</a> open-source project on github. Would you like to re-skin the Binary.com website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes."
 msgid "The Binary.com website's static content (CSS, Javascript) is available as the <a target='_blank' href='%1'>binary-static</a> open-source project on github. Would you like to re-skin the Binary.com website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes."
-msgstr "github上のオープンソース・プロジェクトである<a target=\"_blank\" href=\"%1\">binary-static</a>にて、Binary.comのウェブサイトの静的コンテンツ (CSS, Javascript)は利用可能です。Binary.comのウェブサイトのカスタマイズ、ブラウザ互換性の向上、サイトスピードの向上、 Javascriptのパフォーマンスの向上をお望みの場合はプロジェクトをフォークし、コード変更の提案に関するプルリクエストを送信して下さい。"
+msgstr ""
+"github上のオープンソース・プロジェクトである<a target='_blank' href='%1'>binary-static</a>にて、"
+"Binary.comのウェブサイトの静的コンテンツ (CSS, "
+"Javascript)は利用可能です。Binary.comのウェブサイトのカスタマイズ、ブラウザ互換性の向上、サイトスピードの向上、 "
+"Javascriptのパフォーマンスの向上をお望みの場合はプロジェクトをフォークし、コード変更の提案に関するプルリクエストを送信して下さい。"
 
 msgid "The Company does not guarantee that the Binary.com API it provides will function without interruption or errors in functioning. In particular, the operation of the Binary.com API may be interrupted due to maintenance, updates, or system or network failures. The Company disclaims all liability for damages caused by any such interruption or errors in functioning."
 msgstr "当社はBinary.com APIを中断またはエラー無しに機能を提供することを保証しているものではありません。特に、Binary.com APIの動作が管理、更新、システム、ネットワークの障害により中断されることがあります。機能の障害またはエラーによる損害について当社は一切の責任を負いません。"
@@ -7725,13 +7730,13 @@ msgid "of the site."
 msgstr "サイトのXXX"
 
 msgid "ordered list item 1"
-msgstr ""
+msgstr "オーダードリスト項目1"
 
 msgid "ordered list item 2"
-msgstr ""
+msgstr "オーダードリスト項目2"
 
 msgid "ordered list item 3"
-msgstr ""
+msgstr "オーダードリスト項目3"
 
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "から、全てのトレードに関する正確な終値の適用時間をご確認下さい。他のウェブサイトでは、異なるデータを採用している可能性があります。（例：ニューヨーク時間・午前４時、ロンドン時間・午前５時など）ゆえに、当社が公表している始値、最高値、最安値、及び市場閉場価格は、他のウェブサイトで公表している価格と異なる可能性があります。"
@@ -7752,7 +7757,7 @@ msgid "second"
 msgstr "秒"
 
 msgid "second item"
-msgstr "項目２"
+msgstr "項目2"
 
 msgid "seconds"
 msgstr "秒"
@@ -7772,10 +7777,9 @@ msgstr "サブメニュー 1"
 msgid "submenu item 2"
 msgstr "サブメニュー 2"
 
-#, fuzzy
 #| msgid "My super sweet message."
 msgid "success message"
-msgstr "My super sweet message."
+msgstr "サクセスメッセージ"
 
 msgid "terms and conditions"
 msgstr "利用規約"
@@ -7790,7 +7794,7 @@ msgid "the platform is user friendly and accessible to all levels of traders."
 msgstr "当プラットフォームは全レベルのトレーダーがご利用いただける、ユーザーが使用しやすいものとなっています。"
 
 msgid "third item"
-msgstr "項目３"
+msgstr "項目3"
 
 msgid "ticks"
 msgstr "Tick"
@@ -7799,13 +7803,13 @@ msgid "to your account."
 msgstr "アカウントへ"
 
 msgid "unordered list item 1"
-msgstr ""
+msgstr "アンオーダードリスト項目1"
 
 msgid "unordered list item 2"
-msgstr ""
+msgstr "アンオーダードリスト項目2"
 
 msgid "unordered list item 3"
-msgstr ""
+msgstr "アンオーダードリスト項目3"
 
 msgid "use or reproduce the Binary.com API other than as permitted by these Terms or"
 msgstr "これら規約で許可されている以上のBinary.com APIの使用または再現"
