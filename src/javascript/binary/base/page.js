@@ -20,7 +20,7 @@ var GTM = (function() {
             event     : 'page_load',
         };
         if(page.client.is_logged_in) {
-            data_layer_info['visitorID'] = page.client.loginid;
+            data_layer_info['visitorId'] = page.client.loginid;
         }
 
         $.extend(true, data_layer_info, data);
@@ -35,7 +35,7 @@ var GTM = (function() {
     };
 
     var push_data_layer = function(data) {
-        if (!gtm_applicable) return;
+        if (!gtm_applicable()) return;
         if(!(/logged_inws/i).test(window.location.pathname)) {
             var info = gtm_data_layer_info(data && typeof(data) === 'object' ? data : null);
             dataLayer[0] = info.data;
@@ -50,7 +50,7 @@ var GTM = (function() {
     };
 
     var event_handler = function(get_settings) {
-        if (!gtm_applicable) return;
+        if (!gtm_applicable()) return;
         var is_login      = localStorage.getItem('GTM_login')      === '1',
             is_newaccount = localStorage.getItem('GTM_newaccount') === '1';
         if(!is_login && !is_newaccount) {
@@ -66,7 +66,7 @@ var GTM = (function() {
         }
 
         var data = {
-            'visitorID'   : page.client.loginid,
+            'visitorId'   : page.client.loginid,
             'bom_country' : get_settings.country,
             'bom_email'   : get_settings.email,
             'url'         : window.location.href,
@@ -86,12 +86,12 @@ var GTM = (function() {
     };
 
     var set_login_flag = function() {
-        if (!gtm_applicable) return;
+        if (!gtm_applicable()) return;
         localStorage.setItem('GTM_login', '1');
     };
 
     var set_newaccount_flag = function() {
-        if (!gtm_applicable) return;
+        if (!gtm_applicable()) return;
         localStorage.setItem('GTM_newaccount', '1');
     };
 
