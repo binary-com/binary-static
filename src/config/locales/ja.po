@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-24 10:20+0000\n"
-"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
+"PO-Revision-Date: 2016-06-27 01:53+0000\n"
+"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -870,7 +870,8 @@ msgid "All opinions, news, research, analysis, prices or other information conta
 msgstr "当社サイトに掲載されているご意見、ニュース、リサーチ、分析、価格などの情報は、一般的な市場に関するコメントであり、投資に関する助言ではありません。％1ではそのような情報の使用または依存から直接または間接的に生じる可能性がある利益の損失、損害についての責任を一切負いません。"
 
 msgid "All times are in GMT (Greenwich Mean Time)."
-msgstr "当社サイトの時間表示は全て、GMT（グリニッジ標準時）に基づきます。"
+msgstr ""
+"当社サイトの時間表示は全て、GMT（グリニッジ標準時）に基づきます。また、主要ペア以外は、当社では取り扱っておりませんので参考情報としてご利用ください。"
 
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "クライアントへ低い金額（現地通貨）での入金を許可する"
@@ -4954,7 +4955,7 @@ msgid "Purchase"
 msgstr "購入"
 
 msgid "Purchase Price"
-msgstr "購入価格"
+msgstr "購入金額"
 
 msgid "Purchase Time"
 msgstr "購入時間"
@@ -5026,7 +5027,7 @@ msgid "Reap the rewards of trading binaries, knowing your funds are always safe.
 msgstr "バイナリー取引を行うことで得られる様々なメリットがあり、お客さまの資金は万全の体制で守られています。"
 
 msgid "Ref."
-msgstr "参照番号"
+msgstr "約定番号"
 
 msgid "Reference ID"
 msgstr "参照 ID"
@@ -5213,7 +5214,7 @@ msgid "Salaried Employee"
 msgstr "サラリーマン"
 
 msgid "Sale Date"
-msgstr "決済日時"
+msgstr "判定時刻"
 
 msgid "Sale Price"
 msgstr "決済価格"
@@ -6150,7 +6151,7 @@ msgstr ""
 "最高水準のバイナリー取引プラットフォーム"
 
 msgid "The profit is the difference between the purchase price (the stake) and the payout on a winning trade."
-msgstr "勝ちトレードの払い戻し金額と購入価格の差額が利益になります。"
+msgstr "勝ちトレードの払い戻し金額と購入金額の差額が利益になります。"
 
 msgid "The profit of USD 294 is the difference between the exit and entry level multiplied by the amount per point."
 msgstr "USD 294の利益は、判定レベルとエントリーレベルのそれぞれをポイントごとの金額で掛け算した差額です。"
@@ -6174,7 +6175,7 @@ msgid "The smoothing and filtering algorithms described above."
 msgstr "採用しているアルゴリズムについて"
 
 msgid "The stake is the amount that a trader must pay to enter into a trade."
-msgstr "購入価格とは、トレード開始のために支払わなければならない金額のことです。"
+msgstr "購入金額とは、トレード開始のために支払わなければならない金額のことです。"
 
 msgid "The stop-loss and stop-profit are guaranteed. The loss and profit are limited to the stop-loss and stop-profit respectively.  When the exit level touches either the stop-loss or stop-profit, the contract will be closed at the stop-loss or stop-profit level."
 msgstr "損切りと利益ストップは保証されています。損失と利益はそれぞれ損切りと利益ストップに制限されています。判定レベルが損切りまたは利益ストップに到達した場合、損切りレベルまたは利益ストップレベルで閉鎖されます。"
@@ -6484,7 +6485,7 @@ msgid "Touch/No Touch"
 msgstr "TOUCH/NO-TOUCH"
 
 msgid "Touch/No Touch contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "Touch/No Touchトレードでは開始から終了までの取引期間中にTickが2未満である場合、購入価格が返金されます。"
+msgstr "Touch/No Touchトレードでは開始から終了までの取引期間中にTickが2未満である場合、購入金額が返金されます。"
 
 msgid "Touch/No touch trades"
 msgstr "TOUCH/NO-TOUCH トレード"
@@ -7194,14 +7195,14 @@ msgstr "当社では下記のお取引が可能です。"
 #| msgid "With %1 you’re in control of how much you can win. You specify a fixed payout amount at the outset, and your stake – what you pay – is then calculated. Binary.com offers payouts from $1 to $50,000."
 msgid "With %1 you're in control of how much you can win. You specify a fixed payout amount at the outset, and your stake - what you pay - is then calculated. Binary.com offers payouts from $1 to $50,000."
 msgstr ""
-"当システムではペイアウトを確実に管理することができます。取引内容を設定する際にペイアウトまたは購入価格を指定し、正確な算出結果を得ることができます。当社で"
+"当システムではペイアウトを確実に管理することができます。取引内容を設定する際にペイアウトまたは購入金額を指定し、正確な算出結果を得ることができます。当社で"
 "は1,000円から1,000万円までのペイアウトを設定いただけます。"
 
 msgid "With %1's unique platform, there's no risk of 'slippage' or gapping markets. And no hidden fees."
 msgstr "当社の独自システムには、スリッページやギャッピングに関するリスクが存在しません。取引手数料は無料です。"
 
 msgid "With %1, the most you can lose is the amount you stake at the start of your trade."
-msgstr "%1でのトレードリスクは、購入価格のみに留まります。"
+msgstr "%1でのトレードリスクは、購入金額のみに留まります。"
 
 msgid "With %1, you're in control. Simply fix your upside and your downside before every trade."
 msgstr "当社システムは、各お取引の前にそのお取引から生じる損益を知ることが可能です。"
