@@ -42,7 +42,8 @@
         <link rel="icon" type="image/png" sizes="96x96" href="[% request.url_for('/images/favicons/favicon-96x96.png') %]">
         <link rel="icon" type="image/png" sizes="16x16" href="[% request.url_for('/images/favicons/favicon-16x16.png') %]" >
         <link rel="icon" type="image/png" sizes="32x32" href="[% request.url_for('/images/favicons/favicon-32x32.png') %]" >
-
+        <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Array.prototype.includes,String.prototype.includes&unknown=polyfill"></script>
+        
         [% FOREACH o IN language_options =%]
             [%= IF o.code.lower != 'ja' =%]
             <link rel="alternate" href="[% request.url_for(request.url_for(current_path), { l => o.code.lower }) =%]" hreflang="[% o.code %]" />
