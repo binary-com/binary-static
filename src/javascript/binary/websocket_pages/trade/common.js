@@ -775,7 +775,7 @@ function displayTooltip(market, symbol){
         app = document.getElementById('androidApp'),
         appstore = document.getElementById('appstore');
     if (!market || !symbol) return;
-    if (market.match(/^volidx/) || (symbol && symbol.match(/^R/)) || market.match(/^random_index/) || market.match(/^random_daily/)){
+    if (market.match(/^volidx/) || symbol.match(/^R/) || market.match(/^random_index/) || market.match(/^random_daily/)){
         if (guide) guide.hide();
         tip.show();
         tip.setAttribute('target', page.url.url_for('/get-started/volidx-markets'));
