@@ -271,23 +271,6 @@ fieldset .error-msg {
     background-color: $COLOR_YELLOW;
 }
 
-.tooltip-content {
-    display: none;
-    width: 120px;
-    background-color: $COLOR_BLACK;
-    color: $COLOR_WHITE;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-
-    position: absolute;
-    z-index: 1;
-}
-
-*:hover > .tooltip-content {
-    display: inline;
-}
-
 #session_limit .limit_message {
     margin: 30px auto;
 }
