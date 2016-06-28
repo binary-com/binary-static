@@ -922,36 +922,37 @@ Contents.prototype = {
             }
             var c_config = countries_list[this.client.residence];
 
+            var $upgrade_msg = $('.upgrademessage'),
+                hiddenClass  = 'invisible';
+            var hide_upgrade = function() {
+                $upgrade_msg.addClass(hiddenClass);
+            };
+            var show_upgrade = function(url, msg) {
+                $upgrade_msg.removeClass(hiddenClass)
+                    .find('a').attr('href', page.url.url_for(url)).html($('<span/>', {text: text.localize(msg)}));
+            };
+
             if (page.client.is_virtual()) {
-                var show_upgrade = true;
+                var show_upgrade_msg = true;
                 if (localStorage.getItem('jp_test_allowed')) {
-                    $('.virtual-upgrade-link').addClass('invisible');
-                    $('.vr-japan-upgrade-link').addClass('invisible');
-                    $('.vr-financial-upgrade-link').addClass('invisible');
-                    show_upgrade = false;           // do not show upgrade for user that filled up form
+                    hide_upgrade();
+                    show_upgrade_msg = false; // do not show upgrade for user that filled up form
                 }
-                for (var i=0;i<loginid_array.length;i++) {
+                for (var i = 0; i < loginid_array.length; i++) {
                     if (loginid_array[i].real) {
-                        $('.virtual-upgrade-link').addClass('invisible');
-                        $('.vr-japan-upgrade-link').addClass('invisible');
-                        $('.vr-financial-upgrade-link').addClass('invisible');
-                        show_upgrade = false;
+                        hide_upgrade();
+                        show_upgrade_msg = false;
                         break;
                     }
                 }
-                if (show_upgrade) {
+                if (show_upgrade_msg) {
+                    $upgrade_msg.find('> span').removeClass(hiddenClass);
                     if (c_config && c_config['gaming_company'] == 'none' && c_config['financial_company'] == 'maltainvest') {
-                        $('.vr-financial-upgrade-link').removeClass('invisible');
-                        $('.virtual-upgrade-link').addClass('invisible');
-                        $('.vr-japan-upgrade-link').addClass('invisible');
+                        show_upgrade('new_account/maltainvestws', 'Upgrade to a Financial Account');
                     } else if (c_config && c_config['gaming_company'] == 'none' && c_config['financial_company'] == 'japan') {
-                        $('.vr-japan-upgrade-link').removeClass('invisible');
-                        $('.virtual-upgrade-link').addClass('invisible');
-                        $('.vr-financial-upgrade-link').addClass('invisible');
+                        show_upgrade('new_account/japanws', 'Upgrade to a Real Account');
                     } else {
-                        $('.virtual-upgrade-link').removeClass('invisible');
-                        $('.vr-japan-upgrade-link').addClass('invisible');
-                        $('.vr-financial-upgrade-link').addClass('invisible');
+                        show_upgrade('new_account/realws', 'Upgrade to a Real Account');
                     }
                 }
             } else {
@@ -970,9 +971,9 @@ Contents.prototype = {
                     }
                 }
                 if (show_financial) {
-                    $('.financial-upgrade-link').parent().removeClass('invisible');
+                    show_upgrade('new_account/maltainvestws', 'Open a Financial Account');
                 } else {
-                    $('.financial-upgrade-link').parent().addClass('invisible');
+                    hide_upgrade();
                 }
             }
         }
