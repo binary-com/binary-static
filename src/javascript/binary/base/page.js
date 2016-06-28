@@ -929,7 +929,7 @@ Contents.prototype = {
             };
             var show_upgrade = function(url, msg) {
                 $upgrade_msg.removeClass(hiddenClass)
-                    .find('a').attr('href', url).html($('<span/>', {text: text.localize(msg)}));
+                    .find('a').attr('href', page.url.url_for(url)).html($('<span/>', {text: text.localize(msg)}));
             };
 
             if (page.client.is_virtual()) {
@@ -948,11 +948,11 @@ Contents.prototype = {
                 if (show_upgrade_msg) {
                     $upgrade_msg.find('> span').removeClass(hiddenClass);
                     if (c_config && c_config['gaming_company'] == 'none' && c_config['financial_company'] == 'maltainvest') {
-                        show_upgrade(page.url.url_for('new_account/maltainvestws'), 'Upgrade to a Financial Account');
+                        show_upgrade('new_account/maltainvestws', 'Upgrade to a Financial Account');
                     } else if (c_config && c_config['gaming_company'] == 'none' && c_config['financial_company'] == 'japan') {
-                        show_upgrade(page.url.url_for('new_account/japanws'), 'Upgrade to a Real Account');
+                        show_upgrade('new_account/japanws', 'Upgrade to a Real Account');
                     } else {
-                        show_upgrade(page.url.url_for('new_account/realws'), 'Upgrade to a Real Account');
+                        show_upgrade('new_account/realws', 'Upgrade to a Real Account');
                     }
                 }
             } else {
@@ -971,7 +971,7 @@ Contents.prototype = {
                     }
                 }
                 if (show_financial) {
-                    show_upgrade(page.url.url_for('new_account/maltainvestws'), 'Open a Financial Account');
+                    show_upgrade('new_account/maltainvestws', 'Open a Financial Account');
                 } else {
                     hide_upgrade();
                 }

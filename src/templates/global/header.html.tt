@@ -2,7 +2,7 @@
     <div id="topbar">
         <div class="container">
             <div class="gr-row">
-                <div class='gr-6 gr-5-t gr-12-p gr-12-m invisible upgrademessage'>
+                <div id="topbar-msg" class='gr-6 gr-5-t gr-12-p gr-12-m invisible upgrademessage'>
                     <span class='gr-hide-m invisible'>
                         <span id='virtual-text'>[% l("You're using a Virtual Account.") %]</span>
                     </span>
