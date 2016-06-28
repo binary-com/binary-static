@@ -1,7 +1,7 @@
 <div class="gr-12">
     <h2>[% l("Terms and Conditions") %]</h2>
     <p>
-        <i>[% l("Version 40. Last modified 2016-05-12.") %]</i>
+        <i>[% l("Version 41. Last modified 2016-06-27.") %]</i>
     </p>
     <p>
         [% l("It is the responsibility of each Client to read and understand this legal notice and the terms and conditions pursuant to which an acquisition of financial contracts via this site is governed.") %]
@@ -142,7 +142,10 @@
         [% l("Although the Company has and retains all rights to refuse or to close a Client's account, the Company does warrant that all contractual obligations already made, shall be honoured.") %]
     </p>
     <p>
-        [% l("The Company reserves the right to restrict client trading and/or cancel or reverse transactions in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug or glitch in our website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, or manifest mis-calculation of prices or other manifest error. Clients have a duty to report to the Company any such problems, errors or suspected system inadequacies that they may experience and may not abuse of or arbitrage such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website.") %]
+        [% l("The Company reserves the right to cancel/reverse transactions or amend the contractual terms (including, but not limited to, entry and exit spot) in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug or glitch in our website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, or manifest mis-calculation of prices or other obvious errors (\"Manifest Errors\"). Clients have a duty to report to the Company any such problems, errors or suspected system inadequacies that they may experience and may not abuse of or arbitrage such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Any amendments to the contractual terms (including, but not limited to, entry and exit spot) of Manifestly Erroneous contracts shall be reasonable and fair. Monies exchanged between oneself and the Company in connection with Manifestly Erroneous contracts shall be returned to the recipient according to the amendments made to the contractual terms (including, but not limited to, entry and exit spot). You further acknowledge and agree that the Company will not be held liable or responsible, whether directly or indirectly, for any loss, expenses or damage caused or alleged to be caused by or in connection with a Manifest Error.") %]
+    </p>
+    <p>
+        [% l("Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website.") %]
     </p>
     <p>
         [% l("Any information given on these pages and/or emails or newsletters sent by the company related thereto, is not intended as financial or investment advice and the Company will not accept any liability in this respect, nor will the Company accept any responsibility for the accuracy or comprehensiveness of the information provided on this site.") %]
