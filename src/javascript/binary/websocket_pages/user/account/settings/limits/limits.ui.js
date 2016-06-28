@@ -2,9 +2,9 @@ var LimitsUI = (function(){
     "use strict";
 
     function fillLimitsTable(limits){
-        var open_positions = addComma(limits['open_positions']);
-        var account_balance = addComma(limits['account_balance']);
-        var payout = addComma(limits['payout']);
+        var open_positions = addComma(limits['open_positions']).split('.')[0];
+        var account_balance = addComma(limits['account_balance']).split('.')[0];
+        var payout = addComma(limits['payout']).split('.')[0];
         var marketSpecific = limits.market_specific;
 
         document.getElementById('item').textContent = Content.localize().textItem;
@@ -41,12 +41,12 @@ var LimitsUI = (function(){
               if (object.length && object.length > 0) {
                 appendRowTable(key.charAt(0).toUpperCase() + key.slice(1), '', 'auto', 'bold');
                 for (key in object) {
-                  if (object.hasOwnProperty(key)) {
-                    appendRowTable(object[key].name, object[key].turnover_limit !== 'null' ? addComma(object[key].turnover_limit) : 0, '25px', 'normal');
+                  if (object.hasOwnProperty(key) && (page.client.residence !== 'jp' || /Major Pairs/.test(object[key].name))) {
+                    appendRowTable(object[key].name, object[key].turnover_limit !== 'null' ? addComma(object[key].turnover_limit).split('.')[0] : 0, '25px', 'normal');
                   }
                 }
               } else {
-                appendRowTable(object.name, object.turnover_limit !== 'null' ? addComma(object.turnover_limit) : 0, 'auto', 'bold');
+                appendRowTable(object.name, object.turnover_limit !== 'null' ? addComma(object.turnover_limit).split('.')[0] : 0, 'auto', 'bold');
               }
             }
           }

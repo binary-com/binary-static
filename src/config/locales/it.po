@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Italian (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-22 13:15+0000\n"
+"PO-Revision-Date: 2016-06-23 13:18+0000\n"
 "Last-Translator: Annalisa <ligiu@me.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/binary/static/it/>\n"
 "Language: it\n"
@@ -187,7 +187,7 @@ msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum loss
 msgstr "I Contratti Spread di %1 richiedono uno 'stop loss' in grado di limitare le perdite massime subite dal cliente. L'importo di questo 'stop loss' agirà quale deposito e non può essere utilizzato per ulteriori trading fino alla chiusura di tale Contratto Spread. Questi ultimi vengono chiusi al momento della vendita da parte del cliente, al raggiungimento della soglia di 'stop loss' o 'stop profit'."
 
 msgid "%1's Volatility Indices are based on a cryptographically secure random number generator audited for fairness by an independent third party."
-msgstr ""
+msgstr "Gli indici di volatilità di %1 si basano su un generatore di numeri random sicuri crittograficamente per correttezza da parte di una terza parte indipendente."
 
 msgid "%1's patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market."
 msgstr "La tecnologia brevettata per la determinazione dei prezzi di %1 ti consente di beneficiare delle stesse percentuali di rendimento dei trader del mercato interbancario."
@@ -987,10 +987,8 @@ msgstr "Sei pronto?"
 msgid "Are you sure that you want to permanently delete token"
 msgstr "Sei sicuro di voler eliminare definitivamente il token"
 
-#, fuzzy
-#| msgid "Are you sure that you want to permanently delete token"
 msgid "Are you sure that you want to permanently revoke access to application"
-msgstr "Sei sicuro di voler eliminare definitivamente il token"
+msgstr "Sei sicuro di voler revocare definitivamente l'accesso all'applicazione"
 
 msgid "Are your site visitors interested in:"
 msgstr "I visitatori del tuo sito sono interessati a:"
@@ -1110,12 +1108,10 @@ msgid "Award-winning, patented financial trading platform"
 msgstr "Una piattaforma di trading finanziario pluripremiata e brevettata"
 
 msgid "BIEL Pillar III"
-msgstr ""
+msgstr "BIEL Pillar III"
 
-#, fuzzy
-#| msgid "Prospectus"
 msgid "BIEL Prospectus"
-msgstr "Programma"
+msgstr "Programma BIEL"
 
 msgid "BIEL Terms"
 msgstr "Termini di BIEL"
@@ -2091,9 +2087,6 @@ msgstr "Guidare la rapida crescita di aree chiave del mondo, applicando una vari
 
 msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
 msgstr "A seguito di recenti variazioni normative, ai nostri clienti richiediamo di completare la seguente Valutazione finanziaria. Ti preghiamo di notare che non potrai continuare a fare trading fino a quando non l'avrai completato."
-
-msgid "Due to the impending Brexit vote, returns on some instruments may be lower than usual until Friday."
-msgstr ""
 
 msgid "Duration"
 msgstr "Durata"
@@ -4253,9 +4246,6 @@ msgstr "Nota: i prelievi tramite agente di pagamento sono disponibili solo se si
 msgid "Notes:"
 msgstr "Note:"
 
-msgid "Notice"
-msgstr ""
-
 msgid "Notification of Changes"
 msgstr "Notifica di modifiche"
 
@@ -6042,10 +6032,8 @@ msgstr "Si è verificato un problema d'accesso al server."
 msgid "There was a problem validating your personal details. Please fix the fields %1here"
 msgstr "Si è verificato un problema nella procedura di convalida dei tuoi dati personali. Sistema i campi %1 qui"
 
-#, fuzzy
-#| msgid "There was a problem validating your personal details. Please fix the fields <a class=\"pjaxload\" href=\"%1\">here</a>."
 msgid "There was a problem validating your personal details. Please update your %1 <a class=\"pjaxload\" href=\"%2\">here</a>."
-msgstr "Si è verificato un problema nella procedura di convalida dei tuoi dati personali. Sistema i campi <a class=\"pjaxload\" href=\"%1\">qui</a>."
+msgstr "Si è verificato un problema nella procedura di convalida dei tuoi dati personali. Aggiorna i tuoi %1<a class=\"pjaxload\" href=\"%2\">qui</a>."
 
 msgid "There was an error"
 msgstr "Si è verificato un errore"
@@ -7886,9 +7874,6 @@ msgstr "{JAPAN ONLY}Introduction to Binary Options"
 msgid "{JAPAN ONLY}It cannot be said that binary options trading is unconditionally advanteous over regular spot fx trading, because investors may lose all of their investment whereas in spot fx trading there will still be some value in the trading position."
 msgstr "{JAPAN ONLY}It cannot be said that binary options trading is unconditionally advanteous over regular spot fx trading, because investors may lose all of their investment whereas in spot fx trading there will still be some value in the trading position."
 
-msgid "{JAPAN ONLY}It is determined that proper by the results of this test, if you want to start the transaction, and then also as a trouble on the transaction occurred between the Company , the Company despite missing is knowledge related to options trading trading cause of action and you agree that you will not is that it has admitted ."
-msgstr "{JAPAN ONLY}It is determined that proper by the results of this test, if you want to start the transaction, and then also as a trouble on the transaction occurred between the Company , the Company despite missing is knowledge related to options trading trading cause of action and you agree that you will not is that it has admitted ."
-
 msgid "{JAPAN ONLY}It is determined the customers have basic knowledge of option trading by the results of the knowledge test. If the customers start trading, the customers need to agree not have lawsuit despite the customer are shortage of knowledge related to options trading, and it cause damages, we admit to open the trading account."
 msgstr "{JAPAN ONLY}It is determined the customers have basic knowledge of option trading by the results of the knowledge test. If the customers start trading, the customers need to agree not have lawsuit despite the customer are shortage of knowledge related to options trading, and it cause damages, we admit to open the trading account."
 
@@ -8134,6 +8119,9 @@ msgstr "{JAPAN ONLY}Where broking companies show bid and offer prices for purcha
 
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
+
+#~ msgid "{JAPAN ONLY}It is determined that proper by the results of this test, if you want to start the transaction, and then also as a trouble on the transaction occurred between the Company , the Company despite missing is knowledge related to options trading trading cause of action and you agree that you will not is that it has admitted ."
+#~ msgstr "{JAPAN ONLY}It is determined that proper by the results of this test, if you want to start the transaction, and then also as a trouble on the transaction occurred between the Company , the Company despite missing is knowledge related to options trading trading cause of action and you agree that you will not is that it has admitted ."
 
 #~ msgid "%1 is an active proponent of the open-source movement. Suggest enhancements, and take part in the development of our powerful applications. You can find more information on our <a href=\"%2\" target=\"_blank\">Developers Portal</a>."
 #~ msgstr "%1 è un sostenitore attivo del movimento open-source. Suggerisci miglioramenti e prendi parte allo sviluppo delle nostre potenti applicazioni. Puoi trovare ulteriori informazioni sul nostro <a href=\"%2\" target=\"_blank\">Portale degli sviluppatori</a>."

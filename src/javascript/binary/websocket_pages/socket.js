@@ -122,7 +122,7 @@ function BinarySocketClass() {
         binarySocket.onmessage = function (msg){
             var response = JSON.parse(msg.data);
             if (response) {
-                if(response.hasOwnProperty('echo_req') && response.echo_req.hasOwnProperty('passthrough')) {
+                if(response.hasOwnProperty('echo_req') && response.echo_req !== null && response.echo_req.hasOwnProperty('passthrough')) {
                     var passthrough = response.echo_req.passthrough;
                     if(passthrough.hasOwnProperty('req_number')) {
                         clearInterval(timeouts[response.echo_req.passthrough.req_number]);
@@ -222,7 +222,7 @@ function BinarySocketClass() {
                 } else if (type === 'reality_check') {
                     if (response.echo_req.passthrough.for === 'init_rc') {
                         var currentData = TUser.get();
-                        var addedLoginTime = Object.assign({logintime: response.reality_check.start_time}, currentData);
+                        var addedLoginTime = $.extend({logintime: response.reality_check.start_time}, currentData);
                         TUser.set(addedLoginTime);
                         RealityCheck.init();
                     } else {
