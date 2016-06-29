@@ -60,8 +60,8 @@
             </div>
           </fieldset>
           <fieldset class="center-text" id="formlayout">
-            <span class="button button-focus">
-              <button class="button button-focus" id="btn_submit" type="submit">[% l('Create New Account') %]</button>
+            <span class="button ">
+              <button class="button " id="btn_submit" type="submit">[% l('Create New Account') %]</button>
               <p class="errorfield" id="error-account-opening" style="display:none"></p>
             </span>
           </fieldset>
