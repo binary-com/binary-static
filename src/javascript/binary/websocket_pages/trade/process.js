@@ -120,7 +120,7 @@ function processContract(contracts) {
 
     var contract_categories = Contract.contractForms();
     var formname;
-    if (Defaults.get('formname') && contract_categories[Defaults.get('formname')]) {
+    if (Defaults.get('formname') && contract_categories && contract_categories[Defaults.get('formname')]) {
         formname = Defaults.get('formname');
     } else {
         var tree = getContractCategoryTree(contract_categories);
@@ -337,7 +337,7 @@ function processTick(tick) {
 function processProposal(response) {
     'use strict';
     var form_id = Price.getFormId();
-    if(response.echo_req.passthrough.form_id===form_id){
+    if(response.echo_req && response.echo_req.passthrough.form_id===form_id){
         hideOverlayContainer();
         Price.display(response, Contract.contractType()[Contract.form()]);
         hidePriceOverlay();

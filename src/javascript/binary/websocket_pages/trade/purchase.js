@@ -150,7 +150,7 @@ var Purchase = (function () {
             return;
         }
 
-        var duration = purchase_data.echo_req.passthrough['duration'];
+        var duration = purchase_data.echo_req && purchase_data.echo_req.passthrough ? purchase_data.echo_req.passthrough['duration'] : null;
 
         if(!duration){
             return;

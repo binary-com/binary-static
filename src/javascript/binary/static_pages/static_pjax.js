@@ -13,8 +13,7 @@ pjax_config_page('/\?.+|/home', function() {
 pjax_config_page('/why-us', function() {
     return {
         onLoad: function() {
-            var whyus = $('.why-us');
-            sidebar_scroll(whyus);
+            sidebar_scroll($('.why-us'));
             hide_if_logged_in();
         },
         onUnload: function() {
