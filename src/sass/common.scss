@@ -20,6 +20,10 @@ html, body {
     overflow-x: hidden;
 }
 
+h1, h2, h3, h4 {
+    margin-bottom: 20px;
+}
+
 select, input, button, textarea {
     background: $COLOR_WHITE;
     border: 1px solid $COLOR_GRAY;
