@@ -29,8 +29,9 @@
 #reality-check-content, #balances-content {
     padding: 0;
     text-align: left;
-    tr, td {
+    td {
         width: 12.5%;
+        text-align: center;
     }
     label {
         display: inline-block;
