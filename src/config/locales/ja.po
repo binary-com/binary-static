@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-27 08:15+0000\n"
-"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
+"PO-Revision-Date: 2016-06-29 03:16+0000\n"
+"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -425,7 +425,9 @@ msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>幅広い取引期間</strong>：2時間以上から取引期間の指定が可能です"
 
 msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
-msgstr "<strong>どのような市場状況でもトレードが可能</strong>： HIGH/LOW、TOUCH/NO-TOUCH、STAY-IN/BREAK-OUTなど。"
+msgstr ""
+"<strong>どのような市場状況でもトレードが可能</strong>： ラダーHIGH/ラダーLOW、TOUCH/NO-TOUCH、STAY-IN"
+"/BREAK-OUTなど。"
 
 msgid "<strong>All markets, all conditions</strong> - trade currencies, indices and commodities in rising, falling, sideways, quiet and volatile markets."
 msgstr "<strong>どんな相場状況でも</strong>：上昇、下落、保ち合い、荒れ相場、いかなる状況でもお取引が期待できます。"
@@ -862,7 +864,8 @@ msgid "All opinions, news, research, analysis, prices or other information conta
 msgstr "当社サイトに掲載されているご意見、ニュース、リサーチ、分析、価格などの情報は、一般的な市場に関するコメントであり、投資に関する助言ではありません。％1ではそのような情報の使用または依存から直接または間接的に生じる可能性がある利益の損失、損害についての責任を一切負いません。"
 
 msgid "All times are in GMT (Greenwich Mean Time)."
-msgstr "当社サイトの時間表示は全て、GMT（グリニッジ標準時）に基づきます。また、主要ペア以外は、当社では取り扱っておりませんので参考情報としてご利用ください。"
+msgstr ""
+"当社サイトの時間表示は全て、GMT（グリニッジ標準時）に基づきます。また、当社ではすべての金融商品を取り扱っておりませんので参考情報としてご利用ください。"
 
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "クライアントへ低い金額（現地通貨）での入金を許可する"
@@ -4933,7 +4936,7 @@ msgid "Purchase"
 msgstr "購入"
 
 msgid "Purchase Price"
-msgstr "購入金額"
+msgstr "購入金額(JPY)"
 
 msgid "Purchase Time"
 msgstr "購入時間"
@@ -5194,10 +5197,10 @@ msgid "Salaried Employee"
 msgstr "サラリーマン"
 
 msgid "Sale Date"
-msgstr "判定時刻"
+msgstr "約定日時"
 
 msgid "Sale Price"
-msgstr "決済価格"
+msgstr "決済価格(JPY)"
 
 msgid "Saturday"
 msgstr "土曜日"
@@ -6408,7 +6411,7 @@ msgid "Total Net Revenue Per Month"
 msgstr "１ヶ月あたりの獲得レベニュー"
 
 msgid "Total Profit/Loss"
-msgstr "合計　損益"
+msgstr "合計　損益(JPY)"
 
 msgid "Touch/No Touch"
 msgstr "TOUCH/NO-TOUCH"
