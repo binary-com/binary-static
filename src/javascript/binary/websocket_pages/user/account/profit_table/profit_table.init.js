@@ -23,7 +23,7 @@ var ProfitTableWS = (function () {
         transactionsReceived = 0;
         pending = false;
 
-        $(".error-msg").text("");
+        ProfitTableUI.errorMessage(null);
 
         if (tableExist()) {
             ProfitTableUI.cleanTableContent();
@@ -31,6 +31,10 @@ var ProfitTableWS = (function () {
     }
 
     function profitTableHandler(response){
+        if(response.hasOwnProperty('error')) {
+            ProfitTableUI.errorMessage(response.error.message);
+            return;
+        }
 
         pending = false;
         var profitTable = response.profit_table;

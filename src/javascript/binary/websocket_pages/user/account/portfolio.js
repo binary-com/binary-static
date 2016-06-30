@@ -37,8 +37,9 @@ var PortfolioWS =  (function() {
         /**
          * Check for error
         **/
-        if("error" in data) {
-            throw new Error("Trying to get portfolio data, we got this error", data.error);
+        if(data.hasOwnProperty('error')) {
+            errorMessage(data.error.message);
+            return;
         }
 
         /**
@@ -94,6 +95,7 @@ var PortfolioWS =  (function() {
 
     var transactionResponseHandler = function(response) {
         if(response.hasOwnProperty('error')) {
+            errorMessage(response.error.message);
             return;
         }
 
@@ -110,7 +112,11 @@ var PortfolioWS =  (function() {
     };
 
     var updateIndicative = function(data) {
-        if(data.hasOwnProperty('error')) return;
+        if(data.hasOwnProperty('error')) {
+            errorMessage(data.error.message);
+            return;
+        }
+
         var proposal = data.proposal_open_contract;
         var $td = $("tr[data-contract_id='" + proposal.contract_id + "'] td.indicative");
         var old_indicative = $td.find('strong').text();
@@ -176,6 +182,15 @@ var PortfolioWS =  (function() {
             str = str.split(placeholder).join(text.localize(dTexts[i]));
         }
         return str;
+    };
+
+    var errorMessage = function(msg) {
+        var $err = $('#portfolio #err-msg');
+        if(msg) {
+            $err.removeClass('invisible').text(msg);
+        } else {
+            $err.addClass('invisible').text('');
+        }
     };
 
     var onLoad = function() {
