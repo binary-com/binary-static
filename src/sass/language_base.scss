@@ -52,21 +52,26 @@ body.JA {
     #language_select {
         display: none;
     }
-    @media screen and (max-width: 845px) {
-        #header #menu-top li a.smaller-font, #header ul#menu-top.smaller-font {
-            font-size: 75%;
-        }
-    }
 }
 /*Vietnamese Language */
 body.VI {
-    font-family: arial !important;
     #legal-tab li.tm-li-2 {
         margin-right: 0px !important;
         padding: 0 8px !important;
     }
     #trading_socket_container #contract_form_name_nav {
         font-size: 80%;
+    }
+    #header #menu-top li a.smaller-font, #header ul#menu-top.smaller-font {
+        font-size: 90%;
+    }
+}
+
+body.VI, body.JA {
+    @media screen and (max-width: 768px) {
+        #header #menu-top li a.smaller-font, #header ul#menu-top.smaller-font {
+            font-size: 75%;
+        }
     }
 }
 
