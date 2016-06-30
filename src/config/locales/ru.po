@@ -7,14 +7,16 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-25 19:51+0000\n"
+"PO-Revision-Date: 2016-06-30 16:02+0000\n"
 "Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
+"Language-Team: Russian "
+"<https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.7-dev\n"
 
 msgid "\"Binary\" or \"digital\" options are options that pay a pre-determined, fixed amount, depending on whether or not an event occurs at the time the Binary Option expires. Binary Options can have only one of two possible outcomes and allow you to take a simple \"Yes or No\" approach. Like traditional options, Binary Options are based on an underlying asset such as currencies, commodities, indexes or stocks, however one of the most significant differences from traditional options, among others, is that there can be only two outcomes for the option, either the client is paid the return upon the occurrence of the event, or the client loses the investment amount as determined in each option."
@@ -314,7 +316,7 @@ msgid "30-day limit on losses"
 msgstr "30-дневный лимит на проигрыш"
 
 msgid "30-day turnover limit "
-msgstr "30-дневный лимит на оборот "
+msgstr "30-дневный лимит на объём покупок  "
 
 msgid "4. Choose your Payout"
 msgstr "4. Выбрать выплату"
@@ -338,7 +340,7 @@ msgid "7-day limit on losses"
 msgstr "7-дневный лимит на проигрыш"
 
 msgid "7-day turnover limit"
-msgstr "7-дневный лимит на оборот"
+msgstr "7-дневный лимит на объём покупок"
 
 msgid "<< Back to Job Descriptions"
 msgstr "<< Вернуться к вакансиям"
@@ -1958,7 +1960,7 @@ msgid "Daily limit on losses"
 msgstr "Дневной лимит на проигрыш"
 
 msgid "Daily turnover limit"
-msgstr "Дневной лимит на оборот"
+msgstr "Дневной лимит на объём покупок"
 
 msgid "Data Feed"
 msgstr "Котировки"
@@ -6240,10 +6242,11 @@ msgstr "Возникла проблема с доступом к серверу.
 msgid "There was a problem validating your personal details. Please fix the fields %1here"
 msgstr "Возникла проблема с подтверждением Ваших личных данных. Пожалуйста, исправьте данные здесь%1"
 
-#, fuzzy
 #| msgid "There was a problem validating your personal details. Please fix the fields %1here"
 msgid "There was a problem validating your personal details. Please update your %1 <a class=\"pjaxload\" href=\"%2\">here</a>."
-msgstr "Возникла проблема с подтверждением Ваших личных данных. Пожалуйста, исправьте данные здесь%1"
+msgstr ""
+"Возникла проблема с подтверждением Ваших личных данных. Пожалуйста, "
+"исправьте %1 <a class=\"pjaxload\" href=\"%2\">здесь</a>."
 
 msgid "There was an error"
 msgstr "Произошла ошибка"
@@ -7644,10 +7647,9 @@ msgstr "Использование Вами API Binary.com не даёт Вам 
 msgid "Your violation of any applicable law, rule or regulation;"
 msgstr "нарушение Вами любого применимого законодательства, правил или нормативов;"
 
-#, fuzzy
 #| msgid "Your website URL (if you have one)"
 msgid "Your website request.url (if you have one)"
-msgstr "URL Вашего сайта (если есть)"
+msgstr "URL Вашего запроса на сайте (если есть)"
 
 msgid "Your withdrawal limit is %1 %2 (or equivalent in other currency)."
 msgstr "Ваш лимит на вывод составляет %1 %2 (или эквивалентную сумму в другой валюте)."
