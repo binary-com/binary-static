@@ -244,11 +244,11 @@ var Highchart = (function() {
                   for (i = 0; i < response.history.times.length; i++) {
                       if (entry_tick_time && parseInt(response.history.times[i]) === parseInt(entry_tick_time)) {
                           // set the chart to display from the tick before entry_tick_time
-                          min_point = parseInt(response.history.times[i-1]);
+                          min_point = parseInt(response.history.times[(i === 0 ? i : i-1)]);
                           break;
-                      } else if (purchase_time && start_time > parseInt(purchase_time) && parseInt(response.history.times[i]) === parseInt(purchase_time) || (parseInt(response.history.times[i]) < parseInt(purchase_time) && parseInt(response.history.times[i+1]) > parseInt(purchase_time))) {
+                      } else if (purchase_time && start_time > parseInt(purchase_time) && parseInt(response.history.times[i]) === parseInt(purchase_time) || (parseInt(response.history.times[i]) < parseInt(purchase_time) && parseInt(response.history.times[(i === response.history.times.length - 1 ? i : i+1)]) > parseInt(purchase_time))) {
                           // set the chart to display from the tick before purchase_time
-                          min_point = parseInt(response.history.times[i-1]);
+                          min_point = parseInt(response.history.times[(i === 0 ? i : i-1)]);
                           break;
                       }
                   }
@@ -262,11 +262,11 @@ var Highchart = (function() {
                   return;
                 }
                 for (i = 1; i < response.candles.length; i++) {
-                    if (entry_tick_time && response.candles[i] && parseInt(response.candles[i].epoch) <= parseInt(entry_tick_time) && response.candles[i+1].epoch > parseInt(entry_tick_time)) {
+                    if (entry_tick_time && response.candles[i] && parseInt(response.candles[i].epoch) <= parseInt(entry_tick_time) && response.candles[(i === response.candles.length - 1 ? i : i+1)].epoch > parseInt(entry_tick_time)) {
                         // set the chart to display from the candle before entry_tick_time
                         min_point = parseInt(response.candles[i-1].epoch);
                         break;
-                    } else if (purchase_time && response.candles[i] && parseInt(response.candles[i].epoch) <= parseInt(purchase_time) && response.candles[i+1].epoch > parseInt(purchase_time)) {
+                    } else if (purchase_time && response.candles[i] && parseInt(response.candles[i].epoch) <= parseInt(purchase_time) && response.candles[(i === response.candles.length - 1 ? i : i+1)].epoch > parseInt(purchase_time)) {
                         // set the chart to display from the candle before purchase_time
                         min_point = parseInt(response.candles[i-1].epoch);
                         break;
