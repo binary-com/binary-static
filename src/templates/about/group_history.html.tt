@@ -12,6 +12,22 @@
         </li>
         <li class="event left" style="margin-bottom: 50px">
           <div class="header">
+            [% l("Binary Bot released") %]
+          </div>
+          <div class="event-body">
+            [% l("Binary.com introduces an <a href='[_1]' target='_blank'>auto-trader programming tool</a>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity.", ("http://bot.binary.com")) %]
+          </div>
+        </li>
+        <li class="event right featured" style="margin-bottom: 50px">
+          <div class="header">
+            [% l("Binary.com Shop introduced") %]
+          </div>
+          <div class="event-body">
+            [% l("Binary.com launches an <a href='[_1]' target='_blank'> e-commerce site for branded merchandise</a> – enabling clients, affiliates, and developers to buy and sell Binary.com products.", ("http://shop.binary.com")) %]
+          </div>
+        </li>
+        <li class="event left" style="margin-bottom: 50px">
+          <div class="header">
             [% l("MENA FFXPO Award") %]
           </div>
           <div class="event-body">
