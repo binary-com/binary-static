@@ -36,35 +36,21 @@ var StatementUI = (function(){
     }
 
     function createStatementRow(transaction){
-        var action = transaction["action_type"];
-        var dateObj = new Date(transaction["transaction_time"] * 1000);
-        action = StringUtil.toTitleCase(action);
+        var statement_data = Statement.getStatementData(transaction);
+        var creditDebitType = (parseFloat(statement_data.amount) >= 0) ? "profit" : "loss";
 
-        var momentObj = moment.utc(dateObj);
-        var dateStr = momentObj.format("YYYY-MM-DD");
-        var timeStr = momentObj.format("HH:mm:ss") + ' GMT';
-
-        var date = dateStr + "\n" + timeStr;
-        var ref = transaction["transaction_id"];
-        var payout = Number(parseFloat(transaction["payout"])).toFixed(2);
-        var desc = transaction["longcode"].replace(/\n/g, '<br />');
-        var amount = addComma(Number(parseFloat(transaction["amount"])));
-        var balance = addComma(Number(parseFloat(transaction["balance_after"])));
-
-        var creditDebitType = (parseFloat(amount) >= 0) ? "profit" : "loss";
-
-        var $statementRow = Table.createFlexTableRow([date, ref, isNaN(payout) ? '-' : payout, action, '', amount, balance, ''], columns, "data");
+        var $statementRow = Table.createFlexTableRow([statement_data.date, statement_data.ref, isNaN(statement_data.payout) ? '-' : statement_data.payout, statement_data.action, '', statement_data.amount, statement_data.balance, ''], columns, "data");
         $statementRow.children(".credit").addClass(creditDebitType);
         $statementRow.children(".date").addClass("pre");
-        $statementRow.children(".desc").html(desc + "<br>");
+        $statementRow.children(".desc").html(statement_data.desc + "<br>");
 
         //create view button and append
-        if (action === "Sell" || action === "Buy") {
+        if (statement_data.action === "Sell" || statement_data.action === "Buy") {
             var $viewButtonSpan = Button.createBinaryStyledButton();
             var $viewButton = $viewButtonSpan.children(".button").first();
             $viewButton.text(text.localize("View"));
             $viewButton.addClass("open_contract_detailsws");
-            $viewButton.attr("contract_id", transaction["contract_id"]);
+            $viewButton.attr("contract_id", statement_data.id);
 
             $statementRow.children(".desc,.details").append($viewButtonSpan);
         }

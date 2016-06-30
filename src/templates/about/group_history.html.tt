@@ -81,17 +81,17 @@
           <div class="header">
             [% l("Regent Pacific transaction") %]
           </div>
-          <div class="event-body">[% l("Regent Pacific Group Ltd., the Hong Kong-listed founding shareholder of Binary.com, <a href='[_1]' target='_blank'>disposes of its stake</a> at a valuation of US\$ 50.5 million.", ("http://www.regentpac.com/ICMServlet/download/13-1907-3066/EAnnt-ThirdPartiesSale(04Mar2015).pdf")) %]</div>
+          <div class="event-body">[% l("Regent Pacific Group Ltd., the Hong Kong-listed founding shareholder of [_1], <a href='[_2]' target='_blank'>disposes of its stake</a> at a valuation of US\$ 50.5 million.", website_name, ("http://www.regentpac.com/ICMServlet/download/13-1907-3066/EAnnt-ThirdPartiesSale(04Mar2015).pdf")) %]</div>
         </li>
         <li class="year center-text">
           [% 2014 %]
         </li>
         <li class="event right featured">
           <div class="header">
-            [% l("Binary.com reaches \$2 billion turnover since starting in 1999") %]
+            [% l("[_1] reaches \$2 billion turnover since starting in 1999", website_name) %]
           </div>
           <div class="event-body">
-            [% l("Binary.com has over 800,000 clients in its database and reaches the US\$ 2 billion milestone in our 15th year, making us one of the leading binary options providers.") %]
+            [% l("[_1] has over 800,000 clients in its database and reaches the US\$ 2 billion milestone in our 15th year, making us one of the leading binary options providers.", website_name) %]
           </div>
         </li>
         <li class="event featured">
@@ -115,7 +115,7 @@
             [% l("[_1] continues to innovate and grow", website_name) %]
           </div>
           <div class="event-body">
-            [% l("Our customers clearly like us. In mid-2014, Binary.com has over 100 million historical transactions and over 130,000 new daily transactions.") %]
+            [% l("Our customers clearly like us. In mid-2014, [_1] has over 100 million historical transactions and over 130,000 new daily transactions.", website_name) %]
           </div>
         </li>
       </ul>
@@ -125,9 +125,9 @@
         </li>
         <li class="event featured">
           <div class="header">
-            [% l("BetOnMarkets.com is successfully rebranded Binary.com") %]
+            [% l("BetOnMarkets.com is successfully rebranded [_1]", website_name) %]
           </div>
-          <div class="event-body">[% l("We rebrand BetOnMarkets.com as <a target='_blank' href='[_1]'>www.binary.com</a>. The rebranding is a natural evolution for the platform as it continues to grow market share in the highly competitive field of binary trading. The new brand reflects the nature of the business, and our new tagline - Sharp Prices, Smart Trading - communicates our ethos and commitment to our clients.", request.url_for("/")) %]</div>
+          <div class="event-body">[% l("We rebrand BetOnMarkets.com as <a target='_blank' href='[_1]'>www.[_2]</a>. The rebranding is a natural evolution for the platform as it continues to grow market share in the highly competitive field of binary trading. The new brand reflects the nature of the business, and our new tagline - Sharp Prices, Smart Trading - communicates our ethos and commitment to our clients.", request.url_for("/"), website_name) %]</div>
         </li>
       </ul>
       <ul>

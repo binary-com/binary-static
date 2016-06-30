@@ -1,6 +1,6 @@
 <div>
 
-    <h2>[% l("[_1] Affiliate Program Terms and Conditions", website) %]</h2>
+    <h2>[% l("[_1] Affiliate Program Terms and Conditions", website_name) %]</h2>
 
     <ol class="reset_ol">
         <li>[% l("This Document") %]
@@ -21,7 +21,7 @@
         <li>[% l("The Affiliate's Obligations") %]
             <ol class="reset_ol">
                 <li>[% l("Comply with the applicable laws, rules, and regulations (including, but not limited to, advertising, data protection and privacy laws, rules, and regulations) of the jurisdiction(s) in which you operate or target your business.") %]</li>
-                <li>[% l("Ensure that any historical trading records and performance figures presented to your referrals related to trading on the website [_1] are accurate and not misleading.", website) %]</li>
+                <li>[% l("Ensure that any historical trading records and performance figures presented to your referrals related to trading on the website [_1] are accurate and not misleading.", website_name) %]</li>
                 <li>[% l("All affiliate activities must be conducted in a professional and proper manner. You shall be expected to act with good faith and integrity in your relationships with your referrals, and always act in the best interests of your referrals.") %]</li>
                 <li>[% l("You shall avoid disclosure or unauthorized use of any confidential information that may come to your knowledge or possession to third persons or external parties.") %]</li>
             </ol>
@@ -30,17 +30,17 @@
         <li>[% l("Restrictions") %]
             <ol class="reset_ol">
                 <li>[% l("You shall not encourage your referrals to take out any form of loans to be able to make deposits and/or place trades.") %]</li>
-                <li>[% l("You shall not target any of your marketing, advertising, and promotional activities to any persons under the age of 18 years old.", website) %]</li>
-                <li>[% l("You shall not hold or pool your referrals' funds or third party funds into your own account held with [_1].", website) %]</li>
+                <li>[% l("You shall not target any of your marketing, advertising, and promotional activities to any persons under the age of 18 years old.", website_name) %]</li>
+                <li>[% l("You shall not hold or pool your referrals' funds or third party funds into your own account held with [_1].", website_name) %]</li>
                 <li>[% l("You shall not resort to high-pressure sales tactics or false promises.") %]</li>
                 <li>[% l("You shall not encourage your referrals to make deposits or place any trades where the purpose of that action is (whether in whole or in part) to increase affiliate commissions rather than to benefit your referrals' trading performance and profitability.") %]</li>
                 <li>[% l("You shall not place trades on your referrals' behalf.") %]</li>
-                <li>[% l("You shall not purchase or register keywords, search terms or other identifiers for use in any search engine, portal, sponsored advertising service or other search or referral service which are identical or similar to any of the Company's trademarks or trade names that include the word \"[_1]\" or any variation thereof.", website) %]</li>
+                <li>[% l("You shall not purchase or register keywords, search terms or other identifiers for use in any search engine, portal, sponsored advertising service or other search or referral service which are identical or similar to any of the Company's trademarks or trade names that include the word \"[_1]\" or any variation thereof.", website_name) %]</li>
                 <li>[% l("Neither you, your direct relatives, or any persons you control are eligible to become clients, and you shall not be entitled to any share of net revenue or any other remuneration from the Company in relation to such relatives, friends, or controlled persons.") %]</li>
                 <li>[% l("You shall not develop and implement marketing, advertising, and promotional activities which infringe any applicable laws, rules, regulations, or codes of practice relating to marketing, advertising, and promotional activities applicable under the authority of any regulatory body of the jurisdiction(s) in which you operate or target your business.") %]</li>
             </ol>
             <ul>
-                <li>[% l("In the event that the Company is aware of an Affiliate who is in breach of any of the above provisions, the Company shall have the right, in addition to any other right or remedy available to it under this Agreement or applicable law, to immediately block the Affiliate's access to this Program. The Affiliate hereby irrevocably waives its rights to, and shall indemnify the Company and any member of the Binary group of companies for, any claim or demand made against the Company or any member of the Binary group of companies, their directors, officers, shareholders, employees or against the Binary.com website in respect of such action taken by the Company.") %]</li>
+                <li>[% l("In the event that the Company is aware of an Affiliate who is in breach of any of the above provisions, the Company shall have the right, in addition to any other right or remedy available to it under this Agreement or applicable law, to immediately block the Affiliate's access to this Program. The Affiliate hereby irrevocably waives its rights to, and shall indemnify the Company and any member of the Binary group of companies for, any claim or demand made against the Company or any member of the Binary group of companies, their directors, officers, shareholders, employees or against the [_1] website in respect of such action taken by the Company.", website_name) %]</li>
             </ul>
         </li>
 
@@ -49,7 +49,7 @@
                 <li>[% l("You and the Company are independent contractors, and nothing in this Agreement will create any partnership, joint venture, agency, franchise, sales representative, or employment relationship between us. You will have no authority to make or accept any offers or representations on our behalf. You will not make any statement, whether on your website or otherwise, that reasonably would contradict anything in this paragraph.") %]</li>
                 <li>[% l("We reserve the right to refuse your referrals' application to open an account (or to close their accounts), as deemed necessary, to comply with any requirements we may periodically establish and/or that may be required under applicable laws, rules, and regulations.") %]</li>
                 <li>[% l("The Company will provide advertising collaterals with links containing affiliate IDs which may be modified by us from time to time.") %]</li>
-                <li>[% l("With regards to tracking your referrals accessing Binary.com via the links on your website or by quoting your affiliate IDs during the sign-up process, the Company shall use all reasonable endeavours to ensure that whenever a client is referred to Binary.com through these links or affiliate IDs, and they subsequently place a contract or otherwise transact with the Company, the relevant client is identified as originating from your referral. However, the Company shall not be liable to you in any way if the Company is unable to identify a client as originating from your referral. Only properly tagged clients can be assigned to you. It is your responsibility to ensure that all links are properly tagged.") %]</li>
+                <li>[% l("With regards to tracking your referrals accessing [_1] via the links on your website or by quoting your affiliate IDs during the sign-up process, the Company shall use all reasonable endeavours to ensure that whenever a client is referred to [_1] through these links or affiliate IDs, and they subsequently place a contract or otherwise transact with the Company, the relevant client is identified as originating from your referral. However, the Company shall not be liable to you in any way if the Company is unable to identify a client as originating from your referral. Only properly tagged clients can be assigned to you. It is your responsibility to ensure that all links are properly tagged.", website_name) %]</li>
                 <li>[% l("The Company shall be entitled to exercise any of its rights or fulfill any of its obligations hereunder (including, but not limited to, its payment obligations) through any member of the Binary group of companies.") %]</li>
                 <li>[% l("The Company reserves the right to void, delay, or withhold payment of commission fees to you in situations including a suspected breach of a law or a breach of the terms and conditions of this Agreement.") %]</li>
                 <li>[% l("The Company may change the commission structure at any time at its sole and absolute discretion. We will endeavour to ensure affiliates are notified when changes have been made to the commission structure.") %]</li>
@@ -58,7 +58,7 @@
 
         <li>[% l("Ownership") %]
             <ol class="reset_ol">
-                <li>[% l("Ownership and content of the [_1] website remains our respective properties and shall not be deemed to have been transferred to you through any act or omission in respect of this Agreement.", website) %]</li>
+                <li>[% l("Ownership and content of the [_1] website remains our respective properties and shall not be deemed to have been transferred to you through any act or omission in respect of this Agreement.", website_name) %]</li>
                 <li>[% l("Ownership, content, and liability of the Affiliate's websites are the sole responsibility of the Affiliate. You will be solely responsible for the development, operation, and maintenance of your website and for all materials that appear on your website. You will indemnify and hold us harmless from all claims, damages, and expenses (including, without limitation to, attorneys' fees) relating to the development, operation, maintenance, and contents of your website.") %]</li>
                 <li>[% l("When the Affiliate's referred clients open an account with any member of the Binary group, we assume ownership of the database of names and contact information and any other data of the Affiliates' referred clients.") %]</li>
             </ol>
@@ -66,7 +66,7 @@
 
         <li>[% l("Spam - We do not condone Spam") %]
             <ol class="reset_ol">
-                <li>[% l("Any form of Spam will result in your account being placed under review and all funds due being withheld pending an investigation into your account. You need to be aware that [_1] is liable to incur expenses in dealing with Spam generated mail and these same expenses will be deducted from your account. In this instance the amount determined will be fair and deemed final and acceptable based on good faith and such amount will be collectable by law and deemed to have been accepted by yourself as fair and reasonable and as agreed to by registration as an affiliate of [_1].", website) %]</li>
+                <li>[% l("Any form of Spam will result in your account being placed under review and all funds due being withheld pending an investigation into your account. You need to be aware that [_1] is liable to incur expenses in dealing with Spam generated mail and these same expenses will be deducted from your account. In this instance the amount determined will be fair and deemed final and acceptable based on good faith and such amount will be collectable by law and deemed to have been accepted by yourself as fair and reasonable and as agreed to by registration as an affiliate of [_1].", website_name) %]</li>
                 <li>[% l("Should these expenses not be covered by funds in your account we reserve the right to investigate other alternative means for obtaining payment, for example: should your account have generated purchasing accounts, we will hold payment of commission for these accounts until such a time as the account for damages has been cleared.") %]</li>
             </ol>
         </li>
@@ -93,8 +93,8 @@
 
         <li>[% l("Disclaimer") %]
             <ol class="reset_ol">
-                <li>[% l("The Company makes no claims that the [_1] website will be uninterrupted or provide an error free service, and will not be liable for the consequences of any such errors or interruptions.", website) %]</li>
-                <li>[% l("The Company provides the [_1] website on an “as is” and “as available” basis, and gives no warranty that the [_1] website will be free of errors, or that errors will be corrected, or that our website is free of any third party interferences such as hackers or any other harmful components that arise outside of the Company's control.", website) %]</li>
+                <li>[% l("The Company makes no claims that the [_1] website will be uninterrupted or provide an error free service, and will not be liable for the consequences of any such errors or interruptions.", website_name) %]</li>
+                <li>[% l("The Company provides the [_1] website on an “as is” and “as available” basis, and gives no warranty that the [_1] website will be free of errors, or that errors will be corrected, or that our website is free of any third party interferences such as hackers or any other harmful components that arise outside of the Company's control.", website_name) %]</li>
             </ol>
         </li>
 

@@ -30,11 +30,17 @@ var StringUtil = (function(){
         return momentObj.toString();
     }
 
-    return {
+    var external = {
         toTitleCase: toTitleCase,
         dateToStringWithoutTime: dateToStringWithoutTime,
         unixTimeToDateString: timeStampToDateString,
         unixTimeToTimeString: timeStampToTimeString,
         unixTimeToDateTimeString: timeStampToDateTimeString
     };
+
+    if (typeof module !== 'undefined') {
+        module.exports = external;
+    }
+
+    return external;
 }());

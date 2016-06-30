@@ -1,13 +1,11 @@
 var ProfitTableWS = (function () {
-    var batchSize = 100,
-        chunkSize = batchSize/2;
-
-    var transactionsReceived = 0;
-    var transactionsConsumed = 0;
-    var noMoreData = false;
-    var pending = false;
-
-    var currentBatch = [];
+    var batchSize,
+        chunkSize,
+        transactionsReceived,
+        transactionsConsumed,
+        noMoreData,
+        pending,
+        currentBatch;
 
     var tableExist = function(){
         return document.getElementById("profit-table");

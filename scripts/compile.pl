@@ -90,7 +90,6 @@ foreach my $m (@m) {
             website_name    => $request->website->display_name,
             browser_title   => ($title ? localize($title).' | ' : '') . $request->website->display_name,
             request         => $request,
-            website         => $request->website->display_name,
             language        => uc $lang,
             current_path    => $save_as,
             current_route   => $current_route,
