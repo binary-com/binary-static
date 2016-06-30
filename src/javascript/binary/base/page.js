@@ -86,7 +86,7 @@ var GTM = (function() {
     };
 
     var push_purchase_data = function(response) {
-        if (!gtm_applicable()) return;
+        if (!gtm_applicable() || page.client.is_virtual()) return;
         var req = response.echo_req,
             buy = response.buy;
         var data = {
