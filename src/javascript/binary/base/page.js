@@ -87,7 +87,7 @@ var GTM = (function() {
 
     var push_purchase_data = function(response) {
         if (!gtm_applicable() || page.client.is_virtual()) return;
-        var req = response.echo_req,
+        var req = response.echo_req.passthrough,
             buy = response.buy;
         var data = {
             'event'              : 'buy_contract',
