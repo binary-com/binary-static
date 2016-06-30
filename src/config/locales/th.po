@@ -68,7 +68,9 @@ msgstr "%1 และโลโก้กระทิง/หมี นั้นเ�
 msgid "%1 does not charge any transfer fees."
 msgstr "%1 ไม่ถูกเรียกเก็บค่าธรรมเนียมการโอนใดๆ"
 
-msgid "%1 gives everyone an easy and exciting way to participate in the financial markets. Trade with as little as $1 USD on major currencies, indices and commodities."
+#, fuzzy
+#| msgid "%1 gives everyone an easy and exciting way to participate in the financial markets. Trade with as little as $1 USD on major currencies, indices and commodities."
+msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities."
 msgstr "%1 ให้วิธีการที่ง่ายและน่าตื่นเต้นสำหรับทุกคนในการเป็นส่วนหนึ่งของตลาดการเงินต่างๆ ท่านสามารถเทรดด้วยเงินเริ่มต้นขั้นต่ำเพียง 1 เหรียญสหรัฐ กับสกุลเงินต่างๆ ดัชนีต่างๆ และสินค้าโภคภัณฑ์ต่างๆ"
 
 msgid "%1 has created Volatility Indices that you can trade 24/7. You can trade these on all types of contract:"
@@ -1770,6 +1772,9 @@ msgstr "สัญญาถูกซื้อ"
 msgid "Contracts may not expire on a weekend; therefore the expiry date of a contract may be pushed back to the following Monday in the event of a contract expiry date falling on a Saturday or a Sunday."
 msgstr "สัญญาจะไม่หมดอายุในช่วงสุดสัปดาห์ ดังนั้นวันหมดอายุบนสัญญาต้องระบุไปที่วันจันทร์เมื่อวันหมดอายุสัญญาตกในวันเสาร์ หรือ วันอาทิตย์"
 
+msgid "Contracts offered by Binary Investments (Europe) Ltd. have a minimum purchase price of USD/GBP/EUR 5."
+msgstr ""
+
 msgid "Contracts sold"
 msgstr "สัญญาถูกจำหน่าย"
 
@@ -1874,6 +1879,11 @@ msgstr "ปัจจุบัน"
 
 msgid "Current Level"
 msgstr "ระดับปัจจุบัน"
+
+#, fuzzy
+#| msgid "Current time:"
+msgid "Current Time"
+msgstr "เวลาปัจจุบัน:"
 
 msgid "Current password"
 msgstr "รหัสผ่านปัจจุบัน"
@@ -4621,6 +4631,9 @@ msgstr "สิทธิ์"
 msgid "Personal Details"
 msgstr "รายละเอียดส่วนบุคคล"
 
+msgid "Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
+msgstr ""
+
 msgid "Pip"
 msgstr "Pip"
 
@@ -5767,10 +5780,10 @@ msgstr ""
 msgid "The Company reserves the right in its sole discretion to refuse and/or cancel services, charge deposit and/or withdrawal fees to anyone for any reasons including, but not limited to:"
 msgstr ""
 
-msgid "The Company reserves the right to change any part of this Agreement at any time. We will endeavour to ensure affiliates are notified when changes have been made to this Agreement, but it is ultimately your responsibility to check these terms and conditions regularly. Your continued participation in our affiliate program after we have posted the changes will constitute binding acceptance of such changes."
+msgid "The Company reserves the right to cancel/reverse transactions or amend the contractual terms (including, but not limited to, entry and exit spot) in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug or glitch in our website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, or manifest mis-calculation of prices or other obvious errors (\"Manifest Errors\"). Clients have a duty to report to the Company any such problems, errors or suspected system inadequacies that they may experience and may not abuse of or arbitrage such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Any amendments to the contractual terms (including, but not limited to, entry and exit spot) of Manifestly Erroneous contracts shall be reasonable and fair. Monies exchanged between oneself and the Company in connection with Manifestly Erroneous contracts shall be returned to the recipient according to the amendments made to the contractual terms (including, but not limited to, entry and exit spot). You further acknowledge and agree that the Company will not be held liable or responsible, whether directly or indirectly, for any loss, expenses or damage caused or alleged to be caused by or in connection with a Manifest Error."
 msgstr ""
 
-msgid "The Company reserves the right to restrict client trading and/or cancel or reverse transactions in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug or glitch in our website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, or manifest mis-calculation of prices or other manifest error. Clients have a duty to report to the Company any such problems, errors or suspected system inadequacies that they may experience and may not abuse of or arbitrage such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
+msgid "The Company reserves the right to change any part of this Agreement at any time. We will endeavour to ensure affiliates are notified when changes have been made to this Agreement, but it is ultimately your responsibility to check these terms and conditions regularly. Your continued participation in our affiliate program after we have posted the changes will constitute binding acceptance of such changes."
 msgstr ""
 
 msgid "The Company reserves the right to suspend the operation of this site or sections thereof:"
@@ -6535,7 +6548,9 @@ msgstr "โทเค่นเพื่อตรวจสอบ"
 msgid "Verify new password"
 msgstr "ตรวจสอบรหัสผ่านใหม่"
 
-msgid "Version 40. Last modified 2016-05-12."
+#, fuzzy
+#| msgid "Version 40. Last modified 2016-05-12."
+msgid "Version 41. Last modified 2016-06-27."
 msgstr "เวอร์ชัน 40 แก้ไขล่าสุดเมื่อ 2016-05-12"
 
 msgid "View"
