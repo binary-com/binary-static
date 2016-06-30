@@ -29,6 +29,7 @@ var Message = (function () {
                     PricingTable.processBuy(response);
                 }
                 Purchase.display(response);
+                GTM.push_purchase_data(response);
             } else if (type === 'tick') {
                 processTick(response);
             } else if (type === 'history') {
