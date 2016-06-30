@@ -270,10 +270,10 @@ var ViewPopupWS = (function() {
               Highchart.show_chart(contract);
             }
             if (candleForgotten && tickForgotten) {
-              Highchart.show_chart(contract, 'update');
-              if (contract.entry_tick_time) {
-                chartStarted = true;
-              }
+                Highchart.show_chart(contract, 'update');
+                if (contract.entry_tick_time) {
+                    chartStarted = true;
+                }
             }
         } else if (contract.tick_count && !chartUpdated) {
             WSTickDisplay.updateChart('', contract);
