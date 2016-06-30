@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Chinese (China) (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-21 08:26+0000\n"
+"PO-Revision-Date: 2016-06-26 03:48+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
@@ -65,7 +65,9 @@ msgstr "%1 和牛/熊徽标是注册商标。"
 msgid "%1 does not charge any transfer fees."
 msgstr "%1不收取任何转账费用。"
 
-msgid "%1 gives everyone an easy and exciting way to participate in the financial markets. Trade with as little as $1 USD on major currencies, indices and commodities."
+#, fuzzy
+#| msgid "%1 gives everyone an easy and exciting way to participate in the financial markets. Trade with as little as $1 USD on major currencies, indices and commodities."
+msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities."
 msgstr "%1让每个人都能轻松、愉快地参与金融市场。您可交易各主要货币、指数和大宗商品，投资门槛低至1美元。"
 
 msgid "%1 has created Volatility Indices that you can trade 24/7. You can trade these on all types of contract:"
@@ -393,25 +395,17 @@ msgstr ""
 "  <li>横幅广告应包含的特定信息。</li>\n"
 " </ul>"
 
-#, fuzzy
-#| msgid "<span>All durations:</span> from 10 seconds to 365 days."
 msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
-msgstr "<span>所有合约期限:</span>从10 秒到 365 天。"
+msgstr "<span class='color-green font-weight-700'>所有合约期限:</span>从10 秒到 365 天。"
 
-#, fuzzy
-#| msgid "<span>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
 msgid "<span class='color-green font-weight-700'>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
-msgstr "<span>所有市场条件:</span>上涨/下跌，触及/未触及，范围内/范围外。"
+msgstr "<span class='color-green font-weight-700'>所有市场条件:</span>上涨/下跌，触及/未触及，范围内/范围外。"
 
-#, fuzzy
-#| msgid "<span>All markets:</span> currencies, stocks, indices, and commodities."
 msgid "<span class='color-green font-weight-700'>All markets:</span> currencies, stocks, indices, and commodities."
-msgstr "<span>所有市场:</span>外汇、股指和大宗商品。"
+msgstr "<span class='color-green font-weight-700'>所有市场:</span>外汇、股指和大宗商品。"
 
-#, fuzzy
-#| msgid "<span>All payouts:</span> from $1 to $50,000."
 msgid "<span class='color-green font-weight-700'>All payouts:</span> from $1 to $50,000."
-msgstr "<span>所有赔付额:</span>从 1 美元到 5 万美元。"
+msgstr "<span class='color-green font-weight-700'>所有赔付额:</span>从 1 美元到 5 万美元。"
 
 msgid "<strong>2-way pricing</strong> - %1 quotes a trade and the counter-trade, so you always get unbiased, transparent prices."
 msgstr "<strong>双边报价</strong> - %1 提供交易与反向交易的报价，因此您将始终获得公正透明的价格。"
@@ -1756,6 +1750,9 @@ msgstr "购入合约"
 msgid "Contracts may not expire on a weekend; therefore the expiry date of a contract may be pushed back to the following Monday in the event of a contract expiry date falling on a Saturday or a Sunday."
 msgstr "合约不能在周末到期，因此，如果合约的原定到期日为周六或周日，可能需延后至下周周一。"
 
+msgid "Contracts offered by Binary Investments (Europe) Ltd. have a minimum purchase price of USD/GBP/EUR 5."
+msgstr ""
+
 msgid "Contracts sold"
 msgstr "售出合约"
 
@@ -1860,6 +1857,11 @@ msgstr "当前"
 
 msgid "Current Level"
 msgstr "当前价位"
+
+#, fuzzy
+#| msgid "Current time:"
+msgid "Current Time"
+msgstr "当前时间:"
 
 msgid "Current password"
 msgstr "当前密码"
@@ -2091,9 +2093,6 @@ msgstr "应用各种在线和离线营销能力扩大公司的活跃联盟网络
 
 msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
 msgstr "由于最近的法规变更，客户必须填写以下金融评估。您须填写完成才能继续交易。"
-
-msgid "Due to the impending Brexit vote, returns on some instruments may be lower than usual until Friday."
-msgstr ""
 
 msgid "Duration"
 msgstr "期限"
@@ -2989,10 +2988,8 @@ msgstr "如果您选择具体的<strong>结束时间</strong>，交易<strong>�
 msgid "If you want to profit from this high demand product then your best option is to partner with the market leader. %1 has been in the business for over 15 years, and has been successful ever since."
 msgstr "要通过这个极受欢迎的产品获利，与市场领先者合作是您最佳的选择。%1 从事该行业已超过15年，一直很成功。"
 
-#, fuzzy
-#| msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:affiliates@binary.com'>%1</a>"
 msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='%1'>%2</a>"
-msgstr "如您希望获取成为付款代理的更多详情，请随时通过<a href='mailto:affiliates@binary.com'>%1</a> 联系我们"
+msgstr "如您希望获取成为付款代理的更多详情，请随时通过<a href='%1'>%2</a> 联系我们"
 
 msgid "If you would like to file a complaint with regards to our service, kindly contact us providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within 1-2 weeks (and at most within 2 months) from receipt of all relevant details."
 msgstr "如果您想投诉我们的服务，请与我们联系并提供所有相关的细节。我们将进行调查并予以答复，一般会在收到所有信息后的2周至2月内提供最终回应。"
@@ -3153,10 +3150,8 @@ msgstr "即时"
 msgid "Insufficient balance"
 msgstr "余额不足"
 
-#, fuzzy
-#| msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:affiliates@binary.com'>hear from you!</a>"
 msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='%2'>hear from you!</a>"
-msgstr "感兴趣，接下来该怎么做？如您可向我们的客户提供特殊的电子付款方式或 %1目前不支持的本地付款选项，且在市场上有良好的记录，我们非常乐意通过<a href='mailto:affiliates@binary.com'>收到您的消息!</a>"
+msgstr "感兴趣，接下来该怎么做？如您可向我们的客户提供特殊的电子付款方式或 %1目前不支持的本地付款选项，且在市场上有良好的记录，我们非常乐意通过<a href='%2'>收到您的消息!</a>"
 
 msgid "Interested? Why not try a virtual account"
 msgstr "感兴趣？何不开个虚拟账户试试"
@@ -4255,9 +4250,6 @@ msgstr "注意：您必须完全通过付款代理存款才可使用付款代理
 msgid "Notes:"
 msgstr "注："
 
-msgid "Notice"
-msgstr ""
-
 msgid "Notification of Changes"
 msgstr "变动通知"
 
@@ -4597,6 +4589,9 @@ msgstr "权限"
 msgid "Personal Details"
 msgstr "个人资料"
 
+msgid "Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
+msgstr ""
+
 msgid "Pip"
 msgstr "点"
 
@@ -4657,10 +4652,8 @@ msgstr "请输入有效金额。"
 msgid "Please enter an integer value"
 msgstr "请输入整数"
 
-#, fuzzy
-#| msgid "Please enter date in the format YYYY-MM-DD."
 msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
-msgstr "请输入日期，格式为年-月-日。"
+msgstr "请输入日期，格式为年-月-日 时：分（当地时间）。"
 
 msgid "Please enter date in the format YYYY-MM-DD."
 msgstr "请输入日期，格式为年-月-日。"
@@ -4722,10 +4715,8 @@ msgstr "请指定您的优选实况调查间隔时间分钟数"
 msgid "Please submit a valid %1."
 msgstr "请提交有效的 %1。"
 
-#, fuzzy
-#| msgid "Please submit the above information to <a href='mailto:affiliates@binary.com'>%1</a>."
 msgid "Please submit the above information to <a href='%1'>%2</a>."
-msgstr "请将以上信息发送到<a href='mailto:affiliates@binary.com'>%1</a>。"
+msgstr "请将以上信息发送到<a href='%1'>>%2</a>。"
 
 msgid "Please try again."
 msgstr "请重试。"
@@ -5292,7 +5283,7 @@ msgid "Sharp prices"
 msgstr "精准报价"
 
 msgid "Shop"
-msgstr ""
+msgstr "商店"
 
 msgid "Short"
 msgstr "短仓"
@@ -5743,11 +5734,13 @@ msgstr "如果公司收到可能涉及替代性纠纷调解机构的申诉，或
 msgid "The Company reserves the right in its sole discretion to refuse and/or cancel services, charge deposit and/or withdrawal fees to anyone for any reasons including, but not limited to:"
 msgstr "公司有权自行拒绝和/或取消服务、收取存款和/或取款费用，理由包括但不限于："
 
+#, fuzzy
+#| msgid "The Company reserves the right to restrict client trading and/or cancel or reverse transactions in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug or glitch in our website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, or manifest mis-calculation of prices or other manifest error. Clients have a duty to report to the Company any such problems, errors or suspected system inadequacies that they may experience and may not abuse of or arbitrage such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
+msgid "The Company reserves the right to cancel/reverse transactions or amend the contractual terms (including, but not limited to, entry and exit spot) in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug or glitch in our website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, or manifest mis-calculation of prices or other obvious errors (\"Manifest Errors\"). Clients have a duty to report to the Company any such problems, errors or suspected system inadequacies that they may experience and may not abuse of or arbitrage such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Any amendments to the contractual terms (including, but not limited to, entry and exit spot) of Manifestly Erroneous contracts shall be reasonable and fair. Monies exchanged between oneself and the Company in connection with Manifestly Erroneous contracts shall be returned to the recipient according to the amendments made to the contractual terms (including, but not limited to, entry and exit spot). You further acknowledge and agree that the Company will not be held liable or responsible, whether directly or indirectly, for any loss, expenses or damage caused or alleged to be caused by or in connection with a Manifest Error."
+msgstr "如果由于我们网站软件没有检测出的编程错误、病毒或缺陷、市场数据输入或合约价格延迟、数据输入错误、报价差异、错误价格参数、价单计算错误或其他清单错误导致任何交易合约的购买或售出价格未能反映公平的市场价格或者以异常低的风险购买和售出，公司保留限制客户交易和/或取消或撤回交易的权利。顾客有义务向公司报告其所经历的任何问题或可能的系统缺陷，不得滥用系统缺陷盈利。公司将努力在最短时间内解决这些问题。拥有任何金融市场或者工具的内幕信息的人员禁止在本网站上交易。"
+
 msgid "The Company reserves the right to change any part of this Agreement at any time. We will endeavour to ensure affiliates are notified when changes have been made to this Agreement, but it is ultimately your responsibility to check these terms and conditions regularly. Your continued participation in our affiliate program after we have posted the changes will constitute binding acceptance of such changes."
 msgstr "公司有权随时修改本协议的任何内容。我们会尽量把协议修改详情通知联盟成员，但您有责任定期检查相应条款和条件。在修改正式公布后，您继续参加联盟计划的行为表示您接收该修改内容的约束。"
-
-msgid "The Company reserves the right to restrict client trading and/or cancel or reverse transactions in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug or glitch in our website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, or manifest mis-calculation of prices or other manifest error. Clients have a duty to report to the Company any such problems, errors or suspected system inadequacies that they may experience and may not abuse of or arbitrage such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
-msgstr "如果由于我们网站软件没有检测出的编程错误、病毒或缺陷、市场数据输入或合约价格延迟、数据输入错误、报价差异、错误价格参数、价单计算错误或其他清单错误导致任何交易合约的购买或售出价格未能反映公平的市场价格或者以异常低的风险购买和售出，公司保留限制客户交易和/或取消或撤回交易的权利。顾客有义务向公司报告其所经历的任何问题或可能的系统缺陷，不得滥用系统缺陷盈利。公司将努力在最短时间内解决这些问题。拥有任何金融市场或者工具的内幕信息的人员禁止在本网站上交易。"
 
 msgid "The Company reserves the right to suspend the operation of this site or sections thereof:"
 msgstr "公司有权中止网站或其中某些版块的运营："
@@ -6197,7 +6190,7 @@ msgid "Time"
 msgstr "时间"
 
 msgid "Time out until"
-msgstr ""
+msgstr "时间已过。下次开启时间为"
 
 msgid "Times are changing. We increase payouts so our clients can make the most of their winning trades."
 msgstr "时代在变。我们增加了赔付金额，使客户可以从盈利交易中获取最大的收益。"
@@ -6511,7 +6504,9 @@ msgstr "验证令牌"
 msgid "Verify new password"
 msgstr "验证新密码"
 
-msgid "Version 40. Last modified 2016-05-12."
+#, fuzzy
+#| msgid "Version 40. Last modified 2016-05-12."
+msgid "Version 41. Last modified 2016-06-27."
 msgstr "版本40。最后修改时间为 2016年05月12日。"
 
 msgid "View"
@@ -7891,9 +7886,6 @@ msgstr "{JAPAN ONLY}Introduction to Binary Options"
 msgid "{JAPAN ONLY}It cannot be said that binary options trading is unconditionally advanteous over regular spot fx trading, because investors may lose all of their investment whereas in spot fx trading there will still be some value in the trading position."
 msgstr "{JAPAN ONLY}It cannot be said that binary options trading is unconditionally advanteous over regular spot fx trading, because investors may lose all of their investment whereas in spot fx trading there will still be some value in the trading position."
 
-msgid "{JAPAN ONLY}It is determined that proper by the results of this test, if you want to start the transaction, and then also as a trouble on the transaction occurred between the Company , the Company despite missing is knowledge related to options trading trading cause of action and you agree that you will not is that it has admitted ."
-msgstr "{JAPAN ONLY}It is determined that proper by the results of this test, if you want to start the transaction, and then also as a trouble on the transaction occurred between the Company , the Company despite missing is knowledge related to options trading trading cause of action and you agree that you will not is that it has admitted ."
-
 msgid "{JAPAN ONLY}It is determined the customers have basic knowledge of option trading by the results of the knowledge test. If the customers start trading, the customers need to agree not have lawsuit despite the customer are shortage of knowledge related to options trading, and it cause damages, we admit to open the trading account."
 msgstr "{JAPAN ONLY}It is determined the customers have basic knowledge of option trading by the results of the knowledge test. If the customers start trading, the customers need to agree not have lawsuit despite the customer are shortage of knowledge related to options trading, and it cause damages, we admit to open the trading account."
 
@@ -8139,6 +8131,15 @@ msgstr "{JAPAN ONLY}Where broking companies show bid and offer prices for purcha
 
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
+
+#~ msgid "Due to the impending Brexit vote, returns on some instruments may be lower than usual until Friday."
+#~ msgstr "因英国退出欧盟公投即将举行，直到星期五以前一些交易工具的回报可能会比平时低。"
+
+#~ msgid "Notice"
+#~ msgstr "通知"
+
+#~ msgid "{JAPAN ONLY}It is determined that proper by the results of this test, if you want to start the transaction, and then also as a trouble on the transaction occurred between the Company , the Company despite missing is knowledge related to options trading trading cause of action and you agree that you will not is that it has admitted ."
+#~ msgstr "{JAPAN ONLY}It is determined that proper by the results of this test, if you want to start the transaction, and then also as a trouble on the transaction occurred between the Company , the Company despite missing is knowledge related to options trading trading cause of action and you agree that you will not is that it has admitted ."
 
 #~ msgid "%1 is an active proponent of the open-source movement. Suggest enhancements, and take part in the development of our powerful applications. You can find more information on our <a href=\"%2\" target=\"_blank\">Developers Portal</a>."
 #~ msgstr "%1 是活跃的开源移动支持者。请提出增强功能的建议，并参与开发我们强大的应用程序。您可在我们的<a href=\"%2\" target=\"_blank\">程序员门户</a>获取详细信息。"

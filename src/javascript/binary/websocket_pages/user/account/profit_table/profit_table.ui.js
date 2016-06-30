@@ -110,10 +110,20 @@ var ProfitTableUI = (function(){
         $("#" + profitTableID + ">tfoot").hide();
     }
 
+    function errorMessage(msg) {
+        var $err = $('#profit-table-ws-container #err-msg');
+        if(msg) {
+            $err.removeClass('invisible').text(msg);
+        } else {
+            $err.addClass('invisible').text('');
+        }
+    }
+
     return {
         createEmptyTable: createEmptyTable,
         updateProfitTable: updateProfitTable,
         initDatepicker: initDatepicker,
-        cleanTableContent: clearTableContent
+        cleanTableContent: clearTableContent,
+        errorMessage: errorMessage
     };
 }());

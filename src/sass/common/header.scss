@@ -22,7 +22,7 @@
         @include BIDIR_PROP(margin-left, margin-right, auto);
     }
     #gmt-clock, #contact-us, .upgrademessage {
-        padding-top: 3px;
+        align-self: center;
     }
     .upgrademessage a {
         @include link-button;
@@ -104,7 +104,7 @@
     }
     #mobile-menu-icon {
         img {
-            max-height: 35px;
+            max-width: 32px;
         }
     }
     #mobile-menu-icon-container {

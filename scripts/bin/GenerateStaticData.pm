@@ -36,6 +36,10 @@ sub _texts {
         push @texts, localize("(Bejing/CST -8 hours)");
         push @texts, localize('You must accept the terms and conditions to open an account.');
         push @texts, localize('We are not accepting accounts from residents of this country at the present time.');
+        # top bar
+        push @texts, localize('Upgrade to a Real Account');
+        push @texts, localize('Upgrade to a Financial Account');
+        push @texts, localize('Open a Financial Account');
         # menu items
         push @texts, localize('Start Trading');
         push @texts, localize('My Account');
@@ -529,7 +533,6 @@ sub _texts {
         push @texts, localize('{JAPAN ONLY}This knowledge test is required by law. As we provide the test, we know customers better whether the customers are suitable investors to be carried out the binary options trading, and customers can start trading with us.');
         push @texts, localize('{JAPAN ONLY}To invest a binary options investment accurately, the customer are required knowledge and experience related to derivative transactions.');
         push @texts, localize('{JAPAN ONLY}This test is for the purpose of confirming if the customers have basic knowledge related to options trading .');
-        push @texts, localize('{JAPAN ONLY}It is determined that proper by the results of this test, if you want to start the transaction, and then also as a trouble on the transaction occurred between the Company , the Company despite missing is knowledge related to options trading trading cause of action and you agree that you will not is that it has admitted .');
         push @texts, localize('{JAPAN ONLY}It is determined the customers have basic knowledge of option trading by the results of the knowledge test. If the customers start trading, the customers need to agree not have lawsuit despite the customer are shortage of knowledge related to options trading, and it cause damages, we admit to open the trading account.');
         push @texts, localize('{JAPAN ONLY}It prohibits the copying of the questions . In addition , You agree that you will not leak to third party');
         push @texts, localize('You need to finish all 20 questions.');
@@ -642,6 +645,7 @@ sub _texts {
         push @texts, localize('Contract is not started yet');
         push @texts, localize('Price');
         push @texts, localize('Spot Time');
+        push @texts, localize('Current Time');
         push @texts, localize('Exit Spot Time');
         push @texts, localize('Exit Spot');
         push @texts, localize('Indicative');
@@ -754,6 +758,13 @@ sub _texts {
         push @texts, localize('There was a problem validating your personal details. Please fix the fields [_1]here');
         push @texts, localize('If you need assistance feel free to contact our [_1]Customer Support');
         push @texts, localize('Your account is not fully authenticated. Please visit the <a href="[_1]">authentication</a> page for more information.');
+
+        # page titles from config/pages.pl
+        require "config/pages.pl";
+        my @m = all_pages();
+        foreach my $m (@m) {
+            push @texts, localize($m->[3]) if $m->[3];
+        }
 
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";

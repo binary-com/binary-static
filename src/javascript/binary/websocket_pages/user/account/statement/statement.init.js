@@ -23,6 +23,11 @@ var StatementWS = (function(){
     };
 
     function statementHandler(response){
+        if(response.hasOwnProperty('error')) {
+            StatementUI.errorMessage(response.error.message);
+            return;
+        }
+
         pending = false;
 
         var statement = response.statement;
@@ -103,7 +108,7 @@ var StatementWS = (function(){
         transactionsReceived = 0;
         transactionsConsumed = 0;
 
-        $(".error-msg").text("");
+        StatementUI.errorMessage(null);
 
         StatementUI.clearTableContent();
     }

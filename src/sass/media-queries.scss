@@ -46,10 +46,11 @@
         display: block;
         position: relative !important;
         left: 0px !important;
-        width: 100% !important;
+        width: 99% !important;
         z-index: 1 !important;
         margin-top: 0px !important;
         background: $COLOR_WHITE;
+        @include BIDIR_PROP(margin-left, margin-right, 1px);
     }
 }
 

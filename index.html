@@ -44,13 +44,34 @@
                 }
                 return conLang;
             }
-            function redirect(lang) {
+            function redirect() {
                 window.location.href = (lang || 'en').toLowerCase() + '/' + (getCookieItem('loginid') ? 'trading' : 'home') + '.html';
+            }
+            function isDelayedRedirect() {
+                if(isGtmApplicable() && !window.redirectTimeOut) {
+                    window.redirectTimeOut = setTimeout(redirect, 5000);
+                } else {
+                    clearTimeout(window.redirectTimeOut);
+                    redirect();
+                }
+            }
+            function isGtmApplicable() {
+                return /www\.binary\.com/i.test(window.location.hostname);
+            }
+            function pushEvent() {
+                if(isGtmApplicable()) {
+                    dataLayer.push({
+                        'event': 'fireEvent',
+                        'eventCallback': function() {
+                            isDelayedRedirect();
+                        }
+                    });
+                }
             }
 
             var lang = getCookieItem('language');
             if(lang) {
-                redirect(lang);
+                isDelayedRedirect();
             } else {
                 var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3');
                 ws.onopen = function(e) {
@@ -63,10 +84,21 @@
                             lang = getLanguage(response.website_status.clients_country);
                         }
                         ws.close();
-                        redirect(lang);
+                        isDelayedRedirect();
                     }
                 };
             }
         </script>
     </head>
+    <body onload="pushEvent()">
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MZWFF7"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script data-cfasync="false">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MZWFF7');</script>
+<!-- End Google Tag Manager -->
+    </body>
 </html>

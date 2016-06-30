@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Italian (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-22 13:15+0000\n"
+"PO-Revision-Date: 2016-06-23 13:18+0000\n"
 "Last-Translator: Annalisa <ligiu@me.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/binary/static/it/>\n"
 "Language: it\n"
@@ -63,7 +63,9 @@ msgstr "%1 e il logo toro/orso sono marchi registrati."
 msgid "%1 does not charge any transfer fees."
 msgstr "%1 non applica alcuna commissione sui trasferimenti di denaro."
 
-msgid "%1 gives everyone an easy and exciting way to participate in the financial markets. Trade with as little as $1 USD on major currencies, indices and commodities."
+#, fuzzy
+#| msgid "%1 gives everyone an easy and exciting way to participate in the financial markets. Trade with as little as $1 USD on major currencies, indices and commodities."
+msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities."
 msgstr "%1 offre a tutti un metodo semplice ed emozionante per partecipare nei mercati finanziari. Negozia anche solo con $1 USD sulle principali valute, indici e materie prime."
 
 msgid "%1 has created Volatility Indices that you can trade 24/7. You can trade these on all types of contract:"
@@ -187,7 +189,7 @@ msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum loss
 msgstr "I Contratti Spread di %1 richiedono uno 'stop loss' in grado di limitare le perdite massime subite dal cliente. L'importo di questo 'stop loss' agirà quale deposito e non può essere utilizzato per ulteriori trading fino alla chiusura di tale Contratto Spread. Questi ultimi vengono chiusi al momento della vendita da parte del cliente, al raggiungimento della soglia di 'stop loss' o 'stop profit'."
 
 msgid "%1's Volatility Indices are based on a cryptographically secure random number generator audited for fairness by an independent third party."
-msgstr ""
+msgstr "Gli indici di volatilità di %1 si basano su un generatore di numeri random sicuri crittograficamente per correttezza da parte di una terza parte indipendente."
 
 msgid "%1's patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market."
 msgstr "La tecnologia brevettata per la determinazione dei prezzi di %1 ti consente di beneficiare delle stesse percentuali di rendimento dei trader del mercato interbancario."
@@ -987,10 +989,8 @@ msgstr "Sei pronto?"
 msgid "Are you sure that you want to permanently delete token"
 msgstr "Sei sicuro di voler eliminare definitivamente il token"
 
-#, fuzzy
-#| msgid "Are you sure that you want to permanently delete token"
 msgid "Are you sure that you want to permanently revoke access to application"
-msgstr "Sei sicuro di voler eliminare definitivamente il token"
+msgstr "Sei sicuro di voler revocare definitivamente l'accesso all'applicazione"
 
 msgid "Are your site visitors interested in:"
 msgstr "I visitatori del tuo sito sono interessati a:"
@@ -1110,12 +1110,10 @@ msgid "Award-winning, patented financial trading platform"
 msgstr "Una piattaforma di trading finanziario pluripremiata e brevettata"
 
 msgid "BIEL Pillar III"
-msgstr ""
+msgstr "BIEL Pillar III"
 
-#, fuzzy
-#| msgid "Prospectus"
 msgid "BIEL Prospectus"
-msgstr "Programma"
+msgstr "Programma BIEL"
 
 msgid "BIEL Terms"
 msgstr "Termini di BIEL"
@@ -1756,6 +1754,9 @@ msgstr "Contratti acquistati"
 msgid "Contracts may not expire on a weekend; therefore the expiry date of a contract may be pushed back to the following Monday in the event of a contract expiry date falling on a Saturday or a Sunday."
 msgstr "I contratti non possono scadere durante il weekend; pertanto la data di scadenza di un contratto può essere spostata al Lunedì successivo nel caso in cui la stessa cada di Sabato o di Domenica."
 
+msgid "Contracts offered by Binary Investments (Europe) Ltd. have a minimum purchase price of USD/GBP/EUR 5."
+msgstr ""
+
 msgid "Contracts sold"
 msgstr "Contratti venduti"
 
@@ -1860,6 +1861,11 @@ msgstr "Attuale"
 
 msgid "Current Level"
 msgstr "Livello attuale"
+
+#, fuzzy
+#| msgid "Current time:"
+msgid "Current Time"
+msgstr "Orario attuale:"
 
 msgid "Current password"
 msgstr "Password attuale"
@@ -2091,9 +2097,6 @@ msgstr "Guidare la rapida crescita di aree chiave del mondo, applicando una vari
 
 msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
 msgstr "A seguito di recenti variazioni normative, ai nostri clienti richiediamo di completare la seguente Valutazione finanziaria. Ti preghiamo di notare che non potrai continuare a fare trading fino a quando non l'avrai completato."
-
-msgid "Due to the impending Brexit vote, returns on some instruments may be lower than usual until Friday."
-msgstr ""
 
 msgid "Duration"
 msgstr "Durata"
@@ -4253,9 +4256,6 @@ msgstr "Nota: i prelievi tramite agente di pagamento sono disponibili solo se si
 msgid "Notes:"
 msgstr "Note:"
 
-msgid "Notice"
-msgstr ""
-
 msgid "Notification of Changes"
 msgstr "Notifica di modifiche"
 
@@ -4594,6 +4594,9 @@ msgstr "Autorizzazioni"
 
 msgid "Personal Details"
 msgstr "Informazioni personali"
+
+msgid "Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
+msgstr ""
 
 msgid "Pip"
 msgstr "Pip"
@@ -5739,11 +5742,13 @@ msgstr "La Società riceva un reclamo che avrebbe potuto coinvolgere l'organo di
 msgid "The Company reserves the right in its sole discretion to refuse and/or cancel services, charge deposit and/or withdrawal fees to anyone for any reasons including, but not limited to:"
 msgstr "La Società si riserva il diritto, a sua esclusiva discrezione, di rifiutare e/o annullare i servizi, applicare commissioni sui depositi e/o prelievi a chiunque per qualsiasi motivo, incluso, ma non limitato a:"
 
+#, fuzzy
+#| msgid "The Company reserves the right to restrict client trading and/or cancel or reverse transactions in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug or glitch in our website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, or manifest mis-calculation of prices or other manifest error. Clients have a duty to report to the Company any such problems, errors or suspected system inadequacies that they may experience and may not abuse of or arbitrage such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
+msgid "The Company reserves the right to cancel/reverse transactions or amend the contractual terms (including, but not limited to, entry and exit spot) in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug or glitch in our website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, or manifest mis-calculation of prices or other obvious errors (\"Manifest Errors\"). Clients have a duty to report to the Company any such problems, errors or suspected system inadequacies that they may experience and may not abuse of or arbitrage such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Any amendments to the contractual terms (including, but not limited to, entry and exit spot) of Manifestly Erroneous contracts shall be reasonable and fair. Monies exchanged between oneself and the Company in connection with Manifestly Erroneous contracts shall be returned to the recipient according to the amendments made to the contractual terms (including, but not limited to, entry and exit spot). You further acknowledge and agree that the Company will not be held liable or responsible, whether directly or indirectly, for any loss, expenses or damage caused or alleged to be caused by or in connection with a Manifest Error."
+msgstr "La Società si riserva il diritto di limitare il trading dei clienti e/o annullare o opporre le transazioni nel caso in cui un qualsiasi contratto finanziario venga acquisito o venduto a prezzi non conformi ai prezzi equi del mercato oppure acquisiti o venduti a un livello di rischio eccessivamente basso a causa di un errore, bug o glitch di programmazione non rilevato sul nostro software online, flussi di dati del mercato o latenza nei prezzi dei contratti, errore nei flussi dei dati, preventivi smarriti, parametri non corretti per la determinazione dei prezzi oppure errore evidente nel calcolo dei prezzi o altro errore. I Clienti hanno il dovere di segnalare alla Società qualsiasi problema, errore o eventuale inadeguatezza rilevata nel sistema e non possono abusare dei problemi del sistema per trarne un profitto. La Società si impegna a risolvere qualsiasi problema nel minor tempo possibile. Ai soggetti con conoscenze insider su qualsiasi mercato o strumento finanziario è vietato fare trading su questo sito internet."
+
 msgid "The Company reserves the right to change any part of this Agreement at any time. We will endeavour to ensure affiliates are notified when changes have been made to this Agreement, but it is ultimately your responsibility to check these terms and conditions regularly. Your continued participation in our affiliate program after we have posted the changes will constitute binding acceptance of such changes."
 msgstr "La Società si riserva il diritto di modificare qualsiasi parte del presente Accordo in qualsiasi momento. Facciamo di tutto per garantire che agli affiliati vengano notificate eventuali variazioni del presente Accordo, ma in definitiva la responsabilità per la verifica regolare dei presenti termini e condizioni è tua. La tua continua partecipazione al nostro programma di affiliazione in seguito a tale pubblicazione verrà considerata quale accettazione di tali modifiche."
-
-msgid "The Company reserves the right to restrict client trading and/or cancel or reverse transactions in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug or glitch in our website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, or manifest mis-calculation of prices or other manifest error. Clients have a duty to report to the Company any such problems, errors or suspected system inadequacies that they may experience and may not abuse of or arbitrage such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
-msgstr "La Società si riserva il diritto di limitare il trading dei clienti e/o annullare o opporre le transazioni nel caso in cui un qualsiasi contratto finanziario venga acquisito o venduto a prezzi non conformi ai prezzi equi del mercato oppure acquisiti o venduti a un livello di rischio eccessivamente basso a causa di un errore, bug o glitch di programmazione non rilevato sul nostro software online, flussi di dati del mercato o latenza nei prezzi dei contratti, errore nei flussi dei dati, preventivi smarriti, parametri non corretti per la determinazione dei prezzi oppure errore evidente nel calcolo dei prezzi o altro errore. I Clienti hanno il dovere di segnalare alla Società qualsiasi problema, errore o eventuale inadeguatezza rilevata nel sistema e non possono abusare dei problemi del sistema per trarne un profitto. La Società si impegna a risolvere qualsiasi problema nel minor tempo possibile. Ai soggetti con conoscenze insider su qualsiasi mercato o strumento finanziario è vietato fare trading su questo sito internet."
 
 msgid "The Company reserves the right to suspend the operation of this site or sections thereof:"
 msgstr "La Società si riserva il diritto di sospendere il funzionamento del presente sito o di sue sezioni:"
@@ -6042,10 +6047,8 @@ msgstr "Si è verificato un problema d'accesso al server."
 msgid "There was a problem validating your personal details. Please fix the fields %1here"
 msgstr "Si è verificato un problema nella procedura di convalida dei tuoi dati personali. Sistema i campi %1 qui"
 
-#, fuzzy
-#| msgid "There was a problem validating your personal details. Please fix the fields <a class=\"pjaxload\" href=\"%1\">here</a>."
 msgid "There was a problem validating your personal details. Please update your %1 <a class=\"pjaxload\" href=\"%2\">here</a>."
-msgstr "Si è verificato un problema nella procedura di convalida dei tuoi dati personali. Sistema i campi <a class=\"pjaxload\" href=\"%1\">qui</a>."
+msgstr "Si è verificato un problema nella procedura di convalida dei tuoi dati personali. Aggiorna i tuoi %1<a class=\"pjaxload\" href=\"%2\">qui</a>."
 
 msgid "There was an error"
 msgstr "Si è verificato un errore"
@@ -6509,7 +6512,9 @@ msgstr "Token di verifica"
 msgid "Verify new password"
 msgstr "Verifica la nuova password"
 
-msgid "Version 40. Last modified 2016-05-12."
+#, fuzzy
+#| msgid "Version 40. Last modified 2016-05-12."
+msgid "Version 41. Last modified 2016-06-27."
 msgstr "Versione 40. Ultima modifica 12-05-2016."
 
 msgid "View"
@@ -7886,9 +7891,6 @@ msgstr "{JAPAN ONLY}Introduction to Binary Options"
 msgid "{JAPAN ONLY}It cannot be said that binary options trading is unconditionally advanteous over regular spot fx trading, because investors may lose all of their investment whereas in spot fx trading there will still be some value in the trading position."
 msgstr "{JAPAN ONLY}It cannot be said that binary options trading is unconditionally advanteous over regular spot fx trading, because investors may lose all of their investment whereas in spot fx trading there will still be some value in the trading position."
 
-msgid "{JAPAN ONLY}It is determined that proper by the results of this test, if you want to start the transaction, and then also as a trouble on the transaction occurred between the Company , the Company despite missing is knowledge related to options trading trading cause of action and you agree that you will not is that it has admitted ."
-msgstr "{JAPAN ONLY}It is determined that proper by the results of this test, if you want to start the transaction, and then also as a trouble on the transaction occurred between the Company , the Company despite missing is knowledge related to options trading trading cause of action and you agree that you will not is that it has admitted ."
-
 msgid "{JAPAN ONLY}It is determined the customers have basic knowledge of option trading by the results of the knowledge test. If the customers start trading, the customers need to agree not have lawsuit despite the customer are shortage of knowledge related to options trading, and it cause damages, we admit to open the trading account."
 msgstr "{JAPAN ONLY}It is determined the customers have basic knowledge of option trading by the results of the knowledge test. If the customers start trading, the customers need to agree not have lawsuit despite the customer are shortage of knowledge related to options trading, and it cause damages, we admit to open the trading account."
 
@@ -8134,6 +8136,9 @@ msgstr "{JAPAN ONLY}Where broking companies show bid and offer prices for purcha
 
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
+
+#~ msgid "{JAPAN ONLY}It is determined that proper by the results of this test, if you want to start the transaction, and then also as a trouble on the transaction occurred between the Company , the Company despite missing is knowledge related to options trading trading cause of action and you agree that you will not is that it has admitted ."
+#~ msgstr "{JAPAN ONLY}It is determined that proper by the results of this test, if you want to start the transaction, and then also as a trouble on the transaction occurred between the Company , the Company despite missing is knowledge related to options trading trading cause of action and you agree that you will not is that it has admitted ."
 
 #~ msgid "%1 is an active proponent of the open-source movement. Suggest enhancements, and take part in the development of our powerful applications. You can find more information on our <a href=\"%2\" target=\"_blank\">Developers Portal</a>."
 #~ msgstr "%1 è un sostenitore attivo del movimento open-source. Suggerisci miglioramenti e prendi parte allo sviluppo delle nostre potenti applicazioni. Puoi trovare ulteriori informazioni sul nostro <a href=\"%2\" target=\"_blank\">Portale degli sviluppatori</a>."
