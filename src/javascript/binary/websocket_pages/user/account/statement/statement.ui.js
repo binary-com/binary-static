@@ -72,9 +72,19 @@ var StatementUI = (function(){
         return $statementRow[0];        //return DOM instead of jquery object
     }
 
+    function errorMessage(msg) {
+        var $err = $('#statement-ws-container #err-msg');
+        if(msg) {
+            $err.removeClass('invisible').text(msg);
+        } else {
+            $err.addClass('invisible').text('');
+        }
+    }
+
     return {
         clearTableContent: clearTableContent,
         createEmptyStatementTable: createEmptyStatementTable,
-        updateStatementTable: updateStatementTable
+        updateStatementTable: updateStatementTable,
+        errorMessage: errorMessage
     };
 }());
