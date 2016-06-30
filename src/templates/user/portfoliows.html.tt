@@ -2,6 +2,8 @@
 
     <h1 class="portfolio-header-margin">[% l('Portfolio') %]</h1>
 
+    <p class="notice-msg center-text invisible" id="err-msg"></p>
+
     <div id="portfolio-loading"></div>
 
     <div id="portfolio-content" class="dynamic">

@@ -2,16 +2,11 @@
     <div id="topbar">
         <div class="container">
             <div class="gr-row">
-                <div id="topbar-msg" class='gr-6 gr-5-t gr-12-p gr-12-m by_client_type client_virtual invisible upgrademessage'>
-                    <span class='gr-hide-m'>
+                <div id="topbar-msg" class='gr-6 gr-5-t gr-12-p gr-12-m invisible upgrademessage'>
+                    <span class='gr-hide-m invisible'>
                         <span id='virtual-text'>[% l("You're using a Virtual Account.") %]</span>
                     </span>
-                    <a class="pjaxload with_login_cookies pulser virtual-upgrade-link" href="[% request.url_for('new_account/realws') %]">[% l("Upgrade to a Real Account") %]</a>
-                    <a class="pjaxload with_login_cookies pulser vr-japan-upgrade-link" href="[% request.url_for('new_account/japanws') %]">[% l("Upgrade to a Real Account") %]</a>
-                    <a class="invisible pjaxload with_login_cookies pulser vr-financial-upgrade-link" href="[% request.url_for('new_account/maltainvestws') %]">[% l("Upgrade to a Financial Account") %]</a>
-                </div>
-                <div class='gr-6 gr-5-t gr-12-p gr-12-m by_client_type client_real invisible upgrademessage'>
-                    <a class="pjaxload with_login_cookies pulse financial-upgrade-link" href="[% request.url_for('new_account/maltainvestws') %]">[% l("Open a Financial Account") %]</a>
+                    <a class="pjaxload pulser"></a>
                 </div>
                 <div class='gr-6 gr-7-t gr-12-p gr-12-m' id='topbar-info'>
                     <div class="gr-row">

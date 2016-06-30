@@ -39,20 +39,8 @@
                                 <span class="withdraw">[% l('Withdraw') %]</span>
                             </a>
                         </div>
-                        <div class="gr-padding-10 by_client_type client_virtual with_login_cookies virtual-upgrade-link invisible">
-                            <a class="pjaxload button button_large by_client_type client_virtual with_login_cookies virtual-upgrade-link invisible" href="[% request.url_for('new_account/realws') %]">
-                                <span>[% l('Upgrade to a Real Account') %]</span>
-                            </a>
-                        </div>
-                        <div class="gr-padding-10 by_client_type client_virtual with_login_cookies vr-japan-upgrade-link invisible">
-                            <a class="pjaxload button button_large by_client_type client_virtual with_login_cookies vr-japan-upgrade-link invisible" href="[% request.url_for('new_account/japanws') %]">
-                                <span>[% l('Upgrade to a Real Account') %]</span>
-                            </a>
-                        </div>
-                        <div class="gr-padding-10 by_client_type client_virtual with_login_cookies vr-financial-upgrade-link invisible">
-                            <a class="pjaxload button button_large by_client_type client_virtual with_login_cookies vr-financial-upgrade-link invisible" href="[% request.url_for('new_account/maltainvestws') %]">
-                                <span>[% l('Upgrade to a Financial Account') %]</span>
-                            </a>
+                        <div class="gr-padding-10 invisible upgrademessage">
+                            <a class="pjaxload button button_large"></a>
                         </div>
                     </div>
                 </div>

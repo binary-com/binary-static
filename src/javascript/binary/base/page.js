@@ -85,6 +85,58 @@ var GTM = (function() {
         GTM.push_data_layer(data);
     };
 
+    var push_purchase_data = function(response) {
+        if (!gtm_applicable() || page.client.is_virtual()) return;
+        var req = response.echo_req.passthrough,
+            buy = response.buy;
+        var data = {
+            'event'              : 'buy_contract',
+            'visitorId'          : page.client.loginid,
+            'bom_symbol'         : req.symbol,
+            'bom_market'         : markets && markets.by_symbol(req.symbol) ?
+                markets.by_symbol(req.symbol).market.name :
+                document.getElementById('contract_markets').value,
+            'bom_currency'       : req.currency,
+            'bom_contract_type'  : req.contract_type,
+            'bom_contract_id'    : buy.contract_id,
+            'bom_transaction_id' : buy.transaction_id,
+            'bom_buy_price'      : buy.buy_price,
+            'bom_payout'         : buy.payout,
+        };
+        // Spread contracts
+        if (/spread/i.test(req.contract_type)) {
+            $.extend(data, {
+                'bom_stop_type'         : req.stop_type,
+                'bom_amount_per_point'  : buy.amount_per_point,
+                'bom_stop_loss_level'   : buy.stop_loss_level,
+                'bom_stop_profit_level' : buy.stop_profit_level,
+            });
+        } else {
+            $.extend(data, {
+                'bom_amount'      : req.amount,
+                'bom_basis'       : req.basis,
+                'bom_expiry_type' : document.getElementById('expiry_type').value,
+            });
+            if(data.bom_expiry_type === 'duration') {
+                $.extend(data, {
+                    'bom_duration'      : req.duration,
+                    'bom_duration_unit' : req.duration_unit,
+                });
+            }
+            if(isVisible(document.getElementById('barrier'))) {
+                data['bom_barrier'] = req.barrier;
+            } else if(isVisible(document.getElementById('barrier_high'))) {
+                data['bom_barrier_high'] = req.barrier;
+                data['bom_barrier_low']  = req.barrier2;
+            }
+            if(isVisible(document.getElementById('prediction'))) {
+                data['bom_prediction']  = req.barrier;
+            }
+        }
+
+        GTM.push_data_layer(data);
+    };
+
     var set_login_flag = function() {
         if (!gtm_applicable()) return;
         localStorage.setItem('GTM_login', '1');
@@ -98,6 +150,7 @@ var GTM = (function() {
     return {
         push_data_layer     : push_data_layer,
         event_handler       : event_handler,
+        push_purchase_data  : push_purchase_data,
         set_login_flag      : set_login_flag,
         set_newaccount_flag : set_newaccount_flag,
     };
@@ -922,36 +975,37 @@ Contents.prototype = {
             }
             var c_config = countries_list[this.client.residence];
 
+            var $upgrade_msg = $('.upgrademessage'),
+                hiddenClass  = 'invisible';
+            var hide_upgrade = function() {
+                $upgrade_msg.addClass(hiddenClass);
+            };
+            var show_upgrade = function(url, msg) {
+                $upgrade_msg.removeClass(hiddenClass)
+                    .find('a').attr('href', page.url.url_for(url)).html($('<span/>', {text: text.localize(msg)}));
+            };
+
             if (page.client.is_virtual()) {
-                var show_upgrade = true;
+                var show_upgrade_msg = true;
                 if (localStorage.getItem('jp_test_allowed')) {
-                    $('.virtual-upgrade-link').addClass('invisible');
-                    $('.vr-japan-upgrade-link').addClass('invisible');
-                    $('.vr-financial-upgrade-link').addClass('invisible');
-                    show_upgrade = false;           // do not show upgrade for user that filled up form
+                    hide_upgrade();
+                    show_upgrade_msg = false; // do not show upgrade for user that filled up form
                 }
-                for (var i=0;i<loginid_array.length;i++) {
+                for (var i = 0; i < loginid_array.length; i++) {
                     if (loginid_array[i].real) {
-                        $('.virtual-upgrade-link').addClass('invisible');
-                        $('.vr-japan-upgrade-link').addClass('invisible');
-                        $('.vr-financial-upgrade-link').addClass('invisible');
-                        show_upgrade = false;
+                        hide_upgrade();
+                        show_upgrade_msg = false;
                         break;
                     }
                 }
-                if (show_upgrade) {
+                if (show_upgrade_msg) {
+                    $upgrade_msg.find('> span').removeClass(hiddenClass);
                     if (c_config && c_config['gaming_company'] == 'none' && c_config['financial_company'] == 'maltainvest') {
-                        $('.vr-financial-upgrade-link').removeClass('invisible');
-                        $('.virtual-upgrade-link').addClass('invisible');
-                        $('.vr-japan-upgrade-link').addClass('invisible');
+                        show_upgrade('new_account/maltainvestws', 'Upgrade to a Financial Account');
                     } else if (c_config && c_config['gaming_company'] == 'none' && c_config['financial_company'] == 'japan') {
-                        $('.vr-japan-upgrade-link').removeClass('invisible');
-                        $('.virtual-upgrade-link').addClass('invisible');
-                        $('.vr-financial-upgrade-link').addClass('invisible');
+                        show_upgrade('new_account/japanws', 'Upgrade to a Real Account');
                     } else {
-                        $('.virtual-upgrade-link').removeClass('invisible');
-                        $('.vr-japan-upgrade-link').addClass('invisible');
-                        $('.vr-financial-upgrade-link').addClass('invisible');
+                        show_upgrade('new_account/realws', 'Upgrade to a Real Account');
                     }
                 }
             } else {
@@ -970,9 +1024,9 @@ Contents.prototype = {
                     }
                 }
                 if (show_financial) {
-                    $('.financial-upgrade-link').parent().removeClass('invisible');
+                    show_upgrade('new_account/maltainvestws', 'Open a Financial Account');
                 } else {
-                    $('.financial-upgrade-link').parent().addClass('invisible');
+                    hide_upgrade();
                 }
             }
         }
