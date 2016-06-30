@@ -60,7 +60,7 @@
           [% l("Clients from the rest of the world (excluding certain countries such as the USA, Japan, Costa Rica, Hong Kong) will have their account opened with Binary (C.R.) S.A.") %]
         </p>
         <p>
-          [% l("Binary.com is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system.") %]
+          [% l("[_1] is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system.", website_name) %]
         </p>
       </div>
     </div>

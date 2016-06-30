@@ -30,9 +30,7 @@
           </li>
         </ul>
         <div class="sidebar-button">
-          <a class="pjaxload" href="mailto:affiliates@binary.com">
-            [% l("Contact Us") %]
-          </a>
+          [% l("<a class='pjaxload' href='mailto:[_1]'>Contact Us</a>", affiliate_email) %]
         </div>
       </div>
     </div>
@@ -152,7 +150,7 @@
               <h1>
                 [% l("How does it work?") %]
               </h1>
-              <p>[% l("Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by [_1], and you have a good track record in the market, then we would love to <a href='[_2]'>hear from you!</a>", website_name, 'mailto:affiliates@binary.com') %]</p>
+              <p>[% l("Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by [_1], and you have a good track record in the market, then we would love to <a href='mailto:[_2]'>hear from you!</a>", website_name, affiliate_email) %]</p>
               <p>
                 [% l("As a first step, please send us an application with:") %]
               </p>
@@ -170,7 +168,7 @@
                   [% l("The commission you will charge Clients on deposits and withdrawals") %]
                 </li>
               </ul>
-              <p>[% l("Please submit the above information to <a href='[_1]'>[_2]</a>.", 'mailto:affiliates@binary.com', 'affiliates@binary.com') %]</p>
+              <p>[% l("Please submit the above information to <a href='mailto:[_1]'>[_1]</a>.", affiliate_email) %]</p>
               <p>
                 [% l("Once we receive your application, one of our affiliate managers will contact you to follow up with the next steps in the application process (this will include asking you to submit several documents).") %]
               </p>
@@ -187,7 +185,7 @@
               <h1>
                 [% l("Need more information?") %]
               </h1>
-              <p>[% l("If you would like more information on becoming a Payment Agent, please contact us at <a href='[_1]'>[_2]</a>", 'mailto:affiliates@binary.com', 'affiliates@binary.com') %]</p>
+              <p>[% l("If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:[_1]'>[_1]</a>", affiliate_email) %]</p>
               <p>
                 [% l("We look forward to hearing from you.") %]
               </p>

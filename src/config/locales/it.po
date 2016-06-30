@@ -63,7 +63,9 @@ msgstr "%1 e il logo toro/orso sono marchi registrati."
 msgid "%1 does not charge any transfer fees."
 msgstr "%1 non applica alcuna commissione sui trasferimenti di denaro."
 
-msgid "%1 gives everyone an easy and exciting way to participate in the financial markets. Trade with as little as $1 USD on major currencies, indices and commodities."
+#, fuzzy
+#| msgid "%1 gives everyone an easy and exciting way to participate in the financial markets. Trade with as little as $1 USD on major currencies, indices and commodities."
+msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities."
 msgstr "%1 offre a tutti un metodo semplice ed emozionante per partecipare nei mercati finanziari. Negozia anche solo con $1 USD sulle principali valute, indici e materie prime."
 
 msgid "%1 has created Volatility Indices that you can trade 24/7. You can trade these on all types of contract:"
@@ -1752,6 +1754,9 @@ msgstr "Contratti acquistati"
 msgid "Contracts may not expire on a weekend; therefore the expiry date of a contract may be pushed back to the following Monday in the event of a contract expiry date falling on a Saturday or a Sunday."
 msgstr "I contratti non possono scadere durante il weekend; pertanto la data di scadenza di un contratto può essere spostata al Lunedì successivo nel caso in cui la stessa cada di Sabato o di Domenica."
 
+msgid "Contracts offered by Binary Investments (Europe) Ltd. have a minimum purchase price of USD/GBP/EUR 5."
+msgstr ""
+
 msgid "Contracts sold"
 msgstr "Contratti venduti"
 
@@ -1856,6 +1861,11 @@ msgstr "Attuale"
 
 msgid "Current Level"
 msgstr "Livello attuale"
+
+#, fuzzy
+#| msgid "Current time:"
+msgid "Current Time"
+msgstr "Orario attuale:"
 
 msgid "Current password"
 msgstr "Password attuale"
@@ -4585,6 +4595,9 @@ msgstr "Autorizzazioni"
 msgid "Personal Details"
 msgstr "Informazioni personali"
 
+msgid "Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
+msgstr ""
+
 msgid "Pip"
 msgstr "Pip"
 
@@ -5729,11 +5742,13 @@ msgstr "La Società riceva un reclamo che avrebbe potuto coinvolgere l'organo di
 msgid "The Company reserves the right in its sole discretion to refuse and/or cancel services, charge deposit and/or withdrawal fees to anyone for any reasons including, but not limited to:"
 msgstr "La Società si riserva il diritto, a sua esclusiva discrezione, di rifiutare e/o annullare i servizi, applicare commissioni sui depositi e/o prelievi a chiunque per qualsiasi motivo, incluso, ma non limitato a:"
 
+#, fuzzy
+#| msgid "The Company reserves the right to restrict client trading and/or cancel or reverse transactions in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug or glitch in our website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, or manifest mis-calculation of prices or other manifest error. Clients have a duty to report to the Company any such problems, errors or suspected system inadequacies that they may experience and may not abuse of or arbitrage such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
+msgid "The Company reserves the right to cancel/reverse transactions or amend the contractual terms (including, but not limited to, entry and exit spot) in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug or glitch in our website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, or manifest mis-calculation of prices or other obvious errors (\"Manifest Errors\"). Clients have a duty to report to the Company any such problems, errors or suspected system inadequacies that they may experience and may not abuse of or arbitrage such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Any amendments to the contractual terms (including, but not limited to, entry and exit spot) of Manifestly Erroneous contracts shall be reasonable and fair. Monies exchanged between oneself and the Company in connection with Manifestly Erroneous contracts shall be returned to the recipient according to the amendments made to the contractual terms (including, but not limited to, entry and exit spot). You further acknowledge and agree that the Company will not be held liable or responsible, whether directly or indirectly, for any loss, expenses or damage caused or alleged to be caused by or in connection with a Manifest Error."
+msgstr "La Società si riserva il diritto di limitare il trading dei clienti e/o annullare o opporre le transazioni nel caso in cui un qualsiasi contratto finanziario venga acquisito o venduto a prezzi non conformi ai prezzi equi del mercato oppure acquisiti o venduti a un livello di rischio eccessivamente basso a causa di un errore, bug o glitch di programmazione non rilevato sul nostro software online, flussi di dati del mercato o latenza nei prezzi dei contratti, errore nei flussi dei dati, preventivi smarriti, parametri non corretti per la determinazione dei prezzi oppure errore evidente nel calcolo dei prezzi o altro errore. I Clienti hanno il dovere di segnalare alla Società qualsiasi problema, errore o eventuale inadeguatezza rilevata nel sistema e non possono abusare dei problemi del sistema per trarne un profitto. La Società si impegna a risolvere qualsiasi problema nel minor tempo possibile. Ai soggetti con conoscenze insider su qualsiasi mercato o strumento finanziario è vietato fare trading su questo sito internet."
+
 msgid "The Company reserves the right to change any part of this Agreement at any time. We will endeavour to ensure affiliates are notified when changes have been made to this Agreement, but it is ultimately your responsibility to check these terms and conditions regularly. Your continued participation in our affiliate program after we have posted the changes will constitute binding acceptance of such changes."
 msgstr "La Società si riserva il diritto di modificare qualsiasi parte del presente Accordo in qualsiasi momento. Facciamo di tutto per garantire che agli affiliati vengano notificate eventuali variazioni del presente Accordo, ma in definitiva la responsabilità per la verifica regolare dei presenti termini e condizioni è tua. La tua continua partecipazione al nostro programma di affiliazione in seguito a tale pubblicazione verrà considerata quale accettazione di tali modifiche."
-
-msgid "The Company reserves the right to restrict client trading and/or cancel or reverse transactions in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug or glitch in our website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, or manifest mis-calculation of prices or other manifest error. Clients have a duty to report to the Company any such problems, errors or suspected system inadequacies that they may experience and may not abuse of or arbitrage such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
-msgstr "La Società si riserva il diritto di limitare il trading dei clienti e/o annullare o opporre le transazioni nel caso in cui un qualsiasi contratto finanziario venga acquisito o venduto a prezzi non conformi ai prezzi equi del mercato oppure acquisiti o venduti a un livello di rischio eccessivamente basso a causa di un errore, bug o glitch di programmazione non rilevato sul nostro software online, flussi di dati del mercato o latenza nei prezzi dei contratti, errore nei flussi dei dati, preventivi smarriti, parametri non corretti per la determinazione dei prezzi oppure errore evidente nel calcolo dei prezzi o altro errore. I Clienti hanno il dovere di segnalare alla Società qualsiasi problema, errore o eventuale inadeguatezza rilevata nel sistema e non possono abusare dei problemi del sistema per trarne un profitto. La Società si impegna a risolvere qualsiasi problema nel minor tempo possibile. Ai soggetti con conoscenze insider su qualsiasi mercato o strumento finanziario è vietato fare trading su questo sito internet."
 
 msgid "The Company reserves the right to suspend the operation of this site or sections thereof:"
 msgstr "La Società si riserva il diritto di sospendere il funzionamento del presente sito o di sue sezioni:"
@@ -6497,7 +6512,9 @@ msgstr "Token di verifica"
 msgid "Verify new password"
 msgstr "Verifica la nuova password"
 
-msgid "Version 40. Last modified 2016-05-12."
+#, fuzzy
+#| msgid "Version 40. Last modified 2016-05-12."
+msgid "Version 41. Last modified 2016-06-27."
 msgstr "Versione 40. Ultima modifica 12-05-2016."
 
 msgid "View"

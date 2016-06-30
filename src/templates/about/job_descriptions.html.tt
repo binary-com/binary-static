@@ -108,7 +108,7 @@
               [% l("Quantitative Analyst") %]
             </h3>
             <p>
-              [% l("Responsible for the pricing of binary options offered on the Binary.com website and the risk management and profitability of its options book.") %]
+              [% l("Responsible for the pricing of binary options offered on the [_1] website and the risk management and profitability of its options book.", website_name) %]
             </p>
             <a class="pjaxload" href="[% request.url_for('/open-positions/job-details?dept=Quantitative_Analysis#section-two') %]">
               [% l("Learn more") %]

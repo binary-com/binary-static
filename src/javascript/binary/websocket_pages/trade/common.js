@@ -919,3 +919,10 @@ function setChartSource() {
 function isJapanTrading(){
     return $('#trading_socket_container.japan').length;
 }
+
+//used temporarily for mocha test
+if (typeof module !== 'undefined') {
+    module.exports = {
+        addComma: addComma
+    };
+}

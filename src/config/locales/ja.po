@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-27 01:53+0000\n"
-"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
+"PO-Revision-Date: 2016-06-29 06:01+0000\n"
+"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -70,7 +70,9 @@ msgstr "当社の社名とブル/ベアのロゴは、登録商標です。"
 msgid "%1 does not charge any transfer fees."
 msgstr "当社はご入金、及びご出金時に手数料を課しません。"
 
-msgid "%1 gives everyone an easy and exciting way to participate in the financial markets. Trade with as little as $1 USD on major currencies, indices and commodities."
+#, fuzzy
+#| msgid "%1 gives everyone an easy and exciting way to participate in the financial markets. Trade with as little as $1 USD on major currencies, indices and commodities."
+msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities."
 msgstr "当社では、皆様に簡単かつ効果的なトレードの機会を提供します。主要通貨ペアを1,000円からお取引頂けます。"
 
 msgid "%1 has created Volatility Indices that you can trade 24/7. You can trade these on all types of contract:"
@@ -424,7 +426,7 @@ msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>幅広い取引期間</strong>：2時間以上から取引期間の指定が可能です"
 
 msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
-msgstr "<strong>どのような市場状況でもトレードが可能</strong>： HIGH/LOW、TOUCH/NO-TOUCH、STAY-IN/BREAK-OUTなど。"
+msgstr "<strong>どのような市場状況でもトレードが可能</strong>： ラダーHIGH/ラダーLOW、TOUCH/NO-TOUCH、STAY-IN/BREAK-OUTなど。"
 
 msgid "<strong>All markets, all conditions</strong> - trade currencies, indices and commodities in rising, falling, sideways, quiet and volatile markets."
 msgstr "<strong>どんな相場状況でも</strong>：上昇、下落、保ち合い、荒れ相場、いかなる状況でもお取引が期待できます。"
@@ -861,7 +863,7 @@ msgid "All opinions, news, research, analysis, prices or other information conta
 msgstr "当社サイトに掲載されているご意見、ニュース、リサーチ、分析、価格などの情報は、一般的な市場に関するコメントであり、投資に関する助言ではありません。％1ではそのような情報の使用または依存から直接または間接的に生じる可能性がある利益の損失、損害についての責任を一切負いません。"
 
 msgid "All times are in GMT (Greenwich Mean Time)."
-msgstr "当社サイトの時間表示は全て、GMT（グリニッジ標準時）に基づきます。また、主要ペア以外は、当社では取り扱っておりませんので参考情報としてご利用ください。"
+msgstr "当社サイトの時間表示は全て、GMT（グリニッジ標準時）に基づきます。また、当社ではすべての金融商品を取り扱っておりませんので参考情報としてご利用ください。"
 
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "クライアントへ低い金額（現地通貨）での入金を許可する"
@@ -1115,7 +1117,7 @@ msgid "Award-winning, patented financial trading platform"
 msgstr "受賞履歴を誇る特許取得済みのトレードプラットフォームを提供"
 
 msgid "BIEL Pillar III"
-msgstr ""
+msgstr "BIELの3本柱"
 
 msgid "BIEL Prospectus"
 msgstr "BIEL目論見書"
@@ -1700,19 +1702,19 @@ msgid "Contact us"
 msgstr "お問い合わせ"
 
 msgid "Content 1 for tab 1"
-msgstr ""
+msgstr "タブ１のコンテンツ１"
 
 msgid "Content 2 for tab 2. active by default"
-msgstr ""
+msgstr "タブ２のコンテンツ２。デフォルト表示"
 
 msgid "Content 2/1 for tab 2 submenu 1"
-msgstr ""
+msgstr "タブ２サブメニュー１のコンテンツ2/1"
 
 msgid "Content 2/2 for tab 2 submenu 2"
-msgstr ""
+msgstr "タブ２サブメニュー２のコンテンツ2/2"
 
 msgid "Content 3 for tab 3"
-msgstr ""
+msgstr "タブ３のコンテンツ３"
 
 msgid "Continue"
 msgstr "続ける"
@@ -1776,6 +1778,9 @@ msgstr "契約を購入"
 
 msgid "Contracts may not expire on a weekend; therefore the expiry date of a contract may be pushed back to the following Monday in the event of a contract expiry date falling on a Saturday or a Sunday."
 msgstr "トレードを週末に終了するよう指定することができない場合があります。ゆえに、土曜日か日曜日に終了時間を指定したトレードは、終了時間が月曜日に指定される場合があります。"
+
+msgid "Contracts offered by Binary Investments (Europe) Ltd. have a minimum purchase price of USD/GBP/EUR 5."
+msgstr ""
 
 msgid "Contracts sold"
 msgstr "契約は転売されました"
@@ -1881,6 +1886,11 @@ msgstr "現在"
 
 msgid "Current Level"
 msgstr "現在のレベル"
+
+#, fuzzy
+#| msgid "Current time:"
+msgid "Current Time"
+msgstr "現在時刻："
 
 msgid "Current password"
 msgstr "現在のパスワード"
@@ -2477,7 +2487,7 @@ msgid "Female"
 msgstr "女性"
 
 msgid "Fieldset Legend"
-msgstr ""
+msgstr "フォームのグループ分け"
 
 msgid "Fifteen years on, and we're still innovating, growing and working on new ways to serve our customers better. For the first time, we offer short-term touch/no-touch trades and introduce a new charting application. We believe we have the most competitive and comprehensive digital options platform available to the retail public."
 msgstr "創業１５年を迎えてもなお、当社は進化と成長を続けることで顧客目線の新たなサービスの提供に注力しています。短期間でのタッチ/ノータッチ・トレードの提供と新しいチャートアプリケーションを開発。個人向けのオプション取引にて他の追従を許さない、かつ理解しやすいシステムを提供しているという確かな自信と共にサービスを提供します。"
@@ -2561,7 +2571,7 @@ msgid "For added security, please check your email to retrieve the verification 
 msgstr "セキュリティチェックのため、メールをご確認いただきワンタイムパスワードを取得してください。"
 
 msgid "For all types of tabs, you could call \"build_menu_with_content\" on server side to generate the HTML for you, or just output this HTML samples."
-msgstr ""
+msgstr "全てのタブにおいて、HTMLの生成またはこのHTMLサンプルの出力に、サーバー側で\"build_menu_with_content\"を呼び出すことができます。"
 
 msgid "For e-cash methods or local currencies not supported by %1."
 msgstr "eキャッシュの手段または現地通貨が%1では対応していません。"
@@ -2771,7 +2781,7 @@ msgid "Higher/Lower trades"
 msgstr "HIGH/LOW・トレード"
 
 msgid "Hint comes here"
-msgstr ""
+msgstr "ヒントはこちら"
 
 msgid "Housewife / Househusband"
 msgstr "主婦/主夫"
@@ -4129,7 +4139,7 @@ msgid "Monitor website trading activity and minimize abuse"
 msgstr "ウェブサイトの取引アクティビティを監視し、不正使用を最小限に抑えます"
 
 msgid "Monitor your portfolio in real time."
-msgstr "リアルタイムでのポートフォリオの確認が可能。"
+msgstr "リアルタイムでのポジション一覧の確認が可能。"
 
 msgid "Monitoring and review of this Policy"
 msgstr "本ポリシーのモニターと閲覧"
@@ -4141,7 +4151,7 @@ msgid "More benefits"
 msgstr "福利厚生について"
 
 msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with "
-msgstr ""
+msgstr "すなわち、お客様が当社においてバイナリーオプション取引を開始された際には（各”トレード”）、当社はXXXをお客様に提供する義務があります。 "
 
 msgid "Mother's maiden name"
 msgstr "母親の旧姓"
@@ -4534,7 +4544,7 @@ msgid "Page 2 of 3"
 msgstr "2ページ/3ページ"
 
 msgid "Page section tab"
-msgstr ""
+msgstr "ページセクションタブ"
 
 msgid "Participating in the forex, stocks or commodities markets?"
 msgstr "外国為替市場でお取引"
@@ -4631,6 +4641,9 @@ msgstr "アクセス許可"
 
 msgid "Personal Details"
 msgstr "お客さま登録情報"
+
+msgid "Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
+msgstr ""
 
 msgid "Pip"
 msgstr "Pip"
@@ -4930,7 +4943,7 @@ msgid "Purchase"
 msgstr "購入"
 
 msgid "Purchase Price"
-msgstr "購入金額"
+msgstr "購入金額(JPY)"
 
 msgid "Purchase Time"
 msgstr "購入時間"
@@ -5040,8 +5053,6 @@ msgstr "Regent Marketsはオンライン上のトレードシステム開始の�
 msgid "Regent Markets sets up a programming centre in Cyberjaya, Malaysia"
 msgstr "Regent Marketsは、Cyberjaya（マレーシア）に開発センターを設立"
 
-#, fuzzy
-#| msgid "Regent Pacific Group Ltd., the Hong Kong-listed founding shareholder of Binary.com, <a href=\"%1\" target=\"_blank\">disposes of its stake</a> at a valuation of US$ 50.5 million."
 msgid "Regent Pacific Group Ltd., the Hong Kong-listed founding shareholder of Binary.com, <a href='%1' target='_blank'>disposes of its stake</a> at a valuation of US$ 50.5 million."
 msgstr "Binary.comの香港上場の創立株主であるRegent Pacific Group Ltd <a href=\"%1\" target=\"_blank\">disposes of its stake</a> US$ 5,050万の企業価値評"
 
@@ -5124,10 +5135,10 @@ msgid "Return"
 msgstr "リターン率"
 
 msgid "Returns above 100% on simple <a href='%1' class='pjaxload'>rise/fall</a> contracts."
-msgstr "シンプルな <a href='%1' class='pjaxload'>アップ/ダウン</a> を選択する取引で収益機会を提供"
+msgstr "シンプルな <a href='%1' class='pjaxload'>ラダーHIGH/ラダーLOW</a> を選択する取引で収益機会を提供"
 
 msgid "Returns above 1000% on <a href='%1' class='pjaxload'>higher/lower</a> and <a href='%2' class='pjaxload'>touch/no-touch</a> trades."
-msgstr "<a href='%1' class='pjaxload'>HIGH/LOW</a>、<a href='%2' class='pjaxload'>TOUCH/NO-TOUCH</a>オプションで多様な収益機会を提供"
+msgstr "<a href='%1' class='pjaxload'>ラダーHIGH/ラダーLOW</a>、<a href='%2' class='pjaxload'>TOUCH/NO-TOUCH</a>オプションで多様な収益機会を提供"
 
 msgid "Review suspicious account transactions"
 msgstr "不正アカウントの取引を確認"
@@ -5188,10 +5199,10 @@ msgid "Salaried Employee"
 msgstr "サラリーマン"
 
 msgid "Sale Date"
-msgstr "判定時刻"
+msgstr "約定日時"
 
 msgid "Sale Price"
-msgstr "決済価格"
+msgstr "決済価格(JPY)"
 
 msgid "Saturday"
 msgstr "土曜日"
@@ -5275,7 +5286,7 @@ msgid "Sell at market"
 msgstr "売却"
 
 msgid "Sell back trades at market prices."
-msgstr "市場価格で保有ポジションを転売"
+msgstr "市場価格で保有ポジションを売却"
 
 msgid "Sell option"
 msgstr "オプションの転売"
@@ -5353,7 +5364,7 @@ msgid "Sign me up"
 msgstr "登録する"
 
 msgid "Sign up as a tester and look for Binary.com-related projects."
-msgstr ""
+msgstr "テスターとして登録し、Binary.comに関連するプロジェクトを確認する。"
 
 msgid "Significant experience in Social Media, Marketing, and / or Advertising"
 msgstr "ソーシャルメディア、マーケティングと/または広告に関する豊富な経験"
@@ -5587,7 +5598,7 @@ msgid "Supporting the Group's global recruiting and talent management needs"
 msgstr "グループのグローバルな人材募集や人材管理のニーズをサポート"
 
 msgid "Tab With Submenus"
-msgstr ""
+msgstr "サブメニューを含むタブ"
 
 msgid "Tables"
 msgstr "テーブル"
@@ -5724,10 +5735,8 @@ msgstr "Binary.comプライバシーとセキリティポリシー；"
 msgid "The Binary.com Terms and Conditions;"
 msgstr "Binary.com利用規約；"
 
-#, fuzzy
-#| msgid "The Binary.com website’s static content (CSS, Javascript) is available as the <a target=\"_blank\" href=\"%1\">binary-static</a> open-source project on github. Would you like to re-skin the Binary.com website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes."
 msgid "The Binary.com website's static content (CSS, Javascript) is available as the <a target='_blank' href='%1'>binary-static</a> open-source project on github. Would you like to re-skin the Binary.com website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes."
-msgstr "github上のオープンソース・プロジェクトである<a target=\"_blank\" href=\"%1\">binary-static</a>にて、Binary.comのウェブサイトの静的コンテンツ (CSS, Javascript)は利用可能です。Binary.comのウェブサイトのカスタマイズ、ブラウザ互換性の向上、サイトスピードの向上、 Javascriptのパフォーマンスの向上をお望みの場合はプロジェクトをフォークし、コード変更の提案に関するプルリクエストを送信して下さい。"
+msgstr "github上のオープンソース・プロジェクトである<a target='_blank' href='%1'>binary-static</a>にて、Binary.comのウェブサイトの静的コンテンツ (CSS, Javascript)は利用可能です。Binary.comのウェブサイトのカスタマイズ、ブラウザ互換性の向上、サイトスピードの向上、 Javascriptのパフォーマンスの向上をお望みの場合はプロジェクトをフォークし、コード変更の提案に関するプルリクエストを送信して下さい。"
 
 msgid "The Company does not guarantee that the Binary.com API it provides will function without interruption or errors in functioning. In particular, the operation of the Binary.com API may be interrupted due to maintenance, updates, or system or network failures. The Company disclaims all liability for damages caused by any such interruption or errors in functioning."
 msgstr "当社はBinary.com APIを中断またはエラー無しに機能を提供することを保証しているものではありません。特に、Binary.com APIの動作が管理、更新、システム、ネットワークの障害により中断されることがあります。機能の障害またはエラーによる損害について当社は一切の責任を負いません。"
@@ -5787,13 +5796,15 @@ msgstr ""
 "（取引注文）\n"
 "第6条　お客さまは、当社のウェブサイトからログインし本取引に係る注文を行うものとし、お客さまもしくは当社側において通信機器関連の障害等が発生した場合を含め、前記以外の方法による注文の受諾は行わないものとします。"
 
-msgid "The Company reserves the right to change any part of this Agreement at any time. We will endeavour to ensure affiliates are notified when changes have been made to this Agreement, but it is ultimately your responsibility to check these terms and conditions regularly. Your continued participation in our affiliate program after we have posted the changes will constitute binding acceptance of such changes."
-msgstr "当社は本契約のどの項目に対しても随時、変更を施す権利を有します。変更が施される場合は、ご登録済みのメールアドレスへ実施日の７日前に事前通達を行いますが、定期的な本契約の内容確認はアフィリエイト会員の義務です。変更が施される前に当プログラムにご参加された方に対しても、変更点は適用されます。"
-
-msgid "The Company reserves the right to restrict client trading and/or cancel or reverse transactions in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug or glitch in our website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, or manifest mis-calculation of prices or other manifest error. Clients have a duty to report to the Company any such problems, errors or suspected system inadequacies that they may experience and may not abuse of or arbitrage such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
+#, fuzzy
+#| msgid "The Company reserves the right to restrict client trading and/or cancel or reverse transactions in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug or glitch in our website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, or manifest mis-calculation of prices or other manifest error. Clients have a duty to report to the Company any such problems, errors or suspected system inadequacies that they may experience and may not abuse of or arbitrage such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
+msgid "The Company reserves the right to cancel/reverse transactions or amend the contractual terms (including, but not limited to, entry and exit spot) in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug or glitch in our website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, or manifest mis-calculation of prices or other obvious errors (\"Manifest Errors\"). Clients have a duty to report to the Company any such problems, errors or suspected system inadequacies that they may experience and may not abuse of or arbitrage such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Any amendments to the contractual terms (including, but not limited to, entry and exit spot) of Manifestly Erroneous contracts shall be reasonable and fair. Monies exchanged between oneself and the Company in connection with Manifestly Erroneous contracts shall be returned to the recipient according to the amendments made to the contractual terms (including, but not limited to, entry and exit spot). You further acknowledge and agree that the Company will not be held liable or responsible, whether directly or indirectly, for any loss, expenses or damage caused or alleged to be caused by or in connection with a Manifest Error."
 msgstr ""
 "公平な市場価格を反映しない価格、若しくは未検出のプログラミングエラーによって著しく低レベルのリスクでのトレードが提供された場合、若しくはバグや当社サイト・ソフトウェアの故障という状況下での売買は全て、事情を説明した事前通達と共に制限または無効にする権利を弊社は有します。お客さまはもし、トレーディングシステムに疑わしい不適切な点や問題を発見したら弊社への報告義務があり、かつシステム上の問題を利用して利益を得ることは禁止します。当社はそのような事態が発生した場合は、早急に解決に努めます。またマーケットや金融商品に関する、いかなるインサイダー情報を用いて当社のサイトと取引をすることを禁止します。\n"
 "データフィードのエラーまたは矛盾が生じた場合、影響を受けうる全てのトレードを解除する権利を留保します。"
+
+msgid "The Company reserves the right to change any part of this Agreement at any time. We will endeavour to ensure affiliates are notified when changes have been made to this Agreement, but it is ultimately your responsibility to check these terms and conditions regularly. Your continued participation in our affiliate program after we have posted the changes will constitute binding acceptance of such changes."
+msgstr "当社は本契約のどの項目に対しても随時、変更を施す権利を有します。変更が施される場合は、ご登録済みのメールアドレスへ実施日の７日前に事前通達を行いますが、定期的な本契約の内容確認はアフィリエイト会員の義務です。変更が施される前に当プログラムにご参加された方に対しても、変更点は適用されます。"
 
 msgid "The Company reserves the right to suspend the operation of this site or sections thereof:"
 msgstr "当社は以下のような状況下ではサービスの提供を見合わせる権限を有します。："
@@ -6345,7 +6356,7 @@ msgid "Time"
 msgstr "日時"
 
 msgid "Time out until"
-msgstr ""
+msgstr "xxxまで利用禁止"
 
 msgid "Times are changing. We increase payouts so our clients can make the most of their winning trades."
 msgstr "時代のニーズを汲み、払い戻し価格を増大させることで顧客の利益拡大を目指します。"
@@ -6399,7 +6410,7 @@ msgid "Total Net Revenue Per Month"
 msgstr "１ヶ月あたりの獲得レベニュー"
 
 msgid "Total Profit/Loss"
-msgstr "合計　損益"
+msgstr "合計　損益(JPY)"
 
 msgid "Touch/No Touch"
 msgstr "TOUCH/NO-TOUCH"
@@ -6663,7 +6674,9 @@ msgstr "ワンタイムパスワード"
 msgid "Verify new password"
 msgstr "新パスワード（確認用）"
 
-msgid "Version 40. Last modified 2016-05-12."
+#, fuzzy
+#| msgid "Version 40. Last modified 2016-05-12."
+msgid "Version 41. Last modified 2016-06-27."
 msgstr "バージョン40　最終更新日：2016-05-12"
 
 msgid "View"
@@ -6851,10 +6864,8 @@ msgstr "当社が承認していない会員獲得を目的としたインセン
 msgid "We provide here a summary of the policy we maintain in order to manage conflicts of interest in respect of the duties we owe to our clients."
 msgstr "クライアントに負う義務に関して利益相反を管理するために保守するポリシーの概要をここに提供しています。"
 
-#, fuzzy
-#| msgid "We rebrand BetOnMarkets.com as <a target=\"_blank\" href=\"%1\">www.binary.com</a>. The rebranding is a natural evolution for the platform as it continues to grow market share in the highly competitive field of binary trading. The new brand reflects the nature of the business, and our new tagline – Sharp Prices, Smart Trading – communicates our ethos and commitment to our clients."
 msgid "We rebrand BetOnMarkets.com as <a target='_blank' href='%1'>www.binary.com</a>. The rebranding is a natural evolution for the platform as it continues to grow market share in the highly competitive field of binary trading. The new brand reflects the nature of the business, and our new tagline - Sharp Prices, Smart Trading - communicates our ethos and commitment to our clients."
-msgstr "BetOnMarkets.comを<a target=\"_blank\" href=\"%1\">www.binary.com</a>にリニューアルする。リニューアルは、競争が激しくなっているバイナリー業界でのマーケットシェアの維持のため、当社システムが自然に進化していることの裏付けである。この新しいブランドは当社のビジネスの本質、及び当社の新しいコンセプトである「優れた価格設定、賢くトレード。」を体現する。これにより、当社の精神とコミットメントを顧客に伝達する。"
+msgstr "BetOnMarkets.comを<a target=\"_blank\" href=\"%1\">www.binary.com</a>にリニューアルする。リニューアルは、競争が激しくなっているバイナリー業界でのマーケットシェアの維持のため、当社システムが自然に進化していることの裏付けである。この新しいブランドは当社のビジネスの本質、及び当社の新しいコンセプトである「優れた価格設定、賢くトレード」を体現する。これにより、当社の精神とコミットメントを顧客に伝達する。"
 
 msgid "We recognize the importance of protecting your personal and financial information."
 msgstr "当社ではお客さまの個人情報と資産情報のお取り扱いには細心の注意を払っております。"
@@ -7215,7 +7226,7 @@ msgid "You can choose payouts from $1 to $50,000. This wide payout range is idea
 msgstr "払い戻し価格は1,000円から1,000万円の間で指定できます。トレードが小額でも高額でも満足のいくお取引が可能です。"
 
 msgid "You can close your trade before expiry to lock in profits."
-msgstr "お客さまの予想通りに相場が動いた場合、判定時刻前にポジションを転売をすることにより利益を確定ができます。"
+msgstr "お客さまの予想通りに相場が動いた場合、判定時刻前にポジションを売却をすることにより利益を確定ができます。"
 
 msgid "You can sell back long-term trades at any time to profit from changing market conditions."
 msgstr "既存ポジションは、取引期間内にいつでも転売が可能です。"
@@ -7718,13 +7729,13 @@ msgid "of the site."
 msgstr "サイトのXXX"
 
 msgid "ordered list item 1"
-msgstr ""
+msgstr "オーダードリスト項目1"
 
 msgid "ordered list item 2"
-msgstr ""
+msgstr "オーダードリスト項目2"
 
 msgid "ordered list item 3"
-msgstr ""
+msgstr "オーダードリスト項目3"
 
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
 msgstr "から、全てのトレードに関する正確な終値の適用時間をご確認下さい。他のウェブサイトでは、異なるデータを採用している可能性があります。（例：ニューヨーク時間・午前４時、ロンドン時間・午前５時など）ゆえに、当社が公表している始値、最高値、最安値、及び市場閉場価格は、他のウェブサイトで公表している価格と異なる可能性があります。"
@@ -7745,7 +7756,7 @@ msgid "second"
 msgstr "秒"
 
 msgid "second item"
-msgstr "項目２"
+msgstr "項目2"
 
 msgid "seconds"
 msgstr "秒"
@@ -7765,10 +7776,8 @@ msgstr "サブメニュー 1"
 msgid "submenu item 2"
 msgstr "サブメニュー 2"
 
-#, fuzzy
-#| msgid "My super sweet message."
 msgid "success message"
-msgstr "My super sweet message."
+msgstr "サクセスメッセージ"
 
 msgid "terms and conditions"
 msgstr "利用規約"
@@ -7783,7 +7792,7 @@ msgid "the platform is user friendly and accessible to all levels of traders."
 msgstr "当プラットフォームは全レベルのトレーダーがご利用いただける、ユーザーが使用しやすいものとなっています。"
 
 msgid "third item"
-msgstr "項目３"
+msgstr "項目3"
 
 msgid "ticks"
 msgstr "Tick"
@@ -7792,13 +7801,13 @@ msgid "to your account."
 msgstr "アカウントへ"
 
 msgid "unordered list item 1"
-msgstr ""
+msgstr "アンオーダードリスト項目1"
 
 msgid "unordered list item 2"
-msgstr ""
+msgstr "アンオーダードリスト項目2"
 
 msgid "unordered list item 3"
-msgstr ""
+msgstr "アンオーダードリスト項目3"
 
 msgid "use or reproduce the Binary.com API other than as permitted by these Terms or"
 msgstr "これら規約で許可されている以上のBinary.com APIの使用または再現"

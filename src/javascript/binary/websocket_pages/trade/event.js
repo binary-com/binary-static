@@ -352,7 +352,8 @@ var TradingEvents = (function () {
 
             var params = {buy: id, price: askPrice, passthrough:{}};
             for(var attr in this.attributes){
-                if(attr && this.attributes[attr] && this.attributes[attr].name){
+                if(attr && this.attributes[attr] && this.attributes[attr].name &&
+                    !/data\-balloon/.test(this.attributes[attr].name)){ // do not send tooltip data
                     var m = this.attributes[attr].name.match(/data\-(.+)/);
 
                     if(m && m[1] && m[1]!=="purchase-id" && m[1]!=="passthrough"){
