@@ -118,14 +118,14 @@ var ViewPopupWS = (function() {
         containerSetText('status'           , contract.status, {'class': contract.is_ended ? 'loss' : 'profit'});
         containerSetText('stop_loss_level'  , contract.stop_loss_level);
         containerSetText('stop_profit_level', contract.stop_profit_level);
-        containerSetText('pl_value'         , contract.current_value_in_dollar, {'class': contract.current_value_in_dollar >= 0 ? 'profit' : 'loss'});
-        containerSetText('pl_point'         , contract.current_value_in_point);
+        containerSetText('pl_value'         , parseFloat(contract.current_value_in_dollar).toFixed(2), {'class': contract.current_value_in_dollar*1 >= 0 ? 'profit' : 'loss'});
+        containerSetText('pl_point'         , parseFloat(contract.current_value_in_point).toFixed(2));
 
         if(!contract.is_ended) {
             containerSetText('sell_level', contract.current_level);
         }
         else {
-            spreadContractEnded(contract.current_value_in_dollar >= 0);
+            spreadContractEnded(contract.current_value_in_dollar*1 >= 0);
         }
 
         sellSetVisibility(!isSellClicked && !contract.is_ended);
