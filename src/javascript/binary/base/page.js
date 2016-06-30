@@ -91,6 +91,7 @@ var GTM = (function() {
             buy = response.buy;
         var data = {
             'event'              : 'buy_contract',
+            'visitorId'          : page.client.loginid,
             'bom_symbol'         : req.symbol,
             'bom_market'         : markets && markets.by_symbol(req.symbol) ?
                 markets.by_symbol(req.symbol).market.name :
