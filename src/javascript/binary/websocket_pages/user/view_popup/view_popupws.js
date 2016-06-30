@@ -132,7 +132,6 @@ var ViewPopupWS = (function() {
     };
 
     var spreadContractEnded = function(is_win) {
-        contract.exit_level = contract.entry_level + contract.profit_point * contract.direction;
         $Container.find('#sell_level').parent('tr').addClass(hiddenClass);
         $Container.find('#exit_level').text(contract.exit_level).parent('tr').removeClass(hiddenClass);
         sellSetVisibility(false);
