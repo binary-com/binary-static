@@ -57,7 +57,7 @@
         <div class="separator-line"></div>
         <div class="gr-12 center-text">
           <p>
-            [% l("Binary.com is the award-winning industry pioneer in online options trading.") %]
+            [% l("[_1] is the award-winning industry pioneer in online options trading.", website_name) %]
           </p>
           <div class="ja-hide gr-padding-10">
             <img class="small-image" src="[% request.url_for('images/pages/home/awards-t2w.png') %]"/>
@@ -100,7 +100,7 @@
 <div class="container ja-hide">
     <div class="gr-12 gr-parent">
       <h1 class="center-text gr-padding-10">
-        [% l("Binary.com academy") %]
+        [% l("[_1] academy", website_name) %]
       </h1>
       <div class="separator-line"></div>
       <div class="gr-12 gr-6-p center-text gr-centered">
@@ -157,7 +157,7 @@
           </div>
           <div class="gr-6 gr-12-m gr-6-p">
             <div class="xquote">
-              <p>[% l("&#8220;Binary.com is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;") %]</p>
+              <p>[% l("&#8220;[_1] is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;", website_name) %]</p>
             </div>
             <div class="xbubble-right"></div>
             <div class="xquoter-right">

@@ -6,23 +6,28 @@ var StatementWS = (function(){
     //receive means receive from ws service
     //consume means consume by UI and displayed to page
 
-    var batchSize = 200;
-    var chunkSize = batchSize/2;
-
-    var noMoreData = false;
-    var pending = false;            //serve as a lock to prevent ws request is sequential
-    var currentBatch = [];
-    var transactionsReceived = 0;
-    var transactionsConsumed = 0;
+    var batchSize,
+        chunkSize,
+        noMoreData,
+        pending,
+        currentBatch,
+        transactionsReceived,
+        transactionsConsumed;
 
     var tableExist = function(){
         return document.getElementById("statement-table");
     };
+
     var finishedConsumed = function(){
         return transactionsConsumed === transactionsReceived;
     };
 
     function statementHandler(response){
+        if(response.hasOwnProperty('error')) {
+            StatementUI.errorMessage(response.error.message);
+            return;
+        }
+
         pending = false;
 
         var statement = response.statement;
@@ -103,12 +108,19 @@ var StatementWS = (function(){
         transactionsReceived = 0;
         transactionsConsumed = 0;
 
-        $(".error-msg").text("");
+        StatementUI.errorMessage(null);
 
         StatementUI.clearTableContent();
     }
 
     function initPage(){
+        batchSize = 200;
+        chunkSize = batchSize/2;
+        noMoreData = false;
+        pending = false;            //serve as a lock to prevent ws request is sequential
+        currentBatch = [];
+        transactionsReceived = 0;
+        transactionsConsumed = 0;
         getNextBatchStatement();
         loadStatementChunkWhenScroll();
     }

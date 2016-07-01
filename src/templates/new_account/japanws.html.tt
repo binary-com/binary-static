@@ -596,7 +596,7 @@
                             </div>
                             <div class="gr-11">
                               <span>
-                                [% l("Binary.com earns a return from the difference between the total amount of all customers' payment and the total amount of all customers' receipts.") %]
+                                [% l("[_1] earns a return from the difference between the total amount of all customers' payment and the total amount of all customers' receipts.", website_name) %]
                               </span>
                             </div>
                           </div>

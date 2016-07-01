@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-21 09:06+0000\n"
+"PO-Revision-Date: 2016-06-27 03:32+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
@@ -68,7 +68,9 @@ msgstr "%1 dan logo bull/bear adalah merek dagang terdaftar."
 msgid "%1 does not charge any transfer fees."
 msgstr "%1 tidak membebankan biaya transfer."
 
-msgid "%1 gives everyone an easy and exciting way to participate in the financial markets. Trade with as little as $1 USD on major currencies, indices and commodities."
+#, fuzzy
+#| msgid "%1 gives everyone an easy and exciting way to participate in the financial markets. Trade with as little as $1 USD on major currencies, indices and commodities."
+msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities."
 msgstr "%1 memberikan setiap orang cara mudah dan menarik untuk berpartisipasi dalam pasar keuangan. Kontrak tersedia dari harga terendah sebesar $1 pada berbagai pilihan pasangan valuta asing, indeks dan komoditas."
 
 msgid "%1 has created Volatility Indices that you can trade 24/7. You can trade these on all types of contract:"
@@ -396,25 +398,17 @@ msgstr ""
 "  <li>Pesan khusus yang ingin ditampilkan pada banner.</li>\n"
 "   </ul>"
 
-#, fuzzy
-#| msgid "<span>All durations:</span> from 10 seconds to 365 days."
 msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
-msgstr "<span>Semua durasi:</span> dari 10 detik hingga 365 hari."
+msgstr "<span class='color-green font-weight-700'>Semua durasi:</span> dari 10 detik hingga 365 hari."
 
-#, fuzzy
-#| msgid "<span>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
 msgid "<span class='color-green font-weight-700'>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
-msgstr "<span>Semua kondisi pasar:</span> naik/turun, menyentuh/tidak menyentuh, di dalam/di luar."
+msgstr "<span class='color-green font-weight-700'>Semua kondisi pasar:</span> up/down, touch/no-touch, stays in/goes out."
 
-#, fuzzy
-#| msgid "<span>All markets:</span> currencies, stocks, indices, and commodities."
 msgid "<span class='color-green font-weight-700'>All markets:</span> currencies, stocks, indices, and commodities."
-msgstr "<span>Semua pasar:</span> mata uang, saham, indeks, dan komoditas."
+msgstr "<span class='color-green font-weight-700'>Semua pasar:</span> mata uang, saham, indeks, dan komoditas."
 
-#, fuzzy
-#| msgid "<span>All payouts:</span> from $1 to $50,000."
 msgid "<span class='color-green font-weight-700'>All payouts:</span> from $1 to $50,000."
-msgstr "<span>Hasil:</span> dari $1 hingga $50,000."
+msgstr "<span class='color-green font-weight-700'>Semua hasil:</span> dari $1 hingga $50,000."
 
 msgid "<strong>2-way pricing</strong> - %1 quotes a trade and the counter-trade, so you always get unbiased, transparent prices."
 msgstr "<strong>harga 2-arah</strong> - %1 selalu memperlihatkan harga lawan arah dari trading Anda, dimana Anda memperoleh harga transparan."
@@ -1757,6 +1751,9 @@ msgstr "Kontrak dibeli"
 msgid "Contracts may not expire on a weekend; therefore the expiry date of a contract may be pushed back to the following Monday in the event of a contract expiry date falling on a Saturday or a Sunday."
 msgstr "Kontrak tidak dapat berakhir pada akhir pekan, maka tanggal berakhir kontrak diundur kepada hari Senin berikutnya jika tanggal kontrak berakhir pada hari Sabtu atau Minggu."
 
+msgid "Contracts offered by Binary Investments (Europe) Ltd. have a minimum purchase price of USD/GBP/EUR 5."
+msgstr ""
+
 msgid "Contracts sold"
 msgstr "Kontrak terjual"
 
@@ -1861,6 +1858,11 @@ msgstr "Saat ini"
 
 msgid "Current Level"
 msgstr "Tingkat Terkini"
+
+#, fuzzy
+#| msgid "Current time:"
+msgid "Current Time"
+msgstr "Waktu Terkini:"
 
 msgid "Current password"
 msgstr "Kata sandi saat ini"
@@ -2989,10 +2991,8 @@ msgstr "Jika anda memilih <strong>waktu berakhir</strong> tertentu, maka <strong
 msgid "If you want to profit from this high demand product then your best option is to partner with the market leader. %1 has been in the business for over 15 years, and has been successful ever since."
 msgstr "Jika Anda ingin memperoleh keuntungan dari produk terlaris ini maka pilihan terbaik Anda adalah untuk bekerjasama dengan pemimpin pasar. %1 sudah beroperasi sejak 15 tahun dan telah berhasil sejak itu."
 
-#, fuzzy
-#| msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:affiliates@binary.com'>%1</a>"
 msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='%1'>%2</a>"
-msgstr "Jika Anda ingin informasi lebih lanjut mengenai Agen Pembayaran, silahkan hubungi kami di <a href='mailto:affiliates@binary.com'>%1</a>"
+msgstr "Jika Anda ingin informasi lebih lanjut mengenai Agen Pembayaran, silahkan hubungi kami di <a href='%1'>%2</a>"
 
 msgid "If you would like to file a complaint with regards to our service, kindly contact us providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within 1-2 weeks (and at most within 2 months) from receipt of all relevant details."
 msgstr "Jika Anda ingin mengajukan keluhan berkaitan dengan layanan kami, silakan hubungi kami dengan memberikan rincian yang relevan berkaitan dengan keluhan Anda. Kami akan menyelidiki dan akan memberi jawaban kepada keluhan Anda tersebut. Kami biasanya akan memberikan keputusan dalam tempo 1-2 minggu (paling lambat 2 bulan) setelah laporan detail kami terima."
@@ -3153,10 +3153,8 @@ msgstr "Langsung"
 msgid "Insufficient balance"
 msgstr "Saldo tidak mencukupi"
 
-#, fuzzy
-#| msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:affiliates@binary.com'>hear from you!</a>"
 msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='%2'>hear from you!</a>"
-msgstr "Tertarik, bagaimana langkah selanjutnya? Jika Anda dapat menawarkan metode pembayaran tunai atau pembayaran lokal yang tidak disediakan oleh %1 dan Anda memiliki track record yang baik, maka kami ingin <a href='mailto:affiliates@binary.com'>mendengar Anda!</a>"
+msgstr "Tertarik, bagaimana langkah selanjutnya? Jika Anda dapat menawarkan metode pembayaran tunai atau pembayaran lokal yang tidak disediakan oleh %1 dan Anda memiliki track record yang baik, maka kami ingin <a href='%2'>mendengar balasan Anda!</a>"
 
 msgid "Interested? Why not try a virtual account"
 msgstr "Tertarik? Mengapa tidak mencoba akun virtual"
@@ -4595,6 +4593,9 @@ msgstr "Izin"
 msgid "Personal Details"
 msgstr "Data Pribadi"
 
+msgid "Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
+msgstr ""
+
 msgid "Pip"
 msgstr "Pip"
 
@@ -4655,10 +4656,8 @@ msgstr "Tolong masukan jumlah yang benar."
 msgid "Please enter an integer value"
 msgstr "Silahkan masukan nilai penuh"
 
-#, fuzzy
-#| msgid "Please enter date in the format YYYY-MM-DD."
 msgid "Please enter date in the format YYYY-MM-DD HH:mm (local time)."
-msgstr "Silakan masukkan tanggal dalam format YYY-MM-DD."
+msgstr "Silakan masukkan tanggal dalam format YYYY-MM-DD HH:mm (waktu lokal)."
 
 msgid "Please enter date in the format YYYY-MM-DD."
 msgstr "Silakan masukkan tanggal dalam format YYY-MM-DD."
@@ -4720,10 +4719,8 @@ msgstr "Silahkan tentukan interval cek-realitas pilihan Anda dalam menit"
 msgid "Please submit a valid %1."
 msgstr "Silakan kirim %1 yang berlaku."
 
-#, fuzzy
-#| msgid "Please submit the above information to <a href='mailto:affiliates@binary.com'>%1</a>."
 msgid "Please submit the above information to <a href='%1'>%2</a>."
-msgstr "Silahkan kirim informasi diatas ke <a href='mailto:affiliates@binary.com'>%1</a>."
+msgstr "Silahkan kirim informasi diatas ke <a href='%1'>%2</a>."
 
 msgid "Please try again."
 msgstr "Silahkan coba kembali."
@@ -5290,7 +5287,7 @@ msgid "Sharp prices"
 msgstr "Harga tajam"
 
 msgid "Shop"
-msgstr ""
+msgstr "Toko"
 
 msgid "Short"
 msgstr "Pendek"
@@ -5742,11 +5739,13 @@ msgstr "Perusahaan menerima aduan yang mungkin melibatkan Badan Penyelesaian Sen
 msgid "The Company reserves the right in its sole discretion to refuse and/or cancel services, charge deposit and/or withdrawal fees to anyone for any reasons including, but not limited to:"
 msgstr "Perusahaan memiliki hak atas kebijakannya sendiri untuk menolak dan/atau membatalkan layanan kepada siapapun untuk alasan apapun termasuk mengenakan biaya tambahan pada deposit atau penarikan kepada siapa saja, tetapi tidak terbatas pada:"
 
+#, fuzzy
+#| msgid "The Company reserves the right to restrict client trading and/or cancel or reverse transactions in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug or glitch in our website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, or manifest mis-calculation of prices or other manifest error. Clients have a duty to report to the Company any such problems, errors or suspected system inadequacies that they may experience and may not abuse of or arbitrage such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
+msgid "The Company reserves the right to cancel/reverse transactions or amend the contractual terms (including, but not limited to, entry and exit spot) in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug or glitch in our website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, or manifest mis-calculation of prices or other obvious errors (\"Manifest Errors\"). Clients have a duty to report to the Company any such problems, errors or suspected system inadequacies that they may experience and may not abuse of or arbitrage such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Any amendments to the contractual terms (including, but not limited to, entry and exit spot) of Manifestly Erroneous contracts shall be reasonable and fair. Monies exchanged between oneself and the Company in connection with Manifestly Erroneous contracts shall be returned to the recipient according to the amendments made to the contractual terms (including, but not limited to, entry and exit spot). You further acknowledge and agree that the Company will not be held liable or responsible, whether directly or indirectly, for any loss, expenses or damage caused or alleged to be caused by or in connection with a Manifest Error."
+msgstr "Perusahaan berhak untuk membatasi trading klien dan/atau membatalkan atau membalikkan transaksi jika kontrak yang diperoleh atau dijual dengan harga yang tidak mencerminkan harga pasar wajar atau yang diperoleh atau dijual pada tingkat abnormal yaitu dengan risiko rendah akibat kesalahan pemrograman yang tidak terdeteksi, bug atau kesalahan dalam perangkat lunak website kami, data pasar yang diterima atau keterlambatan harga kontrak, kesalahan data feed, kutipan tambahan, parameter harga yang salah, atau perhitungan harga mengalami gangguan atau kesesatan yang terjadi lainnya. Klien memiliki kewajiban untuk melaporkan kepada Perusahaan jika terjadi masalah seperti, kesalahan atau kekurangan sistem yang mungkin mereka alami dan tidak menyalahgunakan atau memanfaatkan masalah sistem tersebut atau kesalahan untuk keuntungan pribadi. Perusahaan akan berusaha untuk menyelesaikan setiap kesulitan seperti tersebut dalam waktu sesingkat mungkin. Pihak yang memiliki pengetahuan dalam mengenai trading financial atau instrumen pasar lainnya adalah dilarang untuk bertrading pada website ini."
+
 msgid "The Company reserves the right to change any part of this Agreement at any time. We will endeavour to ensure affiliates are notified when changes have been made to this Agreement, but it is ultimately your responsibility to check these terms and conditions regularly. Your continued participation in our affiliate program after we have posted the changes will constitute binding acceptance of such changes."
 msgstr "Perusahaan berhak untuk mengubah setiap bagian dari perjanjian ini kapan saja. Kami akan berusaha untuk memastikan afiliasi telah mendapat informasi apabila perubahan telah dibuat pada Perjanjian ini, tapi pada akhirnya adalah merupakan tanggung jawab Anda untuk memeriksa syarat dan ketentuan ini secara berkala. Partisipasi Anda untuk tetap bergabung dalam program afiliasi kami setelah kami perubahan dilakukan merupakan penerimaan mutlak pada perubahan tersebut."
-
-msgid "The Company reserves the right to restrict client trading and/or cancel or reverse transactions in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug or glitch in our website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, or manifest mis-calculation of prices or other manifest error. Clients have a duty to report to the Company any such problems, errors or suspected system inadequacies that they may experience and may not abuse of or arbitrage such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
-msgstr "Perusahaan berhak untuk membatasi trading klien dan/atau membatalkan atau membalikkan transaksi jika kontrak yang diperoleh atau dijual dengan harga yang tidak mencerminkan harga pasar wajar atau yang diperoleh atau dijual pada tingkat abnormal yaitu dengan risiko rendah akibat kesalahan pemrograman yang tidak terdeteksi, bug atau kesalahan dalam perangkat lunak website kami, data pasar yang diterima atau keterlambatan harga kontrak, kesalahan data feed, kutipan tambahan, parameter harga yang salah, atau perhitungan harga mengalami gangguan atau kesesatan yang terjadi lainnya. Klien memiliki kewajiban untuk melaporkan kepada Perusahaan jika terjadi masalah seperti, kesalahan atau kekurangan sistem yang mungkin mereka alami dan tidak menyalahgunakan atau memanfaatkan masalah sistem tersebut atau kesalahan untuk keuntungan pribadi. Perusahaan akan berusaha untuk menyelesaikan setiap kesulitan seperti tersebut dalam waktu sesingkat mungkin. Pihak yang memiliki pengetahuan dalam mengenai trading financial atau instrumen pasar lainnya adalah dilarang untuk bertrading pada website ini."
 
 msgid "The Company reserves the right to suspend the operation of this site or sections thereof:"
 msgstr "Perusahaan berhak untuk menangguhkan pengoperasian situs atau beberapa bagain lainnya:"
@@ -6196,7 +6195,7 @@ msgid "Time"
 msgstr "Waktu"
 
 msgid "Time out until"
-msgstr ""
+msgstr "Time out hingga"
 
 msgid "Times are changing. We increase payouts so our clients can make the most of their winning trades."
 msgstr "Dengan perubahan waktu. Kami meningkatkan hasil sehingga klien kami dapat menikmati keuntungan trading mereka."
@@ -6510,7 +6509,9 @@ msgstr "Token verifikasi"
 msgid "Verify new password"
 msgstr "Verifikasi kata sandi baru"
 
-msgid "Version 40. Last modified 2016-05-12."
+#, fuzzy
+#| msgid "Version 40. Last modified 2016-05-12."
+msgid "Version 41. Last modified 2016-06-27."
 msgstr "Version 40. Diubah terakhir pada 12-05-2016."
 
 msgid "View"
