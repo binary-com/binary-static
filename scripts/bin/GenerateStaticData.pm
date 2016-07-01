@@ -759,13 +759,6 @@ sub _texts {
         push @texts, localize('If you need assistance feel free to contact our [_1]Customer Support');
         push @texts, localize('Your account is not fully authenticated. Please visit the <a href="[_1]">authentication</a> page for more information.');
 
-        # page titles from config/pages.pl
-        require "config/pages.pl";
-        my @m = all_pages();
-        foreach my $m (@m) {
-            push @texts, localize($m->[3]) if $m->[3];
-        }
-
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
     }
