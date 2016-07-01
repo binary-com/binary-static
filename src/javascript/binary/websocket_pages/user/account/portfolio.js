@@ -118,6 +118,10 @@ var PortfolioWS =  (function() {
         }
 
         var proposal = data.proposal_open_contract;
+        // force to sell the expired contract, in order to remove from portfolio
+        if(proposal.is_expired == 1 && !proposal.is_sold) {
+            BinarySocket.send({"sell_expired": 1});
+        }
         var $td = $("tr[data-contract_id='" + proposal.contract_id + "'] td.indicative");
         var old_indicative = $td.find('strong').text();
         old_indicative = parseFloat(old_indicative, 2);
