@@ -47,3 +47,11 @@ pjax_config_page_require_auth("user/statement", function(){
         }
     };
 });
+
+pjax_config_page("resources/asset_indexws", function() {
+    return {
+        onLoad: function() {
+            AssetIndexUI.init();
+        }
+    };
+});
