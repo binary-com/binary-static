@@ -69,14 +69,14 @@ var get_started_behaviour = function() {
         var nav_next = $('.subsection-navigation .next');
 
         if (to_show.hasClass('first')) {
-            nav_back.addClass('disabled');
-            nav_next.removeClass('disabled');
+            nav_back.addClass('button-disabled');
+            nav_next.removeClass('button-disabled');
         } else if (to_show.hasClass('last')) {
-            nav_back.removeClass('disabled');
-            nav_next.addClass('disabled');
+            nav_back.removeClass('button-disabled');
+            nav_next.addClass('button-disabled');
         } else {
-            nav_back.removeClass('disabled');
-            nav_next.removeClass('disabled');
+            nav_back.removeClass('button-disabled');
+            nav_next.removeClass('button-disabled');
         }
 
         fragment = to_show.find('a[name]').attr('name').slice(0, -8);
@@ -93,7 +93,7 @@ var get_started_behaviour = function() {
     if (len) {
         nav.on('click', 'a', function() {
             var button = $(this);
-            if (button.hasClass('disabled')) {
+            if (button.hasClass('button-disabled')) {
                 return false;
             }
             var now_showing = $('.subsection:not(.hidden)');

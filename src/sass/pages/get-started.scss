@@ -114,36 +114,6 @@
             }
         }
     }
-    .subsection-navigation {
-        clear: both;
-        text-align: center;
-        margin-top: 20px;
-        padding-top: 10px;
-        a {
-            @include link-button;
-            padding: 0.43em 3.19%;
-        }
-        a.disabled {
-            color: $COLOR_GRAY_SHADE;
-            background: $COLOR_LIGHT_GRAY;
-            cursor: default;
-        }
-    }
-    .section-5 {
-        ol, ul {
-            ol {
-                list-style-type: lower-alpha;
-            }
-        }
-        .subsection {
-            p {
-                .highlight {
-                    font-style: italic;
-                    margin: 0.62em 0;
-                }
-            }
-        }
-    }
 }
 
 .get-started-jp {

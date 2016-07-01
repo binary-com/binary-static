@@ -239,14 +239,14 @@
                     </p>
                 </div>
             </div>
-            <div class="gr-12">
+            <div class="gr-12 center-text">
                 <div class="subsection-navigation">
                     <br/>
-                    <a class="back" href="#">
-                        [% l("Back") %]
+                    <a class="back button" href="#">
+                        <span>[% l("Back") %]</span>
                     </a>
-                    <a class="next" href="#">
-                        [% l("Next") %]
+                    <a class="next button" href="#">
+                        <span>[% l("Next") %]</span>
                     </a>
                 </div>
             </div>
