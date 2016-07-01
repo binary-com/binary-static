@@ -61,8 +61,8 @@ var AssetIndex = (function() {
                 values[col] = assetCells[j][idx.cellFrom] + ' - ' + assetCells[j][idx.cellTo];
 
                 var marketCols = marketColumns[market];
-                if($.inArray(col, marketCols.columns) === -1) {
-                    marketCols.header.push(text.localize(assetCells[j][idx.cellDisplayName]));
+                if(marketCols.columns.indexOf(col) === -1) {
+                    marketCols.header.push(assetCells[j][idx.cellDisplayName]);
                     marketCols.columns.push(col);
                 }
             }
@@ -71,8 +71,12 @@ var AssetIndex = (function() {
         return assetIndex;
     };
 
-    return {
+    var external = {
         getAssetIndexData: getAssetIndexData,
         getMarketColumns: function() {return marketColumns;}
     };
+    if (typeof module !== 'undefined') {
+        module.exports = external;
+    }
+    return external;
 }());
