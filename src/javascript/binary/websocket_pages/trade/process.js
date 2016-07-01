@@ -337,7 +337,7 @@ function processTick(tick) {
 function processProposal(response) {
     'use strict';
     var form_id = Price.getFormId();
-    if(response.echo_req && response.echo_req.passthrough.form_id===form_id){
+    if(response.echo_req && response.echo_req !== null && response.echo_req.passthrough.form_id===form_id){
         hideOverlayContainer();
         Price.display(response, Contract.contractType()[Contract.form()]);
         hidePriceOverlay();

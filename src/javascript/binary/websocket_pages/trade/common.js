@@ -15,6 +15,7 @@
  */
  function displayContractForms(id, elements, selected) {
      'use strict';
+     if (!id || !elements || !selected) return;
      var target = document.getElementById(id),
          fragment = document.createDocumentFragment(),
          len = elements.length;
