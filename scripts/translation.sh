@@ -9,6 +9,8 @@ carton exec perl local/bin/xgettext.pl  --verbose -P perl=pl,pm -P tt2=tt,tt2  \
 
 PATH=/usr/local/opt/gettext/bin/:$PATH
 
+carton exec perl -Ilib -Ibin bin/extra_translations.pl
+
 for i in $(ls ../src/config/locales/*.po); do \
     msgmerge --previous --backup none --no-wrap --update $i ../src/config/locales/messages.pot ; \
 done
