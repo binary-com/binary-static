@@ -1,7 +1,7 @@
 pjax_config_page('/get-started-jp', function() {
     return {
         onLoad: function() {
-          if (page.language().toLowerCase() !== 'ja') {
+          if (!japanese_client()) {
             window.location.href = page.url.url_for('get-started');
           }
           var tab = window.location.hash;

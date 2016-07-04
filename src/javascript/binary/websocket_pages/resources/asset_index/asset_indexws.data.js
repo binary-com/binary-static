@@ -17,9 +17,6 @@ var AssetIndexData = (function() {
         var $args = {
             active_symbols: "brief"
         };
-        if (isJapanTrading()) {
-            $args['landing_company'] = "japan";
-        }
 
         BinarySocket.send($args);
         BinarySocket.send({"asset_index": 1});

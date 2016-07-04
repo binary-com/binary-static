@@ -60,7 +60,7 @@ pjax_config_page('/payment-agent', function() {
 pjax_config_page('/get-started', function() {
     return {
         onLoad: function() {
-            if (!/jp/.test(window.location.pathname) && page.language().toLowerCase() === 'ja') {
+            if (/^jp/.test(window.location.pathname) && japanese_client()) {
               window.location.href = page.url.url_for('get-started-jp');
             } else if (/jp/.test(window.location.pathname)) {
               return;
@@ -95,9 +95,9 @@ pjax_config_page('/careers', function() {
 pjax_config_page('/terms-and-conditions', function() {
     return {
         onLoad: function() {
-            if (page.language() === 'JA' && /^jp/.test(window.location.pathname)) {
+            if (japanese_client() && /^jp/.test(window.location.pathname)) {
               window.location.href = page.url.url_for('terms-and-conditions-jp');
-            } else if (page.language() === 'EN' && /jp/.test(window.location.pathname)) {
+            } else if (!japanese_client() && /jp/.test(window.location.pathname)) {
               window.location.href = page.url.url_for('terms-and-conditions');
             }
             var selected_tab = page.url.params_hash().selected_tab;
@@ -128,12 +128,3 @@ pjax_config_page('/(jp)?trading', function () {
         onUnload: function(){TradePage.onUnload();}
     };
 });
-
-var hide_payment_agents = function() {
-    var language = page.language();
-    if(language == 'JA') {
-        $('.payment_agent_methods').addClass('invisible');
-    }
-};
-
-onLoad.queue_for_url(hide_payment_agents, 'cashier');

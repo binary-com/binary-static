@@ -528,7 +528,7 @@ URL.prototype = {
         return params;
     },
     default_redirect_url: function() {
-        return this.url_for(page.language() === 'JA' ? 'jptrading' : 'trading');
+        return this.url_for(japanese_client() ? 'jptrading' : 'trading');
     },
 };
 
