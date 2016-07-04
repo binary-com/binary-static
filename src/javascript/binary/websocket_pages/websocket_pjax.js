@@ -55,3 +55,11 @@ pjax_config_page("resources/asset_indexws", function() {
         }
     };
 });
+
+pjax_config_page("resources/market_timesws", function() {
+    return {
+        onLoad: function() {
+            MarketTimesUI.init();
+        }
+    };
+});
