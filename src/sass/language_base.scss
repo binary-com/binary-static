@@ -28,6 +28,10 @@ body.JA {
         display: inline-block !important;
         visibility: visible !important;
     }
+    .ja-no-padding {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
     .regulatory-logo {
         display: none !important;
     }

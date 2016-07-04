@@ -539,14 +539,6 @@ function checkClientsCountry() {
   }
 }
 
-if (page.language() === 'ID') {
-  change_blog_link('id');
-} else if (japanese_client()) {
-    $('.ja-hide').addClass('invisible');
-    $('#regulatory-text').removeClass('gr-9 gr-7-p')
-                         .addClass('gr-12 gr-12-p');
-}
-
 function japanese_client() {
     return (page.language().toLowerCase() === 'ja' || ($.cookie('residence') && $.cookie('residence') === 'jp') || localStorage.getItem('clients_country') === 'jp');
 }
