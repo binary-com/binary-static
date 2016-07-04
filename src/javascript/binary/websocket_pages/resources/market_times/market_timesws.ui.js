@@ -70,8 +70,8 @@ var MarketTimesUI = (function() {
         for(var s = 0; s < submarkets.length; s++) {
             // display only "Major Pairs" for Japan
             if(isJapanTrading) {
-                var symbolInfo = MarketTimes.getSymbolInfo(activeSymbols, submarkets[s].name);
-                if(symbolInfo.length > 0 && symbolInfo[0].submarket !== 'major_pairs') {
+                var submarketInfo = MarketTimes.getSubmarketInfo(activeSymbols, submarkets[s].name);
+                if(submarketInfo.length > 0 && submarketInfo[0].submarket !== 'major_pairs') {
                     continue;
                 }
             }

@@ -4,7 +4,7 @@ var ws = require('ws');
 var LiveApi = require('binary-live-api').LiveApi;
 var api = new LiveApi({ websocket: ws });
 
-describe('AssetIndex', function() {
+describe('Asset Index', function() {
     var asset_index_res, active_symbols_res;
     before(function(done){
         this.timeout(10000);
