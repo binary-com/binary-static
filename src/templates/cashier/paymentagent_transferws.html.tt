@@ -18,11 +18,11 @@
             </tr>
         </table>
         <p class="errorfield invisible"></p>
-        <span class="button button-focus">
-            <button id="back_transfer" class="button button-focus">[% l('Back') %]</button>
+        <span class="button ">
+            <button id="back_transfer" class="button ">[% l('Back') %]</button>
         </span>
-        <span class="button button-focus">
-            <button id="confirm_transfer" class="button button-focus" type="submit">[% l('Confirm') %]</button>
+        <span class="button ">
+            <button id="confirm_transfer" class="button " type="submit">[% l('Confirm') %]</button>
         </span>
     </div>
 
@@ -88,8 +88,8 @@
         </table>
         <p id="insufficient-balance-error" class="errorfield invisible">[% l('Insufficient balance') %]</p>
         <br/>
-        <span class="button button-focus">
-            <button class="button button-focus" id="submit" name="submit" type="submit" value="Submit">[% l('Submit') %]</button>
+        <span class="button ">
+            <button class="button " id="submit" name="submit" type="submit" value="Submit">[% l('Submit') %]</button>
         </span>
     </div>
 

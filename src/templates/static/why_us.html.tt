@@ -34,9 +34,9 @@
             </a>
           </li>
         </ul>
-        <div class="by_client_type client_logged_out client_virtual open-account">
-          <a class="pjaxload" href="[% request.url_for('/') %]">
-            [% l("Open a free account") %]
+        <div class="center-text gr-padding-10 by_client_type client_logged_out client_virtual">
+          <a class=" button pjaxload" href="[% request.url_for('/') %]">
+            <span>[% l("Open a free account") %]</span>
           </a>
         </div>
       </div>

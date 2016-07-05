@@ -621,8 +621,8 @@
                     </fieldset>
 
                     <fieldset class="center-text" id="formlayout">
-                        <span class="button button-focus">
-                            <button class="button button-focus" id="btn_submit" type="submit">[% l('Open Account') %]</button>
+                        <span class="button ">
+                            <button class="button " id="btn_submit" type="submit">[% l('Open Account') %]</button>
                         </span>
                     </fieldset>
                 </form>

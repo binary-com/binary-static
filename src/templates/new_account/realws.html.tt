@@ -16,8 +16,8 @@
                         </div>
                     </div>
                     <div class="center-text">
-                      <span class="button button-focus">
-                          <button class="button button-focus" id="residence_submit" type="submit">[% l('Proceed') %]</button>
+                      <span class="button ">
+                          <button class="button " id="residence_submit" type="submit">[% l('Proceed') %]</button>
                       </span>
                     </div>
                   </fieldset>
@@ -178,8 +178,8 @@
                                 </input>
                             </p>
                         </div>
-                        <span class="button button-focus">
-                            <button class="button button-focus" id="btn_submit" type="submit">[% l('Open Account') %]</button>
+                        <span class="button ">
+                            <button class="button " id="btn_submit" type="submit">[% l('Open Account') %]</button>
                         </span>
                     </fieldset>
                 </form>
