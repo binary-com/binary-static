@@ -184,7 +184,7 @@ var AssetIndexWS = (function() {
             cols: marketColumns[market].columns
         };
 
-        var $submarketTable = Table.createFlexTable([], metadata, marketColumns[market].header);
+        var $submarketTable = Table.createFlexTable([], metadata, marketColumns[market].header, '', true);
 
         var $submarketHeader = $('<tr/>', {class: 'flex-tr'})
             .append($('<th/>', {class: 'flex-tr-child submarket-name', colspan: marketColumns[market].columns.length, text: symbolInfo.submarket_display_name}));

@@ -161,7 +161,7 @@ var APITokenWS = (function() {
             cols: columns
         };
 
-        return Table.createFlexTable([], metadata, header);
+        return Table.createFlexTable([], metadata, header, '', true);
     };
 
     // ---------------------------
