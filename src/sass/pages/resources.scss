@@ -33,6 +33,9 @@
 }
 
 #asset-index {
+    > div {
+        overflow-x: auto;
+    }
     th {
         width: 12%;
     }

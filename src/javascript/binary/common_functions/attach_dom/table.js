@@ -11,11 +11,11 @@ var Table = (function(){
      * @param {String[]} [footer] string to be used as footer, to have empty footer, simply use an empty element in array
      * eg. ["", "halo", ""] will have 3 elements in footer, 2 of them being empty
      */
-    function createFlexTable(body, metadata, header, footer){
+    function createFlexTable(body, metadata, header, footer, isResponsive){
 
         var tableClasses = (metadata.tableClass) ? metadata.tableClass + " flex-table" : "flex-table";
 
-        var $tableContainer = $("<div></div>", {class: "flex-table-container"});
+        var $tableContainer = $("<div></div>", {class: "flex-table-container" + (isResponsive ? " horizontal-scroll" : "")});
         var $table = $("<table></table>", {class: tableClasses, id: metadata.id});
         var $body = createFlexTableTopGroup(body, metadata.cols, "body");
 
