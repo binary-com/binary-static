@@ -17,7 +17,7 @@ var IPHistoryUI = (function(){
             cols: columns
         };
         var data = [];
-        var $table = Table.createFlexTable(data,metadata,header);
+        var $table = Table.createFlexTable(data, metadata, header, '', true);
         return $table;
     }
 
