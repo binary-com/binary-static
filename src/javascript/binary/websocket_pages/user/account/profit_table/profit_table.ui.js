@@ -66,35 +66,24 @@ var ProfitTableUI = (function(){
     }
 
     function createProfitTableRow(transaction){
-        var buyMoment = moment.utc(transaction["purchase_time"] * 1000);
-        var sellMoment = moment.utc(transaction["sell_time"] * 1000);
+        var profit_table_data = ProfitTable.getProfitTabletData(transaction);
 
-        var buyDate = buyMoment.format("YYYY-MM-DD") + "\n" + buyMoment.format("HH:mm:ss") + ' GMT';
-        var sellDate = sellMoment.format("YYYY-MM-DD") + "\n" + sellMoment.format("HH:mm:ss") + ' GMT';
+        var plType = (profit_table_data.pl >= 0) ? "profit" : "loss";
 
-        var ref = transaction["transaction_id"];
-        var payout = Number(parseFloat(transaction["payout"])).toFixed(2);
-        var buyPrice = Number(parseFloat(transaction["buy_price"])).toFixed(2);
-        var sellPrice = Number(parseFloat(transaction["sell_price"])).toFixed(2);
-
-        var pl = Number(sellPrice - buyPrice).toFixed(2);
-
-        var plType = (pl >= 0) ? "profit" : "loss";
-
-        var data = [buyDate, ref, payout, '', buyPrice, sellDate, sellPrice, pl, ''];
+        var data = [profit_table_data.buyDate, profit_table_data.ref, profit_table_data.payout, '', profit_table_data.buyPrice, profit_table_data.sellDate, profit_table_data.sellPrice, profit_table_data.pl, ''];
         var $row = Table.createFlexTableRow(data, cols, "data");
 
         $row.children(".buy-date").addClass("pre");
         $row.children(".pl").addClass(plType);
         $row.children(".sell-date").addClass("pre");
-        $row.children(".contract").html(transaction["longcode"] + "<br>");
+        $row.children(".contract").html(profit_table_data.desc + "<br>");
 
         //create view button and append
         var $viewButtonSpan = Button.createBinaryStyledButton();
         var $viewButton = $viewButtonSpan.children(".button").first();
         $viewButton.text(text.localize("View"));
         $viewButton.addClass("open_contract_detailsws");
-        $viewButton.attr("contract_id", transaction["contract_id"]);
+        $viewButton.attr("contract_id", profit_table_data.id);
 
         $row.children(".contract,.details").append($viewButtonSpan);
 

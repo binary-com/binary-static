@@ -15,6 +15,7 @@
  */
  function displayContractForms(id, elements, selected) {
      'use strict';
+     if (!id || !elements || !selected) return;
      var target = document.getElementById(id),
          fragment = document.createDocumentFragment(),
          len = elements.length;
@@ -918,4 +919,11 @@ function setChartSource() {
 
 function isJapanTrading(){
     return $('#trading_socket_container.japan').length;
+}
+
+//used temporarily for mocha test
+if (typeof module !== 'undefined') {
+    module.exports = {
+        addComma: addComma
+    };
 }
