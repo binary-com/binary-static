@@ -4,7 +4,7 @@
         [% l('These Supplementary Terms and Conditions (these "ST&Cs") apply solely to clients ("you") of Binary Investments (Europe) Ltd ("BIEL", "we" or "us") and will govern the relationship between you and us when trading Financial Products (as defined below) with us.') %]
     </p>
     <p>
-        [% l('These ST&Cs form part of and need to be read together with the General Terms and Conditions relating to the use of Binary.com.') %]
+        [% l('These ST&Cs form part of and need to be read together with the General Terms and Conditions relating to the use of [_1].', website_name) %]
     </p>
     <p>
         [% l('You should read these ST&Cs carefully as well as the Summary Order Execution Policy and Summary Conflicts Policy, the applicable Contract Details together with the Risk Disclosure Notice and any other documents that we have supplied or in the future do supply to you.') %]

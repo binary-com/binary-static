@@ -33,7 +33,7 @@
             [% l("Imagine a workplace that often doesn't feel like work.") %]
           </p>
           <p>
-            [% l("If you're looking to build a career, and not a resume, talk to us, Binary.com. We're one of the IT world's most vibrant and progressive workplaces.") %]
+            [% l("If you're looking to build a career, and not a resume, talk to us, [_1]. We're one of the IT world's most vibrant and progressive workplaces.", website_name) %]
           </p>
           <p>
             [% l("Who love working with people from different cultures, and are keen to contribute to a dynamic and unique workplace, and not merely pass on through.") %]
@@ -51,7 +51,7 @@
               [% l("Where we are") %]
             </h1>
             <p>
-              [% l("Binary.com's headquarters are in Malta, a favoured tourist destination with a warm climate, beautiful recreational areas and World Heritage sites. We also have an Operational Headquarters office in Cyberjaya, a high-tech precinct south of Kuala Lumpur, the capital of Malaysia, an equally exciting destination at the heart of Asia.") %]
+              [% l("[_1]'s headquarters are in Malta, a favoured tourist destination with a warm climate, beautiful recreational areas and World Heritage sites. We also have an Operational Headquarters office in Cyberjaya, a high-tech precinct south of Kuala Lumpur, the capital of Malaysia, an equally exciting destination at the heart of Asia.", website_name) %]
             </p>
           </div>
           <div class="gr-6 gr-12-m">
@@ -59,7 +59,7 @@
               [% l("Want to telecommute? ") %]
             </h1>
             <p>
-              [% l("Binary.com is a flexible place. As well as our offices, we have staff who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it.") %]
+              [% l("[_1] is a flexible place. As well as our offices, we have staff who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it.", website_name) %]
             </p>
           </div>
       </div>
