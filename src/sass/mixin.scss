@@ -81,10 +81,6 @@
   .open-account {
     background: $COLOR_LIGHT_GRAY;
     padding: 20px;
-    a {
-      @include link-button;
-      display: block;
-    }
   }
 }
 
@@ -102,10 +98,6 @@
   .open-account {
     p { margin-bottom: 1em; }
     padding: 20px;
-    a {
-      @include link-button;
-      display: block;
-    }
   }
 }
 
