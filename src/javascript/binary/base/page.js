@@ -983,13 +983,16 @@ Contents.prototype = {
             };
             var show_upgrade = function(url, msg) {
                 $upgrade_msg.removeClass(hiddenClass)
-                    .find('a').attr('href', page.url.url_for(url)).html($('<span/>', {text: text.localize(msg)}));
+                    .find('a').removeClass(hiddenClass)
+                        .attr('href', page.url.url_for(url)).html($('<span/>', {text: text.localize(msg)}));
             };
 
             if (page.client.is_virtual()) {
                 var show_upgrade_msg = true;
-                if (localStorage.getItem('jp_test_allowed')) {
+                var show_virtual_msg = true;
+                if (localStorage.getItem('jp_test_allowed') === "1") {
                     hide_upgrade();
+                    show_virtual_msg = false;
                     show_upgrade_msg = false; // do not show upgrade for user that filled up form
                 }
                 for (var i = 0; i < loginid_array.length; i++) {
@@ -1008,6 +1011,8 @@ Contents.prototype = {
                     } else {
                         show_upgrade('new_account/realws', 'Upgrade to a Real Account');
                     }
+                } else if (show_virtual_msg) {
+                    $upgrade_msg.removeClass(hiddenClass).find('> span').removeClass(hiddenClass);
                 }
             } else {
                 var show_financial = false;
@@ -1025,6 +1030,7 @@ Contents.prototype = {
                     }
                 }
                 if (show_financial) {
+                    $('#virtual-text').parent().addClass('invisible');
                     show_upgrade('new_account/maltainvestws', 'Open a Financial Account');
                 } else {
                     hide_upgrade();
