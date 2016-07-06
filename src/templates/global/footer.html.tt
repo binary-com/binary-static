@@ -7,7 +7,7 @@
     <div id="footer-menu">
         <div class="container">
             <div class="gr-row gr-padding-10">
-                <div class="gr-6 gr-12-m gr-parent">
+                <div class="gr-6 gr-12-m gr-parent gr-no-gutter">
                     <div class="gr-row">
                         <div class="gr-4">
                             <h4>[% l('Our Company') %]</h4>
@@ -83,7 +83,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="gr-6 gr-12-m gr-parent">
+                <div class="gr-6 gr-12-m gr-parent gr-no-gutter">
                     <div class="gr-row">
                         <div class="gr-4">
                            <h4>[% l('Terms') %]</h4>
@@ -135,11 +135,19 @@
                                </li>
                            </ul>
                        </div>
-                       <div class="gr-4">
-                           <h4 class="ja-hide">[% l('Partner With Us') %]</h4>
-                           <ul class="ja-hide partner">
+                       <div class="gr-4 ja-hide">
+                           <h4>[% l('Partner With Us') %]</h4>
+                           <ul class="partner">
                                <li>
                                    <a class="pjaxload" href="[% request.url_for('/partners') %]"><img id="iom_icon_footer" class="responsive" src="[% request.url_for('images/pages/footer/partner-icon.svg') %]"/></a>
+                               </li>
+                           </ul>
+                       </div>
+                       <div class="gr-4 all-hide ja-show">
+                           <h4>[% l('{JAPAN ONLY}Company Profile') %]</h4>
+                           <ul>
+                               <li>
+                                   <a class="pjaxload" href="[% request.url_for('/company-profile') %]">[% l("{JAPAN ONLY}Company Profile & Disclosure") %]</a>
                                </li>
                            </ul>
                        </div>
