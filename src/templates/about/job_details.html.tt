@@ -70,7 +70,145 @@
 </div>
 <div class="contents" style="display:none">
   <div id="content-Information_Technology">
-    <div class="DevOps_Manager" id="Information_Technology-section-one">
+      <div class="Chief_Technology_Officer" id="Information_Technology-section-one">
+          <p>
+              [% l("[_1] is seeking a dynamic, hands-on, entrepreneurial leader for our technology group.", website_name) %]
+          </p>
+          <p><strong>[% l("Our company") %]</strong></p>
+          <p>
+              [% l("[_1] is the award-winning leader in online binary options trading. Our platform allows customers to trade currencies, stocks and commodities.", website_name) %]
+          </p>
+          <p>
+              [% l("Founded in 1999, we are one of the oldest and most respected names in our industry. Today, we have over 1 million registered accounts around the world, and trade over US$ 1 billion in options transactions per year.") %]
+          </p>
+          <p>
+              [% l("Our business is growing strongly. Over the last 5 years, it has grown over 20-fold, and we expect to keep growing strongly in coming years.") %]
+          </p>
+          <p><strong>[% l("Our culture") %]</strong></p>
+          <p>
+              [% l("[_1] is one of the IT world's most vibrant and progressive workplaces. We blend the entrepreneurial spirit and growth profile of a startup with the profitability and stability of a long-running business.", website_name) %]
+          </p>
+          <p>
+              [% l("Our company is built on a culture that fosters collaboration, individuality and creativity. We value cultural and gender diversity, and foster a supportive, caring environment within a flat organizational structure.") %]
+          </p>
+          <p>
+              [% l("We value staff with a sense of fun and adventure, who are optimistic and customer focused and - above all - agree with our strong emphasis on business integrity.") %]
+          </p>
+          <p><strong>[% l("Your skills & motivations ") %]</strong></p>
+          <p>
+              [% l("You are a results-oriented, analytical problem-solver. Your finger is on the pulse of the latest technologies in software development and development operations. You have a keen understanding of software architecture and best practices, and how to structure systems for scalability, performance and security. You also prefer, and have a passion for, Linux and open-source platforms.") %]
+          </p>
+          <p>
+              [% l("You are familiar with how financial markets operate, and you may have experience in trading stocks, futures or options. You may also have written code relevant to financial charts, data feeds, brokerages or financial protocols.") %]
+          </p>
+          <p>
+              [% l("You are technically strong, and your competencies include:") %]
+          </p>
+          <ul class="bullet">
+              <li>
+                  [% l("Deep software development skills that include Perl, Python, C++, Javascript, Websockets, git") %]
+              </li>
+              <li>
+                  [% l("Strong Devops and Linux system administration skills, including deep experience with cloud platforms such as AWS, auto-scaling, security, load balancing, service discovery, and infrastructure configuration with tools such as Chef and Terraform") %]
+              </li>
+              <li>
+                  [% l("Relational database design, sharding, failover, and replication, with open-source RDBMS such as Postgres and MySQL") %]
+              </li>
+              <li>
+                  [% l("A deep understanding of security at various levels of the code and infrastructure stack") %]
+              </li>
+              <li>
+                  [% l("Proven application of advanced coding principles and standards and a good understanding of software architecture and scalability design principles.") %]
+              </li>
+          </ul>
+          <p>
+              [% l("You prefer to:") %]
+          </p>
+          <ul class="bullet">
+              <li>
+                  [% l("Use an inspiring servant-leadership style based on mentoring and coaching") %]
+              </li>
+              <li>
+                  [% l("Maintain consistent accountability, for yourself and others") %]
+              </li>
+              <li>
+                  [% l("Be versatile and fast-paced, and to adapt readily to change") %]
+              </li>
+              <li>
+                  [% l("Demonstrate standards of excellence.") %]
+              </li>
+          </ul>
+          <p>
+              [% l("You thrive as a leader, and your leadership style is based on a sound understanding of the theories of leadership and management. You know how to motivate others and build on their strengths.  You drive high performance in your teams and increase their engagement, motivation, and performance.") %]
+          </p>
+          <p>
+              [% l("You fully believe in the importance of social responsibility and integrity in the workplace, and consider these aspects in all your decision-making.") %]
+          </p>
+          <p>
+              [% l("And you are genuinely excited by the prospect of helping us increase the popularity of our trading systems by applying the latest web technologies to global financial markets.") %]
+          </p>
+          <p><strong>[% l("Your role") %]</strong></p>
+          <p>
+              [% l("As our Chief Technology Officer, you will help drive the growth of our high-traffic global network. You will work closely with the other members of our senior management team - our CFO, CMO, Head of Quant and CEO. You will:") %]
+          </p>
+          <ul class="bullet">
+              <li>
+                  [% l("Be responsible for all IT/technical aspects of the business (apart from the Quant team)") %]
+              </li>
+              <li>
+                  [% l("Manage and develop our global IT infrastructure to maintain scalability, performance, and security") %]
+              </li>
+              <li>
+                  [% l("Lead the software development effort") %]
+              </li>
+              <li>
+                  [% l("Provide the complex IT systems needed to support the high-level professionals in our different departments. These include: mathematicians, who develop complex algorithms for derivatives pricing; accounts and financial executives, who work with complex OLAP cubes and reporting systems; marketing executives, who execute complex Adwords and other online campaigns") %]
+              </li>
+              <li>
+                  [% l("Improve the company's global IT infrastructure to support rapid growth") %]
+              </li>
+              <li>
+                  [% l("Write high-quality, self-documenting code using test-driven development techniques") %]
+              </li>
+              <li>
+                  [% l("Be on the front line to further the entrepreneurial growth of the company") %]
+              </li>
+              <li>
+                  [% l("Integrate new financial markets' data feeds and advance our financial charting and trading facilities") %]
+              </li>
+              <li>
+                  [% l("Expand our accounting, reporting and reconciliation systems") %]
+              </li>
+              <li>
+                  [% l("Develop and deploy risk-management and hedging tools") %]
+              </li>
+              <li>
+                  [% l("Produce budgets and expense controls for the IT department") %]
+              </li>
+              <li>
+                  [% l("Work with business partners to develop white labels") %]
+              </li>
+              <li>
+                  [% l("Recruit and hire top IT team members in order to build high-performance teams.") %]
+              </li>
+          </ul>
+          <p><strong>[% l("Remuneration & benefits") %]</strong></p>
+          <p>
+              [% l("The position includes a market-based salary, annual performance bonus, health benefits and allowances for travel and internet. You will also enjoy a casual dress code, flexible work hours and the freedom to select tools and systems.") %]
+          </p>
+          <p>
+              [% l("If you need to relocate, we will provide work permits and relocation assistance for you and your family.") %]
+          </p>
+          <p><strong>[% l("Location") %]</strong></p>
+          <p>
+              [% l("The position is based at our operational headquarters in Cyberjaya, Malaysia. Cyberjaya is an exciting high-tech precinct south of Kuala Lumpur, the capital of Malaysia. The benefits of working in Cyberjaya include a low cost of living – your income will stretch further than in most western countries - modern infrastructure and easy access to some of Asia's most spectacular scenery.") %]
+          </p>
+          <p><strong>[% l("Does this sound like you?") %]</strong></p>
+          <p>
+              [% l("If it does, we would love to hear from you.") %]
+          </p>
+      </div>
+    <div class="DevOps_Manager" id="Information_Technology-section-two">
       <p>
         [% l("[_1]'s IT Operations Group is responsible for the design, development and operation of the company's high-traffic networks. Its responsibilities include hardware and software deployment, up-time and reliability testing, incident response reporting, network security, intrusion detection, and load balancing.", website_name) %]
       </p>
@@ -120,7 +258,7 @@
         </li>
       </ul>
     </div>
-    <div class="Senior_Front-End_Developer" id="Information_Technology-section-two">
+    <div class="Senior_Front-End_Developer" id="Information_Technology-section-three">
       <p>
         [% l("Binary Group Services is searching for talented and motivated front-end developers who are looking for a chance to excel.") %]
       </p>
@@ -153,7 +291,7 @@
         </li>
       </ul>
     </div>
-    <div class="Senior_Perl_Developer" id="Information_Technology-section-three">
+    <div class="Senior_Perl_Developer" id="Information_Technology-section-four">
       <p>
         [% l("Binary Group Services is searching for talented and motivated Perl developers who are looking for a chance to excel. If you have the skill set we seek, you'll become a valued member of a highly competent back-end development team engaged in driving our binary options trading systems to new heights.") %]
       </p>

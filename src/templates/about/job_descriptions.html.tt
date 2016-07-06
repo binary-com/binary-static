@@ -14,6 +14,17 @@
       </div>
       <div class="gr-9 gr-12-m">
         <div class="eqWrap">
+            <div class="eq">
+                <h3>
+                    [% l("Chief Technology Officer") %]
+                </h3>
+                <p>
+                    [% l("Will be responsible for all IT/technical aspects of the business, lead the software development effort, and more.") %]
+                </p>
+                <a class="pjaxload" href="[% request.url_for('/open-positions/job-details?dept=Information_Technology#section-one') %]">
+                    [% l("Learn more") %]
+                </a>
+            </div>
           <div class="eq">
             <h3>
               [% l("DevOps Manager / Team Lead") %]
@@ -21,7 +32,7 @@
             <p>
               [% l("Responsibilities include hardware and software deployment, network security, intrusion detection, and load balancing.") %]
             </p>
-            <a class="pjaxload" href="[% request.url_for('/open-positions/job-details?dept=Information_Technology#section-one') %]">
+            <a class="pjaxload" href="[% request.url_for('/open-positions/job-details?dept=Information_Technology#section-two') %]">
               [% l("Learn more") %]
             </a>
           </div>
@@ -32,7 +43,7 @@
             <p>
               [% l("Tasked with writing robust, high-quality, production-ready code as well as refactoring and optimizing a large and complex legacy code base.") %]
             </p>
-            <a class="pjaxload" href="[% request.url_for('/open-positions/job-details?dept=Information_Technology#section-two') %]">
+            <a class="pjaxload" href="[% request.url_for('/open-positions/job-details?dept=Information_Technology#section-three') %]">
               [% l("Learn more") %]
             </a>
           </div>
@@ -43,7 +54,7 @@
             <p>
               [% l("Tasked with writing robust, high-quality, production-ready code and contributing to the architecture that drives our high-traffic global website.") %]
             </p>
-            <a class="pjaxload" href="[% request.url_for('/open-positions/job-details?dept=Information_Technology#section-three') %]">
+            <a class="pjaxload" href="[% request.url_for('/open-positions/job-details?dept=Information_Technology#section-four') %]">
               [% l("Learn more") %]
             </a>
           </div>
