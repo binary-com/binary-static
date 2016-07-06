@@ -489,6 +489,7 @@ function handle_residence_state_ws(){
 
 function generateState() {
     var state = document.getElementById('address-state');
+    if (state.length !== 0) return;
     appendTextValueChild(state, Content.localize().textSelect, '');
     if (page.client.residence !== "") {
       BinarySocket.send({ states_list: page.client.residence });
