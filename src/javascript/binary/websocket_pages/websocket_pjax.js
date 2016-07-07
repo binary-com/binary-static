@@ -17,7 +17,7 @@ pjax_config_page_require_auth("user/profit_table", function(){
             Content.populate();
             ProfitTableWS.init();
         },
-        onUnload: function(){
+        onUnload: function() {
             ProfitTableWS.clean();
         }
     };
@@ -42,7 +42,7 @@ pjax_config_page_require_auth("user/statement", function(){
             Content.populate();
             StatementWS.init();
         },
-        onUnload: function(){
+        onUnload: function() {
             StatementWS.clean();
         }
     };
@@ -61,5 +61,17 @@ pjax_config_page("resources/market_timesws", function() {
         onLoad: function() {
             MarketTimesUI.init();
         }
+    };
+});
+
+pjax_config_page_require_auth("user/portfoliows", function() {
+    return {
+        onLoad: function() {
+            PortfolioWS.onLoad();
+        },
+        onUnload: function() {
+            BinarySocket.send({"forget_all": "proposal_open_contract"});
+            BinarySocket.send({"forget_all": "transaction"});
+        },
     };
 });
