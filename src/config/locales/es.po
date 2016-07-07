@@ -132,7 +132,7 @@ msgstr "%1 ha actualizado sus<a class=\"pjaxload\" href=\"%2\">Términos y Condi
 msgid "%1 hits 1 million users, reaching a historic milestone. The company continues to see exponential growth and this reconfirms its position as an industry leader."
 msgstr "Binary.com llega a un millón de usuarios, alcanzando un hito histórico. La compañía continúa su crecimiento exponencial y vuelve a confirmar su posición como líder del sector."
 
-msgid "%1 introduces an <a href='%2' target='_blank'>auto-trader programming tool</a>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
+msgid "%1 introduces an <a href='%2' target='_blank' class='ja-hide'>auto-trader programming tool</a><span class='all-hide ja-show'>auto-trader programming tool</span>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
 msgstr ""
 
 #, fuzzy
@@ -188,7 +188,7 @@ msgstr "%1 es el pionero galardonado en la industria de las opciones binarias. N
 msgid "%1 is the award-winning industry pioneer in online options trading. We boast:"
 msgstr "%1 es el pionero galardonado en la industria de las opciones binarias. Nos enorgullece lo siguiente:"
 
-msgid "%1 launches an <a href='%2' target='_blank'> e-commerce site for branded merchandise</a> – enabling clients, affiliates, and developers to buy and sell Binary.com products."
+msgid "%1 launches an <a href='%2' target='_blank' class='ja-hide'> e-commerce site for branded merchandise</a><span class='all-hide ja-show'> e-commerce site for branded merchandise</span> – enabling clients, affiliates, and developers to buy and sell Binary.com products."
 msgstr ""
 
 msgid "%1 makes efforts that the quoted prices of each underlying asset that a Binary Option refers to will be reasonably related to the actual prices of such asset available in the market. %1 makes no warranty, expressed or implied, that the quoted prices represent prevailing market prices."
@@ -276,10 +276,18 @@ msgstr "El grupo de analíticos cuantitativos de %1 es responsable de la fijaci�
 msgid "%1's Smart FX are smart markets that measure the value of a currency against a basket of major currencies."
 msgstr "Los Smart FX de %1 son mercados \"inteligentes\" que miden el valor de una divisa frente a una cesta de otras monedas principales."
 
-msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements.  Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
+#, fuzzy
+#| msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements.  Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
+msgid ""
+"%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much\n"
+"                    less investment than would be required in the live market."
 msgstr "Los contratos spread de %1 son contratos derivados apalancados, cuyo valor está directamente vinculado a los movimientos de mercados subyacentes. Los clientes que compran un contrato 'largo' sobre un mercado en alza (y los que compran un contrato 'corto' sobre una caída de un mercado) se benefician de esos movimientos con una inversión mucho menor que la de un mercado real."
 
-msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
+#, fuzzy
+#| msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
+msgid ""
+"%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are\n"
+"                    closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
 msgstr "Los contratos spread de %1 requieren un 'stop loss' que limita las pérdidas máximas en las que puede incurrir un cliente. Esta cantidad de 'stop loss' actuará como depósito y no podrá ser utilizada para su comercio hasta que el contrato spread esté cerrado. Los contratos spread se cierran cuando el cliente los vende o bien al tocar el nivel de 'stop loss' o de 'stop profit'."
 
 msgid "%1's Volatility Indices are based on a cryptographically secure random number generator audited for fairness by an independent third party."
@@ -723,7 +731,11 @@ msgstr "Un título de licenciatura en Marketing, Administración de Empresas o u
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by %1. The transfer fees are borne by the Client."
 msgstr "Un Agente de Pagos actua como un intercambio entre el cliente (es decir, nuestro cliente) y %1. El Agente de Pagos procesa los depósitos y retiros para los clientes que desean utilizar un método específico de dinero electrónico o monedas locales que no se ofrecen por defecto en %1. Los gastos de transferencia corren a cargo del cliente."
 
-msgid "A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier or the low barrier at any time during the period chosen by a trader."
+#, fuzzy
+#| msgid "A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier or the low barrier at any time during the period chosen by a trader."
+msgid ""
+"A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier\n"
+"            or the low barrier at any time during the period chosen by a trader."
 msgstr "Un binario \"Queda dentro\" se paga si el mercado permanece entre (sin tocar) el límite superior e inferior (AMBOS) durante todo el período establecido. Un binario \"Sale\" se paga si el mercado alcanza el límite superior O el inferior en cualquier momento durante el período establecido."
 
 msgid "A True Partnership"
@@ -986,7 +998,11 @@ msgstr "Cantidad por punto"
 msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
 msgstr "Un titulo avanzado/superior o una licenciatura"
 
-msgid "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target."
+#, fuzzy
+#| msgid "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target."
+msgid ""
+"An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high\n"
+"            price target OR strictly lower than the low price target."
 msgstr "Un contrato \"Finaliza dentro\" se paga si el precio de salida del mercado es estrictamente superior al límite de precio bajo Y estrictamente inferior al límite de precio alto. Un contrato \"Finaliza fuera\" se paga si el precio de salida del mercado es O BIEN estrictamente superior al límite de precio alto O estrictamente inferior que el límite de precio bajo."
 
 msgid "An additional password can be used to restrict access to the cashier."
@@ -1364,7 +1380,11 @@ msgstr "Binary abre una oficina en Japón"
 msgid "Binary option"
 msgstr "Opciones binarias"
 
-msgid "Binary options are easy to understand. They're called 'binary' because there can be only two outcomes - win or lose. If your prediction is correct, you receive a payout that is determined at the start of the trade. If not, you just lose your initial stake."
+#, fuzzy
+#| msgid "Binary options are easy to understand. They're called 'binary' because there can be only two outcomes - win or lose. If your prediction is correct, you receive a payout that is determined at the start of the trade. If not, you just lose your initial stake."
+msgid ""
+"Binary options are easy to understand. They're called 'binary' because there can be only two outcomes - win or lose. If your prediction is correct, you receive a payout that is determined at the start of the trade. If not, you just lose your\n"
+"            initial stake."
 msgstr "Las opciones binarias son fáciles de entender. Se llaman \"binarias\" porque sólo pueden haber dos resultados - ganar o perder. Si su predicción es correcta, recibe un pago que se determina en el inicio de la operación. Si no es así, perderá sólamente su apuesta inicial."
 
 msgid "Binary options basics"
@@ -3097,7 +3117,11 @@ msgstr "En el desempeño del comercio extrabursátil con opciones binarias, un c
 msgid "In classic Silicon Valley style, Hong Kong based hedge fund manager and entrepreneur, Jean-Yves Sireau, starts Regent Markets in his Hong Kong bedroom. He develops the systems, methods and algorithms for implementing a fixed-odds financial betting system. Jean-Yves's vision is to create a market in the simplest of all derivatives contracts - the fixed-odds bet - and to offer ordinary investors the chance to make small bets. Until his innovation, binary options are normally only traded in large quantities."
 msgstr "En el clásico estilo de Silicon Valley, el empresario y gestor de fondos de cobertura con sede en Hong Kong, Jean-Yves Sireau, establece Regent Markets en su apartamento en Hong Kong. Desde allí desarrolla los sistemas, métodos y algoritmos para la implementación de un sistema de apuestas financieras de probabilidades fijas. La visión de Jean-Yves es crear un mercado en la forma más simple de todos los contratos de derivados - las apuestas de probabilidades fijas - y ofrecer a los inversores pequeños la oportunidad de hacer apuestas de pocas cantidades. Hasta esta innovación, las opciones binarias normalmente se operaban sólo en grandes cantidades."
 
-msgid "In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro will rise in relation to the value of the US dollar."
+#, fuzzy
+#| msgid "In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro will rise in relation to the value of the US dollar."
+msgid ""
+"In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro\n"
+"            will rise in relation to the value of the US dollar."
 msgstr "En el mercado de divisas los comerciantes pueden comprar contratos basados en el cambio del precio de una divisa en relación a otra. Por ejemplo, si selecciona Alza en el mercado EUR/USD, usted predice que el valor del Euro subirá en relación al valor del dólar estadounidense."
 
 msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
@@ -5997,7 +6021,11 @@ msgstr "Los servicios contractuales financieros de este sitio solo son adecuados
 msgid "The first step is to open an account. You can <a target='_blank' href='%1'>apply online</a> in just a few minutes."
 msgstr "El primer paso es abrir una cuenta. Puede <a target='_blank' href='%1'>solicitarlo en línea</a> en cuestión de minutos."
 
-msgid "The first thing to do is choose the asset you wish to trade, such as gold or oil, stocks or FX rates (The value of a binary option is derived from the price of the underlying asset). A big advantage of trading options is that you are not buying or selling the actual asset."
+#, fuzzy
+#| msgid "The first thing to do is choose the asset you wish to trade, such as gold or oil, stocks or FX rates (The value of a binary option is derived from the price of the underlying asset). A big advantage of trading options is that you are not buying or selling the actual asset."
+msgid ""
+"The first thing to do is choose the asset you wish to trade, such as gold or oil, stocks or FX rates (The value of a binary option is derived from the price of the underlying asset). A big advantage of trading options is that you are not buying\n"
+"            or selling the actual asset."
 msgstr "Lo primero que tiene que hacer es elegir el activo con qué desea negociar, como el oro o el petróleo, las acciones o Forex. (El valor de una opción binaria se deriva del precio del activo subyacente). Una gran ventaja de las opciones binarias es que usted no está comprando o vendiendo el activo real."
 
 msgid "The first tick is the first tick after the contract is processed by our servers."
@@ -6082,7 +6110,11 @@ msgstr "Usted usa la API de Binary.com bajo su propio riesgo, y usted asume la p
 msgid "The use, operation or combination of the %1 API with non-%1 API(s), data, equipment or documentation if liability would have been avoided but for such use, operation, or combination; or"
 msgstr "El uso, la operación o la combinación de la API de Binary.com con API(s), equipo o documentación que no son de Binary.com si la responsabilidad se habría evitado pero para dicho uso, operación, o combinación; o"
 
-msgid "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends."
+#, fuzzy
+#| msgid "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends."
+msgid ""
+"The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try\n"
+"                out scenarios like - high volatility, low volatility, bullish and bearish trends."
 msgstr "Los índices de volatilidad simulan varias situaciones reales del mercado y proporcionan una plataforma ideal para acostumbrarse al comercio y probar estrategias en varias condiciones del mercado. Estos índices dependen de la volatilidad y la deriva y ayudan a los usuarios a probar escenarios de - alta volatilidad, baja volatilidad, tendencias alcistas y bajistas."
 
 msgid "Then, make your trade"
@@ -7518,7 +7550,9 @@ msgstr "días"
 msgid "deposit"
 msgstr "depósito"
 
-msgid "e.g. www.binaryqa36.com"
+#, fuzzy
+#| msgid "e.g. www.binaryqa36.com"
+msgid "e.g. ws.binaryws.com"
 msgstr "por ejemplo, www.binaryqa36.com"
 
 msgid "f"
@@ -7681,6 +7715,9 @@ msgstr "{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exer
 msgid "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
 
+msgid "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
+msgstr ""
+
 msgid "{JAPAN ONLY}A  Net Settlement type of option is one where the underlying asset does not include yen, but the option fee and settlement are paid in yen; it therefore requires some definition of how the settlement amounts will be calculated and converted to yen."
 msgstr "{JAPAN ONLY}A  Net Settlement type of option is one where the underlying asset does not include yen, but the option fee and settlement are paid in yen; it therefore requires some definition of how the settlement amounts will be calculated and converted to yen."
 
@@ -7750,14 +7787,48 @@ msgstr "{JAPAN ONLY}As the expected volatility of the underlying asset increases
 msgid "{JAPAN ONLY}As the time to the exercise point shortens, the time-value of a plain vanilla option decreases."
 msgstr "{JAPAN ONLY}As the time to the exercise point shortens, the time-value of a plain vanilla option decreases."
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 4: Risk"
+msgid "{JAPAN ONLY}Association of join"
+msgstr "{JAPAN ONLY}Section 4: Risk"
+
 msgid "{JAPAN ONLY}BUY price per unit"
 msgstr "{JAPAN ONLY}BUY price per unit"
 
 msgid "{JAPAN ONLY}Because option prices are determined by the probability of being exercised, it cannot be said that cheaper options have any natural advantage over expensive options."
 msgstr "{JAPAN ONLY}Because option prices are determined by the probability of being exercised, it cannot be said that cheaper options have any natural advantage over expensive options."
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Download"
+msgid "{JAPAN ONLY}Binary K. K."
+msgstr "{JAPAN ONLY}Download"
+
 msgid "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
 msgstr "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}Capital"
+msgstr "{JAPAN ONLY}Units"
+
+msgid "{JAPAN ONLY}Capital Adequacy Ratio (CAR)"
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Option Pricing"
+msgid "{JAPAN ONLY}Company Profile"
+msgstr "{JAPAN ONLY}Option Pricing"
+
+msgid "{JAPAN ONLY}Company Profile & Disclosure"
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Download"
+msgid "{JAPAN ONLY}Company name"
+msgstr "{JAPAN ONLY}Download"
+
+msgid "{JAPAN ONLY}Company name in English"
+msgstr ""
 
 msgid "{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly."
 msgstr "{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly."
@@ -7768,8 +7839,27 @@ msgstr "{JAPAN ONLY}Dear customer, you are not allowed to take knowledge test un
 msgid "{JAPAN ONLY}Dear customer, you've already completed the knowledge test, please proceed to next step."
 msgstr "{JAPAN ONLY}Dear customer, you've already completed the knowledge test, please proceed to next step."
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}BUY price per unit"
+msgid "{JAPAN ONLY}December 2015"
+msgstr "{JAPAN ONLY}BUY price per unit"
+
 msgid "{JAPAN ONLY}Delta refers to  a percentage change of the option price with respect to the change in the underlying asset price."
 msgstr "{JAPAN ONLY}Delta refers to  a percentage change of the option price with respect to the change in the underlying asset price."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Introduction to Binary Options"
+msgid "{JAPAN ONLY}Designated dispute resolution organization"
+msgstr "{JAPAN ONLY}Introduction to Binary Options"
+
+msgid "{JAPAN ONLY}Disclosure of CAR by No. 46-6-3 in the FIEA (Financial Instruments and Exchange Act)"
+msgstr ""
+
+msgid "{JAPAN ONLY}Disclosure of financial statement by No. xx in the FIEA"
+msgstr ""
+
+msgid "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
+msgstr ""
 
 msgid "{JAPAN ONLY}Download"
 msgstr "{JAPAN ONLY}Download"
@@ -7780,6 +7870,11 @@ msgstr "{JAPAN ONLY}Email us copies of your Identification Documents and My Numb
 msgid "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
 msgstr "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}Establishment"
+msgstr "{JAPAN ONLY}Units"
+
 msgid "{JAPAN ONLY}Even if all details of the binary options match perfectly, there may still be differences in the prices shown by different broking companies."
 msgstr "{JAPAN ONLY}Even if all details of the binary options match perfectly, there may still be differences in the prices shown by different broking companies."
 
@@ -7788,6 +7883,22 @@ msgstr "{JAPAN ONLY}Even if the option is exercise or not exercised, the origina
 
 msgid "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
 msgstr "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Regulation & Tax"
+msgid "{JAPAN ONLY}February 2016"
+msgstr "{JAPAN ONLY}Regulation & Tax"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 5: Calculation"
+msgid "{JAPAN ONLY}Financial Condition"
+msgstr "{JAPAN ONLY}Section 5: Calculation"
+
+msgid "{JAPAN ONLY}Financial Instruments Business No. xxxx"
+msgstr ""
+
+msgid "{JAPAN ONLY}Financial Instruments Mediation Assistance Center"
+msgstr ""
 
 msgid "{JAPAN ONLY}For a call option, if the price of the underlying asset is higher than the option exercise price, it is know as an in-the-money option."
 msgstr "{JAPAN ONLY}For a call option, if the price of the underlying asset is higher than the option exercise price, it is know as an in-the-money option."
@@ -7827,6 +7938,11 @@ msgstr "{JAPAN ONLY}For both call and put options, if the underlying asset price
 
 msgid "{JAPAN ONLY}For full details of the documents we can accept please download the following guide:"
 msgstr "{JAPAN ONLY}For full details of the documents we can accept please download the following guide:"
+
+#, fuzzy
+#| msgid "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
+msgid "{JAPAN ONLY}HirooMiyaya 3F, 1-9-16 Hiroo, Shibuya, Tokyo, 150-0012"
+msgstr "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokio 150-0012, Japón"
 
 msgid "{JAPAN ONLY}Historical volatility is a prediction of the future rate of change in the underlying asset."
 msgstr "{JAPAN ONLY}Historical volatility is a prediction of the future rate of change in the underlying asset."
@@ -7930,6 +8046,11 @@ msgstr "{JAPAN ONLY}It is possible to use two binary options to make a profit if
 msgid "{JAPAN ONLY}It prohibits the copying of the questions . In addition , You agree that you will not leak to third party"
 msgstr "{JAPAN ONLY}It prohibits the copying of the questions . In addition , You agree that you will not leak to third party"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Download"
+msgid "{JAPAN ONLY}January 2016"
+msgstr "{JAPAN ONLY}Download"
+
 msgid "{JAPAN ONLY}Knowledge Test"
 msgstr "{JAPAN ONLY}Knowledge Test"
 
@@ -7951,8 +8072,31 @@ msgstr "{JAPAN ONLY}Knowledge test list item 4"
 msgid "{JAPAN ONLY}Knowledge test list item 5"
 msgstr "{JAPAN ONLY}Knowledge test list item 5"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Trading Guide"
+msgid "{JAPAN ONLY}Main business"
+msgstr "{JAPAN ONLY}Trading Guide"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Download"
+msgid "{JAPAN ONLY}March 2014"
+msgstr "{JAPAN ONLY}Download"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Download"
+msgid "{JAPAN ONLY}March 2015"
+msgstr "{JAPAN ONLY}Download"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Download"
+msgid "{JAPAN ONLY}March 2016"
+msgstr "{JAPAN ONLY}Download"
+
 msgid "{JAPAN ONLY}No space between last name and first name"
 msgstr "{JAPAN ONLY}No space between last name and first name"
+
+msgid "{JAPAN ONLY}November 7, 2014"
+msgstr ""
 
 msgid "{JAPAN ONLY}Option Pricing"
 msgstr "{JAPAN ONLY}Option Pricing"
@@ -8023,6 +8167,11 @@ msgstr "{JAPAN ONLY}Purchase, Settlement & Resale"
 msgid "{JAPAN ONLY}Regarding to the OTC price of financial instruments, in case that financial instruments business operator suggests both of  bid and ask price (or trading price and cancellation price), generally there is a difference of them. This option will be wider as the expiration approaches."
 msgstr "{JAPAN ONLY}Regarding to the OTC price of financial instruments, in case that financial instruments business operator suggests both of  bid and ask price (or trading price and cancellation price), generally there is a difference of them. This option will be wider as the expiration approaches."
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Regulation & Tax"
+msgid "{JAPAN ONLY}Registration"
+msgstr "{JAPAN ONLY}Regulation & Tax"
+
 msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "{JAPAN ONLY}Regulation & Tax"
 
@@ -8043,6 +8192,11 @@ msgstr "{JAPAN ONLY}Section 4: Risk"
 
 msgid "{JAPAN ONLY}Section 5: Calculation"
 msgstr "{JAPAN ONLY}Section 5: Calculation"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}SELL price  per unit"
+msgid "{JAPAN ONLY}September 2015"
+msgstr "{JAPAN ONLY}SELL price  per unit"
 
 msgid "{JAPAN ONLY}Short positions in FX Binary Options must be covered by initial margin and any further losses must be covered by further margin deposits."
 msgstr "{JAPAN ONLY}Short positions in FX Binary Options must be covered by initial margin and any further losses must be covered by further margin deposits."
@@ -8067,6 +8221,9 @@ msgstr "{JAPAN ONLY}The Exercise Price is the level at which the option buyer ha
 
 msgid "{JAPAN ONLY}The Exit Price is the price that is observed at the judgment time, and is used to determine whether a payout should be made."
 msgstr "{JAPAN ONLY}The Exit Price is the price that is observed at the judgment time, and is used to determine whether a payout should be made."
+
+msgid "{JAPAN ONLY}The Financial Futures Association of Japan"
+msgstr ""
 
 msgid "{JAPAN ONLY}The buyer of a vanilla option can choose whether to exercise the option or not. His loss is limited to the price paid for the option, whereas his potential profit is unlimited."
 msgstr "{JAPAN ONLY}The buyer of a vanilla option can choose whether to exercise the option or not. His loss is limited to the price paid for the option, whereas his potential profit is unlimited."
@@ -8137,6 +8294,9 @@ msgstr "{JAPAN ONLY}Trading & Hedging"
 msgid "{JAPAN ONLY}Trading Guide"
 msgstr "{JAPAN ONLY}Trading Guide"
 
+msgid "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
+msgstr ""
+
 msgid "{JAPAN ONLY}Units"
 msgstr "{JAPAN ONLY}Units"
 
@@ -8161,6 +8321,11 @@ msgstr "{JAPAN ONLY}When buying a vanilla put option, the break-even price at th
 msgid "{JAPAN ONLY}Where broking companies show bid and offer prices for purchasing and sell-back of positions, these prices may become further apart the nearer you are to the exercise time."
 msgstr "{JAPAN ONLY}Where broking companies show bid and offer prices for purchasing and sell-back of positions, these prices may become further apart the nearer you are to the exercise time."
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Options Basics"
+msgid "{JAPAN ONLY}Win Loss Ratio"
+msgstr "{JAPAN ONLY}Options Basics"
+
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 
@@ -8184,6 +8349,11 @@ msgstr "puntos"
 #| msgid "Job details"
 msgid "Job Details"
 msgstr "Detalles del trabajo"
+
+#, fuzzy
+#| msgid "Company addresses"
+msgid "Company Profile"
+msgstr "Direcciones de la compañía"
 
 #, fuzzy
 #| msgid "Open-source projects"
