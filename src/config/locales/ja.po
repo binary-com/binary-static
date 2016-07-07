@@ -7,9 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-07-07 02:55+0000\n"
-"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"PO-Revision-Date: 2016-07-07 04:07+0000\n"
+"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
+"Language-Team: Japanese "
+"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -115,10 +116,11 @@ msgstr "<a class=\"pjaxload\" href=\"%2\">取引規約</a>を改定いたしま�
 msgid "%1 hits 1 million users, reaching a historic milestone. The company continues to see exponential growth and this reconfirms its position as an industry leader."
 msgstr "Binary.comは100万人を超える顧客を獲得し、社史に残る実績を達成。当社は今後も爆発的な成長を遂げることで、業界トップのポジションを確実なものにする。"
 
-#, fuzzy
 #| msgid "%1 introduces an <a href='%2' target='_blank'>auto-trader programming tool</a>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
 msgid "%1 introduces an <a href='%2' target='_blank' class='ja-hide'>auto-trader programming tool</a><span class='all-hide ja-show'>auto-trader programming tool</span>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
-msgstr "Binary.comは、お客さま自身が簡単なドラグ&ドロップのPC操作で自動売買ロボット作成してシステムトレードを可能にできるプログラミングツールを導入しました。"
+msgstr ""
+"「ドラッグ&ドロップ」操作で簡単に自動売買ロボットを作成し、システムトレードを可能にする<a href='%2' target='_blank' "
+"class='ja-hide'>自動トレーダープログラミングツール</a>を導入しました。"
 
 msgid "%1 is a flexible place. As well as our offices, we have staff who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
 msgstr "Binary.comでは柔軟なワークスタイルが可能です。世界中のホームオフィスからの在宅勤務の機会もご希望に応じて許可しています。"
@@ -165,10 +167,11 @@ msgstr "%1は受賞履歴を有するオンライン上のオプション取引�
 msgid "%1 is the award-winning industry pioneer in online options trading. We boast:"
 msgstr "当社は受賞履歴を有するオンライン上のオプション取引業界でのパイオニアであり、下記の実績を誇ります："
 
-#, fuzzy
 #| msgid "%1 launches an <a href='%2' target='_blank'> e-commerce site for branded merchandise</a> – enabling clients, affiliates, and developers to buy and sell Binary.com products."
 msgid "%1 launches an <a href='%2' target='_blank' class='ja-hide'> e-commerce site for branded merchandise</a><span class='all-hide ja-show'> e-commerce site for branded merchandise</span> – enabling clients, affiliates, and developers to buy and sell Binary.com products."
-msgstr "Binary.comは、お客さま、アフィリエイト及びシステム開発者を対象にした当グループの商品を販売可能にしたオンラインショップを開設しました。"
+msgstr ""
+"%1が<a href='%2' target='_blank' class='ja-hide'>ブランド商品のECサイトを開設</a> - "
+"Binary.com商品の売買に関するお客様、アフィリエイト会員、開発者の方々がご利用いただけます。"
 
 msgid "%1 makes efforts that the quoted prices of each underlying asset that a Binary Option refers to will be reasonably related to the actual prices of such asset available in the market. %1 makes no warranty, expressed or implied, that the quoted prices represent prevailing market prices."
 msgstr ""
@@ -247,19 +250,23 @@ msgstr "定量分析グループはオプションのリスクと収益性の管
 msgid "%1's Smart FX are smart markets that measure the value of a currency against a basket of major currencies."
 msgstr "%1のスマートFXは、主要通貨バスケットに対する通貨の価値を計るスマートマーケットです。"
 
-#, fuzzy
 #| msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements.  Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
 msgid ""
 "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much\n"
 "                    less investment than would be required in the live market."
-msgstr "%1のスプレッドトレードには、市場動向が直接関連する金銭的価値のデリバティブ契約を活用しています。市場が上昇すると「ロング」を選んだクライアント（市場が下落するとして「ショート」を選んだクライアント）のライブ市場で必要とされるよりもはるかに少ない投資でこれらの動向から利益を得られます。"
+msgstr ""
+"%1のスプレッドトレードには、市場動向が直接関連する値のデリバティブトレードを活用しています。上昇傾向にある市場で「ロング」を選んだクライアント（及び下落"
+"傾向にある市場で「ショート」を選んだクライアント）はライブマーケットで必要とされる投資額よりもはるかに\n"
+"　　　　　　少額で、これらの動向から利益を得られます。"
 
-#, fuzzy
 #| msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
 msgid ""
 "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are\n"
 "                    closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
-msgstr "%1のスプレッドトレードでは、クライアントによって生じる損失の最大を制限できる「損切り」が必要です。この「損切り」の金額は、口座内の資金に作用し、スプレッドトレードが閉鎖するまでそれ以外のお取引ができないよう機能します。スプレッドトレードはクライアントによって転売される際に「損切り」と「利益ストップ」のレベルに到達次第閉鎖されます。"
+msgstr ""
+"%1のスプレッドトレードでは、クライアントによって生じる損失の最大を制限できる「損切り」が必要となります。この「損切り」の金額は、口座内の資金に作用し、ス"
+"プレッドトレードが終了するまでそれ以外のお取引ができないよう機能します。スプレッドトレードは\n"
+"　　　　　　クライアントによって転売される際に「損切り」と「利益ストップ」のレベルに到達次第閉鎖されます。"
 
 msgid "%1's Volatility Indices are based on a cryptographically secure random number generator audited for fairness by an independent third party."
 msgstr "当社のボラティリティ インデックスは、独立したサードパーティーによる公平性の監査のうえ、暗号化された安全な乱数ジェネレーターをベースにしています。"
@@ -699,12 +706,14 @@ msgstr "マーケティング、経営管理または関連分野の学士号を
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by %1. The transfer fees are borne by the Client."
 msgstr "決済サービスエージェントは、お客さま（当社の顧客）と当社の間で取引所のような役割を果たします。決済サービスエージェントは、当社が取り扱いをしていない特定のEキャッシュ手段や現地通貨を利用したいお客さまに入出金の処理をします。振込や送金手数料はお客さま負担です。"
 
-#, fuzzy
 #| msgid "A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier or the low barrier at any time during the period chosen by a trader."
 msgid ""
 "A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier\n"
 "            or the low barrier at any time during the period chosen by a trader."
-msgstr "「レンジ内/レンジ外」における「レンジ内」では取引期間に常に上限バリア、及び下限バリアの間に価格が留まれば条件が満たされたと判定され、上下どちらかのバリア値にタッチした瞬間に条件が満たされないと判定されます。「レンジ外」では取引期間以内に一度でも下限バリア、または上限バリアにタッチすれば条件が満たされたと判定されます。"
+msgstr ""
+"レンジトレードにおける「STAY-IN」トレードは、取引期間中常に上限バリア、及び下限バリアの間に価格が留まれば条件が満たされたと判定され、上下どちらかの"
+"バリア値にタッチした瞬間に条件が満たされないと判定されます。「BREAK-OUT」では取引期間以内に一度でも上限バリア、\n"
+"　　　　または下限バリアにタッチすれば条件が満たされたと判定されます。"
 
 msgid "A True Partnership"
 msgstr "最高のサポート体制を提供"
@@ -966,12 +975,15 @@ msgstr "ポイントごとの金額"
 msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
 msgstr "高度専門士、専門士、準修士または学士"
 
-#, fuzzy
 #| msgid "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target."
 msgid ""
 "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high\n"
 "            price target OR strictly lower than the low price target."
-msgstr "「レンジ内」のトレードタイプでは、トレード終値が最小値として設定したバリアよりも高値、”かつ”、最高値として設定したバリアよりも安値であれば条件が満たされたことになります。同値は満たさないと判定され、終値のみが評価対象になります。「レンジ外」のトレードタイプでは、トレードの終値が最高値として設定したバリアよりも高値、”または”、最小値として設定したバリアよりも安値であれば条件が満たされます。同値は満たされないと判定され、終値のみが評価対象になります。"
+msgstr ""
+"「END-IN」トレードは、トレードの終値が最小値に設定したバリアよりも高値、”かつ”、最高値に設定したバリアよりも安値であれば条件が満たされたことになり"
+"ます。同値では条件が満たさないと判定され、終値のみが評価対象になります。「END-OUT」のトレードタイプでは、"
+"トレードの終値が最高値に設定したバリアよりも高\n"
+"　　　値、”または”、最小値に設定したバリアよりも安値であれば条件が満たされます。"
 
 msgid "An additional password can be used to restrict access to the cashier."
 msgstr "入出金へのアクセスを制限するために、追加パスワードを使用することができます。"
@@ -1349,12 +1361,14 @@ msgstr "バイナリー日本オフィスがオープン"
 msgid "Binary option"
 msgstr "バイナリーオプション"
 
-#, fuzzy
 #| msgid "Binary options are easy to understand. They're called 'binary' because there can be only two outcomes - win or lose. If your prediction is correct, you receive a payout that is determined at the start of the trade. If not, you just lose your initial stake."
 msgid ""
 "Binary options are easy to understand. They're called 'binary' because there can be only two outcomes - win or lose. If your prediction is correct, you receive a payout that is determined at the start of the trade. If not, you just lose your\n"
 "            initial stake."
-msgstr "バイナリーオプションはある条件を「満たす」か「満たさないか」の２種類の結果のみもたらすことから「バイナリー」と呼ばれています。予想が正しい場合、事前に定められたペイアウトをお受け取りいただけます。予想が正しく無い場合は、購入価格を失います。"
+msgstr ""
+"バイナリーオプションはある条件を「満たす」か「満たさないか」の２種類の結果のみもたらすことから「バイナリー」と呼ばれています。予想が正しい場合、事前に定め"
+"られたペイアウトをお受け取りいただけます。予想が正しく無い場合は、\n"
+"　　　　購入価格を失います。"
 
 msgid "Binary options basics"
 msgstr "バイナリー取引の基礎"
@@ -3076,12 +3090,13 @@ msgstr "バイナリーオプション取引について、合理的な投資判
 msgid "In classic Silicon Valley style, Hong Kong based hedge fund manager and entrepreneur, Jean-Yves Sireau, starts Regent Markets in his Hong Kong bedroom. He develops the systems, methods and algorithms for implementing a fixed-odds financial betting system. Jean-Yves's vision is to create a market in the simplest of all derivatives contracts - the fixed-odds bet - and to offer ordinary investors the chance to make small bets. Until his innovation, binary options are normally only traded in large quantities."
 msgstr "香港のヘッジファンド会社でファンドマネージャーとして勤務していたジョン・イヴス氏が、デリバティブ商品を一般投資家に分かり易く、求め易い形で提供するため、小規模の投資額で固定オッズ形式の取引ができるシステム、メソドロジー及びアルゴリズムを自宅で開発。ジョン・イヴス氏は、全てのデリバティブ取引に対応できるシンプルなマーケットを形成、固定オッズ形式取引、そしてあらゆるトレーダーに小額で行えるトレード機会を目指す。この革新により、大規模なバイナリーオプションの取引を実現。"
 
-#, fuzzy
 #| msgid "In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro will rise in relation to the value of the US dollar."
 msgid ""
 "In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro\n"
 "            will rise in relation to the value of the US dollar."
-msgstr "外国為替市場では、任意の通貨が特定の通貨に対する価格の変化の予想に基づくトレードを実施できます。例えば、EUR/USD市場が上昇すると予測した場合は、米ドルに対してユーロの価値が上がると予想したことになります。"
+msgstr ""
+"外国為替市場では、任意の通貨が特定の通貨に対する価格の変化の予想に基づくトレードを実施できます。例えば、EUR/USD市場が上\n"
+"　　　昇すると予測した場合は、米ドルに対してユーロの価値が上がると予想したことになります。"
 
 msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
 msgstr "当社のモバイルアプリまたは第三者開発アプリケーションへアクセスするには、はじめにAPIトークンの作成が必要です。"
@@ -6036,12 +6051,13 @@ msgstr "当社における金融トレードは、投資された資金が全て
 msgid "The first step is to open an account. You can <a target='_blank' href='%1'>apply online</a> in just a few minutes."
 msgstr "最初のステップは口座開設です。オンラインで申込ができます。"
 
-#, fuzzy
 #| msgid "The first thing to do is choose the asset you wish to trade, such as gold or oil, stocks or FX rates (The value of a binary option is derived from the price of the underlying asset). A big advantage of trading options is that you are not buying or selling the actual asset."
 msgid ""
 "The first thing to do is choose the asset you wish to trade, such as gold or oil, stocks or FX rates (The value of a binary option is derived from the price of the underlying asset). A big advantage of trading options is that you are not buying\n"
 "            or selling the actual asset."
-msgstr "まず初めに取引通貨を選択して下さい。バイナリーオプションの取引価値は取引対象の価格から導かれます。オプション取引の大きな利点として、取引対象そのものを売買しないという点があります。"
+msgstr ""
+"まず初めに取引通貨を選択して下さい。バイナリーオプションの取引価値は取引対象の価格から導かれます。オプション取引の大きな利点として、取引対象そのものを\n"
+"　　　売買しないという点があります。"
 
 msgid "The first tick is the first tick after the contract is processed by our servers."
 msgstr "最初のTickとは、当社のサーバにてトレードが処理された後に検出された最初のTickを指します。"
@@ -6154,12 +6170,14 @@ msgstr "%1  APIの使用はご自身の責任の上行うようにしてくだ�
 msgid "The use, operation or combination of the %1 API with non-%1 API(s), data, equipment or documentation if liability would have been avoided but for such use, operation, or combination; or"
 msgstr "The use, operation or combination of the %1 API with non-%1 API(s), data, equipment or documentation if liability would have been avoided but for such use, operation, or combination; or"
 
-#, fuzzy
 #| msgid "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends."
 msgid ""
 "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try\n"
 "                out scenarios like - high volatility, low volatility, bullish and bearish trends."
-msgstr "ボラリティ指数は、様々なリアル市場の状況をシミュレートし、取引や戦略に慣れるための理想的なプラットフォームです。これらインデックスはボラティリティとドリフトに依存しており、高ボラティリティ、低ボラティリティ、強気傾向、弱気傾向などのシナリオを試すのに役立ちます。"
+msgstr ""
+"ボラリティ指数は、様々なリアル市場の状況をシミュレートし、取引や戦略に慣れるための理想的なプラットフォームです。これらインデックスはボラティリティとドリフ"
+"トに依存しており、\n"
+"　　　　高ボラティリティ、低ボラティリティ、強気傾向、弱気傾向などのシナリオを試すのに役立ちます。"
 
 msgid "Then, make your trade"
 msgstr "取引を実行"
@@ -7626,10 +7644,9 @@ msgstr "日"
 msgid "deposit"
 msgstr "ご入金"
 
-#, fuzzy
 #| msgid "e.g. www.binaryqa36.com"
 msgid "e.g. ws.binaryws.com"
-msgstr "例：www.binaryqa36.com"
+msgstr "例：ws.binaryws.com"
 
 msgid "f"
 msgstr "女性"
@@ -8430,10 +8447,9 @@ msgstr "ポイント"
 msgid "Job Details"
 msgstr "職務内容"
 
-#, fuzzy
 #| msgid "Company addresses"
 msgid "Company Profile"
-msgstr "会社所在地"
+msgstr "会社概要"
 
 msgid "Open-Source Projects"
 msgstr "オープンソースプロジェクト"
