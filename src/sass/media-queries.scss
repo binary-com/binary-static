@@ -34,6 +34,9 @@
     #header #menu-top li a.smaller-font, #header ul#menu-top.smaller-font {
         font-size: 80%;
     }
+    .flex-table-container {
+        overflow-x: auto;
+    }
 }
 
 @media screen and (max-width: 640px) {

@@ -6,7 +6,7 @@
                     <span class='gr-hide-m invisible'>
                         <span id='virtual-text'>[% l("You're using a Virtual Account.") %]</span>
                     </span>
-                    <a class="pjaxload pulser"></a>
+                    <a class="pjaxload pulser invisible"></a>
                 </div>
                 <div class='gr-6 gr-7-t gr-12-p gr-12-m' id='topbar-info'>
                     <div class="gr-row">
