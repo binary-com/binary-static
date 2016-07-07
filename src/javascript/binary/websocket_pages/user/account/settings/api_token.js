@@ -12,7 +12,7 @@ var APITokenWS = (function() {
     var init = function() {
         columns = ['Name', 'Token', 'Scopes', 'Last Used', 'Action'];
         errorClass  = 'errorfield';
-        hideClass   = 'dynamic';
+        hideClass   = 'invisible';
         tableContainer = '#tokens_list';
         maxTokens = 30;
 

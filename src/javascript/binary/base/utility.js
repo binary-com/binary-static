@@ -263,3 +263,10 @@ function toJapanTimeIfNeeded(gmtTimeStr, showTimeZone, longcode){
 
     return (longcode ? longcode.replace(match[0], timeStr) : timeStr);
 }
+
+//used temporarily for mocha test
+if (typeof module !== 'undefined') {
+    module.exports = {
+        toJapanTimeIfNeeded: toJapanTimeIfNeeded
+    };
+}
