@@ -67,9 +67,9 @@ var SettingsDetailsWS = (function() {
                 if (jpData.hedge_asset !== null && jpData.hedge_asset_amount !== null) {
                   $('#lblHedgeAsset').text(text.localize(jpData.hedge_asset) || '');
                   $('#lblHedgeAssetAmount').text(jpData.hedge_asset_amount || '');
-                  $('.hedge').css('display', 'block');
+                  $('.hedge').removeClass('invisible');
                 }
-                $('.JpAcc').css('display', 'block');
+                $('.JpAcc').removeClass('invisible');
                 $('.rowBirthDate').removeClass('hidden');
                 $('.rowName').removeClass('hidden');
                 $('.rowCustomerSupport').removeClass('hidden');
