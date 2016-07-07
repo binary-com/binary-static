@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: German (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-27 16:29+0000\n"
+"PO-Revision-Date: 2016-07-06 23:06+0000\n"
 "Last-Translator: Karin Graf <karin_graf@hotmail.com>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/binary/static/de/>\n"
 "Language: de\n"
@@ -127,7 +127,7 @@ msgstr "%1 hat seine <a class=\"pjaxload\" href=\"%2\">Allgemeinen Geschäftsbed
 msgid "%1 hits 1 million users, reaching a historic milestone. The company continues to see exponential growth and this reconfirms its position as an industry leader."
 msgstr "Binary.com hat 1. Million Benutzer und somit einen historischen Meilenstein erreicht. Das Unternehmen sieht weiterhin ein exponentiales Wachstum voraus und dieses bestätigt erneut seine Position als Branchenführer."
 
-msgid "%1 introduces an <a href='%2' target='_blank'>auto-trader programming tool</a>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
+msgid "%1 introduces an <a href='%2' target='_blank' class='ja-hide'>auto-trader programming tool</a><span class='all-hide ja-show'>auto-trader programming tool</span>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
 msgstr ""
 
 #, fuzzy
@@ -157,10 +157,8 @@ msgstr "Binary.com steht in Costa Rica nicht zur Verfügung und wird auch nicht 
 msgid "%1 is one of the oldest and most respected names in online binary trading."
 msgstr "%1 ist eine der ältesten und respektabelsten Marken im online Binärhandel."
 
-#, fuzzy
-#| msgid "%1 is owned and operated by the Binary Ltd. group of companies. For more information, <a href=\"%2\">visit our history page</a>."
 msgid "%1 is owned and operated by the Binary Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
-msgstr "%1 ist Eigentum der Binary Ltd. Firmengruppe und wird von dieser betrieben. Weitere Infrormationen finden Sie  <a href=\"%2\">auf unserer Geschichtsseite</a>."
+msgstr "%1 ist Eigentum der Binary Ltd. Firmengruppe und wird von dieser betrieben. Weitere Infrormationen finden Sie auf <a href=\"%2\">auf unserer Geschichtsseite</a>."
 
 msgid "%1 is seeking a junior to mid-career professional with exceptional administrative and organization skills to join its General Affairs Team."
 msgstr "%1 sucht Anfänger bis zu einigermaßen erfahrene Fachleute mit außergewöhnlichen administrativen und organisatorischen Fähigkeiten zur Mitarbeit in unserem General Affairs Team."
@@ -185,7 +183,7 @@ msgstr "%1 ist der preisgekrönte Branchenpionier im Bereich des Online-Handels 
 msgid "%1 is the award-winning industry pioneer in online options trading. We boast:"
 msgstr "%1 ist der preisgekrönte Branchenpionier im Bereich des Online-Handels mit Optionen. Wir bieten:"
 
-msgid "%1 launches an <a href='%2' target='_blank'> e-commerce site for branded merchandise</a> – enabling clients, affiliates, and developers to buy and sell Binary.com products."
+msgid "%1 launches an <a href='%2' target='_blank' class='ja-hide'> e-commerce site for branded merchandise</a><span class='all-hide ja-show'> e-commerce site for branded merchandise</span> – enabling clients, affiliates, and developers to buy and sell Binary.com products."
 msgstr ""
 
 msgid "%1 makes efforts that the quoted prices of each underlying asset that a Binary Option refers to will be reasonably related to the actual prices of such asset available in the market. %1 makes no warranty, expressed or implied, that the quoted prices represent prevailing market prices."
@@ -277,10 +275,18 @@ msgstr "Die Quantitative Analytik Gruppe von %1 ist für die Preisgestaltung der
 msgid "%1's Smart FX are smart markets that measure the value of a currency against a basket of major currencies."
 msgstr "Die Smart FX Indizes von %1 sind intelligente Kurse, die den Wert einer Währung im Verhältnis zu einem Währungskorb messen."
 
-msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements.  Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
+#, fuzzy
+#| msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements.  Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
+msgid ""
+"%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much\n"
+"                    less investment than would be required in the live market."
 msgstr "%1 Spread Kontrakte sind gehebelte derivative Kontrakte, deren Wert direkt an die unterliegenden Marktbewegungen gebunden ist. Kunden, die nach einem steigenden Markt \"verlangen\" (und diejenigen die einen fallenden Martk \"scheuen\") profitieren von diesen Bewegungen mit wesentlich geringerer Investition, als Sie an der echten Börse verlangt wird."
 
-msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
+#, fuzzy
+#| msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
+msgid ""
+"%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are\n"
+"                    closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
 msgstr "Die Spread Kontrakte von %1 erfordern ein 'Stop Loss', das die für einen Kunden entstehenden Höchstverluste beschränkt. Dieser 'Stop Loss' Betrag dient als Einlage und kann nicht für weitere Geschäfte verwendet werden, bis dieser Spread Kontrakt ausgelaufen ist. Spread Kontrakte laufen ab, wenn sie vom Kunden verkauft werden oder nach Erreichen der 'Stop Loss' oder 'Stop Profit' Höhe."
 
 msgid "%1's Volatility Indices are based on a cryptographically secure random number generator audited for fairness by an independent third party."
@@ -748,7 +754,11 @@ msgstr "Ein Bachelor-Abschluss in Marketing, Betriebswirtschaft oder einer ähnl
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by %1. The transfer fees are borne by the Client."
 msgstr "Ein Zahlungsagent handelt als ein Mittler zwischen dem Kunden (das heißt, unserem Kunden) und %1. Der Zahlungsagent führt für Kunden, die eine besondere e-Cash Methode oder nationale Währung verweden, die nicht von %1 angebotet wird, Einzahlungen und Abhebungen durch. Die Überweisungsgebühren werden vom Kunden getragen."
 
-msgid "A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier or the low barrier at any time during the period chosen by a trader."
+#, fuzzy
+#| msgid "A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier or the low barrier at any time during the period chosen by a trader."
+msgid ""
+"A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier\n"
+"            or the low barrier at any time during the period chosen by a trader."
 msgstr "Ein Bleibt-Zwischen-Kontrakt wird ausgezahlt, wenn der Kurs in der Zeitspanne, die vom Händler ausgewählt wurde, zwischen dem oberen UND unteren Schwellenwert bleibt (diesen aber nicht erreicht). Ein Übersteigt-Kontrakt wird ausgezahlt, wenn der Kurs während der vom Händler ausgewählten Zeitspanne ENTWEDER  den oberen oder unteren Schwellenwert über- bzw. untersteigt."
 
 msgid "A True Partnership"
@@ -816,7 +826,7 @@ msgid "A tick is the minimum upward or downward movement in the price of a marke
 msgstr "Ein Tick ist die minimalste Aufwärts- oder Abwärtsbewegung eines Marktkurses."
 
 msgid "A university degree in Marketing, Communication, Business Administration, or related discipline"
-msgstr "Ein Universitätsabschluss in Marketing, Kommunikation, Betriebswirtschaft oder gleichgelagerten Disziplin"
+msgstr "Ein Universitätsabschluss in Marketing, Kommunikation, Betriebswirtschaft oder einer gleichgelagerten Disziplin"
 
 msgid "A university degree in Marketing, Journalism, Communications, or other business-related discipline"
 msgstr "Ein Universitätsabschluss in Marketing, Journalismus, Kommunikation oder einer anderen geschäftsbezogenen Disziplin"
@@ -972,7 +982,7 @@ msgid "Agreement for documents"
 msgstr "Vereinbarung für Dokumente"
 
 msgid "All affiliate activities must be conducted in a professional and proper manner. You shall be expected to act with good faith and integrity in your relationships with your referrals, and always act in the best interests of your referrals."
-msgstr "Alle Aktivitäten müssen von den Geschäftsparnter müssen einer professionellen und korrekten Weise durchgeführt werden. Es wird von Ihnen erwartet, dass Sie bei Ihren Beziehungen zu Ihren Empfohlenen nach Treu und Glauben und mit Seriosität handeln und immer zum besten Interesse Ihrer Empfohlenen zu agieren."
+msgstr "Alle Aktivitäten müssen von den Geschäftspartnern müssen in einer professionellen und korrekten Weise durchgeführt werden. Es wird von Ihnen erwartet, dass Sie bei Ihren Beziehungen zu Ihren empfohlenen Kunden nach Treu und Glauben und mit Seriosität handeln und immer im besten Interesse Ihrer empfohlenen Kunden zu agieren."
 
 msgid "All calls are recorded for training and monitoring purposes"
 msgstr "Alle Anrufe werden zu Trainings- und Kontrollzwecken aufgezeichnet."
@@ -1013,7 +1023,11 @@ msgstr "Betrag je Punkt"
 msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
 msgstr "Ein akademischer Grad, Graduiertendiplom oder Bachelor-Abschluss"
 
-msgid "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target."
+#, fuzzy
+#| msgid "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target."
+msgid ""
+"An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high\n"
+"            price target OR strictly lower than the low price target."
 msgstr "Ein Endet-Zwischen Kontrakt wird ausgezahlt, wenn der Kurs zum Vertragsende grundsätzlich höher als die niedrige Kursschwelle UND grundsätzlich niedriger als die hohe Kursschwelle ist. Eine Endet-Oberhalb Binäre Option wird ausgezahlt, wenn der Kurs zum Ende des Kontrakts ENTWEDER grundsätzlich höher als die hohe Kursschwelle oder grundsätzlich niedriger als die niedrige Kursschwelle ist."
 
 msgid "An additional password can be used to restrict access to the cashier."
@@ -1292,7 +1306,7 @@ msgid "Barrier"
 msgstr "Schwelle"
 
 msgid "Barrier Change"
-msgstr "Grenzenänderung"
+msgstr "Grenzänderung "
 
 msgid "Barrier offset"
 msgstr "Schwellenverschiebung"
@@ -1405,7 +1419,9 @@ msgstr "Binäre Option"
 
 #, fuzzy
 #| msgid "Binary options are easy to understand. They’re called ‘binary’ because there can be only two outcomes – win or lose. If your prediction is correct, you receive a payout that is determined at the start of the trade. If not, you just lose your initial stake."
-msgid "Binary options are easy to understand. They're called 'binary' because there can be only two outcomes - win or lose. If your prediction is correct, you receive a payout that is determined at the start of the trade. If not, you just lose your initial stake."
+msgid ""
+"Binary options are easy to understand. They're called 'binary' because there can be only two outcomes - win or lose. If your prediction is correct, you receive a payout that is determined at the start of the trade. If not, you just lose your\n"
+"            initial stake."
 msgstr "Binäre Optionen sind leicht zu verstehen. Sie werden \"Binär\" genannt, weil es nur zwei Ergebnisse geben kann - gewinnen oder verlieren. Wenn Ihre Voraussage richtig ist, erhalten Sie eine im Voraus festgelegte Auszahlung. Anderenfalls verlieren Sie nur Ihren ursprünglichen Einsatz."
 
 msgid "Binary options basics"
@@ -1473,7 +1489,7 @@ msgid "Browser"
 msgstr "Browser"
 
 msgid "Bull Market and Bear Market Indices start at 00:00 GMT each day, replicating a bullish and bearish market respectively."
-msgstr "Bullen und Bären Kursindizes beginnen tätglich um 00:00 GMT und spiegeln eine steigenden oder fallenden Markt wider."
+msgstr "Bullen und Bären Kursindizes beginnen tätglich um 00:00 GMT und spiegeln einen steigenden oder fallenden Markt wider."
 
 msgid "Business Development"
 msgstr "Geschäftsentwicklung"
@@ -1709,7 +1725,7 @@ msgid "Commission on withdrawals"
 msgstr "Provision auf Auszahlungen"
 
 msgid "Commissions will be earned throughout the life of the client, on all transactions the client undertakes at the merchant, for as long as you, the Affiliate, remain a member of this affiliate program. The company reserves the right to cancel the commissions that are not reclaimed after 2 years."
-msgstr "So lange Sie, der Partner, am Partnerprogramm ein Mitglied dieses Partnerprogramms bleiben, verdienen Sie lebenslang Provisionen so lange, wieSie als Geschäftpartner an diesem Geschäftspartnerprogramm teilnehmen.Das Unternehmen behält sich vor, Provisionen zu stornieren, die nach Ablauf von 2 Jahren nicht angefordert wurden."
+msgstr "So lange Sie ein Mitglied dieses Partnerprogramms bleiben, verdienen Sie Provisionen während des Kundenlebens, an allen Transaktionen, die der Kunde beim Händler tätigt. Das Unternehmen behält sich vor, Provisionen zu stornieren, die nach Ablauf von 2 Jahren nicht angefordert wurden."
 
 msgid "Commodities"
 msgstr "Rohstoffe"
@@ -1940,8 +1956,8 @@ msgstr "Erstellung von Inhalten, um unsere internationalen Werbekampagnen in ein
 
 msgid "Create the graphics required to support our global marketing and advertising campaigns. The team's creative efforts span a number of channels, including online marketing, affiliate networks, print advertising, tradeshows, special events, and promotional projects."
 msgstr ""
-"Erstelung von Graphiken, die erforderlich sind, unsere weltweiten Marketing- und Werbekampagnen zu unterstützen.\n"
-"Die kreativen Anstrenungen des Teams über eine Anzahl von Kanälen, wie online Marketing, Geschäftspartner-Netzwerke, Druckwerbung, Messen, besondere Veranstaltungen und Werbeprojekte."
+"Erstellung von Graphiken, die erforderlich sind, unsere weltweiten Marketing- und Werbekampagnen zu unterstützen.\n"
+"Die kreativen Anstrenungen des Teams reichen über eine Anzahl von Kanälen, wie online Marketing, Geschäftspartner-Netzwerke, Druckwerbung, Messen, besondere Veranstaltungen und Werbeprojekte."
 
 msgid "Creating interfaces and tools to access market information, real-time and historical analysis of trading strategies"
 msgstr "Erstellung von Schnittstellen und Werkzeugen zum Zugriff auf Marktinformationen, Echtzeit- und historische Analyse von Tradingstrategien"
@@ -2090,7 +2106,7 @@ msgid "Description"
 msgstr "Beschreibung"
 
 msgid "Design engaging, visually inspiring content for the company's website and many other forms of media, including both online and offline materials."
-msgstr "Entwurf von ansprechendem, visuell inspirierenden Inhalten auf der Unternehmenswebsite und vielen weiteren Medienformen, einschließlich von sowohl online als auch offline Materialien."
+msgstr "Entwurf von ansprechenden, visuell inspirierenden Inhalten auf der Unternehmenswebsite und vielen weiteren Medienformen, einschließlich von sowohl online als auch offline Materialien."
 
 msgid "Details"
 msgstr "Angaben"
@@ -2195,7 +2211,7 @@ msgid "Drive rapid growth from key areas of the world, applying a variety of onl
 msgstr "Unterstützung des raschen Wachstums in den Hauptweltregionen, unter Anwendung einer Vielzahl von online und offline Werbemöglichkeiten, um das aktive Geschäftspartner-Netzwerk des Unternehmens zu erweitern."
 
 msgid "Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed."
-msgstr "Wegen der kürzlichen Änderungen der Vorschriften sind wir gezwungen, unsere Kunden zu bitten, die folgende Finanzielle Beurteilung auszufüllen. Bitte beachten Sie, dass Sie, bis diese ausgefüllt ist, nicht weiter Handel treiben können."
+msgstr "Wegen der kürzlich vorgenommenen Änderungen der Vorschriften sind wir gezwungen, unsere Kunden zu bitten, die folgende Finanzielle Beurteilung auszufüllen. Bitte beachten Sie, dass Sie, bis diese ausgefüllt ist, nicht weiter Handel treiben können."
 
 msgid "Duration"
 msgstr "Laufzeit"
@@ -2448,7 +2464,7 @@ msgid "Execute your trade in seconds."
 msgstr "Ihre Handelsgeschäfte in Sekunden abwickeln."
 
 msgid "Exercise exceptional client relationship management skills to prevent fraudulent activities in payments processing and business transactions."
-msgstr "Ausgezeichnete Managementfähigkeiten in der Unterhaltung von Kundenbeziehung, um betrügerische Handlungen bei der Zahlungsverarbeitung und bei Geschäftstransaktionen zu verhindern."
+msgstr "Ausgezeichnete Managementfähigkeiten in der Unterhaltung von Kundenbeziehungen, um betrügerische Handlungen bei der Zahlungsverarbeitung und bei Geschäftstransaktionen zu verhindern."
 
 msgid "Exercise period"
 msgstr "Ausübungszeitraum"
@@ -2944,7 +2960,7 @@ msgid "If all that sounds a bit daunting, you're right. But it's how we make sur
 msgstr "Sie haben Recht, dass es ein wenig beängstigend klingt. Auf diese Weise stellen wir allerdings sicher, dass wir die besten Menschen in unser Team bekommen."
 
 msgid "If an error is made in the calculation of your share of the revenue share, the Company reserves the right to correct such calculation at any time, and to reclaim from you any overpayment made by the Company to you (including, without limitation, by way of reducing future payments earned, revenue to cover any processed chargebacks) before you can start earning revenue again. In special cases, the Company reserves the right to exclude revenue sharing  on promotional funds deposited into the client's account by the Company."
-msgstr "Falls bei der Berechnung Ihres Umsatzanteils ein Fehler auftritt, behält sich das Unternehmen vor, eine solche Berechnung jederzeit zu korrigieren und die vom Unternehmen an Sie geleisteten Überzahlungen zurückzufordern (insbesondere von zukünftig verdienten Umsatzbeteiligungen abzuziehen, um angefallene Rückbuchungen auszugleichen) bevor Sie erneut am Umsatz beteiligt werden können. Das Unternehmen behält sich weiterhin das Recht vor, in speziellen Fällen die Umsatzbeteiligung an Werbegeldern (Boni), die vom Unternehmen auf das Konto eines Kunden eingezahlt werden, von der Berechnung auszuschließen."
+msgstr "Falls bei der Berechnung Ihres Umsatzanteils ein Fehler auftritt, behält sich das Unternehmen vor, eine solche Berechnung jederzeit zu korrigieren und die vom Unternehmen an Sie geleisteten Überzahlungen zurückzufordern (insbesondere von zukünftig verdienten Umsatzbeteiligungen, um angefallene Rückbuchungen auszugleichen) bevor Sie erneut am Umsatz beteiligt werden können. Das Unternehmen behält sich weiterhin das Recht vor, in speziellen Fällen die Umsatzbeteiligung an Werbegeldern (Boni), die vom Unternehmen auf das Konto eines Kunden eingezahlt werden, von der Berechnung auszuschließen."
 
 msgid "If any provision of these Terms is found to be illegal, void, or unenforceable, the unenforceable provision will be modified so as to render it enforceable to the maximum extent possible in order to effect the intention of the provision; if a term cannot be so modified, it will be severed and the remaining provisions of these Terms will not be affected in any way."
 msgstr "Sollte eine der Bestimmungen dieser Bedingung als unrechtmäßig, ungültig oder undurchsetzbar erachtet werden, dann soll diese undurchsetzbare Bestimmung so geändert werden, dass sie so weit wie möglich der Regelungsabsicht dieser Bestimmung nahe kommt; sofern eine Bedingung nicht geändert werden kann, wird sie suspendiert und die restlichen Bedingungen werden hiervon in keiner Weise berührt."
@@ -3154,7 +3170,11 @@ msgstr "In carrying out OTC binary option trading, a customer needs expert knowl
 msgid "In classic Silicon Valley style, Hong Kong based hedge fund manager and entrepreneur, Jean-Yves Sireau, starts Regent Markets in his Hong Kong bedroom. He develops the systems, methods and algorithms for implementing a fixed-odds financial betting system. Jean-Yves's vision is to create a market in the simplest of all derivatives contracts - the fixed-odds bet - and to offer ordinary investors the chance to make small bets. Until his innovation, binary options are normally only traded in large quantities."
 msgstr "Der in Hongkong ansässige Hedgefond Manager und Unternehmer, Jean-Yves Sireau, beginnt mit Regent Marketing von seinem hongkonger Schlafzimmer aus. Er entwickelt das System, die Methoden und Algorithmen zur Einführung eines Finanzwettsystems mit festen Gewinnquoten. Jean-Yves Vision ist es, einen Markt mit den einfachsten derivativen Verträgen - der Wette mit festen Gewinnquoten - zu schaffen und normalen Anlegern die Chance zu bieten, mit kleinen Einsätzen dabei zu sein. Bis zu seiner Erfindung werden Binäroptionen nur in großen Mengen gehandelt."
 
-msgid "In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro will rise in relation to the value of the US dollar."
+#, fuzzy
+#| msgid "In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro will rise in relation to the value of the US dollar."
+msgid ""
+"In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro\n"
+"            will rise in relation to the value of the US dollar."
 msgstr "Die Händler können auf ausländischen Devisenmärkten Kontrakte auf der Grundlage der Änderung des Wechselkurses einer Währung in eine andere abschließen. Wenn beispielsweise ein Händler den Anstieg des EUR/USD Wechselkurses auswählt, sagt er voraus, dass der Wert des Euro im Verhältnis zum Wert des US-Dollar steigen wird."
 
 msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
@@ -3944,7 +3964,7 @@ msgid "Level of Education"
 msgstr "Ausbildungsgrad"
 
 msgid "Leverage social-media tools and channels to identify, engage, and convert potential new customers and partners"
-msgstr "Nutzung von Werkzeugen und Kanälen von Sozialen Medien, um potentielle neue Kunden und Partner zu identifizieren, zu werben und zu binden"
+msgstr "Nutzung von Kanälen und von Sozialen Medien Werkzeugen, um potentielle neue Kunden und Partner zu identifizieren, zu werben und zu binden"
 
 msgid "Liability"
 msgstr "Haftung"
@@ -4259,7 +4279,7 @@ msgid "Need to Monitor Positions"
 msgstr "Erfordernis, Positionen zu beobachten"
 
 msgid "Neither you, your direct relatives, or any persons you control are eligible to become clients, and you shall not be entitled to any share of net revenue or any other remuneration from the Company in relation to such relatives, friends, or controlled persons."
-msgstr "Weder Sie selbst, Ihre direkten Verwandten oder andere von Ihnen kontrollierte Personen sind berechtigt, Kunden zu werden, und Sie haben keinen Anspruch auf einen Anteil des Nettoumsatzes oder andere Vergütung des Unternehmens in Bezug auf derartige Verwandte, Freunde oder kontrollierte Personen."
+msgstr "Weder Sie selbst, Ihre direkten Verwandten oder andere von Ihnen kontrollierte Personen sind berechtigt, Kunden zu werden, und Sie haben keinen Anspruch auf einen Anteil des Nettoumsatzes oder eine andere Vergütung des Unternehmens in Bezug auf derartige Verwandte, Freunde oder kontrollierte Personen."
 
 msgid "Net Annual Income"
 msgstr "Nettojahreseinkommen"
@@ -4593,10 +4613,10 @@ msgid "Ownership"
 msgstr "Eigentum"
 
 msgid "Ownership and content of the %1 website remains our respective properties and shall not be deemed to have been transferred to you through any act or omission in respect of this Agreement."
-msgstr "Das Eigentumsrecht an und der Inhalt der Webseite von %1 bleiben unser Eigentum und es kann nicht davon ausgegangen werden, dass dieses aufgrund einer Handlung oder Unterlassung bezüglich dieses Vertrags an Sie übertragen wurde."
+msgstr "Das Eigentumsrecht an und der Inhalt der Website von %1 bleiben unser Eigentum und es kann nicht davon ausgegangen werden, dass dieses aufgrund einer Handlung oder Unterlassung bezüglich dieses Vertrags an Sie übertragen wurde."
 
 msgid "Ownership, content, and liability of the Affiliate's websites are the sole responsibility of the Affiliate. You will be solely responsible for the development, operation, and maintenance of your website and for all materials that appear on your website. You will indemnify and hold us harmless from all claims, damages, and expenses (including, without limitation to, attorneys' fees) relating to the development, operation, maintenance, and contents of your website."
-msgstr "Eigentum, Inhalt und Haftung für die Partnerseiten liegen in der alleinigen Verantwortung des Partners. Sie alleine sind für die Entwicklung, den Betrieb und die Pflege Ihrer Website und aller Materialien verantwortlich, die auf Ihrer Website veröffentlicht werden. Sie verpflichten sich, uns von allen Ansprüchen, Schäden und Kosten (unter anderem Anwaltshonoraren) hinsichtlich der Entwicklung, des Betriebs, die Pflege und die Inhalte Ihrer Website freizustellen und diese schadlos zu halten."
+msgstr "Eigentum, Inhalt und Haftung für die Partnersiten liegen in der alleinigen Verantwortung des Partners. Sie alleine sind für die Entwicklung, den Betrieb und die Pflege Ihrer Website und aller Materialien verantwortlich, die auf Ihrer Website veröffentlicht werden. Sie verpflichten sich, uns von allen Ansprüchen, Schäden und Kosten (unter anderem Anwaltshonoraren) hinsichtlich der Entwicklung, des Betriebs, der Pflege und der Inhalte Ihrer Website freizustellen und diese schadlos zu halten."
 
 msgid "Participating in the forex, stocks or commodities markets?"
 msgstr "Möchten Sie sich auf Forex-, Aktien- oder Rohstoffmärkten engagieren?"
@@ -4668,7 +4688,7 @@ msgid "Payment methods"
 msgstr "Zahlungsmethoden"
 
 msgid "Payment of commission earned for the previous calendar month will be made monthly, on or around the 15th day of each month, and may be credited to any payment method as agreed between the Company and the Affiliate."
-msgstr "Die Auszahlung der im Vormonat verdiente Provision erfolgt monatlich um den 15. eines jeden Monats und wird der Zahlungsmethode gutgeschrieben, die zwischen dem Unternehmen und dem Geschäftspartner vereinbart wurde."
+msgstr "Die Auszahlung der im Vormonat verdienten Provision erfolgt monatlich um den 15. eines jeden Monats und wird der Zahlungsmethode gutgeschrieben, die zwischen dem Unternehmen und dem Geschäftspartner vereinbart wurde."
 
 msgid "Payments"
 msgstr "Zahlungen"
@@ -4890,16 +4910,16 @@ msgid "Previous Day"
 msgstr "Vorheriger Tag"
 
 msgid "Previous experience in the financial services industry"
-msgstr "Vorangegangene Erfahrung in der Finanzdienstleistungsbranche"
+msgstr "Vorherige Erfahrung in der Finanzdienstleistungsbranche"
 
 msgid "Previous experience with financial / binary options website services"
-msgstr "Vorangegangene Erfahrung mit Finanz-/Binäre Optionen Website-Diensten"
+msgstr "Vorherige Erfahrung mit Finanz-/Binäre Optionen Website-Diensten"
 
 msgid "Previous experience with financial and/or binary options trading websites"
 msgstr "Vorhandene Erfahrung mit Finanz- und/oder Binäre Optionen Handels-Internetseiten"
 
 msgid "Previous knowledge and experience in Marketing or Advertising"
-msgstr "Vorhandenes Wissen Erfahrung in Marketing oder Werbung"
+msgstr "Vorhandenes Wissen und Erfahrung in Marketing oder Werbung"
 
 msgid "Previous work experience in a client service and/or marketing role"
 msgstr "Vorhandene Arbeitserfahrung in einer Kundendienst- und/oder Marketingposition"
@@ -5851,7 +5871,7 @@ msgid "The Company provides the %1 website on an “as is” and “as available
 msgstr "Das Unternehmen stellt die %1 Website auf einer \"wie besehen\" und \"wie verfügbar\" Basis zur Verfügung und gibt keine Garantie, dass die %1 Website fehlerfrei ist, von Fehlern korrigiert wird oder dass unsere Website frei von Eingriffen Dritter, wie Hacker oder anderen schädlichen Komponenten, die außerhalb der Kontrolle des Unternehmens auftreten, ist."
 
 msgid "The Company receives a complaint which could have involved the Alternate Dispute Resolution entity, or the Company believes that you, the Affiliate, is in breach of any laws, rules, and regulations that may be relevant or applicable to the jurisdiction(s) in which you operate or target your business;"
-msgstr "Das Unternehmen erhält eine Klage bei der die Alternate Dispute Resolution (Außergerichtliche Streitschlichtung) Instanz hätte beteiligt werden müssenist oder das Unternehmen der Ansicht ist, dass Sie sich nicht an geltende Gesetze, Regeln oder Vorschriften gehalten haben, die in dem Land/den Ländern gelten, in denen Sie tätig sind oder Ihre Aktivitäten zielen;"
+msgstr "Das Unternehmen erhält eine Klage bei der die Alternate Dispute Resolution (Außergerichtliche Streitschlichtung) hätte beteiligt sein können oder das Unternehmen ist der Ansicht, dass Sie sich nicht an geltende Gesetze, Regeln oder Vorschriften gehalten haben, die in dem Land/den Ländern gelten, in dem/denen Sie tätig sind oder Ihre Aktivitäten zielen;"
 
 msgid "The Company reserves the right in its sole discretion to refuse and/or cancel services, charge deposit and/or withdrawal fees to anyone for any reasons including, but not limited to:"
 msgstr "Das Unternehmen behält sich das Recht vor für eine Person im eigenen Ermessen, ohne Nennung von Gründen, Serviceleistungen abzulehnen und/oder zu kündigen, Einzahlungs- und/oder Auszahlungsgebühren zu erheben; dies insbesondere bei Vorliegen folgender Gründe:"
@@ -5894,7 +5914,7 @@ msgid "The Company will notify you by email if your application has been success
 msgstr "Das Unternehmen wird Sie per E-Mail benachrichtigen, ob Ihre Bewerbung positiv entschieden wurde."
 
 msgid "The Company will provide advertising collaterals with links containing affiliate IDs which may be modified by us from time to time."
-msgstr "Das Unternehmen wird Ihnen Werbematerial mit Links, die die Partner-IDs enthalten, zur Verfügung stellen, die von uns jeder Zeit verändert werden können."
+msgstr "Das Unternehmen wird Ihnen Werbematerial mit Links, die die Partner-IDs enthalten, zur Verfügung stellen, die von uns jederzeit verändert werden können."
 
 msgid "The Company will, at its sole discretion, determine whether or not your application has been successful. The Company's decision is final and is not open to appeal."
 msgstr "Das Unternehmen entscheidet im eigenen Ermessen, ob Ihre Bewerbung erfolgreich war oder nicht. Die Entscheidung des Unternehmens ist endgültig und kann nicht angefochten werden."
@@ -6064,7 +6084,11 @@ msgstr "Die Finanzhandelsdienste, die diese Site enthält, eignen sich nur für 
 msgid "The first step is to open an account. You can <a target='_blank' href='%1'>apply online</a> in just a few minutes."
 msgstr "Der erste Schritt ist, ein Konto zu eröffnen. Sie können sich in nur wenigen Minuten <a target='_blank' href='%1'>online bewerben</a>."
 
-msgid "The first thing to do is choose the asset you wish to trade, such as gold or oil, stocks or FX rates (The value of a binary option is derived from the price of the underlying asset). A big advantage of trading options is that you are not buying or selling the actual asset."
+#, fuzzy
+#| msgid "The first thing to do is choose the asset you wish to trade, such as gold or oil, stocks or FX rates (The value of a binary option is derived from the price of the underlying asset). A big advantage of trading options is that you are not buying or selling the actual asset."
+msgid ""
+"The first thing to do is choose the asset you wish to trade, such as gold or oil, stocks or FX rates (The value of a binary option is derived from the price of the underlying asset). A big advantage of trading options is that you are not buying\n"
+"            or selling the actual asset."
 msgstr "Als Erstes müssen Sie die Anlage auswählen, die Sie handeln möchten, wie zum Beispiel Gold oder Öl, Aktien oder Devisen (der Wert einer Binären Option wird von dem Kurs der Basisanlage abgeleitet). Ein großer Vorteil des Optionshandels ist die Tatsache, dass Sie die eigentlichen Finanzwerte nicht kaufen oder verkaufen."
 
 msgid "The first tick is the first tick after the contract is processed by our servers."
@@ -6149,7 +6173,11 @@ msgstr "Sie verwenden das Binary.com API auf eigenes Risiko und Sie übernehmen 
 msgid "The use, operation or combination of the %1 API with non-%1 API(s), data, equipment or documentation if liability would have been avoided but for such use, operation, or combination; or"
 msgstr "Die Verwendung, der Betrieb oder die Kombination des Binary.com API mit Binary.com fremden API(s), Daten, Geräten oder Dokumentationen, wenn die Haftung durch eine derartige Verwendung, Betrieb oder Kombination vermieden werden konnte oder"
 
-msgid "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends."
+#, fuzzy
+#| msgid "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends."
+msgid ""
+"The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try\n"
+"                out scenarios like - high volatility, low volatility, bullish and bearish trends."
 msgstr "Die Volatilität Indizes simulieren verschiedene echte Marktsituationen und bieten eine ideale Plattform, um sich mit dem Handel vertraut zu machen, und um Strategien unter unterschiedlichen Marktbedingungen zu testen. Diese Indizes hängen von der Volatiliät und Tendenz ab und helfen den Benutzern dabei, Szenarien wie hohe Volatilität, geringe Volatilität, steigende oder fallende Trends auszuprobieren."
 
 msgid "Then, make your trade"
@@ -6253,7 +6281,7 @@ msgid "This contract lost"
 msgstr "Dieser Kontrakt verlor"
 
 msgid "This contract was affected by a Corporate Action event."
-msgstr "Dieser Kontrakt ist von Unternehmenshandlung betroffen."
+msgstr "Dieser Kontrakt ist von einer Unternehmenshandlung betroffen."
 
 msgid "This contract won"
 msgstr "Dieser Vertrag gewann"
@@ -7619,7 +7647,7 @@ msgstr "Tage"
 msgid "deposit"
 msgstr "Einzahlung"
 
-msgid "e.g. www.binaryqa36.com"
+msgid "e.g. ws.binaryws.com"
 msgstr ""
 
 msgid "f"
@@ -7782,6 +7810,9 @@ msgstr "{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exer
 msgid "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
 
+msgid "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
+msgstr ""
+
 msgid "{JAPAN ONLY}A  Net Settlement type of option is one where the underlying asset does not include yen, but the option fee and settlement are paid in yen; it therefore requires some definition of how the settlement amounts will be calculated and converted to yen."
 msgstr "{JAPAN ONLY}A  Net Settlement type of option is one where the underlying asset does not include yen, but the option fee and settlement are paid in yen; it therefore requires some definition of how the settlement amounts will be calculated and converted to yen."
 
@@ -7851,14 +7882,48 @@ msgstr "{JAPAN ONLY}As the expected volatility of the underlying asset increases
 msgid "{JAPAN ONLY}As the time to the exercise point shortens, the time-value of a plain vanilla option decreases."
 msgstr "{JAPAN ONLY}As the time to the exercise point shortens, the time-value of a plain vanilla option decreases."
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 4: Risk"
+msgid "{JAPAN ONLY}Association of join"
+msgstr "{JAPAN ONLY}Section 4: Risk"
+
 msgid "{JAPAN ONLY}BUY price per unit"
 msgstr "{JAPAN ONLY}BUY price per unit"
 
 msgid "{JAPAN ONLY}Because option prices are determined by the probability of being exercised, it cannot be said that cheaper options have any natural advantage over expensive options."
 msgstr "{JAPAN ONLY}Because option prices are determined by the probability of being exercised, it cannot be said that cheaper options have any natural advantage over expensive options."
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Download"
+msgid "{JAPAN ONLY}Binary K. K."
+msgstr "{JAPAN ONLY}Download"
+
 msgid "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
 msgstr "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}Capital"
+msgstr "{JAPAN ONLY}Units"
+
+msgid "{JAPAN ONLY}Capital Adequacy Ratio (CAR)"
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Option Pricing"
+msgid "{JAPAN ONLY}Company Profile"
+msgstr "{JAPAN ONLY}Option Pricing"
+
+msgid "{JAPAN ONLY}Company Profile & Disclosure"
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Download"
+msgid "{JAPAN ONLY}Company name"
+msgstr "{JAPAN ONLY}Download"
+
+msgid "{JAPAN ONLY}Company name in English"
+msgstr ""
 
 msgid "{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly."
 msgstr "{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly."
@@ -7869,8 +7934,27 @@ msgstr "{JAPAN ONLY}Dear customer, you are not allowed to take knowledge test un
 msgid "{JAPAN ONLY}Dear customer, you've already completed the knowledge test, please proceed to next step."
 msgstr "{JAPAN ONLY}Dear customer, you've already completed the knowledge test, please proceed to next step."
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}BUY price per unit"
+msgid "{JAPAN ONLY}December 2015"
+msgstr "{JAPAN ONLY}BUY price per unit"
+
 msgid "{JAPAN ONLY}Delta refers to  a percentage change of the option price with respect to the change in the underlying asset price."
 msgstr "{JAPAN ONLY}Delta refers to  a percentage change of the option price with respect to the change in the underlying asset price."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Introduction to Binary Options"
+msgid "{JAPAN ONLY}Designated dispute resolution organization"
+msgstr "{JAPAN ONLY}Introduction to Binary Options"
+
+msgid "{JAPAN ONLY}Disclosure of CAR by No. 46-6-3 in the FIEA (Financial Instruments and Exchange Act)"
+msgstr ""
+
+msgid "{JAPAN ONLY}Disclosure of financial statement by No. xx in the FIEA"
+msgstr ""
+
+msgid "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
+msgstr ""
 
 msgid "{JAPAN ONLY}Download"
 msgstr "{JAPAN ONLY}Download"
@@ -7881,6 +7965,11 @@ msgstr "{JAPAN ONLY}Email us copies of your Identification Documents and My Numb
 msgid "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
 msgstr "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}Establishment"
+msgstr "{JAPAN ONLY}Units"
+
 msgid "{JAPAN ONLY}Even if all details of the binary options match perfectly, there may still be differences in the prices shown by different broking companies."
 msgstr "{JAPAN ONLY}Even if all details of the binary options match perfectly, there may still be differences in the prices shown by different broking companies."
 
@@ -7889,6 +7978,22 @@ msgstr "{JAPAN ONLY}Even if the option is exercise or not exercised, the origina
 
 msgid "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
 msgstr "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Regulation & Tax"
+msgid "{JAPAN ONLY}February 2016"
+msgstr "{JAPAN ONLY}Regulation & Tax"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 5: Calculation"
+msgid "{JAPAN ONLY}Financial Condition"
+msgstr "{JAPAN ONLY}Section 5: Calculation"
+
+msgid "{JAPAN ONLY}Financial Instruments Business No. xxxx"
+msgstr ""
+
+msgid "{JAPAN ONLY}Financial Instruments Mediation Assistance Center"
+msgstr ""
 
 msgid "{JAPAN ONLY}For a call option, if the price of the underlying asset is higher than the option exercise price, it is know as an in-the-money option."
 msgstr "{JAPAN ONLY}For a call option, if the price of the underlying asset is higher than the option exercise price, it is know as an in-the-money option."
@@ -7928,6 +8033,11 @@ msgstr "{JAPAN ONLY}For both call and put options, if the underlying asset price
 
 msgid "{JAPAN ONLY}For full details of the documents we can accept please download the following guide:"
 msgstr "{JAPAN ONLY}For full details of the documents we can accept please download the following guide:"
+
+#, fuzzy
+#| msgid "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
+msgid "{JAPAN ONLY}HirooMiyaya 3F, 1-9-16 Hiroo, Shibuya, Tokyo, 150-0012"
+msgstr "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokio 150-0012, Japan"
 
 msgid "{JAPAN ONLY}Historical volatility is a prediction of the future rate of change in the underlying asset."
 msgstr "{JAPAN ONLY}Historical volatility is a prediction of the future rate of change in the underlying asset."
@@ -8031,6 +8141,11 @@ msgstr "{JAPAN ONLY}It is possible to use two binary options to make a profit if
 msgid "{JAPAN ONLY}It prohibits the copying of the questions . In addition , You agree that you will not leak to third party"
 msgstr "{JAPAN ONLY}It prohibits the copying of the questions . In addition , You agree that you will not leak to third party"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Download"
+msgid "{JAPAN ONLY}January 2016"
+msgstr "{JAPAN ONLY}Download"
+
 msgid "{JAPAN ONLY}Knowledge Test"
 msgstr "{JAPAN ONLY}Knowledge Test"
 
@@ -8052,8 +8167,31 @@ msgstr "{JAPAN ONLY}Knowledge test list item 4"
 msgid "{JAPAN ONLY}Knowledge test list item 5"
 msgstr "{JAPAN ONLY}Knowledge test list item 5"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Trading Guide"
+msgid "{JAPAN ONLY}Main business"
+msgstr "{JAPAN ONLY}Trading Guide"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Download"
+msgid "{JAPAN ONLY}March 2014"
+msgstr "{JAPAN ONLY}Download"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Download"
+msgid "{JAPAN ONLY}March 2015"
+msgstr "{JAPAN ONLY}Download"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Download"
+msgid "{JAPAN ONLY}March 2016"
+msgstr "{JAPAN ONLY}Download"
+
 msgid "{JAPAN ONLY}No space between last name and first name"
 msgstr "{JAPAN ONLY}No space between last name and first name"
+
+msgid "{JAPAN ONLY}November 7, 2014"
+msgstr ""
 
 msgid "{JAPAN ONLY}Option Pricing"
 msgstr "{JAPAN ONLY}Option Pricing"
@@ -8124,6 +8262,11 @@ msgstr "{JAPAN ONLY}Purchase, Settlement & Resale"
 msgid "{JAPAN ONLY}Regarding to the OTC price of financial instruments, in case that financial instruments business operator suggests both of  bid and ask price (or trading price and cancellation price), generally there is a difference of them. This option will be wider as the expiration approaches."
 msgstr "{JAPAN ONLY}Regarding to the OTC price of financial instruments, in case that financial instruments business operator suggests both of  bid and ask price (or trading price and cancellation price), generally there is a difference of them. This option will be wider as the expiration approaches."
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Regulation & Tax"
+msgid "{JAPAN ONLY}Registration"
+msgstr "{JAPAN ONLY}Regulation & Tax"
+
 msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "{JAPAN ONLY}Regulation & Tax"
 
@@ -8144,6 +8287,11 @@ msgstr "{JAPAN ONLY}Section 4: Risk"
 
 msgid "{JAPAN ONLY}Section 5: Calculation"
 msgstr "{JAPAN ONLY}Section 5: Calculation"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}SELL price  per unit"
+msgid "{JAPAN ONLY}September 2015"
+msgstr "{JAPAN ONLY}SELL price  per unit"
 
 msgid "{JAPAN ONLY}Short positions in FX Binary Options must be covered by initial margin and any further losses must be covered by further margin deposits."
 msgstr "{JAPAN ONLY}Short positions in FX Binary Options must be covered by initial margin and any further losses must be covered by further margin deposits."
@@ -8168,6 +8316,9 @@ msgstr "{JAPAN ONLY}The Exercise Price is the level at which the option buyer ha
 
 msgid "{JAPAN ONLY}The Exit Price is the price that is observed at the judgment time, and is used to determine whether a payout should be made."
 msgstr "{JAPAN ONLY}The Exit Price is the price that is observed at the judgment time, and is used to determine whether a payout should be made."
+
+msgid "{JAPAN ONLY}The Financial Futures Association of Japan"
+msgstr ""
 
 msgid "{JAPAN ONLY}The buyer of a vanilla option can choose whether to exercise the option or not. His loss is limited to the price paid for the option, whereas his potential profit is unlimited."
 msgstr "{JAPAN ONLY}The buyer of a vanilla option can choose whether to exercise the option or not. His loss is limited to the price paid for the option, whereas his potential profit is unlimited."
@@ -8238,6 +8389,9 @@ msgstr "{JAPAN ONLY}Trading & Hedging"
 msgid "{JAPAN ONLY}Trading Guide"
 msgstr "{JAPAN ONLY}Trading Guide"
 
+msgid "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
+msgstr ""
+
 msgid "{JAPAN ONLY}Units"
 msgstr "{JAPAN ONLY}Units"
 
@@ -8262,6 +8416,11 @@ msgstr "{JAPAN ONLY}When buying a vanilla put option, the break-even price at th
 msgid "{JAPAN ONLY}Where broking companies show bid and offer prices for purchasing and sell-back of positions, these prices may become further apart the nearer you are to the exercise time."
 msgstr "{JAPAN ONLY}Where broking companies show bid and offer prices for purchasing and sell-back of positions, these prices may become further apart the nearer you are to the exercise time."
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Options Basics"
+msgid "{JAPAN ONLY}Win Loss Ratio"
+msgstr "{JAPAN ONLY}Options Basics"
+
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 
@@ -8285,6 +8444,11 @@ msgstr "Punkte"
 #| msgid "Job details"
 msgid "Job Details"
 msgstr "Jobdetails"
+
+#, fuzzy
+#| msgid "Company addresses"
+msgid "Company Profile"
+msgstr "Firmenanschriften"
 
 #, fuzzy
 #| msgid "Open-source projects"
