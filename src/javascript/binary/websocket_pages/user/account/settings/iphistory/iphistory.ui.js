@@ -24,6 +24,7 @@ var IPHistoryUI = (function(){
             if (match !== null) {
                 name = info.name;
                 version = match[1];
+                break;
             }
         }
         return {
