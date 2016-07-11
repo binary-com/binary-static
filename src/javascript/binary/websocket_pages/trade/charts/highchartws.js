@@ -231,7 +231,7 @@ var Highchart = (function() {
       } else if ((type === 'history' || type === 'candles' || type === 'tick' || type === 'ohlc') && !error){
           responseID = response[type].id;
           // send view popup the response ID so view popup can forget the calls if it's closed before contract ends
-          ViewPopupWS.storeSubscriptionID(responseID, 'chart');
+          if (responseID) ViewPopupWS.storeSubscriptionID(responseID, 'chart');
           options = { 'title' : contract.display_name };
           if (response.history || response.candles) {
             if (response.history) {
@@ -498,9 +498,9 @@ var Highchart = (function() {
     else if (exit_tick_time) {end = exit_tick_time;}
     else {end = end_time;}
     if (response.history && response.history.times && (is_expired || is_sold)) {
-      for (i = response.history.times.length; i >= 0; i--) {
+      for (i = response.history.times.length - 1; i >= 0; i--) {
           if (parseInt(response.history.times[i]) === parseInt(end)) {
-              max_point = parseInt(response.history.times[i+1]);
+              max_point = parseInt(response.history.times[i === response.history.times.length - 1 ? i : i+1]);
               break;
           }
       }

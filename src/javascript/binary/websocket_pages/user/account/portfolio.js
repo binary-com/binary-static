@@ -6,8 +6,8 @@ var Portfolio = (function(){
         toJapanTimeIfNeeded = Compatibility.requireIfNotExist('toJapanTimeIfNeeded', '../base/utility', 'toJapanTimeIfNeeded');
     var sum_purchase = 0.00;
 
-    function getBalance(data, separator) {
-        return (data.balance.currency + ' ' + (separator ? addComma(parseFloat(data.balance.balance)) : parseFloat(data.balance.balance)));
+    function getBalance(data, withCurrency) {
+        return withCurrency ? data.balance.currency + ' ' + addComma(parseFloat(data.balance.balance)) : parseFloat(data.balance.balance);
     }
 
     function getPortfolioData(c) {
