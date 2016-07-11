@@ -7,10 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-07-05 03:32+0000\n"
+"PO-Revision-Date: 2016-07-07 02:55+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
-"Language-Team: Japanese "
-"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,28 +17,22 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.7-dev\n"
 
-#, fuzzy
-#| msgid "\"Binary.com API\" means the Binary.com proprietary set of programmatic routines, protocols, tools and resources created and maintained by Binary.com that allows you to use a registered Application to interface with the Binary.com trading platform."
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
-msgstr "「Binary.com API」とはBinary.comの取引プラットフォームとのインターフェースとして登録されたアプリケーションを使用できるよう、Binary.comによって作成・管理されているプログラムのルーチン、プロトコル、ツール、リソースの独自のセットのことをいいます。"
+msgstr "「%1 API」とは%1の取引プラットフォームとのインターフェースとして登録されたアプリケーションを使用できるよう、%1によって作成・管理されているプログラムのルーチン、プロトコル、ツール、リソースの独自のセットのことをいいます。"
 
 msgid "\"Binary\" or \"digital\" options are options that pay a pre-determined, fixed amount, depending on whether or not an event occurs at the time the Binary Option expires. Binary Options can have only one of two possible outcomes and allow you to take a simple \"Yes or No\" approach. Like traditional options, Binary Options are based on an underlying asset such as currencies, commodities, indexes or stocks, however one of the most significant differences from traditional options, among others, is that there can be only two outcomes for the option, either the client is paid the return upon the occurrence of the event, or the client loses the investment amount as determined in each option."
 msgstr ""
 "\"バイナリー\"や\"デジタル\"オプションは、バイナリーオプションの期限が切れるときにイベントが生じるか否かに応じて予め定められた固定金額を支払うオプションです。バイナリーオプションは、”Yes”または”No”のシンプルな方法で２つの起こり\n"
 "うる結果のうち１つを予測します。従来のオプションのように、バイナリーオプションは通貨の原資産に基づきます。従来のオプションとの一番の相違点は、その他にあります。それは、オプションは２つの結果だけからなり、１つはイベント発生時にリターンがクライアントに支払われ、もう１つは各オプションで定められた投資額を失うことになります。"
 
-#, fuzzy
-#| msgid "\"Content\" means any data or content from our Website or accessed via the API. Our \"Website\" means Binary.com's website at www.binary.com and any other website or service owned or operated by Binary.com."
 msgid "\"Content\" means any data or content from our Website or accessed via the API. Our \"Website\" means %1's website at www.binary.com and any other website or service owned or operated by %1."
-msgstr "「コンテンツ」とは当ウェブサイトまたはAPIのアクセスから得られるデータまたはコンテンツをいいます。当「ウェブサイト」とはBinary.comのウェブサイト（www.binary.com）とBinary.comが所有・運営している他サイトまたは他サービスを表します。"
+msgstr "「コンテンツ」とは当ウェブサイトまたはAPIのアクセスから得られるデータまたはコンテンツをいいます。当「ウェブサイト」とは%1のウェブサイト（www.binary.com）と%1が所有・運営している他サイトまたは他サービスを表します。"
 
 msgid "\"I work with a number of affiliate companies, and it is by far, the friendliest and most helpful that I've found. They go out of their way to provide their affiliates with all the tools, advice and support they need in order to succeed. To top it all off, they offer some of the most handsome rebates in the industry.\" - <strong>Vinod Gorasia, Marketing Manager, Agora Lifestyles</strong>."
 msgstr "「様々なアフィリエイトプログラムに加入してきましたが、当社のアフィリエイトプログラムはユーザ目線かつ、効果的なプログラムであると確信しております。あらゆるツールをはじめ、アフィリエイト活動を成功に導くためのアドバイスとサポートも積極的に提供してくれます。もちろん、業界をトップレベルの報酬体系も大変魅力的です。」： <strong>Vinod Gorasia, マーケティング・マネージャー, Agora Lifestyles</strong>"
 
-#, fuzzy
-#| msgid "\"Third Party Provider(s)\" means the third party (non-affiliated) entity that makes available features and functions through use of the Binary.com API."
 msgid "\"Third Party Provider(s)\" means the third party (non-affiliated) entity that makes available features and functions through use of the %1 API."
-msgstr "「サードパーティプロバイダー」とはBinary.com APIを使用して機能を利用可能にするサードパーティ（非提携）エンティティを意味します。"
+msgstr "「サードパーティプロバイダー」とは%1 APIを使用して機能を利用可能にするサードパーティ（非提携）エンティティを意味します。"
 
 msgid "$100,000 - $250,000"
 msgstr "$100,000 - $250,000"
@@ -65,16 +58,14 @@ msgstr "当社アフィリエイトプログラム・ご利用規約"
 msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
 msgstr "%1下記リンクをクリックしてパスワードの再設定を再度お試しください。サポートが必要な場合は、 カスタマーサポートまでご連絡ください。"
 
-#, fuzzy
-#| msgid "Your Property"
 msgid "%1 Property"
 msgstr "不動産"
 
 msgid "%1 Shop introduced"
-msgstr ""
+msgstr "Binary.comはオンラインショップを開設(日本を除く)"
 
 msgid "%1 academy"
-msgstr ""
+msgstr "%1 アカデミー"
 
 msgid "%1 affiliate partners who wish to support a big group of Clients"
 msgstr "大きなグループのクライアントをサポートされたい%1アフィリエイトパートナー"
@@ -85,21 +76,15 @@ msgstr "当社もまた、潜在的なギャンブルの問題を見極めるオ
 msgid "%1 and the bull/bear logo are registered trademarks."
 msgstr "当社の社名とブル/ベアのロゴは、登録商標です。"
 
-#, fuzzy
-#| msgid "Binary.com continues to innovate and grow"
 msgid "%1 continues to innovate and grow"
-msgstr "Binary.comは常に進化、成長"
+msgstr "%1は日々進化、成長への歩みを止めません"
 
 msgid "%1 does not charge any transfer fees."
 msgstr "当社はご入金、及びご出金時に手数料を課しません。"
 
-#, fuzzy
-#| msgid "Binary.com earns a return from the difference between the total amount of all customers' payment and the total amount of all customers' receipts."
 msgid "%1 earns a return from the difference between the total amount of all customers' payment and the total amount of all customers' receipts."
 msgstr "バイナリーオプション取引について、当社と取引する顧客全体が当社に支払う金額と顧客全体が当社から受け取る金額の差額が当社の収益の源泉となっていること。（契約締結前交付書面「店頭バイナリーオプション取引のリスク等重要事項について」-9参照）"
 
-#, fuzzy
-#| msgid "%1 gives everyone an easy and exciting way to participate in the financial markets. Trade with as little as $1 USD on major currencies, indices and commodities."
 msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities."
 msgstr "当社では、皆様に簡単かつ効果的なトレードの機会を提供します。主要通貨ペアを1,000円からお取引頂けます。"
 
@@ -109,10 +94,8 @@ msgstr "当社では平日24時間お取引いただけるボラティリティ�
 msgid "%1 has earned an enviable reputation for our commitment to high ethical standards and the quality of the trading experience we provide."
 msgstr "当社の高い倫理観のある取り組みと当社が提供する取引経験の質から好評化を頂いております。"
 
-#, fuzzy
-#| msgid "Binary.com has over 800,000 clients in its database and reaches the US$ 2 billion milestone in our 15th year, making us one of the leading binary options providers."
 msgid "%1 has over 800,000 clients in its database and reaches the US$ 2 billion milestone in our 15th year, making us one of the leading binary options providers."
-msgstr "Binary.comには８０万人以上の登録顧客を有し、20億ドルのターンオーバーを創業15年目にして達成することでバイナリーオプション業界にて確固たる地位を確立。"
+msgstr "Binary.comには80万人以上の登録顧客を有し、20億ドルのターンオーバーを創業15年目にして達成することでバイナリーオプション業界にて確固たる地位を確立。"
 
 msgid "%1 has several exceptional career opportunities for Customer Service Professionals."
 msgstr "当社ではカスタマーサービスにおいて特別なキャリア機会を設けています"
@@ -129,16 +112,14 @@ msgstr "%1が%2を改定いたします。当社でお取引なさっている�
 msgid "%1 has updated its <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>."
 msgstr "<a class=\"pjaxload\" href=\"%2\">取引規約</a>を改定いたします。当社でお取引なさっているお客さまにおいて、改定後の <a class=\"pjaxload\" href=\"%2\">取引規約</a>の内容を必ずご確認いただく必要がございます。原則、改定後の書面の内容をご確認いただきOKボタンを押して頂くまで、お取引できなくなりますので、お取引の際ご注意ください。"
 
-#, fuzzy
-#| msgid "Binary.com hits 1 million users, reaching a historic milestone. The company continues to see exponential growth and this reconfirms its position as an industry leader."
 msgid "%1 hits 1 million users, reaching a historic milestone. The company continues to see exponential growth and this reconfirms its position as an industry leader."
-msgstr "Binary.comは１００万人を超える顧客を獲得し、社史に残る実績を達成。当社は今後も爆発的な成長を遂げることで、業界トップのポジションを確実なものにする。"
-
-msgid "%1 introduces an <a href='%2' target='_blank'>auto-trader programming tool</a>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
-msgstr ""
+msgstr "Binary.comは100万人を超える顧客を獲得し、社史に残る実績を達成。当社は今後も爆発的な成長を遂げることで、業界トップのポジションを確実なものにする。"
 
 #, fuzzy
-#| msgid "Binary.com is a flexible place. As well as our offices, we have staff who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
+#| msgid "%1 introduces an <a href='%2' target='_blank'>auto-trader programming tool</a>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
+msgid "%1 introduces an <a href='%2' target='_blank' class='ja-hide'>auto-trader programming tool</a><span class='all-hide ja-show'>auto-trader programming tool</span>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
+msgstr "Binary.comは、お客さま自身が簡単なドラグ&ドロップのPC操作で自動売買ロボット作成してシステムトレードを可能にできるプログラミングツールを導入しました。"
+
 msgid "%1 is a flexible place. As well as our offices, we have staff who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
 msgstr "Binary.comでは柔軟なワークスタイルが可能です。世界中のホームオフィスからの在宅勤務の機会もご希望に応じて許可しています。"
 
@@ -148,24 +129,20 @@ msgstr "%1は常に管理者、技術的貢献者、および管理者の有能�
 msgid "%1 is entirely web-based and requires no software installation."
 msgstr "当社のプラットフォームはウェブベースですので、特定のソフトウェアをインストールする必要は一切ございません。"
 
-#, fuzzy
-#| msgid "Binary.com is honoured as the world's \"Best Binary Options Broker\" at the 16th annual MENA International Financial Conference and Exhibition, hosted in Dubai."
 msgid "%1 is honoured as the world's \"Best Binary Options Broker\" at the 16th annual MENA International Financial Conference and Exhibition, hosted in Dubai."
-msgstr "ドバイで開催された第16回 MENA国際金融会議/展示会において「最優秀バイナリーオプションブローカー」をいただき、大変光栄に存じます。"
+msgstr "ドバイで開催された第16回 MENA国際金融会議/展示会において「最優秀バイナリーオプションブローカー」を受賞しました。"
 
 msgid "%1 is looking to recruit highly skilled, experienced designers who are passionate about developing attractive visuals for both online and offline applications."
 msgstr "当社ではオンライン/オフラインアプリケーション双方の魅力的なビジュアル開発へ情熱を注ぐことができる経験豊富で熟練したデザイナーを募集しています。"
 
-#, fuzzy
-#| msgid "Binary.com is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
 msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
-msgstr "コスタリカではBinay.comをご利用いただけません。コスタリカの金融システムに監修者または規制機関がないためです。"
+msgstr "コスタリカではBinay.comをご利用いただけません。コスタリカの金融システムを監督する金融機関または規制機関がないためです。"
 
 msgid "%1 is one of the oldest and most respected names in online binary trading."
 msgstr "%1 はオンラインバイナリーオプション取引業界の中でパイオニアであり、世界中の個人投資家にサービスを提供しています。"
 
 msgid "%1 is owned and operated by the Binary Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
-msgstr "%1 は Binary 株式会社を所有し、運営しています。詳細は<a href='%2'>グループの沿革</a>よりご確認いただけます。"
+msgstr "Binary 株式会社は%1の子会社です。詳細は<a href='%2'>グループの沿革</a>よりご確認いただけます。"
 
 msgid "%1 is seeking a junior to mid-career professional with exceptional administrative and organization skills to join its General Affairs Team."
 msgstr "当社では総務チームに参加できる特別な管理力と組織力のある未経験者からミドルキャリアの人材を募集しています。"
@@ -182,16 +159,16 @@ msgstr "当社では世界中の顧客または潜在顧客との関係強化に
 msgid "%1 is tailored to traders of all levels."
 msgstr "当社システムは、初心者から上級者までご満足いただけます。"
 
-#, fuzzy
-#| msgid "%1 is the award-winning industry pioneer in online options trading. We boast:"
 msgid "%1 is the award-winning industry pioneer in online options trading."
-msgstr "当社は受賞履歴を有するオンライン上のオプション取引業界でのパイオニアであり、下記の実績を誇ります："
+msgstr "%1は受賞履歴を有するオンライン上のオプション取引業界でのパイオニアです。"
 
 msgid "%1 is the award-winning industry pioneer in online options trading. We boast:"
 msgstr "当社は受賞履歴を有するオンライン上のオプション取引業界でのパイオニアであり、下記の実績を誇ります："
 
-msgid "%1 launches an <a href='%2' target='_blank'> e-commerce site for branded merchandise</a> – enabling clients, affiliates, and developers to buy and sell Binary.com products."
-msgstr ""
+#, fuzzy
+#| msgid "%1 launches an <a href='%2' target='_blank'> e-commerce site for branded merchandise</a> – enabling clients, affiliates, and developers to buy and sell Binary.com products."
+msgid "%1 launches an <a href='%2' target='_blank' class='ja-hide'> e-commerce site for branded merchandise</a><span class='all-hide ja-show'> e-commerce site for branded merchandise</span> – enabling clients, affiliates, and developers to buy and sell Binary.com products."
+msgstr "Binary.comは、お客さま、アフィリエイト及びシステム開発者を対象にした当グループの商品を販売可能にしたオンラインショップを開設しました。"
 
 msgid "%1 makes efforts that the quoted prices of each underlying asset that a Binary Option refers to will be reasonably related to the actual prices of such asset available in the market. %1 makes no warranty, expressed or implied, that the quoted prices represent prevailing market prices."
 msgstr ""
@@ -213,8 +190,6 @@ msgstr "当社でバイナリー取引のコツを掴んでいただけるよう
 msgid "%1 offers five ways to trade your chosen asset:"
 msgstr "当社では３種類の取引タイプから選択できます。"
 
-#, fuzzy
-#| msgid "Binary.com offers new ways to trade"
 msgid "%1 offers new ways to trade"
 msgstr "Binary.comは新たなトレードの提供を開始"
 
@@ -230,15 +205,11 @@ msgstr "%1 は下記のプログラムを通じて業務提携サービスを提
 msgid "%1 provides you with the opportunity to either self-exclude or <a href='%2'>set limits on your trading activities</a> on this website. You may also <a href='%3'>contact us</a> to state the limits you wish to set via live chat, email or phone. Available limits are:"
 msgstr "%1では健全なトレードを行って頂くために、<a href='%2'>トレードの自己制限</a>の設定を提供しています。ご希望の制限を設定いただくには、ライブチャット、Eメール、お電話から <a href='%3'>お問い合わせ</a>いただけます。ご利用いただける制限はこちらです。"
 
-#, fuzzy
-#| msgid "Binary.com reaches $2 billion turnover since starting in 1999"
 msgid "%1 reaches $2 billion turnover since starting in 1999"
 msgstr "BetOnMarkets.comは1999年から累計で20億USDのターンオーバーを達成"
 
-#, fuzzy
-#| msgid "Binary.com reaches 1 million registered users"
 msgid "%1 reaches 1 million registered users"
-msgstr "Binary.comの登録会員を１００万人達成"
+msgstr "%1の登録会員が１００万人を達成"
 
 msgid "%1 seeks a Project Coordinator to help drive the production of promotional content and rollout of marketing campaigns, designed to engage new prospects and current customers based throughout the globe."
 msgstr "当社では世界中の顧客や潜在顧客と良好な関係を構築することを目的としたプロモーションコンテンツの制作やマーケティングキャンペーンの展望に貢献ができるプロジェクトコーディネーターを探しています。"
@@ -249,13 +220,9 @@ msgstr "ソーシャルメディアへの取り組みの強化と積極的な管
 msgid "%1 seeks a sharp Copywriter to produce content that actively engages new prospects and current customers based throughout the world."
 msgstr "当社では、世界中の顧客と潜在顧客との良好な関係を積極的に構築するコンテンツの制作に感覚の鋭いコピーライターを必要としています。"
 
-#, fuzzy
-#| msgid "Binary.com supports the <a target='_blank' href='http://www.responsiblegamblingtrust.org.uk/'>Responsible Gambling Trust</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
 msgid "%1 supports the <a target='_blank' href='http://www.responsiblegamblingtrust.org.uk/'>Responsible Gambling Trust</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
-msgstr "Binary.comは、ギャンブルに関連する害を最小限にすることを約束している英国の大手慈善団体<a target='_blank' href='http://www.responsiblegamblingtrust.org.uk/'>「責任ある賭博基金」(RGT, Responsible Gambling Trust)</a>をサポートしています。RGT資金教育、予防と治療のサービスや手数料の調査は、ギャンブルに関する害についてより理解するのに役立ちます。また、機密なアドバイスや感情的なサポートをしている全国ギャンブルヘルプラインも提供しています。"
+msgstr "%1は、ギャンブルに関連する害を最小限にすることを約束している英国の大手慈善団体<a target='_blank' href='http://www.responsiblegamblingtrust.org.uk/'>「責任ある賭博基金」(RGT, Responsible Gambling Trust)</a>をサポートしています。RGT資金教育、予防と治療のサービスや手数料の調査は、ギャンブルに関する害についてより理解するのに役立ちます。また、機密なアドバイスや感情的なサポートをしている全国ギャンブルヘルプラインも提供しています。"
 
-#, fuzzy
-#| msgid "Binary.com takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
 msgid "%1 takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
 msgstr "ロンドンで開催された名誉あるEGRオペレーター賞授賞式にてBinary.comが金融ベッティングオペレーター部門で最優秀賞を受賞しました。"
 
@@ -280,17 +247,23 @@ msgstr "定量分析グループはオプションのリスクと収益性の管
 msgid "%1's Smart FX are smart markets that measure the value of a currency against a basket of major currencies."
 msgstr "%1のスマートFXは、主要通貨バスケットに対する通貨の価値を計るスマートマーケットです。"
 
-msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements.  Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
+#, fuzzy
+#| msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements.  Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
+msgid ""
+"%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much\n"
+"                    less investment than would be required in the live market."
 msgstr "%1のスプレッドトレードには、市場動向が直接関連する金銭的価値のデリバティブ契約を活用しています。市場が上昇すると「ロング」を選んだクライアント（市場が下落するとして「ショート」を選んだクライアント）のライブ市場で必要とされるよりもはるかに少ない投資でこれらの動向から利益を得られます。"
 
-msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
+#, fuzzy
+#| msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
+msgid ""
+"%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are\n"
+"                    closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
 msgstr "%1のスプレッドトレードでは、クライアントによって生じる損失の最大を制限できる「損切り」が必要です。この「損切り」の金額は、口座内の資金に作用し、スプレッドトレードが閉鎖するまでそれ以外のお取引ができないよう機能します。スプレッドトレードはクライアントによって転売される際に「損切り」と「利益ストップ」のレベルに到達次第閉鎖されます。"
 
 msgid "%1's Volatility Indices are based on a cryptographically secure random number generator audited for fairness by an independent third party."
 msgstr "当社のボラティリティ インデックスは、独立したサードパーティーによる公平性の監査のうえ、暗号化された安全な乱数ジェネレーターをベースにしています。"
 
-#, fuzzy
-#| msgid "Binary.com's headquarters are in Malta, a favoured tourist destination with a warm climate, beautiful recreational areas and World Heritage sites. We also have an Operational Headquarters office in Cyberjaya, a high-tech precinct south of Kuala Lumpur, the capital of Malaysia, an equally exciting destination at the heart of Asia."
 msgid "%1's headquarters are in Malta, a favoured tourist destination with a warm climate, beautiful recreational areas and World Heritage sites. We also have an Operational Headquarters office in Cyberjaya, a high-tech precinct south of Kuala Lumpur, the capital of Malaysia, an equally exciting destination at the heart of Asia."
 msgstr "Binary.comの本社は、温暖な気候、美しい保養地区、そして世界遺産といった環境に恵まれた観光地であるマルタ共和国に存在します。また、エキサイティングなアジアの中心部であるマレーシアの首都クアラルンプールの南部に位置する、ハイテク産業で有名なCyberjayaに業務部門を統括する本社が存在します。"
 
@@ -300,8 +273,6 @@ msgstr "%1の特許取得済みの価格設定テクノロジーにより、イ�
 msgid "%1's principal Anti-Fraud Officer is responsible for the exercise of exceptional client relationship management skills applied to the prevention of fraudulent activities in payments processing and business transactions. He or she will be expected to partner with our payments and compliance teams in resolving payment queries; administering chargebacks; conducting anti-money laundering audits, and implement a broad array of fraud prevention measures."
 msgstr "不正対策本部は、支払処理やビジネス取引での不正行為防止に適用する例外的な顧客関係管理能力の行使をします。支払に関する問い合わせの解決（チャージバック管理、アンチマネーロンダリングの監査、幅広い詐欺防止対策への実施）において支払チームとコンプライアンスチームと協働することになります。"
 
-#, fuzzy
-#| msgid "Binary.com's remarkable history"
 msgid "%1's remarkable history"
 msgstr "Binary.comの沿革"
 
@@ -311,8 +282,6 @@ msgstr "当システムは1日に1万を超えるお取引（仮想アカウン�
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(最短期間, 例： 最短 15 秒）分"
 
-#, fuzzy
-#| msgid "&#8220;Binary.com is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
 msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
 msgstr "&#8220;Binary.comは最も歴史があり、信頼できるパートナーです。長年に渡り協業して参りました。&#8221;"
 
@@ -449,7 +418,7 @@ msgid "<< Back to Job Descriptions"
 msgstr "<<職務内容に戻る"
 
 msgid "<a class='pjaxload' href='mailto:%1'>Contact Us</a>"
-msgstr ""
+msgstr "<a class='pjaxload' href='mailto:%1'>お問い合わせ</a>"
 
 msgid "<a href='%1'>Founded</a> October 1999"
 msgstr "<a href='%1'>設立日</a> 1999年10月"
@@ -730,7 +699,11 @@ msgstr "マーケティング、経営管理または関連分野の学士号を
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by %1. The transfer fees are borne by the Client."
 msgstr "決済サービスエージェントは、お客さま（当社の顧客）と当社の間で取引所のような役割を果たします。決済サービスエージェントは、当社が取り扱いをしていない特定のEキャッシュ手段や現地通貨を利用したいお客さまに入出金の処理をします。振込や送金手数料はお客さま負担です。"
 
-msgid "A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier or the low barrier at any time during the period chosen by a trader."
+#, fuzzy
+#| msgid "A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier or the low barrier at any time during the period chosen by a trader."
+msgid ""
+"A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier\n"
+"            or the low barrier at any time during the period chosen by a trader."
 msgstr "「レンジ内/レンジ外」における「レンジ内」では取引期間に常に上限バリア、及び下限バリアの間に価格が留まれば条件が満たされたと判定され、上下どちらかのバリア値にタッチした瞬間に条件が満たされないと判定されます。「レンジ外」では取引期間以内に一度でも下限バリア、または上限バリアにタッチすれば条件が満たされたと判定されます。"
 
 msgid "A True Partnership"
@@ -993,7 +966,11 @@ msgstr "ポイントごとの金額"
 msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
 msgstr "高度専門士、専門士、準修士または学士"
 
-msgid "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target."
+#, fuzzy
+#| msgid "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target."
+msgid ""
+"An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high\n"
+"            price target OR strictly lower than the low price target."
 msgstr "「レンジ内」のトレードタイプでは、トレード終値が最小値として設定したバリアよりも高値、”かつ”、最高値として設定したバリアよりも安値であれば条件が満たされたことになります。同値は満たさないと判定され、終値のみが評価対象になります。「レンジ外」のトレードタイプでは、トレードの終値が最高値として設定したバリアよりも高値、”または”、最小値として設定したバリアよりも安値であれば条件が満たされます。同値は満たされないと判定され、終値のみが評価対象になります。"
 
 msgid "An additional password can be used to restrict access to the cashier."
@@ -1038,10 +1015,8 @@ msgstr "個人情報のお取り扱いなどに関する変更点は全て当社
 msgid "Any disputes, controversy, or claims that arise out of or relating to this Agreement against the Company will be referred to and finally determined by an arbitration firm selected by the Company. The language to be used in the arbitral proceedings will be English. Judgement upon the award rendered by the arbitrator(s) may be entered in any court having jurisdiction thereof. You are also responsible for any and all costs related to such arbitration."
 msgstr "本契約外で生じた事案または本契約に関する事案での当社に対する紛争、論争、苦情は、当社が選択した仲裁機関によって最終的に決定されます。仲裁手続きにおいて使用する言語は英語です。仲裁人による裁定時の判決はその司法管轄権を持つ裁判所で行われます。また、仲裁に関する全費用はお客さまが負うものとします。"
 
-#, fuzzy
-#| msgid "Any failure on your part to maintain the security of any security devices or procedures used in or in association with the Binary.com API;"
 msgid "Any failure on your part to maintain the security of any security devices or procedures used in or in association with the %1 API;"
-msgstr "Binary.com API上の、または関連するセキュリティデバイス、手順においてお客さま自身によって引き起こされた安全性維持への障害；"
+msgstr "%1 API上の、または関連するセキュリティデバイス、手順においてお客さま自身によって引き起こされた安全性維持への障害；"
 
 msgid "Any form of Spam will result in your account being placed under review and all funds due being withheld pending an investigation into your account. You need to be aware that %1 is liable to incur expenses in dealing with Spam generated mail and these same expenses will be deducted from your account. In this instance the amount determined will be fair and deemed final and acceptable based on good faith and such amount will be collectable by law and deemed to have been accepted by yourself as fair and reasonable and as agreed to by registration as an affiliate of %1."
 msgstr "スパム行為が検出された場合は、アフィリエイト口座の調査が実施されアフィリエイト口座内の資金の支払いも保留します。アフィリエイト会員は、%1はスパムメール行為への対策費用を負担する立場でありあること、そしてそのような対策費用と同額の額がアフィリエイト会員の口座から差し引かれることを理解する必要があります。対策費用の総額は、誠意に基づく平等な価格に決定され、法的に回収され、アフィリエイト会員が公平かつ妥当と承諾したとみなし、これらの条件を%1のアフィリエイト会員として登録した時点で承諾したものとします。"
@@ -1052,10 +1027,8 @@ msgstr "当社サイトの全てのページ、メール、ニュースレター
 msgid "Any notice given or made under this Agreement to the Company shall be by email to %1. The Company shall send you any notices given or made under this Agreement to the email address supplied on your application form or such other email address as notified by you to the Company."
 msgstr "本契約に基き、当社に付与、又は作成された全ての通知事項はメールにて%1へ伝達されるものとします。当社は本契約に基づいて、付与、又は作成された通知事項を登録済みのメールアドレス、または当社に共有された他のメールアドレスに送信します。"
 
-#, fuzzy
-#| msgid "Any third party claims arising out of, or relating to, your use of, or inability to use, the Binary.com API."
 msgid "Any third party claims arising out of, or relating to, your use of, or inability to use, the %1 API."
-msgstr "Binary.com API外で生じた内容、関連内容、ご利用方法、活用性に関してサードパーティーに責任はありません。"
+msgstr "%1 API外で生じた内容、関連内容、ご利用方法、活用性に関してサードパーティーに責任はありません。"
 
 msgid "Anyone over the age of 18 [who has read and agreed to the %1 terms and conditions], and who is not resident in one of the 'closed countries' can trade on the %1 platform."
 msgstr "１８歳以上で %1のご利用規約に同意された方、かつ当社がサービスを提供している国にお住まいの方であればどなたでも、%1のプラットフォームでお取引が可能です。"
@@ -1132,15 +1105,11 @@ msgstr "当社のグローバルクライアントサービスチームの一員
 msgid "As an Accounts And Payments Executive, you will be responsible for the processing of client payments, handling and resolving client payment queries, assisting with the management accounts of the companies within our group, performing reconciliations, preparing reports, and constantly liaising with all other departments within the company in relation to client payments and accounts. You will work within a multi-national team, using the proprietary accounting and backoffice systems provided by the company."
 msgstr "顧客・支払担当者は顧客の支払処理、支払に関するお問い合わせの応答、グループ会社内でのアカウント管理のアシスタント、照合、報告書の作成、顧客の支払いまたはアカウントに関して常に他部署と連携します。多国籍なチーム内で作業し、当社が提供する独自の会計またはバックオフィスシステムを利用します。"
 
-#, fuzzy
-#| msgid "As between you and us, we own all rights, title, and interest, including all intellectual property rights, in and to, the Binary.com API, and all elements, components, and executables of the Binary.com API."
 msgid "As between you and us, we own all rights, title, and interest, including all intellectual property rights, in and to, the %1 API, and all elements, components, and executables of the %1 API."
-msgstr "お客さまと当社間において、Binary.com APIでの全知的財産権を含む全ての権利、権原、所有権、及びBinary.com APIの全ての要素、構成、執行を当社が所有しています。"
+msgstr "お客さまと当社間において、%1 APIでの全知的財産権を含む全ての権利、権原、所有権、及び%1 APIの全ての要素、構成、執行を当社が所有しています。"
 
-#, fuzzy
-#| msgid "As long as you follow these Terms, we grant you a limited, non-exclusive, non-assignable, non-transferable, terminable license to use the Binary.com API to develop, test, and support your Application, and to let your customers use your integration of the Binary.com API within your Application."
 msgid "As long as you follow these Terms, we grant you a limited, non-exclusive, non-assignable, non-transferable, terminable license to use the %1 API to develop, test, and support your Application, and to let your customers use your integration of the %1 API within your Application."
-msgstr "この規約に従っている限り、お客さまのアプリケーション開発、テスト、サポートのためBinary.com APIの使用に関して制限付きで、非独占、非割当、譲渡不可、期限付きのライセンスを譲渡致します。"
+msgstr "この規約に従っている限り、お客さまのアプリケーション開発、テスト、サポートのため%1 APIの使用に関して制限付きで、非独占、非割当、譲渡不可、期限付きのライセンスを譲渡致します。"
 
 msgid "As our DevOps Manager/Team Lead, you'll be responsible for the training, development and direction of a world class Linux-based Systems Administration team."
 msgstr "開発・運用チームリーダーは、世界クラスのLinuxをベースとしたシステム管理チームのトレーニング、開発、指示を担当します。"
@@ -1298,7 +1267,7 @@ msgid "Best Tracking with \"Forever Cookies\""
 msgstr "獲得会員を確実にフォローするCookie（クッキー）設定"
 
 msgid "BetOnMarkets goes live"
-msgstr "BetOnMarketsを公開"
+msgstr "BetOnMarkets（オンライントレードサイト）を公開"
 
 msgid "BetOnMarkets.com has over 400,000 clients in its database and reach the US$ 1 billion milestone in only our 13th year, making us one of the leading fixed-odds trading providers."
 msgstr "BetOnMarkets.comは40万人の顧客を有しています。開業13年目にして累計で10億USDのターンオーバーを達成し、固定オッズトレード業界での牽引役として位置付けられるようになります。"
@@ -1306,10 +1275,8 @@ msgstr "BetOnMarkets.comは40万人の顧客を有しています。開業13年�
 msgid "BetOnMarkets.com increases payouts to 100,000 USD, EUR, GBP and AUD"
 msgstr "BetOnMarkets.comは払い戻し価格を１０万 USD/EUR/GBP/AUDに拡大"
 
-#, fuzzy
-#| msgid "BetOnMarkets.com is successfully rebranded Binary.com"
 msgid "BetOnMarkets.com is successfully rebranded %1"
-msgstr "BetOnMarkets.comをBinary.comにリニューアル"
+msgstr "BetOnMarkets.comはBinary.comに社名変更"
 
 msgid "BetOnMarkets.com reaches $1 billion turnover since starting in 1999"
 msgstr "BetOnMarkets.comは1999年から累計で10億USDのターンオーバーを達成"
@@ -1326,7 +1293,10 @@ msgstr ""
 "所在地：Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 
 msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licenced and regulated (for gambling products only) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>."
-msgstr "Binary (Europe) Ltd (所在地:Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta)は、マルタ共和国のギャンブル監督機関（the Malta Gaming Authority ）から監督、及びライセンスを付与されています。 現在のライセンス番号は MGA/CL2/118/2000 です。英国賭博委員会による英国のクライアント用<a href='%1' target='_blank'>ライセンスを確認</a>。"
+msgstr ""
+"Binary (Europe) Ltd のオフィス所在地:Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta。\n"
+"マルタ共和国のライセンス当局the Malta Gaming Authorityからライセンスを付与され監督下におります。 \n"
+"現在のライセンス番号は MGA/CL2/118/2000 です。また、英国居住者の場合は、UK Gambling Commissionにより規制されています<a href='%1' target='_blank'>ライセンスを確認</a>。"
 
 msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
 msgstr ""
@@ -1334,14 +1304,10 @@ msgstr ""
 "所在地： First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
 
 msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licenced and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2012) and for UK clients by the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>."
-msgstr ""
-"Binary (IOM) Ltd は、First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RWに所在しています。\n"
-"マン島ギャンブル監督委員会によってライセンス認証と監督されています。（現在のオンラインギャンブルライセンスは2012年8月31日に付与されたものです。）英国賭博委員会による英国のクライアント用<a href='%1' target='_blank'>ライセンスを確認</a>。"
+msgstr "Binary (IOM) Ltd のオフィス所在地:First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW。マン島のライセンス当局Gambling Supervision Commissionによってライセンスを付与され監督下におります。（現在、保持しているonline gambling licenceは2012年8月31日に付与されたものです。）英国居住者の場合は、UK Gambling Commissionにより規制されています。<a href='%1' target='_blank'>ライセンスを確認</a>。"
 
-#, fuzzy
-#| msgid "Binary options basics"
 msgid "Binary Bot released"
-msgstr "バイナリー取引の基礎"
+msgstr "バイナリーボット(ロボット)を導入(日本を除く)"
 
 msgid "Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
 msgstr ""
@@ -1358,7 +1324,7 @@ msgid "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, B
 msgstr "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, Binary (CR) SA とその全てのバイナリーグループのメンバーは\"%1\", \"私達（us）\" or \"当社（we）\"と総称されことがあります。"
 
 msgid "Binary Investments (Europe) Ltd, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156)."
-msgstr "Binary Investments (Europe) Ltd (所在地: Suite 2, Tower Road, Msida MSD1825, Malta)は、マルタ金融サービス庁（the Malta Financial Services Authority ）によりカテゴリー3　投資サービス・プロバイダとしてライセンス認定、監督されています。 現在のライセンス番号はIS/70156です。"
+msgstr "Binary Investments (Europe) Ltdのオフィス所在地: Suite 2, Tower Road, Msida MSD1825, Malta。マルタ金融サービス庁（MFSA ）によりカテゴリー3　投資サービス・プロバイダとしてライセンス認定、監督されています。 現在のライセンス番号はIS/70156です。"
 
 msgid "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
 msgstr ""
@@ -1366,7 +1332,7 @@ msgstr ""
 "所在地：150-0012　東京渋谷区広尾一丁目9-16　広尾宮田ビル3F"
 
 msgid "Binary Ltd, with registered office address situated at <span itemprop='location'>47 Esplanade, St. Helier, Jersey, JE 0BD Channel Islands</span>, is the holding company for the Binary group."
-msgstr "Binary Ltdは、<span itemprop='location'>47 Esplanade, St. Helier, Jersey, JE 0BD Channel Islands</span>の住所に位置する事務所が登録されており、バイナリーグループ会社を有しています"
+msgstr "Binary Ltdのオフィス所在地は、<span itemprop='location'>47 Esplanade, St. Helier, Jersey, JE 0BD Channel Islands</span>に登記登録をしており、バイナリーグループの持株会社です。"
 
 msgid "Binary Options Basics"
 msgstr "バイナリー取引の基礎"
@@ -1383,7 +1349,11 @@ msgstr "バイナリー日本オフィスがオープン"
 msgid "Binary option"
 msgstr "バイナリーオプション"
 
-msgid "Binary options are easy to understand. They're called 'binary' because there can be only two outcomes - win or lose. If your prediction is correct, you receive a payout that is determined at the start of the trade. If not, you just lose your initial stake."
+#, fuzzy
+#| msgid "Binary options are easy to understand. They're called 'binary' because there can be only two outcomes - win or lose. If your prediction is correct, you receive a payout that is determined at the start of the trade. If not, you just lose your initial stake."
+msgid ""
+"Binary options are easy to understand. They're called 'binary' because there can be only two outcomes - win or lose. If your prediction is correct, you receive a payout that is determined at the start of the trade. If not, you just lose your\n"
+"            initial stake."
 msgstr "バイナリーオプションはある条件を「満たす」か「満たさないか」の２種類の結果のみもたらすことから「バイナリー」と呼ばれています。予想が正しい場合、事前に定められたペイアウトをお受け取りいただけます。予想が正しく無い場合は、購入価格を失います。"
 
 msgid "Binary options basics"
@@ -1411,7 +1381,7 @@ msgid "Binary's Maltese subsidiary Binary Investments (Europe) Ltd. is granted a
 msgstr "Binaryのマルタ子会社 Binary Investments (Europe) Ltdはマルタ金融サービス庁によってカテゴリー3投資サービスライセンスが付与されています。"
 
 msgid "Binary's platform transacts on average 15 <a href='http://binarycom.statuspage.io/' target='_blank'>transactions</a> per second, 24/7"
-msgstr "Binaryプラットフォームでは、毎秒15ごとに<a href='http://binarycom.statuspage.io/' target='_blank'>取引</a>が行われています。"
+msgstr "Binaryプラットフォームでは、毎秒15ごとに取引が行われています。"
 
 msgid "Binary.com is an active member of the Perl community and is in the process of uploading a number of its internal utility modules to <a target='_blank' href='%1'>CPAN</a>. If you are a Perl enthusiast, contribute by reviewing these modules, and submitting pull-requests on <a target='_blank' href='%2'>github</a>."
 msgstr "Binary.comはPerlコミュニティの活発なメンバーであり、<a target='_blank' href='%1'>CPAN</a>へ数多くの内部ユーティリティ・モジュールを投稿しています。Perlでの開発に熱意がある方は、これらのモジュールをご覧頂き、<a target='_blank' href='%2'>github</a>からプルリクエストを送信して下さい。"
@@ -1470,8 +1440,6 @@ msgstr "アフィリエイトプログラムにご参加頂くにあたり、本
 msgid "By registering a software application, website, or product you create or a service you offer (an \"Application\"), you acknowledge that you have read and understood and agree to be bound by these terms."
 msgstr "ソフトウェアアプリケーション、ウェブサイト、お客さまが作成された製品または提供されたサービス（アプリケーション）を登録することで、これら条項に拘束されることに同意されたとみなします。"
 
-#, fuzzy
-#| msgid "By submitting suggestions or other feedback regarding the Binary.com API to the Company (\"Contributions\"), you acknowledge and agree that:"
 msgid "By submitting suggestions or other feedback regarding the %1 API to the Company (\"Contributions\"), you acknowledge and agree that:"
 msgstr "Binary.comに関するご提案またはその他ご意見を当社にご提出されることにより（コントリビューション）、次の事項を理解し、同意されたとみなします。："
 
@@ -1628,7 +1596,7 @@ msgstr ""
 "第16条　お客さまが当社に対して有する債権は、他に譲渡、質入れ、その他処分をすることができないものとします。"
 
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Japan, Costa Rica, Hong Kong) will have their account opened with Binary (C.R.) S.A."
-msgstr "その他の国（アメリカ、日本、コスタリカ、香港などの一部の国を除く）に居住のお客さまのご口座は、Binary (C.R.) S.A.の下に口座が開設されます。"
+msgstr "その他の国（アメリカ、日本、コスタリカ、香港などの一部の国を除く）の居住者は、Binary (C.R.) S.A.の下で口座を開設されます。"
 
 msgid "Clients may avail of this bonus only when a real money account is opened."
 msgstr "このボーナスは、リアル口座を開設された場合にのみ適用されます。"
@@ -1835,7 +1803,7 @@ msgid "Contracts may not expire on a weekend; therefore the expiry date of a con
 msgstr "トレードを週末に終了するよう指定することができない場合があります。ゆえに、土曜日か日曜日に終了時間を指定したトレードは、終了時間が月曜日に指定される場合があります。"
 
 msgid "Contracts offered by Binary Investments (Europe) Ltd. have a minimum purchase price of USD/GBP/EUR 5."
-msgstr ""
+msgstr "Binary Investments (Europe) Ltd.による提供のトレードの最小購入価格はUSD/GBP/EUR 5です。"
 
 msgid "Contracts sold"
 msgstr "契約は転売されました"
@@ -1858,10 +1826,8 @@ msgstr "幅広い販促キャンペーンへのブランディング改善に是
 msgid "Contribute your ideas, energy, and creativity to further the company's dynamic branding efforts"
 msgstr "あなたのアイディア、エネルギー、創造力をブランディングの改善に活用してみませんか"
 
-#, fuzzy
-#| msgid "Contributions to the Binary.com API"
 msgid "Contributions to the %1 API"
-msgstr "Binary.comのAPIのコントリビューション"
+msgstr "%1 APIのコントリビューション"
 
 msgid "Contributors"
 msgstr "コントリビュータ"
@@ -1944,8 +1910,6 @@ msgstr "現在"
 msgid "Current Level"
 msgstr "現在のレベル"
 
-#, fuzzy
-#| msgid "Current time:"
 msgid "Current Time"
 msgstr "現在時刻："
 
@@ -2352,10 +2316,10 @@ msgid "Ethics Code"
 msgstr "倫理コード"
 
 msgid "European Union residents with the exception of the UK, who wish to trade gambling products, will have their account opened with Binary (Europe) Ltd."
-msgstr "賭博製品のお取引をご希望のイギリスを除く欧州連合の居住者は、Binary (Europe) Ltdの下で口座を開設されます。"
+msgstr "口座開設をご希望の欧州連合の居住者（イギリスを除く）は、Binary (Europe) Ltdの下で口座を開設されます。"
 
 msgid "European Union residents with the exception of the UK, who wish to trade investment products, will have their account opened with Binary Investments (Europe) Ltd."
-msgstr "投資製品のお取引をご希望のイギリスを除く欧州連合にお住まいお客さまは、Binary (Europe) Ltdの下で口座は開設されます。"
+msgstr "金融商品の取引をご希望の英国を除く欧州連合の居住者は、Binary (Europe) Ltdの下で口座は開設されます。"
 
 msgid "Even/Odd"
 msgstr "偶数/奇数"
@@ -2384,15 +2348,11 @@ msgstr "口語及びライティングでの優れたコミュニケーション
 msgid "Excellent written and verbal communication skills in both English and Bahasa Malaysia"
 msgstr "マレーシア語と英語双方での優れた書面と口頭コミュニケーションスキル"
 
-#, fuzzy
-#| msgid "Except for the license granted in this Agreement, the Company does not grant you any right, title, or interest in the Binary.com API. You agree to take such actions as the Company may reasonably request to perfect the Company's rights to the Binary.com API."
 msgid "Except for the license granted in this Agreement, the Company does not grant you any right, title, or interest in the %1 API. You agree to take such actions as the Company may reasonably request to perfect the Company's rights to the %1 API."
-msgstr "本契約で譲渡されたライセンスを除いて、Binary.com APIの権利、権原、所有権をお客さまへ譲渡するものではありません。Binary.com APIへの当社の権利に応じて当社から合理的要求を行う場合があり、そのような行為に同意します。"
+msgstr "本契約で譲渡されたライセンスを除いて、%1 APIの権利、権原、所有権をお客さまへ譲渡するものではありません。%1 APIへの当社の権利に応じて当社から合理的要求を行う場合があり、そのような行為に同意します。"
 
-#, fuzzy
-#| msgid "Except to the extent your Application contains the Binary.com API, the Company claims no ownership or control over your Application."
 msgid "Except to the extent your Application contains the %1 API, the Company claims no ownership or control over your Application."
-msgstr "アプリケーションがBinary.com APIを含む場合を除き、当社にはアプリケーションに関する所有権または制御権はありません。"
+msgstr "アプリケーションが%1 APIを含む場合を除き、当社にはアプリケーションに関する所有権または制御権はありません。"
 
 msgid "Exceptional communication skills in English, in both oral and written form"
 msgstr "口語及びライティングの優れた英語コミュニケーションスキル"
@@ -2694,10 +2654,8 @@ msgstr "詳細情報"
 msgid "Further, the Company, under the above circumstances, or any other, reserves the right to adjust a client's account should any trade result in a disruption, miscarry or aborted trade."
 msgstr "また、当社ではそのような状況、またはその他状況下において、お取引が混乱、失敗、中止に終わるお客さまの口座を調整する権利を留保させていただきます。"
 
-#, fuzzy
-#| msgid "Furthermore, the Company disclaims all liability for any malfunctioning, impossibility of access, or poor use conditions of the Binary.com API due to inappropriate equipment, disturbances related to internet service providers, to the saturation of the internet network, and for any other reason."
 msgid "Furthermore, the Company disclaims all liability for any malfunctioning, impossibility of access, or poor use conditions of the %1 API due to inappropriate equipment, disturbances related to internet service providers, to the saturation of the internet network, and for any other reason."
-msgstr "また、いかなる誤動作、アクセス不能、不適切な装置の使用によるBinary.com API使用への悪条件、またはインターネットサービスプロバイダーとインターネットネットワークの飽和、及びその他の理由が原因での障害において当社は一切の責任を負いません。"
+msgstr "また、いかなる誤動作、アクセス不能、不適切な装置の使用による%1 API使用への悪条件、またはインターネットサービスプロバイダーとインターネットネットワークの飽和、及びその他の理由が原因での障害において当社は一切の責任を負いません。"
 
 msgid "GBP"
 msgstr "GBP"
@@ -2705,10 +2663,8 @@ msgstr "GBP"
 msgid "GMT"
 msgstr "GMT"
 
-#, fuzzy
-#| msgid "GMT stands for Greenwich Mean Time, the official time used in the UK during winter. In summer, the UK changes to British Summer Time, which is GMT + 1 hour. All times on the Binary.com site use GMT all year round."
 msgid "GMT stands for Greenwich Mean Time, the official time used in the UK during winter. In summer, the UK changes to British Summer Time, which is GMT + 1 hour. All times on the %1 site use GMT all year round."
-msgstr "グリニッジ標準時とは、イギリスの冬時間を示します。イギリスの夏時間はグリニッジ標準時に１時間プラスされGMT+１と表記されます。"
+msgstr "グリニッジ標準時とは、イギリスの冬時間を示します。イギリスの夏時間はグリニッジ標準時に１時間プラスされGMT+１と表記されます。%1サイトの時間は全てGMTで表記されます。"
 
 msgid "GamCare"
 msgstr "GamCare"
@@ -2943,10 +2899,8 @@ msgstr "政府機関によって課せられた法律や義務に違反した場
 msgid "If we're happy with your results, we'll contact you for an interview and then do background and reference checks."
 msgstr "テストに合格した場合は、面接、バックグラウンド、及びレファレンスチェックを行います。"
 
-#, fuzzy
-#| msgid "If you are an affiliate of Binary.com, you must also comply with the Binary.com Affiliate Program Terms and Conditions."
 msgid "If you are an affiliate of %1, you must also comply with the %1 Affiliate Program Terms and Conditions."
-msgstr "Binary.comのアフィリエイト会員である場合、Binary.comアフィリエイトプログラムの利用規約にも準拠していただく必要があります。"
+msgstr "%1のアフィリエイト会員である場合、%1アフィリエイトプログラムの利用規約にも準拠していただく必要があります。"
 
 msgid "If you are developing on our API on behalf of a company or other entity, you represent and warrant that you have full legal authority to register an Application on behalf of that entity and bind it to these Terms. If you are not authorized, you may not accept these Terms or register an Application for someone else."
 msgstr "企業あるいはその他事業体を代表して当APIを開発される場合、事業体を代表してのアプリケーションの登録及びこれら規約に拘束される完全な法的権限を表明し、保証します。権限がない場合は本規約に同意または代理でアプリケーションの登録をしないでください。"
@@ -3065,10 +3019,8 @@ msgstr "もし特定の<strong>終了時間</strong>を選択した場合は、�
 msgid "If you want to profit from this high demand product then your best option is to partner with the market leader. %1 has been in the business for over 15 years, and has been successful ever since."
 msgstr "需要の高い商品からベストな選択をして利益を得るには、マーケットリーダーとパートナーになることです。%1はこの業界で15年以上になり、様々な功績を残してきました。"
 
-#, fuzzy
-#| msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='%1'>%2</a>"
 msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:%1'>%1</a>"
-msgstr "決済サービスエージェントに関する詳細をご希望の場合は、<a href='%1'>%2</a>までご連絡ください"
+msgstr "決済サービスエージェントに関する詳細をご希望の場合は、<a href='mailto:%1'>%1</a>までご連絡ください"
 
 msgid "If you would like to file a complaint with regards to our service, kindly contact us providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within 1-2 weeks (and at most within 2 months) from receipt of all relevant details."
 msgstr "当サービスに苦情を申し立てられたい場合、当社に苦情の詳細をご提供ください。お客さまのお問い合せ内容を調査のうえ、回答させていただきます。通常、最終的な回答は全詳細を受け取り次第、1〜2周間以内に（最大でおよそ2ヶ月以内）に提供させていただきます。"
@@ -3079,10 +3031,8 @@ msgstr "ブローカーの方でしたら、是非ご協力させてください
 msgid "If you're an individual trader, you'll appreciate the simplicity, flexibility, and limited risk of binary trading. With %1's low minimum stakes, you'll soon learn how to trade with skill and confidence. And if you have any questions, you're free to access <a class='pjaxload' href='%2'>our helpful support desk</a>."
 msgstr "個人投資家の方はバイナリーオプション取引の簡潔性、柔軟性、そして限定されたリスクにメリットを見い出されることでしょう。当社では少額取引も提供しておりますので、お気軽に取引スキルの向上にチャレンジいただけます。ご不明な点がございましたら<a class='pjaxload' href='%2'>カスタマーサポート</a>までお気軽にお問い合わせください。"
 
-#, fuzzy
-#| msgid "If you're looking to build a career, and not a resume, talk to us, Binary.com. We're one of the IT world's most vibrant and progressive workplaces."
 msgid "If you're looking to build a career, and not a resume, talk to us, %1. We're one of the IT world's most vibrant and progressive workplaces."
-msgstr "キャリア構築を真剣にお考えの場合は、Binary.comまでご連絡下さい。当社はIT業界で最も活気があり、進歩的な職場環境を提供しています。"
+msgstr "キャリア構築を真剣にお考えの場合は、%1までご連絡下さい。当社はIT業界で最も活気があり、進歩的な職場環境を提供しています。"
 
 msgid "If your complaint relates to an outcome of a trade or a transaction and remains unresolved, it will turn into a dispute. Should you be unsatisfied with our response, you can choose to escalate your complaint to the regulator or to an alternative dispute resolution entity."
 msgstr "取引や商法の結果に関するご不満があったり、何か未解決のままである場合、それは論争になってしまうかもしれません。当社の回答に満足いただけない場合は、お客さまの苦情を監督機関に申し立てをするか、裁判外紛争解決をご選択いただけます。"
@@ -3112,8 +3062,7 @@ msgid "In April, <a target='_blank' href='http://www.betonmarkets.com'>Betonmark
 msgstr "４月に<a target='_blank' href='http://www.betonmarkets.com'>Betonmarkets.com</a> (旧サービス名：<a target='_blank' href='http://www.xodds.com'>Xodds.com</a>)を公開し、２４時間営業の金融トレードサービスを様々な金融商品に展開。ビジネスは瞬く間に成長し、即座に固定オッズ方式の金融トレード業界のリーダーとなる。"
 
 msgid "In October 1999, Regent Markets receives US$ 2 million investment funding from Jim Mellon through his Regent Pacific Group, a Hong Kong based fund management company."
-msgstr ""
-"1999年10月、Regent Marketsは香港のファンドマネジメント企業のRegent Pacific Groupより2億USDの投資を受ける。"
+msgstr "1999年10月、Regent Marketsは香港のファンドマネジメント企業のRegent Pacific Groupより2億USDの投資を受ける。"
 
 msgid "In all circumstances, the Company reserves the right to make changes to these Terms and Conditions. If the Company elects to make any material changes to these Terms and Conditions, our clients will be notified in advance and shall either accept or decline to agree. Declining to agree shall result in a material breach of this agreement and the client's account maybe frozen, suspended or cancelled."
 msgstr "すべての状況において、当社はこれらの利用規約を変更する権利を留保します。当社がこれら利用規約のいずれかの項目を変更する場合、お客さまは事前に通知され、同意に承諾または辞退していただく必要がございます。同意を辞退されると、本契約の重大な違反につながり、お客さまの口座は凍結、一時停止、または削除させていただく場合がございます。"
@@ -3125,9 +3074,13 @@ msgid "In carrying out OTC binary option trading, a customer needs expert knowle
 msgstr "バイナリーオプション取引について、合理的な投資判断をもって行うためには、オプション取引の理論的根拠などに関する専門知識が必要であること。（契約締結前交付書面「店頭バイナリーオプション取引のリスクについての説明」-①参照）"
 
 msgid "In classic Silicon Valley style, Hong Kong based hedge fund manager and entrepreneur, Jean-Yves Sireau, starts Regent Markets in his Hong Kong bedroom. He develops the systems, methods and algorithms for implementing a fixed-odds financial betting system. Jean-Yves's vision is to create a market in the simplest of all derivatives contracts - the fixed-odds bet - and to offer ordinary investors the chance to make small bets. Until his innovation, binary options are normally only traded in large quantities."
-msgstr "香港のヘッジファンド会社でファンドマネージャーとして勤務していたJean-Yves氏が、デリバティブ商品を一般投資家に分かり易く、求め易い形で提供するため、小規模の投資額で固定オッズ形式の取引ができるシステム、メソドロジー及びアルゴリズムを自宅で開発。Jean-Yves氏は、全てのデリバティブ取引に対応できるシンプルなマーケットを形成、固定オッズ形式取引、そしてあらゆるトレーダーに小額で行えるトレード機会を目指す。この革新により、大規模なバイナリーオプションの取引を実現。"
+msgstr "香港のヘッジファンド会社でファンドマネージャーとして勤務していたジョン・イヴス氏が、デリバティブ商品を一般投資家に分かり易く、求め易い形で提供するため、小規模の投資額で固定オッズ形式の取引ができるシステム、メソドロジー及びアルゴリズムを自宅で開発。ジョン・イヴス氏は、全てのデリバティブ取引に対応できるシンプルなマーケットを形成、固定オッズ形式取引、そしてあらゆるトレーダーに小額で行えるトレード機会を目指す。この革新により、大規模なバイナリーオプションの取引を実現。"
 
-msgid "In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro will rise in relation to the value of the US dollar."
+#, fuzzy
+#| msgid "In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro will rise in relation to the value of the US dollar."
+msgid ""
+"In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro\n"
+"            will rise in relation to the value of the US dollar."
 msgstr "外国為替市場では、任意の通貨が特定の通貨に対する価格の変化の予想に基づくトレードを実施できます。例えば、EUR/USD市場が上昇すると予測した場合は、米ドルに対してユーロの価値が上がると予想したことになります。"
 
 msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
@@ -3155,7 +3108,7 @@ msgid "In the 'Further Instructions' field please specify the payment method and
 msgstr "詳細説明欄ではエージェントの決済方法、振込先の口座番号を記入して下さい。"
 
 msgid "In the UK and Isle of Man, our clients trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A."
-msgstr "イギリスとマン島では、Binary (IOM) Ltd.を介してお取引することになります。英国をのぞく欧州連合では、Binary (Europe) Ltd.とBinary Investments (Europe) Ltd.を介します。その他の国では、Binary Investments (Europe) Ltd.を介します。"
+msgstr "英国とマン島の居住者は、Binary(IOM)Ltd.の下に口座開設されます。英国をのぞく欧州連合では、Binary (Europe) Ltd.とBinary Investments (Europe) Ltd.を介します。英国を除く欧州連合の居住者は、Binary(Europe)LtdとBinary Investments(Europe)Ltd.の下に口座を開設されます。その他以外の国は、Binary Investments(Europe)Ltd.の下に口座開設されます。"
 
 msgid "In the case of single stock and stock index prices, the final closing price as reported by the relevant official Exchange shall apply for all settlements (this final settlement price may, at times, be reported by the relevant Exchange 30-90 minutes after the official closing time of the market, and may differ from the latest tick price that occurred at the closing time)."
 msgstr "個別株式、及び株価指数の終値は、公式な取引所の終了価格によって決定されますが、該当取引の終了後30分〜90分後に発表される場合があり、かつ終了時間に発生した最終のTick価格と異なる場合があります。"
@@ -3163,17 +3116,13 @@ msgstr "個別株式、及び株価指数の終値は、公式な取引所の終
 msgid "In the course of provision of services we shall, where applicable, conduct an appropriateness test in order to determine whether, in our view and on the basis of the information provided by you, you have the necessary knowledge and experience in the investment field to understand the risks involved in the specific type of product or service offered or demanded."
 msgstr "サービスを提供させていただく過程で、当社意見とお客さまから提供いただいた情報を基に、提供または要求された特定の製品やサービスに含まれるリスクを理解するために投資分野での必要な知識と経験があるかどうか判断させていただくために、該当する場合に適正テストを行わせていただきます。"
 
-#, fuzzy
-#| msgid "In the event of any conflict between the content in this document and the above documents, this document controls your use of the Binary.com API. If you disagree with any of the provisions in these Terms, do not access or use the Binary.com API."
 msgid "In the event of any conflict between the content in this document and the above documents, this document controls your use of the %1 API. If you disagree with any of the provisions in these Terms, do not access or use the %1 API."
-msgstr "本書と上記の文書との間に矛盾がある場合、本書がお客さまのBinary.com APIの使用を制御します。本規約の条項に同意されない場合は、Binary.com APIへのアクセス及び使用をしないでください。"
+msgstr "本書と上記の文書との間に矛盾がある場合、本書がお客さまの%1 APIの使用を制御します。本規約の条項に同意されない場合は、%1 APIへのアクセス及び使用をしないでください。"
 
-#, fuzzy
-#| msgid "In the event that the Company is aware of an Affiliate who is in breach of any of the above provisions, the Company shall have the right, in addition to any other right or remedy available to it under this Agreement or applicable law, to immediately block the Affiliate's access to this Program. The Affiliate hereby irrevocably waives its rights to, and shall indemnify the Company and any member of the Binary group of companies for, any claim or demand made against the Company or any member of the Binary group of companies, their directors, officers, shareholders, employees or against the Binary.com website in respect of such action taken by the Company."
 msgid "In the event that the Company is aware of an Affiliate who is in breach of any of the above provisions, the Company shall have the right, in addition to any other right or remedy available to it under this Agreement or applicable law, to immediately block the Affiliate's access to this Program. The Affiliate hereby irrevocably waives its rights to, and shall indemnify the Company and any member of the Binary group of companies for, any claim or demand made against the Company or any member of the Binary group of companies, their directors, officers, shareholders, employees or against the %1 website in respect of such action taken by the Company."
 msgstr ""
 "上記の規定のいずれかに違反したアフィリエイト会員を当社が把握している場合、当社は本契約または適用される法律の下、その他の権利または利用できる救済策に加えて、\n"
-"本プログラムにアクセスする該当アフィリエイト会員をすぐにブロックする権利を有します。アフィリエイト会員は、ここに取消不能のその権利を放棄し、当社及びBinaryグループ会社のメンバーへ、当社またはBinaryグループ会社の取締役、役員、株主、従業員またはBinary.comウェブサイトに対するいかなる請求または要求への免責の保証を与えます。"
+"本プログラムにアクセスする該当アフィリエイト会員をすぐにブロックする権利を有します。アフィリエイト会員は、ここに取消不能のその権利を放棄し、当社及びBinaryグループ会社のメンバーへ、当社またはBinaryグループ会社の取締役、役員、株主、従業員または%1ウェブサイトに対するいかなる請求または要求への免責の保証を与えます。"
 
 msgid "In the unlikely event of BIEL suffering an investment default and not being able to meet its obligations, BIEL is a member of the Malta Investor Compensation Scheme which covers the first €20,000 of any claim. Whether you are able to claim depends on the type of business and your personal circumstances."
 msgstr "万一BIELが投資デフォルトを被ったり、その義務を果たせない場合、BIELはマルタ投資家補償機構（the Malta Investor Compensation Scheme）のメンバーになるので初期クレームの€20,000 をカバーします。クレームをできるかどうかはビジネスタイプや個人の状況に準じます。"
@@ -3238,10 +3187,8 @@ msgstr "即刻"
 msgid "Insufficient balance"
 msgstr "口座残高が不足しています"
 
-#, fuzzy
-#| msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='%2'>hear from you!</a>"
 msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:%2'>hear from you!</a>"
-msgstr "ご興味がおありですか？当社がまだ提供していない特定のEキャッシュ方法またはローカル決済オプションの提供が可能で、市場で良い実績をお持ちでしたら是非我々に<a href='%2'>お話をお聞かせください。</a>"
+msgstr "ご興味がおありですか？当社がまだ提供していない特定のEキャッシュ方法またはローカル決済オプションの提供が可能で、市場で良い実績をお持ちでしたら是非我々に<a href='mailto:%2'>お話をお聞かせください。</a>"
 
 msgid "Interested? Why not try a virtual account"
 msgstr "是非、デモ口座を開設しましょう"
@@ -3511,29 +3458,37 @@ msgid "Japan website Exclusion of Liability List item 2.2"
 msgstr "天変地異等やむを得ない事由による、お客さま・当社および当社のカバー先を結ぶ通信回線およびシステム関連機器等の瑕疵または障害。"
 
 msgid "Japan website General Risk Warning List item 1"
-msgstr "本取引は、金融商品取引法において不招請勧誘禁止の対象となっている店頭デリバティブ取引です。"
+msgstr ""
+"本取引は、『金融商品取引法において不招請勧誘禁止の対象となっている店頭デリバティブ取引であるため、お客さまより事前に要請がない限り訪問・電話による勧誘はできない取引』です。（注1）\n"
+"※この取引に関して行われた勧誘が訪問・電話による場合、お客さまの要請によるものであることを改めてご確認ください。"
 
 msgid "Japan website General Risk Warning List item 2"
-msgstr "本取引について、当社は訪問、電話による勧誘は一切いたしません。"
+msgstr ""
+"また、本取引は、法令・諸規則等により、『取引の内容や想定される損失額等について十分にご説明することとされています。』\n"
+"※取引の内容や想定される損失額について、説明を受けられたか改めてご確認ください。"
 
 msgid "Japan website General Risk Warning List item 3"
-msgstr ""
-"本取引は、証拠金の額を上回る取引を行うことができることから、差し入れた証拠金の額を上回る大きな損失が発生するリスク・可能性を有しています。\n"
-"本取引の内容などを十分ご理解のうえ、お取引いただきますようお願いいたします。"
+msgstr "弊社によるご説明や、『本取引の内容等を十分ご理解の上、お取引いただきますようお願いいたします。』"
 
 msgid "Japan website General Risk Warning List item 4"
 msgstr ""
 "お取引内容に関するご確認・苦情などにつきましては、カスタマーサポートまでお申し出ください。\n"
-"なお、お取引についてのトラブルなどは、以下のADR（注）機関における苦情処理・紛争解決の枠組みの利用も可能です。"
+"なお、お取引についてのトラブルなどは、以下のADR（注2）機関における苦情処理・紛争解決の枠組みの利用も可能です。"
 
 msgid "Japan website General Risk Warning Paragraph 1"
-msgstr "一般社団法人 金融先物取引業協会から苦情の解決および紛争の解決のあっせんなどの委託を受けた特定非営利活動法人証券・金融商品あっせん相談センターを利用します。"
+msgstr ""
+"特定非営利活動法人　証券・金融商品あっせん相談センター\n"
+"　　　　　　　　　　電話番号　0120-64-5005（フリーダイヤル）"
 
 msgid "Japan website General Risk Warning Paragraph 2"
 msgstr "電話番号 0120-64-5005（フリーダイヤル）"
 
 msgid "Japan website General Risk Warning Paragraph 3"
-msgstr "（注）ADRとは、裁判外紛争解決制度のことで、訴訟手続によらず、民事上の紛争を解決しようとする紛争の当事者のため、公正な第三者が関与して、その解決を図る手続をいいます。"
+msgstr ""
+"（注1）ただし、以下に該当する場合は適用されません。\n"
+"・当該取引に関して特定投資家に移行されているお客さまの場合\n"
+"・勧誘の日前1年間に2以上のお取引いただいたお客さま及び勧誘の日に未決済の残高をお持ちのお客さまの場合\n"
+"（注2）ADRとは、裁判外紛争解決制度のことで、訴訟手続によらず、民事上の紛争を解決しようとする紛争の当事者のため、公正な第三者が関与して、その解決を図る手続をいいます。"
 
 msgid "Japan website Investment Solicitation Policy Bold list item 1"
 msgstr "当社における投資勧誘の定義"
@@ -3769,7 +3724,7 @@ msgid "Japan website Risk For Binary Option Trading List item 12 Paragraph 3"
 msgstr "監督官庁：Gambling Supervision Commission in the Isle of Man, British Isles"
 
 msgid "Japan website Risk For Binary Option Trading List item 13"
-msgstr "当社、マスタースワップ契約先またはお客様の資金の預託先の業務または財産の状況が悪化した場合は、証拠金その他のお客さまの資金の返還が困難になることで、お客さまが損失を被るおそれがあります。"
+msgstr "当社、マスタースワップ契約先またはお客さまの資金の預託先の業務または財産の状況が悪化した場合は、証拠金その他のお客さまの資金の返還が困難になることで、お客さまが損失を被るおそれがあります。"
 
 msgid "Japan website Risk For Binary Option Trading List item 2"
 msgstr "オプションを行使できる期間（取引期間）に制限があります。オプションの買い手は、取引可能期間内に売却しない時は、自動権利行使制度が適用される（エンドタイムに権利行使条件に達している）場合を除き、その権利が消滅して支払ったオプション購入金額の全額を失うことになります。"
@@ -3787,7 +3742,7 @@ msgid "Japan website Risk For Binary Option Trading List item 6"
 msgstr "相場状況の急変時や重要な経済指標の発表に際し、当社のリスク管理の一環として、購入価格と売却価格のスプレッド幅を広げる場合があります。この時、お客さまの負担する取引コストは、通常時と比較して増加します。"
 
 msgid "Japan website Risk For Binary Option Trading List item 7"
-msgstr "取引手数料は無料です。"
+msgstr "本取引における取引手数料は無料です。スプレッド幅はお客さまの負担となります。"
 
 msgid "Japan website Risk For Binary Option Trading List item 8"
 msgstr "お客さまが注文執行後にその注文に係る契約を解除すること（クーリングオフ）はできません。購入したオプションは、取引期間中であれば売却することはできますが、時価での売却となるため、損失となる場合もあります。"
@@ -3799,7 +3754,7 @@ msgid "Japan website Risk For Binary Option Trading Paragraph 1.1"
 msgstr "商 号：Binary株式会社"
 
 msgid "Japan website Risk For Binary Option Trading Paragraph 1.2"
-msgstr "登録番号：関東財務局長（金商）第●●号 金融商品取引業者"
+msgstr "登録番号：金融商品取引業者　関東財務局長（金商）第●●号"
 
 msgid "Japan website Risk For Binary Option Trading Paragraph 1.3"
 msgstr "連絡先 ：●●"
@@ -3942,7 +3897,7 @@ msgid "Liaise with banks and payment providers"
 msgstr "銀行及び決済サービス会社との連携"
 
 msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland"
-msgstr "マルタ、イギリス、マン島、アイルランドで認可され、監視されています。"
+msgstr "マルタ、イギリス、マン島では、監督機関による監査を受けながら発行ライセンスを保持。"
 
 msgid "Life-long career interest in the Accounting field"
 msgstr "会計分野での生涯キャリアへの関心"
@@ -4525,8 +4480,6 @@ msgstr "イギリス在住顧客へのサービスを向上を目指し、マン
 msgid "Our costs and charges for depositing and withdrawing money are set out <a href=\"%1\" class=\"pjaxload\">here</a>. Please be aware of all costs and charges that apply to you because they will affect your profitability."
 msgstr "入金と出金に関する当社費用・手数料は、<a href=\"%1\" class=\"pjaxload\">こちら</a>で定められています。収益に影響がある可能性があるため、適用される全費用と手数料にご注意ください。"
 
-#, fuzzy
-#| msgid "Our customers clearly like us. In mid-2014, Binary.com has over 100 million historical transactions and over 130,000 new daily transactions."
 msgid "Our customers clearly like us. In mid-2014, %1 has over 100 million historical transactions and over 130,000 new daily transactions."
 msgstr "顧客からの高い評価は明確であり、２０１４年の中頃にはBinary.comは累計で１億件の取引を達成し、１３万件以上の新たな取引が日々行われる。"
 
@@ -4558,7 +4511,7 @@ msgid "Over $500,001"
 msgstr "$500,001以上"
 
 msgid "Over 1 million registered accounts worldwide"
-msgstr "世界中で100万人以上のアカウント登録者"
+msgstr "世界中での口座数は100万以上。"
 
 msgid "Over 100 million JPY"
 msgstr "1億を超える"
@@ -4570,7 +4523,7 @@ msgid "Over 5 years"
 msgstr "6年以上"
 
 msgid "Over 90 <a href='%1'>staff</a> and contractors worldwide"
-msgstr "世界中で90を超える<a href='%1'>スタッフ</a>と請負業者"
+msgstr "世界中で90人を超えるスタッフと請負業者"
 
 msgid "Over two billion dollars in trades to date."
 msgstr "設立以来、累計で20億ドルを超える取引実績（親会社）"
@@ -4690,7 +4643,7 @@ msgid "Personal Details"
 msgstr "お客さま登録情報"
 
 msgid "Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
-msgstr ""
+msgstr "金融市場や金融商品の内部情報を知る方による当ウェブサイトでのお取引は禁止されています。"
 
 msgid "Pip"
 msgstr "Pip"
@@ -4815,10 +4768,8 @@ msgstr "ご希望のリアリティチェック間隔を分単位で指定して
 msgid "Please submit a valid %1."
 msgstr "有効な%1をご提出ください。"
 
-#, fuzzy
-#| msgid "Please submit the above information to <a href='%1'>%2</a>."
 msgid "Please submit the above information to <a href='mailto:%1'>%1</a>."
-msgstr "<a href='%1'>%2</a>まで上記の情報をご提出ください。"
+msgstr "<a href='mailto:%1'>%1</a>まで上記の情報をご提出ください。"
 
 msgid "Please try again."
 msgstr "再びお試し下さい。"
@@ -5070,16 +5021,16 @@ msgid "Reference ID"
 msgstr "参照 ID"
 
 msgid "Regent Markets Group Ltd. renames to Binary Ltd."
-msgstr "Regent Markets Group LimitedはBinary Ltd.に改名"
+msgstr "Regent Markets Group LimitedはBinary Ltd.に会社名変更"
 
 msgid "Regent Markets Group Ltd. renames to Binary Ltd., harmonising company and website branding throughout the organisation."
-msgstr "Regent Markets Group Ltd.はBinary Ltd.に改名することで、当社とウェブサイトのブランディングの調和を組織的にもたらす。"
+msgstr "Regent Markets Group Ltd.はBinary Ltd.に会社名変更することで、当社とウェブサイトのブランディングの調和を組織的にもたらす。"
 
 msgid "Regent Markets acquires BetsForTraders client base"
 msgstr "BetsForTradersをRegent Marketsに統合"
 
 msgid "Regent Markets files for a patent in March 2000 on the basis of our unique position as the sole serious competitor in the business of fixed-odds financial betting. In May, we register the trading name BetOnMarkets and move to Malta to receive an internet betting licence."
-msgstr "2000年3月に固定オッズ業界での独自のポジションを明確にするため、取引技術の特許を申請。5月にサービス名をBetOnMarkets.comに変更。本社をマルタ共和国に移転し、インターネット上のベッティング免許を取得。"
+msgstr "2000年3月に固定オッズ業界での独自のポジションを明確にするため、取引技術の特許を申請。5月にオンライントレードサービスをBetOnMarkets.comに変更。本社をマルタ共和国に移転し、インターネット上のベッティング免許を取得。"
 
 msgid "Regent Markets files for patent, and registers BetOnMarkets trading name"
 msgstr "Regent Marketsは特許取得を申請し、BetOnMarketsを商標登録"
@@ -5091,7 +5042,7 @@ msgid "Regent Markets granted two new US patents"
 msgstr "Regent Marketsは新たに２点の米国特許を取得"
 
 msgid "Regent Markets is founded by Jean-Yves Sireau"
-msgstr "Jean-Yves SireauがRegent Marketsを創立"
+msgstr "ジョン・イヴス・シローがRegent Marketsを創立"
 
 msgid "Regent Markets obtains a licence in the Isle of Man"
 msgstr "Regent Marketsはマン島のライセンスを取得"
@@ -5102,8 +5053,6 @@ msgstr "Regent Marketsはオンライン上のトレードシステム開始の�
 msgid "Regent Markets sets up a programming centre in Cyberjaya, Malaysia"
 msgstr "Regent Marketsは、Cyberjaya（マレーシア）に開発センターを設立"
 
-#, fuzzy
-#| msgid "Regent Pacific Group Ltd., the Hong Kong-listed founding shareholder of Binary.com, <a href='%1' target='_blank'>disposes of its stake</a> at a valuation of US$ 50.5 million."
 msgid "Regent Pacific Group Ltd., the Hong Kong-listed founding shareholder of %1, <a href='%2' target='_blank'>disposes of its stake</a> at a valuation of US$ 50.5 million."
 msgstr "Binary.comの香港上場の創立株主であるRegent Pacific Group Ltd <a href=\"%1\" target=\"_blank\">disposes of its stake</a> US$ 5,050万の企業価値評"
 
@@ -5167,8 +5116,6 @@ msgstr "ローカル市場の経験から得た知識と経験を活用して、
 msgid "Responsible for supporting the Group's global recruiting and talent management needs and a broad array of HR-related administrative tasks."
 msgstr "グループのグローバル人材採用と人材管理のニーズや人事関連の管理タスクの幅広いサポートを担当していただきます。"
 
-#, fuzzy
-#| msgid "Responsible for the pricing of binary options offered on the Binary.com website and the risk management and profitability of its options book."
 msgid "Responsible for the pricing of binary options offered on the %1 website and the risk management and profitability of its options book."
 msgstr "Binary.comで提供しているバイナリーオプションの価格設定とリスク管理、オプションブックの収益性を担当していただきます。"
 
@@ -5202,10 +5149,8 @@ msgstr "オプション価格、ボラティリティ予測、リスク管理プ
 msgid "Review, develop and enhance codes used in option pricing and real time risk management programs"
 msgstr "オプション価格とリアルタイムリスク管理プログラムに使用するコードの確認および開発と強化"
 
-#, fuzzy
-#| msgid "Revisions to the Binary.com API"
 msgid "Revisions to the %1 API"
-msgstr "Binary.com APIへの改定"
+msgstr "%1 APIへの改定"
 
 msgid "Revoke access"
 msgstr "アクセス権の取消"
@@ -5305,7 +5250,7 @@ msgid "Security Statement"
 msgstr "個人情報と取引情報の秘匿性について"
 
 msgid "Security and Privacy"
-msgstr "プライバシーポリシー"
+msgstr "取引規約"
 
 msgid "Select Country"
 msgstr "国名を選択"
@@ -5685,10 +5630,8 @@ msgstr "期間と終了"
 msgid "Terminate this Agreement by giving a minimum of seven days written notice to you."
 msgstr "本契約終了の際は、遅くとも7日前に事前に通知させていただきます。"
 
-#, fuzzy
-#| msgid "Terminate your use of the Binary.com API; or"
 msgid "Terminate your use of the %1 API; or"
-msgstr "Binary.com APIの使用を終了してください。または"
+msgstr "%1 APIの使用を終了してください。または"
 
 msgid "Termination"
 msgstr "契約の成立期間について"
@@ -5723,26 +5666,18 @@ msgstr "木曜日"
 msgid "Thank you for signing up! Please check your email to retrieve the verification token."
 msgstr "ご登録頂きありがとうございます！　ご登録頂いたメールアドレスにワンタイムパスワードを送信致しました。"
 
-#, fuzzy
-#| msgid "The Binary.com API has usage limits enforced to prevent abuse and/or repurposing of the Binary.com API. These usage limits may be changed in the future without notice. If you consistently exceed the usage limit or otherwise abuse the service, we may block your access to the Binary.com API."
 msgid "The %1 API has usage limits enforced to prevent abuse and/or repurposing of the %1 API. These usage limits may be changed in the future without notice. If you consistently exceed the usage limit or otherwise abuse the service, we may block your access to the %1 API."
-msgstr "Binary.com APIの乱用及び転用を防ぐため、使用制限が適用されます。使用制限は通知なしに変更されることがあります。使用制限を一貫して超過されたり、サービスを乱用された場合、お客さまのBinary.com APIへのアクセスをブロックさせていただく可能性があります。"
+msgstr "%1 APIの乱用及び転用を防ぐため、使用制限が適用されます。使用制限は通知なしに変更されることがあります。使用制限を一貫して超過されたり、サービスを乱用された場合、お客さまの%1 APIへのアクセスをブロックさせていただく可能性があります。"
 
-#, fuzzy
-#| msgid "The Binary.com Order Execution Policy."
 msgid "The %1 Order Execution Policy."
 msgstr "Binary.com注文執行方針"
 
-#, fuzzy
-#| msgid "The Binary.com Privacy and Security Policy;"
 msgid "The %1 Privacy and Security Policy;"
 msgstr "Binary.comプライバシーとセキリティポリシー；"
 
 msgid "The %1 Quantitative Analytics group is responsible for the pricing of binary options offered on our website, as well as the risk management and profitability of its options book. Processing over a million transactions each day, the company manages a book of exotic options which arguably exceeds in complexity that of the typical derivatives desk."
 msgstr "定量分析グループではオプションブックのリスク管理および収益性だけではなく、ウェブサイトに提供するバイナリーオプションの価格設定も担当していただきます。日々何百万もの取引が行われるため、当社では典型的なデリバティブデスクの複雑さを遥かに超えるエキゾチックオプションブックを管理しています。"
 
-#, fuzzy
-#| msgid "Terms and Conditions"
 msgid "The %1 Terms and Conditions;"
 msgstr "店頭バイナリーオプション取引約款"
 
@@ -5750,7 +5685,7 @@ msgid "The %1 website is protected by certain copyrights."
 msgstr "%1のウェブサイトは特定の著作権で保護されています。"
 
 msgid "The <span itemprop='brand'>%1</span> service (formerly known as BetOnMarkets.com) is owned and operated by Binary Ltd. Fully licensed and regulated, %1 has been providing financial trading to a worldwide audience of over 1,000,000 accounts since <span itemprop='foundingdate'>1999</span>."
-msgstr "<span itemprop='brand'>%1</span>サービス（旧サービス名：BetOnMarkets.com）はBinary Ltd.が所有し、運営しています。ライセンス監督機関による監査を受けながら発行ライセンスを保持しており、%1は<span itemprop='foundingdate'>1999</span>年から世界中に10万人以上の顧客を擁しています。"
+msgstr "<span itemprop='brand'>%1</span>グループサービス（旧サービス名：BetOnMarkets.com）はBinary Ltd.の子会社です。ライセンス監督機関による監査を受けながら発行ライセンスを保持しており、%1は<span itemprop='foundingdate'>1999</span>年から世界中に10万人以上の顧客を擁しています。"
 
 msgid "The <strong>Premier Platform</strong> for Binary Options Trading"
 msgstr "<strong>最高水準</strong> の取引環境"
@@ -5788,10 +5723,8 @@ msgstr "平均"
 msgid "The Binary.com website's static content (CSS, Javascript) is available as the <a target='_blank' href='%1'>binary-static</a> open-source project on github. Would you like to re-skin the Binary.com website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes."
 msgstr "github上のオープンソース・プロジェクトである<a target='_blank' href='%1'>binary-static</a>にて、Binary.comのウェブサイトの静的コンテンツ (CSS, Javascript)は利用可能です。Binary.comのウェブサイトのカスタマイズ、ブラウザ互換性の向上、サイトスピードの向上、 Javascriptのパフォーマンスの向上をお望みの場合はプロジェクトをフォークし、コード変更の提案に関するプルリクエストを送信して下さい。"
 
-#, fuzzy
-#| msgid "The Company does not guarantee that the Binary.com API it provides will function without interruption or errors in functioning. In particular, the operation of the Binary.com API may be interrupted due to maintenance, updates, or system or network failures. The Company disclaims all liability for damages caused by any such interruption or errors in functioning."
 msgid "The Company does not guarantee that the %1 API it provides will function without interruption or errors in functioning. In particular, the operation of the %1 API may be interrupted due to maintenance, updates, or system or network failures. The Company disclaims all liability for damages caused by any such interruption or errors in functioning."
-msgstr "当社はBinary.com APIを中断またはエラー無しに機能を提供することを保証しているものではありません。特に、Binary.com APIの動作が管理、更新、システム、ネットワークの障害により中断されることがあります。機能の障害またはエラーによる損害について当社は一切の責任を負いません。"
+msgstr "当社は%1 APIを中断またはエラー無しに機能を提供することを保証しているものではありません。特に、%1 APIの動作が管理、更新、システム、ネットワークの障害により中断されることがあります。機能の障害またはエラーによる損害について当社は一切の責任を負いません。"
 
 msgid "The Company does not provide a market amongst or between Clients for investments, securities, derivatives or speculations. Each financial contract purchased by a Client via this site is an individual agreement between that Client and the Company and is not a security, nor is it transferable, negotiable or assignable to or with any third party."
 msgstr ""
@@ -5804,10 +5737,8 @@ msgstr ""
 msgid "The Company has and retains the right, to terminate any event or trade, including but not limited to the occurrence of any of the above events."
 msgstr "上記のイベントの発生に限らず、あらゆるイベントまたは取引を終了させる権利を当社は保持しています。"
 
-#, fuzzy
-#| msgid "The Company is not liable for loss or damage of any kind whatsoever arising as a result of information or prices published on or furnished through the Binary.com API, or any errors or omissions of the Binary.com API;"
 msgid "The Company is not liable for loss or damage of any kind whatsoever arising as a result of information or prices published on or furnished through the %1 API, or any errors or omissions of the %1 API;"
-msgstr "Binary.com APIの情報、公開価格、設備の結果発生した事象またはBinary.com APIのエラーまたは欠落による損失及び損害に関して当社は一切の責任を負いません。"
+msgstr "%1 APIの情報、公開価格、設備の結果発生した事象または%1 APIのエラーまたは欠落による損失及び損害に関して当社は一切の責任を負いません。"
 
 msgid "The Company is not under any obligation of confidentiality with respect to the Contributions;"
 msgstr "当社はコントリビューションにおいて守秘義務を負いません。"
@@ -5818,10 +5749,8 @@ msgstr "当社のウェブサイトにおいてサービスの中断やエラー
 msgid "The Company may change the commission structure at any time at its sole and absolute discretion. We will endeavour to ensure affiliates are notified when changes have been made to the commission structure."
 msgstr "当社は単独且つ絶対的な裁量でいつでも手数料形体系を変更することができます。手数料体系に変更があった場合は、アフィリエイト会員へ通知するよう努めます。"
 
-#, fuzzy
-#| msgid "The Company may change, suspend, terminate or discontinue any aspect of the Binary.com API, including the availability of any services, information features or functions accessible by means of the Binary.com API, on no less than seven days advance notice to you."
 msgid "The Company may change, suspend, terminate or discontinue any aspect of the %1 API, including the availability of any services, information features or functions accessible by means of the %1 API, on no less than seven days advance notice to you."
-msgstr "当社においてBinary.com APIを用いてサービス、情報機能、アクセス機能の可用性を含むBinary.com APIの機能の変更、停止、終了をする場合があります。その場合、遅くとも7日前に事前に通知させていただきます。"
+msgstr "当社において%1 APIを用いてサービス、情報機能、アクセス機能の可用性を含む%1 APIの機能の変更、停止、終了をする場合があります。その場合、遅くとも7日前に事前に通知させていただきます。"
 
 msgid "The Company may from time to time inform you about changes on the website, new services and promotions. If you, however, wish to opt out of such a service and do not wish to receive any direct marketing data you can either unsubscribe to the service or email our customer support team. If you decide to opt in again into receiving promotional material, you can also do so by contacting us."
 msgstr "当社はサイト上の変更点、新しいサービスやプロモーションに関してお客さまにお知らせする場合があります。しかしながら、そのようなお知らせの通知を希望されない場合は、カスタマーサポートまでご連絡ください。お知らせの通知を再度ご希望される場合もご連絡ください。"
@@ -5838,10 +5767,8 @@ msgstr "当社は世界中の媒体においていずれかの方法でいずれ
 msgid "The Company may, from time to time, at its sole discretion, or as required by regulations in place to conduct appropriate \"Know Your Customer\" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and may at its sole discretion suspend an account until satisfactory identification information, evidence of identity and address, source of funds and/or source of wealth have been provided. Know Your Customer documentation will be required when a Client deposits money in the account. In the case of a client opening an account with Binary (Europe) Ltd, the threshold for verifying clients is on cumulative withdrawals of EUR 2,300."
 msgstr "当社には場合に応じて、独自の判断で適切にな執行がする代わりに規制により必要な「Know Your Customer」（KYC）手順が必要であるため、お客さまに対して身分証明（パスポートの公証コピー、及び状況に応じて当社が必要と判断した身分証明資料など）を求める権利があり、個人情報、住所証明、資金源および/または富源などの十分な証明資料が提供されるまでご口座に制限を設ける権利を有します。Know Your Customerの提出文書はお客さまが口座に資金を入金する際に必要となります。Binary (Europe) Ltdで口座を開設される場合、お客さま認証が必要となる閾値は累計2,300ユーロの出金です。"
 
-#, fuzzy
-#| msgid "The Company provides the Binary.com API on an \"as is\" and \"as available\" basis with no warranties, either express or implied, of any kind. To the fullest extent permissible under applicable law, the Company disclaim any and all warranties and representations, including, without limitation, any implied warranties of merchantability, fitness for a particular purpose, title, accuracy of data, and non-infringement."
 msgid "The Company provides the %1 API on an \"as is\" and \"as available\" basis with no warranties, either express or implied, of any kind. To the fullest extent permissible under applicable law, the Company disclaim any and all warranties and representations, including, without limitation, any implied warranties of merchantability, fitness for a particular purpose, title, accuracy of data, and non-infringement."
-msgstr "当社は原則として「現状のまま (as is)」、「提供されているまま (as available)」でBinary.con APIを提供し、あらゆる明示的・黙示的保証をすることはありません。法律によって許される最大の限度で、当社は特定の目的、権原、データの正確性、非侵害のために商品性、適合性の黙示的保証を含む一切の保証または表明を放棄します。"
+msgstr "当社は原則として「現状のまま (as is)」、「提供されているまま (as available)」で%1 APIを提供し、あらゆる明示的・黙示的保証をすることはありません。法律によって許される最大の限度で、当社は特定の目的、権原、データの正確性、非侵害のために商品性、適合性の黙示的保証を含む一切の保証または表明を放棄します。"
 
 msgid "The Company provides the %1 website on an “as is” and “as available” basis, and gives no warranty that the %1 website will be free of errors, or that errors will be corrected, or that our website is free of any third party interferences such as hackers or any other harmful components that arise outside of the Company's control."
 msgstr "当社は原則として「現状のまま (as is)」、「提供されているまま (as available)」ウェブサイトを提供し、当社の管理外で起こったハッカーまたはその他有害要素などの第三者の干渉が当サイトには無いこと、エラーは発生しないこと、エラーは必ず修正されるということを保証しているわけではありません。"
@@ -5854,8 +5781,6 @@ msgstr ""
 "（取引注文）\n"
 "第6条　お客さまは、当社のウェブサイトからログインし本取引に係る注文を行うものとし、お客さまもしくは当社側において通信機器関連の障害等が発生した場合を含め、前記以外の方法による注文の受諾は行わないものとします。"
 
-#, fuzzy
-#| msgid "The Company reserves the right to restrict client trading and/or cancel or reverse transactions in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug or glitch in our website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, or manifest mis-calculation of prices or other manifest error. Clients have a duty to report to the Company any such problems, errors or suspected system inadequacies that they may experience and may not abuse of or arbitrage such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
 msgid "The Company reserves the right to cancel/reverse transactions or amend the contractual terms (including, but not limited to, entry and exit spot) in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug or glitch in our website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, or manifest mis-calculation of prices or other obvious errors (\"Manifest Errors\"). Clients have a duty to report to the Company any such problems, errors or suspected system inadequacies that they may experience and may not abuse of or arbitrage such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Any amendments to the contractual terms (including, but not limited to, entry and exit spot) of Manifestly Erroneous contracts shall be reasonable and fair. Monies exchanged between oneself and the Company in connection with Manifestly Erroneous contracts shall be returned to the recipient according to the amendments made to the contractual terms (including, but not limited to, entry and exit spot). You further acknowledge and agree that the Company will not be held liable or responsible, whether directly or indirectly, for any loss, expenses or damage caused or alleged to be caused by or in connection with a Manifest Error."
 msgstr ""
 "公平な市場価格を反映しない価格、若しくは未検出のプログラミングエラーによって著しく低レベルのリスクでのトレードが提供された場合、若しくはバグや当社サイト・ソフトウェアの故障という状況下での売買は全て、事情を説明した事前通達と共に制限または無効にする権利を弊社は有します。お客さまはもし、トレーディングシステムに疑わしい不適切な点や問題を発見したら弊社への報告義務があり、かつシステム上の問題を利用して利益を得ることは禁止します。当社はそのような事態が発生した場合は、早急に解決に努めます。またマーケットや金融商品に関する、いかなるインサイダー情報を用いて当社のサイトと取引をすることを禁止します。\n"
@@ -5873,10 +5798,8 @@ msgstr "当社は法律違反の疑い、または本契約の利用規約違反
 msgid "The Company shall be entitled to exercise any of its rights or fulfill any of its obligations hereunder (including, but not limited to, its payment obligations) through any member of the Binary group of companies."
 msgstr "当社には、当社や当社のグループ企業を通じて報酬に関する取り決めも含め、本契約書に記載されている権利、及び義務を遂行する権利を有します。"
 
-#, fuzzy
-#| msgid "The Company shall have no liability arising from orders, investment decisions or purchases of third party goods or services (including financial instruments and currency) based on information published on or furnished through the Binary.com API;"
 msgid "The Company shall have no liability arising from orders, investment decisions or purchases of third party goods or services (including financial instruments and currency) based on information published on or furnished through the %1 API;"
-msgstr "Binary.com APIで公開または設置された情報に基づいたサードパーティまたはサービス（金融商品および通貨を含む）の注文、投資判断、購入から生じた問題について当社は一切の責任を負いません。"
+msgstr "%1 APIで公開または設置された情報に基づいたサードパーティまたはサービス（金融商品および通貨を含む）の注文、投資判断、購入から生じた問題について当社は一切の責任を負いません。"
 
 msgid "The Company shall not be liable to you in contract, or otherwise (including liability for negligence) for any loss, whether direct or indirect, of the Affiliate's business, revenue or profits, anticipated savings, or wasted expenditure, corruption, or destruction of data or for any indirect or consequential loss whatsoever."
 msgstr "当社はアフィリエイト会員のトレード、間接的でも直接的であろうともアフィリエイトビジネス上の損失（不注意による損失も含む）、収入や利益、予想される預貯金、または浪費された経費、データの破壊、及び他のいかなる間接的または損失の結果に対して責任を負うことはありません。"
@@ -6113,7 +6036,11 @@ msgstr "当社における金融トレードは、投資された資金が全て
 msgid "The first step is to open an account. You can <a target='_blank' href='%1'>apply online</a> in just a few minutes."
 msgstr "最初のステップは口座開設です。オンラインで申込ができます。"
 
-msgid "The first thing to do is choose the asset you wish to trade, such as gold or oil, stocks or FX rates (The value of a binary option is derived from the price of the underlying asset). A big advantage of trading options is that you are not buying or selling the actual asset."
+#, fuzzy
+#| msgid "The first thing to do is choose the asset you wish to trade, such as gold or oil, stocks or FX rates (The value of a binary option is derived from the price of the underlying asset). A big advantage of trading options is that you are not buying or selling the actual asset."
+msgid ""
+"The first thing to do is choose the asset you wish to trade, such as gold or oil, stocks or FX rates (The value of a binary option is derived from the price of the underlying asset). A big advantage of trading options is that you are not buying\n"
+"            or selling the actual asset."
 msgstr "まず初めに取引通貨を選択して下さい。バイナリーオプションの取引価値は取引対象の価格から導かれます。オプション取引の大きな利点として、取引対象そのものを売買しないという点があります。"
 
 msgid "The first tick is the first tick after the contract is processed by our servers."
@@ -6221,17 +6148,17 @@ msgstr ""
 msgid "The two passwords that you entered do not match."
 msgstr "入力頂いたパスワードと一致しません。"
 
-#, fuzzy
-#| msgid "The use of the Binary.com API is at your own risk, and you assume full responsibility and risk of loss it may suffer as a result of using, or accessing the Binary.com API. Except to the extent that liability under any applicable law or regulation cannot be excluded:"
 msgid "The use of the %1 API is at your own risk, and you assume full responsibility and risk of loss it may suffer as a result of using, or accessing the %1 API. Except to the extent that liability under any applicable law or regulation cannot be excluded:"
-msgstr "Binary.com APIの使用はご自身の責任の上行うようにしてください。Binary.com APIの使用またはアクセスの結果生じた損害への全責任及び全リスクを負っていただきます。適用される法律、規制に基づく責任の範囲は除外することはできません。"
+msgstr "%1  APIの使用はご自身の責任の上行うようにしてください。%1  APIの使用またはアクセスの結果生じた損害への全責任及び全リスクを負っていただきます。適用される法律、規制に基づく責任の範囲は除外することはできません。"
+
+msgid "The use, operation or combination of the %1 API with non-%1 API(s), data, equipment or documentation if liability would have been avoided but for such use, operation, or combination; or"
+msgstr "The use, operation or combination of the %1 API with non-%1 API(s), data, equipment or documentation if liability would have been avoided but for such use, operation, or combination; or"
 
 #, fuzzy
-#| msgid "The use, operation or combination of the Binary.com API with non-Binary.com API(s), data, equipment or documentation if liability would have been avoided but for such use, operation, or combination; or"
-msgid "The use, operation or combination of the %1 API with non-%1 API(s), data, equipment or documentation if liability would have been avoided but for such use, operation, or combination; or"
-msgstr "The use, operation or combination of the Binary.com API with non-Binary.com API(s), data, equipment or documentation if liability would have been avoided but for such use, operation, or combination; or"
-
-msgid "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends."
+#| msgid "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends."
+msgid ""
+"The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try\n"
+"                out scenarios like - high volatility, low volatility, bullish and bearish trends."
 msgstr "ボラリティ指数は、様々なリアル市場の状況をシミュレートし、取引や戦略に慣れるための理想的なプラットフォームです。これらインデックスはボラティリティとドリフトに依存しており、高ボラティリティ、低ボラティリティ、強気傾向、弱気傾向などのシナリオを試すのに役立ちます。"
 
 msgid "Then, make your trade"
@@ -6272,8 +6199,6 @@ msgstr "これらST＆Cs（特別条件と事業条件）は、マルタ裁判�
 msgid "These ST&Cs begin to apply on the date we open your account, and, for any new versions after that, on the date we notify you."
 msgstr "これらST&Cs（特別条件と事業条件）は、お客さまの口座を開設させて頂いてから適用されます。以降の更新情報はその日に通知させていただきます。"
 
-#, fuzzy
-#| msgid "These ST&Cs form part of and need to be read together with the General Terms and Conditions relating to the use of Binary.com."
 msgid "These ST&Cs form part of and need to be read together with the General Terms and Conditions relating to the use of %1."
 msgstr "これらST＆Csは、Binary.comの使用に関する一般ご利用規約と一緒に熟読いただくように作成されています。"
 
@@ -6345,8 +6270,6 @@ msgstr "この契約は、コーポレートアクションの影響を受けて
 msgid "This contract won"
 msgstr "このトレードは勝ち判定"
 
-#, fuzzy
-#| msgid "This document (the \"Agreement\") sets out the terms and conditions (\"Terms\") between \"the Company\" which is Binary Services Ltd (\"we,\" \"us,\" and \"our\"), and you (the person who registered for the Binary.com Application Program Interface (\"API\"); \"you\", or \"your\")."
 msgid "This document (the \"Agreement\") sets out the terms and conditions (\"Terms\") between \"the Company\" which is Binary Services Ltd (\"we,\" \"us,\" and \"our\"), and you (the person who registered for the %1 Application Program Interface (\"API\"); \"you\", or \"your\")."
 msgstr "当文書（以下、”本契約”）は「当社」Binary Ltdとお客さま（Binary.comアプリケーションプログラムインターフェース（API）にご登録いただいた）の間で、利用規約（以下、規約）が適用されます。"
 
@@ -6406,7 +6329,9 @@ msgstr ""
 "　上記いずれかに達した時点で、お客さまはその日の取引ができなくなります。\n"
 "手数料は無料ですが、12ヶ月間、新規又は決済の取引がなかった場合は口座維持管理料（年間2,500円）が発生します。\n"
 "オプションの購入後の注文取り消しは行う事ができませんが、取引可能期間であれば売却は可能です。ただし、購入価格と売却価格にはスプレッドがあり、売却時に損失を被る可能性があります。\n"
-"お取引を開始される前に、必ず約款及び取扱説明書に書かれてある取引の特徴、取引条件、仕組み及びリスクを十分確認いただき、ご自身の判断と責任において、自己の計算によりお取引ください。"
+"お取引を開始される前に、必ず約款及び取扱説明書に書かれてある取引の特徴、取引条件、仕組み及びリスクを十分確認いただき、ご自身の判断と責任において、自己の計算によりお取引ください。\n"
+"\n"
+"■店頭バイナリーオプション取引は金融商品取引法に規定される店頭デリバティブ取引であり、元本や利益が保証されていません。■店頭バイナリーオプション取引は、判定時刻に権利が自動行使されるヨーロピアンタイプと、取引期間中に決められた条件に達すると権利が自動行使されるアメリカンタイプがあります。■判定時刻及び取引期間中における一定の権利を、オプション料を支払って購入する、期限がある取引のため、権利が消滅した場合には支払ったオプション料の全額を失います。■相場の変動等により損失が発生する場合があります。■購入価格は1ロット1,000円〜○○円です。■購入価格と売却価格にはスプレッドがあり、相場情勢により拡大することがあります。■相場情勢により、お客様が希望した価格より不利な価格で取引が成立する場合があります。■契約締結前交付書面を熟読し、取引の仕組みやリスクを十分にご理解いただいた上でお客様ご自身の判断で取引をお願いいたします。■取引手数料は無料です。一定期間、取引等がない場合には口座維持手数料が発生します。詳しくは契約締結前交付書面等をご覧ください。"
 
 msgid "Thorough knowledge of bash scripting, as well as experience with scripting languages such as Perl and PHP"
 msgstr "PerlやPHP などのスクリプト言語の経験とBashスクリプトの深い知識"
@@ -6539,7 +6464,7 @@ msgstr "バイナリーオプション取引は簡単な操作で行うことが
 
 msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. <span class=\"ja-hide\">Read about <a href=\"%1\" class=\"pjaxload\">Responsible Trading</a>.</span>"
 msgstr ""
-"バイナリーオプション取引はすべての人に適しているわけではありません。そのため、関連するリスクについて十分にご理解いただいているかご確認ください。損失は初期入金を超える可能性があります。原資産を所有することはなく、原資産に利息がありわけでもありません。金融派生商品であるバイナリーオプションに関しましては、中毒性があることをご了承いただき、責任をもってお取引いただくようお願い致します。\n"
+"【商号】Binary株式会社　金融商品取引業　関東財務局長（金商）第○○○号【加入協会】一般社団法人金融先物取引業協会\n"
 "<span class=\"ja-hide\"><a href=\"%1\" class=\"pjaxload\">責任あるお取引</a>をお読みください。</span>"
 
 msgid "Trading in Binary Options is speculative and involves a high degree of risk that can result in the loss of your entire investment. Therefore, trading in Binary Options is appropriate only for persons that understand and are willing to assume the economic, legal and other risks involved in such transactions. You should be satisfied that Binary Options trading is suitable for you in light of your investment circumstances and attitude towards risk before trading. You should not engage in speculative Binary Options trading unless you understand the basic aspects of such trading and its risks. If you are in any doubt as to whether Binary Option trading is appropriate and suitable for you, please seek independent advice from a investment consulting professional. %1 does not provide such advice. It is your responsibility, taking into account your personal circumstances and investment resources, to take particular care and make careful considerations independently, both prior to applying to engage in Binary Options with %1, as well as prior to making any individual order. Where you do not understand the risks involved in applying for a trading account with %1 or in making any individual order, you should seek advice and consultation from an independent investment advisor. If you continue to not understand the risks involved in trading in Binary Options, you should not trade at all."
@@ -6631,10 +6556,8 @@ msgstr "USD"
 msgid "UX / UI experience"
 msgstr "UX / UI の経験"
 
-#, fuzzy
-#| msgid "Under no circumstances shall the Company or its directors or employees be liable under this agreement to you or any third party for any indirect, special, incidental, punitive or consequential loss or damages or any other similar damages under any theory of liability (whether in contract, tort, strict liability or any other theory), that are directly or indirectly attributable to the use of, or the inability to use, the Binary.com API, or any content contained thereon, even if the Company has been informed of the possibility thereof."
 msgid "Under no circumstances shall the Company or its directors or employees be liable under this agreement to you or any third party for any indirect, special, incidental, punitive or consequential loss or damages or any other similar damages under any theory of liability (whether in contract, tort, strict liability or any other theory), that are directly or indirectly attributable to the use of, or the inability to use, the %1 API, or any content contained thereon, even if the Company has been informed of the possibility thereof."
-msgstr "責任の理論下における（契約、不法行為、厳格責任、その他考えられるもの）間接的、特別的、偶発的、懲罰的または結果的損失や損害賠償またはBinary.com とその他コンテンツの使用不可に関係する直接的、間接的なその他類似の損害に対してあなたもしくはサードパーティーへの本契約の下、たとえ当社が可能性を把握していたとしても、いかなる状況において当社または当社の取締役及び従業員が責任を負うことはありません。"
+msgstr "責任の理論下における（契約、不法行為、厳格責任、その他考えられるもの）間接的、特別的、偶発的、懲罰的または結果的損失や損害賠償または%1 とその他コンテンツの使用不可に関係する直接的、間接的なその他類似の損害に対してあなたもしくはサードパーティーへの本契約の下、たとえ当社が可能性を把握していたとしても、いかなる状況において当社または当社の取締役及び従業員が責任を負うことはありません。"
 
 msgid "Under the Rules, clients may be categorised into one of the following three categories:"
 msgstr "ルールに基づき、クライアントは3つのカテゴリーのうちの1つにあたります。"
@@ -6693,10 +6616,8 @@ msgstr "金融口座へアップグレード"
 msgid "Upgrade to a Real Account"
 msgstr "リアル口座へアップグレード"
 
-#, fuzzy
-#| msgid "Upon the expiration or termination of this Agreement, for whatever reason, all rights and license granted to you in this Agreement, including use of the Binary.com API, shall immediately terminate. You agree to promptly cease all further use of the Binary.com API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of your liability for breach of its obligation under this Agreement. The Company shall not be liable to you for damages of any kind solely as a result of terminating this Agreement in accordance with its terms."
 msgid "Upon the expiration or termination of this Agreement, for whatever reason, all rights and license granted to you in this Agreement, including use of the %1 API, shall immediately terminate. You agree to promptly cease all further use of the %1 API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of your liability for breach of its obligation under this Agreement. The Company shall not be liable to you for damages of any kind solely as a result of terminating this Agreement in accordance with its terms."
-msgstr "本契約の満了または終了時にいかなる理由においても、Binary.com APIの使用を含む本契約によってあなたに譲渡されたすべての権利とライセンスは即座に終了となります。その際、あなたはBinary.com APIの使用を中止することに同意します。本契約の終了は、本契約の権利放棄及び本契約下の義務不履行への免責を意味するものではありません。当社は規約に従い、本契約終了の結果として単独での損害に責任は追うことはありません。"
+msgstr "本契約の満了または終了時にいかなる理由においても、%1 APIの使用を含む本契約によってあなたに譲渡されたすべての権利とライセンスは即座に終了となります。その際、あなたは%1 APIの使用を中止することに同意します。本契約の終了は、本契約の権利放棄及び本契約下の義務不履行への免責を意味するものではありません。当社は規約に従い、本契約終了の結果として単独での損害に責任は追うことはありません。"
 
 msgid "Usage Limit"
 msgstr "ご利用制限"
@@ -6740,10 +6661,8 @@ msgstr "ワンタイムパスワード"
 msgid "Verify new password"
 msgstr "新パスワード（確認用）"
 
-#, fuzzy
-#| msgid "Version 40. Last modified 2016-05-12."
 msgid "Version 41. Last modified 2016-06-27."
-msgstr "バージョン40　最終更新日：2016-05-12"
+msgstr "バージョン41　最終更新日：2016-06-27"
 
 msgid "View"
 msgstr "表示"
@@ -6918,10 +6837,8 @@ msgstr "皆様からのご応募をお待ちしております。"
 msgid "We maintain customer balances in cash or cash equivalent. We ensure that 100% of each customer's balance is available for immediate withdrawal, subject to verification."
 msgstr "当社はお客さまのご口座残高を現金または現金同等物にて維持します。当社は全てのお客さまのご口座残高を即座にご出金することが可能であることを認証に基づき完全に保証します。"
 
-#, fuzzy
-#| msgid "We may release subsequent versions of the Binary.com API and require that you use those subsequent versions. Your continued use of the APIs following a subsequent release will be deemed your acceptance of modifications."
 msgid "We may release subsequent versions of the %1 API and require that you use those subsequent versions. Your continued use of the APIs following a subsequent release will be deemed your acceptance of modifications."
-msgstr "Binary.com APIの後続バージョンをリリースすることがあり、その際後続バージョンを使用していただく必要があります。後続APIを引き続きご使用されることで、変更に同意されたとみなします。"
+msgstr "%1 APIの後続バージョンをリリースすることがあり、その際後続バージョンを使用していただく必要があります。後続APIを引き続きご使用されることで、変更に同意されたとみなします。"
 
 msgid "We offer a market-based remuneration structure, an annual cash bonus plan, health benefits for you and your family, travel and internet allowances, and company trips."
 msgstr "当社では、ボーナス、本人及び家族への各種健康保険、旅行、インターネット、社員旅行といった魅力的な福利厚生を提供しています。"
@@ -6932,18 +6849,14 @@ msgstr "当社が承認していない会員獲得を目的としたインセン
 msgid "We provide here a summary of the policy we maintain in order to manage conflicts of interest in respect of the duties we owe to our clients."
 msgstr "クライアントに負う義務に関して利益相反を管理するために保守するポリシーの概要をここに提供しています。"
 
-#, fuzzy
-#| msgid "We rebrand BetOnMarkets.com as <a target='_blank' href='%1'>www.binary.com</a>. The rebranding is a natural evolution for the platform as it continues to grow market share in the highly competitive field of binary trading. The new brand reflects the nature of the business, and our new tagline - Sharp Prices, Smart Trading - communicates our ethos and commitment to our clients."
 msgid "We rebrand BetOnMarkets.com as <a target='_blank' href='%1'>www.%2</a>. The rebranding is a natural evolution for the platform as it continues to grow market share in the highly competitive field of binary trading. The new brand reflects the nature of the business, and our new tagline - Sharp Prices, Smart Trading - communicates our ethos and commitment to our clients."
-msgstr "BetOnMarkets.comを<a target=\"_blank\" href=\"%1\">www.binary.com</a>にリニューアルする。リニューアルは、競争が激しくなっているバイナリー業界でのマーケットシェアの維持のため、当社システムが自然に進化していることの裏付けである。この新しいブランドは当社のビジネスの本質、及び当社の新しいコンセプトである「優れた価格設定、賢くトレード」を体現する。これにより、当社の精神とコミットメントを顧客に伝達する。"
+msgstr "BetOnMarkets.comを<a target=\"_blank\" href=\"%1\">www.binary.com</a>に会社名を変更しました。会社名変更は、競争が激しくなっているバイナリー業界でのマーケットシェアの維持のため、当社システムが自然に進化していることの裏付けである。この新しいブランドは当社のビジネスの本質、及び当社の新しいコンセプトである「優れた価格設定、賢くトレード」を体現する。これにより、当社の精神とコミットメントを顧客に伝達する。"
 
 msgid "We recognize the importance of protecting your personal and financial information."
 msgstr "当社ではお客さまの個人情報と資産情報のお取り扱いには細心の注意を払っております。"
 
-#, fuzzy
-#| msgid "We reserve the right to modify, supplement, or replace these Terms at any time. Any material changes will be notified to you. Your continued registration with the Binary.com API and your continued use of the Binary.com API will constitute binding acceptance of such changes."
 msgid "We reserve the right to modify, supplement, or replace these Terms at any time. Any material changes will be notified to you. Your continued registration with the %1 API and your continued use of the %1 API will constitute binding acceptance of such changes."
-msgstr "当社はこれら規約をいつでも変更、補完、置き換える権利を留保します。重大な変更は通知されます。Binary.com APIへのご登録または使用の継続は、変更への同意とみなされます。"
+msgstr "当社はこれら規約をいつでも変更、補完、置き換える権利を留保します。重大な変更は通知されます。%1 APIへのご登録または使用の継続は、変更への同意とみなされます。"
 
 msgid "We reserve the right to refuse your referrals' application to open an account (or to close their accounts), as deemed necessary, to comply with any requirements we may periodically establish and/or that may be required under applicable laws, rules, and regulations."
 msgstr "適用される法律、規則、規制の下で定期的に確立するまたは/及び必要とされる要件を遵守するうえで必要と判断された口座開設（または口座閉鎖）に獲得会員のアプリケーションを拒否する権利を当社は留保します。"
@@ -7162,10 +7075,8 @@ msgstr ""
 msgid "With %1 you can trade:"
 msgstr "当社では下記のお取引が可能です。"
 
-#, fuzzy
-#| msgid "With %1 you're in control of how much you can win. You specify a fixed payout amount at the outset, and your stake - what you pay - is then calculated. Binary.com offers payouts from $1 to $50,000."
 msgid "With %1 you're in control of how much you can win. You specify a fixed payout amount at the outset, and your stake - what you pay - is then calculated. %1 offers payouts from $1 to $50,000."
-msgstr "当システムではペイアウトを確実に管理することができます。取引内容を設定する際にペイアウトまたは購入金額を指定し、正確な算出結果を得ることができます。当社では1,000円から1,000万円までのペイアウトを設定いただけます。"
+msgstr "当システムではペイアウトを確実に管理することができます。取引内容を設定する際にペイアウトまたは購入金額を指定し、正確な算出結果を得ることができます。%1では1,000円から1,000万円までのペイアウトを設定いただけます。"
 
 msgid "With %1's unique platform, there's no risk of 'slippage' or gapping markets. And no hidden fees."
 msgstr "当社の独自システムには、スリッページやギャッピングに関するリスクが存在しません。取引手数料は無料です。"
@@ -7179,8 +7090,6 @@ msgstr "当社システムは、各お取引の前にそのお取引から生じ
 msgid "With %1, your money is secure."
 msgstr "お客さまからお預かりした預託金は、信託口座にて区分管理されております。"
 
-#, fuzzy
-#| msgid "With regards to tracking your referrals accessing Binary.com via the links on your website or by quoting your affiliate IDs during the sign-up process, the Company shall use all reasonable endeavours to ensure that whenever a client is referred to Binary.com through these links or affiliate IDs, and they subsequently place a contract or otherwise transact with the Company, the relevant client is identified as originating from your referral. However, the Company shall not be liable to you in any way if the Company is unable to identify a client as originating from your referral. Only properly tagged clients can be assigned to you. It is your responsibility to ensure that all links are properly tagged."
 msgid "With regards to tracking your referrals accessing %1 via the links on your website or by quoting your affiliate IDs during the sign-up process, the Company shall use all reasonable endeavours to ensure that whenever a client is referred to %1 through these links or affiliate IDs, and they subsequently place a contract or otherwise transact with the Company, the relevant client is identified as originating from your referral. However, the Company shall not be liable to you in any way if the Company is unable to identify a client as originating from your referral. Only properly tagged clients can be assigned to you. It is your responsibility to ensure that all links are properly tagged."
 msgstr "プロモーションサイトに掲載したアフィリエイトリンクから%1へ誘導した獲得会員に関する当社の取り決めに従って頂くことを条件とし、当社はアフィリエイトリンクやアフィリエイトIDから%1にリンクすることができトレードを始めた獲得会員に対し、最善のサポートを提供します。しかしながらアフィリエイト会員のプロモーションサイトから獲得会員と承認出来ない場合は、サポートの提供はいたしかねます。"
 
@@ -7238,18 +7147,14 @@ msgstr "年"
 msgid "Yes. Please email us at <a href=\"mailto:%1\">%1</a> for further assistance."
 msgstr "はい、承ります。<a href=\"mailto:%1\">%1</a>までお問い合わせ下さい。"
 
-#, fuzzy
-#| msgid "You acknowledge and agree that you are solely and exclusively responsible for the control, operation and security of transactions and communications made through its access to or use of the Binary.com API. You acknowledge that there are risks associated with utilizing an internet-based deal execution trading system including, but not limited to, the failure of hardware, software, and internet connections. You acknowledge that the Company does not control signal power, its reception or routing via the internet, configuration of your equipment or reliability of its connection, and the Company shall not be responsible for any communication failures, disruptions, errors, distortions or delays you may experience when trading via the internet using the Binary.com API."
 msgid "You acknowledge and agree that you are solely and exclusively responsible for the control, operation and security of transactions and communications made through its access to or use of the %1 API. You acknowledge that there are risks associated with utilizing an internet-based deal execution trading system including, but not limited to, the failure of hardware, software, and internet connections. You acknowledge that the Company does not control signal power, its reception or routing via the internet, configuration of your equipment or reliability of its connection, and the Company shall not be responsible for any communication failures, disruptions, errors, distortions or delays you may experience when trading via the internet using the %1 API."
-msgstr "Binary.com APIの使用とアクセスを介したお取引または通信の制御、操作、セキュリティにお客さま単独で責任を負うことに同意します。ハードウェア、ソフトウェア、インターネット接続の失敗に限定されない、インターネットベースの取引実行システムの使用に関するリスクを了承します。インターネットを介した信号電力、受信、ルーチング、またはお客さまの設備、接続の信頼性を当社が制御しないこと、そしてBinary.com APIを利用してインターネットを介した取引時に遭遇する通信障害、中断、エラー、歪み、遅延に関して当社に責任がないことを理解しています。"
+msgstr "%1 APIの使用とアクセスを介したお取引または通信の制御、操作、セキュリティにお客さま単独で責任を負うことに同意します。ハードウェア、ソフトウェア、インターネット接続の失敗に限定されない、インターネットベースの取引実行システムの使用に関するリスクを了承します。インターネットを介した信号電力、受信、ルーチング、またはお客さまの設備、接続の信頼性を当社が制御しないこと、そして%1 APIを利用してインターネットを介した取引時に遭遇する通信障害、中断、エラー、歪み、遅延に関して当社に責任がないことを理解しています。"
 
 msgid "You acknowledge that, in the course of dealing under these Terms, you may obtain confidential information relating to the Company and its parent, subsidiaries, affiliates or other third party. Such confidential information shall belong solely to the Company."
 msgstr "これら条件下の対処過程において、当社及び親会社、子会社、関連会社、その他サードパーティに関する機密情報を得ることができ、このような機密情報は当社のみに帰属するものということを了承します。"
 
-#, fuzzy
-#| msgid "You agree that by developing on the Binary.com API, you are entering into a legally binding agreement with the Company."
 msgid "You agree that by developing on the %1 API, you are entering into a legally binding agreement with the Company."
-msgstr "Binary.com APIを開発することで同意されたとみなします。当社と法的拘束の締結がされたことになります。"
+msgstr "%1 APIを開発することで同意されたとみなします。当社と法的拘束の締結がされたことになります。"
 
 msgid "You agree that we may use Personal information provided by you in order to conduct appropriate anti-fraud checks. Personal Information that you provide may be disclosed to a credit reference or fraud prevention agency, which may keep a record of that information."
 msgstr "お客さまは、お客さまの個人情報は詐欺行為を適切に防止するために用いられる場合があることを了承する必要があります。また、提供された個人情報は信用情報機関、及び詐欺行為の調査機関へ開示する場合があり、それらの機関にて該当情報が保存される可能性があります。"
@@ -7257,10 +7162,8 @@ msgstr "お客さまは、お客さまの個人情報は詐欺行為を適切に
 msgid "You agree that you will not:"
 msgstr "次の事項をしないを同意します。："
 
-#, fuzzy
-#| msgid "You also acknowledge that Binary.com may continue to make changes to and enhance the Binary.com API and that those changes and enhancements will be owned by Binary.com. You hereby assign and transfer to the Company all of your right, title and interest in and to any modifications or derivative works of the Binary.com API created by or for you, regardless of whether they were created in accordance with these Terms; such assignment being effective upon creation of such works, and shall include, without limitation, all rights under any intellectual property laws, including copyright. You shall not take any action to jeopardise, encumber, limit or interface in any manner with Binary.com's ownership of and rights with respect to the Binary.com API, or any derivative works or updates thereof or thereto. Any components, parts, or mechanics of any system or API program derived from the Binary.com API, or Binary.com's business practices shall belong solely to Binary.com. Further, you will not, at any time, contest or assist any other third party in contesting the rights of Binary.com in the Binary.com API or any other intellectual property provided in these Terms."
 msgid "You also acknowledge that %1 may continue to make changes to and enhance the %1 API and that those changes and enhancements will be owned by %1. You hereby assign and transfer to the Company all of your right, title and interest in and to any modifications or derivative works of the %1 API created by or for you, regardless of whether they were created in accordance with these Terms; such assignment being effective upon creation of such works, and shall include, without limitation, all rights under any intellectual property laws, including copyright. You shall not take any action to jeopardise, encumber, limit or interface in any manner with %1's ownership of and rights with respect to the %1 API, or any derivative works or updates thereof or thereto. Any components, parts, or mechanics of any system or API program derived from the %1 API, or %1's business practices shall belong solely to %1. Further, you will not, at any time, contest or assist any other third party in contesting the rights of %1 in the %1 API or any other intellectual property provided in these Terms."
-msgstr "あなたはBinary.comがBinary.com APIの強化/改善と変更を継続する可能性があり、その変更または強化/改善がBinary.comに所有されることを了承します。すべての権利、権原、またはあなたによって作成されたBinary.comの編集または派生物への利害を、これら規約に基き作成されたかに関わらず、当社に割り当て、譲渡します。派生物や更新に関するBinary.comの所有権と権限を用いて危険に晒したり、妨げたり、制限を設けるなどの行動はしません。Binary,com APIからのシステムの構成、パーツ、仕組み、APIプログラムまたはBinary.comの実務はBinary.comのみに帰属します。また、本規約に従い、Binary.com API、提供されたその他知的財産権におけるBinary.comの権利抗争においてその他サードパーティーを援助または抗争することはいかなる場合においてもしません。"
+msgstr "あなたは%1が%1 APIの強化/改善と変更を継続する可能性があり、その変更または強化/改善が%1に所有されることを了承します。すべての権利、権原、またはあなたによって作成された%1の編集または派生物への利害を、これら規約に基き作成されたかに関わらず、当社に割り当て、譲渡します。派生物や更新に関する%1の所有権と権限を用いて危険に晒したり、妨げたり、制限を設けるなどの行動はしません。%1 APIからのシステムの構成、パーツ、仕組み、APIプログラムまたは%1の実務は%1のみに帰属します。また、本規約に従い、%1 API、提供されたその他知的財産権における%1の権利抗争においてその他サードパーティーを援助または抗争することはいかなる場合においてもしません。"
 
 msgid "You also have the right to request from us to inform you about the personal data that we process about you and to request its correction where necessary. This request must be made in writing to us and signed by you as the data subject."
 msgstr "またお客さまには、当社にて処理する個人情報を通知するように請求する権利、及び必要に応じて修正を求める権利を有します。このような請求はお客さまの署名が付された書面での申請にてのみ承ります。"
@@ -7360,10 +7263,8 @@ msgstr ""
 msgid "You irrevocably, non-exclusively license to the Company rights to use your Contributions; and"
 msgstr "あなたのコントリビューションを使用する当社の権利は非独占ライセンスであり、取り消しできません。"
 
-#, fuzzy
-#| msgid "You may cache the Content for up to 24 hours from a request for that Content through the Binary.com API."
 msgid "You may cache the Content for up to 24 hours from a request for that Content through the %1 API."
-msgstr "Binary.com APIを介したコンテンツのリクエストから24時間までコンテンツをキャッシュすることができます。"
+msgstr "%1 APIを介したコンテンツのリクエストから24時間までコンテンツをキャッシュすることができます。"
 
 msgid "You may choose to contact us to close your account held with the Company. Your account may be closed if you do not have any open trade positions and if you have complied with the requested \"Know Your Client\" procedures to enable you to withdraw any pending funds in your account."
 msgstr "当社で開設されたご口座を閉鎖するには当社までご連絡いただく必要がございます。お客さまのご口座にオープンポジションのご契約がなく、保留中の資金を出金できるようにする「Know Your Client」の手順に応じられている場合にご口座の閉鎖が可能です。"
@@ -7371,10 +7272,8 @@ msgstr "当社で開設されたご口座を閉鎖するには当社までご連
 msgid "You may communicate with us through this website, by email or, exceptionally, by post. Details can be found in the Contact Us page."
 msgstr "当社はお客さまと当サイトを通して、またはメール、例外として郵送でご連絡させていただきます。詳細はお問い合わせページにてご確認いただけます。"
 
-#, fuzzy
-#| msgid "You may develop Applications using the Binary.com API as soon as you register an Application and you agree to follow these Terms."
 msgid "You may develop Applications using the %1 API as soon as you register an Application and you agree to follow these Terms."
-msgstr "アプリケーションを登録して、これらの規約に同意されるとすぐにBinary.com APIを利用してアプリケーション開発ができます。"
+msgstr "アプリケーションを登録して、これらの規約に同意されるとすぐに%1 APIを利用してアプリケーション開発ができます。"
 
 msgid "You may earn up to 35% commission on the net revenue generated by clients whom you introduce to our trading platform."
 msgstr "当プラットフォームへお客さまよりクライアントをご紹介いただきましたことにより、純収益の35%までのコミッションをご獲得いただけます。"
@@ -7397,18 +7296,14 @@ msgstr "ボーナス金額の２５倍に相当する取引高を達成された
 msgid "You must accept the terms and conditions to open an account."
 msgstr "ご口座を開設されるにあたりご利用規約に承諾しなければなりません。"
 
-#, fuzzy
-#| msgid "You must comply with these Terms in order to use the Binary.com API."
 msgid "You must comply with these Terms in order to use the %1 API."
-msgstr "Binary.com  APIのご使用にあたり、これらの規約を遵守していただく必要があります。"
+msgstr "%1 APIのご使用にあたり、これらの規約を遵守していただく必要があります。"
 
 msgid "You must not be a USA resident, citizen, or have any tax reporting to the USA"
 msgstr "米国に納税義務がある米国人等（米国居住者、米国市民権保有者）は口座開設ができません。"
 
-#, fuzzy
-#| msgid "You must promptly report any security deficiencies in, or intrusions to, your Application that you discover to Binary.com by writing in to %1 or by raising a discussion  thread on %2 which is part of our Developer Site. You will work with Binary.com to immediately correct any security deficiency, and will immediately disconnect any intrusions or intruder. In the event of any security deficiency or intrusion involving the Application, APIs or Content, you will make no public statements (e.g. press, blogs, social media, bulletin boards, etc.) without prior written and express permission from Binary.com in each instance."
 msgid "You must promptly report any security deficiencies in, or intrusions to, your Application that you discover to %1 by writing in to %2 or by raising a discussion  thread on %3 which is part of our Developer Site. You will work with %1 to immediately correct any security deficiency, and will immediately disconnect any intrusions or intruder. In the event of any security deficiency or intrusion involving the Application, APIs or Content, you will make no public statements (e.g. press, blogs, social media, bulletin boards, etc.) without prior written and express permission from %1 in each instance."
-msgstr "Binary.comを発見するあなたのアプリケーションのセキュリティの欠損または侵入を%1に書き込んだり、当社の開発者向けサイトの一部である％2でディスカッションスレッドを上げることで報告しなければいけません。セキュリティの欠損を修正するためにあなたはBinary.comと共同し、いかなる侵入や侵入者をすみやかに切断します。セキュリティの欠損またはアプリケーション、API、コンテンツへの侵入が起こった際、いかなる場合においてもBinary.comからの書面による事前の明示的な許可なしに、公式声明を発表しません。（例：報道、ブログ、ソーシャルメディア、掲示板など）"
+msgstr "%1を発見するあなたのアプリケーションのセキュリティの欠損または侵入を%1に書き込んだり、当社の開発者向けサイトの一部である％2に記入、または%3でディスカッションスレッドを上げることによって報告しなければいけません。セキュリティの欠損を修正するためにあなたは%1と共同し、いかなる侵入や侵入者をすみやかに切断します。セキュリティの欠損またはアプリケーション、API、コンテンツへの侵入が起こった際、いかなる場合においても%1からの書面による事前の明示的な許可なしに、公式声明を発表しません。（例：報道、ブログ、ソーシャルメディア、掲示板など）"
 
 msgid "You need to finish all 20 questions."
 msgstr "まだ、未回答の問題があります。"
@@ -7440,10 +7335,8 @@ msgstr "第三者または外部関係者にあなたの知識またはあなた
 msgid "You shall be solely responsible for, and shall indemnify and hold the Company free and harmless from, any and all third party claims, damages or lawsuits (including, but not limited to, consequential losses and loss of profit, the Company's reasonable legal costs and expenses if applicable):"
 msgstr "アフィリエイト会員は要求に応じた賠償を行う必要があり、当社に対してあらゆる損失、要求、苦情、損害賠償や費用（重大な損失、利益の損失、法的対応の費用やそれにまつわる付加価値税）を求めることはありません。また、直接的であれ間接的であれ、3.3条または3.4条の違反行為の結果として生じた責任はアフィリエイト会員が負います。"
 
-#, fuzzy
-#| msgid "You shall discontinue your use of all prior versions of the Binary.com API in favour of the revised Binary.com API. While it is the Company's intention that the revised Binary.com API shall be backward compatible with the immediately prior version of the Binary.com API, the Company does not guarantee or warrant that this shall be so, and the Company shall have no liability whatsoever to you for any failure of the revised Binary.com API to be backward compatible with any prior version of the Binary.com API."
 msgid "You shall discontinue your use of all prior versions of the %1 API in favour of the revised %1 API. While it is the Company's intention that the revised %1 API shall be backward compatible with the immediately prior version of the %1 API, the Company does not guarantee or warrant that this shall be so, and the Company shall have no liability whatsoever to you for any failure of the revised %1 API to be backward compatible with any prior version of the %1 API."
-msgstr "改定版Binary.com APIに相当するBinary.com旧バージョンの全使用を中止しなければいけません。改訂版Binary.com APIが旧バージョンへの互換性を即座に持たせることを目的としておりますが、当社がそれに関して保証をしているわけではありません。また、旧バージョンと改定バージョンのBinary.com APIの互換性により生じたお客さまへの全障害に関して、当社は一切の責任を負いません。"
+msgstr "改定版%1 APIに相当する%1旧バージョンの全使用を中止しなければいけません。改訂版%1 APIが旧バージョンへの互換性を即座に持たせることを目的としておりますが、当社がそれに関して保証をしているわけではありません。また、旧バージョンと改定バージョンの%1 APIの互換性により生じたお客さまへの全障害に関して、当社は一切の責任を負いません。"
 
 msgid "You shall indemnify on demand and hold the Company harmless from, and against any and all losses, demands, claims, damages, costs, expenses (including, but not limited to, consequential losses, loss of profit, and reasonable legal costs, if applicable), and liabilities suffered or incurred, directly, or indirectly, by the Company in consequence of any breach, non-performance, or non-observance by you of any of your obligations or warranties under this Agreement."
 msgstr "アフィリエイト会員は要求に応じた賠償を行う必要があり、あらゆる損失、要求、苦情、損害賠償、費用（該当する場合、重大な損失、利益の損失、法的対応の費用やそれにまつわる付加価値税）、及び本契約の下、あなたの義務または保証による違反、不履行、非純遵守の結果の当社による直接的または間接的に被ったまたは発生した負債を当社に求めることはしません。"
@@ -7570,10 +7463,8 @@ msgstr "口座振替が完了しました。移行後残高："
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='%1'>payment agent</a> list."
 msgstr "当社コンプライアンス部門およびマーケティング部門により申請の審査に入ります。承認されましたら、当社<a href='%1'>決済サービスエージェント</a>リストに登録させていただきます。"
 
-#, fuzzy
-#| msgid "Your breach of any of Binary.com's rights;"
 msgid "Your breach of any of %1's rights;"
-msgstr "Binary.comの権利に対する違反行為；"
+msgstr "%1の権利に対する違反行為；"
 
 msgid "Your cashier is locked as per your request - to unlock it, please click %1here"
 msgstr "お客さまの入出金はリクエストによりロックされました。 - 解除するには%1こちらをクリックしてください。"
@@ -7650,15 +7541,11 @@ msgstr "トレード参照番号："
 msgid "Your transaction reference number is %1"
 msgstr "決済の参照番号は%1です"
 
-#, fuzzy
-#| msgid "Your use of the Binary.com API causes damage to the Binary.com trading platform, then Binary.com may, at its option, forthwith suspend your use of the Binary.com API and/or terminate this Agreement without further written notice."
 msgid "Your use of the %1 API causes damage to the %1 trading platform, then %1 may, at its option, forthwith suspend your use of the %1 API and/or terminate this Agreement without further written notice."
-msgstr "お客さまのBinary.com APIの使用が原因でBinary.com取引プラットフォームに損害が生じた際、Binary.comの判断により直ちにBinary.com APIの使用を書面による通知なしに一時停止および/または本契約を終了することができます。"
+msgstr "お客さまの%1 APIの使用が原因で%1取引プラットフォームに損害が生じた際、%1の判断により直ちに%1 APIの使用を書面による通知なしに一時停止および/または本契約を終了することができます。"
 
-#, fuzzy
-#| msgid "Your use of the Binary.com API will not confer to you any title, ownership interest or intellectual property rights that otherwise belongs to the Company. Our trading platform is protected under patent and our website, including its content, is protected by copyright laws, and will remain our exclusive property, as applicable."
 msgid "Your use of the %1 API will not confer to you any title, ownership interest or intellectual property rights that otherwise belongs to the Company. Our trading platform is protected under patent and our website, including its content, is protected by copyright laws, and will remain our exclusive property, as applicable."
-msgstr "Binary.com APIの使用にあたり当社に属する権原、所有持分、知的財産権を付与するものではありません。当取引プラットフォームは特許によって保護され、コンテンツを含む当ウェブサイトは著作権法によって保護されています。適応対対象となる場合、当社の独占的財産となります。"
+msgstr "%1 APIの使用にあたり当社に属する権原、所有持分、知的財産権を付与するものではありません。当取引プラットフォームは特許によって保護され、コンテンツを含む当ウェブサイトは著作権法によって保護されています。適応対対象となる場合、当社の独占的財産となります。"
 
 msgid "Your violation of any applicable law, rule or regulation;"
 msgstr "適用される法律、規則、規制への違反行為；"
@@ -7739,7 +7626,9 @@ msgstr "日"
 msgid "deposit"
 msgstr "ご入金"
 
-msgid "e.g. www.binaryqa36.com"
+#, fuzzy
+#| msgid "e.g. www.binaryqa36.com"
+msgid "e.g. ws.binaryws.com"
 msgstr "例：www.binaryqa36.com"
 
 msgid "f"
@@ -7841,15 +7730,11 @@ msgstr "Tick"
 msgid "to your account."
 msgstr "アカウントへ"
 
-#, fuzzy
-#| msgid "use or reproduce the Binary.com API other than as permitted by these Terms or"
 msgid "use or reproduce the %1 API other than as permitted by these Terms or"
-msgstr "これら規約で許可されている以上のBinary.com APIの使用または再現"
+msgstr "これら規約で許可されている以上の%1 APIの使用または再現"
 
-#, fuzzy
-#| msgid "use the Binary.com API for any purpose that violates any law or regulation, any right of any person, including but not limited to intellectual property rights, rights of privacy or rights of personality, or in any manner inconsistent with these Terms or privacy policy."
 msgid "use the %1 API for any purpose that violates any law or regulation, any right of any person, including but not limited to intellectual property rights, rights of privacy or rights of personality, or in any manner inconsistent with these Terms or privacy policy."
-msgstr "知的財産権に限定されず、プライバシーの権利、人格権を含む法律、規律、人権を違反する目的とした本規約又はプライバシーポリシーに反する方法でのBinary.com APIの使用"
+msgstr "知的財産権に限定されず、プライバシーの権利、人格権を含む法律、規律、人権を違反する目的とした本規約又はプライバシーポリシーに反する方法での%1 APIの使用"
 
 msgid "verification token"
 msgstr "ワンタイムパスワード"
@@ -7901,6 +7786,9 @@ msgstr "判定時刻の時点まで、取引価格が常に上下のバリア価
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
 msgstr "判定時刻までに、取引価格が設定されたバリア価格にタッチした場合、ペイアウトを受け取れます。"
+
+msgid "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
+msgstr ""
 
 msgid "{JAPAN ONLY}A  Net Settlement type of option is one where the underlying asset does not include yen, but the option fee and settlement are paid in yen; it therefore requires some definition of how the settlement amounts will be calculated and converted to yen."
 msgstr "円以外の通貨ペアを原資産とする差金決済型の通貨オプションであって、オプション料や権利行使時の決済が円により行われるものは、対象とする通貨ペアによる決済額を算出し、円転のための計算をして金額を確定する仕組みとなっている。"
@@ -7971,14 +7859,48 @@ msgstr "原資産の予測される価格変動率が高いほど、オプショ
 msgid "{JAPAN ONLY}As the time to the exercise point shortens, the time-value of a plain vanilla option decreases."
 msgstr "時間的価値は、オプションの権利行使期限までの時間が短くなるほど減少する。"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 4: Risk"
+msgid "{JAPAN ONLY}Association of join"
+msgstr "第4章：リスク"
+
 msgid "{JAPAN ONLY}BUY price per unit"
 msgstr "購入"
 
 msgid "{JAPAN ONLY}Because option prices are determined by the probability of being exercised, it cannot be said that cheaper options have any natural advantage over expensive options."
 msgstr "権利行使により利益が得られる確率を踏まえれば、一概にオプション価格が安いものが有利とはいえない。"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Download"
+msgid "{JAPAN ONLY}Binary K. K."
+msgstr "ダウンロード"
+
 msgid "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
 msgstr "バイナリーオプションは、売り手の損失が限定されており、バニラオプションに比べ、ローリスクハイリターンな取引といえる。"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}Capital"
+msgstr "ロット"
+
+msgid "{JAPAN ONLY}Capital Adequacy Ratio (CAR)"
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Option Pricing"
+msgid "{JAPAN ONLY}Company Profile"
+msgstr "オプション価格"
+
+msgid "{JAPAN ONLY}Company Profile & Disclosure"
+msgstr ""
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Download"
+msgid "{JAPAN ONLY}Company name"
+msgstr "ダウンロード"
+
+msgid "{JAPAN ONLY}Company name in English"
+msgstr ""
 
 msgid "{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly."
 msgstr "おめでとうございます。テストに合格されましたので、カスタマーサポートよりメールにて口座開設の次のステップについてご連絡させていただきます。"
@@ -7995,8 +7917,27 @@ msgstr ""
 "\n"
 "既に知識確認テストは完了しています。送信済みのメールを確認の上、口座開設の手続きを進めてください。"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}BUY price per unit"
+msgid "{JAPAN ONLY}December 2015"
+msgstr "購入"
+
 msgid "{JAPAN ONLY}Delta refers to  a percentage change of the option price with respect to the change in the underlying asset price."
 msgstr "デルタとは、原資産価格の変化に対するオプション価値の変動割合をいう。"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Introduction to Binary Options"
+msgid "{JAPAN ONLY}Designated dispute resolution organization"
+msgstr "バイナリーオプションの概要"
+
+msgid "{JAPAN ONLY}Disclosure of CAR by No. 46-6-3 in the FIEA (Financial Instruments and Exchange Act)"
+msgstr ""
+
+msgid "{JAPAN ONLY}Disclosure of financial statement by No. xx in the FIEA"
+msgstr ""
+
+msgid "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
+msgstr ""
 
 msgid "{JAPAN ONLY}Download"
 msgstr "ダウンロード"
@@ -8007,6 +7948,11 @@ msgstr "本人確認書類およびマイナンバー「個人番号カード」
 msgid "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
 msgstr "お客さまの基本情報を記入して頂き交付書面等に同意後、口座開設ボタンをクリックしてください。"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}Establishment"
+msgstr "ロット"
+
 msgid "{JAPAN ONLY}Even if all details of the binary options match perfectly, there may still be differences in the prices shown by different broking companies."
 msgstr "同一条件の店頭バイナリーオプションの価格は、取扱金融商品取引業者により価格が異なる（場合がある）。"
 
@@ -8015,6 +7961,22 @@ msgstr "権利行使期限が到来し、権利行使が行われないオプシ
 
 msgid "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
 msgstr "バイナリーオプションは損失が限定的であるが、投資者自身の資産などを踏まえ、過度の投機的な取引とならぬよう、節度ある取引を心がける必要がある。"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Regulation & Tax"
+msgid "{JAPAN ONLY}February 2016"
+msgstr "規制と税金"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 5: Calculation"
+msgid "{JAPAN ONLY}Financial Condition"
+msgstr "第5章：算出"
+
+msgid "{JAPAN ONLY}Financial Instruments Business No. xxxx"
+msgstr ""
+
+msgid "{JAPAN ONLY}Financial Instruments Mediation Assistance Center"
+msgstr ""
 
 msgid "{JAPAN ONLY}For a call option, if the price of the underlying asset is higher than the option exercise price, it is know as an in-the-money option."
 msgstr "コールオプションにおいて、原資産の価格が権利行使価格を上回っている状態をインザマネーという。"
@@ -8054,6 +8016,13 @@ msgstr "コールオプション、プットオプション共に、原資産の
 
 msgid "{JAPAN ONLY}For full details of the documents we can accept please download the following guide:"
 msgstr "確認書類の詳細に関しては次のガイドをダウンロードしてご確認いただけます。"
+
+#, fuzzy
+#| msgid "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
+msgid "{JAPAN ONLY}HirooMiyaya 3F, 1-9-16 Hiroo, Shibuya, Tokyo, 150-0012"
+msgstr ""
+"Binary株式会社\n"
+"所在地：150-0012　東京渋谷区広尾一丁目9-16　広尾宮田ビル3F"
 
 msgid "{JAPAN ONLY}Historical volatility is a prediction of the future rate of change in the underlying asset."
 msgstr "ヒストリカルボラティリティとは、原資産に対する将来の変動率を予測したボラティリティのことである。"
@@ -8157,6 +8126,11 @@ msgstr "２つのオプションを用い、権利行使価格の高いバイナ
 msgid "{JAPAN ONLY}It prohibits the copying of the questions . In addition , You agree that you will not leak to third party"
 msgstr "問題の複写を禁止します。また、第三者に漏えいしないことに同意いただくものとします。"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Download"
+msgid "{JAPAN ONLY}January 2016"
+msgstr "ダウンロード"
+
 msgid "{JAPAN ONLY}Knowledge Test"
 msgstr "知識確認テスト"
 
@@ -8182,8 +8156,31 @@ msgstr ""
 msgid "{JAPAN ONLY}Knowledge test list item 5"
 msgstr "・問題の複写を禁止します。また、第三者に漏えいしないことに同意いただくものとします。"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Trading Guide"
+msgid "{JAPAN ONLY}Main business"
+msgstr "操作マニュアル"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Download"
+msgid "{JAPAN ONLY}March 2014"
+msgstr "ダウンロード"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Download"
+msgid "{JAPAN ONLY}March 2015"
+msgstr "ダウンロード"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Download"
+msgid "{JAPAN ONLY}March 2016"
+msgstr "ダウンロード"
+
 msgid "{JAPAN ONLY}No space between last name and first name"
 msgstr "姓と名の間にスペースは不要"
+
+msgid "{JAPAN ONLY}November 7, 2014"
+msgstr ""
 
 msgid "{JAPAN ONLY}Option Pricing"
 msgstr "オプション価格"
@@ -8254,6 +8251,11 @@ msgstr "取引期間・バリア・決済"
 msgid "{JAPAN ONLY}Regarding to the OTC price of financial instruments, in case that financial instruments business operator suggests both of  bid and ask price (or trading price and cancellation price), generally there is a difference of them. This option will be wider as the expiration approaches."
 msgstr "次の文章のうち、金融商品の店頭取引の価格について、金融商品取引業者が買値と売値（又は買戻取価格、解約価格）の２つの価格をお客さまに提示する場合、一般的には２つの価格には差（スプレッド）がある。このスプレッドはオプションの期限が近付くと広がる傾向がある。"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Regulation & Tax"
+msgid "{JAPAN ONLY}Registration"
+msgstr "規制と税金"
+
 msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "規制と税金"
 
@@ -8274,6 +8276,11 @@ msgstr "第4章：リスク"
 
 msgid "{JAPAN ONLY}Section 5: Calculation"
 msgstr "第5章：算出"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}SELL price  per unit"
+msgid "{JAPAN ONLY}September 2015"
+msgstr "売却"
 
 msgid "{JAPAN ONLY}Short positions in FX Binary Options must be covered by initial margin and any further losses must be covered by further margin deposits."
 msgstr "通貨関連バイナリーオプションのショートポジションは、あらかじめ必要証拠金を業者に預託して取引を行い、取引成立後に証拠金が不足した場合には追加証拠金を業者に預託する必要がある。"
@@ -8298,6 +8305,9 @@ msgstr "権利行使価格とは、権利行使により原資産を購入また
 
 msgid "{JAPAN ONLY}The Exit Price is the price that is observed at the judgment time, and is used to determine whether a payout should be made."
 msgstr "判定レートとは、権利行使時点の原資産価格であり、権利行使価格と比較し、ペイアウトの有無を判断するための価格をいう。"
+
+msgid "{JAPAN ONLY}The Financial Futures Association of Japan"
+msgstr ""
 
 msgid "{JAPAN ONLY}The buyer of a vanilla option can choose whether to exercise the option or not. His loss is limited to the price paid for the option, whereas his potential profit is unlimited."
 msgstr "バニラオプションの買い手は、自分に不利なときには権利放棄するので、買い手の最大損失額はオプション料、利益額は原資産価格と権利行使価格の差からオプション料を引いた額となり、原資産価格が無限大ならば、利益も無限大となる。"
@@ -8368,6 +8378,9 @@ msgstr "取引とヘッジ"
 msgid "{JAPAN ONLY}Trading Guide"
 msgstr "操作マニュアル"
 
+msgid "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
+msgstr ""
+
 msgid "{JAPAN ONLY}Units"
 msgstr "ロット"
 
@@ -8394,50 +8407,48 @@ msgstr "プットオプションの買いでは、権利行使価格に原資産
 msgid "{JAPAN ONLY}Where broking companies show bid and offer prices for purchasing and sell-back of positions, these prices may become further apart the nearer you are to the exercise time."
 msgstr "次の文章のうち、金融商品の店頭取引の価格について、金融商品取引業者が買値と売値（又は買戻取価格、解約価格）の２つの価格をお客さまに提示する場合、一般的には２つの価格には差（スプレッド）がある。このスプレッドはオプションの期限が近付くと広がる傾向がある。"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Options Basics"
+msgid "{JAPAN ONLY}Win Loss Ratio"
+msgstr "オプション取引の基本"
+
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "リアル口座開設の流れについてご案内致します。まず、<a class=\"pjaxload\" href=\"%1\"> こちらを</a>クリックしてデモ口座を開設して頂く必要があります。デモ口座では、取引ツールの操作性及びバイナリーオプション取引への理解を高める上では非常にお役に立ちます。実際の取引への準備ができましたらリアル口座開設の手続きをしてください。"
 
 msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 msgstr "外国為替のオンライン取引プラットフォーム"
 
-#, fuzzy
-#| msgid "Why Us?"
 msgid "Why Us"
 msgstr "サービス概要"
 
 msgid "Styles"
-msgstr ""
+msgstr "スタイル"
 
-#, fuzzy
-#| msgid "points"
 msgid "Endpoint"
 msgstr "ポイント"
 
-#, fuzzy
-#| msgid "Job details"
 msgid "Job Details"
 msgstr "職務内容"
 
 #, fuzzy
-#| msgid "Open-source projects"
+#| msgid "Company addresses"
+msgid "Company Profile"
+msgstr "会社所在地"
+
 msgid "Open-Source Projects"
 msgstr "オープンソースプロジェクト"
 
 msgid "Types of Trades"
 msgstr "トレードの種類"
 
-#, fuzzy
-#| msgid "Benefits of Trading Binaries"
 msgid "Benefits of Binary Trading"
 msgstr "バイナリー取引のメリット"
 
 msgid "How to Trade Binaries?"
 msgstr "バイナリーの取引方法とは？"
 
-#, fuzzy
-#| msgid "What are the OTC Indices and Stocks?"
 msgid "What Are OTC Indices and Stocks?"
-msgstr "店頭インデックスと店頭株とは"
+msgstr "店頭インデックス・店頭株とは？"
 
 msgid "Account Limits"
 msgstr "ご利用制限額"
@@ -8445,8 +8456,6 @@ msgstr "ご利用制限額"
 msgid "Payment Agent Deposit"
 msgstr "決済サービスでのご入金"
 
-#, fuzzy
-#| msgid "Payment Agent transfer"
 msgid "Payment Agent Transfer"
 msgstr "決済サービスでのご送金"
 

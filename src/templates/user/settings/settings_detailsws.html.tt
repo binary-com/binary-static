@@ -17,7 +17,7 @@
                 </div>
             </div>
 
-            <div class="gr-padding-10 gr-row clear JpAcc">
+            <div class="gr-padding-10 gr-row clear JpAcc invisible">
                 <div class="gr-4 form_label">
                     <label><em class="required_asterisk">**</em> [% l('Gender') %]</label>
                 </div>
@@ -61,7 +61,7 @@
                 </div>
             </div>
 
-            <div class="gr-padding-10 gr-row clear JpAcc">
+            <div class="gr-padding-10 gr-row clear JpAcc invisible">
                 <div class="gr-4 form_label">
                     <label><em class="required_asterisk">**</em> [% l('Occupation') %]</label>
                 </div>
@@ -131,7 +131,7 @@
             </div>
         </fieldset>
 
-        <fieldset class="JpAcc">
+        <fieldset class="JpAcc invisible">
             <legend>[% l('Address') %]</legend>
 
             <div class="gr-padding-10 gr-row clear">
@@ -201,7 +201,7 @@
             </div>
         </fieldset>
 
-        <fieldset class="JpAcc">
+        <fieldset class="JpAcc invisible">
             <legend>[% l('Status') %]</legend>
 
             <div class="gr-padding-10 gr-row clear">
@@ -238,7 +238,7 @@
             </div>
         </fieldset>
 
-        <fieldset class="JpAcc">
+        <fieldset class="JpAcc invisible">
             <legend>[% l('Trading Experience') %]</legend>
 
             <div class="gr-padding-10 gr-row clear">
@@ -329,7 +329,7 @@
                 </div>
             </div>
 
-            <div class="gr-padding-10 gr-row clear hedge">
+            <div class="gr-padding-10 gr-row clear hedge invisible">
                 <div class="gr-4 form_label">
                     <label><em class="required_asterisk">**</em> [% l('Classification of assets requiring hedge') %]</label>
                 </div>
@@ -340,7 +340,7 @@
                 </div>
             </div>
 
-            <div class="gr-padding-10 gr-row clear hedge">
+            <div class="gr-padding-10 gr-row clear hedge invisible">
                 <div class="gr-4 form_label">
                     <label><em class="required_asterisk">**</em> [% l('Amount of above assets') %]</label>
                 </div>
