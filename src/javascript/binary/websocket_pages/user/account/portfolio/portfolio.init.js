@@ -26,7 +26,7 @@ var PortfolioWS =  (function() {
     };
 
     var updateBalance = function(data) {
-        $("#portfolio-balance").text(Portfolio.getBalance(data, 'separator'));
+        $("#portfolio-balance").text(Portfolio.getBalance(data, true));
         if(Portfolio.getBalance(data) > 0 || page.client.is_virtual()) {
             $('#if-balance-zero').addClass('invisible');
         } else {
@@ -160,13 +160,19 @@ var PortfolioWS =  (function() {
         PortfolioWS.init();
     };
 
+    var onUnload = function() {
+        BinarySocket.send({"forget_all": "proposal_open_contract"});
+        BinarySocket.send({"forget_all": "transaction"});
+    };
+
     return {
         init: init,
         updateBalance: updateBalance,
         updatePortfolio: updatePortfolio,
         updateIndicative: updateIndicative,
         transactionResponseHandler: transactionResponseHandler,
-        onLoad: onLoad
+        onLoad: onLoad,
+        onUnload: onUnload
     };
 
 })();

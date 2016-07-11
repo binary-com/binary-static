@@ -23,8 +23,10 @@ describe('Portfolio', function() {
         expect(portfolio).to.have.any.keys('getBalance', 'getPortfolioData', 'getProposalOpenContract', 'getIndicativeSum', 'getSumPurchase');
     });
     it('Should have balance', function() {
-        var balance_data = portfolio.getBalance(balance);
-        expect(balance_data).to.be.a('string');
+        var balance_string = portfolio.getBalance(balance, true);
+        expect(balance_string).to.be.a('string');
+        var balance_value = portfolio.getBalance(balance);
+        expect(balance_value).to.be.a('number');
     });
 	it('Should have all expected data for portfolio', function() {
         var portfolio_data = portfolio.getPortfolioData(portfolio_mock_data);
