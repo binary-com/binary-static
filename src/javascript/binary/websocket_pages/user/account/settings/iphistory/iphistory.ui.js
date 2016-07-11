@@ -4,15 +4,16 @@ var IPHistoryUI = (function(){
     function parse_ua(user_agent) {
         // Table of UA-values (and precedences) from:
         //  https://developer.mozilla.org/en-US/docs/Browser_detection_using_the_user_agent
+        var vn = '([0-9\.]+)';
         var lookup = [
-            {name: 'Chromium',  regex: 'Chromium/(.+)'},
-            {name: 'Chrome',    regex: 'Chrome/(.+)'},
-            {name: 'Seamonkey', regex: 'Seamonkey/(.+)'},
-            {name: 'Firefox',   regex: 'Firefox/(.+)'},
-            {name: 'Opera',     regex: 'OPR/(.+)'},
-            {name: 'Opera',     regex: 'Opera/(.+)'},
-            {name: 'Safari',    regex: 'Version/(.+)'},
-            {name: 'Internet Explorer', regex: ';MSIE (.+);'},
+            {name: 'Chromium',  regex: 'Chromium/' + vn},
+            {name: 'Chrome',    regex: 'Chrome/' + vn},
+            {name: 'Seamonkey', regex: 'Seamonkey/' + vn},
+            {name: 'Firefox',   regex: 'Firefox/' + vn},
+            {name: 'Opera',     regex: 'OPR/' + vn},
+            {name: 'Opera',     regex: 'Opera/' + vn},
+            {name: 'Safari',    regex: 'Version/' + vn},
+            {name: 'Internet Explorer', regex: ';MSIE '+ vn +';'},
         ];
         var len = lookup.length;
         var name = 'Unknown';
