@@ -2,6 +2,8 @@ var IPHistoryUI = (function(){
     "use strict";
 
     function parse_ua(user_agent) {
+        // Table of UA-values (and precedences) from:
+        //  https://developer.mozilla.org/en-US/docs/Browser_detection_using_the_user_agent
         var lookup = [
             {name: 'Chromium',  regex: 'Chromium/(.+)'},
             {name: 'Chrome',    regex: 'Chrome/(.+)'},
@@ -9,6 +11,7 @@ var IPHistoryUI = (function(){
             {name: 'Firefox',   regex: 'Firefox/(.+)'},
             {name: 'Opera',     regex: 'OPR/(.+)'},
             {name: 'Opera',     regex: 'Opera/(.+)'},
+            {name: 'Safari',    regex: 'Version/(.+)'},
             {name: 'Internet Explorer', regex: ';MSIE (.+);'},
         ];
         var len = lookup.length;
@@ -55,7 +58,6 @@ var IPHistoryUI = (function(){
 
     function createRow(data){
         var environ    = data.environment;
-        console.log(environ);
         var timestamp  = moment.unix(data.time).utc().format('YYYY-MM-DD HH:mm:ss').replace(' ', '\n') + ' GMT';
         var ip_addr    = environ.split(' ')[2].split('=')[1];
         var user_agent = environ.match(new RegExp('User_AGENT=(.+) LANG'))[1];
