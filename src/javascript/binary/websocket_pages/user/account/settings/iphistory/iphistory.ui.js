@@ -54,14 +54,14 @@ var IPHistoryUI = (function(){
     }
 
     function createRow(data){
-        var environ    = data['environment'];
+        var environ    = data.environment;
         console.log(environ);
         var timestamp  = moment.unix(data.time).utc().format('YYYY-MM-DD HH:mm:ss').replace(' ', '\n') + ' GMT';
         var ip_addr    = environ.split(' ')[2].split('=')[1];
         var user_agent = environ.match(new RegExp('User_AGENT=(.+) LANG'))[1];
         var browser    = parse_ua(user_agent);
 
-        var status = data['status'] === 1 ? text.localize('Successful') : text.localize('Failed');
+        var status = text.localize(data.status === 1 ? 'Successful' : 'Failed');
         var browserString = browser.name + " v" + browser.version;
         var $row = Table.createFlexTableRow([timestamp, data['action'], browserString, ip_addr, status], columns, "data");
         $row.children(".timestamp").addClass('pre');
