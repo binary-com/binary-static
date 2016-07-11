@@ -70,8 +70,7 @@ pjax_config_page_require_auth("user/portfoliows", function() {
             PortfolioWS.onLoad();
         },
         onUnload: function() {
-            BinarySocket.send({"forget_all": "proposal_open_contract"});
-            BinarySocket.send({"forget_all": "transaction"});
+            PortfolioWS.onUnload();
         },
     };
 });
