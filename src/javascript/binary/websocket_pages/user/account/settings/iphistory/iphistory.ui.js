@@ -15,11 +15,10 @@ var IPHistoryUI = (function(){
             {name: 'Safari',    regex: 'Version/' + vn},
             {name: 'Internet Explorer', regex: ';MSIE '+ vn +';'},
         ];
-        var len = lookup.length;
         var name = 'Unknown';
         var version = 'Unknown';
-        while (len--) {
-            var info = lookup[len];
+        for (var i = 0; i < lookup.length; i++) {
+            var info = lookup[i];
             var match = user_agent.match(info.regex);
             if (match !== null) {
                 name = info.name;
@@ -38,18 +37,18 @@ var IPHistoryUI = (function(){
 
     function createEmptyTable(){
         var header = [
-            text.localize("Date and Time"),
-            text.localize("Action"),
-            text.localize("Browser"),
-            text.localize("IP Address"),
-            text.localize("Status"),
-        ];
+            "Date and Time",
+            "Action",
+            "Browser",
+            "IP Address",
+            "Status",
+        ].map(text.localize);
         var metadata = {
             id: tableID,
             cols: columns
         };
         var data = [];
-        var $table = Table.createFlexTable(data,metadata,header);
+        var $table = Table.createFlexTable(data, metadata, header);
         return $table;
     }
 
@@ -62,7 +61,7 @@ var IPHistoryUI = (function(){
         var environ    = data.environment;
         var timestamp  = moment.unix(data.time).utc().format('YYYY-MM-DD HH:mm:ss').replace(' ', '\n') + ' GMT';
         var ip_addr    = environ.split(' ')[2].split('=')[1];
-        var user_agent = environ.match(new RegExp('User_AGENT=(.+) LANG'))[1];
+        var user_agent = environ.match('User_AGENT=(.+) LANG')[1];
         var browser    = parse_ua(user_agent);
 
         var status = text.localize(data.status === 1 ? 'Successful' : 'Failed');
