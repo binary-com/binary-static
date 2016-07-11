@@ -1,6 +1,33 @@
 var IPHistoryUI = (function(){
     "use strict";
 
+    function parse_ua(user_agent) {
+        var lookup = [
+            {name: 'Chromium',  regex: 'Chromium/(.+)'},
+            {name: 'Chrome',    regex: 'Chrome/(.+)'},
+            {name: 'Seamonkey', regex: 'Seamonkey/(.+)'},
+            {name: 'Firefox',   regex: 'Firefox/(.+)'},
+            {name: 'Opera',     regex: 'OPR/(.+)'},
+            {name: 'Opera',     regex: 'Opera/(.+)'},
+            {name: 'Internet Explorer', regex: ';MSIE (.+);'},
+        ];
+        var len = lookup.length;
+        var name = 'Unknown';
+        var version = 'Unknown';
+        while (len--) {
+            var info = lookup[len];
+            var match = user_agent.match(info.regex);
+            if (match !== null) {
+                name = info.name;
+                version = match[1];
+            }
+        }
+        return {
+            name: name,
+            version: version,
+        };
+    }
+
     var tableID = "login-history-table",
         columns = ["timestamp","action","browser","ip","status"];
 
@@ -27,42 +54,16 @@ var IPHistoryUI = (function(){
     }
 
     function createRow(data){
-        var userAgent = data['environment'];
-        var history = userAgent.split(' ');
-        var timestamp = moment.unix(data.time).utc().format('YYYY-MM-DD HH:mm:ss').replace(' ', '\n') + ' GMT';
-        var ip = history[2].split('=')[1];
-        var browser = "Unknown",
-            ver = "Unknown",
-            verOffset = 0;
-        if (/(msie|trident)/i.test(userAgent)){
-            browser = "Internet Explorer";
-            verOffset = /(msie)/i.test(userAgent) ? userAgent.indexOf("MSIE") : verOffset;
-            verOffset = /(trident)/i.test(userAgent) ? userAgent.indexOf("Trident") : verOffset;
-            if (userAgent.substring(verOffset+13).split(" ")[0].indexOf(':') != -1) {
-              ver = userAgent.substring(verOffset+13).split(" ")[0].split(":")[1].split(")")[0];
-            }
-        } else if ((verOffset = userAgent.indexOf("Edge")) != -1) {
-            browser = "Edge";
-            ver = userAgent.substring(verOffset).split("/")[1].split(" ")[0];
-            if (ver.indexOf(';') != -1) {
-              ver = ver.split(';')[0];
-            }
-        } else if ((verOffset = userAgent.indexOf("OPR")) != -1){
-            browser = "Opera";
-            ver = userAgent.substring(verOffset+4).split(" ")[0];
-        } else if ((verOffset = userAgent.indexOf("Chrome")) != -1){
-            browser = "Chrome";
-            ver = userAgent.substring(verOffset+7).split(" ")[0];
-        } else if ((verOffset = userAgent.indexOf("Safari")) != -1){
-            browser = "Safari";
-            ver = userAgent.substring(verOffset+7).split(" ")[0];
-        } else if ((verOffset = userAgent.indexOf("Firefox")) != -1){
-            browser = "Firefox";
-            ver = userAgent.substring(verOffset+8).split(" ")[0];
-        }
+        var environ    = data['environment'];
+        console.log(environ);
+        var timestamp  = moment.unix(data.time).utc().format('YYYY-MM-DD HH:mm:ss').replace(' ', '\n') + ' GMT';
+        var ip_addr    = environ.split(' ')[2].split('=')[1];
+        var user_agent = environ.match(new RegExp('User_AGENT=(.+) LANG'))[1];
+        var browser    = parse_ua(user_agent);
+
         var status = data['status'] === 1 ? text.localize('Successful') : text.localize('Failed');
-        var browserString = browser + " v" + ver;
-        var $row = Table.createFlexTableRow([timestamp, data['action'], browserString, ip, status], columns, "data");
+        var browserString = browser.name + " v" + browser.version;
+        var $row = Table.createFlexTableRow([timestamp, data['action'], browserString, ip_addr, status], columns, "data");
         $row.children(".timestamp").addClass('pre');
         return $row[0];
     }
