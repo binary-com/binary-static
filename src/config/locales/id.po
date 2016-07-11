@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-07-07 02:55+0000\n"
+"PO-Revision-Date: 2016-07-07 09:13+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
@@ -113,10 +113,8 @@ msgstr "%1 telah memperbarui <a class=\"pjaxload\" href=\"%2\">Syarat & Ketentua
 msgid "%1 hits 1 million users, reaching a historic milestone. The company continues to see exponential growth and this reconfirms its position as an industry leader."
 msgstr "%1 mencapai 1 juta pengguna, pencapaian bersejarah. Perusahaan akan selalu memperhatikan pertumbuhan eksponensial dan memastikan kedudukan sebagai pemimpin industri."
 
-#, fuzzy
-#| msgid "%1 introduces an <a href='%2' target='_blank'>auto-trader programming tool</a>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
 msgid "%1 introduces an <a href='%2' target='_blank' class='ja-hide'>auto-trader programming tool</a><span class='all-hide ja-show'>auto-trader programming tool</span>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
-msgstr "%1 memperkenalkan <a href='%2' target='_blank'>alat pemrograman auto-trader</a>, memungkinkan klien untuk mengembangkan robot trading mereka sendiri secara otomatis dengan konsep sederhana “drag-and-drop”."
+msgstr "%1 memperkenalkan sebuah <a href='%2' target='_blank' class='ja-hide'>alat pemrograman auto-trader</a><span class='all-hide ja-show'>alat pemrograman auto-trader</span>, memungkinkan klien untuk mengembangkan robot trading mereka sendiri secara otomatis dengan konsep sederhana “drag-and-drop”."
 
 msgid "%1 is a flexible place. As well as our offices, we have staff who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
 msgstr "%1 adalah tempat yang sangat fleksibel. Begitu juga dengan kantor kami, kami memiliki staf yang dapat bekerja dari rumah mereka di seluruh negara. Jika hal ini cocok untuk Anda, kami terbuka untuk itu."
@@ -163,10 +161,8 @@ msgstr "%1 adalah pemenang penghargaan sebagai industri perintis opsi trading on
 msgid "%1 is the award-winning industry pioneer in online options trading. We boast:"
 msgstr "%1 adalah pemenang penghargaan sebagai industri perintis opsi trading online. Kami bangga:"
 
-#, fuzzy
-#| msgid "%1 launches an <a href='%2' target='_blank'> e-commerce site for branded merchandise</a> – enabling clients, affiliates, and developers to buy and sell Binary.com products."
 msgid "%1 launches an <a href='%2' target='_blank' class='ja-hide'> e-commerce site for branded merchandise</a><span class='all-hide ja-show'> e-commerce site for branded merchandise</span> – enabling clients, affiliates, and developers to buy and sell Binary.com products."
-msgstr "%1 meluncurkan <a href='%2' target='_blank'> situs e-commerce untuk barang-barang bermerek</a> – memberi kesempatan kepada klien, afiliasi, dan pengembang untuk membeli dan menjual produk Binary.com."
+msgstr "%1 meluncurkan sebuah <a href='%2' target='_blank' class='ja-hide'> situs e-commerce untuk barang-barang bermerek</a><span class='all-hide ja-show'> situs e-commerce untuk barang-barang bermerek</span> – memberi kesempatan kepada klien, afiliasi, dan pengembang untuk membeli dan menjual produk Binary.com."
 
 msgid "%1 makes efforts that the quoted prices of each underlying asset that a Binary Option refers to will be reasonably related to the actual prices of such asset available in the market. %1 makes no warranty, expressed or implied, that the quoted prices represent prevailing market prices."
 msgstr "%1 berusaha menyediakan kutipan harga dasar bagi setiap pasar yang ditampilkan oleh Opsi Binary adalah sepenuhnya merupakan harga aktual bagi setiap aset yang tersedia pada pasar. %1 tidak menjamin, baik tersurat ataupun tersirat dimana harga kutipan mewakili harga pasar yang berlaku."
@@ -243,19 +239,20 @@ msgstr "Grup Analisa Kuantitatif %1 bertanggung jawab pada harga opsi yang ditaw
 msgid "%1's Smart FX are smart markets that measure the value of a currency against a basket of major currencies."
 msgstr "Smart FX %1 adalah pasar yang diukur berdasarkan nilai mata uang berbanding dengan kumpulan beberapa mata uang utama."
 
-#, fuzzy
-#| msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements.  Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
 msgid ""
 "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much\n"
 "                    less investment than would be required in the live market."
-msgstr "Kontrak Spread %1 adalah kontrak derivatif berjangka, dimana nilainya ditentukan langsung oleh pergerakan pasar dasar. Klien yang memilih kontrak 'Panjang' pada kenaikan pasar (dan yang memilih 'Pendek' pada penurunan pasar) akan memperoleh keuntungan dari pergerakan dengan investasi kecil pada pasar secara langsung."
+msgstr ""
+"Kontrak Spread %1 adalah kontrak derivatif berjangka, dimana nilainya ditentukan langsung oleh pergerakan pasar dasar. Pelanggan yang memilih 'Long' pada kenaikan pasar (dan yang memilih 'Short' pada penurunan pasar) akan memperoleh profit dari pergerakan dengan \n"
+"                    jumlah investasi yang sangat rendah jika dibandingkan dengan bertrading pada bursa saham."
 
-#, fuzzy
-#| msgid "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
 msgid ""
 "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are\n"
 "                    closed when sold by the client, upon hitting the 'stop loss' or 'stop profit' level."
-msgstr "Kontrak Spread %1 memerlukan 'stop loss' yang akan membatasi jumlah maksimal kerugian yang akan dialami oleh Klien. Jumlah 'stop loss' akan berperan sebagai deposit dan tidak akan ditradingkan hingga Kontrak Spread ditutup. Kontrak Spread akan ditutup setelah terjual melewati batasan 'stop loss' atau 'stop profit'."
+msgstr ""
+"Kontrak Spread %1 memerlukan 'stop loss' yang akan membatasi jumlah maksimal kerugian yang akan dialami oleh Klien. Jumlah 'stop loss' akan berperan sebagai deposit dan tidak akan ditradingkan hingga Kontrak Spread ditutup. Kontrak Spread \n"
+"\n"
+"akan ditutup setelah terjual melewati batasan 'stop loss' atau 'stop profit'."
 
 msgid "%1's Volatility Indices are based on a cryptographically secure random number generator audited for fairness by an independent third party."
 msgstr "Indeks Volatilitas %1 didasarkan pada kriptografi generator angka random aman yang diaudit untuk kejujuran oleh pihak ketiga yang independen."
@@ -693,12 +690,12 @@ msgstr "Memegang gelar Sarjana dalami bidang Pemasaran, Bisnis Administrasi atau
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by %1. The transfer fees are borne by the Client."
 msgstr "Agen Pembayaran bertindak sebagai penukar antara Klien (Pelanggan kami) dan %1. Agen Pembayaran memproses deposit dan penarikan untuk Klien yang ingin menggunakan metode pembayaran tertentu atau mata uang lokal yang tidak ditawarkan oleh %1. Biaya transfer akan ditanggung oleh Klien."
 
-#, fuzzy
-#| msgid "A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier or the low barrier at any time during the period chosen by a trader."
 msgid ""
 "A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier\n"
 "            or the low barrier at any time during the period chosen by a trader."
-msgstr "Kontrak tetap antara akan memberi untung jika market tetap berada diantara (tidak menyentuh) KEDUA batasan tinggi atau rendah kapan saja selama periode yang dipilih oleh trader. Kontrak bergerak keluar akan memberi untung jika pasar menyentuh SALAH SATU batasan tinggi atau batasan rendah selama periode kontrak yang dipilih oleh trader."
+msgstr ""
+"Kontrak tetap antara akan memberi untung jika market tetap berada diantara (tidak menyentuh) KEDUA batasan tinggi atau rendah kapan saja selama periode yang dipilih oleh trader. Kontrak bergerak keluar akan memberi untung jika pasar menyentuh SALAH SATU batasan tinggi \n"
+"atau batasan rendah selama periode kontrak yang dipilih oleh trader."
 
 msgid "A True Partnership"
 msgstr "Kemitraan Sejati"
@@ -838,8 +835,8 @@ msgstr "Pendaftaran Akun"
 msgid "Account Transfer"
 msgstr "Transfer Akun"
 
-msgid "Account balance : %1 %2"
-msgstr "Saldo akun : %1 %2"
+msgid "Account balance: "
+msgstr "Saldo akun Anda: "
 
 msgid "Accounting"
 msgstr "Akuntansi"
@@ -958,12 +955,12 @@ msgstr "Jumlah per poin"
 msgid "An Advanced/Higher/Graduate Diploma or a Bachelor's Degree"
 msgstr "Lanjutan/Tinggi/Lulusan Diploma atau Sarjana"
 
-#, fuzzy
-#| msgid "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target."
 msgid ""
 "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high\n"
 "            price target OR strictly lower than the low price target."
-msgstr "Kontrak Berakhir Antara akan memberi hasil jika harga akhir pasar harus lebih tinggi dari target harga rendah DAN harus lebih rendah dari target harga tinggi. Kontrak Berakhir Diluar akan memberi hasil jika harga akhir pasar SALAH SATU yaitu harus lebih tinggi dari target harga tinggi ATAU harus lebih rendah dari target harga rendah."
+msgstr ""
+"Kontrak Berakhir Antara akan memberi hasil jika harga akhir pasar harus lebih tinggi dari target harga rendah DAN harus lebih rendah dari target harga tinggi. Kontrak Berakhir Diluar akan memberi hasil jika harga akhir pasar SALAH SATU yaitu harus lebih tinggi \n"
+"dari target harga tinggi ATAU harus lebih rendah dari target harga rendah."
 
 msgid "An additional password can be used to restrict access to the cashier."
 msgstr "Kata sandi tambahan dapat digunakan untuk membatasi akses ke kasir."
@@ -1265,10 +1262,8 @@ msgstr "BetOnMarkets.com memiliki lebih dari 400.000 klien dan mencapai $ 1 mili
 msgid "BetOnMarkets.com increases payouts to 100,000 USD, EUR, GBP and AUD"
 msgstr "BetOnMarkets.com meningkatkan hasil trading hingga 100,000 USD, EUR, GBP dan AUD"
 
-#, fuzzy
-#| msgid "BetOnMarkets.com is successfully rebranded Binary.com"
 msgid "BetOnMarkets.com is successfully rebranded %1"
-msgstr "BetOnMarkets.com berhasil merebrending Binary.com"
+msgstr "BetOnMarkets.com berhasil merebrending %1"
 
 msgid "BetOnMarkets.com reaches $1 billion turnover since starting in 1999"
 msgstr "BetOnMarkets.com mencapai $1 milyar omset sejak tahun 1999"
@@ -1291,10 +1286,8 @@ msgstr "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas,
 msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licenced and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2012) and for UK clients by the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>."
 msgstr "Binary (IOM) Ltd, Lantai Satu, Millenium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Berlisensi dan diatur di negara Isle of Man."
 
-#, fuzzy
-#| msgid "Binary options basics"
 msgid "Binary Bot released"
-msgstr "Opsi binary dasar"
+msgstr "Pelepasan Binary Bot"
 
 msgid "Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
 msgstr "Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
@@ -1332,12 +1325,12 @@ msgstr "Binary membuka kantor di Jepang"
 msgid "Binary option"
 msgstr "Opsi binary"
 
-#, fuzzy
-#| msgid "Binary options are easy to understand. They're called 'binary' because there can be only two outcomes - win or lose. If your prediction is correct, you receive a payout that is determined at the start of the trade. If not, you just lose your initial stake."
 msgid ""
 "Binary options are easy to understand. They're called 'binary' because there can be only two outcomes - win or lose. If your prediction is correct, you receive a payout that is determined at the start of the trade. If not, you just lose your\n"
 "            initial stake."
-msgstr "Opsi binary mudah dipahami. Disebut ‘binary’ karena opsi ini hanya memiliki dua pilihan - untung atau rugi. Jika analisa Anda benar, Anda akan memperoleh hasil yang Anda inginkan pada awal trading. Jika tidak, Anda hanya akan kehilangan modal awal."
+msgstr ""
+"Opsi binary mudah dipahami. Disebut ‘binary’ karena opsi ini hanya memiliki dua pilihan - untung atau rugi. Jika analisa Anda benar, Anda akan memperoleh hasil yang Anda inginkan pada awal trading. Jika tidak, Anda hanya akan kehilangan \n"
+"modal awal."
 
 msgid "Binary options basics"
 msgstr "Opsi binary dasar"
@@ -1423,10 +1416,8 @@ msgstr "Dengan menunjukkan penerimaan Anda pada syarat dan ketentuan ini dan ber
 msgid "By registering a software application, website, or product you create or a service you offer (an \"Application\"), you acknowledge that you have read and understood and agree to be bound by these terms."
 msgstr "Dengan mendaftarkan aplikasi software, situs web atau produk yang Anda buat atau layanan yang Anda sediakan (sebuah \"Applikasi\"), Anda mengakui bahwa Anda telah membaca, memahami dan setuju untuk terikat dengan syarat-syarat ini."
 
-#, fuzzy
-#| msgid "By submitting suggestions or other feedback regarding the Binary.com API to the Company (\"Contributions\"), you acknowledge and agree that:"
 msgid "By submitting suggestions or other feedback regarding the %1 API to the Company (\"Contributions\"), you acknowledge and agree that:"
-msgstr "Dengan mengirimkan saran atau masukan lainnya mengenai API Binary.com kepada Perusahaan (\"Kontribusi\"), Anda mengakui dan setuju bahwa:"
+msgstr "Dengan mengirimkan saran atau masukan lainnya mengenai API %1 kepada Perusahaan (\"Kontribusi\"), Anda mengakui dan setuju bahwa:"
 
 msgid "By the 15th of every month, you will receive the commission earned during the previous calendar month."
 msgstr "Pada tanggal 15 setiap bulan, Anda akan menerima komisi yang didapat selama periode bulan sebelumnya."
@@ -1780,7 +1771,7 @@ msgid "Contracts may not expire on a weekend; therefore the expiry date of a con
 msgstr "Kontrak tidak dapat berakhir pada akhir pekan, maka tanggal berakhir kontrak diundur kepada hari Senin berikutnya jika tanggal kontrak berakhir pada hari Sabtu atau Minggu."
 
 msgid "Contracts offered by Binary Investments (Europe) Ltd. have a minimum purchase price of USD/GBP/EUR 5."
-msgstr ""
+msgstr "Kontrak yang ditawarkan oleh Binary Investments (Europe) Ltd. minimal harga pembelian kontrak adalah USD/GBP/EUR 5."
 
 msgid "Contracts sold"
 msgstr "Kontrak terjual"
@@ -1803,10 +1794,8 @@ msgstr "Kontribusikan kreativitas Anda dan kemampuan pemasaran untuk lebih menge
 msgid "Contribute your ideas, energy, and creativity to further the company's dynamic branding efforts"
 msgstr "Sumbangkan ide-ide, energi, dan kreativitas Anda untuk mendinamiskan branding perusahaan"
 
-#, fuzzy
-#| msgid "Contributions to the Binary.com API"
 msgid "Contributions to the %1 API"
-msgstr "Kontribusi API Binary.com"
+msgstr "Kontribusi API %1"
 
 msgid "Contributors"
 msgstr "Kontributor"
@@ -1889,10 +1878,8 @@ msgstr "Saat ini"
 msgid "Current Level"
 msgstr "Tingkat Terkini"
 
-#, fuzzy
-#| msgid "Current time:"
 msgid "Current Time"
-msgstr "Waktu Terkini:"
+msgstr "Waktu Terkini"
 
 msgid "Current password"
 msgstr "Kata sandi saat ini"
@@ -2329,15 +2316,11 @@ msgstr "Terampil berkomunikasi secara lisan dan tulisan"
 msgid "Excellent written and verbal communication skills in both English and Bahasa Malaysia"
 msgstr "Terampil berkomunikasi dalam bahasa Inggris dan Bahasa Malaysia"
 
-#, fuzzy
-#| msgid "Except for the license granted in this Agreement, the Company does not grant you any right, title, or interest in the Binary.com API. You agree to take such actions as the Company may reasonably request to perfect the Company's rights to the Binary.com API."
 msgid "Except for the license granted in this Agreement, the Company does not grant you any right, title, or interest in the %1 API. You agree to take such actions as the Company may reasonably request to perfect the Company's rights to the %1 API."
-msgstr "Kecuali untuk lisensi yang diberikan dalam Perjanjian ini, Perusahaan tidak memberikan Anda hak, kuasa, atau kepentingan dalam API Binary.com. Anda setuju untuk mengambil tindakan tersebut sebagaimana Perusahaan akan meminta untuk menyempurnakan hak Perusahaan berhubungan dengan API Binary.com."
+msgstr "Kecuali untuk lisensi yang diberikan dalam Perjanjian ini, Perusahaan tidak memberikan Anda hak, kuasa, atau kepentingan dalam API %1. Anda setuju untuk mengambil tindakan tersebut sebagaimana Perusahaan akan meminta untuk menyempurnakan hak Perusahaan berhubungan dengan API %1."
 
-#, fuzzy
-#| msgid "Except to the extent your Application contains the Binary.com API, the Company claims no ownership or control over your Application."
 msgid "Except to the extent your Application contains the %1 API, the Company claims no ownership or control over your Application."
-msgstr "Kecuali dimana applikasi Anda berisikan API Binary.com, Perusahaan tidak dapat mengakui kepemilikan atau kontrol pada applikasi Anda."
+msgstr "Kecuali dimana applikasi Anda berisikan API %1, Perusahaan tidak dapat mengakui kepemilikan atau kontrol pada applikasi Anda."
 
 msgid "Exceptional communication skills in English, in both oral and written form"
 msgstr "Terampilan berkomunikasi dalam bahasa Inggris, baik dalam bentuk lisan maupun tulisan"
@@ -2639,10 +2622,8 @@ msgstr "Informasi selanjutnya"
 msgid "Further, the Company, under the above circumstances, or any other, reserves the right to adjust a client's account should any trade result in a disruption, miscarry or aborted trade."
 msgstr "Selanjutnya, Perusahaan, dalam situasi di atas, atau lainnya, berhak untuk menyesuaikan akun pelanggan jika terdapat kontrak yang mengalami perubahan akibat gangguan atau pembatalan kontrak."
 
-#, fuzzy
-#| msgid "Furthermore, the Company disclaims all liability for any malfunctioning, impossibility of access, or poor use conditions of the Binary.com API due to inappropriate equipment, disturbances related to internet service providers, to the saturation of the internet network, and for any other reason."
 msgid "Furthermore, the Company disclaims all liability for any malfunctioning, impossibility of access, or poor use conditions of the %1 API due to inappropriate equipment, disturbances related to internet service providers, to the saturation of the internet network, and for any other reason."
-msgstr "Selain itu, Perusahaan melepaskan semua tanggung jawab bagi setiap kerusakan, ketidakmungkinan akses, atau kondisi penggunaan buruk API Binary.com karena peralatan yang tidak pantas, gangguan yang berhubungan dengan penyedia layanan internet, dengan saturasi jaringan internet, dan untuk alasan lain ."
+msgstr "Selain itu, Perusahaan melepaskan semua tanggung jawab bagi setiap kerusakan, ketidakmungkinan akses, atau kondisi penggunaan buruk API %1 karena peralatan yang tidak pantas, gangguan yang berhubungan dengan penyedia layanan internet, dengan saturasi jaringan internet, dan untuk alasan lain ."
 
 msgid "GBP"
 msgstr "GBP"
@@ -2650,10 +2631,8 @@ msgstr "GBP"
 msgid "GMT"
 msgstr "GMT"
 
-#, fuzzy
-#| msgid "GMT stands for Greenwich Mean Time, the official time used in the UK during winter. In summer, the UK changes to British Summer Time, which is GMT + 1 hour. All times on the Binary.com site use GMT all year round."
 msgid "GMT stands for Greenwich Mean Time, the official time used in the UK during winter. In summer, the UK changes to British Summer Time, which is GMT + 1 hour. All times on the %1 site use GMT all year round."
-msgstr "GMT adalah singkatan dari Greenwich Mean Time, waktu resmi digunakan di Inggris selama musim dingin. Di musim panas perubahan waktu Inggris adalah GMT +1 jam. Seluruh waktu yang digunakan pada website Binary.com adalah G.M.T."
+msgstr "GMT adalah singkatan dari Greenwich Mean Time, waktu resmi digunakan di Inggris selama musim dingin. Di musim panas perubahan waktu Inggris adalah GMT +1 jam. Waktu yang digunakan pada website %1 adalah GMT sepanjang waktu."
 
 msgid "GamCare"
 msgstr "GamCare"
@@ -2888,10 +2867,8 @@ msgstr "Jika Perjanjian ini dihentikan berhubung alasan apapun, maka Anda harus 
 msgid "If we're happy with your results, we'll contact you for an interview and then do background and reference checks."
 msgstr "Jika anda lulus, kami akan menghubungi Anda untuk wawancara termasuk pemeriksaan latar belakang dan referensi."
 
-#, fuzzy
-#| msgid "If you are an affiliate of Binary.com, you must also comply with the Binary.com Affiliate Program Terms and Conditions."
 msgid "If you are an affiliate of %1, you must also comply with the %1 Affiliate Program Terms and Conditions."
-msgstr "Jika Anda adalah afiliasi dari Binary.com, Anda juga harus mematuhi Syarat dan Ketentuan Program Afiliasi Binary.com."
+msgstr "Jika Anda adalah afiliasi dari %1, Anda juga harus mematuhi Syarat dan Ketentuan Program Afiliasi %1."
 
 msgid "If you are developing on our API on behalf of a company or other entity, you represent and warrant that you have full legal authority to register an Application on behalf of that entity and bind it to these Terms. If you are not authorized, you may not accept these Terms or register an Application for someone else."
 msgstr "Jika Anda mengembangkan API kami atas nama perusahaan atau badan lainnya, Anda menyatakan dan menjamin bahwa Anda memiliki kewenangan penuh untuk mendaftarkan Aplikasi atas nama entitas itu dan terikat pada Syarat tersebut. Jika Anda tidak berwenang, maka Anda tidak dapat menerima Persyaratan ini atau mewakili pendaftaran Aplikasi untuk orang lain."
@@ -3010,10 +2987,8 @@ msgstr "Jika anda memilih <strong>waktu berakhir</strong> tertentu, maka <strong
 msgid "If you want to profit from this high demand product then your best option is to partner with the market leader. %1 has been in the business for over 15 years, and has been successful ever since."
 msgstr "Jika Anda ingin memperoleh keuntungan dari produk terlaris ini maka pilihan terbaik Anda adalah untuk bekerjasama dengan pemimpin pasar. %1 sudah beroperasi sejak 15 tahun dan telah berhasil sejak itu."
 
-#, fuzzy
-#| msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='%1'>%2</a>"
 msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:%1'>%1</a>"
-msgstr "Jika Anda ingin informasi lebih lanjut mengenai Agen Pembayaran, silahkan hubungi kami di <a href='%1'>%2</a>"
+msgstr "Jika Anda ingin informasi lebih lanjut mengenai Agen Pembayaran, silahkan hubungi kami di <a href='mailto:%1'>%1</a>"
 
 msgid "If you would like to file a complaint with regards to our service, kindly contact us providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within 1-2 weeks (and at most within 2 months) from receipt of all relevant details."
 msgstr "Jika Anda ingin mengajukan keluhan berkaitan dengan layanan kami, silakan hubungi kami dengan memberikan rincian yang relevan berkaitan dengan keluhan Anda. Kami akan menyelidiki dan akan memberi jawaban kepada keluhan Anda tersebut. Kami biasanya akan memberikan keputusan dalam tempo 1-2 minggu (paling lambat 2 bulan) setelah laporan detail kami terima."
@@ -3024,10 +2999,8 @@ msgstr "Jika Anda adalah broker, kami ingin bekerja sama dengan Anda. Anda akan 
 msgid "If you're an individual trader, you'll appreciate the simplicity, flexibility, and limited risk of binary trading. With %1's low minimum stakes, you'll soon learn how to trade with skill and confidence. And if you have any questions, you're free to access <a class='pjaxload' href='%2'>our helpful support desk</a>."
 msgstr "Jika Anda adalah trader individual, Anda akan menyukai kesederhanaan, fleksibelitas dan risiko terbatas trading binary. Dengan modal minimal pada %1 Anda akan mempelajari bagaimana bertrading dengan keahlian dan keyakinan. Dan jika Anda memiliki pertanyaan, silahkan hubungi <a class='pjaxload' href='%2'>layanan support kami</a>."
 
-#, fuzzy
-#| msgid "If you're looking to build a career, and not a resume, talk to us, Binary.com. We're one of the IT world's most vibrant and progressive workplaces."
 msgid "If you're looking to build a career, and not a resume, talk to us, %1. We're one of the IT world's most vibrant and progressive workplaces."
-msgstr "Jika Anda mencari tempat untuk membangun karir dan bukan hanya sekedar membuat lamaran kerja, hubungi kami di Binary.com. Kami adalah salah satu perusahaan IT tempat bekerja paling dinamis dan progresif."
+msgstr "Jika Anda mencari tempat untuk membangun karir dan bukan hanya sekedar membuat lamaran kerja, hubungi kami di %1. Kami adalah salah satu perusahaan IT tempat bekerja paling dinamis dan progresif."
 
 msgid "If your complaint relates to an outcome of a trade or a transaction and remains unresolved, it will turn into a dispute. Should you be unsatisfied with our response, you can choose to escalate your complaint to the regulator or to an alternative dispute resolution entity."
 msgstr "Jika keluhan anda berkaitan dengan hasil trading atau transaksi masih belum terselesaikan, hal ini merupakan perselisihan. Jika anda tidak puas dengan tanggapan kami, anda dapat memilih untuk membawa keluhan anda kepada regulator atau lembaga penyelesaian alternatif."
@@ -3071,12 +3044,12 @@ msgstr "Untuk bertrading OTC opsi binary, pelanggan perlu memiliki pengetahuan a
 msgid "In classic Silicon Valley style, Hong Kong based hedge fund manager and entrepreneur, Jean-Yves Sireau, starts Regent Markets in his Hong Kong bedroom. He develops the systems, methods and algorithms for implementing a fixed-odds financial betting system. Jean-Yves's vision is to create a market in the simplest of all derivatives contracts - the fixed-odds bet - and to offer ordinary investors the chance to make small bets. Until his innovation, binary options are normally only traded in large quantities."
 msgstr "Dengan gaya klasik Silicon Valley, seorang manager pengelola dana berjiwa pengusaha bernama Jean-Yves Sireau memulai Regent Markets dari kamar tidurnya di Hong Kong. Beliau membangun sistem, metode dan algoritma untuk mengimplementasikannya pada sistem trading financial fixed-odds. Visi Jean-Yves adalah untuk menciptakan pasar pada kontrak derivatif sederhana - trading fixed-odds - dan menawarkan kesempatan bagi investor umum untuk membeli kontrak berukuran kecil. Hingga inovasi beliau, opsi binary biasanya hanya ditradingkan dalam jumlah besar."
 
-#, fuzzy
-#| msgid "In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro will rise in relation to the value of the US dollar."
 msgid ""
 "In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro\n"
 "            will rise in relation to the value of the US dollar."
-msgstr "Pada pasar valuta asing, para trader dapat membeli kontrak berdasarkan pertukaran harga dari satu mata uang ke mata uang lainnya. Sebagai contoh jika trader memilih kontrak Naik pada market EUR/USD, hal ini berarti mereka menganalisa nilai mata uang Euro akan lebih tinggi dari harga mata uang dolar AS."
+msgstr ""
+"Pada pasar valuta asing, para trader dapat membeli kontrak berdasarkan pertukaran harga dari satu mata uang ke mata uang lainnya. Sebagai contoh jika trader memilih kontrak Naik pada market EUR/USD, hal ini berarti mereka menganalisa nilai mata uang Euro \n"
+"akan lebih tinggi dari harga mata uang dolar AS."
 
 msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
 msgstr "Untuk mengakses aplikasi mobile kami dan aplikasi pihak ketiga lainnya, Anda harus membuat Token API."
@@ -3111,15 +3084,11 @@ msgstr "Pada penutupan harga bursa atau indeks bursa saham tertentu, harga penut
 msgid "In the course of provision of services we shall, where applicable, conduct an appropriateness test in order to determine whether, in our view and on the basis of the information provided by you, you have the necessary knowledge and experience in the investment field to understand the risks involved in the specific type of product or service offered or demanded."
 msgstr "Dalam proses pelayanan yang kami berikan, kami perlu melakukan uji kelayakan untuk menentukan apakah dalam pandangan kami dan atas dasar informasi yang Anda berikan, Anda memiliki pengetahuan dan pengalaman yang diperlukan dalam bidang investasi untuk memahami risiko yang terlibat dalam jenis produk atau jasa tertentu yang ditawarkan atau diminta."
 
-#, fuzzy
-#| msgid "In the event of any conflict between the content in this document and the above documents, this document controls your use of the Binary.com API. If you disagree with any of the provisions in these Terms, do not access or use the Binary.com API."
 msgid "In the event of any conflict between the content in this document and the above documents, this document controls your use of the %1 API. If you disagree with any of the provisions in these Terms, do not access or use the %1 API."
-msgstr "Dalam hal terjadi konflik antara isi dalam dokumen ini dan dokumen di atas, dokumen ini mengontrol penggunaan API Binary.com. Jika Anda tidak setuju dengan salah satu ketentuan dalam Ketentuan ini, maka jangan mengakses atau menggunakan API Binary.com."
+msgstr "Dalam hal terjadi konflik antara isi dalam dokumen ini dan dokumen di atas, dokumen ini mengontrol penggunaan API %1. Jika Anda tidak setuju dengan salah satu ketentuan dalam Ketentuan ini, maka jangan mengakses atau menggunakan API %1."
 
-#, fuzzy
-#| msgid "In the event that the Company is aware of an Affiliate who is in breach of any of the above provisions, the Company shall have the right, in addition to any other right or remedy available to it under this Agreement or applicable law, to immediately block the Affiliate's access to this Program. The Affiliate hereby irrevocably waives its rights to, and shall indemnify the Company and any member of the Binary group of companies for, any claim or demand made against the Company or any member of the Binary group of companies, their directors, officers, shareholders, employees or against the Binary.com website in respect of such action taken by the Company."
 msgid "In the event that the Company is aware of an Affiliate who is in breach of any of the above provisions, the Company shall have the right, in addition to any other right or remedy available to it under this Agreement or applicable law, to immediately block the Affiliate's access to this Program. The Affiliate hereby irrevocably waives its rights to, and shall indemnify the Company and any member of the Binary group of companies for, any claim or demand made against the Company or any member of the Binary group of companies, their directors, officers, shareholders, employees or against the %1 website in respect of such action taken by the Company."
-msgstr "Pada saat Perusahaan mengetahui dimana Affiliasi telah melanggar perjanjian diatas, maka Perusahaan berhak untuk memblokir akses Affiliasi tersebut pada Program ini. Affiliasi tersebut bagaimanapun tidak dapat membebaskan haknya, dan perlu melakukan ganti rugi kepada Perusahaan atau anggota dari grup Perusahaan Binary jika terdapat tuntutan atau permintaan yang diajukan kepada Perusahaan atau anggota grup perusahaan Binary baik itu direktur, petugas, pemegang saham, karyawan atau terhadap situs Binary.com sehubungan dengan tindakan yang diambil oleh perusahaan."
+msgstr "Pada saat Perusahaan mengetahui dimana Affiliasi telah melanggar perjanjian diatas, maka Perusahaan berhak untuk memblokir akses Affiliasi tersebut pada Program ini. Affiliasi tersebut bagaimanapun tidak dapat membebaskan haknya, dan perlu melakukan ganti rugi kepada Perusahaan atau anggota dari grup Perusahaan Binary jika terdapat tuntutan atau permintaan yang diajukan kepada Perusahaan atau anggota grup perusahaan Binary baik itu direktur, petugas, pemegang saham, karyawan atau terhadap situs %1 sehubungan dengan tindakan yang diambil oleh perusahaan."
 
 msgid "In the unlikely event of BIEL suffering an investment default and not being able to meet its obligations, BIEL is a member of the Malta Investor Compensation Scheme which covers the first €20,000 of any claim. Whether you are able to claim depends on the type of business and your personal circumstances."
 msgstr "Dalam hal dimana BIEL mengalami kelalaian investasi dan tidak mampu memenuhi kewajibannya, BIEL adalah anggota Malta Investor Compensation Scheme (Skema Kompensasi Investor Malta) yang menjamin klaim manapun bagi €20,000 pertama. Apakah Anda dapat mengklaim tergantung kepada jenis usaha dan keadaan pribadi Anda."
@@ -3184,10 +3153,8 @@ msgstr "Langsung"
 msgid "Insufficient balance"
 msgstr "Saldo tidak mencukupi"
 
-#, fuzzy
-#| msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='%2'>hear from you!</a>"
 msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:%2'>hear from you!</a>"
-msgstr "Tertarik, bagaimana langkah selanjutnya? Jika Anda dapat menawarkan metode pembayaran tunai atau pembayaran lokal yang tidak disediakan oleh %1 dan Anda memiliki track record yang baik, maka kami ingin <a href='%2'>mendengar balasan Anda!</a>"
+msgstr "Tertarik, bagaimana langkah selanjutnya? Jika Anda dapat menawarkan metode pembayaran tunai atau pembayaran lokal yang tidak disediakan oleh %1 dan Anda memiliki track record yang baik, maka kami ingin <a href='mailto:%2'>mendengar balasan Anda!</a>"
 
 msgid "Interested? Why not try a virtual account"
 msgstr "Tertarik? Mengapa tidak mencoba akun virtual"
@@ -4452,10 +4419,8 @@ msgstr "Perusahaan kami terus berkembang dan memperoleh perijinan dari Isle of M
 msgid "Our costs and charges for depositing and withdrawing money are set out <a href=\"%1\" class=\"pjaxload\">here</a>. Please be aware of all costs and charges that apply to you because they will affect your profitability."
 msgstr "Berbagai biaya yang kami kenakan pada deposit dan penarikan dapat dilihat <a href=\"%1\" class=\"pjaxload\">disini</a>. Ketahui semua biaya yang dikenakan berhubung hal tersebut akan mempengaruhi profitabilitas Anda."
 
-#, fuzzy
-#| msgid "Our customers clearly like us. In mid-2014, Binary.com has over 100 million historical transactions and over 130,000 new daily transactions."
 msgid "Our customers clearly like us. In mid-2014, %1 has over 100 million historical transactions and over 130,000 new daily transactions."
-msgstr "Pelanggan kami sangat jelas seperti kami. Pada pertengahan 2014 Binary.com sudah memiliki transaksi historis lebih dari 100 juta transaksi dan lebih dari 130,000 transaksi harian."
+msgstr "Pelanggan kami sangat jelas seperti kami. Pada pertengahan 2014 %1 sudah memiliki transaksi historis lebih dari 100 juta transaksi dan lebih dari 130,000 transaksi harian."
 
 msgid "Our data feed is designed to be one of the best and most robust available for a trading environment."
 msgstr "Data feed kami dirancang untuk menjadi salah satu yang terbaik dan paling kuat yang tersedia untuk lingkungan trading."
@@ -4617,7 +4582,7 @@ msgid "Personal Details"
 msgstr "Data Pribadi"
 
 msgid "Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
-msgstr ""
+msgstr "Orang dengan pengetahuan mendalam mengenai pasar keuangan atau instrumen lainnya dilarang bertrading pada situs ini."
 
 msgid "Pip"
 msgstr "Pip"
@@ -4742,10 +4707,8 @@ msgstr "Silahkan tentukan interval cek-realitas pilihan Anda dalam menit"
 msgid "Please submit a valid %1."
 msgstr "Silakan kirim %1 yang berlaku."
 
-#, fuzzy
-#| msgid "Please submit the above information to <a href='%1'>%2</a>."
 msgid "Please submit the above information to <a href='mailto:%1'>%1</a>."
-msgstr "Silahkan kirim informasi diatas ke <a href='%1'>%2</a>."
+msgstr "Silahkan kirim informasi diatas ke <a href='mailto:%1'>%1</a>."
 
 msgid "Please try again."
 msgstr "Silahkan coba kembali."
@@ -5029,10 +4992,8 @@ msgstr "Regent Markets menerima dana untuk menyediakan layanan trading finansial
 msgid "Regent Markets sets up a programming centre in Cyberjaya, Malaysia"
 msgstr "Regent Markets mendirikan pusat pemrograman di Cyberjaya, Malaysia"
 
-#, fuzzy
-#| msgid "Regent Pacific Group Ltd., the Hong Kong-listed founding shareholder of Binary.com, <a href='%1' target='_blank'>disposes of its stake</a> at a valuation of US$ 50.5 million."
 msgid "Regent Pacific Group Ltd., the Hong Kong-listed founding shareholder of %1, <a href='%2' target='_blank'>disposes of its stake</a> at a valuation of US$ 50.5 million."
-msgstr "Regent Pacific Group Ltd., terdaftar di Hong Kong salah satu pemegang saham Binary.com, <a href=\"%1\" target=\"_blank\">melepaskan sahamnya</a> pada valuasi US$ 50.5 juta."
+msgstr "Regent Pacific Group Ltd., terdaftar di Hong Kong salah satu pemegang saham %1, <a href='%2' target='_blank'>melepaskan sahamnya</a> pada valuasi US$ 50.5 juta."
 
 msgid "Regent Pacific transaction"
 msgstr "Transaksi Regent Pacific"
@@ -5094,10 +5055,8 @@ msgstr "Bertanggung jawab untuk merekrut, melatih, dan menjaga afiliasi dari neg
 msgid "Responsible for supporting the Group's global recruiting and talent management needs and a broad array of HR-related administrative tasks."
 msgstr "Bertanggung jawab membantu perekrutan Grup global untuk keperluan manajemen bakat dan membawa tugas yang berhubungan dengan administrasi HRD."
 
-#, fuzzy
-#| msgid "Responsible for the pricing of binary options offered on the Binary.com website and the risk management and profitability of its options book."
 msgid "Responsible for the pricing of binary options offered on the %1 website and the risk management and profitability of its options book."
-msgstr "Bertanggung jawab pada harga opsi binary yang ditawarkan pada website Binary.com dan manajemen risiko serta profitabilitas buku opsi."
+msgstr "Bertanggung jawab pada harga opsi binary yang ditawarkan pada website %1 dan manajemen risiko serta profitabilitas buku opsi."
 
 msgid "Responsible for the processing of client payments, assisting with the management accounts of the companies within our group, and more."
 msgstr "Bertanggung jawab memproses pembayaran pelanggan, membantu manajemen grup akuntan perusahaan dan banyak lagi."
@@ -5129,10 +5088,8 @@ msgstr "Mengulas, mengembangkan dan meningkatkan Perl, C++ dan kode R yang digun
 msgid "Review, develop and enhance codes used in option pricing and real time risk management programs"
 msgstr "Mengulas, mengembangkan dan meningkatkan kode yang digunakan dalam penentuan harga opsi pada program manajemen risiko secara real time"
 
-#, fuzzy
-#| msgid "Revisions to the Binary.com API"
 msgid "Revisions to the %1 API"
-msgstr "Revisi API Binary.com"
+msgstr "Revisi API %1"
 
 msgid "Revoke access"
 msgstr "Mencabut akses"
@@ -5609,10 +5566,8 @@ msgstr "Istilah & Penghentian"
 msgid "Terminate this Agreement by giving a minimum of seven days written notice to you."
 msgstr "Mengakhiri Perjanjian ini dengan memberikan minimal tujuh hari pemberitahuan tertulis kepada Anda."
 
-#, fuzzy
-#| msgid "Terminate your use of the Binary.com API; or"
 msgid "Terminate your use of the %1 API; or"
-msgstr "Menghentikan penggunaan API Binary.com atau"
+msgstr "Menghentikan penggunaan API %1 atau"
 
 msgid "Termination"
 msgstr "Pemutusan"
@@ -5647,30 +5602,22 @@ msgstr "Kam"
 msgid "Thank you for signing up! Please check your email to retrieve the verification token."
 msgstr "Terima kasih telah mendaftar! Silahkan cek email Anda untuk memperoleh token verifikasi."
 
-#, fuzzy
-#| msgid "The Binary.com API has usage limits enforced to prevent abuse and/or repurposing of the Binary.com API. These usage limits may be changed in the future without notice. If you consistently exceed the usage limit or otherwise abuse the service, we may block your access to the Binary.com API."
 msgid "The %1 API has usage limits enforced to prevent abuse and/or repurposing of the %1 API. These usage limits may be changed in the future without notice. If you consistently exceed the usage limit or otherwise abuse the service, we may block your access to the %1 API."
-msgstr "API Binary.com memiliki batas penggunaan untuk mencegah penyalahgunaan dan/atau pengusulan kembali API Binary.com. Batas penggunaan ini dapat berubah di masa depan tanpa pemberitahuan. Jika Anda secara konsisten melebihi batas penggunaan atau menyalahgunaan layanan maka kami dapat memblokir akses Anda ke dalam API Binary.com."
+msgstr "API %1 memiliki batas penggunaan untuk mencegah penyalahgunaan dan/atau pengusulan kembali API %1. Batas penggunaan ini dapat berubah di masa depan tanpa pemberitahuan. Jika Anda secara konsisten melebihi batas penggunaan atau menyalahgunaan layanan maka kami dapat memblokir akses Anda ke dalam API %1."
 
-#, fuzzy
-#| msgid "The Binary.com Order Execution Policy."
 msgid "The %1 Order Execution Policy."
-msgstr "Kebijakan Eksekusi Order Binary.com."
+msgstr "Kebijakan Eksekusi Order %1."
 
-#, fuzzy
-#| msgid "The Binary.com Privacy and Security Policy;"
 msgid "The %1 Privacy and Security Policy;"
-msgstr "Privasi dan Kebijakan Keamanan Binary.com."
+msgstr "Privasi dan Kebijakan Keamanan %1;"
 
 msgid "The %1 Quantitative Analytics group is responsible for the pricing of binary options offered on our website, as well as the risk management and profitability of its options book. Processing over a million transactions each day, the company manages a book of exotic options which arguably exceeds in complexity that of the typical derivatives desk."
 msgstr ""
 "Grup Quantitative Analytics %1 bertanggung jawab atas harga opsi binary yang ditawarkan pada website kami, \n"
 "serta manajemen risiko dan profitabilitas buku opsinya. Memproses lebih dari satu juta transaksi setiap hari, perusahaan mengelola buku opsi eksotis yang dapat dikatakan melebihi kompleksitas usaha derivatif pada umumnya."
 
-#, fuzzy
-#| msgid "Terms and Conditions"
 msgid "The %1 Terms and Conditions;"
-msgstr "Syarat dan Kondisi"
+msgstr "Syarat dan Kondisi %1;"
 
 msgid "The %1 website is protected by certain copyrights."
 msgstr "Website %1 dilindungi oleh hak cipta."
@@ -5714,10 +5661,8 @@ msgstr "Rata rata"
 msgid "The Binary.com website's static content (CSS, Javascript) is available as the <a target='_blank' href='%1'>binary-static</a> open-source project on github. Would you like to re-skin the Binary.com website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes."
 msgstr "Statik konten Binary.com (CSS, Javascript) tersedia pada proyek open-source <a target='_blank' href='%1'>binary-statik</a> pada github. Apakah Anda ingin merubah website Binary.com atau memperbaiki kecocokan browser, kecepatan website atau tampilan Javascript?. Silahkan lihat proyek dan kirimkan kritik dan saran perubahan kode Anda."
 
-#, fuzzy
-#| msgid "The Company does not guarantee that the Binary.com API it provides will function without interruption or errors in functioning. In particular, the operation of the Binary.com API may be interrupted due to maintenance, updates, or system or network failures. The Company disclaims all liability for damages caused by any such interruption or errors in functioning."
 msgid "The Company does not guarantee that the %1 API it provides will function without interruption or errors in functioning. In particular, the operation of the %1 API may be interrupted due to maintenance, updates, or system or network failures. The Company disclaims all liability for damages caused by any such interruption or errors in functioning."
-msgstr "Perusahaan tidak menjamin dimana API Binary.com akan memberikan fungsinya tanpa gangguan atau error pada saat berfungsi. Khususnya, pengoperasian API Binary.com mungkin akan mengalami ganguan berhubung perbaikan, perbaruan atau masalah system dan kegagalan network. Perusahaan melepaskan semua tanggung jawab atas kerusakan yang disebabkan oleh gangguan tersebut atau kesalahan dalam fungsi."
+msgstr "Perusahaan tidak menjamin dimana API %1 akan memberikan fungsinya tanpa gangguan atau error pada saat berfungsi. Khususnya, pengoperasian API %1 mungkin akan mengalami ganguan berhubung perbaikan, perbaruan atau masalah system dan kegagalan network. Perusahaan melepaskan semua tanggung jawab atas kerusakan yang disebabkan oleh gangguan tersebut atau kesalahan dalam fungsi."
 
 msgid "The Company does not provide a market amongst or between Clients for investments, securities, derivatives or speculations. Each financial contract purchased by a Client via this site is an individual agreement between that Client and the Company and is not a security, nor is it transferable, negotiable or assignable to or with any third party."
 msgstr "Perusahaan tidak menyediakan pasar di antara atau antara Pelanggan untuk investasi, sekuritas, turunan atau spekulasi. Setiap kontrak trading finansial yang dibeli oleh Pelanggan melalui situs ini adalah perjanjian individual antara Pelanggan dan Perusahaan dan tidak terjamin, juga bukan dipindahtangankan, dinegosiasikan atau dapat ditetapkan kepada atau dengan pihak ketiga."
@@ -5725,10 +5670,8 @@ msgstr "Perusahaan tidak menyediakan pasar di antara atau antara Pelanggan untuk
 msgid "The Company has and retains the right, to terminate any event or trade, including but not limited to the occurrence of any of the above events."
 msgstr "Perusahaan memiliki dan mempertahankan hak, untuk menghentikan setiap kegiatan atau trading dan termasuk peristiwa diatas."
 
-#, fuzzy
-#| msgid "The Company is not liable for loss or damage of any kind whatsoever arising as a result of information or prices published on or furnished through the Binary.com API, or any errors or omissions of the Binary.com API;"
 msgid "The Company is not liable for loss or damage of any kind whatsoever arising as a result of information or prices published on or furnished through the %1 API, or any errors or omissions of the %1 API;"
-msgstr "Perusahaan tidak bertanggung jawab atas kehilangan atau kerusakan apapun apapun yang timbul sebagai akibat dari informasi atau harga diterbitkan pada atau dilengkapi melalui API Binary.com, atau kesalahan atau kelalaian dari API Binary.com."
+msgstr "Perusahaan tidak bertanggung jawab atas kehilangan atau kerusakan apapun apapun yang timbul sebagai akibat dari informasi atau harga diterbitkan pada atau dilengkapi melalui API %1, atau kesalahan atau kelalaian dari API %1;"
 
 msgid "The Company is not under any obligation of confidentiality with respect to the Contributions;"
 msgstr "Perusahaan tidak memiliki kewajiban kerahasiaan sehubungan dengan Kontribusi."
@@ -5739,10 +5682,8 @@ msgstr "Perusahaan tidak membuat klaim bahwa website %1 akan terganggu atau meny
 msgid "The Company may change the commission structure at any time at its sole and absolute discretion. We will endeavour to ensure affiliates are notified when changes have been made to the commission structure."
 msgstr "Perusahaan dapat mengubah struktur komisi setiap saat atas kebijakannya dan mutlak. Kami akan berusaha untuk memastikan afiliasi akan diberitahu ketika perubahan telah dibuat mengenai struktur komisi."
 
-#, fuzzy
-#| msgid "The Company may change, suspend, terminate or discontinue any aspect of the Binary.com API, including the availability of any services, information features or functions accessible by means of the Binary.com API, on no less than seven days advance notice to you."
 msgid "The Company may change, suspend, terminate or discontinue any aspect of the %1 API, including the availability of any services, information features or functions accessible by means of the %1 API, on no less than seven days advance notice to you."
-msgstr "Perusahaan dapat mengubah, menangguhkan, menghentikan atau menghentikan setiap aspek dari API Binary.com, termasuk ketersediaan setiap layanan, fitur informasi atau fungsi dapat diakses dengan cara API Binary.com, pemberitahuan tidak kurang dari tujuh hari di awal untuk Anda ."
+msgstr "Perusahaan dapat mengubah, menangguhkan, menghentikan atau menghentikan setiap aspek dari API %1, termasuk ketersediaan setiap layanan, fitur informasi atau fungsi dapat diakses dengan cara API %1, pemberitahuan tidak kurang dari tujuh hari di awal untuk Anda."
 
 msgid "The Company may from time to time inform you about changes on the website, new services and promotions. If you, however, wish to opt out of such a service and do not wish to receive any direct marketing data you can either unsubscribe to the service or email our customer support team. If you decide to opt in again into receiving promotional material, you can also do so by contacting us."
 msgstr "Perusahaan dari waktu ke waktu menginformasikan tentang perubahan pada website, layanan baru dan promosi. Jika Anda, bagaimanapun, ingin memilih keluar dari layanan tersebut dan tidak ingin menerima data pemasaran langsung maka Anda dapat berhenti berlangganan layanan atau mengirim email kepada tim customer support. Jika Anda memutuskan untuk memilih lagi untuk menerima materi promosi, Anda juga dapat melakukannya dengan menghubungi kami."
@@ -5759,10 +5700,8 @@ msgstr "Perusahaan dapat menggunakan atau mengungkapkan (atau memilih untuk tida
 msgid "The Company may, from time to time, at its sole discretion, or as required by regulations in place to conduct appropriate \"Know Your Customer\" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and may at its sole discretion suspend an account until satisfactory identification information, evidence of identity and address, source of funds and/or source of wealth have been provided. Know Your Customer documentation will be required when a Client deposits money in the account. In the case of a client opening an account with Binary (Europe) Ltd, the threshold for verifying clients is on cumulative withdrawals of EUR 2,300."
 msgstr "Perusahaan dapat, dari waktu ke waktu, dengan kebijakannya sendiri, atau berdasarkan peraturan dapat melakukan prosedur \"Know Your Customer\" dan memerlukan Pelanggan untuk memberikan bukti identitas (seperti copy diaktakan paspor atau lainnya cara verifikasi identitas dimana Perusahaan dianggap diperlukan dalam hal ini) dan mungkin atas kebijakannya sendiri menangguhkan proses identifikasi hingga informasi akun, bukti identitas dan alamat, sumber dana dan/atau sumber kekayaan telah diterima. Dokumentasi Know Your Customer akan diperlukan jika Klien mendeposit dana kedalam akun. Dalam hal klien mendaftar pada Binary (Europe) Ltd, batas untuk memverifikasi klien adalah pada penarikan kumulatif sebesar EUR 2,300 setara dengan USD10,000."
 
-#, fuzzy
-#| msgid "The Company provides the Binary.com API on an \"as is\" and \"as available\" basis with no warranties, either express or implied, of any kind. To the fullest extent permissible under applicable law, the Company disclaim any and all warranties and representations, including, without limitation, any implied warranties of merchantability, fitness for a particular purpose, title, accuracy of data, and non-infringement."
 msgid "The Company provides the %1 API on an \"as is\" and \"as available\" basis with no warranties, either express or implied, of any kind. To the fullest extent permissible under applicable law, the Company disclaim any and all warranties and representations, including, without limitation, any implied warranties of merchantability, fitness for a particular purpose, title, accuracy of data, and non-infringement."
-msgstr "Perusahaan menyediakan API Binary.com pada \"sebagaimana adanya\" dan dasar \"sebagaimana tersedia\" tanpa jaminan, baik tersurat maupun tersirat. Untuk sepenuhnya diizinkan oleh hukum yang berlaku, Perusahaan melepaskan setiap dan semua jaminan dan representasi, termasuk, tanpa batasan, jaminan tersirat tentang diperjualbelikan, kesesuaian untuk tujuan tertentu, judul, akurasi data, dan tanpa pelanggaran."
+msgstr "Perusahaan menyediakan API %1 pada \"sebagaimana adanya\" dan dasar \"sebagaimana tersedia\" tanpa jaminan, baik tersurat maupun tersirat. Untuk sepenuhnya diizinkan oleh hukum yang berlaku, Perusahaan melepaskan setiap dan semua jaminan dan representasi, termasuk, tanpa batasan, jaminan tersirat tentang diperjualbelikan, kesesuaian untuk tujuan tertentu, judul, akurasi data, dan tanpa pelanggaran."
 
 msgid "The Company provides the %1 website on an “as is” and “as available” basis, and gives no warranty that the %1 website will be free of errors, or that errors will be corrected, or that our website is free of any third party interferences such as hackers or any other harmful components that arise outside of the Company's control."
 msgstr "Perusahaan memberikan website %1 pada \"sebagaimana adanya\" dan dasar \"sebagaimana tersedia\", dan tidak memberikan garansi bahwa situs %1 akan bebas dari kesalahan, atau bahwa kesalahan akan diperbaiki, atau bahwa website kami adalah bebas dari gangguan pihak ketiga seperti hacker atau komponen berbahaya lainnya yang timbul di luar kendali Perusahaan."
@@ -5773,10 +5712,8 @@ msgstr "Perusahaan menerima aduan yang mungkin melibatkan Badan Penyelesaian Sen
 msgid "The Company reserves the right in its sole discretion to refuse and/or cancel services, charge deposit and/or withdrawal fees to anyone for any reasons including, but not limited to:"
 msgstr "Perusahaan memiliki hak atas kebijakannya sendiri untuk menolak dan/atau membatalkan layanan kepada siapapun untuk alasan apapun termasuk mengenakan biaya tambahan pada deposit atau penarikan kepada siapa saja, tetapi tidak terbatas pada:"
 
-#, fuzzy
-#| msgid "The Company reserves the right to restrict client trading and/or cancel or reverse transactions in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug or glitch in our website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, or manifest mis-calculation of prices or other manifest error. Clients have a duty to report to the Company any such problems, errors or suspected system inadequacies that they may experience and may not abuse of or arbitrage such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
 msgid "The Company reserves the right to cancel/reverse transactions or amend the contractual terms (including, but not limited to, entry and exit spot) in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug or glitch in our website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, or manifest mis-calculation of prices or other obvious errors (\"Manifest Errors\"). Clients have a duty to report to the Company any such problems, errors or suspected system inadequacies that they may experience and may not abuse of or arbitrage such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Any amendments to the contractual terms (including, but not limited to, entry and exit spot) of Manifestly Erroneous contracts shall be reasonable and fair. Monies exchanged between oneself and the Company in connection with Manifestly Erroneous contracts shall be returned to the recipient according to the amendments made to the contractual terms (including, but not limited to, entry and exit spot). You further acknowledge and agree that the Company will not be held liable or responsible, whether directly or indirectly, for any loss, expenses or damage caused or alleged to be caused by or in connection with a Manifest Error."
-msgstr "Perusahaan berhak untuk membatasi trading klien dan/atau membatalkan atau membalikkan transaksi jika kontrak yang diperoleh atau dijual dengan harga yang tidak mencerminkan harga pasar wajar atau yang diperoleh atau dijual pada tingkat abnormal yaitu dengan risiko rendah akibat kesalahan pemrograman yang tidak terdeteksi, bug atau kesalahan dalam perangkat lunak website kami, data pasar yang diterima atau keterlambatan harga kontrak, kesalahan data feed, kutipan tambahan, parameter harga yang salah, atau perhitungan harga mengalami gangguan atau kesesatan yang terjadi lainnya. Klien memiliki kewajiban untuk melaporkan kepada Perusahaan jika terjadi masalah seperti, kesalahan atau kekurangan sistem yang mungkin mereka alami dan tidak menyalahgunakan atau memanfaatkan masalah sistem tersebut atau kesalahan untuk keuntungan pribadi. Perusahaan akan berusaha untuk menyelesaikan setiap kesulitan seperti tersebut dalam waktu sesingkat mungkin. Pihak yang memiliki pengetahuan dalam mengenai trading financial atau instrumen pasar lainnya adalah dilarang untuk bertrading pada website ini."
+msgstr "Perusahaan berhak untuk membatalkan/membalikkan transaksi atau mengubah persyaratan kontrak (termasuk, namun tidak terbatas pada, spot awal dan akhir) dalam hal dimana setiap kontrak yang diperoleh atau dijual dengan harga yang tidak mencerminkan harga pasar secara wajar atau yang diakuisisi atau dijual pada tingkat resiko rendah yang tidak normal karena kesalahan pemrograman yang tidak terdeteksi, bug atau kesalahan dalam perangkat lunak website kami, data feed pasar atau keterlambatan pemunculan harga kontrak, kesalahan data feed, kutipan liar, parameter harga yang salah, atau salah perhitungan harga atau kesalahan jelas lainnya (\"kesalahan Manifest\"). Klien memiliki kewajiban untuk melaporkan kepada Perusahaan jika terjadi masalah seperti kesalahan atau jika terjadi kesalahan sistem dan tidak menyalahgunakan atau memanfaatkan masalah sistem tersebut untuk keuntungan pribadi. Perusahaan akan berusaha untuk menyelesaikan setiap kesulitan seperti tersebut dalam waktu sesingkat mungkin. Setiap perubahan persyaratan kontrak (termasuk, namun tidak terbatas pada spot awal dan spot akhir) kontrak yang bermasalah akan diselesaikan secara adil dan wajar. Jumlah dana yang terlibat pada kontrak yang mengalami masalah akan dikembalikan kepada pelanggan yang bersangkutan sesuai dengan perubahan yang dibuat pada persyaratan kontrak (termasuk, namun tidak terbatas pada, spot awal dan akhir). Secara lebih lanjut, Anda mengakui dan menyetujui bahwa Perusahaan tidak bertanggung jawab, baik secara langsung maupun tidak langsung, atas kerugian, biaya atau kerusakan yang disebabkan atau diduga disebabkan oleh atau berhubungan dengan Kesalahan Manifest."
 
 msgid "The Company reserves the right to change any part of this Agreement at any time. We will endeavour to ensure affiliates are notified when changes have been made to this Agreement, but it is ultimately your responsibility to check these terms and conditions regularly. Your continued participation in our affiliate program after we have posted the changes will constitute binding acceptance of such changes."
 msgstr "Perusahaan berhak untuk mengubah setiap bagian dari perjanjian ini kapan saja. Kami akan berusaha untuk memastikan afiliasi telah mendapat informasi apabila perubahan telah dibuat pada Perjanjian ini, tapi pada akhirnya adalah merupakan tanggung jawab Anda untuk memeriksa syarat dan ketentuan ini secara berkala. Partisipasi Anda untuk tetap bergabung dalam program afiliasi kami setelah kami perubahan dilakukan merupakan penerimaan mutlak pada perubahan tersebut."
@@ -5790,10 +5727,8 @@ msgstr "Perusahaan berhak untuk membatalkan, menunda, atau menahan pembayaran ko
 msgid "The Company shall be entitled to exercise any of its rights or fulfill any of its obligations hereunder (including, but not limited to, its payment obligations) through any member of the Binary group of companies."
 msgstr "Perusahaan berhak untuk melaksanakan segala hak atau memenuhi salah satu kewajibannya (termasuk tidak terbatas pada kewajiban pembayaran) melalui anggota kelompok perusahaan Binary."
 
-#, fuzzy
-#| msgid "The Company shall have no liability arising from orders, investment decisions or purchases of third party goods or services (including financial instruments and currency) based on information published on or furnished through the Binary.com API;"
 msgid "The Company shall have no liability arising from orders, investment decisions or purchases of third party goods or services (including financial instruments and currency) based on information published on or furnished through the %1 API;"
-msgstr "Perusahaan tidak memiliki kewajiban yang timbul dari perintah, keputusan investasi atau pembelian barang atau layanan pihak ketiga (termasuk instrumen keuangan dan mata uang) berdasarkan informasi yang diterbitkan pada atau dilengkapi melalui API Binary.com."
+msgstr "Perusahaan tidak memiliki kewajiban yang timbul dari perintah, keputusan investasi atau pembelian barang atau layanan pihak ketiga (termasuk instrumen keuangan dan mata uang) berdasarkan informasi yang diterbitkan pada atau dilengkapi melalui API %1;"
 
 msgid "The Company shall not be liable to you in contract, or otherwise (including liability for negligence) for any loss, whether direct or indirect, of the Affiliate's business, revenue or profits, anticipated savings, or wasted expenditure, corruption, or destruction of data or for any indirect or consequential loss whatsoever."
 msgstr "Perusahaan tidak akan bertanggung jawab kepada Anda dalam kontrak, atau sebaliknya (termasuk tanggung jawab untuk kelalaian) atas semua kehilangan apakah bisnis langsung atau tidak langsung, dari bisnis Affiliasi, pendapatan atau keuntungan, tabungan, diantisipasi atau pengeluaran sia-sia, korupsi atau kerusakan data untuk setiap kerusakan tidak langsung atau konsekuensi apapun."
@@ -5981,12 +5916,12 @@ msgstr "Layanan trading finansial yang disediakan pada situs ini hanya cocok unt
 msgid "The first step is to open an account. You can <a target='_blank' href='%1'>apply online</a> in just a few minutes."
 msgstr "Langkah pertama adalah untuk mendaftar akun. Anda dapat <a target='_blank' href='%1'>mendaftar online</a> dalam hitungan menit."
 
-#, fuzzy
-#| msgid "The first thing to do is choose the asset you wish to trade, such as gold or oil, stocks or FX rates (The value of a binary option is derived from the price of the underlying asset). A big advantage of trading options is that you are not buying or selling the actual asset."
 msgid ""
 "The first thing to do is choose the asset you wish to trade, such as gold or oil, stocks or FX rates (The value of a binary option is derived from the price of the underlying asset). A big advantage of trading options is that you are not buying\n"
 "            or selling the actual asset."
-msgstr "Hal pertama yang harus dilakukan adalah memilih aset yang ingin anda tradingkan, seperti emas (gold) atau minyak (oil), saham atau harga FX (Nilai opsi binary yang berasal dari harga aset). Kelebihan besar dari trading opsi adalah anda tidak membeli atau menjual aset yang sebenarnya."
+msgstr ""
+"Hal pertama yang harus dilakukan adalah memilih aset yang ingin anda tradingkan, seperti emas (gold) atau minyak (oil), saham atau harga FX (Nilai opsi binary yang berasal dari harga aset). Kelebihan besar dari trading opsi adalah anda tidak membeli \n"
+"atau menjual aset yang sebenarnya."
 
 msgid "The first tick is the first tick after the contract is processed by our servers."
 msgstr "Tik awal adalah tik pertama setelah kontrak diproses oleh server kami."
@@ -6060,22 +5995,18 @@ msgstr "Transaksi yang dilakukan di situs ini dan hubungan antara klien dan peru
 msgid "The two passwords that you entered do not match."
 msgstr "Kedua-dua password yang Anda masukkan tidak cocok."
 
-#, fuzzy
-#| msgid "The use of the Binary.com API is at your own risk, and you assume full responsibility and risk of loss it may suffer as a result of using, or accessing the Binary.com API. Except to the extent that liability under any applicable law or regulation cannot be excluded:"
 msgid "The use of the %1 API is at your own risk, and you assume full responsibility and risk of loss it may suffer as a result of using, or accessing the %1 API. Except to the extent that liability under any applicable law or regulation cannot be excluded:"
-msgstr "Penggunaan API Binary.com adalah risiko Anda sendiri, dan Anda bertanggung jawab penuh dan risiko kerugian yang mungkin akan dialami sebagai akibat dari menggunakan atau mengakses API Binary.com. Kecuali sejauh bahwa kewajiban di bawah hukum atau peraturan yang berlaku tanpa kecualikan:"
+msgstr "Penggunaan API %1 adalah risiko Anda sendiri, dan Anda bertanggung jawab penuh dan risiko kerugian yang mungkin akan dialami sebagai akibat dari menggunakan atau mengakses API %1. Kecuali sejauh bahwa kewajiban di bawah hukum atau peraturan yang berlaku tanpa kecualikan:"
 
-#, fuzzy
-#| msgid "The use, operation or combination of the Binary.com API with non-Binary.com API(s), data, equipment or documentation if liability would have been avoided but for such use, operation, or combination; or"
 msgid "The use, operation or combination of the %1 API with non-%1 API(s), data, equipment or documentation if liability would have been avoided but for such use, operation, or combination; or"
-msgstr "Penggunaan, operasi atau kombinasi dari API Binary.com dengan bukan API Binary.com baik itu data, peralatan atau dokumentasi jika kewajiban dihindari tetapi untuk penggunaan tersebut, operasi atau kombinasi atau"
+msgstr "Penggunaan, operasi atau kombinasi dari API %1 dengan bukan API %1 baik itu data, peralatan atau dokumentasi jika kewajiban dihindari tetapi untuk penggunaan tersebut, operasi atau kombinasi atau"
 
-#, fuzzy
-#| msgid "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends."
 msgid ""
 "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try\n"
 "                out scenarios like - high volatility, low volatility, bullish and bearish trends."
-msgstr "Indeks volatilitas mensimulasikan berbagai situasi pasar riil dan menyediakan platform yang ideal untuk digunakan bertrading dan mencoba strategi pada berbagai kondisi pasar. Indeks ini tergantung kepada volatilitas dan pergerakan cepat yang membantu pengguna untuk mencoba skenario seperti – volatilitas tinggi, volatilitas rendah, trend bullish dan bearish."
+msgstr ""
+"Indeks volatilitas mensimulasikan berbagai situasi pasar riil dan menyediakan platform yang ideal untuk digunakan bertrading dan mencoba strategi pada berbagai kondisi pasar. Indeks ini tergantung kepada volatilitas dan pergerakan cepat yang membantu pengguna untuk mencoba \n"
+"skenario seperti – volatilitas tinggi, volatilitas rendah, trend bullish dan bearish."
 
 msgid "Then, make your trade"
 msgstr "Kemudian, beli kontrak"
@@ -6113,10 +6044,8 @@ msgstr "Ketentuan ini akan diatur dan ditafsirkan sesuai dengan hukum Malta dan 
 msgid "These ST&Cs begin to apply on the date we open your account, and, for any new versions after that, on the date we notify you."
 msgstr "Ketentuan ini berlaku pada saat kami mendaftar akun Anda dan untuk setiap versi baru setelah itu, pada tanggal kami memberitahu Anda."
 
-#, fuzzy
-#| msgid "These ST&Cs form part of and need to be read together with the General Terms and Conditions relating to the use of Binary.com."
 msgid "These ST&Cs form part of and need to be read together with the General Terms and Conditions relating to the use of %1."
-msgstr "Ketentuan ini merupakan bagian yang perlu dibaca bersamaan dengan Syarat dan Ketentuan Umum yang berhubungan dengan penggunakan Binary.com."
+msgstr "Ketentuan ini merupakan bagian yang perlu dibaca bersamaan dengan Syarat dan Ketentuan Umum yang berhubungan dengan penggunakan %1."
 
 msgid "These Supplementary Terms and Conditions (these \"ST&Cs\") apply solely to clients (\"you\") of Binary Investments (Europe) Ltd (\"BIEL\", \"we\" or \"us\") and will govern the relationship between you and us when trading Financial Products (as defined below) with us."
 msgstr "Syarat dan Ketentuan Tambahan (\"ST&Cs\" ini) berlaku semata-mata untuk klien (\"Anda\") dari Binary Investments (Europe) Ltd (\"BIEL\", \"kami\" atau \"kita\") dan akan mengatur hubungan antara Anda dan kami ketika bertrading Produk Keuangan (sebagaimana didefinisikan di bawah) dengan kami."
@@ -6181,10 +6110,8 @@ msgstr "Kontrak ini dipengaruhi oleh peristiwa Aksi Korporasi."
 msgid "This contract won"
 msgstr "Kontrak ini untung"
 
-#, fuzzy
-#| msgid "This document (the \"Agreement\") sets out the terms and conditions (\"Terms\") between \"the Company\" which is Binary Services Ltd (\"we,\" \"us,\" and \"our\"), and you (the person who registered for the Binary.com Application Program Interface (\"API\"); \"you\", or \"your\")."
 msgid "This document (the \"Agreement\") sets out the terms and conditions (\"Terms\") between \"the Company\" which is Binary Services Ltd (\"we,\" \"us,\" and \"our\"), and you (the person who registered for the %1 Application Program Interface (\"API\"); \"you\", or \"your\")."
-msgstr "Dokumen ini (\"Perjanjian\") menetapkan syarat dan kondisi (\"Syarat\") antara \"Perusahaan\" yaitu Binary Services Ltd (\"kami,\" \"kita,\" dan \"milik kami\"), dan Anda (orang yang terdaftar untuk Application Program Interface Binary.com (\"API\"); \"Anda\", atau \"milik Anda\")."
+msgstr "Dokumen ini (\"Perjanjian\") menetapkan syarat dan kondisi (\"Syarat\") antara \"Perusahaan\" yaitu Binary Services Ltd (\"kami,\" \"kita,\" dan \"milik kami\"), dan Anda (orang yang terdaftar untuk Application Program Interface %1 (\"API\"); \"Anda\", atau \"milik Anda\")."
 
 msgid "This document (the \"Agreement\") sets out the terms and conditions between \"the Company\" which is Binary Services Ltd, and you (the person who applied for this program; \"you\", \"your\", or \"Affiliate\"), in relation to your application to setup an affiliate account (and membership of the affiliate program if your application is deemed successful)"
 msgstr "Dokumen ini (\"Perjanjian\") ini menjabarkan syarat dan ketentuan antara \"Perusahaan\" Binary Services Ltd, dan Anda (orang yang menggunakan program ini; \"Anda\" atau \"milik Anda\", atau \"Affiliasi\"), dalam kaitannya dengan aplikasi untuk setup akun afiliasi (dan keanggotaan dari program afiliasi jika aplikasi anda dianggap sukses)"
@@ -6450,10 +6377,8 @@ msgstr "USD"
 msgid "UX / UI experience"
 msgstr "Pengalaman UX/UI"
 
-#, fuzzy
-#| msgid "Under no circumstances shall the Company or its directors or employees be liable under this agreement to you or any third party for any indirect, special, incidental, punitive or consequential loss or damages or any other similar damages under any theory of liability (whether in contract, tort, strict liability or any other theory), that are directly or indirectly attributable to the use of, or the inability to use, the Binary.com API, or any content contained thereon, even if the Company has been informed of the possibility thereof."
 msgid "Under no circumstances shall the Company or its directors or employees be liable under this agreement to you or any third party for any indirect, special, incidental, punitive or consequential loss or damages or any other similar damages under any theory of liability (whether in contract, tort, strict liability or any other theory), that are directly or indirectly attributable to the use of, or the inability to use, the %1 API, or any content contained thereon, even if the Company has been informed of the possibility thereof."
-msgstr "Dalam situasi apapun, Perusahaan atau direksi atau karyawan bertanggung jawab berdasarkan perjanjian ini kepada Anda atau pihak ketiga atas kerugian secara tidak langsung, khusus, insidental, hukuman atau konsekuensial atau kerusakan atau kerugian serupa lainnya di bawah setiap teori kewajiban (baik dalam kontrak , tort, kewajiban yang ketat atau teori lain), yang secara langsung atau tidak langsung disebabkan penggunaan, atau ketidakmampuan untuk menggunakan, API Binary.com, atau konten yang terkandung atasnya, bahkan jika Perusahaan telah diberitahu tentang kemungkinan daripadanya."
+msgstr "Dalam situasi apapun, Perusahaan atau direksi atau karyawan bertanggung jawab berdasarkan perjanjian ini kepada Anda atau pihak ketiga atas kerugian secara tidak langsung, khusus, insidental, hukuman atau konsekuensial atau kerusakan atau kerugian serupa lainnya di bawah setiap teori kewajiban (baik dalam kontrak , tort, kewajiban yang ketat atau teori lain), yang secara langsung atau tidak langsung disebabkan penggunaan, atau ketidakmampuan untuk menggunakan, API %1 atau konten yang terkandung atasnya, bahkan jika Perusahaan telah diberitahu tentang kemungkinan daripadanya."
 
 msgid "Under the Rules, clients may be categorised into one of the following three categories:"
 msgstr "Berdasarkan Peraturan, klien dapat dikategorikan ke dalam salah satu dari tiga kategori berikut:"
@@ -6512,10 +6437,8 @@ msgstr "Upgrade ke Akun Finansial"
 msgid "Upgrade to a Real Account"
 msgstr "Upgrade ke Akun Riil"
 
-#, fuzzy
-#| msgid "Upon the expiration or termination of this Agreement, for whatever reason, all rights and license granted to you in this Agreement, including use of the Binary.com API, shall immediately terminate. You agree to promptly cease all further use of the Binary.com API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of your liability for breach of its obligation under this Agreement. The Company shall not be liable to you for damages of any kind solely as a result of terminating this Agreement in accordance with its terms."
 msgid "Upon the expiration or termination of this Agreement, for whatever reason, all rights and license granted to you in this Agreement, including use of the %1 API, shall immediately terminate. You agree to promptly cease all further use of the %1 API. Termination of this Agreement shall not act as a waiver of any breach of this Agreement and shall not act as a release of your liability for breach of its obligation under this Agreement. The Company shall not be liable to you for damages of any kind solely as a result of terminating this Agreement in accordance with its terms."
-msgstr "Setelah berakhirnya atau penghentian Perjanjian ini, untuk alasan apa pun, semua hak dan lisensi yang diberikan kepada Anda dalam Perjanjian ini, termasuk penggunaan API Binary.com, akan segera diakhiri. Anda setuju untuk segera menghentikan semua penggunaan lebih lanjut dari API Binary.com. Pengakhiran Perjanjian ini tidak akan bertindak sebagai pelepasan dari pelanggaran Perjanjian dan tidak akan bertindak sebagai pelepasan tanggung jawab Anda untuk pelanggaran kewajibannya berdasarkan Perjanjian ini. Perusahaan tidak bertanggung jawab kepada Anda atas kerusakan apapun semata-mata sebagai akibat dari mengakhiri Perjanjian ini sesuai dengan ketentuan-ketentuannya."
+msgstr "Setelah berakhirnya atau penghentian Perjanjian ini, untuk alasan apa pun, semua hak dan lisensi yang diberikan kepada Anda dalam Perjanjian ini, termasuk penggunaan API %1, akan segera diakhiri. Anda setuju untuk segera menghentikan semua penggunaan lebih lanjut dari API %1. Pengakhiran Perjanjian ini tidak akan bertindak sebagai pelepasan dari pelanggaran Perjanjian dan tidak akan bertindak sebagai pelepasan tanggung jawab Anda untuk pelanggaran kewajibannya berdasarkan Perjanjian ini. Perusahaan tidak bertanggung jawab kepada Anda atas kerusakan apapun semata-mata sebagai akibat dari mengakhiri Perjanjian ini sesuai dengan ketentuan-ketentuannya."
 
 msgid "Usage Limit"
 msgstr "Batas Penggunaan"
@@ -6559,10 +6482,8 @@ msgstr "Token verifikasi"
 msgid "Verify new password"
 msgstr "Verifikasi kata sandi baru"
 
-#, fuzzy
-#| msgid "Version 40. Last modified 2016-05-12."
 msgid "Version 41. Last modified 2016-06-27."
-msgstr "Version 40. Diubah terakhir pada 12-05-2016."
+msgstr "Version 41. Diubah terakhir pada 27-06-2016."
 
 msgid "View"
 msgstr "Lihat"
@@ -6717,10 +6638,8 @@ msgstr "Kami menunggu berita baik Anda."
 msgid "We maintain customer balances in cash or cash equivalent. We ensure that 100% of each customer's balance is available for immediate withdrawal, subject to verification."
 msgstr "Kami menjaga jumlah saldo tunai untuk memastikan 100% saldo tunai setiap pelanggan tersedia untuk melakukan penarikan langsung, tertakluk kepada verifikasi."
 
-#, fuzzy
-#| msgid "We may release subsequent versions of the Binary.com API and require that you use those subsequent versions. Your continued use of the APIs following a subsequent release will be deemed your acceptance of modifications."
 msgid "We may release subsequent versions of the %1 API and require that you use those subsequent versions. Your continued use of the APIs following a subsequent release will be deemed your acceptance of modifications."
-msgstr "Kami mungkin akan merilis versi berikutnya dari API Binary.com dan mengharuskan Anda menggunakan versi-versi berikutnya. Jika Anda terus menggunakan API pada rilis berikutnya maka akan dianggap penerimaan Anda termodifikasi."
+msgstr "Kami mungkin akan merilis versi berikutnya dari API %1 dan mengharuskan Anda menggunakan versi-versi berikutnya. Jika Anda terus menggunakan API pada rilis berikutnya maka akan dianggap penerimaan Anda termodifikasi."
 
 msgid "We offer a market-based remuneration structure, an annual cash bonus plan, health benefits for you and your family, travel and internet allowances, and company trips."
 msgstr "Kami menawarkan struktur remunerasi sesuai pasar, bonus tahunan, manfaat kesehatan bagi Anda dan keluarga, tunjangan transportasi dan internet termasuk perjalanan wisata."
@@ -6731,18 +6650,14 @@ msgstr "Kami melarang penggunaan tidak sah insentif, hadiah dan pembayaran lain 
 msgid "We provide here a summary of the policy we maintain in order to manage conflicts of interest in respect of the duties we owe to our clients."
 msgstr "Berikut adalah ringkasan dari kebijakan yang kami mempertahankan untuk mengelola konflik kepentingan sehubungan dengan tugas yang masih kami hutangkan."
 
-#, fuzzy
-#| msgid "We rebrand BetOnMarkets.com as <a target='_blank' href='%1'>www.binary.com</a>. The rebranding is a natural evolution for the platform as it continues to grow market share in the highly competitive field of binary trading. The new brand reflects the nature of the business, and our new tagline - Sharp Prices, Smart Trading - communicates our ethos and commitment to our clients."
 msgid "We rebrand BetOnMarkets.com as <a target='_blank' href='%1'>www.%2</a>. The rebranding is a natural evolution for the platform as it continues to grow market share in the highly competitive field of binary trading. The new brand reflects the nature of the business, and our new tagline - Sharp Prices, Smart Trading - communicates our ethos and commitment to our clients."
-msgstr "Kami merebrending BetOnMarkets.com sebagai <a target='_blank' href='%1'>www.binary.com</a>. Rebranding ini merupakan evolusi alami bagi platform kami berhubung terus berkembang secara kompetitif di dunia trading binary. Brand baru ini mencerminkan bisnis dasar yang ditawarkan dan tagline terbaru kami – Harga Tajam, Trading Pintar – mengkomunikasikan etos dan komitmen kepada Pelanggan kami."
+msgstr "Kami merebrending BetOnMarkets.com sebagai <a target='_blank' href='%1'>www.%2</a>. Rebranding ini merupakan evolusi alami bagi platform kami berhubung terus berkembang secara kompetitif di dunia trading binary. Brand baru ini mencerminkan bisnis dasar yang ditawarkan dan tagline terbaru kami – Harga Tajam, Trading Pintar – mengkomunikasikan etos dan komitmen kepada Pelanggan kami."
 
 msgid "We recognize the importance of protecting your personal and financial information."
 msgstr "Kami memahami betapa pentingnya menjaga informasi pribadi dan transaksi Anda."
 
-#, fuzzy
-#| msgid "We reserve the right to modify, supplement, or replace these Terms at any time. Any material changes will be notified to you. Your continued registration with the Binary.com API and your continued use of the Binary.com API will constitute binding acceptance of such changes."
 msgid "We reserve the right to modify, supplement, or replace these Terms at any time. Any material changes will be notified to you. Your continued registration with the %1 API and your continued use of the %1 API will constitute binding acceptance of such changes."
-msgstr "Kami berhak untuk memodifikasi, menambah atau mengganti syarat ini setiap saat. Setiap perubahan materi akan diberitahukan kepada Anda. Pendaftaran dan penggunaan langsung API Binary.com akan merupakan penerimaan mengikat perubahan tersebut."
+msgstr "Kami berhak untuk memodifikasi, menambah atau mengganti syarat ini setiap saat. Setiap perubahan materi akan diberitahukan kepada Anda. Keikutsertaan Anda pada API %1 dan penggunaan lebih lanjut API %1 akan merupakan penerimaan mengikat pada perubahan tersebut."
 
 msgid "We reserve the right to refuse your referrals' application to open an account (or to close their accounts), as deemed necessary, to comply with any requirements we may periodically establish and/or that may be required under applicable laws, rules, and regulations."
 msgstr "Kami berhak menolak permohonan referral Anda untuk mendaftar akun (atau menutup akun mereka), yang dianggap perlu, untuk mematuhi persyaratan kami mungkin secara berkala membangun dan/atau yang mungkin diperlukan berdasarkan hukum yang berlaku, aturan, dan peraturan."
@@ -6957,10 +6872,8 @@ msgstr "Pada dasarnya keuntungan hanya dapat ditarik menggunakan metode yang sam
 msgid "With %1 you can trade:"
 msgstr "Dengan %1 Anda dapat bertrading:"
 
-#, fuzzy
-#| msgid "With %1 you're in control of how much you can win. You specify a fixed payout amount at the outset, and your stake - what you pay - is then calculated. Binary.com offers payouts from $1 to $50,000."
 msgid "With %1 you're in control of how much you can win. You specify a fixed payout amount at the outset, and your stake - what you pay - is then calculated. %1 offers payouts from $1 to $50,000."
-msgstr "Dengan %1 Anda sepenuhnya mengontrol berapa hasil yang Anda inginkan. Anda yang menentukan jumlah hasil dan modal – apa yang Anda bayar - itulah yang dihitung. Binary.com menawarkan hasil dari $1 hingga $50.000."
+msgstr "Dengan %1 Anda sepenuhnya mengontrol berapa hasil yang Anda inginkan. Anda yang menentukan jumlah hasil dan modal – apa yang Anda bayar - itulah yang dihitung. %1 menawarkan hasil dari $1 hingga $50.000."
 
 msgid "With %1's unique platform, there's no risk of 'slippage' or gapping markets. And no hidden fees."
 msgstr "Dengan platform unik %1, tidak ada risiko 'selip' pada market gapping. Dan tidak ada biaya tersembunyi."
@@ -6974,10 +6887,8 @@ msgstr "Dengan %1, Anda pengontrol. Hanya dengan menetapkan kenaikan dan penurun
 msgid "With %1, your money is secure."
 msgstr "Dengan %1, dana Anda aman."
 
-#, fuzzy
-#| msgid "With regards to tracking your referrals accessing Binary.com via the links on your website or by quoting your affiliate IDs during the sign-up process, the Company shall use all reasonable endeavours to ensure that whenever a client is referred to Binary.com through these links or affiliate IDs, and they subsequently place a contract or otherwise transact with the Company, the relevant client is identified as originating from your referral. However, the Company shall not be liable to you in any way if the Company is unable to identify a client as originating from your referral. Only properly tagged clients can be assigned to you. It is your responsibility to ensure that all links are properly tagged."
 msgid "With regards to tracking your referrals accessing %1 via the links on your website or by quoting your affiliate IDs during the sign-up process, the Company shall use all reasonable endeavours to ensure that whenever a client is referred to %1 through these links or affiliate IDs, and they subsequently place a contract or otherwise transact with the Company, the relevant client is identified as originating from your referral. However, the Company shall not be liable to you in any way if the Company is unable to identify a client as originating from your referral. Only properly tagged clients can be assigned to you. It is your responsibility to ensure that all links are properly tagged."
-msgstr "Sehubungan dengan pelacakan referral Anda dalam mengakses Binary.com melalui link pada website Anda atau dengan mengutip ID afiliasi Anda selama proses pendaftaran, Perusahaan akan menggunakan semua upaya yang wajar untuk memastikan bahwa setiap kali klien tersebut mengakses Binary.com melalui link atau ID afiliasi Anda, dan mereka kemudian membeli kontrak atau bertransaksi dengan Perusahaan, maka klien yang relevan akan diidentifikasi berasal dari referral Anda. Namun, Perusahaan tidak bertanggung jawab jika Perusahaan tidak dapat mengidentifikasi klien sebagai berasal dari referral Anda. Hanya referral yang benar ditandai sebagai klien akan dapat diberikan dibawah Anda. Merupakan tanggung jawab Anda untuk memastikan bahwa semua link adalah ditandai dengan benar."
+msgstr "Sehubungan dengan pelacakan referral Anda dalam mengakses %1 melalui link pada website Anda atau dengan mengutip ID afiliasi Anda selama proses pendaftaran, Perusahaan akan menggunakan semua upaya yang wajar untuk memastikan bahwa setiap kali klien tersebut mengakses %1 melalui link atau ID afiliasi Anda, dan mereka kemudian membeli kontrak atau bertransaksi dengan Perusahaan, maka klien yang relevan akan diidentifikasi berasal dari referral Anda. Namun, Perusahaan tidak bertanggung jawab jika Perusahaan tidak dapat mengidentifikasi klien sebagai berasal dari referral Anda. Hanya referral yang benar ditandai sebagai klien akan dapat diberikan dibawah Anda. Merupakan tanggung jawab Anda untuk memastikan bahwa semua link adalah ditandai dengan benar."
 
 msgid "Withdraw"
 msgstr "Pencairan"
@@ -7033,18 +6944,14 @@ msgstr "Tahun"
 msgid "Yes. Please email us at <a href=\"mailto:%1\">%1</a> for further assistance."
 msgstr "Iya. Silahkan email kami di <a href=\"mailto:%1\">%1</a> untuk bantuan selanjutnya."
 
-#, fuzzy
-#| msgid "You acknowledge and agree that you are solely and exclusively responsible for the control, operation and security of transactions and communications made through its access to or use of the Binary.com API. You acknowledge that there are risks associated with utilizing an internet-based deal execution trading system including, but not limited to, the failure of hardware, software, and internet connections. You acknowledge that the Company does not control signal power, its reception or routing via the internet, configuration of your equipment or reliability of its connection, and the Company shall not be responsible for any communication failures, disruptions, errors, distortions or delays you may experience when trading via the internet using the Binary.com API."
 msgid "You acknowledge and agree that you are solely and exclusively responsible for the control, operation and security of transactions and communications made through its access to or use of the %1 API. You acknowledge that there are risks associated with utilizing an internet-based deal execution trading system including, but not limited to, the failure of hardware, software, and internet connections. You acknowledge that the Company does not control signal power, its reception or routing via the internet, configuration of your equipment or reliability of its connection, and the Company shall not be responsible for any communication failures, disruptions, errors, distortions or delays you may experience when trading via the internet using the %1 API."
-msgstr "Anda mengetahui dan setuju bahwa Anda sepenuhnya bertanggung jawab atas kontrol, operasi dan keamanan transaksi dan komunikasi yang dilakukan melalui akses ke atau penggunaan API Binary.com. Anda mengetahui bahwa terdapat risiko yang terkait dengan memanfaatkan sistem kesepakatan trading eksekusi berbasis internet termasuk, namun tidak terbatas pada, kegagalan dari perangkat keras, perangkat lunak, dan koneksi internet. Anda mengetahui bahwa Perusahaan tidak mengontrol kekuatan sinyal, penerimaan atau routing melalui internet, konfigurasi peralatan Anda atau keandalan koneksi, dan Perusahaan tidak bertanggung jawab atas kegagalan komunikasi, gangguan, kesalahan, distorsi atau keterlambatan yang mungkin akan Anda alami saat bertrading menggunakan API Binary.com."
+msgstr "Anda mengetahui dan setuju bahwa Anda sepenuhnya bertanggung jawab atas kontrol, operasi dan keamanan transaksi dan komunikasi yang dilakukan melalui akses ke atau penggunaan API %1. Anda mengetahui bahwa terdapat risiko yang terkait dengan memanfaatkan sistem kesepakatan trading eksekusi berbasis internet termasuk, namun tidak terbatas pada, kegagalan dari perangkat keras, perangkat lunak, dan koneksi internet. Anda mengetahui bahwa Perusahaan tidak mengontrol kekuatan sinyal, penerimaan atau routing melalui internet, konfigurasi peralatan Anda atau keandalan koneksi, dan Perusahaan tidak bertanggung jawab atas kegagalan komunikasi, gangguan, kesalahan, distorsi atau keterlambatan yang mungkin akan Anda alami saat bertrading menggunakan API %1."
 
 msgid "You acknowledge that, in the course of dealing under these Terms, you may obtain confidential information relating to the Company and its parent, subsidiaries, affiliates or other third party. Such confidential information shall belong solely to the Company."
 msgstr "Anda mengakui bahwa, dalam perjalanan urusan Ketentuan ini, Anda dapat memperoleh informasi rahasia yang berkaitan dengan Perusahaan dan perusahaan utama, anak perusahaan, afiliasi atau pihak ketiga lainnya. Informasi rahasia tersebut akan menjadi milik Perusahaan semata-mata."
 
-#, fuzzy
-#| msgid "You agree that by developing on the Binary.com API, you are entering into a legally binding agreement with the Company."
 msgid "You agree that by developing on the %1 API, you are entering into a legally binding agreement with the Company."
-msgstr "Anda setuju bahwa dengan mengembangkan pada API Binary.com, Anda memasuki perjanjian yang mengikat secara hukum dengan Perusahaan."
+msgstr "Anda setuju bahwa dengan mengembangkan pada API %1, Anda memasuki perjanjian yang mengikat secara hukum dengan Perusahaan."
 
 msgid "You agree that we may use Personal information provided by you in order to conduct appropriate anti-fraud checks. Personal Information that you provide may be disclosed to a credit reference or fraud prevention agency, which may keep a record of that information."
 msgstr "Anda bersetuju dimana kami mungkin akan menggunakan data pribadi Anda untuk melakukan investigasi penipuan. Data pribadi Anda dapat kami berikan kepada pihak berwajib yang akan menjaga kerahasiaan data Anda tersebut."
@@ -7052,10 +6959,8 @@ msgstr "Anda bersetuju dimana kami mungkin akan menggunakan data pribadi Anda un
 msgid "You agree that you will not:"
 msgstr "Anda setuju bahwa Anda tidak akan:"
 
-#, fuzzy
-#| msgid "You also acknowledge that Binary.com may continue to make changes to and enhance the Binary.com API and that those changes and enhancements will be owned by Binary.com. You hereby assign and transfer to the Company all of your right, title and interest in and to any modifications or derivative works of the Binary.com API created by or for you, regardless of whether they were created in accordance with these Terms; such assignment being effective upon creation of such works, and shall include, without limitation, all rights under any intellectual property laws, including copyright. You shall not take any action to jeopardise, encumber, limit or interface in any manner with Binary.com's ownership of and rights with respect to the Binary.com API, or any derivative works or updates thereof or thereto. Any components, parts, or mechanics of any system or API program derived from the Binary.com API, or Binary.com's business practices shall belong solely to Binary.com. Further, you will not, at any time, contest or assist any other third party in contesting the rights of Binary.com in the Binary.com API or any other intellectual property provided in these Terms."
 msgid "You also acknowledge that %1 may continue to make changes to and enhance the %1 API and that those changes and enhancements will be owned by %1. You hereby assign and transfer to the Company all of your right, title and interest in and to any modifications or derivative works of the %1 API created by or for you, regardless of whether they were created in accordance with these Terms; such assignment being effective upon creation of such works, and shall include, without limitation, all rights under any intellectual property laws, including copyright. You shall not take any action to jeopardise, encumber, limit or interface in any manner with %1's ownership of and rights with respect to the %1 API, or any derivative works or updates thereof or thereto. Any components, parts, or mechanics of any system or API program derived from the %1 API, or %1's business practices shall belong solely to %1. Further, you will not, at any time, contest or assist any other third party in contesting the rights of %1 in the %1 API or any other intellectual property provided in these Terms."
-msgstr "Anda juga mengakui bahwa Binary.com dapat terus melakukan perubahan dan meningkatkan API Binary.com dan bahwa perubahan-perubahan dan perangkat tambahan akan dimiliki oleh Binary.com. Anda dengan ini menetapkan dan transfer ke Perusahaan semua hak Anda, judul dan kepentingan dalam dan modifikasi atau karya turunan dari API Binary.com dibuat oleh atau untuk Anda, terlepas dari apakah mereka diciptakan sesuai dengan Ketentuan ini; tugas seperti menjadi efektif setelah penciptaan karya-karya tersebut, dan harus mencakup, tanpa batasan, semua hak di bawah hukum kekayaan intelektual, termasuk hak cipta. Anda tidak akan mengambil tindakan apapun untuk membahayakan, membebani, membatasi atau antarmuka dengan cara apapun dengan kepemilikan Binary.com untuk dan hak sehubungan dengan API Binary.com, atau karya turunan atau update daripadanya atau dalamnya. Setiap komponen, suku cadang, atau mekanisme sistem atau API Program berasal dari API Binary.com, atau praktik bisnis Binary.com akan menjadi milik semata-mata untuk Binary.com. Selanjutnya, Anda tidak akan, setiap saat, kontes atau membantu pihak ketiga lainnya dalam menentang hak-hak Binary.com dalam API Binary.com atau kekayaan intelektual lain dalam Ketentuan ini."
+msgstr "Anda juga mengakui bahwa %1 dapat terus melakukan perubahan dan meningkatkan API %1 dan bahwa perubahan-perubahan dan perangkat tambahan akan dimiliki oleh %1. Anda dengan ini menetapkan dan transfer ke Perusahaan semua hak Anda, judul dan kepentingan dalam dan modifikasi atau karya turunan dari API %1 dibuat oleh atau untuk Anda, terlepas dari apakah mereka diciptakan sesuai dengan Ketentuan ini; tugas seperti menjadi efektif setelah penciptaan karya-karya tersebut, dan harus mencakup, tanpa batasan, semua hak di bawah hukum kekayaan intelektual, termasuk hak cipta. Anda tidak akan mengambil tindakan apapun untuk membahayakan, membebani, membatasi atau antarmuka dengan cara apapun dengan kepemilikan %1 untuk dan hak sehubungan dengan API Binary.com, atau karya turunan atau update daripadanya atau dalamnya. Setiap komponen, suku cadang, atau mekanisme sistem atau API Program berasal dari API Binary.com, atau praktik bisnis %1 akan menjadi milik semata-mata untuk %1. Selanjutnya, Anda tidak akan, setiap saat, kontes atau membantu pihak ketiga lainnya dalam menentang hak-hak %1 dalam API %1 atau kekayaan intelektual lain dalam Ketentuan ini."
 
 msgid "You also have the right to request from us to inform you about the personal data that we process about you and to request its correction where necessary. This request must be made in writing to us and signed by you as the data subject."
 msgstr "Anda juga berhak untuk memperoleh data pribadi yang telah Anda ajukan kepada kami dan memperbaiki data tersebut jika diperlukan. Permohonan ini harus diajukan secara tertulis dan ditanda tangani oleh Anda."
@@ -7153,10 +7058,8 @@ msgstr "Anda perlu mendaftar dan memperoleh App ID sebelum dapat menggunakan ser
 msgid "You irrevocably, non-exclusively license to the Company rights to use your Contributions; and"
 msgstr "Anda sepenuhnya tidak dapat membatalkan, tidak memiliki kekuasaan penuh kepada Perusahaan untuk menggunakan kontribusi Anda dan"
 
-#, fuzzy
-#| msgid "You may cache the Content for up to 24 hours from a request for that Content through the Binary.com API."
 msgid "You may cache the Content for up to 24 hours from a request for that Content through the %1 API."
-msgstr "Anda mungkin dapat menyimpan Konten hingga 24 jam dari permintaan melalui API Binary.com."
+msgstr "Anda mungkin dapat menyimpan Konten hingga 24 jam dari permintaan melalui API %1."
 
 msgid "You may choose to contact us to close your account held with the Company. Your account may be closed if you do not have any open trade positions and if you have complied with the requested \"Know Your Client\" procedures to enable you to withdraw any pending funds in your account."
 msgstr "Anda dapat menghubungi kami untuk menutup akun yang Anda miliki pada Perusahaan. Akun Anda juga dapat ditutup jika Anda tidak memiliki posisi trading dan jika Anda telah diminta untuk melengkapi prosedur \"Know Your Client\" untuk menarik saldo atau dana yang masih tersisa pada akun Anda."
@@ -7164,10 +7067,8 @@ msgstr "Anda dapat menghubungi kami untuk menutup akun yang Anda miliki pada Per
 msgid "You may communicate with us through this website, by email or, exceptionally, by post. Details can be found in the Contact Us page."
 msgstr "Anda dapat berkomunikasi dengan kami melalui website, email atau melalui pos. Rincian dapat ditemukan pada halaman Hubungi Kami."
 
-#, fuzzy
-#| msgid "You may develop Applications using the Binary.com API as soon as you register an Application and you agree to follow these Terms."
 msgid "You may develop Applications using the %1 API as soon as you register an Application and you agree to follow these Terms."
-msgstr "Anda dapat mengembangkan Aplikasi dengan menggunakan API Binary.com segera setelah Anda mendaftarkan Aplikasi dan Anda setuju untuk mengikuti Persyaratan ini."
+msgstr "Anda dapat mengembangkan Aplikasi dengan menggunakan API %1 segera setelah Anda mendaftarkan Aplikasi dan Anda setuju untuk mengikuti Persyaratan ini."
 
 msgid "You may earn up to 35% commission on the net revenue generated by clients whom you introduce to our trading platform."
 msgstr "Anda dapat memperoleh komisi hingga 35% dari pendapatan bersih yang dihasilkan oleh klien yang Anda perkenalkan pada platform trading kami."
@@ -7190,18 +7091,14 @@ msgstr "Bonus hanya dapat dicairkan jika Anda telah melebihi total pembelian kon
 msgid "You must accept the terms and conditions to open an account."
 msgstr "Anda harus menyetujui syarat dan ketentuan untuk mendaftar akun."
 
-#, fuzzy
-#| msgid "You must comply with these Terms in order to use the Binary.com API."
 msgid "You must comply with these Terms in order to use the %1 API."
-msgstr "Anda harus mematuhi Persyaratan ini untuk menggunakan API Binary.com."
+msgstr "Anda harus mematuhi Persyaratan ini untuk menggunakan API %1."
 
 msgid "You must not be a USA resident, citizen, or have any tax reporting to the USA"
 msgstr "You must not be a USA resident, citizen, or have any tax reporting to the USA"
 
-#, fuzzy
-#| msgid "You must promptly report any security deficiencies in, or intrusions to, your Application that you discover to Binary.com by writing in to %1 or by raising a discussion  thread on %2 which is part of our Developer Site. You will work with Binary.com to immediately correct any security deficiency, and will immediately disconnect any intrusions or intruder. In the event of any security deficiency or intrusion involving the Application, APIs or Content, you will make no public statements (e.g. press, blogs, social media, bulletin boards, etc.) without prior written and express permission from Binary.com in each instance."
 msgid "You must promptly report any security deficiencies in, or intrusions to, your Application that you discover to %1 by writing in to %2 or by raising a discussion  thread on %3 which is part of our Developer Site. You will work with %1 to immediately correct any security deficiency, and will immediately disconnect any intrusions or intruder. In the event of any security deficiency or intrusion involving the Application, APIs or Content, you will make no public statements (e.g. press, blogs, social media, bulletin boards, etc.) without prior written and express permission from %1 in each instance."
-msgstr "Anda harus segera melaporkan setiap kekurangan keamanan, atau intrusi untuk, Aplikasi Anda pada Binary.com dengan menulis ke %1 atau dengan membuat thread diskusi di %2 yang merupakan bagian dari Situs Pengembang kami. Anda akan bekerja dengan Binary.com untuk segera memperbaiki kekurangan keamanan, dan akan segera lepaskan semua gangguan atau penyusup. Dalam hal terjadi kekurangan keamanan atau gangguan yang melibatkan Aplikasi, API atau Konten, Anda tidak akan membuat pernyataan publik (misalnya pers, blog, media sosial, papan buletin, dll) tanpa izin tertulis dan kelulusan dari Binary.com pada setiap contoh."
+msgstr "Anda harus segera melaporkan setiap kelemahan pengamanan, atau intrusi untuk, Aplikasi Anda yang Anda tunjukkan ke %1 dengan menulis ke %2 atau dengan membuat thread diskusi di %3 yang merupakan bagian dari Situs Pengembang kami. Anda akan bekerja dengan Binary.com untuk segera memperbaiki kekurangan keamanan, dan akan segera lepaskan semua gangguan atau penyusup. Dalam hal terjadi kekurangan keamanan atau gangguan yang melibatkan Aplikasi, API atau Konten, Anda tidak akan membuat pernyataan publik (misalnya pers, blog, media sosial, papan buletin, dll) tanpa izin tertulis dan kelulusan dari %1 pada setiap contoh."
 
 msgid "You need to finish all 20 questions."
 msgstr "Anda perlu menjawab semua 20 pertanyaan."
@@ -7233,10 +7130,8 @@ msgstr "Anda harus menghindari pengungkapan atau penggunaan yang tidak sah bagi 
 msgid "You shall be solely responsible for, and shall indemnify and hold the Company free and harmless from, any and all third party claims, damages or lawsuits (including, but not limited to, consequential losses and loss of profit, the Company's reasonable legal costs and expenses if applicable):"
 msgstr "Anda sepenuhnya bertanggung jawab atas, dan harus mengganti kerugian dan melepaskan Perusahaan dari setiap dan semua tuntutan pihak ketiga mengenai kerusakan atau tuntutan hukum (termasuk, namun tidak terbatas pada, kerugian konsekuensial dan kehilangan keuntungan, biaya hukum Perusahaan dan biaya lain jika berlaku):"
 
-#, fuzzy
-#| msgid "You shall discontinue your use of all prior versions of the Binary.com API in favour of the revised Binary.com API. While it is the Company's intention that the revised Binary.com API shall be backward compatible with the immediately prior version of the Binary.com API, the Company does not guarantee or warrant that this shall be so, and the Company shall have no liability whatsoever to you for any failure of the revised Binary.com API to be backward compatible with any prior version of the Binary.com API."
 msgid "You shall discontinue your use of all prior versions of the %1 API in favour of the revised %1 API. While it is the Company's intention that the revised %1 API shall be backward compatible with the immediately prior version of the %1 API, the Company does not guarantee or warrant that this shall be so, and the Company shall have no liability whatsoever to you for any failure of the revised %1 API to be backward compatible with any prior version of the %1 API."
-msgstr "Anda harus menghentikan penggunaan semua versi sebelumnya dari Binary.com API mendukung Binary.com API direvisi. Sementara itu adalah niat Perusahaan yang Binary.com API revisi akan kompatibel dengan versi segera sebelum API Binary.com, Perusahaan tidak menjamin atau menjamin bahwa ini akan menjadi begitu, dan Perusahaan tidak memiliki kewajiban apapun kepada Anda untuk setiap kegagalan Binary.com API direvisi menjadi kompatibel dengan versi sebelumnya dari API Binary.com."
+msgstr "Anda perlu menghentikan penggunaan versi API %1 sebelumnya dan menggunakan API %1 yang telah diperbarui. Sementara itu, merupakan niat Perusahaan dimana API %1 yang telah diperbarui akan kompatibel dengan versi sebelumnya dari API %1, dan Perusahaan tidak memiliki kewajiban apapun kepada Anda bagi setiap kegagalan yang telah direvisi pada API %1 untuk menjadi kompatibel dengan versi sebelumnya dari API %1."
 
 msgid "You shall indemnify on demand and hold the Company harmless from, and against any and all losses, demands, claims, damages, costs, expenses (including, but not limited to, consequential losses, loss of profit, and reasonable legal costs, if applicable), and liabilities suffered or incurred, directly, or indirectly, by the Company in consequence of any breach, non-performance, or non-observance by you of any of your obligations or warranties under this Agreement."
 msgstr "Anda harus mengganti rugi pada permintaan dan melepaskan Perusahaan dari, dan terhadap setiap dan semua kerugian, tuntutan, klaim, kerusakan, biaya, pengeluaran (termasuk, namun tidak terbatas pada, kerugian konsekuensial, kehilangan keuntungan, dan biaya hukum yang wajar, jika berlaku), dan kewajiban menderita atau dikeluarkan, secara langsung atau tidak langsung oleh Perusahaan sebagai akibat dari pelanggaran, non-kinerja, atau nketidak patuhan Anda dari setiap kewajiban atau jaminan berdasarkan Perjanjian ini."
@@ -7355,10 +7250,8 @@ msgstr "Transfer akun Anda sukses. Saldo terbaru Anda adalah:"
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='%1'>payment agent</a> list."
 msgstr "Permohonan Anda akan ditinjau oleh departemen compliance dan marketing kami. Setelah disetujui, kami akan mengaktifkan Anda di dalam daftar <a href='%1'>agen pembayaran</a>."
 
-#, fuzzy
-#| msgid "Your breach of any of Binary.com's rights;"
 msgid "Your breach of any of %1's rights;"
-msgstr "Pelanggaran Anda dari setiap peraturan Binary.com ini."
+msgstr "Pelanggaran Anda dari setiap peraturan %1 ini;"
 
 msgid "Your cashier is locked as per your request - to unlock it, please click %1here"
 msgstr "Kasir Anda telah terkunci sesuai permintaan Anda - untuk membuka kunci, silahkan klik %1 disini"
@@ -7435,15 +7328,11 @@ msgstr "Referensi transaksi Anda adalah"
 msgid "Your transaction reference number is %1"
 msgstr "Nomor referensi transaksi Anda adalah %1"
 
-#, fuzzy
-#| msgid "Your use of the Binary.com API causes damage to the Binary.com trading platform, then Binary.com may, at its option, forthwith suspend your use of the Binary.com API and/or terminate this Agreement without further written notice."
 msgid "Your use of the %1 API causes damage to the %1 trading platform, then %1 may, at its option, forthwith suspend your use of the %1 API and/or terminate this Agreement without further written notice."
-msgstr "Penggunaan API Binary.com menyebabkan kerusakan pada platform trading Binary.com, maka Binary.com mungkin, dengan pilihannya, segera menangguhkan penggunaan API Binary.com dan/atau mengakhiri Perjanjian ini tanpa pemberitahuan tertulis lebih lanjut."
+msgstr "Penggunaan API %1 menyebabkan kerusakan pada platform trading %1, maka %1 mungkin, dengan pilihannya, segera menangguhkan penggunaan API %1 dan/atau mengakhiri Perjanjian ini tanpa pemberitahuan tertulis lebih lanjut."
 
-#, fuzzy
-#| msgid "Your use of the Binary.com API will not confer to you any title, ownership interest or intellectual property rights that otherwise belongs to the Company. Our trading platform is protected under patent and our website, including its content, is protected by copyright laws, and will remain our exclusive property, as applicable."
 msgid "Your use of the %1 API will not confer to you any title, ownership interest or intellectual property rights that otherwise belongs to the Company. Our trading platform is protected under patent and our website, including its content, is protected by copyright laws, and will remain our exclusive property, as applicable."
-msgstr "Penggunaan Anda atas Binary.com API tidak akan berunding untuk Anda gelar apapun, kepemilikan atau hak kekayaan intelektual yang lain milik Perusahaan. platform trading kami dilindungi di bawah paten dan website kami, termasuk isinya, dilindungi oleh undang-undang hak cipta, dan akan tetap menjadi milik eksklusif kami, sebagaimana berlaku."
+msgstr "Penggunaan Anda atas API %1 tidak akan berunding untuk Anda gelar apapun, kepemilikan atau hak kekayaan intelektual yang lain milik Perusahaan. platform trading kami dilindungi di bawah paten dan website kami, termasuk isinya, dilindungi oleh undang-undang hak cipta, dan akan tetap menjadi milik eksklusif kami, sebagaimana berlaku."
 
 msgid "Your violation of any applicable law, rule or regulation;"
 msgstr "Anda melanggar hukum, aturan atau peraturan."
@@ -7508,10 +7397,8 @@ msgstr "hari"
 msgid "deposit"
 msgstr "deposit"
 
-#, fuzzy
-#| msgid "e.g. www.binaryqa36.com"
 msgid "e.g. ws.binaryws.com"
-msgstr "contoh www.binaryqa36.com"
+msgstr "contoh ws.binaryws.com"
 
 msgid "f"
 msgstr "f"
@@ -7612,15 +7499,11 @@ msgstr "tik"
 msgid "to your account."
 msgstr "kedalam akun Anda."
 
-#, fuzzy
-#| msgid "use or reproduce the Binary.com API other than as permitted by these Terms or"
 msgid "use or reproduce the %1 API other than as permitted by these Terms or"
-msgstr "menggunakan atau mereproduksi API Binary.com selain yang diizinkan oleh Syarat atau"
+msgstr "menggunakan atau mereproduksi API %1 selain yang diizinkan oleh Syarat atau"
 
-#, fuzzy
-#| msgid "use the Binary.com API for any purpose that violates any law or regulation, any right of any person, including but not limited to intellectual property rights, rights of privacy or rights of personality, or in any manner inconsistent with these Terms or privacy policy."
 msgid "use the %1 API for any purpose that violates any law or regulation, any right of any person, including but not limited to intellectual property rights, rights of privacy or rights of personality, or in any manner inconsistent with these Terms or privacy policy."
-msgstr "menggunakan API Binary.com untuk tujuan apapun yang melanggar hukum atau peraturan, hak dari setiap orang, termasuk namun tidak terbatas pada hak kekayaan intelektual, hak privasi atau hak kepribadian, atau dengan cara yang tidak sesuai dengan Ketentuan ini atau kebijakan privasi."
+msgstr "menggunakan API %1 untuk tujuan apapun yang melanggar hukum atau peraturan, hak dari setiap orang, termasuk namun tidak terbatas pada hak kekayaan intelektual, hak privasi atau hak kepribadian, atau dengan cara yang tidak sesuai dengan Ketentuan ini atau kebijakan privasi."
 
 msgid "verification token"
 msgstr "token verifikasi"
@@ -7674,7 +7557,7 @@ msgid "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
 
 msgid "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
-msgstr ""
+msgstr "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
 
 msgid "{JAPAN ONLY}A  Net Settlement type of option is one where the underlying asset does not include yen, but the option fee and settlement are paid in yen; it therefore requires some definition of how the settlement amounts will be calculated and converted to yen."
 msgstr "{JAPAN ONLY}A  Net Settlement type of option is one where the underlying asset does not include yen, but the option fee and settlement are paid in yen; it therefore requires some definition of how the settlement amounts will be calculated and converted to yen."
@@ -7745,10 +7628,8 @@ msgstr "{JAPAN ONLY}As the expected volatility of the underlying asset increases
 msgid "{JAPAN ONLY}As the time to the exercise point shortens, the time-value of a plain vanilla option decreases."
 msgstr "{JAPAN ONLY}As the time to the exercise point shortens, the time-value of a plain vanilla option decreases."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Section 4: Risk"
 msgid "{JAPAN ONLY}Association of join"
-msgstr "{JAPAN ONLY}Section 4: Risk"
+msgstr "{JAPAN ONLY}Association of join"
 
 msgid "{JAPAN ONLY}BUY price per unit"
 msgstr "{JAPAN ONLY}BUY price per unit"
@@ -7756,37 +7637,29 @@ msgstr "{JAPAN ONLY}BUY price per unit"
 msgid "{JAPAN ONLY}Because option prices are determined by the probability of being exercised, it cannot be said that cheaper options have any natural advantage over expensive options."
 msgstr "{JAPAN ONLY}Because option prices are determined by the probability of being exercised, it cannot be said that cheaper options have any natural advantage over expensive options."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Download"
 msgid "{JAPAN ONLY}Binary K. K."
-msgstr "{JAPAN ONLY}Download"
+msgstr "{JAPAN ONLY}Binary K. K."
 
 msgid "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
 msgstr "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Units"
 msgid "{JAPAN ONLY}Capital"
-msgstr "{JAPAN ONLY}Units"
+msgstr "{JAPAN ONLY}Capital"
 
 msgid "{JAPAN ONLY}Capital Adequacy Ratio (CAR)"
-msgstr ""
+msgstr "{JAPAN ONLY}Capital Adequacy Ratio (CAR)"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Option Pricing"
 msgid "{JAPAN ONLY}Company Profile"
-msgstr "{JAPAN ONLY}Option Pricing"
+msgstr "{JAPAN ONLY}Company Profile"
 
 msgid "{JAPAN ONLY}Company Profile & Disclosure"
-msgstr ""
+msgstr "{JAPAN ONLY}Company Profile & Disclosure"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Download"
 msgid "{JAPAN ONLY}Company name"
-msgstr "{JAPAN ONLY}Download"
+msgstr "{JAPAN ONLY}Company name"
 
 msgid "{JAPAN ONLY}Company name in English"
-msgstr ""
+msgstr "{JAPAN ONLY}Company name in English"
 
 msgid "{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly."
 msgstr "{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly."
@@ -7797,27 +7670,23 @@ msgstr "{JAPAN ONLY}Dear customer, you are not allowed to take knowledge test un
 msgid "{JAPAN ONLY}Dear customer, you've already completed the knowledge test, please proceed to next step."
 msgstr "{JAPAN ONLY}Dear customer, you've already completed the knowledge test, please proceed to next step."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}BUY price per unit"
 msgid "{JAPAN ONLY}December 2015"
-msgstr "{JAPAN ONLY}BUY price per unit"
+msgstr "{JAPAN ONLY}December 2015"
 
 msgid "{JAPAN ONLY}Delta refers to  a percentage change of the option price with respect to the change in the underlying asset price."
 msgstr "{JAPAN ONLY}Delta refers to  a percentage change of the option price with respect to the change in the underlying asset price."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Introduction to Binary Options"
 msgid "{JAPAN ONLY}Designated dispute resolution organization"
-msgstr "{JAPAN ONLY}Introduction to Binary Options"
+msgstr "{JAPAN ONLY}Designated dispute resolution organization"
 
 msgid "{JAPAN ONLY}Disclosure of CAR by No. 46-6-3 in the FIEA (Financial Instruments and Exchange Act)"
-msgstr ""
+msgstr "{JAPAN ONLY}Disclosure of CAR by No. 46-6-3 in the FIEA (Financial Instruments and Exchange Act)"
 
 msgid "{JAPAN ONLY}Disclosure of financial statement by No. xx in the FIEA"
-msgstr ""
+msgstr "{JAPAN ONLY}Disclosure of financial statement by No. xx in the FIEA"
 
 msgid "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
-msgstr ""
+msgstr "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
 
 msgid "{JAPAN ONLY}Download"
 msgstr "{JAPAN ONLY}Download"
@@ -7828,10 +7697,8 @@ msgstr "{JAPAN ONLY}Email us copies of your Identification Documents and My Numb
 msgid "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
 msgstr "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Units"
 msgid "{JAPAN ONLY}Establishment"
-msgstr "{JAPAN ONLY}Units"
+msgstr "{JAPAN ONLY}Establishment"
 
 msgid "{JAPAN ONLY}Even if all details of the binary options match perfectly, there may still be differences in the prices shown by different broking companies."
 msgstr "{JAPAN ONLY}Even if all details of the binary options match perfectly, there may still be differences in the prices shown by different broking companies."
@@ -7842,21 +7709,17 @@ msgstr "{JAPAN ONLY}If the buyer of an option does not exercise the option right
 msgid "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
 msgstr "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Regulation & Tax"
 msgid "{JAPAN ONLY}February 2016"
-msgstr "{JAPAN ONLY}Regulation & Tax"
+msgstr "{JAPAN ONLY}February 2016"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Section 5: Calculation"
 msgid "{JAPAN ONLY}Financial Condition"
-msgstr "{JAPAN ONLY}Section 5: Calculation"
+msgstr "{JAPAN ONLY}Financial Condition"
 
 msgid "{JAPAN ONLY}Financial Instruments Business No. xxxx"
-msgstr ""
+msgstr "{JAPAN ONLY}Financial Instruments Business No. xxxx"
 
 msgid "{JAPAN ONLY}Financial Instruments Mediation Assistance Center"
-msgstr ""
+msgstr "{JAPAN ONLY}Financial Instruments Mediation Assistance Center"
 
 msgid "{JAPAN ONLY}For a call option, if the price of the underlying asset is higher than the option exercise price, it is know as an in-the-money option."
 msgstr "{JAPAN ONLY}For a call option, if the price of the underlying asset is higher than the option exercise price, it is know as an in-the-money option."
@@ -7897,10 +7760,8 @@ msgstr "{JAPAN ONLY}For both call and put options, if the underlying asset price
 msgid "{JAPAN ONLY}For full details of the documents we can accept please download the following guide:"
 msgstr "{JAPAN ONLY}For full details of the documents we can accept please download the following guide:"
 
-#, fuzzy
-#| msgid "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
 msgid "{JAPAN ONLY}HirooMiyaya 3F, 1-9-16 Hiroo, Shibuya, Tokyo, 150-0012"
-msgstr "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Jepang"
+msgstr "{JAPAN ONLY}HirooMiyaya 3F, 1-9-16 Hiroo, Shibuya, Tokyo, 150-0012"
 
 msgid "{JAPAN ONLY}Historical volatility is a prediction of the future rate of change in the underlying asset."
 msgstr "{JAPAN ONLY}Historical volatility is a prediction of the future rate of change in the underlying asset."
@@ -8004,10 +7865,8 @@ msgstr "{JAPAN ONLY}It is possible to use two binary options to make a profit if
 msgid "{JAPAN ONLY}It prohibits the copying of the questions . In addition , You agree that you will not leak to third party"
 msgstr "{JAPAN ONLY}It prohibits the copying of the questions . In addition , You agree that you will not leak to third party"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Download"
 msgid "{JAPAN ONLY}January 2016"
-msgstr "{JAPAN ONLY}Download"
+msgstr "{JAPAN ONLY}January 2016"
 
 msgid "{JAPAN ONLY}Knowledge Test"
 msgstr "{JAPAN ONLY}Knowledge Test"
@@ -8030,31 +7889,23 @@ msgstr "{JAPAN ONLY}Knowledge Test Result"
 msgid "{JAPAN ONLY}Knowledge test list item 5"
 msgstr "{JAPAN ONLY}Knowledge Test Result"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Trading Guide"
 msgid "{JAPAN ONLY}Main business"
-msgstr "{JAPAN ONLY}Trading Guide"
+msgstr "{JAPAN ONLY}Main business"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Download"
 msgid "{JAPAN ONLY}March 2014"
-msgstr "{JAPAN ONLY}Download"
+msgstr "{JAPAN ONLY}March 2014"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Download"
 msgid "{JAPAN ONLY}March 2015"
-msgstr "{JAPAN ONLY}Download"
+msgstr "{JAPAN ONLY}March 2015"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Download"
 msgid "{JAPAN ONLY}March 2016"
-msgstr "{JAPAN ONLY}Download"
+msgstr "{JAPAN ONLY}March 2016"
 
 msgid "{JAPAN ONLY}No space between last name and first name"
 msgstr "{JAPAN ONLY}No space between last name and first name"
 
 msgid "{JAPAN ONLY}November 7, 2014"
-msgstr ""
+msgstr "{JAPAN ONLY}November 7, 2014"
 
 msgid "{JAPAN ONLY}Option Pricing"
 msgstr "{JAPAN ONLY}Option Pricing"
@@ -8125,10 +7976,8 @@ msgstr "{JAPAN ONLY}Purchase, Settlement & Resale"
 msgid "{JAPAN ONLY}Regarding to the OTC price of financial instruments, in case that financial instruments business operator suggests both of  bid and ask price (or trading price and cancellation price), generally there is a difference of them. This option will be wider as the expiration approaches."
 msgstr "{JAPAN ONLY}Regarding to the OTC price of financial instruments, in case that financial instruments business operator suggests both of  bid and ask price (or trading price and cancellation price), generally there is a difference of them. This option will be wider as the expiration approaches."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Regulation & Tax"
 msgid "{JAPAN ONLY}Registration"
-msgstr "{JAPAN ONLY}Regulation & Tax"
+msgstr "{JAPAN ONLY}Registration"
 
 msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "{JAPAN ONLY}Regulation & Tax"
@@ -8151,10 +8000,8 @@ msgstr "{JAPAN ONLY}Section 4: Risk"
 msgid "{JAPAN ONLY}Section 5: Calculation"
 msgstr "{JAPAN ONLY}Section 5: Calculation"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}SELL price  per unit"
 msgid "{JAPAN ONLY}September 2015"
-msgstr "{JAPAN ONLY}SELL price  per unit"
+msgstr "{JAPAN ONLY}September 2015"
 
 msgid "{JAPAN ONLY}Short positions in FX Binary Options must be covered by initial margin and any further losses must be covered by further margin deposits."
 msgstr "{JAPAN ONLY}Short positions in FX Binary Options must be covered by initial margin and any further losses must be covered by further margin deposits."
@@ -8181,7 +8028,7 @@ msgid "{JAPAN ONLY}The Exit Price is the price that is observed at the judgment 
 msgstr "{JAPAN ONLY}The Exit Price is the price that is observed at the judgment time, and is used to determine whether a payout should be made."
 
 msgid "{JAPAN ONLY}The Financial Futures Association of Japan"
-msgstr ""
+msgstr "{JAPAN ONLY}The Financial Futures Association of Japan"
 
 msgid "{JAPAN ONLY}The buyer of a vanilla option can choose whether to exercise the option or not. His loss is limited to the price paid for the option, whereas his potential profit is unlimited."
 msgstr "{JAPAN ONLY}The buyer of a vanilla option can choose whether to exercise the option or not. His loss is limited to the price paid for the option, whereas his potential profit is unlimited."
@@ -8253,7 +8100,7 @@ msgid "{JAPAN ONLY}Trading Guide"
 msgstr "{JAPAN ONLY}Trading Guide"
 
 msgid "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
-msgstr ""
+msgstr "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
 
 msgid "{JAPAN ONLY}Units"
 msgstr "{JAPAN ONLY}Units"
@@ -8279,10 +8126,8 @@ msgstr "{JAPAN ONLY}When buying a vanilla put option, the break-even price at th
 msgid "{JAPAN ONLY}Where broking companies show bid and offer prices for purchasing and sell-back of positions, these prices may become further apart the nearer you are to the exercise time."
 msgstr "{JAPAN ONLY}Where broking companies show bid and offer prices for purchasing and sell-back of positions, these prices may become further apart the nearer you are to the exercise time."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Options Basics"
 msgid "{JAPAN ONLY}Win Loss Ratio"
-msgstr "{JAPAN ONLY}Options Basics"
+msgstr "{JAPAN ONLY}Win Loss Ratio"
 
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
@@ -8290,33 +8135,23 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 msgstr "Platform Trading Online untuk opsi binary pada Forex, Indeks, Komoditas dan Indeks Smart"
 
-#, fuzzy
-#| msgid "Why Us?"
 msgid "Why Us"
-msgstr "Mengapa Kami?"
+msgstr "Mengapa Kami"
 
 msgid "Styles"
-msgstr ""
+msgstr "Gaya"
 
-#, fuzzy
-#| msgid "points"
 msgid "Endpoint"
-msgstr "nilai"
+msgstr "PoinAkhir"
 
-#, fuzzy
-#| msgid "Job details"
 msgid "Job Details"
-msgstr "Rincian pekerjaan"
+msgstr "Rincian Pekerjaan"
 
-#, fuzzy
-#| msgid "Company addresses"
 msgid "Company Profile"
-msgstr "Alamat Perusahaan"
+msgstr "Profil Perusahaan"
 
-#, fuzzy
-#| msgid "Open-source projects"
 msgid "Open-Source Projects"
-msgstr "Proyek open-source"
+msgstr "Proyek Open-Source"
 
 msgid "Types of Trades"
 msgstr "Jenis Kontrak"
@@ -8327,8 +8162,6 @@ msgstr "Berbagai Manfaat Trading Binary"
 msgid "How to Trade Binaries?"
 msgstr "Bagaimana Cara Trading Binary?"
 
-#, fuzzy
-#| msgid "What are the OTC Indices and Stocks?"
 msgid "What Are OTC Indices and Stocks?"
 msgstr "Apakah Indeks dan Saham OTC?"
 
@@ -8338,8 +8171,6 @@ msgstr "Batasan rekening"
 msgid "Payment Agent Deposit"
 msgstr "Deposit Agen Pembayaran"
 
-#, fuzzy
-#| msgid "Payment Agent transfer"
 msgid "Payment Agent Transfer"
 msgstr "Transfer Agen Pembayaran"
 
@@ -8351,6 +8182,9 @@ msgstr "Keterangan rekening"
 
 msgid "Terms and Conditions Approval"
 msgstr "Syarat dan Ketentuan Persetujuan"
+
+#~ msgid "Account balance : %1 %2"
+#~ msgstr "Saldo akun : %1 %2"
 
 #~ msgid "Binary.com Property"
 #~ msgstr "Properti Binary.com"
@@ -12117,9 +11951,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 #~ msgid "A verification email has been sent to %1."
 #~ msgstr "Verifikasi email telah dikirim ke %1."
-
-#~ msgid "Account balance: "
-#~ msgstr "Saldo akun Anda: "
 
 #~ msgid "All"
 #~ msgstr "Semua"

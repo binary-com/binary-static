@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: I 18N\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-30 16:50+0000\n"
+"PO-Revision-Date: 2016-07-10 09:09+0000\n"
 "Last-Translator: Pham Minh Hieu <hphamv7@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/binary/static/vi/>\n"
 "Language: vi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.7-dev\n"
+"X-Generator: Weblate 2.8-dev\n"
 
 #, fuzzy
 #| msgid "\"Binary.com API\" means the Binary.com proprietary set of programmatic routines, protocols, tools and resources created and maintained by Binary.com that allows you to use a registered Application to interface with the Binary.com trading platform."
@@ -68,10 +68,10 @@ msgid "%1 Property"
 msgstr "Tài sản của bạn"
 
 msgid "%1 Shop introduced"
-msgstr ""
+msgstr "Cửa hàng được giới thiệu %1"
 
 msgid "%1 academy"
-msgstr ""
+msgstr "học viện %1"
 
 msgid "%1 affiliate partners who wish to support a big group of Clients"
 msgstr "Các đối tác %1 muốn hỗ trợ một nhóm Khách hàng"
@@ -130,7 +130,7 @@ msgid "%1 hits 1 million users, reaching a historic milestone. The company conti
 msgstr "Binary.com đạt 1 triệu người dùng, chạm mốc lịch sử. Công ty tiếp tục phát triển vững vàng và ngày càng khẳng định vị trí của mình với vai trò dẫn đầu trong ngành."
 
 msgid "%1 introduces an <a href='%2' target='_blank' class='ja-hide'>auto-trader programming tool</a><span class='all-hide ja-show'>auto-trader programming tool</span>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
-msgstr ""
+msgstr "%1 đã giới thiệu một <a href='%2' target='_blank' class='ja-hide'> công cụ lập trình giao dịch tự động</a> <span class='all-hide ja-show'> công cụ lập trình giao dịch tự động</span>, cho phép khách hàng phát triển các rô-bốt giao dịch tự động của riêng họ chỉ đơn giản \"kéo và thả\"."
 
 #, fuzzy
 #| msgid "Binary.com is a flexible place. As well as our offices, we have staff who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
@@ -186,7 +186,7 @@ msgid "%1 is the award-winning industry pioneer in online options trading. We bo
 msgstr "%1 là đơn vị hàng đầu với những giải thưởng danh dự trong lĩnh vực giao dịch trực tuyến. Chúng tôi tự hào:"
 
 msgid "%1 launches an <a href='%2' target='_blank' class='ja-hide'> e-commerce site for branded merchandise</a><span class='all-hide ja-show'> e-commerce site for branded merchandise</span> – enabling clients, affiliates, and developers to buy and sell Binary.com products."
-msgstr ""
+msgstr "%1 phát hành một <a href='%2' target='_blank' class='ja-hide'> trang web thương mại điện tử cho các nhãn hiệu hàng hóa</a> <span class='all-hide ja-show'> trang web thương mại điện tử cho các nhãn hiệu hàng hóa</span>-cho phép khách hàng, chi nhánh, và các nhà phát triển dễ dàng mua và bán các sản phẩm của Binary.com."
 
 msgid "%1 makes efforts that the quoted prices of each underlying asset that a Binary Option refers to will be reasonably related to the actual prices of such asset available in the market. %1 makes no warranty, expressed or implied, that the quoted prices represent prevailing market prices."
 msgstr "%1 sẽ nỗ lực làm cho giá niêm yết của mỗi tài sản của quyền chọn \"Nhị phân\" hợp lý với giá thực tế của tài sản này trên thị trường. %1 không đảm bảo, niêm yết hay thể hiện rằng giá được đưa ra thể hiện giá thị trường tại thời điểm đó."
@@ -450,7 +450,7 @@ msgid "<< Back to Job Descriptions"
 msgstr "<< Quay lại Mô Tả Công Việc"
 
 msgid "<a class='pjaxload' href='mailto:%1'>Contact Us</a>"
-msgstr ""
+msgstr "<a class='pjaxload' href='mailto:%1'> liên hệ với chúng tôi</a>"
 
 msgid "<a href='%1'>Founded</a> October 1999"
 msgstr "<a href='%1'>Đã thành lập</a> vào tháng Mười năm 1999"
@@ -873,8 +873,8 @@ msgstr "Mở tài khoản"
 msgid "Account Transfer"
 msgstr "Chuyển Tài khoản"
 
-msgid "Account balance : %1 %2"
-msgstr "Số dư tài khoản : %1 %2"
+msgid "Account balance: "
+msgstr "Số dư tài khoản: "
 
 msgid "Accounting"
 msgstr "Kế toán"
@@ -7705,7 +7705,7 @@ msgid "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
 
 msgid "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
-msgstr ""
+msgstr "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
 
 msgid "{JAPAN ONLY}A  Net Settlement type of option is one where the underlying asset does not include yen, but the option fee and settlement are paid in yen; it therefore requires some definition of how the settlement amounts will be calculated and converted to yen."
 msgstr "{JAPAN ONLY}A  Net Settlement type of option is one where the underlying asset does not include yen, but the option fee and settlement are paid in yen; it therefore requires some definition of how the settlement amounts will be calculated and converted to yen."
@@ -7801,7 +7801,7 @@ msgid "{JAPAN ONLY}Capital"
 msgstr "{JAPAN ONLY}Units"
 
 msgid "{JAPAN ONLY}Capital Adequacy Ratio (CAR)"
-msgstr ""
+msgstr "{JAPAN ONLY}Capital Adequacy Ratio (CAR)"
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}Option Pricing"
@@ -7809,7 +7809,7 @@ msgid "{JAPAN ONLY}Company Profile"
 msgstr "{JAPAN ONLY}Option Pricing"
 
 msgid "{JAPAN ONLY}Company Profile & Disclosure"
-msgstr ""
+msgstr "{JAPAN ONLY}Company Profile & Disclosure"
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}Download"
@@ -7817,7 +7817,7 @@ msgid "{JAPAN ONLY}Company name"
 msgstr "{JAPAN ONLY}Download"
 
 msgid "{JAPAN ONLY}Company name in English"
-msgstr ""
+msgstr "{JAPAN ONLY}Company name in English"
 
 msgid "{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly."
 msgstr "{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly."
@@ -7842,13 +7842,13 @@ msgid "{JAPAN ONLY}Designated dispute resolution organization"
 msgstr "{JAPAN ONLY}Introduction to Binary Options"
 
 msgid "{JAPAN ONLY}Disclosure of CAR by No. 46-6-3 in the FIEA (Financial Instruments and Exchange Act)"
-msgstr ""
+msgstr "{JAPAN ONLY}Disclosure of CAR by No. 46-6-3 in the FIEA (Financial Instruments and Exchange Act)"
 
 msgid "{JAPAN ONLY}Disclosure of financial statement by No. xx in the FIEA"
-msgstr ""
+msgstr "{JAPAN ONLY}Disclosure of financial statement by No. xx in the FIEA"
 
 msgid "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
-msgstr ""
+msgstr "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
 
 msgid "{JAPAN ONLY}Download"
 msgstr "{JAPAN ONLY}Download"
@@ -7884,10 +7884,10 @@ msgid "{JAPAN ONLY}Financial Condition"
 msgstr "{JAPAN ONLY}Section 5: Calculation"
 
 msgid "{JAPAN ONLY}Financial Instruments Business No. xxxx"
-msgstr ""
+msgstr "{JAPAN ONLY}Financial Instruments Business No. xxxx"
 
 msgid "{JAPAN ONLY}Financial Instruments Mediation Assistance Center"
-msgstr ""
+msgstr "{JAPAN ONLY}Financial Instruments Mediation Assistance Center"
 
 msgid "{JAPAN ONLY}For a call option, if the price of the underlying asset is higher than the option exercise price, it is know as an in-the-money option."
 msgstr "{JAPAN ONLY}For a call option, if the price of the underlying asset is higher than the option exercise price, it is know as an in-the-money option."
@@ -8085,7 +8085,7 @@ msgid "{JAPAN ONLY}No space between last name and first name"
 msgstr "{JAPAN ONLY}No space between last name and first name"
 
 msgid "{JAPAN ONLY}November 7, 2014"
-msgstr ""
+msgstr "{JAPAN ONLY}November 7, 2014"
 
 msgid "{JAPAN ONLY}Option Pricing"
 msgstr "{JAPAN ONLY}Option Pricing"
@@ -8212,7 +8212,7 @@ msgid "{JAPAN ONLY}The Exit Price is the price that is observed at the judgment 
 msgstr "{JAPAN ONLY}The Exit Price is the price that is observed at the judgment time, and is used to determine whether a payout should be made."
 
 msgid "{JAPAN ONLY}The Financial Futures Association of Japan"
-msgstr ""
+msgstr "{JAPAN ONLY}The Financial Futures Association of Japan"
 
 msgid "{JAPAN ONLY}The buyer of a vanilla option can choose whether to exercise the option or not. His loss is limited to the price paid for the option, whereas his potential profit is unlimited."
 msgstr "{JAPAN ONLY}The buyer of a vanilla option can choose whether to exercise the option or not. His loss is limited to the price paid for the option, whereas his potential profit is unlimited."
@@ -8284,7 +8284,7 @@ msgid "{JAPAN ONLY}Trading Guide"
 msgstr "{JAPAN ONLY}Trading Guide"
 
 msgid "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
-msgstr ""
+msgstr "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
 
 msgid "{JAPAN ONLY}Units"
 msgstr "{JAPAN ONLY}Units"
@@ -8327,7 +8327,7 @@ msgid "Why Us"
 msgstr "Lý do chọn chúng tôi?"
 
 msgid "Styles"
-msgstr ""
+msgstr "Phong cách"
 
 #, fuzzy
 #| msgid "points"
@@ -8388,6 +8388,9 @@ msgstr "Chi tiết Tài khoản"
 
 msgid "Terms and Conditions Approval"
 msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
+
+#~ msgid "Account balance : %1 %2"
+#~ msgstr "Số dư tài khoản : %1 %2"
 
 #~ msgid "Binary.com Property"
 #~ msgstr "Tài sản của Binary.com"
@@ -12162,9 +12165,6 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 
 #~ msgid "A verification email has been sent to %1."
 #~ msgstr "Email xác minh đã được gửi tới %1."
-
-#~ msgid "Account balance: "
-#~ msgstr "Số dư tài khoản: "
 
 #~ msgid "All"
 #~ msgstr "Tất cả"
