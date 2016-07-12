@@ -7,36 +7,45 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-07-04 04:43+0000\n"
-"Last-Translator: Ruslan <ruslan.mukhametdinov.90@gmail.com>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
+"PO-Revision-Date: 2016-07-12 10:22+0000\n"
+"Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
+"Language-Team: Russian "
+"<https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.7-dev\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 2.8-dev\n"
 
-#, fuzzy
 #| msgid "\"Binary.com API\" means the Binary.com proprietary set of programmatic routines, protocols, tools and resources created and maintained by Binary.com that allows you to use a registered Application to interface with the Binary.com trading platform."
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
-msgstr "\"API Binary.com\" означает набор программ, протоколов, инструментов и ресурсов Binary.com, созданных и поддерживаемых сайтом Binary.com, а также позволяющих Вам пользоваться доступным приложением для работы на торговой платформе Binary.com."
+msgstr ""
+"\"API %1\" означает набор программ, протоколов, инструментов и ресурсов %1, "
+"созданных и поддерживаемых сайтом %1, а также позволяющих Вам пользоваться "
+"доступным приложением для работы на торговой платформе %1."
 
 msgid "\"Binary\" or \"digital\" options are options that pay a pre-determined, fixed amount, depending on whether or not an event occurs at the time the Binary Option expires. Binary Options can have only one of two possible outcomes and allow you to take a simple \"Yes or No\" approach. Like traditional options, Binary Options are based on an underlying asset such as currencies, commodities, indexes or stocks, however one of the most significant differences from traditional options, among others, is that there can be only two outcomes for the option, either the client is paid the return upon the occurrence of the event, or the client loses the investment amount as determined in each option."
 msgstr "\"Бинарные\" или \"цифровые\" опционы - это опционы, по которым выплачивается заранее определенная, фиксированная сумма, в зависимости от того, подтверждается или нет сделанный прогноз на момент окончания опциона. Бинарные опционы могут иметь только один из двух возможных вариантов исхода: \"да или нет\". Как и традиционные опционы, бинарные опционы предлагаются на конкретных рынках, например, валютах, сырьевых товарах, индексах или акциях; однако, одно из их самых существенных отличий от традиционных опционов заключается в том, что в сделках есть лишь два варианта исхода: либо клиенту выплачивается выигрыш при подтверждении прогноза, либо он теряет инвестированную в сделку сумму – цену покупки, как заранее оговорено для каждого опциона."
 
-#, fuzzy
 #| msgid "\"Content\" means any data or content from our Website or accessed via the API. Our \"Website\" means Binary.com's website at www.binary.com and any other website or service owned or operated by Binary.com."
 msgid "\"Content\" means any data or content from our Website or accessed via the API. Our \"Website\" means %1's website at www.binary.com and any other website or service owned or operated by %1."
-msgstr "\"Контент\" означает любые данные, текст на нашем Вебсайте или доступ к ним через API (интерфейс прикладного программирования). Наш \"Вебсайт\" обозначает сайт Binary.com, находящийся по адресу www.binary.com, а также любой другой сайт или услуги, принадлежащие или предоставляемые ресурсом Binary.com."
+msgstr ""
+"\"Контент\" означает любые данные, текст на нашем Вебсайте или доступ к ним "
+"через API (интерфейс прикладного программирования). Наш \"Вебсайт\" "
+"обозначает сайт %1, находящийся по адресу www.binary.com, а также любой "
+"другой сайт или услуги, принадлежащие или предоставляемые ресурсом %1."
 
 msgid "\"I work with a number of affiliate companies, and it is by far, the friendliest and most helpful that I've found. They go out of their way to provide their affiliates with all the tools, advice and support they need in order to succeed. To top it all off, they offer some of the most handsome rebates in the industry.\" - <strong>Vinod Gorasia, Marketing Manager, Agora Lifestyles</strong>."
 msgstr "\"Я являюсь партнером нескольких компаний и могу Вас заверить, что этот сайт - самый эффективный и удобный в использовании. Его сотрудники предоставляют партнерам все необходимые инструменты, а также рекомендации и поддержку. Кроме того, у этого брокера одни из самых высоких выплат в данной индустрии.\" - <strong>Винод Горасия, менеджер по маркетингу, Agora Lifestyles</strong>."
 
-#, fuzzy
 #| msgid "\"Third Party Provider(s)\" means the third party (non-affiliated) entity that makes available features and functions through use of the Binary.com API."
 msgid "\"Third Party Provider(s)\" means the third party (non-affiliated) entity that makes available features and functions through use of the %1 API."
-msgstr "\"Сторонний поставщик (Сторонние поставщики)\" означает третью сторону (не являющуюся нашим партнёром), предоставляющую определённые функции посредством интерфейса прикладного программирования (API) Binary.com."
+msgstr ""
+"\"Сторонний поставщик (Сторонние поставщики)\" означает третью сторону (не "
+"являющуюся нашим партнёром), предоставляющую определённые функции "
+"посредством интерфейса прикладного программирования (API) %1."
 
 msgid "$100,000 - $250,000"
 msgstr "$100,000 - $250,000"
@@ -62,16 +71,15 @@ msgstr "Правила и условия партнерской программ
 msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
 msgstr "%1 Пожалуйста нажмите на ссылку ниже, чтобы повторно запустить процесс восстановления пароля. Если Вам нужна дополнительная помощь, пожалуйста, свяжитесь с нашей службой поддержки."
 
-#, fuzzy
 #| msgid "Your Property"
 msgid "%1 Property"
-msgstr "Ваша собственность"
+msgstr "Собственность %1"
 
 msgid "%1 Shop introduced"
-msgstr ""
+msgstr "Открылся Магазин %1"
 
 msgid "%1 academy"
-msgstr ""
+msgstr "Академия %1"
 
 msgid "%1 affiliate partners who wish to support a big group of Clients"
 msgstr "Партнеры %1, желающие поддержать большую группу клиентов"
@@ -82,10 +90,9 @@ msgstr "%1 также предоставляет ссылки на онлайн 
 msgid "%1 and the bull/bear logo are registered trademarks."
 msgstr "%1 и логотипы быков и медведей являются зарегистрированными торговыми марками."
 
-#, fuzzy
 #| msgid "Binary.com continues to innovate and grow"
 msgid "%1 continues to innovate and grow"
-msgstr "Binary.com продолжает расти и развиваться"
+msgstr "%1 продолжает расти и развиваться"
 
 msgid "%1 does not charge any transfer fees."
 msgstr "%1 не берет комиссий за перевод."
@@ -95,10 +102,12 @@ msgstr "%1 не берет комиссий за перевод."
 msgid "%1 earns a return from the difference between the total amount of all customers' payment and the total amount of all customers' receipts."
 msgstr "Binary.com earns a return from the difference between the total amount of all customers' payment and the total amount of all customers' receipts."
 
-#, fuzzy
 #| msgid "%1 gives everyone an easy and exciting way to participate in the financial markets. Trade with as little as $1 USD on major currencies, indices and commodities."
 msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities."
-msgstr "%1 предлагает Вам простой и увлекательный способ работы на финансовых рынках. Контракты предлагаются на ведущих валютных парах, индексах и сырьевых рынках и начинаются всего с $1."
+msgstr ""
+"%1 открывает Вам простой и увлекательный способ работы на финансовых рынках. "
+"Контракты предлагаются на ведущих валютных парах, акциях, индексах, сырьевых "
+"рынках и начинаются всего с $1."
 
 msgid "%1 has created Volatility Indices that you can trade 24/7. You can trade these on all types of contract:"
 msgstr "%1 создал собственные Индексы волатильности, которые доступны 24/7. Вы можете работать на данных индексах со всеми типами контрактов:"
