@@ -2,18 +2,15 @@ var IPHistoryUI = (function(){
     "use strict";
 
     function parse_ua(user_agent) {
-        // Table of UA-values (and precedences) from:
-        //  https://developer.mozilla.org/en-US/docs/Browser_detection_using_the_user_agent
-        var vn = '([0-9\.]+)';
         var lookup = [
-            {name: 'Chromium',  regex: 'Chromium/' + vn},
-            {name: 'Chrome',    regex: 'Chrome/' + vn},
-            {name: 'Seamonkey', regex: 'Seamonkey/' + vn},
-            {name: 'Firefox',   regex: 'Firefox/' + vn},
-            {name: 'Opera',     regex: 'OPR/' + vn},
-            {name: 'Opera',     regex: 'Opera/' + vn},
-            {name: 'Safari',    regex: 'Version/' + vn},
-            {name: 'Internet Explorer', regex: ';MSIE '+ vn +';'},
+            {name: 'Edge',      regex: /Edge\/([\d\w\.\-]+)/i},
+            {name: 'SeaMonkey', regex: /seamonkey\/([\d\w\.\-]+)/i},
+            {name: 'Opera',     regex: /(?:opera|opr)\/([\d\w\.\-]+)/i},
+            {name: 'Chromium',  regex: /(?:chromium|crios)\/([\d\w\.\-]+)/i},
+            {name: 'Chrome',    regex: /chrome\/([\d\w\.\-]+)/i},
+            {name: 'Safari',    regex: /version\/([\d\w\.\-]+)/i},
+            {name: 'IE',        regex: /msie\s([\d\.]+[\d])|trident\/\d+\.\d+;.*[rv:]+(\d+\.\d)/i},
+            {name: 'Firefox',   regex: /firefox\/([\d\w\.\-]+)/i},
         ];
         var name = 'Unknown';
         var version = 'Unknown';
