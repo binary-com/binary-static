@@ -2,6 +2,10 @@ var IPHistoryUI = (function(){
     "use strict";
 
     function parse_ua(user_agent) {
+        // Table of UA-values (and precedences) from:
+        //  https://developer.mozilla.org/en-US/docs/Browser_detection_using_the_user_agent
+        // Regexes stolen from:
+        //  https://github.com/biggora/express-useragent/blob/master/lib/express-useragent.js
         var lookup = [
             {name: 'Edge',      regex: /Edge\/([\d\w\.\-]+)/i},
             {name: 'SeaMonkey', regex: /seamonkey\/([\d\w\.\-]+)/i},
