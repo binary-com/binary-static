@@ -20,10 +20,6 @@ var IPHistory = (function() {
             );
     }
 
-    function getNextChunk() {
-        IPHistoryQueue.fetchNext({limit: 50});
-    }
-
     function handler(response) {
         if (response.error && response.error.message) {
             document.getElementById('err').textContent = response.error.message;
@@ -34,21 +30,6 @@ var IPHistory = (function() {
         updateTable(login_history);
     }
 
-    function loadChunkOnScroll() {
-       $(document).scroll(function() {
-            function hidableHeight(percentage) {
-                var totalHidable = $(document).height() - $(window).height();
-                return Math.floor(totalHidable * percentage / 100);
-            }
-
-            var pFromTop = $(document).scrollTop();
-            if (pFromTop < hidableHeight(70)) {
-                return;
-            }
-            getNextChunk();
-       });
-    }
-
     // localize, title, create tables
     // register the callback on IPHistoryQueue
     function init() {
@@ -56,8 +37,7 @@ var IPHistory = (function() {
         titleElement.textContent = text.localize(titleElement.textContent);
         IPHistoryUI.createEmptyTable().appendTo('#login_history-ws-container');
         IPHistoryQueue.register(handler);
-        loadChunkOnScroll();
-        getNextChunk();
+        IPHistoryQueue.fetchNext({limit: 50});
     }
 
     function clean() {
