@@ -4,7 +4,6 @@ var Portfolio = (function(){
     var Compatibility = typeof window !== 'undefined' ? window.Compatibility : require('../../../common_functions/compatibility');
     var addComma = Compatibility.requireIfNotExist('addComma', '../websocket_pages/trade/common', 'addComma'),
         toJapanTimeIfNeeded = Compatibility.requireIfNotExist('toJapanTimeIfNeeded', '../base/utility', 'toJapanTimeIfNeeded');
-    var sum_purchase = 0.00;
 
     function getBalance(data, withCurrency) {
         return withCurrency ? data.balance.currency + ' ' + addComma(parseFloat(data.balance.balance)) : parseFloat(data.balance.balance);
@@ -19,8 +18,6 @@ var Portfolio = (function(){
             'currency'       : c.currency,
             'buy_price'      : addComma(parseFloat(c.buy_price))
         };
-
-        sum_purchase += parseFloat(c.buy_price);
 
         return portfolio_data;
     }
@@ -37,26 +34,25 @@ var Portfolio = (function(){
         return proposal_data;
     }
 
-    function getIndicativeSum(indicative) {
-        var indicative_sum = 0;
-        if (Object.keys(indicative).length !== 0) {
-            for (var key in indicative) {
-                if (indicative[key] && !isNaN(indicative[key])) {
-                    indicative_sum += parseFloat(indicative[key]);
+    function getSum(values, value_type) { // value_type is: indicative or buy_price
+        var sum = 0;
+        if (Object.keys(values).length !== 0) {
+            for (var key in values) {
+                if (values[key] && !isNaN(values[key][value_type])) {
+                    sum += parseFloat(values[key][value_type]);
                 }
             }
         }
 
-        return indicative_sum.toFixed(2);
+        return sum.toFixed(2);
     }
 
     var external = {
         getBalance: getBalance,
         getPortfolioData: getPortfolioData,
         getProposalOpenContract: getProposalOpenContract,
-        getIndicativeSum: getIndicativeSum,
-        getSumPurchase: function() { return sum_purchase; },
-        setSumPurchase: function() { sum_purchase = 0.0; }
+        getIndicativeSum: function(values) { return getSum(values, 'indicative'); },
+        getSumPurchase: function(values) { return getSum(values, 'buy_price'); },
     };
 
     if (typeof module !== 'undefined') {

@@ -553,6 +553,19 @@ function change_blog_link(lang) {
   }
 }
 
+//hide and show hedging value if trading purpose is set to hedging
+function detect_hedging($purpose, $hedging) {
+    $purpose.change(function(evt) {
+      if ($purpose.val() === 'Hedging') {
+        $hedging.removeClass('invisible');
+      }
+      else if ($hedging.is(":visible")) {
+        $hedging.addClass('invisible');
+      }
+      return;
+    });
+}
+
 $(function() {
     $( "#accordion" ).accordion({
       heightStyle: "content",

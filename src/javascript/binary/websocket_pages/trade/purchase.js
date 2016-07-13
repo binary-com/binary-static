@@ -17,6 +17,7 @@ var Purchase = (function () {
             message_container = document.getElementById('confirmation_message'),
             heading = document.getElementById('contract_purchase_heading'),
             descr = document.getElementById('contract_purchase_descr'),
+            barrier_element = document.getElementById('contract_purchase_barrier'),
             reference = document.getElementById('contract_purchase_reference'),
             chart = document.getElementById('tick_chart'),
             balance = document.getElementById('contract_purchase_balance'),
@@ -49,6 +50,7 @@ var Purchase = (function () {
 
             heading.textContent = Content.localize().textContractConfirmationHeading;
             descr.textContent = receipt['longcode'];
+            if (barrier_element) barrier_element.textContent = '';
             reference.textContent = Content.localize().textContractConfirmationReference + ' ' + receipt['transaction_id'];
 
             var payout_value, cost_value, profit_value;
@@ -126,8 +128,14 @@ var Purchase = (function () {
                 }
             }
 
+            var barrier;
+            if ( sessionStorage.getItem('formname') === 'higherlower' ) {
+              barrier = passthrough.barrier;
+            }
+
             WSTickDisplay.initialize({
                 symbol:passthrough.symbol,
+                barrier: barrier,
                 number_of_ticks:passthrough.duration,
                 previous_tick_epoch:receipt['start_time'],
                 contract_category:sessionStorage.getItem('formname')==='asian' ? 'asian' : 'callput',
@@ -159,7 +167,7 @@ var Purchase = (function () {
         var spots = document.getElementById('contract_purchase_spots');
         var spots2 = Tick.spots();
         var epoches = Object.keys(spots2).sort(function(a,b){return a-b;});
-        spots.textContent = '';
+        if(spots) spots.textContent = '';
 
         var replace = function(d){d1 = d; return '<b>'+d+'</b>';};
         for(var s=0; s<epoches.length; s++){
