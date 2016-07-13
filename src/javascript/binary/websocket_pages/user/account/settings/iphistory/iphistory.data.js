@@ -34,8 +34,8 @@ var IPHistoryData = (function() {
         var user_agent = environ.match('User_AGENT=(.+) LANG')[1];
         var browser    = parse_ua(user_agent);
         return {
-            time:   activity.time,
-            action: activity.action,
+            time:    activity.time,
+            action:  activity.action,
             success: activity.status === 1,
             browser: parse_ua(user_agent),
             ip_addr: ip_addr,
@@ -44,6 +44,6 @@ var IPHistoryData = (function() {
 
     return {
         parse: parse,
-        parseUserAgent: parse_ua
+        parseUserAgent: parse_ua,
     };
 })();

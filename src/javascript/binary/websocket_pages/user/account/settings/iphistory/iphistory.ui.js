@@ -48,13 +48,13 @@ var IPHistoryUI = (function() {
     }
 
     function formatRow(data) {
-        var timestamp  = moment.unix(data.time).utc().format('YYYY-MM-DD HH:mm:ss').replace(' ', '\n') + ' GMT';
+        var timestamp = moment.unix(data.time).utc().format('YYYY-MM-DD HH:mm:ss').replace(' ', '\n') + ' GMT';
         var status = text.localize(data.success ? 'Successful' : 'Failed');
         var browser = data.browser;
         var browserString = browser ?
             browser.name + ' v' + browser.version :
             'Unknown';
-        var row  = [
+        var row = [
             timestamp,
             data.action,
             browserString,
