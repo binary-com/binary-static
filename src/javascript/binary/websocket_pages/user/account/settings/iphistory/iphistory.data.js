@@ -42,8 +42,14 @@ var IPHistoryData = (function() {
         };
     }
 
-    return {
+    var external = {
         parse: parse,
         parseUserAgent: parse_ua,
     };
+
+    if (typeof module !== 'undefined') {
+        module.exports = external;
+    }
+
+    return external;
 })();
