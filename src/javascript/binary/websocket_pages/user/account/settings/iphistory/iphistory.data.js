@@ -1,15 +1,50 @@
-var IPHistoryData = (function(){
+var IPHistoryQueue = (function() {
     "use strict";
 
-    function getHistory(limit){
+    var buffer = [];
+    var callbacks = [];
+    var pending = false;
+
+    function fetchNext(params) {
+        if (pending) {
+            buffer.push(params);
+            return;
+        }
         var request = {login_history: 1};
-        if(limit){
-            $.extend(request,limit);
+        if (params) {
+            $.extend(request, params);
         }
         BinarySocket.send(request);
+        pending = true;
     }
 
-    return{
-      getHistory: getHistory,
+    // to be added to onmessage of BinarySocket.init
+    function responseHandler(msg) {
+        var response = JSON.parse(msg.data);
+        if (response && response.msg_type == 'login_history') {
+            pending = false;
+            callbacks.forEach(function(f) {
+                f(response);
+            });
+            if (buffer.length) {
+                var first = buffer.shift();
+                fetchNext(first);
+            }
+        }
+    }
+
+    function register(callback) {
+        callbacks.push(callback);
+    }
+
+    function clear() {
+        callbacks = [];
+        buffer = [];
+    }
+
+    return {
+        responseHandler: responseHandler,
+        fetchNext: fetchNext,
+        clear: clear,
     };
-}());
+})();
