@@ -167,7 +167,7 @@ var Purchase = (function () {
         var spots = document.getElementById('contract_purchase_spots');
         var spots2 = Tick.spots();
         var epoches = Object.keys(spots2).sort(function(a,b){return a-b;});
-        spots.textContent = '';
+        if(spots) spots.textContent = '';
 
         var replace = function(d){d1 = d; return '<b>'+d+'</b>';};
         for(var s=0; s<epoches.length; s++){
