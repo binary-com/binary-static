@@ -1,10 +1,12 @@
 var PortfolioWS =  (function() {
     'use strict';
 
-    var indicative;
+    var values,
+        currency;
 
     var init = function() {
-        indicative = {};
+        values = {};
+        currency = '';
         showLoadingImage($("#portfolio-loading"));
         BinarySocket.send({"balance":1});
         BinarySocket.send({"portfolio":1});
@@ -51,15 +53,18 @@ var PortfolioWS =  (function() {
             $("#portfolio-no-contract").hide();
             var portfolio_data,
                 contracts = '';
-            Portfolio.setSumPurchase();
+            values = {};
             $.each(data.portfolio.contracts, function(ci, c) {
+                if(!values.hasOwnProperty(c.contract_id)) values[c.contract_id] = {};
+                values[c.contract_id].buy_price = c.buy_price;
                 portfolio_data = Portfolio.getPortfolioData(c);
+                currency = portfolio_data.currency;
                 createPortfolioRow(portfolio_data);
             });
             $("#portfolio-table").removeClass("invisible");
 
             // update footer area data
-            $("#cost-of-open-positions").text(portfolio_data.currency + ' ' + addComma(Portfolio.getSumPurchase()));
+            updateFooter();
 
             // request "proposal_open_contract"
             BinarySocket.send({"proposal_open_contract":1, "subscribe":1});
@@ -77,7 +82,7 @@ var PortfolioWS =  (function() {
             $('#portfolio-body').empty();
             BinarySocket.send({'portfolio': 1});
         } else if(response.transaction.action === 'sell') {
-            $("#" + response.transaction.contract_id).remove();
+            removeContract(response.transaction.contract_id);
         }
         if ($('#portfolio-body tr').length === 0) {
             $('#portfolio-table').addClass('invisible');
@@ -92,6 +97,7 @@ var PortfolioWS =  (function() {
             errorMessage(data.error.message);
             return;
         }
+        if(!values) return;
 
         var proposal = Portfolio.getProposalOpenContract(data.proposal_open_contract);
         // force to sell the expired contract, in order to remove from portfolio
@@ -100,28 +106,38 @@ var PortfolioWS =  (function() {
         }
         var $td = $("#" + proposal.contract_id + " td.indicative");
 
-        var old_indicative = indicative[proposal.contract_id] ? indicative[proposal.contract_id] : 0.00;
-        indicative[proposal.contract_id] = proposal.bid_price;
-
-        var indicative_sum = Portfolio.getIndicativeSum(indicative);
+        if(!values.hasOwnProperty(proposal.contract_id)) values[proposal.contract_id] = {};
+        var old_indicative = values[proposal.contract_id].indicative || 0.00;
+        values[proposal.contract_id].indicative = proposal.bid_price;
 
         var status_class = '',
             no_resale_html = '';
         if(proposal.is_sold == 1) {
-             $("#" + proposal.contract_id).remove();
+            removeContract(proposal.contract_id);
         } else {
             if(proposal.is_valid_to_sell != 1) {
                 no_resale_html = '<span>' + text.localize('Resale not offered') + '</span>';
                 $td.addClass("no_resale");
             }
             else {
-                status_class = indicative[proposal.contract_id] < old_indicative ? ' price_moved_down' : (indicative[proposal.contract_id] > old_indicative ? ' price_moved_up' : '');
+                status_class = values[proposal.contract_id].indicative < old_indicative ? ' price_moved_down' : (values[proposal.contract_id].indicative > old_indicative ? ' price_moved_up' : '');
                 $td.removeClass("no_resale");
             }
-            $td.html(proposal.currency + ' <strong class="indicative_price' + status_class + '"">' + indicative[proposal.contract_id] + '</strong>' + no_resale_html);
+            $td.html(proposal.currency + ' <strong class="indicative_price' + status_class + '"">' + values[proposal.contract_id].indicative + '</strong>' + no_resale_html);
         }
 
-        $("#value-of-open-positions").text(proposal.currency + ' ' + indicative_sum);
+        updateFooter();
+    };
+
+    var removeContract = function(contract_id) {
+        $("#" + contract_id).remove();
+        delete(values[contract_id]);
+        updateFooter();
+    };
+
+    var updateFooter = function() {
+        $("#cost-of-open-positions").text(currency + ' ' + addComma(Portfolio.getSumPurchase(values)));
+        $("#value-of-open-positions").text(currency + ' ' + addComma(Portfolio.getIndicativeSum(values)));
     };
 
     var errorMessage = function(msg) {

@@ -28,7 +28,7 @@ var StartDates = (function(){
 
         var startDates = Contract.startDates();
 
-        if (startDates && startDates.list.length) {
+        if (startDates && startDates.list && startDates.list.length) {
 
             var target= getElement(),
                 fragment =  document.createDocumentFragment(),
