@@ -52,7 +52,7 @@ var IPHistory = (function() {
     // localize, title, create tables
     // register the callback on IPHistoryQueue
     function init() {
-        var titleElement = $id('login_history-title').firstElementChild;
+        var titleElement = document.getElementById('login_history-title').firstElementChild;
         titleElement.textContent = text.localize(titleElement.textContent);
         IPHistoryUI.createEmptyTable().appendTo('#login_history-ws-container');
         IPHistoryQueue.register(handler);
