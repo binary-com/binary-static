@@ -1,51 +1,37 @@
 var IPHistory = (function() {
     'use strict';
 
-    var no_messages_error = "Your account has no Login/Logout activity.";
-
-    function updateTable(batch) {
-        IPHistoryUI.updateTable(batch);
-        if (batch.length) {
-            return;
-        }
-        $('#login-history-table tbody')
-            .append($('<tr/>', {class: 'flex-tr'})
-                .append($('<td/>', {colspan: 6})
-                    .append($('<p/>', {
-                        class: 'notice-msg center-text',
-                        text: text.localize(no_messages_error)
-                      })
-                    )
-                )
-            );
+    function makeRequest() {
+        var request = {login_history: 1, limit: 50};
+        BinarySocket.send(request);
     }
 
-    function handler(response) {
-        if (response.error && response.error.message) {
-            $('#err').text(response.error.message);
+    function responseHandler(msg) {
+        var response = JSON.parse(msg.data);
+        if (!response || response.msg_type !== 'login_history') {
             return;
         }
-        updateTable(response.login_history);
+        if (response.error && response.error.message) {
+            IPHistoryUI.displayError(response.error.message);
+        }
+        var parsed = response.login_history.map(IPHistoryData.parse);
+        IPHistoryUI.displayTable(parsed);
     }
 
     // localize, title, create tables
     // register the callback on IPHistoryQueue
     function init() {
-        var $title = $('#login_history-title').children().first();
-        $title.text(text.localize($title.text()));
-        IPHistoryUI.createEmptyTable().appendTo('#login_history-ws-container');
-        IPHistoryQueue.register(handler);
-        IPHistoryQueue.fetchNext({limit: 50});
+        IPHistoryUI.init();
+        makeRequest();
     }
 
     function clean() {
-        $('#login_history-ws-container .error-msg').text('');
-        IPHistoryUI.clearTableContent();
-        IPHistoryQueue.clear();
+        IPHistoryUI.clean();
     }
 
     return {
         init: init,
         clean: clean,
+        responseHandler: responseHandler,
     };
 })();

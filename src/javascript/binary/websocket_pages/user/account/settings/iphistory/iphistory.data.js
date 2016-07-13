@@ -1,38 +1,53 @@
-var IPHistoryQueue = (function() {
-    "use strict";
-
-    var callbacks = [];
-
-    function fetchNext(params) {
-        var request = {login_history: 1};
-        if (params) {
-            $.extend(request, params);
+var IPHistoryData = (function() {
+    function parse_ua(user_agent) {
+        // Table of UA-values (and precedences) from:
+        //  https://developer.mozilla.org/en-US/docs/Browser_detection_using_the_user_agent
+        // Regexes stolen from:
+        //  https://github.com/biggora/express-useragent/blob/master/lib/express-useragent.js
+        var lookup = [
+            {name: 'Edge',      regex: /Edge\/([\d\w\.\-]+)/i},
+            {name: 'SeaMonkey', regex: /seamonkey\/([\d\w\.\-]+)/i},
+            {name: 'Opera',     regex: /(?:opera|opr)\/([\d\w\.\-]+)/i},
+            {name: 'Chromium',  regex: /(?:chromium|crios)\/([\d\w\.\-]+)/i},
+            {name: 'Chrome',    regex: /chrome\/([\d\w\.\-]+)/i},
+            {name: 'Safari',    regex: /version\/([\d\w\.\-]+)/i},
+            {name: 'IE',        regex: /msie\s([\d\.]+[\d])/i},
+            {name: 'IE',        regex: /trident\/\d+\.\d+;.*[rv:]+(\d+\.\d)/i},
+            {name: 'Firefox',   regex: /firefox\/([\d\w\.\-]+)/i},
+        ];
+        var name = 'Unknown';
+        var version = 'Unknown';
+        for (var i = 0; i < lookup.length; i++) {
+            var info = lookup[i];
+            var match = user_agent.match(info.regex);
+            if (match !== null) {
+                name = info.name;
+                version = match[1];
+                break;
+            }
         }
-        BinarySocket.send(request);
+        return {
+            name: name,
+            version: version,
+        };
     }
 
-    // to be added to onmessage of BinarySocket.init
-    function responseHandler(msg) {
-        var response = JSON.parse(msg.data);
-        if (response && response.msg_type == 'login_history') {
-            callbacks.forEach(function(f) {
-                f(response);
-            });
-        }
-    }
-
-    function register(callback) {
-        callbacks.push(callback);
-    }
-
-    function clear() {
-        callbacks = [];
+    function parse(activity) {
+        var environ    = activity.environment;
+        var ip_addr    = environ.split(' ')[2].split('=')[1];
+        var user_agent = environ.match('User_AGENT=(.+) LANG')[1];
+        var browser    = parse_ua(user_agent);
+        return {
+            time:   activity.time,
+            action: activity.action,
+            status: activity.status,
+            browser: parse_ua(user_agent),
+            ip_addr: ip_addr,
+        };
     }
 
     return {
-        responseHandler: responseHandler,
-        register: register,
-        fetchNext: fetchNext,
-        clear: clear,
+        parse: parse,
+        parseUserAgent: parse_ua
     };
 })();
