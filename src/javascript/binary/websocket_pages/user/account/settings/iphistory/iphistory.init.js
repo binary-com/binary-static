@@ -25,9 +25,7 @@ var IPHistory = (function() {
             document.getElementById('err').textContent = response.error.message;
             return;
         }
-
-        var login_history = response.login_history;
-        updateTable(login_history);
+        updateTable(response.login_history);
     }
 
     // localize, title, create tables
