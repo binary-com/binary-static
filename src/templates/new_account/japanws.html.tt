@@ -383,7 +383,7 @@
                             <p class="errorfield" id="error-trading-purpose"></p>
                           </div>
                       </div>
-                      <div class="gr-padding-10 gr-row clear hedging-assets" style="display: none;">
+                      <div class="gr-padding-10 gr-row clear hedging-assets invisible">
                         <div class="gr-4 form_label">
                           <label for="hedge-asset">[% l('Classification of assets requiring hedge') %]</label>
                         </div>
@@ -397,7 +397,7 @@
                           <p class="errorfield" id="error-hedge-asset"></p>
                         </div>
                       </div>
-                      <div class="gr-padding-10 gr-row clear hedging-assets" style="display: none;">
+                      <div class="gr-padding-10 gr-row clear hedging-assets invisible">
                         <div class="gr-4 form_label">
                           <label for="hedge-asset-amount">[% l('Amount of above assets') %]</label>
                         </div>
