@@ -1,11 +1,11 @@
 var IPHistoryUI = (function() {
-    "use strict";
+    'use strict';
 
     var tableID  = 'login-history-table';
     var selector = '#' + tableID;
     var containerSelector = '#login_history-ws-container';
-    var columns  = ["timestamp","action","browser","ip","status"];
-    var no_messages_error = "Your account has no Login/Logout activity.";
+    var columns  = ['timestamp', 'action', 'browser', 'ip', 'status'];
+    var no_messages_error = 'Your account has no Login/Logout activity.';
 
     function init() {
         var $title = $('#login_history-title').children().first();
@@ -27,11 +27,11 @@ var IPHistoryUI = (function() {
 
     function displayTable(history) {
         var header = [
-            "Date and Time",
-            "Action",
-            "Browser",
-            "IP Address",
-            "Status",
+            'Date and Time',
+            'Action',
+            'Browser',
+            'IP Address',
+            'Status',
         ].map(text.localize);
         var metadata = {
             id: tableID,
@@ -50,7 +50,10 @@ var IPHistoryUI = (function() {
     function formatRow(data) {
         var timestamp  = moment.unix(data.time).utc().format('YYYY-MM-DD HH:mm:ss').replace(' ', '\n') + ' GMT';
         var status = text.localize(data.success ? 'Successful' : 'Failed');
-        var browserString = data.browser.name + " v" + data.browser.version;
+        var browser = data.browser;
+        var browserString = browser ?
+            browser.name + ' v' + browser.version :
+            'Unknown';
         var row  = [
             timestamp,
             data.action,
@@ -58,8 +61,8 @@ var IPHistoryUI = (function() {
             data.ip_addr,
             status
         ];
-        var $row = Table.createFlexTableRow(row, columns, "data");
-        $row.children(".timestamp").addClass('pre');
+        var $row = Table.createFlexTableRow(row, columns, 'data');
+        $row.children('.timestamp').addClass('pre');
         return $row[0];
     }
 
@@ -67,7 +70,7 @@ var IPHistoryUI = (function() {
         $(containerSelector + ' .error-msg').text('');
         if (document.getElementById(selector)) {
             Table.clearTableBody(tableID);
-            $(selector +">tfoot").hide();
+            $(selector +'>tfoot').hide();
         }
     }
 
