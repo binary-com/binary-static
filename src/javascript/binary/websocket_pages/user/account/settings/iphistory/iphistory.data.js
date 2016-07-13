@@ -15,21 +15,17 @@ var IPHistoryData = (function() {
             {name: 'IE',        regex: /trident\/\d+\.\d+;.*[rv:]+(\d+\.\d)/i},
             {name: 'Firefox',   regex: /firefox\/([\d\w\.\-]+)/i},
         ];
-        var name = 'Unknown';
-        var version = 'Unknown';
         for (var i = 0; i < lookup.length; i++) {
             var info = lookup[i];
             var match = user_agent.match(info.regex);
             if (match !== null) {
-                name = info.name;
-                version = match[1];
-                break;
+                return {
+                    name: info.name,
+                    version: match[1],
+                };
             }
         }
-        return {
-            name: name,
-            version: version,
-        };
+        return null;
     }
 
     function parse(activity) {
