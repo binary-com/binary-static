@@ -528,7 +528,7 @@ URL.prototype = {
         return params;
     },
     default_redirect_url: function() {
-        return this.url_for(page.language() === 'JA' ? 'jptrading' : 'trading');
+        return this.url_for(japanese_client() ? 'jptrading' : 'trading');
     },
 };
 
@@ -547,7 +547,7 @@ Menu.prototype = {
         this.hide_main_menu();
 
         var active = this.active_menu_top();
-        var trading = $('#menu-top li:eq(4)');
+        var trading = japanese_client() ? $('#main-navigation-jptrading') : $('#main-navigation-trading');
         if(active) {
             active.addClass('active');
             if(trading.is(active)) {
@@ -918,7 +918,8 @@ Contents.prototype = {
                 return;
             }
             if(!page.client.is_virtual()) {
-                $('.by_client_type.client_real').removeClass('invisible');
+                // control-class is a fake class, only used to counteract ja-hide class
+                $('.by_client_type.client_real').not((japanese_client() ? ".ja-hide" : ".control-class")).removeClass('invisible');
                 $('.by_client_type.client_real').show();
 
                 $('#topbar').addClass('dark-blue');
@@ -1100,6 +1101,7 @@ Page.prototype = {
             sessionStorage.removeItem('showLoginPage');
             Login.redirect_to_login();
         }
+        this.check_language();
     },
     on_unload: function() {
         this.header.on_unload();
@@ -1216,5 +1218,18 @@ Page.prototype = {
         };
         xhttp.open('GET', page.url.url_for_static() + 'version?' + Math.random().toString(36).slice(2), true);
         xhttp.send();
+    },
+    check_language: function() {
+        if (page.language() === 'ID') {
+          change_blog_link('id');
+        }
+        if (japanese_client()) {
+            $('.ja-hide').addClass('invisible');
+            $('.ja-show').attr('style', 'display: inline !important; visibility: visible;');
+            $('.ja-show-block').attr('style', 'display: inline-block !important; visibility: visible;');
+            $('.ja-no-padding').attr('style', 'padding-top: 0; padding-bottom: 0;');
+            $('#regulatory-text').removeClass('gr-9 gr-7-p')
+                                 .addClass('gr-12 gr-12-p');
+        }
     },
 };

@@ -65,7 +65,7 @@
                                     <a class="pjaxload" href="[% request.url_for('/resources/asset_indexws') %]">[% l('Asset Index') %]</a>
                                 </li>
                             </ul>
-                            <div class='gr-padding-10 gr-no-gutter'>
+                            <div class='gr-padding-10 gr-no-gutter ja-no-padding'>
                                 <h4>[% l('Banking') %]</h4>
                                 <ul>
                                     <li>
