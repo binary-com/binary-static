@@ -22,7 +22,7 @@ var IPHistory = (function() {
 
     function handler(response) {
         if (response.error && response.error.message) {
-            document.getElementById('err').textContent = response.error.message;
+            $('#err').text(response.error.message);
             return;
         }
         updateTable(response.login_history);
@@ -31,8 +31,8 @@ var IPHistory = (function() {
     // localize, title, create tables
     // register the callback on IPHistoryQueue
     function init() {
-        var titleElement = document.getElementById('login_history-title').firstElementChild;
-        titleElement.textContent = text.localize(titleElement.textContent);
+        var $title = $('#login_history-title').children().first();
+        $title.text(text.localize($title.text()));
         IPHistoryUI.createEmptyTable().appendTo('#login_history-ws-container');
         IPHistoryQueue.register(handler);
         IPHistoryQueue.fetchNext({limit: 50});
