@@ -41,7 +41,7 @@ var IPHistoryUI = (function() {
         var $table = Table.createFlexTable(data, metadata, header);
         $table.appendTo(containerSelector);
         if (!history.length) {
-            displayError();
+            return displayError();
         }
         Table.appendTableBody(tableID, history, formatRow);
         showLocalTimeOnHover('td.timestamp');
@@ -49,7 +49,7 @@ var IPHistoryUI = (function() {
 
     function formatRow(data) {
         var timestamp  = moment.unix(data.time).utc().format('YYYY-MM-DD HH:mm:ss').replace(' ', '\n') + ' GMT';
-        var status = text.localize(data.status === 1 ? 'Successful' : 'Failed');
+        var status = text.localize(data.success ? 'Successful' : 'Failed');
         var browserString = data.browser.name + " v" + data.browser.version;
         var row  = [
             timestamp,
