@@ -1,9 +1,7 @@
 var IPHistory = (function() {
     'use strict';
 
-    var no_messages_error = text.localize(
-        "Your account has no Login/Logout activity."
-    );
+    var no_messages_error = "Your account has no Login/Logout activity.";
 
     function updateTable(batch) {
         IPHistoryUI.updateTable(batch);
@@ -15,7 +13,7 @@ var IPHistory = (function() {
                 .append($('<td/>', {colspan: 6})
                     .append($('<p/>', {
                         class: 'notice-msg center-text',
-                        text: no_messages_error
+                        text: text.localize(no_messages_error)
                       })
                     )
                 )
