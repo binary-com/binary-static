@@ -12,7 +12,7 @@ var IPHistory = (function() {
             return;
         }
         if (response.error && response.error.message) {
-            IPHistoryUI.displayError(response.error.message);
+            return IPHistoryUI.displayError(response.error.message);
         }
         var parsed = response.login_history.map(IPHistoryData.parse);
         IPHistoryUI.displayTable(parsed);
