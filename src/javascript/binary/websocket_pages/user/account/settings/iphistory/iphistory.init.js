@@ -2,8 +2,7 @@ var IPHistory = (function() {
     'use strict';
 
     function makeRequest() {
-        var request = {login_history: 1, limit: 50};
-        BinarySocket.send(request);
+        BinarySocket.send({login_history: 1, limit: 50});
     }
 
     function responseHandler(msg) {
@@ -18,8 +17,6 @@ var IPHistory = (function() {
         IPHistoryUI.displayTable(parsed);
     }
 
-    // localize, title, create tables
-    // register the callback on IPHistoryQueue
     function init() {
         IPHistoryUI.init();
         makeRequest();

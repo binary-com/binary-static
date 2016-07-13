@@ -68,7 +68,7 @@ var IPHistoryUI = (function() {
 
     function clean() {
         $(containerSelector + ' .error-msg').text('');
-        if (document.getElementById(selector)) {
+        if ($(selector).length) {
             Table.clearTableBody(tableID);
             $(selector +'>tfoot').hide();
         }
