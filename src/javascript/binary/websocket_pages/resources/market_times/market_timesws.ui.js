@@ -32,7 +32,7 @@ var MarketTimesUI = (function() {
 
         $('#errorMsg').addClass('hidden');
 
-        var isJapanTrading = page.language().toLowerCase() === 'ja';
+        var isJapanTrading = japanese_client();
 
         var markets = tradingTimes.markets;
 

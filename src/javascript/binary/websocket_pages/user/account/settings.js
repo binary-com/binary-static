@@ -6,7 +6,8 @@ var SettingsWS = (function() {
             classReal   = '.real';
 
         if(!page.client.is_virtual()) {
-            $(classReal).removeClass(classHidden);
+            // control-class is a fake class, only used to counteract ja-hide class
+            $(classReal).not((japanese_client() ? ".ja-hide" : ".control-class")).removeClass(classHidden);
         }
         else {
             $(classReal).addClass(classHidden);

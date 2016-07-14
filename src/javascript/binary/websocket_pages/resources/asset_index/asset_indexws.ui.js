@@ -9,6 +9,9 @@ var AssetIndexUI = (function() {
         marketColumns;
 
     var init = function() {
+        if (japanese_client()) {
+            window.location.href = page.url.url_for('resources');
+        }
         Content.populate();
         $container = $('#asset-index');
         showLoadingImage($container);
@@ -24,10 +27,7 @@ var AssetIndexUI = (function() {
         $('#errorMsg').addClass('hidden');
         assetIndex = AssetIndex.getAssetIndexData(assetIndex, activeSymbols);
         marketColumns = AssetIndex.getMarketColumns();
-
-        var isJapan = page.language().toLowerCase() === 'ja';
-
-        $tabs = $('<ul/>', {class: isJapan ? 'hidden' : ''});
+        $tabs = $('<ul/>');
         $contents = $('<div/>');
 
         for(var i = 0; i < assetIndex.length; i++) {
@@ -36,12 +36,6 @@ var AssetIndexUI = (function() {
             if(!symbolInfo) {
                 continue;
             }
-
-            // just show "Major Pairs" when the language is JA
-            if(isJapan && symbolInfo.submarket !== 'major_pairs') {
-                continue;
-            }
-
             var $submarketTable = getSubmarketTable(assetItem, symbolInfo);
             $submarketTable.find('tbody').append(createSubmarketTableRow(assetItem, symbolInfo));
         }
