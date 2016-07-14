@@ -1,25 +1,17 @@
 var ApplicationsData = (function(){
     "use strict";
 
-    function getApplications(){
-        var request = {oauth_apps: 1};
-        BinarySocket.send(request);
-    }
-    
-    function revokeApplication(id){
-        if(!id){
-            return;
-        }
-        var request = {
-            oauth_apps: 1,
-            revoke_app: id
+    function parse(app) {
+        var last = app.last_used ? moment.utc(app.last_used) : null;
+        return {
+            name: app.name,
+            scopes: app.scopes,
+            last_used: last,
+            id: app.app_id,
         };
-        
-        BinarySocket.send(request);
     }
-    
-    return{
-      getApplications: getApplications,
-      revokeApplication: revokeApplication
+
+    return {
+        parse: parse
     };
 }());
