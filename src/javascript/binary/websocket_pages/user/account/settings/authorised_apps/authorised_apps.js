@@ -1,7 +1,9 @@
 var ApplicationsUI = (function(){
-    "use strict";
-    var tableID = "applications-table";
-    var columns = ["name","permissions","last_used","action"];
+    'use strict';
+    var tableID  = 'applications-table';
+    var selector = '#' + tableID;
+    var containerSelector = '#applications-ws-container';
+    var columns  = ['name','permissions','last_used','action'];
     var messages = {
         no_apps: 'You have not granted access to any applications.',
         revoke_confirm: 'Are you sure that you want to permanently revoke access to application',
@@ -10,29 +12,29 @@ var ApplicationsUI = (function(){
 
     function createEmptyTable() {
         var header = [
-                text.localize("Name"),
-                text.localize("Permissions"),
-                text.localize("Last Used"),
-                text.localize("Action")
-            ];
+                'Name',
+                'Permissions',
+                'Last Used',
+                'Action',
+            ].map(text.localize);
         var metadata = {
             id: tableID,
             cols: columns
         };
         var data = [];
         var $table = Table.createFlexTable(data,metadata,header);
-        $table.appendTo("#applications-ws-container");
+        $table.appendTo(containerSelector);
         return $table;
     }
 
     function updateUI(apps) {
         createEmptyTable();
-        $("#loading").remove();
+        $('#loading').remove();
         if (!apps.length) {
-            $('#applications-table tbody')
-                .append($('<tr/>', {class: "flex-tr"})
+            $(selector + ' tbody')
+                .append($('<tr/>', {class: 'flex-tr'})
                     .append($('<td/>', {colspan: 7})
-                        .append($('<p/>', {class: "notice-msg center-text", text: text.localize(messages.no_apps)})
+                        .append($('<p/>', {class: 'notice-msg center-text', text: text.localize(messages.no_apps)})
                         )
                     )
                 );
@@ -45,10 +47,10 @@ var ApplicationsUI = (function(){
 
     function createRevokeButton(container, app) {
         var $buttonSpan = Button.createBinaryStyledButton();
-        var $button = $buttonSpan.children(".button").first();
+        var $button = $buttonSpan.children('.button').first();
         $button.text(text.localize(messages.revoke_access));
         $button.on('click', function() {
-            if (window.confirm(text.localize(messages.revoke_confirm) + ': "' + app.name + '"?')) {
+            if (window.confirm(text.localize(messages.revoke_confirm) + ": '" + app.name + "'?")) {
                 Applications.revokeApplication(app.id);
                 container.css({ opacity: 0.5 });
             }
@@ -63,25 +65,25 @@ var ApplicationsUI = (function(){
             '',
         ];
         var $row = Table.createFlexTableRow(row, columns, 'data');
-        $row.children(".action").first().append(createRevokeButton($row, app));
+        $row.children('.action').first().append(createRevokeButton($row, app));
         return $row[0];
     }
 
     function displayError(message) {
-        $("#applications-ws-container .error-msg").text(message);
+        $(containerSelector + ' .error-msg').text(message);
     }
 
     function init() {
         showLoadingImage($('<div/>', {id: 'loading'}).insertAfter('#applications-title'));
-        var $title = $("#applications-title").children().first();
-        var $desc  = $("#description");
+        var $title = $('#applications-title').children().first();
+        var $desc  = $('#description');
         $title.text(text.localize($title.text()));
         $desc.text(text.localize($desc.text()));
     }
 
     function clean() {
         Table.clearTableBody(tableID);
-        $("#" + tableID +">tfoot").hide();
+        $(selector +'>tfoot').hide();
     }
 
     return {
