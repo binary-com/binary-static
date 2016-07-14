@@ -189,11 +189,22 @@ sub js_config {
 sub menu {
     my @menu;
 
-    # beta interface
+    # trade page
     push @menu,
         {
-        id         => 'topMenuBetaInterface',
-        url        => url_for($LANG eq 'ja' ? '/jptrading' : '/trading'),
+        id         => 'topMenuTrading',
+        class      => 'ja-hide',
+        url        => url_for('/trading'),
+        text       => localize('Start Trading'),
+        link_class => 'pjaxload'
+        };
+
+    # japan's trade page
+    push @menu,
+        {
+        id         => 'topMenuJPTrading',
+        class      => 'all-hide ja-show',
+        url        => url_for('/jptrading'),
         text       => localize('Start Trading'),
         link_class => 'pjaxload'
         };

@@ -117,7 +117,7 @@ var ResetPassword = (function () {
         dobmm = undefined;
         dobyy = undefined;
 
-        if (page.language().toLowerCase() === 'ja') {
+        if (japanese_client()) {
           $("#dobyy").val($("#dobyy option:first").val());
           $("#dobmm").val($("#dobmm option:first").val());
           $("#dobdd").val($("#dobdd option:first").val());
@@ -149,7 +149,7 @@ var ResetPassword = (function () {
     function init() {
         $('#reset_passwordws').removeClass('invisible');
         Content.populate();
-        if (page.language().toLowerCase() === 'ja') {
+        if (japanese_client()) {
           $('#dobmm').insertAfter('#dobyy');
           $('#dobdd').insertAfter('#dobmm');
         }

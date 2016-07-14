@@ -319,7 +319,7 @@ function generateBirthDate(country){
     var endYear = currentYear - 17;
     //years
     dropDownNumbers(year, startYear, endYear);
-    if ((country && country === 'jp') || page.language().toLowerCase() === 'ja') {
+    if (japanese_client()) {
       days.options[0].innerHTML = text.localize('Day');
       months.options[0].innerHTML = text.localize('Month');
       year.options[0].innerHTML = text.localize('Year');
@@ -539,11 +539,8 @@ function checkClientsCountry() {
   }
 }
 
-if (page.language() === 'ID') {
-  change_blog_link('id');
-} else if (page.language() === 'JA') {
-    $('#regulatory-text').removeClass('gr-9 gr-7-p')
-                         .addClass('gr-12 gr-12-p');
+function japanese_client() {
+    return (page.language().toLowerCase() === 'ja' || ($.cookie('residence') && $.cookie('residence') === 'jp') || localStorage.getItem('clients_country') === 'jp');
 }
 
 function change_blog_link(lang) {
@@ -551,6 +548,19 @@ function change_blog_link(lang) {
   if (!regex.test($('.blog a').attr('href'))) {
     $('.blog a').attr('href', $('.blog a').attr('href') + '/' + lang + '/');
   }
+}
+
+//hide and show hedging value if trading purpose is set to hedging
+function detect_hedging($purpose, $hedging) {
+    $purpose.change(function(evt) {
+      if ($purpose.val() === 'Hedging') {
+        $hedging.removeClass('invisible');
+      }
+      else if ($hedging.is(":visible")) {
+        $hedging.addClass('invisible');
+      }
+      return;
+    });
 }
 
 $(function() {

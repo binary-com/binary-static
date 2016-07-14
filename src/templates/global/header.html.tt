@@ -56,8 +56,11 @@
                                 <li>
                                     <a class="smaller-font pjaxload" href="[% request.url_for('tour') %]">[% l("Tour") %]</a>
                                 </li>
-                                <li>
+                                <li class="ja-hide" id="main-navigation-trading">
                                     <a class="smaller-font pjaxload" href="[% request.url_for('trading') %]">[% l("Trade") %]</a>
+                                </li>
+                                <li class="all-hide ja-show-block" id="main-navigation-jptrading">
+                                    <a class="smaller-font pjaxload" href="[% request.url_for('jptrading') %]">[% l("Trade") %]</a>
                                 </li>
                             </ul>
                         </div>

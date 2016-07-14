@@ -41,11 +41,14 @@ pjax_config_page("/cashier", function(){
 pjax_config_page("/cashier/payment_methods", function(){
     return {
         onLoad: function() {
-          if (!page.client.is_logged_in || page.client.is_virtual()) {
-            return;
-          } else {
-            Cashier.check_withdrawal_locked();
-          }
+            if (japanese_client()) {
+                window.location.href = page.url.url_for('/');
+            }
+            if (!page.client.is_logged_in || page.client.is_virtual()) {
+                return;
+            } else {
+                Cashier.check_withdrawal_locked();
+            }
         }
     };
 });

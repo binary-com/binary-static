@@ -9,17 +9,7 @@ pjax_config_page("new_account/japanws", function(){
       }
       handle_residence_state_ws();
       BinarySocket.send({get_settings:1});
-      var purpose = $('#trading-purpose'),
-          hedging = $('.hedging-assets');
-      purpose.change(function(evt) {
-        if (purpose.val() === 'Hedging') {
-          hedging.show();
-        }
-        else if (hedging.is(":visible")) {
-          hedging.hide();
-        }
-        return;
-      });
+      detect_hedging($('#trading-purpose'), $('.hedging-assets'));
       $('#japan-form').submit(function(evt) {
         evt.preventDefault();
         if (JapanAccOpeningUI.checkValidity()){

@@ -32,7 +32,7 @@ var MarketTimesUI = (function() {
 
         $('#errorMsg').addClass('hidden');
 
-        var isJapanTrading = page.language().toLowerCase() === 'ja';
+        var isJapanTrading = japanese_client();
 
         var markets = tradingTimes.markets;
 
@@ -71,7 +71,7 @@ var MarketTimesUI = (function() {
             // display only "Major Pairs" for Japan
             if(isJapanTrading) {
                 var submarketInfo = MarketTimes.getSubmarketInfo(activeSymbols, submarkets[s].name);
-                if(submarketInfo.length > 0 && submarketInfo[0].submarket !== 'major_pairs') {
+                if(submarketInfo.length === 0 || submarketInfo[0].submarket !== 'major_pairs') {
                     continue;
                 }
             }
