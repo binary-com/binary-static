@@ -27,7 +27,7 @@ var ApplicationsUI = (function(){
         return $table;
     }
 
-    function updateUI(apps) {
+    function update(apps) {
         createEmptyTable();
         $('#loading').remove();
         if (!apps.length) {
@@ -55,6 +55,7 @@ var ApplicationsUI = (function(){
                 container.css({ opacity: 0.5 });
             }
         });
+        return $buttonSpan;
     }
 
     function createRow(app) {

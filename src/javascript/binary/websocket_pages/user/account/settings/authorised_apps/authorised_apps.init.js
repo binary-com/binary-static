@@ -41,4 +41,4 @@ var Applications = (function() {
         revokeApplication: revokeApplication,
         clean: clean,
     };
-});
+})();
