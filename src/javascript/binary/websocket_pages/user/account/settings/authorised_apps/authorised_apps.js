@@ -84,7 +84,6 @@ var ApplicationsUI = (function(){
 
     function clean() {
         Table.clearTableBody(tableID);
-        $(selector +'>tfoot').hide();
     }
 
     return {
