@@ -26,6 +26,9 @@ var SettingsDetailsWS = (function() {
         };
 
         BinarySocket.send({"get_settings": "1"});
+        if (page.client.residence === 'jp') {
+            detect_hedging($('#PurposeOfTrading'), $('.hedge'));
+        }
     };
 
     var getDetails = function(response) {
@@ -47,32 +50,37 @@ var SettingsDetailsWS = (function() {
                 var jpData = response.get_settings.jp_settings;
                 $('#lblName').text((data.last_name || '') + ' ' + (data.first_name || ''));
                 $('#lblGender').text(text.localize(jpData.gender) || '');
-                $('#lblOccupation').text(text.localize(jpData.occupation) || '');
                 $('#lblAddress1').text(data.address_line_1 || '');
                 $('#lblAddress2').text(data.address_line_2 || '');
                 $('#lblCity').text(data.address_city || '');
                 $('#lblPostcode').text(data.address_postcode || '');
                 $('#lblPhone').text(data.phone || '');
-                $('#lblAnnualIncome').text(text.localize(jpData.annual_income) || '');
-                $('#lblFinancialAsset').text(text.localize(jpData.financial_asset) || '');
-                $('#lblDailyLossLimit').text(jpData.daily_loss_limit || '');
-                $('#lblEquities').text(text.localize(jpData.trading_experience_equities) || '');
-                $('#lblCommodities').text(text.localize(jpData.trading_experience_commodities) || '');
-                $('#lblForeignCurrencyDeposit').text(text.localize(jpData.trading_experience_foreign_currency_deposit) || '');
-                $('#lblMarginFX').text(text.localize(jpData.trading_experience_margin_fx) || '');
-                $('#lblInvestmentTrust').text(text.localize(jpData.trading_experience_investment_trust) || '');
-                $('#lblPublicCorporationBond').text(text.localize(jpData.trading_experience_public_bond) || '');
-                $('#lblDerivativeTrading').text(text.localize(jpData.trading_experience_option_trading) || '');
-                $('#lblPurposeOfTrading').text(text.localize(jpData.trading_purpose) || '');
+
+                $('#AnnualIncome').val(jpData.annual_income);
+                $('#FinancialAsset').val(jpData.financial_asset);
+                $('#Occupation').val(jpData.occupation);
+                $('#Equities').val(jpData.trading_experience_equities);
+                $('#Commodities').val(jpData.trading_experience_commodities);
+                $('#ForeignCurrencyDeposit').val(jpData.trading_experience_foreign_currency_deposit);
+                $('#MarginFX').val(jpData.trading_experience_margin_fx);
+                $('#InvestmentTrust').val(jpData.trading_experience_investment_trust);
+                $('#PublicCorporationBond').val(jpData.trading_experience_public_bond);
+                $('#DerivativeTrading').val(jpData.trading_experience_option_trading);
+                $('#PurposeOfTrading').val(jpData.trading_purpose);
                 if (jpData.hedge_asset !== null && jpData.hedge_asset_amount !== null) {
-                  $('#lblHedgeAsset').text(text.localize(jpData.hedge_asset) || '');
-                  $('#lblHedgeAssetAmount').text(jpData.hedge_asset_amount || '');
-                  $('.hedge').css('display', 'block');
+                  $('#HedgeAsset').val(jpData.hedge_asset);
+                  $('#HedgeAssetAmount').val(jpData.hedge_asset_amount);
+                  $('.hedge').removeClass('invisible');
                 }
-                $('.JpAcc').css('display', 'block');
-                $('.rowBirthDate').removeClass('hidden');
-                $('.rowName').removeClass('hidden');
-                $('.rowCustomerSupport').removeClass('hidden');
+                $('.JpAcc').removeClass('invisible')
+                           .removeClass('hidden');
+
+                $('#AnnualIncome, #FinancialAsset, #Occupation, #Equities, #Commodities,' +
+                    '#ForeignCurrencyDeposit, #MarginFX, #InvestmentTrust, #PublicCorporationBond,' +
+                    '#DerivativeTrading, #PurposeOfTrading, #HedgeAsset, #HedgeAssetAmount')
+                    .on('change', function() {
+                    changed = true;
+                });
             } else {
                 $('#lblName').text((data.salutation || '') + ' ' + (data.first_name || '') + ' ' + (data.last_name || ''));
                 $(fieldIDs.address1).val(data.address_line_1);
@@ -82,30 +90,17 @@ var SettingsDetailsWS = (function() {
                 $(fieldIDs.postcode).val(data.address_postcode);
                 $(fieldIDs.phone).val(data.phone);
 
-                $(fieldIDs.address1).on('change', function() {
-                  changed = true;
-                });
-                $(fieldIDs.address2).on('change', function() {
-                  changed = true;
-                });
-                $(fieldIDs.city).on('change', function() {
-                  changed = true;
-                });
-                $(fieldIDs.postcode).on('change', function() {
-                  changed = true;
-                });
-                $(fieldIDs.phone).on('change', function() {
+                $('#Address1, #Address2, #City, #State, #Postcode, #Phone').on('change', function() {
                   changed = true;
                 });
 
                 $(RealAccElements).removeClass('hidden');
-
-                $(frmBtn).click(function(e){
-                    e.preventDefault();
-                    e.stopPropagation();
-                    return setDetails();
-                });
             }
+            $(frmBtn).click(function(e){
+                e.preventDefault();
+                e.stopPropagation();
+                return setDetails();
+            });
         }
 
         $(formID).removeClass('hidden');
@@ -142,38 +137,47 @@ var SettingsDetailsWS = (function() {
             postcode = $(fieldIDs.postcode).val().trim(),
             phone    = $(fieldIDs.phone).val().trim();
 
+        var hedgeAssetAmount = $('#HedgeAssetAmount');
+
         var letters = Content.localize().textLetters,
             numbers = Content.localize().textNumbers,
             space   = Content.localize().textSpace,
             period  = Content.localize().textPeriod,
             comma   = Content.localize().textComma;
 
-        // address 1
-        if(!isRequiredError(fieldIDs.address1) && !(/^[a-zA-Z0-9\s\,\.\-\/\(\)#']+$/).test(address1)) {
-            showError(fieldIDs.address1, Content.errorMessage('reg', [letters, numbers, space, period, comma, '- / ( ) # \'']));
-        }
+        if (page.client.residence === 'jp') {
+            // hedge asset
+            if (hedgeAssetAmount.is(':visible') && !isRequiredError(hedgeAssetAmount) && !/^\d+$/.test(hedgeAssetAmount.val().trim())) {
+                showError(hedgeAssetAmount, Content.errorMessage('reg', [numbers]));
+            }
+        } else {
+            // address 1
+            if(!isRequiredError(fieldIDs.address1) && !(/^[a-zA-Z0-9\s\,\.\-\/\(\)#']+$/).test(address1)) {
+                showError(fieldIDs.address1, Content.errorMessage('reg', [letters, numbers, space, period, comma, '- / ( ) # \'']));
+            }
 
-        // address line 2
-        if(!(/^[a-zA-Z0-9\s\,\.\-\/\(\)#']*$/).test(address2)) {
-            showError(fieldIDs.address2, Content.errorMessage('reg', [letters, numbers, space, period, comma, '- / ( ) # \'']));
-        }
+            // address line 2
+            if(!(/^[a-zA-Z0-9\s\,\.\-\/\(\)#']*$/).test(address2)) {
+                showError(fieldIDs.address2, Content.errorMessage('reg', [letters, numbers, space, period, comma, '- / ( ) # \'']));
+            }
 
-        // town/city
-        isRequiredError(fieldIDs.city);
+            // town/city
+            isRequiredError(fieldIDs.city);
 
-        // state
-        if(!isRequiredError(fieldIDs.state) && ($(fieldIDs.state).is('input') && !(/^[a-zA-Z\s\-']+$/).test(state))) {
-            showError(fieldIDs.state, Content.errorMessage('reg', [letters, space, '- \'']));
-        }
+            // state
+            if(!isRequiredError(fieldIDs.state) && ($(fieldIDs.state).is('input') && !(/^[a-zA-Z\s\-']+$/).test(state))) {
+                showError(fieldIDs.state, Content.errorMessage('reg', [letters, space, '- \'']));
+            }
 
-        // postcode
-        if(!isRequiredError(fieldIDs.postcode) && !isCountError(fieldIDs.postcode, 4, 20) && !(/(^[a-zA-Z0-9\s\-\/]+$)/).test(postcode)) {
-            showError(fieldIDs.postcode, Content.errorMessage('reg', [letters, numbers, space, '- /']));
-        }
+            // postcode
+            if(!isRequiredError(fieldIDs.postcode) && !isCountError(fieldIDs.postcode, 4, 20) && !(/(^[a-zA-Z0-9\s\-\/]+$)/).test(postcode)) {
+                showError(fieldIDs.postcode, Content.errorMessage('reg', [letters, numbers, space, '- /']));
+            }
 
-        // telephone
-        if(!isCountError(fieldIDs.phone, 6, 35) && !(/^(|\+?[0-9\s\-]+)$/).test(phone)) {
-            showError(fieldIDs.phone, Content.errorMessage('reg', [numbers, space, '-']));
+            // telephone
+            if(!isCountError(fieldIDs.phone, 6, 35) && !(/^(|\+?[0-9\s\-]+)$/).test(phone)) {
+                showError(fieldIDs.phone, Content.errorMessage('reg', [numbers, space, '-']));
+            }
         }
 
         if (!changed) {
@@ -182,14 +186,32 @@ var SettingsDetailsWS = (function() {
         changed = false;
 
         if(isValid) {
-            return {
-                address1 : address1,
-                address2 : address2,
-                city     : city,
-                state    : state,
-                postcode : postcode,
-                phone    : phone
-            };
+            if (page.client.residence === 'jp') {
+                return {
+                    hedgeAssetAmount       : hedgeAssetAmount.val().trim(),
+                    annualIncome           : $('#AnnualIncome').val().trim(),
+                    financialAsset         : $('#FinancialAsset').val().trim(),
+                    occupation             : $('#Occupation').val().trim(),
+                    equities               : $('#Equities').val().trim(),
+                    commodities            : $('#Commodities').val().trim(),
+                    foreignCurrencyDeposit : $('#ForeignCurrencyDeposit').val().trim(),
+                    marginFX               : $('#MarginFX').val().trim(),
+                    InvestmentTrust        : $('#InvestmentTrust').val().trim(),
+                    publicCorporationBond  : $('#PublicCorporationBond').val().trim(),
+                    derivativeTrading      : $('#DerivativeTrading').val().trim(),
+                    purposeOfTrading       : $('#PurposeOfTrading').val().trim(),
+                    hedgeAsset             : $('#HedgeAsset').val().trim()
+                };
+            } else {
+                return {
+                    address1 : address1,
+                    address2 : address2,
+                    city     : city,
+                    state    : state,
+                    postcode : postcode,
+                    phone    : phone
+                };
+            }
         }
         else {
             return false;
@@ -229,15 +251,35 @@ var SettingsDetailsWS = (function() {
         if(!formData)
             return false;
 
-        BinarySocket.send({
-            "set_settings"    : 1,
-            "address_line_1"  : formData.address1,
-            "address_line_2"  : formData.address2,
-            "address_city"    : formData.city,
-            "address_state"   : formData.state,
-            "address_postcode": formData.postcode,
-            "phone"           : formData.phone
-        });
+        var req = {"set_settings" : 1};
+
+        if (page.client.residence === 'jp') {
+            req["jp_settings"] = {};
+            req["jp_settings"]["annual_income"]                               = formData.annualIncome;
+            req["jp_settings"]["financial_asset"]                             = formData.financialAsset;
+            req["jp_settings"]["occupation"]                                  = formData.occupation;
+            req["jp_settings"]["trading_experience_equities"]                 = formData.equities;
+            req["jp_settings"]["trading_experience_commodities"]              = formData.commodities;
+            req["jp_settings"]["trading_experience_foreign_currency_deposit"] = formData.foreignCurrencyDeposit;
+            req["jp_settings"]["trading_experience_margin_fx"]                = formData.marginFX;
+            req["jp_settings"]["trading_experience_investment_trust"]         = formData.InvestmentTrust;
+            req["jp_settings"]["trading_experience_public_bond"]              = formData.publicCorporationBond;
+            req["jp_settings"]["trading_experience_option_trading"]           = formData.derivativeTrading;
+            req["jp_settings"]["trading_purpose"]                             = formData.purposeOfTrading;
+            if (formData.purposeOfTrading === 'Hedging') {
+                req["jp_settings"]["hedge_asset"]        = formData.hedgeAsset;
+                req["jp_settings"]["hedge_asset_amount"] = formData.hedgeAssetAmount;
+            }
+        } else {
+            req["address_line_1"]   = formData.address1;
+            req["address_line_2"]   = formData.address2;
+            req["address_city"]     = formData.city;
+            req["address_state"]    = formData.state;
+            req["address_postcode"] = formData.postcode;
+            req["phone"]            = formData.phone;
+        }
+
+        BinarySocket.send(req);
     };
 
     var setDetailsResponse = function(response) {

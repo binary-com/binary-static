@@ -3,8 +3,11 @@ var TradePage = (function(){
   var trading_page = 0;
 
   var onLoad = function(){
-    if(page.language() === 'JA' && /\/trading\.html/i.test(window.location.pathname)) {
+    if(japanese_client() && /\/trading\.html/i.test(window.location.pathname)) {
         window.location.href = page.url.url_for('jptrading');
+        return;
+    } else if (!japanese_client() && /jp/.test(window.location.pathname)) {
+        window.location.href = page.url.url_for('trading');
         return;
     }
     trading_page = 1;

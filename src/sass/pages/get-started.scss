@@ -11,9 +11,9 @@
     dl {
         text-align: center;
         .section {
-            min-height: 210px;
+            min-height: 224px;
             background: $COLOR_LIGHT_GRAY;
-            margin: 0 20px 20px 0;
+            margin: 0 10px 20px;
             &.section-jp {
                 min-height: 0;
             }
@@ -113,60 +113,6 @@
                 background: url('../images/pages/get-started-jp/contract.svg') no-repeat;
             }
         }
-    }
-    .section-content {
-        h2 {
-            color: $COLOR_ORANGE;
-            padding-top: 20px;
-            &.center {
-                width: 63.82%;
-            }
-        }
-    }
-    .subsection-navigation {
-        clear: both;
-        text-align: center;
-        margin-top: 20px;
-        padding-top: 10px;
-        a {
-            @include link-button;
-            padding: 0.43em 3.19%;
-        }
-        a.disabled {
-            color: $COLOR_GRAY_SHADE;
-            background: $COLOR_LIGHT_GRAY;
-            cursor: default;
-        }
-    }
-    .section-5 {
-        ol, ul {
-            ol {
-                list-style-type: lower-alpha;
-            }
-        }
-        .subsection {
-            p {
-                .highlight {
-                    font-style: italic;
-                    margin: 0.62em 0;
-                }
-            }
-        }
-    }
-    .section-7 {
-        h4 {
-            font-weight: bold;
-            margin-top: 1.87em;
-        }
-        p {
-            margin: 0.62em 0 1.25em;
-        }
-        a {
-            font-weight: bold;
-        }
-    }
-    .trade-type-flash {
-        padding-bottom: 25px;
     }
 }
 

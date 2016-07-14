@@ -107,7 +107,8 @@ var KnowledgeTestUI = (function () {
 
         $topbarmsg.find('> span').removeClass('invisible');
         $topbarmsg.removeClass('invisible')
-            .find('a').attr('href', page.url.url_for('/new_account/knowledge_testws')).html($('<span/>', {text: text.localize('{JAPAN ONLY}Take knowledge test')}));
+            .find('a').removeClass('invisible')
+                .attr('href', page.url.url_for('/new_account/knowledge_testws')).html($('<span/>', {text: text.localize('{JAPAN ONLY}Take knowledge test')}));
     }
 
     return {
@@ -119,4 +120,3 @@ var KnowledgeTestUI = (function () {
         createKnowledgeTestLink: createKnowledgeTestLink,
     };
 }());
-

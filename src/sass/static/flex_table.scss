@@ -74,11 +74,3 @@
         }
     }
 }
-
-@media (max-width: 600px) {
-    #profit-table-ws-container, #statement-ws-container {
-        .flex-table-container {
-            overflow: auto;
-        }
-    }
-}

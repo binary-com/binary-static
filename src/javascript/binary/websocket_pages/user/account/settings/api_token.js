@@ -12,7 +12,7 @@ var APITokenWS = (function() {
     var init = function() {
         columns = ['Name', 'Token', 'Scopes', 'Last Used', 'Action'];
         errorClass  = 'errorfield';
-        hideClass   = 'dynamic';
+        hideClass   = 'invisible';
         tableContainer = '#tokens_list';
         maxTokens = 30;
 
@@ -285,6 +285,10 @@ var APITokenWS = (function() {
 pjax_config_page_require_auth("api_tokenws", function() {
     return {
         onLoad: function() {
+            if (japanese_client()) {
+                window.location.href = page.url.url_for('user/settingsws');
+            }
+
             BinarySocket.init({
                 onmessage: function(msg) {
                     var response = JSON.parse(msg.data);

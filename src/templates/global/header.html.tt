@@ -6,7 +6,7 @@
                     <span class='gr-hide-m invisible'>
                         <span id='virtual-text'>[% l("You're using a Virtual Account.") %]</span>
                     </span>
-                    <a class="pjaxload pulser"></a>
+                    <a class="pjaxload pulser invisible"></a>
                 </div>
                 <div class='gr-6 gr-7-t gr-12-p gr-12-m' id='topbar-info'>
                     <div class="gr-row">
@@ -56,8 +56,11 @@
                                 <li>
                                     <a class="smaller-font pjaxload" href="[% request.url_for('tour') %]">[% l("Tour") %]</a>
                                 </li>
-                                <li>
+                                <li class="ja-hide" id="main-navigation-trading">
                                     <a class="smaller-font pjaxload" href="[% request.url_for('trading') %]">[% l("Trade") %]</a>
+                                </li>
+                                <li class="all-hide ja-show-block" id="main-navigation-jptrading">
+                                    <a class="smaller-font pjaxload" href="[% request.url_for('jptrading') %]">[% l("Trade") %]</a>
                                 </li>
                             </ul>
                         </div>

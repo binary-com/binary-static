@@ -69,14 +69,14 @@ var get_started_behaviour = function() {
         var nav_next = $('.subsection-navigation .next');
 
         if (to_show.hasClass('first')) {
-            nav_back.addClass('disabled');
-            nav_next.removeClass('disabled');
+            nav_back.addClass('button-disabled');
+            nav_next.removeClass('button-disabled');
         } else if (to_show.hasClass('last')) {
-            nav_back.removeClass('disabled');
-            nav_next.addClass('disabled');
+            nav_back.removeClass('button-disabled');
+            nav_next.addClass('button-disabled');
         } else {
-            nav_back.removeClass('disabled');
-            nav_next.removeClass('disabled');
+            nav_back.removeClass('button-disabled');
+            nav_next.removeClass('button-disabled');
         }
 
         fragment = to_show.find('a[name]').attr('name').slice(0, -8);
@@ -93,7 +93,7 @@ var get_started_behaviour = function() {
     if (len) {
         nav.on('click', 'a', function() {
             var button = $(this);
-            if (button.hasClass('disabled')) {
+            if (button.hasClass('button-disabled')) {
                 return false;
             }
             var now_showing = $('.subsection:not(.hidden)');
@@ -319,7 +319,7 @@ function generateBirthDate(country){
     var endYear = currentYear - 17;
     //years
     dropDownNumbers(year, startYear, endYear);
-    if ((country && country === 'jp') || page.language().toLowerCase() === 'ja') {
+    if (japanese_client()) {
       days.options[0].innerHTML = text.localize('Day');
       months.options[0].innerHTML = text.localize('Month');
       year.options[0].innerHTML = text.localize('Year');
@@ -489,6 +489,7 @@ function handle_residence_state_ws(){
 
 function generateState() {
     var state = document.getElementById('address-state');
+    if (state.length !== 0) return;
     appendTextValueChild(state, Content.localize().textSelect, '');
     if (page.client.residence !== "") {
       BinarySocket.send({ states_list: page.client.residence });
@@ -538,11 +539,8 @@ function checkClientsCountry() {
   }
 }
 
-if (page.language() === 'ID') {
-  change_blog_link('id');
-} else if (page.language() === 'JA') {
-    $('#regulatory-text').removeClass('gr-9 gr-7-p')
-                         .addClass('gr-12 gr-12-p');
+function japanese_client() {
+    return (page.language().toLowerCase() === 'ja' || ($.cookie('residence') && $.cookie('residence') === 'jp') || localStorage.getItem('clients_country') === 'jp');
 }
 
 function change_blog_link(lang) {
@@ -550,6 +548,19 @@ function change_blog_link(lang) {
   if (!regex.test($('.blog a').attr('href'))) {
     $('.blog a').attr('href', $('.blog a').attr('href') + '/' + lang + '/');
   }
+}
+
+//hide and show hedging value if trading purpose is set to hedging
+function detect_hedging($purpose, $hedging) {
+    $purpose.change(function(evt) {
+      if ($purpose.val() === 'Hedging') {
+        $hedging.removeClass('invisible');
+      }
+      else if ($hedging.is(":visible")) {
+        $hedging.addClass('invisible');
+      }
+      return;
+    });
 }
 
 $(function() {
