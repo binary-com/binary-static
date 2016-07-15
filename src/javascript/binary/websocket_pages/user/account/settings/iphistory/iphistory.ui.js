@@ -12,9 +12,7 @@ var IPHistoryUI = (function() {
 
     function update(history) {
         if (flexTable) {
-            flexTable.clearBody();
-            flexTable.extend(history);
-            return;
+            return flexTable.replace(history);
         }
         var headers = ['Date and Time', 'Action', 'Browser', 'IP Address', 'Status'];
         var columns = ['timestamp', 'action', 'browser', 'ip', 'status'];

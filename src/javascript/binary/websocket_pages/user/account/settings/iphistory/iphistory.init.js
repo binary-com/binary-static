@@ -1,7 +1,7 @@
 var IPHistory = (function() {
     'use strict';
 
-    function responseHandler(msg) {
+    function responseHandler(response) {
         if (response.error && response.error.message) {
             return IPHistoryUI.displayError(response.error.message);
         }
