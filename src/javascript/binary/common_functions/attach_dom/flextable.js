@@ -1,22 +1,20 @@
 var FlexTableUI = function(config) {
     this.config = config;
-    this.id     = config.id;
-    this.header = config.header;
-    this.footer = config.footer;
-    this.$tableContainer = Table.createFlexTable(
+    this.id = config.id;
+    var $tableContainer = Table.createFlexTable(
         [],
-        this.getMetaData(),
-        this.header,
-        this.footer
+        this.getMetadata(),
+        config.header,
+        config.footer
     );
     // Table.appendTablebody expects the table to already
     // exist in the DOM, so we need to append first
-    this.$tableContainer.appendTo(config.container);
+    $tableContainer.appendTo(config.container);
     this.extend(config.data);
 };
 
 FlexTableUI.prototype = {
-    getMetaData: function() {
+    getMetadata: function() {
         return {
             id:         this.config.id,
             tableClass: this.config.class,
