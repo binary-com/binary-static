@@ -51,7 +51,7 @@ var ApplicationsUI = (function(){
         $button.text(text.localize(messages.revoke_access));
         $button.on('click', function() {
             if (window.confirm(text.localize(messages.revoke_confirm) + ": '" + app.name + "'?")) {
-                Applications.revokeApplication(app.id);
+                ApplicationsData.revoke(app.id);
                 container.css({ opacity: 0.5 });
             }
         });

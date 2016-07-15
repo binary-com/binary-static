@@ -1,11 +1,7 @@
 var Applications = (function() {
     "use strict";
 
-    function responseHandler(msg) {
-        var response = JSON.parse(msg.data);
-        if (!response || response.msg_type !== 'oauth_apps') {
-            return;
-        }
+    function responseHandler(response) {
         if (response.error && response.error.message) {
             return ApplicationsUI.displayError(response.error.message);
         }
@@ -13,23 +9,12 @@ var Applications = (function() {
         ApplicationsUI.update(apps);
     }
 
-    function makeRequest() {
-        BinarySocket.send({oauth_apps: 1});
-    }
-
-    function revokeApplication(id) {
-        if (!id) {
-            return;
-        }
-        BinarySocket.send({oauth_apps: 1, revoke_app: id});
-    }
-
     function init() {
         ApplicationsUI.init();
         BinarySocket.init({
-            onmessage: responseHandler
+            onmessage: ApplicationsData.calls(responseHandler)
         });
-        makeRequest();
+        ApplicationsData.list();
     }
 
     function clean() {
@@ -38,7 +23,6 @@ var Applications = (function() {
 
     return {
         init: init,
-        revokeApplication: revokeApplication,
         clean: clean,
     };
 })();
