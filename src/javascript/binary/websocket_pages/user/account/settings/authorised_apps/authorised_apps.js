@@ -9,39 +9,42 @@ var ApplicationsUI = (function(){
         revoke_confirm: 'Are you sure that you want to permanently revoke access to application',
         revoke_access: 'Revoke access',
     };
+    var flexTable;
 
-    function createEmptyTable() {
-        var header = [
-                'Name',
-                'Permissions',
-                'Last Used',
-                'Action',
-            ].map(text.localize);
-        var metadata = {
-            id: tableID,
-            cols: columns
-        };
-        var data = [];
-        var $table = Table.createFlexTable(data,metadata,header);
-        $table.appendTo(containerSelector);
-        return $table;
+    function createTable(data) {
+        var headers = ['Name', 'Permissions', 'Last Used', 'Action'];
+        var columns = ['name', 'permissions', 'last_used', 'action'];
+        flexTable = new FlexTableUI({
+            container: containerSelector,
+            header: headers.map(text.localize),
+            id:     tableID,
+            cols:   columns,
+            data:   data,
+            style:  function($row, app) {
+                $row.children('.action').first()
+                    .append(createRevokeButton($row, app));
+            },
+            formatter: formatApp,
+        });
+    }
+
+    function formatApp(app) {
+        var last_used = app.last_used ? app.last_used.format('YYYY-MM-DD HH:mm:ss') : text.localize('Never');
+        return [
+            app.name,
+            app.scopes.join(', '),
+            last_used,
+            '', // for the "Revoke App" button
+        ];
     }
 
     function update(apps) {
-        createEmptyTable();
         $('#loading').remove();
+        createTable(apps);
         if (!apps.length) {
-            $(selector + ' tbody')
-                .append($('<tr/>', {class: 'flex-tr'})
-                    .append($('<td/>', {colspan: 7})
-                        .append($('<p/>', {class: 'notice-msg center-text', text: text.localize(messages.no_apps)})
-                        )
-                    )
-                );
+            flexTable.displayError(text.localize(messages.no_apps));
             return;
         }
-        Table.clearTableBody(tableID);
-        Table.appendTableBody(tableID, apps, createRow);
         showLocalTimeOnHover('td.last_used');
     }
 
@@ -58,18 +61,6 @@ var ApplicationsUI = (function(){
         return $buttonSpan;
     }
 
-    function createRow(app) {
-        var row = [
-            app.name,
-            app.scopes.join(', '),
-            app.last_used ? app.last_used.format('YYYY-MM-DD HH:mm:ss') : text.localize('Never'),
-            '',
-        ];
-        var $row = Table.createFlexTableRow(row, columns, 'data');
-        $row.children('.action').first().append(createRevokeButton($row, app));
-        return $row[0];
-    }
-
     function displayError(message) {
         $(containerSelector + ' .error-msg').text(message);
     }
@@ -83,13 +74,15 @@ var ApplicationsUI = (function(){
     }
 
     function clean() {
-        Table.clearTableBody(tableID);
+        $(containerSelector + ' .error-msg').text('');
+        flexTable.clear();
+        flexTable = null;
     }
 
     return {
         init: init,
         clean: clean,
         update: update,
-        displayError: displayError
+        displayError: displayError,
     };
 }());
