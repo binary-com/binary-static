@@ -14,7 +14,7 @@ var IPHistory = (function() {
             return IPHistoryUI.displayError(response.error.message);
         }
         var parsed = response.login_history.map(IPHistoryData.parse);
-        IPHistoryUI.displayTable(parsed);
+        IPHistoryUI.update(parsed);
     }
 
     function init() {
