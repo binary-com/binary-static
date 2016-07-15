@@ -42,9 +42,25 @@ var IPHistoryData = (function() {
         };
     }
 
+    function calls(callback) {
+        return function(msg) {
+            var response = JSON.parse(msg.data);
+            if (!response || response.msg_type !== 'login_history') {
+                return;
+            }
+            callback(response);
+        };
+    }
+
+    function get(n) {
+        BinarySocket.send({login_history: 1, limit: n});
+    }
+
     var external = {
         parse: parse,
         parseUserAgent: parse_ua,
+        calls: calls,
+        get: get,
     };
 
     if (typeof module !== 'undefined') {
