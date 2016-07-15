@@ -28,7 +28,7 @@ var IPHistoryUI = (function() {
             },
         });
         if (!history.length) {
-            return flexTable.displayError(text.localize(no_messages_error));
+            return flexTable.displayError(text.localize(no_messages_error), 6);
         }
         showLocalTimeOnHover('td.timestamp');
     }

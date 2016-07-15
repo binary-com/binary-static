@@ -37,9 +37,9 @@ FlexTableUI.prototype = {
         });
     },
 
-    displayError: function(message) {
+    displayError: function(message, colspan) {
         $tr = $('<tr/>', {class: 'flex-tr'});
-        $td = $('<td/>', {colspan: 7});
+        $td = $('<td/>', {colspan: colspan});
         $p  = $('<p/>', {class: 'notice-msg center-text', text: message});
         return $('#' + this.id + ' tbody').append($tr.append($td.appnd($p)));
     },
