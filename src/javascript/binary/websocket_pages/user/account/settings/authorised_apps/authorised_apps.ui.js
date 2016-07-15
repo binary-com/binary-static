@@ -9,6 +9,11 @@ var ApplicationsUI = (function(){
     var flexTable;
 
     function createTable(data) {
+        if (flexTable) {
+            flexTable.clearBody();
+            flexTable.extend(data);
+            return;
+        }
         var headers = ['Name', 'Permissions', 'Last Used', 'Action'];
         var columns = ['name', 'permissions', 'last_used', 'action'];
         flexTable = new FlexTableUI({
