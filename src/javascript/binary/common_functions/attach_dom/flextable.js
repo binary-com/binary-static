@@ -44,12 +44,13 @@ FlexTableUI.prototype = {
         return $('#' + this.id + ' tbody').append($tr.append($td.appnd($p)));
     },
 
-    clearBody: function() {
+    replace: function(data) {
         Table.clearTableBody(this.id);
+        this.extend(data);
     },
 
     clear: function() {
-        this.clearBody();
+        this.replace([]);
         $('#' + this.id + '> tfoot').hide();
     }
 };

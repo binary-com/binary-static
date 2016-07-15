@@ -10,9 +10,7 @@ var ApplicationsUI = (function(){
 
     function createTable(data) {
         if (flexTable) {
-            flexTable.clearBody();
-            flexTable.extend(data);
-            return;
+            return flexTable.replace(data);
         }
         var headers = ['Name', 'Permissions', 'Last Used', 'Action'];
         var columns = ['name', 'permissions', 'last_used', 'action'];
@@ -28,6 +26,7 @@ var ApplicationsUI = (function(){
             },
             formatter: formatApp,
         });
+        showLocalTimeOnHover('td.last_used');
     }
 
     function formatApp(app) {
@@ -47,7 +46,6 @@ var ApplicationsUI = (function(){
             flexTable.displayError(text.localize(messages.no_apps));
             return;
         }
-        showLocalTimeOnHover('td.last_used');
     }
 
     function createRevokeButton(container, app) {
