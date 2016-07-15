@@ -11,6 +11,11 @@ var IPHistoryUI = (function() {
     }
 
     function update(history) {
+        if (flexTable) {
+            flexTable.clearBody();
+            flexTable.extend(history);
+            return;
+        }
         var headers = ['Date and Time', 'Action', 'Browser', 'IP Address', 'Status'];
         var columns = ['timestamp', 'action', 'browser', 'ip', 'status'];
         flexTable = new FlexTableUI({
