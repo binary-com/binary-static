@@ -1,9 +1,6 @@
 var ApplicationsUI = (function(){
     'use strict';
-    var tableID  = 'applications-table';
-    var selector = '#' + tableID;
     var containerSelector = '#applications-ws-container';
-    var columns  = ['name','permissions','last_used','action'];
     var messages = {
         no_apps: 'You have not granted access to any applications.',
         revoke_confirm: 'Are you sure that you want to permanently revoke access to application',
@@ -17,7 +14,7 @@ var ApplicationsUI = (function(){
         flexTable = new FlexTableUI({
             container: containerSelector,
             header: headers.map(text.localize),
-            id:     tableID,
+            id:     'applications-table',
             cols:   columns,
             data:   data,
             style:  function($row, app) {
