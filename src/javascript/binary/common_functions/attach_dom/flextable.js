@@ -38,9 +38,9 @@ FlexTableUI.prototype = {
     },
 
     displayError: function(message) {
-        $tr = $('<tr/>', {class: 'flex-tr'});
-        $td = $('<td/>', {colspan: 7});
-        $p  = $('<p/>', {class: 'notice-msg center-text', text: message});
+        var $tr = $('<tr/>', {class: 'flex-tr'});
+        var $td = $('<td/>', {colspan: 7});
+        var $p  = $('<p/>', {class: 'notice-msg center-text', text: message});
         return $('#' + this.id + ' tbody').append($tr.append($td.appnd($p)));
     },
 
