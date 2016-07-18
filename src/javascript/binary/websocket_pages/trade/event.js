@@ -169,11 +169,6 @@ var TradingEvents = (function () {
                     displayTooltip(Defaults.get('market'), underlying);
                 }
             });
-            if (isJapanTrading()) {
-              underlyingElement.addEventListener('mousedown', function(e) {
-                Symbols.getSymbols(0);
-              });
-            }
         }
 
         /*
@@ -504,70 +499,6 @@ var TradingEvents = (function () {
             return (value % 1 !== 0 && ((+parseFloat(value)).toFixed(10)).replace(/^-?\d*\.?|0+$/g, '').length>2);
         });
 
-        var jhighBarrierElement = document.getElementById('jbarrier_high');
-        if (jhighBarrierElement) {
-            jhighBarrierElement.addEventListener('change', function (e) {
-                processPriceRequest();
-            });
-        }
-
-
-        var jlowBarrierElement = document.getElementById('jbarrier_low');
-        if (jlowBarrierElement) {
-            jlowBarrierElement.addEventListener('change', function (e) {
-                var options = jhighBarrierElement.getElementsByTagName('option');
-                var f = 0;
-                if(jhighBarrierElement.value > jlowBarrierElement.value){
-                    f = 1;
-                }
-                for(var i=0; i<options.length; i++){
-                    option = options[i];
-
-                    if(option.value <= jlowBarrierElement.value){
-                        option.setAttribute('disabled', true);
-                    }
-                else{
-                    if(!f){
-                        jhighBarrierElement.value = option.value;
-                        f=1;
-                    }
-                    option.removeAttribute('disabled');
-                }
-                }
-                processPriceRequest();
-            });
-        }
-
-        var jbarrierElement = document.getElementById('jbarrier');
-        if (jbarrierElement) {
-            jbarrierElement.addEventListener('change', function (e) {
-                processPriceRequest();
-            });
-        }
-
-        var period = document.getElementById('period');
-        if(period){
-            period.addEventListener('change', function (e) {
-                Periods.displayBarriers();
-                processPricingTableRequest();
-                // processPriceRequest();
-                var japan_info = TradingAnalysis.japan_info();
-                if(japan_info && TradingAnalysis.getActiveTab() === 'tab_japan_info'){
-                    japan_info.show();
-                }
-            });
-        }
-
-        if(isJapanTrading()){
-            var amount_type = document.getElementById('amount_type');
-            var options = amount_type.getElementsByTagName('option');
-            for(var d=0; d<options.length; d++){
-                if(options[d].value!='payout'){
-                    options[d].setAttribute('disabled', true);
-                }
-            }
-        }
-
         var init_logo = document.getElementById('trading_init_progress');
         if(init_logo){
             init_logo.addEventListener('click', debounce( function (e) {
@@ -582,15 +513,6 @@ var TradingEvents = (function () {
                 load_with_pjax(url);
             }));
         }
-
-        var $japanUnit = $('#japan_unit');
-        var japanState = PricingTable.getState();
-        $japanUnit.change(function(e){
-            var value = Math.abs(parseInt(e.target.value, 10)) || 1;
-            japanState.units = value;
-            $('#japan_payout').text('¥'+ parseInt(value)*1000);
-            processPricingTableRequest();
-        });
 
         /*
          * attach datepicker and timepicker to end time durations

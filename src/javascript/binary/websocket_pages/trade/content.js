@@ -127,22 +127,6 @@ var Content = (function() {
             textUnavailableReal: text.localize('Sorry, account opening is unavailable.'),
             textMessageMinRequired: text.localize('Minimum of [_1] characters required.'),
             textFeatureUnavailable: text.localize('Sorry, this feature is not available.'),
-            textExercisePrice: text.localize('Exercise price'),
-            textPrices: text.localize('Prices'),
-            textLots: text.localize('Lots'),
-            textBuy: text.localize('Buy'),
-            textSell: text.localize('Sell'),
-            textCALLE: text.localize('[_1] [_2] payout if [_3] is strictly higher or equal than Exercise price at close  on [_4].'),
-            textPUT: text.localize('[_1] [_2] payout if [_3] is strictly lower than Exercise price at close on [_4].'),
-            textNOTOUCH: text.localize('[_1] [_2] payout if [_3] does not touch Exercise price through close on [_4].'),
-            textONETOUCH: text.localize('[_1] [_2] payout if [_3] touches Exercise price through close on [_4].'),
-            textEXPIRYRANGEE: text.localize('[_1] [_2] payout if [_3] ends on or between low and high values of Exercise price at close on [_4].'),
-            textEXPIRYMISS: text.localize('[_1] [_2] payout if [_3] ends otside low and high values of Exercise price at close on [_4].'),
-            textRANGE: text.localize('[_1] [_2] payout if [_3] stays between low and high values of Exercise price through close on [_4].'),
-            textUPORDOWN: text.localize('[_1] [_2] payout if [_3] goes ouside of low and high values of Exercise price through close on [_4].'),
-            textBuyPriceUnit: text.localize('BUY price per unit'),
-            textSellPriceUnit: text.localize('SELL price  per unit'),
-            textUnits: text.localize('Units'),
             textMessagePasswordScore: text.localize( 'Password score is: [_1]. Passing score is: 20.'),
             textShouldNotLessThan: text.localize('Please enter a number greater or equal to [_1].'),
             textNumberLimit: text.localize('Please enter a number between [_1].')       // [_1] should be a range
@@ -203,16 +187,6 @@ var Content = (function() {
         var payoutOption = document.getElementById('payout_option');
         if (payoutOption) {
             payoutOption.textContent = localize.textPayout;
-        }
-
-        var japanUnit = document.getElementById('japan_unit_label');
-        if (japanUnit) {
-            japanUnit.textContent = localize.textUnits;
-        }
-
-        var japanPayout = document.getElementById('japan_payout_label');
-        if (japanPayout) {
-            japanPayout.textContent = localize.textPayout;
         }
 
         var stakeOption = document.getElementById('stake_option');

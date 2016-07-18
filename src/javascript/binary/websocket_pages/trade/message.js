@@ -25,9 +25,6 @@ var Message = (function () {
             } else if (type === 'proposal') {
                 processProposal(response);
             } else if (type === 'buy') {
-                if(isJapanTrading()){
-                    PricingTable.processBuy(response);
-                }
                 Purchase.display(response);
                 GTM.push_purchase_data(response);
             } else if (type === 'tick') {
