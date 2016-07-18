@@ -32,7 +32,7 @@ var IPHistoryUI = (function() {
             'Browser',
             'IP Address',
             'Status',
-        ].map(text.localize);
+        ].map(function(str) { return text.localize(str); });
         var metadata = {
             id: tableID,
             cols: columns
