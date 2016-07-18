@@ -32,7 +32,6 @@ var IPHistoryData = (function() {
         var environ    = activity.environment;
         var ip_addr    = environ.split(' ')[2].split('=')[1];
         var user_agent = environ.match('User_AGENT=(.+) LANG')[1];
-        var browser    = parse_ua(user_agent);
         return {
             time:    activity.time,
             action:  activity.action,
