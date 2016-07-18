@@ -74,7 +74,8 @@ var StatementUI = (function(){
         var csv = 'data:text/csv;charset=utf-8,' + Statement.generateCSV(allData);
         var downloadLink = document.createElement('a');
         downloadLink.href = encodeURI(csv);
-        downloadLink.download = 'statement.csv';
+        downloadLink.download = 'Statement_' + page.client.loginid + '_latest' + $('#rows_count').text() + '_' +
+            toJapanTimeIfNeeded(window.time).replace(/\s/g, '_').replace(/:/g, '') + '.csv';
 
         document.body.appendChild(downloadLink);
         downloadLink.click();
