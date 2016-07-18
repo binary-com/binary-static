@@ -110,3 +110,10 @@ Localizable.prototype = {
         return params ? template(text, params) : text;
     }
 };
+
+// for testing
+if (typeof module !== 'undefined') {
+    module.exports = {
+        Localizable: Localizable
+    };
+}
