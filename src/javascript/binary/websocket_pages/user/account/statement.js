@@ -24,8 +24,29 @@ var Statement = (function(){
         return statement_data;
     };
 
+    var generateCSV = function(allData){
+        var columns = ['date', 'ref', 'payout', 'action', 'desc', 'amount', 'balance'],
+            header  = ['Date', 'Reference ID', 'Potential Payout', 'Action', 'Description', 'Credit/Debit', 'Balance']
+                .map(function(str){
+                    return text.localize(str) + (str === 'Balance' && TUser.get().currency ? ' (' + TUser.get().currency + ')' : '');
+                });
+        var sep = ',',
+            csv = header.join(sep) + '\r\n';
+        if (allData && allData.length > 0) {
+            allData.map(function(data){
+                columns.map(function(key, index){
+                    csv += (index > 0 ? sep : '') +
+                            (data[key] ? data[key].replace(new RegExp(sep, 'g'), '').replace(new RegExp('\n|<br />', 'g'), ' ') : '');
+                });
+                csv += '\r\n';
+            });
+        }
+        return csv;
+    };
+
     var external = {
-        getStatementData: getStatementData
+        getStatementData: getStatementData,
+        generateCSV: generateCSV
     };
 
     if (typeof module !== 'undefined') {
