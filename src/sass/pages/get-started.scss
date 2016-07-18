@@ -35,11 +35,8 @@
             text-align: center;
             background: $COLOR_BLACK;
             text-decoration: none;
-            &.a-jp {
-                min-height: 160px;
-            }
         }
-        a:hover {
+        a:hover .section-header {
             background: $COLOR_DARK_GREEN;
         }
         div {
@@ -122,5 +119,8 @@
         vertical-align: middle;
         height: 35px;
         width: 170px;
+    }
+    .section-header {
+        min-height: 50px;
     }
 }
