@@ -63,6 +63,7 @@ var Barriers = (function () {
                     }
                     Defaults.set('barrier', elm.value);
                     Defaults.remove('barrier_high', 'barrier_low');
+                    Barriers.validateBarrier();
                     return;
                 } else if (barrier.count === 2) {
                     document.getElementById('barrier_row').style.display = 'none';
@@ -143,11 +144,22 @@ var Barriers = (function () {
         Defaults.remove('barrier', 'barrier_high', 'barrier_low');
     };
 
+    var validateBarrier = function() {
+        var barrierElement = document.getElementById('barrier');
+        if(isVisible(barrierElement) && (isNaN(parseFloat(barrierElement.value)) || parseFloat(barrierElement.value) === 0)) {
+            barrierElement.value = '0';
+            barrierElement.classList.add('error-field');
+        } else {
+            barrierElement.classList.remove('error-field');
+        }
+    };
+
     return {
         display: display,
         isBarrierUpdated: function () { return isBarrierUpdated; },
         setBarrierUpdate: function (flag) {
             isBarrierUpdated = flag;
-        }
+        },
+        validateBarrier: validateBarrier
     };
 })();

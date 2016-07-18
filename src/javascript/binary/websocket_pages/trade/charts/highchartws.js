@@ -58,7 +58,7 @@ var Highchart = (function() {
           type: 'line',
           renderTo: el,
           backgroundColor: null, /* make background transparent */
-          height: 450
+          height: el.parentElement.offsetHeight
         },
         title:{
           text: title,
