@@ -51,55 +51,59 @@
             @include BIDIR_PROP(padding-left, padding-right, 6%);
             @include BIDIR_VALUE(text-align, left, right);
         }
-        #sell_details_chart_wrapper {
-            border-right: 1px solid $COLOR_DARK_GRAY;
-            margin-right: -1px;
-            padding: 0px;
-            .chart-notice {
-                margin: 0px;
-            }
-            .highcharts-container {
-                direction: ltr;
-            }
-        }
-        #sell_details_table {
-            padding: 0px;
-            border-left: 1px solid $COLOR_DARK_GRAY;
-            th {
-                line-height: 24px;
-                border-bottom-color: $COLOR_GRAY_SHADE;
-                cursor: pointer;
-            }
-            td, td[data-balloon] {
-                border-bottom: 1px solid $COLOR_LIGHT_GRAY;
-            }
-            #trade_details_profit_loss {
-                font-weight: bold;
-                span {
-                    font-size: 10px;
-                    @include BIDIR_PROP(padding-left, padding-right, 7px);
-                    font-weight: normal;
+        #sell_content_wrapper {
+            max-height: 90vh;
+            overflow: scroll;
+            #sell_details_chart_wrapper {
+                border-right: 1px solid $COLOR_DARK_GRAY;
+                margin-right: -1px;
+                padding: 0px;
+                .chart-notice {
+                    margin: 0px;
+                }
+                .highcharts-container {
+                    direction: ltr;
                 }
             }
-            .last_cell {
-                border-bottom: 0px;
-                min-height: 20px;
-                padding: 5px 15px;
-                text-align: center;
-            }
-            #trade_details_message {
-                font-style: italic;
-            }
-            #contract_sell_message {
-                font-size: 0.9em;
-                line-height: 20px;
-            }
-            #sell_at_market_wrapper {
-                .note {
-                    line-height: 18px;
-                    margin-bottom: 10px;
-                    font-size: 12px;
-                    padding: 3px 10px;
+            #sell_details_table {
+                padding: 0px;
+                border-left: 1px solid $COLOR_DARK_GRAY;
+                th {
+                    line-height: 24px;
+                    border-bottom-color: $COLOR_GRAY_SHADE;
+                    cursor: pointer;
+                }
+                td, td[data-balloon] {
+                    border-bottom: 1px solid $COLOR_LIGHT_GRAY;
+                }
+                #trade_details_profit_loss {
+                    font-weight: bold;
+                    span {
+                        font-size: 10px;
+                        @include BIDIR_PROP(padding-left, padding-right, 7px);
+                        font-weight: normal;
+                    }
+                }
+                .last_cell {
+                    border-bottom: 0px;
+                    min-height: 20px;
+                    padding: 5px 15px;
+                    text-align: center;
+                }
+                #trade_details_message {
+                    font-style: italic;
+                }
+                #contract_sell_message {
+                    font-size: 0.9em;
+                    line-height: 20px;
+                }
+                #sell_at_market_wrapper {
+                    .note {
+                        line-height: 18px;
+                        margin-bottom: 10px;
+                        font-size: 12px;
+                        padding: 3px 10px;
+                    }
                 }
             }
         }

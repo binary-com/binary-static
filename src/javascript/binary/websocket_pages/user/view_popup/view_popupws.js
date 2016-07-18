@@ -188,6 +188,7 @@ var ViewPopupWS = (function() {
 
         normalUpdateTimers();
         normalUpdate();
+        ViewPopupUI.reposition_confirmation();
     };
 
     var normalUpdate = function() {
@@ -367,7 +368,7 @@ var ViewPopupWS = (function() {
     var normalMakeTemplate = function() {
         $Container = $('<div/>').append($('<div/>', {id: wrapperID}));
 
-        var longcode = toJapanTimeIfNeeded(contract.date_expiry, '', contract.longcode);
+        var longcode = japanese_client() ? toJapanTimeIfNeeded(contract.expiry_date, '', contract.longcode) : contract.longcode;
 
         $Container.prepend($('<div/>', {id: 'sell_bet_desc', class: 'popup_bet_desc drag-handle', text: longcode}));
         var $sections = $('<div/>').append($('<div class="gr-row container"><div id="sell_details_chart_wrapper" class="gr-8 gr-12-m"></div><div id="sell_details_table" class="gr-4 gr-12-m"></div></div>'));
