@@ -27,6 +27,7 @@ var AssetIndexUI = (function() {
         $('#errorMsg').addClass('hidden');
         assetIndex = AssetIndex.getAssetIndexData(assetIndex, activeSymbols);
         marketColumns = AssetIndex.getMarketColumns();
+        $tabs = $('<ul/>');
         $contents = $('<div/>');
 
         for(var i = 0; i < assetIndex.length; i++) {

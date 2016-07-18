@@ -5,16 +5,7 @@ pjax_config_page_require_auth("user/settings/iphistoryws", function(){
                 window.location.href = page.url.url_for('user/settingsws');
             }
             BinarySocket.init({
-                onmessage: function(msg){
-                    var response = JSON.parse(msg.data);
-
-                    if (response) {
-                        var type = response.msg_type;
-                        if (type === 'login_history'){
-                            IPHistory.responseHandler(response);
-                        }
-                    }
-                }
+                onmessage: IPHistory.responseHandler
             });
             Content.populate();
             IPHistory.init();

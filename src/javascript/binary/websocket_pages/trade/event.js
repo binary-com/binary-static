@@ -391,10 +391,11 @@ var TradingEvents = (function () {
         var barrierElement = document.getElementById('barrier');
         if (barrierElement) {
             barrierElement.addEventListener('input', debounce( function (e) {
+                Barriers.validateBarrier();
                 Defaults.set('barrier', e.target.value);
                 processPriceRequest();
                 submitForm(document.getElementById('websocket_form'));
-            }));
+            }, 1000));
         }
 
         /*

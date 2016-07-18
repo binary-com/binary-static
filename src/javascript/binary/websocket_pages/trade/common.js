@@ -325,6 +325,7 @@ function contractTypeDisplayMapping(type) {
  */
 function isVisible(elem) {
     'use strict';
+    if (!elem) return;
     if (elem.offsetWidth === 0 && elem.offsetHeight === 0) {
         return false;
     } else {
