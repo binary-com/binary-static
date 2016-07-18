@@ -26,22 +26,20 @@ var Statement = (function(){
 
     var generateCSV = function(allData){
         var columns = ['date', 'ref', 'payout', 'action', 'desc', 'amount', 'balance'],
-            header  = ['Date', 'Reference ID', 'Potential Payout', 'Action', 'Description', 'Credit/Debit', 'Balance']
-                .map(function(str){
-                    return text.localize(str) + (str === 'Balance' && TUser.get().currency ? ' (' + TUser.get().currency + ')' : '');
-                });
+            header  = ['Date', 'Reference ID', 'Potential Payout', 'Action', 'Description', 'Credit/Debit'].map(function(str){return text.localize(str);});
+        header.push(text.localize('Balance') + TUser.get().currency ? ' (' + TUser.get().currency + ')' : '');
         var sep = ',',
-            csv = header.join(sep) + '\r\n';
+            csv = [header.join(sep)];
         if (allData && allData.length > 0) {
-            allData.map(function(data){
-                columns.map(function(key, index){
-                    csv += (index > 0 ? sep : '') +
-                            (data[key] ? data[key].replace(new RegExp(sep, 'g'), '').replace(new RegExp('\n|<br />', 'g'), ' ') : '');
-                });
-                csv += '\r\n';
-            });
+            csv = csv.concat(
+                allData.map(function(data){
+                    return columns.map(function(key){
+                       return (data[key] ? data[key].replace(new RegExp(sep, 'g'), '').replace(new RegExp('\n|<br />', 'g'), ' ') : '');
+                    }).join(sep);
+                })
+            );
         }
-        return csv;
+        return csv.join('\r\n');
     };
 
     var external = {

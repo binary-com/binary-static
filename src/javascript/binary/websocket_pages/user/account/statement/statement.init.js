@@ -51,7 +51,7 @@ var StatementWS = (function(){
                             )
                         )
                     );
-            } else if(page.language.toLowerCase() === 'ja') {
+            } else if(page.language().toLowerCase() === 'ja') {
                 $('#download_csv').removeClass('invisible').find('a').click(function(){StatementUI.exportCSV();});
             }
         }
