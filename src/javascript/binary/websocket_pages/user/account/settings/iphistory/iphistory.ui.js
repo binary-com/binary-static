@@ -19,7 +19,7 @@ var IPHistoryUI = (function() {
         flexTable = new FlexTableUI({
             id:        'login-history-table',
             container: containerSelector,
-            header:    headers.map(text.localize),
+            header:    headers.map(function(s) { return text.localize(s) }),
             cols:      columns,
             data:      history,
             formatter: formatRow,
