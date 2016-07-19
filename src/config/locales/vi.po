@@ -203,6 +203,11 @@ msgstr "%1 đạt $2 tỷ doanh thu từ khi ra đời năm 1999"
 msgid "%1 reaches 1 million registered users"
 msgstr "%1 đã có 1 triệu người dùng đăng ký"
 
+#, fuzzy
+#| msgid "Days to display"
+msgid "%1 rows displayed:"
+msgstr "Ngày hiển thị"
+
 msgid "%1 seeks a Project Coordinator to help drive the production of promotional content and rollout of marketing campaigns, designed to engage new prospects and current customers based throughout the globe."
 msgstr "%1 đang tìm kiếm một Phối viên Dự án để hỗ trợ sản xuất nội dung quảng cáo và triển khai những chiến dịch tiếp thị được thiết kế để thu hút khách hàng tiềm năng mới, cũng như những khách hàng hiện tại trên toàn cầu."
 
@@ -2097,6 +2102,11 @@ msgstr "Tạo quy trình quản lý tài liệu để tăng cường khả năng
 
 msgid "Dormant and Inactive Accounts"
 msgstr "Tài khoản không hoạt động"
+
+#, fuzzy
+#| msgid "Download"
+msgid "Download CSV"
+msgstr "Tải xuồng"
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "Tạo sự tăng trưởng nhanh chóng và phát triển kinh doanh để hỗ trợ các mục tiêu bán hàng và tiếp thị của công ty"
@@ -13941,9 +13951,6 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 #~ msgid "Barrier terms"
 #~ msgstr "Điều khoản cho Rào cản"
 
-#~ msgid "Days to display"
-#~ msgstr "Ngày hiển thị"
-
 #~ msgid "From Barrier out of limit"
 #~ msgstr "Từ Rào cản bên ngoài giới hạn"
 
@@ -14536,9 +14543,6 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 
 #~ msgid "Click <a href=\"%1\" target=\"_blank\">here</a> to try the beta-release of the application. Kindly report issues found to <a href=\"mailto:%2\">%2</a>."
 #~ msgstr "Nhấp chuột vào <a href=\"%1\" target=\"_blank\">ở đây</a> để thử Beta của ứng dụng này. Vui lòng báo cáo các vấn đề gặp phải tới <a href=\"mailto:%2\">%2</a>."
-
-#~ msgid "Download"
-#~ msgstr "Tải xuồng"
 
 #~ msgid ""
 #~ "Download the Binary.com charting application with an extensive range of Indicators, Price Bands, Overlays, and your own customizable Workspace\n"
