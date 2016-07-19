@@ -51,10 +51,11 @@ var StatementWS = (function(){
                             )
                         )
                     );
+            } else if(page.language().toLowerCase() === 'ja') {
+                $('#download_csv').removeClass('invisible').find('a').click(function(){StatementUI.exportCSV();});
             }
-
-            Content.statementTranslation();
         }
+        showLocalTimeOnHover('td.date');
     }
 
     function getNextBatchStatement(){
@@ -65,9 +66,9 @@ var StatementWS = (function(){
     function getNextChunkStatement(){
         var chunk = currentBatch.splice(0, chunkSize);
         transactionsConsumed += chunk.length;
+        $('#rows_count').text(transactionsConsumed);
         return chunk;
     }
-
 
     function loadStatementChunkWhenScroll(){
         $(document).scroll(function(){
@@ -98,7 +99,6 @@ var StatementWS = (function(){
         });
     }
 
-
     function initTable(){
         pending = false;
         noMoreData = false;
@@ -121,6 +121,8 @@ var StatementWS = (function(){
         currentBatch = [];
         transactionsReceived = 0;
         transactionsConsumed = 0;
+        StatementData.initSocket();
+        Content.populate();
         getNextBatchStatement();
         loadStatementChunkWhenScroll();
     }

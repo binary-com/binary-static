@@ -57,8 +57,6 @@ var ProfitTableWS = (function () {
                         )
                     );
             }
-
-            Content.profitTableTranslation();
         }
     }
 
@@ -101,8 +99,6 @@ var ProfitTableWS = (function () {
         });
     }
 
-
-
     function init(){
         batchSize = 100;
         chunkSize = batchSize/2;
@@ -111,6 +107,8 @@ var ProfitTableWS = (function () {
         noMoreData = false;
         pending = false;
         currentBatch = [];
+        ProfitTableData.initSocket();
+        Content.populate();
         getNextBatchTransactions();
         onScrollLoad();
     }
