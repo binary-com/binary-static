@@ -171,17 +171,25 @@ var SelfExclusionWS = (function() {
                     validateExclusionDate(newValue);
                 }
                 else if(key !== timeID && key !== timeDateID) {
-                    if(newValue.length > 0 && !isNormalInteger(newValue)) {
-                        SelfExclusionUI.showError(key, text.localize('Please enter an integer value'));
-                        isValid = false;
+                    var guard;
+                    if (newValue) {
+                        guard = SelfExclusionData.isNormalInteger;
+                    } else if (currentValue > 0) {
+                        guard = SelfExclusionData.smallerThan(currentValue);
+                    } else if (key === 'session_duration_limit') {
+                        guard = SelfExclusionData.chain([
+                            SelfExclusionData.isNormalInteger,
+                            SelfExclusionData.validSessionDuration,
+                        ]);
                     }
-                    else if(currentValue > 0 && (newValue.length === 0 || isLargerInt(newValue, currentValue))) {
-                        SelfExclusionUI.showError(key, text.localize('Please enter a number between 0 and [_1]').replace('[_1]', currentValue));
-                        isValid = false;
-                    }
-                    else if(key === 'session_duration_limit' && newValue > (6 * 7 * 24 * 60)) {
-                        SelfExclusionUI.showError(key, text.localize('Session duration limit cannot be more than 6 weeks.'));
-                        isValid = false;
+                    if (guard) {
+                        var info = guard(newValue);
+                        if (!info.valid) {
+                            info.errors.forEach(function(err) {
+                                SelfExclusionUI.showError(key, text.localize(err));
+                            });
+                            isValid = false;
+                        }
                     }
                 }
             } else if (key === timeDateID && $form.find('#' + timeID).val().trim().length > 0) {
