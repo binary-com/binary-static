@@ -43,24 +43,24 @@
                     </div>
                     <div class='gr-6 gr-hide-m gr-hide-p'>
                         <div id='main-navigation'>
-                            <ul class="smaller-font" id="menu-top">
+                            <ul id="menu-top">
                                 <li>
-                                    <a class="smaller-font pjaxload" href="[% request.url_for('why-us') %]">[% l("Why Us?") %]</a>
+                                    <a class="pjaxload" href="[% request.url_for('why-us') %]">[% l("Why Us?") %]</a>
                                 </li>
                                 <li class="ja-hide">
-                                    <a class="smaller-font pjaxload" href="[% request.url_for('get-started') %]">[% l("Get Started") %]</a>
+                                    <a class="pjaxload" href="[% request.url_for('get-started') %]">[% l("Get Started") %]</a>
                                 </li>
                                 <li class="all-hide ja-show-block">
-                                  <a class="smaller-font pjaxload" href="[% request.url_for('get-started-jp') %]">[% l("Get Started") %]</a>
+                                  <a class="pjaxload" href="[% request.url_for('get-started-jp') %]">[% l("Get Started") %]</a>
                                 </li>
                                 <li>
-                                    <a class="smaller-font pjaxload" href="[% request.url_for('tour') %]">[% l("Tour") %]</a>
+                                    <a class="pjaxload" href="[% request.url_for('tour') %]">[% l("Tour") %]</a>
                                 </li>
                                 <li class="ja-hide" id="main-navigation-trading">
-                                    <a class="smaller-font pjaxload" href="[% request.url_for('trading') %]">[% l("Trade") %]</a>
+                                    <a class="pjaxload" href="[% request.url_for('trading') %]">[% l("Trade") %]</a>
                                 </li>
                                 <li class="all-hide ja-show-block" id="main-navigation-jptrading">
-                                    <a class="smaller-font pjaxload" href="[% request.url_for('jptrading') %]">[% l("Trade") %]</a>
+                                    <a class="pjaxload" href="[% request.url_for('jptrading') %]">[% l("Trade") %]</a>
                                 </li>
                             </ul>
                         </div>
