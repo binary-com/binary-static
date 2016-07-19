@@ -5,7 +5,7 @@ var SelfExclusionWS = (function() {
         this.id = id;
         this.validator = validator;
         this.$input = $('#' + id);
-        this.old = this.value();
+        this.old = this.get();
     }
 
     FormInput.prototype = {
