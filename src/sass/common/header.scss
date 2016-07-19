@@ -113,6 +113,7 @@
     }
     #menu-top {
         text-align: center;
+        white-space: nowrap;
         a:hover {
             opacity: 0.75;
         }
@@ -121,6 +122,7 @@
             display: inline-block;
             text-align: center;
             margin: 0;
+            white-space: normal;
             &:last-child {
                 background: none;
             }

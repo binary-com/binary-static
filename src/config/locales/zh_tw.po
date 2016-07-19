@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Taiwan) (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-07-09 02:22+0000\n"
+"PO-Revision-Date: 2016-07-19 03:09+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) <https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
 "Language: zh_tw\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.7-dev\n"
+"X-Generator: Weblate 2.8-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "「%1 API」是由%1建立和維護的編程例程、議定書、工具和資源集。您可通過%1交易平台使用已經註冊的應用程式介面。"
@@ -197,6 +197,11 @@ msgstr "%1從1999年開始運營，目前營業額達到 20 億美元"
 
 msgid "%1 reaches 1 million registered users"
 msgstr "%1註冊使用者已達1百萬人"
+
+#, fuzzy
+#| msgid "Days to display"
+msgid "%1 rows displayed:"
+msgstr "要顯示的天數"
 
 msgid "%1 seeks a Project Coordinator to help drive the production of promotional content and rollout of marketing campaigns, designed to engage new prospects and current customers based throughout the globe."
 msgstr "%1 誠聘專案協調員，幫助推動向全球各地新潛在客戶和現有客戶發佈的宣傳內容創作和行銷活動。"
@@ -2094,6 +2099,11 @@ msgstr "通過文檔部門流程提高行銷隊伍有效執行重複任務的能
 msgid "Dormant and Inactive Accounts"
 msgstr "休眠和非使用中帳戶"
 
+#, fuzzy
+#| msgid "Download"
+msgid "Download CSV"
+msgstr "下載"
+
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "推動快速增長和業務發展，以支援公司的銷售和市場行銷目標"
 
@@ -2359,13 +2369,13 @@ msgid "Exit Level"
 msgstr "退出價位"
 
 msgid "Exit Spot"
-msgstr "退出現價"
+msgstr "退市現價"
 
 msgid "Exit Spot Time"
-msgstr "退出現價時間"
+msgstr "退市現價時間"
 
 msgid "Exit spot"
-msgstr "退出現價"
+msgstr "退市現價"
 
 msgid "Expand our network of active affiliates in your local market. Contribute your energy, skills, and knowledge of the local business culture to help further our rapid rate of growth worldwide."
 msgstr "擴大我們在您當地市場的活躍聯盟機構網路。 貢獻您對當地商業文化的力量、技能和知識，幫助我們在全球進一步快速增長。"
@@ -2911,25 +2921,25 @@ msgid "If you select \"Does Not Touch\", you win the payout if the market never 
 msgstr "如果您選擇「未觸及」期權，假設市場在<strong>合約期限內</strong>一直沒有觸及<strong>障礙水平</strong>，您將獲得賠付。"
 
 msgid "If you select \"Ends Between\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>Low barrier</strong> AND strictly lower than the <strong>High barrier</strong>."
-msgstr "如果您選擇「收於區間內」期權，假設<strong>退出現價</strong>嚴格高於<strong>低障礙</strong>，並且嚴格低於<strong>高障礙</strong>，您將獲得賠付。"
+msgstr "如果您選擇「收於區間內」期權，假設<strong>退市現價</strong>嚴格高於<strong>低障礙</strong>，並且嚴格低於<strong>高障礙</strong>，您將獲得賠付。"
 
 msgid "If you select \"Ends Outside\", you win the payout if the <strong>exit spot</strong> is EITHER strictly higher than the <strong>High barrier</strong>, OR strictly lower than the <strong>Low barrier</strong>."
-msgstr "如果您選擇「收於區間外」期權，只要<strong>退出現價</strong>嚴格高於<strong>高障礙</strong>，或者嚴格低於<strong>低障礙</strong>，您將獲得賠付。"
+msgstr "如果您選擇「收於區間外」期權，只要<strong>退市現價</strong>嚴格高於<strong>高障礙</strong>，或者嚴格低於<strong>低障礙</strong>，您將獲得賠付。"
 
 msgid "If you select \"Even\", you will win the payout if the <strong>last digit</strong> of the last tick is an <strong>even number (i.e., 2, 4, 6, 8, or 0).</strong>"
 msgstr "如果您選擇「偶數」期權，只要<strong>最新價格的</strong>最後一個數字<strong>是偶數(如2、4、6、8或0)，您將獲得賠付。</strong>"
 
 msgid "If you select \"Falls\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>entry spot</strong>."
-msgstr "如果您選擇「下跌」期權，只要<strong>退出現價</strong>嚴格低於<strong>入市現價</strong>，您將獲得賠付。"
+msgstr "如果您選擇「下跌」期權，只要<strong>退市現價</strong>嚴格低於<strong>入市現價</strong>，您將獲得賠付。"
 
 msgid "If you select \"Goes Outside\", you win the payout if the market touches either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>."
 msgstr "如果您選擇「超出區間外」期權，只要市場在<strong>合約期限內的</strong>任何時候觸 及<strong>高障礙</strong>或<strong>低障礙</strong>，您將得獲得賠付。"
 
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>."
-msgstr "如果您選擇「高於」期權，只要<strong>退出現價</strong>嚴格高於<strong>障礙</strong>，您將獲得賠付。"
+msgstr "如果您選擇「高於」期權，只要<strong>退市現價</strong>嚴格高於<strong>障礙</strong>，您將獲得賠付。"
 
 msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>barrier</strong>."
-msgstr "如果您選擇「低於」期權，只要<strong>退出現價</strong>嚴格低於<strong>障礙</strong>，您將獲得賠付。"
+msgstr "如果您選擇「低於」期權，只要<strong>退市現價</strong>嚴格低於<strong>障礙</strong>，您將獲得賠付。"
 
 msgid "If you select \"Matches\", you will win the payout if the <strong>last digit</strong> of the last tick is the <strong>same</strong> as your <strong>prediction.</strong>"
 msgstr "如果您選擇「符合」期權，只要<strong>最新價格的</strong>最後一個數字<strong>與您的</strong>預測<strong>相同，您將獲得賠付。</strong>"
@@ -2941,7 +2951,7 @@ msgid "If you select \"Over\", you will win the payout if the <strong>last digi
 msgstr "如果您選擇「大於」期權，只要<strong>最新價格的</strong>最後一個數字<strong>大於您的預測，您將獲得賠付。</strong>"
 
 msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
-msgstr "如果您選擇「上漲」期權，只要<strong>退出現價</strong>嚴格高於<strong>入市現價</strong>，您將獲得賠付。"
+msgstr "如果您選擇「上漲」期權，只要<strong>退市現價</strong>嚴格高於<strong>入市現價</strong>，您將獲得賠付。"
 
 msgid "If you select \"Stays Between\", you win the payout if the market stays between (does not touch) either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>."
 msgstr "如果您選擇「保持區間內」期權，只要市場在<strong>合約期限內的</strong>任何時間位於<strong>高障礙</strong>和<strong>低障礙</strong>之間（但並不觸及），您將獲得賠付。"
@@ -5624,7 +5634,7 @@ msgid "The <strong>end time</strong> is the selected number of seconds/minutes/h
 msgstr "<strong>結束時間</strong>是指在<strong>開始時間</strong>（如果期限小於一天）之後選定的秒數/分鐘數/小時數，或是交易日結束之時（如果期限為一天或更長）。"
 
 msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
-msgstr "<strong>退出現價</strong>為合約<strong>結束時間</strong>的現價。"
+msgstr "<strong>退市現價</strong>為合約<strong>結束時間</strong>的現價。"
 
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "合約<strong>開始時間</strong>即我們的伺服器處理合約的時間。"
@@ -5699,7 +5709,7 @@ msgid "The Company reserves the right in its sole discretion to refuse and/or ca
 msgstr "公司有權自行以任何理由拒絕和/或取消對任何人的服務，收取存款和/或取款費用的權利，該等理由包括但不限於："
 
 msgid "The Company reserves the right to cancel/reverse transactions or amend the contractual terms (including, but not limited to, entry and exit spot) in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug or glitch in our website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, or manifest mis-calculation of prices or other obvious errors (\"Manifest Errors\"). Clients have a duty to report to the Company any such problems, errors or suspected system inadequacies that they may experience and may not abuse of or arbitrage such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Any amendments to the contractual terms (including, but not limited to, entry and exit spot) of Manifestly Erroneous contracts shall be reasonable and fair. Monies exchanged between oneself and the Company in connection with Manifestly Erroneous contracts shall be returned to the recipient according to the amendments made to the contractual terms (including, but not limited to, entry and exit spot). You further acknowledge and agree that the Company will not be held liable or responsible, whether directly or indirectly, for any loss, expenses or damage caused or alleged to be caused by or in connection with a Manifest Error."
-msgstr "如果由於我們網站軟體沒有檢測出的編程錯誤、病毒或缺陷、市場資料輸入或合約價格延遲、資料輸入錯誤、報價差異、錯誤價格參數、價單計算錯誤或其他明顯錯誤(簡稱「明顯錯誤」)導致任何交易合約的購買或售出價格未能反映公平的市場價格或者以異常低的風險購買和售出，公司保留取消/撤回交易或修改合約條款(包括但不限於進場和退出現價)的權利。客戶有義務向公司報告其所經歷的任何問題或可能的系統缺陷，不得濫用系統缺陷盈利。公司將努力在最短時間內解決這些問題。擁有任何金融市場或者工具內幕資訊的人員禁止在本網站上交易。對明顯錯誤合約條款的任何修改(包括但不限於進場和退出現價)必須合理和公平。個人和公司之間因合約明顯錯誤造成的款項交換差異須根據合約條款修正(包括但不限於進場和退出現價)退還收款人。您進一步承認並同意，無論是直接或間接經由明顯錯誤所引起或有關聯的任何損失、費用或損害，本公司概不承擔任何責任或義務。"
+msgstr "如果由於我們網站軟體沒有檢測出的編程錯誤、病毒或缺陷、市場資料輸入或合約價格延遲、資料輸入錯誤、報價差異、錯誤價格參數、價單計算錯誤或其他明顯錯誤(簡稱「明顯錯誤」)導致任何交易合約的購買或售出價格未能反映公平的市場價格或者以異常低的風險購買和售出，公司保留取消/撤回交易或修改合約條款(包括但不限於進場和退市現價)的權利。客戶有義務向公司報告其所經歷的任何問題或可能的系統缺陷，不得濫用系統缺陷盈利。公司將努力在最短時間內解決這些問題。擁有任何金融市場或者工具內幕資訊的人員禁止在本網站上交易。對明顯錯誤合約條款的任何修改(包括但不限於進場和退市現價)必須合理和公平。個人和公司之間因合約明顯錯誤造成的款項交換差異須根據合約條款修正(包括但不限於進場和退市現價)退還收款人。您進一步承認並同意，無論是直接或間接經由明顯錯誤所引起或有關聯的任何損失、費用或損害，本公司概不承擔任何責任或義務。"
 
 msgid "The Company reserves the right to change any part of this Agreement at any time. We will endeavour to ensure affiliates are notified when changes have been made to this Agreement, but it is ultimately your responsibility to check these terms and conditions regularly. Your continued participation in our affiliate program after we have posted the changes will constitute binding acceptance of such changes."
 msgstr "公司有權隨時修改本協議的任何內容。我們會儘量把協議修改詳情通知聯盟成員，但是您承擔定期檢查本條款和條件的最終責任。該等修改公佈後，您繼續參加聯盟計劃的行為，將構成對該等修改的約束性接受。"
@@ -5876,10 +5886,10 @@ msgid "The easiest way to get started in the financial markets"
 msgstr "參與金融市場最簡便的方法"
 
 msgid "The entry level for a long contract is 1001, which is entry spot + half spread. At exit, the spot is at 1100 and hence the exit level for a long contract is 1099, which is exit spot - half spread."
-msgstr "長倉合約的進場價位為1001，即進場現價 + 一半價差。退出時，現價為 1100，因此長倉合約的退出價位為 1099，即退場現價 - 一半價差。"
+msgstr "長倉合約的進場價位為1001，即進場現價 + 一半價差。退出時，現價為 1100，因此長倉合約的退市價位為 1099，即退場現價 - 一半價差。"
 
 msgid "The entry level for a short contract is 999, which is entry spot - half spread. At exit, the spot is at 1100 and hence the exit level for a short contract is 1101, which is exit spot + half spread."
-msgstr "短倉合約的進場價位為999，即進場現價 - 一半價差。退出時，現價為 1100，因此短倉合約的退出價位為 1101，即退場現價 + 一半價差。"
+msgstr "短倉合約的進場價位為999，即進場現價 - 一半價差。退出時，現價為 1100，因此短倉合約的退市價位為 1101，即退場現價 + 一半價差。"
 
 msgid "The entry spot of an instrument XYZ is 1000 and the spread on this instrument is 2 points."
 msgstr "XYZ 工具的進場現價為1000，而此工具的價差為2點。"
@@ -13581,9 +13591,6 @@ msgstr "條款和條件審批"
 #~ msgid "Barrier terms"
 #~ msgstr "障礙條款"
 
-#~ msgid "Days to display"
-#~ msgstr "要顯示的天數"
-
 #~ msgid "From Barrier out of limit"
 #~ msgstr "從超限門檻"
 
@@ -14171,9 +14178,6 @@ msgstr "條款和條件審批"
 
 #~ msgid "Click <a href=\"%1\" target=\"_blank\">here</a> to try the beta-release of the application. Kindly report issues found to <a href=\"mailto:%2\">%2</a>."
 #~ msgstr "點選<a href=\"%1\" target=\"_blank\">此處</a> 試用該應用程式的測試版。如有發現任何問題請傳送至<a href=\"mailto:%2\">%2</a>。"
-
-#~ msgid "Download"
-#~ msgstr "下載"
 
 #~ msgid ""
 #~ "Download the Binary.com charting application with an extensive range of Indicators, Price Bands, Overlays, and your own customizable Workspace\n"
