@@ -303,26 +303,6 @@
           <p class="error-msg" id="chart-error"></p>
           <div id="trade_live_chart">
             <table width="600px" align="center">
-              <tr id="highchart_duration">
-                <td width="25%" id='time_duration'></td>
-                <td width="25%">
-                  <select id="time_period">
-                    <option value="1t" selected="selected"></option>
-                    <option value="1m"></option>
-                    <option value="2m"></option>
-                    <option value="3m"></option>
-                    <option value="5m"></option>
-                    <option value="10m"></option>
-                    <option value="15m"></option>
-                    <option value="30m"></option>
-                    <option value="1h"></option>
-                    <option value="2h"></option>
-                    <option value="4h"></option>
-                    <option value="8h"></option>
-                    <option value="1d"></option>
-                  </select>
-                </td>
-              </tr>
               <tr align="center">
                 <td colspan="4">
                   <iframe src="" width="100%" height="630" id="chart_frame" style="overflow-y : hidden;" scrolling="no"></iframe>
