@@ -28,7 +28,7 @@
     <dl class="gr-row">
       <div class="gr-6 list">
         <div class="section section-jp">
-          <a class="pjaxload a-jp" href="#how-to-open-an-account">
+          <a class="pjaxload" href="#how-to-open-an-account">
             <div id="how-to-open-an-account-img"></div>
             <div class="section-header">
               [% l('{JAPAN ONLY}How to Open an Account') %]
@@ -36,7 +36,7 @@
           </a>
         </div>
         <div class="section section-jp">
-          <a class="pjaxload a-jp" href="#options-basic-knowledge">
+          <a class="pjaxload" href="#options-basic-knowledge">
             <div id="options-basic-knowledge-img"></div>
             <div class="section-header">
               [% l('{JAPAN ONLY}Options Basic Knowledge') %]
@@ -44,7 +44,7 @@
           </a>
         </div>
         <div class="section section-jp">
-          <a class="pjaxload a-jp" href="#summary-of-specifications">
+          <a class="pjaxload" href="#summary-of-specifications">
             <div id="summary-of-specifications-img"></div>
             <div class="section-header">
               [% l('{JAPAN ONLY}Summary of Specifications') %]
@@ -55,7 +55,7 @@
 
       <div class="gr-6 list">
         <div class="section section-jp">
-          <a class="pjaxload a-jp" href="#identification-documents">
+          <a class="pjaxload" href="#identification-documents">
             <div id="identification-documents-img"></div>
             <div class="section-header">
               [% l('{JAPAN ONLY}Identification Documents') %]
@@ -63,7 +63,7 @@
           </a>
         </div>
         <div class="section section-jp">
-          <a class="pjaxload a-jp" href="#trading-guide">
+          <a class="pjaxload" href="#trading-guide">
             <div id="trading-guide-img"></div>
             <div class="section-header">
               [% l('{JAPAN ONLY}Trading Guide') %]
@@ -71,7 +71,7 @@
           </a>
         </div>
         <div class="section section-jp">
-          <a class="pjaxload a-jp" href="#pre-contract-documents">
+          <a class="pjaxload" href="#pre-contract-documents">
             <div id="pre-contract-documents-img"></div>
             <div class="section-header">
               [% l('{JAPAN ONLY}Pre-Contract Documents') %]

@@ -2,6 +2,7 @@ var StatementUI = (function(){
     "use strict";
     var tableID = "statement-table";
     var columns = ["date", "ref", "payout", "act", "desc", "credit", "bal", "details"];
+    var allData = [];
 
     function createEmptyStatementTable(){
         var header = [
@@ -32,11 +33,13 @@ var StatementUI = (function(){
 
     function clearTableContent(){
         Table.clearTableBody(tableID);
+        allData = [];
         $("#" + tableID +">tfoot").hide();
     }
 
     function createStatementRow(transaction){
         var statement_data = Statement.getStatementData(transaction);
+        allData.push(statement_data);
         var creditDebitType = (parseFloat(statement_data.amount) >= 0) ? "profit" : "loss";
 
         var $statementRow = Table.createFlexTableRow([statement_data.date, statement_data.ref, isNaN(statement_data.payout) ? '-' : statement_data.payout, statement_data.action, '', statement_data.amount, statement_data.balance, ''], columns, "data");
@@ -67,10 +70,19 @@ var StatementUI = (function(){
         }
     }
 
+    function exportCSV() {
+        downloadCSV(
+            Statement.generateCSV(allData),
+            'Statement_' + page.client.loginid + '_latest' + $('#rows_count').text() + '_' +
+                toJapanTimeIfNeeded(window.time).replace(/\s/g, '_').replace(/:/g, '') + '.csv'
+        );
+    }
+
     return {
         clearTableContent: clearTableContent,
         createEmptyStatementTable: createEmptyStatementTable,
         updateStatementTable: updateStatementTable,
-        errorMessage: errorMessage
+        errorMessage: errorMessage,
+        exportCSV: exportCSV
     };
 }());

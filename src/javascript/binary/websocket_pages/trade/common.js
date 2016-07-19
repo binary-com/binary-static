@@ -325,6 +325,7 @@ function contractTypeDisplayMapping(type) {
  */
 function isVisible(elem) {
     'use strict';
+    if (!elem) return;
     if (elem.offsetWidth === 0 && elem.offsetHeight === 0) {
         return false;
     } else {
@@ -914,7 +915,7 @@ function chartFrameSource() {
 }
 
 function setChartSource() {
-  document.getElementById('chart_frame').src = 'https://webtrader.binary.com?affiliates=true&instrument=' + document.getElementById('underlying').value + '&timePeriod=' + document.getElementById('time_period').value + '&gtm=true&lang=' + (page.language() || 'en').toLowerCase();
+  document.getElementById('chart_frame').src = 'https://webtrader.binary.com?affiliates=true&instrument=' + document.getElementById('underlying').value + '&timePeriod=1t&gtm=true&lang=' + (page.language() || 'en').toLowerCase();
 }
 
 function isJapanTrading(){

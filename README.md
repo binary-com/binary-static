@@ -83,8 +83,10 @@ This will deploy your changes to a sub-folder named: `br_branchname` and it can 
 ## Release to Production
 
 ```
-grunt release --staging|--production [--cleanup]
+grunt release --staging=1|--production=1 [--cleanup]
 ```
+(The value is needed when more than one option is used)
+
 ###Parameters:
 - `--staging` or `--production` (mandatory)
   - In order to prevent accidentally releasing to the wrong target, it is mandatory to provide one of these parameters.
