@@ -1,6 +1,7 @@
 var SelfExclusionUI = (function() {
     'use strict';
 
+    var $loading;
     var errorClass  = 'errorfield';
     var hiddenClass = 'hidden';
 
@@ -15,6 +16,9 @@ var SelfExclusionUI = (function() {
     function showError(id, err) {
         var $p = $('<p/>', {class: errorClass, text: err});
         var $e = $('#' + id);
+        if (id === 'timeout_until') {
+            $e.css({'margin-bottom': '10px'});
+        }
         $e.parent().append($p);
     }
 
@@ -33,7 +37,19 @@ var SelfExclusionUI = (function() {
             .fadeOut(1000);
     }
 
+    function init() {
+        $loading = $('#loading');
+        showLoadingImage($loading);
+    }
+
+    function loaded() {
+        $loading.addClass(hiddenClass);
+        $('#frmSelfExclusion').removeClass(hiddenClass);
+    }
+
     return {
+        init: init,
+        loaded: loaded,
         showPageError: showPageError,
         showError: showError,
         hideForm: hideForm,

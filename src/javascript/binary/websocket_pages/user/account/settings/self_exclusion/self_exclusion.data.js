@@ -1,20 +1,25 @@
 var SelfExclusionData = (function() {
-    function chain(validators) {
-        return function(value) {
+    function chain(fns) {
+        return function(value, old) {
+            var errors = [];
             var info = {
-                valid: true,
                 value: value,
                 errors: [],
             };
-            for (var i = 0; i < validators.length; i++) {
-                info = validators[i](info.value);
-                if (!info.valid) break;
+            for (var i = 0; i < fns.length; i++) {
+                var next = fns[i](info.value, old);
+                next.errors = info.errors.concat(next.errors);
+                info = next;
+                if (!info.valid) {
+                    break;
+                }
             }
             return info;
         };
     }
 
-    function isInteger(value) {
+
+    function isInteger(value, original) {
         var valid = /^\d+$/.test(value);
         return {
             valid: valid,
@@ -23,31 +28,58 @@ var SelfExclusionData = (function() {
         };
     }
 
-    function smallerThan(b) {
-        return function(a) {
-            var valid = !(a.length === b.length ? a > b : a.length > b.length);
+    function lessThanPrevious(value, original) {
+        var error = text.localize('Please enter a number between 0 and [_1]', [original]);
+        var valid = value <= original;
+        return {
+            valid: valid,
+            value: value,
+            errors: valid ? [] : [error],
+        };
+    }
+
+    function minutesWithin(duration) {
+        var maxMinutes = duration.as('minutes');
+        var error = 'Session duration limit cannot be more than 6 weeks.';
+        return function(value) {
+            var valid = value <= maxMinutes;
             return {
                 valid: valid,
-                value: a,
-                errors: valid ? [] : [text.localize('Please enter a number between 0 and [_1]').replace('[_1]', b)],
+                value: value,
+                errors: valid ? [] : [error],
             };
         };
     }
 
-    function validSessionDuration(value) {
-        var max = moment.duration(6, 'weeks');
-        var valid = value <= max.as('minutes');
+    function validDateString(value) {
+        var date  = moment(value, 'YYYY-MM-DD');
+        var valid = date.isValid();
         return {
             valid: valid,
-            value: value,
-            errors: valid ? [] : ['Session duration limit cannot be more than 6 weeks'],
+            value: date,
+            errors: valid ? [] : ['Please select a valid date'],
+        };
+    }
+
+    function validTimeString(value) {
+        var time  = moment(value, 'HH:mm');
+        var valid = time.isValid();
+        return {
+            errors: valid ? [] : ['Please select a valid time'],
+            valid: valid,
+            value: moment.duration({
+                hours:   time.hours(),
+                minutes: time.minutes(),
+            }),
         };
     }
 
     return {
         chain: chain,
         isInteger: isInteger,
-        validSessionDuration: validSessionDuration,
-        smallerThan: smallerThan,
+        lessThanPrevious: lessThanPrevious,
+        minutesWithin: minutesWithin,
+        validDateString: validDateString,
+        validTimeString: validTimeString,
     };
 })();
