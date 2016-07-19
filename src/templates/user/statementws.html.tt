@@ -1,7 +1,8 @@
 <div id="statement-ws-container">
     <div class="page-title" id="statement-title">
-        <h1>Statement</h1>
+        <h1>[% l('Statement') %]</h1>
         <br>
         <p class="notice-msg center-text invisible" id="err-msg"></p>
     </div>
+    <div id="download_csv" class="align-end invisible">[% l('[_1] rows displayed:', '<span id="rows_count"></span>') %] <a href="javascript:;">[% l('Download CSV') %]</a></div>
 </div>
