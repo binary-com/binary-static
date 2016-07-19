@@ -1,49 +1,35 @@
 var IPHistoryUI = (function() {
     'use strict';
 
-    var tableID  = 'login-history-table';
-    var selector = '#' + tableID;
     var containerSelector = '#login_history-ws-container';
-    var columns  = ['timestamp', 'action', 'browser', 'ip', 'status'];
     var no_messages_error = 'Your account has no Login/Logout activity.';
+    var flexTable;
 
     function init() {
         var $title = $('#login_history-title').children().first();
         $title.text(text.localize($title.text()));
     }
 
-    function displayError() {
-        $(selector + ' tbody')
-            .append($('<tr/>', {class: 'flex-tr'})
-                .append($('<td/>', {colspan: 6})
-                    .append($('<p/>', {
-                        class: 'notice-msg center-text',
-                        text: text.localize(no_messages_error)
-                      })
-                    )
-                )
-            );
-    }
-
-    function displayTable(history) {
-        var header = [
-            'Date and Time',
-            'Action',
-            'Browser',
-            'IP Address',
-            'Status',
-        ].map(text.localize);
-        var metadata = {
-            id: tableID,
-            cols: columns
-        };
-        var data = [];
-        var $table = Table.createFlexTable(data, metadata, header);
-        $table.appendTo(containerSelector);
-        if (!history.length) {
-            return displayError();
+    function update(history) {
+        if (flexTable) {
+            return flexTable.replace(history);
         }
-        Table.appendTableBody(tableID, history, formatRow);
+        var headers = ['Date and Time', 'Action', 'Browser', 'IP Address', 'Status'];
+        var columns = ['timestamp', 'action', 'browser', 'ip', 'status'];
+        flexTable = new FlexTableUI({
+            id:        'login-history-table',
+            container: containerSelector,
+            header:    headers.map(function(s) { return text.localize(s); }),
+            cols:      columns,
+            data:      history,
+            formatter: formatRow,
+            style: function($row) {
+                $row.children('.timestamp').addClass('pre');
+            },
+        });
+        if (!history.length) {
+            return flexTable.displayError(text.localize(no_messages_error), 6);
+        }
         showLocalTimeOnHover('td.timestamp');
     }
 
@@ -54,34 +40,29 @@ var IPHistoryUI = (function() {
         var browserString = browser ?
             browser.name + ' v' + browser.version :
             'Unknown';
-        var row = [
+        return [
             timestamp,
             data.action,
             browserString,
             data.ip_addr,
             status
         ];
-        var $row = Table.createFlexTableRow(row, columns, 'data');
-        $row.children('.timestamp').addClass('pre');
-        return $row[0];
     }
 
     function clean() {
         $(containerSelector + ' .error-msg').text('');
-        if ($(selector).length) {
-            Table.clearTableBody(tableID);
-            $(selector +'>tfoot').hide();
-        }
+        flexTable.clear();
+        flexTable = null;
     }
 
-    function displayErrorOnMain(error) {
+    function displayError(error) {
         $('#err').text(error);
     }
 
     return {
         init: init,
         clean: clean,
-        displayTable: displayTable,
-        displayError: displayErrorOnMain,
+        update: update,
+        displayError: displayError,
     };
 }());
