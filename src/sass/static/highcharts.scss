@@ -7,15 +7,3 @@ iframe#chart_frame {
     min-width: 100%;
     *width: 100%; /* stylelint-disable-line declaration-block-no-duplicate-properties */
 }
-
-tr#highchart_duration {
-    td {
-        padding-top: 0;
-        &:nth-child(1) {
-            @include BIDIR_VALUE(text-align, right, left);
-        }
-        &:nth-child(2) {
-            @include BIDIR_VALUE(text-align, left, right);
-        }
-    }
-}
