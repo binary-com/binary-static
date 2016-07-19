@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Chinese (China) (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-07-09 02:04+0000\n"
+"PO-Revision-Date: 2016-07-19 03:11+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.7-dev\n"
+"X-Generator: Weblate 2.8-dev\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
@@ -199,6 +199,11 @@ msgstr "%1从1999年开始运营，目前营业额达到 20 亿美元"
 
 msgid "%1 reaches 1 million registered users"
 msgstr "%1注册用户已达一百万人"
+
+#, fuzzy
+#| msgid "Days to display"
+msgid "%1 rows displayed:"
+msgstr "要显示的天数"
 
 msgid "%1 seeks a Project Coordinator to help drive the production of promotional content and rollout of marketing campaigns, designed to engage new prospects and current customers based throughout the globe."
 msgstr "%1 诚聘项目协调员，帮助推动向全球各地新潜在客户和现有客户发布的宣传内容创作和营销活动。"
@@ -2098,6 +2103,11 @@ msgstr "通过文档部门流程提高营销队伍有效执行重复任务的能
 msgid "Dormant and Inactive Accounts"
 msgstr "睡眠和非活跃账户"
 
+#, fuzzy
+#| msgid "Download SVG"
+msgid "Download CSV"
+msgstr "下载SVG"
+
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "推动快速增长和业务发展，以支持公司的销售和市场营销目标"
 
@@ -2363,13 +2373,13 @@ msgid "Exit Level"
 msgstr "退出价位"
 
 msgid "Exit Spot"
-msgstr "退出现价"
+msgstr "退市现价"
 
 msgid "Exit Spot Time"
-msgstr "退出现价时间"
+msgstr "退市现价时间"
 
 msgid "Exit spot"
-msgstr "退出现价"
+msgstr "退市现价"
 
 msgid "Expand our network of active affiliates in your local market. Contribute your energy, skills, and knowledge of the local business culture to help further our rapid rate of growth worldwide."
 msgstr "扩大我们在您当地市场的活跃联盟机构网络。贡献您对当地商业文化的力量、技能和知识，帮助我们在全球进一步快速增长。"
@@ -2915,25 +2925,25 @@ msgid "If you select \"Does Not Touch\", you win the payout if the market never 
 msgstr "如果您选择“未触及”期权，假设市场在 <strong>合约期限内</strong>一直没有触及<strong>障碍水平</strong>，您将获得赔付。"
 
 msgid "If you select \"Ends Between\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>Low barrier</strong> AND strictly lower than the <strong>High barrier</strong>."
-msgstr "如果您选择“收于区间内”期权，假设<strong>退出现价</strong>严格高于<strong>低障碍</strong>，并且严格低于<strong>高障碍</strong>，您将获得赔付。"
+msgstr "如果您选择“收于区间内”期权，假设<strong>退市现价</strong>严格高于<strong>低障碍</strong>，并且严格低于<strong>高障碍</strong>，您将获得赔付。"
 
 msgid "If you select \"Ends Outside\", you win the payout if the <strong>exit spot</strong> is EITHER strictly higher than the <strong>High barrier</strong>, OR strictly lower than the <strong>Low barrier</strong>."
-msgstr "如果您选择“收于区间外”期权，只要<strong>退出现价</strong>严格高于<strong>高障碍</strong>，或者严格低于<strong>低障碍</strong>，您将获得赔付。"
+msgstr "如果您选择“收于区间外”期权，只要<strong>退市现价</strong>严格高于<strong>高障碍</strong>，或者严格低于<strong>低障碍</strong>，您将获得赔付。"
 
 msgid "If you select \"Even\", you will win the payout if the <strong>last digit</strong> of the last tick is an <strong>even number (i.e., 2, 4, 6, 8, or 0).</strong>"
 msgstr "如果您选择“偶数”期权，只要<strong>最新价格的</strong>最后一个数字<strong>是偶数（如2、4、6、8或0），您将获得赔付。</strong>"
 
 msgid "If you select \"Falls\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>entry spot</strong>."
-msgstr "如果您选择“下跌”期权，只要<strong>退出现价</strong>严格低于<strong>入市现价</strong>，您将获得赔付。"
+msgstr "如果您选择“下跌”期权，只要<strong>退市现价</strong>严格低于<strong>入市现价</strong>，您将获得赔付。"
 
 msgid "If you select \"Goes Outside\", you win the payout if the market touches either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>."
 msgstr "如果您选择“超出区间外”期权，只要市场在<strong>合约期限内的</strong>任何时候触及<strong>高障碍</strong>或<strong>低障碍</strong>，您将得获得赔付。"
 
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>."
-msgstr "如果您选择“高于”期权，只要 <strong>退出现价</strong>严格高于<strong>障碍</strong>，您将获得赔付。"
+msgstr "如果您选择“高于”期权，只要 <strong>退市现价</strong>严格高于<strong>障碍</strong>，您将获得赔付。"
 
 msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>barrier</strong>."
-msgstr "如果您选择“低于”期权，只要<strong>退出现价</strong>严格低于<strong>障碍</strong>，您将获得赔付。"
+msgstr "如果您选择“低于”期权，只要<strong>退市现价</strong>严格低于<strong>障碍</strong>，您将获得赔付。"
 
 msgid "If you select \"Matches\", you will win the payout if the <strong>last digit</strong> of the last tick is the <strong>same</strong> as your <strong>prediction.</strong>"
 msgstr "如果您选择“符合”期权，只要<strong>最新价格的</strong>最后一个数字<strong>与您的预测</strong><strong>相同</strong>，您将获得赔付。"
@@ -2945,7 +2955,7 @@ msgid "If you select \"Over\", you will win the payout if the <strong>last digi
 msgstr "如果您选择“大于”期权，只要<strong>最新价格的</strong>最后一个数字<strong>大于您的预测，您将获得赔付。</strong>"
 
 msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
-msgstr "如果您选择“上涨”期权，只要 <strong>退出现价</strong> 严格高于 <strong>入市现价</strong>，您将获得赔付。"
+msgstr "如果您选择“上涨”期权，只要 <strong>退市现价</strong> 严格高于 <strong>入市现价</strong>，您将获得赔付。"
 
 msgid "If you select \"Stays Between\", you win the payout if the market stays between (does not touch) either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>."
 msgstr "如果您选择“保持区间内”期权，只要市场在<strong>合约期限内的</strong>任何时间位于<strong>高障碍</strong>和<strong>低障碍</strong>之间（但并不触及），您将获得赔付。"
@@ -5632,7 +5642,7 @@ msgid "The <strong>end time</strong> is the selected number of seconds/minutes/h
 msgstr "<strong>结束时间</strong>是在<strong>开始时间</strong>（如果期限小于一天）之后选定的秒数/分钟数/小时数，或是交易日结束（如果期限为一天或更长）。"
 
 msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
-msgstr "<strong>退出现价</strong>为合约<strong>结束时间</strong>的现价。"
+msgstr "<strong>退市现价</strong>为合约<strong>结束时间</strong>的现价。"
 
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "合约<strong>开始时间</strong>即我们的服务器处理合约的时间。"
@@ -5707,7 +5717,7 @@ msgid "The Company reserves the right in its sole discretion to refuse and/or ca
 msgstr "公司有权自行拒绝和/或取消服务、收取存款和/或取款费用，理由包括但不限于："
 
 msgid "The Company reserves the right to cancel/reverse transactions or amend the contractual terms (including, but not limited to, entry and exit spot) in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug or glitch in our website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, or manifest mis-calculation of prices or other obvious errors (\"Manifest Errors\"). Clients have a duty to report to the Company any such problems, errors or suspected system inadequacies that they may experience and may not abuse of or arbitrage such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Any amendments to the contractual terms (including, but not limited to, entry and exit spot) of Manifestly Erroneous contracts shall be reasonable and fair. Monies exchanged between oneself and the Company in connection with Manifestly Erroneous contracts shall be returned to the recipient according to the amendments made to the contractual terms (including, but not limited to, entry and exit spot). You further acknowledge and agree that the Company will not be held liable or responsible, whether directly or indirectly, for any loss, expenses or damage caused or alleged to be caused by or in connection with a Manifest Error."
-msgstr "如果由于我们网站软件没有检测出的编程错误、病毒或缺陷、市场数据输入或合约价格延迟、数据输入错误、报价差异、错误价格参数、价单计算错误或其他明显错误（简称“明显错误”）导致任何交易合约的购买或售出价格未能反映公平的市场价格或者以异常低的风险购买和售出，公司保留取消/撤回交易或修改合约条款（包括但不限于进场和退出现价）的权利。顾客有义务向公司报告其所经历的任何问题或可能的系统缺陷，不得滥用系统缺陷盈利。公司将努力在最短时间内解决这些问题。拥有任何金融市场或者工具的内幕信息的人员禁止在本网站上交易。对明显错误合约条款的任何修改（包括但不限于进场和退出现价）必须合理和公平。个人和公司之间因合约明显错误造成的款项交换差异须根据合约条款修正（包括但不限于进场和退出现价）退还收款人。您进一步承认并同意，无论是直接或间接经由明显错误所引起或有关连的任何损失、费用或损害，本公司概不承担任何责任或义务。"
+msgstr "如果由于我们网站软件没有检测出的编程错误、病毒或缺陷、市场数据输入或合约价格延迟、数据输入错误、报价差异、错误价格参数、价单计算错误或其他明显错误（简称“明显错误”）导致任何交易合约的购买或售出价格未能反映公平的市场价格或者以异常低的风险购买和售出，公司保留取消/撤回交易或修改合约条款（包括但不限于进场和退市现价）的权利。顾客有义务向公司报告其所经历的任何问题或可能的系统缺陷，不得滥用系统缺陷盈利。公司将努力在最短时间内解决这些问题。拥有任何金融市场或者工具的内幕信息的人员禁止在本网站上交易。对明显错误合约条款的任何修改（包括但不限于进场和退市现价）必须合理和公平。个人和公司之间因合约明显错误造成的款项交换差异须根据合约条款修正（包括但不限于进场和退市现价）退还收款人。您进一步承认并同意，无论是直接或间接经由明显错误所引起或有关连的任何损失、费用或损害，本公司概不承担任何责任或义务。"
 
 msgid "The Company reserves the right to change any part of this Agreement at any time. We will endeavour to ensure affiliates are notified when changes have been made to this Agreement, but it is ultimately your responsibility to check these terms and conditions regularly. Your continued participation in our affiliate program after we have posted the changes will constitute binding acceptance of such changes."
 msgstr "公司有权随时修改本协议的任何内容。我们会尽量把协议修改详情通知联盟成员，但您有责任定期检查相应条款和条件。在修改正式公布后，您继续参加联盟计划的行为表示您接收该修改内容的约束。"
@@ -5884,10 +5894,10 @@ msgid "The easiest way to get started in the financial markets"
 msgstr "参与金融市场最简便的方法"
 
 msgid "The entry level for a long contract is 1001, which is entry spot + half spread. At exit, the spot is at 1100 and hence the exit level for a long contract is 1099, which is exit spot - half spread."
-msgstr "长仓合约的进场价位为1001，即进场现价 + 一半价差。退出时，现价为1100，所以长仓合约的退出价位是1099，即退出现价 - 一半价差。"
+msgstr "长仓合约的进场价位为1001，即进场现价 + 一半价差。退出时，现价为1100，所以长仓合约的退出价位是1099，即退市现价 - 一半价差。"
 
 msgid "The entry level for a short contract is 999, which is entry spot - half spread. At exit, the spot is at 1100 and hence the exit level for a short contract is 1101, which is exit spot + half spread."
-msgstr "短仓合约的进场价位为 999，即进场现价 - 一半价差。退出时，现价为1100，所以短仓合约的退出价位是1101，即退出现价+ 一半价差。"
+msgstr "短仓合约的进场价位为 999，即进场现价 - 一半价差。退出时，现价为1100，所以短仓合约的退出价位是1101，即退市现价+ 一半价差。"
 
 msgid "The entry spot of an instrument XYZ is 1000 and the spread on this instrument is 2 points."
 msgstr "XYZ工具的进场现价为1000，而此工具的价差为2点。"
@@ -13674,9 +13684,6 @@ msgstr "条款和条件审批"
 #~ msgid "Barrier terms"
 #~ msgstr "障碍条款"
 
-#~ msgid "Days to display"
-#~ msgstr "要显示的天数"
-
 #~ msgid "From Barrier out of limit"
 #~ msgstr "从超限门槛"
 
@@ -18578,9 +18585,6 @@ msgstr "条款和条件审批"
 
 #~ msgid "Download PNG"
 #~ msgstr "下载 PNG"
-
-#~ msgid "Download SVG"
-#~ msgstr "下载SVG"
 
 #~ msgid "Forgot password?"
 #~ msgstr "忘记密码？"

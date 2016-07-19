@@ -97,3 +97,34 @@ describe('IPHistoryData.parse', function() {
         expect(res.success).to.equal(false);
     });
 });
+
+
+describe('IPHistoryData.calls', function() {
+    it('calls the callback when .msg_type === "login_history"', function() {
+        var response = {
+            msg_type: 'login_history'
+        };
+        var called;
+        var handler = IPHistoryData.calls(function(res) {
+            called = true;
+            expect(res).to.deep.equal(response);
+        });
+        handler({data: JSON.stringify(response)});
+        expect(called).to.equal(true);
+    });
+
+    it('does nothing otherwise', function() {
+        [
+            {msg_type: 'oauth'},
+            {msg_type: null},
+            null,
+        ].forEach(function(response) {
+            var called = false;
+            var handler = IPHistoryData.calls(function(res) {
+                called = true;
+            });
+            handler({data: JSON.stringify(response)});
+            expect(called).to.equal(false);
+        });
+    });
+});
