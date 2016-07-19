@@ -250,5 +250,4 @@
 </div>
 <div id="all_prices"></div>
 [% INCLUDE bet/analysis.html.tt %]
-
 <div id="trading_init_progress"><img src="[% request.url_for('images/pages/binary-symbol-logo.svg') %]" width="100%" height="100%" alt="" /></div>

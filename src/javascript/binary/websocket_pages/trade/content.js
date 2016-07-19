@@ -265,16 +265,6 @@ var Content = (function() {
         }
     };
 
-    var statementTranslation = function() {
-        var titleElement = document.getElementById("statement-title").firstElementChild;
-        titleElement.textContent = localize.textStatement;
-    };
-
-    var profitTableTranslation = function() {
-        var titleElement = document.getElementById("profit-table-title").firstElementChild;
-        titleElement.textContent = localize.textProfitTable;
-    };
-
     var errorMessage = function(messageType, param) {
         var msg = "",
             separator = ', ';
@@ -319,8 +309,6 @@ var Content = (function() {
             return localize;
         },
         populate: populate,
-        statementTranslation: statementTranslation,
-        profitTableTranslation: profitTableTranslation,
         errorMessage: errorMessage
     };
 

@@ -255,18 +255,32 @@ function toJapanTimeIfNeeded(gmtTimeStr, showTimeZone, longcode){
         return;
     }
 
-    if(curr === 'JPY'){
-        timeStr = time.zone("+09:00").format('YYYY-MM-DD HH:mm:ss' + (showTimeZone && showTimeZone !== '' ? ' Z' : ''));
-    } else {
-        timeStr = time.zone("+00:00").format('YYYY-MM-DD HH:mm:ss' + (showTimeZone && showTimeZone !== '' ? ' Z' : ''));
-    }
+    timeStr = time.zone(curr === 'JPY' ? '+09:00' : '+00:00').format('YYYY-MM-DD HH:mm:ss' + (showTimeZone && showTimeZone !== '' ? ' Z' : ''));
 
     return (longcode ? longcode.replace(match[0], timeStr) : timeStr);
+}
+
+function downloadCSV(csvContents, filename) {
+    var csv = 'data:text/csv;charset=utf-8,' + csvContents;
+    var downloadLink = document.createElement('a');
+    downloadLink.href = encodeURI(csv);
+    downloadLink.download = filename || 'data.csv';
+
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+}
+
+function template(string, content) {
+    return string.replace(/\[_(\d+)\]/g, function(s, index) {
+        return content[(+index) - 1];
+    });
 }
 
 //used temporarily for mocha test
 if (typeof module !== 'undefined') {
     module.exports = {
-        toJapanTimeIfNeeded: toJapanTimeIfNeeded
+        toJapanTimeIfNeeded: toJapanTimeIfNeeded,
+        template: template
     };
 }

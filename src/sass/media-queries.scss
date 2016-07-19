@@ -1,3 +1,9 @@
+@media screen and (max-width: 959px) {
+    #header ul#menu-top.smaller-font a {
+        font-size: 85%;
+    }
+}
+
 @media screen and (max-width: 768px) {
     #page-wrapper {
         #content {
@@ -30,9 +36,6 @@
         #social-networks {
             text-align: center;
         }
-    }
-    #header #menu-top li a.smaller-font, #header ul#menu-top.smaller-font {
-        font-size: 80%;
     }
     .flex-table-container {
         overflow-x: auto;

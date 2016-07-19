@@ -16,7 +16,6 @@ var JPTradePage = (function() {
     }
 
     Content.populate();
-    TradePage.handleChart()
   };
 
   var reload = function() {
