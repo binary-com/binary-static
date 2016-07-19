@@ -9,16 +9,16 @@ var SelfExclusionWS = (function() {
     }
 
     FormInput.prototype = {
-        value: function(value) {
-            if (typeof value !== 'undefined') {
-                this.old = value;
-                return this.$input.val(value);
-            }
+        set: function(value) {
+            this.old = value;
+            return this.$input.val(value);
+        },
+        get: function() {
             return this.$input.val().trim();
         },
         validate: function() {
             var that = this;
-            var curr = this.value();
+            var curr = this.get();
             var info = this.validator(curr, this.old);
             info.errors.forEach(function(err) {
                 that.emitError(err);
@@ -87,7 +87,7 @@ var SelfExclusionWS = (function() {
         $.each(inputs, function(id, input) {
             var value = null;
             var prev = input.old;
-            var curr = input.value();
+            var curr = input.get();
             if (curr.length) {
                 value = input.validate();
                 if (value === null) {
@@ -153,7 +153,7 @@ var SelfExclusionWS = (function() {
             return false;
         }
         $.each(response.get_self_exclusion, function(key, value) {
-            inputs[key].value(value + '');
+            inputs[key].set(value + '');
         });
     }
 
