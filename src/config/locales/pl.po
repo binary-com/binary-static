@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-07-11 17:30+0000\n"
+"PO-Revision-Date: 2016-07-18 16:49+0000\n"
 "Last-Translator: Ewelina Bruździak <e.bruzdziak@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>\n"
 "Language: pl\n"
@@ -203,6 +203,11 @@ msgstr "%1 osiąga obrót w wysokości 2 mld $ od rozpoczęcia działalności w 
 
 msgid "%1 reaches 1 million registered users"
 msgstr "%1 ma już 1 milion zarejestrowanych użytkowników"
+
+#, fuzzy
+#| msgid "Days to display"
+msgid "%1 rows displayed:"
+msgstr "Dni do wyświetlenia"
 
 msgid "%1 seeks a Project Coordinator to help drive the production of promotional content and rollout of marketing campaigns, designed to engage new prospects and current customers based throughout the globe."
 msgstr "%1 poszukuje Koordynatora projektu, który pomoże w kierowaniu tworzenia treści promocyjnych i we wdrażaniu kampanii marketingowych, skierowanych do nowych i obecnych klientów na całym świecie."
@@ -2100,6 +2105,11 @@ msgstr "Przetwarzanie dokumentów danego działu w celu umożliwienia zespołowi
 msgid "Dormant and Inactive Accounts"
 msgstr "Konta zawieszone i nieaktywne"
 
+#, fuzzy
+#| msgid "Download SVG"
+msgid "Download CSV"
+msgstr "Pobierz SVG"
+
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "Dbanie o szybki wzrost i rozwój biznesowy w celu realizacji celów sprzedażowych i marketingowych firmy"
 
@@ -2668,7 +2678,7 @@ msgid "Germany"
 msgstr "Niemcy"
 
 msgid "Get Started"
-msgstr "Rozpocznij"
+msgstr "Start"
 
 msgid "Get your price"
 msgstr "Ustal swoją cenę"
@@ -6235,7 +6245,7 @@ msgid "Town/City"
 msgstr "Miasto"
 
 msgid "Trade"
-msgstr "Zakład"
+msgstr "Handluj"
 
 msgid "Trade <strong>24/7</strong>, even on weekends."
 msgstr "Możesz grać <strong>24/dobę, 7 dni w tygodniu<strong>, także w weekendy."
@@ -13856,9 +13866,6 @@ msgstr "Akceptacja regulaminu"
 #~ msgid "Barrier terms"
 #~ msgstr "Warunki limitu"
 
-#~ msgid "Days to display"
-#~ msgstr "Dni do wyświetlenia"
-
 #~ msgid "From Barrier out of limit"
 #~ msgstr "Od przekroczonego limitu"
 
@@ -18590,9 +18597,6 @@ msgstr "Akceptacja regulaminu"
 
 #~ msgid "Download PNG"
 #~ msgstr "Pobierz PNG"
-
-#~ msgid "Download SVG"
-#~ msgstr "Pobierz SVG"
 
 #~ msgid "Forgot password?"
 #~ msgstr "Nie pamiętasz hasła?"
