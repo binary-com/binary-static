@@ -1,9 +1,10 @@
 var SelfExclusionWS = (function() {
     "use strict";
 
-    function FormInput(id, validator) {
+    function FormInput(id, validate, convert) {
         this.id = id;
-        this.validator = validator;
+        this.validator = validate;
+        this.convert = convert;
         this.$input = $('#' + id);
         this.old = this.get();
     }
@@ -19,11 +20,12 @@ var SelfExclusionWS = (function() {
         validate: function() {
             var that = this;
             var curr = this.get();
-            var info = this.validator(curr, this.old);
-            info.errors.forEach(function(err) {
-                that.emitError(err);
-            });
-            return info.valid ? info.value : null;
+            var error = this.validator(curr, this.old);
+            if (error) {
+                this.emitError(err);
+                return null;
+            }
+            return this.convert(curr);
         },
         emitError: function(err) {
             SelfExclusionUI.showError(this.id, text.localize(err));
@@ -71,6 +73,16 @@ var SelfExclusionWS = (function() {
         });
     }
 
+    function toNumber(str) {
+        return parseInt(str, 10);
+    }
+
+    function momentFmt(format) {
+        return function(str) {
+            return moment(str, format);
+        };
+    }
+
     var $form;
     var guards;
     var inputs;
@@ -83,8 +95,8 @@ var SelfExclusionWS = (function() {
         }
 
         SelfExclusionUI.init();
-        var d = SelfExclusionData;
-        var numeric = [d.isInteger, d.lessThanPrevious];
+        var data = SelfExclusionData;
+        var numeric = [data.valid.integer, data.valid.limit];
         $form  = $('#frmSelfExclusion');
         guards = {
             max_balance:            numeric,
@@ -95,16 +107,25 @@ var SelfExclusionWS = (function() {
             max_30day_turnover:     numeric,
             max_30day_losses:       numeric,
             max_open_bets:          numeric,
-            session_duration_limit: [d.isInteger, d.minutesWithin(moment.duration(6, 'weeks'))],
-            exclude_until:          [d.validDateString, d.validExclusion],
-            timeout_until_duration: [d.validDateString],
-            timeout_until:          [d.validTimeString],
+            session_duration_limit: [data.valid.limit, data.valid.session],
+            exclude_until:          [data.valid.dateString, data.valid.exclusion],
+            timeout_until_duration: [data.valid.dateString],
+            timeout_until:          [data.valid.timeString],
+        };
+
+        var converts = {
+            exclude_until:          momentFmt('YYYY-MM-DD'),
+            timeout_until_duration: momentFmt('YYYY-MM-DD'),
+            timeout_until:          momentFmt('HH-mm'),
         };
 
         inputs = {};
-        $.each(guards, function(id, value) {
-            var validator = d.chain(value);
-            inputs[id] = new FormInput(id, validator);
+        $.each(guards, function(id, checks) {
+            inputs[id] = new FormInput(
+                id,
+                data.validator(checks),
+                converts[id] || toNumber
+            );
         });
 
         $form.find('button').on('click', function(e) {
@@ -144,11 +165,9 @@ var SelfExclusionWS = (function() {
         var date = collect.timeout_until_duration;
         if (date) {
             date.add(collect.timeout_until || moment.duration());
-            var info = SelfExclusionData.validTimeoutUntil(date);
-            if (!info.valid) {
-                info.errors.forEach(function(error) {
-                    inputs.timeout_until_duration.emitError(error);
-                });
+            var err = SelfExclusionData.valid.timeout(date);
+            if (err) {
+                inputs.timeout_until_duration.emitError(err);
                 valid = false;
             }
         }

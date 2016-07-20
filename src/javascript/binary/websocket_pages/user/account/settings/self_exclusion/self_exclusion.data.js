@@ -1,129 +1,72 @@
 var SelfExclusionData = (function() {
-    function chain(fns) {
+    function validator(guards) {
         return function(value, old) {
-            var info = {
-                value: value,
-                errors: [],
-            };
-            for (var i = 0; i < fns.length; i++) {
-                var next = fns[i](info.value, old);
-                next.errors = info.errors.concat(next.errors);
-                info = next;
-                if (!info.valid) {
-                    break;
+            for (var i = 0; i < guards.length; i++) {
+                var err = guards[i](value, old);
+                if (err) {
+                    return err;
                 }
             }
-            return info;
+            return null;
         };
     }
 
-
-    function isInteger(value, original) {
-        var valid = /^\d+$/.test(value);
-        return {
-            valid: valid,
-            value: +value,
-            errors: valid ? [] : ['Please enter an integer value'],
-        };
+    function isInteger(value) {
+        return /^\d+$/.test(value) ? null : 'Please enter an integer value';
     }
 
     function lessThanPrevious(value, original) {
         var error = text.localize('Please enter a number between 0 and [_1]', [original]);
-        var valid = value <= original;
-        return {
-            valid: valid,
-            value: value,
-            errors: valid ? [] : [error],
-        };
+        return +value > +original ? error : null;
     }
 
-    function minutesWithin(duration) {
-        var maxMinutes = duration.as('minutes');
+    function validSessionDuration(value) {
+        var maxMinutes = moment.duration(6, 'weeks').as('minutes');
         var error = 'Session duration limit cannot be more than 6 weeks.';
-        return function(value) {
-            var valid = value <= maxMinutes;
-            return {
-                valid: valid,
-                value: value,
-                errors: valid ? [] : [error],
-            };
-        };
+        return value <= maxMinutes ? null : error;
     }
 
     function validDateString(value) {
-        var date  = moment(value, 'YYYY-MM-DD');
-        var valid = date.isValid();
-        if (!valid) {
-            return {
-                value: date,
-                valid: false,
-                errors: ['Please select a valid date'],
-            };
-        }
         var now = moment();
-        var isAfterNow = date.isAfter(now);
-        return {
-            value: date,
-            valid: isAfterNow,
-            errors: isAfterNow ? [] : ['Exclude time must be after today'],
-        };
+        var date = moment(value, 'YYYY-MM-DD');
+        if (!date.isValid()) {
+            return 'Please select a valid date';
+        }
+        return date.isAfter(now) ? null : 'Exclude time must be after today';
     }
 
     function validTimeString(value) {
-        var time  = moment(value, 'HH:mm');
-        var valid = time.isValid();
-        return {
-            errors: valid ? [] : ['Please select a valid time'],
-            valid: valid,
-            value: moment.duration({
-                hours:   time.hours(),
-                minutes: time.minutes(),
-            }),
-        };
+        var time = moment(value, 'HH:mm');
+        return time.isValid() ? null : 'Please select a valid time';
     }
 
     function validTimeoutUntil(value) {
         var max = moment().add(moment.duration(6, 'weeks'));
-        var valid = value.isAfter(max);
-        return {
-            errors: valid ? [] : ['Exclude time cannot be more than 6 weeks.'],
-            valid:  valid,
-            value:  value,
-        };
+        return value.isAfter(max) ? 'Exclude time cannot be more than 6 weeks.' : null;
     }
 
     function validExclusion(value) {
         var min = moment().add(moment.duration(6, 'months'));
         var max = moment().add(moment.duration(5, 'years'));
         if (value.isBefore(min)) {
-            return {
-                errors: ['Exclude time cannot be less than 6 months.'],
-                valid:  false,
-                value:  value,
-            };
+            return 'Exclude time cannot be less than 6 months.';
         }
         if (value.isAfter(max)) {
-            return {
-                errors: ['Exclude time cannot be for more than 5 years.'],
-                valid: false,
-                value: value,
-            };
+            return 'Exclude time cannot be for more than 5 years.';
         }
-        return {
-            valid: true,
-            value: value,
-            errors: [],
-        };
+        return null;
     }
 
     return {
-        chain: chain,
-        isInteger: isInteger,
-        lessThanPrevious: lessThanPrevious,
-        minutesWithin: minutesWithin,
-        validDateString: validDateString,
-        validTimeString: validTimeString,
-        validExclusion:  validExclusion,
-        validTimeoutUntil: validTimeoutUntil,
+        validator: validator,
+        valid: {
+            integer:    isInteger,
+            limit:      lessThanPrevious,
+            session:    validSessionDuration,
+            dateString: validDateString,
+            timeString: validTimeString,
+            exclusion:  validExclusion,
+            timeout:    validTimeoutUntil,
+        },
     };
 })();
