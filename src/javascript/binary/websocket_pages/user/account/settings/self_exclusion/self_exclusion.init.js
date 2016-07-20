@@ -235,7 +235,7 @@ var SelfExclusionWS = (function() {
         } else {
             SelfExclusionUI.showFormMessage(text.localize('Your changes have been updated.'), true);
             page.client.set_storage_value('session_start', moment().unix()); // used to handle session duration limit
-            getRequest();
+            SelfExclusionData.get();
         }
     }
 
