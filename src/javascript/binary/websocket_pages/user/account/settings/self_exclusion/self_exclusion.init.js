@@ -26,7 +26,7 @@ var SelfExclusionWS = (function() {
             return info.valid ? info.value : null;
         },
         emitError: function(err) {
-            SelfExclusionUI.showError(this.id, err);
+            SelfExclusionUI.showError(this.id, text.localize(err));
         }
     };
 
