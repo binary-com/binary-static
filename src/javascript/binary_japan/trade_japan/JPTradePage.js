@@ -1,7 +1,7 @@
 var JPTradePage = (function() {
 
   var scriptUrl = 'https://binary-com.github.io/japanui/dist/bundle.js';
-  var isJapan = true;
+  var isJapan = false;
   var scriptReady = false;
 
   var getScript = function(cb) {
