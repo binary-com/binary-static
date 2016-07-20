@@ -758,6 +758,7 @@ sub _texts {
         push @texts, localize('There was a problem validating your personal details. Please fix the fields [_1]here');
         push @texts, localize('If you need assistance feel free to contact our [_1]Customer Support');
         push @texts, localize('Your account is not fully authenticated. Please visit the <a href="[_1]">authentication</a> page for more information.');
+        push @texts, localize('details');
 
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
