@@ -1,0 +1,24 @@
+<h1>[% l("Trading with MetaTrader 5 on [_1]", website_name) %]</h1>
+<div class="gr-row">
+    <div class="gr-6 gr-12-m">
+        <p class="no-para-margin">[% l('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.') %]</p>
+    </div>
+    <div class="gr-6 gr-12-m">
+        <img class="responsive" src="[% request.url_for('images/pages/metatrader/metatrader-5.jpg') %]" alt="" />
+    </div>
+</div>
+<div class="gr-row gr-padding-10">
+    <div class="gr-6 gr-12-m">
+        <p class="no-para-margin">[% l('Lorem Ipsum is simply dummy text of the printing and typesetting industry.') %]</p>
+    </div>
+    <div class="gr-6 gr-12-m">
+        <div class="gr-row">
+            <div class="gr-6 gr-12-m">
+                <a class="button"><span>[% l('Start Trading Now') %]</span></a>
+            </div>
+            <div class="gr-6 gr-12-m">
+                <a class="button button-disabled"><span>[% l('Try a Virtual Account') %]</span></a>
+            </div>
+        </div>
+    </div>
+</div>

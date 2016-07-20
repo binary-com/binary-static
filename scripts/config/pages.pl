@@ -91,6 +91,8 @@ sub all_pages {
         ['user/reality_check_frequencyws',  'user/reality_check_frequencyws',                 'default', 'Reality Check'],
         ['user/reality_check_summaryws',    'user/reality_check_summaryws',                   'default', 'Reality Check'],
 
+        ['metatrader', 'metatrader/index', 'default', 'Trading with MetaTrader 5'],
+
         ['logged_inws',           'global/logged_inws',  undef],
         ['trade/bet_explanation', 'bet/explanation',     undef],
     );
