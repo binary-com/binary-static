@@ -22,7 +22,7 @@ var SelfExclusionWS = (function() {
             var curr = this.get();
             var error = this.validator(curr, this.old);
             if (error) {
-                this.emitError(err);
+                this.emitError(error);
                 return null;
             }
             return this.convert(curr);
@@ -107,10 +107,10 @@ var SelfExclusionWS = (function() {
             max_30day_turnover:     numeric,
             max_30day_losses:       numeric,
             max_open_bets:          numeric,
-            session_duration_limit: [data.valid.limit, data.valid.session],
-            exclude_until:          [data.valid.dateString, data.valid.exclusion],
+            session_duration_limit: numeric.concat([data.valid.session]),
             timeout_until_duration: [data.valid.dateString],
             timeout_until:          [data.valid.timeString],
+            exclude_until:          [data.valid.dateString, data.valid.exclusion],
         };
 
         var converts = {
