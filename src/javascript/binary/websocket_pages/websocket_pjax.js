@@ -46,3 +46,11 @@ pjax_config_page_require_auth("user/portfoliows", function() {
         },
     };
 });
+
+pjax_config_page_require_auth("user/settings/self_exclusionws", function() {
+    return {
+        onLoad: function() {
+            SelfExclusionWS.init();
+        }
+    };
+});

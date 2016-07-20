@@ -57,7 +57,18 @@ var SelfExclusionData = (function() {
         return null;
     }
 
+    function getRequest(value) {
+        BinarySocket.send({get_self_exclusion: "1"});
+    }
+
+    function setRequest(params) {
+        params.set_self_exclusion = '1';
+        BinarySocket.send(params);
+    }
+
     return {
+        set: setRequest,
+        get: getRequest,
         validator: validator,
         valid: {
             integer:    isInteger,

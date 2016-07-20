@@ -88,13 +88,41 @@ var SelfExclusionWS = (function() {
     var inputs;
 
     function init() {
+        Content.populate();
+        SelfExclusionUI.init();
         if (page.client.is_virtual()) {
-            $('#selfExclusionDesc').addClass(hiddenClass);
+            SelfExclusionUI.hide('#selfExclusionDesc');
             SelfExclusionUI.showPageError(Content.localize().textFeatureUnavailable, true);
             return;
         }
+        setupForm();
+        setupHandlers();
+        SelfExclusionData.get();
+    }
 
-        SelfExclusionUI.init();
+    function setupHandlers() {
+        BinarySocket.init({
+            onmessage: function(msg) {
+                var response = JSON.parse(msg.data);
+                if (response) {
+                    if (response.msg_type === "authorize") {
+                        init();
+                    }
+                    else if (response.msg_type === "get_self_exclusion") {
+                        getResponse(response);
+                    }
+                    else if (response.msg_type === "set_self_exclusion") {
+                        setResponse(response);
+                    }
+                }
+                else {
+                    console.log('some error occured');
+                }
+            }
+        });
+    }
+
+    function setupForm() {
         var data = SelfExclusionData;
         var numeric = [data.valid.integer, data.valid.limit];
         $form  = $('#frmSelfExclusion');
@@ -133,11 +161,10 @@ var SelfExclusionWS = (function() {
             e.stopPropagation();
             var params = formValidate();
             if (params !== null) {
-                setRequest(params);
+                SelfExclusionData.set(params);
             }
         });
         initDatePicker();
-        getRequest();
     }
 
     function formValidate() {
@@ -161,39 +188,39 @@ var SelfExclusionWS = (function() {
                 changed = true;
             }
         });
-        // add date and time
-        var date = collect.timeout_until_duration;
-        if (date) {
-            date.add(collect.timeout_until || moment.duration());
-            var err = SelfExclusionData.valid.timeout(date);
-            if (err) {
-                inputs.timeout_until_duration.emitError(err);
-                valid = false;
-            }
-        }
-        delete collect.timeout_until_duration;
-        if (!valid) {
+        collect = dataToParams(collect);
+        if (!valid || !collect) {
             return null;
         }
         if (!changed) {
             SelfExclusionUI.showFormMessage('You did not change anything', false);
             return null;
         }
-        convertToUnix(collect, 'timeout_until');
-        convertToUnix(collect, 'exclude_until');
         console.log(collect);
         return collect;
+    }
+
+    function dataToParams(data) {
+        // add date and time
+        var date = data.timeout_until_duration;
+        if (date) {
+            date.add(data.timeout_until || moment.duration());
+            var err = SelfExclusionData.valid.timeout(date);
+            if (err) {
+                inputs.timeout_until_duration.emitError(err);
+                return null;
+            }
+        }
+        delete data.timeout_until_duration;
+        convertToUnix(data, 'timeout_until');
+        convertToUnix(data, 'exclude_until');
+        return data;
     }
 
     function convertToUnix(params, key) {
         if (params[key]) {
             params[key] = params[key].unix();
         }
-    }
-
-    function setRequest(params) {
-        params.set_self_exclusion = '1';
-        BinarySocket.send(params);
     }
 
     function setResponse(response) {
@@ -218,7 +245,7 @@ var SelfExclusionWS = (function() {
             if (response.error.code === 'ClientSelfExclusion') {
                 page.client.send_logout_request();
             }
-            if('message' in response.error) {
+            if ('message' in response.error) {
                 SelfExclusionUI.showPageError(response.error.message, true);
             }
             return false;
@@ -228,13 +255,7 @@ var SelfExclusionWS = (function() {
         });
     }
 
-    function getRequest(params) {
-        BinarySocket.send({get_self_exclusion: "1"});
-    }
-
     return {
         init: init,
-        getResponse: getResponse,
-        setResponse: setResponse,
     };
 })();
