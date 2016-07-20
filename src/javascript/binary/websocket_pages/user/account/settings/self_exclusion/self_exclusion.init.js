@@ -56,7 +56,7 @@ var SelfExclusionWS = (function() {
             max_30day_losses:       numeric,
             max_open_bets:          numeric,
             session_duration_limit: [d.isInteger, d.minutesWithin(moment.duration(6, 'weeks'))],
-            exclude_until:          [d.validDateString],
+            exclude_until:          [d.validDateString, d.validExclusion],
             timeout_until_duration: [d.validDateString],
             timeout_until:          [d.validTimeString],
         };
@@ -71,7 +71,6 @@ var SelfExclusionWS = (function() {
             e.preventDefault();
             e.stopPropagation();
             var params = formValidate();
-            console.log(params);
             if (params !== null) {
                 setRequest(params);
             }
@@ -110,12 +109,24 @@ var SelfExclusionWS = (function() {
         // add date and time and get unix epoch
         var date = collect.timeout_until_duration;
         if (date) {
-            date.add(collect.timeout_until);
+            date.add(collect.timeout_until || moment.duration());
+            var info = SelfExclusionData.validTimeoutUntil(date);
+            console.log(info);
+            if (!info.valid) {
+                info.errors.forEach(function(error) {
+                    inputs.timeout_until_duration.emitError(error);
+                });
+                return null;
+            }
             collect.timeout_until = date.unix();
         } else {
             collect.timeout_until = null;
         }
         delete collect.timeout_until_duration;
+        var exclusion = collect.exclude_until;
+        if (exclusion) {
+            collect.exclude_until = exclusion.unix();
+        }
         console.log(collect);
         return collect;
     }
