@@ -1,7 +1,6 @@
 var SelfExclusionData = (function() {
     function chain(fns) {
         return function(value, old) {
-            var errors = [];
             var info = {
                 value: value,
                 errors: [],

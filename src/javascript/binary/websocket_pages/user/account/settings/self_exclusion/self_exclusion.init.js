@@ -30,11 +30,51 @@ var SelfExclusionWS = (function() {
         }
     };
 
+    function initDatePicker() {
+        // 6 months from now
+        var start_date = new Date();
+        start_date.setMonth(start_date.getMonth() + 6);
+        start_date.setDate(start_date.getDate() + 1);
+
+        // 5 years from now
+        var end_date = new Date();
+        end_date.setFullYear(end_date.getFullYear() + 5);
+
+        // 6 weeks from now
+        var week_end_date = new Date();
+        week_end_date.setMonth(week_end_date.getMonth() + 2);
+        week_end_date.setDate(week_end_date.getDate() + 1);
+
+        var now_date = new Date();
+
+        var $timeID = $('#timeout_until');
+        attach_time_picker($timeID);
+
+        var $timeDateID = $('#timeout_until_duration');
+        $timeDateID.datepicker({
+            dateFormat: 'yy-mm-dd',
+            minDate   : now_date,
+            maxDate   : week_end_date,
+            onSelect  : function(dateText, inst) {
+                $timeDateID.attr('value', dateText);
+            }
+        });
+
+        var $dateID = $('#exclude_until');
+        $dateID.datepicker({
+            dateFormat: 'yy-mm-dd',
+            minDate   : start_date,
+            maxDate   : end_date,
+            onSelect  : function(dateText, inst) {
+                $dateID.attr('value', dateText);
+            }
+        });
+    }
+
     var $form;
     var guards;
     var inputs;
 
-    // TODO: init datepicker and timepicker
     function init() {
         if (page.client.is_virtual()) {
             $('#selfExclusionDesc').addClass(hiddenClass);
@@ -75,6 +115,7 @@ var SelfExclusionWS = (function() {
                 setRequest(params);
             }
         });
+        initDatePicker();
         getRequest();
     }
 
@@ -99,6 +140,19 @@ var SelfExclusionWS = (function() {
                 changed = true;
             }
         });
+        // add date and time
+        var date = collect.timeout_until_duration;
+        if (date) {
+            date.add(collect.timeout_until || moment.duration());
+            var info = SelfExclusionData.validTimeoutUntil(date);
+            if (!info.valid) {
+                info.errors.forEach(function(error) {
+                    inputs.timeout_until_duration.emitError(error);
+                });
+                valid = false;
+            }
+        }
+        delete collect.timeout_until_duration;
         if (!valid) {
             return null;
         }
@@ -106,29 +160,16 @@ var SelfExclusionWS = (function() {
             SelfExclusionUI.showFormMessage('You did not change anything', false);
             return null;
         }
-        // add date and time and get unix epoch
-        var date = collect.timeout_until_duration;
-        if (date) {
-            date.add(collect.timeout_until || moment.duration());
-            var info = SelfExclusionData.validTimeoutUntil(date);
-            console.log(info);
-            if (!info.valid) {
-                info.errors.forEach(function(error) {
-                    inputs.timeout_until_duration.emitError(error);
-                });
-                return null;
-            }
-            collect.timeout_until = date.unix();
-        } else {
-            collect.timeout_until = null;
-        }
-        delete collect.timeout_until_duration;
-        var exclusion = collect.exclude_until;
-        if (exclusion) {
-            collect.exclude_until = exclusion.unix();
-        }
+        convertToUnix(collect, 'timeout_until');
+        convertToUnix(collect, 'exclude_until');
         console.log(collect);
         return collect;
+    }
+
+    function convertToUnix(params, key) {
+        if (params[key]) {
+            params[key] = params[key].unix();
+        }
     }
 
     function setRequest(params) {
