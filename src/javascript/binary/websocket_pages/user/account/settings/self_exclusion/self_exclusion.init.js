@@ -86,6 +86,7 @@ var SelfExclusionWS = (function() {
     var $form;
     var guards;
     var inputs;
+    var bound;
 
     function init() {
         Content.populate();
@@ -123,6 +124,9 @@ var SelfExclusionWS = (function() {
     }
 
     function setupForm() {
+        if (bound) {
+            return;
+        }
         var data = SelfExclusionData;
         var numeric = [data.valid.integer, data.valid.limit];
         $form  = $('#frmSelfExclusion');
@@ -164,6 +168,7 @@ var SelfExclusionWS = (function() {
                 SelfExclusionData.set(params);
             }
         });
+        bound = true;
         initDatePicker();
     }
 
@@ -176,6 +181,9 @@ var SelfExclusionWS = (function() {
             var value = null;
             var prev = input.old;
             var curr = input.get();
+            if (curr != prev) {
+                changed = true;
+            }
             if (curr.length) {
                 value = input.validate();
                 if (value === null) {
@@ -184,9 +192,6 @@ var SelfExclusionWS = (function() {
             }
             input.old = curr;
             collect[id] = value;
-            if (curr !== prev) {
-                changed = true;
-            }
         });
         collect = dataToParams(collect);
         if (!valid || !collect) {
