@@ -49,7 +49,8 @@ my @urls = (
     ['get-started/beginners-faq'               , 'monthly', '0.80'],
     ['get-started/glossary'                    , 'monthly', '0.80'],
 
-    ['metatrader', 'monthly', '0.80'],
+    ['metatrader',       'monthly', '0.80'],
+    ['metatrader/start', 'monthly', '0.80'],
 );
 
 

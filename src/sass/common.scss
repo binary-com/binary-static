@@ -77,6 +77,13 @@ span.button.button-disabled button.button-disabled {
     cursor: default;
 }
 
+.button.fullwidth {
+    width: 100%;
+    span {
+        display: block;
+    }
+}
+
 form {
     margin: 0;
     padding: 0;
