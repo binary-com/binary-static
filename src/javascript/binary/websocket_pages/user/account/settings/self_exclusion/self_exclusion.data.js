@@ -17,6 +17,9 @@ var SelfExclusionData = (function() {
 
     function lessThanPrevious(value, original) {
         var error = text.localize('Please enter a number between 0 and [_1]', [original]);
+        if (!original) {
+            return null;
+        }
         return ((original && !value) || +value > +original) ? error : null;
     }
 

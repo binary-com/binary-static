@@ -142,7 +142,7 @@ var SelfExclusionWS = (function() {
             session_duration_limit: numeric.concat([data.valid.session]),
             timeout_until_duration: [data.valid.dateString],
             timeout_until:          [data.valid.timeString],
-            exclude_until:          [data.valid.dateString, data.valid.exclusion],
+            exclude_until:          [data.valid.dateString],
         };
 
         var converts = {
@@ -207,12 +207,21 @@ var SelfExclusionWS = (function() {
 
     function dataToParams(data) {
         // add date and time
+        var err;
         var date = data.timeout_until_duration;
         if (date) {
             date.add(data.timeout_until || moment.duration());
-            var err = SelfExclusionData.valid.timeout(date);
+            err = SelfExclusionData.valid.timeout(date);
             if (err) {
                 inputs.timeout_until_duration.emitError(err);
+                return null;
+            }
+        }
+        var exclude = data.exclude_until;
+        if (exclude) {
+            err = SelfExclusionData.valid.exclusion(exclude);
+            if (err) {
+                inputs.exclude_until.emitError(err);
                 return null;
             }
         }
