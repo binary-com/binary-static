@@ -4,7 +4,7 @@
         <ol>
             <li>[% l('Click the bottun below to download MetaTrader') %]</li>
             <li>[% l('Run the installation file and follow the instructions') %]</li>
-            <li>[% l('To log into the application, use your MtaTrader account number and password') %]</li>
+            <li>[% l('To log into the application, use your MetaTrader account number and password') %]</li>
         </ol>
         <p class="hint">[% l('If you have previously downloaded MetaTrader 5 directly from MetaTrader\'s website, you will have to manually choose "[_1]" from the list of available brokers.', website_name) %]</p>
         <p>
