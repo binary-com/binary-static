@@ -76,7 +76,7 @@ sub all_pages {
         ['user/change_passwordws',          'user/settings/change_passwordws',                'default', 'Change Password'],
         ['user/portfoliows',                'user/portfoliows',                               'default', 'Portfolio'],
         ['user/profit_tablews',             'user/profit_tablews',                            'default', 'Profit Table'],
-        ['user/settings/self_exclusionws',   'user/settings/self_exclusionws',                'default', 'Account Details'],
+        ['user/settings/self_exclusionws',  'user/settings/self_exclusionws',                 'default', 'Account Details'],
         ['user/settings/detailsws',         'user/settings/settings_detailsws',               'default', 'Personal Details'],
         ['user/settings/securityws',        'user/settings/settings_securityws',              'default', 'Security'],
         ['user/statementws',                'user/statementws',                               'default', 'Statement'],
@@ -91,8 +91,8 @@ sub all_pages {
         ['user/reality_check_frequencyws',  'user/reality_check_frequencyws',                 'default', 'Reality Check'],
         ['user/reality_check_summaryws',    'user/reality_check_summaryws',                   'default', 'Reality Check'],
 
-        ['metatrader',       'metatrader/index', 'default', 'Trading with MetaTrader 5'],
-        ['metatrader/start', 'metatrader/start', 'default', 'Start Trading with MetaTrader 5'],
+        ['metatrader',          'metatrader/index',    'default', 'Trading with MetaTrader 5'],
+        ['metatrader/download', 'metatrader/download', 'default', 'Start Trading with MetaTrader 5'],
 
         ['logged_inws',           'global/logged_inws',  undef],
         ['trade/bet_explanation', 'bet/explanation',     undef],
