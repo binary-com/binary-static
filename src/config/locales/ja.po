@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-07-19 19:15+0000\n"
+"PO-Revision-Date: 2016-07-21 09:48+0000\n"
 "Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
@@ -596,7 +596,7 @@ msgid "<strong>Preferences:</strong>"
 msgstr "<strong>設定：</strong>"
 
 msgid "<strong>Quiet markets</strong> - choose the no-touch trade, the stays-between trade, or the ends-between trade."
-msgstr "<strong>相場保ち合い時</strong>：「ノータッチ」、「レンジ内に留まる」または「レンジ内で終了」取引を試してみましょう。"
+msgstr "<strong>相場保ち合い時</strong>：「NO-TOUCH」、「STAY-IN」または「END-IN」取引を試してみましょう。"
 
 msgid "<strong>Requirements:</strong>"
 msgstr "<strong>要件：</strong>"
@@ -732,7 +732,9 @@ msgid "A degree major in Accounting or other relevant professional qualification
 msgstr "会計を専攻とする学位またはその他関連した専門的な資格"
 
 msgid "A derivative is a financial instrument whose value is determined by reference to an underlying market. Derivatives are commonly traded in the inter-bank market, and binaries are one of the simplest forms of derivatives."
-msgstr "デリバティブとは金融市場にて任意の取引対象にて予想される価値のことです。デリバティブはインターバンク市場にて盛んに取引されており、バイナリーはシンプルなデリバティブの一形態です。"
+msgstr ""
+"デリバティブとは金融市場で任意の取引対象にて予想される価値のことです。デリバティブはインターバンク市場にて盛んに取引されており、バイナリーはシンプルなデリ"
+"バティブの一形態です。"
 
 msgid "A detail orientation with the ability to detect patterns"
 msgstr "パターン検出能力を用いた細かい作業"
@@ -1508,7 +1510,9 @@ msgid "Choose Asian Rise/Fall when you want to profit from the market ending hig
 msgstr "平均価格よりも終値が上か下かを予測されたい場合は「Asianアップ/ダウン」をご選択ください。"
 
 msgid "Choose Ends In/Out to profit from the market stopping inside or outside two price targets at the end of the time period."
-msgstr "取引期間終了時の判定価格が、設定された上下バリア価格の「レンジ内」か「レンジ外」にあるかを予想し、取引をしたい場合は「レンジ内/レンジ外で終了」を選択して下さい。"
+msgstr ""
+"取引期間終了時の判定価格が、設定された上下バリア価格の「レンジ内」か「レンジ外」にあるかを予想して取引をされたい場合は「END-IN/END-"
+"OUT」を選択して下さい。"
 
 msgid "Choose Higher/Lower when you want to profit from the market ending higher or lower than a price target."
 msgstr "「目標価格」が判定価格より上か下かを予想し、取引をしたい場合は「ハイ/ロー」を選択してください。"
@@ -1520,7 +1524,9 @@ msgid "Choose Scopes:"
 msgstr "範囲選択："
 
 msgid "Choose Stays In/Out to profit from the market staying inside or going outside two price targets any time during the contract period."
-msgstr "取引期間中に設定した上下バリア価格の「レンジ内で推移する」「レンジ外に出る」を予想し、取引をしたい場合は「レンジ内/外に留まる」を選択して下さい。"
+msgstr ""
+"設定した上下バリア価格が取引期間中に「レンジ内にとどまり続ける」か「レンジ外へ出る」かを予想して取引をされたい場合は「STAY-IN/BREAK-"
+"OUT」を選択して下さい。"
 
 msgid "Choose Touch / No Touch when you want to profit from the market touching or not touching a target any time during the contract period."
 msgstr "取引期間中に設定したバリア価格に「達するか」「達しないか」を予想し、取引をしたい場合は「TOUCH/NO-TOUCH」を選択して下さい。"
@@ -2264,7 +2270,7 @@ msgid "End Time"
 msgstr "終了時間"
 
 msgid "Ends Between/Ends Outside trades"
-msgstr "レンジ内で終了/レンジ外で終了・トレード"
+msgstr "END-IN/END-OUT トレード"
 
 msgid "Ends In/Out"
 msgstr "END-IN/END-OUT"
@@ -2309,7 +2315,7 @@ msgid "Entry spot"
 msgstr "エントリー価格"
 
 msgid "Entry spot price"
-msgstr "エントリースポット価格"
+msgstr "エントリー価格"
 
 msgid "Equities"
 msgstr "株式"
@@ -2953,13 +2959,18 @@ msgid "If you select \"Differs\", you will win the payout if the <strong>last di
 msgstr "「アンマッチ」を選択された場合、最後のtickの<strong>下一桁</strong>がお客さまの<strong>予想</strong>と違うとペイアウトを獲得いただけます。"
 
 msgid "If you select \"Does Not Touch\", you win the payout if the market never touches the <strong>barrier</strong> at any time during the <strong>contract period</strong>."
-msgstr "「ノータッチ」を選択された場合、<strong>トレード終了時間</strong>まで一度も市場価格が<strong>バリア</strong>設定した価格にタッチしなければペイアウトを獲得いただけます。"
+msgstr ""
+"「NO-TOUCH」を選択された場合、<strong>トレード終了時間</strong>まで一度も市場価格が<strong>バリア</strong>設定し"
+"た価格にタッチしなければペイアウトを獲得いただけます。"
 
 msgid "If you select \"Ends Between\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>Low barrier</strong> AND strictly lower than the <strong>High barrier</strong>."
 msgstr "「範囲内」を選択された場合、<strong>終値</strong>が バリア設定した<strong>上下両方のバリア価格</strong>の間に留まること、すなわちいずれのバリア価格にもタッチしなければペイアウトを獲得いただけます。トレード終了時間までの市場価格の動向は判定に影響を及ぼしません。"
 
 msgid "If you select \"Ends Outside\", you win the payout if the <strong>exit spot</strong> is EITHER strictly higher than the <strong>High barrier</strong>, OR strictly lower than the <strong>Low barrier</strong>."
-msgstr "「レンジ外」を選択された場合、 <strong>終値</strong>がバリア設定した<strong>上限バリア価格を上回る</strong>か、<strong>下限バリア価格を下回れば</strong>ペイアウトを獲得いただけます。同値は条件を満たしていないと判定されます。トレード終了時間までの市場価格の動向は判定に関係ありません。"
+msgstr ""
+"「END-OUT」を選択された場合、 <strong>終値</strong>がバリア設定した<strong>上限バリア価格を上回る</strong>か、<"
+"strong>下限バリア価格を下回れば</strong>ペイアウトを獲得いただけます。同値は条件を満たしていないと判定されます。トレード終了時間までの市場"
+"価格の動向は判定に関係ありません。"
 
 msgid "If you select \"Even\", you will win the payout if the <strong>last digit</strong> of the last tick is an <strong>even number (i.e., 2, 4, 6, 8, or 0).</strong>"
 msgstr "「偶数」を選択された場合、最後のtickの<strong>下一桁</strong>が<strong>偶数（例：0、2、4、6、8）</strong>であるとペイアウトを獲得いただけます。"
@@ -2968,7 +2979,9 @@ msgid "If you select \"Falls\", you win the payout if the <strong>exit spot</str
 msgstr "「ダウン」を選択された場合、 <strong>終値</strong>が<strong>エントリー価格</strong>より正確に低くなるとペイアウトを獲得いただけます。同値は条件を満たしていないと判定されます。"
 
 msgid "If you select \"Goes Outside\", you win the payout if the market touches either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>."
-msgstr "「レンジ外」を選択された場合、<strong>トレード終了時間までに</strong>市場価格がバリア設定した<strong>上下いずれか</strong>の<strong>バリア価格にタッチ</strong>すればペイアウトを獲得いただけます。"
+msgstr ""
+"「BREAK-OUT」を選択された場合、<strong>トレード終了時間までに</strong>市場価格がバリア設定した<strong>上下いずれか</s"
+"trong>の<strong>バリア価格にタッチ</strong>すればペイアウトを獲得いただけます。"
 
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>."
 msgstr "「HIGH」を選択された場合、<strong>終値</strong>が<strong>バリア価格</strong>より正確に高くなるとペイアウトを獲得いただけます。"
@@ -2989,7 +3002,9 @@ msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</str
 msgstr "「アップ」を選択された場合、<strong>終値</strong>が<strong>エントリー価格</strong>より正確に高くなるとペイアウトを獲得いただけます。同値は条件を満たしていないと判定されます。"
 
 msgid "If you select \"Stays Between\", you win the payout if the market stays between (does not touch) either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>."
-msgstr "「レンジ内」を選択された場合、<strong>トレード終了時間まで常に</strong>市場価格がバリアを設定した<strong>上下両方</strong>のバリア価格の間に留まること、すなわち<strong>バリア価格に１度もタッチしなければ</strong>ペイアウトを獲得いただけます。"
+msgstr ""
+"「STAY-IN」を選択された場合、<strong>トレード終了時間まで常に</strong>市場価格がバリアを設定した<strong>上下両方</str"
+"ong>のバリア価格の間に留まること、すなわち<strong>バリア価格に１度もタッチしなければ</strong>ペイアウトを獲得いただけます。"
 
 msgid "If you select \"Touches\", you win the payout if the market touches the <strong>barrier</strong> at any time during the <strong>contract period</strong>."
 msgstr "「タッチ」を選択された場合、<strong>トレード終了時間まで</strong>に市場価格が<strong>バリア</strong>設定した価格にタッチすればペイアウトを獲得いただけます。"
@@ -3142,10 +3157,10 @@ msgid "In/Out (ends between/outside and stays between/goes outside)"
 msgstr "イン/アウト (範囲内/外で終了または 範囲内に留まるか範囲外へ出る)"
 
 msgid "In/Out trades"
-msgstr "レンジ内/レンジ外 トレード"
+msgstr "レンジ トレード"
 
 msgid "Income Source"
-msgstr "オープンソース"
+msgstr "収入源"
 
 msgid "Indemnification"
 msgstr "免責"
@@ -3828,13 +3843,13 @@ msgid "Languages"
 msgstr "言語"
 
 msgid "Last Digit Prediction"
-msgstr "下一桁の予想数字"
+msgstr "下一桁の数字を予想"
 
 msgid "Last Digit Stats"
 msgstr "下一桁ステータス"
 
 msgid "Last Used"
-msgstr "最後に使用した"
+msgstr "最後に使用したもの"
 
 msgid "Last digit stats for the latest %1 ticks on %2"
 msgstr "%2の最新%1 tickの下一桁統計"
@@ -5023,7 +5038,7 @@ msgid "Ref."
 msgstr "約定番号"
 
 msgid "Reference ID"
-msgstr "参照 ID"
+msgstr "約定 ID"
 
 msgid "Regent Markets Group Ltd. renames to Binary Ltd."
 msgstr "Regent Markets Group LimitedはBinary Ltd.に会社名変更"
@@ -5492,7 +5507,7 @@ msgid "Stay informed. %1 offers daily market reports and market research, as wel
 msgstr "マーケット情報を得ましょう。当社では、マーケットレポートやリサーチ情報を提供しています。"
 
 msgid "Stays Between/Goes Outside trades"
-msgstr "レンジ内に留まる/レンジ外となる"
+msgstr "STAY-IN/BREAK-OUT トレード"
 
 msgid "Stays In/Goes Out"
 msgstr "STAY-IN/BREAK-OUT"
@@ -6228,7 +6243,8 @@ msgid "These are trades where the trader predicts if a market will rise or fall 
 msgstr "ご指定して頂いた取引期間終了時に市場価格が上昇するか下降するかを予想するトレードです。"
 
 msgid "These are trades where the trader selects a low and high barrier, and predicts if the market will stay within these barriers or go outside them (see also 'Stays Between/Goes Outside trades')."
-msgstr "上下に設定した価格バリアー内に市場価格が収まるか否かを予想するトレードタイプです。（「レンジ内に留まる/レンジ外となる」の項目もご参照ください）"
+msgstr ""
+"上下に設定した価格バリアー内に市場価格が収まるか否かを予想するトレードタイプです。（「STAY-IN/BREAK-OUT」の項目もご参照ください）"
 
 msgid "These are trades where the trader selects a price target, and predicts that the market will never touch the target before the expiry of the trade."
 msgstr "ターゲット価格を設定し、取引対象の価格が取引終了時までにターゲット価格に一度も触れないことを予測するトレードタイプのことです。"
