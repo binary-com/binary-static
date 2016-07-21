@@ -90,12 +90,13 @@ var SelfExclusionWS = (function() {
 
     function init() {
         Content.populate();
-        SelfExclusionUI.init();
         if (page.client.is_virtual()) {
             SelfExclusionUI.hide('#selfExclusionDesc');
+            SelfExclusionUI.hide('#frmSelfExclusion');
             SelfExclusionUI.showPageError(Content.localize().textFeatureUnavailable, true);
             return;
         }
+        SelfExclusionUI.init();
         setupForm();
         setupHandlers();
         SelfExclusionData.get();
@@ -105,19 +106,18 @@ var SelfExclusionWS = (function() {
         BinarySocket.init({
             onmessage: function(msg) {
                 var response = JSON.parse(msg.data);
-                if (response) {
-                    if (response.msg_type === "authorize") {
-                        init();
-                    }
-                    else if (response.msg_type === "get_self_exclusion") {
-                        getResponse(response);
-                    }
-                    else if (response.msg_type === "set_self_exclusion") {
-                        setResponse(response);
-                    }
-                }
-                else {
+                if (!response) {
                     console.log('some error occured');
+                }
+                switch (response.msg_type) {
+                    case "authorize":
+                        init();
+                        break;
+                    case "get_self_exclusion":
+                        getResponse(response);
+                        break;
+                    case "set_self_exclusion":
+                        setResponse(response);
                 }
             }
         });
@@ -188,6 +188,7 @@ var SelfExclusionWS = (function() {
                 value = input.validate();
                 if (value === null) {
                     valid = false;
+                    return;
                 }
             }
             input.old = curr;
@@ -224,6 +225,9 @@ var SelfExclusionWS = (function() {
                 inputs.exclude_until.emitError(err);
                 return null;
             }
+            if (!window.confirm(text.localize('When you click "Ok" you will be excluded from trading on the site until the selected date.'))) {
+                return null;
+            }
         }
         delete data.timeout_until_duration;
         convertToUnix(data, 'timeout_until');
@@ -254,7 +258,7 @@ var SelfExclusionWS = (function() {
     }
 
     function getResponse(response) {
-        SelfExclusionUI.loaded();
+        SelfExclusionUI.loaded(true);
         if('error' in response) {
             if (response.error.code === 'ClientSelfExclusion') {
                 page.client.send_logout_request();

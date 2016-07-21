@@ -56,7 +56,7 @@ var SelfExclusionUI = (function() {
         clearError: clearError,
         showFormMessage: showFormMessage,
         hide: function(selector) {
-            $(selector).addClass(hidden);
+            $(selector).addClass(hiddenClass);
         },
     };
 })();
