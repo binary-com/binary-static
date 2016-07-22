@@ -24,6 +24,7 @@ var SelfExclusionWS = (function() {
         hiddenClass = 'hidden';
 
         if (page.client.is_virtual() || TUser.get().is_virtual) {
+            console.log('is virtual client!');
             $('#selfExclusionDesc').addClass(hiddenClass);
             showPageError(Content.localize().textFeatureUnavailable, true);
             return;
@@ -51,23 +52,25 @@ var SelfExclusionWS = (function() {
         BinarySocket.init({
             onmessage: function(msg){
                 var response = JSON.parse(msg.data);
+                if (response.msg_type === 'authorize') {
+                    init();
+                    return;
+                }
                 if (response.error) {
+                    var field  = response.error.field;
                     var errMsg = response.error.message;
                     if (response.error.code === 'ClientSelfExclusion') {
                         page.client.send_logout_request();
-                    } else if (response.error.field) {
-                        showError(response.error.field, errMsg);
+                    } else if (field) {
+                        showError(field, errMsg);
                     } else {
                         showFormMessage(errMsg, false);
                     }
+                    return;
                 }
-                if (response.msg_type === "authorize") {
-                    init();
-                }
-                else if (response.msg_type === "get_self_exclusion") {
+                if (response.msg_type === 'get_self_exclusion') {
                     getResponse(response);
-                }
-                else if (response.msg_type === "set_self_exclusion") {
+                } else if (response.msg_type === 'set_self_exclusion') {
                     setResponse(response);
                 }
             }
@@ -213,13 +216,12 @@ var SelfExclusionWS = (function() {
             if (date.isBefore(moment())) {
                 errMsg = 'Exclude time must be after today.';
             } else if (!opt) {
-                if (date.isBefore(six_month_date)) {
-                    errMsg = 'Exclude time cannot be less than 6 months.';
-                }
-                else if (date.isAfter(five_year_date)) {
-                    errMsg = 'Exclude time cannot be for more than 5 years.';
-                }
-            } else if (opt) {
+                errMsg = (
+                    (date.isBefore(six_month_date) && 'Exclude time cannot be less than 6 months.')    ||
+                    (date.isAfter(five_year_date)  && 'Exclude time cannot be for more than 5 years.') ||
+                    null
+                );
+            } else {
                 if (date.isAfter(six_weeeks_date)) {
                     errMsg = 'Exclude time cannot be more than 6 weeks.';
                 }
