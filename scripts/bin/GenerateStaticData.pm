@@ -522,9 +522,6 @@ sub _texts {
         push @texts, localize('{JAPAN ONLY}[_1] [_2] payout if [_3] ends otside low and high values of Exercise price at close on [_4].');
         push @texts, localize('{JAPAN ONLY}[_1] [_2] payout if [_3] stays between low and high values of Exercise price through close on [_4].');
         push @texts, localize('{JAPAN ONLY}[_1] [_2] payout if [_3] goes ouside of low and high values of Exercise price through close on [_4].');
-        push @texts, localize('{JAPAN ONLY}BUY price per unit');
-        push @texts, localize('{JAPAN ONLY}SELL price  per unit');
-        push @texts, localize('{JAPAN ONLY}Units');
         push @texts, localize('{JAPAN ONLY}Even if all details of the binary options match perfectly, there may still be differences in the prices shown by different broking companies.');
         push @texts, localize('{JAPAN ONLY}Prices for currency options are calculated relative the value of theunderlying spot price, and are dependant on multiple factors which may vary.');
         push @texts, localize('{JAPAN ONLY}Where broking companies show bid and offer prices for purchasing and sell-back of positions, these prices may become further apart the nearer you are to the exercise time.');
@@ -535,6 +532,31 @@ sub _texts {
         push @texts, localize('{JAPAN ONLY}This test is for the purpose of confirming if the customers have basic knowledge related to options trading .');
         push @texts, localize('{JAPAN ONLY}It is determined the customers have basic knowledge of option trading by the results of the knowledge test. If the customers start trading, the customers need to agree not have lawsuit despite the customer are shortage of knowledge related to options trading, and it cause damages, we admit to open the trading account.');
         push @texts, localize('{JAPAN ONLY}It prohibits the copying of the questions . In addition , You agree that you will not leak to third party');
+        push @texts, localize('{JAPAN ONLY}HIGH/LOW');
+        push @texts, localize('{JAPAN ONLY}TOUCH /NO-TOUCH');
+        push @texts, localize('{JAPAN ONLY}END-IN/END-OUT');
+        push @texts, localize('{JAPAN ONLY}STAY-IN/BREAK-OUT');
+        push @texts, localize('{JAPAN ONLY}minute');
+        push @texts, localize('{JAPAN ONLY}minutes');
+        push @texts, localize('{JAPAN ONLY}hour');
+        push @texts, localize('{JAPAN ONLY}hours');
+        push @texts, localize('{JAPAN ONLY}day');
+        push @texts, localize('{JAPAN ONLY}days');
+        push @texts, localize('{JAPAN ONLY}week');
+        push @texts, localize('{JAPAN ONLY}weeks');
+        push @texts, localize('{JAPAN ONLY}month');
+        push @texts, localize('{JAPAN ONLY}months');
+        push @texts, localize('{JAPAN ONLY}year');
+        push @texts, localize('{JAPAN ONLY}years');
+        push @texts, localize('{JAPAN ONLY}Higher');
+        push @texts, localize('{JAPAN ONLY}Lower');
+        push @texts, localize('{JAPAN ONLY}Touches');
+        push @texts, localize('{JAPAN ONLY}Does Not Touch');
+        push @texts, localize('{JAPAN ONLY}Ends Between');
+        push @texts, localize('{JAPAN ONLY}Ends Outside');
+        push @texts, localize('{JAPAN ONLY}Stays Between');
+        push @texts, localize('{JAPAN ONLY}Goes Outside');
+        
         push @texts, localize('You need to finish all 20 questions.');
 
 

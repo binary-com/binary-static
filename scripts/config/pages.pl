@@ -59,7 +59,7 @@ sub all_pages {
         ['paymentagent/transferws',      'cashier/paymentagent_transferws',           'default', 'Payment Agent Transfer'],
         ['paymentagent/withdrawws',      'cashier/paymentagent_withdrawws',           'default', 'Payment Agent Withdrawal'],
 
-        ['jptrading', 'bet/static',  'default', 'Sharp Prices. Smart Trading.'],
+        ['jptrading', 'bet/japan',   'default', 'Sharp Prices. Smart Trading.'],
         ['trading',   'bet/static',  'default', 'Sharp Prices. Smart Trading.'],
 
         ['new_account/virtualws',        'new_account/virtualws',       'default', 'Create New Account'],

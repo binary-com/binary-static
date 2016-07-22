@@ -918,10 +918,6 @@ function setChartSource() {
   document.getElementById('chart_frame').src = 'https://webtrader.binary.com?affiliates=true&instrument=' + document.getElementById('underlying').value + '&timePeriod=1t&gtm=true&lang=' + (page.language() || 'en').toLowerCase();
 }
 
-function isJapanTrading(){
-    return $('#trading_socket_container.japan').length;
-}
-
 //used temporarily for mocha test
 if (typeof module !== 'undefined') {
     module.exports = {
