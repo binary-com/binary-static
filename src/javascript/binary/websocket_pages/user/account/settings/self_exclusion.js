@@ -185,54 +185,52 @@ var SelfExclusionWS = (function() {
         return /^\d+$/.test(value);
     };
 
+    var hasConfirmed = function() {
+        var message = 'When you click "Ok" you will be excluded from trading on the site until the selected date.';
+        return window.confirm(text.localize(message));
+    };
+
     var validateExclusionDate = function(exclusion_date, opt) {
-        var date = moment(exclusion_date, 'YYYY-MM-DD');
         var errMsg;
+        var date = moment(exclusion_date, 'YYYY-MM-DD');
 
-        if (exclusion_date) {
-            if (!date.isValid()) {
-                errMsg = 'Please select a valid date';
-            } else {
-                if (opt) {
-                    var value = $('#' + timeID).val().trim();
-                    if (value.length > 0) {
-                        if (!validateExclusionTime(value)) return false;
-                        date.add(moment(value, 'HH:mm'));
-                    }
-                    time = date.unix();
+        if (!date.isValid()) {
+            errMsg = 'Please select a valid date';
+        } else {
+            if (opt) {
+                var value = $('#' + timeID).val().trim();
+                if (value.length > 0) {
+                    if (!validateExclusionTime(value)) return false;
+                    date.add(moment(value, 'HH:mm'));
                 }
+                time = date.unix();
+            }
 
-                var six_month_date = moment().add(moment.duration(6, 'months'));
-                var five_year_date = moment().add(moment.duration(5, 'years'));
-                var six_weeks_date = moment().add(moment.duration(6, 'weeks'));
+            var six_month_date = moment().add(moment.duration(6, 'months'));
+            var five_year_date = moment().add(moment.duration(5, 'years'));
+            var six_weeks_date = moment().add(moment.duration(6, 'weeks'));
 
-                if (date.isBefore(moment())) {
-                    errMsg = 'Exclude time must be after today.';
-                } else if (!opt) {
-                    if (date.isBefore(six_month_date)) {
-                        errMsg = 'Exclude time cannot be less than 6 months.';
-                    }
-                    else if (date.isAfter(five_year_date)) {
-                        errMsg = 'Exclude time cannot be for more than 5 years.';
-                    }
-                } else if (opt) {
-                    if (date.isAfter(six_weeeks_date)) {
-                        errMsg = 'Exclude time cannot be more than 6 weeks.';
-                    }
+            if (date.isBefore(moment())) {
+                errMsg = 'Exclude time must be after today.';
+            } else if (!opt) {
+                if (date.isBefore(six_month_date)) {
+                    errMsg = 'Exclude time cannot be less than 6 months.';
+                }
+                else if (date.isAfter(five_year_date)) {
+                    errMsg = 'Exclude time cannot be for more than 5 years.';
+                }
+            } else if (opt) {
+                if (date.isAfter(six_weeeks_date)) {
+                    errMsg = 'Exclude time cannot be more than 6 weeks.';
                 }
             }
         }
 
-        if(errMsg) {
+        if (errMsg) {
             showError((opt ? timeDateID : dateID), text.localize(errMsg));
             return false;
-        } else {
-            var message = 'When you click "Ok" you will be excluded from trading on the site until the selected date.';
-            if (!window.confirm(text.localize(message))) {
-                isValid = false;
-            }
-            return true;
         }
+        return true && hasConfirmed();
     };
 
     var validateExclusionTime = function(exclusion_time) {
