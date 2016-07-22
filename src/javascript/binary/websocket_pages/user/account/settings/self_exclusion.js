@@ -56,7 +56,7 @@ var SelfExclusionWS = (function() {
                     if (response.error.code === 'ClientSelfExclusion') {
                         page.client.send_logout_request();
                     } else if (response.error.field) {
-                        showError(response.error.field, text.localize(errMsg));
+                        showError(response.error.field, errMsg);
                     } else {
                         showFormMessage(errMsg, false);
                     }
@@ -154,17 +154,17 @@ var SelfExclusionWS = (function() {
                 }
                 else if(key !== timeID && key !== timeDateID) {
                     if(newValue.length > 0 && !isNormalInteger(newValue)) {
-                        showError(key, text.localize('Please enter an integer value'));
+                        showError(key, 'Please enter an integer value');
                     }
                     else if(currentValue > 0 && (newValue.length === 0 || isLargerInt(newValue, currentValue))) {
-                        showError(key, text.localize('Please enter a number between 0 and [_1]').replace('[_1]', currentValue));
+                        showError(key, text.localize('Please enter a number between 0 and [_1]', [currentValue]));
                     }
                     else if(key === 'session_duration_limit' && newValue > (6 * 7 * 24 * 60)) {
-                        showError(key, text.localize('Session duration limit cannot be more than 6 weeks.'));
+                        showError(key, 'Session duration limit cannot be more than 6 weeks.');
                     }
                 }
             } else if (key === timeDateID && $form.find('#' + timeID).val().trim().length > 0) {
-                showError(timeDateID, text.localize('Please select a valid date'));
+                showError(timeDateID, 'Please select a valid date');
             }
             if (newValue !== currentValue) {
                 changed = true;
@@ -227,7 +227,7 @@ var SelfExclusionWS = (function() {
         }
 
         if (errMsg) {
-            showError((opt ? timeDateID : dateID), text.localize(errMsg));
+            showError((opt ? timeDateID : dateID), errMsg);
             return false;
         }
         return true && hasConfirmed();
@@ -236,7 +236,7 @@ var SelfExclusionWS = (function() {
     var validateExclusionTime = function(exclusion_time) {
         var time = moment(exclusion_time, 'HH:mm');
         if (time.isValid()) {
-            showError(timeID, text.localize('Please select a valid time'));
+            showError(timeID, 'Please select a valid time');
             return false;
         }
         return true;
@@ -253,7 +253,7 @@ var SelfExclusionWS = (function() {
     };
 
     var showError = function(fieldID, errMsg) {
-        $('#' + fieldID).parent().append($('<p/>', {class: errorClass, text: errMsg}));
+        $('#' + fieldID).parent().append($('<p/>', {class: errorClass, text: text.localize(errMsg)}));
         if (fieldID === timeID) {
             $('#' + fieldID).attr('style', 'margin-bottom:10px');
         }
