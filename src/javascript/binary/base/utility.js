@@ -271,9 +271,16 @@ function downloadCSV(csvContents, filename) {
     document.body.removeChild(downloadLink);
 }
 
+function template(string, content) {
+    return string.replace(/\[_(\d+)\]/g, function(s, index) {
+        return content[(+index) - 1];
+    });
+}
+
 //used temporarily for mocha test
 if (typeof module !== 'undefined') {
     module.exports = {
-        toJapanTimeIfNeeded: toJapanTimeIfNeeded
+        toJapanTimeIfNeeded: toJapanTimeIfNeeded,
+        template: template
     };
 }

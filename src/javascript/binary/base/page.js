@@ -717,6 +717,9 @@ Header.prototype = {
         if (!$('body').hasClass('BlueTopBack')) {
           checkClientsCountry();
         }
+        if(page.client.is_logged_in) {
+            $('ul#menu-top').addClass('smaller-font');
+        }
     },
     on_unload: function() {
         this.menu.reset();

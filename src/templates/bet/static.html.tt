@@ -1,4 +1,4 @@
-<div id="trading_socket_container" class="tab-menu-wrap [% IF is_japan %]japan[% END %]">
+<div id="trading_socket_container" class="tab-menu-wrap">
    <p id="markets_closed_msg" class="notice-msg center hidden">[% l('All markets are closed now. Please try again later.') %]</p>
    <div id="loading_container" class="overlay_container">
    </div>
@@ -135,25 +135,6 @@
                            </div>
                         </div>
                      </div>
-
-                     <div class="row" id="japan_unit_row">
-                        <div class="col form_label">
-                          <label for="japan_unit" id="japan_unit_label"></label>
-                        </div>
-                        <div class="row-inner big-col">
-                           <div><input id="japan_unit" type="text" step="any" maxlength="10" value="1" class="medium_width_input" autocomplete="off" /> x ¥1000</div>
-                        </div>
-                     </div>
-
-                     <div class="row" id="japan_payout_row">
-                        <div class="col form_label">
-                          <label for="japan_payout" id="japan_payout_label"></label>
-                        </div>
-                        <div class="row-inner big-col">
-                           <span id="japan_payout">¥1000</span>
-                        </div>
-                     </div>
-
                      <div id="spread_element_container">
                         <div class="row">
                             <div class="col form_label">
@@ -182,11 +163,6 @@
                         </div>
                      </div>
                   </form>
-               </div>
-               <div id="contract_description1"></div>
-               <div id="contract_description2"></div>
-               <div id="pricing_table_container" class="row">
-                  <div id="pricing_table"></div>
                </div>
                <div id="open_positions_container">[% INCLUDE user/portfoliows.html.tt %]</div>
             </div>
@@ -273,49 +249,5 @@
    </div>
 </div>
 <div id="all_prices"></div>
-<div id="trading_bottom_content">
-  <div class="content-tab-container page-section">
-    <div class="tab-menu">
-      <div class="tab-menu-wrap grd-container">
-        <ul id="betsBottomPage" class="tm-ul">
-          <li id="tab_portfolio" class="tm-li invisible first">
-            <a href="#tab_portfolio" class="tm-a first"></a>
-          </li>
-          <li id="tab_graph" class="tm-li first">
-            <a href="#tab_graph" class="tm-a first"></a>
-          </li>
-          <li id="tab_explanation" class="tm-li active">
-            <a href="" class="tm-a"></a>
-          </li>
-          <li id="tab_last_digit" class="invisible tm-li">
-            <a href="#" class="tm-a"></a>
-          </li>
-          <li id="tab_japan_info" class="invisible tm-li last">
-            <a href="#" class="tm-a"></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="tab-content grd-container">
-      <div class="tab-content-wrapper" id="bet_bottom_content">
-        <div id="tab_portfolio-content" class="toggle-content invisible "></div>
-        <div id="tab_graph-content" class="toggle-content invisible">
-          <p class="error-msg" id="chart-error"></p>
-          <div id="trade_live_chart">
-            <table width="600px" align="center">
-              <tr align="center">
-                <td colspan="4">
-                  <iframe src="" width="100%" height="630" id="chart_frame" style="overflow-y : hidden;" scrolling="no"></iframe>
-                </td>
-              </tr>
-            </table>
-          </div>
-        </div>
-        <div id="tab_explanation-content" class="toggle-content selectedTab"></div>
-        <div id="tab_last_digit-content" class="toggle-content invisible "></div>
-        <div id="tab_japan_info-content" class="toggle-content invisible "></div>
-      </div>
-    </div>
-  </div>
-</div>
+[% INCLUDE bet/analysis.html.tt %]
 <div id="trading_init_progress"><img src="[% request.url_for('images/pages/binary-symbol-logo.svg') %]" width="100%" height="100%" alt="" /></div>

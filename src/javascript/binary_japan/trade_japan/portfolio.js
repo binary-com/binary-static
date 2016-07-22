@@ -1,6 +1,7 @@
 var JapanPortfolio = (function() {
 
   var $portfolio;
+  var isPortfolioActive = false;
 
   function init() {
 
@@ -20,8 +21,9 @@ var JapanPortfolio = (function() {
   }
 
   function show() {
-    if (isJapanTrading()) {
-      PortfolioWS.init();
+    if (JPTradePage.isJapan() && !isPortfolioActive) {
+      PortfolioWS.onLoad();
+      isPortfolioActive = true;
     }
 
     return;
@@ -29,14 +31,15 @@ var JapanPortfolio = (function() {
 
   function isActive() {
     var user = new User();
-    if (user.email && isJapanTrading()) {
+    if (user.email && JPTradePage.isJapan()) {
       return true;
     }
   }
 
   function hide() {
-    if (isJapanTrading()) {
+    if (JPTradePage.isJapan() && isPortfolioActive) {
       PortfolioWS.onUnload();
+      isPortfolioActive = false;
     }
 
     return;

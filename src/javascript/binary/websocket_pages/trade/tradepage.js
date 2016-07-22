@@ -47,7 +47,6 @@ var TradePage = (function(){
     $('#tab_graph a').text(text.localize('Chart'));
     $('#tab_explanation a').text(text.localize('Explanation'));
     $('#tab_last_digit a').text(text.localize('Last Digit Stats'));
-    $('#tab_japan_info a').text(text.localize('Prices'));
   };
 
   var reload = function() {
