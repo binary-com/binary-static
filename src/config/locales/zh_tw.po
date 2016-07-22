@@ -4,8 +4,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2016-07-19 04:34+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (Taiwan) "
-"<https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
+"Language-Team: Chinese (Taiwan) <https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
 "Language: zh_tw\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -199,7 +198,6 @@ msgstr "%1從1999年開始運營，目前營業額達到 20 億美元"
 msgid "%1 reaches 1 million registered users"
 msgstr "%1註冊使用者已達1百萬人"
 
-#| msgid "Days to display"
 msgid "%1 rows displayed:"
 msgstr "%1顯示列數:"
 
@@ -2099,7 +2097,6 @@ msgstr "通過文檔部門流程提高行銷隊伍有效執行重複任務的能
 msgid "Dormant and Inactive Accounts"
 msgstr "休眠和非使用中帳戶"
 
-#| msgid "Download"
 msgid "Download CSV"
 msgstr "下載CSV"
 
@@ -7392,6 +7389,9 @@ msgstr "天"
 msgid "deposit"
 msgstr "存款"
 
+msgid "details"
+msgstr "詳細資料"
+
 msgid "e.g. ws.binaryws.com"
 msgstr "例如ws.binaryws.com"
 
@@ -7626,9 +7626,6 @@ msgstr "{JAPAN ONLY}As the time to the exercise point shortens, the time-value o
 msgid "{JAPAN ONLY}Association of join"
 msgstr "{JAPAN ONLY}Association of join"
 
-msgid "{JAPAN ONLY}BUY price per unit"
-msgstr "{JAPAN ONLY}BUY price per unit"
-
 msgid "{JAPAN ONLY}Because option prices are determined by the probability of being exercised, it cannot be said that cheaper options have any natural advantage over expensive options."
 msgstr "{JAPAN ONLY}Because option prices are determined by the probability of being exercised, it cannot be said that cheaper options have any natural advantage over expensive options."
 
@@ -7680,11 +7677,31 @@ msgstr "{JAPAN ONLY}Disclosure of financial statement by No. xx in the FIEA"
 msgid "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
 msgstr "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Win Loss Ratio"
+msgid "{JAPAN ONLY}Does Not Touch"
+msgstr "{JAPAN ONLY}Win Loss Ratio"
+
 msgid "{JAPAN ONLY}Download"
 msgstr "{JAPAN ONLY}Download"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}END-IN/END-OUT"
+msgstr "{JAPAN ONLY}Units"
+
 msgid "{JAPAN ONLY}Email us copies of your Identification Documents and My Number card."
 msgstr "{JAPAN ONLY}Email us copies of your Identification Documents and My Number card."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Establishment"
+msgid "{JAPAN ONLY}Ends Between"
+msgstr "{JAPAN ONLY}Establishment"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Main business"
+msgid "{JAPAN ONLY}Ends Outside"
+msgstr "{JAPAN ONLY}Main business"
 
 msgid "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
 msgstr "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
@@ -7748,6 +7765,21 @@ msgstr "{JAPAN ONLY}For both call and put options, if the underlying asset price
 
 msgid "{JAPAN ONLY}For full details of the documents we can accept please download the following guide:"
 msgstr "{JAPAN ONLY}For full details of the documents we can accept please download the following guide:"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 3: Outline"
+msgid "{JAPAN ONLY}Goes Outside"
+msgstr "{JAPAN ONLY}Section 3: Outline"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}HIGH/LOW"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}Higher"
+msgstr "{JAPAN ONLY}Units"
 
 msgid "{JAPAN ONLY}HirooMiyaya 3F, 1-9-16 Hiroo, Shibuya, Tokyo, 150-0012"
 msgstr "{JAPAN ONLY}HirooMiyaya 3F, 1-9-16 Hiroo, Shibuya, Tokyo, 150-0012"
@@ -7875,6 +7907,11 @@ msgstr "{JAPAN ONLY}Knowledge test list item 4"
 msgid "{JAPAN ONLY}Knowledge test list item 5"
 msgstr "{JAPAN ONLY}Knowledge test list item 5"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Download"
+msgid "{JAPAN ONLY}Lower"
+msgstr "{JAPAN ONLY}Download"
+
 msgid "{JAPAN ONLY}Main business"
 msgstr "{JAPAN ONLY}Main business"
 
@@ -7962,8 +7999,8 @@ msgstr "{JAPAN ONLY}Registration"
 msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "{JAPAN ONLY}Regulation & Tax"
 
-msgid "{JAPAN ONLY}SELL price  per unit"
-msgstr "{JAPAN ONLY}SELL price  per unit"
+msgid "{JAPAN ONLY}STAY-IN/BREAK-OUT"
+msgstr ""
 
 msgid "{JAPAN ONLY}Section 1: Structure"
 msgstr "{JAPAN ONLY}Section 1: Structure"
@@ -7986,8 +8023,16 @@ msgstr "{JAPAN ONLY}Short positions in FX Binary Options must be covered by init
 msgid "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 msgstr "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Establishment"
+msgid "{JAPAN ONLY}Stays Between"
+msgstr "{JAPAN ONLY}Establishment"
+
 msgid "{JAPAN ONLY}Summary of Specifications"
 msgstr "{JAPAN ONLY}Summary of Specifications"
+
+msgid "{JAPAN ONLY}TOUCH /NO-TOUCH"
+msgstr ""
 
 msgid "{JAPAN ONLY}Take knowledge test"
 msgstr "{JAPAN ONLY}Take knowledge test"
@@ -8070,6 +8115,11 @@ msgstr "{JAPAN ONLY}To compensate for any rise in the price of an underlying ass
 msgid "{JAPAN ONLY}To invest a binary options investment accurately, the customer are required knowledge and experience related to derivative transactions."
 msgstr "{JAPAN ONLY}To invest a binary options investment accurately, the customer are required knowledge and experience related to derivative transactions."
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}Touches"
+msgstr "{JAPAN ONLY}Units"
+
 msgid "{JAPAN ONLY}Trading & Hedging"
 msgstr "{JAPAN ONLY}Trading & Hedging"
 
@@ -8078,9 +8128,6 @@ msgstr "{JAPAN ONLY}Trading Guide"
 
 msgid "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
 msgstr "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
-
-msgid "{JAPAN ONLY}Units"
-msgstr "{JAPAN ONLY}Units"
 
 msgid "{JAPAN ONLY}Unless special arrangements are made, cooling-off will not be available after OTC binary options trading contract has been made."
 msgstr "{JAPAN ONLY}Unless special arrangements are made, cooling-off will not be available after OTC binary options trading contract has been made."
@@ -8108,6 +8155,66 @@ msgstr "{JAPAN ONLY}Win Loss Ratio"
 
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Capital"
+msgid "{JAPAN ONLY}day"
+msgstr "{JAPAN ONLY}Capital"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}days"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}hour"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}hours"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}minute"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}minutes"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}month"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}months"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}week"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}weeks"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Capital"
+msgid "{JAPAN ONLY}year"
+msgstr "{JAPAN ONLY}Capital"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}years"
+msgstr "{JAPAN ONLY}Units"
 
 msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 msgstr "可交易外匯、指數、商品及智慧指數的二元期權線上交易平台"
@@ -8159,6 +8266,12 @@ msgstr "帳戶詳細資料"
 
 msgid "Terms and Conditions Approval"
 msgstr "條款和條件審批"
+
+#~ msgid "{JAPAN ONLY}BUY price per unit"
+#~ msgstr "{JAPAN ONLY}BUY price per unit"
+
+#~ msgid "{JAPAN ONLY}SELL price  per unit"
+#~ msgstr "{JAPAN ONLY}SELL price  per unit"
 
 #~ msgid "{JAPAN ONLY}December 2015"
 #~ msgstr "{JAPAN ONLY}December 2015"
@@ -12489,9 +12602,6 @@ msgstr "條款和條件審批"
 
 #~ msgid "Your secret answer is too short.  Please enter at least 4 characters."
 #~ msgstr "您的密碼保護問題答案過短。請輸入至少 4 個字元。"
-
-#~ msgid "details"
-#~ msgstr "詳細資料"
 
 #~ msgid "maximum is"
 #~ msgstr "最大為"
