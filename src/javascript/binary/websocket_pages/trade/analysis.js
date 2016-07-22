@@ -11,11 +11,11 @@
  */
 
 var TradingAnalysis = (function() {
-    var trading_digit_info, tab_japan_info;
+    var trading_digit_info;
 
     var requestTradeAnalysis = function() {
         var contentId = document.getElementById('trading_bottom_content');
-        var formName = isJapanTrading() ? $('input[type="radio"][name="market_menu"]:checked').val() : $('#contract_form_name_nav').find('.a-active').attr('id');
+        var formName = JPTradePage.isJapan() ? $('#category-select').val() : $('#contract_form_name_nav').find('.a-active').attr('id');
         if (formName === 'matchdiff') {
           formName = 'digits';
         }
@@ -69,16 +69,11 @@ var TradingAnalysis = (function() {
         toggleActiveNavMenuElement(analysisNavElement, currentLink.parentElement);
         toggleActiveAnalysisTabs();
 
-        tab_japan_info = new JapanInfo();
         JapanPortfolio.init();
-
         if(currentTab === 'tab_portfolio'){
             JapanPortfolio.show();
-        } else if (currentTab === 'tab_japan_info') {
-            tab_japan_info.show();
         } else {
             JapanPortfolio.hide();
-            tab_japan_info.hide();
             if (currentTab === 'tab_graph') {
               showHighchart();
             } else {
@@ -142,7 +137,7 @@ var TradingAnalysis = (function() {
      * get the current active tab if its visible i.e allowed for current parameters
      */
     var getActiveTab = function() {
-        var selectedTab = sessionStorage.getItem('currentAnalysisTab') || (isJapanTrading() ? 'tab_portfolio' : window.chartAllowed ? 'tab_graph' : 'tab_explanation'),
+        var selectedTab = sessionStorage.getItem('currentAnalysisTab') || (JPTradePage.isJapan() ? 'tab_portfolio' : window.chartAllowed ? 'tab_graph' : 'tab_explanation'),
             selectedElement = document.getElementById(selectedTab);
 
         if (selectedElement && selectedElement.classList.contains('invisible') &&
@@ -229,9 +224,6 @@ var TradingAnalysis = (function() {
         // Should be removed with legacy trading.
         set_digit_info: function(obj) {
             trading_digit_info = obj;
-        },
-        japan_info: function() {
-            return tab_japan_info;
         },
         tab_portfolio: function() {
             return tab_portfolio;

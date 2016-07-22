@@ -121,9 +121,10 @@ pjax_config_page_require_auth("cashier/forwardws", function() {
                     if (error.code && error.code === 'ASK_TNC_APPROVAL') {
                       window.location.href = page.url.url_for('user/tnc_approvalws');
                     } else if (error.code && error.code === 'ASK_FIX_DETAILS') {
-                      var msgID = 'personal-details-message';
+                      var msgID = 'personal-details-message',
+                          errorFields;
                       if(error.details) {
-                        var errorFields = {
+                        errorFields = {
                           province: 'State/Province',
                           country:  'Country',
                           city:     'Town/City',
@@ -132,9 +133,9 @@ pjax_config_page_require_auth("cashier/forwardws", function() {
                           phone:    'Telephone',
                           email:    'Email address'
                         };
-                        var errMsg = $('#' + msgID).html().replace('[_1]', text.localize(errorFields[error.details]));
-                        $('#' + msgID).html(errMsg);
                       }
+                      var errMsg = $('#' + msgID).html().replace('[_1]', text.localize((error.details ? errorFields[error.details] : 'details')));
+                      $('#' + msgID).html(errMsg);
                       ForwardWS.showMessage(msgID);
                     } else if (error.code && error.code === 'ASK_UK_FUNDS_PROTECTION') {
                       $('#ukgc-funds-protection').show();
