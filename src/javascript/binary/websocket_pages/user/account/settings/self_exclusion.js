@@ -51,6 +51,16 @@ var SelfExclusionWS = (function() {
         BinarySocket.init({
             onmessage: function(msg){
                 var response = JSON.parse(msg.data);
+                if (response.error) {
+                    var errMsg = response.error.message;
+                    if (response.error.code === 'ClientSelfExclusion') {
+                        page.client.send_logout_request();
+                    } else if (response.error.field) {
+                        showError(response.error.field, text.localize(errMsg));
+                    } else {
+                        showFormMessage(errMsg, false);
+                    }
+                }
                 if (response.msg_type === "authorize") {
                     init();
                 }
@@ -71,66 +81,36 @@ var SelfExclusionWS = (function() {
     // ----- Get Values -----
     // ----------------------
     var getRequest = function() {
-        BinarySocket.send({"get_self_exclusion": "1"});
+        BinarySocket.send({get_self_exclusion: 1});
     };
 
     var getResponse = function(response) {
         $loading.addClass(hiddenClass);
         $form.removeClass(hiddenClass);
-
-        if('error' in response) {
-            if (response.error.code === 'ClientSelfExclusion') {
-                page.client.send_logout_request();
-            }
-            if('message' in response.error) {
-                showPageError(response.error.message, true);
-            }
-            return false;
-        } else {
-            $.each(response.get_self_exclusion, function(key, value) {
-                fields[key] = value + '';
-                $form.find('#' + key).val(value);
-            });
-        }
+        $.each(response.get_self_exclusion, function(key, value) {
+            fields[key] = value + '';
+            $form.find('#' + key).val(value);
+        });
     };
 
     var initDatePicker = function () {
-        // 6 months from now
-        var start_date = new Date();
-        start_date.setMonth(start_date.getMonth() + 6);
-        start_date.setDate(start_date.getDate() + 1);
+        attach_time_picker($('#' + timeID));
 
-        // 5 years from now
-        var end_date = new Date();
-        end_date.setFullYear(end_date.getFullYear() + 5);
-
-        // 6 weeks from now
-        var week_end_date = new Date();
-        week_end_date.setMonth(week_end_date.getMonth() + 2);
-        week_end_date.setDate(week_end_date.getDate() + 1);
-
-        var now_date = new Date();
-
-        var $timeID = $('#' + timeID);
-        attach_time_picker($timeID);
-
-        var $timeDateID = $('#' + timeDateID);
-        $timeDateID.datepicker({
+        $('#' + timeDateID).datepicker({
             dateFormat: 'yy-mm-dd',
-            minDate   : now_date,
-            maxDate   : week_end_date,
+            minDate   : moment().toDate(),
+            maxDate   : moment().add(moment.duration(6, 'weeks')).toDate(),
             onSelect  : function(dateText, inst) {
-                $timeDateID.attr('value', dateText);
+                $(this).val(dateText);
             }
         });
 
-        var $dateID = $('#' + dateID);
-        $dateID.datepicker({
+        $('#' + dateID).datepicker({
             dateFormat: 'yy-mm-dd',
-            minDate   : start_date,
-            maxDate   : end_date,
+            minDate   : moment().add(moment.duration(6, 'months')).toDate(),
+            maxDate   : moment().add(moment.duration(5, 'years')).toDate(),
             onSelect  : function(dateText, inst) {
-                $dateID.attr('value', dateText);
+                $(this).val(dateText);
             }
         });
     };
@@ -144,20 +124,9 @@ var SelfExclusionWS = (function() {
     };
 
     var setResponse = function(response) {
-        if('error' in response) {
-            var errMsg = response.error.message;
-            if('field' in response.error) {
-                showError(response.error.field, text.localize(errMsg));
-            }
-            else {
-                showFormMessage(text.localize(errMsg), false);
-            }
-        }
-        else {
-            showFormMessage(text.localize('Your changes have been updated.'), true);
-            page.client.set_storage_value('session_start', moment().unix()); // used to handle session duration limit
-            getRequest();
-        }
+        showFormMessage('Your changes have been updated.', true);
+        page.client.set_storage_value('session_start', moment().unix()); // used to handle session duration limit
+        getRequest();
     };
 
     // ----------------------------
@@ -218,7 +187,7 @@ var SelfExclusionWS = (function() {
 
     var validateExclusionDate = function(exclusion_date, opt) {
         var date = moment(exclusion_date, 'YYYY-MM-DD');
-        var errMsg = '';
+        var errMsg;
 
         if (exclusion_date) {
             if (date.isValid()){
@@ -258,12 +227,12 @@ var SelfExclusionWS = (function() {
             }
         }
 
-        if(errMsg.length > 0) {
+        if(errMsg) {
             showError((opt ? timeDateID : dateID), text.localize(errMsg));
             return false;
         } else {
-            var isConfirmed = confirm(text.localize('When you click "Ok" you will be excluded from trading on the site until the selected date.'));
-            if(!isConfirmed) {
+            var message = 'When you click "Ok" you will be excluded from trading on the site until the selected date.';
+            if (!window.confirm(text.localize(message))) {
                 isValid = false;
             }
             return true;
