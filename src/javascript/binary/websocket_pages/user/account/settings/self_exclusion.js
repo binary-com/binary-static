@@ -13,7 +13,7 @@ var SelfExclusionWS = (function() {
     var fields,
         isValid;
 
-    var init = function() {
+    var reallyInit = function() {
         $form       = $('#frmSelfExclusion');
         $loading    = $('#loading');
         timeDateID  = 'timeout_until_duration';
@@ -23,13 +23,12 @@ var SelfExclusionWS = (function() {
         errorClass  = 'errorfield';
         hiddenClass = 'hidden';
 
-        if (page.client.is_virtual() || TUser.get().is_virtual) {
-            console.log('is virtual client!');
+        if (page.client.is_virtual()) {
+            console.log('is virtual!');
             $('#selfExclusionDesc').addClass(hiddenClass);
             showPageError(Content.localize().textFeatureUnavailable, true);
             return;
         }
-
         showLoadingImage($loading);
 
         fields = {};
@@ -48,36 +47,23 @@ var SelfExclusionWS = (function() {
                 showFormMessage('You did not change anything.', false);
             }
         });
+        getRequest();
+    };
 
+    var init = function() {
+        Content.populate();
         BinarySocket.init({
             onmessage: function(msg){
                 var response = JSON.parse(msg.data);
-                if (response.msg_type === 'authorize') {
-                    init();
-                    return;
-                }
-                if (response.error) {
-                    var field  = response.error.field;
-                    var errMsg = response.error.message;
-                    if (response.error.code === 'ClientSelfExclusion') {
-                        page.client.send_logout_request();
-                    } else if (field) {
-                        showError(field, errMsg);
-                    } else {
-                        showFormMessage(errMsg, false);
-                    }
-                    return;
-                }
-                if (response.msg_type === 'get_self_exclusion') {
-                    getResponse(response);
-                } else if (response.msg_type === 'set_self_exclusion') {
-                    setResponse(response);
-                }
+                var msg_type = response.msg_type;
+                if      (msg_type === 'authorize') reallyInit();
+                else if (msg_type === 'get_self_exclusion') getResponse(response);
+                else if (msg_type === 'set_self_exclusion') setResponse(response);
             }
         });
-
-        Content.populate();
-        getRequest();
+        if ('is_virtual' in TUser.get()) {
+            reallyInit();
+        }
     };
 
     // ----------------------
@@ -88,6 +74,15 @@ var SelfExclusionWS = (function() {
     };
 
     var getResponse = function(response) {
+        if (response.error) {
+            if (response.error.code === 'ClientSelfExclusion') {
+                page.client.send_logout_request();
+            }
+            if (response.error.message) {
+                showPageError(response.error.message, true);
+            }
+            return false;
+        }
         $loading.addClass(hiddenClass);
         $form.removeClass(hiddenClass);
         $.each(response.get_self_exclusion, function(key, value) {
@@ -127,6 +122,16 @@ var SelfExclusionWS = (function() {
     };
 
     var setResponse = function(response) {
+        if (response.error) {
+            var errMsg = response.error.message;
+            var field  = response.error.field;
+            if (field) {
+                showError(field, errMsg);
+            } else {
+                showFormMessage(text.localize(errMsg), false);
+            }
+            return;
+        }
         showFormMessage('Your changes have been updated.', true);
         page.client.set_storage_value('session_start', moment().unix()); // used to handle session duration limit
         getRequest();
@@ -249,7 +254,7 @@ var SelfExclusionWS = (function() {
     // -----------------------------
     var showPageError = function(errMsg, hideForm) {
         $('#errorMsg').html(errMsg).removeClass(hiddenClass);
-        if(hideForm) {
+        if (hideForm) {
             $form.addClass(hiddenClass);
         }
     };
