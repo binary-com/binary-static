@@ -190,10 +190,9 @@ var SelfExclusionWS = (function() {
         var errMsg;
 
         if (exclusion_date) {
-            if (date.isValid()){
+            if (!date.isValid()) {
                 errMsg = 'Please select a valid date';
-            }
-            else {
+            } else {
                 if (opt) {
                     var value = $('#' + timeID).val().trim();
                     if (value.length > 0) {
