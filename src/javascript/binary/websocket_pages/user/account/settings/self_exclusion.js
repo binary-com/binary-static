@@ -196,14 +196,11 @@ var SelfExclusionWS = (function() {
             else {
                 if (opt) {
                     var value = $('#' + timeID).val().trim();
-                    if (validateExclusionTime(value)) {
-                        if (value.length > 0) {
-                            date.add(moment(value, 'HH:mm'));
-                        }
-                        time = date.unix();
-                    } else {
-                        return false;
+                    if (value.length > 0) {
+                        if (!validateExclusionTime(value)) return false;
+                        date.add(moment(value, 'HH:mm'));
                     }
+                    time = date.unix();
                 }
 
                 var six_month_date = moment().add(moment.duration(6, 'months'));
@@ -240,12 +237,10 @@ var SelfExclusionWS = (function() {
     };
 
     var validateExclusionTime = function(exclusion_time) {
-        if (exclusion_time) {
-            var time = moment(exclusion_time, 'HH:mm');
-            if (time.isValid()) {
-                showError(timeID, text.localize('Please select a valid time'));
-                return false;
-            }
+        var time = moment(exclusion_time, 'HH:mm');
+        if (time.isValid()) {
+            showError(timeID, text.localize('Please select a valid time'));
+            return false;
         }
         return true;
     };
