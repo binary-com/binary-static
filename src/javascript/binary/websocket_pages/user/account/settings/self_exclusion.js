@@ -1,6 +1,17 @@
 var SelfExclusionWS = (function() {
     "use strict";
 
+    /*
+    *  1. Check if current User is virtual.
+    *  2. If user is virtual, then hide form and description, and show error message.
+    *  3. Else wait until the `authorize` call responds, and check again.
+    *  4. Populate the fields global.
+    *  5. Get the exclusion settings, and populate the forms and fields global.
+    *  6. When user submits, validate the form. If ok => submit request.
+    *  7. After successful submission, go to step 5.
+    *  8. god bless you.
+    */
+
     var $form,
         $loading,
         dateID,
