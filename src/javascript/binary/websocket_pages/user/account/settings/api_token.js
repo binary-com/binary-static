@@ -1,10 +1,10 @@
 var APITokenWS = (function() {
     "use strict";
 
-    var errorClass,
-        hideClass,
-        tableContainer,
-        maxTokens;
+    var errorClass = 'errorfield';
+    var hideClass  = 'invisible';
+    var tableContainer = '#tokens_list';
+    var maxTokens = 30;
 
     function hide(s) { return function() { $(s).addClass(hideClass); }; }
     function show(s) { return function() { $(s).removeClass(hideClass); }; }
@@ -14,11 +14,6 @@ var APITokenWS = (function() {
     var hideTable = hide(tableContainer);
 
     var init = function() {
-        errorClass  = 'errorfield';
-        hideClass   = 'invisible';
-        tableContainer = '#tokens_list';
-        maxTokens = 30;
-
         showLoadingImage($(tableContainer));
 
         BinarySocket.send({api_token: 1});
@@ -173,7 +168,7 @@ var APITokenWS = (function() {
             .map(function() { return this.value; })
             .get();
         if (scopes.length === 0) {
-            showError('#scopes', text.localize('Please select at least one scope.'));
+            showError('#scopes', 'Please select at least one scope.');
             return null;
         }
 
@@ -223,8 +218,9 @@ var APITokenWS = (function() {
             .fadeOut(1000);
     }
 
-    function showError(fieldID, errMsg) {
-        $(fieldID).parent().append($('<p/>', {class: errorClass, text: errMsg}));
+    function showError(fieldID, err) {
+        $(fieldID).parent()
+            .append($('<p/>', {class: errorClass, text: text.localize(err)}));
     }
 
     function clearMessages() {
