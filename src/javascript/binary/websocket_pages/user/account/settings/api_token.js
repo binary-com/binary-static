@@ -205,32 +205,33 @@ var APITokenWS = (function() {
     // -----------------------------
     // ----- Message Functions -----
     // -----------------------------
-    var showMessage = function(msg, isSuccess) {
-        $('#token_message > p')
-            .attr('class', isSuccess ? 'success-msg' : 'errorfield')
-            .html(isSuccess ? '<ul class="checked"><li>' + text.localize(msg) + '</li></ul>' : text.localize(msg));
-        $('#token_message').removeClass(hideClass);
-    };
+    function showMessage(msg, isSuccess) {
+        msg = text.localize(msg);
+        $('#token_message').removeClass(hideClass)
+            .find('p')
+            .attr('class', isSuccess ? 'success-msg' : errorClass)
+            .html(isSuccess ? '<ul class="checked"><li>' + msg + '</li></ul>' : msg);
+    }
 
-    var showFormMessage = function(msg, isSuccess) {
-        var $elmID = $('#formMessage');
-        $elmID
-            .attr('class', isSuccess ? 'success-msg' : 'errorfield')
-            .html(isSuccess ? '<ul class="checked"><li>' + text.localize(msg) + '</li></ul>' : text.localize(msg))
+    function showFormMessage(msg, isSuccess) {
+        msg = text.localize(msg);
+        $('#formMessage')
+            .attr('class', isSuccess ? 'success-msg' : errorClass)
+            .html(isSuccess ? '<ul class="checked"><li>' + msg + '</li></ul>' : msg)
             .css('display', 'block')
             .delay(3000)
             .fadeOut(1000);
-    };
+    }
 
-    var showError = function(fieldID, errMsg) {
+    function showError(fieldID, errMsg) {
         $(fieldID).parent().append($('<p/>', {class: errorClass, text: errMsg}));
-    };
+    }
 
-    var clearMessages = function(fieldID) {
-        $(fieldID ? fieldID : '#frmNewToken .' + errorClass).remove();
+    function clearMessages() {
+        $('#frmNewToken .' + errorClass).remove();
         $('#token_message').addClass(hideClass);
         $('#formMessage').html('');
-    };
+    }
 
 
     return {
