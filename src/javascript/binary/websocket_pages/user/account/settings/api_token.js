@@ -3,11 +3,8 @@ var APITokenWS = (function() {
 
     var errorClass,
         hideClass,
-        isValid,
         tableContainer,
         maxTokens;
-
-    var flexTable;
 
     function hide(s) { return function() { $(s).addClass(hideClass); }; }
     function show(s) { return function() { $(s).removeClass(hideClass); }; }
@@ -24,12 +21,15 @@ var APITokenWS = (function() {
 
         showLoadingImage($(tableContainer));
 
-        BinarySocket.send({"api_token": "1"});
-
+        BinarySocket.send({api_token: 1});
         $('#btnCreate').click(function(e) {
             e.preventDefault();
             e.stopPropagation();
-            createToken();
+            var params = getFormParams();
+            if (!params) {
+                return;
+            }
+            createToken(params);
         });
     };
 
@@ -64,7 +64,6 @@ var APITokenWS = (function() {
                 });
         }
 
-        console.log(newToken);
         if (rebuild) {
             populateTokensList(tokens, newToken);
         }
@@ -91,8 +90,7 @@ var APITokenWS = (function() {
 
         var headers = ['Name', 'Token', 'Scopes', 'Last Used', 'Action'];
         var columns = ['name', 'token', 'scopes', 'last-used', 'action'];
-
-        flexTable = new FlexTableUI({
+        new FlexTableUI({
             id:        'tokens_table',
             container: tableContainer,
             header:    headers.map(function(s) { return text.localize(s); }),
@@ -146,80 +144,63 @@ var APITokenWS = (function() {
     // ---------------------------
     // ----- Form Validation -----
     // ---------------------------
-    var formValidate = function() {
+    function getFormParams() {
         clearMessages();
-        isValid = true;
-
         var nameID  = '#txtName';
-        var newName = $(nameID).val().trim();
+        var name = $(nameID).val().trim();
+
+        function err(a, b) {
+            return Content.errorMessage(a, b);
+        }
 
         var letters = Content.localize().textLetters,
             numbers = Content.localize().textNumbers,
             space   = Content.localize().textSpace;
 
-        // Token Name
-        if(!isRequiredError(nameID) && !isCountError(nameID, 2, 32)){
-            if(!(/^\w+$/).test(newName)) {
-                showError(nameID, Content.errorMessage('reg', [letters, numbers, '_']));
-            }
+        var error = (
+            (!name               && err('req')) ||
+            (!checkBounds(name)  && err('range', template('([_1]-[_2])', [2, 32]))) ||
+            (!/^\w+$/.test(name) && err('reg', [letters, numbers, '_'])) ||
+            null
+        );
+
+        if (error) {
+            showError(nameID, error);
+            return null;
         }
 
-        var scopes = $('input:checkbox[name="scopes[]"]:checked').map(function () {
-            return this.value;
-        }).get();
+        var scopes = $('input:checkbox[name="scopes[]"]:checked')
+            .map(function() { return this.value; })
+            .get();
         if (scopes.length === 0) {
             showError('#scopes', text.localize('Please select at least one scope.'));
+            return null;
         }
 
-        return isValid ? newName : false;
-    };
+        return {name: name, scopes: scopes};
+    }
 
-    var isRequiredError = function(fieldID) {
-        if(!$(fieldID).val() || !(/.+/).test($(fieldID).val().trim())){
-            showError(fieldID, Content.errorMessage('req'));
-            return true;
-        } else {
-            return false;
-        }
-    };
-
-    var isCountError = function(fieldID, min, max) {
-        var fieldValue = $(fieldID).val().trim();
-        if((fieldValue.length > 0 && fieldValue.length < min) || fieldValue.length > max) {
-            showError(fieldID, Content.errorMessage('range', '(' + min + '-' + max + ')'));
-            return true;
-        } else {
-            return false;
-        }
-    };
+    function checkBounds(string) {
+        return (string.length >= 2) && (string.length <= 32);
+    }
 
     // ---------------------------
     // ----- Actions Process -----
     // ---------------------------
-    var createToken = function() {
-        var is_valid = formValidate();
-        if(is_valid !== false) {
-            var newName = $('#txtName').val().trim();
-            var scopes = $('input:checkbox[name="scopes[]"]:checked').map(function () {
-                return this.value;
-            }).get();
+    function createToken(params) {
+        BinarySocket.send({
+            api_token: 1,
+            new_token: params.name,
+            new_token_scopes: params.scopes,
+        });
+    }
 
-            BinarySocket.send({
-                "api_token" : 1,
-                "new_token" : newName,
-                "new_token_scopes": scopes
-            });
-        }
-    };
-
-    var deleteToken = function(token) {
-        if(token) {
-            BinarySocket.send({
-                "api_token"    : 1,
-                "delete_token" : token
-            });
-        }
-    };
+    function deleteToken(token) {
+        BinarySocket.send({
+            api_token:    1,
+            delete_token: token,
+        });
+    }
 
     // -----------------------------
     // ----- Message Functions -----
@@ -243,7 +224,6 @@ var APITokenWS = (function() {
 
     var showError = function(fieldID, errMsg) {
         $(fieldID).parent().append($('<p/>', {class: errorClass, text: errMsg}));
-        isValid = false;
     };
 
     var clearMessages = function(fieldID) {
