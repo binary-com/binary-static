@@ -39,7 +39,7 @@ FlexTableUI.prototype = {
         var $tr = $('<tr/>', {class: 'flex-tr'});
         var $td = $('<td/>', {colspan: colspan});
         var $p  = $('<p/>', {class: 'notice-msg center-text', text: message});
-        return $('#' + this.id + ' tbody').append($tr.append($td.appnd($p)));
+        return $('#' + this.id + ' tbody').append($tr.append($td.append($p)));
     },
 
     replace: function(data) {
