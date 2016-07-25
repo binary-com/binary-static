@@ -1,0 +1,3 @@
+<div id="japan-app"></div>
+[% INCLUDE bet/analysis.html.tt %]
+<div id="open_positions_container">[% INCLUDE user/portfoliows.html.tt %]</div>
