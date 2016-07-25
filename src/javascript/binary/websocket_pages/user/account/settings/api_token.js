@@ -1,16 +1,22 @@
 var APITokenWS = (function() {
     "use strict";
 
-    var columns,
-        errorClass,
+    var errorClass,
         hideClass,
         isValid,
         tableContainer,
         maxTokens;
 
+    var flexTable;
+
+    function hide(s) { return function() { $(s).addClass(hideClass); }; }
+    function show(s) { return function() { $(s).removeClass(hideClass); }; }
+
+    var hideForm  = hide('#token_form');
+    var showForm  = show('#token_form');
+    var hideTable = hide(tableContainer);
 
     var init = function() {
-        columns = ['Name', 'Token', 'Scopes', 'Last Used', 'Action'];
         errorClass  = 'errorfield';
         hideClass   = 'invisible';
         tableContainer = '#tokens_list';
@@ -27,142 +33,115 @@ var APITokenWS = (function() {
         });
     };
 
-    var responseHandler = function(response) {
-        if('error' in response) {
+    function responseHandler(response) {
+        if ('error' in response) {
             showMessage(response.error.message, false);
             return false;
         }
 
         clearMessages();
 
-        var rebuildTable = true;
         var api_token = response.api_token;
+        var tokens    = api_token.tokens;
         var newToken  = '';
+        var rebuild   = true;
 
-        if('new_token' in api_token) {
-            if(api_token.new_token === 1) {
-                showFormMessage(text.localize('New token created.'), true);
-                $('#txtName').val('');
-                newToken = response.echo_req.new_token;
-            }
-        }
-        else if('delete_token' in api_token) {
-            rebuildTable = false;
-            var deletedToken = response.echo_req.delete_token;
-            if(api_token.delete_token !== 1) {
-                showError(deletedToken, text.localize('An error occured.'));
-            }
-            else {
-                $('#' + deletedToken).parents('tr').removeClass('new').addClass('deleting').fadeOut(700, function(){
+        if ('new_token' in api_token) {
+            showFormMessage(text.localize('New token created.'), true);
+            $('#txtName').val('');
+            newToken = response.echo_req.new_token;
+        } else if ('delete_token' in api_token) {
+            rebuild = false;
+            var deleted = response.echo_req.delete_token;
+            $('#' + deleted)
+                .removeClass('new')
+                .addClass('deleting')
+                .fadeOut(700, function() {
                     $(this).remove();
-                    // Hide the table if there is no Token remained
-                    if(api_token.tokens.length === 0) {
-                        $(tableContainer).addClass(hideClass);
+                    if (tokens.length === 0) {
+                        hideTable();
                     }
                 });
-            }
         }
 
-        if(rebuildTable) {
-            populateTokensList(api_token, newToken);
-            showLocalTimeOnHover('td.last-used');
+        console.log(newToken);
+        if (rebuild) {
+            populateTokensList(tokens, newToken);
         }
 
         // Hide form if tokens count reached the maximum limit
-        if(api_token.tokens.length >= maxTokens) {
-            $('#token_form').addClass(hideClass);
+        if (api_token.tokens.length >= maxTokens) {
+            hideForm();
             showMessage(text.localize('The maximum number of tokens ([_1]) has been reached.').replace('[_1]', maxTokens), false);
+        } else {
+            showForm();
         }
-        else {
-            $('#token_form').removeClass(hideClass);
-        }
-    };
+    }
 
     // -----------------------
     // ----- Tokens List -----
     // -----------------------
-    var populateTokensList = function(api_token, newTokenName) {
+    function populateTokensList(tokens, newToken) {
         var $tableContainer = $(tableContainer);
-        if(api_token.tokens.length === 0) {
-            $tableContainer.addClass(hideClass);
+        if (tokens.length === 0) {
+            hideTable();
             return;
         }
+        $tableContainer.empty();
 
-        $tableContainer.removeClass(hideClass);
-        showLoadingImage($(tableContainer));
+        var headers = ['Name', 'Token', 'Scopes', 'Last Used', 'Action'];
+        var columns = ['name', 'token', 'scopes', 'last-used', 'action'];
 
-        var tokens = api_token.tokens;
-        var $tokensTable = createEmptyTable('tokens_table');
-
-        for(var i = 0; i < tokens.length; i++) {
-            var $tableRow = createTableRow(tokens[i]);
-            if(newTokenName && tokens[i].display_name === newTokenName) {
-                $tableRow.addClass('new');
+        flexTable = new FlexTableUI({
+            id:        'tokens_table',
+            container: tableContainer,
+            header:    headers.map(function(s) { return text.localize(s); }),
+            cols:      columns,
+            data:      tokens,
+            formatter: formatToken,
+            style: function($row, datum) {
+                if (datum.display_name === newToken) {
+                    $row.addClass('new');
+                }
+                $row.attr('id', datum.token);
+                createDeleteButton($row, datum);
             }
-            $tokensTable.find('tbody').append($tableRow);
-        }
+        });
+        showLocalTimeOnHover('td.last-used');
+    }
 
-        $tableContainer.empty().append($tokensTable);
-
-        $('.btnDelete').click(function(e) {
+    function createDeleteButton($row, datum) {
+        var message = text.localize('Are you sure that you want to permanently delete token');
+        var $button = $('<button/>', {class: 'button btnDelete', text: text.localize('Delete')});
+        $button.click(function(e) {
             e.preventDefault();
             e.stopPropagation();
-            if(window.confirm(
-                text.localize('Are you sure that you want to permanently delete token') +
-                ': "' + $(this).parents('tr').find('td.name').text() + '"?')) {
-                    deleteToken($(this).attr('id'));
+            if (!window.confirm(message + ': "' + datum.display_name + '"?')) {
+                return;
             }
+            deleteToken(datum.token);
         });
-    };
-
-    String.prototype.capitalizeFirstLetter = function() {
-        return this.charAt(0).toUpperCase() + this.slice(1);
-    };
-
-    var createTableRow = function(token) {
-        var lastUsed = (token.last_used ? token.last_used + ' GMT': text.localize('Never Used'));
-        var scopes = token.scopes.map(function (v) {
-            return v.capitalizeFirstLetter();
-        });
-        // sort with Read, Trade, Payments, Admin
-        var scopes_i = {'Read': 0, 'Trade': 1, 'Payments': 2, 'Admin': 3};
-        scopes.sort(function(a, b) {
-            return scopes_i[a] > scopes_i[b];
-        });
-        var $tableRow = Table.createFlexTableRow(
-            [
-                token.display_name,
-                token.token,
-                scopes.join(', '),
-                lastUsed,
-                ''  // btnDelete
-            ],
-            columns,
-            "data"
-        );
-
-        $tableRow.children('.action').html(
+        $row.children('.action').html(
             $('<span/>', {class: 'button'})
-                .append($('<button/>', {class: 'button btnDelete', text: text.localize('Delete'), id: token.token})
-            )
+                .append($button)
         );
+    }
 
-        return $tableRow;
-    };
+    function capitalise(v) {
+        return v.charAt(0).toUpperCase() + v.slice(1);
+    }
 
-    var createEmptyTable = function(tableID) {
-        var header = [];
-        columns.map(function(col) {
-            header.push(text.localize(col));
-        });
-
-        var metadata = {
-            id: tableID,
-            cols: columns
-        };
-
-        return Table.createFlexTable([], metadata, header);
-    };
+    function formatToken(token) {
+        var lastUsed = (token.last_used ? token.last_used + ' GMT': text.localize('Never Used'));
+        var scopes = token.scopes.map(capitalise);
+        return [
+            token.display_name,
+            token.token,
+            scopes.join(', '),
+            lastUsed,
+            ''  // btnDelete
+        ];
+    }
 
     // ---------------------------
     // ----- Form Validation -----
@@ -292,13 +271,8 @@ pjax_config_page_require_auth("api_tokenws", function() {
             BinarySocket.init({
                 onmessage: function(msg) {
                     var response = JSON.parse(msg.data);
-                    if (response) {
-                        if (response.msg_type === "api_token") {
-                            APITokenWS.responseHandler(response);
-                        }
-                    }
-                    else {
-                        console.log('some error occured');
+                    if (response.msg_type === "api_token") {
+                        APITokenWS.responseHandler(response);
                     }
                 }
             });
