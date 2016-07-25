@@ -73,6 +73,7 @@ sub all_pages {
         ['resources/market_timesws', 'resources/market_timesws',  'default', 'Trading Times'],
 
         ['user/settings/api_tokenws',       'user/settings/api_tokenws',                      'default', 'API Token'],
+        ['user/settings/metatrader',        'user/settings/metatrader',                       'default', 'MetaTrader'],
         ['user/change_passwordws',          'user/settings/change_passwordws',                'default', 'Change Password'],
         ['user/portfoliows',                'user/portfoliows',                               'default', 'Portfolio'],
         ['user/profit_tablews',             'user/profit_tablews',                            'default', 'Profit Table'],
