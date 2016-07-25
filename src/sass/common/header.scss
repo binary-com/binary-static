@@ -54,32 +54,9 @@
         }
     }
     #client-logged-out {
+        @include BIDIR_VALUE(text-align, right, left);
         #btn_login {
             margin-bottom: 0;
-        }
-    }
-    #client-logged-out, #loginid-switch-form {
-        @include BIDIR_VALUE(text-align, right, left);
-    }
-    #logout {
-        text-align: right;
-        color: $COLOR_WHITE;
-        font-size: 70%;
-        display: inline-block;
-        a, a:visited {
-            &:hover, &:active {
-                text-decoration: underline;
-            }
-            &.logout {
-                @include link-button;
-                background-position: 104.6% 0.3%;
-                background-repeat: no-repeat;
-                padding: 6px;
-                font-weight: normal;
-                @include BIDIR_PROP(margin-left, margin-right, 0.4em);
-                margin-top: 0.5em;
-                text-transform: uppercase;
-            }
         }
     }
     #mobile-menu-icon {
@@ -126,5 +103,69 @@
                 color: $COLOR_ORANGE;
             }
         }
+    }
+    .nav-menu {
+        font-size: $FONT_SIZE_N;
+        & > li {
+            position: relative;
+            & > ul {
+                width: 100%;
+                background-color: $COLOR_LIGHT_GRAY;
+            }
+        }
+    }
+    .main-nav {
+        width: 165px;
+        border: 1px solid $COLOR_BLUE;
+        position: absolute;
+        right: 0;
+        transition: none !important;
+        & > li {
+            margin-top: 3px;
+            height: 70px;
+            a {
+                font-weight: normal;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+            & > ul {
+                margin: -18px -1px;
+                border: 1px solid $COLOR_GRAY;
+                a {
+                    color: initial;
+                    li {
+                        margin-top: 0;
+                        padding: 7px 0;
+                        &:hover {
+                            background-color: $COLOR_GRAY;
+                        }
+                    }
+                }
+            }
+        }
+        .nav-caret {
+            position: relative;
+            top: -45px;
+            right: -68px;
+        }
+    }
+    #all-accounts {
+        background-color: $COLOR_LIGHT_GRAY;
+        border: 1px solid $COLOR_GRAY;
+        z-index: 99999;
+        opacity: 0;
+        visibility: hidden;
+        & > li a {
+            color: $COLOR_BLACK;
+        }
+    }
+    #main-logout {
+        position: relative;
+        height: 75px;
+        display: flex;
+    }
+    .topMenuBalance {
+        visibility: hidden;
     }
 }

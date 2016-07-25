@@ -1,4 +1,4 @@
-pjax_config_page_require_auth("user/settings/authorised_appsws", function(){
+pjax_config_page_require_auth("user/security/authorised_appsws", function(){
     return {
         onLoad: function() {
             if (japanese_client()) {

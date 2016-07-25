@@ -84,7 +84,7 @@ var PasswordWS = (function(){
     };
 })();
 
-pjax_config_page_require_auth('user/change_password', function() {
+pjax_config_page_require_auth('user/security/change_password', function() {
     return {
         onLoad: function() {
             Content.populate();

@@ -84,6 +84,10 @@ span.button.button-disabled button.button-disabled {
     }
 }
 
+a.button:hover {
+    text-decoration: none;
+}
+
 form {
     margin: 0;
     padding: 0;
@@ -180,10 +184,6 @@ fieldset .error-msg {
 /* global styles */
 * {
     margin: 0;
-}
-
-.hidden {
-    display: none;
 }
 
 .required_asterisk {
@@ -337,4 +337,8 @@ button.blue-button {
 
 p.no-para-margin {
     margin: 0;
+}
+
+.separator-line-thin-gray {
+    border-top: 1px solid $COLOR_GRAY;
 }

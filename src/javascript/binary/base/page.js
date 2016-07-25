@@ -520,14 +520,20 @@ Menu.prototype = {
         var trading = japanese_client() ? $('#main-navigation-jptrading') : $('#main-navigation-trading');
         if(active) {
             active.addClass('active');
-            if(trading.is(active)) {
+            if(page.client.is_logged_in) {
+                this.show_main_menu();
+            } else if (trading.is(active)) {
                 this.show_main_menu();
             }
         } else {
-            var is_mojo_page = /^\/$|\/login|\/home|\/ad|\/open-source-projects|\/partners|\/payment-agent|\/about-us|\/group-information|\/group-history|\/careers|\/contact|\/terms-and-conditions|\/terms-and-conditions-jp|\/responsible-trading|\/us_patents|\/lost_password|\/realws|\/virtualws|\/open-positions|\/job-details|\/user-testing|\/japanws|\/maltainvestws|\/reset_passwordws|\/supported-browsers$/.test(window.location.pathname);
-            if(!is_mojo_page) {
-                trading.addClass('active');
-                this.show_main_menu();
+            var is_trading_submenu = /\/cashier|\/resources/.test(window.location.pathname);
+            if(!/\/home/.test(window.location.pathname)) {
+                if (!page.client.is_logged_in && is_trading_submenu) {
+                    trading.addClass('active');
+                    this.show_main_menu();
+                } else if (page.client.is_logged_in) {
+                    this.show_main_menu();
+                }
             }
         }
     },
@@ -585,8 +591,8 @@ Menu.prototype = {
     },
     active_main_menu: function() {
         var page_url = this.page_url;
-        if(/detailsws|securityws|self_exclusionws|limitsws|api_tokenws|authorised_appsws|iphistoryws|assessmentws/i.test(page_url.location.href)) {
-            page_url = new URL($('#main-menu a[href*="user/settingsws"]').attr('href'));
+        if(/cashier/i.test(page_url.location.href)) {
+            page_url = new URL($('#topMenuCashier a').attr('href'));
         }
 
         var item;
@@ -625,6 +631,11 @@ Menu.prototype = {
             stored_market = markets_array[0];
             LocalStore.set('bet_page.market', stored_market);
         }
+    },
+    check_payment_agent: function(is_authenticated_payment_agent) {
+        if(is_authenticated_payment_agent) {
+            $('#topMenuPaymentAgent').removeClass('invisible');
+        }
     }
 };
 
@@ -650,15 +661,40 @@ Header.prototype = {
     on_unload: function() {
         this.menu.reset();
     },
+    animate_disappear: function(element) {
+        element.animate({'opacity':0}, 100, function() {
+            element.css('visibility', 'hidden');
+        });
+    },
+    animate_appear: function(element) {
+        element.css('visibility', 'visible')
+               .animate({'opacity': 1}, 100);
+    },
     show_or_hide_login_form: function() {
         if (!this.user.is_logged_in || !this.client.is_logged_in) return;
-        var $login_options = $('#client_loginid');
+        var all_accounts = $('#all-accounts');
+        var that = this;
+        $('.nav-menu').unbind('click').on('click', function(event){
+            event.stopPropagation();
+            if (all_accounts.css('opacity') == 1 ) {
+                that.animate_disappear(all_accounts);
+            } else {
+                that.animate_appear(all_accounts);
+            }
+        });
+        $(document).unbind('click'). on('click', function(){
+            that.animate_disappear(all_accounts);
+        });
+        var loginid_select = '';
         var loginid_array = this.user.loginid_array;
-        $login_options.html('');
-
+        var default_loginid = false;
         for (var i=0; i < loginid_array.length; i++) {
             var login = loginid_array[i];
             if (login.disabled) continue;
+
+            if (curr_loginid == this.client.loginid) {
+                default_loginid = true;
+            }
 
             var curr_id = login.id;
             var type = 'Virtual';
@@ -668,24 +704,28 @@ Header.prototype = {
                 else                          type = 'Real';
             }
 
-            $login_options.append($('<option/>', {
-                value: curr_id,
-                selected: curr_id == this.client.loginid,
-                text: template('[_1] Account ([_2])', [type, curr_id]),
-            }));
+            if (default_loginid) {
+                default_loginid = false;
+                $('.account-type').html(type);
+                $('.account-id').html(curr_loginid);
+            } else {
+                loginid_select += '<a href="#" value="' + curr_loginid + '"><li>' + loginid_text + '<div>' + curr_loginid + '</div>' +
+                                  '</li></a>' + '<div class="separator-line-thin-gray"></div>';
+            }
         }
+        $(".login-id-list").html(loginid_select);
     },
     register_dynamic_links: function() {
         var logged_in_url = this.client.is_logged_in ?
-            page.url.url_for('user/my_accountws') :
+            page.url.url_for('trading') :
             page.url.url_for('');
 
-        $('#logo').attr('href', logged_in_url).on('click', function(event) {
-            event.preventDefault();
-            load_with_pjax(logged_in_url);
-        }).addClass('unbind_later');
+       $('#logo').attr('href', logged_in_url).on('click', function(event) {
+           event.preventDefault();
+           load_with_pjax(logged_in_url);
+       }).addClass('unbind_later');
 
-        this.menu.register_dynamic_links();
+       this.menu.register_dynamic_links();
     },
     start_clock_ws: function() {
         function getTime() {
@@ -811,6 +851,7 @@ var Contents = function(client, user) {
 Contents.prototype = {
     on_load: function() {
         this.activate_by_client_type();
+        this.activate_by_login();
         this.update_content_class();
         this.init_draggable();
     },
@@ -825,6 +866,7 @@ Contents.prototype = {
             if(page.client.get_storage_value('is_virtual').length === 0) {
                 return;
             }
+            $('#client-logged-in').addClass('gr-centered');
             if(!page.client.is_virtual()) {
                 // control-class is a fake class, only used to counteract ja-hide class
                 $('.by_client_type.client_real').not((japanese_client() ? ".ja-hide" : ".control-class")).removeClass('invisible');
@@ -838,9 +880,8 @@ Contents.prototype = {
                     $('#payment-agent-section').hide();
                 }
 
-                if (!/^MF|MLT/.test(this.client.loginid)) {
-                    $('#account-transfer-section').addClass('invisible');
-                    $('#account-transfer-section').hide();
+                if (/^MF|MLT/.test(this.client.loginid)) {
+                    $('#account-transfer-section').removeClass('invisible');
                 }
             } else {
                 $('.by_client_type.client_virtual').removeClass('invisible');
@@ -848,9 +889,6 @@ Contents.prototype = {
 
                 $('#topbar').addClass('secondary-bg-color');
                 $('#topbar').removeClass('primary-color-dark');
-
-                $('#account-transfer-section').addClass('invisible');
-                $('#account-transfer-section').hide();
             }
         } else {
             $('#btn_login').unbind('click').click(function(e){e.preventDefault(); Login.redirect_to_login();});
@@ -860,9 +898,11 @@ Contents.prototype = {
 
             $('#topbar').removeClass('secondary-bg-color');
             $('#topbar').addClass('primary-color-dark');
-
-            $('#account-transfer-section').addClass('invisible');
-            $('#account-transfer-section').hide();
+        }
+    },
+    activate_by_login: function() {
+        if(!this.client.is_logged_in) {
+            $('.client_logged_in').removeClass('invisible');
         }
     },
     update_content_class: function() {
@@ -1016,9 +1056,10 @@ Page.prototype = {
     },
     on_change_loginid: function() {
         var that = this;
-        $('#client_loginid').on('change', function() {
+        $('.login-id-list a').on('click', function(e) {
+            e.preventDefault();
             $(this).attr('disabled','disabled');
-            that.switch_loginid($(this).val());
+            that.switch_loginid($(this).attr('value'));
         });
     },
     switch_loginid: function(loginid) {
@@ -1041,7 +1082,7 @@ Page.prototype = {
         // set local storage
         GTM.set_login_flag();
         localStorage.setItem('active_loginid', loginid);
-        $('#client_loginid').removeAttr('disabled');
+        $('.login-id-list a').removeAttr('disabled');
         page.reload();
     },
     on_click_acc_transfer: function() {

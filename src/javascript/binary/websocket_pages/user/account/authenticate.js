@@ -2,7 +2,7 @@ pjax_config_page_require_auth("user/authenticatews", function(){
     return {
         onLoad: function() {
             if (japanese_client()) {
-                window.location.href = page.url.url_for('user/my_accountws');
+                window.location.href = page.url.url_for('trading');
             }
             Content.populate();
             function show_error(error) {

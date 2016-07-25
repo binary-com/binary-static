@@ -151,6 +151,8 @@ function BinarySocketClass() {
                             send({get_settings: 1});
                             if(!page.client.is_virtual()) {
                                 send({get_self_exclusion: 1});
+                            } else {
+                                Cashier.check_virtual_top_up();
                             }
                         }
                         sendBufferedSends();
@@ -212,6 +214,7 @@ function BinarySocketClass() {
                     } else {
                         localStorage.removeItem('jp_test_allowed');
                     }
+                    page.header.menu.check_payment_agent(response.get_settings.is_authenticated_payment_agent);
                 } else if (type === 'website_status') {
                     if(!response.hasOwnProperty('error')) {
                         LocalStore.set('website.tnc_version', response.website_status.terms_conditions_version);
@@ -249,6 +252,7 @@ function BinarySocketClass() {
                   }
                   sessionStorage.setItem('withdrawal_locked', withdrawal_locked || 'unlocked');
                   localStorage.setItem('risk_classification.response', response.get_account_status.risk_classification);
+                  Cashier.check_authenticate(response.get_account_status.status);
                 } else if (type === 'get_financial_assessment' && !response.hasOwnProperty('error')) {
                   if (objectNotEmpty(response.get_financial_assessment)) {
                     if (page.header.qualify_for_risk_classification() && localStorage.getItem('risk_classification.response') === 'high') {
