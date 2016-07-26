@@ -58,14 +58,14 @@ var securityws = (function(){
 
         var pwd1 = $("#cashierlockpassword1").val(),
             pwd2 = $("#cashierlockpassword2").val(),
-            errorPassword  = $('#errorcashierlockpassword1'),
-            errorRPassword = $('#errorcashierlockpassword2'),
+            errorPassword  = $('#errorcashierlockpassword1')[0],
+            errorRPassword = $('#errorcashierlockpassword2')[0],
             isVisible = $("#repasswordrow").is(':visible');
 
         if (isVisible) {
           isValid = !!Validate.errorMessagePassword(pwd1, pwd2, errorPassword, errorRPassword);
         } else if (!/[ -~]{6,25}/.test(pwd1)) {
-          errorPassword.text(Content.errorMessage('min', 6));
+          errorPassword.textContent = Content.errorMessage('min', 6);
           isValid = false;
         }
         return isValid;
@@ -98,67 +98,57 @@ var securityws = (function(){
     }
 
     var responseMessage = function(response){
+        var echo = response.echo_req;
+        var passthrough = echo.passthrough;
 
-       var resvalue;
-
-       if(response.echo_req.passthrough && (response.echo_req.passthrough.value === "lock_status") ){
-            var passthrough = response.echo_req.passthrough.value;
-            resvalue = response.cashier_password;
-            if(parseInt(resvalue) === 1){
+        if (passthrough && passthrough.value === "lock_status") {
+            if (+response.cashier_password === 1) {
                 $("#repasswordrow").hide();
                 $("legend").text(text.localize("Unlock Cashier"));
                 $("#lockInfo").text(text.localize("Your cashier is locked as per your request - to unlock it, please enter the password."));
                 $form.find("button").attr("value","Unlock Cashier");
                 $form.find("button").html(text.localize("Unlock Cashier"));
                 $('#changeCashierLock').show();
+                return;
             }
-            else if(parseInt(resvalue) === 0){
-                $("#repasswordrow").show();
-                $("legend").text(text.localize("Lock Cashier"));
-                $("#lockInfo").text(text.localize("An additional password can be used to restrict access to the cashier."));
-                $form.find("button").attr("value","Update");
-                $form.find("button").html(text.localize("Update"));
-                $('#password-meter-div').attr('style', 'display:block');
-                if (isIE() === false) {
-                  $('#cashierlockpassword1').on('input', function() {
-                    $('#password-meter').attr('value', testPassword($('#cashierlockpassword1').val())[0]);
-                  });
-                } else {
-                  $('#password-meter').remove();
-                }
-                $('#changeCashierLock').show();
+            $("#repasswordrow").show();
+            $("legend").text(text.localize("Lock Cashier"));
+            $("#lockInfo").text(text.localize("An additional password can be used to restrict access to the cashier."));
+            $form.find("button").attr("value","Update");
+            $form.find("button").html(text.localize("Update"));
+            $('#password-meter-div').attr('style', 'display:block');
+            if (!isIE()) {
+              $('#cashierlockpassword1').on('input', function() {
+                $('#password-meter').attr('value', testPassword($('#cashierlockpassword1').val())[0]);
+              });
+            } else {
+              $('#password-meter').remove();
             }
+            $('#changeCashierLock').show();
+            return;
         }
-        else{
-            if("error" in response) {
-                if("message" in response.error) {
-                    $("#invalidinputfound").text(text.localize(response.error.message));
-                }
-                return false;
-            }
-            else{
-                resvalue = response.echo_req.cashier_password;
-                if(parseInt(resvalue) === 1){
-                    $("#changeCashierLock").hide();
-                    $("#invalidinputfound").text('');
-                    $("#SecuritySuccessMsg").text(text.localize('Your settings have been updated successfully.'));
-                }
-                else{
-                    $("#invalidinputfound").text(text.localize('Sorry, an error occurred while processing your account.'));
-                    return false;
-                }
-            }
+        if (response.error) {
+            $("#invalidinputfound").text(text.localize(response.error.message));
+            return;
         }
-        return;
+        if (+echo.cashier_password === 1) {
+            $("#changeCashierLock").hide();
+            $("#invalidinputfound").text('');
+            $("#SecuritySuccessMsg").text(text.localize('Your settings have been updated successfully.'));
+        } else {
+            $("#invalidinputfound").text(text.localize('Sorry, an error occurred while processing your account.'));
+        }
     };
+
     var SecurityApiResponse = function(response){
         if (checkIsVirtual()) {
             return;
         }
         var type = response.msg_type;
-        if (type === "cashier_password" || "cashier_password" in response.echo_req) {
-           responseMessage(response);
-        } else if (type === "authorize" || "authorize" in response.echo_req) {
+        var echo = response.echo_req;
+        if (type === "cashier_password" || "cashier_password" in echo) {
+            responseMessage(response);
+        } else if (type === "authorize" || "authorize" in echo) {
             isAuthorized(response);
         }
     };
