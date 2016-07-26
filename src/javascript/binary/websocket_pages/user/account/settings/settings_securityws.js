@@ -29,6 +29,13 @@ var SecurityWS = (function() {
         return false;
     }
 
+    function makeAuthRequest() {
+        var loginToken = CommonData.getApiToken();
+        BinarySocket.send({
+            authorize: loginToken,
+        });
+    }
+
     function init() {
         Content.populate();
         $form = $("#changeCashierLock");
@@ -38,11 +45,8 @@ var SecurityWS = (function() {
         }
 
         current_state = STATE.WAIT_AUTH;
-        var loginToken = CommonData.getApiToken();
         BinarySocket.init({onmessage: handler});
-        BinarySocket.send({
-            authorize: loginToken,
-        });
+        makeAuthRequest();
     }
 
     function authorised() {
@@ -94,10 +98,8 @@ var SecurityWS = (function() {
                 return false;
             }
             current_state = locked ? STATE.TRY_UNLOCK : STATE.TRY_LOCK;
-            var loginToken = CommonData.getApiToken();
-            BinarySocket.send({authorize: loginToken});
+            makeAuthRequest();
         });
-        console.log(current_state);
     }
 
     function validateForm() {
@@ -122,7 +124,6 @@ var SecurityWS = (function() {
     }
 
     function makeTryingRequest() {
-        console.log(current_state);
         var pwd = $('#cashierlockpassword1').val();
         var params = current_state === STATE.TRY_UNLOCK ?
             { unlock_password: pwd } :
@@ -160,8 +161,6 @@ var SecurityWS = (function() {
             }
             return;
         } else if (res.msg_type === 'cashier_password') {
-            console.log(current_state);
-            console.log(res);
             switch (current_state) {
                 case STATE.QUERY_LOCKED:
                     lockedStatus(res);
@@ -177,7 +176,7 @@ var SecurityWS = (function() {
     }
 
     return {
-        init : init,
+        init: init,
     };
 })();
 
