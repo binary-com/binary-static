@@ -822,7 +822,7 @@ Header.prototype = {
             var curr = localStorage.getItem('client.currencies');
             var timeStr = window.time.format("YYYY-MM-DD HH:mm") + ' GMT';
             if(curr === 'JPY'){
-                clock.html(toJapanTimeIfNeeded(timeStr, 1));
+                clock.html(toJapanTimeIfNeeded(timeStr, 1, '', 1));
             } else {
                 clock.html(timeStr);
                 showLocalTimeOnHover('#gmt-clock');
