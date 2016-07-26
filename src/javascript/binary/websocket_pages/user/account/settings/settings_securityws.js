@@ -7,7 +7,7 @@ var securityws = (function(){
         GET_STATUS: 'lock_status',
         TRY_LOCK:   'lock_password',
         TRY_UNLOCK: 'unlock_password',
-        LOCKED:     'is_locked',
+        PENDING:    'is_locked',
     };
 
     function clearErrors() {
@@ -46,7 +46,7 @@ var securityws = (function(){
         });
         BinarySocket.send({
             "authorize": loginToken,
-            "passthrough": {"value": "is_locked"}
+            "passthrough": {"value": states.PENDING}
         });
     }
 
@@ -78,7 +78,7 @@ var securityws = (function(){
         return isValid;
     }
 
-    function isAuthorized(response) {
+    function afterAuthorized(response) {
         var passthrough = response.echo_req.passthrough;
         if (!passthrough) return;
 
@@ -92,7 +92,7 @@ var securityws = (function(){
             case states.TRY_UNLOCK:
                 params = {"unlock_password": pwd};
                 break;
-            case states.LOCKED:
+            case states.PENDING:
                 params = {"passthrough" : {"value" : states.GET_STATUS}};
                 break;
             default:
@@ -156,7 +156,7 @@ var securityws = (function(){
         if (type === "cashier_password" || "cashier_password" in echo) {
             responseMessage(response);
         } else if (type === "authorize" || "authorize" in echo) {
-            isAuthorized(response);
+            afterAuthorized(response);
         }
     };
 
