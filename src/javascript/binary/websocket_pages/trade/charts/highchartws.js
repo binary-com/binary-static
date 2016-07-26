@@ -1,5 +1,5 @@
 var Highchart = (function() {
-  var chart, options, chart_forget, responseID, contract, contract_ended, contracts_for_send, history_send, entry_tick_barrier_drawn, initialized, chart_delayed, chart_subscribed, request, min_point, max_point, start_time, purchase_time, now_time, end_time, entry_tick_time, is_sold, sell_time, sell_spot_time, is_expired, exit_tick_time, exit_time;
+  var chart, options, chart_forget, responseID, contract, contract_ended, contracts_for_send, history_send, entry_tick_barrier_drawn, initialized, chart_delayed, chart_subscribed, request, min_point, max_point, start_time, purchase_time, now_time, end_time, entry_tick_time, is_sold, sell_time, sell_spot_time, is_expired, exit_tick_time, exit_time, granularity;
   function init_once() {
       chart = '';
       initialized = false;
@@ -67,9 +67,6 @@ var Highchart = (function() {
         credits:{
           enabled: false
         },
-        tooltip: {
-          xDateFormat:'%A, %b %e, %H:%M:%S GMT'
-        },
         xAxis: {
           type: 'datetime',
           categories:null,
@@ -104,6 +101,46 @@ var Highchart = (function() {
           }],
           zoneAxis: 'x'
         }],
+        tooltip: {
+          formatter: function() {
+              var s = ' ', point;
+              if (options.candles) {
+                  var close_time;
+                  point = this.point.x;
+                  $.each(this.point, function(i, series) {
+                      if (series && series.data) {
+                          for (i = 0; i < series.data.length; i++) {
+                            if (point == series.data[i].x) {
+                                close_time = series.data[i].x + (granularity*1000) - 1;
+                                s += (new Date(series.data[i].x)).toUTCString() +
+                                     '<br/><span style="font-weight:bold;"><li>' + title +
+                                     '</span><br/>Open: ' + series.data[i].open + ' (' + moment.utc(series.data[i].x).format('HH:mm:ss') + ')' +
+                                     '<br/>High: ' + series.data[i].high +
+                                     '<br/>Low: ' + series.data[i].low +
+                                     '<br/>Close: ' + series.data[i].close + ' (' + moment.utc(close_time).format('HH:mm:ss') + ')';
+                                break;
+                            }
+                          }
+                      }
+                  });
+                  return s;
+              } else if (options.history) {
+                  point = this.point.x;
+                  $.each(this.point, function(i, series) {
+                      if (series && series.data) {
+                          for (i = 0; i < data.length; i++) {
+                            if (point == series.data[i].x) {
+                                s += (new Date(series.data[i].x)).toUTCString() +
+                                     '<br/><span style="font-weight:bold;">' + title + ': ' + series.data[i].y + '</span>';
+                                break;
+                            }
+                          }
+                      }
+                  });
+                  return s;
+              }
+          }
+        },
         exporting: {enabled: false, enableImages: false},
         legend: {enabled: false},
         navigator: { enabled: true },
@@ -205,6 +242,7 @@ var Highchart = (function() {
     entry_spot      = contract.entry_spot;
     exit_time       = is_sold && sell_time < end_time ? sell_spot_time : exit_tick_time || end_time;
     underlying      = contract.underlying;
+    granularity     = 0;
   }
 
   // use this instead of BinarySocket.send to avoid overriding the on-message function of trading page
@@ -352,8 +390,8 @@ var Highchart = (function() {
 
   function request_data(update) {
     var calculateGranularity = calculate_granularity(exit_time, now_time, purchase_time, start_time);
-    var granularity = calculateGranularity[0],
-        duration    = calculateGranularity[1],
+    granularity = calculateGranularity[0];
+    var duration    = calculateGranularity[1],
         margin      = 0; // time margin
     margin = granularity === 0 ? Math.max(300, 30*duration/(60*60) || 0) : 3*granularity;
 
@@ -586,7 +624,7 @@ var Highchart = (function() {
 
   function calculate_granularity(end_time, now_time, purchase_time, start_time) {
     var duration = Math.min(end_time*1, now_time) - (purchase_time || start_time);
-    var granularity = 0;
+    granularity = 0;
     if(duration <= 60*60) { granularity = 0; } // 1 hour
     else if(duration <= 2*60*60) { granularity = 120; } // 2 hours
     else if(duration <= 6*60*60) { granularity = 600; } // 6 hours
@@ -599,7 +637,7 @@ var Highchart = (function() {
 
   // add the new data to the chart
   function update_chart(options){
-    var granularity = calculate_granularity(exit_time, now_time, purchase_time, start_time)[0];
+    granularity = calculate_granularity(exit_time, now_time, purchase_time, start_time)[0];
     var series = chart.series[0];
     var last = series.data[series.data.length - 1];
     if(granularity === 0) {
