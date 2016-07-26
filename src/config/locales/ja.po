@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-07-26 03:52+0000\n"
+"PO-Revision-Date: 2016-07-26 16:34+0000\n"
 "Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
@@ -280,7 +280,7 @@ msgid "%1's systems are now processing in excess of 1 million transactions/day (
 msgstr "当システムは1日に1万を超える取引（仮想アカウントを含む）を処理しています。"
 
 msgid "%1’s Volatility Indices are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
-msgstr ""
+msgstr "%1のボラティリティインデックスはMetaTrader 5で24時間365日ご利用いただけます。その他の資産も間もなく追加予定です。"
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(最短期間, 例： 最短 15 秒）分"
@@ -499,7 +499,7 @@ msgid "<strong>Additional business exposure:</strong> You will increase awarenes
 msgstr "<strong>その他ビジネスエクスポージャー:</strong> あなたのサービスに対する認識を高め、新ビジネスを生成しましょう。"
 
 msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
-msgstr ""
+msgstr "<strong>基礎的かつ技術的な分析のための高度なツール</strong> 指標、チャートなど"
 
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>幅広い取引期間</strong>：2時間以上から取引期間の指定が可能です"
@@ -553,7 +553,7 @@ msgid "<strong>Higher/Lower</strong> - where you can profit from the market endi
 msgstr "<strong>HIGH/LOW</strong>：バリア設定をした価格より値上がりするか？値下がりするか？を予想してください。"
 
 msgid "<strong>Highly competitive spreads with no commission,</strong> offering leverage of up to 1:500"
-msgstr ""
+msgstr "<strong>手数料無しで高い倍率のスプレッド</strong> 1:500までのレバレッジを提供"
 
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and Payment Agents."
 msgstr "<strong>重要な免責事項</strong> -%1は、上記の決済サービスとは提携していません。各決済サービスは、独立したサービスプロバイダーとして動作し、%1による承認、保証またはその他の許可がなされていません。お客さまは危険を承知で自信の責任をもって決済サービスに処断します。送金をされる前に、決済サービスの資格情報を確認されることをお勧めいたします。%1はいかなる状況下においても、お客さまと決済サービスの間で生じた処理への責任は負いません。"
@@ -640,7 +640,7 @@ msgid "<strong>Stock indices</strong> - trade all major worldwide stock indices.
 msgstr "<strong>株価指数</strong> - 世界の全主要株価指数のお取引"
 
 msgid "<strong>Subscriptions to a wide range of Expert Advisors,</strong> automated trading applications from the MetaTrader Market."
-msgstr ""
+msgstr "<strong>幅広い専門のアドバイザーを購読</strong> MetaTraderマーケットで取引を自動化"
 
 msgid "<strong>Take early profits</strong> - sell your long-term trades at market prices before they expire."
 msgstr "<strong>早めに利益を確保</strong>：長期の取引期間のトレードを転売することが可能です。"
@@ -1601,7 +1601,7 @@ msgid "Click here to retry"
 msgstr "再試行するにはこちらをクリックしてください"
 
 msgid "Click the button below to download MetaTrader."
-msgstr ""
+msgstr "MetaTraderをダウンロードするには下のボタンをクリックしてください。"
 
 msgid "Client classification"
 msgstr "クライアント区分"
@@ -2008,7 +2008,7 @@ msgid "Delete"
 msgstr "消去"
 
 msgid "Demo"
-msgstr ""
+msgstr "デモ"
 
 #| msgid "Open Account"
 msgid "Demo Account"
@@ -2162,7 +2162,7 @@ msgid "Download CSV"
 msgstr "CSNVでダウンロード"
 
 msgid "Download MetaTrader for Windows"
-msgstr ""
+msgstr "Windows版のMetaTraderをダウンロード"
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "セールス及びマーケティング目標をサポートする急速な成長と事業開発の推進"
@@ -2972,6 +2972,7 @@ msgstr "ご不明な点がございましたら、<a class=\"pjaxload\" href=\"%
 
 msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader’s website, please select “%1” from the list of available brokers."
 msgstr ""
+"MetaTrader 5をMetaTraderのサイトから既に直接ダウンロードされている場合は、利用できるブローカーのリストから“%1”をご選択ください。"
 
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "「Asianダウン」を選択された場合、<strong>最後のtick</strong>がtickの<strong>平均</strong>よりも<strong>低い</strong>とペイアウトを獲得いただけます。"
@@ -3289,7 +3290,7 @@ msgid "Investor Compensation Scheme"
 msgstr "投資家補償スキーム"
 
 msgid "Investor Password (read-only access)"
-msgstr ""
+msgstr "トレーダーパスワード（読み取り専用アクセス）"
 
 msgid "Involved in evaluation of regulatory compliance and risk management. Work with the Head of Departments to improve business processes."
 msgstr "企業コンプライアンスとリスク管理の評価を含みます。ビジネスプロセスを改善するために関連部門で働きます。"
@@ -3983,7 +3984,7 @@ msgid "Log in"
 msgstr "ログイン"
 
 msgid "Log into the application using your MetaTrader account number (e.g., 829118) and your MetaTrader account password."
-msgstr ""
+msgstr "MetaTraderのアカウント番号(例：829118)とパスワードでアプリケーションにログインをしてください。"
 
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "%1のアフィリエイト口座にログインしFinances &rarr;Payment Instructionsをクリックし、ご変更手続きを行って下さい。"
@@ -4035,7 +4036,7 @@ msgid "MacOS Instructions"
 msgstr "MacOS操作手順"
 
 msgid "Main Password (trading access)"
-msgstr ""
+msgstr "メインパスワード（取引アクセス）"
 
 msgid "Maintain accurate system pricing parameters"
 msgstr "正確な価格設定システムパラメーターの維持"
@@ -4158,7 +4159,7 @@ msgid "Memorable town/city"
 msgstr "思い出のある都市／街の名前"
 
 msgid "MetaTrader Accounts Management"
-msgstr ""
+msgstr "MetaTraderアカウント管理"
 
 msgid "Method"
 msgstr "決済方法"
@@ -4384,7 +4385,7 @@ msgid "Now"
 msgstr "Now"
 
 msgid "Now Introducing MetaTrader 5 on %1"
-msgstr ""
+msgstr "%1でMetaTrader 5を現在導入中"
 
 msgid "Number of ticks"
 msgstr "Tickの総数"
@@ -5256,7 +5257,7 @@ msgid "Run daily payments reports and report suspected fraud"
 msgstr "日々の支払と詐欺の疑いがある行為の報告チェック"
 
 msgid "Run the installation file and follow the instructions."
-msgstr ""
+msgstr "インストールファイルを実行して、指示に従ってください。"
 
 msgid "Russia"
 msgstr "ロシア"
@@ -5304,7 +5305,7 @@ msgid "Second line of home address"
 msgstr "マンション（建物）名"
 
 msgid "Secondary"
-msgstr "セカンダリー"
+msgstr "第二"
 
 msgid "Secret question"
 msgstr "秘密の質問"
@@ -5668,10 +5669,10 @@ msgid "Supporting the Group's global recruiting and talent management needs"
 msgstr "グループのグローバルな人材募集や人材管理のニーズをサポート"
 
 msgid "Take advantage of numerous benefits, including:"
-msgstr ""
+msgstr "様々な利点を活用できます："
 
 msgid "Take your trading to the next level through this powerful interface, recognised as the benchmark standard worldwide."
-msgstr ""
+msgstr "世界標準として認められた、強力なインターフェースを活用してあなたのお取引を次のレベルへ"
 
 msgid "Talk to us"
 msgstr "お問い合わせ"
@@ -6615,7 +6616,7 @@ msgid "Tuesday"
 msgstr "火曜日"
 
 msgid "Turnover"
-msgstr "ターンオーバー"
+msgstr "取引数量"
 
 msgid "Types of trades"
 msgstr "トレードの種類"
@@ -6978,7 +6979,7 @@ msgid "Website"
 msgstr "ウェブサイト"
 
 msgid "Webtrader"
-msgstr "Webtrader"
+msgstr "ウェブトレーダー"
 
 msgid "Wednesday"
 msgstr "水曜日"
@@ -8610,7 +8611,7 @@ msgid "Terms and Conditions Approval"
 msgstr "利用規約の承認"
 
 msgid "Trading with MetaTrader 5"
-msgstr ""
+msgstr "MetaTrader 5でお取引"
 
 #~ msgid "{JAPAN ONLY}BUY price per unit"
 #~ msgstr "購入"
