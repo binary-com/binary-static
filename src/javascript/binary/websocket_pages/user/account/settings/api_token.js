@@ -14,9 +14,24 @@ var APITokenWS = (function() {
     var hideTable = hide(tableContainer);
 
     function init() {
-        showLoadingImage($(tableContainer));
+        if (japanese_client()) {
+            window.location.href = page.url.url_for('user/settingsws');
+            return;
+        }
 
+        Content.populate();
+        BinarySocket.init({
+            onmessage: function(msg) {
+                var response = JSON.parse(msg.data);
+                if (response.msg_type === "api_token") {
+                    responseHandler(response);
+                }
+            }
+        });
+
+        showLoadingImage($(tableContainer));
         BinarySocket.send({api_token: 1});
+
         $('#btnCreate').click(function(e) {
             e.preventDefault();
             e.stopPropagation();
@@ -231,33 +246,7 @@ var APITokenWS = (function() {
         $('#formMessage').html('');
     }
 
-
     return {
         init: init,
-        responseHandler: responseHandler
     };
 }());
-
-
-
-pjax_config_page_require_auth("api_tokenws", function() {
-    return {
-        onLoad: function() {
-            if (japanese_client()) {
-                window.location.href = page.url.url_for('user/settingsws');
-            }
-
-            BinarySocket.init({
-                onmessage: function(msg) {
-                    var response = JSON.parse(msg.data);
-                    if (response.msg_type === "api_token") {
-                        APITokenWS.responseHandler(response);
-                    }
-                }
-            });
-
-            Content.populate();
-            APITokenWS.init();
-        }
-    };
-});

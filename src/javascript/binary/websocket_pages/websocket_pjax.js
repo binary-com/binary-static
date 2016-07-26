@@ -46,3 +46,11 @@ pjax_config_page_require_auth("user/portfoliows", function() {
         },
     };
 });
+
+pjax_config_page_require_auth("api_tokenws", function() {
+    return {
+        onLoad: function() {
+            APITokenWS.init();
+        }
+    };
+});
