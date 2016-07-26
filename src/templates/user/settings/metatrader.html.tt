@@ -3,7 +3,7 @@
 
     <p id="errorMsg" class="notice-msg center-text invisible"></p>
 
-    <div class="gr-row">
+    <div id="mt-container" class="gr-row invisible">
         <div class="gr-3">
             <div class="sidebar">
                 <ul class="sidebar-nav">
@@ -62,6 +62,12 @@
             <div id="section-real" class="section invisible">
                 <h3>[% l('Real Account') %]</h3>
                 <p id="msgRealAccount" class="invisible"></p>
+                <div id="authenticate" class="center-text invisible">
+                    <p>[% l('To create a Real account for MetaTrader, you need to authenticate your Binary account:') %]</p>
+                    <a class="button pjaxload" href="/binary-static/en/user/authenticatews.html">
+                        <span>Authenticate your account</span>
+                    </a>
+                </div>
                 <form id="form-new-real" class="invisible"></form>
                 <div id="details-real"></div>
             </div>

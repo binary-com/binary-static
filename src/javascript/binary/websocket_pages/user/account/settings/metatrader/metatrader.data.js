@@ -26,10 +26,24 @@ var MetaTraderData = (function() {
         BinarySocket.send(request);
     };
 
+    var requestAccountStatus = function() {
+        BinarySocket.send({'get_account_status': 1});
+    };
+
+    var requestLandingCompany = function() {
+        BinarySocket.send({'landing_company': page.client.residence});
+    };
+
     var responseHandler = function(response) {
         switch(response.msg_type) {
             case 'authorize':
                 MetaTraderUI.init();
+                break;
+            case 'get_account_status':
+                MetaTraderUI.responseAccountStatus(response);
+                break;
+            case 'landing_company':
+                MetaTraderUI.responseLandingCompany(response);
                 break;
             case 'mt5_login_list':
                 MetaTraderUI.responseLoginList(response);
@@ -44,10 +58,12 @@ var MetaTraderData = (function() {
     };
 
     return {
-        initSocket          : initSocket,
-        responseHandler     : responseHandler,
-        requestLoginList    : requestLoginList,
-        requestLoginDetails : requestLoginDetails,
-        requestNewAccount   : requestNewAccount,
+        initSocket           : initSocket,
+        responseHandler      : responseHandler,
+        requestLoginList     : requestLoginList,
+        requestLoginDetails  : requestLoginDetails,
+        requestNewAccount    : requestNewAccount,
+        requestAccountStatus : requestAccountStatus,
+        requestLandingCompany: requestLandingCompany,
     };
 }());
