@@ -276,6 +276,9 @@ msgstr "Многолетняя история %1"
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "Системы %1 обрабатывают более 1 миллиона транзакций в день (включая демо-счета)."
 
+msgid "%1’s Volatility Indices are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
+msgstr ""
+
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(minimum duration, for example minimum 15 seconds)мин."
 
@@ -491,6 +494,9 @@ msgstr "<strong>оценка контракта в двух направлени
 msgid "<strong>Additional business exposure:</strong> You will increase awareness of your services and generate new business."
 msgstr "<strong>Дополнительный бизнес:</strong> Вы улучшите рекламу своих услуг и увеличите базу клиентов."
 
+msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
+msgstr ""
+
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>С любой продолжительностью</strong> - от 10 секунд до 365 дней."
 
@@ -541,6 +547,9 @@ msgstr "<strong>Выше/Ниже</strong> - сделайте прогноз, б
 
 msgid "<strong>Higher/Lower</strong> - where you can profit from the market ending higher or lower than a target price."
 msgstr "<strong>Выше/Ниже</strong> - где Вы можете получить прибыль, если по окончании действия опциона рынок будет выше или ниже заданного барьера."
+
+msgid "<strong>Highly competitive spreads with no commission,</strong> offering leverage of up to 1:500"
+msgstr ""
 
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and Payment Agents."
 msgstr "<strong>ВАЖНАЯ ИНФОРМАЦИЯ</strong> - %1 не является представителем никакого из указанных Платежных Агентов. Каждый Платежный Агент функционирует как независимый предприниматель, и %1 не поддерживает, не несет поручительства за и не гарантирует надежности любого из Платежных Агентов. КЛИЕНТЫ ОБЩАЮТСЯ С ПЛАТЕЖНЫМИ АГЕНТАМИ НА СВОЙ СТРАХ И РИСК. Мы рекомендуем клиентам заранее проверить информацию о Платежных Агентах, прежде чем высылать им денежные средства.  %1 не несет никакой ответственности за транзакции между Клиентом и Платежным Агентом."
@@ -625,6 +634,9 @@ msgstr "<strong>Индексы</strong> - работайте на всех ос�
 
 msgid "<strong>Stock indices</strong> - trade all major worldwide stock indices."
 msgstr "<strong>Индексы</strong> - работайте на всех основных мировых индексах."
+
+msgid "<strong>Subscriptions to a wide range of Expert Advisors,</strong> automated trading applications from the MetaTrader Market."
+msgstr ""
 
 msgid "<strong>Take early profits</strong> - sell your long-term trades at market prices before they expire."
 msgstr "<strong>Получите прибыль до окончания</strong> - продайте досрочно свои долгосрочные контракты по рыночным ценам."
@@ -841,6 +853,11 @@ msgstr "Открытие счета"
 
 msgid "Account Transfer"
 msgstr "Перевод счета"
+
+#, fuzzy
+#| msgid "Account type"
+msgid "Account Type"
+msgstr "Тип счета"
 
 msgid "Account balance: "
 msgstr "Баланс счета: "
@@ -1583,6 +1600,9 @@ msgstr "Classification of assets requiring hedge"
 msgid "Click here to retry"
 msgstr "Нажмите, чтобы повторить попытку"
 
+msgid "Click the button below to download MetaTrader."
+msgstr ""
+
 msgid "Client classification"
 msgstr "Классификация клиентов"
 
@@ -1989,6 +2009,14 @@ msgstr "Толкование терминов"
 msgid "Delete"
 msgstr "Удалить"
 
+msgid "Demo"
+msgstr ""
+
+#, fuzzy
+#| msgid "Open Account"
+msgid "Demo Account"
+msgstr "Открыть счет"
+
 msgid "Demonstrate the ability to think / act quickly and multi-task as needed to execute effective campaigns"
 msgstr "Способность быстро думать и действовать, а также выполнять несколько задач для проведения эффективных кампаний"
 
@@ -2141,6 +2169,11 @@ msgstr "Неактивные счета"
 #| msgid "Download SVG"
 msgid "Download CSV"
 msgstr "Загрузить SVG"
+
+#, fuzzy
+#| msgid "Download for Windows"
+msgid "Download MetaTrader for Windows"
+msgstr "Скачать для Windows"
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "Стимуляция быстрого роста и развития бизнеса с целью поддержания уровня продаж и выполнения маркетинговых задач компании"
@@ -2954,6 +2987,9 @@ msgstr "Если Вам нужна помощь, пожалуйста, обра�
 msgid "If you need assistance feel free to contact our <a class=\"pjaxload\" href=\"%1\">Customer Support</a>."
 msgstr "Если Вам нужна помощь, пожалуйста, обратитесь в <a class=\"pjaxload\" href=\"%1\">службу поддержки</a>."
 
+msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader’s website, please select “%1” from the list of available brokers."
+msgstr ""
+
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "Если Вы выбираете \"Азиатские - Падение\", Вы выигрываете, если <strong>последняя котировка</strong> окажется <strong>ниже</strong>, чем <strong>общее среднее значение</strong> котировок."
 
@@ -3112,6 +3148,11 @@ msgstr "С целью поддержания дальнейшего роста �
 msgid "In order to support its continued growth, the Human Resources Group at %1 is seeking to place a highly competent administrator in a senior recruitment role. Please note that this is not a position suitable for an HR generalist, but should be of keen interest to a high level administrator with extensive experience in the global recruitment of managers and single technical contributors. A background in financial services and experience in the recruitment of senior professionals in IT and Quantitative Analytics would be ideal."
 msgstr "С целью поддержания дальнейшего роста, HR отдел %1 ищет компетентного администратора на должность старшего сотрудника по набору кадров. Пожалуйста, примите во внимание, что это не вакансия менеджера по управлению персоналом, а должность высококвалифицированного администратора с большим опытом в мировом найме менеджеров и отдельных технических сотрудников. Идеально подойдёт опыт работы в области финансовых услуг, найма старших специалистов IT и специалистов по количественной аналитике."
 
+#, fuzzy
+#| msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
+msgid "In order to trade using MetaTrader 5 platform, you'll first need to have a MetaTrader account."
+msgstr "Чтобы получить доступ к нашим мобильным приложениям и другим сторонним приложениям, нужно сначала сгенерировать токен API."
+
 msgid "In providing these services, we are bound by the Act, any applicable regulations, bye-laws, licence conditions, guidelines, exchange requirements and other provisions or market practices (the \"Rules\"). In the event of conflict between these ST&Cs and the Rules, the latter should prevail."
 msgstr "При предоставлении этих услуг мы обязаны действовать в соответствии с законом, применяемыми правилами, подзаконными актами, лицензионными условиями, руководящими принципами, требованиями обмена валют и другими положениями или рыночными практиками (\"Правила\"). В случае конфликта между этими \"Дополнительными Правилами и Условиями\" и \"Правилами\", превалируют последние."
 
@@ -3264,6 +3305,9 @@ msgstr "Инвестиции & Дивиденды"
 
 msgid "Investor Compensation Scheme"
 msgstr "Схема компенсации инвесторам"
+
+msgid "Investor Password (read-only access)"
+msgstr ""
 
 msgid "Involved in evaluation of regulatory compliance and risk management. Work with the Head of Departments to improve business processes."
 msgstr "Оценка соответствия нормативно-правовым требованиям, управление риском. Работа с главами отделов над улучшением бизнес-процессов."
@@ -3883,6 +3927,11 @@ msgstr "Less than 6 months"
 msgid "Level of Education"
 msgstr "Уровень образования"
 
+#, fuzzy
+#| msgid "Average"
+msgid "Leverage"
+msgstr "Среднее"
+
 msgid "Leverage social-media tools and channels to identify, engage, and convert potential new customers and partners"
 msgstr "Использование информационных инструментов и каналов с целью нахождения, привлечения и обращения потенциальных клиентов, а также партнёров"
 
@@ -3919,6 +3968,11 @@ msgstr "ссылаться и направлять наших клиентов �
 msgid "Links"
 msgstr "Ссылки"
 
+#, fuzzy
+#| msgid "Further Instructions"
+msgid "Linux Instructions"
+msgstr "Дальнейшие инструкции"
+
 msgid "Live chat:"
 msgstr "Чат:"
 
@@ -3927,6 +3981,9 @@ msgstr "Закрыть кассу паролем"
 
 msgid "Log in"
 msgstr "Вход"
+
+msgid "Log into the application using your MetaTrader account number (e.g., 829118) and your MetaTrader account password."
+msgstr ""
 
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "Зайдите на свой партнерский счет %1 и нажмите на Финансы, а затем на Платежные инструкции."
@@ -3972,6 +4029,14 @@ msgstr "Изменение нижнего барьера"
 
 msgid "MENA FFXPO Award"
 msgstr "Награда на MENA FFXPO"
+
+#, fuzzy
+#| msgid "Specific Instructions"
+msgid "MacOS Instructions"
+msgstr "Специальные инструкции"
+
+msgid "Main Password (trading access)"
+msgstr ""
 
 msgid "Maintain accurate system pricing parameters"
 msgstr "Поддержание точных параметров системы ценообразования"
@@ -4094,6 +4159,9 @@ msgstr "Важная дата"
 
 msgid "Memorable town/city"
 msgstr "Любимый город"
+
+msgid "MetaTrader Accounts Management"
+msgstr ""
 
 msgid "Method"
 msgstr "Метод"
@@ -4316,6 +4384,9 @@ msgstr "Начинающие трейдеры могут использоват�
 
 msgid "Now"
 msgstr "Сейчас"
+
+msgid "Now Introducing MetaTrader 5 on %1"
+msgstr ""
 
 msgid "Number of ticks"
 msgstr "Кол-во тиков"
@@ -5190,6 +5261,9 @@ msgstr "Риски инвестиционных продуктов"
 msgid "Run daily payments reports and report suspected fraud"
 msgstr "Создание ежедневных отчётов о платежах и сообщение о подозрении в мошенничестве"
 
+msgid "Run the installation file and follow the instructions."
+msgstr ""
+
 msgid "Russia"
 msgstr "Россия"
 
@@ -5463,6 +5537,11 @@ msgstr "Время начала"
 msgid "Start Trading"
 msgstr "Начните торговлю"
 
+#, fuzzy
+#| msgid "Start Trading Now"
+msgid "Start Trading with MetaTrader 5"
+msgstr "Начать работу сейчас"
+
 msgid "Start learning"
 msgstr "Начните обучение"
 
@@ -5598,6 +5677,12 @@ msgstr "Дополнительные Правила и Условия для ф�
 #| msgid "Supporting the Group’s global recruiting and talent management needs"
 msgid "Supporting the Group's global recruiting and talent management needs"
 msgstr "Поддержание процесса найма мировых сотрудников для группы наших компаний и управление кадровым потенциалом"
+
+msgid "Take advantage of numerous benefits, including:"
+msgstr ""
+
+msgid "Take your trading to the next level through this powerful interface, recognised as the benchmark standard worldwide."
+msgstr ""
 
 msgid "Talk to us"
 msgstr "Пообщайтесь с нами"
@@ -6594,6 +6679,11 @@ msgstr "Неправильный формат кода проверки личн
 msgid "Verification token"
 msgstr "Проверочный токен"
 
+#, fuzzy
+#| msgid "Verify new password"
+msgid "Verify Main Password"
+msgstr "Подтвердите новый пароль"
+
 msgid "Verify new password"
 msgstr "Подтвердите новый пароль"
 
@@ -6832,6 +6922,11 @@ msgstr "Среда"
 
 msgid "Week of"
 msgstr "Нед."
+
+#, fuzzy
+#| msgid "Weekly"
+msgid "Weekday"
+msgstr "по нед."
 
 msgid "Weekend quotes"
 msgstr "Котировки в выходные"
@@ -8508,11 +8603,19 @@ msgstr "Перевод через агента"
 msgid "Sharp Prices. Smart Trading."
 msgstr "Лучшие цены. Умный трейдинг."
 
+#, fuzzy
+#| msgid "Webtrader"
+msgid "MetaTrader"
+msgstr "Webtrader"
+
 msgid "Account Details"
 msgstr "Информация о счете"
 
 msgid "Terms and Conditions Approval"
 msgstr "Согласие с правилами и условиями"
+
+msgid "Trading with MetaTrader 5"
+msgstr ""
 
 #~ msgid "{JAPAN ONLY}BUY price per unit"
 #~ msgstr "{JAPAN ONLY}BUY price per unit"
@@ -10356,9 +10459,6 @@ msgstr "Согласие с правилами и условиями"
 
 #~ msgid "Week"
 #~ msgstr "Нед."
-
-#~ msgid "Weekly"
-#~ msgstr "по нед."
 
 #~ msgid "Weeks"
 #~ msgstr "Нед."
@@ -14007,9 +14107,6 @@ msgstr "Согласие с правилами и условиями"
 #~ msgid "At least 6 characters"
 #~ msgstr "Минимум 6 знаков"
 
-#~ msgid "Average"
-#~ msgstr "Среднее"
-
 #~ msgid "Average Change"
 #~ msgstr "Среднее изменение"
 
@@ -15929,9 +16026,6 @@ msgstr "Согласие с правилами и условиями"
 #~ msgid "Sorry, the IP Security field you specified (%1) wouldn't let you in from your current IP address %2."
 #~ msgstr "Извините, Ваш зарегистрированный на счету IP (%1) не позволяет Вам войти с настоящего IP-адреса %2."
 
-#~ msgid "Start Trading Now"
-#~ msgstr "Начать работу сейчас"
-
 #~ msgid "This is to confirm that your email address for your account %1 on %2 has been changed from %3 to %4"
 #~ msgstr "Подтверждаем, что Ваш электронный адрес на счету %1 на %2  был изменен с %3 на %4"
 
@@ -17093,9 +17187,6 @@ msgstr "Согласие с правилами и условиями"
 
 #~ msgid "Download for Mac"
 #~ msgstr "Скачать для Mac"
-
-#~ msgid "Download for Windows"
-#~ msgstr "Скачать для Windows"
 
 #~ msgid "P/L"
 #~ msgstr "Прибыль/Убыток"
@@ -20920,9 +21011,6 @@ msgstr "Согласие с правилами и условиями"
 
 #~ msgid "Account Number"
 #~ msgstr "Номер счета"
-
-#~ msgid "Account type"
-#~ msgstr "Тип счета"
 
 #~ msgid "Accumulation Distribution"
 #~ msgstr "Индикатор накопления"

@@ -9,8 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2016-07-26 01:16+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
-"Language-Team: Japanese "
-"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -279,6 +278,9 @@ msgstr "Binary.comの沿革"
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "当システムは1日に1万を超える取引（仮想アカウントを含む）を処理しています。"
 
+msgid "%1’s Volatility Indices are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
+msgstr ""
+
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(最短期間, 例： 最短 15 秒）分"
 
@@ -495,6 +497,9 @@ msgstr "<strong>2ウェイ・プライス（買値・売値）表示</strong>：
 msgid "<strong>Additional business exposure:</strong> You will increase awareness of your services and generate new business."
 msgstr "<strong>その他ビジネスエクスポージャー:</strong> あなたのサービスに対する認識を高め、新ビジネスを生成しましょう。"
 
+msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
+msgstr ""
+
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>幅広い取引期間</strong>：2時間以上から取引期間の指定が可能です"
 
@@ -545,6 +550,9 @@ msgstr "<strong>HIGH/LOW</strong>：設定価格より終了時の価格が上�
 
 msgid "<strong>Higher/Lower</strong> - where you can profit from the market ending higher or lower than a target price."
 msgstr "<strong>HIGH/LOW</strong>：バリア設定をした価格より値上がりするか？値下がりするか？を予想してください。"
+
+msgid "<strong>Highly competitive spreads with no commission,</strong> offering leverage of up to 1:500"
+msgstr ""
 
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and Payment Agents."
 msgstr "<strong>重要な免責事項</strong> -%1は、上記の決済サービスとは提携していません。各決済サービスは、独立したサービスプロバイダーとして動作し、%1による承認、保証またはその他の許可がなされていません。お客さまは危険を承知で自信の責任をもって決済サービスに処断します。送金をされる前に、決済サービスの資格情報を確認されることをお勧めいたします。%1はいかなる状況下においても、お客さまと決済サービスの間で生じた処理への責任は負いません。"
@@ -629,6 +637,9 @@ msgstr "<strong>株価指数</strong> - 日本国内には提供しておりま�
 
 msgid "<strong>Stock indices</strong> - trade all major worldwide stock indices."
 msgstr "<strong>株価指数</strong> - 世界の全主要株価指数のお取引"
+
+msgid "<strong>Subscriptions to a wide range of Expert Advisors,</strong> automated trading applications from the MetaTrader Market."
+msgstr ""
 
 msgid "<strong>Take early profits</strong> - sell your long-term trades at market prices before they expire."
 msgstr "<strong>早めに利益を確保</strong>：長期の取引期間のトレードを転売することが可能です。"
@@ -843,6 +854,11 @@ msgstr "口座開設時確認書類"
 
 msgid "Account Transfer"
 msgstr "口座振替"
+
+#, fuzzy
+#| msgid "Account Opening"
+msgid "Account Type"
+msgstr "口座開設時確認書類"
 
 msgid "Account balance: "
 msgstr "口座残高： "
@@ -1584,6 +1600,9 @@ msgstr "ヘッジファンドを必要とする資産の分類"
 msgid "Click here to retry"
 msgstr "再試行するにはこちらをクリックしてください"
 
+msgid "Click the button below to download MetaTrader."
+msgstr ""
+
 msgid "Client classification"
 msgstr "クライアント区分"
 
@@ -1988,6 +2007,14 @@ msgstr "定義"
 msgid "Delete"
 msgstr "消去"
 
+msgid "Demo"
+msgstr ""
+
+#, fuzzy
+#| msgid "Open Account"
+msgid "Demo Account"
+msgstr "口座開設"
+
 msgid "Demonstrate the ability to think / act quickly and multi-task as needed to execute effective campaigns"
 msgstr "効果的なキャンペーンの実施に必要な迅速な試行と行動及びマルチタスク能力の実証"
 
@@ -2134,6 +2161,9 @@ msgstr "口座維持手数料について"
 
 msgid "Download CSV"
 msgstr "CSNVでダウンロード"
+
+msgid "Download MetaTrader for Windows"
+msgstr ""
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "セールス及びマーケティング目標をサポートする急速な成長と事業開発の推進"
@@ -2941,6 +2971,9 @@ msgstr "ご不明な点がございましたら、%1当社カスタマーサポ�
 msgid "If you need assistance feel free to contact our <a class=\"pjaxload\" href=\"%1\">Customer Support</a>."
 msgstr "ご不明な点がございましたら、<a class=\"pjaxload\" href=\"%1\">カスタマーサポート</a>までお気軽にお問い合わせ下さい。"
 
+msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader’s website, please select “%1” from the list of available brokers."
+msgstr ""
+
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "「Asianダウン」を選択された場合、<strong>最後のtick</strong>がtickの<strong>平均</strong>よりも<strong>低い</strong>とペイアウトを獲得いただけます。"
 
@@ -3094,6 +3127,11 @@ msgstr "継続的な成長をサポートするために、当社では資格あ
 
 msgid "In order to support its continued growth, the Human Resources Group at %1 is seeking to place a highly competent administrator in a senior recruitment role. Please note that this is not a position suitable for an HR generalist, but should be of keen interest to a high level administrator with extensive experience in the global recruitment of managers and single technical contributors. A background in financial services and experience in the recruitment of senior professionals in IT and Quantitative Analytics would be ideal."
 msgstr "継続的な成長をサポートするため、人事グループではシニアレベルの豊富な経験がある非常に有能な管理者を求めています。人事ジェネラリストの役職ではありませんのでご注意ください。しかし、マネージャーまたは個人の技術貢献者のグローバル採用において豊富な経験があるハイレベルな管理者に強い関心がある必要があります。金融サービス業界での経歴とITおよび定量分析者のシニアレベルのプロフェッショナル採用経験があると理想的です。"
+
+#, fuzzy
+#| msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
+msgid "In order to trade using MetaTrader 5 platform, you'll first need to have a MetaTrader account."
+msgstr "当社のモバイルアプリまたは第三者開発アプリケーションへアクセスするには、はじめにAPIトークンの作成が必要です。"
 
 msgid "In providing these services, we are bound by the Act, any applicable regulations, bye-laws, licence conditions, guidelines, exchange requirements and other provisions or market practices (the \"Rules\"). In the event of conflict between these ST&Cs and the Rules, the latter should prevail."
 msgstr "これらのサービスを提供するにあたり、当社は法、適用可能な規則、法律、ライセンス条件、ガイドライン、為替制限、その他既定や市場慣行（規則）に基づいています。これらST＆Csと規則の間に矛盾が生じた場合、後者を優先する必要があります。"
@@ -3251,6 +3289,9 @@ msgstr "投資と配当"
 
 msgid "Investor Compensation Scheme"
 msgstr "投資家補償スキーム"
+
+msgid "Investor Password (read-only access)"
+msgstr ""
 
 msgid "Involved in evaluation of regulatory compliance and risk management. Work with the Head of Departments to improve business processes."
 msgstr "企業コンプライアンスとリスク管理の評価を含みます。ビジネスプロセスを改善するために関連部門で働きます。"
@@ -3890,6 +3931,11 @@ msgstr "6ヶ月未満"
 msgid "Level of Education"
 msgstr "能力レベル"
 
+#, fuzzy
+#| msgid "Average"
+msgid "Leverage"
+msgstr "平均"
+
 msgid "Leverage social-media tools and channels to identify, engage, and convert potential new customers and partners"
 msgstr "新規顧客およびパートナーへの情報確認、関係強化、会員への推進のため、ソーシャルメディアツールとチャンネルの活用"
 
@@ -3926,6 +3972,11 @@ msgstr "当顧客をアプリケーションへ導くリンク付をしてくだ
 msgid "Links"
 msgstr "サイト内のリンクについて"
 
+#, fuzzy
+#| msgid "Further Instructions"
+msgid "Linux Instructions"
+msgstr "詳細説明"
+
 msgid "Live chat:"
 msgstr "ライブチャット："
 
@@ -3934,6 +3985,9 @@ msgstr "入出金をロック"
 
 msgid "Log in"
 msgstr "ログイン"
+
+msgid "Log into the application using your MetaTrader account number (e.g., 829118) and your MetaTrader account password."
+msgstr ""
 
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "%1のアフィリエイト口座にログインしFinances &rarr;Payment Instructionsをクリックし、ご変更手続きを行って下さい。"
@@ -3979,6 +4033,14 @@ msgstr "下限追加バリア値"
 
 msgid "MENA FFXPO Award"
 msgstr "MENA FFXPO 賞を受賞"
+
+#, fuzzy
+#| msgid "Specific Instructions"
+msgid "MacOS Instructions"
+msgstr "詳細手順"
+
+msgid "Main Password (trading access)"
+msgstr ""
 
 msgid "Maintain accurate system pricing parameters"
 msgstr "正確な価格設定システムパラメーターの維持"
@@ -4099,6 +4161,9 @@ msgstr "思い出のある日時"
 
 msgid "Memorable town/city"
 msgstr "思い出のある都市／街の名前"
+
+msgid "MetaTrader Accounts Management"
+msgstr ""
 
 msgid "Method"
 msgstr "決済方法"
@@ -4322,6 +4387,9 @@ msgstr "初心者のトレーダーの方々は当社の直感的なビジュア
 
 msgid "Now"
 msgstr "Now"
+
+msgid "Now Introducing MetaTrader 5 on %1"
+msgstr ""
 
 msgid "Number of ticks"
 msgstr "Tickの総数"
@@ -5192,6 +5260,9 @@ msgstr "投資商品のリスク"
 msgid "Run daily payments reports and report suspected fraud"
 msgstr "日々の支払と詐欺の疑いがある行為の報告チェック"
 
+msgid "Run the installation file and follow the instructions."
+msgstr ""
+
 msgid "Russia"
 msgstr "ロシア"
 
@@ -5465,6 +5536,11 @@ msgstr "開始時間"
 msgid "Start Trading"
 msgstr "トレード開始"
 
+#, fuzzy
+#| msgid "Start Trading Now"
+msgid "Start Trading with MetaTrader 5"
+msgstr "今すぐトレードを開始"
+
 msgid "Start learning"
 msgstr "学習をはじめる"
 
@@ -5596,6 +5672,12 @@ msgstr "Binary Investments (Europe) Ltdが提供する金融商品の補助規�
 
 msgid "Supporting the Group's global recruiting and talent management needs"
 msgstr "グループのグローバルな人材募集や人材管理のニーズをサポート"
+
+msgid "Take advantage of numerous benefits, including:"
+msgstr ""
+
+msgid "Take your trading to the next level through this powerful interface, recognised as the benchmark standard worldwide."
+msgstr ""
 
 msgid "Talk to us"
 msgstr "お問い合わせ"
@@ -6468,8 +6550,7 @@ msgstr "バイナリーオプション取引は簡単な操作で行うことが
 msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. <span class=\"ja-hide\">Read about <a href=\"%1\" class=\"pjaxload\">Responsible Trading</a>.</span>"
 msgstr ""
 "【商号】Binary株式会社　金融商品取引業　関東財務局長（金商）第○○○号【加入協会】一般社団法人金融先物取引業協会\n"
-"<span class=\"ja-hide\"><a href=\"%1\" class=\"pjaxload\""
-">健全なトレードのために</a>をお読みください。</span>"
+"<span class=\"ja-hide\"><a href=\"%1\" class=\"pjaxload\">健全なトレードのために</a>をお読みください。</span>"
 
 msgid "Trading in Binary Options is speculative and involves a high degree of risk that can result in the loss of your entire investment. Therefore, trading in Binary Options is appropriate only for persons that understand and are willing to assume the economic, legal and other risks involved in such transactions. You should be satisfied that Binary Options trading is suitable for you in light of your investment circumstances and attitude towards risk before trading. You should not engage in speculative Binary Options trading unless you understand the basic aspects of such trading and its risks. If you are in any doubt as to whether Binary Option trading is appropriate and suitable for you, please seek independent advice from a investment consulting professional. %1 does not provide such advice. It is your responsibility, taking into account your personal circumstances and investment resources, to take particular care and make careful considerations independently, both prior to applying to engage in Binary Options with %1, as well as prior to making any individual order. Where you do not understand the risks involved in applying for a trading account with %1 or in making any individual order, you should seek advice and consultation from an independent investment advisor. If you continue to not understand the risks involved in trading in Binary Options, you should not trade at all."
 msgstr "バイナリーオプション取引は投機的であり、全資産を失いかねない高いリスクを伴います。それ故、バイナリーオプション取引は取引の経済的、法律的、またはその他のリスクを含むことを理解し、自ら想定できる方にのみ適しています。バイナリーオプション取引がお客さまの投資環境または投資前のリスクへの心構えがある方に適しているということに納得していただく必要がございます。そのような取引やリスクの基本的な側面を理解されない限り、バイナリーオプション取引に投機的に関与してはいけません。バイナリーオプション取引がお客さまに適しているかどうか疑わしい場合は、プロの投資コンサルティングからアドバイスを貰うようにしてください。%1ではそのようなアドバイスは行っておりません。個人の注文をする前同様、%1とバイナリーオプションに参加するため申請する前に、お客さま個人の事情や投資資源の口座を用いたり、特別な注意をしたり、個別に慎重に考慮することはお客さま自身の責任となります。%1 の取引口座申請に関するリスク、個人の注文に関するリスクをご理解いただけない場合は、独立の投資アドバイザーに相談して、アドバイスを求めてください。それでもバイナリーオプション取引に関するリスクをご理解いただけない場合は、絶対にお取引をしないでください。"
@@ -6661,6 +6742,11 @@ msgstr "ワンタイムパスワードの形式が不適切です。"
 
 msgid "Verification token"
 msgstr "ワンタイムパスワード"
+
+#, fuzzy
+#| msgid "Verify new password"
+msgid "Verify Main Password"
+msgstr "新しいパスワード（確認用）"
 
 msgid "Verify new password"
 msgstr "新しいパスワード（確認用）"
@@ -6906,6 +6992,11 @@ msgstr "水曜日"
 
 msgid "Week of"
 msgstr "週"
+
+#, fuzzy
+#| msgid "Weekly"
+msgid "Weekday"
+msgstr "週毎"
 
 msgid "Weekend quotes"
 msgstr "週末の引用値について"
@@ -8516,11 +8607,19 @@ msgstr "決済サービスでのご送金"
 msgid "Sharp Prices. Smart Trading."
 msgstr "優れた価格設定、賢くトレード。"
 
+#, fuzzy
+#| msgid "Webtrader"
+msgid "MetaTrader"
+msgstr "Webtrader"
+
 msgid "Account Details"
 msgstr "ご口座の詳細情報"
 
 msgid "Terms and Conditions Approval"
 msgstr "利用規約の承認"
+
+msgid "Trading with MetaTrader 5"
+msgstr ""
 
 #~ msgid "{JAPAN ONLY}BUY price per unit"
 #~ msgstr "購入"
@@ -10356,9 +10455,6 @@ msgstr "利用規約の承認"
 
 #~ msgid "Week"
 #~ msgstr "週"
-
-#~ msgid "Weekly"
-#~ msgstr "週毎"
 
 #~ msgid "Weeks"
 #~ msgstr "集"
@@ -13981,9 +14077,6 @@ msgstr "利用規約の承認"
 #~ msgid "At least 6 characters"
 #~ msgstr "6文字以上でご入力ください。"
 
-#~ msgid "Average"
-#~ msgstr "平均"
-
 #~ msgid "Average Change"
 #~ msgstr "平均変化"
 
@@ -15904,9 +15997,6 @@ msgstr "利用規約の承認"
 
 #~ msgid "Sorry, the IP Security field you specified (%1) wouldn't let you in from your current IP address %2."
 #~ msgstr "申し訳ございませんが、ご指定頂いたIPセキュリティ (%1) により、現在のIPアドレス%2から、お客様のご参加を許可することができません。"
-
-#~ msgid "Start Trading Now"
-#~ msgstr "今すぐトレードを開始"
 
 #~ msgid "This is to confirm that your email address for your account %1 on %2 has been changed from %3 to %4"
 #~ msgstr "お客様の%2のご口座%1のメールアドレスは、%3から%4へ変更されました。"
