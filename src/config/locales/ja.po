@@ -7,9 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-07-26 01:16+0000\n"
-"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"PO-Revision-Date: 2016-07-26 03:52+0000\n"
+"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
+"Language-Team: Japanese "
+"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -855,10 +856,9 @@ msgstr "口座開設時確認書類"
 msgid "Account Transfer"
 msgstr "口座振替"
 
-#, fuzzy
 #| msgid "Account Opening"
 msgid "Account Type"
-msgstr "口座開設時確認書類"
+msgstr "口座タイプ"
 
 msgid "Account balance: "
 msgstr "口座残高： "
@@ -2010,10 +2010,9 @@ msgstr "消去"
 msgid "Demo"
 msgstr ""
 
-#, fuzzy
 #| msgid "Open Account"
 msgid "Demo Account"
-msgstr "口座開設"
+msgstr "デモ口座"
 
 msgid "Demonstrate the ability to think / act quickly and multi-task as needed to execute effective campaigns"
 msgstr "効果的なキャンペーンの実施に必要な迅速な試行と行動及びマルチタスク能力の実証"
@@ -3128,10 +3127,9 @@ msgstr "継続的な成長をサポートするために、当社では資格あ
 msgid "In order to support its continued growth, the Human Resources Group at %1 is seeking to place a highly competent administrator in a senior recruitment role. Please note that this is not a position suitable for an HR generalist, but should be of keen interest to a high level administrator with extensive experience in the global recruitment of managers and single technical contributors. A background in financial services and experience in the recruitment of senior professionals in IT and Quantitative Analytics would be ideal."
 msgstr "継続的な成長をサポートするため、人事グループではシニアレベルの豊富な経験がある非常に有能な管理者を求めています。人事ジェネラリストの役職ではありませんのでご注意ください。しかし、マネージャーまたは個人の技術貢献者のグローバル採用において豊富な経験があるハイレベルな管理者に強い関心がある必要があります。金融サービス業界での経歴とITおよび定量分析者のシニアレベルのプロフェッショナル採用経験があると理想的です。"
 
-#, fuzzy
 #| msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
 msgid "In order to trade using MetaTrader 5 platform, you'll first need to have a MetaTrader account."
-msgstr "当社のモバイルアプリまたは第三者開発アプリケーションへアクセスするには、はじめにAPIトークンの作成が必要です。"
+msgstr "MetaTrader 5のプラットフォームを用いてお取引されるには、MetaTraderのアカウントを作成いただく必要があります。"
 
 msgid "In providing these services, we are bound by the Act, any applicable regulations, bye-laws, licence conditions, guidelines, exchange requirements and other provisions or market practices (the \"Rules\"). In the event of conflict between these ST&Cs and the Rules, the latter should prevail."
 msgstr "これらのサービスを提供するにあたり、当社は法、適用可能な規則、法律、ライセンス条件、ガイドライン、為替制限、その他既定や市場慣行（規則）に基づいています。これらST＆Csと規則の間に矛盾が生じた場合、後者を優先する必要があります。"
@@ -3931,10 +3929,9 @@ msgstr "6ヶ月未満"
 msgid "Level of Education"
 msgstr "能力レベル"
 
-#, fuzzy
 #| msgid "Average"
 msgid "Leverage"
-msgstr "平均"
+msgstr "レバレッジ"
 
 msgid "Leverage social-media tools and channels to identify, engage, and convert potential new customers and partners"
 msgstr "新規顧客およびパートナーへの情報確認、関係強化、会員への推進のため、ソーシャルメディアツールとチャンネルの活用"
@@ -3972,10 +3969,9 @@ msgstr "当顧客をアプリケーションへ導くリンク付をしてくだ
 msgid "Links"
 msgstr "サイト内のリンクについて"
 
-#, fuzzy
 #| msgid "Further Instructions"
 msgid "Linux Instructions"
-msgstr "詳細説明"
+msgstr "Linux操作手順"
 
 msgid "Live chat:"
 msgstr "ライブチャット："
@@ -4034,10 +4030,9 @@ msgstr "下限追加バリア値"
 msgid "MENA FFXPO Award"
 msgstr "MENA FFXPO 賞を受賞"
 
-#, fuzzy
 #| msgid "Specific Instructions"
 msgid "MacOS Instructions"
-msgstr "詳細手順"
+msgstr "MacOS操作手順"
 
 msgid "Main Password (trading access)"
 msgstr ""
@@ -5536,10 +5531,9 @@ msgstr "開始時間"
 msgid "Start Trading"
 msgstr "トレード開始"
 
-#, fuzzy
 #| msgid "Start Trading Now"
 msgid "Start Trading with MetaTrader 5"
-msgstr "今すぐトレードを開始"
+msgstr "MetaTrader 5でお取引を始める"
 
 msgid "Start learning"
 msgstr "学習をはじめる"
@@ -6743,10 +6737,9 @@ msgstr "ワンタイムパスワードの形式が不適切です。"
 msgid "Verification token"
 msgstr "ワンタイムパスワード"
 
-#, fuzzy
 #| msgid "Verify new password"
 msgid "Verify Main Password"
-msgstr "新しいパスワード（確認用）"
+msgstr "メインパスワード（確認用）"
 
 msgid "Verify new password"
 msgstr "新しいパスワード（確認用）"
@@ -6993,10 +6986,9 @@ msgstr "水曜日"
 msgid "Week of"
 msgstr "週"
 
-#, fuzzy
 #| msgid "Weekly"
 msgid "Weekday"
-msgstr "週毎"
+msgstr "平日"
 
 msgid "Weekend quotes"
 msgstr "週末の引用値について"
@@ -8607,10 +8599,9 @@ msgstr "決済サービスでのご送金"
 msgid "Sharp Prices. Smart Trading."
 msgstr "優れた価格設定、賢くトレード。"
 
-#, fuzzy
 #| msgid "Webtrader"
 msgid "MetaTrader"
-msgstr "Webtrader"
+msgstr "MetaTrader"
 
 msgid "Account Details"
 msgstr "ご口座の詳細情報"
