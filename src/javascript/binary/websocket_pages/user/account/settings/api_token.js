@@ -53,38 +53,32 @@ var APITokenWS = (function() {
 
         var api_token = response.api_token;
         var tokens    = api_token.tokens;
-        var newToken  = '';
-        var rebuild   = true;
+        var newToken;
+
+        if (tokens.length >= maxTokens) {
+            hideForm();
+            showErrorMessage(text.localize('The maximum number of tokens ([_1]) has been reached.', [maxTokens]));
+        } else {
+            showForm();
+        }
 
         if ('new_token' in api_token) {
             showSubmitSuccess('New token created.');
             $('#txtName').val('');
             newToken = response.echo_req.new_token;
         } else if ('delete_token' in api_token) {
-            rebuild = false;
             var deleted = response.echo_req.delete_token;
             $('#' + deleted)
                 .removeClass('new')
                 .addClass('deleting')
                 .fadeOut(700, function() {
                     $(this).remove();
-                    if (tokens.length === 0) {
-                        hideTable();
-                    }
+                    populateTokensList(tokens);
                 });
+            return;
         }
 
-        if (rebuild) {
-            populateTokensList(tokens, newToken);
-        }
-
-        // Hide form if tokens count reached the maximum limit
-        if (api_token.tokens.length >= maxTokens) {
-            hideForm();
-            showErrorMessage(text.localize('The maximum number of tokens ([_1]) has been reached.').replace('[_1]', maxTokens));
-        } else {
-            showForm();
-        }
+        populateTokensList(tokens, newToken);
     }
 
     // -----------------------
@@ -107,27 +101,27 @@ var APITokenWS = (function() {
             cols:      columns,
             data:      tokens,
             formatter: formatToken,
-            style: function($row, datum) {
-                if (datum.display_name === newToken) {
+            style: function($row, token) {
+                if (token.display_name === newToken) {
                     $row.addClass('new');
                 }
-                $row.attr('id', datum.token);
-                createDeleteButton($row, datum);
+                $row.attr('id', token.token);
+                createDeleteButton($row, token);
             }
         });
         showLocalTimeOnHover('td.last-used');
     }
 
-    function createDeleteButton($row, datum) {
+    function createDeleteButton($row, token) {
         var message = text.localize('Are you sure that you want to permanently delete token');
         var $button = $('<button/>', {class: 'button btnDelete', text: text.localize('Delete')});
         $button.click(function(e) {
             e.preventDefault();
             e.stopPropagation();
-            if (!window.confirm(message + ': "' + datum.display_name + '"?')) {
+            if (!window.confirm(message + ': "' + token.display_name + '"?')) {
                 return;
             }
-            deleteToken(datum.token);
+            deleteToken(token.token);
         });
         $row.children('.action').html(
             $('<span/>', {class: 'button'})
