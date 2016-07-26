@@ -13,7 +13,7 @@ var APITokenWS = (function() {
     var showForm  = show('#token_form');
     var hideTable = hide(tableContainer);
 
-    var init = function() {
+    function init() {
         showLoadingImage($(tableContainer));
 
         BinarySocket.send({api_token: 1});
@@ -26,11 +26,11 @@ var APITokenWS = (function() {
             }
             createToken(params);
         });
-    };
+    }
 
     function responseHandler(response) {
         if ('error' in response) {
-            showMessage(response.error.message, false);
+            showErrorMessage(response.error.message);
             return false;
         }
 
@@ -42,7 +42,7 @@ var APITokenWS = (function() {
         var rebuild   = true;
 
         if ('new_token' in api_token) {
-            showFormMessage(text.localize('New token created.'), true);
+            showSubmitSuccess('New token created.');
             $('#txtName').val('');
             newToken = response.echo_req.new_token;
         } else if ('delete_token' in api_token) {
@@ -66,7 +66,7 @@ var APITokenWS = (function() {
         // Hide form if tokens count reached the maximum limit
         if (api_token.tokens.length >= maxTokens) {
             hideForm();
-            showMessage(text.localize('The maximum number of tokens ([_1]) has been reached.').replace('[_1]', maxTokens), false);
+            showErrorMessage(text.localize('The maximum number of tokens ([_1]) has been reached.').replace('[_1]', maxTokens));
         } else {
             showForm();
         }
@@ -153,9 +153,9 @@ var APITokenWS = (function() {
             space   = Content.localize().textSpace;
 
         var error = (
-            (!name               && err('req')) ||
-            (!checkBounds(name)  && err('range', template('([_1]-[_2])', [2, 32]))) ||
-            (!/^\w+$/.test(name) && err('reg', [letters, numbers, '_'])) ||
+            (!name.length       && err('req')) ||
+            (!checkBounds(name) && err('range', template('([_1]-[_2])', [2, 32]))) ||
+            (!noSymbols(name)   && err('reg', [letters, numbers, '_'])) ||
             null
         );
 
@@ -173,6 +173,10 @@ var APITokenWS = (function() {
         }
 
         return {name: name, scopes: scopes};
+    }
+
+    function noSymbols(string) {
+        return /^\w+$/.test(string);
     }
 
     function checkBounds(string) {
@@ -200,19 +204,17 @@ var APITokenWS = (function() {
     // -----------------------------
     // ----- Message Functions -----
     // -----------------------------
-    function showMessage(msg, isSuccess) {
-        msg = text.localize(msg);
+    function showErrorMessage(msg) {
         $('#token_message').removeClass(hideClass)
             .find('p')
-            .attr('class', isSuccess ? 'success-msg' : errorClass)
-            .html(isSuccess ? '<ul class="checked"><li>' + msg + '</li></ul>' : msg);
+            .attr('class', errorClass)
+            .html(text.localize(msg));
     }
 
-    function showFormMessage(msg, isSuccess) {
-        msg = text.localize(msg);
+    function showSubmitSuccess(msg) {
         $('#formMessage')
-            .attr('class', isSuccess ? 'success-msg' : errorClass)
-            .html(isSuccess ? '<ul class="checked"><li>' + msg + '</li></ul>' : msg)
+            .attr('class', 'success-msg')
+            .html('<ul class="checked"><li>' + text.localize(msg) + '</li></ul>')
             .css('display', 'block')
             .delay(3000)
             .fadeOut(1000);
