@@ -117,8 +117,8 @@ var MetaTraderUI = (function() {
                 'account_type': /demo/.test($form.attr('id')) ? 'demo' : 'vanuatu',
                 'email': TUser.get().email,
                 'mainPassword': $form.find('#txtMainPass').val(),
-                'investPassword': $form.find('#txtMainPass2').val(),
-                'leverage': 100
+                'investPassword': $form.find('#txtInvestPass').val(),
+                'leverage': '100'
             });
         }
     };
@@ -148,7 +148,7 @@ var MetaTraderUI = (function() {
             return showPageError(response.error.message, false);
         }
 
-        var accType = response.mt5_get_settings.group.split('/')[0];
+        var accType = response.mt5_get_settings.group.split('\\')[0];
         mt5Accounts[accType] = response.mt5_get_settings;
         displayAccount(accType);
     };
@@ -230,5 +230,6 @@ var MetaTraderUI = (function() {
         init: init,
         responseLoginList: responseLoginList,
         responseLoginDetails: responseLoginDetails,
+        responseNewAccount: responseNewAccount,
     };
 }());
