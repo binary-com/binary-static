@@ -46,7 +46,7 @@ var APITokenWS = (function() {
     function responseHandler(response) {
         if ('error' in response) {
             showErrorMessage(response.error.message);
-            return false;
+            return;
         }
 
         clearMessages();
