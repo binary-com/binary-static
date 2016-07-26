@@ -234,9 +234,9 @@ function showLocalTimeOnHover(s) {
     });
 }
 
-function toJapanTimeIfNeeded(gmtTimeStr, showTimeZone, longcode){
+function toJapanTimeIfNeeded(gmtTimeStr, showTimeZone, longcode, hideSeconds){
     var match;
-    if (longcode) {
+    if (longcode && longcode !== '') {
       match = longcode.match(/(\d{4}-\d{2}-\d{2})\s?(\d{2}:\d{2}:\d{2})?/);
       if (!match) return longcode;
     }
@@ -255,7 +255,7 @@ function toJapanTimeIfNeeded(gmtTimeStr, showTimeZone, longcode){
         return;
     }
 
-    timeStr = time.zone(curr === 'JPY' ? '+09:00' : '+00:00').format('YYYY-MM-DD HH:mm:ss' + (showTimeZone && showTimeZone !== '' ? ' Z' : ''));
+    timeStr = time.zone(curr === 'JPY' ? '+09:00' : '+00:00').format((hideSeconds ? 'YYYY-MM-DD HH:mm' : 'YYYY-MM-DD HH:mm:ss' ) + (showTimeZone && showTimeZone !== '' ? curr === 'JPY' ? ' zZ' : ' Z' : ''));
 
     return (longcode ? longcode.replace(match[0], timeStr) : timeStr);
 }
