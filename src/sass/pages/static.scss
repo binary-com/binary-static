@@ -1,8 +1,5 @@
 .static_full {
     @include topspace;
-    .sidebar {
-        @include menu-left;
-    }
     @include section-separator;
     .section {
         display: block;
@@ -24,6 +21,10 @@
             display: block;
         }
     }
+}
+
+.sidebar {
+    @include menu-left;
 }
 
 .payment-agent {
