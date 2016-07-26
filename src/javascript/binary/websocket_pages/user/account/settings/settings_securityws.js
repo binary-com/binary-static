@@ -4,7 +4,7 @@ var securityws = (function(){
         init_done;
 
     var states = {
-        GET_LOCK:   'lock_status',
+        GET_STATUS: 'lock_status',
         TRY_LOCK:   'lock_password',
         TRY_UNLOCK: 'unlock_password',
         LOCKED:     'is_locked',
@@ -40,7 +40,7 @@ var securityws = (function(){
             BinarySocket.send({
                 "authorize": loginToken,
                 "passthrough": {
-                    "value": $(this).attr("value") === "Update" ? "lock_password" : "unlock_password"
+                    "value": $(this).attr("value") === "Update" ? states.TRY_LOCK : states.TRY_UNLOCK
                 }
             });
         });
@@ -93,7 +93,7 @@ var securityws = (function(){
                 params = {"unlock_password": pwd};
                 break;
             case states.LOCKED:
-                params = {"passthrough" : {"value" : "lock_status"}};
+                params = {"passthrough" : {"value" : states.GET_STATUS}};
                 break;
             default:
                 init();
@@ -108,7 +108,7 @@ var securityws = (function(){
         var echo = response.echo_req;
         var passthrough = echo.passthrough;
 
-        if (passthrough && passthrough.value === "lock_status") {
+        if (passthrough && passthrough.value === states.GET_STATUS) {
             if (+response.cashier_password === 1) {
                 $("#repasswordrow").hide();
                 $("legend").text(text.localize("Unlock Cashier"));
