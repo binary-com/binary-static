@@ -1,0 +1,25 @@
+<h1>[% l("Start Trading with MetaTrader 5") %]</h1>
+<div class="gr-row">
+    <div class="gr-6 gr-12-m">
+        <ol>
+            <li>[% l('Click the button below to download MetaTrader.') %]</li>
+            <li>[% l('Run the installation file and follow the instructions.') %]</li>
+            <li>[% l('Log into the application using your MetaTrader account number (e.g., 829118) and your MetaTrader account password.') %]</li>
+        </ol>
+        <p class="hint">[% l('If you previously downloaded MetaTrader 5 directly from MetaTrader’s website, please select “[_1]” from the list of available brokers.', website_name) %]</p>
+        <p>
+            <a class="button fullwidth"><span>[% l('Download MetaTrader for Windows') %]</span></a>
+        </p>
+        <div class="gr-row">
+            <div class="gr-6 gr-12-m">
+                <a class="button button-secondary"><span>[% l('MacOS Instructions') %]</span></a>
+            </div>
+            <div class="gr-6 gr-12-m align-end">
+                <a class="button button-secondary"><span>[% l('Linux Instructions') %]</span></a>
+            </div>
+        </div>
+    </div>
+    <div class="gr-6 gr-12-m">
+        <img class="responsive" src="[% request.url_for('images/pages/metatrader/start.jpg') %]" alt="" />
+    </div>
+</div>
