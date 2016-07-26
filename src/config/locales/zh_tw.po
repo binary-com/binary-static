@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Taiwan) (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-07-19 03:09+0000\n"
+"PO-Revision-Date: 2016-07-23 02:21+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) <https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
 "Language: zh_tw\n"
@@ -198,10 +198,8 @@ msgstr "%1從1999年開始運營，目前營業額達到 20 億美元"
 msgid "%1 reaches 1 million registered users"
 msgstr "%1註冊使用者已達1百萬人"
 
-#, fuzzy
-#| msgid "Days to display"
 msgid "%1 rows displayed:"
-msgstr "要顯示的天數"
+msgstr "%1顯示列數:"
 
 msgid "%1 seeks a Project Coordinator to help drive the production of promotional content and rollout of marketing campaigns, designed to engage new prospects and current customers based throughout the globe."
 msgstr "%1 誠聘專案協調員，幫助推動向全球各地新潛在客戶和現有客戶發佈的宣傳內容創作和行銷活動。"
@@ -270,6 +268,9 @@ msgstr "%1的輝煌發展歷程"
 
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "%1 每天處理超過百萬筆交易(包括虛擬帳戶)。"
+
+msgid "%1’s Volatility Indices are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
+msgstr ""
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(minimum duration, for example minimum 15 seconds)分鐘"
@@ -485,6 +486,9 @@ msgstr "<strong>雙向報價</strong> - %1 提供交易與反向交易的報價�
 msgid "<strong>Additional business exposure:</strong> You will increase awareness of your services and generate new business."
 msgstr "<strong>額外業務推展:</strong> 您的服務將受推廣，生意蒸蒸日上。"
 
+msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
+msgstr ""
+
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>所有合約期限</strong> - 從10 秒到365 天。"
 
@@ -535,6 +539,9 @@ msgstr "<strong>高於/低於</strong> - 預測到期時市場價格是高於還
 
 msgid "<strong>Higher/Lower</strong> - where you can profit from the market ending higher or lower than a target price."
 msgstr "<strong>高於/低於</strong> - 通過預測到期時市場價格高於或低於目標價格而獲利。"
+
+msgid "<strong>Highly competitive spreads with no commission,</strong> offering leverage of up to 1:500"
+msgstr ""
 
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and Payment Agents."
 msgstr "<strong>重要免責聲明</strong> - %1 與上述所有支付代理不存在附屬關係。各支付代理均以獨立服務提供商的身份運營，未由%1支持、擔保或經其它方式批准。客戶與支付代理的業務往來，風險自負。我們建議客戶在向支付代理匯款前，應事先查詢其信用狀況。在任何情況下，%1 都不對客戶與支付代理之間的交易承擔責任。"
@@ -619,6 +626,9 @@ msgstr "<strong>股指</strong> - 交易全球所有主要股票指數。"
 
 msgid "<strong>Stock indices</strong> - trade all major worldwide stock indices."
 msgstr "<strong>股指</strong> - 交易全球所有主要股票指數。"
+
+msgid "<strong>Subscriptions to a wide range of Expert Advisors,</strong> automated trading applications from the MetaTrader Market."
+msgstr ""
 
 msgid "<strong>Take early profits</strong> - sell your long-term trades at market prices before they expire."
 msgstr "<strong>提前獲利</strong> - 合約到期前，可按市價賣出長線交易頭寸。"
@@ -833,6 +843,11 @@ msgstr "帳戶開立"
 
 msgid "Account Transfer"
 msgstr "帳戶轉帳"
+
+#, fuzzy
+#| msgid "Account Opening"
+msgid "Account Type"
+msgstr "帳戶開立"
 
 msgid "Account balance: "
 msgstr "帳戶餘額： "
@@ -1559,6 +1574,9 @@ msgstr "Classification of assets requiring hedge"
 msgid "Click here to retry"
 msgstr "點選此處重試"
 
+msgid "Click the button below to download MetaTrader."
+msgstr ""
+
 msgid "Client classification"
 msgstr "客戶分類"
 
@@ -1955,6 +1973,14 @@ msgstr "定義"
 msgid "Delete"
 msgstr "刪除"
 
+msgid "Demo"
+msgstr ""
+
+#, fuzzy
+#| msgid "Open Account"
+msgid "Demo Account"
+msgstr "開戶"
+
 msgid "Demonstrate the ability to think / act quickly and multi-task as needed to execute effective campaigns"
 msgstr "按需迅速展示並同時運行思想/行動能力，執行有效的活動"
 
@@ -2099,10 +2125,11 @@ msgstr "通過文檔部門流程提高行銷隊伍有效執行重複任務的能
 msgid "Dormant and Inactive Accounts"
 msgstr "休眠和非使用中帳戶"
 
-#, fuzzy
-#| msgid "Download"
 msgid "Download CSV"
-msgstr "下載"
+msgstr "下載CSV"
+
+msgid "Download MetaTrader for Windows"
+msgstr ""
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "推動快速增長和業務發展，以支援公司的銷售和市場行銷目標"
@@ -2908,6 +2935,9 @@ msgstr "如果您需要幫助，請聯繫我們的 %1客服部"
 msgid "If you need assistance feel free to contact our <a class=\"pjaxload\" href=\"%1\">Customer Support</a>."
 msgstr "如果您需要幫助，請聯繫我們的<a class=\"pjaxload\" href=\"%1\">客服部</a>。"
 
+msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader’s website, please select “%1” from the list of available brokers."
+msgstr ""
+
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "如果您選擇「亞洲下跌」期權，<strong>當</strong><strong>最新價格</strong>低於<strong>平均</strong>價格時，您將獲得賠付。"
 
@@ -3062,6 +3092,11 @@ msgstr "為了保證持續增長，%1 誠招法律執行人員一名。此職位
 msgid "In order to support its continued growth, the Human Resources Group at %1 is seeking to place a highly competent administrator in a senior recruitment role. Please note that this is not a position suitable for an HR generalist, but should be of keen interest to a high level administrator with extensive experience in the global recruitment of managers and single technical contributors. A background in financial services and experience in the recruitment of senior professionals in IT and Quantitative Analytics would be ideal."
 msgstr "為保證持續增長， %1人力資源部誠招高級人事管理人員一名。請注意，此職位並不適合普通的人力資源通才。合格的候選者應具有經理及技術專門人才的國際化招聘經驗。具有金融服務背景，對招聘資訊科技業資深專業人士、定量分析師等職位有經驗者優先考慮。"
 
+#, fuzzy
+#| msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
+msgid "In order to trade using MetaTrader 5 platform, you'll first need to have a MetaTrader account."
+msgstr "首先您必須生成API權杖才能夠存取我們的行動應用程式和其他第三方應用程式。"
+
 msgid "In providing these services, we are bound by the Act, any applicable regulations, bye-laws, licence conditions, guidelines, exchange requirements and other provisions or market practices (the \"Rules\"). In the event of conflict between these ST&Cs and the Rules, the latter should prevail."
 msgstr "提供此類服務時，我們受法律、一切適用的規則、地方法規、准證條款、綱領、證卷市場細則和其它規定或市場慣例（「規則」）等約束。當這些補充條款和條件跟規則發生衝突時，當以後者為準。"
 
@@ -3214,6 +3249,9 @@ msgstr "投資與分紅"
 
 msgid "Investor Compensation Scheme"
 msgstr "投資者補償方案"
+
+msgid "Investor Password (read-only access)"
+msgstr ""
 
 msgid "Involved in evaluation of regulatory compliance and risk management. Work with the Head of Departments to improve business processes."
 msgstr "參與法務和風險管理評估。與各部門主管協作改進業務流程。"
@@ -3833,6 +3871,11 @@ msgstr "Less than 6 months"
 msgid "Level of Education"
 msgstr "教育水平"
 
+#, fuzzy
+#| msgid "Average"
+msgid "Leverage"
+msgstr "平均"
+
 msgid "Leverage social-media tools and channels to identify, engage, and convert potential new customers and partners"
 msgstr "通過杠杆社交媒體工具標識、引入並轉換潛在新客戶和業務合作夥伴"
 
@@ -3869,6 +3912,11 @@ msgstr "將我們客戶與您的應用程式相連接。"
 msgid "Links"
 msgstr "連結"
 
+#, fuzzy
+#| msgid "Further Instructions"
+msgid "Linux Instructions"
+msgstr "詳細說明"
+
 msgid "Live chat:"
 msgstr "即時聊天："
 
@@ -3877,6 +3925,9 @@ msgstr "鎖定收銀台"
 
 msgid "Log in"
 msgstr "登入"
+
+msgid "Log into the application using your MetaTrader account number (e.g., 829118) and your MetaTrader account password."
+msgstr ""
 
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "登入您的%1 聯盟帳號並點選：財務&rarr; 付款說明。"
@@ -3922,6 +3973,14 @@ msgstr "低障礙位移"
 
 msgid "MENA FFXPO Award"
 msgstr "中東和北非地區 FFXPO 獎"
+
+#, fuzzy
+#| msgid "Specific Instructions"
+msgid "MacOS Instructions"
+msgstr "特定指令"
+
+msgid "Main Password (trading access)"
+msgstr ""
 
 msgid "Maintain accurate system pricing parameters"
 msgstr "維護準確的系統訂價參數"
@@ -4042,6 +4101,9 @@ msgstr "難忘的日子"
 
 msgid "Memorable town/city"
 msgstr "難忘的城鎮/城市"
+
+msgid "MetaTrader Accounts Management"
+msgstr ""
 
 msgid "Method"
 msgstr "方式"
@@ -4261,6 +4323,9 @@ msgstr "交易新手可使用我們的直觀視覺式平台學習交易、練習
 
 msgid "Now"
 msgstr "現在"
+
+msgid "Now Introducing MetaTrader 5 on %1"
+msgstr ""
 
 msgid "Number of ticks"
 msgstr "跳動點數目"
@@ -5123,6 +5188,9 @@ msgstr "產品投資風險"
 msgid "Run daily payments reports and report suspected fraud"
 msgstr "日常付款報告和涉嫌欺詐報告的運作"
 
+msgid "Run the installation file and follow the instructions."
+msgstr ""
+
 msgid "Russia"
 msgstr "俄國"
 
@@ -5396,6 +5464,9 @@ msgstr "開始時間"
 msgid "Start Trading"
 msgstr "開始交易"
 
+msgid "Start Trading with MetaTrader 5"
+msgstr ""
+
 msgid "Start learning"
 msgstr "開始學習"
 
@@ -5527,6 +5598,12 @@ msgstr "Binary 投資 (歐洲)有限公司提供的金融產品補充條款和�
 
 msgid "Supporting the Group's global recruiting and talent management needs"
 msgstr "支持集團的全球招聘和人才管理需求"
+
+msgid "Take advantage of numerous benefits, including:"
+msgstr ""
+
+msgid "Take your trading to the next level through this powerful interface, recognised as the benchmark standard worldwide."
+msgstr ""
 
 msgid "Talk to us"
 msgstr "聯繫我們"
@@ -6475,6 +6552,11 @@ msgstr "驗證碼格式不正確。"
 msgid "Verification token"
 msgstr "驗證權杖"
 
+#, fuzzy
+#| msgid "Verify new password"
+msgid "Verify Main Password"
+msgstr "驗證新密碼"
+
 msgid "Verify new password"
 msgstr "驗證新密碼"
 
@@ -6699,6 +6781,11 @@ msgstr "星期三"
 
 msgid "Week of"
 msgstr "週"
+
+#, fuzzy
+#| msgid "Weekly"
+msgid "Weekday"
+msgstr "每週"
 
 msgid "Weekend quotes"
 msgstr "週末報價"
@@ -7393,6 +7480,9 @@ msgstr "天"
 msgid "deposit"
 msgstr "存款"
 
+msgid "details"
+msgstr "詳細資料"
+
 msgid "e.g. ws.binaryws.com"
 msgstr "例如ws.binaryws.com"
 
@@ -7627,9 +7717,6 @@ msgstr "{JAPAN ONLY}As the time to the exercise point shortens, the time-value o
 msgid "{JAPAN ONLY}Association of join"
 msgstr "{JAPAN ONLY}Association of join"
 
-msgid "{JAPAN ONLY}BUY price per unit"
-msgstr "{JAPAN ONLY}BUY price per unit"
-
 msgid "{JAPAN ONLY}Because option prices are determined by the probability of being exercised, it cannot be said that cheaper options have any natural advantage over expensive options."
 msgstr "{JAPAN ONLY}Because option prices are determined by the probability of being exercised, it cannot be said that cheaper options have any natural advantage over expensive options."
 
@@ -7681,11 +7768,23 @@ msgstr "{JAPAN ONLY}Disclosure of financial statement by No. xx in the FIEA"
 msgid "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
 msgstr "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
 
+msgid "{JAPAN ONLY}Does Not Touch"
+msgstr "{JAPAN ONLY}Does Not Touch"
+
 msgid "{JAPAN ONLY}Download"
 msgstr "{JAPAN ONLY}Download"
 
+msgid "{JAPAN ONLY}END-IN/END-OUT"
+msgstr "{JAPAN ONLY}END-IN/END-OUT"
+
 msgid "{JAPAN ONLY}Email us copies of your Identification Documents and My Number card."
 msgstr "{JAPAN ONLY}Email us copies of your Identification Documents and My Number card."
+
+msgid "{JAPAN ONLY}Ends Between"
+msgstr "{JAPAN ONLY}Ends Between"
+
+msgid "{JAPAN ONLY}Ends Outside"
+msgstr "{JAPAN ONLY}Ends Outside"
 
 msgid "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
 msgstr "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
@@ -7749,6 +7848,15 @@ msgstr "{JAPAN ONLY}For both call and put options, if the underlying asset price
 
 msgid "{JAPAN ONLY}For full details of the documents we can accept please download the following guide:"
 msgstr "{JAPAN ONLY}For full details of the documents we can accept please download the following guide:"
+
+msgid "{JAPAN ONLY}Goes Outside"
+msgstr "{JAPAN ONLY}Goes Outside"
+
+msgid "{JAPAN ONLY}HIGH/LOW"
+msgstr "{JAPAN ONLY}HIGH/LOW"
+
+msgid "{JAPAN ONLY}Higher"
+msgstr "{JAPAN ONLY}Higher"
 
 msgid "{JAPAN ONLY}HirooMiyaya 3F, 1-9-16 Hiroo, Shibuya, Tokyo, 150-0012"
 msgstr "{JAPAN ONLY}HirooMiyaya 3F, 1-9-16 Hiroo, Shibuya, Tokyo, 150-0012"
@@ -7876,6 +7984,9 @@ msgstr "{JAPAN ONLY}Knowledge test list item 4"
 msgid "{JAPAN ONLY}Knowledge test list item 5"
 msgstr "{JAPAN ONLY}Knowledge test list item 5"
 
+msgid "{JAPAN ONLY}Lower"
+msgstr "{JAPAN ONLY}Lower"
+
 msgid "{JAPAN ONLY}Main business"
 msgstr "{JAPAN ONLY}Main business"
 
@@ -7963,8 +8074,8 @@ msgstr "{JAPAN ONLY}Registration"
 msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "{JAPAN ONLY}Regulation & Tax"
 
-msgid "{JAPAN ONLY}SELL price  per unit"
-msgstr "{JAPAN ONLY}SELL price  per unit"
+msgid "{JAPAN ONLY}STAY-IN/BREAK-OUT"
+msgstr "{JAPAN ONLY}STAY-IN/BREAK-OUT"
 
 msgid "{JAPAN ONLY}Section 1: Structure"
 msgstr "{JAPAN ONLY}Section 1: Structure"
@@ -7987,8 +8098,14 @@ msgstr "{JAPAN ONLY}Short positions in FX Binary Options must be covered by init
 msgid "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 msgstr "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 
+msgid "{JAPAN ONLY}Stays Between"
+msgstr "{JAPAN ONLY}Stays Between"
+
 msgid "{JAPAN ONLY}Summary of Specifications"
 msgstr "{JAPAN ONLY}Summary of Specifications"
+
+msgid "{JAPAN ONLY}TOUCH /NO-TOUCH"
+msgstr "{JAPAN ONLY}TOUCH /NO-TOUCH"
 
 msgid "{JAPAN ONLY}Take knowledge test"
 msgstr "{JAPAN ONLY}Take knowledge test"
@@ -8071,6 +8188,9 @@ msgstr "{JAPAN ONLY}To compensate for any rise in the price of an underlying ass
 msgid "{JAPAN ONLY}To invest a binary options investment accurately, the customer are required knowledge and experience related to derivative transactions."
 msgstr "{JAPAN ONLY}To invest a binary options investment accurately, the customer are required knowledge and experience related to derivative transactions."
 
+msgid "{JAPAN ONLY}Touches"
+msgstr "{JAPAN ONLY}Touches"
+
 msgid "{JAPAN ONLY}Trading & Hedging"
 msgstr "{JAPAN ONLY}Trading & Hedging"
 
@@ -8079,9 +8199,6 @@ msgstr "{JAPAN ONLY}Trading Guide"
 
 msgid "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
 msgstr "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
-
-msgid "{JAPAN ONLY}Units"
-msgstr "{JAPAN ONLY}Units"
 
 msgid "{JAPAN ONLY}Unless special arrangements are made, cooling-off will not be available after OTC binary options trading contract has been made."
 msgstr "{JAPAN ONLY}Unless special arrangements are made, cooling-off will not be available after OTC binary options trading contract has been made."
@@ -8109,6 +8226,42 @@ msgstr "{JAPAN ONLY}Win Loss Ratio"
 
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
+
+msgid "{JAPAN ONLY}day"
+msgstr "{JAPAN ONLY}day"
+
+msgid "{JAPAN ONLY}days"
+msgstr "{JAPAN ONLY}days"
+
+msgid "{JAPAN ONLY}hour"
+msgstr "{JAPAN ONLY}hour"
+
+msgid "{JAPAN ONLY}hours"
+msgstr "{JAPAN ONLY}hours"
+
+msgid "{JAPAN ONLY}minute"
+msgstr "{JAPAN ONLY}minute"
+
+msgid "{JAPAN ONLY}minutes"
+msgstr "{JAPAN ONLY}minutes"
+
+msgid "{JAPAN ONLY}month"
+msgstr "{JAPAN ONLY}month"
+
+msgid "{JAPAN ONLY}months"
+msgstr "{JAPAN ONLY}months"
+
+msgid "{JAPAN ONLY}week"
+msgstr "{JAPAN ONLY}week"
+
+msgid "{JAPAN ONLY}weeks"
+msgstr "{JAPAN ONLY}weeks"
+
+msgid "{JAPAN ONLY}year"
+msgstr "{JAPAN ONLY}year"
+
+msgid "{JAPAN ONLY}years"
+msgstr "{JAPAN ONLY}years"
 
 msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 msgstr "可交易外匯、指數、商品及智慧指數的二元期權線上交易平台"
@@ -8155,11 +8308,25 @@ msgstr "支付代理轉帳"
 msgid "Sharp Prices. Smart Trading."
 msgstr "精準報價，智慧交易。"
 
+#, fuzzy
+#| msgid "Webtrader"
+msgid "MetaTrader"
+msgstr "Webtrader"
+
 msgid "Account Details"
 msgstr "帳戶詳細資料"
 
 msgid "Terms and Conditions Approval"
 msgstr "條款和條件審批"
+
+msgid "Trading with MetaTrader 5"
+msgstr ""
+
+#~ msgid "{JAPAN ONLY}BUY price per unit"
+#~ msgstr "{JAPAN ONLY}BUY price per unit"
+
+#~ msgid "{JAPAN ONLY}SELL price  per unit"
+#~ msgstr "{JAPAN ONLY}SELL price  per unit"
 
 #~ msgid "{JAPAN ONLY}December 2015"
 #~ msgstr "{JAPAN ONLY}December 2015"
@@ -9960,9 +10127,6 @@ msgstr "條款和條件審批"
 
 #~ msgid "Week"
 #~ msgstr "週"
-
-#~ msgid "Weekly"
-#~ msgstr "每週"
 
 #~ msgid "Weeks"
 #~ msgstr "週數"
@@ -12491,9 +12655,6 @@ msgstr "條款和條件審批"
 #~ msgid "Your secret answer is too short.  Please enter at least 4 characters."
 #~ msgstr "您的密碼保護問題答案過短。請輸入至少 4 個字元。"
 
-#~ msgid "details"
-#~ msgstr "詳細資料"
-
 #~ msgid "maximum is"
 #~ msgstr "最大為"
 
@@ -13572,9 +13733,6 @@ msgstr "條款和條件審批"
 
 #~ msgid "At least 6 characters"
 #~ msgstr "6 - 25 個字元"
-
-#~ msgid "Average"
-#~ msgstr "平均"
 
 #~ msgid "Average Change"
 #~ msgstr "平均變更"
