@@ -3,101 +3,100 @@ var securityws = (function(){
     var $form,
         init_done;
 
-    var clearErrors = function(){
+    function clearErrors() {
         $("#SecuritySuccessMsg").text('');
         $("#invalidinputfound").text('');
         $('#errorcashierlockpassword1').contents().filter(function () {
-          return this.nodeType === 3;
+          return this.nodeType === Node.TEXT_NODE;
         }).remove();
-    };
+    }
 
-    var init = function(){
-        init_done = true;
-
-        $form   = $("#changeCashierLock");
-
-        clearErrors();
-
-        if(checkIsVirtual()) {
+    function init() {
+        if (init_done) {
             return;
         }
-
-        $form   = $("#changeCashierLock");
+        init_done = true;
+        $form     = $("#changeCashierLock");
         clearErrors();
+
+        if (checkIsVirtual()) {
+            return;
+        }
 
         var loginToken = CommonData.getApiToken();
         $form.find("button").on("click", function(e){
             e.preventDefault();
             e.stopPropagation();
-            if(validateForm() === false){
+            if (!validateForm()) {
                 return false;
             }
-            BinarySocket.send({"authorize": loginToken, "passthrough": {"value": $(this).attr("value") === "Update" ? "lock_password" : "unlock_password"}});
+            BinarySocket.send({
+                "authorize": loginToken,
+                "passthrough": {
+                    "value": $(this).attr("value") === "Update" ? "lock_password" : "unlock_password"
+                }
+            });
         });
-        BinarySocket.send({"authorize": loginToken, "passthrough": {"value": "is_locked"}});
-    };
+        BinarySocket.send({
+            "authorize": loginToken,
+            "passthrough": {"value": "is_locked"}
+        });
+    }
 
-    var checkIsVirtual = function(){
-        if(page.client.is_virtual()) {
+    function checkIsVirtual() {
+        if (page.client.is_virtual()) {
             $form.hide();
             $('#SecuritySuccessMsg').addClass('notice-msg center-text').text(Content.localize().textFeatureUnavailable);
             return true;
         }
         return false;
-    };
+    }
 
-    var validateForm = function(){
+    function validateForm(){
         var isValid = true;
         clearErrors();
 
-        var pwd1 = document.getElementById("cashierlockpassword1").value,
-            pwd2 = document.getElementById("cashierlockpassword2").value,
-            errorPassword = document.getElementById('errorcashierlockpassword1'),
-            errorRPassword = document.getElementById('errorcashierlockpassword2'),
+        var pwd1 = $("#cashierlockpassword1").val(),
+            pwd2 = $("#cashierlockpassword2").val(),
+            errorPassword  = $('#errorcashierlockpassword1'),
+            errorRPassword = $('#errorcashierlockpassword2'),
             isVisible = $("#repasswordrow").is(':visible');
 
-        if(isVisible === true){
-          if (!Validate.errorMessagePassword(pwd1, pwd2, errorPassword, errorRPassword)){
-            isValid = false;
-          }
+        if (isVisible) {
+          isValid = !!Validate.errorMessagePassword(pwd1, pwd2, errorPassword, errorRPassword);
         } else if (!/[ -~]{6,25}/.test(pwd1)) {
-          errorPassword.textContent = Content.errorMessage('min', 6);
+          errorPassword.text(Content.errorMessage('min', 6));
           isValid = false;
         }
         return isValid;
-    };
-    var isAuthorized =  function(response){
-        if(response.echo_req.passthrough){
-            var option = response.echo_req.passthrough.value;
-            var pwd = $("#cashierlockpassword1").val();
+    }
 
-            switch(option){
-                case   "lock_password" :
-                        BinarySocket.send({
-                            "cashier_password": "1",
-                            "lock_password": pwd
-                        });
-                        break;
-                case   "unlock_password" :
-                        BinarySocket.send({
-                            "cashier_password": "1",
-                            "unlock_password": pwd
-                        });
-                        break;
-                case   "is_locked" :
-                        BinarySocket.send({
-                            "cashier_password": "1",
-                            "passthrough" : {"value" : "lock_status"}
-                        });
-                        break ;
-                default:
-                        if(!init_done) {
-                            init();
-                        }
-                        break;
-            }
+    function isAuthorized(response) {
+        var passthrough = response.echo_req.passthrough;
+        if (!passthrough) return;
+
+        var params;
+        var pwd = $("#cashierlockpassword1").val();
+
+        switch(passthrough.value) {
+            case "lock_password":
+                params = {"lock_password": pwd};
+                break;
+            case "unlock_password":
+                params = {"unlock_password": pwd};
+                break;
+            case "is_locked":
+                params = {"passthrough" : {"value" : "lock_status"}};
+                break ;
+            default:
+                init();
+                return;
         }
-    };
+
+        params.cashier_password = "1";
+        BinarySocket.send(params);
+    }
+
     var responseMessage = function(response){
 
        var resvalue;
@@ -153,14 +152,13 @@ var securityws = (function(){
         return;
     };
     var SecurityApiResponse = function(response){
-        if(checkIsVirtual()) {
+        if (checkIsVirtual()) {
             return;
         }
         var type = response.msg_type;
-        if (type === "cashier_password" || (type === "error" && "cashier_password" in response.echo_req)){
+        if (type === "cashier_password" || "cashier_password" in response.echo_req) {
            responseMessage(response);
-        }else if(type === "authorize" || (type === "error" && "authorize" in response.echo_req))
-        {
+        } else if (type === "authorize" || "authorize" in response.echo_req) {
             isAuthorized(response);
         }
     };
