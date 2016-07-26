@@ -5,10 +5,13 @@ var GTM = (function() {
     "use strict";
 
     var gtm_applicable = function() {
-      if (getAppId() === '1' && getSocketURL() === 'wss://ws.binaryws.com/websockets/v3') {
-        return true;
-      }
-      return false;
+        if (page.client.is_virtual() && page.client.residence === 'jp') {
+            return false;
+        }
+        if (getAppId() === '1' && getSocketURL() === 'wss://ws.binaryws.com/websockets/v3') {
+            return true;
+        }
+        return false;
     };
 
     var gtm_data_layer_info = function(data) {
