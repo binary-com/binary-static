@@ -3,6 +3,13 @@ var securityws = (function(){
     var $form,
         init_done;
 
+    var states = {
+        GET_LOCK:   'lock_status',
+        TRY_LOCK:   'lock_password',
+        TRY_UNLOCK: 'unlock_password',
+        LOCKED:     'is_locked',
+    };
+
     function clearErrors() {
         $("#SecuritySuccessMsg").text('');
         $("#invalidinputfound").text('');
@@ -79,15 +86,15 @@ var securityws = (function(){
         var pwd = $("#cashierlockpassword1").val();
 
         switch(passthrough.value) {
-            case "lock_password":
+            case states.TRY_LOCK:
                 params = {"lock_password": pwd};
                 break;
-            case "unlock_password":
+            case states.TRY_UNLOCK:
                 params = {"unlock_password": pwd};
                 break;
-            case "is_locked":
+            case states.LOCKED:
                 params = {"passthrough" : {"value" : "lock_status"}};
-                break ;
+                break;
             default:
                 init();
                 return;
