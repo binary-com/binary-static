@@ -204,7 +204,7 @@ var MetaTraderUI = (function() {
             return showPageError(response.error.message, false);
         }
 
-        var accType = response.mt5_get_settings.group.split('\\')[0];
+        var accType = /^demo/.test(response.mt5_get_settings.group) ? 'demo' : 'real';
         mt5Accounts[accType] = response.mt5_get_settings;
         displayAccount(accType);
     };
