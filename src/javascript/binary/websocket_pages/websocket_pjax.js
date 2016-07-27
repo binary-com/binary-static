@@ -55,6 +55,14 @@ pjax_config_page_require_auth("user/settings/api_tokenws", function() {
     };
 });
 
+pjax_config_page_require_auth("user/settings/self_exclusionws", function() {
+    return {
+        onLoad: function() {
+            SelfExclusionWS.init();
+        }
+    };
+});
+
 pjax_config_page_require_auth("user/settings/metatrader", function() {
     return {
         onLoad: function() {

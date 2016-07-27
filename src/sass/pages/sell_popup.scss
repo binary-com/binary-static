@@ -53,7 +53,9 @@
         }
         #sell_content_wrapper {
             max-height: 90vh;
-            overflow: scroll;
+            overflow: auto;
+            overflow-x: hidden;
+            -ms-overflow-x: hidden;
             #sell_details_chart_wrapper {
                 border-right: 1px solid $COLOR_DARK_GRAY;
                 margin-right: -1px;
