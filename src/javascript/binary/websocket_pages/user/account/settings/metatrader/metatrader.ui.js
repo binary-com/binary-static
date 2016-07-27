@@ -45,7 +45,7 @@ var MetaTraderUI = (function() {
     };
 
     var displayAccount = function(accType) {
-        $('#form-new-' + accType).remove();
+        $('#form-new-' + accType).addClass(hiddenClass);
         var $details = $('<div/>').append($(
             makeTextRow('Login', mt5Accounts[accType].login) +
             makeTextRow('Balance', currency + ' ' + mt5Accounts[accType].balance) +
@@ -53,6 +53,23 @@ var MetaTraderUI = (function() {
             // makeTextRow('Leverage', mt5Accounts[accType].leverage)
         ));
         $('#details-' + accType).html($details.html());
+
+        // display deposit form
+        if(accType === 'real') {
+            if(page.client.is_virtual()) {
+                $('#deposit-real').addClass(hiddenClass);
+            } else {
+                $('#deposit-real').removeClass(hiddenClass);
+                $form = $('#form-deposit-real');
+                $form.find('.binary-login').text(page.client.loginid);
+                $form.find('.mt-login').text(mt5Accounts[accType].login);
+                $form.find('button').unbind('click').click(function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    depositToMTAccount();
+                });
+            }
+        }
     };
 
     var makeTextRow = function(label, value) {
@@ -62,7 +79,7 @@ var MetaTraderUI = (function() {
     var createNewAccount = function() {
         if(formValidate()) {
             var isDemo = /demo/.test($form.attr('id'));
-            MetaTraderData.requestNewAccount({
+            MetaTraderData.requestSend({
                 'mt5_new_account' : 1,
                 'account_type'    : isDemo ? 'demo' : 'vanuatu',
                 'email'           : TUser.get().email,
@@ -70,6 +87,17 @@ var MetaTraderUI = (function() {
                 'mainPassword'    : $form.find('#txtMainPass').val(),
                 'investPassword'  : $form.find('#txtInvestPass').val(),
                 'leverage'        : '100' // $form.find('#ddlLeverage').val()
+            });
+        }
+    };
+
+    var depositToMTAccount = function() {
+        if(formValidate('deposit')) {
+            MetaTraderData.requestSend({
+                'mt5_deposit' : 1,
+                'from_binary' : page.client.loginid,
+                'to_mt5'      : mt5Accounts[accType].login,
+                'amount'      : $form.find('#txtAmount').val()
             });
         }
     };
@@ -134,6 +162,7 @@ var MetaTraderUI = (function() {
                         if($form.contents().length === 0) {
                             $('#form-new-demo').contents().clone().appendTo('#form-new-real');
                             $form.find('.account-type').text(text.localize('Real'));
+                            $form.find('#name-row').addClass(hiddenClass);
                             passwordMeter();
                         }
                         $form.removeClass(hiddenClass);
@@ -198,7 +227,7 @@ var MetaTraderUI = (function() {
     };
 
     var responseLoginDetails = function(response) {
-        if(response.hasOwnProperty('error')){
+        if(response.hasOwnProperty('error')) {
             return showPageError(response.error.message, false);
         }
 
@@ -209,12 +238,26 @@ var MetaTraderUI = (function() {
     };
 
     var responseNewAccount = function(response) {
-        if(response.hasOwnProperty('error')){
+        if(response.hasOwnProperty('error')) {
             return showFormMessage(response.error.message, false);
         }
 
         showFormMessage('Your new account has been created.', true);
         MetaTraderData.requestLoginDetails(response.mt5_new_account.login);
+    };
+
+    var responseDeposit = function(response) {
+        $form = $('form-deposit-real');
+        if(response.hasOwnProperty('error')) {
+            return showFormMessage(response.error.message, false);
+        }
+
+        if(+response.mt5_deposit === 1) {
+            showFormMessage(text.localize('Deposit is done. Transaction ID: ') + response.binary_transaction_id, true);
+            MetaTraderData.requestLoginDetails(response.echo_req.to_mt5);
+        } else {
+            showFormMessage('Sorry, an error occurred while processing your request.', false);
+        }
     };
 
     // --------------------------
@@ -233,29 +276,42 @@ var MetaTraderUI = (function() {
         }
     };
 
-    var formValidate = function() {
+    var formValidate = function(formName) {
         clearError();
         isValid = true;
 
-        // passwords
-        var passwords = ['#txtMainPass', '#txtMainPass2', '#txtInvestPass'];
-        passwords.map(function(elmID){
+        // deposit form
+        if(formName === 'deposit') {
+            var amount = $form.find('#txtAmount').val();
             var errMsg = MetaTrader.validatePassword($form.find(elmID).val());
             if(errMsg) {
-                showError(elmID, errMsg);
+                showError('#txtAmount', errMsg);
+                isValid = false;
+            } else if(amount > TUser.get().balance) {
+                showError('#txtAmount', text.localize('You cannot deposit more than your current balance:') + ' ' +
+                    TUser.get().currency + ' ' + TUser.get().balance);
                 isValid = false;
             }
-        });
-        if($form.find('#txtMainPass').val() !== $form.find('#txtMainPass2').val()) {
-            showError('#txtMainPass2', Content.localize().textPasswordsNotMatching);
-            isValid = false;
-        }
-        // name
-        if(/demo/.test($form.attr('id'))) {
-            var errMsg = MetaTrader.validateName($form.find('#txtName').val());
-            if(errMsg) {
-                showError('#txtName', errMsg);
+        } else { // create new account form
+            var passwords = ['#txtMainPass', '#txtMainPass2', '#txtInvestPass'];
+            passwords.map(function(elmID){
+                var errMsg = MetaTrader.validatePassword($form.find(elmID).val());
+                if(errMsg) {
+                    showError(elmID, errMsg);
+                    isValid = false;
+                }
+            });
+            if($form.find('#txtMainPass').val() !== $form.find('#txtMainPass2').val()) {
+                showError('#txtMainPass2', Content.localize().textPasswordsNotMatching);
                 isValid = false;
+            }
+            // name
+            if(/demo/.test($form.attr('id'))) {
+                var errMsgName = MetaTrader.validateName($form.find('#txtName').val());
+                if(errMsgName) {
+                    showError('#txtName', errMsgName);
+                    isValid = false;
+                }
             }
         }
 
@@ -270,7 +326,7 @@ var MetaTraderUI = (function() {
     var clearError = function(selector) {
         $(selector ? selector : 'p.' + errorClass).remove();
         $('#errorMsg').html('').addClass(hiddenClass);
-        $('#formMessage').html('');
+        $form.find('#formMessage').html('');
     };
 
     var showFormMessage = function(msg, isSuccess) {

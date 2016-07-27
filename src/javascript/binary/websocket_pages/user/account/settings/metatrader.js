@@ -36,8 +36,21 @@ var MetaTrader = (function(){
         return errMsg;
     };
 
+    var validateAmount = function(amount) {
+        var errMsg = '';
+
+        if (!/^.+$/.test(amount)) {
+            errMsg = Content.errorMessage('req');
+        } else if(!(/^\d+(\.\d+)?$/).test(amount) || !$.isNumeric(amount)) {
+            errMsg = Content.errorMessage('reg', [numbers]);
+        }
+
+        return errMsg;
+    };
+
     return {
         validatePassword: validatePassword,
-        validateName: validateName
+        validateName    : validateName,
+        validateAmount  : validateAmount,
     };
 }());

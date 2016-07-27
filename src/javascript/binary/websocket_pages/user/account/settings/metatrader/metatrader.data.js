@@ -22,7 +22,7 @@ var MetaTraderData = (function() {
         }
     };
 
-    var requestNewAccount = function(request) {
+    var requestSend = function(request) {
         BinarySocket.send(request);
     };
 
@@ -54,6 +54,9 @@ var MetaTraderData = (function() {
             case 'mt5_new_account':
                 MetaTraderUI.responseNewAccount(response);
                 break;
+            case 'mt5_deposit':
+                MetaTraderUI.responseDeposit(response);
+                break;
         }
     };
 
@@ -62,7 +65,7 @@ var MetaTraderData = (function() {
         responseHandler      : responseHandler,
         requestLoginList     : requestLoginList,
         requestLoginDetails  : requestLoginDetails,
-        requestNewAccount    : requestNewAccount,
+        requestSend          : requestSend,
         requestAccountStatus : requestAccountStatus,
         requestLandingCompany: requestLandingCompany,
     };

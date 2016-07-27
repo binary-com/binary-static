@@ -74,6 +74,30 @@
                 </div>
                 <form id="form-new-real" class="invisible"></form>
                 <div id="details-real"></div>
+                <div id="deposit-real" class="invisible">
+                    <div class="separator-line"></div>
+                    <h3>[% l('Deposit from Binary account') %]</h3>
+                    <form id=form-deposit-real>
+                        <p>[% l("Deposit to your MetaTrader account from Binary account:") %]</p>
+                        <div class="gr-row gr-padding-10">
+                            <div class="gr-6 form_label">[% l('Deposit from') %]</div>
+                            <div class="gr-6 form_label align-start binary-login"></div>
+                        </div>
+                        <div class="gr-row gr-padding-10">
+                            <div class="gr-6 form_label">[% l('Deposit to') %]</div>
+                            <div class="gr-6 form_label align-start mt-login"></div>
+                        </div>
+                        <div class="gr-row gr-padding-10">
+                            <div class="gr-6 form_label"><label for="txtAmount">[% l('Amount') %]</label></div>
+                            <div class="gr-6">USD <input type="number" id="txtAmount" /></div>
+                        </div>
+                        <div class="gr-row gr-padding-10">
+                            <div class="gr-6 form_label"></div>
+                            <div class="gr-6"><button id="btnDeposit" class="button">[% l('Deposit') %]</button></div>
+                        </div>
+                    </form>
+                    <div id="formMessage" class="center-text"></div>
+                </div>
             </div>
         </div>
     </div>
