@@ -103,24 +103,20 @@ var SecurityWS = (function() {
     }
 
     function validateForm() {
-        var isValid = true;
         clearErrors();
+        var pwd1 = $("#cashierlockpassword1").val(),
+            pwd2 = $("#cashierlockpassword2").val(),
+            errorPassword  = $('#errorcashierlockpassword1')[0],
+            errorRPassword = $('#errorcashierlockpassword2')[0],
+            checkSecondRow = current_state === STATE.UNLOCKED;
 
-        var pwd1 = document.getElementById("cashierlockpassword1").value,
-            pwd2 = document.getElementById("cashierlockpassword2").value,
-            errorPassword = document.getElementById('errorcashierlockpassword1'),
-            errorRPassword = document.getElementById('errorcashierlockpassword2'),
-            isVisible = $("#repasswordrow").is(':visible');
-
-        if(isVisible === true){
-          if (!Validate.errorMessagePassword(pwd1, pwd2, errorPassword, errorRPassword)){
-            isValid = false;
-          }
+        if (checkSecondRow && !Validate.errorMessagePassword(pwd1, pwd2, errorPassword, errorRPassword)) {
+            return false;
         } else if (!/[ -~]{6,25}/.test(pwd1)) {
           errorPassword.textContent = Content.errorMessage('min', 6);
-          isValid = false;
+          return false;
         }
-        return isValid;
+        return true;
     }
 
     function makeTryingRequest() {
@@ -135,6 +131,14 @@ var SecurityWS = (function() {
 
     function tryStatus(response) {
         if (response.error) {
+            switch (current_state) {
+                case STATE.TRY_UNLOCK:
+                    current_state = STATE.LOCKED;
+                    break;
+                case STATE.TRY_LOCK:
+                    current_state = STATE.UNLOCKED;
+                    break;
+            }
             $("#invalidinputfound").text(text.localize(response.error.message));
             return;
         }
