@@ -151,8 +151,8 @@ var MetaTraderUI = (function() {
 
                     $('#msgRealAccount').html(
                         '<strong>' + text.localize('To create a Real account for MetaTrader:') + '</strong> ' +
-                        (hasRealBinaryAccount ? text.localize('please switch to your Real account.') :
-                            text.localize('please <a href="[_1]">upgrade to Real account</a>.', [page.url.url_for('new_account/realws')]))
+                        (hasRealBinaryAccount ? text.localize('Please switch to your Real account.') :
+                            text.localize('Please <a href="[_1]">upgrade to Real account</a>.', [page.url.url_for('new_account/realws')]))
                     ).removeClass(hiddenClass);
                 } else {
                     if(!isAuthenticated && !page.client.is_virtual()) {
@@ -253,7 +253,7 @@ var MetaTraderUI = (function() {
         }
 
         if(+response.mt5_deposit === 1) {
-            showFormMessage(text.localize('Deposit is done. Transaction ID: ') + response.binary_transaction_id, true);
+            showFormMessage(text.localize('Deposit is done. Transaction ID:') + ' ' + response.binary_transaction_id, true);
             MetaTraderData.requestLoginDetails(response.echo_req.to_mt5);
         } else {
             showFormMessage('Sorry, an error occurred while processing your request.', false);
