@@ -6,7 +6,6 @@ var MetaTraderUI = (function() {
         $form,
         isValid,
         isAuthenticated,
-        hasRealBinaryAccount,
         mt5Logins,
         mt5Accounts;
 
@@ -23,20 +22,7 @@ var MetaTraderUI = (function() {
 
         Content.populate();
 
-        // check if this client has real binary account
-        hasRealBinaryAccount = false;
-        page.user.loginid_array.map(function(loginInfo) {
-            if(loginInfo.real) hasRealBinaryAccount = true;
-        });
-
-        var isVirtual = page.client.is_virtual();
-        if (hasRealBinaryAccount && !/^CR/.test($.cookie('loginid_list'))) { // doesn't have a CR
-            notEligible();
-        } else if (isVirtual && !hasRealBinaryAccount) { // check if it can be upgraded to CR
-            MetaTraderData.requestLandingCompany();
-        } else {
-            initOk();
-        }
+        MetaTraderData.requestLandingCompany();
     };
 
     var initOk = function() {
@@ -123,6 +109,12 @@ var MetaTraderUI = (function() {
         } else if(/real/.test(accType)) {
             if(!hasMTReal) {
                 if(page.client.is_virtual()) {
+                    // check if this client has real binary account
+                    var hasRealBinaryAccount = false;
+                    page.user.loginid_array.map(function(loginInfo) {
+                        if(loginInfo.real) hasRealBinaryAccount = true;
+                    });
+
                     $('#msgRealAccount').html(
                         '<strong>' + text.localize('To create a Real account for MetaTrader:') + '</strong> ' +
                         (hasRealBinaryAccount ? text.localize('please switch to your Real account.') :
