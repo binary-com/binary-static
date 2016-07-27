@@ -17,7 +17,7 @@ var MetaTraderData = (function() {
     };
 
     var requestLoginDetails = function(login) {
-        if(login && login.length) {
+        if(login && login > 0) {
             BinarySocket.send({'mt5_get_settings': 1, 'login': login});
         }
     };

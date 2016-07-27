@@ -6,6 +6,7 @@ var MetaTraderUI = (function() {
         $form,
         isValid,
         isAuthenticated,
+        currency,
         mt5Logins,
         mt5Accounts;
 
@@ -17,6 +18,7 @@ var MetaTraderUI = (function() {
 
         hiddenClass = 'invisible';
         errorClass  = 'errorfield';
+        currency    = 'USD';
         mt5Logins   = [];
         mt5Accounts = {};
 
@@ -26,27 +28,15 @@ var MetaTraderUI = (function() {
     };
 
     var initOk = function() {
+        MetaTraderData.requestLoginList();
+
         // Tab
         $('.sidebar-nav li a').click(function(e) {
             e.preventDefault();
             displayTab($(this).attr('href').substring(1));
         });
 
-        var tab = page.url.location.hash.substring(1);
-        if(!tab || !/demo|real|howto/.test(tab)) {
-            tab = 'demo';
-        }
-        // mt5 real account is only for CR clients
-        if(!page.client.is_virtual() && TUser.get().landing_company_name !== 'costarica') {
-            $('#nav-real, #section-real').remove();
-            if(tab === 'real') {
-                tab = 'demo';
-            }
-        }
-        displayTab(tab);
         $('#mt-container').removeClass(hiddenClass);
-
-        MetaTraderData.requestLoginList();
     };
 
     var notEligible = function() {
@@ -56,19 +46,27 @@ var MetaTraderUI = (function() {
 
     var displayAccount = function(accType) {
         $('#form-new-' + accType).remove();
-        var $details = $('<div/>').append($('<h3>' + text.localize(accType === 'demo' ? 'Demo Account' : 'Real Account') + ' #' + mt5Accounts[accType].login + '</h3>' +
-            '<div class="gr-4">' + text.localize('Balance') + '</div><div class="gr-8">' + mt5Accounts[accType].balance + '</div>' +
-            '<div class="gr-4">' + text.localize('Leverage') + '</div><div class="gr-8">' + mt5Accounts[accType].leverage + '</div>'
+        var $details = $('<div/>').append($(
+            makeTextRow('Login', mt5Accounts[accType].login) +
+            makeTextRow('Balance', currency + ' ' + mt5Accounts[accType].balance) +
+            makeTextRow('Name', mt5Accounts[accType].name)
+            // makeTextRow('Leverage', mt5Accounts[accType].leverage)
         ));
         $('#details-' + accType).html($details.html());
     };
 
+    var makeTextRow = function(label, value) {
+        return '<div class="gr-row gr-padding-10"><div class="gr-4">' + text.localize(label) + '</div><div class="gr-8">' + value + '</div></div>';
+    };
+
     var createNewAccount = function() {
         if(formValidate()) {
+            var isDemo = /demo/.test($form.attr('id'));
             MetaTraderData.requestNewAccount({
                 'mt5_new_account' : 1,
-                'account_type'    : /demo/.test($form.attr('id')) ? 'demo' : 'vanuatu',
+                'account_type'    : isDemo ? 'demo' : 'vanuatu',
                 'email'           : TUser.get().email,
+                'name'            : isDemo ? $form.find('#txtName').val() : TUser.get().fullname,
                 'mainPassword'    : $form.find('#txtMainPass').val(),
                 'investPassword'  : $form.find('#txtInvestPass').val(),
                 'leverage'        : '100' // $form.find('#ddlLeverage').val()
@@ -80,6 +78,13 @@ var MetaTraderUI = (function() {
     // ----- Tab Management -----
     // --------------------------
     var displayTab = function(tab) {
+        if(!tab) {
+            tab = page.url.location.hash.substring(1);
+            if(!tab || !/demo|real|howto/.test(tab)) {
+                tab = 'demo';
+            }
+        }
+
         // url
         window.history.replaceState(null, null, window.location.href.replace(/^(.*#).*/, '$1' + tab));
 
@@ -104,6 +109,7 @@ var MetaTraderUI = (function() {
             if(!hasMTDemo) {
                 $form = $('#form-new-demo');
                 $form.removeClass(hiddenClass);
+                $form.find('#name-row').removeClass(hiddenClass);
                 passwordMeter();
             }
         } else if(/real/.test(accType)) {
@@ -187,7 +193,7 @@ var MetaTraderUI = (function() {
                 MetaTraderData.requestLoginDetails(obj.login);
             });
         } else {
-            manageTabContents();
+            displayTab();
         }
     };
 
@@ -198,6 +204,7 @@ var MetaTraderUI = (function() {
 
         var accType = /^demo/.test(response.mt5_get_settings.group) ? 'demo' : 'real';
         mt5Accounts[accType] = response.mt5_get_settings;
+        displayTab();
         displayAccount(accType);
     };
 
@@ -230,6 +237,7 @@ var MetaTraderUI = (function() {
         clearError();
         isValid = true;
 
+        // passwords
         var passwords = ['#txtMainPass', '#txtMainPass2', '#txtInvestPass'];
         passwords.map(function(elmID){
             var errMsg = MetaTrader.validatePassword($form.find(elmID).val());
@@ -241,6 +249,14 @@ var MetaTraderUI = (function() {
         if($form.find('#txtMainPass').val() !== $form.find('#txtMainPass2').val()) {
             showError('#txtMainPass2', Content.localize().textPasswordsNotMatching);
             isValid = false;
+        }
+        // name
+        if(/demo/.test($form.attr('id'))) {
+            var errMsg = MetaTrader.validateName($form.find('#txtName').val());
+            if(errMsg) {
+                showError('#txtName', errMsg);
+                isValid = false;
+            }
         }
 
         return isValid;

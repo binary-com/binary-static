@@ -33,6 +33,10 @@
                             </select>
                         </div>
                     </div>
+                    <div id="name-row" class="gr-row gr-padding-10 invisible">
+                        <div class="gr-6 form_label"><label for="txtName">[% l('Your Name') %]</label></div>
+                        <div class="gr-6"><input type="text" id="txtName" maxlength="30" /></div>
+                    </div>
                     <div class="gr-row gr-padding-10">
                         <div class="gr-6 form_label"><label for="txtMainPass">[% l('Main Password (trading access)') %]</label></div>
                         <div class="gr-6">
@@ -45,11 +49,11 @@
                     </div>
                     <div class="gr-row gr-padding-10">
                         <div class="gr-6 form_label"><label for="txtMainPass2">[% l('Verify Main Password') %]</label></div>
-                        <div class="gr-6"><input type="password" id="txtMainPass2"></div>
+                        <div class="gr-6"><input type="password" id="txtMainPass2" /></div>
                     </div>
                     <div class="gr-row gr-padding-10">
                         <div class="gr-6 form_label"><label for="txtInvestPass">[% l('Investor Password (read-only access)') %]</label></div>
-                        <div class="gr-6"><input type="password" id="txtInvestPass"></div>
+                        <div class="gr-6"><input type="password" id="txtInvestPass" /></div>
                     </div>
                     <div class="gr-row gr-padding-10">
                         <div class="gr-6 form_label"></div>
