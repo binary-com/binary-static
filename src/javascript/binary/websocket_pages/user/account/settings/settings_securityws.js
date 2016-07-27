@@ -55,7 +55,7 @@ var SecurityWS = (function() {
     }
 
     function updatePage(config) {
-        $('#legend').text(text.localize(config.legend));
+        $('legend').text(text.localize(config.legend));
         $('#lockInfo').text(text.localize(config.info));
         $form.find('button')
             .attr('value', config.button)
@@ -159,7 +159,6 @@ var SecurityWS = (function() {
                 default:
                     break;
             }
-            return;
         } else if (response.msg_type === 'cashier_password') {
             switch (current_state) {
                 case STATE.QUERY_LOCKED:
