@@ -16,7 +16,7 @@ var ApplicationsUI = (function(){
         var columns = ['name', 'permissions', 'last_used', 'action'];
         flexTable = new FlexTableUI({
             container: containerSelector,
-            header: headers.map(text.localize),
+            header: headers.map(function(s) { return text.localize(s); }),
             id:     'applications-table',
             cols:   columns,
             data:   data,
@@ -43,7 +43,7 @@ var ApplicationsUI = (function(){
         $('#loading').remove();
         createTable(apps);
         if (!apps.length) {
-            flexTable.displayError(text.localize(messages.no_apps));
+            flexTable.displayError(text.localize(messages.no_apps), 7);
             return;
         }
     }

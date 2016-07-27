@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: I 18N\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-07-17 09:48+0000\n"
+"PO-Revision-Date: 2016-07-24 15:28+0000\n"
 "Last-Translator: Pham Minh Hieu <hphamv7@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/binary/static/vi/>\n"
 "Language: vi\n"
@@ -276,6 +276,9 @@ msgstr "Lịch sử đáng ghi nhận của %1"
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "Hệ thống của %1 hiện tại đang vượt quá 1 triệu giao dịch một ngày ( bao gồm tài khoản ảo)."
 
+msgid "%1’s Volatility Indices are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
+msgstr ""
+
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(thời gian tối thiểu, ví dụ 15 giây tối thiểu)tối thiểu"
 
@@ -489,6 +492,9 @@ msgstr "<strong>định giá 2 chiều</strong> - %1 định giá giao dịch v
 msgid "<strong>Additional business exposure:</strong> You will increase awareness of your services and generate new business."
 msgstr "<strong>Phát sinh giao dịch:</strong> Bạn sẽ hiểu biết thêm về dịch vụ của mình và có thể tạo thêm được giao dịch mới."
 
+msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
+msgstr ""
+
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>Tất cả thời hạn</strong> - từ 10 giây đến 365 ngày."
 
@@ -539,6 +545,9 @@ msgstr "<strong>Cao hơn/Thấp hơn</strong> - dự đoán xem thị trường 
 
 msgid "<strong>Higher/Lower</strong> - where you can profit from the market ending higher or lower than a target price."
 msgstr "<strong>Cao hơn/Thấp hơn</strong> - nơi bạn có thể có lãi khi thị trường kết thúc thấp hoặc cao hơn giá mục tiêu."
+
+msgid "<strong>Highly competitive spreads with no commission,</strong> offering leverage of up to 1:500"
+msgstr ""
 
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and Payment Agents."
 msgstr "<strong>TIẾT LỘ QUAN TRỌNG</strong> - %1 không liên kết với bất kỳ Đại lý Thanh toán nào nêu trên. Từng Đại lý thanh toán hoạt động với vai trò một nhà cung cấp dịch vụ độc lập và chưa được chứng thực, bảo đảm và chấp thuận bởi %1. KHÁCH HÀNG TỰ GIAO DỊCH VỚI CÁC ĐẠI LÝ THANH TOÁN VÀ CHỊU MỌI RỦI RO PHÁT SINH. Chúng tôi khuyên khách hàng nên tìm hiểu kỹ lịch sử hoạt động của các Đại lý Thanh toán trước khi gửi tiền cho họ. Dưới bất kỳ tình huống nào, %1 đều không chịu trách nhiệm cho những giao dịch giữa khách với các Đại lý Thanh toán nêu trên."
@@ -623,6 +632,9 @@ msgstr "<strong>Chỉ số cổ phiếu</strong> - giao dịch tất cả chỉ 
 
 msgid "<strong>Stock indices</strong> - trade all major worldwide stock indices."
 msgstr "<strong>Chỉ số cổ phiếu</strong> - giao dịch tất cả chỉ số cổ phiếu chính trên thế giới."
+
+msgid "<strong>Subscriptions to a wide range of Expert Advisors,</strong> automated trading applications from the MetaTrader Market."
+msgstr ""
 
 msgid "<strong>Take early profits</strong> - sell your long-term trades at market prices before they expire."
 msgstr "<strong>Nhận lãi sớm</strong> - bán giao dịch dài hạn với giá thị trường trước khi hết hạn."
@@ -837,6 +849,11 @@ msgstr "Mở tài khoản"
 
 msgid "Account Transfer"
 msgstr "Chuyển Tài khoản"
+
+#, fuzzy
+#| msgid "Account Opening"
+msgid "Account Type"
+msgstr "Mở tài khoản"
 
 msgid "Account balance: "
 msgstr "Số dư tài khoản: "
@@ -1563,6 +1580,9 @@ msgstr "Classification of assets requiring hedge"
 msgid "Click here to retry"
 msgstr "Vui lòng nhấp vào đây để thử lại"
 
+msgid "Click the button below to download MetaTrader."
+msgstr ""
+
 msgid "Client classification"
 msgstr "Phân loại khách hàng"
 
@@ -1959,6 +1979,14 @@ msgstr "Xác định vị trí của bạn"
 msgid "Delete"
 msgstr "Xóa"
 
+msgid "Demo"
+msgstr ""
+
+#, fuzzy
+#| msgid "Open Account"
+msgid "Demo Account"
+msgstr "Mở Tài khoản"
+
 msgid "Demonstrate the ability to think / act quickly and multi-task as needed to execute effective campaigns"
 msgstr "Chứng minh khả năng suy nghĩ/ phản ứng nhanh và thực hiện nhiều nhiệm vụ khi cần thiết để các chiến dịch được thực hiện hiệu quả"
 
@@ -2107,6 +2135,9 @@ msgstr "Tài khoản không hoạt động"
 #| msgid "Download"
 msgid "Download CSV"
 msgstr "Tải xuồng"
+
+msgid "Download MetaTrader for Windows"
+msgstr ""
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "Tạo sự tăng trưởng nhanh chóng và phát triển kinh doanh để hỗ trợ các mục tiêu bán hàng và tiếp thị của công ty"
@@ -2912,6 +2943,9 @@ msgstr "Nếu bạn cần trợ giúp, vui lòng liên hệ với đội
 msgid "If you need assistance feel free to contact our <a class=\"pjaxload\" href=\"%1\">Customer Support</a>."
 msgstr "Nếu bạn cần trợ giúp, vui lòng liên hệ với đội ngũ hỗ trợ khách hàng <a class=\"pjaxload\" href=\"%1\"></a>của chúng tôi."
 
+msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader’s website, please select “%1” from the list of available brokers."
+msgstr ""
+
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "Nếu bạn chọn \"Châu Á Giảm\", bạn sẽ giành chiến thắng nếu <strong> giá ở giây cuối cùng </strong> là <strong>thấp hơn</strong> so với <strong>trung bình</strong> của giá trong suốt giao dịch."
 
@@ -3065,6 +3099,11 @@ msgstr "Để mở rộng kinh doanh, %1 đang tuyển dụng thêm một Ban qu
 
 msgid "In order to support its continued growth, the Human Resources Group at %1 is seeking to place a highly competent administrator in a senior recruitment role. Please note that this is not a position suitable for an HR generalist, but should be of keen interest to a high level administrator with extensive experience in the global recruitment of managers and single technical contributors. A background in financial services and experience in the recruitment of senior professionals in IT and Quantitative Analytics would be ideal."
 msgstr "Nhằm hỗ trợ cho sự tăng trưởng của công ty, phòng Nhân Sự của %1 đang tìm kiếm một chuyên viên tuyển dụng nhân sự. Xin lưu ý rằng vị trí này không bao gồm tất cả các công việc liên quan đến nhân sự, hành chính, mà yêu cầu kĩ năng tuyển dụng tốt đã từng có kinh nghiệm của nhà quản lý tuyển dụng toàn cầu. Có kinh nghiệm trong lĩnh vực dịch vụ tài chính và kinh nghiệm tuyển dụng của một chuyên gia cao cấp cho ngành IT và Phân Tích Định Lượng là một lợi thế."
+
+#, fuzzy
+#| msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
+msgid "In order to trade using MetaTrader 5 platform, you'll first need to have a MetaTrader account."
+msgstr "Để truy cập vào các ứng dụng di động của chúng tôi và các ứng dụng của bên thứ ba, bạn cần phải tạo ra một mã token API."
 
 msgid "In providing these services, we are bound by the Act, any applicable regulations, bye-laws, licence conditions, guidelines, exchange requirements and other provisions or market practices (the \"Rules\"). In the event of conflict between these ST&Cs and the Rules, the latter should prevail."
 msgstr "Trong quá trình cung cấp những dịch vụ này, chúng tôi bị ràng buộc bởi Đạo Luật, quy định áp dụng, luật điện tử, điền kiện giấy phép, hướng dẫn, yêu cầu trao đổi và các quy định khác hoặc thông lệ thị trường (\"Quy tắc\"). Trong trường hợp có mâu thuẫn giữa những ST&C và Quy tắc này, thì quy tắc sau cùng nên được áp dụng."
@@ -3222,6 +3261,9 @@ msgstr "Đầu tư và Cổ tức"
 
 msgid "Investor Compensation Scheme"
 msgstr "Đề án Bồi thường Nhà đầu tư"
+
+msgid "Investor Password (read-only access)"
+msgstr ""
 
 msgid "Involved in evaluation of regulatory compliance and risk management. Work with the Head of Departments to improve business processes."
 msgstr "Tham gia đánh giá quản lý rủi ro và sự tuân thủ quy định. Làm việc với Trưởng Phòng các bộ phận để cải tiến quy trình kinh doanh."
@@ -3841,6 +3883,11 @@ msgstr "Less than 6 months"
 msgid "Level of Education"
 msgstr "Trình độ Học vấn"
 
+#, fuzzy
+#| msgid "Average"
+msgid "Leverage"
+msgstr "Trung bình"
+
 msgid "Leverage social-media tools and channels to identify, engage, and convert potential new customers and partners"
 msgstr "Tận dụng các kênh và công cụ truyền thông công cộng để xác nhận, thu hút và chuyển đổi những khách hàng và đối tác tiềm năng mới"
 
@@ -3877,6 +3924,11 @@ msgstr "Liên kết tới và trực tiếp khách hàng tới ứng dụng củ
 msgid "Links"
 msgstr "Các liên kết"
 
+#, fuzzy
+#| msgid "Further Instructions"
+msgid "Linux Instructions"
+msgstr "Chỉ dẫn bổ sung"
+
 msgid "Live chat:"
 msgstr "Tương tác trực tuyến:"
 
@@ -3885,6 +3937,9 @@ msgstr "Khóa quầy Thu ngân"
 
 msgid "Log in"
 msgstr "Đăng nhập"
+
+msgid "Log into the application using your MetaTrader account number (e.g., 829118) and your MetaTrader account password."
+msgstr ""
 
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "Đăng nhập vào tài khoản liên kết %1 của bạn và nhấp chuột vào: Tài chính, chỉ dẫn Thanh toán."
@@ -3930,6 +3985,14 @@ msgstr "Tấm chắn hàng rào thấp"
 
 msgid "MENA FFXPO Award"
 msgstr "Giải thưởng MENA FFXPO"
+
+#, fuzzy
+#| msgid "Specific Instructions"
+msgid "MacOS Instructions"
+msgstr "Chỉ dẫn Chi tiết"
+
+msgid "Main Password (trading access)"
+msgstr ""
 
 msgid "Maintain accurate system pricing parameters"
 msgstr "Giữ cho các thông số định giá hệ thống luôn chính xác"
@@ -4050,6 +4113,9 @@ msgstr "Ngày đáng nhớ"
 
 msgid "Memorable town/city"
 msgstr "Thị trấn/Thành phố đáng nhớ"
+
+msgid "MetaTrader Accounts Management"
+msgstr ""
 
 msgid "Method"
 msgstr "Phương thức"
@@ -4269,6 +4335,9 @@ msgstr "Người giao dịch mới có thể sử dụng sàn giao dịch 
 
 msgid "Now"
 msgstr "Bây giờ"
+
+msgid "Now Introducing MetaTrader 5 on %1"
+msgstr ""
 
 msgid "Number of ticks"
 msgstr "Số điểm"
@@ -5141,6 +5210,9 @@ msgstr "Rủi ro của các Sản phẩm Đầu tư"
 msgid "Run daily payments reports and report suspected fraud"
 msgstr "Chạy các báo cáo thanh toán hàng ngày và báo cáo nghi ngờ gian lận"
 
+msgid "Run the installation file and follow the instructions."
+msgstr ""
+
 msgid "Russia"
 msgstr "Nga"
 
@@ -5414,6 +5486,9 @@ msgstr "Thời gian bắt đầu"
 msgid "Start Trading"
 msgstr "Bắt đầu Giao dịch"
 
+msgid "Start Trading with MetaTrader 5"
+msgstr ""
+
 msgid "Start learning"
 msgstr "Bắt đầu học"
 
@@ -5545,6 +5620,12 @@ msgstr "Các Điều khoản và Điều kiện Bổ sung cho Sản phẩ
 
 msgid "Supporting the Group's global recruiting and talent management needs"
 msgstr "Hỗ trợ Nhóm tuyển dụng toàn cầu và quản lý nhân tài của Tập đoàn"
+
+msgid "Take advantage of numerous benefits, including:"
+msgstr ""
+
+msgid "Take your trading to the next level through this powerful interface, recognised as the benchmark standard worldwide."
+msgstr ""
 
 msgid "Talk to us"
 msgstr "Nói với chúng tôi"
@@ -6525,6 +6606,11 @@ msgstr "Định dạng của mã xác thực không chính xác."
 msgid "Verification token"
 msgstr "Mã Token Xác minh"
 
+#, fuzzy
+#| msgid "Verify new password"
+msgid "Verify Main Password"
+msgstr "Xác thực mật khẩu mới"
+
 msgid "Verify new password"
 msgstr "Xác thực mật khẩu mới"
 
@@ -6755,6 +6841,11 @@ msgstr "Thứ Tư"
 
 msgid "Week of"
 msgstr "Tuần của"
+
+#, fuzzy
+#| msgid "Weekly"
+msgid "Weekday"
+msgstr "Hàng tuần"
 
 msgid "Weekend quotes"
 msgstr "Yết giá cuối tuần"
@@ -7477,6 +7568,9 @@ msgstr "ngày"
 msgid "deposit"
 msgstr "gửi tiền"
 
+msgid "details"
+msgstr "chi tiết"
+
 #, fuzzy
 #| msgid "e.g. www.binaryqa36.com"
 msgid "e.g. ws.binaryws.com"
@@ -7719,9 +7813,6 @@ msgstr "{JAPAN ONLY}As the time to the exercise point shortens, the time-value o
 msgid "{JAPAN ONLY}Association of join"
 msgstr "{JAPAN ONLY}Section 4: Risk"
 
-msgid "{JAPAN ONLY}BUY price per unit"
-msgstr "{JAPAN ONLY}BUY price per unit"
-
 msgid "{JAPAN ONLY}Because option prices are determined by the probability of being exercised, it cannot be said that cheaper options have any natural advantage over expensive options."
 msgstr "{JAPAN ONLY}Because option prices are determined by the probability of being exercised, it cannot be said that cheaper options have any natural advantage over expensive options."
 
@@ -7783,11 +7874,31 @@ msgstr "{JAPAN ONLY}Disclosure of financial statement by No. xx in the FIEA"
 msgid "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
 msgstr "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Options Basics"
+msgid "{JAPAN ONLY}Does Not Touch"
+msgstr "{JAPAN ONLY}Options Basics"
+
 msgid "{JAPAN ONLY}Download"
 msgstr "{JAPAN ONLY}Download"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}END-IN/END-OUT"
+msgstr "{JAPAN ONLY}Units"
+
 msgid "{JAPAN ONLY}Email us copies of your Identification Documents and My Number card."
 msgstr "{JAPAN ONLY}Email us copies of your Identification Documents and My Number card."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}Ends Between"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Trading Guide"
+msgid "{JAPAN ONLY}Ends Outside"
+msgstr "{JAPAN ONLY}Trading Guide"
 
 msgid "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
 msgstr "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
@@ -7855,6 +7966,21 @@ msgstr "{JAPAN ONLY}For both call and put options, if the underlying asset price
 
 msgid "{JAPAN ONLY}For full details of the documents we can accept please download the following guide:"
 msgstr "{JAPAN ONLY}For full details of the documents we can accept please download the following guide:"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 3: Outline"
+msgid "{JAPAN ONLY}Goes Outside"
+msgstr "{JAPAN ONLY}Section 3: Outline"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}HIGH/LOW"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}Higher"
+msgstr "{JAPAN ONLY}Units"
 
 #, fuzzy
 #| msgid "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
@@ -7985,6 +8111,11 @@ msgid "{JAPAN ONLY}Knowledge test list item 5"
 msgstr "{JAPAN ONLY}Knowledge test list item 5"
 
 #, fuzzy
+#| msgid "{JAPAN ONLY}Download"
+msgid "{JAPAN ONLY}Lower"
+msgstr "{JAPAN ONLY}Download"
+
+#, fuzzy
 #| msgid "{JAPAN ONLY}Trading Guide"
 msgid "{JAPAN ONLY}Main business"
 msgstr "{JAPAN ONLY}Trading Guide"
@@ -8077,8 +8208,8 @@ msgstr "{JAPAN ONLY}Regulation & Tax"
 msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "{JAPAN ONLY}Regulation & Tax"
 
-msgid "{JAPAN ONLY}SELL price  per unit"
-msgstr "{JAPAN ONLY}SELL price  per unit"
+msgid "{JAPAN ONLY}STAY-IN/BREAK-OUT"
+msgstr "{JAPAN ONLY}STAY-IN/BREAK-OUT"
 
 msgid "{JAPAN ONLY}Section 1: Structure"
 msgstr "{JAPAN ONLY}Section 1: Structure"
@@ -8101,8 +8232,16 @@ msgstr "{JAPAN ONLY}Short positions in FX Binary Options must be covered by init
 msgid "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 msgstr "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}Stays Between"
+msgstr "{JAPAN ONLY}Units"
+
 msgid "{JAPAN ONLY}Summary of Specifications"
 msgstr "{JAPAN ONLY}Summary of Specifications"
+
+msgid "{JAPAN ONLY}TOUCH /NO-TOUCH"
+msgstr "{JAPAN ONLY}TOUCH /NO-TOUCH"
 
 msgid "{JAPAN ONLY}Take knowledge test"
 msgstr "{JAPAN ONLY}Take knowledge test"
@@ -8185,6 +8324,11 @@ msgstr "{JAPAN ONLY}To compensate for any rise in the price of an underlying ass
 msgid "{JAPAN ONLY}To invest a binary options investment accurately, the customer are required knowledge and experience related to derivative transactions."
 msgstr "{JAPAN ONLY} To invest a binary options investment accurately, the customer are required knowledge and experience related to derivative transactions."
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}Touches"
+msgstr "{JAPAN ONLY}Units"
+
 msgid "{JAPAN ONLY}Trading & Hedging"
 msgstr "{JAPAN ONLY}Trading & Hedging"
 
@@ -8193,9 +8337,6 @@ msgstr "{JAPAN ONLY}Trading Guide"
 
 msgid "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
 msgstr "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
-
-msgid "{JAPAN ONLY}Units"
-msgstr "{JAPAN ONLY}Units"
 
 msgid "{JAPAN ONLY}Unless special arrangements are made, cooling-off will not be available after OTC binary options trading contract has been made."
 msgstr "{JAPAN ONLY}Unless special arrangements are made, cooling-off will not be available after OTC binary options trading contract has been made."
@@ -8225,6 +8366,66 @@ msgstr "{JAPAN ONLY}Options Basics"
 
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}day"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}days"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}hour"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}hours"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}minute"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}minutes"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}month"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}months"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}week"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}weeks"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}year"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}years"
+msgstr "{JAPAN ONLY}Units"
 
 msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 msgstr "Sàn Giao dịch Trực tuyến cho hợp đồng quyền chọn nhị phân về Thị trường ngoại hối, Chỉ số, Hàng hóa và các Chỉ số Thông minh"
@@ -8291,11 +8492,25 @@ msgstr "Chuyển tiền cho Đại lý Thanh toán"
 msgid "Sharp Prices. Smart Trading."
 msgstr "Giá sắc bén. Giao dịch thông minh."
 
+#, fuzzy
+#| msgid "Webtrader"
+msgid "MetaTrader"
+msgstr "Webtrader"
+
 msgid "Account Details"
 msgstr "Chi tiết Tài khoản"
 
 msgid "Terms and Conditions Approval"
 msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
+
+msgid "Trading with MetaTrader 5"
+msgstr ""
+
+#~ msgid "{JAPAN ONLY}BUY price per unit"
+#~ msgstr "{JAPAN ONLY}BUY price per unit"
+
+#~ msgid "{JAPAN ONLY}SELL price  per unit"
+#~ msgstr "{JAPAN ONLY}SELL price  per unit"
 
 #, fuzzy
 #~| msgid "{JAPAN ONLY}BUY price per unit"
@@ -10109,9 +10324,6 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 
 #~ msgid "Week"
 #~ msgstr "Tuần"
-
-#~ msgid "Weekly"
-#~ msgstr "Hàng tuần"
 
 #~ msgid "Weeks"
 #~ msgstr "Tuần"
@@ -12637,9 +12849,6 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 #~ msgid "Your secret answer is too short.  Please enter at least 4 characters."
 #~ msgstr "Câu trả lời bí mật của bạn quá ngắn. Vui lòng nhập ít nhất 4 kí tự."
 
-#~ msgid "details"
-#~ msgstr "chi tiết"
-
 #~ msgid "maximum is"
 #~ msgstr "tối đa là"
 
@@ -13932,9 +14141,6 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 
 #~ msgid "At least 6 characters"
 #~ msgstr "Ít nhất 6-25 kí tự"
-
-#~ msgid "Average"
-#~ msgstr "Trung bình"
 
 #~ msgid "Average Change"
 #~ msgstr "Thay đổi Bình quân"
