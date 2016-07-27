@@ -21,28 +21,26 @@ var SecurityWS = (function() {
     }
 
     function checkIsVirtual() {
-        if (page.client.is_virtual()) {
-            $form.hide();
-            $('#SecuritySuccessMsg').addClass('notice-msg center-text').text(Content.localize().textFeatureUnavailable);
-            return true;
+        if (!page.client.is_virtual()) {
+            return false;
         }
-        return false;
+        $form.hide();
+        $('#SecuritySuccessMsg')
+            .addClass('notice-msg center-text')
+            .text(Content.localize().textFeatureUnavailable);
+        return true;
     }
 
     function makeAuthRequest() {
-        var loginToken = CommonData.getApiToken();
         BinarySocket.send({
-            authorize: loginToken,
+            authorize: CommonData.getApiToken(),
         });
     }
 
     function init() {
         Content.populate();
         $form = $("#changeCashierLock");
-
-        if (checkIsVirtual()) {
-            return;
-        }
+        if (checkIsVirtual()) return;
 
         current_state = STATE.WAIT_AUTH;
         BinarySocket.init({onmessage: handler});
@@ -64,6 +62,18 @@ var SecurityWS = (function() {
             .html(text.localize(config.button));
     }
 
+    function setupRepeatPasswordForm() {
+        $("#repasswordrow").show();
+        $('#password-meter-div').css({display: 'block'});
+        if (isIE()) {
+            $('#password-meter').remove();
+            return;
+        }
+        $('#cashierlockpassword1').on('input', function() {
+            $('#password-meter').attr('value', testPassword($('#cashierlockpassword1').val())[0]);
+        });
+    }
+
     function lockedStatus(response) {
         var locked = +response.cashier_password === 1;
         if (locked) {
@@ -79,18 +89,10 @@ var SecurityWS = (function() {
                 info:   'An additional password can be used to restrict access to the cashier.',
                 button: 'Update',
             });
-            $("#repasswordrow").show();
-            $('#password-meter-div').attr('style', 'display:block');
-            if (!isIE()) {
-              $('#cashierlockpassword1').on('input', function() {
-                $('#password-meter').attr('value', testPassword($('#cashierlockpassword1').val())[0]);
-              });
-            } else {
-              $('#password-meter').remove();
-            }
+            setupRepeatPasswordForm();
         }
-        $('#changeCashierLock').show();
         current_state = locked ? STATE.LOCKED : STATE.UNLOCKED;
+        $form.show();
         $form.find('button').click(function(e) {
             e.preventDefault();
             e.stopPropagation();
@@ -108,50 +110,44 @@ var SecurityWS = (function() {
             pwd2 = $("#cashierlockpassword2").val(),
             errorPassword  = $('#errorcashierlockpassword1')[0],
             errorRPassword = $('#errorcashierlockpassword2')[0],
-            checkSecondRow = current_state === STATE.UNLOCKED;
+            checkRepeat = current_state === STATE.UNLOCKED;
 
-        if (checkSecondRow && !Validate.errorMessagePassword(pwd1, pwd2, errorPassword, errorRPassword)) {
+        if (checkRepeat && !Validate.errorMessagePassword(pwd1, pwd2, errorPassword, errorRPassword)) {
             return false;
         } else if (!/[ -~]{6,25}/.test(pwd1)) {
-          errorPassword.textContent = Content.errorMessage('min', 6);
-          return false;
+            errorPassword.textContent = Content.errorMessage('min', 6);
+            return false;
         }
         return true;
     }
 
     function makeTryingRequest() {
-        var pwd = $('#cashierlockpassword1').val();
-        var params = current_state === STATE.TRY_UNLOCK ?
-            { unlock_password: pwd } :
-            { lock_password: pwd };
-
-        params.cashier_password = "1";
+        var key = current_state === STATE.TRY_UNLOCK ?
+            'unlock_password' :
+            'lock_password';
+        var params  = {cashier_password: '1'};
+        params[key] = $('#cashierlockpassword1').val();
         BinarySocket.send(params);
     }
 
     function tryStatus(response) {
         if (response.error) {
-            switch (current_state) {
-                case STATE.TRY_UNLOCK:
-                    current_state = STATE.LOCKED;
-                    break;
-                case STATE.TRY_LOCK:
-                    current_state = STATE.UNLOCKED;
-                    break;
-            }
+            current_state = current_state === STATE.TRY_UNLOCK ?
+                STATE.LOCKED :
+                STATE.UNLOCKED;
             $("#invalidinputfound").text(text.localize(response.error.message));
             return;
         }
-        $("#changeCashierLock").hide();
-        $("#invalidinputfound").text('');
+        $form.hide();
+        clearErrors();
         $("#SecuritySuccessMsg").text(text.localize('Your settings have been updated successfully.'));
         current_state = STATE.DONE;
     }
 
     function handler(msg) {
         if (checkIsVirtual()) return;
-        var res = JSON.parse(msg.data);
-        if (res.msg_type === 'authorize') {
+        var response = JSON.parse(msg.data);
+        if (response.msg_type === 'authorize') {
             switch (current_state) {
                 case STATE.WAIT_AUTH:
                     authorised();
@@ -164,14 +160,14 @@ var SecurityWS = (function() {
                     break;
             }
             return;
-        } else if (res.msg_type === 'cashier_password') {
+        } else if (response.msg_type === 'cashier_password') {
             switch (current_state) {
                 case STATE.QUERY_LOCKED:
-                    lockedStatus(res);
+                    lockedStatus(response);
                     break;
                 case STATE.TRY_UNLOCK:
                 case STATE.TRY_LOCK:
-                    tryStatus(res);
+                    tryStatus(response);
                     break;
                 default:
                     break;
@@ -187,7 +183,6 @@ var SecurityWS = (function() {
 pjax_config_page_require_auth("user/settings/securityws", function() {
     return {
         onLoad: function() {
-            Content.populate();
             SecurityWS.init();
         }
     };
