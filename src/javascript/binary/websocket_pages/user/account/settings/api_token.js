@@ -12,6 +12,7 @@ var APITokenWS = (function() {
     var hideForm  = hide('#token_form');
     var showForm  = show('#token_form');
     var hideTable = hide(tableContainer);
+    var showTable = show(tableContainer);
 
     function init() {
         if (japanese_client()) {
@@ -90,6 +91,7 @@ var APITokenWS = (function() {
             hideTable();
             return;
         }
+        showTable();
         $tableContainer.empty();
 
         var headers = ['Name', 'Token', 'Scopes', 'Last Used', 'Action'];
