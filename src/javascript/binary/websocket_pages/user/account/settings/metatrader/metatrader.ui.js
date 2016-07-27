@@ -85,7 +85,7 @@ var MetaTraderUI = (function() {
                 'email'           : TUser.get().email,
                 'mainPassword'    : $form.find('#txtMainPass').val(),
                 'investPassword'  : $form.find('#txtInvestPass').val(),
-                'leverage'        : '100'
+                'leverage'        : '100' // $form.find('#ddlLeverage').val()
             });
         }
     };
