@@ -238,7 +238,7 @@ var SelfExclusionWS = (function() {
                     null
                 );
             } else {
-                if (date.isAfter(six_weeeks_date)) {
+                if (date.isAfter(six_weeks_date)) {
                     errMsg = 'Exclude time cannot be more than 6 weeks.';
                 }
             }
@@ -253,7 +253,7 @@ var SelfExclusionWS = (function() {
 
     var validateExclusionTime = function(exclusion_time) {
         var time = moment(exclusion_time, 'HH:mm');
-        if (time.isValid()) {
+        if (!time.isValid()) {
             showError(timeID, 'Please select a valid time');
             return false;
         }
