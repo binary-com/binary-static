@@ -41,9 +41,7 @@
                         <div class="gr-6 form_label"><label for="txtMainPass">[% l('Main Password (trading access)') %]</label></div>
                         <div class="gr-6">
                             <input type="password" id="txtMainPass" class="password">
-                            <p style="margin:0px;height:0.5em;display:none;">
-                                <meter id="password-meter" class="password-meter" value="" max="50" min="0" high="20" low="10" optimum="50"></meter>
-                            </p>
+                            <div><meter id="password-meter" class="password-meter" value="" max="50" min="0" high="20" low="10" optimum="50"></meter></div>
                             <div class="hint">[% l('Minimum of six lower and uppercase letters with numbers') %]</div>
                         </div>
                     </div>

@@ -269,7 +269,7 @@ var MetaTraderUI = (function() {
             return;
         }
 
-        if($form.find('meter').length === 0) {
+        if($form.find('meter').length !== 0) {
             $form.find('.password').on('input', function() {
                 $form.find('.password-meter').attr('value', testPassword($form.find('.password').val())[0]);
             });
