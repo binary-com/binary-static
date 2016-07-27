@@ -179,11 +179,3 @@ var SecurityWS = (function() {
         init: init,
     };
 })();
-
-pjax_config_page_require_auth("user/settings/securityws", function() {
-    return {
-        onLoad: function() {
-            SecurityWS.init();
-        }
-    };
-});
