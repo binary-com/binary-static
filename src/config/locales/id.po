@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-07-07 09:13+0000\n"
+"PO-Revision-Date: 2016-07-19 05:14+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.7-dev\n"
+"X-Generator: Weblate 2.8-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"%1 API\" adalah set eksklusif dari rutinitas program %1, protokol, alat dan sumber daya yang diciptakan dan dikelola oleh %1 yang dapat memberi Anda fasilitas untuk menggunakan aplikasi terdaftar pada platform trading %1."
@@ -203,10 +203,8 @@ msgstr "%1 mencapai $2 milyar omset sejak tahun 1999"
 msgid "%1 reaches 1 million registered users"
 msgstr "%1 mencapai 1 juta pengguna terdaftar"
 
-#, fuzzy
-#| msgid "Days to display"
 msgid "%1 rows displayed:"
-msgstr "Tampilan harian"
+msgstr "%1 baris yang ditampilkan:"
 
 msgid "%1 seeks a Project Coordinator to help drive the production of promotional content and rollout of marketing campaigns, designed to engage new prospects and current customers based throughout the globe."
 msgstr "%1 sedang mencari Koordinator Proyek untuk membantu mendorong produksi konten promosi dan peluncuran kampanye pemasaran, yang dirancang untuk melibatkan prospek baru dan pelanggan saat ini di seluruh dunia."
@@ -276,6 +274,9 @@ msgstr "Sejarah %1 yang luar biasa"
 
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "Sistem %1 telah memproses lebih dari 1 juta transaksi/hari (termasuk pada akun virtual)."
+
+msgid "%1’s Volatility Indices are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
+msgstr ""
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(durasi minimal, contoh minimal 15 detik)min"
@@ -491,6 +492,9 @@ msgstr "<strong>harga 2-arah</strong> - %1 selalu memperlihatkan harga lawan ara
 msgid "<strong>Additional business exposure:</strong> You will increase awareness of your services and generate new business."
 msgstr "<strong>Paparan bisnis tambahan:</strong> Anda akan memperjelas layanan Anda dan menghasilkan peluang bisnis baru."
 
+msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
+msgstr ""
+
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>Semua durasi</strong> - dari 10 detik hingga 365 hari."
 
@@ -541,6 +545,9 @@ msgstr "<strong>Higher/Lower</strong> - analisa pasar akan berakhir lebih tinggi
 
 msgid "<strong>Higher/Lower</strong> - where you can profit from the market ending higher or lower than a target price."
 msgstr "<strong>Higher/Lower</strong> - keuntungan dari pasar yang berakhir lebih tinggi atau lebih rendah dari target harga."
+
+msgid "<strong>Highly competitive spreads with no commission,</strong> offering leverage of up to 1:500"
+msgstr ""
 
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and Payment Agents."
 msgstr "<strong>SANGGAHAN PENTING</strong> - %1 tidak berafiliasi dengan Agen Pembayaran manapun. Setiap Agen Pembayaran beroperasi sendiri dan %1 tidak bertanggungjawab atas risiko penggunaannya. PELANGGAN BERURUSAN DENGAN AGEN PEMBAYARAN ATAS RISIKO SENDIRI. Pelanggan disarankan untuk mengecek kredibilitas dan eksistensi Agen Pembayaran bersangkutan sebelum bertransaksi dengan mereka."
@@ -625,6 +632,9 @@ msgstr "<strong>Indeks saham</strong> - trading pada bursa saham utama dunia."
 
 msgid "<strong>Stock indices</strong> - trade all major worldwide stock indices."
 msgstr "<strong>Indeks saham</strong> - trading pada bursa saham dunia."
+
+msgid "<strong>Subscriptions to a wide range of Expert Advisors,</strong> automated trading applications from the MetaTrader Market."
+msgstr ""
 
 msgid "<strong>Take early profits</strong> - sell your long-term trades at market prices before they expire."
 msgstr "<strong>Ambil laba awal</strong> - jual kontrak jangka panjang Anda pada harga pasar sebelum berakhir."
@@ -839,6 +849,11 @@ msgstr "Pendaftaran Akun"
 
 msgid "Account Transfer"
 msgstr "Transfer Akun"
+
+#, fuzzy
+#| msgid "Account type"
+msgid "Account Type"
+msgstr "Tipe rekening"
 
 msgid "Account balance: "
 msgstr "Saldo akun Anda: "
@@ -1565,6 +1580,9 @@ msgstr "Klasifikasi aset yang membutuhkan hedge"
 msgid "Click here to retry"
 msgstr "Klik disini untuk mencoba lagi"
 
+msgid "Click the button below to download MetaTrader."
+msgstr ""
+
 msgid "Client classification"
 msgstr "Klasifikasi klien"
 
@@ -1961,6 +1979,14 @@ msgstr "Definisi"
 msgid "Delete"
 msgstr "Hapus"
 
+msgid "Demo"
+msgstr ""
+
+#, fuzzy
+#| msgid "Open Account"
+msgid "Demo Account"
+msgstr "Daftar Akun"
+
 msgid "Demonstrate the ability to think / act quickly and multi-task as needed to execute effective campaigns"
 msgstr "Menunjukkan kemampuan berpikir/bertindak cepat dan berbagai tugas yang diperlukan untuk melaksanakan kampanye yang efektif"
 
@@ -2105,10 +2131,13 @@ msgstr "Memproses dokumen departemen, meningkatkan kemampuan tim pemasaran untuk
 msgid "Dormant and Inactive Accounts"
 msgstr "Akun Dormant dan Tidak Aktif"
 
-#, fuzzy
-#| msgid "Download SVG"
 msgid "Download CSV"
-msgstr "Download SVG"
+msgstr "Download CSV"
+
+#, fuzzy
+#| msgid "Download for Windows"
+msgid "Download MetaTrader for Windows"
+msgstr "Download untuk Windows"
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "Mendorong pertumbuhan yang cepat dan pengembangan usaha, untuk mendukung penjualan perusahaan dan tujuan pemasaran"
@@ -2916,6 +2945,9 @@ msgstr "Jika Anda membutuhkan bantuan jangan ragu untuk menghubungi Customer Sup
 msgid "If you need assistance feel free to contact our <a class=\"pjaxload\" href=\"%1\">Customer Support</a>."
 msgstr "Jika Anda membutuhkan bantuan jangan ragu untuk menghubungi <a class=\"pjaxload\" href=\"%1\">Customer Support</a> kami."
 
+msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader’s website, please select “%1” from the list of available brokers."
+msgstr ""
+
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "Pilih \"Asian Turun\", untuk memperoleh hasil jika <strong>tik terakhir</strong> <strong>lebih rendah</strong> dari <strong>jumlah rata rata</strong> tik."
 
@@ -3070,6 +3102,11 @@ msgstr "Untuk mendukung pertumbuhan yang berkelanjutan, %1 berusaha merekrut dan
 msgid "In order to support its continued growth, the Human Resources Group at %1 is seeking to place a highly competent administrator in a senior recruitment role. Please note that this is not a position suitable for an HR generalist, but should be of keen interest to a high level administrator with extensive experience in the global recruitment of managers and single technical contributors. A background in financial services and experience in the recruitment of senior professionals in IT and Quantitative Analytics would be ideal."
 msgstr "Untuk mendukung pertumbuhan yang berkelanjutan, Grup Sumber Daya Manusia %1 berusaha menggunakan administrator yang kompeten dalam perekrutan senior. Mohon diketahui bahwa ini bukanlah posisi yang cocok untuk SDM umum, tetapi harus memiliki minat sebagai administrator handal dengan pengalaman yang luas dalam perekrutan manajer global dan menjadi kontributor teknis tunggal. Memiliki latar belakang di bidang jasa keuangan dan pengalaman dalam perekrutan profesional senior IT dan Analitik Kuantitatif akan diutamakan."
 
+#, fuzzy
+#| msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
+msgid "In order to trade using MetaTrader 5 platform, you'll first need to have a MetaTrader account."
+msgstr "Untuk mengakses aplikasi mobile kami dan aplikasi pihak ketiga lainnya, Anda harus membuat Token API."
+
 msgid "In providing these services, we are bound by the Act, any applicable regulations, bye-laws, licence conditions, guidelines, exchange requirements and other provisions or market practices (the \"Rules\"). In the event of conflict between these ST&Cs and the Rules, the latter should prevail."
 msgstr "Dalam memberikan layanan ini, kami terikat pada Undang-Undang, peraturan yang berlaku, hukum, kondisi lisensi, pedoman, persyaratan pertukaran dan ketentuan lain atau praktek umum (\"Aturan\"). Jika terjadi konflik antara Terma dan Kondisi serta Aturan, yang terkini adalah benar."
 
@@ -3222,6 +3259,9 @@ msgstr "Investasi & Dividen"
 
 msgid "Investor Compensation Scheme"
 msgstr "Skema Kompensasi Investor"
+
+msgid "Investor Password (read-only access)"
+msgstr ""
 
 msgid "Involved in evaluation of regulatory compliance and risk management. Work with the Head of Departments to improve business processes."
 msgstr "Terlibat mengevaluasi kepatuhan terhadap peraturan dan manajemen risiko. Bekerja dengan Kepala Departemen untuk meningkatkan proses bisnis."
@@ -3841,6 +3881,11 @@ msgstr "Less than 6 months"
 msgid "Level of Education"
 msgstr "Tingkat Pendidikan"
 
+#, fuzzy
+#| msgid "Average"
+msgid "Leverage"
+msgstr "Rata-rata"
+
 msgid "Leverage social-media tools and channels to identify, engage, and convert potential new customers and partners"
 msgstr "Memanfaatkan media sosial dan beberapa saluran untuk mengidentifikasi, terlibat, dan mengkonversi prospek sebagai klien dan mitra bisnis"
 
@@ -3877,6 +3922,11 @@ msgstr "Link ke dan mengarahkan pelanggan kami kedalam Aplikasi Anda."
 msgid "Links"
 msgstr "Berbagai Link"
 
+#, fuzzy
+#| msgid "Further Instructions"
+msgid "Linux Instructions"
+msgstr "Instruksi Tambahan"
+
 msgid "Live chat:"
 msgstr "Komunikasi langsung:"
 
@@ -3885,6 +3935,9 @@ msgstr "Kunci Kasir"
 
 msgid "Log in"
 msgstr "Masuk"
+
+msgid "Log into the application using your MetaTrader account number (e.g., 829118) and your MetaTrader account password."
+msgstr ""
 
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "Akses akun affiliasi %1 Anda dan klik pada : Keuangan &rarr; Instruksi Pembayaran."
@@ -3930,6 +3983,14 @@ msgstr "Batasan offset rendah"
 
 msgid "MENA FFXPO Award"
 msgstr "Penghargaan MENA FFXPO"
+
+#, fuzzy
+#| msgid "Specific Instructions"
+msgid "MacOS Instructions"
+msgstr "Instruksi khusus"
+
+msgid "Main Password (trading access)"
+msgstr ""
 
 msgid "Maintain accurate system pricing parameters"
 msgstr "Mempertahankan parameter sistem harga yang akurat"
@@ -4052,6 +4113,9 @@ msgstr "Tanggal bersejarah"
 
 msgid "Memorable town/city"
 msgstr "Kota bersejarah"
+
+msgid "MetaTrader Accounts Management"
+msgstr ""
 
 msgid "Method"
 msgstr "Metode"
@@ -4272,6 +4336,9 @@ msgstr "Trader pemula dapat menggunakan platform visual kami yang intuitif untuk
 
 msgid "Now"
 msgstr "Sekarang"
+
+msgid "Now Introducing MetaTrader 5 on %1"
+msgstr ""
 
 msgid "Number of ticks"
 msgstr "Jumlah tik"
@@ -5134,6 +5201,9 @@ msgstr "Risiko Produk Investasi"
 msgid "Run daily payments reports and report suspected fraud"
 msgstr "Membuat laporan pembayaran harian dan laporan dugaan penipuan"
 
+msgid "Run the installation file and follow the instructions."
+msgstr ""
+
 msgid "Russia"
 msgstr "Rusia"
 
@@ -5407,6 +5477,11 @@ msgstr "Waktu Mulai"
 msgid "Start Trading"
 msgstr "Mulai Trading"
 
+#, fuzzy
+#| msgid "Start Trading Now"
+msgid "Start Trading with MetaTrader 5"
+msgstr "Trading Sekarang"
+
 msgid "Start learning"
 msgstr "Mulai Belajar"
 
@@ -5539,6 +5614,12 @@ msgstr "Syarat dan Ketentuan Tambahan untuk Produk Keuangan yang ditawarkan oleh
 
 msgid "Supporting the Group's global recruiting and talent management needs"
 msgstr "Membantu Grup dalam perekrutan dan manajemen bakat yang diperlukan"
+
+msgid "Take advantage of numerous benefits, including:"
+msgstr ""
+
+msgid "Take your trading to the next level through this powerful interface, recognised as the benchmark standard worldwide."
+msgstr ""
 
 msgid "Talk to us"
 msgstr "Hubungi kami"
@@ -6489,6 +6570,11 @@ msgstr "Format kode verifikasi salah."
 msgid "Verification token"
 msgstr "Token verifikasi"
 
+#, fuzzy
+#| msgid "Verify new password"
+msgid "Verify Main Password"
+msgstr "Verifikasi kata sandi baru"
+
 msgid "Verify new password"
 msgstr "Verifikasi kata sandi baru"
 
@@ -6713,6 +6799,11 @@ msgstr "Rabu"
 
 msgid "Week of"
 msgstr "Minggu ke"
+
+#, fuzzy
+#| msgid "Weekly"
+msgid "Weekday"
+msgstr "Mingguan"
 
 msgid "Weekend quotes"
 msgstr "Kutipan akhir pekan"
@@ -7407,6 +7498,9 @@ msgstr "hari"
 msgid "deposit"
 msgstr "deposit"
 
+msgid "details"
+msgstr "perincian"
+
 msgid "e.g. ws.binaryws.com"
 msgstr "contoh ws.binaryws.com"
 
@@ -7641,9 +7735,6 @@ msgstr "{JAPAN ONLY}As the time to the exercise point shortens, the time-value o
 msgid "{JAPAN ONLY}Association of join"
 msgstr "{JAPAN ONLY}Association of join"
 
-msgid "{JAPAN ONLY}BUY price per unit"
-msgstr "{JAPAN ONLY}BUY price per unit"
-
 msgid "{JAPAN ONLY}Because option prices are determined by the probability of being exercised, it cannot be said that cheaper options have any natural advantage over expensive options."
 msgstr "{JAPAN ONLY}Because option prices are determined by the probability of being exercised, it cannot be said that cheaper options have any natural advantage over expensive options."
 
@@ -7695,11 +7786,31 @@ msgstr "{JAPAN ONLY}Disclosure of financial statement by No. xx in the FIEA"
 msgid "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
 msgstr "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Win Loss Ratio"
+msgid "{JAPAN ONLY}Does Not Touch"
+msgstr "{JAPAN ONLY}Win Loss Ratio"
+
 msgid "{JAPAN ONLY}Download"
 msgstr "{JAPAN ONLY}Download"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}END-IN/END-OUT"
+msgstr "{JAPAN ONLY}Units"
+
 msgid "{JAPAN ONLY}Email us copies of your Identification Documents and My Number card."
 msgstr "{JAPAN ONLY}Email us copies of your Identification Documents and My Number card."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Establishment"
+msgid "{JAPAN ONLY}Ends Between"
+msgstr "{JAPAN ONLY}Establishment"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Main business"
+msgid "{JAPAN ONLY}Ends Outside"
+msgstr "{JAPAN ONLY}Main business"
 
 msgid "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
 msgstr "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
@@ -7763,6 +7874,21 @@ msgstr "{JAPAN ONLY}For both call and put options, if the underlying asset price
 
 msgid "{JAPAN ONLY}For full details of the documents we can accept please download the following guide:"
 msgstr "{JAPAN ONLY}For full details of the documents we can accept please download the following guide:"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 3: Outline"
+msgid "{JAPAN ONLY}Goes Outside"
+msgstr "{JAPAN ONLY}Section 3: Outline"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}HIGH/LOW"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}Higher"
+msgstr "{JAPAN ONLY}Units"
 
 msgid "{JAPAN ONLY}HirooMiyaya 3F, 1-9-16 Hiroo, Shibuya, Tokyo, 150-0012"
 msgstr "{JAPAN ONLY}HirooMiyaya 3F, 1-9-16 Hiroo, Shibuya, Tokyo, 150-0012"
@@ -7890,6 +8016,11 @@ msgstr "{JAPAN ONLY}Knowledge Test Result"
 msgid "{JAPAN ONLY}Knowledge test list item 5"
 msgstr "{JAPAN ONLY}Knowledge Test Result"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Download"
+msgid "{JAPAN ONLY}Lower"
+msgstr "{JAPAN ONLY}Download"
+
 msgid "{JAPAN ONLY}Main business"
 msgstr "{JAPAN ONLY}Main business"
 
@@ -7977,8 +8108,8 @@ msgstr "{JAPAN ONLY}Registration"
 msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "{JAPAN ONLY}Regulation & Tax"
 
-msgid "{JAPAN ONLY}SELL price  per unit"
-msgstr "{JAPAN ONLY}SELL price  per unit"
+msgid "{JAPAN ONLY}STAY-IN/BREAK-OUT"
+msgstr ""
 
 msgid "{JAPAN ONLY}Section 1: Structure"
 msgstr "{JAPAN ONLY}Section 1: Structure"
@@ -8001,8 +8132,16 @@ msgstr "{JAPAN ONLY}Short positions in FX Binary Options must be covered by init
 msgid "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 msgstr "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Establishment"
+msgid "{JAPAN ONLY}Stays Between"
+msgstr "{JAPAN ONLY}Establishment"
+
 msgid "{JAPAN ONLY}Summary of Specifications"
 msgstr "{JAPAN ONLY}Summary of Specifications"
+
+msgid "{JAPAN ONLY}TOUCH /NO-TOUCH"
+msgstr ""
 
 msgid "{JAPAN ONLY}Take knowledge test"
 msgstr "{JAPAN ONLY}Take knowledge test"
@@ -8085,6 +8224,11 @@ msgstr "{JAPAN ONLY}To compensate for any rise in the price of an underlying ass
 msgid "{JAPAN ONLY}To invest a binary options investment accurately, the customer are required knowledge and experience related to derivative transactions."
 msgstr "{JAPAN ONLY}To invest a binary options investment accurately, the customer are required knowledge and experience related to derivative transactions."
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}Touches"
+msgstr "{JAPAN ONLY}Units"
+
 msgid "{JAPAN ONLY}Trading & Hedging"
 msgstr "{JAPAN ONLY}Trading & Hedging"
 
@@ -8093,9 +8237,6 @@ msgstr "{JAPAN ONLY}Trading Guide"
 
 msgid "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
 msgstr "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
-
-msgid "{JAPAN ONLY}Units"
-msgstr "{JAPAN ONLY}Units"
 
 msgid "{JAPAN ONLY}Unless special arrangements are made, cooling-off will not be available after OTC binary options trading contract has been made."
 msgstr "{JAPAN ONLY}Unless special arrangements are made, cooling-off will not be available after OTC binary options trading contract has been made."
@@ -8123,6 +8264,66 @@ msgstr "{JAPAN ONLY}Win Loss Ratio"
 
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Capital"
+msgid "{JAPAN ONLY}day"
+msgstr "{JAPAN ONLY}Capital"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}days"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}hour"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}hours"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}minute"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}minutes"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}month"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}months"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}week"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}weeks"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Capital"
+msgid "{JAPAN ONLY}year"
+msgstr "{JAPAN ONLY}Capital"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}years"
+msgstr "{JAPAN ONLY}Units"
 
 msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 msgstr "Platform Trading Online untuk opsi binary pada Forex, Indeks, Komoditas dan Indeks Smart"
@@ -8169,11 +8370,25 @@ msgstr "Transfer Agen Pembayaran"
 msgid "Sharp Prices. Smart Trading."
 msgstr "Harga Tajam. Trading Pintar."
 
+#, fuzzy
+#| msgid "Webtrader"
+msgid "MetaTrader"
+msgstr "Webtrader"
+
 msgid "Account Details"
 msgstr "Keterangan rekening"
 
 msgid "Terms and Conditions Approval"
 msgstr "Syarat dan Ketentuan Persetujuan"
+
+msgid "Trading with MetaTrader 5"
+msgstr ""
+
+#~ msgid "{JAPAN ONLY}BUY price per unit"
+#~ msgstr "{JAPAN ONLY}BUY price per unit"
+
+#~ msgid "{JAPAN ONLY}SELL price  per unit"
+#~ msgstr "{JAPAN ONLY}SELL price  per unit"
 
 #~ msgid "{JAPAN ONLY}December 2015"
 #~ msgstr "{JAPAN ONLY}December 2015"
@@ -9969,9 +10184,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 #~ msgid "Week"
 #~ msgstr "Minggu"
-
-#~ msgid "Weekly"
-#~ msgstr "Mingguan"
 
 #~ msgid "Weeks"
 #~ msgstr "Mingguan"
@@ -12498,9 +12710,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 #~ msgid "Your secret answer is too short.  Please enter at least 4 characters."
 #~ msgstr "Jawaban rahasia Anda terlalu pendek. Masukkan minimal 4 karakter."
 
-#~ msgid "details"
-#~ msgstr "perincian"
-
 #~ msgid "maximum is"
 #~ msgstr "maksimum adalah"
 
@@ -13765,9 +13974,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 #~ msgid "At least 6 characters"
 #~ msgstr "Minimal 6 karakter"
-
-#~ msgid "Average"
-#~ msgstr "Rata-rata"
 
 #~ msgid "Average Change"
 #~ msgstr "Perubahan Rata-Rata"
@@ -15688,9 +15894,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 #~ msgid "Sorry, the IP Security field you specified (%1) wouldn't let you in from your current IP address %2."
 #~ msgstr "Maaf, bagian keamanan IP yang anda pasang (%1) tidak membenarkan anda masuk menggunakan alamat IP saat ini %2."
 
-#~ msgid "Start Trading Now"
-#~ msgstr "Trading Sekarang"
-
 #~ msgid "This is to confirm that your email address for your account %1 on %2 has been changed from %3 to %4"
 #~ msgstr "Ini adalah untuk mengkonfirmasi bahwa alamat email Anda untuk %1 pada %2 telah diubah dari %3 ke %4"
 
@@ -16851,9 +17054,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 #~ msgid "Download for Mac"
 #~ msgstr "Download untuk Mac"
-
-#~ msgid "Download for Windows"
-#~ msgstr "Download untuk Windows"
 
 #~ msgid "P/L"
 #~ msgstr "P/L"
@@ -21042,9 +21242,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 #~ msgid "Account Number"
 #~ msgstr "Nomor Akun"
-
-#~ msgid "Account type"
-#~ msgstr "Tipe rekening"
 
 #~ msgid "Accumulation Distribution"
 #~ msgstr "Akumulasi Distribusi"
