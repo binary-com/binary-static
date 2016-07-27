@@ -48,7 +48,7 @@ var SettingsDetailsWS = (function() {
             BinarySocket.send({"states_list": residence, "passthrough": {"value": data.address_state}});
             if (page.client.residence === 'jp') {
                 var jpData = response.get_settings.jp_settings;
-                $('#lblName').text((data.last_name || '') + ' ' + (data.first_name || ''));
+                $('#lblName').text((data.last_name || ''));
                 $('#lblGender').text(text.localize(jpData.gender) || '');
                 $('#lblAddress1').text(data.address_line_1 || '');
                 $('#lblAddress2').text(data.address_line_2 || '');
