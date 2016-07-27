@@ -47,6 +47,14 @@ pjax_config_page_require_auth("user/portfoliows", function() {
     };
 });
 
+pjax_config_page_require_auth("user/settings/api_tokenws", function() {
+    return {
+        onLoad: function() {
+            APITokenWS.init();
+        }
+    };
+});
+
 pjax_config_page_require_auth("user/settings/self_exclusionws", function() {
     return {
         onLoad: function() {
