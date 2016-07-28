@@ -73,10 +73,11 @@ sub all_pages {
         ['resources/market_timesws', 'resources/market_timesws',  'default', 'Trading Times'],
 
         ['user/settings/api_tokenws',       'user/settings/api_tokenws',                      'default', 'API Token'],
+        ['user/settings/metatrader',        'user/settings/metatrader',                       'default', 'MetaTrader'],
         ['user/change_passwordws',          'user/settings/change_passwordws',                'default', 'Change Password'],
         ['user/portfoliows',                'user/portfoliows',                               'default', 'Portfolio'],
         ['user/profit_tablews',             'user/profit_tablews',                            'default', 'Profit Table'],
-        ['user/settings/self_exclusionws',   'user/settings/self_exclusionws',                'default', 'Account Details'],
+        ['user/settings/self_exclusionws',  'user/settings/self_exclusionws',                 'default', 'Account Details'],
         ['user/settings/detailsws',         'user/settings/settings_detailsws',               'default', 'Personal Details'],
         ['user/settings/securityws',        'user/settings/settings_securityws',              'default', 'Security'],
         ['user/statementws',                'user/statementws',                               'default', 'Statement'],
@@ -90,6 +91,9 @@ sub all_pages {
         ['user/settings/authorised_appsws', 'user/settings/authorised_appsws',                'default', 'Authorised Applications'],
         ['user/reality_check_frequencyws',  'user/reality_check_frequencyws',                 'default', 'Reality Check'],
         ['user/reality_check_summaryws',    'user/reality_check_summaryws',                   'default', 'Reality Check'],
+
+        ['metatrader',          'metatrader/index',    'default', 'Trading with MetaTrader 5'],
+        ['metatrader/download', 'metatrader/download', 'default', 'Start Trading with MetaTrader 5'],
 
         ['logged_inws',           'global/logged_inws',  undef],
         ['trade/bet_explanation', 'bet/explanation',     undef],

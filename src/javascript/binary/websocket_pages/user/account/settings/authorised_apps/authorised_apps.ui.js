@@ -43,7 +43,7 @@ var ApplicationsUI = (function(){
         $('#loading').remove();
         createTable(apps);
         if (!apps.length) {
-            flexTable.displayError(text.localize(messages.no_apps));
+            flexTable.displayError(text.localize(messages.no_apps), 7);
             return;
         }
     }

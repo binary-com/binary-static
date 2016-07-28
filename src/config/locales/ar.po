@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-06-23 14:46+0000\n"
+"PO-Revision-Date: 2016-07-22 15:12+0000\n"
 "Last-Translator: Ahmed Kotb <ahmedmohamedkotp@gmail.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/binary/static/ar/>\n"
 "Language: ar\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 2.7-dev\n"
+"X-Generator: Weblate 2.8-dev\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #, fuzzy
@@ -67,7 +67,7 @@ msgid "%1 Shop introduced"
 msgstr ""
 
 msgid "%1 academy"
-msgstr ""
+msgstr "%1 أكاديمية"
 
 msgid "%1 affiliate partners who wish to support a big group of Clients"
 msgstr "شركاء انتساب %1 الذين يرغبون في دعم مجموعة كبيرة من العملاء"
@@ -130,7 +130,7 @@ msgid "%1 hits 1 million users, reaching a historic milestone. The company conti
 msgstr "Binary.com تصل لمليون مستخدم، مسجلة علامة تاريخية. وتواصل الشركة النمو المتسارع لتؤكد مرة أخرى مكانتها باعتبارها رائدة هذه الصناعة."
 
 msgid "%1 introduces an <a href='%2' target='_blank' class='ja-hide'>auto-trader programming tool</a><span class='all-hide ja-show'>auto-trader programming tool</span>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
-msgstr ""
+msgstr "%1 يقدم <a href='%2' target='_blank' class='ja-hide'>أداة برمجة للتداول الآلي</a><span class='all-hide ja-show'>أداة البرمجة للتداول الآلي</span>, تسمح للعملاء بتطوير روبوتات التداول الآلي الخاصة بهم بطريقة \"السحب والإفلات\" ببساطة."
 
 #, fuzzy
 #| msgid "Binary.com is a flexible place. As well as our offices, we have staff who choose to telecommute from their home offices in countries around the world. If that suits you, we’re open to it."
@@ -194,7 +194,7 @@ msgid "%1 is the award-winning industry pioneer in online options trading. We bo
 msgstr "%1 رائدة صناعة تداول الثنائيات عبر الانترنت وحاصدة جوائز هذا المجال. نفتخر بأننا:"
 
 msgid "%1 launches an <a href='%2' target='_blank' class='ja-hide'> e-commerce site for branded merchandise</a><span class='all-hide ja-show'> e-commerce site for branded merchandise</span> – enabling clients, affiliates, and developers to buy and sell Binary.com products."
-msgstr ""
+msgstr "%1 تطلق <a href='%2' target='_blank' class='ja-hide'>موقع للتجارة الإلكترونية للبضائع التي تحمل العلامة التجارية</a><span class='all-hide ja-show'> يسمح موقع التجارة الإلكترونية للبضائع التي تحمل العلامة التجارية</span> - للعملاء والمنتسبين والمطورين لشراء وبيع منتجات Binary.com."
 
 msgid "%1 makes efforts that the quoted prices of each underlying asset that a Binary Option refers to will be reasonably related to the actual prices of such asset available in the market. %1 makes no warranty, expressed or implied, that the quoted prices represent prevailing market prices."
 msgstr "%1 تبذل جهودا لأن تكون الأسعار المتداولة لكل أصل والتي يشار إليها كخيار ثنائي سترتبط بشكل معقول بالأسعار الفعلية لتلك الأصول المتاحة في السوق. 1% لا تقدم أي ضمانات، صريحة أو ضمنية، أن الأسعار المتداولة تمثل الأسعار السائدة في السوق."
@@ -313,7 +313,7 @@ msgid ""
 msgstr "عقود السبريد الخاصة بـ %1 تحتاج إلى أمر \"وقف الخسارة\" الذي يحد من الحدود القصوى للخسائر التي يتكبدها العميل. ومبلغ \"وقف الخسارة\" هذا بمثابة وديعة لا يجوز استخدامها لمزيد من التداول حتى يتم إغلاق عقد السبريد هذا. يتم إغلاق عقود السبريد عند بيعها من قبل العميل، أو عندما تصل إلى مستوى \"وقف الخسارة\" أو \"وقف الأرباح\"."
 
 msgid "%1's Volatility Indices are based on a cryptographically secure random number generator audited for fairness by an independent third party."
-msgstr ""
+msgstr "تستند مؤشرات التذبذب ل %1 على رقم عشوائي مولد آمن ومشفر مدقق للعدالة بواسطة طرف ثالث مستقل."
 
 #, fuzzy
 #| msgid "Binary.com’s headquarters are in Malta, a favoured tourist destination with a warm climate, beautiful recreational areas and World Heritage sites. We also have an Operational Headquarters office in Cyberjaya, a high-tech precinct south of Kuala Lumpur, the capital of Malaysia, an equally exciting destination at the heart of Asia."
@@ -335,6 +335,9 @@ msgstr "تاريخ Binary.com البارز"
 
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "أنظمة %1 تقوم الآن بمعالجة ما يزيد على 1 مليون صفقة / يوم (بما في ذلك الحسابات الافتراضية)."
+
+msgid "%1’s Volatility Indices are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
+msgstr ""
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "minimum duration, for example minimum 15 seconds)%ctx)دقيقة"
@@ -497,7 +500,7 @@ msgid "<< Back to Job Descriptions"
 msgstr "<< العودة إلى توصيف الوظائف"
 
 msgid "<a class='pjaxload' href='mailto:%1'>Contact Us</a>"
-msgstr ""
+msgstr "<a class='pjaxload' href='mailto:%1'>اتصل بنا</a>"
 
 #, fuzzy
 #| msgid "<a href=\"%1\">Founded</a> October 1999"
@@ -584,6 +587,9 @@ msgstr "<strong>سعر ثنائى الاتجاه</strong> - تقدم لك %1 س�
 msgid "<strong>Additional business exposure:</strong> You will increase awareness of your services and generate new business."
 msgstr "<strong>عرض إضافي للأعمال:</strong> سوف تزيد التوعية بخدماتك وكذلك إنشاء أعمال جديدة."
 
+msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
+msgstr ""
+
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong> كل الفترات الزمنية</strong> - من 10 ثوانى ل365 يوم."
 
@@ -634,6 +640,9 @@ msgstr "<strong>أعلى/أسفل</strong> - توقع هل سيغلق السوق
 
 msgid "<strong>Higher/Lower</strong> - where you can profit from the market ending higher or lower than a target price."
 msgstr "<strong>أكثر/أقل</strong> -حيث يمكنك أن تربح من إغلاق السوق عند سعر أكثر أو أقل من سعرمستهدف."
+
+msgid "<strong>Highly competitive spreads with no commission,</strong> offering leverage of up to 1:500"
+msgstr ""
 
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and Payment Agents."
 msgstr "<strong>تنوية هام</strong> - ليس لـ %1 علاقة بأى من وكلاء الدفع المذكورين أعلاه. كل وكيل دفع يعمل كمزود خدمة مستقل وليس موافق عليه أو مضمون بأى شكل آخر من %1. يتعامل العملاء مع وكلاء الدفع على مسئوليتهم الخاصة. ننصح العملاء بالتحقق من أوراق اعتماد وكلاء الدفع قبل أن يرسلوا لهم أى أموال. %1 لا تتحمل مسئولية الصفقات بين العملاء ووكلاء الدفع تحت أى ظرف."
@@ -718,6 +727,9 @@ msgstr "<strong>مؤشرات البورصة</strong> - تداول كل مؤشر�
 
 msgid "<strong>Stock indices</strong> - trade all major worldwide stock indices."
 msgstr "<strong>مؤشرات البورصة</strong> - تداول كل مؤشرات البورصة الرئيسية فى أنحاء العالم."
+
+msgid "<strong>Subscriptions to a wide range of Expert Advisors,</strong> automated trading applications from the MetaTrader Market."
+msgstr ""
 
 msgid "<strong>Take early profits</strong> - sell your long-term trades at market prices before they expire."
 msgstr "<strong>أحصل على الأرباح مبكراً</strong> - قم ببيع معاملاتك التجارية طويلة الأجل بسعر السوق قبل أنتهاء صلاحيتها."
@@ -942,6 +954,11 @@ msgstr "فتح حساب"
 
 msgid "Account Transfer"
 msgstr "تحويل الحساب"
+
+#, fuzzy
+#| msgid "Account Opening"
+msgid "Account Type"
+msgstr "فتح حساب"
 
 msgid "Account balance: "
 msgstr "رصيد الحساب: "
@@ -1321,7 +1338,7 @@ msgid "Award-winning, patented financial trading platform"
 msgstr "منصة تداول مسجلة وحاصدة جوائز"
 
 msgid "BIEL Pillar III"
-msgstr ""
+msgstr "الركيزة الثالثة بيال"
 
 #, fuzzy
 #| msgid "Prospectus"
@@ -1724,6 +1741,9 @@ msgstr "Classification of assets requiring hedge"
 msgid "Click here to retry"
 msgstr "أنقر هنا لإعادة المحاولة"
 
+msgid "Click the button below to download MetaTrader."
+msgstr ""
+
 msgid "Client classification"
 msgstr "تصنيف العميل"
 
@@ -1939,7 +1959,7 @@ msgid "Contracts may not expire on a weekend; therefore the expiry date of a con
 msgstr "لا تنتهي العقود فى عطلة نهاية الأسبوع، وبالتالي يتم تمديد العقد ليوم الإثنين إذا وقع وقت انتهاء العقد أحد يومي السبت أو الأحد."
 
 msgid "Contracts offered by Binary Investments (Europe) Ltd. have a minimum purchase price of USD/GBP/EUR 5."
-msgstr ""
+msgstr "العقود المقدمة من قبل Binary (أوروبا) المحدودة للإستثمار. لديها حد أدنى لسعر الشراء لعملات الدولار/ الإسترليني/ اليورو 5."
 
 msgid "Contracts sold"
 msgstr "تم بيع العقود"
@@ -2136,6 +2156,14 @@ msgstr "تعريفات"
 msgid "Delete"
 msgstr "أحذف"
 
+msgid "Demo"
+msgstr ""
+
+#, fuzzy
+#| msgid "Open Account"
+msgid "Demo Account"
+msgstr "يفتح حساب"
+
 msgid "Demonstrate the ability to think / act quickly and multi-task as needed to execute effective campaigns"
 msgstr "إظهار القدرة على التفكير / العمل بسرعة وتعدد المهام كما هو مطلوب لتنفيذ حملات فعالة"
 
@@ -2288,6 +2316,11 @@ msgstr "الحسابات الخاملة وغير النشطة"
 #| msgid "Download SVG"
 msgid "Download CSV"
 msgstr "حمل ملف SVG"
+
+#, fuzzy
+#| msgid "Download for Windows"
+msgid "Download MetaTrader for Windows"
+msgstr "تحميل لنظام التشغيل Windows"
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "دفع النمو السريع وتطوير الأعمال, لدعم مبيعات الشركة والأهداف التسويقية"
@@ -3129,6 +3162,9 @@ msgstr "إذا كنت بحاجة إلى المساعدة, فلا تتردد با
 msgid "If you need assistance feel free to contact our <a class=\"pjaxload\" href=\"%1\">Customer Support</a>."
 msgstr "إذا كنت بحاجة إلى المساعدة, فلا تتردد بالإتصال بفريق 1% دعم العملاء لدينا"
 
+msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader’s website, please select “%1” from the list of available brokers."
+msgstr ""
+
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "إذا اخترت \"هبوط آسيوي\"، تربح العائد إذا كانت <strong>آخر حركة</strong> <strong>أقل</strong> من <strong>متوسط</strong> حركات السوق."
 
@@ -3301,6 +3337,11 @@ msgstr "من أجل دعم نموها المستمر، تسعى %1 إلى توظ
 msgid "In order to support its continued growth, the Human Resources Group at %1 is seeking to place a highly competent administrator in a senior recruitment role. Please note that this is not a position suitable for an HR generalist, but should be of keen interest to a high level administrator with extensive experience in the global recruitment of managers and single technical contributors. A background in financial services and experience in the recruitment of senior professionals in IT and Quantitative Analytics would be ideal."
 msgstr "من أجل دعم نموها المستمر، تسعى مجموعة الموارد البشرية في %1 إلى وضع مسؤول بدرجة عالية من الكفاءة في وظيفة كبير مسئولي التوظيف. يرجى ملاحظة أن هذا ليس موقعا مناسباً لاختصاصي الموارد بشرية، ولكن ينبغي أن يكون ذا اهتمام شديد بالمسؤولين رفيعي المستوى مع خبرة واسعة في التوظيف العالمي للمديرين وللفنيين الفريدين. سيكون أمرا مثاليا اذا كان لديه خلفية في مجال الخدمات المالية وخبرة في وظيف كبار المتخصصين في تكنولوجيا المعلومات والتحليلات الكمية."
 
+#, fuzzy
+#| msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
+msgid "In order to trade using MetaTrader 5 platform, you'll first need to have a MetaTrader account."
+msgstr "من أجل الوصول إلى تطبيقات الجوال لدينا وغيرها من تطبيقات الطرف الثالث، سوف تحتاج أولاً إلى إنشاء رمز API."
+
 msgid "In providing these services, we are bound by the Act, any applicable regulations, bye-laws, licence conditions, guidelines, exchange requirements and other provisions or market practices (the \"Rules\"). In the event of conflict between these ST&Cs and the Rules, the latter should prevail."
 msgstr "في تقديم هذه خدمات، نحن ملزمون بموجب القانون، وأي أنظمة معمول بها، وكذلك شروط الترخيص والمبادئ التوجيهية ومتطلبات الصرف وغيرها من الأحكام أو أي ممارسات معمول بها في السوق (\"القواعد\"). في حال وجود تعارض بين هذه ST&Cs والقواعد، يجب الأخذ بهذا الأخير."
 
@@ -3459,6 +3500,9 @@ msgstr "الاستثمارات وتوزيعات الأرباح"
 
 msgid "Investor Compensation Scheme"
 msgstr "برنامج تعويض المستثمر"
+
+msgid "Investor Password (read-only access)"
+msgstr ""
 
 msgid "Involved in evaluation of regulatory compliance and risk management. Work with the Head of Departments to improve business processes."
 msgstr "المشاركة في تقييم إدارة المخاطر والامتثال التنظيمي. العمل مع رئيس الإدارات لتحسين العمليات التجارية."
@@ -4080,6 +4124,11 @@ msgstr "Less than 6 months"
 msgid "Level of Education"
 msgstr "مستوى التعليم"
 
+#, fuzzy
+#| msgid "Average"
+msgid "Leverage"
+msgstr "متوسط"
+
 msgid "Leverage social-media tools and channels to identify, engage, and convert potential new customers and partners"
 msgstr "رفع قدرة وفاعلية أدوات وقنوات التواصل الإجتماعي لتحديد وجذب وتحويل العملاء والشركاء المحتملين الجدد"
 
@@ -4116,6 +4165,11 @@ msgstr "رابط لتوجيه عملائنا لطلبك."
 msgid "Links"
 msgstr "روابط"
 
+#, fuzzy
+#| msgid "Further Instructions"
+msgid "Linux Instructions"
+msgstr "مزيد من التعليمات"
+
 msgid "Live chat:"
 msgstr "المحادثة الحية:"
 
@@ -4124,6 +4178,9 @@ msgstr "قفل الصراف"
 
 msgid "Log in"
 msgstr "تسجيل الدخول"
+
+msgid "Log into the application using your MetaTrader account number (e.g., 829118) and your MetaTrader account password."
+msgstr ""
 
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "سجل الدخول لحساب الإنتساب لـ %1 وانقر على: الأمور المالية وتعليمات الدفع."
@@ -4169,6 +4226,14 @@ msgstr "تحديد حاجز منخفض"
 
 msgid "MENA FFXPO Award"
 msgstr "جائزة مؤتمر ومعرض الشرق الأوسط وشمال أفريقيا للتداول الذكي"
+
+#, fuzzy
+#| msgid "Specific Instructions"
+msgid "MacOS Instructions"
+msgstr "تعليمات خاصة"
+
+msgid "Main Password (trading access)"
+msgstr ""
 
 msgid "Maintain accurate system pricing parameters"
 msgstr "الحفاظ على نظام دقيق لعوامل التسعير"
@@ -4291,6 +4356,9 @@ msgstr "تاريخ لا ينسى"
 
 msgid "Memorable town/city"
 msgstr "مدينة أو بلدة لا تنسى"
+
+msgid "MetaTrader Accounts Management"
+msgstr ""
 
 msgid "Method"
 msgstr "الطريقة"
@@ -4512,6 +4580,9 @@ msgstr "يمكن للمتداولين المبتدئين استخدام منصت
 
 msgid "Now"
 msgstr "الآن"
+
+msgid "Now Introducing MetaTrader 5 on %1"
+msgstr ""
 
 msgid "Number of ticks"
 msgstr "عدد الحركات"
@@ -4842,7 +4913,7 @@ msgid "Personal Details"
 msgstr "تفاصيل شخصية"
 
 msgid "Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
-msgstr ""
+msgstr "يحظر على الأشخاص ممن لديهم معرفة داخلية لأي سوق مالي أو أداة التداول في هذا الموقع."
 
 msgid "Pip"
 msgstr "نقطة"
@@ -5410,6 +5481,9 @@ msgstr "مخاطر المنتجات الاستثمارية"
 msgid "Run daily payments reports and report suspected fraud"
 msgstr "عمل تقارير يومية للمدفوعات وتقرير اشتباه الاحتيال"
 
+msgid "Run the installation file and follow the instructions."
+msgstr ""
+
 msgid "Russia"
 msgstr "روسيا"
 
@@ -5561,7 +5635,7 @@ msgid "Sharp prices"
 msgstr "أفضل الأسعار"
 
 msgid "Shop"
-msgstr ""
+msgstr "متجر"
 
 msgid "Short"
 msgstr "قصير"
@@ -5682,6 +5756,11 @@ msgstr "وقت البدء"
 
 msgid "Start Trading"
 msgstr "بدء التداول"
+
+#, fuzzy
+#| msgid "Start Trading Now"
+msgid "Start Trading with MetaTrader 5"
+msgstr "ابدأ التداول الآن"
 
 msgid "Start learning"
 msgstr "ابدأ التعلم"
@@ -5816,6 +5895,12 @@ msgstr "الشروط والأحكام التكميلية للمنتجات الم
 #| msgid "Supporting the Group’s global recruiting and talent management needs"
 msgid "Supporting the Group's global recruiting and talent management needs"
 msgstr "دعم مجموعة من الموظفين حول العالم وإدارة احتياجات الموهوبين"
+
+msgid "Take advantage of numerous benefits, including:"
+msgstr ""
+
+msgid "Take your trading to the next level through this powerful interface, recognised as the benchmark standard worldwide."
+msgstr ""
 
 msgid "Talk to us"
 msgstr "تكلم معنا"
@@ -6521,7 +6606,7 @@ msgid "Tier"
 msgstr "المستوى"
 
 msgid "Time out until"
-msgstr ""
+msgstr "الوقت ينتهي حتى"
 
 msgid "Times are changing. We increase payouts so our clients can make the most of their winning trades."
 msgstr "الزمن يتغير. قمنا بزيادة العوائد بحيث يمكن لعملائنا الاستفادة القصوى من صفقات الفوز."
@@ -6851,6 +6936,11 @@ msgstr "رمز التحقق غير صحيح."
 msgid "Verification token"
 msgstr "رمز التحقق"
 
+#, fuzzy
+#| msgid "Verify new password"
+msgid "Verify Main Password"
+msgstr "قم بالتأكيد على كلمة المرور الجديدة"
+
 msgid "Verify new password"
 msgstr "قم بالتأكيد على كلمة المرور الجديدة"
 
@@ -7089,6 +7179,11 @@ msgstr "الأربعاء"
 
 msgid "Week of"
 msgstr "أسبوع"
+
+#, fuzzy
+#| msgid "Weekly"
+msgid "Weekday"
+msgstr "أسبوعي"
 
 msgid "Weekend quotes"
 msgstr "أسعار عطلة نهاية الأسبوع"
@@ -7853,6 +7948,9 @@ msgstr "أيام"
 msgid "deposit"
 msgstr "إيداع"
 
+msgid "details"
+msgstr "تفاصيل"
+
 #, fuzzy
 #| msgid "e.g. www.binaryqa36.com"
 msgid "e.g. ws.binaryws.com"
@@ -8019,7 +8117,7 @@ msgid "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
 
 msgid "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
-msgstr ""
+msgstr "{اليابان فقط}60.100.000 ين (عتباراً من 1 يوليو 2016)"
 
 msgid "{JAPAN ONLY}A  Net Settlement type of option is one where the underlying asset does not include yen, but the option fee and settlement are paid in yen; it therefore requires some definition of how the settlement amounts will be calculated and converted to yen."
 msgstr "{JAPAN ONLY}A  Net Settlement type of option is one where the underlying asset does not include yen, but the option fee and settlement are paid in yen; it therefore requires some definition of how the settlement amounts will be calculated and converted to yen."
@@ -8095,9 +8193,6 @@ msgstr "{JAPAN ONLY}As the time to the exercise point shortens, the time-value o
 msgid "{JAPAN ONLY}Association of join"
 msgstr "{JAPAN ONLY}Section 4: Risk"
 
-msgid "{JAPAN ONLY}BUY price per unit"
-msgstr "{JAPAN ONLY}BUY price per unit"
-
 msgid "{JAPAN ONLY}Because option prices are determined by the probability of being exercised, it cannot be said that cheaper options have any natural advantage over expensive options."
 msgstr "{JAPAN ONLY}Because option prices are determined by the probability of being exercised, it cannot be said that cheaper options have any natural advantage over expensive options."
 
@@ -8115,7 +8210,7 @@ msgid "{JAPAN ONLY}Capital"
 msgstr "{JAPAN ONLY}Units"
 
 msgid "{JAPAN ONLY}Capital Adequacy Ratio (CAR)"
-msgstr ""
+msgstr "{اليابان فقط} نسبة كفاية رأس المال (سيارة)"
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}Option Pricing"
@@ -8123,7 +8218,7 @@ msgid "{JAPAN ONLY}Company Profile"
 msgstr "{JAPAN ONLY}Option Pricing"
 
 msgid "{JAPAN ONLY}Company Profile & Disclosure"
-msgstr ""
+msgstr "{اليابان فقط} ملف الشركة & الكشف"
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}Download"
@@ -8131,7 +8226,7 @@ msgid "{JAPAN ONLY}Company name"
 msgstr "{JAPAN ONLY}Download"
 
 msgid "{JAPAN ONLY}Company name in English"
-msgstr ""
+msgstr "{اليابان فقط} أسم الشركة بالإنجليزية"
 
 msgid "{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly."
 msgstr "{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly."
@@ -8151,19 +8246,39 @@ msgid "{JAPAN ONLY}Designated dispute resolution organization"
 msgstr "{JAPAN ONLY}Introduction to Binary Options"
 
 msgid "{JAPAN ONLY}Disclosure of CAR by No. 46-6-3 in the FIEA (Financial Instruments and Exchange Act)"
-msgstr ""
+msgstr "{اليابان فقط} الكشف عن سيارة برقم 46-6-3 في FIEA (قانون الصكوك المالية والبورصة)"
 
 msgid "{JAPAN ONLY}Disclosure of financial statement by No. xx in the FIEA"
-msgstr ""
+msgstr "{اليابان فقط} الكشف عن بيان مالي برقم xx في قانون الصكوك المالية والبورصة"
 
 msgid "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
-msgstr ""
+msgstr "{اليابان فقط} الكشف عن نسبة الربح والخسارة برقم xx في قانون الصكوك المالية والبورصة"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Options Basics"
+msgid "{JAPAN ONLY}Does Not Touch"
+msgstr "{JAPAN ONLY}Options Basics"
 
 msgid "{JAPAN ONLY}Download"
 msgstr "{JAPAN ONLY}Download"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}END-IN/END-OUT"
+msgstr "{JAPAN ONLY}Units"
+
 msgid "{JAPAN ONLY}Email us copies of your Identification Documents and My Number card."
 msgstr "{JAPAN ONLY}Email us copies of your Identification Documents and My Number card."
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}Ends Between"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Trading Guide"
+msgid "{JAPAN ONLY}Ends Outside"
+msgstr "{JAPAN ONLY}Trading Guide"
 
 msgid "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
 msgstr "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
@@ -8188,10 +8303,10 @@ msgid "{JAPAN ONLY}Financial Condition"
 msgstr "{JAPAN ONLY}Section 5: Calculation"
 
 msgid "{JAPAN ONLY}Financial Instruments Business No. xxxx"
-msgstr ""
+msgstr "{اليابان فقط} صكوك الأعمال المالية برقم xxxx"
 
 msgid "{JAPAN ONLY}Financial Instruments Mediation Assistance Center"
-msgstr ""
+msgstr "{اليابان فقط} الصكوك المالية لمركز المساعدة والوساطة"
 
 msgid "{JAPAN ONLY}For a call option, if the price of the underlying asset is higher than the option exercise price, it is know as an in-the-money option."
 msgstr "{JAPAN ONLY}For a call option, if the price of the underlying asset is higher than the option exercise price, it is know as an in-the-money option."
@@ -8231,6 +8346,21 @@ msgstr "{JAPAN ONLY}For both call and put options, if the underlying asset price
 
 msgid "{JAPAN ONLY}For full details of the documents we can accept please download the following guide:"
 msgstr "{JAPAN ONLY}For full details of the documents we can accept please download the following guide:"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Section 3: Outline"
+msgid "{JAPAN ONLY}Goes Outside"
+msgstr "{JAPAN ONLY}Section 3: Outline"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}HIGH/LOW"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}Higher"
+msgstr "{JAPAN ONLY}Units"
 
 #, fuzzy
 #| msgid "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
@@ -8371,6 +8501,11 @@ msgid "{JAPAN ONLY}Knowledge test list item 5"
 msgstr "{JAPAN ONLY}Knowledge Test Result"
 
 #, fuzzy
+#| msgid "{JAPAN ONLY}Download"
+msgid "{JAPAN ONLY}Lower"
+msgstr "{JAPAN ONLY}Download"
+
+#, fuzzy
 #| msgid "{JAPAN ONLY}Trading Guide"
 msgid "{JAPAN ONLY}Main business"
 msgstr "{JAPAN ONLY}Trading Guide"
@@ -8384,7 +8519,7 @@ msgid "{JAPAN ONLY}No space between last name and first name"
 msgstr "{اليابان فقط} لا مسافة بين الأسم الأخير والأسم الأول"
 
 msgid "{JAPAN ONLY}November 7, 2014"
-msgstr ""
+msgstr "{اليابان فقط} 7 نوفمبر 2014"
 
 msgid "{JAPAN ONLY}Option Pricing"
 msgstr "{JAPAN ONLY}Option Pricing"
@@ -8463,8 +8598,8 @@ msgstr "{JAPAN ONLY}Regulation & Tax"
 msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "{JAPAN ONLY}Regulation & Tax"
 
-msgid "{JAPAN ONLY}SELL price  per unit"
-msgstr "{JAPAN ONLY}SELL price  per unit"
+msgid "{JAPAN ONLY}STAY-IN/BREAK-OUT"
+msgstr "{اليابان فقط} البقاء في/الهروب"
 
 msgid "{JAPAN ONLY}Section 1: Structure"
 msgstr "{JAPAN ONLY}Section 1: Structure"
@@ -8487,8 +8622,16 @@ msgstr "{JAPAN ONLY}Short positions in FX Binary Options must be covered by init
 msgid "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 msgstr "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}Stays Between"
+msgstr "{JAPAN ONLY}Units"
+
 msgid "{JAPAN ONLY}Summary of Specifications"
 msgstr "{JAPAN ONLY}Summary of Specifications"
+
+msgid "{JAPAN ONLY}TOUCH /NO-TOUCH"
+msgstr "{اليابان فقط} لمس/لا لمس"
 
 msgid "{JAPAN ONLY}Take knowledge test"
 msgstr "{JAPAN ONLY}Take knowledge test"
@@ -8506,7 +8649,7 @@ msgid "{JAPAN ONLY}The Exit Price is the price that is observed at the judgment 
 msgstr "{JAPAN ONLY}The Exit Price is the price that is observed at the judgment time, and is used to determine whether a payout should be made."
 
 msgid "{JAPAN ONLY}The Financial Futures Association of Japan"
-msgstr ""
+msgstr "{اليابان فقط} جمعية العقود المالية الآجلة في اليابان"
 
 msgid "{JAPAN ONLY}The buyer of a vanilla option can choose whether to exercise the option or not. His loss is limited to the price paid for the option, whereas his potential profit is unlimited."
 msgstr "{JAPAN ONLY}The buyer of a vanilla option can choose whether to exercise the option or not. His loss is limited to the price paid for the option, whereas his potential profit is unlimited."
@@ -8571,6 +8714,11 @@ msgstr "{JAPAN ONLY}To compensate for any rise in the price of an underlying ass
 msgid "{JAPAN ONLY}To invest a binary options investment accurately, the customer are required knowledge and experience related to derivative transactions."
 msgstr "{اليابان فقط} لإستثمار استثمار دقيق في الخيارت الثنائية, يتطلب من العملاء المعرفة والخبرة المتعلقة بالمعاملات المالية المشتقة."
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}Touches"
+msgstr "{JAPAN ONLY}Units"
+
 msgid "{JAPAN ONLY}Trading & Hedging"
 msgstr "{JAPAN ONLY}Trading & Hedging"
 
@@ -8578,10 +8726,7 @@ msgid "{JAPAN ONLY}Trading Guide"
 msgstr "{JAPAN ONLY}Trading Guide"
 
 msgid "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
-msgstr ""
-
-msgid "{JAPAN ONLY}Units"
-msgstr "{JAPAN ONLY}Units"
+msgstr "{اليابان فقط} النوع الأول من صكوك الأعمال المالية يستند على قانون الصكوك المالية و البورصة"
 
 msgid "{JAPAN ONLY}Unless special arrangements are made, cooling-off will not be available after OTC binary options trading contract has been made."
 msgstr "{JAPAN ONLY}Unless special arrangements are made, cooling-off will not be available after OTC binary options trading contract has been made."
@@ -8612,6 +8757,66 @@ msgstr "{JAPAN ONLY}Options Basics"
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\"> 1here</a> 2 to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}day"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}days"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}hour"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}hours"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}minute"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}minutes"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}month"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}months"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}week"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}weeks"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}year"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}years"
+msgstr "{JAPAN ONLY}Units"
+
 msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 msgstr "منصة التداول للخيارات الثنائية فى العملات والمؤشرات والسلع والمؤشرات الذكية"
 
@@ -8621,7 +8826,7 @@ msgid "Why Us"
 msgstr "لماذا نحن؟"
 
 msgid "Styles"
-msgstr ""
+msgstr "أساليب"
 
 #, fuzzy
 #| msgid "points"
@@ -8671,11 +8876,25 @@ msgstr "تحويل قام به وكيل الدفع"
 msgid "Sharp Prices. Smart Trading."
 msgstr "أسعار دقيقة. للتداول بذكاء."
 
+#, fuzzy
+#| msgid "Webtrader"
+msgid "MetaTrader"
+msgstr "ويب تريدر(Webtrader)"
+
 msgid "Account Details"
 msgstr "تفاصيل الحساب"
 
 msgid "Terms and Conditions Approval"
 msgstr "لموافقة على الشروط والأحكام"
+
+msgid "Trading with MetaTrader 5"
+msgstr ""
+
+#~ msgid "{JAPAN ONLY}BUY price per unit"
+#~ msgstr "{JAPAN ONLY}BUY price per unit"
+
+#~ msgid "{JAPAN ONLY}SELL price  per unit"
+#~ msgstr "{JAPAN ONLY}SELL price  per unit"
 
 #, fuzzy
 #~| msgid "{JAPAN ONLY}BUY price per unit"
@@ -10516,9 +10735,6 @@ msgstr "لموافقة على الشروط والأحكام"
 
 #~ msgid "Week"
 #~ msgstr "الأسبوع"
-
-#~ msgid "Weekly"
-#~ msgstr "أسبوعي"
 
 #~ msgid "Weeks"
 #~ msgstr "أسابيع"
@@ -13191,9 +13407,6 @@ msgstr "لموافقة على الشروط والأحكام"
 #~ msgid "Your secret answer is too short.  Please enter at least 4 characters."
 #~ msgstr "إجابتك السرية قصيرة جداً. يرجى أن تُدخل 4 أحرف على الأقل."
 
-#~ msgid "details"
-#~ msgstr "تفاصيل"
-
 #~ msgid "maximum is"
 #~ msgstr "الحد الأقصى هو"
 
@@ -14289,9 +14502,6 @@ msgstr "لموافقة على الشروط والأحكام"
 
 #~ msgid "At least 6 characters"
 #~ msgstr "6 أحرف على الأقل"
-
-#~ msgid "Average"
-#~ msgstr "متوسط"
 
 #~ msgid "Average Change"
 #~ msgstr "متوسط التغير"
@@ -16207,9 +16417,6 @@ msgstr "لموافقة على الشروط والأحكام"
 #~ msgid "Sorry, the IP Security field you specified (%1) wouldn't let you in from your current IP address %2."
 #~ msgstr "عفواً، مجال أمن IP الذى حددته (%1) لن يسمح لك بالدخول من خلال عنوان IP الحالى %2."
 
-#~ msgid "Start Trading Now"
-#~ msgstr "ابدأ التداول الآن"
-
 #~ msgid "This is to confirm that your email address for your account %1 on %2 has been changed from %3 to %4"
 #~ msgstr "هذا لتأكيد أن عنوان بريدك الإلكترونى لحسابك %1 على %2 تم تغييره من %3 إلى %4"
 
@@ -17352,9 +17559,6 @@ msgstr "لموافقة على الشروط والأحكام"
 
 #~ msgid "Download for Mac"
 #~ msgstr "تحميل لنظام التشغيل Mac"
-
-#~ msgid "Download for Windows"
-#~ msgstr "تحميل لنظام التشغيل Windows"
 
 #~ msgid "P/L"
 #~ msgstr "م/خ"

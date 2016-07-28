@@ -1,0 +1,74 @@
+<div id="metatrader">
+    <h1>[% l('MetaTrader Accounts Management') %]</h1>
+
+    <p id="errorMsg" class="notice-msg center-text invisible"></p>
+
+    <div class="gr-row">
+        <div class="gr-3">
+            <div class="sidebar">
+                <ul class="sidebar-nav">
+                    <li id="nav-demo" class="selected"><a href="#demo">[% l('Demo Account') %]</a></li>
+                    <li id="nav-real"><a href="#real">[% l('Real Account') %]</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="gr-9">
+            <div id="section-demo" class="section invisible">
+                <h3>[% l('Demo Account') %]</h3>
+                <form id="form-new-demo" class="invisible">
+                    <p>[% l("In order to trade using MetaTrader 5 platform, you'll first need to have a MetaTrader account.") %]</p>
+                    <div class="gr-row gr-padding-10">
+                        <div class="gr-6 form_label">[% l('Account Type') %]</div>
+                        <div class="gr-6 form_label align-start account-type">[% l('Demo') %]</div>
+                    </div>
+                    <div class="gr-row gr-padding-10 invisible">
+                        <div class="gr-6 form_label"><label for="ddlLeverage">[% l('Leverage') %]</label></div>
+                        <div class="gr-6">
+                            <select id="ddlLeverage">
+                                <option value="1">1</option>
+                                <option value="50">50</option>
+                                <option value="100" selected="selected">100</option>
+                                <option value="200">200</option>
+                                <option value="500">500</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="gr-row gr-padding-10">
+                        <div class="gr-6 form_label"><label for="txtMainPass">[% l('Main Password (trading access)') %]</label></div>
+                        <div class="gr-6">
+                            <input type="password" id="txtMainPass" class="password">
+                            <p style="margin:0px;height:0.5em;display:none;">
+                                <meter id="password-meter" class="password-meter" value="" max="50" min="0" high="20" low="10" optimum="50"></meter>
+                            </p>
+                            <div class="hint">[% l('Minimum of six lower and uppercase letters with numbers') %]</div>
+                        </div>
+                    </div>
+                    <div class="gr-row gr-padding-10">
+                        <div class="gr-6 form_label"><label for="txtMainPass2">[% l('Verify Main Password') %]</label></div>
+                        <div class="gr-6"><input type="password" id="txtMainPass2"></div>
+                    </div>
+                    <div class="gr-row gr-padding-10">
+                        <div class="gr-6 form_label"><label for="txtInvestPass">[% l('Investor Password (read-only access)') %]</label></div>
+                        <div class="gr-6"><input type="password" id="txtInvestPass"></div>
+                    </div>
+                    <div class="gr-row gr-padding-10">
+                        <div class="gr-6 form_label"></div>
+                        <div class="gr-6"><button id="btnCreateAccount" class="button">[% l('Create') %]</button></div>
+                    </div>
+                    <div id="formMessage" class="center-text"></div>
+                </form>
+                <div id="details-demo"></div>
+            </div>
+            <div id="section-real" class="section invisible">
+                <h3>[% l('Real Account') %]</h3>
+                <p id="msgRealAccount" class="invisible"></p>
+                <form id="form-new-real" class="invisible"></form>
+                <div id="details-real"></div>
+            </div>
+        </div>
+    </div>
+
+    <p id="errorMsg" class="notice-msg center-text invisible"></p>
+
+    <div id="loading"></div>
+</div>
