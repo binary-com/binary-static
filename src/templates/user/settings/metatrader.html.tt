@@ -16,7 +16,7 @@
             <div id="section-demo" class="section invisible">
                 <h3>[% l('Demo Account') %]</h3>
                 <form id="form-new-demo" class="invisible">
-                    <p>[% l("In order to trade using MetaTrader 5 platform, you'll first need to have a MetaTrader account.") %]</p>
+                    <p>[% l("Create a MetaTrader account to trade on the MetaTrader 5 platform.") %]</p>
                     <div class="gr-row gr-padding-10">
                         <div class="gr-6 form_label">[% l('Account Type') %]</div>
                         <div class="gr-6 form_label align-start account-type">[% l('Demo') %]</div>
@@ -78,7 +78,7 @@
                     <h3>[% l('Deposit from Binary account') %]</h3>
                     <div>
                         <form id="form-deposit-real">
-                            <p>[% l("Deposit to your MetaTrader account from Binary account:") %]</p>
+                            <p>[% l('Deposit funds into your MetaTrader account from your Binary account:') %]</p>
                             <div class="gr-row gr-padding-10">
                                 <div class="gr-6 form_label">[% l('Deposit from') %]</div>
                                 <div class="gr-6 form_label align-start binary-login"></div>
@@ -103,7 +103,7 @@
                     <h3>[% l('Withdraw from MetaTrader account') %]</h3>
                     <div>
                         <form id="form-withdrawal-real">
-                            <p>[% l("Withdraw from your MetaTrader account to Binary account:") %]</p>
+                            <p>[% l('Withdraw funds from your MetaTrader account into your Binary account:') %]</p>
                             <div class="gr-row gr-padding-10">
                                 <div class="gr-6 form_label">[% l('Withdraw from') %]</div>
                                 <div class="gr-6 form_label align-start mt-login"></div>

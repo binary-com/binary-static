@@ -781,7 +781,7 @@ sub _texts {
         push @texts, localize('Your account is not fully authenticated. Please visit the <a href="[_1]">authentication</a> page for more information.');
         push @texts, localize('details');
 
-        # strings for settings/metatrader page
+        # strings for user/settings/metatrader page
         push @texts, localize('Login');
         push @texts, localize('To create a Real account for MetaTrader:');
         push @texts, localize('Please switch to your Real account.');
@@ -789,7 +789,9 @@ sub _texts {
         push @texts, localize('Your new account has been created.');
         push @texts, localize('Deposit is done. Transaction ID:');
         push @texts, localize('Withdrawal is done. Transaction ID:');
-        push @texts, localize('Find out how to start trading');
+        push @texts, localize('Start trading with your Demo Account');
+        push @texts, localize('Start trading with your Real Account');
+        push @texts, localize('Download MetaTrader');
 
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";

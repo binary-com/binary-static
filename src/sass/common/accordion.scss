@@ -1,4 +1,8 @@
 #accordion {
+    .ui-accordion-header {
+        border-radius: 0;
+        margin-bottom: -3px;
+    }
     .ui-icon {
         display: none;
         visibility: hidden;
@@ -6,28 +10,29 @@
     .ui-state-active, .ui-state-default, .ui-state-hover {
         border: none !important;
         outline: none;
+        background-repeat: no-repeat !important;
+        @include BIDIR_VALUE(background-position, right !important, left !important);
     }
     .ui-state-active.ui-state-default, .ui-state-active.ui-state-default.ui-state-hover {
-        background: $COLOR_NAV_BORDER !important;
+        background-image: url('../images/common/arrow_down.svg') !important;
+        background-color: $COLOR_NAV_BORDER !important;
         border-color: $COLOR_NAV_BORDER !important;
         color: $COLOR_WHITE !important;
     }
     .ui-state-default, .ui-state-hover {
-        background: $COLOR_WHITE !important;
-        border: 1px solid $COLOR_GRAY !important;
+        @include BIDIR_VALUE(background-image, url('../images/common/arrow_right.svg') !important, url('../images/common/arrow_left.svg') !important);
+        background-color: $COLOR_LIGHT_GRAY !important;
+        border: 1px solid $COLOR_GRAY_SHADE !important;
         color: $COLOR_BLACK !important;
     }
-    .ui-state-active.ui-state-default:after, .ui-state-active.ui-state-default.ui-state-hover:after {
-        transform: rotate(90deg);
-    }
-    .ui-state-default:after, .ui-state-hover:after {
-        @include BIDIR_VALUE(content, '>', '<');
-        @include BIDIR_VALUE(float, right, left);
+    .ui-state-hover {
+        background-color: $COLOR_GRAY !important;
     }
     .ui-accordion-content {
         padding-top: 0 !important;
+        border-radius: 0;
     }
     .ui-widget-content {
-        border: 1px solid $COLOR_GRAY !important;
+        border: 1px solid $COLOR_GRAY_SHADE !important;
     }
 }

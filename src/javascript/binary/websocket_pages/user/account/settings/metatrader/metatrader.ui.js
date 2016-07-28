@@ -53,7 +53,9 @@ var MetaTraderUI = (function() {
             makeTextRow('Balance', currency + ' ' + mt5Accounts[accType].balance, 'balance-' + accType) +
             makeTextRow('Name', mt5Accounts[accType].name) +
             // makeTextRow('Leverage', mt5Accounts[accType].leverage)
-            makeTextRow('', '<a href="' + page.url.url_for('metatrader/download') + '">' + text.localize('Find out how to start trading') + '</a>')
+            makeTextRow('', text.localize('Start trading with your ' + (accType === 'demo' ? 'Demo' : 'Real') + ' Account') +
+                ' <a class="button" href="' + page.url.url_for('metatrader/download') + '">' +
+                    '<span>' + text.localize('Download MetaTrader') + '</span></a>')
         ));
         $('#details-' + accType).html($details.html());
 
@@ -92,7 +94,9 @@ var MetaTraderUI = (function() {
     };
 
     var makeTextRow = function(label, value, id) {
-        return '<div' + (id ? ' id="' + id + '"' : '') + ' class="gr-row gr-padding-10"><div class="gr-4">' + text.localize(label) + '</div><div class="gr-8">' + value + '</div></div>';
+        return '<div' + (id ? ' id="' + id + '"' : '') + ' class="gr-row gr-padding-10">' +
+            (label ? '<div class="gr-4">' + text.localize(label) + '</div>' : '') +
+            '<div class="gr-' + (label ? '8' : '12') + '">' + value + '</div></div>';
     };
 
     var createNewAccount = function() {
