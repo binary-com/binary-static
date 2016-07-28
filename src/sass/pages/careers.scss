@@ -1,4 +1,4 @@
-.career, .user_testing {
+.career, .user_testing, .regulation-content {
     .xquote {
         background-color: $COLOR_LIGHT_GRAY;
         padding: 20px;
@@ -19,5 +19,9 @@
                 }
             }
         }
+    }
+    .flex-tr-child-image {
+        width: 25px;
+        height: 25px;
     }
 }

@@ -1,0 +1,444 @@
+<h1>[% l("Regulatory Information") %]</h1>
+<h2>[% l("EU Passport Rights") %]</h2>
+<div class="gr-parent gr-padding-10">
+    <p>
+        [% l("Binary Investments (Europe) Limited,  licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority, is entitled to provide services within other EU Member States through EU passporting rights.") %]
+    </p>
+    <p>
+        [% l("Binary Investments (Europe) Limited operates a fair and transparent financial market through supervision and oversight by the relevant regulatory authorities by adhering to the Investment Services Rules, which provide for the transposition of Markets in Financial Instruments Directive and standard licence conditions that govern Binary Investments (Europe) Limited.") %]
+    </p>
+    <p>
+        [% l("As a Maltese Investment Services licence holder, client funds are held in segregated accounts separate from company funds and capital resources requirements are complied with. Clients of Binary Investments (Europe) Limited can trade with peace of mind knowing that they are covered by the Investor Compensation Scheme and capital adequacy of Binary Investments (Europe) Limited is actively managed.") %]
+    </p>
+    <p>
+        [% l("Refer table below for the list of EU countries that have access to [_1] via EU passporting rights - freedom to provide cross border services.", website_name) %]
+    </p>
+</div>
+
+<div class="flex-table-container">
+    <table class="flex-table">
+        <thead>
+            <tr class="flex-tr">
+                <th class="flex-tr-child">[% l("Country") %]</th>
+                <th class="flex-tr-child">[% l("Regulatory Authority") %]</th>
+                <th class="flex-tr-child"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="flex-tr">
+                <td class="flex-tr-child">
+                    <span class="flag-icon flag-icon-at"></span>
+                    [% l("Austria") %]
+                </td>
+                <td class="flex-tr-child">
+                    <a href="https://www.fma.gv.at" target="_blank">
+                        Finanzmarktaufsicht Österreichische (FMA)
+                    </a>
+                </td>
+                <td class="flex-tr-child flex-tr-child-image">
+                    <a href="https://www.fma.gv.at/en/search-company-database/?cname=Binary+Investments&place=&bic=&category=&per_page=10&submitted=1" target="_blank">
+                        <img src="[% request.url_for('images/pages/regulation/link.svg') %]" />
+                    </a>
+                </td>
+            </tr>
+            <tr class="flex-tr">
+                <td class="flex-tr-child">
+                    <span class="flag-icon flag-icon-be"></span>
+                    [% l("Belgium") %]
+                </td>
+                <td class="flex-tr-child">
+                    <a href="http://www.fsma.be/en.aspx" target="_blank">
+                        Financial Services and Markets Authority (FSMA)
+                    </a>
+                </td>
+                <td class="flex-tr-child flex-tr-child-image">
+                    <a href="[% request.url_for('download/regulation/Belgium.pdf') %]" target="_blank">
+                        <img src="[% request.url_for('images/pages/regulation/pdf.svg') %]" />
+                    </a>
+                </td>
+            </tr>
+            <tr class="flex-tr">
+                <td class="flex-tr-child">
+                    <span class="flag-icon flag-icon-hr"></span>
+                    [% l("Croatia") %]
+                </td>
+                <td class="flex-tr-child">
+                    <a href="http://www.hanfa.hr/en/mainpage.html" target="_blank">
+                        Croatian Financial Services Supervisory Agency (HANFA)
+                    </a>
+                </td>
+                <td class="flex-tr-child flex-tr-child-image">
+                    <a href="[% request.url_for('http://www.hanfa.hr/EN/nav/232/notifications-from-eu-member-states---tk.html') %]" target="_blank">
+                        <img src="[% request.url_for('images/pages/regulation/link.svg') %]" />
+                    </a>
+                </td>
+            </tr>
+            <tr class="flex-tr">
+                <td class="flex-tr-child">
+                    <span class="flag-icon flag-icon-cz"></span>
+                    [% l("Czech Republic") %]
+                </td>
+                <td class="flex-tr-child">
+                    <a href="http://www.cnb.cz/cs/index.html" target="_blank">
+                        Česká Národní Banka (CNB)
+                    </a>
+                </td>
+                <td class="flex-tr-child flex-tr-child-image">
+                    <a href="[% request.url_for('https://apl.cnb.cz/apljerrsdad/JERRS.WEB10.VIZITKA?p_lang=en&p_SEQ_ID=10765086&p_VER_ID=1000&p_DATUM=28.07.2016&p_ROL_KOD=') %]" target="_blank">
+                        <img src="[% request.url_for('images/pages/regulation/link.svg') %]" />
+                    </a>
+                </td>
+            </tr>
+            <tr class="flex-tr">
+                <td class="flex-tr-child">
+                    <span class="flag-icon flag-icon-dk"></span>
+                    [% l("Denmark") %]
+                </td>
+                <td class="flex-tr-child">
+                    <a href="https://www.finanstilsynet.dk" target="_blank">
+                        Finanstilsynet (The Danish FSA)
+                    </a>
+                </td>
+                <td class="flex-tr-child flex-tr-child-image">
+                    <a href="[% request.url_for('download/regulation/Denmark.pdf') %]" target="_blank">
+                        <img src="[% request.url_for('images/pages/regulation/pdf.svg') %]" />
+                    </a>
+                </td>
+            </tr>
+            <tr class="flex-tr">
+                <td class="flex-tr-child">
+                    <span class="flag-icon flag-icon-ee"></span>
+                    [% l("Estonia") %]
+                </td>
+                <td class="flex-tr-child">
+                    <a href="https://www.fi.ee" target="_blank">
+                        Finantsinspektsioon (The Estonian FSA)
+                    </a>
+                </td>
+                <td class="flex-tr-child flex-tr-child-image">
+                    <a href="[% request.url_for('https://www.fi.ee/index.php?id=2228') %]" target="_blank">
+                        <img src="[% request.url_for('images/pages/regulation/link.svg') %]" />
+                    </a>
+                </td>
+            </tr>
+            <tr class="flex-tr">
+                <td class="flex-tr-child">
+                    <span class="flag-icon flag-icon-fi"></span>
+                    [% l("Finland") %]
+                </td>
+                <td class="flex-tr-child">
+                    <a href="http://www.fin-fsa.fi/en/pages/default.aspx" target="_blank">
+                        Finanssivalvonta - Financial Supervisory Authority (FIN-FSA)
+                    </a>
+                </td>
+                <td class="flex-tr-child flex-tr-child-image">
+                    <a href="[% request.url_for('http://www.finanssivalvonta.fi/en/Authorisations/Notifications/Pages/notifications.aspx') %]" target="_blank">
+                        <img src="[% request.url_for('images/pages/regulation/link.svg') %]" />
+                    </a>
+                </td>
+            </tr>
+            <tr class="flex-tr">
+                <td class="flex-tr-child">
+                    <span class="flag-icon flag-icon-fr"></span>
+                    [% l("France") %]
+                </td>
+                <td class="flex-tr-child">
+                    <a href="https://www.lautorite.qc.ca" target="_blank">
+                        Autorité des Marchés Financiers (AMF)
+                    </a>
+                </td>
+                <td class="flex-tr-child flex-tr-child-image">
+                    <a href="[% request.url_for('download/regulation/France.pdf') %]" target="_blank">
+                        <img src="[% request.url_for('images/pages/regulation/pdf.svg') %]" />
+                    </a>
+                </td>
+            </tr>
+            <tr class="flex-tr">
+                <td class="flex-tr-child">
+                    <span class="flag-icon flag-icon-de"></span>
+                    [% l("Germany") %]
+                </td>
+                <td class="flex-tr-child">
+                    <a href="http://www.bafin.de/DE/Startseite/startseite_node.html" target="_blank">
+                        Bundesanstalt fur Finanzdienstleistungsaufsicht (BaFin)
+                    </a>
+                </td>
+                <td class="flex-tr-child flex-tr-child-image">
+                    <a href="[% request.url_for('https://portal.mvp.bafin.de/database/InstInfo/institutDetails.do?cmd=loadInstitutAction&institutId=143125') %]" target="_blank">
+                        <img src="[% request.url_for('images/pages/regulation/link.svg') %]" />
+                    </a>
+                </td>
+            </tr>
+            <tr class="flex-tr">
+                <td class="flex-tr-child">
+                    <span class="flag-icon flag-icon-gr"></span>
+                    [% l("Greece") %]
+                </td>
+                <td class="flex-tr-child">
+                    <a href="http://www.hcmc.gr" target="_blank">
+                        Hellenic Capital Market Commission (HCMC)
+                    </a>
+                </td>
+                <td class="flex-tr-child flex-tr-child-image">
+                    <a href="[% request.url_for('download/regulation/Greece.pdf') %]" target="_blank">
+                        <img src="[% request.url_for('images/pages/regulation/pdf.svg') %]" />
+                    </a>
+                </td>
+            </tr>
+            <tr class="flex-tr">
+                <td class="flex-tr-child">
+                    <span class="flag-icon flag-icon-it"></span>
+                    [% l("Italy") %]
+                </td>
+                <td class="flex-tr-child">
+                    <a href="http://www.consob.it" target="_blank">
+                        Commissione Nazionale per le Società e la Borsa (CONSOB)
+                    </a>
+                </td>
+                <td class="flex-tr-child flex-tr-child-image">
+                    <a href="[% request.url_for('http://www.consob.it/mainen/documenti/english/intermediaries/albi/COM.html?symblink=/mainen/intermediares/investments_firms/com_lnk.html') %]" target="_blank">
+                        <img src="[% request.url_for('images/pages/regulation/link.svg') %]" />
+                    </a>
+                </td>
+            </tr>
+            <tr class="flex-tr">
+                <td class="flex-tr-child">
+                    <span class="flag-icon flag-icon-lv"></span>
+                    [% l("Latvia") %]
+                </td>
+                <td class="flex-tr-child">
+                    <a href="http://www.fktk.lv" target="_blank">
+                        Finanšu Un Kapitāla Tirgus Komisija (FKTK)
+                    </a>
+                </td>
+                <td class="flex-tr-child flex-tr-child-image">
+                    <a href="[% request.url_for('http://www.fktk.lv/en/market/financial-instruments-market/service-providers-from-the-eea/freedom-to-provide-services.html') %]" target="_blank">
+                        <img src="[% request.url_for('images/pages/regulation/link.svg') %]" />
+                    </a>
+                </td>
+            </tr>
+            <tr class="flex-tr">
+                <td class="flex-tr-child">
+                    <span class="flag-icon flag-icon-lu"></span>
+                    [% l("Luxembourg") %]
+                </td>
+                <td class="flex-tr-child">
+                    <a href="https://www.cssf.lu" target="_blank">
+                        Commission de Surveillance du Secteur Financier (CSSF)
+                    </a>
+                </td>
+                <td class="flex-tr-child flex-tr-child-image">
+                    <a href="[% request.url_for('download/regulation/Luxembourg.pdf') %]" target="_blank">
+                        <img src="[% request.url_for('images/pages/regulation/pdf.svg') %]" />
+                    </a>
+                </td>
+            </tr>
+            <tr class="flex-tr">
+                <td class="flex-tr-child">
+                    <span class="flag-icon flag-icon-mt"></span>
+                    [% l("Malta") %]
+                </td>
+                <td class="flex-tr-child">
+                    <a href="http://www.mfsa.com.mt" target="_blank">
+                        Malta Financial Services Authority (MFSA)
+                    </a>
+                </td>
+                <td class="flex-tr-child flex-tr-child-image">
+                    <a href="[% request.url_for('http://www.mfsa.com.mt/pages/licenceholders.aspx') %]" target="_blank">
+                        <img src="[% request.url_for('images/pages/regulation/link.svg') %]" />
+                    </a>
+                </td>
+            </tr>
+            <tr class="flex-tr">
+                <td class="flex-tr-child">
+                    <span class="flag-icon flag-icon-nl"></span>
+                    [% l("Netherlands") %]
+                </td>
+                <td class="flex-tr-child">
+                    <a href="https://www.afm.nl" target="_blank">
+                        De Autoriteit Financiële Markten (AFM)
+                    </a>
+                </td>
+                <td class="flex-tr-child flex-tr-child-image">
+                    <a href="[% request.url_for('https://www.afm.nl/en/professionals/registers/alle-huidige-registers/beleggingsonderneming.aspx?id=70399C7A-F71F-E511-A3EB-005056BE011D&q=binary+investments') %]" target="_blank">
+                        <img src="[% request.url_for('images/pages/regulation/link.svg') %]" />
+                    </a>
+                </td>
+            </tr>
+            <tr class="flex-tr">
+                <td class="flex-tr-child">
+                    <span class="flag-icon flag-icon-pl"></span>
+                    [% l("Poland") %]
+                </td>
+                <td class="flex-tr-child">
+                    <a href="http://www.knf.gov.pl/index.html" target="_blank">
+                        Komisja Nadzoru Finansowego (KNF)
+                    </a>
+                </td>
+                <td class="flex-tr-child flex-tr-child-image">
+                    <a href="[% request.url_for('https://www.knf.gov.pl/en/authorised_entities.jsp#searchedName=Binary%20Investments&ctype=&wybraneOPZ=&wybraneDT=&wybranePPZ=&companyCategoryName=') %]" target="_blank">
+                        <img src="[% request.url_for('images/pages/regulation/link.svg') %]" />
+                    </a>
+                </td>
+            </tr>
+            <tr class="flex-tr">
+                <td class="flex-tr-child">
+                    <span class="flag-icon flag-icon-pt"></span>
+                    [% l("Portugal") %]
+                </td>
+                <td class="flex-tr-child">
+                    <a href="http://www.cmvm.pt/pt/Pages/home.aspx" target="_blank">
+                        Comissâo do Mercado de Valores Mobiliários (CMVM)
+                    </a>
+                </td>
+                <td class="flex-tr-child flex-tr-child-image">
+                    <a href="[% request.url_for('http://web3.cmvm.pt/english/sdi/ifs/LPS/ei_lps_lista.cfm?pais=Malta#lo') %]" target="_blank">
+                        <img src="[% request.url_for('images/pages/regulation/link.svg') %]" />
+                    </a>
+                </td>
+            </tr>
+            <tr class="flex-tr">
+                <td class="flex-tr-child">
+                    <span class="flag-icon flag-icon-ro"></span>
+                    [% l("Romania") %]
+                </td>
+                <td class="flex-tr-child">
+                    <a href="http://asfromania.ro" target="_blank">
+                        Romanian National Securities Commission (CNVMR)
+                    </a>
+                </td>
+                <td class="flex-tr-child flex-tr-child-image">
+                    <a href="[% request.url_for('download/regulation/Romania.pdf') %]" target="_blank">
+                        <img src="[% request.url_for('images/pages/regulation/link.svg') %]" />
+                    </a>
+                </td>
+            </tr>
+            <tr class="flex-tr">
+                <td class="flex-tr-child">
+                    <span class="flag-icon flag-icon-sk"></span>
+                    [% l("Slovakia") %]
+                </td>
+                <td class="flex-tr-child">
+                    <a href="http://www.nbs.sk/sk/titulna-stranka" target="_blank">
+                        Národná Banka Slovenska (NBS)
+                    </a>
+                </td>
+                <td class="flex-tr-child flex-tr-child-image">
+                    <a href="[% request.url_for('https://subjekty.nbs.sk/?aa=&bb=2&cc=&qq=Binary+Investments') %]" target="_blank">
+                        <img src="[% request.url_for('images/pages/regulation/link.svg') %]" />
+                    </a>
+                </td>
+            </tr>
+            <tr class="flex-tr">
+                <td class="flex-tr-child">
+                    <span class="flag-icon flag-icon-si"></span>
+                    [% l("Slovenia") %]
+                </td>
+                <td class="flex-tr-child">
+                    <a href="http://www.a-tvp.si" target="_blank">
+                        Agencija za trg Vrednostnih Papirjev (ATVP)
+                    </a>
+                </td>
+                <td class="flex-tr-child flex-tr-child-image">
+                    <a href="[% request.url_for('download/regulation/Slovenia.pdf') %]" target="_blank">
+                        <img src="[% request.url_for('images/pages/regulation/pdf.svg') %]" />
+                    </a>
+                </td>
+            </tr>
+            <tr class="flex-tr">
+                <td class="flex-tr-child">
+                    <span class="flag-icon flag-icon-es"></span>
+                    [% l("Spain") %]
+                </td>
+                <td class="flex-tr-child">
+                    <a href="http://www.cnmv.es/portal/home.aspx" target="_blank">
+                        Comisión Nacional del Mercado de Valores (CNMV)
+                    </a>
+                </td>
+                <td class="flex-tr-child flex-tr-child-image">
+                    <a href="[% request.url_for('http://www.cnmv.es/Portal/Consultas/ESI/ESISExtranjerasLP.aspx?numero=3944&tipo=CLP') %]" target="_blank">
+                        <img src="[% request.url_for('images/pages/regulation/link.svg') %]" />
+                    </a>
+                </td>
+            </tr>
+            <tr class="flex-tr">
+                <td class="flex-tr-child">
+                    <span class="flag-icon flag-icon-se"></span>
+                    [% l("Sweden") %]
+                </td>
+                <td class="flex-tr-child">
+                    <a href="http://www.fi.se" target="_blank">
+                        Finansinspektionen (FI)
+                    </a>
+                </td>
+                <td class="flex-tr-child flex-tr-child-image">
+                    <a href="[% request.url_for('http://www.fi.se/Folder-EN/Startpage/Register/Company-register/?sok1=Binary+Investments&mode=wide') %]" target="_blank">
+                        <img src="[% request.url_for('images/pages/regulation/link.svg') %]" />
+                    </a>
+                </td>
+            </tr>
+            <tr class="flex-tr">
+                <td class="flex-tr-child">
+                    <span class="flag-icon flag-icon-gb"></span>
+                    [% l("United Kingdom") %]
+                </td>
+                <td class="flex-tr-child">
+                    <a href="http://www.fca.org.uk" target="_blank">
+                        Financial Conduct Authority (FCA)
+                    </a>
+                </td>
+                <td class="flex-tr-child flex-tr-child-image">
+                    <a href="[% request.url_for('https://register.fca.org.uk/ShPo_FirmDetailsPage?id=001b000000p2GpEAAU') %]" target="_blank">
+                        <img src="[% request.url_for('images/pages/regulation/link.svg') %]" />
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="gr-padding-30">
+    <h2>[% l("Pillar 3 Disclosures") %]</h2>
+    <p>
+        [% l("The Pillar 3 disclosure document of Binary Investments (Europe) Limited has been prepared in accordance with the Capital Requirements Directive IV and the Capital Requirements Regulation. Read our Pillar 3 disclosure document to understand how we comply with market discipline as a market participant.") %]
+    </p>
+    <div class="gr-row">
+        <div class="gr-5 gr-12-m gr-6-p center-text gr-centered">
+          <div class="xquote">
+            <div>
+              <div class="picture">
+                <img class="half-sized-picture" src="/binary-static/images/pages/careers/view-positions-icon.svg">
+              </div>
+              <div class="text">
+                <a href="[% request.url_for('download/BIEL_Pillar_3_Report.pdf') %]" target="_blank">
+                  [% l("Pillar 3 disclosure document") %]
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+<div class="gr-padding-30 gr-parent">
+    <h2>[% l("Prospectus") %]</h2>
+    <p>
+        [% l("Read about the features, characteristics, benefits and risks of binary options in the prospectus of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options.") %]
+    </p>
+    <div class="gr-row">
+        <div class="gr-3 gr-7-m gr-5-p center-text gr-centered">
+          <div class="xquote">
+            <div>
+              <div class="picture">
+                <img class="half-sized-picture" src="/binary-static/images/pages/careers/view-positions-icon.svg">
+              </div>
+              <div class="text">
+                <a href="[% request.url_for('download/BIEL_Prospectus.pdf') %]" target="_blank">
+                  [% l("Prospectus") %]
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
