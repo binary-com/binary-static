@@ -12,6 +12,7 @@ sub all_pages {
         ['responsible-trading',        'static/responsible_trading',   'full_width', 'Responsible Trading', 'ja'],
         ['terms-and-conditions',       'legal/tac',                    'default',    'Terms and Conditions'],
         ['terms-and-conditions-jp',    'japan/legal/tacjp',            'default',    'Terms and Conditions'],
+        ['regulation',                 'legal/regulation',             'default',    'Regulation'],
         ['styles',                     'home/styles',                  'full_width', 'Styles'],
         ['affiliate/signup',           'affiliates/signup',            'default',    'Affiliate',           'ja'],
         ['user/browser-support',       'misc/logintrouble',            'default',    'Login trouble'],
