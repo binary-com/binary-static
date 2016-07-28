@@ -788,7 +788,8 @@ sub _texts {
         push @texts, localize('Please <a href="[_1]">upgrade to Real account</a>.');
         push @texts, localize('Your new account has been created.');
         push @texts, localize('Deposit is done. Transaction ID:');
-        push @texts, localize('You cannot deposit more than your current balance:');
+        push @texts, localize('Withdrawal is done. Transaction ID:');
+        push @texts, localize('Find out how to start trading');
 
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";

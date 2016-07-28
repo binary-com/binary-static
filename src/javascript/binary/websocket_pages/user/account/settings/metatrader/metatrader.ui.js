@@ -7,6 +7,7 @@ var MetaTraderUI = (function() {
         isValid,
         isAuthenticated,
         currency,
+        highlightBalance,
         mt5Logins,
         mt5Accounts;
 
@@ -21,6 +22,7 @@ var MetaTraderUI = (function() {
         currency    = 'USD';
         mt5Logins   = [];
         mt5Accounts = {};
+        highlightBalance = false;
 
         Content.populate();
 
@@ -48,32 +50,49 @@ var MetaTraderUI = (function() {
         $('#form-new-' + accType).addClass(hiddenClass);
         var $details = $('<div/>').append($(
             makeTextRow('Login', mt5Accounts[accType].login) +
-            makeTextRow('Balance', currency + ' ' + mt5Accounts[accType].balance) +
-            makeTextRow('Name', mt5Accounts[accType].name)
+            makeTextRow('Balance', currency + ' ' + mt5Accounts[accType].balance, 'balance-' + accType) +
+            makeTextRow('Name', mt5Accounts[accType].name) +
             // makeTextRow('Leverage', mt5Accounts[accType].leverage)
+            makeTextRow('', '<a href="' + page.url.url_for('metatrader/download') + '">' + text.localize('Find out how to start trading') + '</a>')
         ));
         $('#details-' + accType).html($details.html());
 
         // display deposit form
         if(accType === 'real') {
             if(page.client.is_virtual()) {
-                $('#deposit-real').addClass(hiddenClass);
+                $('#accordion').addClass(hiddenClass);
             } else {
-                $('#deposit-real').removeClass(hiddenClass);
-                $form = $('#form-deposit-real');
-                $form.find('.binary-login').text(page.client.loginid);
-                $form.find('.mt-login').text(mt5Accounts[accType].login);
-                $form.find('button').unbind('click').click(function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    depositToMTAccount();
+                ['#form-deposit-real', '#form-withdrawal-real'].map(function(formID){
+                    $form = $(formID);
+                    $form.find('.binary-login').text(page.client.loginid);
+                    $form.find('.mt-login').text(mt5Accounts[accType].login);
+                    $form.find('button').unbind('click').click(function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        if(/deposit/.test(formID)) {
+                            depositToMTAccount();
+                        } else {
+                            withdrawFromMTAccount();
+                        }
+                    });
+                });
+
+                if(highlightBalance) {
+                    $('#balance-real').addClass('notice-msg').delay(5000).queue(function(){$(this).removeClass('notice-msg');});
+                    highlightBalance = false;
+                }
+
+                $('#accordion').removeClass(hiddenClass).accordion({
+                    heightStyle : 'content',
+                    collapsible : true,
+                    active      : false
                 });
             }
         }
     };
 
-    var makeTextRow = function(label, value) {
-        return '<div class="gr-row gr-padding-10"><div class="gr-4">' + text.localize(label) + '</div><div class="gr-8">' + value + '</div></div>';
+    var makeTextRow = function(label, value, id) {
+        return '<div' + (id ? ' id="' + id + '"' : '') + ' class="gr-row gr-padding-10"><div class="gr-4">' + text.localize(label) + '</div><div class="gr-8">' + value + '</div></div>';
     };
 
     var createNewAccount = function() {
@@ -92,13 +111,30 @@ var MetaTraderUI = (function() {
     };
 
     var depositToMTAccount = function() {
+        $form = $('#form-deposit-real');
         if(formValidate('deposit')) {
             MetaTraderData.requestSend({
                 'mt5_deposit' : 1,
                 'from_binary' : page.client.loginid,
-                'to_mt5'      : mt5Accounts[accType].login,
+                'to_mt5'      : mt5Accounts.real.login,
                 'amount'      : $form.find('#txtAmount').val()
             });
+        }
+    };
+
+    var withdrawFromMTAccount = function(isPasswordChecked) {
+        $form = $('#form-withdrawal-real');
+        if(formValidate('withdrawal')) {
+            if(!isPasswordChecked) {
+                MetaTraderData.requestPasswordCheck(mt5Accounts.real.login, $form.find('#txtMainPass').val());
+            } else {
+                MetaTraderData.requestSend({
+                    'mt5_withdrawal' : 1,
+                    'from_mt5'       : mt5Accounts.real.login,
+                    'to_binary'      : page.client.loginid,
+                    'amount'         : $form.find('#txtAmount').val()
+                });
+            }
         }
     };
 
@@ -114,7 +150,7 @@ var MetaTraderUI = (function() {
         }
 
         // url
-        window.history.replaceState(null, null, window.location.href.replace(/^(.*#).*/, '$1' + tab));
+        window.location.hash = '#' + tab;
 
         // tab
         $('.sidebar-nav li').removeClass('selected');
@@ -150,7 +186,7 @@ var MetaTraderUI = (function() {
                     });
 
                     $('#msgRealAccount').html(
-                        '<strong>' + text.localize('To create a Real account for MetaTrader:') + '</strong> ' +
+                        text.localize('To create a Real account for MetaTrader:') +
                         (hasRealBinaryAccount ? text.localize('Please switch to your Real account.') :
                             text.localize('Please <a href="[_1]">upgrade to Real account</a>.', [page.url.url_for('new_account/realws')]))
                     ).removeClass(hiddenClass);
@@ -171,7 +207,7 @@ var MetaTraderUI = (function() {
             }
         }
 
-        if($form) {
+        if($form && /new/.test($form.attr('id'))) {
             $form.find('button').unbind('click').click(function(e) {
                 e.preventDefault();
                 e.stopPropagation();
@@ -247,16 +283,45 @@ var MetaTraderUI = (function() {
     };
 
     var responseDeposit = function(response) {
-        $form = $('form-deposit-real');
+        $form = $('#form-deposit-real');
         if(response.hasOwnProperty('error')) {
             return showFormMessage(response.error.message, false);
         }
 
         if(+response.mt5_deposit === 1) {
+            $form.find('#txtAmount').val('');
             showFormMessage(text.localize('Deposit is done. Transaction ID:') + ' ' + response.binary_transaction_id, true);
+            highlightBalance = true;
             MetaTraderData.requestLoginDetails(response.echo_req.to_mt5);
         } else {
             showFormMessage('Sorry, an error occurred while processing your request.', false);
+        }
+    };
+
+    var responseWithdrawal = function(response) {
+        $form = $('#form-withdrawal-real');
+        if(response.hasOwnProperty('error')) {
+            return showFormMessage(response.error.message, false);
+        }
+
+        if(+response.mt5_withdrawal === 1) {
+            $form.find('#txtAmount').val('');
+            showFormMessage(text.localize('Withdrawal is done. Transaction ID:') + ' ' + response.binary_transaction_id, true);
+            highlightBalance = true;
+            MetaTraderData.requestLoginDetails(response.echo_req.from_mt5);
+        } else {
+            showFormMessage('Sorry, an error occurred while processing your request.', false);
+        }
+    };
+
+    var responsePasswordCheck = function(response) {
+        $form = $('#form-withdrawal-real');
+        if(response.hasOwnProperty('error')) {
+            return showFormMessage(response.error.message, false);
+        }
+
+        if(+response.mt5_password_check === 1) {
+            withdrawFromMTAccount(true);
         }
     };
 
@@ -280,16 +345,21 @@ var MetaTraderUI = (function() {
         clearError();
         isValid = true;
 
-        // deposit form
-        if(formName === 'deposit') {
-            var amount = $form.find('#txtAmount').val();
-            var errMsg = MetaTrader.validatePassword($form.find(elmID).val());
-            if(errMsg) {
-                showError('#txtAmount', errMsg);
+        if(formName === 'deposit') { // deposit form
+            var errMsgDeposit = MetaTrader.validateAmount($form.find('#txtAmount').val());
+            if(errMsgDeposit) {
+                showError('#txtAmount', errMsgDeposit);
                 isValid = false;
-            } else if(amount > TUser.get().balance) {
-                showError('#txtAmount', text.localize('You cannot deposit more than your current balance:') + ' ' +
-                    TUser.get().currency + ' ' + TUser.get().balance);
+            }
+        } else if(formName === 'withdrawal') {  // withdrawal form
+            var errMsgPass = MetaTrader.validatePassword($form.find('#txtMainPass').val());
+            if(errMsgPass) {
+                showError('#txtMainPass', errMsgPass);
+                isValid = false;
+            }
+            var errMsgWithdrawal = MetaTrader.validateAmount($form.find('#txtAmount').val());
+            if(errMsgWithdrawal) {
+                showError('#txtAmount', errMsgWithdrawal);
                 isValid = false;
             }
         } else { // create new account form
@@ -351,6 +421,9 @@ var MetaTraderUI = (function() {
         responseLoginList      : responseLoginList,
         responseLoginDetails   : responseLoginDetails,
         responseNewAccount     : responseNewAccount,
+        responseDeposit        : responseDeposit,
+        responseWithdrawal     : responseWithdrawal,
+        responsePasswordCheck  : responsePasswordCheck,
         responseAccountStatus  : responseAccountStatus,
         responseLandingCompany : responseLandingCompany,
     };

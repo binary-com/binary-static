@@ -17,8 +17,14 @@ var MetaTraderData = (function() {
     };
 
     var requestLoginDetails = function(login) {
-        if(login && login > 0) {
+        if(login && +login > 0) {
             BinarySocket.send({'mt5_get_settings': 1, 'login': login});
+        }
+    };
+
+    var requestPasswordCheck = function(login, password) {
+        if(login && +login > 0 && password && password.length > 0) {
+            BinarySocket.send({'mt5_password_check': 1, 'login': login, 'password': password});
         }
     };
 
@@ -57,6 +63,12 @@ var MetaTraderData = (function() {
             case 'mt5_deposit':
                 MetaTraderUI.responseDeposit(response);
                 break;
+            case 'mt5_withdrawal':
+                MetaTraderUI.responseWithdrawal(response);
+                break;
+            case 'mt5_password_check':
+                MetaTraderUI.responsePasswordCheck(response);
+                break;
         }
     };
 
@@ -65,6 +77,7 @@ var MetaTraderData = (function() {
         responseHandler      : responseHandler,
         requestLoginList     : requestLoginList,
         requestLoginDetails  : requestLoginDetails,
+        requestPasswordCheck : requestPasswordCheck,
         requestSend          : requestSend,
         requestAccountStatus : requestAccountStatus,
         requestLandingCompany: requestLandingCompany,

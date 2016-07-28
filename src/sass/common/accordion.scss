@@ -1,0 +1,33 @@
+#accordion {
+    .ui-icon {
+        display: none;
+        visibility: hidden;
+    }
+    .ui-state-active, .ui-state-default, .ui-state-hover {
+        border: none !important;
+        outline: none;
+    }
+    .ui-state-active.ui-state-default, .ui-state-active.ui-state-default.ui-state-hover {
+        background: $COLOR_NAV_BORDER !important;
+        border-color: $COLOR_NAV_BORDER !important;
+        color: $COLOR_WHITE !important;
+    }
+    .ui-state-default, .ui-state-hover {
+        background: $COLOR_WHITE !important;
+        border: 1px solid $COLOR_GRAY !important;
+        color: $COLOR_BLACK !important;
+    }
+    .ui-state-active.ui-state-default:after, .ui-state-active.ui-state-default.ui-state-hover:after {
+        transform: rotate(90deg);
+    }
+    .ui-state-default:after, .ui-state-hover:after {
+        @include BIDIR_VALUE(content, '>', '<');
+        @include BIDIR_VALUE(float, right, left);
+    }
+    .ui-accordion-content {
+        padding-top: 0 !important;
+    }
+    .ui-widget-content {
+        border: 1px solid $COLOR_GRAY !important;
+    }
+}
