@@ -16,9 +16,6 @@
                                     <a class="pjaxload" href="[% request.url_for('about-us') %]">[% l('About Us') %]</a>
                                 </li>
                                 <li>
-                                    <a class="pjaxload id-hide ar-hide" href="[% request.url_for('group-information') %]">[% l('Group Information') %]</a>
-                                </li>
-                                <li>
                                     <a class="pjaxload" href="[% request.url_for('group-history') %]">[% l('Group History') %]</a>
                                 </li>
                                 <li class="ja-hide">
@@ -89,7 +86,7 @@
                 <div class="gr-6 gr-12-m gr-parent gr-no-gutter">
                     <div class="gr-row">
                         <div class="gr-4">
-                           <h4 class="secondary-color">[% l('Terms') %]</h4>
+                           <h4 class="secondary-color">[% l('Legal') %]</h4>
                            <ul>
                                <li class='ja-hide'>
                                    <a class="pjaxload" href="[% request.url_for('/terms-and-conditions') %]"[%
@@ -117,13 +114,10 @@
                                    <a class="pjaxload" href="[% request.url_for('responsible-trading') %]">[% l('Responsible Trading') %]</a>
                                </li>
                                <li class="ja-hide">
-                               <a class="pjaxload" href="[% request.url_for('/terms-and-conditions?selected_tab=complaints-disputes-tac-tab') %]">[% l('Complaints') %]</a>
+                                   <a class="pjaxload" href="[% request.url_for('/terms-and-conditions?selected_tab=complaints-disputes-tac-tab') %]">[% l('Complaints') %]</a>
                                </li>
-                               <li class="ja-hide id-hide ru-hide">
-                                   <a href="[% request.url_for('/download/BIEL_Prospectus.pdf') %]" target="_blank">[% l('BIEL Prospectus') %]</a>
-                               </li>
-                               <li class="ja-hide id-hide ru-hide">
-                                   <a href="[% request.url_for('/download/BIEL_Pillar_3_Report.pdf') %]" target="_blank">[% l('BIEL Pillar III') %]</a>
+                               <li class="ja-hide">
+                                   <a class="pjaxload" href="[% request.url_for('/regulation') %]">[% l('Regulatory Information') %]</a>
                                </li>
                            </ul>
                        </div>

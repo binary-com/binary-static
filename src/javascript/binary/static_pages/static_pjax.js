@@ -160,7 +160,7 @@ pjax_config_page('/affiliate/signup', function() {
     };
 });
 
-pjax_config_page('/(us_patents|responsible-trading|partners)', function() {
+pjax_config_page('/(us_patents|responsible-trading|partners|regulation)', function() {
     return {
         onLoad: function() {
             if (japanese_client()) {
