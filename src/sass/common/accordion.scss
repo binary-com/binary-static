@@ -7,32 +7,35 @@
         display: none;
         visibility: hidden;
     }
+    .ui-accordion-icons, .ui-accordion-icons .ui-accordion-icons {
+        padding-left: 1.5em;
+    }
     .ui-state-active, .ui-state-default, .ui-state-hover {
-        border: none !important;
+        border: none;
         outline: none;
-        background-repeat: no-repeat !important;
-        @include BIDIR_VALUE(background-position, right !important, left !important);
+        background-repeat: no-repeat;
+        @include BIDIR_VALUE(background-position, right, left);
     }
     .ui-state-active.ui-state-default, .ui-state-active.ui-state-default.ui-state-hover {
-        background-image: url('../images/common/arrow_down.svg') !important;
-        background-color: $COLOR_NAV_BORDER !important;
-        border-color: $COLOR_NAV_BORDER !important;
-        color: $COLOR_WHITE !important;
+        background-image: url('../images/common/arrow_down.svg');
+        background-color: $COLOR_NAV_BORDER;
+        border-color: $COLOR_NAV_BORDER;
+        color: $COLOR_WHITE;
     }
     .ui-state-default, .ui-state-hover {
-        @include BIDIR_VALUE(background-image, url('../images/common/arrow_right.svg') !important, url('../images/common/arrow_left.svg') !important);
-        background-color: $COLOR_LIGHT_GRAY !important;
-        border: 1px solid $COLOR_GRAY_SHADE !important;
-        color: $COLOR_BLACK !important;
+        @include BIDIR_VALUE(background-image, url('../images/common/arrow_right.svg'), url('../images/common/arrow_left.svg'));
+        background-color: $COLOR_LIGHT_GRAY;
+        border: 1px solid $COLOR_GRAY_SHADE;
+        color: $COLOR_BLACK;
     }
     .ui-state-hover {
-        background-color: $COLOR_GRAY !important;
+        background-color: $COLOR_GRAY;
     }
     .ui-accordion-content {
-        padding-top: 0 !important;
+        padding-top: 0;
         border-radius: 0;
     }
     .ui-widget-content {
-        border: 1px solid $COLOR_GRAY_SHADE !important;
+        border: 1px solid $COLOR_GRAY_SHADE;
     }
 }
