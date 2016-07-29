@@ -772,7 +772,7 @@ sub _texts {
         push @texts, localize('Invalid date of birth.');
         push @texts, localize('Failed to reset password. [_1], please retry.');
 
-        #strings for cashierws page
+        # strings for cashierws page
         push @texts, localize('Your cashier is locked as per your request - to unlock it, please click [_1]here');
         push @texts, localize('For added security, please check your email to retrieve the verification token.');
         push @texts, localize('Please choose which currency you would like to transact in.');
@@ -780,6 +780,19 @@ sub _texts {
         push @texts, localize('If you need assistance feel free to contact our [_1]Customer Support');
         push @texts, localize('Your account is not fully authenticated. Please visit the <a href="[_1]">authentication</a> page for more information.');
         push @texts, localize('details');
+
+        # strings for user/settings/metatrader page
+        push @texts, localize('Login');
+        push @texts, localize('To create a Real account for MetaTrader:');
+        push @texts, localize('Please switch to your Real account.');
+        push @texts, localize('Please <a href="[_1]">upgrade to Real account</a>.');
+        push @texts, localize('Your new account has been created.');
+        push @texts, localize('Deposit is done. Transaction ID:');
+        push @texts, localize('Withdrawal is done. Transaction ID:');
+        push @texts, localize('Start trading with your Demo Account');
+        push @texts, localize('Start trading with your Real Account');
+        push @texts, localize('Download MetaTrader');
+        push @texts, localize('Congratulations! Your account has been created.');
 
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
