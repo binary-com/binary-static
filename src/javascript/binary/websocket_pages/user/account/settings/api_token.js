@@ -5,6 +5,7 @@ var APITokenWS = (function() {
     var hideClass  = 'invisible';
     var tableContainer = '#tokens_list';
     var maxTokens = 30;
+    var checker;
 
     function hide(s) { return function() { $(s).addClass(hideClass); }; }
     function show(s) { return function() { $(s).removeClass(hideClass); }; }
@@ -32,6 +33,7 @@ var APITokenWS = (function() {
 
         showLoadingImage($(tableContainer));
         BinarySocket.send({api_token: 1});
+        checker = getChecker();
 
         $('#btnCreate').click(function(e) {
             e.preventDefault();
@@ -147,43 +149,52 @@ var APITokenWS = (function() {
         ];
     }
 
-    // ---------------------------
-    // ----- Form Validation -----
-    // ---------------------------
-    function getFormParams() {
-        clearMessages();
-        var nameID  = '#txtName';
-        var name = $(nameID).val().trim();
-
+    function getChecker() {
         function err(a, b) {
             return Content.errorMessage(a, b);
         }
 
         var letters = Content.localize().textLetters,
-            numbers = Content.localize().textNumbers,
-            space   = Content.localize().textSpace;
+            numbers = Content.localize().textNumbers;
 
-        var error = (
-            (!name.length       && err('req')) ||
-            (!checkBounds(name) && err('range', template('([_1]-[_2])', [2, 32]))) ||
-            (!noSymbols(name)   && err('reg', [letters, numbers, '_'])) ||
-            null
-        );
+        var checkName = [
+            checksIf(checkRequired, err('req')),
+            checksIf(checkBounds,   err('range', template('([_1]-[_2])', [2, 32]))),
+            checksIf(noSymbols,     err('reg', [letters, numbers, '_'])),
+        ];
 
-        if (error) {
-            showError(nameID, error);
+        var checkScopes = [
+            checksIf(checkRequired, 'Please select at least one scope'),
+        ];
+
+        return simple_validator({
+            name: checkName,
+            scopes: checkScopes,
+        });
+    }
+
+    function getFormParams() {
+        clearMessages();
+        var data    = formToObj($('#token_form')[0]);
+        data.name   = data.name.trim();
+        data.scopes = data.scopes || [];
+
+        var errors = checker(data);
+        if (errors.length) {
+            var map = {
+                'name':   '#txtName',
+                'scopes': '#scopes',
+            };
+            errors.forEach(function(err) {
+                showError(map[err.ctx], err.err);
+            });
             return null;
         }
+        return data;
+    }
 
-        var scopes = $('input:checkbox[name="scopes[]"]:checked')
-            .map(function() { return this.value; })
-            .get();
-        if (scopes.length === 0) {
-            showError('#scopes', 'Please select at least one scope.');
-            return null;
-        }
-
-        return {name: name, scopes: scopes};
+    function checkRequired(a) {
+        return a.length > 0;
     }
 
     function noSymbols(string) {

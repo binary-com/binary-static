@@ -17,7 +17,7 @@
                         <label for="txtName">[% l('Choose a Name:') %]</label>
                     </div>
                     <div class="gr-8">
-                        <input id="txtName" type="text" maxlength="32" />
+                        <input name="name" id="txtName" type="text" maxlength="32" />
                     </div>
                 </div>
 
