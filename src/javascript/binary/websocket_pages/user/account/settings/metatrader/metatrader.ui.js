@@ -61,6 +61,7 @@ var MetaTraderUI = (function() {
 
         // display deposit form
         if(accType === 'real') {
+            $('#msg-cannot-create-real, #authenticate').addClass(hiddenClass);
             if(page.client.is_virtual()) {
                 $('#accordion').addClass(hiddenClass);
                 $('#msg-switch-to-deposit').removeClass(hiddenClass);
@@ -191,7 +192,7 @@ var MetaTraderUI = (function() {
                         if(loginInfo.real) hasRealBinaryAccount = true;
                     });
 
-                    $('#msgRealAccount').html(text.localize('To create a Real account for MetaTrader, ' +
+                    $('#msg-cannot-create-real').html(text.localize('To create a Real account for MetaTrader, ' +
                         (hasRealBinaryAccount ? 'switch to your Binary Real account.' :
                             '<a href="[_1]">upgrade to Bianry Real account</a>.'), [page.url.url_for('new_account/realws')])
                     ).removeClass(hiddenClass);
