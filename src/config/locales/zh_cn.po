@@ -5,8 +5,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2016-07-29 07:07+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (China) "
-"<https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
+"Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -543,7 +542,9 @@ msgstr "<strong>高于/低于</strong> - 预测到期时市场价格是高于还
 msgid "<strong>Higher/Lower</strong> - where you can profit from the market ending higher or lower than a target price."
 msgstr "<strong>高于/低于</strong> - 可通过预测市场价格高于或低于目标价格进行获利。"
 
-msgid "<strong>Highly competitive spreads with no commission,</strong> offering leverage of up to 1:500"
+#, fuzzy
+#| msgid "<strong>Highly competitive spreads with no commission,</strong> offering leverage of up to 1:500"
+msgid "<strong>Highly competitive spreads with no commission.</strong>"
 msgstr "<strong>高竞争性无佣金费点差交易，</strong>提供杠杆率高达1:500"
 
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and Payment Agents."
@@ -847,7 +848,6 @@ msgstr "账户开立"
 msgid "Account Transfer"
 msgstr "账户转账"
 
-#| msgid "Account type"
 msgid "Account Type"
 msgstr "账户类型"
 
@@ -1713,6 +1713,11 @@ msgstr "Confirmation and understandings"
 msgid "Conflicts Policy"
 msgstr "冲突政策"
 
+#, fuzzy
+#| msgid "Congratulations! <br /> You have won the contract!"
+msgid "Congratulations! Your account has been created."
+msgstr "恭喜! <br /> 你已赢得 %交易(s单数)!"
+
 msgid "Construction"
 msgstr "建筑"
 
@@ -1775,6 +1780,11 @@ msgstr "公司将参考本网站与合约标的指数有关的每日最高价/�
 
 msgid "Contract period"
 msgstr "合约期间"
+
+#, fuzzy
+#| msgid "Contract Purchase"
+msgid "Contract purchased with app ID"
+msgstr "合约买入"
 
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "合约将在我们服务器收到请求时，以当时的市场价格卖出。此价格可能与报价有差异。"
@@ -1865,6 +1875,9 @@ msgstr "开立新账户"
 
 msgid "Create New Token"
 msgstr "创建新令牌"
+
+msgid "Create a MetaTrader account to trade on the MetaTrader 5 platform."
+msgstr ""
 
 msgid "Create clear, concise and engaging content for display on the company's website, blog, social media outlets, and marketing materials"
 msgstr "为公司网站、博客、社交媒体和营销材料创作清晰、简洁、引人入胜的内容"
@@ -1980,7 +1993,6 @@ msgstr "删除"
 msgid "Demo"
 msgstr "演示"
 
-#| msgid "Open Account"
 msgid "Demo Account"
 msgstr "演示账户"
 
@@ -2002,11 +2014,36 @@ msgstr "将%1 %2虚拟资金存入您的账户%3"
 msgid "Deposit Bonus"
 msgstr "存款奖金"
 
+#, fuzzy
+#| msgid "Deposit of"
+msgid "Deposit from"
+msgstr "存款"
+
+#, fuzzy
+#| msgid "Deposit funds into your account"
+msgid "Deposit funds into your MetaTrader account from your Binary account:"
+msgstr "将资金存入您的账户"
+
+#, fuzzy
+#| msgid "Deposit via Moneta (Transaction ID: %1)"
+msgid "Deposit is done. Transaction ID:"
+msgstr "通过Moneta的打款（交易ID：%1）"
+
 msgid "Deposit of"
 msgstr "存款"
 
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "通过银行电汇、信用卡或电子现金钱包向您的账户存款或提款。"
+
+#, fuzzy
+#| msgid "Deposit of"
+msgid "Deposit to"
+msgstr "存款"
+
+#, fuzzy
+#| msgid "Deposit funds into your account"
+msgid "Deposit to MetaTrader account"
+msgstr "将资金存入您的账户"
 
 msgid "Deposit: %1 working day"
 msgstr "存款：%1工作日内"
@@ -2131,7 +2168,11 @@ msgstr "睡眠和非活跃账户"
 msgid "Download CSV"
 msgstr "下载CSV"
 
-#| msgid "Download for Windows"
+#, fuzzy
+#| msgid "Download MetaTrader for Windows"
+msgid "Download MetaTrader"
+msgstr "下载Windows版MetaTrader"
+
 msgid "Download MetaTrader for Windows"
 msgstr "下载Windows版MetaTrader"
 
@@ -3096,10 +3137,6 @@ msgstr "为支持持续增长，%1 正寻求聘请和纳入一名合格的法律
 msgid "In order to support its continued growth, the Human Resources Group at %1 is seeking to place a highly competent administrator in a senior recruitment role. Please note that this is not a position suitable for an HR generalist, but should be of keen interest to a high level administrator with extensive experience in the global recruitment of managers and single technical contributors. A background in financial services and experience in the recruitment of senior professionals in IT and Quantitative Analytics would be ideal."
 msgstr "为支持公司持续发展， %1人力资源部诚招能力强的高级人事管理员。请注意，此职位并不适合较低级别的人力资源人才。所招纳的人才必须在全球经理和专门技术方面具有丰富的招聘经验。拥有金融服务背景，对招聘信息科技业资深专业人士、定量分析师等职位有经验者优先考虑。"
 
-#| msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
-msgid "In order to trade using MetaTrader 5 platform, you'll first need to have a MetaTrader account."
-msgstr "首先您必须拥有MetaTrader账户才能使用MetaTrader 5平台进行交易。"
-
 msgid "In providing these services, we are bound by the Act, any applicable regulations, bye-laws, licence conditions, guidelines, exchange requirements and other provisions or market practices (the \"Rules\"). In the event of conflict between these ST&Cs and the Rules, the latter should prevail."
 msgstr "提供此类服务时，我们受法律、一切适用的规则、地方法规、准证条款、纲领、证卷市场细则和其他规定或市场惯例（“规则”）等约束。当这些补充条款和条件跟规则发生冲突时，当以后者为准。"
 
@@ -3874,7 +3911,6 @@ msgstr "Less than 6 months"
 msgid "Level of Education"
 msgstr "教育水平"
 
-#| msgid "Average"
 msgid "Leverage"
 msgstr "杠杆"
 
@@ -3914,7 +3950,6 @@ msgstr "将我们客户与您的应用程序相连接。"
 msgid "Links"
 msgstr "链接"
 
-#| msgid "Further Instructions"
 msgid "Linux Instructions"
 msgstr "Linux指示"
 
@@ -3927,7 +3962,9 @@ msgstr "锁定收银台"
 msgid "Log in"
 msgstr "登录"
 
-msgid "Log into the application using your MetaTrader account number (e.g., 829118) and your MetaTrader account password."
+#, fuzzy
+#| msgid "Log into the application using your MetaTrader account number (e.g., 829118) and your MetaTrader account password."
+msgid "Log into the application using your MetaTrader account number (e.g., 1124) and your MetaTrader account password."
 msgstr "使用MetaTrader账号（例如，829118)）以及MetaTrader账户密码登录应用程序。"
 
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
@@ -3938,6 +3975,9 @@ msgstr "登录您的 %1 联盟账号并点击：营销 &rarr; 所有媒体。"
 
 msgid "Log-in to your %1 affiliate account and click on: Reports &rarr; Traffic Report."
 msgstr "登录您的 %1 联盟账号并点击：报告 &rarr; 流量报告。"
+
+msgid "Login"
+msgstr "登录"
 
 msgid "Login History"
 msgstr "登录历史"
@@ -3975,7 +4015,6 @@ msgstr "低障碍位移"
 msgid "MENA FFXPO Award"
 msgstr "中东和北非地区 FFXPO 奖"
 
-#| msgid "Specific Instructions"
 msgid "MacOS Instructions"
 msgstr "MacOS指示"
 
@@ -4102,9 +4141,13 @@ msgstr "难忘的日子"
 msgid "Memorable town/city"
 msgstr "难忘的城镇/城市"
 
-#| msgid "View Updated Account Statement"
 msgid "MetaTrader Accounts Management"
 msgstr "MetaTrader账户管理"
+
+#, fuzzy
+#| msgid "Verify Main Password"
+msgid "MetaTrader Main Password"
+msgstr "验证主密码"
 
 msgid "Method"
 msgstr "方式"
@@ -5467,7 +5510,6 @@ msgstr "开始时间"
 msgid "Start Trading"
 msgstr "开始交易"
 
-#| msgid "Start Trading Now"
 msgid "Start Trading with MetaTrader 5"
 msgstr "立即开始在MetaTrader 5平台交易"
 
@@ -5476,6 +5518,16 @@ msgstr "开始学习"
 
 msgid "Start time"
 msgstr "开始时间"
+
+#, fuzzy
+#| msgid "Start Trading with MetaTrader 5"
+msgid "Start trading with your Demo Account"
+msgstr "立即开始在MetaTrader 5平台交易"
+
+#, fuzzy
+#| msgid "Start Trading with MetaTrader 5"
+msgid "Start trading with your Real Account"
+msgstr "立即开始在MetaTrader 5平台交易"
 
 msgid "State/Province"
 msgstr "州/省"
@@ -6279,6 +6331,18 @@ msgstr "To begin Binary option trading, you will first need to read all these do
 msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "如需更改姓名、生日、居住国或电子邮件，请与<a href=\"%1\">客服人员</a>联系。"
 
+msgid "To create a Real account for MetaTrader, <a href=\"%1\">upgrade to Bianry Real account</a>."
+msgstr ""
+
+msgid "To create a Real account for MetaTrader, switch to your Binary Real account."
+msgstr ""
+
+msgid "To create a Real account for MetaTrader, you need to authenticate your Binary account:"
+msgstr ""
+
+msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
+msgstr ""
+
 msgid "To enable cookies, follow the instructions below for the browser version that you are using."
 msgstr "要启用 cookie，请根据您的浏览器版本选择对应的指示说明，并进行操作。"
 
@@ -6558,7 +6622,6 @@ msgstr "验证码格式不正确。"
 msgid "Verification token"
 msgstr "验证令牌"
 
-#| msgid "Verify new password"
 msgid "Verify Main Password"
 msgstr "验证主密码"
 
@@ -6787,7 +6850,6 @@ msgstr "星期三"
 msgid "Week of"
 msgstr "周"
 
-#| msgid "Weekly"
 msgid "Weekday"
 msgstr "交易日"
 
@@ -6982,6 +7044,24 @@ msgstr "对于通过您的网站链接或在注册过程中引用您的联盟会
 msgid "Withdraw"
 msgstr "取款"
 
+#, fuzzy
+#| msgid "Withdrawal from %1"
+msgid "Withdraw from"
+msgstr "从 %1 提款"
+
+#, fuzzy
+#| msgid "Withdraw from account"
+msgid "Withdraw from MetaTrader account"
+msgstr "从下列帐户提款："
+
+msgid "Withdraw funds from your MetaTrader account into your Binary account:"
+msgstr ""
+
+#, fuzzy
+#| msgid "Withdraw Now"
+msgid "Withdraw to"
+msgstr "现在提款 "
+
 msgid "Withdraw: %1 working day"
 msgstr "取款：%1 个工作日"
 
@@ -6993,6 +7073,11 @@ msgstr "取款：不适用"
 
 msgid "Withdrawal Limits"
 msgstr "取款限额"
+
+#, fuzzy
+#| msgid "Withdrawal via Moneta (Transaction ID: %1)"
+msgid "Withdrawal is done. Transaction ID:"
+msgstr "通过Moneta提款（交易ID: %1）"
 
 msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgstr "取款已锁定。欲知详情，请 <a class=\"pjaxload\" href=\"%1\">联系我们</a>。"
@@ -7303,6 +7388,11 @@ msgstr "您的客户将收到电子邮件通知，告知其转账交易已处理
 msgid "Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on %1 and in that event, opens an account with us."
 msgstr "您的 ID 将存入 cookie，当客户从您的联盟链接登入 %1并开户时，就会被识别出来。"
 
+#, fuzzy
+#| msgid "Your name"
+msgid "Your Name"
+msgstr "您的姓名"
+
 msgid "Your Property"
 msgstr "您的财产"
 
@@ -7371,6 +7461,11 @@ msgstr "在%1，您的资金永远安全。客户资金始终由3A级银行托�
 
 msgid "Your name, email address and contact number"
 msgstr "您的名字、 电子邮件和电话"
+
+#, fuzzy
+#| msgid "Your account has been debited with %1 %2"
+msgid "Your new account has been created."
+msgstr "您的帐户已借记了 %1 %2"
 
 msgid "Your password and login ID are unique and passwords are hashed so that not even %1 staff can read them. This is the reason why we cannot retrieve your password and have to issue you with a new one to your email address if you cannot recall it."
 msgstr "您的密码和登录 ID 都是唯一的，且密码已经被散列处理，即使是 %1 的员工也无法看到它们。因此，如果您忘记密码，我们也无法帮您找回，只能向您的电子邮箱发送一个新的密码。"
@@ -7489,7 +7584,9 @@ msgstr "存款"
 msgid "details"
 msgstr "详情"
 
-msgid "e.g. ws.binaryws.com"
+#, fuzzy
+#| msgid "e.g. ws.binaryws.com"
+msgid "e.g. blue.binaryws.com"
 msgstr "例如 ws.binaryws.com"
 
 msgid "f"
@@ -8315,7 +8412,6 @@ msgstr "支付代理转账"
 msgid "Sharp Prices. Smart Trading."
 msgstr "精准报价，智能交易。"
 
-#| msgid "Webtrader"
 msgid "MetaTrader"
 msgstr "MetaTrader"
 
@@ -8327,6 +8423,10 @@ msgstr "条款和条件审批"
 
 msgid "Trading with MetaTrader 5"
 msgstr "使用MetaTrader 5进行交易"
+
+#~| msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
+#~ msgid "In order to trade using MetaTrader 5 platform, you'll first need to have a MetaTrader account."
+#~ msgstr "首先您必须拥有MetaTrader账户才能使用MetaTrader 5平台进行交易。"
 
 #~ msgid "{JAPAN ONLY}BUY price per unit"
 #~ msgstr "{JAPAN ONLY}BUY price per unit"
@@ -8399,9 +8499,6 @@ msgstr "使用MetaTrader 5进行交易"
 
 #~ msgid "Hint comes here"
 #~ msgstr "提示来此"
-
-#~ msgid "Login"
-#~ msgstr "登录"
 
 #~ msgid "Messages"
 #~ msgstr "新闻"
@@ -14759,9 +14856,6 @@ msgstr "使用MetaTrader 5进行交易"
 #~ msgid "Contract Pricing"
 #~ msgstr "合约价格"
 
-#~ msgid "Contract Purchase"
-#~ msgstr "合约买入"
-
 #~ msgid "Create a new virtual account ready for trading"
 #~ msgstr "开立新的虚拟账户准备就绪开始交易"
 
@@ -16036,9 +16130,6 @@ msgstr "使用MetaTrader 5进行交易"
 #~ msgid "Your Login ID must start with either of the following:"
 #~ msgstr "您的登录 ID 必须以下列之一开头："
 
-#~ msgid "Your name"
-#~ msgstr "您的姓名"
-
 #~ msgid "World Index"
 #~ msgstr "全球指数"
 
@@ -16530,9 +16621,6 @@ msgstr "使用MetaTrader 5进行交易"
 #~ msgid "Congratulations"
 #~ msgstr "祝贺您"
 
-#~ msgid "Congratulations! <br /> You have won the contract!"
-#~ msgstr "恭喜! <br /> 你已赢得 %交易(s单数)!"
-
 #~ msgid "DOWN"
 #~ msgstr "下跌"
 
@@ -16712,9 +16800,6 @@ msgstr "使用MetaTrader 5进行交易"
 
 #~ msgid "Your account has been credited with <strong>%1 %2</strong>"
 #~ msgstr "您的账户已被计入<strong>%1 %2</strong>"
-
-#~ msgid "Your account has been debited with %1 %2"
-#~ msgstr "您的帐户已借记了 %1 %2"
 
 #~ msgid "Your prediction"
 #~ msgstr "您的预测"
@@ -17239,9 +17324,6 @@ msgstr "使用MetaTrader 5进行交易"
 #~| msgid "Apply to become Payment Agent"
 #~ msgid "Your application to become a Payment Agent is being reviewed."
 #~ msgstr "正在评估您成为支付代理人的申请。"
-
-#~ msgid "Deposit funds into your account"
-#~ msgstr "将资金存入您的账户"
 
 #~ msgid "Deprecated broker code"
 #~ msgstr "经纪代码已过时"
@@ -21104,9 +21186,6 @@ msgstr "使用MetaTrader 5进行交易"
 #~ msgid "Deposit to %1 in"
 #~ msgstr "打款至%1，位于"
 
-#~ msgid "Deposit via Moneta (Transaction ID: %1)"
-#~ msgstr "通过Moneta的打款（交易ID：%1）"
-
 #~ msgid "Deposit via Moneybooker (Transaction ID: %1)"
 #~ msgstr "通过Moneybooker的打款（交易ID：%1）"
 
@@ -22377,20 +22456,8 @@ msgstr "使用MetaTrader 5进行交易"
 #~ msgid "Where an account is funded solely by means of a bonus code, the maximum amount of winnings allowed on such accounts shall be 25 times the amount of such bonus amount."
 #~ msgstr "如果某一账户仅仅是以红利代码的方式提供资金，那么这种账户所允许的最大赢钱金额为该红利金额的25倍。"
 
-#~ msgid "Withdraw Now"
-#~ msgstr "现在提款 "
-
-#~ msgid "Withdraw from account"
-#~ msgstr "从下列帐户提款："
-
 #~ msgid "Withdraw now"
 #~ msgstr "现在提款  "
-
-#~ msgid "Withdrawal from %1"
-#~ msgstr "从 %1 提款"
-
-#~ msgid "Withdrawal via Moneta (Transaction ID: %1)"
-#~ msgstr "通过Moneta提款（交易ID: %1）"
 
 #~ msgid "Withdrawal via Moneybooker (Transaction ID: %1)"
 #~ msgstr "通过Moneybooker提款（交易ID: %1）"
