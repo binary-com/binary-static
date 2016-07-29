@@ -57,7 +57,7 @@ var ValidAccountOpening = (function(){
       errorFname.innerHTML = Content.errorMessage('min', '2');
       Validate.displayErrorMessage(errorFname);
       window.accountErrorCounter++;
-    } else if (!/^[a-zA-Z\s-.']+$/.test(fname.value)){
+    } else if (/[`~!@#$%^&*)(_=+\[}{\]\\\/";:\?><,|\d]+/.test(fname.value)){
       initializeValues();
       errorFname.innerHTML = Content.errorMessage('reg', [letters, space, hyphen, period, apost]);
       Validate.displayErrorMessage(errorFname);
@@ -70,7 +70,7 @@ var ValidAccountOpening = (function(){
       errorLname.innerHTML = Content.errorMessage('min', '2');
       Validate.displayErrorMessage(errorLname);
       window.accountErrorCounter++;
-    } else if (!/^[a-zA-Z\s-.']+$/.test(lname.value)){
+    } else if (/[`~!@#$%^&*)(_=+\[}{\]\\\/";:\?><,|\d]+/.test(lname.value)){
       initializeValues();
       errorLname.innerHTML = Content.errorMessage('reg', [letters, space, hyphen, period, apost]);
       Validate.displayErrorMessage(errorLname);
