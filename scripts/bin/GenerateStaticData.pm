@@ -792,6 +792,7 @@ sub _texts {
         push @texts, localize('Start trading with your Demo Account');
         push @texts, localize('Start trading with your Real Account');
         push @texts, localize('Download MetaTrader');
+        push @texts, localize('Congratulations! Your account has been created.');
 
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";

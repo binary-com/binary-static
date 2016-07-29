@@ -54,7 +54,7 @@ var MetaTraderUI = (function() {
             makeTextRow('Name', mt5Accounts[accType].name) +
             // makeTextRow('Leverage', mt5Accounts[accType].leverage)
             makeTextRow('', text.localize('Start trading with your ' + (accType === 'demo' ? 'Demo' : 'Real') + ' Account') +
-                ' <a class="button" href="' + page.url.url_for('metatrader/download') + '">' +
+                ' <a class="button" href="' + page.url.url_for('metatrader/download') + '" style="margin:0 20px;">' +
                     '<span>' + text.localize('Download MetaTrader') + '</span></a>')
         ));
         $('#details-' + accType).html($details.html());
@@ -190,7 +190,7 @@ var MetaTraderUI = (function() {
                     });
 
                     $('#msgRealAccount').html(
-                        text.localize('To create a Real account for MetaTrader:') +
+                        text.localize('To create a Real account for MetaTrader:') + '&nbsp;' +
                         (hasRealBinaryAccount ? text.localize('Please switch to your Real account.') :
                             text.localize('Please <a href="[_1]">upgrade to Real account</a>.', [page.url.url_for('new_account/realws')]))
                     ).removeClass(hiddenClass);
@@ -284,6 +284,8 @@ var MetaTraderUI = (function() {
 
         showFormMessage('Your new account has been created.', true);
         MetaTraderData.requestLoginDetails(response.mt5_new_account.login);
+        $('#msg-new-account-' + (/demo/.test(response.mt5_new_account.account_type) ? 'demo' : 'real'))
+            .html(text.localize('Congratulations! Your account has been created.')).removeClass(hiddenClass).delay(5000).fadeOut(1000);
     };
 
     var responseDeposit = function(response) {

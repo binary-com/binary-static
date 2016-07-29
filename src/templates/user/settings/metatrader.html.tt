@@ -15,6 +15,7 @@
         <div class="gr-9">
             <div id="section-demo" class="section invisible">
                 <h3>[% l('Demo Account') %]</h3>
+                <p id="msg-new-account-demo" class="notice-msg center-text invisible"></p>
                 <form id="form-new-demo" class="invisible">
                     <p>[% l("Create a MetaTrader account to trade on the MetaTrader 5 platform.") %]</p>
                     <div class="gr-row gr-padding-10">
@@ -65,6 +66,7 @@
             </div>
             <div id="section-real" class="section invisible">
                 <h3>[% l('Real Account') %]</h3>
+                <p id="msg-new-account-real" class="notice-msg center-text invisible"></p>
                 <p id="msgRealAccount" class="notice-msg center-text invisible"></p>
                 <div id="authenticate" class="center-text invisible">
                     <p>[% l('To create a Real account for MetaTrader, you need to authenticate your Binary account:') %]</p>
