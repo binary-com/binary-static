@@ -34,6 +34,14 @@ var APITokenWS = (function() {
         showLoadingImage($(tableContainer));
         BinarySocket.send({api_token: 1});
         checker = getChecker();
+        bindCheckerValidation($('#token_form')[0], {
+            before: clearMessages,
+            after:  function(errors, state) {
+                if (errors) displayErrors(errors);
+            },
+            checker: checker,
+            getState: extractFormData,
+        });
 
         $('#btnCreate').click(function(e) {
             e.preventDefault();
@@ -158,13 +166,13 @@ var APITokenWS = (function() {
             numbers = Content.localize().textNumbers;
 
         var checkName = [
-            checksIf(checkRequired, err('req')),
-            checksIf(checkBounds,   err('range', template('([_1]-[_2])', [2, 32]))),
-            checksIf(noSymbols,     err('reg', [letters, numbers, '_'])),
+            checkIf(checkRequired, err('req')),
+            checkIf(checkBounds,   err('range', template('([_1]-[_2])', [2, 32]))),
+            checkIf(noSymbols,     err('reg', [letters, numbers, '_'])),
         ];
 
         var checkScopes = [
-            checksIf(checkRequired, 'Please select at least one scope'),
+            checkIf(checkRequired, 'Please select at least one scope'),
         ];
 
         return simple_validator({
@@ -173,24 +181,29 @@ var APITokenWS = (function() {
         });
     }
 
-    function getFormParams() {
-        clearMessages();
+    function displayErrors(errors) {
+        var map = {
+            'name':   '#txtName',
+            'scopes': '#scopes',
+        };
+        errors.forEach(function(err) {
+            showError(map[err.ctx], err.err);
+        });
+    }
+
+    function extractFormData() {
         var data    = formToObj($('#token_form')[0]);
         data.name   = data.name.trim();
         data.scopes = data.scopes || [];
-
-        var errors = checker(data);
-        if (errors.length) {
-            var map = {
-                'name':   '#txtName',
-                'scopes': '#scopes',
-            };
-            errors.forEach(function(err) {
-                showError(map[err.ctx], err.err);
-            });
-            return null;
-        }
         return data;
+    }
+
+    function getFormParams() {
+        clearMessages();
+        var data   = extractFormData();
+        var errors = checker(data);
+        displayErrors(errors);
+        return errors.length ? null : data;
     }
 
     function checkRequired(a) {
