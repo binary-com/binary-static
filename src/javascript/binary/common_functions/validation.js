@@ -37,7 +37,7 @@ var Validate = (function(){
 
   //check validity of token
   function validateToken(token) {
-    if (token.length == 48) {
+    if (token.length == 16) {
       return true;
     }
     return false;
