@@ -189,6 +189,7 @@ sub _texts {
         push @texts, localize('Jump To');
         push @texts, localize('Date');
         push @texts, localize('Ref.');
+        push @texts, localize('Contract purchased with app ID');
         push @texts, localize('Action');
         push @texts, localize('Sell');
         push @texts, localize('Buy');
