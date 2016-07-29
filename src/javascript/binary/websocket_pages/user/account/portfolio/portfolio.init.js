@@ -16,14 +16,18 @@ var PortfolioWS =  (function() {
 
     var createPortfolioRow = function(data) {
         $('#portfolio-body').append(
-            '<tr class="flex-tr" id="' + data.contract_id + '">' +
-                '<td class="ref flex-tr-child">' + data.transaction_id + '</td>' +
+            $('<tr class="flex-tr" id="' + data.contract_id + '">' +
+                '<td class="ref flex-tr-child">' +
+                    (data.app_id ? ('<span data-balloon="' + text.localize('Contract purchased with app ID') + ': ' + data.app_id + '">') : '') +
+                        data.transaction_id +
+                    (data.app_id ? '</span>' : '') +
+                '</td>' +
                 '<td class="payout flex-tr-child">' + data.currency + ' <strong>' + data.payout + '</strong></td>' +
                 '<td class="details flex-tr-child">' + data.longcode + '</td>' +
                 '<td class="purchase flex-tr-child">' + data.currency + ' <strong>' + data.buy_price + '</strong></td>' +
                 '<td class="indicative flex-tr-child">' + data.currency + ' <strong class="indicative_price"></strong></td>' +
                 '<td class="button flex-tr-child"><button class="button open_contract_detailsws" contract_id="' + data.contract_id + '">' + text.localize('View') + '</button></td>' +
-            '</tr>'
+            '</tr>')
         );
     };
 

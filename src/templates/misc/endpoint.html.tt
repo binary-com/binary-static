@@ -12,7 +12,7 @@
               <div class="gr-8">
                   <input type="text" class="text" id="server_url" maxlength="30"></input>
                   <p class="hint">
-                    [% l('e.g. ws.binaryws.com') %]
+                    [% l('e.g. blue.binaryws.com') %]
                   </p>
                   <p class="errorfield" id="error-server_url" style="display:none"></p>
               </div>
