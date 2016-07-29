@@ -1,7 +1,10 @@
 var MetaTraderData = (function() {
     "use strict";
 
+    var lcRequested;
+
     var initSocket = function() {
+        lcRequested = false;
         BinarySocket.init({
             onmessage: function(msg) {
                 var response = JSON.parse(msg.data);
@@ -36,20 +39,28 @@ var MetaTraderData = (function() {
         BinarySocket.send({'get_account_status': 1});
     };
 
-    var requestLandingCompany = function() {
-        BinarySocket.send({'landing_company': page.client.residence});
+    var requestLandingCompany = function(residence) {
+        residence = residence || $.cookie('residence');
+        if(residence && !lcRequested) {
+            lcRequested = true;
+            BinarySocket.send({'landing_company': residence});
+        }
     };
 
     var responseHandler = function(response) {
         switch(response.msg_type) {
             case 'authorize':
+                lcRequested = false;
                 MetaTraderUI.init();
                 break;
-            case 'get_account_status':
-                MetaTraderUI.responseAccountStatus(response);
+            case 'get_settings':
+                requestLandingCompany(response.get_settings.country_code);
                 break;
             case 'landing_company':
                 MetaTraderUI.responseLandingCompany(response);
+                break;
+            case 'get_account_status':
+                MetaTraderUI.responseAccountStatus(response);
                 break;
             case 'mt5_login_list':
                 MetaTraderUI.responseLoginList(response);
