@@ -76,7 +76,7 @@
                 <p id="msg-new-account-real" class="notice-msg center-text invisible"></p>
                 <form id="form-new-real" class="invisible"></form>
                 <div id="details-real"></div>
-                <p id="msg-switch-to-deposit" class="notice-msg center-text invisible">[% l('To Deposit/Withdraw to your MetaTrader Real account, switch to your Binary Real account.') %]</p>
+                <p id="msg-switch-to-deposit" class="notice-msg center-text invisible">[% l('To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account.') %]</p>
                 <div id="accordion" class="invisible">
                     <h3>[% l('Deposit to MetaTrader account') %]</h3>
                     <div>
