@@ -61,9 +61,12 @@ var MetaTraderUI = (function() {
 
         // display deposit form
         if(accType === 'real') {
+            $('#msg-cannot-create-real, #authenticate').addClass(hiddenClass);
             if(page.client.is_virtual()) {
                 $('#accordion').addClass(hiddenClass);
+                $('#msg-switch-to-deposit').removeClass(hiddenClass);
             } else {
+                $('#msg-switch-to-deposit').addClass(hiddenClass);
                 ['#form-deposit-real', '#form-withdrawal-real'].map(function(formID){
                     $form = $(formID);
                     $form.find('.binary-login').text(page.client.loginid);
@@ -189,10 +192,9 @@ var MetaTraderUI = (function() {
                         if(loginInfo.real) hasRealBinaryAccount = true;
                     });
 
-                    $('#msgRealAccount').html(
-                        text.localize('To create a Real account for MetaTrader:') + '&nbsp;' +
-                        (hasRealBinaryAccount ? text.localize('Please switch to your Real account.') :
-                            text.localize('Please <a href="[_1]">upgrade to Real account</a>.', [page.url.url_for('new_account/realws')]))
+                    $('#msg-cannot-create-real').html(text.localize('To create a Real account for MetaTrader, ' +
+                        (hasRealBinaryAccount ? 'switch to your Binary Real account.' :
+                            '<a href="[_1]">upgrade to Bianry Real account</a>.'), [page.url.url_for('new_account/realws')])
                     ).removeClass(hiddenClass);
                 } else {
                     if(!isAuthenticated && !page.client.is_virtual()) {
@@ -282,10 +284,9 @@ var MetaTraderUI = (function() {
             return showFormMessage(response.error.message, false);
         }
 
-        showFormMessage('Your new account has been created.', true);
         MetaTraderData.requestLoginDetails(response.mt5_new_account.login);
         $('#msg-new-account-' + (/demo/.test(response.mt5_new_account.account_type) ? 'demo' : 'real'))
-            .html(text.localize('Congratulations! Your account has been created.')).removeClass(hiddenClass).delay(5000).fadeOut(1000);
+            .html(text.localize('Congratulations! Your account has been created.')).removeClass(hiddenClass);
     };
 
     var responseDeposit = function(response) {
@@ -403,6 +404,7 @@ var MetaTraderUI = (function() {
         $(selector ? selector : 'p.' + errorClass).remove();
         $('#errorMsg').html('').addClass(hiddenClass);
         $form.find('#formMessage').html('');
+        $('#msg-new-account-demo, #msg-new-account-real').addClass(hiddenClass);
     };
 
     var showFormMessage = function(msg, isSuccess) {

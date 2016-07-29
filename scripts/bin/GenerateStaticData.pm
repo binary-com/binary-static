@@ -784,9 +784,8 @@ sub _texts {
 
         # strings for user/settings/metatrader page
         push @texts, localize('Login');
-        push @texts, localize('To create a Real account for MetaTrader:');
-        push @texts, localize('Please switch to your Real account.');
-        push @texts, localize('Please <a href="[_1]">upgrade to Real account</a>.');
+        push @texts, localize('To create a Real account for MetaTrader, switch to your Binary Real account.');
+        push @texts, localize('To create a Real account for MetaTrader, <a href="[_1]">upgrade to Bianry Real account</a>.');
         push @texts, localize('Your new account has been created.');
         push @texts, localize('Deposit is done. Transaction ID:');
         push @texts, localize('Withdrawal is done. Transaction ID:');

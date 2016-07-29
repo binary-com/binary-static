@@ -559,7 +559,7 @@ msgstr "<strong>Higher/Lower</strong> - พยากรณ์ว่า ตลา
 msgid "<strong>Higher/Lower</strong> - where you can profit from the market ending higher or lower than a target price."
 msgstr "<strong>Higher/Lower</strong> - คุณสามารถทำกำไรเมื่อตลาดสิ้นสุดสูงกว่า หรือ ต่ำกว่า ราคาเป้าหมาย"
 
-msgid "<strong>Highly competitive spreads with no commission,</strong> offering leverage of up to 1:500"
+msgid "<strong>Highly competitive spreads with no commission.</strong>"
 msgstr ""
 
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and Payment Agents."
@@ -1724,6 +1724,9 @@ msgstr "ความเข้าใจและการยืนยัน"
 msgid "Conflicts Policy"
 msgstr "นโยบายการบริหารความขัดแย้ง"
 
+msgid "Congratulations! Your account has been created."
+msgstr ""
+
 msgid "Construction"
 msgstr "การก่อสร้าง / สิ่งปลูกสร้าง / การคิดค้น"
 
@@ -1786,6 +1789,9 @@ msgstr "การชำระเงินของสัญญาจะถูก
 
 msgid "Contract period"
 msgstr "ระยะเวลาสัญญา"
+
+msgid "Contract purchased with app ID"
+msgstr ""
 
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "สัญญาจะถูกจำหน่ายที่ราคาทั่วไปของตลาดเมื่อระบบซื้อขายได้รับการแจ้งความจำนง ราคานี้อาจจะแตกต่างจากราคาที่ระบุ"
@@ -1876,6 +1882,9 @@ msgstr "สร้างบัญชีใหม่"
 
 msgid "Create New Token"
 msgstr "สร้างโทเค่นใหม่"
+
+msgid "Create a MetaTrader account to trade on the MetaTrader 5 platform."
+msgstr ""
 
 msgid "Create clear, concise and engaging content for display on the company's website, blog, social media outlets, and marketing materials"
 msgstr "ผลิตเนื้อหาที่เกี่ยวข้อง ที่มีความกระชับ ชัดเจน สำหรับใช้ในเว็บไซต์ของบริษัทฯ บล็อก สื่อสังคมช่องทางต่างๆ และสื่อการตลาด"
@@ -2014,11 +2023,30 @@ msgstr "ฝาก %1 %2 เงินเสมือนในบัญชีข�
 msgid "Deposit Bonus"
 msgstr "โบนัสเงินฝาก"
 
+#, fuzzy
+#| msgid "Deposit of"
+msgid "Deposit from"
+msgstr "การฝากของ"
+
+msgid "Deposit funds into your MetaTrader account from your Binary account:"
+msgstr ""
+
+msgid "Deposit is done. Transaction ID:"
+msgstr ""
+
 msgid "Deposit of"
 msgstr "การฝากของ"
 
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "ฝากเงิน หรือ ถอนเงินเข้าบัญชีของคุณผ่านบริการของธนาคาร บัตรเครดิต หรือ เงินอิเล็กทรอนิกส์"
+
+#, fuzzy
+#| msgid "Deposit of"
+msgid "Deposit to"
+msgstr "การฝากของ"
+
+msgid "Deposit to MetaTrader account"
+msgstr ""
 
 msgid "Deposit: %1 working day"
 msgstr "ฝากเงิน: %1 วันทำการ"
@@ -2142,6 +2170,11 @@ msgstr "บัญชีไม่เคลื่อนไหว และ บั�
 
 msgid "Download CSV"
 msgstr ""
+
+#, fuzzy
+#| msgid "Webtrader"
+msgid "Download MetaTrader"
+msgstr "เว็บเทรดเดอร์"
 
 msgid "Download MetaTrader for Windows"
 msgstr ""
@@ -3118,11 +3151,6 @@ msgstr ""
 msgid "In order to support its continued growth, the Human Resources Group at %1 is seeking to place a highly competent administrator in a senior recruitment role. Please note that this is not a position suitable for an HR generalist, but should be of keen interest to a high level administrator with extensive experience in the global recruitment of managers and single technical contributors. A background in financial services and experience in the recruitment of senior professionals in IT and Quantitative Analytics would be ideal."
 msgstr ""
 
-#, fuzzy
-#| msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
-msgid "In order to trade using MetaTrader 5 platform, you'll first need to have a MetaTrader account."
-msgstr "เพื่อการใช้งานแอพพลิเคชันทางอุปกรณ์เคลื่อนที่ หรือแอพพลิเคชันอื่นๆ ท่านต้องขอ API โทเค่นก่อน"
-
 msgid "In providing these services, we are bound by the Act, any applicable regulations, bye-laws, licence conditions, guidelines, exchange requirements and other provisions or market practices (the \"Rules\"). In the event of conflict between these ST&Cs and the Rules, the latter should prevail."
 msgstr ""
 
@@ -3952,7 +3980,7 @@ msgstr "Lock Cashier"
 msgid "Log in"
 msgstr "เข้าสู่ระบบ"
 
-msgid "Log into the application using your MetaTrader account number (e.g., 829118) and your MetaTrader account password."
+msgid "Log into the application using your MetaTrader account number (e.g., 1124) and your MetaTrader account password."
 msgstr ""
 
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
@@ -3963,6 +3991,9 @@ msgstr "เข้าสู่ระบบด้วย %1 บัญชีพั�
 
 msgid "Log-in to your %1 affiliate account and click on: Reports &rarr; Traffic Report."
 msgstr "เข้าสู่ระบบด้วย %1 บัญชีพันธมิตรของท่าน และคลิกที่: รายงาน &rarr; รายงานธุรกรรม"
+
+msgid "Login"
+msgstr "เข้าสู่ระบบ"
 
 msgid "Login History"
 msgstr "ประวัติการเข้าใช้งาน"
@@ -4130,6 +4161,11 @@ msgstr "เมืองแห่งความทรงจำ"
 
 msgid "MetaTrader Accounts Management"
 msgstr ""
+
+#, fuzzy
+#| msgid "Verify new password"
+msgid "MetaTrader Main Password"
+msgstr "ตรวจสอบรหัสผ่านใหม่"
 
 msgid "Method"
 msgstr "วิธีการ"
@@ -5509,6 +5545,14 @@ msgstr "เริ่มเรียนรู้"
 msgid "Start time"
 msgstr "เวลาเริ่ม"
 
+msgid "Start trading with your Demo Account"
+msgstr ""
+
+#, fuzzy
+#| msgid "Upgrade to a Real Account"
+msgid "Start trading with your Real Account"
+msgstr "อัพเกรดเป็นบัญชีจริง"
+
 msgid "State/Province"
 msgstr "รัฐ/จังหวัด"
 
@@ -6313,6 +6357,18 @@ msgstr "ในการเริ่มซื้อขายไบนารีอ
 msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "ในการเปลี่ยนแปลง ชื่อ วันเกิด ประเทศที่พำนัก หรือ อีเมล์ของท่าน โปรดติดต่แ <a href=\"%1\">เจ้าหน้าที่บริการลูกค้า</a>"
 
+msgid "To create a Real account for MetaTrader, <a href=\"%1\">upgrade to Bianry Real account</a>."
+msgstr ""
+
+msgid "To create a Real account for MetaTrader, switch to your Binary Real account."
+msgstr ""
+
+msgid "To create a Real account for MetaTrader, you need to authenticate your Binary account:"
+msgstr ""
+
+msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
+msgstr ""
+
 msgid "To enable cookies, follow the instructions below for the browser version that you are using."
 msgstr "เพื่อติดตั้งคุกกี้ โปรดปฏิบัติตามขั้นตอนข้างล่างสำหรับเวอร์ชันของเบราเซอร์ที่ท่านใช้งาน"
 
@@ -7014,6 +7070,22 @@ msgstr ""
 msgid "Withdraw"
 msgstr ""
 
+#, fuzzy
+#| msgid "withdrawal limits"
+msgid "Withdraw from"
+msgstr "วงเงินในการถอน"
+
+msgid "Withdraw from MetaTrader account"
+msgstr ""
+
+msgid "Withdraw funds from your MetaTrader account into your Binary account:"
+msgstr ""
+
+#, fuzzy
+#| msgid "withdrawal limits"
+msgid "Withdraw to"
+msgstr "วงเงินในการถอน"
+
 msgid "Withdraw: %1 working day"
 msgstr ""
 
@@ -7024,6 +7096,9 @@ msgid "Withdraw: Not applicable"
 msgstr ""
 
 msgid "Withdrawal Limits"
+msgstr ""
+
+msgid "Withdrawal is done. Transaction ID:"
 msgstr ""
 
 msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
@@ -7339,6 +7414,11 @@ msgstr ""
 msgid "Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on %1 and in that event, opens an account with us."
 msgstr ""
 
+#, fuzzy
+#| msgid "First Name"
+msgid "Your Name"
+msgstr "ชื่อ"
+
 msgid "Your Property"
 msgstr "ทรัพย์สินของท่าน"
 
@@ -7407,6 +7487,11 @@ msgstr "เงินของท่านปลอดภัยเสมอเม
 
 msgid "Your name, email address and contact number"
 msgstr "ชื่อ อีเมล์ และหมายเลขติดต่อของท่าน"
+
+#, fuzzy
+#| msgid "Your password has been changed."
+msgid "Your new account has been created."
+msgstr "รหัสผ่านของท่านได้ถูกแก้ไขแล้ว"
 
 msgid "Your password and login ID are unique and passwords are hashed so that not even %1 staff can read them. This is the reason why we cannot retrieve your password and have to issue you with a new one to your email address if you cannot recall it."
 msgstr "รหัสผ่านและรหัสผู้ใช้งานของท่านเป็นข้อมูลจำเพาะ และรหัสผ่านประกอบด้วยอักขระที่ผสมผสานกัน พนักงาน %1 ไม่สามารถอ่านรหัสดังกล่าวได้ และนี่คือเหตุผลที่หวกเราไม่สามารถเรียกรหัสผ่านของท่านและต้องดำเนินการขอใหม่โดยส่งไปตามอีเมล์ของท่าน หากท่านไม่สามารถจำรหัสผ่านได้"
@@ -7525,7 +7610,9 @@ msgstr "ฝากเงิน"
 msgid "details"
 msgstr "รายละเอียด"
 
-msgid "e.g. ws.binaryws.com"
+#, fuzzy
+#| msgid "e.g. ws.binaryws.com"
+msgid "e.g. blue.binaryws.com"
 msgstr "เช่น ws.binaryws.com"
 
 msgid "f"
@@ -8365,6 +8452,11 @@ msgstr "การอนุมัติข้อตกลงและเงื่
 msgid "Trading with MetaTrader 5"
 msgstr ""
 
+#, fuzzy
+#~| msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
+#~ msgid "In order to trade using MetaTrader 5 platform, you'll first need to have a MetaTrader account."
+#~ msgstr "เพื่อการใช้งานแอพพลิเคชันทางอุปกรณ์เคลื่อนที่ หรือแอพพลิเคชันอื่นๆ ท่านต้องขอ API โทเค่นก่อน"
+
 #~ msgid "{JAPAN ONLY}BUY price per unit"
 #~ msgstr "{JAPAN ONLY}BUY price per unit"
 
@@ -8448,9 +8540,6 @@ msgstr ""
 
 #~ msgid "Hint comes here"
 #~ msgstr "คำอธิบายเพิ่มเติมที่นี่"
-
-#~ msgid "Login"
-#~ msgstr "เข้าสู่ระบบ"
 
 #~ msgid "Messages"
 #~ msgstr "ข้อความ"
@@ -10089,9 +10178,6 @@ msgstr ""
 
 #~ msgid "Your name/company"
 #~ msgstr "ชื่อ/บริษัทฯ ของท่าน"
-
-#~ msgid "Your password has been changed."
-#~ msgstr "รหัสผ่านของท่านได้ถูกแก้ไขแล้ว"
 
 #~ msgid "Your password has been reset."
 #~ msgstr "รหัสผ่านของท่านได้ถูกกำหนดใหม่แล้ว"
@@ -12311,9 +12397,6 @@ msgstr ""
 #~ msgid "Family Name"
 #~ msgstr "นามสกุล"
 
-#~ msgid "First Name"
-#~ msgstr "ชื่อ"
-
 #~ msgid "Forgot Login ID or Password?"
 #~ msgstr "ลืมรหัสผู้ใช้ หรือ รหัสผ่าน?"
 
@@ -12603,9 +12686,6 @@ msgstr ""
 
 #~ msgid "Your account balance"
 #~ msgstr "ยอดคงเหลือในบัญชีของคุณ"
-
-#~ msgid "withdrawal limits"
-#~ msgstr "วงเงินในการถอน"
 
 #~ msgid "Random Yin"
 #~ msgstr "Random Yin"

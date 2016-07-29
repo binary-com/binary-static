@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: French (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-07-13 07:17+0000\n"
-"Last-Translator: Sittie Hadjirah Sevilla <sittiebaser@gmail.com>\n"
+"PO-Revision-Date: 2016-07-26 14:14+0000\n"
+"Last-Translator: Chloe Chevreton <chloe-che@hotmail.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/binary/static/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -575,7 +575,7 @@ msgstr "<strong>Plus haut/Plus bas</strong> - prédisez si le marché finira plu
 msgid "<strong>Higher/Lower</strong> - where you can profit from the market ending higher or lower than a target price."
 msgstr "<strong>Plus haut/Plus bas</strong> - où vous pouvez profiter du fait que le marché finira plus haut ou plus bas qu'un prix-cible."
 
-msgid "<strong>Highly competitive spreads with no commission,</strong> offering leverage of up to 1:500"
+msgid "<strong>Highly competitive spreads with no commission.</strong>"
 msgstr ""
 
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and Payment Agents."
@@ -1448,7 +1448,7 @@ msgid "Binary.com is an active member of the Perl community and is in the proces
 msgstr "Binary.com est un membre actif de la communauté Perl et archive actuellement un certain nombre de ses modules internes sur le site du <a target='_blank' href='%1'>CPAN</a>. Si vous êtes passionné de Perl, vous pouvez apporter votre contribution en révisant ces modules et en envoyant des demandes de tirage (pull requests) via <a target='_blank' href='%2'>GitHub</a>."
 
 msgid "Binary.com is an active proponent of the open-source movement and is in the process of open-sourcing a number of components of its codebase."
-msgstr "Binary.com est partisan actif du mouvement open source et est dans le processus d'ouvrir au public un nombre des composants de sa base de codes."
+msgstr "Binary.com soutient activement le mouvement open source et ouvre actuellement au public certains composants de son code base."
 
 msgid "Binary.com open-source projects"
 msgstr "Binary.com projets open source"
@@ -1790,6 +1790,11 @@ msgstr "Confirmation and understandings"
 msgid "Conflicts Policy"
 msgstr "Politique de conflit d'intérêts"
 
+#, fuzzy
+#| msgid "Congratulations! <br /> You have won the contract!"
+msgid "Congratulations! Your account has been created."
+msgstr "Félicitations ! <br /> Vous avez gagné le contrat !"
+
 msgid "Construction"
 msgstr "Construction"
 
@@ -1854,6 +1859,11 @@ msgstr "Les paiements de contrats seront déterminés par la Société en réfé
 
 msgid "Contract period"
 msgstr "Durée du contrat"
+
+#, fuzzy
+#| msgid "Contract Purchase"
+msgid "Contract purchased with app ID"
+msgstr "Achat de contrat"
 
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "Le contrat sera vendu au prix de marché en vigueur à réception de la demande par nos serveurs. Ce prix peut différer du prix indiqué."
@@ -1948,6 +1958,9 @@ msgstr "Créer un nouveau compte"
 
 msgid "Create New Token"
 msgstr "Créer un nouveau jeton"
+
+msgid "Create a MetaTrader account to trade on the MetaTrader 5 platform."
+msgstr ""
 
 #, fuzzy
 #| msgid "Create clear, concise and engaging content for display on the company’s website, blog, social media outlets, and marketing materials"
@@ -2090,11 +2103,34 @@ msgstr "Effectuer un dépôt de %1 %2 en argent virtuel sur votre compte %3"
 msgid "Deposit Bonus"
 msgstr "Bonus Dépôt"
 
+#, fuzzy
+#| msgid "Deposit of"
+msgid "Deposit from"
+msgstr "Dépôt de"
+
+#, fuzzy
+#| msgid "Deposit funds into your account"
+msgid "Deposit funds into your MetaTrader account from your Binary account:"
+msgstr "Dépôt de fonds sur votre compte"
+
+msgid "Deposit is done. Transaction ID:"
+msgstr ""
+
 msgid "Deposit of"
 msgstr "Dépôt de"
 
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "Dépôt ou retrait vers votre compte par transfer bancaire, carte de crédit ou portefeuille e-cash."
+
+#, fuzzy
+#| msgid "Deposit of"
+msgid "Deposit to"
+msgstr "Dépôt de"
+
+#, fuzzy
+#| msgid "Deposit funds into your account"
+msgid "Deposit to MetaTrader account"
+msgstr "Dépôt de fonds sur votre compte"
 
 msgid "Deposit: %1 working day"
 msgstr "Dépôt : %1 jour ouvrable"
@@ -2220,6 +2256,11 @@ msgstr "Comptes Dormants et Inactifs"
 #| msgid "Download SVG"
 msgid "Download CSV"
 msgstr "Télécharger SVG"
+
+#, fuzzy
+#| msgid "Download for Windows"
+msgid "Download MetaTrader"
+msgstr "Télécharger pour Windows"
 
 #, fuzzy
 #| msgid "Download for Windows"
@@ -3276,11 +3317,6 @@ msgstr "Pour mieux répondre aux besoins d'une croissance continue, %1 recrute u
 msgid "In order to support its continued growth, the Human Resources Group at %1 is seeking to place a highly competent administrator in a senior recruitment role. Please note that this is not a position suitable for an HR generalist, but should be of keen interest to a high level administrator with extensive experience in the global recruitment of managers and single technical contributors. A background in financial services and experience in the recruitment of senior professionals in IT and Quantitative Analytics would be ideal."
 msgstr "Pour mieux répondre aux besoins d'une croissance continue, le service des ressources humaines de %1 recherche un administrateur compétent pour un poste de chargé de recrutement. Ce poste ne convient pas à un/une généraliste des RH. Il s'adresse à un administrateur hautement qualifié, justifiant d'une vaste expérience du recrutement de cadres dirigeants et de collaborateurs techniques individuels à l'échelle internationale. Le candidat dispose idéalement d'une bonne connaissance des services financiers ainsi que d'une expérience dans le recrutement de cadres supérieurs dans les domaines des technologies de l'information et de l'analyse quantitative."
 
-#, fuzzy
-#| msgid "To provide access to your account to a third-party application, you may use the following API token:"
-msgid "In order to trade using MetaTrader 5 platform, you'll first need to have a MetaTrader account."
-msgstr "Pour autoriser une application tierce à accéder à votre compte, vous pouvez utiliser le token d'API suivant :"
-
 msgid "In providing these services, we are bound by the Act, any applicable regulations, bye-laws, licence conditions, guidelines, exchange requirements and other provisions or market practices (the \"Rules\"). In the event of conflict between these ST&Cs and the Rules, the latter should prevail."
 msgstr "En fournissant ces services, nous sommes liés par l'Acte, toutes régulations applicables, statuts, conditions de licences, directives, exigences d'échange et autres provisions ou pratiques du marché (les \"Règles\"). Dans un conflit d'intérêt entre ces ST&Cs et les Règles, ces dernières domineront."
 
@@ -4124,7 +4160,7 @@ msgstr "Verrouiller la caisse"
 msgid "Log in"
 msgstr "Connexion"
 
-msgid "Log into the application using your MetaTrader account number (e.g., 829118) and your MetaTrader account password."
+msgid "Log into the application using your MetaTrader account number (e.g., 1124) and your MetaTrader account password."
 msgstr ""
 
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
@@ -4135,6 +4171,11 @@ msgstr "Connectez-vous à votre compte affilié %1 et cliquez sur : Marketing &
 
 msgid "Log-in to your %1 affiliate account and click on: Reports &rarr; Traffic Report."
 msgstr "Connectez-vous à votre compte affilié %1 et cliquez sur : Rapports &rarr; Rapport de trafic."
+
+#, fuzzy
+#| msgid "Login"
+msgid "Login"
+msgstr "Identifiant"
 
 msgid "Login History"
 msgstr "Historique de connexion"
@@ -4310,6 +4351,11 @@ msgstr "Ville/commune mémorable"
 
 msgid "MetaTrader Accounts Management"
 msgstr ""
+
+#, fuzzy
+#| msgid "Verify new password"
+msgid "MetaTrader Main Password"
+msgstr "Vérifiez le nouveau mot de passe"
 
 msgid "Method"
 msgstr "Méthode"
@@ -5743,6 +5789,16 @@ msgstr "Apprendre le trading"
 msgid "Start time"
 msgstr "Heure du début"
 
+#, fuzzy
+#| msgid "Start Trading Now"
+msgid "Start trading with your Demo Account"
+msgstr "Commencer le Trading Maintenant"
+
+#, fuzzy
+#| msgid "Start Trading Now"
+msgid "Start trading with your Real Account"
+msgstr "Commencer le Trading Maintenant"
+
 msgid "State/Province"
 msgstr "Etat/Province"
 
@@ -6638,6 +6694,18 @@ msgstr "To begin Binary option trading, you will first need to read all these do
 msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "Pour modifier vos nom, date de naissance, pays de résidence ou adresse e-mail, veuillez contacter le <a href=\"%1\">Service Clientèle</a>."
 
+msgid "To create a Real account for MetaTrader, <a href=\"%1\">upgrade to Bianry Real account</a>."
+msgstr ""
+
+msgid "To create a Real account for MetaTrader, switch to your Binary Real account."
+msgstr ""
+
+msgid "To create a Real account for MetaTrader, you need to authenticate your Binary account:"
+msgstr ""
+
+msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
+msgstr ""
+
 msgid "To enable cookies, follow the instructions below for the browser version that you are using."
 msgstr "Pour activer les cookies, suivez les instructions ci-dessous pour la version du navigateur que vous utilisez."
 
@@ -7399,6 +7467,24 @@ msgstr "Sous réserve de votre respect des instructions de la Société, en tena
 msgid "Withdraw"
 msgstr "Retrait"
 
+#, fuzzy
+#| msgid "Withdraw"
+msgid "Withdraw from"
+msgstr "Retrait"
+
+#, fuzzy
+#| msgid "Transfer from another account"
+msgid "Withdraw from MetaTrader account"
+msgstr "Transfert depuis un autre compte"
+
+msgid "Withdraw funds from your MetaTrader account into your Binary account:"
+msgstr ""
+
+#, fuzzy
+#| msgid "Withdraw"
+msgid "Withdraw to"
+msgstr "Retrait"
+
 msgid "Withdraw: %1 working day"
 msgstr "Retrait : %1 jour ouvrable"
 
@@ -7410,6 +7496,11 @@ msgstr "Retrait: Non applicable"
 
 msgid "Withdrawal Limits"
 msgstr "Limites de retrait"
+
+#, fuzzy
+#| msgid "Withdrawal via Bank Transfer"
+msgid "Withdrawal is done. Transaction ID:"
+msgstr "Retrait via Transfert Bancaire"
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\">here</a> for further information."
@@ -7768,6 +7859,11 @@ msgstr "Votre Client va recevoir un émail de notification l'informant que le tr
 msgid "Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on %1 and in that event, opens an account with us."
 msgstr "Votre identifiant sera stocké dans un cookie et identifié à chaque fois qu'un prospect cliquera sur votre lien d'affiliation et se retrouvera sur %1 pour ouvrir un compte éventuel."
 
+#, fuzzy
+#| msgid "First Name"
+msgid "Your Name"
+msgstr "Prénom"
+
 msgid "Your Property"
 msgstr "Votre propriété"
 
@@ -7842,6 +7938,11 @@ msgstr "Votre argent est toujours en sécurité avec %1. A tout moment, l'argent
 
 msgid "Your name, email address and contact number"
 msgstr "Vos nom, adresse e-mail et numéro de contact"
+
+#, fuzzy
+#| msgid "Your account has been debited with %1 %2"
+msgid "Your new account has been created."
+msgstr "Votre compte a été débité de %1 %2"
 
 msgid "Your password and login ID are unique and passwords are hashed so that not even %1 staff can read them. This is the reason why we cannot retrieve your password and have to issue you with a new one to your email address if you cannot recall it."
 msgstr "Votre mot de passe et identifiant de connexion sont uniques et les mots de passe sont hachés, ainsi, même le personnel de %1 ne peut y accéder. C'est pour cette raison que nous ne pouvons pas récupérer votre mot de passe et que nous devons vous en attribuer un nouveau par émail si vous ne pouvez pas vous le rappeler."
@@ -7968,7 +8069,7 @@ msgstr "dépôt"
 msgid "details"
 msgstr "détails"
 
-msgid "e.g. ws.binaryws.com"
+msgid "e.g. blue.binaryws.com"
 msgstr ""
 
 msgid "f"
@@ -8877,6 +8978,11 @@ msgstr "Conditions générales"
 msgid "Trading with MetaTrader 5"
 msgstr ""
 
+#, fuzzy
+#~| msgid "To provide access to your account to a third-party application, you may use the following API token:"
+#~ msgid "In order to trade using MetaTrader 5 platform, you'll first need to have a MetaTrader account."
+#~ msgstr "Pour autoriser une application tierce à accéder à votre compte, vous pouvez utiliser le token d'API suivant :"
+
 #~ msgid "{JAPAN ONLY}BUY price per unit"
 #~ msgstr "{JAPAN ONLY}BUY price per unit"
 
@@ -8928,11 +9034,6 @@ msgstr ""
 #~| msgid "Webtrader"
 #~ msgid "Header"
 #~ msgstr "Webtrader"
-
-#, fuzzy
-#~| msgid "Login"
-#~ msgid "Login"
-#~ msgstr "Identifiant"
 
 #, fuzzy
 #~| msgid "Message"
@@ -13164,9 +13265,6 @@ msgstr ""
 #~ msgid "Family Name"
 #~ msgstr "Nom de famille"
 
-#~ msgid "First Name"
-#~ msgstr "Prénom"
-
 #~ msgid "Forgot Login ID or Password?"
 #~ msgstr "Identifiant de connexion ou mot de passe oublié ?"
 
@@ -15289,9 +15387,6 @@ msgstr ""
 #~ msgid "Contract Pricing"
 #~ msgstr "Cotation de contrat"
 
-#~ msgid "Contract Purchase"
-#~ msgstr "Achat de contrat"
-
 #~ msgid "Create a new virtual account ready for trading"
 #~ msgstr "Créer un nouveau compte de trading virtuel prêt à l'emploi"
 
@@ -16857,9 +16952,6 @@ msgstr ""
 #~ msgid "Transfer from account %1"
 #~ msgstr "Transfert depuis le compte %1"
 
-#~ msgid "Transfer from another account"
-#~ msgstr "Transfert depuis un autre compte"
-
 #~ msgid "Transfer to account %1"
 #~ msgstr "Transfert au compte %1"
 
@@ -16871,9 +16963,6 @@ msgstr ""
 
 #~ msgid "Withdrawal via BACS"
 #~ msgstr "Retrait via BACS"
-
-#~ msgid "Withdrawal via Bank Transfer"
-#~ msgstr "Retrait via Transfert Bancaire"
 
 #~ msgid "Withdrawal via Credit/Debit card"
 #~ msgstr "Retrait via carte de crédit/débit"
@@ -17045,9 +17134,6 @@ msgstr ""
 
 #~ msgid "Congratulations"
 #~ msgstr "Félicitations"
-
-#~ msgid "Congratulations! <br /> You have won the contract!"
-#~ msgstr "Félicitations ! <br /> Vous avez gagné le contrat !"
 
 #~ msgid "DOWN"
 #~ msgstr "INFERIEUR"
@@ -17222,9 +17308,6 @@ msgstr ""
 
 #~ msgid "Your account has been credited with <strong>%1 %2</strong>"
 #~ msgstr "Votre compte a été crédité de <strong>%1 %2</strong>"
-
-#~ msgid "Your account has been debited with %1 %2"
-#~ msgstr "Votre compte a été débité de %1 %2"
 
 #~ msgid "Your prediction"
 #~ msgstr "Votre prédiction"
@@ -17739,9 +17822,6 @@ msgstr ""
 #~| msgid "Apply to become Payment Agent"
 #~ msgid "Your application to become a Payment Agent is being reviewed."
 #~ msgstr "Postuler pour devenir Agent de Paiement"
-
-#~ msgid "Deposit funds into your account"
-#~ msgstr "Dépôt de fonds sur votre compte"
 
 #~ msgid "Deprecated broker code"
 #~ msgstr "Code d'agent de change désapprouvé"

@@ -66,18 +66,19 @@
             </div>
             <div id="section-real" class="section invisible">
                 <h3>[% l('Real Account') %]</h3>
-                <p id="msg-new-account-real" class="notice-msg center-text invisible"></p>
-                <p id="msgRealAccount" class="notice-msg center-text invisible"></p>
+                <p id="msg-cannot-create-real" class="notice-msg center-text invisible"></p>
                 <div id="authenticate" class="center-text invisible">
                     <p>[% l('To create a Real account for MetaTrader, you need to authenticate your Binary account:') %]</p>
-                    <a class="button pjaxload" href="/binary-static/en/user/authenticatews.html">
+                    <a class="button pjaxload" href="[% request.url_for('/user/authenticatews') %]">
                         <span>Authenticate your account</span>
                     </a>
                 </div>
+                <p id="msg-new-account-real" class="notice-msg center-text invisible"></p>
                 <form id="form-new-real" class="invisible"></form>
                 <div id="details-real"></div>
+                <p id="msg-switch-to-deposit" class="notice-msg center-text invisible">[% l('To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account.') %]</p>
                 <div id="accordion" class="invisible">
-                    <h3>[% l('Deposit from Binary account') %]</h3>
+                    <h3>[% l('Deposit to MetaTrader account') %]</h3>
                     <div>
                         <form id="form-deposit-real">
                             <p>[% l('Deposit funds into your MetaTrader account from your Binary account:') %]</p>
