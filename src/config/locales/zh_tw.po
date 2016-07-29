@@ -2,9 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Taiwan) (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-07-23 02:21+0000\n"
+"PO-Revision-Date: 2016-07-29 07:05+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (Taiwan) <https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
+"Language-Team: Chinese (Taiwan) "
+"<https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
 "Language: zh_tw\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -270,7 +271,7 @@ msgid "%1's systems are now processing in excess of 1 million transactions/day (
 msgstr "%1 每天處理超過百萬筆交易(包括虛擬帳戶)。"
 
 msgid "%1’s Volatility Indices are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
-msgstr ""
+msgstr "%1的波動指數如今可在MetaTrader 5全天候交易。我們將儘快推出更多資產。"
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(minimum duration, for example minimum 15 seconds)分鐘"
@@ -487,7 +488,7 @@ msgid "<strong>Additional business exposure:</strong> You will increase awarenes
 msgstr "<strong>額外業務推展:</strong> 您的服務將受推廣，生意蒸蒸日上。"
 
 msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
-msgstr ""
+msgstr "<strong>先進的基本與技術分析工具，</strong>包括指標、圖表和其它。"
 
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>所有合約期限</strong> - 從10 秒到365 天。"
@@ -541,7 +542,7 @@ msgid "<strong>Higher/Lower</strong> - where you can profit from the market endi
 msgstr "<strong>高於/低於</strong> - 通過預測到期時市場價格高於或低於目標價格而獲利。"
 
 msgid "<strong>Highly competitive spreads with no commission,</strong> offering leverage of up to 1:500"
-msgstr ""
+msgstr "<strong>高競爭性無佣金費點差交易，</strong>提供槓桿率高達 1:500"
 
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and Payment Agents."
 msgstr "<strong>重要免責聲明</strong> - %1 與上述所有支付代理不存在附屬關係。各支付代理均以獨立服務提供商的身份運營，未由%1支持、擔保或經其它方式批准。客戶與支付代理的業務往來，風險自負。我們建議客戶在向支付代理匯款前，應事先查詢其信用狀況。在任何情況下，%1 都不對客戶與支付代理之間的交易承擔責任。"
@@ -628,7 +629,7 @@ msgid "<strong>Stock indices</strong> - trade all major worldwide stock indices.
 msgstr "<strong>股指</strong> - 交易全球所有主要股票指數。"
 
 msgid "<strong>Subscriptions to a wide range of Expert Advisors,</strong> automated trading applications from the MetaTrader Market."
-msgstr ""
+msgstr "<strong>訂閱範圍廣泛的智能外匯全自動交易系統，</strong>是MetaTrader市場提供的自動化交易應用程式。"
 
 msgid "<strong>Take early profits</strong> - sell your long-term trades at market prices before they expire."
 msgstr "<strong>提前獲利</strong> - 合約到期前，可按市價賣出長線交易頭寸。"
@@ -844,10 +845,9 @@ msgstr "帳戶開立"
 msgid "Account Transfer"
 msgstr "帳戶轉帳"
 
-#, fuzzy
 #| msgid "Account Opening"
 msgid "Account Type"
-msgstr "帳戶開立"
+msgstr "帳戶類型"
 
 msgid "Account balance: "
 msgstr "帳戶餘額： "
@@ -1575,7 +1575,7 @@ msgid "Click here to retry"
 msgstr "點選此處重試"
 
 msgid "Click the button below to download MetaTrader."
-msgstr ""
+msgstr "點擊以下按鈕下載MetaTrader。"
 
 msgid "Client classification"
 msgstr "客戶分類"
@@ -1974,12 +1974,11 @@ msgid "Delete"
 msgstr "刪除"
 
 msgid "Demo"
-msgstr ""
+msgstr "展示"
 
-#, fuzzy
 #| msgid "Open Account"
 msgid "Demo Account"
-msgstr "開戶"
+msgstr "展示帳戶"
 
 msgid "Demonstrate the ability to think / act quickly and multi-task as needed to execute effective campaigns"
 msgstr "按需迅速展示並同時運行思想/行動能力，執行有效的活動"
@@ -2129,7 +2128,7 @@ msgid "Download CSV"
 msgstr "下載CSV"
 
 msgid "Download MetaTrader for Windows"
-msgstr ""
+msgstr "下載Windows版MetaTrader"
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "推動快速增長和業務發展，以支援公司的銷售和市場行銷目標"
@@ -2936,7 +2935,7 @@ msgid "If you need assistance feel free to contact our <a class=\"pjaxload\" hre
 msgstr "如果您需要幫助，請聯繫我們的<a class=\"pjaxload\" href=\"%1\">客服部</a>。"
 
 msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader’s website, please select “%1” from the list of available brokers."
-msgstr ""
+msgstr "如果您已直接在MetaTrader網站下載MetaTrader 5，請在可用的經紀商列表選擇「%1」。"
 
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "如果您選擇「亞洲下跌」期權，<strong>當</strong><strong>最新價格</strong>低於<strong>平均</strong>價格時，您將獲得賠付。"
@@ -3092,10 +3091,9 @@ msgstr "為了保證持續增長，%1 誠招法律執行人員一名。此職位
 msgid "In order to support its continued growth, the Human Resources Group at %1 is seeking to place a highly competent administrator in a senior recruitment role. Please note that this is not a position suitable for an HR generalist, but should be of keen interest to a high level administrator with extensive experience in the global recruitment of managers and single technical contributors. A background in financial services and experience in the recruitment of senior professionals in IT and Quantitative Analytics would be ideal."
 msgstr "為保證持續增長， %1人力資源部誠招高級人事管理人員一名。請注意，此職位並不適合普通的人力資源通才。合格的候選者應具有經理及技術專門人才的國際化招聘經驗。具有金融服務背景，對招聘資訊科技業資深專業人士、定量分析師等職位有經驗者優先考慮。"
 
-#, fuzzy
 #| msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
 msgid "In order to trade using MetaTrader 5 platform, you'll first need to have a MetaTrader account."
-msgstr "首先您必須生成API權杖才能夠存取我們的行動應用程式和其他第三方應用程式。"
+msgstr "首先您必須擁有MetaTrader帳戶才能使用MetaTrader 5平台進行交易。"
 
 msgid "In providing these services, we are bound by the Act, any applicable regulations, bye-laws, licence conditions, guidelines, exchange requirements and other provisions or market practices (the \"Rules\"). In the event of conflict between these ST&Cs and the Rules, the latter should prevail."
 msgstr "提供此類服務時，我們受法律、一切適用的規則、地方法規、准證條款、綱領、證卷市場細則和其它規定或市場慣例（「規則」）等約束。當這些補充條款和條件跟規則發生衝突時，當以後者為準。"
@@ -3251,7 +3249,7 @@ msgid "Investor Compensation Scheme"
 msgstr "投資者補償方案"
 
 msgid "Investor Password (read-only access)"
-msgstr ""
+msgstr "投資者密碼(唯讀存取權限)"
 
 msgid "Involved in evaluation of regulatory compliance and risk management. Work with the Head of Departments to improve business processes."
 msgstr "參與法務和風險管理評估。與各部門主管協作改進業務流程。"
@@ -3871,10 +3869,9 @@ msgstr "Less than 6 months"
 msgid "Level of Education"
 msgstr "教育水平"
 
-#, fuzzy
 #| msgid "Average"
 msgid "Leverage"
-msgstr "平均"
+msgstr "槓桿"
 
 msgid "Leverage social-media tools and channels to identify, engage, and convert potential new customers and partners"
 msgstr "通過杠杆社交媒體工具標識、引入並轉換潛在新客戶和業務合作夥伴"
@@ -3912,10 +3909,9 @@ msgstr "將我們客戶與您的應用程式相連接。"
 msgid "Links"
 msgstr "連結"
 
-#, fuzzy
 #| msgid "Further Instructions"
 msgid "Linux Instructions"
-msgstr "詳細說明"
+msgstr "Linux指示"
 
 msgid "Live chat:"
 msgstr "即時聊天："
@@ -3927,7 +3923,7 @@ msgid "Log in"
 msgstr "登入"
 
 msgid "Log into the application using your MetaTrader account number (e.g., 829118) and your MetaTrader account password."
-msgstr ""
+msgstr "使用MetaTrader帳號(例如，829118)以及MetaTrader帳戶密碼登入應用程式。"
 
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "登入您的%1 聯盟帳號並點選：財務&rarr; 付款說明。"
@@ -3974,13 +3970,12 @@ msgstr "低障礙位移"
 msgid "MENA FFXPO Award"
 msgstr "中東和北非地區 FFXPO 獎"
 
-#, fuzzy
 #| msgid "Specific Instructions"
 msgid "MacOS Instructions"
-msgstr "特定指令"
+msgstr "MacOS指示"
 
 msgid "Main Password (trading access)"
-msgstr ""
+msgstr "主密碼(交易存取權限)"
 
 msgid "Maintain accurate system pricing parameters"
 msgstr "維護準確的系統訂價參數"
@@ -4103,7 +4098,7 @@ msgid "Memorable town/city"
 msgstr "難忘的城鎮/城市"
 
 msgid "MetaTrader Accounts Management"
-msgstr ""
+msgstr "MetaTrader帳戶管理"
 
 msgid "Method"
 msgstr "方式"
@@ -4325,7 +4320,7 @@ msgid "Now"
 msgstr "現在"
 
 msgid "Now Introducing MetaTrader 5 on %1"
-msgstr ""
+msgstr "現在在%1推出MetaTrader 5"
 
 msgid "Number of ticks"
 msgstr "跳動點數目"
@@ -5189,7 +5184,7 @@ msgid "Run daily payments reports and report suspected fraud"
 msgstr "日常付款報告和涉嫌欺詐報告的運作"
 
 msgid "Run the installation file and follow the instructions."
-msgstr ""
+msgstr "運行安裝檔案並按照指示操作。"
 
 msgid "Russia"
 msgstr "俄國"
@@ -5465,7 +5460,7 @@ msgid "Start Trading"
 msgstr "開始交易"
 
 msgid "Start Trading with MetaTrader 5"
-msgstr ""
+msgstr "開始使用MetaTrader 5交易"
 
 msgid "Start learning"
 msgstr "開始學習"
@@ -5600,10 +5595,10 @@ msgid "Supporting the Group's global recruiting and talent management needs"
 msgstr "支持集團的全球招聘和人才管理需求"
 
 msgid "Take advantage of numerous benefits, including:"
-msgstr ""
+msgstr "利用我們提供的大量優勢，包括:"
 
 msgid "Take your trading to the next level through this powerful interface, recognised as the benchmark standard worldwide."
-msgstr ""
+msgstr "通過使用此全球公認為基準平台的強大介面，將您的交易發展到更高層次。"
 
 msgid "Talk to us"
 msgstr "聯繫我們"
@@ -6552,10 +6547,9 @@ msgstr "驗證碼格式不正確。"
 msgid "Verification token"
 msgstr "驗證權杖"
 
-#, fuzzy
 #| msgid "Verify new password"
 msgid "Verify Main Password"
-msgstr "驗證新密碼"
+msgstr "驗證主密碼"
 
 msgid "Verify new password"
 msgstr "驗證新密碼"
@@ -6782,10 +6776,9 @@ msgstr "星期三"
 msgid "Week of"
 msgstr "週"
 
-#, fuzzy
 #| msgid "Weekly"
 msgid "Weekday"
-msgstr "每週"
+msgstr "交易日"
 
 msgid "Weekend quotes"
 msgstr "週末報價"
@@ -8308,10 +8301,9 @@ msgstr "支付代理轉帳"
 msgid "Sharp Prices. Smart Trading."
 msgstr "精準報價，智慧交易。"
 
-#, fuzzy
 #| msgid "Webtrader"
 msgid "MetaTrader"
-msgstr "Webtrader"
+msgstr "MetaTrader"
 
 msgid "Account Details"
 msgstr "帳戶詳細資料"
@@ -8320,7 +8312,7 @@ msgid "Terms and Conditions Approval"
 msgstr "條款和條件審批"
 
 msgid "Trading with MetaTrader 5"
-msgstr ""
+msgstr "使用MetaTrader 5進行交易"
 
 #~ msgid "{JAPAN ONLY}BUY price per unit"
 #~ msgstr "{JAPAN ONLY}BUY price per unit"
