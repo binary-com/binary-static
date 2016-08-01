@@ -13,16 +13,22 @@ function getAppId() {
 }
 
 function getSocketURL() {
-    var server_url = localStorage.getItem('config.server_url'),
-        loginid = $.cookie('loginid'),
-        isReal = loginid && !/^VRT/.test(loginid),
-        realToGreenPercent   = 90,
-        virtualToBluePercent = 90,
-        randomPercent = Math.random() * 100;
-    if(!server_url) server_url =
-        (/staging\.binary\.com/i.test(window.location.hostname) ? 'www2' :
-            (isReal ? (randomPercent < realToGreenPercent   ? 'green' : 'blue' ) :
-                      (randomPercent < virtualToBluePercent ? 'blue'  : 'green'))
-        ) + '.binaryws.com';
+    var server_url = localStorage.getItem('config.server_url');
+    if(!server_url) {
+        var loginid = $.cookie('loginid'),
+            isReal = loginid && !/^VRT/.test(loginid),
+            toGreenPercent = {'real': 100, 'other': 0},
+            randomPercent = Math.random() * 100,
+            percentValues = $.cookie('connection_setup');
+        if(percentValues && percentValues.indexOf(',') > 0) {
+            var percents = percentValues.split(',');
+            toGreenPercent.real  = +percents[0];
+            toGreenPercent.other = +percents[1];
+        }
+        server_url = (/staging\.binary\.com/i.test(window.location.hostname) ? 'www2' :
+                (isReal ? (randomPercent < toGreenPercent.real  ? 'green' : 'blue') :
+                          (randomPercent < toGreenPercent.other ? 'green' : 'blue'))
+            ) + '.binaryws.com';
+    }
     return 'wss://' + server_url + '/websockets/v3';
 }
