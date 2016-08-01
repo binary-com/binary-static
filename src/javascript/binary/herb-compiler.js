@@ -25,24 +25,6 @@ function checkIf(fn, msg) {
     };
 }
 
-function startStopTyping(elem, started, stopped) {
-    var stop;
-
-    function keepTyping(ev) {
-        if (stop)
-            started(ev);
-        stop = false;
-    }
-
-    function stopTyping(ev) {
-        stop = true;
-        stopped(ev);
-    }
-
-    elem.addEventListener('keyup', keepTyping);
-    elem.addEventListener('keyup', debounce(stopTyping, 200));
-}
-
 function stripTrailing(name) {
     return name.replace(/\[\]$/, '');
 }
@@ -50,14 +32,14 @@ function stripTrailing(name) {
 function bindCheckerValidation(form, config) {
     var getState = config.getState;
     var checker  = config.checker;
-    var before   = config.before;
-    var after    = config.after;
+    var start    = config.start;
+    var stop     = config.stop;
     var state    = getState();
 
     var seen = {};
 
     function beforeTyping(ev) {
-        before();
+        start();
         seen[stripTrailing(ev.target.name)] = true;
     }
 
@@ -68,16 +50,15 @@ function bindCheckerValidation(form, config) {
         errors = errors.filter(function(err) {
             return seen[err.ctx];
         });
-        after(errors.length ? errors : null, state);
+        stop(errors.length ? errors : null, state);
     }
 
     form.addEventListener('change', function(ev) {
         beforeTyping(ev);
         afterTyping(ev);
     });
-    startStopTyping(
-        form,
-        beforeTyping,
-        afterTyping
-    );
+    done_typing(form, {
+        start: beforeTyping,
+        stop:  afterTyping,
+    });
 }

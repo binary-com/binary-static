@@ -35,8 +35,9 @@ var APITokenWS = (function() {
         BinarySocket.send({api_token: 1});
         checker = getChecker();
         bindCheckerValidation($('#token_form')[0], {
-            before: clearMessages,
-            after:  function(errors, state) {
+            start: function() {},
+            stop:  function(errors, state) {
+                clearMessages();
                 if (errors) displayErrors(errors);
             },
             checker: checker,
