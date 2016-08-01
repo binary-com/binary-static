@@ -167,13 +167,13 @@ var APITokenWS = (function() {
             numbers = Content.localize().textNumbers;
 
         var checkName = [
-            checkIf(checkRequired, err('req')),
-            checkIf(checkBounds,   err('range', template('([_1]-[_2])', [2, 32]))),
-            checkIf(noSymbols,     err('reg', [letters, numbers, '_'])),
+            dv.check(checkRequired, err('req')),
+            dv.check(checkBounds,   err('range', template('([_1]-[_2])', [2, 32]))),
+            dv.check(noSymbols,     err('reg', [letters, numbers, '_'])),
         ];
 
         var checkScopes = [
-            checkIf(checkRequired, 'Please select at least one scope'),
+            dv.check(checkRequired, 'Please select at least one scope'),
         ];
 
         return simple_validator({
@@ -189,7 +189,7 @@ var APITokenWS = (function() {
         };
         errors.forEach(function(err) {
             var $parent = $(map[err.ctx]).parent();
-            var $p = $('<p/>', {class: errorClass, text: text.localize(err)}));
+            var $p = $('<p/>', {class: errorClass, text: text.localize(err.err)});
             $parent.append($p);
         });
     }
