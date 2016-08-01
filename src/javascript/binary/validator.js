@@ -18,8 +18,8 @@ function simple_validator(fields) {
 }
 
 function checkIf(fn, msg) {
-    return function(value) {
-        if (!fn(value)) return msg;
+    return function(value, data) {
+        if (!fn(value, data)) return msg;
         return null;
     };
 }

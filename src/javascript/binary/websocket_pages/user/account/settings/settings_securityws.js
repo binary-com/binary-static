@@ -124,16 +124,15 @@ var SecurityWS = (function() {
     }
 
     function getChecker() {
+        var err = Content.localize().textPasswordsNotMatching;
+        function matches(value, data) {
+            return current_state === STATE.UNLOCKED &&
+                value === data.cashierlockpassword1;
+        }
+
         return simple_validator({
             cashierlockpassword1: [ValidateV2.password],
-            cashierlockpassword2: [function(value, data) {
-                if (current_state !== STATE.UNLOCKED) {
-                    return null;
-                }
-                return value !== data.cashierlockpassword1 ?
-                    Content.localize().textPasswordsNotMatching :
-                    null;
-            }],
+            cashierlockpassword2: [checkIf(matches, err)],
         });
     }
 
