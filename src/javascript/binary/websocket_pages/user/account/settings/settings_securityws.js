@@ -104,6 +104,31 @@ var SecurityWS = (function() {
         });
     }
 
+    function extractFormData() {
+        return formToObj($form[0]);
+    }
+
+    function validateData(data) {
+        var checker = simple_validator({
+            cashierlockpassword1: [ValidateV2.password],
+            cashierlockpassword2: [function(value, data) {
+                if (current_state !== STATE.UNLOCKED) {
+                    return;
+                }
+                return value !== data.cashierlockpassword1 ?
+                    Content.localize().textPasswordsNotMatching :
+                    null;
+            }],
+        });
+        var errors = checker(data);
+        return errors.length ? errors : null;
+    }
+
+    function displayErrors(errors) {
+        errors.forEach(function(err) {
+        });
+    }
+
     function validateForm() {
         clearErrors();
         var pwd1 = $("#cashierlockpassword1").val(),

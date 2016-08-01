@@ -1,20 +1,26 @@
-function mapTo(ctx) {
-    return function(err) {
-        return {
-            ctx: ctx,
-            err: err,
-        };
-    };
-}
-
 function simple_validator(fields) {
     var keys = Object.keys(fields);
     return function(data) {
-        var rv = dv.combine([], keys.map(function(key) {
-            var fns = fields[key];
-            return dv.first(data[key], fns).fmap(mapTo(key));
-        }));
-        return rv.value;
+        var errors = [];
+        keys.forEach(function(ctx) {
+            var fns = fields[ctx];
+            for (var i = 0; i < fns.length; i++) {
+                var error = fns[i](data[ctx], data);
+                if (error === null) continue;
+                return errors.push({
+                    ctx: ctx,
+                    err: error,
+                });
+            }
+        });
+        return errors;
+    };
+}
+
+function checkIf(fn, msg) {
+    return function(value) {
+        if (!fn(value)) return msg;
+        return null;
     };
 }
 

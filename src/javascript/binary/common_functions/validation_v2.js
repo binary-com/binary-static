@@ -24,16 +24,14 @@ var ValidateV2 = (function() {
 
     function msg() {
         var args = [].slice.call(arguments);
-        return {unwap: function() {
+        return {unwrap: function() {
             return err.apply(null, args.map(unwrap));
         }};
     }
 
     function check(fn, err) {
         return function(value) {
-            return fn(value) ?
-                dv.ok(value) :
-                dv.fail(unwrap(err));
+            return fn(value) ? null : unwrap(err);
         };
     }
 
@@ -65,11 +63,11 @@ var ValidateV2 = (function() {
     var required = check(notEmpty, msg('req'));
     var email    = check(validEmail, msg('valid', local('email address')));
     var password = function(value) {
-        return dv.first(value, [
-            password.len,
-            password.allowed,
-            password.symbols,
-        ]);
+        return (
+            password.len(value) ||
+            password.allowed(value) ||
+            password.symbols(value)
+        );
     };
 
     password.len     = check(validPasswordLength, msg('range', '6-25'));

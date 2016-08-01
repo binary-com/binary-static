@@ -165,18 +165,14 @@ var APITokenWS = (function() {
             numbers = Content.localize().textNumbers;
 
         var checkName = [
-            V2.isRequired,
-            dv.check(checkBounds, V2.err('range', template('([_1]-[_2])', [2, 32]))),
-            dv.check(noSymbols,   V2.err('reg', [letters, numbers, '_'])),
-        ];
-
-        var checkScopes = [
-            dv.check(checkRequired, 'Please select at least one scope'),
+            V2.required,
+            checkIf(checkBounds, V2.err('range', template('([_1]-[_2])', [2, 32]))),
+            checkIf(noSymbols,   V2.err('reg', [letters, numbers, '_'])),
         ];
 
         return simple_validator({
-            name: checkName,
-            scopes: checkScopes,
+            name:   checkName,
+            scopes: [checkIf(checkRequired, 'Please select at least one scope')],
         });
     }
 
