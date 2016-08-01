@@ -33,7 +33,6 @@ function bindCheckerValidation(form, config) {
     var checker  = config.checker;
     var start    = config.start;
     var stop     = config.stop;
-    var state    = getState();
 
     var seen = {};
 
@@ -44,12 +43,12 @@ function bindCheckerValidation(form, config) {
 
     function afterTyping(ev) {
         var ctx = stripTrailing(ev.target.name);
-        state = getState();
-        var errors = checker(state);
+        var data = getState();
+        var errors = checker(data);
         errors = errors.filter(function(err) {
             return seen[err.ctx];
         });
-        stop(errors.length ? errors : null, state);
+        stop(errors.length ? errors : null, data);
     }
 
     form.addEventListener('change', function(ev) {

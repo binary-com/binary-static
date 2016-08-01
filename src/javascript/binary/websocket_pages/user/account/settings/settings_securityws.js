@@ -2,6 +2,7 @@ var SecurityWS = (function() {
     "use strict";
     var $form;
     var current_state;
+    var checker;
     var STATE = {
         WAIT_AUTH:    'WAIT_AUTH',
         QUERY_LOCKED: 'QUERY_LOCKED',
@@ -41,6 +42,17 @@ var SecurityWS = (function() {
         Content.populate();
         $form = $("#changeCashierLock");
         if (checkIsVirtual()) return;
+
+        checker = getChecker();
+        bindCheckerValidation($form, {
+            getState: extractFormData,
+            checker:  checker,
+            start:    function() {},
+            stop:     function(errors) {
+                clearErrors();
+                displayErrors(errors);
+            },
+        });
 
         current_state = STATE.WAIT_AUTH;
         BinarySocket.init({onmessage: handler});
@@ -108,8 +120,8 @@ var SecurityWS = (function() {
         return formToObj($form[0]);
     }
 
-    function validateData(data) {
-        var checker = simple_validator({
+    function getChecker() {
+        return simple_validator({
             cashierlockpassword1: [ValidateV2.password],
             cashierlockpassword2: [function(value, data) {
                 if (current_state !== STATE.UNLOCKED) {
@@ -120,30 +132,24 @@ var SecurityWS = (function() {
                     null;
             }],
         });
-        var errors = checker(data);
-        return errors.length ? errors : null;
-    }
-
-    function displayErrors(errors) {
-        errors.forEach(function(err) {
-        });
     }
 
     function validateForm() {
         clearErrors();
-        var pwd1 = $("#cashierlockpassword1").val(),
-            pwd2 = $("#cashierlockpassword2").val(),
-            errorPassword  = $('#errorcashierlockpassword1')[0],
-            errorRPassword = $('#errorcashierlockpassword2')[0],
-            checkRepeat = current_state === STATE.UNLOCKED;
+        var data   = extractFormData();
+        var errors = checker(data);
+        displayErrors(errors);
+        return errors.length === 0;
+    }
 
-        if (checkRepeat && !Validate.errorMessagePassword(pwd1, pwd2, errorPassword, errorRPassword)) {
-            return false;
-        } else if (!/[ -~]{6,25}/.test(pwd1)) {
-            errorPassword.textContent = Content.errorMessage('min', 6);
-            return false;
-        }
-        return true;
+    function displayErrors(errors) {
+        var map = {
+            'cashierlockpassword1': $('#errorcashierlockpassword1'),
+            'cashierlockpassword2': $('#errorcashierlockpassword2'),
+        };
+        errors.forEach(function(err) {
+            map[err.ctx].text(err.err);
+        });
     }
 
     function makeTryingRequest() {
