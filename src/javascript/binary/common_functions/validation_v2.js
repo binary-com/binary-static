@@ -1,27 +1,35 @@
 var ValidateV2 = (function() {
-
-    // Helper function to preserve context
-    function localize(t) {
-        return text.localize(t);
+    function err() {
+        return Content.errorMessage.apply(Content, arguments);
     }
 
-    // Since we don't have access to Content.errorMessage
-    // when this module is created we have to lazily get
-    // it. Examples:
-    //      check(isRequired,  'req')
-    //      check(emailAddress, 'valid', 'email address')
-    function check() {
-        var args = [].slice.call(arguments);
-        var fn   = args.shift();
-        var key  = args.shift();
+    // We don't have access to the localised messages at the init-time
+    // of this module. Solution: delay execution with 'unwrappables'.
+    // Objects that have an `.unwrap` method.
+    //
+    // unwrap({unwrap: v => 1}) == 1
+    // unwrap(1) == 1
+    //
+    function unwrap(a) {
+        return a.unwrap ? a.unwrap() : a;
+    }
 
+    function local(value) {
+        return {unwrap: function() { return text.localize(value); }};
+    }
+
+    function msg() {
+        var args = [].slice.call(arguments);
+        return {unwap: function() {
+            return err.apply(null, args.map(unwrap));
+        }};
+    }
+
+    function check(fn, err) {
         return function(value) {
             return fn(value) ?
                 dv.ok(value) :
-                dv.fail(Content.errorMessage.apply(
-                    Content,
-                    [key].concat(args.map(localize))
-                ));
+                dv.fail(unwrap(err));
         };
     }
 
@@ -35,17 +43,33 @@ var ValidateV2 = (function() {
         return value.length > 0;
     }
 
-    // CAN BE USED IN UI
-    function err() {
-        return Content.errorMessage.apply(Content, arguments);
+    function validPasswordLength(value) {
+        return value.length >= 6 && value.length <= 25;
     }
 
-    var isRequired   = check(notEmpty,   'req');
-    var emailAddress = check(validEmail, 'valid', 'email address');
+    function validPasswordChars(value) {
+        return /[0-9]+/.test(value) &&
+            /[A-Z]+/.test(value) &&
+            /[a-z]+/.test(value);
+    }
 
+    // CAN BE USED IN UI
+    var required = check(notEmpty, msg('req'));
+    var email    = check(validEmail, msg('valid', local('email address')));
+    var password = function(value) {
+        return dv.first(value, [
+            password.len,
+            password.chars,
+        ]);
+    };
+
+    password.len   = check(validPasswordLength, msg('range', '6-25'));
+    password.chars = check(validPasswordChars,  local('Password should have lower and uppercase letters with numbers.'));
 
     return {
-        isRequired:   isRequired,
-        emailAddress: emailAddress,
+        err: err,
+        required: required,
+        password: password,
+        email:    email,
     };
 })();

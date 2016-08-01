@@ -159,17 +159,15 @@ var APITokenWS = (function() {
     }
 
     function getChecker() {
-        function err(a, b) {
-            return Content.errorMessage(a, b);
-        }
+        var V2 = ValidateV2;
 
         var letters = Content.localize().textLetters,
             numbers = Content.localize().textNumbers;
 
         var checkName = [
-            dv.check(checkRequired, err('req')),
-            dv.check(checkBounds,   err('range', template('([_1]-[_2])', [2, 32]))),
-            dv.check(noSymbols,     err('reg', [letters, numbers, '_'])),
+            V2.isRequired,
+            dv.check(checkBounds, V2.err('range', template('([_1]-[_2])', [2, 32]))),
+            dv.check(noSymbols,   V2.err('reg', [letters, numbers, '_'])),
         ];
 
         var checkScopes = [
