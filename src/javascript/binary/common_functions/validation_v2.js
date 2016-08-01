@@ -18,6 +18,10 @@ var ValidateV2 = (function() {
         return {unwrap: function() { return text.localize(value); }};
     }
 
+    function localKey(value) {
+        return {unwrap: function() { return Content.localize()[value]; }};
+    }
+
     function msg() {
         var args = [].slice.call(arguments);
         return {unwap: function() {
@@ -53,18 +57,24 @@ var ValidateV2 = (function() {
             /[a-z]+/.test(value);
     }
 
+    function noSymbolsInPassword(value) {
+        return !/^[!-~]+$/.test(password);
+    }
+
     // CAN BE USED IN UI
     var required = check(notEmpty, msg('req'));
     var email    = check(validEmail, msg('valid', local('email address')));
     var password = function(value) {
         return dv.first(value, [
             password.len,
-            password.chars,
+            password.allowed,
+            password.symbols,
         ]);
     };
 
-    password.len   = check(validPasswordLength, msg('range', '6-25'));
-    password.chars = check(validPasswordChars,  local('Password should have lower and uppercase letters with numbers.'));
+    password.len     = check(validPasswordLength, msg('range', '6-25'));
+    password.allowed = check(validPasswordChars,  local('Password should have lower and uppercase letters with numbers.'));
+    password.symbols = check(noSymbolsInPassword, msg('valid', localKey('textPassword')));
 
     return {
         err: err,
