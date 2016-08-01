@@ -7,11 +7,10 @@ function simple_validator(fields) {
             for (var i = 0; i < fns.length; i++) {
                 var error = fns[i](data[ctx], data);
                 if (error === null) continue;
-                errors.push({
+                return errors.push({
                     ctx: ctx,
                     err: error,
                 });
-                break;
             }
         });
         return errors;

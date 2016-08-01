@@ -188,7 +188,9 @@ var APITokenWS = (function() {
             'scopes': '#scopes',
         };
         errors.forEach(function(err) {
-            showError(map[err.ctx], err.err);
+            var $parent = $(map[err.ctx]).parent();
+            var $p = $('<p/>', {class: errorClass, text: text.localize(err)}));
+            $parent.append($p);
         });
     }
 
@@ -254,11 +256,6 @@ var APITokenWS = (function() {
             .css('display', 'block')
             .delay(3000)
             .fadeOut(1000);
-    }
-
-    function showError(fieldID, err) {
-        $(fieldID).parent()
-            .append($('<p/>', {class: errorClass, text: text.localize(err)}));
     }
 
     function clearMessages() {
