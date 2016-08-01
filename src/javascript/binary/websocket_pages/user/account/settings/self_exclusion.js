@@ -21,8 +21,7 @@ var SelfExclusionWS = (function() {
         errorClass,
         hiddenClass;
 
-    var fields,
-        isValid;
+    var fields;
 
     var reallyInit = function() {
         $form       = $('#frmSelfExclusion');
@@ -159,7 +158,7 @@ var SelfExclusionWS = (function() {
     // ----------------------------
     var formValidate = function() {
         clearError();
-        isValid = true;
+        var isValid = true;
         var changed = false;
         var submittedValues = {};
 
@@ -180,12 +179,15 @@ var SelfExclusionWS = (function() {
                 else if (key !== timeID && key !== timeDateID) {
                     if (newValue.length > 0 && !isNormalInteger(newValue)) {
                         showError(key, 'Please enter an integer value');
+                        isValid = false;
                     }
                     else if (currentValue > 0 && (newValue.length === 0 || isLargerInt(newValue, currentValue))) {
                         showError(key, text.localize('Please enter a number between 0 and [_1]', [currentValue]));
+                        isValid = false;
                     }
                     else if (key === 'session_duration_limit' && newValue > (6 * 7 * 24 * 60)) {
                         showError(key, 'Session duration limit cannot be more than 6 weeks.');
+                        isValid = false;
                     }
                 }
             } else if (key === timeDateID && $form.find('#' + timeID).val().trim().length > 0) {
@@ -281,7 +283,6 @@ var SelfExclusionWS = (function() {
         if (fieldID === timeID) {
             $('#' + fieldID).attr('style', 'margin-bottom:10px');
         }
-        isValid = false;
     };
 
     var clearError = function(fieldID) {
