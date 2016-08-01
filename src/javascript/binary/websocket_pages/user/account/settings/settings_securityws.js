@@ -16,9 +16,12 @@ var SecurityWS = (function() {
     function clearErrors() {
         $("#SecuritySuccessMsg").text('');
         $("#invalidinputfound").text('');
-        $('#errorcashierlockpassword1').contents().filter(function () {
-            return this.nodeType === Node.TEXT_NODE;
-        }).remove();
+        $('#errorcashierlockpassword1, #errorcashierlockpassword2')
+            .contents()
+            .filter(function () {
+                return this.nodeType === Node.TEXT_NODE;
+            })
+            .remove();
     }
 
     function checkIsVirtual() {
@@ -44,13 +47,13 @@ var SecurityWS = (function() {
         if (checkIsVirtual()) return;
 
         checker = getChecker();
-        bindCheckerValidation($form, {
+        bindCheckerValidation($form[0], {
             getState: extractFormData,
             checker:  checker,
             start:    function() {},
             stop:     function(errors) {
                 clearErrors();
-                displayErrors(errors);
+                if (errors) displayErrors(errors);
             },
         });
 
@@ -125,7 +128,7 @@ var SecurityWS = (function() {
             cashierlockpassword1: [ValidateV2.password],
             cashierlockpassword2: [function(value, data) {
                 if (current_state !== STATE.UNLOCKED) {
-                    return;
+                    return null;
                 }
                 return value !== data.cashierlockpassword1 ?
                     Content.localize().textPasswordsNotMatching :
