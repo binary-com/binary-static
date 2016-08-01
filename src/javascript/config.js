@@ -14,10 +14,15 @@ function getAppId() {
 
 function getSocketURL() {
     var server_url = localStorage.getItem('config.server_url'),
-        bluePercent = 30;
+        loginid = $.cookie('loginid'),
+        isReal = loginid && !/^VRT/.test(loginid),
+        realToGreenPercent   = 90,
+        virtualToBluePercent = 90,
+        randomPercent = Math.random() * 100;
     if(!server_url) server_url =
         (/staging\.binary\.com/i.test(window.location.hostname) ? 'www2' :
-            (Math.random() * 100 > bluePercent ? 'green' : 'blue')
+            (isReal ? (randomPercent < realToGreenPercent   ? 'green' : 'blue' ) :
+                      (randomPercent < virtualToBluePercent ? 'blue'  : 'green'))
         ) + '.binaryws.com';
     return 'wss://' + server_url + '/websockets/v3';
 }
