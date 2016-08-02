@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-02 05:17+0000\n"
-"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
+"PO-Revision-Date: 2016-08-02 06:14+0000\n"
+"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -552,10 +552,9 @@ msgstr "<strong>HIGH/LOW</strong>：設定価格より終了時の価格が上�
 msgid "<strong>Higher/Lower</strong> - where you can profit from the market ending higher or lower than a target price."
 msgstr "<strong>HIGH/LOW</strong>：バリア設定をした価格より値上がりするか？値下がりするか？を予想してください。"
 
-#, fuzzy
 #| msgid "<strong>Highly competitive spreads with no commission,</strong> offering leverage of up to 1:500"
 msgid "<strong>Highly competitive spreads with no commission.</strong>"
-msgstr "<strong>手数料無しで高い倍率のスプレッド</strong> 1:500までのレバレッジを提供"
+msgstr "<strong>手数料無しで高い倍率のスプレッドをご利用可能</strong>"
 
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and Payment Agents."
 msgstr "<strong>重要な免責事項</strong> -%1は、上記の決済サービスとは提携していません。各決済サービスは、独立したサービスプロバイダーとして動作し、%1による承認、保証またはその他の許可がなされていません。お客さまは危険を承知で自信の責任をもって決済サービスに処断します。送金をされる前に、決済サービスの資格情報を確認されることをお勧めいたします。%1はいかなる状況下においても、お客さまと決済サービスの間で生じた処理への責任は負いません。"
@@ -1746,10 +1745,9 @@ msgstr "確認事項"
 msgid "Conflicts Policy"
 msgstr "利益相反ポリシー"
 
-#, fuzzy
 #| msgid "Congratulations! <br /> You have won the contract!"
 msgid "Congratulations! Your account has been created."
-msgstr "おめでとうございます！<br />トレードに勝ちました！"
+msgstr "おめでとうございます！口座の作成が完了しました。"
 
 msgid "Construction"
 msgstr "設営"
@@ -1814,10 +1812,9 @@ msgstr "当社は当社サイトに報告された、トレードの取引対象
 msgid "Contract period"
 msgstr "取引期間"
 
-#, fuzzy
 #| msgid "Contract Purchase"
 msgid "Contract purchased with app ID"
-msgstr "契約を購入"
+msgstr "アプリケーションIDで購入されたトレード"
 
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "当社のサーバがリクエストを受理した時点での市場価格で売却取引が成立します。実際の約定価格と発注時の表示価格と異なる場合があります。"
@@ -1910,7 +1907,7 @@ msgid "Create New Token"
 msgstr "新しいトークンを作成"
 
 msgid "Create a MetaTrader account to trade on the MetaTrader 5 platform."
-msgstr ""
+msgstr "MetaTrader 5プラットフォームで取引いただくには、MetaTraderのアカウントを作成する必要があります。"
 
 msgid "Create clear, concise and engaging content for display on the company's website, blog, social media outlets, and marketing materials"
 msgstr "ウェブサイト、ブログ、メディア、マーケティング資料に使用する明確かつ魅力的なコンテンツの作成"
@@ -2047,18 +2044,16 @@ msgstr "%1 %2のバーチャルマネーをアカウント%3へ入金する"
 msgid "Deposit Bonus"
 msgstr "ご入金された場合に付与されるボーナスについて"
 
-#, fuzzy
 #| msgid "Deposit of"
 msgid "Deposit from"
-msgstr "Xのご入金"
+msgstr "からのご入金"
 
-#, fuzzy
 #| msgid "Deposit funds into your account"
 msgid "Deposit funds into your MetaTrader account from your Binary account:"
-msgstr "ご口座へのご入金"
+msgstr "Binary.comの口座からMetaTraderの口座へご入金："
 
 msgid "Deposit is done. Transaction ID:"
-msgstr ""
+msgstr "入金が完了しました。取引 ID："
 
 msgid "Deposit of"
 msgstr "Xのご入金"
@@ -2066,15 +2061,13 @@ msgstr "Xのご入金"
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "銀行振込によりお客さまの口座に入出金を行います"
 
-#, fuzzy
 #| msgid "Deposit of"
 msgid "Deposit to"
-msgstr "Xのご入金"
+msgstr "XXXへご入金"
 
-#, fuzzy
 #| msgid "Deposit funds into your account"
 msgid "Deposit to MetaTrader account"
-msgstr "ご口座へのご入金"
+msgstr "MetaTraderの口座へご入金"
 
 msgid "Deposit: %1 working day"
 msgstr "ご入金: %1営業日"
@@ -2199,10 +2192,9 @@ msgstr "口座維持手数料について"
 msgid "Download CSV"
 msgstr "CSVファイルでダウンロード"
 
-#, fuzzy
 #| msgid "Download MetaTrader for Windows"
 msgid "Download MetaTrader"
-msgstr "Windows版のMetaTraderをダウンロード"
+msgstr "MetaTraderをダウンロード"
 
 msgid "Download MetaTrader for Windows"
 msgstr "Windows版のMetaTraderをダウンロード"
@@ -4029,10 +4021,9 @@ msgstr "入出金をロック"
 msgid "Log in"
 msgstr "ログイン"
 
-#, fuzzy
 #| msgid "Log into the application using your MetaTrader account number (e.g., 829118) and your MetaTrader account password."
 msgid "Log into the application using your MetaTrader account number (e.g., 1124) and your MetaTrader account password."
-msgstr "MetaTraderのアカウント番号(例：829118)とパスワードでアプリケーションにログインをしてください。"
+msgstr "MetaTraderのアカウント番号(例：1124)とパスワードでアプリケーションにログインをしてください。"
 
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "%1のアフィリエイト口座にログインしFinances &rarr;Payment Instructionsをクリックし、ご変更手続きを行って下さい。"
@@ -4211,10 +4202,9 @@ msgstr "思い出のある都市／街の名前"
 msgid "MetaTrader Accounts Management"
 msgstr "MetaTraderアカウント管理"
 
-#, fuzzy
 #| msgid "Verify Main Password"
 msgid "MetaTrader Main Password"
-msgstr "メインパスワード（確認用）"
+msgstr "MetaTraderメインパスワード"
 
 msgid "Method"
 msgstr "決済方法"
@@ -5596,15 +5586,13 @@ msgstr "学習をはじめる"
 msgid "Start time"
 msgstr "開始時間"
 
-#, fuzzy
 #| msgid "Start Trading with MetaTrader 5"
 msgid "Start trading with your Demo Account"
-msgstr "MetaTrader 5でお取引を始める"
+msgstr "デモ口座でお取引をはじめる"
 
-#, fuzzy
 #| msgid "Start Trading with MetaTrader 5"
 msgid "Start trading with your Real Account"
-msgstr "MetaTrader 5でお取引を始める"
+msgstr "リアル口座でお取引を開始する"
 
 msgid "State/Province"
 msgstr "都道府県"
@@ -6519,15 +6507,17 @@ msgstr "上記のお客さま基本情報の変更をご希望される場合は
 
 msgid "To create a Real account for MetaTrader, <a href=\"%1\">upgrade to Bianry Real account</a>."
 msgstr ""
+"MetaTraderのリアル口座を作成するには、<a href=\"%1\""
+">Bianryの口座をリアル口座へアップグレード</a>いただく必要があります。"
 
 msgid "To create a Real account for MetaTrader, switch to your Binary Real account."
-msgstr ""
+msgstr "MetaTraderのリアル口座を作成いただくには、Binaryのリアル口座へ切り替えてください。"
 
 msgid "To create a Real account for MetaTrader, you need to authenticate your Binary account:"
-msgstr ""
+msgstr "MetaTraderのリアル口座を作成するには、Binary口座を認証いただく必要があります："
 
 msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
-msgstr ""
+msgstr "MetaTraderのリアル口座から入出金いただくには、Binay.comのリアル口座へ切り替えてください。"
 
 msgid "To enable cookies, follow the instructions below for the browser version that you are using."
 msgstr "ご利用中のブラウザのバージョンの指示に従ってクッキーを有効化して下さい。"
@@ -7258,23 +7248,20 @@ msgstr "プロモーションサイトに掲載したアフィリエイトリン
 msgid "Withdraw"
 msgstr "出金"
 
-#, fuzzy
 #| msgid "Withdraw"
 msgid "Withdraw from"
-msgstr "出金"
+msgstr "XXXからご出金"
 
-#, fuzzy
 #| msgid "Transfer from another account"
 msgid "Withdraw from MetaTrader account"
-msgstr "Transfer from another account"
+msgstr "MetaTraderの口座からご出金"
 
 msgid "Withdraw funds from your MetaTrader account into your Binary account:"
-msgstr ""
+msgstr "MetaTraderの口座からBinaryの口座へ資金をご出金："
 
-#, fuzzy
 #| msgid "Withdraw"
 msgid "Withdraw to"
-msgstr "出金"
+msgstr "XXXへご出金"
 
 msgid "Withdraw: %1 working day"
 msgstr "ご出金: %1営業日"
@@ -7288,10 +7275,9 @@ msgstr "ご出金：未対応"
 msgid "Withdrawal Limits"
 msgstr "出金限度額"
 
-#, fuzzy
 #| msgid "Withdrawal via Bank Transfer"
 msgid "Withdrawal is done. Transaction ID:"
-msgstr "銀行口座経由でのご出金"
+msgstr "ご出金が完了しました。取引 ID："
 
 msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgstr "出金アクションにロックがかかっています。詳細については<a class=\"pjaxload\" href=\"%1\">当社までお問い合わせ</a>ください。"
@@ -7608,10 +7594,9 @@ msgstr "あなたのクライアントに送金が処理されたことをお知
 msgid "Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on %1 and in that event, opens an account with us."
 msgstr "お客さまのIDはクッキーに保存され、お客さまのアフィリエイトリンクがクリックされる度に識別され、%1に伝わります。"
 
-#, fuzzy
 #| msgid "First Name"
 msgid "Your Name"
-msgstr "フリガナ(全角)"
+msgstr "氏名"
 
 msgid "Your Property"
 msgstr "不動産"
@@ -7686,10 +7671,9 @@ msgstr "当社はお客さまからお預かりした預託金を万全の体制
 msgid "Your name, email address and contact number"
 msgstr "氏名、メールアドレス、電話番号"
 
-#, fuzzy
 #| msgid "Your account has been debited with %1 %2"
 msgid "Your new account has been created."
-msgstr "お客様のご口座から%1 %2が引き落とされました。"
+msgstr "新しい口座の作成が完了しました。"
 
 msgid "Your password and login ID are unique and passwords are hashed so that not even %1 staff can read them. This is the reason why we cannot retrieve your password and have to issue you with a new one to your email address if you cannot recall it."
 msgstr "お客さまのパスワードとログインIDは唯一無二な値であり、パスワードはハッシュ化され送信されますので%1の関係者ですら解読することができませんので、お客さまのパスワードを確認することはできませんので、パスワードを失念された際にはお客さまのメールアドレスに新たなパスワードを再発行させて頂かなければなりません。"
@@ -7824,10 +7808,9 @@ msgstr "入金"
 msgid "details"
 msgstr "詳細"
 
-#, fuzzy
 #| msgid "e.g. ws.binaryws.com"
 msgid "e.g. blue.binaryws.com"
-msgstr "例：ws.binaryws.com"
+msgstr "例：blue.binaryws.com"
 
 msgid "f"
 msgstr "女性"
