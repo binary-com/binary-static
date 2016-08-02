@@ -3,9 +3,10 @@ msgstr ""
 "Project-Id-Version: Portuguese (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-07-31 12:29+0000\n"
+"PO-Revision-Date: 2016-08-02 06:23+0000\n"
 "Last-Translator: Alcino Jorge <alcino@binary.com>\n"
-"Language-Team: Portuguese <https://hosted.weblate.org/projects/binary/static/pt/>\n"
+"Language-Team: Portuguese "
+"<https://hosted.weblate.org/projects/binary/static/pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -7025,18 +7026,16 @@ msgstr "Retirar"
 msgid "Withdraw from"
 msgstr "Retirar fundos de"
 
-#, fuzzy
 #| msgid "Transfer from another account"
 msgid "Withdraw from MetaTrader account"
-msgstr "Transferir a partir de outra conta"
+msgstr "Retirar fundos da conta MetaTrader"
 
 msgid "Withdraw funds from your MetaTrader account into your Binary account:"
 msgstr ""
 
-#, fuzzy
 #| msgid "Withdraw"
 msgid "Withdraw to"
-msgstr "Retirar"
+msgstr "Retirar fundos para"
 
 msgid "Withdraw: %1 working day"
 msgstr "Retirada: %1 dia útil"
@@ -7050,15 +7049,15 @@ msgstr "Retirada: Não aplicável"
 msgid "Withdrawal Limits"
 msgstr "Limites de retirada"
 
-#, fuzzy
 #| msgid "Withdrawal via Bank Transfer"
 msgid "Withdrawal is done. Transaction ID:"
-msgstr "Retirada através de Transferência Bancária"
+msgstr "A retirada está concluída. ID de transação:"
 
-#, fuzzy
 #| msgid "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\">here</a> for further information."
 msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
-msgstr "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\">here</a> for further information."
+msgstr ""
+"Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a>"
+" for more information."
 
 msgid "Work closely with other members of the team to develop software that would drive prices on our trading platform"
 msgstr "Trabalhar em estreita colaboração com outros membros da equipe para desenvolver software que impulsionaria os preços na nossa plataforma de negociação"
@@ -7096,18 +7095,29 @@ msgstr "Ano"
 msgid "Yes. Please email us at <a href=\"mailto:%1\">%1</a> for further assistance."
 msgstr "Sim. Envie um e-mail <a href=\"mailto:%1\">%1</a> para mais informações."
 
-#, fuzzy
 #| msgid "You acknowledge and agree that you are solely and exclusively responsible for the control, operation and security of transactions and communications made through its access to or use of the Binary.com API. You acknowledge that there are risks associated with utilizing an internet-based deal execution trading system including, but not limited to, the failure of hardware, software, and internet connections. You acknowledge that the Company does not control signal power, its reception or routing via the internet, configuration of your equipment or reliability of its connection, and the Company shall not be responsible for any communication failures, disruptions, errors, distortions or delays you may experience when trading via the internet using the Binary.com API."
 msgid "You acknowledge and agree that you are solely and exclusively responsible for the control, operation and security of transactions and communications made through its access to or use of the %1 API. You acknowledge that there are risks associated with utilizing an internet-based deal execution trading system including, but not limited to, the failure of hardware, software, and internet connections. You acknowledge that the Company does not control signal power, its reception or routing via the internet, configuration of your equipment or reliability of its connection, and the Company shall not be responsible for any communication failures, disruptions, errors, distortions or delays you may experience when trading via the internet using the %1 API."
-msgstr "Você reconhece e aceita que é única e exclusivamente responsável pelo controle, operação e segurança de transações e comunicações realizadas através do seu acesso para ou seu uso da API Binary.com. Você reconhece que existem riscos associados à utilização de um sistema de negociação de execução de transações com base na internet, incluindo, mas não limitados à, falha de hardware, software e conexões de internet. Você reconhece que a empresa não controla a potência da rede, nem a sua recepção ou roteamento através da internet, a configuração do seu equipamento ou confiabilidade da sua conexão, e a empresa não será responsável por quaisquer falhas na comunicação, interrupções, erros, distorções ou atrasos que você pode sofrer quando negocia através da internet usando a API Binary.com."
+msgstr ""
+"Você reconhece e aceita que é unica e exclusivamente responsável pelo "
+"controle, operação e segurança de transações e comunicações realizadas "
+"através do seu acesso para ou seu uso da API %1. Você reconhece que existem "
+"riscos associados à utilização de um sistema de negociação de execução de "
+"transações com base na internet, incluindo, mas não limitados à, falha de "
+"hardware, software e conexões de internet. Você reconhece que a empresa não "
+"controla a potência da rede, nem a sua recepção ou roteamento através da "
+"internet, a configuração do seu equipamento ou confiabilidade da sua "
+"conexão, e a empresa não será responsável por quaisquer falhas na "
+"comunicação, interrupções, erros, distorções ou atrasos que você pode sofrer "
+"quando negocia através da internet usando a API %1."
 
 msgid "You acknowledge that, in the course of dealing under these Terms, you may obtain confidential information relating to the Company and its parent, subsidiaries, affiliates or other third party. Such confidential information shall belong solely to the Company."
 msgstr "Você reconhece que, no decorrer dos procedimentos ao abrigo destes termos, você pode obter informações confidenciais relacionadas à empresa e o seu controlador, as suas subsidiárias e os seus afiliados ou outros terceiros. Tais informações confidenciais pertencem exclusivamente à empresa."
 
-#, fuzzy
 #| msgid "You agree that by developing on the Binary.com API, you are entering into a legally binding agreement with the Company."
 msgid "You agree that by developing on the %1 API, you are entering into a legally binding agreement with the Company."
-msgstr "Você concorda que ao desenvolver a API Binary.com, você está firmando um acordo legalmente vinculativo com a empresa."
+msgstr ""
+"Você concorda que ao desenvolver a API %1, você está firmando um acordo "
+"legalmente vinculativo com a Empresa."
 
 msgid "You agree that we may use Personal information provided by you in order to conduct appropriate anti-fraud checks. Personal Information that you provide may be disclosed to a credit reference or fraud prevention agency, which may keep a record of that information."
 msgstr "Você aceita que poderemos utilizar as informações Pessoais fornecidas por si na realização de verificações anti-fraude apropriadas. As Informações Pessoais que fornecer podem ser divulgadas a uma agência de notação de crédito ou de prevenção de fraudes, que poderá manter um registro dessas informações."
@@ -7115,10 +7125,26 @@ msgstr "Você aceita que poderemos utilizar as informações Pessoais fornecidas
 msgid "You agree that you will not:"
 msgstr "Você concorda que não irá:"
 
-#, fuzzy
 #| msgid "You also acknowledge that Binary.com may continue to make changes to and enhance the Binary.com API and that those changes and enhancements will be owned by Binary.com. You hereby assign and transfer to the Company all of your right, title and interest in and to any modifications or derivative works of the Binary.com API created by or for you, regardless of whether they were created in accordance with these Terms; such assignment being effective upon creation of such works, and shall include, without limitation, all rights under any intellectual property laws, including copyright. You shall not take any action to jeopardise, encumber, limit or interface in any manner with Binary.com’s ownership of and rights with respect to the Binary.com API, or any derivative works or updates thereof or thereto. Any components, parts, or mechanics of any system or API program derived from the Binary.com API, or Binary.com’s business practices shall belong solely to Binary.com. Further, you will not, at any time, contest or assist any other third party in contesting the rights of Binary.com in the Binary.com API or any other intellectual property provided in these Terms."
 msgid "You also acknowledge that %1 may continue to make changes to and enhance the %1 API and that those changes and enhancements will be owned by %1. You hereby assign and transfer to the Company all of your right, title and interest in and to any modifications or derivative works of the %1 API created by or for you, regardless of whether they were created in accordance with these Terms; such assignment being effective upon creation of such works, and shall include, without limitation, all rights under any intellectual property laws, including copyright. You shall not take any action to jeopardise, encumber, limit or interface in any manner with %1's ownership of and rights with respect to the %1 API, or any derivative works or updates thereof or thereto. Any components, parts, or mechanics of any system or API program derived from the %1 API, or %1's business practices shall belong solely to %1. Further, you will not, at any time, contest or assist any other third party in contesting the rights of %1 in the %1 API or any other intellectual property provided in these Terms."
-msgstr "Você também reconhece que a Binary.com pode continuar a fazer alterações e melhorar a API Binary.com, e que essas alterações e melhorias serão propriedade da Binary.com. Você, pelo presente, atribui e transfere para a empresa todos o seus direitos, a sua titularidade e o seu interesse em e para quaisquer modificações ou trabalhos derivados da API Binary.com criados por ou para você, independentemente de estes serem criados em conformidade com estes termos ou não; tal atribuição, entrará em vigor na criação de tais trabalhos e incluirá, sem limitação, todos os direitos ao abrigo de quaisquer leis de propriedade intelectual, incluindo direitos de autor. Você não deve tomar qualquer ação que ponha em causa, comprometa, limite ou de qualquer maneira sirva de interface com a titularidade da Binary.com e os seus direitos em relação à API Binary.com, ou quaisquer trabalhos derivados dela ou atualização feitas a ela. Quaisquer componentes, peças ou mecânicas de qualquer sistema ou programa de API derivadas da API Binary.com, ou das práticas de negócio da Binary.com, pertencerão exclusivamente à Binary.com. Além disso, você não contestará nem auxiliará, a qualquer momento, quaisquer outros terceiros em contestar os direitos de Binary.com em relação à API Binary.com ou qualquer outra propriedade intelectual fornecida nestes termos."
+msgstr ""
+"Você também reconhece que a %1 pode continuar a fazer alterações e melhorar "
+"a API %1, e que essas alterações e melhorias serão propriedade da %1. Você, "
+"pelo presente, atribui e transfere para a empresa todos o seus direitos, a "
+"sua titularidade e o seu interesse em e para quaisquer modificações ou "
+"trabalhos derivados da API %1 criados por ou para você, independentemente de "
+"estes serem criados em conformidade com estes termos ou não; tal atribuição, "
+"entrará em vigor na criação de tais trabalhos e incluirá, sem limitação, "
+"todos os direitos ao abrigo de quaisquer leis de propriedade intelectual, "
+"incluindo direitos de autor. Você não deve tomar qualquer ação que ponha em "
+"causa, comprometa, limite ou de qualquer maneira sirva de interface com a "
+"titularidade da %1 e os seus direitos em relação à API %1, ou quaisquer "
+"trabalhos derivados dela ou atualização feitas a ela. Quaisquer componentes, "
+"peças ou mecânicas de qualquer sistema ou programa de API derivadas da API %"
+"1, ou das práticas de negócio da %1, pertencerão exclusivamente à %1. Além "
+"disso, você não contestará nem auxiliará, a qualquer momento, quaisquer "
+"outros terceiros em contestar os direitos de %1 em relação à API %1 ou "
+"qualquer outra propriedade intelectual fornecida nestes termos."
 
 msgid "You also have the right to request from us to inform you about the personal data that we process about you and to request its correction where necessary. This request must be made in writing to us and signed by you as the data subject."
 msgstr "Tem também o direito de exigir-nos que o informemos quanto aos dados pessoais que processamos sobre você e de solicitar a sua correção, quando necessário. Este pedido deve ser feito por escrito sendo enviado para nós assinado por você como a pessoa em causa."
@@ -7159,10 +7185,11 @@ msgstr "Você é responsável pelo gerenciamento dos seus assuntos fiscais e leg
 msgid "You are warned of the following additional risks:"
 msgstr "Você é por este meio avisado dos seguintes riscos adicionais:"
 
-#, fuzzy
 #| msgid "You can <a class=\"pjaxload\" href=\"%1\">open an account</a>, deposit funds and begin trading within minutes."
 msgid "You can <a class='pjaxload' href='%1'>open an account</a>, deposit funds and begin trading within minutes."
-msgstr "É possível <a class=\"pjaxload\" href=\"%1\">abrir uma conta</a>, depositar fundos e começar a negociar dentro de poucos minutos."
+msgstr ""
+"É possível <a class='pjaxload' href='%1'>abrir uma conta</a>, depositar "
+"fundos e começar a negociar dentro de poucos minutos."
 
 msgid "You can choose payouts from $1 to $50,000. This wide payout range is ideal for both small and large traders."
 msgstr "Você pode escolher pagamentos de $1 a $50.000. Este amplo intervalo de prêmios é ideal tanto para pequenos como grandes negociadores."
@@ -7176,10 +7203,10 @@ msgstr "Você pode vender contratos a longo prazo a qualquer momento a fim de ap
 msgid "You can set the length of your trade, from 10 seconds to 365 days."
 msgstr "Você pode definir a duração da sua negociação, desde 10 segundos até 365 dias."
 
-#, fuzzy
 #| msgid "You can trade a range of markets, timescales and indices – 24/7."
 msgid "You can trade a range of markets, timescales and indices - 24/7."
-msgstr "Você pode negociar em uma variedade de mercados, prazos e índices - 24 horas por dia/7 dias por semana."
+msgstr ""
+"Você pode negociar em uma variedade de mercados, prazos e índices – 24/7."
 
 msgid "You can use an authorized payment agent to process deposits and withdrawals for payment methods or local currencies not supported by %1. It's easy to do."
 msgstr "Você pode utilizar os Agentes de Pagamentos para processar os depósitos e retiradas para métodos de pagamento ou moedas locais não suportados pela %1. Isso é fácil de fazer."
@@ -7220,10 +7247,11 @@ msgstr "É necessário que você se cadastre e obtenha uma ID de aplicativo ante
 msgid "You irrevocably, non-exclusively license to the Company rights to use your Contributions; and"
 msgstr "Você concede irrevogavelmente direitos não exclusivos à Empresa de usar as suas contribuições; e"
 
-#, fuzzy
 #| msgid "You may cache the Content for up to 24 hours from a request for that Content through the Binary.com API."
 msgid "You may cache the Content for up to 24 hours from a request for that Content through the %1 API."
-msgstr "Você poder guardar o Conteúdo em memória cache durante até 24 horas a partir de um pedido para tal Conteúdo através da API Binary.com."
+msgstr ""
+"Você poder guardar o Conteúdo em memória cache durante até 24 horas a partir "
+"de um pedido para tal Conteúdo através da API %1."
 
 msgid "You may choose to contact us to close your account held with the Company. Your account may be closed if you do not have any open trade positions and if you have complied with the requested \"Know Your Client\" procedures to enable you to withdraw any pending funds in your account."
 msgstr "Você pode optar por nos contatar para encerrar a sua conta mantida na nossa Empresa. A sua conta pode ser encerrada se não houver nenhumas posições de negociação em aberto e se você tiver cumprido os procedimentos \"Conhecer o Cliente\" solicitados para habilitá-lo a retirar quaisquer fundos pendentes na sua conta."
@@ -7231,26 +7259,30 @@ msgstr "Você pode optar por nos contatar para encerrar a sua conta mantida na n
 msgid "You may communicate with us through this website, by email or, exceptionally, by post. Details can be found in the Contact Us page."
 msgstr "Você pode comunicar conosco através deste website, por e-mail ou, excepcionalmente, por correio. As informações de contato encontram-se na página Contate-nos."
 
-#, fuzzy
 #| msgid "You may develop Applications using the Binary.com API as soon as you register an Application and you agree to follow these Terms."
 msgid "You may develop Applications using the %1 API as soon as you register an Application and you agree to follow these Terms."
-msgstr "Você pode desenvolver aplicativos usando a API Binary.com assim que registre um aplicativo e aceite seguir estes termos."
+msgstr ""
+"Você pode desenvolver aplicativos usando a API %1 assim que registre um "
+"aplicativo e aceite seguir estes termos."
 
 msgid "You may earn up to 35% commission on the net revenue generated by clients whom you introduce to our trading platform."
 msgstr "Poderá ganhar uma comissão de até 35% das receitas líquidas geradas pelos clientes a quem você der a conhecer a nossa plataforma de negociação."
 
-#, fuzzy
 #| msgid "You may not assign rights granted in this Agreement without the Company’s prior written approval."
 msgid "You may not assign rights granted in this Agreement without the Company's prior written approval."
-msgstr "Você não pode transmitir direitos concedidos neste acordo sem consentimento prévio por escrito da empresa."
+msgstr ""
+"Você não pode transmitir direitos concedidos neste Acordo sem consentimento "
+"prévio por escrito da Empresa."
 
 msgid "You may only open an account at this site on condition that:"
 msgstr "Apenas pode abrir uma conta neste site se:"
 
-#, fuzzy
 #| msgid "You may store the Application-specific alphanumeric user IDs that we provide to you for identifying users of your Application (\"API Tokens\") or the tokens that we provide to you when Binary.com authenticates your Application via Open Authorisation Standard (\"OAuth Tokens\")."
 msgid "You may store the Application-specific alphanumeric user IDs provided (\"API Tokens\") or the authentication tokens provided via Open Authorisation Standard (\"OAuth Tokens\")."
-msgstr "Você pode guardar as IDs de usuário alfanuméricas específicas do aplicativo que nós lhe fornecemos para a identificação dos usuários do seu aplicativo (\"tokens de API\") ou os tokens que lhe fornecemos quando a Binary.com autentica o seu aplicativo através do Open Authorisation Standard (\"tokens OAuth\")."
+msgstr ""
+"Você pode guardar as IDs de usuário alfanuméricas específicas do aplicativo "
+"fornecidas (\"tokens de API\") ou os tokens fornecidos via o Open "
+"Authorisation Standard (\"tokens OAuth\")."
 
 msgid "You may terminate this Agreement at any time, but only by giving the Company a minimum of seven days written notice. \"Written notice\" here includes notice delivered by regular letter mail or by email."
 msgstr "Você pode rescindir este acordo a qualquer momento, mas apenas por via de aviso prévio por escrito de, pelo menos, sete dias. \"Aviso prévio por escrito\" aqui inclui avisos entregues por correio normal ou correio eletrônico."
@@ -7261,18 +7293,25 @@ msgstr "Você pode levantar a quantia do bónus depois de exceder um volume de n
 msgid "You must accept the terms and conditions to open an account."
 msgstr "Tem de aceitar os termos e condições para abrir uma conta."
 
-#, fuzzy
 #| msgid "You must comply with these Terms in order to use the Binary.com API."
 msgid "You must comply with these Terms in order to use the %1 API."
-msgstr "Você deve cumprir estes termos para poder usar a API Binary.com."
+msgstr "Você deve cumprir estes termos para poder usar a API %1."
 
 msgid "You must not be a USA resident, citizen, or have any tax reporting to the USA"
 msgstr "Você não deverá ser um residente ou um cidadão dos EUA, nem possuir qualquer tipo de obrigação fiscal aos EUA"
 
-#, fuzzy
 #| msgid "You must promptly report any security deficiencies in, or intrusions to, your Application that you discover to Binary.com by writing in to %1 or by raising a discussion  thread on %2 which is part of our Developer Site. You will work with Binary.com to immediately correct any security deficiency, and will immediately disconnect any intrusions or intruder. In the event of any security deficiency or intrusion involving the Application, APIs or Content, you will make no public statements (e.g. press, blogs, social media, bulletin boards, etc.) without prior written and express permission from Binary.com in each instance."
 msgid "You must promptly report any security deficiencies in, or intrusions to, your Application that you discover to %1 by writing in to %2 or by raising a discussion  thread on %3 which is part of our Developer Site. You will work with %1 to immediately correct any security deficiency, and will immediately disconnect any intrusions or intruder. In the event of any security deficiency or intrusion involving the Application, APIs or Content, you will make no public statements (e.g. press, blogs, social media, bulletin boards, etc.) without prior written and express permission from %1 in each instance."
-msgstr "Você deve relatar imediatamente quaisquer deficiências de segurança no, ou intrusões para, seu aplicativo, que você descobrir, à Binary.com, ao escrever para %1 ou criando uma linha de discussão em %2, que faz parte do nosso site de Desenvolvedores. Você trabalhará com a Binary.com para corrigir imediatamente quaisquer deficiências de segurança, e desligará quaisquer intrusões ou intrusos. Na eventualidade de qualquer deficiência de segurança ou intrusão envolvendo o aplicativo, APIs ou conteúdos, você não fará nenhumas declarações públicas (i.e. imprensa, mídias sociais, quadros de avisos, etc.) sem a expressa autorização prévia por escrito da Binary.com em cada instância."
+msgstr ""
+"Você deve relatar imediatamente quaisquer deficiências de segurança no, ou "
+"intrusões para, seu aplicativo, que você descobrir, à %1, ao escrever para %"
+"2 ou criando uma linha de discussão em %3, que faz parte do nosso site de "
+"Desenvolvedores. Você trabalhará com a %1 para corrigir imediatamente "
+"quaisquer deficiências de segurança, e desligará quaisquer intrusões ou "
+"intrusos. Na eventualidade de qualquer deficiência de segurança ou intrusão "
+"envolvendo o aplicativo, APIs ou conteúdos, você não fará nenhumas "
+"declarações públicas (i.e. imprensa, mídias sociais, quadros de avisos, etc.)"
+" sem a expressa autorização prévia por escrito da %1 em cada instância."
 
 msgid "You need to finish all 20 questions."
 msgstr "É obrigatório completar as 20 perguntas."
@@ -7280,10 +7319,11 @@ msgstr "É obrigatório completar as 20 perguntas."
 msgid "You only need to make four decisions to execute a binary contract."
 msgstr "Você precisa apenas tomar quatro decisões para executar um contrato binário."
 
-#, fuzzy
 #| msgid "You or your employees’ or agents’ acts or omissions, including yours or their breach or alleged breach of these Terms;"
 msgid "You or your employees' or agents' acts or omissions, including yours or their breach or alleged breach of these Terms;"
-msgstr "Os seus atos ou omissões, ou desses dos seus funcionários ou agentes, incluindo a sua violação ou violação alegada, ou as deles, destes termos;"
+msgstr ""
+"Os seus atos ou omissões, ou desses dos seus funcionários ou agentes, "
+"incluindo a sua violação ou violação alegada, ou as deles, destes termos;"
 
 msgid "You represent and warrant to the Company that, excluding the Content, you have the right to use, reproduce, transmit, copy, publicly display, publicly perform, and distribute your Application, and that use or promotion of your Application will not violate the rights of any third party (e.g., copyright, patent, trademark, privacy, publicity or other proprietary right of any person or entity), or any applicable regulation or law, and the laws of any country in which your Application is made available."
 msgstr "Você afirma e garante à empresa que, excluindo os conteúdos, você possui o direito de usar, reproduzir, transmitir, copiar, exibir publicamente, executar publicamente e distribuir o seu aplicativo, e que essa utilização ou promoção do seu aplicativo não viola os direitos de quaisquer terceiros (e.g. direitos de autor, patentes, marcas registradas, privacidades, publicidades ou outros direitos proprietários de qualquer pessoa ou entidade), ou quaisquer regulamentos ou leis aplicáveis, nem as leis de qualquer país no qual o seu aplicativo seja disponibilizado."
@@ -7303,15 +7343,24 @@ msgstr "Você determina a(s) barreira(s) para definir a sua posição."
 msgid "You shall avoid disclosure or unauthorized use of any confidential information that may come to your knowledge or possession to third persons or external parties."
 msgstr "Você deve evitar a divulgação ou o uso não autorizado de quaisquer informações confidenciais que possam chegar ao seu conhecimento ou posse a terceiros ou entidades externas."
 
-#, fuzzy
 #| msgid "You shall be solely responsible for, and shall indemnify and hold the Company free and harmless from, any and all third party claims, damages or lawsuits (including, but not limited to, consequential losses and loss of profit, the Company’s reasonable legal costs and expenses if applicable):"
 msgid "You shall be solely responsible for, and shall indemnify and hold the Company free and harmless from, any and all third party claims, damages or lawsuits (including, but not limited to, consequential losses and loss of profit, the Company's reasonable legal costs and expenses if applicable):"
-msgstr "Você será unicamente responsável por, e indenizará e manterá a empresa livre e ilesa de, quaisquer e todas as reivindicações, danos ou processos judiciais de terceiros (incluindo, mas não limitados a, perdas consequenciais e perdas de lucros, os custos e despesas legais razoáveis da empresa, se aplicáveis):"
+msgstr ""
+"Você será unicamente responsável por, e indenizará e manterá a Empresa livre "
+"e ilesa de, quaisquer e todas as reivindicações, danos ou processos "
+"judiciais de terceiros (incluindo, mas não limitados a, perdas "
+"consequenciais e perdas de lucros, os custos e despesas legais razoáveis da "
+"Empresa, se aplicáveis):"
 
-#, fuzzy
 #| msgid "You shall discontinue your use of all prior versions of the Binary.com API in favour of the revised Binary.com API. While it is the Company’s intention that the revised Binary.com API shall be backward compatible with the immediately prior version of the Binary.com API, the Company does not guarantee or warrant that this shall be so, and the Company shall have no liability whatsoever to you for any failure of the revised Binary.com API to be backward compatible with any prior version of the Binary.com API."
 msgid "You shall discontinue your use of all prior versions of the %1 API in favour of the revised %1 API. While it is the Company's intention that the revised %1 API shall be backward compatible with the immediately prior version of the %1 API, the Company does not guarantee or warrant that this shall be so, and the Company shall have no liability whatsoever to you for any failure of the revised %1 API to be backward compatible with any prior version of the %1 API."
-msgstr "Você deve descontinuar o seu uso de todas as versões anteriores da API Binary.com a favor de uma API Binary.com revista. Apesar de ser a intenção da empresa que a API Binary.com revista seja compatível com a versões imediatamente anterior da API Binary.com, a empresa não garante que isto assim será, e a empresa não terá nenhuma responsabilidade perante você por quaisquer falhas da API Binary.com revista na sua capacidade de ser compatível com quaisquer versões anteriores da API Binary.com."
+msgstr ""
+"Você deve descontinuar o seu uso de todas as versões anteriores da API %1 a "
+"favor de uma API %1 revista. Apesar de ser a intenção da Empresa que a API %"
+"1 revista seja compatível com a versão imediatamente anterior da API %1, a "
+"Empresa não garante que isto assim seja, e a Empresa não terá nenhuma "
+"responsabilidade perante você por quaisquer falhas da API %1 revista na sua "
+"capacidade de ser compatível com quaisquer versões anteriores da API %1."
 
 msgid "You shall indemnify on demand and hold the Company harmless from, and against any and all losses, demands, claims, damages, costs, expenses (including, but not limited to, consequential losses, loss of profit, and reasonable legal costs, if applicable), and liabilities suffered or incurred, directly, or indirectly, by the Company in consequence of any breach, non-performance, or non-observance by you of any of your obligations or warranties under this Agreement."
 msgstr "Você deverá indenizar a Empresa mediante pedido e isentá-la de responsabilidades decorrentes de, e contra quaisquer perdas, processos, reclamações, danos, custos, despesas, (includindo, mas não limitados a, perdas consequenciais, perdas de lucro e despesas legais razoáveis, quando aplicáveis) e responsabilidades decorridos ou incorridos, direta ou indiretamente, pela Empresa em consequência de qualquer violação, falha na execução ou não cumprimento por você de quaisquer das suas obrigações ou garantias neste Acordo."
@@ -7319,20 +7368,23 @@ msgstr "Você deverá indenizar a Empresa mediante pedido e isentá-la de respon
 msgid "You shall not develop and implement marketing, advertising, and promotional activities which infringe any applicable laws, rules, regulations, or codes of practice relating to marketing, advertising, and promotional activities applicable under the authority of any regulatory body of the jurisdiction(s) in which you operate or target your business."
 msgstr "Você não deve desenvolver ou implementar atividades de marketing, publicidade ou promocionais que violem quaisquer leis, regras, regulamentos ou códigos de prática relacionados com atividades de marketing, publicidade ou promocionais aplicáveis, sob a autoridade de qualquer entidade regulatória, da jurisdição na qual você opera ou em que se destina o seu negócio."
 
-#, fuzzy
 #| msgid "You shall not encourage your referrals to make deposits or place any trades where the purpose of that action is (whether in whole or in part) to increase affiliate commissions rather than to benefit your referrals’ trading performance and profitability."
 msgid "You shall not encourage your referrals to make deposits or place any trades where the purpose of that action is (whether in whole or in part) to increase affiliate commissions rather than to benefit your referrals' trading performance and profitability."
-msgstr "Você não deve incentivar os clientes a efetuar depósitos ou realizar negociações em que o objetivo dessa ação seja (no todo ou em parte) aumentar as comissões de afiliado em vez de beneficiar o desempenho e a lucratividade das negociações do cliente indicado."
+msgstr ""
+"Você não deve incentivar os clientes a efetuar depósitos ou realizar "
+"negociações em que o objetivo dessa ação seja (no todo ou em parte) aumentar "
+"as comissões de afiliado em vez de beneficiar o desempenho e a lucratividade "
+"das negociações do cliente indicado."
 
 msgid "You shall not encourage your referrals to take out any form of loans to be able to make deposits and/or place trades."
 msgstr "Você não deve incentivar os clientes que indica a contrairem qualquer tipo de empréstimo para poderem fazer depósitos e/ou realizar negociações."
 
-#, fuzzy
 #| msgid "You shall not hold or pool your referrals’ funds or third party funds into your own account held with %1."
 msgid "You shall not hold or pool your referrals' funds or third party funds into your own account held with %1."
-msgstr "Você não deve deter ou reunir fundos de clientes indicados ou fundos de terceiros na sua própria conta da %1."
+msgstr ""
+"Você não deve deter ou reunir fundos de clientes indicados ou fundos de "
+"terceiros na sua própria conta da %1."
 
-#, fuzzy
 #| msgid "You shall not place trades on your referrals’ behalf."
 msgid "You shall not place trades on your referrals' behalf."
 msgstr "Você não deve negociar em nome dos clientes que indica."
@@ -7376,15 +7428,15 @@ msgstr "Ganha o prêmio se o preço do mercado terminar no dígito que seleciono
 msgid "You won't lose your shirt"
 msgstr "Não perca tudo"
 
-#, fuzzy
 #| msgid "You’ll be surprised by the returns you can make."
 msgid "You'll be surprised by the returns you can make."
 msgstr "Você ficará surpreendido pelos possíveis grandes retornos."
 
-#, fuzzy
 #| msgid "You'll find answers to most of your questions on the <a href='%1' target='_blank'>FAQ</a> page."
 msgid "You'll find answers to most of your questions on the <a href='' target='_blank' id='faq_url'>FAQ</a> page."
-msgstr "Você encontrará respostas para a maioria de suas perguntas na página <a href='%1' target='_blank'>Perguntas frequentes</a>."
+msgstr ""
+"Você encontrará respostas para a maioria de suas perguntas na página <a href="
+"'' target='_blank' id='faq_url'>Perguntas frequentes</a>."
 
 msgid "You're using a Virtual Account."
 msgstr "Você está usando uma conta virtual."
@@ -7404,10 +7456,9 @@ msgstr "O seu Cliente receberá uma notificação por e-mail com a informação 
 msgid "Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on %1 and in that event, opens an account with us."
 msgstr "A sua ID será armazenada numa cookie e identificada cada vez que um candidato clicar no seu link de afiliado e chegar a %1 e, nesse evento, abrir uma conta conosco."
 
-#, fuzzy
 #| msgid "First Name"
 msgid "Your Name"
-msgstr "Primeiro Nome"
+msgstr "O seu nome"
 
 msgid "Your Property"
 msgstr "A sua propriedade"
