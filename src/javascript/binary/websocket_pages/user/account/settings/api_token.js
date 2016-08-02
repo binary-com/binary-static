@@ -33,7 +33,6 @@ var APITokenWS = (function() {
         showLoadingImage($(tableContainer));
         BinarySocket.send({api_token: 1});
         bind_validation($('#token_form')[0], {
-            start: function() {},
             stop:  function(info) {
                 clearMessages();
                 displayErrors(info.errors);

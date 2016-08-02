@@ -31,13 +31,11 @@ function stripTrailing(name) {
 function bind_validation(form, config) {
     var getState = config.getState;
     var checker  = config.checker;
-    var start    = config.start;
     var stop     = config.stop;
 
     var seen = {};
 
     function beforeTyping(ev) {
-        start();
         seen[stripTrailing(ev.target.name)] = true;
     }
 

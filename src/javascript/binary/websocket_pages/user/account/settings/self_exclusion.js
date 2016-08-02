@@ -42,15 +42,13 @@ var SelfExclusionWS = (function() {
 
         fields = {};
         $form.find('input').each(function() {
-            // hack to make formToObj work
-            this.name = this.id;
-            fields[this.id] = '';
+            if (this.name !== this.id) throw template('Look ma: [_1] !== [_2]', [this.name, this.id]);
+            fields[this.name] = '';
         });
 
         bind_validation($form[0], {
             getState: extractFormData,
             checker:  validate,
-            start:    function() {},
             stop:     function(info) {
                 clearError();
                 displayErrors(info.errors);
@@ -242,23 +240,21 @@ var SelfExclusionWS = (function() {
         return formToObj($form[0]);
     }
 
-    var schema = {
-        max_7day_losses:    [numericOrEmpty, againstField('max_7day_losses')],
-        max_7day_turnover:  [numericOrEmpty, againstField('max_7day_turnover')],
-        max_30day_losses:   [numericOrEmpty, againstField('max_30day_losses')],
-        max_30day_turnover: [numericOrEmpty, againstField('max_30day_turnover')],
-        max_balance:        [numericOrEmpty, againstField('max_balance')],
-        max_losses:         [numericOrEmpty, againstField('max_losses')],
-        max_open_bets:      [numericOrEmpty, againstField('max_open_bets')],
-        max_turnover:       [numericOrEmpty, againstField('max_turnover')],
-        session_duration_limit: [numericOrEmpty, againstField('session_duration_limit'), validSessionDuration],
-        exclude_until:          [validDate, afterToday, validExclusionDate, toDateString],
-        timeout_until_duration: [validDate, afterToday],
-        timeout_until:          [validTime]
-    };
-
     function validate(data) {
-        return validate_object(data, schema);
+        return validate_object(data, {
+            max_7day_losses:    [numericOrEmpty, againstField('max_7day_losses')],
+            max_7day_turnover:  [numericOrEmpty, againstField('max_7day_turnover')],
+            max_30day_losses:   [numericOrEmpty, againstField('max_30day_losses')],
+            max_30day_turnover: [numericOrEmpty, againstField('max_30day_turnover')],
+            max_balance:        [numericOrEmpty, againstField('max_balance')],
+            max_losses:         [numericOrEmpty, againstField('max_losses')],
+            max_open_bets:      [numericOrEmpty, againstField('max_open_bets')],
+            max_turnover:       [numericOrEmpty, againstField('max_turnover')],
+            session_duration_limit: [numericOrEmpty, againstField('session_duration_limit'), validSessionDuration],
+            exclude_until:          [validDate, afterToday, validExclusionDate, toDateString],
+            timeout_until_duration: [validDate, afterToday],
+            timeout_until:          [validTime],
+        });
     }
 
     function detectChange(a, b) {
