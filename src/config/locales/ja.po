@@ -7,9 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-01 06:59+0000\n"
-"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"PO-Revision-Date: 2016-08-02 02:38+0000\n"
+"Last-Translator: Yasushi Takeishi <takeishi@regentmarkets.com>\n"
+"Language-Team: Japanese "
+"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -489,7 +490,7 @@ msgid "<span class='color-green font-weight-700'>All markets:</span> currencies,
 msgstr "<span class='color-green font-weight-700'>取引対象:</span> 外国為替市場の主要通貨ペア"
 
 msgid "<span class='color-green font-weight-700'>All payouts:</span> from $1 to $50,000."
-msgstr "<span class='color-green font-weight-700'>ペイアウト</span>：1,000円〜1,000万円"
+msgstr "<span class='color-green font-weight-700'>ペイアウト</span>：1,000円〜100,000円"
 
 msgid "<strong>2-way pricing</strong> - %1 quotes a trade and the counter-trade, so you always get unbiased, transparent prices."
 msgstr "<strong>2ウェイ・プライス（買値・売値）表示</strong>：当社は常に買値・売値の価格を明示しますので、常に公正な価格情報を入手できます。"
@@ -513,7 +514,7 @@ msgid "<strong>All markets</strong> - currencies, stock indices, and commodities
 msgstr "<strong>取引対象</strong>- 外国為替市場の主要通貨ペア"
 
 msgid "<strong>All payouts</strong> - from $1 to $50,000."
-msgstr "<strong>ペイアウト</strong>：1,000円〜1,000万円"
+msgstr "<strong>ペイアウト</strong>：1,000円〜100,000円"
 
 msgid "<strong>Appropriateness Test: WARNING:</strong> In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved)."
 msgstr "<strong>適正テスト: 警告:</strong>当サービスでは、どの所定の製品またはサービスがお客様に適しているか評価するためにお客さまの情報を必要とします。（関連するリスクを理解する経験や知識があるかどうかわかります。）"
@@ -729,7 +730,9 @@ msgid "A binary option is a contract purchased by a trader, which pays a pre-det
 msgstr "バイナリーオプションとは、購入したトレードが勝った際に得られる事前に決定済みの金額のことです。"
 
 msgid "A binary option is an option with a fixed payout that is determined at the start of the trade. If your prediction is correct, you receive an agreed payout. If not, you lose your initial stake, and no more. The options are called 'binary' because there can be only two outcomes - win or lose."
-msgstr "バイナリーオプションは、事前に定められたリターンを提供するオプション取引です。もし予想が正しければ、事前に定められた払い戻し金額を得ることが出来ます。予想が外れた場合は購入価格のみを失います。このオプション取引は、条件を満たすか、満たさないかのみ結果としてもたらされるので、「バイナリー」と呼ばれています。"
+msgstr ""
+"バイナリーオプションは、事前に定められたリターンを提供するオプション取引です。もし予想が正しければ、事前に定められたペイアウトを得ることが出来ます。予想が"
+"外れた場合は購入価格のみを失います。このオプション取引は、条件を満たすか、満たさないかのみ結果としてもたらされるので、「バイナリー」と呼ばれています。"
 
 msgid "A broad array of HR-related administrative tasks"
 msgstr "幅広いHR関連の管理作業"
@@ -1550,7 +1553,7 @@ msgid "Choose a password"
 msgstr "パスワード"
 
 msgid "Choose a payout from $1 to $50,000."
-msgstr "ペイアウトは1,000円から1,000万円まで選択可能です"
+msgstr "ペイアウトは1,000円から100,000円まで選択可能です"
 
 msgid "Choose a trade type"
 msgstr "取引タイプを選択"
@@ -6209,7 +6212,7 @@ msgid "The patent means Regent Markets is the recognised pioneer of binary betti
 msgstr "この特許により、Regent Marketsはバイナリー取引におけるパイオニアと認識される。特許取得により、より一層の進化を遂げる。"
 
 msgid "The payout is the amount paid to an options trader if their prediction is correct."
-msgstr "払い戻し金額とは、トレードに勝った際に支払われる金額のことです。"
+msgstr "ペイアウトとは、条件が満たされた際に支払われる金額のことです。"
 
 msgid "The personal information that we obtain about you assists us in servicing your account. We know you may be concerned about what we do with this information, and with financial information about your account. The following outlines our privacy practices."
 msgstr "お客さまから提供された個人情報によりご口座へのサービスの提供が可能になります。当社における個人情報、及びお取引情報に関するお取り扱いに関し、このページにて説明させて頂きます。"
@@ -6232,7 +6235,7 @@ msgid "The resale price indicates a contract's current market price. Resale pric
 msgstr "期限前の契約転売の詳細は「オプションの転売」からご覧いただけます。"
 
 msgid "The return is the money realized when the contract expires (see 'Payout')."
-msgstr "払い戻し価格とは、トレードの予想が正しかった際に得る金額のことです。（「払い戻し価格」の項目をご確認下さい）"
+msgstr "ペイアウトとは、トレードの予想が正しかった際に得る金額のことです。（「払い戻し価格」の項目をご確認下さい）"
 
 msgid "The right is also reserved to amend or change the rules and scope of this service from time to time. Any change to the rules made whilst the site is in operation will not apply retrospectively and will only apply to acquisitions of financial contracts made after such change. It is the Company's responsibility to notify Clients before any changes to its terms come into effect."
 msgstr "当社はルールや範囲を適切に修正または変更する権利を有します。修正点や変更点はそれらが作成された以前の状況にさかのぼって適用されることはありませんが、作成後に取得された金融トレードに対して適用されます。お客さまにはご利用規約での全ての変更点を確認する義務があります。"
@@ -7219,7 +7222,9 @@ msgid "With %1 you can trade:"
 msgstr "当社では下記のお取引が可能です。"
 
 msgid "With %1 you're in control of how much you can win. You specify a fixed payout amount at the outset, and your stake - what you pay - is then calculated. %1 offers payouts from $1 to $50,000."
-msgstr "当システムではペイアウトを確実に管理することができます。取引内容を設定する際にペイアウトまたは購入金額を指定し、正確な算出結果を得ることができます。%1では1,000円から1,000万円までのペイアウトを設定いただけます。"
+msgstr ""
+"当システムではペイアウトを確実に管理することができます。取引内容を設定する際にペイアウトまたは購入金額を指定し、正確な算出結果を得ることができます。%1で"
+"は1,000円から100,000円までのペイアウトを設定いただけます。"
 
 msgid "With %1's unique platform, there's no risk of 'slippage' or gapping markets. And no hidden fees."
 msgstr "当社の独自システムには、スリッページやギャッピングに関するリスクが存在しません。取引手数料は無料です。"
@@ -7374,7 +7379,7 @@ msgid "You can <a class='pjaxload' href='%1'>open an account</a>, deposit funds 
 msgstr "<a class='pjaxload' href='%1'>口座の開設</a>、および取引に必要な預託金のご入金は簡単にできます。"
 
 msgid "You can choose payouts from $1 to $50,000. This wide payout range is ideal for both small and large traders."
-msgstr "払い戻し価格は1,000円から1,000万円の間で指定できます。トレードが小額でも高額でも満足のいくお取引が可能です。"
+msgstr "ペイアウトは1,000円から100,000円の間で指定できます。トレードが小額でも高額でも満足のいくお取引が可能です。"
 
 msgid "You can close your trade before expiry to lock in profits."
 msgstr "お客さまの予想通りに相場が動いた場合、判定時刻前にポジションを売却をすることにより利益を確定ができます。"
