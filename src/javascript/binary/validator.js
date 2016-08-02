@@ -1,8 +1,8 @@
 function mapTo(ctx) {
-    return function(err) {
+    return function(msg) {
         return {
             ctx: ctx,
-            err: err,
+            err: msg,
         };
     };
 }

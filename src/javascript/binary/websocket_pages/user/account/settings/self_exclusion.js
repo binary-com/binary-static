@@ -251,6 +251,7 @@ var SelfExclusionWS = (function() {
             max_turnover:       [numericOrEmpty, againstField('max_turnover')],
             session_duration_limit: [numericOrEmpty, againstField('session_duration_limit'), validSessionDuration],
             exclude_until:          [validDate, afterToday, validExclusionDate, toDateString],
+            // these two are combined.
             timeout_until_duration: [validDate, afterToday],
             timeout_until:          [validTime],
         });
@@ -269,9 +270,6 @@ var SelfExclusionWS = (function() {
         return false;
     }
 
-    // ----------------------------
-    // ----- Form Validations -----
-    // ----------------------------
     function validateForm() {
         clearError();
         var data = extractFormData();
