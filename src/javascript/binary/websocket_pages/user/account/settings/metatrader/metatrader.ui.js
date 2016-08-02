@@ -327,7 +327,7 @@ var MetaTraderUI = (function() {
     var responsePasswordCheck = function(response) {
         $form = $('#form-withdrawal-real');
         if(response.hasOwnProperty('error')) {
-            return showFormMessage(response.error.message, false);
+            return showError('#txtMainPass', response.error.message);
         }
 
         if(+response.mt5_password_check === 1) {
@@ -361,8 +361,8 @@ var MetaTraderUI = (function() {
                 showError('#txtAmount', errMsgDeposit);
                 isValid = false;
             }
-        } else if(formName === 'withdrawal') {  // withdrawal form
-            var errMsgPass = MetaTrader.validatePassword($form.find('#txtMainPass').val());
+        } else if(formName === 'withdrawal') { // withdrawal form
+            var errMsgPass = MetaTrader.validateRequired($form.find('#txtMainPass').val());
             if(errMsgPass) {
                 showError('#txtMainPass', errMsgPass);
                 isValid = false;
