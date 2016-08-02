@@ -23,7 +23,7 @@ var SelfExclusionWS = (function() {
 
     var fields;
 
-    var reallyInit = function() {
+    function reallyInit() {
         $form       = $('#frmSelfExclusion');
         $loading    = $('#loading');
         timeDateID  = 'timeout_until_duration';
@@ -34,7 +34,6 @@ var SelfExclusionWS = (function() {
         hiddenClass = 'hidden';
 
         if (page.client.is_virtual()) {
-            console.log('is virtual!');
             $('#selfExclusionDesc').addClass(hiddenClass);
             showPageError(Content.localize().textFeatureUnavailable, true);
             return;
@@ -62,8 +61,7 @@ var SelfExclusionWS = (function() {
         $form.submit(function(e) {
             e.preventDefault();
             e.stopPropagation();
-            var info = formValidate();
-            console.log(info);
+            var info = validateForm();
             if (!info.valid) return;
             if (!info.changed) {
                 showFormMessage('You did not change anything.', false);
@@ -75,9 +73,9 @@ var SelfExclusionWS = (function() {
             setRequest(info.data);
         });
         getRequest();
-    };
+    }
 
-    var init = function() {
+    function init() {
         Content.populate();
         BinarySocket.init({
             onmessage: function(msg){
@@ -91,16 +89,16 @@ var SelfExclusionWS = (function() {
         if ('is_virtual' in TUser.get()) {
             reallyInit();
         }
-    };
+    }
 
     // ----------------------
     // ----- Get Values -----
     // ----------------------
-    var getRequest = function() {
+    function getRequest() {
         BinarySocket.send({get_self_exclusion: 1});
-    };
+    }
 
-    var getResponse = function(response) {
+    function getResponse(response) {
         if (response.error) {
             if (response.error.code === 'ClientSelfExclusion') {
                 page.client.send_logout_request();
@@ -116,9 +114,9 @@ var SelfExclusionWS = (function() {
             fields[key] = value + '';
             $form.find('#' + key).val(value);
         });
-    };
+    }
 
-    var initDatePicker = function () {
+    function initDatePicker() {
         attach_time_picker($('#' + timeID));
 
         $('#' + timeDateID).datepicker({
@@ -138,17 +136,17 @@ var SelfExclusionWS = (function() {
                 $(this).val(dateText);
             }
         });
-    };
+    }
 
     // ----------------------
     // ----- Set Values -----
     // ----------------------
-    var setRequest = function(data) {
+    function setRequest(data) {
         data.set_self_exclusion = 1;
         BinarySocket.send(data);
-    };
+    }
 
-    var setResponse = function(response) {
+    function setResponse(response) {
         if (response.error) {
             var errMsg = response.error.message;
             var field  = response.error.field;
@@ -162,7 +160,7 @@ var SelfExclusionWS = (function() {
         showFormMessage('Your changes have been updated.', true);
         page.client.set_storage_value('session_start', moment().unix()); // used to handle session duration limit
         getRequest();
-    };
+    }
 
     // TODO: REMEBER TO ACCOUNT FOR THESE
     function EMPTY() {}
@@ -189,7 +187,9 @@ var SelfExclusionWS = (function() {
             dv.fail('Exclude time must be after today.');
     }
 
-    function numeric(value) {
+    // Let empty values go to next validator, because it
+    // is ok to put empty values at this stage.
+    function numericOrEmpty(value) {
         if (!value) return dv.ok(value);
         return /^\d+$/.test(value) ?
             dv.ok(value) :
@@ -232,7 +232,6 @@ var SelfExclusionWS = (function() {
     }
 
     function displayErrors(errors) {
-        console.log(errors);
         errors.forEach(function(e) {
             if (e.err === EMPTY) return;
             showError(e.ctx, e.err);
@@ -243,21 +242,23 @@ var SelfExclusionWS = (function() {
         return formToObj($form[0]);
     }
 
+    var schema = {
+        max_7day_losses:    [numericOrEmpty, againstField('max_7day_losses')],
+        max_7day_turnover:  [numericOrEmpty, againstField('max_7day_turnover')],
+        max_30day_losses:   [numericOrEmpty, againstField('max_30day_losses')],
+        max_30day_turnover: [numericOrEmpty, againstField('max_30day_turnover')],
+        max_balance:        [numericOrEmpty, againstField('max_balance')],
+        max_losses:         [numericOrEmpty, againstField('max_losses')],
+        max_open_bets:      [numericOrEmpty, againstField('max_open_bets')],
+        max_turnover:       [numericOrEmpty, againstField('max_turnover')],
+        session_duration_limit: [numericOrEmpty, againstField('session_duration_limit'), validSessionDuration],
+        exclude_until:          [validDate, afterToday, validExclusionDate, toDateString],
+        timeout_until_duration: [validDate, afterToday],
+        timeout_until:          [validTime]
+    };
+
     function validate(data) {
-        return validate_object(data, {
-            max_7day_losses:    [numeric, againstField('max_7day_losses')],
-            max_7day_turnover:  [numeric, againstField('max_7day_turnover')],
-            max_30day_losses:   [numeric, againstField('max_30day_losses')],
-            max_30day_turnover: [numeric, againstField('max_30day_turnover')],
-            max_balance:        [numeric, againstField('max_balance')],
-            max_losses:         [numeric, againstField('max_losses')],
-            max_open_bets:      [numeric, againstField('max_open_bets')],
-            max_turnover:       [numeric, againstField('max_turnover')],
-            session_duration_limit: [numeric, againstField('session_duration_limit'), validSessionDuration],
-            exclude_until:          [validDate, afterToday, validExclusionDate, toDateString],
-            timeout_until_duration: [validDate, afterToday],
-            timeout_until:          [validTime]
-        });
+        return validate_object(data, schema);
     }
 
     function detectChange(a, b) {
@@ -276,7 +277,7 @@ var SelfExclusionWS = (function() {
     // ----------------------------
     // ----- Form Validations -----
     // ----------------------------
-    var formValidate = function() {
+    function validateForm() {
         clearError();
         var data = extractFormData();
         var validation = validate(data);
@@ -312,45 +313,44 @@ var SelfExclusionWS = (function() {
             valid: valid,
             changed: valid && detectChange(data, fields),
         };
-    };
+    }
 
-    var hasConfirmed = function() {
+    function hasConfirmed() {
         var message = 'When you click "Ok" you will be excluded from trading on the site until the selected date.';
         return window.confirm(text.localize(message));
-    };
+    }
 
     // -----------------------------
     // ----- Message Functions -----
     // -----------------------------
-    var showPageError = function(errMsg, hideForm) {
+    function showPageError(errMsg, hideForm) {
         $('#errorMsg').html(errMsg).removeClass(hiddenClass);
         if (hideForm) {
             $form.addClass(hiddenClass);
         }
-    };
+    }
 
-    var showError = function(fieldID, errMsg) {
+    function showError(fieldID, errMsg) {
         $('#' + fieldID).parent().append($('<p/>', {class: errorClass, text: text.localize(errMsg)}));
         if (fieldID === timeID) {
             $('#' + fieldID).attr('style', 'margin-bottom:10px');
         }
-    };
+    }
 
-    var clearError = function() {
+    function clearError() {
         $('#frmSelfExclusion p.' + errorClass).remove();
         $('#errorMsg').html('').addClass(hiddenClass);
         $('#formMessage').html('');
-    };
+    }
 
-    var showFormMessage = function(msg, isSuccess) {
+    function showFormMessage(msg, isSuccess) {
         $('#formMessage')
             .attr('class', isSuccess ? 'success-msg' : errorClass)
             .html(isSuccess ? '<ul class="checked"><li>' + text.localize(msg) + '</li></ul>' : text.localize(msg))
             .css('display', 'block')
             .delay(5000)
             .fadeOut(1000);
-    };
-
+    }
 
     return {
         init: init,
