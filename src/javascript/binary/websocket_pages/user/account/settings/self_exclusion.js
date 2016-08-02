@@ -42,7 +42,6 @@ var SelfExclusionWS = (function() {
 
         fields = {};
         $form.find('input').each(function() {
-            if (this.name !== this.id) throw template('Look ma: [_1] !== [_2]', [this.name, this.id]);
             fields[this.name] = '';
         });
 
