@@ -43,7 +43,8 @@ var SelfExclusionWS = (function() {
 
         fields = {};
         $form.find('input').each(function() {
-            fields[$(this).attr('id')] = '';
+            this.name = this.id;
+            fields[this.id] = '';
         });
 
         initDatePicker();
@@ -152,6 +153,27 @@ var SelfExclusionWS = (function() {
         page.client.set_storage_value('session_start', moment().unix()); // used to handle session duration limit
         getRequest();
     };
+
+    function lessThanField(key) {
+        var val = +fields[key];
+        var err = text.localize('Please enter a number between 0 and [_1]', [val]);
+        return dv.check(function(value) {
+            return /^\d+$/.test(value) && +value <= val;
+        }, err);
+    }
+
+    function validate(data) {
+        return validate_object(data, {
+            max_7day_losses:    [lessThanField('max_7day_losses')],
+            max_7day_turnover:  [lessThanField('max_7day_turnover')],
+            max_30day_losses:   [lessThanField('max_30day_losses')],
+            max_30day_turnover: [lessThanField('max_30day_turnover')],
+            max_balance:        [lessThanField('max_balance')],
+            max_losses:         [lessThanField('max_losses')],
+            max_open_bets:      [lessThanField('max_open_bets')],
+            max_turnover:       [lessThanField('max_turnover')],
+        });
+    }
 
     // ----------------------------
     // ----- Form Validations -----

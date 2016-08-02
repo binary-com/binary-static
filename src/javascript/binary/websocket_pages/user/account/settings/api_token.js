@@ -5,7 +5,6 @@ var APITokenWS = (function() {
     var hideClass  = 'invisible';
     var tableContainer = '#tokens_list';
     var maxTokens = 30;
-    var checker;
 
     function hide(s) { return function() { $(s).addClass(hideClass); }; }
     function show(s) { return function() { $(s).removeClass(hideClass); }; }
@@ -33,14 +32,13 @@ var APITokenWS = (function() {
 
         showLoadingImage($(tableContainer));
         BinarySocket.send({api_token: 1});
-        checker = getChecker();
-        bindCheckerValidation($('#token_form')[0], {
+        bind_validation($('#token_form')[0], {
             start: function() {},
             stop:  function(errors, state) {
                 clearMessages();
                 if (errors) displayErrors(errors);
             },
-            checker: checker,
+            checker: validate,
             getState: extractFormData,
         });
 
@@ -158,24 +156,6 @@ var APITokenWS = (function() {
         ];
     }
 
-    function getChecker() {
-        var V2 = ValidateV2;
-
-        var letters = Content.localize().textLetters,
-            numbers = Content.localize().textNumbers;
-
-        var checkName = [
-            V2.required,
-            checkIf(checkBounds, V2.err('range', template('([_1]-[_2])', [2, 32]))),
-            checkIf(noSymbols,   V2.err('reg', [letters, numbers, '_'])),
-        ];
-
-        return simple_validator({
-            name:   checkName,
-            scopes: [checkIf(checkRequired, 'Please select at least one scope')],
-        });
-    }
-
     function displayErrors(errors) {
         var map = {
             'name':   '#txtName',
@@ -185,6 +165,23 @@ var APITokenWS = (function() {
             var $parent = $(map[err.ctx]).parent();
             var $p = $('<p/>', {class: errorClass, text: text.localize(err.err)});
             $parent.append($p);
+        });
+    }
+
+    function validate(data) {
+        var V2 = ValidateV2;
+        var letters = Content.localize().textLetters,
+            numbers = Content.localize().textNumbers;
+
+        var checkName = [
+            V2.required,
+            dv.check(checkBounds, V2.err('range', template('([_1]-[_2])', [2, 32]))),
+            dv.check(noSymbols,   V2.err('reg', [letters, numbers, '_'])),
+        ];
+
+        return validate_object(data, {
+            name:   checkName,
+            scopes: [dv.check(checkRequired, 'Please select at least one scope')],
         });
     }
 
@@ -198,7 +195,7 @@ var APITokenWS = (function() {
     function getFormParams() {
         clearMessages();
         var data   = extractFormData();
-        var errors = checker(data);
+        var errors = validate(data);
         displayErrors(errors);
         return errors.length ? null : data;
     }

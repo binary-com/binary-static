@@ -31,7 +31,9 @@ var ValidateV2 = (function() {
 
     function check(fn, err) {
         return function(value) {
-            return fn(value) ? null : unwrap(err);
+            return fn(value) ?
+                dv.ok(value) :
+                dv.fail(unwrap(err));
         };
     }
 
@@ -63,11 +65,11 @@ var ValidateV2 = (function() {
     var required = check(notEmpty, msg('req'));
     var email    = check(validEmail, msg('valid', local('email address')));
     var password = function(value) {
-        return (
-            password.len(value) ||
-            password.allowed(value) ||
-            password.symbols(value)
-        );
+        return dv.first(value, [
+            password.len,
+            password.allowed,
+            password.symbols,
+        ]);
     };
 
     password.len     = check(validPasswordLength, msg('range', '6-25'));

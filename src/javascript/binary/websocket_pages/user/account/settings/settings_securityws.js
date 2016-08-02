@@ -2,7 +2,6 @@ var SecurityWS = (function() {
     "use strict";
     var $form;
     var current_state;
-    var checker;
     var STATE = {
         WAIT_AUTH:    'WAIT_AUTH',
         QUERY_LOCKED: 'QUERY_LOCKED',
@@ -46,10 +45,9 @@ var SecurityWS = (function() {
         $form = $("#changeCashierLock");
         if (checkIsVirtual()) return;
 
-        checker = getChecker();
-        bindCheckerValidation($form[0], {
+        bind_validation($form[0], {
             getState: extractFormData,
-            checker:  checker,
+            checker:  validate,
             start:    function() {},
             stop:     function(errors) {
                 clearErrors();
@@ -123,23 +121,23 @@ var SecurityWS = (function() {
         return formToObj($form[0]);
     }
 
-    function getChecker() {
+    function validate(data) {
         var err = Content.localize().textPasswordsNotMatching;
-        function matches(value, data) {
+        function matches(value) {
             return current_state === STATE.UNLOCKED &&
                 value === data.cashierlockpassword1;
         }
 
-        return simple_validator({
+        return validate_object(data, {
             cashierlockpassword1: [ValidateV2.password],
-            cashierlockpassword2: [checkIf(matches, err)],
+            cashierlockpassword2: [dv.check(matches, err)],
         });
     }
 
     function validateForm() {
         clearErrors();
         var data   = extractFormData();
-        var errors = checker(data);
+        var errors = validate(data);
         displayErrors(errors);
         return errors.length === 0;
     }
