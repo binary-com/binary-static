@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-07-19 05:14+0000\n"
+"PO-Revision-Date: 2016-08-01 09:45+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
@@ -276,7 +276,7 @@ msgid "%1's systems are now processing in excess of 1 million transactions/day (
 msgstr "Sistem %1 telah memproses lebih dari 1 juta transaksi/hari (termasuk pada akun virtual)."
 
 msgid "%1’s Volatility Indices are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
-msgstr ""
+msgstr "Indeks Volatilitas %1 kini tersedia 24/7 pada MetaTrader 5. Aset lainnya akan diluncurkan dalam waktu terdekat."
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(durasi minimal, contoh minimal 15 detik)min"
@@ -493,7 +493,7 @@ msgid "<strong>Additional business exposure:</strong> You will increase awarenes
 msgstr "<strong>Paparan bisnis tambahan:</strong> Anda akan memperjelas layanan Anda dan menghasilkan peluang bisnis baru."
 
 msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
-msgstr ""
+msgstr "<strong>Alat canggih untuk analisa fundamental dan teknis,</strong> termasuk indikator, grafik, dan banyak lagi."
 
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>Semua durasi</strong> - dari 10 detik hingga 365 hari."
@@ -547,7 +547,7 @@ msgid "<strong>Higher/Lower</strong> - where you can profit from the market endi
 msgstr "<strong>Higher/Lower</strong> - keuntungan dari pasar yang berakhir lebih tinggi atau lebih rendah dari target harga."
 
 msgid "<strong>Highly competitive spreads with no commission.</strong>"
-msgstr ""
+msgstr "<strong>Spread yang sangat kompetitif dengan tanpa komisi.</strong>"
 
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and Payment Agents."
 msgstr "<strong>SANGGAHAN PENTING</strong> - %1 tidak berafiliasi dengan Agen Pembayaran manapun. Setiap Agen Pembayaran beroperasi sendiri dan %1 tidak bertanggungjawab atas risiko penggunaannya. PELANGGAN BERURUSAN DENGAN AGEN PEMBAYARAN ATAS RISIKO SENDIRI. Pelanggan disarankan untuk mengecek kredibilitas dan eksistensi Agen Pembayaran bersangkutan sebelum bertransaksi dengan mereka."
@@ -634,7 +634,7 @@ msgid "<strong>Stock indices</strong> - trade all major worldwide stock indices.
 msgstr "<strong>Indeks saham</strong> - trading pada bursa saham dunia."
 
 msgid "<strong>Subscriptions to a wide range of Expert Advisors,</strong> automated trading applications from the MetaTrader Market."
-msgstr ""
+msgstr "<strong>Langganan ke berbagai Penasehat Berpengalaman,</strong> aplikasi trading otomatis dari Pasar MetaTrader."
 
 msgid "<strong>Take early profits</strong> - sell your long-term trades at market prices before they expire."
 msgstr "<strong>Ambil laba awal</strong> - jual kontrak jangka panjang Anda pada harga pasar sebelum berakhir."
@@ -850,10 +850,8 @@ msgstr "Pendaftaran Akun"
 msgid "Account Transfer"
 msgstr "Transfer Akun"
 
-#, fuzzy
-#| msgid "Account type"
 msgid "Account Type"
-msgstr "Tipe rekening"
+msgstr "Jenis Akun"
 
 msgid "Account balance: "
 msgstr "Saldo akun Anda: "
@@ -1581,7 +1579,7 @@ msgid "Click here to retry"
 msgstr "Klik disini untuk mencoba lagi"
 
 msgid "Click the button below to download MetaTrader."
-msgstr ""
+msgstr "Klik tombol di bawah untuk men-download MetaTrader."
 
 msgid "Client classification"
 msgstr "Klasifikasi klien"
@@ -1715,10 +1713,8 @@ msgstr "Konfirmasi dan pemahaman"
 msgid "Conflicts Policy"
 msgstr "Konflik Kebijakan"
 
-#, fuzzy
-#| msgid "Congratulations! <br /> You have won the contract!"
 msgid "Congratulations! Your account has been created."
-msgstr "Selamat! <br /> Anda telah memperoleh laba pada kontrak!"
+msgstr "Selamat! Akun Anda telah berhasil didaftarkan."
 
 msgid "Construction"
 msgstr "Konstruksi"
@@ -1783,10 +1779,8 @@ msgstr "Hasil kontrak akan ditentukan oleh Perusahaan dengan mengacu pada nilai 
 msgid "Contract period"
 msgstr "Masa kontrak"
 
-#, fuzzy
-#| msgid "Contract Purchase"
 msgid "Contract purchased with app ID"
-msgstr "Pembelian Kontrak"
+msgstr "Pembelian kontrak dengan app ID"
 
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "Kontrak akan dijual pada harga pasar terkini ketika permintaan diterima oleh server kami. Harga ini mungkin berbeda dari harga yang diindikasikan."
@@ -1879,7 +1873,7 @@ msgid "Create New Token"
 msgstr "Membuat Token Baru"
 
 msgid "Create a MetaTrader account to trade on the MetaTrader 5 platform."
-msgstr ""
+msgstr "Daftar akun MetaTrader untuk bertrading pada platform MetaTrader 5."
 
 msgid "Create clear, concise and engaging content for display on the company's website, blog, social media outlets, and marketing materials"
 msgstr "Membuat konten yang jelas, ringkas dan menarik untuk ditampilkan pada website perusahaan, blog, media sosial dan materi pemasaran"
@@ -1993,12 +1987,10 @@ msgid "Delete"
 msgstr "Hapus"
 
 msgid "Demo"
-msgstr ""
+msgstr "Demo"
 
-#, fuzzy
-#| msgid "Open Account"
 msgid "Demo Account"
-msgstr "Daftar Akun"
+msgstr "Akun Demo"
 
 msgid "Demonstrate the ability to think / act quickly and multi-task as needed to execute effective campaigns"
 msgstr "Menunjukkan kemampuan berpikir/bertindak cepat dan berbagai tugas yang diperlukan untuk melaksanakan kampanye yang efektif"
@@ -2018,20 +2010,14 @@ msgstr "Tambahkan Deposit %1 %2 dana virtual kedalam akun %3 Anda"
 msgid "Deposit Bonus"
 msgstr "Bonus Deposit"
 
-#, fuzzy
-#| msgid "Deposit of"
 msgid "Deposit from"
 msgstr "Deposit dari"
 
-#, fuzzy
-#| msgid "Deposit funds into your account"
 msgid "Deposit funds into your MetaTrader account from your Binary account:"
-msgstr "Deposit dana kedalam akun Anda"
+msgstr "Deposit dana kedalam akun MetaTrader Anda dari akun Binary Anda:"
 
-#, fuzzy
-#| msgid "Deposit via Moneta (Transaction ID: %1)"
 msgid "Deposit is done. Transaction ID:"
-msgstr "Deposit via Moneta (ID transaksi: %1)"
+msgstr "Deposit selesai. ID transaksi:"
 
 msgid "Deposit of"
 msgstr "Deposit dari"
@@ -2039,15 +2025,11 @@ msgstr "Deposit dari"
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "Deposit atau penarikan melalui bank-wire, kartu kredit atau wallet e-cash."
 
-#, fuzzy
-#| msgid "Deposit of"
 msgid "Deposit to"
-msgstr "Deposit dari"
+msgstr "Deposit ke"
 
-#, fuzzy
-#| msgid "Deposit funds into your account"
 msgid "Deposit to MetaTrader account"
-msgstr "Deposit dana kedalam akun Anda"
+msgstr "Deposit ke akun MetaTrader"
 
 msgid "Deposit: %1 working day"
 msgstr "Deposit: %1 hari kerja"
@@ -2172,15 +2154,11 @@ msgstr "Akun Dormant dan Tidak Aktif"
 msgid "Download CSV"
 msgstr "Download CSV"
 
-#, fuzzy
-#| msgid "Download for Windows"
 msgid "Download MetaTrader"
-msgstr "Download untuk Windows"
+msgstr "Download MetaTrader"
 
-#, fuzzy
-#| msgid "Download for Windows"
 msgid "Download MetaTrader for Windows"
-msgstr "Download untuk Windows"
+msgstr "Download MetaTrader untuk Windows"
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "Mendorong pertumbuhan yang cepat dan pengembangan usaha, untuk mendukung penjualan perusahaan dan tujuan pemasaran"
@@ -2989,7 +2967,7 @@ msgid "If you need assistance feel free to contact our <a class=\"pjaxload\" hre
 msgstr "Jika Anda membutuhkan bantuan jangan ragu untuk menghubungi <a class=\"pjaxload\" href=\"%1\">Customer Support</a> kami."
 
 msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader’s website, please select “%1” from the list of available brokers."
-msgstr ""
+msgstr "Jika sebelumnya Anda mendownload MetaTrader 5 langsung dari website MetaTrader, silahkan pilih “%1” dari daftar broker yang tersedia."
 
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "Pilih \"Asian Turun\", untuk memperoleh hasil jika <strong>tik terakhir</strong> <strong>lebih rendah</strong> dari <strong>jumlah rata rata</strong> tik."
@@ -3299,7 +3277,7 @@ msgid "Investor Compensation Scheme"
 msgstr "Skema Kompensasi Investor"
 
 msgid "Investor Password (read-only access)"
-msgstr ""
+msgstr "Kata sandi Investor (akses baca saja)"
 
 msgid "Involved in evaluation of regulatory compliance and risk management. Work with the Head of Departments to improve business processes."
 msgstr "Terlibat mengevaluasi kepatuhan terhadap peraturan dan manajemen risiko. Bekerja dengan Kepala Departemen untuk meningkatkan proses bisnis."
@@ -3919,10 +3897,8 @@ msgstr "Less than 6 months"
 msgid "Level of Education"
 msgstr "Tingkat Pendidikan"
 
-#, fuzzy
-#| msgid "Average"
 msgid "Leverage"
-msgstr "Rata-rata"
+msgstr "Leverage"
 
 msgid "Leverage social-media tools and channels to identify, engage, and convert potential new customers and partners"
 msgstr "Memanfaatkan media sosial dan beberapa saluran untuk mengidentifikasi, terlibat, dan mengkonversi prospek sebagai klien dan mitra bisnis"
@@ -3960,10 +3936,8 @@ msgstr "Link ke dan mengarahkan pelanggan kami kedalam Aplikasi Anda."
 msgid "Links"
 msgstr "Berbagai Link"
 
-#, fuzzy
-#| msgid "Further Instructions"
 msgid "Linux Instructions"
-msgstr "Instruksi Tambahan"
+msgstr "Instruksi Linux"
 
 msgid "Live chat:"
 msgstr "Komunikasi langsung:"
@@ -3975,7 +3949,7 @@ msgid "Log in"
 msgstr "Masuk"
 
 msgid "Log into the application using your MetaTrader account number (e.g., 1124) and your MetaTrader account password."
-msgstr ""
+msgstr "Masuk kedalam applikasi menggunakan nomer akun MetaTrader (contoh: 1124) dan kata sandi akun MetaTrader Anda."
 
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "Akses akun affiliasi %1 Anda dan klik pada : Keuangan &rarr; Instruksi Pembayaran."
@@ -4025,13 +3999,11 @@ msgstr "Batasan offset rendah"
 msgid "MENA FFXPO Award"
 msgstr "Penghargaan MENA FFXPO"
 
-#, fuzzy
-#| msgid "Specific Instructions"
 msgid "MacOS Instructions"
-msgstr "Instruksi khusus"
+msgstr "Instruksi MacOS"
 
 msgid "Main Password (trading access)"
-msgstr ""
+msgstr "Kata sandi Utama (akses trading)"
 
 msgid "Maintain accurate system pricing parameters"
 msgstr "Mempertahankan parameter sistem harga yang akurat"
@@ -4156,12 +4128,10 @@ msgid "Memorable town/city"
 msgstr "Kota bersejarah"
 
 msgid "MetaTrader Accounts Management"
-msgstr ""
+msgstr "Manajemen Akun MetaTrader"
 
-#, fuzzy
-#| msgid "Verify new password"
 msgid "MetaTrader Main Password"
-msgstr "Verifikasi kata sandi baru"
+msgstr "Kata Sandi Utama MetaTrader"
 
 msgid "Method"
 msgstr "Metode"
@@ -4384,7 +4354,7 @@ msgid "Now"
 msgstr "Sekarang"
 
 msgid "Now Introducing MetaTrader 5 on %1"
-msgstr ""
+msgstr "Sekarang Memperkenalkan MetaTrader 5 pada %1"
 
 msgid "Number of ticks"
 msgstr "Jumlah tik"
@@ -5248,7 +5218,7 @@ msgid "Run daily payments reports and report suspected fraud"
 msgstr "Membuat laporan pembayaran harian dan laporan dugaan penipuan"
 
 msgid "Run the installation file and follow the instructions."
-msgstr ""
+msgstr "Jalankan file instalasi dan ikuti petunjuk."
 
 msgid "Russia"
 msgstr "Rusia"
@@ -5523,10 +5493,8 @@ msgstr "Waktu Mulai"
 msgid "Start Trading"
 msgstr "Mulai Trading"
 
-#, fuzzy
-#| msgid "Start Trading Now"
 msgid "Start Trading with MetaTrader 5"
-msgstr "Trading Sekarang"
+msgstr "Mulai Trading dengan MetaTrader 5"
 
 msgid "Start learning"
 msgstr "Mulai Belajar"
@@ -5534,15 +5502,11 @@ msgstr "Mulai Belajar"
 msgid "Start time"
 msgstr "Waktu mulai"
 
-#, fuzzy
-#| msgid "Start Trading Now"
 msgid "Start trading with your Demo Account"
-msgstr "Trading Sekarang"
+msgstr "Mulai Trading dengan Akun Demo Anda"
 
-#, fuzzy
-#| msgid "Start Trading Now"
 msgid "Start trading with your Real Account"
-msgstr "Trading Sekarang"
+msgstr "Mulai Trading dengan Akun Riil Anda"
 
 msgid "State/Province"
 msgstr "Provinsi"
@@ -5672,10 +5636,10 @@ msgid "Supporting the Group's global recruiting and talent management needs"
 msgstr "Membantu Grup dalam perekrutan dan manajemen bakat yang diperlukan"
 
 msgid "Take advantage of numerous benefits, including:"
-msgstr ""
+msgstr "Ambil keuntungan dari banyak manfaat, termasuk:"
 
 msgid "Take your trading to the next level through this powerful interface, recognised as the benchmark standard worldwide."
-msgstr ""
+msgstr "Bawa trading Anda ke tingkat lebih lanjut menggunakan interface bertenaga, yang dikenali sebagai standar patokan seluruh dunia."
 
 msgid "Talk to us"
 msgstr "Hubungi kami"
@@ -6348,16 +6312,16 @@ msgid "To change your name, date of birth, country of residence, or email, pleas
 msgstr "Untuk merubah nama, tanggal lahir dan negara domisili Anda atau email, silahkan hubungi <a href=\"%1\">Customer Support</a>."
 
 msgid "To create a Real account for MetaTrader, <a href=\"%1\">upgrade to Bianry Real account</a>."
-msgstr ""
+msgstr "Untuk mendaftar akun riil pada MetaTrader, <a href=\"%1\">upgrade ke akun Riil Bianry</a>."
 
 msgid "To create a Real account for MetaTrader, switch to your Binary Real account."
-msgstr ""
+msgstr "Untuk mendaftar akun Riil di MetaTrader, tukar ke akun Riil Binary Anda."
 
 msgid "To create a Real account for MetaTrader, you need to authenticate your Binary account:"
-msgstr ""
+msgstr "Untuk mendaftar akun Riil di MetaTrader, Anda perlu membuktikan akun Binary Anda:"
 
 msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
-msgstr ""
+msgstr "Untuk mendeposit atau mencairkan dari Akun Riil MetaTrader Anda, rubah ke Akun Riil Binary.com."
 
 msgid "To enable cookies, follow the instructions below for the browser version that you are using."
 msgstr "Untuk mengaktifkan cookie, ikuti petunjuk di bawah ini untuk versi browser yang anda gunakan."
@@ -6638,10 +6602,8 @@ msgstr "Format kode verifikasi salah."
 msgid "Verification token"
 msgstr "Token verifikasi"
 
-#, fuzzy
-#| msgid "Verify new password"
 msgid "Verify Main Password"
-msgstr "Verifikasi kata sandi baru"
+msgstr "Verifikasi Kata Sandi Utama"
 
 msgid "Verify new password"
 msgstr "Verifikasi kata sandi baru"
@@ -6868,10 +6830,8 @@ msgstr "Rabu"
 msgid "Week of"
 msgstr "Minggu ke"
 
-#, fuzzy
-#| msgid "Weekly"
 msgid "Weekday"
-msgstr "Mingguan"
+msgstr "Hari Kerja"
 
 msgid "Weekend quotes"
 msgstr "Kutipan akhir pekan"
@@ -7062,23 +7022,17 @@ msgstr "Sehubungan dengan pelacakan referral Anda dalam mengakses %1 melalui lin
 msgid "Withdraw"
 msgstr "Pencairan"
 
-#, fuzzy
-#| msgid "Withdraw"
 msgid "Withdraw from"
-msgstr "Pencairan"
+msgstr "Pencairan dari"
 
-#, fuzzy
-#| msgid "Transfer from another account"
 msgid "Withdraw from MetaTrader account"
-msgstr "Transfer dari akun lainnya"
+msgstr "Pencairan dari akun MetaTrader"
 
 msgid "Withdraw funds from your MetaTrader account into your Binary account:"
-msgstr ""
+msgstr "Mencairkan dana dari akun MetaTrader Anda kedalam akun Binary:"
 
-#, fuzzy
-#| msgid "Withdraw"
 msgid "Withdraw to"
-msgstr "Pencairan"
+msgstr "Pencairan ke"
 
 msgid "Withdraw: %1 working day"
 msgstr "Penarikan: %1 hari kerja"
@@ -7092,10 +7046,8 @@ msgstr "Penarikan: Tidak tersedia"
 msgid "Withdrawal Limits"
 msgstr "Batas Penarikan"
 
-#, fuzzy
-#| msgid "Deposit via Moneta (Transaction ID: %1)"
 msgid "Withdrawal is done. Transaction ID:"
-msgstr "Deposit via Moneta (ID transaksi: %1)"
+msgstr "Pencairan selesai. Transaksi ID:"
 
 msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgstr "Penarikan terkunci, silahkan <a class=\"pjaxload\" href=\"%1\">hubungi kami</a> untuk info lebih lanjut."
@@ -7406,10 +7358,8 @@ msgstr "Klien Anda akan menerima e-mail pemberitahuan bahwa transfer mereka tela
 msgid "Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on %1 and in that event, opens an account with us."
 msgstr "ID Anda akan disimpan di dalam cookie dan diidentifikasi setiap waktu ketika calon anggota mengklik link affiliasi Anda dan mengunjungi %1 dan mendaftar."
 
-#, fuzzy
-#| msgid "First Name"
 msgid "Your Name"
-msgstr "Nama Depan"
+msgstr "Nama Anda"
 
 msgid "Your Property"
 msgstr "Properti Anda"
@@ -7480,10 +7430,8 @@ msgstr "Dana Anda selalu aman bersama %1. Setiap saat, disimpan pada beberapa ba
 msgid "Your name, email address and contact number"
 msgstr "Nama, alamat email dan nomor kontak Anda"
 
-#, fuzzy
-#| msgid "Your account has been debited with %1 %2"
 msgid "Your new account has been created."
-msgstr "Akun anda telah didebit sebanyak %1 %2"
+msgstr "Akun baru Anda telah berhasil didaftarkan."
 
 msgid "Your password and login ID are unique and passwords are hashed so that not even %1 staff can read them. This is the reason why we cannot retrieve your password and have to issue you with a new one to your email address if you cannot recall it."
 msgstr "Kata sandi dan login ID Anda adalah unik dan kata sandi dalam bentuk potongan dimana pegawai %1pun tidak dapat mengetahui kata sandi Anda. Hal ini mengapa kami tidak dapat memberikan kata sandi asli dan harus memberikan link baru ke alamat email Anda."
@@ -7602,10 +7550,8 @@ msgstr "deposit"
 msgid "details"
 msgstr "perincian"
 
-#, fuzzy
-#| msgid "e.g. ws.binaryws.com"
 msgid "e.g. blue.binaryws.com"
-msgstr "contoh ws.binaryws.com"
+msgstr "contoh blue.binaryws.com"
 
 msgid "f"
 msgstr "f"
@@ -7889,31 +7835,23 @@ msgstr "{JAPAN ONLY}Disclosure of financial statement by No. xx in the FIEA"
 msgid "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
 msgstr "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Win Loss Ratio"
 msgid "{JAPAN ONLY}Does Not Touch"
-msgstr "{JAPAN ONLY}Win Loss Ratio"
+msgstr "{JAPAN ONLY}Does Not Touch"
 
 msgid "{JAPAN ONLY}Download"
 msgstr "{JAPAN ONLY}Download"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Units"
 msgid "{JAPAN ONLY}END-IN/END-OUT"
-msgstr "{JAPAN ONLY}Units"
+msgstr "{JAPAN ONLY}END-IN/END-OUT"
 
 msgid "{JAPAN ONLY}Email us copies of your Identification Documents and My Number card."
 msgstr "{JAPAN ONLY}Email us copies of your Identification Documents and My Number card."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Establishment"
 msgid "{JAPAN ONLY}Ends Between"
-msgstr "{JAPAN ONLY}Establishment"
+msgstr "{JAPAN ONLY}Ends Between"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Main business"
 msgid "{JAPAN ONLY}Ends Outside"
-msgstr "{JAPAN ONLY}Main business"
+msgstr "{JAPAN ONLY}Ends Outside"
 
 msgid "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
 msgstr "{JAPAN ONLY}Enter your personal information, and acknowledge our terms and conditions."
@@ -7978,20 +7916,14 @@ msgstr "{JAPAN ONLY}For both call and put options, if the underlying asset price
 msgid "{JAPAN ONLY}For full details of the documents we can accept please download the following guide:"
 msgstr "{JAPAN ONLY}For full details of the documents we can accept please download the following guide:"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Section 3: Outline"
 msgid "{JAPAN ONLY}Goes Outside"
-msgstr "{JAPAN ONLY}Section 3: Outline"
+msgstr "{JAPAN ONLY}Goes Outside"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Units"
 msgid "{JAPAN ONLY}HIGH/LOW"
-msgstr "{JAPAN ONLY}Units"
+msgstr "{JAPAN ONLY}HIGH/LOW"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Units"
 msgid "{JAPAN ONLY}Higher"
-msgstr "{JAPAN ONLY}Units"
+msgstr "{JAPAN ONLY}Higher"
 
 msgid "{JAPAN ONLY}HirooMiyaya 3F, 1-9-16 Hiroo, Shibuya, Tokyo, 150-0012"
 msgstr "{JAPAN ONLY}HirooMiyaya 3F, 1-9-16 Hiroo, Shibuya, Tokyo, 150-0012"
@@ -8119,10 +8051,8 @@ msgstr "{JAPAN ONLY}Knowledge Test Result"
 msgid "{JAPAN ONLY}Knowledge test list item 5"
 msgstr "{JAPAN ONLY}Knowledge Test Result"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Download"
 msgid "{JAPAN ONLY}Lower"
-msgstr "{JAPAN ONLY}Download"
+msgstr "{JAPAN ONLY}Lower"
 
 msgid "{JAPAN ONLY}Main business"
 msgstr "{JAPAN ONLY}Main business"
@@ -8212,7 +8142,7 @@ msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "{JAPAN ONLY}Regulation & Tax"
 
 msgid "{JAPAN ONLY}STAY-IN/BREAK-OUT"
-msgstr ""
+msgstr "{JAPAN ONLY}STAY-IN/BREAK-OUT"
 
 msgid "{JAPAN ONLY}Section 1: Structure"
 msgstr "{JAPAN ONLY}Section 1: Structure"
@@ -8235,16 +8165,14 @@ msgstr "{JAPAN ONLY}Short positions in FX Binary Options must be covered by init
 msgid "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 msgstr "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Establishment"
 msgid "{JAPAN ONLY}Stays Between"
-msgstr "{JAPAN ONLY}Establishment"
+msgstr "{JAPAN ONLY}Stays Between"
 
 msgid "{JAPAN ONLY}Summary of Specifications"
 msgstr "{JAPAN ONLY}Summary of Specifications"
 
 msgid "{JAPAN ONLY}TOUCH /NO-TOUCH"
-msgstr ""
+msgstr "{JAPAN ONLY}TOUCH /NO-TOUCH"
 
 msgid "{JAPAN ONLY}Take knowledge test"
 msgstr "{JAPAN ONLY}Take knowledge test"
@@ -8327,10 +8255,8 @@ msgstr "{JAPAN ONLY}To compensate for any rise in the price of an underlying ass
 msgid "{JAPAN ONLY}To invest a binary options investment accurately, the customer are required knowledge and experience related to derivative transactions."
 msgstr "{JAPAN ONLY}To invest a binary options investment accurately, the customer are required knowledge and experience related to derivative transactions."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Units"
 msgid "{JAPAN ONLY}Touches"
-msgstr "{JAPAN ONLY}Units"
+msgstr "{JAPAN ONLY}Touches"
 
 msgid "{JAPAN ONLY}Trading & Hedging"
 msgstr "{JAPAN ONLY}Trading & Hedging"
@@ -8368,65 +8294,41 @@ msgstr "{JAPAN ONLY}Win Loss Ratio"
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Capital"
 msgid "{JAPAN ONLY}day"
-msgstr "{JAPAN ONLY}Capital"
+msgstr "{JAPAN ONLY}day"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Units"
 msgid "{JAPAN ONLY}days"
-msgstr "{JAPAN ONLY}Units"
+msgstr "{JAPAN ONLY}days"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Units"
 msgid "{JAPAN ONLY}hour"
-msgstr "{JAPAN ONLY}Units"
+msgstr "{JAPAN ONLY}hour"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Units"
 msgid "{JAPAN ONLY}hours"
-msgstr "{JAPAN ONLY}Units"
+msgstr "{JAPAN ONLY}hours"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Units"
 msgid "{JAPAN ONLY}minute"
-msgstr "{JAPAN ONLY}Units"
+msgstr "{JAPAN ONLY}minute"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Units"
 msgid "{JAPAN ONLY}minutes"
-msgstr "{JAPAN ONLY}Units"
+msgstr "{JAPAN ONLY}minutes"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Units"
 msgid "{JAPAN ONLY}month"
-msgstr "{JAPAN ONLY}Units"
+msgstr "{JAPAN ONLY}month"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Units"
 msgid "{JAPAN ONLY}months"
-msgstr "{JAPAN ONLY}Units"
+msgstr "{JAPAN ONLY}months"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Units"
 msgid "{JAPAN ONLY}week"
-msgstr "{JAPAN ONLY}Units"
+msgstr "{JAPAN ONLY}week"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Units"
 msgid "{JAPAN ONLY}weeks"
-msgstr "{JAPAN ONLY}Units"
+msgstr "{JAPAN ONLY}weeks"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Capital"
 msgid "{JAPAN ONLY}year"
-msgstr "{JAPAN ONLY}Capital"
+msgstr "{JAPAN ONLY}year"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Units"
 msgid "{JAPAN ONLY}years"
-msgstr "{JAPAN ONLY}Units"
+msgstr "{JAPAN ONLY}years"
 
 msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 msgstr "Platform Trading Online untuk opsi binary pada Forex, Indeks, Komoditas dan Indeks Smart"
@@ -8473,10 +8375,8 @@ msgstr "Transfer Agen Pembayaran"
 msgid "Sharp Prices. Smart Trading."
 msgstr "Harga Tajam. Trading Pintar."
 
-#, fuzzy
-#| msgid "Webtrader"
 msgid "MetaTrader"
-msgstr "Webtrader"
+msgstr "MetaTrader"
 
 msgid "Account Details"
 msgstr "Keterangan rekening"
@@ -8485,7 +8385,7 @@ msgid "Terms and Conditions Approval"
 msgstr "Syarat dan Ketentuan Persetujuan"
 
 msgid "Trading with MetaTrader 5"
-msgstr ""
+msgstr "Trading menggunakan MetaTrader 5"
 
 #, fuzzy
 #~| msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
