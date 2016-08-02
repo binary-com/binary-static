@@ -36,11 +36,9 @@ var APITokenWS = (function() {
         $('#btnCreate').click(function(e) {
             e.preventDefault();
             e.stopPropagation();
-            var params = getFormParams();
-            if (!params) {
-                return;
-            }
-            createToken(params);
+            getParams()
+                .ok(createToken)
+                .err(displayErrors);
         });
     }
 
@@ -147,43 +145,45 @@ var APITokenWS = (function() {
         ];
     }
 
-    // ---------------------------
-    // ----- Form Validation -----
-    // ---------------------------
-    function getFormParams() {
-        clearMessages();
-        var nameID  = '#txtName';
-        var name = $(nameID).val().trim();
+    function displayErrors(errors) {
+        errors.forEach(function(err) {
+            showError(err.id, err.msg);
+        });
+    }
 
+    // Takes in an ID, returns a function that maps error messages
+    // to objects of the form {id: id, err: msg}, so they can be
+    // displayed by displayErrors.
+    function mapsTo(id) {
+        return function(errors) {
+            return Failure(errors.map(function(msg) {
+                return {
+                    id:  id,
+                    msg: msg,
+                };
+            }));
+        };
+    }
+
+    function check(fn, err) {
+        return function(value) {
+            return fn(value) ? Success(value) : Failure([err]);
+        };
+    }
+
+    function checkName(name) {
         function err(a, b) {
             return Content.errorMessage(a, b);
         }
-
         var letters = Content.localize().textLetters,
-            numbers = Content.localize().textNumbers,
-            space   = Content.localize().textSpace;
-
+            numbers = Content.localize().textNumbers;
         var error = (
             (!name.length       && err('req')) ||
-            (!checkBounds(name) && err('range', template('([_1]-[_2])', [2, 32]))) ||
+            (!checkBounds(name) && err('range')) ||
             (!noSymbols(name)   && err('reg', [letters, numbers, '_'])) ||
             null
         );
-
-        if (error) {
-            showError(nameID, error);
-            return null;
-        }
-
-        var scopes = $('input:checkbox[name="scopes[]"]:checked')
-            .map(function() { return this.value; })
-            .get();
-        if (scopes.length === 0) {
-            showError('#scopes', 'Please select at least one scope.');
-            return null;
-        }
-
-        return {name: name, scopes: scopes};
+        return error ? Failure([error]) : Success(name);
     }
 
     function noSymbols(string) {
@@ -192,6 +192,21 @@ var APITokenWS = (function() {
 
     function checkBounds(string) {
         return (string.length >= 2) && (string.length <= 32);
+    }
+
+    function checkScopes(scopes) {
+        return scopes.length > 0 ?
+            Success(scopes) :
+            Failure(['Please select at least one scope']);
+    }
+
+    function getParams() {
+        clearMessages();
+        var params = formToObj(document.getElementById('token_form'));
+        params.name = params.name.trim();
+        return Success(params)
+            .ap(checkName(params.name).fmap(mapsTo('#txtName')))
+            .ap(checkScopes(params.scopes).fmap(mapsTo('#scopes')));
     }
 
     // ---------------------------
