@@ -49,9 +49,9 @@ var SecurityWS = (function() {
             getState: extractFormData,
             checker:  validate,
             start:    function() {},
-            stop:     function(errors) {
+            stop:     function(info) {
                 clearErrors();
-                if (errors) displayErrors(errors);
+                displayErrors(info.errors);
             },
         });
 

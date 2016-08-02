@@ -9,12 +9,18 @@ function mapTo(ctx) {
 
 function validate_object(data, schema) {
     var keys = Object.keys(schema);
-    // TODO: collect values here as well, so we don't
-    // have to do parsing again.
+    var values = {};
     var rv = dv.combine([], keys.map(function(ctx) {
-        return dv.first(data[ctx], schema[ctx]).fmap(mapTo(ctx));
+        var res = dv.first(data[ctx], schema[ctx]);
+        if (res.isOk) {
+            values[ctx] = res.value;
+        }
+        return res.fmap(mapTo(ctx));
     }));
-    return rv.value;
+    return {
+        errors: rv.value,
+        values: values,
+    };
 }
 
 
@@ -38,11 +44,11 @@ function bind_validation(form, config) {
     function afterTyping(ev) {
         var ctx = stripTrailing(ev.target.name);
         var data = getState();
-        var errors = checker(data);
-        errors = errors.filter(function(err) {
+        var info = checker(data);
+        info.errors = info.errors.filter(function(err) {
             return seen[err.ctx];
         });
-        stop(errors.length ? errors : null, data);
+        stop(info, data);
     }
 
     form.addEventListener('change', function(ev) {

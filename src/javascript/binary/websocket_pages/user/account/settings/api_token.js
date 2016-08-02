@@ -34,9 +34,9 @@ var APITokenWS = (function() {
         BinarySocket.send({api_token: 1});
         bind_validation($('#token_form')[0], {
             start: function() {},
-            stop:  function(errors, state) {
+            stop:  function(info) {
                 clearMessages();
-                if (errors) displayErrors(errors);
+                displayErrors(info.errors);
             },
             checker: validate,
             getState: extractFormData,
@@ -182,7 +182,7 @@ var APITokenWS = (function() {
         return validate_object(data, {
             name:   checkName,
             scopes: [dv.check(checkRequired, 'Please select at least one scope')],
-        });
+        }).errors;
     }
 
     function extractFormData() {
