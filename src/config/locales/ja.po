@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-07-29 05:56+0000\n"
+"PO-Revision-Date: 2016-08-01 06:59+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -1791,7 +1791,7 @@ msgid "Contract ID"
 msgstr "トレード ID"
 
 msgid "Contract Information"
-msgstr "お取引情報"
+msgstr "約定通知"
 
 msgid "Contract Payouts"
 msgstr "払い戻し価格について"
@@ -2194,7 +2194,7 @@ msgid "Dormant and Inactive Accounts"
 msgstr "口座維持手数料について"
 
 msgid "Download CSV"
-msgstr "CSNVでダウンロード"
+msgstr "CSVファイルでダウンロード"
 
 #, fuzzy
 #| msgid "Download MetaTrader for Windows"
@@ -4160,13 +4160,13 @@ msgid "Maximum account cash balance"
 msgstr "口座預託額の上限額"
 
 msgid "Maximum aggregate contract purchases over a 30-day period."
-msgstr "30日の最大取引数量 (半角)"
+msgstr "30日の最大取引額(半角)"
 
 msgid "Maximum aggregate contract purchases over a 7-day period."
-msgstr "7日間の最大取引数量 (半角)"
+msgstr "7日間の最大取引額 (半角)"
 
 msgid "Maximum aggregate contract purchases per day."
-msgstr "1日あたりの最大取引数量 (半角)"
+msgstr "1日あたりの最大取引額(半角)"
 
 msgid "Maximum aggregate loss over a 30-day period."
 msgstr "30日間最大損失 (半角)"
@@ -5046,7 +5046,7 @@ msgid "Publish your name and logo (with or without a link to your Application) o
 msgstr "お客さまのお名前及びロゴ（アプリケーションのリンクを含む）を当サイト、プレスリリース、販促資料において同意を伺うことなく公開します。"
 
 msgid "Published in English, Japanese, Chinese, Arabic, Polish, German, French, Spanish, Portuguese, Italian and Russian"
-msgstr "英語、日本語、中国語、アラビア語、ポーランド語、ドイツ語、フランス語、スペイン語、ポルトガル語、イタリア語、ロシア語で公開しています。"
+msgstr "ライブチャットは英語、中国語、アラビア語、ポーランド語、ドイツ語、フランス語、スペイン語、ポルトガル語、イタリア語、ロシア語の10ヵ国語で対応。（日本語は、現在対応しておりません。）"
 
 msgid "Purchase"
 msgstr "1クリック購入"
@@ -6448,21 +6448,15 @@ msgstr "当社サイトではお客さまが具体的かつ能動的に提供さ
 
 msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in the USA, Japan, Costa Rica or Hong Kong, or to persons under age 18."
 msgstr ""
-"店頭バイナリーオプション取引は、判定時刻に自動的に権利行使となるヨーロピアンタイプです。タッチ、ノータッチ及びレンジインはアメリカンタイプです。\n"
-"店頭バイナリーオプションは、外国為替相場の変動等により、投資元本の全てを失うおそれのあるリスクの高い金融商品です。\n"
-"店頭バイナリーオプションの取引上限は以下のとおりです。\n"
-"１）１回の取引でペイアウトは10,000,000円まで。\n"
-"２）１日の取引でペイアウトは50,000,000円まで\n"
-"３）アメリカンタイプ（タッチ・ノータッチ、レンジイン）の１日の制限は\n"
-"　a) 予想される利益額は5,000,000円まで\n"
-"  b) 確定された利益額は5,000,000円まで\n"
-"  c) 取引数量は5,000,000円まで\n"
+"■店頭バイナリーオプション取引は金融商品取引法に規定される店頭デリバティブ取引であり、元本や利益が保証されていません。■店頭バイナリーオプション取引は、判定時刻に自動的に権利行使されるヨーロピアンタイプと、取引期間中に決められた条件に達すると権利が自動行使されるアメリカンタイプがあります。■店頭バイナリーオプションは、外国為替相場等の変動により投資元本の全てを失うおそれのあるリスクの高い金融商品です。■判定時刻及び取引期間中における一定の権利を、オプション料を支払って購入する期限がある取引のため、権利が消滅した場合には支払ったオプション料の全額を失います。■購入価格は1ロット1,000円〜100,000円です。■購入価格と売却価格にはスプレッドがあり、相場情勢により拡大することがあります。■相場情勢により、お客様が希望した価格より不利な価格で取引が成立する場合があります。■店頭バイナリーオプションの取引上限は以下のとおりです。\n"
+"1)1回の取引でペイアウトは100,000円まで。\n"
+"2)1日の取引でペイアウトは10,000,000円まで\n"
+"3)アメリカンタイプ（タッチ・ノータッチ、レンジ）の1日の制限は\n"
+"a) 予想される利益額は5,000,000円まで\n"
+"b) 確定された利益額は5,000,000円まで\n"
+"c) 取引数量は5,000,000円まで\n"
 "　上記いずれかに達した時点で、お客さまはその日の取引ができなくなります。\n"
-"手数料は無料ですが、12ヶ月間、新規又は決済の取引がなかった場合は口座維持管理料（年間2,500円）が発生します。\n"
-"オプションの購入後の注文取り消しは行う事ができませんが、取引可能期間であれば売却は可能です。ただし、購入価格と売却価格にはスプレッドがあり、売却時に損失を被る可能性があります。\n"
-"お取引を開始される前に、必ず約款及び取扱説明書に書かれてある取引の特徴、取引条件、仕組み及びリスクを十分確認いただき、ご自身の判断と責任において、自己の計算によりお取引ください。\n"
-"\n"
-"■店頭バイナリーオプション取引は金融商品取引法に規定される店頭デリバティブ取引であり、元本や利益が保証されていません。■店頭バイナリーオプション取引は、判定時刻に権利が自動行使されるヨーロピアンタイプと、取引期間中に決められた条件に達すると権利が自動行使されるアメリカンタイプがあります。■判定時刻及び取引期間中における一定の権利を、オプション料を支払って購入する、期限がある取引のため、権利が消滅した場合には支払ったオプション料の全額を失います。■相場の変動等により損失が発生する場合があります。■購入価格は1ロット1,000円〜○○円です。■購入価格と売却価格にはスプレッドがあり、相場情勢により拡大することがあります。■相場情勢により、お客様が希望した価格より不利な価格で取引が成立する場合があります。■契約締結前交付書面を熟読し、取引の仕組みやリスクを十分にご理解いただいた上でお客様ご自身の判断で取引をお願いいたします。■取引手数料は無料です。一定期間、取引等がない場合には口座維持手数料が発生します。詳しくは契約締結前交付書面等をご覧ください。"
+"■取引手数料は無料ですが、12ヶ月間、新規又は決済の取引がなかった場合は口座維持管理料（年間2,500円）が発生します。■オプションの購入後の注文取り消しは行う事ができませんが、取引可能期間であれば売却は可能です。ただし、購入価格と売却価格にはスプレッドがあり、売却時に損失を被る可能性があります。■お取引を開始される前に、契約締結前交付書面を熟読の上、必ず約款及び取扱説明書に書かれてある取引の特徴、取引条件、仕組み及びリスクを十分確認いただき、ご自身の判断と責任において、自己の計算によりお取引ください。"
 
 msgid "Thorough knowledge of bash scripting, as well as experience with scripting languages such as Perl and PHP"
 msgstr "PerlやPHP などのスクリプト言語の経験とBashスクリプトの深い知識"
@@ -7949,28 +7943,28 @@ msgid "you have sufficient experience and knowledge in matters of financial trad
 msgstr "当社サービスを通じて金融トレードを購入するメリットとリスクを評価でき、かつ当社サイトに掲載されている情報に依存せずに金融トレードを行ったことのあるような金融トレードにおける十分な経験と知識があります。"
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through close on %4."
-msgstr "取引期間が終了するまでに市場価格がバリア価格にタッチしない場合、ペイアウトを受け取ります。"
+msgstr "%1のTOUCHは、取引期間終了(%4)するまでに%3がバリア価格にタッチしない場合、ペイアウト発生。"
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
-msgstr "判定時刻の時点まで、判定レートが上限バリア未満かつ下限バリア以上で推移した場合、ペイアウトを受け取れます。"
+msgstr "%1のEND-INは、判定時刻の時点の%4まで、%3が上限バリア未満かつ下限バリア以上で、ペイアウト発生。"
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
-msgstr "判定時刻の時点で、判定レートが上限バリア以上もしくは下限バリア未満で推移した場合、ペイアウトを受け取れます。"
+msgstr "%1のEND-OUTは、判定時刻の時点(%4)で%3が上限バリア以上もしくは下限バリア未満で、ペイアウト発生。"
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
-msgstr "判定時刻までの取引期間中に取引価格が上限バリア以上もしくは下限バリア以下の場合、ペイアウトを受け取ります。"
+msgstr "%1のBREAK-OUTは、取引期間中（%4）に%3が上限バリア以上もしくは下限バリア以下の場合、ペイアウト発生。"
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
-msgstr "判定時刻の時点で、判定レートがバリア価格以上の場合、ペイアウトを受け取れます。"
+msgstr "%1のラダーHIGHは、判定時刻の時点(%4)で%3がバリア価格以上で、ペイアウト発生。"
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
-msgstr "判定時刻の時点で、判定レートがバリア価格未満の場合、ペイアウトを受け取れます。"
+msgstr "%1のラダーLOWは、判定時刻の時点(%4)で%3がバリア価格未満の場合、ペイアウト発生。"
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
-msgstr "取引期間中の市場価格が上限バリア未満かつ下限バリア超過を維持した場合、ペイアウトを受け取れます。"
+msgstr "%1のSTAY-INは取引期間中(%4)、%3が上限バリア未満かつ下限バリア超過を維持した場合、ペイアウト発生。"
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
-msgstr "取引期間が終了するまでに市場価格が設定されたバリア価格にタッチした場合、ペイアウトを受け取れます。"
+msgstr "%1のTOUCHは、取引期間が終了(%4)するまで%3がバリア価格にタッチした場合、ペイアウト発生。"
 
 msgid "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
 msgstr "60,100,000円（2016年7月1日現在）"
@@ -8574,10 +8568,8 @@ msgstr "リアル口座開設の流れについてご案内致します。まず
 msgid "{JAPAN ONLY}day"
 msgstr "日"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Units"
 msgid "{JAPAN ONLY}days"
-msgstr "ロット"
+msgstr "日"
 
 msgid "{JAPAN ONLY}hour"
 msgstr "時間"
