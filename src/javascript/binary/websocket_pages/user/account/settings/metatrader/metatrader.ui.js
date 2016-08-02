@@ -71,6 +71,7 @@ var MetaTraderUI = (function() {
                     $form = $(formID);
                     $form.find('.binary-login').text(page.client.loginid);
                     $form.find('.mt-login').text(mt5Accounts[accType].login);
+                    $form.find('#txtAmount').unbind('keypress').keypress(onlyNumericOnKeypress);
                     $form.find('button').unbind('click').click(function(e) {
                         e.preventDefault();
                         e.stopPropagation();
@@ -87,11 +88,13 @@ var MetaTraderUI = (function() {
                     highlightBalance = false;
                 }
 
-                $('#accordion').removeClass(hiddenClass).accordion({
-                    heightStyle : 'content',
-                    collapsible : true,
-                    active      : false
-                });
+                if($('#accordion').hasClass(hiddenClass)) {
+                    $('#accordion').removeClass(hiddenClass).accordion({
+                        heightStyle : 'content',
+                        collapsible : true,
+                        active      : false
+                    });
+                }
             }
         }
     };
