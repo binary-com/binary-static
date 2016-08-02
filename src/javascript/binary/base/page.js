@@ -5,10 +5,7 @@ var GTM = (function() {
     "use strict";
 
     var gtm_applicable = function() {
-      if (getAppId() === '1' && getSocketURL() === 'wss://ws.binaryws.com/websockets/v3') {
-        return true;
-      }
-      return false;
+        return (getAppId() === '1');
     };
 
     var gtm_data_layer_info = function(data) {

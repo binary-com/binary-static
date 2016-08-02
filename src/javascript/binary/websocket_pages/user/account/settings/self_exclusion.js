@@ -48,12 +48,18 @@ var SelfExclusionWS = (function() {
         });
 
         initDatePicker();
-        $form.find('button').on('click', function(e) {
+        $form.submit(function(e) {
             e.preventDefault();
             e.stopPropagation();
             var info = formValidate();
             if (info.valid && info.changed) {
-                setRequest(info.data);
+                if ((Trim($('#' + timeDateID).val()) !== '' || Trim($('#' + dateID).val()) !== '')) {
+                    if (hasConfirmed()) {
+                        setRequest(info.data);
+                    }
+                } else {
+                    setRequest(info.data);
+                }
             } else if (info.valid && !info.changed) {
                 showFormMessage('You did not change anything.', false);
             }
@@ -238,7 +244,7 @@ var SelfExclusionWS = (function() {
                     null
                 );
             } else {
-                if (date.isAfter(six_weeeks_date)) {
+                if (date.isAfter(six_weeks_date)) {
                     errMsg = 'Exclude time cannot be more than 6 weeks.';
                 }
             }
@@ -248,12 +254,12 @@ var SelfExclusionWS = (function() {
             showError((opt ? timeDateID : dateID), errMsg);
             return false;
         }
-        return true && hasConfirmed();
+        return true;
     };
 
     var validateExclusionTime = function(exclusion_time) {
         var time = moment(exclusion_time, 'HH:mm');
-        if (time.isValid()) {
+        if (!time.isValid() || !/^\d{2}\:\d{2}$/.test(time._i)) {
             showError(timeID, 'Please select a valid time');
             return false;
         }

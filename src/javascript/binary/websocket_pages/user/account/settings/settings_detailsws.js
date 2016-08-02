@@ -34,7 +34,7 @@ var SettingsDetailsWS = (function() {
     var getDetails = function(response) {
         var data = response.get_settings;
 
-        $('#lblCountry').text(data.country);
+        $('#lblCountry').text(data.country || '-');
         $('#lblEmail').text(data.email);
 
         if(page.client.is_virtual()){ // Virtual Account
@@ -45,10 +45,12 @@ var SettingsDetailsWS = (function() {
             $('#lblBirthDate').text(birthDate);
             // Generate states list
             var residence = $.cookie('residence');
-            BinarySocket.send({"states_list": residence, "passthrough": {"value": data.address_state}});
+            if (residence) {
+                BinarySocket.send({"states_list": residence, "passthrough": {"value": data.address_state}});
+            }
             if (page.client.residence === 'jp') {
                 var jpData = response.get_settings.jp_settings;
-                $('#lblName').text((data.last_name || '') + ' ' + (data.first_name || ''));
+                $('#lblName').text((data.last_name || ''));
                 $('#lblGender').text(text.localize(jpData.gender) || '');
                 $('#lblAddress1').text(data.address_line_1 || '');
                 $('#lblAddress2').text(data.address_line_2 || '');
