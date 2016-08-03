@@ -9,8 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2016-08-02 08:48+0000\n"
 "Last-Translator: Masanari Higashiyama <higashiyama@regentmarkets.com>\n"
-"Language-Team: Japanese "
-"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -552,7 +551,6 @@ msgstr "<strong>HIGH/LOW</strong>：設定価格より終了時の価格が上�
 msgid "<strong>Higher/Lower</strong> - where you can profit from the market ending higher or lower than a target price."
 msgstr "<strong>HIGH/LOW</strong>：バリア設定をした価格より値上がりするか？値下がりするか？を予想してください。"
 
-#| msgid "<strong>Highly competitive spreads with no commission,</strong> offering leverage of up to 1:500"
 msgid "<strong>Highly competitive spreads with no commission.</strong>"
 msgstr "<strong>手数料無しで高い倍率のスプレッドをご利用可能</strong>"
 
@@ -729,9 +727,7 @@ msgid "A binary option is a contract purchased by a trader, which pays a pre-det
 msgstr "バイナリーオプションとは、購入したトレードが勝った際に得られる事前に決定済みの金額のことです。"
 
 msgid "A binary option is an option with a fixed payout that is determined at the start of the trade. If your prediction is correct, you receive an agreed payout. If not, you lose your initial stake, and no more. The options are called 'binary' because there can be only two outcomes - win or lose."
-msgstr ""
-"バイナリーオプションは、事前に定められたリターンを提供するオプション取引です。もし予想が正しければ、事前に定められたペイアウトを得ることが出来ます。予想が"
-"外れた場合は購入価格のみを失います。このオプション取引は、条件を満たすか、満たさないかのみ結果としてもたらされるので、「バイナリー」と呼ばれています。"
+msgstr "バイナリーオプションは、事前に定められたリターンを提供するオプション取引です。もし予想が正しければ、事前に定められたペイアウトを得ることが出来ます。予想が外れた場合は購入価格のみを失います。このオプション取引は、条件を満たすか、満たさないかのみ結果としてもたらされるので、「バイナリー」と呼ばれています。"
 
 msgid "A broad array of HR-related administrative tasks"
 msgstr "幅広いHR関連の管理作業"
@@ -1745,7 +1741,6 @@ msgstr "確認事項"
 msgid "Conflicts Policy"
 msgstr "利益相反ポリシー"
 
-#| msgid "Congratulations! <br /> You have won the contract!"
 msgid "Congratulations! Your account has been created."
 msgstr "おめでとうございます！口座の作成が完了しました。"
 
@@ -1812,7 +1807,6 @@ msgstr "当社は当社サイトに報告された、トレードの取引対象
 msgid "Contract period"
 msgstr "取引期間"
 
-#| msgid "Contract Purchase"
 msgid "Contract purchased with app ID"
 msgstr "アプリケーションIDで購入されたトレード"
 
@@ -2044,11 +2038,9 @@ msgstr "%1 %2のバーチャルマネーをアカウント%3へ入金する"
 msgid "Deposit Bonus"
 msgstr "ご入金された場合に付与されるボーナスについて"
 
-#| msgid "Deposit of"
 msgid "Deposit from"
 msgstr "からのご入金"
 
-#| msgid "Deposit funds into your account"
 msgid "Deposit funds into your MetaTrader account from your Binary account:"
 msgstr "Binary.comの口座からMetaTraderの口座へご入金："
 
@@ -2061,11 +2053,9 @@ msgstr "Xのご入金"
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "銀行振込によりお客さまの口座に入出金を行います"
 
-#| msgid "Deposit of"
 msgid "Deposit to"
 msgstr "XXXへご入金"
 
-#| msgid "Deposit funds into your account"
 msgid "Deposit to MetaTrader account"
 msgstr "MetaTraderの口座へご入金"
 
@@ -2192,7 +2182,6 @@ msgstr "口座維持手数料について"
 msgid "Download CSV"
 msgstr "CSVファイルでダウンロード"
 
-#| msgid "Download MetaTrader for Windows"
 msgid "Download MetaTrader"
 msgstr "MetaTraderをダウンロード"
 
@@ -3018,9 +3007,7 @@ msgid "If you select \"Differs\", you will win the payout if the <strong>last di
 msgstr "「アンマッチ」を選択された場合、最後のtickの<strong>下一桁</strong>がお客さまの<strong>予想</strong>と違うとペイアウトを獲得いただけます。"
 
 msgid "If you select \"Does Not Touch\", you win the payout if the market never touches the <strong>barrier</strong> at any time during the <strong>contract period</strong>."
-msgstr ""
-"「NO-TOUCH」を選択された場合、<strong>取引期間が終了時間</strong>まで市場価格が<strong>バリア</strong>設定した価"
-"格にタッチしなければペイアウトを受け取れます。"
+msgstr "「NO-TOUCH」を選択された場合、<strong>取引期間が終了時間</strong>まで市場価格が<strong>バリア</strong>設定した価格にタッチしなければペイアウトを受け取れます。"
 
 msgid "If you select \"Ends Between\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>Low barrier</strong> AND strictly lower than the <strong>High barrier</strong>."
 msgstr "「範囲内」を選択された場合、<strong>終値</strong>が バリア設定した<strong>上下両方のバリア価格</strong>の間に留まること、すなわちいずれのバリア価格にもタッチしなければペイアウトを獲得いただけます。トレード終了時間までの市場価格の動向は判定に影響を及ぼしません。"
@@ -3038,14 +3025,10 @@ msgid "If you select \"Goes Outside\", you win the payout if the market touches 
 msgstr "「BREAK-OUT」を選択された場合、<strong>トレード終了時間までに</strong>市場価格がバリア設定した<strong>上下いずれか</strong>の<strong>バリア価格にタッチ</strong>すればペイアウトを獲得いただけます。"
 
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>."
-msgstr ""
-"「HIGH」を選択された場合、判定時刻の時点で<strong>判定レート</strong>が<strong>バリア価格</strong>以上の場合、ペイア"
-"ウトを受け取れます。"
+msgstr "「HIGH」を選択された場合、判定時刻の時点で<strong>判定レート</strong>が<strong>バリア価格</strong>以上の場合、ペイアウトを受け取れます。"
 
 msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>barrier</strong>."
-msgstr ""
-"「LOW」を選択された場合、 "
-"判定時刻の時点で<strong>判定レート</strong>が<strong>バリア価格価格</strong>未満の場合、ペイアウトを受け取れます。"
+msgstr "「LOW」を選択された場合、 判定時刻の時点で<strong>判定レート</strong>が<strong>バリア価格価格</strong>未満の場合、ペイアウトを受け取れます。"
 
 msgid "If you select \"Matches\", you will win the payout if the <strong>last digit</strong> of the last tick is the <strong>same</strong> as your <strong>prediction.</strong>"
 msgstr "「マッチ」を選択された場合、最後のtickの<strong>下一桁</strong>が<strong>推測された数字</strong>と<strong>同じ</strong>であるとペイアウトを獲得いただけます。"
@@ -3063,9 +3046,7 @@ msgid "If you select \"Stays Between\", you win the payout if the market stays b
 msgstr "「STAY-IN」を選択された場合、<strong>トレード終了時間まで常に</strong>市場価格がバリアを設定した<strong>上下両方</strong>のバリア価格の間に留まること、すなわち<strong>バリア価格に１度もタッチしなければ</strong>ペイアウトを獲得いただけます。"
 
 msgid "If you select \"Touches\", you win the payout if the market touches the <strong>barrier</strong> at any time during the <strong>contract period</strong>."
-msgstr ""
-"「TOUCH」を選択された場合、<strong>取引期間が終了するまで</strong>に市場価格が<strong>バリア</strong>設定した価格に"
-"タッチすればペイアウトを受け取れます。"
+msgstr "「TOUCH」を選択された場合、<strong>取引期間が終了するまで</strong>に市場価格が<strong>バリア</strong>設定した価格にタッチすればペイアウトを受け取れます。"
 
 msgid "If you select \"Under\", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>less than your prediction.</strong>"
 msgstr "「アンダー」を選択された場合、最後のtickの<strong>下一桁</strong>が<strong>予測を下回る</strong>とペイアウトを獲得いただけます。"
@@ -3086,9 +3067,7 @@ msgid "If you select a <strong>start time</strong> in the future, the <strong>st
 msgstr "未来の時間を<strong>開始時間</strong>に指定した場合、トレードの<strong>開始時間</strong>はその選択時間が採用され、<strong>エントリー価格</strong>もその時間でのデータが採用されます。"
 
 msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
-msgstr ""
-"<strong>取引可能時間</strong>は、取引期間開始時から取引終了時間までとなります。取引<strong>終了時間</strong>とは<str"
-"ong>判定時刻2分前</strong>までで、取引終了時間を過ぎると新規購入注文＆売却取引は行えません。"
+msgstr "<strong>取引可能時間</strong>は、取引期間開始時から取引終了時間までとなります。取引<strong>終了時間</strong>とは<strong>判定時刻2分前</strong>までで、取引終了時間を過ぎると新規購入注文＆売却取引は行えません。"
 
 msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
 msgstr "\"Now\"を<strong>開始時間に指定</strong>した場合、<strong>トレード開始時間</strong>は当社のサーバで認識したクリックの瞬間に開始され、<strong>エントリー価格は</strong>開始時間の<strong>次のTick</strong>が採用されます。"
@@ -4021,7 +4000,6 @@ msgstr "入出金をロック"
 msgid "Log in"
 msgstr "ログイン"
 
-#| msgid "Log into the application using your MetaTrader account number (e.g., 829118) and your MetaTrader account password."
 msgid "Log into the application using your MetaTrader account number (e.g., 1124) and your MetaTrader account password."
 msgstr "MetaTraderのアカウント番号(例：1124)とパスワードでアプリケーションにログインをしてください。"
 
@@ -4202,7 +4180,6 @@ msgstr "思い出のある都市／街の名前"
 msgid "MetaTrader Accounts Management"
 msgstr "MetaTraderアカウント管理"
 
-#| msgid "Verify Main Password"
 msgid "MetaTrader Main Password"
 msgstr "MetaTraderメインパスワード"
 
@@ -5586,11 +5563,9 @@ msgstr "学習をはじめる"
 msgid "Start time"
 msgstr "開始時間"
 
-#| msgid "Start Trading with MetaTrader 5"
 msgid "Start trading with your Demo Account"
 msgstr "デモ口座でお取引をはじめる"
 
-#| msgid "Start Trading with MetaTrader 5"
 msgid "Start trading with your Real Account"
 msgstr "リアル口座でお取引を開始する"
 
@@ -5826,14 +5801,10 @@ msgid "The <strong>contract period</strong> is the period between the <strong>ne
 msgstr "この<strong>トレードの取引期間</strong>は、<strong>トレード開始時間</strong>の<strong>次のTick</strong>から<strong>トレード終了時間</strong>までとなります。"
 
 msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
-msgstr ""
-"<strong>取引可能時間</strong>は、取引期間開始時から取引終了時間までとなります。取引終了時間とは<strong>判定時刻2分前</stro"
-"ng>までで、取引終了時間を過ぎると新規購入注文＆売却取引は行えません。"
+msgstr "<strong>取引可能時間</strong>は、取引期間開始時から取引終了時間までとなります。取引終了時間とは<strong>判定時刻2分前</strong>までで、取引終了時間を過ぎると新規購入注文＆売却取引は行えません。"
 
 msgid "The <strong>end time</strong> is the selected number of seconds/minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
-msgstr ""
-"<strong>取引可能時間</strong>は、取引期間開始時から取引終了時間までとなります。取引終了時間とは<strong>判定時刻2分前</stro"
-"ng>までで、取引終了時間を過ぎると新規購入注文＆売却取引は行えません。"
+msgstr "<strong>取引可能時間</strong>は、取引期間開始時から取引終了時間までとなります。取引終了時間とは<strong>判定時刻2分前</strong>までで、取引終了時間を過ぎると新規購入注文＆売却取引は行えません。"
 
 msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
 msgstr "<strong>終値</strong>とは<strong>トレード終了時</strong>のスポット価格のことです。"
@@ -6436,7 +6407,9 @@ msgstr "全てを強化することで当プラットフォームの安定性と
 msgid "This notice does not explain all of the risks involved in investments or similar products or how such risks relate to your personal circumstances. It is important that you fully understand the risks involved before making a decision to enter into or sell an investment product or gambling product with us. If you are in any doubt about the risks involved with Investment Products or Gambling Products, you should seek professional advice."
 msgstr "この通知は投資、類似商品、またはお客さま個人に関するリスクの程度など全てのリスクを説明しているものではありません。当社と投資商品またはギャンブル商品のお取引の締結、売却の決断を下す前に、関連するリスクを十分に理解しておくことが大切です。投資商品やギャンブル商品に関するリスクについてご不明な点がある場合、専門家の助言を求めることをおすすめします。"
 
-msgid "This notice provides you with information about the risks associated with investment contracts, which you may invest in through services provided to you through %1. Binary Group provides a wide range of products including Binary Options relating to foreign exchange, indices, stocks and other investment products (\"Investment Products\") and binary bets such as those relating to the Random Markets (\"Gambling Products\")."
+#, fuzzy
+#| msgid "This notice provides you with information about the risks associated with investment contracts, which you may invest in through services provided to you through %1. Binary Group provides a wide range of products including Binary Options relating to foreign exchange, indices, stocks and other investment products (\"Investment Products\") and binary bets such as those relating to the Random Markets (\"Gambling Products\")."
+msgid "This notice provides you with information about the risks associated with investment contracts, which you may invest in through services provided to you through %1. Binary Group provides a wide range of products including Binary Options relating to foreign exchange, indices, stocks and other investment products (\"Investment Products\") and binary bets such as those relating to the Volatility Indices (\"Gambling Products\")."
 msgstr "この通知では％1を介して提供されるサービスを通して投資ができる投資契約に関連するリスクについての情報をお客さまに提供しています。Binaryグループでは外国為替、インデックス、株式やその他投資商品のバイナリーオプションやランダムマーケット（ギャンブル製品）に関連するバイナリーベットを含む幅広い商品を取り扱っています。"
 
 msgid "This offer cannot be used in conjunction with any other offer."
@@ -6506,9 +6479,7 @@ msgid "To change your name, date of birth, country of residence, or email, pleas
 msgstr "上記のお客さま基本情報の変更をご希望される場合は<a href=\"%1\">カスタマーサポート</a>までご連絡ください。また、変更が生じた際は速やかにご連絡いただきますようお願いします。"
 
 msgid "To create a Real account for MetaTrader, <a href=\"%1\">upgrade to Bianry Real account</a>."
-msgstr ""
-"MetaTraderのリアル口座を作成するには、<a href=\"%1\""
-">Bianryの口座をリアル口座へアップグレード</a>いただく必要があります。"
+msgstr "MetaTraderのリアル口座を作成するには、<a href=\"%1\">Bianryの口座をリアル口座へアップグレード</a>いただく必要があります。"
 
 msgid "To create a Real account for MetaTrader, switch to your Binary Real account."
 msgstr "MetaTraderのリアル口座を作成いただくには、Binaryのリアル口座へ切り替えてください。"
@@ -7226,9 +7197,7 @@ msgid "With %1 you can trade:"
 msgstr "当社では下記のお取引が可能です。"
 
 msgid "With %1 you're in control of how much you can win. You specify a fixed payout amount at the outset, and your stake - what you pay - is then calculated. %1 offers payouts from $1 to $50,000."
-msgstr ""
-"当システムではペイアウトを確実に管理することができます。取引内容を設定する際にペイアウトまたは購入金額を指定し、正確な算出結果を得ることができます。%1で"
-"は1,000円から100,000円までのペイアウトを設定いただけます。"
+msgstr "当システムではペイアウトを確実に管理することができます。取引内容を設定する際にペイアウトまたは購入金額を指定し、正確な算出結果を得ることができます。%1では1,000円から100,000円までのペイアウトを設定いただけます。"
 
 msgid "With %1's unique platform, there's no risk of 'slippage' or gapping markets. And no hidden fees."
 msgstr "当社の独自システムには、スリッページやギャッピングに関するリスクが存在しません。取引手数料は無料です。"
@@ -7248,18 +7217,15 @@ msgstr "プロモーションサイトに掲載したアフィリエイトリン
 msgid "Withdraw"
 msgstr "出金"
 
-#| msgid "Withdraw"
 msgid "Withdraw from"
 msgstr "XXXからご出金"
 
-#| msgid "Transfer from another account"
 msgid "Withdraw from MetaTrader account"
 msgstr "MetaTraderの口座からご出金"
 
 msgid "Withdraw funds from your MetaTrader account into your Binary account:"
 msgstr "MetaTraderの口座からBinaryの口座へ資金をご出金："
 
-#| msgid "Withdraw"
 msgid "Withdraw to"
 msgstr "XXXへご出金"
 
@@ -7275,7 +7241,6 @@ msgstr "ご出金：未対応"
 msgid "Withdrawal Limits"
 msgstr "出金限度額"
 
-#| msgid "Withdrawal via Bank Transfer"
 msgid "Withdrawal is done. Transaction ID:"
 msgstr "ご出金が完了しました。取引参照ID："
 
@@ -7428,8 +7393,7 @@ msgstr "%1 %2でこのトレードを売却しました"
 
 msgid "You have to register and get App ID before you can use different OAuth server for authentication. For more information refer to OAuth details on https://developers.binary.com/."
 msgstr ""
-"認承に他のOAuthサーバーをご利用される前に、登録をしてアプリケーションIDを取得頂く必要があります。OAuthに関する詳細は下記URLよりご確認くださ"
-"い。\n"
+"認承に他のOAuthサーバーをご利用される前に、登録をしてアプリケーションIDを取得頂く必要があります。OAuthに関する詳細は下記URLよりご確認ください。\n"
 "https://developers.binary.com/"
 
 msgid "You irrevocably, non-exclusively license to the Company rights to use your Contributions; and"
@@ -7595,7 +7559,6 @@ msgstr "あなたのクライアントに送金が処理されたことをお知
 msgid "Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on %1 and in that event, opens an account with us."
 msgstr "お客さまのIDはクッキーに保存され、お客さまのアフィリエイトリンクがクリックされる度に識別され、%1に伝わります。"
 
-#| msgid "First Name"
 msgid "Your Name"
 msgstr "氏名"
 
@@ -7672,7 +7635,6 @@ msgstr "当社はお客さまからお預かりした預託金を万全の体制
 msgid "Your name, email address and contact number"
 msgstr "氏名、メールアドレス、電話番号"
 
-#| msgid "Your account has been debited with %1 %2"
 msgid "Your new account has been created."
 msgstr "新しい口座の作成が完了しました。"
 
@@ -7809,7 +7771,6 @@ msgstr "入金"
 msgid "details"
 msgstr "詳細"
 
-#| msgid "e.g. ws.binaryws.com"
 msgid "e.g. blue.binaryws.com"
 msgstr "例：blue.binaryws.com"
 
