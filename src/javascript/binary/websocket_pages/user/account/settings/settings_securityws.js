@@ -45,9 +45,9 @@ var SecurityWS = (function() {
             checker:  function(data) {
                 return validate(data).errors;
             },
-            stop:     function(info) {
+            stop:     function(errors) {
                 clearErrors();
-                displayErrors(info.errors);
+                displayErrors(errors);
             },
         });
 

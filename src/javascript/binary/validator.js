@@ -65,7 +65,7 @@ function bind_validation(form, config) {
         var ctx = stripTrailing(ev.target.name);
         var data = getState();
         var errors = checker(data);
-        errors = info.errors.filter(function(err) {
+        errors = errors.filter(function(err) {
             return seen[err.ctx];
         });
         stop(errors);

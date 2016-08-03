@@ -50,9 +50,9 @@ var SelfExclusionWS = (function() {
             checker:  function(data) {
                 return validate(data).errors;
             },
-            stop:     function(info) {
+            stop:     function(errors) {
                 clearError();
-                displayErrors(info.errors);
+                displayErrors(errors);
             },
         });
 

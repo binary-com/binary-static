@@ -33,9 +33,9 @@ var APITokenWS = (function() {
         showLoadingImage($(tableContainer));
         BinarySocket.send({api_token: 1});
         bind_validation($('#token_form')[0], {
-            stop:  function(info) {
+            stop:  function(errors) {
                 clearMessages();
-                displayErrors(info.errors);
+                displayErrors(errors);
             },
             checker:  function(data) { return validate(data).errors; },
             getState: extractFormData,
