@@ -15,12 +15,7 @@ var SecurityWS = (function() {
     function clearErrors() {
         $("#SecuritySuccessMsg").text('');
         $("#invalidinputfound").text('');
-        $('#errorcashierlockpassword1, #errorcashierlockpassword2')
-            .contents()
-            .filter(function () {
-                return this.nodeType === Node.TEXT_NODE;
-            })
-            .remove();
+        $('#errorcashierlockpassword1, #errorcashierlockpassword2').text('');
     }
 
     function checkIsVirtual() {
