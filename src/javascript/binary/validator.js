@@ -7,6 +7,17 @@ function mapTo(ctx) {
     };
 }
 
+/**
+ * Validates data given a schema.
+ *
+ * @param data    An object.
+ * @param schema  An object in the form {key: Array}, where the Array
+ *                contains functions which return either a dv.ok or dv.fail.
+ * @returns {Object}  {errors: errors, values: values} where
+ *                    errors is an array of {ctx: key, err: message} objects,
+ *                    and values is an object with the collected successful
+ *                    values.
+ */
 function validate_object(data, schema) {
     var keys = Object.keys(schema);
     var values = {};
@@ -28,33 +39,46 @@ function stripTrailing(name) {
     return name.replace(/\[\]$/, '');
 }
 
+/**
+ * Helper for enabling form validation when the user starts and
+ * stops typing.
+ *
+ * @param form             A form Element (not JQuery object).
+ * @param config           Configuration object.
+ * @param config.getState  Returns the current data on the form.
+ * @param config.checker   Receives the current data and returns an object
+ *                         like {errors: Array}. The errors array will be
+ *                         filtered for only elements which the user has
+ *                         interacted with.
+ * @param config.stop      Called when the user stops typing with the value
+ *                         returned by checker.
+ */
 function bind_validation(form, config) {
     var getState = config.getState;
     var checker  = config.checker;
     var stop     = config.stop;
+    var seen     = {};
 
-    var seen = {};
-
-    function beforeTyping(ev) {
+    function onStart(ev) {
         seen[stripTrailing(ev.target.name)] = true;
     }
 
-    function afterTyping(ev) {
+    function onStop(ev) {
         var ctx = stripTrailing(ev.target.name);
         var data = getState();
         var info = checker(data);
         info.errors = info.errors.filter(function(err) {
             return seen[err.ctx];
         });
-        stop(info, data);
+        stop(info);
     }
 
     form.addEventListener('change', function(ev) {
-        beforeTyping(ev);
-        afterTyping(ev);
+        onStart(ev);
+        onStop(ev);
     });
     done_typing(form, {
-        start: beforeTyping,
-        stop:  afterTyping,
+        start: onStart,
+        stop:  onStop,
     });
 }
