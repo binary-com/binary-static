@@ -131,18 +131,18 @@ var SecurityWS = (function() {
     function validateForm() {
         clearErrors();
         var data   = extractFormData();
-        var errors = validate(data);
+        var errors = validate(data).errors;
         displayErrors(errors);
         return errors.length === 0;
     }
 
     function displayErrors(errors) {
         var map = {
-            'cashierlockpassword1': $('#errorcashierlockpassword1'),
-            'cashierlockpassword2': $('#errorcashierlockpassword2'),
+            'cashierlockpassword1': '#errorcashierlockpassword1',
+            'cashierlockpassword2': '#errorcashierlockpassword2',
         };
         errors.forEach(function(err) {
-            map[err.ctx].text(err.err);
+            $(map[err.ctx]).text(err.err);
         });
     }
 
