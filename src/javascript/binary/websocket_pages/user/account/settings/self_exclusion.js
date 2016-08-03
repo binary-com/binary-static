@@ -111,6 +111,8 @@ var SelfExclusionWS = (function() {
             fields[key] = value + '';
             $form.find('#' + key).val(value);
         });
+        // force reloading
+        getSchema(true);
     }
 
     function initDatePicker() {
@@ -159,23 +161,12 @@ var SelfExclusionWS = (function() {
         getRequest();
     }
 
-    // TODO: REMEBER TO ACCOUNT FOR THESE
+    // To propogate empty values.
     function EMPTY() {}
-
-    function validTime(value) {
-        if (!value) return dv.fail(EMPTY);
-        var time = moment(value, 'HH:mm', true);
-        return time.isValid() ?
-            dv.ok(time) :
-            dv.fail('Please select a valid time');
-    }
-
-    function validDate(value) {
-        if (!value) return dv.fail(EMPTY);
-        var date = moment(value, 'YYYY-MM-DD', true);
-        return date.isValid() ?
-            dv.ok(date) :
-            dv.fail('Please select a valid date');
+    function allowEmpty(value) {
+        return value.length > 0 ?
+            dv.ok(value) :
+            dv.fail(EMPTY);
     }
 
     function afterToday(date) {
@@ -239,8 +230,13 @@ var SelfExclusionWS = (function() {
         return formToObj($form[0]);
     }
 
-    function validate(data) {
-        return validate_object(data, {
+    var schema;
+    function getSchema(force) {
+        if (!force && schema) return schema;
+        var V2 = ValidateV2;
+        var validTime = V2.momentFmt('HH:mm', 'Please select a valid time');
+        var validDate = V2.momentFmt('YYYY-MM-DD', 'Please select a valid date');
+        schema = {
             max_7day_losses:    [numericOrEmpty, againstField('max_7day_losses')],
             max_7day_turnover:  [numericOrEmpty, againstField('max_7day_turnover')],
             max_30day_losses:   [numericOrEmpty, againstField('max_30day_losses')],
@@ -250,11 +246,15 @@ var SelfExclusionWS = (function() {
             max_open_bets:      [numericOrEmpty, againstField('max_open_bets')],
             max_turnover:       [numericOrEmpty, againstField('max_turnover')],
             session_duration_limit: [numericOrEmpty, againstField('session_duration_limit'), validSessionDuration],
-            exclude_until:          [validDate, afterToday, validExclusionDate, toDateString],
+            exclude_until:          [allowEmpty, validDate, afterToday, validExclusionDate, toDateString],
             // these two are combined.
-            timeout_until_duration: [validDate, afterToday],
-            timeout_until:          [validTime],
-        });
+            timeout_until_duration: [allowEmpty, validDate, afterToday],
+            timeout_until:          [allowEmpty, validTime],
+        };
+    }
+
+    function validate(data) {
+        return validate_object(data, getSchema());
     }
 
     function detectChange(a, b) {

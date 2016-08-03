@@ -76,10 +76,20 @@ var ValidateV2 = (function() {
     password.allowed = check(validPasswordChars,  local('Password should have lower and uppercase letters with numbers.'));
     password.symbols = check(noSymbolsInPassword, msg('valid', localKey('textPassword')));
 
+    function momentFmt(format, error) {
+        return function(str) {
+            var date = moment(str, format, true);
+            return date.isValid() ?
+                dv.ok(date) :
+                dv.fail(error);
+        };
+    }
+
     return {
         err: err,
-        required: required,
-        password: password,
-        email:    email,
+        momentFmt: momentFmt,
+        required:  required,
+        password:  password,
+        email:     email,
     };
 })();
