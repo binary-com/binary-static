@@ -109,3 +109,24 @@ function bind_validation(form, config) {
         stop:  onStop,
     });
 }
+
+// TODO:
+//  - success callback for onsubmit
+//  - change signature for config.checker
+//  - change signature for config.stop
+//  - better names for config attrs
+bind_validation.simple = function(form, schema, opts) {
+    opts = opts || {};
+
+    bind_validation(form, {
+        getState: opts.getState || function(form) { return formToObj(form); },
+        checker:  opts.checker  || function(data) { return validate_object(data, schema).errors; },
+        stop:     opts.stop     || function(errors) {
+            ValidationUI.clear();
+            errors.forEach(function(err) {
+                var sel = 'input[name=' + stripTrailing(err.ctx) + ']';
+                ValidationUI.draw(sel, err.err);
+            });
+        },
+    });
+};
