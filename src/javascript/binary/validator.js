@@ -1,3 +1,12 @@
+function replaceError(fn, err) {
+    return function(value) {
+        return fn(value).fmap(function() {
+            return err;
+        });
+    };
+}
+
+
 function mapTo(ctx) {
     return function(msg) {
         return {

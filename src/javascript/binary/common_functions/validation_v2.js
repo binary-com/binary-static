@@ -76,6 +76,24 @@ var ValidateV2 = (function() {
     password.allowed = check(validPasswordChars,  local('Password should have lower and uppercase letters with numbers.'));
     password.symbols = check(noSymbolsInPassword, msg('valid', localKey('textPassword')));
 
+    function regex(regexp, allowed) {
+        return function(str) {
+            return regexp.test(str) ?
+                dv.ok(str) :
+                dv.fail(err('reg', allowed));
+        };
+    }
+
+    function lengthRange(start, end) {
+        var range = template('([_1]-[_2])', [2, 32]);
+        return function(str) {
+            var len = str.length;
+            return (len >= start && len <= end) ?
+                dv.ok(str) :
+                dv.fail(err('range', range));
+        };
+    }
+
     function momentFmt(format, error) {
         return function(str) {
             var date = moment(str, format, true);
@@ -91,5 +109,7 @@ var ValidateV2 = (function() {
         required:  required,
         password:  password,
         email:     email,
+        regex:     regex,
+        lengthRange: lengthRange,
     };
 })();

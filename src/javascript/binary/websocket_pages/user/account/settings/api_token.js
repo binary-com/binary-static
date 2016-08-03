@@ -169,18 +169,15 @@ var APITokenWS = (function() {
 
     function validate(data) {
         var V2 = ValidateV2;
-        var letters = Content.localize().textLetters,
-            numbers = Content.localize().textNumbers;
-
-        var checkName = [
-            V2.required,
-            dv.check(checkBounds, V2.err('range', template('([_1]-[_2])', [2, 32]))),
-            dv.check(noSymbols,   V2.err('reg', [letters, numbers, '_'])),
-        ];
-
+        var letters = Content.localize().textLetters;
+        var numbers = Content.localize().textNumbers;
         return validate_object(data, {
-            name:   checkName,
-            scopes: [dv.check(checkRequired, 'Please select at least one scope')],
+            scopes: [replaceError(V2.required, 'Please select at least one scope')],
+            name:   [
+                V2.required,
+                V2.lengthRange(2, 32),
+                V2.regex(/^\w+$/, [letters, numbers, '_']),
+            ],
         });
     }
 
@@ -197,18 +194,6 @@ var APITokenWS = (function() {
         var errors = validate(data).errors;
         displayErrors(errors);
         return errors.length ? null : data;
-    }
-
-    function checkRequired(a) {
-        return a.length > 0;
-    }
-
-    function noSymbols(string) {
-        return /^\w+$/.test(string);
-    }
-
-    function checkBounds(string) {
-        return (string.length >= 2) && (string.length <= 32);
     }
 
     // ---------------------------
