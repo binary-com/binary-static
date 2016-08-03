@@ -1,4 +1,8 @@
-function replaceError(fn, err) {
+/**
+* Replaces error messages returned by a validator by the given
+* error message `err`.
+*/
+function customError(fn, err) {
     return function(value) {
         return fn(value).fmap(function() {
             return err;
@@ -7,7 +11,7 @@ function replaceError(fn, err) {
 }
 
 
-function mapTo(ctx) {
+function withContext(ctx) {
     return function(msg) {
         return {
             ctx: ctx,
@@ -35,7 +39,7 @@ function validate_object(data, schema) {
         if (res.isOk) {
             values[ctx] = res.value;
         }
-        return res.fmap(mapTo(ctx));
+        return res.fmap(withContext(ctx));
     }));
     return {
         errors: rv.value,

@@ -172,7 +172,7 @@ var APITokenWS = (function() {
         var letters = Content.localize().textLetters;
         var numbers = Content.localize().textNumbers;
         return validate_object(data, {
-            scopes: [replaceError(V2.required, 'Please select at least one scope')],
+            scopes: [customError(V2.required, 'Please select at least one scope')],
             name:   [
                 V2.required,
                 V2.lengthRange(2, 32),
