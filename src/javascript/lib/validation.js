@@ -46,11 +46,9 @@ var dv = (function() {
   }
 
   function first(v, xs) {
-    var a = [].slice.call(arguments, 1);
-    var xs = a.pop();
     var u = ok(v);
     for (var i = 0; i < xs.length; i++) {
-      u = xs[i].apply(this, [u.value].concat(a));
+      u = u.then(xs[i]);
       if (!u.isOk) break;
     }
     return u;
