@@ -42,7 +42,9 @@ var SecurityWS = (function() {
 
         bind_validation($form[0], {
             getState: extractFormData,
-            checker:  validate,
+            checker:  function(data) {
+                return validate(data).errors;
+            },
             stop:     function(info) {
                 clearErrors();
                 displayErrors(info.errors);

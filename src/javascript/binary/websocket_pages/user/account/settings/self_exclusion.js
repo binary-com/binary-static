@@ -47,7 +47,9 @@ var SelfExclusionWS = (function() {
 
         bind_validation($form[0], {
             getState: extractFormData,
-            checker:  validate,
+            checker:  function(data) {
+                return validate(data).errors;
+            },
             stop:     function(info) {
                 clearError();
                 displayErrors(info.errors);

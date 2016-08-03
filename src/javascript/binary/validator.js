@@ -46,12 +46,10 @@ function stripTrailing(name) {
  * @param form             A form Element (not JQuery object).
  * @param config           Configuration object.
  * @param config.getState  Returns the current data on the form.
- * @param config.checker   Receives the current data and returns an object
- *                         like {errors: Array}. The errors array will be
- *                         filtered for only elements which the user has
- *                         interacted with.
- * @param config.stop      Called when the user stops typing with the value
- *                         returned by checker.
+ * @param config.checker   Receives the current data and returns an array of errors.
+ *                         Array will be filtered for only elements which the user
+ *                         has interacted with.
+ * @param config.stop      Called when the user stops typing with the errors array.
  */
 function bind_validation(form, config) {
     var getState = config.getState;
@@ -66,11 +64,11 @@ function bind_validation(form, config) {
     function onStop(ev) {
         var ctx = stripTrailing(ev.target.name);
         var data = getState();
-        var info = checker(data);
-        info.errors = info.errors.filter(function(err) {
+        var errors = checker(data);
+        errors = info.errors.filter(function(err) {
             return seen[err.ctx];
         });
-        stop(info);
+        stop(errors);
     }
 
     form.addEventListener('change', function(ev) {

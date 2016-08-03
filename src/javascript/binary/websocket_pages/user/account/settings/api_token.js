@@ -37,7 +37,7 @@ var APITokenWS = (function() {
                 clearMessages();
                 displayErrors(info.errors);
             },
-            checker: validate,
+            checker:  function(data) { return validate(data).errors; },
             getState: extractFormData,
         });
 
@@ -181,7 +181,7 @@ var APITokenWS = (function() {
         return validate_object(data, {
             name:   checkName,
             scopes: [dv.check(checkRequired, 'Please select at least one scope')],
-        }).errors;
+        });
     }
 
     function extractFormData() {
@@ -194,7 +194,7 @@ var APITokenWS = (function() {
     function getFormParams() {
         clearMessages();
         var data   = extractFormData();
-        var errors = validate(data);
+        var errors = validate(data).errors;
         displayErrors(errors);
         return errors.length ? null : data;
     }
