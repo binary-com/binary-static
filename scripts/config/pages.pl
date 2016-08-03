@@ -5,18 +5,18 @@ use warnings;
 
 sub all_pages {
     return (
-        # url pathname,                template file path,             layout,       title
+        # url pathname,                template file path,             layout,       title,        exclude languages
         ['home',                       'home/index',                   'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices'],
         ['why-us',                     'static/why_us',                'full_width', 'Why Us'],
         ['tour',                       'static/tour',                  'full_width', 'Tour'],
-        ['responsible-trading',        'static/responsible_trading',   'full_width', 'Responsible Trading'],
+        ['responsible-trading',        'static/responsible_trading',   'full_width', 'Responsible Trading', 'ja'],
         ['terms-and-conditions',       'legal/tac',                    'default',    'Terms and Conditions'],
         ['terms-and-conditions-jp',    'japan/legal/tacjp',            'default',    'Terms and Conditions'],
         ['styles',                     'home/styles',                  'full_width', 'Styles'],
         ['affiliate/signup',           'affiliates/signup',            'default',    'Affiliate'],
         ['user/browser-support',       'misc/logintrouble',            'default',    'Login trouble'],
         ['endpoint',                   'misc/endpoint',                'default',    'Endpoint'],
-        ['legal/us_patents',           'legal/us_patents',             'default',    'US Patents'],
+        ['legal/us_patents',           'legal/us_patents',             'default',    'US Patents', 'ja'],
         ['cashier',                    'cashier/index',                'default',    'Cashier'],
         ['cashier/payment_methods',    'cashier/payment_methods',      'default',    'Payment Methods'],
 
@@ -30,7 +30,7 @@ sub all_pages {
         ['company-profile',            'japan/company_profile',        'defualt',    'Company Profile'],
 
         ['open-source-projects',       'partners/open_source_projects',  'full_width', 'Open-Source Projects'],
-        ['partners',                   'partners/partners',              'full_width', 'Partners'],
+        ['partners',                   'partners/partners',              'full_width', 'Partners', 'ja'],
         ['payment-agent',              'partners/payment_agent',         'full_width', 'Payment Agents'],
         ['user-testing',               'partners/user_testing',          'full_width', 'Sign Up to Test Our Platform'],
 
