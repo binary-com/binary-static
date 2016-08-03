@@ -34,7 +34,7 @@ var APITokenWS = (function() {
         BinarySocket.send({api_token: 1});
         bind_validation($('#token_form')[0], {
             stop:  function(errors) {
-                clearMessages();
+                ValidationUI.clear();
                 displayErrors(errors);
             },
             checker:  function(data) { return validate(data).errors; },
@@ -156,14 +156,11 @@ var APITokenWS = (function() {
     }
 
     function displayErrors(errors) {
-        var map = {
-            'name':   '#txtName',
-            'scopes': '#scopes',
-        };
         errors.forEach(function(err) {
-            var $parent = $(map[err.ctx]).parent();
-            var $p = $('<p/>', {class: errorClass, text: text.localize(err.err)});
-            $parent.append($p);
+            var sel = err.ctx === 'name' ?
+                '#txtName' :
+                '#scopes';
+            ValidationUI.draw(sel, err.err);
         });
     }
 
@@ -189,7 +186,7 @@ var APITokenWS = (function() {
     }
 
     function getFormParams() {
-        clearMessages();
+        ValidationUI.clear();
         var data   = extractFormData();
         var errors = validate(data).errors;
         displayErrors(errors);
@@ -234,7 +231,6 @@ var APITokenWS = (function() {
     }
 
     function clearMessages() {
-        $('#frmNewToken .' + errorClass).remove();
         $('#token_message').addClass(hideClass);
         $('#formMessage').html('');
     }

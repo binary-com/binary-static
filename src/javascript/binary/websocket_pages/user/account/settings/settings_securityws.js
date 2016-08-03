@@ -15,7 +15,6 @@ var SecurityWS = (function() {
     function clearErrors() {
         $("#SecuritySuccessMsg").text('');
         $("#invalidinputfound").text('');
-        $('#errorcashierlockpassword1, #errorcashierlockpassword2').text('');
     }
 
     function checkIsVirtual() {
@@ -45,8 +44,8 @@ var SecurityWS = (function() {
             checker:  function(data) {
                 return validate(data).errors;
             },
-            stop:     function(errors) {
-                clearErrors();
+            stop: function(errors) {
+                ValidationUI.clear();
                 displayErrors(errors);
             },
         });
@@ -131,7 +130,7 @@ var SecurityWS = (function() {
     }
 
     function validateForm() {
-        clearErrors();
+        ValidationUI.clear();
         var data   = extractFormData();
         var errors = validate(data).errors;
         displayErrors(errors);
@@ -139,12 +138,8 @@ var SecurityWS = (function() {
     }
 
     function displayErrors(errors) {
-        var map = {
-            'cashierlockpassword1': '#errorcashierlockpassword1',
-            'cashierlockpassword2': '#errorcashierlockpassword2',
-        };
         errors.forEach(function(err) {
-            $(map[err.ctx]).text(err.err);
+            ValidationUI.draw('#' + err.ctx, err.err);
         });
     }
 

@@ -1,3 +1,19 @@
+var ValidationUI = {
+    clear: function() {
+        $('.errorfield[data-is-error-field]').remove();
+    },
+    draw:  function(selector, message) {
+        var $parent = $(selector).parent();
+        var $p = $('<p/>', {
+            class: 'errorfield',
+            text:  text.localize(message),
+        });
+        $p.attr('data-is-error-field', true);
+        $parent.append($p);
+    },
+};
+
+
 /**
 * Replaces error messages returned by a validator by the given
 * error message `err`.

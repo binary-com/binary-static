@@ -51,7 +51,7 @@ var SelfExclusionWS = (function() {
                 return validate(data).errors;
             },
             stop:     function(errors) {
-                clearError();
+                ValidationUI.clear();
                 displayErrors(errors);
             },
         });
@@ -224,7 +224,7 @@ var SelfExclusionWS = (function() {
     function displayErrors(errors) {
         errors.forEach(function(e) {
             if (e.err === EMPTY) return;
-            showError(e.ctx, e.err);
+            ValidationUI.draw('#' + e.ctx, e.err);
         });
     }
 
@@ -325,15 +325,7 @@ var SelfExclusionWS = (function() {
         }
     }
 
-    function showError(fieldID, errMsg) {
-        $('#' + fieldID).parent().append($('<p/>', {class: errorClass, text: text.localize(errMsg)}));
-        if (fieldID === timeID) {
-            $('#' + fieldID).attr('style', 'margin-bottom:10px');
-        }
-    }
-
     function clearError() {
-        $('#frmSelfExclusion p.' + errorClass).remove();
         $('#errorMsg').html('').addClass(hiddenClass);
         $('#formMessage').html('');
     }
