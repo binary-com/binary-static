@@ -1,6 +1,11 @@
 function submit_email() {
     Content.populate();
-    bind_validation.simple($('#verify-email-form')[0], {
+    var form = $('#verify-email-form')[0];
+    if (!form) {
+        return;
+    }
+
+    bind_validation.simple(form, {
         schema: {
             email: [ValidateV2.required, ValidateV2.email]
         },
