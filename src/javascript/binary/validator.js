@@ -93,7 +93,6 @@ function bind_validation(form, config) {
     }
 
     function onStop(ev) {
-        var ctx = stripTrailing(ev.target.name);
         var data = getState();
         var validation = validate(data);
         validation.errors = validation.errors.filter(function(err) {
