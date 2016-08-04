@@ -18,7 +18,8 @@ var Statement = (function(){
             'amount'  : addComma(parseFloat(statement["amount"])),
             'balance' : addComma(parseFloat(statement["balance_after"])),
             'desc'    : statement["longcode"].replace(/\n/g, '<br />'),
-            'id'      : statement["contract_id"]
+            'id'      : statement["contract_id"],
+            'app_id'  : statement["app_id"]
         };
 
         return statement_data;
@@ -50,6 +51,6 @@ var Statement = (function(){
     if (typeof module !== 'undefined') {
         module.exports = external;
     }
-    
+
     return external;
 }());

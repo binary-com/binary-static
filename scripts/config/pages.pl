@@ -5,32 +5,32 @@ use warnings;
 
 sub all_pages {
     return (
-        # url pathname,                template file path,             layout,       title
+        # url pathname,                template file path,             layout,       title,        exclude languages
         ['home',                       'home/index',                   'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices'],
         ['why-us',                     'static/why_us',                'full_width', 'Why Us'],
         ['tour',                       'static/tour',                  'full_width', 'Tour'],
-        ['responsible-trading',        'static/responsible_trading',   'full_width', 'Responsible Trading'],
+        ['responsible-trading',        'static/responsible_trading',   'full_width', 'Responsible Trading', 'ja'],
         ['terms-and-conditions',       'legal/tac',                    'default',    'Terms and Conditions'],
         ['terms-and-conditions-jp',    'japan/legal/tacjp',            'default',    'Terms and Conditions'],
         ['styles',                     'home/styles',                  'full_width', 'Styles'],
-        ['affiliate/signup',           'affiliates/signup',            'default',    'Affiliate'],
+        ['affiliate/signup',           'affiliates/signup',            'default',    'Affiliate',           'ja'],
         ['user/browser-support',       'misc/logintrouble',            'default',    'Login trouble'],
         ['endpoint',                   'misc/endpoint',                'default',    'Endpoint'],
-        ['legal/us_patents',           'legal/us_patents',             'default',    'US Patents'],
+        ['legal/us_patents',           'legal/us_patents',             'default',    'US Patents',          'ja'],
         ['cashier',                    'cashier/index',                'default',    'Cashier'],
-        ['cashier/payment_methods',    'cashier/payment_methods',      'default',    'Payment Methods'],
+        ['cashier/payment_methods',    'cashier/payment_methods',      'default',    'Payment Methods',     'ja'],
 
         ['about-us',                   'about/index',                  'full_width', 'About Us'],
         ['group-information',          'about/group-information',      'default',    'Group Information'],
         ['group-history',              'about/group_history',          'full_width', 'Group History'],
         ['contact',                    'about/contact',                'full_width', 'Contact Us'],
-        ['careers',                    'about/careers',                'full_width', 'Careers'],
+        ['careers',                    'about/careers',                'full_width', 'Careers', 'ja'],
         ['open-positions',             'about/job_descriptions',       'full_width', 'Open Positions'],
         ['open-positions/job-details', 'about/job_details',            'full_width', 'Job Details'],
         ['company-profile',            'japan/company_profile',        'defualt',    'Company Profile'],
 
         ['open-source-projects',       'partners/open_source_projects',  'full_width', 'Open-Source Projects'],
-        ['partners',                   'partners/partners',              'full_width', 'Partners'],
+        ['partners',                   'partners/partners',              'full_width', 'Partners', 'ja'],
         ['payment-agent',              'partners/payment_agent',         'full_width', 'Payment Agents'],
         ['user-testing',               'partners/user_testing',          'full_width', 'Sign Up to Test Our Platform'],
 
@@ -50,7 +50,7 @@ sub all_pages {
         ['get-started-jp', 'japan/get_started',  'default', 'Get Started'],
 
         ## ws
-        ['user/authenticatews',          'user/authenticatews',                       'default', 'Authenticate'],
+        ['user/authenticatews',          'user/authenticatews',                       'default', 'Authenticate', 'ja'],
         ['cashier/forwardws',            'cashier/deposit_withdraw_ws',               'default', 'Cashier'],
         ['user/settings/limitsws',       'user/settings/limitsws',                    'default', 'Account Limits'],
         ['account/account_transferws',   'cashier/account_transferws',                'default', 'Account Transfer'],
@@ -69,10 +69,10 @@ sub all_pages {
         ['new_account/knowledge_testws', 'japan/knowledge_test',        'default', 'Real Money Account Opening'],
 
         ['resources',                'resources/index',           'default', 'Resources'],
-        ['resources/asset_indexws',  'resources/asset_indexws',   'default', 'Asset Index'],
+        ['resources/asset_indexws',  'resources/asset_indexws',   'default', 'Asset Index', 'ja'],
         ['resources/market_timesws', 'resources/market_timesws',  'default', 'Trading Times'],
 
-        ['user/settings/api_tokenws',       'user/settings/api_tokenws',                      'default', 'API Token'],
+        ['user/settings/api_tokenws',       'user/settings/api_tokenws',                      'default', 'API Token',               'ja'],
         ['user/settings/metatrader',        'user/settings/metatrader',                       'default', 'MetaTrader'],
         ['user/change_passwordws',          'user/settings/change_passwordws',                'default', 'Change Password'],
         ['user/portfoliows',                'user/portfoliows',                               'default', 'Portfolio'],
@@ -83,12 +83,12 @@ sub all_pages {
         ['user/statementws',                'user/statementws',                               'default', 'Statement'],
         ['user/my_accountws',               'user/my_accountws',                              'default', 'My Account'],
         ['user/settingsws',                 'user/settingsws',                                'default', 'Settings'],
-        ['user/settings/iphistoryws',       'user/settings/iphistory',                        'default', 'Login History'],
+        ['user/settings/iphistoryws',       'user/settings/iphistory',                        'default', 'Login History',           'ja'],
         ['user/tnc_approvalws',             'legal/tnc_approvalws',                           'default', 'Terms and Conditions Approval'],
-        ['user/settings/assessmentws',      'user/settings/financial_assessmentws',           'default', 'Financial Assessment'],
+        ['user/settings/assessmentws',      'user/settings/financial_assessmentws',           'default', 'Financial Assessment',    'ja'],
         ['user/lost_passwordws',            'user/lost_passwordws',                           'default', 'Password Reset'],
         ['user/reset_passwordws',           'user/reset_passwordws',                          'default', 'Password Reset'],
-        ['user/settings/authorised_appsws', 'user/settings/authorised_appsws',                'default', 'Authorised Applications'],
+        ['user/settings/authorised_appsws', 'user/settings/authorised_appsws',                'default', 'Authorised Applications', 'ja'],
         ['user/reality_check_frequencyws',  'user/reality_check_frequencyws',                 'default', 'Reality Check'],
         ['user/reality_check_summaryws',    'user/reality_check_summaryws',                   'default', 'Reality Check'],
 
