@@ -76,7 +76,7 @@ function stripTrailing(name) {
  * @param config           Configuration object.
  * @param config.getState  Returns the current data on the form.
  * @param config.validate  Receives the current data returns an object with
- *                         {values: Object, errors: [{ctx: key, err: msg}...].
+ *                         {values: Object, errors: [{ctx: key, err: msg}...]}.
  * @param config.stop      Called when the user stops typing with the return
  *                         value of `config.validate`.
  * @param config.submit    Called on submit event with event and validation state.
