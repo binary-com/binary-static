@@ -45,32 +45,12 @@ var SelfExclusionWS = (function() {
             fields[this.name] = '';
         });
 
-        bind_validation($form[0], {
-            getState: extractFormData,
-            checker:  function(data) {
-                return validate(data).errors;
-            },
-            stop:     function(errors) {
-                ValidationUI.clear();
-                displayErrors(errors);
-            },
+        bind_validation.simple($form[0], {
+            validate: validate,
+            submit: submitForm,
         });
 
         initDatePicker();
-        $form.submit(function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            var info = validateForm();
-            if (!info.valid) return;
-            if (!info.changed) {
-                showFormMessage('You did not change anything.', false);
-                return;
-            }
-            if ('timeout_until' in info.data) {
-                if (!hasConfirmed()) return;
-            }
-            setRequest(info.data);
-        });
         getRequest();
     }
 
@@ -221,17 +201,6 @@ var SelfExclusionWS = (function() {
         return dv.ok(date.format('YYYY-MM-DD'));
     }
 
-    function displayErrors(errors) {
-        errors.forEach(function(e) {
-            if (e.err === EMPTY) return;
-            ValidationUI.draw('#' + e.ctx, e.err);
-        });
-    }
-
-    function extractFormData() {
-        return formToObj($form[0]);
-    }
-
     var schema;
     function getSchema(force) {
         if (!force && schema) return schema;
@@ -256,7 +225,11 @@ var SelfExclusionWS = (function() {
     }
 
     function validate(data) {
-        return validate_object(data, getSchema());
+        var info = validate_object(data, getSchema());
+        info.errors = info.errors.filter(function(e) {
+            return e.err !== EMPTY;
+        });
+        return info;
     }
 
     function detectChange(a, b) {
@@ -272,41 +245,50 @@ var SelfExclusionWS = (function() {
         return false;
     }
 
-    function validateForm() {
+    function submitForm(e, validation) {
+        e.preventDefault();
+        e.stopPropagation();
         clearError();
-        var data = extractFormData();
-        var validation = validate(data);
-        var errors = validation.errors;
+        var info = validateForm(validation);
+        if (!info.valid) return;
+        if (!info.changed) {
+            showFormMessage('You did not change anything.', false);
+            return;
+        }
+        if ('timeout_until' in info.data && !hasConfirmed()) {
+            return;
+        }
+        setRequest(info.data);
+    }
+
+    function validateForm(validation) {
         var values = validation.values;
+        var valid = validation.errors.length === 0;
 
         // Do the date time addition and validation here
         var date = values.timeout_until_duration;
         if (date) {
-            var time = values.timeout_until || moment.duration({});
-            var six_weeks = moment().add(moment.duration(6, 'weeks'));
-            date.add(time);
             // If we've gotten this far then there must *not*
             // be an error with the timeout date.
+            var time = values.timeout_until || moment.duration({});
+            var six_weeks = moment().add(moment.duration(6, 'weeks'));
+            date = date.add(time);
             if (date.isAfter(six_weeks)) {
-                errors.push({
-                    ctx: 'timeout_until_duration',
-                    err: 'Exclude time cannot be more than 6 weeks.',
-                });
+                ValidationUI.draw(
+                    'timeout_until_duration',
+                    'Exclude time cannot be more than 6 weeks.'
+                );
+                valid = false;
             } else {
                 delete values.timeout_until_duration;
                 values.timeout_until = date.unix();
             }
         }
 
-        errors = errors.filter(function(e) {
-            return e.err !== EMPTY;
-        });
-        displayErrors(errors);
-        var valid = errors.length === 0;
         return {
             data: values,
             valid: valid,
-            changed: valid && detectChange(data, fields),
+            changed: valid && detectChange(validation.raw, fields),
         };
     }
 

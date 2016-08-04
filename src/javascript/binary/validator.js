@@ -42,10 +42,10 @@ function withContext(ctx) {
  * @param data    An object.
  * @param schema  An object in the form {key: Array}, where the Array
  *                contains functions which return either a dv.ok or dv.fail.
- * @returns {Object}  {errors: errors, values: values} where
+ * @returns {Object}  {errors: errors, values: values, raw: data} where
  *                    errors is an array of {ctx: key, err: message} objects,
- *                    and values is an object with the collected successful
- *                    values.
+ *                    values is an object with the collected successful values,
+ *                    raw is the data passed in.
  */
 function validate_object(data, schema) {
     var keys = Object.keys(schema);
@@ -60,6 +60,7 @@ function validate_object(data, schema) {
     return {
         errors: rv.value,
         values: values,
+        raw:    data,
     };
 }
 
@@ -69,21 +70,22 @@ function stripTrailing(name) {
 }
 
 /**
- * Helper for enabling form validation when the user starts and
- * stops typing.
+ * Helper for enabling form validation when the user starts and stops typing.
  *
  * @param form             A form Element (not JQuery object).
  * @param config           Configuration object.
  * @param config.getState  Returns the current data on the form.
- * @param config.checker   Receives the current data and returns an array of errors.
- *                         Array will be filtered for only elements which the user
- *                         has interacted with.
- * @param config.stop      Called when the user stops typing with the errors array.
+ * @param config.validate  Receives the current data returns an object with
+ *                         {values: Object, errors: [{ctx: key, err: msg}...].
+ * @param config.stop      Called when the user stops typing with the return
+ *                         value of `config.validate`.
+ * @param config.submit    Called on submit event with event and validation state.
  */
 function bind_validation(form, config) {
     var getState = config.getState;
-    var checker  = config.checker;
+    var validate = config.validate;
     var stop     = config.stop;
+    var submit   = config.submit;
     var seen     = {};
 
     function onStart(ev) {
@@ -93,12 +95,19 @@ function bind_validation(form, config) {
     function onStop(ev) {
         var ctx = stripTrailing(ev.target.name);
         var data = getState();
-        var errors = checker(data);
-        errors = errors.filter(function(err) {
+        var validation = validate(data);
+        validation.errors = validation.errors.filter(function(err) {
             return seen[err.ctx];
         });
-        stop(errors);
+        stop(validation);
     }
+
+    form.addEventListener('submit', function(ev) {
+        var data = getState();
+        var validation = validate(data);
+        stop(validation);
+        submit(ev, validation);
+    });
 
     form.addEventListener('change', function(ev) {
         onStart(ev);
@@ -110,20 +119,27 @@ function bind_validation(form, config) {
     });
 }
 
-// TODO:
-//  - success callback for onsubmit
-//  - change signature for config.checker
-//  - change signature for config.stop
-//  - better names for config attrs
-bind_validation.simple = function(form, schema, opts) {
-    opts = opts || {};
-
+/**
+ * Generates (and binds) a config for the given form.
+ *
+ * @param form  Form element.
+ * @param opts  Config object.
+ * @param opts.getState  Optional. Defaults to `formToObj(form)`.
+ * @param opts.submit    Required.
+ * @param opts.validate  Optional. If you do not specify this then opts.schema
+ *                       is required.
+ * @param opts.schema    See above.
+ * @param opts.stop      Optional.
+ *
+ */
+bind_validation.simple = function(form, opts) {
     bind_validation(form, {
-        getState: opts.getState || function(form) { return formToObj(form); },
-        checker:  opts.checker  || function(data) { return validate_object(data, schema).errors; },
-        stop:     opts.stop     || function(errors) {
+        submit:   opts.submit,
+        getState: opts.getState || function() { return formToObj(form); },
+        validate: opts.validate || function(data) { return validate_object(data, opts.schema); },
+        stop:     opts.stop     || function(validation) {
             ValidationUI.clear();
-            errors.forEach(function(err) {
+            validation.errors.forEach(function(err) {
                 var sel = 'input[name=' + stripTrailing(err.ctx) + ']';
                 ValidationUI.draw(sel, err.err);
             });

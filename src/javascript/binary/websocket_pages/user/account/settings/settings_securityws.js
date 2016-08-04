@@ -39,17 +39,6 @@ var SecurityWS = (function() {
         $form = $("#changeCashierLock");
         if (checkIsVirtual()) return;
 
-        bind_validation($form[0], {
-            getState: extractFormData,
-            checker:  function(data) {
-                return validate(data).errors;
-            },
-            stop: function(errors) {
-                ValidationUI.clear();
-                displayErrors(errors);
-            },
-        });
-
         current_state = STATE.WAIT_AUTH;
         BinarySocket.init({onmessage: handler});
         makeAuthRequest();
@@ -100,46 +89,33 @@ var SecurityWS = (function() {
             setupRepeatPasswordForm();
         }
         current_state = locked ? STATE.LOCKED : STATE.UNLOCKED;
-        $form.show();
-        $form.find('button').click(function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            if (!validateForm()) {
-                return false;
-            }
-            current_state = locked ? STATE.TRY_UNLOCK : STATE.TRY_LOCK;
-            makeAuthRequest();
+        bind_validation.simple($form[0], {
+            validate: validate,
+            submit: function(e, info) {
+                e.preventDefault();
+                e.stopPropagation();
+                if (info.errors.length > 0) {
+                    return;
+                }
+                current_state = locked ?
+                    STATE.TRY_UNLOCK :
+                    STATE.TRY_LOCK;
+                makeAuthRequest();
+            },
         });
-    }
-
-    function extractFormData() {
-        return formToObj($form[0]);
+        $form.show();
     }
 
     function validate(data) {
         var err = Content.localize().textPasswordsNotMatching;
         function matches(value) {
-            return current_state === STATE.UNLOCKED &&
+            return current_state === STATE.LOCKED ||
                 value === data.cashierlockpassword1;
         }
 
         return validate_object(data, {
             cashierlockpassword1: [ValidateV2.password],
             cashierlockpassword2: [dv.check(matches, err)],
-        });
-    }
-
-    function validateForm() {
-        ValidationUI.clear();
-        var data   = extractFormData();
-        var errors = validate(data).errors;
-        displayErrors(errors);
-        return errors.length === 0;
-    }
-
-    function displayErrors(errors) {
-        errors.forEach(function(err) {
-            ValidationUI.draw('#' + err.ctx, err.err);
         });
     }
 

@@ -32,24 +32,39 @@ var APITokenWS = (function() {
 
         showLoadingImage($(tableContainer));
         BinarySocket.send({api_token: 1});
-        bind_validation($('#token_form')[0], {
-            stop:  function(errors) {
+        bind_validation.simple($('#token_form')[0], {
+            schema: getSchema(),
+            stop: function(info) {
                 ValidationUI.clear();
-                displayErrors(errors);
+                displayErrors(info.errors);
             },
-            checker:  function(data) { return validate(data).errors; },
-            getState: extractFormData,
-        });
-
-        $('#btnCreate').click(function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            var params = getFormParams();
-            if (!params) {
-                return;
+            submit: function(e, info) {
+                e.preventDefault();
+                e.stopPropagation();
+                if (info.errors.length > 0) {
+                    return;
+                }
+                createToken(info.values);
             }
-            createToken(params);
         });
+    }
+
+    function getSchema() {
+        var V2 = ValidateV2;
+        var letters = Content.localize().textLetters;
+        var numbers = Content.localize().textNumbers;
+        return {
+            scopes: [
+                function(v) {return dv.ok(v || []); },
+                customError(V2.required, 'Please select at least one scope'),
+            ],
+            name:   [
+                function(v) { return dv.ok(v.trim()); },
+                V2.required,
+                V2.lengthRange(2, 32),
+                V2.regex(/^\w+$/, [letters, numbers, '_']),
+            ],
+        };
     }
 
     function responseHandler(response) {
@@ -162,35 +177,6 @@ var APITokenWS = (function() {
                 '#scopes';
             ValidationUI.draw(sel, err.err);
         });
-    }
-
-    function validate(data) {
-        var V2 = ValidateV2;
-        var letters = Content.localize().textLetters;
-        var numbers = Content.localize().textNumbers;
-        return validate_object(data, {
-            scopes: [customError(V2.required, 'Please select at least one scope')],
-            name:   [
-                V2.required,
-                V2.lengthRange(2, 32),
-                V2.regex(/^\w+$/, [letters, numbers, '_']),
-            ],
-        });
-    }
-
-    function extractFormData() {
-        var data    = formToObj($('#token_form')[0]);
-        data.name   = data.name.trim();
-        data.scopes = data.scopes || [];
-        return data;
-    }
-
-    function getFormParams() {
-        ValidationUI.clear();
-        var data   = extractFormData();
-        var errors = validate(data).errors;
-        displayErrors(errors);
-        return errors.length ? null : data;
     }
 
     // ---------------------------
