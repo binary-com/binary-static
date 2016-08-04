@@ -74,6 +74,10 @@ foreach my $m (@m) {
     $index++;
 
     foreach my $lang (@langs) {
+        if ($m->[4] and index($m->[4], $lang) > -1) {
+            next;
+        }
+
         my $save_as_file = "$dist_path/$lang/pjax/$save_as.html";
         next if -e $save_as_file and not $force;
 

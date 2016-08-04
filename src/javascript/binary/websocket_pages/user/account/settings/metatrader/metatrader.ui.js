@@ -71,6 +71,7 @@ var MetaTraderUI = (function() {
                     $form = $(formID);
                     $form.find('.binary-login').text(page.client.loginid);
                     $form.find('.mt-login').text(mt5Accounts[accType].login);
+                    $form.find('#txtAmount').unbind('keypress').keypress(onlyNumericOnKeypress);
                     $form.find('button').unbind('click').click(function(e) {
                         e.preventDefault();
                         e.stopPropagation();
@@ -87,11 +88,13 @@ var MetaTraderUI = (function() {
                     highlightBalance = false;
                 }
 
-                $('#accordion').removeClass(hiddenClass).accordion({
-                    heightStyle : 'content',
-                    collapsible : true,
-                    active      : false
-                });
+                if($('#accordion').hasClass(hiddenClass)) {
+                    $('#accordion').removeClass(hiddenClass).accordion({
+                        heightStyle : 'content',
+                        collapsible : true,
+                        active      : false
+                    });
+                }
             }
         }
     };
@@ -324,7 +327,7 @@ var MetaTraderUI = (function() {
     var responsePasswordCheck = function(response) {
         $form = $('#form-withdrawal-real');
         if(response.hasOwnProperty('error')) {
-            return showFormMessage(response.error.message, false);
+            return showError('#txtMainPass', response.error.message);
         }
 
         if(+response.mt5_password_check === 1) {
@@ -358,8 +361,8 @@ var MetaTraderUI = (function() {
                 showError('#txtAmount', errMsgDeposit);
                 isValid = false;
             }
-        } else if(formName === 'withdrawal') {  // withdrawal form
-            var errMsgPass = MetaTrader.validatePassword($form.find('#txtMainPass').val());
+        } else if(formName === 'withdrawal') { // withdrawal form
+            var errMsgPass = MetaTrader.validateRequired($form.find('#txtMainPass').val());
             if(errMsgPass) {
                 showError('#txtMainPass', errMsgPass);
                 isValid = false;
