@@ -1,16 +1,17 @@
 var VirtualAccOpeningData = (function(){
     "use strict";
 
-    function getDetails(password, residence, verificationCode){
+    function getDetails(config) {
         var req = {
-                    new_account_virtual: 1,
-                    client_password: password,
-                    residence: residence,
-                    verification_code: verificationCode
-                };
+            new_account_virtual: 1,
+            client_password:     config.password,
+            residence:           config.residence,
+            verification_code:   config.verification_code,
+        };
 
-        if ($.cookie('affiliate_tracking')) {
-            req.affiliate_token = JSON.parse($.cookie('affiliate_tracking')).t;
+        var affiliateCookie = $.cookie('affiliate_tracking');
+        if (affiliateCookie) {
+            req.affiliate_token = JSON.parse(affiliateCookie).t;
         }
 
         BinarySocket.send(req);

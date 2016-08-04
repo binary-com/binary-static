@@ -61,9 +61,14 @@ var ValidateV2 = (function() {
         return !/^[!-~]+$/.test(password);
     }
 
+    function validToken(value) {
+        return token.length === 48;
+    }
+
     // CAN BE USED IN UI
     var required = check(notEmpty, msg('req'));
     var email    = check(validEmail, msg('valid', local('email address')));
+    var token    = check(validToken, msg('valid', local('verification token')));
     var password = function(value) {
         return dv.first(value, [
             password.len,
@@ -109,6 +114,7 @@ var ValidateV2 = (function() {
         required:  required,
         password:  password,
         email:     email,
+        token:     token,
         regex:     regex,
         lengthRange: lengthRange,
     };
