@@ -371,7 +371,7 @@ function handle_residence_state_ws(){
                 dobdd.value = /^0/.test(day) ? day.replace('0','') : day;
                 dobmm.value = moment.utc(settings.date_of_birth * 1000).format('MM');
                 dobyy.value = moment.utc(settings.date_of_birth * 1000).format('YYYY');
-                for (var i = 0; i < inputs.length; i++) {
+                for (i = 0; i < inputs.length; i++) {
                     inputs[i].disabled = true;
                 }
                 document.getElementById('address1').value = settings.address_line_1;
