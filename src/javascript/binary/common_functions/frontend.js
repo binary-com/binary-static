@@ -112,7 +112,7 @@ var select_nav_element = function() {
   var $navLink = $('.nav li a');
   var $navList = $('.nav li');
   $navList.removeClass('selected');
-  for (i = 0; i < $navLink.length; i++) {
+  for (var i = 0; i < $navLink.length; i++) {
     if ($navLink[i].href.match(window.location.pathname)) {
       document.getElementsByClassName('nav')[0].getElementsByTagName('li')[i].setAttribute('class', 'selected');
       break;
@@ -262,7 +262,7 @@ function appendTextValueChild(element, text, value, disabled){
 function dropDownNumbers(select, startNum, endNum) {
     select.appendChild(document.createElement("option"));
 
-    for (i = startNum; i <= endNum; i++){
+    for (var i = startNum; i <= endNum; i++){
         var option = document.createElement("option");
         option.text = i;
         option.value = i;
@@ -288,14 +288,14 @@ function dropDownMonths(select, startNum, endNum) {
         text.localize("Dec")
     ];
     select.appendChild(document.createElement("option"));
-    for (i = startNum; i <= endNum; i++){
+    for (var i = startNum; i <= endNum; i++){
         var option = document.createElement("option");
         if (i <= '9') {
             option.value = '0' + i;
         } else {
             option.value = i;
         }
-        for (j = i; j <= i; j++) {
+        for (var j = i; j <= i; j++) {
             option.text = months[j-1];
         }
         select.appendChild(option);
@@ -371,7 +371,7 @@ function handle_residence_state_ws(){
                 dobdd.value = /^0/.test(day) ? day.replace('0','') : day;
                 dobmm.value = moment.utc(settings.date_of_birth * 1000).format('MM');
                 dobyy.value = moment.utc(settings.date_of_birth * 1000).format('YYYY');
-                for (i = 0; i < inputs.length; i++) {
+                for (var i = 0; i < inputs.length; i++) {
                     inputs[i].disabled = true;
                 }
                 document.getElementById('address1').value = settings.address_line_1;

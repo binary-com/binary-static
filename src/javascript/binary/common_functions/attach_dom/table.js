@@ -1,3 +1,4 @@
+// @flow
 var Table = (function(){
     "use strict";
     /***
