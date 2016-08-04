@@ -1,54 +1,57 @@
 var MetaTrader = (function(){
     'use strict';
 
-    var validatePassword = function(password) {
-        var errMsg = '';
+    var validateRequired = function(value) {
+        return (!/^.+$/.test(value) ? Content.errorMessage('req') : '');
+    };
 
-        if (!/^.+$/.test(password)) {
-            errMsg = Content.errorMessage('req');
-        } else if (password.length < 6 || password.length > 25) {
-            errMsg = Content.errorMessage('range', '6-25');
-        } else if (!/[0-9]+/.test(password) || !/[A-Z]+/.test(password) || !/[a-z]+/.test(password)) {
-            errMsg = text.localize('Password should have lower and uppercase letters with numbers.');
-        } else if (!/^[!-~]+$/.test(password)) {
-            errMsg = Content.errorMessage('valid', Content.localize().textPassword);
+    var validatePassword = function(password) {
+        var errMsg = validateRequired(password);
+
+        if (!errMsg) {
+            if (password.length < 6 || password.length > 25) {
+                errMsg = Content.errorMessage('range', '6-25');
+            } else if (!/[0-9]+/.test(password) || !/[A-Z]+/.test(password) || !/[a-z]+/.test(password)) {
+                errMsg = text.localize('Password should have lower and uppercase letters with numbers.');
+            } else if (!/^[!-~]+$/.test(password)) {
+                errMsg = Content.errorMessage('valid', Content.localize().textPassword);
+            }
         }
 
         return errMsg;
     };
 
     var validateName = function(name) {
-        var errMsg = '';
+        var errMsg = validateRequired(name);
 
-        if (!/^.+$/.test(name)) {
-            errMsg = Content.errorMessage('req');
-        } else if (name.length < 2 || name.length > 30) {
-            errMsg = Content.errorMessage('range', '2-30');
-        } else if (!/^[a-zA-Z\s-.']+$/.test(name)) {
-            var letters = Content.localize().textLetters,
-                space   = Content.localize().textSpace,
-                hyphen  = Content.localize().textHyphen,
-                period  = Content.localize().textPeriod,
-                apost   = Content.localize().textApost;
-            errMsg = Content.errorMessage('reg', [letters, space, hyphen, period, apost]);
+        if (!errMsg) {
+            if (name.length < 2 || name.length > 30) {
+                errMsg = Content.errorMessage('range', '2-30');
+            } else if (!/^[a-zA-Z\s-.']+$/.test(name)) {
+                var letters = Content.localize().textLetters,
+                    space   = Content.localize().textSpace,
+                    hyphen  = Content.localize().textHyphen,
+                    period  = Content.localize().textPeriod,
+                    apost   = Content.localize().textApost;
+                errMsg = Content.errorMessage('reg', [letters, space, hyphen, period, apost]);
+            }
         }
 
         return errMsg;
     };
 
     var validateAmount = function(amount) {
-        var errMsg = '';
+        var errMsg = validateRequired(amount);
 
-        if (!/^.+$/.test(amount)) {
-            errMsg = Content.errorMessage('req');
-        } else if(!(/^\d+(\.\d+)?$/).test(amount) || !$.isNumeric(amount)) {
-            errMsg = Content.errorMessage('reg', [numbers]);
+        if (!errMsg && (!(/^\d+(\.\d+)?$/).test(amount) || !$.isNumeric(amount))) {
+            errMsg = Content.errorMessage('reg', [Content.localize().textNumbers]);
         }
 
         return errMsg;
     };
 
     return {
+        validateRequired: validateRequired,
         validatePassword: validatePassword,
         validateName    : validateName,
         validateAmount  : validateAmount,
