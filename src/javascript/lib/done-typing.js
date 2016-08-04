@@ -24,10 +24,6 @@ function done_typing(elem, config) {
 
     elem.addEventListener('keydown', down);
     elem.addEventListener('keyup', up);
-    return function() {
-        elem.removeEventListener('keydown', down);
-        elem.removeEventListener('keyup', up);
-    };
 };
 
 if (typeof module !== 'undefined') {

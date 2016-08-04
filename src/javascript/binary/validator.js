@@ -74,7 +74,7 @@ function stripTrailing(name) {
  *
  * @param form             A form Element (not JQuery object).
  * @param config           Configuration object.
- * @param config.getState  Returns the current data on the form.
+ * @param config.extract   Returns the current data on the form.
  * @param config.validate  Receives the current data returns an object with
  *                         {values: Object, errors: [{ctx: key, err: msg}...]}.
  * @param config.stop      Called when the user stops typing with the return
@@ -82,7 +82,7 @@ function stripTrailing(name) {
  * @param config.submit    Called on submit event with event and validation state.
  */
 function bind_validation(form, config) {
-    var getState = config.getState;
+    var extract  = config.extract;
     var validate = config.validate;
     var stop     = config.stop;
     var submit   = config.submit;
@@ -93,7 +93,7 @@ function bind_validation(form, config) {
     }
 
     function onStop(ev) {
-        var data = getState();
+        var data = extract();
         var validation = validate(data);
         validation.errors = validation.errors.filter(function(err) {
             return seen[err.ctx];
@@ -102,7 +102,7 @@ function bind_validation(form, config) {
     }
 
     form.addEventListener('submit', function(ev) {
-        var data = getState();
+        var data = extract();
         var validation = validate(data);
         stop(validation);
         submit(ev, validation);
@@ -123,7 +123,7 @@ function bind_validation(form, config) {
  *
  * @param form  Form element.
  * @param opts  Config object.
- * @param opts.getState  Optional. Defaults to `formToObj(form)`.
+ * @param opts.extract  Optional. Defaults to `formToObj(form)`.
  * @param opts.submit    Required.
  * @param opts.validate  Optional. If you do not specify this then opts.schema
  *                       is required.
@@ -134,7 +134,7 @@ function bind_validation(form, config) {
 bind_validation.simple = function(form, opts) {
     bind_validation(form, {
         submit:   opts.submit,
-        getState: opts.getState || function() { return formToObj(form); },
+        extract:  opts.extract  || function() { return formToObj(form); },
         validate: opts.validate || function(data) { return validate_object(data, opts.schema); },
         stop:     opts.stop     || function(validation) {
             ValidationUI.clear();
