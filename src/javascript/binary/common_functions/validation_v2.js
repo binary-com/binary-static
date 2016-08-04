@@ -40,7 +40,7 @@ var ValidateV2 = (function() {
     // TEST THESE
     function validEmail(email) {
         var regex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/;
-        return regex.test(mail);
+        return regex.test(email);
     }
 
     function notEmpty(value) {
