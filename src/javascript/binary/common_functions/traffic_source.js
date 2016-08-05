@@ -29,20 +29,27 @@ var TrafficSource = (function(){
         return cookie.value;
     };
 
+    var getSource = function(utm_data) {
+        if (!utm_data) utm_data = getData();
+        return utm_data.utm_source || utm_data.referrer || 'direct'; // in order of precedence
+    };
+
     var setData = function() {
         if (page.client.is_logged_in) return clearData();
 
-        var utm_data = getData(),
+        var current_values = getData(),
             params = page.url.params_hash(),
             param_keys = ['utm_source', 'utm_medium', 'utm_campaign'];
 
-        param_keys.map(function(key) {
-            if (params[key] && !utm_data[key]) {
-                cookie.set(key, params[key]);
-            }
-        });
+        if (params.utm_source) { // url params can be stored only if utm_source is available
+            param_keys.map(function(key) {
+                if (params[key] && !current_values[key]) {
+                    cookie.set(key, params[key]);
+                }
+            });
+        }
 
-        if(document.referrer && !utm_data.referrer) {
+        if(document.referrer && !current_values.referrer && !params.utm_source && !current_values.utm_source) {
             var referrer = (new URL(document.referrer)).location.hostname;
             cookie.set('referrer', referrer);
         }
@@ -56,6 +63,7 @@ var TrafficSource = (function(){
     return {
         getData  : getData,
         setData  : setData,
-        clearData: clearData
+        clearData: clearData,
+        getSource: getSource,
     };
 })();
