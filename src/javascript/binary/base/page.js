@@ -1102,6 +1102,7 @@ Page.prototype = {
             Login.redirect_to_login();
         }
         this.check_language();
+        AdWords.setData();
     },
     on_unload: function() {
         this.header.on_unload();
