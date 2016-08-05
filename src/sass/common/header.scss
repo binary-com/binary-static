@@ -1,13 +1,4 @@
 /* Logo and top bar */
-
-.dark-blue {
-    background: $COLOR_DARK_BLUE;
-}
-
-.orange {
-    background: $COLOR_ORANGE;
-}
-
 #topbar {
     width: 100%;
     color: $COLOR_WHITE;
@@ -45,9 +36,6 @@
 }
 
 #header {
-    background: $COLOR_BLUE;
-    border-top: 2px solid $COLOR_BLUE_SHADE;
-    border-bottom: 4px solid $COLOR_ORANGE;
     height: 75px;
     a {
         color: $COLOR_WHITE;
