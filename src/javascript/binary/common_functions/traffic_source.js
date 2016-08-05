@@ -8,7 +8,7 @@
  *
  */
 
-var AdWords = (function(){
+var TrafficSource = (function(){
     'use strict';
 
     var cookie,
