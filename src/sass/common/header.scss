@@ -67,15 +67,7 @@
     }
     #client-logged-out {
         #btn_login {
-            @include link-button;
-            border: 0;
-            text-transform: uppercase;
-            padding: 0px 10px;
-            white-space: nowrap;
-            font-weight: normal;
-            font-size: 0.8em;
-            line-height: 2em;
-            margin: 0.8em 0;
+            margin-bottom: 0;
         }
     }
     #client-logged-out, #loginid-switch-form {
