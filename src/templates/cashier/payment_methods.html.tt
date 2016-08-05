@@ -168,7 +168,7 @@
         </div>
 
         <div class="gr-3 gr-hide-m">
-                [% l('Instant') %]<br>[% l('Withdraw: [_1] working days', 3) %]
+                [% l('Deposit: Instant') %]<br>[% l('Withdraw: [_1] working days', 3) %]
         </div>
     </div>
 
