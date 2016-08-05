@@ -62,7 +62,7 @@ var ValidateV2 = (function() {
     }
 
     function validToken(value) {
-        return token.length === 48;
+        return value.length === 48;
     }
 
     // CAN BE USED IN UI
