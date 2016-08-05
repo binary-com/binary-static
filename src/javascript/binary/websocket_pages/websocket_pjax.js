@@ -70,3 +70,11 @@ pjax_config_page_require_auth("user/settings/metatrader", function() {
         }
     };
 });
+
+pjax_config_page_require_auth("user/settings/securityws", function() {
+    return {
+        onLoad: function() {
+            SecurityWS.init();
+        }
+    };
+});
