@@ -54,7 +54,6 @@ var PasswordWS = (function(){
     }
 
     function sendRequest(data) {
-        $form.find('p[data-error="server-sent-error"]').addClass('hidden');
         BinarySocket.send({
             'change_password': '1',
             'old_password': data.old_password,
@@ -62,11 +61,11 @@ var PasswordWS = (function(){
         });
     }
 
-    function handler(resp) {
-        if ('error' in resp) {
+    function handler(response) {
+        if ('error' in response) {
             var errorMsg = text.localize('Old password is wrong.');
-            if ('message' in resp.error) {
-                errorMsg = resp.error.message;
+            if ('message' in response.error) {
+                errorMsg = response.error.message;
             }
             $form.find('p[data-error="server-sent-error"]').text(errorMsg).removeClass('hidden');
             return;
