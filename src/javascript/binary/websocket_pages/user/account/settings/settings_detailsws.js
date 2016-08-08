@@ -1,20 +1,14 @@
 var SettingsDetailsWS = (function() {
     "use strict";
 
-    var formID,
-        frmBtn,
-        RealAccElements,
-        errorClass;
+    var formID = '#frmPersonalDetails';
+    var RealAccElements = '.RealAcc';
     var fieldIDs;
     var isValid,
         changed;
 
 
     var init = function() {
-        formID = '#frmPersonalDetails';
-        frmBtn = formID + ' button';
-        RealAccElements = '.RealAcc';
-        errorClass = 'errorfield';
         changed = false;
         fieldIDs = {
             address1 : '#Address1',
@@ -25,8 +19,13 @@ var SettingsDetailsWS = (function() {
             phone    : '#Phone'
         };
 
+        var isJP = page.client.residence === 'jp';
         BinarySocket.send({"get_settings": "1"});
-        if (page.client.residence === 'jp') {
+        bind_validation.simple($(formID)[0], {
+            validate: isJP ? validateJP : validateNonJP,
+            submit:   isJP ? submitJP   : submitNonJP,
+        });
+        if (isJP) {
             detect_hedging($('#PurposeOfTrading'), $('.hedge'));
         }
     };
@@ -98,10 +97,6 @@ var SettingsDetailsWS = (function() {
 
                 $(RealAccElements).removeClass('hidden');
             }
-            bind_validation.simple($(formID)[0], {
-                validate: page.client.residence === 'jp' ? validateJP : validateNonJP,
-                submit:   page.client.residence === 'jp' ? submitJP   : submitNonJP,
-            });
         }
 
         $(formID).removeClass('hidden');
@@ -173,7 +168,7 @@ var SettingsDetailsWS = (function() {
         var V2 = ValidateV2;
         var numbers = Content.localize().textNumbers;
         var schema = {
-            hedgeAssetAmount: [
+            hedge_asset_amount: [
                 function(v) { return dv.ok(v.trim()); },
                 V2.required,
                 V2.regex(/^\d+$/, [numbers]),
@@ -186,7 +181,7 @@ var SettingsDetailsWS = (function() {
         ev.preventDefault();
         ev.stopPropagation();
         if (info.errors.length > 0 || !changed) return;
-        delete info.values.hedgeAssetAmount;
+        delete info.values.hedge_asset_amount;
         setDetails(info.values);
     }
 
@@ -205,12 +200,12 @@ var SettingsDetailsWS = (function() {
         var isPhoneNo  = V2.regex(/^(|\+?[0-9\s\-]+)$/,             [numbers, space, '-']);
 
         var schema = {
-            address1: [V2.required, isAddress],
-            address2: [maybeEmptyAddress],
-            city:     [V2.required],
-            state:    [V2.required, isState],
-            postcode: [V2.required, V2.lengthRange(4, 20), isPostcode],
-            phone:    [V2.lengthRange(6, 35), isPhoneNo],
+            address_line_1:   [V2.required, isAddress],
+            address_line_2:   [maybeEmptyAddress],
+            address_city:     [V2.required],
+            address_state:    [V2.required, isState],
+            address_postcode: [V2.required, V2.lengthRange(4, 20), isPostcode],
+            phone:            [V2.lengthRange(6, 35), isPhoneNo],
         };
         return validate_object(data, schema);
     }
@@ -220,6 +215,7 @@ var SettingsDetailsWS = (function() {
         Object.keys(data).forEach(function(key) {
             req[key] = data[key];
         });
+        console.log(req);
         BinarySocket.send(req);
     };
 
