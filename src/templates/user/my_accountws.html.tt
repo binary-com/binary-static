@@ -27,7 +27,8 @@
             <div class="gr-6 gr-parent">
                 <div class="gr-8 gr-padding-10">
                     <a href="[% request.url_for('/cashier') %]" class="pjaxload">
-                        <img class="responsive" src="[% request.url_for('images/pages/my_account/cashier-icon.svg') %]" />
+                        <img class="responsive ja-hide" src="[% request.url_for('images/pages/my_account/cashier-icon.svg') %]" />
+                        <img class="responsive hidden ja-show" src="[% request.url_for('images/pages/cashier/japan_cashier.svg') %]" />
                     </a>
                 </div>
                 <div class="gr-12">
