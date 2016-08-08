@@ -17,8 +17,8 @@ var PasswordWS = (function(){
         });
     }
 
-    var IS_EMPTY = {};
-    var MATCHES_OLD = {};
+    var IS_EMPTY    = {q: 'old-blank'};
+    var MATCHES_OLD = {q: 'same-as-old'};
 
     function displayErrors(info) {
         ValidationUI.clear();
@@ -26,10 +26,8 @@ var PasswordWS = (function(){
         info.errors.forEach(function(err) {
             switch (err.err) {
                 case MATCHES_OLD:
-                    $form.find('p[data-error="same-as-old"]').removeClass('hidden');
-                    break;
                 case IS_EMPTY:
-                    $form.find('p[data-error="old-blank"]').removeClass('hidden');
+                    $form.find('p[data-error="'+err.err.q+'"]').removeClass('hidden');
                     break;
                 default:
                     ValidationUI.draw('input[name=' + err.ctx + ']', err.err);
