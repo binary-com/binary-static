@@ -125,7 +125,7 @@ var SettingsDetailsWS = (function() {
                 $field.append($('<option/>', {value: state.value, text: state.text}));
             });
         } else {
-            $field.replaceWith($('<input/>', {id: fieldIDs.state, type: 'text', maxlength: '35'}));
+            $field.replaceWith($('<input/>', {id: fieldIDs.state, name: 'address_state', type: 'text', maxlength: '35'}));
         }
 
         $field.val(defaultValue);
