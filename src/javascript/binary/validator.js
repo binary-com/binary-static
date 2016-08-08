@@ -15,14 +15,15 @@ var ValidationUI = {
 
 
 /**
-* Replaces error messages returned by a validator by the given
-* error message `err`.
-*/
+ * Replaces error messages returned by a validator by the given
+ * error message `err`. Only use this on validators with one
+ * error message.
+ */
 function customError(fn, err) {
     return function(value) {
-        return fn(value).fmap(function() {
-            return err;
-        });
+        var rv = fn(value);
+        if (!rv.isOk) rv.value = [err];
+        return rv;
     };
 }
 
@@ -123,7 +124,7 @@ function bind_validation(form, config) {
  *
  * @param form  Form element.
  * @param opts  Config object.
- * @param opts.extract  Optional. Defaults to `formToObj(form)`.
+ * @param opts.extract   Optional. Defaults to `formToObj(form)`.
  * @param opts.submit    Required.
  * @param opts.validate  Optional. If you do not specify this then opts.schema
  *                       is required.

@@ -98,10 +98,9 @@ var SettingsDetailsWS = (function() {
 
                 $(RealAccElements).removeClass('hidden');
             }
-            $(frmBtn).click(function(e){
-                e.preventDefault();
-                e.stopPropagation();
-                return setDetails();
+            bind_validation.simple($(formID)[0], {
+                validate: page.client.residence === 'jp' ? validateJP : validateNonJP,
+                submit:   page.client.residence === 'jp' ? submitJP   : submitNonJP,
             });
         }
 
@@ -128,160 +127,101 @@ var SettingsDetailsWS = (function() {
         });
     };
 
-    var formValidate = function() {
-        clearError();
-        isValid = true;
+    function toJPSettings(data) {
+        var jp_settings = {};
+        jp_settings = {};
+        jp_settings["annual_income"]                               = data.annualIncome;
+        jp_settings["financial_asset"]                             = data.financialAsset;
+        jp_settings["occupation"]                                  = data.occupation;
+        jp_settings["trading_experience_equities"]                 = data.equities;
+        jp_settings["trading_experience_commodities"]              = data.commodities;
+        jp_settings["trading_experience_foreign_currency_deposit"] = data.foreignCurrencyDeposit;
+        jp_settings["trading_experience_margin_fx"]                = data.marginFX;
+        jp_settings["trading_experience_investment_trust"]         = data.InvestmentTrust;
+        jp_settings["trading_experience_public_bond"]              = data.publicCorporationBond;
+        jp_settings["trading_experience_option_trading"]           = data.derivativeTrading;
+        jp_settings["trading_purpose"]                             = data.purposeOfTrading;
+        if (data.purposeOfTrading === 'Hedging') {
+            jp_settings["hedge_asset"]        = data.hedgeAsset;
+            jp_settings["hedge_asset_amount"] = data.hedgeAssetAmount;
+        }
+        return {jp_settings: jp_settings};
+    }
 
-        var address1 = $(fieldIDs.address1).val().trim(),
-            address2 = $(fieldIDs.address2).val().trim(),
-            city     = $(fieldIDs.city).val().trim(),
-            state    = $(fieldIDs.state).val(),
-            postcode = $(fieldIDs.postcode).val().trim(),
-            phone    = $(fieldIDs.phone).val().trim();
+    function submitJP(ev, info) {
+        ev.preventDefault();
+        ev.stopPropagation();
+        if (info.errors.length > 0 || !changed) return;
+        setDetails(toJPSettings({
+            hedgeAssetAmount       : hedgeAssetAmount.val().trim(),
+            annualIncome           : $('#AnnualIncome').val().trim(),
+            financialAsset         : $('#FinancialAsset').val().trim(),
+            occupation             : $('#Occupation').val().trim(),
+            equities               : $('#Equities').val().trim(),
+            commodities            : $('#Commodities').val().trim(),
+            foreignCurrencyDeposit : $('#ForeignCurrencyDeposit').val().trim(),
+            marginFX               : $('#MarginFX').val().trim(),
+            InvestmentTrust        : $('#InvestmentTrust').val().trim(),
+            publicCorporationBond  : $('#PublicCorporationBond').val().trim(),
+            derivativeTrading      : $('#DerivativeTrading').val().trim(),
+            purposeOfTrading       : $('#PurposeOfTrading').val().trim(),
+            hedgeAsset             : $('#HedgeAsset').val().trim()
+        }));
+    }
 
-        var hedgeAssetAmount = $('#HedgeAssetAmount');
+    function validateJP(data) {
+        var V2 = ValidateV2;
+        var numbers = Content.localize().textNumbers;
+        var schema = {
+            hedgeAssetAmount: [
+                function(v) { return dv.ok(v.trim()); },
+                V2.required,
+                V2.regex(/^\d+$/, [numbers]),
+            ],
+        };
+        return validate_object(schema, data);
+    }
 
+    function submitNonJP(ev, info) {
+        ev.preventDefault();
+        ev.stopPropagation();
+        if (info.errors.length > 0 || !changed) return;
+        delete values.hedgeAssetAmount;
+        setDetails(info.values);
+    }
+
+    function validateNonJP(data) {
         var letters = Content.localize().textLetters,
             numbers = Content.localize().textNumbers,
             space   = Content.localize().textSpace,
             period  = Content.localize().textPeriod,
             comma   = Content.localize().textComma;
 
-        if (page.client.residence === 'jp') {
-            // hedge asset
-            if (hedgeAssetAmount.is(':visible') && !isRequiredError(hedgeAssetAmount) && !/^\d+$/.test(hedgeAssetAmount.val().trim())) {
-                showError(hedgeAssetAmount, Content.errorMessage('reg', [numbers]));
-            }
-        } else {
-            // address 1
-            if(!isRequiredError(fieldIDs.address1) && !(/^[a-zA-Z0-9\s\,\.\-\/\(\)#']+$/).test(address1)) {
-                showError(fieldIDs.address1, Content.errorMessage('reg', [letters, numbers, space, period, comma, '- / ( ) # \'']));
-            }
+        var V2 = ValidateV2;
+        var maybeEmptyAddress = V2.regex(/^[a-zA-Z0-9\s\,\.\-\/\(\)#']*$/, [letters, numbers, space, period, comma, '- / ( ) # \'']);
+        var isAddress  = V2.regex(/^[a-zA-Z0-9\s\,\.\-\/\(\)#']+$/, [letters, numbers, space, period, comma, '- / ( ) # \'']);
+        var isState    = V2.regex(/^[a-zA-Z\s\-']+$/,               [letters, space, '- \'']);
+        var isPostcode = V2.regex(/(^[a-zA-Z0-9\s\-\/]+$)/,         [letters, numbers, space, '- /']);
+        var isPhoneNo  = V2.regex(/^(|\+?[0-9\s\-]+)$/,             [numbers, space, '-']);
 
-            // address line 2
-            if(!(/^[a-zA-Z0-9\s\,\.\-\/\(\)#']*$/).test(address2)) {
-                showError(fieldIDs.address2, Content.errorMessage('reg', [letters, numbers, space, period, comma, '- / ( ) # \'']));
-            }
+        var schema = {
+            address1: [V2.required, isAddress],
+            address2: [maybeEmptyAddress],
+            city:     [V2.required],
+            state:    [V2.required, isState],
+            postcode: [V2.required, V2.lengthRange(4, 20), isPostcode],
+            phone:    [V2.lengthRange(6, 35), isPhoneNo],
+        };
+        return validate_object(data, schema);
+    }
 
-            // town/city
-            isRequiredError(fieldIDs.city);
-
-            // state
-            if(!isRequiredError(fieldIDs.state) && ($(fieldIDs.state).is('input') && !(/^[a-zA-Z\s\-']+$/).test(state))) {
-                showError(fieldIDs.state, Content.errorMessage('reg', [letters, space, '- \'']));
-            }
-
-            // postcode
-            if(!isRequiredError(fieldIDs.postcode) && !isCountError(fieldIDs.postcode, 4, 20) && !(/(^[a-zA-Z0-9\s\-\/]+$)/).test(postcode)) {
-                showError(fieldIDs.postcode, Content.errorMessage('reg', [letters, numbers, space, '- /']));
-            }
-
-            // telephone
-            if(!isCountError(fieldIDs.phone, 6, 35) && !(/^(|\+?[0-9\s\-]+)$/).test(phone)) {
-                showError(fieldIDs.phone, Content.errorMessage('reg', [numbers, space, '-']));
-            }
-        }
-
-        if (!changed) {
-          isValid = false;
-        }
-        changed = false;
-
-        if(isValid) {
-            if (page.client.residence === 'jp') {
-                return {
-                    hedgeAssetAmount       : hedgeAssetAmount.val().trim(),
-                    annualIncome           : $('#AnnualIncome').val().trim(),
-                    financialAsset         : $('#FinancialAsset').val().trim(),
-                    occupation             : $('#Occupation').val().trim(),
-                    equities               : $('#Equities').val().trim(),
-                    commodities            : $('#Commodities').val().trim(),
-                    foreignCurrencyDeposit : $('#ForeignCurrencyDeposit').val().trim(),
-                    marginFX               : $('#MarginFX').val().trim(),
-                    InvestmentTrust        : $('#InvestmentTrust').val().trim(),
-                    publicCorporationBond  : $('#PublicCorporationBond').val().trim(),
-                    derivativeTrading      : $('#DerivativeTrading').val().trim(),
-                    purposeOfTrading       : $('#PurposeOfTrading').val().trim(),
-                    hedgeAsset             : $('#HedgeAsset').val().trim()
-                };
-            } else {
-                return {
-                    address1 : address1,
-                    address2 : address2,
-                    city     : city,
-                    state    : state,
-                    postcode : postcode,
-                    phone    : phone
-                };
-            }
-        }
-        else {
-            return false;
-        }
-    };
-
-    var isRequiredError = function(fieldID) {
-        if(!$(fieldID).val() || !(/.+/).test($(fieldID).val().trim())){
-            showError(fieldID, Content.errorMessage('req'));
-            return true;
-        } else {
-            return false;
-        }
-    };
-
-    var isCountError = function(fieldID, min, max) {
-        var fieldValue = $(fieldID).val().trim();
-        if((fieldValue.length > 0 && fieldValue.length < min) || fieldValue.length > max) {
-            showError(fieldID, Content.errorMessage('range', '(' + min + '-' + max + ')'));
-            return true;
-        } else {
-            return false;
-        }
-    };
-
-    var showError = function(fieldID, errMsg) {
-        $(fieldID).after($('<p/>', {class: errorClass, text: errMsg}));
-        isValid = false;
-    };
-
-    var clearError = function(fieldID) {
-        $(fieldID ? fieldID : formID + ' .' + errorClass).remove();
-    };
-
-    var setDetails = function() {
-        var formData = formValidate();
-        if(!formData)
-            return false;
-
+    var setDetails = function(data) {
         var req = {"set_settings" : 1};
-
-        if (page.client.residence === 'jp') {
-            req["jp_settings"] = {};
-            req["jp_settings"]["annual_income"]                               = formData.annualIncome;
-            req["jp_settings"]["financial_asset"]                             = formData.financialAsset;
-            req["jp_settings"]["occupation"]                                  = formData.occupation;
-            req["jp_settings"]["trading_experience_equities"]                 = formData.equities;
-            req["jp_settings"]["trading_experience_commodities"]              = formData.commodities;
-            req["jp_settings"]["trading_experience_foreign_currency_deposit"] = formData.foreignCurrencyDeposit;
-            req["jp_settings"]["trading_experience_margin_fx"]                = formData.marginFX;
-            req["jp_settings"]["trading_experience_investment_trust"]         = formData.InvestmentTrust;
-            req["jp_settings"]["trading_experience_public_bond"]              = formData.publicCorporationBond;
-            req["jp_settings"]["trading_experience_option_trading"]           = formData.derivativeTrading;
-            req["jp_settings"]["trading_purpose"]                             = formData.purposeOfTrading;
-            if (formData.purposeOfTrading === 'Hedging') {
-                req["jp_settings"]["hedge_asset"]        = formData.hedgeAsset;
-                req["jp_settings"]["hedge_asset_amount"] = formData.hedgeAssetAmount;
-            }
-        } else {
-            req["address_line_1"]   = formData.address1;
-            req["address_line_2"]   = formData.address2;
-            req["address_city"]     = formData.city;
-            req["address_state"]    = formData.state;
-            req["address_postcode"] = formData.postcode;
-            req["phone"]            = formData.phone;
-        }
-
-        BinarySocket.send(req);
+        Object.keys(data).forEach(function(key) {
+            req[key] = data[key];
+        });
+        console.log(req);
+        //BinarySocket.send(req);
     };
 
     var setDetailsResponse = function(response) {
@@ -293,11 +233,9 @@ var SettingsDetailsWS = (function() {
             .fadeOut(1000);
     };
 
-
     return {
         init: init,
         getDetails: getDetails,
-        setDetails: setDetails,
         setDetailsResponse: setDetailsResponse,
         populateStates: populateStates
     };
