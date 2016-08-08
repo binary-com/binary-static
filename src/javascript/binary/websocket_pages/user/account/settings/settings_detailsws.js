@@ -234,7 +234,7 @@ var SettingsDetailsWS = (function() {
             .attr('class', isSuccess ? 'success-msg' : 'errorfield')
             .html(isSuccess ? '<ul class="checked"><li>' + text.localize(msg) + '</li></ul>' : text.localize(msg))
             .css('display', 'block')
-            .delay(3000)
+            .delay(5000)
             .fadeOut(1000);
     }
 
