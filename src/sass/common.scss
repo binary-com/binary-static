@@ -93,7 +93,7 @@ fieldset {
     position: relative;
     border: 1px solid $COLOR_GRAY;
     padding: 5px;
-    @include section-background;
+    margin-bottom: 10px;
     &#formlayout {
         background: none;
         border: 0;
