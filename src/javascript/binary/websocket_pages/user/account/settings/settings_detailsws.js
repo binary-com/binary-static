@@ -22,8 +22,18 @@ var SettingsDetailsWS = (function() {
         var isJP = page.client.residence === 'jp';
         BinarySocket.send({"get_settings": "1"});
         bind_validation.simple($(formID)[0], {
-            validate: isJP ? validateJP : validateNonJP,
-            submit:   isJP ? submitJP   : submitNonJP,
+            schema: isJP ? getJPSchema() : getNonJPSchema(),
+            submit: function(ev, info) {
+                ev.preventDefault();
+                ev.stopPropagation();
+                if (info.errors.length > 0) return;
+                if (!changed) {
+                    showFormMessage('You did not change anything.', false);
+                    return;
+                }
+                if (isJP) return submitJP(info.values);
+                submitNonJP(info.values);
+            },
         });
         if (isJP) {
             detect_hedging($('#PurposeOfTrading'), $('.hedge'));
@@ -143,49 +153,44 @@ var SettingsDetailsWS = (function() {
         return {jp_settings: jp_settings};
     }
 
-    function submitJP(ev, info) {
-        ev.preventDefault();
-        ev.stopPropagation();
-        if (info.errors.length > 0 || !changed) return;
+    function submitJP(data) {
+        function trim(s) {
+            return $(s).val().trim();
+        }
         setDetails(toJPSettings({
-            hedgeAssetAmount       : hedgeAssetAmount.val().trim(),
-            annualIncome           : $('#AnnualIncome').val().trim(),
-            financialAsset         : $('#FinancialAsset').val().trim(),
-            occupation             : $('#Occupation').val().trim(),
-            equities               : $('#Equities').val().trim(),
-            commodities            : $('#Commodities').val().trim(),
-            foreignCurrencyDeposit : $('#ForeignCurrencyDeposit').val().trim(),
-            marginFX               : $('#MarginFX').val().trim(),
-            InvestmentTrust        : $('#InvestmentTrust').val().trim(),
-            publicCorporationBond  : $('#PublicCorporationBond').val().trim(),
-            derivativeTrading      : $('#DerivativeTrading').val().trim(),
-            purposeOfTrading       : $('#PurposeOfTrading').val().trim(),
-            hedgeAsset             : $('#HedgeAsset').val().trim()
+            hedgeAssetAmount       : data.hedge_asset_amount,
+            annualIncome           : trim('#AnnualIncome'),
+            financialAsset         : trim('#FinancialAsset'),
+            occupation             : trim('#Occupation'),
+            equities               : trim('#Equities'),
+            commodities            : trim('#Commodities'),
+            foreignCurrencyDeposit : trim('#ForeignCurrencyDeposit'),
+            marginFX               : trim('#MarginFX'),
+            InvestmentTrust        : trim('#InvestmentTrust'),
+            publicCorporationBond  : trim('#PublicCorporationBond'),
+            derivativeTrading      : trim('#DerivativeTrading'),
+            purposeOfTrading       : trim('#PurposeOfTrading'),
+            hedgeAsset             : trim('#HedgeAsset')
         }));
     }
 
-    function validateJP(data) {
+    function getJPSchema(data) {
         var V2 = ValidateV2;
-        var numbers = Content.localize().textNumbers;
-        var schema = {
+        return {
             hedge_asset_amount: [
                 function(v) { return dv.ok(v.trim()); },
                 V2.required,
-                V2.regex(/^\d+$/, [numbers]),
+                V2.regex(/^\d+$/, [Content.localize().textNumbers]),
             ],
         };
-        return validate_object(schema, data);
     }
 
-    function submitNonJP(ev, info) {
-        ev.preventDefault();
-        ev.stopPropagation();
-        if (info.errors.length > 0 || !changed) return;
-        delete info.values.hedge_asset_amount;
-        setDetails(info.values);
+    function submitNonJP(data) {
+        delete data.hedge_asset_amount;
+        setDetails(data);
     }
 
-    function validateNonJP(data) {
+    function getNonJPSchema() {
         var letters = Content.localize().textLetters,
             numbers = Content.localize().textNumbers,
             space   = Content.localize().textSpace,
@@ -199,7 +204,7 @@ var SettingsDetailsWS = (function() {
         var isPostcode = V2.regex(/(^[a-zA-Z0-9\s\-\/]+$)/,         [letters, numbers, space, '- /']);
         var isPhoneNo  = V2.regex(/^(|\+?[0-9\s\-]+)$/,             [numbers, space, '-']);
 
-        var schema = {
+        return {
             address_line_1:   [V2.required, isAddress],
             address_line_2:   [maybeEmptyAddress],
             address_city:     [V2.required],
@@ -207,28 +212,34 @@ var SettingsDetailsWS = (function() {
             address_postcode: [V2.required, V2.lengthRange(4, 20), isPostcode],
             phone:            [V2.lengthRange(6, 35), isPhoneNo],
         };
-        return validate_object(data, schema);
     }
 
-    var setDetails = function(data) {
+    function setDetails(data) {
         var req = {"set_settings" : 1};
         Object.keys(data).forEach(function(key) {
             req[key] = data[key];
         });
         console.log(req);
         BinarySocket.send(req);
-    };
+    }
 
-    var setDetailsResponse = function(response) {
+    function showFormMessage(msg, isSuccess) {
+        $('#formMessage')
+            .attr('class', isSuccess ? 'success-msg' : 'errorfield')
+            .html(isSuccess ? '<ul class="checked"><li>' + text.localize(msg) + '</li></ul>' : text.localize(msg))
+            .css('display', 'block')
+            .delay(3000)
+            .fadeOut(1000);
+    }
+
+    function setDetailsResponse(response) {
         var isError = response.set_settings !== 1;
         // allow user to resubmit the form on error.
         changed = isError ? true : false;
-        $('#formMessage').css('display', '')
-            .attr('class', isError ? 'errorfield' : 'success-msg')
-            .html(isError ? text.localize('Sorry, an error occurred while processing your account.') : '<ul class="checked"><li>' + text.localize('Your settings have been updated successfully.') + '</li></ul>')
-            .delay(3000)
-            .fadeOut(1000);
-    };
+        showFormMessage(isError ?
+            'Sorry, an error occurred while processing your account.' :
+            'Your settings have been updated successfully.', !isError);
+    }
 
     return {
         init: init,
@@ -246,27 +257,26 @@ pjax_config_page_require_auth("settings/detailsws", function() {
             BinarySocket.init({
                 onmessage: function(msg) {
                     var response = JSON.parse(msg.data);
-                    if (response) {
-                        var type = response.msg_type;
-                        switch(type){
-                            case "get_settings":
-                                SettingsDetailsWS.getDetails(response);
-                                break;
-                            case "set_settings":
-                                SettingsDetailsWS.setDetailsResponse(response);
-                                break;
-                            case "states_list":
-                                SettingsDetailsWS.populateStates(response);
-                                break;
-                            case "error":
-                                $('#formMessage').attr('class', 'errorfield').text(response.error.message);
-                                break;
-                            default:
-                                break;
-                        }
-                    }
-                    else {
+                    if (!response) {
                         console.log('some error occured');
+                        return;
+                    }
+                    var type = response.msg_type;
+                    switch(type){
+                        case "get_settings":
+                            SettingsDetailsWS.getDetails(response);
+                            break;
+                        case "set_settings":
+                            SettingsDetailsWS.setDetailsResponse(response);
+                            break;
+                        case "states_list":
+                            SettingsDetailsWS.populateStates(response);
+                            break;
+                        case "error":
+                            $('#formMessage').attr('class', 'errorfield').text(response.error.message);
+                            break;
+                        default:
+                            break;
                     }
                 }
             });
