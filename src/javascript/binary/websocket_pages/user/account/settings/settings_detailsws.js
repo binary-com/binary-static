@@ -111,7 +111,7 @@ var SettingsDetailsWS = (function() {
             $(RealAccElements).removeClass('hidden');
         }
         $(formID).removeClass('hidden');
-    };
+    }
 
     function populateStates(response) {
         var $field = $(fieldIDs.state);
