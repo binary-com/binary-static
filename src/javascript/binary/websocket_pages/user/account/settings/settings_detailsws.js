@@ -40,7 +40,7 @@ var SettingsDetailsWS = (function() {
         }
     };
 
-    var getDetails = function(response) {
+    function getDetailsResponse(response) {
         var data = response.get_settings;
 
         $('#lblCountry').text(data.country || '-');
@@ -249,7 +249,7 @@ var SettingsDetailsWS = (function() {
 
     return {
         init: init,
-        getDetails: getDetails,
+        getDetailsResponse: getDetailsResponse,
         setDetailsResponse: setDetailsResponse,
         populateStates: populateStates
     };
@@ -270,7 +270,7 @@ pjax_config_page_require_auth("settings/detailsws", function() {
                     var type = response.msg_type;
                     switch(type){
                         case "get_settings":
-                            SettingsDetailsWS.getDetails(response);
+                            SettingsDetailsWS.getDetailsResponse(response);
                             break;
                         case "set_settings":
                             SettingsDetailsWS.setDetailsResponse(response);
