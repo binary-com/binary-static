@@ -3,8 +3,8 @@ var PasswordWS = (function(){
 
     function init() {
         $('#change-password').removeClass('invisible');
-        $form   = $("#change-password > form");
-        $result = $("#change-password > div[data-id='success-result']");
+        $form   = $('#change-password > form');
+        $result = $('#change-password > div[data-id="success-result"]');
         bind_validation.simple($form[0], {
             stop:     displayErrors,
             validate: validate,
@@ -54,26 +54,26 @@ var PasswordWS = (function(){
     }
 
     function sendRequest(data) {
-        $form.find("p[data-error='server-sent-error']").addClass("hidden");
+        $form.find('p[data-error="server-sent-error"]').addClass('hidden');
         BinarySocket.send({
-            "change_password": "1",
-            "old_password": data.old_password,
-            "new_password": data.new_password,
+            'change_password': '1',
+            'old_password': data.old_password,
+            'new_password': data.new_password,
         });
     }
 
     function handler(resp) {
-        if ("error" in resp) {
-            var errorMsg = text.localize("Old password is wrong.");
-            if ("message" in resp.error) {
+        if ('error' in resp) {
+            var errorMsg = text.localize('Old password is wrong.');
+            if ('message' in resp.error) {
                 errorMsg = resp.error.message;
             }
-            $form.find("p[data-error='server-sent-error']").text(errorMsg).removeClass("hidden");
+            $form.find('p[data-error="server-sent-error"]').text(errorMsg).removeClass('hidden');
             return;
         }
 
-        $form.addClass("hidden");
-        $result.removeClass("hidden");
+        $form.addClass('hidden');
+        $result.removeClass('hidden');
         setTimeout(function() {
             page.client.send_logout_request(true);
         }, 5000);
@@ -85,13 +85,13 @@ var PasswordWS = (function(){
     };
 })();
 
-pjax_config_page_require_auth("user/change_password", function() {
+pjax_config_page_require_auth('user/change_password', function() {
     return {
         onLoad: function() {
             Content.populate();
             if (isIE() === false) {
-                $('#password').on('input', function() {
-                    $('#password-meter').attr('value', testPassword($('#password').val())[0]);
+                $('#new_password').on('input', function() {
+                    $('#password-meter').attr('value', testPassword(this.value)[0]);
                 });
             } else {
                 $('#password-meter').remove();
@@ -102,7 +102,7 @@ pjax_config_page_require_auth("user/change_password", function() {
                     var response = JSON.parse(msg.data);
                     if (!response) return;
                     var type = response.msg_type;
-                    if (type === "change_password" || (type === "error" && "change_password" in response.echo_req)) {
+                    if (type === 'change_password' || (type === 'error' && 'change_password' in response.echo_req)) {
                         PasswordWS.handler(response);
                     }
                 }
