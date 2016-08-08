@@ -27,13 +27,6 @@
   margin-top:40px;
 }
 
-@mixin section-background {
-  background: -moz-linear-gradient(top, $COLOR_WHITE 30%, $COLOR_LIGHT_GRAY 90%);
-  background: -webkit-linear-gradient(top, $COLOR_WHITE 30%, $COLOR_LIGHT_GRAY 90%);
-  background: -ms-linear-gradient(top, $COLOR_WHITE 30%, $COLOR_LIGHT_GRAY 90%);
-  border-bottom: 1px solid transparent;
-}
-
 @mixin section-separator {
     .section {
         border-bottom: 1px solid $COLOR_GRAY;
