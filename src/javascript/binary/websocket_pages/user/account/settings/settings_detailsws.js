@@ -186,7 +186,7 @@ var SettingsDetailsWS = (function() {
         ev.preventDefault();
         ev.stopPropagation();
         if (info.errors.length > 0 || !changed) return;
-        delete values.hedgeAssetAmount;
+        delete info.values.hedgeAssetAmount;
         setDetails(info.values);
     }
 
