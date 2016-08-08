@@ -221,6 +221,8 @@ var SettingsDetailsWS = (function() {
 
     var setDetailsResponse = function(response) {
         var isError = response.set_settings !== 1;
+        // allow user to resubmit the form on error.
+        changed = isError ? true : false;
         $('#formMessage').css('display', '')
             .attr('class', isError ? 'errorfield' : 'success-msg')
             .html(isError ? text.localize('Sorry, an error occurred while processing your account.') : '<ul class="checked"><li>' + text.localize('Your settings have been updated successfully.') + '</li></ul>')
