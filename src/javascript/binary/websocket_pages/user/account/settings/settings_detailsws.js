@@ -3,22 +3,18 @@ var SettingsDetailsWS = (function() {
 
     var formID = '#frmPersonalDetails';
     var RealAccElements = '.RealAcc';
-    var fieldIDs;
-    var isValid,
-        changed;
+    var changed = false;
+    var fieldIDs = {
+        address1 : '#Address1',
+        address2 : '#Address2',
+        city     : '#City',
+        state    : '#State',
+        postcode : '#Postcode',
+        phone    : '#Phone'
+    };
 
 
-    var init = function() {
-        changed = false;
-        fieldIDs = {
-            address1 : '#Address1',
-            address2 : '#Address2',
-            city     : '#City',
-            state    : '#State',
-            postcode : '#Postcode',
-            phone    : '#Phone'
-        };
-
+    function init() {
         var isJP = page.client.residence === 'jp';
         BinarySocket.send({"get_settings": "1"});
         bind_validation.simple($(formID)[0], {
@@ -38,7 +34,7 @@ var SettingsDetailsWS = (function() {
         if (isJP) {
             detect_hedging($('#PurposeOfTrading'), $('.hedge'));
         }
-    };
+    }
 
     function getDetailsResponse(response) {
         var data = response.get_settings;
