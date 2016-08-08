@@ -418,7 +418,7 @@
         align-items: center;
         width: 100%;
         justify-content: flex-start;
-        padding-left: 30px;
+        @include BIDIR_PROP(padding-left, padding-right, 30px);
         &.small {
             width: 95px;
         }
@@ -458,10 +458,10 @@
         display: none;
     }
     #duration_amount {
-        margin-right: 5px;
+        @include BIDIR_PROP(margin-right, margin-left, 5px);
     }
     #duration_units {
-        margin-right: 10px;
+        @include BIDIR_PROP(margin-right, margin-left, 10px);
     }
     #duration_tooltip_wrapper {
         line-height: 28px;
@@ -475,7 +475,7 @@
     }
     #expiry_date {
         width: 175px;
-        margin-right: 5px;
+        @include BIDIR_PROP(margin-right, margin-left, 5px);
         margin-bottom: 5px;
     }
     #expiry_time {
@@ -486,6 +486,7 @@
     }
     .barrier_class input, #jhigh_barrier_row select, #jlow_barrier_row select, #jbarrier_row select, #period {
         width: 175px;
+        @include BIDIR_PROP(margin-right, margin-left, 5px);
     }
     #period {
         font-size: 80%;

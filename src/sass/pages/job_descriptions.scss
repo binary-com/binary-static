@@ -1,7 +1,7 @@
 .open-positions {
     .eq:not(:first-child) {
         border: 1px dashed $COLOR_GRAY;
-        border-width: 0 0 0 1px;
+        @include BIDIR_VALUE(border-width, 0 0 0 1px, 0 1px 0 0);
     }
     .eq:nth-child(3n+1) {
         border-width: 0;

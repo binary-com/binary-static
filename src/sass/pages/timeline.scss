@@ -57,17 +57,20 @@ $grow-effect-duration: 0.4s;
         clear: left;
         width: $event-column-width;
         background: $COLOR_WHITE;
-        text-align: left;
+        @include BIDIR_VALUE(text-align, left, right);
         margin-bottom: 20px;
         box-shadow: 0 0 2px $COLOR_GRAY;
+        direction: ltr;
         .header {
             background: $COLOR_LIGHT_GRAY;
             font-weight: bold;
             padding: 12px;
+            @include BIDIR_VALUE(direction, ltr, rtl);
         }
         .event-body {
             border: 1px solid $COLOR_LIGHT_GRAY;
             padding: 12px;
+            @include BIDIR_VALUE(direction, ltr, rtl);
         }
         &.featured {
             .header {
