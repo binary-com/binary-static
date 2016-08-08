@@ -46,91 +46,94 @@ var SettingsDetailsWS = (function() {
         $('#lblCountry').text(data.country || '-');
         $('#lblEmail').text(data.email);
 
-        if(page.client.is_virtual()){ // Virtual Account
+        if (page.client.is_virtual()) { // Virtual Account
             $(RealAccElements).remove();
-        }
-        else { // Real Account
-            var birthDate = data.date_of_birth ? moment.utc(new Date(data.date_of_birth * 1000)).format("YYYY-MM-DD") : '';
-            $('#lblBirthDate').text(birthDate);
-            // Generate states list
-            var residence = $.cookie('residence');
-            if (residence) {
-                BinarySocket.send({"states_list": residence, "passthrough": {"value": data.address_state}});
-            }
-            if (page.client.residence === 'jp') {
-                var jpData = response.get_settings.jp_settings;
-                $('#lblName').text((data.last_name || ''));
-                $('#lblGender').text(text.localize(jpData.gender) || '');
-                $('#lblAddress1').text(data.address_line_1 || '');
-                $('#lblAddress2').text(data.address_line_2 || '');
-                $('#lblCity').text(data.address_city || '');
-                $('#lblPostcode').text(data.address_postcode || '');
-                $('#lblPhone').text(data.phone || '');
-
-                $('#AnnualIncome').val(jpData.annual_income);
-                $('#FinancialAsset').val(jpData.financial_asset);
-                $('#Occupation').val(jpData.occupation);
-                $('#Equities').val(jpData.trading_experience_equities);
-                $('#Commodities').val(jpData.trading_experience_commodities);
-                $('#ForeignCurrencyDeposit').val(jpData.trading_experience_foreign_currency_deposit);
-                $('#MarginFX').val(jpData.trading_experience_margin_fx);
-                $('#InvestmentTrust').val(jpData.trading_experience_investment_trust);
-                $('#PublicCorporationBond').val(jpData.trading_experience_public_bond);
-                $('#DerivativeTrading').val(jpData.trading_experience_option_trading);
-                $('#PurposeOfTrading').val(jpData.trading_purpose);
-                if (jpData.hedge_asset !== null && jpData.hedge_asset_amount !== null) {
-                  $('#HedgeAsset').val(jpData.hedge_asset);
-                  $('#HedgeAssetAmount').val(jpData.hedge_asset_amount);
-                  $('.hedge').removeClass('invisible');
-                }
-                $('.JpAcc').removeClass('invisible')
-                           .removeClass('hidden');
-
-                $('#AnnualIncome, #FinancialAsset, #Occupation, #Equities, #Commodities,' +
-                    '#ForeignCurrencyDeposit, #MarginFX, #InvestmentTrust, #PublicCorporationBond,' +
-                    '#DerivativeTrading, #PurposeOfTrading, #HedgeAsset, #HedgeAssetAmount')
-                    .on('change', function() {
-                    changed = true;
-                });
-            } else {
-                $('#lblName').text((data.salutation || '') + ' ' + (data.first_name || '') + ' ' + (data.last_name || ''));
-                $(fieldIDs.address1).val(data.address_line_1);
-                $(fieldIDs.address2).val(data.address_line_2);
-                $(fieldIDs.city).val(data.address_city);
-
-                $(fieldIDs.postcode).val(data.address_postcode);
-                $(fieldIDs.phone).val(data.phone);
-
-                $('#Address1, #Address2, #City, #State, #Postcode, #Phone').on('change', function() {
-                  changed = true;
-                });
-
-                $(RealAccElements).removeClass('hidden');
-            }
+            $(formID).removeClass('hidden');
+            return;
         }
 
+        // Real Account
+        var birthDate = data.date_of_birth ? moment.unix(data.date_of_birth).format("YYYY-MM-DD") : '';
+        $('#lblBirthDate').text(birthDate);
+        // Generate states list
+        var residence = $.cookie('residence');
+        if (residence) {
+            BinarySocket.send({"states_list": residence, "passthrough": {"value": data.address_state}});
+        }
+        if (page.client.residence === 'jp') {
+            var jpData = response.get_settings.jp_settings;
+            $('#lblName').text((data.last_name || ''));
+            $('#lblGender').text(text.localize(jpData.gender) || '');
+            $('#lblAddress1').text(data.address_line_1 || '');
+            $('#lblAddress2').text(data.address_line_2 || '');
+            $('#lblCity').text(data.address_city || '');
+            $('#lblPostcode').text(data.address_postcode || '');
+            $('#lblPhone').text(data.phone || '');
+
+            $('#AnnualIncome').val(jpData.annual_income);
+            $('#FinancialAsset').val(jpData.financial_asset);
+            $('#Occupation').val(jpData.occupation);
+            $('#Equities').val(jpData.trading_experience_equities);
+            $('#Commodities').val(jpData.trading_experience_commodities);
+            $('#ForeignCurrencyDeposit').val(jpData.trading_experience_foreign_currency_deposit);
+            $('#MarginFX').val(jpData.trading_experience_margin_fx);
+            $('#InvestmentTrust').val(jpData.trading_experience_investment_trust);
+            $('#PublicCorporationBond').val(jpData.trading_experience_public_bond);
+            $('#DerivativeTrading').val(jpData.trading_experience_option_trading);
+            $('#PurposeOfTrading').val(jpData.trading_purpose);
+            if (jpData.hedge_asset !== null && jpData.hedge_asset_amount !== null) {
+              $('#HedgeAsset').val(jpData.hedge_asset);
+              $('#HedgeAssetAmount').val(jpData.hedge_asset_amount);
+              $('.hedge').removeClass('invisible');
+            }
+            $('.JpAcc').removeClass('invisible')
+                       .removeClass('hidden');
+
+            $('#AnnualIncome, #FinancialAsset, #Occupation, #Equities, #Commodities,' +
+                '#ForeignCurrencyDeposit, #MarginFX, #InvestmentTrust, #PublicCorporationBond,' +
+                '#DerivativeTrading, #PurposeOfTrading, #HedgeAsset, #HedgeAssetAmount')
+                .on('change', function() {
+                changed = true;
+            });
+        } else {
+            $('#lblName').text((data.salutation || '') + ' ' + (data.first_name || '') + ' ' + (data.last_name || ''));
+            $(fieldIDs.address1).val(data.address_line_1);
+            $(fieldIDs.address2).val(data.address_line_2);
+            $(fieldIDs.city).val(data.address_city);
+
+            $(fieldIDs.postcode).val(data.address_postcode);
+            $(fieldIDs.phone).val(data.phone);
+
+            $('#Address1, #Address2, #City, #State, #Postcode, #Phone').on('change', function() {
+              changed = true;
+            });
+
+            $(RealAccElements).removeClass('hidden');
+        }
         $(formID).removeClass('hidden');
     };
 
-    var populateStates = function(response) {
-        $(fieldIDs.state).empty();
+    function populateStates(response) {
+        var $field = $(fieldIDs.state);
         var defaultValue = response.echo_req.passthrough.value;
         var states = response.states_list;
-        if(states.length > 0) {
-            for(var i = 0; i < states.length; i++){
-                $(fieldIDs.state).append($('<option/>', {value: states[i].value, text: states[i].text}));
-            }
-            // set Current value
-            $(fieldIDs.state).val(defaultValue);
+
+        $field.empty();
+
+        if (states.length > 0) {
+            states.forEach(function(state) {
+                $field.append($('<option/>', {value: state.value, text: state.text}));
+            });
+        } else {
+            $field.replaceWith($('<input/>', {id: fieldIDs.state, type: 'text', maxlength: '35'}));
         }
-        else {
-            $(fieldIDs.state).replaceWith($('<input/>', {id: 'State', type: 'text', maxlength: '35', value: defaultValue}));
-        }
+
+        $field.val(defaultValue);
         $('#lblState').text($('#State option:selected').text());
-        $(fieldIDs.state).on('change', function() {
-          changed = true;
+        $field.on('change', function() {
+            changed = true;
         });
-    };
+    }
 
     function toJPSettings(data) {
         var jp_settings = {};
@@ -198,11 +201,14 @@ var SettingsDetailsWS = (function() {
             comma   = Content.localize().textComma;
 
         var V2 = ValidateV2;
-        var maybeEmptyAddress = V2.regex(/^[a-zA-Z0-9\s\,\.\-\/\(\)#']*$/, [letters, numbers, space, period, comma, '- / ( ) # \'']);
         var isAddress  = V2.regex(/^[a-zA-Z0-9\s\,\.\-\/\(\)#']+$/, [letters, numbers, space, period, comma, '- / ( ) # \'']);
         var isState    = V2.regex(/^[a-zA-Z\s\-']+$/,               [letters, space, '- \'']);
         var isPostcode = V2.regex(/(^[a-zA-Z0-9\s\-\/]+$)/,         [letters, numbers, space, '- /']);
         var isPhoneNo  = V2.regex(/^(|\+?[0-9\s\-]+)$/,             [numbers, space, '-']);
+
+        function maybeEmptyAddress(value) {
+            return value.length ? isAddress(value) : dv.ok(value);
+        }
 
         return {
             address_line_1:   [V2.required, isAddress],
