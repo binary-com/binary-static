@@ -190,63 +190,45 @@ var Price = (function() {
             }
         }
 
+        var setData = function(data) {
+            if (!data) return;
+            if (data['display_value']) {
+                if (is_spread) {
+                    $('.stake:visible').hide();
+                    amount.textContent = data['display_value'];
+                } else {
+                    $('.stake:hidden').show();
+                    stake.textContent = text.localize('Stake') + ': ';
+                    amount.textContent = currency.value + ' ' + (data['display_value']*1).toFixed(2);
+                }
+                $('.stake_wrapper:hidden').show();
+            } else {
+                $('.stake_wrapper:visible').hide();
+            }
+
+            if (data['payout']) {
+              payout.textContent = (is_spread ? text.localize('Payout/point') : text.localize('Payout')) + ': ';
+              payoutAmount.textContent = currency.value + ' ' + (data['payout']*1).toFixed(2);
+              $('.payout_wrapper:hidden').show();
+            } else {
+              $('.payout_wrapper:visible').hide();
+            }
+
+            if (data['longcode'] && window.innerWidth > 500) {
+                description.setAttribute('data-balloon', data['longcode']);
+            } else {
+                description.removeAttribute('data-balloon');
+            }
+        };
+
         if (details['error']) {
             purchase.hide();
             comment.hide();
-            var extraInfo = details['error']['details'];
-            if (extraInfo && extraInfo['display_value']) {
-                if (is_spread) {
-                    $('.stake').hide();
-                    amount.textContent = extraInfo['display_value'];
-                    if (extraInfo['payout']) {
-                      payout.textContent = text.localize('Payout/point') + ': ';
-                      payoutAmount.textContent = currency.value + ' ' + (extraInfo['payout']*1).toFixed(2);
-                    }
-                } else {
-                    $('.stake').show();
-                    stake.textContent = text.localize('Stake') + ': ';
-                    amount.textContent = currency.value + ' ' + (extraInfo['display_value']*1).toFixed(2);
-                    if (extraInfo['payout']) {
-                      payout.textContent = text.localize('Payout') + ': ';
-                      payoutAmount.textContent = currency.value + ' ' + (extraInfo['payout']*1).toFixed(2);
-                    }
-                }
-
-                if (extraInfo['longcode'] && window.innerWidth > 500) {
-                  description.setAttribute('data-balloon', extraInfo['longcode']);
-                } else {
-                  description.removeAttribute('data-balloon');
-                }
-            }
-
+            setData(details['error']['details']);
             error.show();
             error.textContent = details['error']['message'];
         } else {
-            if (proposal && proposal['display_value']) {
-                if (is_spread) {
-                    $('.stake').hide();
-                    amount.textContent = proposal['display_value'];
-                    if (proposal['payout']) {
-                      payout.textContent = text.localize('Payout/point') + ': ';
-                      payoutAmount.textContent = currency.value + ' ' + (proposal['payout']*1).toFixed(2);
-                    }
-                } else {
-                    $('.stake').show();
-                    stake.textContent = text.localize('Stake') + ': ';
-                    amount.textContent = currency.value + ' ' + (proposal['display_value']*1).toFixed(2);
-                    if (proposal['payout']) {
-                      payout.textContent = text.localize('Payout') + ': ';
-                      payoutAmount.textContent = currency.value + ' ' + (proposal['payout']*1).toFixed(2);
-                    }
-                }
-            }
-
-            if (proposal && proposal['longcode'] && window.innerWidth > 500) {
-                description.setAttribute('data-balloon', proposal['longcode']);
-            } else {
-              description.removeAttribute('data-balloon');
-            }
-
+            setData(proposal);
             purchase.show();
             comment.show();
             error.hide();
