@@ -20,6 +20,6 @@
         </div>
     </div>
     <div class="gr-6 gr-12-m">
-        <img class="responsive" src="[% request.url_for('images/pages/metatrader/start.jpg') %]" alt="" />
+        <img class="responsive" src="[% request.url_for('images/pages/metatrader/mt5-pc.svg') %]" alt="" />
     </div>
 </div>
