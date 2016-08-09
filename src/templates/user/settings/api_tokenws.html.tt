@@ -23,7 +23,7 @@
 
                 <div class="gr-row gr-padding-10">
                     <div class="gr-4 form_label">
-                        <label for="txtName">[% l('Choose Scopes:') %]</label>
+                        <label for="scopes">[% l('Choose Scopes:') %]</label>
                     </div>
                     <div class="gr-8">
                         <input id="scopes" type="checkbox" name="scopes[]" value="read" checked="checked" readonly="readonly" />
