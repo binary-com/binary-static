@@ -7,7 +7,7 @@ var ValidateV2 = (function() {
     // of this module. Solution: delay execution with 'unwrappables'.
     // Objects that have an `.unwrap` method.
     //
-    // unwrap({unwrap: v => 1}) == 1
+    // unwrap({unwrap: () => 1}) == 1
     // unwrap(1) == 1
     //
     function unwrap(a) {

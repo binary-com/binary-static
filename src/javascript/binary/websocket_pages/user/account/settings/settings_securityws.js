@@ -90,7 +90,7 @@ var SecurityWS = (function() {
         }
         current_state = locked ? STATE.LOCKED : STATE.UNLOCKED;
         bind_validation.simple($form[0], {
-            validate: validate,
+            schema: locked ? {} : getUnlockedSchema(),
             submit: function(e, info) {
                 e.preventDefault();
                 e.stopPropagation();
@@ -106,17 +106,16 @@ var SecurityWS = (function() {
         $form.show();
     }
 
-    function validate(data) {
+    function getUnlockedSchema() {
         var err = Content.localize().textPasswordsNotMatching;
-        function matches(value) {
-            return current_state === STATE.LOCKED ||
-                value === data.cashierlockpassword1;
+        function matches(value, data) {
+            return value === data.cashierlockpassword1;
         }
 
-        return validate_object(data, {
+        return {
             cashierlockpassword1: [ValidateV2.password],
             cashierlockpassword2: [dv.check(matches, err)],
-        });
+        };
     }
 
     function makeTryingRequest() {
