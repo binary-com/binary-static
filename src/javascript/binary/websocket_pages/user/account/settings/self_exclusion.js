@@ -166,23 +166,38 @@ var SelfExclusionWS = (function() {
             dv.fail('Please enter an integer value');
     }
 
+    function leftPadZeros(strint, zeroCount) {
+        var result = strint;
+        for (var i = 0; i < (zeroCount - strint.length); i++) {
+            result = "0" + result;
+        }
+        return result;
+    }
+
+    function gtPositive(x, y) {
+        var maxLength = Math.max(x.length, y.length);
+        var lhs = leftPadZeros(x, maxLength);
+        var rhs = leftPadZeros(y, maxLength);
+        return lhs > rhs; // lexicographical comparison
+    }
+
     function againstField(key) {
         var old = fields[key];
         var err = text.localize('Please enter a number between 0 and [_1]', [old]);
-        var hasOld = +old > 0;
+        var hasOld = !!old;
         return function(value) {
             var isEmpty = value.length === 0;
             if (!hasOld) {
-                return isEmpty ? dv.fail(EMPTY) : dv.ok(+value);
+                return isEmpty ? dv.fail(EMPTY) : dv.ok(value);
             }
-            return (isEmpty || +value > +old) ?
+            return (isEmpty || gtPositive(value, old)) ?
                 dv.fail(err) :
-                dv.ok(+value);
+                dv.ok(value);
         };
     }
 
     function validSessionDuration(value) {
-        return value <= moment.duration(6, 'weeks').as('minutes') ?
+        return +value <= moment.duration(6, 'weeks').as('minutes') ?
             dv.ok(value) :
             dv.fail('Session duration limit cannot be more than 6 weeks.');
     }
