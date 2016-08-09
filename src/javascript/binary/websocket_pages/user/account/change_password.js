@@ -63,7 +63,9 @@ var PasswordWS = (function(){
         if ('error' in response) {
             var errorMsg = text.localize('Old password is wrong.');
             if ('message' in response.error) {
-                errorMsg = response.error.message;
+                if (response.error.message.indexOf('old_password') === -1) {
+                    errorMsg = response.error.message;
+                }
             }
             $form.find('p[data-error="server-sent-error"]').text(errorMsg).removeClass('hidden');
             return;
