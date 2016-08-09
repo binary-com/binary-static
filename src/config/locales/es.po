@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-07-29 14:51+0000\n"
+"PO-Revision-Date: 2016-08-07 23:39+0000\n"
 "Last-Translator: cameliagf <cameliagf@yahoo.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/binary/static/es/>\n"
 "Language: es\n"
@@ -183,8 +183,6 @@ msgstr "%1 ofrece una cuenta de dinero virtual para que pueda acostumbrarse a co
 msgid "%1 offers five ways to trade your chosen asset:"
 msgstr "%1 ofrece cinco formas de operar con su activo elegido:"
 
-#, fuzzy
-#| msgid "Binary.com offers new ways to trade"
 msgid "%1 offers new ways to trade"
 msgstr "%1 le ofrece nuevas formas de trabajar con los mercados"
 
@@ -277,7 +275,9 @@ msgstr "La notable historia de %1"
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "Los sistemas de %1 están ahora procesando más de 1 millón de transacciones por día (incluyendo cuentas virtuales)."
 
-msgid "%1’s Volatility Indices are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
+#, fuzzy
+#| msgid "%1’s Volatility Indices are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
+msgid "%1’s <a href=\"%2\">Volatility Indices</a> are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
 msgstr "Los Índices de volatilidad de %1 están ahora disponibles 24/7 en MetaTrader 5. Activos adicionales serán lanzados muy pronto."
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
@@ -1442,6 +1442,9 @@ msgstr "Al enviar sugerencias y otras opiniones sobre la API de %1 a la Compañ�
 
 msgid "By the 15th of every month, you will receive the commission earned during the previous calendar month."
 msgstr "Para el día 15 de cada mes, usted percibirá sus honorarios por la comisión ganada durante el mes calendarístico anterior."
+
+msgid "By using or interacting with the website, you are consenting to the use of Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
+msgstr ""
 
 msgid "Can I become an affiliate even if I don't have a website?"
 msgstr "¿Puedo convertirme en un afiliado incluso si no tengo un sitio web?"
@@ -3211,9 +3214,6 @@ msgstr "Información acerca de los flujos de datos usados por nuestra compañía
 msgid "Information of the previous performance of any underlying instrument or asset does not guarantee its current and/or future performance. Past performance is not a reliable indicator of future results."
 msgstr "Información de la actuación previa de cualquier instrumento o activo subyacente no garantiza su rendimiento actual y / o futuro. La rentabilidad pasada no es un indicador fiable de los resultados futuros."
 
-msgid "Instant"
-msgstr "Instantáneo"
-
 msgid "Insufficient balance"
 msgstr "Saldo insuficiente"
 
@@ -3949,7 +3949,9 @@ msgstr "Bloquear cajero"
 msgid "Log in"
 msgstr "Iniciar sesión"
 
-msgid "Log into the application using your MetaTrader account number (e.g., 1124) and your MetaTrader account password."
+#, fuzzy
+#| msgid "Log into the application using your MetaTrader account number (e.g., 1124) and your MetaTrader account password."
+msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
 msgstr "Inicie sesión en la aplicación usando su número de cuenta de MetaTrader (e.j., 1124) y la contraseña de su cuenta MetaTrader."
 
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
@@ -4189,8 +4191,10 @@ msgstr "Mes"
 msgid "More benefits"
 msgstr "Más ventajas"
 
-msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with "
-msgstr "Más específicamente, cuando realizamos una operación con opciones binarias con usted (cada operación siendo un \"contrato\"), tenemos el deber de proveerle "
+#, fuzzy
+#| msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with ‘best execution’. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
+msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with 'best execution'. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
+msgstr "Más específicamente, cuando hacemos un contrato de opciones binarias con usted (un \"Contrato\"), tenemos el deber de ofrecerle la \"mejor ejecución\". La mejor ejecución significa que debemos tomar las medidas razonables para obtener el mejor resultado posible para usted al ejecutar la orden para usted. Este documento proporciona un resumen de nuestra política de la mejor ejecución."
 
 msgid "Mother's maiden name"
 msgstr "Apellido de soltera de su madre"
@@ -5821,7 +5825,7 @@ msgstr "La Compañía se reserva el derecho, bajo su propia discreción, de rech
 #, fuzzy
 #| msgid "The Company reserves the right to restrict client trading and/or cancel or reverse transactions in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug or glitch in our website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, or manifest mis-calculation of prices or other manifest error. Clients have a duty to report to the Company any such problems, errors or suspected system inadequacies that they may experience and may not abuse of or arbitrage such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
 msgid "The Company reserves the right to cancel/reverse transactions or amend the contractual terms (including, but not limited to, entry and exit spot) in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug or glitch in our website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, or manifest mis-calculation of prices or other obvious errors (\"Manifest Errors\"). Clients have a duty to report to the Company any such problems, errors or suspected system inadequacies that they may experience and may not abuse of or arbitrage such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Any amendments to the contractual terms (including, but not limited to, entry and exit spot) of Manifestly Erroneous contracts shall be reasonable and fair. Monies exchanged between oneself and the Company in connection with Manifestly Erroneous contracts shall be returned to the recipient according to the amendments made to the contractual terms (including, but not limited to, entry and exit spot). You further acknowledge and agree that the Company will not be held liable or responsible, whether directly or indirectly, for any loss, expenses or damage caused or alleged to be caused by or in connection with a Manifest Error."
-msgstr "La Compañía se reserva el derecho a restringir el comercio del cliente y/o cancelar o revertir transacciones en caso de que los contratos sean adquiridos o vendidos a precios que no reflejan los precios justos del mercado o se adquieren o venden un nivel anormalmente bajo de riesgo debido a un error de programación no detectado, error o fallo en el software de nuestro sitio web, feed de los datos del mercado o latencia de los precios del contrato, error del feed de datos, precios aleatorios, parámetros de precios incorrectos o mal cálculo de los precios u otro error de manifiesto. Los clientes tienen la obligación de informar a la Compañía de tales problemas, errores o insuficiencias del sistema que pueden experimentar y no abusar de o arbitrar tales problemas del sistema o errores con fines de lucro. La Compañía se esforzará en resolver tales dificultades en el menor tiempo posible. Las personas con conocimiento de información privilegiada de cualquier mercado financiero o instrumento tienen prohibido comerciar en este sitio web."
+msgstr "La Compañía se reserva el derecho a cancelar o revertir transacciones en caso de que los contratos sean adquiridos o vendidos a precios que no reflejan los precios justos del mercado o se adquieren o venden un nivel anormalmente bajo de riesgo debido a un error de programación no detectado, error o fallo en el software de nuestro sitio web, feed de los datos del mercado o latencia de los precios del contrato, error del feed de datos, precios aleatorios, parámetros de precios incorrectos o mal cálculo de los precios u otro error de manifiesto. Los clientes tienen la obligación de informar a la Compañía de tales problemas, errores o insuficiencias del sistema que pueden experimentar y no abusar de o arbitrar tales problemas del sistema o errores con fines de lucro. La Compañía se esforzará en resolver tales dificultades en el menor tiempo posible. Las personas con conocimiento de información privilegiada de cualquier mercado financiero o instrumento tienen prohibido comerciar en este sitio web."
 
 msgid "The Company reserves the right to change any part of this Agreement at any time. We will endeavour to ensure affiliates are notified when changes have been made to this Agreement, but it is ultimately your responsibility to check these terms and conditions regularly. Your continued participation in our affiliate program after we have posted the changes will constitute binding acceptance of such changes."
 msgstr "La Compañía se reserva el derecho de cambiar cualquier parte de este Acuerdo en cualquier momento. Nos esforzaremos para segurar que los afiliados son notificados cuando se realizan cambios a este acuerdo, pero en última instancia es su responsabilidad comprobar estos términos y condiciones regularmente. Su continua participación en nuestro programa de afiliados después de que hayamos publicado los cambios constituirá la aceptación vinculante de tales cambios."
@@ -6248,10 +6252,8 @@ msgstr "Es por esto que ahora estamos reclutando probadores adicionales para cad
 msgid "This notice does not explain all of the risks involved in investments or similar products or how such risks relate to your personal circumstances. It is important that you fully understand the risks involved before making a decision to enter into or sell an investment product or gambling product with us. If you are in any doubt about the risks involved with Investment Products or Gambling Products, you should seek professional advice."
 msgstr "Este aviso no explica todos los riesgos asociados a las inversiones o a productos similares o cómo tales riesgos se relacionan con sus circunstancias personales. Es importante que usted entienda completamente los riesgos involucrados antes de tomar una decisión de comprar o vender un producto de inversión o producto de juego con nosotros. Si tiene alguna duda acerca de los riesgos relacionados con los productos de inversión o los productos de juego, debe buscar asesoramiento profesional."
 
-#, fuzzy
-#| msgid "This notice provides you with information about the risks associated with investment contracts, which you may invest in through services provided to you through %1. Binary Group provides a wide range of products including Binary Options relating to foreign exchange, indices, stocks and other investment products (\"Investment Products\") and binary bets such as those relating to the Random Markets (\"Gambling Products\")."
 msgid "This notice provides you with information about the risks associated with investment contracts, which you may invest in through services provided to you through %1. Binary Group provides a wide range of products including Binary Options relating to foreign exchange, indices, stocks and other investment products (\"Investment Products\") and binary bets such as those relating to the Volatility Indices (\"Gambling Products\")."
-msgstr "Este aviso le proporciona información acerca de los riesgos asociados a los contratos de inversión en los que usted puede invertir a través de los servicios prestados a través de %1. Binary Group le ofrece una amplia gama de productos, incluyendo opciones binarias relacionadas con divisas, índices, acciones y otros productos de inversión (\"Productos de inversión\") y las apuestas binarias, como los contratos relacionados con los mercados Random (\"Productos de juego\")."
+msgstr "Este aviso le proporciona información acerca de los riesgos asociados a los contratos de inversión en los que usted puede invertir a través de los servicios prestados a través de %1. Binary Group le ofrece una amplia gama de productos, incluyendo opciones binarias relacionadas con divisas, índices, acciones y otros productos de inversión (\"Productos de inversión\") y las apuestas binarias, como los contratos relacionados con los Indices de Volatilidad (\"Productos de juego\")."
 
 msgid "This offer cannot be used in conjunction with any other offer."
 msgstr "Esta oferta no se puede usar en combinación con otras ofertas."
@@ -6310,14 +6312,18 @@ msgstr "To begin Binary option trading, you will first need to read all these do
 msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "Para modificar su nombre, fecha de nacimiento, país de residencia o email, comuníquese con el <a href=\"%1\">servicio de atención al cliente</a>."
 
-msgid "To create a Real account for MetaTrader, <a href=\"%1\">upgrade to Bianry Real account</a>."
-msgstr "Para crear una cuenta Real para MetaTrader, <a href=\"%1\"> pase a una cuenta real de Binary</a>."
-
-msgid "To create a Real account for MetaTrader, switch to your Binary Real account."
-msgstr "Para crear una cuenta Real para MetaTrader, cambie a una cuenta Real de Binary."
-
 msgid "To create a Real account for MetaTrader, you need to authenticate your Binary account:"
 msgstr "Para crear una cuenta Real para MetaTrader, necesita autenticar su cuenta de Binary:"
+
+#, fuzzy
+#| msgid "To create a Real account for MetaTrader, <a href=\"%1\">upgrade to Bianry Real account</a>."
+msgid "To create a real account for MetaTrader, <a href=\"%1\">upgrade to %2 real money account</a>."
+msgstr "Para crear una cuenta Real para MetaTrader, <a href=\"%1\"> pase a una cuenta real de Binary</a>."
+
+#, fuzzy
+#| msgid "To create a Real account for MetaTrader, switch to your Binary Real account."
+msgid "To create a real account for MetaTrader, switch to your %1 real money account."
+msgstr "Para crear una cuenta Real para MetaTrader, cambie a una cuenta Real de Binary."
 
 msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
 msgstr "Para depositar o retirar de su cuenta Real de MetaTrader, pase a su cuenta Real de Binary.com."
@@ -7244,10 +7250,8 @@ msgstr "Usted debe cumplir con estos Términos para poder utilizar la API de %1.
 msgid "You must not be a USA resident, citizen, or have any tax reporting to the USA"
 msgstr "You must not be a USA resident, citizen, or have any tax reporting to the USA"
 
-#, fuzzy
-#| msgid "You must promptly report any security deficiencies in, or intrusions to, your Application that you discover to Binary.com by writing in to %1 or by raising a discussion  thread on %2 which is part of our Developer Site. You will work with Binary.com to immediately correct any security deficiency, and will immediately disconnect any intrusions or intruder. In the event of any security deficiency or intrusion involving the Application, APIs or Content, you will make no public statements (e.g. press, blogs, social media, bulletin boards, etc.) without prior written and express permission from Binary.com in each instance."
 msgid "You must promptly report any security deficiencies in, or intrusions to, your Application that you discover to %1 by writing in to %2 or by raising a discussion  thread on %3 which is part of our Developer Site. You will work with %1 to immediately correct any security deficiency, and will immediately disconnect any intrusions or intruder. In the event of any security deficiency or intrusion involving the Application, APIs or Content, you will make no public statements (e.g. press, blogs, social media, bulletin boards, etc.) without prior written and express permission from %1 in each instance."
-msgstr "Usted debe informar a Binary.com con prontitud sobre cualquier deficiencia de seguridad o intrusiones en su Aplicación que descubra escribiendo en a %1 o abriendo un hilo de discusión en %2 que forma parte de nuestro sitio de desarrolladores. Usted trabajará con Binary.com para corregir inmediatamente cualquier deficiencia de seguridad y desconectará inmediatamente cualquier intrusión o intruso. En caso de cualquier deficiencia de seguridad o intrusión de la Aplicación, APIs o Contenido, usted no hará declaraciones públicas (por ejemplo, prensa, blogs, redes sociales, boletines, etc.) sin el permiso escrito y expreso de Binary.com en cada caso."
+msgstr "Usted debe informar a Binary.com con prontitud sobre cualquier deficiencia de seguridad o intrusiones en su Aplicación que descubra  a %1 escribiendo en %2 o abriendo un hilo de discusión en %3 que forma parte de nuestro sitio de desarrolladores. Usted trabajará con Binary.com para corregir inmediatamente cualquier deficiencia de seguridad y desconectará inmediatamente cualquier intrusión o intruso. En caso de cualquier deficiencia de seguridad o intrusión de la Aplicación, APIs o Contenido, usted no hará declaraciones públicas (por ejemplo, prensa, blogs, redes sociales, boletines, etc.) sin el permiso escrito y expreso de %1 en cada caso."
 
 msgid "You need to finish all 20 questions."
 msgstr "Tiene que terminar todas las 20 preguntas."
@@ -8392,6 +8396,12 @@ msgstr "Acuerdo con los términos y condiciones"
 msgid "Trading with MetaTrader 5"
 msgstr "Comerciando con MetaTrader 5"
 
+#~ msgid "Instant"
+#~ msgstr "Instantáneo"
+
+#~ msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with "
+#~ msgstr "Más específicamente, cuando realizamos una operación con opciones binarias con usted (cada operación siendo un \"contrato\"), tenemos el deber de proveerle "
+
 #, fuzzy
 #~| msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
 #~ msgid "In order to trade using MetaTrader 5 platform, you'll first need to have a MetaTrader account."
@@ -8685,9 +8695,6 @@ msgstr "Comerciando con MetaTrader 5"
 
 #~ msgid "Log out"
 #~ msgstr "Cerrar"
-
-#~ msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with ‘best execution’. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
-#~ msgstr "Más específicamente, cuando hacemos un contrato de opciones binarias con usted (un \"Contrato\"), tenemos el deber de ofrecerle la \"mejor ejecución\". La mejor ejecución significa que debemos tomar las medidas razonables para obtener el mejor resultado posible para usted al ejecutar la orden para usted. Este documento proporciona un resumen de nuestra política de la mejor ejecución."
 
 #~ msgid "Page not found"
 #~ msgstr "Página no encontrada"

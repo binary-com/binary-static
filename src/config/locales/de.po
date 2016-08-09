@@ -316,7 +316,7 @@ msgstr "Die bemerkenswerte Geschichte von Binary.com"
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "Die Systeme von %1 verarbeiten jetzt über 1 Millionen Transaktionen/Tag (einschließlich virtueller Konten)."
 
-msgid "%1’s Volatility Indices are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
+msgid "%1’s <a href=\"%2\">Volatility Indices</a> are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
 msgstr ""
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
@@ -1541,6 +1541,9 @@ msgstr "Durch die Übermittlung von Vorschlägen oder anderem Feedback hinsichtl
 
 msgid "By the 15th of every month, you will receive the commission earned during the previous calendar month."
 msgstr "Sie erhalten Ihre im vorangegangenen Kalendermonat verdienten Provisionen bis zum 15. eines jeden Folgemonats ausbezahlt."
+
+msgid "By using or interacting with the website, you are consenting to the use of Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
+msgstr ""
 
 msgid "Can I become an affiliate even if I don't have a website?"
 msgstr "Kann ich ein Geschäftspartner werden, auch wenn ich keine Website habe?"
@@ -3364,9 +3367,6 @@ msgstr "Informationen zu den Daten-Feeds, die von unserem Unternehmen verwendet 
 msgid "Information of the previous performance of any underlying instrument or asset does not guarantee its current and/or future performance. Past performance is not a reliable indicator of future results."
 msgstr "Die Informationen über die frühere Performance eines zugrundeliegenden Instruments oder einer Anlage garantiert nicht ihre aktuelle und/oder zukünftige Performance. Die Performance aus der Vergangenheit ist kein zuverlässiger Indikator für zukünftige Ergebnisse."
 
-msgid "Instant"
-msgstr "Sofort"
-
 msgid "Insufficient balance"
 msgstr "Unzureichendes Guthaben"
 
@@ -4108,8 +4108,10 @@ msgstr "Kasse blockieren"
 msgid "Log in"
 msgstr "Log-in"
 
-msgid "Log into the application using your MetaTrader account number (e.g., 1124) and your MetaTrader account password."
-msgstr ""
+#, fuzzy
+#| msgid "Deposit funds into your account"
+msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
+msgstr "Gelder auf Ihr Konto einzahlen"
 
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "Loggen Sie sich in Ihr %1 Partner-Konto ein und klicken Sie auf: Finanzen &rarr; Zahlungsanweisungen."
@@ -4352,8 +4354,10 @@ msgstr "Monat"
 msgid "More benefits"
 msgstr "Mehrere Vorteile"
 
-msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with "
-msgstr ""
+#, fuzzy
+#| msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with ‘best execution’. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
+msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with 'best execution'. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
+msgstr "Konkret haben wir die Pflicht, Ihnen die 'bestmögliche Ausführung' zu bieten, wenn wir einen Binäre Optionen Handel mit Ihnen eingehen (je \"Kontrakt\"). Die bestmögliche Ausführung bedeutet, dass wir die geeigneten Schritte unternehmen müssen, um für Sie das bestmögliche Ergebnis zu erreichen, wenn wir die Order für Sie ausführen. Dieses Dokument bietet eine Zusammenfassung unserer Regeln zur bestmöglichen Ausführung."
 
 msgid "Mother's maiden name"
 msgstr "Mädchenname der Mutter"
@@ -6535,14 +6539,16 @@ msgstr "To begin Binary option trading, you will first need to read all these do
 msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "Wenn Sie Ihren Namen, das Geburtsdatum, Ihr Wohnsitzland oder Ihre E-Mail Anschrift ändern möchten, setzen Sie sich bitte mit unserer <a href=\"%1\">Kundenbetreuung</a> in Verbindung."
 
-msgid "To create a Real account for MetaTrader, <a href=\"%1\">upgrade to Bianry Real account</a>."
-msgstr ""
-
-msgid "To create a Real account for MetaTrader, switch to your Binary Real account."
-msgstr ""
-
 msgid "To create a Real account for MetaTrader, you need to authenticate your Binary account:"
 msgstr ""
+
+msgid "To create a real account for MetaTrader, <a href=\"%1\">upgrade to %2 real money account</a>."
+msgstr ""
+
+#, fuzzy
+#| msgid "You are currently logged in to your virtual money account (%2)."
+msgid "To create a real account for MetaTrader, switch to your %1 real money account."
+msgstr "Sie sind derzeit in Ihr virtuelles Geld Konto (2%) eingeloggt."
 
 msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
 msgstr ""
@@ -8783,6 +8789,9 @@ msgstr "Allgemeine Geschäftsbedingungen Zustimmung"
 msgid "Trading with MetaTrader 5"
 msgstr ""
 
+#~ msgid "Instant"
+#~ msgstr "Sofort"
+
 #, fuzzy
 #~| msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
 #~ msgid "In order to trade using MetaTrader 5 platform, you'll first need to have a MetaTrader account."
@@ -9017,9 +9026,6 @@ msgstr ""
 
 #~ msgid "Log out"
 #~ msgstr "Abmelden"
-
-#~ msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with ‘best execution’. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
-#~ msgstr "Konkret haben wir die Pflicht, Ihnen die 'bestmögliche Ausführung' zu bieten, wenn wir einen Binäre Optionen Handel mit Ihnen eingehen (je \"Kontrakt\"). Die bestmögliche Ausführung bedeutet, dass wir die geeigneten Schritte unternehmen müssen, um für Sie das bestmögliche Ergebnis zu erreichen, wenn wir die Order für Sie ausführen. Dieses Dokument bietet eine Zusammenfassung unserer Regeln zur bestmöglichen Ausführung."
 
 #~ msgid "Page not found"
 #~ msgstr "Seite nicht gefunden"

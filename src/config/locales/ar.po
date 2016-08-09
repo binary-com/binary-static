@@ -336,7 +336,7 @@ msgstr "تاريخ Binary.com البارز"
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "أنظمة %1 تقوم الآن بمعالجة ما يزيد على 1 مليون صفقة / يوم (بما في ذلك الحسابات الافتراضية)."
 
-msgid "%1’s Volatility Indices are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
+msgid "%1’s <a href=\"%2\">Volatility Indices</a> are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
 msgstr ""
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
@@ -1600,6 +1600,9 @@ msgstr "من خلال تقديم الإقتراحات أو غيرها من رد�
 
 msgid "By the 15th of every month, you will receive the commission earned during the previous calendar month."
 msgstr "بحلول اليوم الـ 15 من كل شهر، ستتسلم العمولة التى حصلت علبها خلال الشهر السابق."
+
+msgid "By using or interacting with the website, you are consenting to the use of Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
+msgstr ""
 
 msgid "Can I become an affiliate even if I don't have a website?"
 msgstr "هل يمكنني أن أكون منتسبا حتى لو لم يكن لدي موقع على شبكة الإنترنت؟"
@@ -3465,9 +3468,6 @@ msgstr "معلومات عن خلاصة البيانات التى تستخدمه�
 msgid "Information of the previous performance of any underlying instrument or asset does not guarantee its current and/or future performance. Past performance is not a reliable indicator of future results."
 msgstr "المعلومات عن الأداء السابق لأي أداة أساسية أو أصل لا يضمن الأداء الراهن و/أو في المستقبل. الأداء في الماضي ليس مؤشرا موثوقا على النتائج المستقبلية."
 
-msgid "Instant"
-msgstr "فوري"
-
 msgid "Insufficient balance"
 msgstr "رصيد غير كاف"
 
@@ -4211,7 +4211,7 @@ msgstr "قفل الصراف"
 msgid "Log in"
 msgstr "تسجيل الدخول"
 
-msgid "Log into the application using your MetaTrader account number (e.g., 1124) and your MetaTrader account password."
+msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
 msgstr ""
 
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
@@ -4457,8 +4457,10 @@ msgstr "شهر"
 msgid "More benefits"
 msgstr "المزيد من الفوائد"
 
-msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with "
-msgstr "بشكل أكثر تحديداً, عندما ندخل معك في تداول الخيارت الثنائية (كل, \"عقد\"), فإنه من الواجب علينا أن نقدم لك "
+#, fuzzy
+#| msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with ‘best execution’. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
+msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with 'best execution'. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
+msgstr "بشكل أكثر تحديدا، عندما ندخل في تداول خيار ثنائي معك (كل، \"عقد\")، من واجبنا أن نقدم لك \"أفضل تنفيذ\". أفضل تنفيذ يعني أننا يجب أن نتخذ خطوات معقولة للحصول على أفضل نتيجة ممكنة بالنسبة لك عند تنفيذ أمر معك. تقدم هذه الوثيقة ملخصا لسياستنا لأفضل تنفيذ."
 
 msgid "Mother's maiden name"
 msgstr "اسم الأم قبل الزواج"
@@ -6693,14 +6695,16 @@ msgstr "To begin Binary option trading, you will first need to read all these do
 msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "لتغيير اسمك أو تاريخ ميلادك أو بلد إقامتك أو البريد الإلكتروني يرجى الاتصال <a href=\"%1\">بخدمة العملاء</a>."
 
-msgid "To create a Real account for MetaTrader, <a href=\"%1\">upgrade to Bianry Real account</a>."
-msgstr ""
-
-msgid "To create a Real account for MetaTrader, switch to your Binary Real account."
-msgstr ""
-
 msgid "To create a Real account for MetaTrader, you need to authenticate your Binary account:"
 msgstr ""
+
+msgid "To create a real account for MetaTrader, <a href=\"%1\">upgrade to %2 real money account</a>."
+msgstr ""
+
+#, fuzzy
+#| msgid "You are currently logged in to your virtual money account (%2)."
+msgid "To create a real account for MetaTrader, switch to your %1 real money account."
+msgstr "أنت حاليا قمت بتسجيل الدخول الى حساب أموالك الافتراضية (%2)."
 
 msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
 msgstr ""
@@ -8987,6 +8991,12 @@ msgstr "لموافقة على الشروط والأحكام"
 msgid "Trading with MetaTrader 5"
 msgstr ""
 
+#~ msgid "Instant"
+#~ msgstr "فوري"
+
+#~ msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with "
+#~ msgstr "بشكل أكثر تحديداً, عندما ندخل معك في تداول الخيارت الثنائية (كل, \"عقد\"), فإنه من الواجب علينا أن نقدم لك "
+
 #, fuzzy
 #~| msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
 #~ msgid "In order to trade using MetaTrader 5 platform, you'll first need to have a MetaTrader account."
@@ -9311,9 +9321,6 @@ msgstr ""
 
 #~ msgid "Log out"
 #~ msgstr "تسجيل الخروج"
-
-#~ msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with ‘best execution’. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
-#~ msgstr "بشكل أكثر تحديدا، عندما ندخل في تداول خيار ثنائي معك (كل، \"عقد\")، من واجبنا أن نقدم لك \"أفضل تنفيذ\". أفضل تنفيذ يعني أننا يجب أن نتخذ خطوات معقولة للحصول على أفضل نتيجة ممكنة بالنسبة لك عند تنفيذ أمر معك. تقدم هذه الوثيقة ملخصا لسياستنا لأفضل تنفيذ."
 
 #~ msgid "Page not found"
 #~ msgstr "الصفحة غير موجودة"

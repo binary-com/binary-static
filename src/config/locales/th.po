@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-01 17:00+0000\n"
+"PO-Revision-Date: 2016-08-06 17:10+0000\n"
 "Last-Translator: Jutawan <bubbleblythe@gmail.com>\n"
 "Language-Team: Thai <https://hosted.weblate.org/projects/binary/static/th/>\n"
 "Language: th\n"
@@ -217,20 +217,8 @@ msgstr "%1 กำลังสรรหาเจ้าหน้าที่สื
 msgid "%1 seeks a sharp Copywriter to produce content that actively engages new prospects and current customers based throughout the world."
 msgstr "%1 กำลังสรรหาเจ้าหน้าที่เขียนต้นฉบับ หรือ ก๊อปปี้ไรท์เทอร์ ที่มีทักษะ ฉลาดหลักแหลม เพื่อผลิตเนื้อหาข้อมูลที่สามารถใช้ในการเพิ่มผู้มุ่งหวังใหม่ๆ และสื่อประสานกับลูกค้าปัจจุบันของเราทั่วทุกมุมโลก"
 
-#, fuzzy
-#| msgid "Binary.com supports the <a target=\"_blank\" href=\"http://www.responsiblegamblingtrust.org.uk/\">Responsible Gambling Trust</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
 msgid "%1 supports the <a target='_blank' href='http://www.responsiblegamblingtrust.org.uk/'>Responsible Gambling Trust</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
-msgstr ""
-"=== XXX ===\n"
-"\n"
-"Binary.com supports the <a target=\"_blank\" href=\"http://www.responsiblegamblingtrust.org.uk/\">Responsible Gambling Trust</a> (RGT) which is the leading charity in Britain committed to minimising gambling-related harm. The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling.\n"
-"\n"
-"Binary.com ให้การสนับสนุนองค์กร <a target=\"_blank\" href=\"http://www.responsiblegamblingtrust.org.uk/\">Responsible Gambling Trust</a> (RGT) เป็นองค์กรการกุศลชั้นนำในประเทศอังกฤษเพื่อรณรงค์บรรเทาโทษของการพนันให้มีน้อยที่สุด กองทุน RGT เพื่อการศึกษา \n"
-"การป้องกัน \n"
-"\n"
-"=== XXX ===\n"
-"\n"
-"The RGT funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
+msgstr "%1 ให้การสนับสนุนองค์กร <a target='_blank' href='http://www.responsiblegamblingtrust.org.uk/'>Responsible Gambling Trust</a> (RGT)  เป็นองค์กรการกุศลชั้นนำในประเทศอังกฤษเพื่อรณรงค์บรรเทาโทษของการพนันให้มีน้อยที่สุด บริการกองทุน RGT เพื่อการศึกษา บริการการรักษาและป้องกัน และการวิจัยต่างๆ นั้น เพื่อช่วยให้บุคลากรได้มีความเข้าใจเกี่ยวกับภัยของการพนันมากขึ้น สิ่งนี้ยังรวมถึงการมีหน่วยงานให้คำปรึกษาระดับชาติเพื่อแนะนำและสนับสนุนทุกคนที่ต้องการได้รับความช่วยเหลือเกี่ยวกับกรณีทางการพนันต่างๆ ของพวกเขา"
 
 msgid "%1 takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
 msgstr "%1 ได้รับรางวัลชนะเลิศ ประเภท Financial Betting Operator ในงานเกียรติยศ EGR Operator Awards ปี 2015 จัดที่เมืองลอนดอน"
@@ -288,7 +276,9 @@ msgstr "ประวัติศาสตร์อันน่าจดจำข
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "ระบบต่างๆ ของ %1 ขณะนี้มีการประมวลผลมากกว่า 1 ล้านธุรกรรมต่อวัน (รวมประเภทบัญชีเสมือน หรือ บัญชีทดลองใช้)"
 
-msgid "%1’s Volatility Indices are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
+#, fuzzy
+#| msgid "%1’s Volatility Indices are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
+msgid "%1’s <a href=\"%2\">Volatility Indices</a> are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
 msgstr "ดัชนีความผันผวนของ %1 มีให้ใช้งานตลอด 24/7 กับ MetaTrader 5 ติดตามเครื่องมืออื่นๆ เร็วๆ นี้"
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
@@ -1448,6 +1438,9 @@ msgstr "โดยการส่งข้อเสนอแนะ หรือ�
 
 msgid "By the 15th of every month, you will receive the commission earned during the previous calendar month."
 msgstr "ทุกวันที่ 15 ของทุกเดือน ท่านจะได้รับค่าคอมมิชชั่นที่เกิดขึ้นในเดือนปฏิทินก่อนหน้า"
+
+msgid "By using or interacting with the website, you are consenting to the use of Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
+msgstr ""
 
 msgid "Can I become an affiliate even if I don't have a website?"
 msgstr "ฉันสามารถเป็นพันธมิตรได้ไหม หากฉันไม่มีเว็บไซต์?"
@@ -3222,9 +3215,6 @@ msgstr "สารสนเทศเกี่ยวกับข้อมูลน
 msgid "Information of the previous performance of any underlying instrument or asset does not guarantee its current and/or future performance. Past performance is not a reliable indicator of future results."
 msgstr "ข้อมูลของการดำเนินงานก่อนหน้านี้ของผลิตภัณฑ์อ้างอิง หรือ สินทรัพย์ใดๆ ไม่ได้รับประกันผลงานในปัจจุบัน และ/หรือ อนาคต ผลการดำเนินงานในอดีตไม่ได้เป็นตัวบ่งชี้การดำเนินงานในอนาคต"
 
-msgid "Instant"
-msgstr "ทันที"
-
 msgid "Insufficient balance"
 msgstr "ยอดคงเหลือไม่เพียงพอ"
 
@@ -3960,7 +3950,9 @@ msgstr "Lock Cashier"
 msgid "Log in"
 msgstr "เข้าสู่ระบบ"
 
-msgid "Log into the application using your MetaTrader account number (e.g., 1124) and your MetaTrader account password."
+#, fuzzy
+#| msgid "Log into the application using your MetaTrader account number (e.g., 1124) and your MetaTrader account password."
+msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
 msgstr "เข้าสู่ระบบบัญชี MetaTrader โดยใช้เลขที่บัญชีของท่าน (ได้แก่ 1124) และรหัสผ่าน MetaTrader ของท่าน"
 
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
@@ -4200,8 +4192,8 @@ msgstr "เดือน"
 msgid "More benefits"
 msgstr "ประโยชน์อื่นๆ"
 
-msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with "
-msgstr "โดยเฉพาะเจาะจง เมื่อพวกเราเข้าซื้อขายไบนารีออปชั่นกับท่าน (แต่ละ \"สัญญา\") พวกเรามีหน้าที่เตรียมสิ่งเหล่านี้ให้ท่าน "
+msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with 'best execution'. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
+msgstr ""
 
 msgid "Mother's maiden name"
 msgstr "ชื่อกลางของมารดา"
@@ -4583,13 +4575,8 @@ msgstr "ดูแลบริหารจัดการปัญหาการ
 msgid "Ownership"
 msgstr "กรรมสิทธิ์"
 
-#, fuzzy
 msgid "Ownership and content of the %1 website remains our respective properties and shall not be deemed to have been transferred to you through any act or omission in respect of this Agreement."
-msgstr ""
-"== Pending ==\n"
-"กรรมสิทธิ์และเนื้อหาในเว็บไซต์ %1 ประกอบด้วยคุณสมบัติ \n"
-"\n"
-"and shall not be deemed to have been transferred to you through any act or omission in respect of this Agreement."
+msgstr "กรรมสิทธิ์และเนื้อหาในเว็บไซต์ %1 ประกอบด้วยคุณสมบัติ และจะไม่ถูกนำไปกล่าวอ้างในการถ่ายโอนไปผ่านกิจกรรมใดๆ หรือ การละเลยในข้อตกลงฉบับนี้"
 
 msgid "Ownership, content, and liability of the Affiliate's websites are the sole responsibility of the Affiliate. You will be solely responsible for the development, operation, and maintenance of your website and for all materials that appear on your website. You will indemnify and hold us harmless from all claims, damages, and expenses (including, without limitation to, attorneys' fees) relating to the development, operation, maintenance, and contents of your website."
 msgstr ""
@@ -5056,7 +5043,7 @@ msgid "Real-time prices, benchmarked against interbank options markets."
 msgstr "ราคาเรียลไทม์ เป็นไปตามเกณฑ์มาตรฐานของธนาคารในตลาดออปชั่น"
 
 msgid "Reality Check"
-msgstr "การตรวจสอบสภาพความเป็นจริง"
+msgstr "การตรวจสอบสภาพความเป็นจริง (Reality Check)"
 
 msgid "Reality Check Interval:"
 msgstr "ช่วงเวลาในการตรวจสอบสภาพความเป็นจริง:"
@@ -5657,7 +5644,7 @@ msgid "Take advantage of numerous benefits, including:"
 msgstr "ใช้ข้อได้เปรียบจากประโยชน์ต่างๆ ได้แก่:"
 
 msgid "Take your trading to the next level through this powerful interface, recognised as the benchmark standard worldwide."
-msgstr ""
+msgstr "ทำให้การซื้อขายของท่านก้าวขึ้นไปอีกระดับด้วยการใช้เครื่องมืออันทรงพลัง ที่มีการยอมรับตามมาตรฐานระดับโลก"
 
 msgid "Talk to us"
 msgstr "พูดคุยกับเรา"
@@ -5855,7 +5842,7 @@ msgid "The Company reserves the right to suspend the operation of this site or s
 msgstr "บริษัทฯ สงวนสิทธิ์ในการระงับการปฏิบัติการของเว็บไซต์นี้ หรือ ส่วนที่เกี่ยวข้อง:"
 
 msgid "The Company reserves the right to void, delay, or withhold payment of commission fees to you in situations including a suspected breach of a law or a breach of the terms and conditions of this Agreement."
-msgstr ""
+msgstr "บริษัทสงวนสิทธิ์ในการยกเลิก หน่วงเหนี่ยว หรือ ถอนการชำระเงินค่าธรรมเนียมนายหน้าให้ท่านหากพบ หรือมีข้อสงสัยในพฤติการณ์ฝ่าฝืนกฎหมาย หรือข้อตกลงและเงื่อนไขต่างๆ ในข้อตกลงนี้"
 
 msgid "The Company shall be entitled to exercise any of its rights or fulfill any of its obligations hereunder (including, but not limited to, its payment obligations) through any member of the Binary group of companies."
 msgstr ""
@@ -6271,10 +6258,8 @@ msgstr "และนี่คือเหตุผลว่า ทำไมข�
 msgid "This notice does not explain all of the risks involved in investments or similar products or how such risks relate to your personal circumstances. It is important that you fully understand the risks involved before making a decision to enter into or sell an investment product or gambling product with us. If you are in any doubt about the risks involved with Investment Products or Gambling Products, you should seek professional advice."
 msgstr "ข้อสังเกตนี้ไม่ได้ชี้แจงความเสี่ยงที่เกี่ยวข้องทั้งหมดในการลงทุน หรือ ในผลิตภัณฑ์ที่ใกล้เคียงกัน หรือ ความเสี่ยงเหล่านั้นมีความสัมพันธ์อย่างไรกับกรณีของท่าน มันเป็นสิ่งสำคัญที่ท่านต้องมีความเข้าใจในความเสี่ยงต่างๆ อย่างถ่องแท้ ก่อนที่จะตัดสินใจในการซื้อ หรือ ขายผลิตภัณฑ์การลงทุนใดๆ หรือ ผลิตภัณฑ์เสี่ยงโชคกับเรา หากท่านมีข้อสงสัยใดๆ เกี่ยวกับความเสี่ยงในผลิตภัณฑ์เพื่อการลงทุนต่างๆ หรือ ผลิตภัณฑ์เสี่ยงโชคต่างๆ โปรดศึกษาข้อมูลและขอคำแนะนำจากผู้เชี่ยวชาญ"
 
-#, fuzzy
-#| msgid "This notice provides you with information about the risks associated with investment contracts, which you may invest in through services provided to you through %1. Binary Group provides a wide range of products including Binary Options relating to foreign exchange, indices, stocks and other investment products (\"Investment Products\") and binary bets such as those relating to the Random Markets (\"Gambling Products\")."
 msgid "This notice provides you with information about the risks associated with investment contracts, which you may invest in through services provided to you through %1. Binary Group provides a wide range of products including Binary Options relating to foreign exchange, indices, stocks and other investment products (\"Investment Products\") and binary bets such as those relating to the Volatility Indices (\"Gambling Products\")."
-msgstr "ข้อสังเกตนี้ให้ข้อมูลท่านเกี่ยวกับความเสี่ยงที่เกี่ยวข้องกับสัญญาการลงทุนต่างๆ ซึ่งท่านอาจจะลงทุนในผลิตภัรฑ์ต่างๆ ผ่าน %1 เครือ Binary Group ให้บริการผลิตภัณฑ์เพื่อการลงทุนที่หลากหลาย รวมถึง ไบนารีออปชั่นของอตราแลกเปลี่ยนต่างประเทศ ดัชนีต่างๆ หุ้น หรือ หลักทรัพย์ต่างๆ และผลิตภัณฑ์เพื่อการลงทุนอื่นๆ (เรียกว่า \"ผลิตภัณฑ์เพื่อการลงทุน (Investment Products)\") และไบนารีในกลุ่มการพนัน เช่น กลุ่ม Random Markets (เรียกว่า \"ผลิตภัณฑ์เพื่อการเสี่ยงโชค (Gambling Products)\")"
+msgstr "ข้อสังเกตนี้ให้ข้อมูลท่านเกี่ยวกับความเสี่ยงที่เกี่ยวข้องกับสัญญาการลงทุนต่างๆ ซึ่งท่านอาจจะลงทุนในผลิตภัรฑ์ต่างๆ ผ่าน %1 เครือ Binary Group ให้บริการผลิตภัณฑ์เพื่อการลงทุนที่หลากหลาย รวมถึง ไบนารีออปชั่นของอตราแลกเปลี่ยนต่างประเทศ ดัชนีต่างๆ หุ้น หรือ หลักทรัพย์ต่างๆ และผลิตภัณฑ์เพื่อการลงทุนอื่นๆ (เรียกว่า \"ผลิตภัณฑ์เพื่อการลงทุน (Investment Products)\") และไบนารีในกลุ่มการพนัน เช่น สิ่งต่างๆ ที่เกี่ยวข้องกับดัชนีผันผวน (เรียกว่า \"ผลิตภัณฑ์เพื่อการเสี่ยงโชค (Gambling Products)\")"
 
 msgid "This offer cannot be used in conjunction with any other offer."
 msgstr "ข้อเสนอนี้ไม่สามารถใช้ร่วมกับข้อเสนออื่นๆ"
@@ -6333,14 +6318,16 @@ msgstr "ในการเริ่มซื้อขายไบนารีอ
 msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "ในการเปลี่ยนแปลง ชื่อ วันเกิด ประเทศที่พำนัก หรือ อีเมล์ของท่าน โปรดติดต่แ <a href=\"%1\">เจ้าหน้าที่บริการลูกค้า</a>"
 
-msgid "To create a Real account for MetaTrader, <a href=\"%1\">upgrade to Bianry Real account</a>."
-msgstr ""
-
-msgid "To create a Real account for MetaTrader, switch to your Binary Real account."
-msgstr ""
-
 msgid "To create a Real account for MetaTrader, you need to authenticate your Binary account:"
 msgstr ""
+
+msgid "To create a real account for MetaTrader, <a href=\"%1\">upgrade to %2 real money account</a>."
+msgstr ""
+
+#, fuzzy
+#| msgid "You are currently logged in to your virtual money account (%2)."
+msgid "To create a real account for MetaTrader, switch to your %1 real money account."
+msgstr "ขณะนี้ท่านเข้าใช้งานระบบบัญชีเงินเสมือนของท่าน (%2)"
 
 msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
 msgstr ""
@@ -6349,7 +6336,7 @@ msgid "To enable cookies, follow the instructions below for the browser version 
 msgstr "เพื่อติดตั้งคุกกี้ โปรดปฏิบัติตามขั้นตอนข้างล่างสำหรับเวอร์ชันของเบราเซอร์ที่ท่านใช้งาน"
 
 msgid "To open a trading account, our customers must confirm they fully understand the mechanisms and risks of transactions. Please acknowledge your understanding and agreement to each of the following statements, by placing a check mark in the boxes alongside."
-msgstr ""
+msgstr "ในการเปิดบัญชีซื้อขาย ลูกค้าของเราต้องยืนยันว่า พวกเขามีความเข้าใจในกลไกและความเสี่ยงของธุรกรรมอย่างสมบูรณ์ โปรดตอบรับความเข้าใจและแสดงความยินยอมในแต่ละข้อต่อไปนี้ โดยการทำเครื่องหมายหน้าข้อ"
 
 msgid "To qualify, you'll need an advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "สำหรับตำแหน่งนี้ ท่านต้องสำเร็จการศึกษาขั้นสูงในสาขา ฟิสิกส์ วิศวกรรมการเงิน หรือ คณิตศาสตร์"
@@ -6589,7 +6576,7 @@ msgid "Usage Limit"
 msgstr "วงเงินที่ใช้"
 
 msgid "Use appropriate terminology, taking into account the style and nuance of the original text"
-msgstr ""
+msgstr "ใช้คำศัพท์ที่เหมาะสม พิจารณารูปแบบ ความแตกต่างที่มีเพียงเล็กน้อยจากข้อความเดิม"
 
 msgid "Use of Information"
 msgstr "การใช้งานข้อมูล"
@@ -6598,16 +6585,16 @@ msgid "Use of bid/ask prices: when the market is illiquid, the data feed may con
 msgstr ""
 
 msgid "Use the opportunity provided by our website to practice for free with our virtual money account facility. This will enable you to get used to the functionalities and rules of the website."
-msgstr ""
+msgstr "ใช้โอกาสที่มีในเว็บของพวกเราเพื่อเรียนรู้ให้เกิดความชำนาญโดยไม่ต้องลงทุนลงเงินจากบัญชีทดลองใช้งาน จะทำให้ท่านมีความคุ้นเคยกับการทำงานต่างๆ และหลักการในเว็บไซต์"
 
 msgid "Use, perform, and display your Application and its content for purposes of marketing, demonstrating, and making your Application available to our clients; and    "
-msgstr ""
+msgstr "ใช้ ดำเนินการ และแสดงแอพพลิเคชันของท่าน และเนื้อหาเพื่อวัตถุประสงค์ทางการตลาด การสาธิต และให้ลูกค้าของเราได้ใช้งานแอพพลิเคชัน และ    "
 
 msgid "User Testing"
 msgstr "การทดสอบด้วยผู้ใช้งาน"
 
 msgid "Using our website, customers can trade currencies, indices, stocks and commodities 24/7. We have the most flexible pricing and the most comprehensive suite of products available."
-msgstr ""
+msgstr "การใช้เว็บไซต์ของเรา ลูกค้าสามารถซื้อขายสกุลเงินต่างๆ ดัชนีต่างๆ หลักทรัพย์ต่างๆ สินค้าโภคภัณฑ์ต่างๆ ได้ตลอด 24 ชั่วโมง 7 วัน พวกเรามีความยืดหยุ่นในราคามากที่สุด และผลิตภัณฑ์ที่หลากหลายมากที่สุด"
 
 msgid "Utilise a variety of tactics - both online and offline - to grow and support the company's network of partners in your designated market"
 msgstr ""
@@ -6937,10 +6924,10 @@ msgid "Where our arrangements to manage conflicts are not or cannot be sufficien
 msgstr ""
 
 msgid "Where supportive colleagues are like a second family."
-msgstr ""
+msgstr "เป็นที่ซึ่งให้ความช่วยเหลือซึ่งกันและกันเสมือนเป็นครอบครัวที่สอง"
 
 msgid "Where teamwork and a collaborative culture form the platform for personal and corporate growth."
-msgstr ""
+msgstr "เป็นที่ซึ่งมีการทำงานเป็นทีมและมีวัฒนธรรมของการทำงานร่วมกันเพื่อสร้างการเจริญเติบตัวของปัจเจกชนและระดับองค์กร"
 
 msgid "Where we are"
 msgstr "ที่ที่เราอยู่"
@@ -6964,22 +6951,22 @@ msgid "Whether in Malta or Malaysia, you'll enjoy a high standard of living, and
 msgstr ""
 
 msgid "Who can apply to be a Payment Agent?"
-msgstr ""
+msgstr "ใครบ้างที่สามารถเป็นตัวแทนรับชำระเงินได้?"
 
 msgid "Who can be a client on the %1 platform?"
-msgstr ""
+msgstr "ใครสามารถเป็นลูกค้าของแพลตฟอร์ม %1 ได้บ้าง?"
 
 msgid "Who love working with people from different cultures, and are keen to contribute to a dynamic and unique workplace, and not merely pass on through."
-msgstr ""
+msgstr "บุคคลที่รักในการทำงานกับคนหลายหลายวัฒนธรรม และกระตือรือร้นในการปฏิบัติหน้าที่ในที่ทำงานที่มีความเป็นเอกลักษณ์แต่ยืดหยุ่น และไม่ใช่เพียงแค่ใช้เวลาผ่านไป"
 
 msgid "Why Choose Binary Trading?"
-msgstr ""
+msgstr "ทำไมต้องเลือกซื้อขายไบนารี?"
 
 msgid "Why Us?"
-msgstr ""
+msgstr "ทำไมต้องเป็นเรา?"
 
 msgid "Why become an Affiliate?"
-msgstr ""
+msgstr "ทำไมต้องร่วมเป็นพันธมิตรของเรา?"
 
 msgid "Why choose binary trading?"
 msgstr ""
@@ -7159,7 +7146,7 @@ msgid "You are not authorized for withdrawal via payment agent."
 msgstr "ท่านไม่ได้รับอนุญาตให้ถอนเงินผ่านตัวแทนรับชำระเงิน"
 
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
-msgstr ""
+msgstr "ท่านไม่ได้รับสิทธิ์ในการได้รับค่าชดเชยใดๆ หรือ การชำระเงินคืนให้ในกรณีใดๆ จากบริษัทฯ ไม่ว่าสถานการณ์ใดๆ"
 
 msgid "You are responsible for managing your tax and legal affairs including making any regulatory filings and payments and complying with applicable laws and regulations. We do not provide any regulatory, tax or legal advice. If you are in any doubt as to the tax treatment or liabilities of Investment Products or Gambling Products available through %1, you may wish to seek independent advice."
 msgstr ""
@@ -7174,7 +7161,7 @@ msgid "You can choose payouts from $1 to $50,000. This wide payout range is idea
 msgstr ""
 
 msgid "You can close your trade before expiry to lock in profits."
-msgstr ""
+msgstr "ท่านสามารถปิดสัญญาซื้อขายของท่านก่อนวันหมดอายุเพื่อรักษากำไรของท่านไว้"
 
 msgid "You can sell back long-term trades at any time to profit from changing market conditions."
 msgstr ""
@@ -7296,10 +7283,8 @@ msgstr "ท่านจะหลีกเลี่ยงการเปิดเ
 msgid "You shall be solely responsible for, and shall indemnify and hold the Company free and harmless from, any and all third party claims, damages or lawsuits (including, but not limited to, consequential losses and loss of profit, the Company's reasonable legal costs and expenses if applicable):"
 msgstr "ท่านจะเป็นผู้รับผิดชอบแต่เพียงผู้เดียว จะชดเชย และถือว่า ปลอดจากการอ้างสิทธิ์ใดๆ โดยบุคคลที่สาม ความเสียหาย หรือ การดำเนินคดีต่างๆ (รวมถึง มูลค่าความเสียหาย และการขาดทุนในผลกำไร ค่าใช้จ่ายที่เกิดขึ้นกับบริษัทฯ ตามกฎหมาย และอื่นๆ ถ้ามี):"
 
-#, fuzzy
-#| msgid "You shall discontinue your use of all prior versions of the Binary.com API in favour of the revised Binary.com API. While it is the Company's intention that the revised Binary.com API shall be backward compatible with the immediately prior version of the Binary.com API, the Company does not guarantee or warrant that this shall be so, and the Company shall have no liability whatsoever to you for any failure of the revised Binary.com API to be backward compatible with any prior version of the Binary.com API."
 msgid "You shall discontinue your use of all prior versions of the %1 API in favour of the revised %1 API. While it is the Company's intention that the revised %1 API shall be backward compatible with the immediately prior version of the %1 API, the Company does not guarantee or warrant that this shall be so, and the Company shall have no liability whatsoever to you for any failure of the revised %1 API to be backward compatible with any prior version of the %1 API."
-msgstr "ท่านจะยุติการใช้ API ของ Binary.com ไม่ว่าเวอร์ชันปัจจุบันหรือก่อนหน้าในการแก้ไขใดๆ กับ API ของ Binary.com ขณะที่บริษัทฯ มีความมุ่งมั่นในการแก้ไข API ของ Binary.com ที่จะมีผลต่อ API รุ่นก่อนของ Binary.com บริษัทฯ ไม่รับประกัน หรือ รับรองใดๆ ในการกระทำดังกล่าว และบริษัทฯ ไม่รับผิดชอบต่อสิ่งที่เกิดขึ้นกับท่านสำหรับความล้มเหลวใดๆ ในการแก้ไข API ของ Binary.com เพื่อให้ใช้งานได้กับ API รุ่นก่อนของ Binary.com"
+msgstr "ท่านจะยุติการใช้ API ของ %1 ไม่ว่าเวอร์ชันปัจจุบันหรือก่อนหน้าในการแก้ไขใดๆ กับ API ของ %1 ขณะที่บริษัทฯ มีความมุ่งมั่นในการแก้ไข API ของ %1 ที่จะมีผลต่อ API รุ่นก่อนของ %1 บริษัทฯ ไม่รับประกัน หรือ รับรองใดๆ ในการกระทำดังกล่าว และบริษัทฯ ไม่รับผิดชอบต่อสิ่งที่เกิดขึ้นกับท่านสำหรับความล้มเหลวใดๆ ในการแก้ไข API ของ %1 เพื่อให้ใช้งานได้กับ API รุ่นก่อนของ %1"
 
 msgid "You shall indemnify on demand and hold the Company harmless from, and against any and all losses, demands, claims, damages, costs, expenses (including, but not limited to, consequential losses, loss of profit, and reasonable legal costs, if applicable), and liabilities suffered or incurred, directly, or indirectly, by the Company in consequence of any breach, non-performance, or non-observance by you of any of your obligations or warranties under this Agreement."
 msgstr ""
@@ -7323,7 +7308,7 @@ msgid "You shall not purchase or register keywords, search terms or other identi
 msgstr ""
 
 msgid "You shall not resort to high-pressure sales tactics or false promises."
-msgstr ""
+msgstr "ท่านจะไม่ใช้วิธีการกดดันทางการขาย หรือ การให้สัญญาลวง"
 
 msgid "You shall not target any of your marketing, advertising, and promotional activities to any persons under the age of 18 years old."
 msgstr "ท่านจะม่ใช้วิธีการทางการตลาด การโฆษณา และกิจกรรมการส่งเสริมการตลาดใดๆ กับผู้มุ่งหวังที่มีอายุต่ำกว่า 18 ปี"
@@ -7335,7 +7320,7 @@ msgid "You should not trade or invest in Binary Options unless you know and unde
 msgstr "ท่านไม่ควรซื้อขาย หรือ ลงทุน ไบนารีออปชั่น กระทั่งท่านมีความรู้และเข้าใจในความเสี่ยงที่เกี่ยวข้องที่ท่านอาจจะได้รับกับเงินทั้งหมดที่ท่านลงทุน"
 
 msgid "You should note that our duty to provide you with best execution does not apply to any gambling products that you place with us, where there is no underlying financial market."
-msgstr ""
+msgstr "ท่านจะตระหนักว่า หน้าที่ของเราในการช่วยให้ท่านมีการปฏิบัติหน้าที่ที่ดีที่สุดโดยไม่เกี่ยวข้องกับการสมัครผลิตภัณฑ์การพนันใดๆ ที่ท่านมีกับเรา โดยไม่มีผลิตภัณฑ์อ้างอิงทางการเงิน"
 
 msgid "You should read these ST&Cs carefully as well as the Summary Order Execution Policy and Summary Conflicts Policy, the applicable Contract Details together with the Risk Disclosure Notice and any other documents that we have supplied or in the future do supply to you."
 msgstr ""
@@ -7344,7 +7329,7 @@ msgid "You will be automatically logged out after such time."
 msgstr "ท่านออกจากระบบโดยอัตโนมัติภายหลังเวลาดังกล่าว"
 
 msgid "You will be provided with all the tools, to turn your traffic into a lucrative revenue stream"
-msgstr ""
+msgstr "ท่านจะได้รับเครื่องมือทั้งหมดเพื่อแปลงธุรกรรมของท่านให้เป็นสายธารรายได้และกำไรแสนงาม"
 
 msgid "You will have no 'margin calls', no 'stops', and no surprises."
 msgstr "ท่านจะไม่ถูกเรียกเก็บหลักประกันเพิ่ม ไม่มีการหยุดชะงัก และไม่มีเหตุการณ์ที่ทำให้ท่านต้องประหลาดใจ"
@@ -7377,10 +7362,10 @@ msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other c
 msgstr "วงเงินการถอนเงินต่อวันของท่าน %1 ในปัจจุบัน คือ %2 %3 (หรือเทียบเท่าในสกุลเงินอื่น)"
 
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
-msgstr ""
+msgstr "ลูกค้าของท่านจะได้รับอีเมล์แจ้งให้ทราบว่า การโอนได้ถูกดำเนินการแล้ว"
 
 msgid "Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on %1 and in that event, opens an account with us."
-msgstr ""
+msgstr "รหัสผู้ใช้งานของท่านจะถูกเก็บในคุกกี้และอ้างอิงให้ระบบทราบในทุกครั้งที่มีผู้มุ่งหวังคลิกที่ลิงค์ของพันธมิตรของท่าน และเข้ามายัง %1 และอยู่ในเหตุการณ์ กระทั่งเปิดบัญชีกับเรา"
 
 msgid "Your Name"
 msgstr "ชื่อของท่าน"
@@ -7539,16 +7524,16 @@ msgid "and"
 msgstr "และ"
 
 msgid "any instance where the Company believes that person's activities at this site may be illegal in that person's country or state;"
-msgstr "กรณีตัวอย่างใดๆ ซึ่งบริษัทฯ เชื่อว่า กิจกรรมต่างๆ ที่ได้กระทำในเว็บไวต์อาจจะไม่ชอบด้วยกฎหมายของประเทศ หรือ รัฐนั้นๆ"
+msgstr "กรณีตัวอย่างใดๆ ซึ่งบริษัทฯ เชื่อว่า กิจกรรมต่างๆ ที่ได้กระทำในเว็บไซต์อาจจะไม่ชอบด้วยกฎหมายของประเทศ หรือ รัฐนั้นๆ"
 
 msgid "any instance where the Company may be approached or contacted by legal authorities or regulators from that person's country or state;"
 msgstr "กรณีตัวอย่างใดๆ ซึ่งบริษัทฯ ได้เข้าถึง หรือ ได้รับการติดต่อโดยหน่วยงานทางกฎหมาย หรือ ผู้ควบคุมกฎหมายของประเทศ หรือ รัฐนั้นๆ"
 
 msgid "any instance where the Company may suffer any pecuniary, fiscal or regulatory disadvantage by virtue of that person's activities at this site;"
-msgstr ""
+msgstr "กรณีตัวอย่างใดๆ ซึ่งบริษัทฯ ได้รับความเสียหายในรูปตัวเงิน การคลัง หรือ ข้อเสียเปรียบทางการควบคุมด้วยจริยธรรมของกิจกรรมส่วนบุคคลที่เว็บไซต์นี้"
 
 msgid "any restriction to its Clients from purchasing any contracts during certain hours."
-msgstr ""
+msgstr "ข้อจำกัดใดๆ ของลูกค้าในการซื้อสัญญาต่างๆ ในช่วงเวลาที่กำหนด"
 
 msgid "apostrophe"
 msgstr "เครื่องหมาย '"
@@ -8411,6 +8396,12 @@ msgstr "การอนุมัติข้อตกลงและเงื่
 
 msgid "Trading with MetaTrader 5"
 msgstr "การซื้อขายด้วย MetaTrader 5"
+
+#~ msgid "Instant"
+#~ msgstr "ทันที"
+
+#~ msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with "
+#~ msgstr "โดยเฉพาะเจาะจง เมื่อพวกเราเข้าซื้อขายไบนารีออปชั่นกับท่าน (แต่ละ \"สัญญา\") พวกเรามีหน้าที่เตรียมสิ่งเหล่านี้ให้ท่าน "
 
 #, fuzzy
 #~| msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Italian (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-07-27 05:22+0000\n"
+"PO-Revision-Date: 2016-08-05 13:15+0000\n"
 "Last-Translator: Annalisa <ligiu@me.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/binary/static/it/>\n"
 "Language: it\n"
@@ -305,7 +305,7 @@ msgstr "La straordinaria storia di Binary.com"
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "I sistemi di %1 stanno elaborando oltre 1 milione di transazioni al giorno (inclusi gli account virtuali)."
 
-msgid "%1’s Volatility Indices are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
+msgid "%1’s <a href=\"%2\">Volatility Indices</a> are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
 msgstr ""
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
@@ -449,7 +449,7 @@ msgid "<< Back to Job Descriptions"
 msgstr "<< Torna su Descrizioni dei lavori"
 
 msgid "<a class='pjaxload' href='mailto:%1'>Contact Us</a>"
-msgstr ""
+msgstr "<a class='pjaxload' href='mailto:%1'>Contattaci</a>"
 
 msgid "<a href='%1'>Founded</a> October 1999"
 msgstr "<a href='%1'>Fondato</a> nell'ottobre del 1999"
@@ -1496,6 +1496,9 @@ msgstr "Inviando suggerimenti o altri feedback relativi all'API di Binary.com al
 msgid "By the 15th of every month, you will receive the commission earned during the previous calendar month."
 msgstr "Entro il 15 di ogni mese, riceverai la commissione guadagnata durante il mese precedente."
 
+msgid "By using or interacting with the website, you are consenting to the use of Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
+msgstr ""
+
 msgid "Can I become an affiliate even if I don't have a website?"
 msgstr "Posso diventare un affiliato pur non avendo un sito internet?"
 
@@ -2047,7 +2050,7 @@ msgid "Delete"
 msgstr "Elimina"
 
 msgid "Demo"
-msgstr ""
+msgstr "Demo"
 
 #, fuzzy
 #| msgid "Open Account"
@@ -3296,9 +3299,6 @@ msgstr "Informazioni sui feed dei dati utilizzati dalla nostra società, e su co
 msgid "Information of the previous performance of any underlying instrument or asset does not guarantee its current and/or future performance. Past performance is not a reliable indicator of future results."
 msgstr "Le informazioni sulle performance precedenti di un qualsiasi strumento o asset sottostante non garantiscono le performance attuali e/o future. Le performance precedenti non sono un indicatore affidabile dei risultati futuri."
 
-msgid "Instant"
-msgstr "Istante"
-
 msgid "Insufficient balance"
 msgstr "Saldo non sufficiente"
 
@@ -4040,7 +4040,7 @@ msgstr "Blocca la Cassa"
 msgid "Log in"
 msgstr "Login"
 
-msgid "Log into the application using your MetaTrader account number (e.g., 1124) and your MetaTrader account password."
+msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
 msgstr ""
 
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
@@ -4284,8 +4284,10 @@ msgstr "Mese"
 msgid "More benefits"
 msgstr "Maggiori vantaggi"
 
-msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with "
-msgstr "Nello specifico, quando effettuiamo un trade in Opzioni binarie con te (ognuno un \"Contratto\"), abbiamo il dovere di fornirti "
+#, fuzzy
+#| msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with ‘best execution’. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
+msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with 'best execution'. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
+msgstr "Più specificamente, quando eseguiamo un trade in Opzioni Binarie con te (un \"Contratto\"), abbiamo l'obbligo di fornirti la \"migliore esecuzione\". La migliore esecuzione significa che dobbiamo seguire dei passaggi ragionevoli per ottenere il miglior risultato possibile per te nell'esecuzione di un tuo ordine. Questo documento fornisce una sintesi della nostra informativa sulle migliori esecuzioni."
 
 msgid "Mother's maiden name"
 msgstr "Nome da nubile di tua madre"
@@ -5476,7 +5478,7 @@ msgid "Sharp prices"
 msgstr "Prezzi ottimi"
 
 msgid "Shop"
-msgstr ""
+msgstr "Shop"
 
 msgid "Short"
 msgstr "Breve"
@@ -6447,14 +6449,16 @@ msgstr "To begin Binary option trading, you will first need to read all these do
 msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "Per modificare il tuo nome, data di nascita, paese di residenza o email, contatta l'<a href=\"%1\">Assistenza Clienti</a>."
 
-msgid "To create a Real account for MetaTrader, <a href=\"%1\">upgrade to Bianry Real account</a>."
-msgstr ""
-
-msgid "To create a Real account for MetaTrader, switch to your Binary Real account."
-msgstr ""
-
 msgid "To create a Real account for MetaTrader, you need to authenticate your Binary account:"
 msgstr ""
+
+msgid "To create a real account for MetaTrader, <a href=\"%1\">upgrade to %2 real money account</a>."
+msgstr ""
+
+#, fuzzy
+#| msgid "You are currently logged in to your virtual money account (%2)."
+msgid "To create a real account for MetaTrader, switch to your %1 real money account."
+msgstr "Attualmente sei sul tuo account virtuale (%2)."
 
 msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
 msgstr ""
@@ -8533,7 +8537,7 @@ msgid "Why Us"
 msgstr "Perché noi?"
 
 msgid "Styles"
-msgstr ""
+msgstr "Stili"
 
 #, fuzzy
 #| msgid "points"
@@ -8586,6 +8590,12 @@ msgstr "Approvazione dei termini e delle condizioni"
 
 msgid "Trading with MetaTrader 5"
 msgstr ""
+
+#~ msgid "Instant"
+#~ msgstr "Istante"
+
+#~ msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with "
+#~ msgstr "Nello specifico, quando effettuiamo un trade in Opzioni binarie con te (ognuno un \"Contratto\"), abbiamo il dovere di fornirti "
 
 #, fuzzy
 #~| msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
@@ -8873,9 +8883,6 @@ msgstr ""
 
 #~ msgid "Log out"
 #~ msgstr "Logout"
-
-#~ msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with ‘best execution’. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
-#~ msgstr "Più specificamente, quando eseguiamo un trade in Opzioni Binarie con te (un \"Contratto\"), abbiamo l'obbligo di fornirti la \"migliore esecuzione\". La migliore esecuzione significa che dobbiamo seguire dei passaggi ragionevoli per ottenere il miglior risultato possibile per te nell'esecuzione di un tuo ordine. Questo documento fornisce una sintesi della nostra informativa sulle migliori esecuzioni."
 
 #~ msgid "Page not found"
 #~ msgstr "Pagina non trovata"

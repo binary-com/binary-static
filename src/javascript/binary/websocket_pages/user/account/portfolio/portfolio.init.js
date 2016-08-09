@@ -98,7 +98,9 @@ var PortfolioWS =  (function() {
 
     var updateIndicative = function(data) {
         if(data.hasOwnProperty('error')) {
-            errorMessage(data.error.message);
+            if(data.error.code !== 'AlreadySubscribed') {
+                errorMessage(data.error.message);
+            }
             return;
         }
         if(!values) return;
