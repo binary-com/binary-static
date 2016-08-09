@@ -18,9 +18,10 @@
     }
     .border-bottom {
         border-bottom: 1px solid $COLOR_GRAY;
+        padding-bottom: 0;
     }
     .border-right-top {
-        border-right: 1px solid $COLOR_GRAY;
+        @include BIDIR_PROP(border-right, border-left, 1px solid $COLOR_GRAY);
         padding-bottom: 50px;
     }
     .align {
@@ -30,7 +31,7 @@
         height: 200px;
     }
     .border-right-bottom {
-        border-right: 1px solid $COLOR_GRAY;
+        @include BIDIR_PROP(border-right, border-left, 1px solid $COLOR_GRAY);
         padding-top: 30px;
     }
     h1 {
