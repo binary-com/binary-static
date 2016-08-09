@@ -162,7 +162,7 @@ var SelfExclusionWS = (function() {
     function numericOrEmpty(value) {
         if (!value) return dv.ok(value);
         return /^\d+$/.test(value) ?
-            dv.ok(value) :
+            dv.ok(big_uint(value)) :
             dv.fail('Please enter an integer value');
     }
 
@@ -174,12 +174,17 @@ var SelfExclusionWS = (function() {
         return result;
     }
 
-    function gtPositive(x, y) {
+    // big unsigned integer.
+    function big_uint(x) {
+        return x.replace(/^0+/, '');
+    }
+
+    big_uint.gt = function(x, y) {
         var maxLength = Math.max(x.length, y.length);
         var lhs = leftPadZeros(x, maxLength);
         var rhs = leftPadZeros(y, maxLength);
         return lhs > rhs; // lexicographical comparison
-    }
+    };
 
     function againstField(key) {
         var old = fields[key];
@@ -190,7 +195,7 @@ var SelfExclusionWS = (function() {
             if (!hasOld) {
                 return isEmpty ? dv.fail(EMPTY) : dv.ok(value);
             }
-            return (isEmpty || gtPositive(value, old)) ?
+            return (isEmpty || big_uint.gt(value, old)) ?
                 dv.fail(err) :
                 dv.ok(value);
         };
