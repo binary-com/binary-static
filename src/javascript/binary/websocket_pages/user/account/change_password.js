@@ -7,7 +7,7 @@ var PasswordWS = (function(){
         $result = $('#change-password > div[data-id="success-result"]');
         bind_validation.simple($form[0], {
             stop:     displayErrors,
-            validate: validate,
+            schema:   getSchema(),
             submit:   function(ev, info) {
                 ev.preventDefault();
                 ev.stopPropagation();
@@ -35,20 +35,20 @@ var PasswordWS = (function(){
         });
     }
 
-    function validate(data) {
+    function getSchema() {
         var V2 = ValidateV2;
         var err = Content.localize().textPasswordsNotMatching;
-        function notMatchingOld(value) {
+        function notMatchingOld(value, data) {
             return value !== data.old_password;
         }
-        function match(value) {
+        function match(value, data) {
             return value === data.new_password;
         }
-        return validate_object(data, {
+        return {
             old_password: [customError(V2.required, IS_EMPTY)],
             new_password: [V2.required, dv.check(notMatchingOld, MATCHES_OLD), V2.password],
             repeat_password: [V2.required, dv.check(match, err)],
-        });
+        };
     }
 
     function sendRequest(data) {

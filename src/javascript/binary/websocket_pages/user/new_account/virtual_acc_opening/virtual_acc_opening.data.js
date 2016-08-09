@@ -17,10 +17,10 @@ var VirtualAccOpeningData = (function(){
         BinarySocket.send(req);
     }
 
-    function validate(data) {
+    function getSchema() {
         var V2 = ValidateV2;
         var err = Content.localize().textPasswordsNotMatching;
-        function matches(value) {
+        function matches(value, data) {
             return value === data.password;
         }
         return validate_object(data, {
@@ -53,7 +53,7 @@ var VirtualAccOpeningData = (function(){
 
     return {
         newAccount: newAccount,
-        validate:   validate,
+        getSchema:  getSchema,
         handler:    handler,
     };
 }());

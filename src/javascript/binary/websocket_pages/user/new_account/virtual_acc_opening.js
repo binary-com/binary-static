@@ -59,7 +59,7 @@ pjax_config_page("new_account/virtualws", function() {
         }
 
         bind_validation.simple(form, {
-            validate: VirtualAccOpeningData.validate,
+            schema: VirtualAccOpeningData.getSchema(),
             submit: function(ev, info) {
                 ev.preventDefault();
                 if (info.errors.length > 0) {

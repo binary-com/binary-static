@@ -42,7 +42,9 @@ function withContext(ctx) {
  *
  * @param data    An object.
  * @param schema  An object in the form {key: Array}, where the Array
- *                contains functions which return either a dv.ok or dv.fail.
+ *                contains functions which accept two arguments- the current
+ *                value and the objet being validated, and return either dv.ok
+ *                or dv.fail.
  * @returns {Object}  {errors: errors, values: values, raw: data} where
  *                    errors is an array of {ctx: key, err: message} objects,
  *                    values is an object with the collected successful values,
@@ -52,11 +54,14 @@ function validate_object(data, schema) {
     var keys = Object.keys(schema);
     var values = {};
     var rv = dv.combine([], keys.map(function(ctx) {
-        var res = dv.first(data[ctx], schema[ctx]);
-        if (res.isOk) {
-            values[ctx] = res.value;
+        var res = dv.ok(data[ctx]);
+        var fns = schema[ctx];
+        for (var i = 0; i < fns.length; i++) {
+            res = fns[i](res.value, data);
+            if (!res.isOk) return res.fmap(withContext(ctx));
         }
-        return res.fmap(withContext(ctx));
+        values[ctx] = res.value;
+        return res;
     }));
     return {
         errors: rv.value,
