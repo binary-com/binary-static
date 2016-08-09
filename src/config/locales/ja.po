@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-02 08:48+0000\n"
-"Last-Translator: Masanari Higashiyama <higashiyama@regentmarkets.com>\n"
+"PO-Revision-Date: 2016-08-05 14:20+0000\n"
+"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -226,7 +226,7 @@ msgid "%1 takes home first prize in the Financial Betting Operator category at t
 msgstr "ロンドンで開催された名誉あるEGRオペレーター賞授賞式にてBinary.comが金融ベッティングオペレーター部門で最優秀賞を受賞しました。"
 
 msgid "%1 would like to team up with potential payment agents worldwide so we can offer local payment processing services to our clients in their respective regions."
-msgstr "当社はそれぞれの地域のお客さまに現地決済処理サービスを提供するために、世界中の潜在的な決済サービスエージェントと提携をしたいと考えています。"
+msgstr "当社はそれぞれの地域のお客さまに現地決済処理サービスを提供するために、世界中の潜在的な決済サービス会社と提携をしたいと考えています。"
 
 msgid "%1's Continuous Indices are the Volatility 25 Index, Volatility 50 Index, Volatility 75 Index and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 25%, 50%, 75% and 100%."
 msgstr "当社の連続インデックスには、ボラティリティ25指数、ボラティリティ75指数、ボラティリティ100指数があります。これらのインデックスは25%、50%、75%、100%の一定のボラティリティがシミュレートされた市場に対応しています。"
@@ -278,7 +278,9 @@ msgstr "Binary.comの沿革"
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "当システムは1日に1万を超える取引（仮想アカウントを含む）を処理しています。"
 
-msgid "%1’s Volatility Indices are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
+#, fuzzy
+#| msgid "%1’s Volatility Indices are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
+msgid "%1’s <a href=\"%2\">Volatility Indices</a> are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
 msgstr "%1のボラティリティインデックスはMetaTrader 5で24時間365日ご利用いただけます。その他の資産も間もなく追加予定です。"
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
@@ -555,10 +557,10 @@ msgid "<strong>Highly competitive spreads with no commission.</strong>"
 msgstr "<strong>手数料無しで高い倍率のスプレッドをご利用可能</strong>"
 
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and Payment Agents."
-msgstr "<strong>重要な免責事項</strong> -%1は、上記の決済サービスとは提携していません。各決済サービスは、独立したサービスプロバイダーとして動作し、%1による承認、保証またはその他の許可がなされていません。お客さまは危険を承知で自信の責任をもって決済サービスに処断します。送金をされる前に、決済サービスの資格情報を確認されることをお勧めいたします。%1はいかなる状況下においても、お客さまと決済サービスの間で生じた処理への責任は負いません。"
+msgstr "<strong>重要な免責事項</strong> -%1は、上記の決済サービスとは提携していません。各決済サービスは、独立したサービスプロバイダーとして動作し、%1による承認、保証またはその他の許可がなされていません。お客さまは危険を承知で自信の責任をもって決済サービスに処断します。送金をされる前に、決済サービス会社の資格情報を確認されることをお勧めいたします。%1はいかなる状況下においても、お客さまと決済サービス会社の間で生じた処理への責任は負いません。"
 
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the payment agents listed above. Each payment agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of payment agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and payment agents."
-msgstr "<strong>重要な免責事項</strong> -%1は、上記の決済サービスと提携していません。各決済サービスは、独立したサービスプロバイダーとして動作し、%1による承認、保証またはその他の許可がなされていません。お客さまは危険を承知で自信の責任をもって決済サービスに処断します。送金をされる前に、決済サービスの資格情報を確認されることをお勧めいたします。%1はいかなる状況下においても、お客さまと決済サービスの間で生じた処理への責任は負いません。"
+msgstr "<strong>重要な免責事項</strong> -%1は、上記の決済サービス会社と提携していません。各決済サービスは、独立したサービスプロバイダーとして動作し、%1による承認、保証またはその他の許可がなされていません。お客さまは危険を承知で自信の責任をもって決済サービスに処断します。送金をされる前に、決済サービス会社の資格情報を確認されることをお勧めいたします。%1はいかなる状況下においても、お客さまと決済サービス会社の間で生じた処理への責任は負いません。"
 
 msgid "<strong>In/Out</strong> - predict if the market will stay inside two price targets, or end between or outside them."
 msgstr "<strong>END-IN/END-OUT</strong>：上下にバリアを設定した価格内に留まるか、留まらないかを予想してください。"
@@ -1459,6 +1461,9 @@ msgstr "Binary.comに関するご提案またはその他ご意見を当社に�
 
 msgid "By the 15th of every month, you will receive the commission earned during the previous calendar month."
 msgstr "毎月15日までに前月分の報酬を振込まさせて頂きます。"
+
+msgid "By using or interacting with the website, you are consenting to the use of Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
+msgstr ""
 
 msgid "Can I become an affiliate even if I don't have a website?"
 msgstr "ウェブサイトを持っていなくても、アフィリエイトプログラムに参加することはできますか？"
@@ -3240,9 +3245,6 @@ msgstr "当社で用いるデータフィード、及びシステム上にデー
 msgid "Information of the previous performance of any underlying instrument or asset does not guarantee its current and/or future performance. Past performance is not a reliable indicator of future results."
 msgstr "商品または原資産の以前の実績情報は現在および/または将来の業績を保証するものではありません。過去の実績は将来の成果を示すものではありません。"
 
-msgid "Instant"
-msgstr "即刻"
-
 msgid "Insufficient balance"
 msgstr "口座残高が不足しています"
 
@@ -4000,7 +4002,9 @@ msgstr "入出金をロック"
 msgid "Log in"
 msgstr "ログイン"
 
-msgid "Log into the application using your MetaTrader account number (e.g., 1124) and your MetaTrader account password."
+#, fuzzy
+#| msgid "Log into the application using your MetaTrader account number (e.g., 1124) and your MetaTrader account password."
+msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
 msgstr "MetaTraderのアカウント番号(例：1124)とパスワードでアプリケーションにログインをしてください。"
 
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
@@ -4242,8 +4246,10 @@ msgstr "月"
 msgid "More benefits"
 msgstr "福利厚生について"
 
-msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with "
-msgstr "すなわち、お客様が当社においてバイナリーオプション取引を開始された際には（各”トレード”）、当社はXXXをお客様に提供する義務があります。 "
+#, fuzzy
+#| msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with ‘best execution’. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
+msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with 'best execution'. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
+msgstr "すなわち、お客さまとバイナリーオプション取引に入る際（各\"契約\"）、当社にはお客さまに「最良執行」を提供させていただく義務があります。最良執行とは、お客さまへの可能な限り最良の結果を得られるよう適切な措置を取らせていただく必要があることを言います。この文書では当社の最良執行ポリシーの概要をご覧いただけます。"
 
 msgid "Mother's maiden name"
 msgstr "母親の旧姓"
@@ -4386,7 +4392,7 @@ msgid "Note: The company reserves the right to cancel affiliate commissions that
 msgstr "注意：当社は２年以上請求がなされなかったアフィリエイト報酬のお支払いをキャンセルする権利を有します。今一度、アフィリエイトに関するご利用規約をご確認下さい。"
 
 msgid "Note: Withdrawal via payment agent is available only if you deposit exclusively via payment agent"
-msgstr "ご注意：決済サービスでのご出金はご入金いただいた決済サービスでのみご利用いただけます。"
+msgstr "ご注意：決済サービスでのご出金は、ご入金の際に決済サービスをご利用いただいた場合にのみご利用いただけます。"
 
 msgid "Notes:"
 msgstr "ご注意："
@@ -6407,10 +6413,8 @@ msgstr "全てを強化することで当プラットフォームの安定性と
 msgid "This notice does not explain all of the risks involved in investments or similar products or how such risks relate to your personal circumstances. It is important that you fully understand the risks involved before making a decision to enter into or sell an investment product or gambling product with us. If you are in any doubt about the risks involved with Investment Products or Gambling Products, you should seek professional advice."
 msgstr "この通知は投資、類似商品、またはお客さま個人に関するリスクの程度など全てのリスクを説明しているものではありません。当社と投資商品またはギャンブル商品のお取引の締結、売却の決断を下す前に、関連するリスクを十分に理解しておくことが大切です。投資商品やギャンブル商品に関するリスクについてご不明な点がある場合、専門家の助言を求めることをおすすめします。"
 
-#, fuzzy
-#| msgid "This notice provides you with information about the risks associated with investment contracts, which you may invest in through services provided to you through %1. Binary Group provides a wide range of products including Binary Options relating to foreign exchange, indices, stocks and other investment products (\"Investment Products\") and binary bets such as those relating to the Random Markets (\"Gambling Products\")."
 msgid "This notice provides you with information about the risks associated with investment contracts, which you may invest in through services provided to you through %1. Binary Group provides a wide range of products including Binary Options relating to foreign exchange, indices, stocks and other investment products (\"Investment Products\") and binary bets such as those relating to the Volatility Indices (\"Gambling Products\")."
-msgstr "この通知では％1を介して提供されるサービスを通して投資ができる投資契約に関連するリスクについての情報をお客さまに提供しています。Binaryグループでは外国為替、インデックス、株式やその他投資商品のバイナリーオプションやランダムマーケット（ギャンブル製品）に関連するバイナリーベットを含む幅広い商品を取り扱っています。"
+msgstr "この通知では％1を介して提供されるサービスを通して投資ができる投資契約に関連するリスクについての情報をお客さまに提供しています。Binaryグループでは外国為替、インデックス、株式やその他投資商品のバイナリーオプションやボラティリティインデックス（ギャンブル製品）に関連するバイナリーベットを含む幅広い商品を取り扱っています。"
 
 msgid "This offer cannot be used in conjunction with any other offer."
 msgstr "このボーナス特典は他の特典との併用は不可能です。"
@@ -6478,14 +6482,18 @@ msgstr "店頭バイナリーオプション取引の口座開設前に、取引
 msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "上記のお客さま基本情報の変更をご希望される場合は<a href=\"%1\">カスタマーサポート</a>までご連絡ください。また、変更が生じた際は速やかにご連絡いただきますようお願いします。"
 
-msgid "To create a Real account for MetaTrader, <a href=\"%1\">upgrade to Bianry Real account</a>."
-msgstr "MetaTraderのリアル口座を作成するには、<a href=\"%1\">Bianryの口座をリアル口座へアップグレード</a>いただく必要があります。"
-
-msgid "To create a Real account for MetaTrader, switch to your Binary Real account."
-msgstr "MetaTraderのリアル口座を作成いただくには、Binaryのリアル口座へ切り替えてください。"
-
 msgid "To create a Real account for MetaTrader, you need to authenticate your Binary account:"
 msgstr "MetaTraderのリアル口座を作成するには、Binary口座を認証いただく必要があります："
+
+#, fuzzy
+#| msgid "To create a Real account for MetaTrader, <a href=\"%1\">upgrade to Bianry Real account</a>."
+msgid "To create a real account for MetaTrader, <a href=\"%1\">upgrade to %2 real money account</a>."
+msgstr "MetaTraderのリアル口座を作成するには、<a href=\"%1\">Bianryの口座をリアル口座へアップグレード</a>いただく必要があります。"
+
+#, fuzzy
+#| msgid "To create a Real account for MetaTrader, switch to your Binary Real account."
+msgid "To create a real account for MetaTrader, switch to your %1 real money account."
+msgstr "MetaTraderのリアル口座を作成いただくには、Binaryのリアル口座へ切り替えてください。"
 
 msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
 msgstr "MetaTraderのリアル口座から入出金いただくには、Binay.comのリアル口座へ切り替えてください。"
@@ -7569,7 +7577,7 @@ msgid "Your account has no Login/Logout activity."
 msgstr "お客さまのご口座はログイン/ログアウトのアクティビティはございません。"
 
 msgid "Your account has no trading activity."
-msgstr "お客さまの口座に取引アクティビティはありません"
+msgstr "取引履歴はありません"
 
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "お客さまのご口座はアップグレード済みですので、ご出金制限が引き上げられました。"
@@ -8622,6 +8630,12 @@ msgstr "利用規約の承認"
 msgid "Trading with MetaTrader 5"
 msgstr "MetaTrader 5でお取引"
 
+#~ msgid "Instant"
+#~ msgstr "即刻"
+
+#~ msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with "
+#~ msgstr "すなわち、お客様が当社においてバイナリーオプション取引を開始された際には（各”トレード”）、当社はXXXをお客様に提供する義務があります。 "
+
 #~| msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
 #~ msgid "In order to trade using MetaTrader 5 platform, you'll first need to have a MetaTrader account."
 #~ msgstr "MetaTrader 5のプラットフォームを用いてお取引されるには、MetaTraderのアカウントを作成いただく必要があります。"
@@ -8909,9 +8923,6 @@ msgstr "MetaTrader 5でお取引"
 
 #~ msgid "Log out"
 #~ msgstr "ログアウト"
-
-#~ msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with ‘best execution’. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
-#~ msgstr "すなわち、お客さまとバイナリーオプション取引に入る際（各\"契約\"）、当社にはお客さまに「最良執行」を提供させていただく義務があります。最良執行とは、お客さまへの可能な限り最良の結果を得られるよう適切な措置を取らせていただく必要があることを言います。この文書では当社の最良執行ポリシーの概要をご覧いただけます。"
 
 #~ msgid "Page not found"
 #~ msgstr "ページ未検出"
