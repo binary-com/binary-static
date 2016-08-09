@@ -7,7 +7,7 @@ var ValidAccountOpening = (function(){
       window.location.href = page.url.url_for('user/my_accountws');
       return;
     }
-    for (i = 0; i < page.user.loginid_array.length; i++){
+    for (var i = 0; i < page.user.loginid_array.length; i++){
       if (page.user.loginid_array[i].real === true){
         window.location.href = page.url.url_for('user/my_accountws');
         return;

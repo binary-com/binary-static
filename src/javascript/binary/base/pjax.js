@@ -109,7 +109,7 @@ var pjax_config = function() {
                 $.get('/errors/500.html').always(function(content) {
                     var tmp = document.createElement('div');
                     tmp.innerHTML = content;
-                    tmpNodes = tmp.getElementsByTagName('div');
+                    var tmpNodes = tmp.getElementsByTagName('div');
                     for(var i=0,l=tmpNodes.length;i<l;i++){
                         if(tmpNodes[i].id == 'content') {
                             SessionStore.set('errors.500', tmpNodes[i].innerHTML);

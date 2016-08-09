@@ -57,7 +57,7 @@ Market.prototype = {
     by_symbol: function(symbol) {
         var count = this.submarkets.length;
         while(count--) {
-            found = this.submarkets[count].by_symbol(symbol);
+            var found = this.submarkets[count].by_symbol(symbol);
             if(found) {
                 found['market'] = this;
                 return found;

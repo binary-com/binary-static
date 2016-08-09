@@ -22,7 +22,7 @@ var Validate = (function(){
     par.className = 'error-message-password';
     var parClass = $('.' + par.className);
     if (parClass.length > 1) {
-      for (i = 0; i < parClass.length; i++){
+      for (var i = 0; i < parClass.length; i++){
         allText = allText + parClass[i].textContent;
       }
       if (!re.test(allText)){
