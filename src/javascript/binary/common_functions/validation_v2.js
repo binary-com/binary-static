@@ -90,7 +90,7 @@ var ValidateV2 = (function() {
     }
 
     function lengthRange(start, end) {
-        var range = template('([_1]-[_2])', [2, 32]);
+        var range = template('([_1]-[_2])', [start, end]);
         return function(str) {
             var len = str.length;
             return (len >= start && len <= end) ?
