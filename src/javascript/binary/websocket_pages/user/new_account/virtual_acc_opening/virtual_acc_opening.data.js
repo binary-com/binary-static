@@ -23,12 +23,12 @@ var VirtualAccOpeningData = (function(){
         function matches(value, data) {
             return value === data.password;
         }
-        return validate_object(data, {
+        return {
             residence: [V2.required],
             password:  [V2.password],
             'verification-code': [V2.required, V2.token],
             'r-password': [dv.check(matches, err)],
-        });
+        };
     }
 
     function handler(config) {
