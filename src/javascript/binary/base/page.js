@@ -945,7 +945,7 @@ Contents.prototype = {
                 $('#account-transfer-section').hide();
             }
         } else {
-            $('#btn_login').unbind('click').click(function(){Login.redirect_to_login();});
+            $('#btn_login').unbind('click').click(function(e){e.preventDefault(); Login.redirect_to_login();});
 
             $('.by_client_type.client_logged_out').removeClass('invisible');
             $('.by_client_type.client_logged_out').show();
