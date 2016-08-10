@@ -228,7 +228,7 @@ var PaymentAgentWithdrawWS = (function() {
                         .attr('class', errorClass)
                         .html(response.error.message);
                 } else if (response.error.code === 'InvalidToken') {
-                    showPageError(template(Content.localize().textClickHereToRestart, page.url.url_for('paymentagent/withdrawws')));
+                    showPageError(template(Content.localize().textClickHereToRestart, [page.url.url_for('paymentagent/withdrawws')]));
                 } else {
                     showPageError(response.error.message);
                 }
