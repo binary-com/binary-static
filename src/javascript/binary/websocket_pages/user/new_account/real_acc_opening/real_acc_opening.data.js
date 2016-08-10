@@ -17,8 +17,8 @@ var RealAccOpeningData = (function(){
             secret_answer: elementObj['answer'].value
         };
 
-        if ($.cookie('affiliate_tracking')) {
-          req.affiliate_token = JSON.parse($.cookie('affiliate_tracking')).t;
+        if (Cookies.get('affiliate_tracking')) {
+          req.affiliate_token = Cookies.getJSON('affiliate_tracking').t;
         }
 
         BinarySocket.send(req);

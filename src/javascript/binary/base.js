@@ -198,7 +198,7 @@ onLoad.queue(function () {
 
 $(document).ready(function () {
   if (!$('body').hasClass('BlueTopBack')) { // exclude BO
-    // $.cookie is not always available.
+    // Cookies is not always available.
     // So, fall back to a more basic solution.
     var match = document.cookie.match(/\bloginid=(\w+)/);
     match = match ? match[1] : '';

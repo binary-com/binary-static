@@ -18,7 +18,7 @@ var MyAccountWS = (function() {
         virtualTopupID = '#VRT_topup_link';
         authButtonID   = '#authenticate_button';
 
-        loginid = page.client.loginid || $.cookie('loginid');
+        loginid = page.client.loginid || Cookies.get('loginid');
 
         BinarySocket.send({"get_settings"      : 1});
         BinarySocket.send({"website_status"    : 1});
@@ -29,12 +29,12 @@ var MyAccountWS = (function() {
 
     var responseGetSettings = function(response) {
         var get_settings = response.get_settings;
-        if (get_settings.country === null || $.cookie('residence') === '') {
+        if (get_settings.country === null || Cookies.get('residence') === '') {
           var documentDomain = document.domain.split('.').slice(-2).join('.');
-          if ($.cookie('residence') !== '') {
-            $.cookie('residence', '', {path: '/', domain: documentDomain});
+          if (Cookies.get('residence') !== '') {
+            Cookies.set('residence', '', {path: '/', domain: documentDomain});
           } else if (get_settings.country_code) {
-            $.cookie('residence', get_settings.country_code, {path: '/', domain: documentDomain});
+            Cookies.set('residence', get_settings.country_code, {path: '/', domain: documentDomain});
           }
           page.client.residence = get_settings.country_code;
           page.contents.topbar_message_visibility();

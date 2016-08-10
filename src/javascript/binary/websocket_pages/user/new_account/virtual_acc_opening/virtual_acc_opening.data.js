@@ -17,8 +17,8 @@ var VirtualAccOpeningData = (function(){
         // if(utm_data.utm_medium)   req.medium   = utm_data.utm_medium;
         // if(utm_data.utm_campaign) req.campaign = utm_data.utm_campaign;
 
-        if ($.cookie('affiliate_tracking')) {
-            req.affiliate_token = JSON.parse($.cookie('affiliate_tracking')).t;
+        if (Cookies.get('affiliate_tracking')) {
+            req.affiliate_token = Cookies.getJSON('affiliate_tracking').t;
         }
 
         BinarySocket.send(req);

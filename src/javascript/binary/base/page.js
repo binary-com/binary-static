@@ -57,7 +57,7 @@ var GTM = (function() {
         localStorage.removeItem('GTM_login');
         localStorage.removeItem('GTM_newaccount');
 
-        var affiliateToken = $.cookie('affiliate_tracking');
+        var affiliateToken = Cookies.get('affiliate_tracking');
         if (affiliateToken) {
             GTM.push_data_layer({'bom_affiliate_token': JSON.parse(affiliateToken).t});
         }
@@ -155,9 +155,9 @@ var GTM = (function() {
 }());
 
 var User = function() {
-    this.loginid =  $.cookie('loginid');
-    this.email   =  $.cookie('email');
-    var loginid_list = $.cookie('loginid_list');
+    this.loginid =  Cookies.get('loginid');
+    this.email   =  Cookies.get('email');
+    var loginid_list = Cookies.get('loginid_list');
 
     if(!this.loginid || !loginid_list || !localStorage.getItem('client.tokens')) {
         this.is_logged_in = false;
@@ -195,8 +195,8 @@ var User = function() {
 };
 
 var Client = function() {
-    this.loginid      =  $.cookie('loginid');
-    this.residence    =  $.cookie('residence');
+    this.loginid      =  Cookies.get('loginid');
+    this.residence    =  Cookies.get('residence');
     this.is_logged_in = this.loginid && this.loginid.length > 0 && localStorage.getItem('client.tokens');
 };
 
@@ -309,7 +309,7 @@ Client.prototype = {
     response_authorize: function(response) {
         page.client.set_storage_value('session_start', parseInt(moment().valueOf() / 1000));
         TUser.set(response.authorize);
-        if(!$.cookie('email')) this.set_cookie('email', response.authorize.email);
+        if(!Cookies.get('email')) this.set_cookie('email', response.authorize.email);
         this.set_storage_value('is_virtual', TUser.get().is_virtual);
         this.check_storage_values();
         page.contents.activate_by_client_type();
@@ -384,7 +384,7 @@ Client.prototype = {
         this.set_cookie('email'       , email);
         this.set_cookie('login'       , token);
         this.set_cookie('loginid'     , loginid);
-        this.set_cookie('loginid_list', is_virtual ? loginid + ':V:E' : loginid + ':R:E' + '+' + $.cookie('loginid_list'));
+        this.set_cookie('loginid_list', is_virtual ? loginid + ':V:E' : loginid + ':R:E' + '+' + Cookies.get('loginid_list'));
         // set local storage
         GTM.set_newaccount_flag();
         localStorage.setItem('active_loginid', loginid);
@@ -700,7 +700,6 @@ Menu.prototype = {
 var Header = function(params) {
     this.user = params['user'];
     this.client = params['client'];
-    this.settings = params['settings'];
     this.menu = new Menu(params['url']);
 };
 
@@ -848,8 +847,8 @@ Header.prototype = {
     },
     validate_cookies: function(){
         if (getCookieItem('login') && getCookieItem('loginid_list')){
-            var accIds = $.cookie("loginid_list").split("+");
-            var loginid = $.cookie("loginid");
+            var accIds = Cookies.get("loginid_list").split("+");
+            var loginid = Cookies.get("loginid");
 
             if(!client_form.is_loginid_valid(loginid)){
                 page.client.send_logout_request();
@@ -1048,7 +1047,7 @@ var Page = function(config) {
     this.client = new Client();
     this.url = new URL();
     this.settings = new InScriptStore(config['settings']);
-    this.header = new Header({ user: this.user, client: this.client, settings: this.settings, url: this.url});
+    this.header = new Header({ user: this.user, client: this.client, url: this.url});
     this.contents = new Contents(this.client, this.user);
     onLoad.queue(GTM.push_data_layer);
 };
@@ -1070,7 +1069,7 @@ Page.prototype = {
         if(!lang) {
             lang = this.language_from_url();
             if(!lang) {
-                lang = $.cookie('language');
+                lang = Cookies.get('language');
                 if(!lang) {
                     lang = 'EN';
                 }
@@ -1175,7 +1174,7 @@ Page.prototype = {
         var token_length = token.length;
         var is_subsidiary = /\w{1}/.test(this.url.param('s'));
 
-        var cookie_value = $.cookie('affiliate_tracking');
+        var cookie_value = Cookies.get('affiliate_tracking');
         if(cookie_value) {
             var cookie_token = JSON.parse(cookie_value);
 
@@ -1194,7 +1193,7 @@ Page.prototype = {
             cookie_hash["s"] = "1";
         }
 
-        $.cookie("affiliate_tracking", JSON.stringify(cookie_hash), {
+        Cookies.set("affiliate_tracking", cookie_hash, {
             expires: 365, //expires in 365 days
             path: '/',
             domain: '.' + location.hostname.split('.').slice(-2).join('.')

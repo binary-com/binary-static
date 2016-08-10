@@ -44,7 +44,7 @@ var SettingsDetailsWS = (function() {
             var birthDate = data.date_of_birth ? moment.utc(new Date(data.date_of_birth * 1000)).format("YYYY-MM-DD") : '';
             $('#lblBirthDate').text(birthDate);
             // Generate states list
-            var residence = $.cookie('residence');
+            var residence = Cookies.get('residence');
             if (residence) {
                 BinarySocket.send({"states_list": residence, "passthrough": {"value": data.address_state}});
             }
