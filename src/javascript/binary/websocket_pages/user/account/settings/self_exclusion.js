@@ -233,6 +233,7 @@ var SelfExclusionWS = (function() {
             timeout_until_duration: [allowEmptyUnless('timeout_until'), validDate, afterToday],
             timeout_until:          [allowEmpty, validTime],
         };
+        return schema;
     }
 
     function validate(data) {
