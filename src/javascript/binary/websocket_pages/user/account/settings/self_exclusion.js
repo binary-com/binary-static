@@ -230,7 +230,7 @@ var SelfExclusionWS = (function() {
             session_duration_limit: [numericOrEmpty, againstField('session_duration_limit'), validSessionDuration],
             exclude_until:          [allowEmpty, validDate, afterToday, validExclusionDate, toDateString],
             // these two are combined.
-            timeout_until_duration: [allowEmptyUnless('timeout_until'), validDate, afterToday],
+            timeout_until_duration: [allowEmptyUnless('timeout_until'), validDate],
             timeout_until:          [allowEmpty, validTime],
         };
         return schema;
@@ -279,16 +279,20 @@ var SelfExclusionWS = (function() {
 
         // Do the date time addition and validation here
         var date = values.timeout_until_duration;
-        if (date) {
+        if (valid && date) {
             // If we've gotten this far then there must *not*
             // be an error with the timeout date.
             var time = values.timeout_until || moment.duration({});
             var six_weeks = moment().add(moment.duration(6, 'weeks'));
             date = date.add(time);
-            if (date.isAfter(six_weeks)) {
+            var res = dv.first(date, [
+                afterToday,
+                dv.check(function(d) { return !d.isAfter(six_weeks); }, 'Exclude time cannot be more than 6 weeks'),
+            ]);
+            if (!res.isOk) {
                 ValidationUI.draw(
-                    'timeout_until_duration',
-                    'Exclude time cannot be more than 6 weeks.'
+                    'input[name=timeout_until_duration]',
+                    res.value[0]
                 );
                 valid = false;
             } else {
