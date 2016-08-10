@@ -84,7 +84,7 @@
     label {
         line-height: 28px;
     }
-    #contract_market_form_container {
+    #contract_market_form_container, #analysis_tab_container {
         height: 28px;
         .tm-li {
             height: 28px;
@@ -152,10 +152,7 @@
         padding-top: 0.5em;
     }
     #contract_symbol_container {
-        display: inline-flex;
-        padding: 0px;
-        #contract_markets_container {
-            text-align: right;
+        #contract_markets {
             @include BIDIR_PROP(margin-right, margin-left, 1rem);
         }
         #spot_label {
@@ -201,83 +198,88 @@
         font-weight: bold;
         padding-top: 2.4em;
         text-align: center;
+        background-repeat: no-repeat;
+        @include BIDIR_VALUE(background-position, top left, top right);
         &.ASIANU {
-            background: url('../images/pages/trade/asian-u_1.svg') no-repeat top center;
+            background-image: url('../images/pages/trade/asian-u_1.svg');
         }
         &.ASIAND {
-            background: url('../images/pages/trade/asian-d_1.svg') no-repeat top center;
+            background-image: url('../images/pages/trade/asian-d_1.svg');
         }
         &.DIGITDIFF {
-            background: url('../images/pages/trade/differs_1.svg') no-repeat top center;
+            background-image: url('../images/pages/trade/differs_1.svg');
         }
         &.DIGITMATCH {
-            background: url('../images/pages/trade/matches_1.svg') no-repeat top center;
+            background-image: url('../images/pages/trade/matches_1.svg');
         }
         &.DIGITEVEN {
-            background: url('../images/pages/trade/digits_even_1.svg') no-repeat no-repeat top center;
+            background-image: url('../images/pages/trade/digits_even_1.svg');
             background-size: 40%;
         }
         &.DIGITODD {
-            background: url('../images/pages/trade/digits_odd_1.svg') no-repeat no-repeat top center;
+            background-image: url('../images/pages/trade/digits_odd_1.svg');
             background-size: 40%;
         }
         &.DIGITOVER {
-            background: url('../images/pages/trade/digits_over_1.svg') no-repeat no-repeat top center;
+            background-image: url('../images/pages/trade/digits_over_1.svg');
             background-size: 40%;
         }
         &.DIGITUNDER {
-            background: url('../images/pages/trade/digits_under_1.svg') no-repeat no-repeat top center;
+            background-image: url('../images/pages/trade/digits_under_1.svg');
             background-size: 40%;
         }
         &.CALL {
-            background: url('../images/pages/trade/rise_1.png') no-repeat top center;
+            background-image: url('../images/pages/trade/rise_1.png');
         }
         &.PUT {
-            background: url('../images/pages/trade/fall_1.png') no-repeat top center;
+            background-image: url('../images/pages/trade/fall_1.png');
         }
         &.CALLE {
-            background: url('../images/pages/trade/rise_1.png') no-repeat top center;
+            background-image: url('../images/pages/trade/rise_1.png');
         }
         &.PUTE {
-            background: url('../images/pages/trade/fall_1.png') no-repeat top center;
+            background-image: url('../images/pages/trade/fall_1.png');
         }
         &.ONETOUCH {
-            background: url('../images/pages/trade/touch_1.png') no-repeat top center;
+            background-image: url('../images/pages/trade/touch_1.png');
         }
         &.NOTOUCH {
-            background: url('../images/pages/trade/no-touch_1.png') no-repeat top center;
+            background-image: url('../images/pages/trade/no-touch_1.png');
         }
         &.RANGE {
-            background: url('../images/pages/trade/stay-in-between_1.png') no-repeat top center;
+            background-image: url('../images/pages/trade/stay-in-between_1.png');
         }
         &.UPORDOWN {
-            background: url('../images/pages/trade/stay-out_1.png') no-repeat top center;
+            background-image: url('../images/pages/trade/stay-out_1.png');
         }
         &.EXPIRYRANGEE {
-            background: url('../images/pages/trade/ends-between_1.png') no-repeat top center;
+            background-image: url('../images/pages/trade/ends-between_1.png');
         }
         &.EXPIRYMISSE {
-            background: url('../images/pages/trade/ends-outside_1.png') no-repeat top center;
+            background-image: url('../images/pages/trade/ends-outside_1.png');
         }
         &.EXPIRYRANGE {
-            background: url('../images/pages/trade/ends-between_1.png') no-repeat top center;
+            background-image: url('../images/pages/trade/ends-between_1.png');
         }
         &.EXPIRYMISS {
-            background: url('../images/pages/trade/ends-outside_1.png') no-repeat top center;
+            background-image: url('../images/pages/trade/ends-outside_1.png');
         }
         &.SPREADU {
-            background: url('../images/pages/trade/spreads.svg') no-repeat top center;
+            background-image: url('../images/pages/trade/spreads.svg');
             background-size: 40%;
         }
         &.SPREADD {
-            background: url('../images/pages/trade/spreads_1.svg') no-repeat top center;
+            background-image: url('../images/pages/trade/spreads_1.svg');
             background-size: 40%;
         }
     }
     #contract_prices_container {
-        position: relative;
-        @include BIDIR_PROP(margin-left, margin-right, 1em);
-        margin-top: 28px;
+        .price-left {
+            @include BIDIR_PROP(padding-right, padding-left, 5px);
+        }
+        .price-right {
+            @include BIDIR_PROP(padding-left, padding-right, 5px);
+        }
         .price_container {
             border: 1px solid $COLOR_GRAY;
             align-items: stretch;
@@ -294,9 +296,8 @@
                 flex: 3;
             }
             .contract_purchase {
-                margin-bottom: 6px;
-                width: 90%;
-                display: inline-flex;
+                margin-bottom: 0px;
+                margin-top: 10px;
                 .purchase_button {
                     cursor: pointer;
                     width: 100%;
@@ -310,9 +311,6 @@
             padding: 20px;
             font-style: italic;
             vertical-align: middle;
-        }
-        .price_container#price_container_top {
-            margin-bottom: 1rem;
         }
         .price_comment, .contract_error, #contract_purchase_balance {
             background-color: $COLOR_GRAY;
@@ -332,6 +330,7 @@
             width: 100%;
         }
         #confirmation_message {
+            position: relative;
             padding-bottom: 34px;
         }
         #contract_purchase_descr {
@@ -372,18 +371,14 @@
             line-height: 1.5;
             font-size: 90%;
             flex: 1 0 auto;
-            display: flex;
-            align-items: center;
         }
-        .stake, .payout {
-            padding: 0;
-            justify-content: flex-end;
+        .payout {
+            margin-top: 10px;
         }
         .contract_amount, .contract_payout {
             font-weight: bold;
             font-size: 1.1rem;
             border-radius: 5px;
-            justify-content: center;
         }
     }
     #expiry_type_duration {
@@ -398,12 +393,16 @@
         background: transparent;
         z-index: 9;
         &#loading_container2 {
-            background: $COLOR_LIGHT_GRAY;
             opacity: 0.5;
             display: block;
             position: absolute;
             height: 100%;
             flex: 1 0 auto;
+            div {
+                background: $COLOR_LIGHT_GRAY;
+                width: 100%;
+                height: 100%;
+            }
         }
     }
     #contract_confirmation_container {
@@ -414,11 +413,7 @@
         }
     }
     #contract_prices_container .price_container .price_wrapper {
-        text-align: center;
-        align-items: center;
-        width: 100%;
-        justify-content: flex-start;
-        @include BIDIR_PROP(padding-left, padding-right, 30px);
+        padding: 10px 15px;
         &.small {
             width: 95px;
         }
@@ -426,10 +421,7 @@
             padding: 0 5px;
         }
         .contract_heading {
-            display: block;
-            float: left;
-            width: 80px;
-            padding-left: 5px;
+            @include BIDIR_VALUE(text-align, left, right);
         }
         .amount_wrapper {
             float: left;
@@ -568,9 +560,8 @@
                     margin-bottom: 5px;
                 }
             }
-            #contract_markets_container {
+            #contract_markets {
                 margin-right: 0;
-                text-align: inherit;
             }
         }
         #contract_prices_container {
@@ -581,7 +572,6 @@
                 margin-right: 0 !important;
             }
             .price_wrapper {
-                flex-direction: row !important;
                 &.small {
                     width: auto;
                 }
@@ -636,9 +626,6 @@
         #contract_form_content {
             margin-top: 20px;
         }
-        #contract_prices_container {
-            margin-left: 0;
-        }
     }
 }
 
@@ -653,7 +640,7 @@
     }
 }
 
-#trading_socket_container #contract_form_name_nav {
+#trading_socket_container #contract_form_name_nav, #trading_socket_container #analysis_tabs {
     border-bottom: none;
     font-size: $FONT_SIZE_N;
     > li {
@@ -701,20 +688,20 @@
  *
  * DO NOT ADD ANY COMMON STYLING BELOW THIS. ALL OTHER STYLING GO ABOVE THIS
  */
-#trading_bottom_content {
-    margin-top: 15px;
+#trading_analysis_content {
     font-size: 1rem;
     .tab-menu {
         background: transparent !important;
         border: 0 !important;
         height: auto !important;
     }
-    ul#betsBottomPage {
-        @include ul_segmented_navigation;
+    .tab-content {
+        border: 1px solid $COLOR_GRAY;
+    }
+    ul#analysis_tabse {
         font-size: 85%;
         border-bottom: none;
         li {
-            @include li_segmented_element;
             background: transparent;
             border-radius: 0;
             padding: 6px 0;
@@ -737,8 +724,8 @@
     }
 }
 @media all and (max-width: 640px) {
-    #trading_bottom_content {
-        ul#betsBottomPage {
+    #trading_analysis_content {
+        ul#analysis_tabs {
             flex-direction: column;
         }
     }
