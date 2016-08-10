@@ -9,7 +9,7 @@ var FinancialAssessmentws = (function(){
             submitForm();
             return false;
         });
-        BinarySocket.send(JSON.parse("{\"get_financial_assessment\" : 1}"));
+        BinarySocket.send({get_financial_assessment : 1});
     };
 
     // For translating strings

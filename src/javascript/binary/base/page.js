@@ -57,9 +57,9 @@ var GTM = (function() {
         localStorage.removeItem('GTM_login');
         localStorage.removeItem('GTM_newaccount');
 
-        var affiliateToken = Cookies.get('affiliate_tracking');
+        var affiliateToken = Cookies.getJSON('affiliate_tracking');
         if (affiliateToken) {
-            GTM.push_data_layer({'bom_affiliate_token': JSON.parse(affiliateToken).t});
+            GTM.push_data_layer({'bom_affiliate_token': affiliateToken.t});
         }
 
         var data = {
@@ -1174,12 +1174,10 @@ Page.prototype = {
         var token_length = token.length;
         var is_subsidiary = /\w{1}/.test(this.url.param('s'));
 
-        var cookie_value = Cookies.get('affiliate_tracking');
-        if(cookie_value) {
-            var cookie_token = JSON.parse(cookie_value);
-
+        var cookie_token = Cookies.getJSON('affiliate_tracking');
+        if (cookie_token) {
             //Already exposed to some other affiliate.
-            if (is_subsidiary && cookie_token && cookie_token["t"]) {
+            if (is_subsidiary && cookie_token && cookie_token.t) {
                 return false;
             }
         }

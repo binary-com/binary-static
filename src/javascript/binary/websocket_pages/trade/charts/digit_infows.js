@@ -130,17 +130,17 @@ TradingAnalysis.DigitInfoWS.prototype = {
 
         var get_latest = function() {
             var symbol = $('[name=underlying] option:selected').val();
-            var request = JSON.parse('{"ticks_history":"'+ symbol +'",'+
-                                        '"end": "latest",'+
-                                        '"count": '+ $('[name=tick_count]', form).val() +','+
-                                        '"req_id": 2}');
+            var request = {"ticks_history": symbol,
+                           "end": "latest",
+                           "count": $('[name=tick_count]', form).val(),
+                           "req_id": 2};
             if(that.chart.series[0].name !== symbol){
                 if($('#underlying option:selected').val() != $('[name=underlying]', form).val()){
                     request['subscribe'] = 1;
                     request['style'] = "ticks";
                 }
                 if(that.stream_id !== null ){
-                    BinarySocket.send(JSON.parse('{"forget": "'+ that.stream_id +'"}'));
+                    BinarySocket.send({"forget": that.stream_id});
                     that.stream_id = null;
                 }
             }
@@ -266,7 +266,7 @@ TradingAnalysis.DigitInfoWS.prototype = {
                 this.stream_id = tick.tick.id || null;
                 this.update(tick.tick.symbol, tick.tick.quote);
             } else{
-                BinarySocket.send(JSON.parse('{"forget":"'+tick.tick.id+'"}'));
+                BinarySocket.send({"forget": tick.tick.id+''});
             }
         } else{
             if(!this.stream_id){
