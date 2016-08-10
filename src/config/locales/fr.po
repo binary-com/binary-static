@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: French (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-07-26 14:14+0000\n"
+"PO-Revision-Date: 2016-08-06 09:30+0000\n"
 "Last-Translator: Chloe Chevreton <chloe-che@hotmail.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/binary/static/fr/>\n"
 "Language: fr\n"
@@ -52,10 +52,8 @@ msgstr "Conditions générales du programme d'affiliation %1"
 msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
 msgstr "%1 Veuillez cliquer sur le lien ci-dessous pour relancer le processus de récupération de mot de passe. Pour obtenir de l'aide, veuillez contacter notre Service Clientèle."
 
-#, fuzzy
-#| msgid "Your Property"
 msgid "%1 Property"
-msgstr "Votre propriété"
+msgstr "Propriété de %1"
 
 msgid "%1 Shop introduced"
 msgstr ""
@@ -292,7 +290,7 @@ msgstr "L'histoire unique de %1"
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "Les systèmes de %1 traitent actuellement plus d'un million de transactions par jour (comptes virtuels compris)."
 
-msgid "%1’s Volatility Indices are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
+msgid "%1’s <a href=\"%2\">Volatility Indices</a> are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
 msgstr ""
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
@@ -1508,6 +1506,9 @@ msgstr "En nous soumettant des suggestions ou des commentaires concernant l'API 
 
 msgid "By the 15th of every month, you will receive the commission earned during the previous calendar month."
 msgstr "Le 15e jour de chaque mois au plus tard, vous recevrez la commission gagnée au cours du précédent mois civil."
+
+msgid "By using or interacting with the website, you are consenting to the use of Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
+msgstr ""
 
 msgid "Can I become an affiliate even if I don't have a website?"
 msgstr "Puis-je devenir affilié même si je n'ai pas de site Web ?"
@@ -2814,10 +2815,8 @@ msgstr "Informations supplémentaires"
 msgid "Further, the Company, under the above circumstances, or any other, reserves the right to adjust a client's account should any trade result in a disruption, miscarry or aborted trade."
 msgstr "De plus, la Société, sous les circonstances ci-dessus, ou toutes autres, réserve le droit d'ajuster le compte du client, si n'importe quel trade provoque une perturbation, un échec ou un trade interrompu."
 
-#, fuzzy
-#| msgid "Furthermore, the Company disclaims all liability for any malfunctioning, impossibility of access, or poor use conditions of the Binary.com API due to inappropriate equipment, disturbances related to internet service providers, to the saturation of the internet network, and for any other reason."
 msgid "Furthermore, the Company disclaims all liability for any malfunctioning, impossibility of access, or poor use conditions of the %1 API due to inappropriate equipment, disturbances related to internet service providers, to the saturation of the internet network, and for any other reason."
-msgstr "En outre, la Société décline toute responsabilité concernant tout type de dysfonctionnement, d'impossibilité d'accès, ou de mauvaises conditions d'utilisation de l'API Binary.com pouvant découler d'équipements inappropriés, de perturbations liées aux fournisseurs d'accès Internet, de la saturation du réseau Internet ou de toute autre situation."
+msgstr "En outre, la Société décline toute responsabilité concernant tout type de dysfonctionnement, d'impossibilité d'accès, ou de mauvaises conditions d'utilisation de l'API %1 pouvant découler d'équipements inappropriés, de perturbations liées aux fournisseurs d'accès Internet, de la saturation du réseau Internet ou de toute autre situation."
 
 #, fuzzy
 #| msgid "BP"
@@ -3407,9 +3406,6 @@ msgstr "Informations sur les sources de données utilisées par notre société,
 
 msgid "Information of the previous performance of any underlying instrument or asset does not guarantee its current and/or future performance. Past performance is not a reliable indicator of future results."
 msgstr "Information de la performance précédente de n'importe quel instrument ou actif sous-jacent ne garantit pas sa performance actuelle et/ou future. Une performance du passé n'est pas un indicateur fiable des résultats futurs."
-
-msgid "Instant"
-msgstr "Instant"
 
 #, fuzzy
 #| msgid "Insufficient data to draw chart."
@@ -4160,8 +4156,10 @@ msgstr "Verrouiller la caisse"
 msgid "Log in"
 msgstr "Connexion"
 
-msgid "Log into the application using your MetaTrader account number (e.g., 1124) and your MetaTrader account password."
-msgstr ""
+#, fuzzy
+#| msgid "Deposit funds into your account"
+msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
+msgstr "Dépôt de fonds sur votre compte"
 
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "Connectez-vous à votre compte affilié %1 et cliquez sur : Finances &rarr; Instructions de paiement."
@@ -4414,8 +4412,10 @@ msgstr "Mois"
 msgid "More benefits"
 msgstr "Avantages supplémentaires"
 
-msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with "
-msgstr ""
+#, fuzzy
+#| msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with ‘best execution’. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
+msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with 'best execution'. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
+msgstr "Plus spécifiquement, lorsque nous participons à un trade d'Option Binaire avec vous (chaque, un \"Contrat\"), nous avons le devoir de vous fournir \"la meilleure exécution\". Meilleure exécution signifie que nous devons prendre les pas raisonnables afin d'obtenir le meilleur résultat pour vous lorsqu'on exécute un ordre pour vous. Ce document fournit un résumé de notre politique meilleur exécution."
 
 msgid "Mother's maiden name"
 msgstr "Nom de jeune fille de votre mère"
@@ -6696,14 +6696,16 @@ msgstr "To begin Binary option trading, you will first need to read all these do
 msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "Pour modifier vos nom, date de naissance, pays de résidence ou adresse e-mail, veuillez contacter le <a href=\"%1\">Service Clientèle</a>."
 
-msgid "To create a Real account for MetaTrader, <a href=\"%1\">upgrade to Bianry Real account</a>."
-msgstr ""
-
-msgid "To create a Real account for MetaTrader, switch to your Binary Real account."
-msgstr ""
-
 msgid "To create a Real account for MetaTrader, you need to authenticate your Binary account:"
 msgstr ""
+
+msgid "To create a real account for MetaTrader, <a href=\"%1\">upgrade to %2 real money account</a>."
+msgstr ""
+
+#, fuzzy
+#| msgid "You are currently logged in to your virtual money account (%2)."
+msgid "To create a real account for MetaTrader, switch to your %1 real money account."
+msgstr "Vous êtes actuellement connecté à votre compte virtuel (%2)."
 
 msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
 msgstr ""
@@ -8980,6 +8982,9 @@ msgstr "Conditions générales"
 msgid "Trading with MetaTrader 5"
 msgstr ""
 
+#~ msgid "Instant"
+#~ msgstr "Instant"
+
 #, fuzzy
 #~| msgid "To provide access to your account to a third-party application, you may use the following API token:"
 #~ msgid "In order to trade using MetaTrader 5 platform, you'll first need to have a MetaTrader account."
@@ -9204,9 +9209,6 @@ msgstr ""
 
 #~ msgid "Log out"
 #~ msgstr "Déconnexion"
-
-#~ msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with ‘best execution’. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
-#~ msgstr "Plus spécifiquement, lorsque nous participons à un trade d'Option Binaire avec vous (chaque, un \"Contrat\"), nous avons le devoir de vous fournir \"la meilleure exécution\". Meilleure exécution signifie que nous devons prendre les pas raisonnables afin d'obtenir le meilleur résultat pour vous lorsqu'on exécute un ordre pour vous. Ce document fournit un résumé de notre politique meilleur exécution."
 
 #~ msgid "Page not found"
 #~ msgstr "Page non-trouvée"
