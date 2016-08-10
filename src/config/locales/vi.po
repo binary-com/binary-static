@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: I 18N\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-07-30 08:32+0000\n"
+"PO-Revision-Date: 2016-08-04 05:17+0000\n"
 "Last-Translator: Pham Minh Hieu <hphamv7@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/binary/static/vi/>\n"
 "Language: vi\n"
@@ -274,7 +274,9 @@ msgstr "Lịch sử đáng ghi nhận của %1"
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "Hệ thống của %1 hiện tại đang vượt quá 1 triệu giao dịch một ngày ( bao gồm tài khoản ảo)."
 
-msgid "%1’s Volatility Indices are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
+#, fuzzy
+#| msgid "%1’s Volatility Indices are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
+msgid "%1’s <a href=\"%2\">Volatility Indices</a> are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
 msgstr "chỉ số biến động của %1 đang có sẵn 24/7 trên MetaTrader 5. Bổ sung tài sản sẽ được phát hành rất sớm."
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
@@ -1437,6 +1439,9 @@ msgstr "Bằng việc đưa ra những đề xuất hay những phản hồi kh�
 
 msgid "By the 15th of every month, you will receive the commission earned during the previous calendar month."
 msgstr "Trước ngày 15 hàng tháng, bạn sẽ nhận được khoản tiền hoa hồng kiếm được trong tháng trước."
+
+msgid "By using or interacting with the website, you are consenting to the use of Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
+msgstr ""
 
 msgid "Can I become an affiliate even if I don't have a website?"
 msgstr "Nếu tôi không có trang web, tôi có trở thành một thành viên được không?"
@@ -3206,9 +3211,6 @@ msgstr "Thông tin về nguồn dữ liệu mà công ty chúng tôi dùn
 msgid "Information of the previous performance of any underlying instrument or asset does not guarantee its current and/or future performance. Past performance is not a reliable indicator of future results."
 msgstr "Thông tin của bất kỳ lần giao dịch công cụ tài sản cơ sở hoặc tài sản lần trước không đảm bảo cho lần giao dịch hiện tại và/hoặc tương lai. GIao dịch lần trước không là chỉ số đáng tin cậy cho kết quả của tương lai."
 
-msgid "Instant"
-msgstr "Tức thì"
-
 msgid "Insufficient balance"
 msgstr "Số dư tài khoản không đủ"
 
@@ -3944,7 +3946,9 @@ msgstr "Khóa quầy Thu ngân"
 msgid "Log in"
 msgstr "Đăng nhập"
 
-msgid "Log into the application using your MetaTrader account number (e.g., 1124) and your MetaTrader account password."
+#, fuzzy
+#| msgid "Log into the application using your MetaTrader account number (e.g., 1124) and your MetaTrader account password."
+msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
 msgstr "Đăng nhập vào các ứng dụng bằng cách sử dụng số tài khoản MetaTrader (ví dụ: 1124) và mật khẩu tài khoản MetaTrader."
 
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
@@ -4184,8 +4188,10 @@ msgstr "Tháng"
 msgid "More benefits"
 msgstr "Nhiều lợi nhuận hơn"
 
-msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with "
-msgstr "Cụ thể hơn, khi chúng tôi tham gia vào một giao dịch Quyền chọn Nhị phân với bạn (mỗi, một \"Hợp đồng\"), chúng tôi có trách nhiệm cung cấp cho bạn "
+#, fuzzy
+#| msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with ‘best execution’. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
+msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with 'best execution'. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
+msgstr "Một cách chi tiết hơn, khi chúng tôi giao dịch một Quyền chọn Nhị phân với bạn (mỗi, một \"Hợp đồng\"),chúng tôi phải có nghĩa vụ cung cấp cho bạn 'thực hiện tốt nhất'. Thực hiện tốt nhất có nghĩa là chúng tôi phải có các bước thích hợp để dành được kết quả tốt nhất có thể cho bạn khi bạn đặt lệnh với chúng tôi. Tài liệu này cung cấp bản tóm tắt chính sách thực hiện tốt nhất của chúng tôi."
 
 msgid "Mother's maiden name"
 msgstr "Tên của Mẹ"
@@ -6237,10 +6243,8 @@ msgstr "Đây là lý do tại sao chúng tôi đang tuyển dụng thêm nhữn
 msgid "This notice does not explain all of the risks involved in investments or similar products or how such risks relate to your personal circumstances. It is important that you fully understand the risks involved before making a decision to enter into or sell an investment product or gambling product with us. If you are in any doubt about the risks involved with Investment Products or Gambling Products, you should seek professional advice."
 msgstr "Thông báo này không giải thích tất cả các rủi ro có trong đầu tư hoặc các sản phẩm tương tự hoặc những rủi ro liên quan đến trường hợp cá nhân của bạn. Điều quan trọng là bạn hiểu đầy đủ về các rủi ro liên quan trước khi đưa ra quyết định nhập vào hoặc bán một sản phẩm đầu tư hay sản phẩm cá cược với chúng tôi. Nếu bạn có nghi ngờ về những rủi ro liên quan đến Sản phẩm Đầu tư hoặc Sản phẩm Cá cược, bạn nên tìm kiếm tư vấn chuyên nghiệp."
 
-#, fuzzy
-#| msgid "This notice provides you with information about the risks associated with investment contracts, which you may invest in through services provided to you through %1. Binary Group provides a wide range of products including Binary Options relating to foreign exchange, indices, stocks and other investment products (\"Investment Products\") and binary bets such as those relating to the Random Markets (\"Gambling Products\")."
 msgid "This notice provides you with information about the risks associated with investment contracts, which you may invest in through services provided to you through %1. Binary Group provides a wide range of products including Binary Options relating to foreign exchange, indices, stocks and other investment products (\"Investment Products\") and binary bets such as those relating to the Volatility Indices (\"Gambling Products\")."
-msgstr "Thông báo này cung cấp cho bạn những thông tin về rủi ro có liên quan đến hợp đồng đầu tư mà bạn có thể đầu tư thông qua dịch vụ đã được cung cấp cho bạn trên %1. Tập đoàn Binary cung cấp một loạt các sản phẩm bao gồm Quyền chọn Nhị phân liên quan tới thị trường ngoại hối, chỉ số, cổ phiếu và các sản phẩm đầu tư khác (\"Sản phẩm Đầu tư\") và cá cược tài chính như những thứ có liên quan tới Thị trường Ngẫu nhiên (\"Sản phẩm Cá cược\")."
+msgstr "Thông báo này cung cấp cho bạn những thông tin về rủi ro có liên quan đến hợp đồng đầu tư mà bạn có thể đầu tư thông qua dịch vụ đã được cung cấp cho bạn trên %1. Tập đoàn Binary cung cấp một loạt các sản phẩm bao gồm Quyền chọn Nhị phân liên quan tới thị trường ngoại hối, chỉ số, cổ phiếu và các sản phẩm đầu tư khác (\"Sản phẩm Đầu tư\") và cá cược tài chính như những thứ có liên quan tới Chỉ số biến động (\"Sản phẩm Cá cược\")."
 
 msgid "This offer cannot be used in conjunction with any other offer."
 msgstr "Lời mời chào bán này không thể được dùng để kết nối với các lời mời chào bán khác."
@@ -6299,14 +6303,18 @@ msgstr "To begin Binary option trading, you will first need to read all these do
 msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "Để thay đổi tên, ngày sinh, nơi cư trú, hoặc email, vui lòng liên hệ với <a href=\"%1\">Bộ phận Hỗ trợ Khách hàng</a>."
 
-msgid "To create a Real account for MetaTrader, <a href=\"%1\">upgrade to Bianry Real account</a>."
-msgstr "Để tạo một tài khoản Thực Sự cho MetaTrader, <a href=\"%1\"> nâng cấp lên tài khoản Thực Sự Binary</a>."
-
-msgid "To create a Real account for MetaTrader, switch to your Binary Real account."
-msgstr "Để tạo một tài khoản Real cho MetaTrader, chuyển sang tài khoản Binary Real."
-
 msgid "To create a Real account for MetaTrader, you need to authenticate your Binary account:"
 msgstr "Để tạo một tài khoản Real cho MetaTrader, bạn cần phải xác thực tài khoản Binary của bạn:"
+
+#, fuzzy
+#| msgid "To create a Real account for MetaTrader, <a href=\"%1\">upgrade to Bianry Real account</a>."
+msgid "To create a real account for MetaTrader, <a href=\"%1\">upgrade to %2 real money account</a>."
+msgstr "Để tạo một tài khoản Thực Sự cho MetaTrader, <a href=\"%1\"> nâng cấp lên tài khoản Thực Sự Binary</a>."
+
+#, fuzzy
+#| msgid "To create a Real account for MetaTrader, switch to your Binary Real account."
+msgid "To create a real account for MetaTrader, switch to your %1 real money account."
+msgstr "Để tạo một tài khoản Real cho MetaTrader, chuyển sang tài khoản Binary Real."
 
 msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
 msgstr "Để gửi tiền hoặc rút tiền từ tài khoản MetaTrader Real của bạn, chuyển sang tài khoản Real của bạn ở Binary.com."
@@ -7394,7 +7402,7 @@ msgid "Your cashier is locked as per your request - to unlock it, please click %
 msgstr "Tiền đã bị khóa theo yêu cầu của bạn - để mở khóa, vui lòng nhấn %1tại đây"
 
 msgid "Your cashier is locked as per your request - to unlock it, please click <a class=\"pjaxload\" href=\"%1\">here</a>."
-msgstr "Quỹ đã bị khóa theo yêu cầu của bạn - để mở khóa, vui lòng nhấn vào đây <a class=\"pjaxload\" href=\"%1\"></a>."
+msgstr "Quỹ đã bị khóa theo yêu cầu của bạn - để mở khóa, vui lòng nhấn <a class=\"pjaxload\" href=\"%1\">vào đây </a>."
 
 msgid "Your cashier is locked as per your request - to unlock it, please enter the password."
 msgstr "Quỹ đã được khóa theo yêu cầu của bạn - để mở khóa, vui lòng điền mật khẩu."
@@ -8377,6 +8385,12 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 msgid "Trading with MetaTrader 5"
 msgstr "Kinh doanh với MetaTrader 5"
 
+#~ msgid "Instant"
+#~ msgstr "Tức thì"
+
+#~ msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with "
+#~ msgstr "Cụ thể hơn, khi chúng tôi tham gia vào một giao dịch Quyền chọn Nhị phân với bạn (mỗi, một \"Hợp đồng\"), chúng tôi có trách nhiệm cung cấp cho bạn "
+
 #~| msgid "In order to access our mobile apps and other third-party applications, you'll first need to generate an API Token."
 #~ msgid "In order to trade using MetaTrader 5 platform, you'll first need to have a MetaTrader account."
 #~ msgstr "Để kinh doanh với MetaTrader 5, trước tiên bạn sẽ cần phải có một tài khoản MetaTrader."
@@ -8672,9 +8686,6 @@ msgstr "Kinh doanh với MetaTrader 5"
 
 #~ msgid "Log out"
 #~ msgstr "Đăng xuất"
-
-#~ msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with ‘best execution’. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
-#~ msgstr "Một cách chi tiết hơn, khi chúng tôi giao dịch một Quyền chọn Nhị phân với bạn (mỗi, một \"Hợp đồng\"),chúng tôi phải có nghĩa vụ cung cấp cho bạn 'thực hiện tốt nhất'. Thực hiện tốt nhất có nghĩa là chúng tôi phải có các bước thích hợp để dành được kết quả tốt nhất có thể cho bạn khi bạn đặt lệnh với chúng tôi. Tài liệu này cung cấp bản tóm tắt chính sách thực hiện tốt nhất của chúng tôi."
 
 #~ msgid "Page not found"
 #~ msgstr "Trang không được tìm thấy"

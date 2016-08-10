@@ -8,7 +8,7 @@
             display: table;
             .picture {
                 float: left;
-                padding-right: 20px;
+                @include BIDIR_PROP(padding-right, padding-left, 20px);
             }
             .text {
                 display: table-cell;

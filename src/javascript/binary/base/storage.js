@@ -58,6 +58,7 @@ var CookieStorage = function (cookie_name, cookie_domain) {
     this.cookie_name = cookie_name;
     var hostname = window.location.hostname;
     this.domain = cookie_domain || (/\.binary\.com/i.test(hostname) ? '.' + hostname.split('.').slice(-2).join('.') : hostname);
+    this.path = '/';
     this.expires = new Date('Thu, 1 Jan 2037 12:00:00 GMT');
     this.value = {};
 };
@@ -78,7 +79,7 @@ CookieStorage.prototype = {
         if(expireDate) this.expires = expireDate;
         $.cookie(this.cookie_name, this.value, {
             expires: this.expires,
-            path   : '/',
+            path   : this.path,
             domain : this.domain,
             secure : !!isSecure,
         });
@@ -91,9 +92,15 @@ CookieStorage.prototype = {
         if (!this.initialized) this.read();
         this.value[key] = value;
         $.cookie(this.cookie_name, JSON.stringify(this.value), {
-            expires: this.expires,
-            path: '/',
-            domain: this.domain,
+            expires: new Date(this.expires),
+            path   : this.path,
+            domain : this.domain,
+        });
+    },
+    remove: function() {
+        $.removeCookie(this.cookie_name, {
+            path   : this.path,
+            domain : this.domain,
         });
     }
 };
