@@ -1,37 +1,19 @@
 var SelfExclusionWS = (function() {
     "use strict";
 
-    /*
-    *  1. Check if current User is virtual.
-    *  2. If user is virtual, then hide form and description, and show error message.
-    *  3. Else wait until the `authorize` call responds, and check again.
-    *  4. Populate the fields global.
-    *  5. Get the exclusion settings, and populate the forms and fields global.
-    *  6. When user submits, validate the form. If ok => submit request.
-    *  7. After successful submission, go to step 5.
-    *  8. god bless you.
-    */
-
     var $form,
-        $loading,
-        dateID,
-        timeDateID,
-        timeID,
-        time,
-        errorClass,
-        hiddenClass;
+        $loading;
 
+    var timeDateID  = 'timeout_until_duration';
+    var timeID      = 'timeout_until';
+    var dateID      = 'exclude_until';
+    var errorClass  = 'errorfield';
+    var hiddenClass = 'hidden';
     var fields;
 
     function reallyInit() {
-        $form       = $('#frmSelfExclusion');
-        $loading    = $('#loading');
-        timeDateID  = 'timeout_until_duration';
-        timeID      = 'timeout_until';
-        time        = new Date();
-        dateID      = 'exclude_until';
-        errorClass  = 'errorfield';
-        hiddenClass = 'hidden';
+        $form    = $('#frmSelfExclusion');
+        $loading = $('#loading');
 
         if (page.client.is_virtual()) {
             $('#selfExclusionDesc').addClass(hiddenClass);
@@ -132,7 +114,7 @@ var SelfExclusionWS = (function() {
             var errMsg = response.error.message;
             var field  = response.error.field;
             if (field) {
-                showError(field, errMsg);
+                ValidationUI.draw('input[name='+field+']', errMsg);
             } else {
                 showFormMessage(text.localize(errMsg), false);
             }
