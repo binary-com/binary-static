@@ -2,9 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Taiwan) (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-08 02:42+0000\n"
+"PO-Revision-Date: 2016-08-10 01:28+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (Taiwan) <https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
+"Language-Team: Chinese (Taiwan) "
+"<https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
 "Language: zh_tw\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -269,10 +270,9 @@ msgstr "%1的輝煌發展歷程"
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "%1 每天處理超過百萬筆交易(包括虛擬帳戶)。"
 
-#, fuzzy
 #| msgid "%1’s Volatility Indices are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
 msgid "%1’s <a href=\"%2\">Volatility Indices</a> are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
-msgstr "%1的波動指數如今可在MetaTrader 5全天候交易。我們將儘快推出更多資產。"
+msgstr "%1的<a href=\"%2\">波動指數</a>如今可在MetaTrader 5全天候交易。我們將儘快推出更多資產。"
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(minimum duration, for example minimum 15 seconds)分鐘"
@@ -1438,6 +1438,9 @@ msgstr "每月15號前您將收到上一個月的佣金收入。"
 
 msgid "By using or interacting with the website, you are consenting to the use of Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
 msgstr ""
+"通過使用網站或與網站互動，您同意使用Google分析使用者 ID 功能，允許Google捕獲您的 %1 登入識別碼 （例如，VRTC1234、 "
+"CR1234、 MF1234 等）。 啟用Google分析使用者 ID 功能後，除 Binary.com 登入識別碼 "
+"或其他可以讓Google連結到此類資訊的資料以外，將沒有任何其他個人識別資訊與Google共用或披露給Google。"
 
 msgid "Can I become an affiliate even if I don't have a website?"
 msgstr "如果我沒有網站，也可以成為聯盟會員嗎？"
@@ -3942,10 +3945,9 @@ msgstr "鎖定收銀台"
 msgid "Log in"
 msgstr "登入"
 
-#, fuzzy
 #| msgid "Log into the application using your MetaTrader account number (e.g., 1124) and your MetaTrader account password."
 msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
-msgstr "使用MetaTrader帳號(例如，1124)以及MetaTrader帳戶密碼登入應用程式。"
+msgstr "使用MetaTrader帳號以及MetaTrader帳戶密碼登入應用程式。"
 
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "登入您的%1 聯盟帳號並點選：財務&rarr; 付款說明。"
@@ -4184,10 +4186,11 @@ msgstr "月份"
 msgid "More benefits"
 msgstr "更多福利"
 
-#, fuzzy
 #| msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with ‘best execution’. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
 msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with 'best execution'. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
-msgstr "說得更具體就是，當我們和您進行二元期權交易時（雙方有了「合同」），我們有責任向您提供「最佳執行方案」。最佳執行方案的意思就是當我們執行您的訂單時，我們必須採取合理的措施來為您獲取最大的效益。此文件是我們最佳執行方案政策的總結。"
+msgstr ""
+"說得更具體就是，當我們和您進行二元期權交易時（雙方有了「合同」），我們有責任向您提供「最佳執行方案」。最佳執行方案的意思就是當我們執行您的訂單時，我們必須"
+"採取合理的措施來為您獲取最大的效益。此文件是我們最佳執行方案政策的總結。"
 
 msgid "Mother's maiden name"
 msgstr "母親婚前的姓氏"
@@ -6306,15 +6309,13 @@ msgstr "如需更改姓名、生日、居住國或電子郵件地址，請與<a 
 msgid "To create a Real account for MetaTrader, you need to authenticate your Binary account:"
 msgstr "要開立MetaTrader真實資金帳戶，必須先驗證Binary帳戶:"
 
-#, fuzzy
 #| msgid "To create a Real account for MetaTrader, <a href=\"%1\">upgrade to Bianry Real account</a>."
 msgid "To create a real account for MetaTrader, <a href=\"%1\">upgrade to %2 real money account</a>."
-msgstr "要開立MetaTrader真實資金帳戶，<a href=\"%1\">請先升級為Bianry真實資金帳戶</a>。"
+msgstr "要開立MetaTrader真實資金帳戶，<a href=\"%1\">請先升級為%2真實資金帳戶</a>。"
 
-#, fuzzy
 #| msgid "To create a Real account for MetaTrader, switch to your Binary Real account."
 msgid "To create a real account for MetaTrader, switch to your %1 real money account."
-msgstr "要開立MetaTrader真實資金帳戶，請先切換到Binary真實資金帳戶。"
+msgstr "要開立MetaTrader真實資金帳戶，請先切換到%1真實資金帳戶。"
 
 msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
 msgstr "要在MetaTrader真實帳戶存取款，請先切換到Binary.com真實資金帳戶。"
