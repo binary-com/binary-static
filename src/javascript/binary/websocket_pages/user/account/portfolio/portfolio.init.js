@@ -97,13 +97,9 @@ var PortfolioWS =  (function() {
     };
 
     var updateIndicative = function(data) {
-        if(data.hasOwnProperty('error')) {
-            if(data.error.code !== 'AlreadySubscribed') {
-                errorMessage(data.error.message);
-            }
+        if(data.hasOwnProperty('error') || !values) {
             return;
         }
-        if(!values) return;
 
         var proposal = Portfolio.getProposalOpenContract(data.proposal_open_contract);
         // force to sell the expired contract, in order to remove from portfolio
