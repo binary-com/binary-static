@@ -19,10 +19,10 @@ var Store = function(storage) {
 
 Store.prototype = {
       get: function(key) {
-          return this.storage.getItem(key) ? this.storage.getItem(key) : undefined;
+          return this.storage.getItem(key) || undefined;
       },
       set: function(key, value) {
-          if(typeof value != "undefined") {
+          if (typeof value != "undefined") {
               this.storage.setItem(key, value);
           }
       },
