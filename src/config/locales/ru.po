@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-10 18:16+0000\n"
-"Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
+"PO-Revision-Date: 2016-08-10 21:53+0000\n"
+"Last-Translator: Ruslan <ruslan.mukhametdinov.90@gmail.com>\n"
 "Language-Team: Russian "
 "<https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
@@ -279,6 +279,9 @@ msgstr "Системы %1 обрабатывают более 1 миллиона
 
 msgid "%1’s <a href=\"%2\">Volatility Indices</a> are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
 msgstr ""
+"%1’s <a href=\"%2\"> Индексы Волатильности </a> теперь доступны для торговли "
+"на MetaTrader 5 каждый день, 24 часа в сутки. Очень скоро мы расширим список "
+"активов."
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(minimum duration, for example minimum 15 seconds)мин."
@@ -1449,6 +1452,12 @@ msgstr "В районе 15 числа каждого месяца Вы полу�
 
 msgid "By using or interacting with the website, you are consenting to the use of Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
 msgstr ""
+"Используя сайт и работая на нем, вы соглашаетесь с использованием функции "
+"User ID от Google Analytics, которая позволяет Google идентифицировать номер "
+"Вашего счета %1 (например, VRTC1234, CR1234, MF1234 и т.д.). Никакая другая "
+"личная информация кроме номера Вашего счета, или другие данные, которые "
+"могут быть с ним связаны, не передаются и не сохраняются в Google при помощи "
+"функции User ID от Google Analytics."
 
 msgid "Can I become an affiliate even if I don't have a website?"
 msgstr "Могу ли я стать партнером, если у меня нет собственного сайта?"
@@ -3975,10 +3984,10 @@ msgstr "Закрыть кассу паролем"
 msgid "Log in"
 msgstr "Вход"
 
-#, fuzzy
 #| msgid "Deposit funds into your account"
 msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
-msgstr "Пополните счет"
+msgstr ""
+"Войдите в приложение используя номер и пароль Вашего счета на MetaTrader."
 
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "Зайдите на свой партнерский счет %1 и нажмите на Финансы, а затем на Платежные инструкции."
@@ -4220,10 +4229,14 @@ msgstr "Месяц"
 msgid "More benefits"
 msgstr "Дополнительные преимущества"
 
-#, fuzzy
 #| msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with ‘best execution’. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
 msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with 'best execution'. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
-msgstr "Более конкретно, когда мы заключаем с Вами договор бинарного контракта (\"Контракт\"), мы обязаны предоставить Вам условия \"лучшего исполнения\". Лучшее исполнение означает, что мы должны принять разумные меры для получения наилучшего результата при выполнении Вашего ордера. Этот документ содержит резюме нашей политики лучшего исполнения."
+msgstr ""
+"Более конкретно, когда мы заключаем с Вами договор бинарного контракта (\""
+"Контракт\"), мы обязаны предоставить Вам условия \"лучшего исполнения\". "
+"Лучшее исполнение означает, что мы должны принять разумные меры для "
+"получения наилучшего результата при выполнении Вашего ордера. Этот документ "
+"содержит резюме нашей политики лучшего исполнения."
 
 msgid "Mother's maiden name"
 msgstr "Девичья фамилия матери"
@@ -6426,11 +6439,13 @@ msgstr ""
 
 msgid "To create a real account for MetaTrader, <a href=\"%1\">upgrade to %2 real money account</a>."
 msgstr ""
+"Чтобы создать торговый счет на MetaTrader, <a href=\"%1\"> откройте реальный "
+"счет на %2</a>."
 
-#, fuzzy
 #| msgid "You are currently logged in to your virtual money account (%2)."
 msgid "To create a real account for MetaTrader, switch to your %1 real money account."
-msgstr "Сейчас Вы находитесь на своем демо-счету (%2)."
+msgstr ""
+"Чтобы создать торговый счет на MetaTrader, перейдите на Ваш реальный счет %1."
 
 msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
 msgstr ""
@@ -7140,10 +7155,12 @@ msgstr "Когда Вы даете нам конкретные указания,
 msgid "Where your experience, drive and talent can propel you in unknown directions. And you have the freedom to push into new frontiers."
 msgstr "Где Ваш опыт, энергия и талант могут привести Вас к неожиданным высотам. При этом у Вас будет свобода поиска новых границ."
 
-#, fuzzy
 #| msgid "Whether in Malta or Malaysia, you’ll enjoy a high standard of living, and your income will stretch further than in most western countries."
 msgid "Whether in Malta or Malaysia, you'll enjoy a high standard of living, and your income will stretch further than in most western countries."
-msgstr "На Мальте или в Малайзии, у Вас будет высокий уровень жизни, и Ваш доход будет превышать средний уровень жизни по сравнению с большинством западных стран."
+msgstr ""
+"На Мальте или в Малайзии у Вас будет высокий уровень жизни, а Ваш доход "
+"будет превышать средний заработок, по сравнению с большинством западных "
+"стран."
 
 msgid "Who can apply to be a Payment Agent?"
 msgstr "Кто может подать заявку Платежного Агента?"
@@ -7211,10 +7228,12 @@ msgstr "Прибыль может выплачиваться только на �
 msgid "With %1 you can trade:"
 msgstr "На %1 Вы можете торговать:"
 
-#, fuzzy
 #| msgid "With %1 you’re in control of how much you can win. You specify a fixed payout amount at the outset, and your stake – what you pay – is then calculated. Binary.com offers payouts from $1 to $50,000."
 msgid "With %1 you're in control of how much you can win. You specify a fixed payout amount at the outset, and your stake - what you pay - is then calculated. %1 offers payouts from $1 to $50,000."
-msgstr "На %1 вы контролируете, сколько вы можете выиграть. В самом начале контракта вы устанавливаете определенную сумму выигрыша, на основе которой будет рассчитана ставка - цена покупки. Binary.com предоставляет выплаты от $1 до $50,000."
+msgstr ""
+"На %1 Вы контролируете, сколько Вы можете заработать. В самом начале "
+"контракта Вы устанавливаете желаемую сумму выплаты, на основе которой будет "
+"рассчитана ставка – цена покупки. %1 предоставляет выплаты от $1 до $50,000."
 
 msgid "With %1's unique platform, there's no risk of 'slippage' or gapping markets. And no hidden fees."
 msgstr "На уникальной платформе %1 нет риска проскальзывания или разрыва рынков. Как и скрытых комиссий."
