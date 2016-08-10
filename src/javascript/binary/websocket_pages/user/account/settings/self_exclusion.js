@@ -221,12 +221,21 @@ var SelfExclusionWS = (function() {
         return dv.ok(date.format('YYYY-MM-DD'));
     }
 
+    function allowEmptyUnless(key) {
+        return function(value, data) {
+            if (value.length > 0) return dv.ok(value);
+            if (data[key].length > 0) return dv.fail('Please select a valid date');
+            return dv.fail(EMPTY);
+        };
+    }
+
     var schema;
     function getSchema(force) {
         if (!force && schema) return schema;
         var V2 = ValidateV2;
         var validTime = V2.momentFmt('HH:mm', 'Please select a valid time');
         var validDate = V2.momentFmt('YYYY-MM-DD', 'Please select a valid date');
+
         schema = {
             max_7day_losses:    [numericOrEmpty, againstField('max_7day_losses')],
             max_7day_turnover:  [numericOrEmpty, againstField('max_7day_turnover')],
@@ -239,7 +248,7 @@ var SelfExclusionWS = (function() {
             session_duration_limit: [numericOrEmpty, againstField('session_duration_limit'), validSessionDuration],
             exclude_until:          [allowEmpty, validDate, afterToday, validExclusionDate, toDateString],
             // these two are combined.
-            timeout_until_duration: [allowEmpty, validDate, afterToday],
+            timeout_until_duration: [allowEmptyUnless('timeout_until'), validDate, afterToday],
             timeout_until:          [allowEmpty, validTime],
         };
     }
@@ -275,8 +284,8 @@ var SelfExclusionWS = (function() {
             showFormMessage('You did not change anything.', false);
             return;
         }
-        if ('timeout_until' in info.data && !hasConfirmed()) {
-            return;
+        if ('timeout_until' in info.data || 'exclude_until' in info.data) {
+            if (!hasConfirmed()) return;
         }
         setRequest(info.data);
     }
