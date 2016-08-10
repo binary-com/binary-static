@@ -279,7 +279,7 @@ var SelfExclusionWS = (function() {
 
         // Do the date time addition and validation here
         var date = values.timeout_until_duration;
-        if (valid && date) {
+        if (date) {
             // If we've gotten this far then there must *not*
             // be an error with the timeout date.
             var time = values.timeout_until || moment.duration({});
