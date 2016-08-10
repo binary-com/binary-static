@@ -590,9 +590,9 @@ var ViewPopupWS = (function() {
             sellSetVisibility(false);
             if(isSellClicked) {
                 containerSetText('contract_sell_message',
-                    text.localize('You have sold this contract at [_1] [_2]').replace('[_1]', contract.currency).replace('[_2]', response.sell.sold_for) +
+                    text.localize('You have sold this contract at [_1] [_2]', [contract.currency, response.sell.sold_for]) +
                     '<br />' +
-                    text.localize('Your transaction reference number is [_1]').replace('[_1]', response.sell.transaction_id)
+                    text.localize('Your transaction reference number is [_1]', [response.sell.transaction_id])
                 );
             }
             getContract('no-subscribe');

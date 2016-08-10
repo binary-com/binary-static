@@ -91,12 +91,11 @@ var ResetPassword = (function () {
                 $('#reset-error').removeClass(hiddenClass);
 
                 // special handling as backend return inconsistent format
-                var errMsg;
-                if (response.error.code === 'InputValidationFailed') {
-                    errMsg = text.localize(resetErrorTemplate).replace('[_1]', text.localize('Token has expired.'));
-                } else {
-                    errMsg = text.localize(resetErrorTemplate).replace('[_1]', text.localize(response.error.message));
-                }
+                var errMsg = text.localize(resetErrorTemplate, [
+                    response.error.code === 'InputValidationFailed' ?
+                        text.localize('Token has expired.') :
+                        text.localize(response.error.message)
+                ]);
 
                 $('#reset-error-msg').text(errMsg);
             } else {
