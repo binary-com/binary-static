@@ -14,7 +14,7 @@ var TradingAnalysis = (function() {
     var trading_digit_info;
 
     var requestTradeAnalysis = function() {
-        var contentId = document.getElementById('trading_bottom_content');
+        var contentId = document.getElementById('trading_analysis_content');
         var formName = JPTradePage.isJapan() ? $('#category-select').val() : $('#contract_form_name_nav').find('.a-active').attr('id');
         if (formName === 'matchdiff') {
           formName = 'digits';
@@ -35,7 +35,7 @@ var TradingAnalysis = (function() {
      */
     var bindAnalysisTabEvent = function() {
         'use strict';
-        var analysisNavElement = document.querySelector('#trading_bottom_content #betsBottomPage');
+        var analysisNavElement = document.querySelector('#trading_analysis_content #analysis_tabs');
         if (analysisNavElement) {
             analysisNavElement.addEventListener('click', function(e) {
                 if (e.target && e.target.nodeName === 'A') {
@@ -65,7 +65,7 @@ var TradingAnalysis = (function() {
             currentLink = document.querySelector('#' + currentTab + ' a'),
             contentId = document.getElementById(currentTab + '-content');
 
-        var analysisNavElement = document.querySelector('#trading_bottom_content #betsBottomPage');
+        var analysisNavElement = document.querySelector('#trading_analysis_content #analysis_tabs');
         toggleActiveNavMenuElement(analysisNavElement, currentLink.parentElement);
         toggleActiveAnalysisTabs();
 
@@ -116,7 +116,7 @@ var TradingAnalysis = (function() {
     var toggleActiveAnalysisTabs = function() {
         'use strict';
         var currentTab = getActiveTab(),
-            analysisContainer = document.getElementById('bet_bottom_content');
+            analysisContainer = document.getElementById('analysis_content');
 
         if (analysisContainer) {
             trading_digit_info = undefined;
