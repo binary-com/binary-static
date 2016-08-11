@@ -12,3 +12,19 @@ describe('template', function() {
         expect(utility.template('[_1] [_2]', ['[_2]', 'abc'])).to.eq('[_2] abc');
     });
 });
+
+describe('parseLoginIDList', function() {
+    it('works for empty strings', function() {
+        var res = utility.parseLoginIDList('');
+        var expected = [];
+        expect(res).to.deep.equal(expected);
+    });
+    it('works correctly', function() {
+        var res = utility.parseLoginIDList('MF3101:R:E+VRTC759728:V:E');
+        var expected = [
+            {disabled: false, financial: true,  non_financial: false, id: 'MF3101', real: true},
+            {disabled: false, financial: false, non_financial: false, id: 'VRTC759728', real: false},
+        ];
+        expect(res).to.deep.equal(expected);
+    });
+});

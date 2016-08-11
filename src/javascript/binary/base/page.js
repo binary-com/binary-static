@@ -155,49 +155,20 @@ var GTM = (function() {
 }());
 
 var User = function() {
-    this.loginid = Cookies.get('loginid');
     this.email   = Cookies.get('email');
-    var loginid_list = Cookies.get('loginid_list');
-
-    if(!this.loginid || !loginid_list || !localStorage.getItem('client.tokens')) {
-        this.is_logged_in = false;
-        return;
-    }
-
-    this.is_logged_in = true;
-    if (typeof loginid_list !== "undefined") {
-        var loginid_array = [];
-        var loginids = loginid_list.split('+').sort();
-
-        for (var i = 0; i < loginids.length; i++) {
-            var real = false;
-            var disabled = false;
-            var items = loginids[i].split(':');
-            if (items[1] == 'R') {
-                real = true;
-            }
-            if (items[2] == 'D') {
-                disabled = true;
-            }
-
-            var id_obj = { 'id':items[0], 'real':real, 'disabled':disabled };
-            if (/MLT/.test(items[0])) {
-                id_obj['non_financial']= true;
-            }
-            if (/MF/.test(items[0])) {
-                id_obj['financial']= true;
-            }
-            loginid_array.push(id_obj);
-        }
-
-        this.loginid_array = loginid_array;
-    }
+    this.loginid = Cookies.get('loginid');
+    this.loginid_array = parseLoginIDList(Cookies.get('loginid_list') || '');
+    this.is_logged_in = !!(
+        this.loginid &&
+        this.loginid_array.length > 0 &&
+        localStorage.getItem('client.tokens')
+    );
 };
 
 var Client = function() {
     this.loginid      = Cookies.get('loginid');
     this.residence    = Cookies.get('residence');
-    this.is_logged_in = this.loginid && this.loginid.length > 0 && localStorage.getItem('client.tokens');
+    this.is_logged_in = !!(this.loginid && this.loginid.length > 0 && localStorage.getItem('client.tokens'));
 };
 
 Client.prototype = {
