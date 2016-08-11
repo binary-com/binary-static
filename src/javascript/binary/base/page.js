@@ -866,13 +866,13 @@ Header.prototype = {
 
             cookies.map(function(c){
               regex = new RegExp(c);
-              $.removeCookie(c, {path: cookie_path[0], domain: current_domain[0]});
-              $.removeCookie(c, {path: cookie_path[0], domain: current_domain[2]});
-              $.removeCookie(c);
+              Cookies.remove(c, {path: cookie_path[0], domain: current_domain[0]});
+              Cookies.remove(c, {path: cookie_path[0], domain: current_domain[2]});
+              Cookies.remove(c);
               if (regex.test(document.cookie) && cookie_path[1]) {
-                  $.removeCookie(c, {path: cookie_path[1], domain: current_domain[0]});
-                  $.removeCookie(c, {path: cookie_path[1], domain: current_domain[2]});
-                  $.removeCookie(c, {path: cookie_path[1]});
+                  Cookies.remove(c, {path: cookie_path[1], domain: current_domain[0]});
+                  Cookies.remove(c, {path: cookie_path[1], domain: current_domain[2]});
+                  Cookies.remove(c, {path: cookie_path[1]});
               }
             });
             localStorage.removeItem('risk_classification');
