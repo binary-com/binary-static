@@ -79,13 +79,13 @@ function BinarySocketClass() {
     };
 
     var init = function (es) {
-        if(wrongAppId === getAppId()) {
+        if (wrongAppId === getAppId()) {
             return;
         }
-        if(!es){
+        if (!es){
             events = {};
         }
-        if(typeof es === 'object'){
+        if (typeof es === 'object') {
             bufferedSends = [];
             manualClosed = false;
             events = es;
@@ -96,30 +96,25 @@ function BinarySocketClass() {
             binarySocket = new WebSocket(socketUrl);
         }
 
-        binarySocket.onopen = function (){
-            var loginToken = getCookieItem('login');
-            if(loginToken && !authorized && localStorage.getItem('client.tokens')) {
-                binarySocket.send(JSON.stringify({authorize: loginToken}));
-            }
-            else {
+        binarySocket.onopen = function () {
+            var apiToken = CommonData.getApiToken();
+            if (apiToken && !authorized && localStorage.getItem('client.tokens')) {
+                binarySocket.send(JSON.stringify({authorize: apiToken}));
+            } else {
                 sendBufferedSends();
             }
 
-            if(typeof events.onopen === 'function'){
+            if (typeof events.onopen === 'function') {
                 events.onopen();
             }
 
-            if(isReady()=== true){
-                if(!Login.is_login_pages()) {
-                    page.header.validate_cookies();
-                }
-                if (clock_started === false) {
-                    page.header.start_clock_ws();
-                }
+            if (isReady()) {
+                if (!Login.is_login_pages()) page.header.validate_cookies();
+                if (!clock_started) page.header.start_clock_ws();
             }
         };
 
-        binarySocket.onmessage = function (msg){
+        binarySocket.onmessage = function(msg) {
             var response = JSON.parse(msg.data);
             if (response) {
                 if(response.hasOwnProperty('echo_req') && response.echo_req !== null && response.echo_req.hasOwnProperty('passthrough')) {

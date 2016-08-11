@@ -465,15 +465,6 @@ function getContractCategoryTree(elements){
 }
 
 /*
- * function to get cookie javascript way (use if you don't want to use jquery)
- */
-function getCookieItem(sKey) {
-    'use strict';
-    if (!sKey) { return null; }
-    return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
-}
-
-/*
  * Display price/spot movement variation to depict price moved up or down
  */
 function displayPriceMovement(element, oldValue, currentValue) {

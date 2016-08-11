@@ -1057,12 +1057,12 @@ Page.prototype = {
         this.record_affiliate_exposure();
         this.contents.on_load();
         this.on_click_acc_transfer();
-        if(getCookieItem('login')){
+        if (CommonData.getApiToken()) {
             ViewBalance.init();
         } else {
             LocalStore.set('reality_check.ack', 0);
         }
-        if(!getCookieItem('language')) {
+        if(!Cookies.get('language')) {
             var cookie = new CookieStorage('language');
             cookie.write(this.language());
         }
