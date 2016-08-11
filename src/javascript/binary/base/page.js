@@ -789,8 +789,8 @@ Header.prototype = {
         getTime();
         return;
     },
-    time_counter : function(response){
-        if(isNaN(response.echo_req.passthrough.client_time) || response.error){
+    time_counter : function(response) {
+        if (isNaN(response.echo_req.passthrough.client_time) || response.error) {
             page.header.start_clock_ws();
             return;
         }
