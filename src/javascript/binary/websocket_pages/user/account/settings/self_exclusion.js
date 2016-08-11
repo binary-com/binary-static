@@ -75,8 +75,6 @@ var SelfExclusionWS = (function() {
             fields[key] = value + '';
             $form.find('#' + key).val(value);
         });
-        // force reloading
-        getSchema(true);
     }
 
     function initDatePicker() {
@@ -169,10 +167,10 @@ var SelfExclusionWS = (function() {
     };
 
     function againstField(key) {
-        var old = fields[key];
-        var err = text.localize('Please enter a number between 0 and [_1]', [old]);
-        var hasOld = !!old;
         return function(value) {
+            var old = fields[key];
+            var err = text.localize('Please enter a number between 0 and [_1]', [old]);
+            var hasOld = !!old;
             var isEmpty = value.length === 0;
             if (!hasOld) {
                 return isEmpty ? dv.fail(EMPTY) : dv.ok(value);
@@ -212,8 +210,8 @@ var SelfExclusionWS = (function() {
     }
 
     var schema;
-    function getSchema(force) {
-        if (!force && schema) return schema;
+    function getSchema() {
+        if (schema) return schema;
         var V2 = ValidateV2;
         var validTime = V2.momentFmt('HH:mm', 'Please select a valid time');
         var validDate = V2.momentFmt('YYYY-MM-DD', 'Please select a valid date');
