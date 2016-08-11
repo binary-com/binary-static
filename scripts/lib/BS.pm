@@ -151,6 +151,9 @@ sub css_files {
         push @css, root_url() . "css/binary.min.css?$static_hash";
     }
 
+    # Binary-style
+    push @css, "https://style.binary.com/binary.css?$static_hash";
+
     return @css;
 }
 
