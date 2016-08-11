@@ -155,42 +155,42 @@ var GTM = (function() {
 }());
 
 var User = function() {
-    this.loginid =  Cookies.get('loginid');
-    this.email   =  Cookies.get('email');
+    this.loginid = Cookies.get('loginid');
+    this.email   = Cookies.get('email');
     var loginid_list = Cookies.get('loginid_list');
 
     if(!this.loginid || !loginid_list || !localStorage.getItem('client.tokens')) {
         this.is_logged_in = false;
-    } else {
-        this.is_logged_in = true;
+        return;
+    }
 
-        if(loginid_list !== null && typeof loginid_list !== "undefined") {
-            var loginid_array = [];
-            var loginids = loginid_list.split('+').sort();
+    this.is_logged_in = true;
+    if (typeof loginid_list !== "undefined") {
+        var loginid_array = [];
+        var loginids = loginid_list.split('+').sort();
 
-            for (var i = 0; i < loginids.length; i++) {
-                var real = false;
-                var disabled = false;
-                var items = loginids[i].split(':');
-                if (items[1] == 'R') {
-                    real = true;
-                }
-                if (items[2] == 'D') {
-                    disabled = true;
-                }
-
-                var id_obj = { 'id':items[0], 'real':real, 'disabled':disabled };
-                if (/MLT/.test(items[0])) {
-                    id_obj['non_financial']= true;
-                }
-                if (/MF/.test(items[0])) {
-                    id_obj['financial']= true;
-                }
-                loginid_array.push(id_obj);
+        for (var i = 0; i < loginids.length; i++) {
+            var real = false;
+            var disabled = false;
+            var items = loginids[i].split(':');
+            if (items[1] == 'R') {
+                real = true;
+            }
+            if (items[2] == 'D') {
+                disabled = true;
             }
 
-            this.loginid_array = loginid_array;
+            var id_obj = { 'id':items[0], 'real':real, 'disabled':disabled };
+            if (/MLT/.test(items[0])) {
+                id_obj['non_financial']= true;
+            }
+            if (/MF/.test(items[0])) {
+                id_obj['financial']= true;
+            }
+            loginid_array.push(id_obj);
         }
+
+        this.loginid_array = loginid_array;
     }
 };
 
@@ -864,7 +864,7 @@ Header.prototype = {
             }
             var regex;
 
-            cookies.map(function(c){
+            cookies.forEach(function(c) {
               regex = new RegExp(c);
               Cookies.remove(c, {path: cookie_path[0], domain: current_domain[0]});
               Cookies.remove(c, {path: cookie_path[0], domain: current_domain[2]});
