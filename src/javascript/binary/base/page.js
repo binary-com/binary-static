@@ -722,14 +722,14 @@ Header.prototype = {
             return;
         $('input[placeholder]').each(function() {
             var input = $(this);
-            $(input).val(input.attr('placeholder'));
-            $(input).focus(function() {
+            input.val(input.attr('placeholder'));
+            input.focus(function() {
                 if (input.val() == input.attr('placeholder')) {
                     input.val('');
                 }
             });
-            $(input).blur(function() {
-                if (input.val() === '' || input.val() == input.attr('placeholder')) {
+            input.blur(function() {
+                if (input.val() === '') {
                     input.val(input.attr('placeholder'));
                 }
             });
@@ -805,21 +805,29 @@ Header.prototype = {
       }
       return false;
     },
-    validate_cookies: function(){
-        if (getCookieItem('login') && getCookieItem('loginid_list')){
-            var accIds = Cookies.get("loginid_list").split("+");
-            var loginid = Cookies.get("loginid");
+    validate_cookies: function() {
+        var loginid_list = Cookies.get('loginid_list');
+        var loginid      = Cookies.get('loginid');
+        if (!loginid || !loginid_list) return;
 
-            if(!client_form.is_loginid_valid(loginid)){
+        var accIds = loginid_list.split('+');
+        var valid_loginids = new RegExp('^(' + page.settings.get('valid_loginids') + ')[0-9]+$', 'i');
+
+        function is_loginid_valid(login_id) {
+            return login_id ?
+                valid_loginids.test(login_id) :
+                true;
+        }
+
+        if (!is_loginid_valid(loginid)) {
+            page.client.send_logout_request();
+        }
+
+        accIds.forEach(function(acc_id) {
+            if (!is_loginid_valid(acc_id.split(":")[0])) {
                 page.client.send_logout_request();
             }
-
-            for(var i=0;i<accIds.length;i++){
-                if(!client_form.is_loginid_valid(accIds[i].split(":")[0])){
-                    page.client.send_logout_request();
-                }
-            }
-        }
+        });
     },
     do_logout : function(response){
         if("logout" in response && response.logout === 1){
