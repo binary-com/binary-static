@@ -36,6 +36,7 @@ var TradePage = (function(){
 
     if (document.getElementById('websocket_form')) {
         addEventListenerForm();
+        new ResizeSensor($('.content-tab-container, #contract_prices_container'), adjustAnalysisColumnHeight);
     }
 
     // Walktrough Guide

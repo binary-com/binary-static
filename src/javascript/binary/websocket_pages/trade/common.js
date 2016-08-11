@@ -910,6 +910,12 @@ function setChartSource() {
   document.getElementById('chart_frame').src = 'https://webtrader.binary.com?affiliates=true&instrument=' + document.getElementById('underlying').value + '&timePeriod=1t&gtm=true&lang=' + (page.language() || 'en').toLowerCase();
 }
 
+function adjustAnalysisColumnHeight() {
+    $('#trading_analysis_content').css('height',
+        $('.content-tab-container').height() + $('#contract_prices_container').height() + parseInt($('#contract_prices_container').css('margin-top'))
+    );
+}
+
 //used temporarily for mocha test
 if (typeof module !== 'undefined') {
     module.exports = {
