@@ -525,10 +525,26 @@
     display: none;
 }
 
+@media all and (max-width: 959px) {
+    .col-left, .col-right {
+        padding: 0 5px !important;
+    }
+    .col-right {
+        @include BIDIR_PROP(padding-left, padding-right, 0 !important);
+    }
+}
+@media all and (max-width: 767px) {
+    .col-left, .col-right {
+        padding: 0 5px !important;
+    }
+    #trading_analysis_content {
+        margin-top: 10px;
+    }
+}
 @media all and (max-width: 480px) {
     #trading_socket_container {
         .col-left, .col-right {
-            @include BIDIR_PROP(padding-right, padding-left, 0 !important);
+            padding: 0 !important;
         }
         .price-left, .price-right {
             padding: 0 10px !important;
@@ -708,9 +724,9 @@
         #analysis_content {
             margin: 0;
             height: calc(100% - 40px);
+            width: auto;
             border: 1px solid $COLOR_GRAY;
             overflow-y: auto;
-            overflow-x: hidden;
             .toggle-content, #trade_live_chart, #trade_live_chart #chart_frame {
                 height: 100%;
             }
@@ -727,11 +743,6 @@
     #last_digit_histo_form {
         overflow: hidden;
         margin-bottom: 20px;
-    }
-}
-@media all and (max-width: 767px) {
-    #trading_analysis_content {
-        margin-top: 10px;
     }
 }
 /*

@@ -23,7 +23,7 @@
         </div>
 
         <div class="gr-row" id="contract_form_content_wrapper">
-            <div class="col-left gr-6 gr-7-t gr-12-p gr-12-m gr-no-gutter">
+            <div class="col-left gr-6 gr-7-t gr-12-p gr-12-m">
                 <div class="content-tab-container">
                     <div id="contract_market_form_container">
                         <ul class="nav tm-ul" id="contract_form_name_nav"></ul>
@@ -263,7 +263,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-right gr-6 gr-5-t gr-12-p gr-12-m gr-no-gutter">
+            <div class="col-right gr-6 gr-5-t gr-12-p gr-12-m">
                 [% INCLUDE bet/analysis.html.tt %]
             </div>
         </div>
