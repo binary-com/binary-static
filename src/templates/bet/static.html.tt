@@ -23,7 +23,7 @@
         </div>
 
         <div class="gr-row" id="contract_form_content_wrapper">
-            <div class="gr-6 gr-no-gutter-right">
+            <div class="col-left gr-6 gr-7-t gr-12-p gr-12-m gr-no-gutter">
                 <div class="content-tab-container">
                     <div id="contract_market_form_container">
                         <ul class="nav tm-ul" id="contract_form_name_nav"></ul>
@@ -176,7 +176,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="contract_prices_container" class="gr-padding-10">
+                <div id="contract_prices_container">
                     <div id="contract_confirmation_container" class="overlay_container col">
                         <a class="close" id="close_confirmation_container">x</a>
                         <div id="confirmation_message_container">
@@ -204,7 +204,7 @@
                     </div>
                     <div class="gr-row" id="contracts_list">
                         <div id="loading_container2" class="overlay_container gr-12"><div></div></div>
-                        <div class="gr-6 price-left">
+                        <div class="gr-6 gr-12-m price-left">
                             <div class="price_container" id="price_container_top">
                                 <div class="price_wrapper">
                                     <div class="gr-row">
@@ -232,7 +232,7 @@
                                 <div class="col contract_error"></div>
                             </div>
                         </div>
-                        <div class="gr-6 price-right">
+                        <div class="gr-6 gr-12-m price-right">
                             <div class="price_container" id="price_container_bottom">
                                 <div class="price_wrapper">
                                     <div class="gr-row">
@@ -263,7 +263,7 @@
                     </div>
                 </div>
             </div>
-            <div class="gr-6">
+            <div class="col-right gr-6 gr-5-t gr-12-p gr-12-m gr-no-gutter">
                 [% INCLUDE bet/analysis.html.tt %]
             </div>
         </div>

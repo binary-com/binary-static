@@ -19,19 +19,19 @@
                 </li>
             </ul>
         </div>
-        <div class="tab-content">
-            <div class="tab-content-wrapper" id="analysis_content">
-                <div id="tab_portfolio-content" class="toggle-content invisible"></div>
-                <div id="tab_graph-content" class="toggle-content invisible">
-                    <p class="error-msg" id="chart-error"></p>
-                    <div id="trade_live_chart">
+        <div class="tab-content-wrapper" id="analysis_content">
+            <div id="tab_portfolio-content" class="toggle-content invisible"></div>
+            <div id="tab_graph-content" class="toggle-content invisible">
+                <p class="error-msg" id="chart-error"></p>
+                <div id="trade_live_chart">
+                    <table><tr><td>
                         <iframe src="" width="100%" height="100%" id="chart_frame" style="overflow-y : hidden;" scrolling="no"></iframe>
-                    </div>
+                    </td></tr></table>
                 </div>
-                <div id="tab_explanation-content" class="toggle-content selectedTab"></div>
-                <div id="tab_last_digit-content" class="toggle-content invisible"></div>
-                <div id="tab_japan_info-content" class="toggle-content invisible"></div>
             </div>
+            <div id="tab_explanation-content" class="toggle-content selectedTab"></div>
+            <div id="tab_last_digit-content" class="toggle-content invisible"></div>
+            <div id="tab_japan_info-content" class="toggle-content invisible"></div>
         </div>
     </div>
 </div>

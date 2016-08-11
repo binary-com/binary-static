@@ -161,7 +161,7 @@ var Price = (function() {
         var container = document.getElementById('price_container_' + position);
         if (!container) return;
         if (!$(container).is(":visible")) {
-            $(container).fadeIn(200);
+            $(container).fadeIn(200, function(){ $(container).css('display', 'flex'); });
         }
 
         var h4 = container.getElementsByClassName('contract_heading')[0],
