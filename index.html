@@ -61,7 +61,7 @@
             function pushEvent() {
                 if(isGtmApplicable()) {
                     dataLayer.push({
-                        'event': 'fireEvent',
+                        'event': 'page_load',
                         'eventCallback': function() {
                             isDelayedRedirect();
                         }
