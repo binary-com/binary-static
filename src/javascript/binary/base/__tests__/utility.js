@@ -5,6 +5,7 @@ describe('template', function() {
     it('works as expected', function() {
         expect(utility.template('abc [_1] abc', ['2'])).to.eq('abc 2 abc');
         expect(utility.template('[_1] [_2]', ['1', '2'])).to.eq('1 2');
+        expect(utility.template('[_1] [_1]', ['1'])).to.eq('1 1');
     });
 
     it('does not replace twice', function() {
