@@ -205,8 +205,9 @@ Client.prototype = {
         if(!this.is_logged_in) {
             if(shouldReplacePageContents) {
                 $('#content > .container').addClass('center-text').empty()
-                    .append($('<p/>', {class: 'notice-msg', html: text.localize('Please [_1] to view this page')
-                        .replace('[_1]', '<a class="login_link" href="javascript:;">' + text.localize('login') + '</a>')}));
+                    .append($('<p/>', {class: 'notice-msg', html: text.localize('Please [_1] to view this page', [
+                            '<a class="login_link" href="javascript:;">' + text.localize('login') + '</a>'
+                        ])}));
                 $('.login_link').click(function(){Login.redirect_to_login();});
             }
         }

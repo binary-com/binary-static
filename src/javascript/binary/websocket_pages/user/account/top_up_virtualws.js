@@ -26,18 +26,18 @@ var TopUpVirtualWS = (function() {
     };
 
     var responseHandler = function(response) {
-    	var str, amt , currType;
-	 	if('error' in response) {
-            if('message' in response.error) {
+        var str, amt , currType;
+        if ('error' in response) {
+            if ('message' in response.error) {
                 showMessage(text.localize(response.error.message), false);
             }
-        }
-        else{
+        } else {
             showMessage(
-                text.localize('[_1] [_2] has been credited to your Virtual money account [_3]')
-                    .replace('[_1]', response.topup_virtual.currency)
-                    .replace('[_2]', response.topup_virtual.amount)
-                    .replace('[_3]', page.client.loginid),
+                text.localize('[_1] [_2] has been credited to your Virtual money account [_3]', [
+                    response.topup_virtual.currency,
+                    response.topup_virtual.amount,
+                    page.client.loginid
+                ]),
                 true);
         }
     };

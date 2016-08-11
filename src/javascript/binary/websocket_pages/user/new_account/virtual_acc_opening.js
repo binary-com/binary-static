@@ -59,9 +59,9 @@ pjax_config_page("new_account/virtualws", function(){
                       $('.notice-message').remove();
                       var noticeText;
                       if (error.code === 'InvalidToken') {
-                        noticeText = '<p>' + Content.localize().textClickHereToRestart.replace('[_1]', page.url.url_for('')) + '</p>';
+                        noticeText = '<p>' + template(Content.localize().textClickHereToRestart, [page.url.url_for('')]) + '</p>';
                       } else if (error.code === 'duplicate email') {
-                        noticeText = '<p>' + Content.localize().textDuplicatedEmail.replace('[_1]', page.url.url_for('user/lost_passwordws')) + '</p>';
+                        noticeText = '<p>' + template(Content.localize().textDuplicatedEmail, [page.url.url_for('user/lost_passwordws')]) + '</p>';
                       }
                       virtualForm.html(noticeText);
                       return;

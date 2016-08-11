@@ -160,19 +160,15 @@ TradingAnalysis.DigitInfoWS.prototype = {
             spots[i]=val.substr(val.length-1);
         }
         this.spots = spots;
-        if(this.chart &&  $('#last_digit_histo').html()){
-            this.chart.xAxis[0].update({
-                title:{
-                    text: $('#last_digit_title').html().replace('[_2]', $('[name=underlying] option:selected').text()).replace('[_1]',spots.length),
-                }
-            }, true);
+        var title = {
+            text: template($('#last_digit_title').html(), [spots.length, $('[name=underlying] option:selected').text()])
+        };
+        if (this.chart && $('#last_digit_histo').html()) {
+            this.chart.xAxis[0].update({title: title}, true);
             this.chart.series[0].name = underlying;
-        }
-        else{
+        } else {
             this.add_content(underlying);
-            this.chart_config.xAxis.title = {
-                text: $('#last_digit_title').html().replace('[_2]', $('[name=underlying] option:selected').text()).replace('[_1]',spots.length),
-            };
+            this.chart_config.xAxis.title = title;
             this.chart = new Highcharts.Chart(this.chart_config);
             this.chart.addSeries({name : underlying, data: []});
             this.on_latest();
