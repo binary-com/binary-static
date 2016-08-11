@@ -722,35 +722,27 @@ Header.prototype = {
         this.menu.reset();
     },
     show_or_hide_login_form: function() {
-        if (this.user.is_logged_in && this.client.is_logged_in) {
-            var loginid_select = '';
-            var loginid_array = this.user.loginid_array;
-            for (var i=0;i<loginid_array.length;i++) {
-                if (loginid_array[i].disabled) continue;
+        if (!this.user.is_logged_in || !this.client.is_logged_in) return;
+        var $login_options = $('#client_loginid');
+        var loginid_array = this.user.loginid_array;
 
-                var curr_loginid = loginid_array[i].id;
-                var real = loginid_array[i].real;
-                var selected = '';
-                if (curr_loginid == this.client.loginid) {
-                    selected = ' selected="selected" ';
-                }
+        for (var i=0; i < loginid_array.length; i++) {
+            var login = loginid_array[i];
+            if (login.disabled) continue;
 
-                var loginid_text;
-                if (real) {
-                    if(loginid_array[i].financial){
-                        loginid_text = text.localize('Investment Account') + ' (' + curr_loginid + ')';
-                    } else if(loginid_array[i].non_financial) {
-                        loginid_text = text.localize('Gaming Account') + ' (' + curr_loginid + ')';
-                    } else {
-                        loginid_text = text.localize('Real Account') + ' (' + curr_loginid + ')';
-                    }
-                } else {
-                    loginid_text = text.localize('Virtual Account') + ' (' + curr_loginid + ')';
-                }
-
-                loginid_select += '<option value="' + curr_loginid + '" ' + selected + '>' + loginid_text +  '</option>';
+            var curr_id = login.id;
+            var prefix  = 'Virtual Account';
+            if (login.real) {
+                if (login.financial)          prefix = 'Investment Account';
+                else if (login.non_financial) prefix = 'Gaming Account';
+                else                          prefix = 'Real Account';
             }
-            $("#client_loginid").html(loginid_select);
+
+            $login_options.append($('<option/>', {
+                value: curr_id,
+                selected: curr_id == this.client.loginid,
+                text: prefix + ' (' + curr_id + ')',
+            }));
         }
     },
     simulate_input_placeholder_for_ie: function() {
@@ -773,10 +765,9 @@ Header.prototype = {
         });
     },
     register_dynamic_links: function() {
-        var logged_in_url = page.url.url_for('');
-        if(this.client.is_logged_in) {
-            logged_in_url = page.url.url_for('user/my_accountws');
-        }
+        var logged_in_url = this.client.is_logged_in ?
+            page.url.url_for('user/my_accountws') :
+            page.url.url_for('');
 
         $('#logo').attr('href', logged_in_url).on('click', function(event) {
             event.preventDefault();
@@ -785,20 +776,17 @@ Header.prototype = {
 
         this.menu.register_dynamic_links();
     },
-    start_clock_ws : function(){
-        var that = this;
-
-        function init(){
+    start_clock_ws: function() {
+        function getTime() {
             clock_started = true;
-            BinarySocket.send({ "time": 1,"passthrough":{"client_time" :  moment().valueOf()}});
+            BinarySocket.send({"time": 1,"passthrough": {"client_time": moment().valueOf()}});
         }
-        that.run = function(){
-            setInterval(init, 30000);
+        this.run = function() {
+            setInterval(getTime, 30000);
         };
 
-        init();
-        that.run();
-
+        this.run();
+        getTime();
         return;
     },
     time_counter : function(response){
