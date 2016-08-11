@@ -15,6 +15,9 @@ var SelfExclusionWS = (function() {
         $form    = $('#frmSelfExclusion');
         $loading = $('#loading');
 
+        // for error messages to show properly
+        $('#' + timeID).attr('style', 'margin-bottom:10px');
+
         if (page.client.is_virtual()) {
             $('#selfExclusionDesc').addClass(hiddenClass);
             showPageError(Content.localize().textFeatureUnavailable, true);
