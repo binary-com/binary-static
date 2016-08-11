@@ -538,7 +538,8 @@ var ViewPopupWS = (function() {
 
     // ----- Corporate Action -----
     var getCorporateActions = function() {
-      var end_time = (window.time._i/1000).toFixed(0) < contract.date_expiry ? (window.time._i/1000).toFixed(0) : contract.date_expiry;
+      var epoch = window.time.unix()
+      var end_time = epoch < contract.date_expiry ? epoch.toFixed(0) : contract.date_expiry;
       socketSend({
         "get_corporate_actions": "1",
         "symbol": contract.underlying,
