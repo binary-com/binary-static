@@ -197,7 +197,7 @@ onLoad.queue(function () {
 // jQuery's ready function works always.
 
 $(document).ready(function () {
-  if (!$('body').hasClass('BlueTopBack')) { // exclude BO
+    if ($('body').hasClass('BlueTopBack')) return; // exclude BO
     // Cookies is not always available.
     // So, fall back to a more basic solution.
     var match = document.cookie.match(/\bloginid=(\w+)/);
@@ -209,11 +209,9 @@ $(document).ready(function () {
                 if (jq_event.originalEvent.newValue === '') {
                     // logged out
                     page.reload();
-                } else {
+                } else if (!window['is_logging_in']) {
                     // loginid switch
-                    if(!window['is_logging_in']) {
-                        page.reload();
-                    }
+                     page.reload();
                 }
                 break;
             case 'new_release_reload_time':
@@ -227,28 +225,18 @@ $(document).ready(function () {
     LocalStore.set('active_loginid', match);
     var start_time;
     var time_now;
-    var tabChanged = function() {
-        if(clock_started === true){
-            if (document.hidden || document.webkitHidden) {
-                start_time = moment().valueOf();
-                time_now = page.header.time_now;
-            }else {
-                time_now = (time_now + (moment().valueOf() - start_time));
-                page.header.time_now = time_now;
-            }
+    var evt = (
+        (document.webkitHidden && 'webkitvisibilitychange') ||
+        (document.hidden && 'visibilitychange') ||
+        null
+    );
+    if (!evt || !document.addEventListener) return;
+    document.addEventListener(evt, function tabChanged() {
+        if (clock_started) {
+            start_time = moment().valueOf();
+            time_now = page.header.time_now;
         }
-    };
-
-    if (typeof document.webkitHidden !== 'undefined') {
-        if (document.addEventListener) {
-            document.addEventListener("webkitvisibilitychange", tabChanged);
-        }
-    } else if (typeof document.hidden !== 'undefined') {
-        if (document.addEventListener) {
-            document.addEventListener("visibilitychange", tabChanged);
-        }
-    }
-  }
+    });
 });
 
 var TUser = (function () {

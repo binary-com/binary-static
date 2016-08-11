@@ -829,35 +829,37 @@ Header.prototype = {
             }
         });
     },
-    do_logout : function(response){
-        if("logout" in response && response.logout === 1){
-            page.client.clear_storage_values();
-            LocalStore.remove('client.tokens');
-            LocalStore.set('reality_check.ack', 0);
-            sessionStorage.removeItem('withdrawal_locked');
-            var cookies = ['login', 'loginid', 'loginid_list', 'email', 'settings', 'reality_check', 'affiliate_token', 'affiliate_tracking', 'residence', 'allowed_markets'];
-            var current_domain = ['.' + document.domain.split('.').slice(-2).join('.'), document.domain, '.' + document.domain];
-            var cookie_path = ['/'];
-            if (window.location.pathname.split('/')[1] !== '') {
-              cookie_path.push('/' + window.location.pathname.split('/')[1]);
-            }
-            var regex;
+    do_logout: function(response) {
+        if (response.logout !== 1) return;
+        page.client.clear_storage_values();
+        LocalStore.remove('client.tokens');
+        LocalStore.set('reality_check.ack', 0);
+        sessionStorage.removeItem('withdrawal_locked');
+        var cookies = ['login', 'loginid', 'loginid_list', 'email', 'settings', 'reality_check', 'affiliate_token', 'affiliate_tracking', 'residence', 'allowed_markets'];
+        var domains = [
+            '.' + document.domain.split('.').slice(-2).join('.'),
+            '.' + document.domain,
+        ];
 
-            cookies.forEach(function(c) {
-              regex = new RegExp(c);
-              Cookies.remove(c, {path: cookie_path[0], domain: current_domain[0]});
-              Cookies.remove(c, {path: cookie_path[0], domain: current_domain[2]});
-              Cookies.remove(c);
-              if (regex.test(document.cookie) && cookie_path[1]) {
-                  Cookies.remove(c, {path: cookie_path[1], domain: current_domain[0]});
-                  Cookies.remove(c, {path: cookie_path[1], domain: current_domain[2]});
-                  Cookies.remove(c, {path: cookie_path[1]});
-              }
-            });
-            localStorage.removeItem('risk_classification');
-            localStorage.removeItem('risk_classification.response');
-            page.reload();
+        var parent_path = window.location.pathname.split('/', 2)[1];
+        if (parent_path !== '') {
+            parent_path = '/' + parent_path;
         }
+
+        cookies.forEach(function(c) {
+            var regex = new RegExp(c);
+            Cookies.remove(c, {path: '/', domain: domains[0]});
+            Cookies.remove(c, {path: '/', domain: domains[1]});
+            Cookies.remove(c);
+            if (regex.test(document.cookie) && parent_path) {
+                Cookies.remove(c, {path: parent_path, domain: domains[0]});
+                Cookies.remove(c, {path: parent_path, domain: domains[1]});
+                Cookies.remove(c, {path: parent_path});
+            }
+        });
+        localStorage.removeItem('risk_classification');
+        localStorage.removeItem('risk_classification.response');
+        page.reload();
     },
 };
 
