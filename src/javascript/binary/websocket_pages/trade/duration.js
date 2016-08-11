@@ -347,7 +347,7 @@ var Durations = (function(){
         var expiry_time = document.getElementById('expiry_time');
         $('#expiry_date').val(end_date);
         Defaults.set('expiry_date', end_date);
-        if (moment(end_date).isAfter(window.time,'day')) {
+        if (moment(end_date).isAfter(moment(window.time),'day')) {
             Durations.setTime('');
             Defaults.remove('expiry_time');
             StartDates.setNow();
