@@ -9,14 +9,12 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2016-08-11 22:47+0000\n"
 "Last-Translator: Ewelina Bruździak <e.bruzdziak@gmail.com>\n"
-"Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>"
-"\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.8-dev\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
@@ -206,7 +204,6 @@ msgstr "%1 osiąga obrót w wysokości 2 mld $ od rozpoczęcia działalności w 
 msgid "%1 reaches 1 million registered users"
 msgstr "%1 ma już 1 milion zarejestrowanych użytkowników"
 
-#| msgid "Days to display"
 msgid "%1 rows displayed:"
 msgstr "Wyświetlone rzędy %1:"
 
@@ -279,10 +276,7 @@ msgid "%1's systems are now processing in excess of 1 million transactions/day (
 msgstr "Systemy %1 przetwarzają obecnie ponad 1 milion transakcji dziennie (z uwzględnieniem kont wirtualnych)."
 
 msgid "%1’s <a href=\"%2\">Volatility Indices</a> are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
-msgstr ""
-"<a href=\"%2\">Wskaźniki zmienności</a> %1 są teraz dostępne 24 godz. na "
-"dobę przez 7 dni w tygodniu na MetaTrader 5. Wkrótce wprowadzone zostaną "
-"dodatkowe aktywa."
+msgstr "<a href=\"%2\">Wskaźniki zmienności</a> %1 są teraz dostępne 24 godz. na dobę przez 7 dni w tygodniu na MetaTrader 5. Wkrótce wprowadzone zostaną dodatkowe aktywa."
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(minimalny czas trwania, na przykład minimum 15 sekund)min"
@@ -499,9 +493,7 @@ msgid "<strong>Additional business exposure:</strong> You will increase awarenes
 msgstr "<strong>Dodatkowa reklama:</strong>  Zwiększysz rozpoznawalność swoich usług i dochody."
 
 msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
-msgstr ""
-"<strong>Zaawansowane narzędzia do analiz fundamentalnych i "
-"technicznych</strong>, w tym wskaźniki i wykresy."
+msgstr "<strong>Zaawansowane narzędzia do analiz fundamentalnych i technicznych</strong>, w tym wskaźniki i wykresy."
 
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>Wszystkie okresy</strong> - od 10 sekund do 365 dni."
@@ -642,9 +634,7 @@ msgid "<strong>Stock indices</strong> - trade all major worldwide stock indices.
 msgstr "<strong>Indeksy giełdowe</strong> - do wyboru indeksy giełdowe z całego świata."
 
 msgid "<strong>Subscriptions to a wide range of Expert Advisors,</strong> automated trading applications from the MetaTrader Market."
-msgstr ""
-"<strong>Subskrypcje różnorodnych porad ekspertów,</strong> zautomatyzowane "
-"aplikacje do zawierania zakładów z MetaTrader Market."
+msgstr "<strong>Subskrypcje różnorodnych porad ekspertów,</strong> zautomatyzowane aplikacje do zawierania zakładów z MetaTrader Market."
 
 msgid "<strong>Take early profits</strong> - sell your long-term trades at market prices before they expire."
 msgstr "<strong>Osiągaj szybkie zyski</strong> - sprzedaj swoje transakcje długoterminowe po cenach rynkowych przed datą zakończenia."
@@ -860,7 +850,6 @@ msgstr "Otwarcie konta"
 msgid "Account Transfer"
 msgstr "Przeniesienie konta"
 
-#| msgid "Account Opening"
 msgid "Account Type"
 msgstr "Rodzaj konta"
 
@@ -1451,14 +1440,10 @@ msgstr "Wysyłając Firmie sugestie lub innego rodzaju opinię dotyczącą API %
 msgid "By the 15th of every month, you will receive the commission earned during the previous calendar month."
 msgstr "Do 15 dnia każdego miesiąca otrzymasz prowizję zarobioną w poprzednim miesiącu kalendarzowym."
 
-msgid "By using or interacting with the website, you are consenting to the use of Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
-msgstr ""
-"Korzystanie ze strony jest jednoznaczne z wyrażeniem zgody na korzystanie z "
-"funkcji Google Analytics User ID, która pozwala Google na rejestrowanie "
-"Twoich identyfikatorów logowania %1 (np. VRTC1234, CR1234, MF1234). "
-"Włączenie funkcji Google Analytics User ID nie powoduje udostępniania czy "
-"ujawniania firmie Google żadnych innych informacji osobowych lub innych "
-"danych, które mogą zostać powiązane przez Google z takimi informacjami."
+#, fuzzy
+#| msgid "By using or interacting with the website, you are consenting to the use of Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
+msgid "By using or interacting with the website, you are consenting to the use of the Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
+msgstr "Korzystanie ze strony jest jednoznaczne z wyrażeniem zgody na korzystanie z funkcji Google Analytics User ID, która pozwala Google na rejestrowanie Twoich identyfikatorów logowania %1 (np. VRTC1234, CR1234, MF1234). Włączenie funkcji Google Analytics User ID nie powoduje udostępniania czy ujawniania firmie Google żadnych innych informacji osobowych lub innych danych, które mogą zostać powiązane przez Google z takimi informacjami."
 
 msgid "Can I become an affiliate even if I don't have a website?"
 msgstr "Czy mogę zostać partnerem nawet jeśli nie mam strony internetowej?"
@@ -1733,7 +1718,6 @@ msgstr "Confirmation and understandings"
 msgid "Conflicts Policy"
 msgstr "Polityka dot. sporów"
 
-#| msgid "Congratulations! <br /> You have won the contract!"
 msgid "Congratulations! Your account has been created."
 msgstr "Gratulacje! Twoje konto zostało utworzone."
 
@@ -1800,7 +1784,6 @@ msgstr "Wypłaty kontraktów będą określane przez Firmę w odniesieniu do dzi
 msgid "Contract period"
 msgstr "Okres kontraktu"
 
-#| msgid "Contract Purchase"
 msgid "Contract purchased with app ID"
 msgstr "Kontrakt zakupiony z identyfikatorem aplikacji"
 
@@ -2011,7 +1994,6 @@ msgstr "Usuń"
 msgid "Demo"
 msgstr "Demo"
 
-#| msgid "Open Account"
 msgid "Demo Account"
 msgstr "Konto demo"
 
@@ -2033,7 +2015,6 @@ msgstr "Wpłać na swoje konto %3 wirtualne pieniądze w kwocie: %2 %1"
 msgid "Deposit Bonus"
 msgstr "Bonus przy wpłacie"
 
-#| msgid "Deposit of"
 msgid "Deposit from"
 msgstr "Wpłata od"
 
@@ -2049,7 +2030,6 @@ msgstr "Wpłata w wysokości"
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "Wpłaty i wypłaty na Twoje konto za pośrednictwem przelewu bankowego, karty kredytowej lub e-gotówki."
 
-#| msgid "Deposit of"
 msgid "Deposit to"
 msgstr "Wpłata do"
 
@@ -2176,15 +2156,12 @@ msgstr "Przetwarzanie dokumentów danego działu w celu umożliwienia zespołowi
 msgid "Dormant and Inactive Accounts"
 msgstr "Konta zawieszone i nieaktywne"
 
-#| msgid "Download SVG"
 msgid "Download CSV"
 msgstr "Pobierz CSV"
 
-#| msgid "Download for Windows"
 msgid "Download MetaTrader"
 msgstr "Pobierz MetaTrader"
 
-#| msgid "Download for Windows"
 msgid "Download MetaTrader for Windows"
 msgstr "Pobierz MetaTrader na system Windows"
 
@@ -2993,9 +2970,7 @@ msgid "If you need assistance feel free to contact our <a class=\"pjaxload\" hre
 msgstr "Jeśli potrzebujesz pomocy, skontaktuj się z naszym <a class=\"pjaxload\" href=\"%1\">działem obsługi klienta</a>."
 
 msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader’s website, please select “%1” from the list of available brokers."
-msgstr ""
-"Jeśli wcześniej pobrano MetaTrader 5 bezpośrednio ze strony MetaTrader, "
-"należy wybrać „%1” z listy dostępnych brokerów."
+msgstr "Jeśli wcześniej pobrano MetaTrader 5 bezpośrednio ze strony MetaTrader, należy wybrać „%1” z listy dostępnych brokerów."
 
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "Jeśli wybierzesz zakład „Azjatycki - spadnie”, zdobędziesz wypłatę, gdy <strong>ostatni najmniejszy przyrost ceny</strong> będzie <strong>niższy</strong> niż <strong>średnia</strong> najmniejszych przyrostów ceny."
@@ -3922,7 +3897,6 @@ msgstr "Less than 6 months"
 msgid "Level of Education"
 msgstr "Poziom wykształcenia"
 
-#| msgid "Average"
 msgid "Leverage"
 msgstr "Dźwignia"
 
@@ -3962,7 +3936,6 @@ msgstr "Przekieruj naszych klientów do swojej Aplikacji."
 msgid "Links"
 msgstr "Łącza"
 
-#| msgid "Further Instructions"
 msgid "Linux Instructions"
 msgstr "Instrukcje dla Linuxa"
 
@@ -3976,9 +3949,7 @@ msgid "Log in"
 msgstr "Zaloguj się"
 
 msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
-msgstr ""
-"Zaloguj się do aplikacji, korzystając z numeru konta MetaTrader oraz hasła "
-"do tego konta."
+msgstr "Zaloguj się do aplikacji, korzystając z numeru konta MetaTrader oraz hasła do tego konta."
 
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "Zaloguj się na swoje konto partnerskie %1 i kliknij: Finanse &rarr; Instrukcje płatności."
@@ -4028,7 +3999,6 @@ msgstr "Wyrównanie dolnego limitu"
 msgid "MENA FFXPO Award"
 msgstr "Nagroda MENA FFXPO"
 
-#| msgid "Specific Instructions"
 msgid "MacOS Instructions"
 msgstr "Instrukcje dla MacOS"
 
@@ -4158,7 +4128,6 @@ msgstr "Pamiętne miasto"
 msgid "MetaTrader Accounts Management"
 msgstr "Zarządzanie kontami MetaTrader"
 
-#| msgid "Verify new password"
 msgid "MetaTrader Main Password"
 msgstr "Główne hasło MetaTrader"
 
@@ -4219,15 +4188,8 @@ msgstr "Miesiąc"
 msgid "More benefits"
 msgstr "Więcej korzyści"
 
-#| msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with ‘best execution’. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
 msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with 'best execution'. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
-msgstr ""
-"Dokładniej, w momencie zawarcia z Tobą transakcji związanej z Opcją binarną ("
-"każdej transakcji zwanej dalej „Kontraktem”) mamy obowiązek zapewnić Ci jej „"
-"najkorzystniejszą realizację”. Najkorzystniejsza realizacja oznacza, że "
-"musimy podjąć rozsądne kroki, aby uzyskać najlepsze możliwe dla Ciebie "
-"rezultaty podczas realizacji zlecenia. Niniejszy dokument zawiera "
-"streszczenie naszej polityki dot. najkorzystniejszej realizacji."
+msgstr "Dokładniej, w momencie zawarcia z Tobą transakcji związanej z Opcją binarną (każdej transakcji zwanej dalej „Kontraktem”) mamy obowiązek zapewnić Ci jej „najkorzystniejszą realizację”. Najkorzystniejsza realizacja oznacza, że musimy podjąć rozsądne kroki, aby uzyskać najlepsze możliwe dla Ciebie rezultaty podczas realizacji zlecenia. Niniejszy dokument zawiera streszczenie naszej polityki dot. najkorzystniejszej realizacji."
 
 msgid "Mother's maiden name"
 msgstr "Nazwisko panieńskie matki"
@@ -5528,7 +5490,6 @@ msgstr "Godzina rozpoczęcia"
 msgid "Start Trading"
 msgstr "Rozpocznij handel"
 
-#| msgid "Start Trading Now"
 msgid "Start Trading with MetaTrader 5"
 msgstr "Rozpocznij handel z MetaTrader 5"
 
@@ -5538,11 +5499,9 @@ msgstr "Rozpocznij naukę"
 msgid "Start time"
 msgstr "Godzina rozpoczęcia"
 
-#| msgid "Start Trading Now"
 msgid "Start trading with your Demo Account"
 msgstr "Rozpocznij handlowanie, korzystając z naszego konta demo"
 
-#| msgid "Start Trading Now"
 msgid "Start trading with your Real Account"
 msgstr "Rozpocznij handlowanie, korzystając z prawdziwego konta"
 
@@ -5676,9 +5635,7 @@ msgid "Take advantage of numerous benefits, including:"
 msgstr "Skorzystaj z licznych korzyści, w tym:"
 
 msgid "Take your trading to the next level through this powerful interface, recognised as the benchmark standard worldwide."
-msgstr ""
-"Przenieś swoje handlowanie na wyższy poziom dzięki temu zaawansowanemu "
-"interfejsowi, uważanemu za najwyższy standard na całym świecie."
+msgstr "Przenieś swoje handlowanie na wyższy poziom dzięki temu zaawansowanemu interfejsowi, uważanemu za najwyższy standard na całym świecie."
 
 msgid "Talk to us"
 msgstr "Porozmawiaj z nami"
@@ -6288,15 +6245,8 @@ msgstr "Z tego względu obecnie prowadzimy rekrutację dodatkowych testerów ka�
 msgid "This notice does not explain all of the risks involved in investments or similar products or how such risks relate to your personal circumstances. It is important that you fully understand the risks involved before making a decision to enter into or sell an investment product or gambling product with us. If you are in any doubt about the risks involved with Investment Products or Gambling Products, you should seek professional advice."
 msgstr "Niniejsza informacja nie wyjaśnia wszystkich ryzyk związanych z inwestowaniem lub z podobnymi produktami, ani jak takie ryzyka są powiązane z Twoimi indywidualnymi warunkami. Istotną kwestię stanowi zrozumienie ryzyka związanego z oferowanym przez nas produktem inwestycyjnym lub produktem hazardowym przed podjęciem decyzji o jego zakupie lub sprzedaży. W przypadku jakichkolwiek wątpliwości dotyczących ryzyka związanego z produktami inwestycyjnymi lub produktami hazardowymi, należy zasięgnąć porady eksperta."
 
-#| msgid "This notice provides you with information about the risks associated with investment contracts, which you may invest in through services provided to you through %1. Binary Group provides a wide range of products including Binary Options relating to foreign exchange, indices, stocks and other investment products (\"Investment Products\") and binary bets such as those relating to the Random Markets (\"Gambling Products\")."
 msgid "This notice provides you with information about the risks associated with investment contracts, which you may invest in through services provided to you through %1. Binary Group provides a wide range of products including Binary Options relating to foreign exchange, indices, stocks and other investment products (\"Investment Products\") and binary bets such as those relating to the Volatility Indices (\"Gambling Products\")."
-msgstr ""
-"Niniejsza informacja ma na celu poinformowanie Cię o ryzykach powiązanych z "
-"kontraktami inwestycyjnymi, w które możesz inwestować dzięki usługom "
-"oferowanym poprzez %1. Grupa Binary zapewnia szeroki wachlarz produktów, w "
-"tym Opcje binarne oparte na walutach obcych, wskaźnikach, akcjach i innych "
-"produktach inwestycyjnych („Produkty inwestycyjne”) i zakłady binarne, takie "
-"jak te związane z Wskaźnikami zmienności („Produkty hazardowe”)."
+msgstr "Niniejsza informacja ma na celu poinformowanie Cię o ryzykach powiązanych z kontraktami inwestycyjnymi, w które możesz inwestować dzięki usługom oferowanym poprzez %1. Grupa Binary zapewnia szeroki wachlarz produktów, w tym Opcje binarne oparte na walutach obcych, wskaźnikach, akcjach i innych produktach inwestycyjnych („Produkty inwestycyjne”) i zakłady binarne, takie jak te związane z Wskaźnikami zmienności („Produkty hazardowe”)."
 
 msgid "This offer cannot be used in conjunction with any other offer."
 msgstr "Ta oferta nie łączy się z innymi ofertami."
@@ -6356,25 +6306,16 @@ msgid "To change your name, date of birth, country of residence, or email, pleas
 msgstr "W celu zmiany imienia i nazwiska, daty urodzenia, kraju zamieszkania lub adresu e-mail, prosimy o kontakt z <a href=\"%1\">działem obsługi klienta</a>."
 
 msgid "To create a Real account for MetaTrader, you need to authenticate your Binary account:"
-msgstr ""
-"Aby utworzyć prawdziwe konto na potrzeby MetaTrader, musisz zweryfikować "
-"swoje konto:"
+msgstr "Aby utworzyć prawdziwe konto na potrzeby MetaTrader, musisz zweryfikować swoje konto:"
 
 msgid "To create a real account for MetaTrader, <a href=\"%1\">upgrade to %2 real money account</a>."
-msgstr ""
-"Aby utworzyć prawdziwe konto na potrzeby MetaTrader, <a href=\"%1\">zmień "
-"swoje konto na konto z prawdziwymi pieniędzmi %2</a>."
+msgstr "Aby utworzyć prawdziwe konto na potrzeby MetaTrader, <a href=\"%1\">zmień swoje konto na konto z prawdziwymi pieniędzmi %2</a>."
 
-#| msgid "You are currently logged in to your virtual money account (%2)."
 msgid "To create a real account for MetaTrader, switch to your %1 real money account."
-msgstr ""
-"Aby utworzyć prawdziwe konto na potrzeby MetaTrader, przejdź do konta z "
-"prawdziwymi pieniędzmi %1."
+msgstr "Aby utworzyć prawdziwe konto na potrzeby MetaTrader, przejdź do konta z prawdziwymi pieniędzmi %1."
 
 msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
-msgstr ""
-"Aby wpłacać lub wypłacać środki ze swojego prawdziwego konta w MetaTrader, "
-"przejdź do prawdziwego konta Binary.com."
+msgstr "Aby wpłacać lub wypłacać środki ze swojego prawdziwego konta w MetaTrader, przejdź do prawdziwego konta Binary.com."
 
 msgid "To enable cookies, follow the instructions below for the browser version that you are using."
 msgstr "Aby włączyć obsługę plików cookie, postępuj zgodnie z poniższymi instrukcjami dla wersji przeglądarki, której używasz."
@@ -6655,7 +6596,6 @@ msgstr "Format kodu weryfikującego jest nieprawidłowy."
 msgid "Verification token"
 msgstr "Token weryfikacyjny"
 
-#| msgid "Verify new password"
 msgid "Verify Main Password"
 msgstr "Zweryfikuj hasło główne"
 
@@ -6884,7 +6824,6 @@ msgstr "Środa"
 msgid "Week of"
 msgstr "Tydzień"
 
-#| msgid "Weekly"
 msgid "Weekday"
 msgstr "Dzień roboczy"
 
@@ -7077,18 +7016,15 @@ msgstr "W odniesieniu do śledzenia Twoich danych logowania podczas uzyskiwania 
 msgid "Withdraw"
 msgstr "Wypłata"
 
-#| msgid "Withdraw"
 msgid "Withdraw from"
 msgstr "Wypłać z"
 
-#| msgid "Transfer from another account"
 msgid "Withdraw from MetaTrader account"
 msgstr "Wypłać z konta MetaTrader"
 
 msgid "Withdraw funds from your MetaTrader account into your Binary account:"
 msgstr "Wypłać środki ze swojego konta MetaTrader na swoje konto Binary:"
 
-#| msgid "Withdraw"
 msgid "Withdraw to"
 msgstr "Wypłać na"
 
@@ -7104,7 +7040,6 @@ msgstr "Wypłata: nie dotyczy"
 msgid "Withdrawal Limits"
 msgstr "Limity wypłat"
 
-#| msgid "Withdrawal via Bank Transfer"
 msgid "Withdrawal is done. Transaction ID:"
 msgstr "Dokonano wypłaty. Identyfikator transakcji:"
 
@@ -7223,9 +7158,7 @@ msgid "You can trade a range of markets, timescales and indices - 24/7."
 msgstr "Możesz handlować na wielu rynkach, w różnych okresach i różnymi wskaźnikami, przez 24 godz. na dobę."
 
 msgid "You can use an authorized payment agent to process deposits and withdrawals for payment methods or local currencies not supported by %1. It's easy to do."
-msgstr ""
-"Możesz skorzystać z usług autoryzowanego pośrednika płatności oferującego "
-"metody płatności i lokalne waluty nieobsługiwane przez %1. To bardzo proste."
+msgstr "Możesz skorzystać z usług autoryzowanego pośrednika płatności oferującego metody płatności i lokalne waluty nieobsługiwane przez %1. To bardzo proste."
 
 msgid "You did not change anything."
 msgstr "Nic nie zostało zmienione."
@@ -7269,7 +7202,9 @@ msgstr "Możliwe jest zapisywanie Treści w pamięci podręcznej do 24 godzin od
 msgid "You may choose to contact us to close your account held with the Company. Your account may be closed if you do not have any open trade positions and if you have complied with the requested \"Know Your Client\" procedures to enable you to withdraw any pending funds in your account."
 msgstr "Możesz skontaktować się z nami w celu zamknięcia konta prowadzonego przez Firmę. Twoje konto może zostać zamknięte, jeśli nie masz żadnych otwartych pozycji handlowych i jeśli spełnione zostały procedury nałożone przez regulacje „Poznaj swojego klienta” w celu umożliwienia wypłaty środków zgromadzonych na Twoim koncie."
 
-msgid "You may communicate with us through this website, by email or, exceptionally, by post. Details can be found in the Contact Us page."
+#, fuzzy
+#| msgid "You may communicate with us through this website, by email or, exceptionally, by post. Details can be found in the Contact Us page."
+msgid "You may communicate with us through this website by means of Live Chat, e-mail, phone or, exceptionally, by post. Details can be found in the Contact Us page."
 msgstr "Możesz komunikować się z nami poprzez tę stronę internetową, drogą e-mailową lub, w szczególnych przypadkach, pocztą tradycyjną. Szczegóły można znaleźć w sekcji Napisz do nas."
 
 msgid "You may develop Applications using the %1 API as soon as you register an Application and you agree to follow these Terms."
@@ -7419,7 +7354,6 @@ msgstr "Twój Klient dostanie powiadomienie e-mailem z informacją, że przelew 
 msgid "Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on %1 and in that event, opens an account with us."
 msgstr "Twoje ID będzie przechowywane w plikach cookie i identyfikowane za każdym razem, gdy potencjalny klient kliknie na Twój link partnerski, zostanie przekierowany na %1 i otworzy u nas konto."
 
-#| msgid "First Name"
 msgid "Your Name"
 msgstr "Twoje imię i nazwisko"
 
@@ -7492,7 +7426,6 @@ msgstr "Twoje pieniądze są zawsze bezpieczne z %1. Są one stale przechowywane
 msgid "Your name, email address and contact number"
 msgstr "Twoje imię i nazwisko, adres e-mail i numer telefonu"
 
-#| msgid "Your account has been debited with %1 %2"
 msgid "Your new account has been created."
 msgstr "Twoje nowe konto zostało utworzone."
 
@@ -7613,7 +7546,6 @@ msgstr "wpłata"
 msgid "details"
 msgstr "szczegóły"
 
-#| msgid "e.g. ws.binaryws.com"
 msgid "e.g. blue.binaryws.com"
 msgstr "np. blue.binaryws.com"
 
@@ -7899,25 +7831,21 @@ msgstr "{JAPAN ONLY}Disclosure of financial statement by No. xx in the FIEA"
 msgid "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
 msgstr "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
 
-#| msgid "{JAPAN ONLY}Win Loss Ratio"
 msgid "{JAPAN ONLY}Does Not Touch"
 msgstr "{JAPAN ONLY}Does Not Touch"
 
 msgid "{JAPAN ONLY}Download"
 msgstr "{JAPAN ONLY}Download"
 
-#| msgid "{JAPAN ONLY}Units"
 msgid "{JAPAN ONLY}END-IN/END-OUT"
 msgstr "{JAPAN ONLY}END-IN/END-OUT"
 
 msgid "{JAPAN ONLY}Email us copies of your Identification Documents and My Number card."
 msgstr "{JAPAN ONLY}Email us copies of your Identification Documents and My Number card."
 
-#| msgid "{JAPAN ONLY}Establishment"
 msgid "{JAPAN ONLY}Ends Between"
 msgstr "{JAPAN ONLY}Ends Between"
 
-#| msgid "{JAPAN ONLY}Main business"
 msgid "{JAPAN ONLY}Ends Outside"
 msgstr "{JAPAN ONLY}Ends Outside"
 
@@ -7984,15 +7912,12 @@ msgstr "{JAPAN ONLY}For both call and put options, if the underlying asset price
 msgid "{JAPAN ONLY}For full details of the documents we can accept please download the following guide:"
 msgstr "For full details of the documents we can accept please download the following guide:"
 
-#| msgid "{JAPAN ONLY}Section 3: Outline"
 msgid "{JAPAN ONLY}Goes Outside"
 msgstr "{JAPAN ONLY}Goes Outside"
 
-#| msgid "{JAPAN ONLY}Units"
 msgid "{JAPAN ONLY}HIGH/LOW"
 msgstr "{JAPAN ONLY}HIGH/LOW"
 
-#| msgid "{JAPAN ONLY}Units"
 msgid "{JAPAN ONLY}Higher"
 msgstr "{JAPAN ONLY}Higher"
 
@@ -8122,7 +8047,6 @@ msgstr "{JAPAN ONLY}Knowledge test list item 4"
 msgid "{JAPAN ONLY}Knowledge test list item 5"
 msgstr "{JAPAN ONLY}Knowledge test list item 5"
 
-#| msgid "{JAPAN ONLY}Download"
 msgid "{JAPAN ONLY}Lower"
 msgstr "{JAPAN ONLY}Lower"
 
@@ -8237,7 +8161,6 @@ msgstr "Short positions in FX Binary Options must be covered by initial margin a
 msgid "{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours."
 msgstr "Sorry, you have failed the test, please try again after 24 hours."
 
-#| msgid "{JAPAN ONLY}Establishment"
 msgid "{JAPAN ONLY}Stays Between"
 msgstr "{JAPAN ONLY}Stays Between"
 
@@ -8328,7 +8251,6 @@ msgstr "To compensate for any rise in the price of an underlying asset that you 
 msgid "{JAPAN ONLY}To invest a binary options investment accurately, the customer are required knowledge and experience related to derivative transactions."
 msgstr "To invest a binary options investment accurately, the customer are required knowledge and experience related to derivative transactions."
 
-#| msgid "{JAPAN ONLY}Units"
 msgid "{JAPAN ONLY}Touches"
 msgstr "{JAPAN ONLY}Touches"
 
@@ -8368,51 +8290,39 @@ msgstr "{JAPAN ONLY}Win Loss Ratio"
 msgid "{JAPAN ONLY}You can apply to open an account online. Simply click <a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 msgstr "You can apply to open an account online. Simply click<a class=\"pjaxload\" href=\"%1\">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account."
 
-#| msgid "{JAPAN ONLY}Capital"
 msgid "{JAPAN ONLY}day"
 msgstr "{JAPAN ONLY}day"
 
-#| msgid "{JAPAN ONLY}Units"
 msgid "{JAPAN ONLY}days"
 msgstr "{JAPAN ONLY}days"
 
-#| msgid "{JAPAN ONLY}Units"
 msgid "{JAPAN ONLY}hour"
 msgstr "{JAPAN ONLY}hour"
 
-#| msgid "{JAPAN ONLY}Units"
 msgid "{JAPAN ONLY}hours"
 msgstr "{JAPAN ONLY}hours"
 
-#| msgid "{JAPAN ONLY}Units"
 msgid "{JAPAN ONLY}minute"
 msgstr "{JAPAN ONLY}minute"
 
-#| msgid "{JAPAN ONLY}Units"
 msgid "{JAPAN ONLY}minutes"
 msgstr "{JAPAN ONLY}minutes"
 
-#| msgid "{JAPAN ONLY}Units"
 msgid "{JAPAN ONLY}month"
 msgstr "{JAPAN ONLY}month"
 
-#| msgid "{JAPAN ONLY}Units"
 msgid "{JAPAN ONLY}months"
 msgstr "{JAPAN ONLY}months"
 
-#| msgid "{JAPAN ONLY}Units"
 msgid "{JAPAN ONLY}week"
 msgstr "{JAPAN ONLY}week"
 
-#| msgid "{JAPAN ONLY}Units"
 msgid "{JAPAN ONLY}weeks"
 msgstr "{JAPAN ONLY}weeks"
 
-#| msgid "{JAPAN ONLY}Capital"
 msgid "{JAPAN ONLY}year"
 msgstr "{JAPAN ONLY}year"
 
-#| msgid "{JAPAN ONLY}Units"
 msgid "{JAPAN ONLY}years"
 msgstr "{JAPAN ONLY}years"
 
@@ -8461,7 +8371,6 @@ msgstr "Przelew dla pośrednika płatności"
 msgid "Sharp Prices. Smart Trading."
 msgstr "Atrakcyjne ceny. Mądre handlowanie."
 
-#| msgid "Webtrader"
 msgid "MetaTrader"
 msgstr "MetaTrader"
 
