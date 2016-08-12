@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-05 14:20+0000\n"
+"PO-Revision-Date: 2016-08-09 12:46+0000\n"
 "Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -278,10 +278,8 @@ msgstr "Binary.comの沿革"
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "当システムは1日に1万を超える取引（仮想アカウントを含む）を処理しています。"
 
-#, fuzzy
-#| msgid "%1’s Volatility Indices are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
 msgid "%1’s <a href=\"%2\">Volatility Indices</a> are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
-msgstr "%1のボラティリティインデックスはMetaTrader 5で24時間365日ご利用いただけます。その他の資産も間もなく追加予定です。"
+msgstr "%1の<a href=\"%2\">ボラティリティインデックス</a>はMetaTrader 5で24時間365日ご利用いただけます。その他の資産も間もなく追加予定です。"
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(最短期間, 例： 最短 15 秒）分"
@@ -1462,8 +1460,12 @@ msgstr "Binary.comに関するご提案またはその他ご意見を当社に�
 msgid "By the 15th of every month, you will receive the commission earned during the previous calendar month."
 msgstr "毎月15日までに前月分の報酬を振込まさせて頂きます。"
 
-msgid "By using or interacting with the website, you are consenting to the use of Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
+#, fuzzy
+#| msgid "By using or interacting with the website, you are consenting to the use of Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
+msgid "By using or interacting with the website, you are consenting to the use of the Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
 msgstr ""
+"当サイトのご使用または当サイトと利用して通信されることで、GoogleアナリティクスのユーザーID機能の使用に同意いただくものとします。\n"
+"Googleにお客様の%1ログインID(例： VRTC1234, CR1234, MF1234, など)をキャプチャすることを許可するものです。個人情報などを除いた、GoogleによってリンクされるBinary.comのログインIDまたはその他データなどは、GoogleアナリティクスユーザーID機能を有効にすることで、Googleに共有または開示されます。"
 
 msgid "Can I become an affiliate even if I don't have a website?"
 msgstr "ウェブサイトを持っていなくても、アフィリエイトプログラムに参加することはできますか？"
@@ -4002,10 +4004,8 @@ msgstr "入出金をロック"
 msgid "Log in"
 msgstr "ログイン"
 
-#, fuzzy
-#| msgid "Log into the application using your MetaTrader account number (e.g., 1124) and your MetaTrader account password."
 msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
-msgstr "MetaTraderのアカウント番号(例：1124)とパスワードでアプリケーションにログインをしてください。"
+msgstr "MetaTraderのアカウント番号とパスワードでアプリケーションにログインをしてください。"
 
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "%1のアフィリエイト口座にログインしFinances &rarr;Payment Instructionsをクリックし、ご変更手続きを行って下さい。"
@@ -4246,8 +4246,6 @@ msgstr "月"
 msgid "More benefits"
 msgstr "福利厚生について"
 
-#, fuzzy
-#| msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with ‘best execution’. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
 msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with 'best execution'. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
 msgstr "すなわち、お客さまとバイナリーオプション取引に入る際（各\"契約\"）、当社にはお客さまに「最良執行」を提供させていただく義務があります。最良執行とは、お客さまへの可能な限り最良の結果を得られるよう適切な措置を取らせていただく必要があることを言います。この文書では当社の最良執行ポリシーの概要をご覧いただけます。"
 
@@ -6485,15 +6483,11 @@ msgstr "上記のお客さま基本情報の変更をご希望される場合は
 msgid "To create a Real account for MetaTrader, you need to authenticate your Binary account:"
 msgstr "MetaTraderのリアル口座を作成するには、Binary口座を認証いただく必要があります："
 
-#, fuzzy
-#| msgid "To create a Real account for MetaTrader, <a href=\"%1\">upgrade to Bianry Real account</a>."
 msgid "To create a real account for MetaTrader, <a href=\"%1\">upgrade to %2 real money account</a>."
-msgstr "MetaTraderのリアル口座を作成するには、<a href=\"%1\">Bianryの口座をリアル口座へアップグレード</a>いただく必要があります。"
+msgstr "MetaTraderのリアル口座を作成するには、<a href=\"%1\">%2リアル口座へアップグレード</a>いただく必要があります。"
 
-#, fuzzy
-#| msgid "To create a Real account for MetaTrader, switch to your Binary Real account."
 msgid "To create a real account for MetaTrader, switch to your %1 real money account."
-msgstr "MetaTraderのリアル口座を作成いただくには、Binaryのリアル口座へ切り替えてください。"
+msgstr "MetaTraderのリアル口座を作成いただくには、%1リアル口座へ切り替えてください。"
 
 msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
 msgstr "MetaTraderのリアル口座から入出金いただくには、Binay.comのリアル口座へ切り替えてください。"
@@ -7413,7 +7407,9 @@ msgstr "%1 APIを介したコンテンツのリクエストから24時間まで�
 msgid "You may choose to contact us to close your account held with the Company. Your account may be closed if you do not have any open trade positions and if you have complied with the requested \"Know Your Client\" procedures to enable you to withdraw any pending funds in your account."
 msgstr "当社で開設されたご口座を閉鎖するには当社までご連絡いただく必要がございます。お客さまのご口座にオープンポジションのご契約がなく、保留中の資金を出金できるようにする「Know Your Client」の手順に応じられている場合にご口座の閉鎖が可能です。"
 
-msgid "You may communicate with us through this website, by email or, exceptionally, by post. Details can be found in the Contact Us page."
+#, fuzzy
+#| msgid "You may communicate with us through this website, by email or, exceptionally, by post. Details can be found in the Contact Us page."
+msgid "You may communicate with us through this website by means of Live Chat, e-mail, phone or, exceptionally, by post. Details can be found in the Contact Us page."
 msgstr "当社はお客さまと当サイトを通して、またはメール、例外として郵送でご連絡させていただきます。詳細はお問い合わせページにてご確認いただけます。"
 
 msgid "You may develop Applications using the %1 API as soon as you register an Application and you agree to follow these Terms."
