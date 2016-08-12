@@ -32,8 +32,6 @@ if (!SessionStore || !LocalStore) {
     }
 }
 
-var Settings = new CookieStorage('settings');
-
 var page = new Page(window.page_params);
 
 onLoad.queue(function () {
