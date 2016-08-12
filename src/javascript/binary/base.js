@@ -244,8 +244,9 @@ $(document).ready(function () {
 var TUser = (function () {
     var data = {};
     return {
-        set: function(a){ data = a; },
-        get: function(){ return data; }
+        extend: function(ext) { $.extend(data, ext); },
+        set: function(a) { data = a; },
+        get: function() { return data; }
     };
 })();
 
