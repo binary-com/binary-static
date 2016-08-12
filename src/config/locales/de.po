@@ -3,9 +3,10 @@ msgstr ""
 "Project-Id-Version: German (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-11 14:10+0000\n"
-"Last-Translator: Karin Graf <karin_graf@hotmail.com>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/binary/static/de/>\n"
+"PO-Revision-Date: 2016-08-12 13:55+0000\n"
+"Last-Translator: Robert Grundler <grundlertex@gmail.com>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/binary/static/de/>"
+"\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -111,6 +112,10 @@ msgstr "%1 hat 1. Million Benutzer und somit einen historischen Meilenstein erre
 
 msgid "%1 introduces an <a href='%2' target='_blank' class='ja-hide'>auto-trader programming tool</a><span class='all-hide ja-show'>auto-trader programming tool</span>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
 msgstr ""
+"%1 stellt ein <a href='%2' target='_blank' class='ja-hide'>Auto-Trader "
+"Programmiertool </a><span class='all-hide ja-show'>Auto-Trader "
+"Programmiertool</span>, was den Kunden ermöglicht, ihre eigenen Trading-"
+"Robots mit einfachem „drag-and-drop” zu entwickeln."
 
 #, fuzzy
 #| msgid "Binary.com is a flexible place. As well as our offices, we have staff who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
@@ -1310,7 +1315,7 @@ msgid "Barrier"
 msgstr "Schwelle"
 
 msgid "Barrier Change"
-msgstr "Grenzänderung "
+msgstr "Grenzänderung"
 
 msgid "Barrier offset"
 msgstr "Schwellenverschiebung"
@@ -7751,7 +7756,7 @@ msgid "Your risks are known"
 msgstr "Ihre Risiken sind bekannt"
 
 msgid "Your session duration limit will end in %1 seconds."
-msgstr "Das Limit Ihrer Sitzungsdauer endet in %1 Sekunden"
+msgstr "Das Limit Ihrer Sitzungsdauer endet in %1 Sekunden."
 
 msgid "Your settings have been updated successfully."
 msgstr "Ihre Einstellungen wurden erfolgreich aktualisiert."
@@ -8010,7 +8015,7 @@ msgid "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4
 msgstr "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
 
 msgid "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
-msgstr ""
+msgstr "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
 
 msgid "{JAPAN ONLY}A  Net Settlement type of option is one where the underlying asset does not include yen, but the option fee and settlement are paid in yen; it therefore requires some definition of how the settlement amounts will be calculated and converted to yen."
 msgstr "{JAPAN ONLY}A  Net Settlement type of option is one where the underlying asset does not include yen, but the option fee and settlement are paid in yen; it therefore requires some definition of how the settlement amounts will be calculated and converted to yen."
@@ -8103,23 +8108,25 @@ msgid "{JAPAN ONLY}Capital"
 msgstr "{JAPAN ONLY}Units"
 
 msgid "{JAPAN ONLY}Capital Adequacy Ratio (CAR)"
-msgstr ""
+msgstr "{JAPAN ONLY}Capital Adequacy Ratio (CAR)"
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}Option Pricing"
 msgid "{JAPAN ONLY}Company Profile"
 msgstr "{JAPAN ONLY}Option Pricing"
 
+#, fuzzy
 msgid "{JAPAN ONLY}Company Profile & Disclosure"
-msgstr ""
+msgstr "{JAPAN ONLY}Company Profile & Disclosure"
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}Download"
 msgid "{JAPAN ONLY}Company name"
 msgstr "{JAPAN ONLY}Download"
 
+#, fuzzy
 msgid "{JAPAN ONLY}Company name in English"
-msgstr ""
+msgstr "{JAPAN ONLY}Company name in English"
 
 msgid "{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly."
 msgstr "{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly."
@@ -8138,14 +8145,19 @@ msgstr "{JAPAN ONLY}Delta refers to  a percentage change of the option price wit
 msgid "{JAPAN ONLY}Designated dispute resolution organization"
 msgstr "{JAPAN ONLY}Introduction to Binary Options"
 
+#, fuzzy
 msgid "{JAPAN ONLY}Disclosure of CAR by No. 46-6-3 in the FIEA (Financial Instruments and Exchange Act)"
 msgstr ""
+"{JAPAN ONLY}Disclosure of CAR by No. 46-6-3 in the FIEA (Financial "
+"Instruments and Exchange Act)"
 
+#, fuzzy
 msgid "{JAPAN ONLY}Disclosure of financial statement by No. xx in the FIEA"
-msgstr ""
+msgstr "{JAPAN ONLY}Disclosure of financial statement by No. xx in the FIEA"
 
+#, fuzzy
 msgid "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
-msgstr ""
+msgstr "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}Options Basics"
@@ -8195,11 +8207,13 @@ msgstr "{JAPAN ONLY}Even though losses in binary options are limited, it is stil
 msgid "{JAPAN ONLY}Financial Condition"
 msgstr "{JAPAN ONLY}Section 5: Calculation"
 
+#, fuzzy
 msgid "{JAPAN ONLY}Financial Instruments Business No. xxxx"
-msgstr ""
+msgstr "{JAPAN ONLY}Financial Instruments Business No. xxxx"
 
+#, fuzzy
 msgid "{JAPAN ONLY}Financial Instruments Mediation Assistance Center"
-msgstr ""
+msgstr "{JAPAN ONLY}Financial Instruments Mediation Assistance Center"
 
 msgid "{JAPAN ONLY}For a call option, if the price of the underlying asset is higher than the option exercise price, it is know as an in-the-money option."
 msgstr "{JAPAN ONLY}For a call option, if the price of the underlying asset is higher than the option exercise price, it is know as an in-the-money option."
@@ -8368,18 +8382,23 @@ msgstr "{JAPAN ONLY}Knowledge Test"
 msgid "{JAPAN ONLY}Knowledge Test Result"
 msgstr "{JAPAN ONLY}Knowledge Test Result"
 
+#, fuzzy
 msgid "{JAPAN ONLY}Knowledge test list item 1"
 msgstr "{JAPAN ONLY}Knowledge test list item 1"
 
+#, fuzzy
 msgid "{JAPAN ONLY}Knowledge test list item 2"
 msgstr "{JAPAN ONLY}Knowledge test list item 2"
 
+#, fuzzy
 msgid "{JAPAN ONLY}Knowledge test list item 3"
 msgstr "{JAPAN ONLY}Knowledge test list item 3"
 
+#, fuzzy
 msgid "{JAPAN ONLY}Knowledge test list item 4"
 msgstr "{JAPAN ONLY}Knowledge test list item 4"
 
+#, fuzzy
 msgid "{JAPAN ONLY}Knowledge test list item 5"
 msgstr "{JAPAN ONLY}Knowledge test list item 5"
 
@@ -8401,8 +8420,9 @@ msgstr "{JAPAN ONLY}Download"
 msgid "{JAPAN ONLY}No space between last name and first name"
 msgstr "{JAPAN ONLY}No space between last name and first name"
 
+#, fuzzy
 msgid "{JAPAN ONLY}November 7, 2014"
-msgstr ""
+msgstr "{JAPAN ONLY}November 7, 2014"
 
 msgid "{JAPAN ONLY}Option Pricing"
 msgstr "{JAPAN ONLY}Option Pricing"
@@ -8481,8 +8501,9 @@ msgstr "{JAPAN ONLY}Regulation & Tax"
 msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "{JAPAN ONLY}Regulation & Tax"
 
+#, fuzzy
 msgid "{JAPAN ONLY}STAY-IN/BREAK-OUT"
-msgstr ""
+msgstr "{JAPAN ONLY}STAY-IN/BREAK-OUT"
 
 msgid "{JAPAN ONLY}Section 1: Structure"
 msgstr "{JAPAN ONLY}Section 1: Structure"
@@ -8513,8 +8534,9 @@ msgstr "{JAPAN ONLY}Units"
 msgid "{JAPAN ONLY}Summary of Specifications"
 msgstr "{JAPAN ONLY}Summary of Specifications"
 
+#, fuzzy
 msgid "{JAPAN ONLY}TOUCH /NO-TOUCH"
-msgstr ""
+msgstr "{JAPAN ONLY}TOUCH /NO-TOUCH"
 
 msgid "{JAPAN ONLY}Take knowledge test"
 msgstr "{JAPAN ONLY}Take knowledge test"
@@ -8531,8 +8553,9 @@ msgstr "{JAPAN ONLY}The Exercise Price is the level at which the option buyer ha
 msgid "{JAPAN ONLY}The Exit Price is the price that is observed at the judgment time, and is used to determine whether a payout should be made."
 msgstr "{JAPAN ONLY}The Exit Price is the price that is observed at the judgment time, and is used to determine whether a payout should be made."
 
+#, fuzzy
 msgid "{JAPAN ONLY}The Financial Futures Association of Japan"
-msgstr ""
+msgstr "{JAPAN ONLY}The Financial Futures Association of Japan"
 
 msgid "{JAPAN ONLY}The buyer of a vanilla option can choose whether to exercise the option or not. His loss is limited to the price paid for the option, whereas his potential profit is unlimited."
 msgstr "{JAPAN ONLY}The buyer of a vanilla option can choose whether to exercise the option or not. His loss is limited to the price paid for the option, whereas his potential profit is unlimited."
@@ -8608,8 +8631,11 @@ msgstr "{JAPAN ONLY}Trading & Hedging"
 msgid "{JAPAN ONLY}Trading Guide"
 msgstr "{JAPAN ONLY}Trading Guide"
 
+#, fuzzy
 msgid "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
 msgstr ""
+"{JAPAN ONLY}Type I Financial Instruments Business based on the Financial "
+"Instruments and Exchange Law"
 
 msgid "{JAPAN ONLY}Unless special arrangements are made, cooling-off will not be available after OTC binary options trading contract has been made."
 msgstr "{JAPAN ONLY}Unless special arrangements are made, cooling-off will not be available after OTC binary options trading contract has been made."
@@ -8709,7 +8735,7 @@ msgid "Why Us"
 msgstr "Warum uns?"
 
 msgid "Styles"
-msgstr ""
+msgstr "Styles"
 
 #, fuzzy
 #| msgid "points"
