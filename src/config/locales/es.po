@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-07 23:39+0000\n"
+"PO-Revision-Date: 2016-08-09 22:56+0000\n"
 "Last-Translator: cameliagf <cameliagf@yahoo.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/binary/static/es/>\n"
 "Language: es\n"
@@ -275,10 +275,8 @@ msgstr "La notable historia de %1"
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "Los sistemas de %1 están ahora procesando más de 1 millón de transacciones por día (incluyendo cuentas virtuales)."
 
-#, fuzzy
-#| msgid "%1’s Volatility Indices are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
 msgid "%1’s <a href=\"%2\">Volatility Indices</a> are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
-msgstr "Los Índices de volatilidad de %1 están ahora disponibles 24/7 en MetaTrader 5. Activos adicionales serán lanzados muy pronto."
+msgstr "Los<a href=\"%2\"> Índices de volatilidad</a> de %1 están ahora disponibles 24/7 en MetaTrader 5. Activos adicionales serán lanzados muy pronto."
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(duración mínima, por ejemplo min 15 segundos)min"
@@ -1443,8 +1441,10 @@ msgstr "Al enviar sugerencias y otras opiniones sobre la API de %1 a la Compañ�
 msgid "By the 15th of every month, you will receive the commission earned during the previous calendar month."
 msgstr "Para el día 15 de cada mes, usted percibirá sus honorarios por la comisión ganada durante el mes calendarístico anterior."
 
-msgid "By using or interacting with the website, you are consenting to the use of Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
-msgstr ""
+#, fuzzy
+#| msgid "By using or interacting with the website, you are consenting to the use of Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
+msgid "By using or interacting with the website, you are consenting to the use of the Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
+msgstr "Al usar o interactuar con el sitio web, usted acepta usar la función de Google Analytics  ID, que permite a Google capturar su ID de inicio de sesión para %1 (por ejemplo, VRTC1234, CR1234, MF1234, etc..). Ninguna información personal identificable que no sea su ID de inicio de sesión de Binary.com, u otros datos que pueden estar vinculadas a dicha información por Google, es compartida con o revelada a Google activando la función de ID de Google Analytics."
 
 msgid "Can I become an affiliate even if I don't have a website?"
 msgstr "¿Puedo convertirme en un afiliado incluso si no tengo un sitio web?"
@@ -3949,10 +3949,8 @@ msgstr "Bloquear cajero"
 msgid "Log in"
 msgstr "Iniciar sesión"
 
-#, fuzzy
-#| msgid "Log into the application using your MetaTrader account number (e.g., 1124) and your MetaTrader account password."
 msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
-msgstr "Inicie sesión en la aplicación usando su número de cuenta de MetaTrader (e.j., 1124) y la contraseña de su cuenta MetaTrader."
+msgstr "Inicie sesión en la aplicación usando su número de cuenta de MetaTrader y la contraseña de su cuenta MetaTrader."
 
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "Inicie sesión en su cuenta de afiliado de %1 y haga clic en: Finanzas &rarr; Detalles de pago."
@@ -4191,8 +4189,6 @@ msgstr "Mes"
 msgid "More benefits"
 msgstr "Más ventajas"
 
-#, fuzzy
-#| msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with ‘best execution’. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
 msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with 'best execution'. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
 msgstr "Más específicamente, cuando hacemos un contrato de opciones binarias con usted (un \"Contrato\"), tenemos el deber de ofrecerle la \"mejor ejecución\". La mejor ejecución significa que debemos tomar las medidas razonables para obtener el mejor resultado posible para usted al ejecutar la orden para usted. Este documento proporciona un resumen de nuestra política de la mejor ejecución."
 
@@ -6315,15 +6311,11 @@ msgstr "Para modificar su nombre, fecha de nacimiento, país de residencia o ema
 msgid "To create a Real account for MetaTrader, you need to authenticate your Binary account:"
 msgstr "Para crear una cuenta Real para MetaTrader, necesita autenticar su cuenta de Binary:"
 
-#, fuzzy
-#| msgid "To create a Real account for MetaTrader, <a href=\"%1\">upgrade to Bianry Real account</a>."
 msgid "To create a real account for MetaTrader, <a href=\"%1\">upgrade to %2 real money account</a>."
-msgstr "Para crear una cuenta Real para MetaTrader, <a href=\"%1\"> pase a una cuenta real de Binary</a>."
+msgstr "Para crear una cuenta real para MetaTrader, <a href=\"%1\"> cámbiese a una cuenta de dinero real de %2</a>."
 
-#, fuzzy
-#| msgid "To create a Real account for MetaTrader, switch to your Binary Real account."
 msgid "To create a real account for MetaTrader, switch to your %1 real money account."
-msgstr "Para crear una cuenta Real para MetaTrader, cambie a una cuenta Real de Binary."
+msgstr "Para crear una cuenta real para MetaTrader, cambie a una cuenta de dinero real de %1."
 
 msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
 msgstr "Para depositar o retirar de su cuenta Real de MetaTrader, pase a su cuenta Real de Binary.com."
@@ -6781,10 +6773,8 @@ msgstr "Prohibimos el uso de incentivos, obsequios y pagos no autorizados para p
 msgid "We provide here a summary of the policy we maintain in order to manage conflicts of interest in respect of the duties we owe to our clients."
 msgstr "Ofrecemos aquí un resumen de la política de gestión de conflictos de intereses relacionada a las obligaciones que tenemos con nuestros clientes."
 
-#, fuzzy
-#| msgid "We rebrand BetOnMarkets.com as <a target='_blank' href='%1'>www.binary.com</a>. The rebranding is a natural evolution for the platform as it continues to grow market share in the highly competitive field of binary trading. The new brand reflects the nature of the business, and our new tagline - Sharp Prices, Smart Trading - communicates our ethos and commitment to our clients."
 msgid "We rebrand BetOnMarkets.com as <a target='_blank' href='%1'>www.%2</a>. The rebranding is a natural evolution for the platform as it continues to grow market share in the highly competitive field of binary trading. The new brand reflects the nature of the business, and our new tagline - Sharp Prices, Smart Trading - communicates our ethos and commitment to our clients."
-msgstr "Renombarmos BetOnMarkets.com a <a target='_blank' href='%1'>www.binary.com</a>. El cambio de la marca es una evolución natural para la plataforma ya que sigue creciendo su cuota de mercado en el campo altamente competitivo de opciones binarias. La nueva marca refleja la naturaleza del negocio, mientras el nuevo lema - Sharp Prices, Smart Trading (Mejores precios, inversiones inteligentes) - comunica nuestra filosofía y el compromiso con nuestros clientes."
+msgstr "Renombarmos BetOnMarkets.com a <a target='_blank' href='%1'>www.%2</a>. El cambio de la marca es una evolución natural para la plataforma ya que sigue creciendo su cuota de mercado en el campo altamente competitivo de las opciones binarias. La nueva marca refleja la naturaleza del negocio, mientras el nuevo lema - Sharp Prices, Smart Trading (Mejores precios, inversiones inteligentes) - comunica nuestra filosofía y el compromiso con nuestros clientes."
 
 msgid "We recognize the importance of protecting your personal and financial information."
 msgstr "Reconocemos la importancia de proteger su información personal y financiera."
@@ -7217,7 +7207,9 @@ msgstr "Puede almacenar en caché el Contenido hasta 24 horas de una solicitud p
 msgid "You may choose to contact us to close your account held with the Company. Your account may be closed if you do not have any open trade positions and if you have complied with the requested \"Know Your Client\" procedures to enable you to withdraw any pending funds in your account."
 msgstr "Puede optar por ponerse en contacto con nosotros para cerrar su cuenta con la Compañía. Su cuenta puede ser cerrada si usted no tiene ninguna posición abierta y si ha cumplido con los procedimientos requeridos de comprobación de identidad para que pueda retirar los fondos pendientes de su cuenta."
 
-msgid "You may communicate with us through this website, by email or, exceptionally, by post. Details can be found in the Contact Us page."
+#, fuzzy
+#| msgid "You may communicate with us through this website, by email or, exceptionally, by post. Details can be found in the Contact Us page."
+msgid "You may communicate with us through this website by means of Live Chat, e-mail, phone or, exceptionally, by post. Details can be found in the Contact Us page."
 msgstr "Usted puede ponerse en contacto con nosotros a través de este sitio web, por correo electrónico o, excepcionalmente, por correo postal. Los detalles se pueden encontrar en la página de contacto."
 
 msgid "You may develop Applications using the %1 API as soon as you register an Application and you agree to follow these Terms."
