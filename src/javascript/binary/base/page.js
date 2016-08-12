@@ -1019,6 +1019,7 @@ var Page = function(config) {
     this.settings = new InScriptStore(config['settings']);
     this.header = new Header({ user: this.user, client: this.client, url: this.url});
     this.contents = new Contents(this.client, this.user);
+    this._lang = null;
     onLoad.queue(GTM.push_data_layer);
 };
 
@@ -1032,19 +1033,13 @@ Page.prototype = {
         var langs = urls.filter(function(u){
             return regex.test(u);
         });
-        return langs && langs.length > 0 ? langs[0].toUpperCase() : '';
+        return langs.length > 0 ? langs[0].toUpperCase() : '';
     },
     language: function() {
-        var lang = window.lang;
-        if(!lang) {
-            lang = this.language_from_url();
-            if(!lang) {
-                lang = Cookies.get('language');
-                if(!lang) {
-                    lang = 'EN';
-                }
-            }
-            window.lang = lang.toUpperCase();
+        var lang = this._lang;
+        if (!lang) {
+            lang = this.language_from_url() || Cookies.get('language') || 'EN';
+            this._lang = lang.toUpperCase();
         }
         return lang;
     },
@@ -1169,23 +1164,6 @@ Page.prototype = {
     },
     reload: function(forcedReload) {
         window.location.reload(forcedReload ? true : false);
-    },
-    check_new_release: function() { // calling this method is handled by GTM tags
-        var last_reload = localStorage.getItem('new_release_reload_time');
-        if(last_reload && last_reload * 1 + 10 * 60 * 1000 > moment().valueOf()) return; // prevent reload in less than 10 minutes
-        var current_hash = $('script[src*="binary.min.js"],script[src*="binary.js"]').attr('src').split('?')[1];
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (xhttp.readyState == 4 && xhttp.status == 200) {
-                var latest_hash = xhttp.responseText;
-                if(latest_hash && latest_hash !== current_hash) {
-                    localStorage.setItem('new_release_reload_time', moment().valueOf());
-                    page.reload(true);
-                }
-            }
-        };
-        xhttp.open('GET', page.url.url_for_static() + 'version?' + Math.random().toString(36).slice(2), true);
-        xhttp.send();
     },
     check_language: function() {
         if (page.language() === 'ID') {
