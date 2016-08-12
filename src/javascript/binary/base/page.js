@@ -1038,8 +1038,8 @@ Page.prototype = {
     language: function() {
         var lang = this._lang;
         if (!lang) {
-            lang = this.language_from_url() || Cookies.get('language') || 'EN';
-            this._lang = lang.toUpperCase();
+            lang = (this.language_from_url() || Cookies.get('language') || 'EN').toUpperCase();
+            this._lang = lang;
         }
         return lang;
     },
