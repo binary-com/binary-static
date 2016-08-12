@@ -232,9 +232,13 @@ $(document).ready(function () {
     );
     if (!evt || !document.addEventListener) return;
     document.addEventListener(evt, function tabChanged() {
-        if (clock_started) {
+        if (!clock_started) return;
+        if (document.hidden || document.webkitHidden) {
             start_time = moment().valueOf();
             time_now = page.header.time_now;
+        } else {
+            time_now = (time_now + (moment().valueOf() - start_time));
+            page.header.time_now = time_now;
         }
     });
 });
