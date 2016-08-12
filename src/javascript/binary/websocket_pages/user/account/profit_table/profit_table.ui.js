@@ -70,8 +70,7 @@ var ProfitTableUI = (function(){
 
         var plType = (profit_table_data.pl >= 0) ? "profit" : "loss";
 
-        var data = [profit_table_data.buyDate, (profit_table_data.app_id ? ('<span data-balloon="' + text.localize('Contract purchased with app ID') + ': ' + profit_table_data.app_id + '">') : '') + profit_table_data.ref  +
-    (profit_table_data.app_id ? '</span>' : ''), profit_table_data.payout, '', profit_table_data.buyPrice, profit_table_data.sellDate, profit_table_data.sellPrice, profit_table_data.pl, ''];
+        var data = [profit_table_data.buyDate, add_app_id_name(profit_table_data.app_id, profit_table_data.app_name, profit_table_data.ref), profit_table_data.payout, '', profit_table_data.buyPrice, profit_table_data.sellDate, profit_table_data.sellPrice, profit_table_data.pl, ''];
         var $row = Table.createFlexTableRow(data, cols, "data");
 
         $row.children(".buy-date").addClass("pre");

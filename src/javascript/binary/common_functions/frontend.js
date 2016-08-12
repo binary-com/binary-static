@@ -563,6 +563,16 @@ function detect_hedging($purpose, $hedging) {
     });
 }
 
+function add_app_id_name(app_id, app_name, ref_id) {
+    var ref_string;
+    if (app_id && app_name && getAppId() != app_id) {
+        ref_string = '<span data-balloon="' + text.localize('Transaction performed by') + ' ' + app_name + ' (' + text.localize('App ID') + ': ' + app_id + ')' + '">' + ref_id  + '</span>';
+    } else {
+        ref_string = ref_id;
+    }
+    return ref_string;
+}
+
 $(function() {
     $( "#accordion" ).accordion({
       heightStyle: "content",
