@@ -97,7 +97,7 @@ function BinarySocketClass() {
         }
 
         binarySocket.onopen = function () {
-            var apiToken = CommonData.getApiToken();
+            var apiToken = CommonData.getLoginToken();
             if (apiToken && !authorized && localStorage.getItem('client.tokens')) {
                 binarySocket.send(JSON.stringify({authorize: apiToken}));
             } else {

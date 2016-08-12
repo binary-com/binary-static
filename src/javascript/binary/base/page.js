@@ -1052,7 +1052,7 @@ Page.prototype = {
         this.record_affiliate_exposure();
         this.contents.on_load();
         this.on_click_acc_transfer();
-        if (CommonData.getApiToken()) {
+        if (CommonData.getLoginToken()) {
             ViewBalance.init();
         } else {
             LocalStore.set('reality_check.ack', 0);
