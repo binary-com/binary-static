@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-08 04:41+0000\n"
+"PO-Revision-Date: 2016-08-10 03:25+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
@@ -275,10 +275,8 @@ msgstr "Sejarah %1 yang luar biasa"
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "Sistem %1 telah memproses lebih dari 1 juta transaksi/hari (termasuk pada akun virtual)."
 
-#, fuzzy
-#| msgid "%1’s Volatility Indices are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
 msgid "%1’s <a href=\"%2\">Volatility Indices</a> are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
-msgstr "Indeks Volatilitas %1 kini tersedia 24/7 pada MetaTrader 5. Aset lainnya akan diluncurkan dalam waktu terdekat."
+msgstr "<a href=\"%2\">Indeks Volatilitas</a> %1 kini tersedia 24/7 pada MetaTrader 5. Aset lainnya akan diluncurkan dalam waktu terdekat."
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(durasi minimal, contoh minimal 15 detik)min"
@@ -1442,8 +1440,10 @@ msgstr "Dengan mengirimkan saran atau masukan lainnya mengenai API %1 kepada Per
 msgid "By the 15th of every month, you will receive the commission earned during the previous calendar month."
 msgstr "Pada tanggal 15 setiap bulan, Anda akan menerima komisi yang didapat selama periode bulan sebelumnya."
 
-msgid "By using or interacting with the website, you are consenting to the use of Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
-msgstr ""
+#, fuzzy
+#| msgid "By using or interacting with the website, you are consenting to the use of Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
+msgid "By using or interacting with the website, you are consenting to the use of the Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
+msgstr "Dengan menggunakan atau berinteraksi dengan website, Anda menyetujui penggunaan User ID Fitur Google Analytics yang mengijinkan Google untuk menyimpan login ID %1 Anda (contoh VRTC1234, CR1234, MF1234, dsb). Tidak ada informasi pribadi lainnya selain login ID Binary.com, atau data lain yang dihubungkan dengan informasi tersebut oleh Google dimana dibagikan atau disampaikan kepada Google dengan mengaktifkan User ID Fitur Google Analytics."
 
 msgid "Can I become an affiliate even if I don't have a website?"
 msgstr "Dapatkah saya menjadi afiliasi jika saya tidak memiliki website?"
@@ -3950,10 +3950,8 @@ msgstr "Kunci Kasir"
 msgid "Log in"
 msgstr "Masuk"
 
-#, fuzzy
-#| msgid "Log into the application using your MetaTrader account number (e.g., 1124) and your MetaTrader account password."
 msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
-msgstr "Masuk kedalam applikasi menggunakan nomer akun MetaTrader (contoh: 1124) dan kata sandi akun MetaTrader Anda."
+msgstr "Masuk kedalam applikasi menggunakan nomer akun MetaTrader dan kata sandi akun MetaTrader Anda."
 
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "Akses akun affiliasi %1 Anda dan klik pada : Keuangan &rarr; Instruksi Pembayaran."
@@ -4194,8 +4192,6 @@ msgstr "Bulan"
 msgid "More benefits"
 msgstr "Manfaat lainnya"
 
-#, fuzzy
-#| msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with ‘best execution’. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
 msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with 'best execution'. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
 msgstr "Lebih khususnya, ketika kami bertrading Opsi Binary dengan Anda (untuk setiap \"Kontrak\"), kami memiliki kewajiban untuk menyediakan 'eksekusi terbaik'. Eksekusi terbaik berarti kami harus mengambil langkah yang wajar untuk mendapatkan hasil terbaik ketika menjalankan order Anda. Dokumen ini memberikan ringkasan kebijakan eksekusi terbaik."
 
@@ -6320,15 +6316,11 @@ msgstr "Untuk merubah nama, tanggal lahir dan negara domisili Anda atau email, s
 msgid "To create a Real account for MetaTrader, you need to authenticate your Binary account:"
 msgstr "Untuk mendaftar akun Riil di MetaTrader, Anda perlu membuktikan akun Binary Anda:"
 
-#, fuzzy
-#| msgid "To create a Real account for MetaTrader, <a href=\"%1\">upgrade to Bianry Real account</a>."
 msgid "To create a real account for MetaTrader, <a href=\"%1\">upgrade to %2 real money account</a>."
-msgstr "Untuk mendaftar akun riil pada MetaTrader, <a href=\"%1\">upgrade ke akun Riil Bianry</a>."
+msgstr "Untuk mendaftar akun riil pada MetaTrader, <a href=\"%1\">upgrade ke akun riil %2</a>."
 
-#, fuzzy
-#| msgid "To create a Real account for MetaTrader, switch to your Binary Real account."
 msgid "To create a real account for MetaTrader, switch to your %1 real money account."
-msgstr "Untuk mendaftar akun Riil di MetaTrader, tukar ke akun Riil Binary Anda."
+msgstr "Untuk mendaftar akun Riil di MetaTrader, tukar ke akun riil %1 Anda."
 
 msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
 msgstr "Untuk mendeposit atau mencairkan dari Akun Riil MetaTrader Anda, rubah ke Akun Riil Binary.com."
@@ -7218,7 +7210,9 @@ msgstr "Anda mungkin dapat menyimpan Konten hingga 24 jam dari permintaan melalu
 msgid "You may choose to contact us to close your account held with the Company. Your account may be closed if you do not have any open trade positions and if you have complied with the requested \"Know Your Client\" procedures to enable you to withdraw any pending funds in your account."
 msgstr "Anda dapat menghubungi kami untuk menutup akun yang Anda miliki pada Perusahaan. Akun Anda juga dapat ditutup jika Anda tidak memiliki posisi trading dan jika Anda telah diminta untuk melengkapi prosedur \"Know Your Client\" untuk menarik saldo atau dana yang masih tersisa pada akun Anda."
 
-msgid "You may communicate with us through this website, by email or, exceptionally, by post. Details can be found in the Contact Us page."
+#, fuzzy
+#| msgid "You may communicate with us through this website, by email or, exceptionally, by post. Details can be found in the Contact Us page."
+msgid "You may communicate with us through this website by means of Live Chat, e-mail, phone or, exceptionally, by post. Details can be found in the Contact Us page."
 msgstr "Anda dapat berkomunikasi dengan kami melalui website, email atau melalui pos. Rincian dapat ditemukan pada halaman Hubungi Kami."
 
 msgid "You may develop Applications using the %1 API as soon as you register an Application and you agree to follow these Terms."

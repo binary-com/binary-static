@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Chinese (China) (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-08 02:55+0000\n"
+"PO-Revision-Date: 2016-08-10 01:25+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
@@ -271,10 +271,8 @@ msgstr "%1的辉煌发展历程"
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "%1 系统每天处理超过百万笔交易（包括虚拟账户）。"
 
-#, fuzzy
-#| msgid "%1’s Volatility Indices are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
 msgid "%1’s <a href=\"%2\">Volatility Indices</a> are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
-msgstr "%1的波动指数如今可在MetaTrader 5全天候交易。我们将尽快推出更多资产。"
+msgstr "%1的<a href=\"%2\">波动指数</a>如今可在MetaTrader 5全天候交易。我们将尽快推出更多资产。"
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(minimum duration, for example minimum 15 seconds)分钟"
@@ -1438,8 +1436,10 @@ msgstr "通过对公司提交%1的API相关建议或其他反馈意见 （简称
 msgid "By the 15th of every month, you will receive the commission earned during the previous calendar month."
 msgstr "每月15号前您将收到上一个月的佣金收入。"
 
-msgid "By using or interacting with the website, you are consenting to the use of Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
-msgstr ""
+#, fuzzy
+#| msgid "By using or interacting with the website, you are consenting to the use of Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
+msgid "By using or interacting with the website, you are consenting to the use of the Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
+msgstr "通过使用网站或与网站交互，您同意使用Google分析用户 ID 功能，允许Google捕获您的 %1 登录 ID （例如，VRTC1234、 CR1234、 MF1234 等）。启用Google分析用户 ID 功能后，除 Binary.com 登录 ID 或其他可以让Google链接到此类信息的数据以外，将没有任何其他个人身份信息与Google共享或披露给Google。"
 
 msgid "Can I become an affiliate even if I don't have a website?"
 msgstr "如果我没有网站，也可以成为联盟会员吗？"
@@ -3946,10 +3946,8 @@ msgstr "锁定收银台"
 msgid "Log in"
 msgstr "登录"
 
-#, fuzzy
-#| msgid "Log into the application using your MetaTrader account number (e.g., 1124) and your MetaTrader account password."
 msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
-msgstr "使用MetaTrader账号（例如，1124)）以及MetaTrader账户密码登录应用程序。"
+msgstr "使用MetaTrader账号以及MetaTrader账户密码登录应用程序。"
 
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "登录您的 %1 联盟账号并点击：财务 &rarr; 付款说明。"
@@ -4188,10 +4186,8 @@ msgstr "月份"
 msgid "More benefits"
 msgstr "更多福利"
 
-#, fuzzy
-#| msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with ‘best execution’. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
 msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with 'best execution'. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
-msgstr "具体来说，当我们和您进行二元期权交易时（双方有了“合同”），我们有责任向您提供“最佳执行方案”。最佳执行方案的意思是，当我们执行您的订单时，必须采取合理的措施为您获取最大效益。此文件是关于最佳执行方案政策的概述。"
+msgstr "具体来说，当我们和您进行二元期权交易时（双方有了“合同”），我们有责任向您提供\"最佳执行方案”。最佳执行方案的意思是，当我们执行您的订单时，必须采取合理的措施为您获取最大效益。此文件是关于最佳执行方案政策的概述。"
 
 msgid "Mother's maiden name"
 msgstr "母亲婚前的姓氏"
@@ -6314,15 +6310,11 @@ msgstr "如需更改姓名、生日、居住国或电子邮件，请与<a href=\
 msgid "To create a Real account for MetaTrader, you need to authenticate your Binary account:"
 msgstr "要开立MetaTrader真实资金账户，必须先验证Binary账户："
 
-#, fuzzy
-#| msgid "To create a Real account for MetaTrader, <a href=\"%1\">upgrade to Bianry Real account</a>."
 msgid "To create a real account for MetaTrader, <a href=\"%1\">upgrade to %2 real money account</a>."
-msgstr "开立MetaTrader真实资金账户前，<a href=\"%1\">请先升级为Bianry真实资金账户</a>。"
+msgstr "开立MetaTrader真实资金账户前，<a href=\"%1\">请先升级为%2真实资金账户</a>。"
 
-#, fuzzy
-#| msgid "To create a Real account for MetaTrader, switch to your Binary Real account."
 msgid "To create a real account for MetaTrader, switch to your %1 real money account."
-msgstr "要开立MetaTrader真实资金账户，请先切换到Binary真实资金账户。"
+msgstr "要开立MetaTrader真实资金账户，请先切换到%1真实资金账户。"
 
 msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
 msgstr "要在MetaTrader真实资金账户存取款，请先切换到Binary.com真实资金账户。"
@@ -7214,7 +7206,9 @@ msgstr "通过%1 API对指定内容提出请求后可保留该内容缓存为时
 msgid "You may choose to contact us to close your account held with the Company. Your account may be closed if you do not have any open trade positions and if you have complied with the requested \"Know Your Client\" procedures to enable you to withdraw any pending funds in your account."
 msgstr "您可以和我们联系，关闭在本公司开立的账户。如您没有任何未平仓交易头寸，且满足“了解您的客户“的要求，可以提取账户内的待领款项，您的账户就可以关闭。"
 
-msgid "You may communicate with us through this website, by email or, exceptionally, by post. Details can be found in the Contact Us page."
+#, fuzzy
+#| msgid "You may communicate with us through this website, by email or, exceptionally, by post. Details can be found in the Contact Us page."
+msgid "You may communicate with us through this website by means of Live Chat, e-mail, phone or, exceptionally, by post. Details can be found in the Contact Us page."
 msgstr "您可以通过此网站、电子邮件，或在特殊情况下以邮寄方式和我们沟通。详情请参阅“联系我们”页面。"
 
 msgid "You may develop Applications using the %1 API as soon as you register an Application and you agree to follow these Terms."
