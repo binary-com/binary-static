@@ -164,7 +164,7 @@ var SettingsDetailsWS = (function() {
             }
 
             // town/city
-            isRequiredError(fieldIDs.city) && ($(fieldIDs.city).is('input') && !(/^[a-zA-Z\s\-']+$/).test(state))) {
+            isRequiredError(fieldIDs.city) && ($(fieldIDs.city).is('input') && !(/^[a-zA-Z\s\-']+$/).test(city))) {
                 showError(fieldIDs.state, Content.errorMessage('reg', [letters, space, '- \'']));
             // state
             if(!isRequiredError(fieldIDs.state) && ($(fieldIDs.state).is('input') && !(/^[a-zA-Z\s\-']+$/).test(state))) {
