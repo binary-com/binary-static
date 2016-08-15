@@ -25,7 +25,6 @@
                   [% l("Minimum of six lower and uppercase letters with numbers") %]
                 </div>
               </div>
-              <p class="errorfield" id="errorcashierlockpassword1"></p>
             </div>
           </div>
           <div class="gr-padding-10 gr-row clear" id="repasswordrow" style="display: none;">
@@ -36,7 +35,6 @@
             </div>
             <div class="gr-8">
               <input autocomplete="off" class="text" id="cashierlockpassword2" maxlength="25" name="cashierlockpassword2" type="password"></input>
-              <p class="errorfield" id="errorcashierlockpassword2"></p>
             </div>
           </div>
         </fieldset>
