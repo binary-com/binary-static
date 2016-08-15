@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-09 12:46+0000\n"
-"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
+"PO-Revision-Date: 2016-08-15 02:38+0000\n"
+"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -1050,6 +1050,9 @@ msgstr "１８歳以上で %1のご利用規約に同意された方、かつ当
 msgid "Anyone who has potential to grow or increase traffic to %1"
 msgstr "当社へのトラフィックの成長または増加に貢献が見込める方"
 
+msgid "App ID"
+msgstr ""
+
 msgid "Applications"
 msgstr "アプリケーション"
 
@@ -1813,9 +1816,6 @@ msgstr "当社は当社サイトに報告された、トレードの取引対象
 
 msgid "Contract period"
 msgstr "取引期間"
-
-msgid "Contract purchased with app ID"
-msgstr "アプリケーションIDで購入されたトレード"
 
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "当社のサーバがリクエストを受理した時点での市場価格で売却取引が成立します。実際の約定価格と発注時の表示価格と異なる場合があります。"
@@ -3035,7 +3035,7 @@ msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</st
 msgstr "「HIGH」を選択された場合、判定時刻の時点で<strong>判定レート</strong>が<strong>バリア価格</strong>以上の場合、ペイアウトを受け取れます。"
 
 msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>barrier</strong>."
-msgstr "「LOW」を選択された場合、 判定時刻の時点で<strong>判定レート</strong>が<strong>バリア価格価格</strong>未満の場合、ペイアウトを受け取れます。"
+msgstr "「LOW」を選択された場合、 判定時刻の時点で<strong>判定レート</strong>が<strong>バリア価格</strong>未満の場合、ペイアウトを受け取れます。"
 
 msgid "If you select \"Matches\", you will win the payout if the <strong>last digit</strong> of the last tick is the <strong>same</strong> as your <strong>prediction.</strong>"
 msgstr "「マッチ」を選択された場合、最後のtickの<strong>下一桁</strong>が<strong>推測された数字</strong>と<strong>同じ</strong>であるとペイアウトを獲得いただけます。"
@@ -4834,9 +4834,6 @@ msgstr "お客さまの個人情報はいつでも各種設定ページから変
 msgid "Please provide us with the following information, after retrieving the verification token from your email:"
 msgstr "メールからワンタイムパスワードを取得後、下記の情報をご提供下さい。"
 
-msgid "Please re-enter your email"
-msgstr "メールアドレスを再度ご入力下さい。"
-
 msgid "Please refer to the following commission plan."
 msgstr "下記の手数料プランをご参照ください。"
 
@@ -5805,13 +5802,13 @@ msgid "The <strong>contract period</strong> is the period between the <strong>ne
 msgstr "この<strong>トレードの取引期間</strong>は、<strong>トレード開始時間</strong>の<strong>次のTick</strong>から<strong>トレード終了時間</strong>までとなります。"
 
 msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
-msgstr "<strong>取引可能時間</strong>は、取引期間開始時から取引終了時間までとなります。取引終了時間とは<strong>判定時刻2分前</strong>までで、取引終了時間を過ぎると新規購入注文＆売却取引は行えません。"
+msgstr "<strong>取引期間</strong>は、取引期間開始時から判定時刻までとなります。新規購入が可能な時間は<strong>判定時刻2分前</strong>までで、取引可能時間を過ぎると新規購入注文＆売却取引は行えません。"
 
 msgid "The <strong>end time</strong> is the selected number of seconds/minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
-msgstr "<strong>取引可能時間</strong>は、取引期間開始時から取引終了時間までとなります。取引終了時間とは<strong>判定時刻2分前</strong>までで、取引終了時間を過ぎると新規購入注文＆売却取引は行えません。"
+msgstr "<strong>取引期間</strong>は、取引期間開始時から判定時刻までとなります。新規購入が可能な時間は<strong>判定時刻2分前</strong>までで、取引終可能時間を過ぎると新規購入注文＆売却取引は行えません。"
 
 msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
-msgstr "<strong>終値</strong>とは<strong>トレード終了時</strong>のスポット価格のことです。"
+msgstr "<strong>判定レート</strong>とは<strong>判定時刻時</strong>のスポット価格のことです。"
 
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "<strong>トレード開始時間</strong>とは当社のサーバにてトレードが処理された際の時間のことです。"
@@ -6115,7 +6112,7 @@ msgid "The entry spot of an instrument XYZ is 1000 and the spread on this instru
 msgstr "金融商品XYZの始値は1000で、この商品のスプレッドは2ポイントです。"
 
 msgid "The entry spot price is the starting price of the trade purchased by a trader."
-msgstr "エントリースポット価格とは、購入トレードの開始価格のことです。"
+msgstr "取引時レートとは、購入時のレートのことです。"
 
 msgid "The expiry price is the price of the underlying when the contract expires."
 msgstr "判定レートとは、判定時刻時の市場価格を指します。"
@@ -6600,6 +6597,11 @@ msgstr "TradingView"
 
 msgid "Transact in"
 msgstr "選択通貨"
+
+#, fuzzy
+#| msgid "Your transaction reference is"
+msgid "Transaction performed by"
+msgstr "トレード参照番号："
 
 msgid "Transfer"
 msgstr "送金"
@@ -8625,6 +8627,12 @@ msgstr "利用規約の承認"
 
 msgid "Trading with MetaTrader 5"
 msgstr "MetaTrader 5でお取引"
+
+#~ msgid "Contract purchased with app ID"
+#~ msgstr "アプリケーションIDで購入されたトレード"
+
+#~ msgid "Please re-enter your email"
+#~ msgstr "メールアドレスを再度ご入力下さい。"
 
 #~ msgid "Instant"
 #~ msgstr "即刻"
