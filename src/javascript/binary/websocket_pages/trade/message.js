@@ -15,6 +15,7 @@ var Message = (function () {
             var type = response.msg_type;
             if (type === 'active_symbols') {
                 processActiveSymbols(response);
+                AssetIndexUI.setActiveSymbols(response);
             } else if (type === 'contracts_for') {
                 processContract(response);
                 window.contracts_for = response;
@@ -35,6 +36,8 @@ var Message = (function () {
                     digit_info.show_chart(response.echo_req.ticks_history, response.history.prices);
                 } else
                     Tick.processHistory(response);
+            } else if (type === 'asset_index'){
+                AssetIndexUI.setAssetIndex(response);
             } else if (type === 'trading_times'){
                 processTradingTimes(response);
             } else if (type === 'statement'){

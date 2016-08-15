@@ -70,44 +70,44 @@ var TradingAnalysis = (function() {
         toggleActiveAnalysisTabs();
 
         JapanPortfolio.init();
-        if(currentTab === 'tab_portfolio'){
+        if (currentTab === 'tab_portfolio') {
             JapanPortfolio.show();
-        } else {
-            JapanPortfolio.hide();
-            if (currentTab === 'tab_graph') {
-              showHighchart();
-            } else {
-                if (currentTab == 'tab_last_digit') {
-                    var underlying = $('[name=underlying] option:selected').val() || $('#underlying option:selected').val();
-                    var tick = $('[name=tick_count]').val() || 100;
-                    trading_digit_info = TradingAnalysis.tab_last_digitws;
-                    BinarySocket.send({
-                        ticks_history: underlying,
-                        count: tick + '',
-                        end: 'latest',
-                        req_id: 1
-                    });
-                } else{
-                    var url = currentLink.getAttribute('href') ;
-                    $.ajax({
-                        method: 'GET',
-                        url: url,
-                    })
-                    .done(function(data) {
-                        contentId.innerHTML = data;
-                        if(currentTab === 'tab_explanation') {
-                            showExplanation(currentLink.href);
-                        } else if (currentTab == 'tab_last_digit') {
-                            trading_digit_info = new DigitInfo();
-                            trading_digit_info.on_latest();
-                            trading_digit_info.show_chart(sessionStorage.getItem('underlying'));
-                        }
-
-                    });
-                }
-            }
+            return;
         }
 
+        JapanPortfolio.hide();
+        switch(currentTab) {
+            case 'tab_graph':
+                showHighchart();
+                break;
+            case 'tab_last_digit':
+                var underlying = $('[name=underlying] option:selected').val() || $('#underlying option:selected').val();
+                var tick = $('[name=tick_count]').val() || 100;
+                trading_digit_info = TradingAnalysis.tab_last_digitws;
+                BinarySocket.send({'ticks_history': underlying, 'end': 'latest', 'count': tick + '', 'req_id': 1});
+                break;
+            case 'tab_asset_index':
+                AssetIndexUI.init();
+                break;
+            default:
+                var url = currentLink.getAttribute('href') ;
+                $.ajax({
+                    method: 'GET',
+                    url: url,
+                })
+                .done(function(data) {
+                    contentId.innerHTML = data;
+                    if(currentTab === 'tab_explanation') {
+                        showExplanation(currentLink.href);
+                    } else if (currentTab == 'tab_last_digit') {
+                        trading_digit_info = new DigitInfo();
+                        trading_digit_info.on_latest();
+                        trading_digit_info.show_chart(sessionStorage.getItem('underlying'));
+                    }
+
+                });
+                break;
+        }
     };
 
     /*

@@ -10,15 +10,18 @@ var AssetIndexUI = (function() {
 
     var init = function() {
         if (japanese_client()) {
-            window.location.href = page.url.url_for('resources');
+            if (!TradePage.is_trading_page()) {
+                window.location.href = page.url.url_for('resources');
+            }
+            return;
         }
-        Content.populate();
-        $container = $('#asset-index');
-        showLoadingImage($container);
-        activeSymbols = null;
-        assetIndex = null;
 
-        AssetIndexData.sendRequest();
+        $container = $('#asset-index');
+        if ($container.contents().length) return;
+
+        Content.populate();
+        showLoadingImage($container);
+        if (!assetIndex) AssetIndexData.sendRequest(!activeSymbols);
     };
 
     var populateTable = function() {
