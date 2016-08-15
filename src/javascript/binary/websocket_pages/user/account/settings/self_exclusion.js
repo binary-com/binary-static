@@ -1,41 +1,24 @@
 var SelfExclusionWS = (function() {
     "use strict";
 
-    /*
-    *  1. Check if current User is virtual.
-    *  2. If user is virtual, then hide form and description, and show error message.
-    *  3. Else wait until the `authorize` call responds, and check again.
-    *  4. Populate the fields global.
-    *  5. Get the exclusion settings, and populate the forms and fields global.
-    *  6. When user submits, validate the form. If ok => submit request.
-    *  7. After successful submission, go to step 5.
-    *  8. god bless you.
-    */
-
     var $form,
-        $loading,
-        dateID,
-        timeDateID,
-        timeID,
-        time,
-        errorClass,
-        hiddenClass;
+        $loading;
 
-    var fields,
-        isValid;
+    var timeDateID  = 'timeout_until_duration';
+    var timeID      = 'timeout_until';
+    var dateID      = 'exclude_until';
+    var errorClass  = 'errorfield';
+    var hiddenClass = 'hidden';
+    var fields;
 
-    var reallyInit = function() {
-        $form       = $('#frmSelfExclusion');
-        $loading    = $('#loading');
-        timeDateID  = 'timeout_until_duration';
-        timeID      = 'timeout_until';
-        time        = new Date();
-        dateID      = 'exclude_until';
-        errorClass  = 'errorfield';
-        hiddenClass = 'hidden';
+    function reallyInit() {
+        $form    = $('#frmSelfExclusion');
+        $loading = $('#loading');
+
+        // for error messages to show properly
+        $('#' + timeID).attr('style', 'margin-bottom:10px');
 
         if (page.client.is_virtual()) {
-            console.log('is virtual!');
             $('#selfExclusionDesc').addClass(hiddenClass);
             showPageError(Content.localize().textFeatureUnavailable, true);
             return;
@@ -44,30 +27,19 @@ var SelfExclusionWS = (function() {
 
         fields = {};
         $form.find('input').each(function() {
-            fields[$(this).attr('id')] = '';
+            fields[this.name] = '';
+        });
+
+        bind_validation.simple($form[0], {
+            validate: validate,
+            submit: submitForm,
         });
 
         initDatePicker();
-        $form.submit(function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            var info = formValidate();
-            if (info.valid && info.changed) {
-                if ((Trim($('#' + timeDateID).val()) !== '' || Trim($('#' + dateID).val()) !== '')) {
-                    if (hasConfirmed()) {
-                        setRequest(info.data);
-                    }
-                } else {
-                    setRequest(info.data);
-                }
-            } else if (info.valid && !info.changed) {
-                showFormMessage('You did not change anything.', false);
-            }
-        });
         getRequest();
-    };
+    }
 
-    var init = function() {
+    function init() {
         Content.populate();
         BinarySocket.init({
             onmessage: function(msg){
@@ -81,16 +53,16 @@ var SelfExclusionWS = (function() {
         if ('is_virtual' in TUser.get()) {
             reallyInit();
         }
-    };
+    }
 
     // ----------------------
     // ----- Get Values -----
     // ----------------------
-    var getRequest = function() {
+    function getRequest() {
         BinarySocket.send({get_self_exclusion: 1});
-    };
+    }
 
-    var getResponse = function(response) {
+    function getResponse(response) {
         if (response.error) {
             if (response.error.code === 'ClientSelfExclusion') {
                 page.client.send_logout_request();
@@ -106,9 +78,9 @@ var SelfExclusionWS = (function() {
             fields[key] = value + '';
             $form.find('#' + key).val(value);
         });
-    };
+    }
 
-    var initDatePicker = function () {
+    function initDatePicker() {
         attach_time_picker($('#' + timeID));
 
         $('#' + timeDateID).datepicker({
@@ -128,22 +100,22 @@ var SelfExclusionWS = (function() {
                 $(this).val(dateText);
             }
         });
-    };
+    }
 
     // ----------------------
     // ----- Set Values -----
     // ----------------------
-    var setRequest = function(data) {
+    function setRequest(data) {
         data.set_self_exclusion = 1;
         BinarySocket.send(data);
-    };
+    }
 
-    var setResponse = function(response) {
+    function setResponse(response) {
         if (response.error) {
             var errMsg = response.error.message;
             var field  = response.error.field;
             if (field) {
-                showError(field, errMsg);
+                ValidationUI.draw('input[name='+field+']', errMsg);
             } else {
                 showFormMessage(text.localize(errMsg), false);
             }
@@ -152,154 +124,219 @@ var SelfExclusionWS = (function() {
         showFormMessage('Your changes have been updated.', true);
         page.client.set_storage_value('session_start', moment().unix()); // used to handle session duration limit
         getRequest();
+    }
+
+    // To propogate empty values.
+    function EMPTY() {}
+    function allowEmpty(value) {
+        return value.length > 0 ?
+            dv.ok(value) :
+            dv.fail(EMPTY);
+    }
+
+    function afterToday(date) {
+        return date.isAfter(moment()) ?
+            dv.ok(date) :
+            dv.fail('Exclude time must be after today.');
+    }
+
+    // Let empty values go to next validator, because it
+    // is ok to put empty values at this stage.
+    function numericOrEmpty(value) {
+        if (!value) return dv.ok(value);
+        return /^\d+$/.test(value) ?
+            dv.ok(big_uint(value)) :
+            dv.fail('Please enter an integer value');
+    }
+
+    function leftPadZeros(strint, zeroCount) {
+        var result = strint;
+        for (var i = 0; i < (zeroCount - strint.length); i++) {
+            result = "0" + result;
+        }
+        return result;
+    }
+
+    // big unsigned integer.
+    function big_uint(x) {
+        return x.replace(/^0+/, '');
+    }
+
+    big_uint.gt = function(x, y) {
+        var maxLength = Math.max(x.length, y.length);
+        var lhs = leftPadZeros(x, maxLength);
+        var rhs = leftPadZeros(y, maxLength);
+        return lhs > rhs; // lexicographical comparison
     };
 
-    // ----------------------------
-    // ----- Form Validations -----
-    // ----------------------------
-    var formValidate = function() {
-        clearError();
-        isValid = true;
-        var changed = false;
-        var submittedValues = {};
-
-        $.each(fields, function(key, currentValue) {
-            var newValue = $form.find('#' + key).val().trim();
-
-            if (newValue.length > 0) {
-                if (key === timeDateID) {
-                    if (validateExclusionDate(newValue, 'timeDate')) {
-                        submittedValues['timeout_until'] = time;
-                    }
-                } else if (key !== timeID) {
-                    submittedValues[key] = newValue;
-                }
-                if (key === dateID) {
-                    validateExclusionDate(newValue);
-                }
-                else if (key !== timeID && key !== timeDateID) {
-                    if (newValue.length > 0 && !isNormalInteger(newValue)) {
-                        showError(key, 'Please enter an integer value');
-                    }
-                    else if (currentValue > 0 && (newValue.length === 0 || isLargerInt(newValue, currentValue))) {
-                        showError(key, text.localize('Please enter a number between 0 and [_1]', [currentValue]));
-                    }
-                    else if (key === 'session_duration_limit' && newValue > (6 * 7 * 24 * 60)) {
-                        showError(key, 'Session duration limit cannot be more than 6 weeks.');
-                    }
-                }
-            } else if (key === timeDateID && $form.find('#' + timeID).val().trim().length > 0) {
-                showError(timeDateID, 'Please select a valid date');
+    function againstField(key) {
+        return function(value) {
+            var old = fields[key];
+            var err = text.localize('Please enter a number between 0 and [_1]', [old]);
+            var hasOld = !!old;
+            var isEmpty = value.length === 0;
+            if (!hasOld) {
+                return isEmpty ? dv.fail(EMPTY) : dv.ok(value);
             }
-            if (newValue !== currentValue) {
-                changed = true;
-            }
-        });
-        return {
-            data: submittedValues,
-            valid: isValid,
-            changed: changed,
+            return (isEmpty || big_uint.gt(value, old)) ?
+                dv.fail(err) :
+                dv.ok(value);
         };
-    };
+    }
 
-    var isLargerInt = function(a, b) {
-        return a.length === b.length ? a > b : a.length > b.length;
-    };
+    function validSessionDuration(value) {
+        return +value <= moment.duration(6, 'weeks').as('minutes') ?
+            dv.ok(value) :
+            dv.fail('Session duration limit cannot be more than 6 weeks.');
+    }
 
-    var isNormalInteger = function(value) {
-        return /^\d+$/.test(value);
-    };
+    function validExclusionDate(date) {
+        var six_months = moment().add(moment.duration(6, 'months'));
+        var five_years = moment().add(moment.duration(5, 'years'));
+        return (
+            (date.isBefore(six_months) && dv.fail('Exclude time cannot be less than 6 months.')) ||
+            (date.isAfter(five_years)  && dv.fail('Exclude time cannot be for more than 5 years.')) ||
+            dv.ok(date)
+        );
+    }
 
-    var hasConfirmed = function() {
+    function toDateString(date) {
+        return dv.ok(date.format('YYYY-MM-DD'));
+    }
+
+    function allowEmptyUnless(key) {
+        return function(value, data) {
+            if (value.length > 0) return dv.ok(value);
+            if (data[key].length > 0) return dv.fail('Please select a valid date');
+            return dv.fail(EMPTY);
+        };
+    }
+
+    var schema;
+    function getSchema() {
+        if (schema) return schema;
+        var V2 = ValidateV2;
+        var validTime = V2.momentFmt('HH:mm', 'Please select a valid time');
+        var validDate = V2.momentFmt('YYYY-MM-DD', 'Please select a valid date');
+
+        schema = {
+            max_7day_losses:    [numericOrEmpty, againstField('max_7day_losses')],
+            max_7day_turnover:  [numericOrEmpty, againstField('max_7day_turnover')],
+            max_30day_losses:   [numericOrEmpty, againstField('max_30day_losses')],
+            max_30day_turnover: [numericOrEmpty, againstField('max_30day_turnover')],
+            max_balance:        [numericOrEmpty, againstField('max_balance')],
+            max_losses:         [numericOrEmpty, againstField('max_losses')],
+            max_open_bets:      [numericOrEmpty, againstField('max_open_bets')],
+            max_turnover:       [numericOrEmpty, againstField('max_turnover')],
+            session_duration_limit: [numericOrEmpty, againstField('session_duration_limit'), validSessionDuration],
+            exclude_until:          [allowEmpty, validDate, afterToday, validExclusionDate, toDateString],
+            // these two are combined.
+            timeout_until_duration: [allowEmptyUnless('timeout_until'), validDate],
+            timeout_until:          [allowEmpty, validTime],
+        };
+        return schema;
+    }
+
+    function validate(data) {
+        var info = validate_object(data, getSchema());
+        info.errors = info.errors.filter(function(e) {
+            return e.err !== EMPTY;
+        });
+        return info;
+    }
+
+    function detectChange(a, b) {
+        var k_a = Object.keys(a);
+        var k_b = Object.keys(b);
+        if (k_a.length !== k_b.length) {
+            return true;
+        }
+        for (var i = 0; i < k_a.length; i++) {
+            var key = k_a[i];
+            if (a[key] !== b[key]) return true;
+        }
+        return false;
+    }
+
+    function submitForm(e, validation) {
+        e.preventDefault();
+        e.stopPropagation();
+        clearError();
+        var info = validateForm(validation);
+        if (!info.valid) return;
+        if (!info.changed) {
+            showFormMessage('You did not change anything.', false);
+            return;
+        }
+        if ('timeout_until' in info.data || 'exclude_until' in info.data) {
+            if (!hasConfirmed()) return;
+        }
+        setRequest(info.data);
+    }
+
+    function validateForm(validation) {
+        var values = validation.values;
+        var valid = validation.errors.length === 0;
+
+        // Do the date time addition and validation here
+        var date = values.timeout_until_duration;
+        if (date) {
+            // If we've gotten this far then there must *not*
+            // be an error with the timeout date.
+            var time = values.timeout_until || moment.duration({});
+            var six_weeks = moment().add(moment.duration(6, 'weeks'));
+            date = date.add(time);
+            var res = dv.first(date, [
+                afterToday,
+                dv.check(function(d) { return !d.isAfter(six_weeks); }, 'Exclude time cannot be more than 6 weeks'),
+            ]);
+            if (!res.isOk) {
+                ValidationUI.draw(
+                    'input[name=timeout_until_duration]',
+                    res.value[0]
+                );
+                valid = false;
+            } else {
+                delete values.timeout_until_duration;
+                values.timeout_until = date.unix();
+            }
+        }
+
+        return {
+            data: values,
+            valid: valid,
+            changed: valid && detectChange(validation.raw, fields),
+        };
+    }
+
+    function hasConfirmed() {
         var message = 'When you click "Ok" you will be excluded from trading on the site until the selected date.';
         return window.confirm(text.localize(message));
-    };
-
-    var validateExclusionDate = function(exclusion_date, opt) {
-        var errMsg;
-        var date = moment(exclusion_date, 'YYYY-MM-DD');
-
-        if (!date.isValid()) {
-            errMsg = 'Please select a valid date';
-        } else {
-            if (opt) {
-                var value = $('#' + timeID).val().trim();
-                if (value.length > 0) {
-                    if (!validateExclusionTime(value)) return false;
-                    date.add(moment(value, 'HH:mm'));
-                }
-                time = date.unix();
-            }
-
-            var six_month_date = moment().add(moment.duration(6, 'months'));
-            var five_year_date = moment().add(moment.duration(5, 'years'));
-            var six_weeks_date = moment().add(moment.duration(6, 'weeks'));
-
-            if (date.isBefore(moment())) {
-                errMsg = 'Exclude time must be after today.';
-            } else if (!opt) {
-                errMsg = (
-                    (date.isBefore(six_month_date) && 'Exclude time cannot be less than 6 months.')    ||
-                    (date.isAfter(five_year_date)  && 'Exclude time cannot be for more than 5 years.') ||
-                    null
-                );
-            } else {
-                if (date.isAfter(six_weeks_date)) {
-                    errMsg = 'Exclude time cannot be more than 6 weeks.';
-                }
-            }
-        }
-
-        if (errMsg) {
-            showError((opt ? timeDateID : dateID), errMsg);
-            return false;
-        }
-        return true;
-    };
-
-    var validateExclusionTime = function(exclusion_time) {
-        var time = moment(exclusion_time, 'HH:mm');
-        if (!time.isValid() || !/^\d{2}\:\d{2}$/.test(time._i)) {
-            showError(timeID, 'Please select a valid time');
-            return false;
-        }
-        return true;
-    };
+    }
 
     // -----------------------------
     // ----- Message Functions -----
     // -----------------------------
-    var showPageError = function(errMsg, hideForm) {
+    function showPageError(errMsg, hideForm) {
         $('#errorMsg').html(errMsg).removeClass(hiddenClass);
         if (hideForm) {
             $form.addClass(hiddenClass);
         }
-    };
+    }
 
-    var showError = function(fieldID, errMsg) {
-        $('#' + fieldID).parent().append($('<p/>', {class: errorClass, text: text.localize(errMsg)}));
-        if (fieldID === timeID) {
-            $('#' + fieldID).attr('style', 'margin-bottom:10px');
-        }
-        isValid = false;
-    };
-
-    var clearError = function(fieldID) {
-        $(fieldID ? fieldID : '#frmSelfExclusion p.' + errorClass).remove();
+    function clearError() {
         $('#errorMsg').html('').addClass(hiddenClass);
         $('#formMessage').html('');
-    };
+    }
 
-    var showFormMessage = function(msg, isSuccess) {
-        var $elmID = $('#formMessage');
-        $elmID
+    function showFormMessage(msg, isSuccess) {
+        $('#formMessage')
             .attr('class', isSuccess ? 'success-msg' : errorClass)
             .html(isSuccess ? '<ul class="checked"><li>' + text.localize(msg) + '</li></ul>' : text.localize(msg))
             .css('display', 'block')
             .delay(5000)
             .fadeOut(1000);
-    };
-
+    }
 
     return {
         init: init,
