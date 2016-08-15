@@ -49,6 +49,7 @@ var TradePage = (function(){
     $('#tab_explanation a').text(text.localize('Explanation'));
     $('#tab_last_digit a').text(text.localize('Last Digit Stats'));
     $('#tab_asset_index a').text(text.localize('Asset Index'));
+    $('#tab_trading_times a').text(text.localize('Trading Times'));
   };
 
   var reload = function() {

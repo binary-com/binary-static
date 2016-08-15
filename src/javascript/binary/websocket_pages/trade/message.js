@@ -16,6 +16,7 @@ var Message = (function () {
             if (type === 'active_symbols') {
                 processActiveSymbols(response);
                 AssetIndexUI.setActiveSymbols(response);
+                MarketTimesUI.setActiveSymbols(response);
             } else if (type === 'contracts_for') {
                 processContract(response);
                 window.contracts_for = response;
@@ -40,6 +41,7 @@ var Message = (function () {
                 AssetIndexUI.setAssetIndex(response);
             } else if (type === 'trading_times'){
                 processTradingTimes(response);
+                MarketTimesUI.setTradingTimes(response);
             } else if (type === 'statement'){
                 StatementWS.statementHandler(response);
             } else if (type === 'profit_table'){

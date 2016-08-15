@@ -20,6 +20,9 @@
                 <li id="tab_asset_index" class="tm-li">
                     <a href="#" class="tm-a"></a>
                 </li>
+                <li id="tab_trading_times" class="tm-li last">
+                    <a href="#" class="tm-a"></a>
+                </li>
             </ul>
         </div>
         <div class="tab-content-wrapper" id="analysis_content">
@@ -36,6 +39,7 @@
             <div id="tab_last_digit-content" class="toggle-content invisible"></div>
             <div id="tab_japan_info-content" class="toggle-content invisible"></div>
             <div id="tab_asset_index-content" class="toggle-content invisible">[% INCLUDE resources/asset_indexws.html.tt %]</div>
+            <div id="tab_trading_times-content" class="toggle-content invisible">[% INCLUDE resources/market_timesws.html.tt %]</div>
         </div>
     </div>
 </div>

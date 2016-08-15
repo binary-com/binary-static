@@ -8,14 +8,15 @@ var MarketTimesUI = (function() {
         tradingTimes;
 
     var init = function() {
-        Content.populate();
         $date      = $('#trading-date');
         $container = $('#trading-times');
         columns    = ['Asset', 'Opens', 'Closes', 'Settles', 'UpcomingEvents'];
-        activeSymbols = null;
-        tradingTimes = null;
+
+        if ($container.contents().length) return;
+
+        Content.populate();
         showLoadingImage($container);
-        MarketTimesData.sendRequest('today', true);
+        if (!tradingTimes) MarketTimesData.sendRequest('today', !activeSymbols);
 
         $date.val(moment.utc(new Date()).format('YYYY-MM-DD'));
         $date.datepicker({minDate: 0, maxDate: '+1y', dateFormat: 'yy-mm-dd', autoSize: true});

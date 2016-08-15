@@ -89,6 +89,9 @@ var TradingAnalysis = (function() {
             case 'tab_asset_index':
                 AssetIndexUI.init();
                 break;
+            case 'tab_trading_times':
+                MarketTimesUI.init();
+                break;
             default:
                 var url = currentLink.getAttribute('href') ;
                 $.ajax({
