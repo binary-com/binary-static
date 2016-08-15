@@ -71,7 +71,7 @@ acronym, abbr {
     cursor: help;
 }
 
-span.button.button-disabled button.button-disabled {
+span.button.button-disabled button.button-disabled, span a.button-disabled button {
     color: $COLOR_GRAY_SHADE;
     background: $COLOR_LIGHT_GRAY;
     cursor: default;

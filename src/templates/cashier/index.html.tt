@@ -67,7 +67,7 @@
                     <div class="gr-5 gr-12-m">
                         <div class="gr-padding-10 by_client_type client_real with_login_cookies invisible gr-parent">
                             <a class="pjaxload button button_large by_client_type client_real with_login_cookies invisible" href="[% request.url_for('/cashier/forwardws#deposit') %]">
-                                <span>[% l('Deposit') %]</span>
+                                <span class="deposit">[% l('Deposit') %]</span>
                             </a>
                         </div>
                         <div class="gr-padding-10 by_client_type client_real with_login_cookies invisible">
@@ -107,7 +107,7 @@
             <div class="gr-5 gr-12-m">
                 <div class="gr-padding-10 gr-parent">
                     <a class="pjaxload button button_large by_client_type client_real with_login_cookies invisible" href="[% request.url_for('/cashier/payment_agent_listws') %]">
-                        <span>[% l('Deposit') %]</span>
+                        <span class="deposit">[% l('Deposit') %]</span>
                     </a>
                 </div>
                 <div class="gr-padding-10">

@@ -520,9 +520,7 @@ Menu.prototype = {
         var trading = japanese_client() ? $('#main-navigation-jptrading') : $('#main-navigation-trading');
         if(active) {
             active.addClass('active');
-            if(page.client.is_logged_in) {
-                this.show_main_menu();
-            } else if (trading.is(active)) {
+            if(page.client.is_logged_in || trading.is(active)) {
                 this.show_main_menu();
             }
         } else {
@@ -687,14 +685,9 @@ Header.prototype = {
         });
         var loginid_select = '';
         var loginid_array = this.user.loginid_array;
-        var default_loginid = false;
         for (var i=0; i < loginid_array.length; i++) {
             var login = loginid_array[i];
             if (login.disabled) continue;
-
-            if (curr_loginid == this.client.loginid) {
-                default_loginid = true;
-            }
 
             var curr_id = login.id;
             var type = 'Virtual';
@@ -703,13 +696,14 @@ Header.prototype = {
                 else if (login.non_financial) type = 'Gaming';
                 else                          type = 'Real';
             }
+            type = type + ' Account';
 
-            if (default_loginid) {
-                default_loginid = false;
-                $('.account-type').html(type);
-                $('.account-id').html(curr_loginid);
+            // default account
+            if (curr_id == this.client.loginid) {
+                $('.account-type').html(text.localize(type));
+                $('.account-id').html(curr_id);
             } else {
-                loginid_select += '<a href="#" value="' + curr_loginid + '"><li>' + loginid_text + '<div>' + curr_loginid + '</div>' +
+                loginid_select += '<a href="#" value="' + curr_id + '"><li>' + text.localize(type) + '<div>' + curr_id + '</div>' +
                                   '</li></a>' + '<div class="separator-line-thin-gray"></div>';
             }
         }
@@ -814,7 +808,7 @@ Header.prototype = {
         page.client.clear_storage_values();
         LocalStore.remove('client.tokens');
         LocalStore.set('reality_check.ack', 0);
-        sessionStorage.removeItem('withdrawal_locked');
+        sessionStorage.removeItem('client_status');
         var cookies = ['login', 'loginid', 'loginid_list', 'email', 'settings', 'reality_check', 'affiliate_token', 'affiliate_tracking', 'residence', 'allowed_markets'];
         var domains = [
             '.' + document.domain.split('.').slice(-2).join('.'),
@@ -1025,6 +1019,7 @@ Page.prototype = {
         this.record_affiliate_exposure();
         this.contents.on_load();
         this.on_click_acc_transfer();
+        this.show_authenticate_message();
         if (CommonData.getLoginToken()) {
             ViewBalance.init();
         } else {
@@ -1075,7 +1070,7 @@ Page.prototype = {
         // cleaning the previous values
         page.client.clear_storage_values();
         sessionStorage.setItem('active_tab', '1');
-        sessionStorage.removeItem('withdrawal_locked');
+        sessionStorage.removeItem('client_status');
         // set cookies: loginid, login
         page.client.set_cookie('loginid', loginid);
         page.client.set_cookie('login'  , token);
@@ -1168,5 +1163,62 @@ Page.prototype = {
             $('#regulatory-text').removeClass('gr-9 gr-7-p')
                                  .addClass('gr-12 gr-12-p');
         }
+    },
+    // type can take one or more params, separated by comma
+    // e.g. one param = 'authenticated', two params = 'unwelcome, authenticated'
+    // match_type can be `any` `all`, by default is `any`
+    // should be passed when more than one param in type.
+    // `any` will return true if any of the params in type are found in client status
+    // `all` will return true if all of the params in type are found in client status
+    client_status_detected: function(type, match_type) {
+        var client_status = sessionStorage.getItem('client_status');
+        if (!client_status || client_status.length === 0) return false;
+        var require_auth = /\,/.test(type) ? type.split(', ') : [type];
+        client_status = client_status.split(',');
+        match_type = match_type && match_type === 'all' ? 'all' : 'any';
+        for (var i = 0; i < require_auth.length; i++) {
+            if(match_type === 'any' && ($.inArray(require_auth[i], client_status) > -1)) return true;
+            if(match_type === 'all' && ($.inArray(require_auth[i], client_status) < 0)) return false;
+        }
+        return (match_type === 'any' ? false : true);
+    },
+    show_authenticate_message: function(status) {
+        if ($('.authenticate-msg').length !== 0) return;
+
+        var p = $('<p/>', {class: 'authenticate-msg notice-msg'}),
+            span;
+
+        if (this.client_status_detected('authenticated, unwelcome', 'all')) {
+            span = $('<span/>', {html: template(text.localize('Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact [_1].', ['<a href="mailto:support@binary.com">support@binary.com</a>']))});
+            $('#content > .container').prepend(p.append(span));
+        }
+        else if (this.client_status_detected('unwelcome')) {
+            span = this.general_authentication_message();
+            $('#content > .container').prepend(p.append(span));
+        }
+        else if (this.client_status_detected('authenticated, cashier_locked', 'all') && /cashier\.html/.test(window.location.href)) {
+            span = $('<span/>', {html: template(text.localize('Deposits and withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.', ['<a href="mailto:support@binary.com">support@binary.com</a>']))});
+            $('#content > .container').prepend(p.append(span));
+        }
+        else if (this.client_status_detected('cashier_locked') && /cashier\.html/.test(window.location.href)) {
+            span = this.general_authentication_message();
+            $('#content > .container').prepend(p.append(span));
+        }
+        else if (this.client_status_detected('authenticated, withdrawal_locked', 'all') && /cashier\.html/.test(window.location.href)) {
+            span = $('<span/>', {html: template(text.localize('Withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.', ['<a href="mailto:support@binary.com">support@binary.com</a>']))});
+            $('#content > .container').prepend(p.append(span));
+        }
+        else if (this.client_status_detected('withdrawal_locked') && /cashier\.html/.test(window.location.href)) {
+            span = this.general_authentication_message();
+            $('#content > .container').prepend(p.append(span));
+        }
+        return;
+    },
+    general_authentication_message: function() {
+        var span = $('<span/>', {html: template(text.localize('To authenticate your account, kindly email the following to [_1]:', ['<a href="mailto:support@binary.com">support@binary.com</a>']))});
+        var ul = $('<ul/>', {class: 'checked'});
+        var li1 = $('<li/>', {text: text.localize('A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date.')});
+        var li2 = $('<li/>', {text: text.localize('A scanned copy of a utility bill or bank statement (no more than 3 months old)')});
+        return span.append(ul.append(li1, li2));
     },
 };
