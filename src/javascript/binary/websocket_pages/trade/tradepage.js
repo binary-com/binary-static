@@ -3,10 +3,11 @@ var TradePage = (function(){
   var trading_page = 0, events_initialized = 0;
 
   var onLoad = function(){
-    if(japanese_client() && /\/trading\.html/i.test(window.location.pathname)) {
+    var is_japanese_client = japanese_client();
+    if(is_japanese_client && /\/trading\.html/i.test(window.location.pathname)) {
         window.location.href = page.url.url_for('jptrading');
         return;
-    } else if (!japanese_client() && /jp/.test(window.location.pathname)) {
+    } else if (!is_japanese_client && /jp/.test(window.location.pathname)) {
         window.location.href = page.url.url_for('trading');
         return;
     }
@@ -48,7 +49,9 @@ var TradePage = (function(){
     $('#tab_graph a').text(text.localize('Chart'));
     $('#tab_explanation a').text(text.localize('Explanation'));
     $('#tab_last_digit a').text(text.localize('Last Digit Stats'));
-    $('#tab_asset_index a').text(text.localize('Asset Index'));
+    if(!is_japanese_client) {
+      $('#tab_asset_index').removeClass('invisible').find('a').text(text.localize('Asset Index'));
+    }
     $('#tab_trading_times a').text(text.localize('Trading Times'));
   };
 
