@@ -42,8 +42,7 @@ var StatementUI = (function(){
         allData.push(statement_data);
         var creditDebitType = (parseFloat(statement_data.amount) >= 0) ? "profit" : "loss";
 
-        var $statementRow = Table.createFlexTableRow([statement_data.date, (statement_data.app_id ? ('<span data-balloon="' + text.localize('Contract purchased with app ID') + ': ' + statement_data.app_id + '">') : '') + statement_data.ref  +
-    (statement_data.app_id ? '</span>' : ''), isNaN(statement_data.payout) ? '-' : statement_data.payout, statement_data.action, '', statement_data.amount, statement_data.balance, ''], columns, "data");
+        var $statementRow = Table.createFlexTableRow([statement_data.date, add_app_id_name(statement_data.app_id, statement_data.app_name, statement_data.ref), isNaN(statement_data.payout) ? '-' : statement_data.payout, statement_data.action, '', statement_data.amount, statement_data.balance, ''], columns, "data");
         $statementRow.children(".credit").addClass(creditDebitType);
         $statementRow.children(".date").addClass("pre");
         $statementRow.children(".desc").html(statement_data.desc + "<br>");

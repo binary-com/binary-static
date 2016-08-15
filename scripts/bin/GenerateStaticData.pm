@@ -189,7 +189,8 @@ sub _texts {
         push @texts, localize('Jump To');
         push @texts, localize('Date');
         push @texts, localize('Ref.');
-        push @texts, localize('Contract purchased with app ID');
+        push @texts, localize('Transaction performed by');
+        push @texts, localize('App ID');
         push @texts, localize('Action');
         push @texts, localize('Sell');
         push @texts, localize('Buy');
@@ -381,6 +382,7 @@ sub _texts {
 
         #strings for change_passwordws
         push @texts, localize('Old password is wrong.');
+        push @texts, localize('New password is same as old password.');
 
         #strings for profittable and statement
         push @texts, localize('Your account has no trading activity.');

@@ -9,7 +9,7 @@
                   <div class="gr-row gr-row-align-center">
                       <div class=" signup-box gr-8 gr-10-p gr-12-m gr-no-gutter secondary-bg-color">
                           <div class="gr-row gr-padding-10">
-                              <div class="gr-7 gr-10-m gr-centered"><input autocomplete="off" id="email" maxlength="50" placeholder="[% l('Enter your email') %]"></input></div>
+                              <div class="gr-7 gr-10-m gr-centered"><input autocomplete="off" name="email" id="email" maxlength="50" placeholder="[% l('Enter your email') %]"></input></div>
                               <div class="gr-5 gr-8-m gr-centered"><button class="blue-button" id="btn-verify-email" type="submit">[% l('Create Free Account') %]</button></div>
                               <span class="gr-12 gr-padding-10 error-msg hint color-white center-text" id="signup_error" style="display:none"></span>
                           </div>
