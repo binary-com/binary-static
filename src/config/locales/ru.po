@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-11 04:22+0000\n"
+"PO-Revision-Date: 2016-08-12 07:20+0000\n"
 "Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
@@ -1043,6 +1043,9 @@ msgstr "На сайте %1 могут работать все желающие, 
 msgid "Anyone who has potential to grow or increase traffic to %1"
 msgstr "Любой человек, обладающий потенциалом роста или способный увеличить траффик для %1"
 
+msgid "App ID"
+msgstr ""
+
 msgid "Applications"
 msgstr "Приложения"
 
@@ -1440,10 +1443,8 @@ msgstr "Отправляя Компании предложения или ины
 msgid "By the 15th of every month, you will receive the commission earned during the previous calendar month."
 msgstr "В районе 15 числа каждого месяца Вы получите свою комиссию за каждый предыдущий календарный месяц."
 
-#, fuzzy
-#| msgid "By using or interacting with the website, you are consenting to the use of Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
 msgid "By using or interacting with the website, you are consenting to the use of the Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
-msgstr "Используя сайт и работая на нем, Вы соглашаетесь с использованием функции User ID от Google Analytics, которая позволяет Google идентифицировать номер Вашего счета %1 (например, VRTC1234, CR1234, MF1234 и т.д.). Никакая другая личная информация кроме номера Вашего счета, или другие данные, которые могут быть с ним связаны, не передаются и не сохраняются в Google при помощи функции User ID от Google Analytics."
+msgstr "Используя сайт и работая на нем, Вы соглашаетесь с использованием функции User ID от Google Analytics, которая позволяет Google идентифицировать номер Вашего счета на %1 (например, VRTC1234, CR1234, MF1234 и т.д.). Никакая другая личная информация, кроме номера Вашего счета, или другие данные, которые могут быть с ним связаны, не передаются и не сохраняются в Google при помощи функции User ID от Google Analytics."
 
 msgid "Can I become an affiliate even if I don't have a website?"
 msgstr "Могу ли я стать партнером, если у меня нет собственного сайта?"
@@ -1783,9 +1784,6 @@ msgstr "Выплата по контрактам будет определять
 
 msgid "Contract period"
 msgstr "Период контракта"
-
-msgid "Contract purchased with app ID"
-msgstr "Контракт куплен через ID приложения"
 
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "Контракт будет продан по цене, действующей на момент получения запроса нашими серверами. Эта цена может отличаться от указанной в настоящее время."
@@ -4773,9 +4771,6 @@ msgstr "Примите во внимание, что Вы можете изме�
 msgid "Please provide us with the following information, after retrieving the verification token from your email:"
 msgstr "Просим предоставить следующую информацию после получения проверочного ключа на электронный адрес:"
 
-msgid "Please re-enter your email"
-msgstr "Пожалуйста, повторно введите Ваш эл.адрес"
-
 msgid "Please refer to the following commission plan."
 msgstr "Просим обратить внимание на следующий план комиссий."
 
@@ -6427,6 +6422,11 @@ msgstr "TradingView"
 msgid "Transact in"
 msgstr "Совершать транзакции в"
 
+#, fuzzy
+#| msgid "Your transaction reference is"
+msgid "Transaction performed by"
+msgstr "Ссылка на Вашу сделку"
+
 msgid "Transfer"
 msgstr "Трансфер"
 
@@ -7207,10 +7207,8 @@ msgstr "Вы можете кэшировать Контент на срок до
 msgid "You may choose to contact us to close your account held with the Company. Your account may be closed if you do not have any open trade positions and if you have complied with the requested \"Know Your Client\" procedures to enable you to withdraw any pending funds in your account."
 msgstr "Вы можете связаться с нами, чтобы закрыть свой счет в Компании. Ваша учетная запись может быть закрыта, если у вас нет каких-либо открытых торговых позиций, а также если Вы прошли необходимую процедуру идентификации личности владельца счета, чтобы снять оставшиеся на Вашем счете средства."
 
-#, fuzzy
-#| msgid "You may communicate with us through this website, by email or, exceptionally, by post. Details can be found in the Contact Us page."
 msgid "You may communicate with us through this website by means of Live Chat, e-mail, phone or, exceptionally, by post. Details can be found in the Contact Us page."
-msgstr "Вы можете общаться с нами через данный сайт, по электронной почте или, в отдельных случаях, по обычной почте. Более подробную информацию можно найти на странице Контакты."
+msgstr "Вы можете общаться с нами на данном сайте: через чат, по электронной почте, телефону или, в отдельных случаях, по обычной почте. Более подробную информацию можно найти на странице Контакты."
 
 msgid "You may develop Applications using the %1 API as soon as you register an Application and you agree to follow these Terms."
 msgstr "Вы можете разрабатывать Приложения, используя API %1, как только Вы зарегистрируете Приложение и согласитесь соблюдать данные Правила."
@@ -8387,6 +8385,12 @@ msgstr "Согласие с правилами и условиями"
 
 msgid "Trading with MetaTrader 5"
 msgstr "Торговля на MetaTrader 5"
+
+#~ msgid "Contract purchased with app ID"
+#~ msgstr "Контракт куплен через ID приложения"
+
+#~ msgid "Please re-enter your email"
+#~ msgstr "Пожалуйста, повторно введите Ваш эл.адрес"
 
 #~ msgid "Instant"
 #~ msgstr "Мгновенно"

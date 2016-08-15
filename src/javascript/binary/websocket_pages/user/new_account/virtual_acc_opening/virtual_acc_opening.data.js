@@ -1,13 +1,13 @@
 var VirtualAccOpeningData = (function(){
     "use strict";
 
-    function getDetails(password, residence, verificationCode){
+    function newAccount(config) {
         var req = {
-                    new_account_virtual: 1,
-                    client_password: password,
-                    residence: residence,
-                    verification_code: verificationCode
-                };
+            new_account_virtual: 1,
+            client_password: password,
+            residence: residence,
+            verification_code: verificationCode
+        };
 
         // Add TrafficSource parameters
         // NOTE: following lines can be uncommented (Re-check property names)
@@ -24,7 +24,43 @@ var VirtualAccOpeningData = (function(){
         BinarySocket.send(req);
     }
 
+    function getSchema() {
+        var V2 = ValidateV2;
+        var err = Content.localize().textPasswordsNotMatching;
+        function matches(value, data) {
+            return value === data.password;
+        }
+        return {
+            residence: [V2.required],
+            password:  [V2.password],
+            'verification-code': [V2.required, V2.token],
+            'r-password': [dv.check(matches, err)],
+        };
+    }
+
+    function handler(config) {
+        return function(msg) {
+            var response = JSON.parse(msg.data);
+            if (!response) return;
+
+            var type  = response.msg_type;
+            var error = response.error;
+
+            if (type === 'new_account_virtual' && !error) return config.success(response);
+            if (type !== 'error' && !error) return;
+
+            switch (error.code) {
+                case 'InvalidToken':    return config.invalidToken(response);
+                case 'duplicate email': return config.duplicateEmail(response);
+                case 'PasswordError':   return config.passwordError(response);
+                default: return;
+            }
+        };
+    }
+
     return {
-        getDetails: getDetails
+        newAccount: newAccount,
+        getSchema:  getSchema,
+        handler:    handler,
     };
 }());
