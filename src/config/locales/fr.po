@@ -1094,6 +1094,9 @@ msgstr "Toute personne âgée de plus de 18 ans [ayant lu et accepté les condit
 msgid "Anyone who has potential to grow or increase traffic to %1"
 msgstr "Toute personne en mesure d'augmenter le traffic vers %1"
 
+msgid "App ID"
+msgstr ""
+
 msgid "Applications"
 msgstr "Applications"
 
@@ -1860,11 +1863,6 @@ msgstr "Les paiements de contrats seront déterminés par la Société en réfé
 
 msgid "Contract period"
 msgstr "Durée du contrat"
-
-#, fuzzy
-#| msgid "Contract Purchase"
-msgid "Contract purchased with app ID"
-msgstr "Achat de contrat"
 
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "Le contrat sera vendu au prix de marché en vigueur à réception de la demande par nos serveurs. Ce prix peut différer du prix indiqué."
@@ -5034,9 +5032,6 @@ msgstr "Veuillez noter que vous pouvez actualiser vos informations personnelles 
 msgid "Please provide us with the following information, after retrieving the verification token from your email:"
 msgstr "Veuillez nous fournir les informations suivantes:"
 
-msgid "Please re-enter your email"
-msgstr "Veuillez saisir à nouveau votre adresse e-mail."
-
 msgid "Please refer to the following commission plan."
 msgstr "Veuillez vous référer au plan de commissionnement suivant."
 
@@ -6820,6 +6815,11 @@ msgstr "TradingView"
 
 msgid "Transact in"
 msgstr "Faire la transaction en"
+
+#, fuzzy
+#| msgid "Your transaction reference is"
+msgid "Transaction performed by"
+msgstr "Votre référence de transaction est"
 
 msgid "Transfer"
 msgstr "Transfert"
@@ -8983,6 +8983,14 @@ msgstr "Conditions générales"
 
 msgid "Trading with MetaTrader 5"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Contract Purchase"
+#~ msgid "Contract purchased with app ID"
+#~ msgstr "Achat de contrat"
+
+#~ msgid "Please re-enter your email"
+#~ msgstr "Veuillez saisir à nouveau votre adresse e-mail."
 
 #~ msgid "Instant"
 #~ msgstr "Instant"
