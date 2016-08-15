@@ -337,11 +337,14 @@ var TradingEvents = (function () {
             });
         }
 
+        var locked;
+
         /*
          * attach event to purchase buttons to buy the current contract
          */
         // using function expression form here as it used inside for loop
-        var purchaseContractEvent = function () {
+        $('.purchase_button').on('click', function () {
+            if (locked) return;
             console.log('clicked!');
             var id = this.getAttribute('data-purchase-id'),
                 askPrice = this.getAttribute('data-ask-price');
@@ -358,13 +361,12 @@ var TradingEvents = (function () {
                 }
             }
             if (id && askPrice) {
+                locked = true;
                 BinarySocket.send(params);
                 Price.incrFormId();
                 processForgetProposals();
             }
-        };
-
-        $('.purchase_button').one('click', purchaseContractEvent);
+        });
 
         /*
          * attach event to close icon for purchase container
@@ -375,8 +377,8 @@ var TradingEvents = (function () {
                 document.getElementById('contract_confirmation_container').style.display = 'none';
                 document.getElementById('contracts_list').style.display = 'flex';
                 processPriceRequest();
+                locked = false;
             }
-            $('.purchase_button').one('click', purchaseContractEvent);
         });
 
         /*
