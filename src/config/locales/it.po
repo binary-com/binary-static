@@ -1037,6 +1037,9 @@ msgstr "Possono negoziare sulla piattaforma di %1 tutti i soggetti maggiorenni [
 msgid "Anyone who has potential to grow or increase traffic to %1"
 msgstr "Chiunque abbia il potenziale per accrescere o aumentare il traffico di %1"
 
+msgid "App ID"
+msgstr ""
+
 msgid "Applications"
 msgstr "Applicazioni"
 
@@ -1775,9 +1778,6 @@ msgstr "I payout del contratto saranno determinati dalla Società in base ai val
 
 msgid "Contract period"
 msgstr "Periodo del contratto"
-
-msgid "Contract purchased with app ID"
-msgstr "Contratto acquistato con l'ID dell'app"
 
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "Il Contratto verrá venduto al prezzo di mercato prevalente nel momento in cui i nostri server ricevono la richiesta. Tale prezzo può differire rispetto al prezzo indicato."
@@ -4770,9 +4770,6 @@ msgstr "Puoi aggiornare in qualsiasi momento le tue informazioni personali entra
 msgid "Please provide us with the following information, after retrieving the verification token from your email:"
 msgstr "Dopo aver recuperato il token di verifica dalla tua email, forniscici le seguenti informazioni:"
 
-msgid "Please re-enter your email"
-msgstr "Reinserisci il tuo indirizzo email"
-
 msgid "Please refer to the following commission plan."
 msgstr "Fai riferimento al seguente prospetto delle commissioni."
 
@@ -6427,6 +6424,11 @@ msgstr "TradingView"
 
 msgid "Transact in"
 msgstr "Tratta in"
+
+#, fuzzy
+#| msgid "Your transaction reference is"
+msgid "Transaction performed by"
+msgstr "Il tuo riferimento per le transazioni è"
 
 msgid "Transfer"
 msgstr "Trasferisci"
@@ -8400,6 +8402,12 @@ msgstr "Approvazione dei termini e delle condizioni"
 
 msgid "Trading with MetaTrader 5"
 msgstr "Fare trading con MetaTrader 5"
+
+#~ msgid "Contract purchased with app ID"
+#~ msgstr "Contratto acquistato con l'ID dell'app"
+
+#~ msgid "Please re-enter your email"
+#~ msgstr "Reinserisci il tuo indirizzo email"
 
 #~ msgid "Instant"
 #~ msgstr "Istante"
