@@ -1043,6 +1043,9 @@ msgstr "Siapa saja yang berumur dari 18 tahun keatas [dan sudah membaca dan meny
 msgid "Anyone who has potential to grow or increase traffic to %1"
 msgstr "Siapapun yang memiliki potensi atau ingin meningkatkan lalu lintas ke %1"
 
+msgid "App ID"
+msgstr ""
+
 msgid "Applications"
 msgstr "Aplikasi"
 
@@ -1783,9 +1786,6 @@ msgstr "Hasil kontrak akan ditentukan oleh Perusahaan dengan mengacu pada nilai 
 
 msgid "Contract period"
 msgstr "Masa kontrak"
-
-msgid "Contract purchased with app ID"
-msgstr "Pembelian kontrak dengan app ID"
 
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "Kontrak akan dijual pada harga pasar terkini ketika permintaan diterima oleh server kami. Harga ini mungkin berbeda dari harga yang diindikasikan."
@@ -4775,9 +4775,6 @@ msgstr "Anda dapat melakukan perbaikan data dengan mengakses bagian \"Pengaturan
 msgid "Please provide us with the following information, after retrieving the verification token from your email:"
 msgstr "Mohon sediakan informasi berikut setelah menerima token verifikasi dari email Anda:"
 
-msgid "Please re-enter your email"
-msgstr "Masukkan ulang email Anda"
-
 msgid "Please refer to the following commission plan."
 msgstr "Silakan lihat rencana komisi berikut ini."
 
@@ -6429,6 +6426,11 @@ msgstr "TradingView"
 
 msgid "Transact in"
 msgstr "Bertransaksi di"
+
+#, fuzzy
+#| msgid "Your transaction reference is"
+msgid "Transaction performed by"
+msgstr "Referensi transaksi Anda adalah"
 
 msgid "Transfer"
 msgstr "Transfer"
@@ -8390,6 +8392,12 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 msgid "Trading with MetaTrader 5"
 msgstr "Trading menggunakan MetaTrader 5"
+
+#~ msgid "Contract purchased with app ID"
+#~ msgstr "Pembelian kontrak dengan app ID"
+
+#~ msgid "Please re-enter your email"
+#~ msgstr "Masukkan ulang email Anda"
 
 #~ msgid "Instant"
 #~ msgstr "Langsung"

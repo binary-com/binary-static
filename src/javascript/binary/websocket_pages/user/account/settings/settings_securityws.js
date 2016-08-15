@@ -15,9 +15,6 @@ var SecurityWS = (function() {
     function clearErrors() {
         $("#SecuritySuccessMsg").text('');
         $("#invalidinputfound").text('');
-        $('#errorcashierlockpassword1').contents().filter(function () {
-            return this.nodeType === Node.TEXT_NODE;
-        }).remove();
     }
 
     function checkIsVirtual() {
@@ -92,33 +89,33 @@ var SecurityWS = (function() {
             setupRepeatPasswordForm();
         }
         current_state = locked ? STATE.LOCKED : STATE.UNLOCKED;
-        $form.show();
-        $form.find('button').click(function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            if (!validateForm()) {
-                return false;
-            }
-            current_state = locked ? STATE.TRY_UNLOCK : STATE.TRY_LOCK;
-            makeAuthRequest();
+        bind_validation.simple($form[0], {
+            schema: locked ? {} : getUnlockedSchema(),
+            submit: function(e, info) {
+                e.preventDefault();
+                e.stopPropagation();
+                if (info.errors.length > 0) {
+                    return;
+                }
+                current_state = locked ?
+                    STATE.TRY_UNLOCK :
+                    STATE.TRY_LOCK;
+                makeAuthRequest();
+            },
         });
+        $form.show();
     }
 
-    function validateForm() {
-        clearErrors();
-        var pwd1 = $("#cashierlockpassword1").val(),
-            pwd2 = $("#cashierlockpassword2").val(),
-            errorPassword  = $('#errorcashierlockpassword1')[0],
-            errorRPassword = $('#errorcashierlockpassword2')[0],
-            checkRepeat = current_state === STATE.UNLOCKED;
-
-        if (checkRepeat && !Validate.errorMessagePassword(pwd1, pwd2, errorPassword, errorRPassword)) {
-            return false;
-        } else if (!/[ -~]{6,25}/.test(pwd1)) {
-            errorPassword.textContent = Content.errorMessage('min', 6);
-            return false;
+    function getUnlockedSchema() {
+        var err = Content.localize().textPasswordsNotMatching;
+        function matches(value, data) {
+            return value === data.cashierlockpassword1;
         }
-        return true;
+
+        return {
+            cashierlockpassword1: [ValidateV2.password],
+            cashierlockpassword2: [dv.check(matches, err)],
+        };
     }
 
     function makeTryingRequest() {

@@ -1044,6 +1044,9 @@ msgstr "Cualquier persona mayor de 18 años [que haya leído y aceptado los tér
 msgid "Anyone who has potential to grow or increase traffic to %1"
 msgstr "Cualquiera que tiene potencial para aumentar o incrementar el tráfico a %1"
 
+msgid "App ID"
+msgstr ""
+
 msgid "Applications"
 msgstr "Aplicaciones"
 
@@ -1784,9 +1787,6 @@ msgstr "Los pagos de los contratos serán determinados por la Compañía en refe
 
 msgid "Contract period"
 msgstr "Período del contrato"
-
-msgid "Contract purchased with app ID"
-msgstr "Contrato adquirido con app ID"
 
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "El contrato se venderá al precio vigente en el mercado en el momento de la recepción de la solicitud de venta por nuestros servidores. Este precio puede ser diferente del precio indicado."
@@ -4771,9 +4771,6 @@ msgstr "Tenga en cuenta que puede actualizar su información personal en cualqui
 msgid "Please provide us with the following information, after retrieving the verification token from your email:"
 msgstr "Por favor proporcione la siguiente información, después de conseguir el token de verificación de su correo electrónico:"
 
-msgid "Please re-enter your email"
-msgstr "Por favor, vuelva a introducir su correo electrónico"
-
 msgid "Please refer to the following commission plan."
 msgstr "Por favor, consulte el siguiente plan de comisiones."
 
@@ -6424,6 +6421,11 @@ msgstr "VistaOperativa (TradingView)"
 
 msgid "Transact in"
 msgstr "Transacción en"
+
+#, fuzzy
+#| msgid "Your transaction reference is"
+msgid "Transaction performed by"
+msgstr "La referencia de su transacción es"
 
 msgid "Transfer"
 msgstr "Transferencia"
@@ -8387,6 +8389,12 @@ msgstr "Acuerdo con los términos y condiciones"
 
 msgid "Trading with MetaTrader 5"
 msgstr "Comerciando con MetaTrader 5"
+
+#~ msgid "Contract purchased with app ID"
+#~ msgstr "Contrato adquirido con app ID"
+
+#~ msgid "Please re-enter your email"
+#~ msgstr "Por favor, vuelva a introducir su correo electrónico"
 
 #~ msgid "Instant"
 #~ msgstr "Instantáneo"

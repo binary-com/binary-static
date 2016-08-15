@@ -1043,6 +1043,9 @@ msgstr "Bất kỳ ai trên 18 tuổi [đã đọc và đồng ý với những
 msgid "Anyone who has potential to grow or increase traffic to %1"
 msgstr "Bất kì ai người mà có tiềm năng lớn mạnh và phát triển mạng lưới với %1"
 
+msgid "App ID"
+msgstr ""
+
 msgid "Applications"
 msgstr "Các ứng dụng"
 
@@ -1781,9 +1784,6 @@ msgstr "Công ty sẽ quyết định mức tiền thưởng của hợp đ
 
 msgid "Contract period"
 msgstr "Thời hạn hợp đồng"
-
-msgid "Contract purchased with app ID"
-msgstr "Hợp đồng đã thanh toán với app ID"
 
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "Hợp đồng sẽ được bán ở giá thị trường hiện hành khi máy chủ nhận được yêu cầu. Giá này có thể khác với giá đã được chỉ định."
@@ -4772,9 +4772,6 @@ msgstr "Vui lòng chú ý rằng bạn có thể cập nhật thông tin
 msgid "Please provide us with the following information, after retrieving the verification token from your email:"
 msgstr "Vui lòng cung cấp cho chúng tôi những thông tin sau, sau khi đã tìm được token xác minh từ email của bạn:"
 
-msgid "Please re-enter your email"
-msgstr "Vui lòng nhập lại email của bạn"
-
 msgid "Please refer to the following commission plan."
 msgstr "Vui lòng tham khảo dự thảo tiền hoa hồng ở dưới đây."
 
@@ -6423,6 +6420,11 @@ msgstr "Xem Giao dịch (TradingView)"
 
 msgid "Transact in"
 msgstr "Giao dịch trong"
+
+#, fuzzy
+#| msgid "Your transaction reference is"
+msgid "Transaction performed by"
+msgstr "Tham chiếu giao dịch của bạn là"
 
 msgid "Transfer"
 msgstr "Chuyển khoản"
@@ -8386,6 +8388,12 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 
 msgid "Trading with MetaTrader 5"
 msgstr "Kinh doanh với MetaTrader 5"
+
+#~ msgid "Contract purchased with app ID"
+#~ msgstr "Hợp đồng đã thanh toán với app ID"
+
+#~ msgid "Please re-enter your email"
+#~ msgstr "Vui lòng nhập lại email của bạn"
 
 #~ msgid "Instant"
 #~ msgstr "Tức thì"
