@@ -15,9 +15,10 @@ var PortfolioWS =  (function() {
     };
 
     var createPortfolioRow = function(data) {
+        var tooltip_string = getAppDetails(data.app_id, data.transaction_id);
         $('#portfolio-body').append(
             $('<tr class="flex-tr" id="' + data.contract_id + '">' +
-                '<td class="ref flex-tr-child">' + '<span value="' + data.app_id + '"' + data.transaction_id + '</span>' +
+                '<td class="ref flex-tr-child">' + '<span class="' + data.app_id + '">' + (tooltip_string ? tooltip_string : data.transaction_id) + '</span>' +
                 '</td>' +
                 '<td class="payout flex-tr-child">' + data.currency + ' <strong>' + data.payout + '</strong></td>' +
                 '<td class="details flex-tr-child">' + data.longcode + '</td>' +
@@ -166,6 +167,9 @@ var PortfolioWS =  (function() {
                         break;
                     case "proposal_open_contract":
                         PortfolioWS.updateIndicative(response);
+                        break;
+                    case "get_app_details":
+                        updateAppDetails(response);
                         break;
                     default:
                         // msg_type is not what PortfolioWS handles, so ignore it.

@@ -9,6 +9,8 @@ var StatementData = (function(){
                     var type = response.msg_type;
                     if (type === 'statement'){
                         StatementWS.statementHandler(response);
+                    } else if (type === 'get_app_details') {
+                        updateAppDetails(response);
                     }
                 }
             }

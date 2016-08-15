@@ -10,6 +10,8 @@ var ProfitTableData = (function(){
                     if (type === 'profit_table'){
                         ProfitTableWS.profitTableHandler(response);
                         showLocalTimeOnHover('td.buy-date,td.sell-date');
+                    } else if (type === 'get_app_details') {
+                        updateAppDetails(response);
                     }
                 }
             }
