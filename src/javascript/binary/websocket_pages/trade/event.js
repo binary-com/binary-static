@@ -340,8 +340,7 @@ var TradingEvents = (function () {
         /*
          * attach event to purchase buttons to buy the current contract
          */
-        // using function expression form here as it used inside for loop
-        $('.purchase_button').on('click', function () {
+        $('.purchase_button').on('click dblclick', function () {
             if ($('#confirmation_message_container').is(':visible')) return;
             console.log('clicked!');
             var id = this.getAttribute('data-purchase-id'),
