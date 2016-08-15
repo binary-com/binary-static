@@ -342,6 +342,7 @@ var TradingEvents = (function () {
          */
         // using function expression form here as it used inside for loop
         var purchaseContractEvent = function () {
+            console.log('clicked!');
             var id = this.getAttribute('data-purchase-id'),
                 askPrice = this.getAttribute('data-ask-price');
 
@@ -363,27 +364,20 @@ var TradingEvents = (function () {
             }
         };
 
-        var purchaseButtonElements = document.getElementsByClassName('purchase_button');
-        if (purchaseButtonElements) {
-            for (var j = 0, l = purchaseButtonElements.length; j < l; j++) {
-                purchaseButtonElements[j].addEventListener('click', purchaseContractEvent);
-            }
-        }
+        $('.purchase_button').one('click', purchaseContractEvent);
 
         /*
          * attach event to close icon for purchase container
          */
-        var closeContainerElement = document.getElementById('close_confirmation_container');
-        if (closeContainerElement) {
-            closeContainerElement.addEventListener('click', function (e) {
-                if (e.target) {
-                    e.preventDefault();
-                    document.getElementById('contract_confirmation_container').style.display = 'none';
-                    document.getElementById('contracts_list').style.display = 'flex';
-                    processPriceRequest();
-                }
-            });
-        }
+        $('#close_confirmation_container').on('click', function (e) {
+            if (e.target) {
+                e.preventDefault();
+                document.getElementById('contract_confirmation_container').style.display = 'none';
+                document.getElementById('contracts_list').style.display = 'flex';
+                processPriceRequest();
+            }
+            $('.purchase_button').one('click', purchaseContractEvent);
+        });
 
         /*
          * attach an event to change in barrier
