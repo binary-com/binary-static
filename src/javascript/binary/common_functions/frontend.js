@@ -252,7 +252,7 @@ function appendTextValueChild(element, text, value, disabled){
     option.text = text;
     option.value = value;
     if (disabled === 'disabled') {
-      option.setAttribute('disabled', disabled);
+      option.setAttribute('disabled', 'disabled');
     }
     element.appendChild(option);
     return;
@@ -366,10 +366,10 @@ function handle_residence_state_ws(){
               title.value = settings.salutation;
               fname.value = settings.first_name;
               lname.value = settings.last_name;
-              var day = moment.utc(settings.date_of_birth * 1000).format('DD');
-              dobdd.value = /^0/.test(day) ? day.replace('0','') : day;
-              dobmm.value = moment.utc(settings.date_of_birth * 1000).format('MM');
-              dobyy.value = moment.utc(settings.date_of_birth * 1000).format('YYYY');
+              var date = moment.utc(settings.date_of_birth * 1000);
+              dobdd.value = date.format('DD').replace(/^0/, '');
+              dobmm.value = date.format('MM');
+              dobyy.value = date.format('YYYY');
               for (i = 0; i < inputs.length; i++) {
                   inputs[i].disabled = true;
               }
@@ -454,13 +454,12 @@ function handle_residence_state_ws(){
             residence_list = response.residence_list;
         if (residence_list.length > 0){
           for (i = 0; i < residence_list.length; i++) {
-            if (residence_list[i].disabled  && select) {
-              appendTextValueChild(select, residence_list[i].text, residence_list[i].value, 'disabled');
-            } else if (select) {
-              appendTextValueChild(select, residence_list[i].text, residence_list[i].value);
+            var residence = residence_list[i];
+            if (select) {
+              appendTextValueChild(select, residence.text, residence.value, residence.disabled ? 'disabled' : undefined);
             }
-            if (phoneElement && phoneElement.value === '' && residence_list[i].phone_idd && residenceValue === residence_list[i].value){
-              phoneElement.value = '+' + residence_list[i].phone_idd;
+            if (phoneElement && phoneElement.value === '' && residence.phone_idd && residenceValue === residence.value) {
+              phoneElement.value = '+' + residence.phone_idd;
             }
           }
           if (residenceValue && select){
