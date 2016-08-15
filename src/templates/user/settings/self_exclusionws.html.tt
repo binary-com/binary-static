@@ -15,7 +15,7 @@
 					<label for="max_balance">[% l('Maximum account cash balance') %]</label>
 				</div>
 				<div class="gr-8">
-					<input id="max_balance" type="text" maxlength="20" />
+					<input name="max_balance" id="max_balance" type="text" maxlength="20" />
 					<div class="hint">[% l('Once this limit is reached, you may no longer deposit.') %]</div>
 				</div>
 			</div>
@@ -25,7 +25,7 @@
 					<label for="max_turnover">[% l('Daily turnover limit') %]</label>
 				</div>
 				<div class="gr-8">
-					<input id="max_turnover" type="text" maxlength="20" />
+					<input name="max_turnover" id="max_turnover" type="text" maxlength="20" />
 					<div class="hint">[% l('Maximum aggregate contract purchases per day.') %]</div>
 				</div>
 			</div>
@@ -35,7 +35,7 @@
 					<label for="max_losses">[% l('Daily limit on losses') %]</label>
 				</div>
 				<div class="gr-8">
-					<input id="max_losses" type="text" maxlength="20" />
+					<input name="max_losses" id="max_losses" type="text" maxlength="20" />
 					<div class="hint">[% l('Maximum aggregate loss per day.') %]</div>
 				</div>
 			</div>
@@ -45,7 +45,7 @@
 					<label for="max_7day_turnover">[% l('7-day turnover limit') %]</label>
 				</div>
 				<div class="gr-8">
-					<input id="max_7day_turnover" type="text" maxlength="20" />
+					<input name="max_7day_turnover" id="max_7day_turnover" type="text" maxlength="20" />
 					<div class="hint">[% l('Maximum aggregate contract purchases over a 7-day period.') %]</div>
 				</div>
 			</div>
@@ -55,7 +55,7 @@
 					<label for="max_7day_losses">[% l('7-day limit on losses') %] </label>
 				</div>
 				<div class="gr-8">
-					<input id="max_7day_losses" type="text" maxlength="20" />
+					<input name="max_7day_losses" id="max_7day_losses" type="text" maxlength="20" />
 					<div class="hint">[% l('Maximum aggregate loss over a 7-day period.') %]</div>
 				</div>
 			</div>
@@ -65,7 +65,7 @@
 					<label for="max_30day_turnover">[% l('30-day turnover limit ') %]</label>
 				</div>
 				<div class="gr-8">
-					<input id="max_30day_turnover" type="text" maxlength="20" />
+					<input name="max_30day_turnover" id="max_30day_turnover" type="text" maxlength="20" />
 					<div class="hint">[% l('Maximum aggregate contract purchases over a 30-day period.') %]</div>
 				</div>
 			</div>
@@ -75,7 +75,7 @@
 					<label for="max_30day_losses">[% l('30-day limit on losses') %]</label>
 				</div>
 				<div class="gr-8">
-					<input id="max_30day_losses" type="text" maxlength="20" />
+					<input name="max_30day_losses" id="max_30day_losses" type="text" maxlength="20" />
 					<div class="hint">[% l('Maximum aggregate loss over a 30-day period.') %]</div>
 				</div>
 			</div>
@@ -85,7 +85,7 @@
 					<label for="max_open_bets">[% l('Maximum number of open positions') %]</label>
 				</div>
 				<div class="gr-8">
-					<input id="max_open_bets" type="text" maxlength="4" />
+					<input name="max_open_bets" id="max_open_bets" type="text" maxlength="4" />
 				</div>
 			</div>
 
@@ -94,7 +94,7 @@
 					<label for="session_duration_limit">[% l('Session duration limit, in minutes') %]</label>
 				</div>
 				<div class="gr-8">
-					<input id="session_duration_limit" type="text" maxlength="5" />
+					<input name="session_duration_limit" id="session_duration_limit" type="text" maxlength="5" />
 					<div class="hint">[% l('You will be automatically logged out after such time.') %]</div>
 				</div>
 			</div>
@@ -104,11 +104,11 @@
 					<label for="timeout_until">[% l('Time out until') %]</label>
 				</div>
                 <div class="gr-3">
-					<input id="timeout_until_duration" type="text" maxlength="10" />
+					<input name="timeout_until_duration" id="timeout_until_duration" type="text" maxlength="10" />
 					<div class="hint nowrap">[% l('Please enter date in the format YYYY-MM-DD HH:mm (local time).') %]</div>
 				</div>
 				<div class="gr-5">
-                    <input id="timeout_until" type="text" maxlength="8" />
+                    <input name="timeout_until" id="timeout_until" type="text" maxlength="8" />
 				</div>
 			</div>
 
@@ -117,7 +117,7 @@
 					<label for="exclude_until">[% l('Exclude me from the website until') %]</label>
 				</div>
 				<div class="gr-8">
-					<input id="exclude_until" type="text" maxlength="10" />
+					<input name="exclude_until" id="exclude_until" type="text" maxlength="10" />
 					<div class="hint">[% l('Please enter date in the format YYYY-MM-DD.') %]</div>
 				</div>
 			</div>

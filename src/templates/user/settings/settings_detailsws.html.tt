@@ -89,7 +89,7 @@
                     <label for="Address1">[% l('First line of home address') %]</label>
                 </div>
                 <div class="gr-8">
-                    <input type="text" id="Address1" maxlength="70" />
+                    <input name='address_line_1' type="text" id="Address1" maxlength="70" />
                 </div>
             </div>
 
@@ -98,7 +98,7 @@
                     <label for="Address2">[% l('Second line of home address') %]</label>
                 </div>
                 <div class="gr-8">
-                    <input type="text" id="Address2" maxlength="70" />
+                    <input name='address_line_2' type="text" id="Address2" maxlength="70" />
                 </div>
             </div>
 
@@ -107,7 +107,7 @@
                     <label for="City">[% l('Town/City') %]</label>
                 </div>
                 <div class="gr-8">
-                    <input type="text" id="City" maxlength="35" />
+                    <input name='address_city' type="text" id="City" maxlength="35" />
                 </div>
             </div>
 
@@ -116,7 +116,7 @@
                     <label for="State">[% l('State/Province') %]</label>
                 </div>
                 <div class="gr-8">
-                    <select id="State"></select>
+                    <select name='address_state' id="State"></select>
                 </div>
             </div>
 
@@ -125,7 +125,7 @@
                     <label for="Postcode">[% l('Postal Code / ZIP') %]</label>
                 </div>
                 <div class="gr-8">
-                    <input type="text" id="Postcode" maxlength="20" />
+                    <input name='address_postcode' type="text" id="Postcode" maxlength="20" />
                 </div>
             </div>
 
@@ -134,7 +134,7 @@
                     <label for="Phone">[% l('Telephone') %]</label>
                 </div>
                 <div class="gr-8">
-                    <input type="text" id="Phone" maxlength="35" />
+                    <input name='phone' type="text" id="Phone" maxlength="35" />
                 </div>
             </div>
         </fieldset>
@@ -396,7 +396,7 @@
                     <label>[% l('Amount of above assets') %]</label>
                 </div>
                 <div class="gr-8">
-                    <input class="text" id="HedgeAssetAmount" maxlength="20" type="text"></input>
+                    <input class="text" name="hedge_asset_amount" id="HedgeAssetAmount" maxlength="20" type="text"></input>
                 </div>
             </div>
         </fieldset>

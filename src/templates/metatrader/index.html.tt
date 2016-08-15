@@ -11,7 +11,7 @@
         <p>[% l('[_1]’s <a href="[_2]">Volatility Indices</a> are now available 24/7 on MetaTrader 5. Additional assets will be released very soon.', website_name, request.url_for('get-started/volidx-markets')) %]</p>
     </div>
     <div class="gr-6 gr-12-m">
-        <img class="responsive" src="[% request.url_for('images/pages/metatrader/metatrader-5.jpg') %]" alt="" />
+        <img class="responsive" src="[% request.url_for('images/pages/metatrader/mt5-imac.svg') %]" alt="" />
         <div class="gr-row gr-padding-10">
             <div class="gr-6 gr-12-m">
                 <p class="align-end">
