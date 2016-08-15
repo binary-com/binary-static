@@ -1,11 +1,15 @@
-function currency_to_symbol(currency) {
-    return currency_to_symbol.map[currency] || currency;
+function format_money(currency, amount) {
+    var p = format_money.map[currency];
+    if (!p) {
+        return currency + ' ' + amount;
+    }
+    return p + amount;
 }
 
 // Taken with modifications from:
 //    https://github.com/bengourley/currency-symbol-map/blob/master/map.js
 // When we need to handle more currencies please look there.
-currency_to_symbol.map = {
+format_money.map = {
     "USD": "$",
     "GBP": "£",
     "AUD": "A$",
@@ -13,5 +17,7 @@ currency_to_symbol.map = {
 };
 
 if (typeof module !== 'undefined') {
-    module.exports = currency_to_symbol;
+    module.exports = {
+        format_money: format_money,
+    };
 }
