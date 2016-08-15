@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-15 05:25+0000\n"
-"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
+"PO-Revision-Date: 2016-08-15 18:36+0000\n"
+"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -1052,7 +1052,7 @@ msgid "Anyone who has potential to grow or increase traffic to %1"
 msgstr "当社へのトラフィックの成長または増加に貢献が見込める方"
 
 msgid "App ID"
-msgstr ""
+msgstr "アプリケーション ID"
 
 msgid "Applications"
 msgstr "アプリケーション"
@@ -1464,12 +1464,13 @@ msgstr "Binary.comに関するご提案またはその他ご意見を当社に�
 msgid "By the 15th of every month, you will receive the commission earned during the previous calendar month."
 msgstr "毎月15日までに前月分の報酬を振込まさせて頂きます。"
 
-#, fuzzy
 #| msgid "By using or interacting with the website, you are consenting to the use of Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
 msgid "By using or interacting with the website, you are consenting to the use of the Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
 msgstr ""
 "当サイトのご使用または当サイトと利用して通信されることで、GoogleアナリティクスのユーザーID機能の使用に同意いただくものとします。\n"
-"Googleにお客様の%1ログインID(例： VRTC1234, CR1234, MF1234, など)をキャプチャすることを許可するものです。個人情報などを除いた、GoogleによってリンクされるBinary.comのログインIDまたはその他データなどは、GoogleアナリティクスユーザーID機能を有効にすることで、Googleに共有または開示されます。"
+"Googleにお客様の%1ログインID(例： VRTC1234, CR1234, MF1234, など)をキャプチャすることを許可するものです。個人情報な"
+"どを除いた、GoogleによってリンクされるBinary.comのログインIDまたはその他データなどは、GoogleアナリティクスユーザーID機能を有効に"
+"することで、Googleに共有または開示されます。"
 
 msgid "Can I become an affiliate even if I don't have a website?"
 msgstr "ウェブサイトを持っていなくても、アフィリエイトプログラムに参加することはできますか？"
@@ -6605,10 +6606,9 @@ msgstr "TradingView"
 msgid "Transact in"
 msgstr "選択通貨"
 
-#, fuzzy
 #| msgid "Your transaction reference is"
 msgid "Transaction performed by"
-msgstr "トレード参照番号："
+msgstr "xxxによって取引が実行されました"
 
 msgid "Transfer"
 msgstr "送金"
@@ -7416,10 +7416,11 @@ msgstr "%1 APIを介したコンテンツのリクエストから24時間まで�
 msgid "You may choose to contact us to close your account held with the Company. Your account may be closed if you do not have any open trade positions and if you have complied with the requested \"Know Your Client\" procedures to enable you to withdraw any pending funds in your account."
 msgstr "当社で開設されたご口座を閉鎖するには当社までご連絡いただく必要がございます。お客さまのご口座にオープンポジションのご契約がなく、保留中の資金を出金できるようにする「Know Your Client」の手順に応じられている場合にご口座の閉鎖が可能です。"
 
-#, fuzzy
 #| msgid "You may communicate with us through this website, by email or, exceptionally, by post. Details can be found in the Contact Us page."
 msgid "You may communicate with us through this website by means of Live Chat, e-mail, phone or, exceptionally, by post. Details can be found in the Contact Us page."
-msgstr "当社はお客さまと当サイトを通して、またはメール、例外として郵送でご連絡させていただきます。詳細はお問い合わせページにてご確認いただけます。"
+msgstr ""
+"当社はお客さまへ当サイトを通して、ライブチャット、メール、電話 または "
+"例外として郵送でご連絡させていただきます。詳細はお問い合わせページにてご確認いただけます。"
 
 msgid "You may develop Applications using the %1 API as soon as you register an Application and you agree to follow these Terms."
 msgstr "アプリケーションを登録して、これらの規約に同意されるとすぐに%1 APIを利用してアプリケーション開発ができます。"
