@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Chinese (China) (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-10 01:25+0000\n"
+"PO-Revision-Date: 2016-08-14 01:55+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
@@ -1039,6 +1039,9 @@ msgstr "任何年满 18 岁 [已阅读并同意 %1 条款和条件]，且非居�
 msgid "Anyone who has potential to grow or increase traffic to %1"
 msgstr "任何有潜力让 %1 增长或提高流量的人士"
 
+msgid "App ID"
+msgstr ""
+
 msgid "Applications"
 msgstr "应用程序"
 
@@ -1436,8 +1439,6 @@ msgstr "通过对公司提交%1的API相关建议或其他反馈意见 （简称
 msgid "By the 15th of every month, you will receive the commission earned during the previous calendar month."
 msgstr "每月15号前您将收到上一个月的佣金收入。"
 
-#, fuzzy
-#| msgid "By using or interacting with the website, you are consenting to the use of Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
 msgid "By using or interacting with the website, you are consenting to the use of the Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
 msgstr "通过使用网站或与网站交互，您同意使用Google分析用户 ID 功能，允许Google捕获您的 %1 登录 ID （例如，VRTC1234、 CR1234、 MF1234 等）。启用Google分析用户 ID 功能后，除 Binary.com 登录 ID 或其他可以让Google链接到此类信息的数据以外，将没有任何其他个人身份信息与Google共享或披露给Google。"
 
@@ -1781,9 +1782,6 @@ msgstr "公司将参考本网站与合约标的指数有关的每日最高价/�
 
 msgid "Contract period"
 msgstr "合约期间"
-
-msgid "Contract purchased with app ID"
-msgstr "使用应用程序ID买入合约"
 
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "合约将在我们服务器收到请求时，以当时的市场价格卖出。此价格可能与报价有差异。"
@@ -4770,9 +4768,6 @@ msgstr "请注意，您可以随时登录，在“设置”中更新您的个人
 msgid "Please provide us with the following information, after retrieving the verification token from your email:"
 msgstr "从电邮领取令牌后请提供下列信息："
 
-msgid "Please re-enter your email"
-msgstr "请重新输入您的电邮地址"
-
 msgid "Please refer to the following commission plan."
 msgstr "请参考下列佣金计划。"
 
@@ -6424,6 +6419,11 @@ msgstr "交易查看(TradingView)"
 msgid "Transact in"
 msgstr "交易"
 
+#, fuzzy
+#| msgid "Your transaction reference is"
+msgid "Transaction performed by"
+msgstr "您的交易参考号是"
+
 msgid "Transfer"
 msgstr "转账"
 
@@ -7206,10 +7206,8 @@ msgstr "通过%1 API对指定内容提出请求后可保留该内容缓存为时
 msgid "You may choose to contact us to close your account held with the Company. Your account may be closed if you do not have any open trade positions and if you have complied with the requested \"Know Your Client\" procedures to enable you to withdraw any pending funds in your account."
 msgstr "您可以和我们联系，关闭在本公司开立的账户。如您没有任何未平仓交易头寸，且满足“了解您的客户“的要求，可以提取账户内的待领款项，您的账户就可以关闭。"
 
-#, fuzzy
-#| msgid "You may communicate with us through this website, by email or, exceptionally, by post. Details can be found in the Contact Us page."
 msgid "You may communicate with us through this website by means of Live Chat, e-mail, phone or, exceptionally, by post. Details can be found in the Contact Us page."
-msgstr "您可以通过此网站、电子邮件，或在特殊情况下以邮寄方式和我们沟通。详情请参阅“联系我们”页面。"
+msgstr "您可以通过此网站以实时聊天、电子邮件、电话或在特殊情况下以邮寄方式和我们沟通。详情请参阅“联系我们”页面。"
 
 msgid "You may develop Applications using the %1 API as soon as you register an Application and you agree to follow these Terms."
 msgstr "一旦您注册好应用程序并同意遵守这些条款即可使用%1 API开发应用程序。"
@@ -8387,6 +8385,12 @@ msgstr "条款和条件审批"
 
 msgid "Trading with MetaTrader 5"
 msgstr "使用MetaTrader 5进行交易"
+
+#~ msgid "Contract purchased with app ID"
+#~ msgstr "使用应用程序ID买入合约"
+
+#~ msgid "Please re-enter your email"
+#~ msgstr "请重新输入您的电邮地址"
 
 #~ msgid "Instant"
 #~ msgstr "即时"

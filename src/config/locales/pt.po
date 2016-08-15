@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Portuguese (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-09 03:27+0000\n"
+"PO-Revision-Date: 2016-08-12 09:13+0000\n"
 "Last-Translator: Alcino Jorge <alcino@binary.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/binary/static/pt/>\n"
 "Language: pt\n"
@@ -272,10 +272,8 @@ msgstr "A extraordinária história da %1"
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "Os sistemas %1 já processam mais de 1 milhão de transações/dia (incluindo contas virtuais)."
 
-#, fuzzy
-#| msgid "%1’s Volatility Indices are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
 msgid "%1’s <a href=\"%2\">Volatility Indices</a> are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
-msgstr "Os índices Volatility da %1 estão agora disponíveis 24/7 na MetaTrader 5. Ativos adicionais serão lançados muito em breve."
+msgstr "Os <a href=\"%2\">índices Volatility</a> da %1 estão agora disponíveis 24/7 na MetaTrader 5. Ativos adicionais serão lançados muito em breve."
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(duração mínima, por exemplo um mínimo de 15 segundos)min"
@@ -1043,6 +1041,9 @@ msgstr "Qualquer pessoa com idade superior a 18 anos (que tenha lido e aceitado 
 msgid "Anyone who has potential to grow or increase traffic to %1"
 msgstr "Qualquer pessoa ou entidade que tenha o potencial de aumentar o tráfego para a %1"
 
+msgid "App ID"
+msgstr ""
+
 msgid "Applications"
 msgstr "Aplicativos"
 
@@ -1441,7 +1442,7 @@ msgid "By the 15th of every month, you will receive the commission earned during
 msgstr "Até ao dia 15 de cada mês, você receberá as comissões ganhas durante o mês do calendário anterior."
 
 msgid "By using or interacting with the website, you are consenting to the use of the Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
-msgstr ""
+msgstr "Ao usar ou interagir com o site, você está dando o seu consentimento para o uso do recurso de ID de usuário do Google Analytics, que permite à Google capturar a sua ID de login %1 (por exemplo, VRTC1234, CR1234, MF1234, etc.). Nenhuma outra informação pessoalmente identificável, para além da sua ID de login Binary.com, ou qualquer outro dado que poderá ser associado a tais informações pela Google, será compartilhada com ou divulgada à Google ao ativar o recurso de ID de usuário do Google Analytics."
 
 msgid "Can I become an affiliate even if I don't have a website?"
 msgstr "Posso tornar-me afiliado mesmo não tendo um site?"
@@ -1781,9 +1782,6 @@ msgstr "Os pagamentos dos contratos devem ser determinados pela empresa com base
 
 msgid "Contract period"
 msgstr "Período do contrato"
-
-msgid "Contract purchased with app ID"
-msgstr "Contrato adquirido com aplicativo ID"
 
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "O contrato será vendido ao preço prevalecente do mercado no momento em que o pedido for recebido pelos nossos servidores. Esse preço pode ser diferente do preço indicado."
@@ -3946,10 +3944,8 @@ msgstr "Bloquear Caixa"
 msgid "Log in"
 msgstr "Conectar-se"
 
-#, fuzzy
-#| msgid "Log into the application using your MetaTrader account number (e.g., 1124) and your MetaTrader account password."
 msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
-msgstr "Conecte-se ao aplicativo usando o seu número de conta MetaTrader (por exemplo: 1124) e a senha da sua conta MetaTrader."
+msgstr "Conecte-se ao aplicativo usando o seu número de conta MetaTrader e a senha da sua conta MetaTrader."
 
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "Faça o login na sua conta de afiliado da %1 e clique em: Finanças &rarr; Instruções de pagamento."
@@ -4188,8 +4184,6 @@ msgstr "Mês"
 msgid "More benefits"
 msgstr "Mais benefícios"
 
-#, fuzzy
-#| msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with ‘best execution’. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
 msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with 'best execution'. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
 msgstr "Mais especificamente, quando celebramos um negócio de opções binárias com você (cada negócio representando um contrato), temos o dever de lhe proporcionar a \"melhor execução\". Melhor execução significa que teremos de tomar medidas razoáveis para obter o melhor resultado possível para você, ao executarmos uma das suas ordens. Este documento fornece um resumo da nossa política de melhor execução."
 
@@ -4771,9 +4765,6 @@ msgstr "Por favor, note que pode atualizar as suas informações pessoais a qual
 
 msgid "Please provide us with the following information, after retrieving the verification token from your email:"
 msgstr "Forneça-nos as seguintes informações, após a obtenção do token de verificação do seu e-mail:"
-
-msgid "Please re-enter your email"
-msgstr "Redigite o seu endereço de e-mail"
 
 msgid "Please refer to the following commission plan."
 msgstr "Consulte o seguinte plano de comissões."
@@ -6310,15 +6301,11 @@ msgstr "Para alterar o seu nome, data de nascimento, país de residência ou end
 msgid "To create a Real account for MetaTrader, you need to authenticate your Binary account:"
 msgstr "Para criar uma conta real na MetaTrader, você precisa autenticar a sua conta BInary:"
 
-#, fuzzy
-#| msgid "To create a Real account for MetaTrader, <a href=\"%1\">upgrade to Bianry Real account</a>."
 msgid "To create a real account for MetaTrader, <a href=\"%1\">upgrade to %2 real money account</a>."
-msgstr "Para criar uma conta real na MetaTrader, <a href=\"%1\">faça a atualização para uma conta real Binary</a>."
+msgstr "Para criar uma conta real na MetaTrader, <a href=\"%1\">faça a atualização para uma conta de dinheiro real %2</a>."
 
-#, fuzzy
-#| msgid "To create a Real account for MetaTrader, switch to your Binary Real account."
 msgid "To create a real account for MetaTrader, switch to your %1 real money account."
-msgstr "Para criar uma conta real na MetaTrader, mude para a sua conta real Binary."
+msgstr "Para criar uma conta real na MetaTrader, mude para a sua conta de dinheiro real %1."
 
 msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
 msgstr "Para depositar ou retirar fundos da sua conta real na MetaTrader, mude para a sua conta real Binary.com."
@@ -6427,6 +6414,11 @@ msgstr "TradingView"
 
 msgid "Transact in"
 msgstr "Transacionar em"
+
+#, fuzzy
+#| msgid "Your transaction reference is"
+msgid "Transaction performed by"
+msgstr "A referência da sua transação é"
 
 msgid "Transfer"
 msgstr "Transferir"
@@ -7212,10 +7204,8 @@ msgstr "Você poder guardar o Conteúdo em memória cache durante até 24 horas 
 msgid "You may choose to contact us to close your account held with the Company. Your account may be closed if you do not have any open trade positions and if you have complied with the requested \"Know Your Client\" procedures to enable you to withdraw any pending funds in your account."
 msgstr "Você pode optar por nos contatar para encerrar a sua conta mantida na nossa Empresa. A sua conta pode ser encerrada se não houver nenhumas posições de negociação em aberto e se você tiver cumprido os procedimentos \"Conhecer o Cliente\" solicitados para habilitá-lo a retirar quaisquer fundos pendentes na sua conta."
 
-#, fuzzy
-#| msgid "You may communicate with us through this website, by email or, exceptionally, by post. Details can be found in the Contact Us page."
 msgid "You may communicate with us through this website by means of Live Chat, e-mail, phone or, exceptionally, by post. Details can be found in the Contact Us page."
-msgstr "Você pode comunicar conosco através deste website, por e-mail ou, excepcionalmente, por correio. As informações de contato encontram-se na página Contate-nos."
+msgstr "Você pode comunicar conosco através deste website, por meio de chat ao vivo, e-mail, telefone ou, excepcionalmente, por correio. As informações de contato encontram-se na página Contate-nos."
 
 msgid "You may develop Applications using the %1 API as soon as you register an Application and you agree to follow these Terms."
 msgstr "Você pode desenvolver aplicativos usando a API %1 assim que registre um aplicativo e aceite seguir estes termos."
@@ -8392,6 +8382,12 @@ msgstr "Aprovação dos termos e condições"
 
 msgid "Trading with MetaTrader 5"
 msgstr "Negociando com a MetaTrader 5"
+
+#~ msgid "Contract purchased with app ID"
+#~ msgstr "Contrato adquirido com aplicativo ID"
+
+#~ msgid "Please re-enter your email"
+#~ msgstr "Redigite o seu endereço de e-mail"
 
 #~ msgid "Instant"
 #~ msgstr "Instantâneo"
