@@ -17,10 +17,7 @@ var PortfolioWS =  (function() {
     var createPortfolioRow = function(data) {
         $('#portfolio-body').append(
             $('<tr class="flex-tr" id="' + data.contract_id + '">' +
-                '<td class="ref flex-tr-child">' +
-                    (data.app_id ? ('<span data-balloon="' + text.localize('Contract purchased with app ID') + ': ' + data.app_id + '">') : '') +
-                        data.transaction_id +
-                    (data.app_id ? '</span>' : '') +
+                '<td class="ref flex-tr-child">' + add_app_id_name(data.app_id, data.app_name, data.transaction_id) +
                 '</td>' +
                 '<td class="payout flex-tr-child">' + data.currency + ' <strong>' + data.payout + '</strong></td>' +
                 '<td class="details flex-tr-child">' + data.longcode + '</td>' +
@@ -97,13 +94,9 @@ var PortfolioWS =  (function() {
     };
 
     var updateIndicative = function(data) {
-        if(data.hasOwnProperty('error')) {
-            if(data.error.code !== 'AlreadySubscribed') {
-                errorMessage(data.error.message);
-            }
+        if(data.hasOwnProperty('error') || !values) {
             return;
         }
-        if(!values) return;
 
         var proposal = Portfolio.getProposalOpenContract(data.proposal_open_contract);
         // force to sell the expired contract, in order to remove from portfolio

@@ -1164,6 +1164,9 @@ msgstr "أي شخص فوق سن 18عاما [من الذين قرأوا وواف�
 msgid "Anyone who has potential to grow or increase traffic to %1"
 msgstr "أي شخص يمكنه زيادة حركة المرور إلى موقع %1"
 
+msgid "App ID"
+msgstr ""
+
 msgid "Applications"
 msgstr "تطبيقات"
 
@@ -1950,11 +1953,6 @@ msgstr "تحدد الشركة عوائد العقد بالرجوع إلى الق
 
 msgid "Contract period"
 msgstr "فترة العقد"
-
-#, fuzzy
-#| msgid "Contract Purchase"
-msgid "Contract purchased with app ID"
-msgstr "شراء العقد"
 
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "سيتم بيع العقد بسعر السوق السائد عندما تتلقى خوادمنا الطلب. قد يختلف هذا السعر عن السعر المشار إليه."
@@ -5059,9 +5057,6 @@ msgstr "يرجى ملاحظة أنك تستطيع تحديث بياناتك ال
 msgid "Please provide us with the following information, after retrieving the verification token from your email:"
 msgstr "يرجى تزويدنا بالمعلومات التالية، بعد استرداد الرمز المميز من البريد الإلكتروني الخاص بك:"
 
-msgid "Please re-enter your email"
-msgstr "الرجاء إعادة إدخال بريدك الإلكتروني."
-
 msgid "Please refer to the following commission plan."
 msgstr "يرجى الاطلاع على خطة العمولة التالية."
 
@@ -6817,6 +6812,11 @@ msgstr "تريدينج فيو (TradingView)"
 
 msgid "Transact in"
 msgstr "تعامل في"
+
+#, fuzzy
+#| msgid "Your transaction reference is"
+msgid "Transaction performed by"
+msgstr "الرقم المرجعي لمعاملتك هو"
 
 msgid "Transfer"
 msgstr "تحويل"
@@ -8992,6 +8992,14 @@ msgstr "لموافقة على الشروط والأحكام"
 
 msgid "Trading with MetaTrader 5"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Contract Purchase"
+#~ msgid "Contract purchased with app ID"
+#~ msgstr "شراء العقد"
+
+#~ msgid "Please re-enter your email"
+#~ msgstr "الرجاء إعادة إدخال بريدك الإلكتروني."
 
 #~ msgid "Instant"
 #~ msgstr "فوري"
