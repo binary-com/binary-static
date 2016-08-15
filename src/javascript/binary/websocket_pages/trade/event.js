@@ -337,14 +337,12 @@ var TradingEvents = (function () {
             });
         }
 
-        var locked;
-
         /*
          * attach event to purchase buttons to buy the current contract
          */
         // using function expression form here as it used inside for loop
         $('.purchase_button').on('click', function () {
-            if (locked) return;
+            if ($('#confirmation_message_container').is(':visible')) return;
             console.log('clicked!');
             var id = this.getAttribute('data-purchase-id'),
                 askPrice = this.getAttribute('data-ask-price');
@@ -361,7 +359,6 @@ var TradingEvents = (function () {
                 }
             }
             if (id && askPrice) {
-                locked = true;
                 BinarySocket.send(params);
                 Price.incrFormId();
                 processForgetProposals();
@@ -377,7 +374,6 @@ var TradingEvents = (function () {
                 document.getElementById('contract_confirmation_container').style.display = 'none';
                 document.getElementById('contracts_list').style.display = 'flex';
                 processPriceRequest();
-                locked = false;
             }
         });
 
