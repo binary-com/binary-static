@@ -1,9 +1,9 @@
 function format_money(currency, amount) {
-    var p = format_money.map[currency];
-    if (!p) {
+    var symbol = format_money.map[currency];
+    if (symbol === undefined) {
         return currency + ' ' + amount;
     }
-    return p + amount;
+    return symbol + amount;
 }
 
 // Taken with modifications from:
@@ -14,6 +14,7 @@ format_money.map = {
     "GBP": "£",
     "AUD": "A$",
     "EUR": "€",
+    "JPY": "¥",
 };
 
 if (typeof module !== 'undefined') {

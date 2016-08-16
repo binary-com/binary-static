@@ -8,6 +8,7 @@ describe('format_money', function() {
 		expect(format_money('GBP', '123.00')).to.eq('£123.00');
 		expect(format_money('EUR', '123.00')).to.eq('€123.00');
 		expect(format_money('AUD', '123.00')).to.eq('A$123.00');
+		expect(format_money('JPY', '123.00')).to.eq('¥123.00');
 	});
 
 	it('works for unexpected currencies', function() {
