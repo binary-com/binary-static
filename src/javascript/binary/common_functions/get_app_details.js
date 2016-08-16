@@ -1,23 +1,40 @@
-var getAppDetails = function(app_id, ref) {
-    var tooltip_string;
-    if (sessionStorage.getItem('app_id ' + app_id)) {
-        if (sessionStorage.getItem('app_id ' + app_id) === 'waiting for response') return tooltip_string;
-        tooltip_string = add_app_id_name(app_id, sessionStorage.getItem('app_id ' + app_id), ref);
-    } else {
-        sessionStorage.setItem('app_id ' + app_id, 'waiting for repsonse');
-        BinarySocket.send({'get_app_details': app_id});
+var buildOauthApps = function(data) {
+    var oauth_apps = {};
+    for (var i = 0; i < data.length; i++) {
+        oauth_apps[data[i].app_id] = data[i].name;
     }
-    return tooltip_string;
+    oauth_apps[2] = 'Binary.com Autoexpiry';
+    return oauth_apps;
 };
 
-var updateAppDetails = function(data) {
-    if (data && data.get_app_details && data.get_app_details.app_name) {
-        var app_id   = data.echo_req.get_app_details,
-            app_name = data.get_app_details.app_name;
-
-        sessionStorage.setItem('app_id ' + app_id, app_name);
-        var $selector = $('.' + app_id);
-        $selector.replaceWith(add_app_id_name(app_id, app_name, $selector.text()));
+var addTooltip = function(oauth_apps) {
+    if (Object.keys(oauth_apps).length > 0) {
+        for (var key in oauth_apps) {
+            if ($('.' + key).length > 0) {
+                $('.' + key).attr('data-balloon', add_app_id_name(key, oauth_apps[key]));
+            }
+        }
     }
-    return;
+};
+
+var add_app_id_name = function(app_id, app_name) {
+    var ref_string;
+    if (app_id && getAppId() != app_id) {
+        ref_string = text.localize('Transaction performed by') + ' ' + (app_name ? app_name : '') + ' (' + text.localize('App ID') + ': ' + app_id + ')';
+    }
+    return ref_string;
+};
+
+var showTooltip = function(app_id, oauth_app_id) {
+    return (
+        app_id && getAppId() != app_id ?
+            ' class="' + app_id + '" data-balloon="' + (
+                oauth_app_id ?
+                    add_app_id_name(app_id, oauth_app_id) :
+                        app_id ?
+                            add_app_id_name(app_id) :
+                            ''
+            ) + '"'
+        : ''
+    );
 };
