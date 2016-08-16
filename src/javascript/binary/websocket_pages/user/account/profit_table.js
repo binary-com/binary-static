@@ -18,8 +18,7 @@ var ProfitTable = (function(){
             'pl'        : Number(sellPrice - buyPrice).toFixed(2),
             'desc'      : transaction["longcode"],
             'id'        : transaction["contract_id"],
-            'app_id'    : transaction["app_id"],
-            'app_name'  : transaction["app_name"]
+            'app_id'    : transaction["app_id"]
         };
 
         return profit_table_data;
