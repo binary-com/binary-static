@@ -696,6 +696,7 @@ Header.prototype = {
         if (!this.user.is_logged_in || !this.client.is_logged_in) return;
         var $login_options = $('#client_loginid');
         var loginid_array = this.user.loginid_array;
+        $login_options.html('');
 
         for (var i=0; i < loginid_array.length; i++) {
             var login = loginid_array[i];
