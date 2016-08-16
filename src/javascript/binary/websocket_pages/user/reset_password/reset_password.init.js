@@ -56,12 +56,11 @@ var ResetPassword = (function () {
                 return;
             }
 
-            dob = dobyy + '-' + dobmm + '-' + dobdd;
             BinarySocket.send({
                 reset_password: 1,
                 verification_code: token,
                 new_password: pw1,
-                date_of_birth: dob
+                date_of_birth: [dobyy, dobmm, dobdd].join('-'),
             });
             $('#reset').prop('disabled', true);
         } else {
