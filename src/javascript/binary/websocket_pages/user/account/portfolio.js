@@ -18,8 +18,7 @@ var Portfolio = (function(){
             'longcode'       : typeof module !== 'undefined' ? c.longcode : japanese_client() ? toJapanTimeIfNeeded(c.expiry_time, '', c.longcode) : c.longcode,
             'currency'       : c.currency,
             'buy_price'      : addComma(parseFloat(c.buy_price)),
-            'app_id'         : c.app_id,
-            'app_name'       : c.app_name
+            'app_id'         : c.app_id
         };
 
         return portfolio_data;
