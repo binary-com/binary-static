@@ -703,17 +703,17 @@ Header.prototype = {
             if (login.disabled) continue;
 
             var curr_id = login.id;
-            var prefix  = 'Virtual Account';
+            var type = 'Virtual';
             if (login.real) {
-                if (login.financial)          prefix = 'Investment Account';
-                else if (login.non_financial) prefix = 'Gaming Account';
-                else                          prefix = 'Real Account';
+                if (login.financial)          type = 'Investment';
+                else if (login.non_financial) type = 'Gaming';
+                else                          type = 'Real';
             }
 
             $login_options.append($('<option/>', {
                 value: curr_id,
                 selected: curr_id == this.client.loginid,
-                text: prefix + ' (' + curr_id + ')',
+                text: template('[_1] Account ([_2])', [type, curr_id]),
             }));
         }
     },
@@ -751,7 +751,7 @@ Header.prototype = {
     start_clock_ws: function() {
         function getTime() {
             clock_started = true;
-            BinarySocket.send({"time": 1,"passthrough": {"client_time": moment().valueOf()}});
+            BinarySocket.send({'time': 1,'passthrough': {'client_time': moment().valueOf()}});
         }
         this.run = function() {
             setInterval(getTime, 30000);
@@ -1029,12 +1029,13 @@ Page.prototype = {
         return ['EN', 'AR', 'DE', 'ES', 'FR', 'ID', 'IT', 'PL', 'PT', 'RU', 'VI', 'JA', 'ZH_CN', 'ZH_TW'];
     },
     language_from_url: function() {
-        var regex = new RegExp('^(' + this.all_languages().join('|') + ')$', 'i'),
-            urls  = window.location.href.split('/').slice(3);
-        var langs = urls.filter(function(u){
-            return regex.test(u);
-        });
-        return langs.length > 0 ? langs[0].toUpperCase() : '';
+        var regex = new RegExp('^(' + this.all_languages().join('|') + ')$', 'i');
+        var langs = window.location.href.split('/').slice(3);
+        for (var i = 0; i < langs.length; i++) {
+            var lang = langs[i];
+            if (regex.test(lang)) return lang.toUpperCase();
+        }
+        return '';
     },
     language: function() {
         var lang = this._lang;
