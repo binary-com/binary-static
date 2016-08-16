@@ -449,12 +449,9 @@ URL.prototype = {
         return (this_pathname == url_pathname || '/' + this_pathname == url_pathname);
     },
     params_hash_to_string: function(params) {
-        var as_array = [];
-        for(var p_key in params) if (params.hasOwnProperty(p_key)) {
-            as_array.push(p_key + '=' + params[p_key]);
-        }
-
-        return as_array.join('&');
+        return Object.keys(params)
+            .map(function(key) { return key + '=' + params[key]; })
+            .join('&');
     },
     is_in: function(url) {
         if(this.path_matches(url)) {
