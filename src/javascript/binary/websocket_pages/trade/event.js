@@ -341,7 +341,7 @@ var TradingEvents = (function () {
          * attach event to purchase buttons to buy the current contract
          */
         $('.purchase_button').on('click dblclick', function () {
-            if ($('#confirmation_message_container').is(':visible')) return;
+            if (isVisible(document.getElementById('confirmation_message_container'))) return;
             console.log('clicked!');
             var id = this.getAttribute('data-purchase-id'),
                 askPrice = this.getAttribute('data-ask-price');
