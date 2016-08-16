@@ -1043,6 +1043,9 @@ msgstr "Każda osoba w wieku powyżej 18 lat (która przeczytała i wyraziła zg
 msgid "Anyone who has potential to grow or increase traffic to %1"
 msgstr "Każdy, kto wykazuje potencjał rozwoju lub zwiększenia liczby klientów %1"
 
+msgid "App ID"
+msgstr ""
+
 msgid "Applications"
 msgstr "Aplikacje"
 
@@ -1783,9 +1786,6 @@ msgstr "Wypłaty kontraktów będą określane przez Firmę w odniesieniu do dzi
 
 msgid "Contract period"
 msgstr "Okres kontraktu"
-
-msgid "Contract purchased with app ID"
-msgstr "Kontrakt zakupiony z identyfikatorem aplikacji"
 
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "Kontrakty będą sprzedawane po obowiązującej cenie rynkowej po dotarciu wniosku na nasze serwery. Cena może różnić się od podanej ceny."
@@ -4770,9 +4770,6 @@ msgstr "Możesz zaktualizować swoje dane osobowe w dowolnym momencie, logując 
 msgid "Please provide us with the following information, after retrieving the verification token from your email:"
 msgstr "Po odzyskaniu tokenu weryfikującego wysłanego na Twój adres e-mail, podaj następujące informacje:"
 
-msgid "Please re-enter your email"
-msgstr "Wpisz ponownie swój adres e-mail"
-
 msgid "Please refer to the following commission plan."
 msgstr "Prosimy o zapoznanie się z następującym planem prowizyjnym."
 
@@ -6421,6 +6418,11 @@ msgstr "Widok handlowy (TradingView)"
 
 msgid "Transact in"
 msgstr "Zawieraj transakcje na"
+
+#, fuzzy
+#| msgid "Your transaction reference is"
+msgid "Transaction performed by"
+msgstr "Kod referencyjny Twojej transakcji to"
 
 msgid "Transfer"
 msgstr "Przelew"
@@ -8382,6 +8384,12 @@ msgstr "Akceptacja regulaminu"
 
 msgid "Trading with MetaTrader 5"
 msgstr "Handlowanie z MetaTrader 5"
+
+#~ msgid "Contract purchased with app ID"
+#~ msgstr "Kontrakt zakupiony z identyfikatorem aplikacji"
+
+#~ msgid "Please re-enter your email"
+#~ msgstr "Wpisz ponownie swój adres e-mail"
 
 #~ msgid "Instant"
 #~ msgstr "Błyskawicznie"
