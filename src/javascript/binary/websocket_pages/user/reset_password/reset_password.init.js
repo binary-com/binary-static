@@ -1,3 +1,5 @@
+var PasswordMeter = require('../../../common_functions/attach_dom/password_strength_meter');
+
 var ResetPassword = (function () {
     'use strict';
 

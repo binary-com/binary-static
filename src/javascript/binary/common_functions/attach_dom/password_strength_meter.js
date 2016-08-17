@@ -30,3 +30,5 @@ var PasswordMeter = (function(){
         updateMeter: updateMeter
     };
 }());
+
+module.exports = PasswordMeter;
