@@ -37,8 +37,10 @@ var TradePage = (function(){
 
     if (document.getElementById('websocket_form')) {
         addEventListenerForm();
-        new ResizeSensor($('.content-tab-container, #contract_prices_container'), adjustAnalysisColumnHeight);
-        new ResizeSensor($('.col-right'), moreTabsHandler);
+        if(!is_japanese_client) {
+          new ResizeSensor($('.content-tab-container, #contract_prices_container'), adjustAnalysisColumnHeight);
+          new ResizeSensor($('.col-right'), moreTabsHandler);
+        }
     }
 
     // Walktrough Guide
@@ -51,9 +53,9 @@ var TradePage = (function(){
     $('#tab_explanation a').text(text.localize('Explanation'));
     $('#tab_last_digit a').text(text.localize('Last Digit Stats'));
     if(!is_japanese_client) {
-      $('#tab_asset_index').removeClass('invisible').find('a').text(text.localize('Asset Index'));
+      $('#tab_asset_index'  ).removeClass('invisible').find('a').text(text.localize('Asset Index'));
+      $('#tab_trading_times').removeClass('invisible').find('a').text(text.localize('Trading Times'));
     }
-    $('#tab_trading_times a').text(text.localize('Trading Times'));
   };
 
   var reload = function() {

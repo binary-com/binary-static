@@ -659,6 +659,9 @@
             width: auto;
         }
     }
+    #japan_analysis #trading_analysis_content ul#analysis_tabs {
+        flex-direction: column;
+    }
 }
 
 #spot {
@@ -801,6 +804,30 @@
     #last_digit_histo_form {
         overflow: hidden;
         margin-bottom: 20px;
+    }
+}
+
+#japan_analysis #trading_analysis_content {
+    margin-top: 15px;
+    font-size: 1rem;
+    ul#analysis_tabs {
+        @include ul_segmented_navigation;
+        font-size: 85%;
+        border-bottom: none;
+        li {
+            @include li_segmented_element;
+            background: transparent;
+            border-radius: 0;
+            padding: 6px 0;
+            line-height: 1;
+            font-size: 1rem;
+        }
+    }
+    #analysis_content {
+        border: none;
+        #chart_frame {
+            height: 630px !important;
+        }
     }
 }
 /*
