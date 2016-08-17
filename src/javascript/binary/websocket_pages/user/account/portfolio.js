@@ -6,8 +6,9 @@ var Portfolio = (function(){
         toJapanTimeIfNeeded = Compatibility.requireIfNotExist('toJapanTimeIfNeeded', '../base/utility', 'toJapanTimeIfNeeded'),
         format_money = Compatibility.requireIfNotExist('format_money', '../common_functions/currency_to_symbol', 'format_money');
 
-    function getBalance(data, withCurrency) {
-        return withCurrency ? format_money(data.balance.currency, addComma(parseFloat(data.balance.balance))) : parseFloat(data.balance.balance);
+    function getBalance(balance, currency) {
+        balance = parseFloat(balance);
+        return currency ? format_money(currency, addComma(balance)) : balance;
     }
 
     function getPortfolioData(c) {

@@ -10,7 +10,9 @@ var PortfolioWS =  (function() {
         currency = '';
         oauth_apps = {};
         showLoadingImage($("#portfolio-loading"));
-        BinarySocket.send({"balance":1});
+        if (TUser.get().balance) {
+            updateBalance();
+        }
         BinarySocket.send({"portfolio":1});
         // Subscribe to transactions to auto update new purchases
         BinarySocket.send({'transaction': 1, 'subscribe': 1});
@@ -31,12 +33,13 @@ var PortfolioWS =  (function() {
         );
     };
 
-    var updateBalance = function(data) {
-        $("#portfolio-balance").text(Portfolio.getBalance(data, true));
-        if(Portfolio.getBalance(data) > 0 || page.client.is_virtual()) {
-            $('#if-balance-zero').addClass('invisible');
+    var updateBalance = function() {
+        if ($("#portfolio-balance").length === 0) return;
+        $("#portfolio-balance").text(Portfolio.getBalance(TUser.get().balance, TUser.get().currency));
+        if(Portfolio.getBalance(TUser.get().balance) > 0 || page.client.is_virtual()) {
+            $('#if-balance-zero:visible').addClass('invisible');
         } else {
-            $('#if-balance-zero').removeClass('invisible');
+            $('#if-balance-zero:hidden').removeClass('invisible');
         }
     };
 
@@ -158,9 +161,6 @@ var PortfolioWS =  (function() {
                     msg_type = response.msg_type;
 
                 switch(msg_type) {
-                    case "balance":
-                        PortfolioWS.updateBalance(response);
-                        break;
                     case "portfolio":
                         PortfolioWS.updatePortfolio(response);
                         break;
