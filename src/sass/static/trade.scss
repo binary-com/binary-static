@@ -519,35 +519,6 @@
     #contract_description1 #contract_description2 #pricing_table_container #open_positions_container {
         display: none;
     }
-    .see-more {
-        transition: none;
-        position: relative;
-    }
-    .more-tabs {
-        display: none;
-        position: absolute;
-        z-index: 2;
-        background: $COLOR_LIGHT_GRAY;
-        @include BIDIR_PROP(right, left, 0px);
-        border: 1px solid $COLOR_GRAY;
-        li {
-            display: block !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            &.active {
-                border-radius: 0;
-            }
-            a {
-                display: block !important;
-                padding: 10px;
-                font-size: 14px;
-                text-decoration: none;
-                &a:hover {
-                    background: $COLOR_GRAY;
-                }
-            }
-        }
-    }
 }
 
 #open_positions_container {
@@ -717,6 +688,52 @@
             top: 29px;
             margin-top: -1px;
             border-top: 1px solid $COLOR_GRAY;
+        }
+        &.see-more {
+            transition: none;
+            position: relative;
+            height: 27px;
+            border: 1px solid $COLOR_LIGHT_GRAY;
+            border-bottom: 0;
+            &.open {
+                border-color: $COLOR_GRAY;
+                .over {
+                    width: 23px;
+                    height: 1px;
+                    background: $COLOR_LIGHT_GRAY;
+                    position: absolute;
+                    bottom: -1px;
+                    @include BIDIR_PROP(right, left, 0px);
+                    z-index: 3;
+                }
+            }
+            > a {
+                line-height: 27px;
+            }
+            .more-tabs {
+                display: none;
+                position: absolute;
+                z-index: 2;
+                background: $COLOR_LIGHT_GRAY;
+                @include BIDIR_PROP(right, left, -1px);
+                border: 1px solid $COLOR_GRAY;
+                li {
+                    display: block;
+                    margin: 0;
+                    padding: 0;
+                    &.active {
+                        border-radius: 0;
+                    }
+                    a {
+                        display: block;
+                        font-size: 14px;
+                        text-decoration: none;
+                        &a:hover {
+                            background: $COLOR_GRAY;
+                        }
+                    }
+                }
+            }
         }
     }
 }

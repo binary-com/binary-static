@@ -947,7 +947,7 @@ function moreTabsHandler($ul) {
             $(tab).insertBefore($seeMore);
         });
     }
-    $moreTabs.css('top', $ul.outerHeight()).unbind('click').click(function() { $(this).slideUp('fast'); });
+    $moreTabs.css('top', $ul.outerHeight() - 1).unbind('click').click(function() { $(this).hideDropDown('fast'); });
 
     // move additional tabs to moreTabs
     $visibleTabs = $ul.find('>li:visible');
@@ -972,12 +972,25 @@ function moreTabsHandler($ul) {
     }
 
     // drop down behaviour
+    function showDropDown() {
+        $moreTabs.slideDown();
+        if ($seeMore.find('.over').length === 0) {
+            $('<div/>', {class: 'over'}).insertBefore($seeMore.find('>a'));
+            $seeMore.find('.over').width($seeMore.width());
+        }
+        $seeMore.addClass('open');
+    }
+    function hideDropDown(duration) {
+        $moreTabs.slideUp(duration || 400, function() {
+            $seeMore.removeClass('open');
+        });
+    }
     var timeout;
     $seeMore.find('>a').unbind('click').click(function() {
         clearTimeout(timeout);
-        $moreTabs.slideDown();
+        showDropDown();
         timeout = setTimeout(function() {
-            $moreTabs.slideUp();
+            hideDropDown();
             clearTimeout(timeout);
         }, 3000);
     });
@@ -990,7 +1003,7 @@ function moreTabsHandler($ul) {
         clearTimeout(timeout);
         var $this = $(this);
         timeout = setTimeout(function() {
-            $this.slideUp();
+            hideDropDown();
         }, 1000);
     });
 }
