@@ -4,20 +4,31 @@ var SessionDurationLimit = (function() {
     var warning;
 
     var init = function() {
+        clearTimeout(window.TimeOut_SessionLimitWarningBefore);
         clearTimeout(window.TimeOut_SessionLimitWarning);
         clearTimeout(window.TimeOut_SessionLimitLogout);
         $('#session_limit').remove();
 
-        warning = 10; // seconds before limit to display the warning message
+        warning = 10 * 1000; // milliseconds before limit to display the warning message
 
-        var limit    = page.client.get_storage_value('session_duration_limit') * 1,
-            now      = parseInt(moment().valueOf() / 1000),
-            start    = page.client.get_storage_value('session_start') * 1,
-            remained = limit + start - now;
-        if(remained < 0) remained = warning;
+        var limit     = page.client.get_storage_value('session_duration_limit') * 1,
+            now       = moment().unix(),
+            start     = page.client.get_storage_value('session_start') * 1,
+            remained  = (limit + start - now) * 1000,
+            mathLimit = Math.pow(2, 31) - 1;
+        if (remained < 0) remained = warning;
+        // limit of setTimeout is this number
+        if (remained > mathLimit) {
+            remained = remained % mathLimit;
+            window.TimeOut_SessionLimitWarningBefore = setTimeout(init, remained);
+        } else {
+            setTimeOut();
+        }
 
-        window.TimeOut_SessionLimitWarning = setTimeout(displayWarning, (remained - warning) * 1000);
-        window.TimeOut_SessionLimitLogout  = setTimeout(page.client.send_logout_request, remained * 1000);
+        function setTimeOut() {
+            window.TimeOut_SessionLimitWarning = setTimeout(displayWarning, remained - warning);
+            window.TimeOut_SessionLimitLogout  = setTimeout(page.client.send_logout_request, remained);
+        }
     };
 
     var exclusionResponseHandler = function(response) {
