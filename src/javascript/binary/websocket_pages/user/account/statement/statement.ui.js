@@ -1,4 +1,5 @@
 var Button = require('../../../../common_functions/attach_dom/button');
+var Table = require('../../../../common_functions/attach_dom/table');
 
 var StatementUI = (function(){
     "use strict";

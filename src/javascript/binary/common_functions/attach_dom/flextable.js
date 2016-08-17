@@ -1,3 +1,5 @@
+var Table = require('./table');
+
 var FlexTableUI = function(config) {
     this.config = config;
     this.id = config.id;

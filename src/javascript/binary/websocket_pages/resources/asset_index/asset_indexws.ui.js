@@ -1,3 +1,5 @@
+var Table = require('../../../common_functions/attach_dom/table');
+
 var AssetIndexUI = (function() {
     "use strict";
 
