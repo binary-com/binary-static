@@ -1,3 +1,4 @@
+var IPHistoryData = require('./iphistory.data');
 var IPHistory = (function() {
     'use strict';
 
