@@ -987,12 +987,17 @@ function moreTabsHandler($ul) {
     }
     var timeout;
     $seeMore.find('>a').unbind('click').click(function() {
-        clearTimeout(timeout);
-        showDropDown();
-        timeout = setTimeout(function() {
+        if($moreTabs.is(':visible')) {
             hideDropDown();
             clearTimeout(timeout);
-        }, 3000);
+        } else {
+            clearTimeout(timeout);
+            showDropDown();
+            timeout = setTimeout(function() {
+                hideDropDown();
+                clearTimeout(timeout);
+            }, 3000);
+        }
     });
 
     $moreTabs.mouseenter(function() {
