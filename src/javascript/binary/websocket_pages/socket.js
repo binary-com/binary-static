@@ -176,10 +176,15 @@ function BinarySocketClass() {
                     page.header.do_logout(response);
                 } else if (type === 'landing_company_details') {
                     page.client.response_landing_company_details(response);
-                    BinarySocket.send({reality_check: 1, passthrough: { for: 'init_rc' }});
+                    if (response.landing_company_details.has_reality_check) {
+                        var currentData = TUser.get();
+                        var addedLoginTime = $.extend({logintime: window.time.unix()}, currentData);
+                        TUser.set(addedLoginTime);
+                        RealityCheck.init();
+                    }
                 } else if (type === 'get_self_exclusion') {
                     SessionDurationLimit.exclusionResponseHandler(response);
-                } else if (type === 'payout_currencies' && response.echo_req.hasOwnProperty('passthrough') && response.echo_req.passthrough.handler === 'page.client') {
+                } else if (type === 'payout_currencies' && response.hasOwnProperty('echo_req') && response.echo_req.hasOwnProperty('passthrough') && response.echo_req.passthrough.handler === 'page.client') {
                     page.client.response_payout_currencies(response);
                 } else if (type === 'get_settings' && response.get_settings) {
                     if(!$.cookie('residence') && response.get_settings.country_code) {
@@ -212,22 +217,15 @@ function BinarySocketClass() {
                     if(!response.hasOwnProperty('error')) {
                         LocalStore.set('website.tnc_version', response.website_status.terms_conditions_version);
                         if (!localStorage.getItem('risk_classification')) page.client.check_tnc();
+                        if (response.website_status.hasOwnProperty('clients_country')) {
+                            localStorage.setItem('clients_country', response.website_status.clients_country);
+                            if (!$('body').hasClass('BlueTopBack')) {
+                                checkClientsCountry();
+                            }
+                        }
                     }
-                  if (response.website_status.clients_country) {
-                    localStorage.setItem('clients_country', response.website_status.clients_country);
-                    if (!$('body').hasClass('BlueTopBack')) {
-                      checkClientsCountry();
-                    }
-                  }
                 } else if (type === 'reality_check') {
-                    if (response.echo_req.passthrough.for === 'init_rc') {
-                        var currentData = TUser.get();
-                        var addedLoginTime = $.extend({logintime: response.reality_check.start_time}, currentData);
-                        TUser.set(addedLoginTime);
-                        RealityCheck.init();
-                    } else {
-                        RealityCheck.realityCheckWSHandler(response);
-                    }
+                    RealityCheck.realityCheckWSHandler(response);
                 } else if (type === 'get_account_status' && response.get_account_status) {
                   if (response.get_account_status.risk_classification === 'high' && page.header.qualify_for_risk_classification()) {
                     send({get_financial_assessment: 1});
@@ -266,7 +264,9 @@ function BinarySocketClass() {
                 }
                 if (response.hasOwnProperty('error')) {
                     if(response.error && response.error.code) {
-                      if (response.error.code === 'RateLimit') {
+                      if (response.error.code && (response.error.code === 'WrongResponse' || response.error.code === 'OutputValidationFailed')) {
+                        $('#content').empty().html('<div class="container"><p class="notice-msg center-text">' + (response.error.code === 'WrongResponse' && response.error.message ? response.error.message : text.localize('Sorry, an error occurred while processing your request.') )+ '</p></div>');
+                      } else if (response.error.code === 'RateLimit') {
                         $('#ratelimit-error-message')
                             .css('display', 'block')
                             .on('click', '#ratelimit-refresh-link', function () {
