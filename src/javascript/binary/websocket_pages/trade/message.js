@@ -45,8 +45,6 @@ var Message = (function () {
                 PricingTable.handleResponse(response);
             } else if (type === 'error') {
                 $(".error-msg").text(response.error.message);
-            } else if(type === 'balance'){
-                PortfolioWS.updateBalance(response);
             } else if(type === 'portfolio'){
                 PortfolioWS.updatePortfolio(response);
             } else if(type === 'proposal_open_contract'){

@@ -176,7 +176,12 @@ function BinarySocketClass() {
                     page.header.do_logout(response);
                 } else if (type === 'landing_company_details') {
                     page.client.response_landing_company_details(response);
-                    BinarySocket.send({reality_check: 1, passthrough: { for: 'init_rc' }});
+                    if (response.landing_company_details.has_reality_check) {
+                        var currentData = TUser.get();
+                        var addedLoginTime = $.extend({logintime: window.time.unix()}, currentData);
+                        TUser.set(addedLoginTime);
+                        RealityCheck.init();
+                    }
                 } else if (type === 'get_self_exclusion') {
                     SessionDurationLimit.exclusionResponseHandler(response);
                 } else if (type === 'payout_currencies' && response.hasOwnProperty('echo_req') && response.echo_req.hasOwnProperty('passthrough') && response.echo_req.passthrough.handler === 'page.client') {
@@ -220,14 +225,7 @@ function BinarySocketClass() {
                         }
                     }
                 } else if (type === 'reality_check') {
-                    if (response.echo_req.passthrough.for === 'init_rc') {
-                        var currentData = TUser.get();
-                        var addedLoginTime = $.extend({logintime: response.reality_check.start_time}, currentData);
-                        TUser.set(addedLoginTime);
-                        RealityCheck.init();
-                    } else {
-                        RealityCheck.realityCheckWSHandler(response);
-                    }
+                    RealityCheck.realityCheckWSHandler(response);
                 } else if (type === 'get_account_status' && response.get_account_status) {
                   if (response.get_account_status.risk_classification === 'high' && page.header.qualify_for_risk_classification()) {
                     send({get_financial_assessment: 1});

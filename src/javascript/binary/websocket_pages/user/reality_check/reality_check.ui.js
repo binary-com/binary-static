@@ -105,7 +105,7 @@ var RealityCheckUI = (function () {
 
     function closePopUp() {
         $('#reality-check').remove();
-        if (!page.client.is_virtual() && page.client.residence !== 'jp') BinarySocket.send({get_account_status: 1});
+        RealityCheck.sendAccountStatus();
     }
 
     return {

@@ -121,6 +121,7 @@ var RealityCheck = (function () {
         init: init,
         onContinueClick: onContinueClick,
         onLogoutClick: onLogoutClick,
-        realityCheckWSHandler: realityCheckWSHandler
+        realityCheckWSHandler: realityCheckWSHandler,
+        sendAccountStatus: sendAccountStatus
     };
 }());
