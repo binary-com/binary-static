@@ -2,22 +2,25 @@ var PortfolioWS =  (function() {
     'use strict';
 
     var values,
-        currency;
+        currency,
+        oauth_apps;
 
     var init = function() {
         values = {};
         currency = '';
+        oauth_apps = {};
         showLoadingImage($("#portfolio-loading"));
         BinarySocket.send({"balance":1});
         BinarySocket.send({"portfolio":1});
         // Subscribe to transactions to auto update new purchases
         BinarySocket.send({'transaction': 1, 'subscribe': 1});
+        BinarySocket.send({'oauth_apps': 1});
     };
 
     var createPortfolioRow = function(data) {
         $('#portfolio-body').append(
             $('<tr class="flex-tr" id="' + data.contract_id + '">' +
-                '<td class="ref flex-tr-child">' + add_app_id_name(data.app_id, data.app_name, data.transaction_id) +
+                '<td class="ref flex-tr-child">' + '<span' + showTooltip(data.app_id, oauth_apps[data.app_id]) + '>' + data.transaction_id + '</span>' +
                 '</td>' +
                 '<td class="payout flex-tr-child">' + data.currency + ' <strong>' + data.payout + '</strong></td>' +
                 '<td class="details flex-tr-child">' + data.longcode + '</td>' +
@@ -166,6 +169,10 @@ var PortfolioWS =  (function() {
                         break;
                     case "proposal_open_contract":
                         PortfolioWS.updateIndicative(response);
+                        break;
+                    case "oauth_apps":
+                        oauth_apps = buildOauthApps(response.oauth_apps);
+                        addTooltip(oauth_apps);
                         break;
                     default:
                         // msg_type is not what PortfolioWS handles, so ignore it.

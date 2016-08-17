@@ -3,6 +3,7 @@ var StatementUI = (function(){
     var tableID = "statement-table";
     var columns = ["date", "ref", "payout", "act", "desc", "credit", "bal", "details"];
     var allData = [];
+    var oauth_apps = {};
 
     function createEmptyStatementTable(){
         var header = [
@@ -42,7 +43,7 @@ var StatementUI = (function(){
         allData.push(statement_data);
         var creditDebitType = (parseFloat(statement_data.amount) >= 0) ? "profit" : "loss";
 
-        var $statementRow = Table.createFlexTableRow([statement_data.date, add_app_id_name(statement_data.app_id, statement_data.app_name, statement_data.ref), isNaN(statement_data.payout) ? '-' : statement_data.payout, statement_data.action, '', statement_data.amount, statement_data.balance, ''], columns, "data");
+        var $statementRow = Table.createFlexTableRow([statement_data.date, '<span' + showTooltip(statement_data.app_id, oauth_apps[statement_data.app_id]) + '>' + statement_data.ref + '</span>', isNaN(statement_data.payout) ? '-' : statement_data.payout, statement_data.action, '', statement_data.amount, statement_data.balance, ''], columns, "data");
         $statementRow.children(".credit").addClass(creditDebitType);
         $statementRow.children(".date").addClass("pre");
         $statementRow.children(".desc").html(statement_data.desc + "<br>");
@@ -83,6 +84,9 @@ var StatementUI = (function(){
         createEmptyStatementTable: createEmptyStatementTable,
         updateStatementTable: updateStatementTable,
         errorMessage: errorMessage,
-        exportCSV: exportCSV
+        exportCSV: exportCSV,
+        setOauthApps: function(values) {
+            return (oauth_apps = values);
+        }
     };
 }());

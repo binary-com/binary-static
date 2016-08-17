@@ -3,6 +3,7 @@ var ProfitTableUI = (function(){
 
     var profitTableID = "profit-table";
     var cols = ["buy-date", "ref", "payout", "contract", "buy-price", "sell-date", "sell-price", "pl", "details"];
+    var oauth_apps = {};
 
     function createEmptyTable(){
         var header = [
@@ -67,10 +68,9 @@ var ProfitTableUI = (function(){
 
     function createProfitTableRow(transaction){
         var profit_table_data = ProfitTable.getProfitTabletData(transaction);
-
         var plType = (profit_table_data.pl >= 0) ? "profit" : "loss";
 
-        var data = [profit_table_data.buyDate, add_app_id_name(profit_table_data.app_id, profit_table_data.app_name, profit_table_data.ref), profit_table_data.payout, '', profit_table_data.buyPrice, profit_table_data.sellDate, profit_table_data.sellPrice, profit_table_data.pl, ''];
+        var data = [profit_table_data.buyDate, '<span' + showTooltip(profit_table_data.app_id, oauth_apps[profit_table_data.app_id]) + '>' + profit_table_data.ref + '</span>', profit_table_data.payout, '', profit_table_data.buyPrice, profit_table_data.sellDate, profit_table_data.sellPrice, profit_table_data.pl, ''];
         var $row = Table.createFlexTableRow(data, cols, "data");
 
         $row.children(".buy-date").addClass("pre");
@@ -113,6 +113,9 @@ var ProfitTableUI = (function(){
         updateProfitTable: updateProfitTable,
         initDatepicker: initDatepicker,
         cleanTableContent: clearTableContent,
-        errorMessage: errorMessage
+        errorMessage: errorMessage,
+        setOauthApps: function(values) {
+            return (oauth_apps = values);
+        }
     };
 }());

@@ -9,10 +9,13 @@ var StatementData = (function(){
                     var type = response.msg_type;
                     if (type === 'statement'){
                         StatementWS.statementHandler(response);
+                    } else if (type === 'oauth_apps') {
+                        addTooltip(StatementUI.setOauthApps(buildOauthApps(response.oauth_apps)));
                     }
                 }
             }
         });
+        BinarySocket.send({'oauth_apps': 1});
     }
 
     function getStatement(opts){
