@@ -1,3 +1,6 @@
+var getSocketURL = require('../../config').getSocketURL;
+
+
 pjax_config_page("endpoint", function(){
     return {
         onLoad: function() {

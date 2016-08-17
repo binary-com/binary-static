@@ -1,3 +1,4 @@
+var getAppId = require('../../config').getAppId;
 var text;
 var clock_started = false;
 
