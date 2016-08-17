@@ -10,10 +10,13 @@ var ProfitTableData = (function(){
                     if (type === 'profit_table'){
                         ProfitTableWS.profitTableHandler(response);
                         showLocalTimeOnHover('td.buy-date,td.sell-date');
+                    } else if (type === 'oauth_apps') {
+                        addTooltip(ProfitTableUI.setOauthApps(buildOauthApps(response.oauth_apps)));
                     }
                 }
             }
         });
+        BinarySocket.send({'oauth_apps': 1});
     }
 
     function getProfitTable(opts){
