@@ -1,3 +1,5 @@
+var Button = require('../../../../common_functions/attach_dom/button');
+
 var StatementUI = (function(){
     "use strict";
     var tableID = "statement-table";
@@ -50,7 +52,7 @@ var StatementUI = (function(){
 
         //create view button and append
         if (statement_data.action === "Sell" || statement_data.action === "Buy") {
-            var $viewButtonSpan = Button.createBinaryStyledButton();
+            var $viewButtonSpan = Button.create();
             var $viewButton = $viewButtonSpan.children(".button").first();
             $viewButton.text(text.localize("View"));
             $viewButton.addClass("open_contract_detailsws");

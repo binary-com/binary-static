@@ -1,3 +1,5 @@
+var Button = require('../../../../common_functions/attach_dom/button');
+
 var ApplicationsUI = (function(){
     'use strict';
     var containerSelector = '#applications-ws-container';
@@ -49,7 +51,7 @@ var ApplicationsUI = (function(){
     }
 
     function createRevokeButton(container, app) {
-        var $buttonSpan = Button.createBinaryStyledButton();
+        var $buttonSpan = Button.create();
         var $button = $buttonSpan.children('.button').first();
         $button.text(text.localize(messages.revoke_access));
         $button.on('click', function() {

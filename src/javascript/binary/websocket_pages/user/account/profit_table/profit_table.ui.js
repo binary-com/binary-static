@@ -1,3 +1,5 @@
+var Button = require('../../../../common_functions/attach_dom/button');
+
 var ProfitTableUI = (function(){
     "use strict";
 
@@ -79,7 +81,7 @@ var ProfitTableUI = (function(){
         $row.children(".contract").html(profit_table_data.desc + "<br>");
 
         //create view button and append
-        var $viewButtonSpan = Button.createBinaryStyledButton();
+        var $viewButtonSpan = Button.create();
         var $viewButton = $viewButtonSpan.children(".button").first();
         $viewButton.text(text.localize("View"));
         $viewButton.addClass("open_contract_detailsws");
