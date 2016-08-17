@@ -35,21 +35,14 @@ var TradingAnalysis = (function() {
      */
     var bindAnalysisTabEvent = function() {
         'use strict';
-        var analysisNavElement = document.querySelector('#trading_analysis_content #analysis_tabs');
-        if (analysisNavElement) {
-            analysisNavElement.addEventListener('click', function(e) {
-                if (e.target && e.target.nodeName === 'A') {
-                    e.preventDefault();
-
-                    var clickedLink = e.target,
-                        clickedElement = clickedLink.parentElement,
-                        isTabActive = clickedElement.classList.contains('active');
-
-                    sessionStorage.setItem('currentAnalysisTab', clickedElement.id);
-
-                    if (!isTabActive) {
-                        loadAnalysisTab();
-                    }
+        var $analysis_tabs = $('#trading_analysis_content #analysis_tabs');
+        if ($analysis_tabs.length) {
+            $analysis_tabs.find('li a').click(function(e) {
+                e.preventDefault();
+                var $li = $(this).parent();
+                sessionStorage.setItem('currentAnalysisTab', $li.attr('id'));
+                if (!$li.hasClass('active')) {
+                    loadAnalysisTab();
                 }
             });
         }

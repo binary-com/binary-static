@@ -505,6 +505,10 @@ function toggleActiveNavMenuElement(nav, eventElement) {
             liElements[i].classList.remove('active');
         }
         classes.add('active');
+        var parent = eventElement.parentElement.parentElement;
+        if (parent.tagName === 'LI' && !parent.classList.contains('active')) {
+            parent.classList.add('active');
+        }
     }
 }
 
@@ -911,9 +915,84 @@ function setChartSource() {
 }
 
 function adjustAnalysisColumnHeight() {
-    $('#trading_analysis_content').css('height',
-        $('.content-tab-container').height() + $('#contract_prices_container').height() + parseInt($('#contract_prices_container').css('margin-top'))
-    );
+    var sumHeight = 0;
+    $('.col-left').children().each(function() {
+        if ($(this).is(':visible')) sumHeight += $(this).outerHeight(true);
+    });
+    $('#trading_analysis_content').height(sumHeight);
+}
+
+function moreTabsHandler($ul) {
+    if (!$ul) $ul = $('#analysis_tabs');
+    var $visibleTabs  = $ul.find('>li:visible'),
+        seeMoreClass  = 'see-more',
+        moreTabsClass = 'more-tabs',
+        maxWidth      = $ul.outerWidth(),
+        totalWidth    = 0;
+
+    // add seeMore tab
+    var $seeMore = $ul.find('li.' + seeMoreClass);
+    if ($seeMore.length === 0) {
+        $seeMore = $('<li class="tm-li ' + seeMoreClass + '"><a class="tm-a" href="javascript:;">&#9660;</a></li>');
+        $ul.append($seeMore);
+    }
+    $seeMore.removeClass('active');
+
+    // add moreTabs container
+    var $moreTabs = $ul.find('.' + moreTabsClass);
+    if ($moreTabs.length === 0) {
+        $moreTabs = $('<div class="' + moreTabsClass + '" />').appendTo($seeMore);
+    } else {
+        $moreTabs.find('>li').each(function(index, tab) {
+            $(tab).insertBefore($seeMore);
+        });
+    }
+    $moreTabs.css('top', $ul.outerHeight()).unbind('click').click(function() { $(this).slideUp('fast'); });
+
+    // move additional tabs to moreTabs
+    $visibleTabs = $ul.find('>li:visible');
+    $visibleTabs.each(function(index, tab) {
+        totalWidth += $(tab).outerWidth(true);
+    });
+    var resultWidth = totalWidth;
+    while (resultWidth >= maxWidth) {
+        var $thisTab = $ul.find('>li:not(.' + seeMoreClass + '):visible').last();
+        resultWidth -= $thisTab.outerWidth(true);
+        $thisTab.prependTo($moreTabs);
+    }
+
+    if ($moreTabs.children().length === 0) {
+        $seeMore.hide();
+        return;
+    }
+
+    $seeMore.show();
+    if ($moreTabs.find('>li.active').length > 0) {
+        $seeMore.addClass('active');
+    }
+
+    // drop down behaviour
+    var timeout;
+    $seeMore.find('>a').unbind('click').click(function() {
+        clearTimeout(timeout);
+        $moreTabs.slideDown();
+        timeout = setTimeout(function() {
+            $moreTabs.slideUp();
+            clearTimeout(timeout);
+        }, 3000);
+    });
+
+    $moreTabs.mouseenter(function() {
+        clearTimeout(timeout);
+    });
+
+    $moreTabs.mouseleave(function() {
+        clearTimeout(timeout);
+        var $this = $(this);
+        timeout = setTimeout(function() {
+            $this.slideUp();
+        }, 1000);
+    });
 }
 
 //used temporarily for mocha test

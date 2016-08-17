@@ -519,6 +519,35 @@
     #contract_description1 #contract_description2 #pricing_table_container #open_positions_container {
         display: none;
     }
+    .see-more {
+        transition: none;
+        position: relative;
+    }
+    .more-tabs {
+        display: none;
+        position: absolute;
+        z-index: 2;
+        background: $COLOR_LIGHT_GRAY;
+        @include BIDIR_PROP(right, left, 0px);
+        border: 1px solid $COLOR_GRAY;
+        li {
+            display: block !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            &.active {
+                border-radius: 0;
+            }
+            a {
+                display: block !important;
+                padding: 10px;
+                font-size: 14px;
+                text-decoration: none;
+                &a:hover {
+                    background: $COLOR_GRAY;
+                }
+            }
+        }
+    }
 }
 
 #open_positions_container {
@@ -556,6 +585,12 @@
             ul#contract_form_name_nav {
                 a.tm-a {
                     font-size: 65%;
+                }
+                li.tm-li-2 {
+                    margin: 0px;
+                    a.tm-a-2 {
+                        font-size: 80%;
+                    }
                 }
             }
         }
@@ -626,6 +661,9 @@
                 }
             }
         }
+        #analysis_tabs {
+            white-space: nowrap;
+        }
     }
     div#contract_market_form_container {
         ul#contract_form_name_nav {
@@ -687,6 +725,9 @@
     &.active, &.ui-tabs-active {
         background: $COLOR_BLUE;
         color: $COLOR_WHITE;
+        li:not(.active) a {
+            color: $COLOR_BLACK;
+        }
     }
 }
 
