@@ -1,3 +1,5 @@
+var FlexTableUI = require('../../../../common_functions/attach_dom/flextable');
+
 var IPHistoryUI = (function() {
     'use strict';
 
