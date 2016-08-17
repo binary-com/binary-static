@@ -174,7 +174,7 @@ function BinarySocketClass() {
                     BinarySocket.send({reality_check: 1, passthrough: { for: 'init_rc' }});
                 } else if (type === 'get_self_exclusion') {
                     SessionDurationLimit.exclusionResponseHandler(response);
-                } else if (type === 'payout_currencies' && response.echo_req.hasOwnProperty('passthrough') && response.echo_req.passthrough.handler === 'page.client') {
+                } else if (type === 'payout_currencies' && response.hasOwnProperty('echo_req') && response.echo_req.hasOwnProperty('passthrough') && response.echo_req.passthrough.handler === 'page.client') {
                     page.client.response_payout_currencies(response);
                 } else if (type === 'get_settings' && response.get_settings) {
                     if (!Cookies.get('residence') && response.get_settings.country_code) {
@@ -207,13 +207,13 @@ function BinarySocketClass() {
                     if(!response.hasOwnProperty('error')) {
                         LocalStore.set('website.tnc_version', response.website_status.terms_conditions_version);
                         if (!localStorage.getItem('risk_classification')) page.client.check_tnc();
+                        if (response.website_status.hasOwnProperty('clients_country')) {
+                            localStorage.setItem('clients_country', response.website_status.clients_country);
+                            if (!$('body').hasClass('BlueTopBack')) {
+                                checkClientsCountry();
+                            }
+                        }
                     }
-                  if (response.website_status.clients_country) {
-                    localStorage.setItem('clients_country', response.website_status.clients_country);
-                    if (!$('body').hasClass('BlueTopBack')) {
-                      checkClientsCountry();
-                    }
-                  }
                 } else if (type === 'reality_check') {
                     if (response.echo_req.passthrough.for === 'init_rc') {
                         TUser.extend({logintime: response.reality_check.start_time});
@@ -259,7 +259,9 @@ function BinarySocketClass() {
                 }
                 if (response.hasOwnProperty('error')) {
                     if(response.error && response.error.code) {
-                      if (response.error.code === 'RateLimit') {
+                      if (response.error.code && (response.error.code === 'WrongResponse' || response.error.code === 'OutputValidationFailed')) {
+                        $('#content').empty().html('<div class="container"><p class="notice-msg center-text">' + (response.error.code === 'WrongResponse' && response.error.message ? response.error.message : text.localize('Sorry, an error occurred while processing your request.') )+ '</p></div>');
+                      } else if (response.error.code === 'RateLimit') {
                         $('#ratelimit-error-message')
                             .css('display', 'block')
                             .on('click', '#ratelimit-refresh-link', function () {
