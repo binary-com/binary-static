@@ -5,8 +5,8 @@ var Portfolio = (function(){
     var addComma = Compatibility.requireIfNotExist('addComma', '../websocket_pages/trade/common', 'addComma'),
         toJapanTimeIfNeeded = Compatibility.requireIfNotExist('toJapanTimeIfNeeded', '../base/utility', 'toJapanTimeIfNeeded');
 
-    function getBalance(data, withCurrency) {
-        return withCurrency ? data.balance.currency + ' ' + addComma(parseFloat(data.balance.balance)) : parseFloat(data.balance.balance);
+    function getBalance(balance, currency) {
+        return currency ? currency + ' ' + addComma(parseFloat(balance)) : parseFloat(balance);
     }
 
     function getPortfolioData(c) {

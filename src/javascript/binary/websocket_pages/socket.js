@@ -124,13 +124,11 @@ function BinarySocketClass() {
                         delete timeouts[response.echo_req.passthrough.req_number];
                     }
                     else if (passthrough.hasOwnProperty('dispatch_to')) {
-                      if (passthrough.dispatch_to === 'ViewPopupWS') {
-                        ViewPopupWS.dispatch(response);
-                      } else if (passthrough.dispatch_to === 'ViewChartWS') {
-                        Highchart.dispatch(response);
-                      } else if (passthrough.dispatch_to === 'ViewTickDisplayWS') {
-                        WSTickDisplay.dispatch(response);
-                      }
+                        switch (passthrough.dispatch_to) {
+                            case 'ViewPopupWS':       ViewPopupWS.dispatch(response); break;
+                            case 'ViewChartWS':       Highchart.dispatch(response);   break;
+                            case 'viewtickdisplayws': WSTickDisplay.dispatch(response); break;
+                        }
                     }
                 }
                 var type = response.msg_type;
@@ -171,7 +169,12 @@ function BinarySocketClass() {
                     page.header.do_logout(response);
                 } else if (type === 'landing_company_details') {
                     page.client.response_landing_company_details(response);
-                    BinarySocket.send({reality_check: 1, passthrough: { for: 'init_rc' }});
+                    if (response.landing_company_details.has_reality_check) {
+                        var currentData = TUser.get();
+                        var addedLoginTime = $.extend({logintime: window.time.unix()}, currentData);
+                        TUser.set(addedLoginTime);
+                        RealityCheck.init();
+                    }
                 } else if (type === 'get_self_exclusion') {
                     SessionDurationLimit.exclusionResponseHandler(response);
                 } else if (type === 'payout_currencies' && response.hasOwnProperty('echo_req') && response.echo_req.hasOwnProperty('passthrough') && response.echo_req.passthrough.handler === 'page.client') {
@@ -215,12 +218,7 @@ function BinarySocketClass() {
                         }
                     }
                 } else if (type === 'reality_check') {
-                    if (response.echo_req.passthrough.for === 'init_rc') {
-                        TUser.extend({logintime: response.reality_check.start_time});
-                        RealityCheck.init();
-                    } else {
-                        RealityCheck.realityCheckWSHandler(response);
-                    }
+                    RealityCheck.realityCheckWSHandler(response);
                 } else if (type === 'get_account_status' && response.get_account_status) {
                   if (response.get_account_status.risk_classification === 'high' && page.header.qualify_for_risk_classification()) {
                     send({get_financial_assessment: 1});
@@ -290,7 +288,13 @@ function BinarySocketClass() {
             clearTimeouts();
 
             if(!manualClosed && wrongAppId !== getAppId()) {
-                init(1);
+                if (TradePage.is_trading_page) {
+                    showPriceOverlay();
+                    showFormOverlay();
+                    TradePage.reload();
+                } else {
+                    init(1);
+                }
             }
             if(typeof events.onclose === 'function'){
                 events.onclose();
