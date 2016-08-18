@@ -9,9 +9,7 @@ var buildOauthApps = function(data) {
 
 var addTooltip = function(oauth_apps) {
     for (var key in oauth_apps) {
-        if ($('.' + key).length > 0) {
-            $('.' + key).attr('data-balloon', add_app_id_name(key, oauth_apps[key]));
-        }
+        $('.' + key).attr('data-balloon', add_app_id_name(key, oauth_apps[key]));
     }
 };
 

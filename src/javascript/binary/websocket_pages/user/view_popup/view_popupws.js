@@ -496,8 +496,9 @@ var ViewPopupWS = (function() {
         var sellWrapperID = 'sell_at_market_wrapper',
             sellButtonID  = 'sell_at_market';
         var isExist = $Container.find('#' + sellWrapperID).length > 0;
-        if (show && !isExist) {
-            if(contractType === 'spread') {
+        if (show) {
+            if (isExist) return;
+            if (contractType === 'spread') {
                 $Container.find('#contract_sell_wrapper').removeClass(hiddenClass).append(
                     $('<p/>', {id: sellWrapperID, class: 'button'})
                         .append($('<button/>', {id: sellButtonID, class: 'button', text: text.localize('Sell')}))
@@ -515,7 +516,8 @@ var ViewPopupWS = (function() {
                 sellSetVisibility(false);
                 sellContract();
             });
-        } else if (!show && isExist) {
+        } else {
+            if (!isExist) return;
             $Container.find('#' + sellButtonID).unbind('click');
             $Container.find('#' + sellWrapperID).remove();
         }
