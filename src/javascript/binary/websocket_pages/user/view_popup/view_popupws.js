@@ -633,6 +633,8 @@ var ViewPopupWS = (function() {
                     if(response.proposal_open_contract && response.proposal_open_contract.contract_id == contractID) {
                         storeSubscriptionID(response.proposal_open_contract.id);
                         responseContract(response);
+                    } else if (!response.proposal_open_contract && response.echo_req.contract_id == contractID && response.error) {
+                        showErrorPopup(response, response.error.message);
                     }
                     break;
                 case 'sell':
