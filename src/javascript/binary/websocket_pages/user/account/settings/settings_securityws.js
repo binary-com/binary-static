@@ -1,3 +1,4 @@
+var CommonData = require('common_functions/common_data');
 var SecurityWS = (function() {
     "use strict";
     var $form;
