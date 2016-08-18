@@ -17,9 +17,6 @@ var TradePage = (function(){
     BinarySocket.init({
       onmessage: function(msg){
         Message.process(msg);
-      },
-      onclose: function(){
-        processMarketUnderlying();
       }
     });
     Price.clearFormId();
