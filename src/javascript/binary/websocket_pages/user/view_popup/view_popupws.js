@@ -54,7 +54,7 @@ var ViewPopupWS = (function() {
     };
 
     var responseContract = function(response) {
-        if(!response.proposal_open_contract || Object.keys(response.proposal_open_contract).length === 0) {
+        if(!response.proposal_open_contract || !objectNotEmpty(response)) {
             showErrorPopup(response);
             return;
         }
@@ -445,7 +445,7 @@ var ViewPopupWS = (function() {
         var $target = $Container.find('#' + id);
         if($target && $target.length > 0) {
             $target.html(text);
-            if(attributes && Object.keys(attributes).length > 0) {
+            if(attributes && objectNotEmpty(attributes)) {
                 $target.attr(attributes);
             }
             if(isVisible) $target.parent('tr').removeClass(hiddenClass);
@@ -559,7 +559,7 @@ var ViewPopupWS = (function() {
     // ----- Sell Expired -----
     var sellExpired = function(passthrough) {
         var req = {"sell_expired": 1, passthrough: {}};
-        if(passthrough && Object.keys(passthrough).length > 0) {
+        if(passthrough && objectNotEmpty(passthrough)) {
             req.passthrough = passthrough;
         }
         socketSend(req);
@@ -575,7 +575,7 @@ var ViewPopupWS = (function() {
             price = 0;
         }
         var req = {"sell": contractID, "price": price, passthrough: {}};
-        if(passthrough && Object.keys(passthrough).length > 0) {
+        if(passthrough && objectNotEmpty(passthrough)) {
             req.passthrough = passthrough;
         }
         socketSend(req);
@@ -649,7 +649,7 @@ var ViewPopupWS = (function() {
                     responseSellExpired(response);
                     break;
                 case 'get_corporate_actions':
-                    if (Object.keys(response.get_corporate_actions).length > 0) {
+                    if (objectNotEmpty(response.get_corporate_actions)) {
                       corporateActionEvent = true;
                       containerSetText('trade_details_message', contract.validation_error ? contract.validation_error : corporateActionEvent ? '* ' + text.localize('This contract was affected by a Corporate Action event.') : '&nbsp;');
                       populateCorporateAction(response);

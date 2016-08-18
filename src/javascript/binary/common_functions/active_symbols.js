@@ -1,6 +1,10 @@
 var ActiveSymbols = (function () {
     'use strict';
 
+    var objectNotEmpty = typeof window === 'undefined' ?
+        require('../base/utility').objectNotEmpty :
+        window.objectNotEmpty;
+
     var groupBy = function(xs, key) {
         return xs.reduce(function(rv, x) {
             (rv[x[key]] = rv[x[key]] || []).push(x);
@@ -14,15 +18,6 @@ var ActiveSymbols = (function () {
             a[key] = b[key];
         });
         return a;
-    };
-
-    var objectNotEmpty = function objectNotEmpty(obj) {
-        if (obj && obj instanceof Object) {
-            for (var key in obj) {
-                if (obj.hasOwnProperty(key)) return true;
-            }
-        }
-        return false;
     };
 
     var clone = function clone(obj) {

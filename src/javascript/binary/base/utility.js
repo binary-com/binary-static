@@ -277,10 +277,20 @@ function template(string, content) {
     });
 }
 
+function objectNotEmpty(obj) {
+    if (obj && obj instanceof Object) {
+        for (var key in obj) {
+            if (obj.hasOwnProperty(key)) return true;
+        }
+    }
+    return false;
+}
+
 //used temporarily for mocha test
 if (typeof module !== 'undefined') {
     module.exports = {
         toJapanTimeIfNeeded: toJapanTimeIfNeeded,
+        objectNotEmpty: objectNotEmpty,
         template: template
     };
 }
