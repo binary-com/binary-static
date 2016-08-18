@@ -54,7 +54,7 @@ var ViewPopupWS = (function() {
     };
 
     var responseContract = function(response) {
-        if(!response.proposal_open_contract || !objectNotEmpty(response)) {
+        if(!response.proposal_open_contract || !objectNotEmpty(response.proposal_open_contract)) {
             showErrorPopup(response);
             return;
         }
