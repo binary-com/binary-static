@@ -445,10 +445,8 @@ var ViewPopupWS = (function() {
         var $target = $Container.find('#' + id);
         if($target && $target.length > 0) {
             $target.html(text);
-            if(attributes && objectNotEmpty(attributes)) {
-                $target.attr(attributes);
-            }
-            if(isVisible) $target.parent('tr').removeClass(hiddenClass);
+            if (attributes) $target.attr(attributes);
+            if (isVisible)  $target.parent('tr').removeClass(hiddenClass);
         }
     };
 
@@ -557,12 +555,8 @@ var ViewPopupWS = (function() {
     };
 
     // ----- Sell Expired -----
-    var sellExpired = function(passthrough) {
-        var req = {"sell_expired": 1, passthrough: {}};
-        if(passthrough && objectNotEmpty(passthrough)) {
-            req.passthrough = passthrough;
-        }
-        socketSend(req);
+    var sellExpired = function() {
+        socketSend({"sell_expired": 1, passthrough: {}});
     };
 
     var responseSellExpired = function(response) {
@@ -570,15 +564,8 @@ var ViewPopupWS = (function() {
     };
 
     // ----- Sell Contract -----
-    var sellContract = function(price, passthrough) {
-        if(!price) {
-            price = 0;
-        }
-        var req = {"sell": contractID, "price": price, passthrough: {}};
-        if(passthrough && objectNotEmpty(passthrough)) {
-            req.passthrough = passthrough;
-        }
-        socketSend(req);
+    var sellContract = function() {
+        socketSend({"sell": contractID, "price": 0, passthrough: {}});
     };
 
     var responseSell = function(response) {
