@@ -143,11 +143,6 @@ var Content = (function() {
             minDurationTooltip.setAttribute('data-balloon', localize.textMinDurationTooltip);
         }
 
-        var spotLabel = document.getElementById('spot_label');
-        if (spotLabel) {
-            spotLabel.textContent = localize.textSpot;
-        }
-
         var barrierTooltip = document.getElementById('barrier_tooltip');
         if (barrierTooltip) {
             barrierTooltip.textContent = localize.textBarrierOffset;

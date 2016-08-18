@@ -167,11 +167,33 @@
         }
     }
     #contract_symbol_container {
-        #contract_markets {
-            @include BIDIR_PROP(margin-right, margin-left, 1rem);
+        #market_container, #underlying_spot_wrapper, #underlying_container, #underlying, #spot_container {
+            @include BIDIR_VALUE(float, left, right);
         }
-        #spot_label {
-            margin: 0 5px 0 15px;
+        #market_container, #underlying, #symbol_tip, #spot {
+            @include BIDIR_PROP(margin-right, margin-left, 5px);
+        }
+        #underlying_spot_wrapper {
+            #underlying_container {
+                #underlying {
+                    margin-bottom: 5px;
+                }
+                #symbol_tip {
+                    line-height: 28px;
+                    cursor: pointer;
+                }
+            }
+            #spot_container {
+                #spot {
+                    line-height: 28px;
+                    white-space: nowrap;
+                    padding: 3px;
+                    border-radius: $BORDER_RADIUS;
+                    &.error {
+                        font-style: italic;
+                    }
+                }
+            }
         }
     }
     #contract_container {
@@ -501,18 +523,6 @@
     #amount {
         margin-top: -1px;
     }
-    #underlying {
-        @include BIDIR_PROP(margin-right, margin-left, 10px);
-        margin-bottom: 5px;
-    }
-    #symbol_tip {
-        @include BIDIR_PROP(padding-right, padding-left, 8px);
-        padding-bottom: 5px;
-        cursor: pointer;
-    }
-    #spot_label {
-        display: none;
-    }
     .radio_label {
         margin: 0 10px;
     }
@@ -526,6 +536,26 @@
 }
 
 @media all and (max-width: 959px) {
+    #contract_symbol_container {
+        #market_container {
+            max-width: calc(50% - 5px);
+            #contract_markets {
+                max-width: 100%;
+            }
+        }
+        #underlying_spot_wrapper {
+            max-width: 50%;
+            #underlying_container {
+                width: 100%;
+                #underlying {
+                    max-width: calc(100% - 26px);
+                }
+            }
+            #spot {
+                font-size: 14px;
+            }
+        }
+    }
     .col-left, .col-right {
         padding: 0 5px !important;
     }
@@ -595,18 +625,6 @@
         .nav_placeholder {
             display: flex;
         }
-        #contract_symbol_container {
-            text-align: center;
-            .row {
-                flex-direction: column;
-                .col {
-                    margin-bottom: 5px;
-                }
-            }
-            #contract_markets {
-                margin-right: 0;
-            }
-        }
         #contract_prices_container {
             #contract_purchase_spots {
                 height: auto;
@@ -661,17 +679,6 @@
     }
     #japan_analysis #trading_analysis_content ul#analysis_tabs {
         flex-direction: column;
-    }
-}
-
-#spot {
-    line-height: 25px;
-    white-space: nowrap;
-    padding: 3px;
-    border-radius: 5px;
-    @include BIDIR_PROP(margin-right, margin-left, 8px);
-    &.error {
-        font-style: italic;
     }
 }
 
