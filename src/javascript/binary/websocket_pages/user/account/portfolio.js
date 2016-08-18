@@ -3,10 +3,12 @@ var Portfolio = (function(){
 
     var Compatibility = typeof window !== 'undefined' ? window.Compatibility : require('../../../common_functions/compatibility');
     var addComma = Compatibility.requireIfNotExist('addComma', '../websocket_pages/trade/common', 'addComma'),
-        toJapanTimeIfNeeded = Compatibility.requireIfNotExist('toJapanTimeIfNeeded', '../base/utility', 'toJapanTimeIfNeeded');
+        toJapanTimeIfNeeded = Compatibility.requireIfNotExist('toJapanTimeIfNeeded', '../base/utility', 'toJapanTimeIfNeeded'),
+        format_money = Compatibility.requireIfNotExist('format_money', '../common_functions/currency_to_symbol', 'format_money');
 
     function getBalance(balance, currency) {
-        return currency ? currency + ' ' + addComma(parseFloat(balance)) : parseFloat(balance);
+        balance = parseFloat(balance);
+        return currency ? format_money(currency, addComma(balance)) : balance;
     }
 
     function getPortfolioData(c) {
@@ -37,11 +39,11 @@ var Portfolio = (function(){
 
     function getSum(values, value_type) { // value_type is: indicative or buy_price
         var sum = 0;
-        if (Object.keys(values).length !== 0) {
-            for (var key in values) {
-                if (values[key] && !isNaN(values[key][value_type])) {
-                    sum += parseFloat(values[key][value_type]);
-                }
+        var keys = Object.keys(values);
+        for (var i = 0; i < keys.length; i++) {
+            var key = keys[i];
+            if (values[key] && !isNaN(values[key][value_type])) {
+                sum += parseFloat(values[key][value_type]);
             }
         }
 
