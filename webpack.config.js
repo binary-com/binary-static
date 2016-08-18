@@ -3,6 +3,9 @@ module.exports = {
     // todo: actually implement this
     entry: './src/javascript/entry-point.js',
     resolve: {
+        root: [
+            path.resolve('./src/javascript'),
+        ],
         alias: {
             common_functions: path.resolve('./src/javascript/binary/common_functions'),
             attach_dom:       path.resolve('./src/javascript/binary/common_functions/attach_dom'),
