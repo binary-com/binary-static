@@ -9,22 +9,24 @@ var ActiveSymbols = (function () {
     };
 
     var extend = function extend(a, b) {
-        a = (a) ? a : {};
-        if ( b ) {
-            Object.keys(b).forEach(function(key){
-                a[key] = b[key];
-            });
+        if (!a || !b) return;
+        Object.keys(b).forEach(function(key){
+            a[key] = b[key];
+        });
+        return a;
+    };
+
+    var objectNotEmpty = function objectNotEmpty(obj) {
+        if (obj && obj instanceof Object) {
+            for (var key in obj) {
+                if (obj.hasOwnProperty(key)) return true;
+            }
         }
+        return false;
     };
 
-    var objectNotEmpty = function objectNotEmpty(obj){
-        return obj && obj instanceof Object && Object.keys(obj).length;
-    };
-
-    var clone = function clone(obj){
-        var newObj = {};
-        extend(newObj, obj);
-        return newObj;
+    var clone = function clone(obj) {
+        return extend({}, obj);
     };
 
     var activeSymbols = {
