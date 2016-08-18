@@ -56,6 +56,7 @@ var TradePage = (function(){
 
   var onUnload = function(){
     trading_page = 0;
+    events_initialized = 0;
     forgetTradingStreams();
     BinarySocket.clear();
     Defaults.clear();
