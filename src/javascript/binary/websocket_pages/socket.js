@@ -295,7 +295,13 @@ function BinarySocketClass() {
             clearTimeouts();
 
             if(!manualClosed && wrongAppId !== getAppId()) {
-                init(1);
+                if (TradePage.is_trading_page) {
+                    showPriceOverlay();
+                    showFormOverlay();
+                    TradePage.reload();
+                } else {
+                    init(1);
+                }
             }
             if(typeof events.onclose === 'function'){
                 events.onclose();
