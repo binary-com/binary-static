@@ -80,10 +80,12 @@ var TradingAnalysis = (function() {
                 BinarySocket.send({'ticks_history': underlying, 'end': 'latest', 'count': tick + '', 'req_id': 1});
                 break;
             case 'tab_asset_index':
-                AssetIndexUI.init();
+                AssetIndexUI.init({framed: true});
+                $('#tab_asset_index-content h1').hide();
                 break;
             case 'tab_trading_times':
-                MarketTimesUI.init();
+                MarketTimesUI.init({framed: true});
+                $('#tab_trading_times-content h1').hide();
                 break;
             default:
                 var url = currentLink.getAttribute('href') ;

@@ -185,13 +185,17 @@
             }
             #spot_container {
                 #spot {
-                    line-height: 28px;
+                    line-height: 20px;
+                    display: inline-block;
                     white-space: nowrap;
                     padding: 3px;
                     border-radius: $BORDER_RADIUS;
                     &.error {
                         font-style: italic;
                     }
+                }
+                #trading_worm_chart {
+                    display: inline-block;
                 }
             }
         }

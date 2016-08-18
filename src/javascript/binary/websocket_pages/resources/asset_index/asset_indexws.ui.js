@@ -6,9 +6,10 @@ var AssetIndexUI = (function() {
         $contents;
     var activeSymbols,
         assetIndex,
-        marketColumns;
+        marketColumns,
+        isFramed;
 
-    var init = function() {
+    var init = function(config) {
         if (japanese_client()) {
             if (!TradePage.is_trading_page()) {
                 window.location.href = page.url.url_for('resources');
@@ -21,6 +22,8 @@ var AssetIndexUI = (function() {
 
         Content.populate();
         showLoadingImage($container);
+
+        isFramed = (config && config.framed);
         if (!assetIndex) AssetIndexData.sendRequest(!activeSymbols);
     };
 
@@ -50,6 +53,11 @@ var AssetIndexUI = (function() {
             .append($contents.children());
 
         $container.tabs('destroy').tabs();
+
+        if (isFramed) {
+            $container.find('ul').hide();
+            $('<div/>', {class: 'center-text'}).append(jqueryuiTabsToDropdown($container)).prependTo($container);
+        }
     };
 
     var getSubmarketTable = function(assetItem, symbolInfo) {

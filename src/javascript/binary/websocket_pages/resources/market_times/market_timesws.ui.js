@@ -5,9 +5,10 @@ var MarketTimesUI = (function() {
         $container;
     var columns,
         activeSymbols,
-        tradingTimes;
+        tradingTimes,
+        isFramed;
 
-    var init = function() {
+    var init = function(config) {
         $date      = $('#trading-date');
         $container = $('#trading-times');
         columns    = ['Asset', 'Opens', 'Closes', 'Settles', 'UpcomingEvents'];
@@ -16,6 +17,8 @@ var MarketTimesUI = (function() {
 
         Content.populate();
         showLoadingImage($container);
+
+        isFramed = (config && config.framed);
         if (!tradingTimes) MarketTimesData.sendRequest('today', !activeSymbols);
 
         $date.val(moment.utc(new Date()).format('YYYY-MM-DD'));
@@ -61,6 +64,11 @@ var MarketTimesUI = (function() {
             .append($contents.children());
 
         $container.tabs('destroy').tabs();
+
+        if (isFramed) {
+            $container.find('ul').hide();
+            $('<div/>', {class: 'center-text'}).append(jqueryuiTabsToDropdown($container)).prependTo($container);
+        }
     };
 
     var createMarketTables = function(market, isJapanTrading) {
