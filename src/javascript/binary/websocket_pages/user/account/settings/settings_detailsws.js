@@ -164,7 +164,7 @@ var SettingsDetailsWS = (function() {
             }
 
             // town/city
-            if(!isRequiredError(fieldIDs.city) && !(/^[a-zA-Z0-9\s\,\.\-\/\(\)#']+$/).test(city)) {
+            if(!isRequiredError(fieldIDs.city) && !(/^[a-zA-Z0-9\s\,\.\-\/\(\)#']+$/).test(fieldIDs.city)) {
                 showError(fieldIDs.city, Content.errorMessage('reg', [letters, numbers, space, period, comma, '- / ( ) # \'']));
             }
             // state
