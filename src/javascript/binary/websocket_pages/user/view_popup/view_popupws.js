@@ -515,7 +515,7 @@ var ViewPopupWS = (function() {
                 sellSetVisibility(false);
                 sellContract();
             });
-        } else if (isExist) {
+        } else if (!show && isExist) {
             $Container.find('#' + sellButtonID).unbind('click');
             $Container.find('#' + sellWrapperID).remove();
         }
@@ -637,7 +637,7 @@ var ViewPopupWS = (function() {
                 break;
         }
         showLocalTimeOnHover('#trade_details_start_date');
-        if (document.getElementById('trade_details_end_date')) showLocalTimeOnHover('#trade_details_end_date');
+        showLocalTimeOnHover('#trade_details_end_date');
         showLocalTimeOnHover('#trade_details_current_date');
         showLocalTimeOnHover('#trade_details_live_date');
     };

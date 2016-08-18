@@ -218,18 +218,14 @@ function attach_tabs(element) {
 }
 
 function showLocalTimeOnHover(s) {
-    var selector = s || '.date';
-
-    $(selector).each(function(idx, ele) {
-        var gmtTimeStr = ele.innerHTML.replace('\n', ' ');
-
-        var localTime = moment.utc(gmtTimeStr, 'YYYY-MM-DD HH:mm:ss').local();
+    $(s || '.date').each(function(idx, ele) {
+        var gmtTimeStr = ele.textContent.replace('\n', ' ');
+        var localTime  = moment.utc(gmtTimeStr, 'YYYY-MM-DD HH:mm:ss').local();
         if (!localTime.isValid()) {
             return;
         }
 
         var localTimeStr = localTime.format('YYYY-MM-DD HH:mm:ss Z');
-
         $(ele).attr('data-balloon', localTimeStr);
     });
 }
