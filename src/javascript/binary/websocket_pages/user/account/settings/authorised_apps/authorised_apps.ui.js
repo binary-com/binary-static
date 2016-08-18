@@ -1,5 +1,5 @@
-var Button = require('../../../../common_functions/attach_dom/button');
-var FlexTableUI = require('../../../../common_functions/attach_dom/flextable');
+var Button = require('attach_dom/button');
+var FlexTableUI = require('attach_dom/flextable');
 
 var ApplicationsUI = (function(){
     'use strict';

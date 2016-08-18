@@ -10,7 +10,7 @@
  * `BinarySocket.init()` to initiate the connection
  * `BinarySocket.send({contracts_for : 1})` to send message to server
  */
-var getSocketURL = require('../../config').getSocketURL;
+var getSocketURL = require('config').getSocketURL;
 
 function BinarySocketClass() {
     'use strict';

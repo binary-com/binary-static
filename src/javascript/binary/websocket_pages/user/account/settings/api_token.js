@@ -1,4 +1,4 @@
-var FlexTableUI = require('../../../../common_functions/attach_dom/flextable');
+var FlexTableUI = require('attach_dom/flextable');
 
 var APITokenWS = (function() {
     "use strict";
