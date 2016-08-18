@@ -198,6 +198,7 @@ var SettingsDetailsWS = (function() {
 
         var V2 = ValidateV2;
         var isAddress  = V2.regex(/^[a-zA-Z0-9\s\,\.\-\/\(\)#']+$/, [letters, numbers, space, period, comma, '- / ( ) # \'']);
+        var isCity     = isAddress;
         var isState    = V2.regex(/^[a-zA-Z\s\-']+$/,               [letters, space, '- \'']);
         var isPostcode = V2.regex(/^[\w\s-]+$/,                     [letters, numbers, space, '-']);
         var isPhoneNo  = V2.regex(/^(|\+?[0-9\s\-]+)$/,             [numbers, space, '-']);
@@ -209,7 +210,7 @@ var SettingsDetailsWS = (function() {
         return {
             address_line_1:   [V2.required, isAddress],
             address_line_2:   [maybeEmptyAddress],
-            address_city:     [V2.required],
+            address_city:     [V2.required, isCity],
             address_state:    [V2.required, isState],
             address_postcode: [V2.required, V2.lengthRange(1, 20), isPostcode],
             phone:            [V2.lengthRange(6, 35), isPhoneNo],

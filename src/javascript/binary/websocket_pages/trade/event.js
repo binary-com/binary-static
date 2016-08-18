@@ -342,7 +342,6 @@ var TradingEvents = (function () {
          */
         $('.purchase_button').on('click dblclick', function () {
             if (isVisible(document.getElementById('confirmation_message_container'))) return;
-            console.log('clicked!');
             var id = this.getAttribute('data-purchase-id'),
                 askPrice = this.getAttribute('data-ask-price');
 

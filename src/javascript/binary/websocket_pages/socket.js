@@ -298,7 +298,7 @@ function BinarySocketClass() {
                 if (TradePage.is_trading_page) {
                     showPriceOverlay();
                     showFormOverlay();
-                    TradePage.reload();
+                    TradePage.onLoad();
                 } else {
                     init(1);
                 }
