@@ -106,7 +106,6 @@ var ActiveSymbols = (function () {
                     var symbols = that.getSymbolsForSubmarket(active_symbols, submarket);
                     extend(that.symbols, symbols);
                 });
-                return clone(this.symbols);
             }
             return clone(this.symbols);
         },
