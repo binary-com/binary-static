@@ -68,3 +68,5 @@ var IPHistoryUI = (function() {
         displayError: displayError,
     };
 }());
+
+module.exports = IPHistoryUI;
