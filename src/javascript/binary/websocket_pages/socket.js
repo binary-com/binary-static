@@ -1,5 +1,5 @@
 var SessionDurationLimit = require('common_functions/session_duration_limit');
-
+var Highchart = require('trade/chart/highchartws');
 /*
  * It provides a abstraction layer over native javascript Websocket.
  *

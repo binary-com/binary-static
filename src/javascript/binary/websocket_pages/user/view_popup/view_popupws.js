@@ -1,3 +1,5 @@
+var Highchart = require('trade/chart/highchartws');
+
 var ViewPopupWS = (function() {
     "use strict";
 
