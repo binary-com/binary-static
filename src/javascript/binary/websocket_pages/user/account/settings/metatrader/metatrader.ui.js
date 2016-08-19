@@ -1,3 +1,5 @@
+var onlyNumericOnKeypress = require('common_functions/event_handler');
+
 var MetaTraderUI = (function() {
     "use strict";
 
