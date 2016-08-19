@@ -1,5 +1,6 @@
 var Button = require('attach_dom/button');
 var Table = require('attach_dom/table');
+var app_details = require('common_functions/get_app_details');
 
 var ProfitTableUI = (function(){
     "use strict";
@@ -73,7 +74,7 @@ var ProfitTableUI = (function(){
         var profit_table_data = ProfitTable.getProfitTabletData(transaction);
         var plType = (profit_table_data.pl >= 0) ? "profit" : "loss";
 
-        var data = [profit_table_data.buyDate, '<span' + showTooltip(profit_table_data.app_id, oauth_apps[profit_table_data.app_id]) + '>' + profit_table_data.ref + '</span>', profit_table_data.payout, '', profit_table_data.buyPrice, profit_table_data.sellDate, profit_table_data.sellPrice, profit_table_data.pl, ''];
+        var data = [profit_table_data.buyDate, '<span' + app_details.showTooltip(profit_table_data.app_id, oauth_apps[profit_table_data.app_id]) + '>' + profit_table_data.ref + '</span>', profit_table_data.payout, '', profit_table_data.buyPrice, profit_table_data.sellDate, profit_table_data.sellPrice, profit_table_data.pl, ''];
         var $row = Table.createFlexTableRow(data, cols, "data");
 
         $row.children(".buy-date").addClass("pre");
