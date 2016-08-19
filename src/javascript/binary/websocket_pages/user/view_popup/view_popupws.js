@@ -548,7 +548,8 @@ var ViewPopupWS = (function() {
 
     // ----- Corporate Action -----
     var getCorporateActions = function() {
-      var end_time = (window.time._i/1000).toFixed(0) < contract.date_expiry ? (window.time._i/1000).toFixed(0) : contract.date_expiry;
+      var epoch = window.time.unix();
+      var end_time = epoch < contract.date_expiry ? epoch.toFixed(0) : contract.date_expiry;
       socketSend({
         "get_corporate_actions": "1",
         "symbol": contract.underlying,
@@ -600,9 +601,9 @@ var ViewPopupWS = (function() {
             sellSetVisibility(false);
             if(isSellClicked) {
                 containerSetText('contract_sell_message',
-                    text.localize('You have sold this contract at [_1] [_2]').replace('[_1]', contract.currency).replace('[_2]', response.sell.sold_for) +
+                    text.localize('You have sold this contract at [_1] [_2]', [contract.currency, response.sell.sold_for]) +
                     '<br />' +
-                    text.localize('Your transaction reference number is [_1]').replace('[_1]', response.sell.transaction_id)
+                    text.localize('Your transaction reference number is [_1]', [response.sell.transaction_id])
                 );
             }
             getContract('no-subscribe');
