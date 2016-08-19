@@ -1,4 +1,6 @@
 var onlyNumericOnKeypress = require('common_functions/event_handler');
+var MetaTrader = require('../metatrader');
+var MetaTraderData = require('./metatrader.data');
 
 var MetaTraderUI = (function() {
     "use strict";
@@ -441,3 +443,5 @@ var MetaTraderUI = (function() {
         responseLandingCompany : responseLandingCompany,
     };
 }());
+
+module.exports = MetaTraderUI;

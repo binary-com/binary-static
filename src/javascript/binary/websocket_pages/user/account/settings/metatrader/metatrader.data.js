@@ -1,3 +1,6 @@
+var MetaTrader = require('../metatrader');
+var MetaTraderUI = require('./metatrader.ui');
+
 var MetaTraderData = (function() {
     "use strict";
 
@@ -94,3 +97,5 @@ var MetaTraderData = (function() {
         requestLandingCompany: requestLandingCompany,
     };
 }());
+
+module.exports = MetaTraderData;
