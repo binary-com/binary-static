@@ -24,10 +24,10 @@ var PortfolioWS =  (function() {
             $('<tr class="flex-tr" id="' + data.contract_id + '">' +
                 '<td class="ref flex-tr-child">' + '<span' + showTooltip(data.app_id, oauth_apps[data.app_id]) + '>' + data.transaction_id + '</span>' +
                 '</td>' +
-                '<td class="payout flex-tr-child">' + data.currency + ' <strong>' + data.payout + '</strong></td>' +
+                '<td class="payout flex-tr-child"><strong>' + format_money(data.currency, data.payout) + '</strong></td>' +
                 '<td class="details flex-tr-child">' + data.longcode + '</td>' +
-                '<td class="purchase flex-tr-child">' + data.currency + ' <strong>' + data.buy_price + '</strong></td>' +
-                '<td class="indicative flex-tr-child">' + data.currency + ' <strong class="indicative_price"></strong></td>' +
+                '<td class="purchase flex-tr-child"><strong>' + format_money(data.currency, data.buy_price) + '</strong></td>' +
+                '<td class="indicative flex-tr-child"><strong class="indicative_price">' + format_money(data.currency, '--.--') + '</strong></td>' +
                 '<td class="button flex-tr-child"><button class="button open_contract_detailsws" contract_id="' + data.contract_id + '">' + text.localize('View') + '</button></td>' +
             '</tr>')
         );
@@ -128,7 +128,7 @@ var PortfolioWS =  (function() {
                 status_class = values[proposal.contract_id].indicative < old_indicative ? ' price_moved_down' : (values[proposal.contract_id].indicative > old_indicative ? ' price_moved_up' : '');
                 $td.removeClass("no_resale");
             }
-            $td.html(proposal.currency + ' <strong class="indicative_price' + status_class + '"">' + values[proposal.contract_id].indicative + '</strong>' + no_resale_html);
+            $td.html('<strong class="indicative_price' + status_class + '"">' + format_money(proposal.currency, values[proposal.contract_id].indicative) + '</strong>' + no_resale_html);
         }
 
         updateFooter();
@@ -141,8 +141,8 @@ var PortfolioWS =  (function() {
     };
 
     var updateFooter = function() {
-        $("#cost-of-open-positions").text(currency + ' ' + addComma(Portfolio.getSumPurchase(values)));
-        $("#value-of-open-positions").text(currency + ' ' + addComma(Portfolio.getIndicativeSum(values)));
+        $("#cost-of-open-positions").text(format_money(currency, addComma(Portfolio.getSumPurchase(values))));
+        $("#value-of-open-positions").text(format_money(currency, addComma(Portfolio.getIndicativeSum(values))));
     };
 
     var errorMessage = function(msg) {
