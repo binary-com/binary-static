@@ -1,4 +1,5 @@
 var TradingAnalysis = require('trade/analysis');
+var Barriers = require('trade/barriers');
 
 /*
  * This function process the active symbols to get markets

@@ -1,5 +1,6 @@
 var onlyNumericOnKeypress = require('common_functions/event_handler');
 var TradingAnalysis = require('trade/analysis');
+var Barriers = require('trade/barriers');
 
 /*
  * TradingEvents object contains all the event handler function required for

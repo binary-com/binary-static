@@ -1,3 +1,5 @@
+var Barriers = require('trade/barriers');
+
 /*
  * Handles duration processing display
  *
