@@ -1,3 +1,4 @@
+var LimitsUI = require('./limits.ui');
 var LimitsWS = (function(){
     "use strict";
 
@@ -65,3 +66,5 @@ var LimitsWS = (function(){
         clean: initTable
     };
 }());
+
+module.exports = LimitsWS;

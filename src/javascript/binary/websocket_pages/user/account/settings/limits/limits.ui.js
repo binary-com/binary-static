@@ -88,3 +88,5 @@ var LimitsUI = (function(){
         fillLimitsTable: fillLimitsTable
     };
 }());
+
+module.exports = LimitsUI;
