@@ -2,6 +2,19 @@ var onlyNumericOnKeypress = require('common_functions/event_handler');
 var TradingAnalysis = require('trade/analysis');
 var Barriers = require('trade/barriers');
 
+var Common = require('trade/common');
+var isVisible = Common.isVisible;
+var showPriceOverlay = Common.showPriceOverlay;
+var showFormOverlay = Common.showFormOverlay;
+var toggleActiveCatMenuElement = Common.toggleActiveCatMenuElement;
+var setFormPlaceholderContent = Common.setFormPlaceholderContent;
+var debounce = Common.debounce;
+var submitForm = Common.submitForm;
+var displayTooltip = Common.displayTooltip;
+var updateWarmChart = Common.updateWarmChart;
+var reloadPage = Common.reloadPage;
+var chartFrameSource = Common.chartFrameSource;
+
 /*
  * TradingEvents object contains all the event handler function required for
  * websocket trading page

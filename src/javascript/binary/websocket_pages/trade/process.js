@@ -1,6 +1,22 @@
 var TradingAnalysis = require('trade/analysis');
 var Barriers = require('trade/barriers');
 
+var Common = require('trade/common');
+var displayContractForms = Common.displayContractForms;
+var displayMarkets = Common.displayMarkets;
+var displayUnderlyings = Common.displayUnderlyings;
+var showPriceOverlay = Common.showPriceOverlay;
+var hidePriceOverlay = Common.hidePriceOverlay;
+var hideFormOverlay = Common.hideFormOverlay;
+var showFormOverlay = Common.showFormOverlay;
+var hideOverlayContainer = Common.hideOverlayContainer;
+var getContractCategoryTree = Common.getContractCategoryTree;
+var setFormPlaceholderContent = Common.setFormPlaceholderContent;
+var getDefaultMarket = Common.getDefaultMarket;
+var displayTooltip = Common.displayTooltip;
+var selectOption = Common.selectOption;
+var updateWarmChart = Common.updateWarmChart;
+
 /*
  * This function process the active symbols to get markets
  * and underlying list

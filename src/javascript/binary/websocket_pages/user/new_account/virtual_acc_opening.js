@@ -1,4 +1,5 @@
 var validator = require('binary/validator');
+
 pjax_config_page("new_account/virtualws", function() {
     function onSuccess(res) {
         var new_account = res.new_account_virtual;

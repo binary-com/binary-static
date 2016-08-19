@@ -1,5 +1,10 @@
 var Barriers = require('trade/barriers');
 
+var Common = require('trade/common');
+var isVisible = Common.isVisible;
+var durationOrder = Common.durationOrder;
+var selectOption = Common.selectOption;
+
 /*
  * Handles duration processing display
  *

@@ -1,3 +1,7 @@
+var Common = require('trade/common');
+var isVisible = Common.isVisible;
+var countDecimalPlaces = Common.countDecimalPlaces;
+
 /*
  * Handles barrier processing and display
  *

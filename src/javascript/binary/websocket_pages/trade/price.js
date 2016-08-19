@@ -1,3 +1,11 @@
+var Common = require('trade/common');
+var contractTypeDisplayMapping = Common.contractTypeDisplayMapping;
+var isVisible = Common.isVisible;
+var displayPriceMovement = Common.displayPriceMovement;
+var resetPriceMovement = Common.resetPriceMovement;
+var displayCommentPrice = Common.displayCommentPrice;
+var displayCommentSpreads = Common.displayCommentSpreads;
+
 /*
  * Price object handles all the functions we need to display prices
  *

@@ -1,3 +1,7 @@
+var Common = require('trade/common');
+var isVisible = Common.isVisible;
+var updatePurchaseStatus = Common.updatePurchaseStatus;
+
 /*
  * Purchase object that handles all the functions related to
  * contract purchase response

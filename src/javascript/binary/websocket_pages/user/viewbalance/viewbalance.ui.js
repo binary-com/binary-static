@@ -1,4 +1,5 @@
 var PortfolioWS = require('account/portfolio/portfolio.init');
+var addComma = require('trade/common').addComma;
 
 var ViewBalanceUI = (function(){
     function updateBalances(response){

@@ -1,3 +1,5 @@
+var addComma = require('trade/common').addComma;
+
 var LimitsWS = (function(){
     "use strict";
 

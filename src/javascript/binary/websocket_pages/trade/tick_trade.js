@@ -1,3 +1,7 @@
+var Common = require('trade/common');
+var isVisible = Common.isVisible;
+var updatePurchaseStatus = Common.updatePurchaseStatus;
+
 var TickDisplay = function() {
     return {
         initialize: function(data) {

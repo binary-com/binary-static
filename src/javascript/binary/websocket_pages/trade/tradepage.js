@@ -1,4 +1,5 @@
 var TradingAnalysis = require('trade/analysis');
+var addEventListenerForm = require('trade/common').addEventListenerForm;
 
 var TradePage = (function(){
   var trading_page = 0, events_initialized = 0;

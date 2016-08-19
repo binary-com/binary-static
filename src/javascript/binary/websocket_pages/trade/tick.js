@@ -1,3 +1,7 @@
+var Common = require('trade/common');
+var displayPriceMovement = Common.displayPriceMovement;
+var displayIndicativeBarrier = Common.displayIndicativeBarrier;
+
 /*
  * Tick object handles all the process/display related to tick streaming
  *
