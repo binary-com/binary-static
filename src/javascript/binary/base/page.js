@@ -173,14 +173,12 @@ var Client = function() {
 
 Client.prototype = {
     show_login_if_logout: function(shouldReplacePageContents) {
-        if(!this.is_logged_in) {
-            if(shouldReplacePageContents) {
-                $('#content > .container').addClass('center-text').empty()
-                    .append($('<p/>', {class: 'notice-msg', html: text.localize('Please [_1] to view this page', [
-                            '<a class="login_link" href="javascript:;">' + text.localize('login') + '</a>'
-                        ])}));
-                $('.login_link').click(function(){Login.redirect_to_login();});
-            }
+        if (!this.is_logged_in && shouldReplacePageContents) {
+            $('#content > .container').addClass('center-text')
+                .html($('<p/>', {class: 'notice-msg', html: text.localize('Please [_1] to view this page', [
+                        '<a class="login_link" href="javascript:;">' + text.localize('login') + '</a>'
+                    ])}));
+            $('.login_link').click(function(){Login.redirect_to_login();});
         }
         return !this.is_logged_in;
     },
