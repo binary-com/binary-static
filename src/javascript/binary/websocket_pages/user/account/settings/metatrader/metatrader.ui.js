@@ -1,4 +1,5 @@
 var onlyNumericOnKeypress = require('common_functions/event_handler');
+var testPassword = require('common_functions/passwordmeter');
 var MetaTrader = require('../metatrader');
 var MetaTraderData = require('./metatrader.data');
 

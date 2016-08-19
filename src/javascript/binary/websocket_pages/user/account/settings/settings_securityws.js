@@ -1,5 +1,6 @@
 var validator  = require('binary/validator');
 var CommonData = require('common_functions/common_data');
+var testPassword = require('common_functions/passwordmeter');
 
 var SecurityWS = (function() {
     "use strict";

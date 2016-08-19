@@ -1,3 +1,4 @@
+var testPassword = require('common_functions/passwordmeter');
 var validator = require('binary/validator');
 pjax_config_page("new_account/virtualws", function() {
     function onSuccess(res) {

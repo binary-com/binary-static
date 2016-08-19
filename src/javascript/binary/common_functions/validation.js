@@ -1,3 +1,5 @@
+var testPassword = require('common_functions/passwordmeter');
+
 var Validate = (function(){
   var errorCounter = 0;
 
