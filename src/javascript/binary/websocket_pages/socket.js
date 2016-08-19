@@ -32,10 +32,6 @@ function BinarySocketClass() {
         }
     };
 
-    var status = function () {
-        return binarySocket && binarySocket.readyState;
-    };
-
     var isReady = function () {
         return binarySocket && binarySocket.readyState === 1;
     };
