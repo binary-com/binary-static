@@ -1,4 +1,5 @@
 var ApplicationsData = require('./authorised_apps.data');
+var ApplicationsUI = require('./authorised_apps.ui');
 var Applications = (function() {
     "use strict";
 
