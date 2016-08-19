@@ -674,7 +674,6 @@ Header.prototype = {
     on_load: function() {
         this.show_or_hide_login_form();
         this.register_dynamic_links();
-        this.simulate_input_placeholder_for_ie();
         this.logout_handler();
         this.check_risk_classification();
         if (!$('body').hasClass('BlueTopBack')) {
@@ -711,25 +710,6 @@ Header.prototype = {
                 text: template('[_1] Account ([_2])', [type, curr_id]),
             }));
         }
-    },
-    simulate_input_placeholder_for_ie: function() {
-        var test = document.createElement('input');
-        if ('placeholder' in test)
-            return;
-        $('input[placeholder]').each(function() {
-            var input = $(this);
-            input.val(input.attr('placeholder'));
-            input.focus(function() {
-                if (input.val() == input.attr('placeholder')) {
-                    input.val('');
-                }
-            });
-            input.blur(function() {
-                if (input.val() === '') {
-                    input.val(input.attr('placeholder'));
-                }
-            });
-        });
     },
     register_dynamic_links: function() {
         var logged_in_url = this.client.is_logged_in ?
