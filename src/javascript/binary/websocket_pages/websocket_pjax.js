@@ -4,6 +4,7 @@ var PortfolioWS = require('account/portfolio/portfolio.init');
 var ProfitTableWS = require('account/profit_table/profit_table.init');
 var StatementWS = require('account/statement/statement.init');
 var TopUpVirtualWS = require('account/top_up_virtualws');
+var SettingsWS = require('account/settings');
 
 pjax_config_page_require_auth("user/profit_table", function(){
     return {
@@ -90,6 +91,14 @@ pjax_config_page_require_auth("top_up_virtualws", function() {
     return {
         onLoad: function() {
             TopUpVirtualWS.init();
+        }
+    };
+});
+
+pjax_config_page_require_auth("settingsws", function() {
+    return {
+        onLoad: function() {
+            SettingsWS.init();
         }
     };
 });
