@@ -132,7 +132,12 @@ var SecurityWS = (function() {
             current_state = current_state === STATE.TRY_UNLOCK ?
                 STATE.LOCKED :
                 STATE.UNLOCKED;
-            $("#invalidinputfound").text(text.localize(response.error.message));
+            var message = response.error.message;
+            if (current_state === STATE.LOCKED &&
+                response.error.code === 'InputValidationFailed') {
+                message = 'Sorry, you have entered an incorrect cashier password';
+            }
+            $("#invalidinputfound").text(text.localize(message));
             return;
         }
         $form.hide();
