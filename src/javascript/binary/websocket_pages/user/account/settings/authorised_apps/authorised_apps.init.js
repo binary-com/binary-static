@@ -1,3 +1,4 @@
+var ApplicationsData = require('./authorised_apps.data');
 var Applications = (function() {
     "use strict";
 
