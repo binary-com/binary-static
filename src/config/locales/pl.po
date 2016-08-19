@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-11 22:47+0000\n"
+"PO-Revision-Date: 2016-08-16 17:24+0000\n"
 "Last-Translator: Ewelina Bruździak <e.bruzdziak@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>\n"
 "Language: pl\n"
@@ -1044,7 +1044,7 @@ msgid "Anyone who has potential to grow or increase traffic to %1"
 msgstr "Każdy, kto wykazuje potencjał rozwoju lub zwiększenia liczby klientów %1"
 
 msgid "App ID"
-msgstr ""
+msgstr "Identyfikator aplikacji"
 
 msgid "Applications"
 msgstr "Aplikacje"
@@ -1443,8 +1443,6 @@ msgstr "Wysyłając Firmie sugestie lub innego rodzaju opinię dotyczącą API %
 msgid "By the 15th of every month, you will receive the commission earned during the previous calendar month."
 msgstr "Do 15 dnia każdego miesiąca otrzymasz prowizję zarobioną w poprzednim miesiącu kalendarzowym."
 
-#, fuzzy
-#| msgid "By using or interacting with the website, you are consenting to the use of Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
 msgid "By using or interacting with the website, you are consenting to the use of the Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
 msgstr "Korzystanie ze strony jest jednoznaczne z wyrażeniem zgody na korzystanie z funkcji Google Analytics User ID, która pozwala Google na rejestrowanie Twoich identyfikatorów logowania %1 (np. VRTC1234, CR1234, MF1234). Włączenie funkcji Google Analytics User ID nie powoduje udostępniania czy ujawniania firmie Google żadnych innych informacji osobowych lub innych danych, które mogą zostać powiązane przez Google z takimi informacjami."
 
@@ -1786,6 +1784,9 @@ msgstr "Wypłaty kontraktów będą określane przez Firmę w odniesieniu do dzi
 
 msgid "Contract period"
 msgstr "Okres kontraktu"
+
+msgid "Contract purchased with app ID"
+msgstr "Kontrakt zakupiony z identyfikatorem aplikacji"
 
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "Kontrakty będą sprzedawane po obowiązującej cenie rynkowej po dotarciu wniosku na nasze serwery. Cena może różnić się od podanej ceny."
@@ -6419,10 +6420,8 @@ msgstr "Widok handlowy (TradingView)"
 msgid "Transact in"
 msgstr "Zawieraj transakcje na"
 
-#, fuzzy
-#| msgid "Your transaction reference is"
 msgid "Transaction performed by"
-msgstr "Kod referencyjny Twojej transakcji to"
+msgstr "Transakcja dokonana przez"
 
 msgid "Transfer"
 msgstr "Przelew"
@@ -7204,10 +7203,8 @@ msgstr "Możliwe jest zapisywanie Treści w pamięci podręcznej do 24 godzin od
 msgid "You may choose to contact us to close your account held with the Company. Your account may be closed if you do not have any open trade positions and if you have complied with the requested \"Know Your Client\" procedures to enable you to withdraw any pending funds in your account."
 msgstr "Możesz skontaktować się z nami w celu zamknięcia konta prowadzonego przez Firmę. Twoje konto może zostać zamknięte, jeśli nie masz żadnych otwartych pozycji handlowych i jeśli spełnione zostały procedury nałożone przez regulacje „Poznaj swojego klienta” w celu umożliwienia wypłaty środków zgromadzonych na Twoim koncie."
 
-#, fuzzy
-#| msgid "You may communicate with us through this website, by email or, exceptionally, by post. Details can be found in the Contact Us page."
 msgid "You may communicate with us through this website by means of Live Chat, e-mail, phone or, exceptionally, by post. Details can be found in the Contact Us page."
-msgstr "Możesz komunikować się z nami poprzez tę stronę internetową, drogą e-mailową lub, w szczególnych przypadkach, pocztą tradycyjną. Szczegóły można znaleźć w sekcji Napisz do nas."
+msgstr "Możesz komunikować się z nami poprzez tę stronę internetową na czacie na żywo, drogą e-mailową i telefoniczną lub, w szczególnych przypadkach, pocztą tradycyjną. Szczegóły można znaleźć w sekcji Napisz do nas."
 
 msgid "You may develop Applications using the %1 API as soon as you register an Application and you agree to follow these Terms."
 msgstr "Użytkownik może rozpocząć tworzenie Aplikacji przy użyciu API %1 od razy po zarejestrowaniu Aplikacji i zaakceptowaniu niniejszych Warunków."
@@ -8384,9 +8381,6 @@ msgstr "Akceptacja regulaminu"
 
 msgid "Trading with MetaTrader 5"
 msgstr "Handlowanie z MetaTrader 5"
-
-#~ msgid "Contract purchased with app ID"
-#~ msgstr "Kontrakt zakupiony z identyfikatorem aplikacji"
 
 #~ msgid "Please re-enter your email"
 #~ msgstr "Wpisz ponownie swój adres e-mail"
