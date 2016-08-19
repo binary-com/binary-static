@@ -3,13 +3,16 @@
  */
 
 var Symbols = require('./symbols');
- Element.prototype.hide = function(){
-     this.style.display = 'none';
- };
 
- Element.prototype.show = function(){
-     this.style.display = '';
- };
+if (typeof Element !== 'undefined') {
+   Element.prototype.hide = function(){
+       this.style.display = 'none';
+   };
+
+   Element.prototype.show = function(){
+       this.style.display = '';
+   };
+}
 
 /*
  * function to display contract form as element of ul

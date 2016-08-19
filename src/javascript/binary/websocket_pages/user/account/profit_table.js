@@ -1,7 +1,6 @@
+var moment = require('../../../../lib/moment/moment');
 var ProfitTable = (function(){
     'use strict';
-    var Compatibility = typeof window !== 'undefined' ? window.Compatibility : require('../../../common_functions/compatibility');
-    var moment = Compatibility.requireIfNotExist('moment', '../../lib/moment/moment');
     var getProfitTabletData = function(transaction) {
         var buyMoment = moment.utc(transaction["purchase_time"] * 1000),
             sellMoment = moment.utc(transaction["sell_time"] * 1000),
