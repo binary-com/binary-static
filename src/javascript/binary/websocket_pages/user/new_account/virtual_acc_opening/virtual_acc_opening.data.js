@@ -4,9 +4,9 @@ var VirtualAccOpeningData = (function(){
     function newAccount(config) {
         var req = {
             new_account_virtual: 1,
-            client_password: password,
-            residence: residence,
-            verification_code: verificationCode
+            client_password: config.password,
+            residence:       config.residence,
+            verification_code: config.verification_code
         };
 
         // Add TrafficSource parameters
