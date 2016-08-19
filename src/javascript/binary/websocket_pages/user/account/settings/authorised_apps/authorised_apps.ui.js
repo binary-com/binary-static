@@ -1,5 +1,6 @@
 var Button = require('attach_dom/button');
 var FlexTableUI = require('attach_dom/flextable');
+var ApplicationsData = require('./authorised_apps.data');
 
 var ApplicationsUI = (function(){
     'use strict';
@@ -89,3 +90,5 @@ var ApplicationsUI = (function(){
         displayError: displayError,
     };
 }());
+
+module.exports = ApplicationsUI;

@@ -37,3 +37,5 @@ var ApplicationsData = (function(){
         list: list,
     };
 }());
+
+module.exports = ApplicationsData;
