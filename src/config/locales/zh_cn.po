@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Chinese (China) (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-14 01:55+0000\n"
+"PO-Revision-Date: 2016-08-16 07:21+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
@@ -1040,7 +1040,7 @@ msgid "Anyone who has potential to grow or increase traffic to %1"
 msgstr "任何有潜力让 %1 增长或提高流量的人士"
 
 msgid "App ID"
-msgstr ""
+msgstr "应用程序ID"
 
 msgid "Applications"
 msgstr "应用程序"
@@ -1782,6 +1782,9 @@ msgstr "公司将参考本网站与合约标的指数有关的每日最高价/�
 
 msgid "Contract period"
 msgstr "合约期间"
+
+msgid "Contract purchased with app ID"
+msgstr "使用应用程序ID买入合约"
 
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "合约将在我们服务器收到请求时，以当时的市场价格卖出。此价格可能与报价有差异。"
@@ -6419,10 +6422,8 @@ msgstr "交易查看(TradingView)"
 msgid "Transact in"
 msgstr "交易"
 
-#, fuzzy
-#| msgid "Your transaction reference is"
 msgid "Transaction performed by"
-msgstr "您的交易参考号是"
+msgstr "交易执行者为"
 
 msgid "Transfer"
 msgstr "转账"
@@ -8385,9 +8386,6 @@ msgstr "条款和条件审批"
 
 msgid "Trading with MetaTrader 5"
 msgstr "使用MetaTrader 5进行交易"
-
-#~ msgid "Contract purchased with app ID"
-#~ msgstr "使用应用程序ID买入合约"
 
 #~ msgid "Please re-enter your email"
 #~ msgstr "请重新输入您的电邮地址"

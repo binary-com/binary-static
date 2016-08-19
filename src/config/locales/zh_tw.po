@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Taiwan) (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-14 01:56+0000\n"
+"PO-Revision-Date: 2016-08-16 07:23+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) <https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
 "Language: zh_tw\n"
@@ -1038,7 +1038,7 @@ msgid "Anyone who has potential to grow or increase traffic to %1"
 msgstr "任何有潛力增長或提高 %1 流量之人士"
 
 msgid "App ID"
-msgstr ""
+msgstr "應用程式ID"
 
 msgid "Applications"
 msgstr "應用程式"
@@ -1778,6 +1778,9 @@ msgstr "公司將參考本網站上公佈的與合約標的指數有關的每日
 
 msgid "Contract period"
 msgstr "合約期間"
+
+msgid "Contract purchased with app ID"
+msgstr "以應用程式ID買入合約"
 
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "合約將在我們伺服器收到要求時以當時的市場價格賣出。此價格可能會與報價有差異。"
@@ -6411,10 +6414,8 @@ msgstr "交易檢視(TradingView)"
 msgid "Transact in"
 msgstr "交易"
 
-#, fuzzy
-#| msgid "Your transaction reference is"
 msgid "Transaction performed by"
-msgstr "您的交易參考號是"
+msgstr "交易執行者為"
 
 msgid "Transfer"
 msgstr "轉帳"
@@ -8374,9 +8375,6 @@ msgstr "條款和條件審批"
 
 msgid "Trading with MetaTrader 5"
 msgstr "使用MetaTrader 5進行交易"
-
-#~ msgid "Contract purchased with app ID"
-#~ msgstr "以應用程式ID買入合約"
 
 #~ msgid "Please re-enter your email"
 #~ msgstr "請重新輸入您的電郵地址"
