@@ -1,3 +1,4 @@
+var Symbols = require('websocket_pages/trade/symbols');
 var TradePage = (function(){
 
   var trading_page = 0, events_initialized = 0;

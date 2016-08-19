@@ -1,3 +1,5 @@
+var Symbols = require('websocket_pages/trade/symbols');
+
 /*
  * This function process the active symbols to get markets
  * and underlying list

@@ -2,6 +2,7 @@
  * This contains common functions we need for processing the response
  */
 
+var Symbols = require('websocket_pages/trade/symbols');
  Element.prototype.hide = function(){
      this.style.display = 'none';
  };
