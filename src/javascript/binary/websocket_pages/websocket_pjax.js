@@ -7,6 +7,7 @@ var TopUpVirtualWS    = require('account/top_up_virtualws');
 var SettingsWS        = require('account/settings');
 var MyAccountWS       = require('websocket_pages/user/my_accountws');
 var SettingsDetailsWS = require('account/settings/settings_detailsws');
+var SecurityWS        = require('account/settings/settings_securityws');
 var LostPassword      = require('websocket_pages/user/lost_password');
 
 pjax_config_page_require_auth("user/profit_table", function(){
