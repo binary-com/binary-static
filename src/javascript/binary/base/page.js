@@ -1,4 +1,7 @@
 var getAppId = require('config').getAppId;
+var TrafficSource = require('common_functions/traffic_source');
+var RiskClassification = require('common_functions/risk_classification');
+
 var text;
 var clock_started = false;
 

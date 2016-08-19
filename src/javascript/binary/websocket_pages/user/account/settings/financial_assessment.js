@@ -1,3 +1,5 @@
+var RiskClassification = require('common_functions/risk_classification');
+
 var FinancialAssessmentws = (function(){
    "use strict";
 

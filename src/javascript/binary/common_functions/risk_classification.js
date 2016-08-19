@@ -66,3 +66,5 @@ RiskClassification = (function() {
     cleanup: cleanup
   };
 }());
+
+module.exports = RiskClassification;

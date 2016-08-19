@@ -1,3 +1,5 @@
+// var TrafficSource = require('common_functions/traffic_source');
+
 var VirtualAccOpeningData = (function(){
     "use strict";
 

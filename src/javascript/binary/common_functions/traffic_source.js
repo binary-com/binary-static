@@ -67,3 +67,5 @@ var TrafficSource = (function(){
         getSource: getSource,
     };
 })();
+
+module.exports = TrafficSource;

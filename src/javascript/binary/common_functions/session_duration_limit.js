@@ -64,3 +64,5 @@ var SessionDurationLimit = (function() {
         exclusionResponseHandler: exclusionResponseHandler,
     };
 }());
+
+module.exports = SessionDurationLimit;
