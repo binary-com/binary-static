@@ -7,6 +7,26 @@ var TopUpVirtualWS = (function() {
         $views;
 
     var init = function() {
+        Content.populate();
+        if(!TUser.get().hasOwnProperty('is_virtual')) return;
+
+        BinarySocket.init({
+            onmessage: function(msg){
+                var response = JSON.parse(msg.data);
+                if (response) {
+                    if (response.msg_type === "authorize") {
+                        TopUpVirtualWS.init();
+                    }
+                    else if (response.msg_type === "topup_virtual") {
+                        TopUpVirtualWS.responseHandler(response);
+                    }
+                }
+                else {
+                    console.log('some error occured');
+                }
+            }
+        });
+
         containerID = '#topup_virtual';
         hiddenClass = 'hidden';
         $views      = $(containerID + ' .viewItem');
@@ -60,31 +80,4 @@ var TopUpVirtualWS = (function() {
     };
 }());
 
-
-pjax_config_page_require_auth("top_up_virtualws", function() {
-    return {
-        onLoad: function() {
-        	BinarySocket.init({
-                onmessage: function(msg){
-                    var response = JSON.parse(msg.data);
-                    if (response) {
-                        if (response.msg_type === "authorize") {
-                            TopUpVirtualWS.init();
-                        }
-                        else if (response.msg_type === "topup_virtual") {
-                            TopUpVirtualWS.responseHandler(response);
-                        }
-                    }
-                    else {
-                        console.log('some error occured');
-                    }
-                }
-            });
-
-            Content.populate();
-            if(TUser.get().hasOwnProperty('is_virtual')) {
-                TopUpVirtualWS.init();
-            }
-        }
-    };
-});
+module.exports = TopUpVirtualWS;

@@ -1,4 +1,6 @@
 var Table = require('attach_dom/table');
+var MarketTimes = require('../market_timesws');
+var MarketTimesData = require('./market_timesws.data');
 
 var MarketTimesUI = (function() {
     "use strict";
@@ -158,3 +160,5 @@ var MarketTimesUI = (function() {
         }
     };
 }());
+
+module.exports = MarketTimesUI;

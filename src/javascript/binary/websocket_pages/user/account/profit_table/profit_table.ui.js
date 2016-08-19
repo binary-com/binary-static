@@ -1,6 +1,7 @@
 var Button = require('attach_dom/button');
 var Table = require('attach_dom/table');
 var app_details = require('common_functions/get_app_details');
+var ProfitTable = require('../profit_table');
 
 var ProfitTableUI = (function(){
     "use strict";
@@ -123,3 +124,5 @@ var ProfitTableUI = (function(){
         }
     };
 }());
+
+module.exports = ProfitTableUI;

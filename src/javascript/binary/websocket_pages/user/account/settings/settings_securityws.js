@@ -1,5 +1,6 @@
 var validator  = require('binary/validator');
 var CommonData = require('common_functions/common_data');
+
 var SecurityWS = (function() {
     "use strict";
     var $form;
@@ -177,3 +178,5 @@ var SecurityWS = (function() {
         init: init,
     };
 })();
+
+module.exports = SecurityWS;

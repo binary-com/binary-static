@@ -1,4 +1,7 @@
 var app_details = require('common_functions/get_app_details');
+var StatementUI = require('./statement.ui');
+var StatementWS = require('./statement.init');
+
 var StatementData = (function(){
     var hasOlder = true;
 
@@ -34,3 +37,5 @@ var StatementData = (function(){
         hasOlder: hasOlder
     };
 }());
+
+module.exports = StatementData;

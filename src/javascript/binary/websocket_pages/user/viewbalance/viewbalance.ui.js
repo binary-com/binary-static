@@ -1,5 +1,6 @@
-var ViewBalanceUI = (function(){
+var PortfolioWS = require('account/portfolio/portfolio.init');
 
+var ViewBalanceUI = (function(){
     function updateBalances(response){
         if (response.hasOwnProperty('error')) {
             console.log(response.error.message);

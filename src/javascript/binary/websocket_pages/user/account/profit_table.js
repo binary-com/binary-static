@@ -24,13 +24,9 @@ var ProfitTable = (function(){
         return profit_table_data;
     };
 
-    var external = {
+    return {
         getProfitTabletData: getProfitTabletData
     };
-
-    if (typeof module !== 'undefined') {
-        module.exports = external;
-    }
-
-    return external;
 }());
+
+module.exports = ProfitTable;

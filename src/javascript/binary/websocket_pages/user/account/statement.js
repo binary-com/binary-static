@@ -43,14 +43,10 @@ var Statement = (function(){
         return csv.join('\r\n');
     };
 
-    var external = {
+    return {
         getStatementData: getStatementData,
         generateCSV: generateCSV
     };
-
-    if (typeof module !== 'undefined') {
-        module.exports = external;
-    }
-
-    return external;
 }());
+
+module.exports = Statement;

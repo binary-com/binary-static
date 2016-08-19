@@ -1,4 +1,5 @@
 var validator = require('binary/validator');
+
 var SelfExclusionWS = (function() {
     "use strict";
 
@@ -343,3 +344,5 @@ var SelfExclusionWS = (function() {
         init: init,
     };
 }());
+
+module.exports = SelfExclusionWS;

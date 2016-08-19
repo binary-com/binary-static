@@ -1,4 +1,5 @@
 var validator = require('binary/validator');
+
 var SettingsDetailsWS = (function() {
     "use strict";
 
@@ -16,6 +17,34 @@ var SettingsDetailsWS = (function() {
 
 
     function init() {
+        BinarySocket.init({
+            onmessage: function(msg) {
+                var response = JSON.parse(msg.data);
+                if (!response) {
+                    console.log('some error occured');
+                    return;
+                }
+                var type = response.msg_type;
+                switch(type){
+                    case "get_settings":
+                        SettingsDetailsWS.getDetailsResponse(response);
+                        break;
+                    case "set_settings":
+                        SettingsDetailsWS.setDetailsResponse(response);
+                        break;
+                    case "states_list":
+                        SettingsDetailsWS.populateStates(response);
+                        break;
+                    case "error":
+                        $('#formMessage').attr('class', 'errorfield').text(response.error.message);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
+
+        Content.populate();
         var isJP = page.client.residence === 'jp';
         BinarySocket.send({"get_settings": "1"});
         validator.bind_to.simple($(formID)[0], {
@@ -253,40 +282,4 @@ var SettingsDetailsWS = (function() {
     };
 }());
 
-
-
-pjax_config_page_require_auth("settings/detailsws", function() {
-    return {
-        onLoad: function() {
-            BinarySocket.init({
-                onmessage: function(msg) {
-                    var response = JSON.parse(msg.data);
-                    if (!response) {
-                        console.log('some error occured');
-                        return;
-                    }
-                    var type = response.msg_type;
-                    switch(type){
-                        case "get_settings":
-                            SettingsDetailsWS.getDetailsResponse(response);
-                            break;
-                        case "set_settings":
-                            SettingsDetailsWS.setDetailsResponse(response);
-                            break;
-                        case "states_list":
-                            SettingsDetailsWS.populateStates(response);
-                            break;
-                        case "error":
-                            $('#formMessage').attr('class', 'errorfield').text(response.error.message);
-                            break;
-                        default:
-                            break;
-                    }
-                }
-            });
-
-            Content.populate();
-            SettingsDetailsWS.init();
-        }
-    };
-});
+module.exports = SettingsDetailsWS;

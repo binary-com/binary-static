@@ -13,6 +13,23 @@ var MyAccountWS = (function() {
         authButtonID;
 
     var init = function() {
+        showLoadingImage($('<div/>', {id: 'loading'}).insertAfter('#welcome'));
+
+        if(page.url.param('login')) {
+            page.client.clear_storage_values();
+        }
+
+        BinarySocket.init({
+            onmessage: function(msg) {
+                var response = JSON.parse(msg.data);
+                if (response) {
+                    MyAccountWS.apiResponse(response);
+                }
+            }
+        });
+
+        Content.populate();
+
         hiddenClass    = 'invisible';
         welcomeTextID  = '#welcome_text';
         virtualTopupID = '#VRT_topup_link';
@@ -162,27 +179,4 @@ var MyAccountWS = (function() {
     };
 }());
 
-
-pjax_config_page_require_auth("user/my_accountws", function() {
-    return {
-        onLoad: function() {
-            showLoadingImage($('<div/>', {id: 'loading'}).insertAfter('#welcome'));
-
-            if(page.url.param('login')) {
-                page.client.clear_storage_values();
-            }
-
-            BinarySocket.init({
-                onmessage: function(msg) {
-                    var response = JSON.parse(msg.data);
-                    if (response) {
-                        MyAccountWS.apiResponse(response);
-                    }
-                }
-            });
-
-            Content.populate();
-            MyAccountWS.init();
-        }
-    };
-});
+module.exports = MyAccountWS;

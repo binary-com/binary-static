@@ -1,3 +1,5 @@
+var PortfolioWS = require('account/portfolio/portfolio.init');
+
 var JapanPortfolio = (function() {
 
   var $portfolio;
