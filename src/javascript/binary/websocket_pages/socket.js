@@ -1,3 +1,5 @@
+var SessionDurationLimit = require('common_functions/session_duration_limit');
+
 /*
  * It provides a abstraction layer over native javascript Websocket.
  *
