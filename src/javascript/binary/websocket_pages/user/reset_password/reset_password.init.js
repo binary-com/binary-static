@@ -1,4 +1,5 @@
 var PasswordMeter = require('attach_dom/password_strength_meter');
+var Validate = require('common_functions/validation');
 
 var ResetPassword = (function () {
     'use strict';
@@ -25,7 +26,7 @@ var ResetPassword = (function () {
             $('#password-error1').removeClass(hiddenClass);
             return;
         } else if (!passwordValid(pw1)) {                   // password failed validation
-            var errMsgs = showPasswordError(pw1);
+            var errMsgs = Validate.showPasswordError(pw1);
             $('#password-error1').empty();
             errMsgs.forEach(function(msg){
                 var $errP = $('<p></p>', {class: 'errorfield'}).text(msg);

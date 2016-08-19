@@ -172,6 +172,42 @@ var Validate = (function(){
     return false;
   }
 
+  function validateEmail(mail) {
+    if (/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/.test(mail)){
+      return true;
+    }
+    return false;
+  }
+
+  function passwordValid(password) {
+    if (password.length > 25) {
+      return false;
+    }
+
+    var r = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,25}$/;
+    return r.test(password);
+  }
+
+  /**
+   * Use this if you want to separate validation logic with UI
+   * Use Validate.errorMessagePassword if you want to handle UI with validation together
+   * @param password      password
+   * @returns {Array}     array of error message, can be empty
+   */
+  function showPasswordError(password) {
+    var errMsgs = [];
+    if (password.length < 6 || password.length > 25) {
+      errMsgs.push(Content.errorMessage('range', '6-25'));
+    }
+
+    var hasUpperLowerDigitRegex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/;
+    if (!hasUpperLowerDigitRegex.test(password)) {
+      errMsgs.push(text.localize('Password should have lower and uppercase letters with numbers.'));
+    }
+
+    return errMsgs;
+  }
+
   return {
     displayErrorMessage: displayErrorMessage,
     hideErrorMessage: hideErrorMessage,
@@ -179,42 +215,12 @@ var Validate = (function(){
     errorMessagePassword: errorMessagePassword,
     fieldNotEmpty: fieldNotEmpty,
     errorMessageResidence: errorMessageResidence,
-    errorMessageToken: errorMessageToken
+    errorMessageToken: errorMessageToken,
+
+    validateEmail: validateEmail,
+    passwordValid: passwordValid,
+    showPasswordError: showPasswordError,
   };
 }());
 
-function validateEmail(mail) {
-  if (/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/.test(mail)){
-    return true;
-  }
-  return false;
-}
-
-function passwordValid(password) {
-  if (password.length > 25) {
-    return false;
-  }
-
-  var r = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,25}$/;
-  return r.test(password);
-}
-
-/**
- * Use this if you want to separate validation logic with UI
- * Use Validate.errorMessagePassword if you want to handle UI with validation together
- * @param password      password
- * @returns {Array}     array of error message, can be empty
- */
-function showPasswordError(password) {
-  var errMsgs = [];
-  if (password.length < 6 || password.length > 25) {
-    errMsgs.push(Content.errorMessage('range', '6-25'));
-  }
-
-  var hasUpperLowerDigitRegex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/;
-  if (!hasUpperLowerDigitRegex.test(password)) {
-    errMsgs.push(text.localize('Password should have lower and uppercase letters with numbers.'));
-  }
-
-  return errMsgs;
-}
+module.exports = Validate;

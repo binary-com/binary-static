@@ -1,3 +1,5 @@
+var Validate = require('common_functions/validation');
+
 var sidebar_scroll = function(elm_selector) {
     elm_selector.on('click', '#sidebar-nav li', function() {
         var clicked_li = $(this);

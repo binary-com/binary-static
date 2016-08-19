@@ -1,3 +1,4 @@
+var Validate = require('common_functions/validation');
 var ForwardWS = (function() {
   function init() {
     Content.populate();
