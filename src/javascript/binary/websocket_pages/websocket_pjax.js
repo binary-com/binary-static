@@ -3,6 +3,7 @@ var MarketTimesUI = require('websocket_pages/resources/market_times/market_times
 var PortfolioWS = require('account/portfolio/portfolio.init');
 var ProfitTableWS = require('account/profit_table/profit_table.init');
 var StatementWS = require('account/statement/statement.init');
+var TopUpVirtualWS = require('account/top_up_virtualws');
 
 pjax_config_page_require_auth("user/profit_table", function(){
     return {
@@ -81,6 +82,14 @@ pjax_config_page_require_auth("user/settings/securityws", function() {
     return {
         onLoad: function() {
             SecurityWS.init();
+        }
+    };
+});
+
+pjax_config_page_require_auth("top_up_virtualws", function() {
+    return {
+        onLoad: function() {
+            TopUpVirtualWS.init();
         }
     };
 });
