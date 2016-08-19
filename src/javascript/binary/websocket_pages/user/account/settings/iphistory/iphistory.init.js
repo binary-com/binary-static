@@ -28,3 +28,5 @@ var IPHistory = (function() {
         clean: clean,
     };
 })();
+
+module.exports = IPHistory;
