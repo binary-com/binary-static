@@ -1,12 +1,13 @@
-var AssetIndexUI   = require('websocket_pages/resources/asset_index/asset_indexws.ui');
-var MarketTimesUI  = require('websocket_pages/resources/market_times/market_timesws.ui');
-var PortfolioWS    = require('account/portfolio/portfolio.init');
-var ProfitTableWS  = require('account/profit_table/profit_table.init');
-var StatementWS    = require('account/statement/statement.init');
-var TopUpVirtualWS = require('account/top_up_virtualws');
-var SettingsWS     = require('account/settings');
-var MyAccountWS    = require('websocket_pages/user/my_accountws');
-var LostPassword   = require('websocket_pages/user/lost_password');
+var AssetIndexUI      = require('websocket_pages/resources/asset_index/asset_indexws.ui');
+var MarketTimesUI     = require('websocket_pages/resources/market_times/market_timesws.ui');
+var PortfolioWS       = require('account/portfolio/portfolio.init');
+var ProfitTableWS     = require('account/profit_table/profit_table.init');
+var StatementWS       = require('account/statement/statement.init');
+var TopUpVirtualWS    = require('account/top_up_virtualws');
+var SettingsWS        = require('account/settings');
+var MyAccountWS       = require('websocket_pages/user/my_accountws');
+var SettingsDetailsWS = require('account/settings/settings_detailsws');
+var LostPassword      = require('websocket_pages/user/lost_password');
 
 pjax_config_page_require_auth("user/profit_table", function(){
     return {
@@ -109,6 +110,14 @@ pjax_config_page_require_auth("user/my_accountws", function() {
     return {
         onLoad: function() {
             MyAccountWS.init();
+        }
+    };
+});
+
+pjax_config_page_require_auth("settings/detailsws", function() {
+    return {
+        onLoad: function() {
+            SettingsDetailsWS.init();
         }
     };
 });
