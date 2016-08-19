@@ -179,7 +179,7 @@ var Validate = (function(){
     return false;
   }
 
-  function passwordValid(password) {
+  function validPassword(password) {
     if (password.length > 25) {
       return false;
     }
@@ -218,7 +218,7 @@ var Validate = (function(){
     errorMessageToken: errorMessageToken,
 
     validateEmail: validateEmail,
-    passwordValid: passwordValid,
+    passwordValid: validPassword,
     showPasswordError: showPasswordError,
   };
 }());
