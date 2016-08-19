@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-10 03:25+0000\n"
+"PO-Revision-Date: 2016-08-15 10:19+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
@@ -1044,7 +1044,7 @@ msgid "Anyone who has potential to grow or increase traffic to %1"
 msgstr "Siapapun yang memiliki potensi atau ingin meningkatkan lalu lintas ke %1"
 
 msgid "App ID"
-msgstr ""
+msgstr "ID App"
 
 msgid "Applications"
 msgstr "Aplikasi"
@@ -1443,8 +1443,6 @@ msgstr "Dengan mengirimkan saran atau masukan lainnya mengenai API %1 kepada Per
 msgid "By the 15th of every month, you will receive the commission earned during the previous calendar month."
 msgstr "Pada tanggal 15 setiap bulan, Anda akan menerima komisi yang didapat selama periode bulan sebelumnya."
 
-#, fuzzy
-#| msgid "By using or interacting with the website, you are consenting to the use of Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
 msgid "By using or interacting with the website, you are consenting to the use of the Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
 msgstr "Dengan menggunakan atau berinteraksi dengan website, Anda menyetujui penggunaan User ID Fitur Google Analytics yang mengijinkan Google untuk menyimpan login ID %1 Anda (contoh VRTC1234, CR1234, MF1234, dsb). Tidak ada informasi pribadi lainnya selain login ID Binary.com, atau data lain yang dihubungkan dengan informasi tersebut oleh Google dimana dibagikan atau disampaikan kepada Google dengan mengaktifkan User ID Fitur Google Analytics."
 
@@ -1786,6 +1784,9 @@ msgstr "Hasil kontrak akan ditentukan oleh Perusahaan dengan mengacu pada nilai 
 
 msgid "Contract period"
 msgstr "Masa kontrak"
+
+msgid "Contract purchased with app ID"
+msgstr "Pembelian kontrak dengan app ID"
 
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "Kontrak akan dijual pada harga pasar terkini ketika permintaan diterima oleh server kami. Harga ini mungkin berbeda dari harga yang diindikasikan."
@@ -6427,10 +6428,8 @@ msgstr "TradingView"
 msgid "Transact in"
 msgstr "Bertransaksi di"
 
-#, fuzzy
-#| msgid "Your transaction reference is"
 msgid "Transaction performed by"
-msgstr "Referensi transaksi Anda adalah"
+msgstr "Transaksi yang dilakukan oleh"
 
 msgid "Transfer"
 msgstr "Transfer"
@@ -7212,10 +7211,8 @@ msgstr "Anda mungkin dapat menyimpan Konten hingga 24 jam dari permintaan melalu
 msgid "You may choose to contact us to close your account held with the Company. Your account may be closed if you do not have any open trade positions and if you have complied with the requested \"Know Your Client\" procedures to enable you to withdraw any pending funds in your account."
 msgstr "Anda dapat menghubungi kami untuk menutup akun yang Anda miliki pada Perusahaan. Akun Anda juga dapat ditutup jika Anda tidak memiliki posisi trading dan jika Anda telah diminta untuk melengkapi prosedur \"Know Your Client\" untuk menarik saldo atau dana yang masih tersisa pada akun Anda."
 
-#, fuzzy
-#| msgid "You may communicate with us through this website, by email or, exceptionally, by post. Details can be found in the Contact Us page."
 msgid "You may communicate with us through this website by means of Live Chat, e-mail, phone or, exceptionally, by post. Details can be found in the Contact Us page."
-msgstr "Anda dapat berkomunikasi dengan kami melalui website, email atau melalui pos. Rincian dapat ditemukan pada halaman Hubungi Kami."
+msgstr "Anda dapat berkomunikasi dengan kami melalui website ini via Chat Langsung, email, telpon atau untuk keperluan khusus via pos. Rincian alamat dapat ditemukan pada halaman Hubungi Kami."
 
 msgid "You may develop Applications using the %1 API as soon as you register an Application and you agree to follow these Terms."
 msgstr "Anda dapat mengembangkan Aplikasi dengan menggunakan API %1 segera setelah Anda mendaftarkan Aplikasi dan Anda setuju untuk mengikuti Persyaratan ini."
@@ -8392,9 +8389,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 msgid "Trading with MetaTrader 5"
 msgstr "Trading menggunakan MetaTrader 5"
-
-#~ msgid "Contract purchased with app ID"
-#~ msgstr "Pembelian kontrak dengan app ID"
 
 #~ msgid "Please re-enter your email"
 #~ msgstr "Masukkan ulang email Anda"
