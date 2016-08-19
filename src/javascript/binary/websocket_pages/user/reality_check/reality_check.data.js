@@ -72,19 +72,16 @@ var RealityCheckData = (function () {
         var currentTime = moment.utc();
 
         var sessionDuration = moment.duration(currentTime.diff(startTime));
-        var durationD = sessionDuration.get('days');
-        var durationH = sessionDuration.get('hours');
-        var durationM = sessionDuration.get('minutes');
-
-        var durationString = durationTemplateString
-            .replace('[_1]', durationD)
-            .replace('[_2]', durationH)
-            .replace('[_3]', durationM);
+        var durationString = template(durationTemplateString, [
+            sessionDuration.get('days'),
+            sessionDuration.get('hours'),
+            sessionDuration.get('minutes'),
+        ]);
 
         var turnover = +(wsData.buy_amount) + (+(wsData.sell_amount));
         var profitLoss = +(wsData.sell_amount) - (+(wsData.buy_amount));
 
-        var startTimeString = tradingTimeTemplate.replace('[_1]', startTime.format('YYYY-MM-DD HH:mm:ss') + ' GMT');
+        var startTimeString = template(tradingTimeTemplate, [startTime.format('YYYY-MM-DD HH:mm:ss') + ' GMT']);
         return {
             startTimeString: startTimeString,
             loginTime: startTime.format('YYYY-MM-DD HH:mm:ss') + ' GMT',

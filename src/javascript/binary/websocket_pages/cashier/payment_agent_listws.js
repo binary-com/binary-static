@@ -15,8 +15,8 @@ var PaymentAgentListWS = (function() {
         $paListContainer = $('#pa_list');
         agentTemplate = $paListContainer.find('#accordion').html();
 
-        residence = $.cookie('residence');
-        if(!residence || residence.length === 0) {
+        residence = Cookies.get('residence');
+        if (!residence || residence.length === 0) {
             residence = '00'; // just to get a list of payment agent Countries
         }
 

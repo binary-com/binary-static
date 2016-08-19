@@ -33,7 +33,7 @@ var SecurityWS = (function() {
 
     function makeAuthRequest() {
         BinarySocket.send({
-            authorize: CommonData.getApiToken(),
+            authorize: CommonData.getLoginToken(),
         });
     }
 

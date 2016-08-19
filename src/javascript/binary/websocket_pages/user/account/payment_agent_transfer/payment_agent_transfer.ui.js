@@ -48,12 +48,12 @@ var PaymentAgentTransferUI = (function () {
 
     function updateDoneView(fromID, toID, amount, currency) {
         var templateString = "Your request to transfer [_1] [_2] from [_3] to [_4] has been successfully processed.";
-        var translated = text.localize(templateString);
-        var confirmMsg = translated
-            .replace('[_1]', amount)
-            .replace('[_2]', currency)
-            .replace('[_3]', fromID)
-            .replace('[_4]', toID);
+        var confirmMsg = text.localize(templateString, [
+            amount,
+            currency,
+            fromID,
+            toID,
+        ]);
 
         $('#pa_transfer_done > #confirm-msg').text(confirmMsg);
         $('#pa_transfer_done > #confirm-msg').removeClass(hiddenClass);

@@ -32,8 +32,6 @@ if (!SessionStore || !LocalStore) {
     }
 }
 
-var Settings = new CookieStorage('settings');
-
 var page = new Page(window.page_params);
 
 onLoad.queue(function () {
@@ -197,8 +195,8 @@ onLoad.queue(function () {
 // jQuery's ready function works always.
 
 $(document).ready(function () {
-  if (!$('body').hasClass('BlueTopBack')) { // exclude BO
-    // $.cookie is not always available.
+    if ($('body').hasClass('BlueTopBack')) return; // exclude BO
+    // Cookies is not always available.
     // So, fall back to a more basic solution.
     var match = document.cookie.match(/\bloginid=(\w+)/);
     match = match ? match[1] : '';
@@ -209,11 +207,9 @@ $(document).ready(function () {
                 if (jq_event.originalEvent.newValue === '') {
                     // logged out
                     page.reload();
-                } else {
+                } else if (!window['is_logging_in']) {
                     // loginid switch
-                    if(!window['is_logging_in']) {
-                        page.reload();
-                    }
+                     page.reload();
                 }
                 break;
             case 'new_release_reload_time':
@@ -227,55 +223,30 @@ $(document).ready(function () {
     LocalStore.set('active_loginid', match);
     var start_time;
     var time_now;
-    var tabChanged = function() {
-        if(clock_started === true){
-            if (document.hidden || document.webkitHidden) {
-                start_time = moment().valueOf();
-                time_now = page.header.time_now;
-            }else {
-                time_now = (time_now + (moment().valueOf() - start_time));
-                page.header.time_now = time_now;
-            }
+    var evt = (
+        (document.webkitHidden && 'webkitvisibilitychange') ||
+        (document.hidden && 'visibilitychange') ||
+        null
+    );
+    if (!evt || !document.addEventListener) return;
+    document.addEventListener(evt, function tabChanged() {
+        if (!clock_started) return;
+        if (document.hidden || document.webkitHidden) {
+            start_time = moment().valueOf();
+            time_now = page.header.time_now;
+        } else {
+            time_now = (time_now + (moment().valueOf() - start_time));
+            page.header.time_now = time_now;
         }
-    };
-
-    if (typeof document.webkitHidden !== 'undefined') {
-        if (document.addEventListener) {
-            document.addEventListener("webkitvisibilitychange", tabChanged);
-        }
-    } else if (typeof document.hidden !== 'undefined') {
-        if (document.addEventListener) {
-            document.addEventListener("visibilitychange", tabChanged);
-        }
-    }
-  }
+    });
 });
-
-var client_form;
-onLoad.queue(function() {
-    client_form = new ClientForm({valid_loginids: page.settings.get('valid_loginids')});
-});
-
-var ClientForm = function(init_params) {
-    this.valid_loginids =  new RegExp("^(" + init_params['valid_loginids'] + ")[0-9]+$", "i");
-};
-
-ClientForm.prototype = {
-    is_loginid_valid: function(login_id) {
-        if (login_id.length > 0) {
-            login_id = login_id.toUpperCase();
-            return this.valid_loginids.test(login_id);
-        }
-
-        return true;
-    }
-};
 
 var TUser = (function () {
     var data = {};
     return {
-        set: function(a){ data = a; },
-        get: function(){ return data; }
+        extend: function(ext) { $.extend(data, ext); },
+        set: function(a) { data = a; },
+        get: function() { return data; }
     };
 })();
 

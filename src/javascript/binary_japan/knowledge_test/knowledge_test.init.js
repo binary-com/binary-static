@@ -94,9 +94,10 @@ var KnowledgeTest = (function() {
         var msgTemplate =
             '{JAPAN ONLY}Dear customer, you are not allowed to take knowledge test until [_1]. Last test taken at [_2].';
 
-        var msg = text.localize(msgTemplate)
-            .replace('[_1]', nextTestDate.toUTCString())
-            .replace('[_2]', lastTestDate.toUTCString());
+        var msg = text.localize(msgTemplate, [
+            nextTestDate.toUTCString(),
+            lastTestDate.toUTCString(),
+            ]);
 
         showMsgOnly(msg);
     }
