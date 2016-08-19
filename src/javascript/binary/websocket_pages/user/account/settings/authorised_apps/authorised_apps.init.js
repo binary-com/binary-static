@@ -28,3 +28,5 @@ var Applications = (function() {
         clean: clean,
     };
 })();
+
+module.exports = Applications;
