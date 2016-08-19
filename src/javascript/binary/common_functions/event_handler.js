@@ -9,4 +9,4 @@ module.exports = function onlyNumericOnKeypress(ev) {
         ev.returnValue = false;
         ev.preventDefault();
     }
-}
+};
