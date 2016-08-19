@@ -1,3 +1,4 @@
+var validator = require('binary/validator');
 var SettingsDetailsWS = (function() {
     "use strict";
 
@@ -17,7 +18,7 @@ var SettingsDetailsWS = (function() {
     function init() {
         var isJP = page.client.residence === 'jp';
         BinarySocket.send({"get_settings": "1"});
-        bind_validation.simple($(formID)[0], {
+        validator.bind_to.simple($(formID)[0], {
             schema: isJP ? getJPSchema() : getNonJPSchema(),
             submit: function(ev, info) {
                 ev.preventDefault();

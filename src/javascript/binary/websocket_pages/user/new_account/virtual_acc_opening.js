@@ -1,3 +1,4 @@
+var validator = require('binary/validator');
 pjax_config_page("new_account/virtualws", function() {
     function onSuccess(res) {
         var new_account = res.new_account_virtual;
@@ -58,7 +59,7 @@ pjax_config_page("new_account/virtualws", function() {
             $('#password-meter').remove();
         }
 
-        bind_validation.simple(form, {
+        validator.bind_to.simple(form, {
             schema: VirtualAccOpeningData.getSchema(),
             submit: function(ev, info) {
                 ev.preventDefault();

@@ -1,3 +1,4 @@
+var validator = require('binary/validator');
 var SelfExclusionWS = (function() {
     "use strict";
 
@@ -30,7 +31,7 @@ var SelfExclusionWS = (function() {
             fields[this.name] = '';
         });
 
-        bind_validation.simple($form[0], {
+        validator.bind_to.simple($form[0], {
             validate: validate,
             submit: submitForm,
         });
@@ -115,7 +116,7 @@ var SelfExclusionWS = (function() {
             var errMsg = response.error.message;
             var field  = response.error.field;
             if (field) {
-                ValidationUI.draw('input[name='+field+']', errMsg);
+                validator.UI.draw('input[name='+field+']', errMsg);
             } else {
                 showFormMessage(text.localize(errMsg), false);
             }
@@ -291,7 +292,7 @@ var SelfExclusionWS = (function() {
                 dv.check(function(d) { return !d.isAfter(six_weeks); }, 'Exclude time cannot be more than 6 weeks'),
             ]);
             if (!res.isOk) {
-                ValidationUI.draw(
+                validator.UI.draw(
                     'input[name=timeout_until_duration]',
                     res.value[0]
                 );

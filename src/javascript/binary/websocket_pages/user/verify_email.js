@@ -1,3 +1,4 @@
+var validator = require('binary/validator');
 function submit_email() {
     Content.populate();
     var form = $('#verify-email-form')[0];
@@ -5,7 +6,7 @@ function submit_email() {
         return;
     }
 
-    bind_validation.simple(form, {
+    validator.bind_to.simple(form, {
         schema: {
             email: [ValidateV2.required, ValidateV2.email]
         },

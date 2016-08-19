@@ -1,3 +1,4 @@
+var validator  = require('binary/validator');
 var CommonData = require('common_functions/common_data');
 var SecurityWS = (function() {
     "use strict";
@@ -90,7 +91,7 @@ var SecurityWS = (function() {
             setupRepeatPasswordForm();
         }
         current_state = locked ? STATE.LOCKED : STATE.UNLOCKED;
-        bind_validation.simple($form[0], {
+        validator.bind_to.simple($form[0], {
             schema: locked ? {} : getUnlockedSchema(),
             submit: function(e, info) {
                 e.preventDefault();

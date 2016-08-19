@@ -1,3 +1,4 @@
+var validator = require('binary/validator');
 var PasswordWS = (function(){
     var $form, $result;
 
@@ -5,7 +6,7 @@ var PasswordWS = (function(){
         $('#change-password').removeClass('invisible');
         $form   = $('#change-password > form');
         $result = $('#change-password > div[data-id="success-result"]');
-        bind_validation.simple($form[0], {
+        validator.bind_to.simple($form[0], {
             stop:     displayErrors,
             schema:   getSchema(),
             submit:   function(ev, info) {
@@ -21,7 +22,7 @@ var PasswordWS = (function(){
     var MATCHES_OLD = {q: 'same-as-old'};
 
     function displayErrors(info) {
-        ValidationUI.clear();
+        validator.UI.clear();
         $form.find('p[data-error]').addClass('hidden');
         info.errors.forEach(function(err) {
             switch (err.err) {
@@ -30,7 +31,7 @@ var PasswordWS = (function(){
                     $form.find('p[data-error="'+err.err.q+'"]').removeClass('hidden');
                     break;
                 default:
-                    ValidationUI.draw('input[name=' + err.ctx + ']', err.err);
+                    validator.UI.draw('input[name=' + err.ctx + ']', err.err);
             }
         });
     }
@@ -45,7 +46,7 @@ var PasswordWS = (function(){
             return value === data.new_password;
         }
         return {
-            old_password: [customError(V2.required, IS_EMPTY)],
+            old_password: [validator.customError(V2.required, IS_EMPTY)],
             new_password: [V2.required, dv.check(notMatchingOld, MATCHES_OLD), V2.password],
             repeat_password: [V2.required, dv.check(match, err)],
         };
