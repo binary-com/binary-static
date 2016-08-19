@@ -183,8 +183,8 @@ var ViewPopupWS = (function() {
 
         containerSetText('trade_details_start_date'    , toJapanTimeIfNeeded(epochToDateTime(contract.date_start)));
         if (document.getElementById('trade_details_end_date')) containerSetText('trade_details_end_date'      , toJapanTimeIfNeeded(epochToDateTime(contract.date_expiry)));
-        containerSetText('trade_details_payout', contract.currency + ' ' + parseFloat(contract.payout).toFixed(2));
-        containerSetText('trade_details_purchase_price', contract.currency + ' ' + parseFloat(contract.buy_price).toFixed(2));
+        containerSetText('trade_details_payout', format_money(contract.currency, parseFloat(contract.payout).toFixed(2)));
+        containerSetText('trade_details_purchase_price', format_money(contract.currency, parseFloat(contract.buy_price).toFixed(2)));
 
         normalUpdateTimers();
         normalUpdate();
@@ -210,14 +210,19 @@ var ViewPopupWS = (function() {
         containerSetText('trade_details_ref_id'          , contract.transaction_ids.buy + (contract.transaction_ids.sell ? ' - ' + contract.transaction_ids.sell : ''));
         containerSetText('trade_details_current_date'    , toJapanTimeIfNeeded(epochToDateTime(!is_ended ? contract.current_spot_time : (user_sold ? contract.sell_spot_time : contract.exit_tick_time))));
         containerSetText('trade_details_current_spot'    , currentSpot || text.localize('not available'));
-        containerSetText('trade_details_indicative_price', indicative_price ? (contract.currency + ' ' + parseFloat(indicative_price).toFixed(2)) : '-');
+        containerSetText('trade_details_indicative_price', indicative_price ? format_money(contract.currency, parseFloat(indicative_price).toFixed(2)) : '-');
 
         var profit_loss, percentage;
         if (finalPrice) {
             profit_loss = finalPrice - contract.buy_price;
             percentage  = (profit_loss * 100 / contract.buy_price).toFixed(2);
+            containerSetText('trade_details_profit_loss',
+                format_money(contract.currency, parseFloat(profit_loss).toFixed(2)) + '<span>(' + (percentage > 0 ? '+' : '') + percentage + '%' + ')</span>',
+                {'class': (profit_loss >= 0 ? 'profit' : 'loss')}
+            );
+        } else {
+            containerSetText('trade_details_profit_loss', '-', {'class': 'loss'});
         }
-        containerSetText('trade_details_profit_loss', profit_loss ? (contract.currency + ' ' + parseFloat(profit_loss).toFixed(2) + (percentage ? '<span>(' + (percentage > 0 ? '+' : '') + percentage + '%' + ')</span>' : '')) : '-', {'class': (profit_loss >= 0 ? 'profit' : 'loss')});
 
         if(!is_started) {
             containerSetText('trade_details_entry_spot', '-');
@@ -633,6 +638,8 @@ var ViewPopupWS = (function() {
                     if(response.proposal_open_contract && response.proposal_open_contract.contract_id == contractID) {
                         storeSubscriptionID(response.proposal_open_contract.id);
                         responseContract(response);
+                    } else if (!response.proposal_open_contract && response.echo_req.contract_id == contractID && response.error) {
+                        showErrorPopup(response, response.error.message);
                     }
                     break;
                 case 'sell':

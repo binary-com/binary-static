@@ -10,7 +10,9 @@ var PortfolioWS =  (function() {
         currency = '';
         oauth_apps = {};
         showLoadingImage($("#portfolio-loading"));
-        BinarySocket.send({"balance":1});
+        if (TUser.get().balance) {
+            updateBalance();
+        }
         BinarySocket.send({"portfolio":1});
         // Subscribe to transactions to auto update new purchases
         BinarySocket.send({'transaction': 1, 'subscribe': 1});
@@ -22,21 +24,22 @@ var PortfolioWS =  (function() {
             $('<tr class="flex-tr" id="' + data.contract_id + '">' +
                 '<td class="ref flex-tr-child">' + '<span' + showTooltip(data.app_id, oauth_apps[data.app_id]) + '>' + data.transaction_id + '</span>' +
                 '</td>' +
-                '<td class="payout flex-tr-child">' + data.currency + ' <strong>' + data.payout + '</strong></td>' +
+                '<td class="payout flex-tr-child"><strong>' + format_money(data.currency, data.payout) + '</strong></td>' +
                 '<td class="details flex-tr-child">' + data.longcode + '</td>' +
-                '<td class="purchase flex-tr-child">' + data.currency + ' <strong>' + data.buy_price + '</strong></td>' +
-                '<td class="indicative flex-tr-child">' + data.currency + ' <strong class="indicative_price"></strong></td>' +
+                '<td class="purchase flex-tr-child"><strong>' + format_money(data.currency, data.buy_price) + '</strong></td>' +
+                '<td class="indicative flex-tr-child"><strong class="indicative_price">' + format_money(data.currency, '--.--') + '</strong></td>' +
                 '<td class="button flex-tr-child"><button class="button open_contract_detailsws" contract_id="' + data.contract_id + '">' + text.localize('View') + '</button></td>' +
             '</tr>')
         );
     };
 
-    var updateBalance = function(data) {
-        $("#portfolio-balance").text(Portfolio.getBalance(data, true));
-        if(Portfolio.getBalance(data) > 0 || page.client.is_virtual()) {
-            $('#if-balance-zero').addClass('invisible');
+    var updateBalance = function() {
+        if ($("#portfolio-balance").length === 0) return;
+        $("#portfolio-balance").text(Portfolio.getBalance(TUser.get().balance, TUser.get().currency));
+        if(Portfolio.getBalance(TUser.get().balance) > 0 || page.client.is_virtual()) {
+            $('#if-balance-zero:visible').addClass('invisible');
         } else {
-            $('#if-balance-zero').removeClass('invisible');
+            $('#if-balance-zero:hidden').removeClass('invisible');
         }
     };
 
@@ -125,7 +128,7 @@ var PortfolioWS =  (function() {
                 status_class = values[proposal.contract_id].indicative < old_indicative ? ' price_moved_down' : (values[proposal.contract_id].indicative > old_indicative ? ' price_moved_up' : '');
                 $td.removeClass("no_resale");
             }
-            $td.html(proposal.currency + ' <strong class="indicative_price' + status_class + '"">' + values[proposal.contract_id].indicative + '</strong>' + no_resale_html);
+            $td.html('<strong class="indicative_price' + status_class + '"">' + format_money(proposal.currency, values[proposal.contract_id].indicative) + '</strong>' + no_resale_html);
         }
 
         updateFooter();
@@ -138,8 +141,8 @@ var PortfolioWS =  (function() {
     };
 
     var updateFooter = function() {
-        $("#cost-of-open-positions").text(currency + ' ' + addComma(Portfolio.getSumPurchase(values)));
-        $("#value-of-open-positions").text(currency + ' ' + addComma(Portfolio.getIndicativeSum(values)));
+        $("#cost-of-open-positions").text(format_money(currency, addComma(Portfolio.getSumPurchase(values))));
+        $("#value-of-open-positions").text(format_money(currency, addComma(Portfolio.getIndicativeSum(values))));
     };
 
     var errorMessage = function(msg) {
@@ -158,9 +161,6 @@ var PortfolioWS =  (function() {
                     msg_type = response.msg_type;
 
                 switch(msg_type) {
-                    case "balance":
-                        PortfolioWS.updateBalance(response);
-                        break;
                     case "portfolio":
                         PortfolioWS.updatePortfolio(response);
                         break;
