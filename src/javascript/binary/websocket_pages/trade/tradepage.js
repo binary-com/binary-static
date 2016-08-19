@@ -1,5 +1,6 @@
-var TradePage = (function(){
+var TradingAnalysis = require('trade/analysis');
 
+var TradePage = (function(){
   var trading_page = 0, events_initialized = 0;
 
   var onLoad = function(){

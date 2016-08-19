@@ -1,6 +1,7 @@
 var PortfolioWS = require('account/portfolio/portfolio.init');
 var ProfitTableWS = require('account/profit_table/profit_table.init');
 var StatementWS = require('account/statement/statement.init');
+var TradingAnalysis = require('trade/analysis');
 
 /*
  * This Message object process the response from server and fire

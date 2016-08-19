@@ -1,3 +1,5 @@
+var TradingAnalysis = require('trade/analysis');
+
 TradingAnalysis.DigitInfoWS = function() {
     this.chart_config = {
         chart: {

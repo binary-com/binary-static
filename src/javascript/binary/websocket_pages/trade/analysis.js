@@ -233,3 +233,5 @@ var TradingAnalysis = (function() {
     };
 
 })();
+
+module.exports = TradingAnalysis;

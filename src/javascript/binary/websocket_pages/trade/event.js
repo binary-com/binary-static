@@ -1,4 +1,5 @@
 var onlyNumericOnKeypress = require('common_functions/event_handler');
+var TradingAnalysis = require('trade/analysis');
 
 /*
  * TradingEvents object contains all the event handler function required for
