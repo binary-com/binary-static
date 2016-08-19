@@ -1,4 +1,5 @@
 var AssetIndexUI = require('websocket_pages/resources/asset_index/asset_indexws.ui');
+var MarketTimesUI = require('websocket_pages/resources/market_times/market_timesws.ui');
 
 pjax_config_page_require_auth("user/profit_table", function(){
     return {
