@@ -1,3 +1,5 @@
+var AssetIndexUI = require('websocket_pages/resources/asset_index/asset_indexws.ui');
+
 pjax_config_page_require_auth("user/profit_table", function(){
     return {
         onLoad: function() {
