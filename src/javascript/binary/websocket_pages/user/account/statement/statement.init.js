@@ -1,3 +1,6 @@
+var StatementData = require('./statement.data');
+var StatementUI = require('./statement.ui');
+
 var StatementWS = (function(){
     "use strict";
 
@@ -137,3 +140,5 @@ var StatementWS = (function(){
         clean: cleanStatementPageState
     };
 }());
+
+module.exports = StatementWS;

@@ -2,6 +2,7 @@ var AssetIndexUI = require('websocket_pages/resources/asset_index/asset_indexws.
 var MarketTimesUI = require('websocket_pages/resources/market_times/market_timesws.ui');
 var PortfolioWS = require('account/portfolio/portfolio.init');
 var ProfitTableWS = require('account/profit_table/profit_table.init');
+var StatementWS = require('account/statement/statement.init');
 
 pjax_config_page_require_auth("user/profit_table", function(){
     return {
