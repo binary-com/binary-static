@@ -8,6 +8,7 @@ var SettingsWS        = require('account/settings');
 var MyAccountWS       = require('websocket_pages/user/my_accountws');
 var SettingsDetailsWS = require('account/settings/settings_detailsws');
 var SecurityWS        = require('account/settings/settings_securityws');
+var SecurityWS        = require('account/settings/self_exclusion');
 var MetaTraderUI      = require('account/settings/metatrader/metatrader.ui');
 var LostPassword      = require('websocket_pages/user/lost_password');
 
