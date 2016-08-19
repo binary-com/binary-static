@@ -1,4 +1,5 @@
 var app_details = require('common_functions/get_app_details');
+var Portfolio = require('../portfolio');
 
 var PortfolioWS =  (function() {
     'use strict';
@@ -201,3 +202,5 @@ var PortfolioWS =  (function() {
     };
 
 })();
+
+module.exports = PortfolioWS;

@@ -50,17 +50,13 @@ var Portfolio = (function(){
         return sum.toFixed(2);
     }
 
-    var external = {
+    return {
         getBalance: getBalance,
         getPortfolioData: getPortfolioData,
         getProposalOpenContract: getProposalOpenContract,
         getIndicativeSum: function(values) { return getSum(values, 'indicative'); },
         getSumPurchase: function(values) { return getSum(values, 'buy_price'); },
     };
-
-    if (typeof module !== 'undefined') {
-        module.exports = external;
-    }
-
-    return external;
 }());
+
+module.exports = Portfolio;

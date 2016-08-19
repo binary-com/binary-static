@@ -1,3 +1,5 @@
+var PortfolioWS = require('account/portfolio/portfolio.init');
+
 /*
  * This Message object process the response from server and fire
  * events based on type of response
