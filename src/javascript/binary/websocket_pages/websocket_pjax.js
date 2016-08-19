@@ -5,6 +5,7 @@ var ProfitTableWS = require('account/profit_table/profit_table.init');
 var StatementWS = require('account/statement/statement.init');
 var TopUpVirtualWS = require('account/top_up_virtualws');
 var SettingsWS = require('account/settings');
+var LostPassword = require('websocket_pages/user/lost_password');
 
 pjax_config_page_require_auth("user/profit_table", function(){
     return {
@@ -99,6 +100,14 @@ pjax_config_page_require_auth("settingsws", function() {
     return {
         onLoad: function() {
             SettingsWS.init();
+        }
+    };
+});
+
+pjax_config_page('user/lost_passwordws', function() {
+    return {
+        onLoad: function() {
+            LostPassword.init();
         }
     };
 });
