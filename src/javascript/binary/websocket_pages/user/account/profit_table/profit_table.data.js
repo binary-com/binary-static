@@ -1,6 +1,8 @@
 var app_details = require('common_functions/get_app_details');
-var ProfitTableData = (function(){
+var ProfitTableWS = require('./profit_table.init');
+var ProfitTableUI = require('./profit_table.ui');
 
+var ProfitTableData = (function(){
     function initSocket(){
         BinarySocket.init({
             onmessage: function(msg){
@@ -34,3 +36,5 @@ var ProfitTableData = (function(){
         initSocket: initSocket
     };
 }());
+
+module.exports = ProfitTableData;
