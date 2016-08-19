@@ -189,8 +189,7 @@ sub _texts {
         push @texts, localize('Jump To');
         push @texts, localize('Date');
         push @texts, localize('Ref.');
-        push @texts, localize('Transaction performed by');
-        push @texts, localize('App ID');
+        push @texts, localize('Contract purchased with app ID');
         push @texts, localize('Action');
         push @texts, localize('Sell');
         push @texts, localize('Buy');
@@ -755,6 +754,8 @@ sub _texts {
         push @texts, localize('Revoke access');
         push @texts, localize('Keep track of your authorised applications.');
         push @texts, localize('Are you sure that you want to permanently revoke access to application');
+        push @texts, localize('Transaction performed by');
+        push @texts, localize('App ID');
 
         # Strings for lostpasswordws
         push @texts, localize('Please check your email to retrieve the token needed to reset your password.');

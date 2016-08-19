@@ -340,8 +340,8 @@ var TradingEvents = (function () {
         /*
          * attach event to purchase buttons to buy the current contract
          */
-        // using function expression form here as it used inside for loop
-        var purchaseContractEvent = function () {
+        $('.purchase_button').on('click dblclick', function () {
+            if (isVisible(document.getElementById('confirmation_message_container'))) return;
             var id = this.getAttribute('data-purchase-id'),
                 askPrice = this.getAttribute('data-ask-price');
 
@@ -361,29 +361,19 @@ var TradingEvents = (function () {
                 Price.incrFormId();
                 processForgetProposals();
             }
-        };
-
-        var purchaseButtonElements = document.getElementsByClassName('purchase_button');
-        if (purchaseButtonElements) {
-            for (var j = 0, l = purchaseButtonElements.length; j < l; j++) {
-                purchaseButtonElements[j].addEventListener('click', purchaseContractEvent);
-            }
-        }
+        });
 
         /*
          * attach event to close icon for purchase container
          */
-        var closeContainerElement = document.getElementById('close_confirmation_container');
-        if (closeContainerElement) {
-            closeContainerElement.addEventListener('click', function (e) {
-                if (e.target) {
-                    e.preventDefault();
-                    document.getElementById('contract_confirmation_container').style.display = 'none';
-                    document.getElementById('contracts_list').style.display = 'flex';
-                    processPriceRequest();
-                }
-            });
-        }
+        $('#close_confirmation_container').on('click', function (e) {
+            if (e.target) {
+                e.preventDefault();
+                document.getElementById('contract_confirmation_container').style.display = 'none';
+                document.getElementById('contracts_list').style.display = 'flex';
+                processPriceRequest();
+            }
+        });
 
         /*
          * attach an event to change in barrier
