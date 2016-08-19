@@ -1,3 +1,4 @@
+var ValidAccountOpening = require('common_functions/valid_account_opening');
 var JapanAccOpeningUI = function () {
   "use strict";
 
