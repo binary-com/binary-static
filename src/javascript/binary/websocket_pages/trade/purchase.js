@@ -76,7 +76,7 @@ var Purchase = (function () {
                 profit.innerHTML = Content.localize().textContractConfirmationProfit + ' <p>' + profit_value + '</p>';
             }
 
-            balance.textContent = Content.localize().textContractConfirmationBalance + ' ' + TUser.get().currency + ' ' + Math.round(receipt['balance_after']*100)/100;
+            balance.textContent = Content.localize().textContractConfirmationBalance + ' ' + format_money(TUser.get().currency, Math.round(receipt['balance_after']*100)/100);
 
             if(show_chart){
                 chart.show();
