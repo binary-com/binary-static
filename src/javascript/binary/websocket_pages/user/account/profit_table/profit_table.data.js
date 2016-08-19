@@ -1,3 +1,4 @@
+var app_details = require('common_functions/get_app_details');
 var ProfitTableData = (function(){
 
     function initSocket(){
@@ -11,7 +12,7 @@ var ProfitTableData = (function(){
                         ProfitTableWS.profitTableHandler(response);
                         showLocalTimeOnHover('td.buy-date,td.sell-date');
                     } else if (type === 'oauth_apps') {
-                        addTooltip(ProfitTableUI.setOauthApps(buildOauthApps(response.oauth_apps)));
+                        app_details.addTooltip(ProfitTableUI.setOauthApps(app_details.build(response.oauth_apps)));
                     }
                 }
             }

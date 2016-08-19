@@ -1,6 +1,6 @@
 var TradePage = (function(){
 
-  var trading_page = 0;
+  var trading_page = 0, events_initialized = 0;
 
   var onLoad = function(){
     if(japanese_client() && /\/trading\.html/i.test(window.location.pathname)) {
@@ -20,7 +20,10 @@ var TradePage = (function(){
       }
     });
     Price.clearFormId();
-    TradingEvents.init();
+    if (events_initialized === 0) {
+        events_initialized = 1;
+        TradingEvents.init();
+    }
     Content.populate();
 
     if(sessionStorage.getItem('currencies')){
@@ -53,6 +56,7 @@ var TradePage = (function(){
 
   var onUnload = function(){
     trading_page = 0;
+    events_initialized = 0;
     forgetTradingStreams();
     BinarySocket.clear();
     Defaults.clear();

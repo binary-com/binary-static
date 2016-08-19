@@ -1,3 +1,4 @@
+var IPHistoryUI   = require('./iphistory.ui');
 var IPHistoryData = require('./iphistory.data');
 var IPHistory = (function() {
     'use strict';
@@ -27,3 +28,5 @@ var IPHistory = (function() {
         clean: clean,
     };
 })();
+
+module.exports = IPHistory;

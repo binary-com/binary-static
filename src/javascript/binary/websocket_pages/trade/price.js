@@ -199,7 +199,7 @@ var Price = (function() {
                 } else {
                     $('.stake:hidden').show();
                     stake.textContent = text.localize('Stake') + ': ';
-                    amount.textContent = currency.value + ' ' + (data['display_value']*1).toFixed(2);
+                    amount.textContent = format_money(currency.value, (data['display_value']*1).toFixed(2));
                 }
                 $('.stake_wrapper:hidden').show();
             } else {
@@ -208,7 +208,7 @@ var Price = (function() {
 
             if (data['payout']) {
               payout.textContent = (is_spread ? text.localize('Payout/point') : text.localize('Payout')) + ': ';
-              payoutAmount.textContent = currency.value + ' ' + (data['payout']*1).toFixed(2);
+              payoutAmount.textContent = format_money(currency.value, (data['payout']*1).toFixed(2));
               $('.payout_wrapper:hidden').show();
             } else {
               $('.payout_wrapper:visible').hide();

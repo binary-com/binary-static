@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-15 02:38+0000\n"
+"PO-Revision-Date: 2016-08-18 04:09+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -1051,7 +1051,7 @@ msgid "Anyone who has potential to grow or increase traffic to %1"
 msgstr "当社へのトラフィックの成長または増加に貢献が見込める方"
 
 msgid "App ID"
-msgstr ""
+msgstr "アプリケーション ID"
 
 msgid "Applications"
 msgstr "アプリケーション"
@@ -1463,8 +1463,6 @@ msgstr "Binary.comに関するご提案またはその他ご意見を当社に�
 msgid "By the 15th of every month, you will receive the commission earned during the previous calendar month."
 msgstr "毎月15日までに前月分の報酬を振込まさせて頂きます。"
 
-#, fuzzy
-#| msgid "By using or interacting with the website, you are consenting to the use of Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
 msgid "By using or interacting with the website, you are consenting to the use of the Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
 msgstr ""
 "当サイトのご使用または当サイトと利用して通信されることで、GoogleアナリティクスのユーザーID機能の使用に同意いただくものとします。\n"
@@ -1816,6 +1814,9 @@ msgstr "当社は当社サイトに報告された、トレードの取引対象
 
 msgid "Contract period"
 msgstr "取引期間"
+
+msgid "Contract purchased with app ID"
+msgstr "アプリケーションIDで購入されたトレード"
 
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "当社のサーバがリクエストを受理した時点での市場価格で売却取引が成立します。実際の約定価格と発注時の表示価格と異なる場合があります。"
@@ -3017,10 +3018,10 @@ msgid "If you select \"Does Not Touch\", you win the payout if the market never 
 msgstr "「NO-TOUCH」を選択された場合、<strong>取引期間が終了時間</strong>まで市場価格が<strong>バリア</strong>設定した価格にタッチしなければペイアウトを受け取れます。"
 
 msgid "If you select \"Ends Between\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>Low barrier</strong> AND strictly lower than the <strong>High barrier</strong>."
-msgstr "「範囲内」を選択された場合、<strong>終値</strong>が バリア設定した<strong>上下両方のバリア価格</strong>の間に留まること、すなわちいずれのバリア価格にもタッチしなければペイアウトを獲得いただけます。トレード終了時間までの市場価格の動向は判定に影響を及ぼしません。"
+msgstr "「END-IN」を選択された場合、判定時刻に<strong>判定レート</strong>が <strong>上限バリア未満かつ下限バリア以上</strong>の場合、ペイアウトを受け取れます。"
 
 msgid "If you select \"Ends Outside\", you win the payout if the <strong>exit spot</strong> is EITHER strictly higher than the <strong>High barrier</strong>, OR strictly lower than the <strong>Low barrier</strong>."
-msgstr "「END-OUT」を選択された場合、 <strong>終値</strong>がバリア設定した<strong>上限バリア価格を上回る</strong>か、<strong>下限バリア価格を下回れば</strong>ペイアウトを獲得いただけます。同値は条件を満たしていないと判定されます。トレード終了時間までの市場価格の動向は判定に関係ありません。"
+msgstr "「END-OUT」を選択された場合、 <strong>判定レート</strong>が<strong>上限バリア以上</strong>もしくは、<strong>下限バリア未満の場合</strong>ペイアウトを受け取れます。"
 
 msgid "If you select \"Even\", you will win the payout if the <strong>last digit</strong> of the last tick is an <strong>even number (i.e., 2, 4, 6, 8, or 0).</strong>"
 msgstr "「偶数」を選択された場合、最後のtickの<strong>下一桁</strong>が<strong>偶数（例：0、2、4、6、8）</strong>であるとペイアウトを獲得いただけます。"
@@ -5799,19 +5800,19 @@ msgid "The <strong>Premier Platform</strong> for Binary Options Trading"
 msgstr "<strong>最高水準</strong> の取引環境"
 
 msgid "The <strong>contract period</strong> is the period between the <strong>next tick</strong> after the <strong>start time</strong> and the <strong>end time</strong>."
-msgstr "この<strong>トレードの取引期間</strong>は、<strong>トレード開始時間</strong>の<strong>次のTick</strong>から<strong>トレード終了時間</strong>までとなります。"
+msgstr "<strong>取引期間</strong>は、<strong>取引開始時間直後</strong>の<strong>ティック</strong>から<strong>取引終了時間</strong>までとなります。"
 
 msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "<strong>取引期間</strong>は、取引期間開始時から判定時刻までとなります。新規購入が可能な時間は<strong>判定時刻2分前</strong>までで、取引可能時間を過ぎると新規購入注文＆売却取引は行えません。"
 
 msgid "The <strong>end time</strong> is the selected number of seconds/minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
-msgstr "<strong>取引期間</strong>は、取引期間開始時から判定時刻までとなります。新規購入が可能な時間は<strong>判定時刻2分前</strong>までで、取引終可能時間を過ぎると新規購入注文＆売却取引は行えません。"
+msgstr "<strong>取引期間</strong>は、取引期間開始時から判定時刻までとなります。新規購入が可能な時間は<strong>判定時刻2分前</strong>までで、取引可能時間を過ぎると新規購入注文＆売却取引は行えません。"
 
 msgid "The <strong>exit spot</strong> is the spot at the <strong>end time</strong>."
 msgstr "<strong>判定レート</strong>とは<strong>判定時刻時</strong>のスポット価格のことです。"
 
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
-msgstr "<strong>トレード開始時間</strong>とは当社のサーバにてトレードが処理された際の時間のことです。"
+msgstr "<strong>取引開始時間</strong>とは回号の取引開始時刻のことです。各回号の詳細につきまして契約締結前交付書面をご確認ください。"
 
 msgid "The AUD Index is a weighted Index, measuring the Australian Dollar's value against a basket of 5 global currencies (USD, EUR, GBP, JPY, CAD), each weighted by 20%."
 msgstr "AUDインデックスとは、5つのグローバル通貨(USD, EUR, GBP, JPY, CAD)のバスケットに対するオーストラリアドルの価値を計った各荷重20％の荷重インデックスです。"
@@ -6598,10 +6599,8 @@ msgstr "TradingView"
 msgid "Transact in"
 msgstr "選択通貨"
 
-#, fuzzy
-#| msgid "Your transaction reference is"
 msgid "Transaction performed by"
-msgstr "トレード参照番号："
+msgstr "xxxによって取引が実行されました"
 
 msgid "Transfer"
 msgstr "送金"
@@ -7409,10 +7408,8 @@ msgstr "%1 APIを介したコンテンツのリクエストから24時間まで�
 msgid "You may choose to contact us to close your account held with the Company. Your account may be closed if you do not have any open trade positions and if you have complied with the requested \"Know Your Client\" procedures to enable you to withdraw any pending funds in your account."
 msgstr "当社で開設されたご口座を閉鎖するには当社までご連絡いただく必要がございます。お客さまのご口座にオープンポジションのご契約がなく、保留中の資金を出金できるようにする「Know Your Client」の手順に応じられている場合にご口座の閉鎖が可能です。"
 
-#, fuzzy
-#| msgid "You may communicate with us through this website, by email or, exceptionally, by post. Details can be found in the Contact Us page."
 msgid "You may communicate with us through this website by means of Live Chat, e-mail, phone or, exceptionally, by post. Details can be found in the Contact Us page."
-msgstr "当社はお客さまと当サイトを通して、またはメール、例外として郵送でご連絡させていただきます。詳細はお問い合わせページにてご確認いただけます。"
+msgstr "当社はお客さまへ当サイトを通して、ライブチャット、メール、電話 または 例外として郵送でご連絡させていただきます。詳細はお問い合わせページにてご確認いただけます。"
 
 msgid "You may develop Applications using the %1 API as soon as you register an Application and you agree to follow these Terms."
 msgstr "アプリケーションを登録して、これらの規約に同意されるとすぐに%1 APIを利用してアプリケーション開発ができます。"
@@ -7913,28 +7910,28 @@ msgid "you have sufficient experience and knowledge in matters of financial trad
 msgstr "当社サービスを通じて金融トレードを購入するメリットとリスクを評価でき、かつ当社サイトに掲載されている情報に依存せずに金融トレードを行ったことのあるような金融トレードにおける十分な経験と知識があります。"
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through close on %4."
-msgstr "%1のTOUCHは、取引期間終了(%4)するまでに%3がバリア価格にタッチしない場合、ペイアウト発生。"
+msgstr "%3のTOUCHは、取引期間(%4)が終了するまでにバリア価格にタッチしない場合、ペイアウト発生"
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
-msgstr "%1のEND-INは、判定時刻の時点の%4まで、%3が上限バリア未満かつ下限バリア以上で、ペイアウト発生。"
+msgstr "%3のEND-INは、判定時刻(%4)の時点のまで上限バリア未満かつ下限バリア以上で、ペイアウト発生"
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
-msgstr "%1のEND-OUTは、判定時刻の時点(%4)で%3が上限バリア以上もしくは下限バリア未満で、ペイアウト発生。"
+msgstr "%3のEND-OUTは、判定時刻(%4)の時点で上限バリア以上もしくは下限バリア未満で、ペイアウト発生"
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exercise price through close on %4."
-msgstr "%1のBREAK-OUTは、取引期間中（%4）に%3が上限バリア以上もしくは下限バリア以下の場合、ペイアウト発生。"
+msgstr "%3のBREAK-OUTは、取引期間中(%4)に上限バリア以上もしくは下限バリア以下の場合、ペイアウト発生"
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
-msgstr "%1のラダーHIGHは、判定時刻の時点(%4)で%3がバリア価格以上で、ペイアウト発生。"
+msgstr "%3のラダーHIGHは、判定時刻(%4)の時点にバリア価格以上の場合、ペイアウト発生"
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
-msgstr "%1のラダーLOWは、判定時刻の時点(%4)で%3がバリア価格未満の場合、ペイアウト発生。"
+msgstr "%3のラダーLOWは、判定時刻(%4)の時点でバリア価格未満の場合、ペイアウト発生"
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 stays between low and high values of Exercise price through close on %4."
-msgstr "%1のSTAY-INは取引期間中(%4)、%3が上限バリア未満かつ下限バリア超過を維持した場合、ペイアウト発生。"
+msgstr "%3のSTAY-INは取引期間中(%4)に上限バリア未満かつ下限バリア超過を維持した場合、ペイアウト発生"
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %4."
-msgstr "%1のTOUCHは、取引期間が終了(%4)するまで%3がバリア価格にタッチした場合、ペイアウト発生。"
+msgstr "%3のTOUCHは、取引期間(%4)が終了するまでバリア価格にタッチした場合、ペイアウト発生"
 
 msgid "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
 msgstr "60,100,000円（2016年7月1日現在）"
@@ -8156,7 +8153,7 @@ msgid "{JAPAN ONLY}HIGH/LOW"
 msgstr "ラダーHIGH/ラダーLOW"
 
 msgid "{JAPAN ONLY}Higher"
-msgstr "バリア価格以上"
+msgstr "HIGH"
 
 msgid "{JAPAN ONLY}HirooMiyaya 3F, 1-9-16 Hiroo, Shibuya, Tokyo, 150-0012"
 msgstr "〒150-0012　東京渋谷区広尾一丁目9-16　広尾宮田ビル3F"
@@ -8289,7 +8286,7 @@ msgid "{JAPAN ONLY}Knowledge test list item 5"
 msgstr "・問題の複写を禁止します。また、第三者に漏えいしないことに同意いただくものとします。"
 
 msgid "{JAPAN ONLY}Lower"
-msgstr "バリア価格未満"
+msgstr "LOW"
 
 msgid "{JAPAN ONLY}Main business"
 msgstr "主な業務"
@@ -8493,7 +8490,7 @@ msgid "{JAPAN ONLY}To invest a binary options investment accurately, the custome
 msgstr "バイナリーオプション投資を的確に行うにはオプション取引などデリバティブ取引に関わる知識や経験が必要です。"
 
 msgid "{JAPAN ONLY}Touches"
-msgstr "タッチ"
+msgstr "TOUCH"
 
 msgid "{JAPAN ONLY}Trading & Hedging"
 msgstr "取引とヘッジ"
@@ -8554,10 +8551,10 @@ msgid "{JAPAN ONLY}minutes"
 msgstr "分"
 
 msgid "{JAPAN ONLY}month"
-msgstr "ヵ月"
+msgstr "月"
 
 msgid "{JAPAN ONLY}months"
-msgstr "ヵ月"
+msgstr "月"
 
 msgid "{JAPAN ONLY}week"
 msgstr "週間"
@@ -8627,9 +8624,6 @@ msgstr "利用規約の承認"
 
 msgid "Trading with MetaTrader 5"
 msgstr "MetaTrader 5でお取引"
-
-#~ msgid "Contract purchased with app ID"
-#~ msgstr "アプリケーションIDで購入されたトレード"
 
 #~ msgid "Please re-enter your email"
 #~ msgstr "メールアドレスを再度ご入力下さい。"

@@ -1,3 +1,4 @@
+var app_details = require('common_functions/get_app_details');
 var StatementData = (function(){
     var hasOlder = true;
 
@@ -10,7 +11,7 @@ var StatementData = (function(){
                     if (type === 'statement'){
                         StatementWS.statementHandler(response);
                     } else if (type === 'oauth_apps') {
-                        addTooltip(StatementUI.setOauthApps(buildOauthApps(response.oauth_apps)));
+                        app_details.addTooltip(StatementUI.setOauthApps(app_details.build(response.oauth_apps)));
                     }
                 }
             }
