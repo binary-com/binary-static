@@ -5,8 +5,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2016-08-16 07:21+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (China) "
-"<https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
+"Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1783,6 +1782,9 @@ msgstr "公司将参考本网站与合约标的指数有关的每日最高价/�
 
 msgid "Contract period"
 msgstr "合约期间"
+
+msgid "Contract purchased with app ID"
+msgstr "使用应用程序ID买入合约"
 
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "合约将在我们服务器收到请求时，以当时的市场价格卖出。此价格可能与报价有差异。"
@@ -6420,7 +6422,6 @@ msgstr "交易查看(TradingView)"
 msgid "Transact in"
 msgstr "交易"
 
-#| msgid "Your transaction reference is"
 msgid "Transaction performed by"
 msgstr "交易执行者为"
 
@@ -8385,9 +8386,6 @@ msgstr "条款和条件审批"
 
 msgid "Trading with MetaTrader 5"
 msgstr "使用MetaTrader 5进行交易"
-
-#~ msgid "Contract purchased with app ID"
-#~ msgstr "使用应用程序ID买入合约"
 
 #~ msgid "Please re-enter your email"
 #~ msgstr "请重新输入您的电邮地址"
