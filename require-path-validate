@@ -27,15 +27,15 @@ def files_only(path):
 
 def check_exists(dep, filename, resolved):
     if not os.path.exists(resolved):
-        filename = filename.lstrip('src/javascript')
-        print(RED + filename + ': ' + RESET + dep + ' (resolved ' + resolved + ')')
+        filename = os.path.basename(filename)
+        print(RED + filename + ': ' + RESET + dep + ' => ' + resolved)
 
 
 def check(dep, filename):
     if not dep.endswith('.js'):
         dep = dep + '.js'
 
-    parts = dep.split('/', 2)
+    parts = dep.split('/', 1)
     head = parts.pop(0)
     if not parts:
         return
