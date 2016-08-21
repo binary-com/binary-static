@@ -43,7 +43,7 @@ var PaymentAgentWithdrawWS = (function() {
             return false;
         }
 
-        var residence = $.cookie('residence');
+        var residence = Cookies.get('residence');
 
         if (sessionStorage.getItem('withdrawal_locked') === 'unlocked') {
           BinarySocket.send({"paymentagent_list": residence});
@@ -211,11 +211,12 @@ var PaymentAgentWithdrawWS = (function() {
                     .attr('class', 'success-msg')
                     .html(
                         '<ul class="checked"><li>' +
-                        text.localize('Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.')
-                            .replace('[_1]', formData.currency)
-                            .replace('[_2]', formData.amount)
-                            .replace('[_3]', $.cookie('loginid'))
-                            .replace('[_4]', formData.agentname) +
+                        text.localize('Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.', [
+                            formData.currency,
+                            formData.amount,
+                            Cookies.get('loginid'),
+                            formData.agentname,
+                        ]) +
                         '</li></ul>'
                     );
                 break;
@@ -227,7 +228,7 @@ var PaymentAgentWithdrawWS = (function() {
                         .attr('class', errorClass)
                         .html(response.error.message);
                 } else if (response.error.code === 'InvalidToken') {
-                    showPageError(Content.localize().textClickHereToRestart.replace('[_1]', page.url.url_for('paymentagent/withdrawws')));
+                    showPageError(template(Content.localize().textClickHereToRestart, [page.url.url_for('paymentagent/withdrawws')]));
                 } else {
                     showPageError(response.error.message);
                 }
@@ -267,7 +268,7 @@ var PaymentAgentWithdrawWS = (function() {
       if (withdrawal_locked === 'locked') {
         showPageError('', 'withdrawal-locked-error');
       } else if (!page.client.is_virtual()) {
-        BinarySocket.send({"paymentagent_list": $.cookie('residence')});
+        BinarySocket.send({"paymentagent_list": Cookies.get('residence')});
       }
     };
 

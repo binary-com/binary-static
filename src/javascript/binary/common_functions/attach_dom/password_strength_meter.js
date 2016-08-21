@@ -1,3 +1,5 @@
+var testPassword = require('common_functions/passwordmeter');
+
 /**
  * attach password meter to DOM
  * @param $container       container for password meter, can be a p or div

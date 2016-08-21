@@ -6,9 +6,9 @@ var LoggedInHandler = (function() {
         var redirect_url;
         try {
             var tokens  = storeTokens(),
-                loginid = $.cookie('loginid');
+                loginid = Cookies.get('loginid');
 
-            if(!$.cookie('loginid')) { // redirected to another domain (e.g. github.io) so those cookie are not accessible here
+            if (!loginid) { // redirected to another domain (e.g. github.io) so those cookie are not accessible here
                 var loginids = Object.keys(tokens);
                 var loginid_list = '';
                 loginids.map(function(id) {
@@ -42,8 +42,8 @@ var LoggedInHandler = (function() {
         }
         if(set_default) {
             redirect_url = page.url.default_redirect_url();
-            var lang_cookie = $.cookie('language');
-            if(lang_cookie && lang_cookie !== page.language()) {
+            var lang_cookie = Cookies.get('language');
+            if (lang_cookie && lang_cookie !== page.language()) {
                 redirect_url = redirect_url.replace(new RegExp('\/' + page.language() + '\/', 'i'), '/' + lang_cookie.toLowerCase() + '/');
             }
         }

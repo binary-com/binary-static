@@ -1,3 +1,4 @@
+var ValidAccountOpening = require('common_functions/valid_account_opening');
 pjax_config_page("new_account/japanws", function(){
   return {
     onLoad: function() {

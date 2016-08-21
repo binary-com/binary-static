@@ -6,6 +6,7 @@ var updatePurchaseStatus = Common.updatePurchaseStatus;
  * Purchase object that handles all the functions related to
  * contract purchase response
  */
+var Symbols = require('websocket_pages/trade/symbols');
 
 var Purchase = (function () {
     'use strict';

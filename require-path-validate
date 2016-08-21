@@ -1,0 +1,64 @@
+#!/usr/bin/env python
+import os
+import re
+from os.path import abspath as p
+
+RED = '\033[91m'
+RESET = '\033[0m'
+
+REQUIRE_RE = re.compile(r'require\(("|\')(.+?)(\1)\)')
+ALIASES = {
+    'common_functions': p('./src/javascript/binary/common_functions'),
+    'attach_dom':       p('./src/javascript/binary/common_functions/attach_dom'),
+    'components':       p('./src/javascript/binary/components'),
+    'static_pages':     p('./src/javascript/binary/static_pages'),
+    'websocket_pages':  p('./src/javascript/binary/websocket_pages'),
+    'account':          p('./src/javascript/binary/websocket_pages/user/account'),
+    'binary_japan':     p('./src/javascript/binary_japan'),
+}
+
+
+def files_only(path):
+    for item in os.walk(path):
+        dirname, subdirs, files = item
+        for f in files:
+            yield os.path.join(dirname, f)
+
+
+def check_exists(dep, filename, resolved):
+    if not os.path.exists(resolved):
+        filename = os.path.basename(filename)
+        print(RED + filename + ': ' + RESET + dep + ' => ' + resolved)
+
+
+def check(dep, filename):
+    if not dep.endswith('.js'):
+        dep = dep + '.js'
+
+    parts = dep.split('/', 1)
+    head = parts.pop(0)
+    if not parts:
+        return
+    tail = parts[0]
+
+    if head == '.':
+        current_dir = os.path.dirname(filename)
+        real = os.path.join(current_dir, tail)
+        check_exists(dep, filename, real)
+        return
+
+    if head in ALIASES:
+        real = os.path.join(ALIASES[head], tail)
+        check_exists(dep, filename, real)
+
+
+def validate_require_calls(filename):
+    with open(filename, 'r') as f:
+        for match in REQUIRE_RE.finditer(f.read()):
+            _, dep, _ = match.groups()
+            check(dep, filename)
+
+
+if __name__ == '__main__':
+    for item in files_only('src/javascript'):
+        validate_require_calls(item)

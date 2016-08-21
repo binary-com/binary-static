@@ -1,3 +1,5 @@
+var Validate = require('common_functions/validation');
+
 var sidebar_scroll = function(elm_selector) {
     elm_selector.on('click', '#sidebar-nav li', function() {
         var clicked_li = $(this);
@@ -434,17 +436,15 @@ function handle_residence_state_ws(){
           generateState();
           return;
         }
-      } else if (type === 'states_list'){
+      } else if (type === 'states_list') {
         select = document.getElementById('address-state');
         var states_list = response.states_list;
-        if (states_list.length > 0){
-          for (i = 0; i < states_list.length; i++) {
-              appendTextValueChild(select, states_list[i].text, states_list[i].value);
-          }
-          select.parentNode.parentNode.show();
-          if (window.state) {
-            select.value = window.state;
-          }
+        for (i = 0; i < states_list.length; i++) {
+            appendTextValueChild(select, states_list[i].text, states_list[i].value);
+        }
+        select.parentNode.parentNode.show();
+        if (window.state) {
+          select.value = window.state;
         }
         return;
       } else if (type === 'residence_list'){
@@ -537,7 +537,7 @@ function checkClientsCountry() {
 }
 
 function japanese_client() {
-    return (page.language().toLowerCase() === 'ja' || ($.cookie('residence') && $.cookie('residence') === 'jp') || localStorage.getItem('clients_country') === 'jp');
+    return (page.language().toLowerCase() === 'ja' || (Cookies.get('residence') === 'jp') || localStorage.getItem('clients_country') === 'jp');
 }
 
 function change_blog_link(lang) {

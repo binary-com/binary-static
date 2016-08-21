@@ -2,13 +2,17 @@
  * This contains common functions we need for processing the response
  */
 
- Element.prototype.hide = function(){
-     this.style.display = 'none';
- };
+var Symbols = require('./symbols');
 
- Element.prototype.show = function(){
-     this.style.display = '';
- };
+if (typeof Element !== 'undefined') {
+   Element.prototype.hide = function(){
+       this.style.display = 'none';
+   };
+
+   Element.prototype.show = function(){
+       this.style.display = '';
+   };
+}
 
 /*
  * function to display contract form as element of ul
@@ -434,15 +438,6 @@ function getContractCategoryTree(elements){
         tree = tree.filter(function(v){ return v.length; });
     }
     return tree;
-}
-
-/*
- * function to get cookie javascript way (use if you don't want to use jquery)
- */
-function getCookieItem(sKey) {
-    'use strict';
-    if (!sKey) { return null; }
-    return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
 }
 
 /*
@@ -906,7 +901,6 @@ module.exports = {
     hideOverlayContainer: hideOverlayContainer,
     compareMarkets: compareMarkets,
     getContractCategoryTree: getContractCategoryTree,
-    getCookieItem: getCookieItem,
     displayPriceMovement: displayPriceMovement,
     resetPriceMovement: resetPriceMovement,
     toggleActiveNavMenuElement: toggleActiveNavMenuElement,

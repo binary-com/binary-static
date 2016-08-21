@@ -1,3 +1,4 @@
+var Validate = require('common_functions/validation');
 var ValidAccountOpening = (function(){
   var redirectCookie = function() {
     if (page.client.show_login_if_logout(true)) {
@@ -34,11 +35,11 @@ var ValidAccountOpening = (function(){
       error.innerHTML = (response.msg_type === 'sanity_check') ? text.localize('There was some invalid character in an input field.') : errorMessage;
       error.parentNode.parentNode.parentNode.setAttribute('style', 'display:block');
       return;
-    } else if (getCookieItem('residence') === 'jp') {
+    } else if (Cookies.get('residence') === 'jp') {
       window.location.href = page.url.url_for('new_account/knowledge_testws');
       $('#topbar-msg').children('a').addClass('invisible');
     } else {     // jp account require more steps to have real account
-      page.client.process_new_account(getCookieItem('email'), message.client_id, message.oauth_token, false);
+      page.client.process_new_account(Cookies.get('email'), message.client_id, message.oauth_token, false);
     }
   };
   var letters, numbers, space, hyphen, period, apost;
@@ -127,3 +128,5 @@ var ValidAccountOpening = (function(){
     checkAnswer: checkAnswer
   };
 }());
+
+module.exports = ValidAccountOpening;

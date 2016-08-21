@@ -1,3 +1,4 @@
+var Validate = require('common_functions/validation');
 var LostPassword = (function() {
     'use strict';
 
@@ -8,7 +9,7 @@ var LostPassword = (function() {
 
         if (emailInput === '') {
             $("#email_error").removeClass(hiddenClass).text(text.localize('This field is required.'));
-        } else if (!validateEmail(emailInput)){
+        } else if (!Validate.validateEmail(emailInput)){
             $("#email_error").removeClass(hiddenClass).text(text.localize('Invalid email format'));
         }
         else {

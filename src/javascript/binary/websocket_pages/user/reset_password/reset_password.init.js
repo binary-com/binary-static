@@ -1,4 +1,5 @@
 var PasswordMeter = require('attach_dom/password_strength_meter');
+var Validate = require('common_functions/validation');
 
 var ResetPassword = (function () {
     'use strict';
@@ -25,7 +26,7 @@ var ResetPassword = (function () {
             $('#password-error1').removeClass(hiddenClass);
             return;
         } else if (!passwordValid(pw1)) {                   // password failed validation
-            var errMsgs = showPasswordError(pw1);
+            var errMsgs = Validate.showPasswordError(pw1);
             $('#password-error1').empty();
             errMsgs.forEach(function(msg){
                 var $errP = $('<p></p>', {class: 'errorfield'}).text(msg);
@@ -58,12 +59,11 @@ var ResetPassword = (function () {
                 return;
             }
 
-            dob = dobyy + '-' + dobmm + '-' + dobdd;
             BinarySocket.send({
                 reset_password: 1,
                 verification_code: token,
                 new_password: pw1,
-                date_of_birth: dob
+                date_of_birth: [dobyy, dobmm, dobdd].join('-'),
             });
             $('#reset').prop('disabled', true);
         } else {
@@ -93,12 +93,11 @@ var ResetPassword = (function () {
                 $('#reset-error').removeClass(hiddenClass);
 
                 // special handling as backend return inconsistent format
-                var errMsg;
-                if (response.error.code === 'InputValidationFailed') {
-                    errMsg = text.localize(resetErrorTemplate).replace('[_1]', text.localize('Token has expired.'));
-                } else {
-                    errMsg = text.localize(resetErrorTemplate).replace('[_1]', text.localize(response.error.message));
-                }
+                var errMsg = text.localize(resetErrorTemplate, [
+                    response.error.code === 'InputValidationFailed' ?
+                        text.localize('Token has expired.') :
+                        text.localize(response.error.message)
+                ]);
 
                 $('#reset-error-msg').text(errMsg);
             } else {

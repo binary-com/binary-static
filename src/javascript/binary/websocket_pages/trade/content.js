@@ -274,29 +274,29 @@ var Content = (function() {
                 break;
             case 'reg':
                 if (param)
-                    msg = localize.textMessageJustAllowed.replace('[_1]', param.join(separator));
+                    msg = template(localize.textMessageJustAllowed, [param.join(separator)]);
                 break;
             case 'range':
                 if (param)
-                    msg = localize.textMessageCountLimit.replace('[_1]', param);
+                    msg = template(localize.textMessageCountLimit, [param]);
                 break;
             case 'valid':
                 if (param)
-                    msg = localize.textMessageValid.replace('[_1]', param);
+                    msg = template(localize.textMessageValid, [param]);
                 break;
             case 'min':
                 if (param)
-                    msg = localize.textMessageMinRequired.replace('[_1]', param);
+                    msg = template(localize.textMessageMinRequired, [param]);
                 break;
             case 'pass':
                 if (param)
-                    msg = localize.textMessagePasswordScore.replace('[_1]', param);
+                    msg = template(localize.textMessagePasswordScore, [param]);
                 break;
             case 'number_not_less_than':
-                msg = localize.textShouldNotLessThan.replace('[_1]', param);
+                msg = template(localize.textShouldNotLessThan, [param]);
                 break;
             case 'number_should_between':
-                msg = localize.textNumberLimit.replace('[_1]', param);
+                msg = template(localize.textNumberLimit, [param]);
                 break;
             default:
                 break;

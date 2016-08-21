@@ -1,3 +1,4 @@
+var Validate = require('common_functions/validation');
 var ForwardWS = (function() {
   function init() {
     Content.populate();
@@ -134,7 +135,7 @@ pjax_config_page_require_auth("cashier/forwardws", function() {
                           email:    'Email address'
                         };
                       }
-                      var errMsg = $('#' + msgID).html().replace('[_1]', text.localize((error.details ? errorFields[error.details] : 'details')));
+                      var errMsg = template($('#' + msgID).html(), [text.localize(error.details ? errorFields[error.details] : 'details')]);
                       $('#' + msgID).html(errMsg);
                       ForwardWS.showMessage(msgID);
                     } else if (error.code && error.code === 'ASK_UK_FUNDS_PROTECTION') {

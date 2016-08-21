@@ -1,3 +1,5 @@
+var Validate = require('common_functions/validation');
+var ValidAccountOpening = require('common_functions/valid_account_opening');
 var RealAccOpeningUI = (function(){
   "use strict";
 

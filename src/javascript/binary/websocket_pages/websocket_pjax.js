@@ -11,6 +11,7 @@ var SecurityWS        = require('account/settings/settings_securityws');
 var SecurityWS        = require('account/settings/self_exclusion');
 var MetaTraderUI      = require('account/settings/metatrader/metatrader.ui');
 var LostPassword      = require('websocket_pages/user/lost_password');
+var APITokenWS        = require('websocket_pages/user/account/settings/api_token');
 
 pjax_config_page_require_auth("user/profit_table", function(){
     return {

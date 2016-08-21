@@ -173,3 +173,5 @@ function testPassword(passwd)
   var array = [intScore, strVerdict];
   return array;
 }
+
+module.exports = testPassword;

@@ -1,4 +1,5 @@
 var TradingAnalysis = require('trade/analysis');
+var Symbols = require('trade/symbols');
 var addEventListenerForm = require('trade/common').addEventListenerForm;
 
 var TradePage = (function(){

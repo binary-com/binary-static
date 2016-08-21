@@ -1,5 +1,6 @@
 var TradingAnalysis = require('trade/analysis');
 var Barriers = require('trade/barriers');
+var Symbols = require('trade/symbols');
 
 var Common = require('trade/common');
 var displayContractForms = Common.displayContractForms;

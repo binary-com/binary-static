@@ -1,3 +1,4 @@
+var testPassword = require('common_functions/passwordmeter');
 var validator = require('binary/validator');
 var PasswordWS = (function(){
     var $form, $result;

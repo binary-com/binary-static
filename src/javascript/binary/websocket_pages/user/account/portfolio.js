@@ -1,10 +1,9 @@
+var addComma = require('../../trade/common').addComma;
+var toJapanTimeIfNeeded = require('../../../base/utility').toJapanTimeIfNeeded;
+var format_money = require('../../../common_functions/currency_to_symbol').format_money;
+
 var Portfolio = (function(){
     'use strict';
-
-    var Compatibility = typeof window !== 'undefined' ? window.Compatibility : require('../../../common_functions/compatibility');
-    var addComma = Compatibility.requireIfNotExist('addComma', '../websocket_pages/trade/common', 'addComma'),
-        toJapanTimeIfNeeded = Compatibility.requireIfNotExist('toJapanTimeIfNeeded', '../base/utility', 'toJapanTimeIfNeeded'),
-        format_money = Compatibility.requireIfNotExist('format_money', '../common_functions/currency_to_symbol', 'format_money');
 
     function getBalance(balance, currency) {
         balance = parseFloat(balance);
