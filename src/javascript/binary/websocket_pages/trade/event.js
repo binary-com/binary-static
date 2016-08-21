@@ -544,3 +544,5 @@ var TradingEvents = (function () {
         onDurationUnitChange: onDurationUnitChange
     };
 })();
+
+module.exports = TradingEvents;

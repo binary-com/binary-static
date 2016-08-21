@@ -1,6 +1,7 @@
 var Content = require('./content');
 var Contract = require('./contract');
 var Defaults = require('./defaults');
+var TradingEvents = require('./event');
 
 /*
  * Handles start time display
