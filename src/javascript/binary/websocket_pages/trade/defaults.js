@@ -1,4 +1,4 @@
-var isVisible = require('trade/common').isVisible;
+var isVisible = require('./common').isVisible;
 
 /*
  * Handles trading page default values

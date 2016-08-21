@@ -1,4 +1,4 @@
-var Common = require('trade/common');
+var Common = require('./common');
 var displayPriceMovement = Common.displayPriceMovement;
 var displayIndicativeBarrier = Common.displayIndicativeBarrier;
 

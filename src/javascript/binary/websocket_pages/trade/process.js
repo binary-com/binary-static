@@ -1,9 +1,9 @@
-var TradingAnalysis = require('trade/analysis');
-var Barriers = require('trade/barriers');
-var Symbols = require('trade/symbols');
-var Contract = require('trade/contract');
+var TradingAnalysis = require('./analysis');
+var Barriers = require('./barriers');
+var Symbols = require('./symbols');
+var Contract = require('./contract');
 
-var Common = require('trade/common');
+var Common = require('./common');
 var displayContractForms = Common.displayContractForms;
 var displayMarkets = Common.displayMarkets;
 var displayUnderlyings = Common.displayUnderlyings;

@@ -1,8 +1,8 @@
-var Barriers = require('trade/barriers');
-var Content = require('trade/content');
-var Contract = require('trade/contract');
+var Barriers = require('./barriers');
+var Content = require('./content');
+var Contract = require('./contract');
 
-var Common = require('trade/common');
+var Common = require('./common');
 var isVisible = Common.isVisible;
 var durationOrder = Common.durationOrder;
 var selectOption = Common.selectOption;

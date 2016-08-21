@@ -15,6 +15,7 @@
  */
 
 var ActiveSymbols = require('../../common_functions/active_symbols');
+
 var Symbols = (function () {
     'use strict';
 

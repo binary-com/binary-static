@@ -1,4 +1,4 @@
-var Common = require('trade/common');
+var Common = require('./common');
 var toggleActiveNavMenuElement = Common.toggleActiveNavMenuElement;
 var showHighchart = Common.showHighchart;
 

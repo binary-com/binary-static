@@ -2,9 +2,9 @@
  * This contains common functions we need for processing the response
  */
 
-var Contract = require('trade/contract');
-var Symbols = require('trade/symbols');
-var Content = require('trade/content');
+var Contract = require('./contract');
+var Symbols = require('./symbols');
+var Content = require('./content');
 
 if (typeof Element !== 'undefined') {
    Element.prototype.hide = function(){

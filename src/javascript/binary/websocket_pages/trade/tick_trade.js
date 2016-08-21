@@ -1,5 +1,5 @@
-var Content = require('trade/content');
-var Common = require('trade/common');
+var Content = require('./content');
+var Common = require('./common');
 var isVisible = Common.isVisible;
 var updatePurchaseStatus = Common.updatePurchaseStatus;
 
