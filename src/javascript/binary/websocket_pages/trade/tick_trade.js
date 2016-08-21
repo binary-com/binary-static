@@ -393,3 +393,7 @@ WSTickDisplay.updateChart = function(data, contract) {
       WSTickDisplay.dispatch(data);
     }
 };
+
+module.exports = {
+    WSTickDisplay: WSTickDisplay,
+}
