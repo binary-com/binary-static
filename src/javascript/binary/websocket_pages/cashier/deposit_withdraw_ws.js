@@ -1,4 +1,6 @@
 var Validate = require('common_functions/validation');
+var Content = require('trade/content');
+
 var ForwardWS = (function() {
   function init() {
     Content.populate();

@@ -5,6 +5,7 @@
  * starting contracts and populate the start time select
  * box
  */
+var Content = require('trade/content');
 
 var StartDates = (function(){
     'use strict';

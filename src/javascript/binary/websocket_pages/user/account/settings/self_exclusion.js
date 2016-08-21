@@ -1,4 +1,5 @@
 var validator = require('binary/validator');
+var Content = require('trade/content');
 
 var SelfExclusionWS = (function() {
     "use strict";

@@ -1,5 +1,6 @@
 var validator   = require('binary/validator');
 var FlexTableUI = require('attach_dom/flextable');
+var Content = require('trade/content');
 
 var APITokenWS = (function() {
     "use strict";

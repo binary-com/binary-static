@@ -1,4 +1,6 @@
 var Validate = require('common_functions/validation');
+var Content = require('trade/content');
+
 var ValidAccountOpening = (function(){
   var redirectCookie = function() {
     if (page.client.show_login_if_logout(true)) {

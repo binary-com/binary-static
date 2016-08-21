@@ -1,3 +1,5 @@
+var Content = require('trade/content');
+
 var MyAccountWS = (function() {
     "use strict";
 

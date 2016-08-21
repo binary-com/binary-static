@@ -1,3 +1,5 @@
+var Content = require('trade/content');
+
 var ValidateV2 = (function() {
     function err() {
         return Content.errorMessage.apply(Content, arguments);

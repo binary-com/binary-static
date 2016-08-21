@@ -1,3 +1,4 @@
+var Content = require('trade/content');
 var Common = require('trade/common');
 var contractTypeDisplayMapping = Common.contractTypeDisplayMapping;
 var isVisible = Common.isVisible;

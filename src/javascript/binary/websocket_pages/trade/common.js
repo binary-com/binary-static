@@ -3,6 +3,7 @@
  */
 
 var Symbols = require('./symbols');
+var Content = require('./content');
 
 if (typeof Element !== 'undefined') {
    Element.prototype.hide = function(){

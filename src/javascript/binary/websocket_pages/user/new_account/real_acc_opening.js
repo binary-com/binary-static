@@ -1,4 +1,6 @@
 var ValidAccountOpening = require('common_functions/valid_account_opening');
+var Content = require('trade/content');
+
 pjax_config_page("new_account/realws", function(){
   return {
     onLoad: function() {

@@ -1,4 +1,5 @@
 var Barriers = require('trade/barriers');
+var Content = require('trade/content');
 
 var Common = require('trade/common');
 var isVisible = Common.isVisible;

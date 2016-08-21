@@ -1,4 +1,5 @@
 var testPassword = require('common_functions/passwordmeter');
+var Content = require('trade/content');
 
 var Validate = (function(){
   var errorCounter = 0;

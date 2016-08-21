@@ -1,4 +1,5 @@
 var getFormNameBarrierCategory = require('trade/common').getFormNameBarrierCategory;
+var Content = require('trade/content');
 
 /*
  * Contract object mocks the trading form we have on our website
