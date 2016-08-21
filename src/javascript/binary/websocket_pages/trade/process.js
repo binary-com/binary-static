@@ -10,6 +10,7 @@ var Purchase = require('./purchase');
 var StartDates = require('./starttime');
 var Tick = require('./tick');
 var WSTickDisplay = require('./tick_trade');
+var TradePage = require('./tradepage');
 
 var Common = require('./common');
 var displayContractForms = Common.displayContractForms;

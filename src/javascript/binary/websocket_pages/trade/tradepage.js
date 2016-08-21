@@ -79,3 +79,5 @@ var TradePage = (function(){
     is_trading_page: function(){return trading_page;}
   };
 })();
+
+module.exports = TradePage;

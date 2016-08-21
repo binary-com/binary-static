@@ -1,3 +1,5 @@
+var TradePage = require('trade/tradepage');
+
 pjax_config_page('/\?.+|/home', function() {
     return {
         onLoad: function() {

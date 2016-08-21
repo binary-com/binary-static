@@ -1,3 +1,5 @@
+var TradePage = require('trade/tradepage');
+
 var ViewPopupUI = (function() {
     var _container = null;
     return {

@@ -6,6 +6,7 @@ var displayCurrencies = require('./currency');
 var Purchase = require('./purchase');
 var Symbols = require('./symbols');
 var Tick = require('./tick');
+var TradePage = require('./tradepage');
 
 var Process = require('./process');
 var processActiveSymbols = Process.processActiveSymbols;
