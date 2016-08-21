@@ -1,4 +1,6 @@
 var Content = require('./content');
+var Durations = require('./durations');
+
 var Common = require('./common');
 var contractTypeDisplayMapping = Common.contractTypeDisplayMapping;
 var isVisible = Common.isVisible;

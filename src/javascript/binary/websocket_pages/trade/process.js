@@ -3,6 +3,7 @@ var Barriers = require('./barriers');
 var Symbols = require('./symbols');
 var Contract = require('./contract');
 var Defaults = require('./defaults');
+var Durations = require('./durations');
 
 var Common = require('./common');
 var displayContractForms = Common.displayContractForms;
