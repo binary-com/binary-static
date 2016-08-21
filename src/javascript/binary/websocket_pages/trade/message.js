@@ -5,6 +5,14 @@ var TradingAnalysis = require('./analysis');
 var displayCurrencies = require('./currency');
 var Symbols = require('./symbols');
 
+var Process = require('./process');
+var processActiveSymbols = Process.processActiveSymbols;
+var processContract = Process.processContract;
+var forgetTradingStreams = Process.forgetTradingStreams;
+var processTick = Process.processTick;
+var processProposal = Process.processProposal;
+var processTradingTimes = Process.processTradingTimes;
+
 /*
  * This Message object process the response from server and fire
  * events based on type of response

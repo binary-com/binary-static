@@ -47,7 +47,6 @@ function processActiveSymbols(data) {
     // }, 60*1000);
 }
 
-
 /*
  * Function to call when market has changed
  */
@@ -386,3 +385,21 @@ function processTradingTimes(response) {
 
     processPriceRequest();
 }
+
+module.exports = {
+    processActiveSymbols: processActiveSymbols,
+    processMarket: processMarket,
+    processMarketUnderlying: processMarketUnderlying,
+    processContract: processContract,
+    processContractForm: processContractForm,
+    displayPrediction: displayPrediction,
+    displaySpreads: displaySpreads,
+    forgetTradingStreams: forgetTradingStreams,
+    processForgetProposals: processForgetProposals,
+    processPriceRequest: processPriceRequest,
+    processForgetTicks: processForgetTicks,
+    processTick: processTick,
+    processProposal: processProposal,
+    processTradingTimesRequest: processTradingTimesRequest,
+    processTradingTimes: processTradingTimes,
+};

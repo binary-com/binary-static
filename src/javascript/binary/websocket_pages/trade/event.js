@@ -19,6 +19,13 @@ var updateWarmChart = Common.updateWarmChart;
 var reloadPage = Common.reloadPage;
 var chartFrameSource = Common.chartFrameSource;
 
+var Process = require('./process');
+var processMarket = Process.processMarket;
+var processContractForm = Process.processContractForm;
+var processForgetProposals = Process.processForgetProposals;
+var processPriceRequest = Process.processPriceRequest;
+var processForgetTicks = Process.processForgetTicks;
+
 /*
  * TradingEvents object contains all the event handler function required for
  * websocket trading page

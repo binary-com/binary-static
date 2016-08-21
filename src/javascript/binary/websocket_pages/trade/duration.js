@@ -8,6 +8,10 @@ var isVisible = Common.isVisible;
 var durationOrder = Common.durationOrder;
 var selectOption = Common.selectOption;
 
+var Process = require('./process');
+var processPriceRequest = Process.processPriceRequest;
+var processTradingTimesRequest = Process.processTradingTimesRequest;
+
 /*
  * Handles duration processing display
  *
