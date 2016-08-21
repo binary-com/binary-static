@@ -1,5 +1,6 @@
 var Content = require('./content');
 var Durations = require('./duration');
+var Purchase = require('./purchase');
 
 var Common = require('./common');
 var contractTypeDisplayMapping = Common.contractTypeDisplayMapping;

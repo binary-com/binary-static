@@ -3,6 +3,7 @@ var ProfitTableWS = require('account/profit_table/profit_table.init');
 var StatementWS = require('account/statement/statement.init');
 var TradingAnalysis = require('./analysis');
 var displayCurrencies = require('./currency');
+var Purchase = require('./purchase');
 var Symbols = require('./symbols');
 
 var Process = require('./process');

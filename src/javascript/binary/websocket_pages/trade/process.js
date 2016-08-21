@@ -6,6 +6,7 @@ var Defaults = require('./defaults');
 var Durations = require('./duration');
 var TradingEvents = require('./event');
 var Price = require('./price');
+var Purchase = require('./purchase');
 
 var Common = require('./common');
 var displayContractForms = Common.displayContractForms;
