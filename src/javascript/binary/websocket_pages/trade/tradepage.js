@@ -3,6 +3,7 @@ var Content = require('./content');
 var Defaults = require('./defaults');
 var TradingEvents = require('./event');
 var Message = require('./message');
+var Price = require('./price');
 var Symbols = require('./symbols');
 var addEventListenerForm = require('./common').addEventListenerForm;
 var displayCurrencies = require('./currency');

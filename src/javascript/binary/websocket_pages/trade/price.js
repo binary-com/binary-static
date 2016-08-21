@@ -290,3 +290,5 @@ var Price = (function() {
     };
 
 })();
+
+module.exports = Price;
