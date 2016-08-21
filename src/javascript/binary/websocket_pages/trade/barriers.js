@@ -1,3 +1,4 @@
+var Contract = require('trade/contract');
 var Common = require('trade/common');
 var isVisible = Common.isVisible;
 var countDecimalPlaces = Common.countDecimalPlaces;

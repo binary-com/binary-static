@@ -1,5 +1,6 @@
 var getFormNameBarrierCategory = require('trade/common').getFormNameBarrierCategory;
 var Content = require('trade/content');
+var Contract = require('trade/contract');
 
 /*
  * Contract object mocks the trading form we have on our website
@@ -195,3 +196,5 @@ var Contract = (function() {
     };
 
 })();
+
+module.exports = Contract;

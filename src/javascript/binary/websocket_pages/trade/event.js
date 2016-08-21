@@ -1,6 +1,7 @@
 var onlyNumericOnKeypress = require('common_functions/event_handler');
 var TradingAnalysis = require('trade/analysis');
 var Barriers = require('trade/barriers');
+var Contract = require('trade/contract');
 
 var Common = require('trade/common');
 var isVisible = Common.isVisible;

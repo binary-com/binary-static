@@ -6,6 +6,7 @@
  * box
  */
 var Content = require('trade/content');
+var Contract = require('trade/contract');
 
 var StartDates = (function(){
     'use strict';
