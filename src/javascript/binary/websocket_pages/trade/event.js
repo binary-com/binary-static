@@ -5,6 +5,7 @@ var Contract = require('./contract');
 var Defaults = require('./defaults');
 var Durations = require('./duration');
 var Price = require('./price');
+var StartDates = require('./starttime');
 
 var Common = require('./common');
 var isVisible = Common.isVisible;

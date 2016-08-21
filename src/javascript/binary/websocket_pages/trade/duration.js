@@ -2,6 +2,7 @@ var Barriers = require('./barriers');
 var Content = require('./content');
 var Contract = require('./contract');
 var Defaults = require('./defaults');
+var StartDates = require('./starttime');
 
 var Common = require('./common');
 var isVisible = Common.isVisible;

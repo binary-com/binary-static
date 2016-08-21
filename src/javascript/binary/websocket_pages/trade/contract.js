@@ -1,6 +1,7 @@
 var getFormNameBarrierCategory = require('./common').getFormNameBarrierCategory;
 var Content = require('./content');
 var Contract = require('./contract');
+var StartDates = require('./starttime');
 
 /*
  * Contract object mocks the trading form we have on our website
