@@ -1,4 +1,6 @@
 var Content = require('./content');
+var Tick = require('./tick');
+
 var Common = require('./common');
 var isVisible = Common.isVisible;
 var updatePurchaseStatus = Common.updatePurchaseStatus;

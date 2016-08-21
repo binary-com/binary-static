@@ -8,6 +8,7 @@ var TradingEvents = require('./event');
 var Price = require('./price');
 var Purchase = require('./purchase');
 var StartDates = require('./starttime');
+var Tick = require('./tick');
 
 var Common = require('./common');
 var displayContractForms = Common.displayContractForms;

@@ -6,6 +6,7 @@ var Defaults = require('./defaults');
 var Durations = require('./duration');
 var Price = require('./price');
 var StartDates = require('./starttime');
+var Tick = require('./tick');
 
 var Common = require('./common');
 var isVisible = Common.isVisible;

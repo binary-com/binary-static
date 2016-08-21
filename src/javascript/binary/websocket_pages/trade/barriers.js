@@ -1,6 +1,8 @@
 var Contract = require('./contract');
-var Common = require('./common');
 var Defaults = require('./defaults');
+var Tick = require('./tick');
+
+var Common = require('./common');
 var isVisible = Common.isVisible;
 var countDecimalPlaces = Common.countDecimalPlaces;
 
