@@ -3,7 +3,7 @@ var TradingAnalysis = require('./analysis');
 var Barriers = require('./barriers');
 var Contract = require('./contract');
 var Defaults = require('./defaults');
-var Durations = require('./durations');
+var Durations = require('./duration');
 var Price = require('./price');
 
 var Common = require('./common');

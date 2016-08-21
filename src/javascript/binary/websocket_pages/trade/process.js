@@ -3,7 +3,7 @@ var Barriers = require('./barriers');
 var Symbols = require('./symbols');
 var Contract = require('./contract');
 var Defaults = require('./defaults');
-var Durations = require('./durations');
+var Durations = require('./duration');
 var TradingEvents = require('./event');
 var Price = require('./price');
 
