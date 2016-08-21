@@ -1,8 +1,9 @@
 var TradingAnalysis = require('./analysis');
 var Content = require('./content');
-var displayCurrencies = require('./currency');
+var Defaults = require('./defaults');
 var Symbols = require('./symbols');
 var addEventListenerForm = require('./common').addEventListenerForm;
+var displayCurrencies = require('./currency');
 
 var TradePage = (function(){
   var trading_page = 0, events_initialized = 0;

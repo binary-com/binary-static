@@ -1,10 +1,11 @@
+var Contract = require('./contract');
+var Content = require('./content');
+var Defaults = require('./defaults');
+var Symbols = require('./symbols');
+
 /*
  * This contains common functions we need for processing the response
  */
-
-var Contract = require('./contract');
-var Symbols = require('./symbols');
-var Content = require('./content');
 
 if (typeof Element !== 'undefined') {
    Element.prototype.hide = function(){

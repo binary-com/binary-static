@@ -1,3 +1,5 @@
+var Defaults = require('./defaults');
+
 /*
  * Handles currency display
  *

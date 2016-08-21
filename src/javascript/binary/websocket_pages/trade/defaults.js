@@ -75,3 +75,5 @@ var Defaults = (function(){
         clear : function(){params = {};}
     };
 })();
+
+module.exports = Defaults;

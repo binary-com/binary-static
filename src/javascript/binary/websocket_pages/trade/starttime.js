@@ -1,3 +1,7 @@
+var Content = require('./content');
+var Contract = require('./contract');
+var Defaults = require('./defaults');
+
 /*
  * Handles start time display
  *
@@ -5,9 +9,6 @@
  * starting contracts and populate the start time select
  * box
  */
-var Content = require('./content');
-var Contract = require('./contract');
-
 var StartDates = (function(){
     'use strict';
 
