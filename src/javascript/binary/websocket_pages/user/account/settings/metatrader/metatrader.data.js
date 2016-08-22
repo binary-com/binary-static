@@ -40,7 +40,7 @@ var MetaTraderData = (function() {
     };
 
     var requestLandingCompany = function(residence) {
-        residence = residence || $.cookie('residence');
+        residence = residence || Cookies.get('residence');
         if(residence && !lcRequested) {
             lcRequested = true;
             BinarySocket.send({'landing_company': residence});

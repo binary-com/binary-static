@@ -57,9 +57,9 @@ var GTM = (function() {
         localStorage.removeItem('GTM_login');
         localStorage.removeItem('GTM_newaccount');
 
-        var affiliateToken = $.cookie('affiliate_tracking');
+        var affiliateToken = Cookies.getJSON('affiliate_tracking');
         if (affiliateToken) {
-            GTM.push_data_layer({'bom_affiliate_token': JSON.parse(affiliateToken).t});
+            GTM.push_data_layer({'bom_affiliate_token': affiliateToken.t});
         }
 
         var data = {
@@ -155,60 +155,30 @@ var GTM = (function() {
 }());
 
 var User = function() {
-    this.loginid =  $.cookie('loginid');
-    this.email   =  $.cookie('email');
-    var loginid_list = $.cookie('loginid_list');
-
-    if(!this.loginid || !loginid_list || !localStorage.getItem('client.tokens')) {
-        this.is_logged_in = false;
-    } else {
-        this.is_logged_in = true;
-
-        if(loginid_list !== null && typeof loginid_list !== "undefined") {
-            var loginid_array = [];
-            var loginids = loginid_list.split('+').sort();
-
-            for (var i = 0; i < loginids.length; i++) {
-                var real = false;
-                var disabled = false;
-                var items = loginids[i].split(':');
-                if (items[1] == 'R') {
-                    real = true;
-                }
-                if (items[2] == 'D') {
-                    disabled = true;
-                }
-
-                var id_obj = { 'id':items[0], 'real':real, 'disabled':disabled };
-                if (/MLT/.test(items[0])) {
-                    id_obj['non_financial']= true;
-                }
-                if (/MF/.test(items[0])) {
-                    id_obj['financial']= true;
-                }
-                loginid_array.push(id_obj);
-            }
-
-            this.loginid_array = loginid_array;
-        }
-    }
+    this.email   = Cookies.get('email');
+    this.loginid = Cookies.get('loginid');
+    this.loginid_array = parseLoginIDList(Cookies.get('loginid_list') || '');
+    this.is_logged_in = !!(
+        this.loginid &&
+        this.loginid_array.length > 0 &&
+        localStorage.getItem('client.tokens')
+    );
 };
 
 var Client = function() {
-    this.loginid      =  $.cookie('loginid');
-    this.residence    =  $.cookie('residence');
-    this.is_logged_in = this.loginid && this.loginid.length > 0 && localStorage.getItem('client.tokens');
+    this.loginid      = Cookies.get('loginid');
+    this.residence    = Cookies.get('residence');
+    this.is_logged_in = !!(this.loginid && this.loginid.length > 0 && localStorage.getItem('client.tokens'));
 };
 
 Client.prototype = {
     show_login_if_logout: function(shouldReplacePageContents) {
-        if(!this.is_logged_in) {
-            if(shouldReplacePageContents) {
-                $('#content > .container').addClass('center-text').empty()
-                    .append($('<p/>', {class: 'notice-msg', html: text.localize('Please [_1] to view this page')
-                        .replace('[_1]', '<a class="login_link" href="javascript:;">' + text.localize('login') + '</a>')}));
-                $('.login_link').click(function(){Login.redirect_to_login();});
-            }
+        if (!this.is_logged_in && shouldReplacePageContents) {
+            $('#content > .container').addClass('center-text')
+                .html($('<p/>', {class: 'notice-msg', html: text.localize('Please [_1] to view this page', [
+                        '<a class="login_link" href="javascript:;">' + text.localize('login') + '</a>'
+                    ])}));
+            $('.login_link').click(function(){Login.redirect_to_login();});
         }
         return !this.is_logged_in;
     },
@@ -309,7 +279,7 @@ Client.prototype = {
     response_authorize: function(response) {
         page.client.set_storage_value('session_start', parseInt(moment().valueOf() / 1000));
         TUser.set(response.authorize);
-        if(!$.cookie('email')) this.set_cookie('email', response.authorize.email);
+        if(!Cookies.get('email')) this.set_cookie('email', response.authorize.email);
         this.set_storage_value('is_virtual', TUser.get().is_virtual);
         this.check_storage_values();
         page.contents.activate_by_client_type();
@@ -384,7 +354,7 @@ Client.prototype = {
         this.set_cookie('email'       , email);
         this.set_cookie('login'       , token);
         this.set_cookie('loginid'     , loginid);
-        this.set_cookie('loginid_list', is_virtual ? loginid + ':V:E' : loginid + ':R:E' + '+' + $.cookie('loginid_list'));
+        this.set_cookie('loginid_list', is_virtual ? loginid + ':V:E' : loginid + ':R:E' + '+' + Cookies.get('loginid_list'));
         // set local storage
         GTM.set_newaccount_flag();
         localStorage.setItem('active_loginid', loginid);
@@ -477,12 +447,9 @@ URL.prototype = {
         return (this_pathname == url_pathname || '/' + this_pathname == url_pathname);
     },
     params_hash_to_string: function(params) {
-        var as_array = [];
-        for(var p_key in params) if (params.hasOwnProperty(p_key)) {
-            as_array.push(p_key + '=' + params[p_key]);
-        }
-
-        return as_array.join('&');
+        return Object.keys(params)
+            .map(function(key) { return key + '=' + params[key]; })
+            .join('&');
     },
     is_in: function(url) {
         if(this.path_matches(url)) {
@@ -700,7 +667,6 @@ Menu.prototype = {
 var Header = function(params) {
     this.user = params['user'];
     this.client = params['client'];
-    this.settings = params['settings'];
     this.menu = new Menu(params['url']);
 };
 
@@ -708,7 +674,6 @@ Header.prototype = {
     on_load: function() {
         this.show_or_hide_login_form();
         this.register_dynamic_links();
-        this.simulate_input_placeholder_for_ie();
         this.logout_handler();
         this.check_risk_classification();
         if (!$('body').hasClass('BlueTopBack')) {
@@ -722,61 +687,34 @@ Header.prototype = {
         this.menu.reset();
     },
     show_or_hide_login_form: function() {
-        if (this.user.is_logged_in && this.client.is_logged_in) {
-            var loginid_select = '';
-            var loginid_array = this.user.loginid_array;
-            for (var i=0;i<loginid_array.length;i++) {
-                if (loginid_array[i].disabled) continue;
+        if (!this.user.is_logged_in || !this.client.is_logged_in) return;
+        var $login_options = $('#client_loginid');
+        var loginid_array = this.user.loginid_array;
+        $login_options.html('');
 
-                var curr_loginid = loginid_array[i].id;
-                var real = loginid_array[i].real;
-                var selected = '';
-                if (curr_loginid == this.client.loginid) {
-                    selected = ' selected="selected" ';
-                }
+        for (var i=0; i < loginid_array.length; i++) {
+            var login = loginid_array[i];
+            if (login.disabled) continue;
 
-                var loginid_text;
-                if (real) {
-                    if(loginid_array[i].financial){
-                        loginid_text = text.localize('Investment Account') + ' (' + curr_loginid + ')';
-                    } else if(loginid_array[i].non_financial) {
-                        loginid_text = text.localize('Gaming Account') + ' (' + curr_loginid + ')';
-                    } else {
-                        loginid_text = text.localize('Real Account') + ' (' + curr_loginid + ')';
-                    }
-                } else {
-                    loginid_text = text.localize('Virtual Account') + ' (' + curr_loginid + ')';
-                }
-
-                loginid_select += '<option value="' + curr_loginid + '" ' + selected + '>' + loginid_text +  '</option>';
+            var curr_id = login.id;
+            var type = 'Virtual';
+            if (login.real) {
+                if (login.financial)          type = 'Investment';
+                else if (login.non_financial) type = 'Gaming';
+                else                          type = 'Real';
             }
-            $("#client_loginid").html(loginid_select);
+
+            $login_options.append($('<option/>', {
+                value: curr_id,
+                selected: curr_id == this.client.loginid,
+                text: template('[_1] Account ([_2])', [type, curr_id]),
+            }));
         }
-    },
-    simulate_input_placeholder_for_ie: function() {
-        var test = document.createElement('input');
-        if ('placeholder' in test)
-            return;
-        $('input[placeholder]').each(function() {
-            var input = $(this);
-            $(input).val(input.attr('placeholder'));
-            $(input).focus(function() {
-                if (input.val() == input.attr('placeholder')) {
-                    input.val('');
-                }
-            });
-            $(input).blur(function() {
-                if (input.val() === '' || input.val() == input.attr('placeholder')) {
-                    input.val(input.attr('placeholder'));
-                }
-            });
-        });
     },
     register_dynamic_links: function() {
-        var logged_in_url = page.url.url_for('');
-        if(this.client.is_logged_in) {
-            logged_in_url = page.url.url_for('user/my_accountws');
-        }
+        var logged_in_url = this.client.is_logged_in ?
+            page.url.url_for('user/my_accountws') :
+            page.url.url_for('');
 
         $('#logo').attr('href', logged_in_url).on('click', function(event) {
             event.preventDefault();
@@ -785,24 +723,21 @@ Header.prototype = {
 
         this.menu.register_dynamic_links();
     },
-    start_clock_ws : function(){
-        var that = this;
-
-        function init(){
+    start_clock_ws: function() {
+        function getTime() {
             clock_started = true;
-            BinarySocket.send({ "time": 1,"passthrough":{"client_time" :  moment().valueOf()}});
+            BinarySocket.send({'time': 1,'passthrough': {'client_time': moment().valueOf()}});
         }
-        that.run = function(){
-            setInterval(init, 30000);
+        this.run = function() {
+            setInterval(getTime, 30000);
         };
 
-        init();
-        that.run();
-
+        this.run();
+        getTime();
         return;
     },
-    time_counter : function(response){
-        if(isNaN(response.echo_req.passthrough.client_time) || response.error){
+    time_counter : function(response) {
+        if (isNaN(response.echo_req.passthrough.client_time) || response.error) {
             page.header.start_clock_ws();
             return;
         }
@@ -846,51 +781,61 @@ Header.prototype = {
       }
       return false;
     },
-    validate_cookies: function(){
-        if (getCookieItem('login') && getCookieItem('loginid_list')){
-            var accIds = $.cookie("loginid_list").split("+");
-            var loginid = $.cookie("loginid");
+    validate_cookies: function() {
+        var loginid_list = Cookies.get('loginid_list');
+        var loginid      = Cookies.get('loginid');
+        if (!loginid || !loginid_list) return;
 
-            if(!client_form.is_loginid_valid(loginid)){
+        var accIds = loginid_list.split('+');
+        var valid_loginids = new RegExp('^(' + page.settings.get('valid_loginids') + ')[0-9]+$', 'i');
+
+        function is_loginid_valid(login_id) {
+            return login_id ?
+                valid_loginids.test(login_id) :
+                true;
+        }
+
+        if (!is_loginid_valid(loginid)) {
+            page.client.send_logout_request();
+        }
+
+        accIds.forEach(function(acc_id) {
+            if (!is_loginid_valid(acc_id.split(":")[0])) {
                 page.client.send_logout_request();
             }
-
-            for(var i=0;i<accIds.length;i++){
-                if(!client_form.is_loginid_valid(accIds[i].split(":")[0])){
-                    page.client.send_logout_request();
-                }
-            }
-        }
+        });
     },
-    do_logout : function(response){
-        if("logout" in response && response.logout === 1){
-            page.client.clear_storage_values();
-            LocalStore.remove('client.tokens');
-            LocalStore.set('reality_check.ack', 0);
-            sessionStorage.removeItem('withdrawal_locked');
-            var cookies = ['login', 'loginid', 'loginid_list', 'email', 'settings', 'reality_check', 'affiliate_token', 'affiliate_tracking', 'residence', 'allowed_markets'];
-            var current_domain = ['.' + document.domain.split('.').slice(-2).join('.'), document.domain, '.' + document.domain];
-            var cookie_path = ['/'];
-            if (window.location.pathname.split('/')[1] !== '') {
-              cookie_path.push('/' + window.location.pathname.split('/')[1]);
-            }
-            var regex;
+    do_logout: function(response) {
+        if (response.logout !== 1) return;
+        page.client.clear_storage_values();
+        LocalStore.remove('client.tokens');
+        LocalStore.set('reality_check.ack', 0);
+        sessionStorage.removeItem('withdrawal_locked');
+        var cookies = ['login', 'loginid', 'loginid_list', 'email', 'settings', 'reality_check', 'affiliate_token', 'affiliate_tracking', 'residence', 'allowed_markets'];
+        var domains = [
+            '.' + document.domain.split('.').slice(-2).join('.'),
+            '.' + document.domain,
+        ];
 
-            cookies.map(function(c){
-              regex = new RegExp(c);
-              $.removeCookie(c, {path: cookie_path[0], domain: current_domain[0]});
-              $.removeCookie(c, {path: cookie_path[0], domain: current_domain[2]});
-              $.removeCookie(c);
-              if (regex.test(document.cookie) && cookie_path[1]) {
-                  $.removeCookie(c, {path: cookie_path[1], domain: current_domain[0]});
-                  $.removeCookie(c, {path: cookie_path[1], domain: current_domain[2]});
-                  $.removeCookie(c, {path: cookie_path[1]});
-              }
-            });
-            localStorage.removeItem('risk_classification');
-            localStorage.removeItem('risk_classification.response');
-            page.reload();
+        var parent_path = window.location.pathname.split('/', 2)[1];
+        if (parent_path !== '') {
+            parent_path = '/' + parent_path;
         }
+
+        cookies.forEach(function(c) {
+            var regex = new RegExp(c);
+            Cookies.remove(c, {path: '/', domain: domains[0]});
+            Cookies.remove(c, {path: '/', domain: domains[1]});
+            Cookies.remove(c);
+            if (regex.test(document.cookie) && parent_path) {
+                Cookies.remove(c, {path: parent_path, domain: domains[0]});
+                Cookies.remove(c, {path: parent_path, domain: domains[1]});
+                Cookies.remove(c, {path: parent_path});
+            }
+        });
+        localStorage.removeItem('risk_classification');
+        localStorage.removeItem('risk_classification.response');
+        page.reload();
     },
 };
 
@@ -1048,8 +993,9 @@ var Page = function(config) {
     this.client = new Client();
     this.url = new URL();
     this.settings = new InScriptStore(config['settings']);
-    this.header = new Header({ user: this.user, client: this.client, settings: this.settings, url: this.url});
+    this.header = new Header({ user: this.user, client: this.client, url: this.url});
     this.contents = new Contents(this.client, this.user);
+    this._lang = null;
     onLoad.queue(GTM.push_data_layer);
 };
 
@@ -1058,24 +1004,19 @@ Page.prototype = {
         return ['EN', 'AR', 'DE', 'ES', 'FR', 'ID', 'IT', 'PL', 'PT', 'RU', 'VI', 'JA', 'ZH_CN', 'ZH_TW'];
     },
     language_from_url: function() {
-        var regex = new RegExp('^(' + this.all_languages().join('|') + ')$', 'i'),
-            urls  = window.location.href.split('/').slice(3);
-        var langs = urls.filter(function(u){
-            return regex.test(u);
-        });
-        return langs && langs.length > 0 ? langs[0].toUpperCase() : '';
+        var regex = new RegExp('^(' + this.all_languages().join('|') + ')$', 'i');
+        var langs = window.location.href.split('/').slice(3);
+        for (var i = 0; i < langs.length; i++) {
+            var lang = langs[i];
+            if (regex.test(lang)) return lang.toUpperCase();
+        }
+        return '';
     },
     language: function() {
-        var lang = window.lang;
-        if(!lang) {
-            lang = this.language_from_url();
-            if(!lang) {
-                lang = $.cookie('language');
-                if(!lang) {
-                    lang = 'EN';
-                }
-            }
-            window.lang = lang.toUpperCase();
+        var lang = this._lang;
+        if (!lang) {
+            lang = (this.language_from_url() || Cookies.get('language') || 'EN').toUpperCase();
+            this._lang = lang;
         }
         return lang;
     },
@@ -1088,12 +1029,12 @@ Page.prototype = {
         this.record_affiliate_exposure();
         this.contents.on_load();
         this.on_click_acc_transfer();
-        if(getCookieItem('login')){
+        if (CommonData.getLoginToken()) {
             ViewBalance.init();
         } else {
             LocalStore.set('reality_check.ack', 0);
         }
-        if(!getCookieItem('language')) {
+        if(!Cookies.get('language')) {
             var cookie = new CookieStorage('language');
             cookie.write(this.language());
         }
@@ -1175,12 +1116,10 @@ Page.prototype = {
         var token_length = token.length;
         var is_subsidiary = /\w{1}/.test(this.url.param('s'));
 
-        var cookie_value = $.cookie('affiliate_tracking');
-        if(cookie_value) {
-            var cookie_token = JSON.parse(cookie_value);
-
+        var cookie_token = Cookies.getJSON('affiliate_tracking');
+        if (cookie_token) {
             //Already exposed to some other affiliate.
-            if (is_subsidiary && cookie_token && cookie_token["t"]) {
+            if (is_subsidiary && cookie_token && cookie_token.t) {
                 return false;
             }
         }
@@ -1194,7 +1133,7 @@ Page.prototype = {
             cookie_hash["s"] = "1";
         }
 
-        $.cookie("affiliate_tracking", JSON.stringify(cookie_hash), {
+        Cookies.set("affiliate_tracking", cookie_hash, {
             expires: 365, //expires in 365 days
             path: '/',
             domain: '.' + location.hostname.split('.').slice(-2).join('.')

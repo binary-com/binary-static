@@ -53,7 +53,7 @@ var Guide = (function() {
 	 *  do not show the guide button if its close (X) has been clicked before
 	 */
 	var isDisabled = function() {
-		var disabled = $.cookie(cookieName);
+		var disabled = Cookies.get(cookieName);
 		return !!disabled && $.inArray(opt.script, disabled.split(',')) >= 0;
 	};
 
@@ -62,8 +62,8 @@ var Guide = (function() {
 	 */
 	var setDisabled = function() {
 		if(!isDisabled()) {
-			var disabled = $.cookie(cookieName);
-			$.cookie(cookieName, (!disabled ? opt.script : disabled + ',' + opt.script));
+			var disabled = Cookies.get(cookieName);
+			Cookies.set(cookieName, (!disabled ? opt.script : disabled + ',' + opt.script));
 		}
 	};
 

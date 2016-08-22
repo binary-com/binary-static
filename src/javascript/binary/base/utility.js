@@ -277,10 +277,26 @@ function template(string, content) {
     });
 }
 
+function parseLoginIDList(string) {
+    if (!string) return [];
+    return string.split('+').sort().map(function(str) {
+        var items = str.split(':');
+        var id = items[0];
+        return {
+            id:        id,
+            real:      items[1] === 'R',
+            disabled:  items[2] === 'D',
+            financial: /^MF/.test(id),
+            non_financial: /^MLT/.test(id),
+        };
+    });
+}
+
 //used temporarily for mocha test
 if (typeof module !== 'undefined') {
     module.exports = {
         toJapanTimeIfNeeded: toJapanTimeIfNeeded,
-        template: template
+        template: template,
+        parseLoginIDList: parseLoginIDList,
     };
 }

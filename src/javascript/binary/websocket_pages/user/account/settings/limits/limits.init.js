@@ -23,8 +23,8 @@ var LimitsWS = (function(){
             if((/^(iom)$/i).test(TUser.get().landing_company_name)) { // MX
                 text_WithdrawalLimits = Content.localize().textWithdrawalLimitsEquivalantDay;
                 text_WithrawalAmount  = Content.localize().textWithrawalAmountEquivalantDay;
-                elem_withdrawal_limit.textContent = text_WithdrawalLimits.replace('[_1]', limits['num_of_days']).replace('[_2]', client_currency).replace('[_3]', num_of_days_limit);
-                elem_already_withdraw.textContent = text_WithrawalAmount.replace('[_1]', client_currency).replace('[_2]', already_withdraw).replace('[_3]', limits['num_of_days']);
+                elem_withdrawal_limit.textContent = template(text_WithdrawalLimits, [limits['num_of_days'], client_currency, num_of_days_limit]);
+                elem_already_withdraw.textContent = template(text_WithrawalAmount,  [client_currency, already_withdraw, limits['num_of_days']]);
             }
             else {
                 if((/^(costarica|japan)$/i).test(TUser.get().landing_company_name)) { // CR , JP
@@ -33,10 +33,10 @@ var LimitsWS = (function(){
                     text_CurrentMaxWithdrawal = Content.localize().textCurrentMaxWithdrawal;
                     client_currency           = TUser.get().currency || page.client.get_storage_value('currencies');
                 }
-                elem_withdrawal_limit.textContent = text_WithdrawalLimits.replace('[_1]', client_currency).replace('[_2]', num_of_days_limit);
-                elem_already_withdraw.textContent =  text_WithrawalAmount.replace('[_1]', client_currency).replace('[_2]', already_withdraw);
+                elem_withdrawal_limit.textContent = template(text_WithdrawalLimits, [client_currency, num_of_days_limit]);
+                elem_already_withdraw.textContent = template(text_WithrawalAmount,  [client_currency, already_withdraw]);
             }
-            elem_withdrawal_limit_aggregate.textContent = text_CurrentMaxWithdrawal.replace('[_1]', client_currency).replace('[_2]', remainder);
+            elem_withdrawal_limit_aggregate.textContent = template(text_CurrentMaxWithdrawal, [client_currency, remainder]);
         }
     }
 

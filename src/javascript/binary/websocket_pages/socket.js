@@ -32,10 +32,6 @@ function BinarySocketClass() {
         }
     };
 
-    var status = function () {
-        return binarySocket && binarySocket.readyState;
-    };
-
     var isReady = function () {
         return binarySocket && binarySocket.readyState === 1;
     };
@@ -79,13 +75,13 @@ function BinarySocketClass() {
     };
 
     var init = function (es) {
-        if(wrongAppId === getAppId()) {
+        if (wrongAppId === getAppId()) {
             return;
         }
-        if(!es){
+        if (!es){
             events = {};
         }
-        if(typeof es === 'object'){
+        if (typeof es === 'object') {
             bufferedSends = [];
             manualClosed = false;
             events = es;
@@ -96,30 +92,25 @@ function BinarySocketClass() {
             binarySocket = new WebSocket(socketUrl);
         }
 
-        binarySocket.onopen = function (){
-            var loginToken = getCookieItem('login');
-            if(loginToken && !authorized && localStorage.getItem('client.tokens')) {
-                binarySocket.send(JSON.stringify({authorize: loginToken}));
-            }
-            else {
+        binarySocket.onopen = function () {
+            var apiToken = CommonData.getLoginToken();
+            if (apiToken && !authorized && localStorage.getItem('client.tokens')) {
+                binarySocket.send(JSON.stringify({authorize: apiToken}));
+            } else {
                 sendBufferedSends();
             }
 
-            if(typeof events.onopen === 'function'){
+            if (typeof events.onopen === 'function') {
                 events.onopen();
             }
 
-            if(isReady()=== true){
-                if(!Login.is_login_pages()) {
-                    page.header.validate_cookies();
-                }
-                if (clock_started === false) {
-                    page.header.start_clock_ws();
-                }
+            if (isReady()) {
+                if (!Login.is_login_pages()) page.header.validate_cookies();
+                if (!clock_started) page.header.start_clock_ws();
             }
         };
 
-        binarySocket.onmessage = function (msg){
+        binarySocket.onmessage = function(msg) {
             var response = JSON.parse(msg.data);
             if (response) {
                 if(response.hasOwnProperty('echo_req') && response.echo_req !== null && response.echo_req.hasOwnProperty('passthrough')) {
@@ -129,13 +120,11 @@ function BinarySocketClass() {
                         delete timeouts[response.echo_req.passthrough.req_number];
                     }
                     else if (passthrough.hasOwnProperty('dispatch_to')) {
-                      if (passthrough.dispatch_to === 'ViewPopupWS') {
-                        ViewPopupWS.dispatch(response);
-                      } else if (passthrough.dispatch_to === 'ViewChartWS') {
-                        Highchart.dispatch(response);
-                      } else if (passthrough.dispatch_to === 'ViewTickDisplayWS') {
-                        WSTickDisplay.dispatch(response);
-                      }
+                        switch (passthrough.dispatch_to) {
+                            case 'ViewPopupWS':       ViewPopupWS.dispatch(response); break;
+                            case 'ViewChartWS':       Highchart.dispatch(response);   break;
+                            case 'viewtickdisplayws': WSTickDisplay.dispatch(response); break;
+                        }
                     }
                 }
                 var type = response.msg_type;
@@ -187,7 +176,7 @@ function BinarySocketClass() {
                 } else if (type === 'payout_currencies' && response.hasOwnProperty('echo_req') && response.echo_req.hasOwnProperty('passthrough') && response.echo_req.passthrough.handler === 'page.client') {
                     page.client.response_payout_currencies(response);
                 } else if (type === 'get_settings' && response.get_settings) {
-                    if(!$.cookie('residence') && response.get_settings.country_code) {
+                    if (!Cookies.get('residence') && response.get_settings.country_code) {
                       page.client.set_cookie('residence', response.get_settings.country_code);
                       page.client.residence = response.get_settings.country_code;
                     }
