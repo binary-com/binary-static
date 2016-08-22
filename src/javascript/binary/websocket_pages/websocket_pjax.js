@@ -14,6 +14,7 @@ var LostPassword      = require('websocket_pages/user/lost_password');
 var APITokenWS        = require('websocket_pages/user/account/settings/api_token');
 var TNCApproval       = require('websocket_pages/user/tnc_approval');
 var ViewPopupWS       = require('websocket_pages/user/view_popup/view_popupws');
+var ResetPassword     = require('websocket_pages/user/reset_password');
 
 pjax_config_page_require_auth("user/profit_table", function(){
     return {
@@ -152,6 +153,14 @@ pjax_config_page_require_auth("tnc_approvalws", function() {
     return {
         onLoad: function() {
             TNCApproval.init();
+        }
+    };
+});
+
+pjax_config_page('user/reset_passwordws', function() {
+    return {
+        onLoad: function() {
+            ResetPassword.init();
         }
     };
 });
