@@ -9,6 +9,7 @@ var showFormOverlay = Common.showFormOverlay;
 var reloadPage = Common.reloadPage;
 var Cashier = require('websocket_pages/cashier/cashier.js');
 var ForwardWS = require('websocket_pages/cashier/deposit_withdraw_ws');
+var PaymentAgentWithdrawWS = require('websocket_pages/cashier/payment_agent_withdrawws');
 
 /*
  * It provides a abstraction layer over native javascript Websocket.

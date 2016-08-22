@@ -16,6 +16,45 @@ var account_trasferws  = require('websocket_pages/cashier/account_transferws');
 var Cashier            = require('websocket_pages/cashier/cashier');
 var ForwardWS          = require('websocket_pages/cashier/deposit_withdraw_ws');
 var PaymentAgentListWS = require('websocket_pages/cashier/payment_agent_listws');
+var PaymentAgentWithdrawWS = require('websocket_pages/cashier/payment_agent_withdrawws');
+
+pjax_config_page_require_auth("paymentagent/withdrawws", function() {
+    return {
+        onLoad: function() {
+            BinarySocket.init({
+                onmessage: function(msg) {
+                    var response = JSON.parse(msg.data);
+                    if (response) {
+                        var type = response.msg_type;
+                        switch(type){
+                            case "authorize":
+                                PaymentAgentWithdrawWS.init();
+                                break;
+                            case "paymentagent_list":
+                                PaymentAgentWithdrawWS.populateAgentsList(response);
+                                break;
+                            case "paymentagent_withdraw":
+                                PaymentAgentWithdrawWS.withdrawResponse(response);
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    else {
+                        console.log('some error occured');
+                    }
+                }
+            });
+
+            Content.populate();
+            if(TUser.get().hasOwnProperty('is_virtual') || sessionStorage.getItem('withdrawal_locked') === 'locked') {
+                PaymentAgentWithdrawWS.init();
+            } else if (!sessionStorage.getItem('withdrawal_locked')) {
+              BinarySocket.send({"get_account_status": "1", "passthrough":{"dispatch_to":"PaymentAgentWithdrawWS"}});
+            }
+        }
+    };
+});
 
 pjax_config_page("payment_agent_listws", function() {
     return {
