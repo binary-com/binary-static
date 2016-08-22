@@ -523,3 +523,5 @@ var KnowledgeTestData = (function() {
         sendResult: sendResult
     };
 }());
+
+module.exports = KnowledgeTestData;

@@ -1,4 +1,4 @@
-var TradePage = require('trade/tradepage');
+var TradePage = require('../../trade/tradepage');
 
 var ViewPopupUI = (function() {
     var _container = null;
@@ -134,3 +134,5 @@ var ViewPopupUI = (function() {
         },
     };
 }());
+
+module.exports = ViewPopupUI;

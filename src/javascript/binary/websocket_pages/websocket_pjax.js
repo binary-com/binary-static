@@ -8,10 +8,15 @@ var SettingsWS         = require('account/settings');
 var MyAccountWS        = require('websocket_pages/user/my_accountws');
 var SettingsDetailsWS  = require('account/settings/settings_detailsws');
 var SecurityWS         = require('account/settings/settings_securityws');
-var SecurityWS         = require('account/settings/self_exclusion');
+var SelfExclusionWS    = require('account/settings/self_exclusion');
 var MetaTraderUI       = require('account/settings/metatrader/metatrader.ui');
 var LostPassword       = require('websocket_pages/user/lost_password');
 var APITokenWS         = require('websocket_pages/user/account/settings/api_token');
+var TNCApproval        = require('websocket_pages/user/tnc_approval');
+var ViewPopupWS        = require('websocket_pages/user/view_popup/view_popupws');
+var ResetPassword      = require('websocket_pages/user/reset_password');
+var Authenticate       = require('account/authenticate');
+var ChangePassword     = require('account/change_password');
 var account_trasferws  = require('websocket_pages/cashier/account_transferws');
 var Cashier            = require('websocket_pages/cashier/cashier');
 var ForwardWS          = require('websocket_pages/cashier/deposit_withdraw_ws');
@@ -359,6 +364,50 @@ pjax_config_page('user/lost_passwordws', function() {
     return {
         onLoad: function() {
             LostPassword.init();
+        }
+    };
+});
+
+pjax_config_page("profit_tablews|statementws|portfoliows|trading", function() {
+    return {
+        onLoad: function() {
+            $('#profit-table-ws-container, #statement-ws-container, #portfolio-table, #contract_confirmation_container')
+                .on('click', '.open_contract_detailsws', function (e) {
+                    e.preventDefault();
+                    ViewPopupWS.init(this);
+                });
+        }
+    };
+});
+
+pjax_config_page_require_auth("tnc_approvalws", function() {
+    return {
+        onLoad: function() {
+            TNCApproval.init();
+        }
+    };
+});
+
+pjax_config_page('user/reset_passwordws', function() {
+    return {
+        onLoad: function() {
+            ResetPassword.init();
+        }
+    };
+});
+
+pjax_config_page_require_auth("user/authenticatews", function(){
+    return {
+        onLoad: function() {
+            Authenticate.init();
+        }
+    };
+});
+
+pjax_config_page_require_auth('user/change_password', function() {
+    return {
+        onLoad: function() {
+            ChangePassword.init();
         }
     };
 });

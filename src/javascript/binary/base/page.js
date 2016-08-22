@@ -2,6 +2,7 @@ var getAppId = require('config').getAppId;
 var TrafficSource = require('common_functions/traffic_source');
 var RiskClassification = require('common_functions/risk_classification');
 var isVisible = require('trade/common').isVisible;
+var ViewBalance = require('websocket_pages/user/viewbalance');
 
 var text;
 var clock_started = false;

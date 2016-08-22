@@ -1,4 +1,6 @@
 var Content = require('trade/content');
+var RealityCheckUI = require('./reality_check.ui');
+var RealityCheckData = require('./reality_check.data');
 
 var RealityCheck = (function () {
     'use strict';
@@ -127,3 +129,5 @@ var RealityCheck = (function () {
         sendAccountStatus: sendAccountStatus
     };
 }());
+
+module.exports = RealityCheck;
