@@ -2,6 +2,7 @@ var SessionDurationLimit = require('common_functions/session_duration_limit');
 var Highchart = require('trade/charts/highchartws');
 var WSTickDisplay = require('trade/tick_trade');
 var TradePage = require('trade/tradepage');
+var ViewPopupWS = require('websocket_pages/user/view_popup/view_popupws');
 
 var Common = require('trade/common');
 var showPriceOverlay = Common.showPriceOverlay;

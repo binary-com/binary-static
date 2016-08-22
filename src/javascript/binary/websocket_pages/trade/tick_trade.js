@@ -1,5 +1,6 @@
 var Content = require('./content');
 var Tick = require('./tick');
+var ViewPopupWS = require('../user/view_popup/view_popupws');
 
 var Common = require('./common');
 var isVisible = Common.isVisible;

@@ -12,6 +12,7 @@ var SecurityWS        = require('account/settings/self_exclusion');
 var MetaTraderUI      = require('account/settings/metatrader/metatrader.ui');
 var LostPassword      = require('websocket_pages/user/lost_password');
 var APITokenWS        = require('websocket_pages/user/account/settings/api_token');
+var ViewPopupWS       = require('websocket_pages/user/view_popup/view_popupws');
 
 pjax_config_page_require_auth("user/profit_table", function(){
     return {
@@ -130,6 +131,18 @@ pjax_config_page('user/lost_passwordws', function() {
     return {
         onLoad: function() {
             LostPassword.init();
+        }
+    };
+});
+
+pjax_config_page("profit_tablews|statementws|portfoliows|trading", function() {
+    return {
+        onLoad: function() {
+            $('#profit-table-ws-container, #statement-ws-container, #portfolio-table, #contract_confirmation_container')
+                .on('click', '.open_contract_detailsws', function (e) {
+                    e.preventDefault();
+                    ViewPopupWS.init(this);
+                });
         }
     };
 });
