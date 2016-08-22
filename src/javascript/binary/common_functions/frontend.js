@@ -417,7 +417,7 @@ function handle_residence_state_ws(){
           return;
         }
       } else if (type === 'landing_company') {
-        $.cookie('residence', page.client.residence, {domain: '.' + document.domain.split('.').slice(-2).join('.'), path: '/'});
+        Cookies.set('residence', page.client.residence, {domain: '.' + document.domain.split('.').slice(-2).join('.'), path: '/'});
         if (response.landing_company.hasOwnProperty('financial_company') && !response.landing_company.hasOwnProperty('gaming_company') && response.landing_company.financial_company.shortcode === 'maltainvest') {
           window.location.href = page.url.url_for('new_account/maltainvestws');
           return;

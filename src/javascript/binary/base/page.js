@@ -847,7 +847,6 @@ var Contents = function(client, user) {
 Contents.prototype = {
     on_load: function() {
         this.activate_by_client_type();
-        this.topbar_message_visibility();
         this.update_content_class();
         this.init_draggable();
     },
@@ -916,12 +915,7 @@ Contents.prototype = {
                 return;
             }
             var loginid_array = this.user.loginid_array;
-            var countries_list = page.settings.get('countries_list');
-            if(!countries_list || countries_list.length === 0) {
-                return;
-            }
-            var c_config = countries_list[this.client.residence];
-
+            var c_config = TUser.get().landing_company_name;
             var $upgrade_msg = $('.upgrademessage'),
                 hiddenClass  = 'invisible';
             var hide_upgrade = function() {
@@ -950,9 +944,9 @@ Contents.prototype = {
                 }
                 if (show_upgrade_msg) {
                     $upgrade_msg.find('> span').removeClass(hiddenClass);
-                    if (c_config && c_config['gaming_company'] == 'none' && c_config['financial_company'] == 'maltainvest') {
+                    if (c_config && c_config == 'maltainvest') {
                         show_upgrade('new_account/maltainvestws', 'Upgrade to a Financial Account');
-                    } else if (c_config && c_config['gaming_company'] == 'none' && c_config['financial_company'] == 'japan') {
+                    } else if (c_config && c_config == 'japan-virtual') {
                         show_upgrade('new_account/japanws', 'Upgrade to a Real Account');
                     } else {
                         show_upgrade('new_account/realws', 'Upgrade to a Real Account');
@@ -964,7 +958,7 @@ Contents.prototype = {
                 var show_financial = false;
 
                 // also allow UK MLT client to open MF account
-                if ( (c_config && c_config['financial_company'] == 'maltainvest') ||
+                if ( (c_config && c_config == 'maltainvest') ||
                      (this.client.residence == 'gb' && /^MLT/.test(this.client.loginid)) )
                 {
                     show_financial = true;
