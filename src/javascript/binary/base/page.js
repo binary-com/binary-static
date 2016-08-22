@@ -1,4 +1,5 @@
 var getAppId = require('config').getAppId;
+var Login = require('base/login');
 var TrafficSource = require('common_functions/traffic_source');
 var RiskClassification = require('common_functions/risk_classification');
 var isVisible = require('trade/common').isVisible;

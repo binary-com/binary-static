@@ -7,6 +7,7 @@ module.exports = {
             path.resolve('./src/javascript'),
         ],
         alias: {
+            base:             path.resolve('./src/javascript/binary/base'),
             common_functions: path.resolve('./src/javascript/binary/common_functions'),
             attach_dom:       path.resolve('./src/javascript/binary/common_functions/attach_dom'),
             components:       path.resolve('./src/javascript/binary/components'),
