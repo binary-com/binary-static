@@ -13,6 +13,34 @@ var MetaTraderUI      = require('account/settings/metatrader/metatrader.ui');
 var LostPassword      = require('websocket_pages/user/lost_password');
 var APITokenWS        = require('websocket_pages/user/account/settings/api_token');
 var account_trasferws = require('websocket_pages/cashier/account_transferws');
+var Cashier           = require('websocket_pages/cashier/cashier');
+
+pjax_config_page("/cashier", function(){
+    return {
+        onLoad: function() {
+          if (!/\/cashier\.html/.test(window.location.pathname) || !page.client.is_logged_in) {
+            return;
+          } else {
+            Cashier.check_withdrawal_locked();
+          }
+        }
+    };
+});
+
+pjax_config_page("/cashier/payment_methods", function(){
+    return {
+        onLoad: function() {
+            if (japanese_client()) {
+                window.location.href = page.url.url_for('/');
+            }
+            if (!page.client.is_logged_in || page.client.is_virtual()) {
+                return;
+            } else {
+                Cashier.check_withdrawal_locked();
+            }
+        }
+    };
+});
 
 pjax_config_page_require_auth("account/account_transferws", function() {
     return {
