@@ -12,6 +12,26 @@ var SecurityWS        = require('account/settings/self_exclusion');
 var MetaTraderUI      = require('account/settings/metatrader/metatrader.ui');
 var LostPassword      = require('websocket_pages/user/lost_password');
 var APITokenWS        = require('websocket_pages/user/account/settings/api_token');
+var account_trasferws = require('websocket_pages/cashier/account_transferws');
+
+pjax_config_page_require_auth("account/account_transferws", function() {
+    return {
+        onLoad: function() {
+            BinarySocket.init({
+                onmessage: function(msg){
+                    var response = JSON.parse(msg.data);
+                    if (response) {
+                        account_transferws.apiResponse(response);
+                    }
+                }
+            });
+
+            if(TUser.get().hasOwnProperty('is_virtual')) {
+                account_transferws.init();
+            }
+        }
+    };
+});
 
 pjax_config_page_require_auth("user/profit_table", function(){
     return {
