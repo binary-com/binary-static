@@ -4,6 +4,8 @@ var WSTickDisplay = require('trade/tick_trade');
 var TradePage = require('trade/tradepage');
 var ViewPopupWS = require('websocket_pages/user/view_popup/view_popupws');
 var ViewBalance = require('websocket_pages/user/viewbalance');
+var RealityCheck = require('websocket_pages/user/reality_check/reality_check.init');
+var RealityCheckData = require('websocket_pages/user/reality_check/reality_check.data');
 var KnowledgeTest = require('binary_japan/knowledge_test/knowledge_test.init');
 
 var Common = require('trade/common');
