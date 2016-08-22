@@ -1,6 +1,7 @@
 var testPassword = require('common_functions/passwordmeter');
 var validator = require('binary/validator');
 var Content = require('trade/content');
+var VirtualAccOpeningData = require('./virtual_acc_opening/virtual_acc_opening.data');
 
 pjax_config_page("new_account/virtualws", function() {
     function onSuccess(res) {

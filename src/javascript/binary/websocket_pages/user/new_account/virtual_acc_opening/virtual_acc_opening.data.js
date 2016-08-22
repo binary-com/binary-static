@@ -67,3 +67,5 @@ var VirtualAccOpeningData = (function(){
         handler:    handler,
     };
 }());
+
+module.exports = VirtualAccOpeningData;
