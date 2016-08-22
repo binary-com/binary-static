@@ -1,4 +1,5 @@
 var JPTradePage = require('../../../binary_japan/trade_japan/jp_trade_page');
+var JapanPortfolio = require('../../../binary_japan/trade_japan/portfolio');
 
 var Common = require('./common');
 var toggleActiveNavMenuElement = Common.toggleActiveNavMenuElement;
