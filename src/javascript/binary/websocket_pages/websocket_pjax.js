@@ -16,6 +16,7 @@ var TNCApproval       = require('websocket_pages/user/tnc_approval');
 var ViewPopupWS       = require('websocket_pages/user/view_popup/view_popupws');
 var ResetPassword     = require('websocket_pages/user/reset_password');
 var Authenticate      = require('account/authenticate');
+var ChangePassword    = require('account/change_password');
 
 pjax_config_page_require_auth("user/profit_table", function(){
     return {
@@ -170,6 +171,14 @@ pjax_config_page_require_auth("user/authenticatews", function(){
     return {
         onLoad: function() {
             Authenticate.init();
+        }
+    };
+});
+
+pjax_config_page_require_auth('user/change_password', function() {
+    return {
+        onLoad: function() {
+            ChangePassword.init();
         }
     };
 });
