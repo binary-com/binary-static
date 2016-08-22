@@ -847,7 +847,6 @@ var Contents = function(client, user) {
 Contents.prototype = {
     on_load: function() {
         this.activate_by_client_type();
-        this.topbar_message_visibility();
         this.update_content_class();
         this.init_draggable();
     },
@@ -947,7 +946,7 @@ Contents.prototype = {
                     $upgrade_msg.find('> span').removeClass(hiddenClass);
                     if (c_config && c_config == 'maltainvest') {
                         show_upgrade('new_account/maltainvestws', 'Upgrade to a Financial Account');
-                    } else if (c_config && c_config == 'japan') {
+                    } else if (c_config && c_config == 'japan-virtual') {
                         show_upgrade('new_account/japanws', 'Upgrade to a Real Account');
                     } else {
                         show_upgrade('new_account/realws', 'Upgrade to a Real Account');
