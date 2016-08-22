@@ -123,7 +123,7 @@ function BinarySocketClass() {
                         switch (passthrough.dispatch_to) {
                             case 'ViewPopupWS':       ViewPopupWS.dispatch(response); break;
                             case 'ViewChartWS':       Highchart.dispatch(response);   break;
-                            case 'viewtickdisplayws': WSTickDisplay.dispatch(response); break;
+                            case 'ViewTickDisplayWS': WSTickDisplay.dispatch(response); break;
                         }
                     }
                 }
