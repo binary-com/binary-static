@@ -1,4 +1,4 @@
-var app_details = require('common_functions/get_app_details');
+var app_details = require('../../../../common_functions/get_app_details');
 var StatementUI = require('./statement.ui');
 var StatementWS = require('./statement.init');
 
