@@ -4,42 +4,29 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2016-08-21 08:35+0000\n"
 "Last-Translator: Ahmed Kotb <ahmedmohamedkotp@gmail.com>\n"
-"Language-Team: Arabic <https://hosted.weblate.org/projects/binary/static/ar/>"
-"\n"
+"Language-Team: Arabic <https://hosted.weblate.org/projects/binary/static/ar/>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 "X-Generator: Weblate 2.8-dev\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#| msgid "\"Binary.com API\" means the Binary.com proprietary set of programmatic routines, protocols, tools and resources created and maintained by Binary.com that allows you to use a registered Application to interface with the Binary.com trading platform."
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
-msgstr ""
-"\"%1 واجهة برمجة التطبيقات\" تعنى ال %1 مجموعة الملكية من البرامجية "
-"الروتينية, البروتوكولات, الأدوات والموارد التي تم انشاؤها والمحافظة عليها من "
-"قبل %1 والتي تسمح لك باستخدام التطبيق المسجل للتفاعل مع ال %1 منصة التداول."
+msgstr "\"%1 واجهة برمجة التطبيقات\" تعنى ال %1 مجموعة الملكية من البرامجية الروتينية, البروتوكولات, الأدوات والموارد التي تم انشاؤها والمحافظة عليها من قبل %1 والتي تسمح لك باستخدام التطبيق المسجل للتفاعل مع ال %1 منصة التداول."
 
 msgid "\"Binary\" or \"digital\" options are options that pay a pre-determined, fixed amount, depending on whether or not an event occurs at the time the Binary Option expires. Binary Options can have only one of two possible outcomes and allow you to take a simple \"Yes or No\" approach. Like traditional options, Binary Options are based on an underlying asset such as currencies, commodities, indexes or stocks, however one of the most significant differences from traditional options, among others, is that there can be only two outcomes for the option, either the client is paid the return upon the occurrence of the event, or the client loses the investment amount as determined in each option."
 msgstr "الخيارات \"الثنائية\" أو \"الرقمية\" هي الخيارات التي تدفع مبلغ ثابت محدد مسبقا، وهذا يتوقف على نتيجة حدث ما إذا كان سيحدث أو لا وقت انتهاء الخيار الثنائي. هناك احتمال واحد فقط للخيارات الثنائية من اثنتين من النتائج المحتملة حيث يمكنك أن تأخذ بنهج \"نعم أو لا\" البسيط. مثل الخيارات التقليدية، تعتمد الخيارات الثنائية على الأصول الأساسية مثل العملات أو السلع أو المؤشرات أو الأسهم، ولكن واحدة من الاختلافات الأبرز عن الخيارات التقليدية، من بين أمور أخرى، هو أنه لا يمكن أن يكون هناك سوى اثنتين من النتائج للخيار، إما أن يتم دفع العائد للعميل عند وقوع الحدث، أو أن يفقد العميل مبلغ الاستثمار على النحو المحدد لكل خيار."
 
-#| msgid "\"Content\" means any data or content from our Website or accessed via the API. Our \"Website\" means Binary.com’s website at www.binary.com and any other website or service owned or operated by Binary.com."
 msgid "\"Content\" means any data or content from our Website or accessed via the API. Our \"Website\" means %1's website at www.binary.com and any other website or service owned or operated by %1."
-msgstr ""
-"\"المحتوى\" يعني أية بيانات أو محتويات من موقعنا أو الموصولة بواسطة واجهة "
-"برمجة التطبيق. \"موقعنا\" يعني موقع ال %1 عند www.binary.com و أي موقع آخر "
-"أو خدمة مملوكة أو تم تشغيلها بواسطة %1."
+msgstr "\"المحتوى\" يعني أية بيانات أو محتويات من موقعنا أو الموصولة بواسطة واجهة برمجة التطبيق. \"موقعنا\" يعني موقع ال %1 عند www.binary.com و أي موقع آخر أو خدمة مملوكة أو تم تشغيلها بواسطة %1."
 
 msgid "\"I work with a number of affiliate companies, and it is by far, the friendliest and most helpful that I've found. They go out of their way to provide their affiliates with all the tools, advice and support they need in order to succeed. To top it all off, they offer some of the most handsome rebates in the industry.\" - <strong>Vinod Gorasia, Marketing Manager, Agora Lifestyles</strong>."
 msgstr "يقول <strong> فينود جوراسيا مدير تسويق موقع أجورا لايف ستايل</strong>  \"أعمل مع بعض الشركات لكني وجدت أنها أكثرهم وداً ومساعدة. فهم يبذلون قصارى جهدهم لتزويد شركائهم بكل الأدوات والمشورة والدعم اللازمين لنجاحهم. علاوة على ذلك فهم يقدمون أكبر العوائد فى هذا المجال\"."
 
-#| msgid "\"Third Party Provider(s)\" means the third party (non-affiliated) entity that makes available features and functions through use of the Binary.com API."
 msgid "\"Third Party Provider(s)\" means the third party (non-affiliated) entity that makes available features and functions through use of the %1 API."
-msgstr ""
-"\"مزود أو مزودي الطرف الثالث\" يعنى كيان الطرف الثالث (غير المنتسب) الذي "
-"يجعل المميزات والوظائف المتاحة من خلال استخدام ال %1 واجهة برمجة التطبيقات."
+msgstr "\"مزود أو مزودي الطرف الثالث\" يعنى كيان الطرف الثالث (غير المنتسب) الذي يجعل المميزات والوظائف المتاحة من خلال استخدام ال %1 واجهة برمجة التطبيقات."
 
 msgid "$100,000 - $250,000"
 msgstr "$100,000 - $250,000"
@@ -65,7 +52,6 @@ msgstr "أحكام وشروط برنامج الإنتساب الخاص بـ %1"
 msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
 msgstr "1% يرجى الضغط على الرابط أدناه لإعادة تشغيل عملية استرداد كلمة المرور. إذا كنت بحاجة إلى المزيد من المساعدة، الرجاء الاتصال بفريق دعم العملاء لدينا."
 
-#| msgid "Your Property"
 msgid "%1 Property"
 msgstr "%1 ملكية"
 
@@ -84,24 +70,17 @@ msgstr "%1 توفر أيضا وصلات إلى اختبار على الانتر�
 msgid "%1 and the bull/bear logo are registered trademarks."
 msgstr "%1 وbull/bear هما علامتان تجاريتان مسجلتان."
 
-#| msgid "Binary.com continues to innovate and grow"
 msgid "%1 continues to innovate and grow"
 msgstr "%1 تستمر في الإبتكار والنمو"
 
 msgid "%1 does not charge any transfer fees."
 msgstr "لا تتقاضى 1% أى رسوم تحويل."
 
-#| msgid "Binary.com earns a return from the difference between the total amount of all customers' payment and the total amount of all customers' receipts."
 msgid "%1 earns a return from the difference between the total amount of all customers' payment and the total amount of all customers' receipts."
-msgstr ""
-"%1 يكسب عائد من الفرق بين إجمالي مبلغ مدفوعات العملاء و إجمالي المبالغ "
-"المستلمة للعملاء."
+msgstr "%1 يكسب عائد من الفرق بين إجمالي مبلغ مدفوعات العملاء و إجمالي المبالغ المستلمة للعملاء."
 
-#| msgid "%1 gives everyone an easy and exciting way to participate in the financial markets. Trade with as little as $1 USD on major currencies, indices and commodities."
 msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities."
-msgstr ""
-"%1 يعطي الجميع وسيلة سهلة للمشاركة في الأسواق المالية. تداول العملات "
-"الرئيسية والأسهم والمؤشرات والسلع بمبلغ قدره 1 دولار أمريكي."
+msgstr "%1 يعطي الجميع وسيلة سهلة للمشاركة في الأسواق المالية. تداول العملات الرئيسية والأسهم والمؤشرات والسلع بمبلغ قدره 1 دولار أمريكي."
 
 msgid "%1 has created Volatility Indices that you can trade 24/7. You can trade these on all types of contract:"
 msgstr "%1 انشأت مؤشرات التقلب التي يمكنك تداولها 24/7. يمكنك تداول هذه المؤشرات على كل أنواع العقود:"
@@ -109,12 +88,8 @@ msgstr "%1 انشأت مؤشرات التقلب التي يمكنك تداوله
 msgid "%1 has earned an enviable reputation for our commitment to high ethical standards and the quality of the trading experience we provide."
 msgstr "%1 قد اكتسبت سمعة قوية من التزامنا بمعايير أخلاقية عالية وجودة تجربة التداول التي نقدمها."
 
-#| msgid "Binary.com has over 800,000 clients in its database and reaches the US$2 billion milestone in our 15th year, making us one of the leading binary options providers."
 msgid "%1 has over 800,000 clients in its database and reaches the US$ 2 billion milestone in our 15th year, making us one of the leading binary options providers."
-msgstr ""
-"%1 لديها أكثر من 800.000 عميل في قاعدة بياناتها وبسيولة تداولات تصل إلى 2 "
-"مليار دولار خلال تاريخنا في ال 15 سنة الماضية, وهذا ما يجعلنا أحد أبرز مقدمي "
-"خدمات الخيارات الثنائية."
+msgstr "%1 لديها أكثر من 800.000 عميل في قاعدة بياناتها وبسيولة تداولات تصل إلى 2 مليار دولار خلال تاريخنا في ال 15 سنة الماضية, وهذا ما يجعلنا أحد أبرز مقدمي خدمات الخيارات الثنائية."
 
 msgid "%1 has several exceptional career opportunities for Customer Service Professionals."
 msgstr "%1 بها عدة فرص استثنائية للعمل بخدمة العملاء."
@@ -122,12 +97,8 @@ msgstr "%1 بها عدة فرص استثنائية للعمل بخدمة الع�
 msgid "%1 has thousands of clients taking a variety of positions on the financial markets at any one time, and earns a small margin on these trades."
 msgstr "لدى %1 آلاف العملاء الذين يشترون العديد من العقود فى الأسواق المالية فى أى وقت. وتربح هامش ربح قليل من هذه المعاملات."
 
-#| msgid "%1 has updated its <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>."
 msgid "%1 has updated its  <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>."
-msgstr ""
-"%1 قامت بتحديث <a class=\"pjaxload\" href=\"%2\">الشروط والأحكام الخاصة "
-"بها</a>. بالنقر فوق موافق، فأنت تؤكد أنك قرأت ووافقت على <a class=\""
-"pjaxload\" href=\"%2\">الشروط والأحكام</a> المحدثة."
+msgstr "%1 قامت بتحديث <a class=\"pjaxload\" href=\"%2\">الشروط والأحكام الخاصة بها</a>. بالنقر فوق موافق، فأنت تؤكد أنك قرأت ووافقت على <a class=\"pjaxload\" href=\"%2\">الشروط والأحكام</a> المحدثة."
 
 msgid "%1 has updated its %2. By clicking OK, you confirm that you have read and accepted the updated %2."
 msgstr "%1 قامت بتحديث 2% الخاصة بها. بالنقر فوق موافق، فأنت تؤكد أنك قرأت ووافقت على 2% المحدثة."
@@ -135,11 +106,8 @@ msgstr "%1 قامت بتحديث 2% الخاصة بها. بالنقر فوق م�
 msgid "%1 has updated its <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>."
 msgstr "%1 قامت بتحديث <a class=\"pjaxload\" href=\"%2\">الشروط والأحكام</a> الخاصة بها. بالنقر فوق موافق، فأنت تؤكد أنك قرأت ووافقت على <a class=\"pjaxload\" href=\"%2\">الشروط والأحكام</a> المحدثة."
 
-#| msgid "Binary.com hits 1 million users, reaching a historic milestone. The company continues to see exponential growth and this reconfirms its position as an industry leader."
 msgid "%1 hits 1 million users, reaching a historic milestone. The company continues to see exponential growth and this reconfirms its position as an industry leader."
-msgstr ""
-"%1 تصل لمليون مستخدم، لتصل بذلك إلى حدث تاريخي ومفصلي هام. وتواصل الشركة "
-"نموها المتسارع لتؤكد مرة أخرى مكانتها باعتبارها رائدة في هذه الصناعة."
+msgstr "%1 تصل لمليون مستخدم، لتصل بذلك إلى حدث تاريخي ومفصلي هام. وتواصل الشركة نموها المتسارع لتؤكد مرة أخرى مكانتها باعتبارها رائدة في هذه الصناعة."
 
 msgid "%1 introduces an <a href='%2' target='_blank' class='ja-hide'>auto-trader programming tool</a><span class='all-hide ja-show'>auto-trader programming tool</span>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
 msgstr "%1 يقدم <a href='%2' target='_blank' class='ja-hide'>أداة برمجة للتداول الآلي</a><span class='all-hide ja-show'>أداة البرمجة للتداول الآلي</span>, تسمح للعملاء بتطوير روبوتات التداول الآلي الخاصة بهم بطريقة \"السحب والإفلات\" ببساطة."
@@ -349,9 +317,7 @@ msgid "%1's systems are now processing in excess of 1 million transactions/day (
 msgstr "أنظمة %1 تقوم الآن بمعالجة ما يزيد على 1 مليون صفقة / يوم (بما في ذلك الحسابات الافتراضية)."
 
 msgid "%1’s <a href=\"%2\">Volatility Indices</a> are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
-msgstr ""
-"%1 <a href=\"%2\">مؤشرات التذبذب</a> متاحة الآن 24/7 على الميتاتريدر 5. سيتم "
-"إطلاق أصول إضافية قريباً جداً."
+msgstr "%1 <a href=\"%2\">مؤشرات التذبذب</a> متاحة الآن 24/7 على الميتاتريدر 5. سيتم إطلاق أصول إضافية قريباً جداً."
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "minimum duration, for example minimum 15 seconds)%ctx)دقيقة"
@@ -602,9 +568,7 @@ msgid "<strong>Additional business exposure:</strong> You will increase awarenes
 msgstr "<strong>عرض إضافي للأعمال:</strong> سوف تزيد التوعية بخدماتك وكذلك إنشاء أعمال جديدة."
 
 msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
-msgstr ""
-"<strong>أدوات متطورة للتحليلات الفنية والأساسية,</strong> بما في ذلك "
-"المؤشرات, الرسوم البيانية, والمزيد."
+msgstr "<strong>أدوات متطورة للتحليلات الفنية والأساسية,</strong> بما في ذلك المؤشرات, الرسوم البيانية, والمزيد."
 
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong> كل الفترات الزمنية</strong> - من 10 ثوانى ل365 يوم."
@@ -745,9 +709,7 @@ msgid "<strong>Stock indices</strong> - trade all major worldwide stock indices.
 msgstr "<strong>مؤشرات البورصة</strong> - تداول كل مؤشرات البورصة الرئيسية فى أنحاء العالم."
 
 msgid "<strong>Subscriptions to a wide range of Expert Advisors,</strong> automated trading applications from the MetaTrader Market."
-msgstr ""
-"<strong>اشتراكات لمجموعة واسعة من خبراء المستشارين,</strong> تطبيقات تداول "
-"أوتوماتيكية أسواق الميتاتريدر."
+msgstr "<strong>اشتراكات لمجموعة واسعة من خبراء المستشارين,</strong> تطبيقات تداول أوتوماتيكية أسواق الميتاتريدر."
 
 msgid "<strong>Take early profits</strong> - sell your long-term trades at market prices before they expire."
 msgstr "<strong>أحصل على الأرباح مبكراً</strong> - قم ببيع معاملاتك التجارية طويلة الأجل بسعر السوق قبل أنتهاء صلاحيتها."
@@ -1623,14 +1585,7 @@ msgid "By the 15th of every month, you will receive the commission earned during
 msgstr "بحلول اليوم الـ 15 من كل شهر، ستتسلم العمولة التى حصلت علبها خلال الشهر السابق."
 
 msgid "By using or interacting with the website, you are consenting to the use of the Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
-msgstr ""
-"من خلال الإستخدام أو التفاعل مع الموقع الإلكتروني, أنت توافق على استخدام "
-"ميزة تحليلات جوجل لمعرف المستخدم, والتي تسمح لجوجل بالتقاط ال %1 لمعرف "
-"المستخدم الخاص بك (على سبيل المثال, VRTC1234, CR1234, MF1234, إلخ.). ولا "
-"توجد أي معلومات شخصية أخرى سوى معرف تسجيل الدخول الخاص بك ل Binary.com, أو "
-"غيرها من  البيانات الأخرى والتي يمكن أن تكون مرتبطة بمثل هذه المعلومات عن "
-"طريق جوجل, والمشاركة مع أو التي يتم الكشف عنها لجوجل من خلال تمكين ميزة "
-"تحليلات جوجل لمعرف المستخدم."
+msgstr "من خلال الإستخدام أو التفاعل مع الموقع الإلكتروني, أنت توافق على استخدام ميزة تحليلات جوجل لمعرف المستخدم, والتي تسمح لجوجل بالتقاط ال %1 لمعرف المستخدم الخاص بك (على سبيل المثال, VRTC1234, CR1234, MF1234, إلخ.). ولا توجد أي معلومات شخصية أخرى سوى معرف تسجيل الدخول الخاص بك ل Binary.com, أو غيرها من  البيانات الأخرى والتي يمكن أن تكون مرتبطة بمثل هذه المعلومات عن طريق جوجل, والمشاركة مع أو التي يتم الكشف عنها لجوجل من خلال تمكين ميزة تحليلات جوجل لمعرف المستخدم."
 
 msgid "Can I become an affiliate even if I don't have a website?"
 msgstr "هل يمكنني أن أكون منتسبا حتى لو لم يكن لدي موقع على شبكة الإنترنت؟"
@@ -3231,9 +3186,7 @@ msgid "If you need assistance feel free to contact our <a class=\"pjaxload\" hre
 msgstr "إذا كنت بحاجة إلى المساعدة, فلا تتردد بالإتصال بفريق 1% دعم العملاء لدينا"
 
 msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader’s website, please select “%1” from the list of available brokers."
-msgstr ""
-"إذا كنت قد قمت بتحميل منصة ميتاتريدر 5 مسبقاً ومباشرة من موقع الميتاتريدر, "
-"فبرجاء اختيار \"%1\" من قائمة الوسطاء المتاحين."
+msgstr "إذا كنت قد قمت بتحميل منصة ميتاتريدر 5 مسبقاً ومباشرة من موقع الميتاتريدر, فبرجاء اختيار \"%1\" من قائمة الوسطاء المتاحين."
 
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "إذا اخترت \"هبوط آسيوي\"، تربح العائد إذا كانت <strong>آخر حركة</strong> <strong>أقل</strong> من <strong>متوسط</strong> حركات السوق."
@@ -4242,9 +4195,7 @@ msgid "Log in"
 msgstr "تسجيل الدخول"
 
 msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
-msgstr ""
-"تسجيل الدخول للتطبيق يكون باستخدام رقم حساب الميتاتريدر الخاص بك وكلمة مرور "
-"حساب الميتاتريدر الخاص بك."
+msgstr "تسجيل الدخول للتطبيق يكون باستخدام رقم حساب الميتاتريدر الخاص بك وكلمة مرور حساب الميتاتريدر الخاص بك."
 
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "سجل الدخول لحساب الإنتساب لـ %1 وانقر على: الأمور المالية وتعليمات الدفع."
@@ -5981,9 +5932,7 @@ msgid "Take advantage of numerous benefits, including:"
 msgstr "الإستفادة من فوائد عديدة, بما في ذلك:"
 
 msgid "Take your trading to the next level through this powerful interface, recognised as the benchmark standard worldwide."
-msgstr ""
-"قم بترقية مستوى التداول الخاص بك لمستوى أعلى من خلال هذه الواجهة القوية, "
-"والمعروفة كمعيار قياسي في جميع أنحاء العالم."
+msgstr "قم بترقية مستوى التداول الخاص بك لمستوى أعلى من خلال هذه الواجهة القوية, والمعروفة كمعيار قياسي في جميع أنحاء العالم."
 
 msgid "Talk to us"
 msgstr "تكلم معنا"
@@ -6730,9 +6679,7 @@ msgid "To create a Real account for MetaTrader, you need to authenticate your Bi
 msgstr "لإنشاء حساب حقيقي للميتاتريدر, أنت بحاجة لتوثيق حسابك في Binary:"
 
 msgid "To create a real account for MetaTrader, <a href=\"%1\">upgrade to %2 real money account</a>."
-msgstr ""
-"لإنشاء حساب حقيقي للميتاتريدر, <a href=\"%1\">قم بالتحديث ل %2 حساب مال "
-"حقيق</a>."
+msgstr "لإنشاء حساب حقيقي للميتاتريدر, <a href=\"%1\">قم بالتحديث ل %2 حساب مال حقيق</a>."
 
 #, fuzzy
 #| msgid "You are currently logged in to your virtual money account (%2)."
@@ -6740,9 +6687,7 @@ msgid "To create a real account for MetaTrader, switch to your %1 real money acc
 msgstr "أنت حاليا قمت بتسجيل الدخول الى حساب أموالك الافتراضية (%2)."
 
 msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
-msgstr ""
-"للإيداع أو السحب من حساب الميتاتريدر الحقيقي الخاص بك, قم بالتحول إلى حسابك "
-"الحقيقي في Binary.com."
+msgstr "للإيداع أو السحب من حساب الميتاتريدر الحقيقي الخاص بك, قم بالتحول إلى حسابك الحقيقي في Binary.com."
 
 msgid "To enable cookies, follow the instructions below for the browser version that you are using."
 msgstr "لتمكين ملفات تعريف الارتباط اتبع التعليمات أدناه لنسخة المتصفح التى تستخدمها."
@@ -8441,6 +8386,11 @@ msgid "{JAPAN ONLY}Even though losses in binary options are limited, it is still
 msgstr "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
 
 #, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}FX Rate"
+msgstr "{JAPAN ONLY}Units"
+
+#, fuzzy
 #| msgid "{JAPAN ONLY}Section 5: Calculation"
 msgid "{JAPAN ONLY}Financial Condition"
 msgstr "{JAPAN ONLY}Section 5: Calculation"
@@ -8667,6 +8617,11 @@ msgstr "{اليابان فقط} 7 نوفمبر 2014"
 msgid "{JAPAN ONLY}Option Pricing"
 msgstr "{JAPAN ONLY}Option Pricing"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Option Pricing"
+msgid "{JAPAN ONLY}Option Type"
+msgstr "{JAPAN ONLY}Option Pricing"
+
 msgid "{JAPAN ONLY}Option prices are normally dependant on elements such as the underlying asset price, the exercise price, the length of time until the exercise point, volatility, and interest rates. Apart from the fixed exercise price, all other elements are changing constantly, so an understanding of the relationships between each element and changes in the options price is necessary for the management of options trading risk."
 msgstr "{JAPAN ONLY}Option prices are normally dependant on elements such as the underlying asset price, the exercise price, the length of time until the exercise point, volatility, and interest rates. Apart from the fixed exercise price, all other elements are changing constantly, so an understanding of the relationships between each element and changes in the options price is necessary for the management of options trading risk."
 
@@ -8693,6 +8648,11 @@ msgstr "{JAPAN ONLY}Our Customer Support staff will contact you at each stage to
 
 msgid "{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:"
 msgstr "{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}Payout Amount"
+msgstr "{JAPAN ONLY}Units"
 
 msgid "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\">here</a> for further information."
 msgstr "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\"> 1here</a> 2 for further information."
@@ -8866,6 +8826,11 @@ msgid "{JAPAN ONLY}Trading & Hedging"
 msgstr "{JAPAN ONLY}Trading & Hedging"
 
 msgid "{JAPAN ONLY}Trading Guide"
+msgstr "{JAPAN ONLY}Trading Guide"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Trading Guide"
+msgid "{JAPAN ONLY}Trading Period"
 msgstr "{JAPAN ONLY}Trading Guide"
 
 msgid "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
