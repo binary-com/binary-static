@@ -1,4 +1,5 @@
 var ValidAccountOpening = require('common_functions/valid_account_opening');
+var JapanAccOpeningUI = require('./japan_acc_opening/japan_acc_opening.ui');
 var Content = require('trade/content');
 
 pjax_config_page("new_account/japanws", function(){
