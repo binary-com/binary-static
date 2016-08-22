@@ -209,7 +209,7 @@ var TradingAnalysis = (function() {
         };
 
         if(show_image && images.hasOwnProperty(form_name)) {
-            var image_path = page.url.url_for_static('images/pages/trade-explanation/');
+            var image_path = page.url.url_for_static('images/pages/trade-explanation/' + JPTradePage.isJapan() ? 'ja/' : '');
             $Container.find('#explanation_image_1').attr('src', image_path + images[form_name].image1);
             $Container.find('#explanation_image_2').attr('src', image_path + images[form_name].image2);
             $Container.find('#explanation_image').removeClass(hidden_class);
