@@ -4,24 +4,21 @@ var VirtualAccOpeningData = (function(){
     function newAccount(config) {
         var req = {
             new_account_virtual: 1,
-            client_password:     config.password,
-            residence:           config.residence,
-            verification_code:   config.verification_code,
+            client_password: config.password,
+            residence:       config.residence,
+            verification_code: config.verification_code
         };
 
-        var affiliateCookie = $.cookie('affiliate_tracking');
-        if (affiliateCookie) {
-            // Add TrafficSource parameters
-            // NOTE: following lines can be uncommented (Re-check property names)
-            // once these fields added to this ws call
-            // var utm_data = TrafficSource.getData();
-            // req.source = TrafficSource.getSource(utm_data);
-            // if(utm_data.utm_medium)   req.medium   = utm_data.utm_medium;
-            // if(utm_data.utm_campaign) req.campaign = utm_data.utm_campaign;
+        // Add TrafficSource parameters
+        // NOTE: following lines can be uncommented (Re-check property names)
+        // once these fields added to this ws call
+        // var utm_data = TrafficSource.getData();
+        // req.source = TrafficSource.getSource(utm_data);
+        // if(utm_data.utm_medium)   req.medium   = utm_data.utm_medium;
+        // if(utm_data.utm_campaign) req.campaign = utm_data.utm_campaign;
 
-            if ($.cookie('affiliate_tracking')) {
-                req.affiliate_token = JSON.parse($.cookie('affiliate_tracking')).t;
-            }
+        if (Cookies.get('affiliate_tracking')) {
+            req.affiliate_token = Cookies.getJSON('affiliate_tracking').t;
         }
 
         BinarySocket.send(req);

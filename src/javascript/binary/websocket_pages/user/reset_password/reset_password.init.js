@@ -56,12 +56,11 @@ var ResetPassword = (function () {
                 return;
             }
 
-            dob = dobyy + '-' + dobmm + '-' + dobdd;
             BinarySocket.send({
                 reset_password: 1,
                 verification_code: token,
                 new_password: pw1,
-                date_of_birth: dob
+                date_of_birth: [dobyy, dobmm, dobdd].join('-'),
             });
             $('#reset').prop('disabled', true);
         } else {
@@ -91,12 +90,11 @@ var ResetPassword = (function () {
                 $('#reset-error').removeClass(hiddenClass);
 
                 // special handling as backend return inconsistent format
-                var errMsg;
-                if (response.error.code === 'InputValidationFailed') {
-                    errMsg = text.localize(resetErrorTemplate).replace('[_1]', text.localize('Token has expired.'));
-                } else {
-                    errMsg = text.localize(resetErrorTemplate).replace('[_1]', text.localize(response.error.message));
-                }
+                var errMsg = text.localize(resetErrorTemplate, [
+                    response.error.code === 'InputValidationFailed' ?
+                        text.localize('Token has expired.') :
+                        text.localize(response.error.message)
+                ]);
 
                 $('#reset-error-msg').text(errMsg);
             } else {

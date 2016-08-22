@@ -19,10 +19,10 @@ var Store = function(storage) {
 
 Store.prototype = {
       get: function(key) {
-          return this.storage.getItem(key) ? this.storage.getItem(key) : undefined;
+          return this.storage.getItem(key) || undefined;
       },
       set: function(key, value) {
-          if(typeof value != "undefined") {
+          if (typeof value != "undefined") {
               this.storage.setItem(key, value);
           }
       },
@@ -65,7 +65,7 @@ var CookieStorage = function (cookie_name, cookie_domain) {
 
 CookieStorage.prototype = {
     read: function() {
-        var cookie_value = $.cookie(this.cookie_name);
+        var cookie_value = Cookies.get(this.cookie_name);
         try {
             this.value = cookie_value ? JSON.parse(cookie_value) : {};
         } catch (e) {
@@ -77,7 +77,7 @@ CookieStorage.prototype = {
         if (!this.initialized) this.read();
         this.value = value;
         if(expireDate) this.expires = expireDate;
-        $.cookie(this.cookie_name, this.value, {
+        Cookies.set(this.cookie_name, this.value, {
             expires: this.expires,
             path   : this.path,
             domain : this.domain,
@@ -91,14 +91,14 @@ CookieStorage.prototype = {
     set: function(key, value) {
         if (!this.initialized) this.read();
         this.value[key] = value;
-        $.cookie(this.cookie_name, JSON.stringify(this.value), {
+        Cookies.set(this.cookie_name, this.value, {
             expires: new Date(this.expires),
             path   : this.path,
             domain : this.domain,
         });
     },
     remove: function() {
-        $.removeCookie(this.cookie_name, {
+        Cookies.remove(this.cookie_name, {
             path   : this.path,
             domain : this.domain,
         });

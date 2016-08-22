@@ -47,12 +47,11 @@ var SettingsDetailsWS = (function() {
             $(formID).removeClass('hidden');
             return;
         }
-
         // Real Account
-        var birthDate = data.date_of_birth ? moment.unix(data.date_of_birth).format("YYYY-MM-DD") : '';
+        var birthDate = data.date_of_birth ? moment.utc(new Date(data.date_of_birth * 1000)).format("YYYY-MM-DD") : '';
         $('#lblBirthDate').text(birthDate);
         // Generate states list
-        var residence = $.cookie('residence');
+        var residence = Cookies.get('residence');
         if (residence) {
             BinarySocket.send({"states_list": residence, "passthrough": {"value": data.address_state}});
         }
@@ -106,6 +105,15 @@ var SettingsDetailsWS = (function() {
 
             $(RealAccElements).removeClass('hidden');
         }
+        $('.JpAcc').removeClass('invisible')
+                   .removeClass('hidden');
+
+        $('#AnnualIncome, #FinancialAsset, #Occupation, #Equities, #Commodities,' +
+            '#ForeignCurrencyDeposit, #MarginFX, #InvestmentTrust, #PublicCorporationBond,' +
+            '#DerivativeTrading, #PurposeOfTrading, #HedgeAsset, #HedgeAssetAmount')
+            .on('change', function() {
+            changed = true;
+        });
         $(formID).removeClass('hidden');
     }
 
