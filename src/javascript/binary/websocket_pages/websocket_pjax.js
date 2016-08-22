@@ -17,6 +17,28 @@ var Cashier            = require('websocket_pages/cashier/cashier');
 var ForwardWS          = require('websocket_pages/cashier/deposit_withdraw_ws');
 var PaymentAgentListWS = require('websocket_pages/cashier/payment_agent_listws');
 var PaymentAgentWithdrawWS = require('websocket_pages/cashier/payment_agent_withdrawws');
+var FinancialAssessmentws  = require('account/settings/financial_assessment');
+
+
+pjax_config_page_require_auth("user/settings/assessmentws", function() {
+    return {
+        onLoad: function() {
+            if (japanese_client()) {
+                window.location.href = page.url.url_for('user/settingsws');
+            }
+            BinarySocket.init({
+                onmessage: function(msg) {
+                    var response = JSON.parse(msg.data);
+                    if (response) {
+                        FinancialAssessmentws.apiResponse(response);
+                    }
+                }
+            });
+            showLoadingImage($('<div/>', {id: 'loading'}).insertAfter('#heading'));
+            FinancialAssessmentws.init();
+        }
+    };
+});
 
 pjax_config_page_require_auth("paymentagent/withdrawws", function() {
     return {

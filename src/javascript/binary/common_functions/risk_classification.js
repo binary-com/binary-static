@@ -1,4 +1,6 @@
-RiskClassification = (function() {
+var FinancialAssessmentws  = require('account/settings/financial_assessment');
+
+var RiskClassification = (function() {
   'use strict';
 
   var financial_assessment_url = page.url.url_for('user/settings/assessmentws');
