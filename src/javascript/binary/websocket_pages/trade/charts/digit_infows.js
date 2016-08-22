@@ -160,21 +160,24 @@ TradingAnalysis.DigitInfoWS.prototype = {
             spots[i]=val.substr(val.length-1);
         }
         this.spots = spots;
-        var title = {
-            text: template($('#last_digit_title').html(), [spots.length, $('[name=underlying] option:selected').text()])
-        };
         if (this.chart && $('#last_digit_histo').html()) {
-            this.chart.xAxis[0].update({title: title}, true);
+            this.chart.xAxis[0].update({title: get_title()}, true);
             this.chart.series[0].name = underlying;
         } else {
-            this.add_content(underlying);
-            this.chart_config.xAxis.title = title;
+            this.add_content(underlying); // this creates #last_digit_title
+            this.chart_config.xAxis.title = get_title();
             this.chart = new Highcharts.Chart(this.chart_config);
             this.chart.addSeries({name : underlying, data: []});
             this.on_latest();
             this.stream_id = null;
         }
         this.update();
+
+        function get_title() {
+            return {
+                text: template($('#last_digit_title').html(), [spots.length, $('[name=underlying] option:selected').text()])
+            };
+        }
     },
     update: function(symbol, latest_spot) {
         if(typeof this.chart === "undefined") {
