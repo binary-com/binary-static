@@ -1,4 +1,5 @@
 var Content = require('trade/content');
+var PaymentAgentTransfer = require('./payment_agent_transfer/payment_agent_transfer.init');
 
 pjax_config_page_require_auth("paymentagent/transferws", function(){
     return {

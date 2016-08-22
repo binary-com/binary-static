@@ -14,6 +14,7 @@ ALIASES = {
     'static_pages':     p('./src/javascript/binary/static_pages'),
     'websocket_pages':  p('./src/javascript/binary/websocket_pages'),
     'account':          p('./src/javascript/binary/websocket_pages/user/account'),
+    'trade':            p('./src/javascript/binary/websocket_pages/trade'),
     'binary_japan':     p('./src/javascript/binary_japan'),
 }
 

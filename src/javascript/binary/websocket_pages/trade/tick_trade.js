@@ -396,4 +396,4 @@ WSTickDisplay.updateChart = function(data, contract) {
 
 module.exports = {
     WSTickDisplay: WSTickDisplay,
-}
+};

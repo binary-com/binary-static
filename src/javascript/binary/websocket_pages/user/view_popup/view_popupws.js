@@ -1,4 +1,4 @@
-var Highchart = require('trade/chart/highchartws');
+var Highchart = require('trade/charts/highchartws');
 var WSTickDisplay = require('trade/tick_trade');
 
 var ViewPopupWS = (function() {

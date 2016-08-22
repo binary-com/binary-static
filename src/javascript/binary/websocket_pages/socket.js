@@ -1,5 +1,5 @@
 var SessionDurationLimit = require('common_functions/session_duration_limit');
-var Highchart = require('trade/chart/highchartws');
+var Highchart = require('trade/charts/highchartws');
 var WSTickDisplay = require('trade/tick_trade');
 var TradePage = require('trade/tradepage');
 
