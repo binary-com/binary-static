@@ -1,15 +1,16 @@
 <div class="404_page" id="404-container">
-    <h1>Oops... Page Not Available</h1>
+    <h1>[% l('Oops... Page Not Available') %]</h1>
     <div class="big-error-code">404</div>
     <p>
-        The page you requested could not be found. Either it no longer
-        exists or the address is wrong. Please check for any typos.
+        [% l('The page you requested could not be found. Either it no longer exists or the address is wrong. Please check for any typos.') %]
     </p>
     <p>
-        Have better luck at trading!
+        [% l('Have better luck at trading!') %]
     </p>
-    <a href="[% request.url_for('/') %]">Return to main page</a>
     <p>
-        If the issue keeps happening, please <a href="[% request.url_for('/contact') %'">contact customer support</a>.
+        [% l('<a href="[_1]">Return to main page</a>', request.url_for('/')) %]
+    </p>
+    <p>
+        [% l('If the issue keeps happening, please contact <a href="[_1]">customer support</a>.', request.url_for('/contact')) %]
     </p>
 </div>
