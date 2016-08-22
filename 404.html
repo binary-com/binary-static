@@ -33,8 +33,16 @@
         return conLang;
     }
 
+    function getRoot() {
+        var hostname = window.location.hostname;
+        var origin = window.location.origin;
+        return /^(.+?).github.io$/.test(hostname) ?
+            origin + '/binary-static' :
+            origin;
+    }
+
     function redirect() {
-        window.location.href = (lang || 'en').toLowerCase() + '/404.html';
+        window.location = getRoot() + '/' + (lang || 'en').toLowerCase() + '/404.html';
     }
 
     var lang = getCookieItem('language');
