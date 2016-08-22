@@ -8,6 +8,7 @@ var forgetTradingStreams = require('./process').forgetTradingStreams;
 var Symbols = require('./symbols');
 var addEventListenerForm = require('./common').addEventListenerForm;
 var displayCurrencies = require('./currency');
+var Guide = require('common_functions/guide');
 
 var TradePage = (function(){
   var trading_page = 0, events_initialized = 0;
