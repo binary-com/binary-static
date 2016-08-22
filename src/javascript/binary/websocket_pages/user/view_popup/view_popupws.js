@@ -1,5 +1,6 @@
 var Highchart = require('trade/charts/highchartws');
 var WSTickDisplay = require('trade/tick_trade');
+var ViewPopupUI = require('./view_popup_ui');
 
 var ViewPopupWS = (function() {
     "use strict";
