@@ -1,3 +1,5 @@
+var JPTradePage = require('../../../binary_japan/trade_japan/jp_trade_page');
+
 var Common = require('./common');
 var toggleActiveNavMenuElement = Common.toggleActiveNavMenuElement;
 var showHighchart = Common.showHighchart;

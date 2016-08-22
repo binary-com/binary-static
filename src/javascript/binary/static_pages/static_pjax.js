@@ -1,5 +1,6 @@
 var TradePage = require('trade/tradepage');
 var submit_email = require('websocket_pages/user/verify_email');
+var JPTradePage = require('binary_japan/trade_japan/jp_trade_page');
 
 pjax_config_page('/\?.+|/home', function() {
     return {
