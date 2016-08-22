@@ -1,20 +1,44 @@
-var AssetIndexUI      = require('websocket_pages/resources/asset_index/asset_indexws.ui');
-var MarketTimesUI     = require('websocket_pages/resources/market_times/market_timesws.ui');
-var PortfolioWS       = require('account/portfolio/portfolio.init');
-var ProfitTableWS     = require('account/profit_table/profit_table.init');
-var StatementWS       = require('account/statement/statement.init');
-var TopUpVirtualWS    = require('account/top_up_virtualws');
-var SettingsWS        = require('account/settings');
-var MyAccountWS       = require('websocket_pages/user/my_accountws');
-var SettingsDetailsWS = require('account/settings/settings_detailsws');
-var SecurityWS        = require('account/settings/settings_securityws');
-var SecurityWS        = require('account/settings/self_exclusion');
-var MetaTraderUI      = require('account/settings/metatrader/metatrader.ui');
-var LostPassword      = require('websocket_pages/user/lost_password');
-var APITokenWS        = require('websocket_pages/user/account/settings/api_token');
-var account_trasferws = require('websocket_pages/cashier/account_transferws');
-var Cashier           = require('websocket_pages/cashier/cashier');
-var ForwardWS         = require('websocket_pages/cashier/deposit_withdraw_ws');
+var AssetIndexUI       = require('websocket_pages/resources/asset_index/asset_indexws.ui');
+var MarketTimesUI      = require('websocket_pages/resources/market_times/market_timesws.ui');
+var PortfolioWS        = require('account/portfolio/portfolio.init');
+var ProfitTableWS      = require('account/profit_table/profit_table.init');
+var StatementWS        = require('account/statement/statement.init');
+var TopUpVirtualWS     = require('account/top_up_virtualws');
+var SettingsWS         = require('account/settings');
+var MyAccountWS        = require('websocket_pages/user/my_accountws');
+var SettingsDetailsWS  = require('account/settings/settings_detailsws');
+var SecurityWS         = require('account/settings/settings_securityws');
+var SecurityWS         = require('account/settings/self_exclusion');
+var MetaTraderUI       = require('account/settings/metatrader/metatrader.ui');
+var LostPassword       = require('websocket_pages/user/lost_password');
+var APITokenWS         = require('websocket_pages/user/account/settings/api_token');
+var account_trasferws  = require('websocket_pages/cashier/account_transferws');
+var Cashier            = require('websocket_pages/cashier/cashier');
+var ForwardWS          = require('websocket_pages/cashier/deposit_withdraw_ws');
+var PaymentAgentListWS = require('websocket_pages/cashier/payment_agent_listws');
+
+pjax_config_page("payment_agent_listws", function() {
+    return {
+        onLoad: function() {
+            BinarySocket.init({
+                onmessage: function(msg) {
+                    var response = JSON.parse(msg.data);
+                    if (response) {
+                        if (response.msg_type === "paymentagent_list") {
+                            PaymentAgentListWS.responseHandler(response);
+                        }
+                    }
+                    else {
+                        console.log('some error occured');
+                    }
+                }
+            });
+
+            Content.populate();
+            PaymentAgentListWS.init();
+        }
+    };
+});
 
 pjax_config_page_require_auth("cashier/forwardws", function() {
     return {
