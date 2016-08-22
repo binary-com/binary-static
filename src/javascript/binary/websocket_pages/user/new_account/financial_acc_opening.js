@@ -1,4 +1,6 @@
 var ValidAccountOpening = require('common_functions/valid_account_opening');
+var Content = require('trade/content');
+
 pjax_config_page_require_auth("new_account/maltainvestws", function(){
   return {
     onLoad: function() {

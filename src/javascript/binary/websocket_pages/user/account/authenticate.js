@@ -1,3 +1,5 @@
+var Content = require('trade/content');
+
 pjax_config_page_require_auth("user/authenticatews", function(){
     return {
         onLoad: function() {

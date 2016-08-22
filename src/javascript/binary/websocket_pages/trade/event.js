@@ -1,4 +1,32 @@
 var onlyNumericOnKeypress = require('common_functions/event_handler');
+var TradingAnalysis = require('./analysis');
+var Barriers = require('./barriers');
+var Contract = require('./contract');
+var Defaults = require('./defaults');
+var Durations = require('./duration');
+var Price = require('./price');
+var StartDates = require('./starttime');
+var Tick = require('./tick');
+
+var Common = require('./common');
+var isVisible = Common.isVisible;
+var showPriceOverlay = Common.showPriceOverlay;
+var showFormOverlay = Common.showFormOverlay;
+var toggleActiveCatMenuElement = Common.toggleActiveCatMenuElement;
+var setFormPlaceholderContent = Common.setFormPlaceholderContent;
+var debounce = Common.debounce;
+var submitForm = Common.submitForm;
+var displayTooltip = Common.displayTooltip;
+var updateWarmChart = Common.updateWarmChart;
+var reloadPage = Common.reloadPage;
+var chartFrameSource = Common.chartFrameSource;
+
+var Process = require('./process');
+var processMarket = Process.processMarket;
+var processContractForm = Process.processContractForm;
+var processForgetProposals = Process.processForgetProposals;
+var processPriceRequest = Process.processPriceRequest;
+var processForgetTicks = Process.processForgetTicks;
 
 /*
  * TradingEvents object contains all the event handler function required for
@@ -526,3 +554,5 @@ var TradingEvents = (function () {
         onDurationUnitChange: onDurationUnitChange
     };
 })();
+
+module.exports = TradingEvents;

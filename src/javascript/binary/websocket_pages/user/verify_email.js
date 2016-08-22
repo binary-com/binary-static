@@ -1,4 +1,6 @@
 var validator = require('binary/validator');
+var Content = require('trade/content');
+
 function submit_email() {
     Content.populate();
     var form = $('#verify-email-form')[0];

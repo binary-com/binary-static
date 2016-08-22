@@ -1,3 +1,5 @@
+var Content = require('trade/content');
+
 var RealityCheck = (function () {
     'use strict';
     var hiddenClass = 'invisible';

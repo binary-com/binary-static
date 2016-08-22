@@ -1,4 +1,6 @@
 var LimitsWS = require('./limits/limits.init');
+var Content = require('trade/content');
+
 pjax_config_page_require_auth("limitsws", function(){
     return {
         onLoad: function() {

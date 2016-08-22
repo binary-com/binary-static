@@ -1,3 +1,8 @@
+var Content = require('./content');
+var Contract = require('./contract');
+var Defaults = require('./defaults');
+var TradingEvents = require('./event');
+
 /*
  * Handles start time display
  *
@@ -5,7 +10,6 @@
  * starting contracts and populate the start time select
  * box
  */
-
 var StartDates = (function(){
     'use strict';
 
@@ -116,3 +120,5 @@ var StartDates = (function(){
     };
 
 })();
+
+module.exports = StartDates;

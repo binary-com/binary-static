@@ -1,4 +1,6 @@
 var Table = require('attach_dom/table');
+var addComma = require('trade/common').addComma;
+var Content = require('trade/content');
 
 var LimitsUI = (function(){
     "use strict";

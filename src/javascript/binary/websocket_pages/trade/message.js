@@ -1,7 +1,20 @@
 var PortfolioWS = require('account/portfolio/portfolio.init');
 var ProfitTableWS = require('account/profit_table/profit_table.init');
 var StatementWS = require('account/statement/statement.init');
-var Symbols = require('websocket_pages/trade/symbols');
+var TradingAnalysis = require('./analysis');
+var displayCurrencies = require('./currency');
+var Purchase = require('./purchase');
+var Symbols = require('./symbols');
+var Tick = require('./tick');
+var TradePage = require('./tradepage');
+
+var Process = require('./process');
+var processActiveSymbols = Process.processActiveSymbols;
+var processContract = Process.processContract;
+var forgetTradingStreams = Process.forgetTradingStreams;
+var processTick = Process.processTick;
+var processProposal = Process.processProposal;
+var processTradingTimes = Process.processTradingTimes;
 
 /*
  * This Message object process the response from server and fire
@@ -68,3 +81,5 @@ var Message = (function () {
     };
 
 })();
+
+module.exports = Message;

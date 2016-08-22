@@ -1,4 +1,6 @@
-var Symbols = require('websocket_pages/trade/symbols');
+var TradingAnalysis = require('trade/analysis');
+var Symbols = require('trade/symbols');
+
 TradingAnalysis.DigitInfoWS = function() {
     this.chart_config = {
         chart: {

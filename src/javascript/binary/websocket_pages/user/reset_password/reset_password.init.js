@@ -1,5 +1,6 @@
 var PasswordMeter = require('attach_dom/password_strength_meter');
 var Validate = require('common_functions/validation');
+var Content = require('trade/content');
 
 var ResetPassword = (function () {
     'use strict';

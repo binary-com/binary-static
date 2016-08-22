@@ -1,3 +1,11 @@
+var Contract = require('./contract');
+var Defaults = require('./defaults');
+var Tick = require('./tick');
+
+var Common = require('./common');
+var isVisible = Common.isVisible;
+var countDecimalPlaces = Common.countDecimalPlaces;
+
 /*
  * Handles barrier processing and display
  *
@@ -163,3 +171,5 @@ var Barriers = (function () {
         validateBarrier: validateBarrier
     };
 })();
+
+module.exports = Barriers;

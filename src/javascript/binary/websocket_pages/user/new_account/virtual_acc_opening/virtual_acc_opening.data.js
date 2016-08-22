@@ -1,4 +1,5 @@
 // var TrafficSource = require('common_functions/traffic_source');
+var Content = require('trade/content');
 
 var VirtualAccOpeningData = (function(){
     "use strict";

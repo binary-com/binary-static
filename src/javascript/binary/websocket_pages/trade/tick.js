@@ -1,3 +1,7 @@
+var Common = require('./common');
+var displayPriceMovement = Common.displayPriceMovement;
+var displayIndicativeBarrier = Common.displayIndicativeBarrier;
+
 /*
  * Tick object handles all the process/display related to tick streaming
  *
@@ -125,3 +129,5 @@ var Tick = (function() {
         processHistory: processHistory
     };
 })();
+
+module.exports = Tick;

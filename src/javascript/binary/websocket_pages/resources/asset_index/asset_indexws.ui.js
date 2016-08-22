@@ -1,6 +1,7 @@
 var Table = require('attach_dom/table');
 var AssetIndex = require('../asset_indexws');
 var AssetIndexData = require('./asset_indexws.data');
+var Content = require('trade/content');
 
 var AssetIndexUI = (function() {
     "use strict";

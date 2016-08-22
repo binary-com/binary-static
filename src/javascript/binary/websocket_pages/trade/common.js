@@ -1,8 +1,12 @@
+var Contract = require('./contract');
+var Content = require('./content');
+var Defaults = require('./defaults');
+var Symbols = require('./symbols');
+var Tick = require('./tick');
+
 /*
  * This contains common functions we need for processing the response
  */
-
-var Symbols = require('./symbols');
 
 if (typeof Element !== 'undefined') {
    Element.prototype.hide = function(){
@@ -127,7 +131,6 @@ if (typeof Element !== 'undefined') {
      }
  }
 
-
  function displayMarkets(id, elements, selected) {
      'use strict';
      var target= document.getElementById(id),
@@ -179,33 +182,6 @@ if (typeof Element !== 'undefined') {
          }
      }
  }
-/*
- * function to create `option` and append to select box with id `id`
- */
-function displayOptions(id, elements, selected) {
-    'use strict';
-    var target= document.getElementById(id),
-        fragment =  document.createDocumentFragment();
-
-    while (target && target.firstChild) {
-        target.removeChild(target.firstChild);
-    }
-
-    for (var key in elements) {
-        if (elements.hasOwnProperty(key)){
-            var option = document.createElement('option'), content = document.createTextNode(elements[key]);
-            option.setAttribute('value', key);
-            if (selected && selected === key) {
-                option.setAttribute('selected', 'selected');
-            }
-            option.appendChild(content);
-            fragment.appendChild(option);
-        }
-    }
-    if (target) {
-        target.appendChild(fragment);
-    }
-}
 
 /*
  * function to display underlyings
@@ -913,9 +889,46 @@ function setChartSource() {
   document.getElementById('chart_frame').src = 'https://webtrader.binary.com?affiliates=true&instrument=' + document.getElementById('underlying').value + '&timePeriod=1t&gtm=true&lang=' + (page.language() || 'en').toLowerCase();
 }
 
-//used temporarily for mocha test
-if (typeof module !== 'undefined') {
-    module.exports = {
-        addComma: addComma
-    };
-}
+module.exports = {
+    displayContractForms: displayContractForms,
+    displayMarkets: displayMarkets,
+    displayUnderlyings: displayUnderlyings,
+    getFormNameBarrierCategory: getFormNameBarrierCategory,
+    contractTypeDisplayMapping: contractTypeDisplayMapping,
+    isVisible: isVisible,
+    hideLoadingOverlay: hideLoadingOverlay,
+    showLoadingOverlay: showLoadingOverlay,
+    showPriceOverlay: showPriceOverlay,
+    hidePriceOverlay: hidePriceOverlay,
+    hideFormOverlay: hideFormOverlay,
+    showFormOverlay: showFormOverlay,
+    hideOverlayContainer: hideOverlayContainer,
+    compareMarkets: compareMarkets,
+    getContractCategoryTree: getContractCategoryTree,
+    displayPriceMovement: displayPriceMovement,
+    resetPriceMovement: resetPriceMovement,
+    toggleActiveNavMenuElement: toggleActiveNavMenuElement,
+    toggleActiveCatMenuElement: toggleActiveCatMenuElement,
+    setFormPlaceholderContent: setFormPlaceholderContent,
+    displayCommentPrice: displayCommentPrice,
+    displayCommentSpreads: displayCommentSpreads,
+    debounce: debounce,
+    getDefaultMarket: getDefaultMarket,
+    getMarketsOrder: getMarketsOrder,
+    addEventListenerForm: addEventListenerForm,
+    submitForm: submitForm,
+    displayIndicativeBarrier: displayIndicativeBarrier,
+    durationOrder: durationOrder,
+    marketOrder: marketOrder,
+    marketSort: marketSort,
+    displayTooltip: displayTooltip,
+    countDecimalPlaces: countDecimalPlaces,
+    selectOption: selectOption,
+    updatePurchaseStatus: updatePurchaseStatus,
+    updateWarmChart: updateWarmChart,
+    reloadPage: reloadPage,
+    addComma: addComma,
+    showHighchart: showHighchart,
+    chartFrameSource: chartFrameSource,
+    setChartSource: setChartSource,
+};
