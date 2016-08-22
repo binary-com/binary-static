@@ -143,22 +143,4 @@ var FinancialAssessmentws = (function(){
 }());
 
 
-pjax_config_page_require_auth("user/settings/assessmentws", function() {
-    return {
-        onLoad: function() {
-            if (japanese_client()) {
-                window.location.href = page.url.url_for('user/settingsws');
-            }
-            BinarySocket.init({
-                onmessage: function(msg) {
-                    var response = JSON.parse(msg.data);
-                    if (response) {
-                        FinancialAssessmentws.apiResponse(response);
-                    }
-                }
-            });
-            showLoadingImage($('<div/>', {id: 'loading'}).insertAfter('#heading'));
-            FinancialAssessmentws.init();
-        }
-    };
-});
+module.exports = FinancialAssessmentws;

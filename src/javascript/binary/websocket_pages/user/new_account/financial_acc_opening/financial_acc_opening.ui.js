@@ -1,5 +1,6 @@
 var Validate = require('common_functions/validation');
 var ValidAccountOpening = require('common_functions/valid_account_opening');
+var FinancialAccOpeningData = require('websocket_pages/user/new_account/financial_acc_opening/financial_acc_opening.data');
 var Content = require('trade/content');
 
 var FinancialAccOpeningUI = (function(){
@@ -141,3 +142,5 @@ var FinancialAccOpeningUI = (function(){
     checkValidity: checkValidity
   };
 })();
+
+module.exports = FinancialAccOpeningUI;
