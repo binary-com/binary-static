@@ -1,11 +1,6 @@
 /* Logo and top bar */
 #topbar {
-    width: 100%;
-    color: $COLOR_WHITE;
-    line-height: 1;
-    font-size: 70%;
     @include BIDIR_VALUE(text-align, right, left);
-    padding: 3px 0;
     #virtual-text {
         font-weight: 700;
     }
@@ -103,67 +98,6 @@
                 color: $COLOR_ORANGE;
             }
         }
-    }
-    .nav-menu {
-        font-size: $FONT_SIZE_N;
-        & > li {
-            position: relative;
-            & > ul {
-                width: 100%;
-                background-color: $COLOR_LIGHT_GRAY;
-            }
-        }
-    }
-    .main-nav {
-        width: 165px;
-        border: 1px solid $COLOR_BLUE;
-        position: absolute;
-        right: 0;
-        transition: none !important;
-        & > li {
-            margin-top: 3px;
-            height: 70px;
-            a {
-                font-weight: normal;
-                &:hover {
-                    text-decoration: none;
-                }
-            }
-            & > ul {
-                margin: -18px -1px;
-                border: 1px solid $COLOR_GRAY;
-                a {
-                    color: initial;
-                    li {
-                        margin-top: 0;
-                        padding: 7px 0;
-                        &:hover {
-                            background-color: $COLOR_GRAY;
-                        }
-                    }
-                }
-            }
-        }
-        .nav-caret {
-            position: relative;
-            top: -45px;
-            right: -68px;
-        }
-    }
-    #all-accounts {
-        background-color: $COLOR_LIGHT_GRAY;
-        border: 1px solid $COLOR_GRAY;
-        z-index: 99999;
-        opacity: 0;
-        visibility: hidden;
-        & > li a {
-            color: $COLOR_BLACK;
-        }
-    }
-    #main-logout {
-        position: relative;
-        height: 75px;
-        display: flex;
     }
     .topMenuBalance {
         visibility: hidden;
