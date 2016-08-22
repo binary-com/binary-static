@@ -1,5 +1,6 @@
 var Validate = require('common_functions/validation');
 var ValidAccountOpening = require('common_functions/valid_account_opening');
+var FinancialAccOpeningData = require('account/financial_acc_opening_data');
 var Content = require('trade/content');
 
 var FinancialAccOpeningUI = (function(){
