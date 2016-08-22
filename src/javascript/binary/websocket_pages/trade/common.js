@@ -297,7 +297,6 @@ function contractTypeDisplayMapping(type) {
     return type ? obj[type] : 'top';
 }
 
-
 /*
  * function to check if element is visible or not
  *

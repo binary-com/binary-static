@@ -1,8 +1,8 @@
-var Button = require('attach_dom/button');
-var Table = require('attach_dom/table');
-var app_details = require('common_functions/get_app_details');
+var Button = require('../../../../common_functions/attach_dom/button');
+var Table = require('../../../../common_functions/attach_dom/table');
+var app_details = require('../../../../common_functions/get_app_details');
 var Statement = require('../statement');
-var Content = require('trade/content');
+var Content = require('../../../trade/content');
 
 var StatementUI = (function(){
     "use strict";
