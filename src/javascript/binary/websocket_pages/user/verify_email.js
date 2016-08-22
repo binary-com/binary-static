@@ -1,7 +1,7 @@
 var validator = require('binary/validator');
 var Content = require('trade/content');
 
-function submit_email() {
+module.exports = function submit_email() {
     Content.populate();
     var form = $('#verify-email-form')[0];
     if (!form) {
@@ -47,4 +47,4 @@ function submit_email() {
         BinarySocket.init({onmessage: handler});
         BinarySocket.send({verify_email: email, type: 'account_opening'});
     }
-}
+};
