@@ -47,12 +47,11 @@ var SettingsDetailsWS = (function() {
             $(formID).removeClass('hidden');
             return;
         }
-
         // Real Account
-        var birthDate = data.date_of_birth ? moment.unix(data.date_of_birth).format("YYYY-MM-DD") : '';
+        var birthDate = data.date_of_birth ? moment.utc(new Date(data.date_of_birth * 1000)).format("YYYY-MM-DD") : '';
         $('#lblBirthDate').text(birthDate);
         // Generate states list
-        var residence = $.cookie('residence');
+        var residence = Cookies.get('residence');
         if (residence) {
             BinarySocket.send({"states_list": residence, "passthrough": {"value": data.address_state}});
         }
@@ -106,6 +105,15 @@ var SettingsDetailsWS = (function() {
 
             $(RealAccElements).removeClass('hidden');
         }
+        $('.JpAcc').removeClass('invisible')
+                   .removeClass('hidden');
+
+        $('#AnnualIncome, #FinancialAsset, #Occupation, #Equities, #Commodities,' +
+            '#ForeignCurrencyDeposit, #MarginFX, #InvestmentTrust, #PublicCorporationBond,' +
+            '#DerivativeTrading, #PurposeOfTrading, #HedgeAsset, #HedgeAssetAmount')
+            .on('change', function() {
+            changed = true;
+        });
         $(formID).removeClass('hidden');
     }
 
@@ -198,6 +206,7 @@ var SettingsDetailsWS = (function() {
 
         var V2 = ValidateV2;
         var isAddress  = V2.regex(/^[a-zA-Z0-9\s\,\.\-\/\(\)#']+$/, [letters, numbers, space, period, comma, '- / ( ) # \'']);
+        var isCity     = isAddress;
         var isState    = V2.regex(/^[a-zA-Z\s\-']+$/,               [letters, space, '- \'']);
         var isPostcode = V2.regex(/^[\w\s-]+$/,                     [letters, numbers, space, '-']);
         var isPhoneNo  = V2.regex(/^(|\+?[0-9\s\-]+)$/,             [numbers, space, '-']);
@@ -209,7 +218,7 @@ var SettingsDetailsWS = (function() {
         return {
             address_line_1:   [V2.required, isAddress],
             address_line_2:   [maybeEmptyAddress],
-            address_city:     [V2.required],
+            address_city:     [V2.required, isCity],
             address_state:    [V2.required, isState],
             address_postcode: [V2.required, V2.lengthRange(1, 20), isPostcode],
             phone:            [V2.lengthRange(6, 35), isPhoneNo],

@@ -32,10 +32,6 @@ function BinarySocketClass() {
         }
     };
 
-    var status = function () {
-        return binarySocket && binarySocket.readyState;
-    };
-
     var isReady = function () {
         return binarySocket && binarySocket.readyState === 1;
     };
@@ -79,13 +75,13 @@ function BinarySocketClass() {
     };
 
     var init = function (es) {
-        if(wrongAppId === getAppId()) {
+        if (wrongAppId === getAppId()) {
             return;
         }
-        if(!es){
+        if (!es){
             events = {};
         }
-        if(typeof es === 'object'){
+        if (typeof es === 'object') {
             bufferedSends = [];
             manualClosed = false;
             events = es;
@@ -96,30 +92,25 @@ function BinarySocketClass() {
             binarySocket = new WebSocket(socketUrl);
         }
 
-        binarySocket.onopen = function (){
-            var loginToken = getCookieItem('login');
-            if(loginToken && !authorized && localStorage.getItem('client.tokens')) {
-                binarySocket.send(JSON.stringify({authorize: loginToken}));
-            }
-            else {
+        binarySocket.onopen = function () {
+            var apiToken = CommonData.getLoginToken();
+            if (apiToken && !authorized && localStorage.getItem('client.tokens')) {
+                binarySocket.send(JSON.stringify({authorize: apiToken}));
+            } else {
                 sendBufferedSends();
             }
 
-            if(typeof events.onopen === 'function'){
+            if (typeof events.onopen === 'function') {
                 events.onopen();
             }
 
-            if(isReady()=== true){
-                if(!Login.is_login_pages()) {
-                    page.header.validate_cookies();
-                }
-                if (clock_started === false) {
-                    page.header.start_clock_ws();
-                }
+            if (isReady()) {
+                if (!Login.is_login_pages()) page.header.validate_cookies();
+                if (!clock_started) page.header.start_clock_ws();
             }
         };
 
-        binarySocket.onmessage = function (msg){
+        binarySocket.onmessage = function(msg) {
             var response = JSON.parse(msg.data);
             if (response) {
                 if(response.hasOwnProperty('echo_req') && response.echo_req !== null && response.echo_req.hasOwnProperty('passthrough')) {
@@ -129,13 +120,11 @@ function BinarySocketClass() {
                         delete timeouts[response.echo_req.passthrough.req_number];
                     }
                     else if (passthrough.hasOwnProperty('dispatch_to')) {
-                      if (passthrough.dispatch_to === 'ViewPopupWS') {
-                        ViewPopupWS.dispatch(response);
-                      } else if (passthrough.dispatch_to === 'ViewChartWS') {
-                        Highchart.dispatch(response);
-                      } else if (passthrough.dispatch_to === 'ViewTickDisplayWS') {
-                        WSTickDisplay.dispatch(response);
-                      }
+                        switch (passthrough.dispatch_to) {
+                            case 'ViewPopupWS':       ViewPopupWS.dispatch(response); break;
+                            case 'ViewChartWS':       Highchart.dispatch(response);   break;
+                            case 'ViewTickDisplayWS': WSTickDisplay.dispatch(response); break;
+                        }
                     }
                 }
                 var type = response.msg_type;
@@ -176,13 +165,18 @@ function BinarySocketClass() {
                     page.header.do_logout(response);
                 } else if (type === 'landing_company_details') {
                     page.client.response_landing_company_details(response);
-                    BinarySocket.send({reality_check: 1, passthrough: { for: 'init_rc' }});
+                    if (response.landing_company_details.has_reality_check) {
+                        var currentData = TUser.get();
+                        var addedLoginTime = $.extend({logintime: window.time.unix()}, currentData);
+                        TUser.set(addedLoginTime);
+                        RealityCheck.init();
+                    }
                 } else if (type === 'get_self_exclusion') {
                     SessionDurationLimit.exclusionResponseHandler(response);
-                } else if (type === 'payout_currencies' && response.echo_req.hasOwnProperty('passthrough') && response.echo_req.passthrough.handler === 'page.client') {
+                } else if (type === 'payout_currencies' && response.hasOwnProperty('echo_req') && response.echo_req.hasOwnProperty('passthrough') && response.echo_req.passthrough.handler === 'page.client') {
                     page.client.response_payout_currencies(response);
                 } else if (type === 'get_settings' && response.get_settings) {
-                    if(!$.cookie('residence') && response.get_settings.country_code) {
+                    if (!Cookies.get('residence') && response.get_settings.country_code) {
                       page.client.set_cookie('residence', response.get_settings.country_code);
                       page.client.residence = response.get_settings.country_code;
                     }
@@ -212,22 +206,15 @@ function BinarySocketClass() {
                     if(!response.hasOwnProperty('error')) {
                         LocalStore.set('website.tnc_version', response.website_status.terms_conditions_version);
                         if (!localStorage.getItem('risk_classification')) page.client.check_tnc();
+                        if (response.website_status.hasOwnProperty('clients_country')) {
+                            localStorage.setItem('clients_country', response.website_status.clients_country);
+                            if (!$('body').hasClass('BlueTopBack')) {
+                                checkClientsCountry();
+                            }
+                        }
                     }
-                  if (response.website_status.clients_country) {
-                    localStorage.setItem('clients_country', response.website_status.clients_country);
-                    if (!$('body').hasClass('BlueTopBack')) {
-                      checkClientsCountry();
-                    }
-                  }
                 } else if (type === 'reality_check') {
-                    if (response.echo_req.passthrough.for === 'init_rc') {
-                        var currentData = TUser.get();
-                        var addedLoginTime = $.extend({logintime: response.reality_check.start_time}, currentData);
-                        TUser.set(addedLoginTime);
-                        RealityCheck.init();
-                    } else {
-                        RealityCheck.realityCheckWSHandler(response);
-                    }
+                    RealityCheck.realityCheckWSHandler(response);
                 } else if (type === 'get_account_status' && response.get_account_status) {
                   if (response.get_account_status.risk_classification === 'high' && page.header.qualify_for_risk_classification()) {
                     send({get_financial_assessment: 1});
@@ -266,7 +253,9 @@ function BinarySocketClass() {
                 }
                 if (response.hasOwnProperty('error')) {
                     if(response.error && response.error.code) {
-                      if (response.error.code === 'RateLimit') {
+                      if (response.error.code && (response.error.code === 'WrongResponse' || response.error.code === 'OutputValidationFailed')) {
+                        $('#content').empty().html('<div class="container"><p class="notice-msg center-text">' + (response.error.code === 'WrongResponse' && response.error.message ? response.error.message : text.localize('Sorry, an error occurred while processing your request.') )+ '</p></div>');
+                      } else if (response.error.code === 'RateLimit') {
                         $('#ratelimit-error-message')
                             .css('display', 'block')
                             .on('click', '#ratelimit-refresh-link', function () {
@@ -295,7 +284,13 @@ function BinarySocketClass() {
             clearTimeouts();
 
             if(!manualClosed && wrongAppId !== getAppId()) {
-                init(1);
+                if (TradePage.is_trading_page) {
+                    showPriceOverlay();
+                    showFormOverlay();
+                    TradePage.onLoad();
+                } else {
+                    init(1);
+                }
             }
             if(typeof events.onclose === 'function'){
                 events.onclose();

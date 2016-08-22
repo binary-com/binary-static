@@ -19,8 +19,7 @@ var Statement = (function(){
             'balance' : addComma(parseFloat(statement["balance_after"])),
             'desc'    : statement["longcode"].replace(/\n/g, '<br />'),
             'id'      : statement["contract_id"],
-            'app_id'  : statement["app_id"],
-            'app_name': statement["app_name"]
+            'app_id'  : statement["app_id"]
         };
 
         return statement_data;

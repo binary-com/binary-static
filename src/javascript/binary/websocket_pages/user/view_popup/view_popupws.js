@@ -183,8 +183,8 @@ var ViewPopupWS = (function() {
 
         containerSetText('trade_details_start_date'    , toJapanTimeIfNeeded(epochToDateTime(contract.date_start)));
         if (document.getElementById('trade_details_end_date')) containerSetText('trade_details_end_date'      , toJapanTimeIfNeeded(epochToDateTime(contract.date_expiry)));
-        containerSetText('trade_details_payout', contract.currency + ' ' + parseFloat(contract.payout).toFixed(2));
-        containerSetText('trade_details_purchase_price', contract.currency + ' ' + parseFloat(contract.buy_price).toFixed(2));
+        containerSetText('trade_details_payout', format_money(contract.currency, parseFloat(contract.payout).toFixed(2)));
+        containerSetText('trade_details_purchase_price', format_money(contract.currency, parseFloat(contract.buy_price).toFixed(2)));
 
         normalUpdateTimers();
         normalUpdate();
@@ -194,7 +194,7 @@ var ViewPopupWS = (function() {
     var normalUpdate = function() {
         var finalPrice       = contract.sell_price || contract.bid_price,
             is_started       = !contract.is_forward_starting || contract.current_spot_time > contract.date_start,
-            user_sold        = contract.sell_spot_time && contract.sell_spot_time < contract.date_expiry,
+            user_sold        = contract.sell_time && contract.sell_time <= contract.date_expiry,
             is_ended         = contract.is_expired || contract.is_sold || user_sold,
             indicative_price = finalPrice && is_ended ? (contract.sell_price || contract.bid_price) : contract.bid_price ? contract.bid_price : null;
 
@@ -205,19 +205,25 @@ var ViewPopupWS = (function() {
             containerSetText('trade_details_barrier'    , contract.entry_tick_time ? contract.barrier : '-', '', true);
         }
 
-        var currentSpot = user_sold ? contract.sell_spot : (is_ended ? contract.exit_tick : contract.current_spot);
+        var currentSpot     = !is_ended ? contract.current_spot      : (user_sold ? contract.sell_spot      : contract.exit_tick);
+        var currentSpotTime = !is_ended ? contract.current_spot_time : (user_sold ? contract.sell_spot_time : contract.exit_tick_time);
 
         containerSetText('trade_details_ref_id'          , contract.transaction_ids.buy + (contract.transaction_ids.sell ? ' - ' + contract.transaction_ids.sell : ''));
-        containerSetText('trade_details_current_date'    , toJapanTimeIfNeeded(epochToDateTime(!is_ended ? contract.current_spot_time : (user_sold ? contract.sell_spot_time : contract.exit_tick_time))));
+        containerSetText('trade_details_current_date'    , toJapanTimeIfNeeded(epochToDateTime(currentSpotTime)));
         containerSetText('trade_details_current_spot'    , currentSpot || text.localize('not available'));
-        containerSetText('trade_details_indicative_price', indicative_price ? (contract.currency + ' ' + parseFloat(indicative_price).toFixed(2)) : '-');
+        containerSetText('trade_details_indicative_price', indicative_price ? format_money(contract.currency, parseFloat(indicative_price).toFixed(2)) : '-');
 
         var profit_loss, percentage;
         if (finalPrice) {
             profit_loss = finalPrice - contract.buy_price;
             percentage  = (profit_loss * 100 / contract.buy_price).toFixed(2);
+            containerSetText('trade_details_profit_loss',
+                format_money(contract.currency, parseFloat(profit_loss).toFixed(2)) + '<span>(' + (percentage > 0 ? '+' : '') + percentage + '%' + ')</span>',
+                {'class': (profit_loss >= 0 ? 'profit' : 'loss')}
+            );
+        } else {
+            containerSetText('trade_details_profit_loss', '-', {'class': 'loss'});
         }
-        containerSetText('trade_details_profit_loss', profit_loss ? (contract.currency + ' ' + parseFloat(profit_loss).toFixed(2) + (percentage ? '<span>(' + (percentage > 0 ? '+' : '') + percentage + '%' + ')</span>' : '')) : '-', {'class': (profit_loss >= 0 ? 'profit' : 'loss')});
 
         if(!is_started) {
             containerSetText('trade_details_entry_spot', '-');
@@ -542,7 +548,8 @@ var ViewPopupWS = (function() {
 
     // ----- Corporate Action -----
     var getCorporateActions = function() {
-      var end_time = (window.time._i/1000).toFixed(0) < contract.date_expiry ? (window.time._i/1000).toFixed(0) : contract.date_expiry;
+      var epoch = window.time.unix();
+      var end_time = epoch < contract.date_expiry ? epoch.toFixed(0) : contract.date_expiry;
       socketSend({
         "get_corporate_actions": "1",
         "symbol": contract.underlying,
@@ -594,9 +601,9 @@ var ViewPopupWS = (function() {
             sellSetVisibility(false);
             if(isSellClicked) {
                 containerSetText('contract_sell_message',
-                    text.localize('You have sold this contract at [_1] [_2]').replace('[_1]', contract.currency).replace('[_2]', response.sell.sold_for) +
+                    text.localize('You have sold this contract at [_1] [_2]', [contract.currency, response.sell.sold_for]) +
                     '<br />' +
-                    text.localize('Your transaction reference number is [_1]').replace('[_1]', response.sell.transaction_id)
+                    text.localize('Your transaction reference number is [_1]', [response.sell.transaction_id])
                 );
             }
             getContract('no-subscribe');
@@ -633,6 +640,8 @@ var ViewPopupWS = (function() {
                     if(response.proposal_open_contract && response.proposal_open_contract.contract_id == contractID) {
                         storeSubscriptionID(response.proposal_open_contract.id);
                         responseContract(response);
+                    } else if (!response.proposal_open_contract && response.echo_req.contract_id == contractID && response.error) {
+                        showErrorPopup(response, response.error.message);
                     }
                     break;
                 case 'sell':

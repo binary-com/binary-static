@@ -81,11 +81,12 @@ var TradingAnalysis = (function() {
                     var underlying = $('[name=underlying] option:selected').val() || $('#underlying option:selected').val();
                     var tick = $('[name=tick_count]').val() || 100;
                     trading_digit_info = TradingAnalysis.tab_last_digitws;
-                    var request = JSON.parse('{"ticks_history":"'+ underlying +'",'+
-                                              '"end": "latest",'+
-                                              '"count": '+ tick +','+
-                                              '"req_id": 1}');
-                    BinarySocket.send(request);
+                    BinarySocket.send({
+                        ticks_history: underlying,
+                        count: tick + '',
+                        end: 'latest',
+                        req_id: 1
+                    });
                 } else{
                     var url = currentLink.getAttribute('href') ;
                     $.ajax({

@@ -3,10 +3,12 @@ var Portfolio = (function(){
 
     var Compatibility = typeof window !== 'undefined' ? window.Compatibility : require('../../../common_functions/compatibility');
     var addComma = Compatibility.requireIfNotExist('addComma', '../websocket_pages/trade/common', 'addComma'),
-        toJapanTimeIfNeeded = Compatibility.requireIfNotExist('toJapanTimeIfNeeded', '../base/utility', 'toJapanTimeIfNeeded');
+        toJapanTimeIfNeeded = Compatibility.requireIfNotExist('toJapanTimeIfNeeded', '../base/utility', 'toJapanTimeIfNeeded'),
+        format_money = Compatibility.requireIfNotExist('format_money', '../common_functions/currency_to_symbol', 'format_money');
 
-    function getBalance(data, withCurrency) {
-        return withCurrency ? data.balance.currency + ' ' + addComma(parseFloat(data.balance.balance)) : parseFloat(data.balance.balance);
+    function getBalance(balance, currency) {
+        balance = parseFloat(balance);
+        return currency ? format_money(currency, addComma(balance)) : balance;
     }
 
     function getPortfolioData(c) {
@@ -17,8 +19,7 @@ var Portfolio = (function(){
             'longcode'       : typeof module !== 'undefined' ? c.longcode : japanese_client() ? toJapanTimeIfNeeded(c.expiry_time, '', c.longcode) : c.longcode,
             'currency'       : c.currency,
             'buy_price'      : addComma(parseFloat(c.buy_price)),
-            'app_id'         : c.app_id,
-            'app_name'       : c.app_name
+            'app_id'         : c.app_id
         };
 
         return portfolio_data;
@@ -38,11 +39,11 @@ var Portfolio = (function(){
 
     function getSum(values, value_type) { // value_type is: indicative or buy_price
         var sum = 0;
-        if (Object.keys(values).length !== 0) {
-            for (var key in values) {
-                if (values[key] && !isNaN(values[key][value_type])) {
-                    sum += parseFloat(values[key][value_type]);
-                }
+        var keys = Object.keys(values);
+        for (var i = 0; i < keys.length; i++) {
+            var key = keys[i];
+            if (values[key] && !isNaN(values[key][value_type])) {
+                sum += parseFloat(values[key][value_type]);
             }
         }
 

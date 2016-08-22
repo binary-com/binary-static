@@ -18,7 +18,7 @@ var Message = (function () {
             } else if (type === 'contracts_for') {
                 processContract(response);
                 window.contracts_for = response;
-            } else if (type === 'payout_currencies' && (!response.echo_req.hasOwnProperty('passthrough') || !response.echo_req.passthrough.hasOwnProperty('handler'))) {
+            } else if (type === 'payout_currencies' && response.hasOwnProperty('echo_req') && (!response.echo_req.hasOwnProperty('passthrough') || !response.echo_req.passthrough.hasOwnProperty('handler'))) {
                 page.client.set_storage_value('currencies', response.payout_currencies);
                 displayCurrencies();
                 Symbols.getSymbols(1);
@@ -45,8 +45,6 @@ var Message = (function () {
                 PricingTable.handleResponse(response);
             } else if (type === 'error') {
                 $(".error-msg").text(response.error.message);
-            } else if(type === 'balance'){
-                PortfolioWS.updateBalance(response);
             } else if(type === 'portfolio'){
                 PortfolioWS.updatePortfolio(response);
             } else if(type === 'proposal_open_contract'){
