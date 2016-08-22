@@ -28,3 +28,5 @@ var RealAccOpeningData = (function(){
         getRealAcc: getRealAcc
     };
 }());
+
+module.exports = RealAccOpeningData;
