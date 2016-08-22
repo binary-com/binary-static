@@ -1,5 +1,6 @@
 var validator = require('binary/validator');
 var Content = require('trade/content');
+var V2 = require('common_functions/validation_v2');
 
 module.exports = function submit_email() {
     Content.populate();
@@ -10,7 +11,7 @@ module.exports = function submit_email() {
 
     validator.bind_to.simple(form, {
         schema: {
-            email: [ValidateV2.required, ValidateV2.email]
+            email: [V2.required, V2.email]
         },
         stop: function(info) {
             $('#signup_error').text('');

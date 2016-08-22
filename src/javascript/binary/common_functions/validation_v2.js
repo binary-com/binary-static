@@ -121,3 +121,5 @@ var ValidateV2 = (function() {
         lengthRange: lengthRange,
     };
 })();
+
+module.exports = ValidateV2;

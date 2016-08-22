@@ -1,5 +1,6 @@
 var validator = require('binary/validator');
 var Content = require('trade/content');
+var V2 = require('common_functions/validation_v2');
 
 var SelfExclusionWS = (function() {
     "use strict";
@@ -218,7 +219,6 @@ var SelfExclusionWS = (function() {
     var schema;
     function getSchema() {
         if (schema) return schema;
-        var V2 = ValidateV2;
         var validTime = V2.momentFmt('HH:mm', 'Please select a valid time');
         var validDate = V2.momentFmt('YYYY-MM-DD', 'Please select a valid date');
 

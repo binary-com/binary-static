@@ -2,6 +2,7 @@ var validator  = require('binary/validator');
 var CommonData = require('common_functions/common_data');
 var testPassword = require('common_functions/passwordmeter');
 var Content = require('trade/content');
+var V2 = require('common_functions/validation_v2');
 
 var SecurityWS = (function() {
     "use strict";
@@ -118,7 +119,7 @@ var SecurityWS = (function() {
         }
 
         return {
-            cashierlockpassword1: [ValidateV2.password],
+            cashierlockpassword1: [V2.password],
             cashierlockpassword2: [dv.check(matches, err)],
         };
     }

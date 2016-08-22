@@ -1,6 +1,7 @@
 var validator   = require('binary/validator');
 var FlexTableUI = require('attach_dom/flextable');
 var Content = require('trade/content');
+var V2 = require('common_functions/validation_v2');
 
 var APITokenWS = (function() {
     "use strict";
@@ -54,7 +55,6 @@ var APITokenWS = (function() {
     }
 
     function getSchema() {
-        var V2 = ValidateV2;
         var letters = Content.localize().textLetters;
         var numbers = Content.localize().textNumbers;
         return {

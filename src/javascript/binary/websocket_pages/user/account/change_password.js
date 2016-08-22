@@ -1,6 +1,7 @@
 var testPassword = require('common_functions/passwordmeter');
 var validator = require('binary/validator');
 var Content = require('trade/content');
+var V2 = require('common_functions/validation_v2');
 
 var ChangePassword = (function(){
     var $form, $result;
@@ -60,7 +61,6 @@ var ChangePassword = (function(){
     }
 
     function getSchema() {
-        var V2 = ValidateV2;
         var err = Content.localize().textPasswordsNotMatching;
         function notMatchingOld(value, data) {
             return value !== data.old_password;
