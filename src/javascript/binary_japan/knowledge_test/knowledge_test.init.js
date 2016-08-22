@@ -1,3 +1,6 @@
+var KnowledgeTestUI = require('./knowledge_test.ui');
+var KnowledgeTestData = require('./knowledge_test.data');
+
 var KnowledgeTest = (function() {
     "use strict";
 
@@ -193,3 +196,5 @@ var KnowledgeTest = (function() {
         showKnowledgeTestTopBarIfValid: showKnowledgeTestTopBarIfValid
     };
 }());
+
+module.exports = KnowledgeTest;
