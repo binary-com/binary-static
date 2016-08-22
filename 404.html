@@ -3,11 +3,9 @@
 <head>
     <title>Binary.com</title>
     <meta charset="utf-8" />
-    <meta http-equiv="refresh" content="0;URL=https://www.binary.com" />
     <script>
     function getCookieItem(sKey) {
         'use strict';
-        if (!sKey) { return null; }
         return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
     }
     function getLanguage(country) {
