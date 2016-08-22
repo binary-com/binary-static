@@ -1,7 +1,11 @@
 var PortfolioWS = require('account/portfolio/portfolio.init');
 var addComma = require('trade/common').addComma;
 
-var ViewBalanceUI = (function(){
+var ViewBalance = (function(){
+    function init(){
+        BinarySocket.init(1);
+    }
+
     function updateBalances(response){
         if (response.hasOwnProperty('error')) {
             console.log(response.error.message);
@@ -22,6 +26,9 @@ var ViewBalanceUI = (function(){
     }
 
     return {
+        init: init,
         updateBalances: updateBalances
     };
 }());
+
+module.exports = ViewBalance;

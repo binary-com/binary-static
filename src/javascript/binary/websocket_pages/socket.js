@@ -3,6 +3,7 @@ var Highchart = require('trade/charts/highchartws');
 var WSTickDisplay = require('trade/tick_trade');
 var TradePage = require('trade/tradepage');
 var ViewPopupWS = require('websocket_pages/user/view_popup/view_popupws');
+var ViewBalance = require('websocket_pages/user/viewbalance');
 
 var Common = require('trade/common');
 var showPriceOverlay = Common.showPriceOverlay;
@@ -169,7 +170,7 @@ function BinarySocketClass() {
                         sendBufferedSends();
                     }
                 } else if (type === 'balance') {
-                    ViewBalanceUI.updateBalances(response);
+                    ViewBalance.updateBalances(response);
                 } else if (type === 'time') {
                     page.header.time_counter(response);
                 } else if (type === 'logout') {
