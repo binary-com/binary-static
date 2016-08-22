@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-18 04:09+0000\n"
+"PO-Revision-Date: 2016-08-19 05:25+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -4069,7 +4069,7 @@ msgid "Maintain adequate speed and volume of output"
 msgstr "十分な速度と出力量の維持"
 
 msgid "Make a Deposit"
-msgstr "ご入金"
+msgstr "入金"
 
 msgid "Make a deposit or withdraw."
 msgstr "入出金をする"
@@ -7913,7 +7913,7 @@ msgid "{JAPAN ONLY}%1 %2 payout if %3 does not touch Exercise price through clos
 msgstr "%3のTOUCHは、取引期間(%4)が終了するまでにバリア価格にタッチしない場合、ペイアウト発生"
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 ends on or between low and high values of Exercise price at close on %4."
-msgstr "%3のEND-INは、判定時刻(%4)の時点のまで上限バリア未満かつ下限バリア以上で、ペイアウト発生"
+msgstr "%3のEND-INは、判定時刻(%4)の時点で上限バリア未満かつ下限バリア以上で、ペイアウト発生"
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 ends otside low and high values of Exercise price at close on %4."
 msgstr "%3のEND-OUTは、判定時刻(%4)の時点で上限バリア以上もしくは下限バリア未満で、ペイアウト発生"
@@ -7922,7 +7922,7 @@ msgid "{JAPAN ONLY}%1 %2 payout if %3 goes ouside of low and high values of Exer
 msgstr "%3のBREAK-OUTは、取引期間中(%4)に上限バリア以上もしくは下限バリア以下の場合、ペイアウト発生"
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly higher or equal than Exercise price at close  on %4."
-msgstr "%3のラダーHIGHは、判定時刻(%4)の時点にバリア価格以上の場合、ペイアウト発生"
+msgstr "%3のラダーHIGHは、判定時刻(%4)の時点でバリア価格以上の場合、ペイアウト発生"
 
 msgid "{JAPAN ONLY}%1 %2 payout if %3 is strictly lower than Exercise price at close on %4."
 msgstr "%3のラダーLOWは、判定時刻(%4)の時点でバリア価格未満の場合、ペイアウト発生"
@@ -8097,6 +8097,11 @@ msgstr "権利行使期限が到来し、権利行使が行われないオプシ
 
 msgid "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
 msgstr "バイナリーオプションは損失が限定的であるが、投資者自身の資産などを踏まえ、過度の投機的な取引とならぬよう、節度ある取引を心がける必要がある。"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}day"
+msgid "{JAPAN ONLY}FX Rate"
+msgstr "日"
 
 msgid "{JAPAN ONLY}Financial Condition"
 msgstr "業務及び財産の状況に関する報告書"
@@ -8303,6 +8308,11 @@ msgstr "平成26年11月7日"
 msgid "{JAPAN ONLY}Option Pricing"
 msgstr "オプション価格"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Option Pricing"
+msgid "{JAPAN ONLY}Option Type"
+msgstr "オプション価格"
+
 msgid "{JAPAN ONLY}Option prices are normally dependant on elements such as the underlying asset price, the exercise price, the length of time until the exercise point, volatility, and interest rates. Apart from the fixed exercise price, all other elements are changing constantly, so an understanding of the relationships between each element and changes in the options price is necessary for the management of options trading risk."
 msgstr "オプションの価格を形成する要素には原資産の価格、権利行使価格、権利行使期限までの期間の長さ、ボラティリティ、金利があるが、権利行使価格を除き、他の要素は刻々と変化し、オプションの価格も変化する。したがってオプション取引のリスクを管理していくためには、それぞれの要素の変化とオプション価格の変化の関係を理解する必要がある。"
 
@@ -8329,6 +8339,11 @@ msgstr "リアル口座開設の手続きを進める上で、ご不明な点等
 
 msgid "{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:"
 msgstr "リアル口座開設完了までの４ステップ:"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}month"
+msgid "{JAPAN ONLY}Payout Amount"
+msgstr "月"
 
 msgid "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\">here</a> for further information."
 msgstr "本人確認およびマイナンバー「個人番号カード」書類に関する詳細につきましては<a class=\"pjaxload\" href=\"#identification-documents\">こちらを</a> クリックしてください。"
@@ -8496,6 +8511,11 @@ msgid "{JAPAN ONLY}Trading & Hedging"
 msgstr "取引とヘッジ"
 
 msgid "{JAPAN ONLY}Trading Guide"
+msgstr "操作マニュアル"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Trading Guide"
+msgid "{JAPAN ONLY}Trading Period"
 msgstr "操作マニュアル"
 
 msgid "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
