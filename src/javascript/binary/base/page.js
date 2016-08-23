@@ -4,6 +4,9 @@ var RiskClassification = require('common_functions/risk_classification');
 var isVisible = require('trade/common').isVisible;
 var ViewBalance = require('websocket_pages/user/viewbalance');
 var load_with_pjax = require('base/pjax').load_with_pjax;
+var _Storage = require('base/storage');
+var InScriptStore = _Storage.InScriptStore;
+var CookieStorage = _Storage.CookieStorage;
 
 var text;
 var clock_started = false;

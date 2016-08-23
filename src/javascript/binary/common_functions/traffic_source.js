@@ -7,6 +7,7 @@
  * 3. document.referrer
  *
  */
+var CookieStorage = require('base/storage').CookieStorage;
 
 var TrafficSource = (function(){
     'use strict';
