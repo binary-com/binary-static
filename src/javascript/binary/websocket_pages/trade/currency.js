@@ -1,4 +1,5 @@
 var Defaults = require('./defaults');
+var page = require('binary/base').page;
 
 /*
  * Handles currency display

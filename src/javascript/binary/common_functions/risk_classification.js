@@ -1,4 +1,5 @@
-var FinancialAssessmentws  = require('account/settings/financial_assessment');
+var FinancialAssessmentws  = require('../websocket_pages/user/account/settings/financial_assessment');
+var page = require('../base').page;
 
 var RiskClassification = (function() {
   'use strict';

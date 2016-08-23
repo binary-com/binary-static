@@ -1,3 +1,5 @@
+var page = require('binary/base').page;
+
 var KnowledgeTestUI = (function () {
     "use strict";
 

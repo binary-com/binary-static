@@ -1,4 +1,5 @@
 var Content = require('trade/content');
+var page = require('binary/base').page;
 
 var PaymentAgentListWS = (function() {
     "use strict";

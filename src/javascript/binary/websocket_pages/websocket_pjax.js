@@ -25,7 +25,8 @@ var PaymentAgentWithdrawWS = require('websocket_pages/cashier/payment_agent_with
 var FinancialAssessmentws  = require('account/settings/financial_assessment');
 var pjax_config_page_require_auth = require('base/pjax').pjax_config_page_require_auth;
 var pjax_config_page = require('base/pjax').pjax_config_page;
-
+var TUser = require('binary/base').TUser;
+var page = require('binary/base').page;
 
 pjax_config_page_require_auth("user/settings/assessmentws", function() {
     return {

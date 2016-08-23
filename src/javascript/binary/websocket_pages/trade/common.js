@@ -1,4 +1,3 @@
-
 /*
  * This contains common functions we need for processing the response
  */
@@ -932,3 +931,4 @@ var Content = require('./content');
 var Defaults = require('./defaults');
 var Symbols = require('./symbols');
 var Tick = require('./tick');
+var page = require('binary/base').page;

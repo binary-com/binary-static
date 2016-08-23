@@ -1,3 +1,5 @@
+var page = require('binary/base').page;
+
 //For object shape coherence we create named objects to be inserted into the queue.
 var URLPjaxQueueElement = function(exec_function, url) {
     this.method = exec_function;

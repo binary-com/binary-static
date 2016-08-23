@@ -1,6 +1,8 @@
-var Markets = require('base/markets');
-var MenuContent = require('base/menu_content');
-var PjaxExecQueue = require('base/pjax').PjaxExecQueue;
+var Markets = require('./base/markets');
+var MenuContent = require('./base/menu_content');
+var Page = require('./base/page').Page;
+var PjaxExecQueue = require('./base/pjax').PjaxExecQueue;
+var $ = require('../lib/jquery')(require('jsdom').jsdom().defaultView);
 
 // for IE (before 10) we use a jquery plugin called jQuery.XDomainRequest. Explained here,
 //http://stackoverflow.com/questions/11487216/cors-with-jquery-and-xdomainrequest-in-ie8-9
@@ -179,7 +181,6 @@ onLoad.queue(function () {
             break;
         }
     }
-
 });
 
 onLoad.queue(function () {
@@ -271,3 +272,10 @@ for (var key in texts_json) {
 
 // make markets object
 var markets = new Markets(markets_list, markets_json);
+
+module.exports = {
+    page: page,
+    TUser: TUser,
+    texts: texts,
+    markets: markets,
+};

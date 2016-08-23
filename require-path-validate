@@ -8,6 +8,7 @@ RESET = '\033[0m'
 
 REQUIRE_RE = re.compile(r'require\(("|\')(.+?)(\1)\)')
 ALIASES = {
+    'binary':           p('./src/javascript/binary'),
     'base':             p('./src/javascript/binary/base'),
     'common_functions': p('./src/javascript/binary/common_functions'),
     'attach_dom':       p('./src/javascript/binary/common_functions/attach_dom'),

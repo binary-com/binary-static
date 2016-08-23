@@ -1,3 +1,5 @@
+var page = require('binary/base').page;
+
 var JapanAccOpeningData = (function(){
     function getJapanAcc(elementObj){
         var req = {

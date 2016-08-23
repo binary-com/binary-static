@@ -1,3 +1,5 @@
+var page = require('../base').page;
+
 var Login = (function() {
     "use strict";
 

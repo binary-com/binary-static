@@ -1,6 +1,8 @@
 var app_details = require('../../../../common_functions/get_app_details');
 var Portfolio = require('../portfolio');
 var addComma = require('../../../trade/common').addComma;
+var TUser = require('binary/base').TUser;
+var page = require('binary/base').page;
 
 var PortfolioWS =  (function() {
     'use strict';

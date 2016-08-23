@@ -1,6 +1,7 @@
 var moment = require('../../../../lib/moment/moment');
 var StringUtil = require('../../../common_functions/string_util');
 var addComma = require('../../trade/common').addComma;
+var TUser = require('binary/base').TUser;
 
 var Statement = (function(){
     'use strict';

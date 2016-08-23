@@ -1,3 +1,6 @@
+var GTM = require('base/page').GTM;
+var page = require('binary/base').page;
+
 var LoggedInHandler = (function() {
     "use strict";
 

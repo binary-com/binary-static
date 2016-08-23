@@ -1,3 +1,5 @@
+var page = require('../base').page;
+
 //////////////////////////////////////////////////////////////////
 // Purpose: Write loading image to a container for ajax request
 // Parameters:
