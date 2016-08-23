@@ -175,7 +175,6 @@ sub js_config {
             livechaticon  => url_for('images/pages/contact/chat-icon.svg')->to_string,
         },
         broker           => 'CR',
-        countries_list   => YAML::XS::LoadFile(root_path() . '/scripts/config/countries.yml'),
         valid_loginids   => 'MX|MF|VRTC|MLT|CR|FOG|VRTJ|JP',
         streaming_server => 'www.binary.com',
     );
