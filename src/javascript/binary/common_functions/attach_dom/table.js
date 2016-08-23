@@ -12,7 +12,7 @@ var Table = (function(){
      * eg. ["", "halo", ""] will have 3 elements in footer, 2 of them being empty
      */
     function createFlexTable(body, metadata, header, footer){
-        var $tableContainer = $("<div></div>");
+        var $tableContainer = $("<div></div>", {class: "table-container"});
         var $table = $("<table></table>", {class: metadata.tableClass || '', id: metadata.id});
         var $body = createFlexTableTopGroup(body, metadata.cols, "body");
 
