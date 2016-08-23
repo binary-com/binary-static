@@ -1,8 +1,8 @@
 var StatementData = require('./statement.data');
 var StatementUI = require('./statement.ui');
 var Content = require('../../../trade/content');
+var page = require('binary/base').page;
 var showLocalTimeOnHover = require('../../../../base/utility').showLocalTimeOnHover;
-
 
 var StatementWS = (function(){
     "use strict";

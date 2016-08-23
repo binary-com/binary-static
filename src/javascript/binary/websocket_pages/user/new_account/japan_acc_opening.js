@@ -2,6 +2,7 @@ var ValidAccountOpening = require('common_functions/valid_account_opening');
 var JapanAccOpeningUI = require('./japan_acc_opening/japan_acc_opening.ui');
 var Content = require('trade/content');
 var pjax_config_page = require('base/pjax').pjax_config_page;
+var page = require('binary/base').page;
 
 pjax_config_page("new_account/japanws", function(){
   return {

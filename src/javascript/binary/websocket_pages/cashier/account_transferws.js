@@ -1,3 +1,5 @@
+var page = require('binary/base').page;
+
 var account_transferws = (function(){
     "use strict";
     var $form ;

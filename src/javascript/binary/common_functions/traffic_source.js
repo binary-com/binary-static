@@ -1,3 +1,5 @@
+var page = require('../base').page;
+
 /*
  * Handles utm parameters/referrer to use on signup
  * 

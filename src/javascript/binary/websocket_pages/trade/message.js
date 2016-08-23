@@ -7,6 +7,8 @@ var Purchase = require('./purchase');
 var Symbols = require('./symbols');
 var Tick = require('./tick');
 var TradePage = require('./tradepage');
+var GTM = require('../../base/page').GTM;
+var page = require('binary/base').page;
 
 var Process = require('./process');
 var processActiveSymbols = Process.processActiveSymbols;

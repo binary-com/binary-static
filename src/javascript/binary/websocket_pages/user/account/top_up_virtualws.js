@@ -1,4 +1,6 @@
 var Content = require('trade/content');
+var TUser = require('binary/base').TUser;
+var page = require('binary/base').page;
 
 var TopUpVirtualWS = (function() {
 	"use strict";

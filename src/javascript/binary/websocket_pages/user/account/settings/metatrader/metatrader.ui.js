@@ -3,6 +3,8 @@ var testPassword = require('common_functions/passwordmeter');
 var MetaTrader = require('../metatrader');
 var MetaTraderData = require('./metatrader.data');
 var Content = require('trade/content');
+var TUser = require('binary/base').TUser;
+var page = require('binary/base').page;
 
 var MetaTraderUI = (function() {
     "use strict";

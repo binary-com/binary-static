@@ -3,6 +3,7 @@ var CommonData = require('common_functions/common_data');
 var testPassword = require('common_functions/passwordmeter');
 var Content = require('trade/content');
 var V2 = require('common_functions/validation_v2');
+var page = require('binary/base').page;
 
 var SecurityWS = (function() {
     "use strict";

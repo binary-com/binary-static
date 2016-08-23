@@ -125,3 +125,5 @@ SubMarket.prototype = {
         return;
     },
 };
+
+module.exports = Markets;

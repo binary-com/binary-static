@@ -1,3 +1,6 @@
+var GTM = require('base/page').GTM;
+var page = require('binary/base').page;
+
 var LoggedInHandler = (function() {
     "use strict";
 
@@ -77,3 +80,5 @@ var LoggedInHandler = (function() {
         init: init,
     };
 }());
+
+module.exports = LoggedInHandler;

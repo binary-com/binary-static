@@ -1,5 +1,7 @@
 var Validate = require('common_functions/validation');
 var Content = require('trade/content');
+var Login = require('base/login');
+var page = require('binary/base').page;
 
 var sidebar_scroll = function(elm_selector) {
     elm_selector.on('click', '#sidebar-nav li', function() {

@@ -1,9 +1,15 @@
-var getAppId = require('config').getAppId;
-var TrafficSource = require('common_functions/traffic_source');
-var RiskClassification = require('common_functions/risk_classification');
-var isVisible = require('trade/common').isVisible;
-var ViewBalance = require('websocket_pages/user/viewbalance');
-var load_with_pjax = require('base/pjax').load_with_pjax;
+var getAppId = require('../../config').getAppId;
+var Login = require('./login');
+var TrafficSource = require('../common_functions/traffic_source');
+var RiskClassification = require('../common_functions/risk_classification');
+var isVisible = require('../websocket_pages/trade/common').isVisible;
+var ViewBalance = require('../websocket_pages/user/viewbalance');
+var load_with_pjax = require('./pjax').load_with_pjax;
+
+var base = require('../base');
+var TUser = base.TUser;
+var texts = base.texts;
+var markets = base.markets;
 
 var _Storage = require('base/storage');
 var InScriptStore = _Storage.InScriptStore;
@@ -1189,4 +1195,9 @@ Page.prototype = {
                                  .addClass('gr-12 gr-12-p');
         }
     },
+};
+
+module.exports = {
+    GTM: GTM,
+    Page: Page,
 };

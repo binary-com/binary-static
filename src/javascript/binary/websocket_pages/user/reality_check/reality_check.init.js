@@ -1,6 +1,8 @@
 var Content = require('trade/content');
 var RealityCheckUI = require('./reality_check.ui');
 var RealityCheckData = require('./reality_check.data');
+var TUser = require('binary/base').TUser;
+var page = require('binary/base').page;
 
 var RealityCheck = (function () {
     'use strict';

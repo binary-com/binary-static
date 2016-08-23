@@ -1,4 +1,5 @@
 var pjax_config_page = require('base/pjax').pjax_config_page;
+var page = require('binary/base').page;
 
 pjax_config_page('/get-started-jp', function() {
     return {

@@ -1,4 +1,8 @@
-var PjaxExecQueue = require('base/pjax').PjaxExecQueue;
+var Markets = require('./base/markets');
+var MenuContent = require('./base/menu_content');
+var Page = require('./base/page').Page;
+var PjaxExecQueue = require('./base/pjax').PjaxExecQueue;
+var $ = require('../lib/jquery')(require('jsdom').jsdom().defaultView);
 
 var _Storage = require('base/storage');
 var Localizable = _Storage.Localizable;
@@ -188,7 +192,6 @@ onLoad.queue(function () {
             break;
         }
     }
-
 });
 
 onLoad.queue(function () {
@@ -280,3 +283,10 @@ for (var key in texts_json) {
 
 // make markets object
 var markets = new Markets(markets_list, markets_json);
+
+module.exports = {
+    page: page,
+    TUser: TUser,
+    texts: texts,
+    markets: markets,
+};

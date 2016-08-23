@@ -2,6 +2,7 @@ var testPassword = require('common_functions/passwordmeter');
 var validator = require('binary/validator');
 var Content = require('trade/content');
 var V2 = require('common_functions/validation_v2');
+var page = require('binary/base').page;
 
 var ChangePassword = (function(){
     var $form, $result;

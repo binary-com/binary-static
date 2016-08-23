@@ -1,3 +1,5 @@
+var RiskClassification = require('../../../../common_functions/risk_classification');
+var page = require('../../../../base').page;
 var RiskClassification = require('common_functions/risk_classification');
 var showLoadingImage = require('base/utility').showLoadingImage;
 

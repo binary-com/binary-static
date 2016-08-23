@@ -7,6 +7,8 @@ module.exports = {
             path.resolve('./src/javascript'),
         ],
         alias: {
+            binary:           path.resolve('./src/javascript/binary'),
+            base:             path.resolve('./src/javascript/binary/base'),
             common_functions: path.resolve('./src/javascript/binary/common_functions'),
             attach_dom:       path.resolve('./src/javascript/binary/common_functions/attach_dom'),
             components:       path.resolve('./src/javascript/binary/components'),
@@ -15,7 +17,6 @@ module.exports = {
             trade:            path.resolve('./src/javascript/binary/websocket_pages/trade'),
             account:          path.resolve('./src/javascript/binary/websocket_pages/user/account'),
             binary_japan:     path.resolve('./src/javascript/binary_japan'),
-            base:             path.resolve('./src/javascript/binary/base'),
         },
     },
     output: {

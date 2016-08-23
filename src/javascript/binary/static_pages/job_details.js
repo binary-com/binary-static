@@ -1,4 +1,5 @@
 var pjax_config_page = require('base/pjax').pjax_config_page;
+var page = require('binary/base').page;
 
 var JobDetails = (function() {
     var dept, depts, sections;

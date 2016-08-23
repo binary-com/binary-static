@@ -8,6 +8,8 @@ RESET = '\033[0m'
 
 REQUIRE_RE = re.compile(r'require\(("|\')(.+?)(\1)\)')
 ALIASES = {
+    'binary':           p('./src/javascript/binary'),
+    'base':             p('./src/javascript/binary/base'),
     'common_functions': p('./src/javascript/binary/common_functions'),
     'attach_dom':       p('./src/javascript/binary/common_functions/attach_dom'),
     'components':       p('./src/javascript/binary/components'),
@@ -16,7 +18,6 @@ ALIASES = {
     'account':          p('./src/javascript/binary/websocket_pages/user/account'),
     'trade':            p('./src/javascript/binary/websocket_pages/trade'),
     'binary_japan':     p('./src/javascript/binary_japan'),
-    'base':             p('./src/javascript/binary/base'),
 }
 
 
