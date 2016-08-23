@@ -3,7 +3,7 @@
 <head>
     <title>Binary.com</title>
     <meta charset="utf-8" />
-    <script>
+    <script type="text/javascript">
     function getCookieItem(sKey) {
         'use strict';
         return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
@@ -25,10 +25,14 @@
             'zh_cn': 'cn|sg',
         };
         var conLang = 'en';
-        if(country) {
-            Object.keys(langs).map(function(l) {
-                if((new RegExp(langs[l], 'i')).test(country)) conLang = l;
-            });
+        if (country) {
+            var keys = Object.keys(langs);
+            for (var i = keys.length; i--; ) {
+                var l = keys[i];
+                if ((new RegExp(langs[l], 'i')).test(country)) {
+                    return l;
+                }
+            }
         }
         return conLang;
     }
