@@ -17,13 +17,14 @@ var ViewPopupWS        = require('websocket_pages/user/view_popup/view_popupws')
 var ResetPassword      = require('websocket_pages/user/reset_password');
 var Authenticate       = require('account/authenticate');
 var ChangePassword     = require('account/change_password');
-var JapanAccountOpening= require('websocket_pages/user/new_account/japan_acc_opening');
 var account_trasferws  = require('websocket_pages/cashier/account_transferws');
 var Cashier            = require('websocket_pages/cashier/cashier');
 var ForwardWS          = require('websocket_pages/cashier/deposit_withdraw_ws');
 var PaymentAgentListWS = require('websocket_pages/cashier/payment_agent_listws');
 var PaymentAgentWithdrawWS = require('websocket_pages/cashier/payment_agent_withdrawws');
 var FinancialAssessmentws  = require('account/settings/financial_assessment');
+var JapanAccountOpening    = require('websocket_pages/user/new_account/japan_acc_opening');
+var VirtualAccountOpening  = require('websocket_pages/user/new_account/virtual_acc_opening');
 var pjax_config_page_require_auth = require('base/pjax').pjax_config_page_require_auth;
 var pjax_config_page = require('base/pjax').pjax_config_page;
 var TUser = require('binary/base').TUser;
@@ -422,6 +423,14 @@ pjax_config_page("new_account/japanws", function() {
     return {
         onLoad: function() {
             JapanAccountOpening.init();
+        }
+    };
+});
+
+pjax_config_page("new_account/virtualws", function() {
+    return {
+        onLoad: function() {
+            VirtualAccountOpening.init();
         }
     };
 });
