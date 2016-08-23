@@ -8,7 +8,7 @@
                 [% l('The page you requested could not be found. Either it no longer exists or the address is wrong. Please check for any typos.') %]
             </p>
             <p>
-                [% l('<a href="[_1]">Return to main page</a>', request.url_for('/')) %]
+                [% l('<a href="[_1]">Return to trading page</a>', request.url_for('/trading')) %]
             </p>
             <p>
                 [% l('If the issue keeps happening, please contact <a href="[_1]">customer support</a>.', request.url_for('/contact')) %]
