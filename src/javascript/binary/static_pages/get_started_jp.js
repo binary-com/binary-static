@@ -1,3 +1,5 @@
+var pjax_config_page = require('base/pjax').pjax_config_page;
+
 pjax_config_page('/get-started-jp', function() {
     return {
         onLoad: function() {

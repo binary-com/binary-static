@@ -1,5 +1,6 @@
 var Markets = require('base/markets');
 var MenuContent = require('base/menu_content');
+var PjaxExecQueue = require('base/pjax').PjaxExecQueue;
 
 // for IE (before 10) we use a jquery plugin called jQuery.XDomainRequest. Explained here,
 //http://stackoverflow.com/questions/11487216/cors-with-jquery-and-xdomainrequest-in-ie8-9
