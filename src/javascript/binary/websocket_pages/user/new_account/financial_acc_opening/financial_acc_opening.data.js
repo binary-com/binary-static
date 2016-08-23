@@ -32,8 +32,8 @@ var FinancialAccOpeningData = (function(){
             estimated_worth: elementObj['netWorth'].value
         };
 
-        if ($.cookie('affiliate_tracking')) {
-          req.affiliate_token = JSON.parse($.cookie('affiliate_tracking')).t;
+        if (Cookies.get('affiliate_tracking')) {
+          req.affiliate_token = Cookies.getJSON('affiliate_tracking').t;
         }
 
         if (elementObj['answer'].value !== '') {
