@@ -17,6 +17,7 @@ var ViewPopupWS        = require('websocket_pages/user/view_popup/view_popupws')
 var ResetPassword      = require('websocket_pages/user/reset_password');
 var Authenticate       = require('account/authenticate');
 var ChangePassword     = require('account/change_password');
+var JapanAccountOpening= require('websocket_pages/user/new_account/japan_acc_opening');
 var account_trasferws  = require('websocket_pages/cashier/account_transferws');
 var Cashier            = require('websocket_pages/cashier/cashier');
 var ForwardWS          = require('websocket_pages/cashier/deposit_withdraw_ws');
@@ -401,7 +402,7 @@ pjax_config_page('user/reset_passwordws', function() {
     };
 });
 
-pjax_config_page_require_auth("user/authenticatews", function(){
+pjax_config_page_require_auth("user/authenticatews", function() {
     return {
         onLoad: function() {
             Authenticate.init();
@@ -413,6 +414,14 @@ pjax_config_page_require_auth('user/change_password', function() {
     return {
         onLoad: function() {
             ChangePassword.init();
+        }
+    };
+});
+
+pjax_config_page("new_account/japanws", function() {
+    return {
+        onLoad: function() {
+            JapanAccountOpening.init();
         }
     };
 });
