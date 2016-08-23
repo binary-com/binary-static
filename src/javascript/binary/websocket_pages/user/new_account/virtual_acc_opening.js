@@ -3,6 +3,7 @@ var validator = require('binary/validator');
 var Content = require('trade/content');
 var VirtualAccOpeningData = require('./virtual_acc_opening/virtual_acc_opening.data');
 var pjax_config_page = require('base/pjax').pjax_config_page;
+var template = require('base/utility').template;
 
 pjax_config_page("new_account/virtualws", function() {
     function onSuccess(res) {

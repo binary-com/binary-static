@@ -2,6 +2,11 @@ var Button = require('attach_dom/button');
 var FlexTableUI = require('attach_dom/flextable');
 var ApplicationsData = require('./authorised_apps.data');
 
+var _utility = require('base/utility');
+var showLoadingImage = _utility.showLoadingImage;
+var showLocalTimeOnHover = _utility.showLocalTimeOnHover;
+
+
 var ApplicationsUI = (function(){
     'use strict';
     var containerSelector = '#applications-ws-container';

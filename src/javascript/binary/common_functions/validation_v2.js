@@ -1,4 +1,5 @@
 var Content = require('trade/content');
+var template = require('base/utility').template;
 
 var ValidateV2 = (function() {
     function err() {

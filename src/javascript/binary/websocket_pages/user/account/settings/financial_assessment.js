@@ -1,4 +1,5 @@
 var RiskClassification = require('common_functions/risk_classification');
+var showLoadingImage = require('base/utility').showLoadingImage;
 
 var FinancialAssessmentws = (function(){
    "use strict";

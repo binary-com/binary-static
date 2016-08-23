@@ -1,6 +1,7 @@
 var addComma = require('trade/common').addComma;
 var Content = require('trade/content');
 var LimitsUI = require('./limits.ui');
+var template = require('base/utility').template;
 
 var LimitsWS = (function(){
     "use strict";
