@@ -4,9 +4,7 @@ var Cashier = (function() {
     var lock_cashier = function(withdrawal_locked, lock_type) {
       if (withdrawal_locked === 'locked') {
         $.each($('.' + lock_type), function(){
-          var $a = $(this).parent();
-          // use replaceWith, to disable previously caught pjax event
-          $a.replaceWith($('<a/>', {class: $a.attr('class').replace('pjaxload') + ' button-disabled', html: $a.html()}));
+            replace_with_disabled_button($(this).parent());
         });
       }
     };
@@ -29,10 +27,17 @@ var Cashier = (function() {
 
     var check_virtual_top_up = function() {
         if (TUser.get().is_virtual || page.client.is_virtual()) {
-            if ((TUser.get().residence !== 'jp' && TUser.get().balance < 1000) || (TUser.get().residence === 'jp' && TUser.get().balance < 100000)) {
-                $('#VRT_topup_link').removeClass('button-disabled');
+            if ((TUser.get().residence !== 'jp' && TUser.get().balance > 1000) || (TUser.get().residence === 'jp' && TUser.get().balance > 100000)) {
+                replace_with_disabled_button('#VRT_topup_link');
             }
         }
+    };
+
+    var replace_with_disabled_button = function(elementToReplace) {
+        var $a = $(elementToReplace);
+        if ($a.length === 0) return;
+        // use replaceWith, to disable previously caught pjax event
+        $a.replaceWith($('<a/>', {class: $a.attr('class').replace('pjaxload') + ' button-disabled', html: $a.html()}));
     };
 
     return {
@@ -49,6 +54,7 @@ pjax_config_page("/cashier", function(){
               return;
           } else {
               Cashier.check_locked();
+              Cashier.check_virtual_top_up();
           }
         }
     };

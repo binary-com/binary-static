@@ -1173,12 +1173,12 @@ Page.prototype = {
     client_status_detected: function(type, match_type) {
         var client_status = sessionStorage.getItem('client_status');
         if (!client_status || client_status.length === 0) return false;
-        var require_auth = /\,/.test(type) ? type.split(', ') : [type];
+        var require_auth = /\,/.test(type) ? type.split(/, */) : [type];
         client_status = client_status.split(',');
         match_type = match_type && match_type === 'all' ? 'all' : 'any';
         for (var i = 0; i < require_auth.length; i++) {
-            if(match_type === 'any' && ($.inArray(require_auth[i], client_status) > -1)) return true;
-            if(match_type === 'all' && ($.inArray(require_auth[i], client_status) < 0)) return false;
+            if(match_type === 'any' && (client_status.indexOf(require_auth[i]) > -1)) return true;
+            if(match_type === 'all' && (client_status.indexOf(require_auth[i]) < 0)) return false;
         }
         return (match_type === 'any' ? false : true);
     },
