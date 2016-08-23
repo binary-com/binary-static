@@ -48,13 +48,13 @@
     "grunt-shell": "^0.7.0",
     "grunt-stylelint": "^0.4.0",
     "grunt-uncss": "^0.3.5",
+    "jsdom": "^9.4.2",
     "load-grunt-config": "^0.13.1",
     "load-grunt-tasks": "^0.6.0",
     "mocha": "^2.5.3",
     "nightwatch": "^0.5.11",
     "postcss-scss": "^0.1.8",
     "time-grunt": "^1.0.0",
-    "ws": "^1.1.0",
-    "jsdom": "^9.4.2"
+    "ws": "^1.1.0"
   }
 }

@@ -1,7 +1,7 @@
 var Highchart = require('../../trade/charts/highchartws');
 var WSTickDisplay = require('../../trade/tick_trade');
 var ViewPopupUI = require('./view_popup_ui');
-var _utility = require('../../../base/utility')
+var _utility = require('../../../base/utility');
 var showLocalTimeOnHover = _utility.showLocalTimeOnHover;
 var toJapanTimeIfNeeded = _utility.toJapanTimeIfNeeded;
 

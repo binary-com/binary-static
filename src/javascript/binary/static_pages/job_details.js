@@ -64,6 +64,18 @@ var JobDetails = (function() {
             showSelectedDiv();
             $('#back-button').attr('href', page.url.url_for('open-positions') + '#' + dept);
         }
+
+        var sidebarListItem = $('#sidebar-nav li');
+        sidebarListItem.click(function(e) {
+            sidebarListItem.removeClass('selected');
+            $(this).addClass('selected');
+        });
+
+        $(window).on('hashchange', function(){
+            if (JobDetails.check_url()) {
+                JobDetails.showSelectedDiv();
+            }
+        });
     }
 
     return {
@@ -73,34 +85,4 @@ var JobDetails = (function() {
     };
 })();
 
-pjax_config_page('/open-positions', function() {
-  return {
-      onLoad: function() {
-        if (document.getElementById('Information_Technology')) {
-          if (page.url.location.hash) {
-              $.scrollTo($(page.url.location.hash));
-          }
-        }
-      }
-  };
-});
-pjax_config_page('/open-positions/job-details', function() {
-    return {
-        onLoad: function() {
-            var sidebarListItem = $('#sidebar-nav li');
-
-            JobDetails.init();
-
-            sidebarListItem.click(function(e) {
-                sidebarListItem.removeClass('selected');
-                $(this).addClass('selected');
-            });
-
-            $(window).on('hashchange', function(){
-                if (JobDetails.check_url()) {
-                    JobDetails.showSelectedDiv();
-                }
-            });
-        }
-    };
-});
+module.exports = JobDetails;
