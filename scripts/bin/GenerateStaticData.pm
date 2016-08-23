@@ -558,6 +558,10 @@ sub _texts {
         push @texts, localize('{JAPAN ONLY}Ends Outside');
         push @texts, localize('{JAPAN ONLY}Stays Between');
         push @texts, localize('{JAPAN ONLY}Goes Outside');
+        push @texts, localize('{JAPAN ONLY}FX Rate');
+        push @texts, localize('{JAPAN ONLY}Option Type');
+        push @texts, localize('{JAPAN ONLY}Trading Period');
+        push @texts, localize('{JAPAN ONLY}Payout Amount');
         push @texts, localize('You need to finish all 20 questions.');
         push @texts, localize('Weekday');
 
