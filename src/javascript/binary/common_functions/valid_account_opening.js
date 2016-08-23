@@ -1,5 +1,6 @@
 var Validate = require('common_functions/validation');
 var Content = require('trade/content');
+var page = require('binary/base').page;
 
 var ValidAccountOpening = (function(){
   var redirectCookie = function() {

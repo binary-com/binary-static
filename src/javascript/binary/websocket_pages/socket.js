@@ -1,3 +1,4 @@
+var Login = require('base/login');
 var SessionDurationLimit = require('common_functions/session_duration_limit');
 var Highchart = require('trade/charts/highchartws');
 var WSTickDisplay = require('trade/tick_trade');
@@ -7,6 +8,9 @@ var ViewBalance = require('websocket_pages/user/viewbalance');
 var RealityCheck = require('websocket_pages/user/reality_check/reality_check.init');
 var RealityCheckData = require('websocket_pages/user/reality_check/reality_check.data');
 var KnowledgeTest = require('binary_japan/knowledge_test/knowledge_test.init');
+var GTM = require('base/page').GTM;
+var TUser = require('binary/base').TUser;
+var page = require('binary/base').page;
 
 var Common = require('trade/common');
 var showPriceOverlay = Common.showPriceOverlay;

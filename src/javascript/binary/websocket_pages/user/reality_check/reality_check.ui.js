@@ -1,8 +1,8 @@
 var onlyNumericOnKeypress = require('common_functions/event_handler');
 var RealityCheck = require('./reality_check.init');
 var RealityCheckData = require('./reality_check.data');
+var page = require('binary/base').page;
 var showLocalTimeOnHover = require('base/utility').showLocalTimeOnHover;
-
 
 var RealityCheckUI = (function () {
     'use strict';

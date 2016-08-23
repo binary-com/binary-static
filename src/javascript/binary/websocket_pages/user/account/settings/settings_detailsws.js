@@ -1,6 +1,7 @@
 var validator = require('binary/validator');
 var Content = require('trade/content');
 var V2 = require('common_functions/validation_v2');
+var page = require('binary/base').page;
 
 var SettingsDetailsWS = (function() {
     "use strict";

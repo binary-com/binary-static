@@ -3,6 +3,8 @@ var Contract = require('./contract');
 var Symbols = require('./symbols');
 var Tick = require('./tick');
 var WSTickDisplay = require('./tick_trade');
+var TUser = require('binary/base').TUser;
+var page = require('binary/base').page;
 
 var Common = require('./common');
 var isVisible = Common.isVisible;

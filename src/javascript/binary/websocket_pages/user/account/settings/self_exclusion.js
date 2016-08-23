@@ -1,6 +1,12 @@
 var validator = require('binary/validator');
 var Content = require('trade/content');
 var V2 = require('common_functions/validation_v2');
+var TUser = require('binary/base').TUser;
+var page = require('binary/base').page;
+
+var _utility = require('base/utility');
+var showLoadingImage = _utility.showLoadingImage;
+var attach_time_picker = _utility.attach_time_picker;
 
 var _utility = require('base/utility');
 var showLoadingImage = _utility.showLoadingImage;

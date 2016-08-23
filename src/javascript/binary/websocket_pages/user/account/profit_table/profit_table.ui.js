@@ -4,6 +4,7 @@ var app_details = require('../../../../common_functions/get_app_details');
 var ProfitTable = require('../profit_table');
 var addComma = require('../../../trade/common').addComma;
 var Content = require('../../../trade/content');
+var TUser = require('binary/base').TUser;
 
 var ProfitTableUI = (function(){
     "use strict";
