@@ -622,6 +622,7 @@ sub _texts {
         push @texts, localize('Lock Cashier');
         push @texts, localize('An additional password can be used to restrict access to the cashier.');
         push @texts, localize('Update');
+        push @texts, localize('Sorry, you have entered an incorrect cashier password');
 
         #strings for job details page
         push @texts, localize('Information Technology');
