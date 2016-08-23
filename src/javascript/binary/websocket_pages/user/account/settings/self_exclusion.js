@@ -8,6 +8,10 @@ var _utility = require('base/utility');
 var showLoadingImage = _utility.showLoadingImage;
 var attach_time_picker = _utility.attach_time_picker;
 
+var _utility = require('base/utility');
+var showLoadingImage = _utility.showLoadingImage;
+var attach_time_picker = _utility.attach_time_picker;
+
 var SelfExclusionWS = (function() {
     "use strict";
 
