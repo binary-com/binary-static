@@ -1,11 +1,9 @@
 #footer {
     #footer-menu {
-        background: $COLOR_BLUE;
         padding: 10px 0;
         h4 {
             font-size: 13px;
             font-weight: bold;
-            color: $COLOR_ORANGE;
         }
         a {
             font-size: 13px;
@@ -23,7 +21,6 @@
         }
     }
     #footer-regulatory {
-        background: $COLOR_DARK_BLUE;
         a {
             display: inline-block;
             color: $COLOR_WHITE;
@@ -80,7 +77,6 @@
         }
     }
     #footer-last {
-        background: $COLOR_BLUE;
         a {
             color: $COLOR_WHITE;
             text-decoration: underline;
