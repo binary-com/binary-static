@@ -890,8 +890,8 @@ Contents.prototype = {
                 $('.by_client_type.client_real').not((japanese_client() ? ".ja-hide" : ".control-class")).removeClass('invisible');
                 $('.by_client_type.client_real').show();
 
-                $('#topbar').addClass('dark-blue');
-                $('#topbar').removeClass('orange');
+                $('#topbar').addClass('primary-color-dark');
+                $('#topbar').removeClass('secondary-bg-color');
 
                 if (!/^CR/.test(this.client.loginid)) {
                     $('#payment-agent-section').addClass('invisible');
@@ -906,8 +906,8 @@ Contents.prototype = {
                 $('.by_client_type.client_virtual').removeClass('invisible');
                 $('.by_client_type.client_virtual').show();
 
-                $('#topbar').addClass('orange');
-                $('#topbar').removeClass('dark-blue');
+                $('#topbar').addClass('secondary-bg-color');
+                $('#topbar').removeClass('primary-color-dark');
 
                 $('#account-transfer-section').addClass('invisible');
                 $('#account-transfer-section').hide();
@@ -918,8 +918,8 @@ Contents.prototype = {
             $('.by_client_type.client_logged_out').removeClass('invisible');
             $('.by_client_type.client_logged_out').show();
 
-            $('#topbar').removeClass('orange');
-            $('#topbar').addClass('dark-blue');
+            $('#topbar').removeClass('secondary-bg-color');
+            $('#topbar').addClass('primary-color-dark');
 
             $('#account-transfer-section').addClass('invisible');
             $('#account-transfer-section').hide();
