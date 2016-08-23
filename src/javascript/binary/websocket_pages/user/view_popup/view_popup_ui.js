@@ -1,4 +1,5 @@
 var TradePage = require('../../trade/tradepage');
+var get_highest_zindex = require('../../../base/utility').get_highest_zindex;
 
 var ViewPopupUI = (function() {
     var _container = null;

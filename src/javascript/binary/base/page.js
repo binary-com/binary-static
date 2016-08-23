@@ -4,9 +4,16 @@ var RiskClassification = require('common_functions/risk_classification');
 var isVisible = require('trade/common').isVisible;
 var ViewBalance = require('websocket_pages/user/viewbalance');
 var load_with_pjax = require('base/pjax').load_with_pjax;
+
 var _Storage = require('base/storage');
 var InScriptStore = _Storage.InScriptStore;
 var CookieStorage = _Storage.CookieStorage;
+
+var _utility = require('base/utility');
+var showLocalTimeOnHover = _utility.showLocalTimeOnHover;
+var toJapanTimeIfNeeded = _utility.toJapanTimeIfNeeded;
+var template = _utility.template;
+var parseLoginIDList = _utility.parseLoginIDList;
 
 var text;
 var clock_started = false;

@@ -3,6 +3,9 @@ var Table = require('../../../../common_functions/attach_dom/table');
 var app_details = require('../../../../common_functions/get_app_details');
 var Statement = require('../statement');
 var Content = require('../../../trade/content');
+var _utility = require('../../../../base/utility');
+var toJapanTimeIfNeeded = _utility.toJapanTimeIfNeeded;
+var downloadCSV = _utility.downloadCSV;
 
 var StatementUI = (function(){
     "use strict";

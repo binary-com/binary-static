@@ -1,4 +1,6 @@
 var Content = require('trade/content');
+var showLoadingImage = require('base/utility').showLoadingImage;
+var template = require('base/utility').template;
 
 var TNCApproval = (function() {
     "use strict";

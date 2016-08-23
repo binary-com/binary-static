@@ -1,4 +1,5 @@
 var Content = require('trade/content');
+var showLoadingImage = require('base/utility').showLoadingImage;
 
 var PaymentAgentListWS = (function() {
     "use strict";

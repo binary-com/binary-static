@@ -1,4 +1,6 @@
 var FlexTableUI = require('attach_dom/flextable');
+var showLocalTimeOnHover = require('base/utility').showLocalTimeOnHover;
+
 
 var IPHistoryUI = (function() {
     'use strict';

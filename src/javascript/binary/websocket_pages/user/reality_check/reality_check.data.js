@@ -1,3 +1,4 @@
+var template = require('base/utility').template;
 var RealityCheckData = (function () {
     'use strict';
 
