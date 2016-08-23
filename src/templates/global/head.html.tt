@@ -50,6 +50,7 @@
         [% FOREACH css_file IN css_files =%]
             <link rel="stylesheet" href="[%= css_file =%]">
         [% END %]
+        <link rel="stylesheet" href="https://style.binary.com/binary.css">
         [% INCLUDE global/javascripts.html.tt
             javascript=javascript
         %]
