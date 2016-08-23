@@ -1,6 +1,8 @@
 var app_details = require('../../../../common_functions/get_app_details');
 var ProfitTableWS = require('./profit_table.init');
 var ProfitTableUI = require('./profit_table.ui');
+var showLocalTimeOnHover = require('../../../../base/utility').showLocalTimeOnHover;
+
 
 var ProfitTableData = (function(){
     function initSocket(){

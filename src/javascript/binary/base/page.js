@@ -11,6 +11,16 @@ var TUser = base.TUser;
 var texts = base.texts;
 var markets = base.markets;
 
+var _Storage = require('base/storage');
+var InScriptStore = _Storage.InScriptStore;
+var CookieStorage = _Storage.CookieStorage;
+
+var _utility = require('base/utility');
+var showLocalTimeOnHover = _utility.showLocalTimeOnHover;
+var toJapanTimeIfNeeded = _utility.toJapanTimeIfNeeded;
+var template = _utility.template;
+var parseLoginIDList = _utility.parseLoginIDList;
+
 var text;
 var clock_started = false;
 

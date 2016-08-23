@@ -3,6 +3,7 @@ var Portfolio = require('../portfolio');
 var addComma = require('../../../trade/common').addComma;
 var TUser = require('binary/base').TUser;
 var page = require('binary/base').page;
+var showLoadingImage = require('../../../../base/utility').showLoadingImage;
 
 var PortfolioWS =  (function() {
     'use strict';

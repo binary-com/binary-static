@@ -5,6 +5,9 @@ var Statement = require('../statement');
 var Content = require('../../../trade/content');
 var TUser = require('binary/base').TUser;
 var page = require('binary/base').page;
+var _utility = require('../../../../base/utility');
+var toJapanTimeIfNeeded = _utility.toJapanTimeIfNeeded;
+var downloadCSV = _utility.downloadCSV;
 
 var StatementUI = (function(){
     "use strict";

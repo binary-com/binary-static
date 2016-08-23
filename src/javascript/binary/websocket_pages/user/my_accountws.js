@@ -1,6 +1,8 @@
 var Content = require('trade/content');
 var TUser = require('binary/base').TUser;
 var page = require('binary/base').page;
+var showLoadingImage = require('base/utility').showLoadingImage;
+var template = require('base/utility').template;
 
 var MyAccountWS = (function() {
     "use strict";

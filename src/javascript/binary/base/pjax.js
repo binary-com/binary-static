@@ -150,8 +150,10 @@ var pjax_config_page_require_auth = function(url, exec) {
     pjax_config_page(url, newExecFn);
 };
 
-init_pjax(); //Pjax-standalone will wait for on load event before attaching.
-$(function() { onLoad.fire(); });
+if (typeof document !== 'undefined') {
+    init_pjax(); //Pjax-standalone will wait for on load event before attaching.
+    $(function() { onLoad.fire(); });
+}
 
 
 module.exports = {

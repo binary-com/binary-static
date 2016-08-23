@@ -7,8 +7,8 @@
           <table class="flex-table" id="client-limits" style="display:none">
             <thead>
               <tr class="flex-tr">
-                <th class="flex-tr-child left-aligned" id="item"></th>
-                <th class="flex-tr-child limit left-aligned"></th>
+                <th class="flex-tr-child align-start" id="item"></th>
+                <th class="flex-tr-child limit align-start"></th>
               </tr>
             </thead>
             <tbody>

@@ -27,6 +27,8 @@ var pjax_config_page_require_auth = require('base/pjax').pjax_config_page_requir
 var pjax_config_page = require('base/pjax').pjax_config_page;
 var TUser = require('binary/base').TUser;
 var page = require('binary/base').page;
+var showLoadingImage = require('base/utility').showLoadingImage;
+var template = require('base/utility').template;
 
 pjax_config_page_require_auth("user/settings/assessmentws", function() {
     return {

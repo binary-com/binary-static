@@ -3,6 +3,9 @@ var FlexTableUI = require('attach_dom/flextable');
 var Content = require('trade/content');
 var V2 = require('common_functions/validation_v2');
 var page = require('binary/base').page;
+var _utility = require('base/utility');
+var showLoadingImage = _utility.showLoadingImage;
+var showLocalTimeOnHover = _utility.showLocalTimeOnHover;
 
 var APITokenWS = (function() {
     "use strict";

@@ -1,3 +1,5 @@
+var template = require('./utility').template;
+
 var isStorageSupported = function(storage) {
     if(typeof storage === 'undefined') {
         return false;
@@ -118,9 +120,10 @@ Localizable.prototype = {
     }
 };
 
-// for testing
-if (typeof module !== 'undefined') {
-    module.exports = {
-        Localizable: Localizable
-    };
-}
+module.exports = {
+    Localizable: Localizable,
+    isStorageSupported: isStorageSupported,
+    InScriptStore: InScriptStore,
+    CookieStorage: CookieStorage,
+    Store: Store,
+};
