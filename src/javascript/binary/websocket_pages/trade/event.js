@@ -28,6 +28,8 @@ var processForgetProposals = Process.processForgetProposals;
 var processPriceRequest = Process.processPriceRequest;
 var processForgetTicks = Process.processForgetTicks;
 
+var load_with_pjax = require('base/pjax').load_with_pjax;
+
 /*
  * TradingEvents object contains all the event handler function required for
  * websocket trading page

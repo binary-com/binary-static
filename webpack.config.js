@@ -15,6 +15,7 @@ module.exports = {
             trade:            path.resolve('./src/javascript/binary/websocket_pages/trade'),
             account:          path.resolve('./src/javascript/binary/websocket_pages/user/account'),
             binary_japan:     path.resolve('./src/javascript/binary_japan'),
+            base:             path.resolve('./src/javascript/binary/base'),
         },
     },
     output: {

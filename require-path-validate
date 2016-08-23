@@ -16,6 +16,7 @@ ALIASES = {
     'account':          p('./src/javascript/binary/websocket_pages/user/account'),
     'trade':            p('./src/javascript/binary/websocket_pages/trade'),
     'binary_japan':     p('./src/javascript/binary_japan'),
+    'base':             p('./src/javascript/binary/base'),
 }
 
 

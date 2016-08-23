@@ -1,4 +1,6 @@
 var Validate = require('common_functions/validation');
+var load_with_pjax = require('base/pjax').load_with_pjax;
+
 var LostPassword = (function() {
     'use strict';
 
