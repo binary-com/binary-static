@@ -18,7 +18,7 @@ var MyAccountWS = (function() {
         virtualTopupID = '#VRT_topup_link';
         authButtonID   = '#authenticate_button';
 
-        loginid = page.client.loginid || $.cookie('loginid');
+        loginid = page.client.loginid || Cookies.get('loginid');
 
         BinarySocket.send({"get_settings"      : 1});
         BinarySocket.send({"website_status"    : 1});
@@ -29,12 +29,12 @@ var MyAccountWS = (function() {
 
     var responseGetSettings = function(response) {
         var get_settings = response.get_settings;
-        if (get_settings.country === null || $.cookie('residence') === '') {
+        if (get_settings.country === null || Cookies.get('residence') === '') {
           var documentDomain = document.domain.split('.').slice(-2).join('.');
-          if ($.cookie('residence') !== '') {
-            $.cookie('residence', '', {path: '/', domain: documentDomain});
+          if (Cookies.get('residence') !== '') {
+            Cookies.set('residence', '', {path: '/', domain: documentDomain});
           } else if (get_settings.country_code) {
-            $.cookie('residence', get_settings.country_code, {path: '/', domain: documentDomain});
+            Cookies.set('residence', get_settings.country_code, {path: '/', domain: documentDomain});
           }
           page.client.residence = get_settings.country_code;
           page.contents.topbar_message_visibility();
@@ -85,10 +85,11 @@ var MyAccountWS = (function() {
                 text.localize(
                     isReal ?
                         'You are currently logged in to your real money account with [_1] ([_2]).' :
-                        'You are currently logged in to your virtual money account ([_2]).'
-                )
-                    .replace('[_1]', landing_company || '')
-                    .replace('[_2]', loginid)
+                        'You are currently logged in to your virtual money account ([_2]).',
+                    [
+                        landing_company || '',
+                        loginid,
+                    ])
             )
             .removeClass(hiddenClass);
     };
@@ -97,10 +98,11 @@ var MyAccountWS = (function() {
         if(TUser.get().balance < 1000) {
             $(virtualTopupID + ' a')
                 .text(
-                    text.localize('Deposit [_1] [_2] virtual money into your account [_3]')
-                        .replace('[_1]', TUser.get().currency)
-                        .replace('[_2]', '10000')
-                        .replace('[_3]', loginid)
+                    text.localize('Deposit [_1] [_2] virtual money into your account [_3]', [
+                        TUser.get().currency,
+                        '10000',
+                        loginid,
+                    ])
                 );
             $(virtualTopupID).removeClass(hiddenClass);
         }
@@ -119,9 +121,10 @@ var MyAccountWS = (function() {
                 msgPlural   = text.localize('Your [_1] accounts are unavailable. For any questions please contact [_2].');
             $('<p/>', {class: 'notice-msg'})
                 .html(
-                    (disabledAccount.length === 1 ? msgSingular : msgPlural)
-                        .replace('[_1]', disabledAccount.join(', '))
-                        .replace('[_2]', $('<a/>', {class: 'pjaxload', href: page.url.url_for('contact'), text: text.localize('Customer Support')}).prop('outerHTML'))
+                    template(disabledAccount.length === 1 ? msgSingular : msgPlural, [
+                        disabledAccount.join(', '),
+                        $('<a/>', {class: 'pjaxload', href: page.url.url_for('contact'), text: text.localize('Customer Support')}).prop('outerHTML')
+                    ])
                 )
                 .insertAfter($(welcomeTextID));
         }

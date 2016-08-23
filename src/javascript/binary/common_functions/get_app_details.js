@@ -19,7 +19,7 @@ var addTooltip = function(oauth_apps) {
 
 var add_app_id_name = function(app_id, app_name) {
     var ref_string;
-    if (app_id && getAppId() != app_id) {
+    if (app_id) {
         ref_string = text.localize('Transaction performed by') + ' ' + (app_name ? app_name : '') + ' (' + text.localize('App ID') + ': ' + app_id + ')';
     }
     return ref_string;
@@ -27,7 +27,7 @@ var add_app_id_name = function(app_id, app_name) {
 
 var showTooltip = function(app_id, oauth_app_id) {
     return (
-        app_id && getAppId() != app_id ?
+        app_id ?
             ' class="' + app_id + '" data-balloon="' + (
                 oauth_app_id ?
                     add_app_id_name(app_id, oauth_app_id) :

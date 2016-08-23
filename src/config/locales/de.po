@@ -1781,6 +1781,9 @@ msgstr "Die Kontraktauszahlungen werden vom Unternehmen anhand der täglichen H�
 msgid "Contract period"
 msgstr "Kontraktzeitraum"
 
+msgid "Contract purchased with app ID"
+msgstr "Kontrakt mit App ID erworben"
+
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "Der Kontrakt wird, sobald der Auftrag von unseren Servern empfangen wurde, zum dann geltenden Marktkurs verkauft. Dieser Kurs kann von den angegebenen Kursen abweichen."
 
@@ -7866,6 +7869,11 @@ msgstr "{JAPAN ONLY}Even if the option is exercise or not exercised, the origina
 msgid "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
 msgstr "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}day"
+msgid "{JAPAN ONLY}FX Rate"
+msgstr "{JAPAN ONLY}day"
+
 msgid "{JAPAN ONLY}Financial Condition"
 msgstr "{JAPAN ONLY}Financial Condition"
 
@@ -8067,6 +8075,11 @@ msgstr "{JAPAN ONLY}November 7, 2014"
 msgid "{JAPAN ONLY}Option Pricing"
 msgstr "{JAPAN ONLY}Option Pricing"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Option Pricing"
+msgid "{JAPAN ONLY}Option Type"
+msgstr "{JAPAN ONLY}Option Pricing"
+
 msgid "{JAPAN ONLY}Option prices are normally dependant on elements such as the underlying asset price, the exercise price, the length of time until the exercise point, volatility, and interest rates. Apart from the fixed exercise price, all other elements are changing constantly, so an understanding of the relationships between each element and changes in the options price is necessary for the management of options trading risk."
 msgstr "{JAPAN ONLY}Option prices are normally dependant on elements such as the underlying asset price, the exercise price, the length of time until the exercise point, volatility, and interest rates. Apart from the fixed exercise price, all other elements are changing constantly, so an understanding of the relationships between each element and changes in the options price is necessary for the management of options trading risk."
 
@@ -8093,6 +8106,11 @@ msgstr "{JAPAN ONLY}Our Customer Support staff will contact you at each stage to
 
 msgid "{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:"
 msgstr "{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}month"
+msgid "{JAPAN ONLY}Payout Amount"
+msgstr "{JAPAN ONLY}month"
 
 msgid "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\">here</a> for further information."
 msgstr "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\">here</a> for further information."
@@ -8262,6 +8280,11 @@ msgstr "{JAPAN ONLY}Trading & Hedging"
 msgid "{JAPAN ONLY}Trading Guide"
 msgstr "{JAPAN ONLY}Trading Guide"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Trading Guide"
+msgid "{JAPAN ONLY}Trading Period"
+msgstr "{JAPAN ONLY}Trading Guide"
+
 msgid "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
 msgstr "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
 
@@ -8384,10 +8407,6 @@ msgstr "Allgemeine Geschäftsbedingungen Zustimmung"
 
 msgid "Trading with MetaTrader 5"
 msgstr "Handeln mit MetaTrader 5"
-
-#~| msgid "Contract Purchase"
-#~ msgid "Contract purchased with app ID"
-#~ msgstr "Kontrakt mit App ID erworben"
 
 #~ msgid "Please re-enter your email"
 #~ msgstr "Bitte geben Sie Ihre E-Mail Adresse erneut ein"
