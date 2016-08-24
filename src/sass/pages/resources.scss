@@ -8,9 +8,7 @@
         }
     }
     th {
-        &.flex-tr-child {
-            line-height: 30px;
-        }
+        line-height: 30px;
         &.submarket-name {
             border-bottom: 1px solid $COLOR_DARK_GRAY !important;
             text-align: center !important;
@@ -25,26 +23,22 @@
             width: 40%;
         }
     }
-    td {
-        &.asset {
-            font-weight: 700;
-        }
+    td.asset {
+        font-weight: 700;
     }
 }
 
 #asset-index {
     th {
         width: 12%;
-    }
-    .asset {
-        width: 18%;
-    }
-    th.flex-tr-child {
         &:nth-child(2):nth-last-child(1) {
             width: 24%;
         }
         &:nth-child(2):nth-last-child(2), &:nth-child(3):nth-last-child(1) {
             width: 18%;
         }
+    }
+    .asset {
+        width: 18%;
     }
 }

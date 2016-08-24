@@ -1,4 +1,4 @@
-.flex-table-container {
+.table-container {
     $md: 600px;
     th {
         @include BIDIR_VALUE(text-align, left !important, right !important);
@@ -26,7 +26,7 @@
         }
     }
     #statement-table {
-        .flex-tr {
+        tr {
             & > th.details, & > td.details {
                 display: none !important;
             }
@@ -40,7 +40,7 @@
                         padding: 8px 15px;
                     }
                 }
-                .flex-tr-child {
+                th, td {
                     font-size: 12px;
                 }
             }
@@ -50,7 +50,7 @@
         }
     }
     #profit-table {
-        .flex-tr {
+        tr {
             & > th.details, & > td.details {
                 display: none !important;
             }
@@ -64,7 +64,7 @@
                         padding: 8px 15px;
                     }
                 }
-                .flex-tr-child {
+                th, td {
                     font-size: 12px;
                 }
             }

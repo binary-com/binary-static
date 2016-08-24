@@ -562,6 +562,7 @@ sub _texts {
         push @texts, localize('{JAPAN ONLY}Option Type');
         push @texts, localize('{JAPAN ONLY}Trading Period');
         push @texts, localize('{JAPAN ONLY}Payout Amount');
+        push @texts, localize('{JAPAN ONLY}Remaining time');
         push @texts, localize('You need to finish all 20 questions.');
         push @texts, localize('Weekday');
 
