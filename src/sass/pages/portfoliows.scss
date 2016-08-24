@@ -3,14 +3,19 @@
         display: table-column;
         width: 0px !important;
     }
-    .tr-first td {
-        border-bottom: none;
-        padding-bottom: 0;
-    }
-    .tr-desc {
-        display: table-row;
+    tr {
         td {
-            padding-top: 0;
+            padding: 10px 5px 5px;
+        }
+        &.tr-first td {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        &.tr-desc {
+            display: table-row;
+            td {
+                padding-top: 0;
+            }
         }
     }
 }
@@ -19,30 +24,35 @@
     td {
         padding: 10px;
         vertical-align: middle;
-    }
-    td.indicative, td.purchase {
-        white-space: nowrap;
-    }
-    td.indicative.no_resale {
-        color: $COLOR_GRAY_SHADE;
-        span {
-            font-size: 8px;
-            display: block;
-            margin-top: -11px;
+        &.indicative, &.purchase {
+            white-space: nowrap;
+        }
+        &.indicative.no_resale {
+            color: $COLOR_GRAY_SHADE;
+            span {
+                font-size: 8px;
+                display: block;
+                margin-top: -11px;
+            }
+        }
+        &.ref {
+            @include BIDIR_VALUE(text-align, left !important, right !important);
         }
     }
     th {
         padding: 10px;
-        text-align: left;
+        @include BIDIR_VALUE(text-align, left, right);
+        &.details {
+            width: 45%;
+        }
     }
-    th.details {
-        width: 45%;
-    }
-    table .ref {
-        text-align: left !important;
-    }
-    .tr-desc {
-        display: none;
+    tr {
+        &.new {
+            background-color: rgba(46, 136, 54, 0.1);
+        }
+        &.tr-desc {
+            display: none;
+        }
     }
     @media screen and (max-width: 640px) {
         @include portfolio_second_row_description;

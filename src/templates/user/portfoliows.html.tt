@@ -23,7 +23,7 @@
             <p>[% l("No open positions.") %]</p>
         </div>
 
-        <table class="flex-table" id="portfolio-table">
+        <table id="portfolio-table">
             <thead>
                 <tr>
                     <th class="ref">[% l('Ref.') %]</th>
