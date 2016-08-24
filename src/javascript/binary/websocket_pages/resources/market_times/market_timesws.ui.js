@@ -1,6 +1,5 @@
 var Table = require('attach_dom/table');
 var MarketTimes = require('../market_timesws');
-var MarketTimesData = require('./market_timesws.data');
 var Content = require('trade/content');
 var showLoadingImage = require('base/utility').showLoadingImage;
 
@@ -164,3 +163,5 @@ var MarketTimesUI = (function() {
 }());
 
 module.exports = MarketTimesUI;
+
+var MarketTimesData = require('./market_timesws.data');

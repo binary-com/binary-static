@@ -2,6 +2,7 @@
 import os
 import re
 from os.path import abspath as p
+from collections import defaultdict
 
 RED = '\033[91m'
 RESET = '\033[0m'
@@ -47,21 +48,42 @@ def check(dep, filename):
     if head == '.':
         current_dir = os.path.dirname(filename)
         real = os.path.join(current_dir, tail)
-        check_exists(dep, filename, real)
-        return
+        return real
 
     if head in ALIASES:
         real = os.path.join(ALIASES[head], tail)
-        check_exists(dep, filename, real)
+        return real
 
 
-def validate_require_calls(filename):
+def validate_require_calls(filename, graph):
     with open(filename, 'r') as f:
         for match in REQUIRE_RE.finditer(f.read()):
             _, dep, _ = match.groups()
-            check(dep, filename)
+            resolved = check(dep, filename)
+            if resolved:
+                check_exists(dep, filename, resolved)
+                graph[filename].add(resolved)
+
+
+def detect_circular(needle, graph, ctx, seen):
+    for dep in graph[ctx[-1]]:
+        if dep == needle:
+            yield ctx + [needle]
+            continue
+        if dep in seen:
+            continue
+        seen.add(dep)
+        u = detect_circular(needle, graph, ctx + [dep], seen)
+        for item in u:
+            yield item
 
 
 if __name__ == '__main__':
+    graph = defaultdict(set)
     for item in files_only('src/javascript'):
-        validate_require_calls(item)
+        validate_require_calls(item, graph)
+    for d in list(graph):
+        for item in detect_circular(d, graph, [d], set()):
+            print(' -> '.join(
+                v.lstrip('src/javascript') for v in item
+                ))
