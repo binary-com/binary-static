@@ -66,6 +66,7 @@ def validate_require_calls(filename, graph):
 
 
 def detect_circular(needle, graph, ctx, seen):
+    if ctx[-1] not in graph: return
     for dep in graph[ctx[-1]]:
         if dep == needle:
             yield ctx + [needle]
@@ -82,8 +83,13 @@ if __name__ == '__main__':
     graph = defaultdict(set)
     for item in files_only('src/javascript'):
         validate_require_calls(item, graph)
-    for d in list(graph):
+
+    circs = []
+    for d in graph:
         for item in detect_circular(d, graph, [d], set()):
-            print(' -> '.join(
-                v.lstrip('src/javascript') for v in item
-                ))
+            circs.append(item)
+    circs.sort()
+    for item in circs:
+        print(' -> '.join(
+            v.lstrip('src/javascript') for v in item
+            ))
