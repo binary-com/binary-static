@@ -56,6 +56,8 @@ var Message = (function () {
                 PortfolioWS.updateIndicative(response);
             } else if(type === 'transaction'){
                 PortfolioWS.transactionResponseHandler(response);
+            } else if(type === 'oauth_apps'){
+                PortfolioWS.updateOAuthApps(response);
             }
         } else {
 

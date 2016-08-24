@@ -25,12 +25,12 @@
 
         <table class="flex-table" id="portfolio-table">
             <thead>
-                <tr class="flex-tr">
-                    <th class="ref flex-tr-child">[% l('Ref.') %]</th>
-                    <th class="payout flex-tr-child">[% l('Potential Payout') %]</th>
-                    <th class="details flex-tr-child">[% l('Contract Details') %]</th>
-                    <th class="purchase flex-tr-child">[% l('Purchase') %]</th>
-                    <th class="indicative flex-tr-child">[% l('Indicative') %]</th>
+                <tr>
+                    <th class="ref">[% l('Ref.') %]</th>
+                    <th class="payout">[% l('Potential Payout') %]</th>
+                    <th class="details">[% l('Contract Details') %]</th>
+                    <th class="purchase">[% l('Purchase') %]</th>
+                    <th class="indicative">[% l('Indicative') %]</th>
                     <th class="button"></th>
                 </tr>
             </thead>
@@ -38,10 +38,10 @@
             <tbody id="portfolio-body"></tbody>
 
             <tfoot>
-                <tr class="flex-tr">
-                    <th class="ref flex-tr-child" colspan="3"></th>
-                    <th class="cost flex-tr-child" id="cost-of-open-positions"></th>
-                    <th class="value flex-tr-child" id="value-of-open-positions" colspan="2"></th>
+                <tr>
+                    <th class="ref" colspan="3"></th>
+                    <th class="cost" id="cost-of-open-positions"></th>
+                    <th class="value" id="value-of-open-positions" colspan="2"></th>
                 </tr>
             </tfoot>
         </table>

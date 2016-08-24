@@ -48,14 +48,6 @@ var TradePage = (function(){
       script : 'trading'
     });
     TradingAnalysis.bindAnalysisTabEvent();
-    $('#tab_portfolio a').text(text.localize('Portfolio'));
-    $('#tab_graph a').text(text.localize('Chart'));
-    $('#tab_explanation a').text(text.localize('Explanation'));
-    $('#tab_last_digit a').text(text.localize('Last Digit Stats'));
-    if(!is_japanese_client) {
-      $('#tab_asset_index'  ).removeClass('invisible').find('a').text(text.localize('Asset Index'));
-      $('#tab_trading_times').removeClass('invisible').find('a').text(text.localize('Trading Times'));
-    }
   };
 
   var reload = function() {
@@ -69,6 +61,7 @@ var TradePage = (function(){
     forgetTradingStreams();
     BinarySocket.clear();
     Defaults.clear();
+    PortfolioWS.onUnload();
   };
 
   return {

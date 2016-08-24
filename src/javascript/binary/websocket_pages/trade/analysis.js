@@ -35,6 +35,15 @@ var TradingAnalysis = (function() {
      */
     var bindAnalysisTabEvent = function() {
         'use strict';
+
+        if (page.client.is_logged_in) {
+          $('#tab_portfolio').removeClass('invisible');
+        }
+        if (!japanese_client()) {
+          $('#tab_asset_index'  ).removeClass('invisible');
+          $('#tab_trading_times').removeClass('invisible');
+        }
+
         var $analysis_tabs = $('#trading_analysis_content #analysis_tabs');
         if ($analysis_tabs.length) {
             $analysis_tabs.find('li a').click(function(e) {
@@ -62,16 +71,12 @@ var TradingAnalysis = (function() {
         toggleActiveNavMenuElement(analysisNavElement, currentLink.parentElement);
         toggleActiveAnalysisTabs();
 
-        JapanPortfolio.init();
-        if (currentTab === 'tab_portfolio') {
-            JapanPortfolio.show();
-            return;
-        }
-
-        JapanPortfolio.hide();
         switch(currentTab) {
             case 'tab_graph':
                 showHighchart();
+                break;
+            case 'tab_portfolio':
+                PortfolioWS.onLoad();
                 break;
             case 'tab_last_digit':
                 var underlying = $('[name=underlying] option:selected').val() || $('#underlying option:selected').val();
@@ -139,8 +144,7 @@ var TradingAnalysis = (function() {
         var selectedTab = sessionStorage.getItem('currentAnalysisTab') || (JPTradePage.isJapan() ? 'tab_portfolio' : window.chartAllowed ? 'tab_graph' : 'tab_explanation'),
             selectedElement = document.getElementById(selectedTab);
 
-        if (selectedElement && selectedElement.classList.contains('invisible') &&
-            !(selectedTab === 'tab_portfolio' && JapanPortfolio.isActive())) {
+        if (selectedElement && selectedElement.classList.contains('invisible')) {
             selectedTab = window.chartAllowed ? 'tab_graph' : 'tab_explanation';
             sessionStorage.setItem('currentAnalysisTab', selectedTab);
         }

@@ -1,8 +1,26 @@
+@mixin portfolio_second_row_description {
+    .details {
+        display: table-column;
+        width: 0px !important;
+    }
+    .tr-first td {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    .tr-desc {
+        display: table-row;
+        td {
+            padding-top: 0;
+        }
+    }
+}
+
 #portfolio {
     td {
         padding: 10px;
+        vertical-align: middle;
     }
-    td.indicative, td.purchase, .payout {
+    td.indicative, td.purchase {
         white-space: nowrap;
     }
     td.indicative.no_resale {
@@ -23,9 +41,22 @@
     table .ref {
         text-align: left !important;
     }
-    @media screen and (max-width: 480px) {
-        .details, .payout {
-            display: none;
+    .tr-desc {
+        display: none;
+    }
+    @media screen and (max-width: 640px) {
+        @include portfolio_second_row_description;
+    }
+}
+
+#tab_portfolio-content {
+    #portfolio {
+        @include portfolio_second_row_description;
+        [data-balloon] {
+            cursor: initial;
+        }
+        [data-balloon]:after, [data-balloon]:before {
+            display: none !important;
         }
     }
 }

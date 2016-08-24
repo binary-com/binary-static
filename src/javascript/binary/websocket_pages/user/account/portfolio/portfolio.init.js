@@ -3,9 +3,12 @@ var PortfolioWS =  (function() {
 
     var values,
         currency,
-        oauth_apps;
+        oauth_apps,
+        is_initialized;
 
     var init = function() {
+        if(is_initialized) return;
+
         values = {};
         currency = '';
         oauth_apps = {};
@@ -17,6 +20,7 @@ var PortfolioWS =  (function() {
         // Subscribe to transactions to auto update new purchases
         BinarySocket.send({'transaction': 1, 'subscribe': 1});
         BinarySocket.send({'oauth_apps': 1});
+        is_initialized = true;
     };
 
     var createPortfolioRow = function(data) {
@@ -25,15 +29,18 @@ var PortfolioWS =  (function() {
             data.longcode : 
             (japanese_client() ? toJapanTimeIfNeeded(void 0, void 0, data.longcode) : data.longcode);
 
+        var new_class = is_first ? '' : 'new';
         $('#portfolio-body').append(
-            $('<tr class="flex-tr" id="' + data.contract_id + '">' +
-                '<td class="ref flex-tr-child">' + '<span' + showTooltip(data.app_id, oauth_apps[data.app_id]) + '>' + data.transaction_id + '</span>' +
-                '</td>' +
-                '<td class="payout flex-tr-child"><strong>' + format_money(data.currency, data.payout) + '</strong></td>' +
-                '<td class="details flex-tr-child">' + longCode + '</td>' +
-                '<td class="purchase flex-tr-child"><strong>' + format_money(data.currency, data.buy_price) + '</strong></td>' +
-                '<td class="indicative flex-tr-child"><strong class="indicative_price">' + format_money(data.currency, '--.--') + '</strong></td>' +
-                '<td class="button flex-tr-child"><button class="button open_contract_detailsws" contract_id="' + data.contract_id + '">' + text.localize('View') + '</button></td>' +
+            $('<tr class="tr-first ' + new_class + ' ' + data.contract_id + '" id="' + data.contract_id + '">' +
+                '<td class="ref"><span' + showTooltip(data.app_id, oauth_apps[data.app_id]) + '>' + data.transaction_id + '</span></td>' +
+                '<td class="payout"><strong>' + format_money(data.currency, data.payout) + '</strong></td>' +
+                '<td class="details">' + longCode + '</td>' +
+                '<td class="purchase"><strong>' + format_money(data.currency, data.buy_price) + '</strong></td>' +
+                '<td class="indicative"><strong class="indicative_price">' + format_money(data.currency, '--.--') + '</strong></td>' +
+                '<td class="button"><button class="button open_contract_detailsws" contract_id="' + data.contract_id + '">' + text.localize('View') + '</button></td>' +
+            '</tr>' +
+            '<tr class="tr-desc ' + new_class + ' ' + data.contract_id + '">' +
+                '<td colspan="6">' + longCode + '</td>' +
             '</tr>')
         );
     };
@@ -143,6 +150,11 @@ var PortfolioWS =  (function() {
         updateFooter();
     };
 
+    var updateOAuthApps = function(response) {
+        oauth_apps = buildOauthApps(response.oauth_apps);
+        addTooltip(oauth_apps);
+    };
+
     var removeContract = function(contract_id) {
         $("#" + contract_id).remove();
         delete(values[contract_id]);
@@ -164,30 +176,31 @@ var PortfolioWS =  (function() {
     };
 
     var onLoad = function() {
-        BinarySocket.init({
-            onmessage: function(msg){
-                var response = JSON.parse(msg.data),
-                    msg_type = response.msg_type;
+        if (!TradePage.is_trading_page()) {
+            BinarySocket.init({
+                onmessage: function(msg){
+                    var response = JSON.parse(msg.data),
+                        msg_type = response.msg_type;
 
-                switch(msg_type) {
-                    case "portfolio":
-                        PortfolioWS.updatePortfolio(response);
-                        break;
-                    case "transaction":
-                        PortfolioWS.transactionResponseHandler(response);
-                        break;
-                    case "proposal_open_contract":
-                        PortfolioWS.updateIndicative(response);
-                        break;
-                    case "oauth_apps":
-                        oauth_apps = buildOauthApps(response.oauth_apps);
-                        addTooltip(oauth_apps);
-                        break;
-                    default:
-                        // msg_type is not what PortfolioWS handles, so ignore it.
+                    switch(msg_type) {
+                        case "portfolio":
+                            PortfolioWS.updatePortfolio(response);
+                            break;
+                        case "transaction":
+                            PortfolioWS.transactionResponseHandler(response);
+                            break;
+                        case "proposal_open_contract":
+                            PortfolioWS.updateIndicative(response);
+                            break;
+                        case "oauth_apps":
+                            PortfolioWS.updateOAuthApps(response);
+                            break;
+                        default:
+                            // msg_type is not what PortfolioWS handles, so ignore it.
+                    }
                 }
-            }
-        });
+            });
+        }
         PortfolioWS.init();
     };
 
@@ -195,6 +208,7 @@ var PortfolioWS =  (function() {
         BinarySocket.send({"forget_all": "proposal_open_contract"});
         BinarySocket.send({"forget_all": "transaction"});
         $('#portfolio-body').empty();
+        is_initialized = false;
     };
 
     return {
@@ -202,6 +216,7 @@ var PortfolioWS =  (function() {
         updateBalance: updateBalance,
         updatePortfolio: updatePortfolio,
         updateIndicative: updateIndicative,
+        updateOAuthApps: updateOAuthApps,
         transactionResponseHandler: transactionResponseHandler,
         onLoad: onLoad,
         onUnload: onUnload

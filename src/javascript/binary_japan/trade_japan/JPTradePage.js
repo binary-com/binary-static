@@ -24,9 +24,6 @@ var JPTradePage = (function() {
 
     Content.populate();
     TradingAnalysis.bindAnalysisTabEvent();
-    $('#tab_portfolio a').text(text.localize('Portfolio'));
-    $('#tab_graph a').text(text.localize('Chart'));
-    $('#tab_explanation a').text(text.localize('Explanation'));
 
     window.chartAllowed = true;
   };
@@ -39,6 +36,7 @@ var JPTradePage = (function() {
     window.chartAllowed = false;
     isJapan = false;
     JapanTrading.stop();
+    PortfolioWS.onUnload();
   };
 
   return {

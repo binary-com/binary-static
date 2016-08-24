@@ -810,6 +810,9 @@
                     border: 0;
                 }
             }
+            #portfolio {
+                padding: 10px;
+            }
         }
     }
     #last_digit_histo_form {
@@ -838,6 +841,9 @@
         border: none;
         #chart_frame {
             height: 630px !important;
+        }
+        #portfolio {
+            padding: 0px;
         }
     }
 }
