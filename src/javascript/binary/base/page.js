@@ -429,17 +429,6 @@ URL.prototype = {
         var param_hash= this.params_hash();
         return param_hash[name];
     },
-    replaceQueryParam: function (param, newval, search) {
-      var regex = new RegExp("([?;&])" + param + "[^&;]*[;&]?");
-      var query = search.replace(regex, "$1").replace(/&$/, '');
-      return (query.length > 2 ? query + "&" : "?") + (newval ? param + "=" + newval : '');
-    },
-    param_if_valid: function(name) {
-        if(this.is_valid) {
-           return this.param(name);
-        }
-        return;
-    },
     path_matches: function(url) {
         //pathname is /d/page.cgi. Eliminate /d/ and /c/ from both urls.
         var this_pathname = this.location.pathname.replace(/\/[d|c]\//g, '');
