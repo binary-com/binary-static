@@ -420,6 +420,9 @@ msgstr "<< Quay lại Mô Tả Công Việc"
 msgid "<a class='pjaxload' href='mailto:%1'>Contact Us</a>"
 msgstr "<a class='pjaxload' href='mailto:%1'> liên hệ với chúng tôi</a>"
 
+msgid "<a href=\"%1\">Return to trading page</a>"
+msgstr ""
+
 msgid "<a href='%1'>Founded</a> October 1999"
 msgstr "<a href='%1'>Đã thành lập</a> vào tháng Mười năm 1999"
 
@@ -474,18 +477,6 @@ msgstr ""
 "        <li>Thông điệp của biểu ngữ.</li>\n"
 "    </ul>"
 
-msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
-msgstr "<span class='color-green font-weight-700'>Tất cả thời hạn:</span> từ 10 giây đến 365 ngày."
-
-msgid "<span class='color-green font-weight-700'>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
-msgstr "<span class='color-green font-weight-700'>Tất cả điều kiện thị trường:</span> lên/xuống, chạm/Không chạm, ở trong/ra ngoài."
-
-msgid "<span class='color-green font-weight-700'>All markets:</span> currencies, stocks, indices, and commodities."
-msgstr "<span class='color-green font-weight-700'>Tất cả các thị trường:</span> tiền tệ, chỉ số, chứng khoán, và hàng hóa."
-
-msgid "<span class='color-green font-weight-700'>All payouts:</span> from $1 to $50,000."
-msgstr "<span class='color-green font-weight-700'>Tất cả tiền thưởng:</span> từ $1 đến $50,000."
-
 msgid "<strong>2-way pricing</strong> - %1 quotes a trade and the counter-trade, so you always get unbiased, transparent prices."
 msgstr "<strong>định giá 2 chiều</strong> - %1 định giá giao dịch và giao dịch ngược, vì thế bạn luôn được hỗ trợ giá minh bạch và công bằng."
 
@@ -495,8 +486,18 @@ msgstr "<strong>Phát sinh giao dịch:</strong> Bạn sẽ hiểu biết th�
 msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
 msgstr "<strong>Các công cụ tiên tiến để phân tích cơ bản và kỹ thuật,</strong> bao gồm cả chỉ số, biểu đồ, và nhiều hơn nữa."
 
+#, fuzzy
+#| msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
+msgid "<strong>All durations:</strong> from 10 seconds to 365 days."
+msgstr "<strong>Tất cả thời hạn</strong> - từ 10 giây đến 365 ngày."
+
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>Tất cả thời hạn</strong> - từ 10 giây đến 365 ngày."
+
+#, fuzzy
+#| msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
+msgid "<strong>All market conditions:</strong> up/down, touch/no-touch, stays in/goes out."
+msgstr "<strong>Tất cả điều kiện thị trường</strong> - lên/xuống, chạm/không chạm, ở trong/ra ngoài."
 
 msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
 msgstr "<strong>Tất cả điều kiện thị trường</strong> - lên/xuống, chạm/không chạm, ở trong/ra ngoài."
@@ -504,8 +505,18 @@ msgstr "<strong>Tất cả điều kiện thị trường</strong> - lên/xuố
 msgid "<strong>All markets, all conditions</strong> - trade currencies, indices and commodities in rising, falling, sideways, quiet and volatile markets."
 msgstr "<strong>Tất cả thị trường, tất cả điều kiện</strong> - đồng tiền giao dịch, chỉ số, và hàng hóa trong các loại thị trường lên, xuống, dao động ngang, tĩnh lặng, và biến động."
 
+#, fuzzy
+#| msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
+msgid "<strong>All markets:</strong> currencies, stocks, indices, and commodities."
+msgstr "<strong>Tất cả thị trường</strong> - tiền tệ, chỉ số cổ phiếu, và hàng hóa."
+
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgstr "<strong>Tất cả thị trường</strong> - tiền tệ, chỉ số cổ phiếu, và hàng hóa."
+
+#, fuzzy
+#| msgid "<strong>All payouts</strong> - from $1 to $50,000."
+msgid "<strong>All payouts:</strong> from $1 to $50,000."
+msgstr "<strong>Tất cả tiền thưởng</strong> - từ $1 đến $50,000."
 
 msgid "<strong>All payouts</strong> - from $1 to $50,000."
 msgstr "<strong>Tất cả tiền thưởng</strong> - từ $1 đến $50,000."
@@ -2925,6 +2936,11 @@ msgstr "Nếu có bất cứ điều khoản nào trong Hiệp định bi
 msgid "If the Company is legally required to disclose your personal or financial information by law, regulation or pursuant to the order of a court of competent jurisdiction or a governmental agency, the Company  shall, unless legally prohibited, promptly notify you to that effect, in order to give you the opportunity to seek such protection for the information as it deems appropriate. Such required disclosure shall not be construed as a breach of this Terms and Conditions Agreement."
 msgstr "Nếu Công ty được yêu cầu phải tiết lộ thông tin cá nhân hoặc thông tin tài chính của bạn cho luật pháp, hoặc theo lệnh của tòa án có thẩm quyền hoặc cơ quan chính phủ, Công ty sẽ thông báo trước cho bạn, để bạn có cơ hội bảo vệ thông tin của mình nếu thấy cần thiết, trừ khi pháp luật cấm. Những yêu cầu tiết lộ này sẽ không được coi là hành vi vi phạm Điều khoản và Điều kiện của Hiệp định."
 
+#, fuzzy
+#| msgid "This account is unavailable. For any questions please contact <a href=\"%1\">Customer Support</a>."
+msgid "If the issue keeps happening, please contact <a href=\"%1\">customer support</a>."
+msgstr "Tài khoản này không có sẵn. Nếu bạn có bất cứ câu hỏi nào, vui lòng liên hệ với <a href=\"%1\">Phòng Hỗ trợ khách hàng</a>."
+
 msgid "If this Agreement is terminated for any reason, you must permanently delete all Content, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
 msgstr "Nếu Thoả thuận này bị chấm dứt bởi bất kỳ lý do gì, bạn phải xoá vĩnh viễn tất cả Nội dung, trừ khi việc làm đó có thể khiến bạn vi phạm bất kỳ luật hay quy định nào được đưa ra bởi cơ quan nhà nước."
 
@@ -4430,6 +4446,9 @@ msgstr "Chỉ năm năm sau khi thành lập, chúng tôi đã nhận được g
 msgid "Only one account is allowed per person. No winnings and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person."
 msgstr "Chỉ cho phép một người sử dụng một tài khoản. Không có tiền thưởng hoặc tiền bồi hoàn vào trong tài khoản với tên sai hoặc nhiều tài khoản được mở bởi cùng một người."
 
+msgid "Oops... Page Not Available"
+msgstr ""
+
 msgid "Open"
 msgstr "Mở"
 
@@ -5462,6 +5481,9 @@ msgstr "Rất tiếc, tính năng này chỉ khả dụng với tài khoản ti�
 msgid "Sorry, this feature is not available."
 msgstr "Xin lỗi, đặc tính này không có."
 
+msgid "Sorry, you have entered an incorrect cashier password"
+msgstr "Xin lỗi, bạn đã nhập sai mật khẩu thu ngân"
+
 msgid "Spam - We do not condone Spam"
 msgstr "Thư rác- Chúng tôi không bỏ qua cho thư rác"
 
@@ -6051,6 +6073,9 @@ msgstr "Thất thoát lớn nhất có thể xẩy ra cho Khách hàng 
 
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "Đã đạt đến độ dài tối đa của mã token (%1)."
+
+msgid "The page you requested could not be found. Either it no longer exists or the address is wrong. Please check for any typos."
+msgstr ""
 
 msgid "The patent means Regent Markets is the recognised pioneer of binary betting. The patent helps protect our innovations."
 msgstr "Bằng sáng chế có nghĩa là Regent Markets là nhà tiên phong được công nhận trong cá cược nhị phân. Bằng sáng chế giúp bảo vệ những đổi mới của chúng tôi."
@@ -8161,6 +8186,11 @@ msgstr "{JAPAN ONLY}Registration"
 msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "{JAPAN ONLY}Regulation & Tax"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}minute"
+msgid "{JAPAN ONLY}Remaining time"
+msgstr "{JAPAN ONLY}minute"
+
 msgid "{JAPAN ONLY}STAY-IN/BREAK-OUT"
 msgstr "{JAPAN ONLY}STAY-IN/BREAK-OUT"
 
@@ -8358,6 +8388,9 @@ msgstr "{JAPAN ONLY}years"
 msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 msgstr "Sàn Giao dịch Trực tuyến cho hợp đồng quyền chọn nhị phân về Thị trường ngoại hối, Chỉ số, Hàng hóa và các Chỉ số Thông minh"
 
+msgid "404"
+msgstr ""
+
 msgid "Why Us"
 msgstr "Lý do chọn chúng tôi"
 
@@ -8411,6 +8444,18 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 
 msgid "Trading with MetaTrader 5"
 msgstr "Kinh doanh với MetaTrader 5"
+
+#~ msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
+#~ msgstr "<span class='color-green font-weight-700'>Tất cả thời hạn:</span> từ 10 giây đến 365 ngày."
+
+#~ msgid "<span class='color-green font-weight-700'>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
+#~ msgstr "<span class='color-green font-weight-700'>Tất cả điều kiện thị trường:</span> lên/xuống, chạm/Không chạm, ở trong/ra ngoài."
+
+#~ msgid "<span class='color-green font-weight-700'>All markets:</span> currencies, stocks, indices, and commodities."
+#~ msgstr "<span class='color-green font-weight-700'>Tất cả các thị trường:</span> tiền tệ, chỉ số, chứng khoán, và hàng hóa."
+
+#~ msgid "<span class='color-green font-weight-700'>All payouts:</span> from $1 to $50,000."
+#~ msgstr "<span class='color-green font-weight-700'>Tất cả tiền thưởng:</span> từ $1 đến $50,000."
 
 #~ msgid "Please re-enter your email"
 #~ msgstr "Vui lòng nhập lại email của bạn"
@@ -9835,9 +9880,6 @@ msgstr "Kinh doanh với MetaTrader 5"
 
 #~ msgid "Sorry, you have already had too many unsuccessful attempts. Please try again in 5 minutes."
 #~ msgstr "Xin lỗi, bạn đã có quá nhiều hoạt động chưa thành công. XIn vui lòng thử lại sau 5 phút."
-
-#~ msgid "Sorry, you have entered an incorrect cashier password"
-#~ msgstr "Xin lỗi, bạn đã nhập sai mật khẩu thu ngân"
 
 #~ msgid "Sorry, you have entered an incorrect email address."
 #~ msgstr "Xin lỗi, bạn đã nhập sai địa chỉ email."
@@ -12372,9 +12414,6 @@ msgstr "Kinh doanh với MetaTrader 5"
 
 #~ msgid "There is no intraday data for %1 on %2."
 #~ msgstr "Không có dữ liệu trong ngày giao dịch cho %1 trên %2."
-
-#~ msgid "This account is unavailable. For any questions please contact <a href=\"%1\">Customer Support</a>."
-#~ msgstr "Tài khoản này không có sẵn. Nếu bạn có bất cứ câu hỏi nào, vui lòng liên hệ với <a href=\"%1\">Phòng Hỗ trợ khách hàng</a>."
 
 #~ msgid "This contract has expired."
 #~ msgstr "Hợp đồng này đã hết hạn."

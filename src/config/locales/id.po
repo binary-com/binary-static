@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-15 10:19+0000\n"
+"PO-Revision-Date: 2016-08-24 08:58+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
@@ -419,6 +419,11 @@ msgstr "<< Kembali ke Deskripsi Pekerjaan"
 msgid "<a class='pjaxload' href='mailto:%1'>Contact Us</a>"
 msgstr "<a class='pjaxload' href='mailto:%1'>Hubungi Kami</a>"
 
+#, fuzzy
+#| msgid "View <a href=\"%1\">Asset Index.</a>"
+msgid "<a href=\"%1\">Return to trading page</a>"
+msgstr "Lihat <a href=\"%1\">Index Aset.</a>"
+
 msgid "<a href='%1'>Founded</a> October 1999"
 msgstr "<a href='%1'>Didirikan</a> Oktober 1999"
 
@@ -474,18 +479,6 @@ msgstr ""
 "  <li>Pesan khusus yang ingin ditampilkan pada banner.</li>\n"
 "   </ul>"
 
-msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
-msgstr "<span class='color-green font-weight-700'>Semua durasi:</span> dari 10 detik hingga 365 hari."
-
-msgid "<span class='color-green font-weight-700'>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
-msgstr "<span class='color-green font-weight-700'>Semua kondisi pasar:</span> up/down, touch/no-touch, stays in/goes out."
-
-msgid "<span class='color-green font-weight-700'>All markets:</span> currencies, stocks, indices, and commodities."
-msgstr "<span class='color-green font-weight-700'>Semua pasar:</span> mata uang, saham, indeks, dan komoditas."
-
-msgid "<span class='color-green font-weight-700'>All payouts:</span> from $1 to $50,000."
-msgstr "<span class='color-green font-weight-700'>Semua hasil:</span> dari $1 hingga $50,000."
-
 msgid "<strong>2-way pricing</strong> - %1 quotes a trade and the counter-trade, so you always get unbiased, transparent prices."
 msgstr "<strong>harga 2-arah</strong> - %1 selalu memperlihatkan harga lawan arah dari trading Anda, dimana Anda memperoleh harga transparan."
 
@@ -495,8 +488,18 @@ msgstr "<strong>Paparan bisnis tambahan:</strong> Anda akan memperjelas layanan 
 msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
 msgstr "<strong>Alat canggih untuk analisa fundamental dan teknis,</strong> termasuk indikator, grafik, dan banyak lagi."
 
+#, fuzzy
+#| msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
+msgid "<strong>All durations:</strong> from 10 seconds to 365 days."
+msgstr "<strong>Semua durasi</strong> - dari 10 detik hingga 365 hari."
+
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>Semua durasi</strong> - dari 10 detik hingga 365 hari."
+
+#, fuzzy
+#| msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
+msgid "<strong>All market conditions:</strong> up/down, touch/no-touch, stays in/goes out."
+msgstr "<strong>Semua kondisi pasar</strong> - naik/turun, menyentuh/tidak menyentuh, di dalam/di luar."
 
 msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
 msgstr "<strong>Semua kondisi pasar</strong> - naik/turun, menyentuh/tidak menyentuh, di dalam/di luar."
@@ -504,8 +507,18 @@ msgstr "<strong>Semua kondisi pasar</strong> - naik/turun, menyentuh/tidak menye
 msgid "<strong>All markets, all conditions</strong> - trade currencies, indices and commodities in rising, falling, sideways, quiet and volatile markets."
 msgstr "<strong>Semua pasar, semua kondisi</strong> - trading mata uang, indeks dan komoditas pada kenaikan, penurunan, sideway, sepi atau volatilitas pasar."
 
+#, fuzzy
+#| msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
+msgid "<strong>All markets:</strong> currencies, stocks, indices, and commodities."
+msgstr "<strong>Semua pasar</strong> - valuta asing, indeks saham dan komoditas."
+
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgstr "<strong>Semua pasar</strong> - valuta asing, indeks saham dan komoditas."
+
+#, fuzzy
+#| msgid "<strong>All payouts</strong> - from $1 to $50,000."
+msgid "<strong>All payouts:</strong> from $1 to $50,000."
+msgstr "<strong>Hasil</strong> - dari $1 hingga $50,000."
 
 msgid "<strong>All payouts</strong> - from $1 to $50,000."
 msgstr "<strong>Hasil</strong> - dari $1 hingga $50,000."
@@ -1248,7 +1261,7 @@ msgid "Barrier Change"
 msgstr "Perubahan Batasan"
 
 msgid "Barrier offset"
-msgstr "Diluar Batasan"
+msgstr "Barrier offset"
 
 msgid "Barrier(s)"
 msgstr "Batas"
@@ -2927,6 +2940,11 @@ msgstr "Jika ketentuan apapun dalam Perjanjian ini dianggap tidak berlaku atau t
 msgid "If the Company is legally required to disclose your personal or financial information by law, regulation or pursuant to the order of a court of competent jurisdiction or a governmental agency, the Company  shall, unless legally prohibited, promptly notify you to that effect, in order to give you the opportunity to seek such protection for the information as it deems appropriate. Such required disclosure shall not be construed as a breach of this Terms and Conditions Agreement."
 msgstr "Jika Perusahaan diwajibkan secara hukum untuk menginformasikan data pribadi atau keuangan Anda oleh hukum, regulasi atau sesuai dengan perintah dari pengadilan yang berwenang atau badan pemerintah, Perusahaan harus, kecuali dilarang secara hukum, segera memberitahu Anda mengenai hal tersebut, untuk memberikan kesempatan kepada Anda dalam mencari perlindungan yang dianggap perlu. Pengungkapan yang diperlukan tersebut tidak dapat ditafsirkan sebagai pelanggaran Syarat dan Ketentuan Perjanjian ini."
 
+#, fuzzy
+#| msgid "This account is unavailable. For any questions please contact <a href=\"%1\">Customer Support</a>."
+msgid "If the issue keeps happening, please contact <a href=\"%1\">customer support</a>."
+msgstr "Akun ini untuk sementara dibatalkan, silahkan hubungi <a href=\"%1\">Customer Support</a>."
+
 msgid "If this Agreement is terminated for any reason, you must permanently delete all Content, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
 msgstr "Jika Perjanjian ini dihentikan berhubung alasan apapun, maka Anda harus menghapus secara permanen semua Konten, kecuali jika melakukan hal tersebut akan menyebabkan Anda melanggar hukum atau kewajiban yang dibebankan oleh sebuah otoritas pemerintah."
 
@@ -4431,6 +4449,11 @@ msgstr "Dalam waktu lima tahun kami telah mengantongi beberapa penghargaan. Hal 
 msgid "Only one account is allowed per person. No winnings and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person."
 msgstr "Hanya satu akun riil per orang. Anda tidak dibenarkan untuk melakukan penarikan dana jika akun dibuka menggunakan nama palsu atau jika anda memiliki lebih dari satu akun riil."
 
+#, fuzzy
+#| msgid "No Data available"
+msgid "Oops... Page Not Available"
+msgstr "tidak ada data yang ada"
+
 msgid "Open"
 msgstr "Awal"
 
@@ -5463,6 +5486,9 @@ msgstr "Maaf, fasilitas ini hanya tersedia untuk rekening virtual saja."
 msgid "Sorry, this feature is not available."
 msgstr "Maaf, fasilitas ini tidak tersedia."
 
+msgid "Sorry, you have entered an incorrect cashier password"
+msgstr "Maaf, kata sandi yang Anda masukkan salah"
+
 msgid "Spam - We do not condone Spam"
 msgstr "Spam - Kami tidak mentolerir Spam"
 
@@ -6057,6 +6083,9 @@ msgstr "Kerugian maksimal yang mungkin ditanggung oleh klien adalah sejumlah dan
 
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "Jumlah maksimum token (%1) telah tercapai."
+
+msgid "The page you requested could not be found. Either it no longer exists or the address is wrong. Please check for any typos."
+msgstr ""
 
 msgid "The patent means Regent Markets is the recognised pioneer of binary betting. The patent helps protect our innovations."
 msgstr "Paten berarti Regent Markets diakui sebagai perintis trading binary. Paten ini membantu melindungi inovasi kami."
@@ -7871,10 +7900,8 @@ msgstr "{JAPAN ONLY}If the buyer of an option does not exercise the option right
 msgid "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
 msgstr "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}day"
 msgid "{JAPAN ONLY}FX Rate"
-msgstr "{JAPAN ONLY}day"
+msgstr "{JAPAN ONLY}FX Rate"
 
 msgid "{JAPAN ONLY}Financial Condition"
 msgstr "{JAPAN ONLY}Financial Condition"
@@ -8077,10 +8104,8 @@ msgstr "{JAPAN ONLY}November 7, 2014"
 msgid "{JAPAN ONLY}Option Pricing"
 msgstr "{JAPAN ONLY}Option Pricing"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Option Pricing"
 msgid "{JAPAN ONLY}Option Type"
-msgstr "{JAPAN ONLY}Option Pricing"
+msgstr "{JAPAN ONLY}Option Type"
 
 msgid "{JAPAN ONLY}Option prices are normally dependant on elements such as the underlying asset price, the exercise price, the length of time until the exercise point, volatility, and interest rates. Apart from the fixed exercise price, all other elements are changing constantly, so an understanding of the relationships between each element and changes in the options price is necessary for the management of options trading risk."
 msgstr "{JAPAN ONLY}Option prices are normally dependant on elements such as the underlying asset price, the exercise price, the length of time until the exercise point, volatility, and interest rates. Apart from the fixed exercise price, all other elements are changing constantly, so an understanding of the relationships between each element and changes in the options price is necessary for the management of options trading risk."
@@ -8109,10 +8134,8 @@ msgstr "{JAPAN ONLY}Our Customer Support staff will contact you at each stage to
 msgid "{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:"
 msgstr "{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}month"
 msgid "{JAPAN ONLY}Payout Amount"
-msgstr "{JAPAN ONLY}month"
+msgstr "{JAPAN ONLY}Payout Amount"
 
 msgid "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\">here</a> for further information."
 msgstr "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\">here</a> for further information."
@@ -8158,6 +8181,11 @@ msgstr "{JAPAN ONLY}Registration"
 
 msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "{JAPAN ONLY}Regulation & Tax"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}minute"
+msgid "{JAPAN ONLY}Remaining time"
+msgstr "{JAPAN ONLY}minute"
 
 msgid "{JAPAN ONLY}STAY-IN/BREAK-OUT"
 msgstr "{JAPAN ONLY}STAY-IN/BREAK-OUT"
@@ -8282,10 +8310,8 @@ msgstr "{JAPAN ONLY}Trading & Hedging"
 msgid "{JAPAN ONLY}Trading Guide"
 msgstr "{JAPAN ONLY}Trading Guide"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Trading Guide"
 msgid "{JAPAN ONLY}Trading Period"
-msgstr "{JAPAN ONLY}Trading Guide"
+msgstr "{JAPAN ONLY}Trading Period"
 
 msgid "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
 msgstr "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
@@ -8356,6 +8382,9 @@ msgstr "{JAPAN ONLY}years"
 msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 msgstr "Platform Trading Online untuk opsi binary pada Forex, Indeks, Komoditas dan Indeks Smart"
 
+msgid "404"
+msgstr ""
+
 msgid "Why Us"
 msgstr "Mengapa Kami"
 
@@ -8409,6 +8438,18 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 msgid "Trading with MetaTrader 5"
 msgstr "Trading menggunakan MetaTrader 5"
+
+#~ msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
+#~ msgstr "<span class='color-green font-weight-700'>Semua durasi:</span> dari 10 detik hingga 365 hari."
+
+#~ msgid "<span class='color-green font-weight-700'>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
+#~ msgstr "<span class='color-green font-weight-700'>Semua kondisi pasar:</span> up/down, touch/no-touch, stays in/goes out."
+
+#~ msgid "<span class='color-green font-weight-700'>All markets:</span> currencies, stocks, indices, and commodities."
+#~ msgstr "<span class='color-green font-weight-700'>Semua pasar:</span> mata uang, saham, indeks, dan komoditas."
+
+#~ msgid "<span class='color-green font-weight-700'>All payouts:</span> from $1 to $50,000."
+#~ msgstr "<span class='color-green font-weight-700'>Semua hasil:</span> dari $1 hingga $50,000."
 
 #~ msgid "Please re-enter your email"
 #~ msgstr "Masukkan ulang email Anda"
@@ -9816,9 +9857,6 @@ msgstr "Trading menggunakan MetaTrader 5"
 
 #~ msgid "Sorry, you have already had too many unsuccessful attempts. Please try again in 5 minutes."
 #~ msgstr "Maaf, Anda telah gagal mengakses beberapa kali. Silakan coba kembali dalam waktu 5 menit lagi."
-
-#~ msgid "Sorry, you have entered an incorrect cashier password"
-#~ msgstr "Maaf, kata sandi yang Anda masukkan salah"
 
 #~ msgid "Sorry, you have entered an incorrect email address."
 #~ msgstr "Maaf, Anda telah memasukkan alamat email yang salah."
@@ -12354,9 +12392,6 @@ msgstr "Trading menggunakan MetaTrader 5"
 
 #~ msgid "There is no intraday data for %1 on %2."
 #~ msgstr "Tidak tersedia data intraday untuk %1 pada %2."
-
-#~ msgid "This account is unavailable. For any questions please contact <a href=\"%1\">Customer Support</a>."
-#~ msgstr "Akun ini untuk sementara dibatalkan, silahkan hubungi <a href=\"%1\">Customer Support</a>."
 
 #~ msgid "This contract has expired."
 #~ msgstr "Kontrak berikut telah berakhir."
@@ -16442,9 +16477,6 @@ msgstr "Trading menggunakan MetaTrader 5"
 
 #~ msgid "In these terms and conditions, Y represents the amount of funds that you must deposit and X represents the bonus amount that you will receive."
 #~ msgstr "Pada terma dan kondisi ini, Y mewakili jumlah dana yang harus anda depositkan X mewakili jumlah bonus yang akan anda terima."
-
-#~ msgid "No Data available"
-#~ msgstr "tidak ada data yang ada"
 
 #~ msgid "The bonus will only be paid according to the first deposit amount, and will not be given based on multiple deposits that accumulate to Y."
 #~ msgstr "Bonus hanya akan diberikan berdasarkan deposit awal dan bukan berdasarkan penjumlahan beberapa deposit yang menghasilkan Y."
@@ -20638,9 +20670,6 @@ msgstr "Trading menggunakan MetaTrader 5"
 
 #~ msgid "This contract is not on offer <a href=\"%1\">at this time</a>."
 #~ msgstr "Kontrak ini tidak tersedia <a href=\"%1\">untuk saat ini</a>."
-
-#~ msgid "View <a href=\"%1\">Asset Index.</a>"
-#~ msgstr "Lihat <a href=\"%1\">Index Aset.</a>"
 
 #~ msgid "We do not allow the purchase of contracts with an expiry after market close. Please adjust the duration and try again."
 #~ msgstr "Anda tidak dapat membeli kontrak yang berakhir setelah penutupan market. Silahkan rubah waktu berakhir dan coba kembali."
