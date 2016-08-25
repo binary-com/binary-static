@@ -19,5 +19,7 @@ var LiveAPI = (function() {
             });
             return sockPromise;
         }
+        sockPromise = Promise.resolve(sock);
+        return sockPromise;
     };
 })();
