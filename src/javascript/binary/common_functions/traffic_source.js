@@ -26,7 +26,11 @@ var TrafficSource = (function(){
 
     var getData = function() {
         initCookie();
-        return cookie.value;
+        var data = cookie.value;
+        Object.keys(data).map(function(key) {
+            data[key] = (data[key] || '').replace(/[^a-zA-Z0-9\s\-\.\_]/gi, '').substring(0, 100);
+        });
+        return data;
     };
 
     var getSource = function(utm_data) {
@@ -49,9 +53,14 @@ var TrafficSource = (function(){
             });
         }
 
-        if(document.referrer && !current_values.referrer && !params.utm_source && !current_values.utm_source) {
-            var referrer = (new URL(document.referrer)).location.hostname;
-            cookie.set('referrer', referrer);
+        var doc_ref  = document.referrer,
+            referrer = localStorage.getItem('index_referrer') || doc_ref;
+        localStorage.removeItem('index_referrer');
+        if(doc_ref && !(new RegExp(window.location.hostname, 'i')).test(doc_ref)) {
+            referrer = doc_ref;
+        }
+        if(referrer && !current_values.referrer && !params.utm_source && !current_values.utm_source) {
+            cookie.set('referrer', (new URL(referrer)).location.hostname);
         }
     };
 
