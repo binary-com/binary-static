@@ -41,7 +41,7 @@ var ApplicationsUI = (function(){
 
     function update(apps) {
         $('#loading').remove();
-        createTable(apps);
+        createTable(apps.map(ApplicationsData.parse));
         if (!apps.length) {
             flexTable.displayError(text.localize(messages.no_apps), 7);
             return;
@@ -53,10 +53,12 @@ var ApplicationsUI = (function(){
         var $button = $buttonSpan.children('.button').first();
         $button.text(text.localize(messages.revoke_access));
         $button.on('click', function() {
-            if (window.confirm(text.localize(messages.revoke_confirm) + ": '" + app.name + "'?")) {
-                ApplicationsData.revoke(app.id);
-                container.css({ opacity: 0.5 });
-            }
+            var confirmation = text.localize(messages.revoke_confirm) + ": '" + app.name + "'?";
+            if (!window.confirm(confirmation)) return;
+            container.css({ opacity: 0.5 });
+            ApplicationsData.revoke(app.id)
+                .then(function(response) { update(response.oauth_apps); })
+                .catch(function(error) { displayError(error.message); });
         });
         return $buttonSpan;
     }

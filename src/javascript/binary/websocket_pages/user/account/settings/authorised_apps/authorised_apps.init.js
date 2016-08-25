@@ -1,20 +1,15 @@
 var Applications = (function() {
     "use strict";
 
-    function responseHandler(response) {
-        if (response.error && response.error.message) {
-            return ApplicationsUI.displayError(response.error.message);
-        }
-        var apps = response.oauth_apps.map(ApplicationsData.parse);
-        ApplicationsUI.update(apps);
-    }
-
     function init() {
         ApplicationsUI.init();
-        BinarySocket.init({
-            onmessage: ApplicationsData.calls(responseHandler)
-        });
-        ApplicationsData.list();
+        ApplicationsData.list()
+            .then(function(response) {
+                ApplicationsUI.update(response.oauth_apps);
+            })
+            .catch(function(error) {
+                ApplicationsUI.displayError(error.message);
+            });
     }
 
     function clean() {
