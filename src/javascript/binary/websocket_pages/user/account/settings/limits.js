@@ -9,25 +9,16 @@ pjax_config_page_require_auth("limitsws", function(){
                 return;
             }
 
-            BinarySocket.init({
-                onmessage: function(msg){
-                    var response = JSON.parse(msg.data);
-                    if (response) {
-                        var type = response.msg_type;
-                        var error = response.error;
-
-                        if (type === 'authorize' && TUser.get().is_virtual){
-                            LimitsWS.limitsError(error);
-                        } else if (type === 'get_limits' && !error){
-                            LimitsWS.limitsHandler(response);
-                        } else if (error) {
-                            LimitsWS.limitsError(error);
-                        }
-                    }
-                }
-            });
-
-            BinarySocket.send({get_limits: 1});
+            LiveAPI()
+                .then(function(s) { return s.send({get_limits: 1}); })
+                .then(function(response) {
+                    console.log(response);
+                    LimitsWS.limitsHandler(response);
+                })
+                .catch(function(error) {
+                    console.log(error);
+                    LimitsWS.limitsError(error);
+                });
         },
         onUnload: function(){
             LimitsWS.clean();
