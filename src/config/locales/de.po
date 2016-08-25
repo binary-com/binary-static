@@ -414,6 +414,9 @@ msgstr "<< Back to Job Beschreibungen"
 msgid "<a class='pjaxload' href='mailto:%1'>Contact Us</a>"
 msgstr "<a class='pjaxload' href='mailto:%1'>Sich mit uns in Verbindung setzen</a>"
 
+msgid "<a href=\"%1\">Return to trading page</a>"
+msgstr ""
+
 msgid "<a href='%1'>Founded</a> October 1999"
 msgstr "<a href='%1'>Gegründet</a> Oktober 1999"
 
@@ -470,18 +473,6 @@ msgstr ""
 "  <li>Spezifische Mitteilung, die das Banner enthalten soll.</li>\n"
 " </ul>"
 
-msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
-msgstr "<span class='color-green font-weight-700'>Alle Laufzeiten:</span> von 10 Sekunden bis 365 Tage."
-
-msgid "<span class='color-green font-weight-700'>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
-msgstr "<span class='color-green font-weight-700'>Alle Marktbedingungen:</span> Auf/ab, erreicht/erreicht nicht, bleibt unter/geht über."
-
-msgid "<span class='color-green font-weight-700'>All markets:</span> currencies, stocks, indices, and commodities."
-msgstr "<span class='color-green font-weight-700'>Alle Kurse:</span> Währungen, Aktien, Indizes und Rohstoffe."
-
-msgid "<span class='color-green font-weight-700'>All payouts:</span> from $1 to $50,000."
-msgstr "<span class='color-green font-weight-700'>Alle Auszahlungen:</span> von 1 € bis 50.000 €."
-
 msgid "<strong>2-way pricing</strong> - %1 quotes a trade and the counter-trade, so you always get unbiased, transparent prices."
 msgstr "<strong>2-Wege Kursermittlung</strong> - %1 notiert den Preis eines Geschäfts und des Gegengeschäfts, damit Sie immer objektive und transparente Kurse erhalten."
 
@@ -491,8 +482,18 @@ msgstr "<strong>Zusätzliche Geschäftsmöglichkeiten:</strong> Sie können die 
 msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
 msgstr "<strong>Fortschrittliche Tools für die fundamentale und technische Analyse,</strong> einschließlich Indikatoren, Charts und mehr."
 
+#, fuzzy
+#| msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
+msgid "<strong>All durations:</strong> from 10 seconds to 365 days."
+msgstr "<strong>Alle Laufzeiten</strong> - von 10 Sekunden bis 365 Tage."
+
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>Alle Laufzeiten</strong> - von 10 Sekunden bis 365 Tage."
+
+#, fuzzy
+#| msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
+msgid "<strong>All market conditions:</strong> up/down, touch/no-touch, stays in/goes out."
+msgstr "<strong>Alle Marktbedingungen</strong> - hoch/tief, Ziel/kein Ziel, bleibt unter/geht über."
 
 msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
 msgstr "<strong>Alle Marktbedingungen</strong> - hoch/tief, Ziel/kein Ziel, bleibt unter/geht über."
@@ -500,8 +501,18 @@ msgstr "<strong>Alle Marktbedingungen</strong> - hoch/tief, Ziel/kein Ziel, blei
 msgid "<strong>All markets, all conditions</strong> - trade currencies, indices and commodities in rising, falling, sideways, quiet and volatile markets."
 msgstr "<strong>Alle Märkte, alle Bedingungen</strong> - Währungen, Indizes und Rohstoffe bei steigenden, fallenden, seitwärts, ruhigen und volatilen Kursen handeln."
 
+#, fuzzy
+#| msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
+msgid "<strong>All markets:</strong> currencies, stocks, indices, and commodities."
+msgstr "<strong>Alle Märkte</strong> - Währungen, Aktienindizes und Rohstoffe."
+
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgstr "<strong>Alle Märkte</strong> - Währungen, Aktienindizes und Rohstoffe."
+
+#, fuzzy
+#| msgid "<strong>All payouts</strong> - from $1 to $50,000."
+msgid "<strong>All payouts:</strong> from $1 to $50,000."
+msgstr "<strong>Alle Auszahlungen</strong> - von 1 € bis 50.000 €."
 
 msgid "<strong>All payouts</strong> - from $1 to $50,000."
 msgstr "<strong>Alle Auszahlungen</strong> - von 1 € bis 50.000 €."
@@ -2923,6 +2934,11 @@ msgstr "Falls eine Klausel dieser Vereinbarung für ungültig erachtet wird oder
 msgid "If the Company is legally required to disclose your personal or financial information by law, regulation or pursuant to the order of a court of competent jurisdiction or a governmental agency, the Company  shall, unless legally prohibited, promptly notify you to that effect, in order to give you the opportunity to seek such protection for the information as it deems appropriate. Such required disclosure shall not be construed as a breach of this Terms and Conditions Agreement."
 msgstr "Wenn das Unternehmen durch Gesetzesverordnung oder zur Befolgung einer Anordnung eines zuständigen Gerichts oder einer Regierungsbehörde verpflichtet ist, Ihre persönlichen oder finanziellen Angaben offenzulegen, dann muss das Unternehmen Sie, es sei denn, es sei gesetzlich untersagt, unverzüglich hierüber in Kenntnis setzen, damit Ihnen die Gelegenheit gegeben wird, ggfls. nach Schutz für die Informationen nachzusuchen. Eine Pflicht zur Offenlegung darf nicht als Verletzung der vertraglich vereinbarten Allgemeinen Geschäftsbedingungen ausgelegt werden."
 
+#, fuzzy
+#| msgid "This account is unavailable. For any questions please contact <a href=\"%1\">Customer Support</a>."
+msgid "If the issue keeps happening, please contact <a href=\"%1\">customer support</a>."
+msgstr "Dieses Konto ist nicht vorhanden. Bei Fragen hierzu setzen Sie sich bitte mit der <a href=\"%1\">Kundenbetreuung</a> in Verbindung."
+
 msgid "If this Agreement is terminated for any reason, you must permanently delete all Content, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
 msgstr "Wenn diese Vereinbarung aus irgendeinem Grund gekündigt wird, müssen Sie sofort jeglichen Inhalt löschen, es sei denn, Sie würden hierdurch Gesetze oder von Regierungsbehörden auferlegte Pflichten verletzen."
 
@@ -4424,6 +4440,11 @@ msgstr "Nur fünf Jahre nach der Gründung erhalten wir diese bedeutende Auszeic
 msgid "Only one account is allowed per person. No winnings and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person."
 msgstr "Es ist nur ein Konto pro Person erlaubt. Auf Konten, die unter falschem Namen eröffnet wurden oder mehrere Konten, die von der gleichen Person eröffnet wurden, können keine Gewinne und/oder Erstattungen eingesammelt werden."
 
+#, fuzzy
+#| msgid "No Data available"
+msgid "Oops... Page Not Available"
+msgstr "Keine Daten verfügbar"
+
 msgid "Open"
 msgstr "Offen"
 
@@ -5456,6 +5477,9 @@ msgstr "Leider steht diese Funktion nur für virtuelle Konten zur Verfügung."
 msgid "Sorry, this feature is not available."
 msgstr "Leider ist diese Funktion nicht vorhanden."
 
+msgid "Sorry, you have entered an incorrect cashier password"
+msgstr "Es tut uns leid, aber Sie haben ein ungültiges Kassen-Passwort eingegeben"
+
 msgid "Spam - We do not condone Spam"
 msgstr "Spam - Wir dulden kein Spam"
 
@@ -6047,6 +6071,9 @@ msgstr "Der maximale Verlust, den ein Kunde erleiden kann, ist der Geldbetrag, d
 
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "Die Höchstzahl an Token (%1) wurde erreicht."
+
+msgid "The page you requested could not be found. Either it no longer exists or the address is wrong. Please check for any typos."
+msgstr ""
 
 msgid "The patent means Regent Markets is the recognised pioneer of binary betting. The patent helps protect our innovations."
 msgstr "Das Patent bedeutet, dass Regent Markets ein anerkannter Pionier für binäre Wetten ist. Das Patent hilft, unsere Erfindungen zu schützen."
@@ -8157,6 +8184,11 @@ msgstr "{JAPAN ONLY}Registration"
 msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "{JAPAN ONLY}Regulation & Tax"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}minute"
+msgid "{JAPAN ONLY}Remaining time"
+msgstr "{JAPAN ONLY}minute"
+
 msgid "{JAPAN ONLY}STAY-IN/BREAK-OUT"
 msgstr "{JAPAN ONLY}STAY-IN/BREAK-OUT"
 
@@ -8354,6 +8386,9 @@ msgstr "{JAPAN ONLY}years"
 msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 msgstr "Online Handelsplattform für Binäre Optionen auf Devisen, Indizes, Rohstoffe und Smart Indizes"
 
+msgid "404"
+msgstr ""
+
 msgid "Why Us"
 msgstr "Warum uns"
 
@@ -8407,6 +8442,18 @@ msgstr "Allgemeine Geschäftsbedingungen Zustimmung"
 
 msgid "Trading with MetaTrader 5"
 msgstr "Handeln mit MetaTrader 5"
+
+#~ msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
+#~ msgstr "<span class='color-green font-weight-700'>Alle Laufzeiten:</span> von 10 Sekunden bis 365 Tage."
+
+#~ msgid "<span class='color-green font-weight-700'>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
+#~ msgstr "<span class='color-green font-weight-700'>Alle Marktbedingungen:</span> Auf/ab, erreicht/erreicht nicht, bleibt unter/geht über."
+
+#~ msgid "<span class='color-green font-weight-700'>All markets:</span> currencies, stocks, indices, and commodities."
+#~ msgstr "<span class='color-green font-weight-700'>Alle Kurse:</span> Währungen, Aktien, Indizes und Rohstoffe."
+
+#~ msgid "<span class='color-green font-weight-700'>All payouts:</span> from $1 to $50,000."
+#~ msgstr "<span class='color-green font-weight-700'>Alle Auszahlungen:</span> von 1 € bis 50.000 €."
 
 #~ msgid "Please re-enter your email"
 #~ msgstr "Bitte geben Sie Ihre E-Mail Adresse erneut ein"
@@ -9766,9 +9813,6 @@ msgstr "Handeln mit MetaTrader 5"
 
 #~ msgid "Sorry, you have already had too many unsuccessful attempts. Please try again in 5 minutes."
 #~ msgstr "Es tut uns leid, aber Sie haben zu oft erfolglos versucht, sich einzuloggen. Bitte versuchen Sie es in 5 Minuten wieder."
-
-#~ msgid "Sorry, you have entered an incorrect cashier password"
-#~ msgstr "Es tut uns leid, aber Sie haben ein ungültiges Kassen-Passwort eingegeben"
 
 #~ msgid "Sorry, you have entered an incorrect email address."
 #~ msgstr "Es tut uns leid, aber Sie haben eine ungültige E-Mail Adresse eingegeben."
@@ -12362,9 +12406,6 @@ msgstr "Handeln mit MetaTrader 5"
 
 #~ msgid "There is no intraday data for %1 on %2."
 #~ msgstr "Es gibt am %2 keine Intraday-Daten für %1."
-
-#~ msgid "This account is unavailable. For any questions please contact <a href=\"%1\">Customer Support</a>."
-#~ msgstr "Dieses Konto ist nicht vorhanden. Bei Fragen hierzu setzen Sie sich bitte mit der <a href=\"%1\">Kundenbetreuung</a> in Verbindung."
 
 #~ msgid "This contract has expired."
 #~ msgstr "Dieser Kontrakt ist abgelaufen."
@@ -16340,9 +16381,6 @@ msgstr "Handeln mit MetaTrader 5"
 
 #~ msgid "In these terms and conditions, Y represents the amount of funds that you must deposit and X represents the bonus amount that you will receive."
 #~ msgstr "In diesen Geschäftsbedingungen repräsentiert Y den Geldbetrag, den Sie einzahlen müssen und X den Bonusbetrag, den Sie erhalten."
-
-#~ msgid "No Data available"
-#~ msgstr "Keine Daten verfügbar"
 
 #~ msgid "The bonus will only be paid according to the first deposit amount, and will not be given based on multiple deposits that accumulate to Y."
 #~ msgstr "Der Bonus wird nur in Bezug auf den Betrag der ersten Einzahlung bezahlt und beruht nicht auf Mehrfach-Einzahlungen, die auf Y angesammelt werden."
