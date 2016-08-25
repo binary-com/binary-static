@@ -16,7 +16,10 @@ var SettingsDetailsWS = (function() {
 
     function init() {
         var isJP = page.client.residence === 'jp';
-        BinarySocket.send({"get_settings": "1"});
+        LiveAPI.send({get_settings: '1'})
+            .then(function(r) { getDetailsResponse(r); })
+            .catch(handleError);
+
         bind_validation.simple($(formID)[0], {
             schema: isJP ? getJPSchema() : getNonJPSchema(),
             submit: function(ev, info) {
@@ -53,7 +56,9 @@ var SettingsDetailsWS = (function() {
         // Generate states list
         var residence = Cookies.get('residence');
         if (residence) {
-            BinarySocket.send({"states_list": residence, "passthrough": {"value": data.address_state}});
+            LiveAPI.send({states_list: residence})
+                .then(function(response) { populateStates(response, data.address_state); })
+                .catch(handleError);
         }
         if (page.client.residence === 'jp') {
             var jpData = response.get_settings.jp_settings;
@@ -109,9 +114,8 @@ var SettingsDetailsWS = (function() {
         $(formID).removeClass('hidden');
     }
 
-    function populateStates(response) {
+    function populateStates(response, defaultValue) {
         var $field = $(fieldIDs.state);
-        var defaultValue = response.echo_req.passthrough.value;
         var states = response.states_list;
 
         $field.empty();
@@ -222,8 +226,9 @@ var SettingsDetailsWS = (function() {
         Object.keys(data).forEach(function(key) {
             req[key] = data[key];
         });
-        console.log(req);
-        BinarySocket.send(req);
+        LiveAPI.send(req)
+            .then(function(response) { setDetailsResponse(response); })
+            .catch(handleError);
     }
 
     function showFormMessage(msg, isSuccess) {
@@ -244,11 +249,12 @@ var SettingsDetailsWS = (function() {
             'Your settings have been updated successfully.', !isError);
     }
 
+    function handleError(error) {
+        $('#formMessage').attr('class', 'errorfield').text(response.error.message);
+    }
+
     return {
         init: init,
-        getDetailsResponse: getDetailsResponse,
-        setDetailsResponse: setDetailsResponse,
-        populateStates: populateStates
     };
 }());
 
@@ -257,33 +263,6 @@ var SettingsDetailsWS = (function() {
 pjax_config_page_require_auth("settings/detailsws", function() {
     return {
         onLoad: function() {
-            BinarySocket.init({
-                onmessage: function(msg) {
-                    var response = JSON.parse(msg.data);
-                    if (!response) {
-                        console.log('some error occured');
-                        return;
-                    }
-                    var type = response.msg_type;
-                    switch(type){
-                        case "get_settings":
-                            SettingsDetailsWS.getDetailsResponse(response);
-                            break;
-                        case "set_settings":
-                            SettingsDetailsWS.setDetailsResponse(response);
-                            break;
-                        case "states_list":
-                            SettingsDetailsWS.populateStates(response);
-                            break;
-                        case "error":
-                            $('#formMessage').attr('class', 'errorfield').text(response.error.message);
-                            break;
-                        default:
-                            break;
-                    }
-                }
-            });
-
             Content.populate();
             SettingsDetailsWS.init();
         }
