@@ -420,6 +420,9 @@ msgstr "<< กลับไปรายละเอียดของตำแห
 msgid "<a class='pjaxload' href='mailto:%1'>Contact Us</a>"
 msgstr "<a class='pjaxload' href='mailto:%1'>ติดต่อเรา</a>"
 
+msgid "<a href=\"%1\">Return to trading page</a>"
+msgstr ""
+
 msgid "<a href='%1'>Founded</a> October 1999"
 msgstr "<a href='%1'>ก่อตั้งเมื่อ</a> ตุลาคม พ.ศ. 2542 (ค.ศ. 1999)"
 
@@ -475,18 +478,6 @@ msgstr ""
 "        <li>ระบุข้อความบนแบนเนอร์</li>\n"
 "    </ul>"
 
-msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
-msgstr "<span class='color-green font-weight-700'>ระยะเวลาทั้งหมด:</span> 10 วินาที ถึง 365 วัน"
-
-msgid "<span class='color-green font-weight-700'>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
-msgstr "<span class='color-green font-weight-700'>เงื่อนไขของตลาด:</span> up/down, touch/no-touch และ stays in/goes out"
-
-msgid "<span class='color-green font-weight-700'>All markets:</span> currencies, stocks, indices, and commodities."
-msgstr "<span class='color-green font-weight-700'>ประเภทตลาด:</span> สกุลเงินต่างๆ หุ้นต่างๆ ดัชนีต่างๆ และ สินค้าโภคภัณฑ์ต่างๆ"
-
-msgid "<span class='color-green font-weight-700'>All payouts:</span> from $1 to $50,000."
-msgstr "<span class='color-green font-weight-700'>การชำระเงิน:</span> 1 ถึง 50,000 ดอลลาร์สหรัฐ"
-
 msgid "<strong>2-way pricing</strong> - %1 quotes a trade and the counter-trade, so you always get unbiased, transparent prices."
 msgstr "<strong>ราคาสองทาง</strong> - %1 ตั้งราคาซื้อขาย และ เทรดผ่านตัวแทน ไม่ว่าช่องทางใด ท่านจะได้เห็นข้อมูลเดียวกัน ไม่ปกปิด ราคาโปร่งใส ตรงไปตรงมา"
 
@@ -496,8 +487,18 @@ msgstr "<strong>มากกว่าโอกาสทางธุรกิจ:
 msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
 msgstr "<strong>เครื่องมือขั้นสูงสำหรับการวิเคราะห์พื้นฐานและเชิงเทคนิค</strong> รวมถึง ดัชนีต่างๆ แผนภูมิต่างๆ และอื่นๆ"
 
+#, fuzzy
+#| msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
+msgid "<strong>All durations:</strong> from 10 seconds to 365 days."
+msgstr "<strong>ระยะเวลาทั้งหมด</strong> - 10 วินาที ถึง 365 วัน"
+
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>ระยะเวลาทั้งหมด</strong> - 10 วินาที ถึง 365 วัน"
+
+#, fuzzy
+#| msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
+msgid "<strong>All market conditions:</strong> up/down, touch/no-touch, stays in/goes out."
+msgstr "<strong>เงื่อนไขทางการตลาด</strong> - Up/Down, Touch/No-Touch, Stays In/Goes Out"
 
 msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
 msgstr "<strong>เงื่อนไขทางการตลาด</strong> - Up/Down, Touch/No-Touch, Stays In/Goes Out"
@@ -505,8 +506,18 @@ msgstr "<strong>เงื่อนไขทางการตลาด</strong> 
 msgid "<strong>All markets, all conditions</strong> - trade currencies, indices and commodities in rising, falling, sideways, quiet and volatile markets."
 msgstr "<strong>ประเภทตลาดและเงื่อนไข</strong> - เทรดสกุลเงินต่างๆ หุ้นต่างๆ ดัชนีต่างๆ และ สินค้าโภคภัณฑ์ต่างๆ ทั้งขาขึ้น ขาลง ไซด์เวย์ ภาวะตลาดที่สงบและภาวะไม่แน่นอน"
 
+#, fuzzy
+#| msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
+msgid "<strong>All markets:</strong> currencies, stocks, indices, and commodities."
+msgstr "<strong>ประเภทตลาด</strong> - สกุลเงินต่างๆ ดัชนีหลักทรัพย์ต่างๆ และ สินค้าโภคภัณฑ์ต่างๆ"
+
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgstr "<strong>ประเภทตลาด</strong> - สกุลเงินต่างๆ ดัชนีหลักทรัพย์ต่างๆ และ สินค้าโภคภัณฑ์ต่างๆ"
+
+#, fuzzy
+#| msgid "<strong>All payouts</strong> - from $1 to $50,000."
+msgid "<strong>All payouts:</strong> from $1 to $50,000."
+msgstr "<strong>การชำระเงิน</strong> - 1 ถึง 50,000 ดอลลาร์สหรัฐ"
 
 msgid "<strong>All payouts</strong> - from $1 to $50,000."
 msgstr "<strong>การชำระเงิน</strong> - 1 ถึง 50,000 ดอลลาร์สหรัฐ"
@@ -2934,6 +2945,11 @@ msgstr "หากเงื่อนไขของข้อตกลงนี้
 msgid "If the Company is legally required to disclose your personal or financial information by law, regulation or pursuant to the order of a court of competent jurisdiction or a governmental agency, the Company  shall, unless legally prohibited, promptly notify you to that effect, in order to give you the opportunity to seek such protection for the information as it deems appropriate. Such required disclosure shall not be construed as a breach of this Terms and Conditions Agreement."
 msgstr "หากบริษัทฯ แสดงความจำนงทางกฎหมายในการเปิดเผยข้อมูลส่วนบุคคล หรือ ข้อมูลทางการเงินของท่านตามกฎหมาย หลักเกณฑ์ หรือ การร้องขอตามคำสั่งศาล หรือ หน่วยงานภาครัฐ นั้น บริษัทฯ จะแจ้งเหตุดังกล่าวให้ท่านทราบทันที เพื่อให้ท่านมีโอกาสในการแสวงหาการป้องกันข้อมูลตามความเหมาะสม เว้นเสียแต่ว่า มีคำสั่งห้ามตามกฎหมาย การเปิดเผยข้อมูลดังกล่าว ไม่ถือว่าเป็นการฝ่าฝืน หรือผิดต่อข้อตกลงและเงื่อนไขนี้"
 
+#, fuzzy
+#| msgid "This account is unavailable. For any questions please contact <a href=\"%1\">Customer Support</a>."
+msgid "If the issue keeps happening, please contact <a href=\"%1\">customer support</a>."
+msgstr "บัญชีนี้ไม่สามารถใช้งานได้ หากท่านมีข้อสงสัยประการใด โปรดติดต่อ <a href=\"%1\">เจ้าหน้าที่ลูกค้าสัมพันธ์</a>"
+
 msgid "If this Agreement is terminated for any reason, you must permanently delete all Content, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
 msgstr "หากข้อตกลงนี้ถูกทำให้สิ้นสุดไม่ว่าด้วยกรณีใด ท่านต้องลบข้อมูลที่เกี่ยวข้องอย่างถาวร ยกเว้นการการกระทำต่างๆ ที่อาจจะส่งผลให้ท่านฝ่าฝืนกฎหมายใดๆ หรือ หน้าที่ความรับผิดชอบตามประกาศภาครัฐ"
 
@@ -4438,6 +4454,9 @@ msgstr "เพียงระยะเวลา 5 ปี หลังจาก�
 msgid "Only one account is allowed per person. No winnings and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person."
 msgstr "แต่ละบุคคลอนุญาตให้มีบัญชีเพียง 1 บัญชี จะไม่มีการได้รับผลกำไร และ/หรือ การคืนเงินจากบัญชีที่เปิดด้วยชื่อที่ไม่ถูกต้อง หรือ บุคคลเดียวกันที่เปิดหลายบัญชี"
 
+msgid "Oops... Page Not Available"
+msgstr ""
+
 msgid "Open"
 msgstr "เปิด"
 
@@ -5473,6 +5492,11 @@ msgstr "ขออภัย ฟังก์ชันนี้มีให้ใ�
 msgid "Sorry, this feature is not available."
 msgstr "ขออภัย ไม่สามารถใช้งานฟังก์ชันนี้ได้"
 
+#, fuzzy
+#| msgid "Sorry, you have entered an incorrect email address."
+msgid "Sorry, you have entered an incorrect cashier password"
+msgstr "ขออภัยค่ะ ท่านป้อนอีเมล์ไม่ถูกต้อง"
+
 msgid "Spam - We do not condone Spam"
 msgstr "สแปม - เราไม่เอาโทษสแปม"
 
@@ -6068,6 +6092,9 @@ msgstr ""
 
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "จำนวนมากที่สุดของโทเค่น (%1) ถูกใช้หมดแล้ว"
+
+msgid "The page you requested could not be found. Either it no longer exists or the address is wrong. Please check for any typos."
+msgstr ""
 
 msgid "The patent means Regent Markets is the recognised pioneer of binary betting. The patent helps protect our innovations."
 msgstr "สิทธิบัตร หมายถึง Regent Markets ได้รับการยอมรับให้เป็นผู้บุกเบิกการซื้อขายไบนารี สิทธิบัตรช่วยป้องกันนวัตกรรมที่พวกเราได้สร้างสรรค์ขึ้น"
@@ -8174,6 +8201,11 @@ msgstr "{JAPAN ONLY}Registration"
 msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "{JAPAN ONLY}Regulation & Tax"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}minute"
+msgid "{JAPAN ONLY}Remaining time"
+msgstr "{JAPAN ONLY}minute"
+
 msgid "{JAPAN ONLY}STAY-IN/BREAK-OUT"
 msgstr "{JAPAN ONLY}STAY-IN/BREAK-OUT"
 
@@ -8371,6 +8403,9 @@ msgstr "{JAPAN ONLY}years"
 msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 msgstr "รูปแบบการซื้อขายออนไลน์สำหรับไบนารีออปชั่นของ ฟอเร็กซ์ ดัชนีต่างๆ สินค้าโภคภัณฑ์ และดัชนีสมาร์ท"
 
+msgid "404"
+msgstr ""
+
 msgid "Why Us"
 msgstr "ทำไมต้องเป็นเรา"
 
@@ -8424,6 +8459,18 @@ msgstr "การอนุมัติข้อตกลงและเงื่
 
 msgid "Trading with MetaTrader 5"
 msgstr "การซื้อขายด้วย MetaTrader 5"
+
+#~ msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
+#~ msgstr "<span class='color-green font-weight-700'>ระยะเวลาทั้งหมด:</span> 10 วินาที ถึง 365 วัน"
+
+#~ msgid "<span class='color-green font-weight-700'>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
+#~ msgstr "<span class='color-green font-weight-700'>เงื่อนไขของตลาด:</span> up/down, touch/no-touch และ stays in/goes out"
+
+#~ msgid "<span class='color-green font-weight-700'>All markets:</span> currencies, stocks, indices, and commodities."
+#~ msgstr "<span class='color-green font-weight-700'>ประเภทตลาด:</span> สกุลเงินต่างๆ หุ้นต่างๆ ดัชนีต่างๆ และ สินค้าโภคภัณฑ์ต่างๆ"
+
+#~ msgid "<span class='color-green font-weight-700'>All payouts:</span> from $1 to $50,000."
+#~ msgstr "<span class='color-green font-weight-700'>การชำระเงิน:</span> 1 ถึง 50,000 ดอลลาร์สหรัฐ"
 
 #~ msgid "Please re-enter your email"
 #~ msgstr "โปรดป้อนอีเมล์ของท่านอีกครั้ง"
@@ -9799,9 +9846,6 @@ msgstr "การซื้อขายด้วย MetaTrader 5"
 
 #~ msgid "Sorry, you have already had too many unsuccessful attempts. Please try again in 5 minutes."
 #~ msgstr "ขออภัยค่ะ ท่านได้พยายามเข้าสู่ระบบแต่ไม่สำเร็จหลายครั้ง โปรดลองใหม่อีกครั้งในอีก 5 นาที"
-
-#~ msgid "Sorry, you have entered an incorrect email address."
-#~ msgstr "ขออภัยค่ะ ท่านป้อนอีเมล์ไม่ถูกต้อง"
 
 #~ msgid "Sorry, you have exceeded the maximum allowable transactions for today."
 #~ msgstr "ขออภัยค่ะ ท่านได้ใช้วงเงินเกินจำนวนสูงสุดของวันนี้แล้ว"
@@ -12136,9 +12180,6 @@ msgstr "การซื้อขายด้วย MetaTrader 5"
 
 #~ msgid "Thank you for verifying your email."
 #~ msgstr "ขอบคุณสำหรับการตรวจสอบอีเมล์ของท่าน"
-
-#~ msgid "This account is unavailable. For any questions please contact <a href=\"%1\">Customer Support</a>."
-#~ msgstr "บัญชีนี้ไม่สามารถใช้งานได้ หากท่านมีข้อสงสัยประการใด โปรดติดต่อ <a href=\"%1\">เจ้าหน้าที่ลูกค้าสัมพันธ์</a>"
 
 #~ msgid "This contract has expired."
 #~ msgstr "สัญญานี้หมดอายุ"

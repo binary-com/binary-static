@@ -482,6 +482,9 @@ msgstr "<< العودة إلى توصيف الوظائف"
 msgid "<a class='pjaxload' href='mailto:%1'>Contact Us</a>"
 msgstr "<a class='pjaxload' href='mailto:%1'>اتصل بنا</a>"
 
+msgid "<a href=\"%1\">Return to trading page</a>"
+msgstr ""
+
 #, fuzzy
 #| msgid "<a href=\"%1\">Founded</a> October 1999"
 msgid "<a href='%1'>Founded</a> October 1999"
@@ -541,26 +544,6 @@ msgstr ""
 "        <li>الرسالة التى سيتضمنها الشعار.</li>\n"
 "    </ul>"
 
-#, fuzzy
-#| msgid "<span>All durations:</span> from 10 seconds to 365 days."
-msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
-msgstr "<span>كل الفترات الزمنية:</span> من 10 ثوان وحتى 365 يوما."
-
-#, fuzzy
-#| msgid "<span>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
-msgid "<span class='color-green font-weight-700'>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
-msgstr "<span>كل ظروف السوق:</span> فوق/تحت، الوصول/عدم الوصول، البقاء بين/الخروج عن."
-
-#, fuzzy
-#| msgid "<span>All markets:</span> currencies, stocks, indices, and commodities."
-msgid "<span class='color-green font-weight-700'>All markets:</span> currencies, stocks, indices, and commodities."
-msgstr "<span>كل الأسواق:</span> العملات، المؤشرات، الأسهم، والسلع."
-
-#, fuzzy
-#| msgid "<span>All payouts:</span> from $1 to $50,000."
-msgid "<span class='color-green font-weight-700'>All payouts:</span> from $1 to $50,000."
-msgstr "<span>جميع دفعات:</span> من 1 دولار إلى 000 50 دولار."
-
 msgid "<strong>2-way pricing</strong> - %1 quotes a trade and the counter-trade, so you always get unbiased, transparent prices."
 msgstr "<strong>سعر ثنائى الاتجاه</strong> - تقدم لك %1 سعر العقد ونقيضه، لتحصل على أسعار غير منحازة وشفافة."
 
@@ -570,8 +553,18 @@ msgstr "<strong>عرض إضافي للأعمال:</strong> سوف تزيد ال�
 msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
 msgstr "<strong>أدوات متطورة للتحليلات الفنية والأساسية,</strong> بما في ذلك المؤشرات, الرسوم البيانية, والمزيد."
 
+#, fuzzy
+#| msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
+msgid "<strong>All durations:</strong> from 10 seconds to 365 days."
+msgstr "<strong> كل الفترات الزمنية</strong> - من 10 ثوانى ل365 يوم."
+
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong> كل الفترات الزمنية</strong> - من 10 ثوانى ل365 يوم."
+
+#, fuzzy
+#| msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
+msgid "<strong>All market conditions:</strong> up/down, touch/no-touch, stays in/goes out."
+msgstr "<strong>كل ظروف السوق</strong> - فوق/تحت، الوصول/عدم الوصول، البقاء بين/الخروج عن."
 
 msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
 msgstr "<strong>كل ظروف السوق</strong> - فوق/تحت، الوصول/عدم الوصول، البقاء بين/الخروج عن."
@@ -579,8 +572,18 @@ msgstr "<strong>كل ظروف السوق</strong> - فوق/تحت، الوصول
 msgid "<strong>All markets, all conditions</strong> - trade currencies, indices and commodities in rising, falling, sideways, quiet and volatile markets."
 msgstr "<strong>كل الأسواق ، كل الظروف</strong> - تداول العملات، المؤشرات، والسلع فى الأسواق الصاعدة والهابطة والمتأرجحة والهادئة والمتقلبة."
 
+#, fuzzy
+#| msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
+msgid "<strong>All markets:</strong> currencies, stocks, indices, and commodities."
+msgstr "<strong>كل الأسواق</strong> - العملات، مؤشرات الأسهم، والسلع."
+
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgstr "<strong>كل الأسواق</strong> - العملات، مؤشرات الأسهم، والسلع."
+
+#, fuzzy
+#| msgid "<strong>All payouts</strong> - from $1 to $50,000."
+msgid "<strong>All payouts:</strong> from $1 to $50,000."
+msgstr "<strong>جميع دفعات</strong>-من 1 دولار إلى 000 50 دولار."
 
 msgid "<strong>All payouts</strong> - from $1 to $50,000."
 msgstr "<strong>جميع دفعات</strong>-من 1 دولار إلى 000 50 دولار."
@@ -3126,6 +3129,11 @@ msgstr "إذا ثبت أن أي حكم من أحكام هذا الاتفاق ب�
 msgid "If the Company is legally required to disclose your personal or financial information by law, regulation or pursuant to the order of a court of competent jurisdiction or a governmental agency, the Company  shall, unless legally prohibited, promptly notify you to that effect, in order to give you the opportunity to seek such protection for the information as it deems appropriate. Such required disclosure shall not be construed as a breach of this Terms and Conditions Agreement."
 msgstr "إذا كانت الشركة من الناحية القانونية بحاجة إلى الكشف عن المعلومات الشخصية أو المالية  بموجب القانون أو جهة التنظيم أو وفقا لأمر صادر عن محكمة مختصة أو هيئة حكومية، يجب  على الشركة، ما لم يحظر قانونا، أن تخطرك فورا بهذا الشأن، كي نعطيك الفرصة للحصول على تلك الحماية للمعلومات حسبما تراه مناسبا. ولا يجوز أن يفسر مثل هذا الكشف المطلوب على أنه خرق لشروط وأحكام هذه الاتفاقية."
 
+#, fuzzy
+#| msgid "This account is unavailable. For any questions please contact <a href=\"%1\">Customer Support</a>."
+msgid "If the issue keeps happening, please contact <a href=\"%1\">customer support</a>."
+msgstr "هذا الحساب غير متاح. إذا كان لديك أي استفسار يرجى الاتصال <a href=\"%1\">بخدمة العملاء</a>."
+
 msgid "If this Agreement is terminated for any reason, you must permanently delete all Content, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
 msgstr "إذا تم انهاء هذه الإتفاقية لأي سبب من الأسباب, فيجب عليك حذف جميع المحتويات باستمرار, إلا إذا ما كان ذلك سيؤدي إلى انتهاك أي قانون أو إلتزام مفروض من قبل سلطة حكومية."
 
@@ -4685,6 +4693,11 @@ msgstr "بعد خمس سنوات فقط من البداية، نلنا هذه ا
 msgid "Only one account is allowed per person. No winnings and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person."
 msgstr "مسموح لكل شخص بحساب واحد فقط. لا يمكن جني الأرباح و/أو استرداد الأموال من حسابات مفتوحة بأسماء وهمية أو حسابات متعددة لنفس الشخص."
 
+#, fuzzy
+#| msgid "No Data available"
+msgid "Oops... Page Not Available"
+msgstr "ليس هناك بيانات متاحة"
+
 msgid "Open"
 msgstr "يفتح"
 
@@ -5749,6 +5762,9 @@ msgstr "عفواً، هذة الخاصية متاحة للحسابات الاف�
 msgid "Sorry, this feature is not available."
 msgstr "عفوا، هذه الميزة غير متوفرة."
 
+msgid "Sorry, you have entered an incorrect cashier password"
+msgstr "عفواً، لقد قمت بإدخال كلمة مرور صراف غير صحيحة"
+
 msgid "Spam - We do not condone Spam"
 msgstr "الرسائل الغير مرغوب فيها - نحن لا نقبل الرسائل الغير مرغوب فيها"
 
@@ -6392,6 +6408,9 @@ msgstr "الحد الأقصى لأي خسارة يمكن أن يتكبدها ا�
 
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "لقد تم الوصول إلى الحد الأقصى لعدد الرموز المميزة (%1)."
+
+msgid "The page you requested could not be found. Either it no longer exists or the address is wrong. Please check for any typos."
+msgstr ""
 
 msgid "The patent means Regent Markets is the recognised pioneer of binary betting. The patent helps protect our innovations."
 msgstr "براءة الإختراع تعني أن ريجنت ماركتس رائدة الرهانات المالية للثنائيات. و براءة الإختراع تلك تساعد على حماية أفكارنا و ابتكاراتنا."
@@ -8701,6 +8720,11 @@ msgstr "{JAPAN ONLY}Regulation & Tax"
 msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "{JAPAN ONLY}Regulation & Tax"
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}Units"
+msgid "{JAPAN ONLY}Remaining time"
+msgstr "{JAPAN ONLY}Units"
+
 msgid "{JAPAN ONLY}STAY-IN/BREAK-OUT"
 msgstr "{اليابان فقط} البقاء في/الهروب"
 
@@ -8928,6 +8952,9 @@ msgstr "{JAPAN ONLY}Units"
 msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 msgstr "منصة التداول للخيارات الثنائية فى العملات والمؤشرات والسلع والمؤشرات الذكية"
 
+msgid "404"
+msgstr ""
+
 #, fuzzy
 #| msgid "Why Us?"
 msgid "Why Us"
@@ -8997,6 +9024,26 @@ msgstr "لموافقة على الشروط والأحكام"
 
 msgid "Trading with MetaTrader 5"
 msgstr "تداول مع ميتاتريدر 5"
+
+#, fuzzy
+#~| msgid "<span>All durations:</span> from 10 seconds to 365 days."
+#~ msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
+#~ msgstr "<span>كل الفترات الزمنية:</span> من 10 ثوان وحتى 365 يوما."
+
+#, fuzzy
+#~| msgid "<span>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
+#~ msgid "<span class='color-green font-weight-700'>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
+#~ msgstr "<span>كل ظروف السوق:</span> فوق/تحت، الوصول/عدم الوصول، البقاء بين/الخروج عن."
+
+#, fuzzy
+#~| msgid "<span>All markets:</span> currencies, stocks, indices, and commodities."
+#~ msgid "<span class='color-green font-weight-700'>All markets:</span> currencies, stocks, indices, and commodities."
+#~ msgstr "<span>كل الأسواق:</span> العملات، المؤشرات، الأسهم، والسلع."
+
+#, fuzzy
+#~| msgid "<span>All payouts:</span> from $1 to $50,000."
+#~ msgid "<span class='color-green font-weight-700'>All payouts:</span> from $1 to $50,000."
+#~ msgstr "<span>جميع دفعات:</span> من 1 دولار إلى 000 50 دولار."
 
 #~ msgid "Please re-enter your email"
 #~ msgstr "الرجاء إعادة إدخال بريدك الإلكتروني."
@@ -10449,9 +10496,6 @@ msgstr "تداول مع ميتاتريدر 5"
 
 #~ msgid "Sorry, you have already had too many unsuccessful attempts. Please try again in 5 minutes."
 #~ msgstr "عفواً، لقد قمت بالكثير من المحاولات الغير ناجحة. يرجى إعادة المحاولة بعد 5 دقائق."
-
-#~ msgid "Sorry, you have entered an incorrect cashier password"
-#~ msgstr "عفواً، لقد قمت بإدخال كلمة مرور صراف غير صحيحة"
 
 #~ msgid "Sorry, you have entered an incorrect email address."
 #~ msgstr "عفواً، لقد أدخلت عنوان بريد إلكتروني غير صحيح."
@@ -13133,9 +13177,6 @@ msgstr "تداول مع ميتاتريدر 5"
 
 #~ msgid "There is no intraday data for %1 on %2."
 #~ msgstr "لا توجد بيانات يومية عن %1 على %2."
-
-#~ msgid "This account is unavailable. For any questions please contact <a href=\"%1\">Customer Support</a>."
-#~ msgstr "هذا الحساب غير متاح. إذا كان لديك أي استفسار يرجى الاتصال <a href=\"%1\">بخدمة العملاء</a>."
 
 #~ msgid "This contract has expired."
 #~ msgstr "انتهت صلاحية العقد."
@@ -17044,9 +17085,6 @@ msgstr "تداول مع ميتاتريدر 5"
 
 #~ msgid "In these terms and conditions, Y represents the amount of funds that you must deposit and X represents the bonus amount that you will receive."
 #~ msgstr "فى هذة الشروط والأحكام، تُمثل ص المبالغ المالية التى يجب أن تقوم بإيداعها وتمثل س مبالغ المكافأت التى ستتسلمها."
-
-#~ msgid "No Data available"
-#~ msgstr "ليس هناك بيانات متاحة"
 
 #~ msgid "The bonus will only be paid according to the first deposit amount, and will not be given based on multiple deposits that accumulate to Y."
 #~ msgstr "سيتم دفع المكافأة فقط حسب مبلغ أول إيداع، ولن يتم إعطائها بناءاً على الإيداعات العديدة التى تتراكم فى ص."

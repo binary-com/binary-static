@@ -10,12 +10,10 @@ var VirtualAccOpeningData = (function(){
         };
 
         // Add TrafficSource parameters
-        // NOTE: following lines can be uncommented (Re-check property names)
-        // once these fields added to this ws call
-        // var utm_data = TrafficSource.getData();
-        // req.source = TrafficSource.getSource(utm_data);
-        // if(utm_data.utm_medium)   req.medium   = utm_data.utm_medium;
-        // if(utm_data.utm_campaign) req.campaign = utm_data.utm_campaign;
+        var utm_data = TrafficSource.getData();
+        req.utm_source = TrafficSource.getSource(utm_data);
+        if(utm_data.utm_medium)   req.utm_medium   = utm_data.utm_medium;
+        if(utm_data.utm_campaign) req.utm_campaign = utm_data.utm_campaign;
 
         if (Cookies.get('affiliate_tracking')) {
             req.affiliate_token = Cookies.getJSON('affiliate_tracking').t;
