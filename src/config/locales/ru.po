@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-15 09:57+0000\n"
+"PO-Revision-Date: 2016-08-22 08:52+0000\n"
 "Last-Translator: Ruslan <ruslan.mukhametdinov.90@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
@@ -418,6 +418,11 @@ msgstr "<< Вернуться к вакансиям"
 msgid "<a class='pjaxload' href='mailto:%1'>Contact Us</a>"
 msgstr "<a class='pjaxload' href='mailto:%1'>Контакты</a>"
 
+#, fuzzy
+#| msgid "View <a href=\"%1\">Asset Index.</a>"
+msgid "<a href=\"%1\">Return to trading page</a>"
+msgstr "См.<a href=\"%1\">Индекс активов.</a>"
+
 msgid "<a href='%1'>Founded</a> October 1999"
 msgstr "<a href='%1'>Компания основана</a> в октябре 1999 г."
 
@@ -474,18 +479,6 @@ msgstr ""
 "  <li>Конкретное текстовое сообщение.</li>\n"
 " </ul>"
 
-msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
-msgstr "<span class='color-green font-weight-700'>С любой продолжительностью:</span> от 10 секунд до 365 дней."
-
-msgid "<span class='color-green font-weight-700'>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
-msgstr "<span class='color-green font-weight-700'>При любых условиях рынка:</span> вверх/вниз, касание/нет касания, внутри/вне."
-
-msgid "<span class='color-green font-weight-700'>All markets:</span> currencies, stocks, indices, and commodities."
-msgstr "<span class='color-green font-weight-700'>На всех рынках:</span> валютными парами, акциями, индексами и сырьевыми материалами."
-
-msgid "<span class='color-green font-weight-700'>All payouts:</span> from $1 to $50,000."
-msgstr "<span class='color-green font-weight-700'>С выплатами по контрактам</span> от $1 до $50,000."
-
 msgid "<strong>2-way pricing</strong> - %1 quotes a trade and the counter-trade, so you always get unbiased, transparent prices."
 msgstr "<strong>оценка контракта в двух направлениях</strong> - %1 предоставляет условия контракта и его противоположного опциона, обеспечивая непредвзятые и прозрачные цены."
 
@@ -495,8 +488,18 @@ msgstr "<strong>Дополнительный бизнес:</strong> Вы улу�
 msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
 msgstr "<strong>Расширенные инструменты для фундаментального и технического анализа,</strong> включая индикаторы, графики и др."
 
+#, fuzzy
+#| msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
+msgid "<strong>All durations:</strong> from 10 seconds to 365 days."
+msgstr "<strong>С любой продолжительностью</strong> - от 10 секунд до 365 дней."
+
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>С любой продолжительностью</strong> - от 10 секунд до 365 дней."
+
+#, fuzzy
+#| msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
+msgid "<strong>All market conditions:</strong> up/down, touch/no-touch, stays in/goes out."
+msgstr "<strong>При любых условиях рынка</strong> - вверх/вниз, касание/нет касания, внутри/вне."
 
 msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
 msgstr "<strong>При любых условиях рынка</strong> - вверх/вниз, касание/нет касания, внутри/вне."
@@ -504,8 +507,18 @@ msgstr "<strong>При любых условиях рынка</strong> - вве�
 msgid "<strong>All markets, all conditions</strong> - trade currencies, indices and commodities in rising, falling, sideways, quiet and volatile markets."
 msgstr "<strong>Любые рынки, любые условия</strong> - торгуйте на форексе, индексах и сырьевых материалах в условиях понижающихся или повышающихся, волатильных или неподвижных рынков."
 
+#, fuzzy
+#| msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
+msgid "<strong>All markets:</strong> currencies, stocks, indices, and commodities."
+msgstr "<strong>На всех рынках</strong> - валютными парами, индексами и сырьевыми материалами."
+
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgstr "<strong>На всех рынках</strong> - валютными парами, индексами и сырьевыми материалами."
+
+#, fuzzy
+#| msgid "<strong>All payouts</strong> - from $1 to $50,000."
+msgid "<strong>All payouts:</strong> from $1 to $50,000."
+msgstr "<strong>С выплатами по контрактам</strong> от $1 до $50,000."
 
 msgid "<strong>All payouts</strong> - from $1 to $50,000."
 msgstr "<strong>С выплатами по контрактам</strong> от $1 до $50,000."
@@ -2925,6 +2938,11 @@ msgstr "Если какой-либо из пунктов данного Согл
 msgid "If the Company is legally required to disclose your personal or financial information by law, regulation or pursuant to the order of a court of competent jurisdiction or a governmental agency, the Company  shall, unless legally prohibited, promptly notify you to that effect, in order to give you the opportunity to seek such protection for the information as it deems appropriate. Such required disclosure shall not be construed as a breach of this Terms and Conditions Agreement."
 msgstr "Если Компания по закону обязана раскрыть Вашу личную или финансовую информацию в соответствии с законом, распоряжением или приказом суда компетентной юрисдикции или правительственным органом, то Компания, если это не запрещено законом, незамедлительно уведомит Вас на этот счет для того, чтобы дать Вам возможность получить защиту информации, которую Компания сочтет целесообразной. Такое обязательное раскрытие не должно быть истолковано как нарушение Правил и Условий соглашения."
 
+#, fuzzy
+#| msgid "This account is unavailable. For any questions please contact <a href=\"%1\">Customer Support</a>."
+msgid "If the issue keeps happening, please contact <a href=\"%1\">customer support</a>."
+msgstr "Этот счет в данный момент недоступен. Пожалуйста, свяжитесь с нашей <a href=\"%1\">службой поддержки</a>."
+
 msgid "If this Agreement is terminated for any reason, you must permanently delete all Content, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
 msgstr "В случае прекращения действия данного Договора (по любой причине), Вы должны удалить весь Контент без возможности восстановления, за исключением случаев, когда таковые действия приведут к нарушению Вами любых законов или обязательств, возложенных на Вас государственными органами."
 
@@ -4429,6 +4447,11 @@ msgstr "Уже через пять лет после создания сайта
 msgid "Only one account is allowed per person. No winnings and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person."
 msgstr "Разрешается иметь только один счет на человека. Выигрыш или компенсация не может начисляться на счета, открытые на вымышленное имя, или на множественные счета, открытые одним и тем же лицом."
 
+#, fuzzy
+#| msgid "No Data available"
+msgid "Oops... Page Not Available"
+msgstr "Данные отсутствуют"
+
 msgid "Open"
 msgstr "Значение при открытии"
 
@@ -5461,6 +5484,9 @@ msgstr "Извините, эта опция доступна только для
 msgid "Sorry, this feature is not available."
 msgstr "Извините, данная функция недоступна."
 
+msgid "Sorry, you have entered an incorrect cashier password"
+msgstr "Извините, Вы ввели неверный пароль для раздела Касса"
+
 msgid "Spam - We do not condone Spam"
 msgstr "Спам - Мы не поощряем спам"
 
@@ -6054,6 +6080,9 @@ msgstr "Максимальный убыток, который может пот�
 
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "Достигнуто максимальное число ключей (%1)."
+
+msgid "The page you requested could not be found. Either it no longer exists or the address is wrong. Please check for any typos."
+msgstr ""
 
 msgid "The patent means Regent Markets is the recognised pioneer of binary betting. The patent helps protect our innovations."
 msgstr "Патент означает признание Regent Markets пионером бинарного беттинга. Он способствует защите наших инноваций."
@@ -7868,10 +7897,8 @@ msgstr "{JAPAN ONLY}Even if the option is exercise or not exercised, the origina
 msgid "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
 msgstr "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}day"
 msgid "{JAPAN ONLY}FX Rate"
-msgstr "{JAPAN ONLY}day"
+msgstr "{JAPAN ONLY}FX Rate"
 
 msgid "{JAPAN ONLY}Financial Condition"
 msgstr "{JAPAN ONLY}Financial Condition"
@@ -8074,10 +8101,8 @@ msgstr "{JAPAN ONLY}November 7, 2014"
 msgid "{JAPAN ONLY}Option Pricing"
 msgstr "{JAPAN ONLY}Option Pricing"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Option Pricing"
 msgid "{JAPAN ONLY}Option Type"
-msgstr "{JAPAN ONLY}Option Pricing"
+msgstr "{JAPAN ONLY}Option Type"
 
 msgid "{JAPAN ONLY}Option prices are normally dependant on elements such as the underlying asset price, the exercise price, the length of time until the exercise point, volatility, and interest rates. Apart from the fixed exercise price, all other elements are changing constantly, so an understanding of the relationships between each element and changes in the options price is necessary for the management of options trading risk."
 msgstr "{JAPAN ONLY}Option prices are normally dependant on elements such as the underlying asset price, the exercise price, the length of time until the exercise point, volatility, and interest rates. Apart from the fixed exercise price, all other elements are changing constantly, so an understanding of the relationships between each element and changes in the options price is necessary for the management of options trading risk."
@@ -8106,10 +8131,8 @@ msgstr "{JAPAN ONLY}Our Customer Support staff will contact you at each stage to
 msgid "{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:"
 msgstr "{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}month"
 msgid "{JAPAN ONLY}Payout Amount"
-msgstr "{JAPAN ONLY}month"
+msgstr "{JAPAN ONLY}Payout Amount"
 
 msgid "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\">here</a> for further information."
 msgstr "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\">here</a> for further information."
@@ -8155,6 +8178,11 @@ msgstr "{JAPAN ONLY}Registration"
 
 msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "{JAPAN ONLY}Regulation & Tax"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}minute"
+msgid "{JAPAN ONLY}Remaining time"
+msgstr "{JAPAN ONLY}minute"
 
 msgid "{JAPAN ONLY}STAY-IN/BREAK-OUT"
 msgstr "{JAPAN ONLY}STAY-IN/BREAK-OUT"
@@ -8279,10 +8307,8 @@ msgstr "{JAPAN ONLY}Trading & Hedging"
 msgid "{JAPAN ONLY}Trading Guide"
 msgstr "{JAPAN ONLY}Trading Guide"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Trading Guide"
 msgid "{JAPAN ONLY}Trading Period"
-msgstr "{JAPAN ONLY}Trading Guide"
+msgstr "{JAPAN ONLY}Trading Period"
 
 msgid "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
 msgstr "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
@@ -8353,6 +8379,9 @@ msgstr "{JAPAN ONLY}years"
 msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 msgstr "Платформа для онлайн торговли бинарными опционами на рынках валют, индексов, сырья и индексах Smart"
 
+msgid "404"
+msgstr ""
+
 msgid "Why Us"
 msgstr "Почему мы"
 
@@ -8406,6 +8435,18 @@ msgstr "Согласие с правилами и условиями"
 
 msgid "Trading with MetaTrader 5"
 msgstr "Торговля на MetaTrader 5"
+
+#~ msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
+#~ msgstr "<span class='color-green font-weight-700'>С любой продолжительностью:</span> от 10 секунд до 365 дней."
+
+#~ msgid "<span class='color-green font-weight-700'>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
+#~ msgstr "<span class='color-green font-weight-700'>При любых условиях рынка:</span> вверх/вниз, касание/нет касания, внутри/вне."
+
+#~ msgid "<span class='color-green font-weight-700'>All markets:</span> currencies, stocks, indices, and commodities."
+#~ msgstr "<span class='color-green font-weight-700'>На всех рынках:</span> валютными парами, акциями, индексами и сырьевыми материалами."
+
+#~ msgid "<span class='color-green font-weight-700'>All payouts:</span> from $1 to $50,000."
+#~ msgstr "<span class='color-green font-weight-700'>С выплатами по контрактам</span> от $1 до $50,000."
 
 #~ msgid "Please re-enter your email"
 #~ msgstr "Пожалуйста, повторно введите Ваш эл.адрес"
@@ -9849,9 +9890,6 @@ msgstr "Торговля на MetaTrader 5"
 
 #~ msgid "Sorry, you have already had too many unsuccessful attempts. Please try again in 5 minutes."
 #~ msgstr "Извините, у Вас уже было слишком много неудачных попыток. Попробуйте через пять минут."
-
-#~ msgid "Sorry, you have entered an incorrect cashier password"
-#~ msgstr "Извините, Вы ввели неверный пароль для раздела Касса"
 
 #~ msgid "Sorry, you have entered an incorrect email address."
 #~ msgstr "Ошибка: Вы ввели неправильный email адрес. Пожалуйста, вернитесь и попробуйте еще раз."
@@ -12404,9 +12442,6 @@ msgstr "Торговля на MetaTrader 5"
 
 #~ msgid "There is no intraday data for %1 on %2."
 #~ msgstr "Нет почасовых данных по %1 от %2."
-
-#~ msgid "This account is unavailable. For any questions please contact <a href=\"%1\">Customer Support</a>."
-#~ msgstr "Этот счет в данный момент недоступен. Пожалуйста, свяжитесь с нашей <a href=\"%1\">службой поддержки</a>."
 
 #~ msgid "This contract has expired."
 #~ msgstr "Контракт закончился."
@@ -16337,9 +16372,6 @@ msgstr "Торговля на MetaTrader 5"
 
 #~ msgid "In these terms and conditions, Y represents the amount of funds that you must deposit and X represents the bonus amount that you will receive."
 #~ msgstr "В данных правилах и условиях Y представляет сумму, которую Вы должны внести, а X представляет сумму бонуса, которую Вы получите."
-
-#~ msgid "No Data available"
-#~ msgstr "Данные отсутствуют"
 
 #~ msgid "The bonus will only be paid according to the first deposit amount, and will not be given based on multiple deposits that accumulate to Y."
 #~ msgstr "Бонус будет выплачен только на первый депозит и не распространяется на отдельные пополнения, которые в сумме составляют Y."
@@ -20455,9 +20487,6 @@ msgstr "Торговля на MetaTrader 5"
 
 #~ msgid "This contract is not on offer <a href=\"%1\">at this time</a>."
 #~ msgstr "Контракт не предлагается <a href=\"%1\">в настоящее время</a>."
-
-#~ msgid "View <a href=\"%1\">Asset Index.</a>"
-#~ msgstr "См.<a href=\"%1\">Индекс активов.</a>"
 
 #~ msgid "We do not allow the purchase of contracts with an expiry after market close. Please adjust the duration and try again."
 #~ msgstr "Мы не разрешаем покупку этого опциона с окончанием после закрытия рынка. Просим изменить время окончания контракта и попробовать снова."

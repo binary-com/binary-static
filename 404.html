@@ -1,8 +1,73 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Binary.com</title>
-        <meta charset="utf-8" />
-        <meta http-equiv="refresh" content="0;URL=https://www.binary.com" />
-    </head>
+<head>
+    <title>Binary.com</title>
+    <meta charset="utf-8" />
+    <script type="text/javascript">
+    function getCookieItem(sKey) {
+        'use strict';
+        return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
+    }
+    function getLanguage(country) {
+        var langs = {
+            'ar': 'dz|bh|km|dj|eg|iq|jo|kw|lb|ly|mr|ma|om|ps|qa|sa|so|sd|sy|tn|ae|ye',
+            'de': 'de|at|li',
+            'es': 'ar|bo|cl|co|cr|cu|do|ec|sv|gt|hn|mx|ni|pa|py|pr|es|uy|ve',
+            'fr': 'fr|ad|bj|bf|cf|cg|ga|gn|ml|mc|ne|sn|tg',
+            'id': 'id',
+            'it': 'it',
+            'ja': 'jp',
+            'pl': 'po',
+            'pt': 'br|mz|ao|pt|gw|pg|cv|st',
+            'ru': 'ru|ua|by|kz',
+            'vi': 'vn',
+            'zh_tw': 'tw|mo',
+            'zh_cn': 'cn|sg',
+        };
+        var conLang = 'en';
+        if (country) {
+            var keys = Object.keys(langs);
+            for (var i = keys.length; i--; ) {
+                var l = keys[i];
+                if ((new RegExp(langs[l], 'i')).test(country)) {
+                    return l;
+                }
+            }
+        }
+        return conLang;
+    }
+
+    function getRoot() {
+        var hostname = window.location.hostname;
+        var origin = window.location.origin;
+        return /^(.+?).github.io$/.test(hostname) ?
+            origin + '/binary-static' :
+            origin;
+    }
+
+    function redirect() {
+        window.location = getRoot() + '/' + (lang || 'en').toLowerCase() + '/404.html';
+    }
+
+    var lang = getCookieItem('language');
+    if (lang) {
+        redirect();
+    } else {
+        var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3');
+        ws.onopen = function(e) {
+            ws.send(JSON.stringify({'website_status': '1'}));
+        };
+        ws.onmessage = function(msg) {
+            var response = JSON.parse(msg.data);
+            if(response.msg_type === 'website_status') {
+                if(!response.error && response.hasOwnProperty('website_status')) {
+                    lang = getLanguage(response.website_status.clients_country);
+                }
+                ws.close();
+                redirect();
+            }
+        };
+    }
+    </script>
+</head>
 </html>

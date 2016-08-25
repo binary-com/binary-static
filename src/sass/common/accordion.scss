@@ -1,41 +1,13 @@
 #accordion {
-    .ui-accordion-header {
-        border-radius: 0;
-        margin-bottom: -3px;
-    }
-    .ui-icon {
-        display: none;
-        visibility: hidden;
-    }
-    .ui-accordion-icons, .ui-accordion-icons .ui-accordion-icons {
-        padding-left: 1.5em;
-    }
-    .ui-state-active, .ui-state-default, .ui-state-hover {
-        border: none;
-        outline: none;
-        background-repeat: no-repeat;
-        @include BIDIR_VALUE(background-position, right, left);
-    }
-    .ui-state-active.ui-state-default, .ui-state-active.ui-state-default.ui-state-hover {
-        background-image: url('../images/common/arrow_down.svg');
-        background-color: $COLOR_NAV_BORDER;
-        border-color: $COLOR_NAV_BORDER;
-        color: $COLOR_WHITE;
-    }
-    .ui-state-default, .ui-state-hover {
-        @include BIDIR_VALUE(background-image, url('../images/common/arrow_right.svg'), url('../images/common/arrow_left.svg'));
-        background-color: $COLOR_LIGHT_GRAY;
-        border: 1px solid $COLOR_GRAY_SHADE;
-        color: $COLOR_BLACK;
-    }
-    .ui-state-hover {
-        background-color: $COLOR_GRAY;
+    @if not $IS_LTR {
+        .ui-state-active, .ui-state-default, .ui-state-hover {
+            background-position: left !important;
+        }
+        h3.ui-state-default {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><defs><style>.cls-1{fill:#{rgba($COLOR_BLUE, 1)};}</style></defs><title>arrow_left</title><path class="cls-1" d="M15.7,16.59,11.125,12,15.7,7.41,14.3,6l-6,6,6,6Z"/></svg>');
+        }
     }
     .ui-accordion-content {
         padding-top: 0;
-        border-radius: 0;
-    }
-    .ui-widget-content {
-        border: 1px solid $COLOR_GRAY_SHADE;
     }
 }
