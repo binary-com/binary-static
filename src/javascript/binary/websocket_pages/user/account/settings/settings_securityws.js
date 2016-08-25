@@ -2,15 +2,6 @@ var SecurityWS = (function() {
     "use strict";
     var $form;
     var current_state;
-    var STATE = {
-        WAIT_AUTH:    'WAIT_AUTH',
-        QUERY_LOCKED: 'QUERY_LOCKED',
-        LOCKED:       'LOCKED',
-        UNLOCKED:     'UNLOCKED',
-        TRY_UNLOCK:   'TRY_UNLOCK',
-        TRY_LOCK:     'TRY_LOCK',
-        DONE:         'DONE',
-    };
 
     function clearErrors() {
         $("#SecuritySuccessMsg").text('');
@@ -28,26 +19,20 @@ var SecurityWS = (function() {
         return true;
     }
 
-    function makeAuthRequest() {
-        BinarySocket.send({
-            authorize: CommonData.getLoginToken(),
-        });
-    }
-
     function init() {
         Content.populate();
         $form = $("#changeCashierLock");
         if (checkIsVirtual()) return;
 
-        current_state = STATE.WAIT_AUTH;
-        BinarySocket.init({onmessage: handler});
-        makeAuthRequest();
-    }
-
-    function authorised() {
-        current_state = STATE.QUERY_LOCKED;
-        BinarySocket.send({
-            cashier_password: "1",
+        LiveAPI().then(function(api) {
+            return api
+                .send({ authorize: CommonData.getLoginToken() })
+                .then(function(r) {
+                    if (checkIsVirtual()) {
+                        return;
+                    }
+                    api.send({ cashier_password: '1' }).then(lockedStatus);
+                });
         });
     }
 
@@ -88,7 +73,6 @@ var SecurityWS = (function() {
             });
             setupRepeatPasswordForm();
         }
-        current_state = locked ? STATE.LOCKED : STATE.UNLOCKED;
         bind_validation.simple($form[0], {
             schema: locked ? {} : getUnlockedSchema(),
             submit: function(e, info) {
@@ -97,10 +81,17 @@ var SecurityWS = (function() {
                 if (info.errors.length > 0) {
                     return;
                 }
-                current_state = locked ?
-                    STATE.TRY_UNLOCK :
-                    STATE.TRY_LOCK;
-                makeAuthRequest();
+                LiveAPI().then(function(s) {
+                    s.send({ authorize: CommonData.getLoginToken() })
+                     .then(function(r) {
+                         var key = locked ? 'unlock_password' : 'lock_password';
+                         var params  = {cashier_password: '1'};
+                         params[key] = $('#cashierlockpassword1').val();
+                         s.send(params)
+                          .then(trySuccess)
+                          .catch(withFailureMessage(locked));
+                     });
+                });
             },
         });
         $form.show();
@@ -118,62 +109,20 @@ var SecurityWS = (function() {
         };
     }
 
-    function makeTryingRequest() {
-        var key = current_state === STATE.TRY_UNLOCK ?
-            'unlock_password' :
-            'lock_password';
-        var params  = {cashier_password: '1'};
-        params[key] = $('#cashierlockpassword1').val();
-        BinarySocket.send(params);
-    }
-
-    function tryStatus(response) {
-        if (response.error) {
-            current_state = current_state === STATE.TRY_UNLOCK ?
-                STATE.LOCKED :
-                STATE.UNLOCKED;
-            var message = response.error.message;
-            if (current_state === STATE.LOCKED &&
-                response.error.code === 'InputValidationFailed') {
+    function withFailureMessage(locked) {
+        return function(error) {
+            var message = error.message;
+            if (locked && error.code === 'InputValidationFailed') {
                 message = 'Sorry, you have entered an incorrect cashier password';
             }
-            $("#invalidinputfound").text(text.localize(message));
-            return;
-        }
+            $('#invalidinputfound').text(text.localize(message));
+        };
+    }
+
+    function trySuccess(response) {
         $form.hide();
         clearErrors();
         $("#SecuritySuccessMsg").text(text.localize('Your settings have been updated successfully.'));
-        current_state = STATE.DONE;
-    }
-
-    function handler(msg) {
-        if (checkIsVirtual()) return;
-        var response = JSON.parse(msg.data);
-        if (response.msg_type === 'authorize') {
-            switch (current_state) {
-                case STATE.WAIT_AUTH:
-                    authorised();
-                    break;
-                case STATE.TRY_UNLOCK:
-                case STATE.TRY_LOCK:
-                    makeTryingRequest();
-                    break;
-                default:
-                    break;
-            }
-        } else if (response.msg_type === 'cashier_password') {
-            switch (current_state) {
-                case STATE.QUERY_LOCKED:
-                    lockedStatus(response);
-                    break;
-                case STATE.TRY_UNLOCK:
-                case STATE.TRY_LOCK:
-                    tryStatus(response);
-                    break;
-                default:
-                    break;
-            }
-        }
     }
 
     return {
