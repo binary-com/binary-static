@@ -7,7 +7,7 @@ var ApplicationsData = (function(){
 
     function revoke(id) {
         if (!id) return;
-        retrun LiveAPI.send({oauth_apps: 1, revoke_app: id});
+        return LiveAPI.send({oauth_apps: 1, revoke_app: id});
     }
 
     function parse(app) {

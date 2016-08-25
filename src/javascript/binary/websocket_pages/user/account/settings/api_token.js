@@ -21,17 +21,13 @@ var APITokenWS = (function() {
         }
 
         Content.populate();
-        BinarySocket.init({
-            onmessage: function(msg) {
-                var response = JSON.parse(msg.data);
-                if (response.msg_type === "api_token") {
-                    responseHandler(response);
-                }
-            }
-        });
-
         showLoadingImage($(tableContainer));
-        BinarySocket.send({api_token: 1});
+        LiveAPI.send({api_token: 1})
+            .then(function(r) {
+                eachResponse(r);
+                populateTokensList(r.api_token.tokens);
+            });
+
         bind_validation.simple($('#token_form')[0], {
             schema: getSchema(),
             stop: function(info) {
@@ -44,7 +40,13 @@ var APITokenWS = (function() {
                 if (info.errors.length > 0) {
                     return;
                 }
-                createToken(info.values);
+                createToken(info.values)
+                    .then(function(r) {
+                        eachResponse(r);
+                        showSubmitSuccess('New token created.');
+                        $('#txtName').val('');
+                        populateTokensList(r.api_token.tokens, info.values.api_token);
+                    });
             }
         });
     }
@@ -67,42 +69,14 @@ var APITokenWS = (function() {
         };
     }
 
-    function responseHandler(response) {
-        if ('error' in response) {
-            showErrorMessage(response.error.message);
-            return;
-        }
-
+    function eachResponse(response) {
         clearMessages();
-
-        var api_token = response.api_token;
-        var tokens    = api_token.tokens;
-        var newToken;
-
-        if (tokens.length >= maxTokens) {
+        if (response.api_token.tokens.length >= maxTokens) {
             hideForm();
             showErrorMessage(text.localize('The maximum number of tokens ([_1]) has been reached.', [maxTokens]));
         } else {
             showForm();
         }
-
-        if ('new_token' in api_token) {
-            showSubmitSuccess('New token created.');
-            $('#txtName').val('');
-            newToken = response.echo_req.new_token;
-        } else if ('delete_token' in api_token) {
-            var deleted = response.echo_req.delete_token;
-            $('#' + deleted)
-                .removeClass('new')
-                .addClass('deleting')
-                .fadeOut(700, function() {
-                    $(this).remove();
-                    populateTokensList(tokens);
-                });
-            return;
-        }
-
-        populateTokensList(tokens, newToken);
     }
 
     // -----------------------
@@ -130,7 +104,6 @@ var APITokenWS = (function() {
                 if (token.display_name === newToken) {
                     $row.addClass('new');
                 }
-                $row.attr('id', token.token);
                 createDeleteButton($row, token);
             }
         });
@@ -146,7 +119,15 @@ var APITokenWS = (function() {
             if (!window.confirm(message + ': "' + token.display_name + '"?')) {
                 return;
             }
-            deleteToken(token.token);
+            deleteToken(token.token).then(function(r) {
+                eachResponse(r);
+                $row.removeClass('new')
+                    .addClass('deleting')
+                    .fadeOut(700, function() {
+                        $(this).remove();
+                        populateTokensList(r.api_token.tokens);
+                    });
+            });
         });
         $row.children('.action').html(
             $('<span/>', {class: 'button'})
@@ -179,22 +160,26 @@ var APITokenWS = (function() {
         });
     }
 
+    function errorHandler(err) {
+        showErrorMessage(err.message);
+    }
+
     // ---------------------------
     // ----- Actions Process -----
     // ---------------------------
     function createToken(params) {
-        BinarySocket.send({
+        return LiveAPI.send({
             api_token: 1,
             new_token: params.name,
             new_token_scopes: params.scopes,
-        });
+        }).catch(errorHandler);
     }
 
     function deleteToken(token) {
-        BinarySocket.send({
+        return LiveAPI.send({
             api_token:    1,
             delete_token: token,
-        });
+        }).catch(errorHandler);
     }
 
     // -----------------------------
