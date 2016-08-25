@@ -12,11 +12,8 @@ var Table = (function(){
      * eg. ["", "halo", ""] will have 3 elements in footer, 2 of them being empty
      */
     function createFlexTable(body, metadata, header, footer){
-
-        var tableClasses = (metadata.tableClass) ? metadata.tableClass + " flex-table" : "flex-table";
-
-        var $tableContainer = $("<div></div>", {class: "flex-table-container"});
-        var $table = $("<table></table>", {class: tableClasses, id: metadata.id});
+        var $tableContainer = $("<div></div>", {class: "table-container"});
+        var $table = $("<table></table>", {class: metadata.tableClass || '', id: metadata.id});
         var $body = createFlexTableTopGroup(body, metadata.cols, "body");
 
         if (header) {
@@ -77,9 +74,9 @@ var Table = (function(){
 
         var isData = (opt === "data");
 
-        var $tr = $("<tr></tr>", {class: "flex-tr"});
+        var $tr = $("<tr></tr>");
         for (var i = 0 ; i < data.length ; i++){
-            var className = metadata[i].toLowerCase().replace(/\s/g, "-") + " flex-tr-child";
+            var className = metadata[i].toLowerCase().replace(/\s/g, "-");
             var rowElement = (isData) ?
                 $("<td></td>", {class: className, html: data[i]}) :
                 $("<th></th>", {class: className, html: data[i]});

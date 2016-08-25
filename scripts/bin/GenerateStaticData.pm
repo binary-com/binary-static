@@ -562,6 +562,7 @@ sub _texts {
         push @texts, localize('{JAPAN ONLY}Option Type');
         push @texts, localize('{JAPAN ONLY}Trading Period');
         push @texts, localize('{JAPAN ONLY}Payout Amount');
+        push @texts, localize('{JAPAN ONLY}Remaining time');
         push @texts, localize('You need to finish all 20 questions.');
         push @texts, localize('Weekday');
 
@@ -622,6 +623,7 @@ sub _texts {
         push @texts, localize('Lock Cashier');
         push @texts, localize('An additional password can be used to restrict access to the cashier.');
         push @texts, localize('Update');
+        push @texts, localize('Sorry, you have entered an incorrect cashier password');
 
         #strings for job details page
         push @texts, localize('Information Technology');

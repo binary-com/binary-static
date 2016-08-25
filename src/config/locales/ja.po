@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-19 05:25+0000\n"
+"PO-Revision-Date: 2016-08-24 08:33+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -422,6 +422,10 @@ msgstr "<<職務内容に戻る"
 msgid "<a class='pjaxload' href='mailto:%1'>Contact Us</a>"
 msgstr "<a class='pjaxload' href='mailto:%1'>お問い合わせ</a>"
 
+#, fuzzy
+msgid "<a href=\"%1\">Return to trading page</a>"
+msgstr "<a href=\"%1\">Market888.com</a>"
+
 msgid "<a href='%1'>Founded</a> October 1999"
 msgstr "<a href='%1'>設立日</a> 1999年10月"
 
@@ -479,18 +483,6 @@ msgstr ""
 "<li>バナーに含めたい特定のメッセージ情報</li>\n"
 "</ul>"
 
-msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
-msgstr "<span class='color-green font-weight-700'>幅広い取引期間:</span>2時間以上から取引期間の指定が可能です"
-
-msgid "<span class='color-green font-weight-700'>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
-msgstr "<span class='color-green font-weight-700'>どのような市場状況でもトレードが可能</span>： ラダー、タッチ、レンジなど。"
-
-msgid "<span class='color-green font-weight-700'>All markets:</span> currencies, stocks, indices, and commodities."
-msgstr "<span class='color-green font-weight-700'>取引対象:</span> 外国為替市場の主要通貨ペア"
-
-msgid "<span class='color-green font-weight-700'>All payouts:</span> from $1 to $50,000."
-msgstr "<span class='color-green font-weight-700'>ペイアウト</span>：1,000円〜100,000円"
-
 msgid "<strong>2-way pricing</strong> - %1 quotes a trade and the counter-trade, so you always get unbiased, transparent prices."
 msgstr "<strong>2ウェイ・プライス（買値・売値）表示</strong>：当社は常に買値・売値の価格を明示しますので、常に公正な価格情報を入手できます。"
 
@@ -500,8 +492,18 @@ msgstr "<strong>その他ビジネスエクスポージャー:</strong> あな�
 msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
 msgstr "<strong>基礎的かつ技術的な分析のための高度なツール</strong> 指標、チャートなど"
 
+#, fuzzy
+#| msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
+msgid "<strong>All durations:</strong> from 10 seconds to 365 days."
+msgstr "<strong>幅広い取引期間</strong>：2時間以上から取引期間の指定が可能です"
+
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>幅広い取引期間</strong>：2時間以上から取引期間の指定が可能です"
+
+#, fuzzy
+#| msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
+msgid "<strong>All market conditions:</strong> up/down, touch/no-touch, stays in/goes out."
+msgstr "<strong>どのような市場状況でもトレードが可能</strong>： ラダーHIGH/ラダーLOW、TOUCH/NO-TOUCH、STAY-IN/BREAK-OUTなど。"
 
 msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
 msgstr "<strong>どのような市場状況でもトレードが可能</strong>： ラダーHIGH/ラダーLOW、TOUCH/NO-TOUCH、STAY-IN/BREAK-OUTなど。"
@@ -509,8 +511,18 @@ msgstr "<strong>どのような市場状況でもトレードが可能</strong>�
 msgid "<strong>All markets, all conditions</strong> - trade currencies, indices and commodities in rising, falling, sideways, quiet and volatile markets."
 msgstr "<strong>どんな相場状況でも</strong>：上昇、下落、保ち合い、荒れ相場、いかなる状況でもお取引が期待できます。"
 
+#, fuzzy
+#| msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
+msgid "<strong>All markets:</strong> currencies, stocks, indices, and commodities."
+msgstr "<strong>取引対象</strong>- 外国為替市場の主要通貨ペア"
+
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgstr "<strong>取引対象</strong>- 外国為替市場の主要通貨ペア"
+
+#, fuzzy
+#| msgid "<strong>All payouts</strong> - from $1 to $50,000."
+msgid "<strong>All payouts:</strong> from $1 to $50,000."
+msgstr "<strong>ペイアウト</strong>：1,000円〜100,000円"
 
 msgid "<strong>All payouts</strong> - from $1 to $50,000."
 msgstr "<strong>ペイアウト</strong>：1,000円〜100,000円"
@@ -2957,6 +2969,11 @@ msgstr "本契約において法的効力が無い、または予見不可能で
 msgid "If the Company is legally required to disclose your personal or financial information by law, regulation or pursuant to the order of a court of competent jurisdiction or a governmental agency, the Company  shall, unless legally prohibited, promptly notify you to that effect, in order to give you the opportunity to seek such protection for the information as it deems appropriate. Such required disclosure shall not be construed as a breach of this Terms and Conditions Agreement."
 msgstr "管轄裁判所または政府機関の命に従い、法律により当社は個人情報または財務情報を開示する必要があります。法的に禁止されない限り、適切とみなす情報への保護ができるよう迅速にその旨をユーザーに通知致します。このような必要な開示は、利用規約契約の違反とはなりません。"
 
+#, fuzzy
+#| msgid "This account is unavailable. For any questions please contact <a href=\"%1\">Customer Support</a>."
+msgid "If the issue keeps happening, please contact <a href=\"%1\">customer support</a>."
+msgstr "このご口座は現在無効です。<a href=\"%1\">カスタマーサポート</a>までご連絡下さい。"
+
 msgid "If this Agreement is terminated for any reason, you must permanently delete all Content, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
 msgstr "政府機関によって課せられた法律や義務に違反した場合を除き、いかなる理由で本契約が終了した場合、すべてのコンテンツを完全に削除していただく必要があります。"
 
@@ -4412,7 +4429,7 @@ msgid "Now"
 msgstr "Now"
 
 msgid "Now Introducing MetaTrader 5 on %1"
-msgstr "%1でMetaTrader 5を現在導入中"
+msgstr "MetaTrader 5を現在導入中(現在、日本では対応しておりません)"
 
 msgid "Number of ticks"
 msgstr "Tickの総数"
@@ -4489,6 +4506,11 @@ msgstr ""
 "第29条\n"
 "1.　本約款は、法令・条例の変更、監督官庁・自主規制機関の指示、その他当社が必要と認めた場合には変更されることがあります。\n"
 "2.　本約款の変更がお客さまに従来認められていた権利を制限する、またはお客さまに新たな義務を課すものである場合、当社は、原則として変更事項を当社ホームページに掲示する等、当社の定める方法によりお客さまにお知らせするものとし、所定の期日を経過してもお客さまから異議の申し出がない時は、本約款に同意したものとします。"
+
+#, fuzzy
+#| msgid "No Data available"
+msgid "Oops... Page Not Available"
+msgstr "利用可能なデータが存在しません"
 
 msgid "Open"
 msgstr "Open"
@@ -5526,6 +5548,9 @@ msgstr "申し訳ございません。この機能はデモ口座のみでご利
 msgid "Sorry, this feature is not available."
 msgstr "申し訳ございませんが、この機能はご利用いただけません。"
 
+msgid "Sorry, you have entered an incorrect cashier password"
+msgstr "申し訳ございませんが、ご入力頂いた入出金パスワードに誤りがあります"
+
 msgid "Spam - We do not condone Spam"
 msgstr "スパム行為への対処について"
 
@@ -6182,6 +6207,9 @@ msgstr ""
 
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "トークンの最大数(%1) に達しました。"
+
+msgid "The page you requested could not be found. Either it no longer exists or the address is wrong. Please check for any typos."
+msgstr ""
 
 msgid "The patent means Regent Markets is the recognised pioneer of binary betting. The patent helps protect our innovations."
 msgstr "この特許により、Regent Marketsはバイナリー取引におけるパイオニアと認識される。特許取得により、より一層の進化を遂げる。"
@@ -7820,10 +7848,10 @@ msgid "minutes"
 msgstr "分"
 
 msgid "month"
-msgstr "ヶ月"
+msgstr "月"
 
 msgid "months"
-msgstr "ヶ月"
+msgstr "月"
 
 msgid "not available"
 msgstr "利用不可"
@@ -8098,10 +8126,8 @@ msgstr "権利行使期限が到来し、権利行使が行われないオプシ
 msgid "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
 msgstr "バイナリーオプションは損失が限定的であるが、投資者自身の資産などを踏まえ、過度の投機的な取引とならぬよう、節度ある取引を心がける必要がある。"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}day"
 msgid "{JAPAN ONLY}FX Rate"
-msgstr "日"
+msgstr "通貨ペア"
 
 msgid "{JAPAN ONLY}Financial Condition"
 msgstr "業務及び財産の状況に関する報告書"
@@ -8308,10 +8334,8 @@ msgstr "平成26年11月7日"
 msgid "{JAPAN ONLY}Option Pricing"
 msgstr "オプション価格"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Option Pricing"
 msgid "{JAPAN ONLY}Option Type"
-msgstr "オプション価格"
+msgstr "オプションタイプ"
 
 msgid "{JAPAN ONLY}Option prices are normally dependant on elements such as the underlying asset price, the exercise price, the length of time until the exercise point, volatility, and interest rates. Apart from the fixed exercise price, all other elements are changing constantly, so an understanding of the relationships between each element and changes in the options price is necessary for the management of options trading risk."
 msgstr "オプションの価格を形成する要素には原資産の価格、権利行使価格、権利行使期限までの期間の長さ、ボラティリティ、金利があるが、権利行使価格を除き、他の要素は刻々と変化し、オプションの価格も変化する。したがってオプション取引のリスクを管理していくためには、それぞれの要素の変化とオプション価格の変化の関係を理解する必要がある。"
@@ -8340,10 +8364,8 @@ msgstr "リアル口座開設の手続きを進める上で、ご不明な点等
 msgid "{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:"
 msgstr "リアル口座開設完了までの４ステップ:"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}month"
 msgid "{JAPAN ONLY}Payout Amount"
-msgstr "月"
+msgstr "ペイアウト金額"
 
 msgid "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\">here</a> for further information."
 msgstr "本人確認およびマイナンバー「個人番号カード」書類に関する詳細につきましては<a class=\"pjaxload\" href=\"#identification-documents\">こちらを</a> クリックしてください。"
@@ -8389,6 +8411,11 @@ msgstr "登録"
 
 msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "規制と税金"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}minute"
+msgid "{JAPAN ONLY}Remaining time"
+msgstr "分"
 
 msgid "{JAPAN ONLY}STAY-IN/BREAK-OUT"
 msgstr "STAY-IN/BREAK-OUT"
@@ -8513,10 +8540,8 @@ msgstr "取引とヘッジ"
 msgid "{JAPAN ONLY}Trading Guide"
 msgstr "操作マニュアル"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Trading Guide"
 msgid "{JAPAN ONLY}Trading Period"
-msgstr "操作マニュアル"
+msgstr "取引期間"
 
 msgid "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
 msgstr ""
@@ -8574,7 +8599,7 @@ msgid "{JAPAN ONLY}month"
 msgstr "月"
 
 msgid "{JAPAN ONLY}months"
-msgstr "月"
+msgstr "ヶ月"
 
 msgid "{JAPAN ONLY}week"
 msgstr "週間"
@@ -8590,6 +8615,9 @@ msgstr "年"
 
 msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 msgstr "外国為替のオンライン取引プラットフォーム"
+
+msgid "404"
+msgstr ""
 
 msgid "Why Us"
 msgstr "サービス概要"
@@ -8644,6 +8672,18 @@ msgstr "利用規約の承認"
 
 msgid "Trading with MetaTrader 5"
 msgstr "MetaTrader 5でお取引"
+
+#~ msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
+#~ msgstr "<span class='color-green font-weight-700'>幅広い取引期間:</span>2時間以上から取引期間の指定が可能です"
+
+#~ msgid "<span class='color-green font-weight-700'>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
+#~ msgstr "<span class='color-green font-weight-700'>どのような市場状況でもトレードが可能</span>： ラダー、タッチ、レンジなど。"
+
+#~ msgid "<span class='color-green font-weight-700'>All markets:</span> currencies, stocks, indices, and commodities."
+#~ msgstr "<span class='color-green font-weight-700'>取引対象:</span> 外国為替市場の主要通貨ペア"
+
+#~ msgid "<span class='color-green font-weight-700'>All payouts:</span> from $1 to $50,000."
+#~ msgstr "<span class='color-green font-weight-700'>ペイアウト</span>：1,000円〜100,000円"
 
 #~ msgid "Please re-enter your email"
 #~ msgstr "メールアドレスを再度ご入力下さい。"
@@ -10087,9 +10127,6 @@ msgstr "MetaTrader 5でお取引"
 #~ msgstr ""
 #~ "ログインパスワードを一定回数以上間違えたため、ログインを制限しております。\n"
 #~ "お手数ですが、５分後に改めてログインを試して下さい。"
-
-#~ msgid "Sorry, you have entered an incorrect cashier password"
-#~ msgstr "申し訳ございませんが、ご入力頂いた入出金パスワードに誤りがあります"
 
 #~ msgid "Sorry, you have entered an incorrect email address."
 #~ msgstr "申し訳ございませんが、入力されたメールアドレスに誤りがあります。"
@@ -12628,9 +12665,6 @@ msgstr "MetaTrader 5でお取引"
 
 #~ msgid "There is no intraday data for %1 on %2."
 #~ msgstr "%2での%1の日中データが存在しません。"
-
-#~ msgid "This account is unavailable. For any questions please contact <a href=\"%1\">Customer Support</a>."
-#~ msgstr "このご口座は現在無効です。<a href=\"%1\">カスタマーサポート</a>までご連絡下さい。"
 
 #~ msgid "This contract has expired."
 #~ msgstr "このトレードは終了しました。"
@@ -16508,9 +16542,6 @@ msgstr "MetaTrader 5でお取引"
 
 #~ msgid "In these terms and conditions, Y represents the amount of funds that you must deposit and X represents the bonus amount that you will receive."
 #~ msgstr "当規約では、Yとはデポジットしなければならない金額を指し、Xとは受領するボーナスの金額を指します。便宜的に単位をドルとしてこの規約内で扱うことにします。"
-
-#~ msgid "No Data available"
-#~ msgstr "利用可能なデータが存在しません"
 
 #~ msgid "The bonus will only be paid according to the first deposit amount, and will not be given based on multiple deposits that accumulate to Y."
 #~ msgstr "ボーナスは最初のデポジット、Yドルにのみ適用されます。それ以降のデポジット金額にボーナスは付与されません。"
@@ -20562,10 +20593,6 @@ msgstr "MetaTrader 5でお取引"
 
 #~ msgid "This contract is not on offer <a href=\"%1\">at this time</a>."
 #~ msgstr "このトレードは<a href=\"%1\">現在</a>、提供されていません。"
-
-#, fuzzy
-#~ msgid "View <a href=\"%1\">Asset Index.</a>"
-#~ msgstr "<a href=\"%1\">Market888.com</a>"
 
 #~ msgid "Sorry, %1 are now closed for the day. We are sorry for the inconvenience."
 #~ msgstr "申し訳ございませんが、本日%1はサービスを提供しておりません。ご不便をお掛けしておりますがご理解の程よろしくお願いいたします。"
