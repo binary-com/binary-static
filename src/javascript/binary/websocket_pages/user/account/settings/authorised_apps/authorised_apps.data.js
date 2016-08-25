@@ -2,16 +2,12 @@ var ApplicationsData = (function(){
     "use strict";
 
     function list() {
-        return LiveAPI().then(function(s) {
-            return s.send({oauth_apps: 1});
-        });
+        return LiveAPI.send({oauth_apps: 1});
     }
 
     function revoke(id) {
         if (!id) return;
-        return LiveAPI().then(function(s) {
-            return s.send({oauth_apps: 1, revoke_app: id});
-        });
+        retrun LiveAPI.send({oauth_apps: 1, revoke_app: id});
     }
 
     function parse(app) {

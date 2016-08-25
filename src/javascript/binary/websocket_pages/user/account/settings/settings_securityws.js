@@ -24,16 +24,12 @@ var SecurityWS = (function() {
         $form = $("#changeCashierLock");
         if (checkIsVirtual()) return;
 
-        LiveAPI().then(function(api) {
-            return api
-                .send({ authorize: CommonData.getLoginToken() })
-                .then(function(r) {
-                    if (checkIsVirtual()) {
-                        return;
-                    }
-                    api.send({ cashier_password: '1' }).then(lockedStatus);
-                });
-        });
+        LiveAPI
+            .send({ authorize: CommonData.getLoginToken() })
+            .then(function(r) {
+                if (checkIsVirtual()) return;
+                LiveAPI.send({ cashier_password: '1' }).then(lockedStatus);
+            });
     }
 
     function updatePage(config) {
@@ -81,17 +77,16 @@ var SecurityWS = (function() {
                 if (info.errors.length > 0) {
                     return;
                 }
-                LiveAPI().then(function(s) {
-                    s.send({ authorize: CommonData.getLoginToken() })
-                     .then(function(r) {
-                         var key = locked ? 'unlock_password' : 'lock_password';
-                         var params  = {cashier_password: '1'};
-                         params[key] = $('#cashierlockpassword1').val();
-                         s.send(params)
-                          .then(trySuccess)
-                          .catch(withFailureMessage(locked));
-                     });
-                });
+                LiveAPI
+                    .send({ authorize: CommonData.getLoginToken() })
+                    .then(function(r) {
+                        var key = locked ? 'unlock_password' : 'lock_password';
+                        var params  = {cashier_password: '1'};
+                        params[key] = $('#cashierlockpassword1').val();
+                        LiveAPI.send(params)
+                            .then(trySuccess)
+                            .catch(withFailureMessage(locked));
+                    });
             },
         });
         $form.show();

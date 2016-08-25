@@ -23,3 +23,9 @@ var LiveAPI = (function() {
         return sockPromise;
     };
 })();
+
+LiveAPI.send = function(data) {
+    return LiveAPI().then(function(s) {
+        return s.send(data);
+    });
+};

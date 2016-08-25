@@ -42,9 +42,7 @@ var IPHistoryData = (function() {
     }
 
     function get(n) {
-        return LiveAPI().then(function(sock) {
-            return sock.send({login_history: 1, limit: n});
-        });
+        return LiveAPI.send({login_history: 1, limit: n});
     }
 
     var external = {
