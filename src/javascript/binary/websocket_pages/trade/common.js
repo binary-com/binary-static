@@ -837,7 +837,9 @@ function selectOption(option, select){
 function label_value(label_elem, label, value, no_currency) {
     var currency = TUser.get().currency;
     label_elem.innerHTML = label;
-    document.getElementById(label_elem.id + '_value').innerHTML = no_currency ? value : format_money(currency, value);
+    var value_elem = document.getElementById(label_elem.id + '_value');
+    value_elem.innerHTML = no_currency ? value : format_money(currency, value);
+    value_elem.setAttribute('value', value);
 }
 
 function updatePurchaseStatus(final_price, pnl, contract_status){

@@ -341,13 +341,17 @@
                 }
             }
         }
-        #contract_purchase_reference {
+        .contract_purchase_reference {
             margin-top: auto;
             line-height: normal;
+            font-size: 0.75rem;
         }
         #contract_purchase_button {
             margin: 10px auto 0;
             display: block;
+        }
+        #contract_purchase_new_trade {
+            margin: 10px auto;
         }
         #confirmation_error {
             padding: 20px;
@@ -393,17 +397,29 @@
             }
         }
         #contract_purchase_spots {
-            height: 110px;
+            line-height: 20px;
             overflow: hidden;
-            &.won {
-                background-color: rgba(46, 136, 54, 0.2);
+            #current_tick_number {
+                font-size: 0.8rem;
             }
-            &.lost {
-                background-color: rgba(204, 0, 0, 0.1);
+            #current_tick_spot {
+                font-size: 1.05rem;
+                margin-bottom: 18px;
             }
-            .row {
-                padding: 3px 0px;
-                line-height: 20px;
+            #last_digits_list {
+                .gr-grow {
+                    padding: 0 6px;
+                    .digit {
+                        font-weight: bold;
+                        font-size: 1.05rem;
+                        margin-bottom: 8px;
+                        min-width: 10px;
+                    }
+                    .number {
+                        font-size: 0.8rem;
+                        line-height: normal;
+                    }
+                }
             }
         }
         .contract_error {
@@ -624,6 +640,12 @@
         }
         .contract_purchase {
             width: 70% !important;
+        }
+        #contract_purchase_button {
+            margin-bottom: 50px !important;
+        }
+        #contract_purchase_profit_list {
+            margin-bottom: 10px;
         }
     }
 }
