@@ -29,3 +29,16 @@ LiveAPI.send = function(data) {
         return s.send(data);
     });
 };
+
+LiveAPI().then(function(api) {
+    function getTime() {
+        var client_time = moment().valueOf();
+        api.send({time: 1})
+           .then(function(response) {
+               window.clock_started = true;
+               page.header.time_counter(response, client_time);
+           });
+    }
+    getTime();
+    setInterval(getTime, 30 * 1000);
+});
