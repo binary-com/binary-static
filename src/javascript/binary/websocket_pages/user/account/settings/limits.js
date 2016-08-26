@@ -9,16 +9,9 @@ pjax_config_page_require_auth("limitsws", function(){
                 return;
             }
 
-            LiveAPI()
-                .then(function(s) { return s.send({get_limits: 1}); })
-                .then(function(response) {
-                    console.log(response);
-                    LimitsWS.limitsHandler(response);
-                })
-                .catch(function(error) {
-                    console.log(error);
-                    LimitsWS.limitsError(error);
-                });
+            LiveAPI.send({get_limits: 1})
+                .then(LimitsWS.limitsHandler)
+                .catch(LimitsWS.limitsError);
         },
         onUnload: function(){
             LimitsWS.clean();
