@@ -26,7 +26,8 @@ var APITokenWS = (function() {
             .then(function(r) {
                 eachResponse(r);
                 populateTokensList(r.api_token.tokens);
-            });
+            })
+            .catch(errorHandler);
 
         bind_validation.simple($('#token_form')[0], {
             schema: getSchema(),
