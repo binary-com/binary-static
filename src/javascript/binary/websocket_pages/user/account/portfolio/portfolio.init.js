@@ -4,6 +4,7 @@ var PortfolioWS =  (function() {
     var values,
         currency,
         oauth_apps,
+        hidden_class,
         is_initialized,
         not_first_response;
 
@@ -13,6 +14,7 @@ var PortfolioWS =  (function() {
         values = {};
         currency = '';
         oauth_apps = {};
+        hidden_class = 'invisible';
         showLoadingImage($("#portfolio-loading"));
         if (TUser.get().balance) {
             updateBalance();
@@ -49,13 +51,13 @@ var PortfolioWS =  (function() {
     var updateBalance = function() {
         if ($("#portfolio-balance").length === 0) return;
         $("#portfolio-balance").text(Portfolio.getBalance(TUser.get().balance, TUser.get().currency));
-        var if_balance_zero = $('#if-balance-zero');
+        var $if_balance_zero = $('#if-balance-zero');
         if(Portfolio.getBalance(TUser.get().balance) > 0 || page.client.is_virtual()) {
-            if_balance_zero.addClass('invisible');
+            $if_balance_zero.addClass(hidden_class);
         } else {
-            if_balance_zero.removeClass('invisible');
+            $if_balance_zero.removeClass(hidden_class);
             if (page.client_status_detected('unwelcome, cashier_locked', 'any')) {
-                if_balance_zero.removeAttr('href').addClass('button-disabled');
+                $if_balance_zero.removeAttr('href').addClass('button-disabled');
             }
         }
     };
@@ -69,7 +71,7 @@ var PortfolioWS =  (function() {
         // no open contracts
         if(data.portfolio.contracts.length === 0) {
             $("#portfolio-no-contract").show();
-            $("#portfolio-table").addClass("invisible");
+            $("#portfolio-table").addClass(hidden_class);
         } else {
             /**
              * User has at least one contract
@@ -89,7 +91,7 @@ var PortfolioWS =  (function() {
                     }, 1000);
                 }
             });
-            $("#portfolio-table").removeClass("invisible");
+            $("#portfolio-table").removeClass(hidden_class);
 
             // update footer area data
             updateFooter();
@@ -99,7 +101,7 @@ var PortfolioWS =  (function() {
         }
         // ready to show portfolio table
         $("#portfolio-loading").hide();
-        $("#portfolio-content").removeClass("invisible");
+        $("#portfolio-content").removeClass(hidden_class);
         not_first_response = true;
     };
 
@@ -111,12 +113,6 @@ var PortfolioWS =  (function() {
             BinarySocket.send({'portfolio': 1});
         } else if(response.transaction.action === 'sell') {
             removeContract(response.transaction.contract_id);
-            if ($('#portfolio-body tr').length === 0) {
-                $('#portfolio-table').addClass('invisible');
-                $('#cost-of-open-positions').text('');
-                $('#value-of-open-positions').text('');
-                $("#portfolio-no-contract").show();
-            }
         }
     };
 
@@ -167,6 +163,11 @@ var PortfolioWS =  (function() {
             .css('opacity', '0.5')
             .fadeOut(1000, function() {
                 $(this).remove();
+                if ($('#portfolio-body tr').length === 0) {
+                    $('#portfolio-table').addClass(hidden_class);
+                    $('#cost-of-open-positions, #value-of-open-positions').text('');
+                    $("#portfolio-no-contract").show();
+                }
             });
         updateFooter();
     };
@@ -179,9 +180,9 @@ var PortfolioWS =  (function() {
     var errorMessage = function(msg) {
         var $err = $('#portfolio #err-msg');
         if(msg) {
-            $err.removeClass('invisible').text(msg);
+            $err.removeClass(hidden_class).text(msg);
         } else {
-            $err.addClass('invisible').text('');
+            $err.addClass(hidden_class).text('');
         }
     };
 
