@@ -342,7 +342,12 @@
             }
         }
         #contract_purchase_reference {
-            margin-bottom: 10px;
+            margin-top: auto;
+            line-height: normal;
+        }
+        #contract_purchase_button {
+            margin: 10px auto 0;
+            display: block;
         }
         #confirmation_error {
             padding: 20px;
@@ -368,18 +373,24 @@
         }
         #confirmation_message {
             position: relative;
-            padding-bottom: 34px;
+            font-size: 14px;
+            line-height: 18px;
         }
         #contract_purchase_descr {
-            background-color: $COLOR_WHITE;
-            border: 2px solid $COLOR_GRAY;
-            margin: 0 10px;
-            padding: 10px 5px;
             text-align: justify;
         }
-        #contract_purchase_profit_list, #contract_purchase_spots .row {
-            padding: 3px 0;
-            flex-direction: row !important;
+        #contract_purchase_brief {
+            margin-bottom: 5px;
+        }
+        #contract_purchase_profit_list {
+            padding: 0;
+            line-height: 20px;
+            display: flex;
+            font-size: 0.75rem;
+            .values {
+                font-weight: bold;
+                @include BIDIR_PROP(padding-left, padding-right, 0);
+            }
         }
         #contract_purchase_spots {
             height: 110px;
@@ -390,15 +401,10 @@
             &.lost {
                 background-color: rgba(204, 0, 0, 0.1);
             }
-        }
-        #contract_purchase_heading {
-            padding-bottom: 10px;
-        }
-        #contract_purchase_payout {
-            border-right: 1px solid $COLOR_GRAY;
-        }
-        #contract_purchase_profit {
-            border-left: 1px solid $COLOR_GRAY;
+            .row {
+                padding: 3px 0px;
+                line-height: 20px;
+            }
         }
         .contract_error {
             margin-top: auto;
@@ -444,10 +450,19 @@
         }
     }
     #contract_confirmation_container {
-        background-color: $COLOR_LIGHT_GRAY;
-        text-align: center;
-        #confirmation_message_container {
-            padding-top: 15px;
+        @include BIDIR_VALUE(text-align, left, right);
+        #contract_purchase_heading {
+            font-size: 18px;
+            line-height: 35px;
+            margin-bottom: 0px;
+            color: $COLOR_WHITE;
+            background-color: $COLOR_BLUE;
+            @include BIDIR_PROP(padding-left, padding-right, 10px);
+        }
+        #contract_purchase_contents {
+            padding: 10px;
+            border: 1px solid $COLOR_GRAY;
+            border-top: none;
         }
     }
     #contract_prices_container .price_container .price_wrapper {

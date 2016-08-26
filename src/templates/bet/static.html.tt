@@ -188,23 +188,39 @@
                         <div id="confirmation_message_container">
                             <div id="confirmation_message">
                                 <h3 id="contract_purchase_heading"></h3>
-                                <div id="contract_purchase_descr"></div>
-                                <div class="row" id="contract_purchase_profit_list">
-                                    <div class="col" id="contract_purchase_payout"></div>
-                                    <div class="col" id="contract_purchase_cost"></div>
-                                    <div class="col" id="contract_purchase_profit"></div>
+                                <div id="contract_purchase_contents">
+                                    <div id="contract_purchase_brief"></div>
+                                    <div class="gr-12">
+                                        <div class="gr-row">
+                                            <div class="gr-4" id="contract_purchase_profit_list">
+                                                <div class="gr-row">
+                                                    <div class="gr-adapt">
+                                                        <div id="contract_purchase_cost"></div>
+                                                        <div id="contract_purchase_payout"></div>
+                                                        <div id="contract_purchase_profit"></div>
+                                                        <div id="contract_purchase_barrier"></div>
+                                                    </div>
+                                                    <div class="gr-grow values">
+                                                        <div id="contract_purchase_cost_value"></div>
+                                                        <div id="contract_purchase_payout_value"></div>
+                                                        <div id="contract_purchase_profit_value"></div>
+                                                        <div id="contract_purchase_barrier_value"></div>
+                                                    </div>
+                                                </div>
+                                                <div id="contract_purchase_reference"></div>
+                                            </div>
+                                            <div class="gr-8 gr-no-gutter">
+                                                <div id="contract_purchase_descr"></div>
+                                                <button id="contract_purchase_button" class="button open_contract_detailsws"></button>
+                                                <div id="contract_purchase_spots"></div>
+                                                <div id="tick_chart"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="invisible" id="contract_purchase_balance"></div>
                                 </div>
-                                <div id="contract_purchase_barrier"></div>
-                                <div id="contract_purchase_reference"></div>
-                                <div class="button">
-                                    <button id="contract_purchase_button" class="button open_contract_detailsws"></button>
-                                </div>
-                                <div id="contract_purchase_spots"></div>
-                                <div id="tick_chart"></div>
-                                <div id="contract_purchase_balance"></div>
                             </div>
-                            <div id="confirmation_error">
-                            </div>
+                            <div id="confirmation_error"></div>
                         </div>
                         <div id="confirmation_message_endelement"></div>
                     </div>

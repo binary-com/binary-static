@@ -20,6 +20,7 @@ var Purchase = (function () {
             barrier_element = document.getElementById('contract_purchase_barrier'),
             reference = document.getElementById('contract_purchase_reference'),
             chart = document.getElementById('tick_chart'),
+            brief = document.getElementById('contract_purchase_brief'),
             balance = document.getElementById('contract_purchase_balance'),
             payout = document.getElementById('contract_purchase_payout'),
             cost = document.getElementById('contract_purchase_cost'),
@@ -44,14 +45,16 @@ var Purchase = (function () {
             if(guideBtn) {
                 guideBtn.style.display = 'none';
             }
-            container.style.display = 'table-row';
+            container.style.display = 'block';
             message_container.show();
             confirmation_error.hide();
+
+            brief.textContent = $('#underlying option:selected').text() + ' / ' + StringUtil.toTitleCase(Contract.contractType()[Contract.form()][purchase_data.echo_req.passthrough.contract_type]);
 
             heading.textContent = Content.localize().textContractConfirmationHeading;
             descr.textContent = receipt['longcode'];
             if (barrier_element) barrier_element.textContent = '';
-            reference.textContent = Content.localize().textContractConfirmationReference + ' ' + receipt['transaction_id'];
+            reference.textContent = Content.localize().textRef + ' ' + receipt['transaction_id'];
 
             var payout_value, cost_value, profit_value;
 
@@ -66,14 +69,14 @@ var Purchase = (function () {
             profit_value = Math.round((payout_value - cost_value)*100)/100;
 
             if(sessionStorage.getItem('formname')==='spreads'){
-                payout.innerHTML = Content.localize().textStopLoss + ' <p>' + receipt.stop_loss_level + '</p>';
-                cost.innerHTML = Content.localize().textAmountPerPoint + ' <p>' + receipt.amount_per_point + '</p>';
-                profit.innerHTML = Content.localize().textStopProfit + ' <p>' + receipt.stop_profit_level + '</p>';
+                label_value(payout, Content.localize().textStopLoss      , receipt.stop_loss_level  , true);
+                label_value(cost  , Content.localize().textAmountPerPoint, receipt.amount_per_point);
+                label_value(profit, Content.localize().textStopProfit    , receipt.stop_profit_level, true);
             }
             else {
-                payout.innerHTML = Content.localize().textContractConfirmationPayout + ' <p>' + payout_value + '</p>';
-                cost.innerHTML = Content.localize().textContractConfirmationCost + ' <p>' + cost_value + '</p>';
-                profit.innerHTML = Content.localize().textContractConfirmationProfit + ' <p>' + profit_value + '</p>';
+                label_value(payout, Content.localize().textPayout, addComma(payout_value));
+                label_value(cost  , Content.localize().textStake , addComma(cost_value));
+                // label_value(profit, Content.localize().textContractConfirmationProfit, addComma(profit_value));
             }
 
             balance.textContent = Content.localize().textContractConfirmationBalance + ' ' + format_money(TUser.get().currency, Math.round(receipt['balance_after']*100)/100);
@@ -97,10 +100,12 @@ var Purchase = (function () {
             if(Contract.form() !== 'digits' && !show_chart){
                 button.textContent = Content.localize().textContractConfirmationButton;
                 button.setAttribute('contract_id', receipt['contract_id']);
+                descr.show();
                 button.show();
                 $('#confirmation_message .open_contract_detailsws').attr('contract_id', receipt['contract_id']).removeClass('invisible');
             }
             else{
+                descr.hide();
                 button.hide();
                 $('#confirmation_message .open_contract_detailsws').addClass('invisible');
             }
@@ -146,7 +151,7 @@ var Purchase = (function () {
                 price:passthrough['ask-price'],
                 payout:receipt['payout'],
                 show_contract_result:1,
-                width: $('#confirmation_message').width(),
+                width: $('#tick_chart').width(),
             });
             WSTickDisplay.spots_list = {};
         }

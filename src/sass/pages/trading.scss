@@ -13,22 +13,19 @@
 }
 
 a.close {
-    display: inline-block;
-    float: right;
-    margin-top: 0;
-    margin-right: 0;
-    padding: 10px 8px;
+    display: block;
+    padding: 0px 8px;
     cursor: pointer;
     color: $COLOR_WHITE;
-    border: solid 1px $COLOR_ORANGE;
-    border-radius: 0;
-    border-bottom-left-radius: 4px;
-    background: $COLOR_ORANGE;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 0px;
+    line-height: 35px;
+    font-size: 26px;
+    font-weight: normal;
+    position: absolute;
+    @include BIDIR_PROP(right, left, 0);
+    z-index: 1;
     &:hover {
         text-decoration: none;
+        color: $COLOR_ORANGE;
     }
 }
 

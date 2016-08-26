@@ -834,20 +834,28 @@ function selectOption(option, select){
     }
 }
 
+function label_value(label_elem, label, value, no_currency) {
+    var currency = TUser.get().currency;
+    label_elem.innerHTML = label;
+    document.getElementById(label_elem.id + '_value').innerHTML = no_currency ? value : format_money(currency, value);
+}
+
 function updatePurchaseStatus(final_price, pnl, contract_status){
     $('#contract_purchase_heading').text(text.localize(contract_status));
-    $payout = $('#contract_purchase_payout');
-    $cost = $('#contract_purchase_cost');
-    $profit = $('#contract_purchase_profit');
+    var payout  = document.getElementById('contract_purchase_payout'),
+        cost    = document.getElementById('contract_purchase_cost'),
+        profit  = document.getElementById('contract_purchase_profit'),
+        currency = TUser.get().currency;
 
-    $payout.html(Content.localize().textBuyPrice + '<p>'+addComma(Math.abs(pnl))+'</p>');
-    $cost.html(Content.localize().textFinalPrice + '<p>'+addComma(final_price)+'</p>');
-    if(!final_price){
-        $profit.html(Content.localize().textLoss + '<p>'+addComma(pnl)+'</p>');
-    }
-    else{
-        $profit.html(Content.localize().textProfit + '<p>'+addComma(Math.round((final_price-pnl)*100)/100)+'</p>');
-    }
+    label_value(cost  , Content.localize().textStake , Math.abs(pnl));
+    label_value(payout, Content.localize().textPayout, addComma(final_price));
+    $('#contract_purchase_payout_value').attr('class', (+final_price > 0 ? 'profit' : 'loss'));
+    // if(!final_price){
+    //     $profit.html(Content.localize().textLoss + '<span>'+addComma(pnl)+'</span>');
+    // }
+    // else{
+    //     $profit.html(Content.localize().textProfit + '<span>'+addComma(Math.round((final_price-pnl)*100)/100)+'</span>');
+    // }
 }
 
 function updateWarmChart(){

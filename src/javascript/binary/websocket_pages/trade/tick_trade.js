@@ -75,7 +75,7 @@ var TickDisplay = function() {
                     type: 'line',
                     renderTo: 'tick_chart',
                     width: config.width ? config.width : (config.minimize ? 394 : null),
-                    height: config.minimize ? 143 : null,
+                    height: config.minimize ? 120 : null,
                     backgroundColor: null,
                     events: { load: $self.plot(config.plot_from, config.plot_to) },
                     marginLeft: 50
@@ -194,7 +194,7 @@ var TickDisplay = function() {
             }
             var barrier = document.getElementById('contract_purchase_barrier');
             if ($self.contract_barrier && barrier) {
-                barrier.innerHTML = Content.localize().textBarrier + ': ' + $self.contract_barrier;
+                label_value(barrier, Content.localize().textBarrier, addComma($self.contract_barrier), true);
             }
         },
         add: function(indicator) {
