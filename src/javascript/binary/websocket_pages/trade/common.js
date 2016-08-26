@@ -957,7 +957,7 @@ function moreTabsHandler($ul) {
             $(tab).insertBefore($seeMore);
         });
     }
-    $moreTabs.css('top', $ul.outerHeight() - 1).unbind('click').click(function() { $(this).hideDropDown('fast'); });
+    $moreTabs.css('top', $ul.find('li:visible').outerHeight() - 1).unbind('click').click(function() { hideDropDown('fast'); });
 
     // move additional tabs to moreTabs
     $visibleTabs = $ul.find('>li:visible');

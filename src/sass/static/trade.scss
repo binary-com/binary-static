@@ -772,6 +772,7 @@
                     display: block;
                     margin: 0;
                     padding: 0;
+                    white-space: nowrap;
                     &.active {
                         border-radius: 0;
                     }
