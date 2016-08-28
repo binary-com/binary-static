@@ -1,3 +1,7 @@
+var Validate = require('common_functions/validation');
+var Content = require('trade/content');
+var page = require('binary/base').page;
+
 var ValidAccountOpening = (function(){
   var redirectCookie = function() {
     if (page.client.show_login_if_logout(true)) {
@@ -127,3 +131,5 @@ var ValidAccountOpening = (function(){
     checkAnswer: checkAnswer
   };
 }());
+
+module.exports = ValidAccountOpening;

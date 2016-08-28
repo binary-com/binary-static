@@ -1,3 +1,5 @@
+var Table = require('./table');
+
 var FlexTableUI = function(config) {
     this.config = config;
     this.id = config.id;
@@ -52,3 +54,5 @@ FlexTableUI.prototype = {
         $('#' + this.id + '> tfoot').hide();
     }
 };
+
+module.exports = FlexTableUI;

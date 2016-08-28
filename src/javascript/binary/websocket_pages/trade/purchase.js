@@ -1,3 +1,15 @@
+var Content = require('./content');
+var Contract = require('./contract');
+var Symbols = require('./symbols');
+var Tick = require('./tick');
+var WSTickDisplay = require('./tick_trade');
+var TUser = require('binary/base').TUser;
+var page = require('binary/base').page;
+
+var Common = require('./common');
+var isVisible = Common.isVisible;
+var updatePurchaseStatus = Common.updatePurchaseStatus;
+
 /*
  * Purchase object that handles all the functions related to
  * contract purchase response
@@ -241,3 +253,5 @@ var Purchase = (function () {
     };
 
 })();
+
+module.exports = Purchase;

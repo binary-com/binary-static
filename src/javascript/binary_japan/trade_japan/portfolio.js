@@ -1,3 +1,6 @@
+var PortfolioWS = require('../../binary/websocket_pages/user/account/portfolio/portfolio.init');
+var JPTradePage = require('./jp_trade_page');
+
 var JapanPortfolio = (function() {
 
   var $portfolio;
@@ -52,3 +55,5 @@ var JapanPortfolio = (function() {
     isActive: isActive,
   };
 })();
+
+module.exports = JapanPortfolio;

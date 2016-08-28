@@ -1,3 +1,7 @@
+var ProfitTableUI = require('./profit_table.ui');
+var ProfitTableData = require('./profit_table.data');
+var Content = require('../../../trade/content');
+
 var ProfitTableWS = (function () {
     var batchSize,
         chunkSize,
@@ -119,3 +123,5 @@ var ProfitTableWS = (function () {
         clean: initTable
     };
 }());
+
+module.exports = ProfitTableWS;

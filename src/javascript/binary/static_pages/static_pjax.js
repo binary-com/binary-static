@@ -1,3 +1,13 @@
+var TradePage = require('trade/tradepage');
+var submit_email = require('websocket_pages/user/verify_email');
+var JPTradePage = require('binary_japan/trade_japan/jp_trade_page');
+var Endpoint = require('./endpoint');
+var GetStartedJP = require('./get_started_jp');
+var JobDetails = require('./job_details');
+var Login = require('base/login');
+var pjax_config_page = require('base/pjax').pjax_config_page;
+var page = require('binary/base').page;
+
 pjax_config_page('/\?.+|/home', function() {
     return {
         onLoad: function() {
@@ -155,6 +165,42 @@ pjax_config_page('/(us_patents|responsible-trading|partners)', function() {
             if (japanese_client()) {
                 window.location.href = page.url.url_for('/');
             }
+        }
+    };
+});
+
+pjax_config_page("endpoint", function(){
+    return {
+        onLoad: function() {
+            Endpoint.init();
+        }
+    };
+});
+
+pjax_config_page('/get-started-jp', function() {
+    return {
+        onLoad: function() {
+            GetStartedJP.init();
+        }
+    };
+});
+
+pjax_config_page('/open-positions', function() {
+  return {
+      onLoad: function() {
+        if (document.getElementById('Information_Technology')) {
+          if (page.url.location.hash) {
+              $.scrollTo($(page.url.location.hash));
+          }
+        }
+      }
+  };
+});
+
+pjax_config_page('/open-positions/job-details', function() {
+    return {
+        onLoad: function() {
+            JobDetails.init();
         }
     };
 });

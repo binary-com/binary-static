@@ -1,3 +1,8 @@
+var TradingAnalysis = require('trade/analysis');
+var Symbols = require('trade/symbols');
+var MenuContent = require('base/menu_content');
+var template = require('base/utility').template;
+
 TradingAnalysis.DigitInfoWS = function() {
     this.chart_config = {
         chart: {

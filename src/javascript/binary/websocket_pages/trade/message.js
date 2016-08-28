@@ -1,3 +1,23 @@
+var PortfolioWS = require('../user/account/portfolio/portfolio.init');
+var ProfitTableWS = require('../user/account/profit_table/profit_table.init');
+var StatementWS = require('../user/account/statement/statement.init');
+var TradingAnalysis = require('./analysis');
+var displayCurrencies = require('./currency');
+var Purchase = require('./purchase');
+var Symbols = require('./symbols');
+var Tick = require('./tick');
+var TradePage = require('./tradepage');
+var GTM = require('../../base/page').GTM;
+var page = require('binary/base').page;
+
+var Process = require('./process');
+var processActiveSymbols = Process.processActiveSymbols;
+var processContract = Process.processContract;
+var forgetTradingStreams = Process.forgetTradingStreams;
+var processTick = Process.processTick;
+var processProposal = Process.processProposal;
+var processTradingTimes = Process.processTradingTimes;
+
 /*
  * This Message object process the response from server and fire
  * events based on type of response
@@ -63,3 +83,5 @@ var Message = (function () {
     };
 
 })();
+
+module.exports = Message;

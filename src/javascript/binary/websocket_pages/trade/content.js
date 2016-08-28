@@ -1,3 +1,4 @@
+var template = require('../../base/utility').template;
 var Content = (function() {
     'use strict';
 
@@ -313,3 +314,5 @@ var Content = (function() {
     };
 
 })();
+
+module.exports = Content;

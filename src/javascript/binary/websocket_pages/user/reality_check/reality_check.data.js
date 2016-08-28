@@ -1,3 +1,4 @@
+var template = require('base/utility').template;
 var RealityCheckData = (function () {
     'use strict';
 
@@ -114,3 +115,5 @@ var RealityCheckData = (function () {
         triggerCloseEvent: triggerCloseEvent
     };
 }());
+
+module.exports = RealityCheckData;

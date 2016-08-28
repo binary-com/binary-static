@@ -1,3 +1,5 @@
+var page = require('binary/base').page;
+
 var KnowledgeTestUI = (function () {
     "use strict";
 
@@ -121,3 +123,5 @@ var KnowledgeTestUI = (function () {
         createKnowledgeTestLink: createKnowledgeTestLink,
     };
 }());
+
+module.exports = KnowledgeTestUI;

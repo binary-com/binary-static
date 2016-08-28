@@ -1,3 +1,9 @@
+var ValidAccountOpening = require('common_functions/valid_account_opening');
+var FinancialAccOpeningUI = require('websocket_pages/user/new_account/financial_acc_opening/financial_acc_opening.ui');
+var Content = require('trade/content');
+var pjax_config_page_require_auth = require('base/pjax').pjax_config_page_require_auth;
+var page = require('binary/base').page;
+
 pjax_config_page_require_auth("new_account/maltainvestws", function(){
   return {
     onLoad: function() {

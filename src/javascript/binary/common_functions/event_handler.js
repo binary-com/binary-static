@@ -1,4 +1,4 @@
-function onlyNumericOnKeypress(ev) {
+module.exports = function onlyNumericOnKeypress(ev) {
     var key = ev.keyCode;
     var char = String.fromCharCode(ev.which);
     if(
@@ -9,4 +9,4 @@ function onlyNumericOnKeypress(ev) {
         ev.returnValue = false;
         ev.preventDefault();
     }
-}
+};

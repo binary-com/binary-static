@@ -1,13 +1,18 @@
-function submit_email() {
+var validator = require('binary/validator');
+var Content = require('trade/content');
+var V2 = require('common_functions/validation_v2');
+var page = require('binary/base').page;
+
+module.exports = function submit_email() {
     Content.populate();
     var form = $('#verify-email-form')[0];
     if (!form) {
         return;
     }
 
-    bind_validation.simple(form, {
+    validator.bind_to.simple(form, {
         schema: {
-            email: [ValidateV2.required, ValidateV2.email]
+            email: [V2.required, V2.email]
         },
         stop: function(info) {
             $('#signup_error').text('');
@@ -44,4 +49,4 @@ function submit_email() {
         BinarySocket.init({onmessage: handler});
         BinarySocket.send({verify_email: email, type: 'account_opening'});
     }
-}
+};

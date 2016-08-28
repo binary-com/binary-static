@@ -1,3 +1,7 @@
+// var TrafficSource = require('common_functions/traffic_source');
+var Content = require('trade/content');
+var V2 = require('common_functions/validation_v2');
+
 var VirtualAccOpeningData = (function(){
     "use strict";
 
@@ -23,7 +27,6 @@ var VirtualAccOpeningData = (function(){
     }
 
     function getSchema() {
-        var V2 = ValidateV2;
         var err = Content.localize().textPasswordsNotMatching;
         function matches(value, data) {
             return value === data.password;
@@ -62,3 +65,5 @@ var VirtualAccOpeningData = (function(){
         handler:    handler,
     };
 }());
+
+module.exports = VirtualAccOpeningData;

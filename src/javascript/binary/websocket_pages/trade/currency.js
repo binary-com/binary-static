@@ -1,10 +1,14 @@
+var Defaults = require('./defaults');
+var page = require('binary/base').page;
+
 /*
  * Handles currency display
  *
  * It process 'socket.send({payout_currencies:1})` response
  * and display them
  */
-function displayCurrencies(selected) {
+
+module.exports = function displayCurrencies(selected) {
     'use strict';
 
     var target = document.getElementById('currency'),
@@ -34,4 +38,4 @@ function displayCurrencies(selected) {
 
     target.appendChild(fragment);
     Defaults.set('currency', target.value);
-}
+};

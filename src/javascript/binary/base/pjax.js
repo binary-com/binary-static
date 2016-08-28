@@ -1,3 +1,5 @@
+var page = require('binary/base').page;
+
 //For object shape coherence we create named objects to be inserted into the queue.
 var URLPjaxQueueElement = function(exec_function, url) {
     this.method = exec_function;
@@ -16,19 +18,6 @@ URLPjaxQueueElement.prototype = {
     }
 };
 
-var IDPjaxQueueElement = function(exec_function, id) {
-    this.method = exec_function;
-    this.sel = '#' + id;
-};
-
-IDPjaxQueueElement.prototype = {
-    fire: function() {
-        if($(this.sel).length > 0) {
-            this.method();
-        }
-    }
-};
-
 var PjaxExecQueue = function () {
     this.url_exec_queue = [];
     this.id_exec_queue = [];
@@ -42,9 +31,6 @@ PjaxExecQueue.prototype = {
     },
     queue_for_url: function (exec_function, url_pattern) {
         this.url_exec_queue.unshift(new URLPjaxQueueElement(exec_function, url_pattern));
-    },
-    queue_if_id_present: function(exec_function, id) {
-        this.id_exec_queue.unshift(new IDPjaxQueueElement(exec_function, id));
     },
     fire: function () {
         if(!this.fired) {
@@ -164,5 +150,15 @@ var pjax_config_page_require_auth = function(url, exec) {
     pjax_config_page(url, newExecFn);
 };
 
-init_pjax(); //Pjax-standalone will wait for on load event before attaching.
-$(function() { onLoad.fire(); });
+if (typeof document !== 'undefined') {
+    init_pjax(); //Pjax-standalone will wait for on load event before attaching.
+    $(function() { onLoad.fire(); });
+}
+
+
+module.exports = {
+    pjax_config_page_require_auth: pjax_config_page_require_auth,
+    pjax_config_page: pjax_config_page,
+    load_with_pjax: load_with_pjax,
+    PjaxExecQueue: PjaxExecQueue,
+};

@@ -1,3 +1,5 @@
+var page = require('../base').page;
+
 var Login = (function() {
     "use strict";
 
@@ -30,3 +32,5 @@ var Login = (function() {
         login_url        : login_url,
     };
 }());
+
+module.exports = Login;

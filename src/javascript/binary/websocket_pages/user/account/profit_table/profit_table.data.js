@@ -1,5 +1,10 @@
-var ProfitTableData = (function(){
+var app_details = require('../../../../common_functions/get_app_details');
+var ProfitTableWS = require('./profit_table.init');
+var ProfitTableUI = require('./profit_table.ui');
+var showLocalTimeOnHover = require('../../../../base/utility').showLocalTimeOnHover;
 
+
+var ProfitTableData = (function(){
     function initSocket(){
         BinarySocket.init({
             onmessage: function(msg){
@@ -11,7 +16,7 @@ var ProfitTableData = (function(){
                         ProfitTableWS.profitTableHandler(response);
                         showLocalTimeOnHover('td.buy-date,td.sell-date');
                     } else if (type === 'oauth_apps') {
-                        addTooltip(ProfitTableUI.setOauthApps(buildOauthApps(response.oauth_apps)));
+                        app_details.addTooltip(ProfitTableUI.setOauthApps(app_details.build(response.oauth_apps)));
                     }
                 }
             }
@@ -33,3 +38,5 @@ var ProfitTableData = (function(){
         initSocket: initSocket
     };
 }());
+
+module.exports = ProfitTableData;

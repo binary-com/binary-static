@@ -1,3 +1,8 @@
+var IPHistory = require('./iphistory/iphistory.init');
+var Content = require('trade/content');
+var pjax_config_page_require_auth = require('base/pjax').pjax_config_page_require_auth;
+var page = require('binary/base').page;
+
 pjax_config_page_require_auth("user/settings/iphistoryws", function(){
     return {
         onLoad: function() {

@@ -1,3 +1,5 @@
+var MarketTimesUI = require('./market_timesws.ui');
+
 var MarketTimesData = (function() {
     "use strict";
 
@@ -36,3 +38,5 @@ var MarketTimesData = (function() {
         responseHandler: responseHandler
     };
 }());
+
+module.exports = MarketTimesData;

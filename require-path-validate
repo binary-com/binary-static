@@ -1,0 +1,95 @@
+#!/usr/bin/env python
+import os
+import re
+from os.path import abspath as p
+from collections import defaultdict
+
+RED = '\033[91m'
+RESET = '\033[0m'
+
+REQUIRE_RE = re.compile(r'require\(("|\')(.+?)(\1)\)')
+ALIASES = {
+    'binary':           p('./src/javascript/binary'),
+    'base':             p('./src/javascript/binary/base'),
+    'common_functions': p('./src/javascript/binary/common_functions'),
+    'attach_dom':       p('./src/javascript/binary/common_functions/attach_dom'),
+    'components':       p('./src/javascript/binary/components'),
+    'static_pages':     p('./src/javascript/binary/static_pages'),
+    'websocket_pages':  p('./src/javascript/binary/websocket_pages'),
+    'account':          p('./src/javascript/binary/websocket_pages/user/account'),
+    'trade':            p('./src/javascript/binary/websocket_pages/trade'),
+    'binary_japan':     p('./src/javascript/binary_japan'),
+}
+
+
+def files_only(path):
+    for item in os.walk(path):
+        dirname, subdirs, files = item
+        for f in files:
+            yield os.path.join(dirname, f)
+
+
+def check_exists(dep, filename, resolved):
+    if not os.path.exists(resolved):
+        filename = os.path.basename(filename)
+        print(RED + filename + ': ' + RESET + dep + ' => ' + resolved)
+
+
+def check(dep, filename):
+    if not dep.endswith('.js'):
+        dep = dep + '.js'
+
+    parts = dep.split('/', 1)
+    head = parts.pop(0)
+    if not parts:
+        return
+    tail = parts[0]
+
+    if head == '.':
+        current_dir = os.path.dirname(filename)
+        real = os.path.join(current_dir, tail)
+        return real
+
+    if head in ALIASES:
+        real = os.path.join(ALIASES[head], tail)
+        return real
+
+
+def validate_require_calls(filename, graph):
+    with open(filename, 'r') as f:
+        for match in REQUIRE_RE.finditer(f.read()):
+            _, dep, _ = match.groups()
+            resolved = check(dep, filename)
+            if resolved:
+                check_exists(dep, filename, resolved)
+                graph[filename].add(resolved)
+
+
+def detect_circular(needle, graph, ctx, seen):
+    if ctx[-1] not in graph: return
+    for dep in graph[ctx[-1]]:
+        if dep == needle:
+            yield ctx + [needle]
+            continue
+        if dep in seen:
+            continue
+        seen.add(dep)
+        u = detect_circular(needle, graph, ctx + [dep], seen)
+        for item in u:
+            yield item
+
+
+if __name__ == '__main__':
+    graph = defaultdict(set)
+    for item in files_only('src/javascript'):
+        validate_require_calls(item, graph)
+
+    circs = []
+    for d in graph:
+        for item in detect_circular(d, graph, [d], set()):
+            circs.append(item)
+    circs.sort()
+    for item in circs:
+        print(' -> '.join(
+            v.lstrip('src/javascript') for v in item
+            ))

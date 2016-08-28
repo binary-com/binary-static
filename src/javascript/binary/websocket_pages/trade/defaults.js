@@ -1,3 +1,6 @@
+var isVisible = require('./common').isVisible;
+var page = require('binary/base').page;
+
 /*
  * Handles trading page default values
  * 
@@ -73,3 +76,5 @@ var Defaults = (function(){
         clear : function(){params = {};}
     };
 })();
+
+module.exports = Defaults;

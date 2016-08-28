@@ -1,4 +1,12 @@
-pjax_config_page("new_account/virtualws", function() {
+var testPassword = require('common_functions/passwordmeter');
+var validator = require('binary/validator');
+var Content = require('trade/content');
+var VirtualAccOpeningData = require('./virtual_acc_opening/virtual_acc_opening.data');
+var pjax_config_page = require('base/pjax').pjax_config_page;
+var page = require('binary/base').page;
+var template = require('base/utility').template;
+
+var VirtualAccountOpening = (function() {
     function onSuccess(res) {
         var new_account = res.new_account_virtual;
         page.client.set_cookie('residence', res.echo_req.residence);
@@ -44,6 +52,11 @@ pjax_config_page("new_account/virtualws", function() {
     }
 
     function init() {
+        if (CommonData.getLoginToken()) {
+            window.location.href = page.url.url_for('user/my_accountws');
+            return;
+        }
+
         Content.populate();
         handle_residence_state_ws();
         BinarySocket.send({residence_list: 1});
@@ -58,7 +71,7 @@ pjax_config_page("new_account/virtualws", function() {
             $('#password-meter').remove();
         }
 
-        bind_validation.simple(form, {
+        validator.bind_to.simple(form, {
             schema: VirtualAccOpeningData.getSchema(),
             submit: function(ev, info) {
                 ev.preventDefault();
@@ -76,13 +89,7 @@ pjax_config_page("new_account/virtualws", function() {
         });
     }
 
-    return {
-        onLoad: function() {
-            if (CommonData.getLoginToken()) {
-                window.location.href = page.url.url_for('user/my_accountws');
-                return;
-            }
-            init();
-        }
-    };
-});
+    return { init: init };
+})();
+
+module.exports = VirtualAccountOpening;

@@ -1,4 +1,11 @@
-var ViewBalanceUI = (function(){
+var PortfolioWS = require('account/portfolio/portfolio.init');
+var addComma = require('trade/common').addComma;
+var TUser = require('binary/base').TUser;
+
+var ViewBalance = (function(){
+    function init(){
+        BinarySocket.init(1);
+    }
 
     function updateBalances(response){
         if (response.hasOwnProperty('error')) {
@@ -20,6 +27,9 @@ var ViewBalanceUI = (function(){
     }
 
     return {
+        init: init,
         updateBalances: updateBalances
     };
 }());
+
+module.exports = ViewBalance;

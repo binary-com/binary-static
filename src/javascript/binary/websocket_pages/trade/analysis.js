@@ -1,3 +1,11 @@
+var JPTradePage = require('../../../binary_japan/trade_japan/jp_trade_page');
+var JapanPortfolio = require('../../../binary_japan/trade_japan/portfolio');
+var page = require('binary/base').page;
+
+var Common = require('./common');
+var toggleActiveNavMenuElement = Common.toggleActiveNavMenuElement;
+var showHighchart = Common.showHighchart;
+
 /*
  * This file contains the code related to loading of trading page bottom analysis
  * content. It will contain jquery so as to compatible with old code and less rewrite
@@ -234,3 +242,5 @@ var TradingAnalysis = (function() {
     };
 
 })();
+
+module.exports = TradingAnalysis;

@@ -1,3 +1,8 @@
+var validator = require('binary/validator');
+var Content = require('trade/content');
+var V2 = require('common_functions/validation_v2');
+var page = require('binary/base').page;
+
 var SettingsDetailsWS = (function() {
     "use strict";
 
@@ -15,9 +20,37 @@ var SettingsDetailsWS = (function() {
 
 
     function init() {
+        BinarySocket.init({
+            onmessage: function(msg) {
+                var response = JSON.parse(msg.data);
+                if (!response) {
+                    console.log('some error occured');
+                    return;
+                }
+                var type = response.msg_type;
+                switch(type){
+                    case "get_settings":
+                        SettingsDetailsWS.getDetailsResponse(response);
+                        break;
+                    case "set_settings":
+                        SettingsDetailsWS.setDetailsResponse(response);
+                        break;
+                    case "states_list":
+                        SettingsDetailsWS.populateStates(response);
+                        break;
+                    case "error":
+                        $('#formMessage').attr('class', 'errorfield').text(response.error.message);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
+
+        Content.populate();
         var isJP = page.client.residence === 'jp';
         BinarySocket.send({"get_settings": "1"});
-        bind_validation.simple($(formID)[0], {
+        validator.bind_to.simple($(formID)[0], {
             schema: isJP ? getJPSchema() : getNonJPSchema(),
             submit: function(ev, info) {
                 ev.preventDefault();
@@ -174,7 +207,6 @@ var SettingsDetailsWS = (function() {
     }
 
     function getJPSchema(data) {
-        var V2 = ValidateV2;
         return {
             hedge_asset_amount: [
                 function(v) { return dv.ok(v.trim()); },
@@ -196,7 +228,6 @@ var SettingsDetailsWS = (function() {
             period  = Content.localize().textPeriod,
             comma   = Content.localize().textComma;
 
-        var V2 = ValidateV2;
         var isAddress  = V2.regex(/^[a-zA-Z0-9\s\,\.\-\/\(\)#']+$/, [letters, numbers, space, period, comma, '- / ( ) # \'']);
         var isCity     = isAddress;
         var isState    = V2.regex(/^[a-zA-Z\s\-']+$/,               [letters, space, '- \'']);
@@ -252,40 +283,4 @@ var SettingsDetailsWS = (function() {
     };
 }());
 
-
-
-pjax_config_page_require_auth("settings/detailsws", function() {
-    return {
-        onLoad: function() {
-            BinarySocket.init({
-                onmessage: function(msg) {
-                    var response = JSON.parse(msg.data);
-                    if (!response) {
-                        console.log('some error occured');
-                        return;
-                    }
-                    var type = response.msg_type;
-                    switch(type){
-                        case "get_settings":
-                            SettingsDetailsWS.getDetailsResponse(response);
-                            break;
-                        case "set_settings":
-                            SettingsDetailsWS.setDetailsResponse(response);
-                            break;
-                        case "states_list":
-                            SettingsDetailsWS.populateStates(response);
-                            break;
-                        case "error":
-                            $('#formMessage').attr('class', 'errorfield').text(response.error.message);
-                            break;
-                        default:
-                            break;
-                    }
-                }
-            });
-
-            Content.populate();
-            SettingsDetailsWS.init();
-        }
-    };
-});
+module.exports = SettingsDetailsWS;

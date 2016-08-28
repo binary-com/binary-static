@@ -1,9 +1,10 @@
+var moment = require('../../../../lib/moment/moment');
+var StringUtil = require('../../../common_functions/string_util');
+var addComma = require('../../trade/common').addComma;
+var TUser = require('binary/base').TUser;
+
 var Statement = (function(){
     'use strict';
-    var Compatibility = typeof window !== 'undefined' ? window.Compatibility : require('../../../common_functions/compatibility');
-    var moment = Compatibility.requireIfNotExist('moment', '../../lib/moment/moment'),
-        StringUtil = Compatibility.requireIfNotExist('StringUtil', '../common_functions/string_util'),
-        addComma = Compatibility.requireIfNotExist('addComma', '../websocket_pages/trade/common', 'addComma');
     var getStatementData = function(statement) {
         var dateObj = new Date(statement["transaction_time"] * 1000),
             momentObj = moment.utc(dateObj),
@@ -43,14 +44,10 @@ var Statement = (function(){
         return csv.join('\r\n');
     };
 
-    var external = {
+    return {
         getStatementData: getStatementData,
         generateCSV: generateCSV
     };
-
-    if (typeof module !== 'undefined') {
-        module.exports = external;
-    }
-
-    return external;
 }());
+
+module.exports = Statement;

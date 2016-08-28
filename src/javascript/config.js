@@ -40,3 +40,9 @@ function getSocketURL() {
     }
     return 'wss://' + server_url + '/websockets/v3';
 }
+
+
+module.exports = {
+  getAppId: getAppId,
+  getSocketURL: getSocketURL,
+};

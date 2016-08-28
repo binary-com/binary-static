@@ -1,3 +1,5 @@
+var AssetIndexUI = require('../asset_indexws.ui');
+
 var AssetIndexData = (function() {
     "use strict";
 
@@ -34,3 +36,5 @@ var AssetIndexData = (function() {
         responseHandler: responseHandler
     };
 }());
+
+module.exports = AssetIndexData;

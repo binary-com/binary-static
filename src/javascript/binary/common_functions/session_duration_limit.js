@@ -1,3 +1,5 @@
+var page = require('binary/base').page;
+
 var SessionDurationLimit = (function() {
     'use strict';
 
@@ -64,3 +66,5 @@ var SessionDurationLimit = (function() {
         exclusionResponseHandler: exclusionResponseHandler,
     };
 }());
+
+module.exports = SessionDurationLimit;

@@ -1,3 +1,5 @@
+var ViewPopupWS = require('../../user/view_popup/view_popupws');
+
 var Highchart = (function() {
   var chart, options, chart_forget, responseID, contract, contract_ended, contracts_for_send, history_send, entry_tick_barrier_drawn, initialized, chart_delayed, chart_subscribed, request, min_point, max_point, start_time, purchase_time, now_time, end_time, entry_tick_time, is_sold, sell_time, sell_spot_time, is_expired, exit_tick_time, exit_time;
   function init_once() {
@@ -641,3 +643,5 @@ var Highchart = (function() {
     dispatch     : dispatch
   };
 }());
+
+module.exports = Highchart;

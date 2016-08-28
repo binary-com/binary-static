@@ -1,3 +1,5 @@
+var Content = require('trade/content');
+
 var MetaTrader = (function(){
     'use strict';
 
@@ -57,3 +59,5 @@ var MetaTrader = (function(){
         validateAmount  : validateAmount,
     };
 }());
+
+module.exports = MetaTrader;

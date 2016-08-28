@@ -1,3 +1,9 @@
+var ValidAccountOpening = require('common_functions/valid_account_opening');
+var RealAccOpeningUI = require('./real_acc_opening/real_acc_opening.ui');
+var Content = require('trade/content');
+var pjax_config_page = require('base/pjax').pjax_config_page;
+var page = require('binary/base').page;
+
 pjax_config_page("new_account/realws", function(){
   return {
     onLoad: function() {

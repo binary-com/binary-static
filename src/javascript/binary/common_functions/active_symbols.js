@@ -148,8 +148,7 @@ var ActiveSymbols = (function () {
             return symbols;
         },
     };
-    if (typeof module !== 'undefined') {
-        module.exports = activeSymbols;
-    }
     return activeSymbols;
 })();
+
+module.exports = ActiveSymbols;

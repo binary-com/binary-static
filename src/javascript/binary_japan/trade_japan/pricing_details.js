@@ -30,3 +30,5 @@ var PricingDetails = function() {
         }
     };
 }();
+
+module.exports = PricingDetails;

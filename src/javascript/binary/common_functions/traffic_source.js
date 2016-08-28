@@ -1,3 +1,5 @@
+var page = require('../base').page;
+
 /*
  * Handles utm parameters/referrer to use on signup
  * 
@@ -7,6 +9,7 @@
  * 3. document.referrer
  *
  */
+var CookieStorage = require('base/storage').CookieStorage;
 
 var TrafficSource = (function(){
     'use strict';
@@ -76,3 +79,5 @@ var TrafficSource = (function(){
         getSource: getSource,
     };
 })();
+
+module.exports = TrafficSource;

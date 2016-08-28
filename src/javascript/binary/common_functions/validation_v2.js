@@ -1,3 +1,6 @@
+var Content = require('trade/content');
+var template = require('base/utility').template;
+
 var ValidateV2 = (function() {
     function err() {
         return Content.errorMessage.apply(Content, arguments);
@@ -119,3 +122,5 @@ var ValidateV2 = (function() {
         lengthRange: lengthRange,
     };
 })();
+
+module.exports = ValidateV2;

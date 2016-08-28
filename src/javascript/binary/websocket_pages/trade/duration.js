@@ -1,3 +1,18 @@
+var Barriers = require('./barriers');
+var Content = require('./content');
+var Contract = require('./contract');
+var Defaults = require('./defaults');
+var StartDates = require('./starttime');
+
+var Common = require('./common');
+var isVisible = Common.isVisible;
+var durationOrder = Common.durationOrder;
+var selectOption = Common.selectOption;
+
+var Process = require('./process');
+var processPriceRequest = Process.processPriceRequest;
+var processTradingTimesRequest = Process.processTradingTimesRequest;
+
 /*
  * Handles duration processing display
  *
@@ -393,3 +408,5 @@ var Durations = (function(){
         validateMinDurationAmount: validateMinDurationAmount
     };
 })();
+
+module.exports = Durations;

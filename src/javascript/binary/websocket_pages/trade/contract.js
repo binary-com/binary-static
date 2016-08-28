@@ -1,3 +1,9 @@
+var getFormNameBarrierCategory = require('./common').getFormNameBarrierCategory;
+var Content = require('./content');
+var Contract = require('./contract');
+var StartDates = require('./starttime');
+var page = require('binary/base').page;
+
 /*
  * Contract object mocks the trading form we have on our website
  * It parses the contracts json we get from socket.send({contracts_for: 'R_50'})
@@ -192,3 +198,5 @@ var Contract = (function() {
     };
 
 })();
+
+module.exports = Contract;

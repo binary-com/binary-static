@@ -1,3 +1,33 @@
+var TradingAnalysis = require('./analysis');
+var Barriers = require('./barriers');
+var Symbols = require('./symbols');
+var Contract = require('./contract');
+var Defaults = require('./defaults');
+var Durations = require('./duration');
+var TradingEvents = require('./event');
+var Price = require('./price');
+var Purchase = require('./purchase');
+var StartDates = require('./starttime');
+var Tick = require('./tick');
+var WSTickDisplay = require('./tick_trade');
+var TradePage = require('./tradepage');
+
+var Common = require('./common');
+var displayContractForms = Common.displayContractForms;
+var displayMarkets = Common.displayMarkets;
+var displayUnderlyings = Common.displayUnderlyings;
+var showPriceOverlay = Common.showPriceOverlay;
+var hidePriceOverlay = Common.hidePriceOverlay;
+var hideFormOverlay = Common.hideFormOverlay;
+var showFormOverlay = Common.showFormOverlay;
+var hideOverlayContainer = Common.hideOverlayContainer;
+var getContractCategoryTree = Common.getContractCategoryTree;
+var setFormPlaceholderContent = Common.setFormPlaceholderContent;
+var getDefaultMarket = Common.getDefaultMarket;
+var displayTooltip = Common.displayTooltip;
+var selectOption = Common.selectOption;
+var updateWarmChart = Common.updateWarmChart;
+
 /*
  * This function process the active symbols to get markets
  * and underlying list
@@ -21,7 +51,6 @@ function processActiveSymbols(data) {
     // }
     // }, 60*1000);
 }
-
 
 /*
  * Function to call when market has changed
@@ -361,3 +390,21 @@ function processTradingTimes(response) {
 
     processPriceRequest();
 }
+
+module.exports = {
+    processActiveSymbols: processActiveSymbols,
+    processMarket: processMarket,
+    processMarketUnderlying: processMarketUnderlying,
+    processContract: processContract,
+    processContractForm: processContractForm,
+    displayPrediction: displayPrediction,
+    displaySpreads: displaySpreads,
+    forgetTradingStreams: forgetTradingStreams,
+    processForgetProposals: processForgetProposals,
+    processPriceRequest: processPriceRequest,
+    processForgetTicks: processForgetTicks,
+    processTick: processTick,
+    processProposal: processProposal,
+    processTradingTimesRequest: processTradingTimesRequest,
+    processTradingTimes: processTradingTimes,
+};

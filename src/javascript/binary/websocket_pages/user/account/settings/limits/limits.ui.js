@@ -1,3 +1,9 @@
+var Table = require('attach_dom/table');
+var addComma = require('trade/common').addComma;
+var Content = require('trade/content');
+var TUser = require('binary/base').TUser;
+var page = require('binary/base').page;
+
 var LimitsUI = (function(){
     "use strict";
 
@@ -86,3 +92,5 @@ var LimitsUI = (function(){
         fillLimitsTable: fillLimitsTable
     };
 }());
+
+module.exports = LimitsUI;

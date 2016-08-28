@@ -1,3 +1,25 @@
+var Login = require('base/login');
+var SessionDurationLimit = require('common_functions/session_duration_limit');
+var Highchart = require('trade/charts/highchartws');
+var WSTickDisplay = require('trade/tick_trade');
+var TradePage = require('trade/tradepage');
+var ViewPopupWS = require('websocket_pages/user/view_popup/view_popupws');
+var ViewBalance = require('websocket_pages/user/viewbalance');
+var RealityCheck = require('websocket_pages/user/reality_check/reality_check.init');
+var RealityCheckData = require('websocket_pages/user/reality_check/reality_check.data');
+var KnowledgeTest = require('binary_japan/knowledge_test/knowledge_test.init');
+var GTM = require('base/page').GTM;
+var TUser = require('binary/base').TUser;
+var page = require('binary/base').page;
+
+var Common = require('trade/common');
+var showPriceOverlay = Common.showPriceOverlay;
+var showFormOverlay = Common.showFormOverlay;
+var reloadPage = Common.reloadPage;
+var Cashier = require('websocket_pages/cashier/cashier.js');
+var ForwardWS = require('websocket_pages/cashier/deposit_withdraw_ws');
+var PaymentAgentWithdrawWS = require('websocket_pages/cashier/payment_agent_withdrawws');
+
 /*
  * It provides a abstraction layer over native javascript Websocket.
  *
@@ -10,6 +32,8 @@
  * `BinarySocket.init()` to initiate the connection
  * `BinarySocket.send({contracts_for : 1})` to send message to server
  */
+var getSocketURL = require('config').getSocketURL;
+
 function BinarySocketClass() {
     'use strict';
 
@@ -156,7 +180,7 @@ function BinarySocketClass() {
                         sendBufferedSends();
                     }
                 } else if (type === 'balance') {
-                    ViewBalanceUI.updateBalances(response);
+                    ViewBalance.updateBalances(response);
                 } else if (type === 'time') {
                     page.header.time_counter(response);
                 } else if (type === 'logout') {

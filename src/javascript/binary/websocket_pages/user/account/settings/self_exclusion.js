@@ -1,3 +1,17 @@
+var validator = require('binary/validator');
+var Content = require('trade/content');
+var V2 = require('common_functions/validation_v2');
+var TUser = require('binary/base').TUser;
+var page = require('binary/base').page;
+
+var _utility = require('base/utility');
+var showLoadingImage = _utility.showLoadingImage;
+var attach_time_picker = _utility.attach_time_picker;
+
+var _utility = require('base/utility');
+var showLoadingImage = _utility.showLoadingImage;
+var attach_time_picker = _utility.attach_time_picker;
+
 var SelfExclusionWS = (function() {
     "use strict";
 
@@ -30,7 +44,7 @@ var SelfExclusionWS = (function() {
             fields[this.name] = '';
         });
 
-        bind_validation.simple($form[0], {
+        validator.bind_to.simple($form[0], {
             validate: validate,
             submit: submitForm,
         });
@@ -115,7 +129,7 @@ var SelfExclusionWS = (function() {
             var errMsg = response.error.message;
             var field  = response.error.field;
             if (field) {
-                ValidationUI.draw('input[name='+field+']', errMsg);
+                validator.UI.draw('input[name='+field+']', errMsg);
             } else {
                 showFormMessage(text.localize(errMsg), false);
             }
@@ -215,7 +229,6 @@ var SelfExclusionWS = (function() {
     var schema;
     function getSchema() {
         if (schema) return schema;
-        var V2 = ValidateV2;
         var validTime = V2.momentFmt('HH:mm', 'Please select a valid time');
         var validDate = V2.momentFmt('YYYY-MM-DD', 'Please select a valid date');
 
@@ -291,7 +304,7 @@ var SelfExclusionWS = (function() {
                 dv.check(function(d) { return !d.isAfter(six_weeks); }, 'Exclude time cannot be more than 6 weeks'),
             ]);
             if (!res.isOk) {
-                ValidationUI.draw(
+                validator.UI.draw(
                     'input[name=timeout_until_duration]',
                     res.value[0]
                 );
@@ -342,3 +355,5 @@ var SelfExclusionWS = (function() {
         init: init,
     };
 }());
+
+module.exports = SelfExclusionWS;

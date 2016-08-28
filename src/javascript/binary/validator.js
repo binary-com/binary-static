@@ -1,17 +1,20 @@
-var ValidationUI = {
-    clear: function() {
-        $('.errorfield[data-is-error-field]').remove();
-    },
-    draw:  function(selector, message) {
-        var $parent = $(selector).parent();
-        var $p = $('<p/>', {
-            class: 'errorfield',
-            text:  text.localize(message),
-        });
-        $p.attr('data-is-error-field', true);
-        $parent.append($p);
-    },
-};
+var done_typing = require('lib/done_typing');
+var dv = require('lib/validation');
+
+
+function clear() {
+    $('.errorfield[data-is-error-field]').remove();
+}
+
+function draw(selector, message) {
+    var $parent = $(selector).parent();
+    var $p = $('<p/>', {
+        class: 'errorfield',
+        text:  text.localize(message),
+    });
+    $p.attr('data-is-error-field', true);
+    $parent.append($p);
+}
 
 
 /**
@@ -87,7 +90,7 @@ function stripTrailing(name) {
  *                         value of `config.validate`.
  * @param config.submit    Called on submit event with event and validation state.
  */
-function bind_validation(form, config) {
+function bind_to(form, config) {
     var extract  = config.extract;
     var validate = config.validate;
     var stop     = config.stop;
@@ -137,8 +140,8 @@ function bind_validation(form, config) {
  * @param opts.stop      Optional.
  *
  */
-bind_validation.simple = function(form, opts) {
-    bind_validation(form, {
+bind_to.simple = function(form, opts) {
+    bind_to(form, {
         submit:   opts.submit,
         extract:  opts.extract  || function() { return formToObj(form); },
         validate: opts.validate || function(data) { return validate_object(data, opts.schema); },
@@ -150,4 +153,14 @@ bind_validation.simple = function(form, opts) {
             });
         },
     });
+};
+
+
+module.exports = {
+    bind_to: bind_to,
+    customError: customError,
+    UI: {
+        clear: clear,
+        draw: draw,
+    },
 };

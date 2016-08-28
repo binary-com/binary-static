@@ -1,3 +1,12 @@
+var validator   = require('binary/validator');
+var FlexTableUI = require('attach_dom/flextable');
+var Content = require('trade/content');
+var V2 = require('common_functions/validation_v2');
+var page = require('binary/base').page;
+var _utility = require('base/utility');
+var showLoadingImage = _utility.showLoadingImage;
+var showLocalTimeOnHover = _utility.showLocalTimeOnHover;
+
 var APITokenWS = (function() {
     "use strict";
 
@@ -32,10 +41,10 @@ var APITokenWS = (function() {
 
         showLoadingImage($(tableContainer));
         BinarySocket.send({api_token: 1});
-        bind_validation.simple($('#token_form')[0], {
+        validator.bind_to.simple($('#token_form')[0], {
             schema: getSchema(),
             stop: function(info) {
-                ValidationUI.clear();
+                validator.UI.clear();
                 displayErrors(info.errors);
             },
             submit: function(e, info) {
@@ -50,13 +59,12 @@ var APITokenWS = (function() {
     }
 
     function getSchema() {
-        var V2 = ValidateV2;
         var letters = Content.localize().textLetters;
         var numbers = Content.localize().textNumbers;
         return {
             scopes: [
                 function(v) {return dv.ok(v || []); },
-                customError(V2.required, 'Please select at least one scope'),
+                validator.customError(V2.required, 'Please select at least one scope'),
             ],
             name:   [
                 function(v) { return dv.ok(v.trim()); },
@@ -175,7 +183,7 @@ var APITokenWS = (function() {
             var sel = err.ctx === 'name' ?
                 '#txtName' :
                 '#scopes';
-            ValidationUI.draw(sel, err.err);
+            validator.UI.draw(sel, err.err);
         });
     }
 

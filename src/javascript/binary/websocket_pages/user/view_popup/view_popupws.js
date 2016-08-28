@@ -1,3 +1,11 @@
+var Highchart = require('../../trade/charts/highchartws');
+var WSTickDisplay = require('../../trade/tick_trade');
+var ViewPopupUI = require('./view_popup_ui');
+var _utility = require('../../../base/utility');
+var showLocalTimeOnHover = _utility.showLocalTimeOnHover;
+var toJapanTimeIfNeeded = _utility.toJapanTimeIfNeeded;
+
+
 var ViewPopupWS = (function() {
     "use strict";
 
@@ -677,15 +685,4 @@ var ViewPopupWS = (function() {
     };
 }());
 
-
-pjax_config_page("profit_tablews|statementws|portfoliows|trading", function() {
-    return {
-        onLoad: function() {
-            $('#profit-table-ws-container, #statement-ws-container, #portfolio-table, #contract_confirmation_container')
-                .on('click', '.open_contract_detailsws', function (e) {
-                    e.preventDefault();
-                    ViewPopupWS.init(this);
-                });
-        }
-    };
-});
+module.exports = ViewPopupWS;

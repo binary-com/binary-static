@@ -1,3 +1,12 @@
+var Button = require('attach_dom/button');
+var FlexTableUI = require('attach_dom/flextable');
+var ApplicationsData = require('./authorised_apps.data');
+
+var _utility = require('base/utility');
+var showLoadingImage = _utility.showLoadingImage;
+var showLocalTimeOnHover = _utility.showLocalTimeOnHover;
+
+
 var ApplicationsUI = (function(){
     'use strict';
     var containerSelector = '#applications-ws-container';
@@ -49,7 +58,7 @@ var ApplicationsUI = (function(){
     }
 
     function createRevokeButton(container, app) {
-        var $buttonSpan = Button.createBinaryStyledButton();
+        var $buttonSpan = Button.create();
         var $button = $buttonSpan.children('.button').first();
         $button.text(text.localize(messages.revoke_access));
         $button.on('click', function() {
@@ -86,3 +95,5 @@ var ApplicationsUI = (function(){
         displayError: displayError,
     };
 }());
+
+module.exports = ApplicationsUI;

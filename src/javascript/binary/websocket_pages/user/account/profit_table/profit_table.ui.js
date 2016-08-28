@@ -1,3 +1,11 @@
+var Button = require('../../../../common_functions/attach_dom/button');
+var Table = require('../../../../common_functions/attach_dom/table');
+var app_details = require('../../../../common_functions/get_app_details');
+var ProfitTable = require('../profit_table');
+var addComma = require('../../../trade/common').addComma;
+var Content = require('../../../trade/content');
+var TUser = require('binary/base').TUser;
+
 var ProfitTableUI = (function(){
     "use strict";
 
@@ -70,7 +78,7 @@ var ProfitTableUI = (function(){
         var profit_table_data = ProfitTable.getProfitTabletData(transaction);
         var plType = (profit_table_data.pl >= 0) ? "profit" : "loss";
 
-        var data = [profit_table_data.buyDate, '<span' + showTooltip(profit_table_data.app_id, oauth_apps[profit_table_data.app_id]) + '>' + profit_table_data.ref + '</span>', profit_table_data.payout, '', profit_table_data.buyPrice, profit_table_data.sellDate, profit_table_data.sellPrice, profit_table_data.pl, ''];
+        var data = [profit_table_data.buyDate, '<span' + app_details.showTooltip(profit_table_data.app_id, oauth_apps[profit_table_data.app_id]) + '>' + profit_table_data.ref + '</span>', profit_table_data.payout, '', profit_table_data.buyPrice, profit_table_data.sellDate, profit_table_data.sellPrice, profit_table_data.pl, ''];
         var $row = Table.createFlexTableRow(data, cols, "data");
 
         $row.children(".buy-date").addClass("pre");
@@ -79,7 +87,7 @@ var ProfitTableUI = (function(){
         $row.children(".contract").html(profit_table_data.desc + "<br>");
 
         //create view button and append
-        var $viewButtonSpan = Button.createBinaryStyledButton();
+        var $viewButtonSpan = Button.create();
         var $viewButton = $viewButtonSpan.children(".button").first();
         $viewButton.text(text.localize("View"));
         $viewButton.addClass("open_contract_detailsws");
@@ -119,3 +127,5 @@ var ProfitTableUI = (function(){
         }
     };
 }());
+
+module.exports = ProfitTableUI;

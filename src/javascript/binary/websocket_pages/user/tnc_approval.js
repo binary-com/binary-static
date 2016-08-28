@@ -1,3 +1,9 @@
+var Content = require('trade/content');
+var TUser = require('binary/base').TUser;
+var page = require('binary/base').page;
+var showLoadingImage = require('base/utility').showLoadingImage;
+var template = require('base/utility').template;
+
 var TNCApproval = (function() {
     "use strict";
 
@@ -9,6 +15,16 @@ var TNCApproval = (function() {
 
 
     var init = function() {
+        BinarySocket.init({
+            onmessage: function(msg) {
+                var response = JSON.parse(msg.data);
+                if (response) {
+                    TNCApproval.apiResponse(response);
+                }
+            }
+        });
+        Content.populate();
+
         hiddenClass = 'invisible';
         showLoadingImage($('#tnc-loading'));
 
@@ -90,22 +106,4 @@ var TNCApproval = (function() {
     };
 }());
 
-
-
-pjax_config_page_require_auth("tnc_approvalws", function() {
-    return {
-        onLoad: function() {
-            BinarySocket.init({
-                onmessage: function(msg) {
-                    var response = JSON.parse(msg.data);
-                    if (response) {
-                        TNCApproval.apiResponse(response);
-                    }
-                }
-            });
-
-            Content.populate();
-            TNCApproval.init();
-        }
-    };
-});
+module.exports = TNCApproval;

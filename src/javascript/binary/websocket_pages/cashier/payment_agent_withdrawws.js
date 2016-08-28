@@ -1,3 +1,8 @@
+var Content = require('trade/content');
+var TUser = require('binary/base').TUser;
+var page = require('binary/base').page;
+var template = require('base/utility').template;
+
 var PaymentAgentWithdrawWS = (function() {
     "use strict";
 
@@ -279,43 +284,3 @@ var PaymentAgentWithdrawWS = (function() {
         lock_withdrawal: lock_withdrawal
     };
 }());
-
-
-
-pjax_config_page_require_auth("paymentagent/withdrawws", function() {
-    return {
-        onLoad: function() {
-            BinarySocket.init({
-                onmessage: function(msg) {
-                    var response = JSON.parse(msg.data);
-                    if (response) {
-                        var type = response.msg_type;
-                        switch(type){
-                            case "authorize":
-                                PaymentAgentWithdrawWS.init();
-                                break;
-                            case "paymentagent_list":
-                                PaymentAgentWithdrawWS.populateAgentsList(response);
-                                break;
-                            case "paymentagent_withdraw":
-                                PaymentAgentWithdrawWS.withdrawResponse(response);
-                                break;
-                            default:
-                                break;
-                        }
-                    }
-                    else {
-                        console.log('some error occured');
-                    }
-                }
-            });
-
-            Content.populate();
-            if(TUser.get().hasOwnProperty('is_virtual') || sessionStorage.getItem('withdrawal_locked') === 'locked') {
-                PaymentAgentWithdrawWS.init();
-            } else if (!sessionStorage.getItem('withdrawal_locked')) {
-              BinarySocket.send({"get_account_status": "1", "passthrough":{"dispatch_to":"PaymentAgentWithdrawWS"}});
-            }
-        }
-    };
-});

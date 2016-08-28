@@ -1,3 +1,8 @@
+var Validate = require('common_functions/validation');
+var ValidAccountOpening = require('common_functions/valid_account_opening');
+var JapanAccOpeningData = require('./japan_acc_opening.data');
+var Content = require('trade/content');
+
 var JapanAccOpeningUI = function () {
   "use strict";
 
@@ -179,3 +184,5 @@ var JapanAccOpeningUI = function () {
       fireRequest: fireRequest,
   };
 }();
+
+module.exports = JapanAccOpeningUI;

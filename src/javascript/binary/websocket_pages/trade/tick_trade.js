@@ -1,3 +1,11 @@
+var Content = require('./content');
+var Tick = require('./tick');
+var ViewPopupWS = require('../user/view_popup/view_popupws');
+
+var Common = require('./common');
+var isVisible = Common.isVisible;
+var updatePurchaseStatus = Common.updatePurchaseStatus;
+
 var TickDisplay = function() {
     return {
         initialize: function(data) {
@@ -385,4 +393,8 @@ WSTickDisplay.updateChart = function(data, contract) {
     } else {
       WSTickDisplay.dispatch(data);
     }
+};
+
+module.exports = {
+    WSTickDisplay: WSTickDisplay,
 };

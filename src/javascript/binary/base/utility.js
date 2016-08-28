@@ -1,3 +1,5 @@
+var page = require('../base').page;
+
 //////////////////////////////////////////////////////////////////
 // Purpose: Write loading image to a container for ajax request
 // Parameters:
@@ -292,11 +294,15 @@ function parseLoginIDList(string) {
     });
 }
 
-//used temporarily for mocha test
-if (typeof module !== 'undefined') {
-    module.exports = {
-        toJapanTimeIfNeeded: toJapanTimeIfNeeded,
-        template: template,
-        parseLoginIDList: parseLoginIDList,
-    };
-}
+module.exports = {
+    showLoadingImage: showLoadingImage,
+    get_highest_zindex: get_highest_zindex,
+    attach_date_picker: attach_date_picker,
+    attach_time_picker: attach_time_picker,
+    attach_tabs: attach_tabs,
+    showLocalTimeOnHover: showLocalTimeOnHover,
+    toJapanTimeIfNeeded: toJapanTimeIfNeeded,
+    downloadCSV: downloadCSV,
+    template: template,
+    parseLoginIDList: parseLoginIDList,
+};

@@ -1,5 +1,7 @@
-var JPTradePage = (function() {
+var TradingAnalysis = require('../../binary/websocket_pages/trade/analysis');
+var Content = require('../../binary/websocket_pages/trade/content');
 
+var JPTradePage = (function() {
   var scriptUrl = 'https://binary-com.github.io/japanui/dist/bundle.js';
   var isJapan = false;
   var scriptReady = false;
@@ -50,3 +52,5 @@ var JPTradePage = (function() {
     }
   };
 })();
+
+module.exports = JPTradePage;

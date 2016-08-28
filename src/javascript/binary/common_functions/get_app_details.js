@@ -1,4 +1,4 @@
-var buildOauthApps = function(data) {
+var build = function(data) {
     var oauth_apps = {};
     for (var i = 0; i < data.length; i++) {
         oauth_apps[data[i].app_id] = data[i].name;
@@ -37,4 +37,10 @@ var showTooltip = function(app_id, oauth_app_id) {
             ) + '"'
         : ''
     );
+};
+
+module.exports = {
+    build: build,
+    addTooltip: addTooltip,
+    showTooltip: showTooltip,
 };

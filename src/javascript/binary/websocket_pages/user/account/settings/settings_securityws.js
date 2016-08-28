@@ -1,3 +1,10 @@
+var validator  = require('binary/validator');
+var CommonData = require('common_functions/common_data');
+var testPassword = require('common_functions/passwordmeter');
+var Content = require('trade/content');
+var V2 = require('common_functions/validation_v2');
+var page = require('binary/base').page;
+
 var SecurityWS = (function() {
     "use strict";
     var $form;
@@ -89,7 +96,7 @@ var SecurityWS = (function() {
             setupRepeatPasswordForm();
         }
         current_state = locked ? STATE.LOCKED : STATE.UNLOCKED;
-        bind_validation.simple($form[0], {
+        validator.bind_to.simple($form[0], {
             schema: locked ? {} : getUnlockedSchema(),
             submit: function(e, info) {
                 e.preventDefault();
@@ -113,7 +120,7 @@ var SecurityWS = (function() {
         }
 
         return {
-            cashierlockpassword1: [ValidateV2.password],
+            cashierlockpassword1: [V2.password],
             cashierlockpassword2: [dv.check(matches, err)],
         };
     }
@@ -180,3 +187,5 @@ var SecurityWS = (function() {
         init: init,
     };
 })();
+
+module.exports = SecurityWS;

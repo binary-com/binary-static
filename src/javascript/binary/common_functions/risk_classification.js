@@ -1,4 +1,7 @@
-RiskClassification = (function() {
+var FinancialAssessmentws  = require('../websocket_pages/user/account/settings/financial_assessment');
+var page = require('../base').page;
+
+var RiskClassification = (function() {
   'use strict';
 
   var financial_assessment_url = page.url.url_for('user/settings/assessmentws');
@@ -66,3 +69,5 @@ RiskClassification = (function() {
     cleanup: cleanup
   };
 }());
+
+module.exports = RiskClassification;

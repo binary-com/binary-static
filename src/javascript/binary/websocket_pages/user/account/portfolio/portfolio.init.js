@@ -1,3 +1,10 @@
+var app_details = require('../../../../common_functions/get_app_details');
+var Portfolio = require('../portfolio');
+var addComma = require('../../../trade/common').addComma;
+var TUser = require('binary/base').TUser;
+var page = require('binary/base').page;
+var showLoadingImage = require('../../../../base/utility').showLoadingImage;
+
 var PortfolioWS =  (function() {
     'use strict';
 
@@ -22,7 +29,7 @@ var PortfolioWS =  (function() {
     var createPortfolioRow = function(data) {
         $('#portfolio-body').append(
             $('<tr class="flex-tr" id="' + data.contract_id + '">' +
-                '<td class="ref flex-tr-child">' + '<span' + showTooltip(data.app_id, oauth_apps[data.app_id]) + '>' + data.transaction_id + '</span>' +
+                '<td class="ref flex-tr-child">' + '<span' + app_details.showTooltip(data.app_id, oauth_apps[data.app_id]) + '>' + data.transaction_id + '</span>' +
                 '</td>' +
                 '<td class="payout flex-tr-child"><strong>' + format_money(data.currency, data.payout) + '</strong></td>' +
                 '<td class="details flex-tr-child">' + data.longcode + '</td>' +
@@ -171,8 +178,8 @@ var PortfolioWS =  (function() {
                         PortfolioWS.updateIndicative(response);
                         break;
                     case "oauth_apps":
-                        oauth_apps = buildOauthApps(response.oauth_apps);
-                        addTooltip(oauth_apps);
+                        oauth_apps = app_details.build(response.oauth_apps);
+                        app_details.addTooltip(oauth_apps);
                         break;
                     default:
                         // msg_type is not what PortfolioWS handles, so ignore it.
@@ -199,3 +206,5 @@ var PortfolioWS =  (function() {
     };
 
 })();
+
+module.exports = PortfolioWS;
