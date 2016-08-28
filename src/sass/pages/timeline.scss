@@ -65,6 +65,8 @@ $grow-effect-duration: 0.4s;
             background: $COLOR_LIGHT_GRAY;
             font-weight: bold;
             padding: 12px;
+            border-top: none;
+            border-bottom: none;
             @include BIDIR_VALUE(direction, ltr, rtl);
         }
         .event-body {

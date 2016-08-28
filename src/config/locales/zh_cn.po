@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Chinese (China) (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-16 07:21+0000\n"
+"PO-Revision-Date: 2016-08-23 06:20+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
@@ -415,6 +415,10 @@ msgstr "<< 返回工作说明"
 msgid "<a class='pjaxload' href='mailto:%1'>Contact Us</a>"
 msgstr "<a class='pjaxload' href='mailto:%1'>联系我们</a>"
 
+#, fuzzy
+msgid "<a href=\"%1\">Return to trading page</a>"
+msgstr "<a href=\"%1\">Market888.com</a>"
+
 msgid "<a href='%1'>Founded</a> October 1999"
 msgstr "<a href='%1'>成立于</a>1999年10月"
 
@@ -470,18 +474,6 @@ msgstr ""
 "  <li>横幅广告应包含的特定信息。</li>\n"
 " </ul>"
 
-msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
-msgstr "<span class='color-green font-weight-700'>所有合约期限:</span>从10 秒到 365 天。"
-
-msgid "<span class='color-green font-weight-700'>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
-msgstr "<span class='color-green font-weight-700'>所有市场条件:</span>上涨/下跌，触及/未触及，范围内/范围外。"
-
-msgid "<span class='color-green font-weight-700'>All markets:</span> currencies, stocks, indices, and commodities."
-msgstr "<span class='color-green font-weight-700'>所有市场:</span>外汇、股指和大宗商品。"
-
-msgid "<span class='color-green font-weight-700'>All payouts:</span> from $1 to $50,000."
-msgstr "<span class='color-green font-weight-700'>所有赔付额:</span>从 1 美元到 5 万美元。"
-
 msgid "<strong>2-way pricing</strong> - %1 quotes a trade and the counter-trade, so you always get unbiased, transparent prices."
 msgstr "<strong>双边报价</strong> - %1 提供交易与反向交易的报价，因此您将始终获得公正透明的价格。"
 
@@ -491,8 +483,18 @@ msgstr "<strong>额外业务推展:</strong> 您的服务将受推广，生意�
 msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
 msgstr "<strong>先进的基本与技术分析工具，</strong>包括指标、图表和其它。"
 
+#, fuzzy
+#| msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
+msgid "<strong>All durations:</strong> from 10 seconds to 365 days."
+msgstr "<strong>所有合约期限</strong> - 从10 秒到 365 天。"
+
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>所有合约期限</strong> - 从10 秒到 365 天。"
+
+#, fuzzy
+#| msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
+msgid "<strong>All market conditions:</strong> up/down, touch/no-touch, stays in/goes out."
+msgstr "<strong>所有市场条件</strong> - 上涨/下跌，触及/未触及，范围内/范围外。"
 
 msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
 msgstr "<strong>所有市场条件</strong> - 上涨/下跌，触及/未触及，范围内/范围外。"
@@ -500,8 +502,18 @@ msgstr "<strong>所有市场条件</strong> - 上涨/下跌，触及/未触及�
 msgid "<strong>All markets, all conditions</strong> - trade currencies, indices and commodities in rising, falling, sideways, quiet and volatile markets."
 msgstr "<strong>所有市场，所有市场环境</strong> - 在各种市场环境（上涨、下跌、横盘整理、交易清淡和震荡）中交易外汇、指数和大宗商品。"
 
+#, fuzzy
+#| msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
+msgid "<strong>All markets:</strong> currencies, stocks, indices, and commodities."
+msgstr "<strong>所有市场</strong> - 外汇、股指和大宗商品。"
+
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgstr "<strong>所有市场</strong> - 外汇、股指和大宗商品。"
+
+#, fuzzy
+#| msgid "<strong>All payouts</strong> - from $1 to $50,000."
+msgid "<strong>All payouts:</strong> from $1 to $50,000."
+msgstr "<strong>所有赔付额</strong> - 从 1 美元到 5 万美元。"
 
 msgid "<strong>All payouts</strong> - from $1 to $50,000."
 msgstr "<strong>所有赔付额</strong> - 从 1 美元到 5 万美元。"
@@ -2923,6 +2935,11 @@ msgstr "如果本协议的任何条款被认定完全或部分无效，或无法
 msgid "If the Company is legally required to disclose your personal or financial information by law, regulation or pursuant to the order of a court of competent jurisdiction or a governmental agency, the Company  shall, unless legally prohibited, promptly notify you to that effect, in order to give you the opportunity to seek such protection for the information as it deems appropriate. Such required disclosure shall not be construed as a breach of this Terms and Conditions Agreement."
 msgstr "如果公司因法律法规或具有司法管辖权的法庭或政府机构的规定，必须公布您的个人或财务信息，公司须在法律允许范围内及时通知您，使您有机会对相关数据采取恰当的保护措施。该必要的公布行为不可解释为违反此协议条款和条件。"
 
+#, fuzzy
+#| msgid "This account is unavailable. For any questions please contact <a href=\"%1\">Customer Support</a>."
+msgid "If the issue keeps happening, please contact <a href=\"%1\">customer support</a>."
+msgstr "此账户不可用。如有问题，请联系<a href=\"%1\">客服人员</a>。"
+
 msgid "If this Agreement is terminated for any reason, you must permanently delete all Content, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
 msgstr "如果协议因任何原因被终止，您必须立即删除所有内容，除非这样做将导致您违反任何法律或政府部门所规定的义务。"
 
@@ -4426,6 +4443,11 @@ msgstr "成立后仅五年，我们的在线交易服务即斩获这一重要奖
 msgid "Only one account is allowed per person. No winnings and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person."
 msgstr "每人只能开立一个账户。使用假名开立账户或属于同一客户的多个账户不能赢取款项和/或退款。"
 
+#, fuzzy
+#| msgid "No Data available"
+msgid "Oops... Page Not Available"
+msgstr "无可用数据"
+
 msgid "Open"
 msgstr "开盘"
 
@@ -5458,6 +5480,9 @@ msgstr "对不起，此功能仅适用虚拟账户。"
 msgid "Sorry, this feature is not available."
 msgstr "对不起，此功能不可用。"
 
+msgid "Sorry, you have entered an incorrect cashier password"
+msgstr "对不起，您输入的收银台密码不正确"
+
 msgid "Spam - We do not condone Spam"
 msgstr "垃圾邮件-我们不会容忍垃圾邮件"
 
@@ -6051,6 +6076,9 @@ msgstr "客户可能蒙受的最大损失就是其向本公司支付的金额。
 
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "已达令牌 (%1) 最大限数。"
+
+msgid "The page you requested could not be found. Either it no longer exists or the address is wrong. Please check for any typos."
+msgstr ""
 
 msgid "The patent means Regent Markets is the recognised pioneer of binary betting. The patent helps protect our innovations."
 msgstr "该专利意味着 Regent Markets 为公认的二元投注先驱。这项专利有助于保护我们的创新。"
@@ -7868,10 +7896,8 @@ msgstr "{JAPAN ONLY}Even if the option is exercise or not exercised, the origina
 msgid "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
 msgstr "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}day"
 msgid "{JAPAN ONLY}FX Rate"
-msgstr "{JAPAN ONLY}day"
+msgstr "{JAPAN ONLY}FX Rate"
 
 msgid "{JAPAN ONLY}Financial Condition"
 msgstr "{JAPAN ONLY}Financial Condition"
@@ -8074,10 +8100,8 @@ msgstr "{JAPAN ONLY}November 7, 2014"
 msgid "{JAPAN ONLY}Option Pricing"
 msgstr "{JAPAN ONLY}Option Pricing"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Option Pricing"
 msgid "{JAPAN ONLY}Option Type"
-msgstr "{JAPAN ONLY}Option Pricing"
+msgstr "{JAPAN ONLY}Option Type"
 
 msgid "{JAPAN ONLY}Option prices are normally dependant on elements such as the underlying asset price, the exercise price, the length of time until the exercise point, volatility, and interest rates. Apart from the fixed exercise price, all other elements are changing constantly, so an understanding of the relationships between each element and changes in the options price is necessary for the management of options trading risk."
 msgstr "{JAPAN ONLY}Option prices are normally dependant on elements such as the underlying asset price, the exercise price, the length of time until the exercise point, volatility, and interest rates. Apart from the fixed exercise price, all other elements are changing constantly, so an understanding of the relationships between each element and changes in the options price is necessary for the management of options trading risk."
@@ -8106,10 +8130,8 @@ msgstr "{JAPAN ONLY}Our Customer Support staff will contact you at each stage to
 msgid "{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:"
 msgstr "{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}month"
 msgid "{JAPAN ONLY}Payout Amount"
-msgstr "{JAPAN ONLY}month"
+msgstr "{JAPAN ONLY}Payout Amount"
 
 msgid "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\">here</a> for further information."
 msgstr "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\">here</a> for further information."
@@ -8155,6 +8177,11 @@ msgstr "{JAPAN ONLY}Registration"
 
 msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "{JAPAN ONLY}Regulation & Tax"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}minute"
+msgid "{JAPAN ONLY}Remaining time"
+msgstr "{JAPAN ONLY}minute"
 
 msgid "{JAPAN ONLY}STAY-IN/BREAK-OUT"
 msgstr "{JAPAN ONLY}STAY-IN/BREAK-OUT"
@@ -8279,10 +8306,8 @@ msgstr "{JAPAN ONLY}Trading & Hedging"
 msgid "{JAPAN ONLY}Trading Guide"
 msgstr "{JAPAN ONLY}Trading Guide"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Trading Guide"
 msgid "{JAPAN ONLY}Trading Period"
-msgstr "{JAPAN ONLY}Trading Guide"
+msgstr "{JAPAN ONLY}Trading Period"
 
 msgid "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
 msgstr "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
@@ -8353,6 +8378,9 @@ msgstr "{JAPAN ONLY}years"
 msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 msgstr "可交易外汇、指数、大宗商品及智能指数的二元期权在线交易平台"
 
+msgid "404"
+msgstr ""
+
 msgid "Why Us"
 msgstr "为何选择我们"
 
@@ -8406,6 +8434,18 @@ msgstr "条款和条件审批"
 
 msgid "Trading with MetaTrader 5"
 msgstr "使用MetaTrader 5进行交易"
+
+#~ msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
+#~ msgstr "<span class='color-green font-weight-700'>所有合约期限:</span>从10 秒到 365 天。"
+
+#~ msgid "<span class='color-green font-weight-700'>All market conditions:</span> up/down, touch/no-touch, stays in/goes out."
+#~ msgstr "<span class='color-green font-weight-700'>所有市场条件:</span>上涨/下跌，触及/未触及，范围内/范围外。"
+
+#~ msgid "<span class='color-green font-weight-700'>All markets:</span> currencies, stocks, indices, and commodities."
+#~ msgstr "<span class='color-green font-weight-700'>所有市场:</span>外汇、股指和大宗商品。"
+
+#~ msgid "<span class='color-green font-weight-700'>All payouts:</span> from $1 to $50,000."
+#~ msgstr "<span class='color-green font-weight-700'>所有赔付额:</span>从 1 美元到 5 万美元。"
 
 #~ msgid "Please re-enter your email"
 #~ msgstr "请重新输入您的电邮地址"
@@ -9820,9 +9860,6 @@ msgstr "使用MetaTrader 5进行交易"
 
 #~ msgid "Sorry, you have already had too many unsuccessful attempts. Please try again in 5 minutes."
 #~ msgstr "对不起，您的失败次数过多。请5分钟后再试。"
-
-#~ msgid "Sorry, you have entered an incorrect cashier password"
-#~ msgstr "对不起，您输入的收银台密码不正确"
 
 #~ msgid "Sorry, you have entered an incorrect email address."
 #~ msgstr "对不起，您输入的电邮地址不正确。"
@@ -12360,9 +12397,6 @@ msgstr "使用MetaTrader 5进行交易"
 
 #~ msgid "There is no intraday data for %1 on %2."
 #~ msgstr "%1 没有 %2 的日内数据。"
-
-#~ msgid "This account is unavailable. For any questions please contact <a href=\"%1\">Customer Support</a>."
-#~ msgstr "此账户不可用。如有问题，请联系<a href=\"%1\">客服人员</a>。"
 
 #~ msgid "This contract has expired."
 #~ msgstr "此合约已到期。"
@@ -16358,9 +16392,6 @@ msgstr "使用MetaTrader 5进行交易"
 
 #~ msgid "In these terms and conditions, Y represents the amount of funds that you must deposit and X represents the bonus amount that you will receive."
 #~ msgstr "在这些条款中，Y代表你必须存入的资金数额，X代表你将收到的红利数额。"
-
-#~ msgid "No Data available"
-#~ msgstr "无可用数据"
 
 #~ msgid "The bonus will only be paid according to the first deposit amount, and will not be given based on multiple deposits that accumulate to Y."
 #~ msgstr "红利仅可基于第一次存款金额支付，而不是基于积累至Y的多次存款作出。"
@@ -20418,10 +20449,6 @@ msgstr "使用MetaTrader 5进行交易"
 
 #~ msgid "This contract is not on offer <a href=\"%1\">at this time</a>."
 #~ msgstr "该交易目前尚未出售<a href=\"%1\">at this time</a>。 "
-
-#, fuzzy
-#~ msgid "View <a href=\"%1\">Asset Index.</a>"
-#~ msgstr "<a href=\"%1\">Market888.com</a>"
 
 #~ msgid "We do not allow the purchase of contracts with an expiry after market close. Please adjust the duration and try again."
 #~ msgstr "我们不允许买入到期时间在收市之后的 %合约(复数) 。请调整到期时间并再试一次。"

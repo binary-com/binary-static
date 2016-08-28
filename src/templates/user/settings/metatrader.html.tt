@@ -8,7 +8,7 @@
             <div class="sidebar">
                 <ul class="sidebar-nav">
                     <li id="nav-demo" class="selected"><a href="#demo">[% l('Demo Account') %]</a></li>
-                    <li id="nav-real"><a href="#real">[% l('Real Account') %]</a></li>
+                    <li id="nav-real" class="invisible"><a href="#real">[% l('Real Account') %]</a></li>
                 </ul>
             </div>
         </div>

@@ -1,7 +1,7 @@
 module.exports = {
     all: {
         options: {
-            separator: ';',
+            separator: '\n;',
         },
         files: [
             {
