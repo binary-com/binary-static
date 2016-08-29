@@ -418,10 +418,10 @@ function handle_residence_state_ws(){
         }
       } else if (type === 'landing_company') {
         Cookies.set('residence', page.client.residence, {domain: '.' + document.domain.split('.').slice(-2).join('.'), path: '/'});
-        if ((page.client.can_upgrade_gaming_to_financial(response.landing_company) ||page.client.can_upgrade_virtual_to_financial(response.landing_company) ) && !/maltainvestws/.test(window.location.href)) {
+        if ( ((page.client.can_upgrade_gaming_to_financial(response.landing_company) && !page.client.is_virtual()) || page.client.can_upgrade_virtual_to_financial(response.landing_company) ) && !/maltainvestws/.test(window.location.href)) {
           window.location.href = page.url.url_for('new_account/maltainvestws');
           return;
-        } else if (page.client.can_upgrade_virtual_to_japan(response.landing_company) && !/japanws/.test(window.location.href)) {
+        } else if (page.client.can_upgrade_virtual_to_japan(response.landing_company) && page.client.is_virtual() && !/japanws/.test(window.location.href)) {
           window.location.href = page.url.url_for('new_account/japanws');
           return;
         } else if (!$('#real-form').is(':visible')) {
