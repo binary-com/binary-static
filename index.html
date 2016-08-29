@@ -69,6 +69,9 @@
                 }
             }
 
+            if(document.referrer) {
+                localStorage.setItem('index_referrer', document.referrer);
+            }
             var lang = getCookieItem('language');
             if(lang) {
                 isDelayedRedirect();
