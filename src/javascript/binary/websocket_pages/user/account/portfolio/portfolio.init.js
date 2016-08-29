@@ -6,7 +6,7 @@ var PortfolioWS =  (function() {
         oauth_apps,
         hidden_class,
         is_initialized,
-        not_first_response;
+        is_first_response;
 
     var init = function() {
         if(is_initialized) return;
@@ -19,6 +19,7 @@ var PortfolioWS =  (function() {
         if (TUser.get().balance) {
             updateBalance();
         }
+        is_first_response = true;
         BinarySocket.send({"portfolio":1});
         // Subscribe to transactions to auto update new purchases
         BinarySocket.send({'transaction': 1, 'subscribe': 1});
@@ -26,14 +27,13 @@ var PortfolioWS =  (function() {
         is_initialized = true;
     };
 
-    var createPortfolioRow = function(data) {
-        console.log(data);
+    var createPortfolioRow = function(data, is_first) {
         var longCode = typeof module !== 'undefined' ? 
             data.longcode : 
             (japanese_client() ? toJapanTimeIfNeeded(void 0, void 0, data.longcode) : data.longcode);
 
         var new_class = is_first ? '' : 'new';
-        $('#portfolio-body').append(
+        $('#portfolio-body').prepend(
             $('<tr class="tr-first ' + new_class + ' ' + data.contract_id + '" id="' + data.contract_id + '">' +
                 '<td class="ref"><span' + showTooltip(data.app_id, oauth_apps[data.app_id]) + '>' + data.transaction_id + '</span></td>' +
                 '<td class="payout"><strong>' + format_money(data.currency, data.payout) + '</strong></td>' +
@@ -85,7 +85,7 @@ var PortfolioWS =  (function() {
                     values[c.contract_id].buy_price = c.buy_price;
                     portfolio_data = Portfolio.getPortfolioData(c);
                     currency = portfolio_data.currency;
-                    createPortfolioRow(portfolio_data, not_first_response);
+                    createPortfolioRow(portfolio_data, is_first_response);
                     setTimeout(function() {
                         $('tr.' + c.contract_id).removeClass('new');
                     }, 1000);
@@ -102,7 +102,7 @@ var PortfolioWS =  (function() {
         // ready to show portfolio table
         $("#portfolio-loading").hide();
         $("#portfolio-content").removeClass(hidden_class);
-        not_first_response = true;
+        is_first_response = false;
     };
 
     var transactionResponseHandler = function(response) {
@@ -220,7 +220,6 @@ var PortfolioWS =  (function() {
         BinarySocket.send({"forget_all": "transaction"});
         $('#portfolio-body').empty();
         is_initialized = false;
-        not_first_response = false;
     };
 
     return {
