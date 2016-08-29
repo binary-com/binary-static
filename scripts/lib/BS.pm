@@ -197,8 +197,8 @@ sub menu {
         id         => 'topMenuPortfolio',
         url        => url_for('/user/portfoliows'),
         text       => localize('Portfolio'),
-        class      => 'client_logged_in',
-        link_class => 'with_login_cookies pjaxload',
+        class      => 'client_logged_in invisible',
+        link_class => 'pjaxload',
         };
 
     push @menu,
@@ -206,8 +206,8 @@ sub menu {
         id         => 'topMenuProfitTable',
         url        => url_for('/user/profit_tablews'),
         text       => localize('Profit Table'),
-        class      => 'client_logged_in',
-        link_class => 'with_login_cookies pjaxload',
+        class      => 'client_logged_in invisible',
+        link_class => 'pjaxload',
         };
 
     push @menu,
@@ -215,8 +215,8 @@ sub menu {
         id         => 'topMenuStatement',
         url        => url_for('/user/statementws'),
         text       => localize('Statement'),
-        class      => 'client_logged_in',
-        link_class => 'with_login_cookies pjaxload',
+        class      => 'client_logged_in invisible',
+        link_class => 'pjaxload',
         };
 
     # cashier

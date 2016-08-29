@@ -281,6 +281,7 @@ Client.prototype = {
         this.set_storage_value('is_virtual', TUser.get().is_virtual);
         this.check_storage_values();
         page.contents.activate_by_client_type();
+        page.contents.activate_by_login();
     },
     check_tnc: function() {
         if(!page.client.is_virtual() && sessionStorage.getItem('check_tnc') === '1') {
@@ -895,7 +896,7 @@ Contents.prototype = {
         }
     },
     activate_by_login: function() {
-        if(!this.client.is_logged_in) {
+        if(this.client.is_logged_in) {
             $('.client_logged_in').removeClass('invisible');
         }
     },
@@ -1182,11 +1183,27 @@ Page.prototype = {
         }
         return (match_type === 'any' ? false : true);
     },
-    show_authenticate_message: function(status) {
+    show_authenticate_message: function() {
         if ($('.authenticate-msg').length !== 0) return;
 
         var p = $('<p/>', {class: 'authenticate-msg notice-msg'}),
             span;
+
+        if (this.client_status_detected('unwelcome')) {
+            var purchase_button = $('.purchase_button');
+            if (purchase_button.length > 0 && !purchase_button.parent().hasClass('button-disabled')) {
+                $.each(purchase_button, function(){
+                    $(this).off('click dblclick').removeAttr('data-balloon').parent().addClass('button-disabled');
+                });
+            }
+        }
+
+        if (this.client_status_detected('unwelcome, cashier_locked', 'any')) {
+            var if_balance_zero = $('#if-balance-zero');
+            if (if_balance_zero.length > 0 && !if_balance_zero.hasClass('button-disabled')) {
+                if_balance_zero.removeAttr('href').addClass('button-disabled');
+            }
+        }
 
         if (this.client_status_detected('authenticated, unwelcome', 'all')) {
             span = $('<span/>', {html: template(text.localize('Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact [_1].', ['<a href="mailto:support@binary.com">support@binary.com</a>']))});

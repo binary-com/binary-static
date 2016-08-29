@@ -24,7 +24,7 @@
             </div>
             <div class="gr-12">
                 <h4>
-                    <a class="pjaxload" href="[% request.url_for('/user/settings/cashier_passwordws') %]">[% l('Cashier Password') %]</a>
+                    <a class="pjaxload" href="[% request.url_for('/user/security/cashier_passwordws') %]">[% l('Cashier Password') %]</a>
                 </h4>
                 <p>[% l('Change the password used for deposits and withdrawals.') %]</p>
             </div>

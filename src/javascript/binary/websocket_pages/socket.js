@@ -149,6 +149,7 @@ function BinarySocketClass() {
                             send({balance:1, subscribe: 1});
                             if (Cookies.get('residence')) send({landing_company: Cookies.get('residence')});
                             send({get_settings: 1});
+                            send({get_account_status: 1});
                             if(!page.client.is_virtual()) {
                                 send({get_self_exclusion: 1});
                             } else {
@@ -237,7 +238,7 @@ function BinarySocketClass() {
                   localStorage.setItem('risk_classification.response', response.get_account_status.risk_classification);
 
                   sessionStorage.setItem('client_status', response.get_account_status.status);
-                  page.show_authenticate_message(response.get_account_status.status);
+                  page.show_authenticate_message();
 
                   if (response.echo_req.hasOwnProperty('passthrough') && response.echo_req.passthrough.hasOwnProperty('dispatch_to')) {
                     if (response.echo_req.passthrough.dispatch_to === 'ForwardWS') {
