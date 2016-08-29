@@ -391,9 +391,17 @@
             line-height: 20px;
             display: flex;
             font-size: 0.75rem;
+            position: relative;
             .values {
                 font-weight: bold;
                 @include BIDIR_PROP(padding-left, padding-right, 0);
+            }
+            .chart-values {
+                position: absolute;
+                background: $COLOR_WHITE;
+                color: $COLOR_ORANGE;
+                width: 100%;
+                display: none;
             }
         }
         #contract_purchase_spots {

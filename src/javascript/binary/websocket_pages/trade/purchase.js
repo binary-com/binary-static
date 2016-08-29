@@ -153,6 +153,7 @@ var Purchase = (function () {
                 payout:receipt['payout'],
                 show_contract_result:1,
                 width: $('#tick_chart').width(),
+                is_trading_page: true
             });
             WSTickDisplay.spots_list = {};
         }

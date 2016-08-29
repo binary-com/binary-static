@@ -193,6 +193,18 @@
                                     <div class="gr-12">
                                         <div class="gr-row">
                                             <div class="gr-4 gr-12-m" id="contract_purchase_profit_list">
+                                                <div class="gr-row chart-values">
+                                                    <div class="gr-adapt">
+                                                        <div id="chart_values_tick">[% l('Tick') %]</div>
+                                                        <div id="chart_values_time">[% l('Time') %]</div>
+                                                        <div id="chart_values_price">[% l('Price') %]</div>
+                                                    </div>
+                                                    <div class="gr-grow values">
+                                                        <div id="chart_values_tick_value"></div>
+                                                        <div id="chart_values_time_value"></div>
+                                                        <div id="chart_values_price_value"></div>
+                                                    </div>
+                                                </div>
                                                 <div class="gr-row">
                                                     <div class="gr-adapt">
                                                         <div id="contract_purchase_cost"></div>

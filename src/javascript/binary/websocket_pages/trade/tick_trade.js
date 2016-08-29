@@ -14,6 +14,7 @@ var TickDisplay = function() {
             $self.abs_barrier = data.abs_barrier;
             $self.display_decimals = data.display_decimals || 2;
             $self.show_contract_result = data.show_contract_result;
+            $self.is_trading_page = data.is_trading_page;
             var tick_frequency = 5;
 
             if (data.show_contract_result) {
@@ -70,7 +71,7 @@ var TickDisplay = function() {
         initialize_chart: function(config) {
             var $self = this;
 
-            $self.chart = new Highcharts.Chart({
+            var chart_options = {
                 chart: {
                     type: 'line',
                     renderTo: 'tick_chart',
@@ -88,12 +89,23 @@ var TickDisplay = function() {
                         var mom = moment.utc($self.applicable_ticks[that.x].epoch*1000).format("dddd, MMM D, HH:mm:ss");
                         return mom + "<br/>" + $self.display_symbol + " " + new_y;
                     },
+                    crosshairs: [true],
                 },
                 xAxis: {
                     type: 'linear',
                     min: 0,
-                    max: $self.number_of_ticks + 1,
-                    labels: { enabled: false, }
+                    max: $self.ticks_needed - 0.5,
+                    tickInterval: 1,
+                    labels: {
+                      formatter: function() { return this.value + ($self.contract_category.match('digits') ? 1 : 0); }
+                    },
+                    showFirstLabel: $self.contract_category.match('digits') ? true : false,
+                    crosshair: {
+                        color: '#E98024',
+                    },
+                    title: {
+                        text: text.localize('Tick')
+                    }
                 },
                 yAxis: {
                     opposite: false,
@@ -109,7 +121,40 @@ var TickDisplay = function() {
                 title: '',
                 exporting: {enabled: false, enableImages: false},
                 legend: {enabled: false},
-            });
+            };
+            // Trading page's chart
+            function show_values(tick, time, price) {
+                $('#contract_purchase_profit_list .chart-values').css('display', 'flex');
+                $('#chart_values_tick_value').text(tick);
+                $('#chart_values_time_value').text(time);
+                $('#chart_values_price_value').text(price);
+            }
+            if($self.is_trading_page) {
+                $.extend(true, chart_options, {
+                    tooltip: {
+                        style: {'display': 'none'},
+                        formatter: function () {
+                            var that = this;
+                            var time = moment.utc($self.applicable_ticks[that.x].epoch*1000).format('HH:mm:ss');
+                            show_values(that.x, time, that.y);
+                        },
+                        events: {
+                            hide: function () {
+                                $('#contract_purchase_profit_list .chart-values').hide();
+                            }
+                        }
+                    },
+                    xAxis: {
+                        title: {
+                            text: ''
+                        },
+                        crosshair: {
+                            width: 30,
+                        }
+                    }
+                });
+            }
+            $self.chart = new Highcharts.Chart(chart_options);
             Highcharts.setOptions({
               lang: {thousandsSep: ','}
             });
@@ -161,7 +206,10 @@ var TickDisplay = function() {
                 $self.chart.yAxis[0].addPlotLine({
                     id: 'tick-barrier',
                     value: barrier_tick.quote,
-                    label: {text: 'Barrier ('+barrier_tick.quote+')', align: 'center'},
+                    label: {
+                        text: $self.is_trading_page ? '' : 'Barrier ('+barrier_tick.quote+')',
+                        align: 'center'
+                    },
                     color: 'green',
                     width: 2,
                     zIndex: 2,
@@ -386,3 +434,28 @@ WSTickDisplay.updateChart = function(data, contract) {
       WSTickDisplay.dispatch(data);
     }
 };
+
+// add tooltip events to highcharts
+(function (Highcharts) {
+    Highcharts.wrap(Highcharts.Tooltip.prototype, 'hide', function (proceed) {
+        var tooltip = this.chart.options.tooltip;
+
+        // Run the original proceed method
+        proceed.apply(this, Array.prototype.slice.call(arguments, 1));
+
+        if (!this.isHidden && tooltip.events && tooltip.events.hide) {
+            tooltip.events.hide();
+        }
+    });
+
+    Highcharts.wrap(Highcharts.Tooltip.prototype, 'refresh', function (proceed) {
+        var tooltip = this.chart.options.tooltip;
+
+        // Run the original proceed method
+        proceed.apply(this, Array.prototype.slice.call(arguments, 1));
+
+        if (tooltip.events && tooltip.events.show) {
+            tooltip.events.show(this.chart.hoverPoints);
+        }
+    });
+}(Highcharts));
