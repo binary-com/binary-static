@@ -1,4 +1,8 @@
 function format_money(currency, amount) {
+    if(currency === 'JPY') { // remove decimal points for JPY
+        amount = amount.replace(/\.\d+$/, '');
+    }
+
     var symbol = format_money.map[currency];
     if (symbol === undefined) {
         return currency + ' ' + amount;
