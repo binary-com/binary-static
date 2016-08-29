@@ -231,12 +231,12 @@ Client.prototype = {
             if(
                 !this.get_storage_value('is_virtual') &&
                 !this.get_storage_value('allowed_markets') &&
-                TUser.get().landing_company_name &&
+                Cookies.get('residence') &&
                 !this.get_storage_value('has_reality_check')
             ) {
                 $('#topMenuStartBetting').addClass('invisible');
                 BinarySocket.send({
-                    'landing_company_details': TUser.get().landing_company_name,
+                    'landing_company': Cookies.get('residence'),
                     'passthrough': {
                         'handler': 'page.client',
                         'origin' : origin || ''
@@ -261,19 +261,17 @@ Client.prototype = {
             }
         }
     },
-    response_landing_company_details: function(response) {
+    response_landing_company: function(response) {
         if (!response.hasOwnProperty('error')) {
-            var allowed_markets = response.landing_company_details.legal_allowed_markets;
-            var company = response.landing_company_details.name;
-            var has_reality_check = response.landing_company_details.has_reality_check;
+            var allowed_markets = response.legal_allowed_markets;
+            var company = response.name;
+            var has_reality_check = response.has_reality_check;
 
             this.set_storage_value('allowed_markets', allowed_markets.length === 0 ? '' : allowed_markets.join(','));
             this.set_storage_value('landing_company_name', company);
             this.set_storage_value('has_reality_check', has_reality_check);
 
-            page.header.menu.disable_not_allowed_markets();
             page.header.menu.register_dynamic_links();
-            $('#topMenuStartBetting').removeClass('invisible');
         }
     },
     response_authorize: function(response) {
@@ -283,7 +281,6 @@ Client.prototype = {
         this.set_storage_value('is_virtual', TUser.get().is_virtual);
         this.check_storage_values();
         page.contents.activate_by_client_type();
-        page.contents.topbar_message_visibility();
     },
     check_tnc: function() {
         if(!page.client.is_virtual() && sessionStorage.getItem('check_tnc') === '1') {
@@ -359,6 +356,15 @@ Client.prototype = {
         GTM.set_newaccount_flag();
         localStorage.setItem('active_loginid', loginid);
         window.location.href = page.url.default_redirect_url();
+    },
+    can_upgrade_gaming_to_financial: function(data) {
+        return (data.hasOwnProperty('financial_company') && data.financial_company.shortcode === 'maltainvest');
+    },
+    can_upgrade_virtual_to_financial: function(data) {
+        return (data.hasOwnProperty('financial_company') && !data.hasOwnProperty('gaming_company') && data.financial_company.shortcode === 'maltainvest');
+    },
+    can_upgrade_virtual_to_japan: function(data) {
+        return (data.hasOwnProperty('financial_company') && !data.hasOwnProperty('gaming_company') && data.financial_company.shortcode === 'japan');
     }
 };
 
@@ -549,36 +555,6 @@ Menu.prototype = {
         }
 
         this.on_mouse_hover(active.item);
-
-        this.disable_not_allowed_markets();
-    },
-    disable_not_allowed_markets: function() {
-        // enable only allowed markets
-        var allowed_markets = page.client.get_storage_value('allowed_markets');
-        if(!allowed_markets && page.client.is_logged_in) {
-            if(TUser.get().hasOwnProperty('is_virtual') && !TUser.get().is_virtual) {
-                $('#topMenuStartBetting').addClass('invisible');
-            }
-            return;
-        }
-
-        var markets_array = allowed_markets ? allowed_markets.split(',') : [];
-        var sub_items = $('li#topMenuStartBetting ul.sub_items');
-        sub_items.find('li').each(function () {
-            var link_id = $(this).attr('id').split('_')[1];
-            if(markets_array.indexOf(link_id) < 0 && page.client.is_logged_in && !page.client.is_virtual()) {
-                var link = $(this).find('a');
-                var link_text = link.text();
-                var link_href = link.attr('href');
-                link.replaceWith($('<span/>', {class: 'link disabled-link', text: link_text, link_url: link_href}));
-            } else {
-                var span = $(this).find('span');
-                var span_text = span.text();
-                var span_href = span.attr('link_url');
-                span.replaceWith($('<a/>', {class: 'link', text: span_text, href: span_href}));
-            }
-        });
-        $('#topMenuStartBetting').removeClass('invisible');
     },
     reset: function() {
         $("#main-menu .item").unbind();
@@ -648,18 +624,6 @@ Menu.prototype = {
         if(!TUser.get().is_virtual && markets_array.indexOf(stored_market) < 0) {
             stored_market = markets_array[0];
             LocalStore.set('bet_page.market', stored_market);
-        }
-        var start_trading = $('#topMenuStartBetting a:first');
-        var trade_url = start_trading.attr("href");
-        if(stored_market) {
-            if(/market=/.test(trade_url)) {
-                trade_url = trade_url.replace(/market=\w+/, 'market=' + stored_market);
-            } else {
-                trade_url += '&market=' + stored_market;
-            }
-            start_trading.attr("href", trade_url);
-
-            $('#mobile-menu #topMenuStartBetting a.trading_link').attr('href', trade_url);
         }
     }
 };
@@ -847,7 +811,6 @@ var Contents = function(client, user) {
 Contents.prototype = {
     on_load: function() {
         this.activate_by_client_type();
-        this.topbar_message_visibility();
         this.update_content_class();
         this.init_draggable();
     },
@@ -910,17 +873,12 @@ Contents.prototype = {
     init_draggable: function() {
         $('.draggable').draggable();
     },
-    topbar_message_visibility: function() {
+    topbar_message_visibility: function(c_config) {
         if(this.client.is_logged_in) {
-            if(page.client.get_storage_value('is_virtual').length === 0) {
+            if(page.client.get_storage_value('is_virtual').length === 0 || !c_config) {
                 return;
             }
             var loginid_array = this.user.loginid_array;
-            var countries_list = page.settings.get('countries_list');
-            if(!countries_list || countries_list.length === 0) {
-                return;
-            }
-            var c_config = countries_list[this.client.residence];
 
             var $upgrade_msg = $('.upgrademessage'),
                 hiddenClass  = 'invisible';
@@ -950,9 +908,9 @@ Contents.prototype = {
                 }
                 if (show_upgrade_msg) {
                     $upgrade_msg.find('> span').removeClass(hiddenClass);
-                    if (c_config && c_config['gaming_company'] == 'none' && c_config['financial_company'] == 'maltainvest') {
+                    if (page.client.can_upgrade_virtual_to_financial(c_config)) {
                         show_upgrade('new_account/maltainvestws', 'Upgrade to a Financial Account');
-                    } else if (c_config && c_config['gaming_company'] == 'none' && c_config['financial_company'] == 'japan') {
+                    } else if (page.client.can_upgrade_virtual_to_japan(c_config)) {
                         show_upgrade('new_account/japanws', 'Upgrade to a Real Account');
                     } else {
                         show_upgrade('new_account/realws', 'Upgrade to a Real Account');
@@ -964,9 +922,7 @@ Contents.prototype = {
                 var show_financial = false;
 
                 // also allow UK MLT client to open MF account
-                if ( (c_config && c_config['financial_company'] == 'maltainvest') ||
-                     (this.client.residence == 'gb' && /^MLT/.test(this.client.loginid)) )
-                {
+                if (page.client.can_upgrade_gaming_to_financial(c_config) || (this.client.residence == 'gb' && /^MLT/.test(this.client.loginid))) {
                     show_financial = true;
                     for (var j=0;j<loginid_array.length;j++) {
                         if (loginid_array[j].financial) {

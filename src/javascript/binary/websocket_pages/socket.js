@@ -147,7 +147,7 @@ function BinarySocketClass() {
                         if(!Login.is_login_pages()) {
                             page.client.response_authorize(response);
                             send({balance:1, subscribe: 1});
-                            send({landing_company_details: TUser.get().landing_company_name});
+                            if (Cookies.get('residence')) send({landing_company: Cookies.get('residence')});
                             send({get_settings: 1});
                             if(!page.client.is_virtual()) {
                                 send({get_self_exclusion: 1});
@@ -163,9 +163,18 @@ function BinarySocketClass() {
                     localStorage.removeItem('jp_test_allowed');
                     RealityCheckData.clear();
                     page.header.do_logout(response);
-                } else if (type === 'landing_company_details') {
-                    page.client.response_landing_company_details(response);
-                    if (response.landing_company_details.has_reality_check) {
+                } else if (type === 'landing_company') {
+                    page.contents.topbar_message_visibility(response.landing_company);
+                    var company;
+                    if (response.hasOwnProperty('error')) return;
+                    for (var key in response.landing_company) {
+                        if (TUser.get().landing_company_name === response.landing_company[key].shortcode) {
+                            company = response.landing_company[key];
+                            break;
+                        }
+                    }
+                    if (company && company.has_reality_check) {
+                        page.client.response_landing_company(company);
                         var currentData = TUser.get();
                         var addedLoginTime = $.extend({logintime: window.time.unix()}, currentData);
                         TUser.set(addedLoginTime);
@@ -179,6 +188,7 @@ function BinarySocketClass() {
                     if (!Cookies.get('residence') && response.get_settings.country_code) {
                       page.client.set_cookie('residence', response.get_settings.country_code);
                       page.client.residence = response.get_settings.country_code;
+                      send({landing_company: Cookies.get('residence')});
                     }
                     GTM.event_handler(response.get_settings);
                     page.client.set_storage_value('tnc_status', response.get_settings.client_tnc_status || '-');
