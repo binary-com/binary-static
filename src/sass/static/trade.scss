@@ -430,6 +430,9 @@
                 }
             }
         }
+        #tick_chart {
+            border: 1px solid $COLOR_LIGHT_GRAY;
+        }
         .contract_error {
             margin-top: auto;
             background-color: $COLOR_YELLOW;
