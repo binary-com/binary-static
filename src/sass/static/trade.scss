@@ -156,14 +156,20 @@
     }
     #contract_form_content_wrapper {
         padding-top: 0.5em;
-        .col-left, .price-left {
+        .col-left {
             @include BIDIR_PROP(padding-right, padding-left, 5px);
         }
-        .col-right, .price-right {
+        .col-right {
             @include BIDIR_PROP(padding-left, padding-right, 0);
         }
         #contract_prices_container {
             margin-top: 5px;
+            .price-left {
+                @include BIDIR_PROP(padding-right, padding-left, 2.5px);
+            }
+            .price-right {
+                @include BIDIR_PROP(padding-left, padding-right, 2.5px);
+            }
         }
     }
     #contract_symbol_container {
@@ -615,6 +621,9 @@
     }
     #trading_analysis_content {
         margin-top: 10px;
+        #tab_graph-content {
+            height: 400px !important;
+        }
     }
 }
 @media all and (max-width: 480px) {
@@ -662,46 +671,6 @@
 }
 @media all and (max-width: 640px) {
     #trading_socket_container {
-        #contract_market_form_container {
-            height: auto;
-        }
-        #expiry_time {
-            width: 175px;
-        }
-        #contract_form_content {
-            margin-top: 0px;
-        }
-        #contract_form_content_wrapper {
-            flex-direction: column;
-        }
-        .nav_placeholder {
-            display: flex;
-        }
-        #contract_prices_container {
-            #contract_purchase_spots {
-                height: auto;
-            }
-            #price_container_top {
-                margin-right: 0 !important;
-            }
-            .price_wrapper {
-                &.small {
-                    width: auto;
-                }
-                .amount_wrapper {
-                    width: 70%;
-                }
-            }
-            .row {
-                flex-direction: column;
-                .col {
-                    margin-bottom: 5px;
-                    &.price_comment {
-                        margin: 0;
-                    }
-                }
-            }
-        }
         #analysis_tabs {
             white-space: nowrap;
         }
@@ -725,9 +694,6 @@
     }
     #trading_socket_container #contract_prices_container .price_container .price_wrapper {
         width: calc(100% - 30px);
-        &.small {
-            width: auto;
-        }
     }
     #japan_analysis #trading_analysis_content ul#analysis_tabs {
         flex-direction: column;
@@ -771,6 +737,13 @@
             }
             > a {
                 line-height: 27px;
+                .caret-down {
+                    border-top: 4px dashed;
+                    border-right: 4px solid transparent;
+                    border-left: 4px solid transparent;
+                    display: inline-block;
+                    padding-bottom: 3px;
+                }
             }
             .more-tabs {
                 display: none;
@@ -859,8 +832,11 @@
                     border: 0;
                 }
             }
-            #portfolio {
-                padding: 10px;
+            #portfolio #portfolio-content > div, #tab_trading_times-content > p {
+                margin: 0 10px 10px;
+            }
+            .toggle-content .gr-padding-10 {
+                padding-top: 0;
             }
         }
     }

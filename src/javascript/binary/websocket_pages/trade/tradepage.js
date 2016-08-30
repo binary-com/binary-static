@@ -38,7 +38,7 @@ var TradePage = (function(){
     if (document.getElementById('websocket_form')) {
         addEventListenerForm();
         if(!is_japanese_client) {
-          new ResizeSensor($('.content-tab-container, #contract_prices_container'), adjustAnalysisColumnHeight);
+          new ResizeSensor($('.col-left .content-tab-container, #contract_prices_container'), adjustAnalysisColumnHeight);
           new ResizeSensor($('.col-right'), moreTabsHandler);
         }
     }

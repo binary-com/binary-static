@@ -926,9 +926,13 @@ function setChartSource() {
 
 function adjustAnalysisColumnHeight() {
     var sumHeight = 0;
-    $('.col-left').children().each(function() {
-        if ($(this).is(':visible')) sumHeight += $(this).outerHeight(true);
-    });
+    if (window.innerWidth > 767) {
+        $('.col-left').children().each(function() {
+            if ($(this).is(':visible')) sumHeight += $(this).outerHeight(true);
+        });
+    } else {
+        sumHeight = 'auto';
+    }
     $('#trading_analysis_content').height(sumHeight);
 }
 
@@ -943,7 +947,7 @@ function moreTabsHandler($ul) {
     // add seeMore tab
     var $seeMore = $ul.find('li.' + seeMoreClass);
     if ($seeMore.length === 0) {
-        $seeMore = $('<li class="tm-li ' + seeMoreClass + '"><a class="tm-a" href="javascript:;">&#9660;</a></li>');
+        $seeMore = $('<li class="tm-li ' + seeMoreClass + '"><a class="tm-a" href="javascript:;"><span class="caret-down"></span></a></li>');
         $ul.append($seeMore);
     }
     $seeMore.removeClass('active');
@@ -996,7 +1000,8 @@ function moreTabsHandler($ul) {
         });
     }
     var timeout;
-    $seeMore.find('>a').unbind('click').click(function() {
+    $seeMore.find('>a').unbind('click').on('click', function(e) {
+        e.stopPropagation();
         if($moreTabs.is(':visible')) {
             hideDropDown();
             clearTimeout(timeout);
@@ -1009,6 +1014,7 @@ function moreTabsHandler($ul) {
             }, 3000);
         }
     });
+    $(document).unbind('click').on('click', function() { hideDropDown(); });
 
     $moreTabs.mouseenter(function() {
         clearTimeout(timeout);

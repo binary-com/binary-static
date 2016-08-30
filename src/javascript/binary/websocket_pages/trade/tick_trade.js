@@ -80,7 +80,6 @@ var TickDisplay = function() {
                     backgroundColor: null,
                     events: { load: $self.plot(config.plot_from, config.plot_to) },
                     marginLeft: 20,
-                    marginBottom: $self.is_trading_page ? 25 : 40
                 },
                 credits: {enabled: false},
                 tooltip: {
@@ -110,10 +109,8 @@ var TickDisplay = function() {
                     }
                 },
                 yAxis: {
-                    gridLineWidth: $self.is_trading_page ? 0 : 1,
                     opposite: false,
                     labels: {
-                        enabled: $self.is_trading_page ? false : true,
                         align: 'left',
                         x: 0,
                     },
@@ -135,6 +132,9 @@ var TickDisplay = function() {
             }
             if($self.is_trading_page) {
                 $.extend(true, chart_options, {
+                    chart: {
+                        marginBottom: 25
+                    },
                     tooltip: {
                         style: {'display': 'none'},
                         formatter: function () {
@@ -154,6 +154,13 @@ var TickDisplay = function() {
                         },
                         crosshair: {
                             width: 30,
+                        },
+                        tickWidth: 0
+                    },
+                    yAxis: {
+                        gridLineWidth: 0,
+                        labels: {
+                            enabled: false,
                         }
                     },
                     series: [{
@@ -223,12 +230,6 @@ var TickDisplay = function() {
                     color: line_color,
                     width: line_width,
                     zIndex: 2,
-                });
-                $self.chart.yAxis[0].addPlotBand({
-                    id: 'bg',
-                    from: $self.contract_sentiment === 'up' ? barrier_tick.quote : 0,
-                    to:   $self.contract_sentiment === 'up' ? $self.chart.yAxis[0].getExtremes().max : barrier_tick.quote,
-                    color: '#f5f8fb'
                 });
 
                 $self.contract_barrier = barrier_tick.quote;
