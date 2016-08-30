@@ -33,7 +33,7 @@ var LimitsUI = (function(){
         document.getElementById('max-aggregate-tooltip').setAttribute('data-balloon', Content.localize().textMaxAggregateTooltip);
         document.getElementById('payout').textContent = payout;
 
-        if (marketSpecific && Object.keys(marketSpecific).length > 0) {
+        if (marketSpecific && objectNotEmpty(marketSpecific)) {
           var key;
           for (key in marketSpecific) {
             if (marketSpecific.hasOwnProperty(key)) {
