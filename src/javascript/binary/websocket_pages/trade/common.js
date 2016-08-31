@@ -144,7 +144,7 @@
          option.appendChild(content);
          fragment.appendChild(option);
 
-         if(elements[key].submarkets && Object.keys(elements[key].submarkets).length){
+         if(elements[key].submarkets && objectNotEmpty(elements[key].submarkets)){
             var keys2 = Object.keys(elements[key].submarkets).sort(marketSort);
             for (var j=0; j<keys2.length; j++) {
                 var key2 = keys2[j];

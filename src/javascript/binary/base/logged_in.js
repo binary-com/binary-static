@@ -62,7 +62,7 @@ var LoggedInHandler = (function() {
                 tokens[loginid] = token;
             }
         }
-        if(Object.keys(tokens).length > 0) {
+        if(objectNotEmpty(tokens)) {
             page.client.set_storage_value('tokens', JSON.stringify(tokens));
         }
         return tokens;

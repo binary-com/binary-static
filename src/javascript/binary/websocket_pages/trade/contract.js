@@ -151,7 +151,7 @@ var Contract = (function() {
             }
         });
 
-        if (Object.keys(tradeContractForms).length === 0) return;
+        if (!objectNotEmpty(tradeContractForms)) return;
 
         if (tradeContractForms.risefall || tradeContractForms.higherlower) {
             tradeContractForms['updown'] = Content.localize().textFormUpDown;

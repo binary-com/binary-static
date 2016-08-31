@@ -218,18 +218,14 @@ function attach_tabs(element) {
 }
 
 function showLocalTimeOnHover(s) {
-    var selector = s || '.date';
-
-    $(selector).each(function(idx, ele) {
-        var gmtTimeStr = ele.innerHTML.replace('\n', ' ');
-
-        var localTime = moment.utc(gmtTimeStr, 'YYYY-MM-DD HH:mm:ss').local();
+    $(s || '.date').each(function(idx, ele) {
+        var gmtTimeStr = ele.textContent.replace('\n', ' ');
+        var localTime  = moment.utc(gmtTimeStr, 'YYYY-MM-DD HH:mm:ss').local();
         if (!localTime.isValid()) {
             return;
         }
 
         var localTimeStr = localTime.format('YYYY-MM-DD HH:mm:ss Z');
-
         $(ele).attr('data-balloon', localTimeStr);
     });
 }
@@ -277,6 +273,15 @@ function template(string, content) {
     });
 }
 
+function objectNotEmpty(obj) {
+    if (obj && obj instanceof Object) {
+        for (var key in obj) {
+            if (obj.hasOwnProperty(key)) return true;
+        }
+    }
+    return false;
+}
+
 function parseLoginIDList(string) {
     if (!string) return [];
     return string.split('+').sort().map(function(str) {
@@ -296,6 +301,7 @@ function parseLoginIDList(string) {
 if (typeof module !== 'undefined') {
     module.exports = {
         toJapanTimeIfNeeded: toJapanTimeIfNeeded,
+        objectNotEmpty: objectNotEmpty,
         template: template,
         parseLoginIDList: parseLoginIDList,
     };

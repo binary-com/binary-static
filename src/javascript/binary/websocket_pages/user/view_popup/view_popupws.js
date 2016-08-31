@@ -54,7 +54,7 @@ var ViewPopupWS = (function() {
     };
 
     var responseContract = function(response) {
-        if(!response.proposal_open_contract || Object.keys(response.proposal_open_contract).length === 0) {
+        if(!response.proposal_open_contract || !objectNotEmpty(response.proposal_open_contract)) {
             showErrorPopup(response);
             return;
         }
@@ -446,10 +446,8 @@ var ViewPopupWS = (function() {
         var $target = $Container.find('#' + id);
         if($target && $target.length > 0) {
             $target.html(text);
-            if(attributes && Object.keys(attributes).length > 0) {
-                $target.attr(attributes);
-            }
-            if(isVisible) $target.parent('tr').removeClass(hiddenClass);
+            if (attributes) $target.attr(attributes);
+            if (isVisible)  $target.parent('tr').removeClass(hiddenClass);
         }
     };
 
@@ -490,9 +488,7 @@ var ViewPopupWS = (function() {
     };
 
     var showErrorPopup = function(response, message) {
-        if(!message || message.length === 0) {
-            message = 'Sorry, an error occurred while processing your request.';
-        }
+        message = message || 'Sorry, an error occurred while processing your request.';
         showMessagePopup(text.localize(message), 'There was an error', 'notice-msg');
         console.log(response);
     };
@@ -501,33 +497,30 @@ var ViewPopupWS = (function() {
         var sellWrapperID = 'sell_at_market_wrapper',
             sellButtonID  = 'sell_at_market';
         var isExist = $Container.find('#' + sellWrapperID).length > 0;
-        if(show === true) {
-            if(!isExist) {
-                if(contractType === 'spread') {
-                    $Container.find('#contract_sell_wrapper').removeClass(hiddenClass).append(
-                        $('<p/>', {id: sellWrapperID, class: 'button'})
-                            .append($('<button/>', {id: sellButtonID, class: 'button', text: text.localize('Sell')}))
-                    );
-                }
-                else {
-                    $Container.find('#contract_sell_wrapper').removeClass(hiddenClass).append($('<div id="' + sellWrapperID + '"><span class="button"><button id="' + sellButtonID + '" class="button">' + text.localize('Sell at market') + '</button></span>' +
-                        '<div class="note"><strong>' + text.localize('Note') + ':</strong> ' + text.localize('Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price.') + '</div>'));
-                }
-                $Container.find('#' + sellButtonID).unbind('click').click(function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    ViewPopupUI.forget_streams();
-                    isSellClicked = true;
-                    sellSetVisibility(false);
-                    sellContract();
-                });
+        if (show) {
+            if (isExist) return;
+            if (contractType === 'spread') {
+                $Container.find('#contract_sell_wrapper').removeClass(hiddenClass).append(
+                    $('<p/>', {id: sellWrapperID, class: 'button'})
+                        .append($('<button/>', {id: sellButtonID, class: 'button', text: text.localize('Sell')}))
+                );
             }
-        }
-        else {
-            if(isExist) {
-                $Container.find('#' + sellButtonID).unbind('click');
-                $Container.find('#' + sellWrapperID).remove();
+            else {
+                $Container.find('#contract_sell_wrapper').removeClass(hiddenClass).append($('<div id="' + sellWrapperID + '"><span class="button"><button id="' + sellButtonID + '" class="button">' + text.localize('Sell at market') + '</button></span>' +
+                    '<div class="note"><strong>' + text.localize('Note') + ':</strong> ' + text.localize('Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price.') + '</div>'));
             }
+            $Container.find('#' + sellButtonID).unbind('click').click(function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                ViewPopupUI.forget_streams();
+                isSellClicked = true;
+                sellSetVisibility(false);
+                sellContract();
+            });
+        } else {
+            if (!isExist) return;
+            $Container.find('#' + sellButtonID).unbind('click');
+            $Container.find('#' + sellWrapperID).remove();
         }
     };
 
@@ -559,12 +552,8 @@ var ViewPopupWS = (function() {
     };
 
     // ----- Sell Expired -----
-    var sellExpired = function(passthrough) {
-        var req = {"sell_expired": 1, passthrough: {}};
-        if(passthrough && Object.keys(passthrough).length > 0) {
-            req.passthrough = passthrough;
-        }
-        socketSend(req);
+    var sellExpired = function() {
+        socketSend({"sell_expired": 1, passthrough: {}});
     };
 
     var responseSellExpired = function(response) {
@@ -572,15 +561,8 @@ var ViewPopupWS = (function() {
     };
 
     // ----- Sell Contract -----
-    var sellContract = function(price, passthrough) {
-        if(!price) {
-            price = 0;
-        }
-        var req = {"sell": contractID, "price": price, passthrough: {}};
-        if(passthrough && Object.keys(passthrough).length > 0) {
-            req.passthrough = passthrough;
-        }
-        socketSend(req);
+    var sellContract = function() {
+        socketSend({"sell": contractID, "price": 0, passthrough: {}});
     };
 
     var responseSell = function(response) {
@@ -634,38 +616,34 @@ var ViewPopupWS = (function() {
     };
 
     var dispatch = function(response) {
-        if(response.echo_req.hasOwnProperty('passthrough') && response.echo_req.passthrough.dispatch_to === 'ViewPopupWS') {
-            switch(response.msg_type) {
-                case 'proposal_open_contract':
-                    if(response.proposal_open_contract && response.proposal_open_contract.contract_id == contractID) {
-                        storeSubscriptionID(response.proposal_open_contract.id);
-                        responseContract(response);
-                    } else if (!response.proposal_open_contract && response.echo_req.contract_id == contractID && response.error) {
-                        showErrorPopup(response, response.error.message);
-                    }
-                    break;
-                case 'sell':
-                    responseSell(response);
-                    break;
-                case 'sell_expired':
-                    responseSellExpired(response);
-                    break;
-                case 'get_corporate_actions':
-                    if (Object.keys(response.get_corporate_actions).length > 0) {
-                      corporateActionEvent = true;
-                      containerSetText('trade_details_message', contract.validation_error ? contract.validation_error : corporateActionEvent ? '* ' + text.localize('This contract was affected by a Corporate Action event.') : '&nbsp;');
-                      populateCorporateAction(response);
-                      showCorporateAction();
-                    }
-                    break;
-                default:
-                    break;
-            }
-            showLocalTimeOnHover('#trade_details_start_date');
-            if (document.getElementById('trade_details_end_date')) showLocalTimeOnHover('#trade_details_end_date');
-            showLocalTimeOnHover('#trade_details_current_date');
-            showLocalTimeOnHover('#trade_details_live_date');
+        switch(response.msg_type) {
+            case 'proposal_open_contract':
+                if(response.proposal_open_contract && response.proposal_open_contract.contract_id == contractID) {
+                    storeSubscriptionID(response.proposal_open_contract.id);
+                    responseContract(response);
+                } else if (!response.proposal_open_contract && response.echo_req.contract_id == contractID && response.error) {
+                    showErrorPopup(response, response.error.message);
+                }
+                break;
+            case 'sell':
+                responseSell(response);
+                break;
+            case 'sell_expired':
+                responseSellExpired(response);
+                break;
+            case 'get_corporate_actions':
+                if (objectNotEmpty(response.get_corporate_actions)) {
+                  corporateActionEvent = true;
+                  containerSetText('trade_details_message', contract.validation_error ? contract.validation_error : corporateActionEvent ? '* ' + text.localize('This contract was affected by a Corporate Action event.') : '&nbsp;');
+                  populateCorporateAction(response);
+                  showCorporateAction();
+                }
+                break;
         }
+        showLocalTimeOnHover('#trade_details_start_date');
+        showLocalTimeOnHover('#trade_details_end_date');
+        showLocalTimeOnHover('#trade_details_current_date');
+        showLocalTimeOnHover('#trade_details_live_date');
     };
 
     return {

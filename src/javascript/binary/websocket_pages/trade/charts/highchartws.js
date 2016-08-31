@@ -219,104 +219,101 @@ var Highchart = (function() {
   };
 
   var dispatch = function(response) {
-    if(response.echo_req.hasOwnProperty('passthrough') && response.echo_req.passthrough.dispatch_to === 'ViewChartWS') {
-      var type = response.msg_type,
-          error = response.error;
-      if (type === 'contracts_for' && (!error || (error && error.code && error.code === 'InvalidSymbol'))) {
-          if (response.contracts_for && response.contracts_for.feed_license) {
-            handle_delay(response.contracts_for.feed_license);
-            save_feed_license(response.echo_req.contracts_for, response.contracts_for.feed_license);
-          }
-          show_entry_error();
-      } else if ((type === 'history' || type === 'candles' || type === 'tick' || type === 'ohlc') && !error){
-          responseID = response[type].id;
-          // send view popup the response ID so view popup can forget the calls if it's closed before contract ends
-          if (responseID) ViewPopupWS.storeSubscriptionID(responseID, 'chart');
-          options = { 'title' : contract.display_name };
-          if (response.history || response.candles) {
-            if (response.history) {
-                options.history = response.history;
-                if (options.history.times.length === 0) {
-                  show_error('missing');
-                  return;
-                }
-                if (response.history.times) {
-                  for (i = 0; i < response.history.times.length; i++) {
-                      if (entry_tick_time && parseInt(response.history.times[i]) === parseInt(entry_tick_time)) {
-                          // set the chart to display from the tick before entry_tick_time
-                          min_point = parseInt(response.history.times[(i === 0 ? i : i-1)]);
-                          break;
-                      } else if (purchase_time && start_time > parseInt(purchase_time) && parseInt(response.history.times[i]) === parseInt(purchase_time) || (parseInt(response.history.times[i]) < parseInt(purchase_time) && parseInt(response.history.times[(i === response.history.times.length - 1 ? i : i+1)]) > parseInt(purchase_time))) {
-                          // set the chart to display from the tick before purchase_time
-                          min_point = parseInt(response.history.times[(i === 0 ? i : i-1)]);
-                          break;
-                      }
-                  }
-                  if (!min_point) min_point = parseInt(response.history.times[0]);
-                }
-                get_max_history(response);
-            } else if (response.candles) {
-                options.candles = response.candles;
-                if (options.candles.length === 0) {
-                  show_error('missing');
-                  return;
-                }
-                for (i = 1; i < response.candles.length; i++) {
-                    if (entry_tick_time && response.candles[i] && parseInt(response.candles[i].epoch) <= parseInt(entry_tick_time) && response.candles[(i === response.candles.length - 1 ? i : i+1)].epoch > parseInt(entry_tick_time)) {
-                        // set the chart to display from the candle before entry_tick_time
-                        min_point = parseInt(response.candles[i-1].epoch);
-                        break;
-                    } else if (purchase_time && response.candles[i] && parseInt(response.candles[i].epoch) <= parseInt(purchase_time) && response.candles[(i === response.candles.length - 1 ? i : i+1)].epoch > parseInt(purchase_time)) {
-                        // set the chart to display from the candle before purchase_time
-                        min_point = parseInt(response.candles[i-1].epoch);
-                        break;
-                    }
-                }
-                get_max_candle(response);
-            }
-            // only initialize chart if it hasn't already been initialized
-            if (!chart && !initialized) {
-              chart = init_chart(options);
-              if(!chart) return;
-
-              if (purchase_time !== start_time) draw_line_x(purchase_time, 'Purchase Time', '', '', '#7cb5ec');
-
-              // second condition is used to make sure contracts that have purchase time
-              // but are sold before the start time don't show start time
-              if (!is_sold || (is_sold && sell_time && sell_time > start_time)) {
-                draw_line_x(start_time);
-              }
-
-              var duration = calculate_granularity(end_time, now_time, purchase_time, start_time)[1];
-
-              // show end time before contract ends if duration of contract is less than one day
-              // second OR condition is used so we don't draw end time again if there is sell time before
-              if (end_time - (start_time || purchase_time) <= 24*60*60 && (!is_sold || (is_sold && sell_time && sell_time >= end_time))) {
-                draw_line_x(end_time, '', 'textLeft', 'Dash');
-              }
-            }
-            if (is_sold || is_expired) {
-              reset_max();
-              reselect_exit_time();
-              end_contract();
-            }
-          } else if ((response.tick || response.ohlc) && !chart_forget) {
-            if (response.tick) {
-              options.tick = response.tick;
-            } else if (response.ohlc) {
-              options.ohlc = response.ohlc;
-            }
-            if (chart && chart.series) {
-              update_chart(options);
-            }
-          }
-          if (entry_tick_time){
-            select_entry_tick_barrier();
-          }
-          forget_streams();
-      } else if (type === 'ticks_history' && error) {
-          show_error('', error.message);
+    var type = response.msg_type, error = response.error;
+    if (type === 'contracts_for' && (!error || (error && error.code && error.code === 'InvalidSymbol'))) {
+      if (response.contracts_for && response.contracts_for.feed_license) {
+        handle_delay(response.contracts_for.feed_license);
+        save_feed_license(response.echo_req.contracts_for, response.contracts_for.feed_license);
       }
+      show_entry_error();
+    } else if ((type === 'history' || type === 'candles' || type === 'tick' || type === 'ohlc') && !error){
+      responseID = response[type].id;
+      // send view popup the response ID so view popup can forget the calls if it's closed before contract ends
+      if (responseID) ViewPopupWS.storeSubscriptionID(responseID, 'chart');
+      options = { 'title' : contract.display_name };
+      if (response.history || response.candles) {
+        if (response.history) {
+          options.history = response.history;
+          if (options.history.times.length === 0) {
+            show_error('missing');
+            return;
+          }
+          if (response.history.times) {
+            for (i = 0; i < response.history.times.length; i++) {
+              if (entry_tick_time && parseInt(response.history.times[i]) === parseInt(entry_tick_time)) {
+                // set the chart to display from the tick before entry_tick_time
+                min_point = parseInt(response.history.times[(i === 0 ? i : i-1)]);
+                break;
+              } else if (purchase_time && start_time > parseInt(purchase_time) && parseInt(response.history.times[i]) === parseInt(purchase_time) || (parseInt(response.history.times[i]) < parseInt(purchase_time) && parseInt(response.history.times[(i === response.history.times.length - 1 ? i : i+1)]) > parseInt(purchase_time))) {
+                // set the chart to display from the tick before purchase_time
+                min_point = parseInt(response.history.times[(i === 0 ? i : i-1)]);
+                break;
+              }
+            }
+            if (!min_point) min_point = parseInt(response.history.times[0]);
+          }
+          get_max_history(response);
+        } else if (response.candles) {
+          options.candles = response.candles;
+          if (options.candles.length === 0) {
+            show_error('missing');
+            return;
+          }
+          for (i = 1; i < response.candles.length; i++) {
+            if (entry_tick_time && response.candles[i] && parseInt(response.candles[i].epoch) <= parseInt(entry_tick_time) && response.candles[(i === response.candles.length - 1 ? i : i+1)].epoch > parseInt(entry_tick_time)) {
+              // set the chart to display from the candle before entry_tick_time
+              min_point = parseInt(response.candles[i-1].epoch);
+              break;
+            } else if (purchase_time && response.candles[i] && parseInt(response.candles[i].epoch) <= parseInt(purchase_time) && response.candles[(i === response.candles.length - 1 ? i : i+1)].epoch > parseInt(purchase_time)) {
+              // set the chart to display from the candle before purchase_time
+              min_point = parseInt(response.candles[i-1].epoch);
+              break;
+            }
+          }
+          get_max_candle(response);
+        }
+        // only initialize chart if it hasn't already been initialized
+        if (!chart && !initialized) {
+          chart = init_chart(options);
+          if(!chart) return;
+
+          if (purchase_time !== start_time) draw_line_x(purchase_time, 'Purchase Time', '', '', '#7cb5ec');
+
+          // second condition is used to make sure contracts that have purchase time
+          // but are sold before the start time don't show start time
+          if (!is_sold || (is_sold && sell_time && sell_time > start_time)) {
+            draw_line_x(start_time);
+          }
+
+          var duration = calculate_granularity(end_time, now_time, purchase_time, start_time)[1];
+
+          // show end time before contract ends if duration of contract is less than one day
+          // second OR condition is used so we don't draw end time again if there is sell time before
+          if (end_time - (start_time || purchase_time) <= 24*60*60 && (!is_sold || (is_sold && sell_time && sell_time >= end_time))) {
+            draw_line_x(end_time, '', 'textLeft', 'Dash');
+          }
+        }
+        if (is_sold || is_expired) {
+          reset_max();
+          reselect_exit_time();
+          end_contract();
+        }
+      } else if ((response.tick || response.ohlc) && !chart_forget) {
+        if (response.tick) {
+          options.tick = response.tick;
+        } else if (response.ohlc) {
+          options.ohlc = response.ohlc;
+        }
+        if (chart && chart.series) {
+          update_chart(options);
+        }
+      }
+      if (entry_tick_time){
+        select_entry_tick_barrier();
+      }
+      forget_streams();
+    } else if (type === 'ticks_history' && error) {
+      show_error('', error.message);
     }
   };
 

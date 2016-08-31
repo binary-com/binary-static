@@ -37,7 +37,6 @@ var MyAccountWS = (function() {
             Cookies.set('residence', get_settings.country_code, {path: '/', domain: documentDomain});
           }
           page.client.residence = get_settings.country_code;
-          page.contents.topbar_message_visibility();
         }
         client_tnc_status = get_settings.client_tnc_status || '-';
         is_authenticated_payment_agent = get_settings.is_authenticated_payment_agent;
@@ -147,7 +146,7 @@ var MyAccountWS = (function() {
             case 'get_settings':
                 responseGetSettings(response);
                 break;
-            case 'landing_company_details':
+            case 'landing_company':
                 showWelcomeMessage();
                 break;
             case 'website_status':
