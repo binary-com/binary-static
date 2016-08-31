@@ -8,12 +8,9 @@ var buildOauthApps = function(data) {
 };
 
 var addTooltip = function(oauth_apps) {
-    if (Object.keys(oauth_apps).length > 0) {
-        for (var key in oauth_apps) {
-            if ($('.' + key).length > 0) {
-                $('.' + key).attr('data-balloon', add_app_id_name(key, oauth_apps[key]));
-            }
-        }
+    for (var key in oauth_apps) {
+        if (!oauth_apps.hasOwnProperty(key)) continue;
+        $('.' + key).attr('data-balloon', add_app_id_name(key, oauth_apps[key]));
     }
 };
 
