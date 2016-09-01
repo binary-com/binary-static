@@ -7,15 +7,16 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-24 08:58+0000\n"
+"PO-Revision-Date: 2016-09-01 02:53+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
-"Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
+"Language-Team: Indonesian "
+"<https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.8-dev\n"
+"X-Generator: Weblate 2.8\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"%1 API\" adalah set eksklusif dari rutinitas program %1, protokol, alat dan sumber daya yang diciptakan dan dikelola oleh %1 yang dapat memberi Anda fasilitas untuk menggunakan aplikasi terdaftar pada platform trading %1."
@@ -419,10 +420,9 @@ msgstr "<< Kembali ke Deskripsi Pekerjaan"
 msgid "<a class='pjaxload' href='mailto:%1'>Contact Us</a>"
 msgstr "<a class='pjaxload' href='mailto:%1'>Hubungi Kami</a>"
 
-#, fuzzy
 #| msgid "View <a href=\"%1\">Asset Index.</a>"
 msgid "<a href=\"%1\">Return to trading page</a>"
-msgstr "Lihat <a href=\"%1\">Index Aset.</a>"
+msgstr "<a href=\"%1\">Kembali ke halaman trading</a>"
 
 msgid "<a href='%1'>Founded</a> October 1999"
 msgstr "<a href='%1'>Didirikan</a> Oktober 1999"
@@ -488,18 +488,18 @@ msgstr "<strong>Paparan bisnis tambahan:</strong> Anda akan memperjelas layanan 
 msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
 msgstr "<strong>Alat canggih untuk analisa fundamental dan teknis,</strong> termasuk indikator, grafik, dan banyak lagi."
 
-#, fuzzy
 #| msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgid "<strong>All durations:</strong> from 10 seconds to 365 days."
-msgstr "<strong>Semua durasi</strong> - dari 10 detik hingga 365 hari."
+msgstr "<strong>Semua durasi:</strong> dari 10 detik hingga 365 hari."
 
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>Semua durasi</strong> - dari 10 detik hingga 365 hari."
 
-#, fuzzy
 #| msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
 msgid "<strong>All market conditions:</strong> up/down, touch/no-touch, stays in/goes out."
-msgstr "<strong>Semua kondisi pasar</strong> - naik/turun, menyentuh/tidak menyentuh, di dalam/di luar."
+msgstr ""
+"<strong>Semua kondisi pasar:</strong> naik/turun, menyentuh/tidak menyentuh, "
+"tetap/keluar."
 
 msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
 msgstr "<strong>Semua kondisi pasar</strong> - naik/turun, menyentuh/tidak menyentuh, di dalam/di luar."
@@ -507,18 +507,16 @@ msgstr "<strong>Semua kondisi pasar</strong> - naik/turun, menyentuh/tidak menye
 msgid "<strong>All markets, all conditions</strong> - trade currencies, indices and commodities in rising, falling, sideways, quiet and volatile markets."
 msgstr "<strong>Semua pasar, semua kondisi</strong> - trading mata uang, indeks dan komoditas pada kenaikan, penurunan, sideway, sepi atau volatilitas pasar."
 
-#, fuzzy
 #| msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgid "<strong>All markets:</strong> currencies, stocks, indices, and commodities."
-msgstr "<strong>Semua pasar</strong> - valuta asing, indeks saham dan komoditas."
+msgstr "<strong>Semua pasar:</strong> valuta asing, indeks saham dan komoditas."
 
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgstr "<strong>Semua pasar</strong> - valuta asing, indeks saham dan komoditas."
 
-#, fuzzy
 #| msgid "<strong>All payouts</strong> - from $1 to $50,000."
 msgid "<strong>All payouts:</strong> from $1 to $50,000."
-msgstr "<strong>Hasil</strong> - dari $1 hingga $50,000."
+msgstr "<strong>Hasil:</strong> dari $1 hingga $50,000."
 
 msgid "<strong>All payouts</strong> - from $1 to $50,000."
 msgstr "<strong>Hasil</strong> - dari $1 hingga $50,000."
@@ -2940,10 +2938,11 @@ msgstr "Jika ketentuan apapun dalam Perjanjian ini dianggap tidak berlaku atau t
 msgid "If the Company is legally required to disclose your personal or financial information by law, regulation or pursuant to the order of a court of competent jurisdiction or a governmental agency, the Company  shall, unless legally prohibited, promptly notify you to that effect, in order to give you the opportunity to seek such protection for the information as it deems appropriate. Such required disclosure shall not be construed as a breach of this Terms and Conditions Agreement."
 msgstr "Jika Perusahaan diwajibkan secara hukum untuk menginformasikan data pribadi atau keuangan Anda oleh hukum, regulasi atau sesuai dengan perintah dari pengadilan yang berwenang atau badan pemerintah, Perusahaan harus, kecuali dilarang secara hukum, segera memberitahu Anda mengenai hal tersebut, untuk memberikan kesempatan kepada Anda dalam mencari perlindungan yang dianggap perlu. Pengungkapan yang diperlukan tersebut tidak dapat ditafsirkan sebagai pelanggaran Syarat dan Ketentuan Perjanjian ini."
 
-#, fuzzy
 #| msgid "This account is unavailable. For any questions please contact <a href=\"%1\">Customer Support</a>."
 msgid "If the issue keeps happening, please contact <a href=\"%1\">customer support</a>."
-msgstr "Akun ini untuk sementara dibatalkan, silahkan hubungi <a href=\"%1\">Customer Support</a>."
+msgstr ""
+"Jika masalah ini terus berlangsung, silahkan hubungi <a href=\"%1\">customer "
+"support</a>."
 
 msgid "If this Agreement is terminated for any reason, you must permanently delete all Content, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
 msgstr "Jika Perjanjian ini dihentikan berhubung alasan apapun, maka Anda harus menghapus secara permanen semua Konten, kecuali jika melakukan hal tersebut akan menyebabkan Anda melanggar hukum atau kewajiban yang dibebankan oleh sebuah otoritas pemerintah."
@@ -4449,10 +4448,9 @@ msgstr "Dalam waktu lima tahun kami telah mengantongi beberapa penghargaan. Hal 
 msgid "Only one account is allowed per person. No winnings and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person."
 msgstr "Hanya satu akun riil per orang. Anda tidak dibenarkan untuk melakukan penarikan dana jika akun dibuka menggunakan nama palsu atau jika anda memiliki lebih dari satu akun riil."
 
-#, fuzzy
 #| msgid "No Data available"
 msgid "Oops... Page Not Available"
-msgstr "tidak ada data yang ada"
+msgstr "Maaf ... Halaman Tidak Tersedia"
 
 msgid "Open"
 msgstr "Awal"
@@ -6086,6 +6084,9 @@ msgstr "Jumlah maksimum token (%1) telah tercapai."
 
 msgid "The page you requested could not be found. Either it no longer exists or the address is wrong. Please check for any typos."
 msgstr ""
+"Halaman yang Anda minta tidak dapat ditemukan. Mungkin berhubung sudah tidak "
+"tersedia lagi atau alamat salah. Silakan periksa jika terdapat salah "
+"pengetikkan."
 
 msgid "The patent means Regent Markets is the recognised pioneer of binary betting. The patent helps protect our innovations."
 msgstr "Paten berarti Regent Markets diakui sebagai perintis trading binary. Paten ini membantu melindungi inovasi kami."
@@ -8182,10 +8183,9 @@ msgstr "{JAPAN ONLY}Registration"
 msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "{JAPAN ONLY}Regulation & Tax"
 
-#, fuzzy
 #| msgid "{JAPAN ONLY}minute"
 msgid "{JAPAN ONLY}Remaining time"
-msgstr "{JAPAN ONLY}minute"
+msgstr "{JAPAN ONLY}Remaining time"
 
 msgid "{JAPAN ONLY}STAY-IN/BREAK-OUT"
 msgstr "{JAPAN ONLY}STAY-IN/BREAK-OUT"
@@ -8383,7 +8383,7 @@ msgid "Online Trading platform for binary options on Forex, Indices, Commodities
 msgstr "Platform Trading Online untuk opsi binary pada Forex, Indeks, Komoditas dan Indeks Smart"
 
 msgid "404"
-msgstr ""
+msgstr "404"
 
 msgid "Why Us"
 msgstr "Mengapa Kami"
