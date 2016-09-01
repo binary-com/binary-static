@@ -50,6 +50,7 @@ var TNCApproval = (function() {
 
     var responseTNCApproval = function(response) {
         if(!response.hasOwnProperty('error')) {
+            sessionStorage.setItem('check_tnc', sessionStorage.getItem('check_tnc').split(page.client.loginid).join());
             redirectBack();
         }
         else {

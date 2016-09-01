@@ -358,11 +358,11 @@
 	//phablet = p
 	@include gridle_register_state(p, (
 		min-width : 481px,
-		max-width : 767px
+		max-width : 768px
 	));
 	//tablet = t
 	@include gridle_register_state(t, (
-		min-width : 768px,
+		min-width : 769px,
 		max-width : 1024px
 	));
 }

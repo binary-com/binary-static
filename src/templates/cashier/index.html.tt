@@ -4,12 +4,48 @@
         <h1>[% l('Cashier') %]</h1>
     </div>
 
+    <div class="gr-12 gr-padding-10 table-body by_client_type client_virtual with_login_cookies invisible gr-parent">
+        <div class="gr-padding-10">
+            <h3>[% l('Get more virtual money') %]</h3>
+        </div>
+        <div class="gr-row">
+            <div class="gr-12">
+                <div class="gr-row">
+                    <div class="gr-2 gr-4-m">
+                        <img class="responsive charting-page-icon" id="virtual_money_icon" src="[% request.url_for('images/pages/cashier/virtual_topup.svg') %]" />
+                    </div>
+                    <div class="gr-5 gr-12-m">
+                        <span class="ja-hide">[% l('You can request more virtual money if your virtual balance falls below USD 1,000.00.') %]</span>
+                        <p class="hidden ja-show">[% l('You can request more virtual money if your virtual balance falls below JPY 100,000.') %]</span>
+                    </div>
+                    <div class="gr-5 gr-12-m">
+                        <div class="gr-padding-10 by_client_type client_virtual with_login_cookies invisible gr-parent">
+                            <a class="pjaxload button button_large by_client_type client_virtual with_login_cookies invisible" href="[% request.url_for('/cashier/top_up_virtualws') %]" id="VRT_topup_link">
+                                <span class="ja-hide">[% l('Get USD 10,000.00') %]</span>
+                                <span class="hidden ja-show">[% l('Get JPY 1,000,000') %]</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="gr-12 gr-padding-10 by_client_type client_virtual with_login_cookies invisible">
+        <span></span>
+    </div>
+
     <div class="gr-12 gr-padding-10 table-body">
-        <div class="gr-padding-10 invisible">
+        <div class="gr-padding-10 invisible gr-parent">
             <p class="notice-msg by_client_type client_real with_login_cookies">
                 [% l('Withdrawal is locked, please <a class="pjaxload" href="[_1]">contact us</a> for more information.', request.url_for('/contact')) %]
             </p>
         </div>
+        <p class="center-text invisible" id="authenticate_button">
+            <a class="button pjaxload" href="[% request.url_for('/user/authenticatews') %]">
+                <span>[% l('Authenticate your account') %]</span>
+            </a>
+        </p>
         <div class="gr-padding-10">
             <h3>[% l('Bank-wire, credit card, e-cash wallet') %]</h3>
         </div>
@@ -23,15 +59,15 @@
                         </a>
                     </div>
                     <div class="gr-5 gr-12-m">
-                        <p>[% l('Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet.') %]</p>
+                        <span>[% l('Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet.') %]</span>
                         <a class="pjaxload ja-hide" href="[% request.url_for('cashier/payment_methods') %]" id="view_payment_methods">
-                            [% l('View available payment methods') %]
+                            <p>[% l('View available payment methods') %]</p>
                         </a>
                     </div>
                     <div class="gr-5 gr-12-m">
-                        <div class="gr-padding-10 by_client_type client_real with_login_cookies invisible">
+                        <div class="gr-padding-10 by_client_type client_real with_login_cookies invisible gr-parent">
                             <a class="pjaxload button button_large by_client_type client_real with_login_cookies invisible" href="[% request.url_for('/cashier/forwardws#deposit') %]">
-                                <span>[% l('Deposit') %]</span>
+                                <span class="deposit">[% l('Deposit') %]</span>
                             </a>
                         </div>
                         <div class="gr-padding-10 by_client_type client_real with_login_cookies invisible">
@@ -63,15 +99,15 @@
                 </a>
             </div>
             <div class="gr-5 gr-12-m">
-                <p>[% l('For e-cash methods or local currencies not supported by [_1].', website_name) %]</p>
+                <span>[% l('For e-cash methods or local currencies not supported by [_1].', website_name) %]</span>
                 <p class="faded">
                     [% l('Note: Withdrawal via payment agent is available only if you deposit exclusively via payment agent') %]
                 </p>
             </div>
             <div class="gr-5 gr-12-m">
-                <div class="gr-padding-10">
+                <div class="gr-padding-10 gr-parent">
                     <a class="pjaxload button button_large by_client_type client_real with_login_cookies invisible" href="[% request.url_for('/cashier/payment_agent_listws') %]">
-                        <span>[% l('Deposit') %]</span>
+                        <span class="deposit">[% l('Deposit') %]</span>
                     </a>
                 </div>
                 <div class="gr-padding-10">
@@ -83,7 +119,7 @@
         </div>
     </div>
 
-    <div class="gr-12 gr-padding-10 table-body ja-hide" id="account-transfer-section">
+    <div class="gr-12 gr-padding-10 table-body ja-hide invisible" id="account-transfer-section">
         <div class="gr-row">
             <div class="gr-2 gr-4-m">
                 <a class="pjaxload" href="[% request.url_for('/account/account_transferws') %]" id="account_transfer">
@@ -91,10 +127,10 @@
                 </a>
             </div>
             <div class="gr-5 gr-12-m">
-                <p>[% l('Transfer between your gaming and financial accounts.') %]</p>
+                <span>[% l('Transfer between your gaming and financial accounts.') %]</span>
             </div>
             <div class="gr-5 gr-12-m">
-                <div class="gr-padding-10">
+                <div class="gr-padding-10 gr-parent">
                     <a class="button button_large by_client_type client_real with_login_cookies invisible" href="[% request.url_for('/account/account_transferws') %]">
                         <span class="withdraw">[% l('Transfer') %]</span>
                     </a>

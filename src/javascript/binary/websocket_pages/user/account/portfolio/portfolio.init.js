@@ -20,12 +20,17 @@ var PortfolioWS =  (function() {
     };
 
     var createPortfolioRow = function(data) {
+        console.log(data);
+        var longCode = typeof module !== 'undefined' ? 
+            data.longcode : 
+            (japanese_client() ? toJapanTimeIfNeeded(void 0, void 0, data.longcode) : data.longcode);
+
         $('#portfolio-body').append(
             $('<tr class="flex-tr" id="' + data.contract_id + '">' +
                 '<td class="ref flex-tr-child">' + '<span' + showTooltip(data.app_id, oauth_apps[data.app_id]) + '>' + data.transaction_id + '</span>' +
                 '</td>' +
                 '<td class="payout flex-tr-child"><strong>' + format_money(data.currency, data.payout) + '</strong></td>' +
-                '<td class="details flex-tr-child">' + data.longcode + '</td>' +
+                '<td class="details flex-tr-child">' + longCode + '</td>' +
                 '<td class="purchase flex-tr-child"><strong>' + format_money(data.currency, data.buy_price) + '</strong></td>' +
                 '<td class="indicative flex-tr-child"><strong class="indicative_price">' + format_money(data.currency, '--.--') + '</strong></td>' +
                 '<td class="button flex-tr-child"><button class="button open_contract_detailsws" contract_id="' + data.contract_id + '">' + text.localize('View') + '</button></td>' +
@@ -36,10 +41,14 @@ var PortfolioWS =  (function() {
     var updateBalance = function() {
         if ($("#portfolio-balance").length === 0) return;
         $("#portfolio-balance").text(Portfolio.getBalance(TUser.get().balance, TUser.get().currency));
+        var if_balance_zero = $('#if-balance-zero');
         if(Portfolio.getBalance(TUser.get().balance) > 0 || page.client.is_virtual()) {
-            $('#if-balance-zero:visible').addClass('invisible');
+            if_balance_zero.addClass('invisible');
         } else {
-            $('#if-balance-zero:hidden').removeClass('invisible');
+            if_balance_zero.removeClass('invisible');
+            if (page.client_status_detected('unwelcome, cashier_locked', 'any')) {
+                if_balance_zero.removeAttr('href').addClass('button-disabled');
+            }
         }
     };
 

@@ -125,13 +125,16 @@
                            </ul>
                        </div>
                        <div class="gr-4 ja-hide">
-                           <h4 class="secondary-color">[% l('Charts') %]</h4>
+                           <h4 class="secondary-color">[% l('Apps') %]</h4>
                            <ul>
                                <li>
-                                   <a class="pjaxload" href="//webtrader.binary.com" target="_blank">[% l('Webtrader') %]</a>
+                                   <a href="https://shop.binary.com/collections/applications/products/tick-trade-mobile-application" target="_blank">[% l('TickTrade App') %]</a>
                                </li>
                                <li>
-                                   <a class="pjaxload" href="//tradingview.binary.com" target="_blank">[% l('TradingView') %]</a>
+                                   <a href="https://shop.binary.com/collections/applications/products/webtrader" target="_blank">[% l('Webtrader') %]</a>
+                               </li>
+                               <li>
+                                   <a href="https://shop.binary.com/collections/applications/products/binary-com-tradingview-chart" target="_blank">[% l('TradingView') %]</a>
                                </li>
                            </ul>
                        </div>
@@ -139,7 +142,16 @@
                            <h4 class="secondary-color">[% l('Partner With Us') %]</h4>
                            <ul class="partner">
                                <li>
-                                   <a class="pjaxload" href="[% request.url_for('/partners') %]"><img id="iom_icon_footer" class="responsive" src="[% request.url_for('images/pages/footer/partner-icon.svg') %]"/></a>
+                                   <a class="pjaxload" href="[% request.url_for('/affiliate/signup') %]">[% l("Affiliate Program") %]</a>
+                               </li>
+                               <li>
+                                   <a href="https://developers.binary.com" target="_blank">[% l("API") %]</a>
+                               </li>
+                               <li>
+                                   <a target="_blank" href="https://shop.binary.com">[% l("Binary Shop") %]</a>
+                               </li>
+                               <li>
+                                   <a class="pjaxload" href="[% request.url_for('/partners') %]">[% l("All Partnership Options") %]</a>
                                </li>
                            </ul>
                        </div>

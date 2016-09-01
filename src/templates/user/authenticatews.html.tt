@@ -3,7 +3,7 @@
   <div id="authentication-message">
 
       <p id="fully-authenticated" class="invisible">
-          [% l('Your account is fully authenticated. You can view your <a class="pjaxload" href="[_1]">trading limits here</a>.', request.url_for('/user/settings/limitsws')) %]
+          [% l('Your account is fully authenticated. You can view your <a class="pjaxload" href="[_1]">trading limits here</a>.', request.url_for('/user/security/limitsws')) %]
       </p>
 
       <div id="not-authenticated" class="invisible">

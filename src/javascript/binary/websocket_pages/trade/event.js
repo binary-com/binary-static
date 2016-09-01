@@ -340,28 +340,34 @@ var TradingEvents = (function () {
         /*
          * attach event to purchase buttons to buy the current contract
          */
-        $('.purchase_button').on('click dblclick', function () {
-            if (isVisible(document.getElementById('confirmation_message_container'))) return;
-            var id = this.getAttribute('data-purchase-id'),
-                askPrice = this.getAttribute('data-ask-price');
+        if (page.client_status_detected('unwelcome')) {
+            $.each($('.purchase_button'), function(){
+              $(this).parent().addClass('button-disabled');
+            });
+        } else {
+            $('.purchase_button').on('click dblclick', function () {
+                if (isVisible(document.getElementById('confirmation_message_container'))) return;
+                var id = this.getAttribute('data-purchase-id'),
+                    askPrice = this.getAttribute('data-ask-price');
 
-            var params = {buy: id, price: askPrice, passthrough:{}};
-            for(var attr in this.attributes){
-                if(attr && this.attributes[attr] && this.attributes[attr].name &&
-                    !/data\-balloon/.test(this.attributes[attr].name)){ // do not send tooltip data
-                    var m = this.attributes[attr].name.match(/data\-(.+)/);
+                var params = {buy: id, price: askPrice, passthrough:{}};
+                for(var attr in this.attributes){
+                    if(attr && this.attributes[attr] && this.attributes[attr].name &&
+                        !/data\-balloon/.test(this.attributes[attr].name)){ // do not send tooltip data
+                        var m = this.attributes[attr].name.match(/data\-(.+)/);
 
-                    if(m && m[1] && m[1]!=="purchase-id" && m[1]!=="passthrough"){
-                        params.passthrough[m[1]] = this.attributes[attr].value;
+                        if(m && m[1] && m[1]!=="purchase-id" && m[1]!=="passthrough"){
+                            params.passthrough[m[1]] = this.attributes[attr].value;
+                        }
                     }
                 }
-            }
-            if (id && askPrice) {
-                BinarySocket.send(params);
-                Price.incrFormId();
-                processForgetProposals();
-            }
-        });
+                if (id && askPrice) {
+                    BinarySocket.send(params);
+                    Price.incrFormId();
+                    processForgetProposals();
+                }
+            });
+        }
 
         /*
          * attach event to close icon for purchase container

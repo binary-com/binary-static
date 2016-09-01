@@ -4,7 +4,7 @@ pjax_config_page_require_auth("new_account/maltainvestws", function(){
       Content.populate();
       for (i = 0; i < page.user.loginid_array.length; i++){
         if (page.user.loginid_array[i].financial){
-          window.location.href = page.url.url_for('user/my_accountws');
+          window.location.href = page.url.url_for('trading');
           return;
         } else if (page.user.loginid_array[i].non_financial){
           $('.security').hide();

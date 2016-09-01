@@ -9,5 +9,5 @@
 </p>
 <p class='center-text'>
     <span class="button"><button class="button" id="accept_risk_submit" name="accept_risk" type="submit" value="1">[% l('Accept') %]</button></span>
-    <a class='button pjaxload' href="[% request.url_for('/user/my_accountws') %]"><span>[% l('Decline') %]</span></a>
+    <a class='button pjaxload' href="[% request.url_for('/trading') %]"><span>[% l('Decline') %]</span></a>
 </p>

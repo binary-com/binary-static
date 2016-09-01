@@ -441,7 +441,7 @@
                         <span class="button">
                           <button class="button" type="submit">[% l('Accept') %]</button>
                         </span>
-                        <a class="button pjaxload" href="[% request.url_for('/user/my_accountws') %]"><span>[% l('Decline') %]</span></a>
+                        <a class="button pjaxload" href="[% request.url_for('trading') %]"><span>[% l('Decline') %]</span></a>
                       </p>
                     </div>
                   </fieldset>

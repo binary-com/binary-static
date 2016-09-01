@@ -218,18 +218,14 @@ function attach_tabs(element) {
 }
 
 function showLocalTimeOnHover(s) {
-    var selector = s || '.date';
-
-    $(selector).each(function(idx, ele) {
-        var gmtTimeStr = ele.innerHTML.replace('\n', ' ');
-
-        var localTime = moment.utc(gmtTimeStr, 'YYYY-MM-DD HH:mm:ss').local();
+    $(s || '.date').each(function(idx, ele) {
+        var gmtTimeStr = ele.textContent.replace('\n', ' ');
+        var localTime  = moment.utc(gmtTimeStr, 'YYYY-MM-DD HH:mm:ss').local();
         if (!localTime.isValid()) {
             return;
         }
 
         var localTimeStr = localTime.format('YYYY-MM-DD HH:mm:ss Z');
-
         $(ele).attr('data-balloon', localTimeStr);
     });
 }
@@ -237,7 +233,7 @@ function showLocalTimeOnHover(s) {
 function toJapanTimeIfNeeded(gmtTimeStr, showTimeZone, longcode, hideSeconds){
     var match;
     if (longcode && longcode !== '') {
-      match = longcode.match(/(\d{4}-\d{2}-\d{2})\s?(\d{2}:\d{2}:\d{2})?/);
+      match = longcode.match(/((?:\d{4}-\d{2}-\d{2})\s?(\d{2}:\d{2}:\d{2})?(?:\sGMT)?)/);
       if (!match) return longcode;
     }
 
@@ -247,8 +243,10 @@ function toJapanTimeIfNeeded(gmtTimeStr, showTimeZone, longcode, hideSeconds){
 
     if(typeof gmtTimeStr === 'number'){
         time = moment.utc(gmtTimeStr*1000);
-    } else {
+    } else if(gmtTimeStr){
         time = moment.utc(gmtTimeStr, 'YYYY-MM-DD HH:mm:ss');
+    } else {
+        time = moment.utc(match[0], 'YYYY-MM-DD HH:mm:ss');
     }
 
     if (!time.isValid()) {
@@ -277,6 +275,15 @@ function template(string, content) {
     });
 }
 
+function objectNotEmpty(obj) {
+    if (obj && obj instanceof Object) {
+        for (var key in obj) {
+            if (obj.hasOwnProperty(key)) return true;
+        }
+    }
+    return false;
+}
+
 function parseLoginIDList(string) {
     if (!string) return [];
     return string.split('+').sort().map(function(str) {
@@ -296,6 +303,7 @@ function parseLoginIDList(string) {
 if (typeof module !== 'undefined') {
     module.exports = {
         toJapanTimeIfNeeded: toJapanTimeIfNeeded,
+        objectNotEmpty: objectNotEmpty,
         template: template,
         parseLoginIDList: parseLoginIDList,
     };

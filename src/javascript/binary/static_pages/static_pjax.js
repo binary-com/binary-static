@@ -143,7 +143,7 @@ pjax_config_page('/affiliate/signup', function() {
     return {
         onLoad: function() {
             if (japanese_client()) {
-                window.location.href = page.url.url_for('user/my_accountws');
+                window.location.href = page.url.url_for('partners');
             }
         }
     };
