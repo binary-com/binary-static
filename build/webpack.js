@@ -6,7 +6,7 @@ module.exports = function (grunt) {
             },
             output: {
                 path: './src/javascript',
-                filename: 'modules.js',
+                filename: 'binary_pack.js',
             },
         }
     }
