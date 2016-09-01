@@ -48,9 +48,6 @@ my @urls = (
     ['get-started/otc-indices-stocks'          , 'monthly', '0.80'],
     ['get-started/beginners-faq'               , 'monthly', '0.80'],
     ['get-started/glossary'                    , 'monthly', '0.80'],
-
-    ['metatrader',          'monthly', '0.80'],
-    ['metatrader/download', 'monthly', '0.80'],
 );
 
 

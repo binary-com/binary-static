@@ -74,7 +74,6 @@ sub all_pages {
         ['resources/market_timesws', 'resources/market_timesws',  'default', 'Trading Times'],
 
         ['user/security/api_tokenws',       'user/security/api_tokenws',                      'default', 'API Token',               'ja'],
-        ['user/metatrader',                 'user/metatrader',                                'default', 'MetaTrader'],
         ['user/security/change_passwordws', 'user/security/change_passwordws',                'default', 'Change Password'],
         ['user/portfoliows',                'user/portfoliows',                               'default', 'Portfolio'],
         ['user/profit_tablews',             'user/profit_tablews',                            'default', 'Profit Table'],
@@ -92,9 +91,6 @@ sub all_pages {
         ['user/security/authorised_appsws', 'user/security/authorised_appsws',                'default', 'Authorised Applications', 'ja'],
         ['user/reality_check_frequencyws',  'user/reality_check_frequencyws',                 'default', 'Reality Check'],
         ['user/reality_check_summaryws',    'user/reality_check_summaryws',                   'default', 'Reality Check'],
-
-        ['metatrader',          'metatrader/index',    'default', 'Trading with MetaTrader 5'],
-        ['metatrader/download', 'metatrader/download', 'default', 'Start Trading with MetaTrader 5'],
 
         ['logged_inws',           'global/logged_inws',  undef],
         ['trade/bet_explanation', 'bet/explanation',     undef],

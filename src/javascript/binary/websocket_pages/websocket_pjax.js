@@ -63,14 +63,6 @@ pjax_config_page_require_auth("user/security/self_exclusionws", function() {
     };
 });
 
-pjax_config_page_require_auth("user/metatrader", function() {
-    return {
-        onLoad: function() {
-            MetaTraderUI.init();
-        }
-    };
-});
-
 pjax_config_page_require_auth("user/security/cashier_passwordws", function() {
     return {
         onLoad: function() {
