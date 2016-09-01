@@ -8,6 +8,7 @@ module.exports = {
             '!src/sass/external/**/*.scss',
             '!src/sass/_constants.scss',
             '!src/sass/mixin.scss',
+            '!src/sass/functions.scss',
             '!src/sass/reset.scss'
         ]
     }
