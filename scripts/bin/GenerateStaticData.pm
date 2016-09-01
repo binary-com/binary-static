@@ -223,6 +223,7 @@ sub _texts {
         push @texts, localize('Touch/No Touch');
         push @texts, localize('Stays In/Goes Out');
         push @texts, localize('Waiting for entry tick.');
+        push @texts, localize('Refresh page');
 
         #strings for limitsws page
         push @texts, localize('Trading and Withdrawal Limits');
