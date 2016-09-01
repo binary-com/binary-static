@@ -7,15 +7,17 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-25 16:10+0000\n"
+"PO-Revision-Date: 2016-09-01 14:09+0000\n"
 "Last-Translator: Ruslan <ruslan.mukhametdinov.90@gmail.com>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
+"Language-Team: Russian "
+"<https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.8-dev\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 2.8\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"API %1\" означает набор программ, протоколов, инструментов и ресурсов %1, созданных и поддерживаемых сайтом %1, а также позволяющих Вам пользоваться доступным приложением для работы на торговой платформе %1."
@@ -751,15 +753,19 @@ msgstr "Знание и заинтересованность в Linux, а так
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "Активный подход к решению проблем и предоставлению клиентских решений"
 
-#, fuzzy
 #| msgid "- A scanned copy of a utility bill or bank statement (no more than 3 months old)."
 msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
-msgstr "- Отсканированная копия счета за коммунальные услуги или выписка из банка с адресом (датированные не ранее, чем 3 последние месяца)."
+msgstr ""
+"Отсканированная копия счета за коммунальные услуги или выписка из банка с "
+"адресом (датированные не ранее, чем 3 последние месяца)."
 
-#, fuzzy
 #| msgid "- A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth."
 msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
-msgstr "- Отсканированная копия действительного паспорта, водительских прав или национального удостоверения личности, которая показывает имя, фамилию и дату рождения."
+msgstr ""
+"Отсканированная копия действительного паспорта, водительских прав или "
+"национального удостоверения личности, которая показывает имя, фамилию и дату "
+"рождения. Предоставленный Вами документ должен быть действителен как минимум "
+"еще в течение 6 месяцев после сегодняшней даты."
 
 msgid "A strong and passionate interest in Marketing and Advertising"
 msgstr "Высокий интерес к маркетингу и рекламе"
@@ -848,10 +854,9 @@ msgstr "Управлением счетом и контроль"
 msgid "Account Opening"
 msgstr "Открытие счета"
 
-#, fuzzy
 #| msgid "Lost Password?"
 msgid "Account Password"
-msgstr "Забыли пароль?"
+msgstr "Пароль счета"
 
 msgid "Account Transfer"
 msgstr "Перевод счета"
@@ -934,10 +939,9 @@ msgstr "Ограничения в Соглашении"
 msgid "Agreement for documents"
 msgstr "Agreement for documents"
 
-#, fuzzy
 #| msgid "A True Partnership"
 msgid "All Partnership Options"
-msgstr "Настоящее партнерство"
+msgstr "Все варианты сотрудничества"
 
 msgid "All affiliate activities must be conducted in a professional and proper manner. You shall be expected to act with good faith and integrity in your relationships with your referrals, and always act in the best interests of your referrals."
 msgstr "Партнёрская программа должна проводиться должным образом и исключительно профессионально. От Вас ожидается корректное поведение, честность в отношениях с Вашими клиентами, а также действие в лучших интересах Ваших рефералов."
@@ -1073,7 +1077,7 @@ msgid "Appropriateness Test"
 msgstr "Тест на целесообразность"
 
 msgid "Apps"
-msgstr ""
+msgstr "Приложения"
 
 msgid "Apr"
 msgstr "Апр"
@@ -1342,10 +1346,9 @@ msgstr "Binary Ltd, с зарегистрированным адресом <span
 msgid "Binary Options Basics"
 msgstr "Основы бинарных опционов"
 
-#, fuzzy
 #| msgid "Binary option"
 msgid "Binary Shop"
-msgstr "Бинарный опцион"
+msgstr "Магазин Binary"
 
 msgid "Binary Trading is simple to learn and to execute."
 msgstr "Торговля бинарными опционами проста в теории и на практике."
@@ -1489,15 +1492,15 @@ msgstr "Карьера"
 msgid "Cashier"
 msgstr "Касса"
 
-#, fuzzy
 #| msgid "Cashier password"
 msgid "Cashier Password"
-msgstr "Пароль кассы"
+msgstr "Пароль Кассы"
 
-#, fuzzy
 #| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
-msgstr "Вывод средств заблокирован.Пожалуйста, <a class=\"pjaxload\" href=\"%1\">свяжитесь с нами</a> для получения дополнительной информации."
+msgstr ""
+"Касса заблокирована. Пожалуйста, <a class=\"pjaxload\" href=\"%1\">свяжитесь "
+"с нами</a> для получения дополнительной информации."
 
 msgid "Cashier password"
 msgstr "Пароль кассы"
@@ -1511,15 +1514,13 @@ msgstr "Изменить конечную точку API"
 msgid "Change Password"
 msgstr "Сменить пароль"
 
-#, fuzzy
 #| msgid "Hundreds of deposit and withdrawal options."
 msgid "Change the password used for deposits and withdrawals."
-msgstr "Множество вариантов пополнения счёта и вывода средств."
+msgstr "Изменить пароль для пополнения счёта и вывода средств."
 
-#, fuzzy
 #| msgid "Insert your login ID and password"
 msgid "Change your main login password."
-msgstr "Внесите Ваш логин и пароль"
+msgstr "Изменить основной пароль."
 
 msgid "Chart"
 msgstr "График"
@@ -2031,10 +2032,11 @@ msgstr "Внести %1 %2 виртуальных денег на Ваш сче�
 msgid "Deposit Bonus"
 msgstr "Бонус на депозит"
 
-#, fuzzy
 #| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
-msgstr "Вывод средств заблокирован.Пожалуйста, <a class=\"pjaxload\" href=\"%1\">свяжитесь с нами</a> для получения дополнительной информации."
+msgstr ""
+"Вывод средств заблокирован.Пожалуйста, <a class=\"pjaxload\" href=\"%1\">"
+"свяжитесь с нами</a> для получения дополнительной информации."
 
 msgid "Deposit of"
 msgstr "Пополнение в размере"
@@ -2056,6 +2058,8 @@ msgstr "Пополнение и вывод средств"
 
 msgid "Deposits and withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
 msgstr ""
+"Внесение и вывод средств для Вашего счета в данный момент не может быть "
+"произведен. Пожалуйста, свяжитесь с %1 для разблокировки."
 
 msgid "Derivative"
 msgstr "Производные"
@@ -2735,21 +2739,19 @@ msgstr "Гибкая структура комиссий"
 msgid "Germany"
 msgstr "Германия"
 
-#, fuzzy
 #| msgid "Over $1,000,000"
 msgid "Get JPY 1,000,000"
-msgstr "Свыше $1,000,000"
+msgstr "Get JPY 1,000,000"
 
 msgid "Get Started"
 msgstr "С чего начать"
 
 msgid "Get USD 10,000.00"
-msgstr ""
+msgstr "Получить USD 10,000.00"
 
-#, fuzzy
 #| msgid "Get your free $10,000 virtual money"
 msgid "Get more virtual money"
-msgstr "Получить 10000$ виртуальных денег"
+msgstr "Получить больше виртуальных денег"
 
 msgid "Get your price"
 msgstr "Получите цены"
@@ -4909,10 +4911,9 @@ msgstr "Хорошее знание скриптового языка прогр
 msgid "Proficiency in a second language (oral and written) is preferred"
 msgstr "Знание второго языка (устно и письменно) является предпочтительным"
 
-#, fuzzy
 #| msgid "Profit"
 msgid "Profile"
-msgstr "Прибыль"
+msgstr "Профиль"
 
 msgid "Profit"
 msgstr "Прибыль"
@@ -5034,10 +5035,9 @@ msgstr "Номер"
 msgid "Reference ID"
 msgstr "Номер"
 
-#, fuzzy
 #| msgid "Reload page"
 msgid "Refresh page"
-msgstr "Перегрузите страницу"
+msgstr "Обновите страницу"
 
 msgid "Regent Markets Group Ltd. renames to Binary Ltd."
 msgstr "Regent Markets Group Limited переименована в Binary Ltd."
@@ -5258,10 +5258,9 @@ msgstr "Секретный вопрос"
 msgid "Security"
 msgstr "Безопасность"
 
-#, fuzzy
 #| msgid "Account Limits"
 msgid "Security & Limits"
-msgstr "Лимиты счета"
+msgstr "Безопасность и Ограничения"
 
 msgid "Security Disclaimer"
 msgstr "Заявление о безопасности"
@@ -5383,10 +5382,9 @@ msgstr "Зарегистрируйтесь для тестирования на�
 msgid "Sign me up"
 msgstr "Открыть счет"
 
-#, fuzzy
 #| msgid "Sign me up"
 msgid "Sign out"
-msgstr "Открыть счет"
+msgstr "Выход"
 
 msgid "Sign up as a tester and look for Binary.com-related projects."
 msgstr "Войти в качестве тестировщика и найти проекты, относящиеся к Binary.com."
@@ -6262,7 +6260,6 @@ msgstr "Четверг"
 msgid "Tick"
 msgstr "Тики"
 
-#, fuzzy
 #| msgid "Tick Trade App"
 msgid "TickTrade App"
 msgstr "Приложение Tick Trade"
@@ -6405,10 +6402,9 @@ msgstr "TradingView"
 msgid "Transact in"
 msgstr "Совершать транзакции в"
 
-#, fuzzy
 #| msgid "Transaction performed by"
 msgid "Transaction performed by %1 (App ID: %2)"
-msgstr "Транзакция проведена"
+msgstr "Транзакция проведена %1 (App ID: %2)"
 
 msgid "Transfer"
 msgstr "Трансфер"
@@ -7000,6 +6996,8 @@ msgstr "Лимиты на вывод"
 
 msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
 msgstr ""
+"Вывод средств для Вашего счета в данный момент недоступен. Пожалуйста, "
+"свяжитесь с %1 для разблокировки."
 
 msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgstr "Вывод средств заблокирован.Пожалуйста, <a class=\"pjaxload\" href=\"%1\">свяжитесь с нами</a> для получения дополнительной информации."
@@ -7102,9 +7100,13 @@ msgstr "Вы можете закрыть контракты досрочно, ч
 
 msgid "You can request more virtual money if your virtual balance falls below JPY 100,000."
 msgstr ""
+"You can request more virtual money if your virtual balance falls below JPY "
+"100,000."
 
 msgid "You can request more virtual money if your virtual balance falls below USD 1,000.00."
 msgstr ""
+"Вы можете запросить дополнительный депозит виртуальных денег, если баланс "
+"Вашего демо-счета упадет ниже USD 1,000.00."
 
 msgid "You can sell back long-term trades at any time to profit from changing market conditions."
 msgstr "Вы можете продать свои долгосрочные контракты досрочно, чтобы обеспечить уже имеющуюся прибыль."
@@ -7315,6 +7317,8 @@ msgstr "На Вашем счету нет торговой деятельнос�
 
 msgid "Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact %1."
 msgstr ""
+"Ваш счет заблокирован. В данный момент Вам доступна только функция вывода "
+"средств. Для дальнейшей информации, пожалуйста, свяжитесь с %1."
 
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "Ваш счет полностью авторизован, и лимит на вывод был снят."
