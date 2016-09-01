@@ -759,6 +759,16 @@ msgstr "对使用Linux和开源平台充满热忱，并将其作为首选"
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "主动寻求问题的对策，并向客户端提交解决方案"
 
+#, fuzzy
+#| msgid "- A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+msgstr "水电煤账单或银行月结单扫描件（日期不得超过3个月）。"
+
+#, fuzzy
+#| msgid "- A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth."
+msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
+msgstr "显示您名字和出生日期的护照、驾照（临时或永久）或身份证的扫描件。"
+
 msgid "A strong and passionate interest in Marketing and Advertising"
 msgstr "对市场营销和广告充满热忱，非常感兴趣"
 
@@ -846,6 +856,11 @@ msgstr "账户管理及追踪"
 msgid "Account Opening"
 msgstr "账户开立"
 
+#, fuzzy
+#| msgid "Lost Password?"
+msgid "Account Password"
+msgstr "丢失密码？"
+
 msgid "Account Transfer"
 msgstr "账户转账"
 
@@ -929,6 +944,11 @@ msgstr "协议限制"
 
 msgid "Agreement for documents"
 msgstr "Agreement for documents"
+
+#, fuzzy
+#| msgid "A True Partnership"
+msgid "All Partnership Options"
+msgstr "真正的合作伙伴"
 
 msgid "All affiliate activities must be conducted in a professional and proper manner. You shall be expected to act with good faith and integrity in your relationships with your referrals, and always act in the best interests of your referrals."
 msgstr "所有联盟活动必须以专业和适当的方式进行。您须与推介人保持善意和诚信关系并以推介人最大利益行事。"
@@ -1065,6 +1085,9 @@ msgstr "合适性"
 
 msgid "Appropriateness Test"
 msgstr "合适性测试"
+
+msgid "Apps"
+msgstr ""
 
 msgid "Apr"
 msgstr "四月"
@@ -1333,6 +1356,11 @@ msgstr "Binary Ltd 的注册办事处地址为 <span itemprop='location'>47 Espl
 msgid "Binary Options Basics"
 msgstr "二元期权基础知识"
 
+#, fuzzy
+#| msgid "Binary option"
+msgid "Binary Shop"
+msgstr "二元期权"
+
 msgid "Binary Trading is simple to learn and to execute."
 msgstr "二元期权交易很简单，易于学习和操作。"
 
@@ -1475,6 +1503,16 @@ msgstr "工作机会"
 msgid "Cashier"
 msgstr "收银台"
 
+#, fuzzy
+#| msgid "Cashier password"
+msgid "Cashier Password"
+msgstr "收银台密码"
+
+#, fuzzy
+#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgstr "取款已锁定。欲知详情，请 <a class=\"pjaxload\" href=\"%1\">联系我们</a>。"
+
 msgid "Cashier password"
 msgstr "收银台密码"
 
@@ -1487,10 +1525,17 @@ msgstr "更改 API 端点"
 msgid "Change Password"
 msgstr "更改密码"
 
-msgid "Chart"
-msgstr "图表"
+#, fuzzy
+#| msgid "Hundreds of deposit and withdrawal options."
+msgid "Change the password used for deposits and withdrawals."
+msgstr "多种存款和取款选项。"
 
-msgid "Charts"
+#, fuzzy
+#| msgid "Insert your login ID and password"
+msgid "Change your main login password."
+msgstr "输入您的登录 ID 和密码"
+
+msgid "Chart"
 msgstr "图表"
 
 msgid "Check out our commission rates below:"
@@ -2026,6 +2071,11 @@ msgstr "将Binary账户资金存入MetaTrader账户："
 msgid "Deposit is done. Transaction ID:"
 msgstr "已经完成存款。交易ID："
 
+#, fuzzy
+#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgstr "取款已锁定。欲知详情，请 <a class=\"pjaxload\" href=\"%1\">联系我们</a>。"
+
 msgid "Deposit of"
 msgstr "存款"
 
@@ -2049,6 +2099,9 @@ msgstr "存款：实时"
 
 msgid "Depositing and withdrawing funds"
 msgstr "存款及取款"
+
+msgid "Deposits and withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
+msgstr ""
 
 msgid "Derivative"
 msgstr "衍生工具"
@@ -2734,8 +2787,21 @@ msgstr "优厚的佣金结构"
 msgid "Germany"
 msgstr "德国"
 
+#, fuzzy
+#| msgid "Over $1,000,000"
+msgid "Get JPY 1,000,000"
+msgstr "大于$1,000,000"
+
 msgid "Get Started"
 msgstr "开始交易"
+
+msgid "Get USD 10,000.00"
+msgstr ""
+
+#, fuzzy
+#| msgid "Get your free $10,000 virtual money"
+msgid "Get more virtual money"
+msgstr "获取免费的1万美元虚拟资金"
 
 msgid "Get your price"
 msgstr "获取报价"
@@ -3833,9 +3899,6 @@ msgstr "具备概率理论、数值方法、蒙特卡洛模拟、统计建模和
 msgid "Knowledge of probability theory, stochastic calculus, numerical methods, Monte-Carlo simulation, differential equations, econometrics, and statistical modeling"
 msgstr "具备概率论、随机微积分、数值方法、蒙特卡洛模拟、微分方程、计量经济学和统计建模等知识"
 
-msgid "LOG OUT"
-msgstr "登出"
-
 msgid "Languages"
 msgstr "语言"
 
@@ -4019,9 +4082,6 @@ msgstr "保持适当的速度和输出量"
 msgid "Make a Deposit"
 msgstr "存入资金"
 
-msgid "Make a deposit or withdraw."
-msgstr "存取款项。"
-
 msgid "Make your trade"
 msgstr "执行交易"
 
@@ -4039,9 +4099,6 @@ msgstr "管理和服务器相关的安全、入侵检测、DDoS 保护和PCI 法
 
 msgid "Manage the company's cashier system"
 msgstr "管理公司的出纳系统"
-
-msgid "Manage your account access and security settings."
-msgstr "对您的账户访问和安全保障设置进行管理。"
 
 msgid "Manage your authorised applications."
 msgstr "管理您的授权应用程序。"
@@ -4936,6 +4993,11 @@ msgstr "精通一种脚本语言 - Perl 最佳"
 msgid "Proficiency in a second language (oral and written) is preferred"
 msgstr "熟练掌握第二语言 (口头和书面) 者优先聘用"
 
+#, fuzzy
+#| msgid "Profit"
+msgid "Profile"
+msgstr "利润"
+
 msgid "Profit"
 msgstr "利润"
 
@@ -5055,6 +5117,11 @@ msgstr "参考"
 
 msgid "Reference ID"
 msgstr "参考编号"
+
+#, fuzzy
+#| msgid "Reload page"
+msgid "Refresh page"
+msgstr "重新加载页面"
 
 msgid "Regent Markets Group Ltd. renames to Binary Ltd."
 msgstr "Regent Markets Group Ltd更名为 Binary Ltd。"
@@ -5278,6 +5345,11 @@ msgstr "密码提示问题"
 msgid "Security"
 msgstr "安全"
 
+#, fuzzy
+#| msgid "Account Limits"
+msgid "Security & Limits"
+msgstr "账户限额"
+
 msgid "Security Disclaimer"
 msgstr "安全免责声明"
 
@@ -5396,6 +5468,11 @@ msgid "Sign Up to Test Our Platform"
 msgstr "注册试用我们的平台"
 
 msgid "Sign me up"
+msgstr "我要注册"
+
+#, fuzzy
+#| msgid "Sign me up"
+msgid "Sign out"
 msgstr "我要注册"
 
 msgid "Sign up as a tester and look for Binary.com-related projects."
@@ -6287,6 +6364,11 @@ msgstr "星期四"
 msgid "Tick"
 msgstr "跳动点"
 
+#, fuzzy
+#| msgid "Tick Trade App"
+msgid "TickTrade App"
+msgstr "跳动交易应用程序"
+
 msgid "Tier"
 msgstr "层级"
 
@@ -6454,9 +6536,6 @@ msgstr "转给登录 ID"
 
 msgid "Transfer to Payment Agent"
 msgstr "转给支付代理"
-
-msgid "Transfer to client"
-msgstr "转给客户"
 
 msgid "Translate the ongoing business needs of the company into a suitable IT infrastructure"
 msgstr "将公司的日常业务需求转化成合适的信息技术基础设施"
@@ -6650,14 +6729,8 @@ msgstr "查看您可以进行交易的市场开放时间。"
 msgid "View your financial assessment settings."
 msgstr "查看您的金融评估设置。"
 
-msgid "View your historical transactions."
-msgstr "查看您的交易记录。"
-
 msgid "View your login history."
 msgstr "查看您的登录历史。"
-
-msgid "View your open positions."
-msgstr "查看您的未平仓头寸。"
 
 msgid "View your personal information."
 msgstr "查看您的个人信息。"
@@ -6667,9 +6740,6 @@ msgstr "查看您的账单"
 
 msgid "View your trading and withdrawal limits."
 msgstr "查看您的交易和取款限额。"
-
-msgid "View your trading profit/loss."
-msgstr "查看您的交易利润/亏损。"
 
 msgid "Virtual Account"
 msgstr "虚拟账户"
@@ -6847,9 +6917,6 @@ msgstr "交易日"
 
 msgid "Weekend quotes"
 msgstr "周末报价"
-
-msgid "Welcome!"
-msgstr "欢迎！"
 
 msgid "Well-developed organizational, administrative, and/or accounting skills"
 msgstr "具备良好的组织、行政、和/或会计技能"
@@ -7060,6 +7127,9 @@ msgstr "取款：不适用"
 msgid "Withdrawal Limits"
 msgstr "取款限额"
 
+msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
+msgstr ""
+
 msgid "Withdrawal is done. Transaction ID:"
 msgstr "已经完成提款。交易ID:"
 
@@ -7132,12 +7202,6 @@ msgstr "您和您的应用程序还必须遵守以下项目，特此一起纳入
 msgid "You are advised that the Binary Options offered by %1 are not traded under the rules of any recognised, designated or regulated exchange. Consequently, engaging in Binary Options trading may expose you to substantially greater risks than investments which are so traded."
 msgstr "我们在此通知您，%1 所提供的二元期权交易均不受任何认证、指定或受监管的交易机构管制。这样的后果是，二元期权交易活动可能会使您承担高于投入金额的损失。"
 
-msgid "You are currently logged in to your real money account with %1 (%2)."
-msgstr "您已登录您的 %1(%2)真实资金账户。"
-
-msgid "You are currently logged in to your virtual money account (%2)."
-msgstr "您已登录您的虚拟资金账户(%2)。"
-
 msgid "You are in default or breach of any covenant, obligation or condition contained in this Agreement, and if such default is not cured within seven days of receipt of written notice from the Company;"
 msgstr "您已违犯或违反本协议所包含的条款、义务或条件，如果收到本公司书面通知7天内您没对该项错误作出修正；"
 
@@ -7167,6 +7231,12 @@ msgstr "您可在$1 至 $50,000之间选择赔付额。赔付额选择范围很�
 
 msgid "You can close your trade before expiry to lock in profits."
 msgstr "您可在合约到期前卖出交易合约，以锁定利润。"
+
+msgid "You can request more virtual money if your virtual balance falls below JPY 100,000."
+msgstr ""
+
+msgid "You can request more virtual money if your virtual balance falls below USD 1,000.00."
+msgstr ""
 
 msgid "You can sell back long-term trades at any time to profit from changing market conditions."
 msgstr "您可以在任何时间卖出您的长线交易合约，根据市场变化及时获利。"
@@ -7357,12 +7427,6 @@ msgstr "您的大多数问题可在<a href='' target='_blank' id='faq_url'>常�
 msgid "You're using a Virtual Account."
 msgstr "您正在使用虚拟账户。"
 
-msgid "Your %1 account is unavailable. For any questions please contact %2."
-msgstr "您的%1 账户不可用。如有任何问题，请联系%2。"
-
-msgid "Your %1 accounts are unavailable. For any questions please contact %2."
-msgstr "您的%1账户不可用。如有任何问题，请联系%2。"
-
 msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other currency)."
 msgstr "您的 %1 天取款限额目前为 %2 %3 （或其他货币的等值）。"
 
@@ -7384,11 +7448,11 @@ msgstr "您的账户无交易活动。"
 msgid "Your account has no trading activity."
 msgstr "您的账户无交易活动。"
 
+msgid "Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact %1."
+msgstr ""
+
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "您的账户已经得到完全验证，且您的取款限额已经取消。"
-
-msgid "Your account is fully authenticated. You can view your %1trading limits here"
-msgstr "您的账户已经通过验证。您可在此查看您的 %1 交易限额"
 
 msgid "Your account is fully authenticated. You can view your <a class=\"pjaxload\" href=\"%1\">trading limits here</a>."
 msgstr "您的账户已经得到完全验证，且您可在此查看您的<a class=\"pjaxload\" href=\"%1\">交易限额</a>。"
@@ -7398,9 +7462,6 @@ msgstr "您的账户未完全验证。欲知详情请访问<a class=\"pjaxload\"
 
 msgid "Your account is not fully authenticated. Please visit the <a href=\"%1\">authentication</a> page for more information."
 msgstr "您的账户未完全验证。欲知详情请访问<a href=\"%1\">验证</a>页面。"
-
-msgid "Your account is registered as a Payment Agent."
-msgstr "您的账户注册为支付代理。"
 
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "您的账户不应被用作银行信贷，其中的存款只应视为交易资金。本公司并不是金融机构，客户存款不会有利息。如果您重复进行存、取款，却没有进行相应的交易，在关闭账户之前，我们保留权利在不事先通知的情况下把相关银行费用转加到您的账户。"
@@ -8420,6 +8481,51 @@ msgstr "条款和条件审批"
 msgid "Trading with MetaTrader 5"
 msgstr "使用MetaTrader 5进行交易"
 
+#~ msgid "Charts"
+#~ msgstr "图表"
+
+#~ msgid "LOG OUT"
+#~ msgstr "登出"
+
+#~ msgid "Make a deposit or withdraw."
+#~ msgstr "存取款项。"
+
+#~ msgid "Manage your account access and security settings."
+#~ msgstr "对您的账户访问和安全保障设置进行管理。"
+
+#~ msgid "Transfer to client"
+#~ msgstr "转给客户"
+
+#~ msgid "View your historical transactions."
+#~ msgstr "查看您的交易记录。"
+
+#~ msgid "View your open positions."
+#~ msgstr "查看您的未平仓头寸。"
+
+#~ msgid "View your trading profit/loss."
+#~ msgstr "查看您的交易利润/亏损。"
+
+#~ msgid "Welcome!"
+#~ msgstr "欢迎！"
+
+#~ msgid "You are currently logged in to your real money account with %1 (%2)."
+#~ msgstr "您已登录您的 %1(%2)真实资金账户。"
+
+#~ msgid "You are currently logged in to your virtual money account (%2)."
+#~ msgstr "您已登录您的虚拟资金账户(%2)。"
+
+#~ msgid "Your %1 account is unavailable. For any questions please contact %2."
+#~ msgstr "您的%1 账户不可用。如有任何问题，请联系%2。"
+
+#~ msgid "Your %1 accounts are unavailable. For any questions please contact %2."
+#~ msgstr "您的%1账户不可用。如有任何问题，请联系%2。"
+
+#~ msgid "Your account is fully authenticated. You can view your %1trading limits here"
+#~ msgstr "您的账户已经通过验证。您可在此查看您的 %1 交易限额"
+
+#~ msgid "Your account is registered as a Payment Agent."
+#~ msgstr "您的账户注册为支付代理。"
+
 #~ msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
 #~ msgstr "<span class='color-green font-weight-700'>所有合约期限:</span>从10 秒到 365 天。"
 
@@ -8666,9 +8772,6 @@ msgstr "使用MetaTrader 5进行交易"
 
 #~ msgid "The future of trading on %1"
 #~ msgstr "%1的交易前景"
-
-#~ msgid "Tick Trade App"
-#~ msgstr "跳动交易应用程序"
 
 #~ msgid "Tick Trade on GitHub"
 #~ msgstr "GitHub 的跳动交易"
@@ -9495,9 +9598,6 @@ msgstr "使用MetaTrader 5进行交易"
 #~ msgid "Login to this account has been temporarily disabled due to system maintenance. Please try again in 30 minutes."
 #~ msgstr "由于系统维护，账户暂时不能登录。请30分钟后重试。"
 
-#~ msgid "Lost Password?"
-#~ msgstr "丢失密码？"
-
 #~ msgid "Low"
 #~ msgstr "最低"
 
@@ -9737,9 +9837,6 @@ msgstr "使用MetaTrader 5进行交易"
 
 #~ msgid "Relative Strength Index"
 #~ msgstr "相对强度指数"
-
-#~ msgid "Reload page"
-#~ msgstr "重新加载页面"
 
 #~ msgid "Remove Overlay"
 #~ msgstr "删除覆盖"
@@ -15173,9 +15270,6 @@ msgstr "使用MetaTrader 5进行交易"
 #~ msgid "Binary.com's Random Indices are the random 25 Index, Random 50 Index, Random 75 Index, and Random 100 Index and many more."
 #~ msgstr "Binary.com 的随机指标为随机25指数、随机50指数、随机75指数和随机100指数等多个选项。"
 
-#~ msgid "Get your free $10,000 virtual money"
-#~ msgstr "获取免费的1万美元虚拟资金"
-
 #~ msgid "Join our community of 1,000,000+ traders"
 #~ msgstr "加入我们拥有1,000,000+个交易者的社区"
 
@@ -19760,9 +19854,6 @@ msgstr "使用MetaTrader 5进行交易"
 
 #~ msgid "If you're still new to financial trading, feel free to browse through our different trading guides in our <a href=\"%1\">educational corner</a>. This section contains free trading guides that are easy to use and understand. Create your own trading strategy and start using it today."
 #~ msgstr "如果您还是金融交易的新手，那么请尽管浏览我们<a href=\"%1\">教学</a>栏目中各种的交易指南。该部分包含的交易指南无需收费且通俗易用。创建您自己的交易策略且马上投入使用。"
-
-#~ msgid "Insert your login ID and password"
-#~ msgstr "输入您的登录 ID 和密码"
 
 #~ msgid "Instantly see your total risk and return."
 #~ msgstr "每次交易前都可以清晰的获知本次交易的最大收益和亏损金额"

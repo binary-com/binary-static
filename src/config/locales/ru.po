@@ -763,6 +763,16 @@ msgstr "Знание и заинтересованность в Linux, а так
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "Активный подход к решению проблем и предоставлению клиентских решений"
 
+#, fuzzy
+#| msgid "- A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+msgstr "- Отсканированная копия счета за коммунальные услуги или выписка из банка с адресом (датированные не ранее, чем 3 последние месяца)."
+
+#, fuzzy
+#| msgid "- A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth."
+msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
+msgstr "- Отсканированная копия действительного паспорта, водительских прав или национального удостоверения личности, которая показывает имя, фамилию и дату рождения."
+
 msgid "A strong and passionate interest in Marketing and Advertising"
 msgstr "Высокий интерес к маркетингу и рекламе"
 
@@ -850,6 +860,11 @@ msgstr "Управлением счетом и контроль"
 msgid "Account Opening"
 msgstr "Открытие счета"
 
+#, fuzzy
+#| msgid "Lost Password?"
+msgid "Account Password"
+msgstr "Забыли пароль?"
+
 msgid "Account Transfer"
 msgstr "Перевод счета"
 
@@ -933,6 +948,11 @@ msgstr "Ограничения в Соглашении"
 
 msgid "Agreement for documents"
 msgstr "Agreement for documents"
+
+#, fuzzy
+#| msgid "A True Partnership"
+msgid "All Partnership Options"
+msgstr "Настоящее партнерство"
 
 msgid "All affiliate activities must be conducted in a professional and proper manner. You shall be expected to act with good faith and integrity in your relationships with your referrals, and always act in the best interests of your referrals."
 msgstr "Партнёрская программа должна проводиться должным образом и исключительно профессионально. От Вас ожидается корректное поведение, честность в отношениях с Вашими клиентами, а также действие в лучших интересах Ваших рефералов."
@@ -1069,6 +1089,9 @@ msgstr "Целесообразность"
 
 msgid "Appropriateness Test"
 msgstr "Тест на целесообразность"
+
+msgid "Apps"
+msgstr ""
 
 msgid "Apr"
 msgstr "Апр"
@@ -1337,6 +1360,11 @@ msgstr "Binary Ltd, с зарегистрированным адресом <span
 msgid "Binary Options Basics"
 msgstr "Основы бинарных опционов"
 
+#, fuzzy
+#| msgid "Binary option"
+msgid "Binary Shop"
+msgstr "Бинарный опцион"
+
 msgid "Binary Trading is simple to learn and to execute."
 msgstr "Торговля бинарными опционами проста в теории и на практике."
 
@@ -1479,6 +1507,16 @@ msgstr "Карьера"
 msgid "Cashier"
 msgstr "Касса"
 
+#, fuzzy
+#| msgid "Cashier password"
+msgid "Cashier Password"
+msgstr "Пароль кассы"
+
+#, fuzzy
+#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgstr "Вывод средств заблокирован.Пожалуйста, <a class=\"pjaxload\" href=\"%1\">свяжитесь с нами</a> для получения дополнительной информации."
+
 msgid "Cashier password"
 msgstr "Пароль кассы"
 
@@ -1491,11 +1529,18 @@ msgstr "Изменить конечную точку API"
 msgid "Change Password"
 msgstr "Сменить пароль"
 
+#, fuzzy
+#| msgid "Hundreds of deposit and withdrawal options."
+msgid "Change the password used for deposits and withdrawals."
+msgstr "Множество вариантов пополнения счёта и вывода средств."
+
+#, fuzzy
+#| msgid "Insert your login ID and password"
+msgid "Change your main login password."
+msgstr "Внесите Ваш логин и пароль"
+
 msgid "Chart"
 msgstr "График"
-
-msgid "Charts"
-msgstr "Графики"
 
 msgid "Check out our commission rates below:"
 msgstr "Посмотрите предлагаемые нами комиссии ниже:"
@@ -2028,6 +2073,11 @@ msgstr "Пополнить счёт на MetaTrader через счёт на Bin
 msgid "Deposit is done. Transaction ID:"
 msgstr "Счёт пополнен. ID транзакции:"
 
+#, fuzzy
+#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgstr "Вывод средств заблокирован.Пожалуйста, <a class=\"pjaxload\" href=\"%1\">свяжитесь с нами</a> для получения дополнительной информации."
+
 msgid "Deposit of"
 msgstr "Пополнение в размере"
 
@@ -2051,6 +2101,9 @@ msgstr "Пополнения: Мгновенно"
 
 msgid "Depositing and withdrawing funds"
 msgstr "Пополнение и вывод средств"
+
+msgid "Deposits and withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
+msgstr ""
 
 msgid "Derivative"
 msgstr "Производные"
@@ -2736,8 +2789,21 @@ msgstr "Гибкая структура комиссий"
 msgid "Germany"
 msgstr "Германия"
 
+#, fuzzy
+#| msgid "Over $1,000,000"
+msgid "Get JPY 1,000,000"
+msgstr "Свыше $1,000,000"
+
 msgid "Get Started"
 msgstr "С чего начать"
+
+msgid "Get USD 10,000.00"
+msgstr ""
+
+#, fuzzy
+#| msgid "Get your free $10,000 virtual money"
+msgid "Get more virtual money"
+msgstr "Получить 10000$ виртуальных денег"
 
 msgid "Get your price"
 msgstr "Получите цены"
@@ -3835,9 +3901,6 @@ msgstr "Приветствуются знания в области теории
 msgid "Knowledge of probability theory, stochastic calculus, numerical methods, Monte-Carlo simulation, differential equations, econometrics, and statistical modeling"
 msgstr "Знание теории вероятностей, стохастического исчисления, численных методов, моделирования методом Монте-Карло, дифференциальных уравнений, эконометрии и статистического моделирования"
 
-msgid "LOG OUT"
-msgstr "ВЫХОД"
-
 msgid "Languages"
 msgstr "Языки"
 
@@ -4021,9 +4084,6 @@ msgstr "Поддержание адекватной скорости и объё
 msgid "Make a Deposit"
 msgstr "Пополнить"
 
-msgid "Make a deposit or withdraw."
-msgstr "Пополните счет или выведите средства."
-
 msgid "Make your trade"
 msgstr "Купите контракт"
 
@@ -4041,9 +4101,6 @@ msgstr "Управление системами безопасности, обн
 
 msgid "Manage the company's cashier system"
 msgstr "Управление кассовой системой компании"
-
-msgid "Manage your account access and security settings."
-msgstr "Управление доступом к учетной записи и настройками безопасности."
 
 msgid "Manage your authorised applications."
 msgstr "Управление доступными приложениями."
@@ -4939,6 +4996,11 @@ msgstr "Хорошее знание скриптового языка прогр
 msgid "Proficiency in a second language (oral and written) is preferred"
 msgstr "Знание второго языка (устно и письменно) является предпочтительным"
 
+#, fuzzy
+#| msgid "Profit"
+msgid "Profile"
+msgstr "Прибыль"
+
 msgid "Profit"
 msgstr "Прибыль"
 
@@ -5058,6 +5120,11 @@ msgstr "Номер"
 
 msgid "Reference ID"
 msgstr "Номер"
+
+#, fuzzy
+#| msgid "Reload page"
+msgid "Refresh page"
+msgstr "Перегрузите страницу"
 
 msgid "Regent Markets Group Ltd. renames to Binary Ltd."
 msgstr "Regent Markets Group Limited переименована в Binary Ltd."
@@ -5281,6 +5348,11 @@ msgstr "Секретный вопрос"
 msgid "Security"
 msgstr "Безопасность"
 
+#, fuzzy
+#| msgid "Account Limits"
+msgid "Security & Limits"
+msgstr "Лимиты счета"
+
 msgid "Security Disclaimer"
 msgstr "Заявление о безопасности"
 
@@ -5399,6 +5471,11 @@ msgid "Sign Up to Test Our Platform"
 msgstr "Зарегистрируйтесь для тестирования нашей платформы"
 
 msgid "Sign me up"
+msgstr "Открыть счет"
+
+#, fuzzy
+#| msgid "Sign me up"
+msgid "Sign out"
 msgstr "Открыть счет"
 
 msgid "Sign up as a tester and look for Binary.com-related projects."
@@ -6290,6 +6367,11 @@ msgstr "Четверг"
 msgid "Tick"
 msgstr "Тики"
 
+#, fuzzy
+#| msgid "Tick Trade App"
+msgid "TickTrade App"
+msgstr "Приложение Tick Trade"
+
 msgid "Tier"
 msgstr "Уровень"
 
@@ -6457,9 +6539,6 @@ msgstr "Перевести на логин"
 
 msgid "Transfer to Payment Agent"
 msgstr "Перевод платежному агенту"
-
-msgid "Transfer to client"
-msgstr "Перевести на имя"
 
 msgid "Translate the ongoing business needs of the company into a suitable IT infrastructure"
 msgstr "Трансформация растущих бизнес-требований компании в подходящую IT-инфраструктуру"
@@ -6653,14 +6732,8 @@ msgstr "Просмотрите время открытия и закрытия �
 msgid "View your financial assessment settings."
 msgstr "Смотрите настройки своей финансовой оценки."
 
-msgid "View your historical transactions."
-msgstr "Просмотрите свою историю транзакций."
-
 msgid "View your login history."
 msgstr "Просмотрите свою историю входа в систему."
-
-msgid "View your open positions."
-msgstr "Просмотрите открытые позиции."
 
 msgid "View your personal information."
 msgstr "Смотрите свои личные данные."
@@ -6670,9 +6743,6 @@ msgstr "Смотрите свою историю счета"
 
 msgid "View your trading and withdrawal limits."
 msgstr "Лимиты на торговлю и вывод."
-
-msgid "View your trading profit/loss."
-msgstr "Просмотрите свою прибыль/потери."
 
 msgid "Virtual Account"
 msgstr "Демо-счет"
@@ -6850,9 +6920,6 @@ msgstr "День недели"
 
 msgid "Weekend quotes"
 msgstr "Котировки в выходные"
-
-msgid "Welcome!"
-msgstr "Добро пожаловать!"
 
 msgid "Well-developed organizational, administrative, and/or accounting skills"
 msgstr "Отличные организационные, административные навыки и/или знание бухгалтерского учёта"
@@ -7061,6 +7128,9 @@ msgstr "Вывод: не предлагается"
 msgid "Withdrawal Limits"
 msgstr "Лимиты на вывод"
 
+msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
+msgstr ""
+
 msgid "Withdrawal is done. Transaction ID:"
 msgstr "Вывод завершён. ID транзакции:"
 
@@ -7133,12 +7203,6 @@ msgstr "Вы и Ваше Приложение также должны соблю
 msgid "You are advised that the Binary Options offered by %1 are not traded under the rules of any recognised, designated or regulated exchange. Consequently, engaging in Binary Options trading may expose you to substantially greater risks than investments which are so traded."
 msgstr "Уведомляем Вас, что торговля бинарными опционами, предлагаемая %1, не производится по правилам какой-либо признанной, обозначенной или регулируемой биржи. Соответственно, торговля бинарными опционами может быть сопряжена со значительно большим риском, чем те инвестиции, которые делаются в соответствии с такими условиями."
 
-msgid "You are currently logged in to your real money account with %1 (%2)."
-msgstr "Сейчас Вы находитесь на своем реальном счету на %1 (%2)."
-
-msgid "You are currently logged in to your virtual money account (%2)."
-msgstr "Сейчас Вы находитесь на своем демо-счету (%2)."
-
 msgid "You are in default or breach of any covenant, obligation or condition contained in this Agreement, and if such default is not cured within seven days of receipt of written notice from the Company;"
 msgstr "Вы не выполняете или нарушаете любое обязательство, правило или условие данного Соглашения, и если данное нарушение не устранено в течение семи дней после получения письменного уведомления от Компании;"
 
@@ -7168,6 +7232,12 @@ msgstr "Вы можете выбрать выплату от $1 до $50,000. Т
 
 msgid "You can close your trade before expiry to lock in profits."
 msgstr "Вы можете закрыть контракты досрочно, чтобы обеспечить уже имеющуюся по контракту прибыль."
+
+msgid "You can request more virtual money if your virtual balance falls below JPY 100,000."
+msgstr ""
+
+msgid "You can request more virtual money if your virtual balance falls below USD 1,000.00."
+msgstr ""
 
 msgid "You can sell back long-term trades at any time to profit from changing market conditions."
 msgstr "Вы можете продать свои долгосрочные контракты досрочно, чтобы обеспечить уже имеющуюся прибыль."
@@ -7358,12 +7428,6 @@ msgstr "Вы найдете ответы на большинство своих 
 msgid "You're using a Virtual Account."
 msgstr "Вы находитесь на демо-счету."
 
-msgid "Your %1 account is unavailable. For any questions please contact %2."
-msgstr "Ваш счет %1 в данный момент недоступен. Пожалуйста, свяжитесь со следующим отделом: %2."
-
-msgid "Your %1 accounts are unavailable. For any questions please contact %2."
-msgstr "Ваши счета %1 в данный момент недоступны. Пожалуйста, свяжитесь со следующим отделом: %2."
-
 msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other currency)."
 msgstr "Ваш дневной %1 лимит на вывод в настоящее время составляет %2 %3 (или эквивалентную сумму в другой валюте)."
 
@@ -7385,11 +7449,11 @@ msgstr "На Вашем счету нет активности входов/вы
 msgid "Your account has no trading activity."
 msgstr "На Вашем счету нет торговой деятельности."
 
+msgid "Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact %1."
+msgstr ""
+
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "Ваш счет полностью авторизован, и лимит на вывод был снят."
-
-msgid "Your account is fully authenticated. You can view your %1trading limits here"
-msgstr "Ваш счет полностью авторизован. Вы можете посмотреть свои торговые лимиты %1 здесь"
 
 msgid "Your account is fully authenticated. You can view your <a class=\"pjaxload\" href=\"%1\">trading limits here</a>."
 msgstr "Ваш счет полностью авторизован. Вы можете посмотреть свои <a class=\"pjaxload\" href=\"%1\">торговые лимиты здесь</a>."
@@ -7399,9 +7463,6 @@ msgstr "Ваш счёт не до конца прошел проверку. По
 
 msgid "Your account is not fully authenticated. Please visit the <a href=\"%1\">authentication</a> page for more information."
 msgstr "Ваш счёт не до конца прошел проверку. Пожалуйста, посетите страницу <a href=\"%1\">авторизации</a> для получения дополнительной информации."
-
-msgid "Your account is registered as a Payment Agent."
-msgstr "Вы зарегистрировали счет в качестве Платежного Агента."
 
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "Ваш рабочий счет не должен использоваться в качестве банковского хранилища, и пополнение счета должно производиться только с целью использования средств для приобретения контрактов. Компания не является финансовым органом, а Клиенты не получают проценты на свои депозиты. Если Вы совершаете повторные пополнения и вывод денег без приобретения контрактов, мы оставляем за собой право применения к Вашим счетам, без предварительного уведомления, любых банковских сборов, которые мы можем понести до закрытия счетов."
@@ -8420,6 +8481,51 @@ msgstr "Согласие с правилами и условиями"
 msgid "Trading with MetaTrader 5"
 msgstr "Торговля на MetaTrader 5"
 
+#~ msgid "Charts"
+#~ msgstr "Графики"
+
+#~ msgid "LOG OUT"
+#~ msgstr "ВЫХОД"
+
+#~ msgid "Make a deposit or withdraw."
+#~ msgstr "Пополните счет или выведите средства."
+
+#~ msgid "Manage your account access and security settings."
+#~ msgstr "Управление доступом к учетной записи и настройками безопасности."
+
+#~ msgid "Transfer to client"
+#~ msgstr "Перевести на имя"
+
+#~ msgid "View your historical transactions."
+#~ msgstr "Просмотрите свою историю транзакций."
+
+#~ msgid "View your open positions."
+#~ msgstr "Просмотрите открытые позиции."
+
+#~ msgid "View your trading profit/loss."
+#~ msgstr "Просмотрите свою прибыль/потери."
+
+#~ msgid "Welcome!"
+#~ msgstr "Добро пожаловать!"
+
+#~ msgid "You are currently logged in to your real money account with %1 (%2)."
+#~ msgstr "Сейчас Вы находитесь на своем реальном счету на %1 (%2)."
+
+#~ msgid "You are currently logged in to your virtual money account (%2)."
+#~ msgstr "Сейчас Вы находитесь на своем демо-счету (%2)."
+
+#~ msgid "Your %1 account is unavailable. For any questions please contact %2."
+#~ msgstr "Ваш счет %1 в данный момент недоступен. Пожалуйста, свяжитесь со следующим отделом: %2."
+
+#~ msgid "Your %1 accounts are unavailable. For any questions please contact %2."
+#~ msgstr "Ваши счета %1 в данный момент недоступны. Пожалуйста, свяжитесь со следующим отделом: %2."
+
+#~ msgid "Your account is fully authenticated. You can view your %1trading limits here"
+#~ msgstr "Ваш счет полностью авторизован. Вы можете посмотреть свои торговые лимиты %1 здесь"
+
+#~ msgid "Your account is registered as a Payment Agent."
+#~ msgstr "Вы зарегистрировали счет в качестве Платежного Агента."
+
 #~ msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
 #~ msgstr "<span class='color-green font-weight-700'>С любой продолжительностью:</span> от 10 секунд до 365 дней."
 
@@ -8695,9 +8801,6 @@ msgstr "Торговля на MetaTrader 5"
 
 #~ msgid "The future of trading on %1"
 #~ msgstr "Будущее торговли на %1"
-
-#~ msgid "Tick Trade App"
-#~ msgstr "Приложение Tick Trade"
 
 #~ msgid "Tick Trade on GitHub"
 #~ msgstr "Tick Trade на GitHub"
@@ -9522,9 +9625,6 @@ msgstr "Торговля на MetaTrader 5"
 #~ msgid "Login to this account has been temporarily disabled due to system maintenance. Please try again in 30 minutes."
 #~ msgstr "Вход на этот счет временно невозможен ввиду технических работ в системе. Пожалуйста, попробуйте еще раз через 30 минут."
 
-#~ msgid "Lost Password?"
-#~ msgstr "Забыли пароль?"
-
 #~ msgid "Low"
 #~ msgstr "Низшее значение"
 
@@ -9764,9 +9864,6 @@ msgstr "Торговля на MetaTrader 5"
 
 #~ msgid "Relative Strength Index"
 #~ msgstr "Индекс относительной силы"
-
-#~ msgid "Reload page"
-#~ msgstr "Перегрузите страницу"
 
 #~ msgid "Remove Overlay"
 #~ msgstr "Убрать наложение"
@@ -15163,9 +15260,6 @@ msgstr "Торговля на MetaTrader 5"
 #~ msgid "Binary.com's Random Indices are the random 25 Index, Random 50 Index, Random 75 Index, and Random 100 Index and many more."
 #~ msgstr "Индексы Random Binary.com - это Random 25, Random 50, Random 75, Random 100 и многие другие."
 
-#~ msgid "Get your free $10,000 virtual money"
-#~ msgstr "Получить 10000$ виртуальных денег"
-
 #~ msgid "Join our community of 1,000,000+ traders"
 #~ msgstr "Присоединяйтесь к нашему сообществу, которое насчитывает более 1,000,000 трейдеров"
 
@@ -19621,9 +19715,6 @@ msgstr "Торговля на MetaTrader 5"
 
 #~ msgid "If you're still new to financial trading, feel free to browse through our different trading guides in our <a href=\"%1\">educational corner</a>. This section contains free trading guides that are easy to use and understand. Create your own trading strategy and start using it today."
 #~ msgstr "Если Вы новичок в торговле на финансовых рынках, Вам может быть интересно просмотреть информацию в нашем <a href=\"%1\">образовательном уголке</a>. Данная секция содержит бесплатные гиды, которые просты для понимания и использования. Создайте собственную стратегию и начните пользоваться ей сегодня."
-
-#~ msgid "Insert your login ID and password"
-#~ msgstr "Внесите Ваш логин и пароль"
 
 #~ msgid "Instantly see your total risk and return."
 #~ msgstr "Мгновенная оценка Вашего риска и возможной прибыли."
