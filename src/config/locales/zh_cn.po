@@ -3,15 +3,16 @@ msgstr ""
 "Project-Id-Version: Chinese (China) (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-26 03:46+0000\n"
+"PO-Revision-Date: 2016-09-01 07:36+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
+"Language-Team: Chinese (China) "
+"<https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.8-dev\n"
+"X-Generator: Weblate 2.8\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
@@ -759,15 +760,13 @@ msgstr "对使用Linux和开源平台充满热忱，并将其作为首选"
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "主动寻求问题的对策，并向客户端提交解决方案"
 
-#, fuzzy
 #| msgid "- A scanned copy of a utility bill or bank statement (no more than 3 months old)."
 msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
 msgstr "水电煤账单或银行月结单扫描件（日期不得超过3个月）。"
 
-#, fuzzy
 #| msgid "- A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth."
 msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
-msgstr "显示您名字和出生日期的护照、驾照（临时或永久）或身份证的扫描件。"
+msgstr "显示您名字和出生日期的护照、驾照（临时或永久）或身份证的扫描件。文件须至少6个月有效期（从今天算起）。"
 
 msgid "A strong and passionate interest in Marketing and Advertising"
 msgstr "对市场营销和广告充满热忱，非常感兴趣"
@@ -856,10 +855,9 @@ msgstr "账户管理及追踪"
 msgid "Account Opening"
 msgstr "账户开立"
 
-#, fuzzy
 #| msgid "Lost Password?"
 msgid "Account Password"
-msgstr "丢失密码？"
+msgstr "账户密码"
 
 msgid "Account Transfer"
 msgstr "账户转账"
@@ -945,10 +943,9 @@ msgstr "协议限制"
 msgid "Agreement for documents"
 msgstr "Agreement for documents"
 
-#, fuzzy
 #| msgid "A True Partnership"
 msgid "All Partnership Options"
-msgstr "真正的合作伙伴"
+msgstr "所有合作伙伴选项"
 
 msgid "All affiliate activities must be conducted in a professional and proper manner. You shall be expected to act with good faith and integrity in your relationships with your referrals, and always act in the best interests of your referrals."
 msgstr "所有联盟活动必须以专业和适当的方式进行。您须与推介人保持善意和诚信关系并以推介人最大利益行事。"
@@ -1087,7 +1084,7 @@ msgid "Appropriateness Test"
 msgstr "合适性测试"
 
 msgid "Apps"
-msgstr ""
+msgstr "应用程序"
 
 msgid "Apr"
 msgstr "四月"
@@ -1356,10 +1353,9 @@ msgstr "Binary Ltd 的注册办事处地址为 <span itemprop='location'>47 Espl
 msgid "Binary Options Basics"
 msgstr "二元期权基础知识"
 
-#, fuzzy
 #| msgid "Binary option"
 msgid "Binary Shop"
-msgstr "二元期权"
+msgstr "Binary商店"
 
 msgid "Binary Trading is simple to learn and to execute."
 msgstr "二元期权交易很简单，易于学习和操作。"
@@ -1503,15 +1499,13 @@ msgstr "工作机会"
 msgid "Cashier"
 msgstr "收银台"
 
-#, fuzzy
 #| msgid "Cashier password"
 msgid "Cashier Password"
 msgstr "收银台密码"
 
-#, fuzzy
 #| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
-msgstr "取款已锁定。欲知详情，请 <a class=\"pjaxload\" href=\"%1\">联系我们</a>。"
+msgstr "收银台已锁定。欲知详情，请 <a class=\"pjaxload\" href=\"%1\">联系我们</a>。"
 
 msgid "Cashier password"
 msgstr "收银台密码"
@@ -1525,15 +1519,13 @@ msgstr "更改 API 端点"
 msgid "Change Password"
 msgstr "更改密码"
 
-#, fuzzy
 #| msgid "Hundreds of deposit and withdrawal options."
 msgid "Change the password used for deposits and withdrawals."
-msgstr "多种存款和取款选项。"
+msgstr "更改存款和取款密码。"
 
-#, fuzzy
 #| msgid "Insert your login ID and password"
 msgid "Change your main login password."
-msgstr "输入您的登录 ID 和密码"
+msgstr "更改主要登录密码。"
 
 msgid "Chart"
 msgstr "图表"
@@ -2071,10 +2063,9 @@ msgstr "将Binary账户资金存入MetaTrader账户："
 msgid "Deposit is done. Transaction ID:"
 msgstr "已经完成存款。交易ID："
 
-#, fuzzy
 #| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
-msgstr "取款已锁定。欲知详情，请 <a class=\"pjaxload\" href=\"%1\">联系我们</a>。"
+msgstr "存款已锁定。欲知详情，请 <a class=\"pjaxload\" href=\"%1\">联系我们</a>。"
 
 msgid "Deposit of"
 msgstr "存款"
@@ -2101,7 +2092,7 @@ msgid "Depositing and withdrawing funds"
 msgstr "存款及取款"
 
 msgid "Deposits and withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
-msgstr ""
+msgstr "您的账户现时无法存取款。请联系%1进行解锁。"
 
 msgid "Derivative"
 msgstr "衍生工具"
@@ -2787,21 +2778,19 @@ msgstr "优厚的佣金结构"
 msgid "Germany"
 msgstr "德国"
 
-#, fuzzy
 #| msgid "Over $1,000,000"
 msgid "Get JPY 1,000,000"
-msgstr "大于$1,000,000"
+msgstr "获取1,000,000日元"
 
 msgid "Get Started"
 msgstr "开始交易"
 
 msgid "Get USD 10,000.00"
-msgstr ""
+msgstr "获取10,000.00美元"
 
-#, fuzzy
 #| msgid "Get your free $10,000 virtual money"
 msgid "Get more virtual money"
-msgstr "获取免费的1万美元虚拟资金"
+msgstr "获取更多虚拟资金"
 
 msgid "Get your price"
 msgstr "获取报价"
@@ -4993,10 +4982,9 @@ msgstr "精通一种脚本语言 - Perl 最佳"
 msgid "Proficiency in a second language (oral and written) is preferred"
 msgstr "熟练掌握第二语言 (口头和书面) 者优先聘用"
 
-#, fuzzy
 #| msgid "Profit"
 msgid "Profile"
-msgstr "利润"
+msgstr "详细信息"
 
 msgid "Profit"
 msgstr "利润"
@@ -5118,10 +5106,9 @@ msgstr "参考"
 msgid "Reference ID"
 msgstr "参考编号"
 
-#, fuzzy
 #| msgid "Reload page"
 msgid "Refresh page"
-msgstr "重新加载页面"
+msgstr "更新页面"
 
 msgid "Regent Markets Group Ltd. renames to Binary Ltd."
 msgstr "Regent Markets Group Ltd更名为 Binary Ltd。"
@@ -5345,10 +5332,9 @@ msgstr "密码提示问题"
 msgid "Security"
 msgstr "安全"
 
-#, fuzzy
 #| msgid "Account Limits"
 msgid "Security & Limits"
-msgstr "账户限额"
+msgstr "安全&限制"
 
 msgid "Security Disclaimer"
 msgstr "安全免责声明"
@@ -5470,10 +5456,9 @@ msgstr "注册试用我们的平台"
 msgid "Sign me up"
 msgstr "我要注册"
 
-#, fuzzy
 #| msgid "Sign me up"
 msgid "Sign out"
-msgstr "我要注册"
+msgstr "注销"
 
 msgid "Sign up as a tester and look for Binary.com-related projects."
 msgstr "注册成为测试人员寻求Binary.com相关项目。"
@@ -6364,7 +6349,6 @@ msgstr "星期四"
 msgid "Tick"
 msgstr "跳动点"
 
-#, fuzzy
 #| msgid "Tick Trade App"
 msgid "TickTrade App"
 msgstr "跳动交易应用程序"
@@ -7128,7 +7112,7 @@ msgid "Withdrawal Limits"
 msgstr "取款限额"
 
 msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
-msgstr ""
+msgstr "您的账户现时无法取款。请联系%1进行解锁。"
 
 msgid "Withdrawal is done. Transaction ID:"
 msgstr "已经完成提款。交易ID:"
@@ -7233,10 +7217,10 @@ msgid "You can close your trade before expiry to lock in profits."
 msgstr "您可在合约到期前卖出交易合约，以锁定利润。"
 
 msgid "You can request more virtual money if your virtual balance falls below JPY 100,000."
-msgstr ""
+msgstr "如果虚拟资金余额低于100,000日元，您可请求获取更多虚拟资金。"
 
 msgid "You can request more virtual money if your virtual balance falls below USD 1,000.00."
-msgstr ""
+msgstr "如果虚拟资金余额低于1,000.00美元，您可请求获取更多虚拟资金。"
 
 msgid "You can sell back long-term trades at any time to profit from changing market conditions."
 msgstr "您可以在任何时间卖出您的长线交易合约，根据市场变化及时获利。"
@@ -7449,7 +7433,7 @@ msgid "Your account has no trading activity."
 msgstr "您的账户无交易活动。"
 
 msgid "Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact %1."
-msgstr ""
+msgstr "您的账户已被暂时禁用，现仅允许取款。欲知详情，请联系 %1。"
 
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "您的账户已经得到完全验证，且您的取款限额已经取消。"
