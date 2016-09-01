@@ -1,9 +1,0 @@
-#balance {
-    @include BIDIR_VALUE(float, left, right);
-    @include BIDIR_PROP(padding-left, padding-right, 8px);
-    margin-top: 1em;
-}
-
-#client_loginid {
-    min-width: 210px;
-}

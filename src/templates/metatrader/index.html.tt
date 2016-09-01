@@ -15,12 +15,12 @@
         <div class="gr-row gr-padding-10">
             <div class="gr-6 gr-12-m invisible">
                 <p class="align-end">
-                    <a class="button" href="[% request.url_for('user/settings/metatrader#real') %]"><span>[% l('Real Account') %]</span></a>
+                    <a class="button" href="[% request.url_for('user/metatrader#real') %]"><span>[% l('Real Account') %]</span></a>
                 </p>
             </div>
             <div class="gr-12 gr-12-m center-text">
                 <p>
-                    <a class="button button-secondary" href="[% request.url_for('user/settings/metatrader#demo') %]"><span>[% l('Demo Account') %]</span></a>
+                    <a class="button button-secondary" href="[% request.url_for('user/metatrader#demo') %]"><span>[% l('Demo Account') %]</span></a>
                 </p>
             </div>
         </div>

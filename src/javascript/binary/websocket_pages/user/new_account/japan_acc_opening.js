@@ -4,7 +4,7 @@ pjax_config_page("new_account/japanws", function(){
       Content.populate();
       ValidAccountOpening.redirectCookie();
       if (page.client.residence !== 'jp') {
-        window.location.href = page.url.url_for('user/my_accountws');
+        window.location.href = page.url.url_for('trading');
         return;
       }
       handle_residence_state_ws();

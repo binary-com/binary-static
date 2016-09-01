@@ -47,7 +47,7 @@ pjax_config_page_require_auth("user/portfoliows", function() {
     };
 });
 
-pjax_config_page_require_auth("user/settings/api_tokenws", function() {
+pjax_config_page_require_auth("user/security/api_tokenws", function() {
     return {
         onLoad: function() {
             APITokenWS.init();
@@ -55,7 +55,7 @@ pjax_config_page_require_auth("user/settings/api_tokenws", function() {
     };
 });
 
-pjax_config_page_require_auth("user/settings/self_exclusionws", function() {
+pjax_config_page_require_auth("user/security/self_exclusionws", function() {
     return {
         onLoad: function() {
             SelfExclusionWS.init();
@@ -63,7 +63,7 @@ pjax_config_page_require_auth("user/settings/self_exclusionws", function() {
     };
 });
 
-pjax_config_page_require_auth("user/settings/metatrader", function() {
+pjax_config_page_require_auth("user/metatrader", function() {
     return {
         onLoad: function() {
             MetaTraderUI.init();
@@ -71,7 +71,7 @@ pjax_config_page_require_auth("user/settings/metatrader", function() {
     };
 });
 
-pjax_config_page_require_auth("user/settings/securityws", function() {
+pjax_config_page_require_auth("user/security/cashier_passwordws", function() {
     return {
         onLoad: function() {
             SecurityWS.init();

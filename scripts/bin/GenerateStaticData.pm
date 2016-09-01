@@ -388,12 +388,13 @@ sub _texts {
         push @texts, localize('Your account has no trading activity.');
 
         #strings for authenticate page
-        push @texts, localize('Your account is fully authenticated. You can view your [_1]trading limits here');
         push @texts, localize('To authenticate your account, kindly email the following to [_1]');
-        push @texts, localize('- A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth.');
-        push @texts, localize('and');
-        push @texts, localize('- A scanned copy of a utility bill or bank statement (no more than 3 months old).');
+        push @texts, localize('A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date.');
+        push @texts, localize('A scanned copy of a utility bill or bank statement (no more than 3 months old).');
         push @texts, localize('This feature is not relevant to virtual-money accounts.');
+        push @texts, localize('Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact [_1].');
+        push @texts, localize('Deposits and withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.');
+        push @texts, localize('Withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.');
 
         #strings for japanws page
         push @texts, localize('Questions');
@@ -571,14 +572,6 @@ sub _texts {
         push @texts, localize('Select market');
         push @texts, localize('Number of ticks');
         push @texts, localize('Last digit stats for the latest [_1] ticks on [_2]');
-
-        #strings for my_accountws
-        push @texts, localize('You are currently logged in to your real money account with [_1] ([_2]).');
-        push @texts, localize('You are currently logged in to your virtual money account ([_2]).');
-        push @texts, localize('Deposit [_1] [_2] virtual money into your account [_3]');
-        push @texts, localize('Your [_1] account is unavailable. For any questions please contact [_2].');
-        push @texts, localize('Your [_1] accounts are unavailable. For any questions please contact [_2].');
-        push @texts, localize('Customer Support');
 
         #strings for tnc_approvalws
         push @texts, localize('[_1] has updated its [_2]. By clicking OK, you confirm that you have read and accepted the updated [_2].');
@@ -791,8 +784,9 @@ sub _texts {
         push @texts, localize('If you need assistance feel free to contact our [_1]Customer Support');
         push @texts, localize('Your account is not fully authenticated. Please visit the <a href="[_1]">authentication</a> page for more information.');
         push @texts, localize('details');
+        push @texts, localize('Deposit [_1] [_2] virtual money into your account [_3]');
 
-        # strings for user/settings/metatrader page
+        # strings for user/metatrader page
         push @texts, localize('Login');
         push @texts, localize('To create a real account for MetaTrader, switch to your [_1] real money account.');
         push @texts, localize('To create a real account for MetaTrader, <a href="[_1]">upgrade to [_2] real money account</a>.');

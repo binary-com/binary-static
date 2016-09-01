@@ -5,7 +5,7 @@ RiskClassification = (function() {
 
   var renderRiskClassificationPopUp = function () {
       if (window.location.pathname === '/user/settings/assessmentws') {
-        window.location.href = page.url.url_for('user/my_accountws');
+        window.location.href = page.url.url_for('user/settingsws');
         return;
       }
       $.ajax({
@@ -57,7 +57,7 @@ RiskClassification = (function() {
     localStorage.removeItem('risk_classification.response');
     $('#risk_classification').remove();
     if (sessionStorage.getItem('check_tnc')) {
-      page.client.check_tnc();
+        page.client.check_tnc();
     }
   };
 

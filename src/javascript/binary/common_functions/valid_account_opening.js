@@ -4,12 +4,12 @@ var ValidAccountOpening = (function(){
         return;
     }
     if (!page.client.is_virtual()) {
-      window.location.href = page.url.url_for('user/my_accountws');
+      window.location.href = page.url.url_for('trading');
       return;
     }
     for (var i = 0; i < page.user.loginid_array.length; i++){
       if (page.user.loginid_array[i].real === true){
-        window.location.href = page.url.url_for('user/my_accountws');
+        window.location.href = page.url.url_for('trading');
         return;
       }
     }

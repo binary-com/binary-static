@@ -1,4 +1,4 @@
-pjax_config_page_require_auth("user/settings/iphistoryws", function(){
+pjax_config_page_require_auth("user/security/iphistoryws", function(){
     return {
         onLoad: function() {
             if (japanese_client()) {

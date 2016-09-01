@@ -80,6 +80,9 @@ body.FR {
     #trading_socket_container #contract_form_name_nav {
         font-size: 80%;
     }
+    #header .account-type {
+        font-size: 85%;
+    }
 }
 
 /*Arabic Language */
@@ -157,6 +160,9 @@ body.RU {
     }
     .ru-hide {
         display: none !important;
+    }
+    #header .account-type {
+        font-size: 90%;
     }
 }
 

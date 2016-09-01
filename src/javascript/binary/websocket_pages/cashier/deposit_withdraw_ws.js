@@ -55,21 +55,13 @@ var ForwardWS = (function() {
     $('#deposit-withdraw-message #' + id).show();
     $('#deposit-withdraw-message').show();
   }
-  function lock_withdrawal(withdrawal_locked) {
-    if (withdrawal_locked === 'locked') {
-      showError('', 'withdrawal-locked-error');
-    } else {
-      BinarySocket.send({"cashier_password": "1"});
-    }
-  }
   return {
     init: init,
     getCashierType: getCashierType,
     getCashierURL: getCashierURL,
     hideAll: hideAll,
     showError: showError,
-    showMessage: showMessage,
-    lock_withdrawal: lock_withdrawal
+    showMessage: showMessage
   };
 })();
 
@@ -156,12 +148,14 @@ pjax_config_page_require_auth("cashier/forwardws", function() {
                 }
               }
             });
-            if (sessionStorage.getItem('withdrawal_locked') === 'locked' && /withdraw/.test(window.location.hash)) {
-              ForwardWS.lock_withdrawal('locked');
-            } else if (!sessionStorage.getItem('withdrawal_locked') && /withdraw/.test(window.location.hash)) {
-              BinarySocket.send({"get_account_status": "1", "passthrough":{"dispatch_to":"ForwardWS"}});
-            } else {
-              BinarySocket.send({"cashier_password": "1"});
+            if (!sessionStorage.getItem('client_status')) {
+                BinarySocket.send({"get_account_status": "1", "passthrough":{"dispatch_to":"ForwardWS"}});
+            }
+            else if (
+                (!page.client_status_detected('cashier_locked, unwelcome', 'any') && /deposit/.test(window.location.hash)) ||
+                (!page.client_status_detected('cashier_locked, withdrawal_locked', 'any') && /withdraw/.test(window.location.hash))
+            ) {
+                BinarySocket.send({"cashier_password": "1"});
             }
           }
         }

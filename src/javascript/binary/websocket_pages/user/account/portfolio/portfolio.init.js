@@ -41,10 +41,14 @@ var PortfolioWS =  (function() {
     var updateBalance = function() {
         if ($("#portfolio-balance").length === 0) return;
         $("#portfolio-balance").text(Portfolio.getBalance(TUser.get().balance, TUser.get().currency));
+        var if_balance_zero = $('#if-balance-zero');
         if(Portfolio.getBalance(TUser.get().balance) > 0 || page.client.is_virtual()) {
-            $('#if-balance-zero:visible').addClass('invisible');
+            if_balance_zero.addClass('invisible');
         } else {
-            $('#if-balance-zero:hidden').removeClass('invisible');
+            if_balance_zero.removeClass('invisible');
+            if (page.client_status_detected('unwelcome, cashier_locked', 'any')) {
+                if_balance_zero.removeAttr('href').addClass('button-disabled');
+            }
         }
     };
 

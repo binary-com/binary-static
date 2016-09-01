@@ -183,7 +183,7 @@
                   <div id="contract_purchase_barrier"></div>
                   <div id="contract_purchase_reference"></div>
                   <div class="button">
-                     <button id="contract_purchase_button" class="button open_contract_detailsws"></button>
+                     <span id="contract_purchase_button" class="button open_contract_detailsws"></span>
                   </div>
                   <div id="contract_purchase_spots"></div>
                   <div id="tick_chart"></div>
@@ -212,7 +212,7 @@
                           </div>
                         </div>
                         <div class="contract_purchase button">
-                           <button class="purchase_button contract_description no-underline" id="purchase_button_top" data-balloon-length="xlarge" value="purchase"></button>
+                           <span class="purchase_button contract_description no-underline" id="purchase_button_top" data-balloon-length="xlarge" value="purchase"></span>
                         </div>
                       </span>
                   </div>
@@ -236,7 +236,7 @@
                           </div>
                         </div>
                         <div class="contract_purchase button">
-                          <button class="purchase_button contract_description no-underline" id="purchase_button_bottom" data-balloon-length="xlarge" value="purchase"></button>
+                          <span class="purchase_button contract_description no-underline" id="purchase_button_bottom" data-balloon-length="xlarge" value="purchase"></span>
                         </div>
                       </span>
                   </div>
