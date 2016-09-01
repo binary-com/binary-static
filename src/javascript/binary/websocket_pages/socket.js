@@ -150,6 +150,7 @@ function BinarySocketClass() {
                             if (Cookies.get('residence')) send({landing_company: Cookies.get('residence')});
                             send({get_settings: 1});
                             send({get_account_status: 1});
+                            send({website_status: 1});
                             if(!page.client.is_virtual()) {
                                 send({get_self_exclusion: 1});
                             } else {
@@ -234,6 +235,7 @@ function BinarySocketClass() {
                     send({get_financial_assessment: 1});
                   } else {
                     localStorage.removeItem('risk_classification');
+                    page.client.check_tnc();
                   }
                   localStorage.setItem('risk_classification.response', response.get_account_status.risk_classification);
 

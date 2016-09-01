@@ -18,11 +18,12 @@ var LoggedInHandler = (function() {
                 // set cookies
                 page.client.set_cookie('loginid'     , loginid);
                 page.client.set_cookie('loginid_list', loginid_list);
+
+                if (!$('body').hasClass('BlueTopBack')) sessionStorage.setItem('check_tnc', loginid_list);
             }
             page.client.set_cookie('login', tokens[loginid]);
 
             // set flags
-            sessionStorage.setItem('check_tnc', '1');
             if (!$('body').hasClass('BlueTopBack')) localStorage.setItem('risk_classification', 'check');
             GTM.set_login_flag();
 
