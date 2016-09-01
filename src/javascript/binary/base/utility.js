@@ -233,7 +233,7 @@ function showLocalTimeOnHover(s) {
 function toJapanTimeIfNeeded(gmtTimeStr, showTimeZone, longcode, hideSeconds){
     var match;
     if (longcode && longcode !== '') {
-      match = longcode.match(/(\d{4}-\d{2}-\d{2})\s?(\d{2}:\d{2}:\d{2})?/);
+      match = longcode.match(/((?:\d{4}-\d{2}-\d{2})\s?(\d{2}:\d{2}:\d{2})?(?:\sGMT)?)/);
       if (!match) return longcode;
     }
 
@@ -243,8 +243,10 @@ function toJapanTimeIfNeeded(gmtTimeStr, showTimeZone, longcode, hideSeconds){
 
     if(typeof gmtTimeStr === 'number'){
         time = moment.utc(gmtTimeStr*1000);
-    } else {
+    } else if(gmtTimeStr){
         time = moment.utc(gmtTimeStr, 'YYYY-MM-DD HH:mm:ss');
+    } else {
+        time = moment.utc(match[0], 'YYYY-MM-DD HH:mm:ss');
     }
 
     if (!time.isValid()) {
