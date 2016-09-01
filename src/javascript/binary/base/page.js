@@ -435,17 +435,6 @@ URL.prototype = {
         var param_hash= this.params_hash();
         return param_hash[name];
     },
-    replaceQueryParam: function (param, newval, search) {
-      var regex = new RegExp("([?;&])" + param + "[^&;]*[;&]?");
-      var query = search.replace(regex, "$1").replace(/&$/, '');
-      return (query.length > 2 ? query + "&" : "?") + (newval ? param + "=" + newval : '');
-    },
-    param_if_valid: function(name) {
-        if(this.is_valid) {
-           return this.param(name);
-        }
-        return;
-    },
     path_matches: function(url) {
         //pathname is /d/page.cgi. Eliminate /d/ and /c/ from both urls.
         var this_pathname = this.location.pathname.replace(/\/[d|c]\//g, '');
@@ -687,32 +676,15 @@ Header.prototype = {
 
         this.menu.register_dynamic_links();
     },
-    start_clock_ws: function() {
-        function getTime() {
-            clock_started = true;
-            BinarySocket.send({'time': 1,'passthrough': {'client_time': moment().valueOf()}});
-        }
-        this.run = function() {
-            setInterval(getTime, 30000);
-        };
-
-        this.run();
-        getTime();
-        return;
-    },
-    time_counter : function(response) {
-        if (isNaN(response.echo_req.passthrough.client_time) || response.error) {
-            page.header.start_clock_ws();
-            return;
-        }
+    time_counter : function(response, client_time) {
+        if (!client_time) return;
         clearTimeout(window.HeaderTimeUpdateTimeOutRef);
         var that = this;
         var clock = $('#gmt-clock');
         var start_timestamp = response.time;
-        var pass = response.echo_req.passthrough.client_time;
 
         that.client_time_at_response = moment().valueOf();
-        that.server_time_at_response = ((start_timestamp * 1000) + (that.client_time_at_response - pass));
+        that.server_time_at_response = ((start_timestamp * 1000) + (that.client_time_at_response - client_time));
         var update_time = function() {
             window.time = moment(that.server_time_at_response + moment().valueOf() - that.client_time_at_response).utc();
             var curr = localStorage.getItem('client.currencies');

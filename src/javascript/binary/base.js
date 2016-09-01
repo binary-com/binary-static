@@ -42,17 +42,6 @@ onUnload.queue(function () {
     page.on_unload();
 });
 
-//////////////////////////////////////////////////////////////
-//Purpose: To solve cross domain logged out server problem.
-//Return: Hostname for this page
-//////////////////////////////////////////////////////////////
-function changeUrlToSameDomain(url) {
-    var re = new RegExp('^(http|https):\/\/[.a-zA-Z0-9-]+/');
-    var server_name = window.location.protocol + '//' + window.location.hostname;
-    var same_domain_url = url.replace(re, server_name + '/');
-    return same_domain_url;
-}
-
 function formEffects() {
     var select_focus_event = function () {
         $(this)
