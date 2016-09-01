@@ -774,7 +774,7 @@ Header.prototype = {
       }
     },
     qualify_for_risk_classification: function() {
-      if (page.client.is_logged_in && !page.client.is_virtual() && page.client.residence !== 'jp' && !$('body').hasClass('BlueTopBack') &&
+      if (page.client.is_logged_in && !page.client.is_virtual() && page.client.residence !== 'jp' && !$('body').hasClass('BlueTopBack') && $('#assessment_form').length === 0 &&
           (localStorage.getItem('reality_check.ack') === '1' || !localStorage.getItem('reality_check.interval'))) {
               return true;
       }
