@@ -164,5 +164,17 @@ var pjax_config_page_require_auth = function(url, exec) {
     pjax_config_page(url, newExecFn);
 };
 
+var onLoad = new PjaxExecQueue();
+var onUnload = new PjaxExecQueue();
+
 init_pjax(); //Pjax-standalone will wait for on load event before attaching.
 $(function() { onLoad.fire(); });
+
+module.exports = {
+    pjax_config_page_require_auth: pjax_config_page_require_auth,
+    pjax_config_page: pjax_config_page,
+    load_with_pjax: load_with_pjax,
+    PjaxExecQueue: PjaxExecQueue,
+    onLoad: onLoad,
+    onUnload: onUnload,
+};

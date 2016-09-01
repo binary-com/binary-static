@@ -8,9 +8,6 @@ $(function(){
     });
 });
 
-var onLoad = new PjaxExecQueue();
-var onUnload = new PjaxExecQueue();
-
 var SessionStore, LocalStore;
 if (isStorageSupported(window.localStorage)) {
     LocalStore = new Store(window.localStorage);
