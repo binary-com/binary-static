@@ -4,6 +4,7 @@ css:
   - 'cssmin'
 
 js:
+  - 'webpack'
   - 'concat'
   - 'uglify'
 
