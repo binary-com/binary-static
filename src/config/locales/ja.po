@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-09-01 07:28+0000\n"
-"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
+"PO-Revision-Date: 2016-09-01 08:49+0000\n"
+"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -769,15 +769,15 @@ msgstr "Linuxとオープンソースプラットフォームが好きで、情�
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "問題解決または顧客へ解決策の提供など積極的に取り組むことができる"
 
-#, fuzzy
 #| msgid "- A scanned copy of a utility bill or bank statement (no more than 3 months old)."
 msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
 msgstr "公共料金の請求書または銀行明細書をスキャンしたコピー（発行３ヶ月以内のものに限ります）。"
 
-#, fuzzy
 #| msgid "- A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth."
 msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
-msgstr "氏名と生年月日が表示されているパスポートか運転免許証、または住民基本台帳カードをスキャンしたコピー"
+msgstr ""
+"氏名と生年月日が表示されているパスポートか運転免許証、または住民基本台帳カードをスキャンしたコピー。本人確認書類は、本日より6ヶ月以降は有効であるものでな"
+"くてはなりません。"
 
 msgid "A strong and passionate interest in Marketing and Advertising"
 msgstr "マーケティングと広告業に強い関心と情熱がある"
@@ -956,10 +956,9 @@ msgstr "制限契約"
 msgid "Agreement for documents"
 msgstr "交付書面等の確認"
 
-#, fuzzy
 #| msgid "A True Partnership"
 msgid "All Partnership Options"
-msgstr "最高のサポート体制を提供"
+msgstr "最高水準のサポート体制を提供"
 
 msgid "All affiliate activities must be conducted in a professional and proper manner. You shall be expected to act with good faith and integrity in your relationships with your referrals, and always act in the best interests of your referrals."
 msgstr "アフィリエイト活動は、専門的且つ適切な方法で実施するようにしてください。アフィリエイト会員は、獲得会員と信頼と誠意に基づく良好な関係を築かれることが期待されています。獲得会員に対し、販売行為や口約束を強要する行為は禁じられています。"
@@ -1098,7 +1097,7 @@ msgid "Appropriateness Test"
 msgstr "適正テスト"
 
 msgid "Apps"
-msgstr ""
+msgstr "App"
 
 msgid "Apr"
 msgstr "4"
@@ -1380,10 +1379,9 @@ msgstr "Binary Ltdのオフィス所在地は、<span itemprop='location'>47 Esp
 msgid "Binary Options Basics"
 msgstr "バイナリー取引の基礎"
 
-#, fuzzy
 #| msgid "Binary option"
 msgid "Binary Shop"
-msgstr "バイナリーオプション"
+msgstr "バイナリーショップ"
 
 msgid "Binary Trading is simple to learn and to execute."
 msgstr "バイナリーオプションは簡単な操作でお取引ができます"
@@ -1550,10 +1548,9 @@ msgstr "API エンドポイントの変更"
 msgid "Change Password"
 msgstr "パスワード変更"
 
-#, fuzzy
 #| msgid "Hundreds of deposit and withdrawal options."
 msgid "Change the password used for deposits and withdrawals."
-msgstr "多種多様な入出金方法に対応しています。"
+msgstr "入出金に用いるパスワードを変更"
 
 #| msgid "Insert your login ID and password"
 msgid "Change your main login password."
@@ -2131,7 +2128,7 @@ msgid "Depositing and withdrawing funds"
 msgstr "ご入金/ご出金について"
 
 msgid "Deposits and withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
-msgstr ""
+msgstr "お客様の口座への入出金手続きは、現在許可されていません。解除するには%1までご連絡ください。"
 
 msgid "Derivative"
 msgstr "デリバティブ"
@@ -2817,21 +2814,19 @@ msgstr "優れた報酬体系"
 msgid "Germany"
 msgstr "ドイツ"
 
-#, fuzzy
 #| msgid "Over $1,000,000"
 msgid "Get JPY 1,000,000"
-msgstr "$1,000,000以上"
+msgstr "1,000,000円をゲットする"
 
 msgid "Get Started"
 msgstr "はじめに"
 
 msgid "Get USD 10,000.00"
-msgstr ""
+msgstr "USD 10,000.00をゲットする"
 
-#, fuzzy
 #| msgid "Get your free $10,000 virtual money"
 msgid "Get more virtual money"
-msgstr "$10,000のフリーバーチャルマネー手に入れましょう"
+msgstr "もっとバーチャルマネーを入手する"
 
 msgid "Get your price"
 msgstr "価格を確認"
@@ -6531,7 +6526,6 @@ msgstr "木曜日"
 msgid "Tick"
 msgstr "Tick"
 
-#, fuzzy
 #| msgid "Tick Trade App"
 msgid "TickTrade App"
 msgstr "Tickトレードアプリ"
@@ -7321,7 +7315,7 @@ msgid "Withdrawal Limits"
 msgstr "出金限度額"
 
 msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
-msgstr ""
+msgstr "お客様の口座の出金手続きは現在許可されていません。解除するには%1までご連絡ください。"
 
 msgid "Withdrawal is done. Transaction ID:"
 msgstr "ご出金が完了しました。取引参照ID："
@@ -7426,10 +7420,10 @@ msgid "You can close your trade before expiry to lock in profits."
 msgstr "お客さまの予想通りに相場が動いた場合、判定時刻前にポジションを売却をすることにより利益を確定ができます。"
 
 msgid "You can request more virtual money if your virtual balance falls below JPY 100,000."
-msgstr ""
+msgstr "お客様のバーチャルマネー残高が100,000円を下回る場合、バーチャルマネーの追加リクエストが可能です。"
 
 msgid "You can request more virtual money if your virtual balance falls below USD 1,000.00."
-msgstr ""
+msgstr "お客様のバーチャルマネー残高がUSD 1,000.00を下回る場合、バーチャルマネーの追加リクエストが可能です。"
 
 msgid "You can sell back long-term trades at any time to profit from changing market conditions."
 msgstr "既存ポジションは、取引期間内にいつでも転売が可能です。"
@@ -7648,7 +7642,7 @@ msgid "Your account has no trading activity."
 msgstr "取引履歴はありません"
 
 msgid "Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact %1."
-msgstr ""
+msgstr "現在お客様の口座は、一時的にご利用いただけません。詳細は、%1までご連絡ください。"
 
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "お客さまのご口座はアップグレード済みですので、ご出金制限が引き上げられました。"
