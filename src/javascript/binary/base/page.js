@@ -284,7 +284,7 @@ Client.prototype = {
         page.contents.activate_by_login();
     },
     check_tnc: function() {
-        if (/user\/tnc_approvalws/.test(window.location.href)) return;
+        if (/user\/tnc_approvalws/.test(window.location.href) || /terms\-and\-conditions/.test(window.location.href)) return;
         if(!page.client.is_virtual() && new RegExp(page.client.loginid).test(sessionStorage.getItem('check_tnc'))) {
             var client_tnc_status   = this.get_storage_value('tnc_status'),
                 website_tnc_version = LocalStore.get('website.tnc_version');
