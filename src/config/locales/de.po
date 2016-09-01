@@ -767,6 +767,16 @@ msgstr "Eine Vorliebe und Leidenschaft für Linux und Open-Source Plattformen"
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "Eine proaktive Vorgehensweise, um Probleme zu lösen und Client-Lösungen zu liefern"
 
+#, fuzzy
+#| msgid "- A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+msgstr "- Eine gescannte Kopie einer Abrechnung öffentlicher Versorgungsbetriebe oder eines Bankkontoauszuges (nicht älter als 3 Monate)."
+
+#, fuzzy
+#| msgid "- A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth."
+msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
+msgstr "- Eine gescannte Kopie Ihres Reisepasses, gültigen Führerscheins (vorläufig oder endgültig) oder Personalausweises, auf der Ihr Name und das Geburtsdatum erkennbar sind."
+
 msgid "A strong and passionate interest in Marketing and Advertising"
 msgstr "Ein starkes und leidenschaftliches Interesse an Marketing und Werbung"
 
@@ -854,6 +864,11 @@ msgstr "Kontoverwaltung und Verlauf"
 msgid "Account Opening"
 msgstr "Kontoeröffnung"
 
+#, fuzzy
+#| msgid "Lost Password?"
+msgid "Account Password"
+msgstr "Passwort entfallen?"
+
 msgid "Account Transfer"
 msgstr "Kontoüberweisung"
 
@@ -937,6 +952,11 @@ msgstr "Vereinbarungseinschränkungen"
 
 msgid "Agreement for documents"
 msgstr "Vereinbarung für Dokumente"
+
+#, fuzzy
+#| msgid "A True Partnership"
+msgid "All Partnership Options"
+msgstr "Eine echte Partnerschaft"
 
 msgid "All affiliate activities must be conducted in a professional and proper manner. You shall be expected to act with good faith and integrity in your relationships with your referrals, and always act in the best interests of your referrals."
 msgstr "Alle Aktivitäten müssen von den Geschäftspartnern müssen in einer professionellen und korrekten Weise durchgeführt werden. Es wird von Ihnen erwartet, dass Sie bei Ihren Beziehungen zu Ihren empfohlenen Kunden nach Treu und Glauben und mit Seriosität handeln und immer im besten Interesse Ihrer empfohlenen Kunden zu agieren."
@@ -1073,6 +1093,9 @@ msgstr "Angemessenheit"
 
 msgid "Appropriateness Test"
 msgstr "Eignungstest"
+
+msgid "Apps"
+msgstr ""
 
 msgid "Apr"
 msgstr "Apr"
@@ -1341,6 +1364,11 @@ msgstr "Binary Ltd, mit eingetragenem Firmensitz in <span itemprop='location'>47
 msgid "Binary Options Basics"
 msgstr "Grundlagen der Binären Optionen"
 
+#, fuzzy
+#| msgid "Binary option"
+msgid "Binary Shop"
+msgstr "Binäre Option"
+
 msgid "Binary Trading is simple to learn and to execute."
 msgstr "Der Handel mit Binären Optionen ist einfach zu lernen und auszuführen."
 
@@ -1483,6 +1511,16 @@ msgstr "Karrieren"
 msgid "Cashier"
 msgstr "Kasse"
 
+#, fuzzy
+#| msgid "Cashier password"
+msgid "Cashier Password"
+msgstr "Kasse Passwort"
+
+#, fuzzy
+#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgstr "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+
 msgid "Cashier password"
 msgstr "Kasse Passwort"
 
@@ -1495,11 +1533,18 @@ msgstr "API Endpoint ändern"
 msgid "Change Password"
 msgstr "Passwort ändern"
 
+#, fuzzy
+#| msgid "Hundreds of deposit and withdrawal options."
+msgid "Change the password used for deposits and withdrawals."
+msgstr "Unendlich viele Einzahlungs- und Abhebemethoden."
+
+#, fuzzy
+#| msgid "Insert your login ID and password"
+msgid "Change your main login password."
+msgstr "Geben Sie Ihre Log-in ID und Passwort ein"
+
 msgid "Chart"
 msgstr "Diagramm"
-
-msgid "Charts"
-msgstr "Diagramme"
 
 msgid "Check out our commission rates below:"
 msgstr "Schauen Sie sich unsere nachstehenden Provisionssätze an:"
@@ -2034,6 +2079,11 @@ msgstr "Gelder auf Ihr MetaTrader Konto von Ihrem Binary Konto einzahlen:"
 msgid "Deposit is done. Transaction ID:"
 msgstr "Einzahlung vorgenommen. Überweisungs-ID:"
 
+#, fuzzy
+#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgstr "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+
 msgid "Deposit of"
 msgstr "Einzahlung in Höhe von"
 
@@ -2057,6 +2107,9 @@ msgstr "Einzahlung: Sofort"
 
 msgid "Depositing and withdrawing funds"
 msgstr "Geld einzahlen und abheben"
+
+msgid "Deposits and withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
+msgstr ""
 
 msgid "Derivative"
 msgstr "Derivate"
@@ -2742,8 +2795,21 @@ msgstr "Großzügige Provisionsstruktur"
 msgid "Germany"
 msgstr "Deutschland"
 
+#, fuzzy
+#| msgid "Over $1,000,000"
+msgid "Get JPY 1,000,000"
+msgstr "Über $1.000.000"
+
 msgid "Get Started"
 msgstr "Erste Schritte"
+
+msgid "Get USD 10,000.00"
+msgstr ""
+
+#, fuzzy
+#| msgid "Get your free $10,000 virtual money"
+msgid "Get more virtual money"
+msgstr "Holen Sie sich Ihre gratis 10.000 $ virtuelles Geld"
 
 msgid "Get your price"
 msgstr "Holen Sie sich Ihren Kurs"
@@ -3843,9 +3909,6 @@ msgstr "Kenntnisse über die Wahrscheinlichkeitstheorie, numerische Methoden, di
 msgid "Knowledge of probability theory, stochastic calculus, numerical methods, Monte-Carlo simulation, differential equations, econometrics, and statistical modeling"
 msgstr "Kenntnisse über die Wahrscheinlichkeitstheorie, Stochastische Analyse, numerische Methoden, die Monte-Carlo Simulation, Differentialgleichungen, Ökonometrie und statistische Modellierung"
 
-msgid "LOG OUT"
-msgstr "AUSLOGGEN"
-
 msgid "Languages"
 msgstr "Sprachen"
 
@@ -4029,9 +4092,6 @@ msgstr "Aufrechterhaltung der adäquaten Geschwindigkeit und Ausgabemenge"
 msgid "Make a Deposit"
 msgstr "Eine Einzahlung vornehmen"
 
-msgid "Make a deposit or withdraw."
-msgstr "Nehmen Sie eine Ein- oder Auszahlung vor."
-
 msgid "Make your trade"
 msgstr "Führen Sie Ihr Geschäft aus"
 
@@ -4049,9 +4109,6 @@ msgstr "Sicherheitsverwaltung, Eindringungsentdeckung, DDos-Schutz und PCI Compl
 
 msgid "Manage the company's cashier system"
 msgstr "Verwaltung des Kassensystems des Unternehmens"
-
-msgid "Manage your account access and security settings."
-msgstr "Verwaltung Ihres Kontozugriffs und der Sicherheitseinstellungen."
 
 msgid "Manage your authorised applications."
 msgstr "Verwalten Sie Ihre genehmigten Anwendungen."
@@ -4946,6 +5003,11 @@ msgstr "Kenntnisse in einer Skriptsprache - Perl bevorzugt"
 msgid "Proficiency in a second language (oral and written) is preferred"
 msgstr "Kenntnis einer weiteren Sprache (mündlich und schriftlich) ist erwünscht"
 
+#, fuzzy
+#| msgid "Profit"
+msgid "Profile"
+msgstr "Rendite"
+
 msgid "Profit"
 msgstr "Rendite"
 
@@ -5065,6 +5127,11 @@ msgstr "Ref."
 
 msgid "Reference ID"
 msgstr "Referenznr."
+
+#, fuzzy
+#| msgid "Reload page"
+msgid "Refresh page"
+msgstr "Seite erneut laden"
 
 msgid "Regent Markets Group Ltd. renames to Binary Ltd."
 msgstr "Regent Markets Group Ltd. ist in Binary Ltd. umbenannt."
@@ -5288,6 +5355,11 @@ msgstr "Geheimfrage"
 msgid "Security"
 msgstr "Sicherheit"
 
+#, fuzzy
+#| msgid "Account Limits"
+msgid "Security & Limits"
+msgstr "Kontolimits"
+
 msgid "Security Disclaimer"
 msgstr "Sicherheitshinweise"
 
@@ -5406,6 +5478,11 @@ msgid "Sign Up to Test Our Platform"
 msgstr "Anmelden um unsere Plattform zu testen"
 
 msgid "Sign me up"
+msgstr "Nehmen Sie mich auf"
+
+#, fuzzy
+#| msgid "Sign me up"
+msgid "Sign out"
 msgstr "Nehmen Sie mich auf"
 
 msgid "Sign up as a tester and look for Binary.com-related projects."
@@ -6295,6 +6372,11 @@ msgstr "Donnerstag"
 msgid "Tick"
 msgstr "Tick"
 
+#, fuzzy
+#| msgid "Tick Trade App"
+msgid "TickTrade App"
+msgstr "Tick-Trade App"
+
 msgid "Tier"
 msgstr "Rang"
 
@@ -6464,9 +6546,6 @@ msgstr "Wechsel zur Login ID"
 
 msgid "Transfer to Payment Agent"
 msgstr "Überweisung an den Zahlungsagent"
-
-msgid "Transfer to client"
-msgstr "Überweisung an den Kunden"
 
 msgid "Translate the ongoing business needs of the company into a suitable IT infrastructure"
 msgstr "Umsetzung des laufenden Geschäftsbedarfs des Unternehmens in eine geeignete IT-Infrastruktur"
@@ -6660,14 +6739,8 @@ msgstr "Die Öffnungszeiten der Börsen anzeigen, auf denen Sie handeln können.
 msgid "View your financial assessment settings."
 msgstr "Sehen Sie sich Ihre Finanzbeurteilungseinstellungen an."
 
-msgid "View your historical transactions."
-msgstr "Ihre bisherigen Überweisungen anzeigen."
-
 msgid "View your login history."
 msgstr "Ihren Login-Verlauf anzeigen."
-
-msgid "View your open positions."
-msgstr "Ihre offenen Positionen anzeigen."
 
 msgid "View your personal information."
 msgstr "Sehen Sie sich Ihre personenbezogenen Daten an."
@@ -6677,9 +6750,6 @@ msgstr "Ihre Abrechnung ansehen"
 
 msgid "View your trading and withdrawal limits."
 msgstr "Anzeige Ihrer Handels- und Auszahlungslimits."
-
-msgid "View your trading profit/loss."
-msgstr "Die Gewinne/Verluste Ihrer Geschäfte ansehen."
 
 msgid "Virtual Account"
 msgstr "Virtuelles Konto"
@@ -6857,9 +6927,6 @@ msgstr "Wochentag"
 
 msgid "Weekend quotes"
 msgstr "Wochenendnotierungen"
-
-msgid "Welcome!"
-msgstr "Willkommen!"
 
 msgid "Well-developed organizational, administrative, and/or accounting skills"
 msgstr "Perfekt entwickelte organisatorische, administrative und/oder buchhalterische Fähigkeiten"
@@ -7068,6 +7135,9 @@ msgstr "Auszahlung: Nicht anwendbar"
 msgid "Withdrawal Limits"
 msgstr "Abhebungslimits"
 
+msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
+msgstr ""
+
 msgid "Withdrawal is done. Transaction ID:"
 msgstr "Auszahlung erledigt. Transaktion ID:"
 
@@ -7146,12 +7216,6 @@ msgstr "Sie und Ihre Anwendung müssen die nachfolgenden Aspekte, die hier als V
 msgid "You are advised that the Binary Options offered by %1 are not traded under the rules of any recognised, designated or regulated exchange. Consequently, engaging in Binary Options trading may expose you to substantially greater risks than investments which are so traded."
 msgstr "Sie wurden darüber in Kenntnis gesetzt, dass die von %1 angebotenen Binären Optionen nicht nach den Regeln einer anerkannten, zugelassenen oder überwachten Börse gehandelt werden. Daher kann Sie der Handel mit Binären Optionen einem erheblich höheren Risiko als bei so gehandelten Anlagen aussetzen."
 
-msgid "You are currently logged in to your real money account with %1 (%2)."
-msgstr "Sie sind derzeit in Ihr Echtgeldkonto bei %1 (%2) eingeloggt."
-
-msgid "You are currently logged in to your virtual money account (%2)."
-msgstr "Sie sind derzeit in Ihr virtuelles Geld Konto (2%) eingeloggt."
-
 msgid "You are in default or breach of any covenant, obligation or condition contained in this Agreement, and if such default is not cured within seven days of receipt of written notice from the Company;"
 msgstr "Sie versäumen oder verletzen eine Vereinbarung, Verpflichtung oder Bestimmung dieses Vertrags. Wenn ein solcher Verstoß nicht innerhalb von sieben Tagen nach Erhalt der schriftlichen Aufforderung des Unternehmens geheilt wird;"
 
@@ -7181,6 +7245,12 @@ msgstr "Sie können Auszahlungen von 1 € bis 50.000 € auswählen. Diese gro�
 
 msgid "You can close your trade before expiry to lock in profits."
 msgstr "Sie können Ihren Kontrakt vor Ablauf beenden, um Gewinne mitzunehmen."
+
+msgid "You can request more virtual money if your virtual balance falls below JPY 100,000."
+msgstr ""
+
+msgid "You can request more virtual money if your virtual balance falls below USD 1,000.00."
+msgstr ""
 
 msgid "You can sell back long-term trades at any time to profit from changing market conditions."
 msgstr "Sie können jederzeit langfristige Kontrakte wieder verkaufen, um von sich ändernden Marktbedingungen zu profitieren."
@@ -7371,12 +7441,6 @@ msgstr "Auf der <a href='' target='_blank' id='faq_url'>FAQ</a> Seite finden Sie
 msgid "You're using a Virtual Account."
 msgstr "Sie benutzen ein virtuelles Konto."
 
-msgid "Your %1 account is unavailable. For any questions please contact %2."
-msgstr "Ihr %1 Konto ist nicht verfügbar. Bei Fragen hierzu setzen Sie sich bitte mit %2 in Verbindung."
-
-msgid "Your %1 accounts are unavailable. For any questions please contact %2."
-msgstr "Ihre %1 Konten sind nicht verfügbar. Bei Fragen hierzu setzen Sie sich bitte mit %2 in Verbindung."
-
 msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other currency)."
 msgstr "Ihr %1 Tage Abhebelimit beträgt derzeit %2 %3 (oder Gegenwert in einer anderen Währung)."
 
@@ -7398,11 +7462,11 @@ msgstr "Ihr Konto hat keine Anmelde- und/oder Abmeldeaktivität."
 msgid "Your account has no trading activity."
 msgstr "Ihr Konto hat keine Handelsaktivität."
 
+msgid "Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact %1."
+msgstr ""
+
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "Ihr Konto ist vollständig authentifiziert und Ihr Abhebelimit wurde angehoben."
-
-msgid "Your account is fully authenticated. You can view your %1trading limits here"
-msgstr "Ihr Konto ist vollständig authentifiziert. Ihre %1 Handelslimits sind hier ersichtlich"
 
 msgid "Your account is fully authenticated. You can view your <a class=\"pjaxload\" href=\"%1\">trading limits here</a>."
 msgstr "Ihr Konto ist vollständig authentifiziert. Ihre <a class=\"pjaxload\" href=\"%1\">Abschlusslimits sind hier ersichtlich</a>."
@@ -7412,9 +7476,6 @@ msgstr "Ihr Konto ist nicht vollständig bestätigt. Weitere Informationen erhal
 
 msgid "Your account is not fully authenticated. Please visit the <a href=\"%1\">authentication</a> page for more information."
 msgstr "Ihr Konto ist nicht vollständig bestätigt. Weitere Informationen erhalten Sie auf der <a href=\"%1\">Bestätigung</a> Seite."
-
-msgid "Your account is registered as a Payment Agent."
-msgstr "Ihr Konto ist als Zahlungsagent registriert."
 
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "Ihr Konto darf nicht als Bankkonto verwendet werden und Einzahlungen dürfen nur im Hinblick auf die Verwendung für den Kauf von Kontrakten erfolgen. Das Unternehmen ist keine Finanzinstitution. Die Kunden erhalten für Ihre Guthaben keine Zinsen. Sollten Sie wiederholt Einzahlungen und Abhebungen vornehmen, ohne dass entsprechende Kontrakte platziert werden, behalten wir uns das Recht vor, ohne vorherige Ankündigung vor Kündigung des Kontos, dieses mit anfallenden Bankgebühren zu belasten."
@@ -8443,6 +8504,51 @@ msgstr "Allgemeine Geschäftsbedingungen Zustimmung"
 msgid "Trading with MetaTrader 5"
 msgstr "Handeln mit MetaTrader 5"
 
+#~ msgid "Charts"
+#~ msgstr "Diagramme"
+
+#~ msgid "LOG OUT"
+#~ msgstr "AUSLOGGEN"
+
+#~ msgid "Make a deposit or withdraw."
+#~ msgstr "Nehmen Sie eine Ein- oder Auszahlung vor."
+
+#~ msgid "Manage your account access and security settings."
+#~ msgstr "Verwaltung Ihres Kontozugriffs und der Sicherheitseinstellungen."
+
+#~ msgid "Transfer to client"
+#~ msgstr "Überweisung an den Kunden"
+
+#~ msgid "View your historical transactions."
+#~ msgstr "Ihre bisherigen Überweisungen anzeigen."
+
+#~ msgid "View your open positions."
+#~ msgstr "Ihre offenen Positionen anzeigen."
+
+#~ msgid "View your trading profit/loss."
+#~ msgstr "Die Gewinne/Verluste Ihrer Geschäfte ansehen."
+
+#~ msgid "Welcome!"
+#~ msgstr "Willkommen!"
+
+#~ msgid "You are currently logged in to your real money account with %1 (%2)."
+#~ msgstr "Sie sind derzeit in Ihr Echtgeldkonto bei %1 (%2) eingeloggt."
+
+#~ msgid "You are currently logged in to your virtual money account (%2)."
+#~ msgstr "Sie sind derzeit in Ihr virtuelles Geld Konto (2%) eingeloggt."
+
+#~ msgid "Your %1 account is unavailable. For any questions please contact %2."
+#~ msgstr "Ihr %1 Konto ist nicht verfügbar. Bei Fragen hierzu setzen Sie sich bitte mit %2 in Verbindung."
+
+#~ msgid "Your %1 accounts are unavailable. For any questions please contact %2."
+#~ msgstr "Ihre %1 Konten sind nicht verfügbar. Bei Fragen hierzu setzen Sie sich bitte mit %2 in Verbindung."
+
+#~ msgid "Your account is fully authenticated. You can view your %1trading limits here"
+#~ msgstr "Ihr Konto ist vollständig authentifiziert. Ihre %1 Handelslimits sind hier ersichtlich"
+
+#~ msgid "Your account is registered as a Payment Agent."
+#~ msgstr "Ihr Konto ist als Zahlungsagent registriert."
+
 #~ msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
 #~ msgstr "<span class='color-green font-weight-700'>Alle Laufzeiten:</span> von 10 Sekunden bis 365 Tage."
 
@@ -8635,9 +8741,6 @@ msgstr "Handeln mit MetaTrader 5"
 
 #~ msgid "The future of trading on %1"
 #~ msgstr "Die Zukunft des Handelns auf %1"
-
-#~ msgid "Tick Trade App"
-#~ msgstr "Tick-Trade App"
 
 #~ msgid "Tick Trade on GitHub"
 #~ msgstr "Tick-Trade auf GitHub"
@@ -9463,9 +9566,6 @@ msgstr "Handeln mit MetaTrader 5"
 #~ msgid "Login to this account has been temporarily disabled due to system maintenance. Please try again in 30 minutes."
 #~ msgstr "Das Login in dieses Konto wurde aufgrund einer Systemwartung vorläufig deaktiviert. Bitte versuchen Sie es in 30 Minuten wieder."
 
-#~ msgid "Lost Password?"
-#~ msgstr "Passwort entfallen?"
-
 #~ msgid "Low"
 #~ msgstr "Niedrig"
 
@@ -9705,9 +9805,6 @@ msgstr "Handeln mit MetaTrader 5"
 
 #~ msgid "Relative Strength Index"
 #~ msgstr "Relativer-Stärke-Index"
-
-#~ msgid "Reload page"
-#~ msgstr "Seite erneut laden"
 
 #~ msgid "Remove Overlay"
 #~ msgstr "Overlay entfernen"
@@ -15181,9 +15278,6 @@ msgstr "Handeln mit MetaTrader 5"
 #~ msgid "Binary.com's Random Indices are the random 25 Index, Random 50 Index, Random 75 Index, and Random 100 Index and many more."
 #~ msgstr "Die Random Indizes von Binary.com sind der Random 25 Index, Random 50 Index, Random 75 Index, Random 100 Indes und viele weitere."
 
-#~ msgid "Get your free $10,000 virtual money"
-#~ msgstr "Holen Sie sich Ihre gratis 10.000 $ virtuelles Geld"
-
 #~ msgid "Join our community of 1,000,000+ traders"
 #~ msgstr "Treten Sie unserer Gemeinschaft von 1.000.000+ Händlern bei"
 
@@ -19627,9 +19721,6 @@ msgstr "Handeln mit MetaTrader 5"
 
 #~ msgid "If you're still new to financial trading, feel free to browse through our different trading guides in our <a href=\"%1\">educational corner</a>. This section contains free trading guides that are easy to use and understand. Create your own trading strategy and start using it today."
 #~ msgstr "Machen Sie einfach einen Streifzug durch unsere unterschiedlichen Trading-Anleitungen unserer <a href=\"%1\">Schulungsecke</a>, wenn Sie noch zu den Neulingen des Finanzhandels gehören. Diese Sektion enthält kostenlose Trading-Anleitungen, die man einfach benutzen und verstehen kann. Erstellen Sie Ihre eigene Trading-Strategie und wenden Sie sie noch heute an."
-
-#~ msgid "Insert your login ID and password"
-#~ msgstr "Geben Sie Ihre Log-in ID und Passwort ein"
 
 #~ msgid "Instantly see your total risk and return."
 #~ msgstr "Sie können Ihr Gesamtrisiko und Rendite sofort ansehen."
