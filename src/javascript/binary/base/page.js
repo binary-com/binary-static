@@ -1129,3 +1129,15 @@ Page.prototype = {
         }
     },
 };
+
+module.exports = {
+    clock_started: clock_started,
+    GTM: GTM,
+    User: User,
+    Client: Client,
+    URL: URL,
+    Menu: Menu,
+    Header: Header,
+    Contents: Contents,
+    Page: Page,
+};

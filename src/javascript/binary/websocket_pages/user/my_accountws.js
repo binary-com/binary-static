@@ -188,3 +188,7 @@ pjax_config_page_require_auth("user/my_accountws", function() {
         }
     };
 });
+
+module.exports = {
+    MyAccountWS: MyAccountWS,
+};

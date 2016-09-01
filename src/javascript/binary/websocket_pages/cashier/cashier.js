@@ -52,3 +52,7 @@ pjax_config_page("/cashier/payment_methods", function(){
         }
     };
 });
+
+module.exports = {
+    Cashier: Cashier,
+};

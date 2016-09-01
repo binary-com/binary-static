@@ -77,3 +77,6 @@ DatePicker.prototype = {
         return config;
     },
 };
+
+module.exports = {
+};

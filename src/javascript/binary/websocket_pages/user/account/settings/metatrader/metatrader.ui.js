@@ -439,3 +439,7 @@ var MetaTraderUI = (function() {
         responseLandingCompany : responseLandingCompany,
     };
 }());
+
+module.exports = {
+    MetaTraderUI: MetaTraderUI,
+};

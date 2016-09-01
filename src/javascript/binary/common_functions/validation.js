@@ -218,3 +218,10 @@ function showPasswordError(password) {
 
   return errMsgs;
 }
+
+module.exports = {
+    Validate: Validate,
+    validateEmail: validateEmail,
+    passwordValid: passwordValid,
+    showPasswordError: showPasswordError,
+};

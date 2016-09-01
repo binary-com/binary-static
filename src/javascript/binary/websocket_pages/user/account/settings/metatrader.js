@@ -57,3 +57,7 @@ var MetaTrader = (function(){
         validateAmount  : validateAmount,
     };
 }());
+
+module.exports = {
+    MetaTrader: MetaTrader,
+};

@@ -156,3 +156,7 @@ var Guide = (function() {
 		init: init
 	};
 })();
+
+module.exports = {
+    Guide: Guide,
+};

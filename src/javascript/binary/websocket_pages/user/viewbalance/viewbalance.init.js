@@ -7,3 +7,7 @@ var ViewBalance = (function () {
         init: init
     };
 }());
+
+module.exports = {
+    ViewBalance: ViewBalance,
+};

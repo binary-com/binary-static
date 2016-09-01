@@ -179,3 +179,7 @@ var JapanAccOpeningUI = function () {
       fireRequest: fireRequest,
   };
 }();
+
+module.exports = {
+    JapanAccOpeningUI: JapanAccOpeningUI,
+};

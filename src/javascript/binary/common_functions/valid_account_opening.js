@@ -127,3 +127,7 @@ var ValidAccountOpening = (function(){
     checkAnswer: checkAnswer
   };
 }());
+
+module.exports = {
+    ValidAccountOpening: ValidAccountOpening,
+};

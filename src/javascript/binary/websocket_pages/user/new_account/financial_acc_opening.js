@@ -48,3 +48,6 @@ pjax_config_page_require_auth("new_account/maltainvestws", function(){
     }
   };
 });
+
+module.exports = {
+};

@@ -1,6 +1,5 @@
 var Statement = (function(){
     'use strict';
-    var Compatibility = typeof window !== 'undefined' ? window.Compatibility : require('../../../common_functions/compatibility');
     var moment = Compatibility.requireIfNotExist('moment', '../../lib/moment/moment'),
         StringUtil = Compatibility.requireIfNotExist('StringUtil', '../common_functions/string_util'),
         addComma = Compatibility.requireIfNotExist('addComma', '../websocket_pages/trade/common', 'addComma');

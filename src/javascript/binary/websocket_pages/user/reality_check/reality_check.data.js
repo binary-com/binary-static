@@ -114,3 +114,7 @@ var RealityCheckData = (function () {
         triggerCloseEvent: triggerCloseEvent
     };
 }());
+
+module.exports = {
+    RealityCheckData: RealityCheckData,
+};

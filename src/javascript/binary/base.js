@@ -264,3 +264,14 @@ for (var key in texts_json) {
 
 // make markets object
 var markets = new Markets(markets_list, markets_json);
+
+module.exports = {
+    page: page,
+    make_mobile_menu: make_mobile_menu,
+    TUser: TUser,
+    texts: texts,
+    markets: markets,
+    changeUrlToSameDomain: changeUrlToSameDomain,
+    formEffects: formEffects,
+    add_click_effect_to_button: add_click_effect_to_button,
+};

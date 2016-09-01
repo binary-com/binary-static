@@ -192,3 +192,7 @@ var Contract = (function() {
     };
 
 })();
+
+module.exports = {
+    Contract: Contract,
+};

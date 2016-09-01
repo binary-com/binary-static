@@ -117,3 +117,6 @@ DatePicker.SelectedDates.prototype = {
 //        return localizations;
 //    },
 };
+
+module.exports = {
+};

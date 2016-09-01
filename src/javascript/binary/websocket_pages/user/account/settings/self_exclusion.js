@@ -342,3 +342,7 @@ var SelfExclusionWS = (function() {
         init: init,
     };
 }());
+
+module.exports = {
+    SelfExclusionWS: SelfExclusionWS,
+};

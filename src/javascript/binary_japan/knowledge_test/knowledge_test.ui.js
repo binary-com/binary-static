@@ -121,3 +121,7 @@ var KnowledgeTestUI = (function () {
         createKnowledgeTestLink: createKnowledgeTestLink,
     };
 }());
+
+module.exports = {
+    KnowledgeTestUI: KnowledgeTestUI,
+};

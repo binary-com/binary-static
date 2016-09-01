@@ -18,3 +18,6 @@ pjax_config_page_require_auth("paymentagent/transferws", function(){
         }
     };
 });
+
+module.exports = {
+};

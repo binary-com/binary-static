@@ -184,3 +184,7 @@ var ResetPassword = (function () {
         init: init
     };
 }());
+
+module.exports = {
+    ResetPassword: ResetPassword,
+};

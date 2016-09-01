@@ -65,3 +65,7 @@ var LimitsWS = (function(){
         clean: initTable
     };
 }());
+
+module.exports = {
+    LimitsWS: LimitsWS,
+};

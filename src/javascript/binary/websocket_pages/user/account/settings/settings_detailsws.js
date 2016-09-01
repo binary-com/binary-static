@@ -289,3 +289,7 @@ pjax_config_page_require_auth("settings/detailsws", function() {
         }
     };
 });
+
+module.exports = {
+    SettingsDetailsWS: SettingsDetailsWS,
+};

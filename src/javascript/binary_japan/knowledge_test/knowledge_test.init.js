@@ -193,3 +193,7 @@ var KnowledgeTest = (function() {
         showKnowledgeTestTopBarIfValid: showKnowledgeTestTopBarIfValid
     };
 }());
+
+module.exports = {
+    KnowledgeTest: KnowledgeTest,
+};

@@ -74,3 +74,7 @@ var PaymentAgentTransferUI = (function () {
         updateDoneView: updateDoneView
     };
 }());
+
+module.exports = {
+    PaymentAgentTransferUI: PaymentAgentTransferUI,
+};

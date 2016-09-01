@@ -94,3 +94,7 @@ var MetaTraderData = (function() {
         requestLandingCompany: requestLandingCompany,
     };
 }());
+
+module.exports = {
+    MetaTraderData: MetaTraderData,
+};

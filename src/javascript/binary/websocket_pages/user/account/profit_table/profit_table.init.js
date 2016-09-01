@@ -119,3 +119,7 @@ var ProfitTableWS = (function () {
         clean: initTable
     };
 }());
+
+module.exports = {
+    ProfitTableWS: ProfitTableWS,
+};

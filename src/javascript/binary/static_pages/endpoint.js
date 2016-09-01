@@ -25,3 +25,9 @@ pjax_config_page("endpoint", function(){
         }
     };
 });
+
+module.exports = {
+    getAppId: getAppId,
+    getSocketURL: getSocketURL,
+    pjax_config_page: pjax_config_page,
+};

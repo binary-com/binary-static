@@ -204,3 +204,7 @@ var PortfolioWS =  (function() {
     };
 
 })();
+
+module.exports = {
+    PortfolioWS: PortfolioWS,
+};

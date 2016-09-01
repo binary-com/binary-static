@@ -667,3 +667,7 @@ pjax_config_page("profit_tablews|statementws|portfoliows|trading", function() {
         }
     };
 });
+
+module.exports = {
+    ViewPopupWS: ViewPopupWS,
+};

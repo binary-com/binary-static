@@ -86,3 +86,7 @@ var ApplicationsUI = (function(){
         displayError: displayError,
     };
 }());
+
+module.exports = {
+    ApplicationsUI: ApplicationsUI,
+};

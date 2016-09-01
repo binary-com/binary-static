@@ -119,3 +119,7 @@ var ProfitTableUI = (function(){
         }
     };
 }());
+
+module.exports = {
+    ProfitTableUI: ProfitTableUI,
+};

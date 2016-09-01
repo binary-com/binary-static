@@ -37,3 +37,6 @@ pjax_config_page('/get-started-jp', function() {
         }
     };
 });
+
+module.exports = {
+};

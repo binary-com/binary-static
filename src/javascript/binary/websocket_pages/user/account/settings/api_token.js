@@ -225,3 +225,7 @@ var APITokenWS = (function() {
         init: init,
     };
 }());
+
+module.exports = {
+    APITokenWS: APITokenWS,
+};

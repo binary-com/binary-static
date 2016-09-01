@@ -33,3 +33,7 @@ var StatementData = (function(){
         hasOlder: hasOlder
     };
 }());
+
+module.exports = {
+    StatementData: StatementData,
+};

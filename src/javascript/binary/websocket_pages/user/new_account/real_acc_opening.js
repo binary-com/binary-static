@@ -31,3 +31,6 @@ pjax_config_page("new_account/realws", function(){
     }
   };
 });
+
+module.exports = {
+};

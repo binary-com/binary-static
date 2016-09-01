@@ -339,3 +339,8 @@ function BinarySocketClass() {
 }
 
 var BinarySocket = new BinarySocketClass();
+
+module.exports = {
+    BinarySocket: BinarySocket,
+    BinarySocketClass: BinarySocketClass,
+};

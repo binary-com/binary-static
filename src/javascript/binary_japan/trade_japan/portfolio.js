@@ -52,3 +52,7 @@ var JapanPortfolio = (function() {
     isActive: isActive,
   };
 })();
+
+module.exports = {
+    JapanPortfolio: JapanPortfolio,
+};

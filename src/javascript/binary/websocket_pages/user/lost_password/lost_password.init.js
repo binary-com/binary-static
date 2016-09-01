@@ -56,3 +56,7 @@ var LostPassword = (function() {
         init: init
     };
 }());
+
+module.exports = {
+    LostPassword: LostPassword,
+};

@@ -386,3 +386,8 @@ WSTickDisplay.updateChart = function(data, contract) {
       WSTickDisplay.dispatch(data);
     }
 };
+
+module.exports = {
+    TickDisplay: TickDisplay,
+    WSTickDisplay: WSTickDisplay,
+};

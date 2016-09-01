@@ -20,3 +20,5 @@ var Compatibility = (function() {
     return external;
 }());
 /* jshint ignore:end */
+
+global.Compatibility = Compatibility;

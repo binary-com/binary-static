@@ -276,3 +276,7 @@ pjax_config_page_require_auth("account/account_transferws", function() {
         }
     };
 });
+
+module.exports = {
+    account_transferws: account_transferws,
+};

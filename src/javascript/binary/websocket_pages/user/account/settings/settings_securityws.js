@@ -180,3 +180,7 @@ var SecurityWS = (function() {
         init: init,
     };
 })();
+
+module.exports = {
+    SecurityWS: SecurityWS,
+};

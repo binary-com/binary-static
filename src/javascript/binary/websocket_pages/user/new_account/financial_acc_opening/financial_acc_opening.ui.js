@@ -137,3 +137,7 @@ var FinancialAccOpeningUI = (function(){
     checkValidity: checkValidity
   };
 })();
+
+module.exports = {
+    FinancialAccOpeningUI: FinancialAccOpeningUI,
+};

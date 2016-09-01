@@ -32,3 +32,6 @@ pjax_config_page("new_account/japanws", function(){
     }
   };
 });
+
+module.exports = {
+};

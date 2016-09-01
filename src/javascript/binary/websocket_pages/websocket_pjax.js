@@ -78,3 +78,6 @@ pjax_config_page_require_auth("user/settings/securityws", function() {
         }
     };
 });
+
+module.exports = {
+};

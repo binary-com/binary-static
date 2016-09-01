@@ -33,3 +33,7 @@ var ProfitTableData = (function(){
         initSocket: initSocket
     };
 }());
+
+module.exports = {
+    ProfitTableData: ProfitTableData,
+};

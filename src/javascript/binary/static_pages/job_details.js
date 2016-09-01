@@ -101,3 +101,7 @@ pjax_config_page('/open-positions/job-details', function() {
         }
     };
 });
+
+module.exports = {
+    JobDetails: JobDetails,
+};

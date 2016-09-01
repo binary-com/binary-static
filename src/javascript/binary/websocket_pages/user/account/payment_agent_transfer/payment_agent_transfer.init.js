@@ -184,3 +184,7 @@ var PaymentAgentTransfer = (function () {
         paymentAgentTransferHandler: paymentAgentTransferHandler
     };
 }());
+
+module.exports = {
+    PaymentAgentTransfer: PaymentAgentTransfer,
+};

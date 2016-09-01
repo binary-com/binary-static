@@ -125,3 +125,10 @@ SubMarket.prototype = {
         return;
     },
 };
+
+module.exports = {
+    Markets: Markets,
+    Market: Market,
+    SubMarket: SubMarket,
+    localizeName: localizeName,
+};

@@ -90,3 +90,7 @@ var StatementUI = (function(){
         }
     };
 }());
+
+module.exports = {
+    StatementUI: StatementUI,
+};

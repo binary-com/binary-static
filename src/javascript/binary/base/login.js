@@ -30,3 +30,7 @@ var Login = (function() {
         login_url        : login_url,
     };
 }());
+
+module.exports = {
+    Login: Login,
+};

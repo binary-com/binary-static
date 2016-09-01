@@ -137,3 +137,7 @@ var StatementWS = (function(){
         clean: cleanStatementPageState
     };
 }());
+
+module.exports = {
+    StatementWS: StatementWS,
+};

@@ -86,3 +86,6 @@ pjax_config_page("new_account/virtualws", function() {
         }
     };
 });
+
+module.exports = {
+};

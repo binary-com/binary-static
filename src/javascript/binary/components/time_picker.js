@@ -78,3 +78,6 @@ TimePicker.prototype = {
         return config;
     },
 };
+
+module.exports = {
+};

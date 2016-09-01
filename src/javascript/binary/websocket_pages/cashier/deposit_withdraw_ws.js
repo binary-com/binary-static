@@ -167,3 +167,7 @@ pjax_config_page_require_auth("cashier/forwardws", function() {
         }
     };
 });
+
+module.exports = {
+    ForwardWS: ForwardWS,
+};

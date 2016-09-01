@@ -110,3 +110,7 @@ pjax_config_page_require_auth('user/change_password', function() {
         }
     };
 });
+
+module.exports = {
+    PasswordWS: PasswordWS,
+};

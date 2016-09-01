@@ -638,3 +638,7 @@ var Highchart = (function() {
     dispatch     : dispatch
   };
 }());
+
+module.exports = {
+    Highchart: Highchart,
+};

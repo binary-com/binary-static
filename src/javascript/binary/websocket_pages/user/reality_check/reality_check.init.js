@@ -125,3 +125,7 @@ var RealityCheck = (function () {
         sendAccountStatus: sendAccountStatus
     };
 }());
+
+module.exports = {
+    RealityCheck: RealityCheck,
+};

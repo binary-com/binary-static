@@ -109,3 +109,7 @@ pjax_config_page_require_auth("tnc_approvalws", function() {
         }
     };
 });
+
+module.exports = {
+    TNCApproval: TNCApproval,
+};

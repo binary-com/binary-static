@@ -10,3 +10,7 @@ function onlyNumericOnKeypress(ev) {
         ev.preventDefault();
     }
 }
+
+module.exports = {
+    onlyNumericOnKeypress: onlyNumericOnKeypress,
+};

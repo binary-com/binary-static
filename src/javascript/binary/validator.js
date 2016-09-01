@@ -151,3 +151,12 @@ bind_validation.simple = function(form, opts) {
         },
     });
 };
+
+module.exports = {
+    ValidationUI: ValidationUI,
+    customError: customError,
+    withContext: withContext,
+    validate_object: validate_object,
+    stripTrailing: stripTrailing,
+    bind_validation: bind_validation,
+};

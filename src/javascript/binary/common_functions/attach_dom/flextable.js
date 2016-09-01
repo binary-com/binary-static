@@ -52,3 +52,7 @@ FlexTableUI.prototype = {
         $('#' + this.id + '> tfoot').hide();
     }
 };
+
+module.exports = {
+    FlexTableUI: FlexTableUI,
+};

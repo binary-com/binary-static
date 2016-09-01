@@ -88,3 +88,7 @@ pjax_config_page_require_auth("top_up_virtualws", function() {
         }
     };
 });
+
+module.exports = {
+    TopUpVirtualWS: TopUpVirtualWS,
+};
