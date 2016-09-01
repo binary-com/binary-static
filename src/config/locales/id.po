@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-24 08:58+0000\n"
+"PO-Revision-Date: 2016-09-01 02:53+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.8-dev\n"
+"X-Generator: Weblate 2.8\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"%1 API\" adalah set eksklusif dari rutinitas program %1, protokol, alat dan sumber daya yang diciptakan dan dikelola oleh %1 yang dapat memberi Anda fasilitas untuk menggunakan aplikasi terdaftar pada platform trading %1."
@@ -419,10 +419,8 @@ msgstr "<< Kembali ke Deskripsi Pekerjaan"
 msgid "<a class='pjaxload' href='mailto:%1'>Contact Us</a>"
 msgstr "<a class='pjaxload' href='mailto:%1'>Hubungi Kami</a>"
 
-#, fuzzy
-#| msgid "View <a href=\"%1\">Asset Index.</a>"
 msgid "<a href=\"%1\">Return to trading page</a>"
-msgstr "Lihat <a href=\"%1\">Index Aset.</a>"
+msgstr "<a href=\"%1\">Kembali ke halaman trading</a>"
 
 msgid "<a href='%1'>Founded</a> October 1999"
 msgstr "<a href='%1'>Didirikan</a> Oktober 1999"
@@ -488,18 +486,14 @@ msgstr "<strong>Paparan bisnis tambahan:</strong> Anda akan memperjelas layanan 
 msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
 msgstr "<strong>Alat canggih untuk analisa fundamental dan teknis,</strong> termasuk indikator, grafik, dan banyak lagi."
 
-#, fuzzy
-#| msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgid "<strong>All durations:</strong> from 10 seconds to 365 days."
-msgstr "<strong>Semua durasi</strong> - dari 10 detik hingga 365 hari."
+msgstr "<strong>Semua durasi:</strong> dari 10 detik hingga 365 hari."
 
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>Semua durasi</strong> - dari 10 detik hingga 365 hari."
 
-#, fuzzy
-#| msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
 msgid "<strong>All market conditions:</strong> up/down, touch/no-touch, stays in/goes out."
-msgstr "<strong>Semua kondisi pasar</strong> - naik/turun, menyentuh/tidak menyentuh, di dalam/di luar."
+msgstr "<strong>Semua kondisi pasar:</strong> naik/turun, menyentuh/tidak menyentuh, tetap/keluar."
 
 msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
 msgstr "<strong>Semua kondisi pasar</strong> - naik/turun, menyentuh/tidak menyentuh, di dalam/di luar."
@@ -507,18 +501,14 @@ msgstr "<strong>Semua kondisi pasar</strong> - naik/turun, menyentuh/tidak menye
 msgid "<strong>All markets, all conditions</strong> - trade currencies, indices and commodities in rising, falling, sideways, quiet and volatile markets."
 msgstr "<strong>Semua pasar, semua kondisi</strong> - trading mata uang, indeks dan komoditas pada kenaikan, penurunan, sideway, sepi atau volatilitas pasar."
 
-#, fuzzy
-#| msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgid "<strong>All markets:</strong> currencies, stocks, indices, and commodities."
-msgstr "<strong>Semua pasar</strong> - valuta asing, indeks saham dan komoditas."
+msgstr "<strong>Semua pasar:</strong> valuta asing, indeks saham dan komoditas."
 
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgstr "<strong>Semua pasar</strong> - valuta asing, indeks saham dan komoditas."
 
-#, fuzzy
-#| msgid "<strong>All payouts</strong> - from $1 to $50,000."
 msgid "<strong>All payouts:</strong> from $1 to $50,000."
-msgstr "<strong>Hasil</strong> - dari $1 hingga $50,000."
+msgstr "<strong>Hasil:</strong> dari $1 hingga $50,000."
 
 msgid "<strong>All payouts</strong> - from $1 to $50,000."
 msgstr "<strong>Hasil</strong> - dari $1 hingga $50,000."
@@ -773,6 +763,16 @@ msgstr "Preferensi dan semangat pada Linux dan platform open-source"
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "Memiliki pendekatan proaktif untuk memecahkan masalah dan memberikan solusi kepada klien"
 
+#, fuzzy
+#| msgid "- A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+msgstr "- Salinan scan dari tagihan utilitas atau rekening koran (tidak melebihi 3 bulan)."
+
+#, fuzzy
+#| msgid "- A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth."
+msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
+msgstr "- Salinan scan dari paspor, SIM atau KTP, yang memperlihatkan nama dan tanggal lahir Anda."
+
 msgid "A strong and passionate interest in Marketing and Advertising"
 msgstr "Memiliki minat besar dan ketertarikan dalam dunia Pemasaran dan Periklanan"
 
@@ -860,6 +860,11 @@ msgstr "Pengelolaan Akun dan Pelacakan"
 msgid "Account Opening"
 msgstr "Pendaftaran Akun"
 
+#, fuzzy
+#| msgid "Lost Password?"
+msgid "Account Password"
+msgstr "Lupa Kata Sandi?"
+
 msgid "Account Transfer"
 msgstr "Transfer Akun"
 
@@ -943,6 +948,11 @@ msgstr "Pembatasan Kesepakatan"
 
 msgid "Agreement for documents"
 msgstr "Perjanjian untuk dokumen"
+
+#, fuzzy
+#| msgid "A True Partnership"
+msgid "All Partnership Options"
+msgstr "Kemitraan Sejati"
 
 msgid "All affiliate activities must be conducted in a professional and proper manner. You shall be expected to act with good faith and integrity in your relationships with your referrals, and always act in the best interests of your referrals."
 msgstr "Semua kegiatan afiliasi harus dilakukan secara profesional dan tepat. Anda harus bertindak dengan itikad baik dan memiliki integritas dalam hubungan Anda dengan referral Anda, dan selalu bertindak untuk kepentingan terbaik bagi referral Anda."
@@ -1079,6 +1089,9 @@ msgstr "Kelayakan"
 
 msgid "Appropriateness Test"
 msgstr "Ketepatan Uji"
+
+msgid "Apps"
+msgstr ""
 
 msgid "Apr"
 msgstr "Apr"
@@ -1347,6 +1360,11 @@ msgstr "Binary Ltd, dengan alamat di <span itemprop='location'>47 Esplanade, St.
 msgid "Binary Options Basics"
 msgstr "Opsi Binary Dasar"
 
+#, fuzzy
+#| msgid "Binary option"
+msgid "Binary Shop"
+msgstr "Opsi binary"
+
 msgid "Binary Trading is simple to learn and to execute."
 msgstr "Trading Binary adalah sederhana dan mudah."
 
@@ -1489,6 +1507,16 @@ msgstr "Karir"
 msgid "Cashier"
 msgstr "Kasir"
 
+#, fuzzy
+#| msgid "Cashier password"
+msgid "Cashier Password"
+msgstr "Kata sandi Kasir"
+
+#, fuzzy
+#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgstr "Penarikan terkunci, silahkan <a class=\"pjaxload\" href=\"%1\">hubungi kami</a> untuk info lebih lanjut."
+
 msgid "Cashier password"
 msgstr "Kata sandi Kasir"
 
@@ -1501,10 +1529,17 @@ msgstr "Rubah Endpoint API"
 msgid "Change Password"
 msgstr "Perubahan Kata Sandi"
 
-msgid "Chart"
-msgstr "Grafik"
+#, fuzzy
+#| msgid "Hundreds of deposit and withdrawal options."
+msgid "Change the password used for deposits and withdrawals."
+msgstr "Ratusan pilihan metode deposit dan penarikan."
 
-msgid "Charts"
+#, fuzzy
+#| msgid "Insert your login ID and password"
+msgid "Change your main login password."
+msgstr "Masukkan login ID dan password"
+
+msgid "Chart"
 msgstr "Grafik"
 
 msgid "Check out our commission rates below:"
@@ -2038,6 +2073,11 @@ msgstr "Deposit dana kedalam akun MetaTrader Anda dari akun Binary Anda:"
 msgid "Deposit is done. Transaction ID:"
 msgstr "Deposit selesai. ID transaksi:"
 
+#, fuzzy
+#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgstr "Penarikan terkunci, silahkan <a class=\"pjaxload\" href=\"%1\">hubungi kami</a> untuk info lebih lanjut."
+
 msgid "Deposit of"
 msgstr "Deposit dari"
 
@@ -2061,6 +2101,9 @@ msgstr "Deposit: Langsung"
 
 msgid "Depositing and withdrawing funds"
 msgstr "Penyetoran dan penarikan dana"
+
+msgid "Deposits and withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
+msgstr ""
 
 msgid "Derivative"
 msgstr "Derivatif"
@@ -2746,8 +2789,21 @@ msgstr "Struktur Persentasi Komisi"
 msgid "Germany"
 msgstr "Jerman"
 
+#, fuzzy
+#| msgid "Over $1,000,000"
+msgid "Get JPY 1,000,000"
+msgstr "Lebih dari $1,000,000"
+
 msgid "Get Started"
 msgstr "Memulai"
+
+msgid "Get USD 10,000.00"
+msgstr ""
+
+#, fuzzy
+#| msgid "Get your free $10,000 virtual money"
+msgid "Get more virtual money"
+msgstr "Dapatkan gratis $10,000 uang virtual"
 
 msgid "Get your price"
 msgstr "Dapatkan harga"
@@ -2940,10 +2996,8 @@ msgstr "Jika ketentuan apapun dalam Perjanjian ini dianggap tidak berlaku atau t
 msgid "If the Company is legally required to disclose your personal or financial information by law, regulation or pursuant to the order of a court of competent jurisdiction or a governmental agency, the Company  shall, unless legally prohibited, promptly notify you to that effect, in order to give you the opportunity to seek such protection for the information as it deems appropriate. Such required disclosure shall not be construed as a breach of this Terms and Conditions Agreement."
 msgstr "Jika Perusahaan diwajibkan secara hukum untuk menginformasikan data pribadi atau keuangan Anda oleh hukum, regulasi atau sesuai dengan perintah dari pengadilan yang berwenang atau badan pemerintah, Perusahaan harus, kecuali dilarang secara hukum, segera memberitahu Anda mengenai hal tersebut, untuk memberikan kesempatan kepada Anda dalam mencari perlindungan yang dianggap perlu. Pengungkapan yang diperlukan tersebut tidak dapat ditafsirkan sebagai pelanggaran Syarat dan Ketentuan Perjanjian ini."
 
-#, fuzzy
-#| msgid "This account is unavailable. For any questions please contact <a href=\"%1\">Customer Support</a>."
 msgid "If the issue keeps happening, please contact <a href=\"%1\">customer support</a>."
-msgstr "Akun ini untuk sementara dibatalkan, silahkan hubungi <a href=\"%1\">Customer Support</a>."
+msgstr "Jika masalah ini terus berlangsung, silahkan hubungi <a href=\"%1\">customer support</a>."
 
 msgid "If this Agreement is terminated for any reason, you must permanently delete all Content, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
 msgstr "Jika Perjanjian ini dihentikan berhubung alasan apapun, maka Anda harus menghapus secara permanen semua Konten, kecuali jika melakukan hal tersebut akan menyebabkan Anda melanggar hukum atau kewajiban yang dibebankan oleh sebuah otoritas pemerintah."
@@ -3849,9 +3903,6 @@ msgstr "Memiliki pengetahuan tentang teori probabilitas, metode numerik, simulas
 msgid "Knowledge of probability theory, stochastic calculus, numerical methods, Monte-Carlo simulation, differential equations, econometrics, and statistical modeling"
 msgstr "Memiliki pengetahuan tentang teori probabilitas, kalkulus stokastik, metode numerik, simulasi Monte-Carlo, persamaan diferensial, ekonometrik, dan pemodelan statistik"
 
-msgid "LOG OUT"
-msgstr "KELUAR"
-
 msgid "Languages"
 msgstr "Bahasa"
 
@@ -4035,9 +4086,6 @@ msgstr "Menjaga kecepatan dan volume output yang memadai"
 msgid "Make a Deposit"
 msgstr "Lakukan Deposit"
 
-msgid "Make a deposit or withdraw."
-msgstr "Deposit atau menarik dana."
-
 msgid "Make your trade"
 msgstr "Lakukan trading Anda"
 
@@ -4055,9 +4103,6 @@ msgstr "Mengelola keamanan, deteksi intrusi, perlindungan DDoS dan tindakan kepa
 
 msgid "Manage the company's cashier system"
 msgstr "Mengelola sistem kasir perusahaan"
-
-msgid "Manage your account access and security settings."
-msgstr "Mengelola akses akun Anda dan pengaturan keamanan."
 
 msgid "Manage your authorised applications."
 msgstr "Mengelola aplikasi resmi Anda."
@@ -4449,10 +4494,8 @@ msgstr "Dalam waktu lima tahun kami telah mengantongi beberapa penghargaan. Hal 
 msgid "Only one account is allowed per person. No winnings and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person."
 msgstr "Hanya satu akun riil per orang. Anda tidak dibenarkan untuk melakukan penarikan dana jika akun dibuka menggunakan nama palsu atau jika anda memiliki lebih dari satu akun riil."
 
-#, fuzzy
-#| msgid "No Data available"
 msgid "Oops... Page Not Available"
-msgstr "tidak ada data yang ada"
+msgstr "Maaf ... Halaman Tidak Tersedia"
 
 msgid "Open"
 msgstr "Awal"
@@ -4955,6 +4998,11 @@ msgstr "Kemahiran dalam bahasa scripting - diutamakan Perl"
 msgid "Proficiency in a second language (oral and written) is preferred"
 msgstr "Kemahiran dalam bahasa kedua (lisan dan tulisan) lebih diutamakan"
 
+#, fuzzy
+#| msgid "Profit"
+msgid "Profile"
+msgstr "Keuntungan"
+
 msgid "Profit"
 msgstr "Keuntungan"
 
@@ -5074,6 +5122,11 @@ msgstr "Ref."
 
 msgid "Reference ID"
 msgstr "ID referensi"
+
+#, fuzzy
+#| msgid "Reload page"
+msgid "Refresh page"
+msgstr "Reload halaman"
 
 msgid "Regent Markets Group Ltd. renames to Binary Ltd."
 msgstr "Regent Markets Group Ltd. mengganti nama ke Binary Ltd."
@@ -5297,6 +5350,11 @@ msgstr "Pertanyaan rahasia"
 msgid "Security"
 msgstr "Keamanan"
 
+#, fuzzy
+#| msgid "Account Limits"
+msgid "Security & Limits"
+msgstr "Batasan rekening"
+
 msgid "Security Disclaimer"
 msgstr "Keamanan Sangkalan"
 
@@ -5415,6 +5473,11 @@ msgid "Sign Up to Test Our Platform"
 msgstr "Daftar Untuk Mencoba Platform Kami"
 
 msgid "Sign me up"
+msgstr "Daftarkan saya"
+
+#, fuzzy
+#| msgid "Sign me up"
+msgid "Sign out"
 msgstr "Daftarkan saya"
 
 msgid "Sign up as a tester and look for Binary.com-related projects."
@@ -6085,7 +6148,7 @@ msgid "The maximum number of tokens (%1) has been reached."
 msgstr "Jumlah maksimum token (%1) telah tercapai."
 
 msgid "The page you requested could not be found. Either it no longer exists or the address is wrong. Please check for any typos."
-msgstr ""
+msgstr "Halaman yang Anda minta tidak dapat ditemukan. Mungkin berhubung sudah tidak tersedia lagi atau alamat salah. Silakan periksa jika terdapat salah pengetikkan."
 
 msgid "The patent means Regent Markets is the recognised pioneer of binary betting. The patent helps protect our innovations."
 msgstr "Paten berarti Regent Markets diakui sebagai perintis trading binary. Paten ini membantu melindungi inovasi kami."
@@ -6307,6 +6370,11 @@ msgstr "Kamis"
 msgid "Tick"
 msgstr "Tik"
 
+#, fuzzy
+#| msgid "Tick Trade App"
+msgid "TickTrade App"
+msgstr "App Trading Tik"
+
 msgid "Tier"
 msgstr "Tingkat"
 
@@ -6474,9 +6542,6 @@ msgstr "Transfer ke Login ID"
 
 msgid "Transfer to Payment Agent"
 msgstr "Penarikan Agen Pembayaran"
-
-msgid "Transfer to client"
-msgstr "Transfer ke klien"
 
 msgid "Translate the ongoing business needs of the company into a suitable IT infrastructure"
 msgstr "Menterjemahkan secara berkala untuk kepentingan perusahaan kedalam infrastruktur yang cocok"
@@ -6670,14 +6735,8 @@ msgstr "Lihat waktu operasi dan pasar yang dapat anda tradingkan."
 msgid "View your financial assessment settings."
 msgstr "Lihat pengaturan penilaian keuangan Anda."
 
-msgid "View your historical transactions."
-msgstr "Lihat transaksi historis Anda."
-
 msgid "View your login history."
 msgstr "Lihat catatan login Anda."
-
-msgid "View your open positions."
-msgstr "Lihat posisi kontrak."
 
 msgid "View your personal information."
 msgstr "Lihat informasi pribadi Anda."
@@ -6687,9 +6746,6 @@ msgstr "Lihat pernyataan Anda"
 
 msgid "View your trading and withdrawal limits."
 msgstr "Lihat batas trading dan penarikan Anda."
-
-msgid "View your trading profit/loss."
-msgstr "Lihat keuntungan/kerugian trading Anda."
 
 msgid "Virtual Account"
 msgstr "Akun Virtual"
@@ -6867,9 +6923,6 @@ msgstr "Hari Kerja"
 
 msgid "Weekend quotes"
 msgstr "Kutipan akhir pekan"
-
-msgid "Welcome!"
-msgstr "Selamat datang!"
 
 msgid "Well-developed organizational, administrative, and/or accounting skills"
 msgstr "Berkembang dengan baik dalam organisasi, administrasi, dan/atau keterampilan akuntansi"
@@ -7078,6 +7131,9 @@ msgstr "Penarikan: Tidak tersedia"
 msgid "Withdrawal Limits"
 msgstr "Batas Penarikan"
 
+msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
+msgstr ""
+
 msgid "Withdrawal is done. Transaction ID:"
 msgstr "Pencairan selesai. Transaksi ID:"
 
@@ -7150,12 +7206,6 @@ msgstr "Anda dan Aplikasi Anda harus memenuhi hal berikut, yang digabungkan deng
 msgid "You are advised that the Binary Options offered by %1 are not traded under the rules of any recognised, designated or regulated exchange. Consequently, engaging in Binary Options trading may expose you to substantially greater risks than investments which are so traded."
 msgstr "Anda disarankan bahwa Opsi Binary yang ditawarkan oleh %1 adalah tidak ditradingkan dibawah aturan pertukaran yang diakui, ditunjuk atau diatur. Hal ini menyebabkan, melakukan trading Opsi Binary akan menghasilkan risiko besar dibandingkan dengan investasi trading."
 
-msgid "You are currently logged in to your real money account with %1 (%2)."
-msgstr "Saat ini Anda sedang mengakses akun uang riil pada %1 (%2)."
-
-msgid "You are currently logged in to your virtual money account (%2)."
-msgstr "Saat ini Anda sedang mengakses akun uang virtual (%2)."
-
 msgid "You are in default or breach of any covenant, obligation or condition contained in this Agreement, and if such default is not cured within seven days of receipt of written notice from the Company;"
 msgstr "Anda berada dalam kegagalan atau pelanggaran dari setiap perjanjian, kewajiban atau kondisi yang terkandung dalam Perjanjian ini dan jika standar tersebut tidak diselesaikan dalam waktu tujuh hari sejak diterimanya pemberitahuan tertulis dari Perusahaan."
 
@@ -7185,6 +7235,12 @@ msgstr "Anda dapat memilih hasil dari $1 hingga $50,000. Pilihan hasil yang luas
 
 msgid "You can close your trade before expiry to lock in profits."
 msgstr "Anda dapat menjual kontrak sebelum berakhir untuk memperoleh keuntungan."
+
+msgid "You can request more virtual money if your virtual balance falls below JPY 100,000."
+msgstr ""
+
+msgid "You can request more virtual money if your virtual balance falls below USD 1,000.00."
+msgstr ""
 
 msgid "You can sell back long-term trades at any time to profit from changing market conditions."
 msgstr "Anda dapat menjual kembali kontrak jangka panjang untuk profit dari perubahan kondisi pasar."
@@ -7375,12 +7431,6 @@ msgstr "Anda dapat menemukan jawaban pada halaman <a href='' target='_blank' id=
 msgid "You're using a Virtual Account."
 msgstr "Anda menggunakan Akun Virtual."
 
-msgid "Your %1 account is unavailable. For any questions please contact %2."
-msgstr "Akun %1 ini untuk sementara dibekukan, silahkan hubungi %2."
-
-msgid "Your %1 accounts are unavailable. For any questions please contact %2."
-msgstr "Akun %1 ini untuk sementara dibekukan, silahkan hubungi %2."
-
 msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other currency)."
 msgstr "Batas penarikan %1 hari Anda saat ini adalah %2 %3 (atau setara dengan mata uang lainnya)."
 
@@ -7402,11 +7452,11 @@ msgstr "Akun Anda tidak memiliki aktifitas Login/Logout."
 msgid "Your account has no trading activity."
 msgstr "Akun Anda tidak memiliki aktifitas trading."
 
+msgid "Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact %1."
+msgstr ""
+
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "Akun Anda telah terbukti dan batasan penarikan Anda telah dihapuskan."
-
-msgid "Your account is fully authenticated. You can view your %1trading limits here"
-msgstr "Akun Anda telah terbukti. Anda dapat melihat batasan trading %1 Anda disini"
 
 msgid "Your account is fully authenticated. You can view your <a class=\"pjaxload\" href=\"%1\">trading limits here</a>."
 msgstr "Akun Anda telah terbukti. Anda dapat melihat <a class=\"pjaxload\" href=\"%1\">batasan trading disini</a>."
@@ -7416,9 +7466,6 @@ msgstr "Akun Anda belum dikonfirmasi sepenuhnya. Silahkan kunjungi halaman <a cl
 
 msgid "Your account is not fully authenticated. Please visit the <a href=\"%1\">authentication</a> page for more information."
 msgstr "Akun Anda belum dikonfirmasi sepenuhnya. Silahkan kunjungi halaman <a href=\"%1\">otentikasi</a> untuk informasi lebih lanjut."
-
-msgid "Your account is registered as a Payment Agent."
-msgstr "Akun Anda terdaftar sebagai Agen Pembayaran."
 
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "Akun Anda tidak boleh digunakan sebagai fasilitas perbankan dan deposito hanya boleh dilakukan dengan tujuan untuk menggunakan dana untuk membeli kontrak. Perusahaan ini bukan lembaga keuangan, Klien tidak akan menerima bunga deposito. Jika Anda melakukan deposit berulang dan penarikan tanpa melakukan pembelian kontrak maka kami berhak untuk mengembalikan saldo dana pada akun Anda tanpa pemberitahuan termasuk biaya transfer sebelum melakukan penutupan akun."
@@ -8182,10 +8229,8 @@ msgstr "{JAPAN ONLY}Registration"
 msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "{JAPAN ONLY}Regulation & Tax"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}minute"
 msgid "{JAPAN ONLY}Remaining time"
-msgstr "{JAPAN ONLY}minute"
+msgstr "{JAPAN ONLY}Remaining time"
 
 msgid "{JAPAN ONLY}STAY-IN/BREAK-OUT"
 msgstr "{JAPAN ONLY}STAY-IN/BREAK-OUT"
@@ -8383,7 +8428,7 @@ msgid "Online Trading platform for binary options on Forex, Indices, Commodities
 msgstr "Platform Trading Online untuk opsi binary pada Forex, Indeks, Komoditas dan Indeks Smart"
 
 msgid "404"
-msgstr ""
+msgstr "404"
 
 msgid "Why Us"
 msgstr "Mengapa Kami"
@@ -8438,6 +8483,51 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 msgid "Trading with MetaTrader 5"
 msgstr "Trading menggunakan MetaTrader 5"
+
+#~ msgid "Charts"
+#~ msgstr "Grafik"
+
+#~ msgid "LOG OUT"
+#~ msgstr "KELUAR"
+
+#~ msgid "Make a deposit or withdraw."
+#~ msgstr "Deposit atau menarik dana."
+
+#~ msgid "Manage your account access and security settings."
+#~ msgstr "Mengelola akses akun Anda dan pengaturan keamanan."
+
+#~ msgid "Transfer to client"
+#~ msgstr "Transfer ke klien"
+
+#~ msgid "View your historical transactions."
+#~ msgstr "Lihat transaksi historis Anda."
+
+#~ msgid "View your open positions."
+#~ msgstr "Lihat posisi kontrak."
+
+#~ msgid "View your trading profit/loss."
+#~ msgstr "Lihat keuntungan/kerugian trading Anda."
+
+#~ msgid "Welcome!"
+#~ msgstr "Selamat datang!"
+
+#~ msgid "You are currently logged in to your real money account with %1 (%2)."
+#~ msgstr "Saat ini Anda sedang mengakses akun uang riil pada %1 (%2)."
+
+#~ msgid "You are currently logged in to your virtual money account (%2)."
+#~ msgstr "Saat ini Anda sedang mengakses akun uang virtual (%2)."
+
+#~ msgid "Your %1 account is unavailable. For any questions please contact %2."
+#~ msgstr "Akun %1 ini untuk sementara dibekukan, silahkan hubungi %2."
+
+#~ msgid "Your %1 accounts are unavailable. For any questions please contact %2."
+#~ msgstr "Akun %1 ini untuk sementara dibekukan, silahkan hubungi %2."
+
+#~ msgid "Your account is fully authenticated. You can view your %1trading limits here"
+#~ msgstr "Akun Anda telah terbukti. Anda dapat melihat batasan trading %1 Anda disini"
+
+#~ msgid "Your account is registered as a Payment Agent."
+#~ msgstr "Akun Anda terdaftar sebagai Agen Pembayaran."
 
 #~ msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
 #~ msgstr "<span class='color-green font-weight-700'>Semua durasi:</span> dari 10 detik hingga 365 hari."
@@ -8680,9 +8770,6 @@ msgstr "Trading menggunakan MetaTrader 5"
 
 #~ msgid "The future of trading on %1"
 #~ msgstr "Masa depan trading pada %1"
-
-#~ msgid "Tick Trade App"
-#~ msgstr "App Trading Tik"
 
 #~ msgid "Tick Trade on GitHub"
 #~ msgstr "Trading Tik pada GitHub"
@@ -9507,9 +9594,6 @@ msgstr "Trading menggunakan MetaTrader 5"
 #~ msgid "Login to this account has been temporarily disabled due to system maintenance. Please try again in 30 minutes."
 #~ msgstr "Maaf, Transfer Agen Pembayaran dihentikan untuk sementara berhubung perbaikan sistem. Silahkan coba kembali 30 menit lagi."
 
-#~ msgid "Lost Password?"
-#~ msgstr "Lupa Kata Sandi?"
-
 #~ msgid "Low"
 #~ msgstr "Rendah"
 
@@ -9749,9 +9833,6 @@ msgstr "Trading menggunakan MetaTrader 5"
 
 #~ msgid "Relative Strength Index"
 #~ msgstr "Indeks Kekuatan Relatif"
-
-#~ msgid "Reload page"
-#~ msgstr "Reload halaman"
 
 #~ msgid "Remove Overlay"
 #~ msgstr "Memindahkan Arsiran"
@@ -15280,9 +15361,6 @@ msgstr "Trading menggunakan MetaTrader 5"
 #~ msgid "Binary.com's Random Indices are the random 25 Index, Random 50 Index, Random 75 Index, and Random 100 Index and many more."
 #~ msgstr "Indeks Random Binary.com terdiri dari Indeks Random 25, Indeks Random 50, Indeks Random 75, dan Indeks Random 100 dan banyak lagi."
 
-#~ msgid "Get your free $10,000 virtual money"
-#~ msgstr "Dapatkan gratis $10,000 uang virtual"
-
 #~ msgid "Join our community of 1,000,000+ traders"
 #~ msgstr "Bergabung dengan komunitas 1,000,000+ trader"
 
@@ -19810,9 +19888,6 @@ msgstr "Trading menggunakan MetaTrader 5"
 
 #~ msgid "If you're still new to financial trading, feel free to browse through our different trading guides in our <a href=\"%1\">educational corner</a>. This section contains free trading guides that are easy to use and understand. Create your own trading strategy and start using it today."
 #~ msgstr "Jika Anda masih baru tentang trading finansial, silahkan lihat berbagai panduan trading pada <a href=\"%1\">pojok pendidikan</a> yang kami miliki. Bagian ini terdiri dari berbagai panduan trading yang sangat mudah untuk digunakan. Ciptakan strategi trading Anda dan mulailah hari ini."
-
-#~ msgid "Insert your login ID and password"
-#~ msgstr "Masukkan login ID dan password"
 
 #~ msgid "Instantly see your total risk and return."
 #~ msgstr "Total resiko dan laba dapat dilihat langsung."

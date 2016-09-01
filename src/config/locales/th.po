@@ -772,6 +772,16 @@ msgstr "มีความสนใจและความมุ่งมั่
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "วิธีการเชิงรุกในการแก้ปัญหาและนำเสนอวิธีการแก้ปัญหาต่างๆ ให้ลูกค้า"
 
+#, fuzzy
+#| msgid "- A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+msgstr "- สำเนาใบแจ้งหนี้รายการสาธารณูปโภค หรือ รางานธุรกรรมของธนาคาร (3 เดือนย้อนหลังเป็นอย่างน้อย) จำนวน 1 ฉบับ"
+
+#, fuzzy
+#| msgid "- A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth."
+msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
+msgstr "- สำเนาหนังสือเดินทาง หรือ สำเนาใบขับขี่ (ฉบับชั่วคราว หรือ ฉบับตลอดชีพ) หรือ สำเนาบัตรประชาชน ที่แสดงชื่อและวันเดือนปีเกิด จำนวน 1 ฉบับ"
+
 msgid "A strong and passionate interest in Marketing and Advertising"
 msgstr "มีความสนใจและความมุ่งมั่นอย่างแรงกล้าในด้านการตลาด และการโฆษณา"
 
@@ -859,6 +869,11 @@ msgstr "การบริหารบัญชีและรายละเอ
 msgid "Account Opening"
 msgstr "การเปิดบัญชี"
 
+#, fuzzy
+#| msgid "Lost password?"
+msgid "Account Password"
+msgstr "ลืมรหัสผ่าน?"
+
 msgid "Account Transfer"
 msgstr "การโอนบัญชี"
 
@@ -942,6 +957,11 @@ msgstr "ข้อจำกัดของข้อตกลง"
 
 msgid "Agreement for documents"
 msgstr "ข้อตกลงสำหรับเอกสาร"
+
+#, fuzzy
+#| msgid "A True Partnership"
+msgid "All Partnership Options"
+msgstr "พันธมิตรที่แท้จริง"
 
 msgid "All affiliate activities must be conducted in a professional and proper manner. You shall be expected to act with good faith and integrity in your relationships with your referrals, and always act in the best interests of your referrals."
 msgstr "กิจกรรมต่างๆ ของพันธมิตรต้องถูกดำเนินและปฏิบัติอย่างประณีต และมืออาชีพ ท่านจะถูกคาดหวังในความศรัทธาและความซื่อสัตย์ของความสัมพันธ์ต่างๆ กับผู้ที่ถูกอ้างอิง และดำเนินการอย่างสม่ำเสมอเพื่อให้เป็นไปตามความประสงค์ของผู้ที่ถูกอ้างอิงของท่าน"
@@ -1078,6 +1098,9 @@ msgstr "ความเหมาะสม"
 
 msgid "Appropriateness Test"
 msgstr "การทดสอบความเหมาะสม"
+
+msgid "Apps"
+msgstr ""
 
 msgid "Apr"
 msgstr "เม.ย."
@@ -1346,6 +1369,11 @@ msgstr "Binary Ltd ขึ้นทะเบียนที่อยู่สำ�
 msgid "Binary Options Basics"
 msgstr "พื้นฐานไบนารีออปชั่น"
 
+#, fuzzy
+#| msgid "Binary option"
+msgid "Binary Shop"
+msgstr "ไบนารีออปชั่น"
+
 msgid "Binary Trading is simple to learn and to execute."
 msgstr "การเทรดไบนารีเริ่มได้ไม่ยาก เรียนรู้และเริ่มเทรด"
 
@@ -1490,6 +1518,16 @@ msgstr "งาน"
 msgid "Cashier"
 msgstr "แคชเชียร์"
 
+#, fuzzy
+#| msgid "Cashier password"
+msgid "Cashier Password"
+msgstr "รหัสผ่านสำหรับจัดการเงิน"
+
+#, fuzzy
+#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgstr "การถอนถูกล็อค โปรด<a class=\"pjaxload\" href=\"%1\">ติดต่อเรา</a> สำหรับข้อมูลเพิ่มเติม"
+
 msgid "Cashier password"
 msgstr "รหัสผ่านสำหรับจัดการเงิน"
 
@@ -1502,10 +1540,17 @@ msgstr "เปลี่ยน API ปลายทาง"
 msgid "Change Password"
 msgstr "เปลี่ยนรหัสผ่าน"
 
-msgid "Chart"
-msgstr "แผนภูมิ"
+#, fuzzy
+#| msgid "Hundreds of deposit and withdrawal options."
+msgid "Change the password used for deposits and withdrawals."
+msgstr "มีวิธีการฝากเงินและถอนเงินหลากหลายวิธี"
 
-msgid "Charts"
+#, fuzzy
+#| msgid "Incorrect email or password."
+msgid "Change your main login password."
+msgstr "รหัสผ่าน หรือ อีเมล์ ไม่ถูกต้อง"
+
+msgid "Chart"
 msgstr "แผนภูมิ"
 
 msgid "Check out our commission rates below:"
@@ -2039,6 +2084,11 @@ msgstr "ฝากเงินในบัญชี MetaTrader ของท่า
 msgid "Deposit is done. Transaction ID:"
 msgstr "ฝากเงินเรียบร้อย Transaction ID:"
 
+#, fuzzy
+#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgstr "การถอนถูกล็อค โปรด<a class=\"pjaxload\" href=\"%1\">ติดต่อเรา</a> สำหรับข้อมูลเพิ่มเติม"
+
 msgid "Deposit of"
 msgstr "การฝากของ"
 
@@ -2062,6 +2112,9 @@ msgstr "ฝากเงิน: ทันที"
 
 msgid "Depositing and withdrawing funds"
 msgstr "เงินในการฝากและการถอน"
+
+msgid "Deposits and withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
+msgstr ""
 
 msgid "Derivative"
 msgstr "อนุพันธ์"
@@ -2753,8 +2806,19 @@ msgstr "โครงสร้างคอมมิชชั่นเอื้อ
 msgid "Germany"
 msgstr "เยอรมนี"
 
+#, fuzzy
+#| msgid "Over $1,000,000"
+msgid "Get JPY 1,000,000"
+msgstr "มากกว่า 1,000,000 เหรียญสหรัฐ"
+
 msgid "Get Started"
 msgstr "เริ่มเลย"
+
+msgid "Get USD 10,000.00"
+msgstr ""
+
+msgid "Get more virtual money"
+msgstr ""
 
 msgid "Get your price"
 msgstr "ตั้งราคาของท่าน"
@@ -3856,9 +3920,6 @@ msgstr "มีความรู้เกี่ยวกับทฤษฎีค
 msgid "Knowledge of probability theory, stochastic calculus, numerical methods, Monte-Carlo simulation, differential equations, econometrics, and statistical modeling"
 msgstr "มีความรู้เกี่ยวกับทฤษฎีความเป็นไปได้ สโทแคสติกแคลคูลัส ระเบียบวิธีเกี่ยวกับตัวเลข การจำลองแบบมอนติคาร์โล สมการเชิงอนุพันธ์ เศรษฐมิติ และ แบบจำลองทางสถิติ"
 
-msgid "LOG OUT"
-msgstr "ออกจากระบบ"
-
 msgid "Languages"
 msgstr "ภาษา"
 
@@ -4042,9 +4103,6 @@ msgstr "ปรับปรุงความเร็วและปริมา
 msgid "Make a Deposit"
 msgstr "ฝากเงิน"
 
-msgid "Make a deposit or withdraw."
-msgstr "ฝากเงินหรือถอนเงิน"
-
 msgid "Make your trade"
 msgstr "ซื้อขาย"
 
@@ -4062,9 +4120,6 @@ msgstr "จัดการความปลอดภัย การป้อ�
 
 msgid "Manage the company's cashier system"
 msgstr "บริหารระบบการรับ-จ่ายเงินขององค์กร"
-
-msgid "Manage your account access and security settings."
-msgstr "จัดการการเข้าถึงและตั้งค่าความปลอดภัยบัญชีของท่าน"
 
 msgid "Manage your authorised applications."
 msgstr "จัดการแอพพลิเคชันที่ลงทะเบียน"
@@ -4960,6 +5015,11 @@ msgstr "มีความเชี่ยวชาญในภาษาสคร
 msgid "Proficiency in a second language (oral and written) is preferred"
 msgstr "มีความเชี่ยวชาญในภาษาที่สอง ทั้งพูดและเขียน จะได้รับการพิจารณาเป็นพิเศษ"
 
+#, fuzzy
+#| msgid "Profit"
+msgid "Profile"
+msgstr "กำไร"
+
 msgid "Profit"
 msgstr "กำไร"
 
@@ -5079,6 +5139,11 @@ msgstr "อ้างอิง"
 
 msgid "Reference ID"
 msgstr "หมายเลขอ้างอิง"
+
+#, fuzzy
+#| msgid "Reload page"
+msgid "Refresh page"
+msgstr "โหลดหน้านี้ใหม่"
 
 msgid "Regent Markets Group Ltd. renames to Binary Ltd."
 msgstr "Regent Markets Group Ltd. ถูกเปลี่ยนชื่อเป็น Binary Ltd."
@@ -5303,6 +5368,11 @@ msgstr "คำถามลับ"
 msgid "Security"
 msgstr "ความปลอดภัย"
 
+#, fuzzy
+#| msgid "Account Limits"
+msgid "Security & Limits"
+msgstr "วงเงินในบัญชี"
+
 msgid "Security Disclaimer"
 msgstr "การสงวนสิทธิ์ของความปลอดภัย"
 
@@ -5421,6 +5491,11 @@ msgid "Sign Up to Test Our Platform"
 msgstr "ลงทะเบียนเพื่อทดลองระบบของเรา"
 
 msgid "Sign me up"
+msgstr "ลงทะเบียน / สมัครใช้งาน"
+
+#, fuzzy
+#| msgid "Sign me up"
+msgid "Sign out"
 msgstr "ลงทะเบียน / สมัครใช้งาน"
 
 msgid "Sign up as a tester and look for Binary.com-related projects."
@@ -6316,6 +6391,11 @@ msgstr "วันพฤหัสบดี"
 msgid "Tick"
 msgstr "Tick"
 
+#, fuzzy
+#| msgid "Tick Trade App"
+msgid "TickTrade App"
+msgstr "แอพ Tick Trade"
+
 msgid "Tier"
 msgstr "ชั้น"
 
@@ -6485,9 +6565,6 @@ msgstr "โอนไปรหัสผู้ใช้งาน"
 
 msgid "Transfer to Payment Agent"
 msgstr "โอนไปตัวแทนรับชำระเงิน"
-
-msgid "Transfer to client"
-msgstr "โอนให้ลูกค้า"
 
 msgid "Translate the ongoing business needs of the company into a suitable IT infrastructure"
 msgstr "แปลความต้องการทางธุรกิจของบริษัทฯ เป็นสถาปัตยกรรมโครงสร้างเทคโนโลยีสารสนเทศที่เหมาะสม"
@@ -6681,14 +6758,8 @@ msgstr ""
 msgid "View your financial assessment settings."
 msgstr "ดูการตั้งค่าของการประเมินทางการเงิน"
 
-msgid "View your historical transactions."
-msgstr "ดูประวัติการทำธุรกรรมของท่าน"
-
 msgid "View your login history."
 msgstr "ดูประวัติการเข้าใช้งานระบบของท่าน"
-
-msgid "View your open positions."
-msgstr "ดูโพซิชั่นของท่านที่เปิดอยู่"
 
 msgid "View your personal information."
 msgstr "ดูข้อมูลส่วนบุคคลของท่าน"
@@ -6698,9 +6769,6 @@ msgstr "ดูสเตทเมนท์ของท่าน"
 
 msgid "View your trading and withdrawal limits."
 msgstr "ดูวงเงินการซื้อขายและวงเงินสำหรับถอนเงินของท่าน"
-
-msgid "View your trading profit/loss."
-msgstr "ดูกำไร/ขาดทุนของท่าน"
 
 msgid "Virtual Account"
 msgstr "บัญชีทดลองใช้"
@@ -6878,9 +6946,6 @@ msgstr ""
 
 msgid "Weekend quotes"
 msgstr "ราคาวันหยุด"
-
-msgid "Welcome!"
-msgstr "ยินดีต้อนรับ!"
 
 msgid "Well-developed organizational, administrative, and/or accounting skills"
 msgstr ""
@@ -7089,6 +7154,9 @@ msgstr ""
 msgid "Withdrawal Limits"
 msgstr ""
 
+msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
+msgstr ""
+
 msgid "Withdrawal is done. Transaction ID:"
 msgstr "การถอนเสร็จสิ้น หมายเลขธุรกรรม:"
 
@@ -7161,12 +7229,6 @@ msgstr ""
 msgid "You are advised that the Binary Options offered by %1 are not traded under the rules of any recognised, designated or regulated exchange. Consequently, engaging in Binary Options trading may expose you to substantially greater risks than investments which are so traded."
 msgstr ""
 
-msgid "You are currently logged in to your real money account with %1 (%2)."
-msgstr "ขณะนี้ท่านเข้าใช้งานระบบบัญชีเงินจริงของท่านด้วย %1 (%2)"
-
-msgid "You are currently logged in to your virtual money account (%2)."
-msgstr "ขณะนี้ท่านเข้าใช้งานระบบบัญชีเงินเสมือนของท่าน (%2)"
-
 msgid "You are in default or breach of any covenant, obligation or condition contained in this Agreement, and if such default is not cured within seven days of receipt of written notice from the Company;"
 msgstr ""
 
@@ -7196,6 +7258,12 @@ msgstr ""
 
 msgid "You can close your trade before expiry to lock in profits."
 msgstr "ท่านสามารถปิดสัญญาซื้อขายของท่านก่อนวันหมดอายุเพื่อรักษากำไรของท่านไว้"
+
+msgid "You can request more virtual money if your virtual balance falls below JPY 100,000."
+msgstr ""
+
+msgid "You can request more virtual money if your virtual balance falls below USD 1,000.00."
+msgstr ""
 
 msgid "You can sell back long-term trades at any time to profit from changing market conditions."
 msgstr ""
@@ -7388,12 +7456,6 @@ msgstr "ท่านจะพบคำตอบของคำถามของ
 msgid "You're using a Virtual Account."
 msgstr "ท่านกำลังใช้บัญชีเสมือน หรือ บัญชีทดลองใช้"
 
-msgid "Your %1 account is unavailable. For any questions please contact %2."
-msgstr "%1 บัญชีของท่านไม่สามารถใช้งานได้ หากประสงค์ขอข้อมูลเพิ่มเติม ได้โปรดติดต่อ %2"
-
-msgid "Your %1 accounts are unavailable. For any questions please contact %2."
-msgstr "%1 บัญชีของท่านไม่สามารถใช้งานได้ หากประสงค์ขอข้อมูลเพิ่มเติม ได้โปรดติดต่อ %2"
-
 msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other currency)."
 msgstr "วงเงินการถอนเงินต่อวันของท่าน %1 ในปัจจุบัน คือ %2 %3 (หรือเทียบเท่าในสกุลเงินอื่น)"
 
@@ -7415,11 +7477,11 @@ msgstr "บัญชีของท่านไม่มีประวัติ
 msgid "Your account has no trading activity."
 msgstr "บัญชีของท่านไม่มีประวัติการซื้อขาย"
 
+msgid "Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact %1."
+msgstr ""
+
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "บัญชีของท่านได้รับการยืนยันตัวตนอย่างสมบูรณ์แล้ว และวงเงินการถอนเงินของท่านได้รับการยกระดับโดยการเพิ่มวงเงินแล้ว"
-
-msgid "Your account is fully authenticated. You can view your %1trading limits here"
-msgstr "บัญชีของท่านได้รับการยืนยันตัวตนอย่างสมบูรณ์แล้ว ท่านสามารถเรียกดู %1วงเงินซื้อขายของท่าน ได้ที่นี่"
 
 msgid "Your account is fully authenticated. You can view your <a class=\"pjaxload\" href=\"%1\">trading limits here</a>."
 msgstr "บัญชีของท่านได้รับการยืนยันตัวตนอย่างสมบูรณ์แล้ว ท่านสามารถเรียกดู <a class=\"pjaxload\" href=\"%1\">วงเงินซื้อขายของท่านที่นี่</a>"
@@ -7429,9 +7491,6 @@ msgstr "บัญชีของท่านยังไม่ได้รับ
 
 msgid "Your account is not fully authenticated. Please visit the <a href=\"%1\">authentication</a> page for more information."
 msgstr "บัญชีของท่านยังไม่ได้รับการยืนยันตัวตนอย่างสมบูรณ์ โปรดเข้าเยี่ยมหน้า <a href=\"%1\">การยืนยันตัวตน</a> เพื่อดำเนินการเพิ่มเติม"
-
-msgid "Your account is registered as a Payment Agent."
-msgstr "บัญชีของท่านได้ลงทะเบียนเป็นตัวแทนรับชำระเงิน"
 
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "บัญชีของท่านไม่ควรใช้สำหรับการอำนวยความสะดวกในการฝากเงิน และการฝากเงินควรดำเนินการเมื่อท่านต้องการลงเงินในสัญญา บริษัทฯ ไม่ได้ประพฤติเยี่ยงสถาบันการเงิน ลูกค้าจะไม่ได้รับดอกเบี้ยจากการฝากเงิน ในการดำเนินการของท่านไม่ว่าจะฝากเงินหรือถอนเงินปราศจากสัญญาที่มีสัดส่วนเงินที่พอดีกัน ทางบริษัทฯ ขอสงวนสิทธิ์ในการดำเนินการกับบัญชีของท่าน โดยไม่ต้องแจ้งให้ทราบล่วงหน้า รวมถึงค่าธรรมเนียมต่างๆ ของธนาคารที่เกิดขึ้นก่อนการปิดบัญชี"
@@ -8460,6 +8519,51 @@ msgstr "การอนุมัติข้อตกลงและเงื่
 msgid "Trading with MetaTrader 5"
 msgstr "การซื้อขายด้วย MetaTrader 5"
 
+#~ msgid "Charts"
+#~ msgstr "แผนภูมิ"
+
+#~ msgid "LOG OUT"
+#~ msgstr "ออกจากระบบ"
+
+#~ msgid "Make a deposit or withdraw."
+#~ msgstr "ฝากเงินหรือถอนเงิน"
+
+#~ msgid "Manage your account access and security settings."
+#~ msgstr "จัดการการเข้าถึงและตั้งค่าความปลอดภัยบัญชีของท่าน"
+
+#~ msgid "Transfer to client"
+#~ msgstr "โอนให้ลูกค้า"
+
+#~ msgid "View your historical transactions."
+#~ msgstr "ดูประวัติการทำธุรกรรมของท่าน"
+
+#~ msgid "View your open positions."
+#~ msgstr "ดูโพซิชั่นของท่านที่เปิดอยู่"
+
+#~ msgid "View your trading profit/loss."
+#~ msgstr "ดูกำไร/ขาดทุนของท่าน"
+
+#~ msgid "Welcome!"
+#~ msgstr "ยินดีต้อนรับ!"
+
+#~ msgid "You are currently logged in to your real money account with %1 (%2)."
+#~ msgstr "ขณะนี้ท่านเข้าใช้งานระบบบัญชีเงินจริงของท่านด้วย %1 (%2)"
+
+#~ msgid "You are currently logged in to your virtual money account (%2)."
+#~ msgstr "ขณะนี้ท่านเข้าใช้งานระบบบัญชีเงินเสมือนของท่าน (%2)"
+
+#~ msgid "Your %1 account is unavailable. For any questions please contact %2."
+#~ msgstr "%1 บัญชีของท่านไม่สามารถใช้งานได้ หากประสงค์ขอข้อมูลเพิ่มเติม ได้โปรดติดต่อ %2"
+
+#~ msgid "Your %1 accounts are unavailable. For any questions please contact %2."
+#~ msgstr "%1 บัญชีของท่านไม่สามารถใช้งานได้ หากประสงค์ขอข้อมูลเพิ่มเติม ได้โปรดติดต่อ %2"
+
+#~ msgid "Your account is fully authenticated. You can view your %1trading limits here"
+#~ msgstr "บัญชีของท่านได้รับการยืนยันตัวตนอย่างสมบูรณ์แล้ว ท่านสามารถเรียกดู %1วงเงินซื้อขายของท่าน ได้ที่นี่"
+
+#~ msgid "Your account is registered as a Payment Agent."
+#~ msgstr "บัญชีของท่านได้ลงทะเบียนเป็นตัวแทนรับชำระเงิน"
+
 #~ msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
 #~ msgstr "<span class='color-green font-weight-700'>ระยะเวลาทั้งหมด:</span> 10 วินาที ถึง 365 วัน"
 
@@ -8719,9 +8823,6 @@ msgstr "การซื้อขายด้วย MetaTrader 5"
 
 #~ msgid "The future of trading on %1"
 #~ msgstr "อนาคตของการซื้อขายกับ %1"
-
-#~ msgid "Tick Trade App"
-#~ msgstr "แอพ Tick Trade"
 
 #~ msgid "Tick Trade on GitHub"
 #~ msgstr "Tick Trade บน GitHub"
@@ -9425,9 +9526,6 @@ msgstr "การซื้อขายด้วย MetaTrader 5"
 #~ msgid "In what country do you want to offer your service"
 #~ msgstr "ท่านต้องการบริการในประเทศใด"
 
-#~ msgid "Incorrect email or password."
-#~ msgstr "รหัสผ่าน หรือ อีเมล์ ไม่ถูกต้อง"
-
 #~ msgid "Indicator"
 #~ msgstr "ดัชนี"
 
@@ -9535,11 +9633,6 @@ msgstr "การซื้อขายด้วย MetaTrader 5"
 
 #~ msgid "Login to this account has been temporarily disabled due to system maintenance. Please try again in 30 minutes."
 #~ msgstr "การเข้าสู่ระบบจากบัญชีนี้ถูกระงับชั่วคราวเนื่องจากการปรับปรุงระบบ กรุณาลองใหม่อีกครั้งใน 30 นาที"
-
-#, fuzzy
-#~| msgid "Lost password?"
-#~ msgid "Lost Password?"
-#~ msgstr "ลืมรหัสผ่าน?"
 
 #~ msgid "Low"
 #~ msgstr "ต่ำ"
@@ -9763,9 +9856,6 @@ msgstr "การซื้อขายด้วย MetaTrader 5"
 
 #~ msgid "Relative Strength Index"
 #~ msgstr "Relative Strength Index ดัชนี RSI"
-
-#~ msgid "Reload page"
-#~ msgstr "โหลดหน้านี้ใหม่"
 
 #~ msgid "Remove Overlay"
 #~ msgstr "ลบ Overlay"
