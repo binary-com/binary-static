@@ -1,5 +1,7 @@
 var config = require('./config');
 var pjax = require('./binary/base/pjax');
+var storage = require('./binary/base/storage');
+var markets = require('./binary/base/markets');
 
 require('./binary/static_pages/endpoint');
 
@@ -14,3 +16,5 @@ var exportAllFunctions = function exportAllFunctions(obj) {
 
 exportAllFunctions(config);
 exportAllFunctions(pjax);
+exportAllFunctions(storage);
+exportAllFunctions(markets);

@@ -6,7 +6,6 @@ var Markets = function(markets, market_symbols) {
         var market_config = market_symbols[market_name];
         var market_obj = new Market(market_name, market_config['label'], market_config['submarkets']);
         this.all.push(market_obj);
-
     }
 };
 
@@ -121,7 +120,10 @@ SubMarket.prototype = {
                 return { submarket: this, underlying: this.underlyings[underlying_count] };
             }
         }
-
         return;
     },
+};
+
+module.exports = {
+    Markets: Markets,
 };

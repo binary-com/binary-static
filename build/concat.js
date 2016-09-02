@@ -20,6 +20,8 @@ module.exports = {
                     'src/javascript/binary/**/*.js',
                     'src/javascript/binary_japan/**/*.js',
                     '!src/javascript/binary/base/pjax.js',
+                    '!src/javascript/binary/base/storage.js',
+                    '!src/javascript/binary/base/markets.js',
                     '!src/javascript/binary/static_pages/endpoint.js',
                     '!src/javascript/binary/**/__tests__/*.js',
                 ]
