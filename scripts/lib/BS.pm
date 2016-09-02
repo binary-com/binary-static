@@ -161,10 +161,8 @@ sub js_config {
     my @libs;
     if (is_dev()) {
         push @libs, root_url . "js/binary.js?$static_hash";
-        push @libs, root_url . "js/binary_pack.js?$static_hash";
     } else {
         push @libs, root_url . "js/binary.min.js?$static_hash";
-        push @libs, root_url . "js/binary_pack.min.js?$static_hash";
     }
 
     my %setting = (

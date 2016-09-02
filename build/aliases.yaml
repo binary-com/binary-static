@@ -6,6 +6,7 @@ css:
 js:
   - 'webpack'
   - 'concat'
+  - 'shell:remove_pack'
   - 'uglify'
 
 test:
