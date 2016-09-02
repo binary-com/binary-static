@@ -1,3 +1,5 @@
+var getSocketURL = require('../../config').getSocketURL;
+var getAppId = require('../../config').getAppId;
 /*
  * It provides a abstraction layer over native javascript Websocket.
  *
@@ -344,5 +346,4 @@ var BinarySocket = new BinarySocketClass();
 
 module.exports = {
     BinarySocket: BinarySocket,
-    BinarySocketClass: BinarySocketClass,
 };

@@ -217,7 +217,6 @@ module.exports = {
     pjax_config_page_require_auth: pjax_config_page_require_auth,
     pjax_config_page: pjax_config_page,
     load_with_pjax: load_with_pjax,
-    PjaxExecQueue: PjaxExecQueue,
     onLoad: onLoad,
     onUnload: onUnload,
 };

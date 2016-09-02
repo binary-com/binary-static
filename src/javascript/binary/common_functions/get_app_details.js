@@ -39,6 +39,5 @@ var showTooltip = function(app_id, oauth_app_id) {
 module.exports = {
     buildOauthApps: buildOauthApps,
     addTooltip: addTooltip,
-    add_app_id_name: add_app_id_name,
     showTooltip: showTooltip,
 };
