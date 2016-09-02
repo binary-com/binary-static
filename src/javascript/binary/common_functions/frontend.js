@@ -143,12 +143,12 @@ var change_chat_icon = function () {
   if( len > 0 ) {
       var timer = null;
       var updateIcon =  function () {
-          var image_link = page.settings.get('image_link');
+          var image_url = page.url.url_for_static('images/pages/contact/chat-icon.svg');
           var desk_widget = $('.a-desk-widget');
           var image_str = desk_widget.css('background-image');
           if(image_str) {
               desk_widget.css({
-                  'background-image': 'url("' + image_link['livechaticon'] + '")',
+                  'background-image': 'url("' + image_url + '")',
                   'background-size': 'contain',
                   'min-width': 50,
                   'min-height': 50,
@@ -156,7 +156,7 @@ var change_chat_icon = function () {
               });
               desk_widget.hover(function() {
                   $(this).css({
-                      'background': 'url("' + image_link['livechaticon'] + '") no-repeat scroll 0 0',
+                      'background': 'url("' + image_url + '") no-repeat scroll 0 0',
                       'background-size': 'contain',
                   });
               });

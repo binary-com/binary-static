@@ -833,7 +833,7 @@ Header.prototype = {
         if (!loginid || !loginid_list) return;
 
         var accIds = loginid_list.split('+');
-        var valid_loginids = new RegExp('^(' + page.settings.get('valid_loginids') + ')[0-9]+$', 'i');
+        var valid_loginids = new RegExp('^(MX|MF|VRTC|MLT|CR|FOG|VRTJ|JP)[0-9]+$', 'i');
 
         function is_loginid_valid(login_id) {
             return login_id ?
@@ -1024,13 +1024,12 @@ Contents.prototype = {
     },
 };
 
-var Page = function(config) {
+var Page = function() {
     this.is_loaded_by_pjax = false;
     config = typeof config !== 'undefined' ? config : {};
     this.user = new User();
     this.client = new Client();
     this.url = new URL();
-    this.settings = new InScriptStore(config['settings']);
     this.header = new Header({ user: this.user, client: this.client, url: this.url});
     this.contents = new Contents(this.client, this.user);
     this._lang = null;
@@ -1286,7 +1285,7 @@ Page.prototype = {
     },
 };
 
-var page = new Page(window.page_params);
+var page = new Page();
 
 // for IE (before 10) we use a jquery plugin called jQuery.XDomainRequest. Explained here,
 //http://stackoverflow.com/questions/11487216/cors-with-jquery-and-xdomainrequest-in-ie8-9

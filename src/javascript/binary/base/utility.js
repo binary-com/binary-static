@@ -5,9 +5,8 @@
 //////////////////////////////////////////////////////////////////
 function showLoadingImage(container)
 {
-    var image_link = page.settings.get('image_link');
-
-    container.empty().append('<div id="std_loading_img"><p>'+page.text.localize('loading...')+'</p><img src="'+image_link['hourglass']+'" /></div>');
+    container.empty().append('<div id="std_loading_img"><p>' + page.text.localize('loading...') + '</p>' +
+        '<img src="' + page.url.url_for_static('images/common/hourglass_1.gif') + '" /></div>');
 }
 
 /**
