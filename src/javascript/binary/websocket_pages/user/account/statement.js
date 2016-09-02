@@ -1,6 +1,6 @@
 var Statement = (function(){
     'use strict';
-	var moment = require('../../../../lib/moment/moment');
+    var moment = require('../../../../lib/moment/moment');
     var StringUtil = require('../../../common_functions/string_util').StringUtil,
         addComma = require('../../../websocket_pages/trade/common').addComma;
     var getStatementData = function(statement) {
@@ -51,5 +51,5 @@ var Statement = (function(){
 }());
 
 module.exports = {
-	Statement: Statement,
+    Statement: Statement,
 };

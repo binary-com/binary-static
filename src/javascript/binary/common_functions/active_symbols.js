@@ -143,5 +143,5 @@ var ActiveSymbols = (function () {
 })();
 
 module.exports = {
-	ActiveSymbols: ActiveSymbols,
+    ActiveSymbols: ActiveSymbols,
 };

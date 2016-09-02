@@ -1,5 +1,5 @@
 var TopUpVirtualWS = (function() {
-	"use strict";
+    "use strict";
 
     var containerID,
         viewIDs,
@@ -55,8 +55,8 @@ var TopUpVirtualWS = (function() {
 
 
     return {
-    	init: init,
-    	responseHandler: responseHandler
+        init: init,
+        responseHandler: responseHandler
     };
 }());
 
@@ -64,7 +64,7 @@ var TopUpVirtualWS = (function() {
 pjax_config_page_require_auth("top_up_virtualws", function() {
     return {
         onLoad: function() {
-        	BinarySocket.init({
+            BinarySocket.init({
                 onmessage: function(msg){
                     var response = JSON.parse(msg.data);
                     if (response) {

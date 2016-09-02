@@ -79,5 +79,5 @@ var AssetIndex = (function() {
 }());
 
 module.exports = {
-	AssetIndex: AssetIndex,
+    AssetIndex: AssetIndex,
 };

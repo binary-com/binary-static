@@ -14,5 +14,5 @@ var MarketTimes = (function() {
 }());
 
 module.exports = {
-	MarketTimes: MarketTimes,
+    MarketTimes: MarketTimes,
 };

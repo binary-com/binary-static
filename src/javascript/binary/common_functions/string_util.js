@@ -42,5 +42,5 @@ var StringUtil = (function(){
 }());
 
 module.exports = {
-	StringUtil: StringUtil,
+    StringUtil: StringUtil,
 };

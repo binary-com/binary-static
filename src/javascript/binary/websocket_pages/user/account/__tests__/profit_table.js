@@ -5,20 +5,20 @@ var LiveApi = require('binary-live-api').LiveApi;
 var api = new LiveApi({ websocket: ws });
 
 describe('Profit Table', function() {
-	var profit_table;
-	before(function(done){
-		this.timeout(10000);
+    var profit_table;
+    before(function(done){
+        this.timeout(10000);
         //this is a read token, even if other people take it, won't be able to do any harm
-		api.authorize('hhh9bfrbq0G3dRf').then(function(){
-			api.getProfitTable({limit: 1, description: 1, offset: 0}).then(function(response){
+        api.authorize('hhh9bfrbq0G3dRf').then(function(){
+            api.getProfitTable({limit: 1, description: 1, offset: 0}).then(function(response){
                 profit_table = response.profit_table;
-			    done();
+                done();
             });
-		});
-	});
-	it('Should have all expected data', function() {
+        });
+    });
+    it('Should have all expected data', function() {
         var profit_table_data = profitTable.getProfitTabletData(profit_table.transactions[0]);
-		expect(profit_table_data).to.be.an('Object')
+        expect(profit_table_data).to.be.an('Object')
             .and.to.have.property('buyDate')
             .and.to.be.a('string');
         expect(profit_table_data).to.have.property('ref')
@@ -37,5 +37,5 @@ describe('Profit Table', function() {
             .and.to.be.a('string');
         expect(profit_table_data).to.have.property('id')
             .and.to.be.a('string');
-	});
+    });
 });

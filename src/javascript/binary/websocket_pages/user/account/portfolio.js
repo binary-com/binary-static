@@ -63,5 +63,5 @@ var Portfolio = (function(){
 }());
 
 module.exports = {
-	Portfolio: Portfolio,
+    Portfolio: Portfolio,
 };

@@ -66,5 +66,5 @@ var IPHistoryData = (function() {
 })();
 
 module.exports = {
-	IPHistoryData: IPHistoryData,
+    IPHistoryData: IPHistoryData,
 };

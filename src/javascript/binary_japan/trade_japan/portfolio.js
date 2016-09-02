@@ -54,5 +54,5 @@ var JapanPortfolio = (function() {
 })();
 
 module.exports = {
-	JapanPortfolio: JapanPortfolio,
+    JapanPortfolio: JapanPortfolio,
 };

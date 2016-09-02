@@ -18,5 +18,5 @@ format_money.map = {
 };
 
 module.exports = {
-	format_money: format_money,
+    format_money: format_money,
 };
