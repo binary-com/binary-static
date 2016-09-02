@@ -15,7 +15,13 @@ sub generate_data_files {
 
     _make_nobody_dir($js_path);
     print "\tGenerating $js_path/texts.js\n";
-    File::Slurp::write_file("$js_path/texts.js", {binmode => ':utf8'}, _texts());
+    my $exports = <<'END_EXPORTS';
+
+module.exports = {
+    texts_json: texts_json,
+};
+END_EXPORTS
+    File::Slurp::write_file("$js_path/texts.js", {binmode => ':utf8'}, _texts().$exports);
 
     return;
 }
