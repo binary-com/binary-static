@@ -55,10 +55,10 @@ var LimitsUI = (function(){
             var loginId = page.client.loginid;
 
             var tradingLimits = document.getElementById("trading-limits");
-            tradingLimits.textContent = loginId + " - " + text.localize('Trading Limits');
+            tradingLimits.textContent = loginId + " - " + page.text.localize('Trading Limits');
 
             var withdrawalTitle = document.getElementById("withdrawal-title");
-            withdrawalTitle.textContent = loginId + " - " + text.localize('Withdrawal Limits');
+            withdrawalTitle.textContent = loginId + " - " + page.text.localize('Withdrawal Limits');
         }
         document.getElementById('client-limits').setAttribute('style', 'display:table');
     }
@@ -66,7 +66,7 @@ var LimitsUI = (function(){
     function appendRowTable(name, turnover_limit, padding, font_weight) {
       $('#client-limits').append('<tr class="flex-tr">' +
                             '<td class="flex-tr-child" style="padding-left: ' + padding + '; font-weight: ' + font_weight + ';">' +
-                              text.localize(name) +
+                              page.text.localize(name) +
                             '</td>' +
                             '<td>' +
                               turnover_limit +

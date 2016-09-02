@@ -50,7 +50,7 @@ var RealityCheck = (function () {
         var intervalMinute = +($('#realityDuration').val());
 
         if (!(Math.floor(intervalMinute) == intervalMinute && $.isNumeric(intervalMinute))) {
-            var shouldBeInteger = text.localize('Interval should be integer.');
+            var shouldBeInteger = page.text.localize('Interval should be integer.');
             $('#rc-err').text(shouldBeInteger);
             $('#rc-err').removeClass(hiddenClass);
             return;

@@ -21,4 +21,6 @@ var Compatibility = (function() {
 }());
 /* jshint ignore:end */
 
-global.Compatibility = Compatibility;
+if (typeof global !== 'undefined') {
+	global.Compatibility = Compatibility;
+}

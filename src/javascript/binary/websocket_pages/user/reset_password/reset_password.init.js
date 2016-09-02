@@ -13,7 +13,7 @@ var ResetPassword = (function () {
         var pw2 = $('#reset-password2').val();
 
         if (token.length < 48) {
-            $('#verification-error').removeClass(hiddenClass).text(text.localize('Verification code format incorrect.'));
+            $('#verification-error').removeClass(hiddenClass).text(page.text.localize('Verification code format incorrect.'));
             return;
         }
 
@@ -52,7 +52,7 @@ var ResetPassword = (function () {
         if (dobEntered) {
             var dob;
             if (!isValidDate(dobdd, dobmm, dobyy)) {
-                $('#dob-error').removeClass(hiddenClass).text(text.localize('Invalid format for date of birth.'));
+                $('#dob-error').removeClass(hiddenClass).text(page.text.localize('Invalid format for date of birth.'));
                 return;
             }
 
@@ -90,16 +90,16 @@ var ResetPassword = (function () {
                 $('#reset-error').removeClass(hiddenClass);
 
                 // special handling as backend return inconsistent format
-                var errMsg = text.localize(resetErrorTemplate, [
+                var errMsg = page.text.localize(resetErrorTemplate, [
                     response.error.code === 'InputValidationFailed' ?
-                        text.localize('Token has expired.') :
-                        text.localize(response.error.message)
+                        page.text.localize('Token has expired.') :
+                        page.text.localize(response.error.message)
                 ]);
 
                 $('#reset-error-msg').text(errMsg);
             } else {
                 $('p.notice-msg')
-                    .text(text.localize('Your password has been successfully reset. ' +
+                    .text(page.text.localize('Your password has been successfully reset. ' +
                         'Please log into your account using your new password.'));
                 window.setTimeout(function () {
                     Login.redirect_to_login();

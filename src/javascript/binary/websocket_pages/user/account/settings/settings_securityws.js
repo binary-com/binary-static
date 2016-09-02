@@ -52,11 +52,11 @@ var SecurityWS = (function() {
     }
 
     function updatePage(config) {
-        $('legend').text(text.localize(config.legend));
-        $('#lockInfo').text(text.localize(config.info));
+        $('legend').text(page.text.localize(config.legend));
+        $('#lockInfo').text(page.text.localize(config.info));
         $form.find('button')
             .attr('value', config.button)
-            .html(text.localize(config.button));
+            .html(page.text.localize(config.button));
     }
 
     function setupRepeatPasswordForm() {
@@ -137,12 +137,12 @@ var SecurityWS = (function() {
                 response.error.code === 'InputValidationFailed') {
                 message = 'Sorry, you have entered an incorrect cashier password';
             }
-            $("#invalidinputfound").text(text.localize(message));
+            $("#invalidinputfound").text(page.text.localize(message));
             return;
         }
         $form.hide();
         clearErrors();
-        $("#SecuritySuccessMsg").text(text.localize('Your settings have been updated successfully.'));
+        $("#SecuritySuccessMsg").text(page.text.localize('Your settings have been updated successfully.'));
         current_state = STATE.DONE;
     }
 

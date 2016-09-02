@@ -45,5 +45,3 @@ window._trackJs = {
 // if Track:js is already loaded, we need to initialize it
 if (typeof trackJs !== 'undefined') trackJs.configure(window._trackJs);
 
-module.exports = {
-};

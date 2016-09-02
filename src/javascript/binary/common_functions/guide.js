@@ -18,7 +18,7 @@ var Guide = (function() {
 			script	       : '',      // the script name in scripts
 			autoStart      : false,   // false: start by button click
 			guideBtnID     : '#guideBtn',
-			btnText        : text.localize('Walkthrough Guide'),  // guide start button's text
+			btnText        : page.text.localize('Walkthrough Guide'),  // guide start button's text
 			blink_class    : 'highlight',
 			blink_inDelay  : 1000,
 			blink_outDelay : 1000,
@@ -28,8 +28,8 @@ var Guide = (function() {
         $.extend(true, opt, options);
 
         cookieName = 'hide_guide';
-		btnNext    = {className: "button", html: '<span>' + text.localize('Next') + '</span>'};
-		btnFinish  = {className: "button btnFinish", html: '<span>' + text.localize('Finish') + '</span>'};
+		btnNext    = {className: "button", html: '<span>' + page.text.localize('Next') + '</span>'};
+		btnFinish  = {className: "button btnFinish", html: '<span>' + page.text.localize('Finish') + '</span>'};
 
 		if($(opt.guideBtnID).length === 0) {
 			console.warn('Could not find the button placeholder: <div id="' + opt.guideBtnID + '"></div>');
@@ -114,36 +114,36 @@ var Guide = (function() {
 			return [
 				{
 					selector    : '#contract_markets',
-					description : '<h1>' + text.localize('Step') + ' 1</h1>' +
-									text.localize('Select your market'),
+					description : '<h1>' + page.text.localize('Step') + ' 1</h1>' +
+									page.text.localize('Select your market'),
 					event_type  : 'next',
 					nextButton  : btnNext
 				},
 				{
 					selector    : '#underlying',
-					description : '<h1>' + text.localize('Step') + ' 2</h1>' +
-									text.localize('Select your underlying asset'),
+					description : '<h1>' + page.text.localize('Step') + ' 2</h1>' +
+									page.text.localize('Select your underlying asset'),
 					event_type  : 'next',
 					nextButton  : btnNext
 				},
 				{
 					selector    : '#contract_form_name_nav',
-					description : '<h1>' + text.localize('Step') + ' 3</h1>' +
-									text.localize('Select your trade type'),
+					description : '<h1>' + page.text.localize('Step') + ' 3</h1>' +
+									page.text.localize('Select your trade type'),
 					event_type  : 'next',
 					nextButton  : btnNext
 				},
 				{
 					selector    : '#websocket_form',
-					description : '<h1>' + text.localize('Step') + ' 4</h1>' +
-									text.localize('Adjust trade parameters'),
+					description : '<h1>' + page.text.localize('Step') + ' 4</h1>' +
+									page.text.localize('Adjust trade parameters'),
 					event_type  : 'next',
 					nextButton  : btnNext
 				},
 				{
 					selector    : '#contracts_list',
-					description : '<h1>' + text.localize('Step') + ' 5</h1>' +
-									text.localize('Predict the direction<br />and purchase'),
+					description : '<h1>' + page.text.localize('Step') + ' 5</h1>' +
+									page.text.localize('Predict the direction<br />and purchase'),
 					event_type  : 'next',
 					nextButton  : btnFinish
 				}

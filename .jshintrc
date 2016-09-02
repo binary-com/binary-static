@@ -54,6 +54,23 @@
         "moment": true,
         "pjax_config_page": true,
         "page": true,
+        "require": true,
+        "module": true,
+        "TUser": true,
+        "Compatibility": true,
+        "PortfolioWS": true,
+	"BinarySocket": true,
+	"Portfolio": true,
+	"PortfolioWS": true,
+	"addComma": true,
+	"addTooltip": true,
+	"buildOauthApps": true,
+	"console": true,
+	"format_money": true,
+	"japanese_client": true,
+	"showLoadingImage": true,
+	"showTooltip": true,
+	"toJapanTimeIfNeeded": true,
         "text":  true
     }
 

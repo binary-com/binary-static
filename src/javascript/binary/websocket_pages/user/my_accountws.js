@@ -81,7 +81,7 @@ var MyAccountWS = (function() {
         var landing_company = page.client.get_storage_value('landing_company_name');
         $(welcomeTextID)
             .text(
-                text.localize(
+                page.text.localize(
                     isReal ?
                         'You are currently logged in to your real money account with [_1] ([_2]).' :
                         'You are currently logged in to your virtual money account ([_2]).',
@@ -97,7 +97,7 @@ var MyAccountWS = (function() {
         if(TUser.get().balance < 1000) {
             $(virtualTopupID + ' a')
                 .text(
-                    text.localize('Deposit [_1] [_2] virtual money into your account [_3]', [
+                    page.text.localize('Deposit [_1] [_2] virtual money into your account [_3]', [
                         TUser.get().currency,
                         '10000',
                         loginid,
@@ -116,13 +116,13 @@ var MyAccountWS = (function() {
         });
 
         if(disabledAccount.length > 0) {
-            var msgSingular = text.localize('Your [_1] account is unavailable. For any questions please contact [_2].'),
-                msgPlural   = text.localize('Your [_1] accounts are unavailable. For any questions please contact [_2].');
+            var msgSingular = page.text.localize('Your [_1] account is unavailable. For any questions please contact [_2].'),
+                msgPlural   = page.text.localize('Your [_1] accounts are unavailable. For any questions please contact [_2].');
             $('<p/>', {class: 'notice-msg'})
                 .html(
                     template(disabledAccount.length === 1 ? msgSingular : msgPlural, [
                         disabledAccount.join(', '),
-                        $('<a/>', {class: 'pjaxload', href: page.url.url_for('contact'), text: text.localize('Customer Support')}).prop('outerHTML')
+                        $('<a/>', {class: 'pjaxload', href: page.url.url_for('contact'), text: page.text.localize('Customer Support')}).prop('outerHTML')
                     ])
                 )
                 .insertAfter($(welcomeTextID));

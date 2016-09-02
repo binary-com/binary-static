@@ -79,5 +79,3 @@ TimePicker.prototype = {
     },
 };
 
-module.exports = {
-};

@@ -29,7 +29,7 @@ pjax_config_page("new_account/virtualws", function() {
     function onPasswordError(res) {
         var $error = $('#error-account-opening');
         $error.css({display: 'block'})
-            .text(text.localize('Password is not strong enough.'));
+            .text(page.text.localize('Password is not strong enough.'));
     }
 
     function configureSocket() {

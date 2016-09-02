@@ -51,6 +51,4 @@ var JPTradePage = (function() {
   };
 })();
 
-module.exports = {
-    JPTradePage: JPTradePage,
-};
+module.exports = JPTradePage;

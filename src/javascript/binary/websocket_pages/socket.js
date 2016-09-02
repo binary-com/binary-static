@@ -264,7 +264,7 @@ function BinarySocketClass() {
                 if (response.hasOwnProperty('error')) {
                     if(response.error && response.error.code) {
                       if (response.error.code && (response.error.code === 'WrongResponse' || response.error.code === 'OutputValidationFailed')) {
-                        $('#content').empty().html('<div class="container"><p class="notice-msg center-text">' + (response.error.code === 'WrongResponse' && response.error.message ? response.error.message : text.localize('Sorry, an error occurred while processing your request.') )+ '</p></div>');
+                        $('#content').empty().html('<div class="container"><p class="notice-msg center-text">' + (response.error.code === 'WrongResponse' && response.error.message ? response.error.message : page.text.localize('Sorry, an error occurred while processing your request.') )+ '</p></div>');
                       } else if (response.error.code === 'RateLimit') {
                         $('#ratelimit-error-message')
                             .css('display', 'block')

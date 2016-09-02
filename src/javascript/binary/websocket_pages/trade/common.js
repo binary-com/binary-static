@@ -233,7 +233,7 @@ function displayUnderlyings(id, elements, selected) {
         for(var j=0; j<keys2.length; j++){
             for(var k=0; k<submarkets[keys2[j]].length; k++){
                 var key = submarkets[keys2[j]][k];
-                var option = document.createElement('option'), content = document.createTextNode(text.localize(elements[key]['display']));
+                var option = document.createElement('option'), content = document.createTextNode(page.text.localize(elements[key]['display']));
                 option.setAttribute('value', key);
                 if (selected && selected === key) {
                     option.setAttribute('selected', 'selected');
@@ -830,7 +830,7 @@ function selectOption(option, select){
 }
 
 function updatePurchaseStatus(final_price, pnl, contract_status){
-    $('#contract_purchase_heading').text(text.localize(contract_status));
+    $('#contract_purchase_heading').text(page.text.localize(contract_status));
     $payout = $('#contract_purchase_payout');
     $cost = $('#contract_purchase_cost');
     $profit = $('#contract_purchase_profit');
@@ -890,7 +890,7 @@ function showHighchart(){
   } else {
     document.getElementById('chart_frame').src = '';
     $('#trade_live_chart').hide();
-    $('#chart-error').text(text.localize('Chart is not available for this underlying.'))
+    $('#chart-error').text(page.text.localize('Chart is not available for this underlying.'))
                      .show();
     return;
   }
@@ -909,9 +909,45 @@ function setChartSource() {
   document.getElementById('chart_frame').src = 'https://webtrader.binary.com?affiliates=true&instrument=' + document.getElementById('underlying').value + '&timePeriod=1t&gtm=true&lang=' + (page.language() || 'en').toLowerCase();
 }
 
-//used temporarily for mocha test
-if (typeof module !== 'undefined') {
-    module.exports = {
-        addComma: addComma
-    };
-}
+module.exports = {
+	displayOptions: displayOptions,
+	displayUnderlyings: displayUnderlyings,
+	getFormNameBarrierCategory: getFormNameBarrierCategory,
+	contractTypeDisplayMapping: contractTypeDisplayMapping,
+	isVisible: isVisible,
+	hideLoadingOverlay: hideLoadingOverlay,
+	showLoadingOverlay: showLoadingOverlay,
+	showPriceOverlay: showPriceOverlay,
+	hidePriceOverlay: hidePriceOverlay,
+	hideFormOverlay: hideFormOverlay,
+	showFormOverlay: showFormOverlay,
+	hideOverlayContainer: hideOverlayContainer,
+	compareMarkets: compareMarkets,
+	getContractCategoryTree: getContractCategoryTree,
+	displayPriceMovement: displayPriceMovement,
+	resetPriceMovement: resetPriceMovement,
+	toggleActiveNavMenuElement: toggleActiveNavMenuElement,
+	toggleActiveCatMenuElement: toggleActiveCatMenuElement,
+	setFormPlaceholderContent: setFormPlaceholderContent,
+	displayCommentPrice: displayCommentPrice,
+	displayCommentSpreads: displayCommentSpreads,
+	debounce: debounce,
+	getDefaultMarket: getDefaultMarket,
+	getMarketsOrder: getMarketsOrder,
+	addEventListenerForm: addEventListenerForm,
+	submitForm: submitForm,
+	displayIndicativeBarrier: displayIndicativeBarrier,
+	durationOrder: durationOrder,
+	marketOrder: marketOrder,
+	marketSort: marketSort,
+	displayTooltip: displayTooltip,
+	countDecimalPlaces: countDecimalPlaces,
+	selectOption: selectOption,
+	updatePurchaseStatus: updatePurchaseStatus,
+	updateWarmChart: updateWarmChart,
+	reloadPage: reloadPage,
+	addComma: addComma,
+	showHighchart: showHighchart,
+	chartFrameSource: chartFrameSource,
+	setChartSource: setChartSource,
+};

@@ -6,7 +6,7 @@ var ValidationUI = {
         var $parent = $(selector).parent();
         var $p = $('<p/>', {
             class: 'errorfield',
-            text:  text.localize(message),
+            text:  page.text.localize(message),
         });
         $p.attr('data-is-error-field', true);
         $parent.append($p);
