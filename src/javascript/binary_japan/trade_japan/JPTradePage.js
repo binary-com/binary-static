@@ -24,9 +24,9 @@ var JPTradePage = (function() {
 
     Content.populate();
     TradingAnalysis.bindAnalysisTabEvent();
-    $('#tab_portfolio a').text(text.localize('Portfolio'));
-    $('#tab_graph a').text(text.localize('Chart'));
-    $('#tab_explanation a').text(text.localize('Explanation'));
+    $('#tab_portfolio a').text(page.text.localize('Portfolio'));
+    $('#tab_graph a').text(page.text.localize('Chart'));
+    $('#tab_explanation a').text(page.text.localize('Explanation'));
 
     window.chartAllowed = true;
   };

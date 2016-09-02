@@ -276,5 +276,3 @@ TradingAnalysis.DigitInfoWS.prototype = {
 };
 
 TradingAnalysis.tab_last_digitws = new TradingAnalysis.DigitInfoWS();
-
-

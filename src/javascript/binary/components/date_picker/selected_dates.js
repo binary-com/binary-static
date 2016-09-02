@@ -65,7 +65,7 @@ DatePicker.SelectedDates.prototype = {
 //            that.hideToday(inst);
 //            return { defaultDate: $('#duration_amount').val()};
 //        };
-//    
+//
 //        handlers.onChangeMonthYear = function(year, month, inst) {
 //            that.hideToday(inst);
 //        };
@@ -117,4 +117,3 @@ DatePicker.SelectedDates.prototype = {
 //        return localizations;
 //    },
 };
-

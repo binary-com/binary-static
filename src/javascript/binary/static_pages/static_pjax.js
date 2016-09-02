@@ -158,5 +158,3 @@ pjax_config_page('/(us_patents|responsible-trading|partners)', function() {
         }
     };
 });
-
-
