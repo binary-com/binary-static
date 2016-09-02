@@ -118,9 +118,10 @@ Localizable.prototype = {
     }
 };
 
-// for testing
-if (typeof module !== 'undefined') {
-    module.exports = {
-        Localizable: Localizable
-    };
-}
+module.exports = {
+    isStorageSupported: isStorageSupported,
+    Store: Store,
+    InScriptStore: InScriptStore,
+    CookieStorage: CookieStorage,
+    Localizable: Localizable,
+};

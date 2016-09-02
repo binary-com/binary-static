@@ -1,9 +1,9 @@
 var Portfolio = (function(){
     'use strict';
 
-    var addComma = Compatibility.requireIfNotExist('addComma', '../websocket_pages/trade/common', 'addComma'),
-        toJapanTimeIfNeeded = Compatibility.requireIfNotExist('toJapanTimeIfNeeded', '../base/utility', 'toJapanTimeIfNeeded'),
-        format_money = Compatibility.requireIfNotExist('format_money', '../common_functions/currency_to_symbol', 'format_money');
+    var addComma = require('../../../websocket_pages/trade/common').addComma,
+        toJapanTimeIfNeeded = require('../../../base/utility').toJapanTimeIfNeeded,
+        format_money = require('../../../common_functions/currency_to_symbol').format_money;
 
     function getBalance(balance, currency) {
         balance = parseFloat(balance);
@@ -59,9 +59,9 @@ var Portfolio = (function(){
         getSumPurchase: function(values) { return getSum(values, 'buy_price'); },
     };
 
-    if (typeof module !== 'undefined') {
-        module.exports = external;
-    }
-
     return external;
 }());
+
+module.exports = {
+    Portfolio: Portfolio,
+};

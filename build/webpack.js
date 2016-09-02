@@ -6,7 +6,7 @@ module.exports = function (grunt) {
                 app: './src/javascript/index.js',
             },
             output: {
-                path: './src/javascript',
+                path: global.dist + '/js/',
                 filename: 'binary_pack.js',
             },
         }

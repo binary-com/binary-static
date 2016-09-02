@@ -12,6 +12,3 @@ pjax_config_page_require_auth("user/settings/iphistoryws", function(){
         }
     };
 });
-
-module.exports = {
-};

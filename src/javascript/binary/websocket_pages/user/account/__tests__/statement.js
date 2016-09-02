@@ -1,24 +1,24 @@
 var expect = require('chai').expect;
-var statement = require('../statement');
+var statement = require('../statement').Statement;
 var ws = require('ws');
 var LiveApi = require('binary-live-api').LiveApi;
 var api = new LiveApi({ websocket: ws });
 
 describe('Statement', function() {
-	var statement_ws;
-	before(function(done){
-		this.timeout(10000);
+    var statement_ws;
+    before(function(done){
+        this.timeout(10000);
         //this is a read token, even if other people take it, won't be able to do any harm
-		api.authorize('hhh9bfrbq0G3dRf').then(function(){
-			api.getStatement({limit: 1, description: 1, offset: 0}).then(function(response){
+        api.authorize('hhh9bfrbq0G3dRf').then(function(){
+            api.getStatement({limit: 1, description: 1, offset: 0}).then(function(response){
                 statement_ws = response.statement;
-			    done();
+                done();
             });
-		});
-	});
-	it('Should have all expected data', function() {
+        });
+    });
+    it('Should have all expected data', function() {
         var statement_data = statement.getStatementData(statement_ws.transactions[0]);
-		expect(statement_data).to.be.an('Object')
+        expect(statement_data).to.be.an('Object')
             .and.to.have.property('date')
             .and.to.be.a('string');
         expect(statement_data).to.have.property('ref')
@@ -35,5 +35,5 @@ describe('Statement', function() {
             .and.to.be.a('string');
         expect(statement_data).to.have.property('id')
             .and.to.be.a('string');
-	});
+    });
 });

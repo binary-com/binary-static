@@ -39,7 +39,7 @@ var PaymentAgentWithdrawWS = (function() {
         $views.addClass(hiddenClass);
 
         if(page.client.is_virtual()) { // Virtual Account
-            showPageError(text.localize('You are not authorized for withdrawal via payment agent.'));
+            showPageError(page.text.localize('You are not authorized for withdrawal via payment agent.'));
             return false;
         }
 
@@ -73,14 +73,14 @@ var PaymentAgentWithdrawWS = (function() {
         var paList = response.paymentagent_list.list;
         if(paList.length > 0) {
             BinarySocket.send({verify_email: TUser.get().email, type:'paymentagent_withdraw'});
-            insertListOption($ddlAgents, text.localize('Please select a payment agent'), '');
+            insertListOption($ddlAgents, page.text.localize('Please select a payment agent'), '');
             for(var i = 0; i < paList.length; i++){
                 insertListOption($ddlAgents, paList[i].name, paList[i].paymentagent_loginid);
             }
             setActiveView(viewIDs.form);
         }
         else {
-            showPageError(text.localize('The Payment Agent facility is currently not available in your country.'));
+            showPageError(page.text.localize('The Payment Agent facility is currently not available in your country.'));
         }
     };
 
@@ -112,7 +112,7 @@ var PaymentAgentWithdrawWS = (function() {
         // verification token
         if(!isRequiredError(fieldIDs.verificationCode)){
           if (token.length !== 48) {
-            showError(fieldIDs.verificationCode, Content.errorMessage('valid', text.localize('verification token')));
+            showError(fieldIDs.verificationCode, Content.errorMessage('valid', page.text.localize('verification token')));
           }
         }
 
@@ -122,13 +122,13 @@ var PaymentAgentWithdrawWS = (function() {
                 showError(fieldIDs.txtAmount, Content.errorMessage('reg', [numbers]));
             }
             else if(!(/^\d+(\.\d{1,2})?$/).test(amount)) {
-                showError(fieldIDs.txtAmount, text.localize('Only 2 decimal points are allowed.'));
+                showError(fieldIDs.txtAmount, page.text.localize('Only 2 decimal points are allowed.'));
             }
             else if(amount < minAmount) {
-                showError(fieldIDs.txtAmount, text.localize('Invalid amount, minimum is') + ' ' + withdrawCurrency + ' ' + minAmount);
+                showError(fieldIDs.txtAmount, page.text.localize('Invalid amount, minimum is') + ' ' + withdrawCurrency + ' ' + minAmount);
             }
             else if(amount > maxAmount) {
-                showError(fieldIDs.txtAmount, text.localize('Invalid amount, maximum is') + ' ' + withdrawCurrency + ' ' + maxAmount);
+                showError(fieldIDs.txtAmount, page.text.localize('Invalid amount, maximum is') + ' ' + withdrawCurrency + ' ' + maxAmount);
             }
         }
 
@@ -211,7 +211,7 @@ var PaymentAgentWithdrawWS = (function() {
                     .attr('class', 'success-msg')
                     .html(
                         '<ul class="checked"><li>' +
-                        text.localize('Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.', [
+                        page.text.localize('Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.', [
                             formData.currency,
                             formData.amount,
                             Cookies.get('loginid'),

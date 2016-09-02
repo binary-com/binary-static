@@ -53,9 +53,9 @@ var MetaTraderUI = (function() {
             makeTextRow('Balance', currency + ' ' + mt5Accounts[accType].balance, 'balance-' + accType) +
             makeTextRow('Name', mt5Accounts[accType].name) +
             // makeTextRow('Leverage', mt5Accounts[accType].leverage)
-            makeTextRow('', text.localize('Start trading with your ' + (accType === 'demo' ? 'Demo' : 'Real') + ' Account') +
+            makeTextRow('', page.text.localize('Start trading with your ' + (accType === 'demo' ? 'Demo' : 'Real') + ' Account') +
                 ' <a class="button" href="' + page.url.url_for('metatrader/download') + '" style="margin:0 20px;">' +
-                    '<span>' + text.localize('Download MetaTrader') + '</span></a>')
+                    '<span>' + page.text.localize('Download MetaTrader') + '</span></a>')
         ));
         $('#details-' + accType).html($details.html());
 
@@ -101,7 +101,7 @@ var MetaTraderUI = (function() {
 
     var makeTextRow = function(label, value, id) {
         return '<div' + (id ? ' id="' + id + '"' : '') + ' class="gr-row gr-padding-10">' +
-            (label ? '<div class="gr-4">' + text.localize(label) + '</div>' : '') +
+            (label ? '<div class="gr-4">' + page.text.localize(label) + '</div>' : '') +
             '<div class="gr-' + (label ? '8' : '12') + '">' + value + '</div></div>';
     };
 
@@ -196,8 +196,8 @@ var MetaTraderUI = (function() {
                     });
 
                     $('#msg-cannot-create-real').html(hasRealBinaryAccount ?
-                        text.localize('To create a real account for MetaTrader, switch to your [_1] real money account.', ['Binary.com']) :
-                        text.localize('To create a real account for MetaTrader, <a href="[_1]">upgrade to [_2] real money account</a>.', [page.url.url_for('new_account/realws'), 'Binary.com'])
+                        page.text.localize('To create a real account for MetaTrader, switch to your [_1] real money account.', ['Binary.com']) :
+                        page.text.localize('To create a real account for MetaTrader, <a href="[_1]">upgrade to [_2] real money account</a>.', [page.url.url_for('new_account/realws'), 'Binary.com'])
                     ).removeClass(hiddenClass);
                 } else {
                     if(!isAuthenticated && !page.client.is_virtual()) {
@@ -206,7 +206,7 @@ var MetaTraderUI = (function() {
                         $form = $('#form-new-real');
                         if($form.contents().length === 0) {
                             $('#form-new-demo').contents().clone().appendTo('#form-new-real');
-                            $form.find('.account-type').text(text.localize('Real'));
+                            $form.find('.account-type').text(page.text.localize('Real'));
                             $form.find('#name-row').addClass(hiddenClass);
                             passwordMeter();
                         }
@@ -289,7 +289,7 @@ var MetaTraderUI = (function() {
 
         MetaTraderData.requestLoginDetails(response.mt5_new_account.login);
         $('#msg-new-account-' + (/demo/.test(response.mt5_new_account.account_type) ? 'demo' : 'real'))
-            .html(text.localize('Congratulations! Your account has been created.')).removeClass(hiddenClass);
+            .html(page.text.localize('Congratulations! Your account has been created.')).removeClass(hiddenClass);
     };
 
     var responseDeposit = function(response) {
@@ -300,7 +300,7 @@ var MetaTraderUI = (function() {
 
         if(+response.mt5_deposit === 1) {
             $form.find('#txtAmount').val('');
-            showFormMessage(text.localize('Deposit is done. Transaction ID:') + ' ' + response.binary_transaction_id, true);
+            showFormMessage(page.text.localize('Deposit is done. Transaction ID:') + ' ' + response.binary_transaction_id, true);
             highlightBalance = true;
             MetaTraderData.requestLoginDetails(response.echo_req.to_mt5);
         } else {
@@ -316,7 +316,7 @@ var MetaTraderUI = (function() {
 
         if(+response.mt5_withdrawal === 1) {
             $form.find('#txtAmount').val('');
-            showFormMessage(text.localize('Withdrawal is done. Transaction ID:') + ' ' + response.binary_transaction_id, true);
+            showFormMessage(page.text.localize('Withdrawal is done. Transaction ID:') + ' ' + response.binary_transaction_id, true);
             highlightBalance = true;
             MetaTraderData.requestLoginDetails(response.echo_req.from_mt5);
         } else {
@@ -414,7 +414,7 @@ var MetaTraderUI = (function() {
         var $elmID = $form.find('#formMessage');
         $elmID
             .attr('class', isSuccess ? 'success-msg' : errorClass)
-            .html(isSuccess ? '<ul class="checked"><li>' + text.localize(msg) + '</li></ul>' : text.localize(msg))
+            .html(isSuccess ? '<ul class="checked"><li>' + page.text.localize(msg) + '</li></ul>' : page.text.localize(msg))
             .css('display', 'block')
             .delay(5000)
             .fadeOut(1000);

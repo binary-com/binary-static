@@ -61,7 +61,7 @@ var PasswordWS = (function(){
 
     function handler(response) {
         if ('error' in response) {
-            var errorMsg = text.localize('Old password is wrong.');
+            var errorMsg = page.text.localize('Old password is wrong.');
             if ('message' in response.error) {
                 if (response.error.message.indexOf('old_password') === -1) {
                     errorMsg = response.error.message;

@@ -117,7 +117,7 @@ var JapanAccOpeningUI = function () {
     ValidAccountOpening.checkDate(elementObj['dobdd'], elementObj['dobmm'], elementObj['dobyy'], errorObj['dobdd']);
 
     if (!/^\d{3}-\d{4}$/.test(elementObj['postcode'].value)) {
-      errorObj['postcode'].innerHTML = text.localize('Please follow the pattern 3 numbers, a dash, followed by 4 numbers.');
+      errorObj['postcode'].innerHTML = page.text.localize('Please follow the pattern 3 numbers, a dash, followed by 4 numbers.');
       Validate.displayErrorMessage(errorObj['postcode']);
       window.accountErrorCounter++;
     }

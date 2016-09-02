@@ -3,7 +3,7 @@ pjax_config_page_require_auth("limitsws", function(){
         onLoad: function() {
             Content.populate();
             var titleElement = document.getElementById("limits-ws-container").firstElementChild;
-            titleElement.textContent = text.localize('Trading and Withdrawal Limits');
+            titleElement.textContent = page.text.localize('Trading and Withdrawal Limits');
             if (TUser.get().is_virtual) {
                 LimitsWS.limitsError();
                 return;
@@ -34,6 +34,3 @@ pjax_config_page_require_auth("limitsws", function(){
         }
     };
 });
-
-module.exports = {
-};

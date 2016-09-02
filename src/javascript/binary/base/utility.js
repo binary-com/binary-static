@@ -7,7 +7,7 @@ function showLoadingImage(container)
 {
     var image_link = page.settings.get('image_link');
 
-    container.empty().append('<div id="std_loading_img"><p>'+text.localize('loading...')+'</p><img src="'+image_link['hourglass']+'" /></div>');
+    container.empty().append('<div id="std_loading_img"><p>'+page.text.localize('loading...')+'</p><img src="'+image_link['hourglass']+'" /></div>');
 }
 
 /**
@@ -127,8 +127,8 @@ function attach_time_picker(element, conf) {
         timeSeparator: ':',
         showLeadingZero: true,
         howMinutesLeadingZero: true,
-        hourText: text.localize("Hour"),
-        minuteText: text.localize("Minute"),
+        hourText: page.text.localize("Hour"),
+        minuteText: page.text.localize("Minute"),
         minTime: {},
         maxTime: {},
     };
@@ -299,12 +299,19 @@ function parseLoginIDList(string) {
     });
 }
 
-//used temporarily for mocha test
-if (typeof module !== 'undefined') {
-    module.exports = {
-        toJapanTimeIfNeeded: toJapanTimeIfNeeded,
-        objectNotEmpty: objectNotEmpty,
-        template: template,
-        parseLoginIDList: parseLoginIDList,
-    };
-}
+module.exports = {
+    showLoadingImage: showLoadingImage,
+    get_highest_zindex: get_highest_zindex,
+    element_data_attrs: element_data_attrs,
+    snake_case_to_camel_case: snake_case_to_camel_case,
+    attach_date_picker: attach_date_picker,
+    attach_time_picker: attach_time_picker,
+    find_active_jqtab: find_active_jqtab,
+    attach_tabs: attach_tabs,
+    showLocalTimeOnHover: showLocalTimeOnHover,
+    toJapanTimeIfNeeded: toJapanTimeIfNeeded,
+    downloadCSV: downloadCSV,
+    template: template,
+    objectNotEmpty: objectNotEmpty,
+    parseLoginIDList: parseLoginIDList,
+};

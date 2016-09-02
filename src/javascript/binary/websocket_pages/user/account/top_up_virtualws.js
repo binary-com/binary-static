@@ -1,5 +1,5 @@
 var TopUpVirtualWS = (function() {
-	"use strict";
+    "use strict";
 
     var containerID,
         viewIDs,
@@ -18,7 +18,7 @@ var TopUpVirtualWS = (function() {
         $views.addClass('hidden');
 
         if(!page.client.is_virtual()) {
-            showMessage(text.localize('Sorry, this feature is available to virtual accounts only.'), false);
+            showMessage(page.text.localize('Sorry, this feature is available to virtual accounts only.'), false);
         }
         else {
             BinarySocket.send({"topup_virtual": "1"});
@@ -29,11 +29,11 @@ var TopUpVirtualWS = (function() {
         var str, amt , currType;
         if ('error' in response) {
             if ('message' in response.error) {
-                showMessage(text.localize(response.error.message), false);
+                showMessage(page.text.localize(response.error.message), false);
             }
         } else {
             showMessage(
-                text.localize('[_1] [_2] has been credited to your Virtual money account [_3]', [
+                page.text.localize('[_1] [_2] has been credited to your Virtual money account [_3]', [
                     response.topup_virtual.currency,
                     response.topup_virtual.amount,
                     page.client.loginid
@@ -55,8 +55,8 @@ var TopUpVirtualWS = (function() {
 
 
     return {
-    	init: init,
-    	responseHandler: responseHandler
+        init: init,
+        responseHandler: responseHandler
     };
 }());
 
@@ -64,7 +64,7 @@ var TopUpVirtualWS = (function() {
 pjax_config_page_require_auth("top_up_virtualws", function() {
     return {
         onLoad: function() {
-        	BinarySocket.init({
+            BinarySocket.init({
                 onmessage: function(msg){
                     var response = JSON.parse(msg.data);
                     if (response) {

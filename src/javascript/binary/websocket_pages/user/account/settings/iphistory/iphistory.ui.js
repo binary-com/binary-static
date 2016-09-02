@@ -7,7 +7,7 @@ var IPHistoryUI = (function() {
 
     function init() {
         var $title = $('#login_history-title').children().first();
-        $title.text(text.localize($title.text()));
+        $title.text(page.text.localize($title.text()));
     }
 
     function update(history) {
@@ -19,7 +19,7 @@ var IPHistoryUI = (function() {
         flexTable = new FlexTableUI({
             id:        'login-history-table',
             container: containerSelector,
-            header:    headers.map(function(s) { return text.localize(s); }),
+            header:    headers.map(function(s) { return page.text.localize(s); }),
             cols:      columns,
             data:      history,
             formatter: formatRow,
@@ -28,14 +28,14 @@ var IPHistoryUI = (function() {
             },
         });
         if (!history.length) {
-            return flexTable.displayError(text.localize(no_messages_error), 6);
+            return flexTable.displayError(page.text.localize(no_messages_error), 6);
         }
         showLocalTimeOnHover('td.timestamp');
     }
 
     function formatRow(data) {
         var timestamp = moment.unix(data.time).utc().format('YYYY-MM-DD HH:mm:ss').replace(' ', '\n') + ' GMT';
-        var status = text.localize(data.success ? 'Successful' : 'Failed');
+        var status = page.text.localize(data.success ? 'Successful' : 'Failed');
         var browser = data.browser;
         var browserString = browser ?
             browser.name + ' v' + browser.version :
