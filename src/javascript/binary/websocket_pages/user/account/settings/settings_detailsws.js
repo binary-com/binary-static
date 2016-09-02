@@ -222,7 +222,6 @@ var SettingsDetailsWS = (function() {
         Object.keys(data).forEach(function(key) {
             req[key] = data[key];
         });
-        console.log(req);
         BinarySocket.send(req);
     }
 
