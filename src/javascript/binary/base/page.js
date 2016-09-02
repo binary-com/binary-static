@@ -1,3 +1,4 @@
+var getAppId = require('../../config').getAppId;
 var clock_started = false;
 
 var SessionStore, LocalStore;
@@ -497,7 +498,7 @@ URL.prototype = {
     path_matches: function(url) {
         //pathname is /d/page.cgi. Eliminate /d/ and /c/ from both urls.
         var this_pathname = this.location.pathname.replace(/\/[d|c]\//g, '');
-        var url_pathname = url.location.pathname.replace(/\/[d|c]\//g, '');
+        var url_pathname = page.url.location.pathname.replace(/\/[d|c]\//g, '');
         return (this_pathname == url_pathname || '/' + this_pathname == url_pathname);
     },
     params_hash_to_string: function(params) {
@@ -511,7 +512,7 @@ URL.prototype = {
             var param_count = this_params.length;
             var match_count = 0;
             while(param_count--) {
-                if(url.param(this_params[param_count][0]) == this_params[param_count][1]) {
+                if(page.url.param(this_params[param_count][0]) == this_params[param_count][1]) {
                     match_count++;
                 }
             }
@@ -1298,17 +1299,6 @@ $(function(){
     });
 });
 
-//////////////////////////////////////////////////////////////
-//Purpose: To solve cross domain logged out server problem.
-//Return: Hostname for this page
-//////////////////////////////////////////////////////////////
-function changeUrlToSameDomain(url) {
-    var re = new RegExp('^(http|https):\/\/[.a-zA-Z0-9-]+/');
-    var server_name = window.location.protocol + '//' + window.location.hostname;
-    var same_domain_url = url.replace(re, server_name + '/');
-    return same_domain_url;
-}
-
 var make_mobile_menu = function () {
     if ($('#mobile-menu-container').is(':visible')) {
         $('#mobile-menu').mmenu({
@@ -1387,18 +1377,10 @@ module.exports = {
     getClockStarted: function() {return clock_started;},
     page: page,
     make_mobile_menu: make_mobile_menu,
-    changeUrlToSameDomain: changeUrlToSameDomain,
     TUser: TUser,
     texts: texts,
     markets: markets,
     GTM: GTM,
-    User: User,
-    Client: Client,
-    URL: URL,
-    Menu: Menu,
-    Header: Header,
-    Contents: Contents,
-    Page: Page,
     SessionStore: SessionStore,
     LocalStore: LocalStore,
 };
