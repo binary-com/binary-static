@@ -12,5 +12,4 @@ pjax_config_page('user/reset_passwordws', function() {
     };
 });
 
-module.exports = {
-};
+

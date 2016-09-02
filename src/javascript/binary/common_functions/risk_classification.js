@@ -67,5 +67,4 @@ RiskClassification = (function() {
   };
 }());
 
-module.exports = {
-};
+
