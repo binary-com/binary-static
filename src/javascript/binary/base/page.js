@@ -1380,6 +1380,7 @@ module.exports = {
     texts: texts,
     markets: markets,
     GTM: GTM,
+    URL: URL,
     SessionStore: SessionStore,
     LocalStore: LocalStore,
 };
