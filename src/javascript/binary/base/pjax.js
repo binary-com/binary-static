@@ -192,12 +192,7 @@ onLoad.queue(function () {
 
     MenuContent.init($('.content-tab-container').find('.tm-ul'));
 
-    add_click_effect_to_button();
     make_mobile_menu();
-
-    // attach the class to account form's div/fieldset for CSS visual effects
-    var objFormEffect = new formEffects();
-    objFormEffect.set($('form.formObject'));
 
     var i = window.location.href.split('#');
     if (i.length != 2) return;

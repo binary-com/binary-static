@@ -1309,84 +1309,6 @@ function changeUrlToSameDomain(url) {
     return same_domain_url;
 }
 
-function formEffects() {
-    var select_focus_event = function () {
-        $(this)
-            .addClass('focus')
-            .siblings().addClass('focus')
-            .parents('fieldset').addClass('focus');
-    };
-    var select_blur_event = function () {
-        $(this)
-            .removeClass('focus')
-            .siblings().removeClass('focus')
-            .parents('fieldset').removeClass('focus');
-    };
-    var input_focus_event = function () {
-        $(this)
-            .parent('div').addClass('focus')
-            .parents('fieldset').addClass('focus');
-    };
-    var input_blur_event = function () {
-        $(this)
-            .parent('div').removeClass('focus')
-            .parents('fieldset').removeClass('focus');
-    };
-
-    this.set = function (jqObject) {
-        jqObject
-            .delegate('select', 'focus', select_focus_event)
-            .delegate('select', 'blur', select_blur_event);
-
-        jqObject
-            .delegate('input[type=text],input[type=password],textarea', 'focus', input_focus_event)
-            .delegate('input[type=text],input[type=password],textarea', 'blur', input_blur_event);
-    };
-}
-
-function add_click_effect_to_button() {
-    var prefix = function (class_name) {
-        var class_names = class_name.split(/\s+/);
-        var _prefix = 'button';
-        var cn = class_names.shift();
-
-        while (cn) {
-            if (cn && cn != _prefix && !cn.match(/-focus|-hover/)) {
-                _prefix = cn;
-                break;
-            }
-            cn = class_names.shift();
-        }
-
-        return _prefix;
-    };
-
-    var remove_button_class = function (button, class_name) {
-        button.removeClass(class_name).children('.button').removeClass(class_name).end().parent('.button').removeClass(class_name);
-    };
-    var add_button_class = function (button, class_name) {
-        button.addClass(class_name).children('.button').addClass(class_name).end().parent('.button').addClass(class_name);
-    };
-
-    $('#content,#popup')
-        .delegate('.button', 'mousedown', function () {
-            var class_name = prefix(this.className) + '-focus';
-            add_button_class($(this), class_name);
-        })
-        .delegate('.button', 'mouseup', function () {
-            var class_name = prefix(this.className) + '-focus';
-            remove_button_class($(this), class_name);
-        })
-        .delegate('.button', 'mouseover', function () {
-            var class_name = prefix(this.className) + '-hover';
-            add_button_class($(this), class_name);
-        })
-        .delegate('.button', 'mouseout', function () {
-            var class_name = prefix(this.className) + '-hover';
-            remove_button_class($(this), class_name);
-        });
-}
-
 var make_mobile_menu = function () {
     if ($('#mobile-menu-container').is(':visible')) {
         $('#mobile-menu').mmenu({
@@ -1469,8 +1391,6 @@ module.exports = {
     TUser: TUser,
     texts: texts,
     markets: markets,
-    formEffects: formEffects,
-    add_click_effect_to_button: add_click_effect_to_button,
     GTM: GTM,
     User: User,
     Client: Client,
