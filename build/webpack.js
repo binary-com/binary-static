@@ -1,7 +1,7 @@
 module.exports = function (grunt) {
     return {
         all: {
-            devtool: 'source-map',
+            // devtool: 'source-map',
             entry: {
                 app: './src/javascript/index.js',
             },
