@@ -1,5 +1,5 @@
 var expect = require('chai').expect;
-var portfolio = require('../portfolio');
+var portfolio = require('../portfolio').Portfolio;
 var ws = require('ws');
 var LiveApi = require('binary-live-api').LiveApi;
 var api = new LiveApi({ websocket: ws });

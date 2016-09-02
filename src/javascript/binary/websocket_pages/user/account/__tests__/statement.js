@@ -1,5 +1,5 @@
 var expect = require('chai').expect;
-var statement = require('../statement');
+var statement = require('../statement').Statement;
 var ws = require('ws');
 var LiveApi = require('binary-live-api').LiveApi;
 var api = new LiveApi({ websocket: ws });

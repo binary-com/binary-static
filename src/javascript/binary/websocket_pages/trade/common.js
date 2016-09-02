@@ -13,7 +13,7 @@
 /*
  * function to display contract form as element of ul
  */
- function displayContractForms(id, elements, selected) {
+function displayContractForms(id, elements, selected) {
      'use strict';
      if (!id || !elements || !selected) return;
      var target = document.getElementById(id),
@@ -124,7 +124,7 @@
  }
 
 
- function displayMarkets(id, elements, selected) {
+function displayMarkets(id, elements, selected) {
      'use strict';
      var target= document.getElementById(id),
          fragment =  document.createDocumentFragment();
@@ -950,4 +950,6 @@ module.exports = {
 	showHighchart: showHighchart,
 	chartFrameSource: chartFrameSource,
 	setChartSource: setChartSource,
+	displayContractForms: displayContractForms,
+	displayMarkets: displayMarkets,
 };

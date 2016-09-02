@@ -31,6 +31,18 @@ exportAllFunctions(endpoint);
 var traffic_source = require('./binary/common_functions/traffic_source');
 exportAllFunctions(traffic_source);
 
+var KnowledgeTestData = require('./binary_japan/knowledge_test/knowledge_test.data.js');
+exportAllFunctions(KnowledgeTestData);
+var KnowledgeTest = require('./binary_japan/knowledge_test/knowledge_test.init.js');
+exportAllFunctions(KnowledgeTest);
+var KnowledgeTestUI = require('./binary_japan/knowledge_test/knowledge_test.ui.js');
+exportAllFunctions(KnowledgeTestUI);
+var JPTradePage = require('./binary_japan/trade_japan/JPTradePage.js');
+exportAllFunctions(JPTradePage);
+var JapanPortfolio = require('./binary_japan/trade_japan/portfolio.js');
+exportAllFunctions(JapanPortfolio);
+var PricingDetails = require('./binary_japan/trade_japan/pricing_details.js');
+exportAllFunctions(PricingDetails);
 var active_symbols = require('./binary/common_functions/active_symbols');
 exportAllFunctions(active_symbols);
 var button = require('./binary/common_functions/attach_dom/button');
