@@ -71,8 +71,6 @@ var risk_classification = require('./binary/common_functions/risk_classification
 exportAllFunctions(risk_classification);
 var session_duration_limit = require('./binary/common_functions/session_duration_limit');
 exportAllFunctions(session_duration_limit);
-var string_util = require('./binary/common_functions/string_util');
-exportAllFunctions(string_util);
 var valid_account_opening = require('./binary/common_functions/valid_account_opening');
 exportAllFunctions(valid_account_opening);
 var validation = require('./binary/common_functions/validation');
@@ -225,8 +223,12 @@ var statement_init = require('./binary/websocket_pages/user/account/statement/st
 exportAllFunctions(statement_init);
 var statement_ui = require('./binary/websocket_pages/user/account/statement/statement.ui');
 exportAllFunctions(statement_ui);
+
+var string_util = require('./binary/common_functions/string_util');
+exportAllFunctions(string_util);
 var statement = require('./binary/websocket_pages/user/account/statement');
 exportAllFunctions(statement);
+
 var top_up_virtualws = require('./binary/websocket_pages/user/account/top_up_virtualws');
 exportAllFunctions(top_up_virtualws);
 var lost_password_init = require('./binary/websocket_pages/user/lost_password/lost_password.init');

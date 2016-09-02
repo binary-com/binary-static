@@ -1,8 +1,8 @@
 var Statement = (function(){
     'use strict';
-    var moment = Compatibility.requireIfNotExist('moment', '../../lib/moment/moment'),
-        StringUtil = Compatibility.requireIfNotExist('StringUtil', '../common_functions/string_util'),
-        addComma = Compatibility.requireIfNotExist('addComma', '../websocket_pages/trade/common', 'addComma');
+	var moment = require('../../../../lib/moment/moment');
+    var StringUtil = require('../../../common_functions/string_util').StringUtil,
+        addComma = require('../../../websocket_pages/trade/common').addComma;
     var getStatementData = function(statement) {
         var dateObj = new Date(statement["transaction_time"] * 1000),
             momentObj = moment.utc(dateObj),

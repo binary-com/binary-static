@@ -1,7 +1,7 @@
 var ProfitTable = (function(){
     'use strict';
-    var moment = Compatibility.requireIfNotExist('moment', '../../lib/moment/moment');
     var getProfitTabletData = function(transaction) {
+		var moment = require('../../../../lib/moment/moment');
         var buyMoment = moment.utc(transaction["purchase_time"] * 1000),
             sellMoment = moment.utc(transaction["sell_time"] * 1000),
             buyPrice = parseFloat(transaction["buy_price"]).toFixed(2),

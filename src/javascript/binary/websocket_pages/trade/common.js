@@ -2,6 +2,10 @@
  * This contains common functions we need for processing the response
  */
 
+if (typeof window === 'undefined') {
+	Element = function() {}; // jshint ignore:line
+}
+
  Element.prototype.hide = function(){
      this.style.display = 'none';
  };
