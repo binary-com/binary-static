@@ -222,8 +222,8 @@ Client.prototype = {
     show_login_if_logout: function(shouldReplacePageContents) {
         if (!this.is_logged_in && shouldReplacePageContents) {
             $('#content > .container').addClass('center-text')
-                .html($('<p/>', {class: 'notice-msg', html: this.text.localize('Please [_1] to view this page', [
-                        '<a class="login_link" href="javascript:;">' + this.text.localize('login') + '</a>'
+                .html($('<p/>', {class: 'notice-msg', html: page.text.localize('Please [_1] to view this page', [
+                        '<a class="login_link" href="javascript:;">' + page.text.localize('login') + '</a>'
                     ])}));
             $('.login_link').click(function(){Login.redirect_to_login();});
         }
@@ -935,7 +935,7 @@ Contents.prototype = {
             var show_upgrade = function(url, msg) {
                 $upgrade_msg.removeClass(hiddenClass)
                     .find('a').removeClass(hiddenClass)
-                        .attr('href', page.url.url_for(url)).html($('<span/>', {text: this.text.localize(msg)}));
+                        .attr('href', page.url.url_for(url)).html($('<span/>', {text: page.text.localize(msg)}));
             };
 
             if (page.client.is_virtual()) {
@@ -1352,6 +1352,7 @@ $(document).ready(function () {
 
 
 module.exports = {
+	getClockStarted: function() {return clock_started;},
 	page: page,
     make_mobile_menu: make_mobile_menu,
     changeUrlToSameDomain: changeUrlToSameDomain,

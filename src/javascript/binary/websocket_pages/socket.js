@@ -106,7 +106,7 @@ function BinarySocketClass() {
 
             if (isReady()) {
                 if (!Login.is_login_pages()) page.header.validate_cookies();
-                if (!clock_started) page.header.start_clock_ws();
+                if (!getClockStarted()) page.header.start_clock_ws();
             }
         };
 
