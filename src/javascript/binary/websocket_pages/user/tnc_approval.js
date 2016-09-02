@@ -45,7 +45,7 @@ var TNCApproval = (function() {
                 page.url.url_for('terms-and-conditions')
         ]);
         $('#tnc-message').html(tnc_message).removeClass(hiddenClass);
-        $('#btn-accept').text(text.localize('OK'));
+        $('#btn-accept').text(page.text.localize('OK'));
     };
 
     var responseTNCApproval = function(response) {
@@ -110,3 +110,7 @@ pjax_config_page_require_auth("tnc_approvalws", function() {
         }
     };
 });
+
+module.exports = {
+    TNCApproval: TNCApproval,
+};

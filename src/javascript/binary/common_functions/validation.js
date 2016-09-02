@@ -50,7 +50,7 @@ var Validate = (function(){
       displayErrorMessage(error);
       return true;
     } else if (!validateEmail(email)) {
-      error.textContent = Content.errorMessage('valid', text.localize('email address'));
+      error.textContent = Content.errorMessage('valid', page.text.localize('email address'));
       displayErrorMessage(error);
       return true;
     }
@@ -65,7 +65,7 @@ var Validate = (function(){
       displayErrorMessage(error);
       return true;
     } else if (!validateToken(token)) {
-      error.textContent = Content.errorMessage('valid', text.localize('verification token'));
+      error.textContent = Content.errorMessage('valid', page.text.localize('verification token'));
       displayErrorMessage(error);
       return true;
     }
@@ -111,7 +111,7 @@ var Validate = (function(){
     if (/[0-9]+/.test(password) && /[A-Z]+/.test(password) && /[a-z]+/.test(password)) {
       return true;
     }
-    handleError(error, text.localize('Password should have lower and uppercase letters with numbers.'));
+    handleError(error, page.text.localize('Password should have lower and uppercase letters with numbers.'));
     return errorCounter++;
   }
 
@@ -213,8 +213,15 @@ function showPasswordError(password) {
 
   var hasUpperLowerDigitRegex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/;
   if (!hasUpperLowerDigitRegex.test(password)) {
-    errMsgs.push(text.localize('Password should have lower and uppercase letters with numbers.'));
+    errMsgs.push(page.text.localize('Password should have lower and uppercase letters with numbers.'));
   }
 
   return errMsgs;
 }
+
+module.exports = {
+    Validate: Validate,
+    validateEmail: validateEmail,
+    passwordValid: passwordValid,
+    showPasswordError: showPasswordError,
+};

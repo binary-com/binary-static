@@ -46,3 +46,7 @@ var Symbols = (function () {
     };
 
 })();
+
+module.exports = {
+    Symbols: Symbols,
+};

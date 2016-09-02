@@ -27,7 +27,7 @@ var KnowledgeTest = (function() {
             $('#knowledge-test-instructions').addClass('invisible');
             $('#knowledge-test-msg')
                 .addClass('notice-msg')
-                .text(text.localize('You need to finish all 20 questions.'));
+                .text(page.text.localize('You need to finish all 20 questions.'));
             // $("html, body").animate({ scrollTop: 0 }, "slow");
 
             var allQid = [].concat.apply([], randomPicks).map(function(q) {
@@ -59,17 +59,17 @@ var KnowledgeTest = (function() {
         $('#knowledge-test-questions input[type=radio]').click(questionAnswerHandler);
         $('#knowledge-test-submit').click(submitHandler);
         $('#knowledge-test-questions').removeClass(hiddenClass);
-        $('#knowledge-test-msg').text(text.localize('{JAPAN ONLY}Please complete the following questions.'));
+        $('#knowledge-test-msg').text(page.text.localize('{JAPAN ONLY}Please complete the following questions.'));
         $('#knowledge-test-instructions').removeClass('invisible');
     }
 
     function showResult(score, time) {
         $('#knowledge-test-instructions').addClass('invisible');
-        $('#knowledge-test-header').text(text.localize('{JAPAN ONLY}Knowledge Test Result'));
+        $('#knowledge-test-header').text(page.text.localize('{JAPAN ONLY}Knowledge Test Result'));
         if (score >= 14) {
-            $('#knowledge-test-msg').text(text.localize(passMsg));
+            $('#knowledge-test-msg').text(page.text.localize(passMsg));
         } else {
-            $('#knowledge-test-msg').text(text.localize(failMsg));
+            $('#knowledge-test-msg').text(page.text.localize(failMsg));
         }
 
         var $resultTable = KnowledgeTestUI.createResultUI(score, time);
@@ -80,7 +80,7 @@ var KnowledgeTest = (function() {
 
     function showMsgOnly(msg) {
         $('#knowledge-test-questions').addClass(hiddenClass);
-        $('#knowledge-test-msg').text(text.localize(msg));
+        $('#knowledge-test-msg').text(page.text.localize(msg));
         $('#knowledge-test-instructions').addClass('invisible');
     }
 
@@ -94,7 +94,7 @@ var KnowledgeTest = (function() {
         var msgTemplate =
             '{JAPAN ONLY}Dear customer, you are not allowed to take knowledge test until [_1]. Last test taken at [_2].';
 
-        var msg = text.localize(msgTemplate, [
+        var msg = page.text.localize(msgTemplate, [
             nextTestDate.toUTCString(),
             lastTestDate.toUTCString(),
             ]);
@@ -193,3 +193,7 @@ var KnowledgeTest = (function() {
         showKnowledgeTestTopBarIfValid: showKnowledgeTestTopBarIfValid
     };
 }());
+
+module.exports = {
+    KnowledgeTest: KnowledgeTest,
+};

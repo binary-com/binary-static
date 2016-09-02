@@ -51,7 +51,7 @@ var Market = function(name, display_name, submarkets) {
 
 Market.prototype = {
     translated_display_name: function() {
-        return text.localize(this.display_name);
+        return page.text.localize(this.display_name);
     },
     by_symbol: function(symbol) {
         var count = this.submarkets.length;
@@ -84,7 +84,7 @@ Market.prototype = {
 };
 
 function localizeName() {
-    return text.localize(this.name);
+    return page.text.localize(this.name);
 }
 
 var SubMarket = function(name, display_name, underlyings) {
@@ -105,7 +105,7 @@ var SubMarket = function(name, display_name, underlyings) {
 
 SubMarket.prototype = {
     translated_display_name: function() {
-        return text.localize(this.display_name);
+        return page.text.localize(this.display_name);
     },
     each: function(callback) {
         var underlying_count = this.underlyings.length;

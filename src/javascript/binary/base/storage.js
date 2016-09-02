@@ -119,9 +119,9 @@ Localizable.prototype = {
 };
 
 module.exports = {
-    Localizable: Localizable,
     isStorageSupported: isStorageSupported,
+    Store: Store,
     InScriptStore: InScriptStore,
     CookieStorage: CookieStorage,
-    Store: Store,
+    Localizable: Localizable,
 };

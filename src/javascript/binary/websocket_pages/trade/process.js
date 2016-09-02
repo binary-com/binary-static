@@ -100,7 +100,7 @@ function processContract(contracts) {
         contracts_list.style.display = 'none';
         message_container.hide();
         confirmation_error.show();
-        confirmation_error.innerHTML = contracts.error.message + ' <a href="javascript:;" onclick="TradePage.reload();">' + text.localize('Please reload the page') + '</a>';
+        confirmation_error.innerHTML = contracts.error.message + ' <a href="javascript:;" onclick="TradePage.reload();">' + page.text.localize('Please reload the page') + '</a>';
         return;
     }
 
@@ -361,3 +361,21 @@ function processTradingTimes(response) {
 
     processPriceRequest();
 }
+
+module.exports = {
+    processActiveSymbols: processActiveSymbols,
+    processMarket: processMarket,
+    processMarketUnderlying: processMarketUnderlying,
+    processContract: processContract,
+    processContractForm: processContractForm,
+    displayPrediction: displayPrediction,
+    displaySpreads: displaySpreads,
+    forgetTradingStreams: forgetTradingStreams,
+    processForgetProposals: processForgetProposals,
+    processPriceRequest: processPriceRequest,
+    processForgetTicks: processForgetTicks,
+    processTick: processTick,
+    processProposal: processProposal,
+    processTradingTimesRequest: processTradingTimesRequest,
+    processTradingTimes: processTradingTimes,
+};

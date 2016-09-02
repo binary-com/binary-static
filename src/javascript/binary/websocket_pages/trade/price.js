@@ -198,7 +198,7 @@ var Price = (function() {
                     amount.textContent = data['display_value'];
                 } else {
                     $('.stake:hidden').show();
-                    stake.textContent = text.localize('Stake') + ': ';
+                    stake.textContent = page.text.localize('Stake') + ': ';
                     amount.textContent = format_money(currency.value, (data['display_value']*1).toFixed(2));
                 }
                 $('.stake_wrapper:hidden').show();
@@ -207,7 +207,7 @@ var Price = (function() {
             }
 
             if (data['payout']) {
-              payout.textContent = (is_spread ? text.localize('Payout/point') : text.localize('Payout')) + ': ';
+              payout.textContent = (is_spread ? page.text.localize('Payout/point') : page.text.localize('Payout')) + ': ';
               payoutAmount.textContent = format_money(currency.value, (data['payout']*1).toFixed(2));
               $('.payout_wrapper:hidden').show();
             } else {
@@ -279,3 +279,7 @@ var Price = (function() {
     };
 
 })();
+
+module.exports = {
+    Price: Price,
+};

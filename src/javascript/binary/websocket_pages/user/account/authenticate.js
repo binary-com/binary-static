@@ -10,7 +10,7 @@ pjax_config_page_require_auth("user/authenticatews", function(){
             }
             function check_virtual() {
                 if (page.client.is_virtual()) {
-                    show_error(text.localize('This feature is not relevant to virtual-money accounts.'));
+                    show_error(page.text.localize('This feature is not relevant to virtual-money accounts.'));
                 }
                 return page.client.is_virtual();
             }

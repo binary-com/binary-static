@@ -58,7 +58,7 @@ var SettingsDetailsWS = (function() {
         if (page.client.residence === 'jp') {
             var jpData = response.get_settings.jp_settings;
             $('#lblName').text((data.last_name || ''));
-            $('#lblGender').text(text.localize(jpData.gender) || '');
+            $('#lblGender').text(page.text.localize(jpData.gender) || '');
             $('#lblAddress1').text(data.address_line_1 || '');
             $('#lblAddress2').text(data.address_line_2 || '');
             $('#lblCity').text(data.address_city || '');
@@ -222,14 +222,13 @@ var SettingsDetailsWS = (function() {
         Object.keys(data).forEach(function(key) {
             req[key] = data[key];
         });
-        console.log(req);
         BinarySocket.send(req);
     }
 
     function showFormMessage(msg, isSuccess) {
         $('#formMessage')
             .attr('class', isSuccess ? 'success-msg' : 'errorfield')
-            .html(isSuccess ? '<ul class="checked"><li>' + text.localize(msg) + '</li></ul>' : text.localize(msg))
+            .html(isSuccess ? '<ul class="checked"><li>' + page.text.localize(msg) + '</li></ul>' : page.text.localize(msg))
             .css('display', 'block')
             .delay(5000)
             .fadeOut(1000);
@@ -289,3 +288,7 @@ pjax_config_page_require_auth("settings/detailsws", function() {
         }
     };
 });
+
+module.exports = {
+    SettingsDetailsWS: SettingsDetailsWS,
+};

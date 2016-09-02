@@ -1,5 +1,5 @@
 var expect = require('chai').expect;
-var market_times = require('../market_timesws');
+var market_times = require('../market_timesws').MarketTimes;
 var ws = require('ws');
 var LiveApi = require('binary-live-api').LiveApi;
 var api = new LiveApi({ websocket: ws });

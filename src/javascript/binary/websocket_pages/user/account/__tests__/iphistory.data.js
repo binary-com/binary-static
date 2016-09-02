@@ -1,5 +1,5 @@
 var expect = require('chai').expect;
-var IPHistoryData = require('../settings/iphistory/iphistory.data.js');
+var IPHistoryData = require('../settings/iphistory/iphistory.data.js').IPHistoryData;
 
 
 describe('IPHistoryData.parseUserAgent', function() {

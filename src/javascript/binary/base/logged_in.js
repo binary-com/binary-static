@@ -78,3 +78,7 @@ var LoggedInHandler = (function() {
         init: init,
     };
 }());
+
+module.exports = {
+    LoggedInHandler: LoggedInHandler,
+};

@@ -393,3 +393,7 @@ var Durations = (function(){
         validateMinDurationAmount: validateMinDurationAmount
     };
 })();
+
+module.exports = {
+    Durations: Durations,
+};

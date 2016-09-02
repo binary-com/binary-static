@@ -15,7 +15,7 @@ var ValidateV2 = (function() {
     }
 
     function local(value) {
-        return {unwrap: function() { return text.localize(value); }};
+        return {unwrap: function() { return page.text.localize(value); }};
     }
 
     function localKey(value) {
@@ -119,3 +119,7 @@ var ValidateV2 = (function() {
         lengthRange: lengthRange,
     };
 })();
+
+module.exports = {
+    ValidateV2: ValidateV2,
+};

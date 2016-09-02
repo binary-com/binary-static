@@ -54,3 +54,7 @@ var FinancialAccOpeningData = (function(){
         getRealAcc: getRealAcc
     };
 }());
+
+module.exports = {
+    FinancialAccOpeningData: FinancialAccOpeningData,
+};

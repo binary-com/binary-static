@@ -274,18 +274,18 @@ function dropDownNumbers(select, startNum, endNum) {
 
 function dropDownMonths(select, startNum, endNum) {
     var months = [
-        text.localize("Jan"),
-        text.localize("Feb"),
-        text.localize("Mar"),
-        text.localize("Apr"),
-        text.localize("May"),
-        text.localize("Jun"),
-        text.localize("Jul"),
-        text.localize("Aug"),
-        text.localize("Sep"),
-        text.localize("Oct"),
-        text.localize("Nov"),
-        text.localize("Dec")
+        page.text.localize("Jan"),
+        page.text.localize("Feb"),
+        page.text.localize("Mar"),
+        page.text.localize("Apr"),
+        page.text.localize("May"),
+        page.text.localize("Jun"),
+        page.text.localize("Jul"),
+        page.text.localize("Aug"),
+        page.text.localize("Sep"),
+        page.text.localize("Oct"),
+        page.text.localize("Nov"),
+        page.text.localize("Dec")
     ];
     select.appendChild(document.createElement("option"));
     for (var i = startNum; i <= endNum; i++){
@@ -320,9 +320,9 @@ function generateBirthDate(country){
     //years
     dropDownNumbers(year, startYear, endYear);
     if (japanese_client()) {
-      days.options[0].innerHTML = text.localize('Day');
-      months.options[0].innerHTML = text.localize('Month');
-      year.options[0].innerHTML = text.localize('Year');
+      days.options[0].innerHTML = page.text.localize('Day');
+      months.options[0].innerHTML = page.text.localize('Month');
+      year.options[0].innerHTML = page.text.localize('Year');
     }
     return;
 }
@@ -581,3 +581,34 @@ try {
 } catch(e) {
   window.attachEvent("onload", $buo_f);
 }
+
+module.exports = {
+    sidebar_scroll: sidebar_scroll,
+    get_started_behaviour: get_started_behaviour,
+    select_nav_element: select_nav_element,
+    Charts: Charts,
+    email_rot13: email_rot13,
+    display_cs_contacts: display_cs_contacts,
+    change_chat_icon: change_chat_icon,
+    render_desk_widget: render_desk_widget,
+    show_live_chat_icon: show_live_chat_icon,
+    display_career_email: display_career_email,
+    $buoop: $buoop,
+    check_login_hide_signup: check_login_hide_signup,
+    hide_if_logged_in: hide_if_logged_in,
+    appendTextValueChild: appendTextValueChild,
+    dropDownNumbers: dropDownNumbers,
+    dropDownMonths: dropDownMonths,
+    generateBirthDate: generateBirthDate,
+    isValidDate: isValidDate,
+    handle_residence_state_ws: handle_residence_state_ws,
+    generateState: generateState,
+    isIE: isIE,
+    Trim: Trim,
+    limitLanguage: limitLanguage,
+    checkClientsCountry: checkClientsCountry,
+    japanese_client: japanese_client,
+    change_blog_link: change_blog_link,
+    detect_hedging: detect_hedging,
+    $buo_f: $buo_f,
+};

@@ -12,3 +12,7 @@ var Button = (function(){
         createBinaryStyledButton: createBinaryStyledButton
     };
 }());
+
+module.exports = {
+    Button: Button,
+};

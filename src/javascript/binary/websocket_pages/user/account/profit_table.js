@@ -1,8 +1,7 @@
 var ProfitTable = (function(){
     'use strict';
-    var Compatibility = typeof window !== 'undefined' ? window.Compatibility : require('../../../common_functions/compatibility');
-    var moment = Compatibility.requireIfNotExist('moment', '../../lib/moment/moment');
     var getProfitTabletData = function(transaction) {
+        var moment = require('../../../../lib/moment/moment');
         var buyMoment = moment.utc(transaction["purchase_time"] * 1000),
             sellMoment = moment.utc(transaction["sell_time"] * 1000),
             buyPrice = parseFloat(transaction["buy_price"]).toFixed(2),
@@ -28,9 +27,9 @@ var ProfitTable = (function(){
         getProfitTabletData: getProfitTabletData
     };
 
-    if (typeof module !== 'undefined') {
-        module.exports = external;
-    }
-
     return external;
 }());
+
+module.exports = {
+    ProfitTable: ProfitTable,
+};

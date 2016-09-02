@@ -157,3 +157,7 @@ var MenuContent = (function () {
 
     return that;
 })();
+
+module.exports = {
+    MenuContent: MenuContent,
+};
