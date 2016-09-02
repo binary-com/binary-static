@@ -155,178 +155,178 @@
                         <legend id="financial-information">[% l('Financial Information') %]</legend>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="forex-trading-experience">[% l('Forex trading experience') %]</label>
+                                <label for="forex_trading_experience">[% l('Forex trading experience') %]</label>
                             </div>
                             <div class="gr-8">
-                                <select id="forex-trading-experience">
+                                <select id="forex_trading_experience">
                                   <option value="">[% l('Please select') %]</option>
                                   <option value="0-1 year">[% l('0-1 year') %]</option>
                                   <option value="1-2 years">[% l('1-2 years') %]</option>
                                   <option value="Over 3 years">[% l('Over 3 years') %]</option>
                                 </select>
-                                <p class="errorfield" id="error-forex-trading-experience" style="display:none"></p>
+                                <p class="errorfield" id="error-forex_trading_experience" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="forex-trading-frequency">[% l('Forex trading frequency') %]</label>
+                                <label for="forex_trading_frequency">[% l('Forex trading frequency') %]</label>
                             </div>
                             <div class="gr-8">
-                                <select id="forex-trading-frequency">
+                                <select id="forex_trading_frequency">
                                   <option value="">[% l('Please select') %]</option>
                                   <option value="0-5 transactions in the past 12 months">[% l('0-5 transactions in the past 12 months') %]</option>
                                   <option value="6-10 transactions in the past 12 months">[% l('6-10 transactions in the past 12 months') %]</option>
                                   <option value="40 transactions or more in the past 12 months">[% l('40 transactions or more in the past 12 months') %]</option>
                                 </select>
-                                <p class="errorfield" id="error-forex-trading-frequency" style="display:none"></p>
+                                <p class="errorfield" id="error-forex_trading_frequency" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="indices-trading-experience">[% l('Indices trading experience') %]</label>
+                                <label for="indices_trading_experience">[% l('Indices trading experience') %]</label>
                             </div>
                             <div class="gr-8">
-                                <select id="indices-trading-experience">
+                                <select id="indices_trading_experience">
                                   <option value="">[% l('Please select') %]</option>
                                   <option value="0-1 year">[% l('0-1 year') %]</option>
                                   <option value="1-2 years">[% l('1-2 years') %]</option>
                                   <option value="Over 3 years">[% l('Over 3 years') %]</option>
                                 </select>
-                                <p class="errorfield" id="error-indices-trading-experience" style="display:none"></p>
+                                <p class="errorfield" id="error-indices_trading_experience" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="indices-trading-frequency">[% l('Indices trading frequency') %]</label>
+                                <label for="indices_trading_frequency">[% l('Indices trading frequency') %]</label>
                             </div>
                             <div class="gr-8">
-                                <select id="indices-trading-frequency">
+                                <select id="indices_trading_frequency">
                                   <option value="">[% l('Please select') %]</option>
                                   <option value="0-5 transactions in the past 12 months">[% l('0-5 transactions in the past 12 months') %]</option>
                                   <option value="6-10 transactions in the past 12 months">[% l('6-10 transactions in the past 12 months') %]</option>
                                   <option value="40 transactions or more in the past 12 months">[% l('40 transactions or more in the past 12 months') %]</option>
                                 </select>
-                                <p class="errorfield" id="error-indices-trading-frequency" style="display:none"></p>
+                                <p class="errorfield" id="error-indices_trading_frequency" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="commodities-trading-experience">[% l('Commodities trading experience') %]</label>
+                                <label for="commodities_trading_experience">[% l('Commodities trading experience') %]</label>
                             </div>
                             <div class="gr-8">
-                                <select id="commodities-trading-experience">
+                                <select id="commodities_trading_experience">
                                   <option value="">[% l('Please select') %]</option>
                                   <option value="0-1 year">[% l('0-1 year') %]</option>
                                   <option value="1-2 years">[% l('1-2 years') %]</option>
                                   <option value="Over 3 years">[% l('Over 3 years') %]</option>
                                 </select>
-                                <p class="errorfield" id="error-commodities-trading-experience" style="display:none"></p>
+                                <p class="errorfield" id="error-commodities_trading_experience" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="commodities-trading-frequency">[% l('Commodities trading frequency') %]</label>
+                                <label for="commodities_trading_frequency">[% l('Commodities trading frequency') %]</label>
                             </div>
                             <div class="gr-8">
-                                <select id="commodities-trading-frequency">
+                                <select id="commodities_trading_frequency">
                                   <option value="">[% l('Please select') %]</option>
                                   <option value="0-5 transactions in the past 12 months">[% l('0-5 transactions in the past 12 months') %]</option>
                                   <option value="6-10 transactions in the past 12 months">[% l('6-10 transactions in the past 12 months') %]</option>
                                   <option value="40 transactions or more in the past 12 months">[% l('40 transactions or more in the past 12 months') %]</option>
                                 </select>
-                                <p class="errorfield" id="error-commodities-trading-frequency" style="display:none"></p>
+                                <p class="errorfield" id="error-commodities_trading_frequency" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="stocks-trading-experience">[% l('Stocks trading experience') %]</label>
+                                <label for="stocks_trading_experience">[% l('Stocks trading experience') %]</label>
                             </div>
                             <div class="gr-8">
-                                <select id="stocks-trading-experience">
+                                <select id="stocks_trading_experience">
                                   <option value="">[% l('Please select') %]</option>
                                   <option value="0-1 year">[% l('0-1 year') %]</option>
                                   <option value="1-2 years">[% l('1-2 years') %]</option>
                                   <option value="Over 3 years">[% l('Over 3 years') %]</option>
                                 </select>
-                                <p class="errorfield" id="error-stocks-trading-experience" style="display:none"></p>
+                                <p class="errorfield" id="error-stocks_trading_experience" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="stocks-trading-frequency">[% l('Stocks trading frequency') %]</label>
+                                <label for="stocks_trading_frequency">[% l('Stocks trading frequency') %]</label>
                             </div>
                             <div class="gr-8">
-                                <select id="stocks-trading-frequency">
+                                <select id="stocks_trading_frequency">
                                   <option value="">[% l('Please select') %]</option>
                                   <option value="0-5 transactions in the past 12 months">[% l('0-5 transactions in the past 12 months') %]</option>
                                   <option value="6-10 transactions in the past 12 months">[% l('6-10 transactions in the past 12 months') %]</option>
                                   <option value="40 transactions or more in the past 12 months">[% l('40 transactions or more in the past 12 months') %]</option>
                                 </select>
-                                <p class="errorfield" id="error-stocks-trading-frequency" style="display:none"></p>
+                                <p class="errorfield" id="error-stocks_trading_frequency" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="other-derivatives-trading-experience">[% l('Binary options or other financial derivatives trading experience') %]</label>
+                                <label for="other_derivatives_trading_experience">[% l('Binary options or other financial derivatives trading experience') %]</label>
                             </div>
                             <div class="gr-8">
-                                <select id="other-derivatives-trading-experience">
+                                <select id="other_derivatives_trading_experience">
                                   <option value="">[% l('Please select') %]</option>
                                   <option value="0-1 year">[% l('0-1 year') %]</option>
                                   <option value="1-2 years">[% l('1-2 years') %]</option>
                                   <option value="Over 3 years">[% l('Over 3 years') %]</option>
                                 </select>
-                                <p class="errorfield" id="error-other-derivatives-trading-experience" style="display:none"></p>
+                                <p class="errorfield" id="error-other_derivatives_trading_experience" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="other-derivatives-trading-frequency">[% l('Binary options or other financial derivatives trading frequency') %]</label>
+                                <label for="other_derivatives_trading_frequency">[% l('Binary options or other financial derivatives trading frequency') %]</label>
                             </div>
                             <div class="gr-8">
-                                <select id="other-derivatives-trading-frequency">
+                                <select id="other_derivatives_trading_frequency">
                                   <option value="">[% l('Please select') %]</option>
                                   <option value="0-5 transactions in the past 12 months">[% l('0-5 transactions in the past 12 months') %]</option>
                                   <option value="6-10 transactions in the past 12 months">[% l('6-10 transactions in the past 12 months') %]</option>
                                   <option value="40 transactions or more in the past 12 months">[% l('40 transactions or more in the past 12 months') %]</option>
                                 </select>
-                                <p class="errorfield" id="error-other-derivatives-trading-frequency" style="display:none"></p>
+                                <p class="errorfield" id="error-other_derivatives_trading_frequency" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="other-instruments-trading-experience">[% l('Other financial instruments trading experience') %]</label>
+                                <label for="other_instruments_trading_experience">[% l('Other financial instruments trading experience') %]</label>
                             </div>
                             <div class="gr-8">
-                                <select id="other-instruments-trading-experience">
+                                <select id="other_instruments_trading_experience">
                                   <option value="">[% l('Please select') %]</option>
                                   <option value="0-1 year">[% l('0-1 year') %]</option>
                                   <option value="1-2 years">[% l('1-2 years') %]</option>
                                   <option value="Over 3 years">[% l('Over 3 years') %]</option>
                                 </select>
-                                <p class="errorfield" id="error-other-instruments-trading-experience" style="display:none"></p>
+                                <p class="errorfield" id="error-other_instruments_trading_experience" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="other-instruments-trading-frequency">[% l('Other financial instruments trading frequency') %]</label>
+                                <label for="other_instruments_trading_frequency">[% l('Other financial instruments trading frequency') %]</label>
                             </div>
                             <div class="gr-8">
-                                <select id="other-instruments-trading-frequency">
+                                <select id="other_instruments_trading_frequency">
                                   <option value="">[% l('Please select') %]</option>
                                   <option value="0-5 transactions in the past 12 months">[% l('0-5 transactions in the past 12 months') %]</option>
                                   <option value="6-10 transactions in the past 12 months">[% l('6-10 transactions in the past 12 months') %]</option>
                                   <option value="40 transactions or more in the past 12 months">[% l('40 transactions or more in the past 12 months') %]</option>
                                 </select>
-                                <p class="errorfield" id="error-other-instruments-trading-frequency" style="display:none"></p>
+                                <p class="errorfield" id="error-other_instruments_trading_frequency" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="employment-industry">[% l('Industry of Employment') %]</label>
+                                <label for="employment_industry">[% l('Industry of Employment') %]</label>
                             </div>
                             <div class="gr-8">
-                                <select id="employment-industry">
+                                <select id="employment_industry">
                                   <option value="">[% l('Please select') %]</option>
                                   <option value="Construction">[% l('Construction') %]</option>
                                   <option value="Education">[% l('Education') %]</option>
@@ -335,29 +335,29 @@
                                   <option value="Tourism">[% l('Tourism') %]</option>
                                   <option value="Other">[% l('Other') %]</option>
                                 </select>
-                                <p class="errorfield" id="error-employment-industry" style="display:none"></p>
+                                <p class="errorfield" id="error-employment_industry" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="education-level">[% l('Level of Education') %]</label>
+                                <label for="education_level">[% l('Level of Education') %]</label>
                             </div>
                             <div class="gr-8">
-                                <select id="education-level">
+                                <select id="education_level">
                                   <option value="">[% l('Please select') %]</option>
                                   <option value="Primary">[% l('Primary') %]</option>
                                   <option value="Secondary">[% l('Secondary') %]</option>
                                   <option value="Tertiary">[% l('Tertiary') %]</option>
                                 </select>
-                                <p class="errorfield" id="error-education-level" style="display:none"></p>
+                                <p class="errorfield" id="error-education_level" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="income-source">[% l('Income Source') %]</label>
+                                <label for="income_source">[% l('Income Source') %]</label>
                             </div>
                             <div class="gr-8">
-                                <select id="income-source">
+                                <select id="income_source">
                                   <option value="">[% l('Please select') %]</option>
                                   <option value="Salaried Employee">[% l('Salaried Employee') %]</option>
                                   <option value="Self-Employed">[% l('Self-Employed') %]</option>
@@ -365,15 +365,15 @@
                                   <option value="Pension">[% l('Pension') %]</option>
                                   <option value="Other">[% l('Other') %]</option>
                                 </select>
-                                <p class="errorfield" id="error-income-source" style="display:none"></p>
+                                <p class="errorfield" id="error-income_source" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="net-income">[% l('Net Annual Income') %]</label>
+                                <label for="net_income">[% l('Net Annual Income') %]</label>
                             </div>
                             <div class="gr-8">
-                                <select id="net-income">
+                                <select id="net_income">
                                   <option value="">[% l('Please select') %]</option>
                                   <option value="Less than &#36;25,000">Less than &#36;25,000</option>
                                   <option value="&#36;25,000 - &#36;50,000" >&#36;25,000 - &#36;50,000</option>
@@ -381,15 +381,15 @@
                                   <option value="&#36;100,001 - &#36;500,000">&#36;100,001 - &#36;500,000</option>
                                   <option value="Over &#36;500,000">Over &#36;500,001</option>
                                 </select>
-                                <p class="errorfield" id="error-net-income" style="display:none"></p>
+                                <p class="errorfield" id="error-net_income" style="display:none"></p>
                             </div>
                         </div>
                         <div class="gr-padding-10 gr-row clear">
                             <div class="gr-4 form_label">
-                                <label for="estimated-worth">[% l('Estimated Net Worth') %]</label>
+                                <label for="estimated_worth">[% l('Estimated Net Worth') %]</label>
                             </div>
                             <div class="gr-8">
-                                <select id="estimated-worth">
+                                <select id="estimated_worth">
                                   <option value="">[% l('Please select') %]</option>
                                   <option value="Less than &#36;100,000">Less than &#36;100,000</option>
                                   <option value="&#36;100,000 - &#36;250,000" >&#36;100,000 - &#36;250,000</option>
@@ -397,7 +397,7 @@
                                   <option value="&#36;500,001 - &#36;1,000,000">&#36;500,001 - &#36;1,000,000</option>
                                   <option value="Over &#36;1,000,000">Over &#36;1,000,000</option>
                                 </select>
-                                <p class="errorfield" id="error-estimated-worth" style="display:none"></p>
+                                <p class="errorfield" id="error-estimated_worth" style="display:none"></p>
                             </div>
                         </div>
                     </fieldset>
