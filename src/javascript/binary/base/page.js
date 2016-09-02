@@ -1352,8 +1352,8 @@ $(document).ready(function () {
 
 
 module.exports = {
-	getClockStarted: function() {return clock_started;},
-	page: page,
+    getClockStarted: function() {return clock_started;},
+    page: page,
     make_mobile_menu: make_mobile_menu,
     changeUrlToSameDomain: changeUrlToSameDomain,
     TUser: TUser,
@@ -1369,6 +1369,6 @@ module.exports = {
     Header: Header,
     Contents: Contents,
     Page: Page,
-	SessionStore: SessionStore,
-	LocalStore: LocalStore,
+    SessionStore: SessionStore,
+    LocalStore: LocalStore,
 };

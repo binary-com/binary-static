@@ -34,5 +34,3 @@ pjax_config_page_require_auth("limitsws", function(){
         }
     };
 });
-
-

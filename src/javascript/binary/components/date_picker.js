@@ -77,4 +77,3 @@ DatePicker.prototype = {
         return config;
     },
 };
-

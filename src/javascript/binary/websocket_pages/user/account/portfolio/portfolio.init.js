@@ -21,8 +21,8 @@ var PortfolioWS =  (function() {
 
     var createPortfolioRow = function(data) {
         console.log(data);
-        var longCode = typeof module !== 'undefined' ? 
-            data.longcode : 
+        var longCode = typeof module !== 'undefined' ?
+            data.longcode :
             (japanese_client() ? toJapanTimeIfNeeded(void 0, void 0, data.longcode) : data.longcode);
 
         $('#portfolio-body').append(
@@ -33,7 +33,7 @@ var PortfolioWS =  (function() {
                 '<td class="details flex-tr-child">' + longCode + '</td>' +
                 '<td class="purchase flex-tr-child"><strong>' + format_money(data.currency, data.buy_price) + '</strong></td>' +
                 '<td class="indicative flex-tr-child"><strong class="indicative_price">' + format_money(data.currency, '--.--') + '</strong></td>' +
-                '<td class="button flex-tr-child"><button class="button open_contract_detailsws" contract_id="' + data.contract_id + '">' + text.localize('View') + '</button></td>' +
+                '<td class="button flex-tr-child"><button class="button open_contract_detailsws" contract_id="' + data.contract_id + '">' + page.text.localize('View') + '</button></td>' +
             '</tr>')
         );
     };
