@@ -34,7 +34,7 @@ Store.prototype = {
       },
 };
 
-var InScriptStore = function(object) { 
+var InScriptStore = function(object) {
     this.store = typeof object !== 'undefined' ? object : {};
 };
 

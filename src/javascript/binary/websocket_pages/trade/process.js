@@ -365,11 +365,8 @@ function processTradingTimes(response) {
 module.exports = {
     processActiveSymbols: processActiveSymbols,
     processMarket: processMarket,
-    processMarketUnderlying: processMarketUnderlying,
     processContract: processContract,
     processContractForm: processContractForm,
-    displayPrediction: displayPrediction,
-    displaySpreads: displaySpreads,
     forgetTradingStreams: forgetTradingStreams,
     processForgetProposals: processForgetProposals,
     processPriceRequest: processPriceRequest,

@@ -121,10 +121,6 @@ var select_nav_element = function() {
   return;
 };
 
-var Charts = function(charts) {
-    window.open(charts, 'DetWin', 'width=580,height=710,scrollbars=yes,location=no,status=no,menubar=no');
-};
-
 var email_rot13 = function(str) {
     return str.replace(/[a-zA-Z]/g, function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});
 };
@@ -143,12 +139,12 @@ var change_chat_icon = function () {
   if( len > 0 ) {
       var timer = null;
       var updateIcon =  function () {
-          var image_link = page.settings.get('image_link');
+          var image_url = page.url.url_for_static('images/pages/contact/chat-icon.svg');
           var desk_widget = $('.a-desk-widget');
           var image_str = desk_widget.css('background-image');
           if(image_str) {
               desk_widget.css({
-                  'background-image': 'url("' + image_link['livechaticon'] + '")',
+                  'background-image': 'url("' + image_url + '")',
                   'background-size': 'contain',
                   'min-width': 50,
                   'min-height': 50,
@@ -156,7 +152,7 @@ var change_chat_icon = function () {
               });
               desk_widget.hover(function() {
                   $(this).css({
-                      'background': 'url("' + image_link['livechaticon'] + '") no-repeat scroll 0 0',
+                      'background': 'url("' + image_url + '") no-repeat scroll 0 0',
                       'background-size': 'contain',
                   });
               });
@@ -585,30 +581,18 @@ try {
 module.exports = {
     sidebar_scroll: sidebar_scroll,
     get_started_behaviour: get_started_behaviour,
-    select_nav_element: select_nav_element,
-    Charts: Charts,
-    email_rot13: email_rot13,
     display_cs_contacts: display_cs_contacts,
-    change_chat_icon: change_chat_icon,
-    render_desk_widget: render_desk_widget,
     show_live_chat_icon: show_live_chat_icon,
     display_career_email: display_career_email,
-    $buoop: $buoop,
     check_login_hide_signup: check_login_hide_signup,
     hide_if_logged_in: hide_if_logged_in,
-    appendTextValueChild: appendTextValueChild,
-    dropDownNumbers: dropDownNumbers,
-    dropDownMonths: dropDownMonths,
     generateBirthDate: generateBirthDate,
     isValidDate: isValidDate,
     handle_residence_state_ws: handle_residence_state_ws,
-    generateState: generateState,
     isIE: isIE,
     Trim: Trim,
-    limitLanguage: limitLanguage,
     checkClientsCountry: checkClientsCountry,
     japanese_client: japanese_client,
     change_blog_link: change_blog_link,
     detect_hedging: detect_hedging,
-    $buo_f: $buo_f,
 };

@@ -1,3 +1,4 @@
+var getAppId = require('../../config').getAppId;
 var clock_started = false;
 
 var SessionStore, LocalStore;
@@ -497,7 +498,7 @@ URL.prototype = {
     path_matches: function(url) {
         //pathname is /d/page.cgi. Eliminate /d/ and /c/ from both urls.
         var this_pathname = this.location.pathname.replace(/\/[d|c]\//g, '');
-        var url_pathname = url.location.pathname.replace(/\/[d|c]\//g, '');
+        var url_pathname = page.url.location.pathname.replace(/\/[d|c]\//g, '');
         return (this_pathname == url_pathname || '/' + this_pathname == url_pathname);
     },
     params_hash_to_string: function(params) {
@@ -511,7 +512,7 @@ URL.prototype = {
             var param_count = this_params.length;
             var match_count = 0;
             while(param_count--) {
-                if(url.param(this_params[param_count][0]) == this_params[param_count][1]) {
+                if(page.url.param(this_params[param_count][0]) == this_params[param_count][1]) {
                     match_count++;
                 }
             }
@@ -833,7 +834,7 @@ Header.prototype = {
         if (!loginid || !loginid_list) return;
 
         var accIds = loginid_list.split('+');
-        var valid_loginids = new RegExp('^(' + page.settings.get('valid_loginids') + ')[0-9]+$', 'i');
+        var valid_loginids = new RegExp('^(MX|MF|VRTC|MLT|CR|FOG|VRTJ|JP)[0-9]+$', 'i');
 
         function is_loginid_valid(login_id) {
             return login_id ?
@@ -1024,13 +1025,12 @@ Contents.prototype = {
     },
 };
 
-var Page = function(config) {
+var Page = function() {
     this.is_loaded_by_pjax = false;
     config = typeof config !== 'undefined' ? config : {};
     this.user = new User();
     this.client = new Client();
     this.url = new URL();
-    this.settings = new InScriptStore(config['settings']);
     this.header = new Header({ user: this.user, client: this.client, url: this.url});
     this.contents = new Contents(this.client, this.user);
     this._lang = null;
@@ -1286,7 +1286,7 @@ Page.prototype = {
     },
 };
 
-var page = new Page(window.page_params);
+var page = new Page();
 
 // for IE (before 10) we use a jquery plugin called jQuery.XDomainRequest. Explained here,
 //http://stackoverflow.com/questions/11487216/cors-with-jquery-and-xdomainrequest-in-ie8-9
@@ -1297,17 +1297,6 @@ $(function(){
         contents.on_load();
     });
 });
-
-//////////////////////////////////////////////////////////////
-//Purpose: To solve cross domain logged out server problem.
-//Return: Hostname for this page
-//////////////////////////////////////////////////////////////
-function changeUrlToSameDomain(url) {
-    var re = new RegExp('^(http|https):\/\/[.a-zA-Z0-9-]+/');
-    var server_name = window.location.protocol + '//' + window.location.hostname;
-    var same_domain_url = url.replace(re, server_name + '/');
-    return same_domain_url;
-}
 
 var make_mobile_menu = function () {
     if ($('#mobile-menu-container').is(':visible')) {
@@ -1387,18 +1376,10 @@ module.exports = {
     getClockStarted: function() {return clock_started;},
     page: page,
     make_mobile_menu: make_mobile_menu,
-    changeUrlToSameDomain: changeUrlToSameDomain,
     TUser: TUser,
     texts: texts,
     markets: markets,
     GTM: GTM,
-    User: User,
-    Client: Client,
-    URL: URL,
-    Menu: Menu,
-    Header: Header,
-    Contents: Contents,
-    Page: Page,
     SessionStore: SessionStore,
     LocalStore: LocalStore,
 };
