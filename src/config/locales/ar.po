@@ -2,15 +2,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-27 23:22+0000\n"
+"PO-Revision-Date: 2016-09-03 11:11+0000\n"
 "Last-Translator: Ahmed Kotb <ahmedmohamedkotp@gmail.com>\n"
-"Language-Team: Arabic <https://hosted.weblate.org/projects/binary/static/ar/>\n"
+"Language-Team: Arabic <https://hosted.weblate.org/projects/binary/static/ar/>"
+"\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 2.8-dev\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Weblate 2.8\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
@@ -1144,7 +1146,7 @@ msgid "Appropriateness Test"
 msgstr "اختبار الملاءمة"
 
 msgid "Apps"
-msgstr ""
+msgstr "التطبيقات"
 
 msgid "Apr"
 msgstr "أبريل"
@@ -2183,6 +2185,8 @@ msgstr "إيداع وسحب الأموال"
 
 msgid "Deposits and withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
 msgstr ""
+"الإيداع والسحب غير متاح في حسابك في الوقت الراهن. برجاء الإتصال ب %1 لإعادة "
+"فتحه."
 
 msgid "Derivative"
 msgstr "مشتق"
@@ -2897,7 +2901,7 @@ msgid "Get Started"
 msgstr "ابدأ"
 
 msgid "Get USD 10,000.00"
-msgstr ""
+msgstr "أحصل على 10.000 دولار أمريكي"
 
 #, fuzzy
 #| msgid "Get your free $10,000 virtual money"
@@ -7363,6 +7367,7 @@ msgstr "حدود السحب"
 
 msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
 msgstr ""
+"السحب غير متاح على حسابك في الوقت الراهن. برجاء الإتصال ب %1 لإعادة فتحه."
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\">here</a> for further information."
@@ -7475,9 +7480,13 @@ msgstr "يمكنك أن تغلق معاملتك قبل تاريخ الأنتها
 
 msgid "You can request more virtual money if your virtual balance falls below JPY 100,000."
 msgstr ""
+"بإمكانك طلب المزيد من المال الإفتراضي في حال انخفض رصيدك إلى أدنى من 100.000 "
+"ين ياباني."
 
 msgid "You can request more virtual money if your virtual balance falls below USD 1,000.00."
 msgstr ""
+"بإمكانك طلب المزيد من المال الإفتراضي في حال انخفض رصيدك الإفتراضي إلى أدنى "
+"من 1.000 دولار أمريكي."
 
 msgid "You can sell back long-term trades at any time to profit from changing market conditions."
 msgstr "يمكنك أن تقوم بإعادة بيع المعاملات طويلة الأجل في أي وقت لتربح من أحوال السوق المتغيرة."
@@ -7718,6 +7727,8 @@ msgstr "حسابك لا يوجد لديه تداول نشط."
 
 msgid "Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact %1."
 msgstr ""
+"حسابك معلق حالياً. السحب فقط هو المسموح به. لمزيد من المعلومات, برجاء "
+"الإتصال ب %1."
 
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "تم توثيق حسابك بالكامل وحد السحب الخاص بك تم رفعه."
