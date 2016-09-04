@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: French (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-09-04 15:08+0000\n"
+"PO-Revision-Date: 2016-09-04 15:22+0000\n"
 "Last-Translator: Chloe Chevreton <chloe-che@hotmail.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/binary/static/fr/>"
 "\n"
@@ -281,7 +281,6 @@ msgstr ""
 msgid "%1 is tailored to traders of all levels."
 msgstr "%1 répond aux besoins des traders de tous niveaux."
 
-#, fuzzy
 #| msgid "%1 is the award-winning industry pioneer in online options trading. We boast:"
 msgid "%1 is the award-winning industry pioneer in online options trading."
 msgstr ""
@@ -343,7 +342,6 @@ msgstr ""
 msgid "%1 offers five ways to trade your chosen asset:"
 msgstr "%1 propose cinq types d'option pour négocier l'actif de votre choix :"
 
-#, fuzzy
 #| msgid "Binary.com offers new ways to trade"
 msgid "%1 offers new ways to trade"
 msgstr "%1 propose de nouvelles alternatives de trading"
@@ -371,19 +369,16 @@ msgstr ""
 "contacter</a> afin de définir les limites que vous souhaitez fixer par "
 "messagerie instantanée, e-mail ou téléphone. Les limites disponibles sont :"
 
-#, fuzzy
 #| msgid "Binary.com reaches $2 billion turnover since starting in 1999"
 msgid "%1 reaches $2 billion turnover since starting in 1999"
 msgstr ""
 "%1 affiche un chiffre d'affaires de 2 millions de dollars US depuis sa "
 "création en 1999"
 
-#, fuzzy
 #| msgid "Binary.com reaches 1 million registered users"
 msgid "%1 reaches 1 million registered users"
 msgstr "%1 compte 1 million d'utilisateurs inscrits"
 
-#, fuzzy
 #| msgid "Days to display"
 msgid "%1 rows displayed:"
 msgstr "Rangées %1 affichées :"
@@ -479,12 +474,18 @@ msgstr ""
 "Les FX Intelligents de %1 sont des marchés intelligents qui mesurent la "
 "valeur d'une devise par rapport à un ensemble de devises majeures."
 
-#, fuzzy
 #| msgid "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements.  Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much less investment than would be required in the live market."
 msgid ""
 "%1's Spread Contracts are leveraged derivative contracts, the value of which is directly tied to the underlying market movements. Clients who 'Long' a rising market (and those who 'Short' a falling market) profit from those movements with much\n"
 "                    less investment than would be required in the live market."
-msgstr "Les contrats spread de %1 sont des contrats dérivés à effet de levier, dont la valeur est directement liée aux mouvements du marché sous-jacent. Les clients en position « longue » sur un marché haussier (ou en position « courte » sur un marché baissier) profitent de ces mouvements en engageant un investissement largement inférieur à celui que nécessiterait la spéculation sur le marché réel."
+msgstr ""
+"Les contrats spread de %1 sont des contrats dérivés à effet de levier, dont "
+"la valeur est directement liée aux mouvements du marché sous-jacent. Les "
+"clients en position « longue » sur un marché haussier (ou en position « "
+"courte » sur un marché baissier) profitent de ces mouvements en engageant un "
+"investissement largement\n"
+"                    inférieur à celui que nécessiterait la spéculation sur "
+"le marché réel."
 
 msgid ""
 "%1's Spread Contracts require a 'stop loss' which limits the maximum losses incurred by a client. This 'stop loss' amount will act as a deposit and may not be used for further trading until that Spread Contract is closed. Spread Contracts are\n"
@@ -593,13 +594,11 @@ msgstr ""
 "« Différent » : Vous gagnez si le dernier chiffre du dernier tick n'est pas "
 "égal à votre prédiction."
 
-#, fuzzy
 #| msgid "‘Financial Betting Operator of the Year’ award by eGaming Review"
 msgid "'Financial Betting Operator of the Year' award by eGaming Review"
 msgstr ""
 "Prix de la « plateforme de trading de l'année » décerné par eGaming Review"
 
-#, fuzzy
 #| msgid "“Matches” – You win when the last digit of the last tick matches your prediction."
 msgid "'Matches' - You win when the last digit of the last tick matches your prediction."
 msgstr ""
@@ -710,7 +709,6 @@ msgstr "<< Retour aux descriptions de postes"
 msgid "<a class='pjaxload' href='mailto:%1'>Contact Us</a>"
 msgstr "<a class='pjaxload' href='mailto:%1'>Nous contacter</a>"
 
-#, fuzzy
 msgid "<a href=\"%1\">Return to trading page</a>"
 msgstr "<a href=\"%1 »>Retour à la plateforme de trading</a>"
 
