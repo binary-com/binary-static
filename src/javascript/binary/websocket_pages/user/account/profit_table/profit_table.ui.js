@@ -18,7 +18,9 @@ var ProfitTableUI = (function(){
             Content.localize().textDetails
         ];
 
-        header[7] = header[7] + (TUser.get().currency ? " (" + TUser.get().currency + ")" : "");
+        var jpClient = japanese_client();
+
+        header[7] = header[7] + (jpClient ? "" : (TUser.get().currency ? " (" + TUser.get().currency + ")" : ""));
 
         var footer = [Content.localize().textTotalProfitLoss, "", "", "", "", "", "", "", ""];
 
@@ -61,7 +63,7 @@ var ProfitTableUI = (function(){
 
         var jpClient = japanese_client();
 
-        $("#pl-day-total > .pl").text(jpClient ? format_number(jpClient, total.toString()) : addComma(Number(total).toFixed(2)));
+        $("#pl-day-total > .pl").text(jpClient ? format_money_jp(TUser.get().currency, total.toString()) : addComma(Number(total).toFixed(2)));
 
         var subTotalType = (total >= 0 ) ? "profit" : "loss";
         $("#pl-day-total > .pl").removeClass("profit").removeClass("loss");
@@ -74,7 +76,7 @@ var ProfitTableUI = (function(){
 
         var jpClient = japanese_client();
 
-        var data = [profit_table_data.buyDate, '<span' + showTooltip(profit_table_data.app_id, oauth_apps[profit_table_data.app_id]) + '>' + profit_table_data.ref + '</span>', format_number(jpClient, profit_table_data.payout), '', format_number(jpClient, profit_table_data.buyPrice), profit_table_data.sellDate, format_number(jpClient, profit_table_data.sellPrice), format_number(jpClient, profit_table_data.pl), ''];
+        var data = [profit_table_data.buyDate, '<span' + showTooltip(profit_table_data.app_id, oauth_apps[profit_table_data.app_id]) + '>' + profit_table_data.ref + '</span>', jpClient ? format_money_jp(TUser.get().currency, profit_table_data.payout) : profit_table_data.payout , '', jpClient ? format_money_jp(TUser.get().currency, profit_table_data.buyPrice) : profit_table_data.buyPrice , profit_table_data.sellDate, jpClient ? format_money_jp(TUser.get().currency, profit_table_data.sellPrice) : profit_table_data.sellPrice , jpClient ? format_money_jp(TUser.get().currency, profit_table_data.pl) : profit_table_data.pl , ''];
         var $row = Table.createFlexTableRow(data, cols, "data");
 
         $row.children(".buy-date").addClass("pre");

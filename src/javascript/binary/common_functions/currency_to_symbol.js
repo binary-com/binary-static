@@ -11,13 +11,23 @@ function format_money(currency, amount) {
     return symbol + amount;
 }
 
-function format_number(jp_client, amount) {
-    if(jp_client) { // remove decimal points and add comma.
+function format_money_jp(currency, amount) {
+    var sign = '';
+    if(currency === 'JPY') { // remove decimal points and add comma.
+        if (Number(amount) < 0 ) {
+           sign = '-';
+        }
+
         amount = amount.replace(/\.\d+$/, '');
+        amount = amount.replace('-','');
         amount = amount.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 
-    return amount;
+    var symbol = format_money.map[currency];
+    if (symbol === undefined) {
+        return currency + ' ' + amount;
+    }
+    return sign + symbol + amount;
 }
 
 
@@ -35,6 +45,6 @@ format_money.map = {
 if (typeof module !== 'undefined') {
     module.exports = {
         format_money: format_money,
-        format_number : format_number,
+        format_money_jp : format_money_jp,
     };
 }

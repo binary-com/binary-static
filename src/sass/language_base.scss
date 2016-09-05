@@ -57,6 +57,14 @@ body.JA {
     #header #menu-top li {
         white-space: nowrap;
     }
+    #profit-table #statement-table {
+        .buy-price, .sell-price, .payout, .pl.loss {
+            white-space: nowrap;
+        }
+    }
+    #statement-table .payout {
+        white-space: nowrap;
+    }
 }
 /*Vietnamese Language */
 body.VI {
