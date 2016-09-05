@@ -477,6 +477,14 @@ function handle_residence_state_ws(){
           }
         }
         return;
+      } else if (type === 'get_financial_assessment' && objectNotEmpty(response.get_financial_assessment)) {
+          for (var key in response.get_financial_assessment) {
+              if (key) {
+                  var val = response.get_financial_assessment[key];
+                  $("#" + key).val(val);
+              }
+          }
+          return;
       }
     }
   });

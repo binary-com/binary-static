@@ -252,7 +252,7 @@ function BinarySocketClass() {
                     }
                   }
                 } else if (type === 'get_financial_assessment' && !response.hasOwnProperty('error')) {
-                  if (objectNotEmpty(response.get_financial_assessment)) {
+                  if (!objectNotEmpty(response.get_financial_assessment)) {
                     if (page.header.qualify_for_risk_classification() && localStorage.getItem('risk_classification.response') === 'high') {
                       localStorage.setItem('risk_classification', 'high');
                       page.header.check_risk_classification();
