@@ -10,13 +10,13 @@ var exportAllFunctions = function exportAllFunctions(obj) {
 window.$ = window.jQuery = require('jquery');
 require('./lib/highstock/highstock.js');
 require('./lib/highstock/highstock-exporting.js');
+require('./lib/highstock/export-csv.js');
 window.moment = require('./lib/moment/moment');
 require('./lib/mmenu/jquery.mmenu.min.all.js');
 require('./lib/jquery-ui-timepicker/jquery.ui.timepicker.js');
-require('./lib/highstock/export-csv.js');
 exportAllFunctions(require('./lib/done-typing'));
 exportAllFunctions(require('./lib/form-to-obj'));
-require('./lib/eventsource.js');
+require('event-source-polyfill');
 require('./lib/jQuery.XDomainRequest.js');
 require('./lib/jquery-scrollto-1.4.3.1-min.js');
 require('./lib/jquery-ui.js');
