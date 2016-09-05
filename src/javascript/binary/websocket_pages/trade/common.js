@@ -907,7 +907,10 @@ function chartFrameSource() {
 }
 
 function setChartSource() {
-  document.getElementById('chart_frame').src = 'https://webtrader.binary.com?affiliates=true&instrument=' + document.getElementById('underlying').value + '&timePeriod=1t&gtm=true&lang=' + (page.language() || 'en').toLowerCase();
+    var ja = japanese_client();
+  document.getElementById('chart_frame').src = 'https://webtrader.binary.com?affiliates=true&instrument=' + document.getElementById('underlying').value + '&timePeriod=1t&gtm=true&lang=' + (page.language() || 'en').toLowerCase() +
+  '&hideOverlay=' + (ja ? 'true' : 'false') + '&hideShare=' + (ja ? 'true' : 'false') + '&timezone=GMT+' + (ja ? '9' : '0') +
+  '&hideFooter=' + (ja ? 'true' : 'false');
 }
 
 

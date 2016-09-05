@@ -400,7 +400,7 @@ function handle_residence_state_ws(){
             if (select) {
               appendTextValueChild(select, residence.text, residence.value, residence.disabled ? 'disabled' : undefined);
             }
-            if (phoneElement && phoneElement.value === '' && residence.phone_idd && residenceValue === residence.value) {
+            if (residenceValue !== 'jp' && phoneElement && phoneElement.value === '' && residence.phone_idd && residenceValue === residence.value) {
               phoneElement.value = '+' + residence.phone_idd;
             }
           }
@@ -415,11 +415,15 @@ function handle_residence_state_ws(){
       } else if (type === 'website_status') {
         var status  = response.website_status;
         if (status && status.clients_country) {
+          if (status.clients_country === 'jp' || japanese_client()) {
+              $('#residence').replaceWith('<label>' + text.localize('Japan') + '</label>');
+          }
           var clientCountry = $('#residence option[value="' + status.clients_country + '"]');
           if (!clientCountry.attr('disabled')) {
               clientCountry.prop('selected', true);
           }
         }
+        $('#residence').removeClass('invisible');
         return;
       } else if (type === 'get_financial_assessment' && objectNotEmpty(response.get_financial_assessment)) {
           for (var key in response.get_financial_assessment) {

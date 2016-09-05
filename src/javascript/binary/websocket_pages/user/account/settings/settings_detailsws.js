@@ -175,13 +175,17 @@ var SettingsDetailsWS = (function() {
 
     function getJPSchema(data) {
         var V2 = ValidateV2;
-        return {
-            hedge_asset_amount: [
-                function(v) { return dv.ok(v.trim()); },
-                V2.required,
-                V2.regex(/^\d+$/, [Content.localize().textNumbers]),
-            ],
-        };
+        if (/Hedging/.test($('#PurposeOfTrading').val())) {
+            return {
+                hedge_asset_amount: [
+                    function(v) { return dv.ok(v.trim()); },
+                    V2.required,
+                    V2.regex(/^\d+$/, [Content.localize().textNumbers]),
+                ]
+            };
+        } else {
+            return true;
+        }
     }
 
     function submitNonJP(data) {
