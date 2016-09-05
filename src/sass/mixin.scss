@@ -126,7 +126,7 @@
       list-style-image: none;
       background: $COLOR_LIGHT_GRAY;
       border-radius: 4px 4px 0 0;
-      @include BIDIR_VALUE(margin, 0 2px 0 0, 0 0 0 2px);
+      @include BIDIR_VALUE(margin, 0 6px 0 0, 0 0 0 6px);
       padding: 0 10px;
       a, a:visited {
         padding: 0;
