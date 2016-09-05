@@ -954,13 +954,10 @@ function updatePurchaseStatus_Beta(final_price, pnl, contract_status){
 
     label_value(cost  , Content.localize().textStake , Math.abs(pnl));
     label_value(payout, Content.localize().textPayout, addComma(final_price));
-    $('#contract_purchase_payout_value').attr('class', (+final_price > 0 ? 'profit' : 'loss'));
-    // if(!final_price){
-    //     $profit.html(Content.localize().textLoss + '<span>'+addComma(pnl)+'</span>');
-    // }
-    // else{
-    //     $profit.html(Content.localize().textProfit + '<span>'+addComma(Math.round((final_price-pnl)*100)/100)+'</span>');
-    // }
+
+    var isWin = (+final_price > 0);
+    $('#contract_purchase_profit_value').attr('class', (isWin ? 'profit' : 'loss'));
+    label_value(profit, isWin ? Content.localize().textProfit : Content.localize().textLoss, addComma(Math.round((final_price - pnl) * 100) / 100));
 }
 
 function label_value(label_elem, label, value, no_currency) {

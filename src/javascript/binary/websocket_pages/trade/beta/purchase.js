@@ -48,10 +48,20 @@ var Purchase_Beta = (function () {
             message_container.show();
             confirmation_error.hide();
 
+            $('#contract-values > div > div').each(function() {
+                $(this).text('').removeAttr('class', '');
+            });
             brief.textContent = $('#underlying option:selected').text() + ' / ' +
                 StringUtil.toTitleCase(Contract_Beta.contractType()[Contract_Beta.form()][purchase_data.echo_req.passthrough.contract_type]) +
                 (Contract_Beta.form() === 'digits' ? ' ' + purchase_data.echo_req.passthrough.barrier : '');
 
+            var is_spread = (Contract_Beta.form() === 'spreads');
+            if (is_spread) {
+                $('#contract_purchase_profit_list, #contract_purchase_description_section').removeClass('gr-4 gr-8').addClass('gr-6');
+            } else {
+                $('#contract_purchase_profit_list').removeClass('gr-6').addClass('gr-4');
+                $('#contract_purchase_description_section').removeClass('gr-6').addClass('gr-8');
+            }
             heading.textContent = Content.localize().textContractConfirmationHeading;
             descr.textContent = receipt['longcode'];
             if (barrier_element) label_value(barrier_element, '', '', true);
@@ -71,12 +81,11 @@ var Purchase_Beta = (function () {
             }
             profit_value = Math.round((payout_value - cost_value)*100)/100;
 
-            if(sessionStorage.getItem('formname')==='spreads'){
+            if(is_spread){
                 label_value(payout, Content.localize().textStopLoss      , receipt.stop_loss_level  , true);
                 label_value(cost  , Content.localize().textAmountPerPoint, receipt.amount_per_point);
                 label_value(profit, Content.localize().textStopProfit    , receipt.stop_profit_level, true);
-            }
-            else {
+            } else {
                 label_value(payout, Content.localize().textPayout, addComma(payout_value));
                 label_value(cost  , Content.localize().textStake , addComma(cost_value));
                 // label_value(profit, Content.localize().textContractConfirmationProfit, addComma(profit_value));

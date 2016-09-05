@@ -205,23 +205,23 @@
                                                         <div id="chart_values_price_value"></div>
                                                     </div>
                                                 </div>
-                                                <div class="gr-row">
+                                                <div class="gr-row" id="contract-values">
                                                     <div class="gr-adapt">
                                                         <div id="contract_purchase_cost"></div>
                                                         <div id="contract_purchase_payout"></div>
-                                                        <div id="contract_purchase_profit"></div>
                                                         <div id="contract_purchase_barrier"></div>
+                                                        <div id="contract_purchase_profit"></div>
                                                     </div>
                                                     <div class="gr-grow values">
                                                         <div id="contract_purchase_cost_value"></div>
                                                         <div id="contract_purchase_payout_value"></div>
-                                                        <div id="contract_purchase_profit_value"></div>
                                                         <div id="contract_purchase_barrier_value"></div>
+                                                        <div id="contract_purchase_profit_value"></div>
                                                     </div>
                                                 </div>
                                                 <div class="contract_purchase_reference gr-hide-m"></div>
                                             </div>
-                                            <div class="gr-8 gr-12-m gr-no-gutter">
+                                            <div class="gr-8 gr-12-m gr-no-gutter" id="contract_purchase_description_section">
                                                 <div id="contract_purchase_descr"></div>
                                                 <button id="contract_purchase_button" class="button open_contract_detailsws">[% l('View Details') %]</button>
                                                 <div id="contract_purchase_spots">

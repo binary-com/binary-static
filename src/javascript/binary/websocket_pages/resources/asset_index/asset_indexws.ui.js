@@ -11,7 +11,7 @@ var AssetIndexUI = (function() {
 
     var init = function(config) {
         if (japanese_client()) {
-            if (!TradePage.is_trading_page()) {
+            if (!TradePage_Beta.is_trading_page()) {
                 window.location.href = page.url.url_for('resources');
             }
             return;
