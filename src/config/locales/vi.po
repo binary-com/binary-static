@@ -44,13 +44,15 @@ msgstr "$25,000 - $100,000"
 msgid "$250,000 - $1,000,000"
 msgstr "$250,000 - $1,000,000"
 
-msgid "%1 %2 (\"API\") Terms and Conditions"
-msgstr "%1 %2 (\"API\") Điều khoản và Điều kiện"
-
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%1 %2 vừa được cộng thêm vào tài khoản tiền Ảo %3 của bạn"
 
 msgid "%1 Affiliate Program Terms and Conditions"
+msgstr "Điều kiện và Điều khoản của chương trình hợp tác %1"
+
+#, fuzzy
+#| msgid "%1 Affiliate Program Terms and Conditions"
+msgid "%1 Application Program Interface (\"API\") Terms and Conditions"
 msgstr "Điều kiện và Điều khoản của chương trình hợp tác %1"
 
 msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
@@ -8350,6 +8352,9 @@ msgstr "Chi tiết Tài khoản"
 
 msgid "Terms and Conditions Approval"
 msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
+
+#~ msgid "%1 %2 (\"API\") Terms and Conditions"
+#~ msgstr "%1 %2 (\"API\") Điều khoản và Điều kiện"
 
 #, fuzzy
 #~| msgid "%1’s Volatility Indices are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
