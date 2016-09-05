@@ -1,4 +1,4 @@
-var TickDisplay = function() {
+var TickDisplay_Beta = function() {
     return {
         initialize: function(data) {
             var $self = this;
@@ -14,10 +14,11 @@ var TickDisplay = function() {
             $self.abs_barrier = data.abs_barrier;
             $self.display_decimals = data.display_decimals || 2;
             $self.show_contract_result = data.show_contract_result;
+            $self.is_trading_page = data.is_trading_page;
+            $self.contract_sentiment = data.contract_sentiment;
             var tick_frequency = 5;
 
             if (data.show_contract_result) {
-                $self.contract_sentiment = data.contract_sentiment;
                 $self.price = parseFloat(data.price);
                 $self.payout = parseFloat(data.payout);
             }
@@ -70,15 +71,15 @@ var TickDisplay = function() {
         initialize_chart: function(config) {
             var $self = this;
 
-            $self.chart = new Highcharts.Chart({
+            var chart_options = {
                 chart: {
                     type: 'line',
                     renderTo: 'tick_chart',
                     width: config.width ? config.width : (config.minimize ? 394 : null),
-                    height: config.minimize ? 143 : null,
+                    height: config.minimize ? 120 : null,
                     backgroundColor: null,
                     events: { load: $self.plot(config.plot_from, config.plot_to) },
-                    marginLeft: 50
+                    marginLeft: 20,
                 },
                 credits: {enabled: false},
                 tooltip: {
@@ -88,12 +89,24 @@ var TickDisplay = function() {
                         var mom = moment.utc($self.applicable_ticks[that.x].epoch*1000).format("dddd, MMM D, HH:mm:ss");
                         return mom + "<br/>" + $self.display_symbol + " " + new_y;
                     },
+                    crosshairs: [true],
                 },
                 xAxis: {
                     type: 'linear',
                     min: 0,
-                    max: $self.number_of_ticks + 1,
-                    labels: { enabled: false, }
+                    max: $self.ticks_needed - 0.5,
+                    tickInterval: 1,
+                    labels: {
+                      formatter: function() { return this.value + ($self.contract_category.match('digits|asian') ? 1 : 0); }
+                    },
+                    showFirstLabel: $self.contract_category.match('digits|asian') ? true : false,
+                    crosshair: {
+                        color: '#E98024',
+                        zIndex: 1
+                    },
+                    title: {
+                        text: text.localize('Tick')
+                    }
                 },
                 yAxis: {
                     opposite: false,
@@ -101,7 +114,7 @@ var TickDisplay = function() {
                         align: 'left',
                         x: 0,
                     },
-                    title: ''
+                    title: '',
                 },
                 series: [{
                     data: [],
@@ -109,7 +122,54 @@ var TickDisplay = function() {
                 title: '',
                 exporting: {enabled: false, enableImages: false},
                 legend: {enabled: false},
-            });
+            };
+            // Trading page's chart
+            function show_values(tick, time, price) {
+                $('#contract_purchase_profit_list .chart-values').css('display', 'flex');
+                $('#chart_values_tick_value').text(tick);
+                $('#chart_values_time_value').text(time);
+                $('#chart_values_price_value').text(price);
+            }
+            if($self.is_trading_page) {
+                $.extend(true, chart_options, {
+                    chart: {
+                        marginBottom: 25
+                    },
+                    tooltip: {
+                        style: {'display': 'none'},
+                        formatter: function () {
+                            var that = this;
+                            var time = moment.utc($self.applicable_ticks[that.x].epoch*1000).format('HH:mm:ss');
+                            show_values(that.x, time, that.y);
+                        },
+                        events: {
+                            hide: function () {
+                                $('#contract_purchase_profit_list .chart-values').hide();
+                            }
+                        }
+                    },
+                    xAxis: {
+                        title: {
+                            text: ''
+                        },
+                        crosshair: {
+                            width: 30,
+                        },
+                        tickWidth: 0
+                    },
+                    yAxis: {
+                        gridLineWidth: 0,
+                        labels: {
+                            enabled: false,
+                        }
+                    },
+                    series: [{
+                        color: '#2a3052',
+                        lineWidth: 1,
+                    }],
+                });
+            }
+            $self.chart = new Highcharts.Chart(chart_options);
             Highcharts.setOptions({
               lang: {thousandsSep: ','}
             });
@@ -141,7 +201,9 @@ var TickDisplay = function() {
                 return;
             }
 
-            var barrier_type = $self.contract_category.match('asian') ? 'asian' : 'static';
+            var barrier_type = $self.contract_category.match('asian') ? 'asian' : 'static',
+                line_color   = $self.is_trading_page ? '#6b8fb9' : 'green',
+                line_width   = $self.is_trading_page ? 1 : 2;
 
             if (barrier_type === 'static') {
                 var barrier_tick = $self.applicable_ticks[0];
@@ -161,11 +223,15 @@ var TickDisplay = function() {
                 $self.chart.yAxis[0].addPlotLine({
                     id: 'tick-barrier',
                     value: barrier_tick.quote,
-                    label: {text: 'Barrier ('+barrier_tick.quote+')', align: 'center'},
-                    color: 'green',
-                    width: 2,
+                    label: {
+                        text: $self.is_trading_page ? '' : 'Barrier (' + barrier_tick.quote + ')',
+                        align: 'center'
+                    },
+                    color: line_color,
+                    width: line_width,
                     zIndex: 2,
                 });
+
                 $self.contract_barrier = barrier_tick.quote;
                 $self.set_barrier = false;
             }
@@ -182,19 +248,19 @@ var TickDisplay = function() {
                 $self.chart.yAxis[0].addPlotLine({
                     id: 'tick-barrier',
                     value: calc_barrier,
-                    color: 'green',
                     label: {
-                        text: 'Average ('+calc_barrier+')',
+                        text: $self.is_trading_page ? '' : 'Average (' + calc_barrier + ')',
                         align: 'center'
                     },
-                    width: 2,
+                    color: line_color,
+                    width: line_width,
                     zIndex: 2,
                 });
                 $self.contract_barrier = calc_barrier;
             }
             var barrier = document.getElementById('contract_purchase_barrier');
             if ($self.contract_barrier && barrier) {
-                barrier.innerHTML = Content.localize().textBarrier + ': ' + $self.contract_barrier;
+                label_value(barrier, Content.localize().textBarrier, addComma($self.contract_barrier), true);
             }
         },
         add: function(indicator) {
@@ -249,25 +315,25 @@ var TickDisplay = function() {
     };
 }();
 
-var WSTickDisplay = Object.create(TickDisplay);
-WSTickDisplay.plot = function(plot_from, plot_to) {
+var WSTickDisplay_Beta = Object.create(TickDisplay_Beta);
+WSTickDisplay_Beta.plot = function(plot_from, plot_to) {
     var $self = this;
     $self.contract_start_moment = moment($self.contract_start_ms).utc();
     $self.counter = 0;
     $self.applicable_ticks = [];
 };
-WSTickDisplay.update_ui = function(final_price, pnl, contract_status) {
+WSTickDisplay_Beta.update_ui = function(final_price, pnl, contract_status) {
     var $self = this;
-    updatePurchaseStatus(final_price, final_price - pnl, contract_status);
+    updatePurchaseStatus_Beta(final_price, final_price - pnl, contract_status);
 };
-WSTickDisplay.socketSend = function(req) {
+WSTickDisplay_Beta.socketSend = function(req) {
     if(!req.hasOwnProperty('passthrough')) {
         req.passthrough = {};
     }
     req.passthrough['dispatch_to'] = 'ViewTickDisplayWS';
     BinarySocket.send(req);
 };
-WSTickDisplay.dispatch = function(data) {
+WSTickDisplay_Beta.dispatch = function(data) {
   var $self = this;
   var chart = document.getElementById('tick_chart');
 
@@ -294,7 +360,7 @@ WSTickDisplay.dispatch = function(data) {
       }
     }
     if (!window.tick_init || window.tick_init === '') {
-      WSTickDisplay.initialize({
+      WSTickDisplay_Beta.initialize({
           "symbol"              : window.tick_underlying,
           "number_of_ticks"     : window.tick_count,
           "contract_category"   : ((/asian/i).test(window.tick_shortcode) ? 'asian' : (/digit/i).test(window.tick_shortcode) ? 'digits' : 'callput'),
@@ -303,9 +369,10 @@ WSTickDisplay.dispatch = function(data) {
           "contract_start"      : window.tick_date_start,
           "abs_barrier"         : window.abs_barrier,
           "display_decimals"    : display_decimals,
+          "contract_sentiment"  : window.contract_type === 'CALL' || window.contract_type === 'ASIANU' ? 'up' : 'down',
           "show_contract_result": 0
       });
-      WSTickDisplay.spots_list = {};
+      WSTickDisplay_Beta.spots_list = {};
       window.tick_init = 'initialized';
     }
   }
@@ -356,9 +423,30 @@ WSTickDisplay.dispatch = function(data) {
               $self.counter++;
           }
       }
+
+      if ($self.is_trading_page) {
+          var is_up   = $self.contract_sentiment === 'up',
+              min     = $self.chart.yAxis[0].getExtremes().min,
+              max     = $self.chart.yAxis[0].getExtremes().max,
+              barrier = $self.contract_barrier;
+          $self.chart.yAxis[0].removePlotBand('win-area');
+          $self.chart.yAxis[0].addPlotBand({
+              id: 'win-area',
+              from: is_up ? barrier : min,
+              to:   is_up ? max : barrier,
+              color: '#f5f8fb'
+          });
+          $self.chart.yAxis[0].removePlotBand('lose-area');
+          $self.chart.yAxis[0].addPlotBand({
+              id: 'lose-area',
+              from: is_up ? min : barrier,
+              to:   is_up ? barrier : max,
+              color: '#ffffff'
+          });
+      }
   }
 };
-WSTickDisplay.updateChart = function(data, contract) {
+WSTickDisplay_Beta.updateChart = function(data, contract) {
     window.subscribe = 'false';
     if (contract) {
       window.tick_underlying = contract.underlying;
@@ -368,6 +456,7 @@ WSTickDisplay.updateChart = function(data, contract) {
       window.tick_date_start = contract.date_start;
       window.abs_barrier = contract.barrier;
       window.tick_shortcode = contract.shortcode;
+      window.contract_type = contract.contract_type;
       window.tick_init = '';
       var request = {
         ticks_history: contract.underlying,
@@ -380,9 +469,34 @@ WSTickDisplay.updateChart = function(data, contract) {
       } else {
         request.end = contract.date_expiry;
       }
-      WSTickDisplay.socketSend(request);
+      WSTickDisplay_Beta.socketSend(request);
       return;
     } else {
-      WSTickDisplay.dispatch(data);
+      WSTickDisplay_Beta.dispatch(data);
     }
 };
+
+// add tooltip events to highcharts
+(function (Highcharts) {
+    Highcharts.wrap(Highcharts.Tooltip.prototype, 'hide', function (proceed) {
+        var tooltip = this.chart.options.tooltip;
+
+        // Run the original proceed method
+        proceed.apply(this, Array.prototype.slice.call(arguments, 1));
+
+        if (!this.isHidden && tooltip.events && tooltip.events.hide) {
+            tooltip.events.hide();
+        }
+    });
+
+    Highcharts.wrap(Highcharts.Tooltip.prototype, 'refresh', function (proceed) {
+        var tooltip = this.chart.options.tooltip;
+
+        // Run the original proceed method
+        proceed.apply(this, Array.prototype.slice.call(arguments, 1));
+
+        if (tooltip.events && tooltip.events.show) {
+            tooltip.events.show(this.chart.hoverPoints);
+        }
+    });
+}(Highcharts));

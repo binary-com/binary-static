@@ -10,16 +10,16 @@
  * or underlying to load bet analysis for that particular event
  */
 
-var TradingAnalysis = (function() {
+var TradingAnalysis_Beta = (function() {
     var trading_digit_info;
 
     var requestTradeAnalysis = function() {
-        var contentId = document.getElementById('trading_bottom_content');
+        var contentId = document.getElementById('trading_analysis_content');
         var formName = JPTradePage.isJapan() ? $('#category-select').val() : $('#contract_form_name_nav').find('.a-active').attr('id');
         if (formName === 'matchdiff') {
           formName = 'digits';
         }
-        $('#tab_explanation a').attr('href',  page.url.url_for('trade/bet_explanation', 'underlying_symbol=' + $('#underlying').val() + '&form_name=' + formName));
+        $('#tab_explanation a').attr('href',  page.url.url_for('trade/bet_explanation_beta', 'underlying_symbol=' + $('#underlying').val() + '&form_name=' + formName));
         if (formName === 'digits' || formName === 'overunder' || formName === 'evenodd') {
             $('#tab_last_digit').removeClass("invisible");
         } else {
@@ -35,21 +35,23 @@ var TradingAnalysis = (function() {
      */
     var bindAnalysisTabEvent = function() {
         'use strict';
-        var analysisNavElement = document.querySelector('#trading_bottom_content #betsBottomPage');
-        if (analysisNavElement) {
-            analysisNavElement.addEventListener('click', function(e) {
-                if (e.target && e.target.nodeName === 'A') {
-                    e.preventDefault();
 
-                    var clickedLink = e.target,
-                        clickedElement = clickedLink.parentElement,
-                        isTabActive = clickedElement.classList.contains('active');
+        if (page.client.is_logged_in) {
+          $('#tab_portfolio').removeClass('invisible');
+        }
+        if (!japanese_client()) {
+          $('#tab_asset_index'  ).removeClass('invisible');
+          $('#tab_trading_times').removeClass('invisible');
+        }
 
-                    sessionStorage.setItem('currentAnalysisTab', clickedElement.id);
-
-                    if (!isTabActive) {
-                        loadAnalysisTab();
-                    }
+        var $analysis_tabs = $('#trading_analysis_content #analysis_tabs');
+        if ($analysis_tabs.length) {
+            $analysis_tabs.find('li a').click(function(e) {
+                e.preventDefault();
+                var $li = $(this).parent();
+                sessionStorage.setItem('currentAnalysisTab', $li.attr('id'));
+                if (!$li.hasClass('active')) {
+                    loadAnalysisTab();
                 }
             });
         }
@@ -65,49 +67,50 @@ var TradingAnalysis = (function() {
             currentLink = document.querySelector('#' + currentTab + ' a'),
             contentId = document.getElementById(currentTab + '-content');
 
-        var analysisNavElement = document.querySelector('#trading_bottom_content #betsBottomPage');
-        toggleActiveNavMenuElement(analysisNavElement, currentLink.parentElement);
+        var analysisNavElement = document.querySelector('#trading_analysis_content #analysis_tabs');
+        toggleActiveNavMenuElement_Beta(analysisNavElement, currentLink.parentElement);
         toggleActiveAnalysisTabs();
 
-        JapanPortfolio.init();
-        if(currentTab === 'tab_portfolio'){
-            JapanPortfolio.show();
-        } else {
-            JapanPortfolio.hide();
-            if (currentTab === 'tab_graph') {
-              showHighchart();
-            } else {
-                if (currentTab == 'tab_last_digit') {
-                    var underlying = $('[name=underlying] option:selected').val() || $('#underlying option:selected').val();
-                    var tick = $('[name=tick_count]').val() || 100;
-                    trading_digit_info = TradingAnalysis.tab_last_digitws;
-                    BinarySocket.send({
-                        ticks_history: underlying,
-                        count: tick + '',
-                        end: 'latest',
-                        req_id: 1
-                    });
-                } else{
-                    var url = currentLink.getAttribute('href') ;
-                    $.ajax({
-                        method: 'GET',
-                        url: url,
-                    })
-                    .done(function(data) {
-                        contentId.innerHTML = data;
-                        if(currentTab === 'tab_explanation') {
-                            showExplanation(currentLink.href);
-                        } else if (currentTab == 'tab_last_digit') {
-                            trading_digit_info = new DigitInfo();
-                            trading_digit_info.on_latest();
-                            trading_digit_info.show_chart(sessionStorage.getItem('underlying'));
-                        }
+        switch(currentTab) {
+            case 'tab_graph':
+                showHighchart();
+                break;
+            case 'tab_portfolio':
+                PortfolioWS.onLoad();
+                break;
+            case 'tab_last_digit':
+                var underlying = $('[name=underlying] option:selected').val() || $('#underlying option:selected').val();
+                var tick = $('[name=tick_count]').val() || 100;
+                trading_digit_info = TradingAnalysis_Beta.tab_last_digitws;
+                BinarySocket.send({'ticks_history': underlying, 'end': 'latest', 'count': tick + '', 'req_id': 1});
+                break;
+            case 'tab_asset_index':
+                AssetIndexUI.init({framed: true});
+                $('#tab_asset_index-content h1').hide();
+                break;
+            case 'tab_trading_times':
+                MarketTimesUI.init({framed: true});
+                $('#tab_trading_times-content h1').hide();
+                break;
+            default:
+                var url = currentLink.getAttribute('href') ;
+                $.ajax({
+                    method: 'GET',
+                    url: url,
+                })
+                .done(function(data) {
+                    contentId.innerHTML = data;
+                    if(currentTab === 'tab_explanation') {
+                        showExplanation(currentLink.href);
+                    } else if (currentTab == 'tab_last_digit') {
+                        trading_digit_info = new DigitInfo();
+                        trading_digit_info.on_latest();
+                        trading_digit_info.show_chart(sessionStorage.getItem('underlying'));
+                    }
 
-                    });
-                }
-            }
+                });
+                break;
         }
-
     };
 
     /*
@@ -116,7 +119,7 @@ var TradingAnalysis = (function() {
     var toggleActiveAnalysisTabs = function() {
         'use strict';
         var currentTab = getActiveTab(),
-            analysisContainer = document.getElementById('bet_bottom_content');
+            analysisContainer = document.getElementById('analysis_content');
 
         if (analysisContainer) {
             trading_digit_info = undefined;
@@ -141,8 +144,7 @@ var TradingAnalysis = (function() {
         var selectedTab = sessionStorage.getItem('currentAnalysisTab') || (JPTradePage.isJapan() ? 'tab_portfolio' : window.chartAllowed ? 'tab_graph' : 'tab_explanation'),
             selectedElement = document.getElementById(selectedTab);
 
-        if (selectedElement && selectedElement.classList.contains('invisible') &&
-            !(selectedTab === 'tab_portfolio' && JapanPortfolio.isActive())) {
+        if (selectedElement && selectedElement.classList.contains('invisible')) {
             selectedTab = window.chartAllowed ? 'tab_graph' : 'tab_explanation';
             sessionStorage.setItem('currentAnalysisTab', selectedTab);
         }

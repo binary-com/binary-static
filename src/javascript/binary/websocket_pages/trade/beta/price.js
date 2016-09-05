@@ -11,7 +11,7 @@
  * `socket.send(Price.proposal())` to send price proposal to sever
  * `Price.display()` to display the price details returned from server
  */
-var Price = (function() {
+var Price_Beta = (function() {
     'use strict';
 
     var typeDisplayIdMapping = {},
@@ -28,7 +28,7 @@ var Price = (function() {
             amountType = document.getElementById('amount_type'),
             currency = document.getElementById('currency'),
             payout = document.getElementById('amount'),
-            startTime = StartDates.node(),
+            startTime = StartDates_Beta.node(),
             expiryType = document.getElementById('expiry_type'),
             duration = document.getElementById('duration_amount'),
             durationUnit = document.getElementById('duration_units'),
@@ -72,9 +72,9 @@ var Price = (function() {
             proposal['duration_unit'] = durationUnit.value;
         } else if (expiryType && isVisible(expiryType) && expiryType.value === 'endtime') {
             var endDate2 = endDate.value;
-            var endTime2 = Durations.getTime();
+            var endTime2 = Durations_Beta.getTime();
             if (!endTime2) {
-                var trading_times = Durations.trading_times();
+                var trading_times = Durations_Beta.trading_times();
                 if (trading_times.hasOwnProperty(endDate2) && typeof trading_times[endDate2][underlying.value] === 'object' && trading_times[endDate2][underlying.value].length && trading_times[endDate2][underlying.value][0] !== '--') {
                     if( trading_times[endDate2][underlying.value].length>1)
                         endTime2 = trading_times[endDate2][underlying.value][1];
@@ -161,7 +161,7 @@ var Price = (function() {
         var container = document.getElementById('price_container_' + position);
         if (!container) return;
         if (!$(container).is(":visible")) {
-            $(container).fadeIn(200);
+            $(container).fadeIn(200, function(){ $(container).css('display', 'flex'); });
         }
 
         var h4 = container.getElementsByClassName('contract_heading')[0],

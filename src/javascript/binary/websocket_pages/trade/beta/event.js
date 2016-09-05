@@ -6,7 +6,7 @@
  * page for pjax to work else it will fire on all pages
  *
  */
-var TradingEvents = (function () {
+var TradingEvents_Beta = (function () {
     'use strict';
 
     var onStartDateChange = function(value){
@@ -28,10 +28,10 @@ var TradingEvents = (function () {
         if (value !== 'now' && $('expiry_type').val() === 'endtime') {
             make_price_request = -1;
             var end_time = moment(value*1000).utc().add(15,'minutes');
-            Durations.setTime(Defaults.get('expiry_time') || end_time.format("hh:mm"));
-            Durations.selectEndDate(Defaults.get('expiry_date') || end_time.format("YYYY-MM-DD"));
+            Durations_Beta.setTime(Defaults.get('expiry_time') || end_time.format("hh:mm"));
+            Durations_Beta.selectEndDate(Defaults.get('expiry_date') || end_time.format("YYYY-MM-DD"));
         }
-        Durations.display();
+        Durations_Beta.display();
         return make_price_request;
     };
 
@@ -43,17 +43,17 @@ var TradingEvents = (function () {
 
         var make_price_request = 0;
         if(value === 'endtime'){
-            Durations.displayEndTime();
+            Durations_Beta.displayEndTime();
             if(Defaults.get('expiry_date')){
-                Durations.selectEndDate(Defaults.get('expiry_date'));
+                Durations_Beta.selectEndDate(Defaults.get('expiry_date'));
                 make_price_request = -1;
             }
             Defaults.remove('duration_units', 'duration_amount');
         }
         else{
-            Durations.display();
+            Durations_Beta.display();
             if(Defaults.get('duration_units')){
-                TradingEvents.onDurationUnitChange(Defaults.get('duration_units'));
+                TradingEvents_Beta.onDurationUnitChange(Defaults.get('duration_units'));
             }
             var duration_amount = Defaults.get('duration_amount');
             if(duration_amount && duration_amount > $('#duration_minimum').text()){
@@ -61,7 +61,7 @@ var TradingEvents = (function () {
             }
             make_price_request = 1;
             Defaults.remove('expiry_date', 'expiry_time', 'end_date');
-            Durations.validateMinDurationAmount();
+            Durations_Beta.validateMinDurationAmount();
         }
 
         return make_price_request;
@@ -75,8 +75,8 @@ var TradingEvents = (function () {
         $('#duration_units').val(value);
         Defaults.set('duration_units', value);
 
-        Durations.select_unit(value);
-        Durations.populate();
+        Durations_Beta.select_unit(value);
+        Durations_Beta.populate();
 
         return 1;
     };
@@ -95,7 +95,7 @@ var TradingEvents = (function () {
             // it will default to proper one
             Defaults.remove('formname');
             Defaults.remove('underlying');
-            processMarket(1);
+            processMarket_Beta(1);
             chartFrameSource();
         };
 
@@ -111,8 +111,8 @@ var TradingEvents = (function () {
          * and request for new Contract details to populate the form and request price accordingly
          */
         var contractFormEventChange = function () {
-            processContractForm();
-            TradingAnalysis.request();
+            processContractForm_Beta();
+            TradingAnalysis_Beta.request();
         };
 
         var formNavElement = document.getElementById('contract_form_name_nav');
@@ -123,7 +123,7 @@ var TradingEvents = (function () {
                     var isFormActive = clickedForm.classList.contains('active') || clickedForm.parentElement.classList.contains('active');
                     Defaults.set('formname', clickedForm.getAttribute('menuitem'));
 
-                    setFormPlaceholderContent();
+                    setFormPlaceholderContent_Beta();
                     // if form is already active then no need to send same request again
                     toggleActiveCatMenuElement(formNavElement, e.target.getAttribute('menuitem'));
 
@@ -154,16 +154,16 @@ var TradingEvents = (function () {
                     var underlying = e.target.value;
                     Defaults.remove('barrier', 'barrier_high', 'barrier_low');
                     Defaults.set('underlying', underlying);
-                    TradingAnalysis.request();
+                    TradingAnalysis_Beta.request();
 
                     Tick.clean();
 
                     updateWarmChart();
 
-                    Contract.getContracts(underlying);
+                    Contract_Beta.getContracts(underlying);
 
                     // forget the old tick id i.e. close the old tick stream
-                    processForgetTicks();
+                    processForgetTicks_Beta();
                     // get ticks for current underlying
                     Tick.request(underlying);
                     displayTooltip(Defaults.get('market'), underlying);
@@ -179,8 +179,8 @@ var TradingEvents = (function () {
                 e.target.value = Math.floor(e.target.value);
             }
             Defaults.set('duration_amount', e.target.value);
-            Durations.select_amount(e.target.value);
-            processPriceRequest();
+            Durations_Beta.select_amount(e.target.value);
+            processPriceRequest_Beta();
             submitForm(document.getElementById('websocket_form'));
         }
         var durationAmountElement = document.getElementById('duration_amount'),
@@ -190,12 +190,12 @@ var TradingEvents = (function () {
             // jquery needed for datepicker
             $('#duration_amount').on('input', debounce(function (e) {
                 triggerOnDurationChange(e);
-                Durations.validateMinDurationAmount();
+                Durations_Beta.validateMinDurationAmount();
                 inputEventTriggered = true;
             }));
             $('#duration_amount').on('change', debounce(function (e) {
                 // using Defaults, to update the value by datepicker if it was emptied by keyboard (delete)
-                Durations.validateMinDurationAmount();
+                Durations_Beta.validateMinDurationAmount();
                 if(inputEventTriggered === false || !Defaults.get('duration_amount'))
                     triggerOnDurationChange(e);
                 else
@@ -212,7 +212,7 @@ var TradingEvents = (function () {
             expiryTypeElement.addEventListener('change', function(e) {
                 Defaults.set('expiry_type', e.target.value);
                 onExpiryTypeChange(e.target.value);
-                if (expiryTypeElement.value !== 'endtime') processPriceRequest();
+                if (expiryTypeElement.value !== 'endtime') processPriceRequest_Beta();
             });
         }
 
@@ -224,7 +224,7 @@ var TradingEvents = (function () {
             durationUnitElement.addEventListener('change', function (e) {
                 Defaults.remove('barrier', 'barrier_high', 'barrier_low');
                 onDurationUnitChange(e.target.value);
-                processPriceRequest();
+                processPriceRequest_Beta();
             });
         }
 
@@ -236,15 +236,15 @@ var TradingEvents = (function () {
             // need to use jquery as datepicker is used, if we switch to some other
             // datepicker we can move back to javascript
             $('#expiry_date').on('change input', function () {
-                Durations.selectEndDate(this.value);
+                Durations_Beta.selectEndDate(this.value);
             });
         }
 
         var endTimeElement = document.getElementById('expiry_time');
         if (endTimeElement) {
             $('#expiry_time').on('change input', function () {
-                Durations.setTime(endTimeElement.value);
-                processPriceRequest();
+                Durations_Beta.setTime(endTimeElement.value);
+                processPriceRequest_Beta();
             });
         }
 
@@ -261,7 +261,7 @@ var TradingEvents = (function () {
                     e.target.value = parseFloat(e.target.value).toFixed(2);
                 }
                 Defaults.set('amount', e.target.value);
-                processPriceRequest();
+                processPriceRequest_Beta();
                 submitForm(document.getElementById('websocket_form'));
             }));
         }
@@ -271,13 +271,13 @@ var TradingEvents = (function () {
          * whether start time is forward starting or not and request
          * new price
          */
-        var dateStartElement = StartDates.node();
+        var dateStartElement = StartDates_Beta.node();
         if (dateStartElement) {
             dateStartElement.addEventListener('change', function (e) {
                 Defaults.set('date_start', e.target.value);
                 var r = onStartDateChange(e.target.value);
                 if(r>=0){
-                    processPriceRequest();
+                    processPriceRequest_Beta();
                 }
             });
         }
@@ -290,7 +290,7 @@ var TradingEvents = (function () {
         if (amountTypeElement) {
             amountTypeElement.addEventListener('change', function (e) {
                 Defaults.set('amount_type', e.target.value);
-                processPriceRequest();
+                processPriceRequest_Beta();
             });
         }
 
@@ -333,7 +333,7 @@ var TradingEvents = (function () {
                 if (stopTypeDollarLabel && isVisible(stopTypeDollarLabel)) {
                     stopTypeDollarLabel.textContent = e.target.value;
                 }
-                processPriceRequest();
+                processPriceRequest_Beta();
             });
         }
 
@@ -363,8 +363,8 @@ var TradingEvents = (function () {
                 }
                 if (id && askPrice) {
                     BinarySocket.send(params);
-                    Price.incrFormId();
-                    processForgetProposals();
+                    Price_Beta.incrFormId();
+                    processForgetProposals_Beta();
                 }
             });
         }
@@ -372,12 +372,12 @@ var TradingEvents = (function () {
         /*
          * attach event to close icon for purchase container
          */
-        $('#close_confirmation_container').on('click', function (e) {
+        $('#close_confirmation_container, #contract_purchase_new_trade').on('click', function (e) {
             if (e.target) {
                 e.preventDefault();
                 document.getElementById('contract_confirmation_container').style.display = 'none';
                 document.getElementById('contracts_list').style.display = 'flex';
-                processPriceRequest();
+                processPriceRequest_Beta();
             }
         });
 
@@ -387,9 +387,9 @@ var TradingEvents = (function () {
         var barrierElement = document.getElementById('barrier');
         if (barrierElement) {
             barrierElement.addEventListener('input', debounce( function (e) {
-                Barriers.validateBarrier();
+                Barriers_Beta.validateBarrier();
                 Defaults.set('barrier', e.target.value);
-                processPriceRequest();
+                processPriceRequest_Beta();
                 submitForm(document.getElementById('websocket_form'));
             }, 1000));
         }
@@ -401,7 +401,7 @@ var TradingEvents = (function () {
         if (lowBarrierElement) {
             lowBarrierElement.addEventListener('input', debounce( function (e) {
                 Defaults.set('barrier_low', e.target.value);
-                processPriceRequest();
+                processPriceRequest_Beta();
                 submitForm(document.getElementById('websocket_form'));
             }));
         }
@@ -413,7 +413,7 @@ var TradingEvents = (function () {
         if (highBarrierElement) {
             highBarrierElement.addEventListener('input', debounce( function (e) {
                 Defaults.set('barrier_high', e.target.value);
-                processPriceRequest();
+                processPriceRequest_Beta();
                 submitForm(document.getElementById('websocket_form'));
             }));
         }
@@ -426,7 +426,7 @@ var TradingEvents = (function () {
 
             predictionElement.addEventListener('change', debounce( function (e) {
                 Defaults.set('prediction', e.target.value);
-                processPriceRequest();
+                processPriceRequest_Beta();
                 submitForm(document.getElementById('websocket_form'));
             }));
         }
@@ -441,7 +441,7 @@ var TradingEvents = (function () {
                     e.target.value = parseFloat(e.target.value).toFixed(2);
                 }
                 Defaults.set('amount_per_point', e.target.value);
-                processPriceRequest();
+                processPriceRequest_Beta();
                 submitForm(document.getElementById('websocket_form'));
             }));
         }
@@ -451,7 +451,7 @@ var TradingEvents = (function () {
          */
         var stopTypeEvent = function (e) {
             Defaults.set('stop_type', e.target.value);
-            processPriceRequest();
+            processPriceRequest_Beta();
         };
 
         var stopTypeElement = document.querySelectorAll('input[name="stop_type"]');
@@ -471,7 +471,7 @@ var TradingEvents = (function () {
                     e.target.value = parseFloat(e.target.value).toFixed(2);
                 }
                 Defaults.set('stop_loss', e.target.value);
-                processPriceRequest();
+                processPriceRequest_Beta();
                 submitForm(document.getElementById('websocket_form'));
             }));
         }
@@ -486,7 +486,7 @@ var TradingEvents = (function () {
                     e.target.value = parseFloat(e.target.value).toFixed(2);
                 }
                 Defaults.set('stop_profit', e.target.value);
-                processPriceRequest();
+                processPriceRequest_Beta();
                 submitForm(document.getElementById('websocket_form'));
             }));
         }

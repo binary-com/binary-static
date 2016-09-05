@@ -3,7 +3,7 @@
  * contract purchase response
  */
 
-var Purchase = (function () {
+var Purchase_Beta = (function () {
     'use strict';
 
     var purchase_data = {};
@@ -18,8 +18,8 @@ var Purchase = (function () {
             heading = document.getElementById('contract_purchase_heading'),
             descr = document.getElementById('contract_purchase_descr'),
             barrier_element = document.getElementById('contract_purchase_barrier'),
-            reference = document.getElementById('contract_purchase_reference'),
             chart = document.getElementById('tick_chart'),
+            brief = document.getElementById('contract_purchase_brief'),
             balance = document.getElementById('contract_purchase_balance'),
             payout = document.getElementById('contract_purchase_payout'),
             cost = document.getElementById('contract_purchase_cost'),
@@ -44,14 +44,20 @@ var Purchase = (function () {
             if(guideBtn) {
                 guideBtn.style.display = 'none';
             }
-            container.style.display = 'table-row';
+            container.style.display = 'block';
             message_container.show();
             confirmation_error.hide();
 
+            brief.textContent = $('#underlying option:selected').text() + ' / ' +
+                StringUtil.toTitleCase(Contract_Beta.contractType()[Contract_Beta.form()][purchase_data.echo_req.passthrough.contract_type]) +
+                (Contract_Beta.form() === 'digits' ? ' ' + purchase_data.echo_req.passthrough.barrier : '');
+
             heading.textContent = Content.localize().textContractConfirmationHeading;
             descr.textContent = receipt['longcode'];
-            if (barrier_element) barrier_element.textContent = '';
-            reference.textContent = Content.localize().textContractConfirmationReference + ' ' + receipt['transaction_id'];
+            if (barrier_element) label_value(barrier_element, '', '', true);
+            [].forEach.call(document.getElementsByClassName('contract_purchase_reference'), function(ref) {
+                ref.textContent = Content.localize().textRef + ' ' + receipt['transaction_id'];
+            });
 
             var payout_value, cost_value, profit_value;
 
@@ -66,14 +72,14 @@ var Purchase = (function () {
             profit_value = Math.round((payout_value - cost_value)*100)/100;
 
             if(sessionStorage.getItem('formname')==='spreads'){
-                payout.innerHTML = Content.localize().textStopLoss + ' <p>' + receipt.stop_loss_level + '</p>';
-                cost.innerHTML = Content.localize().textAmountPerPoint + ' <p>' + receipt.amount_per_point + '</p>';
-                profit.innerHTML = Content.localize().textStopProfit + ' <p>' + receipt.stop_profit_level + '</p>';
+                label_value(payout, Content.localize().textStopLoss      , receipt.stop_loss_level  , true);
+                label_value(cost  , Content.localize().textAmountPerPoint, receipt.amount_per_point);
+                label_value(profit, Content.localize().textStopProfit    , receipt.stop_profit_level, true);
             }
             else {
-                payout.innerHTML = Content.localize().textContractConfirmationPayout + ' <p>' + payout_value + '</p>';
-                cost.innerHTML = Content.localize().textContractConfirmationCost + ' <p>' + cost_value + '</p>';
-                profit.innerHTML = Content.localize().textContractConfirmationProfit + ' <p>' + profit_value + '</p>';
+                label_value(payout, Content.localize().textPayout, addComma(payout_value));
+                label_value(cost  , Content.localize().textStake , addComma(cost_value));
+                // label_value(profit, Content.localize().textContractConfirmationProfit, addComma(profit_value));
             }
 
             balance.textContent = Content.localize().textContractConfirmationBalance + ' ' + format_money(TUser.get().currency, Math.round(receipt['balance_after']*100)/100);
@@ -85,24 +91,24 @@ var Purchase = (function () {
                 chart.hide();
             }
 
-            if(Contract.form() === 'digits'){
-                spots.textContent = '';
-                spots.className = '';
+            if(Contract_Beta.form() === 'digits'){
+                [].forEach.call(spots.childNodes, function(child) { child.innerHTML = '&nbsp;'; });
                 spots.show();
             }
             else{
                 spots.hide();
             }
 
-            if(Contract.form() !== 'digits' && !show_chart){
-                button.textContent = Content.localize().textContractConfirmationButton;
+            if(Contract_Beta.form() !== 'digits' && !show_chart){
                 button.setAttribute('contract_id', receipt['contract_id']);
+                descr.show();
                 button.show();
-                $('.open_contract_detailsws').attr('contract_id', receipt['contract_id']).removeClass('invisible');
+                $('#confirmation_message .open_contract_detailsws').attr('contract_id', receipt['contract_id']).removeClass('invisible');
             }
             else{
+                descr.hide();
                 button.hide();
-                $('.open_contract_detailsws').addClass('invisible');
+                $('#confirmation_message .open_contract_detailsws').addClass('invisible');
             }
         }
 
@@ -133,7 +139,7 @@ var Purchase = (function () {
               barrier = passthrough.barrier;
             }
 
-            WSTickDisplay.initialize({
+            WSTickDisplay_Beta.initialize({
                 symbol:passthrough.symbol,
                 barrier: barrier,
                 number_of_ticks:passthrough.duration,
@@ -146,14 +152,14 @@ var Purchase = (function () {
                 price:passthrough['ask-price'],
                 payout:receipt['payout'],
                 show_contract_result:1,
-                width: $('#confirmation_message').width(),
+                width: $('#tick_chart').width(),
+                is_trading_page: true
             });
-            WSTickDisplay.spots_list = {};
+            WSTickDisplay_Beta.spots_list = {};
         }
     };
 
     var update_spot_list = function(data){
-
         if($('#contract_purchase_spots:hidden').length){
             return;
         }
@@ -164,65 +170,82 @@ var Purchase = (function () {
             return;
         }
 
-        var spots = document.getElementById('contract_purchase_spots');
+        var container  = document.getElementById('contract_purchase_spots'),
+            tick_elem  = document.getElementById('current_tick_number'),
+            spot_elem  = document.getElementById('current_tick_spot'),
+            list_elem  = document.getElementById('last_digits_list');
+        if(container) {
+            tick_elem.innerHTML = spot_elem.innerHTML = list_elem.innerHTML = '&nbsp;';
+        }
+        for(var i = 1; i <= duration; i++) {
+            var fragment = document.createElement('div');
+            fragment.classList.add('gr-grow');
+
+            var digit_elem = document.createElement('div');
+            digit_elem.classList.add('digit');
+            digit_elem.id = 'tick_digit_' + i;
+            digit_elem.innerHTML = '&nbsp;';
+            fragment.appendChild(digit_elem);
+
+            var number_elem = document.createElement('div');
+            number_elem.classList.add('number');
+            number_elem.innerHTML = i;
+            fragment.appendChild(number_elem);
+
+            list_elem.appendChild(fragment);
+        }
+
         var spots2 = Tick.spots();
         var epoches = Object.keys(spots2).sort(function(a,b){return a-b;});
-        if(spots) spots.textContent = '';
+        var tick_number = 0;
 
-        var replace = function(d){d1 = d; return '<b>'+d+'</b>';};
+        var is_win = function(last_digit) {
+            var contract_type = purchase_data.echo_req.passthrough.contract_type,
+                barrier       = purchase_data.echo_req.passthrough.barrier;
+            return ((contract_type === 'DIGITMATCH' && last_digit == barrier) ||
+                    (contract_type === 'DIGITDIFF'  && last_digit != barrier) ||
+                    (contract_type === 'DIGITEVEN'  && last_digit % 2 === 0 ) ||
+                    (contract_type === 'DIGITODD'   && last_digit % 2       ) ||
+                    (contract_type === 'DIGITOVER'  && last_digit > barrier ) ||
+                    (contract_type === 'DIGITUNDER' && last_digit < barrier));
+        };
+        var replace = function(d) {
+            last_digit = d;
+            return '<span class="' + (is_win(d) ? 'profit' : 'loss') + '">' + d + '</span>';
+        };
         for(var s=0; s<epoches.length; s++){
             var tick_d = {
                 epoch: epoches[s],
                 quote: spots2[epoches[s]]
             };
 
-            if(isVisible(spots) && tick_d.epoch && tick_d.epoch > purchase_data.buy.start_time){
-                var fragment = document.createElement('div');
-                fragment.classList.add('row');
+            if(isVisible(container) && tick_d.epoch && tick_d.epoch > purchase_data.buy.start_time){
+                tick_number++;
+                var last_digit;
 
-                var el1 = document.createElement('div');
-                el1.classList.add('col');
-                el1.textContent = Content.localize().textTickResultLabel + " " + (spots.getElementsByClassName('row').length+1);
-                fragment.appendChild(el1);
+                tick_elem.textContent = Content.localize().textTickResultLabel + ' ' + tick_number;
+                spot_elem.innerHTML = tick_d.quote.replace(/\d$/, replace);
 
-                var el2 = document.createElement('div');
-                el2.classList.add('col');
-                var date = new Date(tick_d.epoch*1000);
-                var hours = date.getUTCHours() < 10 ? '0'+date.getUTCHours() : date.getUTCHours();
-                var minutes = date.getUTCMinutes() < 10 ? '0'+date.getUTCMinutes() : date.getUTCMinutes();
-                var seconds = date.getUTCSeconds() < 10 ? '0'+date.getUTCSeconds() : date.getUTCSeconds();
-                el2.textContent = hours+':'+minutes+':'+seconds;
-                fragment.appendChild(el2);
+                var this_digit_elem = document.getElementById('tick_digit_' + tick_number);
+                this_digit_elem.classList.add(is_win(last_digit) ? 'profit' : 'loss');
+                this_digit_elem.textContent = last_digit;
 
-                var d1;
-                var tick = tick_d.quote.replace(/\d$/,replace);
-                var el3 = document.createElement('div');
-                el3.classList.add('col');
-                el3.innerHTML = tick;
-                fragment.appendChild(el3);
-
-                spots.appendChild(fragment);
-                spots.scrollTop = spots.scrollHeight;
-
-                if(d1 && duration===1){
+                if(last_digit && duration === 1) {
                     var contract_status,
                         final_price,
                         pnl;
 
-                    if  (  purchase_data.echo_req.passthrough.contract_type==="DIGITMATCH" && d1==purchase_data.echo_req.passthrough.barrier || purchase_data.echo_req.passthrough.contract_type==="DIGITDIFF" && d1!=purchase_data.echo_req.passthrough.barrier || purchase_data.echo_req.passthrough.contract_type==="DIGITEVEN" && d1%2===0 || purchase_data.echo_req.passthrough.contract_type==="DIGITODD" && d1%2 || purchase_data.echo_req.passthrough.contract_type==="DIGITOVER" && d1>purchase_data.echo_req.passthrough.barrier || purchase_data.echo_req.passthrough.contract_type==="DIGITUNDER" && d1<purchase_data.echo_req.passthrough.barrier){
-                        spots.className = 'won';
-                        final_price = $('#contract_purchase_payout p').text();
-                        pnl = $('#contract_purchase_cost p').text();
+                    if (is_win(last_digit)) {
+                        final_price = $('#contract_purchase_payout_value').attr('value');
+                        pnl = $('#contract_purchase_cost_value').attr('value');
                         contract_status = Content.localize().textContractStatusWon;
-                    }
-                    else{
-                        spots.className = 'lost';
+                    } else {
                         final_price = 0;
-                        pnl = -$('#contract_purchase_cost p').text();
+                        pnl = -$('#contract_purchase_cost_value').attr('value');
                         contract_status = Content.localize().textContractStatusLost;
                     }
 
-                    updatePurchaseStatus(final_price, pnl, contract_status);
+                    updatePurchaseStatus_Beta(final_price, pnl, contract_status);
                 }
 
                 duration--;

@@ -505,10 +505,6 @@ function toggleActiveNavMenuElement(nav, eventElement) {
             liElements[i].classList.remove('active');
         }
         classes.add('active');
-        var parent = eventElement.parentElement.parentElement;
-        if (parent.tagName === 'LI' && !parent.classList.contains('active')) {
-            parent.classList.add('active');
-        }
     }
 }
 
@@ -834,30 +830,20 @@ function selectOption(option, select){
     }
 }
 
-function label_value(label_elem, label, value, no_currency) {
-    var currency = TUser.get().currency;
-    label_elem.innerHTML = label;
-    var value_elem = document.getElementById(label_elem.id + '_value');
-    value_elem.innerHTML = no_currency ? value : format_money(currency, value);
-    value_elem.setAttribute('value', value);
-}
-
 function updatePurchaseStatus(final_price, pnl, contract_status){
     $('#contract_purchase_heading').text(text.localize(contract_status));
-    var payout  = document.getElementById('contract_purchase_payout'),
-        cost    = document.getElementById('contract_purchase_cost'),
-        profit  = document.getElementById('contract_purchase_profit'),
-        currency = TUser.get().currency;
+    $payout = $('#contract_purchase_payout');
+    $cost = $('#contract_purchase_cost');
+    $profit = $('#contract_purchase_profit');
 
-    label_value(cost  , Content.localize().textStake , Math.abs(pnl));
-    label_value(payout, Content.localize().textPayout, addComma(final_price));
-    $('#contract_purchase_payout_value').attr('class', (+final_price > 0 ? 'profit' : 'loss'));
-    // if(!final_price){
-    //     $profit.html(Content.localize().textLoss + '<span>'+addComma(pnl)+'</span>');
-    // }
-    // else{
-    //     $profit.html(Content.localize().textProfit + '<span>'+addComma(Math.round((final_price-pnl)*100)/100)+'</span>');
-    // }
+    $payout.html(Content.localize().textBuyPrice + '<p>'+addComma(Math.abs(pnl))+'</p>');
+    $cost.html(Content.localize().textFinalPrice + '<p>'+addComma(final_price)+'</p>');
+    if(!final_price){
+        $profit.html(Content.localize().textLoss + '<p>'+addComma(pnl)+'</p>');
+    }
+    else{
+        $profit.html(Content.localize().textProfit + '<p>'+addComma(Math.round((final_price-pnl)*100)/100)+'</p>');
+    }
 }
 
 function updateWarmChart(){
@@ -922,6 +908,67 @@ function chartFrameSource() {
 
 function setChartSource() {
   document.getElementById('chart_frame').src = 'https://webtrader.binary.com?affiliates=true&instrument=' + document.getElementById('underlying').value + '&timePeriod=1t&gtm=true&lang=' + (page.language() || 'en').toLowerCase();
+}
+
+
+// ============= Functions used in /trading_beta =============
+
+/*
+ * function to toggle active class of menu
+ */
+function toggleActiveNavMenuElement_Beta(nav, eventElement) {
+    'use strict';
+    var liElements = nav.getElementsByTagName("li");
+    var classes = eventElement.classList;
+
+    if (!classes.contains('active')) {
+        for (var i = 0, len = liElements.length; i < len; i++){
+            liElements[i].classList.remove('active');
+        }
+        classes.add('active');
+        var parent = eventElement.parentElement.parentElement;
+        if (parent.tagName === 'LI' && !parent.classList.contains('active')) {
+            parent.classList.add('active');
+        }
+    }
+}
+
+/*
+ * function to set placeholder text based on current form, used for mobile menu
+ */
+function setFormPlaceholderContent_Beta(name) {
+    'use strict';
+    var formPlaceholder = document.getElementById('contract_form_nav_placeholder');
+    if (formPlaceholder) {
+        name = name || Defaults.get('formname');
+        formPlaceholder.textContent = Contract_Beta.contractForms()[name];
+    }
+}
+
+function updatePurchaseStatus_Beta(final_price, pnl, contract_status){
+    $('#contract_purchase_heading').text(text.localize(contract_status));
+    var payout  = document.getElementById('contract_purchase_payout'),
+        cost    = document.getElementById('contract_purchase_cost'),
+        profit  = document.getElementById('contract_purchase_profit'),
+        currency = TUser.get().currency;
+
+    label_value(cost  , Content.localize().textStake , Math.abs(pnl));
+    label_value(payout, Content.localize().textPayout, addComma(final_price));
+    $('#contract_purchase_payout_value').attr('class', (+final_price > 0 ? 'profit' : 'loss'));
+    // if(!final_price){
+    //     $profit.html(Content.localize().textLoss + '<span>'+addComma(pnl)+'</span>');
+    // }
+    // else{
+    //     $profit.html(Content.localize().textProfit + '<span>'+addComma(Math.round((final_price-pnl)*100)/100)+'</span>');
+    // }
+}
+
+function label_value(label_elem, label, value, no_currency) {
+    var currency = TUser.get().currency;
+    label_elem.innerHTML = label;
+    var value_elem = document.getElementById(label_elem.id + '_value');
+    value_elem.innerHTML = no_currency ? value : format_money(currency, value);
+    value_elem.setAttribute('value', value);
 }
 
 function adjustAnalysisColumnHeight() {

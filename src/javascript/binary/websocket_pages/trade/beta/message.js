@@ -2,41 +2,46 @@
  * This Message object process the response from server and fire
  * events based on type of response
  */
-var Message = (function () {
+var Message_Beta = (function () {
     'use strict';
 
     var process = function (msg) {
         var response = JSON.parse(msg.data);
-        if(!TradePage.is_trading_page()){
-            forgetTradingStreams();
+        if(!TradePage_Beta.is_trading_page()){
+            forgetTradingStreams_Beta();
             return;
         }
         if (response) {
             var type = response.msg_type;
             if (type === 'active_symbols') {
-                processActiveSymbols(response);
+                processActiveSymbols_Beta(response);
+                AssetIndexUI.setActiveSymbols(response);
+                MarketTimesUI.setActiveSymbols(response);
             } else if (type === 'contracts_for') {
-                processContract(response);
+                processContract_Beta(response);
                 window.contracts_for = response;
             } else if (type === 'payout_currencies' && response.hasOwnProperty('echo_req') && (!response.echo_req.hasOwnProperty('passthrough') || !response.echo_req.passthrough.hasOwnProperty('handler'))) {
                 page.client.set_storage_value('currencies', response.payout_currencies);
                 displayCurrencies();
                 Symbols.getSymbols(1);
             } else if (type === 'proposal') {
-                processProposal(response);
+                processProposal_Beta(response);
             } else if (type === 'buy') {
-                Purchase.display(response);
+                Purchase_Beta.display(response);
                 GTM.push_purchase_data(response);
             } else if (type === 'tick') {
-                processTick(response);
+                processTick_Beta(response);
             } else if (type === 'history') {
-                var digit_info = TradingAnalysis.digit_info();
+                var digit_info = TradingAnalysis_Beta.digit_info();
                 if(response.req_id === 1 || response.req_id === 2){
                     digit_info.show_chart(response.echo_req.ticks_history, response.history.prices);
                 } else
                     Tick.processHistory(response);
+            } else if (type === 'asset_index'){
+                AssetIndexUI.setAssetIndex(response);
             } else if (type === 'trading_times'){
-                processTradingTimes(response);
+                processTradingTimes_Beta(response);
+                MarketTimesUI.setTradingTimes(response);
             } else if (type === 'statement'){
                 StatementWS.statementHandler(response);
             } else if (type === 'profit_table'){
@@ -51,6 +56,8 @@ var Message = (function () {
                 PortfolioWS.updateIndicative(response);
             } else if(type === 'transaction'){
                 PortfolioWS.transactionResponseHandler(response);
+            } else if(type === 'oauth_apps'){
+                PortfolioWS.updateOAuthApps(response);
             }
         } else {
 
