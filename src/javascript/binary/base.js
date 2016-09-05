@@ -250,6 +250,7 @@ var TUser = (function () {
     };
 })();
 
+// texts_json should be available
 // make texts object as Localizable
 var texts = {};
 for (var key in texts_json) {
