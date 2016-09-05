@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-24 08:33+0000\n"
+"PO-Revision-Date: 2016-09-05 01:14+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.8-dev\n"
+"X-Generator: Weblate 2.8\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "「%1 API」とは%1の取引プラットフォームとのインターフェースとして登録されたアプリケーションを使用できるよう、%1によって作成・管理されているプログラムのルーチン、プロトコル、ツール、リソースの独自のセットのことをいいます。"
@@ -46,13 +46,15 @@ msgstr "$25,000 - $100,000"
 msgid "$250,000 - $1,000,000"
 msgstr "$250,000 - $1,000,000"
 
-msgid "%1 %2 (\"API\") Terms and Conditions"
-msgstr "%1 %2 (\"API\") 利用規約"
-
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%1 %2がデモ口座%3に付与されました"
 
 msgid "%1 Affiliate Program Terms and Conditions"
+msgstr "当社アフィリエイトプログラム・ご利用規約"
+
+#, fuzzy
+#| msgid "%1 Affiliate Program Terms and Conditions"
+msgid "%1 Application Program Interface (\"API\") Terms and Conditions"
 msgstr "当社アフィリエイトプログラム・ご利用規約"
 
 msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
@@ -278,9 +280,6 @@ msgstr "Binary.comの沿革"
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "当システムは1日に1万を超える取引（仮想アカウントを含む）を処理しています。"
 
-msgid "%1’s <a href=\"%2\">Volatility Indices</a> are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
-msgstr "%1の<a href=\"%2\">ボラティリティインデックス</a>はMetaTrader 5で24時間365日ご利用いただけます。その他の資産も間もなく追加予定です。"
-
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(最短期間, 例： 最短 15 秒）分"
 
@@ -422,9 +421,8 @@ msgstr "<<職務内容に戻る"
 msgid "<a class='pjaxload' href='mailto:%1'>Contact Us</a>"
 msgstr "<a class='pjaxload' href='mailto:%1'>お問い合わせ</a>"
 
-#, fuzzy
 msgid "<a href=\"%1\">Return to trading page</a>"
-msgstr "<a href=\"%1\">Market888.com</a>"
+msgstr "<a href=\"%1\">取引ページヘ戻る</a>"
 
 msgid "<a href='%1'>Founded</a> October 1999"
 msgstr "<a href='%1'>設立日</a> 1999年10月"
@@ -489,21 +487,14 @@ msgstr "<strong>2ウェイ・プライス（買値・売値）表示</strong>：
 msgid "<strong>Additional business exposure:</strong> You will increase awareness of your services and generate new business."
 msgstr "<strong>その他ビジネスエクスポージャー:</strong> あなたのサービスに対する認識を高め、新ビジネスを生成しましょう。"
 
-msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
-msgstr "<strong>基礎的かつ技術的な分析のための高度なツール</strong> 指標、チャートなど"
-
-#, fuzzy
-#| msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgid "<strong>All durations:</strong> from 10 seconds to 365 days."
-msgstr "<strong>幅広い取引期間</strong>：2時間以上から取引期間の指定が可能です"
+msgstr "<strong>幅広い取引期間：</strong>2時間以上から取引期間の指定が可能です"
 
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>幅広い取引期間</strong>：2時間以上から取引期間の指定が可能です"
 
-#, fuzzy
-#| msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
 msgid "<strong>All market conditions:</strong> up/down, touch/no-touch, stays in/goes out."
-msgstr "<strong>どのような市場状況でもトレードが可能</strong>： ラダーHIGH/ラダーLOW、TOUCH/NO-TOUCH、STAY-IN/BREAK-OUTなど。"
+msgstr "<strong>どのような市場状況でもトレードが可能：</strong>ラダーHIGH/ラダーLOW、TOUCH/NO-TOUCH、STAY-IN/BREAK-OUTなど。"
 
 msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
 msgstr "<strong>どのような市場状況でもトレードが可能</strong>： ラダーHIGH/ラダーLOW、TOUCH/NO-TOUCH、STAY-IN/BREAK-OUTなど。"
@@ -511,18 +502,14 @@ msgstr "<strong>どのような市場状況でもトレードが可能</strong>�
 msgid "<strong>All markets, all conditions</strong> - trade currencies, indices and commodities in rising, falling, sideways, quiet and volatile markets."
 msgstr "<strong>どんな相場状況でも</strong>：上昇、下落、保ち合い、荒れ相場、いかなる状況でもお取引が期待できます。"
 
-#, fuzzy
-#| msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgid "<strong>All markets:</strong> currencies, stocks, indices, and commodities."
-msgstr "<strong>取引対象</strong>- 外国為替市場の主要通貨ペア"
+msgstr "<strong>取引対象：</strong>外国為替市場の主要通貨ペア"
 
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgstr "<strong>取引対象</strong>- 外国為替市場の主要通貨ペア"
 
-#, fuzzy
-#| msgid "<strong>All payouts</strong> - from $1 to $50,000."
 msgid "<strong>All payouts:</strong> from $1 to $50,000."
-msgstr "<strong>ペイアウト</strong>：1,000円〜100,000円"
+msgstr "<strong>ペイアウト：</strong>1,000円〜100,000円"
 
 msgid "<strong>All payouts</strong> - from $1 to $50,000."
 msgstr "<strong>ペイアウト</strong>：1,000円〜100,000円"
@@ -562,9 +549,6 @@ msgstr "<strong>HIGH/LOW</strong>：設定価格より終了時の価格が上�
 
 msgid "<strong>Higher/Lower</strong> - where you can profit from the market ending higher or lower than a target price."
 msgstr "<strong>HIGH/LOW</strong>：バリア設定をした価格より値上がりするか？値下がりするか？を予想してください。"
-
-msgid "<strong>Highly competitive spreads with no commission.</strong>"
-msgstr "<strong>手数料無しで高い倍率のスプレッドをご利用可能</strong>"
 
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and Payment Agents."
 msgstr "<strong>重要な免責事項</strong> -%1は、上記の決済サービスとは提携していません。各決済サービスは、独立したサービスプロバイダーとして動作し、%1による承認、保証またはその他の許可がなされていません。お客さまは危険を承知で自信の責任をもって決済サービスに処断します。送金をされる前に、決済サービス会社の資格情報を確認されることをお勧めいたします。%1はいかなる状況下においても、お客さまと決済サービス会社の間で生じた処理への責任は負いません。"
@@ -649,9 +633,6 @@ msgstr "<strong>株価指数</strong> - 日本国内には提供しておりま�
 
 msgid "<strong>Stock indices</strong> - trade all major worldwide stock indices."
 msgstr "<strong>株価指数</strong> - 世界の全主要株価指数のお取引"
-
-msgid "<strong>Subscriptions to a wide range of Expert Advisors,</strong> automated trading applications from the MetaTrader Market."
-msgstr "<strong>幅広い専門のアドバイザーを購読</strong> MetaTraderマーケットで取引を自動化"
 
 msgid "<strong>Take early profits</strong> - sell your long-term trades at market prices before they expire."
 msgstr "<strong>早めに利益を確保</strong>：長期の取引期間のトレードを転売することが可能です。"
@@ -777,6 +758,12 @@ msgstr "Linuxとオープンソースプラットフォームが好きで、情�
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "問題解決または顧客へ解決策の提供など積極的に取り組むことができる"
 
+msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+msgstr "公共料金の請求書または銀行明細書をスキャンしたコピー（発行３ヶ月以内のものに限ります）。"
+
+msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
+msgstr "氏名と生年月日が表示されているパスポートか運転免許証、または住民基本台帳カードをスキャンしたコピー。本人確認書類は、本日より6ヶ月以降は有効であるものでなくてはなりません。"
+
 msgid "A strong and passionate interest in Marketing and Advertising"
 msgstr "マーケティングと広告業に強い関心と情熱がある"
 
@@ -864,11 +851,11 @@ msgstr "ご口座管理とデータ照合"
 msgid "Account Opening"
 msgstr "口座開設時確認書類"
 
+msgid "Account Password"
+msgstr "パスワード変更"
+
 msgid "Account Transfer"
 msgstr "口座振替"
-
-msgid "Account Type"
-msgstr "口座タイプ"
 
 msgid "Account balance: "
 msgstr "口座残高： "
@@ -949,6 +936,9 @@ msgstr "制限契約"
 
 msgid "Agreement for documents"
 msgstr "交付書面等の確認"
+
+msgid "All Partnership Options"
+msgstr "最高水準のサポート体制を提供"
 
 msgid "All affiliate activities must be conducted in a professional and proper manner. You shall be expected to act with good faith and integrity in your relationships with your referrals, and always act in the best interests of your referrals."
 msgstr "アフィリエイト活動は、専門的且つ適切な方法で実施するようにしてください。アフィリエイト会員は、獲得会員と信頼と誠意に基づく良好な関係を築かれることが期待されています。獲得会員に対し、販売行為や口約束を強要する行為は禁じられています。"
@@ -1062,9 +1052,6 @@ msgstr "１８歳以上で %1のご利用規約に同意された方、かつ当
 msgid "Anyone who has potential to grow or increase traffic to %1"
 msgstr "当社へのトラフィックの成長または増加に貢献が見込める方"
 
-msgid "App ID"
-msgstr "アプリケーション ID"
-
 msgid "Applications"
 msgstr "アプリケーション"
 
@@ -1085,6 +1072,9 @@ msgstr "適正"
 
 msgid "Appropriateness Test"
 msgstr "適正テスト"
+
+msgid "Apps"
+msgstr "App"
 
 msgid "Apr"
 msgstr "4"
@@ -1366,6 +1356,9 @@ msgstr "Binary Ltdのオフィス所在地は、<span itemprop='location'>47 Esp
 msgid "Binary Options Basics"
 msgstr "バイナリー取引の基礎"
 
+msgid "Binary Shop"
+msgstr "バイナリーショップ"
+
 msgid "Binary Trading is simple to learn and to execute."
 msgstr "バイナリーオプションは簡単な操作でお取引ができます"
 
@@ -1510,6 +1503,12 @@ msgstr "採用情報"
 msgid "Cashier"
 msgstr "入出金"
 
+msgid "Cashier Password"
+msgstr "入出金パスワード"
+
+msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgstr "出金口座にロックがかかっています。詳細については<a class=\"pjaxload\" href=\"%1\">当社までお問い合わせ</a>ください。"
+
 msgid "Cashier password"
 msgstr "入出金パスワード"
 
@@ -1522,10 +1521,13 @@ msgstr "API エンドポイントの変更"
 msgid "Change Password"
 msgstr "パスワード変更"
 
-msgid "Chart"
-msgstr "チャート"
+msgid "Change the password used for deposits and withdrawals."
+msgstr "入出金に用いるパスワードを変更"
 
-msgid "Charts"
+msgid "Change your main login password."
+msgstr "パスワードを変更してください"
+
+msgid "Chart"
 msgstr "チャート"
 
 msgid "Check out our commission rates below:"
@@ -1617,9 +1619,6 @@ msgstr "ヘッジファンドを必要とする資産の分類"
 
 msgid "Click here to retry"
 msgstr "再試行するにはこちらをクリックしてください"
-
-msgid "Click the button below to download MetaTrader."
-msgstr "MetaTraderをダウンロードするには下のボタンをクリックしてください。"
 
 msgid "Client classification"
 msgstr "クライアント区分"
@@ -1760,9 +1759,6 @@ msgstr "確認事項"
 
 msgid "Conflicts Policy"
 msgstr "利益相反ポリシー"
-
-msgid "Congratulations! Your account has been created."
-msgstr "おめでとうございます！口座の作成が完了しました。"
 
 msgid "Construction"
 msgstr "設営"
@@ -1920,9 +1916,6 @@ msgstr "デモ口座開設"
 msgid "Create New Token"
 msgstr "新しいトークンを作成"
 
-msgid "Create a MetaTrader account to trade on the MetaTrader 5 platform."
-msgstr "MetaTrader 5プラットフォームで取引いただくには、MetaTraderのアカウントを作成する必要があります。"
-
 msgid "Create clear, concise and engaging content for display on the company's website, blog, social media outlets, and marketing materials"
 msgstr "ウェブサイト、ブログ、メディア、マーケティング資料に使用する明確かつ魅力的なコンテンツの作成"
 
@@ -2034,12 +2027,6 @@ msgstr "定義"
 msgid "Delete"
 msgstr "消去"
 
-msgid "Demo"
-msgstr "デモ"
-
-msgid "Demo Account"
-msgstr "デモ口座"
-
 msgid "Demonstrate the ability to think / act quickly and multi-task as needed to execute effective campaigns"
 msgstr "効果的なキャンペーンの実施に必要な迅速な試行と行動及びマルチタスク能力の実証"
 
@@ -2058,26 +2045,14 @@ msgstr "%1 %2のバーチャルマネーをアカウント%3へ入金する"
 msgid "Deposit Bonus"
 msgstr "ご入金された場合に付与されるボーナスについて"
 
-msgid "Deposit from"
-msgstr "からのご入金"
-
-msgid "Deposit funds into your MetaTrader account from your Binary account:"
-msgstr "Binary.comの口座からMetaTraderの口座へご入金："
-
-msgid "Deposit is done. Transaction ID:"
-msgstr "入金が完了しました。取引参照ID："
+msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgstr "出金口座にロックがかかっています。詳細については<a class=\"pjaxload\" href=\"%1\">当社までお問い合わせ</a>ください。"
 
 msgid "Deposit of"
 msgstr "Xのご入金"
 
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "銀行振込によりお客さまの口座に入出金を行います"
-
-msgid "Deposit to"
-msgstr "XXXへご入金"
-
-msgid "Deposit to MetaTrader account"
-msgstr "MetaTraderの口座へご入金"
 
 msgid "Deposit: %1 working day"
 msgstr "ご入金: %1営業日"
@@ -2090,6 +2065,9 @@ msgstr "ご入金：即時"
 
 msgid "Depositing and withdrawing funds"
 msgstr "ご入金/ご出金について"
+
+msgid "Deposits and withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
+msgstr "お客様の口座への入出金手続きは、現在許可されていません。解除するには%1までご連絡ください。"
 
 msgid "Derivative"
 msgstr "デリバティブ"
@@ -2201,12 +2179,6 @@ msgstr "口座維持手数料について"
 
 msgid "Download CSV"
 msgstr "CSVファイルでダウンロード"
-
-msgid "Download MetaTrader"
-msgstr "MetaTraderをダウンロード"
-
-msgid "Download MetaTrader for Windows"
-msgstr "Windows版のMetaTraderをダウンロード"
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "セールス及びマーケティング目標をサポートする急速な成長と事業開発の推進"
@@ -2775,8 +2747,17 @@ msgstr "優れた報酬体系"
 msgid "Germany"
 msgstr "ドイツ"
 
+msgid "Get JPY 1,000,000"
+msgstr "1,000,000円をゲットする"
+
 msgid "Get Started"
 msgstr "はじめに"
+
+msgid "Get USD 10,000.00"
+msgstr "USD 10,000.00をゲットする"
+
+msgid "Get more virtual money"
+msgstr "もっとバーチャルマネーを入手する"
 
 msgid "Get your price"
 msgstr "価格を確認"
@@ -2969,10 +2950,8 @@ msgstr "本契約において法的効力が無い、または予見不可能で
 msgid "If the Company is legally required to disclose your personal or financial information by law, regulation or pursuant to the order of a court of competent jurisdiction or a governmental agency, the Company  shall, unless legally prohibited, promptly notify you to that effect, in order to give you the opportunity to seek such protection for the information as it deems appropriate. Such required disclosure shall not be construed as a breach of this Terms and Conditions Agreement."
 msgstr "管轄裁判所または政府機関の命に従い、法律により当社は個人情報または財務情報を開示する必要があります。法的に禁止されない限り、適切とみなす情報への保護ができるよう迅速にその旨をユーザーに通知致します。このような必要な開示は、利用規約契約の違反とはなりません。"
 
-#, fuzzy
-#| msgid "This account is unavailable. For any questions please contact <a href=\"%1\">Customer Support</a>."
 msgid "If the issue keeps happening, please contact <a href=\"%1\">customer support</a>."
-msgstr "このご口座は現在無効です。<a href=\"%1\">カスタマーサポート</a>までご連絡下さい。"
+msgstr "解決されない場合は、<a href=\"%1\">カスタマーサポート</a>までご連絡ください。"
 
 msgid "If this Agreement is terminated for any reason, you must permanently delete all Content, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
 msgstr "政府機関によって課せられた法律や義務に違反した場合を除き、いかなる理由で本契約が終了した場合、すべてのコンテンツを完全に削除していただく必要があります。"
@@ -3018,9 +2997,6 @@ msgstr "ご不明な点がございましたら、%1当社カスタマーサポ�
 
 msgid "If you need assistance feel free to contact our <a class=\"pjaxload\" href=\"%1\">Customer Support</a>."
 msgstr "ご不明な点がございましたら、<a class=\"pjaxload\" href=\"%1\">カスタマーサポート</a>までお気軽にお問い合わせ下さい。"
-
-msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader’s website, please select “%1” from the list of available brokers."
-msgstr "MetaTrader 5をMetaTraderのサイトから既に直接ダウンロードされている場合は、利用できるブローカーのリストから“%1”をご選択ください。"
 
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "「Asianダウン」を選択された場合、<strong>最後のtick</strong>がtickの<strong>平均</strong>よりも<strong>低い</strong>とペイアウトを獲得いただけます。"
@@ -3329,9 +3305,6 @@ msgstr "投資と配当"
 
 msgid "Investor Compensation Scheme"
 msgstr "投資家補償スキーム"
-
-msgid "Investor Password (read-only access)"
-msgstr "トレーダーパスワード（読み取り専用アクセス）"
 
 msgid "Involved in evaluation of regulatory compliance and risk management. Work with the Head of Departments to improve business processes."
 msgstr "企業コンプライアンスとリスク管理の評価を含みます。ビジネスプロセスを改善するために関連部門で働きます。"
@@ -3775,16 +3748,16 @@ msgid "Japan website Privacy Policy list item 12 Paragraph 1.1"
 msgstr "Binary株式会社　カスタマーサポート部"
 
 msgid "Japan website Privacy Policy list item 12 Paragraph 1.2"
-msgstr "電話　：　xx-xxxx-xxxx（土・日、年末年始を除く）"
+msgstr "受付時間：月曜日〜金曜日（土・日、年末年始を除く）"
 
 msgid "Japan website Privacy Policy list item 12 Paragraph 1.3"
-msgstr "月～金　xx：00～xx：00"
+msgstr "月～金　9：00～17：00"
 
 msgid "Japan website Privacy Policy list item 12 Paragraph 1.4"
-msgstr "祝日　　xx：00～xx：00"
+msgstr "祝日：サポートを終日お休み捺せて頂きます"
 
 msgid "Japan website Privacy Policy list item 12 Paragraph 1.5"
-msgstr "メールアドレス　："
+msgstr "メールアドレス　：support@binary.com"
 
 msgid "Japan website Risk For Binary Option Trading List item 1"
 msgstr "お客さまが行う店頭バイナリーオプション取引は、為替レートの変動によって、購入したオプションの価値やペイアウト金額（払い戻される額）が変動するため、利益を得られることや元本が保証されたものではありません。最大でオプション購入合計金額の損失が発生します。"
@@ -3838,10 +3811,10 @@ msgid "Japan website Risk For Binary Option Trading Paragraph 1.1"
 msgstr "商 号：Binary株式会社"
 
 msgid "Japan website Risk For Binary Option Trading Paragraph 1.2"
-msgstr "登録番号：金融商品取引業者　関東財務局長（金商）第●●号"
+msgstr "登録番号：金融商品取引業者　関東財務局長（金商）第2949号"
 
 msgid "Japan website Risk For Binary Option Trading Paragraph 1.3"
-msgstr "連絡先 ：●●"
+msgstr "連絡先 ：support@binary.com"
 
 msgid "Japan website Risk For Binary Option Trading Paragraph 1.4"
 msgstr "加入協会：一般社団法人金融先物取引業協会 登録番号●●号"
@@ -3899,9 +3872,6 @@ msgstr "確率論・数値解析法・モンテカルロシミュレーション
 
 msgid "Knowledge of probability theory, stochastic calculus, numerical methods, Monte-Carlo simulation, differential equations, econometrics, and statistical modeling"
 msgstr "確率論・確率論的計算・数値解析法・モンテカルロシミュレーション・微分方程式・計量経済学・統計モデリングの知識"
-
-msgid "LOG OUT"
-msgstr "ログアウト"
 
 msgid "Languages"
 msgstr "言語"
@@ -3971,9 +3941,6 @@ msgstr "6ヶ月未満"
 msgid "Level of Education"
 msgstr "能力レベル"
 
-msgid "Leverage"
-msgstr "レバレッジ"
-
 msgid "Leverage social-media tools and channels to identify, engage, and convert potential new customers and partners"
 msgstr "新規顧客およびパートナーへの情報確認、関係強化、会員への推進のため、ソーシャルメディアツールとチャンネルの活用"
 
@@ -4010,9 +3977,6 @@ msgstr "当顧客をアプリケーションへ導くリンク付をしてくだ
 msgid "Links"
 msgstr "サイト内のリンクについて"
 
-msgid "Linux Instructions"
-msgstr "Linux操作手順"
-
 msgid "Live chat:"
 msgstr "ライブチャット："
 
@@ -4022,9 +3986,6 @@ msgstr "入出金をロック"
 msgid "Log in"
 msgstr "ログイン"
 
-msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
-msgstr "MetaTraderのアカウント番号とパスワードでアプリケーションにログインをしてください。"
-
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "%1のアフィリエイト口座にログインしFinances &rarr;Payment Instructionsをクリックし、ご変更手続きを行って下さい。"
 
@@ -4033,9 +3994,6 @@ msgstr "%1のアフィリエイト口座にログインし、Marketing &rarr; Al
 
 msgid "Log-in to your %1 affiliate account and click on: Reports &rarr; Traffic Report."
 msgstr "%1のアフィリエイト口座にログインし、Reports &rarr; Traffic Reportをクリックします。"
-
-msgid "Login"
-msgstr "ログイン"
 
 msgid "Login History"
 msgstr "ログイン履歴"
@@ -4073,12 +4031,6 @@ msgstr "下限追加バリア値"
 msgid "MENA FFXPO Award"
 msgstr "MENA FFXPO 賞を受賞"
 
-msgid "MacOS Instructions"
-msgstr "MacOS操作手順"
-
-msgid "Main Password (trading access)"
-msgstr "メインパスワード（取引アクセス）"
-
 msgid "Maintain accurate system pricing parameters"
 msgstr "正確な価格設定システムパラメーターの維持"
 
@@ -4087,9 +4039,6 @@ msgstr "十分な速度と出力量の維持"
 
 msgid "Make a Deposit"
 msgstr "入金"
-
-msgid "Make a deposit or withdraw."
-msgstr "入出金をする"
 
 msgid "Make your trade"
 msgstr "取引を実行しましょう。"
@@ -4108,9 +4057,6 @@ msgstr "当社が展開するサーバーのセキュリティ・侵入検知・
 
 msgid "Manage the company's cashier system"
 msgstr "入出金のシステム管理"
-
-msgid "Manage your account access and security settings."
-msgstr "アカウントのアクセス・セキュリティ設定を管理する。"
 
 msgid "Manage your authorised applications."
 msgstr "承認済みアプリケーションを管理します。"
@@ -4198,12 +4144,6 @@ msgstr "思い出のある日時"
 
 msgid "Memorable town/city"
 msgstr "思い出のある都市／街の名前"
-
-msgid "MetaTrader Accounts Management"
-msgstr "MetaTraderアカウント管理"
-
-msgid "MetaTrader Main Password"
-msgstr "MetaTraderメインパスワード"
 
 msgid "Method"
 msgstr "決済方法"
@@ -4428,9 +4368,6 @@ msgstr "初心者のトレーダーの方々は当社の直感的なビジュア
 msgid "Now"
 msgstr "Now"
 
-msgid "Now Introducing MetaTrader 5 on %1"
-msgstr "MetaTrader 5を現在導入中(現在、日本では対応しておりません)"
-
 msgid "Number of ticks"
 msgstr "Tickの総数"
 
@@ -4507,10 +4444,8 @@ msgstr ""
 "1.　本約款は、法令・条例の変更、監督官庁・自主規制機関の指示、その他当社が必要と認めた場合には変更されることがあります。\n"
 "2.　本約款の変更がお客さまに従来認められていた権利を制限する、またはお客さまに新たな義務を課すものである場合、当社は、原則として変更事項を当社ホームページに掲示する等、当社の定める方法によりお客さまにお知らせするものとし、所定の期日を経過してもお客さまから異議の申し出がない時は、本約款に同意したものとします。"
 
-#, fuzzy
-#| msgid "No Data available"
 msgid "Oops... Page Not Available"
-msgstr "利用可能なデータが存在しません"
+msgstr "このページはご利用いただけません"
 
 msgid "Open"
 msgstr "Open"
@@ -4879,7 +4814,7 @@ msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "ご希望のリアリティチェック間隔を分単位で指定してください"
 
 msgid "Please submit a valid %1."
-msgstr "有効な%1をご提出ください。"
+msgstr "有効な%1を入力ください"
 
 msgid "Please submit the above information to <a href='mailto:%1'>%1</a>."
 msgstr "<a href='mailto:%1'>%1</a>まで上記の情報をご提出ください。"
@@ -5013,6 +4948,9 @@ msgstr "スクリプト言語に堪能である - Perlが好ましい"
 msgid "Proficiency in a second language (oral and written) is preferred"
 msgstr "第二言語（口語およびライティング）が堪能であると好ましい"
 
+msgid "Profile"
+msgstr "プロファイル"
+
 msgid "Profit"
 msgstr "利益"
 
@@ -5056,7 +4994,7 @@ msgid "Purchase"
 msgstr "購入"
 
 msgid "Purchase Price"
-msgstr "購入金額(JPY)"
+msgstr "購入金額"
 
 msgid "Purchase Time"
 msgstr "購入時間"
@@ -5132,6 +5070,9 @@ msgstr "約定番号"
 
 msgid "Reference ID"
 msgstr "約定番号"
+
+msgid "Refresh page"
+msgstr "更新ボタン"
 
 msgid "Regent Markets Group Ltd. renames to Binary Ltd."
 msgstr "Regent Markets Group LimitedはBinary Ltd.に会社名変更"
@@ -5302,9 +5243,6 @@ msgstr "投資商品のリスク"
 msgid "Run daily payments reports and report suspected fraud"
 msgstr "日々の支払と詐欺の疑いがある行為の報告チェック"
 
-msgid "Run the installation file and follow the instructions."
-msgstr "インストールファイルを実行して、指示に従ってください。"
-
 msgid "Russia"
 msgstr "ロシア"
 
@@ -5358,6 +5296,9 @@ msgstr "秘密の質問"
 
 msgid "Security"
 msgstr "セキュリティ情報"
+
+msgid "Security & Limits"
+msgstr "セキュリティ & 制限"
 
 msgid "Security Disclaimer"
 msgstr "セキュリティに関する免責事項"
@@ -5479,6 +5420,9 @@ msgstr "プラットフォームを試すために会員登録をする"
 msgid "Sign me up"
 msgstr "登録する"
 
+msgid "Sign out"
+msgstr "サインアウト"
+
 msgid "Sign up as a tester and look for Binary.com-related projects."
 msgstr "テスターとして登録し、Binary.comに関連するプロジェクトを確認する。"
 
@@ -5581,20 +5525,11 @@ msgstr "取引時刻"
 msgid "Start Trading"
 msgstr "トレード開始"
 
-msgid "Start Trading with MetaTrader 5"
-msgstr "MetaTrader 5でお取引を始める"
-
 msgid "Start learning"
 msgstr "学習をはじめる"
 
 msgid "Start time"
 msgstr "開始時間"
-
-msgid "Start trading with your Demo Account"
-msgstr "デモ口座でお取引をはじめる"
-
-msgid "Start trading with your Real Account"
-msgstr "リアル口座でお取引を開始する"
 
 msgid "State/Province"
 msgstr "都道府県"
@@ -5721,12 +5656,6 @@ msgstr "Binary Investments (Europe) Ltdが提供する金融商品の補助規�
 
 msgid "Supporting the Group's global recruiting and talent management needs"
 msgstr "グループのグローバルな人材募集や人材管理のニーズをサポート"
-
-msgid "Take advantage of numerous benefits, including:"
-msgstr "様々な利点を活用できます："
-
-msgid "Take your trading to the next level through this powerful interface, recognised as the benchmark standard worldwide."
-msgstr "世界標準として認められた、強力なインターフェースを活用してあなたのお取引を次のレベルへ"
 
 msgid "Talk to us"
 msgstr "お問い合わせ"
@@ -6209,7 +6138,7 @@ msgid "The maximum number of tokens (%1) has been reached."
 msgstr "トークンの最大数(%1) に達しました。"
 
 msgid "The page you requested could not be found. Either it no longer exists or the address is wrong. Please check for any typos."
-msgstr ""
+msgstr "お探しのページは見つかりませんでした。存在しないか、アドレスが間違っている可能性があります。入力内容を再度ご確認ください。"
 
 msgid "The patent means Regent Markets is the recognised pioneer of binary betting. The patent helps protect our innovations."
 msgstr "この特許により、Regent Marketsはバイナリー取引におけるパイオニアと認識される。特許取得により、より一層の進化を遂げる。"
@@ -6473,6 +6402,9 @@ msgstr "木曜日"
 msgid "Tick"
 msgstr "Tick"
 
+msgid "TickTrade App"
+msgstr "Tickトレードアプリ"
+
 msgid "Tier"
 msgstr "レベル"
 
@@ -6505,18 +6437,6 @@ msgstr "店頭バイナリーオプション取引の口座開設前に、取引
 
 msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "上記のお客さま基本情報の変更をご希望される場合は<a href=\"%1\">カスタマーサポート</a>までご連絡ください。また、変更が生じた際は速やかにご連絡いただきますようお願いします。"
-
-msgid "To create a Real account for MetaTrader, you need to authenticate your Binary account:"
-msgstr "MetaTraderのリアル口座を作成するには、Binary口座を認証いただく必要があります："
-
-msgid "To create a real account for MetaTrader, <a href=\"%1\">upgrade to %2 real money account</a>."
-msgstr "MetaTraderのリアル口座を作成するには、<a href=\"%1\">%2リアル口座へアップグレード</a>いただく必要があります。"
-
-msgid "To create a real account for MetaTrader, switch to your %1 real money account."
-msgstr "MetaTraderのリアル口座を作成いただくには、%1リアル口座へ切り替えてください。"
-
-msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
-msgstr "MetaTraderのリアル口座から入出金いただくには、Binay.comのリアル口座へ切り替えてください。"
 
 msgid "To enable cookies, follow the instructions below for the browser version that you are using."
 msgstr "ご利用中のブラウザのバージョンの指示に従ってクッキーを有効化して下さい。"
@@ -6607,7 +6527,7 @@ msgstr "バイナリーオプション取引は簡単な操作で行うことが
 
 msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. <span class=\"ja-hide\">Read about <a href=\"%1\" class=\"pjaxload\">Responsible Trading</a>.</span>"
 msgstr ""
-"【商号】Binary株式会社　金融商品取引業　関東財務局長（金商）第○○○号【加入協会】一般社団法人金融先物取引業協会\n"
+"【商号】Binary株式会社　金融商品取引業　関東財務局長（金商）第2949号【加入協会】一般社団法人金融先物取引業協会\n"
 "<span class=\"ja-hide\"><a href=\"%1\" class=\"pjaxload\">健全なトレードのために</a>をお読みください。</span>"
 
 msgid "Trading in Binary Options is speculative and involves a high degree of risk that can result in the loss of your entire investment. Therefore, trading in Binary Options is appropriate only for persons that understand and are willing to assume the economic, legal and other risks involved in such transactions. You should be satisfied that Binary Options trading is suitable for you in light of your investment circumstances and attitude towards risk before trading. You should not engage in speculative Binary Options trading unless you understand the basic aspects of such trading and its risks. If you are in any doubt as to whether Binary Option trading is appropriate and suitable for you, please seek independent advice from a investment consulting professional. %1 does not provide such advice. It is your responsibility, taking into account your personal circumstances and investment resources, to take particular care and make careful considerations independently, both prior to applying to engage in Binary Options with %1, as well as prior to making any individual order. Where you do not understand the risks involved in applying for a trading account with %1 or in making any individual order, you should seek advice and consultation from an independent investment advisor. If you continue to not understand the risks involved in trading in Binary Options, you should not trade at all."
@@ -6627,8 +6547,8 @@ msgstr "TradingView"
 msgid "Transact in"
 msgstr "選択通貨"
 
-msgid "Transaction performed by"
-msgstr "xxxによって取引が実行されました"
+msgid "Transaction performed by %1 (App ID: %2)"
+msgstr "%1(App ID:%2)によって取引が実行されました"
 
 msgid "Transfer"
 msgstr "送金"
@@ -6644,9 +6564,6 @@ msgstr "Transfer to Login ID"
 
 msgid "Transfer to Payment Agent"
 msgstr "決済サービスに送金"
-
-msgid "Transfer to client"
-msgstr "Transfer to client"
 
 msgid "Translate the ongoing business needs of the company into a suitable IT infrastructure"
 msgstr "当社継続中のビジネスニーズを適切なITインフラへ変換"
@@ -6804,9 +6721,6 @@ msgstr "ワンタイムパスワードの形式が不適切です。"
 msgid "Verification token"
 msgstr "ワンタイムパスワード"
 
-msgid "Verify Main Password"
-msgstr "メインパスワード（確認用）"
-
 msgid "Verify new password"
 msgstr "新しいパスワード（確認用）"
 
@@ -6840,14 +6754,8 @@ msgstr "こちらから取引可能時間を参照しましょう。"
 msgid "View your financial assessment settings."
 msgstr "財務評価設定を確認する"
 
-msgid "View your historical transactions."
-msgstr "取引履歴を表示"
-
 msgid "View your login history."
 msgstr "ログイン履歴を表示する"
-
-msgid "View your open positions."
-msgstr "保有ポジションを確認"
 
 msgid "View your personal information."
 msgstr "お客さま登録情報を確認する"
@@ -6857,9 +6765,6 @@ msgstr "取引残高を表示"
 
 msgid "View your trading and withdrawal limits."
 msgstr "取引上限と出金限度額を確認する"
-
-msgid "View your trading profit/loss."
-msgstr "トレードの損益を確認"
 
 msgid "Virtual Account"
 msgstr "デモ口座番号"
@@ -7058,9 +6963,6 @@ msgstr "平日"
 msgid "Weekend quotes"
 msgstr "週末の引用値について"
 
-msgid "Welcome!"
-msgstr "口座情報"
-
 msgid "Well-developed organizational, administrative, and/or accounting skills"
 msgstr "優れた組織・管理能力および/または会計スキル"
 
@@ -7248,18 +7150,6 @@ msgstr "プロモーションサイトに掲載したアフィリエイトリン
 msgid "Withdraw"
 msgstr "出金"
 
-msgid "Withdraw from"
-msgstr "XXXからご出金"
-
-msgid "Withdraw from MetaTrader account"
-msgstr "MetaTraderの口座からご出金"
-
-msgid "Withdraw funds from your MetaTrader account into your Binary account:"
-msgstr "MetaTraderの口座からBinaryの口座へ資金をご出金："
-
-msgid "Withdraw to"
-msgstr "XXXへご出金"
-
 msgid "Withdraw: %1 working day"
 msgstr "ご出金: %1営業日"
 
@@ -7272,8 +7162,8 @@ msgstr "ご出金：未対応"
 msgid "Withdrawal Limits"
 msgstr "出金限度額"
 
-msgid "Withdrawal is done. Transaction ID:"
-msgstr "ご出金が完了しました。取引参照ID："
+msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
+msgstr "お客様の口座の出金手続きは現在許可されていません。解除するには%1までご連絡ください。"
 
 msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgstr "出金アクションにロックがかかっています。詳細については<a class=\"pjaxload\" href=\"%1\">当社までお問い合わせ</a>ください。"
@@ -7344,12 +7234,6 @@ msgstr "あなたとあなたのアプリケーションはまた、参照する
 msgid "You are advised that the Binary Options offered by %1 are not traded under the rules of any recognised, designated or regulated exchange. Consequently, engaging in Binary Options trading may expose you to substantially greater risks than investments which are so traded."
 msgstr "%1によって提供されたバイナリーオプションは、認識、指定、統制された為替のルールの下で取引をされないことをお勧めいたします。結果として、バイナリーオプションをはじめることは取引されている投資よりも実質的に大きなリスクを課せられる可能性があります。"
 
-msgid "You are currently logged in to your real money account with %1 (%2)."
-msgstr "現在リアルマネー口座%1 (%2)にログインしています。"
-
-msgid "You are currently logged in to your virtual money account (%2)."
-msgstr "現在デモ口座(%2)にログインしています。"
-
 msgid "You are in default or breach of any covenant, obligation or condition contained in this Agreement, and if such default is not cured within seven days of receipt of written notice from the Company;"
 msgstr "あなたは本契約に含まれる契約、義務、条件に不履行または違反しています。当社からの書面による通知を受け取ってから7日以内に正さなかった場合；"
 
@@ -7379,6 +7263,12 @@ msgstr "ペイアウトは1,000円から100,000円の間で指定できます。
 
 msgid "You can close your trade before expiry to lock in profits."
 msgstr "お客さまの予想通りに相場が動いた場合、判定時刻前にポジションを売却をすることにより利益を確定ができます。"
+
+msgid "You can request more virtual money if your virtual balance falls below JPY 100,000."
+msgstr "お客様のバーチャルマネー残高が100,000円を下回る場合、バーチャルマネーの追加リクエストが可能です。"
+
+msgid "You can request more virtual money if your virtual balance falls below USD 1,000.00."
+msgstr "お客様のバーチャルマネー残高がUSD 1,000.00を下回る場合、バーチャルマネーの追加リクエストが可能です。"
 
 msgid "You can sell back long-term trades at any time to profit from changing market conditions."
 msgstr "既存ポジションは、取引期間内にいつでも転売が可能です。"
@@ -7575,12 +7465,6 @@ msgstr ""
 msgid "You're using a Virtual Account."
 msgstr "現在デモ口座を使用されています。"
 
-msgid "Your %1 account is unavailable. For any questions please contact %2."
-msgstr "お客さまのご口座%1はご利用いただけません。ご不明な点がございましたら%2までご連絡下さい。"
-
-msgid "Your %1 accounts are unavailable. For any questions please contact %2."
-msgstr "お客さまのご口座%1はご利用いただけません。ご不明な点がございましたら%2までご連絡ください。"
-
 msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other currency)."
 msgstr "お客さまの%1日の出金限度額は現在%2 %3です。限度額以上の出金額をご希望される場合、本人確認が必要となります。"
 
@@ -7589,9 +7473,6 @@ msgstr "あなたのクライアントに送金が処理されたことをお知
 
 msgid "Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on %1 and in that event, opens an account with us."
 msgstr "お客さまのIDはクッキーに保存され、お客さまのアフィリエイトリンクがクリックされる度に識別され、%1に伝わります。"
-
-msgid "Your Name"
-msgstr "氏名"
 
 msgid "Your Property"
 msgstr "不動産"
@@ -7602,11 +7483,11 @@ msgstr "お客さまのご口座はログイン/ログアウトのアクティ�
 msgid "Your account has no trading activity."
 msgstr "取引履歴はありません"
 
+msgid "Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact %1."
+msgstr "現在お客様の口座は、一時的にご利用いただけません。詳細は、%1までご連絡ください。"
+
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "お客さまのご口座はアップグレード済みですので、ご出金制限が引き上げられました。"
-
-msgid "Your account is fully authenticated. You can view your %1trading limits here"
-msgstr "お客さまのご口座のアップグレードが完了しました。ご口座%1のご利用上限の内容をこちらからご確認頂けます。"
 
 msgid "Your account is fully authenticated. You can view your <a class=\"pjaxload\" href=\"%1\">trading limits here</a>."
 msgstr "お客様のご口座はアップグレード済みです。トレードの上限条件を<a class=\"pjaxload\" href=\"%1\">こちらから</a>ご確認頂けます。"
@@ -7616,9 +7497,6 @@ msgstr "口座の認証はまだ完了しておりません。詳細に関しま
 
 msgid "Your account is not fully authenticated. Please visit the <a href=\"%1\">authentication</a> page for more information."
 msgstr "口座の認証はまだ完了しておりません。詳細に関しましては<a href=\"%1\">認証</a> ページをご覧ください。"
-
-msgid "Your account is registered as a Payment Agent."
-msgstr "現在お客さまは決済サービスエージェントとしてご登録頂いています。"
 
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr ""
@@ -7665,9 +7543,6 @@ msgstr "当社はお客さまからお預かりした預託金を万全の体制
 
 msgid "Your name, email address and contact number"
 msgstr "氏名、メールアドレス、電話番号"
-
-msgid "Your new account has been created."
-msgstr "新しい口座の作成が完了しました。"
 
 msgid "Your password and login ID are unique and passwords are hashed so that not even %1 staff can read them. This is the reason why we cannot retrieve your password and have to issue you with a new one to your email address if you cannot recall it."
 msgstr "お客さまのパスワードとログインIDは唯一無二な値であり、パスワードはハッシュ化され送信されますので%1の関係者ですら解読することができませんので、お客さまのパスワードを確認することはできませんので、パスワードを失念された際にはお客さまのメールアドレスに新たなパスワードを再発行させて頂かなければなりません。"
@@ -8133,7 +8008,7 @@ msgid "{JAPAN ONLY}Financial Condition"
 msgstr "業務及び財産の状況に関する報告書"
 
 msgid "{JAPAN ONLY}Financial Instruments Business No. xxxx"
-msgstr "金融商品取引業者　関東財務局（金商）第xxxxx号"
+msgstr "金融商品取引業者　関東財務局（金商）第2949号"
 
 msgid "{JAPAN ONLY}Financial Instruments Mediation Assistance Center"
 msgstr "特定非営利活動法人証券・金融商品あっせん相談センター"
@@ -8412,10 +8287,8 @@ msgstr "登録"
 msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "規制と税金"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}minute"
 msgid "{JAPAN ONLY}Remaining time"
-msgstr "分"
+msgstr "残り時間"
 
 msgid "{JAPAN ONLY}STAY-IN/BREAK-OUT"
 msgstr "STAY-IN/BREAK-OUT"
@@ -8617,7 +8490,7 @@ msgid "Online Trading platform for binary options on Forex, Indices, Commodities
 msgstr "外国為替のオンライン取引プラットフォーム"
 
 msgid "404"
-msgstr ""
+msgstr "404"
 
 msgid "Why Us"
 msgstr "サービス概要"
@@ -8661,17 +8534,206 @@ msgstr "決済サービスでのご送金"
 msgid "Sharp Prices. Smart Trading."
 msgstr "優れた価格設定、賢くトレード。"
 
-msgid "MetaTrader"
-msgstr "MetaTrader"
-
 msgid "Account Details"
 msgstr "ご口座の詳細情報"
 
 msgid "Terms and Conditions Approval"
 msgstr "利用規約の承認"
 
-msgid "Trading with MetaTrader 5"
-msgstr "MetaTrader 5でお取引"
+#~ msgid "%1 %2 (\"API\") Terms and Conditions"
+#~ msgstr "%1 %2 (\"API\") 利用規約"
+
+#~ msgid "%1’s <a href=\"%2\">Volatility Indices</a> are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
+#~ msgstr "%1の<a href=\"%2\">ボラティリティインデックス</a>はMetaTrader 5で24時間365日ご利用いただけます。その他の資産も間もなく追加予定です。"
+
+#~ msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
+#~ msgstr "<strong>基礎的かつ技術的な分析のための高度なツール</strong> 指標、チャートなど"
+
+#~ msgid "<strong>Highly competitive spreads with no commission.</strong>"
+#~ msgstr "<strong>手数料無しで高い倍率のスプレッドをご利用可能</strong>"
+
+#~ msgid "<strong>Subscriptions to a wide range of Expert Advisors,</strong> automated trading applications from the MetaTrader Market."
+#~ msgstr "<strong>幅広い専門のアドバイザーを購読</strong> MetaTraderマーケットで取引を自動化"
+
+#~ msgid "Account Type"
+#~ msgstr "口座タイプ"
+
+#~ msgid "App ID"
+#~ msgstr "アプリケーション ID"
+
+#~ msgid "Click the button below to download MetaTrader."
+#~ msgstr "MetaTraderをダウンロードするには下のボタンをクリックしてください。"
+
+#~ msgid "Congratulations! Your account has been created."
+#~ msgstr "おめでとうございます！口座の作成が完了しました。"
+
+#~ msgid "Create a MetaTrader account to trade on the MetaTrader 5 platform."
+#~ msgstr "MetaTrader 5プラットフォームで取引いただくには、MetaTraderのアカウントを作成する必要があります。"
+
+#~ msgid "Demo"
+#~ msgstr "デモ"
+
+#~ msgid "Demo Account"
+#~ msgstr "デモ口座"
+
+#~ msgid "Deposit from"
+#~ msgstr "からのご入金"
+
+#~ msgid "Deposit funds into your MetaTrader account from your Binary account:"
+#~ msgstr "Binary.comの口座からMetaTraderの口座へご入金："
+
+#~ msgid "Deposit is done. Transaction ID:"
+#~ msgstr "入金が完了しました。取引参照ID："
+
+#~ msgid "Deposit to"
+#~ msgstr "XXXへご入金"
+
+#~ msgid "Deposit to MetaTrader account"
+#~ msgstr "MetaTraderの口座へご入金"
+
+#~ msgid "Download MetaTrader"
+#~ msgstr "MetaTraderをダウンロード"
+
+#~ msgid "Download MetaTrader for Windows"
+#~ msgstr "Windows版のMetaTraderをダウンロード"
+
+#~ msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader’s website, please select “%1” from the list of available brokers."
+#~ msgstr "MetaTrader 5をMetaTraderのサイトから既に直接ダウンロードされている場合は、利用できるブローカーのリストから“%1”をご選択ください。"
+
+#~ msgid "Investor Password (read-only access)"
+#~ msgstr "トレーダーパスワード（読み取り専用アクセス）"
+
+#~ msgid "Leverage"
+#~ msgstr "レバレッジ"
+
+#~ msgid "Linux Instructions"
+#~ msgstr "Linux操作手順"
+
+#~ msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
+#~ msgstr "MetaTraderのアカウント番号とパスワードでアプリケーションにログインをしてください。"
+
+#~ msgid "Login"
+#~ msgstr "ログイン"
+
+#~ msgid "MacOS Instructions"
+#~ msgstr "MacOS操作手順"
+
+#~ msgid "Main Password (trading access)"
+#~ msgstr "メインパスワード（取引アクセス）"
+
+#~ msgid "MetaTrader Accounts Management"
+#~ msgstr "MetaTraderアカウント管理"
+
+#~ msgid "MetaTrader Main Password"
+#~ msgstr "MetaTraderメインパスワード"
+
+#~ msgid "Now Introducing MetaTrader 5 on %1"
+#~ msgstr "MetaTrader 5を現在導入中(現在、日本では対応しておりません)"
+
+#~ msgid "Run the installation file and follow the instructions."
+#~ msgstr "インストールファイルを実行して、指示に従ってください。"
+
+#~ msgid "Start Trading with MetaTrader 5"
+#~ msgstr "MetaTrader 5でお取引を始める"
+
+#~ msgid "Start trading with your Demo Account"
+#~ msgstr "デモ口座でお取引をはじめる"
+
+#~ msgid "Start trading with your Real Account"
+#~ msgstr "リアル口座でお取引を開始する"
+
+#~ msgid "Take advantage of numerous benefits, including:"
+#~ msgstr "様々な利点を活用できます："
+
+#~ msgid "Take your trading to the next level through this powerful interface, recognised as the benchmark standard worldwide."
+#~ msgstr "世界標準として認められた、強力なインターフェースを活用してあなたのお取引を次のレベルへ"
+
+#~ msgid "To create a Real account for MetaTrader, you need to authenticate your Binary account:"
+#~ msgstr "MetaTraderのリアル口座を作成するには、Binary口座を認証いただく必要があります："
+
+#~ msgid "To create a real account for MetaTrader, <a href=\"%1\">upgrade to %2 real money account</a>."
+#~ msgstr "MetaTraderのリアル口座を作成するには、<a href=\"%1\">%2リアル口座へアップグレード</a>いただく必要があります。"
+
+#~ msgid "To create a real account for MetaTrader, switch to your %1 real money account."
+#~ msgstr "MetaTraderのリアル口座を作成いただくには、%1リアル口座へ切り替えてください。"
+
+#~ msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
+#~ msgstr "MetaTraderのリアル口座から入出金いただくには、Binay.comのリアル口座へ切り替えてください。"
+
+#~ msgid "Verify Main Password"
+#~ msgstr "メインパスワード（確認用）"
+
+#~ msgid "Withdraw from"
+#~ msgstr "XXXからご出金"
+
+#~ msgid "Withdraw from MetaTrader account"
+#~ msgstr "MetaTraderの口座からご出金"
+
+#~ msgid "Withdraw funds from your MetaTrader account into your Binary account:"
+#~ msgstr "MetaTraderの口座からBinaryの口座へ資金をご出金："
+
+#~ msgid "Withdraw to"
+#~ msgstr "XXXへご出金"
+
+#~ msgid "Withdrawal is done. Transaction ID:"
+#~ msgstr "ご出金が完了しました。取引参照ID："
+
+#~ msgid "Your Name"
+#~ msgstr "氏名"
+
+#~ msgid "Your new account has been created."
+#~ msgstr "新しい口座の作成が完了しました。"
+
+#~ msgid "MetaTrader"
+#~ msgstr "MetaTrader"
+
+#~ msgid "Trading with MetaTrader 5"
+#~ msgstr "MetaTrader 5でお取引"
+
+#~ msgid "Charts"
+#~ msgstr "チャート"
+
+#~ msgid "LOG OUT"
+#~ msgstr "ログアウト"
+
+#~ msgid "Make a deposit or withdraw."
+#~ msgstr "入出金をする"
+
+#~ msgid "Manage your account access and security settings."
+#~ msgstr "アカウントのアクセス・セキュリティ設定を管理する。"
+
+#~ msgid "Transfer to client"
+#~ msgstr "Transfer to client"
+
+#~ msgid "View your historical transactions."
+#~ msgstr "取引履歴を表示"
+
+#~ msgid "View your open positions."
+#~ msgstr "保有ポジションを確認"
+
+#~ msgid "View your trading profit/loss."
+#~ msgstr "トレードの損益を確認"
+
+#~ msgid "Welcome!"
+#~ msgstr "口座情報"
+
+#~ msgid "You are currently logged in to your real money account with %1 (%2)."
+#~ msgstr "現在リアルマネー口座%1 (%2)にログインしています。"
+
+#~ msgid "You are currently logged in to your virtual money account (%2)."
+#~ msgstr "現在デモ口座(%2)にログインしています。"
+
+#~ msgid "Your %1 account is unavailable. For any questions please contact %2."
+#~ msgstr "お客さまのご口座%1はご利用いただけません。ご不明な点がございましたら%2までご連絡下さい。"
+
+#~ msgid "Your %1 accounts are unavailable. For any questions please contact %2."
+#~ msgstr "お客さまのご口座%1はご利用いただけません。ご不明な点がございましたら%2までご連絡ください。"
+
+#~ msgid "Your account is fully authenticated. You can view your %1trading limits here"
+#~ msgstr "お客さまのご口座のアップグレードが完了しました。ご口座%1のご利用上限の内容をこちらからご確認頂けます。"
+
+#~ msgid "Your account is registered as a Payment Agent."
+#~ msgstr "現在お客さまは決済サービスエージェントとしてご登録頂いています。"
 
 #~ msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
 #~ msgstr "<span class='color-green font-weight-700'>幅広い取引期間:</span>2時間以上から取引期間の指定が可能です"
@@ -8920,9 +8982,6 @@ msgstr "MetaTrader 5でお取引"
 
 #~ msgid "The future of trading on %1"
 #~ msgstr "%1での今後のお取引"
-
-#~ msgid "Tick Trade App"
-#~ msgstr "Tickトレードアプリ"
 
 #~ msgid "Tick Trade on GitHub"
 #~ msgstr "GitHubでTickトレード"
@@ -9776,9 +9835,6 @@ msgstr "MetaTrader 5でお取引"
 #~ msgid "Login to this account has been temporarily disabled due to system maintenance. Please try again in 30 minutes."
 #~ msgstr "申し訳ございませんがシステムメンテナンスのため、この口座へのアクセスは承っておりません。３０分後に改めてお手続きを進めて下さい。"
 
-#~ msgid "Lost Password?"
-#~ msgstr "パスワードをお忘れですか？"
-
 #~ msgid "Low"
 #~ msgstr "Low"
 
@@ -10017,9 +10073,6 @@ msgstr "MetaTrader 5でお取引"
 
 #~ msgid "Relative Strength Index"
 #~ msgstr "Relative Strength Index：RSI"
-
-#~ msgid "Reload page"
-#~ msgstr "ページの再読込"
 
 #~ msgid "Remove Overlay"
 #~ msgstr "オーバレイを削除"
@@ -15378,9 +15431,6 @@ msgstr "MetaTrader 5でお取引"
 #~ msgid "Binary.com's Random Indices are the random 25 Index, Random 50 Index, Random 75 Index, and Random 100 Index and many more."
 #~ msgstr "Binary.comのランダム指数は、ランダム25インデックス、ランダム50インデックス、ランダム75インデックス、およびランダム100指数などその他多数あります。"
 
-#~ msgid "Get your free $10,000 virtual money"
-#~ msgstr "$10,000のフリーバーチャルマネー手に入れましょう"
-
 #~ msgid "Join our community of 1,000,000+ traders"
 #~ msgstr "1,000,000以上のトレーダがいる私達のコミュニティーに参加しましょう"
 
@@ -19817,9 +19867,6 @@ msgstr "MetaTrader 5でお取引"
 
 #~ msgid "If you're still new to financial trading, feel free to browse through our different trading guides in our <a href=\"%1\">educational corner</a>. This section contains free trading guides that are easy to use and understand. Create your own trading strategy and start using it today."
 #~ msgstr "If you're still new to financial trading, feel free to browse through our different trading guides in our <a href=\"%1\">educational corner</a>. This section contains free trading guides that are easy to use and understand. Create your own trading strategy and start using it today."
-
-#~ msgid "Insert your login ID and password"
-#~ msgstr "ログインIDとパスワードをご入力して下さい。"
 
 #~ msgid "Instantly see your total risk and return."
 #~ msgstr "リスクとリターンを即座に把握できます。"

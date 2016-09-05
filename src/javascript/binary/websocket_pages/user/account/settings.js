@@ -22,7 +22,7 @@ var SettingsWS = (function() {
 }());
 
 
-pjax_config_page_require_auth("settingsws", function() {
+pjax_config_page_require_auth("settingsws|securityws", function() {
     return {
         onLoad: function() {
             if(page.client.get_storage_value('is_virtual').length === 0) {

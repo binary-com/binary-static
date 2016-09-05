@@ -1,11 +1,6 @@
 /* Logo and top bar */
 #topbar {
-    width: 100%;
-    color: $COLOR_WHITE;
-    line-height: 1;
-    font-size: 70%;
     @include BIDIR_VALUE(text-align, right, left);
-    padding: 3px 0;
     #virtual-text {
         font-weight: 700;
     }
@@ -54,32 +49,9 @@
         }
     }
     #client-logged-out {
+        @include BIDIR_VALUE(text-align, right, left);
         #btn_login {
             margin-bottom: 0;
-        }
-    }
-    #client-logged-out, #loginid-switch-form {
-        @include BIDIR_VALUE(text-align, right, left);
-    }
-    #logout {
-        text-align: right;
-        color: $COLOR_WHITE;
-        font-size: 70%;
-        display: inline-block;
-        a, a:visited {
-            &:hover, &:active {
-                text-decoration: underline;
-            }
-            &.logout {
-                @include link-button;
-                background-position: 104.6% 0.3%;
-                background-repeat: no-repeat;
-                padding: 6px;
-                font-weight: normal;
-                @include BIDIR_PROP(margin-left, margin-right, 0.4em);
-                margin-top: 0.5em;
-                text-transform: uppercase;
-            }
         }
     }
     #mobile-menu-icon {
@@ -126,5 +98,17 @@
                 color: $COLOR_ORANGE;
             }
         }
+    }
+    .main-nav > li > ul {
+        margin: -20px -1px;
+    }
+    .topMenuBalance {
+        visibility: hidden;
+    }
+    .main-account > .account-type {
+        white-space: nowrap;
+    }
+    #all-accounts {
+        z-index: 99;
     }
 }

@@ -45,10 +45,10 @@ var PaymentAgentWithdrawWS = (function() {
 
         var residence = Cookies.get('residence');
 
-        if (sessionStorage.getItem('withdrawal_locked') === 'unlocked') {
-          BinarySocket.send({"paymentagent_list": residence});
-        } else if (sessionStorage.getItem('withdrawal_locked') === 'locked') {
-          lock_withdrawal('locked');
+        if (page.client_status_detected('withdrawal_locked, cashier_locked', 'any')) {
+            lock_withdrawal('locked');
+        } else {
+            BinarySocket.send({"paymentagent_list": residence});
         }
 
         $(viewIDs.form + ' button').click(function(e){
@@ -311,9 +311,9 @@ pjax_config_page_require_auth("paymentagent/withdrawws", function() {
             });
 
             Content.populate();
-            if(TUser.get().hasOwnProperty('is_virtual') || sessionStorage.getItem('withdrawal_locked') === 'locked') {
+            if(TUser.get().hasOwnProperty('is_virtual') || page.client_status_detected('withdrawal_locked, cashier_locked', 'any')) {
                 PaymentAgentWithdrawWS.init();
-            } else if (!sessionStorage.getItem('withdrawal_locked')) {
+            } else if (!sessionStorage.getItem('client_status')) {
               BinarySocket.send({"get_account_status": "1", "passthrough":{"dispatch_to":"PaymentAgentWithdrawWS"}});
             }
         }

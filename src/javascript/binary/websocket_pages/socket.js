@@ -147,10 +147,14 @@ function BinarySocketClass() {
                         if(!Login.is_login_pages()) {
                             page.client.response_authorize(response);
                             send({balance:1, subscribe: 1});
-                            send({landing_company_details: TUser.get().landing_company_name});
+                            if (Cookies.get('residence')) send({landing_company: Cookies.get('residence')});
                             send({get_settings: 1});
+                            send({get_account_status: 1});
+                            send({website_status: 1});
                             if(!page.client.is_virtual()) {
                                 send({get_self_exclusion: 1});
+                            } else {
+                                Cashier.check_virtual_top_up();
                             }
                         }
                         sendBufferedSends();
@@ -163,9 +167,18 @@ function BinarySocketClass() {
                     localStorage.removeItem('jp_test_allowed');
                     RealityCheckData.clear();
                     page.header.do_logout(response);
-                } else if (type === 'landing_company_details') {
-                    page.client.response_landing_company_details(response);
-                    if (response.landing_company_details.has_reality_check) {
+                } else if (type === 'landing_company') {
+                    page.contents.topbar_message_visibility(response.landing_company);
+                    var company;
+                    if (response.hasOwnProperty('error')) return;
+                    for (var key in response.landing_company) {
+                        if (TUser.get().landing_company_name === response.landing_company[key].shortcode) {
+                            company = response.landing_company[key];
+                            break;
+                        }
+                    }
+                    if (company && company.has_reality_check) {
+                        page.client.response_landing_company(company);
                         var currentData = TUser.get();
                         var addedLoginTime = $.extend({logintime: window.time.unix()}, currentData);
                         TUser.set(addedLoginTime);
@@ -179,6 +192,7 @@ function BinarySocketClass() {
                     if (!Cookies.get('residence') && response.get_settings.country_code) {
                       page.client.set_cookie('residence', response.get_settings.country_code);
                       page.client.residence = response.get_settings.country_code;
+                      send({landing_company: Cookies.get('residence')});
                     }
                     GTM.event_handler(response.get_settings);
                     page.client.set_storage_value('tnc_status', response.get_settings.client_tnc_status || '-');
@@ -202,6 +216,7 @@ function BinarySocketClass() {
                     } else {
                         localStorage.removeItem('jp_test_allowed');
                     }
+                    page.header.menu.check_payment_agent(response.get_settings.is_authenticated_payment_agent);
                 } else if (type === 'website_status') {
                     if(!response.hasOwnProperty('error')) {
                         LocalStore.set('website.tnc_version', response.website_status.terms_conditions_version);
@@ -220,27 +235,24 @@ function BinarySocketClass() {
                     send({get_financial_assessment: 1});
                   } else {
                     localStorage.removeItem('risk_classification');
+                    page.client.check_tnc();
                   }
-                  var withdrawal_locked, i;
-                  for (i = 0; i < response.get_account_status.status.length; i++) {
-                    if (response.get_account_status.status[i] === 'withdrawal_locked') {
-                      withdrawal_locked = 'locked';
-                      break;
-                    }
-                  }
+                  localStorage.setItem('risk_classification.response', response.get_account_status.risk_classification);
+
+                  sessionStorage.setItem('client_status', response.get_account_status.status);
+                  page.show_authenticate_message();
+
                   if (response.echo_req.hasOwnProperty('passthrough') && response.echo_req.passthrough.hasOwnProperty('dispatch_to')) {
                     if (response.echo_req.passthrough.dispatch_to === 'ForwardWS') {
-                        ForwardWS.lock_withdrawal(withdrawal_locked || 'unlocked');
+                        BinarySocket.send({"cashier_password": "1"});
                     } else if (response.echo_req.passthrough.dispatch_to === 'Cashier') {
-                        Cashier.lock_withdrawal(withdrawal_locked || 'unlocked');
+                        Cashier.check_locked();
                     } else if (response.echo_req.passthrough.dispatch_to === 'PaymentAgentWithdrawWS') {
-                      PaymentAgentWithdrawWS.lock_withdrawal(withdrawal_locked || 'unlocked');
+                      PaymentAgentWithdrawWS.lock_withdrawal(page.client_status_detected('withdrawal_locked, cashier_locked', 'any') ? 'locked' : 'unlocked');
                     }
                   }
-                  sessionStorage.setItem('withdrawal_locked', withdrawal_locked || 'unlocked');
-                  localStorage.setItem('risk_classification.response', response.get_account_status.risk_classification);
                 } else if (type === 'get_financial_assessment' && !response.hasOwnProperty('error')) {
-                  if (Object.keys(response.get_financial_assessment).length === 0) {
+                  if (!objectNotEmpty(response.get_financial_assessment)) {
                     if (page.header.qualify_for_risk_classification() && localStorage.getItem('risk_classification.response') === 'high') {
                       localStorage.setItem('risk_classification', 'high');
                       page.header.check_risk_classification();

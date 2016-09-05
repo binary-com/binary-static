@@ -71,7 +71,7 @@ acronym, abbr {
     cursor: help;
 }
 
-span.button.button-disabled button.button-disabled {
+span.button.button-disabled button.button-disabled, span a.button-disabled button {
     color: $COLOR_GRAY_SHADE;
     background: $COLOR_LIGHT_GRAY;
     cursor: default;
@@ -82,6 +82,10 @@ span.button.button-disabled button.button-disabled {
     span {
         display: block;
     }
+}
+
+a.button:hover {
+    text-decoration: none;
 }
 
 form {
@@ -180,10 +184,6 @@ fieldset .error-msg {
 /* global styles */
 * {
     margin: 0;
-}
-
-.hidden {
-    display: none;
 }
 
 .required_asterisk {
@@ -337,4 +337,8 @@ button.blue-button {
 
 p.no-para-margin {
     margin: 0;
+}
+
+.separator-line-thin-gray {
+    border-top: 1px solid $COLOR_GRAY;
 }

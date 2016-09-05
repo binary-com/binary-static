@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-21 08:35+0000\n"
+"PO-Revision-Date: 2016-09-03 11:11+0000\n"
 "Last-Translator: Ahmed Kotb <ahmedmohamedkotp@gmail.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/binary/static/ar/>\n"
 "Language: ar\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 2.8-dev\n"
+"X-Generator: Weblate 2.8\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
@@ -40,13 +40,15 @@ msgstr "$25,000 - $100,000"
 msgid "$250,000 - $1,000,000"
 msgstr "$250,000 - $1,000,000"
 
-msgid "%1 %2 (\"API\") Terms and Conditions"
-msgstr "1% 2% (\"واجهة برمجة التطبيقات\") الشروط والأحكام"
-
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "تم إضافة %1 %2 لحساب أموالك الإفتراضي %3"
 
 msgid "%1 Affiliate Program Terms and Conditions"
+msgstr "أحكام وشروط برنامج الإنتساب الخاص بـ %1"
+
+#, fuzzy
+#| msgid "%1 Affiliate Program Terms and Conditions"
+msgid "%1 Application Program Interface (\"API\") Terms and Conditions"
 msgstr "أحكام وشروط برنامج الإنتساب الخاص بـ %1"
 
 msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
@@ -112,52 +114,38 @@ msgstr "%1 تصل لمليون مستخدم، لتصل بذلك إلى حدث ت
 msgid "%1 introduces an <a href='%2' target='_blank' class='ja-hide'>auto-trader programming tool</a><span class='all-hide ja-show'>auto-trader programming tool</span>, allowing clients to develop their own automated trading robots with “drag-and-drop” simplicity."
 msgstr "%1 يقدم <a href='%2' target='_blank' class='ja-hide'>أداة برمجة للتداول الآلي</a><span class='all-hide ja-show'>أداة البرمجة للتداول الآلي</span>, تسمح للعملاء بتطوير روبوتات التداول الآلي الخاصة بهم بطريقة \"السحب والإفلات\" ببساطة."
 
-#, fuzzy
-#| msgid "Binary.com is a flexible place. As well as our offices, we have staff who choose to telecommute from their home offices in countries around the world. If that suits you, we’re open to it."
 msgid "%1 is a flexible place. As well as our offices, we have staff who choose to telecommute from their home offices in countries around the world. If that suits you, we're open to it."
-msgstr "مرونة مكان العمل في Binary.com. إضافة إلى مكاتبنا، بعض موظفينا قد يختارون العمل عن بعد من منازلهم في بلدان من جميع أنحاء العالم. اذا كان ذلك يناسبك، نحن نسمح بذلك."
+msgstr "%1 مكان مرن. وكذلك مكاتبنا, لدينا موظفون ممن يختارون العمل من مكاتبهم المنزلية في مختلف بلدان العالم. إذا كان ذلك مناسباً بالنسبة لك, فنحن منفتحون على ذلك."
 
-#, fuzzy
-#| msgid "%1 is always looking to add experienced professionals to its talented team of administrators, technical contributors, and managers. To support our continued growth, we’ve developed a number of exciting career opportunities in the following areas:"
 msgid "%1 is always looking to add experienced professionals to its talented team of administrators, technical contributors, and managers. To support our continued growth, we've developed a number of exciting career opportunities in the following areas:"
-msgstr "%1 تتطلع دائما إلى إضافة المحترفين ذوي الخبرة لفريق موهوب من الإداريين، والتقنيين، والمديرين. لدعم النمو المتواصل لنا، وقد وضعنا عددا من فرص التوظيف المثيرة في المجالات التالية:"
+msgstr "1% تتطلع دائماً لإضافة المحترفين من ذوي الخبرة لفريقها من الإداريين الموهوبين, المساهمين الفنيين, والمدراء. من أجل دعم نمونا المتواصل, نحن قمنا بتطوير عدداً من الفرص الوظيفية المثيرة في المجالات التالية:"
 
 msgid "%1 is entirely web-based and requires no software installation."
 msgstr "%1 تعمل كلياً على شبكة الانترنت ولا تتطلب تثبيت أى برامج."
 
-#, fuzzy
-#| msgid "Binary.com is honoured as the world's \"Best Binary Options Broker\" at the 16th annual MENA International Financial Conference and Exhibition, hosted in Dubai."
 msgid "%1 is honoured as the world's \"Best Binary Options Broker\" at the 16th annual MENA International Financial Conference and Exhibition, hosted in Dubai."
-msgstr "تتشرف Binary.com بحضور المعرض المالي الدولي للمؤتمرات والمعارض السنوي 16 للشرق الأوسط وشمال أفريقيا \"كأفضل وسيط للخيارات الثنائية\" في العالم, والمستضاف في دبي."
+msgstr "تتشرف %1 \"كأفضل وسيط للخيارات الثنائية\" في العالم بحضور المعرض المالي الدولي للمؤتمرات والمعارض السنوي 16 للشرق الأوسط وشمال أفريقيا, والمستضاف في دبي."
 
 msgid "%1 is looking to recruit highly skilled, experienced designers who are passionate about developing attractive visuals for both online and offline applications."
 msgstr "%1 تتطلع لتوظيف مصممين من ذوي الخبرة والمهارات العالية, المتحمسين لتطوير تطبيقات مرئية جذابة سواء كانت متصلة أو غير متصلة بالأنترنت على حد سواء."
 
-#, fuzzy
-#| msgid "Binary.com is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
 msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
-msgstr "Binary.com غير متواجدة في كوستاريكا ولا ينظمها أو يشرف عليها أي هيئة تنظيمية في النظام المالي في كوستاريكا."
+msgstr "%1 غير متاحة في كوستاريكا وهي غير منظمة أو يتم الإشراف عليها من قبل أي هيئات مالية تنظيمة في كوستاريكا."
 
 msgid "%1 is one of the oldest and most respected names in online binary trading."
 msgstr "%1 هي واحدة من أقدم وأكثر الأسماء احتراما في تداول الثنائيات عبر الإنترنت."
 
-#, fuzzy
-#| msgid "%1 is owned and operated by the Binary Ltd. group of companies. For more information, <a href=\"%2\">visit our history page</a>."
 msgid "%1 is owned and operated by the Binary Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
-msgstr "%1 تملكها وتديرها مجموعة شركات بيناري المحدودة. للمزيد من المعلومات، <a href=\"%2\">قم بزيارة صفحة تاريخ الشركة</a>."
+msgstr "%1 مملوكة ويتم إدارتها من قبل مجموعة شركات بيناري المحدودة. للمزيد من المعلومات، <a href=\"%2\">قم بزيارة صفحة تاريخ الشركة</a>."
 
 msgid "%1 is seeking a junior to mid-career professional with exceptional administrative and organization skills to join its General Affairs Team."
 msgstr "%1 تبحث عن مبتدئين وحتى منتصف العمر الوظيفي يتمتعون بمهارات إدارية وتنظيمية استثنائية للانضمام إلى فريق الشؤون العامة بها."
 
-#, fuzzy
-#| msgid "%1 is seeking a qualified proofreader with a flair for language and a meticulous eye for detail. You must be able to interact with our staff using a web-based translator interface. You’ll work with colleagues in IT, Customer Support and Marketing to provide localised text and translation services."
 msgid "%1 is seeking a qualified proofreader with a flair for language and a meticulous eye for detail. You must be able to interact with our staff using a web-based translator interface. You'll work with colleagues in IT, Customer Support and Marketing to provide localised text and translation services."
-msgstr "%1 تبحث عن مدقق لغوي مؤهل يتمتع بأسلوب لغوي وعين دقيقة للتفاصيل. يجب أن تكون قادرا على التفاعل مع موظفينا باستخدام واجهة الترجمة على الإنترنت. عليك العمل مع الزملاء في قسم تكنولوجيا المعلومات، ودعم العملاء والتسويق لتوفير خدمات ترجمة الوثائق والنصوص ."
+msgstr "%1 تبحث عن مدقق لغوي كفؤ يتمتع بأسلوب لغوي دقيق التفاصيل. يجب أن تكون قادراً على التفاعل مع موظفينا باستخدام واجهة الترجمة على الإنترنت. سوف يتحتم عليك العمل مع الزملاء في قسم تكنولوجيا المعلومات، ودعم العملاء والتسويق لتوفير خدمات ترجمة الوثائق والنصوص."
 
-#, fuzzy
-#| msgid "%1 is seeking qualified translation professionals familiar with specific target markets, languages, and cultures. By delivering high-quality translation to support our customers in a particular language, you will serve as the company’s voice to clients in certain key areas of the world. You’ll work with colleagues in IT, Customer Support, and Marketing to provide localised text and translation services through a web-based tool. This position will report to our Translation Project Manager."
 msgid "%1 is seeking qualified translation professionals familiar with specific target markets, languages, and cultures. By delivering high-quality translation to support our customers in a particular language, you will serve as the company's voice to clients in certain key areas of the world. You'll work with colleagues in IT, Customer Support, and Marketing to provide localised text and translation services through a web-based tool. This position will report to our Translation Project Manager."
-msgstr "%1 تبحث عن مترجمين محترفين مؤهلين يألفون أسواق، ولغات، وثقافات محددة مستهدفة. بتحقيق مستوى عال من الترجمة وخدمات دعم العملاء، سوف تكون صوت الشركة لعملائنا. عليك العمل مع الزملاء في قسم تكنولوجيا المعلومات، ودعم العملاء والتسويق لتوفير خدمات ترجمة النصوص عن طريق أداة المستندة إلى ويب. هذه الوظيفة ستتبع مدير مشروع الترجمة لدينا."
+msgstr "%1 تبحث عن مترجمين أكفاء محترفين والذين هم على دراية بأسواق معينة ومستهدفة, لغات, وثقافات. عن طريق تقديم ترجمة عالية الجودة لدعم عملائنا في لغات معينة, سوف تكون بمثابة صوت الشركة  بالنسبة للعملاء في بعض المناطق الرئيسية في العالم. سوف يتحتم عليك العمل مع الزملاء في تكنولوجيا المعلومات, دعم العملاء, والتسويق لتقديم خدمات الترجمة والنصوص من خلال أداة على شبكة الإنترنت. هذا الموقف سوف يقدم تقريراً لمدير مشروع الترجمة لدينا."
 
 msgid "%1 is seeking several highly skilled Marketing Executives, eager to contribute their energy, passion, and specialised strengths in connecting with prospects and clients based throughout the globe."
 msgstr "%1 تبحث عن العديد من مدراء التسويق التنفيذيين, الحريصون على مشاركة طاقاتهم وحماستهم ونقاط قوتهم المتخصصة في التواصل مع الآفاق والعملاء في جميع أنحاء العالم."
@@ -165,10 +153,8 @@ msgstr "%1 تبحث عن العديد من مدراء التسويق التنف�
 msgid "%1 is tailored to traders of all levels."
 msgstr "%1 مصممة لتناسب كل مستويات المتداولين."
 
-#, fuzzy
-#| msgid "%1 is the award-winning industry pioneer in online options trading. We boast:"
 msgid "%1 is the award-winning industry pioneer in online options trading."
-msgstr "%1 رائدة صناعة تداول الثنائيات عبر الانترنت وحاصدة جوائز هذا المجال. نفتخر بأننا:"
+msgstr "%1 حائزة على جائزة الريادة في صناعة تداول الخيارات عبر الإنترنت."
 
 msgid "%1 is the award-winning industry pioneer in online options trading. We boast:"
 msgstr "%1 رائدة صناعة تداول الثنائيات عبر الانترنت وحاصدة جوائز هذا المجال. نفتخر بأننا:"
@@ -182,26 +168,20 @@ msgstr "%1 تبذل جهودا لأن تكون الأسعار المتداولة
 msgid "%1 may have access to information that is not available to you, may have acquired trading positions at prices that are not available to you, and may have interests different from your interests. %1 does not undertake any obligation to provide you with market or other information we possess, nor to alter or refrain from our own trading."
 msgstr "%1 قد يكون لها نفاذ إلى معلومات غير متاحة لك، وقد تكون مراكز التداول المكتسبة عند أسعار غير متوفرة لك، كما قد يكون لها مصالح مختلفة عن مصالحك. 1% لا تقوم بأي التزام لإمدادكم بأي معلومات عن أي سوق أو غيرها من المعلومات التي نملكها، ولا إلى التغيير أو الامتناع عن التداول من جهتنا."
 
-#, fuzzy
-#| msgid "%1 now seeks Affiliate Managers to drive rapid growth and business development in key areas of the world. Successful recruits for this telecommuting role will actively increase %1’s market presence, expanding its network of affiliate partners from particular countries, geographic regions, and / or languages as needed."
 msgid "%1 now seeks Affiliate Managers to drive rapid growth and business development in key areas of the world. Successful recruits for this telecommuting role will actively increase %1's market presence, expanding its network of affiliate partners from particular countries, geographic regions, and / or languages as needed."
-msgstr "%1 تبحث الأن عن مدراء تابعين لدفع عملية النمو السريع وتطوير الأعمال في المناطق الرئيسية حول العالم. المجندين الناجحين لهذا الدور عن بعد سيزيدون بنشاط من نسبة حضورالسوق 1% , ويوسعون شبكتهم من الشركاء التابعين من بلدان معينة ومناطق جغرافية و / أو لغات أخرى حسب الحاجة."
+msgstr "%1 تبحث الأن عن مدراء تابعين لدفع عملية النمو السريع وتطوير الأعمال في المناطق الرئيسية حول العالم. المجندين الناجحين لهذا الدور عن بعد, سيزيدون بنشاط من نسبة حضورالسوق 1% , ويوسعون شبكتهم من الشركاء التابعين من بلدان معينة ومناطق جغرافية و / أو لغات أخرى حسب الحاجة."
 
 msgid "%1 offers a range of common deposit and withdrawal methods, from credit and debit cards to bank wires, e-cash and e-wallets."
 msgstr "%1 تقدم مجموعة من طرق السحب والإيداع الشائعة من بطاقات الخصم وبطاقات الإئتمان إلى الحوالات البنكية والنقود الإلكترونية والمحافظ الإلكترونية."
 
-#, fuzzy
-#| msgid "%2 offers a virtual-money account so you can get the hang of trading binaries. Why not <a class=\"pjaxload\" href=\"%1\">open a free $10k fully-functional virtual-money account</a>, and start learning how to trade."
 msgid "%1 offers a virtual-money account so you can get the hang of trading binaries. Why not <a class='pjaxload' href='%2'>open a free $10k fully-functional virtual-money account</a>, and start learning how to trade."
-msgstr "تقدم %2 حساب أموال افتراضية لتتمكن من فهم تداول الثنائيات. لم لا <a class=\"pjaxload\" href=\"%1\">تفتح حساب أموال افتراضية مجانى بقيمة 10000 دولار يعمل بشكل كامل</a>، لتبدأ فى تعلم التداول."
+msgstr "%2 تقدم حساب أموال افتراضي لتتمكن من فهم تداول الثنائيات. لم لا <a class=\"pjaxload\" href=\"%1\">أفتح حساب أموال افتراضي مجانى يعمل بشكل كامل بقيمة 10000 دولار</a>، وأبدأ فى تعلم كيفية التداول."
 
 msgid "%1 offers five ways to trade your chosen asset:"
 msgstr "تقدم %1 خمسة طرق للتداول فى الأصل المالى الذى اخترته:"
 
-#, fuzzy
-#| msgid "Binary.com offers new ways to trade"
 msgid "%1 offers new ways to trade"
-msgstr "Binary.com تقدم طرقا جديدة للتداول"
+msgstr "%1 تقدم طرقاً جديدة للتداول"
 
 msgid "%1 offers the world's financial markets in a simple, user-friendly platform."
 msgstr "تقدم %1 أسواق المال العالمية فى منصة تداول بسيطة وسهلة الاستخدام."
@@ -212,25 +192,17 @@ msgstr "يتم قياس أسعار %1 مقارنة بأسعار سوق الخي�
 msgid "%1 provides business partnership services via the following programs."
 msgstr "تقدم 1% خدمات شراكة تجارية عن طريق البرامج التالية."
 
-#, fuzzy
-#| msgid "%1 provides you with the opportunity to either self-exclude or <a href=\"%2\">set limits on your trading activities</a> on this website. You may also <a href=\"%3\">contact us</a> to state the limits you wish to set via live chat, email or phone. Available limits are:"
 msgid "%1 provides you with the opportunity to either self-exclude or <a href='%2'>set limits on your trading activities</a> on this website. You may also <a href='%3'>contact us</a> to state the limits you wish to set via live chat, email or phone. Available limits are:"
-msgstr "%1 تقدم لك فرصة إقصاء نفسك عن الموقع أو <a href=\"%2\"> أن تضع قيودا على أنشطتك التجارية</a> على هذا الموقع. تستطيع أيضاً <a href=\"%3\">أن تتصل بنا</a> لتضع الحدود التى تريدها عبر الدردشة الحية، أو البريد الألكترونى أو الهاتف. الحدود المتاحة هى:"
+msgstr "%1 تقدم لك فرصة للإستبعاد الذاتي أو <a href='%2'> <a href='%2'> تعيين حدود لأنشطة التداول الخاصة بك</a> على هذا الموقع. ربما بإمكانك أيضاً <a href='%3'>الإتصال بنا</a> لتعيين الحدود التي ترغب بها عن طريق الدردشة الحية, البريد الإلكتروني أو الهاتف. الحدود المتاحة هي:"
 
-#, fuzzy
-#| msgid "Binary.com reaches $2 billion turnover since starting in 1999"
 msgid "%1 reaches $2 billion turnover since starting in 1999"
-msgstr "دورة مبيعات Binary.com تصل الى 2 بليون دولار أمريكي منذ انطلاقها عام 1999"
+msgstr "%1 تصل إلى 2 مليار دولار كإجمالي قيمة حركة تداول منذ بدايتها في عام 1999"
 
-#, fuzzy
-#| msgid "Binary.com reaches 1 million registered users"
 msgid "%1 reaches 1 million registered users"
-msgstr "Binary.com تصل لمليون مستخدم مسجل"
+msgstr "%1 تصل إلى 1 مليون مستخدم مسجل"
 
-#, fuzzy
-#| msgid "Days to display"
 msgid "%1 rows displayed:"
-msgstr "الأيام المعروضة"
+msgstr "%1 الصفوف المعروضة:"
 
 msgid "%1 seeks a Project Coordinator to help drive the production of promotional content and rollout of marketing campaigns, designed to engage new prospects and current customers based throughout the globe."
 msgstr "1 % تبحث عن منسق مشروع, للمساعدة في دفع انتاج محتوى ترويجي وبدء تنفيذ حملات تسويقية مصممة من أجل إشراك آفاق جديدة وعملاء حاليين متواجدين في كل أنحاء العالم."
@@ -315,9 +287,6 @@ msgstr "تاريخ Binary.com البارز"
 
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "أنظمة %1 تقوم الآن بمعالجة ما يزيد على 1 مليون صفقة / يوم (بما في ذلك الحسابات الافتراضية)."
-
-msgid "%1’s <a href=\"%2\">Volatility Indices</a> are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
-msgstr "%1 <a href=\"%2\">مؤشرات التذبذب</a> متاحة الآن 24/7 على الميتاتريدر 5. سيتم إطلاق أصول إضافية قريباً جداً."
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "minimum duration, for example minimum 15 seconds)%ctx)دقيقة"
@@ -483,7 +452,7 @@ msgid "<a class='pjaxload' href='mailto:%1'>Contact Us</a>"
 msgstr "<a class='pjaxload' href='mailto:%1'>اتصل بنا</a>"
 
 msgid "<a href=\"%1\">Return to trading page</a>"
-msgstr ""
+msgstr "<a href=\"%1\">عودة إلى صفحة التداول</a>"
 
 #, fuzzy
 #| msgid "<a href=\"%1\">Founded</a> October 1999"
@@ -549,9 +518,6 @@ msgstr "<strong>سعر ثنائى الاتجاه</strong> - تقدم لك %1 س�
 
 msgid "<strong>Additional business exposure:</strong> You will increase awareness of your services and generate new business."
 msgstr "<strong>عرض إضافي للأعمال:</strong> سوف تزيد التوعية بخدماتك وكذلك إنشاء أعمال جديدة."
-
-msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
-msgstr "<strong>أدوات متطورة للتحليلات الفنية والأساسية,</strong> بما في ذلك المؤشرات, الرسوم البيانية, والمزيد."
 
 #, fuzzy
 #| msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
@@ -623,9 +589,6 @@ msgstr "<strong>أعلى/أسفل</strong> - توقع هل سيغلق السوق
 
 msgid "<strong>Higher/Lower</strong> - where you can profit from the market ending higher or lower than a target price."
 msgstr "<strong>أكثر/أقل</strong> -حيث يمكنك أن تربح من إغلاق السوق عند سعر أكثر أو أقل من سعرمستهدف."
-
-msgid "<strong>Highly competitive spreads with no commission.</strong>"
-msgstr "<strong>هوامش تنافسية للغاية بدون عمولة.</strong>"
 
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and Payment Agents."
 msgstr "<strong>تنوية هام</strong> - ليس لـ %1 علاقة بأى من وكلاء الدفع المذكورين أعلاه. كل وكيل دفع يعمل كمزود خدمة مستقل وليس موافق عليه أو مضمون بأى شكل آخر من %1. يتعامل العملاء مع وكلاء الدفع على مسئوليتهم الخاصة. ننصح العملاء بالتحقق من أوراق اعتماد وكلاء الدفع قبل أن يرسلوا لهم أى أموال. %1 لا تتحمل مسئولية الصفقات بين العملاء ووكلاء الدفع تحت أى ظرف."
@@ -710,9 +673,6 @@ msgstr "<strong>مؤشرات البورصة</strong> - تداول كل مؤشر�
 
 msgid "<strong>Stock indices</strong> - trade all major worldwide stock indices."
 msgstr "<strong>مؤشرات البورصة</strong> - تداول كل مؤشرات البورصة الرئيسية فى أنحاء العالم."
-
-msgid "<strong>Subscriptions to a wide range of Expert Advisors,</strong> automated trading applications from the MetaTrader Market."
-msgstr "<strong>اشتراكات لمجموعة واسعة من خبراء المستشارين,</strong> تطبيقات تداول أوتوماتيكية أسواق الميتاتريدر."
 
 msgid "<strong>Take early profits</strong> - sell your long-term trades at market prices before they expire."
 msgstr "<strong>أحصل على الأرباح مبكراً</strong> - قم ببيع معاملاتك التجارية طويلة الأجل بسعر السوق قبل أنتهاء صلاحيتها."
@@ -848,6 +808,16 @@ msgstr "على تفضيل وشغف بلينكس والبرامج المفتوح�
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "اتباع نهج استباقي لحل المشاكل وتقديم حلول للعملاء"
 
+#, fuzzy
+#| msgid "- A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+msgstr "- صورة ضوئية من فاتورة خدمات أو كشف حساب بنكي (يجب ألا يكون قد مضى عليها أكثر من ثلاثة أشهر)."
+
+#, fuzzy
+#| msgid "- A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth."
+msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
+msgstr "- نسخة من جواز سفرك، أو نسخة من رخصة قيادة (مؤقته أو كاملة) أو بطاقة تحقيق شخصية، تحمل اسمك وتاريخ ميلادك."
+
 msgid "A strong and passionate interest in Marketing and Advertising"
 msgstr "اهتمام قوي وشغف في مجال التسويق والإعلان"
 
@@ -935,13 +905,13 @@ msgstr "إدارة وتتبع الحسابات"
 msgid "Account Opening"
 msgstr "فتح حساب"
 
+#, fuzzy
+#| msgid "Lost Password?"
+msgid "Account Password"
+msgstr "كلمة مرور مفقودة؟"
+
 msgid "Account Transfer"
 msgstr "تحويل الحساب"
-
-#, fuzzy
-#| msgid "Account Opening"
-msgid "Account Type"
-msgstr "فتح حساب"
 
 msgid "Account balance: "
 msgstr "رصيد الحساب: "
@@ -1022,6 +992,11 @@ msgstr "قيود الاتفاق"
 
 msgid "Agreement for documents"
 msgstr "اتفاق عن مستندات"
+
+#, fuzzy
+#| msgid "A True Partnership"
+msgid "All Partnership Options"
+msgstr "شراكة حقيقية"
 
 msgid "All affiliate activities must be conducted in a professional and proper manner. You shall be expected to act with good faith and integrity in your relationships with your referrals, and always act in the best interests of your referrals."
 msgstr "يجب أن تجري جميع الأنشطة التابعة لها بطريقة مهنية وسليمة. نتوقع منك أن تتصرف بحسن نية ونزاهة في علاقتك بالأشخاص المحالين منك، وتعمل دائماً بالمصالح الفضلى للإحالات الخاصة بك."
@@ -1147,9 +1122,6 @@ msgstr "أي شخص فوق سن 18عاما [من الذين قرأوا وواف�
 msgid "Anyone who has potential to grow or increase traffic to %1"
 msgstr "أي شخص يمكنه زيادة حركة المرور إلى موقع %1"
 
-msgid "App ID"
-msgstr "معرف التطبيق"
-
 msgid "Applications"
 msgstr "تطبيقات"
 
@@ -1172,6 +1144,9 @@ msgstr "ملاءمة"
 
 msgid "Appropriateness Test"
 msgstr "اختبار الملاءمة"
+
+msgid "Apps"
+msgstr "التطبيقات"
 
 msgid "Apr"
 msgstr "أبريل"
@@ -1468,6 +1443,11 @@ msgstr "بيناري المحدودة، التي يقع مكتبها المسج�
 msgid "Binary Options Basics"
 msgstr "قواعد الخيارات الثنائية"
 
+#, fuzzy
+#| msgid "Binary option"
+msgid "Binary Shop"
+msgstr "الخيار الثنائى"
+
 msgid "Binary Trading is simple to learn and to execute."
 msgstr "تداول الثنائيات سهل التعلم وسهل التنفيذ."
 
@@ -1620,6 +1600,16 @@ msgstr "المهن"
 msgid "Cashier"
 msgstr "الصراف"
 
+#, fuzzy
+#| msgid "Cashier password"
+msgid "Cashier Password"
+msgstr "كلمة مرور الصراف"
+
+#, fuzzy
+#| msgid "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\">here</a> for further information."
+msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgstr "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\"> 1here</a> 2 for further information."
+
 msgid "Cashier password"
 msgstr "كلمة مرور الصراف"
 
@@ -1632,12 +1622,17 @@ msgstr "تغيير نقطة النهاية لواجهة برمجة التطبي�
 msgid "Change Password"
 msgstr "غير كلمة المرور"
 
-msgid "Chart"
-msgstr "رسم بياني"
+#, fuzzy
+#| msgid "Hundreds of deposit and withdrawal options."
+msgid "Change the password used for deposits and withdrawals."
+msgstr "المئات من طرق الإيداع والسحب."
 
 #, fuzzy
-#| msgid "Chart"
-msgid "Charts"
+#| msgid "Incorrect email or password."
+msgid "Change your main login password."
+msgstr "البريد الإلكتروني أو كلمة المرور غير صحيحة."
+
+msgid "Chart"
 msgstr "رسم بياني"
 
 msgid "Check out our commission rates below:"
@@ -1729,9 +1724,6 @@ msgstr "Classification of assets requiring hedge"
 
 msgid "Click here to retry"
 msgstr "أنقر هنا لإعادة المحاولة"
-
-msgid "Click the button below to download MetaTrader."
-msgstr "أضغط على الزر أدناه لتحميل الميتاتريدر."
 
 msgid "Client classification"
 msgstr "تصنيف العميل"
@@ -1868,11 +1860,6 @@ msgstr "Confirmation and understandings"
 
 msgid "Conflicts Policy"
 msgstr "سياسة تضارب المصالح"
-
-#, fuzzy
-#| msgid "Congratulations! <br /> You have won the contract!"
-msgid "Congratulations! Your account has been created."
-msgstr "تهانينا <br />لقد فزت بالعقد!"
 
 msgid "Construction"
 msgstr "الإنشاءات"
@@ -2038,9 +2025,6 @@ msgstr "أنشىء حساب جديد"
 msgid "Create New Token"
 msgstr "إنشاء رمز جديد"
 
-msgid "Create a MetaTrader account to trade on the MetaTrader 5 platform."
-msgstr "أنشيء حساب ميتاتريدر للتداول على منصة ميتاتريدر 5."
-
 #, fuzzy
 #| msgid "Create clear, concise and engaging content for display on the company’s website, blog, social media outlets, and marketing materials"
 msgid "Create clear, concise and engaging content for display on the company's website, blog, social media outlets, and marketing materials"
@@ -2158,14 +2142,6 @@ msgstr "تعريفات"
 msgid "Delete"
 msgstr "أحذف"
 
-msgid "Demo"
-msgstr "تجريبي"
-
-#, fuzzy
-#| msgid "Open Account"
-msgid "Demo Account"
-msgstr "يفتح حساب"
-
 msgid "Demonstrate the ability to think / act quickly and multi-task as needed to execute effective campaigns"
 msgstr "إظهار القدرة على التفكير / العمل بسرعة وتعدد المهام كما هو مطلوب لتنفيذ حملات فعالة"
 
@@ -2185,29 +2161,15 @@ msgid "Deposit Bonus"
 msgstr "إيداع المكافأة"
 
 #, fuzzy
-#| msgid "Deposit of"
-msgid "Deposit from"
-msgstr "إيداع"
-
-msgid "Deposit funds into your MetaTrader account from your Binary account:"
-msgstr "إيداع الأموال في حساب ميتاتريدر الخاص بك من حسابك في Binary:"
-
-msgid "Deposit is done. Transaction ID:"
-msgstr "تم الإيداع. معرف المعاملة:"
+#| msgid "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\">here</a> for further information."
+msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgstr "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\"> 1here</a> 2 for further information."
 
 msgid "Deposit of"
 msgstr "إيداع"
 
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "إيداع أو سحب على حسابك عن طريق الحوالات المصرفية، أوبطاقات الائتمان، أو محفظة نقود إلكترونية."
-
-#, fuzzy
-#| msgid "Deposit of"
-msgid "Deposit to"
-msgstr "إيداع"
-
-msgid "Deposit to MetaTrader account"
-msgstr "الإيداع في حساب الميتاتريدر"
 
 msgid "Deposit: %1 working day"
 msgstr "إيداع: %1 يوم عمل"
@@ -2220,6 +2182,9 @@ msgstr "إيداع: فورى"
 
 msgid "Depositing and withdrawing funds"
 msgstr "إيداع وسحب الأموال"
+
+msgid "Deposits and withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
+msgstr "الإيداع والسحب غير متاح في حسابك في الوقت الراهن. برجاء الإتصال ب %1 لإعادة فتحه."
 
 msgid "Derivative"
 msgstr "مشتق"
@@ -2337,16 +2302,6 @@ msgstr "الحسابات الخاملة وغير النشطة"
 #| msgid "Download SVG"
 msgid "Download CSV"
 msgstr "حمل ملف SVG"
-
-#, fuzzy
-#| msgid "Download for Windows"
-msgid "Download MetaTrader"
-msgstr "تحميل لنظام التشغيل Windows"
-
-#, fuzzy
-#| msgid "Download for Windows"
-msgid "Download MetaTrader for Windows"
-msgstr "تحميل لنظام التشغيل Windows"
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "دفع النمو السريع وتطوير الأعمال, لدعم مبيعات الشركة والأهداف التسويقية"
@@ -2935,8 +2890,21 @@ msgstr "برنامج العمولات السخي"
 msgid "Germany"
 msgstr "ألمانيا"
 
+#, fuzzy
+#| msgid "Over $1,000,000"
+msgid "Get JPY 1,000,000"
+msgstr "أكثر من 1,000,000 دولار"
+
 msgid "Get Started"
 msgstr "ابدأ"
+
+msgid "Get USD 10,000.00"
+msgstr "أحصل على 10.000 دولار أمريكي"
+
+#, fuzzy
+#| msgid "Get your free $10,000 virtual money"
+msgid "Get more virtual money"
+msgstr "أحصل على أموال افتراضية بمبلغ 10000$ مجانا"
 
 msgid "Get your price"
 msgstr "أحصل على السعر"
@@ -3192,9 +3160,6 @@ msgstr "إذا كنت بحاجة إلى المساعدة, فلا تتردد با
 #| msgid "If you need assistance feel free to contact our %1Customer Support"
 msgid "If you need assistance feel free to contact our <a class=\"pjaxload\" href=\"%1\">Customer Support</a>."
 msgstr "إذا كنت بحاجة إلى المساعدة, فلا تتردد بالإتصال بفريق 1% دعم العملاء لدينا"
-
-msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader’s website, please select “%1” from the list of available brokers."
-msgstr "إذا كنت قد قمت بتحميل منصة ميتاتريدر 5 مسبقاً ومباشرة من موقع الميتاتريدر, فبرجاء اختيار \"%1\" من قائمة الوسطاء المتاحين."
 
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "إذا اخترت \"هبوط آسيوي\"، تربح العائد إذا كانت <strong>آخر حركة</strong> <strong>أقل</strong> من <strong>متوسط</strong> حركات السوق."
@@ -3523,9 +3488,6 @@ msgstr "الاستثمارات وتوزيعات الأرباح"
 
 msgid "Investor Compensation Scheme"
 msgstr "برنامج تعويض المستثمر"
-
-msgid "Investor Password (read-only access)"
-msgstr "كلمة مرور المستثمر (الوصول للقراءة فقط)"
 
 msgid "Involved in evaluation of regulatory compliance and risk management. Work with the Head of Departments to improve business processes."
 msgstr "المشاركة في تقييم إدارة المخاطر والامتثال التنظيمي. العمل مع رئيس الإدارات لتحسين العمليات التجارية."
@@ -4078,9 +4040,6 @@ msgstr "تعتبر اضافة وجود معرفة بنظرية الاحتمال�
 msgid "Knowledge of probability theory, stochastic calculus, numerical methods, Monte-Carlo simulation, differential equations, econometrics, and statistical modeling"
 msgstr "المعرفة بنظرية الاحتمالات وحساب التفاضل والتكامل العشوائي والأساليب العددية، ومحاكاة Monte-Carlo، معادلات التفاضل، والاقتصاد القياسي والنمذجة الإحصائية"
 
-msgid "LOG OUT"
-msgstr "تسجيل الخروج"
-
 msgid "Languages"
 msgstr "اللغات"
 
@@ -4147,11 +4106,6 @@ msgstr "Less than 6 months"
 msgid "Level of Education"
 msgstr "مستوى التعليم"
 
-#, fuzzy
-#| msgid "Average"
-msgid "Leverage"
-msgstr "متوسط"
-
 msgid "Leverage social-media tools and channels to identify, engage, and convert potential new customers and partners"
 msgstr "رفع قدرة وفاعلية أدوات وقنوات التواصل الإجتماعي لتحديد وجذب وتحويل العملاء والشركاء المحتملين الجدد"
 
@@ -4188,11 +4142,6 @@ msgstr "رابط لتوجيه عملائنا لطلبك."
 msgid "Links"
 msgstr "روابط"
 
-#, fuzzy
-#| msgid "Further Instructions"
-msgid "Linux Instructions"
-msgstr "مزيد من التعليمات"
-
 msgid "Live chat:"
 msgstr "المحادثة الحية:"
 
@@ -4202,9 +4151,6 @@ msgstr "قفل الصراف"
 msgid "Log in"
 msgstr "تسجيل الدخول"
 
-msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
-msgstr "تسجيل الدخول للتطبيق يكون باستخدام رقم حساب الميتاتريدر الخاص بك وكلمة مرور حساب الميتاتريدر الخاص بك."
-
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "سجل الدخول لحساب الإنتساب لـ %1 وانقر على: الأمور المالية وتعليمات الدفع."
 
@@ -4213,9 +4159,6 @@ msgstr "سجل الدخول لحساب الإنتساب في %1 وانقر عل�
 
 msgid "Log-in to your %1 affiliate account and click on: Reports &rarr; Traffic Report."
 msgstr "سجل الدخول لحساب الإنتساب في %1 وانقر على: التقارير وتقرير المرور."
-
-msgid "Login"
-msgstr "تسجيل الدخول"
 
 msgid "Login History"
 msgstr "تاريخ تسجيل الدخول"
@@ -4253,14 +4196,6 @@ msgstr "تحديد حاجز منخفض"
 msgid "MENA FFXPO Award"
 msgstr "جائزة مؤتمر ومعرض الشرق الأوسط وشمال أفريقيا للتداول الذكي"
 
-#, fuzzy
-#| msgid "Specific Instructions"
-msgid "MacOS Instructions"
-msgstr "تعليمات خاصة"
-
-msgid "Main Password (trading access)"
-msgstr "كلمة المرور الرئيسية (الوصول للتداول)"
-
 msgid "Maintain accurate system pricing parameters"
 msgstr "الحفاظ على نظام دقيق لعوامل التسعير"
 
@@ -4269,9 +4204,6 @@ msgstr "الاحتفاظ بالسرعة المناسبة، وحجم الإنتا
 
 msgid "Make a Deposit"
 msgstr "قم بعمل إيداع"
-
-msgid "Make a deposit or withdraw."
-msgstr "عمل إيداع أو سحب."
 
 msgid "Make your trade"
 msgstr "قم بتداولك"
@@ -4292,9 +4224,6 @@ msgstr "إدارة الأمن وكشف التسلل، حماية DDoS وتداب
 #| msgid "Manage the company’s cashier system"
 msgid "Manage the company's cashier system"
 msgstr "إدارة نظام الصراف للشركة"
-
-msgid "Manage your account access and security settings."
-msgstr "إدارة الوصول لحسابك وإعدادات الأمان."
 
 msgid "Manage your authorised applications."
 msgstr "إدارة التطبيقات المعتمدة الخاصة بك."
@@ -4382,14 +4311,6 @@ msgstr "تاريخ لا ينسى"
 
 msgid "Memorable town/city"
 msgstr "مدينة أو بلدة لا تنسى"
-
-msgid "MetaTrader Accounts Management"
-msgstr "إدارة حسابات الميتاتريدر"
-
-#, fuzzy
-#| msgid "Verify new password"
-msgid "MetaTrader Main Password"
-msgstr "قم بالتأكيد على كلمة المرور الجديدة"
 
 msgid "Method"
 msgstr "الطريقة"
@@ -4613,9 +4534,6 @@ msgstr "يمكن للمتداولين المبتدئين استخدام منصت
 
 msgid "Now"
 msgstr "الآن"
-
-msgid "Now Introducing MetaTrader 5 on %1"
-msgstr "الآن تقديم ميتاتريدر 5 على %1"
 
 msgid "Number of ticks"
 msgstr "عدد الحركات"
@@ -5217,6 +5135,11 @@ msgstr "يفضل إجادة لغة برمجة - بيرل"
 msgid "Proficiency in a second language (oral and written) is preferred"
 msgstr "يفضل إجادة لغة ثانية (نطقا وكتابة)"
 
+#, fuzzy
+#| msgid "Profit"
+msgid "Profile"
+msgstr "أرباح"
+
 msgid "Profit"
 msgstr "أرباح"
 
@@ -5340,6 +5263,11 @@ msgstr "مرجع"
 
 msgid "Reference ID"
 msgstr "الرقم المرجعي"
+
+#, fuzzy
+#| msgid "Reload page"
+msgid "Refresh page"
+msgstr "إعادة تحميل الصفحة"
 
 msgid "Regent Markets Group Ltd. renames to Binary Ltd."
 msgstr "مجموعة ريجنت ماركتس المحدودة أصبح اسمها بيناري المحدودة."
@@ -5516,9 +5444,6 @@ msgstr "مخاطر المنتجات الاستثمارية"
 msgid "Run daily payments reports and report suspected fraud"
 msgstr "عمل تقارير يومية للمدفوعات وتقرير اشتباه الاحتيال"
 
-msgid "Run the installation file and follow the instructions."
-msgstr "قم بتشغيل ملف التثبيت واتبع التعليمات."
-
 msgid "Russia"
 msgstr "روسيا"
 
@@ -5572,6 +5497,11 @@ msgstr "السؤال السري"
 
 msgid "Security"
 msgstr "الأمان"
+
+#, fuzzy
+#| msgid "Account Limits"
+msgid "Security & Limits"
+msgstr "حدود الحساب"
 
 msgid "Security Disclaimer"
 msgstr "إخلاء المسئولية الأمنية"
@@ -5693,6 +5623,11 @@ msgstr "قم بالتسجيل لاختبار منصتنا"
 msgid "Sign me up"
 msgstr "التسجيل"
 
+#, fuzzy
+#| msgid "Sign me up"
+msgid "Sign out"
+msgstr "التسجيل"
+
 msgid "Sign up as a tester and look for Binary.com-related projects."
 msgstr "سجل كمختبر وابحث عن المشاريع المتعلقة ب Binary.com."
 
@@ -5795,26 +5730,11 @@ msgstr "وقت البدء"
 msgid "Start Trading"
 msgstr "بدء التداول"
 
-#, fuzzy
-#| msgid "Start Trading Now"
-msgid "Start Trading with MetaTrader 5"
-msgstr "ابدأ التداول الآن"
-
 msgid "Start learning"
 msgstr "ابدأ التعلم"
 
 msgid "Start time"
 msgstr "وقت البدء"
-
-#, fuzzy
-#| msgid "Start Trading Now"
-msgid "Start trading with your Demo Account"
-msgstr "ابدأ التداول الآن"
-
-#, fuzzy
-#| msgid "Start Trading Now"
-msgid "Start trading with your Real Account"
-msgstr "ابدأ التداول الآن"
 
 msgid "State/Province"
 msgstr "الولاية/المقاطعة"
@@ -5943,12 +5863,6 @@ msgstr "الشروط والأحكام التكميلية للمنتجات الم
 #| msgid "Supporting the Group’s global recruiting and talent management needs"
 msgid "Supporting the Group's global recruiting and talent management needs"
 msgstr "دعم مجموعة من الموظفين حول العالم وإدارة احتياجات الموهوبين"
-
-msgid "Take advantage of numerous benefits, including:"
-msgstr "الإستفادة من فوائد عديدة, بما في ذلك:"
-
-msgid "Take your trading to the next level through this powerful interface, recognised as the benchmark standard worldwide."
-msgstr "قم بترقية مستوى التداول الخاص بك لمستوى أعلى من خلال هذه الواجهة القوية, والمعروفة كمعيار قياسي في جميع أنحاء العالم."
 
 msgid "Talk to us"
 msgstr "تكلم معنا"
@@ -6410,7 +6324,7 @@ msgid "The maximum number of tokens (%1) has been reached."
 msgstr "لقد تم الوصول إلى الحد الأقصى لعدد الرموز المميزة (%1)."
 
 msgid "The page you requested could not be found. Either it no longer exists or the address is wrong. Please check for any typos."
-msgstr ""
+msgstr "الصفحة المطلوبة غير موجودة. إما أنها لم تعد موجودة أو أن رابط الصفحة خاطئ. برجاء التأكد من أي أخطاء مطبعية."
 
 msgid "The patent means Regent Markets is the recognised pioneer of binary betting. The patent helps protect our innovations."
 msgstr "براءة الإختراع تعني أن ريجنت ماركتس رائدة الرهانات المالية للثنائيات. و براءة الإختراع تلك تساعد على حماية أفكارنا و ابتكاراتنا."
@@ -6655,6 +6569,11 @@ msgstr "الخميس"
 msgid "Tick"
 msgstr "حركة"
 
+#, fuzzy
+#| msgid "Tick Trade App"
+msgid "TickTrade App"
+msgstr "علامة تطبيق التداول"
+
 msgid "Tier"
 msgstr "المستوى"
 
@@ -6693,20 +6612,6 @@ msgstr "To begin Binary option trading, you will first need to read all these do
 
 msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "لتغيير اسمك أو تاريخ ميلادك أو بلد إقامتك أو البريد الإلكتروني يرجى الاتصال <a href=\"%1\">بخدمة العملاء</a>."
-
-msgid "To create a Real account for MetaTrader, you need to authenticate your Binary account:"
-msgstr "لإنشاء حساب حقيقي للميتاتريدر, أنت بحاجة لتوثيق حسابك في Binary:"
-
-msgid "To create a real account for MetaTrader, <a href=\"%1\">upgrade to %2 real money account</a>."
-msgstr "لإنشاء حساب حقيقي للميتاتريدر, <a href=\"%1\">قم بالتحديث ل %2 حساب مال حقيق</a>."
-
-#, fuzzy
-#| msgid "You are currently logged in to your virtual money account (%2)."
-msgid "To create a real account for MetaTrader, switch to your %1 real money account."
-msgstr "أنت حاليا قمت بتسجيل الدخول الى حساب أموالك الافتراضية (%2)."
-
-msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
-msgstr "للإيداع أو السحب من حساب الميتاتريدر الحقيقي الخاص بك, قم بالتحول إلى حسابك الحقيقي في Binary.com."
 
 msgid "To enable cookies, follow the instructions below for the browser version that you are using."
 msgstr "لتمكين ملفات تعريف الارتباط اتبع التعليمات أدناه لنسخة المتصفح التى تستخدمها."
@@ -6819,7 +6724,7 @@ msgstr "تعامل في"
 
 #, fuzzy
 #| msgid "Your transaction reference is"
-msgid "Transaction performed by"
+msgid "Transaction performed by %1 (App ID: %2)"
 msgstr "الرقم المرجعي لمعاملتك هو"
 
 msgid "Transfer"
@@ -6836,9 +6741,6 @@ msgstr "التحويل إلى معرف تسجيل الدخول"
 
 msgid "Transfer to Payment Agent"
 msgstr "التحويل لوكيل دفع"
-
-msgid "Transfer to client"
-msgstr "التحويل لعميل"
 
 msgid "Translate the ongoing business needs of the company into a suitable IT infrastructure"
 msgstr "ترجمة احتياجات الأعمال الجارية للشركة إلى بنية تحتية مناسبة لتكنولوجيا المعلومات"
@@ -7008,11 +6910,6 @@ msgstr "رمز التحقق غير صحيح."
 msgid "Verification token"
 msgstr "رمز التحقق"
 
-#, fuzzy
-#| msgid "Verify new password"
-msgid "Verify Main Password"
-msgstr "قم بالتأكيد على كلمة المرور الجديدة"
-
 msgid "Verify new password"
 msgstr "قم بالتأكيد على كلمة المرور الجديدة"
 
@@ -7048,14 +6945,8 @@ msgstr "اطّلع على ساعات عمل الأسواق التي يمكن ت�
 msgid "View your financial assessment settings."
 msgstr "عرض إعدادات التقييم المالي الخاصة بك."
 
-msgid "View your historical transactions."
-msgstr "اطلع على كشف حساب تداولاتك السابقة."
-
 msgid "View your login history."
 msgstr "عرض محفوظات تسجيل الدخول الخاص بك."
-
-msgid "View your open positions."
-msgstr "عرض الصفقات المفتوحة."
 
 msgid "View your personal information."
 msgstr "عرض معلوماتك الشخصية."
@@ -7065,9 +6956,6 @@ msgstr "اطلع على كشف الحساب الخاص بك"
 
 msgid "View your trading and withdrawal limits."
 msgstr "عرض حدود التداول والسحب الخاصة بك."
-
-msgid "View your trading profit/loss."
-msgstr "اطّلع على الربح/الخسارة بتداولك."
 
 msgid "Virtual Account"
 msgstr "حساب افتراضي"
@@ -7259,9 +7147,6 @@ msgstr "أسبوعي"
 
 msgid "Weekend quotes"
 msgstr "أسعار عطلة نهاية الأسبوع"
-
-msgid "Welcome!"
-msgstr "مرحباً!"
 
 msgid "Well-developed organizational, administrative, and/or accounting skills"
 msgstr "مهارات تنظيمية وإدارية، و/أو محاسبة متطورة"
@@ -7466,24 +7351,6 @@ msgstr "فيما يتعلق بتتبع الإحالات الخاصة بك الت
 msgid "Withdraw"
 msgstr "سحب"
 
-#, fuzzy
-#| msgid "Withdraw"
-msgid "Withdraw from"
-msgstr "سحب"
-
-#, fuzzy
-#| msgid "Transfer from another account"
-msgid "Withdraw from MetaTrader account"
-msgstr "التحويل من حساب آخر"
-
-msgid "Withdraw funds from your MetaTrader account into your Binary account:"
-msgstr "قم بسحب الأموال من حسابك في ميتاتريدر إلى حسابك في Binary:"
-
-#, fuzzy
-#| msgid "Withdraw"
-msgid "Withdraw to"
-msgstr "سحب"
-
 msgid "Withdraw: %1 working day"
 msgstr "سحب: %1 يوم عمل"
 
@@ -7496,10 +7363,8 @@ msgstr "السحب: لا ينطبق"
 msgid "Withdrawal Limits"
 msgstr "حدود السحب"
 
-#, fuzzy
-#| msgid "Withdrawal via Bank Transfer"
-msgid "Withdrawal is done. Transaction ID:"
-msgstr "السحب عن طريق تحويل بنكى"
+msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
+msgstr "السحب غير متاح على حسابك في الوقت الراهن. برجاء الإتصال ب %1 لإعادة فتحه."
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\">here</a> for further information."
@@ -7578,12 +7443,6 @@ msgstr "يجب عليك أنت والتطبيق الخاص بك أيضاً ال�
 msgid "You are advised that the Binary Options offered by %1 are not traded under the rules of any recognised, designated or regulated exchange. Consequently, engaging in Binary Options trading may expose you to substantially greater risks than investments which are so traded."
 msgstr "ننصحك إلى أن الخيارات الثنائية التي تقدمها %1 لا يتم تداولها بموجب قواعد أي تبادل معروفة أو محددة أو منظمة. ونتيجة لذلك المشاركة في تداول الخيارات الثنائية قد يعرضك لمخاطر أكبر من الاستثمارات التي يتم تداولها."
 
-msgid "You are currently logged in to your real money account with %1 (%2)."
-msgstr "أنت حاليا قمت بتسجيل الدخول إلى حساب المال الحقيقي الخاص بك مع % 1 (% 2)."
-
-msgid "You are currently logged in to your virtual money account (%2)."
-msgstr "أنت حاليا قمت بتسجيل الدخول الى حساب أموالك الافتراضية (%2)."
-
 msgid "You are in default or breach of any covenant, obligation or condition contained in this Agreement, and if such default is not cured within seven days of receipt of written notice from the Company;"
 msgstr "أنت قصرت أو أخللت بأي عهد أو إلتزام أو شرط وارد في هذه الإتفاقية, وإذا لم يتم معالجة مثل هذا التقصير في غضون 7 أيام من استلام إشعار خطي من الشركة;"
 
@@ -7615,6 +7474,12 @@ msgstr "يمكنك اختيار عوائد من 1 دولار إلى 50 ألف د
 
 msgid "You can close your trade before expiry to lock in profits."
 msgstr "يمكنك أن تغلق معاملتك قبل تاريخ الأنتهاء لتحتفظ بالأرباح."
+
+msgid "You can request more virtual money if your virtual balance falls below JPY 100,000."
+msgstr "بإمكانك طلب المزيد من المال الإفتراضي في حال انخفض رصيدك إلى أدنى من 100.000 ين ياباني."
+
+msgid "You can request more virtual money if your virtual balance falls below USD 1,000.00."
+msgstr "بإمكانك طلب المزيد من المال الإفتراضي في حال انخفض رصيدك الإفتراضي إلى أدنى من 1.000 دولار أمريكي."
 
 msgid "You can sell back long-term trades at any time to profit from changing market conditions."
 msgstr "يمكنك أن تقوم بإعادة بيع المعاملات طويلة الأجل في أي وقت لتربح من أحوال السوق المتغيرة."
@@ -7835,12 +7700,6 @@ msgstr "ستجد إجابات عن معظم أسئلتك على صفحة <a href
 msgid "You're using a Virtual Account."
 msgstr "أنت تستخدم حساب افتراضي."
 
-msgid "Your %1 account is unavailable. For any questions please contact %2."
-msgstr "حسابك 1% غير متاح. لأي استفسارات برجاء الاتصال ب 2%."
-
-msgid "Your %1 accounts are unavailable. For any questions please contact %2."
-msgstr "حساباتك 1% غير متاحة. لأي استفسارات برجاء الاتصال ب 2%."
-
 msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other currency)."
 msgstr "حد السحب 1% الخاص بك لليوم هو حالياً 2% 3% (أو ما يعادله من العملة الأخرى)."
 
@@ -7849,11 +7708,6 @@ msgstr "سيتسلم عميلك إشعار إلكتروني ليعلمه أنه 
 
 msgid "Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on %1 and in that event, opens an account with us."
 msgstr "سيتم تخزين معرف الدخول (ID) الخاص بك في ملف تعريف الارتباط وتحديد كل مرة ينقر عميل محتمل على رابط الانتساب الخاص بك وينتقل إلى %1 وبذلك، يفتح حساب معنا."
-
-#, fuzzy
-#| msgid "First Name"
-msgid "Your Name"
-msgstr "الإسم الأول"
 
 msgid "Your Property"
 msgstr "الملكية الخاصة بك"
@@ -7864,11 +7718,11 @@ msgstr "حسابك لا يوجد لديه دخول/خروج نشط."
 msgid "Your account has no trading activity."
 msgstr "حسابك لا يوجد لديه تداول نشط."
 
+msgid "Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact %1."
+msgstr "حسابك معلق حالياً. السحب فقط هو المسموح به. لمزيد من المعلومات, برجاء الإتصال ب %1."
+
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "تم توثيق حسابك بالكامل وحد السحب الخاص بك تم رفعه."
-
-msgid "Your account is fully authenticated. You can view your %1trading limits here"
-msgstr "تم توثيق حسابك بشكل كامل. يمكنك رؤية حدود التداول 1% الخاصة بك هنا"
 
 msgid "Your account is fully authenticated. You can view your <a class=\"pjaxload\" href=\"%1\">trading limits here</a>."
 msgstr "تم توثيق حسابك بالكامل. يمكنك أن تطلع على <a class=\"pjaxload\" href=\"%1\">حدود تداولك هنا</a>."
@@ -7880,9 +7734,6 @@ msgstr "الحساب الخاص بك غير موثق بشكل كامل. يرجى
 
 msgid "Your account is not fully authenticated. Please visit the <a href=\"%1\">authentication</a> page for more information."
 msgstr "الحساب الخاص بك غير موثق بشكل كامل. يرجى زيارة صفحة<a href=\"%1\"> التوثيق </a>لمزيد من المعلومات."
-
-msgid "Your account is registered as a Payment Agent."
-msgstr "حسابك مسجل بوصفه وكيل دفع."
 
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "لا ينبغي أن تستخدم حسابك كوسيلة مصرفية وينبغي استخدام الودائع فقط بهدف شراءالعقود. الشركة ليست مؤسسة مالية، ولن يتلقى العملاء فوائد على الودائع. إذا قمت بعمليات إيداع وسحب متكررة دون شراء عقود تناسب تلك العمليات، فإننا نحتفظ بالحق في الخصم من حساباتك، دون إشعار مسبق، أي رسوم مصرفية قمنا بتكبدها قبل اغلاق الحساب."
@@ -7929,11 +7780,6 @@ msgstr "أموالك دائماً في أمان مع %1. حيث يتم حفظه�
 
 msgid "Your name, email address and contact number"
 msgstr "اسمك، وعنوان بريدك الإلكتروني ورقم الاتصال بك"
-
-#, fuzzy
-#| msgid "Your account has been debited with %1 %2"
-msgid "Your new account has been created."
-msgstr "تم خصم 1% 2% من حسابك"
 
 msgid "Your password and login ID are unique and passwords are hashed so that not even %1 staff can read them. This is the reason why we cannot retrieve your password and have to issue you with a new one to your email address if you cannot recall it."
 msgstr "كلمة مرورك ومعرف الدخول فريدين من نوعهما ويتم تجزئة كلمات المرور بحيث لا يستطيع أحد حتى موظفي %1 أن يقرأها. وهذا سبب عدم قدرتنا على استعادة كلمة المرور الخاصة بك ويجب أن نصدر واحدة جديدة ونرسلها لبريدك الإلكتروني إذا لم تستطع أن تتذكرها."
@@ -8953,7 +8799,7 @@ msgid "Online Trading platform for binary options on Forex, Indices, Commodities
 msgstr "منصة التداول للخيارات الثنائية فى العملات والمؤشرات والسلع والمؤشرات الذكية"
 
 msgid "404"
-msgstr ""
+msgstr "404"
 
 #, fuzzy
 #| msgid "Why Us?"
@@ -9011,19 +8857,254 @@ msgstr "تحويل قام به وكيل الدفع"
 msgid "Sharp Prices. Smart Trading."
 msgstr "أسعار دقيقة. للتداول بذكاء."
 
-#, fuzzy
-#| msgid "Webtrader"
-msgid "MetaTrader"
-msgstr "ويب تريدر(Webtrader)"
-
 msgid "Account Details"
 msgstr "تفاصيل الحساب"
 
 msgid "Terms and Conditions Approval"
 msgstr "لموافقة على الشروط والأحكام"
 
-msgid "Trading with MetaTrader 5"
-msgstr "تداول مع ميتاتريدر 5"
+#~ msgid "%1 %2 (\"API\") Terms and Conditions"
+#~ msgstr "1% 2% (\"واجهة برمجة التطبيقات\") الشروط والأحكام"
+
+#~ msgid "%1’s <a href=\"%2\">Volatility Indices</a> are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
+#~ msgstr "%1 <a href=\"%2\">مؤشرات التذبذب</a> متاحة الآن 24/7 على الميتاتريدر 5. سيتم إطلاق أصول إضافية قريباً جداً."
+
+#~ msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
+#~ msgstr "<strong>أدوات متطورة للتحليلات الفنية والأساسية,</strong> بما في ذلك المؤشرات, الرسوم البيانية, والمزيد."
+
+#~ msgid "<strong>Highly competitive spreads with no commission.</strong>"
+#~ msgstr "<strong>هوامش تنافسية للغاية بدون عمولة.</strong>"
+
+#~ msgid "<strong>Subscriptions to a wide range of Expert Advisors,</strong> automated trading applications from the MetaTrader Market."
+#~ msgstr "<strong>اشتراكات لمجموعة واسعة من خبراء المستشارين,</strong> تطبيقات تداول أوتوماتيكية أسواق الميتاتريدر."
+
+#, fuzzy
+#~| msgid "Account Opening"
+#~ msgid "Account Type"
+#~ msgstr "فتح حساب"
+
+#~ msgid "App ID"
+#~ msgstr "معرف التطبيق"
+
+#~ msgid "Click the button below to download MetaTrader."
+#~ msgstr "أضغط على الزر أدناه لتحميل الميتاتريدر."
+
+#, fuzzy
+#~| msgid "Congratulations! <br /> You have won the contract!"
+#~ msgid "Congratulations! Your account has been created."
+#~ msgstr "تهانينا <br />لقد فزت بالعقد!"
+
+#~ msgid "Create a MetaTrader account to trade on the MetaTrader 5 platform."
+#~ msgstr "أنشيء حساب ميتاتريدر للتداول على منصة ميتاتريدر 5."
+
+#~ msgid "Demo"
+#~ msgstr "تجريبي"
+
+#, fuzzy
+#~| msgid "Open Account"
+#~ msgid "Demo Account"
+#~ msgstr "يفتح حساب"
+
+#, fuzzy
+#~| msgid "Deposit of"
+#~ msgid "Deposit from"
+#~ msgstr "إيداع"
+
+#~ msgid "Deposit funds into your MetaTrader account from your Binary account:"
+#~ msgstr "إيداع الأموال في حساب ميتاتريدر الخاص بك من حسابك في Binary:"
+
+#~ msgid "Deposit is done. Transaction ID:"
+#~ msgstr "تم الإيداع. معرف المعاملة:"
+
+#, fuzzy
+#~| msgid "Deposit of"
+#~ msgid "Deposit to"
+#~ msgstr "إيداع"
+
+#~ msgid "Deposit to MetaTrader account"
+#~ msgstr "الإيداع في حساب الميتاتريدر"
+
+#, fuzzy
+#~| msgid "Download for Windows"
+#~ msgid "Download MetaTrader"
+#~ msgstr "تحميل لنظام التشغيل Windows"
+
+#, fuzzy
+#~| msgid "Download for Windows"
+#~ msgid "Download MetaTrader for Windows"
+#~ msgstr "تحميل لنظام التشغيل Windows"
+
+#~ msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader’s website, please select “%1” from the list of available brokers."
+#~ msgstr "إذا كنت قد قمت بتحميل منصة ميتاتريدر 5 مسبقاً ومباشرة من موقع الميتاتريدر, فبرجاء اختيار \"%1\" من قائمة الوسطاء المتاحين."
+
+#~ msgid "Investor Password (read-only access)"
+#~ msgstr "كلمة مرور المستثمر (الوصول للقراءة فقط)"
+
+#, fuzzy
+#~| msgid "Average"
+#~ msgid "Leverage"
+#~ msgstr "متوسط"
+
+#, fuzzy
+#~| msgid "Further Instructions"
+#~ msgid "Linux Instructions"
+#~ msgstr "مزيد من التعليمات"
+
+#~ msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
+#~ msgstr "تسجيل الدخول للتطبيق يكون باستخدام رقم حساب الميتاتريدر الخاص بك وكلمة مرور حساب الميتاتريدر الخاص بك."
+
+#~ msgid "Login"
+#~ msgstr "تسجيل الدخول"
+
+#, fuzzy
+#~| msgid "Specific Instructions"
+#~ msgid "MacOS Instructions"
+#~ msgstr "تعليمات خاصة"
+
+#~ msgid "Main Password (trading access)"
+#~ msgstr "كلمة المرور الرئيسية (الوصول للتداول)"
+
+#~ msgid "MetaTrader Accounts Management"
+#~ msgstr "إدارة حسابات الميتاتريدر"
+
+#, fuzzy
+#~| msgid "Verify new password"
+#~ msgid "MetaTrader Main Password"
+#~ msgstr "قم بالتأكيد على كلمة المرور الجديدة"
+
+#~ msgid "Now Introducing MetaTrader 5 on %1"
+#~ msgstr "الآن تقديم ميتاتريدر 5 على %1"
+
+#~ msgid "Run the installation file and follow the instructions."
+#~ msgstr "قم بتشغيل ملف التثبيت واتبع التعليمات."
+
+#, fuzzy
+#~| msgid "Start Trading Now"
+#~ msgid "Start Trading with MetaTrader 5"
+#~ msgstr "ابدأ التداول الآن"
+
+#, fuzzy
+#~| msgid "Start Trading Now"
+#~ msgid "Start trading with your Demo Account"
+#~ msgstr "ابدأ التداول الآن"
+
+#, fuzzy
+#~| msgid "Start Trading Now"
+#~ msgid "Start trading with your Real Account"
+#~ msgstr "ابدأ التداول الآن"
+
+#~ msgid "Take advantage of numerous benefits, including:"
+#~ msgstr "الإستفادة من فوائد عديدة, بما في ذلك:"
+
+#~ msgid "Take your trading to the next level through this powerful interface, recognised as the benchmark standard worldwide."
+#~ msgstr "قم بترقية مستوى التداول الخاص بك لمستوى أعلى من خلال هذه الواجهة القوية, والمعروفة كمعيار قياسي في جميع أنحاء العالم."
+
+#~ msgid "To create a Real account for MetaTrader, you need to authenticate your Binary account:"
+#~ msgstr "لإنشاء حساب حقيقي للميتاتريدر, أنت بحاجة لتوثيق حسابك في Binary:"
+
+#~ msgid "To create a real account for MetaTrader, <a href=\"%1\">upgrade to %2 real money account</a>."
+#~ msgstr "لإنشاء حساب حقيقي للميتاتريدر, <a href=\"%1\">قم بالتحديث ل %2 حساب مال حقيق</a>."
+
+#, fuzzy
+#~| msgid "You are currently logged in to your virtual money account (%2)."
+#~ msgid "To create a real account for MetaTrader, switch to your %1 real money account."
+#~ msgstr "أنت حاليا قمت بتسجيل الدخول الى حساب أموالك الافتراضية (%2)."
+
+#~ msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
+#~ msgstr "للإيداع أو السحب من حساب الميتاتريدر الحقيقي الخاص بك, قم بالتحول إلى حسابك الحقيقي في Binary.com."
+
+#, fuzzy
+#~| msgid "Verify new password"
+#~ msgid "Verify Main Password"
+#~ msgstr "قم بالتأكيد على كلمة المرور الجديدة"
+
+#, fuzzy
+#~| msgid "Withdraw"
+#~ msgid "Withdraw from"
+#~ msgstr "سحب"
+
+#, fuzzy
+#~| msgid "Transfer from another account"
+#~ msgid "Withdraw from MetaTrader account"
+#~ msgstr "التحويل من حساب آخر"
+
+#~ msgid "Withdraw funds from your MetaTrader account into your Binary account:"
+#~ msgstr "قم بسحب الأموال من حسابك في ميتاتريدر إلى حسابك في Binary:"
+
+#, fuzzy
+#~| msgid "Withdraw"
+#~ msgid "Withdraw to"
+#~ msgstr "سحب"
+
+#, fuzzy
+#~| msgid "Withdrawal via Bank Transfer"
+#~ msgid "Withdrawal is done. Transaction ID:"
+#~ msgstr "السحب عن طريق تحويل بنكى"
+
+#, fuzzy
+#~| msgid "First Name"
+#~ msgid "Your Name"
+#~ msgstr "الإسم الأول"
+
+#, fuzzy
+#~| msgid "Your account has been debited with %1 %2"
+#~ msgid "Your new account has been created."
+#~ msgstr "تم خصم 1% 2% من حسابك"
+
+#, fuzzy
+#~| msgid "Webtrader"
+#~ msgid "MetaTrader"
+#~ msgstr "ويب تريدر(Webtrader)"
+
+#~ msgid "Trading with MetaTrader 5"
+#~ msgstr "تداول مع ميتاتريدر 5"
+
+#, fuzzy
+#~| msgid "Chart"
+#~ msgid "Charts"
+#~ msgstr "رسم بياني"
+
+#~ msgid "LOG OUT"
+#~ msgstr "تسجيل الخروج"
+
+#~ msgid "Make a deposit or withdraw."
+#~ msgstr "عمل إيداع أو سحب."
+
+#~ msgid "Manage your account access and security settings."
+#~ msgstr "إدارة الوصول لحسابك وإعدادات الأمان."
+
+#~ msgid "Transfer to client"
+#~ msgstr "التحويل لعميل"
+
+#~ msgid "View your historical transactions."
+#~ msgstr "اطلع على كشف حساب تداولاتك السابقة."
+
+#~ msgid "View your open positions."
+#~ msgstr "عرض الصفقات المفتوحة."
+
+#~ msgid "View your trading profit/loss."
+#~ msgstr "اطّلع على الربح/الخسارة بتداولك."
+
+#~ msgid "Welcome!"
+#~ msgstr "مرحباً!"
+
+#~ msgid "You are currently logged in to your real money account with %1 (%2)."
+#~ msgstr "أنت حاليا قمت بتسجيل الدخول إلى حساب المال الحقيقي الخاص بك مع % 1 (% 2)."
+
+#~ msgid "You are currently logged in to your virtual money account (%2)."
+#~ msgstr "أنت حاليا قمت بتسجيل الدخول الى حساب أموالك الافتراضية (%2)."
+
+#~ msgid "Your %1 account is unavailable. For any questions please contact %2."
+#~ msgstr "حسابك 1% غير متاح. لأي استفسارات برجاء الاتصال ب 2%."
+
+#~ msgid "Your %1 accounts are unavailable. For any questions please contact %2."
+#~ msgstr "حساباتك 1% غير متاحة. لأي استفسارات برجاء الاتصال ب 2%."
+
+#~ msgid "Your account is fully authenticated. You can view your %1trading limits here"
+#~ msgstr "تم توثيق حسابك بشكل كامل. يمكنك رؤية حدود التداول 1% الخاصة بك هنا"
+
+#~ msgid "Your account is registered as a Payment Agent."
+#~ msgstr "حسابك مسجل بوصفه وكيل دفع."
 
 #, fuzzy
 #~| msgid "<span>All durations:</span> from 10 seconds to 365 days."
@@ -9318,9 +9399,6 @@ msgstr "تداول مع ميتاتريدر 5"
 
 #~ msgid "The future of trading on %1"
 #~ msgstr "مستقبل التداول في 1%"
-
-#~ msgid "Tick Trade App"
-#~ msgstr "علامة تطبيق التداول"
 
 #~ msgid "Tick Trade on GitHub"
 #~ msgstr "علامة التداول في جيت هب"
@@ -10035,9 +10113,6 @@ msgstr "تداول مع ميتاتريدر 5"
 #~ msgid "In what country do you want to offer your service"
 #~ msgstr "في أي بلد تود أن تقدم خدمتك"
 
-#~ msgid "Incorrect email or password."
-#~ msgstr "البريد الإلكتروني أو كلمة المرور غير صحيحة."
-
 #~ msgid "Indicator"
 #~ msgstr "مؤشر"
 
@@ -10145,9 +10220,6 @@ msgstr "تداول مع ميتاتريدر 5"
 
 #~ msgid "Login to this account has been temporarily disabled due to system maintenance. Please try again in 30 minutes."
 #~ msgstr "تم تعطيل الدخول لهذا الحساب مؤقتاً حيث تجرى صيانة للنظام. يرجى المحاولة مرة أخرى فى خلال 30 دقيقة."
-
-#~ msgid "Lost Password?"
-#~ msgstr "كلمة مرور مفقودة؟"
 
 #~ msgid "Low"
 #~ msgstr "منخفض"
@@ -10388,9 +10460,6 @@ msgstr "تداول مع ميتاتريدر 5"
 
 #~ msgid "Relative Strength Index"
 #~ msgstr "مؤشر القوة النسبية"
-
-#~ msgid "Reload page"
-#~ msgstr "إعادة تحميل الصفحة"
 
 #~ msgid "Remove Overlay"
 #~ msgstr "إزالة التراكبات"
@@ -15884,9 +15953,6 @@ msgstr "تداول مع ميتاتريدر 5"
 
 #~ msgid "Binary.com's Random Indices are the random 25 Index, Random 50 Index, Random 75 Index, and Random 100 Index and many more."
 #~ msgstr "المؤشرات العشوائية لـ Binary.com هي مؤشر random 25 ومؤشر Random 50 ومؤشر Random 75 ومؤشر Random 100 وغيرهم الكثير."
-
-#~ msgid "Get your free $10,000 virtual money"
-#~ msgstr "أحصل على أموال افتراضية بمبلغ 10000$ مجانا"
 
 #~ msgid "Join our community of 1,000,000+ traders"
 #~ msgstr "انضم إلى مجتمعنا البالغ 1,000,000+ من المتداولين"

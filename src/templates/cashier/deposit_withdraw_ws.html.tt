@@ -4,7 +4,7 @@
 
     <div id="deposit-withdraw-message" style="display:none">
       <p id="cashier-locked-message" class="messages">
-        [% l('Your cashier is locked as per your request - to unlock it, please click <a class="pjaxload" href="[_1]">here</a>.', request.url_for('/user/settings/securityws')) %]
+        [% l('Your cashier is locked as per your request - to unlock it, please click <a class="pjaxload" href="[_1]">here</a>.', request.url_for('/user/security/cashier_passwordws')) %]
       </p>
       <p id="check-email-message" class="messages">[% l('For added security, please check your email to retrieve the verification token.') %]</p>
       <p id="choose-currency-message" class="messages">[% l('Please choose which currency you would like to transact in.') %]</p>
@@ -19,9 +19,15 @@
     </div>
 
     <div id="deposit-withdraw-error" class="error-msg" style="display:none">
-      <p id="withdrawal-locked-error" class="error_messages">
-        [% l('Withdrawal is locked, please <a class="pjaxload" href="[_1]">contact us</a> for more information.', request.url_for('/contact')) %]
-      </p>
+        <p id="withdrawal-locked-error" class="error_messages">
+            [% l('Withdrawal is locked, please <a class="pjaxload" href="[_1]">contact us</a> for more information.', request.url_for('/contact')) %]
+        </p>
+        <p id="deposit-locked-error" class="error_messages">
+            [% l('Deposit is locked, please <a class="pjaxload" href="[_1]">contact us</a> for more information.', request.url_for('/contact')) %]
+        </p>
+        <p id="cashier-locked-error" class="error_messages">
+            [% l('Cashier is locked, please <a class="pjaxload" href="[_1]">contact us</a> for more information.', request.url_for('/contact')) %]
+        </p>
       <p id="custom-error" class="error_messages"></p>
     </div>
 

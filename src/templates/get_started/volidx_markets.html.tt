@@ -6,7 +6,6 @@
         <div class="gr-row">
             <div class="gr-12">
                 <div class="subsection">
-
                     <h2>
                         [% l("How to trade the Volatility Indices markets?") %]
                     </h2>
@@ -51,10 +50,9 @@
                     </li>
                 </ul>
             </div>
-            <div class="gr-row">
-                <div class="gr-12">
+            <div class="gr-12">
+                <div class="gr-padding-10">
                     <div class="subsection">
-
                         <h2 class="gr-padding-10">
                             [% l("Continuous Indices") %]
                         </h2>
@@ -76,10 +74,9 @@
                     </div>
                 </div>
             </div>
-            <div class="gr-row">
-                <div class="gr-12">
+            <div class="gr-12">
+                <div class="gr-padding-10">
                     <div class="subsection">
-
                         <h2>
                             [% l("Daily Reset Indices") %]
                         </h2>

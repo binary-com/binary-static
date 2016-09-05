@@ -1,28 +1,49 @@
 var Cashier = (function() {
     "use strict";
 
-    var lock_withdrawal = function(withdrawal_locked) {
+    var lock_cashier = function(withdrawal_locked, lock_type) {
       if (withdrawal_locked === 'locked') {
-        $.each($('.withdraw'), function(){
-          var $a = $(this).parent();
-          // use replaceWith, to disable previously catched pjax event
-          $a.replaceWith($('<a/>', {class: $a.attr('class').replace('pjaxload') + ' button-disabled', html: $a.html()}));
+        $.each($('.' + lock_type), function(){
+            replace_with_disabled_button($(this).parent());
         });
-        $('.notice-msg').removeClass('invisible').parent().removeClass('invisible');
       }
     };
 
-    var check_withdrawal_locked = function() {
-      if (sessionStorage.getItem('withdrawal_locked') === 'locked') {
-        Cashier.lock_withdrawal('locked');
-      } else if (!sessionStorage.getItem('withdrawal_locked')) {
-        BinarySocket.send({"get_account_status": "1", "passthrough":{"dispatch_to":"Cashier"}});
-      }
+    var check_locked = function() {
+        if (TUser.get().is_virtual || page.client.is_virtual()) return;
+        if (page.client_status_detected('cashier_locked')) {
+            lock_cashier('locked', 'deposit, .withdraw');
+        }
+        else if (page.client_status_detected('withdrawal_locked')) {
+            lock_cashier('locked', 'withdraw');
+        }
+        else if (page.client_status_detected('unwelcome')) {
+            lock_cashier('locked', 'deposit');
+        }
+        else if (!sessionStorage.getItem('client_status', 'any')) {
+            BinarySocket.send({"get_account_status": "1", "passthrough":{"dispatch_to":"Cashier"}});
+        }
+    };
+
+    var check_virtual_top_up = function() {
+        if (TUser.get().is_virtual || page.client.is_virtual()) {
+            if ((TUser.get().residence !== 'jp' && TUser.get().balance > 1000) || (TUser.get().residence === 'jp' && TUser.get().balance > 100000)) {
+                replace_with_disabled_button('#VRT_topup_link');
+            }
+        }
+    };
+
+    var replace_with_disabled_button = function(elementToReplace) {
+        var $a = $(elementToReplace);
+        if ($a.length === 0) return;
+        // use replaceWith, to disable previously caught pjax event
+        $a.replaceWith($('<a/>', {class: $a.attr('class').replace('pjaxload') + ' button-disabled', html: $a.html()}));
     };
 
     return {
-        lock_withdrawal: lock_withdrawal,
-        check_withdrawal_locked: check_withdrawal_locked
+        lock_cashier: lock_cashier,
+        check_locked: check_locked,
+        check_virtual_top_up: check_virtual_top_up
     };
 }());
 
@@ -30,9 +51,10 @@ pjax_config_page("/cashier", function(){
     return {
         onLoad: function() {
           if (!/\/cashier\.html/.test(window.location.pathname) || !page.client.is_logged_in) {
-            return;
+              return;
           } else {
-            Cashier.check_withdrawal_locked();
+              Cashier.check_locked();
+              Cashier.check_virtual_top_up();
           }
         }
     };
@@ -47,7 +69,7 @@ pjax_config_page("/cashier/payment_methods", function(){
             if (!page.client.is_logged_in || page.client.is_virtual()) {
                 return;
             } else {
-                Cashier.check_withdrawal_locked();
+                Cashier.check_locked();
             }
         }
     };

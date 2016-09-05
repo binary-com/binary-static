@@ -4,7 +4,7 @@ pjax_config_page_require_auth("new_account/maltainvestws", function(){
       Content.populate();
       for (i = 0; i < page.user.loginid_array.length; i++){
         if (page.user.loginid_array[i].financial){
-          window.location.href = page.url.url_for('user/my_accountws');
+          window.location.href = page.url.url_for('trading');
           return;
         } else if (page.user.loginid_array[i].non_financial){
           $('.security').hide();
@@ -13,6 +13,7 @@ pjax_config_page_require_auth("new_account/maltainvestws", function(){
       handle_residence_state_ws();
       BinarySocket.send({residence_list:1});
       BinarySocket.send({get_settings:1});
+      BinarySocket.send({get_financial_assessment:1});
       $('#financial-form').submit(function(evt) {
         evt.preventDefault();
         if (FinancialAccOpeningUI.checkValidity()){

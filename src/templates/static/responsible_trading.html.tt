@@ -27,7 +27,7 @@
       [% l("Written limits and self-exclusion") %]
     </h2>
     <p>
-      [% l("[_1] provides you with the opportunity to either self-exclude or <a href='[_2]'>set limits on your trading activities</a> on this website. You may also <a href='[_3]'>contact us</a> to state the limits you wish to set via live chat, email or phone. Available limits are:", website_name, request.url_for("/user/settings/self_exclusionws"), request.url_for("contact")) %]
+      [% l("[_1] provides you with the opportunity to either self-exclude or <a href='[_2]'>set limits on your trading activities</a> on this website. You may also <a href='[_3]'>contact us</a> to state the limits you wish to set via live chat, email or phone. Available limits are:", website_name, request.url_for("/user/security/self_exclusionws"), request.url_for("contact")) %]
       <ol>
         <li>
           [% l("a limit on the amount you may trade within a specified period of time;") %]

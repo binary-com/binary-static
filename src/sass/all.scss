@@ -3,6 +3,7 @@
 /* common styles */
 @import 'reset';
 @import 'mixin';
+@import 'functions';
 @import 'common';
 @import 'animations';
 
@@ -44,7 +45,6 @@
 /* static pages */
 @import 'static/trade.scss';
 @import 'static/statement.scss';
-@import 'static/balance.scss';
 @import 'static/flex_table.scss';
 @import 'static/highcharts.scss';
 @import 'static/knowledge_test.scss';

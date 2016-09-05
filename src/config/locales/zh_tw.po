@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Taiwan) (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-23 06:22+0000\n"
+"PO-Revision-Date: 2016-09-01 12:13+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) <https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
 "Language: zh_tw\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.8-dev\n"
+"X-Generator: Weblate 2.8\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "「%1 API」是由%1建立和維護的編程例程、議定書、工具和資源集。您可通過%1交易平台使用已經註冊的應用程式介面。"
@@ -39,13 +39,15 @@ msgstr "$25,000 - $100,000"
 msgid "$250,000 - $1,000,000"
 msgstr "$250,000 - $1,000,000"
 
-msgid "%1 %2 (\"API\") Terms and Conditions"
-msgstr "%1 %2 (\"API\") 條款和條件"
-
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr " %1 %2已記入您的虛擬資金帳戶 %3"
 
 msgid "%1 Affiliate Program Terms and Conditions"
+msgstr "%1 聯盟計劃的條款和條件"
+
+#, fuzzy
+#| msgid "%1 Affiliate Program Terms and Conditions"
+msgid "%1 Application Program Interface (\"API\") Terms and Conditions"
 msgstr "%1 聯盟計劃的條款和條件"
 
 msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
@@ -269,9 +271,6 @@ msgstr "%1的輝煌發展歷程"
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "%1 每天處理超過百萬筆交易(包括虛擬帳戶)。"
 
-msgid "%1’s <a href=\"%2\">Volatility Indices</a> are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
-msgstr "%1的<a href=\"%2\">波動指數</a>如今可在MetaTrader 5全天候交易。我們將儘快推出更多資產。"
-
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(minimum duration, for example minimum 15 seconds)分鐘"
 
@@ -414,7 +413,7 @@ msgid "<a class='pjaxload' href='mailto:%1'>Contact Us</a>"
 msgstr "<a class='pjaxload' href='mailto:%1'>聯繫我們</a>"
 
 msgid "<a href=\"%1\">Return to trading page</a>"
-msgstr ""
+msgstr "<a href=\"%1\">返回交易頁面</a>"
 
 msgid "<a href='%1'>Founded</a> October 1999"
 msgstr "<a href='%1'>成立於</a>1999年10月"
@@ -477,21 +476,14 @@ msgstr "<strong>雙向報價</strong> - %1 提供交易與反向交易的報價�
 msgid "<strong>Additional business exposure:</strong> You will increase awareness of your services and generate new business."
 msgstr "<strong>額外業務推展:</strong> 您的服務將受推廣，生意蒸蒸日上。"
 
-msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
-msgstr "<strong>先進的基本與技術分析工具，</strong>包括指標、圖表和其它。"
-
-#, fuzzy
-#| msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgid "<strong>All durations:</strong> from 10 seconds to 365 days."
-msgstr "<strong>所有合約期限</strong> - 從10 秒到365 天。"
+msgstr "<strong>所有合約期限:</strong>從10 秒到365 天。"
 
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>所有合約期限</strong> - 從10 秒到365 天。"
 
-#, fuzzy
-#| msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
 msgid "<strong>All market conditions:</strong> up/down, touch/no-touch, stays in/goes out."
-msgstr "<strong>所有市場條件</strong> - 上漲/下跌，觸及/未觸及，範圍內/範圍外。"
+msgstr "<strong>所有市場條件:</strong>上漲/下跌，觸及/未觸及，範圍內/範圍外。"
 
 msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
 msgstr "<strong>所有市場條件</strong> - 上漲/下跌，觸及/未觸及，範圍內/範圍外。"
@@ -499,18 +491,14 @@ msgstr "<strong>所有市場條件</strong> - 上漲/下跌，觸及/未觸及�
 msgid "<strong>All markets, all conditions</strong> - trade currencies, indices and commodities in rising, falling, sideways, quiet and volatile markets."
 msgstr "<strong>所有市場，所有市場環境</strong> - 在各種市場環境（上漲、下跌、橫盤整理、交易清淡和震盪）中交易外匯、指數和商品。"
 
-#, fuzzy
-#| msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgid "<strong>All markets:</strong> currencies, stocks, indices, and commodities."
-msgstr "<strong>所有市場</strong> - 外匯、股指和商品。"
+msgstr "<strong>所有市場:</strong>外匯、股指和商品。"
 
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgstr "<strong>所有市場</strong> - 外匯、股指和商品。"
 
-#, fuzzy
-#| msgid "<strong>All payouts</strong> - from $1 to $50,000."
 msgid "<strong>All payouts:</strong> from $1 to $50,000."
-msgstr "<strong>所有賠付額</strong> - 從1 美元到10 萬美元。"
+msgstr "<strong>所有賠付額:</strong>從1 美元到10 萬美元。"
 
 msgid "<strong>All payouts</strong> - from $1 to $50,000."
 msgstr "<strong>所有賠付額</strong> - 從1 美元到10 萬美元。"
@@ -550,9 +538,6 @@ msgstr "<strong>高於/低於</strong> - 預測到期時市場價格是高於還
 
 msgid "<strong>Higher/Lower</strong> - where you can profit from the market ending higher or lower than a target price."
 msgstr "<strong>高於/低於</strong> - 通過預測到期時市場價格高於或低於目標價格而獲利。"
-
-msgid "<strong>Highly competitive spreads with no commission.</strong>"
-msgstr "<strong>高競爭性無佣金費點差交易。</strong>"
 
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and Payment Agents."
 msgstr "<strong>重要免責聲明</strong> - %1 與上述所有支付代理不存在附屬關係。各支付代理均以獨立服務提供商的身份運營，未由%1支持、擔保或經其它方式批准。客戶與支付代理的業務往來，風險自負。我們建議客戶在向支付代理匯款前，應事先查詢其信用狀況。在任何情況下，%1 都不對客戶與支付代理之間的交易承擔責任。"
@@ -637,9 +622,6 @@ msgstr "<strong>股指</strong> - 交易全球所有主要股票指數。"
 
 msgid "<strong>Stock indices</strong> - trade all major worldwide stock indices."
 msgstr "<strong>股指</strong> - 交易全球所有主要股票指數。"
-
-msgid "<strong>Subscriptions to a wide range of Expert Advisors,</strong> automated trading applications from the MetaTrader Market."
-msgstr "<strong>訂閱範圍廣泛的智能外匯全自動交易系統，</strong>是MetaTrader市場提供的自動化交易應用程式。"
 
 msgid "<strong>Take early profits</strong> - sell your long-term trades at market prices before they expire."
 msgstr "<strong>提前獲利</strong> - 合約到期前，可按市價賣出長線交易頭寸。"
@@ -765,6 +747,12 @@ msgstr "偏好并熱衷於使用Linux和開源平台"
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "主動尋求問題的對策，並向客戶端提交解決方案"
 
+msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+msgstr "水電煤帳單或銀行月結單掃描件（日期不得超過3個月）。"
+
+msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
+msgstr "顯示您名字和出生日期的護照、駕照（臨時或永久）或身份證的掃描件。文件須至少6個月有效期(從今天算起)。"
+
 msgid "A strong and passionate interest in Marketing and Advertising"
 msgstr "對市場行銷和廣告充滿熱忱，非常感興趣"
 
@@ -852,11 +840,11 @@ msgstr "帳戶管理及追蹤"
 msgid "Account Opening"
 msgstr "帳戶開立"
 
+msgid "Account Password"
+msgstr "帳戶密碼"
+
 msgid "Account Transfer"
 msgstr "帳戶轉帳"
-
-msgid "Account Type"
-msgstr "帳戶類型"
 
 msgid "Account balance: "
 msgstr "帳戶餘額： "
@@ -935,6 +923,9 @@ msgstr "協議限制"
 
 msgid "Agreement for documents"
 msgstr "Agreement for documents"
+
+msgid "All Partnership Options"
+msgstr "所有合作夥伴選項"
 
 msgid "All affiliate activities must be conducted in a professional and proper manner. You shall be expected to act with good faith and integrity in your relationships with your referrals, and always act in the best interests of your referrals."
 msgstr "所有聯盟活動必須以專業和適當的方式進行。 您須與推介人保持善意和誠信關係並以推介人最大利益行事。"
@@ -1048,9 +1039,6 @@ msgstr "任何年滿18 歲[已閱讀並同意%1 條款和條件]，且非居住�
 msgid "Anyone who has potential to grow or increase traffic to %1"
 msgstr "任何有潛力增長或提高 %1 流量之人士"
 
-msgid "App ID"
-msgstr "應用程式ID"
-
 msgid "Applications"
 msgstr "應用程式"
 
@@ -1071,6 +1059,9 @@ msgstr "合適性"
 
 msgid "Appropriateness Test"
 msgstr "合適性測試"
+
+msgid "Apps"
+msgstr "應用程式"
 
 msgid "Apr"
 msgstr "四月"
@@ -1339,6 +1330,9 @@ msgstr "Binary Ltd 的註冊辦事處地址為 <span itemprop='location'> 47 Esp
 msgid "Binary Options Basics"
 msgstr "二元期權基本知識"
 
+msgid "Binary Shop"
+msgstr "Binary商店"
+
 msgid "Binary Trading is simple to learn and to execute."
 msgstr "二元期權交易既簡單易學，也容易操作。"
 
@@ -1481,6 +1475,12 @@ msgstr "工作機會"
 msgid "Cashier"
 msgstr "收銀台"
 
+msgid "Cashier Password"
+msgstr "收銀台密碼"
+
+msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgstr "收銀台已鎖定。欲知詳細資訊，請<a class=\"pjaxload\" href=\"%1\">聯繫我們</a>。"
+
 msgid "Cashier password"
 msgstr "收銀台密碼"
 
@@ -1493,10 +1493,13 @@ msgstr "更改 API 端點"
 msgid "Change Password"
 msgstr "更改密碼"
 
-msgid "Chart"
-msgstr "圖表"
+msgid "Change the password used for deposits and withdrawals."
+msgstr "更改存款和取款密碼。"
 
-msgid "Charts"
+msgid "Change your main login password."
+msgstr "更改主要登入密碼。"
+
+msgid "Chart"
 msgstr "圖表"
 
 msgid "Check out our commission rates below:"
@@ -1588,9 +1591,6 @@ msgstr "Classification of assets requiring hedge"
 
 msgid "Click here to retry"
 msgstr "點選此處重試"
-
-msgid "Click the button below to download MetaTrader."
-msgstr "點擊以下按鈕下載MetaTrader。"
 
 msgid "Client classification"
 msgstr "客戶分類"
@@ -1723,9 +1723,6 @@ msgstr "Confirmation and understandings"
 
 msgid "Conflicts Policy"
 msgstr "衝突政策"
-
-msgid "Congratulations! Your account has been created."
-msgstr "恭喜! 您已成功開立帳戶。"
 
 msgid "Construction"
 msgstr "建構"
@@ -1883,9 +1880,6 @@ msgstr "開立新帳戶"
 msgid "Create New Token"
 msgstr "新增新權杖"
 
-msgid "Create a MetaTrader account to trade on the MetaTrader 5 platform."
-msgstr "開立MetaTrader帳戶並開始在MetaTrader 5平台交易。"
-
 msgid "Create clear, concise and engaging content for display on the company's website, blog, social media outlets, and marketing materials"
 msgstr "為公司網站、部落格、社交媒體和行銷材料增添清晰、簡潔、引人入勝的內容"
 
@@ -1997,12 +1991,6 @@ msgstr "定義"
 msgid "Delete"
 msgstr "刪除"
 
-msgid "Demo"
-msgstr "展示"
-
-msgid "Demo Account"
-msgstr "展示帳戶"
-
 msgid "Demonstrate the ability to think / act quickly and multi-task as needed to execute effective campaigns"
 msgstr "按需迅速展示並同時運行思想/行動能力，執行有效的活動"
 
@@ -2021,26 +2009,14 @@ msgstr "將 %1 %2 虛擬資金存入您的帳戶%3"
 msgid "Deposit Bonus"
 msgstr "存款獎金"
 
-msgid "Deposit from"
-msgstr "存款從"
-
-msgid "Deposit funds into your MetaTrader account from your Binary account:"
-msgstr "從Binary帳戶轉移資金存入MetaTrader帳戶:"
-
-msgid "Deposit is done. Transaction ID:"
-msgstr "已經完成存款。交易ID:"
+msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgstr "存款已鎖定。欲知詳細資訊，請<a class=\"pjaxload\" href=\"%1\">聯繫我們</a>。"
 
 msgid "Deposit of"
 msgstr "存款"
 
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "通過銀行電匯、信用卡或電子現金錢包存款進入您的帳戶或提款。"
-
-msgid "Deposit to"
-msgstr "存款到"
-
-msgid "Deposit to MetaTrader account"
-msgstr "存款到MetaTrader帳戶"
 
 msgid "Deposit: %1 working day"
 msgstr "存款：%1工作日內"
@@ -2053,6 +2029,9 @@ msgstr "存款：即時"
 
 msgid "Depositing and withdrawing funds"
 msgstr "存款及取款"
+
+msgid "Deposits and withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
+msgstr "您的帳戶現時無法存取款。請聯繫 %1進行解鎖。"
 
 msgid "Derivative"
 msgstr "衍生工具"
@@ -2164,12 +2143,6 @@ msgstr "休眠和非使用中帳戶"
 
 msgid "Download CSV"
 msgstr "下載CSV"
-
-msgid "Download MetaTrader"
-msgstr "下載MetaTrader"
-
-msgid "Download MetaTrader for Windows"
-msgstr "下載Windows版MetaTrader"
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "推動快速增長和業務發展，以支援公司的銷售和市場行銷目標"
@@ -2738,8 +2711,17 @@ msgstr "優厚的佣金結構"
 msgid "Germany"
 msgstr "德國"
 
+msgid "Get JPY 1,000,000"
+msgstr "獲取1,000,000日圓"
+
 msgid "Get Started"
 msgstr "開始交易"
+
+msgid "Get USD 10,000.00"
+msgstr "獲取10,000.00美元"
+
+msgid "Get more virtual money"
+msgstr "獲取更多虛擬資金"
 
 msgid "Get your price"
 msgstr "獲取報價"
@@ -2930,10 +2912,8 @@ msgstr "如果本協議的任何條款被認定完全或部分無效或無法執
 msgid "If the Company is legally required to disclose your personal or financial information by law, regulation or pursuant to the order of a court of competent jurisdiction or a governmental agency, the Company  shall, unless legally prohibited, promptly notify you to that effect, in order to give you the opportunity to seek such protection for the information as it deems appropriate. Such required disclosure shall not be construed as a breach of this Terms and Conditions Agreement."
 msgstr "如果公司根據法律和法規需求，或遵從具司法管轄權法庭或政府機構的規定，必須揭露您的個人或財務資訊，除非法律不允許，公司須及時通知您，使您有機會對相關資料尋求恰當的保護措施。該必要的揭露行為不可解釋為違反此協議條款和條件。"
 
-#, fuzzy
-#| msgid "This account is unavailable. For any questions please contact <a href=\"%1\">Customer Support</a>."
 msgid "If the issue keeps happening, please contact <a href=\"%1\">customer support</a>."
-msgstr "此帳戶不可用。如有任何問題，請聯繫<a href=\"%1\">客戶支援人員</a>。"
+msgstr "如持續發生問題，請聯繫<a href=\"%1\">客戶支援人員</a>。"
 
 msgid "If this Agreement is terminated for any reason, you must permanently delete all Content, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
 msgstr "如果協議因任何原因被終止，您必須立即刪除所有內容，除非這樣做將導致您違反任何法律或政府部門所規定的義務。"
@@ -2979,9 +2959,6 @@ msgstr "如果您需要幫助，請聯繫我們的 %1客服部"
 
 msgid "If you need assistance feel free to contact our <a class=\"pjaxload\" href=\"%1\">Customer Support</a>."
 msgstr "如果您需要幫助，請聯繫我們的<a class=\"pjaxload\" href=\"%1\">客服部</a>。"
-
-msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader’s website, please select “%1” from the list of available brokers."
-msgstr "如果您已直接在MetaTrader網站下載MetaTrader 5，請在可用的經紀商列表選擇「%1」。"
 
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "如果您選擇「亞洲下跌」期權，<strong>當</strong><strong>最新價格</strong>低於<strong>平均</strong>價格時，您將獲得賠付。"
@@ -3286,9 +3263,6 @@ msgstr "投資與分紅"
 
 msgid "Investor Compensation Scheme"
 msgstr "投資者補償方案"
-
-msgid "Investor Password (read-only access)"
-msgstr "投資者密碼(唯讀存取權限)"
 
 msgid "Involved in evaluation of regulatory compliance and risk management. Work with the Head of Departments to improve business processes."
 msgstr "參與法務和風險管理評估。與各部門主管協作改進業務流程。"
@@ -3839,9 +3813,6 @@ msgstr "擁有概率理論、數值方法、蒙地卡羅模擬、統計建模和
 msgid "Knowledge of probability theory, stochastic calculus, numerical methods, Monte-Carlo simulation, differential equations, econometrics, and statistical modeling"
 msgstr "擁有概率論、隨機微積分、數值方法、蒙地卡羅模擬、微分方程、計量經濟學和統計建模等知識"
 
-msgid "LOG OUT"
-msgstr "登出"
-
 msgid "Languages"
 msgstr "語言"
 
@@ -3908,9 +3879,6 @@ msgstr "Less than 6 months"
 msgid "Level of Education"
 msgstr "教育水平"
 
-msgid "Leverage"
-msgstr "槓桿"
-
 msgid "Leverage social-media tools and channels to identify, engage, and convert potential new customers and partners"
 msgstr "通過杠杆社交媒體工具標識、引入並轉換潛在新客戶和業務合作夥伴"
 
@@ -3947,9 +3915,6 @@ msgstr "將我們客戶與您的應用程式相連接。"
 msgid "Links"
 msgstr "連結"
 
-msgid "Linux Instructions"
-msgstr "Linux指示"
-
 msgid "Live chat:"
 msgstr "即時聊天："
 
@@ -3959,9 +3924,6 @@ msgstr "鎖定收銀台"
 msgid "Log in"
 msgstr "登入"
 
-msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
-msgstr "使用MetaTrader帳號以及MetaTrader帳戶密碼登入應用程式。"
-
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "登入您的%1 聯盟帳號並點選：財務&rarr; 付款說明。"
 
@@ -3970,9 +3932,6 @@ msgstr "登入您的%1 聯盟帳號並點選：營銷&rarr; 所有媒體。"
 
 msgid "Log-in to your %1 affiliate account and click on: Reports &rarr; Traffic Report."
 msgstr "登入您的%1 聯盟帳號並點選：報告&rarr; 流量報告。"
-
-msgid "Login"
-msgstr "登入"
 
 msgid "Login History"
 msgstr "登入歷史"
@@ -4010,12 +3969,6 @@ msgstr "低障礙位移"
 msgid "MENA FFXPO Award"
 msgstr "中東和北非地區 FFXPO 獎"
 
-msgid "MacOS Instructions"
-msgstr "MacOS指示"
-
-msgid "Main Password (trading access)"
-msgstr "主密碼(交易存取權限)"
-
 msgid "Maintain accurate system pricing parameters"
 msgstr "維護準確的系統訂價參數"
 
@@ -4024,9 +3977,6 @@ msgstr "保持適當的速度和輸出量"
 
 msgid "Make a Deposit"
 msgstr "存入資金"
-
-msgid "Make a deposit or withdraw."
-msgstr "存取款。"
 
 msgid "Make your trade"
 msgstr "執行交易"
@@ -4045,9 +3995,6 @@ msgstr "我們所部署的所有伺服器相關的安全、入侵檢測、DDoS �
 
 msgid "Manage the company's cashier system"
 msgstr "管理公司的出納系統"
-
-msgid "Manage your account access and security settings."
-msgstr "對您的帳戶存取和安全保障設定進行管理。"
 
 msgid "Manage your authorised applications."
 msgstr "管理您的授權應用程式。"
@@ -4135,12 +4082,6 @@ msgstr "難忘的日子"
 
 msgid "Memorable town/city"
 msgstr "難忘的城鎮/城市"
-
-msgid "MetaTrader Accounts Management"
-msgstr "MetaTrader帳戶管理"
-
-msgid "MetaTrader Main Password"
-msgstr "MetaTrader 主密碼"
 
 msgid "Method"
 msgstr "方式"
@@ -4361,9 +4302,6 @@ msgstr "交易新手可使用我們的直觀視覺式平台學習交易、練習
 msgid "Now"
 msgstr "現在"
 
-msgid "Now Introducing MetaTrader 5 on %1"
-msgstr "現在在%1推出MetaTrader 5"
-
 msgid "Number of ticks"
 msgstr "跳動點數目"
 
@@ -4437,7 +4375,7 @@ msgid "Only one account is allowed per person. No winnings and/or refunds may be
 msgstr "每人只能開立一個帳戶。使用假名開立的帳戶或同一人開立的多個帳戶將不會獲得任何贏取的款項和/或退款。"
 
 msgid "Oops... Page Not Available"
-msgstr ""
+msgstr "抱歉!找不到頁面"
 
 msgid "Open"
 msgstr "開盤"
@@ -4940,6 +4878,9 @@ msgstr "精通一種腳本語言 - Perl 為首選"
 msgid "Proficiency in a second language (oral and written) is preferred"
 msgstr "熟練掌握第二語言 (口頭和書面) 者優先聘用"
 
+msgid "Profile"
+msgstr "詳細資料"
+
 msgid "Profit"
 msgstr "利潤"
 
@@ -5059,6 +5000,9 @@ msgstr "參考"
 
 msgid "Reference ID"
 msgstr "身份參考號"
+
+msgid "Refresh page"
+msgstr "更新頁面"
 
 msgid "Regent Markets Group Ltd. renames to Binary Ltd."
 msgstr "Regent Markets Group Ltd. 更名為 Binary Ltd."
@@ -5225,9 +5169,6 @@ msgstr "產品投資風險"
 msgid "Run daily payments reports and report suspected fraud"
 msgstr "日常付款報告和涉嫌欺詐報告的運作"
 
-msgid "Run the installation file and follow the instructions."
-msgstr "運行安裝檔案並按照指示操作。"
-
 msgid "Russia"
 msgstr "俄國"
 
@@ -5281,6 +5222,9 @@ msgstr "密碼提示問題"
 
 msgid "Security"
 msgstr "安全"
+
+msgid "Security & Limits"
+msgstr "安全&限制"
 
 msgid "Security Disclaimer"
 msgstr "安全免責聲明"
@@ -5402,6 +5346,9 @@ msgstr "註冊試用我們的平台"
 msgid "Sign me up"
 msgstr "我要註冊"
 
+msgid "Sign out"
+msgstr "登出"
+
 msgid "Sign up as a tester and look for Binary.com-related projects."
 msgstr "註冊成為測試人員尋求Binary.com相關專案。"
 
@@ -5504,20 +5451,11 @@ msgstr "開始時間"
 msgid "Start Trading"
 msgstr "開始交易"
 
-msgid "Start Trading with MetaTrader 5"
-msgstr "開始使用MetaTrader 5交易"
-
 msgid "Start learning"
 msgstr "開始學習"
 
 msgid "Start time"
 msgstr "開始時間"
-
-msgid "Start trading with your Demo Account"
-msgstr "開始使用模擬帳戶交易"
-
-msgid "Start trading with your Real Account"
-msgstr "開始使用真實資金帳戶交易"
 
 msgid "State/Province"
 msgstr "州/省"
@@ -5644,12 +5582,6 @@ msgstr "Binary 投資 (歐洲)有限公司提供的金融產品補充條款和�
 
 msgid "Supporting the Group's global recruiting and talent management needs"
 msgstr "支持集團的全球招聘和人才管理需求"
-
-msgid "Take advantage of numerous benefits, including:"
-msgstr "利用我們提供的大量優勢，包括:"
-
-msgid "Take your trading to the next level through this powerful interface, recognised as the benchmark standard worldwide."
-msgstr "通過使用此全球公認為基準平台的強大介面，將您的交易發展到更高層次。"
 
 msgid "Talk to us"
 msgstr "聯繫我們"
@@ -6067,7 +5999,7 @@ msgid "The maximum number of tokens (%1) has been reached."
 msgstr "已達權杖 (%1) 最大限數。"
 
 msgid "The page you requested could not be found. Either it no longer exists or the address is wrong. Please check for any typos."
-msgstr ""
+msgstr "找不到您要求的頁面。它不再存在或輸入網址出錯。請檢查是否輸入錯誤。"
 
 msgid "The patent means Regent Markets is the recognised pioneer of binary betting. The patent helps protect our innovations."
 msgstr "該專利意味著Regent Markets 為公認的二元投注先驅。這項專利有助於保護我們的創新。"
@@ -6289,6 +6221,9 @@ msgstr "星期四"
 msgid "Tick"
 msgstr "跳動點"
 
+msgid "TickTrade App"
+msgstr "跳動交易應用程式"
+
 msgid "Tier"
 msgstr "階層"
 
@@ -6321,18 +6256,6 @@ msgstr "To begin Binary option trading, you will first need to read all these do
 
 msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "如需更改姓名、生日、居住國或電子郵件地址，請與<a href=\"%1\">客服人員</a>聯繫。"
-
-msgid "To create a Real account for MetaTrader, you need to authenticate your Binary account:"
-msgstr "要開立MetaTrader真實資金帳戶，必須先驗證Binary帳戶:"
-
-msgid "To create a real account for MetaTrader, <a href=\"%1\">upgrade to %2 real money account</a>."
-msgstr "要開立MetaTrader真實資金帳戶，<a href=\"%1\">請先升級為%2真實資金帳戶</a>。"
-
-msgid "To create a real account for MetaTrader, switch to your %1 real money account."
-msgstr "要開立MetaTrader真實資金帳戶，請先切換到%1真實資金帳戶。"
-
-msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
-msgstr "要在MetaTrader真實帳戶存取款，請先切換到Binary.com真實資金帳戶。"
 
 msgid "To enable cookies, follow the instructions below for the browser version that you are using."
 msgstr "要啟用cookie，請按下面符合您瀏覽器版本的指示說明進行操作。"
@@ -6439,8 +6362,8 @@ msgstr "交易檢視(TradingView)"
 msgid "Transact in"
 msgstr "交易"
 
-msgid "Transaction performed by"
-msgstr "交易執行者為"
+msgid "Transaction performed by %1 (App ID: %2)"
+msgstr "交易執行者為%1 (應用程式 ID: %2)"
 
 msgid "Transfer"
 msgstr "轉帳"
@@ -6456,9 +6379,6 @@ msgstr "轉給登入 ID"
 
 msgid "Transfer to Payment Agent"
 msgstr "轉給支付代理"
-
-msgid "Transfer to client"
-msgstr "轉給客戶"
 
 msgid "Translate the ongoing business needs of the company into a suitable IT infrastructure"
 msgstr "將公司的日常業務需求轉化成合適的資訊技術基礎設施"
@@ -6616,9 +6536,6 @@ msgstr "驗證碼格式不正確。"
 msgid "Verification token"
 msgstr "驗證權杖"
 
-msgid "Verify Main Password"
-msgstr "驗證主密碼"
-
 msgid "Verify new password"
 msgstr "驗證新密碼"
 
@@ -6652,14 +6569,8 @@ msgstr "檢視您可以進行交易的市場開放時間。"
 msgid "View your financial assessment settings."
 msgstr "檢視您的金融評估設定。"
 
-msgid "View your historical transactions."
-msgstr "檢視您的交易歷史記錄。"
-
 msgid "View your login history."
 msgstr "檢視您的登入歷史。"
-
-msgid "View your open positions."
-msgstr "檢視您的未平倉頭寸。"
 
 msgid "View your personal information."
 msgstr "檢視您的個人資訊。"
@@ -6669,9 +6580,6 @@ msgstr "檢視您的帳單"
 
 msgid "View your trading and withdrawal limits."
 msgstr "檢視您的交易和取款限額。"
-
-msgid "View your trading profit/loss."
-msgstr "查看您的交易利潤/虧損。"
 
 msgid "Virtual Account"
 msgstr "虛擬帳戶"
@@ -6849,9 +6757,6 @@ msgstr "交易日"
 
 msgid "Weekend quotes"
 msgstr "週末報價"
-
-msgid "Welcome!"
-msgstr "歡迎！"
 
 msgid "Well-developed organizational, administrative, and/or accounting skills"
 msgstr "具備良好的組織、行政、和/或會計技能"
@@ -7036,18 +6941,6 @@ msgstr "對於通過您的網站連結或在註冊過程中引用您的聯盟會
 msgid "Withdraw"
 msgstr "取款"
 
-msgid "Withdraw from"
-msgstr "取款從"
-
-msgid "Withdraw from MetaTrader account"
-msgstr "MetaTrader帳戶提款"
-
-msgid "Withdraw funds from your MetaTrader account into your Binary account:"
-msgstr "把MetaTrader帳戶資金轉入Binary帳戶:"
-
-msgid "Withdraw to"
-msgstr "取款到"
-
 msgid "Withdraw: %1 working day"
 msgstr "取款：%1 個工作日"
 
@@ -7060,8 +6953,8 @@ msgstr "取款：不適用"
 msgid "Withdrawal Limits"
 msgstr "取款限額"
 
-msgid "Withdrawal is done. Transaction ID:"
-msgstr "已經完成提款。交易 ID:"
+msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
+msgstr "您的帳戶現時無法取款。請聯繫 %1進行解鎖。"
 
 msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgstr "提款已鎖定。欲知詳細資訊，請<a class=\"pjaxload\" href=\"%1\">聯繫我們</a>。"
@@ -7132,12 +7025,6 @@ msgstr "您和您的應用程式還必須遵守以下項目，特此一起納入
 msgid "You are advised that the Binary Options offered by %1 are not traded under the rules of any recognised, designated or regulated exchange. Consequently, engaging in Binary Options trading may expose you to substantially greater risks than investments which are so traded."
 msgstr "我們僅此通知您，%1 所提供的二元期權交易並不受任何認可、指定或受監管的交易所規則所管制。其後果是，進行二元期權交易活動可能會使您承擔比所投入的交易金額更高的風險。"
 
-msgid "You are currently logged in to your real money account with %1 (%2)."
-msgstr "您現已登入您的 %1(%2)真實資金帳戶。"
-
-msgid "You are currently logged in to your virtual money account (%2)."
-msgstr "您現已登入您的虛擬資金帳戶(%2)。"
-
 msgid "You are in default or breach of any covenant, obligation or condition contained in this Agreement, and if such default is not cured within seven days of receipt of written notice from the Company;"
 msgstr "您已違犯或違反本協議所包含的條款、義務或條件，如果收到本公司書面通知7天內您沒對該項錯誤作出修正；"
 
@@ -7167,6 +7054,12 @@ msgstr "您可在$1 至 $50,000之間選擇賠付額。賠付額選擇範圍很�
 
 msgid "You can close your trade before expiry to lock in profits."
 msgstr "您可在合約到期前賣出交易合約，以鎖定利潤。"
+
+msgid "You can request more virtual money if your virtual balance falls below JPY 100,000."
+msgstr "如果虛擬資金餘額低於100,000日圓，您可請求獲取更多虛擬資金。"
+
+msgid "You can request more virtual money if your virtual balance falls below USD 1,000.00."
+msgstr "如果虛擬資金餘額低於1,000.00美元，您可請求獲取更多虛擬資金。"
 
 msgid "You can sell back long-term trades at any time to profit from changing market conditions."
 msgstr "您隨時都可以賣出您的長線交易合約，根據市場變化及時獲利。"
@@ -7357,12 +7250,6 @@ msgstr "您所提出的大多數問題可在<a href='' target='_blank' id='faq_u
 msgid "You're using a Virtual Account."
 msgstr "您正在使用虛擬帳戶。"
 
-msgid "Your %1 account is unavailable. For any questions please contact %2."
-msgstr "您的%1帳戶不可用。如有任何問題，請聯繫%2。"
-
-msgid "Your %1 accounts are unavailable. For any questions please contact %2."
-msgstr "您的%1帳戶不可用。如有任何問題，請聯繫%2。"
-
 msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other currency)."
 msgstr "您的 %1 天取款限額目前為 %2 %3（或其他貨幣的等值）。"
 
@@ -7371,9 +7258,6 @@ msgstr "您的客戶將收到電子郵件通知，告知其轉帳交易已處理
 
 msgid "Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on %1 and in that event, opens an account with us."
 msgstr "您的 ID 將存入 cookie，每次有潛在客戶在您的聯盟連結上點選並在 %1 著陸，從而開立我們的帳戶，即會被識別出來。"
-
-msgid "Your Name"
-msgstr "您的姓名"
 
 msgid "Your Property"
 msgstr "您的財產"
@@ -7384,11 +7268,11 @@ msgstr "您的帳戶沒有登入/登出活動。"
 msgid "Your account has no trading activity."
 msgstr "您的帳號沒有交易活動。"
 
+msgid "Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact %1."
+msgstr "您的帳戶已被暫時禁用。現僅允許取款。欲知詳情，請聯繫%1。"
+
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "您的帳戶已經得到完全驗證，且您的取款限額已經取消。"
-
-msgid "Your account is fully authenticated. You can view your %1trading limits here"
-msgstr "您的帳戶已經通過驗證。您可在此檢視您的 %1 交易限額"
 
 msgid "Your account is fully authenticated. You can view your <a class=\"pjaxload\" href=\"%1\">trading limits here</a>."
 msgstr "您的帳戶已經得到完全驗證，您可在此檢視您的<a  class=\"pjaxload\" href=\"%1\"> 交易限額</a>。"
@@ -7398,9 +7282,6 @@ msgstr "您的帳戶未完全驗證。欲知詳情請檢視<a class=\"pjaxload\"
 
 msgid "Your account is not fully authenticated. Please visit the <a href=\"%1\">authentication</a> page for more information."
 msgstr "您的帳戶未完全驗證。欲知詳情請檢視<a href=\"%1\">驗證</a>頁面。"
-
-msgid "Your account is registered as a Payment Agent."
-msgstr "您的帳戶註冊為支付代理。"
 
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "您的帳戶不應該被用來作為銀行信貸，而存款應該被視為只用以進行交易的資金。本公司不是金融機構，客戶存款將不會有利息。如果您重覆進行存款和取款，卻沒有進行相稱的交易，在關閉帳戶之前，我們保留在不事先通知的情況下把我們所承擔的任何銀行費用轉到您帳戶的權利。"
@@ -7443,9 +7324,6 @@ msgstr "在 %1，您的資金永遠安全。客戶資金始終由3A級銀行託�
 
 msgid "Your name, email address and contact number"
 msgstr "您的名字、電子郵件地址和電話號"
-
-msgid "Your new account has been created."
-msgstr "已成功開立新帳戶。"
 
 msgid "Your password and login ID are unique and passwords are hashed so that not even %1 staff can read them. This is the reason why we cannot retrieve your password and have to issue you with a new one to your email address if you cannot recall it."
 msgstr "您的密碼和登入ID都是唯一的，而且密碼已經被雜湊處理，即使是 %1 職員也無法看到它們。因此，在您忘記密碼後我們不能讀取您的密碼，而是必須向您的電子郵箱傳送一個新的密碼。"
@@ -8164,10 +8042,8 @@ msgstr "{JAPAN ONLY}Registration"
 msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "{JAPAN ONLY}Regulation & Tax"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}minute"
 msgid "{JAPAN ONLY}Remaining time"
-msgstr "{JAPAN ONLY}minute"
+msgstr "{JAPAN ONLY}Remaining time"
 
 msgid "{JAPAN ONLY}STAY-IN/BREAK-OUT"
 msgstr "{JAPAN ONLY}STAY-IN/BREAK-OUT"
@@ -8365,7 +8241,7 @@ msgid "Online Trading platform for binary options on Forex, Indices, Commodities
 msgstr "可交易外匯、指數、商品及智慧指數的二元期權線上交易平台"
 
 msgid "404"
-msgstr ""
+msgstr "404"
 
 msgid "Why Us"
 msgstr "為何選擇我們"
@@ -8409,17 +8285,206 @@ msgstr "支付代理轉帳"
 msgid "Sharp Prices. Smart Trading."
 msgstr "精準報價，智慧交易。"
 
-msgid "MetaTrader"
-msgstr "MetaTrader"
-
 msgid "Account Details"
 msgstr "帳戶詳細資料"
 
 msgid "Terms and Conditions Approval"
 msgstr "條款和條件審批"
 
-msgid "Trading with MetaTrader 5"
-msgstr "使用MetaTrader 5進行交易"
+#~ msgid "%1 %2 (\"API\") Terms and Conditions"
+#~ msgstr "%1 %2 (\"API\") 條款和條件"
+
+#~ msgid "%1’s <a href=\"%2\">Volatility Indices</a> are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
+#~ msgstr "%1的<a href=\"%2\">波動指數</a>如今可在MetaTrader 5全天候交易。我們將儘快推出更多資產。"
+
+#~ msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
+#~ msgstr "<strong>先進的基本與技術分析工具，</strong>包括指標、圖表和其它。"
+
+#~ msgid "<strong>Highly competitive spreads with no commission.</strong>"
+#~ msgstr "<strong>高競爭性無佣金費點差交易。</strong>"
+
+#~ msgid "<strong>Subscriptions to a wide range of Expert Advisors,</strong> automated trading applications from the MetaTrader Market."
+#~ msgstr "<strong>訂閱範圍廣泛的智能外匯全自動交易系統，</strong>是MetaTrader市場提供的自動化交易應用程式。"
+
+#~ msgid "Account Type"
+#~ msgstr "帳戶類型"
+
+#~ msgid "App ID"
+#~ msgstr "應用程式ID"
+
+#~ msgid "Click the button below to download MetaTrader."
+#~ msgstr "點擊以下按鈕下載MetaTrader。"
+
+#~ msgid "Congratulations! Your account has been created."
+#~ msgstr "恭喜! 您已成功開立帳戶。"
+
+#~ msgid "Create a MetaTrader account to trade on the MetaTrader 5 platform."
+#~ msgstr "開立MetaTrader帳戶並開始在MetaTrader 5平台交易。"
+
+#~ msgid "Demo"
+#~ msgstr "展示"
+
+#~ msgid "Demo Account"
+#~ msgstr "展示帳戶"
+
+#~ msgid "Deposit from"
+#~ msgstr "存款從"
+
+#~ msgid "Deposit funds into your MetaTrader account from your Binary account:"
+#~ msgstr "從Binary帳戶轉移資金存入MetaTrader帳戶:"
+
+#~ msgid "Deposit is done. Transaction ID:"
+#~ msgstr "已經完成存款。交易ID:"
+
+#~ msgid "Deposit to"
+#~ msgstr "存款到"
+
+#~ msgid "Deposit to MetaTrader account"
+#~ msgstr "存款到MetaTrader帳戶"
+
+#~ msgid "Download MetaTrader"
+#~ msgstr "下載MetaTrader"
+
+#~ msgid "Download MetaTrader for Windows"
+#~ msgstr "下載Windows版MetaTrader"
+
+#~ msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader’s website, please select “%1” from the list of available brokers."
+#~ msgstr "如果您已直接在MetaTrader網站下載MetaTrader 5，請在可用的經紀商列表選擇「%1」。"
+
+#~ msgid "Investor Password (read-only access)"
+#~ msgstr "投資者密碼(唯讀存取權限)"
+
+#~ msgid "Leverage"
+#~ msgstr "槓桿"
+
+#~ msgid "Linux Instructions"
+#~ msgstr "Linux指示"
+
+#~ msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
+#~ msgstr "使用MetaTrader帳號以及MetaTrader帳戶密碼登入應用程式。"
+
+#~ msgid "Login"
+#~ msgstr "登入"
+
+#~ msgid "MacOS Instructions"
+#~ msgstr "MacOS指示"
+
+#~ msgid "Main Password (trading access)"
+#~ msgstr "主密碼(交易存取權限)"
+
+#~ msgid "MetaTrader Accounts Management"
+#~ msgstr "MetaTrader帳戶管理"
+
+#~ msgid "MetaTrader Main Password"
+#~ msgstr "MetaTrader 主密碼"
+
+#~ msgid "Now Introducing MetaTrader 5 on %1"
+#~ msgstr "現在在%1推出MetaTrader 5"
+
+#~ msgid "Run the installation file and follow the instructions."
+#~ msgstr "運行安裝檔案並按照指示操作。"
+
+#~ msgid "Start Trading with MetaTrader 5"
+#~ msgstr "開始使用MetaTrader 5交易"
+
+#~ msgid "Start trading with your Demo Account"
+#~ msgstr "開始使用模擬帳戶交易"
+
+#~ msgid "Start trading with your Real Account"
+#~ msgstr "開始使用真實資金帳戶交易"
+
+#~ msgid "Take advantage of numerous benefits, including:"
+#~ msgstr "利用我們提供的大量優勢，包括:"
+
+#~ msgid "Take your trading to the next level through this powerful interface, recognised as the benchmark standard worldwide."
+#~ msgstr "通過使用此全球公認為基準平台的強大介面，將您的交易發展到更高層次。"
+
+#~ msgid "To create a Real account for MetaTrader, you need to authenticate your Binary account:"
+#~ msgstr "要開立MetaTrader真實資金帳戶，必須先驗證Binary帳戶:"
+
+#~ msgid "To create a real account for MetaTrader, <a href=\"%1\">upgrade to %2 real money account</a>."
+#~ msgstr "要開立MetaTrader真實資金帳戶，<a href=\"%1\">請先升級為%2真實資金帳戶</a>。"
+
+#~ msgid "To create a real account for MetaTrader, switch to your %1 real money account."
+#~ msgstr "要開立MetaTrader真實資金帳戶，請先切換到%1真實資金帳戶。"
+
+#~ msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
+#~ msgstr "要在MetaTrader真實帳戶存取款，請先切換到Binary.com真實資金帳戶。"
+
+#~ msgid "Verify Main Password"
+#~ msgstr "驗證主密碼"
+
+#~ msgid "Withdraw from"
+#~ msgstr "取款從"
+
+#~ msgid "Withdraw from MetaTrader account"
+#~ msgstr "MetaTrader帳戶提款"
+
+#~ msgid "Withdraw funds from your MetaTrader account into your Binary account:"
+#~ msgstr "把MetaTrader帳戶資金轉入Binary帳戶:"
+
+#~ msgid "Withdraw to"
+#~ msgstr "取款到"
+
+#~ msgid "Withdrawal is done. Transaction ID:"
+#~ msgstr "已經完成提款。交易 ID:"
+
+#~ msgid "Your Name"
+#~ msgstr "您的姓名"
+
+#~ msgid "Your new account has been created."
+#~ msgstr "已成功開立新帳戶。"
+
+#~ msgid "MetaTrader"
+#~ msgstr "MetaTrader"
+
+#~ msgid "Trading with MetaTrader 5"
+#~ msgstr "使用MetaTrader 5進行交易"
+
+#~ msgid "Charts"
+#~ msgstr "圖表"
+
+#~ msgid "LOG OUT"
+#~ msgstr "登出"
+
+#~ msgid "Make a deposit or withdraw."
+#~ msgstr "存取款。"
+
+#~ msgid "Manage your account access and security settings."
+#~ msgstr "對您的帳戶存取和安全保障設定進行管理。"
+
+#~ msgid "Transfer to client"
+#~ msgstr "轉給客戶"
+
+#~ msgid "View your historical transactions."
+#~ msgstr "檢視您的交易歷史記錄。"
+
+#~ msgid "View your open positions."
+#~ msgstr "檢視您的未平倉頭寸。"
+
+#~ msgid "View your trading profit/loss."
+#~ msgstr "查看您的交易利潤/虧損。"
+
+#~ msgid "Welcome!"
+#~ msgstr "歡迎！"
+
+#~ msgid "You are currently logged in to your real money account with %1 (%2)."
+#~ msgstr "您現已登入您的 %1(%2)真實資金帳戶。"
+
+#~ msgid "You are currently logged in to your virtual money account (%2)."
+#~ msgstr "您現已登入您的虛擬資金帳戶(%2)。"
+
+#~ msgid "Your %1 account is unavailable. For any questions please contact %2."
+#~ msgstr "您的%1帳戶不可用。如有任何問題，請聯繫%2。"
+
+#~ msgid "Your %1 accounts are unavailable. For any questions please contact %2."
+#~ msgstr "您的%1帳戶不可用。如有任何問題，請聯繫%2。"
+
+#~ msgid "Your account is fully authenticated. You can view your %1trading limits here"
+#~ msgstr "您的帳戶已經通過驗證。您可在此檢視您的 %1 交易限額"
+
+#~ msgid "Your account is registered as a Payment Agent."
+#~ msgstr "您的帳戶註冊為支付代理。"
 
 #~ msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
 #~ msgstr "<span class='color-green font-weight-700'>所有合約期限:</span>從10 秒到365 天。"
@@ -8667,9 +8732,6 @@ msgstr "使用MetaTrader 5進行交易"
 
 #~ msgid "The future of trading on %1"
 #~ msgstr "%1的交易前景"
-
-#~ msgid "Tick Trade App"
-#~ msgstr "跳動交易應用程式"
 
 #~ msgid "Tick Trade on GitHub"
 #~ msgstr "GitHub的跳動價格交易"
@@ -9382,9 +9444,6 @@ msgstr "使用MetaTrader 5進行交易"
 #~ msgid "In what country do you want to offer your service"
 #~ msgstr "您要提供服務的國家"
 
-#~ msgid "Incorrect email or password."
-#~ msgstr "電子郵件地址或密碼不正確。"
-
 #~ msgid "Indicator"
 #~ msgstr "指標"
 
@@ -9492,9 +9551,6 @@ msgstr "使用MetaTrader 5進行交易"
 
 #~ msgid "Login to this account has been temporarily disabled due to system maintenance. Please try again in 30 minutes."
 #~ msgstr "由於系統維護，帳戶暫時不能登入。請 30 分鐘後重試。"
-
-#~ msgid "Lost Password?"
-#~ msgstr "丟失密碼？"
 
 #~ msgid "Low"
 #~ msgstr "低"
@@ -9735,9 +9791,6 @@ msgstr "使用MetaTrader 5進行交易"
 
 #~ msgid "Relative Strength Index"
 #~ msgstr "相對強度指數"
-
-#~ msgid "Reload page"
-#~ msgstr "重新載入頁面"
 
 #~ msgid "Remove Overlay"
 #~ msgstr "刪除重疊"
@@ -15048,9 +15101,6 @@ msgstr "使用MetaTrader 5進行交易"
 
 #~ msgid "Binary.com's Random Indices are the random 25 Index, Random 50 Index, Random 75 Index, and Random 100 Index and many more."
 #~ msgstr "Binary.com 的隨機指標為隨機25指數、隨機50指數、隨機75指數和隨機100指數等多個選項。"
-
-#~ msgid "Get your free $10,000 virtual money"
-#~ msgstr "獲取免費的1萬美元虛擬資金"
 
 #~ msgid "Join our community of 1,000,000+ traders"
 #~ msgstr "加入我們擁有1,000,000+個交易者的社群"
