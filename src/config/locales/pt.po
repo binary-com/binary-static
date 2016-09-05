@@ -40,13 +40,15 @@ msgstr "$25.000 - $100.000"
 msgid "$250,000 - $1,000,000"
 msgstr "$250.000 - $1.000.000"
 
-msgid "%1 %2 (\"API\") Terms and Conditions"
-msgstr "Termos e Condições"
-
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%1 %2 foram creditados na sua conta de dinheiro Virtual %3"
 
 msgid "%1 Affiliate Program Terms and Conditions"
+msgstr "Termos e condições do programa de afiliados %1"
+
+#, fuzzy
+#| msgid "%1 Affiliate Program Terms and Conditions"
+msgid "%1 Application Program Interface (\"API\") Terms and Conditions"
 msgstr "Termos e condições do programa de afiliados %1"
 
 msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
@@ -272,9 +274,6 @@ msgstr "A extraordinária história da %1"
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "Os sistemas %1 já processam mais de 1 milhão de transações/dia (incluindo contas virtuais)."
 
-msgid "%1’s <a href=\"%2\">Volatility Indices</a> are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
-msgstr "Os <a href=\"%2\">índices Volatility</a> da %1 estão agora disponíveis 24/7 na MetaTrader 5. Ativos adicionais serão lançados muito em breve."
-
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(duração mínima, por exemplo um mínimo de 15 segundos)min"
 
@@ -481,9 +480,6 @@ msgstr "<strong>Preços nos dois sentidos</strong> - a %1 indica o preço de uma
 msgid "<strong>Additional business exposure:</strong> You will increase awareness of your services and generate new business."
 msgstr "<strong>Exposição adicional de negócio:</strong> Você aumentará o reconhecimento dos seus serviços e gerará novas oportunidades de negócio."
 
-msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
-msgstr "<strong>Ferramentas avançadas para análise fundamental e técnica,</strong> incluindo indicadores, gráficos e mais."
-
 #, fuzzy
 #| msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgid "<strong>All durations:</strong> from 10 seconds to 365 days."
@@ -554,9 +550,6 @@ msgstr "<strong>Superior/Inferior</strong> - preveja se mercado vai terminar mai
 
 msgid "<strong>Higher/Lower</strong> - where you can profit from the market ending higher or lower than a target price."
 msgstr "<strong>Alta/Baixa</strong> - onde você pode lucrar quando o mercado terminar mais alto ou mais baixo do que um preço alvo."
-
-msgid "<strong>Highly competitive spreads with no commission.</strong>"
-msgstr "<strong>Spreads altamente competitivos sem comissão.</strong>"
 
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and Payment Agents."
 msgstr "<strong>ISENÇÃO DE RESPONSABILIDADE IMPORTANTE</strong> - a %1 não está afiliada em nenhum dos Agentes de Pagamentos acima referidos. Cada Agente de Pagamento opera como prestador de serviços independente e não é endossado, garantido ou de outra forma aprovado pela %1. OS CLIENTES LIDAM COM OS AGENTES DE PAGAMENTOS POR SUA PRÓPRIA CONTA E RISCO. Os clientes são aconselhados a verificar as credenciais dos Agentes de Pagamentos antes de lhes enviarem algum dinheiro. A %1 não deve, em nenhuma circunstância, ser responsabilizada por operações realizadas entre clientes e Agentes de Pagamentos."
@@ -641,9 +634,6 @@ msgstr "<strong>Índices de ações</strong> - negocie todos os principais índi
 
 msgid "<strong>Stock indices</strong> - trade all major worldwide stock indices."
 msgstr "<strong>Índices de ações</strong> - negocie todos os principais índices de ações a nível mundial."
-
-msgid "<strong>Subscriptions to a wide range of Expert Advisors,</strong> automated trading applications from the MetaTrader Market."
-msgstr "<strong>Subscrições a uma grande variedade de consultores especializados</strong> e aplicativos de negociação automatizados do mercado MetaTrader."
 
 msgid "<strong>Take early profits</strong> - sell your long-term trades at market prices before they expire."
 msgstr "<strong>Obtenha lucros mais cedo</strong> - venda os seus contratos a longo prazo a preços de mercado antes do vencimento."
@@ -874,9 +864,6 @@ msgstr "Perdeu a senha?"
 msgid "Account Transfer"
 msgstr "Transferência de Conta"
 
-msgid "Account Type"
-msgstr "Tipo de conta"
-
 msgid "Account balance: "
 msgstr "Saldo de conta: "
 
@@ -1071,9 +1058,6 @@ msgstr "Qualquer pessoa com idade superior a 18 anos (que tenha lido e aceitado 
 
 msgid "Anyone who has potential to grow or increase traffic to %1"
 msgstr "Qualquer pessoa ou entidade que tenha o potencial de aumentar o tráfego para a %1"
-
-msgid "App ID"
-msgstr ""
 
 msgid "Applications"
 msgstr "Aplicativos"
@@ -1638,9 +1622,6 @@ msgstr "Classificação de ativos que requerem cobertura"
 msgid "Click here to retry"
 msgstr "Clique aqui para tentar novamente"
 
-msgid "Click the button below to download MetaTrader."
-msgstr "Clique no botão abaixo para baixar a MetaTrader."
-
 msgid "Client classification"
 msgstr "Classificação do cliente"
 
@@ -1772,9 +1753,6 @@ msgstr "Confirmação e entendimentos"
 
 msgid "Conflicts Policy"
 msgstr "Política de Conflitos"
-
-msgid "Congratulations! Your account has been created."
-msgstr "Parabéns! A sua conta foi criada."
 
 msgid "Construction"
 msgstr "Construção"
@@ -1932,9 +1910,6 @@ msgstr "Criar uma conta nova"
 msgid "Create New Token"
 msgstr "Criar um novo token"
 
-msgid "Create a MetaTrader account to trade on the MetaTrader 5 platform."
-msgstr "Crie uma conta MetaTrader para negociar na plataforma MetaTrader 5."
-
 msgid "Create clear, concise and engaging content for display on the company's website, blog, social media outlets, and marketing materials"
 msgstr "Criar conteúdos claros, concisos e cativantes para exibição no site, no blog, nos meios de mídia social e nos materiais de marketing da empresa"
 
@@ -2046,12 +2021,6 @@ msgstr "Configurações"
 msgid "Delete"
 msgstr "Excluir"
 
-msgid "Demo"
-msgstr "Demo"
-
-msgid "Demo Account"
-msgstr "Conta demo"
-
 msgid "Demonstrate the ability to think / act quickly and multi-task as needed to execute effective campaigns"
 msgstr "Demonstrar a capacidade de pensar / agir rapidamente e realizar várias tarefas simultaneamente para executar campanhas eficazes"
 
@@ -2070,15 +2039,6 @@ msgstr "Deposite %1%2 em dinheiro virtual na sua conta %3"
 msgid "Deposit Bonus"
 msgstr "Bônus de Deposito"
 
-msgid "Deposit from"
-msgstr "Depositar de"
-
-msgid "Deposit funds into your MetaTrader account from your Binary account:"
-msgstr "Deposite fundos da sua conta Binary na sua conta MetaTrader:"
-
-msgid "Deposit is done. Transaction ID:"
-msgstr "Depósito concluído. ID de transação:"
-
 #, fuzzy
 #| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
@@ -2089,12 +2049,6 @@ msgstr "Depósito de"
 
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "Deposite ou retire dinheiro para a sua conta através de transferência bancária, cartão de crédito ou dinheiro eletrônico."
-
-msgid "Deposit to"
-msgstr "Depositar para"
-
-msgid "Deposit to MetaTrader account"
-msgstr "Deposite fundos na sua conta MetaTrader"
 
 msgid "Deposit: %1 working day"
 msgstr "Depósito: %1 dia útil"
@@ -2221,12 +2175,6 @@ msgstr "Contas inativas"
 
 msgid "Download CSV"
 msgstr "Baixar CSV"
-
-msgid "Download MetaTrader"
-msgstr "Baixar MetaTrader"
-
-msgid "Download MetaTrader for Windows"
-msgstr "Baixar MetaTrader para Windows"
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "Impulsionar o crescimento rápido e o desenvolvimento de negócios para auxiliar os objetivos de vendas e marketing da empresa"
@@ -3050,9 +2998,6 @@ msgstr "Caso você precise de assistência, contate o nosso %1Apoio ao Cliente"
 msgid "If you need assistance feel free to contact our <a class=\"pjaxload\" href=\"%1\">Customer Support</a>."
 msgstr "Caso você necessite assistência, contate o nosso <a class=\"pjaxload\" href=\"%1\">Apoio ao Cliente</a>."
 
-msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader’s website, please select “%1” from the list of available brokers."
-msgstr "Se você baixou anteriormente a MetaTrader 5 diretamente do site da MetaTrader 5, selecione então \"%1\" da lista de corretoras disponíveis."
-
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "Se selecionar \"Asiático Em Queda\", você ganha o pagamento se o <strong>último tique-taque</strong> for <strong>inferior</strong> à <strong>média</strong> dos tique-taques."
 
@@ -3356,9 +3301,6 @@ msgstr "Investimentos e dividendos"
 
 msgid "Investor Compensation Scheme"
 msgstr "Regime de Compensação de Investidores"
-
-msgid "Investor Password (read-only access)"
-msgstr "Senha de investidor (acesso somente leitura)"
 
 msgid "Involved in evaluation of regulatory compliance and risk management. Work with the Head of Departments to improve business processes."
 msgstr "Envolvido na avaliação de conformidade regulamentar e gerenciamento de risco. Trabalhar com o chefe do departamento para melhor os processos de negócio."
@@ -3975,9 +3917,6 @@ msgstr "Less than 6 months"
 msgid "Level of Education"
 msgstr "Nível de Instrução"
 
-msgid "Leverage"
-msgstr "Alavancagem"
-
 msgid "Leverage social-media tools and channels to identify, engage, and convert potential new customers and partners"
 msgstr "Aproveitar as ferramentas e os canais de mídia social para identificar, contatar e converter clientes e parceiros potenciais"
 
@@ -4014,9 +3953,6 @@ msgstr "Fazer ligação e direcionar os nossos clientes para o seu aplicativo."
 msgid "Links"
 msgstr "Links"
 
-msgid "Linux Instructions"
-msgstr "Instruções Linux"
-
 msgid "Live chat:"
 msgstr "Chat ao vivo:"
 
@@ -4026,9 +3962,6 @@ msgstr "Bloquear Caixa"
 msgid "Log in"
 msgstr "Conectar-se"
 
-msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
-msgstr "Conecte-se ao aplicativo usando o seu número de conta MetaTrader e a senha da sua conta MetaTrader."
-
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "Faça o login na sua conta de afiliado da %1 e clique em: Finanças &rarr; Instruções de pagamento."
 
@@ -4037,9 +3970,6 @@ msgstr "Faça o login na sua conta de afiliado da %1 e clique em: Marketing &rar
 
 msgid "Log-in to your %1 affiliate account and click on: Reports &rarr; Traffic Report."
 msgstr "Faça o login na sua conta de afiliado da %1 e clique em: Relatórios &rarr; Relatório de tráfego."
-
-msgid "Login"
-msgstr "Conectar-se"
 
 msgid "Login History"
 msgstr "Histórico de logins"
@@ -4076,12 +4006,6 @@ msgstr "Variação de barreira baixa"
 
 msgid "MENA FFXPO Award"
 msgstr "Prêmio FFXPO do MENA"
-
-msgid "MacOS Instructions"
-msgstr "Instruções MacOS"
-
-msgid "Main Password (trading access)"
-msgstr "Senha principal (acesso de negociação)"
 
 msgid "Maintain accurate system pricing parameters"
 msgstr "Manter parâmetros precisos de tarifação do sistema"
@@ -4196,12 +4120,6 @@ msgstr "Data memorável"
 
 msgid "Memorable town/city"
 msgstr "Localidade/cidade memorizável"
-
-msgid "MetaTrader Accounts Management"
-msgstr "Gerenciamento de contas MetaTrader"
-
-msgid "MetaTrader Main Password"
-msgstr "Senha principal da MetaTrader"
 
 msgid "Method"
 msgstr "Método"
@@ -4421,9 +4339,6 @@ msgstr "Negociadores inexperientes podem usar a nossa plataforma visual intuitiv
 
 msgid "Now"
 msgstr "Agora"
-
-msgid "Now Introducing MetaTrader 5 on %1"
-msgstr "Apresentamos agora MetaTrader 5 na %1"
 
 msgid "Number of ticks"
 msgstr "Número de tique-taques"
@@ -5298,9 +5213,6 @@ msgstr "Riscos de produtos de investimento"
 msgid "Run daily payments reports and report suspected fraud"
 msgstr "Executar relatórios diários de pagamentos e relatar suspeitas de fraude"
 
-msgid "Run the installation file and follow the instructions."
-msgstr "Execute o arquivo de instalação e siga as instruções."
-
 msgid "Russia"
 msgstr "Rússia"
 
@@ -5587,20 +5499,11 @@ msgstr "Hora de Início"
 msgid "Start Trading"
 msgstr "Começar a Negociar"
 
-msgid "Start Trading with MetaTrader 5"
-msgstr "Começar a negociar com a MetaTrader 5"
-
 msgid "Start learning"
 msgstr "Começar a aprender"
 
 msgid "Start time"
 msgstr "Hora de início"
-
-msgid "Start trading with your Demo Account"
-msgstr "Começar a negociar com a sua Conta Demo"
-
-msgid "Start trading with your Real Account"
-msgstr "Começar a negociar com a sua Conta Real"
 
 msgid "State/Province"
 msgstr "Estado/Província"
@@ -5727,12 +5630,6 @@ msgstr "Termos e condições suplementares para produtos financeiros disponibili
 
 msgid "Supporting the Group's global recruiting and talent management needs"
 msgstr "Apoiar as necessidades globais de recrutamento e gerenciamento de talento do grupo"
-
-msgid "Take advantage of numerous benefits, including:"
-msgstr "Aproveite inúmeros benefícios, incluindo:"
-
-msgid "Take your trading to the next level through this powerful interface, recognised as the benchmark standard worldwide."
-msgstr "Leve as suas negociações ao próximo nível através desta poderosa interface, reconhecida como uma referência padrão em todo o mundo."
 
 msgid "Talk to us"
 msgstr "Fale conosco"
@@ -6410,18 +6307,6 @@ msgstr "Para iniciar a negociação de opções binárias na Binary.com, você i
 msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "Para alterar o seu nome, data de nascimento, país de residência ou endereço de e-mail, contate o <a href=\"%1\">Apoio ao cliente</a>."
 
-msgid "To create a Real account for MetaTrader, you need to authenticate your Binary account:"
-msgstr "Para criar uma conta real na MetaTrader, você precisa autenticar a sua conta BInary:"
-
-msgid "To create a real account for MetaTrader, <a href=\"%1\">upgrade to %2 real money account</a>."
-msgstr "Para criar uma conta real na MetaTrader, <a href=\"%1\">faça a atualização para uma conta de dinheiro real %2</a>."
-
-msgid "To create a real account for MetaTrader, switch to your %1 real money account."
-msgstr "Para criar uma conta real na MetaTrader, mude para a sua conta de dinheiro real %1."
-
-msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
-msgstr "Para depositar ou retirar fundos da sua conta real na MetaTrader, mude para a sua conta real Binary.com."
-
 msgid "To enable cookies, follow the instructions below for the browser version that you are using."
 msgstr "Para ativar os cookies, siga as instruções abaixo para a versão de browser que está a utilizar."
 
@@ -6529,7 +6414,7 @@ msgstr "Transacionar em"
 
 #, fuzzy
 #| msgid "Your transaction reference is"
-msgid "Transaction performed by"
+msgid "Transaction performed by %1 (App ID: %2)"
 msgstr "A referência da sua transação é"
 
 msgid "Transfer"
@@ -6704,9 +6589,6 @@ msgstr "Formato incorreto de código de verificação."
 
 msgid "Verification token"
 msgstr "Token de verificação"
-
-msgid "Verify Main Password"
-msgstr "Verificar a senha principal"
 
 msgid "Verify new password"
 msgstr "Verifique a nova senha"
@@ -7115,18 +6997,6 @@ msgstr "No que diz respeito ao acompanhamento dos clientes que acedem à %1 atra
 msgid "Withdraw"
 msgstr "Retirar"
 
-msgid "Withdraw from"
-msgstr "Retirar fundos de"
-
-msgid "Withdraw from MetaTrader account"
-msgstr "Retirar fundos da conta MetaTrader"
-
-msgid "Withdraw funds from your MetaTrader account into your Binary account:"
-msgstr "Retire fundos da sua conta MetaTrader para a sua conta Binary:"
-
-msgid "Withdraw to"
-msgstr "Retirar fundos para"
-
 msgid "Withdraw: %1 working day"
 msgstr "Retirada: %1 dia útil"
 
@@ -7141,9 +7011,6 @@ msgstr "Limites de retirada"
 
 msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
 msgstr ""
-
-msgid "Withdrawal is done. Transaction ID:"
-msgstr "A retirada está concluída. ID de transação:"
 
 msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgstr "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
@@ -7448,9 +7315,6 @@ msgstr "O seu Cliente receberá uma notificação por e-mail com a informação 
 msgid "Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on %1 and in that event, opens an account with us."
 msgstr "A sua ID será armazenada numa cookie e identificada cada vez que um candidato clicar no seu link de afiliado e chegar a %1 e, nesse evento, abrir uma conta conosco."
 
-msgid "Your Name"
-msgstr "O seu nome"
-
 msgid "Your Property"
 msgstr "A sua propriedade"
 
@@ -7516,9 +7380,6 @@ msgstr "O seu dinheiro está sempre seguro com a %1. O tempo todo, ele é guarda
 
 msgid "Your name, email address and contact number"
 msgstr "O seu nome, endereço de e-mail e número de contato"
-
-msgid "Your new account has been created."
-msgstr "A sua conta nova foi criada."
 
 msgid "Your password and login ID are unique and passwords are hashed so that not even %1 staff can read them. This is the reason why we cannot retrieve your password and have to issue you with a new one to your email address if you cannot recall it."
 msgstr "A sua senha e o ID de início de sessão são únicos e as senhas estão protegidas para que nem os funcionários da %1 as possam ler. Esta é a razão por que não podemos recuperar a senha e de termos de lhe emitir uma nova e enviá-la para o seu endereço de e-mail se não conseguir lembrar-se."
@@ -8482,17 +8343,158 @@ msgstr "Transferência do agente de pagamentos"
 msgid "Sharp Prices. Smart Trading."
 msgstr "Preços Afiados. Negociações Inteligentes."
 
-msgid "MetaTrader"
-msgstr "MetaTrader"
-
 msgid "Account Details"
 msgstr "Detalhes da Conta"
 
 msgid "Terms and Conditions Approval"
 msgstr "Aprovação dos termos e condições"
 
-msgid "Trading with MetaTrader 5"
-msgstr "Negociando com a MetaTrader 5"
+#~ msgid "%1 %2 (\"API\") Terms and Conditions"
+#~ msgstr "Termos e Condições"
+
+#~ msgid "%1’s <a href=\"%2\">Volatility Indices</a> are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
+#~ msgstr "Os <a href=\"%2\">índices Volatility</a> da %1 estão agora disponíveis 24/7 na MetaTrader 5. Ativos adicionais serão lançados muito em breve."
+
+#~ msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
+#~ msgstr "<strong>Ferramentas avançadas para análise fundamental e técnica,</strong> incluindo indicadores, gráficos e mais."
+
+#~ msgid "<strong>Highly competitive spreads with no commission.</strong>"
+#~ msgstr "<strong>Spreads altamente competitivos sem comissão.</strong>"
+
+#~ msgid "<strong>Subscriptions to a wide range of Expert Advisors,</strong> automated trading applications from the MetaTrader Market."
+#~ msgstr "<strong>Subscrições a uma grande variedade de consultores especializados</strong> e aplicativos de negociação automatizados do mercado MetaTrader."
+
+#~ msgid "Account Type"
+#~ msgstr "Tipo de conta"
+
+#~ msgid "Click the button below to download MetaTrader."
+#~ msgstr "Clique no botão abaixo para baixar a MetaTrader."
+
+#~ msgid "Congratulations! Your account has been created."
+#~ msgstr "Parabéns! A sua conta foi criada."
+
+#~ msgid "Create a MetaTrader account to trade on the MetaTrader 5 platform."
+#~ msgstr "Crie uma conta MetaTrader para negociar na plataforma MetaTrader 5."
+
+#~ msgid "Demo"
+#~ msgstr "Demo"
+
+#~ msgid "Demo Account"
+#~ msgstr "Conta demo"
+
+#~ msgid "Deposit from"
+#~ msgstr "Depositar de"
+
+#~ msgid "Deposit funds into your MetaTrader account from your Binary account:"
+#~ msgstr "Deposite fundos da sua conta Binary na sua conta MetaTrader:"
+
+#~ msgid "Deposit is done. Transaction ID:"
+#~ msgstr "Depósito concluído. ID de transação:"
+
+#~ msgid "Deposit to"
+#~ msgstr "Depositar para"
+
+#~ msgid "Deposit to MetaTrader account"
+#~ msgstr "Deposite fundos na sua conta MetaTrader"
+
+#~ msgid "Download MetaTrader"
+#~ msgstr "Baixar MetaTrader"
+
+#~ msgid "Download MetaTrader for Windows"
+#~ msgstr "Baixar MetaTrader para Windows"
+
+#~ msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader’s website, please select “%1” from the list of available brokers."
+#~ msgstr "Se você baixou anteriormente a MetaTrader 5 diretamente do site da MetaTrader 5, selecione então \"%1\" da lista de corretoras disponíveis."
+
+#~ msgid "Investor Password (read-only access)"
+#~ msgstr "Senha de investidor (acesso somente leitura)"
+
+#~ msgid "Leverage"
+#~ msgstr "Alavancagem"
+
+#~ msgid "Linux Instructions"
+#~ msgstr "Instruções Linux"
+
+#~ msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
+#~ msgstr "Conecte-se ao aplicativo usando o seu número de conta MetaTrader e a senha da sua conta MetaTrader."
+
+#~ msgid "Login"
+#~ msgstr "Conectar-se"
+
+#~ msgid "MacOS Instructions"
+#~ msgstr "Instruções MacOS"
+
+#~ msgid "Main Password (trading access)"
+#~ msgstr "Senha principal (acesso de negociação)"
+
+#~ msgid "MetaTrader Accounts Management"
+#~ msgstr "Gerenciamento de contas MetaTrader"
+
+#~ msgid "MetaTrader Main Password"
+#~ msgstr "Senha principal da MetaTrader"
+
+#~ msgid "Now Introducing MetaTrader 5 on %1"
+#~ msgstr "Apresentamos agora MetaTrader 5 na %1"
+
+#~ msgid "Run the installation file and follow the instructions."
+#~ msgstr "Execute o arquivo de instalação e siga as instruções."
+
+#~ msgid "Start Trading with MetaTrader 5"
+#~ msgstr "Começar a negociar com a MetaTrader 5"
+
+#~ msgid "Start trading with your Demo Account"
+#~ msgstr "Começar a negociar com a sua Conta Demo"
+
+#~ msgid "Start trading with your Real Account"
+#~ msgstr "Começar a negociar com a sua Conta Real"
+
+#~ msgid "Take advantage of numerous benefits, including:"
+#~ msgstr "Aproveite inúmeros benefícios, incluindo:"
+
+#~ msgid "Take your trading to the next level through this powerful interface, recognised as the benchmark standard worldwide."
+#~ msgstr "Leve as suas negociações ao próximo nível através desta poderosa interface, reconhecida como uma referência padrão em todo o mundo."
+
+#~ msgid "To create a Real account for MetaTrader, you need to authenticate your Binary account:"
+#~ msgstr "Para criar uma conta real na MetaTrader, você precisa autenticar a sua conta BInary:"
+
+#~ msgid "To create a real account for MetaTrader, <a href=\"%1\">upgrade to %2 real money account</a>."
+#~ msgstr "Para criar uma conta real na MetaTrader, <a href=\"%1\">faça a atualização para uma conta de dinheiro real %2</a>."
+
+#~ msgid "To create a real account for MetaTrader, switch to your %1 real money account."
+#~ msgstr "Para criar uma conta real na MetaTrader, mude para a sua conta de dinheiro real %1."
+
+#~ msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
+#~ msgstr "Para depositar ou retirar fundos da sua conta real na MetaTrader, mude para a sua conta real Binary.com."
+
+#~ msgid "Verify Main Password"
+#~ msgstr "Verificar a senha principal"
+
+#~ msgid "Withdraw from"
+#~ msgstr "Retirar fundos de"
+
+#~ msgid "Withdraw from MetaTrader account"
+#~ msgstr "Retirar fundos da conta MetaTrader"
+
+#~ msgid "Withdraw funds from your MetaTrader account into your Binary account:"
+#~ msgstr "Retire fundos da sua conta MetaTrader para a sua conta Binary:"
+
+#~ msgid "Withdraw to"
+#~ msgstr "Retirar fundos para"
+
+#~ msgid "Withdrawal is done. Transaction ID:"
+#~ msgstr "A retirada está concluída. ID de transação:"
+
+#~ msgid "Your Name"
+#~ msgstr "O seu nome"
+
+#~ msgid "Your new account has been created."
+#~ msgstr "A sua conta nova foi criada."
+
+#~ msgid "MetaTrader"
+#~ msgstr "MetaTrader"
+
+#~ msgid "Trading with MetaTrader 5"
+#~ msgstr "Negociando com a MetaTrader 5"
 
 #~ msgid "Charts"
 #~ msgstr "Gráficos"

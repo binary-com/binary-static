@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-27 23:22+0000\n"
+"PO-Revision-Date: 2016-09-03 11:11+0000\n"
 "Last-Translator: Ahmed Kotb <ahmedmohamedkotp@gmail.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/binary/static/ar/>\n"
 "Language: ar\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 2.8-dev\n"
+"X-Generator: Weblate 2.8\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
@@ -40,13 +40,15 @@ msgstr "$25,000 - $100,000"
 msgid "$250,000 - $1,000,000"
 msgstr "$250,000 - $1,000,000"
 
-msgid "%1 %2 (\"API\") Terms and Conditions"
-msgstr "1% 2% (\"واجهة برمجة التطبيقات\") الشروط والأحكام"
-
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "تم إضافة %1 %2 لحساب أموالك الإفتراضي %3"
 
 msgid "%1 Affiliate Program Terms and Conditions"
+msgstr "أحكام وشروط برنامج الإنتساب الخاص بـ %1"
+
+#, fuzzy
+#| msgid "%1 Affiliate Program Terms and Conditions"
+msgid "%1 Application Program Interface (\"API\") Terms and Conditions"
 msgstr "أحكام وشروط برنامج الإنتساب الخاص بـ %1"
 
 msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
@@ -286,9 +288,6 @@ msgstr "تاريخ Binary.com البارز"
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "أنظمة %1 تقوم الآن بمعالجة ما يزيد على 1 مليون صفقة / يوم (بما في ذلك الحسابات الافتراضية)."
 
-msgid "%1’s <a href=\"%2\">Volatility Indices</a> are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
-msgstr "%1 <a href=\"%2\">مؤشرات التذبذب</a> متاحة الآن 24/7 على الميتاتريدر 5. سيتم إطلاق أصول إضافية قريباً جداً."
-
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "minimum duration, for example minimum 15 seconds)%ctx)دقيقة"
 
@@ -520,9 +519,6 @@ msgstr "<strong>سعر ثنائى الاتجاه</strong> - تقدم لك %1 س�
 msgid "<strong>Additional business exposure:</strong> You will increase awareness of your services and generate new business."
 msgstr "<strong>عرض إضافي للأعمال:</strong> سوف تزيد التوعية بخدماتك وكذلك إنشاء أعمال جديدة."
 
-msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
-msgstr "<strong>أدوات متطورة للتحليلات الفنية والأساسية,</strong> بما في ذلك المؤشرات, الرسوم البيانية, والمزيد."
-
 #, fuzzy
 #| msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgid "<strong>All durations:</strong> from 10 seconds to 365 days."
@@ -593,9 +589,6 @@ msgstr "<strong>أعلى/أسفل</strong> - توقع هل سيغلق السوق
 
 msgid "<strong>Higher/Lower</strong> - where you can profit from the market ending higher or lower than a target price."
 msgstr "<strong>أكثر/أقل</strong> -حيث يمكنك أن تربح من إغلاق السوق عند سعر أكثر أو أقل من سعرمستهدف."
-
-msgid "<strong>Highly competitive spreads with no commission.</strong>"
-msgstr "<strong>هوامش تنافسية للغاية بدون عمولة.</strong>"
 
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and Payment Agents."
 msgstr "<strong>تنوية هام</strong> - ليس لـ %1 علاقة بأى من وكلاء الدفع المذكورين أعلاه. كل وكيل دفع يعمل كمزود خدمة مستقل وليس موافق عليه أو مضمون بأى شكل آخر من %1. يتعامل العملاء مع وكلاء الدفع على مسئوليتهم الخاصة. ننصح العملاء بالتحقق من أوراق اعتماد وكلاء الدفع قبل أن يرسلوا لهم أى أموال. %1 لا تتحمل مسئولية الصفقات بين العملاء ووكلاء الدفع تحت أى ظرف."
@@ -680,9 +673,6 @@ msgstr "<strong>مؤشرات البورصة</strong> - تداول كل مؤشر�
 
 msgid "<strong>Stock indices</strong> - trade all major worldwide stock indices."
 msgstr "<strong>مؤشرات البورصة</strong> - تداول كل مؤشرات البورصة الرئيسية فى أنحاء العالم."
-
-msgid "<strong>Subscriptions to a wide range of Expert Advisors,</strong> automated trading applications from the MetaTrader Market."
-msgstr "<strong>اشتراكات لمجموعة واسعة من خبراء المستشارين,</strong> تطبيقات تداول أوتوماتيكية أسواق الميتاتريدر."
 
 msgid "<strong>Take early profits</strong> - sell your long-term trades at market prices before they expire."
 msgstr "<strong>أحصل على الأرباح مبكراً</strong> - قم ببيع معاملاتك التجارية طويلة الأجل بسعر السوق قبل أنتهاء صلاحيتها."
@@ -923,11 +913,6 @@ msgstr "كلمة مرور مفقودة؟"
 msgid "Account Transfer"
 msgstr "تحويل الحساب"
 
-#, fuzzy
-#| msgid "Account Opening"
-msgid "Account Type"
-msgstr "فتح حساب"
-
 msgid "Account balance: "
 msgstr "رصيد الحساب: "
 
@@ -1137,9 +1122,6 @@ msgstr "أي شخص فوق سن 18عاما [من الذين قرأوا وواف�
 msgid "Anyone who has potential to grow or increase traffic to %1"
 msgstr "أي شخص يمكنه زيادة حركة المرور إلى موقع %1"
 
-msgid "App ID"
-msgstr "معرف التطبيق"
-
 msgid "Applications"
 msgstr "تطبيقات"
 
@@ -1164,7 +1146,7 @@ msgid "Appropriateness Test"
 msgstr "اختبار الملاءمة"
 
 msgid "Apps"
-msgstr ""
+msgstr "التطبيقات"
 
 msgid "Apr"
 msgstr "أبريل"
@@ -1743,9 +1725,6 @@ msgstr "Classification of assets requiring hedge"
 msgid "Click here to retry"
 msgstr "أنقر هنا لإعادة المحاولة"
 
-msgid "Click the button below to download MetaTrader."
-msgstr "أضغط على الزر أدناه لتحميل الميتاتريدر."
-
 msgid "Client classification"
 msgstr "تصنيف العميل"
 
@@ -1881,11 +1860,6 @@ msgstr "Confirmation and understandings"
 
 msgid "Conflicts Policy"
 msgstr "سياسة تضارب المصالح"
-
-#, fuzzy
-#| msgid "Congratulations! <br /> You have won the contract!"
-msgid "Congratulations! Your account has been created."
-msgstr "تهانينا <br />لقد فزت بالعقد!"
 
 msgid "Construction"
 msgstr "الإنشاءات"
@@ -2051,9 +2025,6 @@ msgstr "أنشىء حساب جديد"
 msgid "Create New Token"
 msgstr "إنشاء رمز جديد"
 
-msgid "Create a MetaTrader account to trade on the MetaTrader 5 platform."
-msgstr "أنشيء حساب ميتاتريدر للتداول على منصة ميتاتريدر 5."
-
 #, fuzzy
 #| msgid "Create clear, concise and engaging content for display on the company’s website, blog, social media outlets, and marketing materials"
 msgid "Create clear, concise and engaging content for display on the company's website, blog, social media outlets, and marketing materials"
@@ -2171,14 +2142,6 @@ msgstr "تعريفات"
 msgid "Delete"
 msgstr "أحذف"
 
-msgid "Demo"
-msgstr "تجريبي"
-
-#, fuzzy
-#| msgid "Open Account"
-msgid "Demo Account"
-msgstr "يفتح حساب"
-
 msgid "Demonstrate the ability to think / act quickly and multi-task as needed to execute effective campaigns"
 msgstr "إظهار القدرة على التفكير / العمل بسرعة وتعدد المهام كما هو مطلوب لتنفيذ حملات فعالة"
 
@@ -2198,17 +2161,6 @@ msgid "Deposit Bonus"
 msgstr "إيداع المكافأة"
 
 #, fuzzy
-#| msgid "Deposit of"
-msgid "Deposit from"
-msgstr "إيداع"
-
-msgid "Deposit funds into your MetaTrader account from your Binary account:"
-msgstr "إيداع الأموال في حساب ميتاتريدر الخاص بك من حسابك في Binary:"
-
-msgid "Deposit is done. Transaction ID:"
-msgstr "تم الإيداع. معرف المعاملة:"
-
-#, fuzzy
 #| msgid "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\">here</a> for further information."
 msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgstr "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\"> 1here</a> 2 for further information."
@@ -2218,14 +2170,6 @@ msgstr "إيداع"
 
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "إيداع أو سحب على حسابك عن طريق الحوالات المصرفية، أوبطاقات الائتمان، أو محفظة نقود إلكترونية."
-
-#, fuzzy
-#| msgid "Deposit of"
-msgid "Deposit to"
-msgstr "إيداع"
-
-msgid "Deposit to MetaTrader account"
-msgstr "الإيداع في حساب الميتاتريدر"
 
 msgid "Deposit: %1 working day"
 msgstr "إيداع: %1 يوم عمل"
@@ -2240,7 +2184,7 @@ msgid "Depositing and withdrawing funds"
 msgstr "إيداع وسحب الأموال"
 
 msgid "Deposits and withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
-msgstr ""
+msgstr "الإيداع والسحب غير متاح في حسابك في الوقت الراهن. برجاء الإتصال ب %1 لإعادة فتحه."
 
 msgid "Derivative"
 msgstr "مشتق"
@@ -2358,16 +2302,6 @@ msgstr "الحسابات الخاملة وغير النشطة"
 #| msgid "Download SVG"
 msgid "Download CSV"
 msgstr "حمل ملف SVG"
-
-#, fuzzy
-#| msgid "Download for Windows"
-msgid "Download MetaTrader"
-msgstr "تحميل لنظام التشغيل Windows"
-
-#, fuzzy
-#| msgid "Download for Windows"
-msgid "Download MetaTrader for Windows"
-msgstr "تحميل لنظام التشغيل Windows"
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "دفع النمو السريع وتطوير الأعمال, لدعم مبيعات الشركة والأهداف التسويقية"
@@ -2965,7 +2899,7 @@ msgid "Get Started"
 msgstr "ابدأ"
 
 msgid "Get USD 10,000.00"
-msgstr ""
+msgstr "أحصل على 10.000 دولار أمريكي"
 
 #, fuzzy
 #| msgid "Get your free $10,000 virtual money"
@@ -3226,9 +3160,6 @@ msgstr "إذا كنت بحاجة إلى المساعدة, فلا تتردد با
 #| msgid "If you need assistance feel free to contact our %1Customer Support"
 msgid "If you need assistance feel free to contact our <a class=\"pjaxload\" href=\"%1\">Customer Support</a>."
 msgstr "إذا كنت بحاجة إلى المساعدة, فلا تتردد بالإتصال بفريق 1% دعم العملاء لدينا"
-
-msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader’s website, please select “%1” from the list of available brokers."
-msgstr "إذا كنت قد قمت بتحميل منصة ميتاتريدر 5 مسبقاً ومباشرة من موقع الميتاتريدر, فبرجاء اختيار \"%1\" من قائمة الوسطاء المتاحين."
 
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "إذا اخترت \"هبوط آسيوي\"، تربح العائد إذا كانت <strong>آخر حركة</strong> <strong>أقل</strong> من <strong>متوسط</strong> حركات السوق."
@@ -3557,9 +3488,6 @@ msgstr "الاستثمارات وتوزيعات الأرباح"
 
 msgid "Investor Compensation Scheme"
 msgstr "برنامج تعويض المستثمر"
-
-msgid "Investor Password (read-only access)"
-msgstr "كلمة مرور المستثمر (الوصول للقراءة فقط)"
 
 msgid "Involved in evaluation of regulatory compliance and risk management. Work with the Head of Departments to improve business processes."
 msgstr "المشاركة في تقييم إدارة المخاطر والامتثال التنظيمي. العمل مع رئيس الإدارات لتحسين العمليات التجارية."
@@ -4178,11 +4106,6 @@ msgstr "Less than 6 months"
 msgid "Level of Education"
 msgstr "مستوى التعليم"
 
-#, fuzzy
-#| msgid "Average"
-msgid "Leverage"
-msgstr "متوسط"
-
 msgid "Leverage social-media tools and channels to identify, engage, and convert potential new customers and partners"
 msgstr "رفع قدرة وفاعلية أدوات وقنوات التواصل الإجتماعي لتحديد وجذب وتحويل العملاء والشركاء المحتملين الجدد"
 
@@ -4219,11 +4142,6 @@ msgstr "رابط لتوجيه عملائنا لطلبك."
 msgid "Links"
 msgstr "روابط"
 
-#, fuzzy
-#| msgid "Further Instructions"
-msgid "Linux Instructions"
-msgstr "مزيد من التعليمات"
-
 msgid "Live chat:"
 msgstr "المحادثة الحية:"
 
@@ -4233,9 +4151,6 @@ msgstr "قفل الصراف"
 msgid "Log in"
 msgstr "تسجيل الدخول"
 
-msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
-msgstr "تسجيل الدخول للتطبيق يكون باستخدام رقم حساب الميتاتريدر الخاص بك وكلمة مرور حساب الميتاتريدر الخاص بك."
-
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "سجل الدخول لحساب الإنتساب لـ %1 وانقر على: الأمور المالية وتعليمات الدفع."
 
@@ -4244,9 +4159,6 @@ msgstr "سجل الدخول لحساب الإنتساب في %1 وانقر عل�
 
 msgid "Log-in to your %1 affiliate account and click on: Reports &rarr; Traffic Report."
 msgstr "سجل الدخول لحساب الإنتساب في %1 وانقر على: التقارير وتقرير المرور."
-
-msgid "Login"
-msgstr "تسجيل الدخول"
 
 msgid "Login History"
 msgstr "تاريخ تسجيل الدخول"
@@ -4283,14 +4195,6 @@ msgstr "تحديد حاجز منخفض"
 
 msgid "MENA FFXPO Award"
 msgstr "جائزة مؤتمر ومعرض الشرق الأوسط وشمال أفريقيا للتداول الذكي"
-
-#, fuzzy
-#| msgid "Specific Instructions"
-msgid "MacOS Instructions"
-msgstr "تعليمات خاصة"
-
-msgid "Main Password (trading access)"
-msgstr "كلمة المرور الرئيسية (الوصول للتداول)"
 
 msgid "Maintain accurate system pricing parameters"
 msgstr "الحفاظ على نظام دقيق لعوامل التسعير"
@@ -4407,14 +4311,6 @@ msgstr "تاريخ لا ينسى"
 
 msgid "Memorable town/city"
 msgstr "مدينة أو بلدة لا تنسى"
-
-msgid "MetaTrader Accounts Management"
-msgstr "إدارة حسابات الميتاتريدر"
-
-#, fuzzy
-#| msgid "Verify new password"
-msgid "MetaTrader Main Password"
-msgstr "قم بالتأكيد على كلمة المرور الجديدة"
 
 msgid "Method"
 msgstr "الطريقة"
@@ -4638,9 +4534,6 @@ msgstr "يمكن للمتداولين المبتدئين استخدام منصت
 
 msgid "Now"
 msgstr "الآن"
-
-msgid "Now Introducing MetaTrader 5 on %1"
-msgstr "الآن تقديم ميتاتريدر 5 على %1"
 
 msgid "Number of ticks"
 msgstr "عدد الحركات"
@@ -5551,9 +5444,6 @@ msgstr "مخاطر المنتجات الاستثمارية"
 msgid "Run daily payments reports and report suspected fraud"
 msgstr "عمل تقارير يومية للمدفوعات وتقرير اشتباه الاحتيال"
 
-msgid "Run the installation file and follow the instructions."
-msgstr "قم بتشغيل ملف التثبيت واتبع التعليمات."
-
 msgid "Russia"
 msgstr "روسيا"
 
@@ -5840,26 +5730,11 @@ msgstr "وقت البدء"
 msgid "Start Trading"
 msgstr "بدء التداول"
 
-#, fuzzy
-#| msgid "Start Trading Now"
-msgid "Start Trading with MetaTrader 5"
-msgstr "ابدأ التداول الآن"
-
 msgid "Start learning"
 msgstr "ابدأ التعلم"
 
 msgid "Start time"
 msgstr "وقت البدء"
-
-#, fuzzy
-#| msgid "Start Trading Now"
-msgid "Start trading with your Demo Account"
-msgstr "ابدأ التداول الآن"
-
-#, fuzzy
-#| msgid "Start Trading Now"
-msgid "Start trading with your Real Account"
-msgstr "ابدأ التداول الآن"
 
 msgid "State/Province"
 msgstr "الولاية/المقاطعة"
@@ -5988,12 +5863,6 @@ msgstr "الشروط والأحكام التكميلية للمنتجات الم
 #| msgid "Supporting the Group’s global recruiting and talent management needs"
 msgid "Supporting the Group's global recruiting and talent management needs"
 msgstr "دعم مجموعة من الموظفين حول العالم وإدارة احتياجات الموهوبين"
-
-msgid "Take advantage of numerous benefits, including:"
-msgstr "الإستفادة من فوائد عديدة, بما في ذلك:"
-
-msgid "Take your trading to the next level through this powerful interface, recognised as the benchmark standard worldwide."
-msgstr "قم بترقية مستوى التداول الخاص بك لمستوى أعلى من خلال هذه الواجهة القوية, والمعروفة كمعيار قياسي في جميع أنحاء العالم."
 
 msgid "Talk to us"
 msgstr "تكلم معنا"
@@ -6744,20 +6613,6 @@ msgstr "To begin Binary option trading, you will first need to read all these do
 msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "لتغيير اسمك أو تاريخ ميلادك أو بلد إقامتك أو البريد الإلكتروني يرجى الاتصال <a href=\"%1\">بخدمة العملاء</a>."
 
-msgid "To create a Real account for MetaTrader, you need to authenticate your Binary account:"
-msgstr "لإنشاء حساب حقيقي للميتاتريدر, أنت بحاجة لتوثيق حسابك في Binary:"
-
-msgid "To create a real account for MetaTrader, <a href=\"%1\">upgrade to %2 real money account</a>."
-msgstr "لإنشاء حساب حقيقي للميتاتريدر, <a href=\"%1\">قم بالتحديث ل %2 حساب مال حقيق</a>."
-
-#, fuzzy
-#| msgid "You are currently logged in to your virtual money account (%2)."
-msgid "To create a real account for MetaTrader, switch to your %1 real money account."
-msgstr "أنت حاليا قمت بتسجيل الدخول الى حساب أموالك الافتراضية (%2)."
-
-msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
-msgstr "للإيداع أو السحب من حساب الميتاتريدر الحقيقي الخاص بك, قم بالتحول إلى حسابك الحقيقي في Binary.com."
-
 msgid "To enable cookies, follow the instructions below for the browser version that you are using."
 msgstr "لتمكين ملفات تعريف الارتباط اتبع التعليمات أدناه لنسخة المتصفح التى تستخدمها."
 
@@ -6869,7 +6724,7 @@ msgstr "تعامل في"
 
 #, fuzzy
 #| msgid "Your transaction reference is"
-msgid "Transaction performed by"
+msgid "Transaction performed by %1 (App ID: %2)"
 msgstr "الرقم المرجعي لمعاملتك هو"
 
 msgid "Transfer"
@@ -7054,11 +6909,6 @@ msgstr "رمز التحقق غير صحيح."
 
 msgid "Verification token"
 msgstr "رمز التحقق"
-
-#, fuzzy
-#| msgid "Verify new password"
-msgid "Verify Main Password"
-msgstr "قم بالتأكيد على كلمة المرور الجديدة"
 
 msgid "Verify new password"
 msgstr "قم بالتأكيد على كلمة المرور الجديدة"
@@ -7501,24 +7351,6 @@ msgstr "فيما يتعلق بتتبع الإحالات الخاصة بك الت
 msgid "Withdraw"
 msgstr "سحب"
 
-#, fuzzy
-#| msgid "Withdraw"
-msgid "Withdraw from"
-msgstr "سحب"
-
-#, fuzzy
-#| msgid "Transfer from another account"
-msgid "Withdraw from MetaTrader account"
-msgstr "التحويل من حساب آخر"
-
-msgid "Withdraw funds from your MetaTrader account into your Binary account:"
-msgstr "قم بسحب الأموال من حسابك في ميتاتريدر إلى حسابك في Binary:"
-
-#, fuzzy
-#| msgid "Withdraw"
-msgid "Withdraw to"
-msgstr "سحب"
-
 msgid "Withdraw: %1 working day"
 msgstr "سحب: %1 يوم عمل"
 
@@ -7532,12 +7364,7 @@ msgid "Withdrawal Limits"
 msgstr "حدود السحب"
 
 msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
-msgstr ""
-
-#, fuzzy
-#| msgid "Withdrawal via Bank Transfer"
-msgid "Withdrawal is done. Transaction ID:"
-msgstr "السحب عن طريق تحويل بنكى"
+msgstr "السحب غير متاح على حسابك في الوقت الراهن. برجاء الإتصال ب %1 لإعادة فتحه."
 
 #, fuzzy
 #| msgid "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\">here</a> for further information."
@@ -7649,10 +7476,10 @@ msgid "You can close your trade before expiry to lock in profits."
 msgstr "يمكنك أن تغلق معاملتك قبل تاريخ الأنتهاء لتحتفظ بالأرباح."
 
 msgid "You can request more virtual money if your virtual balance falls below JPY 100,000."
-msgstr ""
+msgstr "بإمكانك طلب المزيد من المال الإفتراضي في حال انخفض رصيدك إلى أدنى من 100.000 ين ياباني."
 
 msgid "You can request more virtual money if your virtual balance falls below USD 1,000.00."
-msgstr ""
+msgstr "بإمكانك طلب المزيد من المال الإفتراضي في حال انخفض رصيدك الإفتراضي إلى أدنى من 1.000 دولار أمريكي."
 
 msgid "You can sell back long-term trades at any time to profit from changing market conditions."
 msgstr "يمكنك أن تقوم بإعادة بيع المعاملات طويلة الأجل في أي وقت لتربح من أحوال السوق المتغيرة."
@@ -7882,11 +7709,6 @@ msgstr "سيتسلم عميلك إشعار إلكتروني ليعلمه أنه 
 msgid "Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on %1 and in that event, opens an account with us."
 msgstr "سيتم تخزين معرف الدخول (ID) الخاص بك في ملف تعريف الارتباط وتحديد كل مرة ينقر عميل محتمل على رابط الانتساب الخاص بك وينتقل إلى %1 وبذلك، يفتح حساب معنا."
 
-#, fuzzy
-#| msgid "First Name"
-msgid "Your Name"
-msgstr "الإسم الأول"
-
 msgid "Your Property"
 msgstr "الملكية الخاصة بك"
 
@@ -7897,7 +7719,7 @@ msgid "Your account has no trading activity."
 msgstr "حسابك لا يوجد لديه تداول نشط."
 
 msgid "Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact %1."
-msgstr ""
+msgstr "حسابك معلق حالياً. السحب فقط هو المسموح به. لمزيد من المعلومات, برجاء الإتصال ب %1."
 
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "تم توثيق حسابك بالكامل وحد السحب الخاص بك تم رفعه."
@@ -7958,11 +7780,6 @@ msgstr "أموالك دائماً في أمان مع %1. حيث يتم حفظه�
 
 msgid "Your name, email address and contact number"
 msgstr "اسمك، وعنوان بريدك الإلكتروني ورقم الاتصال بك"
-
-#, fuzzy
-#| msgid "Your account has been debited with %1 %2"
-msgid "Your new account has been created."
-msgstr "تم خصم 1% 2% من حسابك"
 
 msgid "Your password and login ID are unique and passwords are hashed so that not even %1 staff can read them. This is the reason why we cannot retrieve your password and have to issue you with a new one to your email address if you cannot recall it."
 msgstr "كلمة مرورك ومعرف الدخول فريدين من نوعهما ويتم تجزئة كلمات المرور بحيث لا يستطيع أحد حتى موظفي %1 أن يقرأها. وهذا سبب عدم قدرتنا على استعادة كلمة المرور الخاصة بك ويجب أن نصدر واحدة جديدة ونرسلها لبريدك الإلكتروني إذا لم تستطع أن تتذكرها."
@@ -9040,19 +8857,207 @@ msgstr "تحويل قام به وكيل الدفع"
 msgid "Sharp Prices. Smart Trading."
 msgstr "أسعار دقيقة. للتداول بذكاء."
 
-#, fuzzy
-#| msgid "Webtrader"
-msgid "MetaTrader"
-msgstr "ويب تريدر(Webtrader)"
-
 msgid "Account Details"
 msgstr "تفاصيل الحساب"
 
 msgid "Terms and Conditions Approval"
 msgstr "لموافقة على الشروط والأحكام"
 
-msgid "Trading with MetaTrader 5"
-msgstr "تداول مع ميتاتريدر 5"
+#~ msgid "%1 %2 (\"API\") Terms and Conditions"
+#~ msgstr "1% 2% (\"واجهة برمجة التطبيقات\") الشروط والأحكام"
+
+#~ msgid "%1’s <a href=\"%2\">Volatility Indices</a> are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
+#~ msgstr "%1 <a href=\"%2\">مؤشرات التذبذب</a> متاحة الآن 24/7 على الميتاتريدر 5. سيتم إطلاق أصول إضافية قريباً جداً."
+
+#~ msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
+#~ msgstr "<strong>أدوات متطورة للتحليلات الفنية والأساسية,</strong> بما في ذلك المؤشرات, الرسوم البيانية, والمزيد."
+
+#~ msgid "<strong>Highly competitive spreads with no commission.</strong>"
+#~ msgstr "<strong>هوامش تنافسية للغاية بدون عمولة.</strong>"
+
+#~ msgid "<strong>Subscriptions to a wide range of Expert Advisors,</strong> automated trading applications from the MetaTrader Market."
+#~ msgstr "<strong>اشتراكات لمجموعة واسعة من خبراء المستشارين,</strong> تطبيقات تداول أوتوماتيكية أسواق الميتاتريدر."
+
+#, fuzzy
+#~| msgid "Account Opening"
+#~ msgid "Account Type"
+#~ msgstr "فتح حساب"
+
+#~ msgid "App ID"
+#~ msgstr "معرف التطبيق"
+
+#~ msgid "Click the button below to download MetaTrader."
+#~ msgstr "أضغط على الزر أدناه لتحميل الميتاتريدر."
+
+#, fuzzy
+#~| msgid "Congratulations! <br /> You have won the contract!"
+#~ msgid "Congratulations! Your account has been created."
+#~ msgstr "تهانينا <br />لقد فزت بالعقد!"
+
+#~ msgid "Create a MetaTrader account to trade on the MetaTrader 5 platform."
+#~ msgstr "أنشيء حساب ميتاتريدر للتداول على منصة ميتاتريدر 5."
+
+#~ msgid "Demo"
+#~ msgstr "تجريبي"
+
+#, fuzzy
+#~| msgid "Open Account"
+#~ msgid "Demo Account"
+#~ msgstr "يفتح حساب"
+
+#, fuzzy
+#~| msgid "Deposit of"
+#~ msgid "Deposit from"
+#~ msgstr "إيداع"
+
+#~ msgid "Deposit funds into your MetaTrader account from your Binary account:"
+#~ msgstr "إيداع الأموال في حساب ميتاتريدر الخاص بك من حسابك في Binary:"
+
+#~ msgid "Deposit is done. Transaction ID:"
+#~ msgstr "تم الإيداع. معرف المعاملة:"
+
+#, fuzzy
+#~| msgid "Deposit of"
+#~ msgid "Deposit to"
+#~ msgstr "إيداع"
+
+#~ msgid "Deposit to MetaTrader account"
+#~ msgstr "الإيداع في حساب الميتاتريدر"
+
+#, fuzzy
+#~| msgid "Download for Windows"
+#~ msgid "Download MetaTrader"
+#~ msgstr "تحميل لنظام التشغيل Windows"
+
+#, fuzzy
+#~| msgid "Download for Windows"
+#~ msgid "Download MetaTrader for Windows"
+#~ msgstr "تحميل لنظام التشغيل Windows"
+
+#~ msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader’s website, please select “%1” from the list of available brokers."
+#~ msgstr "إذا كنت قد قمت بتحميل منصة ميتاتريدر 5 مسبقاً ومباشرة من موقع الميتاتريدر, فبرجاء اختيار \"%1\" من قائمة الوسطاء المتاحين."
+
+#~ msgid "Investor Password (read-only access)"
+#~ msgstr "كلمة مرور المستثمر (الوصول للقراءة فقط)"
+
+#, fuzzy
+#~| msgid "Average"
+#~ msgid "Leverage"
+#~ msgstr "متوسط"
+
+#, fuzzy
+#~| msgid "Further Instructions"
+#~ msgid "Linux Instructions"
+#~ msgstr "مزيد من التعليمات"
+
+#~ msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
+#~ msgstr "تسجيل الدخول للتطبيق يكون باستخدام رقم حساب الميتاتريدر الخاص بك وكلمة مرور حساب الميتاتريدر الخاص بك."
+
+#~ msgid "Login"
+#~ msgstr "تسجيل الدخول"
+
+#, fuzzy
+#~| msgid "Specific Instructions"
+#~ msgid "MacOS Instructions"
+#~ msgstr "تعليمات خاصة"
+
+#~ msgid "Main Password (trading access)"
+#~ msgstr "كلمة المرور الرئيسية (الوصول للتداول)"
+
+#~ msgid "MetaTrader Accounts Management"
+#~ msgstr "إدارة حسابات الميتاتريدر"
+
+#, fuzzy
+#~| msgid "Verify new password"
+#~ msgid "MetaTrader Main Password"
+#~ msgstr "قم بالتأكيد على كلمة المرور الجديدة"
+
+#~ msgid "Now Introducing MetaTrader 5 on %1"
+#~ msgstr "الآن تقديم ميتاتريدر 5 على %1"
+
+#~ msgid "Run the installation file and follow the instructions."
+#~ msgstr "قم بتشغيل ملف التثبيت واتبع التعليمات."
+
+#, fuzzy
+#~| msgid "Start Trading Now"
+#~ msgid "Start Trading with MetaTrader 5"
+#~ msgstr "ابدأ التداول الآن"
+
+#, fuzzy
+#~| msgid "Start Trading Now"
+#~ msgid "Start trading with your Demo Account"
+#~ msgstr "ابدأ التداول الآن"
+
+#, fuzzy
+#~| msgid "Start Trading Now"
+#~ msgid "Start trading with your Real Account"
+#~ msgstr "ابدأ التداول الآن"
+
+#~ msgid "Take advantage of numerous benefits, including:"
+#~ msgstr "الإستفادة من فوائد عديدة, بما في ذلك:"
+
+#~ msgid "Take your trading to the next level through this powerful interface, recognised as the benchmark standard worldwide."
+#~ msgstr "قم بترقية مستوى التداول الخاص بك لمستوى أعلى من خلال هذه الواجهة القوية, والمعروفة كمعيار قياسي في جميع أنحاء العالم."
+
+#~ msgid "To create a Real account for MetaTrader, you need to authenticate your Binary account:"
+#~ msgstr "لإنشاء حساب حقيقي للميتاتريدر, أنت بحاجة لتوثيق حسابك في Binary:"
+
+#~ msgid "To create a real account for MetaTrader, <a href=\"%1\">upgrade to %2 real money account</a>."
+#~ msgstr "لإنشاء حساب حقيقي للميتاتريدر, <a href=\"%1\">قم بالتحديث ل %2 حساب مال حقيق</a>."
+
+#, fuzzy
+#~| msgid "You are currently logged in to your virtual money account (%2)."
+#~ msgid "To create a real account for MetaTrader, switch to your %1 real money account."
+#~ msgstr "أنت حاليا قمت بتسجيل الدخول الى حساب أموالك الافتراضية (%2)."
+
+#~ msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
+#~ msgstr "للإيداع أو السحب من حساب الميتاتريدر الحقيقي الخاص بك, قم بالتحول إلى حسابك الحقيقي في Binary.com."
+
+#, fuzzy
+#~| msgid "Verify new password"
+#~ msgid "Verify Main Password"
+#~ msgstr "قم بالتأكيد على كلمة المرور الجديدة"
+
+#, fuzzy
+#~| msgid "Withdraw"
+#~ msgid "Withdraw from"
+#~ msgstr "سحب"
+
+#, fuzzy
+#~| msgid "Transfer from another account"
+#~ msgid "Withdraw from MetaTrader account"
+#~ msgstr "التحويل من حساب آخر"
+
+#~ msgid "Withdraw funds from your MetaTrader account into your Binary account:"
+#~ msgstr "قم بسحب الأموال من حسابك في ميتاتريدر إلى حسابك في Binary:"
+
+#, fuzzy
+#~| msgid "Withdraw"
+#~ msgid "Withdraw to"
+#~ msgstr "سحب"
+
+#, fuzzy
+#~| msgid "Withdrawal via Bank Transfer"
+#~ msgid "Withdrawal is done. Transaction ID:"
+#~ msgstr "السحب عن طريق تحويل بنكى"
+
+#, fuzzy
+#~| msgid "First Name"
+#~ msgid "Your Name"
+#~ msgstr "الإسم الأول"
+
+#, fuzzy
+#~| msgid "Your account has been debited with %1 %2"
+#~ msgid "Your new account has been created."
+#~ msgstr "تم خصم 1% 2% من حسابك"
+
+#, fuzzy
+#~| msgid "Webtrader"
+#~ msgid "MetaTrader"
+#~ msgstr "ويب تريدر(Webtrader)"
+
+#~ msgid "Trading with MetaTrader 5"
+#~ msgstr "تداول مع ميتاتريدر 5"
 
 #, fuzzy
 #~| msgid "Chart"
