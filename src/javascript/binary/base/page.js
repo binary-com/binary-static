@@ -91,9 +91,7 @@ var GTM = (function() {
             'event'              : 'buy_contract',
             'visitorId'          : page.client.loginid,
             'bom_symbol'         : req.symbol,
-            'bom_market'         : markets && markets.by_symbol(req.symbol) ?
-                markets.by_symbol(req.symbol).market.name :
-                document.getElementById('contract_markets').value,
+            'bom_market'         : document.getElementById('contract_markets').value,
             'bom_currency'       : req.currency,
             'bom_contract_type'  : req.contract_type,
             'bom_contract_id'    : buy.contract_id,
