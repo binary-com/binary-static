@@ -4,8 +4,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2016-09-01 12:13+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
-"Language-Team: Chinese (Taiwan) "
-"<https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
+"Language-Team: Chinese (Taiwan) <https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
 "Language: zh_tw\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,13 +39,15 @@ msgstr "$25,000 - $100,000"
 msgid "$250,000 - $1,000,000"
 msgstr "$250,000 - $1,000,000"
 
-msgid "%1 %2 (\"API\") Terms and Conditions"
-msgstr "%1 %2 (\"API\") 條款和條件"
-
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr " %1 %2已記入您的虛擬資金帳戶 %3"
 
 msgid "%1 Affiliate Program Terms and Conditions"
+msgstr "%1 聯盟計劃的條款和條件"
+
+#, fuzzy
+#| msgid "%1 Affiliate Program Terms and Conditions"
+msgid "%1 Application Program Interface (\"API\") Terms and Conditions"
 msgstr "%1 聯盟計劃的條款和條件"
 
 msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
@@ -6361,7 +6362,6 @@ msgstr "交易檢視(TradingView)"
 msgid "Transact in"
 msgstr "交易"
 
-#| msgid "Transaction performed by"
 msgid "Transaction performed by %1 (App ID: %2)"
 msgstr "交易執行者為%1 (應用程式 ID: %2)"
 
@@ -8290,6 +8290,9 @@ msgstr "帳戶詳細資料"
 
 msgid "Terms and Conditions Approval"
 msgstr "條款和條件審批"
+
+#~ msgid "%1 %2 (\"API\") Terms and Conditions"
+#~ msgstr "%1 %2 (\"API\") 條款和條件"
 
 #~ msgid "%1’s <a href=\"%2\">Volatility Indices</a> are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
 #~ msgstr "%1的<a href=\"%2\">波動指數</a>如今可在MetaTrader 5全天候交易。我們將儘快推出更多資產。"

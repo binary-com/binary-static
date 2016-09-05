@@ -39,13 +39,15 @@ msgstr "$25.000 - $100.000"
 msgid "$250,000 - $1,000,000"
 msgstr "$250.000 - $1.000.000"
 
-msgid "%1 %2 (\"API\") Terms and Conditions"
-msgstr "Termini e condizioni di %1 %2 (\"API\")"
-
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%1 %2 sono stati accreditati sul tuo Account di moneta virtuale %3"
 
 msgid "%1 Affiliate Program Terms and Conditions"
+msgstr "Termini e condizioni del programma di affiliazione di %1"
+
+#, fuzzy
+#| msgid "%1 Affiliate Program Terms and Conditions"
+msgid "%1 Application Program Interface (\"API\") Terms and Conditions"
 msgstr "Termini e condizioni del programma di affiliazione di %1"
 
 msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
@@ -8350,6 +8352,9 @@ msgstr "Dettagli dell'account"
 
 msgid "Terms and Conditions Approval"
 msgstr "Approvazione dei termini e delle condizioni"
+
+#~ msgid "%1 %2 (\"API\") Terms and Conditions"
+#~ msgstr "Termini e condizioni di %1 %2 (\"API\")"
 
 #~ msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
 #~ msgstr "<strong>Strumenti avanzati per l'analisi fondamentale e tecnica, </strong>inclusi indicatori, grafici e altro."
