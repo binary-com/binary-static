@@ -5,7 +5,7 @@ var sidebar_scroll = function(elm_selector) {
         return false;
     }).addClass('unbind_later');
 
-    if (elm_selector.size()) {
+    if (elm_selector.length) {
         // grab the initial top offset of the navigation
         var selector = elm_selector.find('.sidebar');
         var width = selector.width();
