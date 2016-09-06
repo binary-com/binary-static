@@ -69,7 +69,8 @@ var TickDisplay_Beta = function() {
             }
         },
         initialize_chart: function(config) {
-            var $self = this;
+            var $self = this,
+                is_start_on_first_tick = $self.contract_category.match('digits|asian');
 
             var chart_options = {
                 chart: {
@@ -97,9 +98,9 @@ var TickDisplay_Beta = function() {
                     max: $self.ticks_needed - 0.5,
                     tickInterval: 1,
                     labels: {
-                      formatter: function() { return this.value + ($self.contract_category.match('digits|asian') ? 1 : 0); }
+                      formatter: function() { return this.value + (is_start_on_first_tick ? 1 : 0); }
                     },
-                    showFirstLabel: $self.contract_category.match('digits|asian') ? true : false,
+                    showFirstLabel: is_start_on_first_tick ? true : false,
                     crosshair: {
                         color: '#E98024',
                         zIndex: 1
@@ -128,7 +129,7 @@ var TickDisplay_Beta = function() {
                 $('#contract_purchase_profit_list .chart-values').css('display', 'flex');
                 $('#chart_values_tick_value').text(tick);
                 $('#chart_values_time_value').text(time);
-                $('#chart_values_price_value').text(price);
+                $('#chart_values_price_value').text(addComma(price));
             }
             if($self.is_trading_page) {
                 $.extend(true, chart_options, {
@@ -140,7 +141,7 @@ var TickDisplay_Beta = function() {
                         formatter: function () {
                             var that = this;
                             var time = moment.utc($self.applicable_ticks[that.x].epoch*1000).format('HH:mm:ss');
-                            show_values(that.x, time, that.y);
+                            show_values(+that.x + (is_start_on_first_tick ? 1 : 0), time, that.y);
                         },
                         events: {
                             hide: function () {
