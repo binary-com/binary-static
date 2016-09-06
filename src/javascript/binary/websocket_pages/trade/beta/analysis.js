@@ -25,7 +25,7 @@ var TradingAnalysis_Beta = (function() {
         } else {
           $('#tab_last_digit').addClass("invisible");
         }
-        sessionStorage.setItem('currentAnalysisTab', getActiveTab());
+        sessionStorage.setItem('currentAnalysisTab_Beta', getActiveTab());
         loadAnalysisTab();
     };
 
@@ -49,7 +49,7 @@ var TradingAnalysis_Beta = (function() {
             $analysis_tabs.find('li a').click(function(e) {
                 e.preventDefault();
                 var $li = $(this).parent();
-                sessionStorage.setItem('currentAnalysisTab', $li.attr('id'));
+                sessionStorage.setItem('currentAnalysisTab_Beta', $li.attr('id'));
                 if (!$li.hasClass('active')) {
                     loadAnalysisTab();
                 }
@@ -141,12 +141,12 @@ var TradingAnalysis_Beta = (function() {
      * get the current active tab if its visible i.e allowed for current parameters
      */
     var getActiveTab = function() {
-        var selectedTab = sessionStorage.getItem('currentAnalysisTab') || (JPTradePage.isJapan() ? 'tab_portfolio' : window.chartAllowed ? 'tab_graph' : 'tab_explanation'),
+        var selectedTab = sessionStorage.getItem('currentAnalysisTab_Beta') || (JPTradePage.isJapan() ? 'tab_portfolio' : window.chartAllowed ? 'tab_graph' : 'tab_explanation'),
             selectedElement = document.getElementById(selectedTab);
 
         if (selectedElement && selectedElement.classList.contains('invisible')) {
             selectedTab = window.chartAllowed ? 'tab_graph' : 'tab_explanation';
-            sessionStorage.setItem('currentAnalysisTab', selectedTab);
+            sessionStorage.setItem('currentAnalysisTab_Beta', selectedTab);
         }
 
         return selectedTab;
