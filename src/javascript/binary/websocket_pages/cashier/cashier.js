@@ -20,7 +20,7 @@ var Cashier = (function() {
         else if (page.client_status_detected('unwelcome')) {
             lock_cashier('locked', 'deposit');
         }
-        else if (!sessionStorage.getItem('client_status', 'any')) {
+        else if (!sessionStorage.getItem('client_status')) {
             BinarySocket.send({"get_account_status": "1", "passthrough":{"dispatch_to":"Cashier"}});
         }
     };
