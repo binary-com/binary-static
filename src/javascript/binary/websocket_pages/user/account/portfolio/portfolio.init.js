@@ -129,7 +129,7 @@ var PortfolioWS =  (function() {
             removeContract(proposal.contract_id);
         } else {
             if(proposal.is_valid_to_sell != 1) {
-                no_resale_html = '<span>' + text.localize('Resale not offered') + '</span>';
+                no_resale_html = '<span>' + page.text.localize('Resale not offered') + '</span>';
                 $td.addClass("no_resale");
             }
             else {
