@@ -57,7 +57,7 @@ body.JA {
     #header #menu-top li {
         white-space: nowrap;
     }
-    #profit-table #statement-table {
+    #profit-table, #statement-table {
         .buy-price, .sell-price, .payout, .pl.loss {
             white-space: nowrap;
         }
