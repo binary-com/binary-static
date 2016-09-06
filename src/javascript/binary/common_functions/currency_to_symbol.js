@@ -1,33 +1,32 @@
 function format_money(currency, amount) {
+    var updatedAmount = amount;
     if(currency === 'JPY') { // remove decimal points for JPY and add comma.
-        amount = amount.replace(/\.\d+$/, '');
-        amount = amount.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        updatedAmount = updatedAmount.replace(/\.\d+$/, '').replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 
     var symbol = format_money.map[currency];
     if (symbol === undefined) {
-        return currency + ' ' + amount;
+        return currency + ' ' + updatedAmount;
     }
-    return symbol + amount;
+    return symbol + updatedAmount;
 }
 
 function format_money_jp(currency, amount) {
     var sign = '';
+    var updatedAmount = amount;
     if(currency === 'JPY') { // remove decimal points and add comma.
         if (Number(amount) < 0 ) {
            sign = '-';
         }
 
-        amount = amount.replace(/\.\d+$/, '');
-        amount = amount.replace('-','');
-        amount = amount.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        updatedAmount = updatedAmount.replace(/\.\d+$/, '').replace('-','').replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 
     var symbol = format_money.map[currency];
     if (symbol === undefined) {
-        return currency + ' ' + amount;
+        return currency + ' ' + updatedAmount;
     }
-    return sign + symbol + amount;
+    return sign + symbol + updatedAmount;
 }
 
 
