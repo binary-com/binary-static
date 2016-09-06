@@ -169,3 +169,11 @@ pjax_config_page('/(us_patents|responsible-trading|partners)', function() {
         }
     };
 });
+
+pjax_config_page('/platforms', function() {
+    return {
+        onLoad: function() {
+            Platforms.init();
+        }
+    };
+});

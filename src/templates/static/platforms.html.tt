@@ -1,0 +1,153 @@
+<div class="gr-row static_full">
+    <div class="gr-3 gr-hide-m">
+        <div class="sidebar-left">
+            <ul class="sidebar-nav">
+                <li>
+                    <a href="#trading-platforms">[% l("Trading Platforms") %]</a>
+                </li>
+                <li>
+                    <a href="#platforms-comparison">[% l("Platforms Comparison") %]</a>
+                </li>
+                <li>
+                    <a href="#more-tools">[% l("More Tools") %]</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="gr-9 gr-12-m">
+        <div id="trading-platforms" class="sections invisible">
+            <h1>[% l("Trading Platforms") %]</h1>
+            <h2>[% l("Basic Platforms") %]</h2>
+            <div class="gr-row">
+                <div class="gr-6 gr-12-m gr-12-p">
+                    <img class="same-height" src="[% request.url_for('images/pages/platforms/trading-page.png') %]" />
+                    <div class="gr-padding-30">
+                        <h3>[% l("Binary.com Trading Page") %]</h3>
+                        <strong>[% l("Easy to use binary options trading") %]</strong>
+                        <p>
+                            [% l("Binary.com is easy for beginners but has the tools most trades need like technical indicators and different trading resources.") %]
+                            <p>
+                                <a class="button pjaxload" href="[% request.url_for('/trading') %]">
+                                    <span>[% l("Go to Trading Page") %]</span>
+                                </a>
+                            </p>
+                        </p>
+                    </div>
+                </div>
+                <div class="gr-6 gr-12-m gr-12-p">
+                    <img class="same-height" src="[% request.url_for('images/pages/platforms/tick-trade.png') %]" />
+                    <div class="gr-padding-30">
+                        <h3>[% l("Binary Tick Trade App") %]</h3>
+                        <strong>[% l("Ultra fast on-the-go trading") %]</strong>
+                        <p>
+                            [% l("With Tick Trade app, you can place lightning fast tick trades on Forex and Volatility markets wherever you go.") %]
+                            <div class="gr-row">
+                                <a class="gr-5 gr-6-m" href="https://itunes.apple.com/app/apple-store/id1091187567?pt=117911266&ct=platforms_page&mt=8" target="_blank">
+                                    <img class="same-width" src="[% request.url_for('images/pages/applications/appstore.svg') %]" />
+                                </a>
+                                <a class="gr-5 gr-6-m" href="https://play.google.com/store/apps/details?id=com.binary.ticktrade&referrer=utm_source%3Dbinary-com%26utm_medium%3Dreferrer%26utm_campaign%3Dplatforms_page" target="_blank">
+                                    <img class="same-width" src="[% request.url_for('images/pages/trade/google-play-badge.png') %]" />
+                                </a>
+                           </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <h2>[% l("Pro Platforms") %]</h2>
+            <div class="gr-row">
+                <div class="gr-6 gr-12-m gr-12-p">
+                    <img class="same-height" src="[% request.url_for('images/pages/platforms/metatrader.png') %]" />
+                    <div class="gr-padding-30">
+                        <h3>[% l("MetaTrader 5") %]</h3>
+                        <strong>[% l("Popular CFD trading platform with advanced charting and automation") %]</strong>
+                        <p>
+                            [% l("Take your trading to the next level through this powerful interface, recognised as the benchmark standard worldwide.") %]
+                            <p>
+                                <a class="button" href="https://mt.binary.com" target="_blank">
+                                    <span>[% l("Find Out More") %]</span>
+                                </a>
+                            </p>
+                        </p>
+                    </div>
+                </div>
+                <div class="gr-6 gr-12-m gr-12-p">
+                    <img class="same-height" src="[% request.url_for('images/pages/platforms/webtrader.png') %]" />
+                    <div class="gr-padding-30">
+                        <h3>[% l("Binary Webtrader") %]</h3>
+                        <strong>[% l("Modern binary options platform for active traders") %]</strong>
+                        <p>
+                            [% l("Webtrader allows advanced traders to customize their screen to their own trading strategies and specific needs.") %]
+                            <p>
+                                <a class="button" href="https://webtrader.binary.com" target="_blank">
+                                    <span>[% l("Try Webtrader") %]</span>
+                                </a>
+                            </p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="gr-row">
+                <div class="gr-6 gr-12-m gr-12-p">
+                    <img class="same-height" src="[% request.url_for('images/pages/platforms/nextgen.png') %]" />
+                    <div class="gr-padding-30">
+                        <h3>[% l("Binary Next Gen") %]</h3>
+                        <strong>[% l("The future of trading on Binary.com") %]</strong>
+                        <p>
+                            [% l("Explore our most cutting-edge new platform, now available in beta form. Place trades from your virtual account.") %]
+                            <div class="gr-row">
+                                <a class="gr-5 gr-6-m" href="https://itunes.apple.com/app/apple-store/id1134884301?pt=117911266&ct=platforms_page&mt=8" target="_blank">
+                                    <img class="same-width" src="[% request.url_for('images/pages/applications/appstore.svg') %]" />
+                                </a>
+                                <a class="gr-5 gr-6-m" href="https://play.google.com/store/apps/details?id=app.binary.com&referrer=utm_source%3Dbinary-com%26utm_medium%3Dreferrer%26utm_campaign%3Dplatforms_page" target="_blank">
+                                    <img class="same-width" src="[% request.url_for('images/pages/trade/google-play-badge.png') %]" />
+                                </a>
+                           </div>
+                        </p>
+                    </div>
+                </div>
+                <div class="gr-6 gr-12-m gr-12-p">
+                    <img class="same-height" src="[% request.url_for('images/pages/platforms/binarybot.png') %]" />
+                    <div class="gr-padding-30">
+                        <h3>[% l("Binary Bot") %]</h3>
+                        <strong>[% l("Easy trading bots constructor") %]</strong>
+                        <p>
+                            [% l("Binary Bot is our leading-edge programming tool which allows you to build trading apps with a simple \"jigsaw puzzle-like\" drag-and-drop function.") %]
+                            <p>
+                                <a class="button" href="https://bot.binary.com" target="_blank">
+                                    <span>[% l("Try It") %]</span>
+                                </a>
+                            </p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="platforms-comparison" class="sections invisible">
+            <h1>[% l("Platforms Comparison") %]</h1>
+            <p>[% l("Choose your ideal trading tool.") %]</p>
+        </div>
+        <div id="more-tools" class="sections invisible">
+            <h1>[% l("More Tools") %]</h1>
+            <div class="gr-row">
+                <div class="gr-6 gr-12-m gr-12-p">
+                    <img class="same-height" src="[% request.url_for('images/pages/platforms/tradingview.png') %]" />
+                    <div class="gr-padding-30">
+                        <h3>[% l("TradingView for Binary.com") %]</h3>
+                        <strong>[% l("Powerful charting and technical analysis") %]</strong>
+                        <p>
+                            [% l("TradingView's advanced charting platform allows you to analyze market trends with a plethora of advanced chart types and technical indicatos.") %]
+                            <p>
+                                <a class="button" href="https://shop.binary.com/collections/applications/products/binary-com-tradingview-chart" target="_blank">
+                                    <span>[% l("Try It") %]</span>
+                                </a>
+                            </p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <h2>[% l("And Even More Tools") %]</h2>
+            <p>[% l("You can find wealth of 3rd party tools for binary trading in <a href=\"https://shop.binary.com\" target=\"_blank\">Binary.com Store</a>.") %]</p>
+            <p>[% l("If you want to build your own trading tools or improve existing Binary software, find out about our API and open source projects on <a href=\"https://developers.binary.com\" target=\"_blank\">Binary Developer Gateway</a>.") %]</p>
+        </div>
+    </div>
+</div>
