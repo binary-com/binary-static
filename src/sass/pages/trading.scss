@@ -13,9 +13,6 @@ a.close {
     padding: 0;
     cursor: pointer;
     color: $COLOR_WHITE;
-    line-height: 35px;
-    font-size: 26px;
-    font-weight: normal;
     position: absolute;
     @include BIDIR_PROP(right, left, 0);
     z-index: 1;
