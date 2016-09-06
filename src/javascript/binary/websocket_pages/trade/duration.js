@@ -236,7 +236,7 @@ var Durations = (function(){
         // jquery for datepicker
         var amountElement = $('#duration_amount');
         if (unit.value === 'd') {
-            var tomorrow = window.time ? window.time.toDate() : new Date();
+            var tomorrow = window.time ? new Date(window.time.valueOf()) : new Date();
             tomorrow.setDate(tomorrow.getDate() + 1);
 
             amountElement.datepicker({
