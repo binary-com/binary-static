@@ -22,7 +22,7 @@
                     </div>
                   </fieldset>
                 </form>
-                <form id="real-form">
+                <form id="real-form" style="display:none">
                     <fieldset>
                         <legend id="details">[% l('Details') %]</legend>
                         <div class="gr-padding-10 gr-row clear">

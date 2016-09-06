@@ -12,7 +12,6 @@ pjax_config_page_require_auth("new_account/maltainvestws", function(){
       }
       handle_residence_state_ws();
       BinarySocket.send({residence_list:1});
-      BinarySocket.send({get_settings:1});
       BinarySocket.send({get_financial_assessment:1});
       $('#financial-form').submit(function(evt) {
         evt.preventDefault();

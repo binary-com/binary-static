@@ -193,6 +193,11 @@ function BinarySocketClass() {
                       page.client.set_cookie('residence', response.get_settings.country_code);
                       page.client.residence = response.get_settings.country_code;
                       send({landing_company: Cookies.get('residence')});
+                    } else if (response.get_settings.country_code === null && response.get_settings.country === null) {
+                        page.contents.topbar_message_visibility('show_residence');
+                    }
+                    if (/realws|maltainvestws|japanws/.test(window.location.href)) {
+                        handle_account_opening_settings(response);
                     }
                     GTM.event_handler(response.get_settings);
                     page.client.set_storage_value('tnc_status', response.get_settings.client_tnc_status || '-');
