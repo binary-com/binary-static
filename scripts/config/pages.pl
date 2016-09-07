@@ -28,7 +28,7 @@ sub all_pages {
         ['careers',                    'about/careers',                'full_width', 'Careers', 'ja'],
         ['open-positions',             'about/job_descriptions',       'full_width', 'Open Positions'],
         ['open-positions/job-details', 'about/job_details',            'full_width', 'Job Details'],
-        ['company-profile',            'japan/company_profile',        'defualt',    'Company Profile'],
+        ['company-profile',            'japan/company_profile',        'default',    'Company Profile'],
 
         ['open-source-projects',       'partners/open_source_projects',  'full_width', 'Open-Source Projects'],
         ['partners',                   'partners/partners',              'full_width', 'Partners', 'ja'],
