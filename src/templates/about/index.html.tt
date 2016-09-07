@@ -71,9 +71,7 @@
           <div class="gr-6 gr-12-m">
               <div class="gr-row">
                   <div class="gr-6 center-text border-right-bottom">
-                    <a class="pjaxload" href="http://binarycom.statuspage.io/" target="_blank">
                       <img class="responsive" src="[% request.url_for('images/pages/about/transacts.svg') %]"/>
-                    </a>
                     <p>
                       [% l("Binary's platform transacts on average 15 <a href='http://binarycom.statuspage.io/' target='_blank'>transactions</a> per second, 24/7") %]
                     </p>

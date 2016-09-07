@@ -39,6 +39,9 @@ body.JA {
     .regulatory-logo {
         display: none !important;
     }
+    .empty-space {
+        margin-top: 40px;
+    }
     #asset-forex div.table-header:nth-of-type(n + 3), #asset-forex div.table-body:nth-of-type(n + 15) {
         display: none !important;
     }

@@ -3,5 +3,10 @@
     <p>
       [% l("Japan website Terms and Conditions Paragraph 1") %]
     </p>
-    [% l("Japan website Download Text for Terms and Conditions Document") %]
+    <p>
+      <a class="button" href="[% request.url_for('/download/ja/Torihiki_Yakkan(T&C)20160526.pdf') %]" download>
+          <span>[% l("{Japan Only} Download Terms and Conditions Document file") %]</span>
+      </a>
+  </p>
+
 </div>
