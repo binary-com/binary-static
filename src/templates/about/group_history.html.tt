@@ -10,6 +10,14 @@
         <li class="year first center-text">
           [% 2016 %]
         </li>
+        <li class="event left featured" style="margin-bottom: 50px">
+          <div class="header">
+            [% l("Binary KK granted Japan license") %]
+          </div>
+          <div class="event-body">
+            [% l("Binary's Japanese subsidiary Binary KK is licensed by the KLFB as a Type 1 Financial Instruments Business in Japan.") %]
+          </div>
+        </li>
         <li class="event right" style="margin-bottom: 50px">
           <div class="header">
             [% l("Kuala Lumpur Office") %]
