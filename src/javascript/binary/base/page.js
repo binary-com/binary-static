@@ -709,15 +709,7 @@ Header.prototype = {
         $(".login-id-list").html(loginid_select);
     },
     register_dynamic_links: function() {
-        var logged_in_url = this.client.is_logged_in ?
-            page.url.url_for('trading') :
-            page.url.url_for('');
-
-       $('#logo').attr('href', logged_in_url).on('click', function(event) {
-           event.preventDefault();
-           load_with_pjax(logged_in_url);
-       }).addClass('unbind_later');
-
+       $('#logo').attr('href', page.url.url_for(this.client.is_logged_in ? 'trading' : ''));
        this.menu.register_dynamic_links();
     },
     start_clock_ws: function() {
