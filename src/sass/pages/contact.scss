@@ -1,8 +1,6 @@
 .contact-content {
-    .address-heading {
-        color: $COLOR_ORANGE;
-        font-weight: bold;
-        margin-bottom: 5px;
+    h2, h3 {
+        margin-bottom: 10px;
     }
     .hr-line {
         border-bottom: 1px solid $COLOR_GRAY;
