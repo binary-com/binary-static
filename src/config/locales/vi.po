@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: I 18N\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-04 05:17+0000\n"
+"PO-Revision-Date: 2016-09-06 10:01+0000\n"
 "Last-Translator: Pham Minh Hieu <hphamv7@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/binary/static/vi/>\n"
 "Language: vi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.8-dev\n"
+"X-Generator: Weblate 2.8\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"%1 API\" có nghĩa là một bộ chương trình lập trình độc quyền, các lệnh, các công cụ và nguồn lực được tạo ra và duy trì bởi %1 cái mà cho phép bạn sử dụng Ứng dụng đã được đăng ký để giao dịch trên sàn giao dịch %1."
@@ -50,10 +50,8 @@ msgstr "%1 %2 vừa được cộng thêm vào tài khoản tiền Ảo %3 củ
 msgid "%1 Affiliate Program Terms and Conditions"
 msgstr "Điều kiện và Điều khoản của chương trình hợp tác %1"
 
-#, fuzzy
-#| msgid "%1 Affiliate Program Terms and Conditions"
 msgid "%1 Application Program Interface (\"API\") Terms and Conditions"
-msgstr "Điều kiện và Điều khoản của chương trình hợp tác %1"
+msgstr "Điều kiện và Điều khoản của %1 Giao Diện Chương Trình Ứng Dụng (API)"
 
 msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
 msgstr "%1 Vui lòng nhấn vào đường dẫn dưới đây để bắt đầu lại quá trình khôi phục mật khẩu. Nếu bạn cần thêm trợ giúp, vui lòng liên hệ với Trung tâm hỗ trợ khách hàng của chúng tôi."
@@ -418,7 +416,7 @@ msgid "<a class='pjaxload' href='mailto:%1'>Contact Us</a>"
 msgstr "<a class='pjaxload' href='mailto:%1'> liên hệ với chúng tôi</a>"
 
 msgid "<a href=\"%1\">Return to trading page</a>"
-msgstr ""
+msgstr "<a href=\"%1\"> trở về trang giao dịch</a>"
 
 msgid "<a href='%1'>Founded</a> October 1999"
 msgstr "<a href='%1'>Đã thành lập</a> vào tháng Mười năm 1999"
@@ -480,18 +478,14 @@ msgstr "<strong>định giá 2 chiều</strong> - %1 định giá giao dịch v
 msgid "<strong>Additional business exposure:</strong> You will increase awareness of your services and generate new business."
 msgstr "<strong>Phát sinh giao dịch:</strong> Bạn sẽ hiểu biết thêm về dịch vụ của mình và có thể tạo thêm được giao dịch mới."
 
-#, fuzzy
-#| msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgid "<strong>All durations:</strong> from 10 seconds to 365 days."
-msgstr "<strong>Tất cả thời hạn</strong> - từ 10 giây đến 365 ngày."
+msgstr "<strong>Tất cả thời hạn:</strong> từ 10 giây đến 365 ngày."
 
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>Tất cả thời hạn</strong> - từ 10 giây đến 365 ngày."
 
-#, fuzzy
-#| msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
 msgid "<strong>All market conditions:</strong> up/down, touch/no-touch, stays in/goes out."
-msgstr "<strong>Tất cả điều kiện thị trường</strong> - lên/xuống, chạm/không chạm, ở trong/ra ngoài."
+msgstr "<strong>Tất cả điều kiện thị trường:</strong> lên/xuống, chạm/không chạm, ở trong/ra ngoài."
 
 msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
 msgstr "<strong>Tất cả điều kiện thị trường</strong> - lên/xuống, chạm/không chạm, ở trong/ra ngoài."
@@ -499,18 +493,14 @@ msgstr "<strong>Tất cả điều kiện thị trường</strong> - lên/xuố
 msgid "<strong>All markets, all conditions</strong> - trade currencies, indices and commodities in rising, falling, sideways, quiet and volatile markets."
 msgstr "<strong>Tất cả thị trường, tất cả điều kiện</strong> - đồng tiền giao dịch, chỉ số, và hàng hóa trong các loại thị trường lên, xuống, dao động ngang, tĩnh lặng, và biến động."
 
-#, fuzzy
-#| msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgid "<strong>All markets:</strong> currencies, stocks, indices, and commodities."
-msgstr "<strong>Tất cả thị trường</strong> - tiền tệ, chỉ số cổ phiếu, và hàng hóa."
+msgstr "<strong>Tất cả thị trường:</strong> tiền tệ, cổ phiếu, các chỉ số, và hàng hóa."
 
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgstr "<strong>Tất cả thị trường</strong> - tiền tệ, chỉ số cổ phiếu, và hàng hóa."
 
-#, fuzzy
-#| msgid "<strong>All payouts</strong> - from $1 to $50,000."
 msgid "<strong>All payouts:</strong> from $1 to $50,000."
-msgstr "<strong>Tất cả tiền thưởng</strong> - từ $1 đến $50,000."
+msgstr "<strong>Tất cả tiền thưởng:</strong> từ $1 đến $50,000."
 
 msgid "<strong>All payouts</strong> - from $1 to $50,000."
 msgstr "<strong>Tất cả tiền thưởng</strong> - từ $1 đến $50,000."
@@ -759,15 +749,11 @@ msgstr "Có sở thích và niềm đam mê với Linux và nền tảng mã ngu
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "Cách tiếp cận tích cực để giải quyết vấn đề và cung cấp giải pháp khách hàng"
 
-#, fuzzy
-#| msgid "- A scanned copy of a utility bill or bank statement (no more than 3 months old)."
 msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
-msgstr "Bản scan hóa đơn điện nước hoặc bản sao kê ngân hàng (không quá 3 tháng)."
+msgstr "Một bản scan hóa đơn điện nước hoặc bản sao kê ngân hàng (không quá 3 tháng gần đây nhất)."
 
-#, fuzzy
-#| msgid "- A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth."
 msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
-msgstr "-Một bản scan hộ chiếu, bằng lái xe (tạm thời hoặc chính thức), hoặc chứng minh nhân dân thể hiện tên và ngày sinh của bạn."
+msgstr "Một bản scan hộ chiếu, bằng lái xe (tạm thời hoặc chính thức), hoặc chứng minh nhân dân thể hiện tên và ngày sinh của bạn. Giấy tờ của bạn phải còn giá trị sử dụng ít nhất 6 tháng từ sau ngày này."
 
 msgid "A strong and passionate interest in Marketing and Advertising"
 msgstr "Sự yêu thích mạnh mẽ và đam mê với tiếp thị và quảng cáo"
@@ -856,10 +842,8 @@ msgstr "Quản lý và Theo dõi Tài khoản"
 msgid "Account Opening"
 msgstr "Mở tài khoản"
 
-#, fuzzy
-#| msgid "Lost Password?"
 msgid "Account Password"
-msgstr "Bạn đã mất mật khẩu?"
+msgstr "Mật khẩu tài khoản"
 
 msgid "Account Transfer"
 msgstr "Chuyển Tài khoản"
@@ -942,10 +926,8 @@ msgstr "Thỏa thuận về các Giới hạn"
 msgid "Agreement for documents"
 msgstr "Agreement for documents"
 
-#, fuzzy
-#| msgid "A True Partnership"
 msgid "All Partnership Options"
-msgstr "Sự hợp tác đúng nghĩa"
+msgstr "Tất cả các lựa chọn hợp tác"
 
 msgid "All affiliate activities must be conducted in a professional and proper manner. You shall be expected to act with good faith and integrity in your relationships with your referrals, and always act in the best interests of your referrals."
 msgstr "Tất cả những hoạt động liên kết phải được tiến hành một cách chuyên nghiệp và phù hợp. Bạn được kỳ vọng sẽ hoạt động với thiện ý và có quan hệ tốt đẹp với người mà bạn giới thiệu, cũng như sẽ luôn hoạt động vì lợi ích cao nhất của người mà bạn giới thiệu."
@@ -1081,7 +1063,7 @@ msgid "Appropriateness Test"
 msgstr "Kiểm tra tính Tương thích"
 
 msgid "Apps"
-msgstr ""
+msgstr "Ứng dụng"
 
 msgid "Apr"
 msgstr "Tháng 4"
@@ -1350,10 +1332,8 @@ msgstr "Công ty TNHH Binary, địa chỉ văn phòng được đăng ký t�
 msgid "Binary Options Basics"
 msgstr "Cơ bản về Quyền chọn Nhị phân"
 
-#, fuzzy
-#| msgid "Binary option"
 msgid "Binary Shop"
-msgstr "Quyền chọn nhị phân"
+msgstr "Cửa hàng Nhị phân"
 
 msgid "Binary Trading is simple to learn and to execute."
 msgstr "Giao dịch Nhị phân rất dễ để học và thực hiện."
@@ -1465,7 +1445,7 @@ msgid "By the 15th of every month, you will receive the commission earned during
 msgstr "Trước ngày 15 hàng tháng, bạn sẽ nhận được khoản tiền hoa hồng kiếm được trong tháng trước."
 
 msgid "By using or interacting with the website, you are consenting to the use of the Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
-msgstr ""
+msgstr "Bằng cách sử dụng hoặc tương tác với trang web, bạn đồng ý với việc sử dụng tính năng Google Analytics User ID, cho phép Google nắm bắt các ID %1 đăng nhập của bạn (cho ví dụ, VRTC1234, CR1234, MF1234, vv). Không có thông tin cá nhân nào khác ngoài ID đăng nhập Binary.com của bạn, hoặc dữ liệu khác mà có thể được liên kết đến thông tin như vậy bởi Google, hay được chia sẻ hoặc hoặc tiết lộ cho Google bằng cách kích hoạt tính năng tính năng Google Analytics User ID."
 
 msgid "Can I become an affiliate even if I don't have a website?"
 msgstr "Nếu tôi không có trang web, tôi có trở thành một thành viên được không?"
@@ -1497,15 +1477,11 @@ msgstr "Sự nghiệp"
 msgid "Cashier"
 msgstr "Thu ngân"
 
-#, fuzzy
-#| msgid "Cashier password"
 msgid "Cashier Password"
 msgstr "Mật khẩu Thu ngân"
 
-#, fuzzy
-#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
-msgstr "Không thể rút tiền, vui lòng liên lạc với chúng tôi <a class=\"pjaxload\" href=\"%1\"></a> để có thêm thông tin."
+msgstr "Thu ngân bị khóa, xin vui lòng <a class=\"pjaxload\" href=\"%1\"> liên hệ với chúng tôi</a> để biết thêm thông tin."
 
 msgid "Cashier password"
 msgstr "Mật khẩu Thu ngân"
@@ -1519,15 +1495,11 @@ msgstr "Thay đổi điểm nút cuối API"
 msgid "Change Password"
 msgstr "Thay đổi Mật khẩu"
 
-#, fuzzy
-#| msgid "Hundreds of deposit and withdrawal options."
 msgid "Change the password used for deposits and withdrawals."
-msgstr "Hàng trăm quyền chọn rút tiền và gửi tiền."
+msgstr "Thay đổi mật khẩu sử dụng cho tiền gửi và rút tiền."
 
-#, fuzzy
-#| msgid "Incorrect email or password."
 msgid "Change your main login password."
-msgstr "Email hoặc mật khẩu không đúng."
+msgstr "Thay đổi mật khẩu đăng nhập chính của bạn."
 
 msgid "Chart"
 msgstr "Biểu đồ"
@@ -2039,10 +2011,8 @@ msgstr "Gửi %1 %2 tiền ảo vào tài khoản %3 của bạn"
 msgid "Deposit Bonus"
 msgstr "Tiền thưởng Ký quỹ"
 
-#, fuzzy
-#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
-msgstr "Không thể rút tiền, vui lòng liên lạc với chúng tôi <a class=\"pjaxload\" href=\"%1\"></a> để có thêm thông tin."
+msgstr "Tiền gửi bị khóa, xin vui lòng <a class=\"pjaxload\" href=\"%1\"> liên hệ với chúng tôi</a> để biết thêm thông tin."
 
 msgid "Deposit of"
 msgstr "Tiền gửi của"
@@ -2063,7 +2033,7 @@ msgid "Depositing and withdrawing funds"
 msgstr "Gửi tiền và rút tiền"
 
 msgid "Deposits and withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
-msgstr ""
+msgstr "Chức năng gửi tiền và rút tiền tại tài khoản của bạn không được phép tại thời điểm này. Xin vui lòng liên hệ với %1 để mở khóa."
 
 msgid "Derivative"
 msgstr "Phái sinh"
@@ -2743,21 +2713,17 @@ msgstr "Cấu trúc Tiền hoa hồng lớn"
 msgid "Germany"
 msgstr "Đức"
 
-#, fuzzy
-#| msgid "Over $1,000,000"
 msgid "Get JPY 1,000,000"
-msgstr "Trên $1,000,000"
+msgstr "Get JPY 1.000.000"
 
 msgid "Get Started"
 msgstr "Bắt đầu"
 
 msgid "Get USD 10,000.00"
-msgstr ""
+msgstr "Nhận 10,000.00 USD"
 
-#, fuzzy
-#| msgid "Get your free $10,000 virtual money"
 msgid "Get more virtual money"
-msgstr "Nhận miễn phí khoản tiền ảo $10,000"
+msgstr "Lấy thêm tiền ảo"
 
 msgid "Get your price"
 msgstr "Hãy định giá của bạn"
@@ -2948,10 +2914,8 @@ msgstr "Nếu có bất cứ điều khoản nào trong Hiệp định bi
 msgid "If the Company is legally required to disclose your personal or financial information by law, regulation or pursuant to the order of a court of competent jurisdiction or a governmental agency, the Company  shall, unless legally prohibited, promptly notify you to that effect, in order to give you the opportunity to seek such protection for the information as it deems appropriate. Such required disclosure shall not be construed as a breach of this Terms and Conditions Agreement."
 msgstr "Nếu Công ty được yêu cầu phải tiết lộ thông tin cá nhân hoặc thông tin tài chính của bạn cho luật pháp, hoặc theo lệnh của tòa án có thẩm quyền hoặc cơ quan chính phủ, Công ty sẽ thông báo trước cho bạn, để bạn có cơ hội bảo vệ thông tin của mình nếu thấy cần thiết, trừ khi pháp luật cấm. Những yêu cầu tiết lộ này sẽ không được coi là hành vi vi phạm Điều khoản và Điều kiện của Hiệp định."
 
-#, fuzzy
-#| msgid "This account is unavailable. For any questions please contact <a href=\"%1\">Customer Support</a>."
 msgid "If the issue keeps happening, please contact <a href=\"%1\">customer support</a>."
-msgstr "Tài khoản này không có sẵn. Nếu bạn có bất cứ câu hỏi nào, vui lòng liên hệ với <a href=\"%1\">Phòng Hỗ trợ khách hàng</a>."
+msgstr "Nếu vấn đề vẫn xảy ra, xin vui lòng liên hệ với <a href=\"%1\">hỗ trợ khách hàng</a>."
 
 msgid "If this Agreement is terminated for any reason, you must permanently delete all Content, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
 msgstr "Nếu Thoả thuận này bị chấm dứt bởi bất kỳ lý do gì, bạn phải xoá vĩnh viễn tất cả Nội dung, trừ khi việc làm đó có thể khiến bạn vi phạm bất kỳ luật hay quy định nào được đưa ra bởi cơ quan nhà nước."
@@ -4178,10 +4142,8 @@ msgstr "Tháng"
 msgid "More benefits"
 msgstr "Nhiều lợi nhuận hơn"
 
-#, fuzzy
-#| msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with ‘best execution’. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
 msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with 'best execution'. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
-msgstr "Một cách chi tiết hơn, khi chúng tôi giao dịch một Quyền chọn Nhị phân với bạn (mỗi, một \"Hợp đồng\"),chúng tôi phải có nghĩa vụ cung cấp cho bạn 'thực hiện tốt nhất'. Thực hiện tốt nhất có nghĩa là chúng tôi phải có các bước thích hợp để dành được kết quả tốt nhất có thể cho bạn khi bạn đặt lệnh với chúng tôi. Tài liệu này cung cấp bản tóm tắt chính sách thực hiện tốt nhất của chúng tôi."
+msgstr "Một cách chi tiết hơn, khi chúng tôi giao dịch một Quyền chọn Nhị phân với bạn (mỗi, một \"Hợp đồng\"),chúng tôi phải có nghĩa vụ cung cấp cho bạn 'thực thi tốt nhất'. Thực thi tốt nhất có nghĩa là chúng tôi phải có các bước thích hợp để dành được kết quả tốt nhất có thể cho bạn khi bạn đặt lệnh với chúng tôi. Tài liệu này cung cấp bản tóm tắt chính sách thực thi tốt nhất của chúng tôi."
 
 msgid "Mother's maiden name"
 msgstr "Tên của Mẹ"
@@ -4415,7 +4377,7 @@ msgid "Only one account is allowed per person. No winnings and/or refunds may be
 msgstr "Chỉ cho phép một người sử dụng một tài khoản. Không có tiền thưởng hoặc tiền bồi hoàn vào trong tài khoản với tên sai hoặc nhiều tài khoản được mở bởi cùng một người."
 
 msgid "Oops... Page Not Available"
-msgstr ""
+msgstr "Rất tiếc... Trang không tồn tại"
 
 msgid "Open"
 msgstr "Mở"
@@ -4918,10 +4880,8 @@ msgstr "Thông thạo mã scripting language - Ưu tiên Perl"
 msgid "Proficiency in a second language (oral and written) is preferred"
 msgstr "Ưu tiên ứng viên thông thạo một ngôn ngữ thứ 2 (đọc và viết)"
 
-#, fuzzy
-#| msgid "Profit"
 msgid "Profile"
-msgstr "Lợi nhuận"
+msgstr "Tiểu sử"
 
 msgid "Profit"
 msgstr "Lợi nhuận"
@@ -5043,10 +5003,8 @@ msgstr "Tham khảo."
 msgid "Reference ID"
 msgstr "Tài khoản tham khảo"
 
-#, fuzzy
-#| msgid "Reload page"
 msgid "Refresh page"
-msgstr "Tải lại trang"
+msgstr "Làm mới trang"
 
 msgid "Regent Markets Group Ltd. renames to Binary Ltd."
 msgstr "Công ty TNHH Regent Markets Group đổi tên thành công ty TNHH Binary."
@@ -5267,10 +5225,8 @@ msgstr "Câu hỏi bí mật"
 msgid "Security"
 msgstr "Bảo mật"
 
-#, fuzzy
-#| msgid "Account Limits"
 msgid "Security & Limits"
-msgstr "Giới hạn Tài khoản"
+msgstr "Bảo mật & giới hạn"
 
 msgid "Security Disclaimer"
 msgstr "Miễn trách nhiệm về Bảo mật"
@@ -5392,10 +5348,8 @@ msgstr "Đăng kí để Trải nghiệm Sàn giao dịch của chúng tôi"
 msgid "Sign me up"
 msgstr "Đăng nhập"
 
-#, fuzzy
-#| msgid "Sign me up"
 msgid "Sign out"
-msgstr "Đăng nhập"
+msgstr "Đăng xuất"
 
 msgid "Sign up as a tester and look for Binary.com-related projects."
 msgstr "Đăng ký với tư cách một người chơi thử và xem các dự án liên quan đến Binary.com."
@@ -6045,7 +5999,7 @@ msgid "The maximum number of tokens (%1) has been reached."
 msgstr "Đã đạt đến độ dài tối đa của mã token (%1)."
 
 msgid "The page you requested could not be found. Either it no longer exists or the address is wrong. Please check for any typos."
-msgstr ""
+msgstr "Không tìm thấy trang bạn yêu cầu. Nó hoặc không còn tồn tại hoặc địa chỉ bị sai. Xin vui lòng kiểm tra bất kỳ lỗi chính tả."
 
 msgid "The patent means Regent Markets is the recognised pioneer of binary betting. The patent helps protect our innovations."
 msgstr "Bằng sáng chế có nghĩa là Regent Markets là nhà tiên phong được công nhận trong cá cược nhị phân. Bằng sáng chế giúp bảo vệ những đổi mới của chúng tôi."
@@ -6265,10 +6219,8 @@ msgstr "Thứ Năm"
 msgid "Tick"
 msgstr "Giây"
 
-#, fuzzy
-#| msgid "Tick Trade App"
 msgid "TickTrade App"
-msgstr "Ứng dụng bước giá giao dịch"
+msgstr "Ứng dụng giao dịch bước giá"
 
 msgid "Tier"
 msgstr "Lớp"
@@ -6408,10 +6360,8 @@ msgstr "Xem Giao dịch (TradingView)"
 msgid "Transact in"
 msgstr "Giao dịch trong"
 
-#, fuzzy
-#| msgid "Your transaction reference is"
 msgid "Transaction performed by %1 (App ID: %2)"
-msgstr "Tham chiếu giao dịch của bạn là"
+msgstr "Giao dịch thực hiện bởi %1 (ID ứng dụng: %2)"
 
 msgid "Transfer"
 msgstr "Chuyển khoản"
@@ -7002,7 +6952,7 @@ msgid "Withdrawal Limits"
 msgstr "Giới hạn Rút tiền"
 
 msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
-msgstr ""
+msgstr "Rút tiền tại tài khoản của bạn không được phép tại thời điểm này. Xin vui lòng liên hệ với %1 để mở khóa."
 
 msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgstr "Không thể rút tiền, vui lòng liên lạc với chúng tôi <a class=\"pjaxload\" href=\"%1\"></a> để có thêm thông tin."
@@ -7104,10 +7054,10 @@ msgid "You can close your trade before expiry to lock in profits."
 msgstr "Bạn có thể đóng giao dịch của mình trước khi hết hạn để chốt lợi nhuận."
 
 msgid "You can request more virtual money if your virtual balance falls below JPY 100,000."
-msgstr ""
+msgstr "Bạn có thể yêu cầu thêm tiền ảo nếu số dư ảo của bạn xuống dưới 100.000 JPY."
 
 msgid "You can request more virtual money if your virtual balance falls below USD 1,000.00."
-msgstr ""
+msgstr "Bạn có thể yêu cầu thêm tiền ảo nếu số dư ảo của bạn xuống dưới 1,000.00 USD."
 
 msgid "You can sell back long-term trades at any time to profit from changing market conditions."
 msgstr "Bạn có thể bán lại các giao dịch dài hạn vào bất kì lúc nào để lấy lợi nhuận từ việc thay đổi điều kiện thị trường."
@@ -7163,10 +7113,8 @@ msgstr "Bạn có thể lưu trữ Nội dung lên tới 24 giờ kể từ khi 
 msgid "You may choose to contact us to close your account held with the Company. Your account may be closed if you do not have any open trade positions and if you have complied with the requested \"Know Your Client\" procedures to enable you to withdraw any pending funds in your account."
 msgstr "Bạn có thể liên hệ với chúng tôi để đóng tài khoản Công ty đang giữ. Tài khoản của bạn có thể bị đóng nếu bạn không có bất kỳ vị thế giao dịch mở nào và nếu bạn đã tuân thủ những thủ tục được yêu cầu \"Tìm hiểu Khách hàng\" cho phép bạn rút bất kỳ khoản tiền chưa được giải quyết nào trong tài khoản của mình."
 
-#, fuzzy
-#| msgid "You may communicate with us through this website, by email or, exceptionally, by post. Details can be found in the Contact Us page."
 msgid "You may communicate with us through this website by means of Live Chat, e-mail, phone or, exceptionally, by post. Details can be found in the Contact Us page."
-msgstr "Bạn có thể liên hệ với chúng tôi qua trang web này, bằng email hoặc, có thể bằng thư gửi bưu điện. Chi tiết liên lạc có thể được tìm ở trang Liên hệ với Chúng tôi."
+msgstr "Bạn có thể liên lạc với chúng tôi qua trang web này thông qua Live Chat, e-mail, điện thoại, hoặc ngoại lệ, qua đường bưu điện. Thông tin chi tiết có thể được tìm thấy tại trang Liên Hệ."
 
 msgid "You may develop Applications using the %1 API as soon as you register an Application and you agree to follow these Terms."
 msgstr "Bạn có thể phát triển ứng dụng bằng việc sử dụng %1 API ngay sau khi bạn đăng ký và bạn đồng ý tuân thủ các Điều khoản này."
@@ -7321,7 +7269,7 @@ msgid "Your account has no trading activity."
 msgstr "Không có hoạt động giao dịch nào trên tài khoản của bạn."
 
 msgid "Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact %1."
-msgstr ""
+msgstr "Tài khoản của bạn hiện đang bị khóa. Chỉ tính năng rút tiền được cho phép. Để biết thêm chi tiết, xin vui lòng liên hệ với %1."
 
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "Tài khoản của bạn được xác thực đầy đủ và mức giới hạn rút tiền của bạn đã được nâng lên."
@@ -7812,10 +7760,8 @@ msgstr "{JAPAN ONLY}Even if the option is exercise or not exercised, the origina
 msgid "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
 msgstr "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}day"
 msgid "{JAPAN ONLY}FX Rate"
-msgstr "{JAPAN ONLY}day"
+msgstr "{JAPAN ONLY}FX Rate"
 
 msgid "{JAPAN ONLY}Financial Condition"
 msgstr "{JAPAN ONLY}Financial Condition"
@@ -8018,10 +7964,8 @@ msgstr "{JAPAN ONLY}November 7, 2014"
 msgid "{JAPAN ONLY}Option Pricing"
 msgstr "{JAPAN ONLY}Option Pricing"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Option Pricing"
 msgid "{JAPAN ONLY}Option Type"
-msgstr "{JAPAN ONLY}Option Pricing"
+msgstr "{JAPAN ONLY}Option Type"
 
 msgid "{JAPAN ONLY}Option prices are normally dependant on elements such as the underlying asset price, the exercise price, the length of time until the exercise point, volatility, and interest rates. Apart from the fixed exercise price, all other elements are changing constantly, so an understanding of the relationships between each element and changes in the options price is necessary for the management of options trading risk."
 msgstr "{JAPAN ONLY}Option prices are normally dependant on elements such as the underlying asset price, the exercise price, the length of time until the exercise point, volatility, and interest rates. Apart from the fixed exercise price, all other elements are changing constantly, so an understanding of the relationships between each element and changes in the options price is necessary for the management of options trading risk."
@@ -8050,10 +7994,8 @@ msgstr "{JAPAN ONLY}Our Customer Support staff will contact you at each stage to
 msgid "{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:"
 msgstr "{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}month"
 msgid "{JAPAN ONLY}Payout Amount"
-msgstr "{JAPAN ONLY}month"
+msgstr "{JAPAN ONLY}Payout Amount"
 
 msgid "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\">here</a> for further information."
 msgstr "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\"> 1here</a> 2 for further information."
@@ -8100,10 +8042,8 @@ msgstr "{JAPAN ONLY}Registration"
 msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "{JAPAN ONLY}Regulation & Tax"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}minute"
 msgid "{JAPAN ONLY}Remaining time"
-msgstr "{JAPAN ONLY}minute"
+msgstr "{JAPAN ONLY}Remaining time"
 
 msgid "{JAPAN ONLY}STAY-IN/BREAK-OUT"
 msgstr "{JAPAN ONLY}STAY-IN/BREAK-OUT"
@@ -8228,10 +8168,8 @@ msgstr "{JAPAN ONLY}Trading & Hedging"
 msgid "{JAPAN ONLY}Trading Guide"
 msgstr "{JAPAN ONLY}Trading Guide"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Trading Guide"
 msgid "{JAPAN ONLY}Trading Period"
-msgstr "{JAPAN ONLY}Trading Guide"
+msgstr "{JAPAN ONLY}Trading Period"
 
 msgid "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
 msgstr "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
@@ -8303,7 +8241,7 @@ msgid "Online Trading platform for binary options on Forex, Indices, Commodities
 msgstr "Sàn Giao dịch Trực tuyến cho hợp đồng quyền chọn nhị phân về Thị trường ngoại hối, Chỉ số, Hàng hóa và các Chỉ số Thông minh"
 
 msgid "404"
-msgstr ""
+msgstr "404"
 
 msgid "Why Us"
 msgstr "Lý do chọn chúng tôi"
