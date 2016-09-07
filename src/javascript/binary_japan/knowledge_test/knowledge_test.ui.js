@@ -84,7 +84,7 @@ var KnowledgeTestUI = (function () {
         var $scoreRow = $('<tr></tr>').append($('<td>' + text.localize('Score') + '</td>')).append($('<td>'+ score + '</td>'));
 
         var date = new moment();
-        var submitDate = mmoment.utc(date).format('YYYY') + text.localize('Year') + moment.utc(date).format('MM') + text.localize('Month') + moment.utc(date).format('DD') + text.localize('Day') + ' (' + text.localize('Weekday') + ')';
+        var submitDate = moment.utc(date).format('YYYY') + text.localize('Year') + moment.utc(date).format('MM') + text.localize('Month') + moment.utc(date).format('DD') + text.localize('Day') + ' (' + text.localize('Weekday') + ')';
 
         var $dateRow = $('<tr></tr>').append($('<td>' + text.localize('Date') + '</td>')).append($('<td>'+ submitDate + '</td>'));
 
