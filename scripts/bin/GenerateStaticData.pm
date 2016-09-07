@@ -568,6 +568,16 @@ sub _texts {
         push @texts, localize('{JAPAN ONLY}Remaining time');
         push @texts, localize('You need to finish all 20 questions.');
         push @texts, localize('Weekday');
+        push @texts, localize('frxAUDJPY');
+        push @texts, localize('frxAUDUSD');
+        push @tests, localize('frxEURGBP');
+        push @tests, localize('frxEURJPY');
+        push @tests, localize('frxEURUSD');
+        push @tests, localize('frxGBPJPY');
+        push @tests, localize('frxGBPUSD');
+        push @tests, localize('frxUSDCAD');
+        push @tests, localize('frxUSDJPY');
+        push @tests, localize('Payout Amount');
 
         #strings for digit_infows
         push @texts, localize('Select market');
