@@ -27,6 +27,12 @@
                 [% END %]
             </li>
             [%= END =%]
+            <li class="ja-hide">
+                <a class="pjaxload" href="[% request.url_for('trading') %]">[% l("Trade") %]</a>
+            </li>
+            <li class="all-hide ja-show-block">
+                <a class="pjaxload" href="[% request.url_for('jptrading') %]">[% l("Trade") %]</a>
+            </li>
         </ul>
     </div>
 </div>
