@@ -6,19 +6,25 @@ var AssetIndexUI = (function() {
         $contents;
     var activeSymbols,
         assetIndex,
-        marketColumns;
+        marketColumns,
+        isFramed;
 
-    var init = function() {
+    var init = function(config) {
         if (japanese_client()) {
-            window.location.href = page.url.url_for('resources');
+            if (!TradePage_Beta.is_trading_page()) {
+                window.location.href = page.url.url_for('resources');
+            }
+            return;
         }
-        Content.populate();
-        $container = $('#asset-index');
-        showLoadingImage($container);
-        activeSymbols = null;
-        assetIndex = null;
 
-        AssetIndexData.sendRequest();
+        $container = $('#asset-index');
+        if ($container.contents().length) return;
+
+        Content.populate();
+        showLoadingImage($container);
+
+        isFramed = (config && config.framed);
+        if (!assetIndex) AssetIndexData.sendRequest(!activeSymbols);
     };
 
     var populateTable = function() {
@@ -47,6 +53,11 @@ var AssetIndexUI = (function() {
             .append($contents.children());
 
         $container.tabs('destroy').tabs();
+
+        if (isFramed) {
+            $container.find('ul').hide();
+            $('<div/>', {class: 'center-text'}).append(jqueryuiTabsToDropdown($container)).prependTo($container);
+        }
     };
 
     var getSubmarketTable = function(assetItem, symbolInfo) {

@@ -910,6 +910,169 @@ function setChartSource() {
   document.getElementById('chart_frame').src = 'https://webtrader.binary.com?affiliates=true&instrument=' + document.getElementById('underlying').value + '&timePeriod=1t&gtm=true&lang=' + (page.language() || 'en').toLowerCase();
 }
 
+
+// ============= Functions used in /trading_beta =============
+
+/*
+ * function to toggle active class of menu
+ */
+function toggleActiveNavMenuElement_Beta(nav, eventElement) {
+    'use strict';
+    var liElements = nav.getElementsByTagName("li");
+    var classes = eventElement.classList;
+
+    if (!classes.contains('active')) {
+        for (var i = 0, len = liElements.length; i < len; i++){
+            liElements[i].classList.remove('active');
+        }
+        classes.add('active');
+        var parent = eventElement.parentElement.parentElement;
+        if (parent.tagName === 'LI' && !parent.classList.contains('active')) {
+            parent.classList.add('active');
+        }
+    }
+}
+
+/*
+ * function to set placeholder text based on current form, used for mobile menu
+ */
+function setFormPlaceholderContent_Beta(name) {
+    'use strict';
+    var formPlaceholder = document.getElementById('contract_form_nav_placeholder');
+    if (formPlaceholder) {
+        name = name || Defaults.get('formname');
+        formPlaceholder.textContent = Contract_Beta.contractForms()[name];
+    }
+}
+
+function updatePurchaseStatus_Beta(final_price, pnl, contract_status){
+    $('#contract_purchase_heading').text(text.localize(contract_status));
+    var payout  = document.getElementById('contract_purchase_payout'),
+        cost    = document.getElementById('contract_purchase_cost'),
+        profit  = document.getElementById('contract_purchase_profit'),
+        currency = TUser.get().currency;
+
+    label_value(cost  , Content.localize().textStake , Math.abs(pnl));
+    label_value(payout, Content.localize().textPayout, addComma(final_price));
+
+    var isWin = (+final_price > 0);
+    $('#contract_purchase_profit_value').attr('class', (isWin ? 'profit' : 'loss'));
+    label_value(profit, isWin ? Content.localize().textProfit : Content.localize().textLoss, addComma(Math.round((final_price - pnl) * 100) / 100));
+}
+
+function label_value(label_elem, label, value, no_currency) {
+    var currency = TUser.get().currency;
+    label_elem.innerHTML = label;
+    var value_elem = document.getElementById(label_elem.id + '_value');
+    value_elem.innerHTML = no_currency ? value : format_money(currency, value);
+    value_elem.setAttribute('value', value);
+}
+
+function adjustAnalysisColumnHeight() {
+    var sumHeight = 0;
+    if (window.innerWidth > 767) {
+        $('.col-left').children().each(function() {
+            if ($(this).is(':visible')) sumHeight += $(this).outerHeight(true);
+        });
+    } else {
+        sumHeight = 'auto';
+    }
+    $('#trading_analysis_content').height(sumHeight);
+}
+
+function moreTabsHandler($ul) {
+    if (!$ul) $ul = $('#analysis_tabs');
+    var $visibleTabs  = $ul.find('>li:visible'),
+        seeMoreClass  = 'see-more',
+        moreTabsClass = 'more-tabs',
+        maxWidth      = $ul.outerWidth(),
+        totalWidth    = 0;
+
+    // add seeMore tab
+    var $seeMore = $ul.find('li.' + seeMoreClass);
+    if ($seeMore.length === 0) {
+        $seeMore = $('<li class="tm-li ' + seeMoreClass + '"><a class="tm-a" href="javascript:;"><span class="caret-down"></span></a></li>');
+        $ul.append($seeMore);
+    }
+    $seeMore.removeClass('active');
+
+    // add moreTabs container
+    var $moreTabs = $ul.find('.' + moreTabsClass);
+    if ($moreTabs.length === 0) {
+        $moreTabs = $('<div class="' + moreTabsClass + '" />').appendTo($seeMore);
+    } else {
+        $moreTabs.find('>li').each(function(index, tab) {
+            $(tab).insertBefore($seeMore);
+        });
+    }
+    $moreTabs.css('top', $ul.find('li:visible').outerHeight() - 1).unbind('click').click(function() { hideDropDown('fast'); });
+
+    // move additional tabs to moreTabs
+    $visibleTabs = $ul.find('>li:visible');
+    $visibleTabs.each(function(index, tab) {
+        totalWidth += $(tab).outerWidth(true);
+    });
+    var resultWidth = totalWidth;
+    while (resultWidth >= maxWidth) {
+        var $thisTab = $ul.find('>li:not(.' + seeMoreClass + '):visible').last();
+        resultWidth -= $thisTab.outerWidth(true);
+        $thisTab.prependTo($moreTabs);
+    }
+
+    if ($moreTabs.children().length === 0) {
+        $seeMore.hide();
+        return;
+    }
+
+    $seeMore.show();
+    if ($moreTabs.find('>li.active').length > 0) {
+        $seeMore.addClass('active');
+    }
+
+    // drop down behaviour
+    function showDropDown() {
+        $moreTabs.slideDown();
+        if ($seeMore.find('.over').length === 0) {
+            $('<div/>', {class: 'over'}).insertBefore($seeMore.find('>a'));
+            $seeMore.find('.over').width($seeMore.width());
+        }
+        $seeMore.addClass('open');
+    }
+    function hideDropDown(duration) {
+        $moreTabs.slideUp(duration || 400, function() {
+            $seeMore.removeClass('open');
+        });
+    }
+    var timeout;
+    $seeMore.find('>a').unbind('click').on('click', function(e) {
+        e.stopPropagation();
+        if($moreTabs.is(':visible')) {
+            hideDropDown();
+            clearTimeout(timeout);
+        } else {
+            clearTimeout(timeout);
+            showDropDown();
+            timeout = setTimeout(function() {
+                hideDropDown();
+                clearTimeout(timeout);
+            }, 3000);
+        }
+    });
+    $(document).unbind('click').on('click', function() { hideDropDown(); });
+
+    $moreTabs.mouseenter(function() {
+        clearTimeout(timeout);
+    });
+
+    $moreTabs.mouseleave(function() {
+        clearTimeout(timeout);
+        var $this = $(this);
+        timeout = setTimeout(function() {
+            hideDropDown();
+        }, 1000);
+    });
+}
+
 //used temporarily for mocha test
 if (typeof module !== 'undefined') {
     module.exports = {

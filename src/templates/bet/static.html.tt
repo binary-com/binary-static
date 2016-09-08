@@ -170,7 +170,7 @@
       </div>
       <div id="contract_prices_container" class="col row-inner">
          <div id="contract_confirmation_container" class="overlay_container col">
-            <a class="close" id="close_confirmation_container">x</a>
+            <a class="close" id="close_confirmation_container"></a>
             <div id="confirmation_message_container">
                <div id="confirmation_message">
                   <h3 id="contract_purchase_heading"></h3>

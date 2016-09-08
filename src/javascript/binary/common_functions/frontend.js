@@ -566,6 +566,17 @@ function detect_hedging($purpose, $hedging) {
     });
 }
 
+function jqueryuiTabsToDropdown($container) {
+    var $ddl = $('<select/>');
+    $container.find('li a').each(function() {
+        $ddl.append($('<option/>', {text: $(this).text(), value: $(this).attr('href')}));
+    });
+    $ddl.change(function() {
+        $container.find('li a[href="' + $(this).val() + '"]').click();
+    });
+    return $ddl;
+}
+
 $(function() {
     $( "#accordion" ).accordion({
       heightStyle: "content",

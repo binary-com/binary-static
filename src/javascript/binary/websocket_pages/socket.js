@@ -296,10 +296,11 @@ function BinarySocketClass() {
             clearTimeouts();
 
             if(!manualClosed && wrongAppId !== getAppId()) {
-                if (TradePage.is_trading_page()) {
+                if (TradePage.is_trading_page() || TradePage_Beta.is_trading_page()) {
                     showPriceOverlay();
                     showFormOverlay();
-                    TradePage.onLoad();
+                    if (TradePage.is_trading_page()) TradePage.onLoad();
+                    else TradePage_Beta.onLoad();
                 } else {
                     init(1);
                 }

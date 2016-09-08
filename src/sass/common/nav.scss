@@ -116,7 +116,6 @@
         @include tab-list;
         font: inherit !important;
         li {
-            @include BIDIR_PROP(margin-right, margin-left, 6px !important);
             @include BIDIR_VALUE(float, left, right);
         }
     }
