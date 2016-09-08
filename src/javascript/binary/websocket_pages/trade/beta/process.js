@@ -82,7 +82,7 @@ function processMarketUnderlying_Beta() {
 
     Contract_Beta.getContracts(underlying);
 
-    displayTooltip(Defaults.get('market'), underlying);
+    displayTooltip_Beta(Defaults.get('market'), underlying);
 }
 
 /*
