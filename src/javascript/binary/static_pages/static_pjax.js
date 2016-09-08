@@ -126,8 +126,15 @@ pjax_config_page('\/login|\/loginid_switch', function() {
 
 pjax_config_page('/trading', function () {
     return {
-        onLoad: function(){TradePage.onLoad();},
-        onUnload: function(){TradePage.onUnload();}
+        onLoad: function(){if(/trading\.html/.test(window.location.pathname)) TradePage.onLoad();},
+        onUnload: function(){if(/trading\.html/.test(window.location.pathname)) TradePage.onUnload();}
+    };
+});
+
+pjax_config_page('/trading_beta', function () {
+    return {
+        onLoad: function(){TradePage_Beta.onLoad();},
+        onUnload: function(){TradePage_Beta.onUnload();}
     };
 });
 
