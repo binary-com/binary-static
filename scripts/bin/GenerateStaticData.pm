@@ -386,6 +386,7 @@ sub _texts {
 
         #strings for profittable and statement
         push @texts, localize('Your account has no trading activity.');
+        push @texts, localize('Withdrawal');
 
         #strings for authenticate page
         push @texts, localize('To authenticate your account, kindly email the following to [_1]');
