@@ -7,7 +7,6 @@ pjax_config_page("new_account/realws", function(){
       if (page.client.residence) {
         BinarySocket.send({landing_company: page.client.residence});
       }
-      BinarySocket.send({get_settings:1});
       BinarySocket.send({residence_list:1});
       $('#real-form').submit(function(evt) {
         evt.preventDefault();
@@ -17,7 +16,7 @@ pjax_config_page("new_account/realws", function(){
               var response = JSON.parse(msg.data);
               if (response) {
                 if(response.msg_type === 'authorize' && !page.client.is_virtual()) {
-                    window.location.href = page.url.url_for('user/my_accountws');
+                    window.location.href = page.url.url_for('trading');
                     return;
                 }
                 else if (response.msg_type === 'new_account_real'){

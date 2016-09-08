@@ -15,8 +15,9 @@ var ViewBalanceUI = (function(){
         var view = format_money(currency, amount);
 
         TUser.get().balance = balance.balance;
-        $("#balance").text(view);
         PortfolioWS.updateBalance();
+        $(".topMenuBalance").text(view)
+                     .css('visibility', 'visible');
     }
 
     return {

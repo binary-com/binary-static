@@ -214,7 +214,7 @@ var Price = (function() {
               $('.payout_wrapper:visible').hide();
             }
 
-            if (data['longcode'] && window.innerWidth > 500) {
+            if (data['longcode'] && window.innerWidth > 500 && !page.client_status_detected('unwelcome')) {
                 description.setAttribute('data-balloon', data['longcode']);
             } else {
                 description.removeAttribute('data-balloon');

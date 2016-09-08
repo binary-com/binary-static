@@ -22,7 +22,7 @@
                     </div>
                   </fieldset>
                 </form>
-                <form id="real-form">
+                <form id="real-form" style="display:none">
                     <fieldset>
                         <legend id="details">[% l('Details') %]</legend>
                         <div class="gr-padding-10 gr-row clear">
@@ -146,12 +146,12 @@
                             </div>
                             <div class="gr-8">
                                 <select id="secret-question">
+                                  <option value="Favourite dish">[% l('Favourite dish') %]</option>
                                   <option value="Mother's maiden name">[% l("Mother's maiden name") %]</option>
                                   <option value="Name of your pet">[% l('Name of your pet') %]</option>
                                   <option value="Name of first love">[% l('Name of first love') %]</option>
                                   <option value="Memorable town/city">[% l('Memorable town/city') %]</option>
                                   <option value="Memorable date">[% l('Memorable date') %]</option>
-                                  <option value="Favourite dish">[% l('Favourite dish') %]</option>
                                   <option value="Brand of first car">[% l('Brand of first car') %]</option>
                                   <option value="Favourite artist">[% l('Favourite artist') %]</option>
                                 </select>

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: I 18N\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-04 05:17+0000\n"
+"PO-Revision-Date: 2016-09-06 10:01+0000\n"
 "Last-Translator: Pham Minh Hieu <hphamv7@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/binary/static/vi/>\n"
 "Language: vi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.8-dev\n"
+"X-Generator: Weblate 2.8\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"%1 API\" có nghĩa là một bộ chương trình lập trình độc quyền, các lệnh, các công cụ và nguồn lực được tạo ra và duy trì bởi %1 cái mà cho phép bạn sử dụng Ứng dụng đã được đăng ký để giao dịch trên sàn giao dịch %1."
@@ -44,14 +44,14 @@ msgstr "$25,000 - $100,000"
 msgid "$250,000 - $1,000,000"
 msgstr "$250,000 - $1,000,000"
 
-msgid "%1 %2 (\"API\") Terms and Conditions"
-msgstr "%1 %2 (\"API\") Điều khoản và Điều kiện"
-
 msgid "%1 %2 has been credited to your Virtual money account %3"
 msgstr "%1 %2 vừa được cộng thêm vào tài khoản tiền Ảo %3 của bạn"
 
 msgid "%1 Affiliate Program Terms and Conditions"
 msgstr "Điều kiện và Điều khoản của chương trình hợp tác %1"
+
+msgid "%1 Application Program Interface (\"API\") Terms and Conditions"
+msgstr "Điều kiện và Điều khoản của %1 Giao Diện Chương Trình Ứng Dụng (API)"
 
 msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
 msgstr "%1 Vui lòng nhấn vào đường dẫn dưới đây để bắt đầu lại quá trình khôi phục mật khẩu. Nếu bạn cần thêm trợ giúp, vui lòng liên hệ với Trung tâm hỗ trợ khách hàng của chúng tôi."
@@ -188,6 +188,9 @@ msgstr "%1 cung cấp nhiều cách thức giao dịch mới"
 msgid "%1 offers the world's financial markets in a simple, user-friendly platform."
 msgstr "%1 cung cấp giao diện thị trường tài chính thế giới đơn giản, thân thiện và dễ sử dụng."
 
+msgid "%1 opens an office in the QSentral office building in central Kuala Lumpur to further expand its IT development team."
+msgstr ""
+
 msgid "%1 prices are benchmarked against the interbank options market, so you always get best-in-class prices for your trades."
 msgstr "Giá %1 được quy chuẩn so với thị trường liên ngân hàng tùy chọn, vì thế bạn luôn có được giá tốt nhất cho giao dịch của mình."
 
@@ -273,11 +276,6 @@ msgstr "Lịch sử đáng ghi nhận của %1"
 
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "Hệ thống của %1 hiện tại đang vượt quá 1 triệu giao dịch một ngày ( bao gồm tài khoản ảo)."
-
-#, fuzzy
-#| msgid "%1’s Volatility Indices are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
-msgid "%1’s <a href=\"%2\">Volatility Indices</a> are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
-msgstr "chỉ số biến động của %1 đang có sẵn 24/7 trên MetaTrader 5. Bổ sung tài sản sẽ được phát hành rất sớm."
 
 msgid "%ctx(minimum duration, for example minimum 15 seconds)min"
 msgstr "%ctx(thời gian tối thiểu, ví dụ 15 giây tối thiểu)tối thiểu"
@@ -421,7 +419,7 @@ msgid "<a class='pjaxload' href='mailto:%1'>Contact Us</a>"
 msgstr "<a class='pjaxload' href='mailto:%1'> liên hệ với chúng tôi</a>"
 
 msgid "<a href=\"%1\">Return to trading page</a>"
-msgstr ""
+msgstr "<a href=\"%1\"> trở về trang giao dịch</a>"
 
 msgid "<a href='%1'>Founded</a> October 1999"
 msgstr "<a href='%1'>Đã thành lập</a> vào tháng Mười năm 1999"
@@ -483,21 +481,14 @@ msgstr "<strong>định giá 2 chiều</strong> - %1 định giá giao dịch v
 msgid "<strong>Additional business exposure:</strong> You will increase awareness of your services and generate new business."
 msgstr "<strong>Phát sinh giao dịch:</strong> Bạn sẽ hiểu biết thêm về dịch vụ của mình và có thể tạo thêm được giao dịch mới."
 
-msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
-msgstr "<strong>Các công cụ tiên tiến để phân tích cơ bản và kỹ thuật,</strong> bao gồm cả chỉ số, biểu đồ, và nhiều hơn nữa."
-
-#, fuzzy
-#| msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgid "<strong>All durations:</strong> from 10 seconds to 365 days."
-msgstr "<strong>Tất cả thời hạn</strong> - từ 10 giây đến 365 ngày."
+msgstr "<strong>Tất cả thời hạn:</strong> từ 10 giây đến 365 ngày."
 
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>Tất cả thời hạn</strong> - từ 10 giây đến 365 ngày."
 
-#, fuzzy
-#| msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
 msgid "<strong>All market conditions:</strong> up/down, touch/no-touch, stays in/goes out."
-msgstr "<strong>Tất cả điều kiện thị trường</strong> - lên/xuống, chạm/không chạm, ở trong/ra ngoài."
+msgstr "<strong>Tất cả điều kiện thị trường:</strong> lên/xuống, chạm/không chạm, ở trong/ra ngoài."
 
 msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
 msgstr "<strong>Tất cả điều kiện thị trường</strong> - lên/xuống, chạm/không chạm, ở trong/ra ngoài."
@@ -505,18 +496,14 @@ msgstr "<strong>Tất cả điều kiện thị trường</strong> - lên/xuố
 msgid "<strong>All markets, all conditions</strong> - trade currencies, indices and commodities in rising, falling, sideways, quiet and volatile markets."
 msgstr "<strong>Tất cả thị trường, tất cả điều kiện</strong> - đồng tiền giao dịch, chỉ số, và hàng hóa trong các loại thị trường lên, xuống, dao động ngang, tĩnh lặng, và biến động."
 
-#, fuzzy
-#| msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgid "<strong>All markets:</strong> currencies, stocks, indices, and commodities."
-msgstr "<strong>Tất cả thị trường</strong> - tiền tệ, chỉ số cổ phiếu, và hàng hóa."
+msgstr "<strong>Tất cả thị trường:</strong> tiền tệ, cổ phiếu, các chỉ số, và hàng hóa."
 
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgstr "<strong>Tất cả thị trường</strong> - tiền tệ, chỉ số cổ phiếu, và hàng hóa."
 
-#, fuzzy
-#| msgid "<strong>All payouts</strong> - from $1 to $50,000."
 msgid "<strong>All payouts:</strong> from $1 to $50,000."
-msgstr "<strong>Tất cả tiền thưởng</strong> - từ $1 đến $50,000."
+msgstr "<strong>Tất cả tiền thưởng:</strong> từ $1 đến $50,000."
 
 msgid "<strong>All payouts</strong> - from $1 to $50,000."
 msgstr "<strong>Tất cả tiền thưởng</strong> - từ $1 đến $50,000."
@@ -556,9 +543,6 @@ msgstr "<strong>Cao hơn/Thấp hơn</strong> - dự đoán xem thị trường 
 
 msgid "<strong>Higher/Lower</strong> - where you can profit from the market ending higher or lower than a target price."
 msgstr "<strong>Cao hơn/Thấp hơn</strong> - nơi bạn có thể có lãi khi thị trường kết thúc thấp hoặc cao hơn giá mục tiêu."
-
-msgid "<strong>Highly competitive spreads with no commission.</strong>"
-msgstr "<strong>Chênh lệch cạnh tranh cao và không có hoa hồng.</strong>"
 
 msgid "<strong>IMPORTANT DISCLAIMER</strong> - %1 is not affiliated with any of the Payment Agents listed above. Each Payment Agent operates as an independent service provider and is not endorsed, guaranteed or otherwise approved by %1. CUSTOMERS DEAL WITH PAYMENT AGENTS AT THEIR SOLE RISK AND PERIL. Customers are advised to check the credentials of Payment Agents before sending them any money. %1 shall not in any circumstance be held responsible for transactions made between customers and Payment Agents."
 msgstr "<strong>TIẾT LỘ QUAN TRỌNG</strong> - %1 không liên kết với bất kỳ Đại lý Thanh toán nào nêu trên. Từng Đại lý thanh toán hoạt động với vai trò một nhà cung cấp dịch vụ độc lập và chưa được chứng thực, bảo đảm và chấp thuận bởi %1. KHÁCH HÀNG TỰ GIAO DỊCH VỚI CÁC ĐẠI LÝ THANH TOÁN VÀ CHỊU MỌI RỦI RO PHÁT SINH. Chúng tôi khuyên khách hàng nên tìm hiểu kỹ lịch sử hoạt động của các Đại lý Thanh toán trước khi gửi tiền cho họ. Dưới bất kỳ tình huống nào, %1 đều không chịu trách nhiệm cho những giao dịch giữa khách với các Đại lý Thanh toán nêu trên."
@@ -643,9 +627,6 @@ msgstr "<strong>Chỉ số cổ phiếu</strong> - giao dịch tất cả chỉ 
 
 msgid "<strong>Stock indices</strong> - trade all major worldwide stock indices."
 msgstr "<strong>Chỉ số cổ phiếu</strong> - giao dịch tất cả chỉ số cổ phiếu chính trên thế giới."
-
-msgid "<strong>Subscriptions to a wide range of Expert Advisors,</strong> automated trading applications from the MetaTrader Market."
-msgstr "<strong>Đăng ký để một rộng phạm vi của chuyên gia tư vấn,</strong> các ứng dụng thương mại tự động từ thị trường MetaTrader."
 
 msgid "<strong>Take early profits</strong> - sell your long-term trades at market prices before they expire."
 msgstr "<strong>Nhận lãi sớm</strong> - bán giao dịch dài hạn với giá thị trường trước khi hết hạn."
@@ -771,6 +752,12 @@ msgstr "Có sở thích và niềm đam mê với Linux và nền tảng mã ngu
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "Cách tiếp cận tích cực để giải quyết vấn đề và cung cấp giải pháp khách hàng"
 
+msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
+msgstr "Một bản scan hóa đơn điện nước hoặc bản sao kê ngân hàng (không quá 3 tháng gần đây nhất)."
+
+msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
+msgstr "Một bản scan hộ chiếu, bằng lái xe (tạm thời hoặc chính thức), hoặc chứng minh nhân dân thể hiện tên và ngày sinh của bạn. Giấy tờ của bạn phải còn giá trị sử dụng ít nhất 6 tháng từ sau ngày này."
+
 msgid "A strong and passionate interest in Marketing and Advertising"
 msgstr "Sự yêu thích mạnh mẽ và đam mê với tiếp thị và quảng cáo"
 
@@ -858,11 +845,11 @@ msgstr "Quản lý và Theo dõi Tài khoản"
 msgid "Account Opening"
 msgstr "Mở tài khoản"
 
+msgid "Account Password"
+msgstr "Mật khẩu tài khoản"
+
 msgid "Account Transfer"
 msgstr "Chuyển Tài khoản"
-
-msgid "Account Type"
-msgstr "Loại tài khoản"
 
 msgid "Account balance: "
 msgstr "Số dư tài khoản: "
@@ -941,6 +928,9 @@ msgstr "Thỏa thuận về các Giới hạn"
 
 msgid "Agreement for documents"
 msgstr "Agreement for documents"
+
+msgid "All Partnership Options"
+msgstr "Tất cả các lựa chọn hợp tác"
 
 msgid "All affiliate activities must be conducted in a professional and proper manner. You shall be expected to act with good faith and integrity in your relationships with your referrals, and always act in the best interests of your referrals."
 msgstr "Tất cả những hoạt động liên kết phải được tiến hành một cách chuyên nghiệp và phù hợp. Bạn được kỳ vọng sẽ hoạt động với thiện ý và có quan hệ tốt đẹp với người mà bạn giới thiệu, cũng như sẽ luôn hoạt động vì lợi ích cao nhất của người mà bạn giới thiệu."
@@ -1054,9 +1044,6 @@ msgstr "Bất kỳ ai trên 18 tuổi [đã đọc và đồng ý với những
 msgid "Anyone who has potential to grow or increase traffic to %1"
 msgstr "Bất kì ai người mà có tiềm năng lớn mạnh và phát triển mạng lưới với %1"
 
-msgid "App ID"
-msgstr ""
-
 msgid "Applications"
 msgstr "Các ứng dụng"
 
@@ -1077,6 +1064,9 @@ msgstr "Tương thích"
 
 msgid "Appropriateness Test"
 msgstr "Kiểm tra tính Tương thích"
+
+msgid "Apps"
+msgstr "Ứng dụng"
 
 msgid "Apr"
 msgstr "Tháng 4"
@@ -1321,6 +1311,11 @@ msgstr "Công ty TNHH Binary (IOM), Tầng 1, Nhà Millennium, Đường Victori
 msgid "Binary Bot released"
 msgstr "Phát hành Bot Binary"
 
+#, fuzzy
+#| msgid "Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
+msgid "Binary Group Services Sdn Bhd, 30-10, Q Sentral, Jalan Stesen Sentral 2, 50470 Kuala Lumpur"
+msgstr "Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
+
 msgid "Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
 msgstr "Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
 
@@ -1336,6 +1331,11 @@ msgstr "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, 
 msgid "Binary Investments (Europe) Ltd, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156)."
 msgstr "Công ty TNHH Binary (châu Âu), Tòa nhà Mompalao, Khu 2, Đường Tower, Msida MSD1825, Malta. Được cấp giấy phép hoạt động như là một nhà cung cấp Dịch vụ Đầu tư Loại 3 và được quy định bởi Ủy ban Dịch vụ tài chính Malta (giấy phép số IS/70156)."
 
+#, fuzzy
+#| msgid "Binary granted Investment Services license"
+msgid "Binary KK granted Japan license"
+msgstr "Binary đã được cấp giấy phép Dịch vụ Đầu tư"
+
 msgid "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
 msgstr "Binary KK, Tòa nhà Hiroo Miyata 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Nhật Bản"
 
@@ -1344,6 +1344,9 @@ msgstr "Công ty TNHH Binary, địa chỉ văn phòng được đăng ký t�
 
 msgid "Binary Options Basics"
 msgstr "Cơ bản về Quyền chọn Nhị phân"
+
+msgid "Binary Shop"
+msgstr "Cửa hàng Nhị phân"
 
 msgid "Binary Trading is simple to learn and to execute."
 msgstr "Giao dịch Nhị phân rất dễ để học và thực hiện."
@@ -1381,6 +1384,9 @@ msgstr "Giao dịch nhị phân lý tưởng cho cả cá nhân và những chuy
 
 msgid "Binary trading is very simple."
 msgstr "Giao dịch nhị phân rất đơn giản."
+
+msgid "Binary's Japanese subsidiary Binary KK is licensed by the KLFB as a Type 1 Financial Instruments Business in Japan."
+msgstr ""
 
 msgid "Binary's Japanese subsidiary Binary KK opens an office in Tokyo and starts the process of applying for relevant licenses."
 msgstr "Binary KK công ty chi nhánh Nhật của Binary mở một văn phòng ở Tokyo và bắt đầu quá trình xin các giấy phép liên quan."
@@ -1455,7 +1461,7 @@ msgid "By the 15th of every month, you will receive the commission earned during
 msgstr "Trước ngày 15 hàng tháng, bạn sẽ nhận được khoản tiền hoa hồng kiếm được trong tháng trước."
 
 msgid "By using or interacting with the website, you are consenting to the use of the Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
-msgstr ""
+msgstr "Bằng cách sử dụng hoặc tương tác với trang web, bạn đồng ý với việc sử dụng tính năng Google Analytics User ID, cho phép Google nắm bắt các ID %1 đăng nhập của bạn (cho ví dụ, VRTC1234, CR1234, MF1234, vv). Không có thông tin cá nhân nào khác ngoài ID đăng nhập Binary.com của bạn, hoặc dữ liệu khác mà có thể được liên kết đến thông tin như vậy bởi Google, hay được chia sẻ hoặc hoặc tiết lộ cho Google bằng cách kích hoạt tính năng tính năng Google Analytics User ID."
 
 msgid "Can I become an affiliate even if I don't have a website?"
 msgstr "Nếu tôi không có trang web, tôi có trở thành một thành viên được không?"
@@ -1487,6 +1493,12 @@ msgstr "Sự nghiệp"
 msgid "Cashier"
 msgstr "Thu ngân"
 
+msgid "Cashier Password"
+msgstr "Mật khẩu Thu ngân"
+
+msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgstr "Thu ngân bị khóa, xin vui lòng <a class=\"pjaxload\" href=\"%1\"> liên hệ với chúng tôi</a> để biết thêm thông tin."
+
 msgid "Cashier password"
 msgstr "Mật khẩu Thu ngân"
 
@@ -1499,11 +1511,14 @@ msgstr "Thay đổi điểm nút cuối API"
 msgid "Change Password"
 msgstr "Thay đổi Mật khẩu"
 
+msgid "Change the password used for deposits and withdrawals."
+msgstr "Thay đổi mật khẩu sử dụng cho tiền gửi và rút tiền."
+
+msgid "Change your main login password."
+msgstr "Thay đổi mật khẩu đăng nhập chính của bạn."
+
 msgid "Chart"
 msgstr "Biểu đồ"
-
-msgid "Charts"
-msgstr "Các biểu đồ"
 
 msgid "Check out our commission rates below:"
 msgstr "Xem xét tỉ lệ hoa hồng của chúng tôi dưới đây:"
@@ -1594,9 +1609,6 @@ msgstr "Classification of assets requiring hedge"
 
 msgid "Click here to retry"
 msgstr "Vui lòng nhấp vào đây để thử lại"
-
-msgid "Click the button below to download MetaTrader."
-msgstr "Nhấp vào nút bên dưới để tải về MetaTrader."
 
 msgid "Client classification"
 msgstr "Phân loại khách hàng"
@@ -1729,9 +1741,6 @@ msgstr "Confirmation and understandings"
 
 msgid "Conflicts Policy"
 msgstr "Xung đột Chính sách"
-
-msgid "Congratulations! Your account has been created."
-msgstr "Xin chúc mừng! Tài khoản của bạn đã được tạo."
 
 msgid "Construction"
 msgstr "Xây dựng"
@@ -1889,9 +1898,6 @@ msgstr "Tạo Tài khoản Mới"
 msgid "Create New Token"
 msgstr "Tạo Token Mới"
 
-msgid "Create a MetaTrader account to trade on the MetaTrader 5 platform."
-msgstr "Tạo một tài khoản MetaTrader để giao dịch trên nền tảng MetaTrader 5."
-
 msgid "Create clear, concise and engaging content for display on the company's website, blog, social media outlets, and marketing materials"
 msgstr "Đưa ra nội dung rõ ràng, súc tích và hấp dẫn để hiển thị trên trang web, blog, phương tiện truyền thông công cộng và tài liệu tiếp thị của công ty"
 
@@ -1942,6 +1948,9 @@ msgstr "Đại Diện Dịch Vụ Khách Hàng"
 
 msgid "Customer Support"
 msgstr "Hỗ trợ Khách hàng"
+
+msgid "Cyberjaya Office"
+msgstr ""
 
 msgid "Daily Reset Indices"
 msgstr "Các chỉ số được Thiết lập lại Hàng ngày"
@@ -2003,12 +2012,6 @@ msgstr "Xác định vị trí của bạn"
 msgid "Delete"
 msgstr "Xóa"
 
-msgid "Demo"
-msgstr "Thử nghiệm"
-
-msgid "Demo Account"
-msgstr "Tài khoản Demo"
-
 msgid "Demonstrate the ability to think / act quickly and multi-task as needed to execute effective campaigns"
 msgstr "Chứng minh khả năng suy nghĩ/ phản ứng nhanh và thực hiện nhiều nhiệm vụ khi cần thiết để các chiến dịch được thực hiện hiệu quả"
 
@@ -2027,26 +2030,14 @@ msgstr "Gửi %1 %2 tiền ảo vào tài khoản %3 của bạn"
 msgid "Deposit Bonus"
 msgstr "Tiền thưởng Ký quỹ"
 
-msgid "Deposit from"
-msgstr "Tiền gửi từ"
-
-msgid "Deposit funds into your MetaTrader account from your Binary account:"
-msgstr "Gửi tiền vào tài khoản MetaTrader từ tài khoản nhị phân của bạn:"
-
-msgid "Deposit is done. Transaction ID:"
-msgstr "Gửi tiền đã được hoàn tất. Số ID giao dịch:"
+msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgstr "Tiền gửi bị khóa, xin vui lòng <a class=\"pjaxload\" href=\"%1\"> liên hệ với chúng tôi</a> để biết thêm thông tin."
 
 msgid "Deposit of"
 msgstr "Tiền gửi của"
 
 msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
 msgstr "Gửi hay rút tiền qua tài khoản của bạn bằng điện chuyển khoản ngân hàng, thẻ tín dụng hay ví thẻ điện tử."
-
-msgid "Deposit to"
-msgstr "Tiền gửi đến"
-
-msgid "Deposit to MetaTrader account"
-msgstr "Gửi tiền tới tài khoản MetaTrader"
 
 msgid "Deposit: %1 working day"
 msgstr "Gửi tiền: %1 ngày làm việc"
@@ -2059,6 +2050,9 @@ msgstr "Gửi tiền: tức thì"
 
 msgid "Depositing and withdrawing funds"
 msgstr "Gửi tiền và rút tiền"
+
+msgid "Deposits and withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
+msgstr "Chức năng gửi tiền và rút tiền tại tài khoản của bạn không được phép tại thời điểm này. Xin vui lòng liên hệ với %1 để mở khóa."
 
 msgid "Derivative"
 msgstr "Phái sinh"
@@ -2170,12 +2164,6 @@ msgstr "Tài khoản không hoạt động"
 
 msgid "Download CSV"
 msgstr "Tải xuồng CSV"
-
-msgid "Download MetaTrader"
-msgstr "Tải về MetaTrader"
-
-msgid "Download MetaTrader for Windows"
-msgstr "Tải về MetaTrader cho Windows"
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "Tạo sự tăng trưởng nhanh chóng và phát triển kinh doanh để hỗ trợ các mục tiêu bán hàng và tiếp thị của công ty"
@@ -2744,8 +2732,17 @@ msgstr "Cấu trúc Tiền hoa hồng lớn"
 msgid "Germany"
 msgstr "Đức"
 
+msgid "Get JPY 1,000,000"
+msgstr "Get JPY 1.000.000"
+
 msgid "Get Started"
 msgstr "Bắt đầu"
+
+msgid "Get USD 10,000.00"
+msgstr "Nhận 10,000.00 USD"
+
+msgid "Get more virtual money"
+msgstr "Lấy thêm tiền ảo"
 
 msgid "Get your price"
 msgstr "Hãy định giá của bạn"
@@ -2936,10 +2933,8 @@ msgstr "Nếu có bất cứ điều khoản nào trong Hiệp định bi
 msgid "If the Company is legally required to disclose your personal or financial information by law, regulation or pursuant to the order of a court of competent jurisdiction or a governmental agency, the Company  shall, unless legally prohibited, promptly notify you to that effect, in order to give you the opportunity to seek such protection for the information as it deems appropriate. Such required disclosure shall not be construed as a breach of this Terms and Conditions Agreement."
 msgstr "Nếu Công ty được yêu cầu phải tiết lộ thông tin cá nhân hoặc thông tin tài chính của bạn cho luật pháp, hoặc theo lệnh của tòa án có thẩm quyền hoặc cơ quan chính phủ, Công ty sẽ thông báo trước cho bạn, để bạn có cơ hội bảo vệ thông tin của mình nếu thấy cần thiết, trừ khi pháp luật cấm. Những yêu cầu tiết lộ này sẽ không được coi là hành vi vi phạm Điều khoản và Điều kiện của Hiệp định."
 
-#, fuzzy
-#| msgid "This account is unavailable. For any questions please contact <a href=\"%1\">Customer Support</a>."
 msgid "If the issue keeps happening, please contact <a href=\"%1\">customer support</a>."
-msgstr "Tài khoản này không có sẵn. Nếu bạn có bất cứ câu hỏi nào, vui lòng liên hệ với <a href=\"%1\">Phòng Hỗ trợ khách hàng</a>."
+msgstr "Nếu vấn đề vẫn xảy ra, xin vui lòng liên hệ với <a href=\"%1\">hỗ trợ khách hàng</a>."
 
 msgid "If this Agreement is terminated for any reason, you must permanently delete all Content, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
 msgstr "Nếu Thoả thuận này bị chấm dứt bởi bất kỳ lý do gì, bạn phải xoá vĩnh viễn tất cả Nội dung, trừ khi việc làm đó có thể khiến bạn vi phạm bất kỳ luật hay quy định nào được đưa ra bởi cơ quan nhà nước."
@@ -2985,9 +2980,6 @@ msgstr "Nếu bạn cần trợ giúp, vui lòng liên hệ với đội
 
 msgid "If you need assistance feel free to contact our <a class=\"pjaxload\" href=\"%1\">Customer Support</a>."
 msgstr "Nếu bạn cần trợ giúp, vui lòng liên hệ với đội ngũ hỗ trợ khách hàng <a class=\"pjaxload\" href=\"%1\"></a>của chúng tôi."
-
-msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader’s website, please select “%1” from the list of available brokers."
-msgstr "Nếu bạn đã tải về MetaTrader 5 trực tiếp từ trang web của MetaTrader, hãy chọn \"%1\" từ danh sách các công ty môi giới có sẵn."
 
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "Nếu bạn chọn \"Châu Á Giảm\", bạn sẽ giành chiến thắng nếu <strong> giá ở giây cuối cùng </strong> là <strong>thấp hơn</strong> so với <strong>trung bình</strong> của giá trong suốt giao dịch."
@@ -3293,9 +3285,6 @@ msgstr "Đầu tư và Cổ tức"
 msgid "Investor Compensation Scheme"
 msgstr "Đề án Bồi thường Nhà đầu tư"
 
-msgid "Investor Password (read-only access)"
-msgstr "Mật khẩu chủ đầu tư (chỉ đọc)"
-
 msgid "Involved in evaluation of regulatory compliance and risk management. Work with the Head of Departments to improve business processes."
 msgstr "Tham gia đánh giá quản lý rủi ro và sự tuân thủ quy định. Làm việc với Trưởng Phòng các bộ phận để cải tiến quy trình kinh doanh."
 
@@ -3352,9 +3341,6 @@ msgstr "Nhật Bản"
 
 msgid "Japan website Download Text for Pre-contract Document"
 msgstr "Japan website Download Text for Pre-contract Document"
-
-msgid "Japan website Download Text for Terms and Conditions Document"
-msgstr "Japan website Download Text for Terms and Conditions Document"
 
 msgid "Japan website Eliminating Antisocial Forces List item 1"
 msgstr "Japan website Eliminating Antisocial Forces List item 1"
@@ -3845,8 +3831,8 @@ msgstr "Ưu tiên ứng viên có kiến thức về lý thuyết xác suất, p
 msgid "Knowledge of probability theory, stochastic calculus, numerical methods, Monte-Carlo simulation, differential equations, econometrics, and statistical modeling"
 msgstr "Biết về lý thuyết xác suất, giải tích ngẫu nhiên, phương pháp số, phương pháp mô phỏng Monte-Carlo, phương trình vi phân, kinh tế lượng và mô hình thống kê"
 
-msgid "LOG OUT"
-msgstr "ĐĂNG XUẤT"
+msgid "Kuala Lumpur Office"
+msgstr ""
 
 msgid "Languages"
 msgstr "Ngôn ngữ"
@@ -3914,9 +3900,6 @@ msgstr "Less than 6 months"
 msgid "Level of Education"
 msgstr "Trình độ Học vấn"
 
-msgid "Leverage"
-msgstr "Đòn bẩy"
-
 msgid "Leverage social-media tools and channels to identify, engage, and convert potential new customers and partners"
 msgstr "Tận dụng các kênh và công cụ truyền thông công cộng để xác nhận, thu hút và chuyển đổi những khách hàng và đối tác tiềm năng mới"
 
@@ -3953,9 +3936,6 @@ msgstr "Liên kết tới và trực tiếp khách hàng tới ứng dụng củ
 msgid "Links"
 msgstr "Các liên kết"
 
-msgid "Linux Instructions"
-msgstr "Hướng dẫn Linux"
-
 msgid "Live chat:"
 msgstr "Tương tác trực tuyến:"
 
@@ -3965,11 +3945,6 @@ msgstr "Khóa quầy Thu ngân"
 msgid "Log in"
 msgstr "Đăng nhập"
 
-#, fuzzy
-#| msgid "Log into the application using your MetaTrader account number (e.g., 1124) and your MetaTrader account password."
-msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
-msgstr "Đăng nhập vào các ứng dụng bằng cách sử dụng số tài khoản MetaTrader (ví dụ: 1124) và mật khẩu tài khoản MetaTrader."
-
 msgid "Log-in to your %1 affiliate account and click on: Finances &rarr; Payment instructions."
 msgstr "Đăng nhập vào tài khoản liên kết %1 của bạn và nhấp chuột vào: Tài chính, chỉ dẫn Thanh toán."
 
@@ -3978,9 +3953,6 @@ msgstr "Đăng nhập vào tài khoản liên kết %1 của bạn và nhâ
 
 msgid "Log-in to your %1 affiliate account and click on: Reports &rarr; Traffic Report."
 msgstr "Đăng nhập vào tài khoản liên kết %1 của bạn và nhấp chuột vào: Báo cáo; Báo cáo Lượng người truy cập."
-
-msgid "Login"
-msgstr "Đăng nhập"
 
 msgid "Login History"
 msgstr "Lịch sử Đăng nhập"
@@ -4018,12 +3990,6 @@ msgstr "Tấm chắn hàng rào thấp"
 msgid "MENA FFXPO Award"
 msgstr "Giải thưởng MENA FFXPO"
 
-msgid "MacOS Instructions"
-msgstr "Hướng dẫn kiểu MacOS"
-
-msgid "Main Password (trading access)"
-msgstr "Mật khẩu chính (dành cho kinh doanh)"
-
 msgid "Maintain accurate system pricing parameters"
 msgstr "Giữ cho các thông số định giá hệ thống luôn chính xác"
 
@@ -4032,9 +3998,6 @@ msgstr "Duy trì tốc độ và khối lượng thích hợp của sản phẩm
 
 msgid "Make a Deposit"
 msgstr "Gửi tiền"
-
-msgid "Make a deposit or withdraw."
-msgstr "Gửi tiền hoặc rút tiền."
 
 msgid "Make your trade"
 msgstr "Giao dịch"
@@ -4053,9 +4016,6 @@ msgstr "Quản lý an ninh, phát hiện xâm nhập, bảo vệ DDoS và đánh
 
 msgid "Manage the company's cashier system"
 msgstr "Quản lý hệ thống thu ngân của công ty"
-
-msgid "Manage your account access and security settings."
-msgstr "Quản lý tài khoản truy cập và cài đặt bảo mật."
 
 msgid "Manage your authorised applications."
 msgstr "Quản lý các ứng dụng được cho phép của bạn."
@@ -4144,12 +4104,6 @@ msgstr "Ngày đáng nhớ"
 msgid "Memorable town/city"
 msgstr "Thị trấn/Thành phố đáng nhớ"
 
-msgid "MetaTrader Accounts Management"
-msgstr "Quản lý tài khoản MetaTrader"
-
-msgid "MetaTrader Main Password"
-msgstr "Mật khẩu chính MetaTrader"
-
 msgid "Method"
 msgstr "Phương thức"
 
@@ -4207,10 +4161,8 @@ msgstr "Tháng"
 msgid "More benefits"
 msgstr "Nhiều lợi nhuận hơn"
 
-#, fuzzy
-#| msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with ‘best execution’. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
 msgid "More specifically, when we enter into a Binary Option trade with you (each, a \"Contract\"), we have a duty to provide you with 'best execution'. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy."
-msgstr "Một cách chi tiết hơn, khi chúng tôi giao dịch một Quyền chọn Nhị phân với bạn (mỗi, một \"Hợp đồng\"),chúng tôi phải có nghĩa vụ cung cấp cho bạn 'thực hiện tốt nhất'. Thực hiện tốt nhất có nghĩa là chúng tôi phải có các bước thích hợp để dành được kết quả tốt nhất có thể cho bạn khi bạn đặt lệnh với chúng tôi. Tài liệu này cung cấp bản tóm tắt chính sách thực hiện tốt nhất của chúng tôi."
+msgstr "Một cách chi tiết hơn, khi chúng tôi giao dịch một Quyền chọn Nhị phân với bạn (mỗi, một \"Hợp đồng\"),chúng tôi phải có nghĩa vụ cung cấp cho bạn 'thực thi tốt nhất'. Thực thi tốt nhất có nghĩa là chúng tôi phải có các bước thích hợp để dành được kết quả tốt nhất có thể cho bạn khi bạn đặt lệnh với chúng tôi. Tài liệu này cung cấp bản tóm tắt chính sách thực thi tốt nhất của chúng tôi."
 
 msgid "Mother's maiden name"
 msgstr "Tên của Mẹ"
@@ -4277,6 +4229,11 @@ msgstr "Chưa bao giờ Sử dụng"
 
 msgid "New Password"
 msgstr "Mật khẩu mới"
+
+#, fuzzy
+#| msgid "Trade"
+msgid "New Trade"
+msgstr "Giao dịch"
 
 msgid "New password"
 msgstr "Mật khẩu mới"
@@ -4371,9 +4328,6 @@ msgstr "Người giao dịch mới có thể sử dụng sàn giao dịch 
 msgid "Now"
 msgstr "Bây giờ"
 
-msgid "Now Introducing MetaTrader 5 on %1"
-msgstr "Bây giờ giới thiệu MetaTrader 5 trên %1"
-
 msgid "Number of ticks"
 msgstr "Số điểm"
 
@@ -4447,7 +4401,7 @@ msgid "Only one account is allowed per person. No winnings and/or refunds may be
 msgstr "Chỉ cho phép một người sử dụng một tài khoản. Không có tiền thưởng hoặc tiền bồi hoàn vào trong tài khoản với tên sai hoặc nhiều tài khoản được mở bởi cùng một người."
 
 msgid "Oops... Page Not Available"
-msgstr ""
+msgstr "Rất tiếc... Trang không tồn tại"
 
 msgid "Open"
 msgstr "Mở"
@@ -4950,6 +4904,9 @@ msgstr "Thông thạo mã scripting language - Ưu tiên Perl"
 msgid "Proficiency in a second language (oral and written) is preferred"
 msgstr "Ưu tiên ứng viên thông thạo một ngôn ngữ thứ 2 (đọc và viết)"
 
+msgid "Profile"
+msgstr "Tiểu sử"
+
 msgid "Profit"
 msgstr "Lợi nhuận"
 
@@ -5069,6 +5026,9 @@ msgstr "Tham khảo."
 
 msgid "Reference ID"
 msgstr "Tài khoản tham khảo"
+
+msgid "Refresh page"
+msgstr "Làm mới trang"
 
 msgid "Regent Markets Group Ltd. renames to Binary Ltd."
 msgstr "Công ty TNHH Regent Markets Group đổi tên thành công ty TNHH Binary."
@@ -5235,9 +5195,6 @@ msgstr "Rủi ro của các Sản phẩm Đầu tư"
 msgid "Run daily payments reports and report suspected fraud"
 msgstr "Chạy các báo cáo thanh toán hàng ngày và báo cáo nghi ngờ gian lận"
 
-msgid "Run the installation file and follow the instructions."
-msgstr "Chạy file cài đặt và làm theo các hướng dẫn."
-
 msgid "Russia"
 msgstr "Nga"
 
@@ -5291,6 +5248,9 @@ msgstr "Câu hỏi bí mật"
 
 msgid "Security"
 msgstr "Bảo mật"
+
+msgid "Security & Limits"
+msgstr "Bảo mật & giới hạn"
 
 msgid "Security Disclaimer"
 msgstr "Miễn trách nhiệm về Bảo mật"
@@ -5412,6 +5372,9 @@ msgstr "Đăng kí để Trải nghiệm Sàn giao dịch của chúng tôi"
 msgid "Sign me up"
 msgstr "Đăng nhập"
 
+msgid "Sign out"
+msgstr "Đăng xuất"
+
 msgid "Sign up as a tester and look for Binary.com-related projects."
 msgstr "Đăng ký với tư cách một người chơi thử và xem các dự án liên quan đến Binary.com."
 
@@ -5514,20 +5477,11 @@ msgstr "Thời gian bắt đầu"
 msgid "Start Trading"
 msgstr "Bắt đầu Giao dịch"
 
-msgid "Start Trading with MetaTrader 5"
-msgstr "Bắt đầu giao dịch với MetaTrader 5"
-
 msgid "Start learning"
 msgstr "Bắt đầu học"
 
 msgid "Start time"
 msgstr "Thời gian bắt đầu"
-
-msgid "Start trading with your Demo Account"
-msgstr "Bắt đầu giao dịch với tài khoản Demo của bạn"
-
-msgid "Start trading with your Real Account"
-msgstr "Bắt đầu giao dịch với tài khoản Real của bạn"
 
 msgid "State/Province"
 msgstr "Quốc gia/Tỉnh"
@@ -5654,12 +5608,6 @@ msgstr "Các Điều khoản và Điều kiện Bổ sung cho Sản phẩ
 
 msgid "Supporting the Group's global recruiting and talent management needs"
 msgstr "Hỗ trợ Nhóm tuyển dụng toàn cầu và quản lý nhân tài của Tập đoàn"
-
-msgid "Take advantage of numerous benefits, including:"
-msgstr "Tận dụng lợi thế của nhiều lợi ích, bao gồm:"
-
-msgid "Take your trading to the next level through this powerful interface, recognised as the benchmark standard worldwide."
-msgstr "Đưa việc kinh doanh của bạn lên một tầm cao mới thông qua giao diện mạnh mẽ này, giao diện đã được công nhận tiêu chuẩn trên thế giới."
 
 msgid "Talk to us"
 msgstr "Nói với chúng tôi"
@@ -6075,7 +6023,7 @@ msgid "The maximum number of tokens (%1) has been reached."
 msgstr "Đã đạt đến độ dài tối đa của mã token (%1)."
 
 msgid "The page you requested could not be found. Either it no longer exists or the address is wrong. Please check for any typos."
-msgstr ""
+msgstr "Không tìm thấy trang bạn yêu cầu. Nó hoặc không còn tồn tại hoặc địa chỉ bị sai. Xin vui lòng kiểm tra bất kỳ lỗi chính tả."
 
 msgid "The patent means Regent Markets is the recognised pioneer of binary betting. The patent helps protect our innovations."
 msgstr "Bằng sáng chế có nghĩa là Regent Markets là nhà tiên phong được công nhận trong cá cược nhị phân. Bằng sáng chế giúp bảo vệ những đổi mới của chúng tôi."
@@ -6295,8 +6243,14 @@ msgstr "Thứ Năm"
 msgid "Tick"
 msgstr "Giây"
 
+msgid "TickTrade App"
+msgstr "Ứng dụng giao dịch bước giá"
+
 msgid "Tier"
 msgstr "Lớp"
+
+msgid "Time"
+msgstr "Thời gian"
 
 msgid "Time out until"
 msgstr "Tạm ngưng cho đến khi"
@@ -6327,22 +6281,6 @@ msgstr "To begin Binary option trading, you will first need to read all these do
 
 msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "Để thay đổi tên, ngày sinh, nơi cư trú, hoặc email, vui lòng liên hệ với <a href=\"%1\">Bộ phận Hỗ trợ Khách hàng</a>."
-
-msgid "To create a Real account for MetaTrader, you need to authenticate your Binary account:"
-msgstr "Để tạo một tài khoản Real cho MetaTrader, bạn cần phải xác thực tài khoản Binary của bạn:"
-
-#, fuzzy
-#| msgid "To create a Real account for MetaTrader, <a href=\"%1\">upgrade to Bianry Real account</a>."
-msgid "To create a real account for MetaTrader, <a href=\"%1\">upgrade to %2 real money account</a>."
-msgstr "Để tạo một tài khoản Thực Sự cho MetaTrader, <a href=\"%1\"> nâng cấp lên tài khoản Thực Sự Binary</a>."
-
-#, fuzzy
-#| msgid "To create a Real account for MetaTrader, switch to your Binary Real account."
-msgid "To create a real account for MetaTrader, switch to your %1 real money account."
-msgstr "Để tạo một tài khoản Real cho MetaTrader, chuyển sang tài khoản Binary Real."
-
-msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
-msgstr "Để gửi tiền hoặc rút tiền từ tài khoản MetaTrader Real của bạn, chuyển sang tài khoản Real của bạn ở Binary.com."
 
 msgid "To enable cookies, follow the instructions below for the browser version that you are using."
 msgstr "Để bật cookie, hãy làm theo các hướng dẫn dưới đây dành cho phiên bản trình duyệt mà bạn đang sử dụng."
@@ -6449,10 +6387,8 @@ msgstr "Xem Giao dịch (TradingView)"
 msgid "Transact in"
 msgstr "Giao dịch trong"
 
-#, fuzzy
-#| msgid "Your transaction reference is"
-msgid "Transaction performed by"
-msgstr "Tham chiếu giao dịch của bạn là"
+msgid "Transaction performed by %1 (App ID: %2)"
+msgstr "Giao dịch thực hiện bởi %1 (ID ứng dụng: %2)"
 
 msgid "Transfer"
 msgstr "Chuyển khoản"
@@ -6468,9 +6404,6 @@ msgstr "Chuyển tới ID đăng nhập"
 
 msgid "Transfer to Payment Agent"
 msgstr "Chuyển tới Đại lý Thanh toán"
-
-msgid "Transfer to client"
-msgstr "Chuyển tới khách hàng"
 
 msgid "Translate the ongoing business needs of the company into a suitable IT infrastructure"
 msgstr "Dịch các vấn đề đang diễn ra cần thiết cho công ty với một thiết bị cơ sở hạ tầng IT phù hợp"
@@ -6628,9 +6561,6 @@ msgstr "Định dạng của mã xác thực không chính xác."
 msgid "Verification token"
 msgstr "Mã Token Xác minh"
 
-msgid "Verify Main Password"
-msgstr "Xác thực Mật Khẩu Chính"
-
 msgid "Verify new password"
 msgstr "Xác thực mật khẩu mới"
 
@@ -6639,6 +6569,11 @@ msgstr "Phiên bản 41. Chỉnh sửa lần cuối ngày 2016-06-27."
 
 msgid "View"
 msgstr "Xem"
+
+#, fuzzy
+#| msgid "Details"
+msgid "View Details"
+msgstr "Chi tiết"
 
 msgid "View Updated Portfolio"
 msgstr "Xem Hồ sơ đã cập nhật"
@@ -6664,14 +6599,8 @@ msgstr "Xem giờ hoạt động của thị trường bạn có thể giao
 msgid "View your financial assessment settings."
 msgstr "Xem cài đặt giám định tài chính của bạn."
 
-msgid "View your historical transactions."
-msgstr "Xem lịch sử giao dịch của bạn."
-
 msgid "View your login history."
 msgstr "Xem lịch sử đăng nhập của bạn."
-
-msgid "View your open positions."
-msgstr "Xem vị thế mở của bạn."
 
 msgid "View your personal information."
 msgstr "Xem thông tin cá nhân của bạn."
@@ -6681,9 +6610,6 @@ msgstr "Xem báo cáo của bạn"
 
 msgid "View your trading and withdrawal limits."
 msgstr "Xem Giới hạn Giao dich và giới hạn Rút tiền."
-
-msgid "View your trading profit/loss."
-msgstr "Xem lãi/lỗ giao dịch của bạn."
 
 msgid "Virtual Account"
 msgstr "Tài khoản Ảo"
@@ -6861,9 +6787,6 @@ msgstr "Ngày trong tuần"
 
 msgid "Weekend quotes"
 msgstr "Yết giá cuối tuần"
-
-msgid "Welcome!"
-msgstr "Chào mừng!"
 
 msgid "Well-developed organizational, administrative, and/or accounting skills"
 msgstr "Kỹ năng tổ chức, hành chính và/ hoặc kế toán tốt"
@@ -7048,18 +6971,6 @@ msgstr "Liên quan đến việc theo dõi những người mà bạn giới thi
 msgid "Withdraw"
 msgstr "Rút tiền"
 
-msgid "Withdraw from"
-msgstr "Rút tiền từ"
-
-msgid "Withdraw from MetaTrader account"
-msgstr "Rút tiền từ tài khoản MetaTrader"
-
-msgid "Withdraw funds from your MetaTrader account into your Binary account:"
-msgstr "Rút tiền từ tài khoản MetaTrader vào tài khoản Binary của bạn:"
-
-msgid "Withdraw to"
-msgstr "Rút tiền tới"
-
 msgid "Withdraw: %1 working day"
 msgstr "Rút tiền:%1 ngày làm việc"
 
@@ -7069,11 +6980,14 @@ msgstr "Rút tiền: %1 ngày làm việc"
 msgid "Withdraw: Not applicable"
 msgstr "Rút tiền: Không áp dụng"
 
+msgid "Withdrawal"
+msgstr "Rút tiền"
+
 msgid "Withdrawal Limits"
 msgstr "Giới hạn Rút tiền"
 
-msgid "Withdrawal is done. Transaction ID:"
-msgstr "Rút tiền thành công. Số ID giao dịch:"
+msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
+msgstr "Rút tiền tại tài khoản của bạn không được phép tại thời điểm này. Xin vui lòng liên hệ với %1 để mở khóa."
 
 msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgstr "Không thể rút tiền, vui lòng liên lạc với chúng tôi <a class=\"pjaxload\" href=\"%1\"></a> để có thêm thông tin."
@@ -7144,12 +7058,6 @@ msgstr "Bạn và đơn đăng ký của bạn cũng phải tuân thủ những 
 msgid "You are advised that the Binary Options offered by %1 are not traded under the rules of any recognised, designated or regulated exchange. Consequently, engaging in Binary Options trading may expose you to substantially greater risks than investments which are so traded."
 msgstr "Bạn nên biết rằng các Quyền chọn Nhị phân được cung cấp bởi %1 không được giao dịch theo bất kỳ quy định nào được công nhận, chỉ định hoặc điều chỉnh. Do đó, tham gia vào giao dịch Quyền chọn Nhị phân có thể làm cho bạn gặp rủi ro nhiều hơn so với các khoản đầu tư đã được giao dịch."
 
-msgid "You are currently logged in to your real money account with %1 (%2)."
-msgstr "Bạn vừa đăng nhập vào tài khoản tiền thực của bạn với %1 (%2)."
-
-msgid "You are currently logged in to your virtual money account (%2)."
-msgstr "Bạn vừa đăng nhập vào tài khoản tiền ảo của bạn (%2)."
-
 msgid "You are in default or breach of any covenant, obligation or condition contained in this Agreement, and if such default is not cured within seven days of receipt of written notice from the Company;"
 msgstr "Nếu bạn thực hiện không đầy đủ hoặc vi phạm bất kỳ điều khoản, quy định hay điều kiện nào của Thỏa thuận này, và nếu sự vi phạm này không được xử lý trong vòng bảy ngày kể từ ngày nhận được biên bản thông báo của Công ty chúng tôi;"
 
@@ -7179,6 +7087,12 @@ msgstr "Bạn có thể chọn tiền thưởng từ $1 to $50,000. Vùng t
 
 msgid "You can close your trade before expiry to lock in profits."
 msgstr "Bạn có thể đóng giao dịch của mình trước khi hết hạn để chốt lợi nhuận."
+
+msgid "You can request more virtual money if your virtual balance falls below JPY 100,000."
+msgstr "Bạn có thể yêu cầu thêm tiền ảo nếu số dư ảo của bạn xuống dưới 100.000 JPY."
+
+msgid "You can request more virtual money if your virtual balance falls below USD 1,000.00."
+msgstr "Bạn có thể yêu cầu thêm tiền ảo nếu số dư ảo của bạn xuống dưới 1,000.00 USD."
 
 msgid "You can sell back long-term trades at any time to profit from changing market conditions."
 msgstr "Bạn có thể bán lại các giao dịch dài hạn vào bất kì lúc nào để lấy lợi nhuận từ việc thay đổi điều kiện thị trường."
@@ -7234,10 +7148,8 @@ msgstr "Bạn có thể lưu trữ Nội dung lên tới 24 giờ kể từ khi 
 msgid "You may choose to contact us to close your account held with the Company. Your account may be closed if you do not have any open trade positions and if you have complied with the requested \"Know Your Client\" procedures to enable you to withdraw any pending funds in your account."
 msgstr "Bạn có thể liên hệ với chúng tôi để đóng tài khoản Công ty đang giữ. Tài khoản của bạn có thể bị đóng nếu bạn không có bất kỳ vị thế giao dịch mở nào và nếu bạn đã tuân thủ những thủ tục được yêu cầu \"Tìm hiểu Khách hàng\" cho phép bạn rút bất kỳ khoản tiền chưa được giải quyết nào trong tài khoản của mình."
 
-#, fuzzy
-#| msgid "You may communicate with us through this website, by email or, exceptionally, by post. Details can be found in the Contact Us page."
 msgid "You may communicate with us through this website by means of Live Chat, e-mail, phone or, exceptionally, by post. Details can be found in the Contact Us page."
-msgstr "Bạn có thể liên hệ với chúng tôi qua trang web này, bằng email hoặc, có thể bằng thư gửi bưu điện. Chi tiết liên lạc có thể được tìm ở trang Liên hệ với Chúng tôi."
+msgstr "Bạn có thể liên lạc với chúng tôi qua trang web này thông qua Live Chat, e-mail, điện thoại, hoặc ngoại lệ, qua đường bưu điện. Thông tin chi tiết có thể được tìm thấy tại trang Liên Hệ."
 
 msgid "You may develop Applications using the %1 API as soon as you register an Application and you agree to follow these Terms."
 msgstr "Bạn có thể phát triển ứng dụng bằng việc sử dụng %1 API ngay sau khi bạn đăng ký và bạn đồng ý tuân thủ các Điều khoản này."
@@ -7373,12 +7285,6 @@ msgstr "Bạn sẽ tìm thấy những câu trả lời cho phần lớn các c�
 msgid "You're using a Virtual Account."
 msgstr "Bạn đang sử dụng Tài khoản Ảo."
 
-msgid "Your %1 account is unavailable. For any questions please contact %2."
-msgstr "Tài khoản %1 của bạn không có sẵn. Nếu bạn có bất cứ câu hỏi nào, vui lòng liên hệ với %2."
-
-msgid "Your %1 accounts are unavailable. For any questions please contact %2."
-msgstr "Tài khoản %1 của bạn không có sẵn. Nếu bạn có bất cứ câu hỏi nào, vui lòng liên hệ với %2."
-
 msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other currency)."
 msgstr "Hạn mức rút tiền ngày %1 của bạn hiện là %2 %3 (hoặc tương đương với đồng tiền khác)."
 
@@ -7387,9 +7293,6 @@ msgstr "Khách hàng của bạn sẽ nhận được một email thông báo r�
 
 msgid "Your ID will be stored in a cookie and identified every time a prospect clicks on your affiliate link and lands on %1 and in that event, opens an account with us."
 msgstr "ID của bạn sẽ được lưu giữ trong cookie và được nhận diện mọi lúc khi bạn nhấp chuột vào đường dẫn liên kết của mình và truy cập vào %1 và lúc đó, mở một tài khoản với chúng tôi."
-
-msgid "Your Name"
-msgstr "Tên Của Bạn"
 
 msgid "Your Property"
 msgstr "Tài sản của bạn"
@@ -7400,11 +7303,11 @@ msgstr "Không có hoạt động Đăng nhập/Đăng xuất nào trên tài kh
 msgid "Your account has no trading activity."
 msgstr "Không có hoạt động giao dịch nào trên tài khoản của bạn."
 
+msgid "Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact %1."
+msgstr "Tài khoản của bạn hiện đang bị khóa. Chỉ tính năng rút tiền được cho phép. Để biết thêm chi tiết, xin vui lòng liên hệ với %1."
+
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "Tài khoản của bạn được xác thực đầy đủ và mức giới hạn rút tiền của bạn đã được nâng lên."
-
-msgid "Your account is fully authenticated. You can view your %1trading limits here"
-msgstr "Tài khoản của bạn hoàn toàn được xác thực. Bạn có thể xem hạn mức giao dịch %1của bạn ở đây"
 
 msgid "Your account is fully authenticated. You can view your <a class=\"pjaxload\" href=\"%1\">trading limits here</a>."
 msgstr "Tài khoản của bạn được xác thực hoàn toàn. Bạn có thể xem <a class=\"pjaxload\" href=\"%1\">hạn mức giao dịch của bạn ở đây</a>."
@@ -7414,9 +7317,6 @@ msgstr "Tài khoản của bạn không được chứng thực đầy đủ. Vu
 
 msgid "Your account is not fully authenticated. Please visit the <a href=\"%1\">authentication</a> page for more information."
 msgstr "Tài khoản của bạn không được chứng thực đầy đủ. Vui lòng tuy cập trang <a href=\"%1\">xác thực</a> để biết thêm thông tin."
-
-msgid "Your account is registered as a Payment Agent."
-msgstr "Tài khoản của bạn được đăng kí như là một Đại lý Thanh toán."
 
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "Tài khoản của bạn không nên được sử dụng như một thiết bị ngân hàng và bạn chỉ nên gửi tiền với mục đích sử dụng nó để đặt hợp đồng. Công ty không phải là tổ chức tài chính, Khách hàng cũng không nhận được lãi suất từ tiền gửi. Nếu bạn gửi tiền và rút tiền nhiều lần mà không đặt hợp đồng tương xứng, chúng tôi có quyền thu hồi tài khoản của bạn, mà không cần thông báo trước, bất kỳ khoản phí ngân hàng nào chúng tôi sẽ thu của bạn trước khi đóng tài khoản."
@@ -7459,9 +7359,6 @@ msgstr "Tiền của bạn luôn được an toàn với %1. Nó luôn được 
 
 msgid "Your name, email address and contact number"
 msgstr "Tên, địa chỉ email và số điện thoại liên lạc của bạn"
-
-msgid "Your new account has been created."
-msgstr "Tài khoản mới của bạn đã được tạo."
 
 msgid "Your password and login ID are unique and passwords are hashed so that not even %1 staff can read them. This is the reason why we cannot retrieve your password and have to issue you with a new one to your email address if you cannot recall it."
 msgstr "Mật khẩu và ID đăng nhập của bạn là duy nhất và mật khẩu được chia nhỏ để ngay cả nhân viên %1 cũng không thể đọc chúng. Đây là lý do tại sao chúng tôi không thể lấy lại mật khẩu của bạn và phải cấp cho bạn một cái mới tới địa chỉ email của bạn nếu bạn không thể nhớ nó."
@@ -7898,10 +7795,8 @@ msgstr "{JAPAN ONLY}Even if the option is exercise or not exercised, the origina
 msgid "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
 msgstr "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}day"
 msgid "{JAPAN ONLY}FX Rate"
-msgstr "{JAPAN ONLY}day"
+msgstr "{JAPAN ONLY}FX Rate"
 
 msgid "{JAPAN ONLY}Financial Condition"
 msgstr "{JAPAN ONLY}Financial Condition"
@@ -8104,10 +7999,8 @@ msgstr "{JAPAN ONLY}November 7, 2014"
 msgid "{JAPAN ONLY}Option Pricing"
 msgstr "{JAPAN ONLY}Option Pricing"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Option Pricing"
 msgid "{JAPAN ONLY}Option Type"
-msgstr "{JAPAN ONLY}Option Pricing"
+msgstr "{JAPAN ONLY}Option Type"
 
 msgid "{JAPAN ONLY}Option prices are normally dependant on elements such as the underlying asset price, the exercise price, the length of time until the exercise point, volatility, and interest rates. Apart from the fixed exercise price, all other elements are changing constantly, so an understanding of the relationships between each element and changes in the options price is necessary for the management of options trading risk."
 msgstr "{JAPAN ONLY}Option prices are normally dependant on elements such as the underlying asset price, the exercise price, the length of time until the exercise point, volatility, and interest rates. Apart from the fixed exercise price, all other elements are changing constantly, so an understanding of the relationships between each element and changes in the options price is necessary for the management of options trading risk."
@@ -8136,10 +8029,8 @@ msgstr "{JAPAN ONLY}Our Customer Support staff will contact you at each stage to
 msgid "{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:"
 msgstr "{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}month"
 msgid "{JAPAN ONLY}Payout Amount"
-msgstr "{JAPAN ONLY}month"
+msgstr "{JAPAN ONLY}Payout Amount"
 
 msgid "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\">here</a> for further information."
 msgstr "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\"> 1here</a> 2 for further information."
@@ -8186,10 +8077,8 @@ msgstr "{JAPAN ONLY}Registration"
 msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "{JAPAN ONLY}Regulation & Tax"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}minute"
 msgid "{JAPAN ONLY}Remaining time"
-msgstr "{JAPAN ONLY}minute"
+msgstr "{JAPAN ONLY}Remaining time"
 
 msgid "{JAPAN ONLY}STAY-IN/BREAK-OUT"
 msgstr "{JAPAN ONLY}STAY-IN/BREAK-OUT"
@@ -8314,10 +8203,8 @@ msgstr "{JAPAN ONLY}Trading & Hedging"
 msgid "{JAPAN ONLY}Trading Guide"
 msgstr "{JAPAN ONLY}Trading Guide"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Trading Guide"
 msgid "{JAPAN ONLY}Trading Period"
-msgstr "{JAPAN ONLY}Trading Guide"
+msgstr "{JAPAN ONLY}Trading Period"
 
 msgid "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
 msgstr "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
@@ -8385,11 +8272,42 @@ msgstr "{JAPAN ONLY}year"
 msgid "{JAPAN ONLY}years"
 msgstr "{JAPAN ONLY}years"
 
+msgid "{Japan Only}"
+msgstr ""
+
+#, fuzzy
+#| msgid "Japan website Download Text for Terms and Conditions Document"
+msgid "{Japan Only} Download Terms and Conditions Document file"
+msgstr "Japan website Download Text for Terms and Conditions Document"
+
+msgid "{Japan Only}Binary option specialist for over 15 years "
+msgstr ""
+
+msgid "{Japan Only}Fully licenced in Japan"
+msgstr ""
+
+msgid "{Japan Only}Live chart tools"
+msgstr ""
+
+msgid "{Japan Only}Segregated Customer Account Balances are 100% Safe"
+msgstr ""
+
+msgid "{Japan Only}Trade all binary option types"
+msgstr ""
+
+msgid "{Japan Only}Trade the major currencies"
+msgstr ""
+
+#, fuzzy
+#| msgid "%1 is the award-winning industry pioneer in online options trading."
+msgid "{Japan Only}Worldwide award-winning pioneer in FX binary options trading"
+msgstr "%1 là đơn vị hàng đầu với những giải thưởng danh dự trong lĩnh vực giao dịch trực tuyến."
+
 msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 msgstr "Sàn Giao dịch Trực tuyến cho hợp đồng quyền chọn nhị phân về Thị trường ngoại hối, Chỉ số, Hàng hóa và các Chỉ số Thông minh"
 
 msgid "404"
-msgstr ""
+msgstr "404"
 
 msgid "Why Us"
 msgstr "Lý do chọn chúng tôi"
@@ -8433,17 +8351,211 @@ msgstr "Chuyển Khoản cho Đại lý Thanh toán"
 msgid "Sharp Prices. Smart Trading."
 msgstr "Giá sắc bén. Giao dịch thông minh."
 
-msgid "MetaTrader"
-msgstr "MetaTrader"
-
 msgid "Account Details"
 msgstr "Chi tiết Tài khoản"
 
 msgid "Terms and Conditions Approval"
 msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 
-msgid "Trading with MetaTrader 5"
-msgstr "Kinh doanh với MetaTrader 5"
+#~ msgid "%1 %2 (\"API\") Terms and Conditions"
+#~ msgstr "%1 %2 (\"API\") Điều khoản và Điều kiện"
+
+#, fuzzy
+#~| msgid "%1’s Volatility Indices are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
+#~ msgid "%1’s <a href=\"%2\">Volatility Indices</a> are now available 24/7 on MetaTrader 5. Additional assets will be released very soon."
+#~ msgstr "chỉ số biến động của %1 đang có sẵn 24/7 trên MetaTrader 5. Bổ sung tài sản sẽ được phát hành rất sớm."
+
+#~ msgid "<strong>Advanced tools for fundamental and technical analysis,</strong> including indicators, charts, and more."
+#~ msgstr "<strong>Các công cụ tiên tiến để phân tích cơ bản và kỹ thuật,</strong> bao gồm cả chỉ số, biểu đồ, và nhiều hơn nữa."
+
+#~ msgid "<strong>Highly competitive spreads with no commission.</strong>"
+#~ msgstr "<strong>Chênh lệch cạnh tranh cao và không có hoa hồng.</strong>"
+
+#~ msgid "<strong>Subscriptions to a wide range of Expert Advisors,</strong> automated trading applications from the MetaTrader Market."
+#~ msgstr "<strong>Đăng ký để một rộng phạm vi của chuyên gia tư vấn,</strong> các ứng dụng thương mại tự động từ thị trường MetaTrader."
+
+#~ msgid "Account Type"
+#~ msgstr "Loại tài khoản"
+
+#~ msgid "Click the button below to download MetaTrader."
+#~ msgstr "Nhấp vào nút bên dưới để tải về MetaTrader."
+
+#~ msgid "Congratulations! Your account has been created."
+#~ msgstr "Xin chúc mừng! Tài khoản của bạn đã được tạo."
+
+#~ msgid "Create a MetaTrader account to trade on the MetaTrader 5 platform."
+#~ msgstr "Tạo một tài khoản MetaTrader để giao dịch trên nền tảng MetaTrader 5."
+
+#~ msgid "Demo"
+#~ msgstr "Thử nghiệm"
+
+#~ msgid "Demo Account"
+#~ msgstr "Tài khoản Demo"
+
+#~ msgid "Deposit from"
+#~ msgstr "Tiền gửi từ"
+
+#~ msgid "Deposit funds into your MetaTrader account from your Binary account:"
+#~ msgstr "Gửi tiền vào tài khoản MetaTrader từ tài khoản nhị phân của bạn:"
+
+#~ msgid "Deposit is done. Transaction ID:"
+#~ msgstr "Gửi tiền đã được hoàn tất. Số ID giao dịch:"
+
+#~ msgid "Deposit to"
+#~ msgstr "Tiền gửi đến"
+
+#~ msgid "Deposit to MetaTrader account"
+#~ msgstr "Gửi tiền tới tài khoản MetaTrader"
+
+#~ msgid "Download MetaTrader"
+#~ msgstr "Tải về MetaTrader"
+
+#~ msgid "Download MetaTrader for Windows"
+#~ msgstr "Tải về MetaTrader cho Windows"
+
+#~ msgid "If you previously downloaded MetaTrader 5 directly from MetaTrader’s website, please select “%1” from the list of available brokers."
+#~ msgstr "Nếu bạn đã tải về MetaTrader 5 trực tiếp từ trang web của MetaTrader, hãy chọn \"%1\" từ danh sách các công ty môi giới có sẵn."
+
+#~ msgid "Investor Password (read-only access)"
+#~ msgstr "Mật khẩu chủ đầu tư (chỉ đọc)"
+
+#~ msgid "Leverage"
+#~ msgstr "Đòn bẩy"
+
+#~ msgid "Linux Instructions"
+#~ msgstr "Hướng dẫn Linux"
+
+#, fuzzy
+#~| msgid "Log into the application using your MetaTrader account number (e.g., 1124) and your MetaTrader account password."
+#~ msgid "Log into the application using your MetaTrader account number and your MetaTrader account password."
+#~ msgstr "Đăng nhập vào các ứng dụng bằng cách sử dụng số tài khoản MetaTrader (ví dụ: 1124) và mật khẩu tài khoản MetaTrader."
+
+#~ msgid "Login"
+#~ msgstr "Đăng nhập"
+
+#~ msgid "MacOS Instructions"
+#~ msgstr "Hướng dẫn kiểu MacOS"
+
+#~ msgid "Main Password (trading access)"
+#~ msgstr "Mật khẩu chính (dành cho kinh doanh)"
+
+#~ msgid "MetaTrader Accounts Management"
+#~ msgstr "Quản lý tài khoản MetaTrader"
+
+#~ msgid "MetaTrader Main Password"
+#~ msgstr "Mật khẩu chính MetaTrader"
+
+#~ msgid "Now Introducing MetaTrader 5 on %1"
+#~ msgstr "Bây giờ giới thiệu MetaTrader 5 trên %1"
+
+#~ msgid "Run the installation file and follow the instructions."
+#~ msgstr "Chạy file cài đặt và làm theo các hướng dẫn."
+
+#~ msgid "Start Trading with MetaTrader 5"
+#~ msgstr "Bắt đầu giao dịch với MetaTrader 5"
+
+#~ msgid "Start trading with your Demo Account"
+#~ msgstr "Bắt đầu giao dịch với tài khoản Demo của bạn"
+
+#~ msgid "Start trading with your Real Account"
+#~ msgstr "Bắt đầu giao dịch với tài khoản Real của bạn"
+
+#~ msgid "Take advantage of numerous benefits, including:"
+#~ msgstr "Tận dụng lợi thế của nhiều lợi ích, bao gồm:"
+
+#~ msgid "Take your trading to the next level through this powerful interface, recognised as the benchmark standard worldwide."
+#~ msgstr "Đưa việc kinh doanh của bạn lên một tầm cao mới thông qua giao diện mạnh mẽ này, giao diện đã được công nhận tiêu chuẩn trên thế giới."
+
+#~ msgid "To create a Real account for MetaTrader, you need to authenticate your Binary account:"
+#~ msgstr "Để tạo một tài khoản Real cho MetaTrader, bạn cần phải xác thực tài khoản Binary của bạn:"
+
+#, fuzzy
+#~| msgid "To create a Real account for MetaTrader, <a href=\"%1\">upgrade to Bianry Real account</a>."
+#~ msgid "To create a real account for MetaTrader, <a href=\"%1\">upgrade to %2 real money account</a>."
+#~ msgstr "Để tạo một tài khoản Thực Sự cho MetaTrader, <a href=\"%1\"> nâng cấp lên tài khoản Thực Sự Binary</a>."
+
+#, fuzzy
+#~| msgid "To create a Real account for MetaTrader, switch to your Binary Real account."
+#~ msgid "To create a real account for MetaTrader, switch to your %1 real money account."
+#~ msgstr "Để tạo một tài khoản Real cho MetaTrader, chuyển sang tài khoản Binary Real."
+
+#~ msgid "To deposit or withdraw from your MetaTrader Real Account, switch to your Binary.com Real Account."
+#~ msgstr "Để gửi tiền hoặc rút tiền từ tài khoản MetaTrader Real của bạn, chuyển sang tài khoản Real của bạn ở Binary.com."
+
+#~ msgid "Verify Main Password"
+#~ msgstr "Xác thực Mật Khẩu Chính"
+
+#~ msgid "Withdraw from"
+#~ msgstr "Rút tiền từ"
+
+#~ msgid "Withdraw from MetaTrader account"
+#~ msgstr "Rút tiền từ tài khoản MetaTrader"
+
+#~ msgid "Withdraw funds from your MetaTrader account into your Binary account:"
+#~ msgstr "Rút tiền từ tài khoản MetaTrader vào tài khoản Binary của bạn:"
+
+#~ msgid "Withdraw to"
+#~ msgstr "Rút tiền tới"
+
+#~ msgid "Withdrawal is done. Transaction ID:"
+#~ msgstr "Rút tiền thành công. Số ID giao dịch:"
+
+#~ msgid "Your Name"
+#~ msgstr "Tên Của Bạn"
+
+#~ msgid "Your new account has been created."
+#~ msgstr "Tài khoản mới của bạn đã được tạo."
+
+#~ msgid "MetaTrader"
+#~ msgstr "MetaTrader"
+
+#~ msgid "Trading with MetaTrader 5"
+#~ msgstr "Kinh doanh với MetaTrader 5"
+
+#~ msgid "Charts"
+#~ msgstr "Các biểu đồ"
+
+#~ msgid "LOG OUT"
+#~ msgstr "ĐĂNG XUẤT"
+
+#~ msgid "Make a deposit or withdraw."
+#~ msgstr "Gửi tiền hoặc rút tiền."
+
+#~ msgid "Manage your account access and security settings."
+#~ msgstr "Quản lý tài khoản truy cập và cài đặt bảo mật."
+
+#~ msgid "Transfer to client"
+#~ msgstr "Chuyển tới khách hàng"
+
+#~ msgid "View your historical transactions."
+#~ msgstr "Xem lịch sử giao dịch của bạn."
+
+#~ msgid "View your open positions."
+#~ msgstr "Xem vị thế mở của bạn."
+
+#~ msgid "View your trading profit/loss."
+#~ msgstr "Xem lãi/lỗ giao dịch của bạn."
+
+#~ msgid "Welcome!"
+#~ msgstr "Chào mừng!"
+
+#~ msgid "You are currently logged in to your real money account with %1 (%2)."
+#~ msgstr "Bạn vừa đăng nhập vào tài khoản tiền thực của bạn với %1 (%2)."
+
+#~ msgid "You are currently logged in to your virtual money account (%2)."
+#~ msgstr "Bạn vừa đăng nhập vào tài khoản tiền ảo của bạn (%2)."
+
+#~ msgid "Your %1 account is unavailable. For any questions please contact %2."
+#~ msgstr "Tài khoản %1 của bạn không có sẵn. Nếu bạn có bất cứ câu hỏi nào, vui lòng liên hệ với %2."
+
+#~ msgid "Your %1 accounts are unavailable. For any questions please contact %2."
+#~ msgstr "Tài khoản %1 của bạn không có sẵn. Nếu bạn có bất cứ câu hỏi nào, vui lòng liên hệ với %2."
+
+#~ msgid "Your account is fully authenticated. You can view your %1trading limits here"
+#~ msgstr "Tài khoản của bạn hoàn toàn được xác thực. Bạn có thể xem hạn mức giao dịch %1của bạn ở đây"
+
+#~ msgid "Your account is registered as a Payment Agent."
+#~ msgstr "Tài khoản của bạn được đăng kí như là một Đại lý Thanh toán."
 
 #~ msgid "<span class='color-green font-weight-700'>All durations:</span> from 10 seconds to 365 days."
 #~ msgstr "<span class='color-green font-weight-700'>Tất cả thời hạn:</span> từ 10 giây đến 365 ngày."
@@ -8581,9 +8693,6 @@ msgstr "Kinh doanh với MetaTrader 5"
 #~ msgid "The Binary.com Terms and Conditions;"
 #~ msgstr "Các Điều khoản và Điều kiện của Binary.com;"
 
-#~ msgid "Time"
-#~ msgstr "Thời gian"
-
 #~ msgid "Titles"
 #~ msgstr "Tiêu đề"
 
@@ -8703,9 +8812,6 @@ msgstr "Kinh doanh với MetaTrader 5"
 
 #~ msgid "The future of trading on %1"
 #~ msgstr "Hợp đồng tương lai của giao dịch trên %1"
-
-#~ msgid "Tick Trade App"
-#~ msgstr "Ứng dụng bước giá giao dịch"
 
 #~ msgid "Tick Trade on GitHub"
 #~ msgstr "Tick Trade trên GitHub"
@@ -9419,9 +9525,6 @@ msgstr "Kinh doanh với MetaTrader 5"
 #~ msgid "In what country do you want to offer your service"
 #~ msgstr "Bạn muốn chào bán dịch vụ của mình tại quốc gia nào"
 
-#~ msgid "Incorrect email or password."
-#~ msgstr "Email hoặc mật khẩu không đúng."
-
 #~ msgid "Indicator"
 #~ msgstr "Chỉ số"
 
@@ -9529,9 +9632,6 @@ msgstr "Kinh doanh với MetaTrader 5"
 
 #~ msgid "Login to this account has been temporarily disabled due to system maintenance. Please try again in 30 minutes."
 #~ msgstr "Đăng nhập vào tài khoản này tạm thời bị gián đoạn do bảo trì hệ thống. Xin vui lòng thử lại sau 30 phút."
-
-#~ msgid "Lost Password?"
-#~ msgstr "Bạn đã mất mật khẩu?"
 
 #~ msgid "Low"
 #~ msgstr "Thấp"
@@ -9772,9 +9872,6 @@ msgstr "Kinh doanh với MetaTrader 5"
 
 #~ msgid "Relative Strength Index"
 #~ msgstr "Chỉ số Sức mạnh Tương đối"
-
-#~ msgid "Reload page"
-#~ msgstr "Tải lại trang"
 
 #~ msgid "Remove Overlay"
 #~ msgstr "Loại bỏ lớp phủ"
@@ -10297,9 +10394,6 @@ msgstr "Kinh doanh với MetaTrader 5"
 
 #~ msgid "Windows"
 #~ msgstr "Cửa sổ"
-
-#~ msgid "Withdrawal"
-#~ msgstr "Rút tiền"
 
 #~ msgid "Workspace"
 #~ msgstr "Vùng làm việc"
@@ -15307,9 +15401,6 @@ msgstr "Kinh doanh với MetaTrader 5"
 
 #~ msgid "Binary.com's Random Indices are the random 25 Index, Random 50 Index, Random 75 Index, and Random 100 Index and many more."
 #~ msgstr "Chỉ số Ngẫu nhiên của Binary.com là những Chỉ số Ngẫu nhiên 25, Chỉ số Ngẫu nhiên 50, Chỉ số Ngẫu nhiên 75, Chỉ số Ngẫu nhiên 100 và nhiều hơn nữa."
-
-#~ msgid "Get your free $10,000 virtual money"
-#~ msgstr "Nhận miễn phí khoản tiền ảo $10,000"
 
 #~ msgid "Join our community of 1,000,000+ traders"
 #~ msgstr "Tham gia vào cộng đồng 1,000,000+ nhà giao dịch"

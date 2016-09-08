@@ -1,11 +1,10 @@
-pjax_config_page('/\?.+|/home', function() {
+pjax_config_page('/home', function() {
     return {
         onLoad: function() {
-            if(/^(\/|\/home)$/i.test(window.location.pathname)) {
-                page.client.redirect_if_login();
+            if(!page.client.redirect_if_login()) {
+                check_login_hide_signup();
+                submit_email();
             }
-            check_login_hide_signup();
-            submit_email();
         }
     };
 });
@@ -127,8 +126,15 @@ pjax_config_page('\/login|\/loginid_switch', function() {
 
 pjax_config_page('/trading', function () {
     return {
-        onLoad: function(){TradePage.onLoad();},
-        onUnload: function(){TradePage.onUnload();}
+        onLoad: function(){if(/trading\.html/.test(window.location.pathname)) TradePage.onLoad();},
+        onUnload: function(){if(/trading\.html/.test(window.location.pathname)) TradePage.onUnload();}
+    };
+});
+
+pjax_config_page('/trading_beta', function () {
+    return {
+        onLoad: function(){TradePage_Beta.onLoad();},
+        onUnload: function(){TradePage_Beta.onUnload();}
     };
 });
 
@@ -143,7 +149,7 @@ pjax_config_page('/affiliate/signup', function() {
     return {
         onLoad: function() {
             if (japanese_client()) {
-                window.location.href = page.url.url_for('user/my_accountws');
+                window.location.href = page.url.url_for('partners');
             }
         }
     };

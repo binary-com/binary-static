@@ -18,11 +18,12 @@ var LoggedInHandler = (function() {
                 // set cookies
                 page.client.set_cookie('loginid'     , loginid);
                 page.client.set_cookie('loginid_list', loginid_list);
+
+                if (!$('body').hasClass('BlueTopBack')) sessionStorage.setItem('check_tnc', loginid_list);
             }
             page.client.set_cookie('login', tokens[loginid]);
 
             // set flags
-            sessionStorage.setItem('check_tnc', '1');
             if (!$('body').hasClass('BlueTopBack')) localStorage.setItem('risk_classification', 'check');
             GTM.set_login_flag();
 
@@ -62,7 +63,7 @@ var LoggedInHandler = (function() {
                 tokens[loginid] = token;
             }
         }
-        if(Object.keys(tokens).length > 0) {
+        if(objectNotEmpty(tokens)) {
             page.client.set_storage_value('tokens', JSON.stringify(tokens));
         }
         return tokens;
