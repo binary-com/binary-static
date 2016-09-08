@@ -362,3 +362,18 @@ function processTradingTimes_Beta(response) {
 
     processPriceRequest_Beta();
 }
+
+module.exports = {
+    processActiveSymbols_Beta: processActiveSymbols_Beta,
+    processMarket_Beta: processMarket_Beta,
+    processContract_Beta: processContract_Beta,
+    processContractForm_Beta: processContractForm_Beta,
+    forgetTradingStreams_Beta: forgetTradingStreams_Beta,
+    processForgetProposals_Beta: processForgetProposals_Beta,
+    processPriceRequest_Beta: processPriceRequest_Beta,
+    processForgetTicks_Beta: processForgetTicks_Beta,
+    processTick_Beta: processTick_Beta,
+    processProposal_Beta: processProposal_Beta,
+    processTradingTimesRequest_Beta: processTradingTimesRequest_Beta,
+    processTradingTimes_Beta: processTradingTimes_Beta,
+};

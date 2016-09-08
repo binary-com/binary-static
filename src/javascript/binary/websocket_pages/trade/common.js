@@ -1138,11 +1138,11 @@ module.exports = {
     chartFrameSource: chartFrameSource,
     displayContractForms: displayContractForms,
     displayMarkets: displayMarkets,
-    toggleActiveNavMenuElement_Beta: toggleActiveNavMenuElement_Beta
-    setFormPlaceholderContent_Beta: setFormPlaceholderContent_Beta
-    updatePurchaseStatus_Beta: updatePurchaseStatus_Beta
-    displayTooltip_Beta: displayTooltip_Beta
-    label_value: label_value
-    adjustAnalysisColumnHeight: adjustAnalysisColumnHeight
-    moreTabsHandler: moreTabsHandler
+    toggleActiveNavMenuElement_Beta: toggleActiveNavMenuElement_Beta,
+    setFormPlaceholderContent_Beta: setFormPlaceholderContent_Beta,
+    updatePurchaseStatus_Beta: updatePurchaseStatus_Beta,
+    displayTooltip_Beta: displayTooltip_Beta,
+    label_value: label_value,
+    adjustAnalysisColumnHeight: adjustAnalysisColumnHeight,
+    moreTabsHandler: moreTabsHandler,
 };

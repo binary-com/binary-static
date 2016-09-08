@@ -279,3 +279,7 @@ var Price_Beta = (function() {
     };
 
 })();
+
+module.exports = {
+    Price_Beta: Price_Beta,
+};

@@ -393,3 +393,7 @@ var Durations_Beta = (function(){
         validateMinDurationAmount: validateMinDurationAmount
     };
 })();
+
+module.exports = {
+    Durations_Beta: Durations_Beta,
+};

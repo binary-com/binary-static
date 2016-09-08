@@ -274,3 +274,7 @@ var Purchase_Beta = (function () {
     };
 
 })();
+
+module.exports = {
+    Purchase_Beta: Purchase_Beta,
+};
