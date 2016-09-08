@@ -231,6 +231,7 @@ sub menu {
     # resources
     my $resources_items_ref = {
         id         => 'topMenuResources',
+        class      => 'ja-hide',
         url        => url_for('/resources'),
         text       => localize('Resources'),
         link_class => 'pjaxload',

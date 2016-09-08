@@ -6,7 +6,8 @@
       </h1>
       <div class="gr-row">
           <div class="gr-7 gr-12-m">
-            <img class="mac responsive" src="[% request.url_for('images/pages/about/mac.svg') %]"/>
+            <img class="mac responsive ja-hide" src="[% request.url_for('images/pages/about/mac.svg') %]"/>
+            <img class="mac responsive hidden ja-show" src="[% request.url_for('images/pages/about/mac-ja.png') %]"/>
           </div>
           <div class="gr-5 gr-12-m">
             <p>

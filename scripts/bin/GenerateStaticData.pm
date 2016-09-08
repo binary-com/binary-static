@@ -398,6 +398,7 @@ sub _texts {
         push @texts, localize('Withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.');
 
         #strings for japanws page
+        push @texts, localize('Japan');
         push @texts, localize('Questions');
         push @texts, localize('True');
         push @texts, localize('False');

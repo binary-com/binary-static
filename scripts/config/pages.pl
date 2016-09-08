@@ -70,9 +70,9 @@ sub all_pages {
         ['new_account/maltainvestws',    'new_account/maltainvestws',   'default', 'Financial Account Opening'],
         ['new_account/knowledge_testws', 'japan/knowledge_test',        'default', 'Real Money Account Opening'],
 
-        ['resources',                'resources/index',           'default', 'Resources'],
-        ['resources/asset_indexws',  'resources/asset_indexws',   'default', 'Asset Index', 'ja'],
-        ['resources/market_timesws', 'resources/market_timesws',  'default', 'Trading Times'],
+        ['resources',                'resources/index',           'default', 'Resources',     'ja'],
+        ['resources/asset_indexws',  'resources/asset_indexws',   'default', 'Asset Index',   'ja'],
+        ['resources/market_timesws', 'resources/market_timesws',  'default', 'Trading Times', 'ja'],
 
         ['user/security/api_tokenws',       'user/security/api_tokenws',                      'default', 'API Token',               'ja'],
         ['user/security/change_passwordws', 'user/security/change_passwordws',                'default', 'Change Password'],
