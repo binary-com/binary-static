@@ -82,7 +82,7 @@ function processMarketUnderlying_Beta() {
 
     Contract_Beta.getContracts(underlying);
 
-    displayTooltip(Defaults.get('market'), underlying);
+    displayTooltip_Beta(Defaults.get('market'), underlying);
 }
 
 /*
@@ -95,12 +95,13 @@ function processContract_Beta(contracts) {
         var container = document.getElementById('contract_confirmation_container'),
             message_container = document.getElementById('confirmation_message'),
             confirmation_error = document.getElementById('confirmation_error'),
+            confirmation_error_contents = document.getElementById('confirmation_error_contents'),
             contracts_list = document.getElementById('contracts_list');
         container.style.display = 'block';
         contracts_list.style.display = 'none';
         message_container.hide();
         confirmation_error.show();
-        confirmation_error.innerHTML = contracts.error.message + ' <a href="javascript:;" onclick="TradePage_Beta.reload();">' + text.localize('Please reload the page') + '</a>';
+        confirmation_error_contents.innerHTML = contracts.error.message + ' <a href="javascript:;" onclick="TradePage_Beta.reload();">' + text.localize('Please reload the page') + '</a>';
         return;
     }
 
