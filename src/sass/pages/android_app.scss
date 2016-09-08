@@ -1,7 +1,3 @@
-#app-container {
-    text-align: center;
-}
-
 #androidApp, #appstore {
     width: 100px;
     height: 30px;
@@ -11,7 +7,7 @@
 
 #appstore {
     background: url('../images/pages/applications/appstore.svg') 0 0/100px 30px no-repeat;
-    margin-left: 10px;
+    @include BIDIR_PROP(margin-left, margin-right, 10px);
 }
 
 #androidApp {
@@ -20,12 +16,15 @@
 
 /* trading page */
 #trading_socket_container {
+    #app-container {
+        text-align: center;
+    }
     #androidApp, #appstore {
-        float: if($LANGUAGE_DIRECTION == ltr, right, left);
+        @include BIDIR_VALUE(float, right, left);
     }
     @media (max-width: 768px) {
         #androidApp {
-            margin-left: 10px;
+            @include BIDIR_PROP(margin-left, margin-right, 10px);
         }
         #appstore, #androidApp {
             margin: 0 auto;

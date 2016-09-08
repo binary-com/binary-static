@@ -24,7 +24,7 @@
       </div>
     </div>
     <div class="gr-6 gr-12-m">
-      <div class="gr-9 gr-6-m gr-centered gr-padding-10">
+      <div class="gr-9 gr-6-m gr-centered gr-padding-10 ja-hide">
         <a href="http://mfsa.com.mt/" target="_blank">
           <img class="responsive" src="[% request.url_for('images/pages/about/mfsa-logo.svg') %]"/>
         </a>
@@ -46,7 +46,7 @@
   </div>
   <div class="gr-row">
     <div class="gr-6 gr-12-m">
-      <div class="gr-4 gr-6-m gr-centered gr-padding-10">
+      <div class="gr-4 gr-6-m gr-centered gr-padding-10 ja-hide">
         <img class="responsive" src="[% request.url_for('images/pages/about/costa-rica.png') %]"/>
       </div>
       <div class="gr-12 gr-padding-10">
@@ -65,7 +65,7 @@
       </div>
     </div>
     <div class="gr-6 gr-12-m gr-parent gr-padding-10">
-      <div class="gr-4 gr-6-m gr-centered gr-padding-10 id-hide">
+      <div class="gr-4 gr-6-m gr-centered gr-padding-10 id-hide ja-hide">
         <a href="http://www.gov.im/gambling/" target="_blank">
           <img class="responsive" src="[% request.url_for('images/pages/footer/isle-of-man.png') %]"/>
         </a>
@@ -84,7 +84,7 @@
   </div>
   <div class="gr-row">
     <div class="gr-6 gr-12-m">
-      <div class="gr-8 gr-12-m gr-centered gr-padding-10 id-hide">
+      <div class="gr-8 gr-12-m gr-centered gr-padding-10 id-hide ja-hide">
         <a href='http://www.mga.org.mt/' target="_blank" >
           <img class="responsive" src="[% request.url_for("images/pages/why-us/mga-logo2.svg") %]"/>
         </a>
