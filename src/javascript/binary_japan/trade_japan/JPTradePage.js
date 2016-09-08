@@ -39,6 +39,7 @@ var JPTradePage = (function() {
     window.chartAllowed = false;
     isJapan = false;
     JapanTrading.stop();
+    PortfolioWS.onUnload();
   };
 
   return {

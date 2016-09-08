@@ -180,7 +180,7 @@
                 display: block;
                 position: absolute;
                 height: 100%;
-                margin-top: -25px;
+                margin-top: -8px;
             }
         }
         border: 1px solid $COLOR_GRAY;
@@ -409,6 +409,10 @@
     #contract_confirmation_container {
         background-color: $COLOR_LIGHT_GRAY;
         text-align: center;
+        a.close {
+            background-color: $COLOR_BLUE;
+            border-radius: 0 0 0 $BORDER_RADIUS;
+        }
         #confirmation_message_container {
             padding-top: 15px;
         }
@@ -730,6 +734,9 @@
                 }
             }
         }
+    }
+    #bet_bottom_content {
+        padding-top: 1em;
     }
     #last_digit_histo_form {
         overflow: hidden;

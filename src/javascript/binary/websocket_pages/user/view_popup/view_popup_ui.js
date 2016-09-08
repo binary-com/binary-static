@@ -13,12 +13,12 @@ var ViewPopupUI = (function() {
             }
             if (!this._container) {
                 var that = this;
-                var con = $('<div class="inpage_popup_container inpage_popup_container_ws" id="sell_popup_container"><a class="close">x</a><div class="inpage_popup_content"></div></div>');
+                var con = $('<div class="inpage_popup_container inpage_popup_container_ws" id="sell_popup_container"><a class="close"></a><div class="inpage_popup_content"></div></div>');
                 con.hide();
                 var _on_close = function () {
                     that.cleanup(true);
                     chartUpdated = false;
-                    if(TradePage.is_trading_page()) {
+                    if (TradePage.is_trading_page() || TradePage_Beta.is_trading_page()) {
                         // Re-subscribe the trading page's tick stream which was unsubscribed by popup's chart
                         BinarySocket.send({'ticks_history':$('#underlying').val(),'style':'ticks','end':'latest','count':20,'subscribe':1});
                     }

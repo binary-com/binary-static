@@ -7,7 +7,6 @@ pjax_config_page("new_account/realws", function(){
       if (page.client.residence) {
         BinarySocket.send({landing_company: page.client.residence});
       }
-      BinarySocket.send({get_settings:1});
       BinarySocket.send({residence_list:1});
       $('#real-form').submit(function(evt) {
         evt.preventDefault();
