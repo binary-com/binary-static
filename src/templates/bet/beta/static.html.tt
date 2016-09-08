@@ -238,7 +238,10 @@
                                     <div class="invisible" id="contract_purchase_balance"></div>
                                 </div>
                             </div>
-                            <div id="confirmation_error"></div>
+                            <div id="confirmation_error">
+                                <h3 id="confirmation_error_heading">[% l('There was an error') %]</h3>
+                                <div id="confirmation_error_contents" class="center-text"></div>
+                            </div>
                         </div>
                         <div id="confirmation_message_endelement"></div>
                     </div>
