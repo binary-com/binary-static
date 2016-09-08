@@ -2,6 +2,7 @@ var AssetIndexData = (function() {
     "use strict";
 
     var initSocket = function() {
+        if (TradePage_Beta.is_trading_page()) return;
         BinarySocket.init({
             onmessage: function(msg) {
                 var response = JSON.parse(msg.data);
@@ -12,10 +13,12 @@ var AssetIndexData = (function() {
         });
     };
 
-    var sendRequest = function() {
+    var sendRequest = function(shouldRequestActiveSymbols) {
         initSocket();
+        if(shouldRequestActiveSymbols) {
+            BinarySocket.send({"active_symbols": "brief"});
+        }
 
-        BinarySocket.send({"active_symbols": "brief"});
         BinarySocket.send({"asset_index": 1});
     };
 
