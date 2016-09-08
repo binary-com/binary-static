@@ -360,10 +360,13 @@
         #contract_purchase_new_trade {
             margin: 10px auto;
         }
-        #confirmation_error {
+        #confirmation_error_contents {
             padding: 20px;
             font-style: italic;
             vertical-align: middle;
+            border: 1px solid $COLOR_GRAY;
+            border-top: none;
+            line-height: 1.5em;
         }
         .price_comment, .contract_error, #contract_purchase_balance {
             background-color: $COLOR_GRAY;
@@ -485,7 +488,7 @@
     }
     #contract_confirmation_container {
         @include BIDIR_VALUE(text-align, left, right);
-        #contract_purchase_heading {
+        #contract_purchase_heading, #confirmation_error_heading {
             font-size: 18px;
             line-height: 35px;
             margin-bottom: 0px;
@@ -838,6 +841,9 @@
                         height: 100%;
                         border: 0;
                     }
+                }
+                #tab_asset_index-content .ui-tabs-panel {
+                    border: none;
                 }
                 #portfolio #portfolio-content > div, #tab_trading_times-content > p {
                     margin: 0 10px 10px;

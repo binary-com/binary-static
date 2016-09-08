@@ -62,7 +62,7 @@ sub all_pages {
 
         ['jptrading',    'bet/japan',       'default', 'Sharp Prices. Smart Trading.'],
         ['trading',      'bet/static',      'default', 'Sharp Prices. Smart Trading.'],
-        ['trading_beta', 'bet/beta/static', 'default', 'Sharp Prices. Smart Trading.'],
+        ['trading_beta', 'bet/beta/static', 'default', 'Sharp Prices. Smart Trading.', 'ja'],
 
         ['new_account/virtualws',        'new_account/virtualws',       'default', 'Create New Account'],
         ['new_account/realws',           'new_account/realws',          'default', 'Real Money Account Opening'],

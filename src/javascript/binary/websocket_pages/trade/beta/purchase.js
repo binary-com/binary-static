@@ -26,6 +26,7 @@ var Purchase_Beta = (function () {
             profit = document.getElementById('contract_purchase_profit'),
             spots = document.getElementById('contract_purchase_spots'),
             confirmation_error = document.getElementById('confirmation_error'),
+            confirmation_error_contents = document.getElementById('confirmation_error_contents'),
             contracts_list = document.getElementById('contracts_list'),
             button = document.getElementById('contract_purchase_button');
 
@@ -38,7 +39,7 @@ var Purchase_Beta = (function () {
             container.style.display = 'block';
             message_container.hide();
             confirmation_error.show();
-            confirmation_error.innerHTML = (/ClientUnwelcome/.test(error.code) ? error['message'] + '<a class="pjaxload" href="' + page.url.url_for('user/authenticatews') + '"> ' + text.localize('Authorise your account.' + '</a>') : error['message']);
+            confirmation_error_contents.innerHTML = (/ClientUnwelcome/.test(error.code) ? error['message'] + '<a class="pjaxload" href="' + page.url.url_for('user/authenticatews') + '"> ' + text.localize('Authorise your account.' + '</a>') : error['message']);
         } else {
             var guideBtn = document.getElementById('guideBtn');
             if(guideBtn) {
