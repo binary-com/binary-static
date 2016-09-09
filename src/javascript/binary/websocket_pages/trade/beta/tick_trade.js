@@ -106,7 +106,7 @@ var TickDisplay_Beta = function() {
                         zIndex: 1
                     },
                     title: {
-                        text: text.localize('Tick')
+                        text: page.text.localize('Tick')
                     }
                 },
                 yAxis: {
@@ -304,11 +304,11 @@ var TickDisplay_Beta = function() {
             var $self = this;
 
             var profit = $self.payout - $self.price;
-            $self.update_ui($self.payout, profit, text.localize('This contract won'));
+            $self.update_ui($self.payout, profit, page.text.localize('This contract won'));
         },
         lose: function() {
             var $self = this;
-            $self.update_ui(0, -$self.price, text.localize('This contract lost'));
+            $self.update_ui(0, -$self.price, page.text.localize('This contract lost'));
         },
         to_monetary_format: function(number) {
             return number.toFixed(2);

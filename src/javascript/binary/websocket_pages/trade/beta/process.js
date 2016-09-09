@@ -101,7 +101,7 @@ function processContract_Beta(contracts) {
         contracts_list.style.display = 'none';
         message_container.hide();
         confirmation_error.show();
-        confirmation_error_contents.innerHTML = contracts.error.message + ' <a href="javascript:;" onclick="TradePage_Beta.reload();">' + text.localize('Please reload the page') + '</a>';
+        confirmation_error_contents.innerHTML = contracts.error.message + ' <a href="javascript:;" onclick="TradePage_Beta.reload();">' + page.text.localize('Please reload the page') + '</a>';
         return;
     }
 
