@@ -43,7 +43,7 @@
                 <label for="residence">[% l('Country of residence') %]</label>
               </div>
               <div class="gr-8">
-                <select name="residence" id="residence"></select>
+                <select name="residence" id="residence" class="invisible"></select>
               </div>
             </div>
           </fieldset>

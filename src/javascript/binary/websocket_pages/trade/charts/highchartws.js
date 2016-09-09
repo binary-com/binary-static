@@ -124,7 +124,10 @@ var Highchart = (function() {
 
       // display comma after every three digits instead of space
       Highcharts.setOptions({
-        lang: {thousandsSep: ','}
+          global: {
+              timezoneOffset: japanese_client() ? -9 * 60 : 0 // Converting chart time to JST.
+          },
+          lang: {thousandsSep: ','}
       });
 
       // display a guide for clients to know how we are marking entry and exit spots
