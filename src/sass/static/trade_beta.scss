@@ -402,12 +402,17 @@
             display: flex;
             font-size: 0.75rem;
             position: relative;
-            .values {
+            table td {
+                border: 0;
+                @include BIDIR_VALUE(padding, 0 10px 4px 0, 0 0 4px 10px);
+            }
+            .values, table td:last-child {
                 direction: ltr;
+                @include BIDIR_VALUE(text-align, left, right);
                 font-weight: bold;
                 @include BIDIR_PROP(padding-left, padding-right, 0);
             }
-            .chart-values {
+            #chart-values {
                 position: absolute;
                 background: $COLOR_WHITE;
                 color: $COLOR_ORANGE;

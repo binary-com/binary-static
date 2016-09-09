@@ -189,31 +189,41 @@
                                     <div class="gr-12">
                                         <div class="gr-row">
                                             <div class="gr-4 gr-12-m" id="contract_purchase_profit_list">
-                                                <div class="gr-row chart-values">
-                                                    <div class="gr-adapt">
-                                                        <div id="chart_values_tick">[% l('Tick') %]</div>
-                                                        <div id="chart_values_time">[% l('Time') %]</div>
-                                                        <div id="chart_values_price">[% l('Price') %]</div>
-                                                    </div>
-                                                    <div class="gr-grow values">
-                                                        <div id="chart_values_tick_value"></div>
-                                                        <div id="chart_values_time_value"></div>
-                                                        <div id="chart_values_price_value"></div>
-                                                    </div>
+                                                <div id="chart-values">
+                                                    <table>
+                                                        <tr>
+                                                            <td id="chart_values_tick">[% l('Tick') %]</td>
+                                                            <td id="chart_values_tick_value"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td id="chart_values_time">[% l('Time') %]</td>
+                                                            <td id="chart_values_time_value"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td id="chart_values_price">[% l('Price') %]</td>
+                                                            <td id="chart_values_price_value"></td>
+                                                        </tr>
+                                                    </table>
                                                 </div>
-                                                <div class="gr-row" id="contract-values">
-                                                    <div class="gr-adapt">
-                                                        <div id="contract_purchase_cost"></div>
-                                                        <div id="contract_purchase_payout"></div>
-                                                        <div id="contract_purchase_barrier"></div>
-                                                        <div id="contract_purchase_profit"></div>
-                                                    </div>
-                                                    <div class="gr-grow values">
-                                                        <div id="contract_purchase_cost_value"></div>
-                                                        <div id="contract_purchase_payout_value"></div>
-                                                        <div id="contract_purchase_barrier_value"></div>
-                                                        <div id="contract_purchase_profit_value"></div>
-                                                    </div>
+                                                <div id="contract-values">
+                                                    <table>
+                                                        <tr>
+                                                            <td id="contract_purchase_cost"></td>
+                                                            <td id="contract_purchase_cost_value"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td id="contract_purchase_payout"></td>
+                                                            <td id="contract_purchase_payout_value"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td id="contract_purchase_barrier"></td>
+                                                            <td id="contract_purchase_barrier_value"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td id="contract_purchase_profit"></td>
+                                                            <td id="contract_purchase_profit_value"></td>
+                                                        </tr>
+                                                    </table>
                                                 </div>
                                                 <div class="contract_purchase_reference gr-hide-m"></div>
                                             </div>

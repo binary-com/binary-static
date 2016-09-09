@@ -126,10 +126,11 @@ var TickDisplay_Beta = function() {
             };
             // Trading page's chart
             function show_values(tick, time, price) {
-                $('#contract_purchase_profit_list .chart-values').css('display', 'flex');
+                $('#contract_purchase_profit_list #chart-values').css('display', 'flex');
+                $('#contract_purchase_profit_list #contract-values').css('display', 'none');
                 $('#chart_values_tick_value').text(tick);
                 $('#chart_values_time_value').text(time);
-                $('#chart_values_price_value').text(addComma(price));
+                $('#chart_values_price_value').text(price);
             }
             if($self.is_trading_page) {
                 $.extend(true, chart_options, {
@@ -141,11 +142,12 @@ var TickDisplay_Beta = function() {
                         formatter: function () {
                             var that = this;
                             var time = moment.utc($self.applicable_ticks[that.x].epoch*1000).format('HH:mm:ss');
-                            show_values(+that.x + (is_start_on_first_tick ? 1 : 0), time, that.y);
+                            show_values(+that.x + (is_start_on_first_tick ? 1 : 0), time, addComma(that.y, $self.display_decimals));
                         },
                         events: {
                             hide: function () {
-                                $('#contract_purchase_profit_list .chart-values').hide();
+                                $('#contract_purchase_profit_list #chart-values').hide();
+                                $('#contract_purchase_profit_list #contract-values').show();
                             }
                         }
                     },
@@ -261,7 +263,7 @@ var TickDisplay_Beta = function() {
             }
             var barrier = document.getElementById('contract_purchase_barrier');
             if ($self.contract_barrier && barrier) {
-                label_value(barrier, Content.localize().textBarrier, addComma($self.contract_barrier), true);
+                label_value(barrier, Content.localize().textBarrier, addComma($self.contract_barrier, $self.display_decimals), true);
             }
         },
         add: function(indicator) {

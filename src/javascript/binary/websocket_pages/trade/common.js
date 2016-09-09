@@ -882,9 +882,9 @@ function reloadPage(){
     location.reload();
 }
 
-function addComma(num){
+function addComma(num, decimal_points){
     num = (num || 0) * 1;
-    return num.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return num.toFixed(decimal_points || 2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 function showHighchart(){
@@ -958,7 +958,7 @@ function updatePurchaseStatus_Beta(final_price, pnl, contract_status){
         profit  = document.getElementById('contract_purchase_profit'),
         currency = TUser.get().currency;
 
-    label_value(cost  , Content.localize().textStake , Math.abs(pnl));
+    label_value(cost  , Content.localize().textStake , addComma(Math.abs(pnl)));
     label_value(payout, Content.localize().textPayout, addComma(final_price));
 
     var isWin = (+final_price > 0);
