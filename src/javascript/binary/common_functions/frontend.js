@@ -416,7 +416,7 @@ function handle_residence_state_ws(){
               clientCountry.prop('selected', true);
           }
           if (status.clients_country === 'jp' || japanese_client()) {
-              if (!document.getElementById('japan-label')) $('#residence').parent().append('<label id="japan-label">' + text.localize('Japan') + '</label>');
+              if (!document.getElementById('japan-label')) $('#residence').parent().append('<label id="japan-label">' + page.text.localize('Japan') + '</label>');
           } else {
               $('#residence').removeClass('invisible');
           }

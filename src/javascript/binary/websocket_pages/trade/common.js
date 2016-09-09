@@ -952,7 +952,7 @@ function setFormPlaceholderContent_Beta(name) {
 }
 
 function updatePurchaseStatus_Beta(final_price, pnl, contract_status){
-    $('#contract_purchase_heading').text(text.localize(contract_status));
+    $('#contract_purchase_heading').text(page.text.localize(contract_status));
     var payout  = document.getElementById('contract_purchase_payout'),
         cost    = document.getElementById('contract_purchase_cost'),
         profit  = document.getElementById('contract_purchase_profit'),
