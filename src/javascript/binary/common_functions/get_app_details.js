@@ -1,7 +1,9 @@
 var buildOauthApps = function(data) {
     var oauth_apps = {};
-    for (var i = 0; i < data.length; i++) {
-        oauth_apps[data[i].app_id] = data[i].name;
+    if (data) {
+        for (var i = 0; i < data.length; i++) {
+            oauth_apps[data[i].app_id] = data[i].name;
+        }
     }
     oauth_apps[2] = 'Binary.com Autoexpiry';
     return oauth_apps;
