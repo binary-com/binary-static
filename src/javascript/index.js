@@ -25,7 +25,7 @@ window.Cookies = require('./lib/js-cookie.js');
 require('./lib/loadCSS.js');
 require('./lib/loadJS.js');
 window.pjax = require('./lib/pjax-lib.js');
-require('./lib/resize-sensor.js');
+window.ResizeSensor = require('./lib/resize-sensor.js');
 window.dv = require('./lib/validation.js');
 
 require('./binary/components/trackjs_onerror');

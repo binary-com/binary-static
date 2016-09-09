@@ -39,7 +39,7 @@ var Purchase_Beta = (function () {
             container.style.display = 'block';
             message_container.hide();
             confirmation_error.show();
-            confirmation_error_contents.innerHTML = (/ClientUnwelcome/.test(error.code) ? error['message'] + '<a class="pjaxload" href="' + page.url.url_for('user/authenticatews') + '"> ' + text.localize('Authorise your account.' + '</a>') : error['message']);
+            confirmation_error_contents.innerHTML = (/ClientUnwelcome/.test(error.code) ? error['message'] + '<a class="pjaxload" href="' + page.url.url_for('user/authenticatews') + '"> ' + page.text.localize('Authorise your account.' + '</a>') : error['message']);
         } else {
             var guideBtn = document.getElementById('guideBtn');
             if(guideBtn) {
@@ -49,7 +49,7 @@ var Purchase_Beta = (function () {
             message_container.show();
             confirmation_error.hide();
 
-            $('#contract-values > div > div').each(function() {
+            $('#contract-values td').each(function() {
                 $(this).text('').removeAttr('class', '');
             });
             brief.textContent = $('#underlying option:selected').text() + ' / ' +

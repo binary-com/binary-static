@@ -882,9 +882,9 @@ function reloadPage(){
     location.reload();
 }
 
-function addComma(num){
-    num = (num || 0) * 1;
-    return num.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+function addComma(num, decimal_points){
+    num = String(num || 0).replace(/,/g, '') * 1;
+    return num.toFixed(decimal_points || 2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 function showHighchart(){
@@ -958,12 +958,13 @@ function updatePurchaseStatus_Beta(final_price, pnl, contract_status){
         profit  = document.getElementById('contract_purchase_profit'),
         currency = TUser.get().currency;
 
-    label_value(cost  , Content.localize().textStake , Math.abs(pnl));
+    label_value(cost  , Content.localize().textStake , addComma(Math.abs(pnl)));
     label_value(payout, Content.localize().textPayout, addComma(final_price));
 
     var isWin = (+final_price > 0);
     $('#contract_purchase_profit_value').attr('class', (isWin ? 'profit' : 'loss'));
-    label_value(profit, isWin ? Content.localize().textProfit : Content.localize().textLoss, addComma(Math.round((final_price - pnl) * 100) / 100));
+    label_value(profit, isWin ? Content.localize().textProfit : Content.localize().textLoss,
+        addComma(isWin ? Math.round((final_price - pnl) * 100) / 100 : - Math.abs(pnl)));
 }
 
 function displayTooltip_Beta(market, symbol){
