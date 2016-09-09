@@ -632,4 +632,5 @@ module.exports = {
     change_blog_link: change_blog_link,
     detect_hedging: detect_hedging,
     jqueryuiTabsToDropdown: jqueryuiTabsToDropdown,
+    handle_account_opening_settings: handle_account_opening_settings,
 };
