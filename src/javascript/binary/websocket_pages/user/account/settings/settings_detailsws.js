@@ -157,7 +157,7 @@ var SettingsDetailsWS = (function() {
             return $(s).val().trim();
         }
         setDetails(toJPSettings({
-            hedgeAssetAmount       : data.hedge_asset_amount,
+            hedgeAssetAmount       : trim('#HedgeAssetAmount'),
             annualIncome           : trim('#AnnualIncome'),
             financialAsset         : trim('#FinancialAsset'),
             occupation             : trim('#Occupation'),
