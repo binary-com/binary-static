@@ -217,6 +217,7 @@ function attach_tabs(element) {
 }
 
 function showLocalTimeOnHover(s) {
+    if (japanese_client()) return;
     $(s || '.date').each(function(idx, ele) {
         var gmtTimeStr = ele.textContent.replace('\n', ' ');
         var localTime  = moment.utc(gmtTimeStr, 'YYYY-MM-DD HH:mm:ss').local();
@@ -236,7 +237,7 @@ function toJapanTimeIfNeeded(gmtTimeStr, showTimeZone, longcode, hideSeconds){
       if (!match) return longcode;
     }
 
-    var curr = localStorage.getItem('client.currencies'),
+    var jp_client = japanese_client(),
         timeStr = gmtTimeStr,
         time;
 
@@ -252,7 +253,7 @@ function toJapanTimeIfNeeded(gmtTimeStr, showTimeZone, longcode, hideSeconds){
         return;
     }
 
-    timeStr = time.zone(curr === 'JPY' ? '+09:00' : '+00:00').format((hideSeconds ? 'YYYY-MM-DD HH:mm' : 'YYYY-MM-DD HH:mm:ss' ) + (showTimeZone && showTimeZone !== '' ? curr === 'JPY' ? ' zZ' : ' Z' : ''));
+    timeStr = time.zone(jp_client ? '+09:00' : '+00:00').format((hideSeconds ? 'YYYY-MM-DD HH:mm' : 'YYYY-MM-DD HH:mm:ss' ) + (showTimeZone && showTimeZone !== '' ? jp_client ? ' zZ' : ' Z' : ''));
 
     return (longcode ? longcode.replace(match[0], timeStr) : timeStr);
 }
