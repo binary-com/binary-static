@@ -9,7 +9,7 @@ var ProfitTableUI = (function(){
         var header = [
             Content.localize().textDate,
             Content.localize().textRef,
-            text.localize('Potential Payout'),
+            page.text.localize('Potential Payout'),
             Content.localize().textContract,
             Content.localize().textPurchasePrice,
             Content.localize().textSaleDate,
@@ -87,7 +87,7 @@ var ProfitTableUI = (function(){
         //create view button and append
         var $viewButtonSpan = Button.createBinaryStyledButton();
         var $viewButton = $viewButtonSpan.children(".button").first();
-        $viewButton.text(text.localize("View"));
+        $viewButton.text(page.text.localize("View"));
         $viewButton.addClass("open_contract_detailsws");
         $viewButton.attr("contract_id", profit_table_data.id);
 
@@ -125,3 +125,7 @@ var ProfitTableUI = (function(){
         }
     };
 }());
+
+module.exports = {
+    ProfitTableUI: ProfitTableUI,
+};

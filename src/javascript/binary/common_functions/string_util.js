@@ -38,9 +38,9 @@ var StringUtil = (function(){
         unixTimeToDateTimeString: timeStampToDateTimeString
     };
 
-    if (typeof module !== 'undefined') {
-        module.exports = external;
-    }
-
     return external;
 }());
+
+module.exports = {
+    StringUtil: StringUtil,
+};

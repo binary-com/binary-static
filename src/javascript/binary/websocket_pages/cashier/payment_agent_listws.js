@@ -160,3 +160,7 @@ pjax_config_page("payment_agent_listws", function() {
         }
     };
 });
+
+module.exports = {
+    PaymentAgentListWS: PaymentAgentListWS,
+};

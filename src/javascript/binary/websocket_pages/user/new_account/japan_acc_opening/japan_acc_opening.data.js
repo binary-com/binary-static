@@ -52,3 +52,7 @@ var JapanAccOpeningData = (function(){
         getJapanAcc: getJapanAcc
     };
 }());
+
+module.exports = {
+    JapanAccOpeningData: JapanAccOpeningData,
+};

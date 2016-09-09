@@ -10,8 +10,9 @@ var MarketTimes = (function() {
     var external = {
         getSubmarketInfo: getSubmarketInfo,
     };
-    if (typeof module !== 'undefined') {
-        module.exports = external;
-    }
     return external;
 }());
+
+module.exports = {
+    MarketTimes: MarketTimes,
+};

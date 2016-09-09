@@ -9,7 +9,7 @@ var StatementUI = (function(){
         var header = [
             Content.localize().textDate,
             Content.localize().textRef,
-            text.localize('Potential Payout'),
+            page.text.localize('Potential Payout'),
             Content.localize().textAction,
             Content.localize().textDescription,
             Content.localize().textCreditDebit,
@@ -57,7 +57,7 @@ var StatementUI = (function(){
         if (statement_data.action === "Sell" || statement_data.action === "Buy") {
             var $viewButtonSpan = Button.createBinaryStyledButton();
             var $viewButton = $viewButtonSpan.children(".button").first();
-            $viewButton.text(text.localize("View"));
+            $viewButton.text(page.text.localize("View"));
             $viewButton.addClass("open_contract_detailsws");
             $viewButton.attr("contract_id", statement_data.id);
 
@@ -95,3 +95,7 @@ var StatementUI = (function(){
         }
     };
 }());
+
+module.exports = {
+    StatementUI: StatementUI,
+};

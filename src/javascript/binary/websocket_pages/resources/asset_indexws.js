@@ -75,8 +75,9 @@ var AssetIndex = (function() {
         getAssetIndexData: getAssetIndexData,
         getMarketColumns: function() {return marketColumns;}
     };
-    if (typeof module !== 'undefined') {
-        module.exports = external;
-    }
     return external;
 }());
+
+module.exports = {
+    AssetIndex: AssetIndex,
+};

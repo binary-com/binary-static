@@ -130,3 +130,7 @@ var Table = (function(){
         appendTableBody: appendTableBody
     };
 }());
+
+module.exports = {
+    Table: Table,
+};

@@ -1,5 +1,44 @@
-var text;
+var getAppId = require('../../config').getAppId;
 var clock_started = false;
+
+var SessionStore, LocalStore;
+if (isStorageSupported(window.localStorage)) {
+    LocalStore = new Store(window.localStorage);
+}
+
+if (isStorageSupported(window.sessionStorage)) {
+    if (!LocalStore) {
+        LocalStore = new Store(window.sessionStorage);
+    }
+    SessionStore = new Store(window.sessionStorage);
+}
+
+if (!SessionStore || !LocalStore) {
+    if (!LocalStore) {
+        LocalStore = new InScriptStore();
+    }
+    if (!SessionStore) {
+        SessionStore = new InScriptStore();
+    }
+}
+
+var TUser = (function () {
+    var data = {};
+    return {
+        extend: function(ext) { $.extend(data, ext); },
+        set: function(a) { data = a; },
+        get: function() { return data; }
+    };
+})();
+
+// texts_json should be available
+// make texts object as Localizable
+var texts = {};
+for (var key in texts_json) {
+    if (texts_json.hasOwnProperty(key)) {
+        texts[key] = new Localizable(texts_json[key]);
+    }
+}
 
 var GTM = (function() {
     "use strict";
@@ -173,8 +212,8 @@ Client.prototype = {
     show_login_if_logout: function(shouldReplacePageContents) {
         if (!this.is_logged_in && shouldReplacePageContents) {
             $('#content > .container').addClass('center-text')
-                .html($('<p/>', {class: 'notice-msg', html: text.localize('Please [_1] to view this page', [
-                        '<a class="login_link" href="javascript:;">' + text.localize('login') + '</a>'
+                .html($('<p/>', {class: 'notice-msg', html: page.text.localize('Please [_1] to view this page', [
+                        '<a class="login_link" href="javascript:;">' + page.text.localize('login') + '</a>'
                     ])}));
             $('.login_link').click(function(){Login.redirect_to_login();});
         }
@@ -446,9 +485,8 @@ URL.prototype = {
         return;
     },
     path_matches: function(url) {
-        //pathname is /d/page.cgi. Eliminate /d/ and /c/ from both urls.
-        var this_pathname = this.location.pathname.replace(/\/[d|c]\//g, '');
-        var url_pathname = url.location.pathname.replace(/\/[d|c]\//g, '');
+        var this_pathname = this.location.pathname,
+            url_pathname  = url.location.pathname;
         return (this_pathname == url_pathname || '/' + this_pathname == url_pathname);
     },
     params_hash_to_string: function(params) {
@@ -699,10 +737,10 @@ Header.prototype = {
 
             // default account
             if (curr_id == this.client.loginid) {
-                $('.account-type').html(text.localize(type));
+                $('.account-type').html(page.text.localize(type));
                 $('.account-id').html(curr_id);
             } else {
-                loginid_select += '<a href="#" value="' + curr_id + '"><li>' + text.localize(type) + '<div>' + curr_id + '</div>' +
+                loginid_select += '<a href="#" value="' + curr_id + '"><li>' + page.text.localize(type) + '<div>' + curr_id + '</div>' +
                                   '</li></a>' + '<div class="separator-line-thin-gray"></div>';
             }
         }
@@ -776,7 +814,7 @@ Header.prototype = {
         if (!loginid || !loginid_list) return;
 
         var accIds = loginid_list.split('+');
-        var valid_loginids = new RegExp('^(' + page.settings.get('valid_loginids') + ')[0-9]+$', 'i');
+        var valid_loginids = new RegExp('^(MX|MF|VRTC|MLT|CR|FOG|VRTJ|JP)[0-9]+$', 'i');
 
         function is_loginid_valid(login_id) {
             return login_id ?
@@ -913,7 +951,7 @@ Contents.prototype = {
             var show_upgrade = function(url, msg) {
                 $upgrade_msg.removeClass(hiddenClass)
                     .find('a').removeClass(hiddenClass)
-                        .attr('href', page.url.url_for(url)).html($('<span/>', {text: text.localize(msg)}));
+                        .attr('href', page.url.url_for(url)).html($('<span/>', {text: page.text.localize(msg)}));
             };
 
             if (page.client.is_virtual()) {
@@ -967,17 +1005,15 @@ Contents.prototype = {
     },
 };
 
-var Page = function(config) {
+var Page = function() {
     this.is_loaded_by_pjax = false;
     config = typeof config !== 'undefined' ? config : {};
     this.user = new User();
     this.client = new Client();
     this.url = new URL();
-    this.settings = new InScriptStore(config['settings']);
     this.header = new Header({ user: this.user, client: this.client, url: this.url});
     this.contents = new Contents(this.client, this.user);
     this._lang = null;
-    onLoad.queue(GTM.push_data_layer);
 };
 
 Page.prototype = {
@@ -1083,7 +1119,7 @@ Page.prototype = {
         });
     },
     localize_for: function(language) {
-        text = texts[language];
+        this.text = texts[language];
         moment.locale(language.toLowerCase());
     },
     url_for_language: function(lang) {
@@ -1196,7 +1232,7 @@ Page.prototype = {
         }
 
         if (this.client_status_detected('authenticated, unwelcome', 'all')) {
-            span = $('<span/>', {html: template(text.localize('Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact [_1].', ['<a href="mailto:support@binary.com">support@binary.com</a>']))});
+            span = $('<span/>', {html: template(page.text.localize('Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact [_1].', ['<a href="mailto:support@binary.com">support@binary.com</a>']))});
             $('#content > .container').prepend(p.append(span));
         }
         else if (this.client_status_detected('unwelcome')) {
@@ -1204,7 +1240,7 @@ Page.prototype = {
             $('#content > .container').prepend(p.append(span));
         }
         else if (this.client_status_detected('authenticated, cashier_locked', 'all') && /cashier\.html/.test(window.location.href)) {
-            span = $('<span/>', {html: template(text.localize('Deposits and withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.', ['<a href="mailto:support@binary.com">support@binary.com</a>']))});
+            span = $('<span/>', {html: template(page.text.localize('Deposits and withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.', ['<a href="mailto:support@binary.com">support@binary.com</a>']))});
             $('#content > .container').prepend(p.append(span));
         }
         else if (this.client_status_detected('cashier_locked') && /cashier\.html/.test(window.location.href)) {
@@ -1212,7 +1248,7 @@ Page.prototype = {
             $('#content > .container').prepend(p.append(span));
         }
         else if (this.client_status_detected('authenticated, withdrawal_locked', 'all') && /cashier\.html/.test(window.location.href)) {
-            span = $('<span/>', {html: template(text.localize('Withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.', ['<a href="mailto:support@binary.com">support@binary.com</a>']))});
+            span = $('<span/>', {html: template(page.text.localize('Withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.', ['<a href="mailto:support@binary.com">support@binary.com</a>']))});
             $('#content > .container').prepend(p.append(span));
         }
         else if (this.client_status_detected('withdrawal_locked') && /cashier\.html/.test(window.location.href)) {
@@ -1222,10 +1258,108 @@ Page.prototype = {
         return;
     },
     general_authentication_message: function() {
-        var span = $('<span/>', {html: template(text.localize('To authenticate your account, kindly email the following to [_1]:', ['<a href="mailto:support@binary.com">support@binary.com</a>']))});
+        var span = $('<span/>', {html: template(page.text.localize('To authenticate your account, kindly email the following to [_1]:', ['<a href="mailto:support@binary.com">support@binary.com</a>']))});
         var ul = $('<ul/>', {class: 'checked'});
-        var li1 = $('<li/>', {text: text.localize('A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date.')});
-        var li2 = $('<li/>', {text: text.localize('A scanned copy of a utility bill or bank statement (no more than 3 months old)')});
+        var li1 = $('<li/>', {text: page.text.localize('A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date.')});
+        var li2 = $('<li/>', {text: page.text.localize('A scanned copy of a utility bill or bank statement (no more than 3 months old)')});
         return span.append(ul.append(li1, li2));
     },
+};
+
+var page = new Page();
+
+// for IE (before 10) we use a jquery plugin called jQuery.XDomainRequest. Explained here,
+//http://stackoverflow.com/questions/11487216/cors-with-jquery-and-xdomainrequest-in-ie8-9
+//
+$(function(){
+    $(document).ajaxSuccess(function () {
+        var contents = new Contents(page.client, page.user);
+        contents.on_load();
+    });
+});
+
+var make_mobile_menu = function () {
+    if ($('#mobile-menu-container').is(':visible')) {
+        $('#mobile-menu').mmenu({
+            position: 'right',
+            zposition: 'front',
+            slidingSubmenus: false,
+            searchfield: true,
+            onClick: {
+                close: true
+            },
+        }, {
+            selectedClass: 'active',
+        });
+    }
+};
+
+// LocalStorage can be used as a means of communication among
+// different windows. The problem that is solved here is what
+// happens if the user logs out or switches loginid in one
+// window while keeping another window or tab open. This can
+// lead to unintended trades. The solution is to reload the
+// page in all windows after switching loginid or after logout.
+
+// onLoad.queue does not work on the home page.
+// jQuery's ready function works always.
+
+$(document).ready(function () {
+    if ($('body').hasClass('BlueTopBack')) return; // exclude BO
+    // Cookies is not always available.
+    // So, fall back to a more basic solution.
+    var match = document.cookie.match(/\bloginid=(\w+)/);
+    match = match ? match[1] : '';
+    $(window).on('storage', function (jq_event) {
+        switch(jq_event.originalEvent.key) {
+            case 'active_loginid':
+                if (jq_event.originalEvent.newValue === match) return;
+                if (jq_event.originalEvent.newValue === '') {
+                    // logged out
+                    page.reload();
+                } else if (!window['is_logging_in']) {
+                    // loginid switch
+                     page.reload();
+                }
+                break;
+            case 'new_release_reload_time':
+                if (jq_event.originalEvent.newValue !== jq_event.originalEvent.oldValue) {
+                    page.reload(true);
+                }
+                break;
+        }
+    });
+
+    LocalStore.set('active_loginid', match);
+    var start_time;
+    var time_now;
+    var evt = (
+        (document.webkitHidden && 'webkitvisibilitychange') ||
+        (document.hidden && 'visibilitychange') ||
+        null
+    );
+    if (!evt || !document.addEventListener) return;
+    document.addEventListener(evt, function tabChanged() {
+        if (!clock_started) return;
+        if (document.hidden || document.webkitHidden) {
+            start_time = moment().valueOf();
+            time_now = page.header.time_now;
+        } else {
+            time_now = (time_now + (moment().valueOf() - start_time));
+            page.header.time_now = time_now;
+        }
+    });
+});
+
+
+module.exports = {
+    getClockStarted: function() {return clock_started;},
+    page: page,
+    make_mobile_menu: make_mobile_menu,
+    TUser: TUser,
+    texts: texts,
+    GTM: GTM,
+    URL: URL,
+    SessionStore: SessionStore,
+    LocalStore: LocalStore,
 };

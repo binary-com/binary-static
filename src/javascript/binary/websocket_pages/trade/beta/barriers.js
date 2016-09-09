@@ -163,3 +163,7 @@ var Barriers_Beta = (function () {
         validateBarrier: validateBarrier
     };
 })();
+
+module.exports = {
+    Barriers_Beta: Barriers_Beta,
+};

@@ -125,3 +125,7 @@ var Tick = (function() {
         processHistory: processHistory
     };
 })();
+
+module.exports = {
+    Tick: Tick,
+};

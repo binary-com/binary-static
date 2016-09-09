@@ -1,3 +1,5 @@
+var getSocketURL = require('../../config').getSocketURL;
+var getAppId = require('../../config').getAppId;
 /*
  * It provides a abstraction layer over native javascript Websocket.
  *
@@ -106,7 +108,7 @@ function BinarySocketClass() {
 
             if (isReady()) {
                 if (!Login.is_login_pages()) page.header.validate_cookies();
-                if (!clock_started) page.header.start_clock_ws();
+                if (!getClockStarted()) page.header.start_clock_ws();
             }
         };
 
@@ -271,7 +273,7 @@ function BinarySocketClass() {
                 if (response.hasOwnProperty('error')) {
                     if(response.error && response.error.code) {
                       if (response.error.code && (response.error.code === 'WrongResponse' || response.error.code === 'OutputValidationFailed')) {
-                        $('#content').empty().html('<div class="container"><p class="notice-msg center-text">' + (response.error.code === 'WrongResponse' && response.error.message ? response.error.message : text.localize('Sorry, an error occurred while processing your request.') )+ '</p></div>');
+                        $('#content').empty().html('<div class="container"><p class="notice-msg center-text">' + (response.error.code === 'WrongResponse' && response.error.message ? response.error.message : page.text.localize('Sorry, an error occurred while processing your request.') )+ '</p></div>');
                       } else if (response.error.code === 'RateLimit') {
                         $('#ratelimit-error-message')
                             .css('display', 'block')
@@ -347,3 +349,7 @@ function BinarySocketClass() {
 }
 
 var BinarySocket = new BinarySocketClass();
+
+module.exports = {
+    BinarySocket: BinarySocket,
+};

@@ -5,7 +5,7 @@ var sidebar_scroll = function(elm_selector) {
         return false;
     }).addClass('unbind_later');
 
-    if (elm_selector.size()) {
+    if (elm_selector.length) {
         // grab the initial top offset of the navigation
         var selector = elm_selector.find('.sidebar');
         var width = selector.width();
@@ -121,10 +121,6 @@ var select_nav_element = function() {
   return;
 };
 
-var Charts = function(charts) {
-    window.open(charts, 'DetWin', 'width=580,height=710,scrollbars=yes,location=no,status=no,menubar=no');
-};
-
 var email_rot13 = function(str) {
     return str.replace(/[a-zA-Z]/g, function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});
 };
@@ -143,12 +139,12 @@ var change_chat_icon = function () {
   if( len > 0 ) {
       var timer = null;
       var updateIcon =  function () {
-          var image_link = page.settings.get('image_link');
+          var image_url = page.url.url_for_static('images/pages/contact/chat-icon.svg');
           var desk_widget = $('.a-desk-widget');
           var image_str = desk_widget.css('background-image');
           if(image_str) {
               desk_widget.css({
-                  'background-image': 'url("' + image_link['livechaticon'] + '")',
+                  'background-image': 'url("' + image_url + '")',
                   'background-size': 'contain',
                   'min-width': 50,
                   'min-height': 50,
@@ -156,7 +152,7 @@ var change_chat_icon = function () {
               });
               desk_widget.hover(function() {
                   $(this).css({
-                      'background': 'url("' + image_link['livechaticon'] + '") no-repeat scroll 0 0',
+                      'background': 'url("' + image_url + '") no-repeat scroll 0 0',
                       'background-size': 'contain',
                   });
               });
@@ -274,18 +270,18 @@ function dropDownNumbers(select, startNum, endNum) {
 
 function dropDownMonths(select, startNum, endNum) {
     var months = [
-        text.localize("Jan"),
-        text.localize("Feb"),
-        text.localize("Mar"),
-        text.localize("Apr"),
-        text.localize("May"),
-        text.localize("Jun"),
-        text.localize("Jul"),
-        text.localize("Aug"),
-        text.localize("Sep"),
-        text.localize("Oct"),
-        text.localize("Nov"),
-        text.localize("Dec")
+        page.text.localize("Jan"),
+        page.text.localize("Feb"),
+        page.text.localize("Mar"),
+        page.text.localize("Apr"),
+        page.text.localize("May"),
+        page.text.localize("Jun"),
+        page.text.localize("Jul"),
+        page.text.localize("Aug"),
+        page.text.localize("Sep"),
+        page.text.localize("Oct"),
+        page.text.localize("Nov"),
+        page.text.localize("Dec")
     ];
     select.appendChild(document.createElement("option"));
     for (var i = startNum; i <= endNum; i++){
@@ -320,9 +316,9 @@ function generateBirthDate(country){
     //years
     dropDownNumbers(year, startYear, endYear);
     if (japanese_client()) {
-      days.options[0].innerHTML = text.localize('Day');
-      months.options[0].innerHTML = text.localize('Month');
-      year.options[0].innerHTML = text.localize('Year');
+      days.options[0].innerHTML = page.text.localize('Day');
+      months.options[0].innerHTML = page.text.localize('Month');
+      year.options[0].innerHTML = page.text.localize('Year');
     }
     return;
 }
@@ -613,3 +609,22 @@ try {
 } catch(e) {
   window.attachEvent("onload", $buo_f);
 }
+
+module.exports = {
+    sidebar_scroll: sidebar_scroll,
+    get_started_behaviour: get_started_behaviour,
+    display_cs_contacts: display_cs_contacts,
+    show_live_chat_icon: show_live_chat_icon,
+    display_career_email: display_career_email,
+    check_login_hide_signup: check_login_hide_signup,
+    hide_if_logged_in: hide_if_logged_in,
+    generateBirthDate: generateBirthDate,
+    isValidDate: isValidDate,
+    handle_residence_state_ws: handle_residence_state_ws,
+    isIE: isIE,
+    Trim: Trim,
+    checkClientsCountry: checkClientsCountry,
+    japanese_client: japanese_client,
+    change_blog_link: change_blog_link,
+    detect_hedging: detect_hedging,
+};

@@ -71,3 +71,7 @@ var TradePage_Beta = (function(){
     is_trading_page: function(){return trading_page;}
   };
 })();
+
+module.exports = {
+    TradePage_Beta: TradePage_Beta,
+};

@@ -192,3 +192,7 @@ var Contract_Beta = (function() {
     };
 
 })();
+
+module.exports = {
+    Contract_Beta: Contract_Beta,
+};

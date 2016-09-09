@@ -2,6 +2,10 @@
  * This contains common functions we need for processing the response
  */
 
+if (typeof window === 'undefined') {
+    Element = function() {}; // jshint ignore:line
+}
+
  Element.prototype.hide = function(){
      this.style.display = 'none';
  };
@@ -13,7 +17,7 @@
 /*
  * function to display contract form as element of ul
  */
- function displayContractForms(id, elements, selected) {
+function displayContractForms(id, elements, selected) {
      'use strict';
      if (!id || !elements || !selected) return;
      var target = document.getElementById(id),
@@ -124,7 +128,7 @@
  }
 
 
- function displayMarkets(id, elements, selected) {
+function displayMarkets(id, elements, selected) {
      'use strict';
      var target= document.getElementById(id),
          fragment =  document.createDocumentFragment();
@@ -233,7 +237,7 @@ function displayUnderlyings(id, elements, selected) {
         for(var j=0; j<keys2.length; j++){
             for(var k=0; k<submarkets[keys2[j]].length; k++){
                 var key = submarkets[keys2[j]][k];
-                var option = document.createElement('option'), content = document.createTextNode(text.localize(elements[key]['display']));
+                var option = document.createElement('option'), content = document.createTextNode(page.text.localize(elements[key]['display']));
                 option.setAttribute('value', key);
                 if (selected && selected === key) {
                     option.setAttribute('selected', 'selected');
@@ -831,7 +835,7 @@ function selectOption(option, select){
 }
 
 function updatePurchaseStatus(final_price, pnl, contract_status){
-    $('#contract_purchase_heading').text(text.localize(contract_status));
+    $('#contract_purchase_heading').text(page.text.localize(contract_status));
     $payout = $('#contract_purchase_payout');
     $cost = $('#contract_purchase_cost');
     $profit = $('#contract_purchase_profit');
@@ -891,7 +895,7 @@ function showHighchart(){
   } else {
     document.getElementById('chart_frame').src = '';
     $('#trade_live_chart').hide();
-    $('#chart-error').text(text.localize('Chart is not available for this underlying.'))
+    $('#chart-error').text(page.text.localize('Chart is not available for this underlying.'))
                      .show();
     return;
   }
@@ -912,7 +916,6 @@ function setChartSource() {
   '&hideOverlay=' + (ja ? 'true' : 'false') + '&hideShare=' + (ja ? 'true' : 'false') + '&timezone=GMT+' + (ja ? '9' : '0') +
   '&hideFooter=' + (ja ? 'true' : 'false');
 }
-
 
 // ============= Functions used in /trading_beta =============
 
@@ -1103,9 +1106,46 @@ function moreTabsHandler($ul) {
     });
 }
 
-//used temporarily for mocha test
-if (typeof module !== 'undefined') {
-    module.exports = {
-        addComma: addComma
-    };
-}
+module.exports = {
+    displayUnderlyings: displayUnderlyings,
+    getFormNameBarrierCategory: getFormNameBarrierCategory,
+    contractTypeDisplayMapping: contractTypeDisplayMapping,
+    isVisible: isVisible,
+    showPriceOverlay: showPriceOverlay,
+    hidePriceOverlay: hidePriceOverlay,
+    hideFormOverlay: hideFormOverlay,
+    showFormOverlay: showFormOverlay,
+    hideOverlayContainer: hideOverlayContainer,
+    getContractCategoryTree: getContractCategoryTree,
+    displayPriceMovement: displayPriceMovement,
+    resetPriceMovement: resetPriceMovement,
+    toggleActiveNavMenuElement: toggleActiveNavMenuElement,
+    toggleActiveCatMenuElement: toggleActiveCatMenuElement,
+    setFormPlaceholderContent: setFormPlaceholderContent,
+    displayCommentPrice: displayCommentPrice,
+    displayCommentSpreads: displayCommentSpreads,
+    debounce: debounce,
+    getDefaultMarket: getDefaultMarket,
+    addEventListenerForm: addEventListenerForm,
+    submitForm: submitForm,
+    displayIndicativeBarrier: displayIndicativeBarrier,
+    durationOrder: durationOrder,
+    displayTooltip: displayTooltip,
+    countDecimalPlaces: countDecimalPlaces,
+    selectOption: selectOption,
+    updatePurchaseStatus: updatePurchaseStatus,
+    updateWarmChart: updateWarmChart,
+    reloadPage: reloadPage,
+    addComma: addComma,
+    showHighchart: showHighchart,
+    chartFrameSource: chartFrameSource,
+    displayContractForms: displayContractForms,
+    displayMarkets: displayMarkets,
+    toggleActiveNavMenuElement_Beta: toggleActiveNavMenuElement_Beta,
+    setFormPlaceholderContent_Beta: setFormPlaceholderContent_Beta,
+    updatePurchaseStatus_Beta: updatePurchaseStatus_Beta,
+    displayTooltip_Beta: displayTooltip_Beta,
+    label_value: label_value,
+    adjustAnalysisColumnHeight: adjustAnalysisColumnHeight,
+    moreTabsHandler: moreTabsHandler,
+};

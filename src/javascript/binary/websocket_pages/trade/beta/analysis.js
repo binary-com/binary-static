@@ -236,3 +236,7 @@ var TradingAnalysis_Beta = (function() {
     };
 
 })();
+
+module.exports = {
+    TradingAnalysis_Beta: TradingAnalysis_Beta,
+};

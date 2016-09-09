@@ -501,3 +501,7 @@ WSTickDisplay_Beta.updateChart = function(data, contract) {
         }
     });
 }(Highcharts));
+
+module.exports = {
+    WSTickDisplay_Beta: WSTickDisplay_Beta,
+};

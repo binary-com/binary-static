@@ -30,8 +30,7 @@ var JapanPortfolio = (function() {
   }
 
   function isActive() {
-    var user = new User();
-    if (user.email && JPTradePage.isJapan()) {
+    if (page.user.email && JPTradePage.isJapan()) {
       return true;
     }
   }
@@ -52,3 +51,7 @@ var JapanPortfolio = (function() {
     isActive: isActive,
   };
 })();
+
+module.exports = {
+    JapanPortfolio: JapanPortfolio,
+};

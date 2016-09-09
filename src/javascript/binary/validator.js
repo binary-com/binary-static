@@ -6,7 +6,7 @@ var ValidationUI = {
         var $parent = $(selector).parent();
         var $p = $('<p/>', {
             class: 'errorfield',
-            text:  text.localize(message),
+            text:  page.text.localize(message),
         });
         $p.attr('data-is-error-field', true);
         $parent.append($p);
@@ -150,4 +150,11 @@ bind_validation.simple = function(form, opts) {
             });
         },
     });
+};
+
+module.exports = {
+    ValidationUI: ValidationUI,
+    customError: customError,
+    validate_object: validate_object,
+    bind_validation: bind_validation,
 };

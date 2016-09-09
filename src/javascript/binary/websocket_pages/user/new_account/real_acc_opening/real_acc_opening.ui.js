@@ -102,3 +102,7 @@ var RealAccOpeningUI = (function(){
     checkValidity: checkValidity
   };
 })();
+
+module.exports = {
+    RealAccOpeningUI: RealAccOpeningUI,
+};

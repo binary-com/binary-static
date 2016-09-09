@@ -116,3 +116,7 @@ var StartDates_Beta = (function(){
     };
 
 })();
+
+module.exports = {
+    StartDates_Beta: StartDates_Beta,
+};

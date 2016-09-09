@@ -31,7 +31,7 @@ var ValidAccountOpening = (function(){
         $('#financial-risk').remove();
       }
       var error = document.getElementsByClassName('notice-msg')[0];
-      error.innerHTML = (response.msg_type === 'sanity_check') ? text.localize('There was some invalid character in an input field.') : errorMessage;
+      error.innerHTML = (response.msg_type === 'sanity_check') ? page.text.localize('There was some invalid character in an input field.') : errorMessage;
       error.parentNode.parentNode.parentNode.setAttribute('style', 'display:block');
       return;
     } else if (Cookies.get('residence') === 'jp') {
@@ -127,3 +127,7 @@ var ValidAccountOpening = (function(){
     checkAnswer: checkAnswer
   };
 }());
+
+module.exports = {
+    ValidAccountOpening: ValidAccountOpening,
+};

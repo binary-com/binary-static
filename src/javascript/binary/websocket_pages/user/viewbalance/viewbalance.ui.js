@@ -24,3 +24,7 @@ var ViewBalanceUI = (function(){
         updateBalances: updateBalances
     };
 }());
+
+module.exports = {
+    ViewBalanceUI: ViewBalanceUI,
+};

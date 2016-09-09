@@ -3,14 +3,14 @@ DatePicker = function(component_id, select_type) {
     this.select_type = (typeof select_type === "undefined") ? "date" : select_type;
 
     this.localizations = {};
-    this.localizations.monthNames = [text.localize('January'), text.localize('February'), text.localize('March'), text.localize('April'), text.localize('May'), text.localize('June'),text.localize('July'), text.localize('August'), text.localize('September'), text.localize('October'), text.localize('November'), text.localize('December') ];
+    this.localizations.monthNames = [page.text.localize('January'), page.text.localize('February'), page.text.localize('March'), page.text.localize('April'), page.text.localize('May'), page.text.localize('June'),page.text.localize('July'), page.text.localize('August'), page.text.localize('September'), page.text.localize('October'), page.text.localize('November'), page.text.localize('December') ];
 
-    this.localizations.monthNamesShort = [text.localize('Jan'), text.localize('Feb'), text.localize('Mar'), text.localize('Apr'), text.localize('May'), text.localize('Jun'), text.localize('Jul'), text.localize('Aug'), text.localize('Sep'), text.localize('Oct'), text.localize('Nov'), text.localize('Dec')];
+    this.localizations.monthNamesShort = [page.text.localize('Jan'), page.text.localize('Feb'), page.text.localize('Mar'), page.text.localize('Apr'), page.text.localize('May'), page.text.localize('Jun'), page.text.localize('Jul'), page.text.localize('Aug'), page.text.localize('Sep'), page.text.localize('Oct'), page.text.localize('Nov'), page.text.localize('Dec')];
 
-    this.localizations.dayNames = [text.localize('Sunday'), text.localize('Monday'), text.localize('Tuesday'), text.localize('Wednesday'), text.localize('Thursday'), text.localize('Friday'), text.localize('Saturday')];
+    this.localizations.dayNames = [page.text.localize('Sunday'), page.text.localize('Monday'), page.text.localize('Tuesday'), page.text.localize('Wednesday'), page.text.localize('Thursday'), page.text.localize('Friday'), page.text.localize('Saturday')];
 
-    this.localizations.nextText = text.localize('Next');
-    this.localizations.prevText = text.localize('Previous');
+    this.localizations.nextText = page.text.localize('Next');
+    this.localizations.prevText = page.text.localize('Previous');
 };
 
 DatePicker.prototype = {
@@ -76,4 +76,8 @@ DatePicker.prototype = {
 
         return config;
     },
+};
+
+module.exports = {
+    DatePicker: DatePicker,
 };

@@ -37,3 +37,7 @@ var AssetIndexData = (function() {
         responseHandler: responseHandler
     };
 }());
+
+module.exports = {
+    AssetIndexData: AssetIndexData,
+};

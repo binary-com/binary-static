@@ -52,7 +52,7 @@ var ProfitTableWS = (function () {
                 $('#profit-table tbody')
                     .append($('<tr/>', {class: "flex-tr"})
                         .append($('<td/>', {colspan: 8})
-                            .append($('<p/>', {class: "notice-msg center-text", text: text.localize("Your account has no trading activity.")})
+                            .append($('<p/>', {class: "notice-msg center-text", text: page.text.localize("Your account has no trading activity.")})
                             )
                         )
                     );
@@ -119,3 +119,7 @@ var ProfitTableWS = (function () {
         clean: initTable
     };
 }());
+
+module.exports = {
+    ProfitTableWS: ProfitTableWS,
+};

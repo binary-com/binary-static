@@ -41,9 +41,7 @@ format_money.map = {
     "JPY": "¥",
 };
 
-if (typeof module !== 'undefined') {
-    module.exports = {
-        format_money: format_money,
-        format_money_jp : format_money_jp,
-    };
-}
+module.exports = {
+    format_money: format_money,
+    format_money_jp : format_money_jp,
+};

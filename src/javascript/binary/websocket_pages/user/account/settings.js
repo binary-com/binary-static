@@ -41,3 +41,7 @@ pjax_config_page_require_auth("settingsws|securityws", function() {
         }
     };
 });
+
+module.exports = {
+    SettingsWS: SettingsWS,
+};
