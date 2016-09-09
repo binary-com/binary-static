@@ -411,15 +411,16 @@ function handle_residence_state_ws(){
       } else if (type === 'website_status') {
         var status  = response.website_status;
         if (status && status.clients_country) {
-          if (status.clients_country === 'jp' || japanese_client()) {
-              $('#residence').replaceWith('<label>' + text.localize('Japan') + '</label>');
-          }
           var clientCountry = $('#residence option[value="' + status.clients_country + '"]');
           if (!clientCountry.attr('disabled')) {
               clientCountry.prop('selected', true);
           }
+          if (status.clients_country === 'jp' || japanese_client()) {
+              if (!document.getElementById('japan-label')) $('#residence').parent().append('<label id="japan-label">' + text.localize('Japan') + '</label>');
+          } else {
+              $('#residence').removeClass('invisible');
+          }
         }
-        $('#residence').removeClass('invisible');
         return;
       } else if (type === 'get_financial_assessment' && objectNotEmpty(response.get_financial_assessment)) {
           for (var key in response.get_financial_assessment) {

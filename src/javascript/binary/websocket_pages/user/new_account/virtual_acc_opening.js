@@ -70,7 +70,7 @@ pjax_config_page("new_account/virtualws", function() {
                 var data = info.values;
                 VirtualAccOpeningData.newAccount({
                     password:  data.password,
-                    residence: data.residence,
+                    residence: (japanese_client() ? 'jp' : data.residence),
                     verification_code: data['verification-code'],
                 });
             },
