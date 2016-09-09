@@ -62,7 +62,7 @@ sub all_pages {
 
         ['jptrading',    'bet/japan',       'default', 'Sharp Prices. Smart Trading.'],
         ['trading',      'bet/static',      'default', 'Sharp Prices. Smart Trading.'],
-        ['trading_beta', 'bet/beta/static', 'default', 'Sharp Prices. Smart Trading.'],
+        ['trading_beta', 'bet/beta/static', 'default', 'Sharp Prices. Smart Trading.', 'ja'],
 
         ['new_account/virtualws',        'new_account/virtualws',       'default', 'Create New Account'],
         ['new_account/realws',           'new_account/realws',          'default', 'Real Money Account Opening'],
@@ -70,9 +70,9 @@ sub all_pages {
         ['new_account/maltainvestws',    'new_account/maltainvestws',   'default', 'Financial Account Opening'],
         ['new_account/knowledge_testws', 'japan/knowledge_test',        'default', 'Real Money Account Opening'],
 
-        ['resources',                'resources/index',           'default', 'Resources'],
-        ['resources/asset_indexws',  'resources/asset_indexws',   'default', 'Asset Index', 'ja'],
-        ['resources/market_timesws', 'resources/market_timesws',  'default', 'Trading Times'],
+        ['resources',                'resources/index',           'default', 'Resources',     'ja'],
+        ['resources/asset_indexws',  'resources/asset_indexws',   'default', 'Asset Index',   'ja'],
+        ['resources/market_timesws', 'resources/market_timesws',  'default', 'Trading Times', 'ja'],
 
         ['user/security/api_tokenws',       'user/security/api_tokenws',                      'default', 'API Token',               'ja'],
         ['user/security/change_passwordws', 'user/security/change_passwordws',                'default', 'Change Password'],

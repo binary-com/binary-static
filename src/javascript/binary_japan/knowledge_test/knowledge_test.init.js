@@ -85,18 +85,12 @@ var KnowledgeTest = (function() {
     }
 
     function showDisallowedMsg(jpStatus) {
-        var nextTestEpoch = jpStatus.next_test_epoch;
-        var lastTestEpoch = jpStatus.last_test_epoch;
-
-        var nextTestDate = new Date(nextTestEpoch * 1000);
-        var lastTestDate = new Date(lastTestEpoch * 1000);
-
         var msgTemplate =
             '{JAPAN ONLY}Dear customer, you are not allowed to take knowledge test until [_1]. Last test taken at [_2].';
 
         var msg = text.localize(msgTemplate, [
-            nextTestDate.toUTCString(),
-            lastTestDate.toUTCString(),
+            toJapanTimeIfNeeded(jpStatus.next_test_epoch),
+            toJapanTimeIfNeeded(jpStatus.last_test_epoch)
             ]);
 
         showMsgOnly(msg);

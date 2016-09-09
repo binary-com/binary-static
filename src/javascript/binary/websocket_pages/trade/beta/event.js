@@ -166,7 +166,7 @@ var TradingEvents_Beta = (function () {
                     processForgetTicks_Beta();
                     // get ticks for current underlying
                     Tick.request(underlying);
-                    displayTooltip(Defaults.get('market'), underlying);
+                    displayTooltip_Beta(Defaults.get('market'), underlying);
                 }
             });
         }

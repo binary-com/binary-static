@@ -345,65 +345,8 @@ function handle_residence_state_ws(){
       var select;
       var response = JSON.parse(msg.data);
       var type = response.msg_type;
-      var country;
       var residenceDisabled = $('#residence-disabled');
-      if (type === 'get_settings') {
-        country = response.get_settings.country_code;
-        if (country && country !== null) {
-          page.client.residence = country;
-          generateBirthDate(country);
-          generateState();
-          if (/maltainvestws/.test(window.location.pathname)) {
-            var settings = response.get_settings;
-            var title = document.getElementById('title'),
-                fname = document.getElementById('fname'),
-                lname = document.getElementById('lname'),
-                dobdd = document.getElementById('dobdd'),
-                dobmm = document.getElementById('dobmm'),
-                dobyy = document.getElementById('dobyy');
-            var inputs = document.getElementsByClassName('input-disabled');
-            if (settings.salutation) {
-              title.value = settings.salutation;
-              fname.value = settings.first_name;
-              lname.value = settings.last_name;
-              var date = moment.utc(settings.date_of_birth * 1000);
-              dobdd.value = date.format('DD').replace(/^0/, '');
-              dobmm.value = date.format('MM');
-              dobyy.value = date.format('YYYY');
-              for (i = 0; i < inputs.length; i++) {
-                  inputs[i].disabled = true;
-              }
-              document.getElementById('address1').value = settings.address_line_1;
-              document.getElementById('address2').value = settings.address_line_2;
-              document.getElementById('address-town').value = settings.address_city;
-              window.state = settings.address_state;
-              document.getElementById('address-postcode').value = settings.address_postcode;
-              document.getElementById('tel').value = settings.phone;
-            } else {
-              for (i = 0; i < inputs.length; i++) {
-                  inputs[i].disabled = false;
-              }
-            }
-          }
-          return;
-        } else if (document.getElementById('move-residence-here')) {
-          var residenceForm = $('#residence-form');
-          $('#real-form').hide();
-          residenceDisabled.insertAfter('#move-residence-here');
-          $('#error-residence').insertAfter('#residence-disabled');
-          residenceDisabled.removeAttr('disabled');
-          residenceForm.show();
-          residenceForm.submit(function(evt) {
-            evt.preventDefault();
-            if (Validate.fieldNotEmpty(residenceDisabled.val(), document.getElementById('error-residence'))) {
-              page.client.residence = residenceDisabled.val();
-              BinarySocket.send({set_settings:1, residence:page.client.residence});
-            }
-            return;
-          });
-          return;
-        }
-      } else if (type === 'set_settings') {
+      if (type === 'set_settings') {
         var errorElement = document.getElementById('error-residence');
         if (response.hasOwnProperty('error')) {
           if (response.error.message) {
@@ -425,13 +368,14 @@ function handle_residence_state_ws(){
           window.location.href = page.url.url_for('new_account/japanws');
           return;
         } else if (!$('#real-form').is(':visible')) {
+          BinarySocket.send({residence_list:1});
           $('#residence-form').hide();
           residenceDisabled.insertAfter('#move-residence-back');
           $('#error-residence').insertAfter('#residence-disabled');
           residenceDisabled.attr('disabled', 'disabled');
-          $('#real-form').show();
-          generateBirthDate(country);
+          generateBirthDate(page.client.residence);
           generateState();
+          $('#real-form').show();
           return;
         }
       } else if (type === 'states_list') {
@@ -456,7 +400,7 @@ function handle_residence_state_ws(){
             if (select) {
               appendTextValueChild(select, residence.text, residence.value, residence.disabled ? 'disabled' : undefined);
             }
-            if (phoneElement && phoneElement.value === '' && residence.phone_idd && residenceValue === residence.value) {
+            if (residenceValue !== 'jp' && phoneElement && phoneElement.value === '' && residence.phone_idd && residenceValue === residence.value) {
               phoneElement.value = '+' + residence.phone_idd;
             }
           }
@@ -471,11 +415,15 @@ function handle_residence_state_ws(){
       } else if (type === 'website_status') {
         var status  = response.website_status;
         if (status && status.clients_country) {
+          if (status.clients_country === 'jp' || japanese_client()) {
+              $('#residence').replaceWith('<label>' + text.localize('Japan') + '</label>');
+          }
           var clientCountry = $('#residence option[value="' + status.clients_country + '"]');
           if (!clientCountry.attr('disabled')) {
               clientCountry.prop('selected', true);
           }
         }
+        $('#residence').removeClass('invisible');
         return;
       } else if (type === 'get_financial_assessment' && objectNotEmpty(response.get_financial_assessment)) {
           for (var key in response.get_financial_assessment) {
@@ -575,6 +523,71 @@ function jqueryuiTabsToDropdown($container) {
         $container.find('li a[href="' + $(this).val() + '"]').click();
     });
     return $ddl;
+}
+
+function handle_account_opening_settings(response) {
+    var country = response.get_settings.country_code;
+    if (country && country !== null) {
+      $('#real-form').show();
+      page.client.residence = country;
+      generateBirthDate(country);
+      generateState();
+      if (/maltainvestws/.test(window.location.pathname)) {
+        var settings = response.get_settings;
+        var title = document.getElementById('title'),
+            fname = document.getElementById('fname'),
+            lname = document.getElementById('lname'),
+            dobdd = document.getElementById('dobdd'),
+            dobmm = document.getElementById('dobmm'),
+            dobyy = document.getElementById('dobyy');
+        var inputs = document.getElementsByClassName('input-disabled');
+        if (settings.salutation) {
+          title.value = settings.salutation;
+          fname.value = settings.first_name;
+          lname.value = settings.last_name;
+          var date = moment.utc(settings.date_of_birth * 1000);
+          dobdd.value = date.format('DD').replace(/^0/, '');
+          dobmm.value = date.format('MM');
+          dobyy.value = date.format('YYYY');
+          for (i = 0; i < inputs.length; i++) {
+              inputs[i].disabled = true;
+          }
+          document.getElementById('address1').value = settings.address_line_1;
+          document.getElementById('address2').value = settings.address_line_2;
+          document.getElementById('address-town').value = settings.address_city;
+          window.state = settings.address_state;
+          document.getElementById('address-postcode').value = settings.address_postcode;
+          document.getElementById('tel').value = settings.phone;
+        } else {
+          for (i = 0; i < inputs.length; i++) {
+              inputs[i].disabled = false;
+          }
+        }
+      }
+      return;
+    } else if (document.getElementById('move-residence-here') && $('#residence-form').is(':hidden')) {
+      show_residence_form();
+      return;
+    }
+}
+
+
+function show_residence_form() {
+    var residenceForm = $('#residence-form');
+    var residenceDisabled = $('#residence-disabled');
+    residenceDisabled.insertAfter('#move-residence-here');
+    $('#error-residence').insertAfter('#residence-disabled');
+    residenceDisabled.removeAttr('disabled');
+    residenceForm.show();
+    residenceForm.submit(function(evt) {
+      evt.preventDefault();
+      if (Validate.fieldNotEmpty(residenceDisabled.val(), document.getElementById('error-residence'))) {
+        page.client.set_cookie('residence', residenceDisabled.val());
+        page.client.residence = residenceDisabled.val();
+        BinarySocket.send({set_settings:1, residence:page.client.residence});
+      }
+      return;
+    });
 }
 
 $(function() {

@@ -1,10 +1,34 @@
 function format_money(currency, amount) {
+    var updatedAmount = amount;
+    if(currency === 'JPY') { // remove decimal points for JPY and add comma.
+        updatedAmount = updatedAmount.replace(/\.\d+$/, '').replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
     var symbol = format_money.map[currency];
     if (symbol === undefined) {
-        return currency + ' ' + amount;
+        return currency + ' ' + updatedAmount;
     }
-    return symbol + amount;
+    return symbol + updatedAmount;
 }
+
+function format_money_jp(currency, amount) {
+    var sign = '';
+    var updatedAmount = amount;
+    if(currency === 'JPY') { // remove decimal points and add comma.
+        if (Number(amount) < 0 ) {
+           sign = '-';
+        }
+
+        updatedAmount = updatedAmount.replace(/\.\d+$/, '').replace('-','').replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    var symbol = format_money.map[currency];
+    if (symbol === undefined) {
+        return currency + ' ' + updatedAmount;
+    }
+    return sign + symbol + updatedAmount;
+}
+
 
 // Taken with modifications from:
 //    https://github.com/bengourley/currency-symbol-map/blob/master/map.js
@@ -20,5 +44,6 @@ format_money.map = {
 if (typeof module !== 'undefined') {
     module.exports = {
         format_money: format_money,
+        format_money_jp : format_money_jp,
     };
 }

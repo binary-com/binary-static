@@ -47,6 +47,7 @@ pjax_config_page("new_account/virtualws", function() {
         Content.populate();
         handle_residence_state_ws();
         BinarySocket.send({residence_list: 1});
+        BinarySocket.send({website_status: 1});
 
         var form = $('#virtual-form')[0];
         if (!form) return;
