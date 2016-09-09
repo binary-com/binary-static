@@ -485,9 +485,8 @@ URL.prototype = {
         return;
     },
     path_matches: function(url) {
-        //pathname is /d/page.cgi. Eliminate /d/ and /c/ from both urls.
-        var this_pathname = this.location.pathname.replace(/\/[d|c]\//g, '');
-        var url_pathname = page.url.location.pathname.replace(/\/[d|c]\//g, '');
+        var this_pathname = this.location.pathname,
+            url_pathname  = url.location.pathname;
         return (this_pathname == url_pathname || '/' + this_pathname == url_pathname);
     },
     params_hash_to_string: function(params) {
@@ -501,7 +500,7 @@ URL.prototype = {
             var param_count = this_params.length;
             var match_count = 0;
             while(param_count--) {
-                if(page.url.param(this_params[param_count][0]) == this_params[param_count][1]) {
+                if(url.param(this_params[param_count][0]) == this_params[param_count][1]) {
                     match_count++;
                 }
             }
