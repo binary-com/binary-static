@@ -411,9 +411,6 @@ function handle_residence_state_ws(){
       } else if (type === 'website_status') {
         var status  = response.website_status;
         if (status && status.clients_country) {
-          if (status.clients_country === 'jp' || japanese_client()) {
-              $('#residence').replaceWith('<label>' + page.text.localize('Japan') + '</label>');
-          }
           var clientCountry = $('#residence option[value="' + status.clients_country + '"]');
           if (!clientCountry.attr('disabled')) {
               clientCountry.prop('selected', true);
