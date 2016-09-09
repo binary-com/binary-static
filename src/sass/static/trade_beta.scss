@@ -681,9 +681,6 @@
 }
 @media all and (max-width: 640px) {
     #trading_socket_container_beta {
-        #analysis_tabs {
-            white-space: nowrap;
-        }
         div#contract_market_form_container {
             ul#contract_form_name_nav {
                 white-space: nowrap !important;
@@ -819,6 +816,9 @@
     #trading_analysis_content {
         height: 100%;
         font-size: 1rem;
+        #analysis_tabs {
+            white-space: nowrap;
+        }
         .tab-menu {
             background: transparent !important;
             border: 0 !important;
