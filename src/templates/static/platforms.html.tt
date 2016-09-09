@@ -125,6 +125,111 @@
         <div id="platforms-comparison" class="sections invisible">
             <h1>[% l("Platforms Comparison") %]</h1>
             <p>[% l("Choose your ideal trading tool.") %]</p>
+            <div class="table-container">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th></th>
+                            <th>[% l("Binary.com Trading Page") %]</th>
+                            <th>[% l("Next Gen") %]</th>
+                            <th>[% l("Tick Trade") %]</th>
+                            <th>[% l("MetaTrader 5") %]</th>
+                            <th>[% l("Webtrader") %]</th>
+                            <th>[% l("Binary Bot") %]</th>
+                        </tr>
+                        <tr>
+                            <td><strong>[% l("Environment") %]</strong></td>
+                            <td>[% l("Web (Including Mobile)") %]</td>
+                            <td>[% l("Web, iOS, Android") %]</td>
+                            <td>[% l("iOS, Android") %]</td>
+                            <td>[% l("Windows, macOS, Linux") %]</td>
+                            <td>[% l("Web (Desktop Only)") %]</td>
+                            <td>[% l("Web (Desktop Only)") %]</td>
+                        </tr>
+                        <tr>
+                            <td><strong>[% l("Price") %]</strong></td>
+                            <td>[% l("Free") %]</td>
+                            <td>[% l("Free") %]</td>
+                            <td>[% l("Free") %]</td>
+                            <td>[% l("Free") %]</td>
+                            <td>[% l("Free") %]</td>
+                            <td>[% l("Free") %]</td>
+                        </tr>
+                        <tr>
+                            <td><strong>[% l("Made for...") %]</strong></td>
+                            <td>[% l("Everyone") %]</td>
+                            <td>[% l("Everyone") %]</td>
+                            <td>[% l("Short interval traders") %]</td>
+                            <td>[% l("Serious traders") %]</td>
+                            <td>[% l("Serious traders") %]</td>
+                            <td>[% l("Serious traders") %]</td>
+                        </tr>
+                        <tr>
+                            <td><strong>[% l("Available Products") %]</strong></td>
+                            <td>[% l("Binary Options") %]</td>
+                            <td>[% l("Binary Options") %]</td>
+                            <td>[% l("Binary Options") %]</td>
+                            <td>[% l("CFDs") %]</td>
+                            <td>[% l("Binary Options") %]</td>
+                            <td>[% l("Binary Options") %]</td>
+                        </tr>
+                        <tr>
+                            <td><strong>[% l("Tradeable Markets") %]</strong></td>
+                            <td>[% l("Forex, Indices, Stocks, Commodities, Volatility Indices") %]</td>
+                            <td>[% l("Forex, Indices, Stocks, Commodities, Volatility Indices") %]</td>
+                            <td>[% l("Forex, Volatility Indices") %]</td>
+                            <td>[% l("Volatility Indices") %]</td>
+                            <td>[% l("Forex, Indices, Stocks, Commodities, Volatility Indices") %]</td>
+                            <td>[% l("Forex, Indices, Stocks, Commodities, Volatility Indices") %]</td>
+                        </tr>
+                        <tr>
+                            <td><strong>[% l("Trade Durations") %]</strong></td>
+                            <td>[% l("5 ticks to 1 year") %]</td>
+                            <td>[% l("5 ticks to 1 year") %]</td>
+                            <td>[% l("5 to 10 ticks") %]</td>
+                            <td>[% l("Any") %]</td>
+                            <td>[% l("5 ticks to 1 year") %]</td>
+                            <td>[% l("5 ticks to 1 year") %]</td>
+                        </tr>
+                        <tr>
+                            <td><strong>[% l("Display Multiple Charts") %]</strong></td>
+                            <td>[% l("-") %]</td>
+                            <td><ul class="checked"><li></li></ul></td>
+                            <td>[% l("-") %]</td>
+                            <td><ul class="checked"><li></li></ul></td>
+                            <td><ul class="checked"><li></li></ul></td>
+                            <td>[% l("-") %]</td>
+                        </tr>
+                        <tr>
+                            <td><strong>[% l("Chart Indicators") %]</strong></td>
+                            <td><ul class="checked"><li></li></ul></td>
+                            <td>[% l("-") %]</td>
+                            <td>[% l("-") %]</td>
+                            <td><ul class="checked"><li></li></ul></td>
+                            <td><ul class="checked"><li></li></ul></td>
+                            <td><ul class="checked"><li></li></ul></td>
+                        </tr>
+                        <tr>
+                            <td><strong>[% l("Chart Comparison") %]</strong></td>
+                            <td><ul class="checked"><li></li></ul></td>
+                            <td>[% l("-") %]</td>
+                            <td>[% l("-") %]</td>
+                            <td>[% l("-") %]</td>
+                            <td><ul class="checked"><li></li></ul></td>
+                            <td>[% l("-") %]</td>
+                        </tr>
+                        <tr>
+                            <td><strong>[% l("Advanced Automation") %]</strong></td>
+                            <td>[% l("-") %]</td>
+                            <td>[% l("-") %]</td>
+                            <td>[% l("-") %]</td>
+                            <td><ul class="checked"><li></li></ul></td>
+                            <td>[% l("-") %]</td>
+                            <td><ul class="checked"><li></li></ul></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
         <div id="more-tools" class="sections invisible">
             <h1>[% l("More Tools") %]</h1>
