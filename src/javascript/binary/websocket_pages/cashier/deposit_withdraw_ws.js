@@ -148,7 +148,7 @@ pjax_config_page_require_auth("cashier/forwardws", function() {
                 }
               }
             });
-            if (!sessionStorage.getItem('client_status')) {
+            if (sessionStorage.getItem('client_status') === null) {
                 BinarySocket.send({"get_account_status": "1", "passthrough":{"dispatch_to":"ForwardWS"}});
             }
             else if (

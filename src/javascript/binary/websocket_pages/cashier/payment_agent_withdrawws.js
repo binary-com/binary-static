@@ -313,7 +313,7 @@ pjax_config_page_require_auth("paymentagent/withdrawws", function() {
             Content.populate();
             if(TUser.get().hasOwnProperty('is_virtual') || page.client_status_detected('withdrawal_locked, cashier_locked', 'any')) {
                 PaymentAgentWithdrawWS.init();
-            } else if (!sessionStorage.getItem('client_status')) {
+            } else if (sessionStorage.getItem('client_status') === null) {
               BinarySocket.send({"get_account_status": "1", "passthrough":{"dispatch_to":"PaymentAgentWithdrawWS"}});
             }
         }
