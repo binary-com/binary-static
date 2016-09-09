@@ -52,6 +52,7 @@ var Highchart = (function() {
       var title = options.title;
       // element where chart is to be displayed
       var el = document.getElementById('analysis_live_chart');
+      if(!el) return;
 
       var chartOptions = {
         chart: {
