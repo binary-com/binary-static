@@ -883,7 +883,7 @@ function reloadPage(){
 }
 
 function addComma(num, decimal_points){
-    num = (num || 0) * 1;
+    num = String(num || 0).replace(/,/g, '') * 1;
     return num.toFixed(decimal_points || 2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
@@ -963,7 +963,8 @@ function updatePurchaseStatus_Beta(final_price, pnl, contract_status){
 
     var isWin = (+final_price > 0);
     $('#contract_purchase_profit_value').attr('class', (isWin ? 'profit' : 'loss'));
-    label_value(profit, isWin ? Content.localize().textProfit : Content.localize().textLoss, addComma(Math.round((final_price - pnl) * 100) / 100));
+    label_value(profit, isWin ? Content.localize().textProfit : Content.localize().textLoss,
+        addComma(isWin ? Math.round((final_price - pnl) * 100) / 100 : - Math.abs(pnl)));
 }
 
 function displayTooltip_Beta(market, symbol){

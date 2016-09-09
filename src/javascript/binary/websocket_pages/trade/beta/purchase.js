@@ -49,7 +49,7 @@ var Purchase_Beta = (function () {
             message_container.show();
             confirmation_error.hide();
 
-            $('#contract-values > div > div').each(function() {
+            $('#contract-values td').each(function() {
                 $(this).text('').removeAttr('class', '');
             });
             brief.textContent = $('#underlying option:selected').text() + ' / ' +
