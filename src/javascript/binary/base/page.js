@@ -747,7 +747,7 @@ Header.prototype = {
         $(".login-id-list").html(loginid_select);
     },
     register_dynamic_links: function() {
-       $('#logo').attr('href', page.url.url_for(this.client.is_logged_in ? 'trading' : ''));
+       $('#logo').attr('href', page.url.url_for(this.client.is_logged_in ? japanese_client() ? 'jptrading' : 'trading' : ''));
        this.menu.register_dynamic_links();
     },
     start_clock_ws: function() {
@@ -778,9 +778,8 @@ Header.prototype = {
         that.server_time_at_response = ((start_timestamp * 1000) + (that.client_time_at_response - pass));
         var update_time = function() {
             window.time = moment(that.server_time_at_response + moment().valueOf() - that.client_time_at_response).utc();
-            var curr = localStorage.getItem('client.currencies');
             var timeStr = window.time.format("YYYY-MM-DD HH:mm") + ' GMT';
-            if(curr === 'JPY'){
+            if(japanese_client()){
                 clock.html(toJapanTimeIfNeeded(timeStr, 1, '', 1));
             } else {
                 clock.html(timeStr);
