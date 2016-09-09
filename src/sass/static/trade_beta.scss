@@ -403,6 +403,7 @@
             font-size: 0.75rem;
             position: relative;
             .values {
+                direction: ltr;
                 font-weight: bold;
                 @include BIDIR_PROP(padding-left, padding-right, 0);
             }
@@ -442,6 +443,7 @@
         }
         #tick_chart {
             border: 1px solid $COLOR_LIGHT_GRAY;
+            direction: ltr;
         }
         .contract_error {
             margin-top: auto;
