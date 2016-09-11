@@ -201,11 +201,11 @@ var SettingsDetailsWS = (function() {
             comma   = Content.localize().textComma;
 
         var V2 = ValidateV2;
-        var isAddress  = V2.regex(/^[a-zA-Z0-9\s\,\.\-\/\(\)#']+$/, [letters, numbers, space, period, comma, '- / ( ) # \'']);
-        var isCity     = isAddress;
-        var isState    = V2.regex(/^[a-zA-Z\s\-']+$/,               [letters, space, '- \'']);
-        var isPostcode = V2.regex(/^[\w\s-]+$/,                     [letters, numbers, space, '-']);
-        var isPhoneNo  = V2.regex(/^(|\+?[0-9\s\-]+)$/,             [numbers, space, '-']);
+        var isAddress  = V2.regex(/^[\p{L}\p{Nd}\s\'\.\,\-\@\/']+$/, [letters, numbers, space, period, comma, '- . / @ \' ']);
+        var isCity     = V2.regex(/^[\p{L}\s\'\.\-']+$/,             [letters, space, '- . \' ']);
+        var isState    = V2.regex(/^[\p{L}\p{Nd}\s\'\.\,\-']+$/,     [letters, numbers, space, comma, '- . \'']);
+        var isPostcode = V2.regex(/^[\w\s-]+$/,                      [letters, numbers, space, '-']);
+        var isPhoneNo  = V2.regex(/^(|\+?[0-9\s\-]+)$/,              [numbers, space, '-']);
 
         function maybeEmptyAddress(value) {
             return value.length ? isAddress(value) : dv.ok(value);
