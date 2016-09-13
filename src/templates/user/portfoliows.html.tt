@@ -37,7 +37,8 @@
 
             <tfoot>
                 <tr>
-                    <th class="ref" colspan="3"></th>
+                    <th>[% l("Total") %]</th>
+                    <th class="ref" colspan="2"></th>
                     <th class="cost" id="cost-of-open-positions"></th>
                     <th class="value" id="value-of-open-positions" colspan="2"></th>
                 </tr>

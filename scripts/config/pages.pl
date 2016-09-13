@@ -7,7 +7,7 @@ sub all_pages {
     return (
         # url pathname,                template file path,             layout,       title,        exclude languages
         ['home',                       'home/index',                   'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices'],
-        ['404',                        'static/404',                   'default',    '404'],
+        ['404',                        'static/404',                   'full_width', '404'],
         ['why-us',                     'static/why_us',                'full_width', 'Why Us'],
         ['tour',                       'static/tour',                  'full_width', 'Tour'],
         ['responsible-trading',        'static/responsible_trading',   'full_width', 'Responsible Trading', 'ja'],
