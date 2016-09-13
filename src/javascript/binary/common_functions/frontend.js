@@ -150,17 +150,12 @@ var change_chat_icon = function () {
                   'min-height': 50,
                   'width': 'auto'
               });
-              desk_widget.hover(function() {
-                  $(this).css({
-                      'background': 'url("' + image_url + '") no-repeat scroll 0 0',
-                      'background-size': 'contain',
-                  });
-              });
 
               if(image_str.match(/live-chat-icon/g)){
                   clearInterval(timer);
               }
           }
+          desk_widget.removeAttr('onmouseover onmouseout');
       };
       timer = setInterval(updateIcon, 500);
   }
@@ -213,7 +208,6 @@ var show_live_chat_icon = function() {
         loadCSS("https://d3jyn100am7dxp.cloudfront.net/assets/widget_embed_191.cssgz?1367387331");
         loadJS("https://d3jyn100am7dxp.cloudfront.net/assets/widget_embed_libraries_191.jsgz?1367387332");
     }
-
 
     var desk_load = setInterval(function() {
         if(typeof DESK !== "undefined") {
