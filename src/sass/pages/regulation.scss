@@ -16,6 +16,14 @@
         margin: -3% 0 0 -3%;
         padding: 0;
     }
+    .xquote div {
+        display: flex;
+        .quote-text {
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-left: 0 !important;
+        }
+    }
     @media screen and (max-width: 768px) {
         .timeline {
             width: 15%;
