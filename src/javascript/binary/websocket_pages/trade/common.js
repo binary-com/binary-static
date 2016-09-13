@@ -884,7 +884,9 @@ function reloadPage(){
 
 function addComma(num, decimal_points){
     num = String(num || 0).replace(/,/g, '') * 1;
-    return num.toFixed(decimal_points || 2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return num.toFixed(decimal_points || 2).toString().replace(/(^|[^\w.])(\d{4,})/g, function($0, $1, $2) {
+        return $1 + $2.replace(/\d(?=(?:\d\d\d)+(?!\d))/g, "$&,");
+    });
 }
 
 function showHighchart(){
