@@ -954,6 +954,8 @@ function setFormPlaceholderContent_Beta(name) {
 }
 
 function updatePurchaseStatus_Beta(final_price, pnl, contract_status){
+    final_price = final_price.replace(/,/g, '') * 1;
+    pnl = pnl.replace(/,/g, '') * 1;
     $('#contract_purchase_heading').text(page.text.localize(contract_status));
     var payout  = document.getElementById('contract_purchase_payout'),
         cost    = document.getElementById('contract_purchase_cost'),
@@ -963,7 +965,7 @@ function updatePurchaseStatus_Beta(final_price, pnl, contract_status){
     label_value(cost  , Content.localize().textStake , addComma(Math.abs(pnl)));
     label_value(payout, Content.localize().textPayout, addComma(final_price));
 
-    var isWin = (+final_price > 0);
+    var isWin = (final_price > 0);
     $('#contract_purchase_profit_value').attr('class', (isWin ? 'profit' : 'loss'));
     label_value(profit, isWin ? Content.localize().textProfit : Content.localize().textLoss,
         addComma(isWin ? Math.round((final_price - pnl) * 100) / 100 : - Math.abs(pnl)));
