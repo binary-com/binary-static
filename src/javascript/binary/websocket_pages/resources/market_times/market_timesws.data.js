@@ -37,3 +37,7 @@ var MarketTimesData = (function() {
         responseHandler: responseHandler
     };
 }());
+
+module.exports = {
+    MarketTimesData: MarketTimesData,
+};

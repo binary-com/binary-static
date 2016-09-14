@@ -62,9 +62,9 @@ var IPHistoryData = (function() {
         get: get,
     };
 
-    if (typeof module !== 'undefined') {
-        module.exports = external;
-    }
-
     return external;
 })();
+
+module.exports = {
+    IPHistoryData: IPHistoryData,
+};

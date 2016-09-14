@@ -20,7 +20,7 @@ var Cashier = (function() {
         else if (page.client_status_detected('unwelcome')) {
             lock_cashier('locked', 'deposit');
         }
-        else if (!sessionStorage.getItem('client_status')) {
+        else if (sessionStorage.getItem('client_status') === null) {
             BinarySocket.send({"get_account_status": "1", "passthrough":{"dispatch_to":"Cashier"}});
         }
     };
@@ -74,3 +74,7 @@ pjax_config_page("/cashier/payment_methods", function(){
         }
     };
 });
+
+module.exports = {
+    Cashier: Cashier,
+};

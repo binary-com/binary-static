@@ -52,6 +52,7 @@ var Highchart = (function() {
       var title = options.title;
       // element where chart is to be displayed
       var el = document.getElementById('analysis_live_chart');
+      if(!el) return;
 
       var chartOptions = {
         chart: {
@@ -344,7 +345,7 @@ var Highchart = (function() {
     var el = document.getElementById('analysis_live_chart');
     if(!el) return;
     if (type === 'missing') {
-      el.innerHTML = '<p class="error-msg">' + text.localize('Ticks history returned an empty array.') + '</p>';
+      el.innerHTML = '<p class="error-msg">' + page.text.localize('Ticks history returned an empty array.') + '</p>';
     } else {
       el.innerHTML = '<p class="error-msg">' + message + '</p>';
     }
@@ -398,7 +399,7 @@ var Highchart = (function() {
 
   function show_entry_error() {
     if (!entry_tick_time && chart_delayed === false && start_time && window.time.unix() >= parseInt(start_time)) {
-      show_error('', text.localize('Waiting for entry tick.'));
+      show_error('', page.text.localize('Waiting for entry tick.'));
     } else if (!history_send){
       history_send = true;
       if (request.subscribe) chart_subscribed = true;
@@ -641,3 +642,7 @@ var Highchart = (function() {
     dispatch     : dispatch
   };
 }());
+
+module.exports = {
+    Highchart: Highchart,
+};

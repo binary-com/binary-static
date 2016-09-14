@@ -132,3 +132,7 @@ var ViewPopupUI = (function() {
         },
     };
 }());
+
+module.exports = {
+    ViewPopupUI: ViewPopupUI,
+};

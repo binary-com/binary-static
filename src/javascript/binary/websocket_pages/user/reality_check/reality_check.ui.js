@@ -116,3 +116,7 @@ var RealityCheckUI = (function () {
         closePopUp: closePopUp
     };
 }());
+
+module.exports = {
+    RealityCheckUI: RealityCheckUI,
+};

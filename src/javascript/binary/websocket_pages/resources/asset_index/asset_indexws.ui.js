@@ -127,3 +127,7 @@ var AssetIndexUI = (function() {
         }
     };
 }());
+
+module.exports = {
+    AssetIndexUI: AssetIndexUI,
+};

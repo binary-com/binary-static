@@ -35,3 +35,7 @@ function displayCurrencies(selected) {
     target.appendChild(fragment);
     Defaults.set('currency', target.value);
 }
+
+module.exports = {
+    displayCurrencies: displayCurrencies,
+};

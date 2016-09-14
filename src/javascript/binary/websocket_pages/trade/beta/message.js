@@ -70,3 +70,7 @@ var Message_Beta = (function () {
     };
 
 })();
+
+module.exports = {
+    Message_Beta: Message_Beta,
+};

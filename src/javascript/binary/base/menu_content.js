@@ -136,14 +136,14 @@ var MenuContent = (function () {
 
             var tab_to_trigger = $('#'+tab_id);
 
-            if (!tab_to_trigger.size() || tab_to_trigger.hasClass('invisible'))
+            if (!tab_to_trigger.length || tab_to_trigger.hasClass('invisible'))
             {
                 return false;
             }
             else
             {
                 var tab = tab_to_trigger.find('.tm-a');
-                if (tab.size())
+                if (tab.length)
                 {
                     return tab.trigger('click');
                 }
@@ -157,3 +157,7 @@ var MenuContent = (function () {
 
     return that;
 })();
+
+module.exports = {
+    MenuContent: MenuContent,
+};

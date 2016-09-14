@@ -165,3 +165,7 @@ var MarketTimesUI = (function() {
         }
     };
 }());
+
+module.exports = {
+    MarketTimesUI: MarketTimesUI,
+};

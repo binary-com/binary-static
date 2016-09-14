@@ -81,7 +81,7 @@ var APITokenWS = (function() {
 
         if (tokens.length >= maxTokens) {
             hideForm();
-            showErrorMessage(text.localize('The maximum number of tokens ([_1]) has been reached.', [maxTokens]));
+            showErrorMessage(page.text.localize('The maximum number of tokens ([_1]) has been reached.', [maxTokens]));
         } else {
             showForm();
         }
@@ -122,7 +122,7 @@ var APITokenWS = (function() {
         new FlexTableUI({
             id:        'tokens_table',
             container: tableContainer,
-            header:    headers.map(function(s) { return text.localize(s); }),
+            header:    headers.map(function(s) { return page.text.localize(s); }),
             cols:      columns,
             data:      tokens,
             formatter: formatToken,
@@ -138,8 +138,8 @@ var APITokenWS = (function() {
     }
 
     function createDeleteButton($row, token) {
-        var message = text.localize('Are you sure that you want to permanently delete token');
-        var $button = $('<button/>', {class: 'button btnDelete', text: text.localize('Delete')});
+        var message = page.text.localize('Are you sure that you want to permanently delete token');
+        var $button = $('<button/>', {class: 'button btnDelete', text: page.text.localize('Delete')});
         $button.click(function(e) {
             e.preventDefault();
             e.stopPropagation();
@@ -159,7 +159,7 @@ var APITokenWS = (function() {
     }
 
     function formatToken(token) {
-        var lastUsed = (token.last_used ? token.last_used + ' GMT': text.localize('Never Used'));
+        var lastUsed = (token.last_used ? token.last_used + ' GMT': page.text.localize('Never Used'));
         var scopes = token.scopes.map(capitalise);
         return [
             token.display_name,
@@ -204,13 +204,13 @@ var APITokenWS = (function() {
         $('#token_message').removeClass(hideClass)
             .find('p')
             .attr('class', errorClass)
-            .html(text.localize(msg));
+            .html(page.text.localize(msg));
     }
 
     function showSubmitSuccess(msg) {
         $('#formMessage')
             .attr('class', 'success-msg')
-            .html('<ul class="checked"><li>' + text.localize(msg) + '</li></ul>')
+            .html('<ul class="checked"><li>' + page.text.localize(msg) + '</li></ul>')
             .css('display', 'block')
             .delay(3000)
             .fadeOut(1000);
@@ -225,3 +225,7 @@ var APITokenWS = (function() {
         init: init,
     };
 }());
+
+module.exports = {
+    APITokenWS: APITokenWS,
+};

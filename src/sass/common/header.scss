@@ -21,6 +21,7 @@
     #language_select {
         select {
             padding: 0px;
+            @include BIDIR_VALUE(float, right, left);
         }
     }
     a {
@@ -99,14 +100,23 @@
             }
         }
     }
-    .main-nav > li > ul {
-        margin: -20px -1px;
+    .main-nav {
+        > li > ul {
+            margin: -20px -1px;
+        }
+        .nav-caret {
+            @include BIDIR_PROP(right, left, -68px);
+            @include BIDIR_PROP(left, right, initial);
+        }
     }
     .topMenuBalance {
         visibility: hidden;
     }
-    .main-account > .account-type {
-        white-space: nowrap;
+    #main-logout {
+        @include BIDIR_VALUE(float, right, left);
+        .main-account > .account-type {
+            white-space: nowrap;
+        }
     }
     #all-accounts {
         z-index: 99;

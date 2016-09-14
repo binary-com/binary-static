@@ -530,3 +530,7 @@ var TradingEvents_Beta = (function () {
         onDurationUnitChange: onDurationUnitChange
     };
 })();
+
+module.exports = {
+    TradingEvents_Beta: TradingEvents_Beta,
+};

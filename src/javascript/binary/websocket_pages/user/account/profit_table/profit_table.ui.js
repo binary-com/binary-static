@@ -9,7 +9,7 @@ var ProfitTableUI = (function(){
         var header = [
             Content.localize().textDate,
             Content.localize().textRef,
-            text.localize('Potential Payout'),
+            page.text.localize('Potential Payout'),
             Content.localize().textContract,
             Content.localize().textPurchasePrice,
             Content.localize().textSaleDate,
@@ -76,7 +76,7 @@ var ProfitTableUI = (function(){
 
         var jpClient = japanese_client();
 
-        var data = [profit_table_data.buyDate, '<span' + showTooltip(profit_table_data.app_id, oauth_apps[profit_table_data.app_id]) + '>' + profit_table_data.ref + '</span>', jpClient ? format_money_jp(TUser.get().currency, profit_table_data.payout) : profit_table_data.payout , '', jpClient ? format_money_jp(TUser.get().currency, profit_table_data.buyPrice) : profit_table_data.buyPrice , profit_table_data.sellDate, jpClient ? format_money_jp(TUser.get().currency, profit_table_data.sellPrice) : profit_table_data.sellPrice , jpClient ? format_money_jp(TUser.get().currency, profit_table_data.pl) : profit_table_data.pl , ''];
+        var data = [jpClient ? toJapanTimeIfNeeded(transaction.purchase_time) : profit_table_data.buyDate, '<span' + showTooltip(profit_table_data.app_id, oauth_apps[profit_table_data.app_id]) + '>' + profit_table_data.ref + '</span>', jpClient ? format_money_jp(TUser.get().currency, profit_table_data.payout) : profit_table_data.payout , '', jpClient ? format_money_jp(TUser.get().currency, profit_table_data.buyPrice) : profit_table_data.buyPrice , (jpClient ? toJapanTimeIfNeeded(transaction.sell_time) : profit_table_data.sellDate), jpClient ? format_money_jp(TUser.get().currency, profit_table_data.sellPrice) : profit_table_data.sellPrice , jpClient ? format_money_jp(TUser.get().currency, profit_table_data.pl) : profit_table_data.pl , ''];
         var $row = Table.createFlexTableRow(data, cols, "data");
 
         $row.children(".buy-date").addClass("pre");
@@ -87,7 +87,7 @@ var ProfitTableUI = (function(){
         //create view button and append
         var $viewButtonSpan = Button.createBinaryStyledButton();
         var $viewButton = $viewButtonSpan.children(".button").first();
-        $viewButton.text(text.localize("View"));
+        $viewButton.text(page.text.localize("View"));
         $viewButton.addClass("open_contract_detailsws");
         $viewButton.attr("contract_id", profit_table_data.id);
 
@@ -125,3 +125,7 @@ var ProfitTableUI = (function(){
         }
     };
 }());
+
+module.exports = {
+    ProfitTableUI: ProfitTableUI,
+};

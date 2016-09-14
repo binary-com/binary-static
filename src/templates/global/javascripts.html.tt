@@ -1,9 +1,4 @@
 <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Array.prototype.includes,String.prototype.includes&unknown=polyfill"></script>
-<script>
-    //A global variable required to initialize Page object.
-    window.page_params = {settings: [%= javascript.settings =%]};
-</script>
-
 [%= FOREACH js IN javascript.libs =%]
   <script src='[%= js =%]' defer async></script>
 [%= END =%]

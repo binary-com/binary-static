@@ -5,9 +5,8 @@
 //////////////////////////////////////////////////////////////////
 function showLoadingImage(container)
 {
-    var image_link = page.settings.get('image_link');
-
-    container.empty().append('<div id="std_loading_img"><p>'+text.localize('loading...')+'</p><img src="'+image_link['hourglass']+'" /></div>');
+    container.empty().append('<div id="std_loading_img"><p>' + page.text.localize('loading...') + '</p>' +
+        '<img src="' + page.url.url_for_static('images/common/hourglass_1.gif') + '" /></div>');
 }
 
 /**
@@ -127,8 +126,8 @@ function attach_time_picker(element, conf) {
         timeSeparator: ':',
         showLeadingZero: true,
         howMinutesLeadingZero: true,
-        hourText: text.localize("Hour"),
-        minuteText: text.localize("Minute"),
+        hourText: page.text.localize("Hour"),
+        minuteText: page.text.localize("Minute"),
         minTime: {},
         maxTime: {},
     };
@@ -218,6 +217,7 @@ function attach_tabs(element) {
 }
 
 function showLocalTimeOnHover(s) {
+    if (japanese_client()) return;
     $(s || '.date').each(function(idx, ele) {
         var gmtTimeStr = ele.textContent.replace('\n', ' ');
         var localTime  = moment.utc(gmtTimeStr, 'YYYY-MM-DD HH:mm:ss').local();
@@ -237,7 +237,7 @@ function toJapanTimeIfNeeded(gmtTimeStr, showTimeZone, longcode, hideSeconds){
       if (!match) return longcode;
     }
 
-    var curr = localStorage.getItem('client.currencies'),
+    var jp_client = japanese_client(),
         timeStr = gmtTimeStr,
         time;
 
@@ -253,7 +253,7 @@ function toJapanTimeIfNeeded(gmtTimeStr, showTimeZone, longcode, hideSeconds){
         return;
     }
 
-    timeStr = time.zone(curr === 'JPY' ? '+09:00' : '+00:00').format((hideSeconds ? 'YYYY-MM-DD HH:mm' : 'YYYY-MM-DD HH:mm:ss' ) + (showTimeZone && showTimeZone !== '' ? curr === 'JPY' ? ' zZ' : ' Z' : ''));
+    timeStr = time.zone(jp_client ? '+09:00' : '+00:00').format((hideSeconds ? 'YYYY-MM-DD HH:mm' : 'YYYY-MM-DD HH:mm:ss' ) + (showTimeZone && showTimeZone !== '' ? jp_client ? ' zZ' : ' Z' : ''));
 
     return (longcode ? longcode.replace(match[0], timeStr) : timeStr);
 }
@@ -299,12 +299,16 @@ function parseLoginIDList(string) {
     });
 }
 
-//used temporarily for mocha test
-if (typeof module !== 'undefined') {
-    module.exports = {
-        toJapanTimeIfNeeded: toJapanTimeIfNeeded,
-        objectNotEmpty: objectNotEmpty,
-        template: template,
-        parseLoginIDList: parseLoginIDList,
-    };
-}
+module.exports = {
+    showLoadingImage: showLoadingImage,
+    get_highest_zindex: get_highest_zindex,
+    attach_date_picker: attach_date_picker,
+    attach_time_picker: attach_time_picker,
+    attach_tabs: attach_tabs,
+    showLocalTimeOnHover: showLocalTimeOnHover,
+    toJapanTimeIfNeeded: toJapanTimeIfNeeded,
+    downloadCSV: downloadCSV,
+    template: template,
+    objectNotEmpty: objectNotEmpty,
+    parseLoginIDList: parseLoginIDList,
+};
