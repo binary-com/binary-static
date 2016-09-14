@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Taiwan) (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-09-08 03:17+0000\n"
+"PO-Revision-Date: 2016-09-10 00:58+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) <https://hosted.weblate.org/projects/binary/static/zh_TW/>\n"
 "Language: zh_tw\n"
@@ -278,7 +278,9 @@ msgstr "%ctx(minimum duration, for example minimum 15 seconds)分鐘"
 msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
 msgstr "&#8220;%1一向都是我們最長久和最信賴的合作夥伴。我們已經有很多年的合作關係。&#8221;"
 
-msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide&#8221;"
+#, fuzzy
+#| msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide&#8221;"
+msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide.&#8221;"
 msgstr "「我們已經使用了www.binary.com 達8年之久，非常樂意地向我們的全球會員推薦此網站」"
 
 msgid "'<strong>Long</strong>' contracts generate profits when the index rises and loses when it falls."
@@ -3781,7 +3783,9 @@ msgstr "加入我們卓越、才華洋溢的專業人才團隊。 與我們共�
 msgid "Join our team of bright, talented professionals. Work collaboratively with us to promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years."
 msgstr "加入我們卓越、才華洋溢的專業人才團隊。 與我們共同合作促進一個15年來在二元期權交易行業中最受認可的高科技平臺。"
 
-msgid "Joshua Cavallaro <span> Markets And You Trader.</span>"
+#, fuzzy
+#| msgid "Joshua Cavallaro <span> Markets And You Trader.</span>"
+msgid "Joshua Cavallaro <span> Markets And You Trader</span>"
 msgstr "Joshua Cavallaro <span> 讓您在交易市場得心應手。 </span>"
 
 msgid "Jul"
@@ -3987,6 +3991,9 @@ msgstr "維護準確的系統訂價參數"
 
 msgid "Maintain adequate speed and volume of output"
 msgstr "保持適當的速度和輸出量"
+
+msgid "Major Pairs"
+msgstr "主要貨幣對"
 
 msgid "Make a Deposit"
 msgstr "存入資金"
@@ -6165,6 +6172,11 @@ msgstr "本獎金僅適用於新客戶。現有或以往客戶不符合條件。
 msgid "This bonus will be processed and credited to a client's account when:"
 msgstr "在下列時候，該獎金將被處理，並記入客戶的帳戶中："
 
+#, fuzzy
+#| msgid "This contract cannot be properly validated at this time."
+msgid "This contract can not be traded in the final 2 minutes before settlement"
+msgstr "目前該交易無法正確驗證。"
+
 msgid "This contract has LOST"
 msgstr "此合約輸了"
 
@@ -6290,6 +6302,11 @@ msgstr "如要重新設定密碼，在下面的欄位中輸入您註冊的電子
 
 msgid "Token"
 msgstr "權杖"
+
+#, fuzzy
+#| msgid "Total Cost"
+msgid "Total"
+msgstr "成本總計"
 
 msgid "Total Cost"
 msgstr "成本總計"
@@ -7268,9 +7285,6 @@ msgstr "您不會蒙受重大損失"
 
 msgid "You'll be surprised by the returns you can make."
 msgstr "您能賺取的收益將令自己感到吃驚。"
-
-msgid "You'll find answers to most of your questions on the <a href='' target='_blank' id='faq_url'>FAQ</a> page."
-msgstr "您所提出的大多數問題可在<a href='' target='_blank' id='faq_url'>常見問題集</a>頁面獲得答覆。"
 
 msgid "You're using a Virtual Account."
 msgstr "您正在使用虛擬帳戶。"
@@ -8275,7 +8289,7 @@ msgid "{Japan Only}Live chart tools"
 msgstr "{Japan Only}Live chart tools"
 
 msgid "{Japan Only}Payout from 1 to 10"
-msgstr ""
+msgstr "{Japan Only}Payout from 1 to 10"
 
 msgid "{Japan Only}Segregated Customer Account Balances are 100% Safe"
 msgstr "{Japan Only}Segregated Customer Account Balances are 100% Safe"
@@ -8286,10 +8300,8 @@ msgstr "{Japan Only}Trade all binary option types"
 msgid "{Japan Only}Trade the major currencies"
 msgstr "{Japan Only}Trade the major currencies"
 
-#, fuzzy
-#| msgid "{Japan Only}"
 msgid "{Japan Only}Two-way pricing"
-msgstr "{Japan Only}"
+msgstr "{Japan Only}Two-way pricing"
 
 msgid "{Japan Only}Worldwide award-winning pioneer in FX binary options trading"
 msgstr "{Japan Only}Worldwide award-winning pioneer in FX binary options trading"
@@ -8347,6 +8359,9 @@ msgstr "帳戶詳細資料"
 
 msgid "Terms and Conditions Approval"
 msgstr "條款和條件審批"
+
+#~ msgid "You'll find answers to most of your questions on the <a href='' target='_blank' id='faq_url'>FAQ</a> page."
+#~ msgstr "您所提出的大多數問題可在<a href='' target='_blank' id='faq_url'>常見問題集</a>頁面獲得答覆。"
 
 #~ msgid "%1 %2 (\"API\") Terms and Conditions"
 #~ msgstr "%1 %2 (\"API\") 條款和條件"
@@ -10190,9 +10205,6 @@ msgstr "條款和條件審批"
 
 #~ msgid "This client cashier section is locked."
 #~ msgstr "此客戶的收銀台部份已鎖定。"
-
-#~ msgid "This contract cannot be properly validated at this time."
-#~ msgstr "目前該交易無法正確驗證。"
 
 #~ msgid "This contract has already expired."
 #~ msgstr "合約已經到期。"
@@ -12052,9 +12064,6 @@ msgstr "條款和條件審批"
 
 #~ msgid "French Stocks"
 #~ msgstr "法國股票"
-
-#~ msgid "Major Pairs"
-#~ msgstr "主要貨幣對"
 
 #~ msgid "The most widely traded and liquid forex pairs."
 #~ msgstr "交易最活躍、流動性最高的貨幣對。"

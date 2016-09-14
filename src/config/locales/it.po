@@ -280,7 +280,9 @@ msgstr "minimo %ctx(minimum duration, for example minimum 15 seconds)"
 msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
 msgstr "&#8220;%1 è uno dei partner più vecchi e affidabili che abbiamo mai avuto. Abbiamo lavorato insieme per molti anni.&#8221;"
 
-msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide&#8221;"
+#, fuzzy
+#| msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide&#8221;"
+msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide.&#8221;"
 msgstr "&#8220;Negli ultimi 8 anni abbiamo utilizzato www.binary.com e lo consigliamo vivamente a tutti i nostri membri sparsi in tutto il mondo&#8221;"
 
 msgid "'<strong>Long</strong>' contracts generate profits when the index rises and loses when it falls."
@@ -3821,7 +3823,9 @@ msgstr "Unisciti al nostro team di professionisti brillanti e talentuosi. Lavora
 msgid "Join our team of bright, talented professionals. Work collaboratively with us to promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years."
 msgstr "Unisciti al nostro team di professionisti brillanti e talentuosi. Lavora in modo collaborativo con noi per promuovere una piattaforma high-tech che è stata una delle più riconosciute nel settore del trading in opzioni binarie per oltre 15 anni."
 
-msgid "Joshua Cavallaro <span> Markets And You Trader.</span>"
+#, fuzzy
+#| msgid "Joshua Cavallaro <span> Markets And You Trader.</span>"
+msgid "Joshua Cavallaro <span> Markets And You Trader</span>"
 msgstr "Joshua Cavallaro <span> Trader di Markets And You.</span>"
 
 msgid "Jul"
@@ -4027,6 +4031,9 @@ msgstr "Mantenere precisi parametri di determinazione dei prezzi del sistema"
 
 msgid "Maintain adequate speed and volume of output"
 msgstr "Mantenere una velocità adeguata e un volume di output"
+
+msgid "Major Pairs"
+msgstr "Coppie principali"
 
 msgid "Make a Deposit"
 msgstr "Effettua un deposito"
@@ -6215,6 +6222,11 @@ msgstr "Questo bonus è disponibile solo per i nuovi clienti. I clienti esistent
 msgid "This bonus will be processed and credited to a client's account when:"
 msgstr "Questo bonus verrà elaborato e accreditato sull'account del cliente quando:"
 
+#, fuzzy
+#| msgid "This contract cannot be properly validated at this time."
+msgid "This contract can not be traded in the final 2 minutes before settlement"
+msgstr "Questo contratto non può essere convalidato correttamente in questo momento."
+
 msgid "This contract has LOST"
 msgstr "Questo contratto ha PERSO"
 
@@ -6344,6 +6356,11 @@ msgstr "Per ripristinare la tua password, inserisci l'indirizzo email indicato i
 
 msgid "Token"
 msgstr "Token"
+
+#, fuzzy
+#| msgid "Total Cost"
+msgid "Total"
+msgstr "Costo totale"
 
 msgid "Total Cost"
 msgstr "Costo totale"
@@ -7328,9 +7345,6 @@ msgstr "Non finirai sul lastrico"
 
 msgid "You'll be surprised by the returns you can make."
 msgstr "Sarai stupito dai rendimenti che riuscirai a ottenere."
-
-msgid "You'll find answers to most of your questions on the <a href='' target='_blank' id='faq_url'>FAQ</a> page."
-msgstr "Puoi trovare la maggior parte delle risposte alle tue domande sulla pagina <a href='' target='_blank' id='faq_url'>FAQ</a>."
 
 msgid "You're using a Virtual Account."
 msgstr "Stai utilizzando un Account virtuale."
@@ -8423,6 +8437,9 @@ msgstr "Dettagli dell'account"
 
 msgid "Terms and Conditions Approval"
 msgstr "Approvazione dei termini e delle condizioni"
+
+#~ msgid "You'll find answers to most of your questions on the <a href='' target='_blank' id='faq_url'>FAQ</a> page."
+#~ msgstr "Puoi trovare la maggior parte delle risposte alle tue domande sulla pagina <a href='' target='_blank' id='faq_url'>FAQ</a>."
 
 #~ msgid "%1 %2 (\"API\") Terms and Conditions"
 #~ msgstr "Termini e condizioni di %1 %2 (\"API\")"
@@ -10280,9 +10297,6 @@ msgstr "Approvazione dei termini e delle condizioni"
 
 #~ msgid "This client cashier section is locked."
 #~ msgstr "Questa sezione della cassa clienti è bloccata."
-
-#~ msgid "This contract cannot be properly validated at this time."
-#~ msgstr "Questo contratto non può essere convalidato correttamente in questo momento."
 
 #~ msgid "This contract has already expired."
 #~ msgstr "Questo contratto è già scaduto."
@@ -12142,9 +12156,6 @@ msgstr "Approvazione dei termini e delle condizioni"
 
 #~ msgid "French Stocks"
 #~ msgstr "Azioni Francia"
-
-#~ msgid "Major Pairs"
-#~ msgstr "Coppie principali"
 
 #~ msgid "The most widely traded and liquid forex pairs."
 #~ msgstr "Le coppie Forex più ampiamente negoziate e liquide."
