@@ -954,8 +954,8 @@ function setFormPlaceholderContent_Beta(name) {
 }
 
 function updatePurchaseStatus_Beta(final_price, pnl, contract_status){
-    final_price = final_price.replace(/,/g, '') * 1;
-    pnl = pnl.replace(/,/g, '') * 1;
+    final_price = String(final_price).replace(/,/g, '') * 1;
+    pnl = String(pnl).replace(/,/g, '') * 1;
     $('#contract_purchase_heading').text(page.text.localize(contract_status));
     var payout  = document.getElementById('contract_purchase_payout'),
         cost    = document.getElementById('contract_purchase_cost'),
@@ -1003,7 +1003,7 @@ function label_value(label_elem, label, value, no_currency) {
     label_elem.innerHTML = label;
     var value_elem = document.getElementById(label_elem.id + '_value');
     value_elem.innerHTML = no_currency ? value : format_money(currency, value);
-    value_elem.setAttribute('value', value);
+    value_elem.setAttribute('value', value.replace(/,/g, ''));
 }
 
 function adjustAnalysisColumnHeight() {
