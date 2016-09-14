@@ -98,7 +98,8 @@ var TickDisplay_Beta = function() {
                     max: $self.ticks_needed - 0.5,
                     tickInterval: 1,
                     labels: {
-                      formatter: function() { return this.value + (is_start_on_first_tick ? 1 : 0); }
+                        autoRotation: false,
+                        formatter: function() { return this.value + (is_start_on_first_tick ? 1 : 0); }
                     },
                     showFirstLabel: is_start_on_first_tick ? true : false,
                     crosshair: {

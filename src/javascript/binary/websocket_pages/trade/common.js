@@ -884,7 +884,9 @@ function reloadPage(){
 
 function addComma(num, decimal_points){
     num = String(num || 0).replace(/,/g, '') * 1;
-    return num.toFixed(decimal_points || 2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return num.toFixed(decimal_points || 2).toString().replace(/(^|[^\w.])(\d{4,})/g, function($0, $1, $2) {
+        return $1 + $2.replace(/\d(?=(?:\d\d\d)+(?!\d))/g, "$&,");
+    });
 }
 
 function showHighchart(){
@@ -952,6 +954,8 @@ function setFormPlaceholderContent_Beta(name) {
 }
 
 function updatePurchaseStatus_Beta(final_price, pnl, contract_status){
+    final_price = String(final_price).replace(/,/g, '') * 1;
+    pnl = String(pnl).replace(/,/g, '') * 1;
     $('#contract_purchase_heading').text(page.text.localize(contract_status));
     var payout  = document.getElementById('contract_purchase_payout'),
         cost    = document.getElementById('contract_purchase_cost'),
@@ -961,7 +965,7 @@ function updatePurchaseStatus_Beta(final_price, pnl, contract_status){
     label_value(cost  , Content.localize().textStake , addComma(Math.abs(pnl)));
     label_value(payout, Content.localize().textPayout, addComma(final_price));
 
-    var isWin = (+final_price > 0);
+    var isWin = (final_price > 0);
     $('#contract_purchase_profit_value').attr('class', (isWin ? 'profit' : 'loss'));
     label_value(profit, isWin ? Content.localize().textProfit : Content.localize().textLoss,
         addComma(isWin ? Math.round((final_price - pnl) * 100) / 100 : - Math.abs(pnl)));
@@ -999,7 +1003,7 @@ function label_value(label_elem, label, value, no_currency) {
     label_elem.innerHTML = label;
     var value_elem = document.getElementById(label_elem.id + '_value');
     value_elem.innerHTML = no_currency ? value : format_money(currency, value);
-    value_elem.setAttribute('value', value);
+    value_elem.setAttribute('value', value.replace(/,/g, ''));
 }
 
 function adjustAnalysisColumnHeight() {
