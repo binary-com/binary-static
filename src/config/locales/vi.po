@@ -284,7 +284,9 @@ msgstr "%ctx(thời gian tối thiểu, ví dụ 15 giây tối thiểu)t�
 msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
 msgstr "&#8220;%1 là một trong những đối tác lâu đời nhất và đáng tin cậy nhất của chúng tôi. Hai bên đã làm việc cùng nhau trong rất nhiều năm.&#8221;"
 
-msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide&#8221;"
+#, fuzzy
+#| msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide&#8221;"
+msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide.&#8221;"
 msgstr "&#8220;chúng tôi đã dùng www.binary.com trong 8 năm qua và rất tin tưởng giới thiệu binary đến tất cả thành viên trên toàn thế giới&#8221;"
 
 msgid "'<strong>Long</strong>' contracts generate profits when the index rises and loses when it falls."
@@ -3786,7 +3788,9 @@ msgstr "Tham gia vào đội ngũ các chuyên gia tài năng, sáng giá của 
 msgid "Join our team of bright, talented professionals. Work collaboratively with us to promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years."
 msgstr "Tham gia vào đội ngũ các chuyên gia tài năng, sáng giá của chúng tôi. Cộng tác với chúng tôi để cải thiện nền tảng công nghệ cao, nền công nghệ đã được công nhận trong ngành công nghiệp giao dịch các tùy chọn nhị phân trong hơn 15 năm qua."
 
-msgid "Joshua Cavallaro <span> Markets And You Trader.</span>"
+#, fuzzy
+#| msgid "Joshua Cavallaro <span> Markets And You Trader.</span>"
+msgid "Joshua Cavallaro <span> Markets And You Trader</span>"
 msgstr "Joshua Cavallaro <span> Thị trường Và Bạn Nhà giao dịch</span>"
 
 msgid "Jul"
@@ -3992,6 +3996,9 @@ msgstr "Giữ cho các thông số định giá hệ thống luôn chính xác"
 
 msgid "Maintain adequate speed and volume of output"
 msgstr "Duy trì tốc độ và khối lượng thích hợp của sản phẩm"
+
+msgid "Major Pairs"
+msgstr "Cặp tiền tệ chính"
 
 msgid "Make a Deposit"
 msgstr "Gửi tiền"
@@ -6166,6 +6173,11 @@ msgstr "Tiền thưởng này chỉ có cho khách hàng mới. Những 
 msgid "This bonus will be processed and credited to a client's account when:"
 msgstr "Tiền thưởng này sẽ được xử lý và ghi có vào tài khoản của khách hàng khi:"
 
+#, fuzzy
+#| msgid "This contract cannot be properly validated at this time."
+msgid "This contract can not be traded in the final 2 minutes before settlement"
+msgstr "Hợp đồng này không thể được xác minh vào thời gian này."
+
 msgid "This contract has LOST"
 msgstr "Hợp đồng này bị THUA LỖ"
 
@@ -6291,6 +6303,9 @@ msgstr "Để thiết lập lại mật khẩu, nhập địa chỉ email bạn 
 
 msgid "Token"
 msgstr "Mã Token"
+
+msgid "Total"
+msgstr "Tổng"
 
 msgid "Total Cost"
 msgstr "Tổng Chi phí"
@@ -7271,9 +7286,6 @@ msgstr "Bạn sẽ không bị mất toàn bộ tài sản"
 
 msgid "You'll be surprised by the returns you can make."
 msgstr "Bạn sẽ rất ngạc nhiên khi thấy doanh thu bạn kiếm được."
-
-msgid "You'll find answers to most of your questions on the <a href='' target='_blank' id='faq_url'>FAQ</a> page."
-msgstr "Bạn sẽ tìm thấy những câu trả lời cho phần lớn các câu hỏi của bạn nhất trên trang <a href='' target='_blank' id='faq_url'>Câu hỏi Thường Gặp</a>."
 
 msgid "You're using a Virtual Account."
 msgstr "Bạn đang sử dụng Tài khoản Ảo."
@@ -8350,6 +8362,9 @@ msgstr "Chi tiết Tài khoản"
 
 msgid "Terms and Conditions Approval"
 msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
+
+#~ msgid "You'll find answers to most of your questions on the <a href='' target='_blank' id='faq_url'>FAQ</a> page."
+#~ msgstr "Bạn sẽ tìm thấy những câu trả lời cho phần lớn các câu hỏi của bạn nhất trên trang <a href='' target='_blank' id='faq_url'>Câu hỏi Thường Gặp</a>."
 
 #~ msgid "%1 %2 (\"API\") Terms and Conditions"
 #~ msgstr "%1 %2 (\"API\") Điều khoản và Điều kiện"
@@ -10212,9 +10227,6 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 #~ msgid "This client cashier section is locked."
 #~ msgstr "Khu vực thu tiền khác hàng bị khóa."
 
-#~ msgid "This contract cannot be properly validated at this time."
-#~ msgstr "Hợp đồng này không thể được xác minh vào thời gian này."
-
 #~ msgid "This contract has already expired."
 #~ msgstr "Hợp đồng này đã hết hạn."
 
@@ -12073,9 +12085,6 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 
 #~ msgid "French Stocks"
 #~ msgstr "Chứng khoán Pháp"
-
-#~ msgid "Major Pairs"
-#~ msgstr "Cặp tiền tệ chính"
 
 #~ msgid "The most widely traded and liquid forex pairs."
 #~ msgstr "Cặp tiền tệ được giao dịch và có tính luân chuyển rộng rãi nhất."
@@ -15764,10 +15773,6 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 
 #~ msgid "Sanofi"
 #~ msgstr "Tập đoàn Sanofi"
-
-#~| msgid "Total Cost"
-#~ msgid "Total"
-#~ msgstr "Tổng"
 
 #~ msgid "A recent (less than 3 months old) scanned copy of your paper utility bill, or your paper bank, credit union, building society, credit, or debit card statement, or passbook"
 #~ msgstr "Bản scan hóa đơn điện nước gốc của bạn (trong 3 tháng gần đây), hoặc giấy thông báo của ngân hàng, tổ chức tín dụng, xây dựng xã hội, thẻ tín dụng hoặc thẻ ghi nợ, hoặc passbook"
