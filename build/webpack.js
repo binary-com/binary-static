@@ -12,7 +12,7 @@ module.exports = function (grunt) {
                 'binary.min': './src/javascript',
             },
             output: {
-                path: global.dist + 'js',
+                path: global.dist + '/js/',
                 filename: '[name].js',
             },
             plugins: [
