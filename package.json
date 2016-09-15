@@ -60,7 +60,7 @@
     "webpack-dev-server": "^1.15.1",
     "ws": "^1.1.0"
   },
-  "peerDependencies": {
+  "optionalDependencies": {
     "canvas": "^1.5.0"
   }
 }
