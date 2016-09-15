@@ -27,12 +27,6 @@ DISTRIBUTIONS
       perl 5.006
       strict 0
       warnings 0
-  Data-Section-Simple-0.07
-    pathname: M/MI/MIYAGAWA/Data-Section-Simple-0.07.tar.gz
-    provides:
-      Data::Section::Simple 0.07
-    requirements:
-      ExtUtils::MakeMaker 6.30
   Devel-GlobalDestruction-0.13
     pathname: H/HA/HAARG/Devel-GlobalDestruction-0.13.tar.gz
     provides:
@@ -115,6 +109,7 @@ DISTRIBUTIONS
       Locale::Maketext::Extract::Plugin::FormFu 1.00
       Locale::Maketext::Extract::Plugin::FormFu::Extractor 1.00
       Locale::Maketext::Extract::Plugin::Generic 1.00
+      Locale::Maketext::Extract::Plugin::Haml 1.00
       Locale::Maketext::Extract::Plugin::Mason 1.00
       Locale::Maketext::Extract::Plugin::PPI 1.00
       Locale::Maketext::Extract::Plugin::Perl 1.00
@@ -496,70 +491,6 @@ DISTRIBUTIONS
       PerlIO 0
       Scalar::Util 1.13
       Storable 0
-      perl 5.008001
-      utf8 0
-  URI-1.71
-    pathname: E/ET/ETHER/URI-1.71.tar.gz
-    provides:
-      URI 1.71
-      URI::Escape 3.31
-      URI::Heuristic 4.20
-      URI::IRI 1.71
-      URI::QueryParam 1.71
-      URI::Split 1.71
-      URI::URL 5.04
-      URI::WithBase 2.20
-      URI::_foreign 1.71
-      URI::_generic 1.71
-      URI::_idna 1.71
-      URI::_ldap 1.71
-      URI::_login 1.71
-      URI::_punycode 1.71
-      URI::_query 1.71
-      URI::_segment 1.71
-      URI::_server 1.71
-      URI::_userpass 1.71
-      URI::data 1.71
-      URI::file 4.21
-      URI::file::Base 1.71
-      URI::file::FAT 1.71
-      URI::file::Mac 1.71
-      URI::file::OS2 1.71
-      URI::file::QNX 1.71
-      URI::file::Unix 1.71
-      URI::file::Win32 1.71
-      URI::ftp 1.71
-      URI::gopher 1.71
-      URI::http 1.71
-      URI::https 1.71
-      URI::ldap 1.71
-      URI::ldapi 1.71
-      URI::ldaps 1.71
-      URI::mailto 1.71
-      URI::mms 1.71
-      URI::news 1.71
-      URI::nntp 1.71
-      URI::pop 1.71
-      URI::rlogin 1.71
-      URI::rsync 1.71
-      URI::rtsp 1.71
-      URI::rtspu 1.71
-      URI::sftp 1.71
-      URI::sip 1.71
-      URI::sips 1.71
-      URI::snews 1.71
-      URI::ssh 1.71
-      URI::telnet 1.71
-      URI::tn3270 1.71
-      URI::urn 1.71
-      URI::urn::isbn undef
-      URI::urn::oid 1.71
-    requirements:
-      Exporter 5.57
-      ExtUtils::MakeMaker 0
-      MIME::Base64 2
-      Scalar::Util 0
-      parent 0
       perl 5.008001
       utf8 0
   YAML-LibYAML-0.62

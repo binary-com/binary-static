@@ -25,6 +25,7 @@
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
     "binary-live-api": "^18.9.6",
+    "canvas": "^1.5.0",
     "chai": "^3.5.0",
     "connect-livereload": "^0.5.4",
     "connect-modrewrite": "^0.9.0",
@@ -51,6 +52,8 @@
     "grunt-uncss": "^0.3.5",
     "grunt-webpack": "^1.0.14",
     "jquery": "^2.1.1",
+    "jsdom": "^0.11.1",
+    "json-loader": "^0.5.4",
     "load-grunt-config": "^0.13.1",
     "load-grunt-tasks": "^0.6.0",
     "mocha": "^2.5.3",
