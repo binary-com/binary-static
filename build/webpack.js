@@ -8,12 +8,12 @@ module.exports = function (grunt) {
             },
             devtool: 'source-map',
             entry: {
-                binary: './src/javascript',
-                'binary.min': './src/javascript',
+                'binary.js': './src/javascript',
+                'binary.min.js': './src/javascript',
             },
             output: {
                 path: global.dist + '/js/',
-                filename: '[name].js',
+                filename: '[name]',
             },
             plugins: [
                 new webpack.optimize.UglifyJsPlugin({
