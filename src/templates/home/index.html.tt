@@ -13,7 +13,7 @@
                                         <input autocomplete="off" name="email" id="email" maxlength="50" placeholder="[% l('Enter your email') %]"></input>
                                     </div>
                                     <div class="gr-5 gr-8-m gr-centered">
-                                        <button class="blue-button" id="btn-verify-email" type="submit">[% l('Create Free Account') %]</button>
+                                        <button class="primary-bg-color" id="btn-verify-email" type="submit">[% l('Create Free Account') %]</button>
                                     </div>
                                     <span class="gr-12 gr-padding-10 error-msg hint color-white center-text" id="signup_error" style="display:none"></span>
                                 </div>
@@ -50,13 +50,13 @@
         </div>
     </div>
 
-    <div class="gr-padding-10 background-gray">
+    <div class="gr-padding-10 fill-bg-color">
         <div class="container">
             <div class="gr-12 gr-parent">
                 <h2 class="center-text gr-padding-10">
                     [% l("Why choose us") %]
                 </h2>
-                <div class="separator-line"></div>
+                <div class="separator-line border-bottom-color"></div>
                 <div class="gr-12 center-text">
                     <p>
                         [% l("[_1] is the award-winning industry pioneer in online options trading.", website_name) %]
@@ -104,7 +104,7 @@
             <h2 class="center-text gr-padding-10">
                 [% l("[_1] academy", website_name) %]
             </h2>
-            <div class="separator-line"></div>
+            <div class="separator-line border-bottom"></div>
             <div class="gr-12 gr-6-p center-text gr-centered">
                 <p>[% l("Improve your trading skills with our free educational & training resources.") %]</p>
             </div>
@@ -146,10 +146,10 @@
             <h2 class="center-text gr-padding-10">
                 [% l("What our clients are saying") %]
             </h2>
-            <div class="separator-line"></div>
+            <div class="separator-line border-bottom-color"></div>
             <div class="gr-row">
                 <div class="gr-6 gr-12-m gr-6-p">
-                    <div class="xquote">
+                    <div class="xquote fill-bg-color">
                         <p>[% l("&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide.&#8221;") %]</p>
                     </div>
                     <div class="xbubble-left"></div>
@@ -158,7 +158,7 @@
                     </div>
                 </div>
                 <div class="gr-6 gr-12-m gr-6-p">
-                    <div class="xquote">
+                    <div class="xquote fill-bg-color">
                         <p>[% l("&#8220;[_1] is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;", website_name) %]</p>
                     </div>
                     <div class="xbubble-right"></div>
@@ -175,7 +175,7 @@
             <h2 class="center-text gr-padding-10">
                 [% l("Payment methods") %]
             </h2>
-            <div class="separator-line"></div>
+            <div class="separator-line border-bottom-color"></div>
             <div class="gr-12">
                 <a class="pjaxload" href="[% request.url_for('/cashier/payment_methods') %]">
                     <div class="gr-row gr-row-align-center">
@@ -220,7 +220,7 @@
             <div class="gr-row">
                 <div class="gr-12">
                     <h2 class="center-text">[% l("Why choose us") %]</h2>
-                    <div class="separator-line"></div>
+                    <div class="separator-line border-bottom-color"></div>
                     <p class="center-text">
                         [% l("{Japan Only}Worldwide award-winning pioneer in FX binary options trading") %]
                     </p>

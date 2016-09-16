@@ -34,8 +34,6 @@
 #header {
     height: 75px;
     a {
-        color: $COLOR_WHITE;
-        text-decoration: none;
         img {
             height: 55px;
         }
@@ -85,18 +83,12 @@
                 display: table-cell;
                 height: 50px;
                 max-width: 110px;
-                color: $COLOR_WHITE;
                 text-decoration: none;
                 letter-spacing: 0;
                 text-transform: capitalize;
                 font-size: 109%;
                 padding: 0px 10px;
                 word-wrap: break-word;
-            }
-        }
-        li.active {
-            a {
-                color: $COLOR_ORANGE;
             }
         }
     }

@@ -236,7 +236,6 @@ fieldset .error-msg {
 }
 
 .separator-line {
-    border-bottom: 1px solid $COLOR_GRAY;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -308,10 +307,6 @@ img.responsive {
 
 .color-white {
     color: $COLOR_WHITE;
-}
-
-.background-gray {
-    background-color: $COLOR_LIGHT_GRAY;
 }
 
 button.blue-button {

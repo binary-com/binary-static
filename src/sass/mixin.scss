@@ -28,9 +28,6 @@
 }
 
 @mixin section-separator {
-    .section {
-        border-bottom: 1px solid $COLOR_GRAY;
-    }
     .section:first-child {
         padding-bottom: 50px;
     }
@@ -80,7 +77,6 @@
 @mixin menu-right {
   div {
     background: $COLOR_LIGHT_GRAY;
-    border-bottom: $COLOR_GRAY;
     margin-bottom: 20px;
     padding: 20px;
     text-align: center;

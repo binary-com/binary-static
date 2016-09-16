@@ -10,7 +10,7 @@
             <div class="gr-row">
                 <div class="gr-6">
                     <div class="gr-row gr-padding-30">
-                        <div class="gr-12 background-gray">
+                        <div class="gr-12 fill-bg-color">
                             No extra padding
                         </div>
                     </div>
@@ -34,7 +34,7 @@
             <div class="gr-row">
                 <div class="gr-6">
                     <div class="gr-row gr-padding-30">
-                        <div class="gr-12 background-gray">
+                        <div class="gr-12 fill-bg-color">
                             <div class="gr-row">
                                 <div class="gr-6">
                                     First item in a row
@@ -72,7 +72,7 @@
             <div class="gr-row">
                 <div class="gr-6">
                     <div class="gr-row gr-padding-30">
-                        <div class="gr-7 gr-centered background-gray">
+                        <div class="gr-7 gr-centered fill-bg-color">
                             centered container
                         </div>
                     </div>
@@ -96,7 +96,7 @@
             <div class="gr-row">
                 <div class="gr-6">
                     <div class="gr-row gr-padding-30">
-                        <div class="gr-7 gr-centered center-text background-gray">
+                        <div class="gr-7 gr-centered center-text fill-bg-color">
                             centered text in centered container
                         </div>
                     </div>
@@ -120,7 +120,7 @@
             <div class="gr-row gr-padding-30">
                 <div class="gr-6">
                     <div class="gr-row gr-row-align-center">
-                        <div class="gr-7 background-gray">
+                        <div class="gr-7 fill-bg-color">
                             centered row
                         </div>
                     </div>
@@ -144,7 +144,7 @@
             <div class="gr-row gr-padding-30">
                 <div class="gr-6">
                     <div class="gr-row">
-                        <div class="gr-7 background-gray gr-parent">
+                        <div class="gr-7 fill-bg-color gr-parent">
                             Left, right, and bottom padding
                         </div>
                     </div>
@@ -168,7 +168,7 @@
             <div class="gr-row gr-padding-30">
                 <div class="gr-6">
                     <div class="gr-row">
-                        <div class="gr-7 background-gray gr-padding-10">
+                        <div class="gr-7 fill-bg-color gr-padding-10">
                             top and bottom padding
                         </div>
                     </div>
