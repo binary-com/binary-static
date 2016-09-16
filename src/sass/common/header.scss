@@ -37,14 +37,14 @@
         color: $COLOR_WHITE;
         text-decoration: none;
         img {
-            max-height: 55px;
+            height: 55px;
         }
     }
     select#client_loginid option[disabled=disabled] {
         background-color: $COLOR_LIGHT_GRAY;
     }
     #binary-logo-text {
-        margin-top: 10px;
+        margin-top: 0 !important;
         img {
             width: 90%;
         }
