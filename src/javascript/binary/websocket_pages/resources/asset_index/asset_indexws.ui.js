@@ -18,6 +18,8 @@ var AssetIndexUI = (function() {
         }
 
         $container = $('#asset-index');
+        activeSymbols = assetIndex = marketColumns = undefined;
+
         if ($container.contents().length) return;
 
         Content.populate();
