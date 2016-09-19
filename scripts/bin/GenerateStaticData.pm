@@ -740,6 +740,7 @@ sub _texts {
         push @texts, localize('Adjusted High Barrier');
         push @texts, localize('Adjusted Low Barrier');
         push @texts, localize('Corporate Action');
+        push @texts, localize('The final settlement price may differ from the Indicative price.');
 
         # strings for financial assessment
         push @texts, localize('Financial Assessment');
