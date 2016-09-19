@@ -493,7 +493,7 @@ var TradingEvents = (function () {
 
         // For verifying there are 2 digits after decimal
         var isStandardFloat = (function(value){
-            return (value % 1 !== 0 && ((+parseFloat(value)).toFixed(10)).replace(/^-?\d*\.?|0+$/g, '').length>2);
+            return (!isNaN(value) && value % 1 !== 0 && ((+parseFloat(value)).toFixed(10)).replace(/^-?\d*\.?|0+$/g, '').length>2);
         });
 
         var init_logo = document.getElementById('trading_init_progress');
