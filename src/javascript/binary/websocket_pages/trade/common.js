@@ -14,6 +14,14 @@ if (typeof window === 'undefined') {
      this.style.display = '';
  };
 
+if (!('remove' in Element.prototype)) {
+    Element.prototype.remove = function() {
+        if (this.parentNode) {
+            this.parentNode.removeChild(this);
+        }
+    };
+}
+
 /*
  * function to display contract form as element of ul
  */
