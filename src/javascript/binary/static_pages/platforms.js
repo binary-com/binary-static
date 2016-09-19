@@ -23,7 +23,8 @@ var Platforms = (function () {
     function get_hash() {
         return (
             page.url.location.hash && $.inArray(page.url.location.hash.substring(1), sections) !== -1 ?
-            page.url.location.hash : '#trading-platforms');
+            page.url.location.hash : '#trading-platforms'
+        );
     }
     function showSelectedDiv() {
         $('.sections').addClass('invisible');

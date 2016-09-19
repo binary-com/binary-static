@@ -6,7 +6,7 @@
                     <a href="#trading-platforms">[% l("Trading Platforms") %]</a>
                 </li>
                 <li>
-                    <a href="#platforms-comparison">[% l("Platforms Comparison") %]</a>
+                    <a href="#platforms-comparison">[% l("Platform Comparison") %]</a>
                 </li>
                 <li>
                     <a href="#more-tools">[% l("More Tools") %]</a>
@@ -22,13 +22,13 @@
                 <div class="gr-6 gr-12-m gr-12-p">
                     <img class="same-height" src="[% request.url_for('images/pages/platforms/trading-page.png') %]" />
                     <div class="gr-padding-30">
-                        <h3>[% l("Binary.com Trading Page") %]</h3>
-                        <strong>[% l("Easy to use binary options trading") %]</strong>
+                        <h3>[% l("Binary.com") %]</h3>
+                        <strong>[% l("Premier binary options trading platform") %]</strong>
                         <p>
-                            [% l("Binary.com is easy for beginners but has the tools most trades need like technical indicators and different trading resources.") %]
+                            [% l("Trade in the world’s financial markets with a simple and user-friendly online platform.") %]
                             <p>
                                 <a class="button pjaxload" href="[% request.url_for('/trading') %]">
-                                    <span>[% l("Go to Trading Page") %]</span>
+                                    <span>[% l("Trade Now") %]</span>
                                 </a>
                             </p>
                         </p>
@@ -40,7 +40,7 @@
                         <h3>[% l("Binary Tick Trade App") %]</h3>
                         <strong>[% l("Ultra fast on-the-go trading") %]</strong>
                         <p>
-                            [% l("With Tick Trade app, you can place lightning fast tick trades on Forex and Volatility markets wherever you go.") %]
+                            [% l("Enjoy our fastest type of trading with our Tick Trade app, wherever you are.") %]
                             <div class="gr-row">
                                 <a class="gr-5 gr-6-m" href="https://itunes.apple.com/app/apple-store/id1091187567?pt=117911266&ct=platforms_page&mt=8" target="_blank">
                                     <img class="same-width" src="[% request.url_for('images/pages/applications/appstore.svg') %]" />
@@ -53,18 +53,18 @@
                     </div>
                 </div>
             </div>
-            <h2>[% l("Pro Platforms") %]</h2>
+            <h2>[% l("Advanced Platforms") %]</h2>
             <div class="gr-row">
                 <div class="gr-6 gr-12-m gr-12-p">
                     <img class="same-height" src="[% request.url_for('images/pages/platforms/metatrader.png') %]" />
                     <div class="gr-padding-30">
                         <h3>[% l("MetaTrader 5") %]</h3>
-                        <strong>[% l("Popular CFD trading platform with advanced charting and automation") %]</strong>
+                        <strong>[% l("Advanced CFD trading platform") %]</strong>
                         <p>
-                            [% l("Take your trading to the next level through this powerful interface, recognised as the benchmark standard worldwide.") %]
+                            [% l("Trade with a powerful interface known as the global industry standard.") %]
                             <p>
                                 <a class="button" href="https://mt.binary.com" target="_blank">
-                                    <span>[% l("Find Out More") %]</span>
+                                    <span>[% l("Try MetaTrader 5") %]</span>
                                 </a>
                             </p>
                         </p>
@@ -74,9 +74,9 @@
                     <img class="same-height" src="[% request.url_for('images/pages/platforms/webtrader.png') %]" />
                     <div class="gr-padding-30">
                         <h3>[% l("Binary Webtrader") %]</h3>
-                        <strong>[% l("Modern binary options platform for active traders") %]</strong>
+                        <strong>[% l("Advanced binary options trading platform") %]</strong>
                         <p>
-                            [% l("Webtrader allows advanced traders to customize their screen to their own trading strategies and specific needs.") %]
+                            [% l("Monitor the movements of your favourite assets and markets at the same time.") %]
                             <p>
                                 <a class="button" href="https://webtrader.binary.com" target="_blank">
                                     <span>[% l("Try Webtrader") %]</span>
@@ -90,10 +90,10 @@
                 <div class="gr-6 gr-12-m gr-12-p">
                     <img class="same-height" src="[% request.url_for('images/pages/platforms/nextgen.png') %]" />
                     <div class="gr-padding-30">
-                        <h3>[% l("Binary Next Gen") %]</h3>
-                        <strong>[% l("The future of trading on Binary.com") %]</strong>
+                        <h3>[% l("Binary Next-Gen") %]</h3>
+                        <strong>[% l("Future of trading on Binary.com") %]</strong>
                         <p>
-                            [% l("Explore our most cutting-edge new platform, now available in beta form. Place trades from your virtual account.") %]
+                            [% l("Experience the future of our trading platform with the Next-Gen app.") %]
                             <div class="gr-row">
                                 <a class="gr-5 gr-6-m" href="https://itunes.apple.com/app/apple-store/id1134884301?pt=117911266&ct=platforms_page&mt=8" target="_blank">
                                     <img class="same-width" src="[% request.url_for('images/pages/applications/appstore.svg') %]" />
@@ -109,12 +109,12 @@
                     <img class="same-height" src="[% request.url_for('images/pages/platforms/binarybot.png') %]" />
                     <div class="gr-padding-30">
                         <h3>[% l("Binary Bot") %]</h3>
-                        <strong>[% l("Easy trading bots constructor") %]</strong>
+                        <strong>[% l("Auto-trader programming tool") %]</strong>
                         <p>
-                            [% l("Binary Bot is our leading-edge programming tool which allows you to build trading apps with a simple \"jigsaw puzzle-like\" drag-and-drop function.") %]
+                            [% l("Automate your trading strategies with our simple, \"drag-and-drop\" bot creation tool.") %]
                             <p>
                                 <a class="button" href="https://bot.binary.com" target="_blank">
-                                    <span>[% l("Try It") %]</span>
+                                    <span>[% l("Try Binary Bot") %]</span>
                                 </a>
                             </p>
                         </p>
@@ -123,15 +123,16 @@
             </div>
         </div>
         <div id="platforms-comparison" class="sections invisible">
-            <h1>[% l("Platforms Comparison") %]</h1>
-            <p>[% l("Choose your ideal trading tool.") %]</p>
-            <div class="table-container">
+            <h1>[% l("Platform Comparison") %]</h1>
+            <p>[% l("Compare all the trading platforms that we offer. Choose the ideal platform for your preferred trading strategy.") %]</p>
+            <p class="gr-hide gr-show-m">[% l("Scroll the table to the right to see all platforms.") %]</p>
+            <div class="table-container gr-padding-30">
                 <table>
                     <tbody>
                         <tr>
                             <th></th>
-                            <th>[% l("Binary.com Trading Page") %]</th>
-                            <th>[% l("Next Gen") %]</th>
+                            <th>[% l("Binary.com") %]</th>
+                            <th>[% l("Next-Gen") %]</th>
                             <th>[% l("Tick Trade") %]</th>
                             <th>[% l("MetaTrader 5") %]</th>
                             <th>[% l("Webtrader") %]</th>
@@ -156,7 +157,7 @@
                             <td>[% l("Free") %]</td>
                         </tr>
                         <tr>
-                            <td><strong>[% l("Made for...") %]</strong></td>
+                            <td><strong>[% l("Ideal Users") %]</strong></td>
                             <td>[% l("Everyone") %]</td>
                             <td>[% l("Everyone") %]</td>
                             <td>[% l("Short interval traders") %]</td>
@@ -169,12 +170,12 @@
                             <td>[% l("Binary Options") %]</td>
                             <td>[% l("Binary Options") %]</td>
                             <td>[% l("Binary Options") %]</td>
-                            <td>[% l("CFDs") %]</td>
+                            <td>[% l("Contracts for Difference (CFD)") %]</td>
                             <td>[% l("Binary Options") %]</td>
                             <td>[% l("Binary Options") %]</td>
                         </tr>
                         <tr>
-                            <td><strong>[% l("Tradeable Markets") %]</strong></td>
+                            <td><strong>[% l("Available Markets") %]</strong></td>
                             <td>[% l("Forex, Indices, Stocks, Commodities, Volatility Indices") %]</td>
                             <td>[% l("Forex, Indices, Stocks, Commodities, Volatility Indices") %]</td>
                             <td>[% l("Forex, Volatility Indices") %]</td>
@@ -192,19 +193,19 @@
                             <td>[% l("5 ticks to 1 year") %]</td>
                         </tr>
                         <tr>
-                            <td><strong>[% l("Display Multiple Charts") %]</strong></td>
-                            <td>[% l("-") %]</td>
+                            <td><strong>[% l("Multiple Charts") %]</strong></td>
+                            <td class="vertical-align-middle">[% l("-") %]</td>
                             <td><ul class="checked"><li></li></ul></td>
-                            <td>[% l("-") %]</td>
+                            <td class="vertical-align-middle">[% l("-") %]</td>
                             <td><ul class="checked"><li></li></ul></td>
                             <td><ul class="checked"><li></li></ul></td>
-                            <td>[% l("-") %]</td>
+                            <td class="vertical-align-middle">[% l("-") %]</td>
                         </tr>
                         <tr>
                             <td><strong>[% l("Chart Indicators") %]</strong></td>
                             <td><ul class="checked"><li></li></ul></td>
-                            <td>[% l("-") %]</td>
-                            <td>[% l("-") %]</td>
+                            <td class="vertical-align-middle">[% l("-") %]</td>
+                            <td class="vertical-align-middle">[% l("-") %]</td>
                             <td><ul class="checked"><li></li></ul></td>
                             <td><ul class="checked"><li></li></ul></td>
                             <td><ul class="checked"><li></li></ul></td>
@@ -212,19 +213,19 @@
                         <tr>
                             <td><strong>[% l("Chart Comparison") %]</strong></td>
                             <td><ul class="checked"><li></li></ul></td>
-                            <td>[% l("-") %]</td>
-                            <td>[% l("-") %]</td>
-                            <td>[% l("-") %]</td>
+                            <td class="vertical-align-middle">[% l("-") %]</td>
+                            <td class="vertical-align-middle">[% l("-") %]</td>
+                            <td class="vertical-align-middle">[% l("-") %]</td>
                             <td><ul class="checked"><li></li></ul></td>
-                            <td>[% l("-") %]</td>
+                            <td class="vertical-align-middle">[% l("-") %]</td>
                         </tr>
                         <tr>
                             <td><strong>[% l("Advanced Automation") %]</strong></td>
-                            <td>[% l("-") %]</td>
-                            <td>[% l("-") %]</td>
-                            <td>[% l("-") %]</td>
+                            <td class="vertical-align-middle">[% l("-") %]</td>
+                            <td class="vertical-align-middle">[% l("-") %]</td>
+                            <td class="vertical-align-middle">[% l("-") %]</td>
                             <td><ul class="checked"><li></li></ul></td>
-                            <td>[% l("-") %]</td>
+                            <td class="vertical-align-middle">[% l("-") %]</td>
                             <td><ul class="checked"><li></li></ul></td>
                         </tr>
                     </tbody>
@@ -240,19 +241,19 @@
                         <h3>[% l("TradingView for Binary.com") %]</h3>
                         <strong>[% l("Powerful charting and technical analysis") %]</strong>
                         <p>
-                            [% l("TradingView's advanced charting platform allows you to analyze market trends with a plethora of advanced chart types and technical indicatos.") %]
+                            [% l("Analyse the markets with an extensive range of indicators, price bands, and overlays.") %]
                             <p>
-                                <a class="button" href="https://shop.binary.com/collections/applications/products/binary-com-tradingview-chart" target="_blank">
-                                    <span>[% l("Try It") %]</span>
+                                <a class="button" href="https://tradingview.binary.com" target="_blank">
+                                    <span>[% l("Try TradingView") %]</span>
                                 </a>
                             </p>
                         </p>
                     </div>
                 </div>
             </div>
-            <h2>[% l("And Even More Tools") %]</h2>
-            <p>[% l("You can find wealth of 3rd party tools for binary trading in <a href=\"https://shop.binary.com\" target=\"_blank\">Binary.com Store</a>.") %]</p>
-            <p>[% l("If you want to build your own trading tools or improve existing Binary software, find out about our API and open source projects on <a href=\"https://developers.binary.com\" target=\"_blank\">Binary Developer Gateway</a>.") %]</p>
+            <h2>[% l("Buy an App, or Build Your Own") %]</h2>
+            <p>[% l("Grab a wide range of third-party apps for binary options trading in the <a href=\"https://shop.binary.com\" target=\"_blank\">Binary.com Shop</a>.") %]</p>
+            <p>[% l("You can even build your own online trading sites, apps, and bots with our <a href=\"https://developers.binary.com\" target=\"_blank\">API and developer tools</a>.") %]</p>
         </div>
     </div>
 </div>

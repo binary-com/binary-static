@@ -173,6 +173,9 @@ pjax_config_page('/(us_patents|responsible-trading|partners)', function() {
 pjax_config_page('/platforms', function() {
     return {
         onLoad: function() {
+            if (japanese_client()) {
+                window.location.href = page.url.url_for('/');
+            }
             Platforms.init();
         }
     };
