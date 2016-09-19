@@ -94,6 +94,9 @@
             li {
                 @include BIDIR_VALUE(margin, 0 2px 0 0, 0 0 0 2px);
                 font-size: 1rem;
+                .tm-a-2 {
+                    font-size: 80%;
+                }
             }
         }
     }
@@ -402,11 +405,17 @@
             display: flex;
             font-size: 0.75rem;
             position: relative;
-            .values {
+            table td {
+                border: 0;
+                @include BIDIR_VALUE(padding, 0 10px 4px 0, 0 0 4px 10px);
+            }
+            .values, table td:last-child {
+                direction: ltr;
+                @include BIDIR_VALUE(text-align, left, right);
                 font-weight: bold;
                 @include BIDIR_PROP(padding-left, padding-right, 0);
             }
-            .chart-values {
+            #chart-values {
                 position: absolute;
                 background: $COLOR_WHITE;
                 color: $COLOR_ORANGE;
@@ -442,6 +451,7 @@
         }
         #tick_chart {
             border: 1px solid $COLOR_LIGHT_GRAY;
+            direction: ltr;
         }
         .contract_error {
             margin-top: auto;
@@ -679,9 +689,6 @@
 }
 @media all and (max-width: 640px) {
     #trading_socket_container_beta {
-        #analysis_tabs {
-            white-space: nowrap;
-        }
         div#contract_market_form_container {
             ul#contract_form_name_nav {
                 white-space: nowrap !important;
@@ -717,7 +724,7 @@
         a.tm-a {
             padding: 0 5px;
             width: auto;
-            font-size: 85%;
+            font-size: 80%;
             line-height: 28px;
         }
         .tm-ul-2 {
@@ -817,6 +824,9 @@
     #trading_analysis_content {
         height: 100%;
         font-size: 1rem;
+        #analysis_tabs {
+            white-space: nowrap;
+        }
         .tab-menu {
             background: transparent !important;
             border: 0 !important;
@@ -836,7 +846,7 @@
                 }
                 #trade_live_chart table {
                     width: 100%;
-                    height: 100%;
+                    height: 98%;
                     td {
                         height: 100%;
                         border: 0;

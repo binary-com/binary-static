@@ -9,7 +9,7 @@ var StatementUI = (function(){
         var header = [
             Content.localize().textDate,
             Content.localize().textRef,
-            text.localize('Potential Payout'),
+            page.text.localize('Potential Payout'),
             Content.localize().textAction,
             Content.localize().textDescription,
             Content.localize().textCreditDebit,
@@ -47,7 +47,16 @@ var StatementUI = (function(){
 
         var jpClient = japanese_client();
 
-        var $statementRow = Table.createFlexTableRow([statement_data.date, '<span' + showTooltip(statement_data.app_id, oauth_apps[statement_data.app_id]) + '>' + statement_data.ref + '</span>', isNaN(statement_data.payout) ? '-' : (jpClient ? format_money_jp(TUser.get().currency, statement_data.payout) : statement_data.payout ), text.localize(statement_data.action), '', jpClient ? format_money_jp(TUser.get().currency, statement_data.amount) : statement_data.amount, jpClient ? format_money_jp(TUser.get().currency, statement_data.balance) : statement_data.balance, ''], columns, "data");
+        var $statementRow = Table.createFlexTableRow([
+                (jpClient ? toJapanTimeIfNeeded(transaction.transaction_time) : statement_data.date),
+                '<span' + showTooltip(statement_data.app_id, oauth_apps[statement_data.app_id]) + '>' + statement_data.ref + '</span>',
+                isNaN(statement_data.payout) ? '-' : (jpClient ? format_money_jp(TUser.get().currency, statement_data.payout) : statement_data.payout ),
+                page.text.localize(statement_data.action),
+                '',
+                jpClient ? format_money_jp(TUser.get().currency, statement_data.amount) : statement_data.amount,
+                jpClient ? format_money_jp(TUser.get().currency, statement_data.balance) : statement_data.balance,
+                ''
+            ], columns, "data");
         
         $statementRow.children(".credit").addClass(creditDebitType);
         $statementRow.children(".date").addClass("pre");
@@ -57,7 +66,7 @@ var StatementUI = (function(){
         if (statement_data.action === "Sell" || statement_data.action === "Buy") {
             var $viewButtonSpan = Button.createBinaryStyledButton();
             var $viewButton = $viewButtonSpan.children(".button").first();
-            $viewButton.text(text.localize("View"));
+            $viewButton.text(page.text.localize("View"));
             $viewButton.addClass("open_contract_detailsws");
             $viewButton.attr("contract_id", statement_data.id);
 
@@ -95,3 +104,7 @@ var StatementUI = (function(){
         }
     };
 }());
+
+module.exports = {
+    StatementUI: StatementUI,
+};

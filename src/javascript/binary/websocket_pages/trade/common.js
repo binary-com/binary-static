@@ -2,6 +2,10 @@
  * This contains common functions we need for processing the response
  */
 
+if (typeof window === 'undefined') {
+    Element = function() {}; // jshint ignore:line
+}
+
  Element.prototype.hide = function(){
      this.style.display = 'none';
  };
@@ -10,10 +14,18 @@
      this.style.display = '';
  };
 
+if (!('remove' in Element.prototype)) {
+    Element.prototype.remove = function() {
+        if (this.parentNode) {
+            this.parentNode.removeChild(this);
+        }
+    };
+}
+
 /*
  * function to display contract form as element of ul
  */
- function displayContractForms(id, elements, selected) {
+function displayContractForms(id, elements, selected) {
      'use strict';
      if (!id || !elements || !selected) return;
      var target = document.getElementById(id),
@@ -124,7 +136,7 @@
  }
 
 
- function displayMarkets(id, elements, selected) {
+function displayMarkets(id, elements, selected) {
      'use strict';
      var target= document.getElementById(id),
          fragment =  document.createDocumentFragment();
@@ -233,7 +245,7 @@ function displayUnderlyings(id, elements, selected) {
         for(var j=0; j<keys2.length; j++){
             for(var k=0; k<submarkets[keys2[j]].length; k++){
                 var key = submarkets[keys2[j]][k];
-                var option = document.createElement('option'), content = document.createTextNode(text.localize(elements[key]['display']));
+                var option = document.createElement('option'), content = document.createTextNode(page.text.localize(elements[key]['display']));
                 option.setAttribute('value', key);
                 if (selected && selected === key) {
                     option.setAttribute('selected', 'selected');
@@ -831,7 +843,7 @@ function selectOption(option, select){
 }
 
 function updatePurchaseStatus(final_price, pnl, contract_status){
-    $('#contract_purchase_heading').text(text.localize(contract_status));
+    $('#contract_purchase_heading').text(page.text.localize(contract_status));
     $payout = $('#contract_purchase_payout');
     $cost = $('#contract_purchase_cost');
     $profit = $('#contract_purchase_profit');
@@ -878,9 +890,11 @@ function reloadPage(){
     location.reload();
 }
 
-function addComma(num){
-    num = (num || 0) * 1;
-    return num.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+function addComma(num, decimal_points){
+    num = String(num || 0).replace(/,/g, '') * 1;
+    return num.toFixed(decimal_points || 2).toString().replace(/(^|[^\w.])(\d{4,})/g, function($0, $1, $2) {
+        return $1 + $2.replace(/\d(?=(?:\d\d\d)+(?!\d))/g, "$&,");
+    });
 }
 
 function showHighchart(){
@@ -891,7 +905,7 @@ function showHighchart(){
   } else {
     document.getElementById('chart_frame').src = '';
     $('#trade_live_chart').hide();
-    $('#chart-error').text(text.localize('Chart is not available for this underlying.'))
+    $('#chart-error').text(page.text.localize('Chart is not available for this underlying.'))
                      .show();
     return;
   }
@@ -907,9 +921,11 @@ function chartFrameSource() {
 }
 
 function setChartSource() {
-  document.getElementById('chart_frame').src = 'https://webtrader.binary.com?affiliates=true&instrument=' + document.getElementById('underlying').value + '&timePeriod=1t&gtm=true&lang=' + (page.language() || 'en').toLowerCase();
+    var ja = japanese_client();
+  document.getElementById('chart_frame').src = 'https://webtrader.binary.com?affiliates=true&instrument=' + document.getElementById('underlying').value + '&timePeriod=1t&gtm=true&lang=' + (page.language() || 'en').toLowerCase() +
+  '&hideOverlay=' + (ja ? 'true' : 'false') + '&hideShare=' + (ja ? 'true' : 'false') + '&timezone=GMT+' + (ja ? '9' : '0') +
+  '&hideFooter=' + (ja ? 'true' : 'false');
 }
-
 
 // ============= Functions used in /trading_beta =============
 
@@ -946,18 +962,21 @@ function setFormPlaceholderContent_Beta(name) {
 }
 
 function updatePurchaseStatus_Beta(final_price, pnl, contract_status){
-    $('#contract_purchase_heading').text(text.localize(contract_status));
+    final_price = String(final_price).replace(/,/g, '') * 1;
+    pnl = String(pnl).replace(/,/g, '') * 1;
+    $('#contract_purchase_heading').text(page.text.localize(contract_status));
     var payout  = document.getElementById('contract_purchase_payout'),
         cost    = document.getElementById('contract_purchase_cost'),
         profit  = document.getElementById('contract_purchase_profit'),
         currency = TUser.get().currency;
 
-    label_value(cost  , Content.localize().textStake , Math.abs(pnl));
+    label_value(cost  , Content.localize().textStake , addComma(Math.abs(pnl)));
     label_value(payout, Content.localize().textPayout, addComma(final_price));
 
-    var isWin = (+final_price > 0);
+    var isWin = (final_price > 0);
     $('#contract_purchase_profit_value').attr('class', (isWin ? 'profit' : 'loss'));
-    label_value(profit, isWin ? Content.localize().textProfit : Content.localize().textLoss, addComma(Math.round((final_price - pnl) * 100) / 100));
+    label_value(profit, isWin ? Content.localize().textProfit : Content.localize().textLoss,
+        addComma(isWin ? Math.round((final_price - pnl) * 100) / 100 : - Math.abs(pnl)));
 }
 
 function displayTooltip_Beta(market, symbol){
@@ -992,7 +1011,7 @@ function label_value(label_elem, label, value, no_currency) {
     label_elem.innerHTML = label;
     var value_elem = document.getElementById(label_elem.id + '_value');
     value_elem.innerHTML = no_currency ? value : format_money(currency, value);
-    value_elem.setAttribute('value', value);
+    value_elem.setAttribute('value', String(value).replace(/,/g, ''));
 }
 
 function adjustAnalysisColumnHeight() {
@@ -1100,9 +1119,46 @@ function moreTabsHandler($ul) {
     });
 }
 
-//used temporarily for mocha test
-if (typeof module !== 'undefined') {
-    module.exports = {
-        addComma: addComma
-    };
-}
+module.exports = {
+    displayUnderlyings: displayUnderlyings,
+    getFormNameBarrierCategory: getFormNameBarrierCategory,
+    contractTypeDisplayMapping: contractTypeDisplayMapping,
+    isVisible: isVisible,
+    showPriceOverlay: showPriceOverlay,
+    hidePriceOverlay: hidePriceOverlay,
+    hideFormOverlay: hideFormOverlay,
+    showFormOverlay: showFormOverlay,
+    hideOverlayContainer: hideOverlayContainer,
+    getContractCategoryTree: getContractCategoryTree,
+    displayPriceMovement: displayPriceMovement,
+    resetPriceMovement: resetPriceMovement,
+    toggleActiveNavMenuElement: toggleActiveNavMenuElement,
+    toggleActiveCatMenuElement: toggleActiveCatMenuElement,
+    setFormPlaceholderContent: setFormPlaceholderContent,
+    displayCommentPrice: displayCommentPrice,
+    displayCommentSpreads: displayCommentSpreads,
+    debounce: debounce,
+    getDefaultMarket: getDefaultMarket,
+    addEventListenerForm: addEventListenerForm,
+    submitForm: submitForm,
+    displayIndicativeBarrier: displayIndicativeBarrier,
+    durationOrder: durationOrder,
+    displayTooltip: displayTooltip,
+    countDecimalPlaces: countDecimalPlaces,
+    selectOption: selectOption,
+    updatePurchaseStatus: updatePurchaseStatus,
+    updateWarmChart: updateWarmChart,
+    reloadPage: reloadPage,
+    addComma: addComma,
+    showHighchart: showHighchart,
+    chartFrameSource: chartFrameSource,
+    displayContractForms: displayContractForms,
+    displayMarkets: displayMarkets,
+    toggleActiveNavMenuElement_Beta: toggleActiveNavMenuElement_Beta,
+    setFormPlaceholderContent_Beta: setFormPlaceholderContent_Beta,
+    updatePurchaseStatus_Beta: updatePurchaseStatus_Beta,
+    displayTooltip_Beta: displayTooltip_Beta,
+    label_value: label_value,
+    adjustAnalysisColumnHeight: adjustAnalysisColumnHeight,
+    moreTabsHandler: moreTabsHandler,
+};

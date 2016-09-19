@@ -39,14 +39,14 @@ var LimitsUI = (function(){
             if (marketSpecific.hasOwnProperty(key)) {
               var object = marketSpecific[key];
               if (object.length && object.length > 0) {
-                appendRowTable(key.charAt(0).toUpperCase() + key.slice(1), '', 'auto', 'bold');
+                appendRowTable(page.text.localize(key.charAt(0).toUpperCase() + key.slice(1)), '', 'auto', 'bold');
                 for (key in object) {
                   if (object.hasOwnProperty(key) && (page.client.residence !== 'jp' || /Major Pairs/.test(object[key].name))) {
-                    appendRowTable(object[key].name, object[key].turnover_limit !== 'null' ? addComma(object[key].turnover_limit).split('.')[0] : 0, '25px', 'normal');
+                    appendRowTable(page.text.localize(object[key].name), object[key].turnover_limit !== 'null' ? addComma(object[key].turnover_limit).split('.')[0] : 0, '25px', 'normal');
                   }
                 }
               } else {
-                appendRowTable(object.name, object.turnover_limit !== 'null' ? addComma(object.turnover_limit).split('.')[0] : 0, 'auto', 'bold');
+                appendRowTable(page.text.localize(object.name), object.turnover_limit !== 'null' ? addComma(object.turnover_limit).split('.')[0] : 0, 'auto', 'bold');
               }
             }
           }
@@ -55,10 +55,10 @@ var LimitsUI = (function(){
             var loginId = page.client.loginid;
 
             var tradingLimits = document.getElementById("trading-limits");
-            tradingLimits.textContent = loginId + " - " + text.localize('Trading Limits');
+            tradingLimits.textContent = loginId + " - " + page.text.localize('Trading Limits');
 
             var withdrawalTitle = document.getElementById("withdrawal-title");
-            withdrawalTitle.textContent = loginId + " - " + text.localize('Withdrawal Limits');
+            withdrawalTitle.textContent = loginId + " - " + page.text.localize('Withdrawal Limits');
         }
         document.getElementById('client-limits').setAttribute('style', 'display:table');
     }
@@ -66,7 +66,7 @@ var LimitsUI = (function(){
     function appendRowTable(name, turnover_limit, padding, font_weight) {
       $('#client-limits').append('<tr class="flex-tr">' +
                             '<td class="flex-tr-child" style="padding-left: ' + padding + '; font-weight: ' + font_weight + ';">' +
-                              text.localize(name) +
+                              page.text.localize(name) +
                             '</td>' +
                             '<td>' +
                               turnover_limit +
@@ -86,3 +86,7 @@ var LimitsUI = (function(){
         fillLimitsTable: fillLimitsTable
     };
 }());
+
+module.exports = {
+    LimitsUI: LimitsUI,
+};

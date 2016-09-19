@@ -8,15 +8,13 @@
 
     <div id="portfolio-content" class="invisible">
         <div class="gr-parent gr-padding-10">
-            <div class="gr-hide-m gr-hide-p">
-                [% l("Account balance: ") %]
-                <span class="loading" id="portfolio-balance"></span>
+            [% l("Account balance: ") %]
+            <span class="loading" id="portfolio-balance"></span>
 
-                <!-- If the account balance is zero we show the following button, otherwise we remove it -->
-                <a href="[% request.url_for('cashier/forwardws#deposit') %]" id="if-balance-zero" class="invisible button button_large by_client_type client_real with_login_cookies">
-                    <span>[% l('Make a Deposit') %]</span>
-                </a>
-            </div>
+            <!-- If the account balance is zero we show the following button, otherwise we remove it -->
+            <a href="[% request.url_for('cashier/forwardws#deposit') %]" id="if-balance-zero" class="invisible button button_large by_client_type client_real with_login_cookies">
+                <span>[% l('Make a Deposit') %]</span>
+            </a>
         </div>
 
         <div id="portfolio-no-contract">
@@ -39,7 +37,8 @@
 
             <tfoot>
                 <tr>
-                    <th class="ref" colspan="3"></th>
+                    <th>[% l("Total") %]</th>
+                    <th class="ref" colspan="2"></th>
                     <th class="cost" id="cost-of-open-positions"></th>
                     <th class="value" id="value-of-open-positions" colspan="2"></th>
                 </tr>

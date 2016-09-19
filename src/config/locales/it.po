@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Italian (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-09 20:22+0000\n"
+"PO-Revision-Date: 2016-09-16 10:29+0000\n"
 "Last-Translator: Annalisa <ligiu@me.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/binary/static/it/>\n"
 "Language: it\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.8-dev\n"
+"X-Generator: Weblate 2.9-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"%1 API\" indica l'insieme delle routine programmatiche, protocolli e risorse di proprietà di %1 create e gestite da %1 che ti consentono di usare un'Applicazione registrata per interagire con la piattaforma di trading di %1."
@@ -280,8 +280,8 @@ msgstr "minimo %ctx(minimum duration, for example minimum 15 seconds)"
 msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
 msgstr "&#8220;%1 è uno dei partner più vecchi e affidabili che abbiamo mai avuto. Abbiamo lavorato insieme per molti anni.&#8221;"
 
-msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide&#8221;"
-msgstr "&#8220;Negli ultimi 8 anni abbiamo utilizzato www.binary.com e lo consigliamo vivamente a tutti i nostri membri sparsi in tutto il mondo&#8221;"
+msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide.&#8221;"
+msgstr "&#8220;Negli ultimi 8 anni abbiamo utilizzato www.binary.com e lo consigliamo vivamente a tutti i nostri membri sparsi in tutto il mondo.&#8221;"
 
 msgid "'<strong>Long</strong>' contracts generate profits when the index rises and loses when it falls."
 msgstr "I contratti '<strong>Long</strong>' generano profitti quando l'indice aumenta e perdite quando diminuisce."
@@ -479,18 +479,14 @@ msgstr "<strong>Determinazione dei prezzi in 2 direzioni</strong> - %1 quota un 
 msgid "<strong>Additional business exposure:</strong> You will increase awareness of your services and generate new business."
 msgstr "<strong>Ulteriore esposizione commerciale:</strong> I tuoi servizi avranno una maggiore esposizione e genererai nuova attività."
 
-#, fuzzy
-#| msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgid "<strong>All durations:</strong> from 10 seconds to 365 days."
-msgstr "<strong>Tutte le durate</strong> - da 10 secondi a 365 giorni."
+msgstr "<strong>Tutte le durate:</strong> da 10 secondi a 365 giorni."
 
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>Tutte le durate</strong> - da 10 secondi a 365 giorni."
 
-#, fuzzy
-#| msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
 msgid "<strong>All market conditions:</strong> up/down, touch/no-touch, stays in/goes out."
-msgstr "<strong>Tutte le condizioni di mercato</strong> - up/down, touch/no-touch, stays in/goes out."
+msgstr "<strong>Tutte le condizioni di mercato:</strong> up/down, touch/no-touch, stays in/goes out."
 
 msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
 msgstr "<strong>Tutte le condizioni di mercato</strong> - up/down, touch/no-touch, stays in/goes out."
@@ -498,18 +494,14 @@ msgstr "<strong>Tutte le condizioni di mercato</strong> - up/down, touch/no-touc
 msgid "<strong>All markets, all conditions</strong> - trade currencies, indices and commodities in rising, falling, sideways, quiet and volatile markets."
 msgstr "<strong>Tutti i mercati, tutte le condizioni</strong> - effettua trade su valute, indici e materie prime in mercati in rialzo, in ribasso, in movimento laterale, volatili o stabili."
 
-#, fuzzy
-#| msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgid "<strong>All markets:</strong> currencies, stocks, indices, and commodities."
-msgstr "<strong>Tutti i mercati</strong> - valute, indici, azioni e materie prime."
+msgstr "<strong>Tutti i mercati:</strong> valute, indici, azioni e materie prime."
 
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgstr "<strong>Tutti i mercati</strong> - valute, indici, azioni e materie prime."
 
-#, fuzzy
-#| msgid "<strong>All payouts</strong> - from $1 to $50,000."
 msgid "<strong>All payouts:</strong> from $1 to $50,000."
-msgstr "<strong>Tutti i payout</strong> - da $1 a $50.000."
+msgstr "<strong>Tutti i payout:</strong> da $1 a $50.000."
 
 msgid "<strong>All payouts</strong> - from $1 to $50,000."
 msgstr "<strong>Tutti i payout</strong> - da $1 a $50.000."
@@ -758,10 +750,8 @@ msgstr "Una preferenza e la passione per Linux e per le piattaforme open-source"
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "Un approccio proattivo alla risoluzione dei problemi e all'offerta di soluzioni ai clienti"
 
-#, fuzzy
-#| msgid "- A scanned copy of a utility bill or bank statement (no more than 3 months old)."
 msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
-msgstr "- Una copia scannerizzata di una bolletta o di un estratto conto (non antecedente i 3 mesi)."
+msgstr "Una copia scannerizzata di una bolletta o di un estratto conto (non antecedente i 3 mesi)."
 
 #, fuzzy
 #| msgid "- A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth."
@@ -855,10 +845,8 @@ msgstr "Gestione e monitoraggio dell'account"
 msgid "Account Opening"
 msgstr "Apertura dell'account"
 
-#, fuzzy
-#| msgid "Lost Password?"
 msgid "Account Password"
-msgstr "Password dimenticata?"
+msgstr "Password dell'account"
 
 msgid "Account Transfer"
 msgstr "Trasferimento dell'account"
@@ -1325,10 +1313,8 @@ msgstr "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas,
 msgid "Binary Bot released"
 msgstr "Rilascio dei Binary Bot"
 
-#, fuzzy
-#| msgid "Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
 msgid "Binary Group Services Sdn Bhd, 30-10, Q Sentral, Jalan Stesen Sentral 2, 50470 Kuala Lumpur"
-msgstr "Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
+msgstr "Binary Group Services Sdn Bhd, 30-10, Q Sentral, Jalan Stesen Sentral 2, 50470 Kuala Lumpur"
 
 msgid "Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
 msgstr "Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
@@ -1509,8 +1495,6 @@ msgstr "Lavora con noi"
 msgid "Cashier"
 msgstr "Cassa"
 
-#, fuzzy
-#| msgid "Cashier password"
 msgid "Cashier Password"
 msgstr "Password della cassa"
 
@@ -2758,10 +2742,8 @@ msgstr "Sistema vantaggioso di provvigioni"
 msgid "Germany"
 msgstr "Germania"
 
-#, fuzzy
-#| msgid "Over $1,000,000"
 msgid "Get JPY 1,000,000"
-msgstr "Più di $1.000.000"
+msgstr "Ricevi 1.000.000 di JPY"
 
 msgid "Get Started"
 msgstr "Inizia"
@@ -3821,7 +3803,9 @@ msgstr "Unisciti al nostro team di professionisti brillanti e talentuosi. Lavora
 msgid "Join our team of bright, talented professionals. Work collaboratively with us to promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years."
 msgstr "Unisciti al nostro team di professionisti brillanti e talentuosi. Lavora in modo collaborativo con noi per promuovere una piattaforma high-tech che è stata una delle più riconosciute nel settore del trading in opzioni binarie per oltre 15 anni."
 
-msgid "Joshua Cavallaro <span> Markets And You Trader.</span>"
+#, fuzzy
+#| msgid "Joshua Cavallaro <span> Markets And You Trader.</span>"
+msgid "Joshua Cavallaro <span> Markets And You Trader</span>"
 msgstr "Joshua Cavallaro <span> Trader di Markets And You.</span>"
 
 msgid "Jul"
@@ -4027,6 +4011,9 @@ msgstr "Mantenere precisi parametri di determinazione dei prezzi del sistema"
 
 msgid "Maintain adequate speed and volume of output"
 msgstr "Mantenere una velocità adeguata e un volume di output"
+
+msgid "Major Pairs"
+msgstr "Coppie principali"
 
 msgid "Make a Deposit"
 msgstr "Effettua un deposito"
@@ -4936,10 +4923,8 @@ msgstr "Competenza in un linguaggio di scripting - è preferito quello Perl"
 msgid "Proficiency in a second language (oral and written) is preferred"
 msgstr "È gradita la conoscenza di una seconda lingua (scritta e orale)"
 
-#, fuzzy
-#| msgid "Profit"
 msgid "Profile"
-msgstr "Profitto"
+msgstr "Profilo"
 
 msgid "Profit"
 msgstr "Profitto"
@@ -6215,6 +6200,11 @@ msgstr "Questo bonus è disponibile solo per i nuovi clienti. I clienti esistent
 msgid "This bonus will be processed and credited to a client's account when:"
 msgstr "Questo bonus verrà elaborato e accreditato sull'account del cliente quando:"
 
+#, fuzzy
+#| msgid "This contract cannot be properly validated at this time."
+msgid "This contract can not be traded in the final 2 minutes before settlement"
+msgstr "Questo contratto non può essere convalidato correttamente in questo momento."
+
 msgid "This contract has LOST"
 msgstr "Questo contratto ha PERSO"
 
@@ -6260,10 +6250,8 @@ msgstr "Questo è il motivo per cui stiamo reclutando altri tester per ogni nuov
 msgid "This notice does not explain all of the risks involved in investments or similar products or how such risks relate to your personal circumstances. It is important that you fully understand the risks involved before making a decision to enter into or sell an investment product or gambling product with us. If you are in any doubt about the risks involved with Investment Products or Gambling Products, you should seek professional advice."
 msgstr "Questa informativa non spiega tutti i rischi connessi agli investimenti o prodotti simili o come tali rischi si rapportino alla tua situazione personale. È importante capire fino in fondo i rischi connessi prima di prendere una decisione sulla stipula o sulla vendita di un prodotto d'investimento o un prodotto d'azzardo con noi. Se hai un qualsiasi dubbio in merito ai rischi connessi con i Prodotti d'Investimento e i Prodotti d'azzardo, dovresti richiedere una consulenza professionale."
 
-#, fuzzy
-#| msgid "This notice provides you with information about the risks associated with investment contracts, which you may invest in through services provided to you through %1. Binary Group provides a wide range of products including Binary Options relating to foreign exchange, indices, stocks and other investment products (\"Investment Products\") and binary bets such as those relating to the Random Markets (\"Gambling Products\")."
 msgid "This notice provides you with information about the risks associated with investment contracts, which you may invest in through services provided to you through %1. Binary Group provides a wide range of products including Binary Options relating to foreign exchange, indices, stocks and other investment products (\"Investment Products\") and binary bets such as those relating to the Volatility Indices (\"Gambling Products\")."
-msgstr "Questa informativa ti fornisce le informazioni sui rischi connessi con i contratti d'investimento in cui puoi investire attraverso i servizi a te offerti attraverso %1. Il Gruppo Binary fornisce un'ampia gamma di prodotti incluse le Opzioni binarie relative ai cambi, indici, azioni e altri prodotti d'investimento (\"Prodotti d'investimento\") e scommesse binarie come quelle connesse ai Mercati Random (\"Prodotti d'azzardo\")."
+msgstr "Questa informativa ti fornisce le informazioni sui rischi connessi con i contratti d'investimento in cui puoi investire attraverso i servizi a te offerti attraverso %1. Il Gruppo Binary fornisce un'ampia gamma di prodotti incluse le Opzioni binarie relative ai cambi, indici, azioni e altri prodotti d'investimento (\"Prodotti d'investimento\") e scommesse binarie come quelle connesse agli Indici di volatilità (\"Prodotti d'azzardo\")."
 
 msgid "This offer cannot be used in conjunction with any other offer."
 msgstr "Questa offerta non può essere utilizzata insieme a qualsiasi altra offerta."
@@ -6289,10 +6277,8 @@ msgstr "Giovedì"
 msgid "Tick"
 msgstr "Tick"
 
-#, fuzzy
-#| msgid "Tick Trade App"
 msgid "TickTrade App"
-msgstr "App Tick Trade"
+msgstr "App TickTrade"
 
 msgid "Tier"
 msgstr "Livello"
@@ -6344,6 +6330,9 @@ msgstr "Per ripristinare la tua password, inserisci l'indirizzo email indicato i
 
 msgid "Token"
 msgstr "Token"
+
+msgid "Total"
+msgstr "Totale"
 
 msgid "Total Cost"
 msgstr "Costo totale"
@@ -7329,9 +7318,6 @@ msgstr "Non finirai sul lastrico"
 msgid "You'll be surprised by the returns you can make."
 msgstr "Sarai stupito dai rendimenti che riuscirai a ottenere."
 
-msgid "You'll find answers to most of your questions on the <a href='' target='_blank' id='faq_url'>FAQ</a> page."
-msgstr "Puoi trovare la maggior parte delle risposte alle tue domande sulla pagina <a href='' target='_blank' id='faq_url'>FAQ</a>."
-
 msgid "You're using a Virtual Account."
 msgstr "Stai utilizzando un Account virtuale."
 
@@ -7847,10 +7833,8 @@ msgstr "{JAPAN ONLY}Even if the option is exercise or not exercised, the origina
 msgid "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
 msgstr "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}day"
 msgid "{JAPAN ONLY}FX Rate"
-msgstr "{JAPAN ONLY}day"
+msgstr "{JAPAN ONLY}FX Rate"
 
 msgid "{JAPAN ONLY}Financial Condition"
 msgstr "{JAPAN ONLY}Financial Condition"
@@ -8053,10 +8037,8 @@ msgstr "{JAPAN ONLY}November 7, 2014"
 msgid "{JAPAN ONLY}Option Pricing"
 msgstr "{JAPAN ONLY}Option Pricing"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Option Pricing"
 msgid "{JAPAN ONLY}Option Type"
-msgstr "{JAPAN ONLY}Option Pricing"
+msgstr "{JAPAN ONLY}Option Type"
 
 msgid "{JAPAN ONLY}Option prices are normally dependant on elements such as the underlying asset price, the exercise price, the length of time until the exercise point, volatility, and interest rates. Apart from the fixed exercise price, all other elements are changing constantly, so an understanding of the relationships between each element and changes in the options price is necessary for the management of options trading risk."
 msgstr "{JAPAN ONLY}Option prices are normally dependant on elements such as the underlying asset price, the exercise price, the length of time until the exercise point, volatility, and interest rates. Apart from the fixed exercise price, all other elements are changing constantly, so an understanding of the relationships between each element and changes in the options price is necessary for the management of options trading risk."
@@ -8085,10 +8067,8 @@ msgstr "{JAPAN ONLY}Our Customer Support staff will contact you at each stage to
 msgid "{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:"
 msgstr "{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}month"
 msgid "{JAPAN ONLY}Payout Amount"
-msgstr "{JAPAN ONLY}month"
+msgstr "{JAPAN ONLY}Payout Amount"
 
 msgid "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\">here</a> for further information."
 msgstr "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\">here</a> for further information."
@@ -8135,10 +8115,8 @@ msgstr "{JAPAN ONLY}Registration"
 msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "{JAPAN ONLY}Regulation & Tax"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}minute"
 msgid "{JAPAN ONLY}Remaining time"
-msgstr "{JAPAN ONLY}minute"
+msgstr "{JAPAN ONLY}Remaining time"
 
 msgid "{JAPAN ONLY}STAY-IN/BREAK-OUT"
 msgstr "{JAPAN ONLY}STAY-IN/BREAK-OUT"
@@ -8263,10 +8241,8 @@ msgstr "{JAPAN ONLY}Trading & Hedging"
 msgid "{JAPAN ONLY}Trading Guide"
 msgstr "{JAPAN ONLY}Trading Guide"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Trading Guide"
 msgid "{JAPAN ONLY}Trading Period"
-msgstr "{JAPAN ONLY}Trading Guide"
+msgstr "{JAPAN ONLY}Trading Period"
 
 msgid "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
 msgstr "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
@@ -8334,42 +8310,41 @@ msgstr "{JAPAN ONLY}year"
 msgid "{JAPAN ONLY}years"
 msgstr "{JAPAN ONLY}years"
 
-msgid "{Japan Only}"
-msgstr ""
-
-#, fuzzy
-#| msgid "Japan website Download Text for Terms and Conditions Document"
 msgid "{Japan Only} Download Terms and Conditions Document file"
-msgstr "Japan website Download Text for Terms and Conditions Document"
+msgstr "{Japan Only} Download Terms and Conditions Document file"
 
 msgid "{Japan Only}Binary option specialist for over 15 years "
-msgstr ""
+msgstr "{Japan Only}Binary option specialist for over 15 years "
 
 msgid "{Japan Only}Fully licenced in Japan"
-msgstr ""
+msgstr "{Japan Only}Fully licenced in Japan"
 
 msgid "{Japan Only}Live chart tools"
-msgstr ""
+msgstr "{Japan Only}Live chart tools"
+
+msgid "{Japan Only}Payout from 1 to 10"
+msgstr "{Japan Only}Payout from 1 to 10"
 
 msgid "{Japan Only}Segregated Customer Account Balances are 100% Safe"
-msgstr ""
+msgstr "{Japan Only}Segregated Customer Account Balances are 100% Safe"
 
 msgid "{Japan Only}Trade all binary option types"
-msgstr ""
+msgstr "{Japan Only}Trade all binary option types"
 
 msgid "{Japan Only}Trade the major currencies"
 msgstr ""
 
-#, fuzzy
-#| msgid "%1 is the award-winning industry pioneer in online options trading."
+msgid "{Japan Only}Two-way pricing"
+msgstr "{Japan Only}Two-way pricing"
+
 msgid "{Japan Only}Worldwide award-winning pioneer in FX binary options trading"
-msgstr "%1 è il pioniere pluripremiato nel settore del trading di opzioni online."
+msgstr "{Japan Only}Worldwide award-winning pioneer in FX binary options trading"
 
 msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 msgstr "Piattaforma di trading online per le opzioni binarie su Forex, Indici, Materie prime e Indici Smart"
 
 msgid "404"
-msgstr ""
+msgstr "404"
 
 msgid "Why Us"
 msgstr "Perché noi"
@@ -8418,6 +8393,9 @@ msgstr "Dettagli dell'account"
 
 msgid "Terms and Conditions Approval"
 msgstr "Approvazione dei termini e delle condizioni"
+
+#~ msgid "You'll find answers to most of your questions on the <a href='' target='_blank' id='faq_url'>FAQ</a> page."
+#~ msgstr "Puoi trovare la maggior parte delle risposte alle tue domande sulla pagina <a href='' target='_blank' id='faq_url'>FAQ</a>."
 
 #~ msgid "%1 %2 (\"API\") Terms and Conditions"
 #~ msgstr "Termini e condizioni di %1 %2 (\"API\")"
@@ -10275,9 +10253,6 @@ msgstr "Approvazione dei termini e delle condizioni"
 
 #~ msgid "This client cashier section is locked."
 #~ msgstr "Questa sezione della cassa clienti è bloccata."
-
-#~ msgid "This contract cannot be properly validated at this time."
-#~ msgstr "Questo contratto non può essere convalidato correttamente in questo momento."
 
 #~ msgid "This contract has already expired."
 #~ msgstr "Questo contratto è già scaduto."
@@ -12137,9 +12112,6 @@ msgstr "Approvazione dei termini e delle condizioni"
 
 #~ msgid "French Stocks"
 #~ msgstr "Azioni Francia"
-
-#~ msgid "Major Pairs"
-#~ msgstr "Coppie principali"
 
 #~ msgid "The most widely traded and liquid forex pairs."
 #~ msgstr "Le coppie Forex più ampiamente negoziate e liquide."

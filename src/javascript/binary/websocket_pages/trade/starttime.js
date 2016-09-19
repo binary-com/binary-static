@@ -116,3 +116,7 @@ var StartDates = (function(){
     };
 
 })();
+
+module.exports = {
+    StartDates: StartDates,
+};

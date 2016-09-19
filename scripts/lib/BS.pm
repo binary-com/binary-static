@@ -165,26 +165,8 @@ sub js_config {
         push @libs, root_url . "js/binary.min.js?$static_hash";
     }
 
-    my %setting = (
-        enable_relative_barrier => 'true',
-        image_link              => {
-            hourglass     => url_for('images/common/hourglass_1.gif')->to_string,
-            up            => url_for('images/javascript/up_arrow_1.gif')->to_string,
-            down          => url_for('images/javascript/down_arrow_1.gif')->to_string,
-            calendar_icon => url_for('images/common/calendar_icon_1.png')->to_string,
-            livechaticon  => url_for('images/pages/contact/chat-icon.svg')->to_string,
-        },
-        broker           => 'CR',
-        valid_loginids   => 'MX|MF|VRTC|MLT|CR|FOG|VRTJ|JP',
-        streaming_server => 'www.binary.com',
-    );
-
-    # hardcode, require a fix?
-    $setting{arr_all_currencies} = ["USD", "EUR", "GBP", "AUD"];
-
     return {
         libs     => \@libs,
-        settings => JSON::to_json(\%setting),
     };
 }
 
@@ -231,6 +213,7 @@ sub menu {
     # resources
     my $resources_items_ref = {
         id         => 'topMenuResources',
+        class      => 'ja-hide',
         url        => url_for('/resources'),
         text       => localize('Resources'),
         link_class => 'pjaxload',

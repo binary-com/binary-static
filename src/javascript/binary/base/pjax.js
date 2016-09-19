@@ -164,5 +164,59 @@ var pjax_config_page_require_auth = function(url, exec) {
     pjax_config_page(url, newExecFn);
 };
 
+var onLoad = new PjaxExecQueue();
+var onUnload = new PjaxExecQueue();
+
 init_pjax(); //Pjax-standalone will wait for on load event before attaching.
 $(function() { onLoad.fire(); });
+
+onLoad.queue(GTM.push_data_layer);
+
+onLoad.queue(function () {
+    page.on_load();
+});
+
+onUnload.queue(function () {
+    page.on_unload();
+});
+
+onLoad.queue(function () {
+    $('.tm-ul > li').hover(
+        function () {
+            $(this).addClass('hover');
+        },
+        function () {
+            $(this).removeClass('hover');
+        }
+    );
+
+    MenuContent.init($('.content-tab-container').find('.tm-ul'));
+
+    make_mobile_menu();
+
+    var i = window.location.href.split('#');
+    if (i.length != 2) return;
+    var o = document.getElementsByTagName('a');
+    for (var t = 0; t < o.length; t++) {
+        if (o[t].href.substr(o[t].href.length - i[1].length - 1) == '#' + i[1]) {
+            o[t].click();
+            break;
+        }
+    }
+
+});
+
+onLoad.queue(function () {
+    attach_date_picker('.has-date-picker');
+    attach_time_picker('.has-time-picker');
+    attach_tabs('.has-tabs');
+});
+
+
+module.exports = {
+    pjax_config_page_require_auth: pjax_config_page_require_auth,
+    pjax_config_page: pjax_config_page,
+    load_with_pjax: load_with_pjax,
+    onLoad: onLoad,
+    onUnload: onUnload,
+};

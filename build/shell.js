@@ -1,5 +1,11 @@
 module.exports = function (grunt) {
     return {
+        remove_pack: {
+            command: 'rm ' + global.dist + '/js/binary_pack.js',
+            options: {
+                stdout: true
+            }
+        },
         compile_dev: {
             command: global.compileCommand('-f -d'),
             options: {

@@ -14,21 +14,21 @@ var FinancialAssessmentws = (function(){
 
     // For translating strings
     var LocalizeText = function(){
-        $("#heading").text(text.localize($("#heading").text()));
-        $('#heading_risk').text(text.localize($("#heading_risk").text()));
-        $('#high_risk_classification').text(text.localize($('#high_risk_classification').text()));
-        document.getElementsByTagName('legend')[0].innerHTML = text.localize(document.getElementsByTagName('legend')[0].innerHTML);
-        if (document.getElementsByTagName('legend')[1]) document.getElementsByTagName('legend')[1].innerHTML = text.localize(document.getElementsByTagName('legend')[1].innerHTML);
+        $("#heading").text(page.text.localize($("#heading").text()));
+        $('#heading_risk').text(page.text.localize($("#heading_risk").text()));
+        $('#high_risk_classification').text(page.text.localize($('#high_risk_classification').text()));
+        document.getElementsByTagName('legend')[0].innerHTML = page.text.localize(document.getElementsByTagName('legend')[0].innerHTML);
+        if (document.getElementsByTagName('legend')[1]) document.getElementsByTagName('legend')[1].innerHTML = page.text.localize(document.getElementsByTagName('legend')[1].innerHTML);
         $("#assessment_form label").each(function(){
             var ele = $(this);
-            ele.text(text.localize(ele.text()));
+            ele.text(page.text.localize(ele.text()));
         });
         $("#assessment_form option").each(function(){
             var ele = $(this);
-            ele.text(text.localize(ele.text()));
+            ele.text(page.text.localize(ele.text()));
         });
-        $("#warning").text(text.localize($("#warning").text()));
-        $("#submit").text(text.localize($("#submit").text()));
+        $("#warning").text(page.text.localize($("#warning").text()));
+        $("#submit").text(page.text.localize($("#submit").text()));
     };
 
     var submitForm = function(){
@@ -52,7 +52,7 @@ var FinancialAssessmentws = (function(){
         $('#assessment_form select').each(function(){
             if(!$(this).val()){
                 isValid = false;
-                errors[$(this).attr("id")] = text.localize('Please select a value.');
+                errors[$(this).attr("id")] = page.text.localize('Please select a value.');
             }
         });
         if(!isValid){
@@ -92,7 +92,7 @@ var FinancialAssessmentws = (function(){
         for(var key in errors){
             if(key){
                 var error = errors[key];
-                $("#error"+key).text(text.localize(error));
+                $("#error"+key).text(page.text.localize(error));
                 id = key;
             }
         }
@@ -105,7 +105,7 @@ var FinancialAssessmentws = (function(){
     var responseOnSuccess = function(){
         $("#heading").hide();
         hideLoadingImg(false);
-        $("#response_on_success").text(text.localize("Your details have been updated."))
+        $("#response_on_success").text(page.text.localize("Your details have been updated."))
             .removeClass("invisible");
     };
 
@@ -125,7 +125,7 @@ var FinancialAssessmentws = (function(){
     var checkIsVirtual = function(){
         if(page.client.is_virtual()) {
             $("#assessment_form").addClass('invisible');
-            $('#response_on_success').addClass('notice-msg center-text').removeClass('invisible').text(text.localize('This feature is not relevant to virtual-money accounts.'));
+            $('#response_on_success').addClass('notice-msg center-text').removeClass('invisible').text(page.text.localize('This feature is not relevant to virtual-money accounts.'));
             hideLoadingImg(false);
             return true;
         }
@@ -160,3 +160,7 @@ pjax_config_page_require_auth("user/settings/assessmentws", function() {
         }
     };
 });
+
+module.exports = {
+    FinancialAssessmentws: FinancialAssessmentws,
+};

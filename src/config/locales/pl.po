@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-09-02 16:00+0000\n"
+"PO-Revision-Date: 2016-09-11 22:07+0000\n"
 "Last-Translator: Ewelina Bruździak <e.bruzdziak@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>\n"
 "Language: pl\n"
@@ -25,13 +25,13 @@ msgid "\"Binary\" or \"digital\" options are options that pay a pre-determined, 
 msgstr "Opcje „binarne” lub „cyfrowe” to opcje, które łączą się z wypłatą wcześniej ustalonej stałej kwoty w zależności od tego, czy dane wydarzenie wystąpi lub nie wystąpi w momencie wygaśnięcia opcji binarnej. Opcja binarna może wiązać się tylko z jednym z dwóch możliwych rezultatów i pozwala Ci podejmować proste decyzje „Tak lub Nie”. Podobnie jak tradycyjne opcje handlowe, opcje binarne oparte są na instrumencie bazowym, takim jak waluty, towary, indeksy lub akcje. Jednak to, co odróżnia je w znacznym stopniu od tradycyjnych opcji to m.in. fakt, że opcja może przynieść jedynie dwa rezultaty: w przypadku wystąpienia określonego wydarzenia klientowi zostaje wypłacony zysk albo klient traci zainwestowaną kwotę określaną przy zawieraniu każdej opcji."
 
 msgid "\"Content\" means any data or content from our Website or accessed via the API. Our \"Website\" means %1's website at www.binary.com and any other website or service owned or operated by %1."
-msgstr "„Zawartość” oznacza wszelkie dane i treści na naszej Stronie internetowej lub dostępne za pośrednictwem API. Nasza „Strona internetowa” oznacza stronę internetową firmy %1 dostępną pod adresem: www.binary.com i wszelkie inne strony internetowe i serwisy, będące własnością firmy %1 lub prowadzone przez nią."
+msgstr "„Zawartość” oznacza wszelkie dane i treści na naszej stronie internetowej lub dostępne za pośrednictwem API. Nasza „strona internetowa” oznacza stronę internetową firmy %1 dostępną pod adresem: www.binary.com i wszelkie inne strony internetowe i serwisy będące własnością firmy %1 lub prowadzone przez nią."
 
 msgid "\"I work with a number of affiliate companies, and it is by far, the friendliest and most helpful that I've found. They go out of their way to provide their affiliates with all the tools, advice and support they need in order to succeed. To top it all off, they offer some of the most handsome rebates in the industry.\" - <strong>Vinod Gorasia, Marketing Manager, Agora Lifestyles</strong>."
-msgstr "„Współpracuję z wieloma firmami partnerskimi, ale ta jest z nich najbardziej przyjazna i pomocna. Wychodzą naprzeciw swoim partnerom i oferują im porady, narzędzia i wsparcie, które są niezbędne, aby osiągnąć sukces. A co najważniejsze, oferują najlepsze rabaty w całym biznesie.” - <strong>Vinod Gorasia, Menadżer ds. reklamy w firmie Agora Lifestyles</strong>."
+msgstr "„Współpracuję z wieloma firmami partnerskimi, ale ta jest z nich najbardziej przyjazna i pomocna. Wychodzą naprzeciw swoim partnerom i oferują im porady, narzędzia i wsparcie, które są niezbędne, aby osiągnąć sukces. A co najważniejsze, oferują najlepsze rabaty w branży.” - <strong>Vinod Gorasia, Menadżer ds. reklamy w firmie Agora Lifestyles</strong>."
 
 msgid "\"Third Party Provider(s)\" means the third party (non-affiliated) entity that makes available features and functions through use of the %1 API."
-msgstr "„Operator zewnętrzny\" to strona trzecia (nie powiązana z firmą), która udostępnia funkcje za pośrednictwem API %1."
+msgstr "„Operator zewnętrzny\" to strona trzecia (niepowiązana z firmą), która udostępnia funkcje za pośrednictwem API %1."
 
 msgid "$100,000 - $250,000"
 msgstr "100 000 $ – 250 000 $"
@@ -51,10 +51,8 @@ msgstr "%2 %1 zostało odjęte z Twojego konta wirtualnego %3"
 msgid "%1 Affiliate Program Terms and Conditions"
 msgstr "Regulamin programu partnerskiego %1"
 
-#, fuzzy
-#| msgid "%1 Affiliate Program Terms and Conditions"
 msgid "%1 Application Program Interface (\"API\") Terms and Conditions"
-msgstr "Regulamin programu partnerskiego %1"
+msgstr "Regulamin dot. interfejsu programistycznego aplikacji („API”) %1"
 
 msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
 msgstr "%1 Aby rozpocząć proces odzyskiwania hasła, kliknij na poniższy link. Jeśli potrzebujesz pomocy, skontaktuj się z naszym działem obsługi klienta."
@@ -192,7 +190,7 @@ msgid "%1 offers the world's financial markets in a simple, user-friendly platfo
 msgstr "%1 prezentuje świat rynków finansowych na jednej prostej i łatwej w obsłudze platformie konsumenckiej."
 
 msgid "%1 opens an office in the QSentral office building in central Kuala Lumpur to further expand its IT development team."
-msgstr ""
+msgstr "%1 otwiera biuro w centrum Kuala Lumpur w biurowcu QSentral, aby umożliwić dalszy rozwój swojego zespołu IT."
 
 msgid "%1 prices are benchmarked against the interbank options market, so you always get best-in-class prices for your trades."
 msgstr "Ceny %1 są zestawiane z cenami na rynku opcji międzybankowych, co oznacza, że zawsze otrzymujesz najbardziej korzystne ceny dla swoich zakładów."
@@ -286,7 +284,9 @@ msgstr "%ctx(minimalny czas trwania, na przykład minimum 15 sekund)min"
 msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
 msgstr "&#8220;%1 to jeden z naszych najbardziej zaufanych partnerów, z którym współpracujemy od wielu lat.&#8221;"
 
-msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide&#8221;"
+#, fuzzy
+#| msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide&#8221;"
+msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide.&#8221;"
 msgstr "&#8220;Korzystamy z portalu www.binary.com od 8 lat i polecamy go wszystkim naszym członkom na całym świecie.&#8221;"
 
 msgid "'<strong>Long</strong>' contracts generate profits when the index rises and loses when it falls."
@@ -1315,10 +1315,8 @@ msgstr "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas,
 msgid "Binary Bot released"
 msgstr "Bot Binary jest dostępny"
 
-#, fuzzy
-#| msgid "Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
 msgid "Binary Group Services Sdn Bhd, 30-10, Q Sentral, Jalan Stesen Sentral 2, 50470 Kuala Lumpur"
-msgstr "Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
+msgstr "Binary Group Services Sdn Bhd, 30-10, Q Sentral, Jalan Stesen Sentral 2, 50470 Kuala Lumpur"
 
 msgid "Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
 msgstr "Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
@@ -1335,10 +1333,8 @@ msgstr "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, 
 msgid "Binary Investments (Europe) Ltd, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156)."
 msgstr "Binary Investments (Europe) Ltd, Suite 2, Tower Road, Msida MSD1825, Malta. Podmiot świadczący usługi inwestycyjne kategorii 3, za którego licencję i nadzór odpowiada Urząd ds. Usług Finansowych: Malta Financial Services Authority na Malcie (licencja nr IS/70156)."
 
-#, fuzzy
-#| msgid "Binary granted Investment Services license"
 msgid "Binary KK granted Japan license"
-msgstr "Binary uzyskuje licencję na świadczenie usług inwestycyjnych"
+msgstr "Binary KK uzyskuje licencję na świadczenie usług w Japonii"
 
 msgid "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
 msgstr "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokio 150-0012, Japonia"
@@ -1390,7 +1386,7 @@ msgid "Binary trading is very simple."
 msgstr "Handel opcjami binarnymi jest bardzo prosty."
 
 msgid "Binary's Japanese subsidiary Binary KK is licensed by the KLFB as a Type 1 Financial Instruments Business in Japan."
-msgstr ""
+msgstr "Spółka zależna firmy Binary: Binary KK podlega licencji KLFB jako firma typu 1 prowadząca działalność w zakresie instrumentów finansowych w Japonii."
 
 msgid "Binary's Japanese subsidiary Binary KK opens an office in Tokyo and starts the process of applying for relevant licenses."
 msgstr "Spółka zależna firmy Binary, Binary KK, otwiera biuro w Tokio i rozpoczyna proces ubiegania się o odpowiednie licencje."
@@ -1954,7 +1950,7 @@ msgid "Customer Support"
 msgstr "Obsługa klienta"
 
 msgid "Cyberjaya Office"
-msgstr ""
+msgstr "Biuro w Cyberjaya"
 
 msgid "Daily Reset Indices"
 msgstr "Codzienne zerowanie wskaźników"
@@ -3793,7 +3789,9 @@ msgstr "Dołącz do naszego zespołu utalentowanych specjalistów. Współpracuj
 msgid "Join our team of bright, talented professionals. Work collaboratively with us to promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years."
 msgstr "Dołącz do naszego zespołu utalentowanych specjalistów. Współpracuj z nami w celu promowania naszej nowoczesnej platformy, która od ponad 15 lat jest jedną z najlepiej rozpoznawalnych platform w branży handlu opcjami binarnymi."
 
-msgid "Joshua Cavallaro <span> Markets And You Trader.</span>"
+#, fuzzy
+#| msgid "Joshua Cavallaro <span> Markets And You Trader.</span>"
+msgid "Joshua Cavallaro <span> Markets And You Trader</span>"
 msgstr "Joshua Cavallaro <span> Gracz na portalu Markets And You.</span>"
 
 msgid "Jul"
@@ -3836,7 +3834,7 @@ msgid "Knowledge of probability theory, stochastic calculus, numerical methods, 
 msgstr "Znajomość teorii prawdopodobieństwa, rachunku stochastycznego, metod numerycznych, symulacji Monte Carlo, równań różniczkowych, ekonometrii i modelowania statystycznego"
 
 msgid "Kuala Lumpur Office"
-msgstr ""
+msgstr "Biuro w Kuala Lumpur"
 
 msgid "Languages"
 msgstr "Języki"
@@ -3999,6 +3997,10 @@ msgstr "Dbanie o dokładność parametrów systemu wyceny"
 
 msgid "Maintain adequate speed and volume of output"
 msgstr "Dbanie o odpowiednią szybkość i wielkość danych wyjściowych"
+
+#, fuzzy
+msgid "Major Pairs"
+msgstr "Główne pary"
 
 msgid "Make a Deposit"
 msgstr "Wpłać środki"
@@ -4234,10 +4236,8 @@ msgstr "Nigdy nie użyte"
 msgid "New Password"
 msgstr "Nowe hasło"
 
-#, fuzzy
-#| msgid "Trade"
 msgid "New Trade"
-msgstr "Handluj"
+msgstr "Nowy zakład"
 
 msgid "New password"
 msgstr "Nowe hasło"
@@ -5779,7 +5779,7 @@ msgid "The Company may use or disclose (or choose not to use or disclose) such C
 msgstr "Firma może wykorzystywać lub ujawniać (lub nie wykorzystywać i nie ujawniać) taki Wkład w jakimkolwiek celu, w jakikolwiek sposób i za pośrednictwem wszystkich dostępnych na świecie mediów;"
 
 msgid "The Company may, from time to time, at its sole discretion, or as required by regulations in place to conduct appropriate \"Know Your Customer\" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and may at its sole discretion suspend an account until satisfactory identification information, evidence of identity and address, source of funds and/or source of wealth have been provided. Know Your Customer documentation will be required when a Client deposits money in the account. In the case of a client opening an account with Binary (Europe) Ltd, the threshold for verifying clients is on cumulative withdrawals of EUR 2,300."
-msgstr "Firma może, od czasu do czasu, według własnego uznania lub w związku z wymaganiami narzuconymi przez obowiązujące przepisy prawne, przeprowadzać tzw. procedury „Poznaj swojego klienta” i wymagać od  klienta przedstawienia dowodu tożsamości (np. poświadczoną notarialnie kopię paszportu lub innych środków weryfikacji tożsamości, jakie Firma uzna za wymagane w danych okolicznościach) i może, według własnego uznania, zawiesić konto, dopóki nie zostaną dostarczone zadawalające informacje pozwalające potwierdzić tożsamość, adres oraz źródło środków finansowych lub bogactwa. Dokumenty związane z procedurą „Poznaj swojego klienta” będą wymagane w przypadku wpłacenia przez Klienta środków na konto. W przypadku klientów, dla których Binary (Europe) Ltd otwiera konto, kwota progowa dla weryfikacji klientów wynosi 2 300 EUR łącznej kwoty wypłat."
+msgstr "Firma może, od czasu do czasu, według własnego uznania lub w związku z wymaganiami narzuconymi przez obowiązujące przepisy prawne, przeprowadzać tzw. procedury „Poznaj swojego klienta” i wymagać od  klienta przedstawienia dowodu tożsamości (np. poświadczoną notarialnie kopię paszportu lub innych środków weryfikacji tożsamości, jakie Firma uzna za wymagane w danych okolicznościach) i może, według własnego uznania, zawiesić konto, dopóki nie zostaną dostarczone zadowalające informacje pozwalające potwierdzić tożsamość, adres oraz źródło środków finansowych lub bogactwa. Dokumenty związane z procedurą „Poznaj swojego klienta” będą wymagane w przypadku wpłacenia przez Klienta środków na konto. W przypadku klientów, dla których Binary (Europe) Ltd otwiera konto, kwota progowa dla weryfikacji klientów wynosi 2 300 EUR łącznej kwoty wypłat."
 
 msgid "The Company provides the %1 API on an \"as is\" and \"as available\" basis with no warranties, either express or implied, of any kind. To the fullest extent permissible under applicable law, the Company disclaim any and all warranties and representations, including, without limitation, any implied warranties of merchantability, fitness for a particular purpose, title, accuracy of data, and non-infringement."
 msgstr "Firma dostarcza API %1 bez żadnych zobowiązań dotyczących jego formy i dostępności i nie udziela żadnych gwarancji, wyraźnych ani dorozumianych. W maksymalnym zakresie dopuszczanym przez prawo, Firma wyłącza wszelkie gwarancje i oświadczenia, w tym między innymi wszelkie dorozumiane gwarancje wartości handlowej, przydatności do określonego celu, dokładności danych, tytułu prawnego i nienaruszania praw osób trzecich."
@@ -6179,6 +6179,11 @@ msgstr "Ten bonus dostępny jest tylko dla nowych klientów. Obecni i dawni klie
 msgid "This bonus will be processed and credited to a client's account when:"
 msgstr "Bonus zostanie przetworzony i przyznany na konto klienta, gdy:"
 
+#, fuzzy
+#| msgid "This contract cannot be priced at the moment"
+msgid "This contract can not be traded in the final 2 minutes before settlement"
+msgstr "Ten kontrakt nie może być w tej chwili wyceniony"
+
 msgid "This contract has LOST"
 msgstr "Ten kontrakt PRZEGRAŁ."
 
@@ -6304,6 +6309,9 @@ msgstr "Aby zresetować hasło, w polu poniżej wprowadź adres e-mail podany pr
 
 msgid "Token"
 msgstr "Token"
+
+msgid "Total"
+msgstr "Całkowity"
 
 msgid "Total Cost"
 msgstr "Całkowity koszt"
@@ -6578,10 +6586,8 @@ msgstr "Wersja 41. Ostatnio zmieniana dnia 27.06.2016 r."
 msgid "View"
 msgstr "Widok"
 
-#, fuzzy
-#| msgid "Details"
 msgid "View Details"
-msgstr "Szczegóły"
+msgstr "Zobacz szczegóły"
 
 msgid "View Updated Portfolio"
 msgstr "Zobacz uaktualnione portfolio"
@@ -7284,9 +7290,6 @@ msgstr "Nie dasz się ograć"
 
 msgid "You'll be surprised by the returns you can make."
 msgstr "Zaskoczy Cię wysokość możliwych zysków."
-
-msgid "You'll find answers to most of your questions on the <a href='' target='_blank' id='faq_url'>FAQ</a> page."
-msgstr "Odpowiedź na większość pytań można znaleźć na stronie: <a href='' target='_blank' id='faq_url'>FAQ</a>."
 
 msgid "You're using a Virtual Account."
 msgstr "Korzystasz z konta z wirtualnymi pieniędzmi."
@@ -8278,36 +8281,35 @@ msgstr "{JAPAN ONLY}year"
 msgid "{JAPAN ONLY}years"
 msgstr "{JAPAN ONLY}years"
 
-msgid "{Japan Only}"
-msgstr ""
-
-#, fuzzy
-#| msgid "Japan website Download Text for Terms and Conditions Document"
 msgid "{Japan Only} Download Terms and Conditions Document file"
-msgstr "Japan website Download Text for Terms and Conditions Document"
+msgstr "{Japan Only} Download Terms and Conditions Document file"
 
 msgid "{Japan Only}Binary option specialist for over 15 years "
-msgstr ""
+msgstr "{Japan Only}Binary option specialist for over 15 years "
 
 msgid "{Japan Only}Fully licenced in Japan"
-msgstr ""
+msgstr "{Japan Only}Fully licenced in Japan"
 
 msgid "{Japan Only}Live chart tools"
-msgstr ""
+msgstr "{Japan Only}Live chart tools"
+
+msgid "{Japan Only}Payout from 1 to 10"
+msgstr "{Japan Only}Payout from 1 to 10"
 
 msgid "{Japan Only}Segregated Customer Account Balances are 100% Safe"
-msgstr ""
+msgstr "{Japan Only}Segregated Customer Account Balances are 100% Safe"
 
 msgid "{Japan Only}Trade all binary option types"
-msgstr ""
+msgstr "{Japan Only}Trade all binary option types"
 
 msgid "{Japan Only}Trade the major currencies"
-msgstr ""
+msgstr "{Japan Only}Trade the major currencies"
 
-#, fuzzy
-#| msgid "%1 is the award-winning industry pioneer in online options trading."
+msgid "{Japan Only}Two-way pricing"
+msgstr "{Japan Only}Two-way pricing"
+
 msgid "{Japan Only}Worldwide award-winning pioneer in FX binary options trading"
-msgstr "%1 jest utytułowanym pionierem rynku w branży handlu opcjami w internecie."
+msgstr "{Japan Only}Worldwide award-winning pioneer in FX binary options trading"
 
 msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 msgstr "Internetowa platforma handlowa umożliwiająca handel opcjami binarnymi różnego rodzaju: forex, wskaźniki, towary i inteligentne wskaźniki"
@@ -8362,6 +8364,9 @@ msgstr "Dane konta"
 
 msgid "Terms and Conditions Approval"
 msgstr "Akceptacja regulaminu"
+
+#~ msgid "You'll find answers to most of your questions on the <a href='' target='_blank' id='faq_url'>FAQ</a> page."
+#~ msgstr "Odpowiedź na większość pytań można znaleźć na stronie: <a href='' target='_blank' id='faq_url'>FAQ</a>."
 
 #~ msgid "%1 %2 (\"API\") Terms and Conditions"
 #~ msgstr "Warunki korzystania %1 %2 (\"API\")"
@@ -12129,10 +12134,6 @@ msgstr "Akceptacja regulaminu"
 #~ msgstr "Akcje francuskie"
 
 #, fuzzy
-#~ msgid "Major Pairs"
-#~ msgstr "Główne pary"
-
-#, fuzzy
 #~ msgid "The most widely traded and liquid forex pairs."
 #~ msgstr "Najczęściej sprzedawane i kupowane oraz płynne pary walut."
 
@@ -15831,10 +15832,6 @@ msgstr "Akceptacja regulaminu"
 #~ msgid "Sanofi"
 #~ msgstr "Sanofi"
 
-#~| msgid "Total Cost"
-#~ msgid "Total"
-#~ msgstr "Całkowity"
-
 #~ msgid "A recent (less than 3 months old) scanned copy of your paper utility bill, or your paper bank, credit union, building society, credit, or debit card statement, or passbook"
 #~ msgstr "Skan otrzymanego niedawno (w przeciągu ostatnich 3 miesięcy) rachunku za media w formie papierowej lub papierowego wyciągu z banku, firmy kredytowej, towarzystwa budowlanego lub z karty kredytowej bądź debetowej albo książeczki oszczędnościowej"
 
@@ -18562,9 +18559,6 @@ msgstr "Akceptacja regulaminu"
 
 #~ msgid "Quoting your loginID"
 #~ msgstr "Podanie Twojego loginu"
-
-#~ msgid "This contract cannot be priced at the moment"
-#~ msgstr "Ten kontrakt nie może być w tej chwili wyceniony"
 
 #~ msgid "<strong>Quote Feed Filter:</strong> Read about our <a href=\"%1\">data feed filtering</a> which may affect contract prices."
 #~ msgstr "<strong>Filtr aktualnych ofert:</strong> Zapoznaj się z informacjami na temat <a href=\"%1\">filtrowania aktualnych danych</a>, które może mieć wpływ na ceny kontraktów."

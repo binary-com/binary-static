@@ -299,7 +299,9 @@ msgstr "minimum duration, for example minimum 15 seconds)%ctx)دقيقة"
 msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
 msgstr "&#8220;Binary.com واحدة من أقدم وأوثق الشركاء الذين عملنا معهم. وقد عملنا معا لسنوات عديدة.&#8221;"
 
-msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide&#8221;"
+#, fuzzy
+#| msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide&#8221;"
+msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide.&#8221;"
 msgstr "&#8220;لقد استخدمنا www.binary.com لمدة 8 سنوات، وأوصي ببيناري لجميع أعضائنا حول العالم&#8221;"
 
 msgid "'<strong>Long</strong>' contracts generate profits when the index rises and loses when it falls."
@@ -4014,7 +4016,9 @@ msgstr "أنضم إلى فريقنا المشرق من المهنيين والم
 msgid "Join our team of bright, talented professionals. Work collaboratively with us to promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years."
 msgstr "أنضم إلى فريقنا المشرق من المهنيين والموهوبين. أعمل بالتعاون معنا لتعزيز وتشجيع منصة فائقة التكنولوجيا, والتي كانت من أكثر المنصات المعروفة في صناعة تداول الخيارات الثنائية لأكثر من 15 عام."
 
-msgid "Joshua Cavallaro <span> Markets And You Trader.</span>"
+#, fuzzy
+#| msgid "Joshua Cavallaro <span> Markets And You Trader.</span>"
+msgid "Joshua Cavallaro <span> Markets And You Trader</span>"
 msgstr "جوشوا كافالارو <span> Markets And You Trader.</span>"
 
 msgid "Jul"
@@ -4220,6 +4224,9 @@ msgstr "الحفاظ على نظام دقيق لعوامل التسعير"
 
 msgid "Maintain adequate speed and volume of output"
 msgstr "الاحتفاظ بالسرعة المناسبة، وحجم الإنتاج"
+
+msgid "Major Pairs"
+msgstr "الأزواج الرئيسية"
 
 msgid "Make a Deposit"
 msgstr "قم بعمل إيداع"
@@ -6512,6 +6519,11 @@ msgstr "هذه المكافأة متاحة للعملاء الجدد فقط. ا�
 msgid "This bonus will be processed and credited to a client's account when:"
 msgstr "سيتم معالجة هذه المكافأة واضافتها إلى حساب العميل في الحالات التالية:"
 
+#, fuzzy
+#| msgid "This contract cannot be priced at the moment"
+msgid "This contract can not be traded in the final 2 minutes before settlement"
+msgstr "لا يمكن تسعير هذا العقد فى الوقت الحالى"
+
 msgid "This contract has LOST"
 msgstr "لقد فقدت هذا العقد"
 
@@ -6658,6 +6670,11 @@ msgstr "لإعادة تعيين كلمة المرور الخاصة بك، يرج
 
 msgid "Token"
 msgstr "رمز"
+
+#, fuzzy
+#| msgid "Total Cost"
+msgid "Total"
+msgstr "التكلفة الإجمالية"
 
 msgid "Total Cost"
 msgstr "التكلفة الإجمالية"
@@ -7726,11 +7743,6 @@ msgstr "لن تفقد أموالك"
 #| msgid "You’ll be surprised by the returns you can make."
 msgid "You'll be surprised by the returns you can make."
 msgstr "ستفاجئك العوائد التي يمكن أن تربحها."
-
-#, fuzzy
-#| msgid "You'll find answers to most of your questions on the <a href='%1' target='_blank'>FAQ</a> page."
-msgid "You'll find answers to most of your questions on the <a href='' target='_blank' id='faq_url'>FAQ</a> page."
-msgstr "ستجد إجابات عن معظم أسئلتك على صفحة <a href='%1' target='_blank'>أسئلة متكررة</a>."
 
 msgid "You're using a Virtual Account."
 msgstr "أنت تستخدم حساب افتراضي."
@@ -8830,9 +8842,6 @@ msgstr "{JAPAN ONLY}Units"
 msgid "{JAPAN ONLY}years"
 msgstr "{JAPAN ONLY}Units"
 
-msgid "{Japan Only}"
-msgstr ""
-
 #, fuzzy
 #| msgid "Japan website Download Text for Terms and Conditions Document"
 msgid "{Japan Only} Download Terms and Conditions Document file"
@@ -8847,6 +8856,9 @@ msgstr ""
 msgid "{Japan Only}Live chart tools"
 msgstr ""
 
+msgid "{Japan Only}Payout from 1 to 10"
+msgstr ""
+
 msgid "{Japan Only}Segregated Customer Account Balances are 100% Safe"
 msgstr ""
 
@@ -8855,6 +8867,11 @@ msgstr ""
 
 msgid "{Japan Only}Trade the major currencies"
 msgstr ""
+
+#, fuzzy
+#| msgid "2-way pricing"
+msgid "{Japan Only}Two-way pricing"
+msgstr "سعر ثنائى الاتجاه"
 
 #, fuzzy
 #| msgid "%1 is the award-winning industry pioneer in online options trading."
@@ -8928,6 +8945,11 @@ msgstr "تفاصيل الحساب"
 
 msgid "Terms and Conditions Approval"
 msgstr "لموافقة على الشروط والأحكام"
+
+#, fuzzy
+#~| msgid "You'll find answers to most of your questions on the <a href='%1' target='_blank'>FAQ</a> page."
+#~ msgid "You'll find answers to most of your questions on the <a href='' target='_blank' id='faq_url'>FAQ</a> page."
+#~ msgstr "ستجد إجابات عن معظم أسئلتك على صفحة <a href='%1' target='_blank'>أسئلة متكررة</a>."
 
 #~ msgid "%1 %2 (\"API\") Terms and Conditions"
 #~ msgstr "1% 2% (\"واجهة برمجة التطبيقات\") الشروط والأحكام"
@@ -12814,9 +12836,6 @@ msgstr "لموافقة على الشروط والأحكام"
 #~ msgid "French Stocks"
 #~ msgstr "بورصات الفرنسية"
 
-#~ msgid "Major Pairs"
-#~ msgstr "الأزواج الرئيسية"
-
 #~ msgid "The most widely traded and liquid forex pairs."
 #~ msgstr "أزواج العملات الأكثر تداولاً والأكثر سيولة."
 
@@ -16383,11 +16402,6 @@ msgstr "لموافقة على الشروط والأحكام"
 #~ msgid "You can fund your account with a minimum of &#36;/&pound;/&euro; 5 via any of the methods."
 #~ msgstr "يمكنك أن تمول حسابك بحد أدنى 5 دولار أو يورو أو جنيه استرلينى عبر أى وسيلة."
 
-#, fuzzy
-#~| msgid "Total Cost"
-#~ msgid "Total"
-#~ msgstr "التكلفة الإجمالية"
-
 #~ msgid "A recent (less than 3 months old) scanned copy of your paper utility bill, or your paper bank, credit union, building society, credit, or debit card statement, or passbook"
 #~ msgstr "صورة حديثة (أقل من 3 شهور) لفاتورة استهلاك ورقية خاصة بك أو ورقة مصرفية أو اتحاد ائتماني أو شركة عقارية أو كشف حساب بطاقتك الائتمانية أو بطاقة الخصم أو دفتر التوفير"
 
@@ -19177,9 +19191,6 @@ msgstr "لموافقة على الشروط والأحكام"
 
 #~ msgid "Quoting your loginID"
 #~ msgstr "نقل معرف الدخول الخاص بك"
-
-#~ msgid "This contract cannot be priced at the moment"
-#~ msgstr "لا يمكن تسعير هذا العقد فى الوقت الحالى"
 
 #~ msgid "<strong>Quote Feed Filter:</strong> Read about our <a href=\"%1\">data feed filtering</a> which may affect contract prices."
 #~ msgstr "<strong>اقتبس مرشح البيانات:</strong>إقرا عن<a href=\"%1\">ترشيح خلاصة البيانات</a> التى يمكن أن تؤثر على أسعار العقود. "

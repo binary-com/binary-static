@@ -40,7 +40,7 @@ var PortfolioWS =  (function() {
                 '<td class="details">' + longCode + '</td>' +
                 '<td class="purchase"><strong>' + format_money(data.currency, data.buy_price) + '</strong></td>' +
                 '<td class="indicative"><strong class="indicative_price">' + format_money(data.currency, '--.--') + '</strong></td>' +
-                '<td class="button"><button class="button open_contract_detailsws" contract_id="' + data.contract_id + '">' + text.localize('View') + '</button></td>' +
+                '<td class="button"><button class="button open_contract_detailsws" contract_id="' + data.contract_id + '">' + page.text.localize('View') + '</button></td>' +
             '</tr>' +
             '<tr class="tr-desc ' + new_class + ' ' + data.contract_id + '">' +
                 '<td colspan="6">' + longCode + '</td>' +
@@ -138,7 +138,7 @@ var PortfolioWS =  (function() {
             removeContract(proposal.contract_id);
         } else {
             if(proposal.is_valid_to_sell != 1) {
-                no_resale_html = '<span>' + text.localize('Resale not offered') + '</span>';
+                no_resale_html = '<span>' + page.text.localize('Resale not offered') + '</span>';
                 $td.addClass("no_resale");
             }
             else {
@@ -234,3 +234,7 @@ var PortfolioWS =  (function() {
     };
 
 })();
+
+module.exports = {
+    PortfolioWS: PortfolioWS,
+};

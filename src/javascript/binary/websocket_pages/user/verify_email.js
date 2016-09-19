@@ -45,3 +45,7 @@ function submit_email() {
         BinarySocket.send({verify_email: email, type: 'account_opening'});
     }
 }
+
+module.exports = {
+    submit_email: submit_email,
+};

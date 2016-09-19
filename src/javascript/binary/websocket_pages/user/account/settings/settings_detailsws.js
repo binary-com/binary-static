@@ -58,7 +58,7 @@ var SettingsDetailsWS = (function() {
         if (page.client.residence === 'jp') {
             var jpData = response.get_settings.jp_settings;
             $('#lblName').text((data.last_name || ''));
-            $('#lblGender').text(text.localize(jpData.gender) || '');
+            $('#lblGender').text(page.text.localize(jpData.gender) || '');
             $('#lblAddress1').text(data.address_line_1 || '');
             $('#lblAddress2').text(data.address_line_2 || '');
             $('#lblCity').text(data.address_city || '');
@@ -157,7 +157,7 @@ var SettingsDetailsWS = (function() {
             return $(s).val().trim();
         }
         setDetails(toJPSettings({
-            hedgeAssetAmount       : data.hedge_asset_amount,
+            hedgeAssetAmount       : trim('#HedgeAssetAmount'),
             annualIncome           : trim('#AnnualIncome'),
             financialAsset         : trim('#FinancialAsset'),
             occupation             : trim('#Occupation'),
@@ -175,13 +175,17 @@ var SettingsDetailsWS = (function() {
 
     function getJPSchema(data) {
         var V2 = ValidateV2;
-        return {
-            hedge_asset_amount: [
-                function(v) { return dv.ok(v.trim()); },
-                V2.required,
-                V2.regex(/^\d+$/, [Content.localize().textNumbers]),
-            ],
-        };
+        if (/Hedging/.test($('#PurposeOfTrading').val())) {
+            return {
+                hedge_asset_amount: [
+                    function(v) { return dv.ok(v.trim()); },
+                    V2.required,
+                    V2.regex(/^\d+$/, [Content.localize().textNumbers]),
+                ]
+            };
+        } else {
+            return true;
+        }
     }
 
     function submitNonJP(data) {
@@ -197,11 +201,11 @@ var SettingsDetailsWS = (function() {
             comma   = Content.localize().textComma;
 
         var V2 = ValidateV2;
-        var isAddress  = V2.regex(/^[a-zA-Z0-9\s\,\.\-\/\(\)#']+$/, [letters, numbers, space, period, comma, '- / ( ) # \'']);
-        var isCity     = isAddress;
-        var isState    = V2.regex(/^[a-zA-Z\s\-']+$/,               [letters, space, '- \'']);
-        var isPostcode = V2.regex(/^[\w\s-]+$/,                     [letters, numbers, space, '-']);
-        var isPhoneNo  = V2.regex(/^(|\+?[0-9\s\-]+)$/,             [numbers, space, '-']);
+        var isAddress  = V2.regex(/^[^~!#$%^&*)(_=+\[}{\]\\\"\;\:\?\><\|]+$/, [letters, numbers, space, period, comma, '- . / @ \' ']);
+        var isCity     = V2.regex(/^[^~!@#$%^&*)(_=+\[\}\{\]\\\/\"\;\:\?\><\,\|\d]+$/, [letters, space, '- . \' ']);
+        var isState    = V2.regex(/^[^~!@#$%^&*)(_=+\[\}\{\]\\\/\"\;\:\?\><\|]+$/,     [letters, numbers, space, comma, '- . \'']);
+        var isPostcode = V2.regex(/^[\w\s-]+$/,                      [letters, numbers, space, '-']);
+        var isPhoneNo  = V2.regex(/^(|\+?[0-9\s\-]+)$/,              [numbers, space, '-']);
 
         function maybeEmptyAddress(value) {
             return value.length ? isAddress(value) : dv.ok(value);
@@ -222,14 +226,13 @@ var SettingsDetailsWS = (function() {
         Object.keys(data).forEach(function(key) {
             req[key] = data[key];
         });
-        console.log(req);
         BinarySocket.send(req);
     }
 
     function showFormMessage(msg, isSuccess) {
         $('#formMessage')
             .attr('class', isSuccess ? 'success-msg' : 'errorfield')
-            .html(isSuccess ? '<ul class="checked"><li>' + text.localize(msg) + '</li></ul>' : text.localize(msg))
+            .html(isSuccess ? '<ul class="checked"><li>' + page.text.localize(msg) + '</li></ul>' : page.text.localize(msg))
             .css('display', 'block')
             .delay(5000)
             .fadeOut(1000);
@@ -289,3 +292,7 @@ pjax_config_page_require_auth("settings/detailsws", function() {
         }
     };
 });
+
+module.exports = {
+    SettingsDetailsWS: SettingsDetailsWS,
+};

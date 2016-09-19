@@ -286,7 +286,9 @@ msgstr "%ctx(duración mínima, por ejemplo min 15 segundos)min"
 msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
 msgstr "&#8220;%1 es uno de los colaboradores más antiguos y de confianza que hemos tenido. Hemos trabajado juntos durante muchos años.&#8221;"
 
-msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide&#8221;"
+#, fuzzy
+#| msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide&#8221;"
+msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide.&#8221;"
 msgstr "&#8220;Hemos utilizado www.binary.com durante los últimos 8 años y recomendamos esta web de opciones binarias a nuestros miembros en todo el mundo&#8221;"
 
 msgid "'<strong>Long</strong>' contracts generate profits when the index rises and loses when it falls."
@@ -3831,7 +3833,9 @@ msgstr "Únase a nuestro equipo de profesionales brillantes y talentosos. Trabaj
 msgid "Join our team of bright, talented professionals. Work collaboratively with us to promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years."
 msgstr "Únase a nuestro equipo de profesionales brillantes y talentosos. Trabaje en colaboración con nosotros para promover una plataforma de alta tecnología que es una de las más reconocidas en la industria del comercio con opciones binarias desde hace más de 15 años."
 
-msgid "Joshua Cavallaro <span> Markets And You Trader.</span>"
+#, fuzzy
+#| msgid "Joshua Cavallaro <span> Markets And You Trader.</span>"
+msgid "Joshua Cavallaro <span> Markets And You Trader</span>"
 msgstr "Joshua Cavallaro <span> Markets And You Trader.</span>"
 
 msgid "Jul"
@@ -4037,6 +4041,9 @@ msgstr "Mantener los parámetros precisos de fijación de precios del sistema"
 
 msgid "Maintain adequate speed and volume of output"
 msgstr "Mantener la velocidad y el volumen de salida adecuados"
+
+msgid "Major Pairs"
+msgstr "Pares mayores"
 
 msgid "Make a Deposit"
 msgstr "Haga un depósito"
@@ -6229,6 +6236,11 @@ msgstr "Esta bonificación solo está disponible para clientes nuevos. No se apl
 msgid "This bonus will be processed and credited to a client's account when:"
 msgstr "Este bono será procesado y acreditado a la cuenta de un cliente cuando:"
 
+#, fuzzy
+#| msgid "This contract cannot be priced at the moment"
+msgid "This contract can not be traded in the final 2 minutes before settlement"
+msgstr "Por el momento no es posible valuar este contrato"
+
 msgid "This contract has LOST"
 msgstr "Este contrato ha PERDIDO"
 
@@ -6356,6 +6368,9 @@ msgstr "Para restablecer su contraseña, introduzca la dirección de correo elec
 
 msgid "Token"
 msgstr "Token"
+
+msgid "Total"
+msgstr "Total"
 
 msgid "Total Cost"
 msgstr "Coste total"
@@ -7342,9 +7357,6 @@ msgstr "No pierda su dinero"
 
 msgid "You'll be surprised by the returns you can make."
 msgstr "Le sorprenderá el rendimiento que puede conseguir."
-
-msgid "You'll find answers to most of your questions on the <a href='' target='_blank' id='faq_url'>FAQ</a> page."
-msgstr "Encontrará la mayoría de las respuestas a sus preguntas en la página de <a href='' target='_blank' id='faq_url'>Preguntas Frecuentes</a>."
 
 msgid "You're using a Virtual Account."
 msgstr "Está usando su cuenta de dinero virtual."
@@ -8346,9 +8358,6 @@ msgstr "{JAPAN ONLY}year"
 msgid "{JAPAN ONLY}years"
 msgstr "{JAPAN ONLY}years"
 
-msgid "{Japan Only}"
-msgstr ""
-
 #, fuzzy
 #| msgid "Japan website Download Text for Terms and Conditions Document"
 msgid "{Japan Only} Download Terms and Conditions Document file"
@@ -8363,6 +8372,9 @@ msgstr ""
 msgid "{Japan Only}Live chart tools"
 msgstr ""
 
+msgid "{Japan Only}Payout from 1 to 10"
+msgstr ""
+
 msgid "{Japan Only}Segregated Customer Account Balances are 100% Safe"
 msgstr ""
 
@@ -8371,6 +8383,11 @@ msgstr ""
 
 msgid "{Japan Only}Trade the major currencies"
 msgstr ""
+
+#, fuzzy
+#| msgid "2-way pricing"
+msgid "{Japan Only}Two-way pricing"
+msgstr "Valorización de contrato en 2 direcciones"
 
 #, fuzzy
 #| msgid "%1 is the award-winning industry pioneer in online options trading."
@@ -8430,6 +8447,9 @@ msgstr "Detalles de la cuenta"
 
 msgid "Terms and Conditions Approval"
 msgstr "Acuerdo con los términos y condiciones"
+
+#~ msgid "You'll find answers to most of your questions on the <a href='' target='_blank' id='faq_url'>FAQ</a> page."
+#~ msgstr "Encontrará la mayoría de las respuestas a sus preguntas en la página de <a href='' target='_blank' id='faq_url'>Preguntas Frecuentes</a>."
 
 #~ msgid "%1 %2 (\"API\") Terms and Conditions"
 #~ msgstr "%1 %2 (\"API\") Términos y condiciones"
@@ -12156,9 +12176,6 @@ msgstr "Acuerdo con los términos y condiciones"
 #~ msgid "French Stocks"
 #~ msgstr "Acciones Francia"
 
-#~ msgid "Major Pairs"
-#~ msgstr "Pares mayores"
-
 #~ msgid "The most widely traded and liquid forex pairs."
 #~ msgstr "Los pares de divisas más negociadas y líquidas."
 
@@ -15759,10 +15776,6 @@ msgstr "Acuerdo con los términos y condiciones"
 #~ msgid "Sanofi"
 #~ msgstr "Sanofi"
 
-#~| msgid "Total Cost"
-#~ msgid "Total"
-#~ msgstr "Total"
-
 #~ msgid "A recent (less than 3 months old) scanned copy of your paper utility bill, or your paper bank, credit union, building society, credit, or debit card statement, or passbook"
 #~ msgstr "Una reciente (menos de 3 meses de edad) copia escaneada de su factura de servicios públicos en papel, un extracto bancario o de la tarjeta de débito/crédito o de la libreta de ahorros"
 
@@ -18557,9 +18570,6 @@ msgstr "Acuerdo con los términos y condiciones"
 
 #~ msgid "Quoting your loginID"
 #~ msgstr "Cotizando su loginID"
-
-#~ msgid "This contract cannot be priced at the moment"
-#~ msgstr "Por el momento no es posible valuar este contrato"
 
 #~ msgid "<strong>Quote Feed Filter:</strong> Read about our <a href=\"%1\">data feed filtering</a> which may affect contract prices."
 #~ msgstr "<strong>Filtro del flujo de cotizaciones:</strong> Lea sobre nuestro <a href=\"%1\">filtrado del flujo de datos</a> que podría afectar a los precios de los contratos."

@@ -7,7 +7,7 @@ sub all_pages {
     return (
         # url pathname,                template file path,             layout,       title,        exclude languages
         ['home',                       'home/index',                   'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices'],
-        ['404',                        'static/404',                   'default',    '404'],
+        ['404',                        'static/404',                   'full_width', '404'],
         ['why-us',                     'static/why_us',                'full_width', 'Why Us'],
         ['tour',                       'static/tour',                  'full_width', 'Tour'],
         ['responsible-trading',        'static/responsible_trading',   'full_width', 'Responsible Trading', 'ja'],
@@ -70,9 +70,9 @@ sub all_pages {
         ['new_account/maltainvestws',    'new_account/maltainvestws',   'default', 'Financial Account Opening'],
         ['new_account/knowledge_testws', 'japan/knowledge_test',        'default', 'Real Money Account Opening'],
 
-        ['resources',                'resources/index',           'default', 'Resources'],
-        ['resources/asset_indexws',  'resources/asset_indexws',   'default', 'Asset Index', 'ja'],
-        ['resources/market_timesws', 'resources/market_timesws',  'default', 'Trading Times'],
+        ['resources',                'resources/index',           'default', 'Resources',     'ja'],
+        ['resources/asset_indexws',  'resources/asset_indexws',   'default', 'Asset Index',   'ja'],
+        ['resources/market_timesws', 'resources/market_timesws',  'default', 'Trading Times', 'ja'],
 
         ['user/security/api_tokenws',       'user/security/api_tokenws',                      'default', 'API Token',               'ja'],
         ['user/security/change_passwordws', 'user/security/change_passwordws',                'default', 'Change Password'],

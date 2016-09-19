@@ -22,10 +22,10 @@ var ForwardWS = (function() {
     var cashier_type;
     if (/withdraw/.test(window.location.hash)) {
       cashier_type = 'withdraw';
-      document.getElementById('deposit-withdraw-heading').innerHTML = text.localize('Withdraw');
+      document.getElementById('deposit-withdraw-heading').innerHTML = page.text.localize('Withdraw');
     } else if (/deposit/.test(window.location.hash)) {
       cashier_type = 'deposit';
-      document.getElementById('deposit-withdraw-heading').innerHTML = text.localize('Deposit');
+      document.getElementById('deposit-withdraw-heading').innerHTML = page.text.localize('Deposit');
     }
     return cashier_type;
   }
@@ -46,7 +46,7 @@ var ForwardWS = (function() {
     if (id) {
       $('#deposit-withdraw-error #' + id).show();
     } else {
-      $('#custom-error').html(error || text.localize('Sorry, an error occurred while processing your request.')).show();
+      $('#custom-error').html(error || page.text.localize('Sorry, an error occurred while processing your request.')).show();
     }
     $('#deposit-withdraw-error').show();
   }
@@ -70,7 +70,7 @@ pjax_config_page_require_auth("cashier/forwardws", function() {
         onLoad: function() {
           function check_virtual() {
             if (page.client.is_virtual()) {
-              ForwardWS.showError(text.localize('This feature is not relevant to virtual-money accounts.'));
+              ForwardWS.showError(page.text.localize('This feature is not relevant to virtual-money accounts.'));
             }
             return page.client.is_virtual();
           }
@@ -126,7 +126,7 @@ pjax_config_page_require_auth("cashier/forwardws", function() {
                           email:    'Email address'
                         };
                       }
-                      var errMsg = template($('#' + msgID).html(), [text.localize(error.details ? errorFields[error.details] : 'details')]);
+                      var errMsg = template($('#' + msgID).html(), [page.text.localize(error.details ? errorFields[error.details] : 'details')]);
                       $('#' + msgID).html(errMsg);
                       ForwardWS.showMessage(msgID);
                     } else if (error.code && error.code === 'ASK_UK_FUNDS_PROTECTION') {
@@ -148,7 +148,7 @@ pjax_config_page_require_auth("cashier/forwardws", function() {
                 }
               }
             });
-            if (!sessionStorage.getItem('client_status')) {
+            if (sessionStorage.getItem('client_status') === null) {
                 BinarySocket.send({"get_account_status": "1", "passthrough":{"dispatch_to":"ForwardWS"}});
             }
             else if (
@@ -161,3 +161,7 @@ pjax_config_page_require_auth("cashier/forwardws", function() {
         }
     };
 });
+
+module.exports = {
+    ForwardWS: ForwardWS,
+};

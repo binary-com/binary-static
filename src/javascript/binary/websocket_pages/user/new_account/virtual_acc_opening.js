@@ -29,7 +29,7 @@ pjax_config_page("new_account/virtualws", function() {
     function onPasswordError(res) {
         var $error = $('#error-account-opening');
         $error.css({display: 'block'})
-            .text(text.localize('Password is not strong enough.'));
+            .text(page.text.localize('Password is not strong enough.'));
     }
 
     function configureSocket() {
@@ -47,6 +47,7 @@ pjax_config_page("new_account/virtualws", function() {
         Content.populate();
         handle_residence_state_ws();
         BinarySocket.send({residence_list: 1});
+        BinarySocket.send({website_status: 1});
 
         var form = $('#virtual-form')[0];
         if (!form) return;
@@ -69,7 +70,7 @@ pjax_config_page("new_account/virtualws", function() {
                 var data = info.values;
                 VirtualAccOpeningData.newAccount({
                     password:  data.password,
-                    residence: data.residence,
+                    residence: (japanese_client() ? 'jp' : data.residence),
                     verification_code: data['verification-code'],
                 });
             },

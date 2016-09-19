@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Portuguese (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-09-05 18:09+0000\n"
+"PO-Revision-Date: 2016-09-10 02:40+0000\n"
 "Last-Translator: Alcino Jorge <alcino@binary.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/binary/static/pt/>\n"
 "Language: pt\n"
@@ -46,10 +46,8 @@ msgstr "%1 %2 foram creditados na sua conta de dinheiro Virtual %3"
 msgid "%1 Affiliate Program Terms and Conditions"
 msgstr "Termos e condições do programa de afiliados %1"
 
-#, fuzzy
-#| msgid "%1 Affiliate Program Terms and Conditions"
 msgid "%1 Application Program Interface (\"API\") Terms and Conditions"
-msgstr "Termos e condições do programa de afiliados %1"
+msgstr "Termos e condições da Application Program Interface (\"API\") %1"
 
 msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
 msgstr "%1 Clique no link abaixo para reiniciar o processo de recuperação de senha. Caso você necessite de assistência adicional, contate o Apoio ao Cliente."
@@ -283,7 +281,9 @@ msgstr "%ctx(duração mínima, por exemplo um mínimo de 15 segundos)min"
 msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
 msgstr "&#8220;A %1 é um dos parceiros mais antigos e confiáveis que nós temos. Nós trabalhamos juntos há muitos anos.&#8221;"
 
-msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide&#8221;"
+#, fuzzy
+#| msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide&#8221;"
+msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide.&#8221;"
 msgstr "&#8220;Nós temos usado a www.binary.com nos ultimos 8 anos e recomendamos a binary para todos os nossos membros no mundo inteiro&#8221;"
 
 msgid "'<strong>Long</strong>' contracts generate profits when the index rises and loses when it falls."
@@ -3825,7 +3825,9 @@ msgstr "Junte-se à nossa equipe de profissionais inteligentes e talentosos. Tra
 msgid "Join our team of bright, talented professionals. Work collaboratively with us to promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years."
 msgstr "Junte-se à nossa equipe de profissionais inteligentes e talentosos. Trabalhe em colaboração conosco para promover uma plataforma de alta tecnologia que tem sido uma das mais reconhecidas na indústria de negociação de opções binárias há mais de 15 anos."
 
-msgid "Joshua Cavallaro <span> Markets And You Trader.</span>"
+#, fuzzy
+#| msgid "Joshua Cavallaro <span> Markets And You Trader.</span>"
+msgid "Joshua Cavallaro <span> Markets And You Trader</span>"
 msgstr "Joshua Cavallaro <span> Negociador da Markets And You.</span>"
 
 msgid "Jul"
@@ -4031,6 +4033,9 @@ msgstr "Manter parâmetros precisos de tarifação do sistema"
 
 msgid "Maintain adequate speed and volume of output"
 msgstr "Manter velocidade e volume adequados de produção"
+
+msgid "Major Pairs"
+msgstr "Pares Principais"
 
 msgid "Make a Deposit"
 msgstr "Faça um Depósito"
@@ -6221,6 +6226,11 @@ msgstr "Este bônus está disponível apenas para novos clientes. Os clientes j�
 msgid "This bonus will be processed and credited to a client's account when:"
 msgstr "Este bônus será processado e creditado na conta do cliente quando:"
 
+#, fuzzy
+#| msgid "This contract cannot be priced at the moment"
+msgid "This contract can not be traded in the final 2 minutes before settlement"
+msgstr "Não é possível atribuir um preço a este contrato no momento"
+
 msgid "This contract has LOST"
 msgstr "Este contrato PERDEU"
 
@@ -6348,6 +6358,11 @@ msgstr "Para redefinir a sua senha, por favor digite o endereço de e-mail com o
 
 msgid "Token"
 msgstr "Token"
+
+#, fuzzy
+#| msgid "Total Cost"
+msgid "Total"
+msgstr "Custo Total"
 
 msgid "Total Cost"
 msgstr "Custo Total"
@@ -7334,9 +7349,6 @@ msgstr "Não perca tudo"
 
 msgid "You'll be surprised by the returns you can make."
 msgstr "Você ficará surpreendido pelos possíveis grandes retornos."
-
-msgid "You'll find answers to most of your questions on the <a href='' target='_blank' id='faq_url'>FAQ</a> page."
-msgstr "Você encontrará respostas para a maioria de suas perguntas na página <a href='' target='_blank' id='faq_url'>Perguntas frequentes</a>."
 
 msgid "You're using a Virtual Account."
 msgstr "Você está usando uma conta virtual."
@@ -8330,9 +8342,6 @@ msgstr "{JAPAN ONLY}year"
 msgid "{JAPAN ONLY}years"
 msgstr "{JAPAN ONLY}years"
 
-msgid "{Japan Only}"
-msgstr ""
-
 #, fuzzy
 #| msgid "Japan website Download Text for Terms and Conditions Document"
 msgid "{Japan Only} Download Terms and Conditions Document file"
@@ -8347,6 +8356,9 @@ msgstr ""
 msgid "{Japan Only}Live chart tools"
 msgstr ""
 
+msgid "{Japan Only}Payout from 1 to 10"
+msgstr ""
+
 msgid "{Japan Only}Segregated Customer Account Balances are 100% Safe"
 msgstr ""
 
@@ -8355,6 +8367,11 @@ msgstr ""
 
 msgid "{Japan Only}Trade the major currencies"
 msgstr ""
+
+#, fuzzy
+#| msgid "2-way pricing"
+msgid "{Japan Only}Two-way pricing"
+msgstr "Preços bidirecionais"
 
 #, fuzzy
 #| msgid "%1 is the award-winning industry pioneer in online options trading."
@@ -8414,6 +8431,9 @@ msgstr "Detalhes da Conta"
 
 msgid "Terms and Conditions Approval"
 msgstr "Aprovação dos termos e condições"
+
+#~ msgid "You'll find answers to most of your questions on the <a href='' target='_blank' id='faq_url'>FAQ</a> page."
+#~ msgstr "Você encontrará respostas para a maioria de suas perguntas na página <a href='' target='_blank' id='faq_url'>Perguntas frequentes</a>."
 
 #~ msgid "%1 %2 (\"API\") Terms and Conditions"
 #~ msgstr "Termos e Condições"
@@ -12156,9 +12176,6 @@ msgstr "Aprovação dos termos e condições"
 #~ msgid "French Stocks"
 #~ msgstr "Ações Francesas"
 
-#~ msgid "Major Pairs"
-#~ msgstr "Pares Principais"
-
 #~ msgid "The most widely traded and liquid forex pairs."
 #~ msgstr "Os pares de câmbio mais amplamente negociados e liquidados."
 
@@ -15630,11 +15647,6 @@ msgstr "Aprovação dos termos e condições"
 #~ msgid "You can fund your account with a minimum of &#36;/&pound;/&euro; 5 via any of the methods."
 #~ msgstr "Você pode financiar a sua conta com um mínimo de &#36;/&pound;/&euro; 5 por meio de qualquer um dos métodos."
 
-#, fuzzy
-#~| msgid "Total Cost"
-#~ msgid "Total"
-#~ msgstr "Custo Total"
-
 #~ msgid "A recent (less than 3 months old) scanned copy of your paper utility bill, or your paper bank, credit union, building society, credit, or debit card statement, or passbook"
 #~ msgstr "Um cópia digitalizada de sua conta de luz recente (menos de 3 meses), ou uma conta do seu banco, cooperativa de crédito, sociedade de crédito ou fatura de cartão de débito ou caderneta"
 
@@ -18420,9 +18432,6 @@ msgstr "Aprovação dos termos e condições"
 
 #~ msgid "Quoting your loginID"
 #~ msgstr "Refira o seu ID de início de sessão"
-
-#~ msgid "This contract cannot be priced at the moment"
-#~ msgstr "Não é possível atribuir um preço a este contrato no momento"
 
 #~ msgid "<strong>Quote Feed Filter:</strong> Read about our <a href=\"%1\">data feed filtering</a> which may affect contract prices."
 #~ msgstr "<strong>Filtro de Feed de Cotações:</strong> Leia sobre a nossa <a href=\"%1\"> filtragem de feeds de dados</a>, a qual pode afetar os preços dos contratos."

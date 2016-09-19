@@ -34,7 +34,7 @@ Store.prototype = {
       },
 };
 
-var InScriptStore = function(object) { 
+var InScriptStore = function(object) {
     this.store = typeof object !== 'undefined' ? object : {};
 };
 
@@ -118,9 +118,10 @@ Localizable.prototype = {
     }
 };
 
-// for testing
-if (typeof module !== 'undefined') {
-    module.exports = {
-        Localizable: Localizable
-    };
-}
+module.exports = {
+    isStorageSupported: isStorageSupported,
+    Store: Store,
+    InScriptStore: InScriptStore,
+    CookieStorage: CookieStorage,
+    Localizable: Localizable,
+};

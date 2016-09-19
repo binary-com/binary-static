@@ -39,7 +39,7 @@ var Purchase_Beta = (function () {
             container.style.display = 'block';
             message_container.hide();
             confirmation_error.show();
-            confirmation_error_contents.innerHTML = (/ClientUnwelcome/.test(error.code) ? error['message'] + '<a class="pjaxload" href="' + page.url.url_for('user/authenticatews') + '"> ' + text.localize('Authorise your account.' + '</a>') : error['message']);
+            confirmation_error_contents.innerHTML = (/ClientUnwelcome/.test(error.code) ? error['message'] + '<a class="pjaxload" href="' + page.url.url_for('user/authenticatews') + '"> ' + page.text.localize('Authorise your account.' + '</a>') : error['message']);
         } else {
             var guideBtn = document.getElementById('guideBtn');
             if(guideBtn) {
@@ -49,7 +49,7 @@ var Purchase_Beta = (function () {
             message_container.show();
             confirmation_error.hide();
 
-            $('#contract-values > div > div').each(function() {
+            $('#contract-values td').each(function() {
                 $(this).text('').removeAttr('class', '');
             });
             brief.textContent = $('#underlying option:selected').text() + ' / ' +
@@ -82,6 +82,9 @@ var Purchase_Beta = (function () {
             }
             profit_value = Math.round((payout_value - cost_value)*100)/100;
 
+            chart.hide();
+            spots.hide();
+
             if(is_spread){
                 label_value(payout, Content.localize().textStopLoss      , receipt.stop_loss_level  , true);
                 label_value(cost  , Content.localize().textAmountPerPoint, receipt.amount_per_point);
@@ -97,16 +100,10 @@ var Purchase_Beta = (function () {
             if(show_chart){
                 chart.show();
             }
-            else{
-                chart.hide();
-            }
 
             if(Contract_Beta.form() === 'digits'){
                 [].forEach.call(spots.childNodes, function(child) { child.innerHTML = '&nbsp;'; });
                 spots.show();
-            }
-            else{
-                spots.hide();
             }
 
             if(Contract_Beta.form() !== 'digits' && !show_chart){
@@ -274,3 +271,7 @@ var Purchase_Beta = (function () {
     };
 
 })();
+
+module.exports = {
+    Purchase_Beta: Purchase_Beta,
+};

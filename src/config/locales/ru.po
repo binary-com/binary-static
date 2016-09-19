@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-09-05 10:23+0000\n"
-"Last-Translator: Ruslan <ruslan.mukhametdinov.90@gmail.com>\n"
+"PO-Revision-Date: 2016-09-15 20:16+0000\n"
+"Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.8\n"
+"X-Generator: Weblate 2.9-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"API %1\" означает набор программ, протоколов, инструментов и ресурсов %1, созданных и поддерживаемых сайтом %1, а также позволяющих Вам пользоваться доступным приложением для работы на торговой платформе %1."
@@ -189,7 +189,7 @@ msgid "%1 offers the world's financial markets in a simple, user-friendly platfo
 msgstr "%1 предлагает работу на мировых финансовых рынках на простой для использования платформе."
 
 msgid "%1 opens an office in the QSentral office building in central Kuala Lumpur to further expand its IT development team."
-msgstr ""
+msgstr "%1 открывает офис в здании QSentral, в самом центре Куала-Лумпура, чтобы продолжить расширять свою команду разработчиков IT."
 
 msgid "%1 prices are benchmarked against the interbank options market, so you always get best-in-class prices for your trades."
 msgstr "%1 стандартизирует цены относительно межбанковских опционов, благодаря чему Вы всегда получаете лучшие цены для своих позиций."
@@ -263,7 +263,7 @@ msgid "%1's Volatility Indices are based on a cryptographically secure random nu
 msgstr "Индексы волатильности %1 основаны на криптографически зашифрованном генераторе случайных чисел, надёжность которого подтверждена независимой третьей стороной."
 
 msgid "%1's headquarters are in Malta, a favoured tourist destination with a warm climate, beautiful recreational areas and World Heritage sites. We also have an Operational Headquarters office in Cyberjaya, a high-tech precinct south of Kuala Lumpur, the capital of Malaysia, an equally exciting destination at the heart of Asia."
-msgstr "Главный офис %1 находится на Мальте, любимом многими курорте с теплым климатом, отличной инфраструктурой и историческими памятниками. У нас также есть операционный офис в Cyberjaya, районе новых технологий на юге Куала-Лумпур, столицы Малайзии, излюбленном путешественниками месте в центре Азии."
+msgstr "Главный офис %1 находится на Мальте, любимом многими курорте с теплым климатом, отличной инфраструктурой и историческими памятниками. У нас также есть операционный офис в Киберджайя, районе новых технологий на юге Куала-Лумпура, столицы Малайзии, излюбленном путешественниками месте в центре Азии."
 
 msgid "%1's patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market."
 msgstr "Запатентованная ценовая технология %1 позволяет Вам получить тот же процент прибыли, как у трейдеров на межбанковском рынке."
@@ -283,8 +283,8 @@ msgstr "%ctx(minimum duration, for example minimum 15 seconds)мин."
 msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
 msgstr "&#8220;%1 является одним из наших самых давних и надежных партнеров. Мы работаем вместе много лет.&#8221;"
 
-msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide&#8221;"
-msgstr "&#8220;Мы пользуемся www.binary.com уже 8 лет и рекомендуем binary всем нашим членам по всему миру&#8221;"
+msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide.&#8221;"
+msgstr "&#8220;Мы пользуемся www.binary.com уже 8 лет и рекомендуем binary всем нашим членам по всему миру.&#8221;"
 
 msgid "'<strong>Long</strong>' contracts generate profits when the index rises and loses when it falls."
 msgstr "'<strong>Длинные</strong>' позиции приносят прибыль, когда индекс растёт, и не приносят прибыли в случае снижения индекса."
@@ -1053,7 +1053,7 @@ msgid "Apply a meticulous eye for detail in proofreading the content that appear
 msgstr "Внимание к деталям, необходимое для качественной вычитки и правки контента вебсайта, блога, публикаций компании в социальных сетях, а также маркетинговых материалов."
 
 msgid "Apply to become a %1 <a class=\"pjaxload\" href=\"%2\">payment agent</a>."
-msgstr "Подать заявку на получение статуса %1 <a class=\"pjaxload\" href=\"%2\">платежного агента</a>."
+msgstr "%1: Подайте заявку на получение статуса <a class=\"pjaxload\" href=\"%2\">платежного агента</a>."
 
 msgid "Apply to become a Payment Agent"
 msgstr "Подайте заявку и станьте Платежным Агентом"
@@ -1313,10 +1313,8 @@ msgstr "Binary (IOM) Ltd, расположенная по адресу First Flo
 msgid "Binary Bot released"
 msgstr "Новый торговый робот"
 
-#, fuzzy
-#| msgid "Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
 msgid "Binary Group Services Sdn Bhd, 30-10, Q Sentral, Jalan Stesen Sentral 2, 50470 Kuala Lumpur"
-msgstr "Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
+msgstr "Binary Group Services Sdn Bhd, 30-10, Q Sentral, Jalan Stesen Sentral 2, 50470 Kuala Lumpur"
 
 msgid "Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
 msgstr "Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
@@ -1333,10 +1331,8 @@ msgstr "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, 
 msgid "Binary Investments (Europe) Ltd, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156)."
 msgstr "Binary Investments (Europe) Ltd, Suite 2, Tower Road, Msida MSD1825, Мальта. Лицензируется как представитель услуг по инвестициям категории 3 и регулируется органом по финансовым услугам Мальты Malta Financial Services Authority (номер лицензии IS/70156)."
 
-#, fuzzy
-#| msgid "Binary granted Investment Services license"
 msgid "Binary KK granted Japan license"
-msgstr "Binary получает лицензию на инвестиционные услуги"
+msgstr "Binary KK получил японскую лицензию"
 
 msgid "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
 msgstr "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
@@ -1388,7 +1384,7 @@ msgid "Binary trading is very simple."
 msgstr "Торговля на бинарных опционах проста."
 
 msgid "Binary's Japanese subsidiary Binary KK is licensed by the KLFB as a Type 1 Financial Instruments Business in Japan."
-msgstr ""
+msgstr "Binary KK – японский филиал Binary, лицензированный Управлением по финансовому регулированию Японии (KLFB) в качестве Организации в сфере финансовых инструментов 1-го типа."
 
 msgid "Binary's Japanese subsidiary Binary KK opens an office in Tokyo and starts the process of applying for relevant licenses."
 msgstr "Binary KK – дочерняя компания Binary в Японии – открыла офис в Токио и начала процесс получения соответствующих лицензий."
@@ -1952,7 +1948,7 @@ msgid "Customer Support"
 msgstr "Поддержка клиентов"
 
 msgid "Cyberjaya Office"
-msgstr ""
+msgstr "Офис в городе Киберджайя"
 
 msgid "Daily Reset Indices"
 msgstr "Ежедневные индексы Reset"
@@ -3324,7 +3320,7 @@ msgid "It will be released to your account upon approval."
 msgstr "Бонус будет внесен на Ваш счет после одобрения."
 
 msgid "It's time to expand. We set up a programming center in Cyberjaya - the Silicon Valley of Kuala Lumpur - to maintain and improve BetOnMarkets.com."
-msgstr "Время расширяться. Для улучшения работы BetOnMarkets.com мы открыли центр программирования в Cyberjaya – Силиконовой долине Куала-Лумпура."
+msgstr "Время расширяться. Для улучшения работы BetOnMarkets.com мы открыли центр программирования в Киберджайя – Силиконовой долине Куала-Лумпура."
 
 msgid "Item"
 msgstr "Описание"
@@ -3791,8 +3787,8 @@ msgstr "Присоединяйтесь к нашей команде ярких �
 msgid "Join our team of bright, talented professionals. Work collaboratively with us to promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years."
 msgstr "Присоединяйтесь к нашей команде ярких и талантливых специалистов. Работайте вместе с нами  над продвижением нашей высокотехнологичной платформы, ставшей одной из самых популярных платформ в индустрии торговли бинарными опционами на протяжении более 15 лет."
 
-msgid "Joshua Cavallaro <span> Markets And You Trader.</span>"
-msgstr "Джошуа Кавалларо <span> Markets And You Trader.</span>"
+msgid "Joshua Cavallaro <span> Markets And You Trader</span>"
+msgstr "Джошуа Кавалларо <span> Markets And You Trader</span>"
 
 msgid "Jul"
 msgstr "Июл"
@@ -3834,7 +3830,7 @@ msgid "Knowledge of probability theory, stochastic calculus, numerical methods, 
 msgstr "Знание теории вероятностей, стохастического исчисления, численных методов, моделирования методом Монте-Карло, дифференциальных уравнений, эконометрии и статистического моделирования"
 
 msgid "Kuala Lumpur Office"
-msgstr ""
+msgstr "Офис в Куала-Лумпуре"
 
 msgid "Languages"
 msgstr "Языки"
@@ -3997,6 +3993,9 @@ msgstr "Поддержание точных параметров системы 
 
 msgid "Maintain adequate speed and volume of output"
 msgstr "Поддержание адекватной скорости и объёма работы"
+
+msgid "Major Pairs"
+msgstr "Основные пары"
 
 msgid "Make a Deposit"
 msgstr "Пополнить"
@@ -4235,10 +4234,8 @@ msgstr "Никогда не использовался"
 msgid "New Password"
 msgstr "Новый пароль"
 
-#, fuzzy
-#| msgid "Trade"
 msgid "New Trade"
-msgstr "Торговля"
+msgstr "Новый контракт"
 
 msgid "New password"
 msgstr "Новый пароль"
@@ -5839,7 +5836,7 @@ msgid "The Company's Obligations"
 msgstr "Обязательства Компании"
 
 msgid "The Cyberview Lodge Resort in Cyberjaya"
-msgstr "Cyberview Lodge Resort в Cyberjaya"
+msgstr "Cyberview Lodge Resort в г. Киберджайя"
 
 msgid "The Data Protection laws and regulations place obligations on users of personal data and lay down principles for fair and lawful processing of this information. We are committed to safeguarding your privacy online. We only use your personal information to help us service your account, to improve our services to you, and to provide you with products you have requested. We do not sell your personal information to third parties, but we may provide your personal information to payment providers to facilitate transactions on your account."
 msgstr "Законы и положения о защите информации налагают на нас обязательства строго следовать принципам законного использования данных. Предоставленная Вами информация надежно защищена. Мы используем ваши личные данные исключительно в целях обслуживания Вашего счета и улучшения предоставляемого нами сервиса. Мы не передаем/не продаем предоставленную Вами частную информацию третьим лицам, но мы можем предоставить данные платежным учреждениям в случае необходимости подтверждения совершенной на Вашем счете транзакции."
@@ -6182,6 +6179,9 @@ msgstr "Данный бонус распространяется только н
 msgid "This bonus will be processed and credited to a client's account when:"
 msgstr "Данный бонус будет обработан и зачислен на счет клиента, когда:"
 
+msgid "This contract can not be traded in the final 2 minutes before settlement"
+msgstr "Данным контрактом нельзя торговать в последние 2 минуты до его окончания"
+
 msgid "This contract has LOST"
 msgstr "Контракт ПРОИГРАЛ"
 
@@ -6307,6 +6307,9 @@ msgstr "Чтобы изменить пароль, введите Ваш заре
 
 msgid "Token"
 msgstr "Ключ"
+
+msgid "Total"
+msgstr "Total"
 
 msgid "Total Cost"
 msgstr "Общая стоимость"
@@ -6581,10 +6584,8 @@ msgstr "Версия 41. Дата внесения последних измен
 msgid "View"
 msgstr "Просмотр"
 
-#, fuzzy
-#| msgid "Details"
 msgid "View Details"
-msgstr "Подробности"
+msgstr "Подробнее"
 
 msgid "View Updated Portfolio"
 msgstr "Обновленный портфель"
@@ -7288,9 +7289,6 @@ msgstr "Торговля с низким риском - торговля с ум
 
 msgid "You'll be surprised by the returns you can make."
 msgstr "Вы удивитесь, какую прибыль Вы можете получить."
-
-msgid "You'll find answers to most of your questions on the <a href='' target='_blank' id='faq_url'>FAQ</a> page."
-msgstr "Вы найдете ответы на большинство своих вопросов на странице <a href='' target='_blank' id='faq_url'>FAQ</a>."
 
 msgid "You're using a Virtual Account."
 msgstr "Вы находитесь на демо-счету."
@@ -8282,36 +8280,35 @@ msgstr "{JAPAN ONLY}year"
 msgid "{JAPAN ONLY}years"
 msgstr "{JAPAN ONLY}years"
 
-msgid "{Japan Only}"
-msgstr ""
-
-#, fuzzy
-#| msgid "Japan website Download Text for Terms and Conditions Document"
 msgid "{Japan Only} Download Terms and Conditions Document file"
-msgstr "Japan website Download Text for Terms and Conditions Document"
+msgstr "{Japan Only} Download Terms and Conditions Document file"
 
 msgid "{Japan Only}Binary option specialist for over 15 years "
-msgstr ""
+msgstr "{Japan Only}Binary option specialist for over 15 years "
 
 msgid "{Japan Only}Fully licenced in Japan"
-msgstr ""
+msgstr "{Japan Only}Fully licenced in Japan"
 
 msgid "{Japan Only}Live chart tools"
-msgstr ""
+msgstr "{Japan Only}Live chart tools"
+
+msgid "{Japan Only}Payout from 1 to 10"
+msgstr "{Japan Only}Payout from 1 to 10"
 
 msgid "{Japan Only}Segregated Customer Account Balances are 100% Safe"
-msgstr ""
+msgstr "{Japan Only}Segregated Customer Account Balances are 100% Safe"
 
 msgid "{Japan Only}Trade all binary option types"
-msgstr ""
+msgstr "{Japan Only}Trade all binary option types"
 
 msgid "{Japan Only}Trade the major currencies"
-msgstr ""
+msgstr "{Japan Only}Trade the major currencies"
 
-#, fuzzy
-#| msgid "%1 is the award-winning industry pioneer in online options trading."
+msgid "{Japan Only}Two-way pricing"
+msgstr "{Japan Only}Two-way pricing"
+
 msgid "{Japan Only}Worldwide award-winning pioneer in FX binary options trading"
-msgstr "%1 является признанным новатором и одной из наиболее титулованных платформ для торговли бинарными опционами."
+msgstr "{Japan Only}Worldwide award-winning pioneer in FX binary options trading"
 
 msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 msgstr "Платформа для онлайн торговли бинарными опционами на рынках валют, индексов, сырья и индексах Smart"
@@ -8366,6 +8363,9 @@ msgstr "Информация о счете"
 
 msgid "Terms and Conditions Approval"
 msgstr "Согласие с правилами и условиями"
+
+#~ msgid "You'll find answers to most of your questions on the <a href='' target='_blank' id='faq_url'>FAQ</a> page."
+#~ msgstr "Вы найдете ответы на большинство своих вопросов на странице <a href='' target='_blank' id='faq_url'>FAQ</a>."
 
 #~ msgid "%1 %2 (\"API\") Terms and Conditions"
 #~ msgstr "Правила и условия %2 (интерфейса прикладного программирования \"API\") %1"
@@ -12124,9 +12124,6 @@ msgstr "Согласие с правилами и условиями"
 #~ msgid "French Stocks"
 #~ msgstr "Французские акции"
 
-#~ msgid "Major Pairs"
-#~ msgstr "Основные пары"
-
 #~ msgid "The most widely traded and liquid forex pairs."
 #~ msgstr "Самые широко торгуемые и ликвидные пары рынка форекс."
 
@@ -15655,10 +15652,6 @@ msgstr "Согласие с правилами и условиями"
 #~ msgid "Sanofi"
 #~ msgstr "Sanofi"
 
-#~| msgid "Total Cost"
-#~ msgid "Total"
-#~ msgstr "Total"
-
 #~ msgid "A recent (less than 3 months old) scanned copy of your paper utility bill, or your paper bank, credit union, building society, credit, or debit card statement, or passbook"
 #~ msgstr "Недавняя (не старее 3 месяцев) sотсканированная копия бумажного счета за коммунальные услуги, выписка из банка (с адресом), данные о кредите, выписка об операциях кредитной или дебетовой карты (с адресом)"
 
@@ -18482,9 +18475,6 @@ msgstr "Согласие с правилами и условиями"
 
 #~ msgid "Quoting your loginID"
 #~ msgstr "Укажите в письме Ваш логин"
-
-#~ msgid "This contract cannot be priced at the moment"
-#~ msgstr "Этот контракт не может быть рассчитан в данный момент"
 
 #~ msgid "<strong>Quote Feed Filter:</strong> Read about our <a href=\"%1\">data feed filtering</a> which may affect contract prices."
 #~ msgstr "<strong>Фильтрация котировок</strong> - См. информацию о нашей <a href=\"%1\">системе фильтрации котировок</a>, которая может повлиять на расчет контрактов."

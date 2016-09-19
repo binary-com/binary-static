@@ -15,3 +15,7 @@ var PaymentAgentTransferData = (function () {
         transfer: transfer
     };
 }());
+
+module.exports = {
+    PaymentAgentTransferData: PaymentAgentTransferData,
+};

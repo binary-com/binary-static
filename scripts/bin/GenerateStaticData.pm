@@ -15,7 +15,13 @@ sub generate_data_files {
 
     _make_nobody_dir($js_path);
     print "\tGenerating $js_path/texts.js\n";
-    File::Slurp::write_file("$js_path/texts.js", {binmode => ':utf8'}, _texts());
+    my $exports = <<'END_EXPORTS';
+
+module.exports = {
+    texts_json: texts_json,
+};
+END_EXPORTS
+    File::Slurp::write_file("$js_path/texts.js", {binmode => ':utf8'}, _texts() . $exports);
 
     return;
 }
@@ -248,6 +254,8 @@ sub _texts {
         push @texts, localize('Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is [_1] [_2] (or equivalent in other currency).');
         push @texts, localize('Your [_1] day withdrawal limit is currently [_2] [_3] (or equivalent in other currency).');
         push @texts, localize('You have already withdrawn the equivalent of [_1] [_2] in aggregate over the last [_3] days.');
+        push @texts, localize('Major Pairs');
+        push @texts, localize('Forex');
 
         #strings for detailsws
         push @texts, localize('This field is required.');
@@ -398,6 +406,7 @@ sub _texts {
         push @texts, localize('Withdrawal for your account is not allowed at this moment. Please contact [_1] to unlock it.');
 
         #strings for japanws page
+        push @texts, localize('Japan');
         push @texts, localize('Questions');
         push @texts, localize('True');
         push @texts, localize('False');
@@ -568,6 +577,7 @@ sub _texts {
         push @texts, localize('{JAPAN ONLY}Remaining time');
         push @texts, localize('You need to finish all 20 questions.');
         push @texts, localize('Weekday');
+        push @texts, localize('This contract can not be traded in the final 2 minutes before settlement');
 
         #strings for digit_infows
         push @texts, localize('Select market');

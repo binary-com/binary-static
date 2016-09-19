@@ -1,5 +1,5 @@
 var expect = require('chai').expect;
-var portfolio = require('../portfolio');
+var portfolio = require('../portfolio').Portfolio;
 var ws = require('ws');
 var LiveApi = require('binary-live-api').LiveApi;
 var api = new LiveApi({ websocket: ws });
@@ -9,16 +9,16 @@ var values_mock_data = {9324828148: {"indicative": "4.33", "buy_price": "5.37"},
 
 describe('Portfolio', function() {
     var balance;
-	before(function(done){
-		this.timeout(10000);
+    before(function(done){
+        this.timeout(10000);
         //this is a read token, even if other people take it, won't be able to do any harm
-		api.authorize('hhh9bfrbq0G3dRf').then(function(){
-			api.subscribeToBalance().then(function(response){
+        api.authorize('hhh9bfrbq0G3dRf').then(function(){
+            api.subscribeToBalance().then(function(response){
                 balance = response;
-			    done();
+                done();
             });
-		});
-	});
+        });
+    });
     it('Should have all functions that are being tested', function() {
         expect(portfolio).to.have.any.keys('getBalance', 'getPortfolioData', 'getProposalOpenContract', 'getIndicativeSum', 'getSumPurchase');
     });
@@ -28,7 +28,7 @@ describe('Portfolio', function() {
         var balance_value = portfolio.getBalance(balance);
         expect(balance_value).to.be.a('number');
     });
-	it('Should have all expected data for portfolio', function() {
+    it('Should have all expected data for portfolio', function() {
         var portfolio_data = portfolio.getPortfolioData(portfolio_mock_data);
         expect(portfolio_data).to.be.an('Object')
             .and.to.have.property('transaction_id')
@@ -43,7 +43,7 @@ describe('Portfolio', function() {
             .and.to.be.a('string');
         expect(portfolio_data).to.have.property('buy_price')
             .and.to.be.a('string');
-	});
+    });
     it('Should have all expected data for proposal open contract', function() {
         var proposal_open_contract_data = portfolio.getProposalOpenContract(proposal_open_contract_mock_data);
         expect(proposal_open_contract_data).to.be.an('Object')

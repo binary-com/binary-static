@@ -7,3 +7,7 @@ function loadJS( src ){
 	ref.parentNode.insertBefore( script, ref );
 	return script;
 }
+
+module.exports = {
+    loadJS: loadJS,
+};

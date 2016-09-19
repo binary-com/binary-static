@@ -12,6 +12,7 @@ var MarketTimesUI = (function() {
         $date      = $('#trading-date');
         $container = $('#trading-times');
         columns    = ['Asset', 'Opens', 'Closes', 'Settles', 'UpcomingEvents'];
+        activeSymbols = tradingTimes = undefined;
 
         if ($container.contents().length) return;
 
@@ -27,7 +28,7 @@ var MarketTimesUI = (function() {
             $container.empty();
             showLoadingImage($container);
             tradingTimes = null;
-            MarketTimesData.sendRequest($date.val());
+            MarketTimesData.sendRequest($date.val(), !activeSymbols);
         });
     };
 
@@ -165,3 +166,7 @@ var MarketTimesUI = (function() {
         }
     };
 }());
+
+module.exports = {
+    MarketTimesUI: MarketTimesUI,
+};

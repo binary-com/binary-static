@@ -76,5 +76,7 @@ function formToObj(form) {
 }
 
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = formToObj;
+  module.exports = {
+    formToObj: formToObj,
+  };
 }
