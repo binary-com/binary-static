@@ -234,7 +234,7 @@ var ViewPopupWS = (function() {
             if(contract.entry_spot > 0) {
                 containerSetText('trade_details_entry_spot', contract.entry_spot);
             }
-            containerSetText('trade_details_message', contract.validation_error ? contract.validation_error : corporateActionEvent ? '* ' + page.text.localize('This contract was affected by a Corporate Action event.') : contract.is_expired && !contract.is_after_settlement ? page.text.localize('The final settlement price may differ from the Indicative price.') : '&nbsp;');
+            containerSetText('trade_details_message', contract.validation_error ? contract.validation_error : corporateActionEvent ? '* ' + page.text.localize('This contract was affected by a Corporate Action event.') : contract.is_expired && !contract.is_after_settlement ? page.text.localize('The final settlement price may differ from the indicative price.') : '&nbsp;');
         }
 
         if(!chartStarted && !contract.tick_count) {
