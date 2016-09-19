@@ -116,7 +116,7 @@
                                <li class="ja-hide">
                                    <a class="pjaxload" href="[% request.url_for('/terms-and-conditions?selected_tab=complaints-disputes-tac-tab') %]">[% l('Complaints') %]</a>
                                </li>
-                               <li class="ja-hide">
+                               <li>
                                    <a class="pjaxload" href="[% request.url_for('/regulation') %]">[% l('Regulatory Information') %]</a>
                                </li>
                            </ul>
