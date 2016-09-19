@@ -284,7 +284,9 @@ msgstr "%ctx(durasi minimal, contoh minimal 15 detik)min"
 msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
 msgstr "&#8220;%1 adalah salah satu partner paling lama dan terpercaya yang kami miliki. Kami telah bekerja sama selama bertahun-tahun.&#8221;"
 
-msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide&#8221;"
+#, fuzzy
+#| msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide&#8221;"
+msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide.&#8221;"
 msgstr "&#8220;Kami telah menggunakan www.binary.com selama 8 tahun terakhir dan sangat merekomendasikan binary untuk semua pelanggan kami di seluruh dunia&#8221;"
 
 msgid "'<strong>Long</strong>' contracts generate profits when the index rises and loses when it falls."
@@ -3789,7 +3791,9 @@ msgstr "Bergabung dengan tim kami yang memiliki masa depan cerah, profesional be
 msgid "Join our team of bright, talented professionals. Work collaboratively with us to promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years."
 msgstr "Bergabung dengan tim kami yang memiliki masa depan cerah, profesional berbakat. Bekerja secara kolaboratif dengan kami untuk meningkatkan dan mempromosikan platform teknologi tinggi yang telah menjadi salah satu yang paling dikenal pada industri trading opsi binary selama lebih dari 15 tahun."
 
-msgid "Joshua Cavallaro <span> Markets And You Trader.</span>"
+#, fuzzy
+#| msgid "Joshua Cavallaro <span> Markets And You Trader.</span>"
+msgid "Joshua Cavallaro <span> Markets And You Trader</span>"
 msgstr "Joshua Cavallaro<span> Trader Markets And You.</span>"
 
 msgid "Jul"
@@ -3995,6 +3999,9 @@ msgstr "Mempertahankan parameter sistem harga yang akurat"
 
 msgid "Maintain adequate speed and volume of output"
 msgstr "Menjaga kecepatan dan volume output yang memadai"
+
+msgid "Major Pairs"
+msgstr "Pasangan Utama"
 
 msgid "Make a Deposit"
 msgstr "Lakukan Deposit"
@@ -6181,6 +6188,11 @@ msgstr "Bonus hanya berlaku untuk Pelanggan baru. Pelanggan lama tidak memenuhi 
 msgid "This bonus will be processed and credited to a client's account when:"
 msgstr "Bonus ini akan diproses dan dikreditkan kedalam akun Pelanggan setelah:"
 
+#, fuzzy
+#| msgid "This contract cannot be priced at the moment"
+msgid "This contract can not be traded in the final 2 minutes before settlement"
+msgstr "Kontrak ini tidak dapat diberikan harga saat ini"
+
 msgid "This contract has LOST"
 msgstr "Kontrak ini telah RUGI"
 
@@ -6306,6 +6318,9 @@ msgstr "Untuk mengatur ulang kata sandi, masukkan alamat email yang Anda daftark
 
 msgid "Token"
 msgstr "Token"
+
+msgid "Total"
+msgstr "Total"
 
 msgid "Total Cost"
 msgstr "Total Biaya"
@@ -7286,9 +7301,6 @@ msgstr "Anda tidak akan kehilangan segalanya"
 
 msgid "You'll be surprised by the returns you can make."
 msgstr "Anda akan terkejut dengan laba yang dapat Anda hasilkan."
-
-msgid "You'll find answers to most of your questions on the <a href='' target='_blank' id='faq_url'>FAQ</a> page."
-msgstr "Anda dapat menemukan jawaban pada halaman <a href='' target='_blank' id='faq_url'>Pertanyaan Umum</a>."
 
 msgid "You're using a Virtual Account."
 msgstr "Anda menggunakan Akun Virtual."
@@ -8365,6 +8377,9 @@ msgstr "Keterangan rekening"
 
 msgid "Terms and Conditions Approval"
 msgstr "Syarat dan Ketentuan Persetujuan"
+
+#~ msgid "You'll find answers to most of your questions on the <a href='' target='_blank' id='faq_url'>FAQ</a> page."
+#~ msgstr "Anda dapat menemukan jawaban pada halaman <a href='' target='_blank' id='faq_url'>Pertanyaan Umum</a>."
 
 #~ msgid "%1 %2 (\"API\") Terms and Conditions"
 #~ msgstr "Syarat dan Kondisi %1 %2 (\"API\")"
@@ -12071,9 +12086,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 #~ msgid "French Stocks"
 #~ msgstr "Saham Perancis"
 
-#~ msgid "Major Pairs"
-#~ msgstr "Pasangan Utama"
-
 #~ msgid "The most widely traded and liquid forex pairs."
 #~ msgstr "Pasangan forex yang paling sering ditradingkan."
 
@@ -15759,9 +15771,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 #~ msgid "Sanofi"
 #~ msgstr "Sanofi"
 
-#~ msgid "Total"
-#~ msgstr "Total"
-
 #~ msgid "A recent (less than 3 months old) scanned copy of your paper utility bill, or your paper bank, credit union, building society, credit, or debit card statement, or passbook"
 #~ msgstr "Salinan terbaru (kurang dari 3 bulan) tagihan utilitas, atau rekening koran, tagihan kartu kredit atau debit atau buku tabungan"
 
@@ -18580,9 +18589,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 #~ msgid "Quoting your loginID"
 #~ msgstr "Isikan loginID anda"
-
-#~ msgid "This contract cannot be priced at the moment"
-#~ msgstr "Kontrak ini tidak dapat diberikan harga saat ini"
 
 #~ msgid "<strong>Quote Feed Filter:</strong> Read about our <a href=\"%1\">data feed filtering</a> which may affect contract prices."
 #~ msgstr "<strong>Saringan Kutipan Data:</strong> Baca tentang <a href=\"%1\">penyaringan kutipan data</a> yang dapat mempengaruhi harga kontrak."

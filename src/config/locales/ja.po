@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-09-09 00:47+0000\n"
+"PO-Revision-Date: 2016-09-14 01:31+0000\n"
 "Last-Translator: Yasushi Takeishi <takeishi@regentmarkets.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -287,7 +287,9 @@ msgstr "%ctx(最短期間, 例： 最短 15 秒）分"
 msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
 msgstr "&#8220;Binary.comは最も歴史があり、信頼できるパートナーです。長年に渡り協業して参りました。&#8221;"
 
-msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide&#8221;"
+#, fuzzy
+#| msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide&#8221;"
+msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide.&#8221;"
 msgstr "&#8220;当社はwww.binary.comを８年以上利用しています。世界中のトレーダーにバイナリーをぜひともお薦めします。&#8221;"
 
 msgid "'<strong>Long</strong>' contracts generate profits when the index rises and loses when it falls."
@@ -1997,7 +1999,7 @@ msgid "Data Feed"
 msgstr "データフィード"
 
 msgid "Date"
-msgstr "取引時刻"
+msgstr "日付"
 
 msgid "Date (GMT)"
 msgstr "日付 (GMT)"
@@ -3842,7 +3844,9 @@ msgstr "活気に満ちた有能なプロが揃う当チームに参加してみ
 msgid "Join our team of bright, talented professionals. Work collaboratively with us to promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years."
 msgstr "活気に満ちた有能なプロが揃う当チームに参加してみませんか？15年以上のバイナリーオプション取引業界において知名度の高い当ハイテクプラットフォームを共に推進していきましょう。"
 
-msgid "Joshua Cavallaro <span> Markets And You Trader.</span>"
+#, fuzzy
+#| msgid "Joshua Cavallaro <span> Markets And You Trader.</span>"
+msgid "Joshua Cavallaro <span> Markets And You Trader</span>"
 msgstr "Joshua Cavallaro氏<span> （Markets And You Trader）</span>"
 
 msgid "Jul"
@@ -3885,7 +3889,7 @@ msgid "Knowledge of probability theory, stochastic calculus, numerical methods, 
 msgstr "確率論・確率論的計算・数値解析法・モンテカルロシミュレーション・微分方程式・計量経済学・統計モデリングの知識"
 
 msgid "Kuala Lumpur Office"
-msgstr "クアラルンプール（マレーシア）にオフィスを開設"
+msgstr "クアラルンプール（マレーシア）"
 
 msgid "Languages"
 msgstr "言語"
@@ -4050,6 +4054,9 @@ msgstr "正確な価格設定システムパラメーターの維持"
 
 msgid "Maintain adequate speed and volume of output"
 msgstr "十分な速度と出力量の維持"
+
+msgid "Major Pairs"
+msgstr "主要ペア"
 
 msgid "Make a Deposit"
 msgstr "入金"
@@ -4723,7 +4730,7 @@ msgid "Platform Tour"
 msgstr "ご利用ガイド"
 
 msgid "Please %1 to view this page"
-msgstr "ご利用頂くためにはログインが必要です"
+msgstr "ご利用頂くためには%1が必要です"
 
 msgid "Please check your email for the value of this token"
 msgstr "Eメールアドレスをご確認ください"
@@ -6338,6 +6345,11 @@ msgstr "このボーナスは、新たなお客さまに限り有効です。す
 msgid "This bonus will be processed and credited to a client's account when:"
 msgstr "このボーナスは下記の条件を満たした場合に付与されます："
 
+#, fuzzy
+#| msgid "This contract cannot be priced at the moment"
+msgid "This contract can not be traded in the final 2 minutes before settlement"
+msgstr "現在、このトレードの価格を決定できません。"
+
 msgid "This contract has LOST"
 msgstr "このトレードは負け判定です"
 
@@ -6401,12 +6413,9 @@ msgstr "当社サイトではお客さまが具体的かつ能動的に提供さ
 msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in the USA, Japan, Costa Rica or Hong Kong, or to persons under age 18."
 msgstr ""
 "■店頭バイナリーオプション取引は金融商品取引法に規定される店頭デリバティブ取引であり、元本や利益が保証されていません。■店頭バイナリーオプション取引は、判定時刻に自動的に権利行使されるヨーロピアンタイプと、取引期間中に決められた条件に達すると権利が自動行使されるアメリカンタイプがあります。■店頭バイナリーオプションは、外国為替相場等の変動により投資元本の全てを失うおそれのあるリスクの高い金融商品です。■判定時刻及び取引期間中における一定の権利を、オプション料を支払って購入する期限がある取引のため、権利が消滅した場合には支払ったオプション料の全額を失います。■購入価格は1ロット1,000円〜100,000円です。■購入価格と売却価格にはスプレッドがあり、相場情勢により拡大することがあります。■相場情勢により、お客様が希望した価格より不利な価格で取引が成立する場合があります。■店頭バイナリーオプションの取引上限は以下のとおりです。\n"
-"1)1回の取引でペイアウトは100,000円まで。\n"
-"2)1日の取引でペイアウトは10,000,000円まで\n"
-"3)アメリカンタイプ（タッチ・ノータッチ、レンジ）の1日の制限は\n"
-"a) 予想される利益額は5,000,000円まで\n"
-"b) 確定された利益額は5,000,000円まで\n"
-"c) 取引数量は5,000,000円まで\n"
+"1)1取引のペイアウト上限額は10万円。\n"
+"2)1日の取引上限額及び利益上限額は500万円。\n"
+"3)1日の未実現利益上限額は100万円。\n"
 "　上記いずれかに達した時点で、お客さまはその日の取引ができなくなります。\n"
 "■取引手数料は無料ですが、12ヶ月間、新規又は決済の取引がなかった場合は口座維持管理料（年間2,500円）が発生します。■オプションの購入後の注文取り消しは行う事ができませんが、取引可能期間であれば売却は可能です。ただし、購入価格と売却価格にはスプレッドがあり、売却時に損失を被る可能性があります。■お取引を開始される前に、契約締結前交付書面を熟読の上、必ず約款及び取扱説明書に書かれてある取引の特徴、取引条件、仕組み及びリスクを十分確認いただき、ご自身の判断と責任において、自己の計算によりお取引ください。"
 
@@ -6472,6 +6481,11 @@ msgstr "パスワードを再設定される場合は下記の入力欄に登録
 
 msgid "Token"
 msgstr "トークン"
+
+#, fuzzy
+#| msgid "Total Cost"
+msgid "Total"
+msgstr "合計金額"
 
 msgid "Total Cost"
 msgstr "合計投資額"
@@ -7482,11 +7496,6 @@ msgstr "損益の管理について"
 
 msgid "You'll be surprised by the returns you can make."
 msgstr "収益性の高さに驚かれることでしょう。"
-
-msgid "You'll find answers to most of your questions on the <a href='' target='_blank' id='faq_url'>FAQ</a> page."
-msgstr ""
-"現在お客さまからのお問い合わせはEmailのみとさせていただいております。\n"
-"<a href='' target='_blank' id='faq_url'>FAQ</a>ページからもよくある質問をご確認いただけます。"
 
 msgid "You're using a Virtual Account."
 msgstr "現在デモ口座を使用されています。"
@@ -8527,7 +8536,7 @@ msgid "{Japan Only}Live chart tools"
 msgstr "ライブチャート"
 
 msgid "{Japan Only}Payout from 1 to 10"
-msgstr ""
+msgstr "ペイアウト：1,000円〜100,000円"
 
 msgid "{Japan Only}Segregated Customer Account Balances are 100% Safe"
 msgstr "日証金信託銀行にて全額信託されています"
@@ -8538,10 +8547,8 @@ msgstr "4つすべてのバイナリーオプションタイプ取引可能"
 msgid "{Japan Only}Trade the major currencies"
 msgstr "主要ペア通貨の取引可能"
 
-#, fuzzy
-#| msgid "2-way pricing"
 msgid "{Japan Only}Two-way pricing"
-msgstr "2ウェイ・プライス（買値・売値）を表示"
+msgstr "2ウェイ・プライス（買値・売値）"
 
 msgid "{Japan Only}Worldwide award-winning pioneer in FX binary options trading"
 msgstr "数々の受賞経験のあるバイナリーオプション取引業界でのパイオニアです。"
@@ -8599,6 +8606,11 @@ msgstr "ご口座の詳細情報"
 
 msgid "Terms and Conditions Approval"
 msgstr "利用規約の承認"
+
+#~ msgid "You'll find answers to most of your questions on the <a href='' target='_blank' id='faq_url'>FAQ</a> page."
+#~ msgstr ""
+#~ "現在お客さまからのお問い合わせはEmailのみとさせていただいております。\n"
+#~ "<a href='' target='_blank' id='faq_url'>FAQ</a>ページからもよくある質問をご確認いただけます。"
 
 #~ msgid "%1 %2 (\"API\") Terms and Conditions"
 #~ msgstr "%1 %2 (\"API\") 利用規約"
@@ -12344,9 +12356,6 @@ msgstr "利用規約の承認"
 #~ msgid "French Stocks"
 #~ msgstr "フランス株式"
 
-#~ msgid "Major Pairs"
-#~ msgstr "主要ペア"
-
 #~ msgid "The most widely traded and liquid forex pairs."
 #~ msgstr "最も取引されている外国為替ペア。"
 
@@ -15859,11 +15868,6 @@ msgstr "利用規約の承認"
 #~ msgid "You can fund your account with a minimum of &#36;/&pound;/&euro; 5 via any of the methods."
 #~ msgstr "&#36;/&pound;/&euro; 5から下記の決済方法でのご入金が可能です。"
 
-#, fuzzy
-#~| msgid "Total Cost"
-#~ msgid "Total"
-#~ msgstr "合計金額"
-
 #~ msgid "A recent (less than 3 months old) scanned copy of your paper utility bill, or your paper bank, credit union, building society, credit, or debit card statement, or passbook"
 #~ msgstr "現住所を明示している公共料金の支払い通知票（郵送されたもの、かつ発行３ヶ月以内）、銀行の残高証明（書面）、信用組合、住宅組合、またはクレジット・デビットカードのご利用明細、または通帳のスキャン"
 
@@ -18566,9 +18570,6 @@ msgstr "利用規約の承認"
 
 #~ msgid "Quoting your loginID"
 #~ msgstr "ログインIDを引用"
-
-#~ msgid "This contract cannot be priced at the moment"
-#~ msgstr "現在、このトレードの価格を決定できません。"
 
 #~ msgid "<strong>Quote Feed Filter:</strong> Read about our <a href=\"%1\">data feed filtering</a> which may affect contract prices."
 #~ msgstr "<strong>フィードフィルターの引用:</strong>当社の<a href=\"%1\">データフィード・フィルタリング</a>に関する取り決めをご確認下さい。トレード価格に影響を与える場合があります。"
