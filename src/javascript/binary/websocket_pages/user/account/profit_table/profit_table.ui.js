@@ -79,10 +79,14 @@ var ProfitTableUI = (function(){
         var data = [jpClient ? toJapanTimeIfNeeded(transaction.purchase_time) : profit_table_data.buyDate, '<span' + showTooltip(profit_table_data.app_id, oauth_apps[profit_table_data.app_id]) + '>' + profit_table_data.ref + '</span>', jpClient ? format_money_jp(TUser.get().currency, profit_table_data.payout) : profit_table_data.payout , '', jpClient ? format_money_jp(TUser.get().currency, profit_table_data.buyPrice) : profit_table_data.buyPrice , (jpClient ? toJapanTimeIfNeeded(transaction.sell_time) : profit_table_data.sellDate), jpClient ? format_money_jp(TUser.get().currency, profit_table_data.sellPrice) : profit_table_data.sellPrice , jpClient ? format_money_jp(TUser.get().currency, profit_table_data.pl) : profit_table_data.pl , ''];
         var $row = Table.createFlexTableRow(data, cols, "data");
 
-        $row.children(".buy-date").addClass("pre");
         $row.children(".pl").addClass(plType);
-        $row.children(".sell-date").addClass("pre");
         $row.children(".contract").html(profit_table_data.desc + "<br>");
+        $row.children(".buy-date").each(function() {
+            $(this).wrapInner('<div class="new-width"></div>');
+        });
+        $row.children(".sell-date").each(function() {
+            $(this).wrapInner('<div class="new-width"></div>');
+        });
 
         //create view button and append
         var $viewButtonSpan = Button.createBinaryStyledButton();
