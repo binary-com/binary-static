@@ -25,10 +25,10 @@
             <thead>
                 <tr>
                     <th class="ref">[% l('Ref.') %]</th>
-                    <th class="payout">[% l('Potential Payout') %]</th>
+                    <th class="payout nowrap">[% l('Potential Payout') %]</th>
                     <th class="details">[% l('Contract Details') %]</th>
                     <th class="purchase">[% l('Purchase') %]</th>
-                    <th class="indicative">[% l('Indicative') %]</th>
+                    <th class="indicative nowrap">[% l('Indicative') %]</th>
                     <th class="button"></th>
                 </tr>
             </thead>
