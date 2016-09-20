@@ -36,7 +36,8 @@
                             <h4 class="secondary-color">[% l('Education') %]</h4>
                             <ul>
                                 <li>
-                                    <a class="pjaxload" href="[% request.url_for('why-us') %]">[% l('Why Us?') %]</a>
+                                    <a class="pjaxload ja-hide" href="[% request.url_for('why-us') %]">[% l('Why Us?') %]</a>
+                                    <a class="pjaxload hidden ja-show" href="[% request.url_for('why-us-jp') %]">[% l('Why Us?') %]</a>
                                 </li>
                                 <li class="ja-hide">
                                     <a class="pjaxload" href="[% request.url_for('get-started') %]">[% l('Getting Started') %]</a>

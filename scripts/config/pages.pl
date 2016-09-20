@@ -9,6 +9,7 @@ sub all_pages {
         ['home',                       'home/index',                   'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices'],
         ['404',                        'static/404',                   'full_width', '404'],
         ['why-us',                     'static/why_us',                'full_width', 'Why Us'],
+        ['why-us-jp',                  'static/why_us_jp',             'full_width', 'Why Us'],
         ['tour',                       'static/tour',                  'full_width', 'Tour'],
         ['responsible-trading',        'static/responsible_trading',   'full_width', 'Responsible Trading', 'ja'],
         ['terms-and-conditions',       'legal/tac',                    'default',    'Terms and Conditions'],
