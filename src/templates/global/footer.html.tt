@@ -35,9 +35,11 @@
                         <div class="gr-4">
                             <h4 class="secondary-color">[% l('Education') %]</h4>
                             <ul>
-                                <li>
-                                    <a class="pjaxload ja-hide" href="[% request.url_for('why-us') %]">[% l('Why Us?') %]</a>
-                                    <a class="pjaxload hidden ja-show" href="[% request.url_for('why-us-jp') %]">[% l('Why Us?') %]</a>
+                                <li class="ja-hide">
+                                    <a class="pjaxload" href="[% request.url_for('why-us') %]">[% l('Why Us?') %]</a>
+                                </li>
+                                <li class="all-hide ja-show-block">
+                                    <a class="pjaxload" href="[% request.url_for('why-us-jp') %]">[% l('Why Us?') %]</a>
                                 </li>
                                 <li class="ja-hide">
                                     <a class="pjaxload" href="[% request.url_for('get-started') %]">[% l('Getting Started') %]</a>
@@ -45,8 +47,11 @@
                                 <li class="all-hide ja-show-block">
                                     <a class="pjaxload" href="[% request.url_for('get-started-jp') %]">[% l('Getting Started') %]</a>
                                 </li>
-                                <li>
+                                <li class="ja-hide">
                                     <a class="pjaxload" href="[% request.url_for('tour') %]">[% l('Platform Tour') %]</a>
+                                </li>
+                                <li class="all-hide ja-show-block">
+                                    <a class="pjaxload" href="[% request.url_for('tour-jp') %]">[% l('Platform Tour') %]</a>
                                 </li>
                                 <li class="ja-hide id-hide">
                                     <a href="http://www.gamcare.org.uk/" target="_blank">[% l('GamCare') %]</a>
