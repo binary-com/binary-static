@@ -51,7 +51,7 @@
                         <map name="planetmap" id="planetmap">
                             <area shape="rect" coords="374.91,21,520,55" href="http://www.fi.se/Folder-EN/Startpage/Register/Company-register/?sok1=Binary+Investments&mode=wide" alt="Sweden" target="_blank">
                             <area shape="rect" coords="353.01,59.16,498.18,90.87" href="[% request.url_for('download/regulation/Denmark.pdf') %]" alt="Denmark" target="_blank">
-                            <area shape="rect" coords="328.02,95.37,473.19,127.08" href="http://www.bafin.de/DE/Startseite/startseite_node.html" alt="Germany" target="_blank">
+                            <area shape="rect" coords="328.02,95.37,473.19,127.08" href="https://portal.mvp.bafin.de/database/InstInfo/institutDetails.do?cmd=loadInstitutAction&institutId=143125" alt="Germany" target="_blank">
                             <area shape="rect" coords="270.18,131.58,440.64,163.29" href="https://www.afm.nl/en/professionals/registers/alle-huidige-registers/beleggingsonderneming.aspx?id=70399C7A-F71F-E511-A3EB-005056BE011D&q=binary+investments" alt="Netherlands" target="_blank">
                             <area shape="rect" coords="0.00,259.71,198.93,291.42" href="https://register.fca.org.uk/ShPo_FirmDetailsPage?id=001b000000p2GpEAAU" alt="United Kingdom" target="_blank">
                             <area shape="rect" coords="26.61,343.62,198.93,375.33" href="[% request.url_for('download/regulation/Luxembourg.pdf') %]" alt="Luxembourg" target="_blank">
@@ -75,7 +75,7 @@
                     </div>
                     <h3 class="margin-top">[% l("Pillar 3 Disclosures") %]</h3>
                     <div>
-                        <p>[% l("The Pillar 3 disclosure document of Binary Investments (Europe) Limited has been prepared in accordance with the Capital Requirements Directive IV and the Capital Requirements Regulation. Read our Pillar 3 disclosure document to understand how we comply with market discipline as a market participant.") %]</p>
+                        <p>[% l("The Pillar 3 disclosure report of Binary Investments (Europe) Limited has been prepared in accordance with the Capital Requirements Directive IV and the Capital Requirements Regulation. Read our Pillar 3 disclosure report to understand how we comply with market discipline as a market participant.") %]</p>
                         <div class="gr-5 gr-12-m gr-6-p gr-centered">
                             <div class="xquote border-dark-gray">
                                 <div class="gr-row">
@@ -84,7 +84,7 @@
                                     </div>
                                     <div class="gr-9 gr-centered center-text quote-text">
                                         <a download="[% true %]" href="[% request.url_for('/download/BIEL_Pillar_3_Report.pdf') %]" target="_blank">
-                                            [% l("Pillar 3 disclosure document") %]
+                                            [% l("Pillar 3 disclosure report") %]
                                         </a>
                                     </div>
                                 </div>
@@ -164,6 +164,25 @@
             </div>
         </div>
     </div>
+    <div class="ja-hide">
+        <div class="gray-line"></div>
+        <div class="center-text">
+            <img class="responsive timeline" src="[% request.url_for('images/pages/regulation/timeline.svg') %]">
+        </div>
+        <div class="background-gray center-text gr-padding-30 gr-12" id="japan-show-first">
+            <h1 class="margin-top">[% l("Binary K.K.") %]</h1>
+            <div class="gr-12">
+                <p>[% l("Binary K.K., 3F Hiroo Miyata Building, 1-9-16 Hiroo, Shibuya-ku, Tokyo 150-0012. Licensed and regulated as a Type 1 Financial Instruments Business by the KLFB (license no. 2949) and a member of FFAJ (membership no. 1590).") %]</p>
+                <p>[% l("Japan residents will have their account opened with Binary K.K. and will use our Japan trading platform, which is compliant with Japan rules and regulations.") %]</p>
+                <p><strong>[% l("Regulator:") %]</strong></p>
+                <div class="gr-4 gr-6-m gr-centered gr-padding-10">
+                    <a href="http://www.ffaj.or.jp/index.html" target="_blank">
+                        <img class="responsive" src="[% request.url_for('images/pages/regulation/binarykk-logo.gif') %]">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="gray-line"></div>
     <div class="center-text">
         <img class="responsive timeline" src="[% request.url_for('images/pages/regulation/timeline.svg') %]">
@@ -178,20 +197,6 @@
                 <a href="https://www.vfsc.vu/" target="_blank">
                     <img class="responsive" src="[% request.url_for('images/pages/regulation/vanuatu-logo.svg') %]">
                 </a>
-            </div>
-        </div>
-    </div>
-    <div class="ja-hide">
-        <div class="gray-line"></div>
-        <div class="center-text">
-            <img class="responsive timeline" src="[% request.url_for('images/pages/regulation/timeline.svg') %]">
-        </div>
-        <div class="background-gray center-text gr-padding-30 gr-12" id="japan-show-first">
-            <h1 class="margin-top">[% l("Binary K.K.") %]</h1>
-            <div class="gr-12">
-                <p>[% l("Binary K.K., 3F Hiroo Miyata Building, 1-9-16 Hiroo, Shibuya-ku, Tokyo 150-0012. Licensed and regulated as a Type 1 Financial Instruments Business by the KLFB (license no. 2949) and member of FFAJ (membership no. 1590).") %]</p>
-                <p>[% l("Japan residents will have their account opened with Binary K.K. and will use our Japan trading platform, which is compliant with Japan rules and regulations.") %]</p>
-                <p><strong>[% l("Regulator:") %]</strong></p>
             </div>
         </div>
     </div>
