@@ -81,18 +81,12 @@ var ProfitTableUI = (function(){
 
         $row.children(".pl").addClass(plType);
         $row.children(".contract").html(profit_table_data.desc + "<br>");
-
-        if (japanese_client()) {
-            $row.children(".buy-date").each(function() {
-                $(this).wrapInner('<div class="new-width"></div>');
-            });
-            $row.children(".sell-date").each(function() {
-                $(this).wrapInner('<div class="new-width"></div>');
-            });
-        } else {
-            $row.children(".buy-date").addClass("pre");
-            $row.children(".sell-date").addClass("pre");
-        }
+        $row.children(".buy-date").each(function() {
+            $(this).wrapInner('<div class="new-width"></div>');
+        });
+        $row.children(".sell-date").each(function() {
+            $(this).wrapInner('<div class="new-width"></div>');
+        });
 
         //create view button and append
         var $viewButtonSpan = Button.createBinaryStyledButton();
