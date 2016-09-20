@@ -43,10 +43,10 @@
                             [% l("Enjoy our fastest type of trading with our Tick Trade app, wherever you are.") %]
                             <div class="gr-row">
                                 <a class="gr-5 gr-6-m" href="https://itunes.apple.com/app/apple-store/id1091187567?pt=117911266&ct=platforms_page&mt=8" target="_blank">
-                                    <img class="same-width" src="[% request.url_for('images/pages/applications/appstore.svg') %]" />
+                                    <div class="app-store-badge"></div>
                                 </a>
                                 <a class="gr-5 gr-6-m" href="https://play.google.com/store/apps/details?id=com.binary.ticktrade&referrer=utm_source%3Dbinary-com%26utm_medium%3Dreferrer%26utm_campaign%3Dplatforms_page" target="_blank">
-                                    <img class="same-width" src="[% request.url_for('images/pages/trade/google-play-badge.png') %]" />
+                                    <div class="google-play-badge"></div>
                                 </a>
                            </div>
                         </p>
@@ -96,10 +96,10 @@
                             [% l("Experience the future of our trading platform with the Next-Gen app.") %]
                             <div class="gr-row">
                                 <a class="gr-5 gr-6-m" href="https://itunes.apple.com/app/apple-store/id1134884301?pt=117911266&ct=platforms_page&mt=8" target="_blank">
-                                    <img class="same-width" src="[% request.url_for('images/pages/applications/appstore.svg') %]" />
+                                    <div class="app-store-badge"></div>
                                 </a>
                                 <a class="gr-5 gr-6-m" href="https://play.google.com/store/apps/details?id=app.binary.com&referrer=utm_source%3Dbinary-com%26utm_medium%3Dreferrer%26utm_campaign%3Dplatforms_page" target="_blank">
-                                    <img class="same-width" src="[% request.url_for('images/pages/trade/google-play-badge.png') %]" />
+                                    <div class="google-play-badge"></div>
                                 </a>
                            </div>
                         </p>
@@ -125,111 +125,141 @@
         <div id="platforms-comparison" class="sections invisible">
             <h1>[% l("Platform Comparison") %]</h1>
             <p>[% l("Compare all the trading platforms that we offer. Choose the ideal platform for your preferred trading strategy.") %]</p>
-            <p class="gr-hide gr-show-m">[% l("Scroll the table to the right to see all platforms.") %]</p>
-            <div class="table-container gr-padding-30">
-                <table>
-                    <tbody>
-                        <tr>
-                            <th></th>
-                            <th>[% l("Binary.com") %]</th>
-                            <th>[% l("Next-Gen") %]</th>
-                            <th>[% l("Tick Trade") %]</th>
-                            <th>[% l("MetaTrader 5") %]</th>
-                            <th>[% l("Webtrader") %]</th>
-                            <th>[% l("Binary Bot") %]</th>
-                        </tr>
-                        <tr>
-                            <td><strong>[% l("Environment") %]</strong></td>
-                            <td>[% l("Web (Including Mobile)") %]</td>
-                            <td>[% l("Web, iOS, Android") %]</td>
-                            <td>[% l("iOS, Android") %]</td>
-                            <td>[% l("Windows, macOS, Linux") %]</td>
-                            <td>[% l("Web (Desktop Only)") %]</td>
-                            <td>[% l("Web (Desktop Only)") %]</td>
-                        </tr>
-                        <tr>
-                            <td><strong>[% l("Price") %]</strong></td>
-                            <td>[% l("Free") %]</td>
-                            <td>[% l("Free") %]</td>
-                            <td>[% l("Free") %]</td>
-                            <td>[% l("Free") %]</td>
-                            <td>[% l("Free") %]</td>
-                            <td>[% l("Free") %]</td>
-                        </tr>
-                        <tr>
-                            <td><strong>[% l("Ideal Users") %]</strong></td>
-                            <td>[% l("Everyone") %]</td>
-                            <td>[% l("Everyone") %]</td>
-                            <td>[% l("Short interval traders") %]</td>
-                            <td>[% l("Serious traders") %]</td>
-                            <td>[% l("Serious traders") %]</td>
-                            <td>[% l("Serious traders") %]</td>
-                        </tr>
-                        <tr>
-                            <td><strong>[% l("Available Products") %]</strong></td>
-                            <td>[% l("Binary Options") %]</td>
-                            <td>[% l("Binary Options") %]</td>
-                            <td>[% l("Binary Options") %]</td>
-                            <td>[% l("Contracts for Difference (CFD)") %]</td>
-                            <td>[% l("Binary Options") %]</td>
-                            <td>[% l("Binary Options") %]</td>
-                        </tr>
-                        <tr>
-                            <td><strong>[% l("Available Markets") %]</strong></td>
-                            <td>[% l("Forex, Indices, Stocks, Commodities, Volatility Indices") %]</td>
-                            <td>[% l("Forex, Indices, Stocks, Commodities, Volatility Indices") %]</td>
-                            <td>[% l("Forex, Volatility Indices") %]</td>
-                            <td>[% l("Volatility Indices") %]</td>
-                            <td>[% l("Forex, Indices, Stocks, Commodities, Volatility Indices") %]</td>
-                            <td>[% l("Forex, Indices, Stocks, Commodities, Volatility Indices") %]</td>
-                        </tr>
-                        <tr>
-                            <td><strong>[% l("Trade Durations") %]</strong></td>
-                            <td>[% l("5 ticks to 1 year") %]</td>
-                            <td>[% l("5 ticks to 1 year") %]</td>
-                            <td>[% l("5 to 10 ticks") %]</td>
-                            <td>[% l("Any") %]</td>
-                            <td>[% l("5 ticks to 1 year") %]</td>
-                            <td>[% l("5 ticks to 1 year") %]</td>
-                        </tr>
-                        <tr>
-                            <td><strong>[% l("Multiple Charts") %]</strong></td>
-                            <td class="vertical-align-middle">[% l("-") %]</td>
-                            <td><ul class="checked"><li></li></ul></td>
-                            <td class="vertical-align-middle">[% l("-") %]</td>
-                            <td><ul class="checked"><li></li></ul></td>
-                            <td><ul class="checked"><li></li></ul></td>
-                            <td class="vertical-align-middle">[% l("-") %]</td>
-                        </tr>
-                        <tr>
-                            <td><strong>[% l("Chart Indicators") %]</strong></td>
-                            <td><ul class="checked"><li></li></ul></td>
-                            <td class="vertical-align-middle">[% l("-") %]</td>
-                            <td class="vertical-align-middle">[% l("-") %]</td>
-                            <td><ul class="checked"><li></li></ul></td>
-                            <td><ul class="checked"><li></li></ul></td>
-                            <td><ul class="checked"><li></li></ul></td>
-                        </tr>
-                        <tr>
-                            <td><strong>[% l("Chart Comparison") %]</strong></td>
-                            <td><ul class="checked"><li></li></ul></td>
-                            <td class="vertical-align-middle">[% l("-") %]</td>
-                            <td class="vertical-align-middle">[% l("-") %]</td>
-                            <td class="vertical-align-middle">[% l("-") %]</td>
-                            <td><ul class="checked"><li></li></ul></td>
-                            <td class="vertical-align-middle">[% l("-") %]</td>
-                        </tr>
-                        <tr>
-                            <td><strong>[% l("Advanced Automation") %]</strong></td>
-                            <td class="vertical-align-middle">[% l("-") %]</td>
-                            <td class="vertical-align-middle">[% l("-") %]</td>
-                            <td class="vertical-align-middle">[% l("-") %]</td>
-                            <td><ul class="checked"><li></li></ul></td>
-                            <td class="vertical-align-middle">[% l("-") %]</td>
-                            <td><ul class="checked"><li></li></ul></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="gr-padding-30">
+                <p class="hint">[% l("Note: Scroll the table to the right to see all platforms.") %]</p>
+                <div class="outer">
+                    <div class="inner">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>&nbsp;</th>
+                                    <td>[% l("Binary.com") %]</td>
+                                    <td>[% l("Next-Gen") %]</td>
+                                    <td>[% l("Tick Trade") %]</td>
+                                    <td>[% l("MetaTrader 5") %]</td>
+                                    <td>[% l("Webtrader") %]</td>
+                                    <td>[% l("Binary Bot") %]</td>
+                                </tr>
+                                <tr>
+                                    <th>[% l("Environment") %]</th>
+                                    <td>[% l("Web (Including Mobile)") %]</td>
+                                    <td>[% l("Web, iOS, Android") %]</td>
+                                    <td>[% l("iOS, Android") %]</td>
+                                    <td>[% l("Windows, macOS, Linux") %]</td>
+                                    <td>[% l("Web (Desktop Only)") %]</td>
+                                    <td>[% l("Web (Desktop Only)") %]</td>
+                                </tr>
+                                <tr>
+                                    <th>[% l("Price") %]</th>
+                                    <td>[% l("Free") %]</td>
+                                    <td>[% l("Free") %]</td>
+                                    <td>[% l("Free") %]</td>
+                                    <td>[% l("Free") %]</td>
+                                    <td>[% l("Free") %]</td>
+                                    <td>[% l("Free") %]</td>
+                                </tr>
+                                <tr>
+                                    <th>[% l("Ideal Users") %]</th>
+                                    <td>[% l("Everyone") %]</td>
+                                    <td>[% l("Everyone") %]</td>
+                                    <td>[% l("Short interval traders") %]</td>
+                                    <td>[% l("Serious traders") %]</td>
+                                    <td>[% l("Serious traders") %]</td>
+                                    <td>[% l("Serious traders") %]</td>
+                                </tr>
+                                <tr>
+                                    <th>[% l("Available Products") %]</th>
+                                    <td>[% l("Binary Options") %]</td>
+                                    <td>[% l("Binary Options") %]</td>
+                                    <td>[% l("Binary Options") %]</td>
+                                    <td>[% l("Contracts for Difference (CFD)") %]</td>
+                                    <td>[% l("Binary Options") %]</td>
+                                    <td>[% l("Binary Options") %]</td>
+                                </tr>
+                                <tr>
+                                    <th>[% l("Available Markets") %]</th>
+                                    <td>[% l("Forex, Indices, Stocks, Commodities, Volatility Indices") %]</td>
+                                    <td>[% l("Forex, Indices, Stocks, Commodities, Volatility Indices") %]</td>
+                                    <td>[% l("Forex, Volatility Indices") %]</td>
+                                    <td>[% l("Volatility Indices") %]</td>
+                                    <td>[% l("Forex, Indices, Stocks, Commodities, Volatility Indices") %]</td>
+                                    <td>[% l("Forex, Indices, Stocks, Commodities, Volatility Indices") %]</td>
+                                </tr>
+                                <tr>
+                                    <th>[% l("Trade Durations") %]</th>
+                                    <td>[% l("5 ticks to 1 year") %]</td>
+                                    <td>[% l("5 ticks to 1 year") %]</td>
+                                    <td>[% l("5 to 10 ticks") %]</td>
+                                    <td>[% l("Any") %]</td>
+                                    <td>[% l("5 ticks to 1 year") %]</td>
+                                    <td>[% l("5 ticks to 1 year") %]</td>
+                                </tr>
+                                <tr>
+                                    <th class="auto-height">[% l("Multiple Charts") %]</th>
+                                    <td class="vertical-align-middle center-text">
+                                        <div class="small-padding-top">[% l("-") %]</div>
+                                    </td>
+                                    <td><ul class="checked"><li></li></ul></td>
+                                    <td class="vertical-align-middle center-text">
+                                        <div class="small-padding-top">[% l("-") %]</div>
+                                    </td>
+                                    <td><ul class="checked"><li></li></ul></td>
+                                    <td><ul class="checked"><li></li></ul></td>
+                                    <td class="vertical-align-middle center-text">
+                                        <div class="small-padding-top">[% l("-") %]</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="auto-height">[% l("Chart Indicators") %]</th>
+                                    <td><ul class="checked"><li></li></ul></td>
+                                    <td class="vertical-align-middle center-text">
+                                        <div class="small-padding-top">[% l("-") %]</div>
+                                    </td>
+                                    <td class="vertical-align-middle center-text">
+                                        <div class="small-padding-top">[% l("-") %]</div>
+                                    </td>
+                                    <td><ul class="checked"><li></li></ul></td>
+                                    <td><ul class="checked"><li></li></ul></td>
+                                    <td><ul class="checked"><li></li></ul></td>
+                                </tr>
+                                <tr>
+                                    <th class="auto-height">[% l("Chart Comparison") %]</th>
+                                    <td><ul class="checked"><li></li></ul></td>
+                                    <td class="vertical-align-middle center-text">
+                                        <div class="small-padding-top">[% l("-") %]</div>
+                                    </td>
+                                    <td class="vertical-align-middle center-text">
+                                        <div class="small-padding-top">[% l("-") %]</div>
+                                    </td>
+                                    <td class="vertical-align-middle center-text">
+                                        <div class="small-padding-top">[% l("-") %]</div>
+                                    </td>
+                                    <td><ul class="checked"><li></li></ul></td>
+                                    <td class="vertical-align-middle center-text">
+                                        <div class="small-padding-top">[% l("-") %]</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="auto-height">[% l("Advanced Automation") %]</th>
+                                    <td class="vertical-align-middle center-text">
+                                        <div class="small-padding-top">[% l("-") %]</div>
+                                    </td>
+                                    <td class="vertical-align-middle center-text">
+                                        <div class="small-padding-top">[% l("-") %]</div>
+                                    </td>
+                                    <td class="vertical-align-middle center-text">
+                                        <div class="small-padding-top">[% l("-") %]</div>
+                                    </td>
+                                    <td><ul class="checked"><li></li></ul></td>
+                                    <td class="vertical-align-middle center-text">
+                                        <div class="small-padding-top">[% l("-") %]</div>
+                                    </td>
+                                    <td><ul class="checked"><li></li></ul></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="more-tools" class="sections invisible">
