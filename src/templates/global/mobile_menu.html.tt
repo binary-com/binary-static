@@ -2,7 +2,8 @@
     <div class='gr-hide' id='mobile-menu'>
         <ul>
             <li>
-                <a class="pjaxload" href="[% request.url_for('why-us') %]"[% target %]>[% l("Why Us?") %]</a>
+                <a class="pjaxload ja-hide" href="[% request.url_for('why-us') %]"[% target %]>[% l("Why Us?") %]</a>
+                <a class="pjaxload hidden ja-show" href="[% request.url_for('why-us-jp') %]"[% target %]>[% l("Why Us?") %]</a>
             </li>
             <li class="ja-hide">
               <a class="pjaxload" href="[% request.url_for('get-started') %]"[% target %]>[% l("Get Started") %]</a>

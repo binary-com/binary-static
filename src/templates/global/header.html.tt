@@ -45,7 +45,8 @@
                         <div id='main-navigation'>
                             <ul id="menu-top">
                                 <li>
-                                    <a class="pjaxload" href="[% request.url_for('why-us') %]">[% l("Why Us?") %]</a>
+                                    <a class="pjaxload ja-hide" href="[% request.url_for('why-us') %]">[% l("Why Us?") %]</a>
+                                    <a class="pjaxload hidden ja-show" href="[% request.url_for('why-us-jp') %]">[% l("Why Us?") %]</a>
                                 </li>
                                 <li class="ja-hide">
                                     <a class="pjaxload" href="[% request.url_for('get-started') %]">[% l("Get Started") %]</a>
