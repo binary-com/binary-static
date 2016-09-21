@@ -297,10 +297,7 @@ Client.prototype = {
     },
     response_landing_company: function(response) {
         if (!response.hasOwnProperty('error')) {
-            var company = response.name;
             var has_reality_check = response.has_reality_check;
-
-            this.set_storage_value('landing_company_name', company);
             this.set_storage_value('has_reality_check', has_reality_check);
         }
     },
