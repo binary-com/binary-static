@@ -27,11 +27,7 @@ pjax_config_page('/regulation', function() {
                   $(this).attr('coords', c);
                 });
             }
-            if ($selector.width() > 0) {
-                relocate_links();
-            } else {
-                $selector.load(relocate_links);
-            }
+            $(document).ready(relocate_links);
             $(window).resize(relocate_links);
         }
     };
