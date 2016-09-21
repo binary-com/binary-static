@@ -179,12 +179,16 @@ function BinarySocketClass() {
                             break;
                         }
                     }
-                    if (company && company.has_reality_check) {
-                        page.client.response_landing_company(company);
-                        var currentData = TUser.get();
-                        var addedLoginTime = $.extend({logintime: window.time.unix()}, currentData);
-                        TUser.set(addedLoginTime);
-                        RealityCheck.init();
+
+                    if (company) {
+                        page.client.set_storage_value('landing_company_name', company.name);
+                        if (company.has_reality_check) {
+                            page.client.response_landing_company(company);
+                            var currentData = TUser.get();
+                            var addedLoginTime = $.extend({logintime: window.time.unix()}, currentData);
+                            TUser.set(addedLoginTime);
+                            RealityCheck.init();
+                        }
                     }
                 } else if (type === 'get_self_exclusion') {
                     SessionDurationLimit.exclusionResponseHandler(response);
