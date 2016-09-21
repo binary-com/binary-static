@@ -578,6 +578,7 @@ sub _texts {
         push @texts, localize('You need to finish all 20 questions.');
         push @texts, localize('Weekday');
         push @texts, localize('This contract can not be traded in the final 2 minutes before settlement');
+        push @texts, localize('min 1,000 and max 100,000');
 
         #strings for digit_infows
         push @texts, localize('Select market');
