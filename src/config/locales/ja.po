@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-09-16 01:48+0000\n"
+"PO-Revision-Date: 2016-09-20 04:58+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -1371,7 +1371,7 @@ msgid "Binary Trading is simple to learn and to execute."
 msgstr "バイナリーオプションは簡単な操作でお取引ができます"
 
 msgid "Binary granted Investment Services license"
-msgstr "Binary(Europe)Ltd.は、投資サービスライセンスを付与されました。"
+msgstr "Binary (Europe) Ltd.は、投資サービスライセンスを付与されました。"
 
 msgid "Binary opens Japan office"
 msgstr "日本オフィスを開設"
@@ -1624,6 +1624,9 @@ msgstr "取引対象を選択"
 
 msgid "Choose your own strike."
 msgstr "バリア価格を設定"
+
+msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Guyana, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
+msgstr ""
 
 msgid "Classification of assets requiring hedge"
 msgstr "ヘッジファンドを必要とする資産の分類"
@@ -3182,7 +3185,9 @@ msgid "In the 'Further Instructions' field please specify the payment method and
 msgstr "詳細説明欄ではエージェントの決済方法、振込先の口座番号を記入して下さい。"
 
 msgid "In the UK and Isle of Man, our clients trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A."
-msgstr "英国とマン島の居住者は、Binary(IOM)Ltd.の下に口座開設されます。英国をのぞく欧州連合では、Binary (Europe) Ltd.とBinary Investments (Europe) Ltd.を介します。英国を除く欧州連合の居住者は、Binary(Europe)LtdとBinary Investments(Europe)Ltd.の下に口座を開設されます。その他以外の国は、Binary Investments(Europe)Ltd.の下に口座開設されます。"
+msgstr ""
+"英国とマン島の居住者は、Binary (IOM) Ltd.の下に口座開設されます。英国をのぞく欧州連合では、Binary (Europe) Ltd.とBinary\n"
+"Investments (Europe) Ltd.を介します。英国を除く欧州連合の居住者は、Binary (Europe) LtdとBinary Investments (Europe) Ltd.の下に口座を開設されます。その他以外の国は、Binary Investments (Europe) Ltd.の下に口座開設されます。"
 
 msgid "In the case of single stock and stock index prices, the final closing price as reported by the relevant official Exchange shall apply for all settlements (this final settlement price may, at times, be reported by the relevant Exchange 30-90 minutes after the official closing time of the market, and may differ from the latest tick price that occurred at the closing time)."
 msgstr "個別株式、及び株価指数の終値は、公式な取引所の終了価格によって決定されますが、該当取引の終了後30分〜90分後に発表される場合があり、かつ終了時間に発生した最終のTick価格と異なる場合があります。"
@@ -3828,7 +3833,7 @@ msgid "Japan website Risk For Binary Option Trading Paragraph 1.3"
 msgstr "連絡先 ：support@binary.com"
 
 msgid "Japan website Risk For Binary Option Trading Paragraph 1.4"
-msgstr "加入協会：一般社団法人金融先物取引業協会 会員番号●●号"
+msgstr "加入協会：一般社団法人金融先物取引業協会 会員番号1590号"
 
 msgid "Japan website Risk For Binary Option Trading Paragraph 2"
 msgstr "店頭バイナリーオプション取引は、期限のある取引であり、オプションの買い手であるお客さまが、取引時間内に購入したオプションを売却せず、権利行使時点に予測が外れた場合には投資元本の全てを失うこととなる取引です。従って、取引をされるにあたっては、約款及び本書面を十分に読み、それらの内容ならびに下記の事項を十分に理解し、かつ異議なく承諾していただく必要がございます。"
@@ -5768,7 +5773,7 @@ msgid "The %1 website is protected by certain copyrights."
 msgstr "%1のウェブサイトは特定の著作権で保護されています。"
 
 msgid "The <span itemprop='brand'>%1</span> service (formerly known as BetOnMarkets.com) is owned and operated by Binary Ltd. Fully licensed and regulated, %1 has been providing financial trading to a worldwide audience of over 1,000,000 accounts since <span itemprop='foundingdate'>1999</span>."
-msgstr "<span itemprop='brand'>%1</span>サービスはBinary Ltd.の子会社です。ライセンス監督機関による監査を受けながら発行ライセンスを保持しており、%1は<span itemprop='foundingdate'>1999</span>年から世界中に10万人以上の顧客を擁しています。"
+msgstr "<span itemprop='brand'>%1</span>サービスはBinary Ltd.の子会社です。ライセンス監督機関による監査を受けながら発行ライセンスを保持しており、%1は<span itemprop='foundingdate'>1999</span>年から世界中に100万口座以上を有しています。"
 
 msgid "The <strong>Premier Platform</strong> for Binary Options Trading"
 msgstr "<strong>最高水準</strong> の取引環境"
@@ -6033,7 +6038,9 @@ msgstr "入出金にクライアントへ請求する手数料"
 msgid "The company does not guarantee the ability to sell a contract prior to its expiration time."
 msgstr "当社はオープン中の全てのトレードに対し転売を保証するわけではありません。"
 
-msgid "The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='%1' class='pjaxload'>here:</a>"
+#, fuzzy
+#| msgid "The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='%1' class='pjaxload'>here:</a>"
+msgid "The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='%1' class='pjaxload'>here.</a>"
 msgstr ""
 "（期限の利益の喪失）\n"
 "第20条\n"
@@ -6342,7 +6349,7 @@ msgid "This bonus will be processed and credited to a client's account when:"
 msgstr "このボーナスは下記の条件を満たした場合に付与されます："
 
 msgid "This contract can not be traded in the final 2 minutes before settlement"
-msgstr "このトレードはトレード確定の2分前にはお取引いただけません"
+msgstr "判定時刻2分を過ぎると新規購入注文＆売却取引を行えません"
 
 msgid "This contract has LOST"
 msgstr "このトレードは負け判定です"
@@ -6404,7 +6411,9 @@ msgstr "当社サイトには他のウェブサイトへのリンクが含まれ
 msgid "This website does not collect personally identifying information about you except when you specifically and knowingly provide it. There is a technology called \"cookies\" which can be used to provide tailored information from a website. A cookie is an element of data that a website can send to your browser, which may then store it on your system. You can set your browser to notify you when you receive a cookie, giving you the chance to decide whether to accept it. If you do not accept the cookie, then you will need to input your loginID and password again at every form required to enter into the system. You are advised to choose this option if you have concerns about the security of your personal browser or PC."
 msgstr "当社サイトではお客さまが具体的かつ能動的に提供される場合を除き、個人を特定できるような情報を収集することはありません。ウェブサイトから最適化された情報を提供する目的でCookie（クッキー）が用いることができます。Cookie（クッキー）とは、ウェブサイトが閲覧者のブラウザーに送信できるデータ要素のことで、閲覧者のシステムに蓄積される場合があります。お客さまは、ご利用のブラウザーをCookie（クッキー）を受け取る際に通知させることで、Cookie（クッキー）の受信を許可するかどうか決定できるように設定することができます。もし、Cookie（クッキー）の受信を望まれない場合は、お客さまのログインIDとパスワードをシステムにアクセスする毎にご入力して頂く必要があります。ご利用中のブラウザーやコンピューターのセキュリティに関する懸念がおありの場合は、このような設定を施されることをお勧めいたします。"
 
-msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in the USA, Japan, Costa Rica or Hong Kong, or to persons under age 18."
+#, fuzzy
+#| msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in the USA, Japan, Costa Rica or Hong Kong, or to persons under age 18."
+msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
 msgstr ""
 "■店頭バイナリーオプション取引は金融商品取引法に規定される店頭デリバティブ取引であり、元本や利益が保証されていません。■店頭バイナリーオプション取引は、判定時刻に自動的に権利行使されるヨーロピアンタイプと、取引期間中に決められた条件に達すると権利が自動行使されるアメリカンタイプがあります。■店頭バイナリーオプションは、外国為替相場等の変動により投資元本の全てを失うおそれのあるリスクの高い金融商品です。■判定時刻及び取引期間中における一定の権利を、オプション料を支払って購入する期限がある取引のため、権利が消滅した場合には支払ったオプション料の全額を失います。■ペイアウトは1ロットあたり1,000円です。■購入価格と売却価格にはスプレッドがあり、相場情勢により拡大することがあります。■相場情勢により、お客様が希望した価格より不利な価格で取引が成立する場合があります。■店頭バイナリーオプションの取引上限は以下のとおりです。\n"
 "1)1取引のペイアウト上限額は10万円。(100ロット分)\n"
@@ -6750,8 +6759,10 @@ msgstr "ワンタイムパスワード"
 msgid "Verify new password"
 msgstr "新しいパスワード（確認用）"
 
-msgid "Version 41. Last modified 2016-06-27."
-msgstr "バージョン41　最終更新日：2016-06-27"
+#, fuzzy
+#| msgid "Version %1. Last modified %2."
+msgid "Version 42. Last modified 2016-09-14."
+msgstr "第%1版・最終編集日：%2"
 
 msgid "View"
 msgstr "表示"
@@ -6840,7 +6851,9 @@ msgstr "当社は論争材料が発生しうる、または発生している中
 msgid "We also offer specialized pay-out structures to affiliates who offer a trading advice in connection with, and in relation to our commodities. <a href=\"mailto:%1\">Contact our affiliate manager, Karen Yap for details</a>."
 msgstr "また、当社では当社の商品に関する取引アドバイスを提供された方へのアフィリエイトに特化したペイアウト構造を提供しています。詳細は、<a href=\"mailto:%1\">当社アフィリエイトマネージャーKaren Yapまでご連絡ください。</a>"
 
-msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business.  We are exclusively authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and this in relation to financial derivative products (primarily binary options) relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than dealing on own account in Financial Products. Should you feel that you require investment advice or investment services other that those described above then you should contact an independent financial advisor or firm."
+#, fuzzy
+#| msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business.  We are exclusively authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and this in relation to financial derivative products (primarily binary options) relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than dealing on own account in Financial Products. Should you feel that you require investment advice or investment services other that those described above then you should contact an independent financial advisor or firm."
+msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business.  We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other persons, both services are in relation to financial derivative products (primarily binary options) relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other that those described above then you should contact an independent financial advisor or firm."
 msgstr "当社は投資事業を行ううえで、投資サービス法(Cap. 370, マルタ法律)の下、マルタ金融サービス庁 (\"MFSA\")によって承認、規制されています。外国為替、インデックス、株式、その他金融商品または資産（金融商品）に関する金融デリバティブ商品（主にバイナリーオプション）を自身の口座で取り扱うことを（取引相手としてのオファーや行為）MFSAによって独占的に承認されています。投資アドバイスまたは金融商品を自身の口座で取り扱う行為を超えるその他投資サービスの提供は承認されていないため、致しかねます。投資アドバイスまたは上記以外のその他投資サービスが必要だと感じだ際は、独立財務顧問または会社に連絡する必要があります。"
 
 msgid "We are committed to making sure your personal data and transactions are secure:"
@@ -7826,7 +7839,9 @@ msgstr "年"
 msgid "years"
 msgstr "年"
 
-msgid "you are not resident in a restricted country such as the USA, Japan, Hong Kong, Bahamas, Costa Rica, Malaysia, Malta, Iran, North Korea, Jersey, or Iraq;"
+#, fuzzy
+#| msgid "you are not resident in a restricted country such as the USA, Japan, Hong Kong, Bahamas, Costa Rica, Malaysia, Malta, Iran, North Korea, Jersey, or Iraq;"
+msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Guyana, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
 msgstr "アメリカ合衆国、日本、香港、バハマ、コスタリカ、マレーシア、マルタ共和国、イラン、北朝鮮、ジャージー島、イラクといった制限のある国に居住されていないこと。"
 
 msgid "you are over 18 years of age, unless you are an Estonian resident whereby you would have to be over 21;"
@@ -8598,6 +8613,9 @@ msgstr "ご口座の詳細情報"
 
 msgid "Terms and Conditions Approval"
 msgstr "利用規約の承認"
+
+#~ msgid "Version 41. Last modified 2016-06-27."
+#~ msgstr "バージョン41　最終更新日：2016-06-27"
 
 #~ msgid "You'll find answers to most of your questions on the <a href='' target='_blank' id='faq_url'>FAQ</a> page."
 #~ msgstr ""
@@ -16645,11 +16663,6 @@ msgstr "利用規約の承認"
 
 #~ msgid "The bonus will only be paid according to the first deposit amount, and will not be given based on multiple deposits that accumulate to Y."
 #~ msgstr "ボーナスは最初のデポジット、Yドルにのみ適用されます。それ以降のデポジット金額にボーナスは付与されません。"
-
-#, fuzzy
-#~| msgid "Version %1. Last modified %2."
-#~ msgid "Version 32. Last modified 2014-09-24."
-#~ msgstr "第%1版・最終編集日：%2"
 
 #~ msgid "Affiliate reward for period from %1 to %2"
 #~ msgstr "%1から%2でのアフィリエイト報酬"
