@@ -99,6 +99,7 @@ var ViewPopupUI = (function() {
             });
             $(dragHandle).disableSelection();
             this.reposition_confirmation();
+            $(window).resize(function(){ViewPopupUI.reposition_confirmation();});
             return con;
         },
         reposition_confirmation_ondrag: function () {
