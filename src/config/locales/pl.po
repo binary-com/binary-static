@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-09-11 22:07+0000\n"
+"PO-Revision-Date: 2016-09-21 09:36+0000\n"
 "Last-Translator: Ewelina Bruździak <e.bruzdziak@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/binary/static/pl/>\n"
 "Language: pl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.8\n"
+"X-Generator: Weblate 2.9-dev\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
@@ -284,8 +284,6 @@ msgstr "%ctx(minimalny czas trwania, na przykład minimum 15 sekund)min"
 msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
 msgstr "&#8220;%1 to jeden z naszych najbardziej zaufanych partnerów, z którym współpracujemy od wielu lat.&#8221;"
 
-#, fuzzy
-#| msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide&#8221;"
 msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide.&#8221;"
 msgstr "&#8220;Korzystamy z portalu www.binary.com od 8 lat i polecamy go wszystkim naszym członkom na całym świecie.&#8221;"
 
@@ -1605,7 +1603,7 @@ msgid "Choose your own strike."
 msgstr "Wybierz swoją wypłatę."
 
 msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Guyana, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
-msgstr ""
+msgstr "Mieszkańscy Afganistamu, Belgii, Bośni i Hercegowiny, Gujany, Iraku, Laosu, Syrii, Ugandy, Republiki Vanuatu oraz Jemenu nie mogą otwierać konta w Binary Investments (Europe) Ltd."
 
 msgid "Classification of assets requiring hedge"
 msgstr "Classification of assets requiring hedge"
@@ -3792,10 +3790,8 @@ msgstr "Dołącz do naszego zespołu utalentowanych specjalistów. Współpracuj
 msgid "Join our team of bright, talented professionals. Work collaboratively with us to promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years."
 msgstr "Dołącz do naszego zespołu utalentowanych specjalistów. Współpracuj z nami w celu promowania naszej nowoczesnej platformy, która od ponad 15 lat jest jedną z najlepiej rozpoznawalnych platform w branży handlu opcjami binarnymi."
 
-#, fuzzy
-#| msgid "Joshua Cavallaro <span> Markets And You Trader.</span>"
 msgid "Joshua Cavallaro <span> Markets And You Trader</span>"
-msgstr "Joshua Cavallaro <span> Gracz na portalu Markets And You.</span>"
+msgstr "Joshua Cavallaro <span> Gracz na portalu Markets And You</span>"
 
 msgid "Jul"
 msgstr "Lipiec"
@@ -4001,7 +3997,6 @@ msgstr "Dbanie o dokładność parametrów systemu wyceny"
 msgid "Maintain adequate speed and volume of output"
 msgstr "Dbanie o odpowiednią szybkość i wielkość danych wyjściowych"
 
-#, fuzzy
 msgid "Major Pairs"
 msgstr "Główne pary"
 
@@ -5943,10 +5938,8 @@ msgstr "Wysokość prowizji, jaką chcesz pobierać od Klientów za wpłaty i wy
 msgid "The company does not guarantee the ability to sell a contract prior to its expiration time."
 msgstr "Firma nie gwarantuje możliwości sprzedaży kontraktu przed upływem jego daty wygaśnięcia."
 
-#, fuzzy
-#| msgid "The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='%1' class='pjaxload'>here:</a>"
 msgid "The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='%1' class='pjaxload'>here.</a>"
-msgstr "Firma oferuje różne metody wpłaty środków. Każda z nich posiada własne godziny dla wpłat i wypłaty mogą nie być dostępne w niektórych z nich. Wszystkie szczegóły dotyczące dostępnych metod dokonywania wpłat i wypłat, w tym godziny rozliczeń są dostępne <a href='%1' class='pjaxload'>tutaj:</a>"
+msgstr "Firma oferuje różne metody wpłaty środków. Każda z nich posiada własne godziny dla wpłat i wypłaty mogą nie być dostępne w niektórych z nich. Wszystkie szczegóły dotyczące dostępnych metod dokonywania wpłat i wypłat, w tym godziny rozliczeń są dostępne <a href='%1' class='pjaxload'>tutaj.</a>"
 
 msgid "The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission's requirements for the segregation of customer funds at the level: <strong>medium protection</strong>."
 msgstr "Firma przechowuje środki klientów na innych rachunkach bankowych niż rachunek operacyjny. W przypadku niewypłacalności firmy rachunki te nie będą stanowiły jej aktywów. Tym samym spełnione zostają wymagania instytucji Gambling Commission dotyczące oddzielenia funduszy klientów na następującym poziomie: <strong>średnia ochrona</strong>."
@@ -6184,10 +6177,8 @@ msgstr "Ten bonus dostępny jest tylko dla nowych klientów. Obecni i dawni klie
 msgid "This bonus will be processed and credited to a client's account when:"
 msgstr "Bonus zostanie przetworzony i przyznany na konto klienta, gdy:"
 
-#, fuzzy
-#| msgid "This contract cannot be priced at the moment"
 msgid "This contract can not be traded in the final 2 minutes before settlement"
-msgstr "Ten kontrakt nie może być w tej chwili wyceniony"
+msgstr "Nie można zawierać tego zakładu w statnich 2 minutach przed rozliczeniem"
 
 msgid "This contract has LOST"
 msgstr "Ten kontrakt PRZEGRAŁ."
@@ -6249,10 +6240,8 @@ msgstr "Niniejsza strona internetowa zawiera linki do innych stron i może zawie
 msgid "This website does not collect personally identifying information about you except when you specifically and knowingly provide it. There is a technology called \"cookies\" which can be used to provide tailored information from a website. A cookie is an element of data that a website can send to your browser, which may then store it on your system. You can set your browser to notify you when you receive a cookie, giving you the chance to decide whether to accept it. If you do not accept the cookie, then you will need to input your loginID and password again at every form required to enter into the system. You are advised to choose this option if you have concerns about the security of your personal browser or PC."
 msgstr "Ta strona internetowa nie gromadzi danych umożliwiających identyfikację informacji o Tobie, jeżeli nie wyrazisz na to zgody. Jest to technologia zwana „cookies” – pliki cookie mogą być stosowane do dostarczania konkretnych informacji ze strony internetowej. Cookie jest elementem danych, które strona internetowa może przesłać do przeglądarki, która może następnie przechowywać go w systemie. Możesz ustawić swoją przeglądarkę tak, aby informowała, kiedy otrzymasz plik cookie, co daje możliwość wyboru, czy przyjąć taki plik. Jeśli nie zaakceptujesz plików cookie, za każdym razem będzie konieczne wprowadzanie loginu i hasła w formularzach, które wymagają tych danych. Radzimy, aby wybrać tę opcję, jeśli masz obawy odnośnie bezpieczeństwa swojej przeglądarki lub komputera."
 
-#, fuzzy
-#| msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in the USA, Japan, Costa Rica or Hong Kong, or to persons under age 18."
 msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
-msgstr "Ten portal jest zarządzany w Wlk. Brytanii i na Wyspie Man przez Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Wyspa Man, Wyspy Brytyjskie; za wydawanie licencji i jego regulację odpowiada (1) Komisja Nadzoru Gier Hazardowych Wyspy Man, na Wyspach Brytyjskich (Gambling Supervision Commission); aktualna licencja na prowadzenie gier hazardowych została wydana dnia 31 sierpnia 2012 r., a w sprawach dotyczących klientów z Wielkiej Brytanii (2) Komisja ds. Gier Hazardowych w Zjednoczonym Królestwie (UK Gambling Commission) – <a href='%1' target='_blank'>zobacz licencję</a>. W pozostałej części Unii Europejskiej portal jest zarządzany przez Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, podmiot świadczący usługi inwestycyjne kategorii 3, za którego licencję i nadzór odpowiada Urząd ds. Usług Finansowych: Malta Financial Services Authority na Malcie (licencja nr IS/70156), w przypadku produktów inwestycyjnych i przez Binary (Europe) Ltd. w przypadku produktów hazardowych, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta; za wydawanie licencji i jego regulację odpowiada (1) Urząd ds. Gier Hazardowych na Malcie (Malta Gaming Authority), licencja nr MGA/CL2/118/2000 z dnia 26 maja 2015 r., w sprawach dotyczących klientów ze Zjednoczonego Królestwa (2) Komisja ds. Gier Hazardowych w Zjednoczonym Królestwie (UK Gambling Commission) - <a href='%1' target='_blank'>zobacz licencję</a>, zaś w sprawach dotyczących klientów z Irlandii (3) irlandzki urząd skarbowy Revenue Commissioners, obecna licencja wydana 29 września 2015 r. (o numerze 1010285). Usługi niniejszego portalu nie są dostępne w Stanach Zjednoczonych, Japonii, Kostaryce ani Hongkongu, ani dla osób poniżej 18 roku życia."
+msgstr "Ten portal jest zarządzany w Wlk. Brytanii i na Wyspie Man przez Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Wyspa Man, Wyspy Brytyjskie; za wydawanie licencji i jego regulację odpowiada (1) Komisja Nadzoru Gier Hazardowych Wyspy Man, na Wyspach Brytyjskich (Gambling Supervision Commission); aktualna licencja na prowadzenie gier hazardowych została wydana dnia 31 sierpnia 2012 r., a w sprawach dotyczących klientów z Wielkiej Brytanii (2) Komisja ds. Gier Hazardowych w Zjednoczonym Królestwie (UK Gambling Commission) – <a href='%1' target='_blank'>zobacz licencję</a>. W pozostałej części Unii Europejskiej portal jest zarządzany przez Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, podmiot świadczący usługi inwestycyjne kategorii 3, za którego licencję i nadzór odpowiada Urząd ds. Usług Finansowych: Malta Financial Services Authority na Malcie (licencja nr IS/70156), w przypadku produktów inwestycyjnych i przez Binary (Europe) Ltd. w przypadku produktów hazardowych, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta; za wydawanie licencji i jego regulację odpowiada (1) Urząd ds. Gier Hazardowych na Malcie (Malta Gaming Authority), licencja nr MGA/CL2/118/2000 z dnia 26 maja 2015 r., w sprawach dotyczących klientów ze Zjednoczonego Królestwa (2) Komisja ds. Gier Hazardowych w Zjednoczonym Królestwie (UK Gambling Commission) - <a href='%1' target='_blank'>zobacz licencję</a>, zaś w sprawach dotyczących klientów z Irlandii (3) irlandzki urząd skarbowy Revenue Commissioners, obecna licencja wydana 29 września 2015 r. (o numerze 1010285). Usługi niniejszego portalu nie są dostępne w niektórych krajach, takich jak Stany Zjednoczone, Kostaryka czy Hongkong, ani dla osób poniżej 18 roku życia."
 
 msgid "Thorough knowledge of bash scripting, as well as experience with scripting languages such as Perl and PHP"
 msgstr "Rozległa wiedza dotycząca obsługi skryptów bash oraz doświadczenie w pracy z językami skryptowymi, takimi jak Perl i PHP"
@@ -6587,10 +6576,8 @@ msgstr "Token weryfikacyjny"
 msgid "Verify new password"
 msgstr "Zweryfikuj nowe hasło"
 
-#, fuzzy
-#| msgid "Version 29. Last modified 2014-06-26."
 msgid "Version 42. Last modified 2016-09-14."
-msgstr "Wersja 29. Ostatnio zmieniana dnia 26 czerwca 2014 r."
+msgstr "Wersja 42. Ostatnio zmieniana dnia 14 września 2016 r."
 
 msgid "View"
 msgstr "Widok"
@@ -6679,10 +6666,8 @@ msgstr "Staramy się prowadzić rejestr rodzajów prowadzonej przez nas działal
 msgid "We also offer specialized pay-out structures to affiliates who offer a trading advice in connection with, and in relation to our commodities. <a href=\"mailto:%1\">Contact our affiliate manager, Karen Yap for details</a>."
 msgstr "Oferujemy również specjalną strukturę wypłat dla partnerów oferujących porady handlowe związane z naszymi towarami. <a href=\"mailto:%1\">Aby uzyskać więcej szczegółów, skontaktuj się z Karen Yap, naszym menadżerem ds. programu partnerskiego</a>."
 
-#, fuzzy
-#| msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business.  We are exclusively authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and this in relation to financial derivative products (primarily binary options) relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than dealing on own account in Financial Products. Should you feel that you require investment advice or investment services other that those described above then you should contact an independent financial advisor or firm."
 msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business.  We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other persons, both services are in relation to financial derivative products (primarily binary options) relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other that those described above then you should contact an independent financial advisor or firm."
-msgstr "Na mocy ustawy Malta Investment Services Act (Cap. 370, zbiór ustaw Malty) („Ustawa”) za nadzór nad naszą firmą odpowiada Urząd ds. Usług Finansowych na Malcie: Malta Financial Services Authority („MFSA”), który zezwolił nam na prowadzenie działalności inwestycyjnej. Jesteśmy wyłącznie uprawnieni przez MFSA do realizowania transakcji na własny rachunek (np. występowanie w roli kontrahenta transakcji) i odnosi się to do finansowych produktów pochodnych (przede wszystkim opcji binarnych) opartych na walutach obcych, wskaźnikach, akcjach i innych produktach finansowych lub aktywach („Produkty finansowe”). Nie posiadamy zezwolenia na oferowanie lub zapewnianie doradztwa inwestycyjnego lub jakichkolwiek innych usług inwestycyjnych za wyjątkiem handlowania Produktami finansowymi na własny rachunek i nie oferujemy takich usług. Jeśli wydaje Ci się, że potrzebujesz porady inwestycyjnej lub usług inwestycyjnych innych niż te opisane powyżej, powinieneś/powinnaś skontaktować się z niezależnym doradcą inwestycyjnym lub firmą doradztwa inwestycyjnego."
+msgstr "Na mocy ustawy Malta Investment Services Act (Cap. 370, zbiór ustaw Malty) („Ustawa”) za nadzór nad naszą firmą odpowiada Urząd ds. Usług Finansowych na Malcie: Malta Financial Services Authority („MFSA”), który zezwolił nam na prowadzenie działalności inwestycyjnej. Jesteśmy uprawnieni przez MFSA do realizowania transakcji na własny rachunek (np. występowanie w roli kontrahenta transakcji) i realizowania zleceń w imieniu innych osób, co w obu przypadkach odnosi się do finansowych produktów pochodnych (przede wszystkim opcji binarnych) opartych na walutach obcych, wskaźnikach, akcjach i innych produktach finansowych lub aktywach („Produkty finansowe”). Nie posiadamy zezwolenia na oferowanie lub zapewnianie doradztwa inwestycyjnego lub jakichkolwiek innych usług inwestycyjnych za wyjątkiem usług opisanych powyżej i nie oferujemy takich usług. Jeśli wydaje Ci się, że potrzebujesz porady inwestycyjnej lub usług inwestycyjnych innych niż te opisane powyżej, powinieneś/powinnaś skontaktować się z niezależnym doradcą inwestycyjnym lub firmą doradztwa inwestycyjnego."
 
 msgid "We are committed to making sure your personal data and transactions are secure:"
 msgstr "Staramy się zapewnić bezpieczeństwo Twoich danych osobowych i transakcji:"
@@ -7533,6 +7518,11 @@ msgstr "login"
 msgid "m"
 msgstr "miesiąc"
 
+#, fuzzy
+#| msgid "$25,000 - $100,000"
+msgid "min 1,000 and max 100,000"
+msgstr "25 000 $ – 100 000 $"
+
 msgid "minimum available duration"
 msgstr "minimalny dostępny czas trwania"
 
@@ -7617,10 +7607,8 @@ msgstr "rok"
 msgid "years"
 msgstr "lat(a)"
 
-#, fuzzy
-#| msgid "you are not resident in a restricted country such as the USA, Japan, Hong Kong, Bahamas, Costa Rica, Malaysia, Malta, Iran, North Korea, Jersey, or Iraq;"
 msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Guyana, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
-msgstr "nie jesteś mieszkańcem kraju z ograniczonym dostępem, czyli USA, Japonii, Hongkongu, Bahamów, Kostaryki, Malezji, Malty, Iranu, Korei Północnej, Jersey, ani Iraku;"
+msgstr "nie jesteś mieszkańcem kraju z ograniczonym dostępem, czyli Afganistanu, Bośni i Hercegowiny, Kostaryki, Gujany, Hongkongu, Iranu, Iraku, Jersey, Laosu, Malezji, Malty, Korei Północnej, Syrii, Ugandy, Stanów Zjednoczonych, Republiki Vanuatu ani Jemenu;"
 
 msgid "you are over 18 years of age, unless you are an Estonian resident whereby you would have to be over 21;"
 msgstr "masz skończone 18 lat, chyba że jesteś mieszkańcem Estonii – wtedy musisz mieć skończone 21 lat;"

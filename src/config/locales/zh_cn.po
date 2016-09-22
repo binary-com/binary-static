@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Chinese (China) (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-09-14 06:36+0000\n"
+"PO-Revision-Date: 2016-09-20 07:46+0000\n"
 "Last-Translator: Freddy Hew <hewfreddy@gmail.com>\n"
 "Language-Team: Chinese (China) <https://hosted.weblate.org/projects/binary/static/zh_CN/>\n"
 "Language: zh_cn\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.8\n"
+"X-Generator: Weblate 2.9-dev\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
@@ -1599,7 +1599,7 @@ msgid "Choose your own strike."
 msgstr "选择您自己的行权价格。"
 
 msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Guyana, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
-msgstr ""
+msgstr "阿富汗、比利时、波斯尼亚和黑塞哥维那、圭亚那、伊拉克、老挝人民民主共和国、叙利亚、乌干达、瓦努阿图或也门等国国民将受禁止于Binary Investments (Europe) Ltd开立账户。"
 
 msgid "Classification of assets requiring hedge"
 msgstr "Classification of assets requiring hedge"
@@ -5940,10 +5940,8 @@ msgstr "您要向客户收取的充值提款佣金"
 msgid "The company does not guarantee the ability to sell a contract prior to its expiration time."
 msgstr "公司不保证您一定能在到期之前卖出该合约。"
 
-#, fuzzy
-#| msgid "The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='%1' class='pjaxload'>here:</a>"
 msgid "The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='%1' class='pjaxload'>here.</a>"
-msgstr "本公司支持多种存款方式，每种方式都有不同的存款时序，其中一些可能无法提款。有关存取款方式和结算期的详情，请查看 <a href='%1' class='pjaxload'>此处:</a>"
+msgstr "本公司支持多种存款方式，每种方式都有不同的存款时序，其中一些可能无法提款。有关存取款方式和结算期的详情，请查看 <a href='%1' class='pjaxload'>此处。</a>"
 
 msgid "The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission's requirements for the segregation of customer funds at the level: <strong>medium protection</strong>."
 msgstr "公司把客户资金存在独立的银行账户，与运营账户分开，因此如果公司破产，客户资金不会成为公司资产的一部分。这符合博彩委员会关于客户资金独立管理的要求，即：<strong>中等级别保护</strong>。"
@@ -6244,10 +6242,8 @@ msgstr "本网站包含其他网站链接，并可能含有第三方网站的横
 msgid "This website does not collect personally identifying information about you except when you specifically and knowingly provide it. There is a technology called \"cookies\" which can be used to provide tailored information from a website. A cookie is an element of data that a website can send to your browser, which may then store it on your system. You can set your browser to notify you when you receive a cookie, giving you the chance to decide whether to accept it. If you do not accept the cookie, then you will need to input your loginID and password again at every form required to enter into the system. You are advised to choose this option if you have concerns about the security of your personal browser or PC."
 msgstr "除了您有意识专门提供的信息，本网站不收集其他个人身份信息。一种被称为“cookies” 的技术可能被用于收集来自特定网站的特定信息。cookie 是一种数据元，可以被网站发送到您的浏览器，然后存储在您的系统中。您可以将浏览器设置为“收到 cookie 时通知您”，以便您决定是否接受。如果您不接受该 cookie，那么您需要在系统的每个表单中分别输入您的登录ID和密码。如果您对个人电脑或浏览器的安全性存在担忧，我们建议您这么做。"
 
-#, fuzzy
-#| msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in the USA, Japan, Costa Rica or Hong Kong, or to persons under age 18."
 msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
-msgstr "本网站由Binary (IOM) Ltd.在英国和马恩岛经营，地址为：First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles；由(1)不列颠群岛马恩岛投资监管委员会授予牌照和监管，当前在线博彩牌照于2012 年8 月31 日颁发；而英国客户由(2)英国博采委员会授予牌照和监管- <a href='%1' target='_blank'>查看牌照</a>。此网站市场在欧盟其他地区，投资产品由Binary Investments (Europe) Ltd.管理，地址为  Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta，由马耳他金融服务机构授予牌照及监管为3级投资服务提供商（牌照号码为 IS/70156)），而博彩产品由Binary (Europe) Ltd.,管理，地址为：Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta，由(1)位于马耳他的马耳他博彩管理局授予牌照和监管，牌照号码为 MGA/CL2/118/2000（2015年5 月26 日），而英国客户由(2)英国博采委员会授予牌照和监管- <a href='%2' target='_blank'>查看牌照</a>，以及爱尔兰客户由 (3) 爱尔兰税务专员办事处授予牌照和监管，当前远程博彩牌照号码为 1010285（2015年9月29日)。本网站不向美国、日本、哥斯达黎加、香港及18岁以下的用户提供服务。"
+msgstr "本网站由Binary (IOM) Ltd.在英国和马恩岛经营，地址为：First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles；由(1)不列颠群岛马恩岛投资监管委员会授予牌照和监管，当前在线博彩牌照于2012 年8 月31 日颁发；而英国客户由(2)英国博采委员会授予牌照和监管- <a href='%1' target='_blank'>查看牌照</a>。此网站市场在欧盟其他地区，投资产品由Binary Investments (Europe) Ltd.管理，地址为  Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta，由马耳他金融服务机构授予牌照及监管为3级投资服务提供商（牌照号码为 IS/70156)），而博彩产品由Binary (Europe) Ltd.,管理，地址为：Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta，由(1)位于马耳他的马耳他博彩管理局授予牌照和监管，牌照号码为 MGA/CL2/118/2000（2015年5 月26 日），而英国客户由(2)英国博采委员会授予牌照和监管- <a href='%2' target='_blank'>查看牌照</a>，以及爱尔兰客户由 (3) 爱尔兰税务专员办事处授予牌照和监管，当前远程博彩牌照号码为 1010285（2015年9月29日)。本网站不向一些国家如美国、哥斯达黎加、香港及18岁以下的用户提供服务。"
 
 msgid "Thorough knowledge of bash scripting, as well as experience with scripting languages such as Perl and PHP"
 msgstr "熟悉 bash 脚本编程，对Perl 和 PHP 等脚本语言有丰富经验"
@@ -6582,10 +6578,8 @@ msgstr "验证令牌"
 msgid "Verify new password"
 msgstr "验证新密码"
 
-#, fuzzy
-#| msgid "Version 32. Last modified 2014-09-24."
 msgid "Version 42. Last modified 2016-09-14."
-msgstr "版本32。最后修改时间2014-09-24。"
+msgstr "版本42。最后修改时间2016-09-14。"
 
 msgid "View"
 msgstr "查看"
@@ -6674,10 +6668,8 @@ msgstr "我们希望记录持续运行并可能发生利益冲突的活动。我
 msgid "We also offer specialized pay-out structures to affiliates who offer a trading advice in connection with, and in relation to our commodities. <a href=\"mailto:%1\">Contact our affiliate manager, Karen Yap for details</a>."
 msgstr "对于向我们的大宗商品提供交易顾问服务的联盟，我们也将为其提供专门的赔付结构。<a href=\"mailto:%2\">请联系我们的联盟经理 Karen Yap 了解详情</a>。"
 
-#, fuzzy
-#| msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business.  We are exclusively authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and this in relation to financial derivative products (primarily binary options) relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than dealing on own account in Financial Products. Should you feel that you require investment advice or investment services other that those described above then you should contact an independent financial advisor or firm."
 msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business.  We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other persons, both services are in relation to financial derivative products (primarily binary options) relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other that those described above then you should contact an independent financial advisor or firm."
-msgstr "我们由马耳他金融服务机构 (“MFSA”）授予许可证和监管，根据投资服务法令 (马耳他法令第370章）（法令）开展投资业务。我们经 MFSA 专属授权，在自己的帐户进行交易（例如：向交易者提供服务，或担任交易对手）。这些交易和金融衍生产品（主要是二元期权）有关，也和外汇、指数、股票及其他金融产品或资产（“金融产品”）有关。我们无权提供投资咨询或在自己账户进行的金融产品交易以外的投资服务。要获得相关投资咨询或服务，您须联系独立的金融顾问或公司。"
+msgstr "我们由马耳他金融服务机构 (“MFSA”）授予许可证和监管，根据投资服务法令 (马耳他法令第370章）（法令）开展投资业务。我们经 MFSA 授权，在自己的帐户进行交易（例如：向交易者提供服务，或担任交易对手）及代替他人执行订单。这两种服务和金融衍生产品（主要是二元期权）有关，也和外汇、指数、股票及其他金融产品或资产（“金融产品”）有关。除了以上所述，我们无权提供任何其他投资咨询或投资服务。要获得相关投资咨询或服务，您须联系独立的金融顾问或公司。"
 
 msgid "We are committed to making sure your personal data and transactions are secure:"
 msgstr "我们承诺保证您的个人数据和交易安全："
@@ -7530,6 +7522,11 @@ msgstr "登录"
 msgid "m"
 msgstr "月"
 
+#, fuzzy
+#| msgid "$25,000 - $100,000"
+msgid "min 1,000 and max 100,000"
+msgstr "$25,000 - $100,000"
+
 msgid "minimum available duration"
 msgstr "最短可用期限"
 
@@ -7615,10 +7612,8 @@ msgstr "年"
 msgid "years"
 msgstr "年"
 
-#, fuzzy
-#| msgid "you are not resident in a restricted country such as the USA, Japan, Hong Kong, Bahamas, Costa Rica, Malaysia, Malta, Iran, North Korea, Jersey, or Iraq;"
 msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Guyana, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
-msgstr "您不是美国、日本、香港、巴哈马、哥斯达黎加、马来西亚、马耳他、伊朗、朝鲜、泽西岛或伊拉克等受限制国家及地区的居民；"
+msgstr "您不是阿富汗、波斯尼亚和黑塞哥维那、哥斯达黎加、圭亚那、香港、伊朗、伊拉克、泽西岛、老挝人民民主共和国、马来西亚、马耳他、朝鲜、叙利亚、乌干达、美国、瓦努阿图或也门等受限制国家及地区的居民；"
 
 msgid "you are over 18 years of age, unless you are an Estonian resident whereby you would have to be over 21;"
 msgstr "您的年龄在18岁以上，如果您是爱沙尼亚居民，则年龄须在21岁以上；"

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-09-10 17:30+0000\n"
+"PO-Revision-Date: 2016-09-20 15:14+0000\n"
 "Last-Translator: Jutawan <bubbleblythe@gmail.com>\n"
 "Language-Team: Thai <https://hosted.weblate.org/projects/binary/static/th/>\n"
 "Language: th\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.8\n"
+"X-Generator: Weblate 2.9-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"API ของ %1\" หมายถึง ระบบของ %1 ที่ประกอบด้วย ชุดคำสั่งต่างๆ โปรโตคอลต่างๆ เครื่องมือต่างๆ และทรัพยากรต่างๆที่ถูกพัฒนาขึ้นและดำเนินการโดย %1 ซึ่งท่านสามารถใช้งานแอพพลิเคชันได้เพื่อเชื่อมต่อกับแพลตฟอร์มการเทรดของ %1"
@@ -191,7 +191,7 @@ msgid "%1 offers the world's financial markets in a simple, user-friendly platfo
 msgstr "%1 เสนอรูปแบบการซื้อขายตลาดการเงินระดับโลกที่ง่ายดาย มีการใช้งานระบบที่ง่าย สะดวก"
 
 msgid "%1 opens an office in the QSentral office building in central Kuala Lumpur to further expand its IT development team."
-msgstr ""
+msgstr "%1 เปิดสำนักงานที่ QSentral ในเมืองกัวลาลัมเปอร์เพื่อรองรับการขยายตัวของทีมพัฒนาระบบสารสนเทศ"
 
 msgid "%1 prices are benchmarked against the interbank options market, so you always get best-in-class prices for your trades."
 msgstr "%1 ราคาต่างๆ นั้น อ้างอิงตามเกณฑ์มาตรฐานของราคาออปชั่นในตลาด ดังนั้นท่านจะได้รับราคาที่ดีที่สุดเสมอในการเทรดของท่าน"
@@ -285,10 +285,8 @@ msgstr "%ctx(ระยะเวลาที่ต่ำที่สุด, ต�
 msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
 msgstr "&#8220;%1 เป็นหนึ่งในพันธมิตรเก่าแก่และมีความเชื่อถือมากที่สุดที่เรามีมา พวกเราทำงานด้วยกันมานาน &#8221;"
 
-#, fuzzy
-#| msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide&#8221;"
 msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide.&#8221;"
-msgstr "&#8220; เราใช้งาน www.binary.com มา 8 ปี และเป็นที่ที่เยี่ยมยอด ที่เราได้แนะนำให้สมาชิกทั่วโลกของเราใช้ &#8221;"
+msgstr "&#8220;เราใช้งาน www.binary.com มา 8 ปี และเป็นที่ที่เยี่ยมยอด ที่เราได้แนะนำให้สมาชิกทั่วโลกของเราใช้&#8221;"
 
 msgid "'<strong>Long</strong>' contracts generate profits when the index rises and loses when it falls."
 msgstr "'<strong>Long</strong>' สัญญาซื้อ (Buy) สร้างกำไรเมื่อดัชนีขาขึ้นและขาดทุนเมื่อดัชนีร่วงลง"
@@ -1387,7 +1385,7 @@ msgid "Binary trading is very simple."
 msgstr "การเทรดไบนารีนั้นง่ายมาก"
 
 msgid "Binary's Japanese subsidiary Binary KK is licensed by the KLFB as a Type 1 Financial Instruments Business in Japan."
-msgstr ""
+msgstr "สาขาที่ญี่ปุ่น ของ Binary KK ได้รับใบอนุญาตจาก KLFB เทียบเท่า Type 1 Financial Instruments Business ในประเทศญี่ปุ่น"
 
 msgid "Binary's Japanese subsidiary Binary KK opens an office in Tokyo and starts the process of applying for relevant licenses."
 msgstr "บริษัทย่อยของ Binary ที่ประเทศญี่ปุ่น Binary KK เปิดสำนักงานที่โตเกียว และเริ่มดำเนินการในการขอใบอนุญาตต่างๆ"
@@ -1606,7 +1604,7 @@ msgid "Choose your own strike."
 msgstr "กำหนดราคาใช้สิทธิของท่าน"
 
 msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Guyana, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
-msgstr ""
+msgstr "ลูกค้าในประเทศเหล่านี้ อัฟกานิสถาน เบลเยี่ยม บอสเนีย และ เฮอเซโกวินา กายอานา อิรัก สาธารณรัฐประชาชนลาว ซีเรีย ยูกานดา วาตูอานู หรือ เยเมน จะได้รับการดูแลและเปิดบัญชีจาก Binary Investments (Europe) Ltd."
 
 msgid "Classification of assets requiring hedge"
 msgstr "การจำแนกสินทรัพย์ที่ต้องป้องกันความเสี่ยง"
@@ -3157,7 +3155,7 @@ msgid "In relation to some Contracts, at the time at which you give us an order 
 msgstr ""
 
 msgid "In such an event, the Company may at its sole discretion (with or without notice) close out Client's open financial contracts at prices it considers fair and reasonable at such a time and no claims may be entertained against the Company in connection thereto."
-msgstr ""
+msgstr "ในกรณีดังกล่าว บริษัทฯ จะใช้ดุลยพินิจ (โดยการแจ้ง หรือ ไม่แจ้งให้ทราบ) ในการปิดสัญญาทางการเงินที่เปิดอยู่ของลูกค้าที่ราคาที่พิจารณาแล้วว่า มีความยุติธรรม สมเหตุสมผลในเวลานั้น และไม่มีสิทธิ์กล่าวอ้างต่อทางบริษัทฯ ในเรื่องดังกล่าว"
 
 msgid "In the 'Further Instructions' field please specify the payment method and account number to which the Agent will send the funds to."
 msgstr "ในช่อง 'Further Instructions' โปรดระบุประเภทการชำระเงิน และเลขที่บัญชีสำหรับตัวแทนที่จะใช้ในการฝากและถอนเงิน"
@@ -3801,10 +3799,8 @@ msgstr "ร่วมเป็นส่วนหนึ่งของทีมอ
 msgid "Join our team of bright, talented professionals. Work collaboratively with us to promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years."
 msgstr "ร่วมเป็นส่วนหนึ่งของทีมอันสดใสของเรา การมีความสามารถอย่างมืออาชีพ การทำงานร่วมกันเพื่อช่วยส่งเสริมแพลตฟอร์มที่มีความทันสมัย ซึ่งเป็นหนึ่งในองค์กรที่ได้รับการยอมรับในสาขาการซื้อขายไบนารีออปชั่น เป็นเวลามากกว่า 15 ปี"
 
-#, fuzzy
-#| msgid "Joshua Cavallaro <span> Markets And You Trader.</span>"
 msgid "Joshua Cavallaro <span> Markets And You Trader</span>"
-msgstr "Joshua Cavallaro <span> Markets And You Trader </span>"
+msgstr "โจชัวร์ คาวาลาโร <span> ตลาดและ ยู เทรดเดอร์</span>"
 
 msgid "Jul"
 msgstr "ก.ค."
@@ -4247,10 +4243,8 @@ msgstr "ไม่เคยใช้"
 msgid "New Password"
 msgstr "รหัสผ่านใหม่"
 
-#, fuzzy
-#| msgid "Trade"
 msgid "New Trade"
-msgstr "เทรด"
+msgstr "เริ่มเทรด"
 
 msgid "New password"
 msgstr "รหัสผ่านใหม่"
@@ -4285,9 +4279,8 @@ msgstr "การซื้อขายแบบไม่แตะเส้น"
 msgid "No connection with Antisocial forces"
 msgstr "ไม่มีความสัมพันธ์กับกองกำลังต่อต้านสังคมใดๆ"
 
-#, fuzzy
 msgid "No delay, neglect, or forbearance on the part of either party in enforcing against the other party any term or condition of this Agreement shall either be or be deemed to be a waiver or in any way prejudice any right of that party under this Agreement."
-msgstr "ไม่มีความล่าช้า การปฏิเสธ หรือ"
+msgstr "ไม่มีความล่าช้า การปฏิเสธ หรือ การงดใช้สิทธิ์เรียกร้องในส่วนใดๆ ต่อฝ่ายใด ในเงื่อนไขข้อตกลง อันจะเป็นการอ้าง หรือ งดเว้น หรือ ในทางที่อาจทำให้เสียหายแก่ฝ่ายใดฝ่ายหนึ่งในข้อตกลงนี้"
 
 msgid "No experience"
 msgstr "ไม่มีประสบการณ์"
@@ -4924,10 +4917,8 @@ msgstr "มีความเชี่ยวชาญในภาษาสคร
 msgid "Proficiency in a second language (oral and written) is preferred"
 msgstr "มีความเชี่ยวชาญในภาษาที่สอง ทั้งพูดและเขียน จะได้รับการพิจารณาเป็นพิเศษ"
 
-#, fuzzy
-#| msgid "Profit"
 msgid "Profile"
-msgstr "กำไร"
+msgstr "ประวัติ"
 
 msgid "Profit"
 msgstr "กำไร"
@@ -5049,8 +5040,6 @@ msgstr "อ้างอิง"
 msgid "Reference ID"
 msgstr "หมายเลขอ้างอิง"
 
-#, fuzzy
-#| msgid "Reload page"
 msgid "Refresh page"
 msgstr "โหลดหน้านี้ใหม่"
 
@@ -5274,10 +5263,8 @@ msgstr "คำถามลับ"
 msgid "Security"
 msgstr "ความปลอดภัย"
 
-#, fuzzy
-#| msgid "Account Limits"
 msgid "Security & Limits"
-msgstr "วงเงินในบัญชี"
+msgstr "วงเงินในบัญชีและหลักประกัน"
 
 msgid "Security Disclaimer"
 msgstr "การสงวนสิทธิ์ของความปลอดภัย"
@@ -5399,10 +5386,8 @@ msgstr "ลงทะเบียนเพื่อทดลองระบบข
 msgid "Sign me up"
 msgstr "ลงทะเบียน / สมัครใช้งาน"
 
-#, fuzzy
-#| msgid "Sign me up"
 msgid "Sign out"
-msgstr "ลงทะเบียน / สมัครใช้งาน"
+msgstr "ออกจากระบบ"
 
 msgid "Sign up as a tester and look for Binary.com-related projects."
 msgstr "ลงทะเบียนเป็นนักทดสอบระบบและดูแลโครงการที่เกี่ยวข้องกับ Binary.com"
@@ -5473,10 +5458,8 @@ msgstr "ขออภัย ฟังก์ชันนี้มีให้ใ�
 msgid "Sorry, this feature is not available."
 msgstr "ขออภัย ไม่สามารถใช้งานฟังก์ชันนี้ได้"
 
-#, fuzzy
-#| msgid "Sorry, you have entered an incorrect email address."
 msgid "Sorry, you have entered an incorrect cashier password"
-msgstr "ขออภัยค่ะ ท่านป้อนอีเมล์ไม่ถูกต้อง"
+msgstr "ขออภัยค่ะ ท่านป้อนรหัสผ่านแคชเชียร์ไม่ถูกต้อง"
 
 msgid "Spam - We do not condone Spam"
 msgstr "สแปม - เราไม่เอาโทษสแปม"
@@ -5770,7 +5753,7 @@ msgid "The Binary.com website's static content (CSS, Javascript) is available as
 msgstr "เนื้อหาของเว็บไซต์ Binary.com (CSS จาวาสคริป) ที่มีเป็น <a target='_blank' href='%1'>Binary-Static</a> โครงการโอเพ่นซอสบน github คุณเคยคิดว่าอยากแปลงโฉมเว็บไซต์ Binary.com หรือ ปรับปรุงเบราเซอร์ที่ทำงานร่วมกันได้ ความเร็วในการเรนเดอร์ หรือศักยภาพของจาวาสคริปไหม? โปรดแสดงความคิดเห็นเพื่อปรับปรุงโครงการ หรือ ส่งความต้องการของท่านที่ประสงค์ให้มีการเปลี่ยนแปลงรหัสโปรแกรมต่างๆ"
 
 msgid "The Company does not guarantee that the %1 API it provides will function without interruption or errors in functioning. In particular, the operation of the %1 API may be interrupted due to maintenance, updates, or system or network failures. The Company disclaims all liability for damages caused by any such interruption or errors in functioning."
-msgstr ""
+msgstr "บริษัทฯ ไม่รับรองว่า API ของ %1 ดำเนินการโดยปราศจากข้อขัดข้อง หรือ ข้อผิดพลาด การทำงานของ API ของ %1 อาจจะได้รับผลกระทบจากการดูแลรักษาระบบ การปรับปรุงระบบ หรือ การล้มเหลวของเครือข่าย หรือ ระบบ บริษัทฯ ปฏิเสธความรับผิดชอบต่อการสูญเสีย หรือภาระใดๆ ที่อาจจะเกิดขึ้นเนื่องจากข้อขัดข้อง หรือ ข้อผิดพลาดดังกล่าว"
 
 msgid "The Company does not provide a market amongst or between Clients for investments, securities, derivatives or speculations. Each financial contract purchased by a Client via this site is an individual agreement between that Client and the Company and is not a security, nor is it transferable, negotiable or assignable to or with any third party."
 msgstr ""
@@ -5863,7 +5846,7 @@ msgid "The Company will provide advertising collaterals with links containing af
 msgstr "บริษัทฯ จะเตรียมโฆษณาที่ประกอบด้วยลิงค์ที่ฝังรหัสพันธมิตรไว้ และอาจจะมีการแก้ไขโดยพวกเราเป็นครั้งคราว"
 
 msgid "The Company will, at its sole discretion, determine whether or not your application has been successful. The Company's decision is final and is not open to appeal."
-msgstr ""
+msgstr "การตัดสินของบริษัทถือเป็นสิ้นสุด"
 
 msgid "The Company's Obligations"
 msgstr "หน้าที่ของบริษัทฯ"
@@ -5973,8 +5956,6 @@ msgstr "ค่านายหน้าจะถูกคำนวณจากล
 msgid "The company does not guarantee the ability to sell a contract prior to its expiration time."
 msgstr "บริษัทฯ ไม่รับประกันความสามารถในการขายสัญญาก่อนที่สัญญาจะหมดอายุ"
 
-#, fuzzy
-#| msgid "The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='%1' class='pjaxload'>here:</a>"
 msgid "The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='%1' class='pjaxload'>here.</a>"
 msgstr "บริษัทฯ มีช่องทางการรับฝากที่หลากหลาย แต่ละช่องทางมีเงื่อนไขของเวลา และบางช่องทางไม่ได้ให้บริการสำหรับการถอน รายละเอียดเกี่ยวกับการฝากและการถอนรวมถึงเวลาในการตัดยอดสามารถตรวจสอบได้จาก <a href='%1' class='pjaxload'>ที่นี่</a>"
 
@@ -5985,16 +5966,16 @@ msgid "The company holds customer funds in separate bank accounts to the operati
 msgstr ""
 
 msgid "The company reserves the right to cancel/prohibit the use of this promotion at its own discretion at any time."
-msgstr ""
+msgstr "บริษัทฯ สงวนสิทธิ์ในการยกเลิก / ห้ามการใช้การส่งเสริมการขายโดยดุลยพินิจของบริษัทฯ"
 
 msgid "The company reserves the right to charge a dormant fee of up to USD/EUR/AUD/GBP25 every 6 months for every Client account that has had no transaction recorded for over 12 months. If a Client's account is with Binary (Europe) Ltd., and his account has had no activity for a period of thirty months, and the Client cannot be located or contacted, the Company shall remit the balance of the account to the Malta Gaming Authority. Clients need to contact our helpdesk to recover funds from inactive, closed, blocked or excluded accounts."
-msgstr ""
+msgstr "บริษัทสงวนสิทธิ์ในการเก็บค่าธรรมเนี่ยมในการรักษาบัญชีในอัตราไม่เกิน 25 เหรียญสหรัฐ / ยูโร / เหรียญออสเตรเลีย / ปอนด์ ทุกๆ 6 เดือนที่บัญชีไม่เคลื่อนไหว หรือไม่มีธุรกรรมเกินกว่า 12 เดือน หากบัญชีลูกค้าได้รับการดูแลจาก Binary (Europe) Ltd. และบัญชีนั้นไม่มีการเคลื่อนไหวในรอบระยะเวลา 30 เดือน ไม่สามารถติดต่อลูกค้าได้ บริษัทฯ สามารถหักบัญชีลูกค้าตามบทบัญญัติ Malta Gaming Authority ลูกค้าสามารถติดต่อเจ้าหน้าที่ลูกค้าสัมพันธ์เพื่อปรับปรุงสถานะบัญชีจาก บัญชีที่ไม่มีการเคลื่อนไหว บัญชีที่ถูกปิด บัญชีที่ถูกระงับ เป็นต้น"
 
 msgid "The content on this website is subject to change at any time without notice and is provided for the sole purpose of assisting traders in making independent investment decisions. %1 has taken reasonable measures to ensure the accuracy of the information on the website, however, we do not guarantee its accuracy and will not accept liability for any loss or damage which may arise directly or indirectly from the content or your inability to access the website, for any delay in or failure of the transmission or the receipt of any instruction or notification sent through this website."
 msgstr ""
 
 msgid "The contract period is the timeframe of a trade. It is also called the duration."
-msgstr ""
+msgstr "ระยะเวลาของสัญญาในการซื้อขาย เรียกว่า ระยะเวลา"
 
 msgid "The customer agrees they understand each the following statements regarding OTC binary options trading:"
 msgstr "ลูกค้ายินยอม และเข้าใจในแต่ละเงื่อนไขต่อไปนี้ เกี่ยวกับการซื้อขายไบนารีออปชั่น OTC:"
@@ -6015,7 +5996,7 @@ msgid "The entry spot of an instrument XYZ is 1000 and the spread on this instru
 msgstr "จุดเริ่มต้นของเครื่องมือ XYZ คือ 1000 และช่วงเพิ่มขึ้นครั้งละ 2 จุด"
 
 msgid "The entry spot price is the starting price of the trade purchased by a trader."
-msgstr ""
+msgstr "ราคาสปอตเริ่มต้น คือ ราคาเริ่มต้นของการเริ่มซื้อขายโดยผู้เทรด"
 
 msgid "The expiry price is the price of the underlying when the contract expires."
 msgstr "ราคาที่หมดอายุ คือ ราคาของผลิตภัณฑ์อ้างอิงเมื่อสัญญาหมดอายุ"
@@ -6047,7 +6028,7 @@ msgid "The level of protection offered and due to each client depends on the cat
 msgstr "ระดับของการป้องกันขึ้นกับลูกค้าแต่ละประเภทที่กำหนดไว้ ลูกค้ารายย่อยได้รับประโยชน์จากการป้องกันขั้นสูงสุด"
 
 msgid "The loss of USD 306 is the difference between the exit and entry level multiplied by the amount per point."
-msgstr ""
+msgstr "การขาดทุน 306 เหรียญสหรัฐ เป็นผลจากความแตกต่างของระดับปิดและระดับเริ่มต้น คูณด้วยจำนวนต่อจุด"
 
 msgid "The market exit price is the price in effect at the end of the contract period."
 msgstr "ราคาสิ้นสุดของตลาด คือ ราคาที่มีผลในช่วงสุดท้ายของเวลาในสัญญา"
@@ -6056,13 +6037,13 @@ msgid "The materials comprising the %1 website (including without limitation all
 msgstr "เครื่องมือต่างๆ ประกอบด้วย เว็บไซต์ของ %1 (รวมถึง บทความ ข้อความ รูปภาพ โลโก้ สิ่งที่รวบรวมมานำเสนอ ระบบ รหัสโปรแกรม หรือ ชุดคำสั่ง และการออกแบบ) มีลิขสิทธิ์ 1999-<span class='currentYear'></span> เครือ Binary สงวนลิขสิทธิ์"
 
 msgid "The maximum loss that may be incurred by any Client is the amount of money paid by oneself to the Company."
-msgstr ""
+msgstr "จำนวนเงินขาดทุนที่มากที่สุดจะเกิดขึ้นด้วยจำนวนเงินที่ลูกค้าได้ชำระให้กับบริษัทฯ"
 
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "จำนวนมากที่สุดของโทเค่น (%1) ถูกใช้หมดแล้ว"
 
 msgid "The page you requested could not be found. Either it no longer exists or the address is wrong. Please check for any typos."
-msgstr ""
+msgstr "ไม่พบหน้าที่ท่านเรียก หรือ หน้าดังกล่าวได้ถูกนำออกจากระบบ หรือ ท่านเรียกที่อยู่ไม่ถูกต้อง โปรดตรวจสอบตัวสะกด"
 
 msgid "The patent means Regent Markets is the recognised pioneer of binary betting. The patent helps protect our innovations."
 msgstr "สิทธิบัตร หมายถึง Regent Markets ได้รับการยอมรับให้เป็นผู้บุกเบิกการซื้อขายไบนารี สิทธิบัตรช่วยป้องกันนวัตกรรมที่พวกเราได้สร้างสรรค์ขึ้น"
@@ -6074,10 +6055,10 @@ msgid "The personal information that we obtain about you assists us in servicing
 msgstr "ข้อมูลส่วนบุคคลที่พวกเราได้รับเพื่อดำเนินการเกี่ยวกับบัญชีของท่านนั้น พวกเราตระหนักว่า ท่านอาจจะมีความกังวลเกี่ยวกับการใช้ข้อมูลดังกล่าว และข้อมูลทางการเงินในบัญชีของท่าน ทั้งนี้การบริหารเรื่องดังกล่าวถือเป็นระเบียบปฏิบัติในเรื่องความเป็นส่วนตัวในข้อมูลส่วนบุคคลดังกล่าว"
 
 msgid "The premier platform for trading binary options in the world's financial markets"
-msgstr ""
+msgstr "แพลตฟอร์มปฐมฤกษ์สำหรับการซื้อขายไบนารีออปชั่นในตลาดการเงินระดับโลก"
 
 msgid "The profit is the difference between the purchase price (the stake) and the payout on a winning trade."
-msgstr ""
+msgstr "กำไรคือความแตกต่างของราคาซื้อ (ที่วางเงิน) และการชำระเงินเมื่อท่านชนะการซื้อขาย"
 
 msgid "The profit of USD 294 is the difference between the exit and entry level multiplied by the amount per point."
 msgstr "กำไรจำนวน 294 เหรียญสหรัฐ เป็นมูลค่าความแตกต่างระหว่างราคาเริ่มต้นและราคาสุดท้ายที่คูณด้วยจำนวนต่อจุด"
@@ -6113,7 +6094,7 @@ msgid "The two passwords that you entered do not match."
 msgstr "รหัสผ่านที่ท่านป้อนสองครั้งไม่เหมือนกัน"
 
 msgid "The use of the %1 API is at your own risk, and you assume full responsibility and risk of loss it may suffer as a result of using, or accessing the %1 API. Except to the extent that liability under any applicable law or regulation cannot be excluded:"
-msgstr ""
+msgstr "การใช้ API ของ %1 ถือเป็นความเสี่ยงของท่าน และท่านรับผิดชอบต่อความเสี่ยงในการประสบภาวะขาดทุน ที่เป็นผลมาจากการใช้ หรือการเข้าถึง API ของ %1 นอกเหนือจากขอบเขตของความรับผิดชอบตามกฎหมาย หรือ หลักปฏิบัติที่เกี่ยวข้อง:"
 
 msgid "The use, operation or combination of the %1 API with non-%1 API(s), data, equipment or documentation if liability would have been avoided but for such use, operation, or combination; or"
 msgstr "การใช้งาน ปฏิบัติการ หรือ การผสมผสาน API ของ %1 กับ API อื่นๆ ข้อมูล อุปกรณ์ หรือ เอกสารต่างๆ หากมีพฤติกรรมการหลีกเลี่ยงความรับผิดชอบใน การใช้งาน ปฏิบัติการ หรือ การผสมผสาน API หรือ"
@@ -6174,7 +6155,7 @@ msgid "These Terms and Conditions, for the convenience of our Clients are provid
 msgstr ""
 
 msgid "These are trades where the trader predicts if a market will finish higher or lower than a specified price target."
-msgstr ""
+msgstr "การซื้อขายเกิดขึ้นเมื่อผู้เทรดพยากรณ์ว่า ค่าดัชนีของตลาดเมื่อสิ้นสุดการซื้อขายจะมีค่าสูงกว่า หรือ ต่ำกว่าราคาเป้าหมายที่กำหนดไว้"
 
 msgid "These are trades where the trader predicts if a market will rise or fall at the end of a selected time period."
 msgstr ""
@@ -6212,10 +6193,8 @@ msgstr "โบนัสประเภทนี้สำหรับลูกค
 msgid "This bonus will be processed and credited to a client's account when:"
 msgstr "โบนัสนี้จะถูกดำเนินการและเพิ่มในบัญชีลูกค้าเมื่อ:"
 
-#, fuzzy
-#| msgid "This contract cannot be properly validated at this time."
 msgid "This contract can not be traded in the final 2 minutes before settlement"
-msgstr "สัญญานี้ไม่สามารถดำเนินการตรวจสอบในขณะนี้"
+msgstr "สัญญาฉบับนี้ไม่สามารถดำเนินการได้ภายใน 2 นาที ก่อนการดำเนินการชำระเงิน"
 
 msgid "This contract has LOST"
 msgstr "สัญญานี้สูญเปล่า"
@@ -6277,10 +6256,8 @@ msgstr "เว็ยไซต์นี้มีลิงค์ไปยังเ
 msgid "This website does not collect personally identifying information about you except when you specifically and knowingly provide it. There is a technology called \"cookies\" which can be used to provide tailored information from a website. A cookie is an element of data that a website can send to your browser, which may then store it on your system. You can set your browser to notify you when you receive a cookie, giving you the chance to decide whether to accept it. If you do not accept the cookie, then you will need to input your loginID and password again at every form required to enter into the system. You are advised to choose this option if you have concerns about the security of your personal browser or PC."
 msgstr "เว็บไซต์นี้ไม่มีการเก็บข้อมูลส่วนบุคคลของท่านนอกจากข้อมูลที่ท่านได้รับทราบว่า เป็นข้อมูลเจาะจงที่ขอจากท่านโดยตรง มีการใช้เทคโนโลยีที่เรียกว่า \"คุกกี้\" ในการติดตามข้อมูลจากทางเว็บไซต์ คุกกี้เป็นส่วนหนึ่งของข้อมูลที่เว็บไซต์หนึ่งๆ สามารถส่งให้กับเบราเซอร์ของท่าน และอาจจะถูกเก็บในระบบของท่าน ท่านอาจจะตั้งค่าเบราเซอร์ของท่านให้แจ้งเมื่อท่านได้รับคุกกี้ใดๆ ศึ่งช่วยให้ท่านมีโอกาสตัดสินใจจะยอมรับหรือปฏิเสธคุกกี้นั้น หากท่านไม่รับคุกกี้ ท่านจะต้องบันทึกรหัสผู้ใช้งานอละรหัสผ่านครั้งแล้วครั้งเล่าเมื่อมีการเรียกแบบฟอร์มที่ต้องการคุกกี้จากเครื่องของท่าน ท่านได้รับข้อแนะนำให้ปฏิบัติตามทางเลือกดังกล่าว หากท่านมีข้อสงสัยเกี่ยวกับความปลอดภัยของเบราเซอร์ของท่าน หรือ เครื่องคอมพิวเตอร์ของท่าน"
 
-#, fuzzy
-#| msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in the USA, Japan, Costa Rica or Hong Kong, or to persons under age 18."
 msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
-msgstr "เว็บไซต์นี้ใช้สำหรับประเทศสหราชอาณาจักรและเกาะ  Isle of Man โดยบริษัท Binary (IOM) Ltd. ตั้งอยู่ที่ ชั้น 1 อาคาร Millennium House ถนน Victoria เขต Douglas IM2 4RW บนเกาะ Isle of Man  ในบริติชไอลส์ โดยได้รับใบอนุญาตและผ่านหลักเกณฑ์ต่อไปนี้ (1) Gambling Supervision Commission บนเกาะ Isle of Man  ในบริติชไอลส์ ใบอนุญาตสำหรับผลิตภัณฑ์การเสี่ยงโชคออนไลน์ได้รับเมื่อ 31 สิงหาคม 2555 และสำหรับลูกค้าในสหราชอาณาจักรได้รับใบอนุญาตจาก (2) UK Gambling Commission - <a href='%1' target='_blank'>คลิกดูใบอนุญาต</a> เว็บไซต์นี้ใช้สำหรับประเทศในกลุ่มยุโรป สำหรับผลิตภัณฑ์การลงทุนต่างๆ โดยบริษัท  Binary Investments (Europe) Ltd. ตั้งอยู่ที่ อาคาร Mompalao Suite 2 ถนน Tower เมือง Msida MSD1825 ประเทศมอลตา โดยได้รับใบอนุญาตและผ่านหลักเกณฑ์ในหมวดที่ 3 ของผู้ให้บริการการลงทุนโดยหน่วยงาน Malta Financial Services Authority (ใบอนุญาตเลขที่ IS/70156) และสำหรับผลิตภัณฑ์การพนัน โดยบริษัท Binary (Europe) Ltd. ตั้งอยู่ที่ อาคาร Mompalao Suite 2 ถนน Tower เมือง Msida MSD1825 ประเทศมอลตา ได้รับใบอนุญาตและผ่านหลักเกณฑ์ต่อไปนี้ (1) Malta Gaming Authority ประเทศมอลตา ใบอนุญาตเลขที่ MGA/CL2/118/2000 ได้รับเมื่อ 26 พฤษภาคม 2558 และสำหรับลูกค้าในสหราชอาณาจักรได้รับใบอนุญาตจาก (2) UK Gambling Commission - <a href='%2' target='_blank'>คลิกดูใบอนุญาต</a> และสำหรับลูกค้าในประเทศไอร์แลนด์ได้รับใบอนุญาตจาก (3) Revenue Commissioners ประเทศไอร์แลนด์ ได้รับใบอนุญาตเมื่อ 29 กันยายน 2558 (ใบอนุญาตเลขที่ 1010285) อนึ่ง เว็บไซต์นี้ไม่เปิดให้บริการในประเทศต่อไปนี้ สหรัฐอเมริกา ญี่ปุ่น คอสตาริกา และ ฮ่องกง และรวมถึงบุคคลที่อายุต่ำกว่า 18 ปี"
+msgstr "เว็บไซต์นี้ใช้สำหรับประเทศสหราชอาณาจักรและเกาะ  Isle of Man โดยบริษัท Binary (IOM) Ltd. ตั้งอยู่ที่ ชั้น 1 อาคาร Millennium House ถนน Victoria เขต Douglas IM2 4RW บนเกาะ Isle of Man  ในบริติชไอลส์ โดยได้รับใบอนุญาตและผ่านหลักเกณฑ์ต่อไปนี้ (1) Gambling Supervision Commission บนเกาะ Isle of Man  ในบริติชไอลส์ ใบอนุญาตสำหรับผลิตภัณฑ์การเสี่ยงโชคออนไลน์ได้รับเมื่อ 31 สิงหาคม 2555 และสำหรับลูกค้าในสหราชอาณาจักรได้รับใบอนุญาตจาก (2) UK Gambling Commission - <a href='%1' target='_blank'>คลิกดูใบอนุญาต</a> เว็บไซต์นี้ใช้สำหรับประเทศในกลุ่มยุโรป สำหรับผลิตภัณฑ์การลงทุนต่างๆ โดยบริษัท  Binary Investments (Europe) Ltd. ตั้งอยู่ที่ อาคาร Mompalao Suite 2 ถนน Tower เมือง Msida MSD1825 ประเทศมอลตา โดยได้รับใบอนุญาตและผ่านหลักเกณฑ์ในหมวดที่ 3 ของผู้ให้บริการการลงทุนโดยหน่วยงาน Malta Financial Services Authority (ใบอนุญาตเลขที่ IS/70156) และสำหรับผลิตภัณฑ์การพนัน โดยบริษัท Binary (Europe) Ltd. ตั้งอยู่ที่ อาคาร Mompalao Suite 2 ถนน Tower เมือง Msida MSD1825 ประเทศมอลตา ได้รับใบอนุญาตและผ่านหลักเกณฑ์ต่อไปนี้ (1) Malta Gaming Authority ประเทศมอลตา ใบอนุญาตเลขที่ MGA/CL2/118/2000 ได้รับเมื่อ 26 พฤษภาคม 2558 และสำหรับลูกค้าในสหราชอาณาจักรได้รับใบอนุญาตจาก (2) UK Gambling Commission - <a href='%2' target='_blank'>คลิกดูใบอนุญาต</a> และสำหรับลูกค้าในประเทศไอร์แลนด์ได้รับใบอนุญาตจาก (3) Revenue Commissioners ประเทศไอร์แลนด์ ได้รับใบอนุญาตเมื่อ 29 กันยายน 2558 (ใบอนุญาตเลขที่ 1010285) อนึ่ง เว็บไซต์นี้ไม่เปิดให้บริการในประเทศต่อไปนี้ สหรัฐอเมริกา คอสตาริกา ฮ่องกง และรวมถึงบุคคลที่อายุต่ำกว่า 18 ปี"
 
 msgid "Thorough knowledge of bash scripting, as well as experience with scripting languages such as Perl and PHP"
 msgstr "มีความรู้ในเรื่อง Bash Scripting และประสบการณ์ในการพัฒนาภาษาสคริป เช่น ภาษา Perl และ PHP"
@@ -6291,8 +6268,6 @@ msgstr "วันพฤหัสบดี"
 msgid "Tick"
 msgstr "Tick"
 
-#, fuzzy
-#| msgid "Tick Trade App"
 msgid "TickTrade App"
 msgstr "แอพ Tick Trade"
 
@@ -6347,10 +6322,8 @@ msgstr "เพื่อตั้งค่ารหัสผ่านของท
 msgid "Token"
 msgstr "โทเค่น"
 
-#, fuzzy
-#| msgid "Total Cost"
 msgid "Total"
-msgstr "ราคารวม"
+msgstr "ผลรวม"
 
 msgid "Total Cost"
 msgstr "ราคารวม"
@@ -6442,10 +6415,8 @@ msgstr "มุมมองการซื้อขาย"
 msgid "Transact in"
 msgstr "ธุรกรรม ณ"
 
-#, fuzzy
-#| msgid "Your transaction reference is"
 msgid "Transaction performed by %1 (App ID: %2)"
-msgstr "เลขที่อ้างอิงของธุรกรรมของท่าน คือ"
+msgstr "ดำเนินธุรกรรมโดย %1 (App ID: %2)"
 
 msgid "Transfer"
 msgstr "โอน"
@@ -6621,18 +6592,14 @@ msgstr "โทเค่นเพื่อตรวจสอบ"
 msgid "Verify new password"
 msgstr "ตรวจสอบรหัสผ่านใหม่"
 
-#, fuzzy
-#| msgid "Version 41. Last modified 2016-06-27."
 msgid "Version 42. Last modified 2016-09-14."
-msgstr "เวอร์ชัน 41 แก้ไขล่าสุดเมื่อ 2016-06-27"
+msgstr "เวอร์ชัน 42 แก้ไขล่าสุดเมื่อ 2016-09-14"
 
 msgid "View"
 msgstr "ดู"
 
-#, fuzzy
-#| msgid "Details"
 msgid "View Details"
-msgstr "รายละเอียด"
+msgstr "ดูรายละเอียด"
 
 msgid "View Updated Portfolio"
 msgstr "ดูพอร์ตโฟลิโอ"
@@ -6650,10 +6617,10 @@ msgid "View the Tour"
 msgstr "ดูวิธีการใช้งาน"
 
 msgid "View the full list of assets, contract types and durations."
-msgstr ""
+msgstr "ขอดูรายการสินทรัพย์ทั้งหมด ประเภทของสัญญา และระยะเวลา"
 
 msgid "View the operating hours of the markets you can trade."
-msgstr ""
+msgstr "ขอดูเวลาในของตลาดที่ท่านสามารถซื้อขาย"
 
 msgid "View your financial assessment settings."
 msgstr "ดูการตั้งค่าของการประเมินทางการเงิน"
@@ -6731,7 +6698,7 @@ msgid "We are fully licensed in the British Isles and Malta."
 msgstr "พวกเราได้รับใบอนุญาตเต็มรูปแบบในสหราชอาณาจักร และประเทศมอลตา"
 
 msgid "We are looking for energetic and enthusiastic individuals who love challenges, are detail-oriented and highly analytical to join our Internal Audit team."
-msgstr ""
+msgstr "พวกเราสรรหาทีมงานที่มีความคล่องแคล่ว กระตือรือล้น รักความท้าทาย ใส่ใจในระดับรายละเอียด และมีทักษะสูงในการวิเคราะห์เพื่อร่วมงานกับทีมตรวจสอบภายในของเรา"
 
 msgid "We are not able to stream live prices at the moment. To enjoy live streaming of prices try refreshing the page, if you get this issue after repeated attempts try a different browser"
 msgstr ""
@@ -6752,7 +6719,7 @@ msgid "We do it again. BetOnMarkets.com follows up our 2007 award by being voted
 msgstr ""
 
 msgid "We don't usually require any documents as we can verify your identity online."
-msgstr ""
+msgstr "ปกติแล้ว พวกเราไม่ต้องการเอกสารใดๆ เนื่องจากพวกเราสามารถตรวจสอบอัตลักษณ์ของท่านได้ผ่านช่องทางออนไลน์"
 
 msgid "We employ an extensive team of writers, designers, market analysts and programmers, who are particularly dedicated to producing accessible, educational and sales material for our affiliates. We go way beyond banners to offer an informative and entertaining way on how to advertise online; including text ads, customer landing pages and promotions, free content as also gifts for your site visitors."
 msgstr ""
@@ -6761,7 +6728,7 @@ msgid "We have a general duty to conduct our business with you honestly, fairly,
 msgstr ""
 
 msgid "We have a proven track record since starting in 2000."
-msgstr ""
+msgstr "พวกเรามีผลการดำเนินงานตั้งแต่เริ่มต้นในปี 2000"
 
 msgid "We have a tested and proven selection of banners, links, reviews, newsletters, videos, and text ads for your use. Additionally, we have flash banners which you can grab through your affiliate account. If you would like customized tools, or an item currently not offered on the site, please contact your account manager at: <a href=\"mailto:%1\">%1</a>."
 msgstr ""
@@ -6800,7 +6767,7 @@ msgid "We reserve the right to refuse your referrals' application to open an acc
 msgstr ""
 
 msgid "We segregate and hold client funds in secure AAA-rated banks."
-msgstr ""
+msgstr "พวกเราแยกและรักษาเงินทุนของลูกค้าด้วยธนาคารอันดับ AAA"
 
 msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection agencies and law-enforcement agencies to address fraud issues."
 msgstr ""
@@ -7039,10 +7006,8 @@ msgstr ""
 msgid "Withdraw: Not applicable"
 msgstr ""
 
-#, fuzzy
-#| msgid "Withdraw to"
 msgid "Withdrawal"
-msgstr "ถอนไปที่"
+msgstr "ถอน"
 
 msgid "Withdrawal Limits"
 msgstr ""
@@ -7114,7 +7079,7 @@ msgid "You and the Company are independent contractors, and nothing in this Agre
 msgstr ""
 
 msgid "You and your Application must also comply with the following, which are hereby incorporated by reference:"
-msgstr ""
+msgstr "ท่านและใบสมัครของท่านต้องเป็นไปตามเงื่อนไขเหล่านี้ ดังที่ปรากฏในส่วนอ้างอิง:"
 
 msgid "You are advised that the Binary Options offered by %1 are not traded under the rules of any recognised, designated or regulated exchange. Consequently, engaging in Binary Options trading may expose you to substantially greater risks than investments which are so traded."
 msgstr ""
@@ -7138,7 +7103,7 @@ msgid "You are responsible for managing your tax and legal affairs including mak
 msgstr ""
 
 msgid "You are warned of the following additional risks:"
-msgstr ""
+msgstr "ท่านได้รับคำเตือนในประเด็นความเสี่ยงต่อไปนี้:"
 
 msgid "You can <a class='pjaxload' href='%1'>open an account</a>, deposit funds and begin trading within minutes."
 msgstr "ท่านสามารถ <a class='pjaxload' href='%1'>เปิดบัญชี</a> ฝากเงิน และเริ่มการซื้อขายด้วยเวลาเพียงไม่กี่นาที"
@@ -7162,13 +7127,13 @@ msgid "You can set the length of your trade, from 10 seconds to 365 days."
 msgstr "ท่านสามารถกำหนดระยะเวลาการซื้อขายของท่าน จาก 10 วินาที ถึง 365 วัน"
 
 msgid "You can trade a range of markets, timescales and indices - 24/7."
-msgstr ""
+msgstr "ท่านสามารถซื้อขายได้ในหลายตลาด ช่วงเวลา และดัชนีต่างๆ ตลอด 24 ชั่วโมง 7 วัน"
 
 msgid "You can use an authorized payment agent to process deposits and withdrawals for payment methods or local currencies not supported by %1. It's easy to do."
 msgstr ""
 
 msgid "You did not change anything."
-msgstr ""
+msgstr "ท่านไม่ได้แก้ไขค่าใดๆ"
 
 msgid "You don't need to deposit any money to open an account, but you need to deposit funds before you can start trading."
 msgstr ""
@@ -7209,10 +7174,8 @@ msgstr ""
 msgid "You may choose to contact us to close your account held with the Company. Your account may be closed if you do not have any open trade positions and if you have complied with the requested \"Know Your Client\" procedures to enable you to withdraw any pending funds in your account."
 msgstr "ท่านอาจจะติดต่อเราเพื่อปิดบัญชีของท่าน บัญชีของท่านอาจจะถูกปิดหากท่านไม่ได้เปิดโพซิชั่นซื้อขายใดๆ และ หากท่านไม่ได้ปฏิบัติตามกระบวนวิธี \"Know Your Client\" เพื่อทำให้ท่านถอนเงินจากบัญชีของท่าน"
 
-#, fuzzy
-#| msgid "You may communicate with us through this website, by email or, exceptionally, by post. Details can be found in the Contact Us page."
 msgid "You may communicate with us through this website by means of Live Chat, e-mail, phone or, exceptionally, by post. Details can be found in the Contact Us page."
-msgstr "ท่านอาจจะติดต่อเราผ่านช่องทางเว็บไซต์ อีเมล์ หรือ ทางไปรษณีย์ ข้อมูลเพื่อการติดต่อแสดงไว้ที่หน้า ติดต่อเรา"
+msgstr "ท่านอาจจะติดต่อเราผ่านช่องทางเว็บไซต์ โดยการพูดคุยสด อีเมล์ โทรศัพท์ ยกเว้นทางไปรษณีย์ ข้อมูลเพื่อการติดต่อแสดงไว้ที่หน้า ติดต่อเรา"
 
 msgid "You may develop Applications using the %1 API as soon as you register an Application and you agree to follow these Terms."
 msgstr "ท่านอาจจะพัฒนาแอพพลิเคชันของท่านโดยใช้ API ของ %1 ทันทีที่ท่านลงทะเบียนแอพพลิเคชันและยอมรับที่จะปฏิบัติตามข้อตกลงเหล่านี้"
@@ -7571,6 +7534,11 @@ msgstr "เข้าสู่ระบบ"
 msgid "m"
 msgstr "m"
 
+#, fuzzy
+#| msgid "$25,000 - $100,000"
+msgid "min 1,000 and max 100,000"
+msgstr "25,000 - 100,000 เหรียญสหรัฐ"
+
 msgid "minimum available duration"
 msgstr "ช่วงเวลาต่ำสุด"
 
@@ -7655,10 +7623,8 @@ msgstr "ปี"
 msgid "years"
 msgstr "ปี"
 
-#, fuzzy
-#| msgid "you are not resident in a restricted country such as the USA, Japan, Hong Kong, Bahamas, Costa Rica, Malaysia, Malta, Iran, North Korea, Jersey, or Iraq;"
 msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Guyana, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
-msgstr "ท่านไม่ได้มีที่พำนักในประเทศควบคุมต่อไปนี้ สหรัฐอเมริกา ญี่ปุ่น ฮ่องกง บาฮามา คอสตาริกา มาเลเซีย มอลตา อิหร่าน เกาหลีเหนือ เจอร์ซี่ หรือ อิรัก;"
+msgstr "ท่านไม่ได้มีที่พำนักในประเทศควบคุมต่อไปนี้ อัฟกานิสถาน บอสเนียและเฮอเซโกวินา คอสตาริกา ฮ่องกง อิหร่าน อิรัก เจอร์ซี สาธารณรัฐประชาชนลาว มาเลเซีย มอลตา เกาหลีเหนือ ซีเรีย ยูกานดา สหรัฐอเมริกา วานูอาตู หรือ เยเมน"
 
 msgid "you are over 18 years of age, unless you are an Estonian resident whereby you would have to be over 21;"
 msgstr "ท่านมีอายุมากกว่า 18 ปี หากแต่ท่านเป็นพลเมืองเอสโทเนีย ท่านจะต้องอายุมากกว่า 21 ปี;"

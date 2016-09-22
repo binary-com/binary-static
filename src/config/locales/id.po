@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-09-14 04:06+0000\n"
+"PO-Revision-Date: 2016-09-21 10:36+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.8\n"
+"X-Generator: Weblate 2.9-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"%1 API\" adalah set eksklusif dari rutinitas program %1, protokol, alat dan sumber daya yang diciptakan dan dikelola oleh %1 yang dapat memberi Anda fasilitas untuk menggunakan aplikasi terdaftar pada platform trading %1."
@@ -1603,7 +1603,7 @@ msgid "Choose your own strike."
 msgstr "Pilih modal Anda."
 
 msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Guyana, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
-msgstr ""
+msgstr "Warga Afghanistan, Belgia, Bosnia dan Herzegovina, Guyana, Irak, Lao PDR, Suriah, Uganda, Vanuatu atau Yaman tidak dapat mendaftar akun pada Binary Investments (Europe) Ltd."
 
 msgid "Classification of assets requiring hedge"
 msgstr "Klasifikasi aset yang membutuhkan hedge"
@@ -2332,13 +2332,13 @@ msgid "Entry Level"
 msgstr "Entry Level"
 
 msgid "Entry Spot"
-msgstr "Spot entri"
+msgstr "Spot Masuk"
 
 msgid "Entry spot"
-msgstr "Spot awal"
+msgstr "Spot masuk"
 
 msgid "Entry spot price"
-msgstr "Harga spot awal"
+msgstr "Harga spot masuk"
 
 msgid "Equities"
 msgstr "Ekuitas"
@@ -3006,7 +3006,7 @@ msgid "If you select \"Even\", you will win the payout if the <strong>last digi
 msgstr "Pilih \"Even\", Anda akan memperoleh hasil jika <strong>digit terakhir</strong> pada tik terakhir adalah <strong>angka genap (contoh: 2, 4, 6, 8, atau 0).</strong>"
 
 msgid "If you select \"Falls\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>entry spot</strong>."
-msgstr "Pilih \"Turun\", maka anda akan memperoleh hasil jika <strong>spot akhir</strong> lebih rendah dari <strong>spot awal</strong>."
+msgstr "Pilih \"Turun\", maka anda akan memperoleh hasil jika <strong>spot akhir</strong> lebih rendah dari <strong>spot masuk</strong>."
 
 msgid "If you select \"Goes Outside\", you win the payout if the market touches either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>."
 msgstr "Pilih \"Berakhir Diluar\", Anda mendapat hasil jika pasar menyentuh salah satu <strong>Batasan tinggi</strong> atau <strong>Batasan rendah</strong> kapan saja selama <strong>periode kontrak</strong>."
@@ -3027,7 +3027,7 @@ msgid "If you select \"Over\", you will win the payout if the <strong>last digi
 msgstr "Pilih \"Over\", Anda akan mendapat hasil jika <strong>digit terakhir</strong> pada tik terakhir adalah <strong>lebih besar dari analisa Anda.</strong>"
 
 msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
-msgstr "Pilih \"Naik\", maka anda akan memperoleh hasil jika <strong>spot akhir</strong> lebih tinggi dari <strong>spot awal</strong>."
+msgstr "Pilih \"Naik\", maka anda akan memperoleh hasil jika <strong>spot akhir</strong> lebih tinggi dari <strong>spot masuk</strong>."
 
 msgid "If you select \"Stays Between\", you win the payout if the market stays between (does not touch) either the <strong>High barrier</strong> or the <strong>Low barrier</strong> at any time during the <strong>contract period</strong>."
 msgstr "Pilih \"Tetap Antara\", Anda akan mendapat hasil jika pasar tetap berada antara (tidak menyentuh) salah satu <strong>Batasan tinggi</strong> atau <strong>Batasan rendah</strong> kapan saja selama <strong>periode kontrak</strong>."
@@ -3051,13 +3051,13 @@ msgid "If you select \"rises\", you win the payout if the market price is higher
 msgstr "Jika Anda memilih \"naik\", maka Anda akan memperoleh hasil jika harga pasar lebih tinggi dari spot masuk."
 
 msgid "If you select a <strong>start time</strong> in the future, the <strong>start time</strong> is that which is selected and the <strong>entry spot</strong> is the price in effect at that time."
-msgstr "Jika anda memilih <strong>waktu mulai</strong> mendatang, maka <strong>waktu mulai</strong> adalah waktu yang dipilih dan <strong>spot akhir</strong> adalah harga yang berlaku pada saat itu."
+msgstr "Jika anda memilih <strong>waktu mulai</strong> mendatang, maka <strong>waktu mulai</strong> adalah waktu yang dipilih dan <strong>spot masuk</strong> adalah harga yang berlaku pada saat itu."
 
 msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "Jika anda memilih <strong>waktu mulai</strong> \"Sekarang\", maka <strong>waktu berakhir</strong> adalah waktu menit/jam yang dipilih setelah <strong>waktu mulai</strong> (jika durasi kurang dari satu hari), atau pada akhir trading (jika durasi satu hari atau lebih)."
 
 msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
-msgstr "Jika Anda memilih <strong>waktu mulai</strong> \"Sekarang\", maka <strong>waktu mulai</strong> adalah ketika kontrak diproses oleh server kami dan <strong>spot awal</strong> adalah <strong>tik berikutnya</strong>."
+msgstr "Jika Anda memilih <strong>waktu mulai</strong> \"Sekarang\", maka <strong>waktu mulai</strong> adalah ketika kontrak diproses oleh server kami dan <strong>spot masuk</strong> adalah <strong>tik berikutnya</strong>."
 
 msgid "If you select a specific <strong>end time</strong>, the <strong>end time</strong> is the selected time."
 msgstr "Jika anda memilih <strong>waktu berakhir</strong> tertentu, maka <strong>waktu berakhir</strong> adalah waktu yang dipilih."
@@ -5946,10 +5946,8 @@ msgstr "Komisi yang akan Anda kenakan pada deposit dan penarikan"
 msgid "The company does not guarantee the ability to sell a contract prior to its expiration time."
 msgstr "Perusahaan tidak menjamin keberhasilan penjualan awal kontrak sebelum waktu berakhir tercapai."
 
-#, fuzzy
-#| msgid "The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='%1' class='pjaxload'>here:</a>"
 msgid "The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='%1' class='pjaxload'>here.</a>"
-msgstr "Perusahaan menyediakan berbagai jenis metode deposit, setiap deposit memiliki waktu proses masing-masing begitu juga dengan penarikan. Informasi lengkap mengenai metode deposit dan penarikan termasuk waktu proses tersedia <a href='%1' class='pjaxload'>disini:</a>"
+msgstr "Perusahaan menyediakan berbagai jenis metode deposit, setiap deposit memiliki waktu proses masing-masing begitu juga dengan penarikan. Informasi lengkap mengenai metode deposit dan penarikan termasuk waktu proses tersedia <a href='%1' class='pjaxload'>disini.</a>"
 
 msgid "The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission's requirements for the segregation of customer funds at the level: <strong>medium protection</strong>."
 msgstr "Perusahaan menyimpan dana Pelanggan pada rekening bank terpisah dari rekening bank untuk urusan operasional dimana tidak akan, meskipun dalam keadaan pailit menjadi bagian dari aset Perusahaan. Hal ini memenuhi persyaratan Komisi Trading dalam pemisahan dana nasabah di tingkat: <strong>perlindungan menengah</strong>."
@@ -5979,7 +5977,7 @@ msgid "The easiest way to get started in the financial markets"
 msgstr "Cara termudah memulai trading pada pasar finansial"
 
 msgid "The entry level for a long contract is 1001, which is entry spot + half spread. At exit, the spot is at 1100 and hence the exit level for a long contract is 1099, which is exit spot - half spread."
-msgstr "Entry level untuk kontrak panjang adalah 1001, yaitu entry spot + separuh spread. Pada penutupan, spot pada 1100 maka exit level untuk kontrak long adalah 1099, yaitu spot keluar - separuh spread."
+msgstr "Entry level untuk kontrak panjang adalah 1001, yaitu spot masuk + separuh spread. Pada penutupan, spot pada 1100 maka exit level untuk kontrak long adalah 1099, yaitu spot keluar - separuh spread."
 
 msgid "The entry level for a short contract is 999, which is entry spot - half spread. At exit, the spot is at 1100 and hence the exit level for a short contract is 1101, which is exit spot + half spread."
 msgstr "Entry level kontrak pendek adalah 999, yaitu spot masuk - separuh spread. Pada akhir, spot adalah 1100 maka tingkat keluar untuk kontrak pendek adalah 1101, yaitu spot keluar + separuh spread."
@@ -5988,7 +5986,7 @@ msgid "The entry spot of an instrument XYZ is 1000 and the spread on this instru
 msgstr "Spot masuk bagi instrumen XYZ adalah 1000 dan spread pada instrumen ini adalah 2 poin."
 
 msgid "The entry spot price is the starting price of the trade purchased by a trader."
-msgstr "Harga spot awal adalah harga awal kontrak yang dibeli oleh trader."
+msgstr "Harga spot masuk adalah harga awal kontrak yang dibeli oleh trader."
 
 msgid "The expiry price is the price of the underlying when the contract expires."
 msgstr "Harga akhir adalah harga dasar pasar ketika kontrak berakhir."
@@ -6250,8 +6248,6 @@ msgstr "Website ini berisikan berbagai link yang mengarah kepada website lain da
 msgid "This website does not collect personally identifying information about you except when you specifically and knowingly provide it. There is a technology called \"cookies\" which can be used to provide tailored information from a website. A cookie is an element of data that a website can send to your browser, which may then store it on your system. You can set your browser to notify you when you receive a cookie, giving you the chance to decide whether to accept it. If you do not accept the cookie, then you will need to input your loginID and password again at every form required to enter into the system. You are advised to choose this option if you have concerns about the security of your personal browser or PC."
 msgstr "Website ini tidak mengumpulkan informasi identitas pribadi mengenai Anda kecuali jika Anda secara khusus dan dengan sadar memberikannya. Terdapat teknologi yang bernama \"cookies\" yang bisa digunakan untuk menyediakan informasi dari sebuah website. Cookie adalah element data dimana sebuah website bisa mengirimkan data dari dan ke dalam browser Anda, yang mungkin lalu menyimpannya pada sistem Anda. Anda bisa memasang browser Anda dimana Anda akan mengetahui saat Anda menerima cookie tersebut dan memberikan Anda kesempatan untuk memutuskan apakah Anda akan menerimanya atau tidak. Jika Anda menolak cookie tersebut maka Anda harus memasukkan login ID dan password setiap kali mengakses sistem. Anda disarankan untuk memilih pilihan ini jika Anda mementingkan keamanan browser atau komputer Anda."
 
-#, fuzzy
-#| msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in the USA, Japan, Costa Rica or Hong Kong, or to persons under age 18."
 msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
 msgstr "Website ini dipasarkan di negara Inggris dan Isle of Man melalui Binary (IOM) Ltd. Untuk Uni Eropa (kecuali Inggris) melalui Binary (Europe) Ltd dan Binary Investments (Europe) Ltd. Sedangkan untuk negara lain di seluruh dunia melalui Binary (C.R.) S.A. Layanan website ini tidak tersedia untuk di bawah usia 18."
 
@@ -6588,10 +6584,8 @@ msgstr "Token verifikasi"
 msgid "Verify new password"
 msgstr "Verifikasi kata sandi baru"
 
-#, fuzzy
-#| msgid "Version 32. Last modified 2014-09-24."
 msgid "Version 42. Last modified 2016-09-14."
-msgstr "Versi 32. Diubah terakhir pada 24-09-2014."
+msgstr "Versi 42. Diperbarui terakhir pada 14-09-2016."
 
 msgid "View"
 msgstr "Lihat"
@@ -6680,10 +6674,8 @@ msgstr "Kami bertujuan untuk mencatat jenis kegiatan yang kami bawa pada di mana
 msgid "We also offer specialized pay-out structures to affiliates who offer a trading advice in connection with, and in relation to our commodities. <a href=\"mailto:%1\">Contact our affiliate manager, Karen Yap for details</a>."
 msgstr "Kami juga menawarkan kerja sama lebih lanjut bagi afiliasi yang berprestasi. <a href=\"mailto:%1\">Silahkan hubungi manajer afiliasi kami, Karen Yap untuk informasi lanjut</a>."
 
-#, fuzzy
-#| msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business.  We are exclusively authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and this in relation to financial derivative products (primarily binary options) relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than dealing on own account in Financial Products. Should you feel that you require investment advice or investment services other that those described above then you should contact an independent financial advisor or firm."
 msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business.  We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other persons, both services are in relation to financial derivative products (primarily binary options) relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other that those described above then you should contact an independent financial advisor or firm."
-msgstr "Kami berwenang dan diatur oleh Malta Financial Services Authority (\"MFSA\") di bawah Investment Services Act (Cap. 370, Laws of Malta) (\"Akta\") untuk menjalankan usaha investasi. Kami secara eksklusif diresmikan oleh MFSA untuk menangani akun sendiri (yaitu tawaran dan bertindak sebagai counterparty untuk trading) dan ini dalam kaitannya dengan produk derivatif keuangan (terutama opsi binary) yang berkaitan dengan valuta asing, indeks, saham dan produk keuangan lainnya atau aset (\"Produk Keuangan\"). Kami tidak berwenang dan tidak menawarkan atau memberikan nasihat investasi atau jasa investasi lainnya selain berurusan pada akun sendiri pada Produk Keuangan. Jika Anda merasa bahwa Anda memerlukan saran investasi atau jasa investasi lainnya yang dijelaskan di atas maka Anda harus menghubungi penasihat keuangan independen atau perusahaan."
+msgstr "Kami berwenang dan diatur oleh Malta Financial Services Authority (\"MFSA\") di bawah Investment Services Act (Cap. 370, Perundangan Malta) (\"Akta\") untuk menjalankan bisnis investasi. Kami disahkan oleh MFSA untuk menangani akun sendiri (yaitu menawarkan dan bertindak sebagai counterparty untuk trading) dan untuk menjalankan order mewakili pihak lain, kedua dua layanan adalag berkaitan dengan produk derivatif keuangan (terutama opsi binary) yang berkaitan dengan valuta asing, indeks, saham dan produk keuangan lainnya atau aset (\"Produk Keuangan\"). Kami tidak berwenang dan tidak menawarkan atau menyediakan nasihat investasi atau jasa investasi lainnya selain yang telah disebutkan diatas. Jika Anda merasa bahwa Anda memerlukan saran investasi atau jasa investasi lainnya yang dijelaskan di atas maka Anda harus menghubungi penasihat keuangan independen atau perusahaan."
 
 msgid "We are committed to making sure your personal data and transactions are secure:"
 msgstr "Kami bertekad untuk memastikan keamanan data pribadi dan transaksi Anda:"
@@ -7534,6 +7526,11 @@ msgstr "login"
 msgid "m"
 msgstr "m"
 
+#, fuzzy
+#| msgid "$25,000 - $100,000"
+msgid "min 1,000 and max 100,000"
+msgstr "$25,000 - $100,000"
+
 msgid "minimum available duration"
 msgstr "durasi minimal yang tersedia"
 
@@ -7618,10 +7615,8 @@ msgstr "tahun"
 msgid "years"
 msgstr "tahun"
 
-#, fuzzy
-#| msgid "you are not resident in a restricted country such as the USA, Japan, Hong Kong, Bahamas, Costa Rica, Malaysia, Malta, Iran, North Korea, Jersey, or Iraq;"
 msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Guyana, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
-msgstr "Anda tidak bertempat tinggal di negara seperti Amerika Serikat, Jepang, Hong Kong, Bahamas, Costa Rica, Malaysia, Malta, Iran, Korea Utara, Jersey atau Irak;"
+msgstr "Anda bukan penduduk negara terbatas seperti Afghanistan, Bosnia dan Herzegovina, Kosta Rika, Guyana, Hong Kong, Iran, Irak, Jersey, Lao PDR, Malaysia, Malta, Korea Utara, Suriah, Uganda, USA, Vanuatu atau Yaman."
 
 msgid "you are over 18 years of age, unless you are an Estonian resident whereby you would have to be over 21;"
 msgstr "Anda berumur lebih dari 18 tahun, kecuali jika Anda adalah seorang penduduk Estonia maka Anda harus berumur lebih dari 21 tahun,"
