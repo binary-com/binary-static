@@ -297,10 +297,7 @@ Client.prototype = {
     },
     response_landing_company: function(response) {
         if (!response.hasOwnProperty('error')) {
-            var company = response.name;
             var has_reality_check = response.has_reality_check;
-
-            this.set_storage_value('landing_company_name', company);
             this.set_storage_value('has_reality_check', has_reality_check);
         }
     },
@@ -935,6 +932,8 @@ Contents.prototype = {
                     hide_upgrade();
                     show_virtual_msg = false;
                     show_upgrade_msg = false; // do not show upgrade for user that filled up form
+                } else if ($('.jp_activation_pending').length !== 0) {
+                    show_upgrade_msg = false;
                 }
                 for (var i = 0; i < loginid_array.length; i++) {
                     if (loginid_array[i].real) {
