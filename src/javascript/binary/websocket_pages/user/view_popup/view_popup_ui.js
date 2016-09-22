@@ -37,6 +37,7 @@ var ViewPopupUI = (function() {
             this.clear_timer();
             this.close_container();
             this._init();
+            $(window).off('resize', function(){ViewPopupUI.reposition_confirmation();});
         },
         forget_streams: function() {
             while(window.stream_ids && window.stream_ids.length > 0) {
@@ -99,6 +100,7 @@ var ViewPopupUI = (function() {
             });
             $(dragHandle).disableSelection();
             this.reposition_confirmation();
+            $(window).resize(function(){ViewPopupUI.reposition_confirmation();});
             return con;
         },
         reposition_confirmation_ondrag: function () {

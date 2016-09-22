@@ -1023,7 +1023,7 @@ Page.prototype = {
         this.contents.on_load();
         this.on_click_acc_transfer();
         this.show_authenticate_message();
-        if (CommonData.getLoginToken()) {
+        if (this.client.is_logged_in) {
             ViewBalance.init();
         } else {
             LocalStore.set('reality_check.ack', 0);
