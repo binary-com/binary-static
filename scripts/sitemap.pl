@@ -26,6 +26,7 @@ my @urls = (
     ['open-positions'      , 'monthly', '0.80'],
     ['payment-agent'       , 'monthly', '0.80'],
     ['group-history'       , 'monthly', '0.80'],
+    ['regulation'          , 'monthly', '0.80' , 'ar,id'],
     ['affiliate/signup'    , 'monthly', '0.80'],
     ['responsible-trading' , 'monthly', '0.80'],
     ['terms-and-conditions', 'monthly', '0.80'],

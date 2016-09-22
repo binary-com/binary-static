@@ -8,13 +8,6 @@
             <div class="separator-line"></div>
         </div>
     </div>
-    <div class="hidden ja-show">
-        <div class="center-text">
-            <img class="responsive timeline" src="[% request.url_for('images/pages/regulation/timeline.svg') %]">
-        </div>
-        <div id="japan-show-first-move-here"></div>
-        <div class="gray-line"></div>
-    </div>
     <div class="center-text">
         <img class="responsive timeline" src="[% request.url_for('images/pages/regulation/timeline.svg') %]">
     </div>
@@ -23,6 +16,23 @@
             <h1 class="margin-top">[% l("Binary Ltd") %]</h1>
             <div class="gr-12">
                 <p>[% l("Binary Ltd, with registered office address situated at 47 Esplanade, St. Helier, Jersey, JE1 0BD Channel Islands, is the holding company for the Binary group.") %]</p>
+            </div>
+        </div>
+    </div>
+    <div class="gray-line"></div>
+    <div class="center-text">
+        <img class="responsive timeline" src="[% request.url_for('images/pages/regulation/timeline.svg') %]">
+    </div>
+    <div class="background-gray center-text gr-padding-30 gr-12">
+        <h1 class="margin-top">[% l("Binary K.K.") %]</h1>
+        <div class="gr-12">
+            <p>[% l("Binary K.K., 3F Hiroo Miyata Building, 1-9-16 Hiroo, Shibuya-ku, Tokyo 150-0012. Licensed and regulated as a Type 1 Financial Instruments Business by the KLFB (license no. 2949) and a member of FFAJ (membership no. 1590).") %]</p>
+            <p>[% l("Japan residents will have their account opened with Binary K.K. and will use our Japan trading platform, which is compliant with Japan rules and regulations.") %]</p>
+            <p><strong>[% l("Regulator:") %]</strong></p>
+            <div class="gr-4 gr-6-m gr-centered gr-padding-10">
+                <a href="http://www.ffaj.or.jp/index.html" target="_blank">
+                    <img class="responsive" src="[% request.url_for('images/pages/regulation/binarykk-logo.gif') %]">
+                </a>
             </div>
         </div>
     </div>
@@ -57,7 +67,6 @@
                             <area shape="rect" coords="26.61,343.62,198.93,375.33" href="[% request.url_for('download/regulation/Luxembourg.pdf') %]" alt="Luxembourg" target="_blank">
                             <area shape="rect" coords="53.76,378.81,198.93,410.52" href="[% request.url_for('download/regulation/France.pdf') %]" alt="France" target="_blank">
                             <area shape="rect" coords="2.82,432.81,147.99,464.52" href="http://www.cnmv.es/Portal/Consultas/ESI/ESISExtranjerasLP.aspx?numero=3944&tipo=CLP" alt="Spain" target="_blank">
-                            <area shape="rect" coords="2.82,468.96,147.99,500.67" href="http://web3.cmvm.pt/english/sdi/ifs/LPS/ei_lps_lista.cfm?pais=Malta#lo" alt="Portugal" target="_blank">
                             <area shape="rect" coords="34.50,505.59,147.99,537.30" href="http://www.consob.it/mainen/documenti/english/intermediaries/albi/COM.html?symblink=/mainen/intermediares/investments_firms/com_lnk.html" alt="Italy" target="_blank">
                             <area shape="rect" coords="292.95,556.05,438.12,587.76" href="https://www.fma.gv.at/en/search-company-database/?cname=Binary+Investments&place=&bic=&category=&per_page=10&submitted=1" alt="Austria" target="_blank">
                             <area shape="rect" coords="324.81,597.03,469.98,628.74" href="http://www.mfsa.com.mt/pages/licenceholders.aspx" alt="Malta" target="_blank">
@@ -161,25 +170,6 @@
             <div class="gr-12">
                 <p>[% l("Binary (C.R.) S.A., registered in Costa Rica. Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their account opened with Binary (C.R.) S.A.") %]</p>
                 <p>[% l("Binary.com is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system.") %]</p>
-            </div>
-        </div>
-    </div>
-    <div class="ja-hide">
-        <div class="gray-line"></div>
-        <div class="center-text">
-            <img class="responsive timeline" src="[% request.url_for('images/pages/regulation/timeline.svg') %]">
-        </div>
-        <div class="background-gray center-text gr-padding-30 gr-12" id="japan-show-first">
-            <h1 class="margin-top">[% l("Binary K.K.") %]</h1>
-            <div class="gr-12">
-                <p>[% l("Binary K.K., 3F Hiroo Miyata Building, 1-9-16 Hiroo, Shibuya-ku, Tokyo 150-0012. Licensed and regulated as a Type 1 Financial Instruments Business by the KLFB (license no. 2949) and a member of FFAJ (membership no. 1590).") %]</p>
-                <p>[% l("Japan residents will have their account opened with Binary K.K. and will use our Japan trading platform, which is compliant with Japan rules and regulations.") %]</p>
-                <p><strong>[% l("Regulator:") %]</strong></p>
-                <div class="gr-4 gr-6-m gr-centered gr-padding-10">
-                    <a href="http://www.ffaj.or.jp/index.html" target="_blank">
-                        <img class="responsive" src="[% request.url_for('images/pages/regulation/binarykk-logo.gif') %]">
-                    </a>
-                </div>
             </div>
         </div>
     </div>
