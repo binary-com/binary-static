@@ -170,13 +170,12 @@ var KnowledgeTest = (function() {
             return;
         }
         switch (jpStatus.status) {
-            case 'jp_knowledge_test_pending': KnowledgeTestUI.createKnowledgeTestLink();
-                break;
-            case 'jp_knowledge_test_fail': if (Date.now() >= (jpStatus.next_test_epoch * 1000)) {
+            case 'jp_knowledge_test_pending':
+            case 'jp_knowledge_test_fail':
                 KnowledgeTestUI.createKnowledgeTestLink();
-            }
                 break;
-            case 'jp_activation_pending': $('#topbar-msg').children('a').addClass(hiddenClass);
+            case 'jp_activation_pending':
+                $('#topbar-msg').children('a').addClass(hiddenClass + ' jp_activation_pending');
                 break;
             default: return;
         }
