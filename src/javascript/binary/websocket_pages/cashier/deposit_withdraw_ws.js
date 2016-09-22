@@ -96,7 +96,11 @@ pjax_config_page_require_auth("cashier/forwardws", function() {
                           ForwardWS.getCashierURL();
                         } else {
                           ForwardWS.showMessage('choose-currency-message');
-                          $('#currency-form').show();
+                          if (japanese_client()) {
+                              $('#currency-form').show();
+                          } else {
+                              BinarySocket.send({"set_account_currency": "JPY"});
+                          }
                         }
                       }
                     }
