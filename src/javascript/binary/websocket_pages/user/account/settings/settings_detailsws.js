@@ -184,7 +184,7 @@ var SettingsDetailsWS = (function() {
                 ]
             };
         } else {
-            return true;
+            return {}; // nothing to validate
         }
     }
 
