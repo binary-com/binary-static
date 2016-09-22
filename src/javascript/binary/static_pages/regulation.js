@@ -1,8 +1,6 @@
 pjax_config_page('/regulation', function() {
     return {
         onLoad: function() {
-            if (japanese_client()) $('#japan-show-first-move-here').append($('#japan-show-first'));
-
             $(function() {
                 $( "#accordion" ).accordion({
                   heightStyle: "content",
