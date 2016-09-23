@@ -13,11 +13,8 @@
             <li class="all-hide ja-show-block">
                 <a class="pjaxload" href="[% request.url_for('get-started-jp') %]"[% target %]>[% l("Get Started") %]</a>
             </li>
-            <li class="ja-hide">
+            <li>
                 <a class="pjaxload" href="[% request.url_for('tour') %]">[% l('Tour') %]</a>
-            </li>
-            <li class="all-hide ja-show-block">
-                <a class="pjaxload" href="[% request.url_for('tour-jp') %]">[% l('Tour') %]</a>
             </li>
             [%= FOREACH item IN menu=%]
             <li id="[%= item.id =%]" class="item[% IF item.class %] [%= item.class =%][% END %]">

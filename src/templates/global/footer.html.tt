@@ -47,11 +47,8 @@
                                 <li class="all-hide ja-show-block">
                                     <a class="pjaxload" href="[% request.url_for('get-started-jp') %]">[% l('Getting Started') %]</a>
                                 </li>
-                                <li class="ja-hide">
+                                <li>
                                     <a class="pjaxload" href="[% request.url_for('tour') %]">[% l('Platform Tour') %]</a>
-                                </li>
-                                <li class="all-hide ja-show-block">
-                                    <a class="pjaxload" href="[% request.url_for('tour-jp') %]">[% l('Platform Tour') %]</a>
                                 </li>
                                 <li class="ja-hide id-hide">
                                     <a href="http://www.gamcare.org.uk/" target="_blank">[% l('GamCare') %]</a>

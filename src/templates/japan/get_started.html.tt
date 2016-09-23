@@ -230,7 +230,7 @@
         <p>
           [% l('Want to learn more?') %]
           <br>
-          <a class="pjaxload" href="[% request.url_for('/tour-jp', {l => 'JA'}) %]">[% l('View the Tour') %]</a>
+          <a class="pjaxload" href="[% request.url_for('/tour', {l => 'JA'}) %]">[% l('View the Tour') %]</a>
         </p>
       </div>
     </div>

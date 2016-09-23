@@ -26,18 +26,6 @@ pjax_config_page('/why-us', function() {
     };
 });
 
-pjax_config_page('/tour', function() {
-    return {
-        onLoad: function() {
-            if (!/tour-jp/.test(window.location.pathname) && japanese_client()) {
-                window.location.href = page.url.url_for('tour-jp');
-            } else if (/tour-jp/.test(window.location.pathname) && !japanese_client()) {
-                window.location.href = page.url.url_for('tour');
-            }
-        }
-    };
-});
-
 pjax_config_page('/volidx-markets', function() {
     return {
         onLoad: function() {
