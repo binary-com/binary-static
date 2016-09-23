@@ -182,6 +182,9 @@ function BinarySocketClass() {
 
                     if (company) {
                         page.client.set_storage_value('landing_company_name', company.name);
+                        if (/tnc_approvalws/.test(window.location.pathname)) {
+                            TNCApproval.showTNC();
+                        }
                         if (company.has_reality_check) {
                             page.client.response_landing_company(company);
                             var currentData = TUser.get();

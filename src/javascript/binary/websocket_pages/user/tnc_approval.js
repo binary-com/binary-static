@@ -26,7 +26,7 @@ var TNCApproval = (function() {
     };
 
     var showTNC = function() {
-        if(!terms_conditions_version || !client_tnc_status) {
+        if(!terms_conditions_version || !client_tnc_status || !page.client.get_storage_value('landing_company_name')) {
             return;
         }
 
@@ -87,7 +87,8 @@ var TNCApproval = (function() {
 
     return {
         init : init,
-        apiResponse : apiResponse
+        apiResponse : apiResponse,
+        showTNC: showTNC
     };
 }());
 
