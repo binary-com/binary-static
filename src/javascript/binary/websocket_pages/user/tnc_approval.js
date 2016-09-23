@@ -26,7 +26,7 @@ var TNCApproval = (function() {
     };
 
     var showTNC = function() {
-        if(!terms_conditions_version || !client_tnc_status) {
+        if(!terms_conditions_version || !client_tnc_status || !page.client.get_storage_value('landing_company_name')) {
             return;
         }
 
@@ -38,9 +38,8 @@ var TNCApproval = (function() {
         $('#tnc-loading').addClass(hiddenClass);
         $('#tnc_image').attr('src', page.url.url_for_static('images/pages/cashier/protection-icon.svg'));
         $('#tnc_approval').removeClass(hiddenClass);
-        var domain = StringUtil.toTitleCase(document.domain.split('.').slice(-2).join('.'));
         var tnc_message = template($('#tnc-message').html(), [
-            page.client.get_storage_value('landing_company_name') || domain,
+            page.client.get_storage_value('landing_company_name'),
             page.client.residence === 'jp' ?
                 page.url.url_for('terms-and-conditions-jp') :
                 page.url.url_for('terms-and-conditions')
@@ -88,7 +87,8 @@ var TNCApproval = (function() {
 
     return {
         init : init,
-        apiResponse : apiResponse
+        apiResponse : apiResponse,
+        showTNC: showTNC
     };
 }());
 
