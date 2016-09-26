@@ -392,6 +392,9 @@ sub _texts {
         push @texts, localize('Old password is wrong.');
         push @texts, localize('New password is same as old password.');
 
+        #strings for portfolio
+        push @texts, localize('Resale not offered');
+
         #strings for profittable and statement
         push @texts, localize('Your account has no trading activity.');
         push @texts, localize('Withdrawal');
