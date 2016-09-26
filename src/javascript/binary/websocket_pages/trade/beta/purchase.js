@@ -82,6 +82,9 @@ var Purchase_Beta = (function () {
             }
             profit_value = Math.round((payout_value - cost_value)*100)/100;
 
+            chart.hide();
+            spots.hide();
+
             if(is_spread){
                 label_value(payout, Content.localize().textStopLoss      , receipt.stop_loss_level  , true);
                 label_value(cost  , Content.localize().textAmountPerPoint, receipt.amount_per_point);
@@ -97,16 +100,10 @@ var Purchase_Beta = (function () {
             if(show_chart){
                 chart.show();
             }
-            else{
-                chart.hide();
-            }
 
             if(Contract_Beta.form() === 'digits'){
                 [].forEach.call(spots.childNodes, function(child) { child.innerHTML = '&nbsp;'; });
                 spots.show();
-            }
-            else{
-                spots.hide();
             }
 
             if(Contract_Beta.form() !== 'digits' && !show_chart){

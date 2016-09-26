@@ -54,7 +54,7 @@
             @include BIDIR_VALUE(text-align, left, right);
         }
         #sell_content_wrapper {
-            max-height: 90vh;
+            max-height: calc(100vh - 35px);
             overflow: auto;
             overflow-x: hidden;
             -ms-overflow-x: hidden;

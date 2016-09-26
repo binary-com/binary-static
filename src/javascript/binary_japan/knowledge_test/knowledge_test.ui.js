@@ -108,7 +108,7 @@ var KnowledgeTestUI = (function () {
 
         $topbarmsg.find('> span').removeClass('invisible');
         $topbarmsg.removeClass('invisible')
-            .find('a').removeClass('invisible')
+            .find('a').removeClass('invisible').addClass('jp_activation_pending')
                 .attr('href', page.url.url_for('/new_account/knowledge_testws')).html($('<span/>', {text: page.text.localize('{JAPAN ONLY}Take knowledge test')}));
     }
 

@@ -578,6 +578,7 @@ sub _texts {
         push @texts, localize('You need to finish all 20 questions.');
         push @texts, localize('Weekday');
         push @texts, localize('This contract can not be traded in the final 2 minutes before settlement');
+        push @texts, localize('min 1,000 and max 100,000');
 
         #strings for digit_infows
         push @texts, localize('Select market');
@@ -795,6 +796,7 @@ sub _texts {
         push @texts, localize('Your account is not fully authenticated. Please visit the <a href="[_1]">authentication</a> page for more information.');
         push @texts, localize('details');
         push @texts, localize('Deposit [_1] [_2] virtual money into your account [_3]');
+        push @texts, localize('Withdraw');
 
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";
