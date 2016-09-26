@@ -20,7 +20,6 @@ var Purchase = (function () {
             barrier_element = document.getElementById('contract_purchase_barrier'),
             reference = document.getElementById('contract_purchase_reference'),
             chart = document.getElementById('tick_chart'),
-            balance = document.getElementById('contract_purchase_balance'),
             payout = document.getElementById('contract_purchase_payout'),
             cost = document.getElementById('contract_purchase_cost'),
             profit = document.getElementById('contract_purchase_profit'),
@@ -76,7 +75,7 @@ var Purchase = (function () {
                 profit.innerHTML = Content.localize().textContractConfirmationProfit + ' <p>' + profit_value + '</p>';
             }
 
-            balance.textContent = Content.localize().textContractConfirmationBalance + ' ' + format_money(TUser.get().currency, Math.round(receipt['balance_after']*100)/100);
+            updateContractBalance(receipt['balance_after']);
 
             if(show_chart){
                 chart.show();

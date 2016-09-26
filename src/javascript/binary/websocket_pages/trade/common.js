@@ -855,7 +855,15 @@ function updatePurchaseStatus(final_price, pnl, contract_status){
     }
     else{
         $profit.html(Content.localize().textProfit + '<p>'+addComma(Math.round((final_price-pnl)*100)/100)+'</p>');
+        updateContractBalance(TUser.get().balance);
     }
+}
+
+function updateContractBalance(balance) {
+    $('#contract_purchase_balance').text(
+        Content.localize().textContractConfirmationBalance + ' ' +
+        format_money(TUser.get().currency, addComma(parseFloat(balance)))
+    );
 }
 
 function updateWarmChart(){
@@ -1147,6 +1155,7 @@ module.exports = {
     countDecimalPlaces: countDecimalPlaces,
     selectOption: selectOption,
     updatePurchaseStatus: updatePurchaseStatus,
+    updateContractBalance: updateContractBalance,
     updateWarmChart: updateWarmChart,
     reloadPage: reloadPage,
     addComma: addComma,
