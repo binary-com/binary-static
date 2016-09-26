@@ -13,6 +13,9 @@
     #gmt-clock {
         white-space: nowrap;
     }
+    .upgrademessage {
+        text-align: center;
+    }
     .upgrademessage a {
         @include link-button;
         border-radius: 2px;
