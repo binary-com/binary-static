@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-09-21 06:44+0000\n"
+"PO-Revision-Date: 2016-09-23 05:07+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
@@ -104,13 +104,13 @@ msgid "%1 has thousands of clients taking a variety of positions on the financia
 msgstr "当社では常時、たくさんのお客さまがバイナリーオプションをお取引されており、これらのお取引のスプレッドから利益を得ております。"
 
 msgid "%1 has updated its  <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>."
-msgstr "<a class=\"pjaxload\" href=\"%2\">取引規約</a>を改定いたします。当社でお取引されているお客さまにおいて、改定後の <a class=\"pjaxload\" href=\"%2\">取引規約</a>の内容を必ずご確認いただく必要がございます。原則、改定後の書面の内容をご確認いただきOKボタンを押して頂くまで、お取引できなくなりますので、お取引の際ご注意ください。"
+msgstr "<a class=\"pjaxload\" href=\"%2\">取引規約</a>を改定いたします。当社でお取引されているお客さまにおいて、改定後の <a class=\"pjaxload\" href=\"%2\">取引規約</a>を必ずご確認いただく必要がございます。原則、改定後の書面の内容をご確認いただきOKボタンを押して頂くまで、お取引できなくなりますので、お取引の際ご注意ください。"
 
 msgid "%1 has updated its %2. By clicking OK, you confirm that you have read and accepted the updated %2."
 msgstr "%1が%2を改定いたします。当社でお取引なさっているお客さまにおいて、改定後の%2の内容を必ずご確認いただく必要がございます。原則、改定後の書面の内容をご確認いただきOKボタンを押して頂くまで、お取引できなくなりますので、お取引の際ご注意ください。"
 
 msgid "%1 has updated its <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a class=\"pjaxload\" href=\"%2\">Terms & Conditions</a>."
-msgstr "<a class=\"pjaxload\" href=\"%2\">取引規約</a>を改定いたします。当社でお取引なさっているお客さまにおいて、改定後の <a class=\"pjaxload\" href=\"%2\">取引規約</a>の内容を必ずご確認いただく必要がございます。原則、改定後の書面の内容をご確認いただきOKボタンを押して頂くまで、お取引できなくなりますので、お取引の際ご注意ください。"
+msgstr "<a class=\"pjaxload\" href=\"%2\">取引規約</a>を改定いたします。当社でお取引なさっているお客さまにおいて、改定後の <a class=\"pjaxload\" href=\"%2\">取引規約</a>を必ずご確認いただく必要がございます。原則、改定後の書面の内容をご確認いただきOKボタンを押して頂くまで、お取引できなくなりますので、お取引の際ご注意ください。"
 
 msgid "%1 hits 1 million users, reaching a historic milestone. The company continues to see exponential growth and this reconfirms its position as an industry leader."
 msgstr "口座数が100万口座を超え、社史に残る実績を達成、業界トップのポジションを確実なものにしました。"
@@ -7749,10 +7749,8 @@ msgstr "ログイン"
 msgid "m"
 msgstr "男性"
 
-#, fuzzy
-#| msgid "$25,000 - $100,000"
 msgid "min 1,000 and max 100,000"
-msgstr "$25,000 - $100,000"
+msgstr "1,000円〜100,000円"
 
 msgid "minimum available duration"
 msgstr "最短取引期間"
