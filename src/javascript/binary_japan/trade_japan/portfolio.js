@@ -30,7 +30,7 @@ var JapanPortfolio = (function() {
   }
 
   function isActive() {
-    if (page.user.email && JPTradePage.isJapan()) {
+    if (page.client.is_logged_in && JPTradePage.isJapan()) {
       return true;
     }
   }
