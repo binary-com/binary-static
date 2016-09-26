@@ -198,11 +198,14 @@ function BinarySocketClass() {
                 } else if (type === 'payout_currencies' && response.hasOwnProperty('echo_req') && response.echo_req.hasOwnProperty('passthrough') && response.echo_req.passthrough.handler === 'page.client') {
                     page.client.response_payout_currencies(response);
                 } else if (type === 'get_settings' && response.get_settings) {
-                    if (!Cookies.get('residence') && response.get_settings.country_code) {
-                      page.client.set_cookie('residence', response.get_settings.country_code);
-                      page.client.residence = response.get_settings.country_code;
-                      send({landing_company: Cookies.get('residence')});
-                    } else if (response.get_settings.country_code === null && response.get_settings.country === null) {
+                    var country_code = response.get_settings.country_code;
+                    if (country_code) {
+                        page.client.residence = country_code;
+                        if (!Cookies.get('residence')) {
+                            page.client.set_cookie('residence', country_code);
+                            send({landing_company: country_code});
+                        }
+                    } else if (country_code === null && response.get_settings.country === null) {
                         page.contents.topbar_message_visibility('show_residence');
                     }
                     if (/realws|maltainvestws|japanws/.test(window.location.href)) {

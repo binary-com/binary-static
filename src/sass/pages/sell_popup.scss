@@ -48,6 +48,7 @@
             line-height: 20px;
             background-color: $COLOR_BLUE;
             color: $COLOR_WHITE;
+            @include BIDIR_PROP(padding-right, padding-left, 30px);
         }
         td {
             @include BIDIR_PROP(padding-left, padding-right, 6%);

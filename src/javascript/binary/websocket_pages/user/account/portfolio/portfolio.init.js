@@ -122,13 +122,16 @@ var PortfolioWS =  (function() {
         }
 
         var proposal = Portfolio.getProposalOpenContract(data.proposal_open_contract);
+        if(!values.hasOwnProperty(proposal.contract_id)) { // avoid updating 'values' before the new contract row added to the table
+            return;
+        }
+
         // force to sell the expired contract, in order to remove from portfolio
         if(proposal.is_expired == 1 && !proposal.is_sold) {
             BinarySocket.send({"sell_expired": 1});
         }
         var $td = $("#" + proposal.contract_id + " td.indicative");
 
-        if(!values.hasOwnProperty(proposal.contract_id)) values[proposal.contract_id] = {};
         var old_indicative = values[proposal.contract_id].indicative || 0.00;
         values[proposal.contract_id].indicative = proposal.bid_price;
 

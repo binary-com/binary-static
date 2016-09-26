@@ -392,6 +392,9 @@ sub _texts {
         push @texts, localize('Old password is wrong.');
         push @texts, localize('New password is same as old password.');
 
+        #strings for portfolio
+        push @texts, localize('Resale not offered');
+
         #strings for profittable and statement
         push @texts, localize('Your account has no trading activity.');
         push @texts, localize('Withdrawal');
@@ -578,7 +581,8 @@ sub _texts {
         push @texts, localize('You need to finish all 20 questions.');
         push @texts, localize('Weekday');
         push @texts, localize('This contract can not be traded in the final 2 minutes before settlement');
-        push @texts, localize('min 1,000 and max 100,000');
+        push @texts, localize('min: 1,000');
+        push @texts, localize('max: 100,000');
 
         #strings for digit_infows
         push @texts, localize('Select market');
