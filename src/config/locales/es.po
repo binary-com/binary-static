@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-08-09 22:56+0000\n"
+"PO-Revision-Date: 2016-09-22 22:20+0000\n"
 "Last-Translator: cameliagf <cameliagf@yahoo.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/binary/static/es/>\n"
 "Language: es\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.8-dev\n"
+"X-Generator: Weblate 2.9-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "\"API de Binary.com\" significa el conjunto propio de Binary.com de rutinas de programación, protocolos, herramientas y recursos creados y mantenidos por Binary.com que le permite usar una Aplicación registrada para interactuar con la plataforma de comercio Binary.com."
@@ -51,10 +51,8 @@ msgstr "%1 %2 se ha acreditado en su cuenta de dinero virtual %3"
 msgid "%1 Affiliate Program Terms and Conditions"
 msgstr "Términos y condiciones del programa de afiliados de %1"
 
-#, fuzzy
-#| msgid "%1 Affiliate Program Terms and Conditions"
 msgid "%1 Application Program Interface (\"API\") Terms and Conditions"
-msgstr "Términos y condiciones del programa de afiliados de %1"
+msgstr "Términos y condiciones de la Interfaz del Programa de la Aplicación (\"API\") %1"
 
 msgid "%1 Please click the link below to restart the password recovery process. If you require further assistance, please contact our Customer Support."
 msgstr "%1 Por favor haga clic en el enlace de abajo para reiniciar el proceso de recuperación de contraseña. Si necesita más ayuda, póngase en contacto con nuestro Servicio de Atención al Cliente."
@@ -192,7 +190,7 @@ msgid "%1 offers the world's financial markets in a simple, user-friendly platfo
 msgstr "%1 ofrece los mercados financieros mundiales en una plataforma sencilla y fácil de usar."
 
 msgid "%1 opens an office in the QSentral office building in central Kuala Lumpur to further expand its IT development team."
-msgstr ""
+msgstr "%1 abre una oficina en el edificio de oficinas QSentral en el centro de Kuala Lumpur para expandir aún más su equipo de desarrollo de IT."
 
 msgid "%1 prices are benchmarked against the interbank options market, so you always get best-in-class prices for your trades."
 msgstr "Los precios de %1 toman como referente el mercado de opciones interbancarias, por lo tanto usted siempre obtiene los mejores precios de su clase para sus contratos."
@@ -286,10 +284,8 @@ msgstr "%ctx(duración mínima, por ejemplo min 15 segundos)min"
 msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We have worked together for many years.&#8221;"
 msgstr "&#8220;%1 es uno de los colaboradores más antiguos y de confianza que hemos tenido. Hemos trabajado juntos durante muchos años.&#8221;"
 
-#, fuzzy
-#| msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide&#8221;"
 msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide.&#8221;"
-msgstr "&#8220;Hemos utilizado www.binary.com durante los últimos 8 años y recomendamos esta web de opciones binarias a nuestros miembros en todo el mundo&#8221;"
+msgstr "&#8220;Hemos utilizado www.binary.com durante los últimos 8 años y recomendamos esta web de opciones binarias a nuestros miembros en todo el mundo.&#8221;"
 
 msgid "'<strong>Long</strong>' contracts generate profits when the index rises and loses when it falls."
 msgstr "Contratos '<strong>largos</strong>' generan beneficios cuando el índice sube y pérdidas cuando este cae."
@@ -423,9 +419,8 @@ msgstr "<< Volver a descripciones de trabajo"
 msgid "<a class='pjaxload' href='mailto:%1'>Contact Us</a>"
 msgstr "<a class='pjaxload' href='mailto:%1'> Póngase en contacto con nosotros</a>"
 
-#, fuzzy
 msgid "<a href=\"%1\">Return to trading page</a>"
-msgstr "<a href=\"%1\">Market888.com</a>"
+msgstr "<a href=\"%1\">Volver a la página de comercio</a>"
 
 msgid "<a href='%1'>Founded</a> October 1999"
 msgstr "<a href='%1'>Fundado en</a> octubre de 1999"
@@ -487,18 +482,14 @@ msgstr "<strong>Tasación de 2 vías</strong>: %1 cotiza una transacción y su o
 msgid "<strong>Additional business exposure:</strong> You will increase awareness of your services and generate new business."
 msgstr "<strong>Exposición adicional de negocios:</strong> Se aumentará el conocimiento de sus servicios y se generarán nuevos negocios."
 
-#, fuzzy
-#| msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgid "<strong>All durations:</strong> from 10 seconds to 365 days."
-msgstr "<strong>Todas las duraciones</strong>: desde 10 segundos hasta 365 días."
+msgstr "<strong>Todas las duraciones:</strong> desde 10 segundos hasta 365 días."
 
 msgid "<strong>All durations</strong> - from 10 seconds to 365 days."
 msgstr "<strong>Todas las duraciones</strong>: desde 10 segundos hasta 365 días."
 
-#, fuzzy
-#| msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
 msgid "<strong>All market conditions:</strong> up/down, touch/no-touch, stays in/goes out."
-msgstr "<strong>Todas las condiciones del mercado</strong>: arriba/abajo, con toque/sin toque, permanece dentro/sale."
+msgstr "<strong>Todas las condiciones del mercado:</strong> arriba/abajo, con toque/sin toque, permanece dentro/sale."
 
 msgid "<strong>All market conditions</strong> - up/down, touch/no-touch, stays in/goes out."
 msgstr "<strong>Todas las condiciones del mercado</strong>: arriba/abajo, con toque/sin toque, permanece dentro/sale."
@@ -506,18 +497,14 @@ msgstr "<strong>Todas las condiciones del mercado</strong>: arriba/abajo, con to
 msgid "<strong>All markets, all conditions</strong> - trade currencies, indices and commodities in rising, falling, sideways, quiet and volatile markets."
 msgstr "<strong>Todos los mercados</strong> - transacciones con divisas, índices o materias primas, con movimientos del mercado en alza o baja, mercados tranquilos o volátiles."
 
-#, fuzzy
-#| msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgid "<strong>All markets:</strong> currencies, stocks, indices, and commodities."
-msgstr "<strong>Todos los mercados</strong>: divisas, índices bursátiles y materias primas."
+msgstr "<strong>Todos los mercados:</strong> divisas, índices bursátiles y materias primas."
 
 msgid "<strong>All markets</strong> - currencies, stock indices, and commodities."
 msgstr "<strong>Todos los mercados</strong>: divisas, índices bursátiles y materias primas."
 
-#, fuzzy
-#| msgid "<strong>All payouts</strong> - from $1 to $50,000."
 msgid "<strong>All payouts:</strong> from $1 to $50,000."
-msgstr "<strong>Todos los pagos</strong>: desde $1 hasta $50.000."
+msgstr "<strong>Todos los pagos:</strong> desde $1 hasta $50.000."
 
 msgid "<strong>All payouts</strong> - from $1 to $50,000."
 msgstr "<strong>Todos los pagos</strong>: desde $1 hasta $50.000."
@@ -766,15 +753,11 @@ msgstr "Una preferencia y una pasión por las plataformas de código abierto y L
 msgid "A proactive approach to solving problems and delivering client solutions"
 msgstr "Un enfoque proactivo para la resolución de problemas y la entrega de soluciones al cliente"
 
-#, fuzzy
-#| msgid "- A scanned copy of a utility bill or bank statement (no more than 3 months old)."
 msgid "A scanned copy of a utility bill or bank statement (no more than 3 months old)."
-msgstr "- Una copia escaneada de un extracto bancario o una factura que muestra su dirección residencial actual (que no sea más antigua de 3 meses)."
+msgstr "Una copia escaneada de un extracto bancario o una factura que muestra su dirección residencial actual (que no sea más antigua de 3 meses)."
 
-#, fuzzy
-#| msgid "- A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth."
 msgid "A scanned copy of your passport, driving licence (provisional or full) or identity card, showing your name and date of birth. Your document must be valid for at least 6 months after this date."
-msgstr "- Una copia escaneada de su pasaporte, el carnet de conducción actual (provisional o completo) o de la tarjeta de identidad que muestra su nombre, apellido y fecha de nacimiento."
+msgstr "Una copia escaneada de su pasaporte, el carnet de conducción actual (provisional o completo) o de la tarjeta de identidad que muestra su nombre, apellido y fecha de nacimiento. El documento debe ser válido durante al menos 6 meses después de esta fecha."
 
 msgid "A strong and passionate interest in Marketing and Advertising"
 msgstr "Un gran interés por el Marketing y la Publicidad"
@@ -863,10 +846,8 @@ msgstr "Administración y seguimiento de la cuenta"
 msgid "Account Opening"
 msgstr "Apertura de cuenta"
 
-#, fuzzy
-#| msgid "Lost Password?"
 msgid "Account Password"
-msgstr "¿Olvidó su Contraseña?"
+msgstr "Contraseña de la Cuenta"
 
 msgid "Account Transfer"
 msgstr "Transferencia de cuenta"
@@ -949,10 +930,8 @@ msgstr "Restricciones del Acuerdo"
 msgid "Agreement for documents"
 msgstr "Acuerdo para docmentos"
 
-#, fuzzy
-#| msgid "A True Partnership"
 msgid "All Partnership Options"
-msgstr "Una verdadera asociación"
+msgstr "Todas las Opciones de Asociación"
 
 msgid "All affiliate activities must be conducted in a professional and proper manner. You shall be expected to act with good faith and integrity in your relationships with your referrals, and always act in the best interests of your referrals."
 msgstr "Todas las actividades relacionadas con los afiliados deben llevarse a cabo de una manera profesional y adecuada. Usted debe de actuar con buena fe e integridad en sus relaciones con sus referidos y actuar siempre teniendo en cuenta los mejores intereses de sus referidos."
@@ -1090,7 +1069,7 @@ msgid "Appropriateness Test"
 msgstr "Prueba de idoneidad"
 
 msgid "Apps"
-msgstr ""
+msgstr "Aplicaciones"
 
 msgid "Apr"
 msgstr "Abr"
@@ -1335,10 +1314,8 @@ msgstr "Binary (IOM) Ltd, Primera Planta, Casa Millennium, Victoria Road, Dougla
 msgid "Binary Bot released"
 msgstr "Binary Bot lanzado"
 
-#, fuzzy
-#| msgid "Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
 msgid "Binary Group Services Sdn Bhd, 30-10, Q Sentral, Jalan Stesen Sentral 2, 50470 Kuala Lumpur"
-msgstr "Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
+msgstr "Binary Group Services Sdn Bhd, 30-10, Q Sentral, Jalan Stesen Sentral 2, 50470 Kuala Lumpur"
 
 msgid "Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
 msgstr "Binary Group Services Sdn Bhd, C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
@@ -1355,10 +1332,8 @@ msgstr "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, 
 msgid "Binary Investments (Europe) Ltd, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156)."
 msgstr "Binary Investments (Europe) Ltd, Suite 2, Tower Road, Msida MSD1825, Malta. Licenciado y regulado como proveedor de Servicios de Inversión de categoría 3 por la Autoridad de Servicios Financieros de Malta, Malta Financial Services Authority (licencia número IS/70156)."
 
-#, fuzzy
-#| msgid "Binary granted Investment Services license"
 msgid "Binary KK granted Japan license"
-msgstr "Binary recibe la licencia de servicios de inversión"
+msgstr "Binary KK recibe la licencia de Japón"
 
 msgid "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
 msgstr "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokio 150-0012, Japón"
@@ -1369,10 +1344,8 @@ msgstr "Binary Ltd., con dirección de oficina registrada en <span itemprop=\"lo
 msgid "Binary Options Basics"
 msgstr "Cuestiones básicas de las opciones binarias"
 
-#, fuzzy
-#| msgid "Binary option"
 msgid "Binary Shop"
-msgstr "Opciones binarias"
+msgstr "Binary Shop"
 
 msgid "Binary Trading is simple to learn and to execute."
 msgstr "Las operaciones con opciones binarias son fáciles de aprender y de ejecutar."
@@ -1412,7 +1385,7 @@ msgid "Binary trading is very simple."
 msgstr "Operar con opciones binarias es muy sencillo."
 
 msgid "Binary's Japanese subsidiary Binary KK is licensed by the KLFB as a Type 1 Financial Instruments Business in Japan."
-msgstr ""
+msgstr "La subsidiaria japonesa de Binary, Binary KK binario tiene una licencia de la KLFB como un negocio de instrumentos financieros de tipo 1 en Japón."
 
 msgid "Binary's Japanese subsidiary Binary KK opens an office in Tokyo and starts the process of applying for relevant licenses."
 msgstr "La filial japonesa de Binary, Binary KK, abre una oficina en Tokio e inicia el proceso de solicitud de licencias pertinentes."
@@ -1486,8 +1459,6 @@ msgstr "Al enviar sugerencias y otras opiniones sobre la API de %1 a la Compañ�
 msgid "By the 15th of every month, you will receive the commission earned during the previous calendar month."
 msgstr "Para el día 15 de cada mes, usted percibirá sus honorarios por la comisión ganada durante el mes calendarístico anterior."
 
-#, fuzzy
-#| msgid "By using or interacting with the website, you are consenting to the use of Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
 msgid "By using or interacting with the website, you are consenting to the use of the Google Analytics User ID Feature, which allows Google to capture your %1 login ID (for e.g., VRTC1234, CR1234, MF1234, etc.). No other personally identifiable information other than your Binary.com login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google by enabling the Google Analytics User ID Feature."
 msgstr "Al usar o interactuar con el sitio web, usted acepta usar la función de Google Analytics  ID, que permite a Google capturar su ID de inicio de sesión para %1 (por ejemplo, VRTC1234, CR1234, MF1234, etc..). Ninguna información personal identificable que no sea su ID de inicio de sesión de Binary.com, u otros datos que pueden estar vinculadas a dicha información por Google, es compartida con o revelada a Google activando la función de ID de Google Analytics."
 
@@ -1521,15 +1492,11 @@ msgstr "Carreras"
 msgid "Cashier"
 msgstr "Cajero"
 
-#, fuzzy
-#| msgid "Cashier password"
 msgid "Cashier Password"
-msgstr "Contraseña de cajero"
+msgstr "Contraseña de Cajero"
 
-#, fuzzy
-#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Cashier is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
-msgstr "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgstr "El cajero está bloqueado, por favor <a class=\"pjaxload\" href=\"%1\">póngase en contacto con nosotros</a> para más información."
 
 msgid "Cashier password"
 msgstr "Contraseña de cajero"
@@ -1543,15 +1510,11 @@ msgstr "Cambiar API Endpoint"
 msgid "Change Password"
 msgstr "Cambiar contraseña"
 
-#, fuzzy
-#| msgid "Hundreds of deposit and withdrawal options."
 msgid "Change the password used for deposits and withdrawals."
-msgstr "Múltiples opciones de depósito y retiro."
+msgstr "Cambiar la contraseña utilizada para depósitos y retiradas."
 
-#, fuzzy
-#| msgid "Insert your login ID and password"
 msgid "Change your main login password."
-msgstr "Introduzca su identificación de acceso y contraseña"
+msgstr "Cambiar su contraseña de inicio de sesión principal."
 
 msgid "Chart"
 msgstr "Gráfico"
@@ -1641,7 +1604,7 @@ msgid "Choose your own strike."
 msgstr "Seleccione el precio para ganar."
 
 msgid "Citizens of Afghanistan, Belgium, Bosnia and Herzegovina, Guyana, Iraq, Lao PDR, Syria, Uganda, Vanuatu or Yemen shall be restricted from opening an account with Binary Investments (Europe) Ltd."
-msgstr ""
+msgstr "Los ciudadanos de Afganistán, Bélgica, Bosnia y Herzegovina, Guyana, Irak, República Democrática Popular Lao, Siria, Uganda, Vanuatu, o Yemen no podrán abrir una cuenta con Binary Investments (Europe) Ltd."
 
 msgid "Classification of assets requiring hedge"
 msgstr "Clasificación de los activos que requieren cobertura"
@@ -1989,7 +1952,7 @@ msgid "Customer Support"
 msgstr "Atención al cliente"
 
 msgid "Cyberjaya Office"
-msgstr ""
+msgstr "Oficina de Cyberjaya"
 
 msgid "Daily Reset Indices"
 msgstr "Índices de Reajuste Diario"
@@ -2069,10 +2032,8 @@ msgstr "Deposite %1 %2 de dinero virtual en su cuenta %3"
 msgid "Deposit Bonus"
 msgstr "Bono de depósito"
 
-#, fuzzy
-#| msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
-msgstr "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
+msgstr "Depósito bloqueado, por favor <a class=\"pjaxload\" href=\"%1\">póngase en contacto con nosotros</a> para más información."
 
 msgid "Deposit of"
 msgstr "Depósito de"
@@ -2093,7 +2054,7 @@ msgid "Depositing and withdrawing funds"
 msgstr "Depositar y retirar fondos"
 
 msgid "Deposits and withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
-msgstr ""
+msgstr "En este momento no puede depositar ni retirar fondos de su cuenta. Por favor, póngase en contacto con %1 para desbloquearla."
 
 msgid "Derivative"
 msgstr "Derivativo"
@@ -2773,21 +2734,17 @@ msgstr "Generosa estructura de comisiones"
 msgid "Germany"
 msgstr "Alemania"
 
-#, fuzzy
-#| msgid "Over $1,000,000"
 msgid "Get JPY 1,000,000"
-msgstr "Más de $1,000,000"
+msgstr "Consiga JPY 1,000,000"
 
 msgid "Get Started"
 msgstr "Comenzar"
 
 msgid "Get USD 10,000.00"
-msgstr ""
+msgstr "Consiga USD 10,000.00"
 
-#, fuzzy
-#| msgid "Get your free $10,000 virtual money"
 msgid "Get more virtual money"
-msgstr "Obtenga su $10 000 de dinero virtual"
+msgstr "Consiga más dinero virtual"
 
 msgid "Get your price"
 msgstr "Obtenga su precio"
@@ -2978,10 +2935,8 @@ msgstr "Si alguna disposición de este Acuerdo es considerada inválida o inejec
 msgid "If the Company is legally required to disclose your personal or financial information by law, regulation or pursuant to the order of a court of competent jurisdiction or a governmental agency, the Company  shall, unless legally prohibited, promptly notify you to that effect, in order to give you the opportunity to seek such protection for the information as it deems appropriate. Such required disclosure shall not be construed as a breach of this Terms and Conditions Agreement."
 msgstr "Si la Compañía tiene la obligación legal de revelar su información personal o financiera por ley o en virtud de la orden de un tribunal de jurisdicción competente o un organismo gubernamental, la Compañía, a menos que esté legalmente prohibido, le notificará rápidamente sobre esta situación, con el fin de ofrecerle la oportunidad de buscar la protección de la información que estime conveniente. Tal divulgación obligada no se interpretará como una violación de estos Términos y Condiciones."
 
-#, fuzzy
-#| msgid "This account is unavailable. For any questions please contact <a href=\"%1\">Customer Support</a>."
 msgid "If the issue keeps happening, please contact <a href=\"%1\">customer support</a>."
-msgstr "Esta cuenta no está disponible. Ante cualquier duda comuníquese con el <a href=\"%1\">servicio de atención al cliente</a>."
+msgstr "Si el problema sigue ocurriendo, póngase en contacto con <a href=\"%1\">el servicio de atención al cliente</a>."
 
 msgid "If this Agreement is terminated for any reason, you must permanently delete all Content, except when doing so would cause you to violate any law or obligation imposed by a governmental authority."
 msgstr "Si este Acuerdo está rescindido para cualquier razón, debe eliminar permanentemente todo el Contenido, excepto cuando el hacer esto causaría que usted violase cualquier ley u obligación impuesta por una autoridad gubernamental."
@@ -3836,10 +3791,8 @@ msgstr "Únase a nuestro equipo de profesionales brillantes y talentosos. Trabaj
 msgid "Join our team of bright, talented professionals. Work collaboratively with us to promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years."
 msgstr "Únase a nuestro equipo de profesionales brillantes y talentosos. Trabaje en colaboración con nosotros para promover una plataforma de alta tecnología que es una de las más reconocidas en la industria del comercio con opciones binarias desde hace más de 15 años."
 
-#, fuzzy
-#| msgid "Joshua Cavallaro <span> Markets And You Trader.</span>"
 msgid "Joshua Cavallaro <span> Markets And You Trader</span>"
-msgstr "Joshua Cavallaro <span> Markets And You Trader.</span>"
+msgstr "Joshua Cavallaro <span>Comerciante de Markets And You.</span>"
 
 msgid "Jul"
 msgstr "Jul"
@@ -3881,7 +3834,7 @@ msgid "Knowledge of probability theory, stochastic calculus, numerical methods, 
 msgstr "Conocimiento de la teoría de la probabilidad, cálculo estocástico, métodos numéricos, simulación de Monte-Carlo, ecuaciones diferenciales, la econometría, y modelos estadísticos"
 
 msgid "Kuala Lumpur Office"
-msgstr ""
+msgstr "Oficina de Kuala Lumpur"
 
 msgid "Languages"
 msgstr "Idiomas"
@@ -4282,10 +4235,8 @@ msgstr "Nunca usado"
 msgid "New Password"
 msgstr "Contraseña nueva"
 
-#, fuzzy
-#| msgid "Trade"
 msgid "New Trade"
-msgstr "Operar"
+msgstr "Comercio nuevo"
 
 msgid "New password"
 msgstr "Contraseña nueva"
@@ -4452,10 +4403,8 @@ msgstr "Sólo cinco años después de la creación de la web, recogemos este imp
 msgid "Only one account is allowed per person. No winnings and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person."
 msgstr "Solo se permite una cuenta por persona. Las ganancias o reembolsos no so se abonarán en cuentas que se hayan abierto con nombres falsos o en varias cuentas abiertas por una misma persona."
 
-#, fuzzy
-#| msgid "No Data available"
 msgid "Oops... Page Not Available"
-msgstr "No hay información disponible"
+msgstr "Vaya... Página no disponible"
 
 msgid "Open"
 msgstr "Abierto"
@@ -4958,10 +4907,8 @@ msgstr "El dominio de un lenguaje de script - preferiblemente Perl"
 msgid "Proficiency in a second language (oral and written) is preferred"
 msgstr "El dominio de un segundo idioma (oral y escrito) es una ventaja"
 
-#, fuzzy
-#| msgid "Profit"
 msgid "Profile"
-msgstr "Beneficios"
+msgstr "Perfil"
 
 msgid "Profit"
 msgstr "Beneficios"
@@ -5083,10 +5030,8 @@ msgstr "Ref."
 msgid "Reference ID"
 msgstr "ID de Referencia"
 
-#, fuzzy
-#| msgid "Reload page"
 msgid "Refresh page"
-msgstr "Recargar página"
+msgstr "Recargar la página"
 
 msgid "Regent Markets Group Ltd. renames to Binary Ltd."
 msgstr "Regent Markets Group Ltd. cambia su nombre a Binary ltd."
@@ -5307,10 +5252,8 @@ msgstr "Pregunta secreta"
 msgid "Security"
 msgstr "Seguridad"
 
-#, fuzzy
-#| msgid "Account Limits"
 msgid "Security & Limits"
-msgstr "Límites de la cuenta"
+msgstr "Seguridad y límites"
 
 msgid "Security Disclaimer"
 msgstr "Aviso de Seguridad"
@@ -5432,10 +5375,8 @@ msgstr "Regístrese para probar nuestra plataforma"
 msgid "Sign me up"
 msgstr "Registrarme"
 
-#, fuzzy
-#| msgid "Sign me up"
 msgid "Sign out"
-msgstr "Registrarme"
+msgstr "Cerrar sesión"
 
 msgid "Sign up as a tester and look for Binary.com-related projects."
 msgstr "Regístrese como probador y busque proyectos relacionados con Binary.com."
@@ -5851,8 +5792,6 @@ msgstr "La Compañía recibe una denuncia que podría haber implicado a la entid
 msgid "The Company reserves the right in its sole discretion to refuse and/or cancel services, charge deposit and/or withdrawal fees to anyone for any reasons including, but not limited to:"
 msgstr "La Compañía se reserva el derecho, bajo su propia discreción, de rechazar y/o cancelar servicios, cobrar comisiones de depósito y retiro a cualquiera por cualquier razón, incluso, aunque no se limita a:"
 
-#, fuzzy
-#| msgid "The Company reserves the right to restrict client trading and/or cancel or reverse transactions in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug or glitch in our website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, or manifest mis-calculation of prices or other manifest error. Clients have a duty to report to the Company any such problems, errors or suspected system inadequacies that they may experience and may not abuse of or arbitrage such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
 msgid "The Company reserves the right to cancel/reverse transactions or amend the contractual terms (including, but not limited to, entry and exit spot) in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug or glitch in our website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, or manifest mis-calculation of prices or other obvious errors (\"Manifest Errors\"). Clients have a duty to report to the Company any such problems, errors or suspected system inadequacies that they may experience and may not abuse of or arbitrage such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Any amendments to the contractual terms (including, but not limited to, entry and exit spot) of Manifestly Erroneous contracts shall be reasonable and fair. Monies exchanged between oneself and the Company in connection with Manifestly Erroneous contracts shall be returned to the recipient according to the amendments made to the contractual terms (including, but not limited to, entry and exit spot). You further acknowledge and agree that the Company will not be held liable or responsible, whether directly or indirectly, for any loss, expenses or damage caused or alleged to be caused by or in connection with a Manifest Error."
 msgstr "La Compañía se reserva el derecho a cancelar o revertir transacciones en caso de que los contratos sean adquiridos o vendidos a precios que no reflejan los precios justos del mercado o se adquieren o venden un nivel anormalmente bajo de riesgo debido a un error de programación no detectado, error o fallo en el software de nuestro sitio web, feed de los datos del mercado o latencia de los precios del contrato, error del feed de datos, precios aleatorios, parámetros de precios incorrectos o mal cálculo de los precios u otro error de manifiesto. Los clientes tienen la obligación de informar a la Compañía de tales problemas, errores o insuficiencias del sistema que pueden experimentar y no abusar de o arbitrar tales problemas del sistema o errores con fines de lucro. La Compañía se esforzará en resolver tales dificultades en el menor tiempo posible. Las personas con conocimiento de información privilegiada de cualquier mercado financiero o instrumento tienen prohibido comerciar en este sitio web."
 
@@ -6000,10 +5939,8 @@ msgstr "La comisión que cobrará a los clientes por los depósitos y retiros"
 msgid "The company does not guarantee the ability to sell a contract prior to its expiration time."
 msgstr "La compañía no garantiza la posibilidad de vender un contrato antes de su fecha de vencimiento."
 
-#, fuzzy
-#| msgid "The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='%1' class='pjaxload'>here:</a>"
 msgid "The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='%1' class='pjaxload'>here.</a>"
-msgstr "La compañía cuenta con varios métodos de depósito disponibles, cada uno con sus propios plazos de demora para los depósitos, algunos de los cuales podrían no estar disponibles para los retiros. Los detalles completos de los métodos de depósito y retiro disponibles, incluyendo los plazos de demora, están disponibles <a href='%1' class='pjaxload'>aquí:</a>"
+msgstr "La compañía cuenta con varios métodos de depósito disponibles, cada uno con sus propios plazos de demora para los depósitos, algunos de los cuales podrían no estar disponibles para los retiros. Los detalles completos de los métodos de depósito y retiro disponibles, incluyendo los plazos de demora, están disponibles <a href='%1' class='pjaxload'>aquí.</a>"
 
 msgid "The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission's requirements for the segregation of customer funds at the level: <strong>medium protection</strong>."
 msgstr "La Compañía guarda los fondos de los clientes en cuentas bancarias separadas de las cuentas operativas que no formarán, en caso de insolvencia, parte de los activos de la Compañía. Esto cumple con los requisitos de la Comisión de juego para la segregación de los recursos de clientes a nivel de: <strong>protección media</strong>."
@@ -6091,7 +6028,7 @@ msgid "The maximum number of tokens (%1) has been reached."
 msgstr "El máximo número de tokens (%1) ha sido alcanzado."
 
 msgid "The page you requested could not be found. Either it no longer exists or the address is wrong. Please check for any typos."
-msgstr ""
+msgstr "La página solicitada no puede ser encontrada. Ya no existe o la dirección es incorrecta. Por favor, verifique las faltas de ortografía."
 
 msgid "The patent means Regent Markets is the recognised pioneer of binary betting. The patent helps protect our innovations."
 msgstr "La patente significa que Regent Markets es reconocida como pionera de apuestas binarias. La patente ayuda a proteger nuestras innovaciones."
@@ -6241,10 +6178,8 @@ msgstr "Esta bonificación solo está disponible para clientes nuevos. No se apl
 msgid "This bonus will be processed and credited to a client's account when:"
 msgstr "Este bono será procesado y acreditado a la cuenta de un cliente cuando:"
 
-#, fuzzy
-#| msgid "This contract cannot be priced at the moment"
 msgid "This contract can not be traded in the final 2 minutes before settlement"
-msgstr "Por el momento no es posible valuar este contrato"
+msgstr "Este contrato no puede ser operado en los últimos 2 minutos antes del final"
 
 msgid "This contract has LOST"
 msgstr "Este contrato ha PERDIDO"
@@ -6306,10 +6241,8 @@ msgstr "Este sitio web incluye enlaces a otros sitios y puede contener publicida
 msgid "This website does not collect personally identifying information about you except when you specifically and knowingly provide it. There is a technology called \"cookies\" which can be used to provide tailored information from a website. A cookie is an element of data that a website can send to your browser, which may then store it on your system. You can set your browser to notify you when you receive a cookie, giving you the chance to decide whether to accept it. If you do not accept the cookie, then you will need to input your loginID and password again at every form required to enter into the system. You are advised to choose this option if you have concerns about the security of your personal browser or PC."
 msgstr "Este sitio web no recoge su información de identificación personal excepto cuando usted la proporciona de forma intencionada y voluntaria. La tecnología llamada \"cookies\" se puede usar para brindar información personalizada de un sitio web. Un cookie es un elemento de datos que un sitio web puede enviar a su navegador, que a su vez, se almacena en su sistema. Usted puede configurar su navegador para que lo notifique cuando recibe una cookie. Luego deberá ingresar su usuario y contraseña nuevamente en cada formulario que necesita para ingresar al sistema. Se le sugiere elegir esta opción si tiene dudas acerca de la seguridad de su navegador o de su PC."
 
-#, fuzzy
-#| msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in the USA, Japan, Costa Rica or Hong Kong, or to persons under age 18."
 msgid "This website is marketed in the UK and Isle of Man by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licenced and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>. This website is marketed in the rest of the EU, for investment products by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156), and for gaming products by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenced and regulated by (1) the Malta Gaming Authority in Malta, licence no MGA/CL2/118/2000, 26th May 2015 and for UK clients by (2) the UK Gambling Commission - <a href='%2' target='_blank'>view license</a>, and for Irish clients by (3) the Revenue Commissioners in Ireland, current remote bookmaker's licence issued on 29 September 2015 (licence no 1010285). This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
-msgstr "Este sitio web es comercializado en el Reino Unido y la Isla de Man por Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isla de Man, las Islas Británicas, autorizado y regulado por (1) la Comisión de Supervisión del Juego de la Isla de Man, las Islas Británicas, licencia de juego en línea vigente publicada el 31 de agosto de 2012, y para los clientes del Reino Unido, por la comisión (2) UK Gambling Commission - <a href='%1' target='_blank'>ver la licencia</a>. En el resto de la UE este sitio web está comercializado para los productos de inversión por Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenciado y regulado como categoría 3 por Malta Financial Services Authority (número de licencia IS/70156), y para los productos de juego por Regent Marcets(Malta) Ltd., Mompalao Building, Suite 2, Torre Road, Msida MSD1825, Malta, autorizado y regulado por (1) la Autoridad de Juegos de Malta, con el número de la licencia MGA/CL2/118/2000, del 26 de mayo de 2010, y para los clientes del Reino Unido, por la comisión (2) UK Gambling Commission - <a href='%2' target='_blank'>ver la licencia</a> y para los clientes de Irlanda por (3) Revenue Commissioners en Irlanda, la licencia actual de la casa de apuestas a distancia emitida el 29 de septiembre 2015 (licence no 1010285). Los servicios de este sitio web no están disponibles en los EE.UU., Japón, Costa Rica o Hong Kong o para las personas menores de 18 años."
+msgstr "Este sitio web es comercializado en el Reino Unido y la Isla de Man por Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isla de Man, las Islas Británicas, autorizado y regulado por (1) la Comisión de Supervisión del Juego de la Isla de Man, las Islas Británicas, licencia de juego en línea vigente publicada el 31 de agosto de 2012, y para los clientes del Reino Unido, por la comisión (2) UK Gambling Commission - <a href='%1' target='_blank'>ver la licencia</a>. En el resto de la UE este sitio web está comercializado para los productos de inversión por Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licenciado y regulado como categoría 3 por Malta Financial Services Authority (número de licencia IS/70156), y para los productos de juego por Regent Marcets(Malta) Ltd., Mompalao Building, Suite 2, Torre Road, Msida MSD1825, Malta, autorizado y regulado por (1) la Autoridad de Juegos de Malta, con el número de la licencia MGA/CL2/118/2000, del 26 de mayo de 2010, y para los clientes del Reino Unido, por la comisión (2) UK Gambling Commission - <a href='%2' target='_blank'>ver la licencia</a> y para los clientes de Irlanda por (3) Revenue Commissioners en Irlanda, la licencia actual de la casa de apuestas a distancia emitida el 29 de septiembre 2015 (licence no 1010285). Los servicios de este sitio web no están disponibles en ciertos países como los EE.UU., Costa Rica, Hong Kong o para las personas menores de 18 años."
 
 msgid "Thorough knowledge of bash scripting, as well as experience with scripting languages such as Perl and PHP"
 msgstr "Conocimiento completo de secuencias de scripts Bash, así como experiencia con lenguajes de programación como Perl y PHP"

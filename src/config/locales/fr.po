@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: French (Binary)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-09-15 13:19+0000\n"
-"Last-Translator: Chloe Chevreton <chloe-che@hotmail.fr>\n"
+"PO-Revision-Date: 2016-09-22 08:09+0000\n"
+"Last-Translator: Michal Čihař <michal@cihar.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/binary/static/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.8\n"
+"X-Generator: Weblate 2.9-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
 msgstr "« L'API %1 » désigne l'ensemble des produits propriétaires de %1, notamment les routines, protocoles, outils et ressources de programmation créés et mis en service par %1, vous permettant d'utiliser une Application enregistrée pour communiquer avec la plateforme de trading %1."
@@ -2023,7 +2023,7 @@ msgid "Deposit Bonus"
 msgstr "Bonus de dépôt"
 
 msgid "Deposit is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
-msgstr "La fonction de dépôt est verrouillée, veuillez <a class=\"pjaxload\" href=\"%1 »>nous contacter</a> pour obtenir des informations."
+msgstr "La fonction de dépôt est verrouillée, veuillez <a class=\"pjaxload\" href=\"%1\">nous contacter</a> pour obtenir des informations."
 
 msgid "Deposit of"
 msgstr "Dépôt de"
@@ -3013,7 +3013,7 @@ msgid "If you select \"Odd\", you will win the payout if the <strong>last digit
 msgstr "Si vous sélectionnez « Impair », vous gagnez si le <strong>dernier chiffre</strong> du dernier tick est un </strong>nombre impair (par ex. 1, 3, 5, 7, ou 9).</strong>"
 
 msgid "If you select \"Over\", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>greater than your prediction.</strong>"
-msgstr "Si vous sélectionnez « Au-dessus », vous gagnez si le <strong>dernier chiffre</strong> du dernier tick est <strong>supérieur à votre prédiction<strong>."
+msgstr "Si vous sélectionnez « Au-dessus », vous gagnez si le <strong>dernier chiffre</strong> du dernier tick est <strong>supérieur à votre prédiction</strong>."
 
 msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
 msgstr "Si vous sélectionnez « Hausse », vous gagnez si le <strong>point de sortie</strong> est strictement supérieur au </strong>point d'entrée</strong>."
@@ -3025,7 +3025,7 @@ msgid "If you select \"Touches\", you win the payout if the market touches the <
 msgstr "Si vous sélectionnez « Touche », vous gagnez si le marché touche la <strong>barrière<strong> à tout moment de la <strong>période de contrat<strong>."
 
 msgid "If you select \"Under\", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>less than your prediction.</strong>"
-msgstr "Si vous sélectionnez « En dessous », vous gagnez si le <strong>dernier chiffre</strong> du dernier tick est <strong>inférieur à votre prédiction<strong>."
+msgstr "Si vous sélectionnez « En dessous », vous gagnez si le <strong>dernier chiffre</strong> du dernier tick est <strong>inférieur à votre prédiction</strong>."
 
 msgid "If you select \"falls\", you win the payout if the market price is lower than the <strong>entry spot</strong>."
 msgstr "Si vous sélectionnez « Baisse », vous gagnez si le prix du marché est inférieur au </strong>point d'entrée</strong>."
