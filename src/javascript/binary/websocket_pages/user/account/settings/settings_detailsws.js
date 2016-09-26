@@ -1,22 +1,34 @@
 var SettingsDetailsWS = (function() {
     "use strict";
 
-    var formID = '#frmPersonalDetails';
-    var RealAccElements = '.RealAcc';
-    var changed = false;
-    var fieldIDs = {
-        address1 : '#Address1',
-        address2 : '#Address2',
-        city     : '#City',
-        state    : '#State',
-        postcode : '#Postcode',
-        phone    : '#Phone'
-    };
-
+    var formID = '#frmPersonalDetails',
+        RealAccElements = '.RealAcc',
+        changed = false,
+        isInitialized,
+        fieldIDs = {
+            address1 : '#Address1',
+            address2 : '#Address2',
+            city     : '#City',
+            state    : '#State',
+            postcode : '#Postcode',
+            phone    : '#Phone'
+        };
 
     function init() {
+        Content.populate();
+
+        if (page.client.is_virtual() || page.client.residence) {
+            initOk();
+        } else {
+            isInitialized = false;
+        }
+
+        BinarySocket.send({"get_settings": "1", "req_id": 1});
+    }
+
+    function initOk() {
+        isInitialized = true;
         var isJP = page.client.residence === 'jp';
-        BinarySocket.send({"get_settings": "1"});
         bind_validation.simple($(formID)[0], {
             schema: isJP ? getJPSchema() : getNonJPSchema(),
             submit: function(ev, info) {
@@ -37,6 +49,9 @@ var SettingsDetailsWS = (function() {
     }
 
     function getDetailsResponse(response) {
+        if (!isInitialized) {
+            initOk();
+        }
         var data = response.get_settings;
 
         $('#lblCountry').text(data.country || '-');
@@ -184,7 +199,7 @@ var SettingsDetailsWS = (function() {
                 ]
             };
         } else {
-            return true;
+            return {}; // nothing to validate
         }
     }
 
@@ -269,8 +284,13 @@ pjax_config_page_require_auth("settings/detailsws", function() {
                     }
                     var type = response.msg_type;
                     switch(type){
+                        case "authorize":
+                            SettingsDetailsWS.init();
+                            break;
                         case "get_settings":
-                            SettingsDetailsWS.getDetailsResponse(response);
+                            if (response.req_id == 1) {
+                                SettingsDetailsWS.getDetailsResponse(response);
+                            }
                             break;
                         case "set_settings":
                             SettingsDetailsWS.setDetailsResponse(response);
@@ -286,9 +306,9 @@ pjax_config_page_require_auth("settings/detailsws", function() {
                     }
                 }
             });
-
-            Content.populate();
-            SettingsDetailsWS.init();
+            if (TUser.get().loginid) {
+                SettingsDetailsWS.init();
+            }
         }
     };
 });

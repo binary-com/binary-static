@@ -117,7 +117,7 @@ var ViewPopupUI = (function() {
         reposition_confirmation: function (x, y) {
             var con = this.container();
             var win_ = $(window);
-            var x_min = 50;
+            var x_min = 0;
             var y_min = 500;
             if(win_.width() < 767) { //To be responsive, on mobiles and phablets we show popup as full screen.
                 x_min = 0;
