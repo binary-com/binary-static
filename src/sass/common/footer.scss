@@ -90,4 +90,14 @@
             line-height: 110%;
         }
     }
+    #end-note {
+        line-height: 30px;
+        text-align: center;
+        background: $COLOR_RED;
+        color: $COLOR_WHITE;
+        font-size: $FONT_SIZE_S;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
 }
