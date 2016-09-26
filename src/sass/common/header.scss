@@ -10,6 +10,9 @@
     #gmt-clock, #contact-us, .upgrademessage {
         align-self: center;
     }
+    #gmt-clock {
+        white-space: nowrap;
+    }
     .upgrademessage a {
         @include link-button;
         border-radius: 2px;
@@ -22,6 +25,7 @@
         select {
             padding: 0px;
             @include BIDIR_VALUE(float, right, left);
+            max-width: 100%;
         }
     }
     a {
