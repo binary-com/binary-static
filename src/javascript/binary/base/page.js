@@ -1187,7 +1187,7 @@ Page.prototype = {
             var server = localStorage.getItem('config.server_url');
             if (server && server.length > 0) {
                 $('#end-note')
-                    .html(page.text.localize('The server <a href="[_1]">endpoint</a> is: [_2]', [page.url.url_for('endpoint'), server]))
+                    .html(page.text.localize('This is a staging server - For testing purposes only - The server <a href="[_1]">endpoint</a> is: [_2]', [page.url.url_for('endpoint'), server]))
                     .removeClass('invisible');
             }
         }
