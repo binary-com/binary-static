@@ -5103,6 +5103,11 @@ msgstr "Mewakili jumlah kontrak pada portopolio Anda. Setiap baris pada portopol
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "Mewakili jumlah maksimum pembelian kontrak dalam satu hari trading."
 
+#, fuzzy
+#| msgid "This trade is not offered."
+msgid "Resale not offered"
+msgstr "Kontrak ini tidak ditawarkan."
+
 msgid "Resale price"
 msgstr "Harga jual"
 
@@ -7526,8 +7531,13 @@ msgstr "login"
 msgid "m"
 msgstr "m"
 
-msgid "min 1,000 and max 100,000"
-msgstr "min 1,000 dan mak 100,000"
+#, fuzzy
+#| msgid "Less than $100,000"
+msgid "max: 100,000"
+msgstr "Kurang dari $100,000"
+
+msgid "min: 1,000"
+msgstr ""
 
 msgid "minimum available duration"
 msgstr "durasi minimal yang tersedia"
@@ -8371,6 +8381,9 @@ msgstr "Keterangan rekening"
 
 msgid "Terms and Conditions Approval"
 msgstr "Syarat dan Ketentuan Persetujuan"
+
+#~ msgid "min 1,000 and max 100,000"
+#~ msgstr "min 1,000 dan mak 100,000"
 
 #~ msgid "Version 41. Last modified 2016-06-27."
 #~ msgstr "Version 41. Diubah terakhir pada 27-06-2016."
@@ -13383,9 +13396,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 #~ msgid "There are no costs involved on the Binary.com side. However you will bear the costs of your own IT developers who develop the white-label for you."
 #~ msgstr "Tidak ada biaya yang terlibat pada sisi Binary.com. Namun Anda akan menanggung biaya IT developers sendiri untuk mengembangkan white label untuk Anda."
-
-#~ msgid "This trade is not offered."
-#~ msgstr "Kontrak ini tidak ditawarkan."
 
 #~ msgid "To create a White Label, first <a href=\"%1\">sign up as an affiliate</a>. This will allow you to earn commissions from clients of your White Label."
 #~ msgstr "Untuk membuat White Label, pertama silahkan <a href=\"%1\">daftar sebagai affiliasi</a>. Dengan demikian Anda akan memperoleh komisi dari klien White Label Anda."

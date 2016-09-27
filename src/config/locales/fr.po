@@ -5089,6 +5089,11 @@ msgstr "Représente le nombre maximal de contrats actifs dans votre portefeuille
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "Représente le volume maximal de contrats que vous pouvez acheter au cours d'une journée de trading donnée."
 
+#, fuzzy
+#| msgid "This trade is not offered."
+msgid "Resale not offered"
+msgstr "Ce trade n'est pas proposé."
+
 msgid "Resale price"
 msgstr "Prix de revente"
 
@@ -7546,9 +7551,12 @@ msgid "m"
 msgstr "m"
 
 #, fuzzy
-#| msgid "$25,000 - $100,000"
-msgid "min 1,000 and max 100,000"
-msgstr "25 000 $ - 100 000 $"
+#| msgid "Less than $100,000"
+msgid "max: 100,000"
+msgstr "Moins de 100 000 $"
+
+msgid "min: 1,000"
+msgstr ""
 
 msgid "minimum available duration"
 msgstr "durée minimale disponible"
@@ -8394,6 +8402,11 @@ msgstr "Informations du compte"
 
 msgid "Terms and Conditions Approval"
 msgstr "Acceptation des conditions générales"
+
+#, fuzzy
+#~| msgid "$25,000 - $100,000"
+#~ msgid "min 1,000 and max 100,000"
+#~ msgstr "25 000 $ - 100 000 $"
 
 #~ msgid "Version 41. Last modified 2016-06-27."
 #~ msgstr "Version 41. Dernière modification le 27/06/2016."
@@ -13377,9 +13390,6 @@ msgstr "Acceptation des conditions générales"
 
 #~ msgid "There are no costs involved on the Binary.com side. However you will bear the costs of your own IT developers who develop the white-label for you."
 #~ msgstr "Il n'y a pas de frais du côté de Binary.com. Cependant vous assumerez les frais de vos propres développeurs IT qui développent l'étiquette-blanche pour vous."
-
-#~ msgid "This trade is not offered."
-#~ msgstr "Ce trade n'est pas proposé."
 
 #~ msgid "To create a White Label, first <a href=\"%1\">sign up as an affiliate</a>. This will allow you to earn commissions from clients of your White Label."
 #~ msgstr "Afin de créer une Étiquette Blanche, d'abord <a href=\"%1\">inscrivez-vous comme un affilié</a>. Ceci vous permettra de gagner de commissions des clients de votre Étiquette Blanche."

@@ -5120,6 +5120,11 @@ msgstr "Rappresenta il numero massimo di contratti in essere nel tuo portafoglio
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "Rappresenta il volume massimo di contratti che puoi acquistare in un dato giorno di trading."
 
+#, fuzzy
+#| msgid "This trade is not offered."
+msgid "Resale not offered"
+msgstr "Questo trade non è disponibile."
+
 msgid "Resale price"
 msgstr "Prezzo di rivendita"
 
@@ -7559,9 +7564,12 @@ msgid "m"
 msgstr "m"
 
 #, fuzzy
-#| msgid "$25,000 - $100,000"
-msgid "min 1,000 and max 100,000"
-msgstr "$25.000 - $100.000"
+#| msgid "Less than $100,000"
+msgid "max: 100,000"
+msgstr "Meno di $100.000"
+
+msgid "min: 1,000"
+msgstr ""
 
 msgid "minimum available duration"
 msgstr "durata minima disponibile"
@@ -8407,6 +8415,11 @@ msgstr "Dettagli dell'account"
 
 msgid "Terms and Conditions Approval"
 msgstr "Approvazione dei termini e delle condizioni"
+
+#, fuzzy
+#~| msgid "$25,000 - $100,000"
+#~ msgid "min 1,000 and max 100,000"
+#~ msgstr "$25.000 - $100.000"
 
 #~ msgid "You'll find answers to most of your questions on the <a href='' target='_blank' id='faq_url'>FAQ</a> page."
 #~ msgstr "Puoi trovare la maggior parte delle risposte alle tue domande sulla pagina <a href='' target='_blank' id='faq_url'>FAQ</a>."
@@ -13418,9 +13431,6 @@ msgstr "Approvazione dei termini e delle condizioni"
 
 #~ msgid "There are no costs involved on the Binary.com side. However you will bear the costs of your own IT developers who develop the white-label for you."
 #~ msgstr "Non ci saranno costi dalla parte di Binary.com. Tuttavia ti assumerai i costi dei tuoi sviluppatori IT che svilupperanno per te la White label."
-
-#~ msgid "This trade is not offered."
-#~ msgstr "Questo trade non è disponibile."
 
 #~ msgid "To create a White Label, first <a href=\"%1\">sign up as an affiliate</a>. This will allow you to earn commissions from clients of your White Label."
 #~ msgstr "Per creare una White Label, innanzitutto <a href=\"%1\">registrati come affiliato</a>. Ciò ti consentirà di guadagnare delle commissioni provenienti dai clienti della tua White Label."

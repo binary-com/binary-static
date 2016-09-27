@@ -5373,6 +5373,11 @@ msgstr "يمثل الحد الأقصى من العقود المعلقة فى م�
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "يمثل الحد الأقصى لحجم العقود التي بإمكانك أن تشتريها في أي يوم تداول."
 
+#, fuzzy
+#| msgid "This trade is not offered."
+msgid "Resale not offered"
+msgstr "لم نعد نقدم هذة المعاملة."
+
 msgid "Resale price"
 msgstr "سعر إعادة البيع"
 
@@ -7999,9 +8004,12 @@ msgid "m"
 msgstr "دقيقة"
 
 #, fuzzy
-#| msgid "$25,000 - $100,000"
-msgid "min 1,000 and max 100,000"
-msgstr "$25,000 - $100,000"
+#| msgid "Less than $100,000"
+msgid "max: 100,000"
+msgstr "أقل من 100,000 دولار"
+
+msgid "min: 1,000"
+msgstr ""
 
 msgid "minimum available duration"
 msgstr "أقل مدة زمنية متاحة"
@@ -8961,6 +8969,11 @@ msgstr "تفاصيل الحساب"
 
 msgid "Terms and Conditions Approval"
 msgstr "لموافقة على الشروط والأحكام"
+
+#, fuzzy
+#~| msgid "$25,000 - $100,000"
+#~ msgid "min 1,000 and max 100,000"
+#~ msgstr "$25,000 - $100,000"
 
 #, fuzzy
 #~| msgid "Version 40. Last modified 2016-05-12."
@@ -14211,9 +14224,6 @@ msgstr "لموافقة على الشروط والأحكام"
 
 #~ msgid "There are no costs involved on the Binary.com side. However you will bear the costs of your own IT developers who develop the white-label for you."
 #~ msgstr "لا توجد تكاليف مترتبة من جانب Binary.com. ولكن سوف تتحمل تكاليف مطوري تكنولوجيا المعلومات الخاص بك الذين يقومون بتطوير البطاقة البيضاء لك."
-
-#~ msgid "This trade is not offered."
-#~ msgstr "لم نعد نقدم هذة المعاملة."
 
 #~ msgid "To create a White Label, first <a href=\"%1\">sign up as an affiliate</a>. This will allow you to earn commissions from clients of your White Label."
 #~ msgstr "لعمل شراكة البطاقة البيضاء، أولا <a href=\"%1\">سجل كمنتسب</a>. مما سيسمح لك بربح عمولات من عملاء شراكة البطاقة البيضاء الخاص بك."
