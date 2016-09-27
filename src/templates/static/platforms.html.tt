@@ -20,7 +20,9 @@
             <h2>[% l("Basic Platforms") %]</h2>
             <div class="gr-row">
                 <div class="gr-6 gr-12-m gr-12-p">
-                    <img class="same-height" src="[% request.url_for('images/pages/platforms/trading-page.png') %]" />
+                    <div class="gr-12">
+                        <img class="responsive" src="[% request.url_for('images/pages/platforms/trading-page.png') %]" />
+                    </div>
                     <div class="gr-padding-30">
                         <h3>[% l("Binary.com") %]</h3>
                         <strong>[% l("Premier binary options trading platform") %]</strong>
@@ -35,7 +37,9 @@
                     </div>
                 </div>
                 <div class="gr-6 gr-12-m gr-12-p">
-                    <img class="same-height" src="[% request.url_for('images/pages/platforms/tick-trade.png') %]" />
+                    <div class="gr-8">
+                        <img class="responsive" src="[% request.url_for('images/pages/platforms/tick-trade.png') %]" />
+                    </div>
                     <div class="gr-padding-30">
                         <h3>[% l("Binary Tick Trade App") %]</h3>
                         <strong>[% l("Ultra fast on-the-go trading") %]</strong>
@@ -56,7 +60,9 @@
             <h2>[% l("Advanced Platforms") %]</h2>
             <div class="gr-row">
                 <div class="gr-6 gr-12-m gr-12-p">
-                    <img class="same-height" src="[% request.url_for('images/pages/platforms/metatrader.png') %]" />
+                    <div class="gr-8">
+                        <img class="responsive" src="[% request.url_for('images/pages/platforms/metatrader.png') %]" />
+                    </div>
                     <div class="gr-padding-30">
                         <h3>[% l("MetaTrader 5") %]</h3>
                         <strong>[% l("Advanced CFD trading platform") %]</strong>
@@ -71,7 +77,9 @@
                     </div>
                 </div>
                 <div class="gr-6 gr-12-m gr-12-p">
-                    <img class="same-height" src="[% request.url_for('images/pages/platforms/webtrader.png') %]" />
+                    <div class="gr-8">
+                        <img class="responsive" src="[% request.url_for('images/pages/platforms/webtrader.png') %]" />
+                    </div>
                     <div class="gr-padding-30">
                         <h3>[% l("Binary Webtrader") %]</h3>
                         <strong>[% l("Advanced binary options trading platform") %]</strong>
@@ -88,7 +96,9 @@
             </div>
             <div class="gr-row">
                 <div class="gr-6 gr-12-m gr-12-p">
-                    <img class="same-height" src="[% request.url_for('images/pages/platforms/nextgen.png') %]" />
+                    <div class="gr-12">
+                        <img class="responsive" src="[% request.url_for('images/pages/platforms/nextgen.png') %]" />
+                    </div>
                     <div class="gr-padding-30">
                         <h3>[% l("Binary Next-Gen") %]</h3>
                         <strong>[% l("Future of trading on Binary.com") %]</strong>
@@ -106,7 +116,9 @@
                     </div>
                 </div>
                 <div class="gr-6 gr-12-m gr-12-p">
-                    <img class="same-height" src="[% request.url_for('images/pages/platforms/binarybot.png') %]" />
+                    <div class="gr-8">
+                        <img class="responsive" src="[% request.url_for('images/pages/platforms/binarybot.png') %]" />
+                    </div>
                     <div class="gr-padding-30">
                         <h3>[% l("Binary Bot") %]</h3>
                         <strong>[% l("Auto-trader programming tool") %]</strong>
@@ -266,7 +278,9 @@
             <h1>[% l("More Tools") %]</h1>
             <div class="gr-row">
                 <div class="gr-6 gr-12-m gr-12-p">
-                    <img class="same-height" src="[% request.url_for('images/pages/platforms/tradingview.png') %]" />
+                    <div class="gr-12">
+                        <img class="responsive" src="[% request.url_for('images/pages/platforms/tradingview.png') %]" />
+                    </div>
                     <div class="gr-padding-30">
                         <h3>[% l("TradingView for Binary.com") %]</h3>
                         <strong>[% l("Powerful charting and technical analysis") %]</strong>
