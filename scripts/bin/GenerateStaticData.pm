@@ -803,7 +803,8 @@ sub _texts {
         push @texts, localize('Withdraw');
 
         # strings for endpoint notification
-        push @texts, localize('This is a staging server - For testing purposes only - The server <a href="[_1]">endpoint</a> is: [_2]');
+        push @texts, localize('This is a staging server - For testing purposes only');
+        push @texts, localize('The server <a href="[_1]">endpoint</a> is: [_2]');
 
         my %as_hash = @texts;
         $js .= "texts_json['" . $language . "'] = " . JSON::to_json(\%as_hash) . ";\n";

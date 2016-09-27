@@ -1052,7 +1052,7 @@ Page.prototype = {
         }
         this.check_language();
         TrafficSource.setData();
-        this.check_staging_server();
+        this.endpoint_notification();
     },
     on_unload: function() {
         this.header.on_unload();
@@ -1182,14 +1182,13 @@ Page.prototype = {
                                  .addClass('gr-12 gr-12-p');
         }
     },
-    check_staging_server: function() {
-        if (!/www\.binary\.com/i.test(window.location.hostname)) {
-            var server = localStorage.getItem('config.server_url');
-            if (server && server.length > 0) {
-                $('#end-note')
-                    .html(page.text.localize('This is a staging server - For testing purposes only - The server <a href="[_1]">endpoint</a> is: [_2]', [page.url.url_for('endpoint'), server]))
-                    .removeClass('invisible');
-            }
+    endpoint_notification: function() {
+        var server  = localStorage.getItem('config.server_url');
+        if (server && server.length > 0) {
+            var message = (/www\.binary\.com/i.test(window.location.hostname) ? '' :
+                page.text.localize('This is a staging server - For testing purposes only') + ' - ') +
+                page.text.localize('The server <a href="[_1]">endpoint</a> is: [_2]', [page.url.url_for('endpoint'), server]);
+            $('#end-note').html(message).removeClass('invisible');
         }
     },
     // type can take one or more params, separated by comma
