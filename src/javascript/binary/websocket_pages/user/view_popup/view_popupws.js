@@ -213,12 +213,13 @@ var ViewPopupWS = (function() {
         containerSetText('trade_details_current_spot'    , currentSpot || page.text.localize('not available'));
         containerSetText('trade_details_indicative_price', indicative_price ? format_money(contract.currency, parseFloat(indicative_price).toFixed(2)) : '-');
 
-        var profit_loss, percentage;
+        var profit_loss, percentage, jp_client;
         if (finalPrice) {
             profit_loss = finalPrice - contract.buy_price;
             percentage  = (profit_loss * 100 / contract.buy_price).toFixed(2);
+            jp_client   = japanese_client();
             containerSetText('trade_details_profit_loss',
-                format_money(contract.currency, parseFloat(profit_loss).toFixed(2)) + '<span>(' + (percentage > 0 ? '+' : '') + percentage + '%' + ')</span>',
+                (jp_client ? format_money_jp(contract.currency, parseFloat(profit_loss).toFixed(2)) : format_money(contract.currency, parseFloat(profit_loss).toFixed(2))) + '<span>(' + (percentage > 0 ? '+' : '') + percentage + '%' + ')</span>',
                 {'class': (profit_loss >= 0 ? 'profit' : 'loss')}
             );
         } else {

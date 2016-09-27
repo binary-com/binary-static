@@ -72,7 +72,7 @@ function validate_object(data, schema) {
 
 
 function stripTrailing(name) {
-    return name.replace(/\[\]$/, '');
+    return (name || '').replace(/\[\]$/, '');
 }
 
 /**

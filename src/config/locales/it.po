@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Italian (Binary)\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-09-16 10:29+0000\n"
+"PO-Revision-Date: 2016-09-21 05:13+0000\n"
 "Last-Translator: Annalisa <ligiu@me.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/binary/static/it/>\n"
 "Language: it\n"
@@ -5120,6 +5120,11 @@ msgstr "Rappresenta il numero massimo di contratti in essere nel tuo portafoglio
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "Rappresenta il volume massimo di contratti che puoi acquistare in un dato giorno di trading."
 
+#, fuzzy
+#| msgid "This trade is not offered."
+msgid "Resale not offered"
+msgstr "Questo trade non è disponibile."
+
 msgid "Resale price"
 msgstr "Prezzo di rivendita"
 
@@ -5964,10 +5969,8 @@ msgstr "La commissione che applicherai ai Clienti sui depositi e sui prelievi"
 msgid "The company does not guarantee the ability to sell a contract prior to its expiration time."
 msgstr "La società non garantisce la possibilità di vendere un contratto prima della sua scadenza."
 
-#, fuzzy
-#| msgid "The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='%1' class='pjaxload'>here:</a>"
 msgid "The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='%1' class='pjaxload'>here.</a>"
-msgstr "La società dispone di varie modalità di pagamento, ognuna con i propri tempi per i depositi, alcuni dei quali potrebbero non essere disponibili per i prelievi. Tutti i dettagli sui metodi di deposito e prelievo disponibili inclusi i periodi di liquidazione sono disponibili <a href='%1' class='pjaxload'>qui:</a>"
+msgstr "La società dispone di varie modalità di pagamento, ognuna con i propri tempi per i depositi, alcuni dei quali potrebbero non essere disponibili per i prelievi. Tutti i dettagli sui metodi di deposito e prelievo disponibili inclusi i periodi di liquidazione sono disponibili <a href='%1' class='pjaxload'>qui.</a>"
 
 msgid "The company holds customer funds in separate bank accounts to the operational accounts which would not, in the event of insolvency, form part of the Company's assets. This meets the Gambling Commission's requirements for the segregation of customer funds at the level: <strong>medium protection</strong>."
 msgstr "La società detiene i fondi dei clienti in conti bancari separati da quelli operativi, i quali non faranno parte, in caso di insolvenza, dell'asset della Società. Ciò rispecchia i requisiti della Commissione sul gioco d'azzardo per la segregazione dei fondi dei clienti a livello: <strong>protezione media</strong>."
@@ -6610,10 +6613,8 @@ msgstr "Token di verifica"
 msgid "Verify new password"
 msgstr "Verifica la nuova password"
 
-#, fuzzy
-#| msgid "Version 41. Last modified 2016-06-27."
 msgid "Version 42. Last modified 2016-09-14."
-msgstr "Versione 41. Ultima modifica 27-06-2016."
+msgstr "Versione 42. Ultima modifica 14-09-2016."
 
 msgid "View"
 msgstr "Mostra"
@@ -7562,6 +7563,14 @@ msgstr "login"
 msgid "m"
 msgstr "m"
 
+#, fuzzy
+#| msgid "Less than $100,000"
+msgid "max: 100,000"
+msgstr "Meno di $100.000"
+
+msgid "min: 1,000"
+msgstr ""
+
 msgid "minimum available duration"
 msgstr "durata minima disponibile"
 
@@ -8345,7 +8354,7 @@ msgid "{Japan Only}Trade all binary option types"
 msgstr "{Japan Only}Trade all binary option types"
 
 msgid "{Japan Only}Trade the major currencies"
-msgstr ""
+msgstr "{Japan Only}Trade the major currencies"
 
 msgid "{Japan Only}Two-way pricing"
 msgstr "{Japan Only}Two-way pricing"
@@ -8406,6 +8415,11 @@ msgstr "Dettagli dell'account"
 
 msgid "Terms and Conditions Approval"
 msgstr "Approvazione dei termini e delle condizioni"
+
+#, fuzzy
+#~| msgid "$25,000 - $100,000"
+#~ msgid "min 1,000 and max 100,000"
+#~ msgstr "$25.000 - $100.000"
 
 #~ msgid "You'll find answers to most of your questions on the <a href='' target='_blank' id='faq_url'>FAQ</a> page."
 #~ msgstr "Puoi trovare la maggior parte delle risposte alle tue domande sulla pagina <a href='' target='_blank' id='faq_url'>FAQ</a>."
@@ -13417,9 +13431,6 @@ msgstr "Approvazione dei termini e delle condizioni"
 
 #~ msgid "There are no costs involved on the Binary.com side. However you will bear the costs of your own IT developers who develop the white-label for you."
 #~ msgstr "Non ci saranno costi dalla parte di Binary.com. Tuttavia ti assumerai i costi dei tuoi sviluppatori IT che svilupperanno per te la White label."
-
-#~ msgid "This trade is not offered."
-#~ msgstr "Questo trade non è disponibile."
 
 #~ msgid "To create a White Label, first <a href=\"%1\">sign up as an affiliate</a>. This will allow you to earn commissions from clients of your White Label."
 #~ msgstr "Per creare una White Label, innanzitutto <a href=\"%1\">registrati come affiliato</a>. Ciò ti consentirà di guadagnare delle commissioni provenienti dai clienti della tua White Label."

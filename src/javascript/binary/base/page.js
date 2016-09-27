@@ -854,6 +854,20 @@ Contents.prototype = {
             $('.unbind_later').off();
         }
     },
+    has_gaming_financial_enabled: function() {
+        var has_financial = false,
+            has_gaming = false,
+            user;
+        for (var i = 0; i < page.user.loginid_array.length; i++) {
+            user = page.user.loginid_array[i];
+            if (user.financial && !user.disabled && !user.non_financial) {
+                has_financial = true;
+            } else if (!user.financial && !user.disabled && user.non_financial) {
+                has_gaming = true;
+            }
+        }
+        return has_gaming && has_financial;
+    },
     activate_by_client_type: function() {
         $('.by_client_type').addClass('invisible');
         if(this.client.is_logged_in) {
@@ -874,7 +888,7 @@ Contents.prototype = {
                     $('#payment-agent-section').hide();
                 }
 
-                if (/^MF|MLT/.test(this.client.loginid)) {
+                if (this.has_gaming_financial_enabled()) {
                     $('#account-transfer-section').removeClass('invisible');
                 }
             } else {
@@ -932,6 +946,8 @@ Contents.prototype = {
                     hide_upgrade();
                     show_virtual_msg = false;
                     show_upgrade_msg = false; // do not show upgrade for user that filled up form
+                } else if ($('.jp_activation_pending').length !== 0) {
+                    show_upgrade_msg = false;
                 }
                 for (var i = 0; i < loginid_array.length; i++) {
                     if (loginid_array[i].real) {
@@ -950,7 +966,7 @@ Contents.prototype = {
                         show_upgrade('new_account/realws', 'Upgrade to a Real Account');
                     }
                 } else if (show_virtual_msg) {
-                    $upgrade_msg.removeClass(hiddenClass).find('> span').removeClass(hiddenClass);
+                    $upgrade_msg.removeClass(hiddenClass).find('> span').removeClass(hiddenClass + ' gr-hide-m');
                 }
             } else {
                 var show_financial = false;
@@ -992,7 +1008,7 @@ var Page = function() {
 
 Page.prototype = {
     all_languages: function() {
-        return ['EN', 'AR', 'DE', 'ES', 'FR', 'ID', 'IT', 'PL', 'PT', 'RU', 'VI', 'JA', 'ZH_CN', 'ZH_TW'];
+        return ['EN', 'DE', 'ES', 'FR', 'ID', 'IT', 'PL', 'PT', 'RU', 'VI', 'JA', 'ZH_CN', 'ZH_TW'];
     },
     language_from_url: function() {
         var regex = new RegExp('^(' + this.all_languages().join('|') + ')$', 'i');
@@ -1021,7 +1037,7 @@ Page.prototype = {
         this.contents.on_load();
         this.on_click_acc_transfer();
         this.show_authenticate_message();
-        if (CommonData.getLoginToken()) {
+        if (this.client.is_logged_in) {
             ViewBalance.init();
         } else {
             LocalStore.set('reality_check.ack', 0);
