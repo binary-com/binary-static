@@ -398,6 +398,7 @@ sub _texts {
         #strings for profittable and statement
         push @texts, localize('Your account has no trading activity.');
         push @texts, localize('Withdrawal');
+        push @texts, localize('Virtual money credit to account');
 
         #strings for authenticate page
         push @texts, localize('To authenticate your account, kindly email the following to [_1]');
@@ -583,6 +584,7 @@ sub _texts {
         push @texts, localize('This contract can not be traded in the final 2 minutes before settlement');
         push @texts, localize('min: 1,000');
         push @texts, localize('max: 100,000');
+        push @texts, localize('Sorry, an error occurred while processing your request.');
 
         #strings for digit_infows
         push @texts, localize('Select market');
