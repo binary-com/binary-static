@@ -42,7 +42,6 @@ var StatementUI = (function(){
 
     function createStatementRow(transaction){
         var statement_data = Statement.getStatementData(transaction, TUser.get().currency, japanese_client());
-        statement_data.action = page.text.localize(statement_data.action);
         allData.push(statement_data);
         var creditDebitType = (parseFloat(statement_data.amount) >= 0) ? "profit" : "loss";
 
@@ -50,13 +49,13 @@ var StatementUI = (function(){
                 statement_data.date,
                 '<span' + showTooltip(statement_data.app_id, oauth_apps[statement_data.app_id]) + '>' + statement_data.ref + '</span>',
                 statement_data.payout,
-                statement_data.action,
+                page.text.localize(statement_data.action),
                 '',
                 statement_data.amount,
                 statement_data.balance,
                 ''
             ], columns, "data");
-        
+
         $statementRow.children(".credit").addClass(creditDebitType);
         $statementRow.children(".date").addClass("pre");
         $statementRow.children(".desc").html(statement_data.desc + "<br>");
