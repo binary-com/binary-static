@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-09-22 22:20+0000\n"
+"PO-Revision-Date: 2016-09-26 13:43+0000\n"
 "Last-Translator: cameliagf <cameliagf@yahoo.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/binary/static/es/>\n"
 "Language: es\n"
@@ -5099,6 +5099,11 @@ msgstr "Representa el número máximo de contratos pendientes en su cartera. Cad
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "Representa el volumen máximo de contratos que puede comprar en un día de comercialización determinado."
 
+#, fuzzy
+#| msgid "This trade is not offered."
+msgid "Resale not offered"
+msgstr "Este contrato no está en oferta."
+
 msgid "Resale price"
 msgstr "Precio de reventa"
 
@@ -6253,10 +6258,8 @@ msgstr "Jueves"
 msgid "Tick"
 msgstr "Intervalo"
 
-#, fuzzy
-#| msgid "Tick Trade App"
 msgid "TickTrade App"
-msgstr "Tick Trade App"
+msgstr "Aplicación TickTrade"
 
 msgid "Tier"
 msgstr "Nivel"
@@ -6402,10 +6405,8 @@ msgstr "VistaOperativa (TradingView)"
 msgid "Transact in"
 msgstr "Transacción en"
 
-#, fuzzy
-#| msgid "Your transaction reference is"
 msgid "Transaction performed by %1 (App ID: %2)"
-msgstr "La referencia de su transacción es"
+msgstr "Transacción realizada por %1 (ID de la aplicación: %2)"
 
 msgid "Transfer"
 msgstr "Transferencia"
@@ -6581,18 +6582,14 @@ msgstr "Token de verificación"
 msgid "Verify new password"
 msgstr "Verificar nueva contraseña"
 
-#, fuzzy
-#| msgid "Version 32. Last modified 2014-09-24."
 msgid "Version 42. Last modified 2016-09-14."
-msgstr "Versión 32. Última modificación el 2014-09-24."
+msgstr "Versión 42. Última modificación el 2016-09-14."
 
 msgid "View"
 msgstr "Ver"
 
-#, fuzzy
-#| msgid "Details"
 msgid "View Details"
-msgstr "detalles"
+msgstr "Ver Detalles"
 
 msgid "View Updated Portfolio"
 msgstr "Ver cartera actualizada"
@@ -6675,10 +6672,8 @@ msgstr "Nuestro objetivo es mantener un registro de los tipos de actividades que
 msgid "We also offer specialized pay-out structures to affiliates who offer a trading advice in connection with, and in relation to our commodities. <a href=\"mailto:%1\">Contact our affiliate manager, Karen Yap for details</a>."
 msgstr "También ofrecemos estructuras de pago específicas para los afiliados que ofrecen consultoría de comercio en conexión y en relación con nuestros productos Para los afiliados que ofrecen un servicio de asesoramiento de inversiones basado en la plataforma de %1 ofrecemos estructuras de pago especializadas. <a href=\"mailto:%1\">Comuníquese con nuestra gerente de afiliados, Karen Yap para obtener más detalles</a>."
 
-#, fuzzy
-#| msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business.  We are exclusively authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and this in relation to financial derivative products (primarily binary options) relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than dealing on own account in Financial Products. Should you feel that you require investment advice or investment services other that those described above then you should contact an independent financial advisor or firm."
 msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business.  We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other persons, both services are in relation to financial derivative products (primarily binary options) relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other that those described above then you should contact an independent financial advisor or firm."
-msgstr "Estamos autorisados y regulados por Malta Financial Services Authority (\"MFSA\") bajo del Acto de servicios de inversión, Investment Services Act (Cap. 370, Laws of Malta) (el \"Acto\"), para efectuar operaciones de inversión. Estamos autorizados exclusivamente por el MFSA a negociar por cuenta propia (es decir, oferecer y actuar como contraparte de todas las operaciones) y esto en relación a los productos financieros derivados (principalmente opciones binarias) vinculados a divisas, índices, acciones y otros productos financieros o activos (\"Productos Financieros\"). No estamos autorizados a y no ofrecemos ni proporcionamos asesoramiento sobre inversiones o otros servicios de inversión distintos de operaciones con productos financieros en nuestra cuenta. Si usted siente que necesita asesoramiento sobre inversiones o servicios de inversión distintos a los descritos anteriormente, debe ponerse en contacto con un asesor financiero independiente."
+msgstr "Estamos autorisados y regulados por Malta Financial Services Authority (\"MFSA\") bajo del Acto de servicios de inversión, Investment Services Act (Cap. 370, Laws of Malta) (el \"Acto\"), para efectuar operaciones de inversión. Estamos autorizados por el MFSA a negociar por cuenta propia (es decir, oferecer y actuar como contraparte de todas las operaciones) y para ejecutar ordenes en nombre de otras personas, ambos servicios están relacionados con los productos financieros derivados (principalmente opciones binarias) vinculados a divisas, índices, acciones y otros productos financieros o activos (\"Productos Financieros\"). No estamos autorizados a y no ofrecemos ni proporcionamos asesoramiento sobre inversiones o otros servicios distintos a los descritos arriba. Si usted siente que necesita asesoramiento sobre inversiones o servicios de inversión distintos a los descritos anteriormente, debe ponerse en contacto con un asesor financiero independiente."
 
 msgid "We are committed to making sure your personal data and transactions are secure:"
 msgstr "Estamos comprometidos en asegurar sus datos personales y transacciones:"
@@ -7010,7 +7005,7 @@ msgid "Withdrawal Limits"
 msgstr "Límites de retiro"
 
 msgid "Withdrawal for your account is not allowed at this moment. Please contact %1 to unlock it."
-msgstr ""
+msgstr "No se permiten las retiradas de su cuenta en este momento. Por favor, póngase en contacto con %1 para desbloquearla."
 
 msgid "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
 msgstr "Withdrawal is locked, please <a class=\"pjaxload\" href=\"%1\">contact us</a> for more information."
@@ -7112,10 +7107,10 @@ msgid "You can close your trade before expiry to lock in profits."
 msgstr "Puede vender su contrato antes de que expire para retener los beneficios."
 
 msgid "You can request more virtual money if your virtual balance falls below JPY 100,000."
-msgstr ""
+msgstr "Puede solicitar más dinero virtual si su saldo virtual cae por debajo de 100.000 JPY."
 
 msgid "You can request more virtual money if your virtual balance falls below USD 1,000.00."
-msgstr ""
+msgstr "Puede solicitar más dinero virtual si su saldo virtual cae por debajo de USD 1,000.00."
 
 msgid "You can sell back long-term trades at any time to profit from changing market conditions."
 msgstr "Puede vender sus contratos a largo plazo a precios de mercado antes para beneficiarse de las condiciones cambiantes del mercado."
@@ -7171,10 +7166,8 @@ msgstr "Puede almacenar en caché el Contenido hasta 24 horas de una solicitud p
 msgid "You may choose to contact us to close your account held with the Company. Your account may be closed if you do not have any open trade positions and if you have complied with the requested \"Know Your Client\" procedures to enable you to withdraw any pending funds in your account."
 msgstr "Puede optar por ponerse en contacto con nosotros para cerrar su cuenta con la Compañía. Su cuenta puede ser cerrada si usted no tiene ninguna posición abierta y si ha cumplido con los procedimientos requeridos de comprobación de identidad para que pueda retirar los fondos pendientes de su cuenta."
 
-#, fuzzy
-#| msgid "You may communicate with us through this website, by email or, exceptionally, by post. Details can be found in the Contact Us page."
 msgid "You may communicate with us through this website by means of Live Chat, e-mail, phone or, exceptionally, by post. Details can be found in the Contact Us page."
-msgstr "Usted puede ponerse en contacto con nosotros a través de este sitio web, por correo electrónico o, excepcionalmente, por correo postal. Los detalles se pueden encontrar en la página de contacto."
+msgstr "Usted puede ponerse en contacto con nosotros a través de este sitio web, usando nuestro Chat en Vivo, por correo electrónico o, excepcionalmente, por correo postal. Los detalles se pueden encontrar en la página de contacto."
 
 msgid "You may develop Applications using the %1 API as soon as you register an Application and you agree to follow these Terms."
 msgstr "Usted puede desarrollar Aplicaciones usando la API de %1 tan pronto como registre una Aplicación y acepte cumplir estos Términos."
@@ -7324,7 +7317,7 @@ msgid "Your account has no trading activity."
 msgstr "Su cuenta no tiene actividad comercial."
 
 msgid "Your account is currently suspended. Only withdrawals are now permitted. For further information, please contact %1."
-msgstr ""
+msgstr "Su cuenta está actualmente suspendida. Solo tiene permitido retirar. Para más información, por favor póngase en contacto con 1%."
 
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "Su cuenta está totalmente autenticada y su límite de retirada ha sido aumentado."
@@ -7534,9 +7527,12 @@ msgid "m"
 msgstr "m"
 
 #, fuzzy
-#| msgid "$25,000 - $100,000"
-msgid "min 1,000 and max 100,000"
-msgstr "$25,000 - $100,000"
+#| msgid "Less than $100,000"
+msgid "max: 100,000"
+msgstr "Menos de $100.000"
+
+msgid "min: 1,000"
+msgstr ""
 
 msgid "minimum available duration"
 msgstr "duración mínima disponible"
@@ -7622,10 +7618,8 @@ msgstr "año"
 msgid "years"
 msgstr "años"
 
-#, fuzzy
-#| msgid "you are not resident in a restricted country such as the USA, Japan, Hong Kong, Bahamas, Costa Rica, Malaysia, Malta, Iran, North Korea, Jersey, or Iraq;"
 msgid "you are not resident in a restricted country such as Afghanistan, Bosnia and Herzegovina, Costa Rica, Guyana, Hong Kong, Iran, Iraq, Jersey, Lao PDR, Malaysia, Malta, North Korea, Syria, Uganda, USA, Vanuatu or Yemen;"
-msgstr "usted no es residente en un país restringido, como los EE.UU., Japón, Hong Kong, las Bahamas, Malta, Irán, Irak, el Bailiazgo de Jersey, Costa Rica o Malasia;"
+msgstr "usted no es residente de un país limitado como Afganistán, Bosnia y Herzegovina, Costa Rica, Guyana, Hong Kong, Irán, Iraq, Jersey, República Democrática Popular de Lao, Malasia, Malta, Corea del Norte, Siria, Uganda, Estados Unidos, Vanuatu o Yemen;"
 
 msgid "you are over 18 years of age, unless you are an Estonian resident whereby you would have to be over 21;"
 msgstr "es mayor a 18 años de edad, a menos que sea un residente de Estonia por lo  que debería ser mayor a 21 años;"
@@ -7822,10 +7816,8 @@ msgstr "{JAPAN ONLY}Even if the option is exercise or not exercised, the origina
 msgid "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
 msgstr "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}day"
 msgid "{JAPAN ONLY}FX Rate"
-msgstr "{JAPAN ONLY}day"
+msgstr "{JAPAN ONLY}FX Rate"
 
 msgid "{JAPAN ONLY}Financial Condition"
 msgstr "{JAPAN ONLY}Financial Condition"
@@ -8028,10 +8020,8 @@ msgstr "{JAPAN ONLY}November 7, 2014"
 msgid "{JAPAN ONLY}Option Pricing"
 msgstr "{JAPAN ONLY}Option Pricing"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Option Pricing"
 msgid "{JAPAN ONLY}Option Type"
-msgstr "{JAPAN ONLY}Option Pricing"
+msgstr "{JAPAN ONLY}Option Type"
 
 msgid "{JAPAN ONLY}Option prices are normally dependant on elements such as the underlying asset price, the exercise price, the length of time until the exercise point, volatility, and interest rates. Apart from the fixed exercise price, all other elements are changing constantly, so an understanding of the relationships between each element and changes in the options price is necessary for the management of options trading risk."
 msgstr "{JAPAN ONLY}Option prices are normally dependant on elements such as the underlying asset price, the exercise price, the length of time until the exercise point, volatility, and interest rates. Apart from the fixed exercise price, all other elements are changing constantly, so an understanding of the relationships between each element and changes in the options price is necessary for the management of options trading risk."
@@ -8060,10 +8050,8 @@ msgstr "{JAPAN ONLY}Our Customer Support staff will contact you at each stage to
 msgid "{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:"
 msgstr "{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}month"
 msgid "{JAPAN ONLY}Payout Amount"
-msgstr "{JAPAN ONLY}month"
+msgstr "{JAPAN ONLY}Payout Amount"
 
 msgid "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\">here</a> for further information."
 msgstr "{JAPAN ONLY}Please click <a class=\"pjaxload\" href=\"#identification-documents\">here</a> for further information."
@@ -8110,10 +8098,8 @@ msgstr "{JAPAN ONLY}Registration"
 msgid "{JAPAN ONLY}Regulation & Tax"
 msgstr "{JAPAN ONLY}Regulation & Tax"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}minute"
 msgid "{JAPAN ONLY}Remaining time"
-msgstr "{JAPAN ONLY}minute"
+msgstr "{JAPAN ONLY}Remaining time"
 
 msgid "{JAPAN ONLY}STAY-IN/BREAK-OUT"
 msgstr "{JAPAN ONLY}STAY-IN/BREAK-OUT"
@@ -8238,10 +8224,8 @@ msgstr "{JAPAN ONLY}Trading & Hedging"
 msgid "{JAPAN ONLY}Trading Guide"
 msgstr "{JAPAN ONLY}Trading Guide"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Trading Guide"
 msgid "{JAPAN ONLY}Trading Period"
-msgstr "{JAPAN ONLY}Trading Guide"
+msgstr "{JAPAN ONLY}Trading Period"
 
 msgid "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
 msgstr "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
@@ -8309,47 +8293,41 @@ msgstr "{JAPAN ONLY}year"
 msgid "{JAPAN ONLY}years"
 msgstr "{JAPAN ONLY}years"
 
-#, fuzzy
-#| msgid "Japan website Download Text for Terms and Conditions Document"
 msgid "{Japan Only} Download Terms and Conditions Document file"
-msgstr "Japan website Download Text for Terms and Conditions Document"
+msgstr "{Japan Only} Download Terms and Conditions Document file"
 
 msgid "{Japan Only}Binary option specialist for over 15 years "
-msgstr ""
+msgstr "{Japan Only}Binary option specialist for over 15 years "
 
 msgid "{Japan Only}Fully licenced in Japan"
-msgstr ""
+msgstr "{Japan Only}Fully licenced in Japan"
 
 msgid "{Japan Only}Live chart tools"
-msgstr ""
+msgstr "{Japan Only}Live chart tools"
 
 msgid "{Japan Only}Payout from 1 to 10"
-msgstr ""
+msgstr "{Japan Only}Payout from 1 to 10"
 
 msgid "{Japan Only}Segregated Customer Account Balances are 100% Safe"
-msgstr ""
+msgstr "{Japan Only}Segregated Customer Account Balances are 100% Safe"
 
 msgid "{Japan Only}Trade all binary option types"
-msgstr ""
+msgstr "{Japan Only}Trade all binary option types"
 
 msgid "{Japan Only}Trade the major currencies"
-msgstr ""
+msgstr "{Japan Only}Trade the major currencies"
 
-#, fuzzy
-#| msgid "2-way pricing"
 msgid "{Japan Only}Two-way pricing"
-msgstr "Valorización de contrato en 2 direcciones"
+msgstr "{Japan Only}Two-way pricing"
 
-#, fuzzy
-#| msgid "%1 is the award-winning industry pioneer in online options trading."
 msgid "{Japan Only}Worldwide award-winning pioneer in FX binary options trading"
-msgstr "%1 es el pionero galardonado en la industria de las opciones binarias."
+msgstr "{Japan Only}Worldwide award-winning pioneer in FX binary options trading"
 
 msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 msgstr "La plataforma en linea de opciones binarias sobre Forex, índices, materias primas e índices Smart"
 
 msgid "404"
-msgstr ""
+msgstr "404"
 
 msgid "Why Us"
 msgstr "Por qué nosotros"
@@ -8398,6 +8376,10 @@ msgstr "Detalles de la cuenta"
 
 msgid "Terms and Conditions Approval"
 msgstr "Acuerdo con los términos y condiciones"
+
+#~| msgid "$25,000 - $100,000"
+#~ msgid "min 1,000 and max 100,000"
+#~ msgstr "mín 1,000 y máx 100,000"
 
 #~ msgid "Version 41. Last modified 2016-06-27."
 #~ msgstr "Versión 4.1. Última modificación el 2016-06-27."
@@ -13427,9 +13409,6 @@ msgstr "Acuerdo con los términos y condiciones"
 
 #~ msgid "There are no costs involved on the Binary.com side. However you will bear the costs of your own IT developers who develop the white-label for you."
 #~ msgstr "No hay costos involucrados de parte de Binary.com. Sin embargo, usted será responsable de pagar a su desarrollador de sistemas que desarrolla la etiqueta blanca para usted."
-
-#~ msgid "This trade is not offered."
-#~ msgstr "Este contrato no está en oferta."
 
 #~ msgid "To create a White Label, first <a href=\"%1\">sign up as an affiliate</a>. This will allow you to earn commissions from clients of your White Label."
 #~ msgstr "Para crear una etiqueta blanca, primero <a href=\"%1\">suscríbase como afiliado</a>. Esto le permitirá ganar comisiones por las actividades de los clientes a través de su etiqueta blanca."
