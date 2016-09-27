@@ -641,6 +641,12 @@ var ViewPopupWS = (function() {
                 }
                 break;
         }
+        if ($('#trade_details_start_date').width() < 150) {
+            $('#trade_details_start_date').attr('data-balloon-length', 'medium');
+            $('#trade_details_end_date').attr('data-balloon-length', 'medium');
+            $('#trade_details_current_date').attr('data-balloon-length', 'medium');
+            $('#trade_details_live_date').attr('data-balloon-length', 'medium');
+        }
         showLocalTimeOnHover('#trade_details_start_date');
         showLocalTimeOnHover('#trade_details_end_date');
         showLocalTimeOnHover('#trade_details_current_date');
