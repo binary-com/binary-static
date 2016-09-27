@@ -5101,6 +5101,11 @@ msgstr "Hãy trình bày số hợp đồng xuất sắc tối đa có
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "Hiển thị số lượng hợp đồng tối đa bạn có thể mua trong ngày giao dịch."
 
+#, fuzzy
+#| msgid "This trade is not offered."
+msgid "Resale not offered"
+msgstr "Giao dịch này không được chào."
+
 msgid "Resale price"
 msgstr "Giá bán lại"
 
@@ -7530,9 +7535,12 @@ msgid "m"
 msgstr "m"
 
 #, fuzzy
-#| msgid "$25,000 - $100,000"
-msgid "min 1,000 and max 100,000"
-msgstr "$25,000 - $100,000"
+#| msgid "Less than $100,000"
+msgid "max: 100,000"
+msgstr "Ít hơn $100,000"
+
+msgid "min: 1,000"
+msgstr ""
 
 msgid "minimum available duration"
 msgstr "khoảng thời gian có sẵn tối thiểu"
@@ -8380,6 +8388,11 @@ msgstr "Chi tiết Tài khoản"
 
 msgid "Terms and Conditions Approval"
 msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
+
+#, fuzzy
+#~| msgid "$25,000 - $100,000"
+#~ msgid "min 1,000 and max 100,000"
+#~ msgstr "$25,000 - $100,000"
 
 #~ msgid "You'll find answers to most of your questions on the <a href='' target='_blank' id='faq_url'>FAQ</a> page."
 #~ msgstr "Bạn sẽ tìm thấy những câu trả lời cho phần lớn các câu hỏi của bạn nhất trên trang <a href='' target='_blank' id='faq_url'>Câu hỏi Thường Gặp</a>."
@@ -13395,9 +13408,6 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 
 #~ msgid "There are no costs involved on the Binary.com side. However you will bear the costs of your own IT developers who develop the white-label for you."
 #~ msgstr "Không có chi phí liên quan tới Binary.com. Tuy nhiên bạn sẽ chịu mất chi phí cho nhân viên lập trình IT người sẽ lập trình nhãn trắng cho bạn."
-
-#~ msgid "This trade is not offered."
-#~ msgstr "Giao dịch này không được chào."
 
 #~ msgid "To create a White Label, first <a href=\"%1\">sign up as an affiliate</a>. This will allow you to earn commissions from clients of your White Label."
 #~ msgstr "Để tạo Nhãn Trắng, đầu tiên bạn cần phải<a href=\"%1\">đăng kí thành viên</a>. Điều này cho phép bạn kiếm tiền hoa hồng từ khách hàng của Nhãn Trắng của bạn."
