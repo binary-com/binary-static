@@ -1,7 +1,7 @@
 <dl>
-
-<div class="gr-row">
-  <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
+  <div class="gr-row">
+  <div class="gr-1"></div>
+  <div class="list gr-5 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
     <div class="section fill-bg-color">
       <a class="pjaxload" href="[% request.url_for('/get-started/what-is-binary-trading') %]">
         <div id="what-is-binary-trading"></div>
@@ -56,10 +56,8 @@
       </div>
     </div>
   </div>
-</div>
 
-<div class="gr-row">
-  <div class="list gr-6 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
+  <div class="list gr-5 gr-no-gutter-t gr-no-gutter-p gr-no-gutter-m">
     <div class="section fill-bg-color">
       <a class="pjaxload" href="[% request.url_for('/get-started/how-to-trade-binaries') %]">
         <div id="how-to-trade-binaries"></div>

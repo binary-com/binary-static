@@ -90,3 +90,11 @@
         display: none !important;
     }
 }
+
+@media screen and (min-width: 961px) {
+    .why-us, .tour, .cashier-content, .resources-content, #explanation_image, .group-information-content, .partners-content, #settingsContainer {
+        img.responsive {
+            width: 80%;
+        }
+    }
+}

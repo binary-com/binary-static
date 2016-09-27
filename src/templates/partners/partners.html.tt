@@ -8,8 +8,8 @@
     </p>
   </div>
   <div class="gr-row gr-clear">
-    <div class="gr-4 gr-12-m">
-      <div class="gr-6 gr-padding-10">
+    <div class="gr-3 gr-12-m">
+      <div class="gr-8 gr-padding-10">
         <a class="pjaxload" href="[% request.url_for('/affiliate/signup') %]">
           <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/partners/affiliate-program.svg') %]"/>
         </a>
@@ -25,8 +25,8 @@
         </p>
       </div>
     </div>
-    <div class="gr-4 gr-12-m">
-      <div class="gr-6 gr-padding-10">
+    <div class="gr-3 gr-12-m">
+      <div class="gr-8 gr-padding-10">
         <a class="pjaxload" href="[% request.url_for('/payment-agent') %]">
           <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/partners/payment-agents.svg') %]"/>
         </a>
@@ -42,8 +42,8 @@
         </p>
       </div>
     </div>
-    <div class="gr-4 gr-12-m">
-      <div class="gr-6 gr-padding-10">
+    <div class="gr-3 gr-12-m">
+      <div class="gr-8 gr-padding-10">
         <a href="https://developers.binary.com" target="_blank">
           <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/partners/api.svg') %]"/>
         </a>
@@ -59,10 +59,8 @@
         </p>
       </div>
     </div>
-  </div>
-  <div class="gr-row gr-clear">
-    <div class="gr-4 gr-12-m">
-      <div class="gr-6 gr-padding-10">
+    <div class="gr-3 gr-12-m">
+      <div class="gr-8 gr-padding-10">
         <a class="pjaxload" href="[% request.url_for('/open-source-projects') %]">
           <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/partners/open-source-venture.svg') %]"/>
         </a>
@@ -78,8 +76,10 @@
         </p>
       </div>
     </div>
-    <div class="gr-4 gr-12-m">
-      <div class="gr-6 gr-padding-10">
+  </div>
+  <div class="gr-row gr-clear">
+    <div class="gr-3 gr-12-m">
+      <div class="gr-8 gr-padding-10">
         <a href="http://academy.binary.com/en/contributors/" target="_blank">
           <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/partners/contributors.svg') %]" target="_blank"/>
         </a>
@@ -95,8 +95,8 @@
         </p>
       </div>
     </div>
-    <div class="gr-4 gr-12-m">
-      <div class="gr-6 gr-padding-10">
+    <div class="gr-3 gr-12-m">
+      <div class="gr-8 gr-padding-10">
         <a class="pjaxload" href="[% request.url_for('/user-testing') %]">
           <img class="responsive charting-page-icon" id="charting_icon" src="[% request.url_for('images/pages/partners/tester.svg') %]"/>
         </a>
