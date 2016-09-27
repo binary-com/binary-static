@@ -197,7 +197,7 @@
         [% l('{JAPAN ONLY}Please download our Summary of Specifications which lists all the details of our trade types, rules and conditions for trading etc.') %]
       </p>
       <p class="center-text">
-        <a class="button" href="#">
+        <a class="button" href="[% request.url_for('/download/ja/Summary_Of_Specifications_JA_v2.pdf') %]" download>
           <span>[% l('{JAPAN ONLY}Download') %]</span>
         </a>
       </p>
