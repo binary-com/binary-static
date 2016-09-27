@@ -5098,6 +5098,11 @@ msgstr "表示您的投资组合中未平仓合约的最大数量。您投资组
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "表示任一既定交易日您可以买入的最大合约数量。"
 
+#, fuzzy
+#| msgid "This trade is not offered."
+msgid "Resale not offered"
+msgstr "不提供此交易。"
+
 msgid "Resale price"
 msgstr "转售价格"
 
@@ -7522,8 +7527,13 @@ msgstr "登录"
 msgid "m"
 msgstr "月"
 
-msgid "min 1,000 and max 100,000"
-msgstr "最小1,000， 最大100,000"
+#, fuzzy
+#| msgid "Less than $100,000"
+msgid "max: 100,000"
+msgstr "少于$100,000"
+
+msgid "min: 1,000"
+msgstr ""
 
 msgid "minimum available duration"
 msgstr "最短可用期限"
@@ -8368,6 +8378,9 @@ msgstr "账户详情"
 
 msgid "Terms and Conditions Approval"
 msgstr "条款和条件审批"
+
+#~ msgid "min 1,000 and max 100,000"
+#~ msgstr "最小1,000， 最大100,000"
 
 #~ msgid "Version 41. Last modified 2016-06-27."
 #~ msgstr "版本41。最后修改时间为 2016年06月27日。"
@@ -13395,9 +13408,6 @@ msgstr "条款和条件审批"
 
 #~ msgid "There are no costs involved on the Binary.com side. However you will bear the costs of your own IT developers who develop the white-label for you."
 #~ msgstr "Binary.com没有任何成本费用。但开发白标产生的IT人员费用由您自行承担。"
-
-#~ msgid "This trade is not offered."
-#~ msgstr "不提供此交易。"
 
 #~ msgid "To create a White Label, first <a href=\"%1\">sign up as an affiliate</a>. This will allow you to earn commissions from clients of your White Label."
 #~ msgstr "请先 <a href=\"%1\">注册成为联盟会员</a>，以创建白色标签。之后您即可赚取属于您的白色标签客户的佣金。"

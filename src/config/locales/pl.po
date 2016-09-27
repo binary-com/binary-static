@@ -5098,6 +5098,11 @@ msgstr "Pokazuje maksymalną liczbę niezapłaconych kontraktów w Twoim portfol
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "Pokazuje maksymalną liczbę kontraktów, które możesz nabyć w danym dniu handlowym."
 
+#, fuzzy
+#| msgid "This trade is not offered."
+msgid "Resale not offered"
+msgstr "Ten zakład nie jest dostępny."
+
 msgid "Resale price"
 msgstr "Cena odsprzedaży"
 
@@ -7518,8 +7523,13 @@ msgstr "login"
 msgid "m"
 msgstr "miesiąc"
 
-msgid "min 1,000 and max 100,000"
-msgstr "min. 1 000 i maks. 100 000"
+#, fuzzy
+#| msgid "Less than $100,000"
+msgid "max: 100,000"
+msgstr "Mniej niż 100 000 $"
+
+msgid "min: 1,000"
+msgstr ""
 
 msgid "minimum available duration"
 msgstr "minimalny dostępny czas trwania"
@@ -8363,6 +8373,9 @@ msgstr "Dane konta"
 
 msgid "Terms and Conditions Approval"
 msgstr "Akceptacja regulaminu"
+
+#~ msgid "min 1,000 and max 100,000"
+#~ msgstr "min. 1 000 i maks. 100 000"
 
 #~ msgid "Version 41. Last modified 2016-06-27."
 #~ msgstr "Wersja 41. Ostatnio zmieniana dnia 27.06.2016 r."
@@ -13473,9 +13486,6 @@ msgstr "Akceptacja regulaminu"
 
 #~ msgid "There are no costs involved on the Binary.com side. However you will bear the costs of your own IT developers who develop the white-label for you."
 #~ msgstr "Binary.com nie nalicza żadnych opłat. Jednak konieczne będzie opłacenie Twoich własnych deweloperów, którzy stworzą dla Ciebie wersję „white label”."
-
-#~ msgid "This trade is not offered."
-#~ msgstr "Ten zakład nie jest dostępny."
 
 #~ msgid "To create a White Label, first <a href=\"%1\">sign up as an affiliate</a>. This will allow you to earn commissions from clients of your White Label."
 #~ msgstr "Aby stworzyć wersję „white label”, należy się najpierw <a href=\"%1\">zarejestrować jako partner</a>. Pozwoli to na zarabianie prowizji od każdego klienta korzystającego z wersji „white label”."

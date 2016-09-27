@@ -9,8 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2016-09-27 01:12+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
-"Language-Team: Japanese "
-"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -5168,6 +5167,11 @@ msgstr "最大保有ポジションの総数を示し、各行を１件分のオ
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "購入可能な１日あたりのトレードの総額を示します。"
 
+#, fuzzy
+#| msgid "This trade is not offered."
+msgid "Resale not offered"
+msgstr "このトレードの提供は不可能です。"
+
 msgid "Resale price"
 msgstr "転売価格"
 
@@ -7750,8 +7754,13 @@ msgstr "ログイン"
 msgid "m"
 msgstr "男性"
 
-msgid "min 1,000 and max 100,000"
-msgstr "下限 1,000円〜上限 100,000円"
+#, fuzzy
+#| msgid "Less than $100,000"
+msgid "max: 100,000"
+msgstr "$100,000未満"
+
+msgid "min: 1,000"
+msgstr ""
 
 msgid "minimum available duration"
 msgstr "最短取引期間"
@@ -8609,6 +8618,9 @@ msgstr "ご口座の詳細情報"
 
 msgid "Terms and Conditions Approval"
 msgstr "利用規約の承認"
+
+#~ msgid "min 1,000 and max 100,000"
+#~ msgstr "下限 1,000円〜上限 100,000円"
 
 #~ msgid "Version 41. Last modified 2016-06-27."
 #~ msgstr "バージョン41　最終更新日：2016-06-27"
@@ -13659,9 +13671,6 @@ msgstr "利用規約の承認"
 
 #~ msgid "There are no costs involved on the Binary.com side. However you will bear the costs of your own IT developers who develop the white-label for you."
 #~ msgstr "Binary.comから直接の参加費用を徴収することはありませんが、開発者の利用等により発生したホワイトレーベルの開発コストはご負担頂きます。"
-
-#~ msgid "This trade is not offered."
-#~ msgstr "このトレードの提供は不可能です。"
 
 #~ msgid "To create a White Label, first <a href=\"%1\">sign up as an affiliate</a>. This will allow you to earn commissions from clients of your White Label."
 #~ msgstr "ホワイトレーベルを立ち上げるには、まず最初に<a href=\"%1\">アフィリエイトプログラム</a>への登録をお済ませください。これにより、ホワイトレーベルからアフィリエイト収入を得ることができるようになります。"
