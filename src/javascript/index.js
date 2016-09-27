@@ -8,6 +8,7 @@ var exportAllFunctions = function exportAllFunctions(obj) {
 };
 
 window.$ = window.jQuery = require('jquery');
+window.EnjoyHint = require('./lib/guide.enjoyhint.js');
 require('./lib/highstock/highstock.js');
 require('./lib/highstock/highstock-exporting.js');
 require('./lib/highstock/export-csv.js');

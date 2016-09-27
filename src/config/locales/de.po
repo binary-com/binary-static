@@ -5110,6 +5110,11 @@ msgstr "Stellt die maximale Anzahl an ausstehenden Verträgen Ihres Portfolios d
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "Stellt das maximale Volumen an Kontrakten dar, die Sie an einem einzelnen Börsentag erwerben können."
 
+#, fuzzy
+#| msgid "This trade is not offered."
+msgid "Resale not offered"
+msgstr "Dieser Kontrakt wird nicht angeboten."
+
 msgid "Resale price"
 msgstr "Wiederverkaufspreis"
 
@@ -7552,9 +7557,12 @@ msgid "m"
 msgstr "M"
 
 #, fuzzy
-#| msgid "$25,000 - $100,000"
-msgid "min 1,000 and max 100,000"
-msgstr "$25.000 - $100.000"
+#| msgid "Less than $100,000"
+msgid "max: 100,000"
+msgstr "Weniger als 100.000 $"
+
+msgid "min: 1,000"
+msgstr ""
 
 msgid "minimum available duration"
 msgstr "kürzeste vorhandene Dauer"
@@ -8416,6 +8424,11 @@ msgstr "Kontoangaben"
 
 msgid "Terms and Conditions Approval"
 msgstr "Allgemeine Geschäftsbedingungen Zustimmung"
+
+#, fuzzy
+#~| msgid "$25,000 - $100,000"
+#~ msgid "min 1,000 and max 100,000"
+#~ msgstr "$25.000 - $100.000"
 
 #~ msgid "Version 41. Last modified 2016-06-27."
 #~ msgstr "Version 41. Letzte Änderung 27. 06. 2016."
@@ -13434,9 +13447,6 @@ msgstr "Allgemeine Geschäftsbedingungen Zustimmung"
 
 #~ msgid "There are no costs involved on the Binary.com side. However you will bear the costs of your own IT developers who develop the white-label for you."
 #~ msgstr "Von Seiten Binary.com entstehen keine Kosten. Sie werden jedoch die Kosten Ihres eigenen IT Entwicklers tragen müssen, der das Eigenmarkenprodukt für Sie entwickelt."
-
-#~ msgid "This trade is not offered."
-#~ msgstr "Dieser Kontrakt wird nicht angeboten."
 
 #~ msgid "To create a White Label, first <a href=\"%1\">sign up as an affiliate</a>. This will allow you to earn commissions from clients of your White Label."
 #~ msgstr "Um ein Eigenprodukt zu erstellen, müssen Sie sich erst als <a href=\"%1\">Partner anmelden</a>. Dies wird es Ihnen ermöglichen, Provisionen von Kunden Ihres Eigenproduktes zu verdienen."

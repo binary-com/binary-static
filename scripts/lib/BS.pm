@@ -58,7 +58,7 @@ sub localize {
 }
 
 sub all_languages {
-    return ('EN', 'AR', 'DE', 'ES', 'FR', 'ID', 'IT', 'PL', 'PT', 'RU', 'TH', 'VI', 'JA', 'ZH_CN', 'ZH_TW');
+    return ('EN', 'DE', 'ES', 'FR', 'ID', 'IT', 'PL', 'PT', 'RU', 'TH', 'VI', 'JA', 'ZH_CN', 'ZH_TW');
 }
 
 sub rtl_languages {
@@ -69,7 +69,7 @@ sub lang_display_name {
     my $iso_code = shift;
 
     my %lang_code_name = (
-        AR    => 'Arabic',
+        # AR    => 'Arabic',
         DE    => 'Deutsch',
         ES    => 'Español',
         FR    => 'Français',
