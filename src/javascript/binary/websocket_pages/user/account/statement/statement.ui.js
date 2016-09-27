@@ -56,10 +56,10 @@ var StatementUI = (function(){
                 statement_data.balance,
                 ''
             ], columns, "data");
-        
+
         $statementRow.children(".credit").addClass(creditDebitType);
         $statementRow.children(".date").addClass("pre");
-        $statementRow.children(".desc").html(statement_data.desc + "<br>");
+        $statementRow.children(".desc").html(page.text.localize(statement_data.desc) + "<br>");
 
         //create view button and append
         if (statement_data.action === "Sell" || statement_data.action === "Buy") {
