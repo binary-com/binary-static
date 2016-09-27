@@ -14,13 +14,13 @@
             </ul>
         </div>
     </div>
-    <div class="gr-9 gr-12-m">
+    <div class="gr-9 gr-12-m platforms-section">
         <div id="trading-platforms" class="sections invisible">
             <h1>[% l("Trading Platforms") %]</h1>
             <h2>[% l("Basic Platforms") %]</h2>
             <div class="gr-row">
                 <div class="gr-6 gr-12-m gr-12-p">
-                    <div class="gr-12">
+                    <div class="gr-12 gr-8-p">
                         <img class="responsive" src="[% request.url_for('images/pages/platforms/trading-page.png') %]" />
                     </div>
                     <div class="gr-padding-30">
@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class="gr-6 gr-12-m gr-12-p">
-                    <div class="gr-8">
+                    <div class="gr-8 gr-6-p">
                         <img class="responsive" src="[% request.url_for('images/pages/platforms/tick-trade.png') %]" />
                     </div>
                     <div class="gr-padding-30">
@@ -60,7 +60,7 @@
             <h2>[% l("Advanced Platforms") %]</h2>
             <div class="gr-row">
                 <div class="gr-6 gr-12-m gr-12-p">
-                    <div class="gr-8">
+                    <div class="gr-8 gr-6-p">
                         <img class="responsive" src="[% request.url_for('images/pages/platforms/metatrader.png') %]" />
                     </div>
                     <div class="gr-padding-30">
@@ -77,7 +77,7 @@
                     </div>
                 </div>
                 <div class="gr-6 gr-12-m gr-12-p">
-                    <div class="gr-8">
+                    <div class="gr-8 gr-6-p">
                         <img class="responsive" src="[% request.url_for('images/pages/platforms/webtrader.png') %]" />
                     </div>
                     <div class="gr-padding-30">
@@ -96,7 +96,7 @@
             </div>
             <div class="gr-row">
                 <div class="gr-6 gr-12-m gr-12-p">
-                    <div class="gr-12">
+                    <div class="gr-12 gr-8-p">
                         <img class="responsive" src="[% request.url_for('images/pages/platforms/nextgen.png') %]" />
                     </div>
                     <div class="gr-padding-30">
@@ -116,7 +116,7 @@
                     </div>
                 </div>
                 <div class="gr-6 gr-12-m gr-12-p">
-                    <div class="gr-8">
+                    <div class="gr-10 gr-8-p">
                         <img class="responsive" src="[% request.url_for('images/pages/platforms/binarybot.png') %]" />
                     </div>
                     <div class="gr-padding-30">
@@ -278,7 +278,7 @@
             <h1>[% l("More Tools") %]</h1>
             <div class="gr-row">
                 <div class="gr-6 gr-12-m gr-12-p">
-                    <div class="gr-12">
+                    <div class="gr-10 gr-6-p">
                         <img class="responsive" src="[% request.url_for('images/pages/platforms/tradingview.png') %]" />
                     </div>
                     <div class="gr-padding-30">

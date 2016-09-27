@@ -1,6 +1,14 @@
 var Platforms = (function () {
     var sections = [];
+    function showLoadingImage(container) {
+        container.append('<div id="std_loading_img"><p>' + page.text.localize('loading...') + '</p>' +
+            '<img src="' + page.url.url_for_static('images/common/hourglass_1.gif') + '" /></div>');
+    }
+    function hideLoadingImg() {
+        $('#std_loading_img').remove();
+    }
     function init() {
+        showLoadingImage($('.platforms-section'));
         checkWidth();
         $(window).resize(checkWidth);
     }
@@ -17,6 +25,7 @@ var Platforms = (function () {
             });
             showSelectedDiv();
         } else {
+            hideLoadingImg();
             $('.sections').removeClass('invisible');
         }
     }
@@ -28,6 +37,7 @@ var Platforms = (function () {
     }
     function showSelectedDiv() {
         $('.sections').addClass('invisible');
+        hideLoadingImg();
         $('.sections[id="' + get_hash().substring(1) + '"]').removeClass('invisible');
         $('.sidebar-nav a[href="' + get_hash() + '"]').parent().addClass('selected');
     }
