@@ -116,6 +116,14 @@ var ValidAccountOpening = (function(){
     }
     return;
   };
+  var checkCity = function(city, errorCity) {
+    if (/^[`~!@#$%^&*)(_=+\[}{\]\\\/";:\?><,|\d]+$/.test(city.value)) {
+      errorCity.innerHTML = Content.errorMessage('reg', [letters, space, hyphen, period, apost]);
+      Validate.displayErrorMessage(errorCity);
+      window.accountErrorCounter++;
+    }
+    return;
+  };
   return {
     redirectCookie: redirectCookie,
     handler: handler,
@@ -124,7 +132,8 @@ var ValidAccountOpening = (function(){
     checkDate: checkDate,
     checkPostcode: checkPostcode,
     checkTel: checkTel,
-    checkAnswer: checkAnswer
+    checkAnswer: checkAnswer,
+    checkCity: checkCity
   };
 }());
 
