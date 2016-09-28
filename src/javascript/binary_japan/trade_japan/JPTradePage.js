@@ -37,9 +37,9 @@ var JPTradePage = (function() {
 
   var onUnload = function() {
     window.chartAllowed = false;
+    JapanPortfolio.hide();
     isJapan = false;
     JapanTrading.stop();
-    JapanPortfolio.hide();
   };
 
   return {
