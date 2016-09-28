@@ -259,14 +259,19 @@ function toJapanTimeIfNeeded(gmtTimeStr, showTimeZone, longcode, hideSeconds){
 }
 
 function downloadCSV(csvContents, filename) {
-    var csv = 'data:text/csv;charset=utf-8,' + csvContents;
-    var downloadLink = document.createElement('a');
-    downloadLink.href = encodeURI(csv);
-    downloadLink.download = filename || 'data.csv';
+    filename = filename || 'data.csv';
+    if (navigator.msSaveBlob) { // IE 10+
+        navigator.msSaveBlob(new Blob([csvContents], {type: 'text/csv;charset=utf-8;'}), filename);
+    } else { // Other browsers
+        var csv = 'data:text/csv;charset=utf-8,' + csvContents;
+        var downloadLink = document.createElement('a');
+        downloadLink.href = encodeURI(csv);
+        downloadLink.download = filename;
 
-    document.body.appendChild(downloadLink);
-    downloadLink.click();
-    document.body.removeChild(downloadLink);
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+    }
 }
 
 function template(string, content) {
