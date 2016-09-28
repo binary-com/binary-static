@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-09-28 05:10+0000\n"
+"PO-Revision-Date: 2016-09-28 08:28+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
 "Language-Team: Japanese "
 "<https://hosted.weblate.org/projects/binary/static/ja/>\n"
@@ -7946,6 +7946,12 @@ msgstr "%3のTOUCHは、取引期間(%4)が終了するまでバリア価格に�
 
 msgid "{JAPAN ONLY}%1 is fully licensed and regulated by the FFAJ, which requires us to maintain and report a safe level of operating capital."
 msgstr ""
+"店頭バイナリーオプション取引は、法令によりお客様から預託を受けた資産と会社の資産を区分して管理することが義務付けられております。弊社では、日証金信託銀行へ"
+"全額信託を実施しております。\n"
+"もし、弊社が破綻した場合、日証金信託銀行に信託保全されているお客様の資産は保全されます。この場合、日証金信託銀行から受益者代理人（乙）へ信託財産が交付され"
+"、当該財産の範囲内でお客様に帰属すべき預託金等の金銭が返還されます。\n"
+"弊社では、内部管理統括責任者を受益者代理人（甲）とし、毎営業日、区分管理必要額の確認を行っております。また、外部弁護士を受益者代理人（乙）とし、弊社が破綻"
+"した場合に日証金信託銀行からお客様の資産の返還にあたります。"
 
 msgid "{JAPAN ONLY}%1 was one of the first active Binary Options brokers and has a proven track record of delivering first class service and maintaining an award winning trading platform, while delivering strong financial performance to our shareholders, for more than 15 years worldwide."
 msgstr ""
@@ -8330,7 +8336,7 @@ msgid "{JAPAN ONLY}Knowledge test list item 5"
 msgstr "・問題の複写を禁止します。また、第三者に漏えいしないことに同意いただくものとします。"
 
 msgid "{JAPAN ONLY}Live analysis of trade and charting of spot relative to trade barriers"
-msgstr ""
+msgstr "リアルタイムで保有ポジションの損益とチャート分析"
 
 msgid "{JAPAN ONLY}Lower"
 msgstr "LOW"
@@ -8663,7 +8669,7 @@ msgid "{JAPAN ONLY}You can then review the performance of the trade and then sel
 msgstr ""
 
 msgid "{JAPAN ONLY}You set your own personal daily loss limit"
-msgstr ""
+msgstr "お客さまご自身で1日損失限度額を設定できます"
 
 msgid "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 msgstr ""
