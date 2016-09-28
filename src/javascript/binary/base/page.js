@@ -1008,7 +1008,7 @@ var Page = function() {
 
 Page.prototype = {
     all_languages: function() {
-        return ['EN', 'AR', 'DE', 'ES', 'FR', 'ID', 'IT', 'PL', 'PT', 'RU', 'VI', 'JA', 'ZH_CN', 'ZH_TW'];
+        return ['EN', 'DE', 'ES', 'FR', 'ID', 'IT', 'PL', 'PT', 'RU', 'VI', 'JA', 'ZH_CN', 'ZH_TW'];
     },
     language_from_url: function() {
         var regex = new RegExp('^(' + this.all_languages().join('|') + ')$', 'i');
@@ -1052,6 +1052,7 @@ Page.prototype = {
         }
         this.check_language();
         TrafficSource.setData();
+        this.endpoint_notification();
     },
     on_unload: function() {
         this.header.on_unload();
@@ -1179,6 +1180,15 @@ Page.prototype = {
             $('.ja-no-padding').attr('style', 'padding-top: 0; padding-bottom: 0;');
             $('#regulatory-text').removeClass('gr-9 gr-7-p')
                                  .addClass('gr-12 gr-12-p');
+        }
+    },
+    endpoint_notification: function() {
+        var server  = localStorage.getItem('config.server_url');
+        if (server && server.length > 0) {
+            var message = (/www\.binary\.com/i.test(window.location.hostname) ? '' :
+                page.text.localize('This is a staging server - For testing purposes only') + ' - ') +
+                page.text.localize('The server <a href="[_1]">endpoint</a> is: [_2]', [page.url.url_for('endpoint'), server]);
+            $('#end-note').html(message).removeClass('invisible');
         }
     },
     // type can take one or more params, separated by comma
