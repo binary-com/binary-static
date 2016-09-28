@@ -40,6 +40,7 @@ var StatementWS = (function(){
 
         if (!tableExist()) {
             StatementUI.createEmptyStatementTable().appendTo("#statement-ws-container");
+            $('.act').addClass('nowrap');
             StatementUI.updateStatementTable(getNextChunkStatement());
 
             // Show a message when the table is empty

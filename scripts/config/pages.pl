@@ -55,6 +55,7 @@ sub all_pages {
         ## ws
         ['user/authenticatews',          'user/authenticatews',                       'default', 'Authenticate', 'ja'],
         ['cashier/forwardws',            'cashier/deposit_withdraw_ws',               'default', 'Cashier'],
+        ['cashier/epg_forwardws',        'cashier/deposit_withdraw_ws',               'default', 'Cashier'],
         ['user/security/limitsws',       'user/security/limitsws',                    'default', 'Account Limits'],
         ['account/account_transferws',   'cashier/account_transferws',                'default', 'Account Transfer'],
         ['cashier/payment_agent_listws', 'cashier/payment_agent_listws',              'default', 'Payment Agent Deposit'],
