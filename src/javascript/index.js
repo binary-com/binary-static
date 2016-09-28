@@ -77,6 +77,7 @@ exportAllFunctions(require('./binary/static_pages/job_details'));
 exportAllFunctions(require('./binary/websocket_pages/trade/content'));
 exportAllFunctions(require('./binary/websocket_pages/user/verify_email'));
 exportAllFunctions(require('./binary/static_pages/static_pjax'));
+exportAllFunctions(require('./binary/static_pages/regulation'));
 
 exportAllFunctions(require('./binary/validator'));
 exportAllFunctions(require('./binary/websocket_pages/cashier/account_transferws'));
