@@ -645,7 +645,7 @@ var ViewPopupWS = (function() {
             dates = ['#trade_details_start_date', '#trade_details_end_date', '#trade_details_current_date', '#trade_details_live_date'];
         for (i = 0; i < dates.length; i++) {
             showLocalTimeOnHover(dates[i]);
-            if ($(dates[i]).width() < 150) $(dates[i]).attr('data-balloon-pos', 'left');
+            $(dates[i]).attr('data-balloon-pos', 'left');
         }
     };
 
