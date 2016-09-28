@@ -42,7 +42,7 @@ var StatementUI = (function(){
 
     function createStatementRow(transaction){
         var statement_data = Statement.getStatementData(transaction, TUser.get().currency, japanese_client());
-        allData.push(statement_data);
+        allData.push($.extend({}, statement_data, {action: page.text.localize(statement_data.action)}));
         var creditDebitType = (parseFloat(statement_data.amount) >= 0) ? "profit" : "loss";
 
         var $statementRow = Table.createFlexTableRow([
