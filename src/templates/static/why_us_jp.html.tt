@@ -180,7 +180,15 @@
                 [% l("{JAPAN ONLY}[_1] is fully licensed and regulated by the FFAJ, which requires us to maintain and report a safe level of operating capital.", website_name) %]
               </p>
               <p>
-                  [% l("{JAPAN ONLY}By law we are required to manage the assets of our customers and our company separately, and segregate all customer monies to a trust account. In the event of our bankruptcy, your assets will be safeguarded by Japan Securities Finance Trust & Banking Company Ltd, and distributed back to you by the direction of the beneficiary agent (B). Our internal management control officer and beneficiary representative is required to confirm the amount of funds that must beheld in the trust bank count every day. The beneficiary agent (B), who is an external lawyer, is bound to perform this function in the event that our Company is not able to return your funds directly.") %]
+                  [% l("{JAPAN ONLY}Matters to attend:") %]
+                  <ul>
+                      <li>[% l("{JAPAN ONLY}By law we are required to manage the assets of our customers and our company separately") %]</li>
+                      <li>[% l("{JAPAN ONLY}Segregate all customers' money to a trust account") %]</li>
+                      <li>[% l("{JAPAN ONLY}In the event of our bankruptcy, your assets will be safeguarded by Japan Securities Finance Trust & Banking Company Ltd") %]</li>
+                      <li>[% l("{JAPAN ONLY}Distributed back to you by the direction of the beneficiary agent (B)") %]</li>
+                      <li>[% l("{JAPAN ONLY}Our internal management control officer and beneficiary representative is required to confirm the amount of funds that must be held in the trust bank count every day") %]</li>
+                      <li>[% l("{JAPAN ONLY}The beneficiary agent (B), who is an external lawyer, is bound to perform this function in the event that our Company is not able to return your funds directly") %]</li>
+                  </ul>
               </p>
               <div class="gr-padding-10">
                   <img class="responsive" src="[% request.url_for('images/pages/why-us-jp/fund_safe.jpg') %]" />
