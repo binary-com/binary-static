@@ -82,7 +82,6 @@ exportAllFunctions(require('./binary/validator'));
 exportAllFunctions(require('./binary/websocket_pages/cashier/account_transferws'));
 exportAllFunctions(require('./binary/websocket_pages/cashier/cashier'));
 exportAllFunctions(require('./binary/websocket_pages/cashier/deposit_withdraw_ws'));
-exportAllFunctions(require('./binary/websocket_pages/cashier/epg'));
 exportAllFunctions(require('./binary/websocket_pages/cashier/payment_agent_listws'));
 exportAllFunctions(require('./binary/websocket_pages/cashier/payment_agent_withdrawws'));
 exportAllFunctions(require('./binary/websocket_pages/resources/asset_index/asset_indexws.data'));

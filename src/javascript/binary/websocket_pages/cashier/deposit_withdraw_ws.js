@@ -32,6 +32,7 @@ var ForwardWS = (function() {
   function getCashierURL(verification_token) {
     var req = {'cashier':getCashierType()};
     if (verification_token) req.verification_code = verification_token;
+    if (/epg/.test(window.location.pathname)) req.provider = 'epg';
     BinarySocket.send(req);
   }
   function hideAll() {
@@ -65,7 +66,7 @@ var ForwardWS = (function() {
   };
 })();
 
-pjax_config_page_require_auth("cashier/forwardws", function() {
+pjax_config_page_require_auth("cashier/forwardws|cashier/epg_forwardws", function() {
     return {
         onLoad: function() {
           function check_virtual() {
