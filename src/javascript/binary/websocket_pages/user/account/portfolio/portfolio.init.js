@@ -15,6 +15,7 @@ var PortfolioWS =  (function() {
         currency = '';
         oauth_apps = {};
         hidden_class = 'invisible';
+        $("#portfolio-loading").show();
         showLoadingImage($("#portfolio-loading"));
         if (TUser.get().balance) {
             updateBalance();
@@ -222,6 +223,7 @@ var PortfolioWS =  (function() {
         BinarySocket.send({"forget_all": "proposal_open_contract"});
         BinarySocket.send({"forget_all": "transaction"});
         $('#portfolio-body').empty();
+        $("#portfolio-content").addClass(hidden_class);
         is_initialized = false;
     };
 
