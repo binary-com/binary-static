@@ -7,9 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-09-28 12:15+0000\n"
-"Last-Translator: Haruna Sekiya <hrnmyrn@gmail.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"PO-Revision-Date: 2016-09-29 02:39+0000\n"
+"Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
+"Language-Team: Japanese "
+"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -8110,7 +8111,7 @@ msgid "{JAPAN ONLY}Binary options have lower risk than vanilla options for optio
 msgstr "バイナリーオプションは、売り手の損失が限定されており、バニラオプションに比べ、ローリスクハイリターンな取引といえる。"
 
 msgid "{JAPAN ONLY}By law we are required to manage the assets of our customers and our company separately"
-msgstr ""
+msgstr "信託保全は、当社が取り扱う店頭バイナリーオプション取引の元本を保証するものではありません。"
 
 msgid "{JAPAN ONLY}Capital"
 msgstr "資本金"
@@ -8165,6 +8166,7 @@ msgstr "当社のバイナリーオプション取引の月次取引実績をお
 
 msgid "{JAPAN ONLY}Distributed back to you by the direction of the beneficiary agent (B)"
 msgstr ""
+"区分管理必要額は当社が毎日算出し、算出日から2営業日までに信託をします。この間も金融庁長官の指定する金融機関において、当社の資産とはして管理します。"
 
 msgid "{JAPAN ONLY}Does Not Touch"
 msgstr "NO-TOUCH"
@@ -8359,7 +8361,7 @@ msgid "{JAPAN ONLY}In order to open a trading account for you we will need to te
 msgstr "取引口座の開設には、バイナリーオプション取引の仕組およびリスク等への知識を明確にするため、オプションの知識確認テストを受けていただく必要があります。"
 
 msgid "{JAPAN ONLY}In the event of our bankruptcy, your assets will be safeguarded by Japan Securities Finance Trust & Banking Company Ltd"
-msgstr ""
+msgstr "区分管理必要額の算出は当社が行い、信託銀行は行いません。"
 
 msgid "{JAPAN ONLY}In the lower panel you can also choose to see your current portfolio with live valuations and quick access to sell-back. Alternatively you can view a live, customizable chart with many add-on features; or see more detailed explanations of the type of option selected; or examine recent settlement prices for expired options."
 msgstr ""
@@ -8419,10 +8421,8 @@ msgstr "主な業務"
 msgid "{JAPAN ONLY}March 2016"
 msgstr "平成28年3月末"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}years"
 msgid "{JAPAN ONLY}Matters to attend:"
-msgstr "年"
+msgstr "注意事項"
 
 msgid "{JAPAN ONLY}No fees, no commissions, you simply pay the price of the stated on the buy button."
 msgstr ""
@@ -8471,6 +8471,8 @@ msgstr ""
 
 msgid "{JAPAN ONLY}Our internal management control officer and beneficiary representative is required to confirm the amount of funds that must be held in the trust bank count every day"
 msgstr ""
+"当社は、区分管理の実施のため、または区分管理された金銭を配分するために必要があるとみなされた時は、お客様の個人情報を受益者代理人（乙）に提供することがあり"
+"ます。"
 
 msgid "{JAPAN ONLY}Our trading page provides an overall view of all the option contracts available to trade, showing the live buy and sell prices and providing quick selection and trading buttons."
 msgstr ""
@@ -8550,7 +8552,7 @@ msgid "{JAPAN ONLY}Section 5: Calculation"
 msgstr "第5章：算出"
 
 msgid "{JAPAN ONLY}Segregate all customers' money to a trust account"
-msgstr ""
+msgstr "お客様は信託銀行に対し、預託金等の支払いを直接請求することはできません。"
 
 msgid "{JAPAN ONLY}Select a trading period"
 msgstr "取引期間の選択"
@@ -8598,7 +8600,7 @@ msgid "{JAPAN ONLY}The Financial Futures Association of Japan"
 msgstr "一般社団法人金融先物取引業協会"
 
 msgid "{JAPAN ONLY}The beneficiary agent (B), who is an external lawyer, is bound to perform this function in the event that our Company is not able to return your funds directly"
-msgstr ""
+msgstr "日証金信託銀行は、お客様の信託財産の返還を保証するものではありません。また、受益者代理人の運営及び管理責任を一切負いません。"
 
 msgid "{JAPAN ONLY}The buyer of a vanilla option can choose whether to exercise the option or not. His loss is limited to the price paid for the option, whereas his potential profit is unlimited."
 msgstr "バニラオプションの買い手は、自分に不利なときには権利放棄するので、買い手の最大損失額はオプション料、利益額は原資産価格と権利行使価格の差からオプション料を引いた額となり、原資産価格が無限大ならば、利益も無限大となる。"
