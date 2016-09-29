@@ -117,14 +117,14 @@
                   [% l("{JAPAN ONLY}Track your trade in real time:") %]
               </p>
               <div class="gr-padding-10">
-                  <img class="responsive" src="[% request.url_for('images/pages/why-us-jp/track_trade.png') %]" />
+                  <img class="responsive" src="[% request.url_for('images/pages/why-us-jp/track_trade.jpeg') %]" />
               </div>
               <ul class="checked">
                   <li>
                       [% l("{JAPAN ONLY}Live analysis of trade and charting of spot relative to trade barriers") %]
                   </li>
                   <li>
-                      [% l("{JAPAN ONLY}Live analysis of trade and charting of spot relative to trade barriers") %]
+                      [% l("{JAPAN ONLY}Instant sell-back of position available until 2 minutes prior to judgement time") %]
                   </li>
               </ul>
             </div>
@@ -162,7 +162,7 @@
                 </li>
               </ul>
               <div class="gr-padding-10">
-                  <img class="responsive" src="[% request.url_for('images/pages/why-us-jp/portfolio.png') %]" />
+                  <img class="responsive" src="[% request.url_for('images/pages/why-us-jp/portfolio.jpeg') %]" />
               </div>
             </div>
           </div>
