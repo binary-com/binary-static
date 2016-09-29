@@ -127,9 +127,6 @@ msgstr "%1 décroche le titre de « meilleure société de courtage d'options b
 msgid "%1 is looking to recruit highly skilled, experienced designers who are passionate about developing attractive visuals for both online and offline applications."
 msgstr "%1 recrute des graphistes hautement qualifiés et expérimentés, désireux de développer des contenus visuels attractifs pour des applications en ligne et hors ligne."
 
-msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
-msgstr "%1 n'est pas disponible au Costa Rica et n'est soumise à la réglementation ou à la supervision d'aucun organisme de réglementation dans le système financier du Costa Rica."
-
 msgid "%1 is one of the oldest and most respected names in online binary trading."
 msgstr "%1 est l'une des sociétés les plus anciennes et les plus respectées du secteur des options binaires."
 
@@ -1210,12 +1207,6 @@ msgstr "Évitez d'avoir à utiliser un service de paiement électronique"
 msgid "Award-winning, patented financial trading platform"
 msgstr "Plate-forme de trading financier primée et brevetée"
 
-msgid "BIEL Pillar III"
-msgstr "BIEL Pillar III"
-
-msgid "BIEL Prospectus"
-msgstr "Prospectus BIEL"
-
 msgid "BIEL Terms"
 msgstr "Conditions BIEL"
 
@@ -1297,20 +1288,43 @@ msgstr "BetOnMarkets.com affiche un chiffre d'affaires de 1 million de dollars 
 msgid "Betting system and method"
 msgstr "Système et méthode de trading"
 
-msgid "Binary (C.R.) S.A., registered in Costa Rica."
-msgstr "Binary (C.R.) S.A., enregistrée au Costa Rica."
+msgid "Binary (C.R.) S.A."
+msgstr ""
+
+#, fuzzy
+#| msgid "Clients from the rest of the world (excluding certain countries such as the USA, Japan, Costa Rica, Hong Kong) will have their account opened with Binary (C.R.) S.A."
+msgid "Binary (C.R.) S.A., registered in Costa Rica. Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their account opened with Binary (C.R.) S.A."
+msgstr "Les clients basés dans le reste du monde (sauf dans certains pays : États-Unis, Japon, Costa Rica, Hong-Kong) pourront ouvrir leur compte auprès de Binary (C.R.) S.A."
+
+#, fuzzy
+#| msgid "Binary.com Property"
+msgid "Binary (Europe) Ltd"
+msgstr "Propriété de Binary.com"
 
 msgid "Binary (Europe) Ltd & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 msgstr "Binary (Europe) Ltd et Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 
-msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licenced and regulated (for gambling products only) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>."
+#, fuzzy
+#| msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licenced and regulated (for gambling products only) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>."
+msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated (for gambling products only - %1's Volatility Indices) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - <a href=\"https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495\" target=\"_blank\">view licence</a>."
 msgstr "Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malte. Société autorisée et réglementée (pour les produits d'investissement uniquement) par l'Autorité maltaise des jeux (licence n° MGA/CL2/118/2000), et pour les clients du Royaume-Uni - <a href='%1' target='_blank'>afficher la licence</a>."
+
+msgid "Binary (IOM) Ltd"
+msgstr ""
 
 msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
 msgstr "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
 
-msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licenced and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2012) and for UK clients by the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>."
+#, fuzzy
+#| msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licenced and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2012) and for UK clients by the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>."
+msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licensed and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2012) and for UK clients by the UK Gambling Commission - <a href=\"https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172\" target=\"_blank\">view licence</a>."
 msgstr "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Société autorisée et réglementée par la Gambling Supervision Commission de l'île de Man (licence actuelle pour les services de jeux en ligne délivrée le 31 août 2012), et pour les clients du Royaume-Uni par la Commission des jeux du Royaume-Uni - <a href='%1' target='_blank'>afficher la licence</a>."
+
+msgid "Binary (V) Ltd"
+msgstr ""
+
+msgid "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - <a href=\"https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-09.09.20164.pdf\" target=\"_blank\">view licence</a>."
+msgstr ""
 
 msgid "Binary Bot released"
 msgstr "Lancement d'un robot dédié aux options binaires"
@@ -1327,11 +1341,27 @@ msgstr "Binary Group Services recrute des développeurs Perl talentueux et motiv
 msgid "Binary Group Services is searching for talented and motivated front-end developers who are looking for a chance to excel."
 msgstr "Binary Group Services recrute des développeurs front-end talentueux et motivés, désireux d'exceller dans leur domaine."
 
+msgid "Binary Investments (Europe) Limited is entitled to provide services in another EU Member State through EU passporting rights. Refer to the map below for the list of EU countries that have access to Binary.com via EU passporting rights - freedom to provide cross border services."
+msgstr ""
+
+msgid "Binary Investments (Europe) Ltd"
+msgstr ""
+
 msgid "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, Binary (CR) SA and all other Binary Group members are sometimes referred to collectively as \"%1\", \"us\" or \"we\"."
 msgstr "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, Binary (CR) SA et tous les autres membres de Binary Group sont parfois désignés collectivement par les termes « %1 » ou « nous »."
 
-msgid "Binary Investments (Europe) Ltd, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156)."
+#, fuzzy
+#| msgid "Binary Investments (Europe) Ltd, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156)."
+msgid "Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (licence no. IS/70156). European Union residents with the exception of the UK, who wish to trade investment products, will have their account opened with Binary Investments (Europe) Ltd."
 msgstr "Binary Investments (Europe) Ltd, Suite 2, Tower Road, Msida MSD1825, Malte. Société autorisée et réglementée par l'Autorité maltaise des services financiers en tant que fournisseur de services d'investissement de catégorie 3 (licence n° IS/70156)."
+
+#, fuzzy
+#| msgid "Binary Shop"
+msgid "Binary K.K."
+msgstr "Boutique Binary.com"
+
+msgid "Binary K.K., 3F Hiroo Miyata Building, 1-9-16 Hiroo, Shibuya-ku, Tokyo 150-0012. Licensed and regulated as a Type 1 Financial Instruments Business by the KLFB (license no. 2949) and a member of FFAJ (membership no. 1590)."
+msgstr ""
 
 msgid "Binary KK granted Japan license"
 msgstr "Binary KK obtient une licence au Japon"
@@ -1339,7 +1369,14 @@ msgstr "Binary KK obtient une licence au Japon"
 msgid "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
 msgstr "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japon"
 
-msgid "Binary Ltd, with registered office address situated at <span itemprop='location'>47 Esplanade, St. Helier, Jersey, JE 0BD Channel Islands</span>, is the holding company for the Binary group."
+#, fuzzy
+#| msgid "Binary option"
+msgid "Binary Ltd"
+msgstr "Option binaire"
+
+#, fuzzy
+#| msgid "Binary Ltd, with registered office address situated at <span itemprop='location'>47 Esplanade, St. Helier, Jersey, JE 0BD Channel Islands</span>, is the holding company for the Binary group."
+msgid "Binary Ltd, with registered office address situated at 47 Esplanade, St. Helier, Jersey, JE1 0BD Channel Islands, is the holding company for the Binary group."
 msgstr "Binary Ltd, dont l'antenne officielle se situe au <span itemprop='location'>47 Esplanade, St. Helier, Jersey, JE 0BD Channel Islands</span>, est la société holding du groupe Binary."
 
 msgid "Binary Options Basics"
@@ -1395,11 +1432,19 @@ msgstr "Binary Investments (Europe), la filiale maltaise de Binary, obtient une 
 msgid "Binary's platform transacts on average 15 <a href='http://binarycom.statuspage.io/' target='_blank'>transactions</a> per second, 24/7"
 msgstr "La plateforme Binary traite en moyenne 15 <a href='http://binarycom.statuspage.io/' target='_blank'>transactions</a> par seconde, 24h/24 et 7j/7"
 
+msgid "Binary.com is a licensed and regulated trading platform that serves over 1,000,000 customers globally. We hold multiple licenses to comply with regulations around the world. Since 1999, we’ve served our clients with a constant and unwavering commitment to integrity and reliability. We always hold ourselves to the highest ethical standards, in addition to our regulatory requirements."
+msgstr ""
+
 msgid "Binary.com is an active member of the Perl community and is in the process of uploading a number of its internal utility modules to <a target='_blank' href='%1'>CPAN</a>. If you are a Perl enthusiast, contribute by reviewing these modules, and submitting pull-requests on <a target='_blank' href='%2'>github</a>."
 msgstr "Binary.com est un membre actif de la communauté Perl et archive actuellement un certain nombre de ses modules internes sur le site du <a target='_blank' href='%1'>CPAN</a>. Si vous êtes passionné de Perl, vous pouvez apporter votre contribution en révisant ces modules et en envoyant des demandes de tirage (pull requests) via <a target='_blank' href='%2'>GitHub</a>."
 
 msgid "Binary.com is an active proponent of the open-source movement and is in the process of open-sourcing a number of components of its codebase."
 msgstr "Binary.com soutien activement le mouvement open source et autorise actuellement l'accès à certains éléments de son code base dans le cadre de projets open-source."
+
+#, fuzzy
+#| msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
+msgid "Binary.com is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
+msgstr "%1 n'est pas disponible au Costa Rica et n'est soumise à la réglementation ou à la supervision d'aucun organisme de réglementation dans le système financier du Costa Rica."
 
 msgid "Binary.com open-source projects"
 msgstr "Projets open source Binary.com"
@@ -1620,7 +1665,9 @@ msgstr "Responsabilité du Client"
 msgid "Clients agree to be fully and personally liable for the due settlement of every transaction entered into under their account with the Company. This includes any transactions entered into by members of the Client's family or entourage who have gained access to the account. Clients are responsible for ensuring that they alone control access to the account, and that no minors are granted access to trading on the website. In any case, Clients remains fully liable for any and all positions traded on their account, and for any credit card transactions entered into the site for their account. Each Client also indemnifies the Company in respect to all costs and losses of any kind, whatsoever as may be incurred by the Company as a result, direct or indirect, of the Client's failure to perform or settle such a transaction. Online Gambling debts are enforceable in law in the Isle of Man."
 msgstr "Les Clients sont personnellement et entièrement responsables pour le règlement de toute transaction entrée dans le cadre de leur compte avec la Société. Ceci inclut toute transaction entrée par les membres de la famille du Client ou son entourage, ayant obtenu l'accès au compte. Les Clients ont la responsabilité de veiller à être les seuls à contrôler l'accès au compte, et qu'aucun mineur ne puisse effectuer du trading sur le site web. En tous cas, les Clients restent entièrement responsables de toute position tradée sur leur compte, et de toute transaction entrée par carte bancaire sur le site pour son compte. Chaque Client est également dans l'obligation d'indemniser la Société pour l'ensemble de toutes sortes de coûts et de pertes ayant porté préjudice à la Société en conséquence directe ou indirecte d'un manquement du Client à effectuer ou à régler une telle transaction. Les dettes de jeu en ligne sont régies par la loi de l'Île de Man."
 
-msgid "Clients from the rest of the world (excluding certain countries such as the USA, Japan, Costa Rica, Hong Kong) will have their account opened with Binary (C.R.) S.A."
+#, fuzzy
+#| msgid "Clients from the rest of the world (excluding certain countries such as the USA, Japan, Costa Rica, Hong Kong) will have their account opened with Binary (C.R.) S.A."
+msgid "Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. Binary.com is not available in the Republic of Vanuatu."
 msgstr "Les clients basés dans le reste du monde (sauf dans certains pays : États-Unis, Japon, Costa Rica, Hong-Kong) pourront ouvrir leur compte auprès de Binary (C.R.) S.A."
 
 msgid "Clients may avail of this bonus only when a real money account is opened."
@@ -2211,6 +2258,9 @@ msgstr "Ex. Legrand"
 msgid "EGR Operator Award "
 msgstr "    "
 
+msgid "EU Passport Rights"
+msgstr ""
+
 msgid "EUR"
 msgstr "EUR"
 
@@ -2369,9 +2419,6 @@ msgstr "Code d'éthique"
 
 msgid "European Union residents with the exception of the UK, who wish to trade gambling products, will have their account opened with Binary (Europe) Ltd."
 msgstr "Les résidents de l'Union européenne (sauf Royaume-Uni) souhaitant négocier des produits relatifs aux jeux d'argent pourront ouvrir leur compte auprès de Binary (Europe) Ltd."
-
-msgid "European Union residents with the exception of the UK, who wish to trade investment products, will have their account opened with Binary Investments (Europe) Ltd."
-msgstr "Les résidents de l'Union européenne (sauf Royaume-Uni) souhaitant négocier des produits d'investissement pourront ouvrir leur compte auprès de Binary Investments (Europe) Ltd."
 
 msgid "Even/Odd"
 msgstr "Pair/Impair"
@@ -2813,9 +2860,6 @@ msgstr "Gains importants. Gagnez jusqu'à 35%"
 
 msgid "Group History"
 msgstr "Histoire du groupe"
-
-msgid "Group Information"
-msgstr "Informations sur notre groupe"
 
 msgid "Hackerone - for IT security professionals"
 msgstr "Hackerone - pour les professionnels de la sécurité des TI"
@@ -3373,6 +3417,9 @@ msgstr "janvier"
 msgid "Japan"
 msgstr "Japon"
 
+msgid "Japan residents will have their account opened with Binary K.K. and will use our Japan trading platform, which is compliant with Japan rules and regulations."
+msgstr ""
+
 msgid "Japan website Download Text for Pre-contract Document"
 msgstr "Japan website Download Text for Pre-contract Document"
 
@@ -3912,6 +3959,9 @@ msgstr "S'initier au trading"
 
 msgid "Learning to trade online?"
 msgstr "S'initier au trading en ligne ?"
+
+msgid "Legal"
+msgstr ""
 
 msgid "Legal & Regulatory Compliance"
 msgstr "Conformité juridique et réglementaire"
@@ -4693,6 +4743,12 @@ msgstr "Informations personnelles"
 msgid "Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
 msgstr "Les personnes disposant de connaissances d'initiés relatives à tout marché ou instrument financier ne sont pas autorisées à effectuer des opérations de trading sur ce site Web."
 
+msgid "Pillar 3 Disclosures"
+msgstr ""
+
+msgid "Pillar 3 disclosure report"
+msgstr ""
+
 msgid "Pip"
 msgstr "Pip (« percentage in point »)"
 
@@ -4969,6 +5025,11 @@ msgstr "Relecture et correction des contenus diffusés sur le site Web et le blo
 msgid "Proofreader"
 msgstr "Relecteur [H/F]"
 
+#, fuzzy
+#| msgid "BIEL Prospectus"
+msgid "Prospectus"
+msgstr "Prospectus BIEL"
+
 msgid "Proven knowledge of auditing standards, procedures, laws, rules and regulations are an added advantage"
 msgstr "La connaissance des normes, procédures, lois et réglementations applicables à l'audit constitue un avantage supplémentaire"
 
@@ -5037,6 +5098,9 @@ msgstr "Saisissez à nouveau votre mot de passe"
 
 msgid "Read"
 msgstr "Lire"
+
+msgid "Read about the features, characteristics, benefits, and risks of binary options in the prospectus of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
+msgstr ""
 
 msgid "Read about the five types of trade offered by %1."
 msgstr "Découvrez les cinq types d'option disponibles chez %1."
@@ -5115,6 +5179,17 @@ msgstr "Inscription"
 
 msgid "Register to become a tester using the links below:"
 msgstr "Inscrivez-vous pour rejoindre notre groupe de testeurs en utilisant les liens ci-dessous :"
+
+msgid "Regulator:"
+msgstr ""
+
+msgid "Regulators:"
+msgstr ""
+
+#, fuzzy
+#| msgid "Use of Information"
+msgid "Regulatory Information"
+msgstr "Utilisation des informations"
 
 msgid "Related experience in the financial services industry"
 msgstr "Expérience pertinente dans le secteur des services financiers"
@@ -5703,9 +5778,6 @@ msgstr "Résiliation motivée"
 msgid "Termination of this Agreement shall not prejudice any rights of any party which may have arisen on or before the date of termination."
 msgstr "La résiliation de cet Accord ne portera pas préjudice aux droits de l'une ou l'autre des parties tels qu'applicables à la date de résiliation ou avant celle-ci."
 
-msgid "Terms"
-msgstr "Conditions"
-
 msgid "Terms & Conditions"
 msgstr "Conditions générales"
 
@@ -5744,9 +5816,6 @@ msgstr "Les conditions générales de %1 ;"
 
 msgid "The %1 website is protected by certain copyrights."
 msgstr "Le site web %1 est protégé par certains droits d'auteur."
-
-msgid "The <span itemprop='brand'>%1</span> service (formerly known as BetOnMarkets.com) is owned and operated by Binary Ltd. Fully licensed and regulated, %1 has been providing financial trading to a worldwide audience of over 1,000,000 accounts since <span itemprop='foundingdate'>1999</span>."
-msgstr "Le <span itemprop='brand'>%1</span>service (anciennement BetOnMarkets.com) est détenu et exploité par Binary Ltd. Société entièrement autorisée sous licence et conforme aux réglementations en vigueur, %1 fournit des services de spéculation financière à plus de 1 000 000 clients basés dans le monde entier <span itemprop='foundingdate'>1999</span>"
 
 msgid "The <strong>Premier Platform</strong> for Binary Options Trading"
 msgstr "La <strong>plateforme incontournable</strong> pour le trading d'options binaires"
@@ -5897,6 +5966,9 @@ msgstr "L'indice GBP est un indice pondéré mesurant la valeur du de la livre s
 
 msgid "The Payment Agent facility is currently not available in your country."
 msgstr "L'option des Agents de Paiement n'est pas disponible pour le moment dans votre pays."
+
+msgid "The Pillar 3 disclosure report of Binary Investments (Europe) Limited has been prepared in accordance with the Capital Requirements Directive IV and the Capital Requirements Regulation. Read our Pillar 3 disclosure report to understand how we comply with market discipline as a market participant."
+msgstr ""
 
 msgid "The Program"
 msgstr "Le Programme"
@@ -8572,6 +8644,11 @@ msgstr "404"
 msgid "Why Us"
 msgstr "Pourquoi nous ?"
 
+#, fuzzy
+#| msgid "Duration"
+msgid "Regulation"
+msgstr "Durée"
+
 msgid "Styles"
 msgstr "Styles"
 
@@ -8616,6 +8693,24 @@ msgstr "Informations du compte"
 
 msgid "Terms and Conditions Approval"
 msgstr "Acceptation des conditions générales"
+
+#~ msgid "BIEL Pillar III"
+#~ msgstr "BIEL Pillar III"
+
+#~ msgid "Binary (C.R.) S.A., registered in Costa Rica."
+#~ msgstr "Binary (C.R.) S.A., enregistrée au Costa Rica."
+
+#~ msgid "European Union residents with the exception of the UK, who wish to trade investment products, will have their account opened with Binary Investments (Europe) Ltd."
+#~ msgstr "Les résidents de l'Union européenne (sauf Royaume-Uni) souhaitant négocier des produits d'investissement pourront ouvrir leur compte auprès de Binary Investments (Europe) Ltd."
+
+#~ msgid "Group Information"
+#~ msgstr "Informations sur notre groupe"
+
+#~ msgid "Terms"
+#~ msgstr "Conditions"
+
+#~ msgid "The <span itemprop='brand'>%1</span> service (formerly known as BetOnMarkets.com) is owned and operated by Binary Ltd. Fully licensed and regulated, %1 has been providing financial trading to a worldwide audience of over 1,000,000 accounts since <span itemprop='foundingdate'>1999</span>."
+#~ msgstr "Le <span itemprop='brand'>%1</span>service (anciennement BetOnMarkets.com) est détenu et exploité par Binary Ltd. Société entièrement autorisée sous licence et conforme aux réglementations en vigueur, %1 fournit des services de spéculation financière à plus de 1 000 000 clients basés dans le monde entier <span itemprop='foundingdate'>1999</span>"
 
 #, fuzzy
 #~| msgid "$25,000 - $100,000"
@@ -8880,9 +8975,6 @@ msgstr "Acceptation des conditions générales"
 
 #~ msgid "Account balance : %1 %2"
 #~ msgstr "Solde du compte : %1 %2"
-
-#~ msgid "Binary.com Property"
-#~ msgstr "Propriété de Binary.com"
 
 #~ msgid "Binary.com academy"
 #~ msgstr "Académie Binary.com"
