@@ -9,8 +9,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2016-09-29 02:39+0000\n"
 "Last-Translator: Fumio Miyama <miyama@regentmarkets.com>\n"
-"Language-Team: Japanese "
-"<https://hosted.weblate.org/projects/binary/static/ja/>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/binary/static/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -8165,8 +8164,7 @@ msgid "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
 msgstr "当社のバイナリーオプション取引の月次取引実績をお知らせします。"
 
 msgid "{JAPAN ONLY}Distributed back to you by the direction of the beneficiary agent (B)"
-msgstr ""
-"区分管理必要額は当社が毎日算出し、算出日から2営業日までに信託をします。この間も金融庁長官の指定する金融機関において、当社の資産とはして管理します。"
+msgstr "区分管理必要額は当社が毎日算出し、算出日から2営業日までに信託をします。この間も金融庁長官の指定する金融機関において、当社の資産とはして管理します。"
 
 msgid "{JAPAN ONLY}Does Not Touch"
 msgstr "NO-TOUCH"
@@ -8366,6 +8364,11 @@ msgstr "区分管理必要額の算出は当社が行い、信託銀行は行い
 msgid "{JAPAN ONLY}In the lower panel you can also choose to see your current portfolio with live valuations and quick access to sell-back. Alternatively you can view a live, customizable chart with many add-on features; or see more detailed explanations of the type of option selected; or examine recent settlement prices for expired options."
 msgstr ""
 
+#, fuzzy
+#| msgid "{JAPAN ONLY}You can sell-back your position at any time until 2 minutes before expiry to either cut your losses, or take your profits early"
+msgid "{JAPAN ONLY}Instant sell-back of position available until 2 minutes prior to judgement time"
+msgstr "判定時刻2分前までならいつでも売却取引によりロスカットや利益確定をすることができます"
+
 msgid "{JAPAN ONLY}Introduction to Binary Options"
 msgstr "バイナリーオプションの<br>概要"
 
@@ -8470,9 +8473,7 @@ msgid "{JAPAN ONLY}Our customer support are available to help you if you are uns
 msgstr ""
 
 msgid "{JAPAN ONLY}Our internal management control officer and beneficiary representative is required to confirm the amount of funds that must be held in the trust bank count every day"
-msgstr ""
-"当社は、区分管理の実施のため、または区分管理された金銭を配分するために必要があるとみなされた時は、お客様の個人情報を受益者代理人（乙）に提供することがあり"
-"ます。"
+msgstr "当社は、区分管理の実施のため、または区分管理された金銭を配分するために必要があるとみなされた時は、お客様の個人情報を受益者代理人（乙）に提供することがあります。"
 
 msgid "{JAPAN ONLY}Our trading page provides an overall view of all the option contracts available to trade, showing the live buy and sell prices and providing quick selection and trading buttons."
 msgstr ""
