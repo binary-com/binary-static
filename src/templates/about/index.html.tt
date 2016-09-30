@@ -92,13 +92,13 @@
                   <div class="gr-6 center-text border-right-bottom">
                     <img class="responsive" src="[% request.url_for('images/pages/about/license.svg') %]"/>
                     <p>
-                      [% l("Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland") %]
+                      [% l("Licensed and regulated in Malta, the United Kingdom, the Isle of Man, Ireland, and Japan") %]
                     </p>
                   </div>
                   <div class="gr-6 center-text align">
                     <img class="responsive" src="[% request.url_for('images/pages/about/languages.svg') %]"/>
                     <p>
-                      [% l("Published in English, Japanese, Chinese, Arabic, Polish, German, French, Spanish, Portuguese, Italian and Russian") %]
+                      [% l("Published in English, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai") %]
                     </p>
                   </div>
               </div>
@@ -113,7 +113,7 @@
         [% l("[_1] is owned and operated by the Binary Ltd. group of companies. For more information, <a href='[_2]'>visit our history page</a>.", website_name, request.url_for("/group-history")) %]
       </p>
       <p>
-        [% l("In the UK and Isle of Man, our clients trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A.") %]
+        [% l("In the UK and Isle of Man, our clients trade through Binary (IOM) Ltd. In Japan, they trade through Binary KK. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A.") %]
       </p>
     </div>
   </div>

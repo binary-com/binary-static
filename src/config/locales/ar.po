@@ -129,9 +129,6 @@ msgstr "تتشرف %1 \"كأفضل وسيط للخيارات الثنائية\" 
 msgid "%1 is looking to recruit highly skilled, experienced designers who are passionate about developing attractive visuals for both online and offline applications."
 msgstr "%1 تتطلع لتوظيف مصممين من ذوي الخبرة والمهارات العالية, المتحمسين لتطوير تطبيقات مرئية جذابة سواء كانت متصلة أو غير متصلة بالأنترنت على حد سواء."
 
-msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
-msgstr "%1 غير متاحة في كوستاريكا وهي غير منظمة أو يتم الإشراف عليها من قبل أي هيئات مالية تنظيمة في كوستاريكا."
-
 msgid "%1 is one of the oldest and most respected names in online binary trading."
 msgstr "%1 هي واحدة من أقدم وأكثر الأسماء احتراما في تداول الثنائيات عبر الإنترنت."
 
@@ -431,6 +428,14 @@ msgstr "4. اخنر العائد"
 
 msgid "40 transactions or more in the past 12 months"
 msgstr "40 معاملة أو أكثر خلال الـ 12 شهرا الماضية"
+
+#, fuzzy
+#| msgid "6 months to 1 year"
+msgid "5 ticks to 1 year"
+msgstr "6 أشهر إلى سنة واحدة"
+
+msgid "5 to 10 ticks"
+msgstr ""
 
 msgid "5-10 million JPY"
 msgstr "5 - 10 مليون ين"
@@ -983,6 +988,26 @@ msgstr "التنفيذي الإداري"
 msgid "Administrator"
 msgstr "المسؤول"
 
+#, fuzzy
+#| msgid "Advanced Panel"
+msgid "Advanced Automation"
+msgstr "اللوحة المتقدمة "
+
+#, fuzzy
+#| msgid "Multi award-winning trading platform."
+msgid "Advanced CFD trading platform"
+msgstr "منصة تداول حاصلة على أكثر من جائزة."
+
+#, fuzzy
+#| msgid "Advanced Panel"
+msgid "Advanced Platforms"
+msgstr "اللوحة المتقدمة "
+
+#, fuzzy
+#| msgid "it is the leading binary option trading platform."
+msgid "Advanced binary options trading platform"
+msgstr "انها منصة تداول الثنائيات الرائدة."
+
 msgid "Advanced knowledge of software design principles"
 msgstr "معرفة متقدمة في أساسيات تصميم البرمجيات"
 
@@ -1074,6 +1099,9 @@ msgstr "شخصية جازمة تعمل على توليد المبيعات, قا�
 msgid "An error occured."
 msgstr "حدث خطأ."
 
+msgid "Analyse the markets with an extensive range of indicators, price bands, and overlays."
+msgstr ""
+
 msgid "Analyze data regarding fraud, risk assessment, and anti-money laundering"
 msgstr "تحليل البيانات المتعلقة بالاحتيال، وتقييم المخاطر، ومكافحة غسل الأموال"
 
@@ -1101,6 +1129,9 @@ msgstr "إجابة السؤال السري"
 
 msgid "Anti-Fraud Officer"
 msgstr "موظف لمكافحة الغش"
+
+msgid "Any"
+msgstr ""
 
 msgid "Any changes in our privacy policy or security statement will be posted onto this website. In the event of material changes that directly affect the economic use of your personal information, we will request your prior authorisation in writing before effecting such change on your account."
 msgstr "سيتم نشر أي تغييرات في سياسة الخصوصية أو بيان الأمان على هذا الموقع. في حالة حدوث تغييرات فى مواد تؤثر بشكل مباشر على الاستخدام الاقتصادي للمعلومات الشخصية الخاصة بك، فإننا سنطلب إذن كتابي مسبق منك قبل إحداث مثل هذا التغيير فى حسابك."
@@ -1303,6 +1334,22 @@ msgstr "السماح للحساب الخاص بك."
 msgid "Authorised Applications"
 msgstr "التطبيقات المعتمدة"
 
+msgid "Auto-trader programming tool"
+msgstr ""
+
+msgid "Automate your trading strategies with our simple, \"drag-and-drop\" bot creation tool."
+msgstr ""
+
+#, fuzzy
+#| msgid "Available payment methods"
+msgid "Available Markets"
+msgstr "طرق الدفع المتاحة"
+
+#, fuzzy
+#| msgid "Available soon..."
+msgid "Available Products"
+msgstr "متاحة قريباً..."
+
 msgid "Available payment methods"
 msgstr "طرق الدفع المتاحة"
 
@@ -1311,14 +1358,6 @@ msgstr "تجنب الحاجة إلى وجود محفظة إلكترونية"
 
 msgid "Award-winning, patented financial trading platform"
 msgstr "منصة تداول مسجلة وحاصدة جوائز"
-
-msgid "BIEL Pillar III"
-msgstr "الركيزة الثالثة بيال"
-
-#, fuzzy
-#| msgid "Prospectus"
-msgid "BIEL Prospectus"
-msgstr "نشرة تمهيدية"
 
 msgid "BIEL Terms"
 msgstr "شروط  بيال (BIEL)"
@@ -1361,6 +1400,9 @@ msgstr "حاجز تعويض"
 
 msgid "Barrier(s)"
 msgstr "حواجز"
+
+msgid "Basic Platforms"
+msgstr ""
 
 msgid "Before we open an account for you to trade or invest in Investment Products with BIEL, we are required to make an assessment of whether the Investment Products or services you have chosen are appropriate for you, and to warn you if, on the basis of the information you provide to us, any such product or service is not appropriate. Any decision to open an account and to use our products or services is yours. It is your responsibility to understand the risks involved with our products or services."
 msgstr "قبل فتح حساب لك للتداول أو الاستثمار في المنتجات الاستثمارية مع BIEL، فنحن مطالبون باجراء تقييم عما إذا كانت المنتجات الاستثمارية والخدمات التي اخترتها مناسبة لك من عدمه، ولنحذرك، على أساس المعلومات التي تقدمها لنا، أي منتج أو خدمة قد تكون غير مناسبة لك. أي قرار بفتح حساب واستخدام منتجاتنا وخدماتنا هو قرارك. إنها مسؤوليتك لفهم المخاطر التي تنطوي عليها منتجاتنا أو خدماتنا."
@@ -1405,8 +1447,18 @@ msgstr "دورة مبيعات BetOnMarkets.com تصل الى بليون دولا
 msgid "Betting system and method"
 msgstr "نظام وطريقة المراهنة"
 
-msgid "Binary (C.R.) S.A., registered in Costa Rica."
-msgstr "بيناري (سى.آر) إس. أ. مسجلة فى كوستاريكا."
+msgid "Binary (C.R.) S.A."
+msgstr ""
+
+#, fuzzy
+#| msgid "Clients from the rest of the world (excluding certain countries such as the USA, Japan, Costa Rica, Hong Kong) will have their account opened with Binary (C.R.) S.A."
+msgid "Binary (C.R.) S.A., registered in Costa Rica. Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their account opened with Binary (C.R.) S.A."
+msgstr "سيتم فتح حساب للعملاء من بقية العالم (باستثناء بعض البلدان مثل الولايات المتحدة الأمريكية، واليابان، وكوستاريكا، وهونج كونج) مع بيناري (سى.آر)  إس.أ."
+
+#, fuzzy
+#| msgid "Binary.com Property"
+msgid "Binary (Europe) Ltd"
+msgstr "خاصية Binary.com"
 
 #, fuzzy
 #| msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
@@ -1415,16 +1467,30 @@ msgstr "بيناري (أوروبا) المحدودة، Mompalao Building, Suite 
 
 #, fuzzy
 #| msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licenced and regulated (for gambling products only) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - <a href=\"%1\" target=\"_blank\\\">view license</a>."
-msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licenced and regulated (for gambling products only) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>."
+msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated (for gambling products only - %1's Volatility Indices) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - <a href=\"https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495\" target=\"_blank\">view licence</a>."
 msgstr "بيناري (أوروبا) المحدودة، مبنى مومبالاو، جناح رقم 2، طريق تاور، مسيدا إم إس دى 1825، مالطا.مرخصة وتخضع لرقابة (بالنسبة لمنتجات اللعب فقط) هيئة الألعاب في مالطا، (رقم الترخيص MGA/CL2/118/2000) وللعملاء في المملكة المتحدة من خلال لجنة الألعاب في المملكة المتحدة - <a href=\"%1\" target=\"_blank\\\">مشاهدة الترخيص</a>."
+
+msgid "Binary (IOM) Ltd"
+msgstr ""
 
 msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
 msgstr "بيناري (آي أو إم) المحدودة، First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
 
 #, fuzzy
 #| msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licenced and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2012) and for UK clients by the UK Gambling Commission - <a href=\"%1\" target=\"_blank\">view license</a>."
-msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licenced and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2012) and for UK clients by the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>."
+msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licensed and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2012) and for UK clients by the UK Gambling Commission - <a href=\"https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172\" target=\"_blank\">view licence</a>."
 msgstr "بيناري (أي أو أم) المحدودة، الدور الأول، ميلينيوم هاوس، طريق فكتوريا، دوجلاس، أيل أوف مان، أى أم2 4آر دابليو. مرخصة ومنظمة من لجنة الإشراف على الألعاب فى جزيرة أيل أوف مان (تم منح الرخصة الحالية فى 31 أغسطس 2012) وللعملاء في المملكة المتحدة من خلال لجنة الألعاب في المملكة المتحدة  - <a href=\"%1\" target=\"_blank\">مشاهدة الترخيص</a>."
+
+msgid "Binary (V) Ltd"
+msgstr ""
+
+msgid "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - <a href=\"https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-09.09.20164.pdf\" target=\"_blank\">view licence</a>."
+msgstr ""
+
+#, fuzzy
+#| msgid "Binary option"
+msgid "Binary Bot"
+msgstr "الخيار الثنائى"
 
 #, fuzzy
 #| msgid "Binary options basics"
@@ -1447,11 +1513,27 @@ msgstr "بيناري جروب سيرفيسز تبحث عن مطوري بيرل �
 msgid "Binary Group Services is searching for talented and motivated front-end developers who are looking for a chance to excel."
 msgstr "بيناري جروب سيرفيسز تبحث عن مطوري فرنت إند موهوبين ومتحمسين يبحثون عن فرصة للتفوق."
 
+msgid "Binary Investments (Europe) Limited is entitled to provide services in another EU Member State through EU passporting rights. Refer to the map below for the list of EU countries that have access to Binary.com via EU passporting rights - freedom to provide cross border services."
+msgstr ""
+
+msgid "Binary Investments (Europe) Ltd"
+msgstr ""
+
 msgid "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, Binary (CR) SA and all other Binary Group members are sometimes referred to collectively as \"%1\", \"us\" or \"we\"."
 msgstr "بيناري للاستثمارات (أوروبا) المحدودة، بيناري (أوروبا) المحدودة، بيناري (IOM) المحدودة، بيناري (CR) SA وجميع أعضاء مجموعة بيناري الآخرين يشار أحيانا إليها مجتمعة باسم \"%1\"، \"نحن\" أو \"ـنا\"."
 
-msgid "Binary Investments (Europe) Ltd, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156)."
+#, fuzzy
+#| msgid "Binary Investments (Europe) Ltd, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156)."
+msgid "Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (licence no. IS/70156). European Union residents with the exception of the UK, who wish to trade investment products, will have their account opened with Binary Investments (Europe) Ltd."
 msgstr "بيناري للاستثمارات (أوروبا) المحدودة، جناح رقم 2، طريق تاور، مسيدا إم إس دى 1825، مالطا. مرخصة وتخضع للرقابة ضمن الفئة 3 مقدم لخدمات الإستثمار من هيئة مالطا للخدمات المالية (رقم الترخيص IS/70156)."
+
+#, fuzzy
+#| msgid "Binary option"
+msgid "Binary K.K."
+msgstr "الخيار الثنائى"
+
+msgid "Binary K.K., 3F Hiroo Miyata Building, 1-9-16 Hiroo, Shibuya-ku, Tokyo 150-0012. Licensed and regulated as a Type 1 Financial Instruments Business by the KLFB (license no. 2949) and a member of FFAJ (membership no. 1590)."
+msgstr ""
 
 #, fuzzy
 #| msgid "Binary granted Investment Services license"
@@ -1461,8 +1543,25 @@ msgstr "شركة بيناري تمنح رخصة لخدمات الإستثمار"
 msgid "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
 msgstr "بيناري KK العنوان: Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
 
-msgid "Binary Ltd, with registered office address situated at <span itemprop='location'>47 Esplanade, St. Helier, Jersey, JE 0BD Channel Islands</span>, is the holding company for the Binary group."
+#, fuzzy
+#| msgid "Binary option"
+msgid "Binary Ltd"
+msgstr "الخيار الثنائى"
+
+#, fuzzy
+#| msgid "Binary Ltd, with registered office address situated at <span itemprop='location'>47 Esplanade, St. Helier, Jersey, JE 0BD Channel Islands</span>, is the holding company for the Binary group."
+msgid "Binary Ltd, with registered office address situated at 47 Esplanade, St. Helier, Jersey, JE1 0BD Channel Islands, is the holding company for the Binary group."
 msgstr "بيناري المحدودة، التي يقع مكتبها المسجل فى <span itemprop='location'>47 Esplanade, St. Helier, Jersey, JE 0BD Channel Islands</span>، هي الشركة القابضة لمجموعة بيناري."
+
+#, fuzzy
+#| msgid "Binary Next Gen"
+msgid "Binary Next-Gen"
+msgstr "الجيل القادم من الخيارات الثنائية"
+
+#, fuzzy
+#| msgid "Binary option"
+msgid "Binary Options"
+msgstr "الخيار الثنائى"
 
 msgid "Binary Options Basics"
 msgstr "قواعد الخيارات الثنائية"
@@ -1472,8 +1571,18 @@ msgstr "قواعد الخيارات الثنائية"
 msgid "Binary Shop"
 msgstr "الخيار الثنائى"
 
+#, fuzzy
+#| msgid "Tick Trade App"
+msgid "Binary Tick Trade App"
+msgstr "علامة تطبيق التداول"
+
 msgid "Binary Trading is simple to learn and to execute."
 msgstr "تداول الثنائيات سهل التعلم وسهل التنفيذ."
+
+#, fuzzy
+#| msgid "Webtrader"
+msgid "Binary Webtrader"
+msgstr "ويب تريدر(Webtrader)"
 
 msgid "Binary granted Investment Services license"
 msgstr "شركة بيناري تمنح رخصة لخدمات الإستثمار"
@@ -1524,12 +1633,25 @@ msgid "Binary's platform transacts on average 15 <a href='http://binarycom.statu
 msgstr "منصة بيناري تتعامل بمتوسط 15 <a href=\"http://binarycom.statuspage.io/\" target=\"_blank\">معاملة</a> في الثانية، 24/7"
 
 #, fuzzy
+#| msgid "Binary.com academy"
+msgid "Binary.com"
+msgstr "أكاديمية Binary.com"
+
+msgid "Binary.com is a licensed and regulated trading platform that serves over 1,000,000 customers globally. We hold multiple licenses to comply with regulations around the world. Since 1999, we’ve served our clients with a constant and unwavering commitment to integrity and reliability. We always hold ourselves to the highest ethical standards, in addition to our regulatory requirements."
+msgstr ""
+
+#, fuzzy
 #| msgid "Binary.com is an active member of the Perl community and is in the process of uploading a number of its internal utility modules to <a target=\"_blank\" href=\"%1\">CPAN</a>. If you are a Perl enthusiast, contribute by reviewing these modules, and submitting pull-requests on <a target=\"_blank\" href=\"%2\">github</a>."
 msgid "Binary.com is an active member of the Perl community and is in the process of uploading a number of its internal utility modules to <a target='_blank' href='%1'>CPAN</a>. If you are a Perl enthusiast, contribute by reviewing these modules, and submitting pull-requests on <a target='_blank' href='%2'>github</a>."
 msgstr "Binary.com عضو نشط في مجتمع بيرل وبصدد تحميل عدد من الوحدات الداخلية لـ <a target=\"_blank\" href=\"%1\">CPAN</a>. إذا كنت من عشاق بيرل، ساهم عبر مراجعة هذه الوحدات، وقدم طلب سحب على <a target=\"_blank\" href=\"%2\">github</a>."
 
 msgid "Binary.com is an active proponent of the open-source movement and is in the process of open-sourcing a number of components of its codebase."
 msgstr "Binary.com مؤيد نشط لاتجاه المصدر المفتوح و في نهجها للمصادر المفتوحة تجد العديد من المكونات بشفرة برمجتها."
+
+#, fuzzy
+#| msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
+msgid "Binary.com is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
+msgstr "%1 غير متاحة في كوستاريكا وهي غير منظمة أو يتم الإشراف عليها من قبل أي هيئات مالية تنظيمة في كوستاريكا."
 
 msgid "Binary.com open-source projects"
 msgstr "مشاريع Binary.com مفتوحة المصدر"
@@ -1576,6 +1698,9 @@ msgstr "لكن من الصعب إرضاؤنا. فنحن نختار الكفاء�
 
 msgid "Buy"
 msgstr "شراء"
+
+msgid "Buy an App, or Build Your Own"
+msgstr ""
 
 msgid "By clicking <strong>Accept</strong> below and proceeding with the Account Opening you should note that you may be exposing yourself to risks (which may be significant, including the risk of loss of the entire sum invested) that you may not have the knowledge and experience to properly assess or mitigate."
 msgstr "بالنقر على <strong>قبول</strong> أدناه والمضي قدما في فتح الحساب يجب ملاحظة أنه قد تعرض نفسك للمخاطر (والتي قد تكون كبيرة، بما في ذلك مخاطر فقدان كامل المبلغ المستثمر) وقد لا يكون لديك المعرفة والخبرة للتقدير بشكل صحيح."
@@ -1661,6 +1786,16 @@ msgstr "البريد الإلكتروني أو كلمة المرور غير صح
 
 msgid "Chart"
 msgstr "رسم بياني"
+
+#, fuzzy
+#| msgid "Chart format"
+msgid "Chart Comparison"
+msgstr "صيغة الرسم البيانى"
+
+#, fuzzy
+#| msgid "Indicator"
+msgid "Chart Indicators"
+msgstr "مؤشر"
 
 msgid "Check out our commission rates below:"
 msgstr "تحقق من جدول العمولات أدناه:"
@@ -1764,7 +1899,9 @@ msgstr "مسؤولية العميل"
 msgid "Clients agree to be fully and personally liable for the due settlement of every transaction entered into under their account with the Company. This includes any transactions entered into by members of the Client's family or entourage who have gained access to the account. Clients are responsible for ensuring that they alone control access to the account, and that no minors are granted access to trading on the website. In any case, Clients remains fully liable for any and all positions traded on their account, and for any credit card transactions entered into the site for their account. Each Client also indemnifies the Company in respect to all costs and losses of any kind, whatsoever as may be incurred by the Company as a result, direct or indirect, of the Client's failure to perform or settle such a transaction. Online Gambling debts are enforceable in law in the Isle of Man."
 msgstr "يوافق العملاء أن يكونوا مسئولين مسئولية كاملة وشخصية عن جميع تسويات المعاملات المبرمة في حسابهم مع الشركة. وهذا يشمل أي معاملات  يبرمها أفراد عائلة العميل أو معارفه اللذين تمكنوا من الدخول إلى الحساب. والعملاء مسئولون من التأكد من أنهم وحدهم يتحكمون فى  الوصول إلى حساباتهم، وألا يتم تمكين القصر من الوصول إلى التداول في الموقع. في أي حال، يبقى العملاء مسئولون مسئولية كاملة عن أي وجميع العقود التى يتم تداولها على حسابهم، وعن أي معاملات بطاقات ائتمان دخلت فى الموقع لحسابهم. كما يعوض كل عميل الشركة عن جميع التكاليف والخسائر من أي نوع، قد تتكبدها الشركة كنتيجة مباشرة أو غير مباشرة لفشل العميل فى تنفيذ أو تسوية مثل هذه المعاملة. ديون القمار على الانترنت واجبة النفاذ في قانون جزيرة آيل أوف مان."
 
-msgid "Clients from the rest of the world (excluding certain countries such as the USA, Japan, Costa Rica, Hong Kong) will have their account opened with Binary (C.R.) S.A."
+#, fuzzy
+#| msgid "Clients from the rest of the world (excluding certain countries such as the USA, Japan, Costa Rica, Hong Kong) will have their account opened with Binary (C.R.) S.A."
+msgid "Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. Binary.com is not available in the Republic of Vanuatu."
 msgstr "سيتم فتح حساب للعملاء من بقية العالم (باستثناء بعض البلدان مثل الولايات المتحدة الأمريكية، واليابان، وكوستاريكا، وهونج كونج) مع بيناري (سى.آر)  إس.أ."
 
 msgid "Clients may avail of this bonus only when a real money account is opened."
@@ -1848,6 +1985,9 @@ msgstr "رحلة الشركة إلى فوكيت، تايلاند"
 
 msgid "Company's Right"
 msgstr "حق الشركة"
+
+msgid "Compare all the trading platforms that we offer. Choose the ideal platform for your preferred trading strategy."
+msgstr ""
 
 msgid "Complaints"
 msgstr "شكاوي"
@@ -1970,6 +2110,9 @@ msgstr "لا تقدم العقود عادة في ساعة التداول الأ�
 
 msgid "Contracts bought"
 msgstr "تم شراء العقود"
+
+msgid "Contracts for Difference (CFD)"
+msgstr ""
 
 msgid "Contracts may not expire on a weekend; therefore the expiry date of a contract may be pushed back to the following Monday in the event of a contract expiry date falling on a Saturday or a Sunday."
 msgstr "لا تنتهي العقود فى عطلة نهاية الأسبوع، وبالتالي يتم تمديد العقد ليوم الإثنين إذا وقع وقت انتهاء العقد أحد يومي السبت أو الأحد."
@@ -2381,6 +2524,9 @@ msgstr "مثلاً شيبويا كو"
 msgid "EGR Operator Award "
 msgstr "جائزة 'مشغل الرهان المالي للعام' من eGaming Review "
 
+msgid "EU Passport Rights"
+msgstr ""
+
 msgid "EUR"
 msgstr "اليورو"
 
@@ -2484,6 +2630,11 @@ msgstr "المشاركة في التنقيب عن البيانات باستخد�
 msgid "Enhance and proactively manage the company's social-media efforts, using a variety of channels to attract and nurture prospects, clients, partners, and recruits."
 msgstr "تعزيز وإدارة جهود وسائل التواصل الإجتماعي الخاصة بالشركة على نحو إستباقي, باستخدام مجموعة متنوعة من القنوات لجذب وتغذية الآفاق, العملاء, الشركاء, والموظفين."
 
+#, fuzzy
+#| msgid "Enjoy our fastest type of trading on your mobile phone or tablet. Place tick trades anytime, anywhere – even while you’re on the move."
+msgid "Enjoy our fastest type of trading with our Tick Trade app, wherever you are."
+msgstr "استمتع بأسرع نوع من التداول على الهاتف الجوال أو الكمبيوتر اللوحي الخاص بك. ضع علامة على تداول في أي وقت, وأي مكان - حتى في أثناء حركتك وتنقلك."
+
 msgid "Ensure compliance with quality control standards governing website content"
 msgstr "ضمان الامتثال لمعايير مراقبة الجودة المنظمة لمحتوى الموقع"
 
@@ -2517,6 +2668,9 @@ msgstr "سعر البدء"
 msgid "Entry spot price"
 msgstr "سعر الدخول"
 
+msgid "Environment"
+msgstr ""
+
 msgid "Equities"
 msgstr "Equities"
 
@@ -2544,14 +2698,14 @@ msgstr "Ethics Code"
 msgid "European Union residents with the exception of the UK, who wish to trade gambling products, will have their account opened with Binary (Europe) Ltd."
 msgstr "سيتم فتح حساب للمقيمين فى الاتحاد الأوروبي ماعدا المملكة المتحدة، الذين يرغبون في تداول منتجات اللعب، في شركة بيناري (أوروبا) المحدودة."
 
-msgid "European Union residents with the exception of the UK, who wish to trade investment products, will have their account opened with Binary Investments (Europe) Ltd."
-msgstr "سيتم فتح حساب للمقيمين فى الاتحاد الأوروبي ماعدا المملكة المتحدة، الذين يرغبون في تداول المنتجات الاستثمارية، في شركة بيناري للاستثمارات (أوروبا) المحدودة."
-
 msgid "Even/Odd"
 msgstr "متساو/غير متجانس"
 
 msgid "Even/Odd contracts will be refunded at the purchase price if the contract doesn't end within 5 minutes."
 msgstr "حتى العقود الغريبة سيتم ردها عند سعر الشراء إذا لم ينتهي العقد في غضون 5 دقائق."
+
+msgid "Everyone"
+msgstr ""
 
 msgid "Example:"
 msgstr "مثال:"
@@ -2646,6 +2800,9 @@ msgstr "خبرة في تسعير الثنائيات الغريبة، وتوقع�
 
 msgid "Experience in the financial services industry is preferred"
 msgstr "يفضل الخبرة في مجال الخدمات المالية"
+
+msgid "Experience the future of our trading platform with the Next-Gen app."
+msgstr ""
 
 msgid "Experience with Git"
 msgstr "خبرة مع \"جيت\""
@@ -2854,6 +3011,14 @@ msgstr "خبرة تداول العملات الأجنبية"
 msgid "Forex trading frequency"
 msgstr "معدل تداول العملات الأجنبية"
 
+msgid "Forex, Indices, Stocks, Commodities, Volatility Indices"
+msgstr ""
+
+#, fuzzy
+#| msgid "Volatility Indices"
+msgid "Forex, Volatility Indices"
+msgstr "مؤشرات التقلب"
+
 msgid "Format: yyyy-mm-dd (not required for virtual-money accounts)"
 msgstr "تنسيق: yyyy-mm-dd (غير مطلوب لحسابات الأموال الافتراضية)"
 
@@ -2862,6 +3027,11 @@ msgstr "الجمعة"
 
 msgid "Fraud and Money Laundering"
 msgstr "الاحتيال وغسل الأموال"
+
+#, fuzzy
+#| msgid "Free gift"
+msgid "Free"
+msgstr "هدية مجانية"
 
 msgid "Free Bonus"
 msgstr "مكافأة مجانية"
@@ -2905,6 +3075,11 @@ msgstr "وعلاوة على ذلك، فإن الشركة، في ظل الظرو�
 #| msgid "Furthermore, the Company disclaims all liability for any malfunctioning, impossibility of access, or poor use conditions of the Binary.com API due to inappropriate equipment, disturbances related to internet service providers, to the saturation of the internet network, and for any other reason."
 msgid "Furthermore, the Company disclaims all liability for any malfunctioning, impossibility of access, or poor use conditions of the %1 API due to inappropriate equipment, disturbances related to internet service providers, to the saturation of the internet network, and for any other reason."
 msgstr "علاوة على ذلك, الشركة تتنصل من أي مسؤلية ناتجة عن خلل, استحالة الوصول, سوء احوال استخدام واجهة برمجة التطبيقات الخاصة ب Binary.com بسبب المعدات الغير ملائمة, الإضطرابات المتعلقة بمزودي خدمات الإنترنت, لتشبع شبكة الإنترنت, ولأي سبب آخر."
+
+#, fuzzy
+#| msgid "The future of trading on %1"
+msgid "Future of trading on Binary.com"
+msgstr "مستقبل التداول في 1%"
 
 msgid "GBP"
 msgstr "الجنيه الإسترليني"
@@ -2996,6 +3171,9 @@ msgstr "القوانين الحاكمة والاختصاص القضائي"
 msgid "Governing law and jurisdiction"
 msgstr "القانون الحاكم والاختصاص القضائي"
 
+msgid "Grab a wide range of third-party apps for binary options trading in the <a href=\"https://shop.binary.com\" target=\"_blank\">Binary.com Shop</a>."
+msgstr ""
+
 msgid "Graphic Designers"
 msgstr "مصممو جرافيك"
 
@@ -3007,9 +3185,6 @@ msgstr "عوائد كبيرة، حقق مكاسب حتى 35%"
 
 msgid "Group History"
 msgstr "تاريخ المجموعة"
-
-msgid "Group Information"
-msgstr "معلومات عن المجموعة"
 
 msgid "Hackerone - for IT security professionals"
 msgstr "Hackerone - لمحترفي أمن تكنولوجيا المعلومات"
@@ -3130,6 +3305,9 @@ msgstr "عنوان IP"
 
 msgid "IT audit experience is a plus"
 msgstr "تعتبر اضافة وجود خبرة في تدقيق تكنولوجيا المعلومات"
+
+msgid "Ideal Users"
+msgstr ""
 
 msgid "Ideal for both pros and novices"
 msgstr "مثالي للمحترفين والمبتدئين"
@@ -3414,7 +3592,9 @@ msgstr "فى مثل هذه الحالة، يجوز للشركة(مع أو بدو
 msgid "In the 'Further Instructions' field please specify the payment method and account number to which the Agent will send the funds to."
 msgstr "فى خانة \"مزيد من التعليمات\" رجاء قم بتحديد طريقة الدفع ورقم الحساب الذى سيرسل له الوكيل الأموال."
 
-msgid "In the UK and Isle of Man, our clients trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A."
+#, fuzzy
+#| msgid "In the UK and Isle of Man, our clients trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A."
+msgid "In the UK and Isle of Man, our clients trade through Binary (IOM) Ltd. In Japan, they trade through Binary KK. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A."
 msgstr "في المملكة المتحدة وجزيرة آيل أوف مان، يتداول عملاؤنا عبر بيناري (آي أو إم) المحدودة. في الاتحاد الأوروبي (باستثناء المملكة المتحدة)، يتداولون من خلال بيناري (أوروبا) المحدودة وبيناري للاستثمارات (أوروبا) المحدودة. في بقية العالم، يتداولون من خلال بيناري (سي آر) شركة مساهمة."
 
 msgid "In the case of single stock and stock index prices, the final closing price as reported by the relevant official Exchange shall apply for all settlements (this final settlement price may, at times, be reported by the relevant Exchange 30-90 minutes after the official closing time of the market, and may differ from the latest tick price that occurred at the closing time)."
@@ -3610,6 +3790,9 @@ msgstr "يناير"
 
 msgid "Japan"
 msgstr "اليابان"
+
+msgid "Japan residents will have their account opened with Binary K.K. and will use our Japan trading platform, which is compliant with Japan rules and regulations."
+msgstr ""
 
 msgid "Japan website Download Text for Pre-contract Document"
 msgstr "Japan website Download Text for Pre-contract Document"
@@ -4153,6 +4336,9 @@ msgstr "تعلم كيفية التداول"
 msgid "Learning to trade online?"
 msgstr "تعلم التداول على الانترنت؟"
 
+msgid "Legal"
+msgstr ""
+
 msgid "Legal & Regulatory Compliance"
 msgstr "الامتثال القانوني والتنظيمي"
 
@@ -4183,7 +4369,9 @@ msgstr "المسؤولية"
 msgid "Liaise with banks and payment providers"
 msgstr "الاتصال مع البنوك ومقدمي خدمات الدفع"
 
-msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland"
+#, fuzzy
+#| msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland"
+msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, Ireland, and Japan"
 msgstr "مرخصة ومنظمة في مالطا والمملكة المتحدة وجزيرة مان، وأيرلندا"
 
 msgid "Life-long career interest in the Accounting field"
@@ -4383,6 +4571,11 @@ msgstr "تاريخ لا ينسى"
 msgid "Memorable town/city"
 msgstr "مدينة أو بلدة لا تنسى"
 
+#, fuzzy
+#| msgid "Webtrader"
+msgid "MetaTrader 5"
+msgstr "ويب تريدر(Webtrader)"
+
 msgid "Method"
 msgstr "الطريقة"
 
@@ -4425,6 +4618,11 @@ msgstr "مراقبة وتحسين نشاط التداول على الموقع"
 msgid "Monitor hardware and software deployment and manage our worldwide network of servers and office networks"
 msgstr "مراقبة توزيع الأجهزة والبرامج وإدارة شبكتنا في جميع أنحاء العالم من خوادم وشبكات المكتب"
 
+#, fuzzy
+#| msgid "Monitor the movements of all of your favourite assets and markets at the same time. This flexible charting platform provides a variety of customisable features."
+msgid "Monitor the movements of your favourite assets and markets at the same time."
+msgstr "أرصد تحركات كلاً من الأصول والأسواق المفضلة لديك في نفس الوقت. تقدم منصة الرسم المرنة هذه مجموعة متنوعة من المميزات القابلة للتخصيص."
+
 msgid "Monitor website trading activity and minimize abuse"
 msgstr "رصد نشاط التداول على الموقع والحد من إساءة الاستعمال"
 
@@ -4436,6 +4634,9 @@ msgstr "رصد واستعراض هذه الوثيقة"
 
 msgid "Month"
 msgstr "شهر"
+
+msgid "More Tools"
+msgstr ""
 
 msgid "More benefits"
 msgstr "المزيد من الفوائد"
@@ -4465,6 +4666,11 @@ msgstr "منصة تداول حاصلة على أكثر من جائزة."
 
 msgid "Multi-lingual and multi-currency support"
 msgstr "دعم متعدد اللغات ومتعدد العملات"
+
+#, fuzzy
+#| msgid "Live Charts"
+msgid "Multiple Charts"
+msgstr "رسوم بيانية حية"
 
 msgid "My Account"
 msgstr "حسابي"
@@ -4531,6 +4737,11 @@ msgstr "التالي"
 msgid "Next Day"
 msgstr "اليوم التالي"
 
+#, fuzzy
+#| msgid "Next"
+msgid "Next-Gen"
+msgstr "التالي"
+
 msgid "No Advice"
 msgstr "لا نصيحة"
 
@@ -4586,6 +4797,9 @@ msgstr "ملاحظة"
 
 msgid "Note: Payment Agent transfers are only available for accounts registered with Binary (CR) SA. Transactions are accepted only in US dollars."
 msgstr "ملاحظة: تحويلات وكيل الدفع متاحة فقط على الحسابات المسجلة مع Binary (CR) SA. وتقبل المعاملات بالدولار الأمريكي فقط."
+
+msgid "Note: Scroll the table to the right to see all platforms."
+msgstr ""
 
 msgid "Note: The company reserves the right to cancel affiliate commissions that remain unclaimed for more than 2 years. Please also read our affiliate terms and conditions."
 msgstr "ملحوظة: تحتفظ الشركة بحق إلغاء عمولات الإنتساب التى تظل بلا مطالبة لأكثر من عامين. رجاء الإطلاع على شروط وأحكام برنامج الإنتساب."
@@ -4953,6 +5167,12 @@ msgstr "تفاصيل شخصية"
 msgid "Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
 msgstr "يحظر على الأشخاص ممن لديهم معرفة داخلية لأي سوق مالي أو أداة التداول في هذا الموقع."
 
+msgid "Pillar 3 Disclosures"
+msgstr ""
+
+msgid "Pillar 3 disclosure report"
+msgstr ""
+
 msgid "Pip"
 msgstr "نقطة"
 
@@ -4960,6 +5180,11 @@ msgstr "نقطة"
 #| msgid "Pip stands for ‘percentage in point’ which is generally the fourth decimal place (i.e. 0.0001)."
 msgid "Pip stands for 'percentage in point' which is generally the fourth decimal place (i.e. 0.0001)."
 msgstr "النقطة (Pip) تشير إلى \"النسبة المئوية بالنقطة\" التي عادة ما تكون المكان العشري الرابع (أي 0.0001)."
+
+#, fuzzy
+#| msgid "Platform Tour"
+msgid "Platform Comparison"
+msgstr "جولة في المنصة"
 
 msgid "Platform Tour"
 msgstr "جولة في المنصة"
@@ -5125,11 +5350,19 @@ msgstr "تقتصر الأرباح والخسائر المحتملة على مس�
 msgid "Power & simplicity"
 msgstr "القوة والبساطة"
 
+msgid "Powerful charting and technical analysis"
+msgstr "رسوم بيانية وتحليل فني قوي"
+
 msgid "Pre-contract Document"
 msgstr "Pre-contract Document"
 
 msgid "Predict the direction<br />and purchase"
 msgstr "توقع الاتجاه<br />وقم بالشراء"
+
+#, fuzzy
+#| msgid "it is the leading binary option trading platform."
+msgid "Premier binary options trading platform"
+msgstr "انها منصة تداول الثنائيات الرائدة."
 
 msgid "Prepare project requirements, as needed to clarify expectations and deliverables"
 msgstr "إعداد متطلبات المشروع, كما هو مطلوب لتوضيح التوقعات والنتائج"
@@ -5245,6 +5478,11 @@ msgstr "تدقيق وتصحيح المحتوى الموجود على موقع ا
 msgid "Proofreader"
 msgstr "مصحّح"
 
+#, fuzzy
+#| msgid "Prospectus"
+msgid "Prospectus"
+msgstr "نشرة تمهيدية"
+
 msgid "Proven knowledge of auditing standards, procedures, laws, rules and regulations are an added advantage"
 msgstr "تعتبر ميزة إضافية وجود معرفة مؤكدة بمعايير مراجعة الحسابات، والإجراءات، والقوانين، والقواعد واللوائح"
 
@@ -5260,7 +5498,9 @@ msgstr "Public worker"
 msgid "Publish your name and logo (with or without a link to your Application) on our website, in press releases, and in promotional materials without additional consent;"
 msgstr "نشر أسمك وشعارك (مع أو بدون رابط للتطبيق الخاص بك) على موقعنا الإلكتروني على شبكة الأنترنت, في البيانات الصحفية, وفي المواد الترويجية دون موافقة إضافية."
 
-msgid "Published in English, Japanese, Chinese, Arabic, Polish, German, French, Spanish, Portuguese, Italian and Russian"
+#, fuzzy
+#| msgid "Published in English, Japanese, Chinese, Arabic, Polish, German, French, Spanish, Portuguese, Italian and Russian"
+msgid "Published in English, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai"
 msgstr "نشرت باللغة الإنجليزية واليابانية والصينية والعربية والبولندية والألمانية والفرنسية والاسبانية والبرتغالية والإيطالية والروسية"
 
 msgid "Purchase"
@@ -5315,6 +5555,9 @@ msgstr "أعد إدخال كلمة المرور"
 
 msgid "Read"
 msgstr "أقرأ"
+
+msgid "Read about the features, characteristics, benefits, and risks of binary options in the prospectus of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
+msgstr ""
 
 msgid "Read about the five types of trade offered by %1."
 msgstr "إقرأ عن أنواع التداول الخمسة المقدمة من %1."
@@ -5399,6 +5642,17 @@ msgstr "سجل"
 
 msgid "Register to become a tester using the links below:"
 msgstr "سجل لتصبح مختبِرا باستخدام الروابط الموجودة أدناه:"
+
+msgid "Regulator:"
+msgstr ""
+
+msgid "Regulators:"
+msgstr ""
+
+#, fuzzy
+#| msgid "Use of Information"
+msgid "Regulatory Information"
+msgstr "استخدام المعلومات"
 
 msgid "Related experience in the financial services industry"
 msgstr "الخبرة ذات الصلة في صناعة الخدمات المالية"
@@ -5656,6 +5910,11 @@ msgstr "سبتمبر"
 msgid "September"
 msgstr "سبتمبر"
 
+#, fuzzy
+#| msgid "In/out trades"
+msgid "Serious traders"
+msgstr "تداولات الدخول/الخروج"
+
 msgid "Server"
 msgstr "خادم"
 
@@ -5691,6 +5950,11 @@ msgstr "متجر"
 
 msgid "Short"
 msgstr "قصير"
+
+#, fuzzy
+#| msgid "Ultra-short term trades..."
+msgid "Short interval traders"
+msgstr "معاملات ذات مدى قصير جداً ..."
 
 msgid "Should a disruption occur in the data feeds which cannot be readily rectified by the Company, the Company reserves the right to refund the contract purchase."
 msgstr "اذا حدث خلل في استقبال البيانات لا يمكن تصحيحه بسهولة من قبل الشركة، تحتفظ الشركة بحقها في رد قيمة العقد."
@@ -6001,9 +6265,6 @@ msgstr "إنهاء الخدمة لأسباب"
 msgid "Termination of this Agreement shall not prejudice any rights of any party which may have arisen on or before the date of termination."
 msgstr "إنهاء هذا الإتفاق لا يمس أي حق من حقوق الطرفين التى نشأت فى أو قبل تاريخ الإنهاء."
 
-msgid "Terms"
-msgstr "الشروط"
-
 msgid "Terms & Conditions"
 msgstr "الشروط والأحكام"
 
@@ -6050,11 +6311,6 @@ msgstr "الشروط والأحكام"
 
 msgid "The %1 website is protected by certain copyrights."
 msgstr "موقع %1 محمي بحقوق التأليف والنشر."
-
-#, fuzzy
-#| msgid "The <span itemprop=\"brand\">%1</span> service (formerly known as BetOnMarkets.com) is owned and operated by Binary Ltd. Fully licensed and regulated, %1 has been providing financial trading to a worldwide audience of over 1,000,000 accounts since <span itemprop=\"foundingdate\">1999</span>"
-msgid "The <span itemprop='brand'>%1</span> service (formerly known as BetOnMarkets.com) is owned and operated by Binary Ltd. Fully licensed and regulated, %1 has been providing financial trading to a worldwide audience of over 1,000,000 accounts since <span itemprop='foundingdate'>1999</span>."
-msgstr "خدمة<span itemprop=\"brand\">1%</span>(المعروفة سابقاً باسم BetOnMarkets.com) هي خدمة مملوكة وتدار من قبل شركة Binary المحدودة. وهي مرخصة ومنظمة بالكامل, 1% يقدم خدمات التداول المالية للجماهير في جميع أنحاء العالم ولأكثر من مليون حساب منذ عام<span itemprop=\"foundingdate\">1999</span>"
 
 msgid "The <strong>Premier Platform</strong> for Binary Options Trading"
 msgstr "<strong>منصة التداول الرائدة</strong> لتداول الثنائيات"
@@ -6231,6 +6487,9 @@ msgstr "مؤشر GBP هو مؤشر وزني، يقيس قيمة الجنيه ا�
 
 msgid "The Payment Agent facility is currently not available in your country."
 msgstr "وسيلة وكلاء الدفع غير متاحة حاليا في بلدك."
+
+msgid "The Pillar 3 disclosure report of Binary Investments (Europe) Limited has been prepared in accordance with the Capital Requirements Directive IV and the Capital Requirements Regulation. Read our Pillar 3 disclosure report to understand how we comply with market discipline as a market participant."
+msgstr ""
 
 msgid "The Program"
 msgstr "البرنامج"
@@ -6672,6 +6931,11 @@ msgid "Tick"
 msgstr "حركة"
 
 #, fuzzy
+#| msgid "Tick trades"
+msgid "Tick Trade"
+msgstr "تداول النقطة"
+
+#, fuzzy
 #| msgid "Tick Trade App"
 msgid "TickTrade App"
 msgstr "علامة تطبيق التداول"
@@ -6775,6 +7039,16 @@ msgstr "التداول"
 msgid "Trade <strong>24/7</strong>, even on weekends."
 msgstr "تداول <strong>على مدار الساعة</strong>، حتى في عطلات نهاية الأسبوع."
 
+#, fuzzy
+#| msgid "2. The Duration"
+msgid "Trade Durations"
+msgstr "2. المدة الزمنية"
+
+#, fuzzy
+#| msgid "Trade"
+msgid "Trade Now"
+msgstr "التداول"
+
 msgid "Trade all major currencies, indices, stocks, and commodities."
 msgstr "تداول جميع العملات الرئيسية والمؤشرات والأسهم والسلع."
 
@@ -6784,8 +7058,18 @@ msgstr "تداول فى جميع ظروف السوق"
 msgid "Trade in the world's financial markets in a simple, user-friendly platform."
 msgstr "تداول أسواق المال العالمية عبر منصة بسيطة وسهلة الاستخدام."
 
+#, fuzzy
+#| msgid "Trade in the world's financial markets in a simple, user-friendly platform."
+msgid "Trade in the world’s financial markets with a simple and user-friendly online platform."
+msgstr "تداول أسواق المال العالمية عبر منصة بسيطة وسهلة الاستخدام."
+
 msgid "Trade only with money you can afford to lose. Do not trade with borrowed money."
 msgstr "تداول فقط بأموال يمكنك تحمل خسارتها. لا تتداول بأموال مقترضة."
+
+#, fuzzy
+#| msgid "Trade with confidence with the industry pioneer."
+msgid "Trade with a powerful interface known as the global industry standard."
+msgstr "تداول بثقة مع رائد هذا المجال."
 
 msgid "Trade with ease with %1's wide range of deposit and withdrawal methods. Your funds will be segregated and held in AAA-rated banks."
 msgstr "تداول بسهولة مع المجموعة الواسعة من وسائل السحب والإيداع التى تقدمها %1. يتم فصل كل أموالك عن أموال الشركة ووضعها فى بنوك حاصلة على أعلى تصنيف ائتماني AAA."
@@ -6801,6 +7085,11 @@ msgstr "Trading Experience"
 
 msgid "Trading Limits"
 msgstr "حدود التداول"
+
+#, fuzzy
+#| msgid "Trading Plans"
+msgid "Trading Platforms"
+msgstr "خطط تداول"
 
 msgid "Trading Rules"
 msgstr "قواعد التداول"
@@ -6828,6 +7117,9 @@ msgstr "التداول بالأسواق المالية قد يسبب الإدم�
 
 msgid "TradingView"
 msgstr "تريدينج فيو (TradingView)"
+
+msgid "TradingView for Binary.com"
+msgstr ""
 
 msgid "Transact in"
 msgstr "تعامل في"
@@ -6866,6 +7158,26 @@ msgstr "صحيح"
 
 msgid "Trust"
 msgstr "الثقة"
+
+#, fuzzy
+#| msgid "Binary option"
+msgid "Try Binary Bot"
+msgstr "الخيار الثنائى"
+
+#, fuzzy
+#| msgid "Webtrader"
+msgid "Try MetaTrader 5"
+msgstr "ويب تريدر(Webtrader)"
+
+#, fuzzy
+#| msgid "TradingView"
+msgid "Try TradingView"
+msgstr "تريدينج فيو (TradingView)"
+
+#, fuzzy
+#| msgid "Webtrader"
+msgid "Try Webtrader"
+msgstr "ويب تريدر(Webtrader)"
 
 msgid "Try adding more letters or numbers."
 msgstr "حاول إضافة المزيد من الأحرف أو الأرقام."
@@ -6907,6 +7219,11 @@ msgstr "دولار أمريكي"
 
 msgid "UX / UI experience"
 msgstr "خبرة في تجربة المستخدم / واجهة الإستخدام"
+
+#, fuzzy
+#| msgid "Ultra-fast trading"
+msgid "Ultra fast on-the-go trading"
+msgstr "تداول بسرعة فائقة"
 
 #, fuzzy
 #| msgid "Under no circumstances shall the Company or its directors or employees be liable under this agreement to you or any third party for any indirect, special, incidental, punitive or consequential loss or damages or any other similar damages under any theory of liability (whether in contract, tort, strict liability or any other theory), that are directly or indirectly attributable to the use of, or the inability to use, the Binary.com API, or any content contained thereon, even if the Company has been informed of the possibility thereof."
@@ -7247,8 +7564,17 @@ msgstr "منحنا براءة اختراع لـ 'نظام التداول عبر 
 msgid "We're really proud of this award. We're strongly committed to offering an ethical and customer-focused trading experience, and the award shows that BetOnMarkets is a trusted brand that listens and caters to customers, whether they are experienced traders or novices. We offer customer services in English, Indonesian, Russian, Chinese and Spanish."
 msgstr "نحن فخورون حقا بهذه الجائزة. و ملتزمون بقوة بتقديم تجربة تداول أخلاقية ترتكز على العناية بالعملاء، وتبين تلك الجائزة أن BetOnMarkets هي العلامة التجارية الموثوقة التي تستمع للعملاء وتستجيب لهم، سواء كانوا من التجار المبتدئين أو من ذوي الخبرة. فنحن نقدم خدمة العملاء باللغة الإنجليزية والإندونيسية والروسية والصينية والإسبانية."
 
+msgid "Web (Desktop Only)"
+msgstr ""
+
+msgid "Web (Including Mobile)"
+msgstr ""
+
 msgid "Web design / development experience"
 msgstr "خبرة في تصميم وتطوير المواقع"
+
+msgid "Web, iOS, Android"
+msgstr ""
 
 msgid "Webinars"
 msgstr "ندوات عبر الأنترنت"
@@ -7442,6 +7768,9 @@ msgstr "أحصل على عائد 10%-1000% مضافة إلى حصتك إذا ك�
 msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a price target farther away from the current price."
 msgstr "أحصل على عائد 10%-1000% مضافا إلى حصتك إذا كان توقعك صحيحا. ضاعف العائد باختيار سعر مستهدف بعيد عن السعر الحالي."
 
+msgid "Windows, macOS, Linux"
+msgstr ""
+
 msgid "Winning the contract"
 msgstr "الفوز بالعقد"
 
@@ -7602,6 +7931,9 @@ msgstr "يمكنك اختيار عوائد من 1 دولار إلى 50 ألف د
 
 msgid "You can close your trade before expiry to lock in profits."
 msgstr "يمكنك أن تغلق معاملتك قبل تاريخ الأنتهاء لتحتفظ بالأرباح."
+
+msgid "You can even build your own online trading sites, apps, and bots with our <a href=\"https://developers.binary.com\" target=\"_blank\">API and developer tools</a>."
+msgstr ""
 
 msgid "You can request more virtual money if your virtual balance falls below JPY 100,000."
 msgstr "بإمكانك طلب المزيد من المال الإفتراضي في حال انخفض رصيدك إلى أدنى من 100.000 ين ياباني."
@@ -8043,6 +8375,9 @@ msgstr "ساعات"
 
 msgid "hyphen"
 msgstr "واصلة"
+
+msgid "iOS, Android"
+msgstr ""
 
 msgid "is required. Current spread"
 msgstr "مطلوب. السبريد الحالي"
@@ -8578,6 +8913,9 @@ msgid "{JAPAN ONLY}In the event of our bankruptcy, your assets will be safeguard
 msgstr ""
 
 msgid "{JAPAN ONLY}In the lower panel you can also choose to see your current portfolio with live valuations and quick access to sell-back. Alternatively you can view a live, customizable chart with many add-on features; or see more detailed explanations of the type of option selected; or examine recent settlement prices for expired options."
+msgstr ""
+
+msgid "{JAPAN ONLY}Instant sell-back of position available until 2 minutes prior to judgement time"
 msgstr ""
 
 msgid "{JAPAN ONLY}Introduction to Binary Options"
@@ -9127,6 +9465,16 @@ msgstr "404"
 msgid "Why Us"
 msgstr "لماذا نحن؟"
 
+#, fuzzy
+#| msgid "Platform Tour"
+msgid "Platforms"
+msgstr "جولة في المنصة"
+
+#, fuzzy
+#| msgid "Duration"
+msgid "Regulation"
+msgstr "المدة"
+
 msgid "Styles"
 msgstr "أساليب"
 
@@ -9183,6 +9531,26 @@ msgstr "تفاصيل الحساب"
 
 msgid "Terms and Conditions Approval"
 msgstr "لموافقة على الشروط والأحكام"
+
+#~ msgid "BIEL Pillar III"
+#~ msgstr "الركيزة الثالثة بيال"
+
+#~ msgid "Binary (C.R.) S.A., registered in Costa Rica."
+#~ msgstr "بيناري (سى.آر) إس. أ. مسجلة فى كوستاريكا."
+
+#~ msgid "European Union residents with the exception of the UK, who wish to trade investment products, will have their account opened with Binary Investments (Europe) Ltd."
+#~ msgstr "سيتم فتح حساب للمقيمين فى الاتحاد الأوروبي ماعدا المملكة المتحدة، الذين يرغبون في تداول المنتجات الاستثمارية، في شركة بيناري للاستثمارات (أوروبا) المحدودة."
+
+#~ msgid "Group Information"
+#~ msgstr "معلومات عن المجموعة"
+
+#~ msgid "Terms"
+#~ msgstr "الشروط"
+
+#, fuzzy
+#~| msgid "The <span itemprop=\"brand\">%1</span> service (formerly known as BetOnMarkets.com) is owned and operated by Binary Ltd. Fully licensed and regulated, %1 has been providing financial trading to a worldwide audience of over 1,000,000 accounts since <span itemprop=\"foundingdate\">1999</span>"
+#~ msgid "The <span itemprop='brand'>%1</span> service (formerly known as BetOnMarkets.com) is owned and operated by Binary Ltd. Fully licensed and regulated, %1 has been providing financial trading to a worldwide audience of over 1,000,000 accounts since <span itemprop='foundingdate'>1999</span>."
+#~ msgstr "خدمة<span itemprop=\"brand\">1%</span>(المعروفة سابقاً باسم BetOnMarkets.com) هي خدمة مملوكة وتدار من قبل شركة Binary المحدودة. وهي مرخصة ومنظمة بالكامل, 1% يقدم خدمات التداول المالية للجماهير في جميع أنحاء العالم ولأكثر من مليون حساب منذ عام<span itemprop=\"foundingdate\">1999</span>"
 
 #, fuzzy
 #~| msgid "$25,000 - $100,000"
@@ -9387,11 +9755,6 @@ msgstr "لموافقة على الشروط والأحكام"
 #~ msgid "Your new account has been created."
 #~ msgstr "تم خصم 1% 2% من حسابك"
 
-#, fuzzy
-#~| msgid "Webtrader"
-#~ msgid "MetaTrader"
-#~ msgstr "ويب تريدر(Webtrader)"
-
 #~ msgid "Trading with MetaTrader 5"
 #~ msgstr "تداول مع ميتاتريدر 5"
 
@@ -9514,12 +9877,6 @@ msgstr "لموافقة على الشروط والأحكام"
 
 #~ msgid "Account balance : %1 %2"
 #~ msgstr "رصيد الحساب: %1 %2"
-
-#~ msgid "Binary.com Property"
-#~ msgstr "خاصية Binary.com"
-
-#~ msgid "Binary.com academy"
-#~ msgstr "أكاديمية Binary.com"
 
 #~ msgid "Binary.com is the award-winning industry pioneer in online options trading."
 #~ msgstr "Binary.com رائدة صناعة تداول الثنائيات عبر الانترنت وحاصدة جوائز هذا المجال."
@@ -9698,17 +10055,6 @@ msgstr "لموافقة على الشروط والأحكام"
 #~ msgid "Advanced tool for active traders"
 #~ msgstr "آداة متقدمة للمتداولين النشطين"
 
-#~ msgid "Available soon..."
-#~ msgstr "متاحة قريباً..."
-
-#~ msgid "Binary Next Gen"
-#~ msgstr "الجيل القادم من الخيارات الثنائية"
-
-#, fuzzy
-#~| msgid "Enjoy our fastest type of trading on your mobile phone or tablet. Place tick trades anytime, anywhere – even while you’re on the move."
-#~ msgid "Enjoy our fastest type of trading on your mobile phone or tablet. Place tick trades anytime, anywhere - even while you're on the move."
-#~ msgstr "استمتع بأسرع نوع من التداول على الهاتف الجوال أو الكمبيوتر اللوحي الخاص بك. ضع علامة على تداول في أي وقت, وأي مكان - حتى في أثناء حركتك وتنقلك."
-
 #~ msgid "Examine the history of a particular instrument to plot your next move. This advanced charting platform offers a wide range of technical indicators."
 #~ msgstr "تدارس تاريخ أداة معينة لرسم خطوتك القادمة. هذه منصة بيانات متقدمة تقدم مجموعة واسعة من المؤشرات الفنية."
 
@@ -9721,17 +10067,8 @@ msgstr "لموافقة على الشروط والأحكام"
 #~ msgid "List of All Open-Source Projects"
 #~ msgstr "قائمة بكافة المشاريع مفتوحة المصدر"
 
-#~ msgid "Monitor the movements of all of your favourite assets and markets at the same time. This flexible charting platform provides a variety of customisable features."
-#~ msgstr "أرصد تحركات كلاً من الأصول والأسواق المفضلة لديك في نفس الوقت. تقدم منصة الرسم المرنة هذه مجموعة متنوعة من المميزات القابلة للتخصيص."
-
 #~ msgid "Next Gen on GitHub"
 #~ msgstr "الجيل القادم على موقع جيت هب"
-
-#~ msgid "Powerful charting and technical analysis"
-#~ msgstr "رسوم بيانية وتحليل فني قوي"
-
-#~ msgid "The future of trading on %1"
-#~ msgstr "مستقبل التداول في 1%"
 
 #~ msgid "Tick Trade on GitHub"
 #~ msgstr "علامة التداول في جيت هب"
@@ -9743,9 +10080,6 @@ msgstr "لموافقة على الشروط والأحكام"
 
 #~ msgid "Try It"
 #~ msgstr "قم بتجربته"
-
-#~ msgid "Ultra-fast trading"
-#~ msgstr "تداول بسرعة فائقة"
 
 #~ msgid "Webtrader on GitHub"
 #~ msgstr "ويب تريدرفي جيت هب"
@@ -10445,9 +10779,6 @@ msgstr "لموافقة على الشروط والأحكام"
 
 #~ msgid "In what country do you want to offer your service"
 #~ msgstr "في أي بلد تود أن تقدم خدمتك"
-
-#~ msgid "Indicator"
-#~ msgstr "مؤشر"
 
 #~ msgid "Indicator that displays the width of Bollinger Bands."
 #~ msgstr "مؤشر يعرض عرض البولينجر باندز."
@@ -15460,9 +15791,6 @@ msgstr "لموافقة على الشروط والأحكام"
 #~ msgid "Horizontal"
 #~ msgstr "أفقي"
 
-#~ msgid "Live Charts"
-#~ msgstr "رسوم بيانية حية"
-
 #~ msgid "Markets"
 #~ msgstr "الأسواق"
 
@@ -15615,9 +15943,6 @@ msgstr "لموافقة على الشروط والأحكام"
 
 #~ msgid "In / Out"
 #~ msgstr "الدخول/الخروج"
-
-#~ msgid "In/out trades"
-#~ msgstr "تداولات الدخول/الخروج"
 
 #~ msgid "Service summary"
 #~ msgstr "ملخص الخدمة"
@@ -16829,9 +17154,6 @@ msgstr "لموافقة على الشروط والأحكام"
 #~ msgid "The most simple and exciting way to experience financial markets."
 #~ msgstr "أسهل طريقة وأكثرها إثارة للتعامل مع الأسواق المالية."
 
-#~ msgid "Trade with confidence with the industry pioneer."
-#~ msgstr "تداول بثقة مع رائد هذا المجال."
-
 #~ msgid "Under %1 for market-leading returns"
 #~ msgstr "بأقل من %1 يمكنك التداول بأفضل عائد"
 
@@ -17507,9 +17829,6 @@ msgstr "لموافقة على الشروط والأحكام"
 #~ msgid "Download the Random Markets raw tick data here."
 #~ msgstr "حمل بيانات الأسواق العشوائية لم يتم تصفيتها هنا."
 
-#~ msgid "Free gift"
-#~ msgstr "هدية مجانية"
-
 #~ msgid "Raw tick data"
 #~ msgstr "بيانات النقطة الأولية"
 
@@ -17842,9 +18161,6 @@ msgstr "لموافقة على الشروط والأحكام"
 #~ msgid "Tick Trade Rise/Fall"
 #~ msgstr "تداول الحركة ارتفاع/هبوط"
 
-#~ msgid "Tick trades"
-#~ msgstr "تداول النقطة"
-
 #~ msgid "Trade on the market action during the next few seconds of trade."
 #~ msgstr "تداول على رد فعل السوق أثناء الثوانى التى تتلو عملية التداول."
 
@@ -18097,11 +18413,6 @@ msgstr "لموافقة على الشروط والأحكام"
 #~| msgid "Settlement: %1.<strong>*</strong>"
 #~ msgid "Stake must be at least <strong>%1</strong>."
 #~ msgstr "تسوية: 1%.<strong>*</strong>"
-
-#, fuzzy
-#~| msgid "Multi award-winning trading platform."
-#~ msgid "main trading platform"
-#~ msgstr "منصة تداول حاصلة على أكثر من جائزة."
 
 #~ msgid "Accounts are available in dollars, pounds and euros."
 #~ msgstr "الحسابات متاحة بالدولار والجنية الأسترلينى واليورو. "
@@ -18854,9 +19165,6 @@ msgstr "لموافقة على الشروط والأحكام"
 #~ msgid "Trades appear instantly on your Portfolio. Prices continue to update in realtime, allowing you to sell trades before expiry to lock in profits."
 #~ msgstr "تظهر التداولات فوراً فى محفظتك. يستمر تحديث الأسعار فى الوقت الحقيقى مما يسمح لك ببيع المعاملات قبل تاريخ أنتهاء صلاحيتها للحفاظ على الأرباح."
 
-#~ msgid "Ultra-short term trades..."
-#~ msgstr "معاملات ذات مدى قصير جداً ..."
-
 #~ msgid "View the live trading interface"
 #~ msgstr "اطلع على واجهة التداول الحى"
 
@@ -18865,9 +19173,6 @@ msgstr "لموافقة على الشروط والأحكام"
 
 #~ msgid "Your trades, Your schedule"
 #~ msgstr "تداولاتك، جدولك"
-
-#~ msgid "Advanced Panel"
-#~ msgstr "اللوحة المتقدمة "
 
 #~ msgid "Against"
 #~ msgstr "ضد "
@@ -19015,9 +19320,6 @@ msgstr "لموافقة على الشروط والأحكام"
 
 #~ msgid "1. trade type"
 #~ msgstr "1.نوع التجارة"
-
-#~ msgid "2. The Duration"
-#~ msgstr "2. المدة الزمنية"
 
 #~ msgid "2. underlying"
 #~ msgstr "2.ضمنى "
@@ -19400,9 +19702,6 @@ msgstr "لموافقة على الشروط والأحكام"
 
 #~ msgid "The primary tool of a Technical Analyst is the chart. For this reason, Technical analysts are sometimes referred to as 'chartists'. Various chart types exist, the most common being Line, Candlestick and Point & Figure Charts..."
 #~ msgstr "أداة التحليل الأساسية للمحلل الفنى هى الرسم البيانى. لهذا السبب يشار إلى المحللين الفنيين على أنهم \"رسامين\". هناك العديد من أنواع الرسم البيانى أكثرها شيوعاً الخط، الشمعدان ورسوم بيانية على شكل نقاط وأرقام..."
-
-#~ msgid "Trading Plans"
-#~ msgstr "خطط تداول"
 
 #~ msgid "Withdraw: %1 to %2 working days"
 #~ msgstr "اسحب من 1% إلى 2% أيام عمل"
@@ -19805,9 +20104,6 @@ msgstr "لموافقة على الشروط والأحكام"
 
 #~ msgid "Browser type"
 #~ msgstr "نوع المتصفح"
-
-#~ msgid "Chart format"
-#~ msgstr "صيغة الرسم البيانى"
 
 #~ msgid "Cooler"
 #~ msgstr "مبرد"
