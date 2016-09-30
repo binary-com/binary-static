@@ -87,7 +87,7 @@ var ValidAccountOpening = (function(){
     return;
   };
   var checkPostcode = function(postcode, errorPostcode) {
-    if (postcode.value !== '' && !/^[a-zA-Z\d-]+$/.test(postcode.value)){
+    if ((postcode.value !== '' || page.client.residence === 'gb') && !/^[a-zA-Z\d-]+$/.test(postcode.value)){
       initializeValues();
       errorPostcode.innerHTML = Content.errorMessage('reg', [letters, numbers, hyphen]);
       Validate.displayErrorMessage(errorPostcode);
@@ -117,10 +117,11 @@ var ValidAccountOpening = (function(){
     return;
   };
   var checkCity = function(city, errorCity) {
-    if (/^[`~!@#$%^&*)(_=+\[}{\]\\\/";:\?><,|\d]+$/.test(city.value)) {
-      errorCity.innerHTML = Content.errorMessage('reg', [letters, space, hyphen, period, apost]);
-      Validate.displayErrorMessage(errorCity);
-      window.accountErrorCounter++;
+    if (/[`~!@#$%^&*)(_=+\[}{\]\\\/";:\?><,|\d]+/.test(city.value)) {
+        initializeValues();
+        errorCity.innerHTML = Content.errorMessage('reg', [letters, space, hyphen, period, apost]);
+        Validate.displayErrorMessage(errorCity);
+        window.accountErrorCounter++;
     }
     return;
   };
