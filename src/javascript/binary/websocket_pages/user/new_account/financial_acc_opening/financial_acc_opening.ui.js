@@ -105,6 +105,7 @@ var FinancialAccOpeningUI = (function(){
     if (elementObj['answer'].offsetParent !== null) {
       ValidAccountOpening.checkAnswer(elementObj['answer'], errorObj['answer']);
     }
+    ValidAccountOpening.checkCity(elementObj['town'], errorObj['town']);
 
     for (key in elementObj){
       if (elementObj[key].offsetParent !== null && key !== 'address2' && key !== 'postcode' && key !== 'state') {
