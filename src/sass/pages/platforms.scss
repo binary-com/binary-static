@@ -1,0 +1,45 @@
+.platforms-content {
+    img.responsive {
+        max-height: 150px;
+    }
+    table {
+        table-layout: fixed;
+        width: 100%;
+    }
+    td, th {
+        vertical-align: top;
+        padding: 10px;
+        width: 100px;
+    }
+    th {
+        position: absolute;
+        left: 0;
+        width: 90px;
+        height: 200px;
+        text-align: left;
+    }
+    .outer {
+        position: relative;
+    }
+    .inner {
+        overflow-x: scroll;
+        overflow-y: visible;
+        margin-left: 110px;
+    }
+    .auto-height {
+        height: 32px;
+    }
+    tr:first-child td {
+        line-height: 1.1em;
+        font-weight: bold;
+        background: $COLOR_LIGHT_GRAY;
+        border-bottom: 1px solid $COLOR_LIGHT_GRAY;
+    }
+    ul.checked li {
+        background-position: center;
+        margin: 0;
+    }
+    .small-padding-top {
+        padding-top: 4px;
+    }
+}

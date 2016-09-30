@@ -12,6 +12,7 @@ sub all_pages {
         ['why-us-jp',                  'static/why_us_jp',             'full_width', 'Why Us'],
         ['tour',                       'static/tour',                  'full_width', 'Tour'],
         ['tour-jp',                    'static/tour_jp',               'full_width', 'Tour'],
+        ['platforms',                  'static/platforms',             'default',    'Platforms',           'ja'],
         ['responsible-trading',        'static/responsible_trading',   'full_width', 'Responsible Trading', 'ja'],
         ['terms-and-conditions',       'legal/tac',                    'default',    'Terms and Conditions'],
         ['terms-and-conditions-jp',    'japan/legal/tacjp',            'default',    'Terms and Conditions'],
