@@ -7,14 +7,16 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-09-27 17:48+0000\n"
+"PO-Revision-Date: 2016-09-29 23:57+0000\n"
 "Last-Translator: Ruslan <ruslan.mukhametdinov.90@gmail.com>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/binary/static/ru/>\n"
+"Language-Team: Russian "
+"<https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.9-dev\n"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
@@ -130,9 +132,6 @@ msgstr "%1 завоевал награду в категории “Лучший
 
 msgid "%1 is looking to recruit highly skilled, experienced designers who are passionate about developing attractive visuals for both online and offline applications."
 msgstr "%1 приглашает на работу опытных и высокопрофессиональных дизайнеров, способных создавать привлекательные рекламные материалы для наших онлайн и оффлайн приложений."
-
-msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
-msgstr "%1 не работает в Коста-Рике, а также не регулируется и не контролируется финансовыми органами Коста-Рики."
 
 msgid "%1 is one of the oldest and most respected names in online binary trading."
 msgstr "%1 – одно из первых и самых авторитетных имён в онлайн торговле бинарными опционами."
@@ -284,7 +283,9 @@ msgid "&#8220;%1 is one of the oldest and trustworthy partners we ever had. We h
 msgstr "&#8220;%1 является одним из наших самых давних и надежных партнеров. Мы работаем вместе много лет.&#8221;"
 
 msgid "&#8220;We have used www.binary.com for the last 8 years and highly recommend binary to all our members worldwide.&#8221;"
-msgstr "&#8220;Мы пользуемся www.binary.com уже 8 лет и рекомендуем binary всем нашим членам по всему миру.&#8221;"
+msgstr ""
+"&#8220;Мы пользуемся www.binary.com уже 8 лет и рекомендуем binary всем "
+"нашим клиентам по всему миру.&#8221;"
 
 msgid "'<strong>Long</strong>' contracts generate profits when the index rises and loses when it falls."
 msgstr "'<strong>Длинные</strong>' позиции приносят прибыль, когда индекс растёт, и не приносят прибыли в случае снижения индекса."
@@ -293,10 +294,14 @@ msgid "'<strong>Short</strong>' contracts generate losses when the index rises a
 msgstr "'<strong>Короткие</strong>' позиции приносят прибыль при падении индекса и не приносят прибыли, когда индекс растёт."
 
 msgid "'Asian Fall' - You win when the last tick is lower than the average of the ticks during the trade."
-msgstr "Азиатские-Падение – Вы выигрываете, если во время действия контракта последняя котировка будет ниже общего среднего значения всех котировок."
+msgstr ""
+"Азиатские-Падение – Вы получаете прибыль, если во время действия контракта "
+"последняя котировка будет ниже общего среднего значения всех котировок."
 
 msgid "'Asian Rise' - You win when the last tick is higher than the average of the ticks during the trade."
-msgstr "Азиатские-Повышение – Вы выигрываете, если во время действия контракта последняя котировка будет выше общего среднего значения всех котировок."
+msgstr ""
+"Азиатские-Повышение – Вы получаете прибыль, если во время действия контракта "
+"последняя котировка будет выше общего среднего значения всех котировок."
 
 msgid "'Best Customer Communication Firm' award by Investors Chronicle"
 msgstr "Награда “Лучшая компания в области коммуникации с клиентами“ от Investors Chronicle"
@@ -314,13 +319,17 @@ msgid "'Best Fixed-Odds Firm 2012' award by Global Banking and Finance Review"
 msgstr "Награда “Лучшая компания по опционам с фиксированным коэффициентом выигрыша 2012“ от Global Banking and Finance Review"
 
 msgid "'Differs' - You win when the last digit of the last tick does not match your prediction."
-msgstr "“Отличается” – Вы выигрываете, если последняя десятичная последней котировки не соответствует Вашему прогнозу."
+msgstr ""
+"“Отличается” – Вы получаете прибыль, если последняя десятичная последней "
+"котировки не соответствует Вашему прогнозу."
 
 msgid "'Financial Betting Operator of the Year' award by eGaming Review"
 msgstr "Награда “Оператор года по финансовому беттингу“ от eGaming Review"
 
 msgid "'Matches' - You win when the last digit of the last tick matches your prediction."
-msgstr "“Совпадет” – Вы выигрываете, если последняя десятичная последней котировки соответствует Вашему прогнозу."
+msgstr ""
+"“Совпадет” – Вы получаете прибыль, если последняя десятичная последней "
+"котировки соответствует Вашему прогнозу."
 
 msgid "(Bejing/CST -8 hours)"
 msgstr "(Пекин/CST -8 часов)"
@@ -520,7 +529,9 @@ msgid "<strong>Commissions:</strong> You will charge a commission to process the
 msgstr "<strong>Комиссии:</strong> Вы будете взимать комиссию за обработку транзакций."
 
 msgid "<strong>Commodities</strong> - trade major commodities such as gold and oil."
-msgstr "<strong>Сырьевые рынки</strong> - торгуйте на крупнейших сырьевых товарах, как золото и нефть."
+msgstr ""
+"<strong>Сырьевые рынки</strong> – торгуйте на крупнейших сырьевых товарах, "
+"таких как золото и нефть."
 
 msgid "<strong>Currencies</strong> - trade all major FX pairs, around the clock."
 msgstr "<strong>Валюты</strong> - работайте на всех основных парах форекса, круглосуточно."
@@ -565,7 +576,9 @@ msgid "<strong>Instant funding</strong> - open, fund, or withdraw from your acco
 msgstr "<strong>Мгновенное пополнение</strong> - откройте, пополните или выведите средства со счета за минуты, в любое время суток."
 
 msgid "<strong>Known risks</strong> - you know from the start what you will win or lose."
-msgstr "<strong>Заранее известный риск</strong> - вы всегда знаете заранее возможный выигрыш или проигрыш."
+msgstr ""
+"<strong>Заранее известный риск</strong> – вы всегда знаете заранее возможную "
+"прибыль или убыток."
 
 msgid "<strong>Long-term action</strong> - choose trades with durations of up to 365 days."
 msgstr "<strong>Долгосрочные сделки</strong> - выберите контракты сроком действия до 365 дней."
@@ -610,7 +623,9 @@ msgid "<strong>Rising markets</strong> - choose the rise trade, higher trade, on
 msgstr "<strong>Растущие рынки</strong> – выберите контракты \"Повышение\", \"Выше\", \"Касание\" с верхним барьером или \"Нет касания\" с нижним барьером."
 
 msgid "<strong>Scalable trading</strong> - win the same proportional return on stakes of all values."
-msgstr "<strong>Масштабируемость торговли</strong> - получите пропорционально один и тот же выигрыш на ставки любой суммы."
+msgstr ""
+"<strong>Масштабируемость торговли</strong> – получайте пропорционально один "
+"и тот же выигрыш на ставки любой суммы."
 
 msgid "<strong>Security</strong> - %1 ensures your personal data and transactions are always secure."
 msgstr "<strong>Безопасность</strong> - %1 обеспечивает безопасность Вашей личной информации и надежность транзакций."
@@ -619,7 +634,9 @@ msgid "<strong>Set your probability of winning</strong> - choose trades with hig
 msgstr "<strong>Установите вероятность выигрыша</strong> - выберите контракты с высокой прибылью/низкой вероятностью выигрыша, а также с низкой прибылью/высокой вероятностью выигрыша."
 
 msgid "<strong>Short to long-term</strong> - choose timeframes from 10 seconds to 365 days."
-msgstr "<strong>От краткосрочных до долгосрочных</strong> - выберите продолжительность контрактов от 10 секунд до 365 дней."
+msgstr ""
+"<strong>От краткосрочных до долгосрочных</strong> – выбирайте "
+"продолжительность контрактов от 10 секунд до 365 дней."
 
 msgid "<strong>Short-term action</strong> - choose intraday trades from 1 minute to 24 hours."
 msgstr "<strong>Краткосрочное действие</strong> - выберите внутридневные контракты от 1 минуты до 24 часов."
@@ -643,7 +660,10 @@ msgid "<strong>Touch/No Touch</strong> - where you can profit from the market to
 msgstr "<strong>Касание/Нет касания</strong> - где вы можете получить прибыль, если рынок коснется или не коснется выбранного барьера."
 
 msgid "<strong>Trade to your budget</strong> - dip a toe in the water with $2 or go all out for $50,000."
-msgstr "<strong>Торгуйте в соответствии со своим бюджетом</strong> - попробуйте свои силы с маленького выигрыша $2 или сыграйте на полную катушку для получения прибыли в размере $50,000."
+msgstr ""
+"<strong>Торгуйте в соответствии со своим бюджетом</strong> – попробуйте свои "
+"силы с маленького выигрыша $2 или откройте крупную сделку с потенциальной "
+"прибылью в $50,000."
 
 msgid "<strong>Trade to your strategy</strong> - set your trades on 'gut feel', or use technical or fundamental analysis."
 msgstr "<strong>Придерживайтесь своей стратегии</strong> – доверяйте своему чутью, а также используйте технический или фундаментальный анализ."
@@ -655,7 +675,9 @@ msgid "<strong>Trade with confidence</strong> - get pricing that is normally res
 msgstr "<strong>Торгуйте с уверенностью</strong> - воспользуйтесь системой оценки, которая обычно предлагается только крупным организациям."
 
 msgid "<strong>Trade your way</strong> - customize your trades to meet your needs."
-msgstr "<strong>Торговля по Вашим условиям</strong> - выберите параметры контрактов согласно своим нуждам."
+msgstr ""
+"<strong>Торговля по Вашим условиям</strong> – выбирайте параметры контрактов "
+"согласно своим нуждам."
 
 msgid "<strong>Up to 100% returns on rise/fall trades</strong> - we challenge you to find better returns on any competing website."
 msgstr "<strong>До 100% прибыли на контрактах Повышение/Падение</strong> - мы бросаем Вам вызов найти лучшую прибыль на сайтах конкурентов."
@@ -703,7 +725,10 @@ msgid ""
 "A Stays Between trade pays out if the market stays between (does not touch) BOTH the high barrier or the low barrier at any time during the period chosen by a trader. A Goes Outside trade pays out if the market touches EITHER the high barrier\n"
 "            or the low barrier at any time during the period chosen by a trader."
 msgstr ""
-"Если Вы выбираете \"Останется между\" (не коснется обоих уровней), Вы выигрываете, если рынок останется между верхним и нижним барьером (не коснется ни ОДНОГО из них) за все время действия контракта. Контракт \"Выйдет за пределы\" выигрывает, если рынок коснется ЛИБО верхнего,\n"
+"Если Вы выбираете \"Останется между\" (не коснется обоих уровней), Вы "
+"получаете прибыль, если рынок останется между верхним и нижним барьером (не "
+"коснется НИ ОДНОГО из них) за все время действия контракта. Контракт \""
+"Выйдет за пределы\" приносит прибыль, если рынок коснется ЛИБО верхнего,\n"
 "             ЛИБО нижнего барьера в любое время действия контракта."
 
 msgid "A True Partnership"
@@ -716,13 +741,20 @@ msgid "A binary option is a contract purchased by a trader, which pays a pre-det
 msgstr "Бинарный опцион - это покупаемый трейдером контракт, по которому выплачивается заранее оговоренная сумма в случае правильного прогноза."
 
 msgid "A binary option is an option with a fixed payout that is determined at the start of the trade. If your prediction is correct, you receive an agreed payout. If not, you lose your initial stake, and no more. The options are called 'binary' because there can be only two outcomes - win or lose."
-msgstr "Бинарный опцион – это опцион с фиксированной прибылью, которая определяется при расчете контракта. Если прогноз сбывается, трейдер получает оговоренную прибыль. В противном случае, он теряет только свою ставку (цену покупки) и не более того. Опционы называются \"бинарными\", потому что они предлагают два возможных исхода контракта – выигрыш или проигрыш."
+msgstr ""
+"Бинарный опцион – это опцион с фиксированной прибылью, которая определяется "
+"при расчете контракта. Если прогноз сбывается, трейдер получает оговоренную "
+"прибыль. В противном случае, он теряет только свою ставку (цену покупки) и "
+"не более того. Опционы называются \"бинарными\", потому что они предлагают "
+"два возможных исхода контракта – прибыль или убыток."
 
 msgid "A board member of a Central Bank"
-msgstr ""
+msgstr "Член совета директоров Центрального банка"
 
 msgid "A board member of a company subject to resolution or approval for its budget from a body equivalent to the Diet of Japan"
 msgstr ""
+"Бюджет члена совета директоров компании должен получить разрешение или "
+"утверждение от органа, эквивалентного парламенту Японии"
 
 msgid "A broad array of HR-related administrative tasks"
 msgstr "Широкий спектр административных задач в области HR"
@@ -830,7 +862,7 @@ msgid "About Us and these Terms"
 msgstr "О нас и данных Правилах"
 
 msgid "Accept"
-msgstr "Согласиться"
+msgstr "Принять"
 
 msgid "Accept local bank wires"
 msgstr "Принимают местные банковские переводы"
@@ -863,10 +895,10 @@ msgid "Account balance: "
 msgstr "Баланс счета: "
 
 msgid "Accounting"
-msgstr "Отчётность"
+msgstr "Бухгалтерия"
 
 msgid "Accounting & Payments"
-msgstr "Отчетность и выплаты"
+msgstr "Бухучет и выплаты"
 
 msgid "Accounts And Payments Executive"
 msgstr "Администратор счетов и выплат"
@@ -887,7 +919,7 @@ msgid "Adapt communication appropriately to suit a variety of different formats 
 msgstr "Адаптация процесса коммуникации в соответствии с различными форматами и группами целевой аудитории"
 
 msgid "Adapt tone of voice as appropriate to suit specified target audiences"
-msgstr "Адаптация тона голоса согласно нуждам конкретной целевой аудитории"
+msgstr "Адаптация стиля текста согласно нуждам конкретной целевой аудитории"
 
 msgid "Address"
 msgstr "Адрес"
@@ -986,8 +1018,12 @@ msgid ""
 "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high\n"
 "            price target OR strictly lower than the low price target."
 msgstr ""
-"Контракт \"Закончится внутри\" выигрывает, если выходная цена рынка строго выше, чем нижний ценовой барьер И строго ниже, чем верхний ценовой барьер. Контракт \"Закончится вне\" выигрывает, если выходная цена рынка ЛИБО строго выше, чем\n"
-"            верхний ценовой барьер, ЛИБО строго ниже, чем нижний ценовой барьер."
+"Контракт \"Закончится внутри\" приносит прибыль, если выходная цена рынка "
+"строго выше, чем нижний ценовой барьер И строго ниже, чем верхний ценовой "
+"барьер. Контракт \"Закончится вне\" приносит прибыль, если выходная цена "
+"рынка ЛИБО строго выше, чем\n"
+"            верхний ценовой барьер, ЛИБО строго ниже, чем нижний ценовой "
+"барьер."
 
 msgid "An additional password can be used to restrict access to the cashier."
 msgstr "Можно использовать дополнительный пароль для ограничения доступа к кассе."
@@ -1030,6 +1066,8 @@ msgstr "Информация о любых изменениях в правил�
 
 msgid "Any corporation which is substantially owned or controlled by a someone described in categories 1) to 4)"
 msgstr ""
+"Корпорация, значительная часть которой принадлежит или находится под "
+"управлением лица, упомянутого в категориях 1-4"
 
 msgid "Any disputes, controversy, or claims that arise out of or relating to this Agreement against the Company will be referred to and finally determined by an arbitration firm selected by the Company. The language to be used in the arbitral proceedings will be English. Judgement upon the award rendered by the arbitrator(s) may be entered in any court having jurisdiction thereof. You are also responsible for any and all costs related to such arbitration."
 msgstr "Любые споры, разногласия и претензии, возникающие по отношению к Компании в рамках или в связи с данным Соглашением, будут направленны и рассмотрены арбитражным судом, выбранным Компанией. Арбитражные разбирательства будут проводиться на английском языке. Решение, вынесенное судьёй (судьями), может быть исполнено любым судом в соответствующей юрисдикции. Вы также несёте финансовую ответственность за любые расходы на данные арбитражные разбирательства."
@@ -1217,12 +1255,6 @@ msgstr "Позволяют не иметь электронного кошель
 msgid "Award-winning, patented financial trading platform"
 msgstr "Запатентованная платформа для финансовой торговли, получившая призы"
 
-msgid "BIEL Pillar III"
-msgstr "Принципы BIEL III"
-
-msgid "BIEL Prospectus"
-msgstr "Проспект BIEL"
-
 msgid "BIEL Terms"
 msgstr "Условия BIEL"
 
@@ -1304,20 +1336,57 @@ msgstr "BetOnMarkets.com достигает оборота в 1 миллиард
 msgid "Betting system and method"
 msgstr "Система и методы ставок"
 
-msgid "Binary (C.R.) S.A., registered in Costa Rica."
-msgstr "Компания Binary (C.R.) S.A. зарегистрирована в Коста-Рике."
+msgid "Binary (C.R.) S.A."
+msgstr "Binary (C.R.) S.A."
+
+msgid "Binary (C.R.) S.A., registered in Costa Rica. Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their account opened with Binary (C.R.) S.A."
+msgstr ""
+"Компания Binary (C.R.) S.A., зарегистрированная в Коста-Рике. Счета для "
+"клиентов из других стран мира (за исключением США, Коста-Рики и Гонконга) "
+"будут открыты в компании Binary (C.R.) S.A."
+
+msgid "Binary (Europe) Ltd"
+msgstr "Binary (Europe) Ltd"
 
 msgid "Binary (Europe) Ltd & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 msgstr "Binary (Europe) Ltd и Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 
-msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licenced and regulated (for gambling products only) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>."
-msgstr "Binary (Europe) Ltd, расположенная по адресу Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Мальта, лицензирована и регулируется Управлением по азартным играм Мальты (номер лицензии MGA/CL2/118/2000); для клиентов в Великобритании – Комиссией по азартным играм Великобритании – <a href='%1' target='_blank'>см. лицензию</a>."
+msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated (for gambling products only - %1's Volatility Indices) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - <a href=\"https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495\" target=\"_blank\">view licence</a>."
+msgstr ""
+"Binary (Europe) Ltd, расположенная по адресу Mompalao Building, Suite 2, "
+"Tower Road, Msida MSD1825, Мальта. Компания лицензирована и регулируется ("
+"исключительно для игорных продуктов – Индексов волатильности %1) Управлением "
+"по азартным играм Мальты (номер лицензии: MGA/CL2/118/2000);, а для клиентов "
+"виз Великобритании – Комиссией по азартным играм Великобритании -\n"
+"<a href=\"https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister"
+"/PRSearch.aspx?ExternalAccountId=39495\" target=\"_blank\"> см. лицензию</a>"
+
+msgid "Binary (IOM) Ltd"
+msgstr "Binary (IOM) Ltd"
 
 msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
 msgstr "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
 
-msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licenced and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2012) and for UK clients by the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>."
-msgstr "Binary (IOM) Ltd, расположенная по адресу First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW, лицензирована и регулируется Комиссией по надзору за азартными играм на Острове Мэн (настоящая лицензия выдана 31 августа 2012 года), и для клиентов в Великобритании – Комиссией по азартным играм Великобритании – <a href='%1' target='_blank'>см. лицензию</a>."
+msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licensed and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2012) and for UK clients by the UK Gambling Commission - <a href=\"https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172\" target=\"_blank\">view licence</a>."
+msgstr ""
+"Binary (IOM) Ltd, расположенная по адресу First Floor, Millennium House, "
+"Victoria Road, Douglas, Isle of Man, IM2 4RW, лицензирована и регулируется "
+"Комиссией по надзору за азартными играм на Острове Мэн (настоящая лицензия "
+"выдана 31 августа 2012 года), и для клиентов из Великобритании – Комиссией "
+"по азартным играм Великобритании – <a href=\"https://secure.gamblingcommissio"
+"n.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172\" "
+"target=\"_blank\">см. лицензию</a>."
+
+msgid "Binary (V) Ltd"
+msgstr "Binary (V) Ltd"
+
+msgid "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - <a href=\"https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-09.09.20164.pdf\" target=\"_blank\">view licence</a>."
+msgstr ""
+"Binary (V) Ltd, расположенная по адресу Govant Building, Port Vila, PO Box "
+"1276, Vanuatu, Республика Вануату. Компания лицензирована и регулируется "
+"Комиссией по финансовым услугам Вануату – <a href=\"https://www.vfsc.vu/wp-"
+"content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-"
+"Licensing-Act-CAP-70-09.09.20164.pdf\" target=\"_blank\">см. лицензию</a>."
 
 msgid "Binary Bot released"
 msgstr "Новый торговый робот"
@@ -1334,11 +1403,41 @@ msgstr "Группа компаний Binary Group Services ищет талан�
 msgid "Binary Group Services is searching for talented and motivated front-end developers who are looking for a chance to excel."
 msgstr "Группа компаний Binary Group Services ищет талантливых и мотивированных разработчиков пользовательских интерфейсов, стремящихся к успеху и достижению высоких результатов."
 
+msgid "Binary Investments (Europe) Limited is entitled to provide services in another EU Member State through EU passporting rights. Refer to the map below for the list of EU countries that have access to Binary.com via EU passporting rights - freedom to provide cross border services."
+msgstr ""
+"Компания Binary Investments (Europe) Limited уполномочена предоставлять "
+"услуги в других государствах-членах ЕС на основании действующих в ЕС "
+"паспортных прав. На карте ниже приведён список государств ЕС, имеющих доступ "
+"к Binary.com посредством действующих в ЕС паспортных прав (прав на "
+"предоставление международных услуг)."
+
+msgid "Binary Investments (Europe) Ltd"
+msgstr "Binary Investments (Europe) Ltd"
+
 msgid "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, Binary (CR) SA and all other Binary Group members are sometimes referred to collectively as \"%1\", \"us\" or \"we\"."
 msgstr "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, Binary (CR) SA и все другие члены группы Binary Group иногда коллективно именуются \"%1\" или \"мы\"."
 
-msgid "Binary Investments (Europe) Ltd, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156)."
-msgstr "Binary Investments (Europe) Ltd, Suite 2, Tower Road, Msida MSD1825, Мальта. Лицензируется как представитель услуг по инвестициям категории 3 и регулируется органом по финансовым услугам Мальты Malta Financial Services Authority (номер лицензии IS/70156)."
+msgid "Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (licence no. IS/70156). European Union residents with the exception of the UK, who wish to trade investment products, will have their account opened with Binary Investments (Europe) Ltd."
+msgstr ""
+"Binary Investments (Europe) Ltd, расположенная по адресу Mompalao Building, "
+"Suite 2, Tower Road, Msida MSD1825, Мальта. Компания лицензирована и "
+"регулируется Мальтийским управлением финансовых услуг в качестве поставщика "
+"инвестиционных услуг 3-й категории (лицензия номер IS/70156). Счета для "
+"жителей Европейского Союза (за исключением Великобритании), желающих "
+"торговать инвестиционными продуктами, будут открыты в компании Binary "
+"Investments (Europe) Ltd."
+
+msgid "Binary K.K."
+msgstr "Binary K.K."
+
+msgid "Binary K.K., 3F Hiroo Miyata Building, 1-9-16 Hiroo, Shibuya-ku, Tokyo 150-0012. Licensed and regulated as a Type 1 Financial Instruments Business by the KLFB (license no. 2949) and a member of FFAJ (membership no. 1590)."
+msgstr ""
+"Binary K.K., расположенная по адресу 3F Hiroo Miyata Building, 1-9-16 Hiroo, "
+"Shibuya-ku, Tokyo 150-0012. Компания лицензирована и регулируется "
+"Управлением по финансовому регулированию Японии (KLFB) в качестве "
+"Организации в сфере финансовых инструментов 1-го типа (лицензия номер 2949), "
+"а также является членом Ассоциации финансовых фьючерсов Японии (членский "
+"номер 1590)."
 
 msgid "Binary KK granted Japan license"
 msgstr "Binary KK получил японскую лицензию"
@@ -1346,8 +1445,13 @@ msgstr "Binary KK получил японскую лицензию"
 msgid "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
 msgstr "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
 
-msgid "Binary Ltd, with registered office address situated at <span itemprop='location'>47 Esplanade, St. Helier, Jersey, JE 0BD Channel Islands</span>, is the holding company for the Binary group."
-msgstr "Binary Ltd, с зарегистрированным адресом <span itemprop=\"location\">47 Esplanade, St. Helier, Jersey, JE 0BD Channel Islands</span>, является холдинговой компанией группы Binary."
+msgid "Binary Ltd"
+msgstr "Binary Ltd"
+
+msgid "Binary Ltd, with registered office address situated at 47 Esplanade, St. Helier, Jersey, JE1 0BD Channel Islands, is the holding company for the Binary group."
+msgstr ""
+"Binary Ltd, зарегистрированная по адресу 47 Esplanade, St. Helier, Jersey, "
+"JE 0BD Channel Islands, является холдинговой компанией группы Binary."
 
 msgid "Binary Options Basics"
 msgstr "Основы бинарных опционов"
@@ -1371,8 +1475,11 @@ msgid ""
 "Binary options are easy to understand. They're called 'binary' because there can be only two outcomes - win or lose. If your prediction is correct, you receive a payout that is determined at the start of the trade. If not, you just lose your\n"
 "            initial stake."
 msgstr ""
-"Бинарные опционы легки для понимания. Они называются \"бинарными\", потому что контракт имеет только два возможных исхода – выигрыш или проигрыш. Если ваш прогноз верен, вы получите заранее оговоренный выигрыш. В противном случае вы проиграете только\n"
-"             ставку (цену покупки)."
+"Бинарные опционы легки для понимания. Они называются \"бинарными\", потому "
+"что контракт имеет только два возможных исхода – выигрыш или проигрыш. Если "
+"ваш прогноз верен, вы получите заранее установленную прибыль. В противном "
+"случае вы потеряете только изначальную\n"
+"             инвестицию (цену покупки)."
 
 msgid "Binary options basics"
 msgstr "Основы бинарных опционов"
@@ -1404,11 +1511,25 @@ msgstr "Мальтийская дочерняя компания Binary под �
 msgid "Binary's platform transacts on average 15 <a href='http://binarycom.statuspage.io/' target='_blank'>transactions</a> per second, 24/7"
 msgstr "В среднем, платформа Binary проводит 15 <a href='http://binarycom.statuspage.io/' target='_blank'>транзакций</a> в секунду, 24/7"
 
+msgid "Binary.com is a licensed and regulated trading platform that serves over 1,000,000 customers globally. We hold multiple licenses to comply with regulations around the world. Since 1999, we’ve served our clients with a constant and unwavering commitment to integrity and reliability. We always hold ourselves to the highest ethical standards, in addition to our regulatory requirements."
+msgstr ""
+"Binary.com – лицензированная и регулируемая торговая платформа, "
+"обслуживающая более 1 000 000 клиентов по всему миру. Мы получили множество "
+"лицензий, чтобы соответствовать нормам и правилам различных стран. Мы "
+"работаем с 1999 года и всегда стремимся предоставить нашим клиентам надёжную "
+"и безопасную рабочую среду, поддерживая высокие этические стандарты и строго "
+"соблюдая нормативные требования наших регуляторов."
+
 msgid "Binary.com is an active member of the Perl community and is in the process of uploading a number of its internal utility modules to <a target='_blank' href='%1'>CPAN</a>. If you are a Perl enthusiast, contribute by reviewing these modules, and submitting pull-requests on <a target='_blank' href='%2'>github</a>."
 msgstr "Binary.com является активным членом сообщества Perl и находится в процессе обновления нескольких своих внутренних модулей на <a target='_blank' href='%1'>CPAN</a>. Если Вы энтузиаст Perl, приглашаем Вас прислать свои исправления модулей путем отсылки Вашего pull-request на <a target='_blank' href='%2'>github</a>."
 
 msgid "Binary.com is an active proponent of the open-source movement and is in the process of open-sourcing a number of components of its codebase."
 msgstr "Binary.com является активным сторонником движения с открытым исходным кодом и находится в процессе открытого поиска ряда компонентов базы кодов."
+
+msgid "Binary.com is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
+msgstr ""
+"Binary.com не работает в Коста-Рике, а также не регулируется и не "
+"контролируется финансовыми органами Коста-Рики."
 
 msgid "Binary.com open-source projects"
 msgstr "Проекты с открытым исходным кодом Binary.com"
@@ -1629,8 +1750,12 @@ msgstr "Ответственность клиента"
 msgid "Clients agree to be fully and personally liable for the due settlement of every transaction entered into under their account with the Company. This includes any transactions entered into by members of the Client's family or entourage who have gained access to the account. Clients are responsible for ensuring that they alone control access to the account, and that no minors are granted access to trading on the website. In any case, Clients remains fully liable for any and all positions traded on their account, and for any credit card transactions entered into the site for their account. Each Client also indemnifies the Company in respect to all costs and losses of any kind, whatsoever as may be incurred by the Company as a result, direct or indirect, of the Client's failure to perform or settle such a transaction. Online Gambling debts are enforceable in law in the Isle of Man."
 msgstr "Клиент соглашается нести полную личную ответственность за надлежащее урегулирование каждой сделки, заключенной в рамках его счета с Компанией. К таким сделкам относятся любые сделки, заключенные членами семьи клиента или людьми из его окружения, которые получили доступ к счету. Клиент несет ответственность за обеспечение того, что только он контролирует доступ к счету и что несовершеннолетние лица не имеют доступа к торгам на сайте. В любом случае, Клиент несет полную ответственность за все контракты, приобретенные на его счету, и за любую сделку кредитной картой, заключенную на его счету на сайте. Каждый Клиент также обязан возместить Компании расходы и убытки любого рода, которые может понести Компания в результате прямой или косвенной неспособности Клиента выполнить или урегулировать такую сделку. Долги от азартных игр подлежат возмещению по законодательству Острова Мэн."
 
-msgid "Clients from the rest of the world (excluding certain countries such as the USA, Japan, Costa Rica, Hong Kong) will have their account opened with Binary (C.R.) S.A."
-msgstr "Счет для клиентов из других стран мира (за исключением США, Японии, Коста-Рики и Гонконга) будет открыт в компании Binary (C.R.) S.A."
+msgid "Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. Binary.com is not available in the Republic of Vanuatu."
+msgstr ""
+"Счета для торговли на Forex и контрактами на разницу на платформе Metatrader "
+"5 для клиентов из других стран мира (за исключением США, Коста-Рики и "
+"Гонконга) будут открыты в компании Binary (V) Ltd. Услуги сайта Binary.com "
+"недоступны в Республике Вануату."
 
 msgid "Clients may avail of this bonus only when a real money account is opened."
 msgstr "Клиенты могут воспользоваться данным бонусом только при открытии реального счета."
@@ -1668,6 +1793,7 @@ msgstr "Клиенты, которые желают запросить само�
 msgid "Clients' Money"
 msgstr "Деньги клиентов"
 
+#, fuzzy
 msgid "Closed"
 msgstr "Закрыть"
 
@@ -1717,7 +1843,7 @@ msgid "Complaints and Disputes"
 msgstr "Жалобы и иски"
 
 msgid "Compliance"
-msgstr "Регулирование и контроль"
+msgstr "Служба контроля"
 
 msgid "Compliance Executive"
 msgstr "Специалист отдела регулир. и контроля"
@@ -1945,7 +2071,7 @@ msgid "Current Time"
 msgstr "Текущее время"
 
 msgid "Current or former member of category 1) or 2)"
-msgstr ""
+msgstr "Текущий или бывший представитель категории 1) или 2)"
 
 msgid "Current password"
 msgstr "Текущий пароль"
@@ -2113,7 +2239,7 @@ msgid "Digit contracts will be refunded at the purchase price if the contract do
 msgstr "Цена покупки цифровых контрактов будет возмещена, если контракт не истечёт в течение 5 минут."
 
 msgid "Digits"
-msgstr "Цифров."
+msgstr "Цифровые"
 
 msgid "Director"
 msgstr "Director"
@@ -2219,6 +2345,9 @@ msgstr "E.g. Shibuya-ku"
 
 msgid "EGR Operator Award "
 msgstr "EGR Operator Award "
+
+msgid "EU Passport Rights"
+msgstr "Паспортные права ЕС"
 
 msgid "EUR"
 msgstr "EUR"
@@ -2378,9 +2507,6 @@ msgstr "Ethics Code"
 
 msgid "European Union residents with the exception of the UK, who wish to trade gambling products, will have their account opened with Binary (Europe) Ltd."
 msgstr "Резиденты Евросоюза, кроме Соединенного Королевства Великобритании и Северной Ирландии, желающие торговать на продуктах, связанных с азартными играми, смогут открыть счета под юрисдикцией Binary (Europe) Ltd."
-
-msgid "European Union residents with the exception of the UK, who wish to trade investment products, will have their account opened with Binary Investments (Europe) Ltd."
-msgstr "Для резидентов Евросоюза, кроме Соединенного Королевства Великобритании и Северной Ирландии, желающих торговать на инвестиционных продуктах, счет будет открыт под юрисдикцией Binary Investment (Europe) Ltd."
 
 msgid "Even/Odd"
 msgstr "Чётное/Нечётное"
@@ -2598,6 +2724,7 @@ msgstr "Финансовая безопасность"
 msgid "Financial asset"
 msgstr "Финансовый актив"
 
+#, fuzzy
 msgid "Financial rewards"
 msgstr "Финансовое вознаграждение"
 
@@ -2790,6 +2917,7 @@ msgstr "С чего начать"
 msgid "Give Me More Money!"
 msgstr "Дайте еще денег!"
 
+#, fuzzy
 msgid "Global Customer Service Representatives"
 msgstr "Сотрудники мирового отдела обслуживания клиентов"
 
@@ -2822,9 +2950,6 @@ msgstr "Большие выплаты. Заработайте до 35%"
 
 msgid "Group History"
 msgstr "История компании"
-
-msgid "Group Information"
-msgstr "О компании"
 
 msgid "Hackerone - for IT security professionals"
 msgstr "Hackerone - для специалистов в области IT-безопасности"
@@ -3175,8 +3300,16 @@ msgstr "Чтобы получить доступ к нашим мобильны�
 msgid "In order to support its continued growth, %1 is seeking to recruit and place a qualified Compliance Executive. In this newly created role, to be based in Malta, the incumbent will report to our Head of Regulatory and Legal Compliance"
 msgstr "С целью поддержания дальнейшего роста и развития, %1 ищет квалифицированного сотрудника отдела регулирования и контроля. Эта новая должность на Мальте подотчётна нашему главе отдела регулирования и нормативно-правового соответствия"
 
+#, fuzzy
 msgid "In order to support its continued growth, the Human Resources Group at %1 is seeking to place a highly competent administrator in a senior recruitment role. Please note that this is not a position suitable for an HR generalist, but should be of keen interest to a high level administrator with extensive experience in the global recruitment of managers and single technical contributors. A background in financial services and experience in the recruitment of senior professionals in IT and Quantitative Analytics would be ideal."
-msgstr "С целью поддержания дальнейшего роста, HR отдел %1 ищет компетентного администратора на должность старшего сотрудника по набору кадров. Пожалуйста, примите во внимание, что это не вакансия менеджера по управлению персоналом, а должность высококвалифицированного администратора с большим опытом в мировом найме менеджеров и отдельных технических сотрудников. Идеально подойдёт опыт работы в области финансовых услуг, найма старших специалистов IT и специалистов по количественной аналитике."
+msgstr ""
+"С целью поддержания дальнейшего роста, HR отдел %1 ищет компетентного "
+"администратора на должность старшего сотрудника по набору кадров. "
+"Пожалуйста, примите во внимание, что это не вакансия менеджера по управлению "
+"персоналом, а должность высококвалифицированного администратора с большим "
+"опытом в мировом найме менеджеров и отдельных технических сотрудников. "
+"Идеально подойдёт опыт работы в области финансовых услуг, найма старших "
+"специалистов IT и специалистов по количественной аналитике."
 
 msgid "In providing these services, we are bound by the Act, any applicable regulations, bye-laws, licence conditions, guidelines, exchange requirements and other provisions or market practices (the \"Rules\"). In the event of conflict between these ST&Cs and the Rules, the latter should prevail."
 msgstr "При предоставлении этих услуг мы обязаны действовать в соответствии с законом, применяемыми правилами, подзаконными актами, лицензионными условиями, руководящими принципами, требованиями обмена валют и другими положениями или рыночными практиками (\"Правила\"). В случае конфликта между этими \"Дополнительными Правилами и Условиями\" и \"Правилами\", превалируют последние."
@@ -3381,6 +3514,9 @@ msgstr "Январь"
 
 msgid "Japan"
 msgstr "Япония"
+
+msgid "Japan residents will have their account opened with Binary K.K. and will use our Japan trading platform, which is compliant with Japan rules and regulations."
+msgstr ""
 
 msgid "Japan website Download Text for Pre-contract Document"
 msgstr "Japan website Download Text for Pre-contract Document"
@@ -3921,6 +4057,9 @@ msgstr "Научитесь торговле"
 
 msgid "Learning to trade online?"
 msgstr "Хотите научиться работе на рынках онлайн?"
+
+msgid "Legal"
+msgstr ""
 
 msgid "Legal & Regulatory Compliance"
 msgstr "Нормативно-правовое соответствие"
@@ -4705,6 +4844,12 @@ msgstr "Личные данные"
 msgid "Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
 msgstr "Лица, имеющие доступ к внутренней информации о финансовых рынках или инструментах, не имеют права торговать на данном сайте."
 
+msgid "Pillar 3 Disclosures"
+msgstr ""
+
+msgid "Pillar 3 disclosure report"
+msgstr ""
+
 msgid "Pip"
 msgstr "Пипс"
 
@@ -4906,6 +5051,7 @@ msgstr "Предыдущий опыт работы в клиентской сл�
 msgid "Price"
 msgstr "Цена"
 
+#, fuzzy
 msgid "Price the trade."
 msgstr "Оцените контракт."
 
@@ -4981,6 +5127,11 @@ msgstr "Вычитка и внесение правок в контент, от�
 msgid "Proofreader"
 msgstr "Корректор"
 
+#, fuzzy
+#| msgid "BIEL Prospectus"
+msgid "Prospectus"
+msgstr "Проспект BIEL"
+
 msgid "Proven knowledge of auditing standards, procedures, laws, rules and regulations are an added advantage"
 msgstr "Подтверждённые знания стандартов аудита, процедур, законов, правил и нормативных положений - дополнительное преимущество"
 
@@ -5049,6 +5200,9 @@ msgstr "Внесите пароль заново"
 
 msgid "Read"
 msgstr "Читать"
+
+msgid "Read about the features, characteristics, benefits, and risks of binary options in the prospectus of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
+msgstr ""
 
 msgid "Read about the five types of trade offered by %1."
 msgstr "Узнайте о пяти типах контрактов, предлагаемых на %1."
@@ -5128,6 +5282,17 @@ msgstr "Откройте счет"
 msgid "Register to become a tester using the links below:"
 msgstr "Зарегистрируйтесь, чтобы стать тестировщиком, нажав на ссылку ниже:"
 
+msgid "Regulator:"
+msgstr ""
+
+msgid "Regulators:"
+msgstr ""
+
+#, fuzzy
+#| msgid "Use of Information"
+msgid "Regulatory Information"
+msgstr "Использование информации"
+
 msgid "Related experience in the financial services industry"
 msgstr "Опыт работы в смежных областях финансовых услуг"
 
@@ -5163,8 +5328,11 @@ msgstr "Изменить пароль"
 msgid "Reset to Original Settings"
 msgstr "Восстановить исходные настройки"
 
+#, fuzzy
 msgid "Resolve complex customer care issues in the best interest of our global clients and the company"
-msgstr "Разрешение сложных вопросов из области обслуживания клиентов в интересах наших мировых клиентов и самой компании"
+msgstr ""
+"Разрешение сложных вопросов из области обслуживания клиентов в интересах "
+"наших мировых клиентов и самой компании"
 
 msgid "Resources"
 msgstr "Полезное"
@@ -5206,7 +5374,9 @@ msgid "Returns above 100% on simple <a href='%1' class='pjaxload'>rise/fall</a> 
 msgstr "Выплата свыше 100% на простых контрактах <a href='%1' class='pjaxload'>Повышение/Падение</a>."
 
 msgid "Returns above 1000% on <a href='%1' class='pjaxload'>higher/lower</a> and <a href='%2' class='pjaxload'>touch/no-touch</a> trades."
-msgstr "Выигрыш свыше 1000% на контрактах <a href='%1' class='pjaxload'>выше/ниже</a> и <a href='%2' class='pjaxload'>касание/нет касания</a>."
+msgstr ""
+"Прибыль свыше 1000% на контрактах <a href='%1' class='pjaxload'>выше/ниже</a>"
+" и <a href='%2' class='pjaxload'>касание/нет касания</a>."
 
 msgid "Review suspicious account transactions"
 msgstr "Просмотр подозрительных транзакций на счете"
@@ -5717,9 +5887,6 @@ msgstr "Прекращение действия Соглашения по обо
 msgid "Termination of this Agreement shall not prejudice any rights of any party which may have arisen on or before the date of termination."
 msgstr "Прекращение действия данного Соглашения не повлияет на права любой из сторон, которые были в силе до или на момент прекращения действия Соглашения."
 
-msgid "Terms"
-msgstr "Условия"
-
 msgid "Terms & Conditions"
 msgstr "Правила и условия"
 
@@ -5758,9 +5925,6 @@ msgstr "Правила и условия %1;"
 
 msgid "The %1 website is protected by certain copyrights."
 msgstr "Сайт %1 защищен авторскими правами."
-
-msgid "The <span itemprop='brand'>%1</span> service (formerly known as BetOnMarkets.com) is owned and operated by Binary Ltd. Fully licensed and regulated, %1 has been providing financial trading to a worldwide audience of over 1,000,000 accounts since <span itemprop='foundingdate'>1999</span>."
-msgstr "Сайт <span itemprop='brand'>%1</span> (ранее известный как BetOnMarkets.com) является собственностью и находится под управлением группы Binary Ltd. Полностью лицензированный и регулируемый сайт %1 предоставляет услуги финансовой торговли на более чем 1,000,000 счетов с <span itemprop='foundingdate'>1999 года</span>."
 
 msgid "The <strong>Premier Platform</strong> for Binary Options Trading"
 msgstr "<strong>Первоклассная платформа</strong> для торговли бинарными опционами"
@@ -5912,6 +6076,9 @@ msgstr "Индекс GBP является взвешенным индексом,
 msgid "The Payment Agent facility is currently not available in your country."
 msgstr "Оплата через платежного агента в данный момент недоступна для Вашей страны."
 
+msgid "The Pillar 3 disclosure report of Binary Investments (Europe) Limited has been prepared in accordance with the Capital Requirements Directive IV and the Capital Requirements Regulation. Read our Pillar 3 disclosure report to understand how we comply with market discipline as a market participant."
+msgstr ""
+
 msgid "The Program"
 msgstr "Программа"
 
@@ -5970,7 +6137,9 @@ msgid "The barrier of a binary option trade is the price target you set for the 
 msgstr "Барьер бинарного опциона - это ценовой уровень, который Вы устанавливаете для данного актива. Вы можете выбрать контракты, которые предполагают, что рынок останется ниже или поднимется по отношению к заданному барьеру, или что он останется между двумя барьерами."
 
 msgid "The barrier(s) you choose defines your position and triggers your payout."
-msgstr "Выбранный барьер определяет уровень, задевание которого приведет к выигрышу и выплате."
+msgstr ""
+"Выбранный барьер определяет уровень, касание которого приведет к выигрышу и "
+"выплате."
 
 msgid "The best promotional tools and robust online reporting"
 msgstr "Лучшие партнерские инструменты и удобная система информации по клиентам"
@@ -6023,6 +6192,7 @@ msgstr "The customer agrees they understand each the following statements regard
 msgid "The duration is the length of a purchased trade (see 'contract period')."
 msgstr "Продолжительность - это временной период купленного контракта (см.\"период контракта\")."
 
+#, fuzzy
 msgid "The easiest way to get started in the financial markets"
 msgstr "Простой способ начала работы на финансовых рынках"
 
@@ -6112,7 +6282,9 @@ msgid "The resale price indicates a contract's current market price. Resale pric
 msgstr "Цена перепродажи показывает настоящую рыночную цену контракта. Эта цена основана на лучшем возможном предложении и может предлагаться не всегда после приобретения контракта. Смотрите \"Опция продажи\" для подробностей относительно досрочной продажи контрактов."
 
 msgid "The return is the money realized when the contract expires (see 'Payout')."
-msgstr "Выигрыш - это сумма, которую трейдер получает при окончании контракта (см.\"Выплата\")."
+msgstr ""
+"Прибыль - это сумма, которую трейдер получает при окончании контракта (см.\""
+"Выплата\")."
 
 msgid "The right is also reserved to amend or change the rules and scope of this service from time to time. Any change to the rules made whilst the site is in operation will not apply retrospectively and will only apply to acquisitions of financial contracts made after such change. It is the Company's responsibility to notify Clients before any changes to its terms come into effect."
 msgstr "Компания также сохраняет за собой право вносить изменения в условия предоставления услуг в любое время, по мере необходимости. Любое изменение не будет влиять на уже исполненные контракты и будет применяться лишь по отношению к контрактам, приобретённым после внесения изменений. Компания обязуется уведомлять Клиента заблаговременно, до вступления в силу каких-либо изменений."
@@ -6413,7 +6585,7 @@ msgid "Trade all market conditions"
 msgstr "Торгуйте в любых условиях рынков"
 
 msgid "Trade in the world's financial markets in a simple, user-friendly platform."
-msgstr "Работа на мировых финансовых рынках на простой для использования платформе."
+msgstr "Работа на мировых финансовых рынках на простой и удобной платформе."
 
 msgid "Trade only with money you can afford to lose. Do not trade with borrowed money."
 msgstr "Покупайте контракты только на те суммы, которые можете позволить себе потерять. Никогда не покупайте контракты на занятые деньги."
@@ -8064,6 +8236,9 @@ msgstr ""
 msgid "{JAPAN ONLY}In the lower panel you can also choose to see your current portfolio with live valuations and quick access to sell-back. Alternatively you can view a live, customizable chart with many add-on features; or see more detailed explanations of the type of option selected; or examine recent settlement prices for expired options."
 msgstr ""
 
+msgid "{JAPAN ONLY}Instant sell-back of position available until 2 minutes prior to judgement time"
+msgstr ""
+
 msgid "{JAPAN ONLY}Introduction to Binary Options"
 msgstr "{JAPAN ONLY}Introduction to Binary Options"
 
@@ -8547,6 +8722,11 @@ msgstr "404"
 msgid "Why Us"
 msgstr "Почему мы"
 
+#, fuzzy
+#| msgid "Duration"
+msgid "Regulation"
+msgstr "Продолжительность"
+
 msgid "Styles"
 msgstr "Стили"
 
@@ -8591,6 +8771,24 @@ msgstr "Информация о счете"
 
 msgid "Terms and Conditions Approval"
 msgstr "Согласие с правилами и условиями"
+
+#~ msgid "BIEL Pillar III"
+#~ msgstr "Принципы BIEL III"
+
+#~ msgid "Binary (C.R.) S.A., registered in Costa Rica."
+#~ msgstr "Компания Binary (C.R.) S.A. зарегистрирована в Коста-Рике."
+
+#~ msgid "European Union residents with the exception of the UK, who wish to trade investment products, will have their account opened with Binary Investments (Europe) Ltd."
+#~ msgstr "Для резидентов Евросоюза, кроме Соединенного Королевства Великобритании и Северной Ирландии, желающих торговать на инвестиционных продуктах, счет будет открыт под юрисдикцией Binary Investment (Europe) Ltd."
+
+#~ msgid "Group Information"
+#~ msgstr "О компании"
+
+#~ msgid "Terms"
+#~ msgstr "Условия"
+
+#~ msgid "The <span itemprop='brand'>%1</span> service (formerly known as BetOnMarkets.com) is owned and operated by Binary Ltd. Fully licensed and regulated, %1 has been providing financial trading to a worldwide audience of over 1,000,000 accounts since <span itemprop='foundingdate'>1999</span>."
+#~ msgstr "Сайт <span itemprop='brand'>%1</span> (ранее известный как BetOnMarkets.com) является собственностью и находится под управлением группы Binary Ltd. Полностью лицензированный и регулируемый сайт %1 предоставляет услуги финансовой торговли на более чем 1,000,000 счетов с <span itemprop='foundingdate'>1999 года</span>."
 
 #~ msgid "min 1,000 and max 100,000"
 #~ msgstr "мин. 1,000 и макс. 100,000"
@@ -8860,9 +9058,6 @@ msgstr "Согласие с правилами и условиями"
 
 #~ msgid "Account balance : %1 %2"
 #~ msgstr "Баланс счета: %1 %2"
-
-#~ msgid "Binary.com Property"
-#~ msgstr "Собственность Binary.com"
 
 #~ msgid "Binary.com academy"
 #~ msgstr "Академия Binary.com"

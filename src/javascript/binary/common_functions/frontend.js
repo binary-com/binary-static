@@ -581,14 +581,6 @@ function show_residence_form() {
     });
 }
 
-$(function() {
-    $( "#accordion" ).accordion({
-      heightStyle: "content",
-      collapsible: true,
-      active: false
-    });
-});
-
 var $buoop = {
   vs: {i:10, f:39, o:30, s:5, c:39},
   l: page.language().toLowerCase(),
