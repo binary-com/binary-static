@@ -1189,6 +1189,7 @@ Page.prototype = {
                 page.text.localize('This is a staging server - For testing purposes only') + ' - ') +
                 page.text.localize('The server <a href="[_1]">endpoint</a> is: [_2]', [page.url.url_for('endpoint'), server]);
             $('#end-note').html(message).removeClass('invisible');
+            $('#footer').css('padding-bottom', $('#end-note').height());
         }
     },
     // type can take one or more params, separated by comma
