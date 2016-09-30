@@ -56,6 +56,9 @@ var SettingsDetailsWS = (function() {
 
         $('#lblCountry').text(data.country || '-');
         $('#lblEmail').text(data.email);
+        if (data.email_consent) {
+            $('#email_consent').prop('checked', 'true');
+        }
 
         if (page.client.is_virtual()) { // Virtual Account
             $(RealAccElements).remove();
@@ -241,6 +244,11 @@ var SettingsDetailsWS = (function() {
         Object.keys(data).forEach(function(key) {
             req[key] = data[key];
         });
+        if ($('#email_consent:checked').length > 0) {
+            req.email_consent = 1;
+        } else {
+            req.email_consent = 0;
+        }
         BinarySocket.send(req);
     }
 
