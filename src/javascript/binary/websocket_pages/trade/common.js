@@ -911,10 +911,7 @@ function showHighchart(){
   if (window.chartAllowed) {
     chartFrameSource();
   } else {
-    /*
-     * Prevent IE memory leak (http://stackoverflow.com/questions/8407946).
-     */
-    document.getElementById('chart_frame').src = 'about:blank';
+    chartFrameCleanup();
     $('#trade_live_chart').hide();
     $('#chart-error').text(page.text.localize('Chart is not available for this underlying.'))
                      .show();
@@ -922,8 +919,16 @@ function showHighchart(){
   }
 }
 
+function chartFrameCleanup() {
+    /*
+     * Prevent IE memory leak (http://stackoverflow.com/questions/8407946).
+     */
+    document.getElementById('chart_frame').src = 'about:blank';
+}
+
 function chartFrameSource() {
-  if ($('#tab_graph').hasClass('active') && (sessionStorage.getItem('old_underlying') !== sessionStorage.getItem('underlying') || $('#chart_frame').attr('src') === '' || $('#chart_frame').attr('src') === 'about:blank')) {
+  if ($('#tab_graph').hasClass('active') && (sessionStorage.getItem('old_underlying') !== sessionStorage.getItem('underlying') || /^(|about:blank)$/.test($('#chart_frame').attr('src')))) {
+      chartFrameCleanup();
       setChartSource();
       sessionStorage.setItem('old_underlying', document.getElementById('underlying').value);
   }
@@ -1163,6 +1168,7 @@ module.exports = {
     reloadPage: reloadPage,
     addComma: addComma,
     showHighchart: showHighchart,
+    chartFrameCleanup: chartFrameCleanup,
     chartFrameSource: chartFrameSource,
     displayContractForms: displayContractForms,
     displayMarkets: displayMarkets,
