@@ -401,6 +401,19 @@
             </div>
         </fieldset>
 
+        <fieldset class="hidden RealAcc JpAcc">
+            <legend>[% l('Preferences') %]</legend>
+
+            <div class="gr-padding-10 gr-row rowName clear">
+                <div class="gr-4 form_label">
+                    <label>[% l('Receive marketing emails') %]</label>
+                </div>
+                <div class="gr-8">
+                    <input type="checkbox" id="email_consent"></input>
+                </div>
+            </div>
+        </fieldset>
+
         <fieldset class="formlayout settings sticky hidden RealAcc JpAcc" id="formlayout">
             <div class="gr-row gr-padding-10">
                 <div class="gr-4"></div>
