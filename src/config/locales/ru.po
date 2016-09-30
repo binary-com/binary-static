@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: BOM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-09-30 10:17+0000\n"
-"Last-Translator: Ruslan <ruslan.mukhametdinov.90@gmail.com>\n"
+"PO-Revision-Date: 2016-09-30 10:31+0000\n"
+"Last-Translator: Alina Demidova <alinademidova1@gmail.com>\n"
 "Language-Team: Russian "
 "<https://hosted.weblate.org/projects/binary/static/ru/>\n"
 "Language: ru\n"
@@ -6405,7 +6405,7 @@ msgid "The right is also reserved to amend or change the rules and scope of this
 msgstr "Компания также сохраняет за собой право вносить изменения в условия предоставления услуг в любое время, по мере необходимости. Любое изменение не будет влиять на уже исполненные контракты и будет применяться лишь по отношению к контрактам, приобретённым после внесения изменений. Компания обязуется уведомлять Клиента заблаговременно, до вступления в силу каких-либо изменений."
 
 msgid "The server <a href=\"%1\">endpoint</a> is: %2"
-msgstr ""
+msgstr "<a href=\"%1\">Конечная точка</a> сервера: %2"
 
 msgid "The smoothing and filtering algorithms described above."
 msgstr "Алгоритм выравнивания и фильтрации котировок, который описан выше."
@@ -6559,7 +6559,7 @@ msgid "This field is required."
 msgstr "Данное поле является необходимым."
 
 msgid "This is a staging server - For testing purposes only"
-msgstr ""
+msgstr "Это вспомогательный сервер, применяемый лишь для тестирования"
 
 msgid "This is another award we really savour. Trade2win is a portal for active traders seeking to profit from stocks, futures, options and forex, and these traders award us silver (we are just pipped for gold by Betfair). It means active traders worldwide rate our trading platform extremely highly."
 msgstr "Есть еще одна награда, которой мы очень дорожим. Trade2win является порталом для активных инвесторов, которые желают заработать на акциях, опционах и рынке форекс, и выбор этих трейдеров принес нам серебряную награду (золото досталось Betfair). Для нас это означает всемирное признание и высокую оценку нашей платформы активными трейдерами."
@@ -7033,10 +7033,8 @@ msgstr "Лимиты на торговлю и вывод."
 msgid "Virtual Account"
 msgstr "Демо-счет"
 
-#, fuzzy
-#| msgid "Virtual money account"
 msgid "Virtual money credit to account"
-msgstr "Виртуальный счет"
+msgstr "Виртуальный кредит на счёт"
 
 msgid "Volatility Index Markets"
 msgstr "Рынки Индекса волатильности"
@@ -7115,6 +7113,10 @@ msgstr "Предоставляя Вам самое лучшее исполнен
 
 msgid "We cannot accept applications from anyone who is a Foreign Politically Exposed Person, which is defined by the Act on Prevention of Transfer of Criminal Proceeds 2007 as anyone in the following categories:"
 msgstr ""
+"Согласно Акту о предотвращении перечисления доходов от преступной "
+"деятельности от 2007 г., мы не можем рассматривать заявления от лиц, "
+"являющихся иностранными политическими деятелями и входящими в одну из "
+"следующих категорий:"
 
 msgid "We do it again. BetOnMarkets.com follows up our 2007 award by being voted 'Best Fixed-Odds Financial Trading Provider' for 2008."
 msgstr "Мы снова это сделали. BetOnMarkets.com повторяет успех 2007 года, став по результатам голосования 'Лучшим предоставителем финансового трейдинга с ограниченным коэффициентом выигрыша' в 2008."
@@ -8085,9 +8087,15 @@ msgstr "{JAPAN ONLY}%1 %2 payout if %3 touches Exercise price through close on %
 
 msgid "{JAPAN ONLY}%1 is fully licensed and regulated by the FFAJ, which requires us to maintain and report a safe level of operating capital."
 msgstr ""
+"{JAPAN ONLY}%1 is fully licensed and regulated by the FFAJ, which requires "
+"us to maintain and report a safe level of operating capital."
 
 msgid "{JAPAN ONLY}%1 was one of the first active Binary Options brokers and has a proven track record of delivering first class service and maintaining an award winning trading platform, while delivering strong financial performance to our shareholders, for more than 15 years worldwide."
 msgstr ""
+"{JAPAN ONLY}%1 was one of the first active Binary Options brokers and has a "
+"proven track record of delivering first class service and maintaining an "
+"award winning trading platform, while delivering strong financial "
+"performance to our shareholders, for more than 15 years worldwide."
 
 msgid "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
 msgstr "{JAPAN ONLY}60,100,000 JPY (as of July 1, 2016)"
@@ -8163,6 +8171,9 @@ msgstr "{JAPAN ONLY}As the time to the exercise point shortens, the time-value o
 
 msgid "{JAPAN ONLY}As well as our Japanese financial licence, we also operate in European jurisdictions with our Malta Financial Services Type 3 Licence, and under various gaming licences around the world."
 msgstr ""
+"{JAPAN ONLY}As well as our Japanese financial licence, we also operate in "
+"European jurisdictions with our Malta Financial Services Type 3 Licence, and "
+"under various gaming licences around the world."
 
 msgid "{JAPAN ONLY}Association of join"
 msgstr "{JAPAN ONLY}Association of join"
@@ -8178,6 +8189,8 @@ msgstr "{JAPAN ONLY}Binary options have lower risk than vanilla options for opti
 
 msgid "{JAPAN ONLY}By law we are required to manage the assets of our customers and our company separately"
 msgstr ""
+"{JAPAN ONLY}By law we are required to manage the assets of our customers and "
+"our company separately"
 
 msgid "{JAPAN ONLY}Capital"
 msgstr "{JAPAN ONLY}Capital"
@@ -8187,6 +8200,8 @@ msgstr "{JAPAN ONLY}Capital Adequacy Ratio (CAR)"
 
 msgid "{JAPAN ONLY}Choose direction of the market and the exercise price you wish to target, and hit the green buy button to instantly trade"
 msgstr ""
+"{JAPAN ONLY}Choose direction of the market and the exercise price you wish "
+"to target, and hit the green buy button to instantly trade"
 
 msgid "{JAPAN ONLY}Company Profile"
 msgstr "{JAPAN ONLY}Company Profile"
@@ -8226,12 +8241,16 @@ msgstr "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
 
 msgid "{JAPAN ONLY}Distributed back to you by the direction of the beneficiary agent (B)"
 msgstr ""
+"{JAPAN ONLY}Distributed back to you by the direction of the beneficiary "
+"agent (B)"
 
 msgid "{JAPAN ONLY}Does Not Touch"
 msgstr "{JAPAN ONLY}Does Not Touch"
 
 msgid "{JAPAN ONLY}Don't forget you can practice as much as you like using your Virtual / Demo account."
 msgstr ""
+"{JAPAN ONLY}Don't forget you can practice as much as you like using your "
+"Virtual / Demo account."
 
 msgid "{JAPAN ONLY}Download"
 msgstr "{JAPAN ONLY}Download"
@@ -8263,10 +8282,8 @@ msgstr "{JAPAN ONLY}Even if the option is exercise or not exercised, the origina
 msgid "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
 msgstr "{JAPAN ONLY}Even though losses in binary options are limited, it is still necessary to take care not to engage in excessive speculative trading and to moderate your transactions volume."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}minutes"
 msgid "{JAPAN ONLY}Executing trades"
-msgstr "{JAPAN ONLY}minutes"
+msgstr "{JAPAN ONLY}Executing trades"
 
 msgid "{JAPAN ONLY}FX Rate"
 msgstr "{JAPAN ONLY}FX Rate"
@@ -8321,6 +8338,10 @@ msgstr "{JAPAN ONLY}For full details of the documents we can accept please downl
 
 msgid "{JAPAN ONLY}Full details of the confirmed trade will then be shown, alongside a live updating graph showing the spot FX rate relative to the barrier(s) chosen. A sell-back price is available should you wish to close-out the trade."
 msgstr ""
+"{JAPAN ONLY}Full details of the confirmed trade will then be shown, "
+"alongside a live updating graph showing the spot FX rate relative to the "
+"barrier(s) chosen. A sell-back price is available should you wish to close-"
+"out the trade."
 
 msgid "{JAPAN ONLY}Goes Outside"
 msgstr "{JAPAN ONLY}Goes Outside"
@@ -8363,6 +8384,11 @@ msgstr "{JAPAN ONLY}If the exercise prices and exercise times are the same for a
 
 msgid "{JAPAN ONLY}If the market price has changed significantly it may not be possible to execute a trade at a delayed price displayed in a customer's browser. Alternatively you may pay a lower price for the option if the price has moved quickly in that direction. Please see our summary of specifications document for full details of our 'slippage' rules."
 msgstr ""
+"{JAPAN ONLY}If the market price has changed significantly it may not be "
+"possible to execute a trade at a delayed price displayed in a customer's "
+"browser. Alternatively you may pay a lower price for the option if the price "
+"has moved quickly in that direction. Please see our summary of "
+"specifications document for full details of our 'slippage' rules."
 
 msgid "{JAPAN ONLY}If the probablility of a payout is 50% then when the potential payout is less than 100% of the price paid for the option, the expected return on the investment will be less than 100%."
 msgstr "{JAPAN ONLY}If the probablility of a payout is 50% then when the potential payout is less than 100% of the price paid for the option, the expected return on the investment will be less than 100%."
@@ -8423,12 +8449,21 @@ msgstr "{JAPAN ONLY}In order to open a trading account for you we will need to t
 
 msgid "{JAPAN ONLY}In the event of our bankruptcy, your assets will be safeguarded by Japan Securities Finance Trust & Banking Company Ltd"
 msgstr ""
+"{JAPAN ONLY}In the event of our bankruptcy, your assets will be safeguarded "
+"by Japan Securities Finance Trust & Banking Company Ltd"
 
 msgid "{JAPAN ONLY}In the lower panel you can also choose to see your current portfolio with live valuations and quick access to sell-back. Alternatively you can view a live, customizable chart with many add-on features; or see more detailed explanations of the type of option selected; or examine recent settlement prices for expired options."
 msgstr ""
+"{JAPAN ONLY}In the lower panel you can also choose to see your current "
+"portfolio with live valuations and quick access to sell-back. Alternatively "
+"you can view a live, customizable chart with many add-on features; or see "
+"more detailed explanations of the type of option selected; or examine recent "
+"settlement prices for expired options."
 
 msgid "{JAPAN ONLY}Instant sell-back of position available until 2 minutes prior to judgement time"
 msgstr ""
+"{JAPAN ONLY}Instant sell-back of position available until 2 minutes prior to "
+"judgement time"
 
 msgid "{JAPAN ONLY}Introduction to Binary Options"
 msgstr "{JAPAN ONLY}Introduction to Binary Options"
@@ -8471,6 +8506,8 @@ msgstr "{JAPAN ONLY}Knowledge test list item 5"
 
 msgid "{JAPAN ONLY}Live analysis of trade and charting of spot relative to trade barriers"
 msgstr ""
+"{JAPAN ONLY}Live analysis of trade and charting of spot relative to trade "
+"barriers"
 
 msgid "{JAPAN ONLY}Lower"
 msgstr "{JAPAN ONLY}Lower"
@@ -8481,13 +8518,13 @@ msgstr "{JAPAN ONLY}Main business"
 msgid "{JAPAN ONLY}March 2016"
 msgstr "{JAPAN ONLY}March 2016"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}years"
 msgid "{JAPAN ONLY}Matters to attend:"
-msgstr "{JAPAN ONLY}years"
+msgstr "{JAPAN ONLY}Matters to attend:"
 
 msgid "{JAPAN ONLY}No fees, no commissions, you simply pay the price of the stated on the buy button."
 msgstr ""
+"{JAPAN ONLY}No fees, no commissions, you simply pay the price of the stated "
+"on the buy button."
 
 msgid "{JAPAN ONLY}No space between last name and first name"
 msgstr "{JAPAN ONLY}No space between last name and first name"
@@ -8530,12 +8567,21 @@ msgstr "{JAPAN ONLY}Our Real Money Account opening procedure has 4 steps:"
 
 msgid "{JAPAN ONLY}Our customer support are available to help you if you are unsure about how to use our trading tools. Please email them at <a href=\"mailto:%1\">%1</a>"
 msgstr ""
+"{JAPAN ONLY}Our customer support are available to help you if you are unsure "
+"about how to use our trading tools. Please email them at <a href=\"mailto:%"
+"1\">%1</a>"
 
 msgid "{JAPAN ONLY}Our internal management control officer and beneficiary representative is required to confirm the amount of funds that must be held in the trust bank count every day"
 msgstr ""
+"{JAPAN ONLY}Our internal management control officer and beneficiary "
+"representative is required to confirm the amount of funds that must be held "
+"in the trust bank count every day"
 
 msgid "{JAPAN ONLY}Our trading page provides an overall view of all the option contracts available to trade, showing the live buy and sell prices and providing quick selection and trading buttons."
 msgstr ""
+"{JAPAN ONLY}Our trading page provides an overall view of all the option "
+"contracts available to trade, showing the live buy and sell prices and "
+"providing quick selection and trading buttons."
 
 msgid "{JAPAN ONLY}Payout Amount"
 msgstr "{JAPAN ONLY}Payout Amount"
@@ -8558,10 +8604,8 @@ msgstr "{JAPAN ONLY}Please download our Pre-Contract Documents which you must co
 msgid "{JAPAN ONLY}Please download our Summary of Specifications which lists all the details of our trade types, rules and conditions for trading etc."
 msgstr "{JAPAN ONLY}Please download our Summary of Specifications which lists all the details of our trade types, rules and conditions for trading etc."
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}years"
 msgid "{JAPAN ONLY}Please note:"
-msgstr "{JAPAN ONLY}years"
+msgstr "{JAPAN ONLY}Please note:"
 
 msgid "{JAPAN ONLY}Pre-Contract Documents"
 msgstr "{JAPAN ONLY}Pre-Contract Documents"
@@ -8612,27 +8656,19 @@ msgid "{JAPAN ONLY}Section 5: Calculation"
 msgstr "{JAPAN ONLY}Section 5: Calculation"
 
 msgid "{JAPAN ONLY}Segregate all customers' money to a trust account"
-msgstr ""
+msgstr "{JAPAN ONLY}Segregate all customers' money to a trust account"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Trading Period"
 msgid "{JAPAN ONLY}Select a trading period"
-msgstr "{JAPAN ONLY}Trading Period"
+msgstr "{JAPAN ONLY}Select a trading period"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}FX Rate"
 msgid "{JAPAN ONLY}Select an FX rate"
-msgstr "{JAPAN ONLY}FX Rate"
+msgstr "{JAPAN ONLY}Select an FX rate"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Option Type"
 msgid "{JAPAN ONLY}Select an option type"
-msgstr "{JAPAN ONLY}Option Type"
+msgstr "{JAPAN ONLY}Select an option type"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Goes Outside"
 msgid "{JAPAN ONLY}Select payout size"
-msgstr "{JAPAN ONLY}Goes Outside"
+msgstr "{JAPAN ONLY}Select payout size"
 
 msgid "{JAPAN ONLY}Short positions in FX Binary Options must be covered by initial margin and any further losses must be covered by further margin deposits."
 msgstr "{JAPAN ONLY}Short positions in FX Binary Options must be covered by initial margin and any further losses must be covered by further margin deposits."
@@ -8669,6 +8705,9 @@ msgstr "{JAPAN ONLY}The Financial Futures Association of Japan"
 
 msgid "{JAPAN ONLY}The beneficiary agent (B), who is an external lawyer, is bound to perform this function in the event that our Company is not able to return your funds directly"
 msgstr ""
+"{JAPAN ONLY}The beneficiary agent (B), who is an external lawyer, is bound "
+"to perform this function in the event that our Company is not able to return "
+"your funds directly"
 
 msgid "{JAPAN ONLY}The buyer of a vanilla option can choose whether to exercise the option or not. His loss is limited to the price paid for the option, whereas his potential profit is unlimited."
 msgstr "{JAPAN ONLY}The buyer of a vanilla option can choose whether to exercise the option or not. His loss is limited to the price paid for the option, whereas his potential profit is unlimited."
@@ -8699,6 +8738,8 @@ msgstr "{JAPAN ONLY}The price of an option can be affected by the underlying ass
 
 msgid "{JAPAN ONLY}The sell-back execution level will then be confirmed and the position will be closed."
 msgstr ""
+"{JAPAN ONLY}The sell-back execution level will then be confirmed and the "
+"position will be closed."
 
 msgid "{JAPAN ONLY}The seller of a vanilla option can not choose whether to exercise the option or not. His profit is limited to the price received for the option, whereas his potential loss is unlimited and could be substantial."
 msgstr "{JAPAN ONLY}The seller of a vanilla option can not choose whether to exercise the option or not. His profit is limited to the price received for the option, whereas his potential loss is unlimited and could be substantial."
@@ -8726,6 +8767,8 @@ msgstr "{JAPAN ONLY}This knowledge test is required by law. As we provide the te
 
 msgid "{JAPAN ONLY}This popup window can also be activated from the portfolio panel, and portfolio page, by clicking the Trade View button."
 msgstr ""
+"{JAPAN ONLY}This popup window can also be activated from the portfolio "
+"panel, and portfolio page, by clicking the Trade View button."
 
 msgid "{JAPAN ONLY}This test is for the purpose of confirming if the customers have basic knowledge related to options trading ."
 msgstr "{JAPAN ONLY}This test is for the purpose of confirming if the customers have basic knowledge related to options trading."
@@ -8735,6 +8778,8 @@ msgstr "{JAPAN ONLY}To avoid or hedge the future price of an underlying asset wh
 
 msgid "{JAPAN ONLY}To buy an option, simply click on the price button to execute the trade."
 msgstr ""
+"{JAPAN ONLY}To buy an option, simply click on the price button to execute "
+"the trade."
 
 msgid "{JAPAN ONLY}To compensate for any rise in the price of an underlying asset that you intend to buy in future, you should buy a call option."
 msgstr "{JAPAN ONLY}To compensate for any rise in the price of an underlying asset that you intend to buy in future, you should buy a call option."
@@ -8745,10 +8790,8 @@ msgstr "{JAPAN ONLY}To invest a binary options investment accurately, the custom
 msgid "{JAPAN ONLY}Touches"
 msgstr "{JAPAN ONLY}Touches"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Trading Guide"
 msgid "{JAPAN ONLY}Track your trade in real time:"
-msgstr "{JAPAN ONLY}Trading Guide"
+msgstr "{JAPAN ONLY}Track your trade in real time:"
 
 msgid "{JAPAN ONLY}Trading & Hedging"
 msgstr "{JAPAN ONLY}Trading & Hedging"
@@ -8759,10 +8802,8 @@ msgstr "{JAPAN ONLY}Trading Guide"
 msgid "{JAPAN ONLY}Trading Period"
 msgstr "{JAPAN ONLY}Trading Period"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Trading Guide"
 msgid "{JAPAN ONLY}Trading manual"
-msgstr "{JAPAN ONLY}Trading Guide"
+msgstr "{JAPAN ONLY}Trading manual"
 
 msgid "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
 msgstr "{JAPAN ONLY}Type I Financial Instruments Business based on the Financial Instruments and Exchange Law"
@@ -8781,21 +8822,34 @@ msgstr "{JAPAN ONLY}We are required to request copies of your My Number Card as 
 
 msgid "{JAPAN ONLY}We offer a full range of binary option types including ladders, touch, and range options."
 msgstr ""
+"{JAPAN ONLY}We offer a full range of binary option types including ladders, "
+"touch, and range options."
 
 msgid "{JAPAN ONLY}We offer real time prices calculated from the same rates that bank and securities companies use."
 msgstr ""
+"{JAPAN ONLY}We offer real time prices calculated from the same rates that "
+"bank and securities companies use."
 
 msgid "{JAPAN ONLY}We offer trading periods from as short as 2 hours to as long as one-year, in predefined contract series."
 msgstr ""
+"{JAPAN ONLY}We offer trading periods from as short as 2 hours to as long as "
+"one-year, in predefined contract series."
 
 msgid "{JAPAN ONLY}We offer transparent 2-way pricing, allowing equal chance to trade in either direction of the market."
 msgstr ""
+"{JAPAN ONLY}We offer transparent 2-way pricing, allowing equal chance to "
+"trade in either direction of the market."
 
 msgid "{JAPAN ONLY}We pride ourselves on our responsible trading and high ethical standards, and we only offer our service in jurisdictions where we hold the necessary licenses and legal registrations."
 msgstr ""
+"{JAPAN ONLY}We pride ourselves on our responsible trading and high ethical "
+"standards, and we only offer our service in jurisdictions where we hold the "
+"necessary licenses and legal registrations."
 
 msgid "{JAPAN ONLY}We will pass on any possible price improvements for orders in fast moving markets."
 msgstr ""
+"{JAPAN ONLY}We will pass on any possible price improvements for orders in "
+"fast moving markets."
 
 msgid "{JAPAN ONLY}When buying a vanilla call option, the break-even price at the exercise point is the strike price plus the option price paid in units of the underlying."
 msgstr "{JAPAN ONLY}When buying a vanilla call option, the break-even price at the exercise point is the strike price plus the option price paid in units of the underlying."
@@ -8814,29 +8868,40 @@ msgstr "{JAPAN ONLY}You can apply to open an account online. Simply click <a cla
 
 msgid "{JAPAN ONLY}You can protect your account value further by setting other limits to encourage trading discipline"
 msgstr ""
+"{JAPAN ONLY}You can protect your account value further by setting other "
+"limits to encourage trading discipline"
 
 msgid "{JAPAN ONLY}You can see the real-time value of your portfolio and access the trade view and analysis screen from which you can then choose to close the position:"
 msgstr ""
+"{JAPAN ONLY}You can see the real-time value of your portfolio and access the "
+"trade view and analysis screen from which you can then choose to close the "
+"position:"
 
 msgid "{JAPAN ONLY}You can sell-back your position at any time until 2 minutes before expiry to either cut your losses, or take your profits early"
 msgstr ""
+"{JAPAN ONLY}You can sell-back your position at any time until 2 minutes "
+"before expiry to either cut your losses, or take your profits early"
 
 msgid "{JAPAN ONLY}You can then review the performance of the trade and then sell-back to close the position if you wish, by clicking the sell-back button."
 msgstr ""
+"{JAPAN ONLY}You can then review the performance of the trade and then sell-"
+"back to close the position if you wish, by clicking the sell-back button."
 
 msgid "{JAPAN ONLY}You set your own personal daily loss limit"
-msgstr ""
+msgstr "{JAPAN ONLY}You set your own personal daily loss limit"
 
 msgid "{JAPAN ONLY}You will always know your maximum loss, as it is limited to the amount that you have paid"
 msgstr ""
+"{JAPAN ONLY}You will always know your maximum loss, as it is limited to the "
+"amount that you have paid"
 
-#, fuzzy
-#| msgid "Your funds are safe"
 msgid "{JAPAN ONLY}Your funds are safe"
-msgstr "Ваши средства в безопасности"
+msgstr "{JAPAN ONLY}Your funds are safe"
 
 msgid "{JAPAN ONLY}Your investments are immediately reflected in your account balance, so there is no further risk"
 msgstr ""
+"{JAPAN ONLY}Your investments are immediately reflected in your account "
+"balance, so there is no further risk"
 
 msgid "{JAPAN ONLY}day"
 msgstr "{JAPAN ONLY}day"
@@ -8918,10 +8983,8 @@ msgstr "Почему мы"
 msgid "Platforms"
 msgstr "О платформе"
 
-#, fuzzy
-#| msgid "Duration"
 msgid "Regulation"
-msgstr "Продолжительность"
+msgstr "Регулирование"
 
 msgid "Styles"
 msgstr "Стили"
