@@ -16,6 +16,7 @@ my @urls = (
     ['home'                , 'monthly', '1.00'],
     ['why-us'              , 'monthly', '0.80'],
     ['tour'                , 'monthly', '0.80'],
+    ['platforms'           , 'monthly', '0.80'],
     ['trading'             , 'monthly', '0.80'],
     ['contact'             , 'monthly', '0.80'],
     ['about-us'            , 'monthly', '0.80'],

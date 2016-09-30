@@ -69,6 +69,9 @@ var ViewPopupUI = (function() {
             }
         },
         disable_button: function (button) {
+            $('.open_contract_detailsws[disabled]').each(function() {
+                ViewPopupUI.enable_button($(this));
+            });
             button.attr('disabled', 'disabled');
             button.fadeTo(0, 0.5);
         },
