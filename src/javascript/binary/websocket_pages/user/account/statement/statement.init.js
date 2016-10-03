@@ -53,12 +53,14 @@ var StatementWS = (function(){
                             )
                         )
                     );
-            } else if(page.language().toLowerCase() === 'ja') {
-                $('#download_csv').removeClass('invisible').find('a').click(function(){StatementUI.exportCSV();});
+            } else {
+                $('#jump-to').parent().parent().removeClass('invisible');
+                if(page.language().toLowerCase() === 'ja') {
+                    $('#download_csv').removeClass('invisible').find('a').click(function(){StatementUI.exportCSV();});
+                }
             }
         }
         showLocalTimeOnHover('td.date');
-        $('#jump-to').parent().parent().removeClass('invisible');
     }
 
     function getNextBatchStatement(){
