@@ -3,7 +3,7 @@
         border: 1px solid $COLOR_LIGHT_GRAY;
         background-color: $COLOR_LIGHT_GRAY;
         width: 2px;
-        height: 80px;
+        height: 50px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -11,9 +11,6 @@
         margin-top: 30px;
     }
     .timeline {
-        width: 6%;
-        position: absolute;
-        margin: -3% 0 0 -3%;
         padding: 0;
     }
     .xquote div {
@@ -24,10 +21,10 @@
             margin-left: 0 !important;
         }
     }
-    @media screen and (max-width: 768px) {
-        .timeline {
-            width: 15%;
-            margin: -7% 0 0 -7%;
-        }
+    .full-height {
+        height: 100%;
+    }
+    .background-gray {
+        margin-top: -30px;
     }
 }
