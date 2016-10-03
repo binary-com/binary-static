@@ -96,7 +96,7 @@
                                     <div class="gr-3">
                                         <img class="full-height" src="[% request.url_for('images/pages/regulation/pillar.svg') %]">
                                     </div>
-                                    <div class="gr-9 gr-centered center-text quote-text">
+                                    <div class="gr-9 align-start quote-text">
                                         <a download="[% true %]" href="[% request.url_for('/download/BIEL_Pillar_3_Report.pdf') %]" target="_blank">
                                             [% l("Pillar 3 disclosure report") %]
                                         </a>
@@ -114,7 +114,7 @@
                                     <div class="gr-4">
                                         <img class="full-height" src="[% request.url_for('images/pages/regulation/prospectus.svg') %]">
                                     </div>
-                                    <div class="gr-6 gr-8-m gr-centered center-text quote-text">
+                                    <div class="gr-8 align-start quote-text">
                                         <a download="[% true %]" href="[% request.url_for('/download/BIEL_Prospectus.pdf') %]" target="_blank">
                                             [% l("Prospectus") %]
                                         </a>
