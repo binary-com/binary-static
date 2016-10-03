@@ -99,7 +99,8 @@ foreach my $m (@m) {
             current_route   => $current_route,
             affiliate_email => 'affiliates@binary.com',
             full_width      => $layout && $layout eq 'full_width',
-            get_started     => $layout && $layout eq 'get_started'
+            get_started     => $layout && $layout eq 'get_started',
+            japan_docs_url  => 'https://japan-docs.binary.com'
         );
 
         if ($title) {

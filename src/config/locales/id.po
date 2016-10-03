@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: I 18N\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-09-28 03:22+0000\n"
+"PO-Revision-Date: 2016-09-29 04:22+0000\n"
 "Last-Translator: Putri Kumala <putri@regentmarkets.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/binary/static/id/>\n"
 "Language: id\n"
@@ -130,9 +130,6 @@ msgstr "%1 dianugerahkan sebagai \"Broker Opsi Binary Terbaik\" dunia pada Konfr
 
 msgid "%1 is looking to recruit highly skilled, experienced designers who are passionate about developing attractive visuals for both online and offline applications."
 msgstr "%1 sedang mencari untuk merekrut seseorang yang sangat terampil, desainer berpengalaman yang bergairah tentang pengembangan visual yang menarik untuk kedua aplikasi baik itu online dan offline."
-
-msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
-msgstr "%1 tidak tersedia di Costa Rica dan tidak diatur atau diawasi oleh badan pengawas keuangan di Costa Rica."
 
 msgid "%1 is one of the oldest and most respected names in online binary trading."
 msgstr "%1 merupakan salah satu nama yang tertua dan dihormati pada trading online binary."
@@ -394,6 +391,16 @@ msgstr "4. Pilih Hasil"
 
 msgid "40 transactions or more in the past 12 months"
 msgstr "40 transaksi atau lebih pada 12 bulan terakhir"
+
+#, fuzzy
+#| msgid "6 months to 1 year"
+msgid "5 ticks to 1 year"
+msgstr "6 bulan hingga 1 tahun"
+
+#, fuzzy
+#| msgid "Last 200 ticks"
+msgid "5 to 10 ticks"
+msgstr "200 tick terakhir"
 
 msgid "5-10 million JPY"
 msgstr "5-10 juta JPY"
@@ -916,6 +923,26 @@ msgstr "Eksekutif Administrasi"
 msgid "Administrator"
 msgstr "Administrator"
 
+#, fuzzy
+#| msgid "Advanced Panel"
+msgid "Advanced Automation"
+msgstr "Panel Tingkat Lanjut"
+
+#, fuzzy
+#| msgid "main trading platform"
+msgid "Advanced CFD trading platform"
+msgstr "halaman utama trading"
+
+#, fuzzy
+#| msgid "Advanced Panel"
+msgid "Advanced Platforms"
+msgstr "Panel Tingkat Lanjut"
+
+#, fuzzy
+#| msgid "it is the leading binary option trading platform."
+msgid "Advanced binary options trading platform"
+msgstr "merupakan platform trading opsi binary terkemuka."
+
 msgid "Advanced knowledge of software design principles"
 msgstr "Pengetahuan lebih maju mengenai prinsip-prinsip desain perangkat lunak"
 
@@ -1001,6 +1028,9 @@ msgstr "Sebuah ketegasan, kepribadian mendorong penjualan, mampu beradaptasi den
 msgid "An error occured."
 msgstr "Terjadi error."
 
+msgid "Analyse the markets with an extensive range of indicators, price bands, and overlays."
+msgstr ""
+
 msgid "Analyze data regarding fraud, risk assessment, and anti-money laundering"
 msgstr "Menganalisis data mengenai penipuan, penilaian risiko, dan anti pencucian uang"
 
@@ -1024,6 +1054,9 @@ msgstr "Jawaban Pertanyaan Rahasia"
 
 msgid "Anti-Fraud Officer"
 msgstr "Petugas Anti-Penipuan"
+
+msgid "Any"
+msgstr ""
 
 msgid "Any changes in our privacy policy or security statement will be posted onto this website. In the event of material changes that directly affect the economic use of your personal information, we will request your prior authorisation in writing before effecting such change on your account."
 msgstr "Setiap perubahan dalam kebijakan privasi atau pernyataan keamanan kami akan diposting di website ini. Jika terdapat perubahan materi yang berhubungan dengan informasi pribadi Anda maka kami akan meminta pembuktian secara tertulis sebelum melakukan perubahan pada akun Anda."
@@ -1208,6 +1241,22 @@ msgstr "Otorisasi akun Anda."
 msgid "Authorised Applications"
 msgstr "Aplikasi Resmi"
 
+msgid "Auto-trader programming tool"
+msgstr ""
+
+msgid "Automate your trading strategies with our simple, \"drag-and-drop\" bot creation tool."
+msgstr ""
+
+#, fuzzy
+#| msgid "Available currencies"
+msgid "Available Markets"
+msgstr "Mata uang yang tersedia"
+
+#, fuzzy
+#| msgid "Available currencies"
+msgid "Available Products"
+msgstr "Mata uang yang tersedia"
+
 msgid "Available payment methods"
 msgstr "Metode pembayaran yang tersedia"
 
@@ -1216,12 +1265,6 @@ msgstr "Menghindari kebutuhan untuk memiliki e-wallet"
 
 msgid "Award-winning, patented financial trading platform"
 msgstr "Dipatenkan sebagai platform trading finansial"
-
-msgid "BIEL Pillar III"
-msgstr "BIEL Pillar III"
-
-msgid "BIEL Prospectus"
-msgstr "Prospektus BIEL"
 
 msgid "BIEL Terms"
 msgstr "Ketentuan BIEL"
@@ -1265,6 +1308,9 @@ msgstr "Barrier offset"
 msgid "Barrier(s)"
 msgstr "Batas"
 
+msgid "Basic Platforms"
+msgstr ""
+
 msgid "Before we open an account for you to trade or invest in Investment Products with BIEL, we are required to make an assessment of whether the Investment Products or services you have chosen are appropriate for you, and to warn you if, on the basis of the information you provide to us, any such product or service is not appropriate. Any decision to open an account and to use our products or services is yours. It is your responsibility to understand the risks involved with our products or services."
 msgstr "Sebelum kami mendaftarkan Anda pada BIEL, kami perlu melakukan penilaian apakah produk atau layanan yang telah Anda pilih sesuai untuk Anda, dan untuk mengingatkan Anda mengenai informasi dasar yang telah Anda berikan jika produk atau layanan kami tidak sesuai. Keputusan untuk mendaftar akun dan menggunakan produk atau layanan kami adalah sepenuhnya ditangan Anda. Merupakan tanggung jawab Anda untuk memahami risiko yang terlibat pada produk atau layanan kami."
 
@@ -1304,20 +1350,40 @@ msgstr "BetOnMarkets.com mencapai $1 milyar omset sejak tahun 1999"
 msgid "Betting system and method"
 msgstr "Sistem dan metode trading"
 
-msgid "Binary (C.R.) S.A., registered in Costa Rica."
-msgstr "Binary (C.R.) S.A., terdaftar di Costa Rica."
+msgid "Binary (C.R.) S.A."
+msgstr "Binary (C.R.) S.A."
+
+msgid "Binary (C.R.) S.A., registered in Costa Rica. Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their account opened with Binary (C.R.) S.A."
+msgstr "Binary (C.R.) S.A., terdaftar di Costa Rica. Pelanggan dari seluruh dunia (kecuali Amerika Serikat, Costa Rica, Hong Kong) akan terdaftar dibawah Binary (C.R.) S.A."
+
+msgid "Binary (Europe) Ltd"
+msgstr "Binary (Europe) Ltd"
 
 msgid "Binary (Europe) Ltd & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 msgstr "Binary (Europe) Ltd & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 
-msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licenced and regulated (for gambling products only) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>."
-msgstr "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Berlisensi dan diatur."
+msgid "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated (for gambling products only - %1's Volatility Indices) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - <a href=\"https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495\" target=\"_blank\">view licence</a>."
+msgstr "Binary (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Berlisensi dan diatur di negara Malta."
+
+msgid "Binary (IOM) Ltd"
+msgstr "Binary (IOM) Ltd"
 
 msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
 msgstr "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
 
-msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licenced and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2012) and for UK clients by the UK Gambling Commission - <a href='%1' target='_blank'>view license</a>."
+msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licensed and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2012) and for UK clients by the UK Gambling Commission - <a href=\"https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172\" target=\"_blank\">view licence</a>."
 msgstr "Binary (IOM) Ltd, Lantai Satu, Millenium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Berlisensi dan diatur di negara Isle of Man."
+
+msgid "Binary (V) Ltd"
+msgstr "Binary (V) Ltd"
+
+msgid "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - <a href=\"https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-09.09.20164.pdf\" target=\"_blank\">view licence</a>."
+msgstr "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Berlisensi dan diatur di negara Vanuatu."
+
+#, fuzzy
+#| msgid "Binary Ltd"
+msgid "Binary Bot"
+msgstr "Binary Ltd"
 
 msgid "Binary Bot released"
 msgstr "Pelepasan Binary Bot"
@@ -1334,11 +1400,23 @@ msgstr "Binary Group Services sedang mencari pengembang Perl berbakat dan memili
 msgid "Binary Group Services is searching for talented and motivated front-end developers who are looking for a chance to excel."
 msgstr "Binary Group Services mencari developer front-end yang berbakat dan termotivasi untuk maju."
 
+msgid "Binary Investments (Europe) Limited is entitled to provide services in another EU Member State through EU passporting rights. Refer to the map below for the list of EU countries that have access to Binary.com via EU passporting rights - freedom to provide cross border services."
+msgstr "Binary Investments (Europe) Limited dapat memberikan layanan kepada Negara Anggota Uni Eropa lainnya melalui hak pemegang paspor Uni Eropa. Lihat peta berikut ini untuk daftar negara Uni Eropa yang dapat mengakses Binary.com menggunakan hak pemegang paspor - kebebasan untuk memberikan layanan lintas perbatasan."
+
+msgid "Binary Investments (Europe) Ltd"
+msgstr "Binary Investments (Europe) Ltd"
+
 msgid "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, Binary (CR) SA and all other Binary Group members are sometimes referred to collectively as \"%1\", \"us\" or \"we\"."
 msgstr "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, Binary (CR) SA dan semua anggota Group Binary lainnya yang kadang disebut secara kolektif sebagai \"%1\", \"kita\" atau \"kami\"."
 
-msgid "Binary Investments (Europe) Ltd, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156)."
-msgstr "Binary Investments (Europe) Ltd, Suite 2, Tower Road, Msida MSD1825, Malta. Berlisensi dan diatur sebagai Category 3 Investment Services provider oleh Malta Financial Services Authority (license no. IS/70156)."
+msgid "Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (licence no. IS/70156). European Union residents with the exception of the UK, who wish to trade investment products, will have their account opened with Binary Investments (Europe) Ltd."
+msgstr "Binary Investments (Europe) Ltd, Suite 2, Tower Road, Msida MSD1825, Malta. Berlisensi dan diatur sebagai Penyedia Layanan Investasi Kategori 3 oleh Otoritas Jasa Keuangan Malta (Nomor Lisensi: IS/70156). Warga Uni Eropa kecuali Inggris yang ingin bertrading pada produk investasi, akan terdaftar dibawah Binary Investments (Europe) Ltd."
+
+msgid "Binary K.K."
+msgstr "Binary K.K."
+
+msgid "Binary K.K., 3F Hiroo Miyata Building, 1-9-16 Hiroo, Shibuya-ku, Tokyo 150-0012. Licensed and regulated as a Type 1 Financial Instruments Business by the KLFB (license no. 2949) and a member of FFAJ (membership no. 1590)."
+msgstr "Binary K.K., 3F Hiroo Miyata Building, 1-9-16 Hiroo, Shibuya-ku, Tokyo 150-0012. Berlisensi dan diatur sebagai Instrumen Bisnis Keuangan Jenis 1 oleh KLFB (Nomor Lisensi: 2949) dan anggota FFAJ (nomor keanggotaan: 1590)."
 
 msgid "Binary KK granted Japan license"
 msgstr "Binary KK telah menerima lisensi Jepang"
@@ -1346,8 +1424,21 @@ msgstr "Binary KK telah menerima lisensi Jepang"
 msgid "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Japan"
 msgstr "Binary KK, Hiroo Miyata Bldg 3F, 9-16, Hiroo 1-chome, Shibuya-ku, Tokyo 150-0012, Jepang"
 
-msgid "Binary Ltd, with registered office address situated at <span itemprop='location'>47 Esplanade, St. Helier, Jersey, JE 0BD Channel Islands</span>, is the holding company for the Binary group."
-msgstr "Binary Ltd, dengan alamat di <span itemprop='location'>47 Esplanade, St. Helier, Jersey, JE 0BD Channel Islands</span>, adalah perusahaan utama untuk group Binary."
+msgid "Binary Ltd"
+msgstr "Binary Ltd"
+
+msgid "Binary Ltd, with registered office address situated at 47 Esplanade, St. Helier, Jersey, JE1 0BD Channel Islands, is the holding company for the Binary group."
+msgstr "Binary Ltd, dengan alamat di 47 Esplanade, St. Helier, Jersey, JE1 0BD Channel Islands, adalah pemegang perusahaan utama group Binary."
+
+#, fuzzy
+#| msgid "Binary Next Gen"
+msgid "Binary Next-Gen"
+msgstr "Binary Next Gen"
+
+#, fuzzy
+#| msgid "Binary option"
+msgid "Binary Options"
+msgstr "Opsi binary"
 
 msgid "Binary Options Basics"
 msgstr "Opsi Binary Dasar"
@@ -1355,8 +1446,18 @@ msgstr "Opsi Binary Dasar"
 msgid "Binary Shop"
 msgstr "Toko Binary"
 
+#, fuzzy
+#| msgid "TickTrade App"
+msgid "Binary Tick Trade App"
+msgstr "Applikasi Trading Tik"
+
 msgid "Binary Trading is simple to learn and to execute."
 msgstr "Trading Binary adalah sederhana dan mudah."
+
+#, fuzzy
+#| msgid "Webtrader"
+msgid "Binary Webtrader"
+msgstr "Webtrader"
 
 msgid "Binary granted Investment Services license"
 msgstr "Binary telah diberikan lisensi Layanan Investasi"
@@ -1404,11 +1505,22 @@ msgstr "Cabang Binary Malta yaitu Binary Investments (Europe) Ltd. diberikan seb
 msgid "Binary's platform transacts on average 15 <a href='http://binarycom.statuspage.io/' target='_blank'>transactions</a> per second, 24/7"
 msgstr "Platform Binary memproses rata-rata 15 <a href='http://binarycom.statuspage.io/' target='_blank'>transaksi</a> per detik, 24/7"
 
+#, fuzzy
+#| msgid "Binary.com academy"
+msgid "Binary.com"
+msgstr "Akademi Binary.com"
+
+msgid "Binary.com is a licensed and regulated trading platform that serves over 1,000,000 customers globally. We hold multiple licenses to comply with regulations around the world. Since 1999, we’ve served our clients with a constant and unwavering commitment to integrity and reliability. We always hold ourselves to the highest ethical standards, in addition to our regulatory requirements."
+msgstr "Binary.com adalah platform trading berlisensi dan diatur yang melayani lebih dari 1.000.000 pelanggan secara global. Kami memegang beberapa lisensi untuk mematuhi peraturan di seluruh dunia. Sejak tahun 1999, kami telah melayani pelanggan kami dengan komitmen, integritas dan kehandalan penuh. Kami berusaha selalu menyediakan standar etika tertinggi, selain memenuhi persyaratan peraturan yang harus kami penuhi."
+
 msgid "Binary.com is an active member of the Perl community and is in the process of uploading a number of its internal utility modules to <a target='_blank' href='%1'>CPAN</a>. If you are a Perl enthusiast, contribute by reviewing these modules, and submitting pull-requests on <a target='_blank' href='%2'>github</a>."
 msgstr "Binary.com adalah anggota aktif komunitas Perl dan sedang dalam proses penyediaan beberapa modul utilitas internal ke dalam <a target='_blank' href='%1'>CPAN</a>. Jika Anda adalah seorang penggemar Perl, Anda dapat mengkontribusikan keahlian Anda dengan meninjau beberapa modul berikut dan kirimkanya ke <a target='_blank' href='%2'>github</a>."
 
 msgid "Binary.com is an active proponent of the open-source movement and is in the process of open-sourcing a number of components of its codebase."
 msgstr "Binary.com membuka peluang kearah open-source dan sedang dalam proses membuka beberapa komponen codebase yang dimilikinya."
+
+msgid "Binary.com is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
+msgstr "Binary.com tidak tersedia di Costa Rica dan tidak diatur atau diawasi oleh badan pengawas keuangan di Costa Rica."
 
 msgid "Binary.com open-source projects"
 msgstr "Proyek open source Binary.com"
@@ -1451,6 +1563,9 @@ msgstr "Namun kami agak memilih. Kami hanya memilih orang-orang yang berkualitas
 
 msgid "Buy"
 msgstr "Beli"
+
+msgid "Buy an App, or Build Your Own"
+msgstr ""
 
 msgid "By clicking <strong>Accept</strong> below and proceeding with the Account Opening you should note that you may be exposing yourself to risks (which may be significant, including the risk of loss of the entire sum invested) that you may not have the knowledge and experience to properly assess or mitigate."
 msgstr "Dengan mengklik <strong>Menerima</strong> dibawah ini dan melanjutkan Pendaftaran Akun berarti Anda memahami bahwa Anda akan mungkin akan mengalami risiko (yang mungkin segnifikan termasuk risiko kehilangan semua dana yang Anda investasikan) dimana Anda mungkin tidak memiliki pengetahuan dan pengalaman untuk mengurangi atau menghindarinya."
@@ -1526,6 +1641,16 @@ msgstr "Rubah kata sandi untuk mengakses akun Anda."
 
 msgid "Chart"
 msgstr "Grafik"
+
+#, fuzzy
+#| msgid "Chart Application"
+msgid "Chart Comparison"
+msgstr "Aplikasi Grafik"
+
+#, fuzzy
+#| msgid "Indicator"
+msgid "Chart Indicators"
+msgstr "Indikator"
 
 msgid "Check out our commission rates below:"
 msgstr "Lihat persentasi komisi kami berikut ini:"
@@ -1629,8 +1754,8 @@ msgstr "Kewajiban Klien"
 msgid "Clients agree to be fully and personally liable for the due settlement of every transaction entered into under their account with the Company. This includes any transactions entered into by members of the Client's family or entourage who have gained access to the account. Clients are responsible for ensuring that they alone control access to the account, and that no minors are granted access to trading on the website. In any case, Clients remains fully liable for any and all positions traded on their account, and for any credit card transactions entered into the site for their account. Each Client also indemnifies the Company in respect to all costs and losses of any kind, whatsoever as may be incurred by the Company as a result, direct or indirect, of the Client's failure to perform or settle such a transaction. Online Gambling debts are enforceable in law in the Isle of Man."
 msgstr "Para Klien setuju secara keseluruhan dan secara pribadi bertanggung jawab atas penyelesaian setiap transaksi yang masuk ke dalam akun Perusahaan. Ini termasuk transaksi-transaksi yang dilakukan oleh anggota keluarga atau rombongan nasabah yang telah memperoleh akses ke akun tersebut. Klien bertanggung jawab untuk memastikan bahwa dia sendiri yang mengontrol akses ke dalam akun dan memastikan bahwa tidak ada anak di bawah umur diberikan akses untuk melakukan trading pada website. Dalam kasus apapun, Klien tetap bertanggung jawab sepenuhnya untuk setiap dan semua posisi yang ditradingkan dan transaksi melalui kartu kredit pada akunnya. Setiap Klien juga membebaskan Perusahaan atas semua biaya dan kerugian dalam bentuk apapun, apapun yang mungkin dikeluarkan oleh Perusahaan sebagai akibat, langsung atau tidak langsung, kegagalan Nasabah untuk melakukan atau menyelesaikan transaksi tersebut. Hutang Trading Online adalah dilaksanakan sesuai dengan hukum yang berlaku di negara Isle of Man."
 
-msgid "Clients from the rest of the world (excluding certain countries such as the USA, Japan, Costa Rica, Hong Kong) will have their account opened with Binary (C.R.) S.A."
-msgstr "Pelanggan dari seluruh dunia (kecuali Amerika Serikat, Jepang, Costa Rica, Hong Kong) akan terdaftar dibawah Binary (C.R.) S.A."
+msgid "Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. Binary.com is not available in the Republic of Vanuatu."
+msgstr "Pelanggan dari seluruh dunia (kecuali Amerika Serikat, Costa Rica, Hong Kong) akan mendaftar akun  FX dan CFD Metatrader 5 dibawah Binary (V) Ltd. Binary.com tidak tersedia untuk warga Republik Vanuatu."
 
 msgid "Clients may avail of this bonus only when a real money account is opened."
 msgstr "Pelanggan hanya berkesempatan untuk memperoleh bonus setelah mendaftar akun uang riil."
@@ -1709,6 +1834,9 @@ msgstr "Perjalanan wisata ke Phuket, Thailand"
 
 msgid "Company's Right"
 msgstr "Hak Perusahaan"
+
+msgid "Compare all the trading platforms that we offer. Choose the ideal platform for your preferred trading strategy."
+msgstr ""
 
 msgid "Complaints"
 msgstr "Keluhan"
@@ -1829,6 +1957,9 @@ msgstr "Kontrak biasanya tidak ditawarkan pada jam terakhir perdagangan pada pas
 
 msgid "Contracts bought"
 msgstr "Kontrak dibeli"
+
+msgid "Contracts for Difference (CFD)"
+msgstr ""
 
 msgid "Contracts may not expire on a weekend; therefore the expiry date of a contract may be pushed back to the following Monday in the event of a contract expiry date falling on a Saturday or a Sunday."
 msgstr "Kontrak tidak dapat berakhir pada akhir pekan, maka tanggal berakhir kontrak diundur kepada hari Senin berikutnya jika tanggal kontrak berakhir pada hari Sabtu atau Minggu."
@@ -2220,6 +2351,9 @@ msgstr "Contoh: Shibuya-ku"
 msgid "EGR Operator Award "
 msgstr "EGR Operator Award "
 
+msgid "EU Passport Rights"
+msgstr "Hak Pemegang Paspor Uni Eropa"
+
 msgid "EUR"
 msgstr "EUR"
 
@@ -2319,6 +2453,11 @@ msgstr "Terlibat dalam data mining menggunakan database SQL, R/S-Plus, OLAP dan 
 msgid "Enhance and proactively manage the company's social-media efforts, using a variety of channels to attract and nurture prospects, clients, partners, and recruits."
 msgstr "Meningkatkan dan secara proaktif mengelola usaha sosial-media perusahaan, menggunakan berbagai saluran untuk menarik dan memelihara prospek, klien, mitra, dan merekrut."
 
+#, fuzzy
+#| msgid "Enjoy our fastest type of trading on your mobile phone or tablet. Place tick trades anytime, anywhere - even while you're on the move."
+msgid "Enjoy our fastest type of trading with our Tick Trade app, wherever you are."
+msgstr "Nikmati jenis trading tercepat yang kami sediakan pada mobile phone atau tablet. Trading tik kapan saja, dimana saja - bahkan saat Anda sedang berpergian."
+
 msgid "Ensure compliance with quality control standards governing website content"
 msgstr "Memastikan untuk mematuhi kualitas standar kontrol yang mengatur konten website"
 
@@ -2352,6 +2491,9 @@ msgstr "Spot masuk"
 msgid "Entry spot price"
 msgstr "Harga spot masuk"
 
+msgid "Environment"
+msgstr ""
+
 msgid "Equities"
 msgstr "Ekuitas"
 
@@ -2379,14 +2521,14 @@ msgstr "Ethics Code"
 msgid "European Union residents with the exception of the UK, who wish to trade gambling products, will have their account opened with Binary (Europe) Ltd."
 msgstr "Warga Uni Eropa kecuali Inggris, yang ingin bertrading pada produk gaming, akan memiliki akun mereka terdaftar pada Binary (Europe) Ltd."
 
-msgid "European Union residents with the exception of the UK, who wish to trade investment products, will have their account opened with Binary Investments (Europe) Ltd."
-msgstr "Warga Uni Eropa kecuali Inggris yang ingin bertrading pada produk investasi akan memiliki akun mereka terdaftar pada Binary Investments (Europe) Ltd."
-
 msgid "Even/Odd"
 msgstr "Even/Odd"
 
 msgid "Even/Odd contracts will be refunded at the purchase price if the contract doesn't end within 5 minutes."
 msgstr "Kontrak Even/Odd akan memperoleh pengembalian harga beli jika kontrak tidak berakhir dalam waktu 5 menit."
+
+msgid "Everyone"
+msgstr ""
 
 msgid "Example:"
 msgstr "Contoh:"
@@ -2477,6 +2619,9 @@ msgstr "Berpengalaman pada pilihan harga yang eksotis, perkiraan volatilitas, tr
 
 msgid "Experience in the financial services industry is preferred"
 msgstr "Memiliki pengalaman di bidang industri jasa keuangan lebih diutamakan"
+
+msgid "Experience the future of our trading platform with the Next-Gen app."
+msgstr ""
 
 msgid "Experience with Git"
 msgstr "Berpengalaman dengan Git"
@@ -2679,6 +2824,16 @@ msgstr "Pengalaman trading forex"
 msgid "Forex trading frequency"
 msgstr "Frekuensi trading forex"
 
+#, fuzzy
+#| msgid "Trade on forex, indices, stocks, commodities and sector markets."
+msgid "Forex, Indices, Stocks, Commodities, Volatility Indices"
+msgstr "Trading pada forex, index, stok, komoditas dan market sektor."
+
+#, fuzzy
+#| msgid "Volatility Indices"
+msgid "Forex, Volatility Indices"
+msgstr "Indeks Volatilitas"
+
 msgid "Format: yyyy-mm-dd (not required for virtual-money accounts)"
 msgstr "Format: tahun-bulan-tanggal (tidak diperlukan untuk akun uang virtual)"
 
@@ -2687,6 +2842,11 @@ msgstr "Jum"
 
 msgid "Fraud and Money Laundering"
 msgstr "Penipuan dan Pencucian Uang"
+
+#, fuzzy
+#| msgid "Free gift"
+msgid "Free"
+msgstr "Bonus"
 
 msgid "Free Bonus"
 msgstr "Bonus Gratis"
@@ -2726,6 +2886,11 @@ msgstr "Selanjutnya, Perusahaan, dalam situasi di atas, atau lainnya, berhak unt
 
 msgid "Furthermore, the Company disclaims all liability for any malfunctioning, impossibility of access, or poor use conditions of the %1 API due to inappropriate equipment, disturbances related to internet service providers, to the saturation of the internet network, and for any other reason."
 msgstr "Selain itu, Perusahaan melepaskan semua tanggung jawab bagi setiap kerusakan, ketidakmungkinan akses, atau kondisi penggunaan buruk API %1 karena peralatan yang tidak pantas, gangguan yang berhubungan dengan penyedia layanan internet, dengan saturasi jaringan internet, dan untuk alasan lain ."
+
+#, fuzzy
+#| msgid "The future of trading on %1"
+msgid "Future of trading on Binary.com"
+msgstr "Masa depan trading pada %1"
 
 msgid "GBP"
 msgstr "GBP"
@@ -2811,6 +2976,9 @@ msgstr "Pemerintahan Hukum dan Yurisdiksi"
 msgid "Governing law and jurisdiction"
 msgstr "Hukum Pemerintahan dan yurisdiksi"
 
+msgid "Grab a wide range of third-party apps for binary options trading in the <a href=\"https://shop.binary.com\" target=\"_blank\">Binary.com Shop</a>."
+msgstr ""
+
 msgid "Graphic Designers"
 msgstr "Desainer Grafis"
 
@@ -2822,9 +2990,6 @@ msgstr "Pendapatan lumayan. Komisi hingga 35%"
 
 msgid "Group History"
 msgstr "Sejarah Grup"
-
-msgid "Group Information"
-msgstr "Informasi Grup"
 
 msgid "Hackerone - for IT security professionals"
 msgstr "Hackerone - untuk keamanan profesional IT"
@@ -2947,6 +3112,9 @@ msgstr "Alamat IP"
 
 msgid "IT audit experience is a plus"
 msgstr "Pengalaman audit IT memiliki nilai tambah"
+
+msgid "Ideal Users"
+msgstr ""
 
 msgid "Ideal for both pros and novices"
 msgstr "Ideal untuk pro dan pemula"
@@ -3195,7 +3363,9 @@ msgstr "Dalam hal demikian, Perusahaan dapat atas kebijakannya sendiri (dengan a
 msgid "In the 'Further Instructions' field please specify the payment method and account number to which the Agent will send the funds to."
 msgstr "Dalam kolom 'Instruksi Tambahan' silahkan cantumkan metode pembayaran dan keterangan lain seperti nama bank dan nomor rekening dimana agen akan mengirimkan dana tersebut, jika perlu cantumkan juga nama, alamat email dan nomor telepon Anda."
 
-msgid "In the UK and Isle of Man, our clients trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A."
+#, fuzzy
+#| msgid "In the UK and Isle of Man, our clients trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A."
+msgid "In the UK and Isle of Man, our clients trade through Binary (IOM) Ltd. In Japan, they trade through Binary KK. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A."
 msgstr "Di Inggris dan Isle of Man, klien kami bertrading melalui Binary (IOM) Ltd. Di Uni Eropa (kecuali Inggris), mereka bertrading melalui Binary (Europe) Ltd dan Binary Investments (Europe) Ltd. Sisa bagian dunia lainnya, mereka bertrading melalui Binary (C.R.) S.A."
 
 msgid "In the case of single stock and stock index prices, the final closing price as reported by the relevant official Exchange shall apply for all settlements (this final settlement price may, at times, be reported by the relevant Exchange 30-90 minutes after the official closing time of the market, and may differ from the latest tick price that occurred at the closing time)."
@@ -3383,6 +3553,9 @@ msgstr "Januari"
 
 msgid "Japan"
 msgstr "Jepang"
+
+msgid "Japan residents will have their account opened with Binary K.K. and will use our Japan trading platform, which is compliant with Japan rules and regulations."
+msgstr "Warga Jepang akan terdaftar dibawah Binary K.K. dan akan menggunakan platform trading Jepang, yang telah memenugi peraturan dan regulasi Jepang."
 
 msgid "Japan website Download Text for Pre-contract Document"
 msgstr "Japan website Download Text for Pre-contract Document"
@@ -3924,6 +4097,9 @@ msgstr "Belajar trading"
 msgid "Learning to trade online?"
 msgstr "Belajar bertrading online?"
 
+msgid "Legal"
+msgstr "Legal"
+
 msgid "Legal & Regulatory Compliance"
 msgstr "Kepatuhan Hukum & Peraturan"
 
@@ -3954,7 +4130,9 @@ msgstr "Kewajiban"
 msgid "Liaise with banks and payment providers"
 msgstr "Bekerja sama dengan bank dan penyedia pembayaran"
 
-msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland"
+#, fuzzy
+#| msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland"
+msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, Ireland, and Japan"
 msgstr "Berlisensi dan diatur di Malta, Inggris, Isle of Man, dan Irlandia"
 
 msgid "Life-long career interest in the Accounting field"
@@ -4154,6 +4332,11 @@ msgstr "Tanggal bersejarah"
 msgid "Memorable town/city"
 msgstr "Kota bersejarah"
 
+#, fuzzy
+#| msgid "MetaTrader"
+msgid "MetaTrader 5"
+msgstr "MetaTrader"
+
 msgid "Method"
 msgstr "Metode"
 
@@ -4196,6 +4379,11 @@ msgstr "Memantau dan mengoptimalkan aktivitas trading website"
 msgid "Monitor hardware and software deployment and manage our worldwide network of servers and office networks"
 msgstr "Memonitor pengembangan hardware dan software dan mengelola jaringan server kami di seluruh dunia dan jaringan kantor"
 
+#, fuzzy
+#| msgid "Monitor the movements of all of your favourite assets and markets at the same time. This flexible charting platform provides a variety of customisable features."
+msgid "Monitor the movements of your favourite assets and markets at the same time."
+msgstr "Memantau pergerakan semua aset dan pasar favorit Anda pada waktu yang sama. Platform charting fleksibel ini menyediakan berbagai fitur yang dapat disesuaikan."
+
 msgid "Monitor website trading activity and minimize abuse"
 msgstr "Memonitor aktivitas trading situs dan meminimalkan penyalahgunaan"
 
@@ -4207,6 +4395,9 @@ msgstr "Pemantauan dan meninjau Kebijakan ini"
 
 msgid "Month"
 msgstr "Bulan"
+
+msgid "More Tools"
+msgstr ""
 
 msgid "More benefits"
 msgstr "Manfaat lainnya"
@@ -4234,6 +4425,11 @@ msgstr "Platform yang memenangi berbagai penghargaan."
 
 msgid "Multi-lingual and multi-currency support"
 msgstr "Memiliki pilihan bahasa dan mata uang"
+
+#, fuzzy
+#| msgid "Live Charts"
+msgid "Multiple Charts"
+msgstr "Grafik Live"
 
 msgid "My Account"
 msgstr "Akun Saya"
@@ -4299,6 +4495,11 @@ msgstr "Lanjutkan"
 msgid "Next Day"
 msgstr "Hari Berikutnya"
 
+#, fuzzy
+#| msgid "Next"
+msgid "Next-Gen"
+msgstr "Lanjutkan"
+
 msgid "No Advice"
 msgstr "Tidak ada saran"
 
@@ -4352,6 +4553,9 @@ msgstr "Catatan"
 
 msgid "Note: Payment Agent transfers are only available for accounts registered with Binary (CR) SA. Transactions are accepted only in US dollars."
 msgstr "Catatan: Transfer Agen Pembayaran hanya tersedia untuk akun terdaftar di Binary (CR) SA. Transaksi diterima hanya dalam dolar AS."
+
+msgid "Note: Scroll the table to the right to see all platforms."
+msgstr ""
 
 msgid "Note: The company reserves the right to cancel affiliate commissions that remain unclaimed for more than 2 years. Please also read our affiliate terms and conditions."
 msgstr "Nota: Perusahaan berhak untuk membatalkan komisi afiliasi yang tidak diambil melebihi jangka waktu lebih dari 2 tahun. Baca juga mengenai syarat dan kondisi afiliasi."
@@ -4707,11 +4911,22 @@ msgstr "Data Pribadi"
 msgid "Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
 msgstr "Orang dengan pengetahuan mendalam mengenai pasar keuangan atau instrumen lainnya dilarang bertrading pada situs ini."
 
+msgid "Pillar 3 Disclosures"
+msgstr "Pengungkapan Pilar 3"
+
+msgid "Pillar 3 disclosure report"
+msgstr "Laporan Pengungkapan Pilar 3"
+
 msgid "Pip"
 msgstr "Pip"
 
 msgid "Pip stands for 'percentage in point' which is generally the fourth decimal place (i.e. 0.0001)."
 msgstr "Pip singkatan dari 'titik persentase' yang umumnya angka desimal keempat (yaitu 0,0001)."
+
+#, fuzzy
+#| msgid "Platform Tour"
+msgid "Platform Comparison"
+msgstr "Panduan Platform"
 
 msgid "Platform Tour"
 msgstr "Panduan Platform"
@@ -4869,11 +5084,19 @@ msgstr "Potensi keuntungan dan kerugian adalah terbatas kepada masing-masing tin
 msgid "Power & simplicity"
 msgstr "Kuat & sederhana"
 
+msgid "Powerful charting and technical analysis"
+msgstr "Charting lengkap dan analisis teknis"
+
 msgid "Pre-contract Document"
 msgstr "Pre-contract Document"
 
 msgid "Predict the direction<br />and purchase"
 msgstr "Analisa arah<br />dan beli"
+
+#, fuzzy
+#| msgid "it is the leading binary option trading platform."
+msgid "Premier binary options trading platform"
+msgstr "merupakan platform trading opsi binary terkemuka."
 
 msgid "Prepare project requirements, as needed to clarify expectations and deliverables"
 msgstr "Mempersiapkan persyaratan proyek, yang diperlukan untuk mengklarifikasi harapan dan hasil"
@@ -4983,6 +5206,9 @@ msgstr "Mengoreksi dan memperbaiki konten yang muncul pada website perusahaan, b
 msgid "Proofreader"
 msgstr "Korektor"
 
+msgid "Prospectus"
+msgstr "Prospektus"
+
 msgid "Proven knowledge of auditing standards, procedures, laws, rules and regulations are an added advantage"
 msgstr "Memiliki pengetahuan standar audit, prosedur, hukum, aturan dan peraturan merupakan nilai tambahan"
 
@@ -4998,7 +5224,9 @@ msgstr "Public worker"
 msgid "Publish your name and logo (with or without a link to your Application) on our website, in press releases, and in promotional materials without additional consent;"
 msgstr "Mempublikasikan nama dan logo (dengan atau tanpa link ke Aplikasi Anda) pada website kami, dalam siaran pers, dan dalam materi promosi tanpa persetujuan tambahan."
 
-msgid "Published in English, Japanese, Chinese, Arabic, Polish, German, French, Spanish, Portuguese, Italian and Russian"
+#, fuzzy
+#| msgid "Published in English, Japanese, Chinese, Arabic, Polish, German, French, Spanish, Portuguese, Italian and Russian"
+msgid "Published in English, Japanese, Chinese, Polish, German, French, Spanish, Portuguese, Italian, Russian, and Thai"
 msgstr "Diterbitkan dalam bahasa Indonesia"
 
 msgid "Purchase"
@@ -5051,6 +5279,9 @@ msgstr "Masukkan kembali sandi Anda"
 
 msgid "Read"
 msgstr "Baca"
+
+msgid "Read about the features, characteristics, benefits, and risks of binary options in the prospectus of Binary Investments (Europe) Limited below. Included in the \"Schedules\" section are investment examples of contract types to help you get to grips with the basics of binary options."
+msgstr "Baca tentang fitur, karakteristik, manfaat, dan risiko dari opsi binary dalam prospektusBinary Investments (Europe) Limited berikut ini. Lihat juga bagian \"Jadwal\" yang merupakan contoh jenis kontrak untuk membantu Anda mendapat pondasi dasar mengenai opsi binary."
 
 msgid "Read about the five types of trade offered by %1."
 msgstr "Baca tentang lima jenis kontrak yang ditawarkan %1."
@@ -5129,6 +5360,15 @@ msgstr "Daftar"
 
 msgid "Register to become a tester using the links below:"
 msgstr "Mendaftar untuk menjadi tester menggunakan link di bawah:"
+
+msgid "Regulator:"
+msgstr "Regulator:"
+
+msgid "Regulators:"
+msgstr "Regulator:"
+
+msgid "Regulatory Information"
+msgstr "Informasi Peraturan"
 
 msgid "Related experience in the financial services industry"
 msgstr "Pengalaman terkait dalam industri jasa keuangan"
@@ -5376,6 +5616,11 @@ msgstr "Sep"
 msgid "September"
 msgstr "September"
 
+#, fuzzy
+#| msgid "In/out trades"
+msgid "Serious traders"
+msgstr "Kontrak Didalam/Keluar"
+
 msgid "Server"
 msgstr "Server"
 
@@ -5411,6 +5656,11 @@ msgstr "Toko"
 
 msgid "Short"
 msgstr "Pendek"
+
+#, fuzzy
+#| msgid "Ultra-short term trades..."
+msgid "Short interval traders"
+msgstr "Trading jangka pendek..."
 
 msgid "Should a disruption occur in the data feeds which cannot be readily rectified by the Company, the Company reserves the right to refund the contract purchase."
 msgstr "Jika gangguan terjadi pada data feed yang tidak dapat langsung diperbaiki oleh Perusahaan, maka Perusahaan berhak untuk mengembalikan harga beli kontrak."
@@ -5716,9 +5966,6 @@ msgstr "Penghentian Berhubung"
 msgid "Termination of this Agreement shall not prejudice any rights of any party which may have arisen on or before the date of termination."
 msgstr "Pengakhiran Perjanjian ini tidak mengurangi hak pihak yang mungkin telah muncul pada atau sebelum tanggal pemutusan."
 
-msgid "Terms"
-msgstr "Persyaratan"
-
 msgid "Terms & Conditions"
 msgstr "Syarat & Ketentuan"
 
@@ -5759,9 +6006,6 @@ msgstr "Syarat dan Kondisi %1;"
 
 msgid "The %1 website is protected by certain copyrights."
 msgstr "Website %1 dilindungi oleh hak cipta."
-
-msgid "The <span itemprop='brand'>%1</span> service (formerly known as BetOnMarkets.com) is owned and operated by Binary Ltd. Fully licensed and regulated, %1 has been providing financial trading to a worldwide audience of over 1,000,000 accounts since <span itemprop='foundingdate'>1999</span>."
-msgstr "Layanan <span itemprop='brand'>%1</span> (sebelumnya dikenal sebagai BetOnMarkets.com) dimiliki dan dioperasikan oleh perusahaan Binary Ltd. Berlisensi penuh dan diatur. %1 telah menyediakan platform trading kepada lebih dari 1.000.000 akun di seluruh dunia sejak tahun <span itemprop='foundingdate'>1999</span>."
 
 msgid "The <strong>Premier Platform</strong> for Binary Options Trading"
 msgstr "<strong>Platform Utama</strong> untuk Trading Opsi Binary"
@@ -5912,6 +6156,9 @@ msgstr "Indeks GBP adalah Indeks yang ditimbang dengan mengukur nilai Pound Ingg
 
 msgid "The Payment Agent facility is currently not available in your country."
 msgstr "Fasilitas Agen Pembayaran tidak tersedia pada negara anda."
+
+msgid "The Pillar 3 disclosure report of Binary Investments (Europe) Limited has been prepared in accordance with the Capital Requirements Directive IV and the Capital Requirements Regulation. Read our Pillar 3 disclosure report to understand how we comply with market discipline as a market participant."
+msgstr "Laporan pengungkapan pilar 3 Binary Investments (Europe) Limited telah disusun berdasarkan Kebutuhan Modal Directive IV dan Peraturan Persyaratan Modal. Baca laporan pengungkapan pilar 3 kami untuk memahami bagaimana kami mematuhi disiplin pasar sebagai peserta pasar."
 
 msgid "The Program"
 msgstr "Program"
@@ -6317,6 +6564,11 @@ msgstr "Kamis"
 msgid "Tick"
 msgstr "Tik"
 
+#, fuzzy
+#| msgid "Tick trades"
+msgid "Tick Trade"
+msgstr "Trading tik"
+
 msgid "TickTrade App"
 msgstr "Applikasi Trading Tik"
 
@@ -6407,6 +6659,16 @@ msgstr "Trade"
 msgid "Trade <strong>24/7</strong>, even on weekends."
 msgstr "Trade <strong>24/7</strong>, bahkan di akhir pekan."
 
+#, fuzzy
+#| msgid "2. The Duration"
+msgid "Trade Durations"
+msgstr "2. Durasi"
+
+#, fuzzy
+#| msgid "Trade"
+msgid "Trade Now"
+msgstr "Trade"
+
 msgid "Trade all major currencies, indices, stocks, and commodities."
 msgstr "Trading pada semua mata uang utama, indeks, saham, dan komoditas."
 
@@ -6416,8 +6678,18 @@ msgstr "Trading pada berbagai kondisi pasar"
 msgid "Trade in the world's financial markets in a simple, user-friendly platform."
 msgstr "Bertrading pada pasar finansial dunia dengan sederhana dan mudah."
 
+#, fuzzy
+#| msgid "Trade in the world's financial markets in a simple, user-friendly platform."
+msgid "Trade in the world’s financial markets with a simple and user-friendly online platform."
+msgstr "Bertrading pada pasar finansial dunia dengan sederhana dan mudah."
+
 msgid "Trade only with money you can afford to lose. Do not trade with borrowed money."
 msgstr "Bertradinglah menggunakan dana yang anda mampu. Jangan bertrading menggunakan dana pinjaman."
+
+#, fuzzy
+#| msgid "Trade with confidence with the industry pioneer."
+msgid "Trade with a powerful interface known as the global industry standard."
+msgstr "Trading dengan yakin bersama perintis industri."
 
 msgid "Trade with ease with %1's wide range of deposit and withdrawal methods. Your funds will be segregated and held in AAA-rated banks."
 msgstr "Trading mudah menggunakan berbagai pilihan metode deposit dan penarikan %1. Dana anda akan disimpan pada berbagai bank utama dunia."
@@ -6433,6 +6705,11 @@ msgstr "Trading Experience"
 
 msgid "Trading Limits"
 msgstr "Batasan Trading"
+
+#, fuzzy
+#| msgid "Trading Plans"
+msgid "Trading Platforms"
+msgstr "Rencana Trading"
 
 msgid "Trading Rules"
 msgstr "Aturan Trading"
@@ -6460,6 +6737,9 @@ msgstr "Trading pada pasar finansial dapat menyebabkan ketagihan. Isikan formuli
 
 msgid "TradingView"
 msgstr "TradingView"
+
+msgid "TradingView for Binary.com"
+msgstr ""
 
 msgid "Transact in"
 msgstr "Bertransaksi di"
@@ -6496,6 +6776,26 @@ msgstr "Benar"
 
 msgid "Trust"
 msgstr "Kepercayaan"
+
+#, fuzzy
+#| msgid "Binary Ltd"
+msgid "Try Binary Bot"
+msgstr "Binary Ltd"
+
+#, fuzzy
+#| msgid "MetaTrader"
+msgid "Try MetaTrader 5"
+msgstr "MetaTrader"
+
+#, fuzzy
+#| msgid "TradingView"
+msgid "Try TradingView"
+msgstr "TradingView"
+
+#, fuzzy
+#| msgid "Webtrader"
+msgid "Try Webtrader"
+msgstr "Webtrader"
 
 msgid "Try adding more letters or numbers."
 msgstr "Coba tambahkan lebih huruf atau angka."
@@ -6535,6 +6835,11 @@ msgstr "USD"
 
 msgid "UX / UI experience"
 msgstr "Pengalaman UX/UI"
+
+#, fuzzy
+#| msgid "Ultra-fast trading"
+msgid "Ultra fast on-the-go trading"
+msgstr "Trading super cepat"
 
 msgid "Under no circumstances shall the Company or its directors or employees be liable under this agreement to you or any third party for any indirect, special, incidental, punitive or consequential loss or damages or any other similar damages under any theory of liability (whether in contract, tort, strict liability or any other theory), that are directly or indirectly attributable to the use of, or the inability to use, the %1 API, or any content contained thereon, even if the Company has been informed of the possibility thereof."
 msgstr "Dalam situasi apapun, Perusahaan atau direksi atau karyawan bertanggung jawab berdasarkan perjanjian ini kepada Anda atau pihak ketiga atas kerugian secara tidak langsung, khusus, insidental, hukuman atau konsekuensial atau kerusakan atau kerugian serupa lainnya di bawah setiap teori kewajiban (baik dalam kontrak , tort, kewajiban yang ketat atau teori lain), yang secara langsung atau tidak langsung disebabkan penggunaan, atau ketidakmampuan untuk menggunakan, API %1 atau konten yang terkandung atasnya, bahkan jika Perusahaan telah diberitahu tentang kemungkinan daripadanya."
@@ -6756,7 +7061,7 @@ msgid "We are not able to stream live prices at the moment. To enjoy live stream
 msgstr "Kami tidak dapat memberikan striming harga live untuk saat ini. Untuk menikmati striming harga live silahkan coba merefresh halaman, atau coba browser lain"
 
 msgid "We are not accepting accounts from residents of this country at the present time."
-msgstr "Saat ini kami tidak menerima pembukaan akun dari penduduk negara berikut."
+msgstr "Untuk saat ini kami tidak menerima pendaftaran akun dari warga negara berikut."
 
 msgid "We are required by our licence to inform you about what happens to funds which we hold on account for you, and the extent to which funds are protected in the event of insolvency <a href='%1' target='_blank'>%1</a>."
 msgstr "  "
@@ -6845,8 +7150,17 @@ msgstr "Kami memperoleh hak paten sebagai 'Sistem trading komputer dan metode un
 msgid "We're really proud of this award. We're strongly committed to offering an ethical and customer-focused trading experience, and the award shows that BetOnMarkets is a trusted brand that listens and caters to customers, whether they are experienced traders or novices. We offer customer services in English, Indonesian, Russian, Chinese and Spanish."
 msgstr "Kami sangat bangga dengan penghargaan ini. Kami berdedikasi penuh dalam menawarkan etika dan memusatkan pada pengalaman trading pelanggan dan penghargaan ini menunjukkan BetOnMarkets adalah merek dagang terpercaya yang mendengar dan mengutamakan pelanggan, tidak peduli apakah mereka adalah trader berpengalaman atau pemula. Kami memberi layanan dalam bahasa Inggris, Indonesia, Rusia, Cina dan Spanyol."
 
+msgid "Web (Desktop Only)"
+msgstr ""
+
+msgid "Web (Including Mobile)"
+msgstr ""
+
 msgid "Web design / development experience"
 msgstr "Desain web/pengalaman pembangunan"
+
+msgid "Web, iOS, Android"
+msgstr ""
 
 msgid "Webinars"
 msgstr "Berbagai Webinar"
@@ -7022,6 +7336,9 @@ msgstr "Dapatkan laba 10-1000% dari modal jika Anda benar. Tingkatkan hasil deng
 msgid "Win 10-1000% on your stake if you are correct. Increase your winning return by choosing a price target farther away from the current price."
 msgstr "Laba 10-1000% dari modal jika analisa Anda tepat. Tingkatkan hasil dengan memilih sebuah target harga lebih jauh dari harga terkini."
 
+msgid "Windows, macOS, Linux"
+msgstr ""
+
 msgid "Winning the contract"
 msgstr "Raih keuntungan kontrak"
 
@@ -7168,6 +7485,9 @@ msgstr "Anda dapat memilih hasil dari $1 hingga $50,000. Pilihan hasil yang luas
 
 msgid "You can close your trade before expiry to lock in profits."
 msgstr "Anda dapat menjual kontrak sebelum berakhir untuk memperoleh keuntungan."
+
+msgid "You can even build your own online trading sites, apps, and bots with our <a href=\"https://developers.binary.com\" target=\"_blank\">API and developer tools</a>."
+msgstr ""
 
 msgid "You can request more virtual money if your virtual balance falls below JPY 100,000."
 msgstr "Anda dapat mengisi dana virtual kembali jika saldo kurang dari JPY 100,000."
@@ -7568,6 +7888,9 @@ msgstr "jam"
 msgid "hyphen"
 msgstr "tanda penghubung"
 
+msgid "iOS, Android"
+msgstr ""
+
 msgid "is required. Current spread"
 msgstr "dibutuhkan. Spread saat ini"
 
@@ -7812,7 +8135,7 @@ msgid "{JAPAN ONLY}Binary options have lower risk than vanilla options for optio
 msgstr "{JAPAN ONLY}Binary options have lower risk than vanilla options for option sellers, because with binary options the maximum loss is fixed."
 
 msgid "{JAPAN ONLY}By law we are required to manage the assets of our customers and our company separately"
-msgstr ""
+msgstr "{JAPAN ONLY}By law we are required to manage the assets of our customers and our company separately"
 
 msgid "{JAPAN ONLY}Capital"
 msgstr "{JAPAN ONLY}Capital"
@@ -7860,7 +8183,7 @@ msgid "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
 msgstr "{JAPAN ONLY}Disclosure of win loss ratio by No. xx in the FIEA"
 
 msgid "{JAPAN ONLY}Distributed back to you by the direction of the beneficiary agent (B)"
-msgstr ""
+msgstr "{JAPAN ONLY}Distributed back to you by the direction of the beneficiary agent (B)"
 
 msgid "{JAPAN ONLY}Does Not Touch"
 msgstr "{JAPAN ONLY}Does Not Touch"
@@ -8055,10 +8378,13 @@ msgid "{JAPAN ONLY}In order to open a trading account for you we will need to te
 msgstr "{JAPAN ONLY}In order to open a trading account for you we will need to test your knowledge of options to ensure you have the necessary understanding of the products and risks of binary option trading."
 
 msgid "{JAPAN ONLY}In the event of our bankruptcy, your assets will be safeguarded by Japan Securities Finance Trust & Banking Company Ltd"
-msgstr ""
+msgstr "{JAPAN ONLY}In the event of our bankruptcy, your assets will be safeguarded by Japan Securities Finance Trust & Banking Company Ltd"
 
 msgid "{JAPAN ONLY}In the lower panel you can also choose to see your current portfolio with live valuations and quick access to sell-back. Alternatively you can view a live, customizable chart with many add-on features; or see more detailed explanations of the type of option selected; or examine recent settlement prices for expired options."
 msgstr "{JAPAN ONLY}In the lower panel you can also choose to see your current portfolio with live valuations and quick access to sell-back. Alternatively you can view a live, customizable chart with many add-on features; or see more detailed explanations of the type of option selected; or examine recent settlement prices for expired options."
+
+msgid "{JAPAN ONLY}Instant sell-back of position available until 2 minutes prior to judgement time"
+msgstr "{JAPAN ONLY}Instant sell-back of position available until 2 minutes prior to judgement time"
 
 msgid "{JAPAN ONLY}Introduction to Binary Options"
 msgstr "{JAPAN ONLY}Introduction to Binary Options"
@@ -8111,10 +8437,8 @@ msgstr "{JAPAN ONLY}Main business"
 msgid "{JAPAN ONLY}March 2016"
 msgstr "{JAPAN ONLY}March 2016"
 
-#, fuzzy
-#| msgid "{JAPAN ONLY}Please note:"
 msgid "{JAPAN ONLY}Matters to attend:"
-msgstr "{JAPAN ONLY}Please note:"
+msgstr "{JAPAN ONLY}Matters to attend:"
 
 msgid "{JAPAN ONLY}No fees, no commissions, you simply pay the price of the stated on the buy button."
 msgstr "{JAPAN ONLY}No fees, no commissions, you simply pay the price of the stated on the buy button."
@@ -8162,7 +8486,7 @@ msgid "{JAPAN ONLY}Our customer support are available to help you if you are uns
 msgstr "{JAPAN ONLY}Our customer support are available to help you if you are unsure about how to use our trading tools. Please email them at <a href=\"mailto:%1\">%1</a>"
 
 msgid "{JAPAN ONLY}Our internal management control officer and beneficiary representative is required to confirm the amount of funds that must be held in the trust bank count every day"
-msgstr ""
+msgstr "{JAPAN ONLY}Our internal management control officer and beneficiary representative is required to confirm the amount of funds that must be held in the trust bank count every day"
 
 msgid "{JAPAN ONLY}Our trading page provides an overall view of all the option contracts available to trade, showing the live buy and sell prices and providing quick selection and trading buttons."
 msgstr "{JAPAN ONLY}Our trading page provides an overall view of all the option contracts available to trade, showing the live buy and sell prices and providing quick selection and trading buttons."
@@ -8240,7 +8564,7 @@ msgid "{JAPAN ONLY}Section 5: Calculation"
 msgstr "{JAPAN ONLY}Section 5: Calculation"
 
 msgid "{JAPAN ONLY}Segregate all customers' money to a trust account"
-msgstr ""
+msgstr "{JAPAN ONLY}Segregate all customers' money to a trust account"
 
 msgid "{JAPAN ONLY}Select a trading period"
 msgstr "{JAPAN ONLY}Select a trading period"
@@ -8288,7 +8612,7 @@ msgid "{JAPAN ONLY}The Financial Futures Association of Japan"
 msgstr "{JAPAN ONLY}The Financial Futures Association of Japan"
 
 msgid "{JAPAN ONLY}The beneficiary agent (B), who is an external lawyer, is bound to perform this function in the event that our Company is not able to return your funds directly"
-msgstr ""
+msgstr "{JAPAN ONLY}The beneficiary agent (B), who is an external lawyer, is bound to perform this function in the event that our Company is not able to return your funds directly"
 
 msgid "{JAPAN ONLY}The buyer of a vanilla option can choose whether to exercise the option or not. His loss is limited to the price paid for the option, whereas his potential profit is unlimited."
 msgstr "{JAPAN ONLY}The buyer of a vanilla option can choose whether to exercise the option or not. His loss is limited to the price paid for the option, whereas his potential profit is unlimited."
@@ -8527,6 +8851,14 @@ msgstr "404"
 msgid "Why Us"
 msgstr "Mengapa Kami"
 
+#, fuzzy
+#| msgid "Platform Tour"
+msgid "Platforms"
+msgstr "Panduan Platform"
+
+msgid "Regulation"
+msgstr "Regulasi"
+
 msgid "Styles"
 msgstr "Gaya"
 
@@ -8571,6 +8903,24 @@ msgstr "Keterangan rekening"
 
 msgid "Terms and Conditions Approval"
 msgstr "Syarat dan Ketentuan Persetujuan"
+
+#~ msgid "BIEL Pillar III"
+#~ msgstr "BIEL Pillar III"
+
+#~ msgid "Binary (C.R.) S.A., registered in Costa Rica."
+#~ msgstr "Binary (C.R.) S.A., terdaftar di Costa Rica."
+
+#~ msgid "European Union residents with the exception of the UK, who wish to trade investment products, will have their account opened with Binary Investments (Europe) Ltd."
+#~ msgstr "Warga Uni Eropa kecuali Inggris yang ingin bertrading pada produk investasi akan memiliki akun mereka terdaftar pada Binary Investments (Europe) Ltd."
+
+#~ msgid "Group Information"
+#~ msgstr "Informasi Grup"
+
+#~ msgid "Terms"
+#~ msgstr "Persyaratan"
+
+#~ msgid "The <span itemprop='brand'>%1</span> service (formerly known as BetOnMarkets.com) is owned and operated by Binary Ltd. Fully licensed and regulated, %1 has been providing financial trading to a worldwide audience of over 1,000,000 accounts since <span itemprop='foundingdate'>1999</span>."
+#~ msgstr "Layanan <span itemprop='brand'>%1</span> (sebelumnya dikenal sebagai BetOnMarkets.com) dimiliki dan dioperasikan oleh perusahaan Binary Ltd. Berlisensi penuh dan diatur. %1 telah menyediakan platform trading kepada lebih dari 1.000.000 akun di seluruh dunia sejak tahun <span itemprop='foundingdate'>1999</span>."
 
 #~ msgid "{JAPAN ONLY}By law we are required to manage the assets of our customers and our company separately, and segregate all customer monies to a trust account. In the event of our bankruptcy, your assets will be safeguarded by Japan Securities Finance Trust & Banking Company Ltd, and distributed back to you by the direction of the beneficiary agent (B). Our internal management control officer and beneficiary representative is required to confirm the amount of funds that must beheld in the trust bank count every day. The beneficiary agent (B), who is an external lawyer, is bound to perform this function in the event that our Company is not able to return your funds directly."
 #~ msgstr "{JAPAN ONLY}By law we are required to manage the assets of our customers and our company separately, and segregate all customer monies to a trust account. In the event of our bankruptcy, your assets will be safeguarded by Japan Securities Finance Trust & Banking Company Ltd, and distributed back to you by the direction of the beneficiary agent (B). Our internal management control officer and beneficiary representative is required to confirm the amount of funds that must beheld in the trust bank count every day. The beneficiary agent (B), who is an external lawyer, is bound to perform this function in the event that our Company is not able to return your funds directly."
@@ -8728,9 +9078,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 #~ msgid "Your new account has been created."
 #~ msgstr "Akun baru Anda telah berhasil didaftarkan."
 
-#~ msgid "MetaTrader"
-#~ msgstr "MetaTrader"
-
 #~ msgid "Trading with MetaTrader 5"
 #~ msgstr "Trading menggunakan MetaTrader 5"
 
@@ -8831,12 +9178,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 #~ msgid "Account balance : %1 %2"
 #~ msgstr "Saldo akun : %1 %2"
-
-#~ msgid "Binary.com Property"
-#~ msgstr "Properti Binary.com"
-
-#~ msgid "Binary.com academy"
-#~ msgstr "Akademi Binary.com"
 
 #~ msgid "Binary.com is the award-winning industry pioneer in online options trading."
 #~ msgstr "Binary.com adalah pemenang pada industri pelopor opsi trading online."
@@ -8988,12 +9329,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 #~ msgid "Available soon..."
 #~ msgstr "Akan tersedia segera..."
 
-#~ msgid "Binary Next Gen"
-#~ msgstr "Binary Next Gen"
-
-#~ msgid "Enjoy our fastest type of trading on your mobile phone or tablet. Place tick trades anytime, anywhere - even while you're on the move."
-#~ msgstr "Nikmati jenis trading tercepat yang kami sediakan pada mobile phone atau tablet. Trading tik kapan saja, dimana saja - bahkan saat Anda sedang berpergian."
-
 #~ msgid "Examine the history of a particular instrument to plot your next move. This advanced charting platform offers a wide range of technical indicators."
 #~ msgstr "Meneliti sejarah instrumen tertentu untuk merencanakan langkah selanjutnya. Platform charting canggih ini menawarkan berbagai indikator teknis."
 
@@ -9006,17 +9341,8 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 #~ msgid "List of All Open-Source Projects"
 #~ msgstr "Daftar Semua Proyek Open-Source"
 
-#~ msgid "Monitor the movements of all of your favourite assets and markets at the same time. This flexible charting platform provides a variety of customisable features."
-#~ msgstr "Memantau pergerakan semua aset dan pasar favorit Anda pada waktu yang sama. Platform charting fleksibel ini menyediakan berbagai fitur yang dapat disesuaikan."
-
 #~ msgid "Next Gen on GitHub"
 #~ msgstr "Next Gen pada GitHub"
-
-#~ msgid "Powerful charting and technical analysis"
-#~ msgstr "Charting lengkap dan analisis teknis"
-
-#~ msgid "The future of trading on %1"
-#~ msgstr "Masa depan trading pada %1"
 
 #~ msgid "Tick Trade on GitHub"
 #~ msgstr "Trading Tik pada GitHub"
@@ -9027,9 +9353,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 #~ msgid "Try It"
 #~ msgstr "Cobalah"
-
-#~ msgid "Ultra-fast trading"
-#~ msgstr "Trading super cepat"
 
 #~ msgid "Webtrader on GitHub"
 #~ msgstr "Webtrader pada GitHub"
@@ -9732,9 +10055,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 #~ msgid "Incorrect email or password."
 #~ msgstr "Email atau kata sandi salah."
-
-#~ msgid "Indicator"
-#~ msgstr "Indikator"
 
 #~ msgid "Indicator that displays the width of Bollinger Bands."
 #~ msgstr "Indikator yang menampilkan lebar Bollinger Bands."
@@ -14770,9 +15090,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 #~ msgid "Horizontal"
 #~ msgstr "Horisontal"
 
-#~ msgid "Live Charts"
-#~ msgstr "Grafik Live"
-
 #~ msgid "Markets"
 #~ msgstr "Berbagai Pasar"
 
@@ -14933,9 +15250,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 #~ msgid "In / Out"
 #~ msgstr "Di Dalam/Ke Luar"
 
-#~ msgid "In/out trades"
-#~ msgstr "Kontrak Didalam/Keluar"
-
 #~ msgid "Service summary"
 #~ msgstr "Ringkasan layanan"
 
@@ -14971,9 +15285,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 #~ msgid "See demo"
 #~ msgstr "Lihat demo"
-
-#~ msgid "Chart Application"
-#~ msgstr "Aplikasi Grafik"
 
 #~ msgid "Click <a href=\"%1\" target=\"_blank\">here</a> to try the beta-release of the application. Kindly report issues found to <a href=\"mailto:%2\">%2</a>."
 #~ msgstr "Klik <a href=\"%1\" target=\"_blank\">disini</a>untuk mencoba aplikasi beta-rilis. Mohon laporkan masalah yang ditemukan ke <a href=\"mailto:%2\">%2</a>."
@@ -16145,9 +16456,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 #~ msgid "The most simple and exciting way to experience financial markets."
 #~ msgstr "Cara termudah dan menarik untuk memulai trading pada market financial."
 
-#~ msgid "Trade with confidence with the industry pioneer."
-#~ msgstr "Trading dengan yakin bersama perintis industri."
-
 #~ msgid "Under %1 for market-leading returns"
 #~ msgstr "Dibawah %1 bagi pemimpin laba market"
 
@@ -16827,9 +17135,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 #~ msgid "Download the Random Markets raw tick data here."
 #~ msgstr "Ambil data per tik market random disini."
 
-#~ msgid "Free gift"
-#~ msgstr "Bonus"
-
 #~ msgid "Raw tick data"
 #~ msgstr "Data per tik"
 
@@ -17176,9 +17481,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 #~ msgid "Tick number"
 #~ msgstr "Tick"
 
-#~ msgid "Tick trades"
-#~ msgstr "Trading tik"
-
 #~ msgid "Trade on the market action during the next few seconds of trade."
 #~ msgstr "Kontrak pada pergerakan market selama beberapa detik trading selanjutnya."
 
@@ -17433,9 +17735,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 #~ msgid "Stake must be at least <strong>%1</strong>."
 #~ msgstr "Modal minimal harus <strong>%1</strong>."
-
-#~ msgid "main trading platform"
-#~ msgstr "halaman utama trading"
 
 #~ msgid "Accounts are available in dollars, pounds and euros."
 #~ msgstr "Akun tersedia dalam dolar Amerika."
@@ -18220,9 +18519,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 #~ msgid "Trades appear instantly on your Portfolio. Prices continue to update in realtime, allowing you to sell trades before expiry to lock in profits."
 #~ msgstr "Trading akan ditampilkan langsung pada portopolio anda. Harga akan terus diperbarui secara realtime dimana anda akan memiliki kesempatan untuk menjual kontrak sebelum berakhir."
 
-#~ msgid "Ultra-short term trades..."
-#~ msgstr "Trading jangka pendek..."
-
 #~ msgid "View the live trading interface"
 #~ msgstr "Lihat tampilan trading live"
 
@@ -18231,9 +18527,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 #~ msgid "Your trades, Your schedule"
 #~ msgstr "Anda sebagai pengendali"
-
-#~ msgid "Advanced Panel"
-#~ msgstr "Panel Tingkat Lanjut"
 
 #~ msgid "Against"
 #~ msgstr "TERHADAP"
@@ -18381,9 +18674,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 #~ msgid "1. trade type"
 #~ msgstr "1. jenis kontrak"
-
-#~ msgid "2. The Duration"
-#~ msgstr "2. Durasi"
 
 #~ msgid "2. underlying"
 #~ msgstr "2. market dasar"
@@ -18753,9 +19043,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 #~ msgid "The primary tool of a Technical Analyst is the chart. For this reason, Technical analysts are sometimes referred to as 'chartists'. Various chart types exist, the most common being Line, Candlestick and Point & Figure Charts..."
 #~ msgstr "Alat bantu untuk melakukan analis teknikal adalah charting. Para teknikal analis terkadang menyebutnya sebagai 'bagan'. Beberapa jenis charting yang sering digunakan adalah Garis, Lilin dan Titik."
-
-#~ msgid "Trading Plans"
-#~ msgstr "Rencana Trading"
 
 #~ msgid "Withdraw: %1 to %2 working days"
 #~ msgstr "Penarikan: %1 hingga %2 hari kerja"
@@ -20312,9 +20599,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 #~ msgid "Open a free virtual account or get started from just $5, with bonuses for larger deposits."
 #~ msgstr "Daftar akun virtual gratis atau mulai dari hanya $5, bonus tambahan untuk deposit besar."
 
-#~ msgid "Trade on forex, indices, stocks, commodities and sector markets."
-#~ msgstr "Trading pada forex, index, stok, komoditas dan market sektor."
-
 #~ msgid "Up to %1 return on rise/fall trades"
 #~ msgstr "Keuntungan hingga %1 pada kontrak naik/turun"
 
@@ -21655,9 +21939,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 #~ msgid "Available Payment Agents"
 #~ msgstr "Agen Pembayaran yang tersedia"
 
-#~ msgid "Available currencies"
-#~ msgstr "Mata uang yang tersedia"
-
 #~ msgid "BACS Withdrawal"
 #~ msgstr "Pencairan BACS"
 
@@ -22173,9 +22454,6 @@ msgstr "Syarat dan Ketentuan Persetujuan"
 
 #~ msgid "Laser Deposit via Moneybookers"
 #~ msgstr "Deposit Laser via Moneybookers"
-
-#~ msgid "Last 200 ticks"
-#~ msgstr "200 tick terakhir"
 
 #~ msgid "Last Year of Residence"
 #~ msgstr "Negara Domisili"
