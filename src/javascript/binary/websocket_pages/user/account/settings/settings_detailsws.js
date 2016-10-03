@@ -28,9 +28,10 @@ var SettingsDetailsWS = (function() {
 
     function initOk() {
         isInitialized = true;
+        var isVirtual = page.client.is_virtual();
         var isJP = page.client.residence === 'jp';
         bind_validation.simple($(formID)[0], {
-            schema: isJP ? getJPSchema() : getNonJPSchema(),
+            schema: isJP ? getJPSchema() : isVirtual ? {} : getNonJPSchema(),
             submit: function(ev, info) {
                 ev.preventDefault();
                 ev.stopPropagation();
@@ -43,7 +44,7 @@ var SettingsDetailsWS = (function() {
                 submitNonJP(info.values);
             },
         });
-        if (isJP) {
+        if (isJP && !isVirtual) {
             detect_hedging($('#PurposeOfTrading'), $('.hedge'));
         }
     }
@@ -59,6 +60,10 @@ var SettingsDetailsWS = (function() {
         if (data.email_consent) {
             $('#email_consent').prop('checked', 'true');
         }
+
+        $('#email_consent').on('change', function() {
+          changed = true;
+        });
 
         if (page.client.is_virtual()) { // Virtual Account
             $(RealAccElements).remove();
