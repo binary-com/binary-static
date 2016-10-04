@@ -1616,6 +1616,9 @@ msgstr "图表比较"
 msgid "Chart Indicators"
 msgstr "图表指标"
 
+msgid "Charting for this underlying is delayed"
+msgstr "此标的资产的图表数据存在延迟"
+
 msgid "Check out our commission rates below:"
 msgstr "请查看下面的佣金费率："
 
@@ -2404,6 +2407,9 @@ msgstr "员工手册"
 msgid "End Time"
 msgstr "结束时间"
 
+msgid "End time"
+msgstr "结束时间"
+
 msgid "Ends Between/Ends Outside trades"
 msgstr "“收于范围之内/之外”的交易"
 
@@ -2960,6 +2966,11 @@ msgid "Hedging"
 msgstr "Hedging"
 
 msgid "High Barrier"
+msgstr "高障碍"
+
+#, fuzzy
+#| msgid "High Barrier"
+msgid "High Barrier (%1)"
 msgstr "高障碍"
 
 msgid "High barrier"
@@ -4157,6 +4168,11 @@ msgid "Loss"
 msgstr "亏损"
 
 msgid "Low Barrier"
+msgstr "低障碍"
+
+#, fuzzy
+#| msgid "Low Barrier"
+msgid "Low Barrier (%1)"
 msgstr "低障碍"
 
 msgid "Low barrier"
@@ -5539,6 +5555,11 @@ msgstr "按市价回售交易。"
 
 msgid "Sell option"
 msgstr "卖出期权"
+
+#, fuzzy
+#| msgid "Sell Time"
+msgid "Sell time"
+msgstr "卖出时间"
 
 msgid "Send us a CV and a covering letter that describes your career interests."
 msgstr "请将您的简历和求职信发送给我们。"
@@ -12833,9 +12854,6 @@ msgstr "条款和条件审批"
 #~ msgid "Change"
 #~ msgstr "变动"
 
-#~ msgid "Charting for this underlying is delayed"
-#~ msgstr "此标的资产的图表数据存在延迟"
-
 #~ msgid "Charting is not available for this underlying"
 #~ msgstr "此标的资产的图表不可用"
 
@@ -13105,9 +13123,6 @@ msgstr "条款和条件审批"
 
 #~ msgid "Sell Spot"
 #~ msgstr "卖出现价"
-
-#~ msgid "Sell Time"
-#~ msgstr "卖出时间"
 
 #~ msgid "Sorry, an error occurred. Please contact customer support if this problem persists."
 #~ msgstr "对不起，发生错误。如果问题持续出现，请联系客服人员。"
@@ -17982,9 +17997,6 @@ msgstr "条款和条件审批"
 
 #~ msgid "End"
 #~ msgstr "结束"
-
-#~ msgid "End time"
-#~ msgstr "结束时间"
 
 #~ msgid "Entry"
 #~ msgstr "进场"

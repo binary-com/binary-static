@@ -1666,6 +1666,9 @@ msgstr "Formato do gráfico"
 msgid "Chart Indicators"
 msgstr "Indicador"
 
+msgid "Charting for this underlying is delayed"
+msgstr "Os gráficos para esta base estão com atraso"
+
 msgid "Check out our commission rates below:"
 msgstr "Consulte abaixo as nossas taxas de comissão:"
 
@@ -2454,6 +2457,9 @@ msgstr "Guia do colaborador"
 msgid "End Time"
 msgstr "Hora final"
 
+msgid "End time"
+msgstr "Hora de fim"
+
 msgid "Ends Between/Ends Outside trades"
 msgstr "Negociações Termina Entre/Termina Fora"
 
@@ -3020,6 +3026,11 @@ msgid "Hedging"
 msgstr "Cobertura"
 
 msgid "High Barrier"
+msgstr "Barreira Alta"
+
+#, fuzzy
+#| msgid "High Barrier"
+msgid "High Barrier (%1)"
 msgstr "Barreira Alta"
 
 msgid "High barrier"
@@ -4221,6 +4232,11 @@ msgid "Loss"
 msgstr "Perda"
 
 msgid "Low Barrier"
+msgstr "Barreira Baixa"
+
+#, fuzzy
+#| msgid "Low Barrier"
+msgid "Low Barrier (%1)"
 msgstr "Barreira Baixa"
 
 msgid "Low barrier"
@@ -5617,6 +5633,11 @@ msgstr "Venda os seus contratos a preços de mercado."
 
 msgid "Sell option"
 msgstr "Vender opção"
+
+#, fuzzy
+#| msgid "Sell Time"
+msgid "Sell time"
+msgstr "Horário de Venda"
 
 msgid "Send us a CV and a covering letter that describes your career interests."
 msgstr "Envie-nos um currículo e uma carta de apresentação que descreve os seus interesses profissionais."
@@ -12982,9 +13003,6 @@ msgstr "Aprovação dos termos e condições"
 #~ msgid "Change"
 #~ msgstr "Alterar"
 
-#~ msgid "Charting for this underlying is delayed"
-#~ msgstr "Os gráficos para esta base estão com atraso"
-
 #~ msgid "Charting is not available for this underlying"
 #~ msgstr "Os gráficos não estão disponíveis para essa base"
 
@@ -13254,9 +13272,6 @@ msgstr "Aprovação dos termos e condições"
 
 #~ msgid "Sell Spot"
 #~ msgstr "Ponto de Venda"
-
-#~ msgid "Sell Time"
-#~ msgstr "Horário de Venda"
 
 #~ msgid "Sorry, an error occurred. Please contact customer support if this problem persists."
 #~ msgstr "Lamentamos, ocorreu um erro. Contate o apoio ao cliente se o problema persistir."
@@ -17978,9 +17993,6 @@ msgstr "Aprovação dos termos e condições"
 
 #~ msgid "End"
 #~ msgstr "Fim"
-
-#~ msgid "End time"
-#~ msgstr "Hora de fim"
 
 #~ msgid "Entry"
 #~ msgstr "Entrada"

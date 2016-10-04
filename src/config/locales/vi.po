@@ -1618,6 +1618,9 @@ msgstr "So sanh biểu đồ"
 msgid "Chart Indicators"
 msgstr "Các chỉ số biểu đồ"
 
+msgid "Charting for this underlying is delayed"
+msgstr "Biểu đồ cho tài sản cơ sở này bị hoãn"
+
 msgid "Check out our commission rates below:"
 msgstr "Xem xét tỉ lệ hoa hồng của chúng tôi dưới đây:"
 
@@ -2404,6 +2407,11 @@ msgstr "Sổ tay Nhân viên"
 msgid "End Time"
 msgstr "Thời gian Kết thúc"
 
+#, fuzzy
+#| msgid "End Time"
+msgid "End time"
+msgstr "Thời gian Kết thúc"
+
 msgid "Ends Between/Ends Outside trades"
 msgstr "Giao dịch Kết thúc ở Giữa/ Kết thúc bên ngoài"
 
@@ -2960,6 +2968,11 @@ msgid "Hedging"
 msgstr "Hedging"
 
 msgid "High Barrier"
+msgstr "Rào cản Cao"
+
+#, fuzzy
+#| msgid "High Barrier"
+msgid "High Barrier (%1)"
 msgstr "Rào cản Cao"
 
 msgid "High barrier"
@@ -4157,6 +4170,11 @@ msgid "Loss"
 msgstr "Thất thoát"
 
 msgid "Low Barrier"
+msgstr "Rào cản Thấp"
+
+#, fuzzy
+#| msgid "Low Barrier"
+msgid "Low Barrier (%1)"
 msgstr "Rào cản Thấp"
 
 msgid "Low barrier"
@@ -5537,6 +5555,11 @@ msgstr "Bán lại giao dịch với giá thị trường."
 
 msgid "Sell option"
 msgstr "Quyền chọn bán"
+
+#, fuzzy
+#| msgid "Sell Time"
+msgid "Sell time"
+msgstr "Thời gian Bán"
 
 msgid "Send us a CV and a covering letter that describes your career interests."
 msgstr "Gửi chúng tôi CV và thư xin việc mô tả mối quan tâm nghề nghiệp của bạn."
@@ -12823,9 +12846,6 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 #~ msgid "Change"
 #~ msgstr "Thay đổi"
 
-#~ msgid "Charting for this underlying is delayed"
-#~ msgstr "Biểu đồ cho tài sản cơ sở này bị hoãn"
-
 #~ msgid "Charting is not available for this underlying"
 #~ msgstr "Biểu đồ không có sẵn cho tài sản cơ sở này"
 
@@ -13092,9 +13112,6 @@ msgstr "Sự chấp nhận các Điều khoản và Điều kiện"
 
 #~ msgid "Sell Spot"
 #~ msgstr "Giá Bán giao ngay"
-
-#~ msgid "Sell Time"
-#~ msgstr "Thời gian Bán"
 
 #~ msgid "Sorry, an error occurred. Please contact customer support if this problem persists."
 #~ msgstr "Xin lỗi, có lỗi xảy ra. Vui lòng liên hệ với bộ phận chăm sóc khách hàng nếu lỗi này tái diễn."
