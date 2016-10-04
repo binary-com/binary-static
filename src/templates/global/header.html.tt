@@ -47,13 +47,13 @@
                                 <li class="ja-hide">
                                     <a class="pjaxload" href="[% request.url_for('why-us') %]">[% l('Why Us?') %]</a>
                                 </li>
-                                <li class="all-hide ja-show-block">
+                                <li class="all-hide ja-show-inline-block">
                                     <a class="pjaxload" href="[% request.url_for('why-us-jp') %]">[% l('Why Us?') %]</a>
                                 </li>
                                 <li class="ja-hide">
                                     <a class="pjaxload" href="[% request.url_for('get-started') %]">[% l("Get Started") %]</a>
                                 </li>
-                                <li class="all-hide ja-show-block">
+                                <li class="all-hide ja-show-inline-block">
                                   <a class="pjaxload" href="[% request.url_for('get-started-jp') %]">[% l("Get Started") %]</a>
                                 </li>
                                 <li>
@@ -62,7 +62,7 @@
                                 <li class="ja-hide" id="main-navigation-trading">
                                     <a class="pjaxload" href="[% request.url_for('trading') %]">[% l("Trade") %]</a>
                                 </li>
-                                <li class="all-hide ja-show-block" id="main-navigation-jptrading">
+                                <li class="all-hide ja-show-inline-block" id="main-navigation-jptrading">
                                     <a class="pjaxload" href="[% request.url_for('jptrading') %]">[% l("Trade") %]</a>
                                 </li>
                             </ul>
